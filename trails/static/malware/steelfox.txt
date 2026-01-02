@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/steelfox-trojan-drops-stealer-and-miner/114414/
+# Reference: https://www.virustotal.com/gui/ip-address/205.185.115.5/relations
+# Reference: https://app.validin.com/detail?type=ip&find=205.185.115.5#tab=resolutions
+
+ankjdans.xyz
+akalooong.xyz

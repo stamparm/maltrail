@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.cylance.com/assets/Cleaver/Cylance_Operation_Cleaver_Report.pdf
+
+teledyne-jobs.com
+downloadsservers.com
+northropgrumman.net
+microsoftmiddleast.com
+microsoftserverupdate.com
+windowssecurityupdate.com
+windowsserverupdate.com
+easyresumecreatorpro.com
+microsoftwindowsresources.com
+doosan-job.com
+googleproductupdate.net
+windowscentralupdate.com
+windowsupdateserver.com
+drivercenterupdate.com
+microsoftwindowsupdate.net

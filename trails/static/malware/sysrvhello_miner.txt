@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: sysrv-hello, z0miner, zominer
+
+# Reference: https://blog.netlab.360.com/wei-xie-kuai-xun-z0miner-zheng-zai-li-yong-elasticsearch-he-jenkins-lou-dong-da-si-chuan-bo/ (Chinese)
+# Reference: https://www.lacework.com/sysrv-hello-expands-infrastructure/
+
+http://185.239.242.71
+http://194.145.227.21
+http://31.210.20.120
+http://31.210.20.181
+http://31.42.177.123
+
+# Reference: https://www.uptycs.com/blog/cryptominer-elfs-using-msr-to-boost-mining-process
+
+194.145.227.21:5443

@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: eddie stealer
+
+# Reference: https://www.elastic.co/security-labs/eddiestealer
+# Reference: https://www.virustotal.com/gui/file/0f5717b98e2b44964c4a5dfec4126fc35f5504f7f8dec386c0e0b0229e3482e7/detection
+# Reference: https://www.virustotal.com/gui/file/e8942805238f1ead8304cfdcf3d6076fa0cdf57533a5fae36380074a90d642e4/detection
+# Reference: https://www.virustotal.com/gui/file/47409e09afa05fcc9c9eff2c08baca3084d923c8d82159005dbae2029e1959d0/detection
+# Reference: https://www.virustotal.com/gui/file/162a8521f6156070b9a97b488ee902ac0c395714aba970a688d54305cb3e163f/detection
+# Reference: https://www.virustotal.com/gui/file/f8b4e2ca107c4a91e180a17a845e1d7daac388bd1bb4708c222cda0eff793e7a/detection
+# Reference: https://www.virustotal.com/gui/file/53f803179304e4fa957146507c9f936b38da21c2a3af4f9ea002a7f35f5bc23d/detection
+# Reference: https://www.virustotal.com/gui/file/b8b379ba5aff7e4ef2838517930bf20d83a1cfec5f7b284f9ee783518cb989a7/detection
+# Reference: https://www.virustotal.com/gui/file/f6536045ab63849c57859bbff9e6615180055c268b89c613dfed2db1f1a370f2/detection
+# Reference: https://www.virustotal.com/gui/file/2bef71355b37c4d9cd976e0c6450bfed5f62d8ab2cf096a4f3b77f6c0cb77a3b/detection
+# Reference: https://www.virustotal.com/gui/file/acae8a4d92d24b7e7cb20c0c13fd07c8ab6ed8c5f9969504a905287df1af179b/detection
+
+http://45.144.53.145
+http://84.200.154.47
+45.144.53.145:42224
+45.144.53.145:42228
+45.144.53.145:43201
+45.144.53.145:45679
+45.144.53.145:46690
+info-search.life
+llll.fit
+militrex.wiki
+panelmanager.sbs
+plasetplastik.com
+shiglimugli.xyz
+xxxivi.com
+verif.xxxivi.com

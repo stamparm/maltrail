@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/undocumented-reddriver/
+# Reference: https://github.com/Cisco-Talos/IOCs/blob/main/2023/07/reddriverIOCs.txt
+
+itosha.top
+laomao.run
+malaji.top
+tofu77.top
+umpteen.top
+zhedwe.top
+aireport.umpteen.top
+file.zhedwe.top
+newport.tofu77.top
+poilcy.itosha.top
+q5y2qclsk18.malaji.top
+red.zhedwe.top
+reserve.itosha.top
+workpoilcy.zhedwe.top

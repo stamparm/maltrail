@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: iconosis, iconosys
+
+# Reference: https://www.virustotal.com/gui/file/e0fa9a16d25825157cbab9138ba413367d91832e9f720bea3f682506aca3a030/detection
+
+iconosys.com
+
+# Reference: https://www.virustotal.com/gui/file/058509f5cb987eaba66574cdee7517a527780d72ad5133789ec6361da8b482ec/detection
+
+blackflyday.com

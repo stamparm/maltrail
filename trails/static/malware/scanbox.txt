@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: scanbox, uyghurs
+
+# Reference: https://www.volexity.com/blog/2019/09/02/digital-crackdown-large-scale-surveillance-and-exploitation-of-uyghurs/
+# Reference: https://otx.alienvault.com/pulse/5d6d70bae6f81e36b194cb1b
+
+103.43.18.243:5634
+182.61.171.167:9321
+182.61.173.209:8372
+45.76.209.90:8352
+akademlye.org
+androidd.services
+cloudflarestatic.tk
+getip.name
+google-analysis.info
+gotossl.ml
+istiqlal.net
+msap.services
+scanvpn.com
+turkistantlmes.com
+uyghurmedia.top
+wetinim.com

@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://staging.nsfocusglobal.com/wp-content/uploads/2018/10/NuggetPhantom-Analysis-Report-V4.1.pdf
+
+154.48.241.199:55588
+eqwauemt.com
+vohjtk.com
+woeswm.com
+
+# Reference: https://twitter.com/malware_traffic/status/1347001824319074304
+# Reference: https://www.malware-traffic-analysis.net/2021/01/05/index.html
+
+58.64.128.29:18486
+59.45.79.40:11456
+60.12.109.73:17056
+
+# Reference: https://app.any.run/tasks/0e43febb-e37a-429e-a7be-d4ae8a721d16/
+
+103.44.239.201:19125
+222.73.247.91:18812
+
+# Generic
+
+/6730A78E.moe
+/BB732D8A.moe
+/BFA5A83F.moe

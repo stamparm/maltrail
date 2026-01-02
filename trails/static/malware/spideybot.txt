@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: blueface, spideybot
+
+# Reference: https://twitter.com/malwrhunterteam/status/1182010489938857993
+# Reference: https://twitter.com/VK_Intel/status/1182142320466186241
+# Reference: https://twitter.com/malwrhunterteam/status/1182330508463788033
+
+bypasscors.herokuapp.com
+tostringisverycooi.000webhostapp.com
+
+# Reference: https://twitter.com/VK_Intel/status/1188922775563620353
+
+199.254.238.221:80

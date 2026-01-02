@@ -1,0 +1,39 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/AuCyble/status/1616015310510776320
+# Reference: https://blog.cyble.com/2023/01/19/gigabud-rat-new-android-rat-masquerading-as-government-agencies/
+# Reference: https://www.virustotal.com/gui/ip-address/18.143.123.20/relations
+# Reference: https://www.virustotal.com/gui/ip-address/54.233.141.125/relations
+# Reference: https://www.virustotal.com/gui/file/a940c9c54ff69dacc6771f1ffb3c91ea05f7f08e6aaf46e9802e42f948dfdb66/detection
+
+8.219.85.91:8888
+aackj6.cc
+aackj7.cc
+aadwx3.cc
+aadwx4.cc
+bweri6.cc
+cmnb9.cc
+lionaiothai.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1621243063233388560
+# Reference: https://www.virustotal.com/gui/file/a611d499b9528df337068120ad26aed967fad6c3fd1af7fd3f7473698760c612/detection
+
+thailife-ap.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1621244248719851520
+# Reference: https://www.virustotal.com/gui/file/79b27be1316c46822107bedd3c9acd7cb88e8c739f6b1ee1a70c7117606ec6e1/detection
+
+adxw9.com
+
+# Reference: https://www.virustotal.com/gui/file/a8faa362a1a3bd6ba1b48cbcd3d34543a8b92a6e68aa9aee6382c57a41b53da5/detection
+
+adci9.cc
+
+# Reference: https://www.virustotal.com/gui/ip-address/13.213.205.0/relations
+# Reference: https://www.virustotal.com/gui/file/24de5e48f413eb4a5924632cdf02c4a2ee64a53298660d0ffc841a5c70777cf8/detection
+# Reference: https://www.virustotal.com/gui/file/545cb08ed1b5fe2aca187a1b3557f364bf5f578db2889250bb0d98da22803aa2/detection
+# Reference: https://www.virustotal.com/gui/file/7f908fd414c0b473f53ee812f8a596cbc22b74ee75dd556bb9391b991d766aa1/detection
+
+aadwx2.cc
+bwdt9.cc

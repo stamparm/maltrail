@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malware_traffic/status/1357144573676580871
+# Reference: https://app.any.run/tasks/8bcb31d8-966a-41f5-9cdc-0aaaf6ab0dfb/
+# Reference: https://www.virustotal.com/gui/file/7a868ed90a11896307c01b283519eefe82886622ae165b3c4f678008fedddf35/detection
+# Reference: https://www.virustotal.com/gui/file/46dd8878c20c421b0ea81a9a80795f2e02e55bafd3b5dc1748bdc140cbb2b6d2/detection
+
+http://45.67.229.125
+
+# Reference: https://twitter.com/z0ul_/status/1374741504351166473
+# Reference: https://www.virustotal.com/gui/file/85b5427017159884c8baa1512ab9fc4a0ef1ebbea7341cd60e841d4433e1676b/detection
+# Reference: https://www.virustotal.com/gui/file/d0486557fbab95b5c71cb8fb8d72507c0d8373bce5836596c41f154990a8d0e5/detection
+
+http://195.2.81.149
+
+# Reference: https://www.virustotal.com/gui/file/956b6c3f6d5fd49eee45131ad3a14b7d1ca7c00820dc8568b57fb0b1f2cd64fd/detection
+
+http://188.225.40.161
+
+# Generic
+
+/6re3i0nhvrambyc96qiym.php
+/ccq9lbasghfqxp7gcbu4phdtj.php

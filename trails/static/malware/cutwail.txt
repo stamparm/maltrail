@@ -1,0 +1,80 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: pushdo
+
+# Reference: https://www.virustotal.com/en/file/03eec3046b7c3762cfd236be39322906a4069f0619918d0a0aead26d1a4493b4/analysis/
+
+tyrns.com
+telegobwypel.kz
+
+# Reference: https://www.abuse.ch/?tag=cutwail
+
+menorca24.com
+nextbookz.com
+ophia.ru
+kitro.pl
+advstar.com
+alfila.net
+arbeitdeutschland.com
+arteexotica.net
+bestjobcousa.com
+bestjobscousa.com
+careerabroadinfo.com
+dacortaorlando.net
+encounterkaspe.pl
+establishingwi.su
+eyesee-lazere.pl
+fearedembracin.su
+flavoured.pl
+followupdebate.pl
+garbagethiever.su
+gellax.com
+goldenpick.net
+greecexpatjobs.com
+hemon.pl
+hotlane.net
+htimemanagemen.su
+jobbcanada.com
+jobbinamsterdam.com
+lombrisa.com
+machinelikeleb.su
+menorca24.com
+mickmalones.com
+monitoreddream.su
+moteasingwold.net
+neo-conned.net
+netfest.pl
+nextbookz.com
+ophia.ru
+oracleutilities.net
+portugaleuropa.com
+purchasingdril.su
+simsapprentice.pl
+sppleiconicana.su
+srichkeylogger.su
+technojobse.com
+theirspentawar.pl
+thelocalsejobs.com
+three-property.net
+turismingeorgia.net
+unpackcenterpi.su
+upkeepfilesyst.su
+westors.com
+youpolandjobs.com
+yourcareerbuilders.com
+
+# Reference: https://twitter.com/58_158_177_102/status/1283745869427167233
+
+maburexo.com
+
+# Reference: https://krebsonsecurity.com/2011/11/ddos-attack-on-krebsonsecurity-com/
+# Reference: https://www.virustotal.com/gui/file/e06158312e248c10d3e0f92cc34a8c23fd2502e41188ae623ee0bfc993acb295/detection
+
+fireasseye.com
+fuckbriankrebs.com
+
+# Reference: https://s3.amazonaws.com/snort-org/www/rules/community/community-rules.tar.gz
+# Reference: https://snort-org-site.s3.amazonaws.com/production/release_files/files/000/012/156/original/snort3-community-rules.tar.gz
+
+pibadfixwug.kz

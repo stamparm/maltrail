@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/AlvieriD/status/1808279481020273104
+# Reference: https://x.com/DarkWebInformer/status/1808280408184025157
+# Reference: https://x.com/holypryx/status/1863289673935692238
+
+c2mdhim6btaiyae3xqthnxsz64brvdxsnbty4tvos65zb565y4v55iid.onion
+dangerzkwrpcvmyjl7tuopg2tus2srx4nfwhgm6yvtgqc3g54dvp4sad.onion
+pryx.cc

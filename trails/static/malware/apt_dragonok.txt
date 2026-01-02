@@ -1,0 +1,31 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://researchcenter.paloaltonetworks.com/2015/04/unit-42-identifies-new-dragonok-backdoor-malware-deployed-against-japanese-targets/
+# Reference: https://app.validin.com/detail?find=153.234.67.222&type=ip4&ref_id=d4329fdcf8a#tab=resolutions
+
+biosnews.info
+donkeyhaws.info
+
+# Reference: https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-operation-quantum-entanglement.pdf
+
+jpaols.com
+moafee.com
+skyppee.com
+pktmedia.com
+ycbackap.com
+ghostale.com
+ndbssh.com
+
+# Reference: http://www.morphick.com/resources/news/deep-dive-dragonok-rambo-backdoor
+
+busserh.mancely.com
+
+# Reference: https://www.lac.co.jp/english/report/2018/01/23_alert_01.html
+# Reference: https://app.any.run/tasks/ceb18346-8e01-4abe-89b9-97b44b14c9a0/
+
+php.marbletemps.com
+bbs.donkeyhaws.info
+http.donkeyhaws.info
+https.osakaintec.com
+/XpXpXp

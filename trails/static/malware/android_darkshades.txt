@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference:  https://twitter.com/ReBensk/status/1277616463457792000
+# Reference: https://www.virustotal.com/gui/file/7065b3e55fcbc083731bc9fe36a71dd5f858ed6710b1f632e79ccbe2c19530d9/detection
+
+cngov.online
+
+# Reference: https://www.avira.com/en/blog/in-depth-analysis-of-darkshades-a-rat-infecting-android-devices
+# Reference: https://www.virustotal.com/gui/file/034807bc4f685de71ff5d905d4ed4fb167115f7c52e2a0de45c5ab228c3cde73/detection
+
+mido1044.online
+particulares-acceso.com
+vandroid.xyz
+grekbots-xyz.hostingerapp.com
+hamza-pro.preview-domain.com
+kndbots-xyz.preview-domain.com
+
+# Generic
+
+/androidcp/
+/androidcp/DS_info.php
+/androidcp/device_uploads.php
+/androidcp/get_bots.php
+/androidcp/receive_all.php
+/androidcp/receive.php
+/Dark/alienw/
+/Dark/alienw/DS_info.php
+/Dark/alienw/device_uploads.php
+/Dark/alienw/get_bots.php
+/Dark/alienw/receive_all.php
+/Dark/alienw/receive.php

@@ -1,0 +1,60 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: fletchen stealer
+
+# Reference: https://twitter.com/FalconFeedsio/status/1712446263075991888
+# Reference: https://twitter.com/karol_paciorek/status/1713867240796291173
+# Reference: https://twitter.com/ThreatShikari/status/1714448306900959295
+
+http://67.205.142.17
+67.205.142.17:443
+
+# Reference: https://twitter.com/karol_paciorek/status/1768181923002642637
+# Reference: https://www.virustotal.com/gui/ip-address/162.241.85.73/relations
+# Reference: https://www.virustotal.com/gui/ip-address/193.106.175.48/relations
+
+betatoken.io
+ledgercheck.live
+test.brosecure360.com
+
+# Reference: https://twitter.com/vxremalware/status/1789787285203881993
+# Reference: https://www.virustotal.com/gui/file/55c062b638cf779fc7af500c329d986eee6bedb8699733047b9d1bd7ac6cf583/detection
+# Reference: https://www.virustotal.com/gui/file/ebba2161a9af3605f404b27484d3be93137129d09ce9d1e432ff7b4fc7c4c4d4/detection
+
+http://185.166.39.91
+
+# Reference: https://x.com/banthisguy9349/status/1821881243937484974
+# Reference: https://search.censys.io/search?q=services.software.uniform_resource_identifier%3D%22cpe%3A2.3%3Aa%3Afletchen-stealer%3Afletchen-stealer%3A%5C%2A%3A%5C%2A%3A%5C%2A%3A%5C%2A%3A%5C%2A%3A%5C%2A%3A%5C%2A%3A%5C%2A%22&resource=hosts
+
+http://188.116.27.137
+188.116.27.137:7777
+92.112.192.193:7777
+
+# Reference: https://x.com/iam_rajhans/status/1823317491944149348
+# Reference: https://en.fofa.info/result?qbase64=Ym9keT0iIGZsZXRjaGVuIiAmJiBib2R5PSIvbG9naW4vP25leHQ9LyI%3D
+
+http://185.163.124.133
+http://185.49.57.174
+http://195.35.3.209
+http://38.180.120.148
+149.102.231.174:7777
+185.163.124.133:7777
+185.166.39.91:7777
+185.49.57.174:7777
+38.180.120.148:7777
+
+# Reference: https://x.com/iam_rajhans/status/1823321302838518051
+# Reference: https://www.cyfirma.com/research/fletchen-stealer-an-information-stealer-with-sophisticated-anti-analysis-measures/
+
+http://45.61.139.51
+metamask.toyosol.com
+
+# Reference: https://x.com/iam_rajhans/status/1831750268146393263
+# Reference: https://search.censys.io/search?q=services.software.vendor%3D%22Fletchen+Stealer%22&resource=hosts
+
+http://104.194.158.61
+
+# Generic
+
+/Binance%20By%20Fletchen/

@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: luna ransomware
+
+# Reference: https://x.com/fbgwls245/status/1962901799792521593
+
+lunachataclss7bvlhk5zxs6pqpunxljeqhrn2bfl6wkhlwqxvgwgayd.onion
+lunalockcccxzkpfovwzifwxcytqkiuak6wzybnniqwxcmpsetpbetid.onion

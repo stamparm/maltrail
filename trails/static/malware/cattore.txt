@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cattore stealer
+
+# Reference: https://x.com/solostalking/status/2004219619381587986
+# Reference: https://www.virustotal.com/gui/file/9ffc2709c5587c88d7ac176d747b5c52dd4081539ca3950ed65b79a788204c8f/detection
+# Reference: https://www.virustotal.com/gui/file/5c1195394a9e10766ffd26adcce01a34830af2f86f749623aa1891841160f6be/detection
+
+http://103.176.23.5
+103.176.23.5:8000
+azr.io.vn
+duddos.biz

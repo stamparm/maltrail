@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: trox stealer
+
+# Reference: https://sublime.security/blog/trox-stealer-a-deep-dive-into-a-new-malware-as-a-service-maas-attack-campaign/
+# Reference: https://www.virustotal.com/gui/file/5d7ed7b8300c94e44488fb21302a348c7893bdaeef80d36b78b0e7f0f20135df/detection
+
+debt-collection-experts.com
+debt-collection-experts.online
+download.debt-collection-experts.online
+docs.debt-collection-experts.online
+downloads.debt-collection-experts.online
+documents.debt-collection-experts.com

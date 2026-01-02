@@ -1,0 +1,55 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: SatanDDoS
+
+# Reference: https://www.virustotal.com/gui/file/8868ba397b1ef9dbdb4fccf705569f7a0728cadee80b7954d080bb066a05b59d/detection
+
+107.148.71.92:1260
+163.197.245.240:2538
+164.155.231.101:1256
+996m2m2.top
+
+# Reference: https://www.virustotal.com/gui/file/2dd720d7cf395b32456fb2ed6b376321c6b29bdcd1bf349a7455414e9d564a3e/detection
+
+156.96.155.233:19370
+whoami.space
+dd.whoami.space
+
+# Reference: https://www.aquasec.com/blog/lucifer-ddos-botnet-malware-is-targeting-apache-big-data-stack/
+# Reference: https://www.virustotal.com/gui/file/808f0f85aee6be3d3f3dd4bb827f556401c4d69a642ba4b1cb3645368954622e/detection
+# Reference: https://www.virustotal.com/gui/file/b1c19e717494b33fa269b5adaf7e591d46f1ab4c1f571f22df254055349ec22c/detection
+# Reference: https://www.virustotal.com/gui/file/4e4b120f5ae23a2d3a32e9dc09cc1b9ead3e8cd947555f83f84a369a4feff081/detection
+# Reference: https://www.virustotal.com/gui/file/b87346b930120e2be9394177c530843187f7d5393738b7a935583f19cc6937b5/detection
+# Reference: https://www.virustotal.com/gui/file/42590da283f271cb55efcea7c89866d6dc3358933996166302237f040141fa12/detection
+# Reference: https://www.virustotal.com/gui/file/b4135ca942f8ab7e98259dd4666d9e84ba0c6a4a7326bab4b4abab5b009551be/detection
+
+103.156.68.144:7845
+103.215.77.51:15679
+103.245.237.31:7845
+103.255.177.55:6895
+110.42.1.53:7895
+111.92.242.47:5689
+119.97.184.123:9022
+150.109.16.228:7845
+172.247.15.228:7845
+218.244.58.70:7895
+3.25.103.162:8088
+45.141.68.25:7845
+nishabig.pro
+nishabii.xyz
+t1linux.com
+are.nishabig.pro
+hfs.t1linux.com
+/gcshfk
+/scdsshfk
+/skadaf
+/skadaf8
+
+# Reference: https://www.virustotal.com/gui/file/f261640a0b509e002d955dad966bacbfee4c3dbc79f271a0e38db13c35176964/detection
+
+154.201.89.15:888
+
+# Reference: https://urlhaus.abuse.ch/host/123.207.219.149/
+
+http://123.207.219.149

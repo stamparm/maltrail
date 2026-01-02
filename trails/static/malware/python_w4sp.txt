@@ -1,0 +1,39 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: w4spstealer
+
+# Reference: https://blog.phylum.io/phylum-discovers-dozens-more-pypi-packages-attempting-to-deliver-w4sp-stealer-in-ongoing-supply-chain-attack
+# Reference: https://www.virustotal.com/gui/file/f324d8c58773ec92c571ee5b90d961a01a6d8da37bfaddb9f2e4c463c235537c/detection
+# Reference: https://www.virustotal.com/gui/file/cd4633beee8f9d3183c15307eda4acc507d5b6fd1e2b066e011f88f5a8eb212e/detection
+# Reference: https://www.virustotal.com/gui/file/84089eb4d28b1d07ceecb1da373afe1ac38f7c88ec50331139f9ee505c5c8c7c/detection
+# Reference: https://www.virustotal.com/gui/file/6e5f00e5a20c134b12880e0f3af56e7efac8ccf6997630fbcca809a260667872/detection
+# Reference: https://www.virustotal.com/gui/file/67a159e2e007fafc6d211a8147f1d5756a324734324dbe7c058b0f4e15d3040a/detection
+# Reference: https://www.virustotal.com/gui/file/c8aa777c53c832e2d58be79dccf8da3351eaa7141e8c4b211b31792f8d8b0471/detection
+# Reference: https://www.virustotal.com/gui/file/a376b7a100125795ec6d071a3fdeb1dbacca70cdee886cbf6a4bc7e91b9165de/detection
+# Reference: https://www.virustotal.com/gui/file/8ddc3a75816706af56078a967994be86936bc0af3fa174dd97d1eb5e3f86dcbf/detection
+# Reference: https://www.virustotal.com/gui/file/54c50d3ee7506214c79871633b91fddf6b5eb29b2cffd7293800612ae22b6997/detection
+# Reference: https://www.virustotal.com/gui/file/398f5841765a9f267a6528e37401ef3f1c76f5d8dd079d26fcf6ca2b4846fffb/detection
+# Reference: https://www.virustotal.com/gui/file/08b3fc25f8e308fdf0b7e3655ffea67307e80f616854e602dadc914f881f108d/detection
+
+plague.fun
+69-sparte.plague.fun
+api.plague.fun
+hook.plague.fun
+obf.plague.fun
+sparte.plague.fun
+stream.plague.fun
+wasp.plague.fun
+
+# Reference: https://x.com/JAMESWT_MHT/status/1818556752557650319
+# Reference: https://app.any.run/tasks/20a929b9-8ce2-40d6-86a1-201a94ed37c3/
+# Reference: https://www.virustotal.com/gui/file/1568284345a620866346ea6b8baa36443d791389d1a72a40c6d4c19e72916d9a/detection
+# Reference: https://www.virustotal.com/gui/file/05b260fc440595c0fd56db2fc45dce370b0699f2063213d272cf752081e59ca1/detection
+
+http://103.167.84.233
+103.167.84.233:445
+
+# Generic
+
+/inject/Fu643XzaSbmCcnGN
+/Fu643XzaSbmCcnGN

@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.pandasecurity.com/mediacenter/malware/skype-worm-reloaded/
+
+24onlineskyvideo.info
+24videotur.in.ua
+deepskype.net
+factorygood.net
+ironskype.net
+letitskype.info
+letskype.net
+popskypevideo.net
+popvideoskype.com
+popvideoskype.info
+popvideoskype.net
+skypepopvideo.net
+skypepopvideo.net
+skyvideo24.in.ua
+skyvideo24online.in.ua
+skyvideo24online.ru
+skyvideotape.in.ua
+skyvideotape.ru
+someskype.com
+someskype.net
+techine.info
+techine.net
+videosk.in.ua
+videosk.info
+videoskype.ru
+videoskype24.ru
+videoss.in.ua

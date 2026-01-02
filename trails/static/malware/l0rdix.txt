@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: l0rdix, lordix
+
+# Reference: https://twitter.com/PRODAFT/status/1155523719638507520
+
+h141426.s07.test-hf.su
+
+# Reference: https://twitter.com/ViriBack/status/1155621374947405824
+
+seeme.ddnsking.com
+
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-23, Lordix)
+
+mshhmasvx.com
+
+# Reference: https://www.virustotal.com/gui/file/8d4973ed03d74e6404ac23821eea12f3084f5946e281cfee2da1174b6c93a93a/detection
+
+sn.bigblackcandles.com
+/lordix/connect.phpshow.php
+
+# Generic trails
+
+/l0rdix/
+/lordix/
+/lordixx/

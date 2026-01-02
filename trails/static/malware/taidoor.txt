@@ -1,0 +1,120 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Fatal RAT
+
+# Reference: https://us-cert.cisa.gov/ncas/analysis-reports/ar20-216a
+# Reference: https://otx.alienvault.com/pulse/5f2865f69cb2faed57caf33a
+# Reference: https://www.virustotal.com/gui/ip-address/210.68.69.82/detection
+
+http://210.68.69.82
+210.68.69.82:443
+cnaweb.mrslove.com
+infonew.dubya.net
+unitytst.icrown.tw
+
+# Reference: https://blog.reversinglabs.com/blog/taidoor-a-truly-persistent-threat
+# Reference: https://blog.reversinglabs.com/hubfs/Blog/Taidoor_SHA1_list.txt
+# Reference: https://blog.reversinglabs.com/hubfs/Blog/Taidoor_C2_list.txt
+# Reference: https://otx.alienvault.com/pulse/5f73728047c24e9b842215ad
+
+accountinfo.authorizeddns.us
+boomboo.tk
+cnaweb.mrslove.com
+dynamic.fdkc.jumpingcrab.com
+findback.dynssl.com
+google.sec-c.ga
+hireg.fdkc.ignorelist.com
+hsr.col.tracer.tk
+hsr.net.redisk.ga
+info.dynamic-dns.net
+infonew.dubya.net
+kd.dynamic-dns.net
+kmoud.mooo.com
+kwords.hpc.tw
+kyoto.farted.net
+lotussed.2waky.com
+mitac.com.knick.tw
+nfa.jps.ucolor.jp
+obamaus.mooo.com
+retry.server.dynamicdns.biz
+sslvpn.protecting.dsmtp.com
+sslvpn.reverse.b0tnet.com
+syscom.com.skies.tw
+twnic.almostmy.com
+
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1399791063284563975
+# Reference: https://www.virustotal.com/gui/file/c55f542c30e31612f7d171bf389dcadf866c71c89e610984da0ec954ffc6dd49/detection
+
+103.119.44.102:8081
+
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1400075253695537155
+# Reference: https://www.virustotal.com/gui/file/210990e36122e0facc7c74373569f052fa0651ab06644330fe00b685793ee0fd/detection
+
+103.119.44.93:8081
+
+# Reference: https://www.virustotal.com/gui/file/e52af19dce25d51f9cf258613988b8edc583f7c7e134d3e1b834d9aab9c7c4c4/detection
+# Reference: https://www.virustotal.com/gui/file/34f37327a0154d644854a723e0557c733931e2366a19bdb4cfe6f6ae6770c50f/detection
+
+103.119.44.100:8081
+
+# Reference: https://cybersecurity.att.com/blogs/labs-research/new-sophisticated-rat-in-town-fatalrat-analysis
+# Reference: https://www.virustotal.com/gui/file/dc026cd76891d1f84f44f6789ac0145a458e2c704a7bc50590ec08966578edb3/detection
+# Reference: https://www.virustotal.com/gui/file/b01719e59675236df1a0e1a78cdd97455c0cf18426c7ec0f52df1f3a78209f65/detection
+
+103.119.44.152:8081
+103.119.44.244:8081
+
+# Reference: https://www.virustotal.com/gui/file/420bf95cc4f37707cc5c7e70e2fb1e7168dec4d4e2deacf4dbd927ce3e106b09/detection
+
+202.8.123.98:808
+f89l.com
+test.f89l.com
+
+# Reference: https://www.virustotal.com/gui/file/fbaf592946e721ab5f09656d495e54a602feb05e8a2facd971add5145c6a25f5/detection
+
+202.8.123.98:6547
+
+# Reference: https://www.virustotal.com/gui/file/69be725e6b4d9224ac08f50542d62a3bb50c1023c9acc2e92853de5e669756ca/detection
+# Reference: https://www.virustotal.com/gui/file/bc40e86f1c9598210f805d41343f5f65926c71d08a4be0b1624a4f16d0092457/detection
+
+156.236.64.147:6868
+39.109.114.129:5858
+
+# Reference: https://x.com/malwrhunterteam/status/1892623309914730929
+# Reference: https://www.virustotal.com/gui/file/8dee47b1b41ef606a088f7b65ac18b73c1dcead807108f1890eddf698fa26966/detection
+
+143.92.63.151:8081
+kuilngrl-1336113850.cos.ap-hongkong.myqcloud.com
+
+# Reference: https://any.run/malware-trends/fatalrat/
+
+0a305ffb2a1d41f6870eac02f9afce89.xyz
+cloudservicesdevc.tk
+kkftodesk101.top
+kkftodesk102.top
+kkftodesk104.top
+kkftodesk105.top
+kkftodesk106.top
+kkftodesk107.top
+kkftodesk108.top
+kkftodesk109.top
+kkftodesk110.top
+kosdage.asia
+microsoftupdatesoftware.ga
+novadector.xyz
+vip033324.xyz
+xindajiema.info
+yydsnb1.top
+101.kkftodesk101.top
+102.kkftodesk102.top
+104.kkftodesk104.top
+105.kkftodesk105.top
+106.kkftodesk106.top
+107.kkftodesk107.top
+108.kkftodesk108.top
+109.kkftodesk109.top
+110.kkftodesk110.top
+34.kosdage.asia
+a17.yydsnb1.top
+nbs2012.novadector.xyz

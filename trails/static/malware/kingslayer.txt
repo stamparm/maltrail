@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.rsa.com/content/dam/pdfs/2-2017/kingslayer-a-supply-chain-attack.pdf
+# Reference: https://github.com/fdiskyou/threat-INTel/blob/master/2017/kingslayer-a-supply-chain-attack.pdf
+
+oraclesoft.net
+google-dash.com

@@ -1,0 +1,2005 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: pony stealer, pony loader
+
+# Reference: https://www.f-secure.com/weblog/archives/00002793.html
+
+angryflo.ru
+reggpower.su
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Fareit-CAD/detailed-analysis.aspx
+
+dhfgfgshds.top
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Fareit-AAJ/detailed-analysis.aspx
+
+sandrethe.ru
+
+# Reference: https://blog.talosintelligence.com/2018/09/threat-roundup-0914-0921.html (Win.Dropper.Fareit-6688124-0)
+
+aerolitigate.com
+anotherlscreation.com
+businessintuitive.expert
+instrovate.com
+maisonlecallennec.com
+meesebyte.com
+mufflerbrothersbellbrook.net
+mxauny.men
+weltho.com
+ybnonline.com
+weltho.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1050332889844465664
+
+spimports.com.br/age/panel/gate.php
+
+# Reference: https://www.cyren.com/blog/articles/iceland-police-phishing-attack-targets-bank-credentials
+# Reference: https://www.virustotal.com/#/file/53cf32ce0c34df94422c43e295e928c69c7b1b2090cf6943000470f7e0128d67/relations
+
+iam.shadesoul.online
+heis.shadesoul.online
+the.shadesoul.online
+
+# Reference: https://blog.talosintelligence.com/2019/05/threat-roundup-0426-to-0503.html (# Win.Malware.Fareit-6958493-0)
+
+snooper112.ddns.net
+harryng.ddns.net
+icabodgroup.hopto.org
+popen.ru
+hfgdhgjkgf.ru
+rtyrtygjgf.ru
+
+# Reference: https://blog.talosintelligence.com/2019/08/threat-roundup-0726-0802.html (# Win.Trojan.Fareit-7090291-0)
+
+digitalimagellc.us
+dkaul.su
+ffuex.su
+kglso.ru
+
+# Reference: https://app.any.run/tasks/64044834-369b-4be0-92e6-0c1cf7ae6f28/
+
+katerobinson.icu
+
+# Reference: https://app.any.run/tasks/7cd3d776-4db0-4382-9609-05d71b48e15e/
+
+/g_38472341.php
+
+# Reference: https://app.any.run/tasks/323e1e84-a200-4547-91d7-e46e8724b6de
+
+sariincofood.co.id/nev/panelnew/gate.php
+
+# Reference: https://www.virustotal.com/gui/file/c1544759a8f64f854d13e72a72d8db811d77a3e47e8d828bd34d546c4b57e842/behavior/VirusTotal%20Jujubox
+
+xperiencerem.duckdns.org
+79.134.225.52:9106
+
+# Reference: https://blog.talosintelligence.com/2018/09/threat-roundup-0907-0914.html (Win.Dropper.Ponystealer-6680912-0)
+
+3zci3b.info
+841bifa.com
+aditsachde.com
+ayursanskar.biz
+benthanh-toyota.com
+bigmovephilly.com
+casineuros.com
+chfnik.com
+chinaxzl.com
+crstudents.net
+custombusinessapps.net
+cyn.ink
+dk-drugs.com
+donghairc.com
+fattoupdates.date
+femalesdress.com
+fiveroot.com
+float2fit.com
+funnysworld.com
+giftedaroundtheworld.com
+globaltimbereurope.com
+goedutravel.com
+happyslider.com
+ketones.info
+luxuryconversion.com
+mizukusahonpomeibi.com
+mjkrol.com
+oane4.win
+planeggerstrasse.info
+puptowngirl.net
+qfs.ink
+rabe-networks.com
+redkoe-porno.info
+reducetarian.biz
+reviewhqs.com
+revivemyappliance.com
+rsstatic.com
+scgcgg.com
+schmidtatlanguage.com
+selviproperty.com
+sjckt888.com
+studio51.style
+suatusta.com
+telegraphresidences.com
+theadvancedcoach.com
+theniftyfiftiesband.com
+thienduonghoaviet.com
+vdemg.info
+verzuimverzekering.info
+webbyen.com
+xctljc.com
+xn--fjqu42jgii.com
+xn--vuqu93jrjhqkc.net
+zjjdmd.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1044957343568388097
+# Reference: https://pastebin.com/st49wnwB
+
+onthethatsed.ru/d2/about.php
+onthethatsed.ru/mlu/forum.php
+tontheckcatan.ru/d2/about.php
+tontheckcatan.ru/mlu/forum.php
+
+# Reference: https://pastebin.com/bPV4gVVL
+
+perranrowsin.com/d2/about.php
+perranrowsin.com/mlu/forum.php
+heundthetrec.ru/d2/about.php
+heundthetrec.ru/mlu/forum.php
+utteronhim.ru/d2/about.php
+utteronhim.ru/mlu/forum.php
+
+# Reference: https://app.cymon.io/report/AVy8uj-LEb4shFlhGDGG/68c37e5f81188f8f478b60b1b4a56fc366ee8aa15763104d49159e41ebe899c2
+
+/po/asdfkuj.php
+
+# Reference: https://blog.talosintelligence.com/2018/10/threat-roundup-1012-1019.html (Win.Malware.Tspy-6721070-0)
+# Reference: https://www.virustotal.com/#/file/22ef53123754caa2ac3871eb01221c99482e4318b59a30c8f07b9525afae52bd/detection
+
+myp0nysite.ru
+
+# Reference: https://twitter.com/dvk01uk/status/1088793739223539713
+
+/aloze/gate.php
+
+# Reference: https://twitter.com/dvk01uk/status/1088391460892880896
+
+/erweryui/gate.php
+
+# Reference: https://twitter.com/Racco42/status/1029986121286074369
+
+/reforte/gate.php
+
+# Reference: https://twitter.com/dvk01uk/status/1115576796848762880
+
+smartcoonect.duckdns.org
+
+# Reference: https://twitter.com/pancak3lullz/status/1119334013246873600
+
+blurbgood.live
+loadedrones.tk
+ownday.live
+
+# Reference: https://twitter.com/pancak3lullz/status/1092804207252525065
+
+/lopty/gate.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1123236500311724032
+
+brugsreator.site
+
+# Reference: https://twitter.com/dvk01uk/status/1123851987152510977
+# Reference: https://app.any.run/tasks/29a96490-8160-4cf6-b458-38023c0a8220
+
+/ba6/gate.php
+
+# Reference: https://twitter.com/Racco42/status/1124293167476609025
+# Reference: https://app.any.run/tasks/d1e32293-d755-4472-aaa2-5cfc3e612485
+
+/ba8/gate.php
+
+# Reference: https://twitter.com/jorgemieres/status/1131624801272049664
+
+masezda.top
+toperdoano.top
+piggera.top
+pinescop.top
+
+# Reference: https://twitter.com/P3pperP0tts/status/1134513995510145026
+
+shop-ukranya.tk
+
+# Reference: http://tracker.viriback.com/ (# Pony)
+
+lojalstil.mk
+officeman.tk
+vman23.com
+
+# Reference: http://tracker.viriback.com/ (# Pony)
+
+belllflight.com
+ketof.000webhostapp.com
+shokeydservers.tk
+skylite.com.sa
+
+# Reference: https://twitter.com/Lvanoel/status/1136505326302388224
+# Reference: https://app.any.run/tasks/4d2f70a2-9546-4891-8ce6-fc7051f4281d/
+
+lookatme-v65.gq
+
+# Reference: https://twitter.com/HerbieZimmerman/status/1136681091258036225
+
+mojavkicks.com
+
+# Reference: https://twitter.com/Racco42/status/1141966760016523264
+
+marvin-watches.com
+
+# Reference: https://twitter.com/dvk01uk/status/1147799231090085888
+# Reference: https://app.any.run/tasks/5575bf61-458a-47b4-94d2-5c93daeb67e2/
+# Reference: https://www.virustotal.com/gui/file/e0d96be81946b579cd5c22d7d34e2ec97996c285f86b7c620ab031d8f46ef5fe/detection
+
+pigeonwings.in/jss/ck/host/server/gate.php
+
+# Reference: https://www.virustotal.com/gui/domain/service.tellepizza.com/relations
+
+service.tellepizza.com
+
+# Reference: https://twitter.com/Racco42/status/1152176917078073344
+
+global-technology.in/wp-admin/bb/panelnew/gate.php
+
+# Reference: https://twitter.com/coderippers/status/1153267389632602114
+
+okworlds.space/wp-includes/css/panel/gate.php
+
+# Reference: https://twitter.com/Racco42/status/1153606677385662465
+
+fouadalemadi.com/admin/xuisp/gate.php
+
+# Reference: https://twitter.com/wwp96/status/1166365912775254016
+
+philliptipton.com
+
+# Reference: https://twitter.com/P3pperP0tts/status/1176118315892314112
+
+phoenixcnc.in
+
+# Reference: https://app.any.run/tasks/c13231e7-a13e-418d-9b55-049a646a0cde/
+
+sendergrid.club
+
+# Reference: https://pastebin.com/HLnQT4qy
+
+cornbeijnvoxin.com
+digplaliatinte.ru
+dvdflowerrook.ru
+
+# Reference: https://twitter.com/Paladin3161/status/1184609691504037888
+
+bioenecco.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1184754696571015168
+
+onlygoodn.com
+
+# Reference: https://twitter.com/P3pperP0tts/status/1184774736494186496
+
+coguiworld.com
+
+# Reference: https://app.any.run/tasks/88ed0a76-7c1c-4e31-96e3-cc9b8d2ae047/
+
+chirayugroup.in
+
+# Reference: https://twitter.com/Paladin3161/status/1187160285884211200
+
+manerck.com
+
+# Reference: https://twitter.com/pancak3lullz/status/734808391835492352
+# Reference: https://www.virustotal.com/gui/domain/zurekconstruction.com/relations
+
+8gaming.tk
+zurekconstruction.com
+
+# Reference: https://twitter.com/P3pperP0tts/status/1189106674503766017
+
+joindauto.com/onli/admin.php
+
+# Reference: https://twitter.com/ScumBots/status/1189648684503519232
+
+vman21.com
+
+# Reference: https://twitter.com/Paladin3161/status/1186779578380873731
+
+oackhond.com
+
+# Reference: https://pastebin.com/29uSdMAk
+
+jicago-jp.com
+
+# Reference: http://tracker.viriback.com/ (# 2019-11-04, Pony)
+
+http://185.79.156.18
+http://194.36.173.109
+http://94.102.53.52
+2lcfo.com
+aamran.com
+acousticallysound.com.au
+aec.co.ir
+alharshagroup.com
+amiriepl-aus.com
+antonioguteres.com
+avchennai.edu.in
+belllflight.com
+bioenecco.com
+camautensili.com
+captaincolemanphilip.com
+carereport.life
+chinalarnpbase.com
+chisom.j.pl
+coguiworld.com
+f2wa.com
+fatimasalman.com
+forexdispatch.info
+fouadalemadi.com
+fuckxy22.com
+goldenfashiondeeds.com
+jajar.ru
+jicago-jp.com
+keissy.ml
+ketof.000webhostapp.com
+learn.cloudience.com
+lifemix123.com
+lojalstil.mk
+lookatme-v65.gq
+maganlagame.com
+manerck.com
+mgimpax.com
+mrhenterprises.in
+oackhond.com
+officeman.tk
+onlygoodam.com
+onlygoodn.com
+osa-co.com
+owentr.ru
+perspexfabricationsofbrisbane.com.au
+pigeonwings.in
+remabad.com
+saliyumakan.club
+samskuad.work
+setauketpitahouse.com
+shokeydservers.tk
+shop-ukranya.tk
+skylite.com.sa
+spueriniromnangratinfo.tk
+thedoorshop.com.au
+tioq.ga
+tourscentralasian.com
+ttkplc.com
+tumpengsemarang.com
+vman20.com
+vman21.com
+vman22.com
+vman23.com
+wroft-fd.club
+
+# Reference: https://app.any.run/tasks/ba3fa1fe-ea61-4579-918b-3d782b1c603d/
+
+owenewturk.ru
+myp0nysite.ru
+
+# Reference: https://pastebin.com/7Ak2nP2T
+
+yehovahbuilders.com
+
+# Reference: https://blog.talosintelligence.com/2019/12/threat-roundup-1206-1213.html (# Win.Dropper.Fareit-7431743-0)
+
+loqapeek.pw
+xistoons.pw
+
+# Reference: https://twitter.com/ScumBots/status/1210097313798086657
+
+sbrbuilding.com
+
+# Reference: https://app.any.run/tasks/f398fe3c-a494-486d-8d12-a08025f62091/
+
+5.34.177.9:80
+
+# Reference: https://twitter.com/James_inthe_box/status/1217781646717419520
+
+1800propainter.com/sepp/panelnew/gate.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1217814277597220864
+
+79.134.225.45:44556
+
+# Reference: https://app.any.run/tasks/41969422-f520-4e24-bf11-fda6d7d91a50/
+
+http://195.123.222.104/viewtopic.php
+http://195.123.222.104/p/g_38472341.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1219670820500336640
+
+ozteary.ru
+
+# Reference: https://app.any.run/tasks/a329bb27-d552-4d45-8317-7c6eb7336584/
+
+http://85.217.171.218/p/g_38472341.php
+
+# Reference: https://twitter.com/neonprimetime/status/1220464928785674240
+
+uphosting.info/pro/nanny/admin.php
+
+# Reference: https://www.virustotal.com/gui/file/01224912907f1455f128aa33ff81bddef67c23a3be538c3aecdc7f95f6ef2f6c/detection
+
+frteary.ru
+
+# Reference: https://app.any.run/tasks/c2520065-cc72-4acf-addd-ddf61f9c0488/
+
+http://195.123.240.67
+
+# Reference: https://app.any.run/tasks/18bd5b34-e5c0-40aa-9eaa-ed86cca12a5f/
+
+http://45.90.57.16
+
+# Reference: https://twitter.com/wwp96/status/1226893051685199872
+
+castmart.ga
+
+# Reference: https://blog.talosintelligence.com/2020/02/threat-roundup-0207-0214.html (# Win.Packed.Ponystealer-7581286-0)
+
+streetcode3.com
+
+# Reference: https://app.any.run/tasks/0643b085-4919-444c-b674-949bd7967d53/
+
+financeunitedgroup.com
+
+# Reference: https://www.virustotal.com/gui/file/504e294991f1676fb7ecb712b19a110359ce25b89dcaf056b6c8b8aca13817f1/detection
+
+cp71017.tmweb.ru
+
+# Reference: https://www.virustotal.com/gui/file/4a2fdeaf23b28536703058b0eda67ad6c5267d7fd2bfbc9214cb83eed1e6edd0/detection
+
+cm05540.tmweb.ru
+
+# Reference: https://twitter.com/ps66uk/status/1229853090662227973
+# Reference: https://app.any.run/tasks/22607a2d-bbae-4a24-9525-d99b6636ee3b/
+
+suspend-puncture.dvrlists.com
+
+# Reference: https://app.any.run/tasks/3daa715d-efe6-4dd8-bc3f-ec9f9188bac8/
+
+http://195.123.225.9
+
+# Reference: https://app.any.run/tasks/7830938e-021d-4f6d-8b27-c791dfa4f530/
+
+http://185.234.72.142
+
+# Reference: https://www.virustotal.com/gui/domain/papergang.ru/relations
+
+papergang.ru
+
+# Reference: https://www.virustotal.com/gui/domain/opixib.bid/relations
+
+opixib.bid
+
+# Reference: https://www.virustotal.com/gui/domain/bags.mn/relations
+
+bags.mn
+
+# Reference: https://www.virustotal.com/gui/domain/dualserverz.info/relations
+
+dualserverz.info
+
+# Reference: https://www.virustotal.com/gui/domain/frankweb.club/relations
+
+frankweb.club
+
+# Reference: https://www.virustotal.com/gui/domain/aloucakbileti.com/relations
+
+aloucakbileti.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/108.166.65.182/relations
+
+108.166.65.182:80
+108.166.65.182:8080
+
+# Reference: https://twitter.com/SevenLayerJedi/status/979030953275293702
+
+bundletops.ml
+carikapapa.ml
+centranets.ml
+cuogargaming.com
+dazzlelogs.ml
+dunysaki.ru
+efficienci.ml
+erintoba.info
+gokubid.review
+grandmoney.ml
+hostelunke.ml
+hypercosine.ml
+irishgrind.ml
+pharma-partners.com
+preutainer.ml
+rolexkings.ml
+stauniverseqp.com
+suruperet.ml
+taineruder.ml
+theonlygoodman.com
+thousandan.ml
+totalguage.ml
+uy-akwaibom.ru
+viettrust-vn.net
+vinglosine.ml
+
+# Reference: https://exchange.xforce.ibmcloud.com/url/pony.lovekhao.com/panel/gate.php
+
+pony.lovekhao.com
+
+# Reference: https://twitter.com/avman1995/status/1054260755183353858
+
+medipedics.com
+
+# Reference: https://www.virustotal.com/gui/domain/ark.treassurebank.org/relations
+
+ark.treassurebank.org
+
+# Reference: https://www.virustotal.com/gui/domain/fishhd.cn/relations
+
+fishhd.cn
+
+# Reference: https://twitter.com/pancak3lullz/status/1054800229654945792
+# Reference: https://twitter.com/Racco42/status/1051847768657014784
+# Reference: https://www.virustotal.com/gui/domain/farmaboti.es/relations
+
+farmaboti.es
+
+# Reference: https://www.virustotal.com/gui/domain/perfectnobody.xyz/relations
+
+perfectnobody.xyz
+
+# Reference: https://exchange.xforce.ibmcloud.com/url/domsrv.host/panel/gate.php
+
+domsrv.host
+
+# Reference: https://www.virustotal.com/gui/domain/simbatekhomes.com/relations
+
+simbatekhomes.com
+
+# Reference: https://www.virustotal.com/gui/domain/masariqroup.com/relations
+
+masariqroup.com
+sensimatino.us
+slimpityio3.us
+slowidyter.us
+
+# Reference: https://www.virustotal.com/gui/domain/sstorm1k.000webhostapp.com/relations
+
+sstorm1k.000webhostapp.com
+
+# Reference: https://twitter.com/0bfusCat/status/1054363637274603520
+
+ali55551.co.kr
+
+# Reference: https://twitter.com/James_inthe_box/status/1069928327861854208
+
+cm-lagoa.pt/panel/
+
+# Reference: https://twitter.com/_lockhum/status/1236426156511027201
+
+treshbux.ru
+
+# Reference: https://app.any.run/tasks/8f567536-cd55-4dfd-992b-92057b5fcb4b/
+
+rohs.amd.my.id
+
+# Reference: https://www.virustotal.com/gui/file/9df797811c3ad9f45f17ae71eb76f51345b1b9c858f85027f88ce6d1992a87ec/detection
+
+hpsupport.site
+
+# Reference: https://www.virustotal.com/gui/domain/animal-planet.site/relations
+
+animal-planet.site
+
+# Reference: https://www.virustotal.com/gui/domain/ubixs.xyz/relations
+
+ubixs.xyz
+
+# Reference: http://cybercrime-tracker.net/index.php?search=shotgumscy.com
+
+shotgumscy.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1245023450239889409
+
+kanavagronomy.in/star
+
+# Reference: https://twitter.com/_lockhum/status/1246080178037686278
+
+ks-marine.com
+
+# Reference: https://www.virustotal.com/gui/domain/regul.club/relations
+
+regul.club
+
+# Reference: https://www.virustotal.com/gui/domain/chomik.pro/relations
+
+chomik.pro
+
+# Reference: https://twitter.com/Jouliok/status/1247039700013060101
+
+kanavagronomy.in/star/panel/
+
+# Reference: https://twitter.com/pancak3lullz/status/1249696308182626304
+
+schelliing.com
+
+# Reference: https://pastebin.com/0MH0gsyv
+
+ardstiobek.com
+ationsopors.com
+hoagoomde.com
+
+# Reference: https://pastebin.com/dtR7uD4k
+
+jaling.aba.vg
+
+# Reference: https://www.virustotal.com/gui/file/f3ee2c7189752aa65a0803d879a3be59384eab730d31edddff4c61e2fdd2d738/detection
+
+clogwars.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.22.87/relations
+
+fitollday.site
+gdboot.site
+figjfigjeordhjdofijhdifh.xyz
+huysto02.xyz
+lsdldllatoooyrs.site
+mantiak.site
+perlof.site
+uiotpe22.xyz
+votonline1.site
+wotonline.site
+
+# Reference: https://twitter.com/James_inthe_box/status/1266005512958603264
+
+http://185.177.59.58/viewtopic.php
+
+# Reference: https://www.virustotal.com/gui/file/95ef821c5a53d006083999f9b3fde8ad97e750de5fb409e0e55f81fa0bc77cc3/detection
+
+mmxgfzadrian.xyz
+
+# Reference: https://www.virustotal.com/gui/file/1146b539c57e8e02a6ec06478e527e2c2e6a3ff2a5519ba4a2ecc848dc092692/detection
+# Reference: https://www.virustotal.com/gui/file/cfad38ea55054337012e0e3c4794973fee9e3c8df85523d23ac6ca6cba939b82/detection
+
+45.125.66.95:3067
+chainonline.info
+elizvanroos.info
+
+# Reference: https://app.any.run/tasks/68e6eb87-8e50-4f65-b8a9-198835c38327/
+
+sikatech.id/ek/panelnew/gate.php
+
+# Reference: https://www.virustotal.com/gui/file/4db990e83b4c9c954f1b67860a332d7beb60c90ea1f7506367c5e7a475ec0773/detection
+
+http://142.202.188.249
+
+# Reference: https://www.virustotal.com/gui/file/c41afec81d70066b62ddbfae7e4ec8aca49d0cc3618241aa2605d35d3250bd98/detection
+
+http://167.172.200.71
+
+# Reference: https://www.virustotal.com/gui/file/a65ae2280a477d1f4028357bb6c6bf4a37b4c2a3fcf0c889f318461197abc665/detection
+
+a6281279.yolox.net
+
+# Reference: https://www.virustotal.com/gui/file/53557a2a8de9c5e63522a07a7a22de4d17f24aa6cadec6253847f850e7a174f2/detection
+
+pownedfag.pw
+
+# Reference: https://www.virustotal.com/gui/file/aabd0002fb1cb950183dcc708e577c453352269615bd0aceda66d6304d4e67bd/detection
+
+gracetime.tech
+
+# Reference: https://www.virustotal.com/gui/file/ce8b0159ff9a487ca5ab2bfd4c48ed46c5c6a7940d8aab1989ea7955f65aac01/detection
+
+auctlon-uk.com
+
+# Reference: https://www.virustotal.com/gui/file/1299e0cd6b02c747a4287b79df4c226087d24bd7c214712b06b45638c29b0553/detection
+
+185.125.205.87:61956
+93.87.38.14:40401
+u17094677.hopto.org
+ugo123.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/22c76ac2f5c68294833d9a3ff775d1338a4b5c4981f963ba997c021054b58c3c/detection
+
+handrass.co.rs/admin/yaga/gate.php
+
+# Reference: https://www.virustotal.com/gui/file/759ddb574a13f2cc2e8a1881dd902a87fd384bd4a14175bfe130f79c32453f02/detection
+
+zibind.tk
+
+# Reference: https://blog.talosintelligence.com/2020/08/threat-roundup-0807-0814.html (# Win.Dropper.LokiBot-9243098-0)
+
+boquils.ga
+ragasgki.tk
+sigawd.gq
+ymams.cf
+fav121.hopto.org
+
+# Reference: https://www.virustotal.com/gui/domain/macniica.com/detection
+
+macniica.com
+
+# Reference: https://www.virustotal.com/gui/file/76d06dadece18708fc903740be8ddd66d7ae0bfc8ea3c6650cea004074f39c93/detection
+
+global-dahuatech.com
+
+# Reference: https://twitter.com/ganeshnathan28/status/1296327928649842689
+
+logix.co.za/wp-admin/xox/
+zsqwwxcgtyu.cf
+
+# Reference: https://www.virustotal.com/gui/file/f1c22af163d2617e9aeab926c94a73f8a57f0c8387daa684d29c8b7799207819/detection
+
+miladko.com
+
+# Reference: https://www.virustotal.com/gui/file/18906ac67ea07ae57c5694c5a557f67b587c2ffd9a60c0b3f073074d7f2c9fee/detection
+
+dodontrami.com
+
+# Reference: https://blog.talosintelligence.com/2020/09/threat-roundup-0828-0904.html (# Win.Malware.Ponystealer-9635182-1)
+# Reference: https://www.virustotal.com/gui/file/046dc3a0c3a02063fdc3b3cd62e8c1020b9171d9d885833a21c21cb0a9da9387/detection
+
+datetimes.cc
+mqvbi-jloa.in
+xbgmttu-zlymbjs.in
+
+# Reference: https://www.virustotal.com/gui/file/2a683655a9c956bc837825e76fc2e2cc364753de4688adb644d089f6d3f58565/detection
+
+http://63.249.148.70
+
+# Reference: http://cybercrime-tracker.net/index.php?search=topwebappdevelopmentcompanies.com
+# Reference: https://www.virustotal.com/gui/file/2932fc5a8f05d1a863283c5329d139e447c556a2117c471af92c0232a12275f2/behavior/VirusTotal%20Cuckoofork
+# Reference: https://www.virustotal.com/gui/file/0a0255e4b991bb04a058f7eadb0bb4d783a8a25476e033e30e97e3c96f89d330/behavior/Dr.Web%20vxCube
+# Reference: https://www.virustotal.com/gui/file/84798070d875865211b591ff6744da73540c080e1a5ed2223a46bf57328d03eb/behavior/Dr.Web%20vxCube
+# Reference: https://app.any.run/tasks/35f15646-5c2e-471e-9a9c-9fc19486499d/
+
+topwebappdevelopmentcompanies.com/server/
+iosappdevelopmentindia.com
+
+# Reference: https://app.any.run/tasks/78eb68e4-d04b-499f-acdd-ec1a1a5f0912/
+
+reninparwil.com
+
+# Reference: https://www.virustotal.com/gui/file/46cae03bdff36a9800bbfb8f3329bb998b07851aae6448822a6d796f4005e874/detection
+
+bountymarine.net
+
+# Reference: https://www.virustotal.com/gui/file/bd9acaa56cd66e1c471bdb087a53d70b830ff9ea0f35532d9dd75ee8455cc4bc/detection
+
+wonforhall.com
+
+# Reference: https://blog.talosintelligence.com/2020/10/threat-roundup-1016-1023.html (# Win.Malware.Ponystealer-9778326-0)
+# Reference: https://www.virustotal.com/gui/domain/autocuga-mx.com/detection
+
+autocuga-mx.com
+
+# Reference: https://gist.github.com/silence-is-best/0aa844b003c62c6ce491e91e168ac662
+# Reference: https://www.virustotal.com/gui/file/3757d0cdf86233d9ca139d414dd7b1cb19ae824514490f747fcc931cf9ed750d/detection
+
+afyseinc.xyz
+
+# Reference: https://www.virustotal.com/gui/file/799e6ac8523388365121f3b2210fe66967e9733ca4a0fd328f340a1042fe3d99/detection
+
+create-customer.site
+
+# Reference: https://www.virustotal.com/gui/file/176b756dbc0dc4c7f5e997342d79437c45ced592457e4267afeb5a85e50d3ce5/detection
+
+mindtimeshare.bs/wp-content/themes/twentytwelve/wel.exe
+antonolsve.com/wp-content/plugins/wp-db-backup-made/joke.exe
+supersolar.jo/wp-content/themes/finesse/dir.php
+dcore.co.th/wp-content/themes/yoo_sync_wp/plugin.php
+elearning.everpharma.com/wp-content/plugins/wp-survey-and-quiz-tool/lib/Wpsqt/Page/Main/Questiondelete/web.php
+firearmengraving.com/wp-content/plugins/wp-db-backup-made/start.exe
+
+# Reference: https://www.virustotal.com/gui/file/33a543506372a82c12e5663afb727654cd1dae640450f9338210fe82e04f94aa/detection
+
+11189334.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/46.105.135.208/relations
+# Reference: https://www.virustotal.com/gui/file/508dd4664cd2c958eb3d650be092b5573c53a777b87342a860a0365486bedad1/detection
+
+46.105.135.208:21
+
+# Reference: https://www.virustotal.com/gui/file/e566eb85809a8f3d4c1220f1af5e1332298cebdf6d1df0ea415f2be917edca6d/detection
+
+acodeert.ru
+
+# Reference: https://www.virustotal.com/gui/file/f58693db0d2e4adbc13cd9b9340823b73bb3a1089b04cdea38d69130de5b4db3/detection
+
+dr-sea.by
+dreamsmile.24host.lt
+skopych.kiev.ua
+somad.md
+
+# Reference: https://www.virustotal.com/gui/file/683725e1b84b8fe030660acaac5639d6be296a2e727dc446c270c043818170c0/detection
+
+anixtier.com
+
+# Reference: https://www.virustotal.com/gui/file/164ab5637997a1099741c68c7b433ebe4a3690032a68b36be66e6478374d65e6/detection
+
+213.227.154.174:2222
+googleforshares.publicvm.com
+
+# Reference: https://www.virustotal.com/gui/file/67a2f9ba5232305e902120428f5fc71c0f8c746a4d94ee40be59431599602440/detection
+
+45.61.136.214:1337
+
+# Reference: https://www.virustotal.com/gui/file/61ae8a011922642c279bd1fef2dab6a3690d12fab4f7ea326f6565a8a7a2cda7/detection
+
+45.61.136.214:4782
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Fareit-DHP/detailed-analysis.aspx
+# Reference: https://www.virustotal.com/gui/file/93e1f798b7a4b6816358d43676cc8835f21690772a3993f2cdc68826f2df931e/detection
+
+alilancles.eu
+
+# Reference: https://www.virustotal.com/gui/file/1c5a230b8a3f8d939b2b1b4ebd1e674ff1ee321f3808b8598bcb0bf1018bc162/detection
+
+365daysfreiqht.com
+
+# Reference: https://www.virustotal.com/gui/file/86aaeb3480ccaa4421857ef6ee31a1e5dc25b4d0c8ba94ad6b77e8dd18c41767/detection
+
+cs6hgg.pw
+
+# Reference: https://www.virustotal.com/gui/file/b014f35c52ad7c44884969263dd9ff8246a7b069f3f18b4bff2759c180f27107/detection
+
+34324325kgkgfkgf.com
+dsffdsk323721372131.com
+fdshjfsh324332432.com
+jdsiwiqweiqwyreqwi.com
+/dffgbDFGvf465/
+/dffgbDFGvf465/YYf.php
+
+# Reference: https://www.virustotal.com/gui/file/b8a4f7ea245095dc674bd609437766941eb5d4c594055cc9780edf15442bbc04/detection
+
+0lmue.com
+
+# Reference: https://www.virustotal.com/gui/file/942411f2fa054ec621023c6b9b4ad3b92372697da43eb38d2b661f80e19e6deb/detection
+
+dota2id.org
+
+# Reference: https://www.virustotal.com/gui/file/0173459f625e82c08282f2b312bdcdda9756c0ceaa593cfd7fb1a461c647eaee/detection
+
+popdown.me
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60 (# Pony)
+
+0uk.net
+365daysfreiqht.com
+777rhims.dhcp.biz
+aagigantic.su
+ads-ti.com
+advwebs.com
+afo-pikin.favcc1.com
+agreleen.com
+alabaisse.com
+alabaka.net
+albani.yzi.me
+albany.yzi.me
+alexprivate.tinhost.ru
+alhaidenelc.com
+alibooostr.us
+allverdantgroup.tk
+amaobi.besaba.com
+amerillia.net
+anet.fb7928fh.bget.ru
+asharf.com
+avscanner.in
+babax.esy.es
+bestali.in
+bobypony.olympe.in
+botsworkingnets.net
+bubusender.com
+chaseonlinepc.com
+cnboariufeng.com
+coco-bomgo.ru
+collectcoins.net
+cottontail.co.in
+d-mmoney.favcc1.com
+dazdraperma.co.uk
+dc-oc-01.org.ru
+devicewindow.comule.com
+dewnfoods.com
+diceroll.in
+die-smartfahrer.de
+dsffdsk323721372131.com
+e11bay.com
+ecoed.com.ua
+edwkapou.esy.es
+em826392.ru
+eminem1234.serveftp.com
+epvpcash.net16.net
+erogluboya.net
+etonow.comule.com
+eurotsl.com
+exportusa.in
+fasunshi.com
+foxgroups.in
+fredpappy.com
+freefinder.me
+frostite.biz
+ftp.amibyte.com
+garmonika.com.ua
+getdealss.co.in
+goodyz.yzi.me
+greatworks-inc.in
+gtatoronto.com
+guiness.qubelab.org
+guisoft.pw
+h65276.srv0.test-hf.ru
+hfcindia.org
+hillsboraviation.pw
+holytrinitybless.in
+igwe.3eeweb.com
+indo.3eeweb.com
+ing.postb24.in.ua
+interconsort.net
+jahexportandinport.in
+jinglyy.in
+johnbrown.hol.es
+jokehkingshf.tk
+kimclo.com
+kizzy.favcc1.com
+landmarkprod.com
+lanzaplayeras.mx
+lllpo.zz.mu
+loft2126.dedicatedpanel.com
+lovingthe.crabdance.com
+m21lz2fzd.mdutmdu.in
+marmedladkos.com
+maruti0s.com
+masssucess.favcc1.com
+master.yzi.me
+mecublisxlux.us
+medgames.uphero.com
+megaspmimzx.favcc1.com
+meziamussucemaqueue.su
+microsoft.blg.lt
+microsoftntdll.com
+mideastshippinq.co.uk
+mindzalloted.favcc1.com
+mix.hostreo.com
+mm1lz2fzd.mdutmdu.in
+mo.favcc1.com
+multidantrading.in
+mw1lz2fzd.mdutmdu.in
+my.digitalfilth.info
+n21lz2fzd.mdutmdu.in
+nettlerok.net
+neways-cn.com
+ng1lz2fzd.mdutmdu.in
+nodulling.in
+nozeuropan.esy.es
+nvvkcabizsllcgroup.net
+nw1lz2fzd.mdutmdu.in
+oboyouk.comoj.com
+oscanpro.favcc1.com
+ow1lz2fzd.mdutmdu.in
+pantamati.com
+peakedcar.info
+perfectmoney.info
+photographytoday.webatu.com
+pont.dyndns.dk
+ponystealer.hol.es
+propcons.in
+puppyclothesshop1.net
+rasakltd.biz
+rays-auto-parts.net
+reloadspamzx.fav.cc
+rockalex.0xhost.net
+rugate.pw
+ruinforums.com
+ruyalwayaco.biz
+samebizon.in
+santeol.su
+saraconnor4you.com
+savenetquest.com
+saxychiomzy.info
+securenetsystem.net
+securityguard.co.in
+settlemee.com
+shreakspamx.favcc1.com
+smoothpanelz.allalla.com
+softupdateconnected.eu
+soulflower.com.mx
+spimixspmzy.favcc1.com
+srnsaexpress.com
+strejdaido.cz
+sunbulahqroup.com
+swatnet.comoj.com
+tambira.in
+teanalitica.com.br
+terra-araucania.cl
+timago.biz
+timetojoy.in
+toolsinc.info
+tripplem2.com
+tuttyfrutty.hol.es
+urna4utvarcbis.net16.net
+vivaciouz.biz
+w-optimierung.net
+warlordsltd.in
+whiaz.ru
+wienu.com
+xlm0bile.us
+yegor.fr
+zenderr.net
+zluka.name
+
+# Reference: https://www.virustotal.com/gui/file/1ea560ea6d7b723313419c77f1c46fb727d371c78157a71459b6a3f04ffb2902/detection
+
+avastsupport.net
+rop.so
+
+# Reference: https://www.virustotal.com/gui/file/3590b486fedb97947e44183ac55e23ece55b72bc3a144604bb0f39d1e00f95ff/detection
+
+arya-foundation.de
+familiapaixao.coconet-us.com
+jaycees.co.uk
+maschinen.be
+oliviagurun.com
+onecable.ca
+onlyidea.com
+originalpizzaplus.ca
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60 (# Madness)
+# Reference: https://www.virustotal.com/gui/file/ba8c11ce14def85cbc2e8a7fdb9caae477bcf736e28fc616fd239eb33f0e925e/detection
+# Reference: https://www.virustotal.com/gui/file/427a03f9a009f9953710b88c51748aceaf974b51105597c8a1b046dffc1e700d/detection
+
+cpnal.ru
+opror.ru
+
+# Reference: https://www.virustotal.com/gui/file/f6f4a51766efda3e303eba71fea8d6bc4c844a73df6f5dae217642f6435a8c49/detection
+
+comp247.biz
+gnom247.biz
+nadman.ru
+
+# Reference: https://www.virustotal.com/gui/file/5afdea95896046a89ddc35149bce14ace5b9b7629d7c16e682cc58d5383ddc30/detection
+
+freepronxx.biz
+
+# Reference: https://open.appscan.io/article-235.html
+
+1x1exit.su
+acasiaenterprisellc.ru
+acpaeqypt.com
+adobecss.su
+agulino.com
+alexhillipark.ru
+alexshippingworld.ru
+almerlmarpuerto.com
+apaksahasp.com
+arabcontractingsnetwork.click
+archerchern.com
+arlights.net
+arnistorner.xyz
+ava-company.us
+besic-cn.com
+blasternoon.ru
+borployfoodlndustry.com
+bringthemfresh.ru
+brsbrokerz.com
+bunnertop.ru
+chakratae.com
+charkolweb.com
+chubygroup.ru
+chucks10.ru
+civicbrokers.org
+cnsmlco.com
+coco-cola.org
+deliber.ru
+di-san-tr.com
+drielini.top
+eeceeg.com
+eglsm.com
+elihanss.ru
+enesmarketing.ru
+exipogreen.ru
+forwardever.ru
+frank74148tmweb.ru
+frexhprince.ru
+fyzeeconnect.ru
+galladentals.com
+gamneit.com
+garvrelslinkz.ru
+geodurgg.com
+ghdm.site
+giblink.xyz
+goldshoppingclub.ru
+grcfvspd.ru
+gtrtooloo.com
+htmltrainer.su
+iiltd.ru
+ik.agulino.ru
+injprivateserver.ru
+inquitity.com
+inuosbug.xyz
+jonnychangginc.ru
+jsadas.site
+kaylastwan.com.weeklypayla.com
+kimki.ru
+kingskillz.ru
+kogicyberboi.ru
+kolno.pw
+kpic.co
+krovne.win
+kudisman.ru
+leadskit.ru
+lekkihunterz2.xyz
+loveclara.su
+megaagro-my.com
+metalgearexploit.ru
+microintegratedservice.com
+microsoft-security.co.uk
+milanosss.ru
+mnbvcxz.biz
+montenig.com
+mqbearing.club
+mylicense.ml
+nitrolasty.gdn
+nuturekit.ru
+oceanshipforafrica.gdn
+olujan.ru
+onwajan.su
+opemdiprojat.com
+opixib.bid
+osmn-no.com
+oxylala.gdn
+ozo.microintegratedservice.com
+papergang.ru
+planetpharma.ru
+pmscmarineinc.biz
+poongshim.ru
+powerbal.ru
+qliuspecialsteel.com
+qu.agulino.ru
+refaccionariavertiz.club
+ru.agulino.ru
+saygeebusiness.com
+secureaccount.ru
+servkillfeel.info
+shimedzu.eu
+slyopez.ru
+stayclams.com
+street-esteem.ru
+street-men.ru
+street-mens.ru
+street-takeover.ru
+street-upp.ru
+street-up.ru
+street-ups.ru
+sugesfares.com
+swissled.club
+syntechfibers.com
+tee-gr.com
+theonlygoodman.com
+tianythread.com
+tierastyle.co.uk
+ttmaiil.com
+usacouriers.ru
+vshiips.com
+waba.gdn
+whytepolo.ru
+wonforhall.com
+xaba.gdn
+
+# Reference: https://www.virustotal.com/gui/file/91def39bc00beb241d07226f1b9d1eebf46ecf7b3622f1ccb30de82e464925ce/detection
+
+testdomain123.dynamic-dns.net
+
+# Reference: https://www.virustotal.com/gui/file/685dd0a2d39c3db14cf3ee7abc804dbfa084060f99555db7e1ed915f99d6aab6/detection
+# Reference: https://www.virustotal.com/gui/file/74e82708e5ac9eea253f3701bc625cef1ffc6385ee96954ddc586e198bc8dd41/detection
+
+mymoney.000a.de
+
+# Reference: https://www.virustotal.com/gui/file/13f7feca03cc4658ae36f4c59ac0234ffbbb6f98c94c5473f4cd0c1affdcde5e/detection
+# Reference: https://www.virustotal.com/gui/file/f89b4386af8382bc0b8d2ed71a3bd929176ea00b22bfdeb5b284364f5ad1598f/detection
+# Reference: https://www.virustotal.com/gui/file/94378919a54c15a4600c728d4833ae00888b91cf15460789a475220875d7b804/detection
+
+cyprolicker.org
+giimaforni.com
+potpourigroup.com
+tmlbd.com
+
+# Reference: https://www.virustotal.com/gui/file/8fbc1d234402e61bd58afb8d5124fed94c6abdc5d2cd560a1aec462c7c3b0c22/detection
+
+energost.pw
+
+# Reference: https://www.virustotal.com/gui/file/fb286261e05ecc59129b190cdfacb18bad5d95be8f62115820128af050969df8/detection
+
+a0158977.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/3b68a7e2820d6848717d3d22d1f6d7f347a3e096e13d8aa1000fd22a068139f2/detection
+
+a0158290.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/922ac28ee8ee1930f12578a25ed96ad79c00d439b77734ff722ba82c34087510/detection
+
+a0157140.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/991b538d3123c239543cf6332fb9623b7d328ffcdd5e967696b60bd7c6dcbbc4/detection
+
+a0159320.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/bd9a1053022aa38cd309ab6e38fb746689aa69c06a93c1a68aeb3fd01199debc/detection
+
+xeroxvvv.website
+
+# Reference: https://www.virustotal.com/gui/file/c560d5a0ce4b3498d9bb47ce3c58b2445ec51b6200f9afa3de329aa2e65206cf/detection
+
+http://45.15.143.189
+
+# Reference: https://www.virustotal.com/gui/file/526549f533edee2e4f4ed7ce51ebbae320f3190db918820390cef0d298bc7536/detection
+# Reference: https://www.virustotal.com/gui/file/33c117b46e358136803cb654483926a8eaaacd923b994c76b420d038550e6ba0/detection
+# Reference: https://www.virustotal.com/gui/file/67789544d47cf8caaeb828baf0a5c8c1876ec6b8d2e04ae240760d131317f1a2/detection
+
+derrick0987.hopto.org
+flylinks.damnitjim.xyz
+i-waveco.info
+oasispmp.us
+
+# Reference: https://www.virustotal.com/gui/file/e428cd3f032a62fac30bf1b4ee4f7e4f625d8fc8c201a6bf646b26fb23fe4e93/detection
+
+dettar.xyz
+ezpz1.xyz
+
+# Reference: https://www.virustotal.com/gui/file/6e9132df04a65617f41d4a35fafbcf29b99d9d3e2296e933cedac884d89e18c4/detection
+
+fojasoftwareaudio.ignorelist.com
+
+# Reference: https://app.any.run/tasks/9d800c6a-aac7-4cc0-8978-de39b14698ad/
+
+rowleftette.com
+
+# Reference: https://www.virustotal.com/gui/file/5bb23670b1fd229c3ba9ab0b25839e715a90af8f01654f4b92134f7692e117fb/detection
+
+http://176.111.174.247
+
+# Reference: https://app.any.run/tasks/e3e3bc92-b1d0-423c-a25a-56830034c337/
+
+loomisnet.info
+
+# Reference: https://www.virustotal.com/gui/file/dbe3698b1bf2cbaec7eb37173913f94c83556e2767b6721b7d4ef1a444de4794/detection
+
+http://185.212.47.95/api.php
+
+# Reference: https://www.virustotal.com/gui/file/933784c037d301842a260f238f52dd54c4d2028155577cd239ce6d949802adaa/detection
+
+stikerivk.ddns.net
+
+# Reference: https://twitter.com/wwp96/status/1370801379531440130
+
+http://78.198.121.158
+
+# Reference: https://twitter.com/wwp96/status/1372012538699862017
+# Reference: https://app.any.run/tasks/4187356f-eeec-40e9-8127-0d242ae6fb5f/
+
+http://62.76.179.74
+
+# Reference: https://twitter.com/wwp96/status/1372553096438628356
+# Reference: https://app.any.run/tasks/32c1d17c-6eb6-4720-99b5-5d92305f3ecc/
+
+/b99c0a8e1a09e668a18f59825/gate.php
+
+# Reference: https://www.virustotal.com/gui/file/0dd3c483fb5ce9e2690ebab5c31d2356591166039f8df45a82bd24314add242d/detection
+
+joeing.warzonedns.com
+
+# Reference: https://www.virustotal.com/gui/file/76b1894c0d9461eabab5edfc25e3fc7964e87f33725a4c2304c45b0d0c4e1e8f/detection
+
+a0482000.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/2396718872bb6f8a4828eb6590eae58adc2f2826678e08d6bb6030870c2aa960/detection
+
+http://203.159.80.141
+
+# Reference: https://www.virustotal.com/gui/file/dfa7badf7435335ac99b94bde2d70810fc36d5055cf0acf8b96120162bef34cb/detection
+
+http://45.144.225.196
+
+# Reference: https://www.virustotal.com/gui/file/3769c64f13b9f72951967ee639b7ecf589145f1e016650d6974fcd3cbbc90511/detection
+
+http://150.136.155.177
+
+# Reference: https://www.virustotal.com/gui/file/33e21a62ea0c6a0a228de14bc82c2a7c18aec47b648e616e5059c261ae4726ae/detection
+
+105.112.36.26:19841
+181.41.214.6:19841
+185.166.236.103:19841
+46.36.37.167:19841
+59.125.171.210:19841
+kasmac-tw.com
+salvation.noip.me
+slyopez.bounceme.net
+
+# Reference: https://www.virustotal.com/gui/file/18fb2937c40f595a4e6453e2a3574e09cbe188b1da1deb80cf83bb475ef5cd5a/detection
+
+23.105.131.188:1718
+qusar.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/f91da4e87e76115d71aaf4a69fecb79539bd1c142a85c97ec03fb27437ae2403/detection
+
+faridatiannery.com
+
+# Reference: https://www.virustotal.com/gui/domain/nobletech1.tecktalk.org/relations
+# Reference: https://www.virustotal.com/gui/file/834dbe56e650626ed503c7255ff4aff1ec9588f24bf36c950e7c20777d6ecb1b/detection
+# Reference: https://www.virustotal.com/gui/file/8d114fefa019925f29db2acdb0ef80702d1c1f8d95f75f90b468a3322abe861b/detection
+
+nobletech1.tecktalk.org
+
+# Reference: https://www.virustotal.com/gui/file/b13e5d7b8bda9a4278fd1961b7b1ac31c9c25155ce96dffc17e17dce8b742f05/detection
+# Reference: https://app.any.run/tasks/79717dde-799f-4a7d-91bd-3987bd926cce/
+# Reference: https://app.any.run/tasks/dc829ccd-4333-4f57-9546-3c590c03d697/
+
+egamcorps.ga
+impexsounds.xyz
+meshfabricspad.com
+/%7Ezadmin/
+/%7Efifaregi/
+/%7Ekudi/
+
+# Reference: https://www.virustotal.com/gui/file/a82a33c17a1e531adff6d061370ba9afc05e1bb1a1097197c4121c80461cd535/detection
+
+ofm-it.com
+
+# Reference: https://www.virustotal.com/gui/file/e8c043918b44ff6bfcf1fb41825ae590054f399a1973c643eaa0e2ff393249fc/detection
+
+secured-login.tk
+
+# Reference: https://www.virustotal.com/gui/file/f2c9ce73d96c24cdd9375eb2c3a4e5ae8477351c616fa845f14317dc85037375/detection
+
+solaceday.xyz
+
+# Reference: https://www.virustotal.com/gui/file/bb431d3b2815d141ddd57eaf0e9f4333af6580c6c8d2ec8f5670c8bea9a892af/detection
+
+koisking.xyz
+
+# Reference: https://www.virustotal.com/gui/file/935b5a54daf00b91242448e8ca8a44bd7c39d925b2f72f99f9135d1b3faefb3b/detection
+
+zuluworld.ddnsnet.ga
+zuluworld.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/2a03e35e53b9f75e1f5bce28bdc9ea546ff84cfcaefda84325d939e62fe5264c/detection
+
+checkz.tk
+
+# Reference: https://www.virustotal.com/gui/file/54903304bf644cddf60994fcc7b5e7ca6e5b74f79d574b1d1ec727606e05c16e/detection
+
+pepto.ga
+
+# Reference: https://www.virustotal.com/gui/file/698b288d7a617787d5a1ff571a027a8fc307dd499f590650697d06e0d34deaa0/detection
+
+pepto.cf
+
+# Reference: https://www.virustotal.com/gui/file/978ecd3c93586ae5214bb7381e756d5e810f9b7e0bda17bd89a1cbbe8ffb52fd/detection
+
+pony1.microsoftups.com
+
+# Reference: https://www.virustotal.com/gui/file/a6f175e435ec43d35521cf9d1c4118c07623e44cac5127e56aec2210c272f0c1/detection
+
+pony2.microsoftups.com
+
+# Reference: https://www.virustotal.com/gui/file/f7879a8722b8e1a6cb9ec42748242cdddc6eaa35df690f04bb4835aefb991230/detection
+
+pony3.microsoftups.com
+
+# Reference: https://www.virustotal.com/gui/file/ae164e6fe6d8eb7d3b09061208d44095c3c2f0eadb0ef6fb04361a381c615e65/detection
+
+pony4.microsoftups.com
+
+# Reference: https://www.virustotal.com/gui/file/9a7d9a63965899ac048b9e4dfff2ab8029f6f79f853ea76d545835609fa62b79/detection
+
+himam.club
+
+# Reference: https://www.virustotal.com/gui/file/3172705f036d6da3c2cd2efc641f7acd4f78e432c484a584a33856daa4a6df02/detection
+
+bolyton.com
+
+# Reference: https://www.virustotal.com/gui/file/d9afb91b266642909b2f207b203b2bad021f3a7e7870bbe5a00ea5b81c939009/detection
+
+persio.gq
+
+# Reference: https://www.virustotal.com/gui/file/3f3a8c2270dfdd5fa571549ed477566a069cc8ea227eb0e928bc431f0bbfc441/detection
+
+ce96459.tmweb.ru
+cn56515.tmweb.ru
+cq69676.tmweb.ru
+cq80409.tmweb.ru
+ct90806.tmweb.ru
+cy36186.tmweb.ru
+cy65488.tmweb.ru
+
+# Reference: https://www.virustotal.com/gui/file/7125944ea9af9bf9bb41e4c09354b74da92f53a6a7c87ade45663cefac5626a6/detection
+
+central.pk
+
+# Reference: https://www.virustotal.com/gui/file/4bea241faedf7f07c8a529009c0f670727848224412589dc6ad55bfaf44a9bf2/detection
+
+vsama.com
+
+# Reference: https://www.virustotal.com/gui/file/5d06644da235c19854e399bfcf67f6ed6f5751759ac990d7e7fc79c9a0e76543/detection
+
+argeesportswear.cf
+
+# Reference: https://www.virustotal.com/gui/file/1e255c34a95039f7d97a945a7da11a16d5a75e1233f91b20f22805fc86518bf9/detection
+
+z92074ju.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/0dfe8de9acd280a618796367d37eb19d87238a5f9c4b1c81f25e2ec85def4bde/detection
+
+chunkgrind.com
+
+# Reference: https://www.virustotal.com/gui/file/d06dddaa311faa9ceba12a7345f43cdc2a9985ca2dfbf8bc96079fae22616ee1/detection
+
+scb-hk.com
+
+# Reference: https://www.virustotal.com/gui/file/c1dfde40b14cec8a49dbe6b6d6470fa9de15348e8d7939c5b92c9522d9e41230/detection
+
+secondgate.pw
+
+# Reference: https://github.com/hardenedlinux/hardenedlinux-zeek-script/blob/master/scripts/frameworks/intel/OSINT/CYBERCRiME-03-03-19.txt
+# Reference: https://www.virustotal.com/gui/file/d9f75af2f8193b6ba326987d3fe983d06bc5ca1285095a51914117c30f4d7f3e/detection
+
+filebee.pw
+nicekoks.pw
+
+# Reference: https://www.virustotal.com/gui/file/5a0be6d19d37d25adf511f7b16f09acae9cd5712d0a4870d1e2a8e875f2c9bb5/detection
+
+tonyguo1234.serveftp.com
+
+# Reference: https://www.virustotal.com/gui/file/3936c7803d8d75fdde372bbaad85fe9b197789b7eaa9901a835cb2f3adf18c0f/detection
+
+ponyhorny.xyz
+
+# Reference: https://www.virustotal.com/gui/file/26ec3c1d781c78260806f821c3037592bb650c5939b89cd91fbaa4ccf1ea3619/detection
+
+geckion.gdn
+
+# Reference: https://www.virustotal.com/gui/domain/spinaert.com/relations
+
+spinaert.com
+
+# Reference: https://www.virustotal.com/gui/file/7c9a77d2596ca41eeff2bb4e5ff0c7699d47f7d270bd90635438bf36bbcce776/detection
+
+synclogs.com
+
+# Reference: https://www.virustotal.com/gui/domain/kaydante.biz/detection
+
+kaydante.biz
+
+# Reference: https://www.virustotal.com/gui/domain/lamdamartime.com/detection
+
+lamdamartime.com
+
+# Reference: https://www.virustotal.com/gui/file/167308e909225a767e9ac239076c9d33e22143a1975ca45d7eddf6b6cc948c40/detection
+
+lmiseamasters.com
+
+# Reference: https://www.virustotal.com/gui/file/1a2a1c0dc64627a7af7589c1eef22301b7470de9c397069c11e2442537d3fbfe/detection
+
+atlass-eg.com
+
+# Reference: https://www.virustotal.com/gui/file/18f3aaaeb7d86c3e93942597cee21fb9f1705d1dac9827819dcd34aef919abef/detection
+
+mypony.nl
+
+# Reference: https://www.virustotal.com/gui/domain/myponyhost.hol.es/relations
+
+myponyhost.hol.es
+
+# Reference: https://www.virustotal.com/gui/file/75c398c26f0cf9ae54e1abe2225032cf343b225b9028c3dc4beac951c7c59795/detection
+
+tai-chucks.ru
+
+# Reference: https://www.virustotal.com/gui/domain/tiptop1.info/relations
+
+tiptop1.info
+
+# Reference: https://www.virustotal.com/gui/file/fc61feb2486002c03deb8284376e3693da84dc94a95cc4ea4c636386a6a2d772/detection
+
+ewfplkgb.cf
+
+# Reference: https://www.virustotal.com/gui/file/bc67b90e2a5c0631ce748b2d6781cfc7e1b945b7db71c4d31bbb7282c139cc47/detection
+
+http://104.233.105.159
+
+# Reference: https://github.com/hardenedlinux/hardenedlinux-zeek-script/blob/master/scripts/frameworks/intel/OSINT/CYBERCRiME-03-03-19.txt
+
+ctssint.com
+
+# Reference: https://www.virustotal.com/gui/file/5f2fe8dff49820aac1cc8b8a6961fac8645baba35fcdd2c57216ea35498e52f8/detection
+
+mathargaehan.com
+
+# Reference: https://www.virustotal.com/gui/file/9e1a2c9d96432c50595155d6b3f4f505be90d4fc957a647e31a804c534fa2e3e/detection
+
+al-hadin.com
+michmetals.info
+
+# Reference: https://www.virustotal.com/gui/file/7d399fc4c0333a8d2c01543a0ab1045c7d1f895cb65f69f812be35fd65e30047/detection
+
+sroomd.ddns.net
+sroomdd.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/6663c56849a20cee6564936674af41ad2cffacdad78f759366bd0468ad8eb0b7/detection
+
+http://96.8.121.170
+/api/resultado/?format=
+
+# Reference: https://www.virustotal.com/gui/file/960824c28cba202b8945e17494b07ac221c205c4edc3af4e1d8986cda5beff9c/detection
+
+jack-wilson.cf
+
+# Reference: https://www.virustotal.com/gui/file/2f3a2fe6190f57532a8f5b7a10aa776fb03e049e2bf532a8869d2043eac39728/detection
+
+3123456789.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/721e101bf6b20af8ed42cef7ddb157063aa34f63d3d29c003909312f85b65480/detection
+
+adssss.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/9fbb4dbc62444207d6ca42ee254b26b7b1644d9ff39935bcbe9b8e3849fe0e02/detection
+
+http://185.62.189.113
+
+# Reference: https://www.virustotal.com/gui/file/f9d66a4e3ff5dbb006b7bfb426c7e83df2f2e37f010461566ee0484f1b08a240/detection
+
+jonathanlow.net/cul2/panelnew/gate.php
+
+# Reference: https://www.virustotal.com/gui/file/a6d00d121778ca7809e39346ade80e7616e0619fa87ef6bc31634fbb2abd0769/detection
+
+empathydesign.org.uk
+esig.net63.net
+marxveix.site11.com
+ssearchh.com
+turbosquad.bplaced.net
+
+# Reference: https://www.virustotal.com/gui/file/725bdc0a1857d5e0a1b6253522cf4df1dfe944f9aba7724d373b6c2098033dd6/detection
+
+oknoff52.ru
+
+# Reference: https://www.virustotal.com/gui/file/1d11537b444f17eae1b522f53890b882c8a945adba7141dd7c1f0ec1bfa1d723/detection
+
+newgi.usa.cc
+
+# Reference: https://www.virustotal.com/gui/file/f90777117e3bb49e91456053d91ef9522dcf291af8faab95001d1c4f802de9e9/detection
+
+skyband.in
+
+# Reference: https://www.virustotal.com/gui/file/afa750fb41871f85c2607569b2e4a6a7cc4b0b66d4eb3b4ccc9dbb32ff4d68f7/detection
+
+http://23.227.199.106
+/karat/index.php
+
+# Reference: https://www.virustotal.com/gui/file/d697c9a0bcea3ba4ddb0e1267064f9de83ef26efb4ab7c85c0d3396ebb0b7d95/detection
+
+dovepersonnel.com.au
+fameleathers.com
+familyminicab.co.uk
+fashion-for-style.de
+mydocumentsholder.com
+pizdetshuiovosboduna.com
+
+# Reference: https://www.virustotal.com/gui/file/a59720e7db0f1edc4434365ae7efc1aa2bf820cb8705441f61c177cb001a70c1/detection
+
+manualportia.com.br/dope/panel/
+
+# Reference: https://www.virustotal.com/gui/file/2ce7ad2edfed9bf00a5df059bc2e83d4e5570765d1ce3b512926a32ba458b1b6/detection
+
+superiorbroomproducers.com/opjis/UD099/
+
+# Reference: https://www.virustotal.com/gui/file/129223119c92e31c9f9d47c61f2301f0b568b240b9180361a57e42dcf52cb3dd/detection
+
+crawfishtx.com/wp-cmgp/default/
+
+# Reference: https://blog.talosintelligence.com/2021/12/threat-roundup-1126-1203.html (# Win.Malware.Ponystealer-9912671-0)
+
+salak.pw
+
+# Reference: https://www.virustotal.com/gui/file/0c91896109af7025decb78d2c7e546b23eab97dd96968976ccf044fbd16e3405/detection
+
+modevin.ga
+/~zadmin/lmark/
+/frega3/mode.php
+
+# Reference: https://www.virustotal.com/gui/file/e528b03250e855d31198f34d6c840ec4b5dfbd01202c7404377cce609d4b1214/detection
+
+http://192.162.244.13
+lefter.bit
+uniblue.2zzz.ru
+
+# Reference: https://www.virustotal.com/gui/file/12545537ef94ba931435e0a82983a0ff343522f014f692f2dd90336c85dfd335/detection
+
+classicbox.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/39264c053a2962b37336c71df5459cf97ad8f9df96618da0d674a2085419bc3e/detection
+
+sharonbooks.ru
+
+# Reference: https://www.virustotal.com/gui/file/0031b1b89692af1336e4e7481de0afe7caa87d91b35fa3fd11ca0a49a3d102c9/detection
+
+79.18.95.170:38670
+youetube.zapto.org
+
+# Reference: https://www.virustotal.com/gui/file/1c30bf38f26a76b530d6b781b0ea13180a7f4591a7e571e9a5f759052b85ccae/detection
+
+lapchallenge.co.uk
+
+# Reference: https://www.virustotal.com/gui/file/b723d885817c27acb2d3ea053e0a8c41933368b93dbb46a7c46103c492425cf4/detection
+
+codego-soluciones.com
+
+# Reference: https://www.virustotal.com/gui/file/00012e96d598a364c78296f9159cbf242f02a3c1a9780b446f8b31f8333778ae/detection
+
+wkfarms.com
+
+# Reference: https://www.virustotal.com/gui/file/3939a9494bb1636232937e57243c7c362fc9c08a0f9944509b60cde9943993e9/detection
+
+sassyladywrites.com
+
+# Reference: http://blog.talosintelligence.com/2022/04/threat-roundup-0415-0422.html (# Win.Trojan.Fareit-9944778-0)
+
+ckimajuy.pw
+fieoarrzfvi.com
+micnetwork100.com
+network-dnsspace.com
+oygsulaeliaa.com
+qcmldfo.com
+rosatip.pw
+sdideme.pw
+tor-connect-secure.com
+vbtlnzluxcyioi.com
+vkwoucy.pw
+xirukitu.pw
+xuuvbrhkevi.com
+zzoygsulaeli.com
+
+# Reference: https://www.virustotal.com/gui/file/054e3d8d715e98a49edcdb3b3c5d3f1677cbd2787c567c276216e524a5c97c38/detection
+
+doasure.biz
+
+# Reference: https://www.virustotal.com/gui/file/7d97af381eb9d8cb79339af7195e3b6e30874b60c12d80e4cf226bcdf8600cd9/detection
+
+movshopclub.ru
+
+# Reference: https://www.virustotal.com/gui/file/ff3256967c720726f68e95b9cde068dac5cc05180c9b398d104e0057b999936f/detection
+
+usaalkz.biz
+
+# Reference: https://www.virustotal.com/gui/file/0afed957efae425cf49122c7f0345f4713e98494ce1d184926b35f58f3a22914/detection
+
+79.134.225.120:3003
+kenzeey.ddns.net
+kenzeey.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/32c8a5931bdcb714abe3b5dd557131ea457950916f604abfaed5c95f800aa808/detection
+
+195.22.125.25:7001
+server999.ddnsfree.com
+
+# Reference: https://www.virustotal.com/gui/file/485cc563627e7a8f7edb4a45a9b9a343df05e4e8b47aff9c1f2aa2f600af5ac0/detection
+
+xwanucub.club
+
+# Reference: https://cys-centrum.com/ru/news/suppressed_the_activity_of_pony_botnet (Russian)
+# Reference: https://www.virustotal.com/gui/file/d1307a33d3143abff75c8681bc2fb719108b66ef91c2cbe69f4753506ac02646/detection
+
+steaacommunity.com
+steamammunity.com
+steamcommunita.com
+steamcommunitg.com
+steamcommunitj.com
+steamcommunito.com
+steamcommunitr.com
+steamrommunity.com
+steamtommunity.com
+steamurmmunity.com
+stearncommunty.com
+stearnommunty.com
+steaxcommunity.com
+
+# Reference: https://www.virustotal.com/gui/file/2fedc7f7b7399639ebd103b9f5133fafb53439392db1f12a7e7316a28d61b45f/detection
+
+zub.http80.info
+
+# Reference: https://www.virustotal.com/gui/file/8159704f8517ba8d8a2f9ea6ec42f5fd4e18438c940806e48dcdd726b923ab66/detection
+
+iamthecause.top
+
+# Reference: https://www.virustotal.com/gui/file/107b89450312c0b8f73df875bbe340fc6f8ab22d0aa9552446b397787f0ed13a/detection
+
+liverslove.info
+
+# Reference: https://www.virustotal.com/gui/file/9b3ad950a894f1680801b8b7af8b8bbb075958ffe8fc6f8bc7fb5e6d88e3fa11/detection
+
+http://37.49.230.114
+/asabot/gate.php
+
+# Reference: https://www.virustotal.com/gui/file/3a3e64a62b263e6c5438f0e7001dd25543c35d1335a2fdc925366f1deadaff07/detection
+# Reference: https://www.virustotal.com/gui/file/3f6a0a3f0a61f7f41d123aa6d05ff069ed61c45ba41115e23af68116435b118f/detection
+
+sobeteracotafancris.ro/eng/
+sobeteracotafancris.ro/panel/
+
+# Reference: https://www.virustotal.com/gui/file/003deef496877be169a7f9df55c5184bb6fd93e68ea271d0ed08d163fcd28c9a/detection
+
+loremipsumdolorsitamet.pw
+/ioqmy6chaa/q/index.php
+/ioqmy6chaa/
+
+# Reference: https://twitter.com/wwp96/status/1630343867781484545
+# Reference: https://app.any.run/tasks/1df39095-6b98-4629-b078-003ea384f7d6/
+
+jimmyxyz.com
+
+# Reference: https://blog.talosintelligence.com/threat-roundup-0324-0331-2/ (# Win.Dropper.Fareit-9994421-1)
+# Reference: https://www.virustotal.com/gui/ip-address/37.10.104.81/relations
+
+aoplts.info
+lekiaot.info
+leperyk.info
+lkeisa.info
+oekialy.info
+pdolea.info
+slekiv.info
+slepoz.info
+splwiu.info
+xkakys.info
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.222.202.123/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.222.202.129/relations
+# Reference: https://www.virustotal.com/gui/ip-address/31.204.153.97/relations
+# Reference: https://www.virustotal.com/gui/ip-address/31.204.155.160/relations
+# Reference: https://www.virustotal.com/gui/file/08f75b89e291bcd6712e071daad27a0e09d6f30181d8cd4c02258f472940f97f/detection
+# Reference: https://www.virustotal.com/gui/file/d3686a748a26927e00d7e73d6b6b87a1fd9c0abe46f5c26de2362f75c80eed62/detection
+# Reference: https://www.virustotal.com/gui/file/90d4f5e7a19ccf4808f5f0c658167031b91cd009129eb507a674559498257abe/detection
+
+ejsldk.info
+elkong.net
+timenow.pw
+timenow1.pw
+timenow2.pw
+timenow3.pw
+timenow4.pw
+api.timenow.pw
+
+# Reference: https://www.virustotal.com/gui/file/53ee4a0a65467163c859c444e5edf5bea0f7b4f5644ffb12464b655d18e63757/detection
+
+v-kolgotkah.ru
+
+# Reference: https://www.virustotal.com/gui/file/658cb6a53f085868d3c8b6d2a0b6f00759d1a2eb8cea90dc5b9b2f6f0639d80d/detection
+
+http://142.202.190.17
+http://142.202.190.23
+
+# Reference: https://www.virustotal.com/gui/file/36bcbf7b5cea389ae119019163efb70a9921202ae66e28d94ab42f1379e09952/detection
+
+http://194.87.216.52
+194.87.216.52:443
+
+# Reference: https://threatfox.abuse.ch/ioc/1198495/
+
+seelend.com/man/panelnew/gate.php
+
+# Reference: https://www.virustotal.com/gui/file/e74dde5d01ca4d3290eed959d167fa491f7fcfb0e13310e140723169ba315a4b/detection
+
+179.33.150.111:1021
+181.49.89.155:1021
+lachuli10.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/106c986c22fac131f917377156fc88cc8a69cd299e7d2eaf937feb78cef426de/detection
+
+41.58.80.200:13672
+cj26.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/061148eab7f0214019bd54971f8a5cd6d8741ef3b9fd2bfe154737581aab6a9b/detection
+
+burky419.ddns.net
+
+# Reference: https://threatfox.abuse.ch/ioc/1211848/
+
+hivamusic.ir/ch/p/gate.php
+
+# Reference: https://www.virustotal.com/gui/file/e1b068fecab1ab4ddd6ee7014f4e2ab5e66d608203a85428c664226d06fbc7ef/detection
+
+ios.exe.webs.vc
+ri.ios.exe.webs.vc
+
+# Reference: https://www.virustotal.com/gui/file/ced2e33337ab004feeadb97b963c919593c096ae762de8b874de120fe883d493/detection
+
+besternony.tk
+
+# Reference: https://www.virustotal.com/gui/file/bf4dcb3b5fd9251d6d393869f302dba6bf21d9bae0347cb11543c39dbf295170/detection
+
+serial-generator.com
+
+# Reference: https://www.virustotal.com/gui/file/b3c0039c9fd6ff4a6aa6ff8de841ea49ed8fe9374a7261b6f93edc9d73d09423/detection
+# Reference: https://www.virustotal.com/gui/file/6a88a2df56e28ac5f83f911b32f61a452a594c088d46d64d1c274253b24e4777/detection
+
+5.135.43.181:3360
+
+# Reference: https://www.virustotal.com/gui/file/1265745ab3319faea343b0eebb9f90cf73b916199bc013359053e28f47365dfb/detection
+
+pakarabi.net
+
+# Generic trails (heur)
+
+/d2/about.php
+/css/gate.php
+/krow/gate.php
+/mlu/forum.php
+/ch/p/gate.php
+/host/server/gate.php
+/fgdds/admin.php
+/fgdds/gate.php
+/flake/gate.php
+/gag/gate.php
+/garmin/gate.php
+/hafsf/admin.php
+/hafsf/gate.php
+/HASDK/gate.php
+/h0ly/link.php
+/LKJHGDS/gate.php
+/p/g_38472341.php
+/p/z05857687.php
+/phdpaswiw/gate.php
+/ponney/admin.php
+/ponney/callback.php
+/ponney/gate.php
+/ponney/index.php
+/ponney/login.php
+/ponnie/admin.php
+/ponnie/callback.php
+/ponnie/gate.php
+/ponnie/index.php
+/ponnie/login.php
+/pny/gate.php
+/ponychin/gate.php
+/pony/admin.php
+/pony/gate.php
+/pony/panel/
+/ponygrace/Panel/
+/ponypanel/admin.php
+/ponypanel/auth.php
+/ponypanel/gate.php
+/ponypanel/index.php
+/ponypanel/login.php
+/PonyStealer/admin.php
+/PonyStealer/auth.php
+/PonyStealer/callback.php
+/PonyStealer/gate.php
+/PonyStealer/index.php
+/PonyStealer/login.php
+/ponyz/admin.php
+/ponyz/api.php
+/ponyz/auth.php
+/ponyz/callback.php
+/ponyz/gate.php
+/ponyz/index.php
+/ponyz/login.php
+/ponyz/page.php
+/pony11/admin.php
+/pony11/api.php
+/pony11/auth.php
+/pony11/callback.php
+/pony11/gate.php
+/pony11/index.php
+/pony11/login.php
+/pony11/page.php
+/pony22/admin.php
+/pony22/api.php
+/pony22/auth.php
+/pony22/callback.php
+/pony22/gate.php
+/pony22/index.php
+/pony22/login.php
+/pony22/page.php
+/pony33/admin.php
+/pony33/api.php
+/pony33/auth.php
+/pony33/callback.php
+/pony33/gate.php
+/pony33/index.php
+/pony33/login.php
+/pony33/page.php
+/pony44/admin.php
+/pony44/api.php
+/pony44/auth.php
+/pony44/callback.php
+/pony44/gate.php
+/pony44/index.php
+/pony44/login.php
+/pony44/page.php
+/pony55/admin.php
+/pony55/api.php
+/pony55/auth.php
+/pony55/callback.php
+/pony55/gate.php
+/pony55/index.php
+/pony55/login.php
+/pony55/page.php
+/pony66/admin.php
+/pony66/api.php
+/pony66/auth.php
+/pony66/callback.php
+/pony66/gate.php
+/pony66/index.php
+/pony66/login.php
+/pony66/page.php
+/pony77/admin.php
+/pony77/api.php
+/pony77/auth.php
+/pony77/callback.php
+/pony77/gate.php
+/pony77/index.php
+/pony77/login.php
+/pony77/page.php
+/pony88/admin.php
+/pony88/api.php
+/pony88/auth.php
+/pony88/callback.php
+/pony88/gate.php
+/pony88/index.php
+/pony88/login.php
+/pony88/page.php
+/pony99/admin.php
+/pony99/api.php
+/pony99/auth.php
+/pony99/callback.php
+/pony99/gate.php
+/pony99/index.php
+/pony99/login.php
+/pony99/page.php
+/skysteal/
+/skysteal/admin.php
+/secure/gate.php
+/server/gate.php
+/steal1/gate.php
+/steal2/gate.php
+/steal1/POST.php?online
+/steal2/POST.php?online
+/v1/gate.php
+/v2/gate.php
+/v3/gate.php
+/v4/gate.php
+/v5/gate.php
+/v6/gate.php
+/v7/gate.php
+/v8/gate.php
+/v9/gate.php
+/v10/gate.php
+/vault/gate.php
+/vic/gate.php
+/wordpress/1/gate.php
+/panelnew/gate.php
+/udeogo/Panel/gate.php
+/zapoy/gate.php
+/4096/gate.php
+/ppp/ta.php
+/blob/gate.php
+/pny/admin.php
+/pny/0/panel/admin.php
+/pny/1/panel/admin.php
+/pny/2/panel/admin.php
+/pny/3/panel/admin.php
+/pny/4/panel/admin.php
+/pny/5/panel/admin.php
+/pny/6/panel/admin.php
+/pny/7/panel/admin.php
+/pny/8/panel/admin.php
+/pny/9/panel/admin.php
+/emailzloggz/gate.php
+/emailzloggz/
+/wp-cmgp/default/
+/internet_goo.php

@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: stomida stealer
+
+# Reference: https://x.com/suyog41/status/1911703095400157464
+# Reference: https://www.virustotal.com/gui/ip-address/45.59.120.75/relations
+# Reference: https://www.virustotal.com/gui/file/ce59c1a324f4e13b3a288152e26463e59d88df18f244dff726ead675bc6b01ea/detection
+# Reference: https://www.virustotal.com/gui/file/a5da02439c34528bd8ac08f776d66a72e7cf5ddc1d67226bc23b0178dffaabbe/detection
+
+amazingavocadofan.pics
+greyshare.pics
+sha420.pics
+sha420hashing.org
+sharevids.pics
+xzx.pics
+zxz.pics

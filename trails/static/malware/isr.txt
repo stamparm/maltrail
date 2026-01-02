@@ -1,0 +1,44 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1131930196213239813
+
+tamsuphunu.vn
+
+# Reference: https://twitter.com/ViriBack/status/1132037443421638657
+
+u19982p14982.web0119.zxcs.nl
+
+# Reference: https://twitter.com/killamjr/status/1146152785458683904
+
+smkamsir1parepare.sch.id
+
+# Reference: https://github.com/silence-is-best/c2db#isrstealer
+
+expressdeliveryfx.com/boss/index.php
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, ISRStealer)
+
+bipcharlotte.com
+minsoftware.vn/fresh/PHP/
+
+# Reference: https://app.any.run/tasks/4cfee3d9-a2b3-4b5e-a009-5c58b4982a67
+
+dukevinchy.com
+
+# Reference: https://www.virustotal.com/gui/domain/megaeditores.com/relations
+
+megaeditores.com
+
+# Reference: https://twitter.com/ViriBack/status/1132037443421638657
+
+u19982p14982.web0119.zxcs.nl
+
+# Reference: https://twitter.com/ViriBack/status/1069980631805894656
+
+bot.jefferyworks.cf
+
+# Generic
+
+/isrstealer/
+/sharpstealer/

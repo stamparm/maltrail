@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/mdmck10/status/1656999781275770882
+# Reference: https://www.virustotal.com/gui/file/1aa28a80d8de14c9a66f7983766cfd50ed751e4f083bc3c37b46c93d3be50bfa/detection
+
+deltastealer.love
+api.deltastealer.love
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-19-v10327/574
+
+deltaproject.us
+deltastealer.gq
+deltastealer.xyz
+
+# Reference: https://otx.alienvault.com/pulse/64677a23db27c28b787d5683
+
+api.deltaproject.us
+api.deltastealer.gq
+api.deltastealer.xyz
+cdn.deltastealer.xyz
+mmarcoxx-psychic-space-fiesta-7qwqgvrqjjq2rw7q-8080.preview.app.github.dev
+mmarcoxx-zany-cod-qr6rw79rrqqc99w4-8080.preview.app.github.dev

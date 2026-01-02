@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: stlfun_stealer
+
+# Reference: https://twitter.com/crep1x/status/1694042250563698930
+# Reference: https://tria.ge/230822-vpw3tadh38/behavioral2
+# Reference: https://www.virustotal.com/gui/file/f553d942168368a9afff0df4bddf8471f38b021c020253660f7f8250c3e7d42a/detection
+# Reference: https://www.virustotal.com/gui/file/99f2690e170676456fafc2009d5f7f8212b70f2e1de451d6c1ffe2375560bbf5/detection
+
+194.50.153.170:5236
+82.115.223.228:5236
+blen6er.cc
+scetchup.cc
+tradin9view.cc
+
+# Reference: https://www.virustotal.com/gui/file/88b5fcdadaabef8262ff4de81b6d262221a0408a074bfaf8e85801676ca2bf91/detection
+
+82.115.223.228:8080

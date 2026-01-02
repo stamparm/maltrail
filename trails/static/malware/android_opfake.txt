@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2012-012709-2732-99&tabid=2
+
+opera-mobile.org
+ioperamini.com
+opera.on.lc
+operaupdate.net
+operamini-rus.com
+operamini-last.com
+
+# Reference: https://www.virustotal.com/gui/file/a2609347c8cbe70ffde47c454cff1ab391764f6af9213043e7eb0ff99044cfb4/detection
+# Reference: https://www.virustotal.com/gui/file/fc75e905c4c1e18bc422a1a3ec79a7d83d65729ed07b8f3857555edd7c56e19e/detection
+
+fiiiiils.net
+gaga01.net
+
+# Reference: https://www.virustotal.com/gui/file/01abeda7ebb06a8a021e42f5e91aa434ef44131837d35fe3611daaba7e54d49c/detection
+
+gaagirri.com
+
+# Reference: https://www.virustotal.com/gui/file/0097193ccdc24dc15e1a9636f6e6bb7b72078f64dd2ab359cdc8c95df71bd601/detection
+
+fiadssds.com

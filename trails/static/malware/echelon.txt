@@ -1,0 +1,252 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Arcdoor, Avalon, Echelon, DarkStealer, EliteStealer
+
+# Reference: https://twitter.com/ViriBack/status/1260367262399246336
+# Reference: https://www.virustotal.com/gui/file/7c9f7e4307f0bd7f269476cc181792aa4d75c5ce84dc22fc0feb73def814c8f1/detection
+# Reference: https://app.any.run/tasks/9dcf3d5b-8e9d-46a6-a6c1-32b47a075d10/
+# Reference: https://app.any.run/tasks/337c1087-f994-4912-ab11-2a827e689e4d/
+
+# nagano-19599.herokussl.com  # Note: CNAME of legitimate api.ipify.org
+
+# Reference: https://twitter.com/3xp0rtblog/status/1295291062374866944 (# DarkStealer, fork of Echelon)
+# Reference: https://app.any.run/tasks/5da0536a-5665-4989-9b82-3bede782d8a6/
+
+ifreegive.ga
+
+# Reference: https://twitter.com/ps66uk/status/1355310619994562566
+# Reference: https://app.any.run/tasks/28fa7fa7-7064-4dfc-808e-8ce499ede741/
+
+pandemic-info.com
+
+# Reference: https://www.virustotal.com/gui/file/08f7564766b3cb63da8068940a89f17819722c00b0f72f3d1a508f0b103b6076/detection
+
+f0514188.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/5fd8ec1b60ac09a3fef1b9c71258030eaeb8efcb45f6308ac13551d07dc882a7/detection
+
+f0192260.xsph.ru
+pizza-joke.000webhostapp.com
+
+# Reference: https://twitter.com/wwp96/status/1365398529301176323
+# Reference: https://app.any.run/tasks/9b661bf3-5bef-4434-b56f-cf8a9ba66784/
+
+g99659oz.beget.tech
+
+# Reference: https://twitter.com/3xp0rtblog/status/1367892395111686152
+# Reference: https://app.any.run/tasks/354c51c9-250e-413c-922b-a8761320ae76/
+# Reference: https://www.virustotal.com/gui/file/c3ee35c8830cb3f6083fe15cd7325e14edbf77880b227473b6c3e39999b41493/detection
+
+ifreegive.gq
+
+# Reference: https://analyze.intezer.com/analyses/3e219f57-50a3-4ed7-b41b-d30ccc7cb9b6
+# Reference: https://www.virustotal.com/gui/file/d62baef7ed4c7b348f6a7a3c372b97f21ef89150539cc654d92daa9596dd41c1/detection
+
+/pan03/register.php
+
+# Reference: https://www.virustotal.com/gui/file/6b6bf285342ba740f4d2e7d4b42bd788f3bb681022d99a048594432b577623b2/detection
+
+f0517419.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/2e6cb28d5d4da178b67aafc841d317954b3decd576b020271999f157cf7e7f6b/detection
+
+f0504575.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/5123a39f9a53ee4266502f09ae474238add2e2cdd9142713c42411e560d4cad0/detection
+
+f0500363.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/8d120f6b01693d63d7c3564bff3b43835e648c1848f90d2e9371dbd29ab57e3e/detection
+
+f0502341.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/8f60bc6f4c7f4d3b608476ac819360ee2e4c5031ea1e57831cf27ea323178e9e/detection
+
+f0516119.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/3ac6f8350de4d8d84a357cc316a77bd6554d9e07e862588b35e9f1cfbb5d3da4/detection
+
+f0516531.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/ddc3425fdb140ed4451bbb7b8a00665befefccfdd72ece21e43a2c2b2144a422/detection
+
+f0510896.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/cb82224ff459374457719dc194c8d0a50c6fcda88e1cc82f19fc3412cbcdcd08/detection
+
+f0516694.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/c8de176545474d4ec593e53731b875f7445f32478868c2b1f8c9172308048992/detection
+
+f0516593.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/fd4edcfc02f7cdfe0eb5d78de971bff49c98c870db82093cd52b42ad5041dad6/detection
+
+f0508216.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/456a128ba33f093c458db65621bdef16711d5c135ed1aa1c985fe614602444b1/detection
+
+f0517502.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/19da0443dc2abae2291606e5a0379fc42af8979c88de52edbac1a6266a2d24c8/detection
+
+f0517658.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/e0f515301bc6ffbe810963b33955bd8ca51a2b37a8480bb2869544d9f42eda80/detection
+
+f0517576.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/77d96f8c360c64c61a4553e66dd1697420a87afbd61bf5971edbd00189a80a35/detection
+
+f0517251.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/26dd5792633a0254db1aa0cf89d56fb0b8839152a82926f54736bc9a2566fdac/detection
+
+f0516155.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/4352912467502507de772bf95920fcea32611b2cfd4258cfe3f25145b21699e7/detection
+
+f0516318.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/2c599fb63913ab6529782edc7f5a90ccbe9f2038025548965e3ecfc31ecf3d88/detection
+
+f0516837.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/d4d81cd9d7eb42c68a3781722e2c585a0776ba042aea28700f6801f7d1cd6cb0/detection
+
+f0517928.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/9cde38f542cf618ea791abd37254ea256315eb49d695d80e03d80019c701cfb9/detection
+
+f0517473.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/07c1086eaaa3f70a34faa11fa9c3692172c9de723e646e3eecfed0005e53c856/detection
+
+f0517275.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/374b52934c6167cdf6f4824e8fe880b5835fbc05df12d6ccb65886abd46250f4/detection
+
+f0508564.xsph.ru
+f0512765.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/ba919c4370795a83304f54a3bdf4f7f76b2a587c66379ba63e63d353fffc624c/detection
+
+f0518723.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/91d04b3eca288d8b14f14326b41122b996f2266af28b708c6621b59c8a27f529/detection
+
+f0518831.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/704ee4d935db95c62f30746cba4c7aac9624933b389e5108b2540879940e59db/detection
+
+f0503388.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/c804aaf16350a2b6fb0087135e757664b3395885a0065c98b5266b1e4f11926c/detection
+
+f0517225.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/5eddf0fd115a309f65e733d4b242ec16509b279f0c870e6abe25582a1e813e94/detection
+
+f0519026.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/f97f3db8f7f79895b863f3f144e8df5e19da23035e067f32beed003ba6c115d1/detection
+
+f0519141.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/64fb7d2aed3de767f3435ee1e208592f6d4c2f23c2bf641d9f96fa3a4d5fac29/detection
+
+f0504684.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/0f8bbd26aa7fb58544f17c9dc04bd4434a70b77310464a0cba30eb9e05dc76f7/detection
+
+f0519032.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/a6ce281c5deb176d55b4006007667c7d802f768851fe4f8ec1fbd5ee5c6ff50e/detection
+
+f0519573.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/be7870a33088d38c96a835882d3114bfcf148c334428a233c2b1acb944f63e39/detection
+
+f0519331.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/0d225b800aebf2acb9bb2e44e2321c84dc9b053ebcebc77daacf7abbcf23ca85/detection
+
+f0516881.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/413604f5749f9d55b195fcecf8680580c31be4bf276e5728a0dcd4a94049dec9/detection
+
+f0520080.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/d354cf60f3552eddd91e54be818daf59d0ff3d8d1b2cb6a6bf2c7a7bb60da420/detection
+
+f0494358.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/a0146a17c0e703eeccf8f88bddb9cf687a6ec4fbcafd2bb303589cbb993e9859/detection
+
+f0511864.xsph.ru
+
+# Reference: https://twitter.com/ViriBack/status/1377401569688186885
+# Reference: https://app.any.run/tasks/01b6288b-19eb-43f8-b759-73c4fe7a6bc9/
+
+atarbiyahpulpen.online
+
+# Reference: https://twitter.com/pollo290987/status/1413047788858925056
+# Reference: https://www.virustotal.com/gui/file/1214e5f9dec9e4c94ccf93c4495788c8314f396ce74dbb5c15cd372411ceed98/detection
+
+f0558828.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/4121b53175e74dddb4cdce06b699ce06dcf6c62b610060ef2dd9796751a067b8/detection
+
+f0541260.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/06372060fcfce5402e313238c9473f76213e165ca1659ef6b9c93de8ea54f609/detection
+
+a0613233.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/12ed308fd37ab10271953299e7050e2ee2e07fc8eb76153ede11efb7a4bded25/detection
+
+f0616564.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/3e470bc95e65c77b11fb47d369daca3d14167504210f7cfe09608ef1c648bae0/detection
+
+a0615246.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/b74e65d1fd9eac047839f94e494ef3341e600c5855543f4365347fc976234709/detection
+
+f0521569.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/23e699c4fcdb0afc391f4a6505a82e31ac2048550f5672f2e372066dac6f0b12/detection
+
+co15429.tmweb.ru
+
+# Reference: https://www.virustotal.com/gui/file/edaf24778d0c203a3f78674488da93a135701b28f9611b5a7aaa229a643653e4/detection
+
+a0616251.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/eda4edbfb02b2495de2b7b694394b6de7ec277f2d4a7c39201c248b55623e931/detection
+
+a0601318.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/08f681ce41d54ba666097ed688c5efa86ef7bdc181d975aefd26af09538cce15/detection
+
+a0521809.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/ee2998f27a6937faa8662e072b45019d4b28d0e38a3f8c370e4c264f06e98710/detection
+
+f0481686.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/2b5926f4aeff3e664d8e208e4269ae3219bd5640cb5322fd40a853421f91c552/detection
+
+f0491418.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/e75604af8e04d83a554b66fd24829c8973b68d2ec2d675135f487a599df26f73/detection
+
+f0516527.xsph.ru
+
+# Generic
+
+/api.php?chatid=
+/elitesteal.php
+/libXOR.fgredfs
+/sendDocument?chat_id=

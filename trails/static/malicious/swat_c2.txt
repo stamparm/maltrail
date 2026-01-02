@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/bruce_k3tta/status/1880272316653007218
+# Reference: https://x.com/moonlock_lab/status/1882441750377296327
+# Reference: https://app.validin.com/detail?type=raw&find=SWAT+C2+-+Login#tab=host_pairs
+# Reference: https://www.virustotal.com/gui/file/d64e2688344c685c4156819156bdb15630d1168314b21c919eee5540b1beb54a/detection
+
+69.197.175.10:443
+69.197.175.10:8000
+69.197.175.10:9999
+equitymarket.uk
+xxobox.com
+movie.aspisdata.com

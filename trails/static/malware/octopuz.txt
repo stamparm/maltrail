@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: octopuz stealer
+
+# Reference: https://x.com/salmanvsf/status/1904833638501671144
+# Reference: https://x.com/k3yp0d/status/1905202941184688467
+# Reference: https://app.validin.com/detail?find=OctopuZ%20Stealer&type=raw&ref_id=690bf841ef9#tab=host_pairs (# 2025-03-26)
+# Reference: https://www.virustotal.com/gui/file/4218ef4e857e0f88e51ebd2b24f302369f3d273428df34c4559f49aa6c61feeb/detection
+
+octopuzx.netlify.app

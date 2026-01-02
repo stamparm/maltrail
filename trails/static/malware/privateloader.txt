@@ -1,0 +1,160 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/44ee2445a8afa4123bd2edb2bcbe258f8c344f73fda88d03097e22a7928d313d/detection
+
+230224175748394.uba.xlf07.shop
+230320051222585.btl.jbc75.shop
+
+# Reference: https://www.virustotal.com/gui/file/05757c1dfcbcecf8df0fdb50f989cd1757c9a75673844eadcf3363705f2e579b/detection
+
+bebekmanti.com
+beelowers.com
+
+# Reference: https://twitter.com/g0njxa/status/1689801726780456960
+
+vh567599.eurodir.ru
+
+# Reference: https://threatfox.abuse.ch/ioc/1196731/
+
+http://193.42.32.118
+
+# Reference: https://www.virustotal.com/gui/file/7224f8e8d3f9fedcc1c29e621d0b0504ecf2b6fcbb560b101b8f27380d324afc/detection
+
+http://94.142.138.199
+livestream-ufc.com
+
+# Reference: https://www.virustotal.com/gui/file/7b9c1aa81aef60c0b403ff3859fc4c6be0b48fb56e1a4456f42ed0da84941993/detection
+
+maxximbrasil.com
+
+# Reference: https://www.virustotal.com/gui/file/87b9a298088ed30406e897f152ad34f0e3e50bce09b317a50286a81cbc7913fd/detection
+
+1qwqewrewqweqwrqe.sbs
+
+# Reference: https://www.virustotal.com/gui/ip-address/41.216.183.24/relations
+# Reference: https://www.virustotal.com/gui/file/e924b94bf09b19359023e2e9ef885079c0694c0ff765aabd54a84c59ff32fd22/detection
+# Reference: https://www.virustotal.com/gui/file/86d82a797944a04f68c4c05c9debde1172dbeaba94230f692eb27f8f8aa17add/detection
+# Reference: https://www.virustotal.com/gui/file/55ec88ada55c35967781c12ac60757e8e8f6257357cf5508cf17eca7a8acc123/detection
+# Reference: https://www.virustotal.com/gui/file/0d5eb5e8b40de09d6153a4704b76454c3bfa709ebd0e5d065e9f229790d750b4/detection
+# Reference: https://www.virustotal.com/gui/file/c2017a134d9e6654ec9a94843e0d2672317574ebc675e7f9569dc3fc6daf03d6/detection
+
+http://41.216.183.24
+41.216.183.24:666
+cant.run
+nebula.pm
+/api/control/smallpoll
+/api/control/updateassignment
+
+# Reference: https://twitter.com/g0njxa/status/1751661931310534837
+
+managerefineduberinfo-program.info
+managespeedyuberinfo-program.info
+recogniano.com
+
+# Reference: https://g0njxa.medium.com/privateloader-installskey-rewind-2023-c1ce027cbe65
+
+http://195.20.16.46
+
+# Reference: https://twitter.com/banthisguy9349/status/1756971731028263245
+
+http://185.216.26.240
+notmalware.top
+bot.notmalware.top
+
+# Reference: https://twitter.com/RacWatchin8872/status/1789630314945323119
+
+114.234.22.187:99
+180.124.156.240:99
+180.124.158.5:99
+
+# Reference: https://x.com/banthisguy9349/status/1791900575040245781
+
+http://185.172.128.69
+
+# Reference: https://www.virustotal.com/gui/file/2d8524c8b31583d8237455c7211f486667d4cd9ae7db7ac4bab3cbde6b9a5e7b/detection
+
+http://176.111.174.109
+http://185.172.128.159
+http://5.42.66.10
+http://5.42.99.177
+kittyrecord.xyz
+
+# Reference: https://www.virustotal.com/gui/file/ff89b26b08534382d19d9c99b8023467c007eda8c8a82cd728fb24634d99bb58/detection
+
+162.55.53.18:9000
+43.153.49.49:8888
+
+# Reference: https://www.virustotal.com/gui/file/1b34123865299a1e0d24154ab28c38232224ffdd3b6a73d1c803348483679108/detection
+
+http://77.105.133.27
+
+# Reference: https://x.com/g0njxa/status/1816843534801985772
+# Reference: https://app.any.run/tasks/7519a789-1a30-4e19-8470-d557c90be774/
+
+http://109.120.176.203
+147.45.47.80:21
+
+# Reference: https://x.com/banthisguy9349/status/1822593632576127249
+
+http://147.45.47.169
+http://185.225.200.214
+http://5.42.65.31
+http://91.103.252.177
+
+# Reference: https://x.com/g0njxa/status/1826997491432063399
+# Reference: https://app.any.run/tasks/a773145e-742f-4342-b637-acd10397f785
+
+http://195.10.205.48
+
+# Reference: https://x.com/g0njxa/status/1827271656315793554
+# Reference: https://app.any.run/tasks/14b06515-315a-4fef-b551-35e90d6b085e
+
+http://176.113.115.33
+http://45.91.200.135
+
+# Reference: https://x.com/kddx0178318/status/1834249176160321705
+
+78.47.207.136:443
+crackedpcsoft88.com
+file-link-iota.vercel.app
+kaysons-group.com
+
+# Reference: https://www.virustotal.com/gui/file/1eb09563597c5aa12344072b431f844825c2a6b62f77f9b339c838456e826d97/detection
+
+http://194.58.114.223
+http://92.246.139.82
+58yongzhe.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/94.156.71.148/relations
+
+http://94.156.71.148
+
+# Reference: https://x.com/banthisguy9349/status/1838276618566963264
+
+http://41.216.188.190
+
+# Reference: https://x.com/banthisguy9349/status/1838596380803166602
+# Reference: https://x.com/naumovax/status/1841092516302504155
+# Reference: https://urlhaus.abuse.ch/url/3189309/
+# Reference: https://app.any.run/tasks/204516b5-683e-4326-bc1c-b3f5804947a5
+# Reference: https://tria.ge/240924-seflzatcpg/behavioral2
+
+http://64.95.13.143
+64.95.13.143:1120
+
+# Reference: https://www.virustotal.com/gui/file/04a9263844cb3665f70cb32f4f635bd620e00e6e60c72618b34d1fc74ea15ffb/detection
+
+http://79.137.192.13
+http://89.111.172.64
+
+# Reference: https://www.virustotal.com/gui/file/2ffc4357ff4a4be72a3961540de2c659579e6b41c845166aeba9f910779e34b9/detection
+
+http://45.144.212.99
+
+# Generic
+
+/api/crazyfish.php
+/api/twofish.php
+/api/wp-ping.php
+/panel/api/endpoint.php

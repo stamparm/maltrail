@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securityintelligence.com/posts/vizom-malware-targets-brazilian-bank-customers-remote-overlay/
+# Reference: https://www.virustotal.com/gui/file/f2c5fce0d32b050204c503f9a6adfe92f43b6aba0d2cc983a9a1c918b228b490/detection
+
+galinhaborabora.s3.amazonaws.com

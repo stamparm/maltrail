@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1248010996502769664
+
+ixware.xyz
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1255823857572884482
+# Reference: https://app.any.run/tasks/12099bab-e03d-439f-8f2b-d72ea470fa59/
+
+ixware.dev
+
+# Generic
+
+/stubCheck

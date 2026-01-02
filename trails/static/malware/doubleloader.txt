@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/banthisguy9349/status/1867500119010292200
+# Reference: https://x.com/ViriBack/status/1872979985725833473
+# Reference: https://x.com/ViriBack/status/1873006284343263737
+# Reference: https://www.virustotal.com/gui/file/115950b74e3c143649c5cb3e92d2c8fc75ddd323250b756e58012a993f156257/detection
+# Reference: https://www.virustotal.com/gui/file/1f80f1ca76be1a2a8d8a6ac77eeb125c415046ce78d0a9661982e59ea9622b02/detection
+
+152.89.198.116:5000
+185.147.125.142:5000
+185.147.125.60:5000
+185.147.125.76:5000
+185.147.125.77:5000
+185.147.125.78:5000
+185.147.125.81:5000
+
+# Reference: https://x.com/malwrhunterteam/status/1901763841563701525
+# Reference: https://www.virustotal.com/gui/file/dc87c20cda280de7af09bfd0fda07bf445efb6fc0810bda28946d69a37b55052/detection
+
+185.147.125.81:9000
+
+# Reference: https://x.com/skocherhan/status/1924802696113955059
+# Reference: https://www.virustotal.com/gui/file/73dc672dd9c33133fb69a91759f96074f64db881ff3af3a97aa0139ac05a052d/detection
+
+5.252.153.15:7001
+
+# Generic
+
+/obfdownload/double_loader_dll.dll
+/obfdownload/DoubleLoaderDll.dll
+/DoubleLoaderDll.dll

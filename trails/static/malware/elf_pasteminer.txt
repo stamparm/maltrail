@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://cloud.tencent.com/developer/article/1353057
+
+minerxmr.ru
+
+# Reference: https://otx.alienvault.com/pulse/5c74040799222a4797532187
+# Reference: https://blog.talosintelligence.com/2018/12/cryptomining-campaigns-2018.html
+
+3389.space
+8282.space
+blockbitcoin.com
+d3goboxon32grk2l.tk
+e3sas6tzvehwgpak.tk
+scanaan.tk
+svss.space
+swb.one
+threatpost.tk

@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: pyleet, pyl33t
+
+# Reference: https://twitter.com/JakubKroustek/status/834314575784861697
+# Reference: https://www.virustotal.com/gui/file/76a527155a11c14b8f6581edfeba14a83119e40d6ac43e9c357956a2583203d3/detection
+
+178.62.166.7:1337

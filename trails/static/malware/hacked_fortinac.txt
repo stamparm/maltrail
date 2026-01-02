@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: CVE-2022-39952
+
+# Reference: https://twitter.com/1ZRR4H/status/1628783528488980480
+# Reference: https://www.cronup.com/explotacion-masiva-de-fortinet-fortinac-cve-2022-39952-rce-no-autenticado-en-progreso/
+
+178.157.82.125:9443
+/campusMgr/ui/ROOT/fortii.jsp
+/campusMgr/ui/ROOT/shell.jsp

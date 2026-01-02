@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2016-030323-5856-99&tabid=2
+# Reference: https://www.virustotal.com/en/ip-address/78.47.198.134/information/
+# Reference: http://vxvault.net/ViriFiche.php?ID=28904
+
+78.47.198.134/1.zip
+78.47.198.134/bot.exe
+78.47.198.134/1.exe
+78.47.198.134/cmd.php

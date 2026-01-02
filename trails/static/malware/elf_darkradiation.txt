@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trendmicro.com/en_us/research/21/f/bash-ransomware-darkradiation-targets-red-hat--and-debian-based-linux-distributions.html
+# Reference: https://otx.alienvault.com/pulse/60cb61e79c2d51ea3b16be1c
+
+http://185.141.25.168
+0zr33n33fo.space
+apooow4.space
+ga345ss34u.space
+m0troppm.site
+u2wgg22a111ssy.space
+vk-o2vox-n.pp.ua
+
+# Generic
+
+/binaryinject/
+/binaryinject.so
+/binaryinject1.so
+/binaryinject2.so
+/binaryinject_b.so
+/binaryinject_rsync.so
+/binaryinject_scp.so
+/binaryinject_t.so

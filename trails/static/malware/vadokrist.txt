@@ -1,0 +1,103 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/Bank_Security/status/1363788874309369858
+# Reference: https://www.welivesecurity.com/2021/01/21/vadokrist-wolf-sheeps-clothing/
+# Reference: https://otx.alienvault.com/pulse/6009fd65dd030c3cef32e7d2
+
+http://104.41.26.216
+http://104.41.41.216
+http://104.41.47.53
+http://191.232.212.242
+http://191.232.243.100
+http://191.235.78.249
+http://191.237.255.155
+http://191.239.244.141
+http://191.239.245.87
+http://191.239.255.102
+cloudmx.homelinux.com
+dumblegat.simple-url.com
+javfoms.podzone.org
+jotagot.mypets.ws
+metalpink.serveftp.org
+vemvem.duckdns.org
+
+# Reference: https://twitter.com/wwp96/status/1366485090340077572
+# Reference: https://app.any.run/tasks/e5727887-2bdb-4f37-a1ad-cb43d88a9828/
+
+http://13.66.29.191
+minerim-xqo29xia9sx8.s3-sa-east-1.amazonaws.com
+
+# Reference: https://www.virustotal.com/gui/file/528c696de7b59c6dd12beda7b650a25c5b0d3b55884bcf0b37380b639b5065d6/detection
+
+shrzhaio20.s3.us-east-2.amazonaws.com
+
+# Reference: https://www.virustotal.com/gui/file/d860f04cf3f47bf43c180a667420308f37955f770deb17933d83414663323dd2/detection
+
+191.232.213.204:55515
+shax9281930x892.s3-sa-east-1.amazonaws.com
+
+# Reference: https://twitter.com/ffforward/status/1367555542898642951
+# Reference: https://app.any.run/tasks/5f0f9599-9f73-4641-9ff3-6f145aea3643/
+
+abps.web280.uni5.net
+
+# Reference: https://twitter.com/malware_traffic/status/1370167320530853889
+# Reference: https://app.any.run/tasks/8829de72-1858-4e08-9fee-3028853aa1e0/
+
+cachorrow.xyz
+delias.buzz
+delido.xyz
+ewrtrds.buzz
+xyetvyet.buzz
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1370016823308128257
+
+http://189.126.111.53
+http://191.235.79.130
+
+# Reference: https://twitter.com/wwp96/status/1375107237358800902
+# Reference: https://app.any.run/tasks/795d2590-0bd2-4c52-8208-2e50287c69f5/
+
+http://104.41.54.138
+
+# Reference: https://twitter.com/StopMalvertisin/status/1556156864932769793
+
+superatacadao.unusualperson.com
+/nox1/NeOBERM029wmdomttty.php
+/NeOBERM029wmdomttty.php
+
+# Reference: https://twitter.com/StopMalvertisin/status/1609088487160156163
+# Reference: https://twitter.com/noexceptcpp/status/1610216199886888963
+# Reference: https://www.virustotal.com/gui/file/8338bca992f9608794fd501e47642cc3e77553b54ac5e0ec3ceb9f13ed6a1b64/detection
+
+http://20.226.74.117
+myawshoststorage0922.s3.sa-east-1.amazonaws.com
+/p1/ObTRO0191MSiemakr.php
+/p2/rRRHTmaome10910mmdaf.php
+/ObTRO0191MSiemakr.php
+/rRRHTmaome10910mmdaf.php
+
+# Reference: https://www.virustotal.com/gui/file/3925e47fd310e67638b93a876d9bba6373cec4a1a276e5eae0501d1db070f0f2/detection
+
+xmfad2.issmarterthanyou.com
+
+# Reference: https://twitter.com/AzakaSekai_/status/1760853478971449433
+# Reference: https://www.virustotal.com/gui/file/34a5017f3894d9d403fd2c5baa03d7bb6b9c28afb74e36010310af8f601602fb/detection
+
+awsserver903203232.s3.sa-east-1.amazonaws.com
+
+# Generic
+
+/paodequeijo/HGFGHGFH.php
+/sh2002039/000000.php
+/JarLOTESmefrasd121.php
+/Drompwl20102se.php
+/HGFGHGFH.php
+/KROmsoameo201920mda.php
+/LABrusoamdoo10192012.php
+/LOPRSMo109102912.php
+/ORTEGAHSK019mersoak.php
+/Posmeoirmso01929MKDK.php
+/timdim.php
+/timdim02.php

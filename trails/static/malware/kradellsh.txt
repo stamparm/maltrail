@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2011-020308-1422-99&tabid=2
+
+xplin.3322.org
+jzn1986.3322.org
+jhz100.3322.org
+ziyingtianxia.3322.org
+g5512484.8866.org
+li0427.3322.org
+li0427.3322.org
+qingcs.3322.org
+dkzy.8866.org
+kuilei65551543.3322.org 

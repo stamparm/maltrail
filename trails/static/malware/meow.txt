@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: meow ransomware
+
+# Reference: https://x.com/RakeshKrish12/status/1843195597970649583
+
+meow6xanhzfci2gbkn3lmbqq7xjjufskkdfocqdngt3ltvzgqpsg5mid.onion
+
+# Reference: https://www.thedfirspot.com/general-8-1
+
+totos7fquprkecvcsl2jwy72v32glgkp2ejeqlnx5ynnxvbebgnletqd.onion

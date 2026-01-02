@@ -1,0 +1,75 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: doubleback, doubledrag, doubledrop
+
+# Reference: https://www.fireeye.com/blog/threat-research/2021/05/unc2529-triple-double-trifecta-phishing-campaign.html
+
+adupla.net
+aibemarle.com
+bestwalletforbitcoin.com
+bitcoinsacks.com
+ceylonbungalows.net
+chandol.com
+clanvisits.com
+closetdeal.com
+daldhillon.com
+desmoncreative.com
+digitalagencyleeds.com
+erbilmarriott.com
+ethernetpedia.com
+farmpork.com
+fileamazon.com
+gamesaccommodationscotland.com
+gemralph.com
+greathabibgroup.com
+infomarketx.com
+isjustlunch.com
+jagunconsult.com
+khodaycontrolsystem.com
+klikbets.net
+lasartoria.net
+logicmyass.com
+lottoangels.com
+mangoldsengers.com
+maninashop.com
+oconeeveteransmemorial.com
+onceprojects.com
+p-leh.com
+scottishhandcraft.com
+seathisons.com
+simcardhosting.com
+skysatcam.com
+smartnhappy.com
+stayzarentals.com
+stepearn.com
+sugarmummylove.com
+techooze.com
+tigertigerbeads.com
+totallyhealth-wealth.com
+touristboardaccommodation.com
+towncenterhotel.com
+towncentrehotel.com
+towncentrehotels.com
+uaeworkpermit.com
+vacuumcleanerpartsstore.com
+zmrtu.com
+
+# Reference: https://twitter.com/ffforward/status/1399781513907015689
+# Reference: https://tria.ge/210601-fpxsgwd8p2
+
+austinheisey.com
+
+# Reference: https://twitter.com/k3dg3/status/1532454383631450115
+# Reference: https://twitter.com/nahamike01/status/1541340866232561666
+# Reference: https://twitter.com/nahamike01/status/1541341716736638983
+# Reference: https://tria.ge/220602-yjvvcabad9/behavioral4
+# Reference: https://www.virustotal.com/gui/file/692ad829cb6c9788998acb106ea4d8311e432c866d082ac3cc117166ac50080d/detection
+
+arcadiabay.org
+bestcake.ca
+
+# Reference: https://twitter.com/peterkruse/status/1532636219665940480
+
+bonushelp.com
+greeklife242.com

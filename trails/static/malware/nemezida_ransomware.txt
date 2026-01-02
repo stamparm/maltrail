@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: vovabol
+
+# Reference: https://twitter.com/malwrhunterteam/status/1507011441995354129
+# Reference: https://twitter.com/Amigo_A_/status/1511597724340215808
+# Reference: https://www.virustotal.com/gui/file/e4defd8a187a513212cb19c9f2a800505395e66d9cd9eb3a96c291060224e7dd/detection
+
+mypage1.eu5.org
+mypage1.unaux.com

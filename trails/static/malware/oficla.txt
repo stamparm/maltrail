@@ -1,0 +1,55 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://web.archive.org/web/20120106212034/http://amada.abuse.ch/blocklist.php?download=domainblocklist
+
+45search.com
+aervrfhu.ru
+antiviruspc-update.com
+bindstat.cn
+brainzzz.net
+ca-pdt.com
+client158.faster-hosting.com
+dallynews.cn
+det0xcorp.kz
+doughaa.com
+exfacebooks.com
+factoryofgood.ru
+findactions.net
+fooofle.ru
+gnfdt.cn
+gruzakk.com
+hsloader.com
+hulejsoops.ru
+ieksmanskasdk.com
+ilovelasvegas.ru
+lekbin.com
+mnioers.com
+mutant-star.net
+netmegasite.net
+nonstopacc.com
+privatecash.cc
+ptf.messenger-update.su
+smartcripts.com
+sys.telesweet.net
+telaut.org
+thegoodbox.com
+unknown-garbage.com
+vitamelatonin.biz
+www.crowledblade.com
+xeyaskas.com
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan:Win32/Oficla.AC
+
+biznes-lab.info
+exfacebooks.com
+fary5monn.info
+gruzakk.com
+matchpassion.net
+mediamoon.ru
+nuzno.us
+showtimeru.ru
+thegoodbox.com
+unknown-garbage.com
+webauc.ru
+aol-serv.net

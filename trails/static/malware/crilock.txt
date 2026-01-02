@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Trojan%3AWin32%2FCrilock.A&ThreatID=-2147284168#tab=2
+
+blcusrwmwsce.ru
+cqatmhkbawod.co.uk
+duhjqmogmwfc.com
+eafikccupbrb.biz
+nhbgpmbhfclx.biz
+omyfjcovigxw.org
+pqgunhsbugov.info
+qvethwgpxkbu.net
+vajgqwtrpgjn.ru
+wfhfkmhgskvm.co.uk
+wpkhlcnfhldx.org
+xjouorllfkml.com
+xuigfrbtkppw.info
+yypvjwfywpgv.net

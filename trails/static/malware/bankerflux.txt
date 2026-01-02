@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1107613603144712192
+# Reference: https://twitter.com/VK_Intel/status/1128194176103931904
+
+port2010kmjutre.camdvr.org
+discoverthings.pw

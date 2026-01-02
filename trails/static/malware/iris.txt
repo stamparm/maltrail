@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: iris stealer
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-06-v10792/2238
+
+irisstealer.xyz
+law.irisstealer.xyz
+lawxszismydad.irisstealer.xyz
+script.irisstealer.xyz

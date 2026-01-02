@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/new-zardoor-backdoor/
+# Reference: https://raw.githubusercontent.com/Cisco-Talos/IOCs/main/2024/01/new-zardoor-backdoor.txt
+
+139.84.232.245:37135
+140.82.33.130:14443
+208.85.20.130:37135
+217.69.1.128:14443
+70.34.194.185:14443
+70.34.208.197:10086
+exchangeserver.zapto.org
+exchangeupgrade.ddns.net
+lapz.ddns.net

@@ -1,0 +1,35 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: safepay ransomware, goodgame ransomware
+
+# Reference: https://x.com/AlvieriD/status/1859137051452477855
+# Reference: https://x.com/karol_paciorek/status/1859162774993043873
+
+504e1c3f.host.njalla.net
+posnewsoftwareupdatessystems.net
+nz4z6ruzcekriti5cjjiiylzvrmysyqwibxztk6voem4trtx7gstpjid.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1859844498030985402
+
+http://45.91.201.247
+http://77.37.49.40
+http://80.78.28.63
+iieavvi4wtiuijas3zw4w54a5n2srnccm2fcb3jcrvbb7ap5tfphw6ad.onion
+qkzxzeabulbbaevqkoy2ew4nukakbi4etnnkcyo3avhwu7ih7cql4gyd.onion
+
+# Reference: https://x.com/solostalking/status/1859808812703875083
+
+http://167.235.225.149
+node1.cleverhost.xyz
+server.for-sure.net
+
+# Reference: https://x.com/AlvieriD/status/1860154700932522330
+
+nj5qix45sxnl4h4og6hcgwengg2oqloj3c2rhc6dpwiofx3jbivcs6qd.onion
+
+# Reference: https://www.ransomware.live/group/safepay?5bd17417c548c89aff0434b8772dd828 (# 2025-10-01)
+
+cqkrkmmivhakl3fwgxscurduu3znmroablt7jskxszkctixyseij5gad.onion
+j3dp6okmaklajrsk6zljl5sfa2vpui7j2w6cwmhmmqhab6frdfbphhid.onion
+safepaypfxntwixwjrlcscft433ggemlhgkkdupi2ynhtcmvdgubmoyd.onion

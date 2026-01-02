@@ -1,0 +1,31 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/The-Shadow-Knows
+
+cloud75.eu
+
+# Reference: https://www.hybrid-analysis.com/sample/d16ad130daed5d4f3a7368ce73b87a8f84404873cbfc90cc77e967a83c947cd2?environmentId=1
+
+cloud75.eu
+cloud76.eu
+cloud77.eu
+
+# Reference: https://www.virustotal.com/en/ip-address/51.255.59.117/information/
+
+cloud70.eu
+cloud76.eu
+a168iirjx7roy2u813.net
+cloud67.eu
+cloud74.eu
+cloud71.eu
+cloud75.xyz
+cloud75.eu
+
+# Reference: https://github.com/fideliscyber/indicators/blob/master/Blogs/Me%20and%20Mr%20Robot%20Tracking%20the%20Actor%20Behind%20the%20MAN1%20Crypter/ReadMe.md
+
+rc7thuhy8agn43zzgi.biz
+heckwassleftran.ru
+heckwassleftran2.ru
+heckwassleftran3.ru
+zdnuohzdydlpx5kd.onion

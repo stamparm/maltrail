@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-02-24-v10253/329
+# Reference: https://www.virustotal.com/gui/file/0a41eb5aef799b51fe79c39d3e413e1908fda40030ca75661f7f069b53e8bcd6/detection
+
+evilextractor.com
+
+# Reference: https://twitter.com/netresec/status/1651152326420201472
+# Reference: https://www.netresec.com/?page=Blog&month=2023-04&post=EvilExtractor-Network-Forensics
+# Reference: https://tria.ge/230424-vv9wvsfb2v/behavioral2
+
+http://193.42.33.232
+89.116.53.55:21
+
+# Reference: https://www.fortinet.com/blog/threat-research/evil-extractor-all-in-one-stealer
+# Reference: https://otx.alienvault.com/pulse/6446f7ef58624f13ae6a1587
+# Reference: https://www.virustotal.com/gui/file/31821e57780e098eb5e41b1601b5c091e5bc9af8a67d0705dc711ab9180305e0/detection
+
+45.87.81.184:21
+evilextracom.com

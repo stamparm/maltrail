@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: crap ransomware
+
+# Reference: https://twitter.com/petrovic082/status/1367770186225496068
+# Reference: https://app.any.run/tasks/d7b7bbb9-5719-4280-b2c2-675b2f278d16/
+
+3.133.207.110:16968

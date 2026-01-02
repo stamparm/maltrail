@@ -1,0 +1,80 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: eternity stealer
+
+# Reference: https://twitter.com/James_inthe_box/status/1509271782578040832
+# Reference: https://twitter.com/crep1x/status/1509280618185691147
+# Reference: https://twitter.com/3xp0rtblog/status/1509601846494695438
+# Reference: https://app.any.run/tasks/08105479-b1e1-4d32-9a48-a7ed3bb600e5/
+
+eternitypr.net
+eternitypr.xyz
+eterprx.net
+
+# Reference: https://twitter.com/Finch39487976/status/1529737513824407552
+
+lightnogu5owjjllyo4tj2sfos6fchnmcidlgo6c7e6fz2hgtyhfhoyd.onion
+soapbeginshops.com
+
+# Reference: https://twitter.com/fr0s7_/status/1534628175476625411
+
+rlcjba7wduej3xcstcjo577eqgjsjvcjfsw4i23fqvf2y27ylylhmhad.onion.pet
+
+# Reference: https://blog.morphisec.com/nft-malware-new-evasion-abilities
+# Reference: https://otx.alienvault.com/pulse/632da71f4b3c4319951b02d7
+
+abracadabra.run
+clipper.run
+coinstats.top
+dune-analytics.com
+hawksight.space
+illuvium.run
+mmfinance.fund
+opptimism.com
+optimism.run
+perp.run
+polygon-bridge.com
+rwwmefkauiaa.ru
+yieldsguild.com
+app.opptimism.com
+app.optimism.run
+app.perp.run
+wallet.polygon-bridge.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1582568050590875649
+
+111.90.151.174:7777
+
+# Reference: https://twitter.com/AttackTrends/status/1623265703372505090
+# Reference: https://www.virustotal.com/gui/ip-address/195.133.40.43/relations
+
+mailcenter.ydns.eu
+storageapi.ydns.eu
+storageapis.ydns.eu
+
+# Reference: https://www.joesandbox.com/analysis/1168647
+
+eternityms33k74r7iuuxfda4sqsiei3o3lbtr5cpalf6f4skszpruad.onion
+
+# Reference: https://twitter.com/RakeshKrish12/status/1640252381618139136
+# Reference: https://pastebin.com/wUwsTynk
+
+rlcjba7wduej3xcstcjo577eqgjsjvcjfsw4i23fqvf2y27ylylhmhad.onion
+
+# Reference: https://twitter.com/suyog41/status/1685898877893836800
+# Reference: https://www.virustotal.com/gui/file/c1984bff7e91f403328d7300e57f51446b1c400c3a33c3e6163c08a5c6218522/detection
+# Reference: https://www.virustotal.com/gui/file/b0b8e443d1d5e58e87dcb0d5d87b2452d027caa74023f299ef866c88226c83fa/detection
+
+185.105.118.70:9033
+45.9.149.164:9092
+
+# Reference: https://twitter.com/anyrun_app/status/1706307410611068987
+# Reference: https://app.any.run/tasks/33673ff4-4af7-4d91-ad1c-d27809e04a7d/
+
+eternityms33k74r7iuuxfda4sqsiei3o3lbtr5cpalf6f4skszpruad.onion.nz
+eternityms33k74r7iuuxfda4sqsiei3o3lbtr5cpalf6f4skszpruad.onion.pet
+
+# Reference: https://www.virustotal.com/gui/file/f74b2f6d0796b9686d2103e02400cdb00a602dd3565fd16b8f65cc2860336b43/detection
+
+81.161.229.110:8080

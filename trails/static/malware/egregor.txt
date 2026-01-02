@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: prolock
+
+# Reference: https://www.cybereason.com/blog/cybereason-vs-egregor-ransomware
+# Reference: https://otx.alienvault.com/pulse/5fbed263fa9e196c722eff7a
+
+http://185.238.0.233
+http://45.153.242.129
+http://49.12.104.241
+49.12.104.241:81
+egregor.top
+egregor4u5ipdzhv.onion
+o3n4bhhtybbtwqqs.onion
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1329783380305653767
+# Reference: https://bazaar.abuse.ch/sample/cb76c19c178a71a5115ee308b51de416255de06d4e8226fdda8e59275a519c14/
+# Reference: https://www.virustotal.com/gui/file/cb76c19c178a71a5115ee308b51de416255de06d4e8226fdda8e59275a519c14/detection
+# Reference: https://www.virustotal.com/gui/file/255e2f5a73623eeada2438de7fe335e2ff3d3e56038da9d457d53770c6f62dba/detection
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.96.47/relations
+
+egregorwiki.top
+newsegregor.top
+wikiegregor.top
+
+# Reference: https://areteir.com/wp-content/uploads/2021/01/01182021_Egregor_Insight.pdf
+# Reference: https://otx.alienvault.com/pulse/60146fd59c6b2bfdcd615572/
+
+http://49.12.104.241
+185.238.0.241:81
+49.12.104.241:81
+
+# Reference: https://www.hackplayers.com/2021/02/sitios-cibercriminales-deepweb.html
+
+egregoranrmzapcv.onion
+msaoyrayohnp32tcgwcanhjouetb5k54aekgnwg7dcvtgtecpumrxpqd.onion

@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/lookback-malware-targets-united-states-utilities-sector-phishing-attacks
+# Reference: https://www.proofpoint.com/us/threat-insight/post/lookback-forges-ahead-continued-targeting-united-states-utilities-sector-reveals
+# Reference: https://otx.alienvault.com/pulse/5d88d8e5c04037ab7f9f5054
+
+http://103.253.41.45
+http://103.253.41.75
+http://79.141.168.137
+globalenergycertification.net
+nceess.com

@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apos security
+
+# Reference: https://github.com/marktsec/Ransomware_Official_Domains#apos-security
+
+yrz6bayqwhleymbeviter7ejccxm64sv2ppgqgderzgdhutozcbbhpqd.onion
+
+# Reference: https://x.com/AlvieriD/status/1875552520506110402
+
+apos.blog

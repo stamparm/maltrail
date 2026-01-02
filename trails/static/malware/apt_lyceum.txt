@@ -1,0 +1,126 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: danbot, hexane, lyceum
+
+# Reference: https://twitter.com/blackorbird/status/1166345000826724352
+# Reference: https://www.secureworks.com/blog/lyceum-takes-center-stage-in-middle-east-campaign
+# Reference: https://otx.alienvault.com/pulse/5d656065aaa9ac9b19ef75c2
+# Reference: https://twitter.com/Manu_De_Lucia/status/1208388233731678208
+# Reference: https://medium.com/@Manu_De_Lucia/exploding-the-danbot-code-to-hunt-for-hexanes-cyber-weapon-3d466775f480
+# Reference: https://www.virustotal.com/gui/file/11c52732d7fde12f5f4c6431f8be876ffd73acdd725c4b908b257be1b007a290/detection
+
+bsolutions-cloude.com
+cybersecnet.co.za
+cybersecnet.org
+dnscachecloud.com
+dnscloudservice.com
+excsrvcdn.com
+online-analytic.com
+opendnscloud.com
+web-statistics.info
+web-traffic.info
+
+# Reference: https://twitter.com/h2jazi/status/1372543666909220873
+# Reference: https://www.virustotal.com/gui/file/8bd23bbab513e03ea1eb2adae09f56b08c53cacd2a3e8134ded5ef8a741a12a5/detection
+# Reference: https://www.virustotal.com/gui/file/4e70df688e8d824008cc08e1d05f84bb8eccef1856ecabcbf0228efa87adb129/detection
+# Reference: https://www.virustotal.com/gui/file/9ed939f56eb04fb40c9a0ce6f3a4fe8045619eeab1d0d378a2431578c0a2ca23/detection
+# Reference: https://www.virustotal.com/gui/file/9eca74b1fef65ac41d28f7ada626eec1e1a9fe8b9285943d72d43b87e81f8a7e/detection
+# Reference: https://www.virustotal.com/gui/file/a02db59312f14aa8208c462e0e5b3d3de33dd3018dae150417daffc2216903da/detection
+
+stgeorgebankers.com
+
+# Reference: https://vblocalhost.com/uploads/VB2021-Kayal-etal.pdf
+
+microsftonline.net
+onlineoutlook.net
+windowsupdatecdn.com
+cloudmsn.net
+hpesystem.com
+dmgagency.net
+digitalmarketingnews.net
+mastertape.org
+msnnews.org
+sysadminnews.info
+updatecdn.net
+dnscdn.org
+uctpostgraduate.com
+securednsservice.net
+centosupdatecdn.com
+dnscatalog.net
+webmaster-team.com
+livecdn.com
+dnsstatus.org
+defenderlive.com
+akastatus.com
+wsuslink.com
+
+# Reference: https://www.clearskysec.com/wp-content/uploads/2021/08/Siamesekitten.pdf
+# Reference: https://otx.alienvault.com/pulse/611cebb137fe5c6475b044f5
+
+defenderstatus.com
+jobschippc.com
+softwareagjobs.com
+zonestatistic.com
+
+# Reference: https://twitter.com/fr0s7_/status/1503678175284449288
+# Reference: https://www.virustotal.com/gui/file/5f0e0f0abc28ccc1911533fd035e984b4183eb9838bb41c1f6589de84a617ca6/detection
+
+cyberclub.one
+
+# Reference: https://twitter.com/k3yp0d/status/1503756002738515969
+# Reference: https://www.virustotal.com/gui/file/b668c7308223885f7875b02de2c924bb4456ff2040129c71ae5853a63f824f16/detection
+
+104.249.26.60:5512
+science-news.live
+
+# Reference: https://research.checkpoint.com/2022/state-sponsored-attack-groups-capitalise-on-russia-ukraine-war-for-cyber-espionage/
+# Reference: https://www.zscaler.com/blogs/security-research/lyceum-net-dns-backdoor
+# Reference: https://otx.alienvault.com/pulse/624c29baad734a210134b02c
+# Reference: https://otx.alienvault.com/pulse/6298718ccb0c8c00f0485af3
+# Reference: https://www.virustotal.com/gui/ip-address/85.206.175.201/relations
+# Reference: https://www.virustotal.com/gui/file/0e06aa02a69b8efc5c38753849e325c920aaae90c17f50f602257041589ad366/detection
+# Reference: https://www.virustotal.com/gui/file/e8bb67e80203e1996c4098d83667998e7641194347ca6ec52070b58f5d3d2254/detection
+# Reference: https://www.virustotal.com/gui/file/e3d375744e9e03c6248cc1c4770c57dedde36f4e2ee1a3e4f04e7218ff568354/detection
+# Reference: https://www.virustotal.com/gui/file/b668c7308223885f7875b02de2c924bb4456ff2040129c71ae5853a63f824f16/detection
+# Reference: https://www.virustotal.com/gui/file/a9f9e5a30cc858dc135ec428cdd68cb06143732e5c62c4dc4b359c8abc11d74b/detection
+# Reference: https://www.virustotal.com/gui/file/4d05bef5407ca33b133ff9ca7f1686bc2200e0a3c3af8eec3a164cd86861532b/detection
+# Reference: https://www.virustotal.com/gui/file/431900772fde6905031b35077072d694d957b0ce27c3592e10686558843d8b8d/detection
+# Reference: https://www.virustotal.com/gui/file/10ac0884f1b53c3f42d97fd78b17af7ea4397cb6d0222b357c8180733f8165e6/detection
+# Reference: https://www.virustotal.com/gui/file/fcd1f79cec4de354b05cac1d606865d1896db086e715c88ec0c6915884588579/detection
+# Reference: https://www.virustotal.com/gui/file/a8829144273332032b5527e41a22cce7f8473206bb22e22c479bfc0b38c80d9b/detection
+# Reference: https://www.virustotal.com/gui/file/91100c15dbd7ce47fc8598ef621181916080860f8f6c5663dc232e3843216cd2/detection
+# Reference: https://www.virustotal.com/gui/file/0a43911679e3ad25638d04d1f4b000a4be9ba8f93aa46b7860f9309991d18df8/detection
+# Reference: https://www.virustotal.com/gui/file/029e41b95553b0d2e6254a52b78630652ce11edeac12d54bca38e9e25b2420d8/detection
+
+104.249.26.60:5512
+85.206.175.199:53
+185.243.112.136:5512
+cyberclub.one
+main.download
+news-reporter.xyz
+news-spot.live
+news-spot.xyz
+
+# Reference: https://twitter.com/RedDrip7/status/1537389704374431744
+# Reference: https://www.virustotal.com/gui/file/8883bbd14017d0946aefd2c6fbc7b2c9b0b6b2439f96125bf4ae1c3d314a03c7/detection
+# Reference: https://www.virustotal.com/gui/file/50e643e06c1fd6b334668439c1fb734c9d42707f80af2edbcb0e5541513546fe/detection
+
+89.39.149.18:6500
+89.39.149.18:6501
+
+# Reference: https://twitter.com/sS55752750/status/1540353519974334467
+
+89.39.149.18:3444
+
+# Reference: https://www.clearskysec.com/wp-content/uploads/2022/06/Lyceum-suicide-drone-23.6.pdf
+# Reference: https://otx.alienvault.com/pulse/62b598f4ee9576cd17e3ad87
+# Reference: https://www.virustotal.com/gui/ip-address/89.39.149.19/relations
+
+planet-informer.me
+
+# Reference: https://twitter.com/RedDrip7/status/1564090684612952064
+# Reference: https://www.virustotal.com/gui/file/1e6d7fa1c7a17d4bc9fc939132347ed9d4df4628bfcaa7539d757218ed0b87ff/detection
+
+185.243.112.136:6501
+he-express-marketing.com

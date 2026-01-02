@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/0xToxin/status/1650752737787666432
+# Reference: https://www.virustotal.com/gui/file/d45c189fd7db4f14324cec8d23a424094a516283df63d43d67e905c9f585ae32/detection
+
+110.43.44.109:8080

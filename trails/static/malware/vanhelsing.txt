@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: vanhelsing ransomware, vanlocker
+
+# Reference: https://x.com/mrglwglwgl/status/1901515365357957544
+# Reference: https://x.com/solostalking/status/1901579492830978553
+# Reference: https://x.com/AlvieriD/status/1901607322377465967
+# Reference: https://www.virustotal.com/gui/file/86d812544f8e250f1b52a4372aaab87565928d364471d115d669a8cc7ec50e17/detection
+
+http://193.37.69.162
+http://193.37.69.225
+vanhelcbxqt4tqie6fuevfng2bsdtxgc7xslo2yo7nitaacdfrlpxnqd.onion
+vanhelqmjstkvlhrjwzgjzpq422iku6wlggiz5y5r3rmfdeiaj3ljaid.onion
+vanhelsokskrlaacilyfmtuqqa5haikubsjaokw47f3pt3uoivh6cgad.onion
+vanheltarnbfjhuvggbncniap56dscnzz5yf6yjmxqivqmb5r2gmllad.onion
+vanhelvuuo4k3xsiq626zkqvp6kobc2abry5wowxqysibmqs5yjh4uqd.onion
+vanhelwmbf2bwzw7gmseg36qqm4ekc5uuhqbsew4eihzcahyq7sukzad.onion
+vanhelxjo52qr2ixcmtjayqqrcodkuh36n7uq7q7xj23ggotyr3y72yd.onion

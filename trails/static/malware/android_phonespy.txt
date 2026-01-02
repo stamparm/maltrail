@@ -1,0 +1,49 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ProTec, SpyNix
+
+# Reference: https://twitter.com/malwrhunterteam/status/1334448610432475137
+# Reference: https://twitter.com/bl4ckh0l3z/status/1334485183744143362
+# Reference: https://www.virustotal.com/gui/file/ace6940e4bf7b2b1b07d601166453730252c2a873fd57609e686a1cd2b9c3690/detection
+
+175.126.146.156:1883
+175.126.146.156:8003
+http://175.126.146.156
+phone-spy.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1336640808624279552
+# Reference: https://www.virustotal.com/gui/file/8400712c65b54bc660f1cdba8d3bd3aded218281e931534e6c31750de7ffd53a/detection
+
+175.118.126.116:8005
+
+# Reference: https://twitter.com/malwrhunterteam/status/1352007097957945347
+# Reference: https://twitter.com/bl4ckh0l3z/status/1352903100890308608
+# Reference: https://www.virustotal.com/gui/file/1843eb31d94c4e4bb7c9423e7335c7a6d1b4cd7cc8f16f4ee8dfc72d52c17e1e/detection
+
+110.10.189.108:8002
+110.10.189.108:8082
+175.126.146.166:8003
+175.126.146.166:8005
+
+# Reference: https://blog.zimperium.com/phonespy-the-app-based-cyberattack-snooping-south-korean-citizens/
+# Reference: https://www.virustotal.com/gui/ip-address/1.234.82.23/relations
+# Reference: https://www.virustotal.com/gui/ip-address/1.234.82.31/relations
+# Reference: https://www.virustotal.com/gui/ip-address/175.126.146.147/relations
+# Reference: https://www.virustotal.com/gui/file/7ca71565ac1f57725606fd92033928fbd727b810cd507f9d7b0ca2c89853abcf/detection
+
+http://175.126.146.147
+1.234.82.23:8002
+1.234.82.23:88
+175.118.126.99:1883
+freespy.cf
+freespy1.ml
+freespy1.tk
+kcpro.ga
+kcpro.tk
+koreavopi.kro.kr
+
+# APK
+
+/해킹테스트.apk
+/태연방송.apk

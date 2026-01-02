@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/b13d9c72f3e52d5ba4486314ee8adb4cded03075880013429779344472063ab0/detection
+
+botnetlogs.com
+
+# Reference: https://www.virustotal.com/gui/file/00fb9d3ea20805d4b650ecd38f87747f233489aac90ea1dc36bee763760bceca/detection
+
+http://91.193.43.180
+
+# Generic
+
+/PureCrypter/panel/
+/PureCrypter/panel/uploads/

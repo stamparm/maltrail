@@ -1,0 +1,46 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/c3911aaf89c466ba91d1f72f4ba6edb42fcc2ac8198ad75fb9ba411573991af7/detection
+# Reference: https://fortiguard.com/encyclopedia/virus/8183610/msil-xaparo-uud-tr-bdr
+# Reference: https://fortiguard.com/encyclopedia/virus/8185617/w32-xaparo-ac-tr
+
+5.253.114.116:7417
+
+# Reference: https://www.virustotal.com/gui/file/3d7de1a587e1a6bc3077feef476ee16557be3677bc61d86f03d9b7ad5a117a49/detection
+
+5.253.114.116:7418
+
+# Reference: https://www.virustotal.com/gui/file/d1b6db3744522f1397da2bfb08f10a49a1c0a1a02c64319cbc4b2c59fadd014a/detection
+
+5.253.114.116:7072
+
+# Reference: https://www.virustotal.com/gui/file/8f981c2c2a5ec61765f189e952dd76f4e3d375aec7b8bd941d563b01519769e1/detection
+
+kuwex.xawewayfhc.ga
+
+# Reference: https://www.virustotal.com/gui/file/0e167228fc7c2d68b8031d82df45160238165b74447d29d8ec2919b99e3c3ee3/detection
+
+hurricane.gleeze.com
+hurricane.myq-see.com
+
+# Reference: https://www.virustotal.com/gui/file/6e7d618742af573e00263aab12b92ce8b77b4e310c5014544f1fecca1200d17f/detection
+
+185.140.53.6:2999
+
+# Reference: https://www.virustotal.com/gui/file/c5ba970a225709c87944ed188b1b861f4f00f1ac12a6ecbedb29f1a69195260b/detection
+
+45.147.229.52:7063
+
+# Reference: https://www.virustotal.com/gui/file/37d77ca9f062c8314e33f54d2983610761263dd1139710dfea3b982f3f8962b7/detection
+
+janbuzinezz.biz
+/febblessed/index.php
+
+# Reference: https://www.virustotal.com/gui/file/c6a88ddae63fbd4f4309269f908e9d3c4d99b4000e99d78f5e32e2df7eb968af/detection
+
+45.147.229.52:7071
+
+# Reference: https://www.virustotal.com/gui/file/c7f8f1f4dc37a9aeb004c59f902b5c72ab53486811197791886ce70875312bd9/detection
+
+45.147.229.52:7075

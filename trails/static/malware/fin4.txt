@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-fin4.pdf
+
+ellismikepage.info
+lifehealthsanfrancisco2015.com
+rpgallerynow.info
+dmforever.biz
+msoutexchange.us
+junomaat81.us
+outlookscansafe.net
+outlookexchange.net
+nickgoodsite.co.uk

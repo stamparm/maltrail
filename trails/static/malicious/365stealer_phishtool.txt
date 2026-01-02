@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/banthisguy9349/status/1731377049506386405
+
+http://52.196.149.49
+
+# Reference: https://x.com/Fact_Finder03/status/1930530643135348948
+
+51.210.1.239:8443
+
+# Reference: https://x.com/salmanvsf/status/1930535719132688888
+# Reference: https://x.com/salmanvsf/status/1930536778030621081
+
+http://20.198.21.60
+15.235.212.23:8443
+20.198.21.60:443
+
+# Generic
+
+/365-Stealer/
+/365-Stealer/yourVictims/

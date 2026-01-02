@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/new-fileless-botnet-novter-distributed-by-kovcoreg-malvertising-campaign/
+# Reference: https://otx.alienvault.com/pulse/5d936f1b1f19d32662b2b43c
+
+http://37.1.223.178
+1065695240.rsc.cdn77.org
+1118069275.rsc.cdn77.org
+bo0uiomeglecaptures.net
+uoibppop.tk
+
+# Generic trails
+
+/aefgwehh/05sall.dat
+/qmuwwedfw/block_av_01.dat
+/qmuw3fwdfw/tell2.dat

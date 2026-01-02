@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.arbornetworks.com/blog/asert/additional-insights-on-shamoon2/
+
+go-microstf.com
+analytics-google.org
+
+# Reference: https://securityintelligence.com/the-full-shamoon-how-the-devastating-malware-was-inserted-into-networks/
+
+ntg-sa.com
+maps-modon.club
+mol.com-ho.me
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2018/2018-12-14-shamoon-returns-to-wipe-systems-in-middle-east-europe/shamoon-returns-to-wipe-systems-in-middle-east-europe.csv
+
+key8854321.pub
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2018/2018-12-19-shamoon-attackers-employ-new-tool-kit-to-wipe-infected-systems/shamoon-attackers-employ-new-tool-kit-to-wipe-infected-systems.csv
+
+mynetwork.ddns.net
+possibletarget.ddns.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2017/2017-01-27-spotlight-on-shamoon/spotlight-on-shamoon.csv
+
+winappupdater.com
+winupdater.com

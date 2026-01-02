@@ -1,0 +1,63 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: babyk, babuklocker, babuk-locker
+
+# Reference: https://twitter.com/Glacius_/status/1345376488506462209
+# Reference: https://app.any.run/tasks/95d2f695-025d-4a91-843e-66bb57b3519e/
+# Reference: https://www.virustotal.com/gui/file/8203c2f00ecd3ae960cb3247a7d7bfb35e55c38939607c85dbdb5c92f0495fa9/detection
+
+babukq4e2p4wu4iq.onion
+
+# Reference: https://www.hackplayers.com/2021/02/sitios-cibercriminales-deepweb.html
+
+gtmx56k4hutn3ikv.onion
+
+# Reference: https://blog.talosintelligence.com/2021/11/babuk-exploits-exchange.html
+
+http://185.219.52.229
+185.219.52.229:6666
+185.219.52.229:8080
+fbi.fund
+xxxs.info
+
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+
+nq4zyac4ukl4tykmidbzgdlvaboqeqsemkp4t35bzvjeve6zm2lqcjid.onion
+
+# Reference: https://www.mcafee.com/blogs/enterprise/mcafee-enterprise-atr/is-there-really-such-a-thing-as-a-low-paid-ransomware-operator/
+# Reference: https://otx.alienvault.com/pulse/616ee12b44039d67eabb36e8
+
+appmonitorplugin.sytes.net
+atualziarsys.serveirc.com
+services5500.sytes.net
+suporte01092021.myftp.biz
+suporte01928492.redirectme.net
+suporte20082021.sytes.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1571177967467864065
+
+sonarmsng5vzwqezlvtu2iiwwdn3dxkhotftikhowpjuzg7p3ca5eid.onion
+
+# Reference: https://twitter.com/malwrhunterteam/status/1670212991109791745
+# Reference: https://www.virustotal.com/gui/file/aff7b20907db426ab886cbdab6d5f15afd0310c5b2629ff32a4a617340f0d46d/detection
+
+babydfa6yzdx6otdqjgvk53kpqove5cuhpnr7rjigu5rujo25itdnyyd.onion
+
+# Reference: https://blog.talosintelligence.com/ra-group-ransomware/
+# Reference: https://github.com/Cisco-Talos/IOCs/blob/main/2023/05/ra-group-ransomware.txt
+# Reference: https://otx.alienvault.com/pulse/64625a79244b743ba2a598a3
+
+hkpomcx622gnqp2qhenv4ceyrhwvld3zwogr4mnkdeudq2txf55keoad.onion
+
+# Reference: https://x.com/RacWatchin8872/status/1787851705654120639
+
+195.182.143.218:8099
+
+# Reference: https://x.com/akaclandestine/status/1900262510747357206
+
+exercice-cybercrise.fr
+ispconfig.connectar.ar
+mail.wi-sim.com.ar
+sosba-lp.com.ar
+wi-sim.com

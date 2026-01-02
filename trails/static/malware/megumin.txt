@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://fumik0.com/2019/05/03/lets-nuke-megumin-trojan/
+
+90551.prohoster.biz
+baldorclip.icu
+
+# Reference: https://twitter.com/P3pperP0tts/status/1125446618705219585
+
+megunim.top
+
+# Generic trails
+
+/addbot?hwid=
+/task?hwid=
+/completed?hwid=
+/reconnecttime

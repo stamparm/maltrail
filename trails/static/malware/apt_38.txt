@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://content.fireeye.com/apt/rpt-apt38
+# Reference: https://otx.alienvault.com/pulse/5bb4bdccd63eeb0a87994870
+
+bitdefs.ignorelist.com
+
+# Reference: https://twitter.com/ccxsaber/status/1204007469053165570
+
+gphi.site
+gphi-gsaeyheq.top
+gphi-adhaswe.xyz
+updatesinfos.com
+a.updatesinfos.com
+b.updatesinfos.com
+ip1.s.gphi.site
+ip2.s.gphi.site
+ip1.gphi-gsaeyheq.top
+ip1.gphi-adhaswe.xyz

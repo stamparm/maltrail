@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/RakeshKrish12/status/1843195597970649583
+# Reference: https://app.validin.com/detail?type=dom&find=k67ivvik3dikqi4gy4ua7xa6idijl4si7k5ad5lotbaeirfcsx4sgbid.onion#tab=host_pairs_v2
+
+breach.house
+moroccosec.com
+mail.moroccosec.com
+moroccoseccom.vimu2139.odns.fr

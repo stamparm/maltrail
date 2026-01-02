@@ -1,0 +1,149 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: linux encoder, qnacrypt, eCh0raix
+
+# Reference: https://www.cyber.nj.gov/threat-profiles/ransomware-variants/linuxencoder
+# Reference: https://vms.drweb.com/virus/?i=7704004&lng=en
+
+z54n57pg2el6uze2.onion.to
+
+# Reference: https://www.fortinet.com/blog/threat-research/closer-look-satan-ransomwares-propagation-technics.html
+
+/cry32
+/cry64
+
+# Reference: https://www.intezer.com/blog-seizing-15-active-ransomware-campaigns-targeting-linux-file-storage-servers/ (# QNAPCrypt)
+# Reference: https://otx.alienvault.com/pulse/5d260d04ee31a2a96a077c0d
+
+http://192.99.206.61/d.php
+192.99.206.61:65000
+sg3dwqfpnr4sl5hh.onion
+
+# Reference: https://twitter.com/campuscodi/status/1169921091164413954
+# Reference: https://www.zdnet.com/article/thousands-of-servers-infected-with-new-lilocked-lilu-ransomware/
+# Reference: https://searchengines.guru/showthread.php?t=1021112 (Russian)
+
+y7mfrrjkzql32nwcmgzwp3zxaqktqywrwvzfni4hm4sebtpw5kuhjzqd.onion
+
+# Reference: https://twitter.com/joakimkennedy/status/1268243062611984384
+# Reference: https://unit42.paloaltonetworks.com/ech0raix-ransomware-soho/
+# Reference: https://www.virustotal.com/gui/file/88a73f1c1e5a7c921f61638d06f3fed7389e1b163da7a1cc62a666d0a88baf47/detection
+
+veqlxhq7ub5qze3qy56zx2cig2e6tzsgxdspkubwbayqije6oatma6id.onion
+/crp_linux_386
+/crp_linux_arc
+/crp_linux_arcle-hs38
+/crp_linux_arm
+/crp_linux_arm4
+/crp_linux_arm4l
+/crp_linux_arm4t
+/crp_linux_arm4tl
+/crp_linux_arm4tll
+/crp_linux_arm5
+/crp_linux_arm5l
+/crp_linux_arm5n
+/crp_linux_arm6
+/crp_linux_arm64
+/crp_linux_arm6l
+/crp_linux_arm7
+/crp_linux_arm7l
+/crp_linux_arm8
+/crp_linux_armv4
+/crp_linux_armv4l
+/crp_linux_armv5l
+/crp_linux_armv6
+/crp_linux_armv61
+/crp_linux_armv6l
+/crp_linux_armv7l
+/crp_linux_dbg
+/crp_linux_exploit
+/crp_linux_i4
+/crp_linux_i486
+/crp_linux_i586
+/crp_linux_i6
+/crp_linux_i686
+/crp_linux_kill
+/crp_linux_m68
+/crp_linux_m68k
+/crp_linux_mips
+/crp_linux_mips64
+/crp_linux_mipseb
+/crp_linux_mipsel
+/crp_linux_mpsl
+/crp_linux_pcc
+/crp_linux_powerpc
+/crp_linux_powerpc-440fp
+/crp_linux_powerppc
+/crp_linux_ppc
+/crp_linux_pp-c
+/crp_linux_ppc2
+/crp_linux_ppc440
+/crp_linux_ppc440fp
+/crp_linux_root
+/crp_linux_root32
+/crp_linux_sh
+/crp_linux_sh4
+/crp_linux_sparc
+/crp_linux_spc
+/crp_linux_ssh4
+/crp_linux_x32
+/crp_linux_x32_64
+/crp_linux_x64
+/crp_linux_x86
+/crp_linux_x86_32
+/crp_linux_x86_64
+
+# Reference: https://twitter.com/_re_fox/status/1466970787345223680
+# Reference: https://twitter.com/_re_fox/status/1466978766664744960
+
+http://178.18.249.42
+178.18.249.42:8082
+
+# Reference: https://unit42.paloaltonetworks.com/ech0raix-ransomware-soho/
+# Reference: https://otx.alienvault.com/pulse/6113690279e9eb9f64fac829
+
+http://183.76.46.30
+http://2.37.149.230
+http://64.42.152.46
+http://98.144.56.47
+
+# Reference: https://www.virustotal.com/gui/file/24b5cdfc8de10c99929b230f0dcbf7fcefe9de448eeb6c75675cfe6c44633073/detection
+# Reference: https://www.virustotal.com/gui/file/a130125a498a358b75cd9a1256ea873baeacd81f77c3d2ea475f3e547f899509/detection
+# Reference: https://www.virustotal.com/gui/file/3d8d25e2204f25260c42a29ad2f6c5c21f18f90ce80cb338bc678e242fba68cd/detection
+# Reference: https://www.virustotal.com/gui/file/3a79225b5d6e1726e24b18ee35ad2a1b3656de80f4931d9fbd6ec3d7d9c7438d/detection
+
+185.193.126.161:9100
+
+# Reference: https://www.virustotal.com/gui/file/06e2153d833faa28b7e8424d4037a53e174d4d996f7312156ce0e54688c9b099/detection
+# Reference: https://www.virustotal.com/gui/file/64713e8bcd6cfac88621833c5c691a40018d77ee37af1954f854f0ed9bdbdfb0/detection
+
+34.94.72.179:8080
+35.235.126.33:8080
+cookie-coin.xyz
+cia.cookie-coin.xyz
+
+# Reference: https://twitter.com/malwrhunterteam/status/1724889623308951934
+# Reference: https://www.virustotal.com/gui/file/463ee4cee193b4e1eeee91df5c343658fb708ff2795146226dd779eb11580f58/detection
+
+http://80.92.205.181
+
+# Reference: https://twitter.com/malwrhunterteam/status/1757761651636425201
+# Reference: https://www.virustotal.com/gui/file/cd729507d2e17aea23a56a56e0c593214dbda4197e8a353abe4ed0c5fbc4799c/detection
+
+linuxenc.top
+download.linuxenc.top
+/e_nas_x86.out
+
+# Reference: https://twitter.com/SecureSh3ll/status/1770571047403761703
+# Reference: https://x.com/cyber_ra1/status/1814170613403296210
+# Reference: https://www.virustotal.com/gui/file/a0c47d786c535515591661e24a8df276700017533ff0e34ce63fb97f8704f085/detection
+# Reference: https://www.virustotal.com/gui/file/cd097022c8dc55aa4822bae1360f4fe13fb6b87ef29c9b0c475049a6839cbae2/detection
+
+http://121.109.222.31
+http://211.36.1.152
+167.71.245.186:8080
+1.220.92.198:8899
+7zvu7njrx7q734kvk435ntuf37gfll2pu46fmrfoweczwpk2rhp444yd.onion
+/3.40_Stub_Arm_x86
+/3.40_Stub_Linux_x86

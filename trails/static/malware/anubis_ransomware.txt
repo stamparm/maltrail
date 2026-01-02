@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/AlvieriD/status/1894205142058045696
+
+om6q4a6cyipxvt7ioudxt24cw4oqu4yodmqzl25mqd2hgllymrgu4aqd.onion
+
+# Reference: https://x.com/solostalking/status/1894295983183339922
+
+http://141.98.82.8

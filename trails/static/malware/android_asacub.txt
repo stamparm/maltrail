@@ -1,0 +1,31 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/the-rise-of-mobile-banker-asacub/87591/
+
+backarchives.com
+daimoidomainemne.info
+domriagracia.biz
+embarrassmentar.com
+namessheds.com
+
+# Reference: https://www.virustotal.com/#/file/4cb0b471a2132a747abf78214fbdbf0e8d7f44857996117bdbb266d42a277970/relations
+
+wygi243544ihfuhfiu4ygj7thygdtgrhd.online
+
+# Reference: https://twitter.com/sh1shk0va/status/1115615383627681792
+# Reference: https://twitter.com/LukasStefanko/status/1115590829534478336
+
+cdn1e699bdc.com
+un6kqz7yotjtuqwi.onion
+
+# Reference: https://www.virustotal.com/gui/ip-address/216.189.157.102/relations
+# Reference: https://www.virustotal.com/gui/ip-address/43.251.158.184/relations
+# Reference: https://www.virustotal.com/gui/file/415770c67bb3ad4752fec2eeaf290dbfa1b942a3912631f519ce26041e83b5d6/detection
+# Reference: https://www.virustotal.com/gui/file/cccdd080b331e6e9b0ce3ff140416b72e28d906688cce29303aa65aa40c874f2/detection
+
+goglestats.xyz
+goglstats.co.ua
+googlestce.co.ua
+googlstats.xyz
+/google-stats/watcher.php

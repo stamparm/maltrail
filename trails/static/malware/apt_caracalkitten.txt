@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt-q-58
+
+# Reference: https://twitter.com/RexorVc0/status/1712725980924518898
+# Reference: https://www.ctfiot.com/138538.html (Chinese)
+# Reference: https://www.virustotal.com/gui/file/5e43da767e68650d424d3aca15d0e9790cb90f3806a86a7b06a0ddf9a55c353e/detection
+# Reference: https://www.virustotal.com/gui/file/6123a20afabb209bc7d191acb1cc42de5225d49627de72c49bd86bf9e5c33b85/detection
+
+http://65.109.157.77
+65.109.157.77:42474

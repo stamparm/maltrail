@@ -1,0 +1,6 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/a8d353418caaf3173899619de5d4065d5b4d1eaca69cb5e6651258f0ed8095a0/detection
+
+ericddoser.no-ip.info

@@ -1,0 +1,60 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cve-2011-2462, wkysol
+
+# Reference: https://securelist.com/sykipot-exploits-an-adobe-flash-zero-day/29760/
+
+news.mysundayparty.com
+
+# Reference: https://www.enigmasoftware.com/sykipottrojan-removal/
+
+hksrv.hostdefence.net
+
+# Reference: https://community.netwitness.com//t5/netwitness-discussions/sykipot-apt-malware/td-p/434344
+
+chosunkor.com
+defense-association.com
+happybehere.com
+hostdefence.net
+hotgreenlight.com
+hyundei-motor.com
+kortimes.com
+marinetimemac.com
+movieshowgirl.com
+mysundayparty.com
+onesfocus.com
+racingfax.com
+sourceinsightonline.com
+topix21century.com
+altchksrv.hostdefence.net
+map.kortimes.com
+moto.sourceinsightonline.com
+motor.hyundei-motor.com
+music.defense-association.com
+news.marinetimemac.com
+news.mysundayparty.com
+notes.topix21century.com
+sports.hotgreenlight.com
+strongtable.3322.org
+
+# Reference: http://contagiodump.blogspot.com/2011/12/adobe-zero-day-cve-2011-2462.html
+
+prettylikeher.com
+
+# Reference: https://www.hybrid-analysis.com/sample/052dc2ccd09342d2e32f0b2e3153e73012facc712ac3c59e11ac8deb3610fd18/5d19edbb038838a054a876b9
+
+lifestyles.vicp.net
+
+# Reference: https://corvus.inf.ufpr.br/reports/pdf/9050/
+
+bodyshowworld.com
+
+# Reference: https://www.sophos.com/ja-jp/threat-center/threat-analyses/viruses-and-spyware/Troj~Wkysol-A/detailed-analysis
+
+onesfocus.com
+
+# Generic
+
+/asp/kys_allow_get.asp
+/kys_allow_get.asp

@@ -1,0 +1,86 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.alienvault.com/open-threat-exchange/blog/cve-2012-0158-tibet-targeted-attacks-and-so-on
+
+1.test.3322.org.cn
+2.test.3322.org.cn
+3.test.3322.org.cn
+4.test.3322.org.cn
+123ewqasdcxz.xicp.net
+hoop-america.oicp.net
+
+# Reference: https://www.virustotal.com/gui/file/0d2ee9ade24163613772fdda201af985d852ab506e3d3e7f07fb3fa8b0853560/detection
+# Reference: https://citizenlab.ca/2019/09/poison-carp-tibetan-groups-targeted-with-1-click-mobile-exploits/
+# Reference: https://github.com/citizenlab/malware-indicators/blob/master/201909_MissingLink/iocs.csv
+# Reference: https://twitter.com/craiu/status/1176437943369703424
+# Reference: https://otx.alienvault.com/pulse/5d89e04cea5c55ee87a6aa05
+
+43.251.16.87:5000
+45.76.149.154:5000
+66.42.58.59:9078
+antmoving.online
+beemail.online
+bf.mk
+energy-mail.org
+gmailapp.me
+gmail.isooncloud.com
+izelense.com
+mailanalysis.services
+mailcontactanalysis.online
+mailnotes.online
+mon7am.tk
+mon7am.000webhostapp.com
+msap.services
+news.cmitcsubs.tk
+polarismail.services
+rf.mk
+walkingnote.online
+
+# Reference: https://otx.alienvault.com/pulse/5d9c9101d569bf434dbc9385
+
+client-user-id.com
+
+# Reference: https://securelist.com/new-uyghur-and-tibetan-themed-attacks-using-pdf-exploits/35465/
+# Reference: https://www.alienvault.com/blogs/labs-research/latest-adobe-pdf-exploit-used-to-target-uyghur-and-tibetan-activists
+
+hotmal1.com
+micorsofts.net
+micrsofts.com
+micrsofts.com
+hy.micrsofts.com
+ip.micrsofts.com
+ly.micorsofts.net
+xdx.hotmal1.com
+
+# Reference: https://www.volexity.com/blog/2020/03/31/storm-cloud-unleashed-tibetan-community-focus-of-highly-targeted-fake-flash-campaign/ (Storm Cloud)
+# Reference: https://otx.alienvault.com/pulse/5e84c248adbbd69f8c569252
+
+airjaldinet.ml
+windows-report.com
+browserservice.zzux.com
+ctmail.dns-dns.com
+designer.dynamic-dns.net
+getadobeflashdownloader.proxydns.com
+install.ddns.info
+loginwebmailnic.dynssl.com
+root20system20macosxdriver.serveusers.com
+roots.dynamic-dns.net
+ubntrooters.serveuser.com
+
+# Reference: https://securelist.com/holy-water-ongoing-targeted-water-holing-attack-in-asia/96311/
+# Reference: https://otx.alienvault.com/pulse/5e83635bf1c0d9b195569252
+
+adobeflash31_install.ddns.info
+sys_andriod20_designer.dynamic-dns.net
+system0_update04driver_roots.dynamic-dns.net
+
+# Reference: https://www.recordedfuture.com/messagemanifold-malware-spearphishing-campaigns/
+# Reference: https://otx.alienvault.com/pulse/5fca9086207f00c7222c0c87
+
+cta-tibet.com
+dalailama.online
+in-tibet.net
+mail-tibet.net
+tibet-office.com
+tibetoffice.in

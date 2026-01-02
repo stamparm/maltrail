@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.koi.ai/blog/inside-ghostposter-how-a-png-icon-infected-50-000-firefox-browser-users
+# Reference: https://urlscan.io/result/019b664e-4423-76d1-94e5-b758ee04d7b1/
+# Reference: https://urlscan.io/result/019b6650-3340-76f9-b952-2f31104ceef2/
+
+dealctr.com/ext/load.php
+liveupdt.com/ext/rd.php

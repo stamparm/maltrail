@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Actor240524, ABCloader, ABCsync
+
+# Reference: https://x.com/fuyinglab/status/1821388288089018486
+# Reference: https://nsfocusglobal.com/new-apt-group-actor240524-a-closer-look-at-its-cyber-tactics-against-azerbaijan-and-israel/
+# Reference: https://www.virustotal.com/gui/file/31300645371f90f83ca6aa058503fa7c2ba386f496ac181a6b287ba7ba1ea10e/detection
+# Reference: https://www.virustotal.com/gui/file/6fa56ab1ce0d4fc9db6422bff8caa38bea1bdb9abbe4a48ecfb364eb20c7ac1a/detection
+# Reference: https://www.virustotal.com/gui/file/a250740948aba579462397ac95ff10e6b0ee952c2af7d9d726cbfde9da1eaaff/detection
+
+185.23.253.143:36731

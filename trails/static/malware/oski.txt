@@ -1,0 +1,313 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/albertzsigovits/status/1160874557454131200
+# Reference: https://www.virustotal.com/gui/domain/oski.com/relations
+
+oski.com
+
+# Reference: https://www.virustotal.com/gui/file/1fc7e8979e92dbee18b3d0b0e5cb75f5176f87c25f80b48e68022e065cabf62e/detection
+
+j1001281.myjino.ru
+
+# Reference: https://twitter.com/albertzsigovits/status/1214930880432627713
+
+http://111.90.150.191
+amyginevgeny1.online
+bestphorot.cf
+getsoft.site
+mariavitaliewna.pw
+p4blogabriel.pw
+smurfiki.pw
+
+# Reference: https://twitter.com/fr3dhk/status/1219627789327966210
+
+extraclick.space
+
+# Reference: https://www.virustotal.com/gui/domain/petropando.pw/relations
+
+petropando.pw
+
+# Reference: https://www.virustotal.com/gui/domain/armeniyarsenov.pw/relations
+
+armeniyarsenov.pw
+
+# Reference: https://www.virustotal.com/gui/domain/dante1101.pw/relations
+
+dante1101.pw
+
+# Reference: https://www.virustotal.com/gui/domain/eslkatowice.com/relations
+
+eslkatowice.com
+
+# Reference: https://www.virustotal.com/gui/domain/snowagainfearfreezesagainagainitfeelslikeiceisinmyhands.space/relations
+
+snowagainfearfreezesagainagainitfeelslikeiceisinmyhands.space
+
+# Reference: https://www.virustotal.com/gui/domain/carrefours.pw/relations
+
+carrefours.pw
+
+# Reference: https://www.virustotal.com/gui/domain/p37r0ffv1ckt.pw/relations
+
+p37r0ffv1ckt.pw
+
+# Reference: https://www.virustotal.com/gui/domain/youmortalsknownothingofmagic.pw/relations
+
+youmortalsknownothingofmagic.pw
+
+# Reference: https://www.virustotal.com/gui/domain/ipblasta.com/relations
+
+ipblasta.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/111.90.149.201/relations
+
+http://111.90.149.201
+
+# Reference: https://www.virustotal.com/gui/domain/escob4rpa8lo.pw/relations
+
+escob4rpa8lo.pw
+
+# Reference: https://www.virustotal.com/gui/domain/standartjuke.info/relations
+
+standartjuke.info
+
+# Reference: https://www.virustotal.com/gui/ip-address/46.249.38.240/relations
+
+http://46.249.38.240
+
+# Reference: https://www.virustotal.com/gui/domain/carirero.net/relations
+
+carirero.net
+
+# Reference: https://www.virustotal.com/gui/domain/petrogarmani.pw/relations
+
+petrogarmani.pw
+
+# Reference: https://twitter.com/ViriBack/status/1242434792618102788
+
+emailonlinechase.com
+
+# Reference: https://twitter.com/jorgemieres/status/1253350639670833152
+
+purgen.space
+
+# Reference: https://twitter.com/benkow_/status/1272823674807164928
+
+92g938uextmgvb7rllv8wcad.biz
+ipnfbqg2raz3asn4j631ha453bbr4h.biz
+sl9xa73g7u3eo07wt42n7f4vin5fzh.biz
+
+# Reference: https://blacklist.cyberthreatcoalition.org/vetted/url.txt
+
+http://199.192.24.69
+antoniopabl.pw
+bnxhbc25hwcv8b8afawhevzw.biz
+oski.aprendiendoaver.com
+
+# Reference: https://pastebin.com/Hc73BzJT
+
+http://45.141.84.143
+4llion.com
+
+# Reference: https://pastebin.com/SgZamRit
+
+http://194.87.95.5
+http://45.143.92.129
+http://92.53.124.88
+la8204a3.justinstalledpanel.com
+l10992ea.justinstalledpanel.com
+l009fa92.justinstalledpanel.com
+proxy.bonch.dev
+eesss.online
+
+# Reference: https://twitter.com/ganeshnathan28/status/1297546257947385856
+
+megaterabitessfile.space
+
+# Reference: https://twitter.com/ganeshnathan28/status/1298647211048341506
+
+guputhy.site
+mlcrost.xyz
+
+# Reference: https://www.virustotal.com/gui/file/d43b893e4ee77b79e0bd904c2d0790459a301ed77f1c097df310320f5d8caa40/detection
+
+cmck4vve6e24wdktsc9n8l1izi7eb9.biz
+
+# Reference: https://tria.ge/210623-3dpbwfyb76
+# Reference: https://www.virustotal.com/gui/ip-address/103.155.81.167/relations
+
+alphamaeh.duckdns.org
+b1xz.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/5b768fc87efd32ce0ed0450a1bc2eb70196647074e207394ca8ea6b0485f99c1/detection
+
+robbmaterials.xyz
+
+# Reference: https://www.virustotal.com/gui/file/652ff7f52f0e2d6bdd5a0f36f4b24c4dafc8aab7d5236db91b77267650cdb140/detection
+
+chrisproperties.xyz
+
+# Reference: https://www.virustotal.com/gui/file/bef42b4bb33bf2edb112d4e084df6e7aaad37b429b00ac783b9fe14eb08ac3f6/detection
+
+http://37.0.11.237
+
+# Reference: https://twitter.com/James_inthe_box/status/1473301612231741441
+# Reference: https://app.any.run/tasks/4bb532da-f9a2-4b34-93e4-3321725c1742/
+# Reference: https://www.virustotal.com/gui/file/fc55c796977aaab2254fd98cd04595c9eab86f459f3288f5f33d8fc9f050fdc4/detection
+
+jessecoltd.ir
+paxz.tk
+
+# Reference: https://www.virustotal.com/gui/file/d9a8ff42d8a53247338920a5d7c8f2ecbb512d9e81334e68d1c54a6cc46c5351/detection
+
+destad.axfree.com
+
+# Reference: https://www.virustotal.com/gui/file/469bb0b552b4d40a4f7d1334f69c121826b2a0ff3eeab0b69b97f836818d97a2/detection
+
+dreamyviolet.com
+
+# Reference: https://www.virustotal.com/gui/file/5a962e6116bde82aa809719f0b1872fa7b1d6a477cc915528ee5d06cea4c1b75/detection
+
+http://192.162.246.70
+
+# Reference: https://www.virustotal.com/gui/file/03fe8ff02f0795586c1b01b035b610822ae61acbb56b55cc0d62ff20eab8401d/detection
+
+http://2.56.57.108
+/osk//main.php
+
+# Reference: https://github.com/cyberark/malware-research/blob/master/OskiStealer/IoCs.pdf
+
+l93015ad.justinstalledpanel.com
+miklem.website
+rstnamehello.com
+
+# Reference: https://www.virustotal.com/gui/file/ebafb4dd06d7ad78931afce913864fea75d952e4cdb52d474dae7f6c54ae8904/detection
+
+vujyh6565.duckdns.org
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.oski/
+
+http://103.99.1.60
+http://185.212.131.198
+http://193.142.58.164
+http://2.56.59.141
+http://2.56.59.226
+http://3.84.190.152
+http://51.178.236.140
+http://62.77.159.212
+777.ultihost.net
+9enternecera.ru.com
+aaaonyisi.xyz
+accdemo.axwebsite.com
+agencybro.tech
+alazlfa.cf
+almed-trading.xyz
+amazon3.serveuser.com
+anstransport.com
+any.anycarservice.ae
+augmentinprod.ir
+bakas1e.xyz
+basig5.xyz
+bctpump.us
+bhd9999.online
+brakiporodica.org
+carding.axfree.com
+castroseguranca.com.br
+centarcrkva.rs
+ck7.mooo.com
+clemody.duckdns.org
+collegesboard.org
+cubicatransport.net
+cybersd.axfree.com
+de4mon-p4nel.site
+dellproductz.xyz
+dimensionluz.cl
+dllion.xyz
+elsantos.co
+equipemaverick.com.br
+extracreditunion.online
+f0575754.xsph.ru
+fieldhockeygoalies.com
+foodcircus.ro
+gconnect.pro
+gemsbundle.com
+gilvantur.com
+glancehcs.com
+golfhomexpresx.ir
+hersheystyles.com
+hikark.xyz
+hp-tv.tk
+ibroot.com
+immagirls.myvnc.com
+ipc-nena.net
+itskuba.com
+kelbro.xyz
+lettingos.co.vu
+lg-tvproducts.xyz
+lomidut.tk
+madamongo.gq
+manguerassorna.com
+marbellacabs.com
+mark02.xyz
+mast3r.shop
+master101work.co
+masterwork.me
+mcharglaw.com
+modexdeals.ir
+msdd.x24hr.com
+mulkano.cleansite.us
+mulkano.wwwhost.us
+ndy.cloudbot.top
+ndy.derg.tech
+nedu1994.xyz
+notedemo.axfree.com
+oski.myz.info
+panel.blsasco.com
+payddes.axfree.com
+postnigeria.com
+pplonline.org
+quisha.axwebsite.com
+ra.adriansbruce.com
+raslack.axwebsite.com
+rgjeweller.mu
+samsungprod.xyz
+schulenburgrvpark.com
+secureconnection.xyz
+shahedy.xyz
+soitaab.co
+sorab.ch
+spetralnet2.com
+st4q2p.xyz
+str1str2.xyz
+stygius.tech
+swsaseguranca.com.br
+t-shinwa-jp.com
+tel1e4.xyz
+tel4s6.xyz
+tel9e.xyz
+tikwish.com
+try.divendesign.in
+tunqyuindia.com
+tvscreen.co.vu
+twinsoul.co.za
+tycoonelite.com
+ugdskru-kia-7.cf
+unitech.co.vu
+upcoming100.com
+v.m-fit.biz
+vegas1e.xyz
+vegas2e.xyz
+virzx.xyz
+vsiperu.com
+vtgtradings.com
+vu.zzux.com
+weirdtrendz.com
+worthknowing.us
+xpensive.xyz
+yungfang.co.vu
+zau.divendesign.in
+zbd.divendesign.in
+zdd.divendesign.in
+zubroxmack.cf
+zzz.divendesign.in

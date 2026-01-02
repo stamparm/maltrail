@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blogs.blackberry.com/en/2020/11/the-costaricto-campaign-cyber-espionage-outsourced
+# Reference: https://otx.alienvault.com/pulse/5fad73cba6cb6d87e1e70474
+
+akams.in
+infosportals.com
+newspointview.com
+sbibd.net

@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/MBThreatIntel/status/1321499144503005185
+# Reference: https://blog.malwarebytes.com/cybercrime/2020/10/fake-covid-19-survey-hides-ransomware-in-canadian-university-attack/
+# Reference: https://otx.alienvault.com/pulse/5f99afe5c8d59c9cee84f873
+
+canarytokens.com/about/d4yeyvldfg6bn5y29by4e9fs3/post.jsp
+canarytokens.com/articles/6dbbnd503z06qitej1sdzzcvv/index.html
+canarytokens.com/articles/traffic/5ayx8tydzeuzhmq6y5u2lxhpa/post.jsp
+canarytokens.com/images/feedback/tags/0xu6dnwmpc1k1j2i3nec3fq2b/post.jsp
+canarytokens.com/images/tags/8pkmk2o11dmp1xjv5i9svji32/contact.php
+canarytokens.com/traffic/about/images/ff6x6licr69lmjva84rn65hao/contact.php
+canarytokens.com/traffic/articles/tags/z8yobwprmmopmyfyw8sb1fb0a/index.html
+canarytokens.com/traffic/jnk5rpagi54vztro6tau6g1v6/index.html
+
+# Reference: https://twitter.com/malwrhunterteam/status/1484664353643274246
+# Reference: https://www.virustotal.com/gui/file/0458371aebe84a4913924e4ae67f257f86f178f9ffab384adba4ea9c669558c2/detection
+
+canarytokens.com/images/sq0ggof80xaiwvc6kd28np42s/index.html

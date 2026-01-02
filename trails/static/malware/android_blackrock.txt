@@ -1,0 +1,82 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: blackrock, mbot, mysterybot
+
+# Reference: https://twitter.com/bl4ckh0l3z/status/1286221012464480262
+# Reference: https://www.virustotal.com/gui/file/32d2071ea8b7d815ab3455da2770b01901cef3fc26b9912f725a0a7de2f7d150/detection
+
+http://62.109.31.11
+
+# Reference: https://twitter.com/yongyecc/status/1293216141569953792
+
+black-privat.ru
+
+# Reference: https://twitter.com/fr3dhk/status/1301225880677564417
+
+217.8.117.93:8080
+http://217.8.117.93
+
+# Reference: https://www.virustotal.com/gui/file/1e9ede2577268947b6e45b57eb9fb984ee41894d88572279cb0d69b26634dd26/detection
+
+176.121.14.151:8082
+http://176.121.14.151
+
+# Reference: https://twitter.com/B0rys_Grishenko/status/1328385458674470912
+
+pekano.xyz
+
+# Reference: https://twitter.com/B0rys_Grishenko/status/1350118707557785602
+# Reference: https://twitter.com/malwrhunterteam/status/1354082027923005451
+# Reference: https://www.virustotal.com/gui/file/481daa5725528d9d3f40bc9d015345e80243962c16ff1cee63739031183f347a/detection
+# Reference: https://www.virustotal.com/gui/file/19566dfad2a2ec22e2ac3281618528f3675405b849656f6de845fb3a5cf1e486/detection
+
+http://91.214.124.196
+covitaly-19.club
+
+# Reference: https://twitter.com/LukasStefanko/status/1357641346010533888
+# Reference: https://www.virustotal.com/gui/ip-address/91.214.124.200/relations
+
+autolycus.ug
+veles.ug
+
+# Reference: https://twitter.com/ESETresearch/status/1371829368998277124
+# Reference: https://twitter.com/ESETresearch/status/1371829367068852226
+# Reference: https://otx.alienvault.com/pulse/6058c332eff5515d26907850
+# Reference: https://www.welivesecurity.com/2021/03/18/beware-android-trojan-posing-clubhouse-app/
+# Reference: https://www.virustotal.com/gui/file/90266a7176c94ff1a9828f9eb17049a72d8eb85901faed03c6d5e9692f5f7080/detection
+
+joinclubhouse.mobi
+
+# Reference: https://twitter.com/malwrhunterteam/status/1376930806774513665
+# Reference: https://twitter.com/_icebre4ker_/status/1377161254582673408
+# Reference: https://www.virustotal.com/gui/file/cfc354572b6090d8a84bf4bcd1b77d189276ef38ddd6d8e2b7095851b5c5054d/detection
+
+http://185.215.113.90
+
+# Reference: https://twitter.com/pmmkowalczyk/status/1382623507843067904
+# Reference: https://www.virustotal.com/gui/file/133b228e54fc1fbebd5392ac8421a2e3d85bae9ca2d2effa105873fa1cdb6edf/detection
+
+http://185.215.113.25
+185.215.113.25:3000
+
+# Reference: https://twitter.com/malwrhunterteam/status/1400090288027222017
+# Reference: https://twitter.com/B0rys_Grishenko/status/1400094209605054467
+# Reference: https://www.virustotal.com/gui/file/e3d9d590170b9c6e1bf58d06b2d0d65519504489dc75ef4e5866934423f257b0/detection
+
+http://185.215.113.114
+
+# Reference: https://twitter.com/malwrhunterteam/status/1402948560186925065
+# Reference: https://twitter.com/B0rys_Grishenko/status/1402948926173499395
+
+http://185.215.113.48
+twoje-bezpieczenstwo.com
+
+# APK
+
+/blokada-v5.11.apk
+/blokada-v5.12.apk
+/blokada-v5.13.apk
+/blokada-v5.14.apk
+/blokada-v5.15.apk
+/iPKO.apk

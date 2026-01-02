@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://news.sophos.com/en-us/2021/11/18/new-ransomware-actor-uses-password-protected-archives-to-bypass-encryption-protection/
+# Reference: https://otx.alienvault.com/pulse/6197a258ed98588eecee561e
+
+78.138.105.150:11180
+checkvisa.xyz
+novelupdate.com

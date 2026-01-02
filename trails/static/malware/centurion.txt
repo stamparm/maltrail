@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: centurion stealer
+
+# Reference: https://twitter.com/FalconFeedsio/status/1740996637173190906
+
+http://139.162.254.76
+139.162.254.76:443
+intrusion.lol

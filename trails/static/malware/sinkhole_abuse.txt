@@ -1,0 +1,40 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+sinkhole.ch
+
+# Reference: https://zeustracker.abuse.ch/monitor.php?nameserver=ns1.sinkhole.ch
+# Reference: https://zeustracker.abuse.ch/monitor.php?nameserver=ns2.sinkhole.ch
+
+ns1.sinkhole.ch
+208.43.245.213
+ns2.sinkhole.ch
+173.192.192.10
+ns3.sinkhole.ch
+199.231.211.108
+ns4.sinkhole.ch
+198.98.120.157
+
+# Reference: http://192.42.116.41.ipaddress.com/
+
+192.42.116.41
+
+# Reference: http://192.42.119.41.ipaddress.com/
+
+192.42.119.41
+
+# Reference: http://104.155.47.38.ipaddress.com/
+
+104.155.47.38
+
+# Reference: https://www.virustotal.com/#/ip-address/87.255.51.229
+
+87.255.51.229
+
+# Reference: https://www.virustotal.com/#/ip-address/87.255.51.230
+
+87.255.51.230
+
+# Note: nslookup 192.42.118.41 | grep this-domain-is-sinkholed-by.abuse.ch.
+
+192.42.118.41

@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/benkow_/status/1225786810330222594
+# Reference: https://twitter.com/benkow_/status/1225784901502472192
+
+54.88.21.193
+
+# Reference: https://www.virustotal.com/gui/file/19d3cadb835835103828d59347b41f192523fa0720a493ea23ca3f8544195e06/detection
+
+34.225.153.59:10000
+
+# Reference: https://twitter.com/benkow_/status/1235562180503838721
+
+installcapital.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/54.88.21.193/relations                   (# Communicating Files)
+# Reference: https://www.virustotal.com/gui/domain/d3vngcy706h320.cloudfront.net/relations
+
+d3vngcy706h320.cloudfront.net

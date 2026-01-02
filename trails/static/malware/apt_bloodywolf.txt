@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.group-ib.com/blog/bloody-wolf/
+
+ach-uz.com
+audit-kg.com
+esf-kg.com
+hgame33.com
+hisobot-uz.com
+minjust-kg.com
+nac-ac.com
+ravinads.com
+soliq-uz.com
+ttbbaits.com
+uzaudit.com

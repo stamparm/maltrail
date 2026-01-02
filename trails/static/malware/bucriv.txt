@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.microsoft.com/security/portal/threat/encyclopedia/Entry.aspx?Name=TrojanDownloader:Win32/Bucriv.A
+
+aquarium-stakany.org
+gentelmen.info
+haknuto-maknuto.com
+jasamjebenadomena.com
+lazymthfck.net
+mismojebenadomena.com
+pusikuracbre.com
+pusikuracbre.me
+sve-ce-da-nas-pojebe.biz
+sve-ce-da-nas-pojebe.com
+sve-ce-da-nas-pojebe.info
+sve-ce-da-nas-pojebe.net
+tisijebenadomena.comantiklus.com

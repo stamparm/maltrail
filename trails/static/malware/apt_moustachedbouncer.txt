@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/en/eset-research/moustachedbouncer-espionage-against-foreign-diplomats-in-belarus/
+
+209.19.37.184:445
+24.9.51.94:445
+35.214.56.2:445
+38.9.8.78:445
+52.3.8.25:445
+59.6.8.25:445
+centrocspupdate.com
+dervasopssec.com
+edgeupdate-security-windows.com
+ocsp-atomsecure.com
+securityocspdev.com

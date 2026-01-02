@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: gaslome, loselose, losegame, loosemaque
+
+# Reference: https://www.virustotal.com/gui/file/dd4e67950158511eb7c3ac1a047b551a08da73416d45c2ce3b0e507b40274840/detection
+# Reference: https://www.virustotal.com/gui/ip-address/74.125.21.139/relations
+
+74.125.21.139:443

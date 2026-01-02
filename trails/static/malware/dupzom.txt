@@ -1,0 +1,81 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: PcClient
+
+# Reference: https://twitter.com/James_inthe_box/status/1127554865478098944
+# Reference: https://pastebin.com/EtvRydv4
+
+xiaoji12.top
+
+# Reference: https://otx.alienvault.com/pulse/5b8f04842f7c861c72334b77
+
+bamzoaip.com
+ipoxoe.com
+korstam.com
+limoage.com
+miriippp.com
+youtukor.com
+
+# Reference: https://twitter.com/_CPResearch_/status/1267064065672859648
+# Reference: https://www.virustotal.com/gui/file/f3fc08d546e93052dba8418cda825af012150b9b697bb82c3c4abfcf9c6ac615/detection
+# Reference: https://www.virustotal.com/gui/ip-address/154.204.50.136/relations
+# Reference: https://app.any.run/tasks/775925f8-3d45-498f-a6b0-a577a23b9bde/
+
+154.204.50.136:1985
+imgovip.com
+sznamuip.com
+sznara.com
+yahoiipp.com
+
+# Reference: https://twitter.com/nao_sec/status/1339483904189685760
+# Reference: https://app.any.run/tasks/a2ab548b-03da-4d48-b7d8-a431c8273c53/
+# Reference: https://app.any.run/tasks/8f4420ee-4b5e-4a08-9742-f5950ebd0047/
+
+http://47.242.46.145
+
+# Reference: https://app.any.run/tasks/eab67146-1590-4799-b229-e78ef674990e/
+
+118.190.54.179:808
+djking.f3322.net
+
+# Reference: https://www.virustotal.com/gui/file/a37566adfea2a712bd8be1b3c480eb6369d92b6865eb566e4d20e50af12435bc/detection
+
+103.39.108.20:4471
+
+# Reference: https://app.any.run/tasks/d9727ef1-bf56-4602-8cfd-136a027e12fb/
+
+45.199.111.218:8080
+
+# Reference: https://www.virustotal.com/gui/file/5bd41f45bfe94b2a87698289e2fca042d039f818a7af26edbf5c4de115514b10/detection
+
+zxc360360.tl-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/f946206f26636f24ba8b7f548c01b8c5318f495a35569793c93097adde615b1b/detection
+
+122.14.192.153:2014
+122.14.192.153:7500
+xingyunwl.f3322.net
+xingyun.tl-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/850a0b4efb65353abbc976fe1f5066b77c934c466d80cc71dfdedadededf8f5b/detection
+
+103.230.108.62:3322
+23.235.191.80:2014
+
+# Reference: https://www.virustotal.com/gui/file/1d826648eae37f8ccc13c02fa7cafaefeb1d40e5df779e4a57322bfd17e4ee0e/detection
+
+58.240.94.11:7500
+
+# Reference: https://www.virustotal.com/gui/file/5ee4840abb98740c7faa12d11906d4b93e78927a88b644d7932c29dfdce0e39e/detection
+
+103.200.30.32:81
+223.241.141.193:1982
+198107.f3322.net
+198207.f3322.net
+
+# Generic
+
+/Consys21.dll
+/baiku.dll
+/hpqhvsei.dll

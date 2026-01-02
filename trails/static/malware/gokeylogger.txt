@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/salmanvsf/status/1891134727916023855
+# Reference: https://www.virustotal.com/gui/file/c6c864ee154c1b66a98c21c7fd5ead750f0a7161243c2ece2b055d16adc94534/detection
+# Reference: https://www.virustotal.com/gui/file/32a1943dc008cad679f71a8bf396e56fd738f9fc2ea0f85347a14fa79d9bede1/detection
+
+54.93.247.130:1324
+
+# Reference: https://www.virustotal.com/gui/file/449a5a3fe389a101c6e7bcc5c0cc613fc82de8ac9570da48bac60f8b69b67fd4/detection
+
+admin.bchainpro.com

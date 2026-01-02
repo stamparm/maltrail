@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: emansrepo stealer
+
+# Reference:  https://twitter.com/James_inthe_box/status/1733206659445768442
+# Reference: https://www.fortinet.com/blog/threat-research/emansrepo-stealer-multi-vector-attack-chains
+# Reference: https://app.any.run/tasks/f8d6b4fc-637e-41a2-9470-29a7dba37c05/
+# Reference: https://www.virustotal.com/gui/file/dd656953a6844dd9585f05545a513c4e8c2ded13e06cdb67a0e58eda7575a7a4/detection
+# Reference: https://www.virustotal.com/gui/file/a2fa6790035c7af64146158f1ed20cb54f4589783e1f260a5d8e4f30b81df70d/detection
+# Reference: https://www.virustotal.com/gui/file/9866934dd2b4e411cdabaa7a96a63f153921a6489f01b0b40d7febed48b02c22/detection
+# Reference: https://www.virustotal.com/gui/file/4cd8c9fa7f5e2484b73ed9c7be55aa859969c3f21ca2834610102231d337841d/detection
+# Reference: https://www.virustotal.com/gui/file/18acbe16e5a7f5c706a6de5d46760551996471b47d26812b1861b5f562853dc8/detection
+
+http://191.101.130.185
+192.236.232.35:587
+hedam.shop
+dasmake.info
+dasmake.top
+dasmake.xyz
+mail.dasmake.info
+mail.dasmake.top
+mail.dasmake.xyz
+bafybeifhhbimsau6a6x4m2ghdmzer5c3ixfztpocqqudlo4oyzer224q4y.ipfs.w3s.link
+bafybeigm3wrvmyw5de667rzdgdnct2fvwumyf6zyzybzh3tqvv5jhlx2ta.ipfs.dweb.link
+estanciaferreira.com.br/wp-includes/TIANJIN-DOC-05082024-xls.7z

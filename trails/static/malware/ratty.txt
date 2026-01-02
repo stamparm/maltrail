@@ -1,0 +1,47 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/yusaerguven/status/1265561592806154247
+
+193.37.212.93:4040
+193.37.212.93:5152
+193.37.212.93:8080
+rrtt-yhg.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1271367375875694597
+# Reference: https://twitter.com/reecdeep/status/1271373605335638016
+# Reference: https://app.any.run/tasks/69435a16-76b6-4217-b513-aad63ad8bccf/
+# Reference: https://app.any.run/tasks/bc7c8c89-e48a-4f69-bae4-6f2f45722668/
+
+178.238.8.53:2350
+178.238.8.53:2353
+bmkfliers.ddns.net
+
+# Reference: https://app.any.run/tasks/dff924bd-bd22-455c-a76f-96b2dea7c234/
+
+ratty.viewdns.net
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2024-03-25%20Mystery%20JAR%20malware%20IOCs
+# Reference: https://www.virustotal.com/gui/file/039cdafc372ddf4c830be951eac2507969cdd2ba4ab8939ead1e799ea1f6bb70/detection
+# Reference: https://www.virustotal.com/gui/file/7fe3d88b1cbeb127c075a2277c5a9e267ded5eee584aed6aa7da8339d64d6430/detection
+
+31.220.97.227:25255
+31.220.97.227:6660
+
+# Reference: https://www.virustotal.com/gui/file/547253c369afeabcdedef6922beea31c5d10508b33a2dcdcc795159c7271f04f/detection
+
+185.216.70.116:3434
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2024-04-03%20Java%20RAT%20IOCs
+
+31.220.97.227:2014
+cxasfo.web.app
+fasnmi.web.app
+
+# Reference: https://www.virustotal.com/gui/file/03bba16b4c374f9644d45123d9cdbd695dc0500778f37c976d12f7c9c6cd38f7/detection
+
+91.92.241.190:3454
+
+# Generic
+
+/cmrurnutap.php

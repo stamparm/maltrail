@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: crypren, ouroboros, zeropadypt
+
+# Reference: https://app.any.run/tasks/72423a38-e955-4c89-9927-e47437004740/
+
+176.31.68.30:21
+176.31.68.30:80
+
+# Reference: https://app.any.run/tasks/646a67df-6547-4a20-b176-500b4627a805/
+
+92.222.149.118:175
+
+# Reference: https://app.any.run/tasks/78cc0080-7ae4-4837-aa8d-91048f88786e/
+# Reference: https://app.any.run/tasks/e5e0e565-91b2-475e-af38-1bb05bc736d0/
+
+80.82.69.52:80
+
+# Reference: https://twitter.com/albertzsigovits/status/1221818137437405189
+# Reference: https://app.any.run/tasks/d8f2f343-cc63-40ca-8571-2d5c8d139f16/
+
+80.82.69.52:21
+80.82.69.52:56416
+80.82.69.52:8080
+
+# Reference: https://app.any.run/tasks/894235ee-d74e-4767-99b6-3b759b0a08d6/
+
+88.99.237.48:8080
+
+# Generic
+
+/1614CEEEC50A9336EBF690886CAA747D6811C45D37086A3FA7B11C9E83926C6C

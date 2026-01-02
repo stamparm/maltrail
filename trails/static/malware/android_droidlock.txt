@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://zimperium.com/blog/total-takeover-droidlock-hijacks-your-device
+# Reference: https://github.com/Zimperium/IOC/blob/master/2025-12-DroidLock/c2.csv
+# Reference: https://www.virustotal.com/gui/file/9c93b2439611c3974af81f23b5f21285b6f04bcb6069e0402b3417c5afabef7b/detection
+# Reference: https://www.virustotal.com/gui/file/26a8dc44268d3787cd79b1f2a8f25e10c24c06dc0bd28568e7662814ab976442/detection
+# Reference: https://www.virustotal.com/gui/file/e5389bf9be2483332ea2041d7525ab7df17874947313c3863b1de89003e7f0d2/detection
+# Reference: https://www.virustotal.com/gui/file/d1695caea9435aef9938651acaaa99685d478005672ace47d9ddac6adddb5e19/detection
+# Reference: https://www.virustotal.com/gui/file/ce5a416c73da67668996deee6839de2fca218d667830d0996bb8dfda70fdc123/detection
+# Reference: https://www.virustotal.com/gui/file/a81c6c0e2b2ae49fe454d541a723aca78410a3561189597391b79f407533f06a/detection
+# Reference: https://www.virustotal.com/gui/file/6f7d9fd737972e1c2bae2d6d397baa518c30f57b09b21dc8927309d2ee34471a/detection
+# Reference: https://www.virustotal.com/gui/file/192b8b563d3ed8b4956769ee40d5f2f091873591962cdab8a9f084aef425cd47/detection
+# Reference: https://www.virustotal.com/gui/file/0280fd7da2973e37e577caf2b2fcf06bc77cbcda47004fff6bad0ab77b89f5d9/detection
+
+161.132.50.40:30000
+161.132.50.40:443
+161.132.50.40:4749
+161.132.50.40:4751
+panelcall.site
+api.panelcall.site

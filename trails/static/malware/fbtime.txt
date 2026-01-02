@@ -1,0 +1,189 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Fabookie.ge, JazoStealer
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1281154921811841026
+# Reference: https://twitter.com/Arkbird_SOLG/status/1281269633992069121
+# Reference: https://twitter.com/stamparm/status/1352551926383206400
+# Reference: https://app.any.run/tasks/ca9bb8a8-7f62-4082-b246-b63decea1895/
+# Reference: https://app.any.run/tasks/52c141f7-3823-43f5-ae90-896262f4483d/
+# Reference: https://app.any.run/tasks/e197837b-580d-45c0-9caa-f79c6c8e8212/
+# Reference: https://app.any.run/tasks/bcbe1b59-c0a2-4bab-aac1-1e94468b830b/
+# Reference: https://app.any.run/tasks/85cf40f9-a5ae-4be1-8d9e-a021745ed87e/
+# Reference: https://app.any.run/tasks/56691186-4155-4e8d-99b9-7ea14461ea97/
+# Reference: https://www.virustotal.com/gui/file/502ce2c7e598c46b3ce22e24dbbdce07042b2d6e63f8ffc08c8940f3845b8356/detection
+
+2ihsfa.com
+wsfsd33sdfer.com
+wdsfw34erf93.com
+jfiuuhgg.com
+jfoaigh.com
+
+# Reference: https://www.virustotal.com/gui/file/ab1dc8ee52c03549f3e6edac87476a325da33d076cd0109b7d863418475b219b/detection
+
+wws23dfwe.com
+
+# Reference: https://www.virustotal.com/gui/file/9df1beaa8e4e864253fef80aa964ccf5876376116e9a62ab46e724491eb09e8a/detection
+
+uyyge5w3ye.2ihsfa.com
+
+# Reference: https://www.virustotal.com/gui/file/96701ee98517a4131272c84c7fc305ba4e3805e44aa763473daa65899e76c17b/detection
+
+uehge4g6gh.2ihsfa.com
+
+# Reference: https://www.virustotal.com/gui/domain/hfuie32.2ihsfa.com/relations
+
+hfuie32.2ihsfa.com
+
+# Reference: https://www.virustotal.com/gui/file/7a6c8ce1e4a64866a8e1341f135544aeb2b7ca4b27d784885dc75df7a96e56f8/detection
+
+pirod-dcn.xyz
+
+# Reference: https://twitter.com/Mesiagh/status/1402322843178729479
+
+waaer435fc.com
+
+# Reference: https://tria.ge/201201-kjhm5lgw4j/behavioral1
+# Reference: https://www.virustotal.com/gui/file/fc8f0522f5dcffc6ef41ce4c075a245d3f1ee55dda8a63c647eee6fdba4da25a/detection
+
+http://95.181.155.112
+
+# Reference: https://www.virustotal.com/gui/file/68aab4d5d6d862bbf77cf836e80ea486a14ae11bc32cec46291a32834dd15045/detection
+
+wdsewfsd.com
+
+# Reference: https://www.virustotal.com/gui/file/530e0002c120d13962f54641655060f420625a3ee39b740dac62a644bda96ede/detection
+
+hhiuew33.com
+
+# Reference: https://www.virustotal.com/gui/file/27548c9c3786d5906ecc3e283b4dac95271e88a378e16bc9e61c72be6d944879/detection
+
+youtuuee.com
+staticimg.youtuuee.com
+
+# Reference: https://www.virustotal.com/gui/file/1261578647f25a54587282ebcd5ce80c2eb63d05a351c75d99cc6ae18907d105/detection
+
+hdkapx.com
+
+# Reference: https://www.virustotal.com/gui/file/046e4daa736c7e8893915ed97ab371bea38c39e8da63bcd4792cff47a13ee21d/detection
+
+uskskskggkk3.2ihsfa.com
+
+# Reference: https://www.virustotal.com/gui/file/32d081287ed11af4a7cec2a17e44885fd80d8770a4b1ef21da009e68f97bf9b6/detection
+
+phg67.fun
+rck.phg67.fun
+220825063923457.rck.phg67.fun
+
+# Reference: https://www.virustotal.com/gui/file/1aa2d32ab883de5d4097a6d4fe7718a401f68ce95e0d2aea63212dd905103948/detection
+
+ofu90.fun
+ago.ofu90.fun
+220909072241620.ago.ofu90.fun
+
+# Reference: https://www.virustotal.com/gui/file/31f8bdd38a00e70cad9429a975013776de36d42df4fef6899ce84869579e4d5a/detection
+
+apiaaaeg.com
+aaa.apiaaaeg.com
+
+# Reference: https://www.virustotal.com/gui/file/23941746340e89fb699e4ecec106fbfd40186fc5b483bf72d82d5d5a2706863f/detection
+
+eiwaggff.com
+winrarpc.me
+hhe.eiwaggff.com
+ss.winrarpc.me
+
+# Reference: https://www.virustotal.com/gui/file/06c9681d0fcdc083535d3aaa823b0d5a483bb93f237fb7857cd8e72b20f4088c/detection
+
+ajn322dd.com
+aaa.ajn322dd.com
+
+# Reference: https://www.virustotal.com/gui/file/02074294a16b02d4deb61f85f16c2ef3847f47cf5c53c5c15c011a854486f1ef/detection
+
+eiwaggee.com
+e.eiwaggee.com
+jkk.eiwaggee.com
+kke.eiwaggee.com
+
+# Reference: https://www.virustotal.com/gui/file/05e89787eba776d800d12da5e71a7a6a81a7724306ac2788dd8df4c6f9ac0c4a/detection
+
+eiwagggg.com
+bbg.eiwagggg.com
+ert.eiwagggg.com
+ery.eiwagggg.com
+jjf.eiwagggg.com
+kkh.eiwagggg.com
+llo.eiwagggg.com
+vvg.eiwagggg.com
+
+# Reference: https://www.virustotal.com/gui/file/af03c1abaef7a6da4aedc600e8b92bf82fca6ae4b9c1efc628caf5d0f21acb37/detection
+
+bbbeioaag.com
+ffbbjjkk.com
+ffbbhhtt.com
+ffbbyykk.com
+iiagjaggg.com
+bz.bbbeioaag.com
+count.iiagjaggg.com
+h.ffbbhhtt.com
+j.ffbbjjkk.com
+y1.ffbbyykk.com
+
+# Reference: https://medium.com/checkmarx-security/who-broke-npm-malicious-packages-flood-leading-to-denial-of-service-77ac707ddbf1
+
+ghwiwwff.com
+ji.ghwiwwff.com
+
+# Reference: https://app.any.run/tasks/7fa313e3-fa28-493f-ae5a-a66525b29fd5/
+
+fhauiehgha.com
+imgjeoigaa.com
+imgjeoogbb.com
+aa.imgjeoogbb.com
+us.imgjeoigaa.com
+zzz.fhauiehgha.com
+
+# Reference: https://www.virustotal.com/gui/file/0cc7883198df53af5b4e7d6b14204ea5ab51066a52031f8f814cedccc491bd9a/detection
+
+jaoaaoas11.com
+ji.jaoaaoas11.com
+
+# Reference: https://www.virustotal.com/gui/file/9f07d1277c2997a4e872084df43c62b031d0c28e9ef51d1f261354d33ef3f72a/detection
+
+alie3ksgbb.com
+nnnaajjjgc.com
+app.nnnaajjjgc.com
+jjz.alie3ksgbb.com
+z.nnnaajjjgc.com
+
+# Reference: https://www.virustotal.com/gui/file/ec8c114e9c0bd6154bd58396c72fabe79e2ffe70dea761cabc98b35186723360/detection
+
+alie3ksgdd.com
+zzz.alie3ksgdd.com
+
+# Reference: https://www.virustotal.com/gui/file/b10bddd95c77f0d541789e40a9fff56d4c1ccdcfd1cedfb2c6f0ae8eba49787e/detection
+
+alie3ksgbb.com
+ji.alie3ksgbb.com
+
+# Reference: https://www.virustotal.com/gui/file/04fd3794814871b31fef000b51e51b6c20ad7646b3c74a585a668f95cf14fa06/detection
+
+jhia6gyygcc.com
+ji.jhia6gyygcc.com
+
+# Reference: https://www.virustotal.com/gui/file/7b9c1aa81aef60c0b403ff3859fc4c6be0b48fb56e1a4456f42ed0da84941993/detection
+
+ajn322bb.com
+mnh.ajn322bb.com
+
+# Reference: https://www.virustotal.com/gui/file/4436e908111bd5641201fec0b80656609cda5c3d189a5f5e8c3fde69a50f88dc/detection
+
+alie3ksgaa.com
+app.alie3ksgaa.com
+i.alie3ksgaa.com
+
+# Generic
+
+/api/fbtime
+/index.php/api/fb

@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://cloud.google.com/blog/topics/threat-intelligence/creative-phishing-academics-critics-of-russia
+# Reference: https://www.virustotal.com/gui/file/329fda9939930e504f47d30834d769b30ebeaced7d73f3c1aadd0e48320d6b39/detection
+
+http://91.190.191.117
+91.190.191.117:443

@@ -1,0 +1,46 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/petrovic082/status/1421745070118772739
+# Reference: https://otx.alienvault.com/pulse/6107c072a2d7c7be3aa8a860
+# Reference: https://app.any.run/tasks/d6777863-a04d-4e14-9e3b-3aaff3d8a7f5/
+# Reference: https://www.virustotal.com/gui/file/22d7d67c3af10b1a37f277ebabe2d1eb4fd25afbd6437d4377400e148bcc08d6/detection
+
+paymenthacks.com
+
+# Reference: https://twitter.com/pancak3lullz/status/1422189641793515520
+# Reference: https://www.virustotal.com/gui/file/7f6dd0ca03f04b64024e86a72a6d7cfab6abccc2173b85896fc4b431990a5984/detection
+# Reference: https://www.virustotal.com/gui/file/22d7d67c3af10b1a37f277ebabe2d1eb4fd25afbd6437d4377400e148bcc08d6/detection
+# Reference: https://www.virustotal.com/gui/file/daed41395ba663bef2c52e3d1723ac46253a9008b582bb8d9da9cb0044991720/detection
+# Reference: https://www.virustotal.com/gui/file/c6e2ef30a86baa670590bd21acf5b91822117e0cbe6060060bc5fe0182dace99/detection
+# Reference: https://www.virustotal.com/gui/file/6a7b7147fea63d77368c73cef205eb75d16ef209a246b05698358a28fd16e502/detection
+
+mojobiden.com
+
+# Reference: https://blog.group-ib.com/blackmatter
+
+supp24yy6a66hwszu2piygicgwzdtbwftb76htj7vnip3getgqnzxid.onion
+supp24yy6a66hwszu2piygicgwzdtbwftb76htfj7vnip3getgqnzxid.onion
+
+# Reference: https://www.virustotal.com/gui/file/26a7146fbed74a17e9f2f18145063de07cc103ce53c75c8d79bbc5560235c345
+
+fluentzip.org
+
+# Reference: https://blog.group-ib.com/blackmatter2
+# Reference: https://otx.alienvault.com/pulse/61840495bfc51827c7d12d7e
+
+nowautomation.com
+
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+
+blackmax7su6mbwtcyo3xwtpfxpm356jjqrs34y4crcytpw7mifuedyd.onion
+
+# Reference: https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/blackmatter-data-exfiltration
+# Reference: https://otx.alienvault.com/pulse/618159b606e327442a982c20
+
+157.230.28.192:22
+157.230.28.192:443
+159.89.128.13:22
+159.89.128.13:443
+165.22.84.147:22
+165.22.84.147:443

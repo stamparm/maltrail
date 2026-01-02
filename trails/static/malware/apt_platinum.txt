@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/platinum-is-back/91135/
+# Reference: https://otx.alienvault.com/pulse/5cf7ccd8e9e95f3f24518a6a
+
+happiness.freevar.com
+
+# Reference: https://securelist.com/titanium-the-platinum-group-strikes-again/94961/
+
+http://70.39.115.196

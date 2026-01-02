@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://s.tencent.com/research/report/727.html
+
+5.252.198.93:7337
+charley-online.com
+fighiting1013.org
+a7788.1apps.com
+alabamaok0515.1apps.com
+attach10132.1apps.com
+clean.1apps.com
+s8877.1apps.com
+tgbabcrfv.1apps.com
+071790.000webhostapp.com
+881.000webhostapp.com
+hanbosston.000webhostapp.com
+
+# Reference: https://s.tencent.com/research/report/613.html
+
+103.249.31.159:7777
+filer1.1apps.com
+filer2.1apps.com

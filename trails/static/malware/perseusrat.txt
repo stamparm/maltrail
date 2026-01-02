@@ -1,0 +1,190 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/P3pperP0tts/status/1161534136148004864
+
+95.211.144.65:21
+
+# Reference: https://www.virustotal.com/gui/file/85b784c2c723866dfd894cb880ffd134af462c867dd0c8b2e0dfea9b283cc101/detection
+
+79.134.225.58:4782
+petermaffer.club
+
+# Reference: https://www.virustotal.com/gui/file/f036f8b1e494f3379513e83ef0c1a77e97a780b217a83ce2a181c842ee107b3d/detection
+
+141.255.156.154:2000
+avast-tjn.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/bf023184c1620d172cc3323a46f4c07d48823f2c8d28b0f10aee3879c1abf5a0/detection
+
+i82.no-ip.info
+
+# Reference: https://www.virustotal.com/gui/file/878df0737913c150ba914dad5a028c66e946d23c083b40d36423e4ea5ec3f1c2/detection
+
+mmaaxx511.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/234bd14305e6926b95d2765f3be444914ad29ab00a8a73116ecf1fb5033a0e58/detection
+# Reference: https://www.virustotal.com/gui/file/0430b446adad9026eeb219b102193ca9bd68028062527d2d8abd7049896e6a6d/detection
+# Reference: https://www.virustotal.com/gui/file/2e1b181792c0866ff970fd0b7206e321b91b574970a6a251b6d3f13ce0de0be1/detection
+# Reference: https://www.virustotal.com/gui/file/60ed911ef597db197e704de396622fa682b64bd3f7c2a6924f43ed8221bcd891/detection
+# Reference: https://www.virustotal.com/gui/file/62b7151800c344cc72cabe9b18ec1a4ddcc80ea48c38e5c942db3aab2907840f/detection
+# Reference: https://www.virustotal.com/gui/file/84e964d715eb2d2c14a22942a74efcae66c92221677676d627977425b9c9c255/detection
+# Reference: https://www.virustotal.com/gui/file/a07f0f20cb7797ae9a4db19fedc4f3e556223d825b58846aa7649799ef6ef172/detection
+# Reference: https://www.virustotal.com/gui/file/0ec5e1c090b9e34289464cd75653c5683b332fe2d4eed0ae1640bc6972fedcb8/detection
+# Reference: https://www.virustotal.com/gui/file/b493bfc9602b2b5d69a2781e3a2c17315b8256dd7f6d728012576b85acfb06e3/detection
+# Reference: https://www.virustotal.com/gui/file/08586966e5bcb866b25861b136306357ff2886d18a5ae8d73a166e9a940f59f9/detection
+# Reference: https://www.virustotal.com/gui/file/b34574cc926281cf1ced22dca9d057455be444198f201234d9f1ed03864bb803/detection
+# Reference: https://www.virustotal.com/gui/file/9cd66e00ade10eb1fffc41116842046bbd85ad674959df0aa72e0c5685681ec0/detection
+# Reference: https://www.virustotal.com/gui/file/4c63919509871a4d6167aee4b4ca4643814ac66ee29ad7529591c612d3c1b9bb/detection
+
+forum.xcheats.cf
+loader.xcheats.cf
+
+# Reference: https://www.virustotal.com/gui/file/9176c5855db9bc43c655aa61b6cce0b3ae75309e7f7ee96cf0d91ee29c874b85/detection
+
+18.188.14.65:13005
+18.223.41.243:13005
+3.14.212.173:13005
+3.17.202.129:13005
+
+# Reference: https://www.virustotal.com/gui/file/da0ae8a5aa0ff19f10d4a439a69785c7da05629ba825f739ad3086c1e44da862/detection
+
+63.141.246.149:1111
+blog.goldenshoponline.us
+
+# Reference: https://www.virustotal.com/gui/file/f1b7be120df3a558ade03f71208f24ae710af21d5768191cbacfe9794ce1f690/detection
+
+149.28.240.97:1111
+
+# Reference: https://www.virustotal.com/gui/file/e19d3e096315456c10bc76c0b88bd8dc2fcdf09c8060a732174e7f6111b6d2b0/detection
+
+193.161.193.99:31447
+xan0n-31447.portmap.host
+
+# Reference: https://www.virustotal.com/gui/file/76d75b394e29c8838f643a8ad8dcc8989a054e3073b927dedb5e422c8b6773d3/detection
+
+3.14.212.173:13411
+
+# Reference: https://www.virustotal.com/gui/file/29f276ebff71361d4ff04b74831b056b6eb1fd9df94beeb523171eef10e9e88d/detection
+
+primaverra.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/97076cd33fef0eef6f7f93560f65f6686a12b68742d70c0aaed4bec1f3937841/detection
+
+xtreecy.dyndns.tv
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=3395eb989e7ca681457b3a2442b655fa
+
+gbolaworld.pdns.download
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=238787989bc17baa0003b521cd3b4ab1
+
+inzaklol.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=6fdc2d9ceeee12b66dba0c900c71cb22
+
+trixa.truedns.xyz
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=d60854ffb4bbc11ed611571ab29e0d05
+
+strictlymen.duckdns.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=e36467f5aa8d188a25670dd99b46eb1d
+
+gsmcoder.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/252c51c7acb099f1653b8f9dbf1691ffc7b2a10eb24055b6bac614117521a74c/detection
+
+141.255.145.14:100
+6932.no-ip.org
+
+# Reference: https://www.virustotal.com/gui/file/fe05f37f3bd28500b3ced9f0e4336da91910630915930d4848d34cf2b4c18bab/detection
+
+212.227.174.68:12
+41.140.28.129:3355
+modicodig.casacam.net
+
+# Reference: https://www.virustotal.com/gui/file/cdb395c34b3021fdba0c48df05cd29da9bae76d2d9579ce109edef41ee3f5514/detection
+
+cuntified.myftp.org
+cuntified2.myftp.org
+
+# Reference: https://www.virustotal.com/gui/file/bf64864a732d3ba22663fedb76903cf0fe0523f2a8b2f5ef0631485af45e2247/detection
+
+a0429219.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/bf24efccd2854f7752c8b81a56deead5b80f7b49650f0d9feeabdc8b24cca80b/detection
+
+85.172.106.165:2688
+sinica88.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/8ce86014ec5158c30c1b8cdee261b86e382cd59160ec34795a731896eb592f9a/detection
+
+62.138.0.8:40000
+67.227.226.240:95
+landliebe.system-ns.net
+
+# Reference: https://www.virustotal.com/gui/file/67e6d5ef5c82d891dcf484bf59bd2ced7817403914d205b196720be2375394f1/detection
+
+91.236.116.180:5001
+
+# Reference: https://www.virustotal.com/gui/file/81268f076efe22cffa788855912af65b6035577245e8184d5b71acc5cb06d3a5/detection
+
+172.113.46.15:4005
+qtar.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/55fb8c794989a0c28e32f54d6e000183954db9972bdb14d324d17ae7c241c4bc/detection
+
+67.214.175.69:6666
+rapid1.linkpc.net
+
+# Reference: https://www.virustotal.com/gui/file/efbba08a11ba55a0f7685516f728d49c2c3d87dfb38dbb894a74d90627eb99d6/detection
+
+meupload.site
+
+# Reference: https://www.virustotal.com/gui/file/0337a2c9794684df221ece5922e2cf834b6fa4478f84b66796c073d83797ecc3/detection
+
+37.8.56.161:442
+xtrojan.myq-see.com
+
+# Reference: https://www.virustotal.com/gui/file/699c0ff6f68d90ba4c8832a2f9f90ee9de5ea6de5e0e1d333951996716e11d54/detection
+# Reference: https://www.virustotal.com/gui/file/aaf83485476eef690e9e72de7d943ad7fac101097e5f713175eef47fc35c45ca/detection
+
+161.129.66.224:3049
+201.212.135.172:3077
+winup.linkpc.net
+
+# Reference: https://www.virustotal.com/gui/file/3ba3c35d8b4176e985a744358906c36776bd5f9803afe2dfc9e7ee5bf3ee6003/detection
+
+1belfpshn1.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/dee8c48b29c95a5018814093aa3c11d665ae2c85e0efd8e25c902a07e7991899/detection
+
+bb-storage.h1n.ru
+
+# Reference: https://www.virustotal.com/gui/file/91a8834ec476bd584b9fcfa8aa17613c6bd93f07dc66930b1ac6a7d3331bfe70/detection
+
+paltalk.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/a362ec6dbec434ab8be73fc2d59f1e11c062c72ff7d735ccee296b71c7083ef5/detection
+
+http://45.139.236.64
+
+# Reference: https://www.virustotal.com/gui/file/a850878a281e176a8dde56f99504c66cf501021f93b61b1c6cf63d05390da3f7/detection
+
+australia-32312.packetriot.net
+confident-fog-26413.pktriot.net
+
+# Reference: https://www.virustotal.com/gui/file/c5a24e7293bd418016f224af9695bda0ecb0f280f9c87c57920f8ff56047fb07/detection
+
+vpndnsping.mooo.com
+vpndnsserver202.ddnsgeek.com
+vpndnsserver203.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/feef87b60d1d57c04e215de05eefcbdd004ab95f06544e7ec3bbfe66e1191d4e/detection
+
+185.237.99.19:1339
+
+# Reference: https://www.virustotal.com/gui/file/fe7cc7644ac5e23512e9ea0c7cd0dd10afd49c228ea28c0642557e36c70653d7/detection
+
+a0504086.xsph.ru

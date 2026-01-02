@@ -1,0 +1,107 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: redcurl, redwolf, earthkapre, redloader, goldblade
+
+# Reference: https://twitter.com/k3yp0d/status/1710230683870785767
+# Reference: https://bi-zone.medium.com/hunting-the-hunter-bi-zone-traces-the-footsteps-of-red-wolf-3677783e164d
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-07-v10412/926
+# Reference: https://www.virustotal.com/gui/ip-address/23.254.224.79/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.61.138.81/relations
+# Reference: https://www.virustotal.com/gui/file/e7b881cd106aefa6100d0e5f361e46e557e8f2372bd36cefe863607d19471a04/detection
+# Reference: https://www.virustotal.com/gui/file/3bd054a5095806cd7e8392b749efa283735616ae8a0e707cdcc25654059bfe6b/detection
+# Reference: https://www.virustotal.com/gui/file/4188c953d784049dbd5be209e655d6d73f37435d9def71fd1edb4ed74a2f9e17/detection
+# Reference: https://www.virustotal.com/gui/file/1ea43ba4192fd793de5aa18d20b60f0821dfe201f531ea4d1739b96a35526e36/detection
+# Reference: https://www.virustotal.com/gui/file/8d9aaa5cf9c7b442917a8f8542d020b221e9de595d78ef88b82ee696880491ef/detection
+
+amscloudhost.com
+forcloudnetworks.online
+msftcloud.click
+servicehost.click
+app-ins-001.amscloudhost.com
+app-ins-002.amscloudhost.com
+app-l01.msftcloud.click
+app-l03.msftcloud.click
+app-l03.servicehost.click
+app-l07.servicehost.click
+clever.forcloudnetworks.online
+cloud-01.servicehost.click
+ctrl1.sm.advhost.co.uk
+dav.cloud-01.servicehost.click
+dav.linkedin-cloud-manager.servicehost.click
+hfn-c-001.cc.msftcloud.click
+hwsrv-1048332.hostwindsdns.com
+ksg-c-001.cc.msftcloud.click
+ksg-c-002.cc.msftcloud.click
+ktr-cn-001.amscloudhost.com
+ktr-cn-002.amscloudhost.com
+l-dn-01.msftcloud.click
+l-dn-02.msftcloud.click
+l3-dn-01.servicehost.click
+l4-dn-01.servicehost.click
+l7-dn-01.servicehost.click
+linkedin-cloud-manager.servicehost.click
+m-dn-001.amscloudhost.com
+m-dn-002.amscloudhost.com
+mtk-cn-001.amscloudhost.com
+mtk-cn-002.amscloudhost.com
+rl-cn-s-001.amscloudhost.com
+ss-cn-001.amscloudhost.com
+ss-cn-002.amscloudhost.com
+test.amscloudhost.com
+trur-c-001.cc.msftcloud.click
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-08-v10413/928
+
+buyhighroad.scienceontheweb.net
+eap.byethost10.com
+earthmart.c1.biz
+tdnmouse.atspace.eu
+
+# Reference: https://twitter.com/k3yp0d/status/1708495262673465713
+# Reference: https://www.virustotal.com/gui/file/61ca00df551f138d3f8602c19936c4a70b1da581183b8d1264fbd2bc416361cf/detection
+
+app-l07.servicehost.click
+
+# Reference: https://www.facct.ru/blog/redcurl-2024/
+
+fiona.forcloudnetworks.online
+
+# Reference: https://x.com/birchb0y/status/1877491934639313096
+# Reference: https://www.huntress.com/blog/the-hunt-for-redcurl-2
+
+188.130.207.253:10310
+193.176.158.30:40141
+alphastoned.pro
+mainsts-01.cn.alphastoned.pro
+bora.teracloud.jp
+wgroadcdn.workers.dev
+wgsphere.workers.dev
+cdn.wgroadcdn.workers.dev
+sup.wgsphere.workers.dev
+
+# Reference: https://www.esentire.com/blog/unraveling-the-many-stages-and-techniques-used-by-redcurl-earthkapre-apt
+# Reference: https://github.com/eSentire/iocs/blob/main/EarthKapre/EarthKapre-RedCurl-IoCs-02-05-2025.txt
+
+community.rmobileappdevelopment.workers.dev
+cvsend.resumeexpert.cloud
+datascience.iotconnectivity.workers.dev
+live.itsmartuniverse.workers.dev
+mia.nl.tab.digital
+sm.vbigdatasolutions.workers.dev
+
+# Reference: https://x.com/SophosXOps/status/1950483325996445879
+# Referecne: https://news.sophos.com/en-us/2025/07/29/gold-blade-remote-dll-sideloading-attack-deploys-redloader/
+
+automatinghrservices.workers.dev
+dav.automatinghrservices.workers.dev
+live.airemoteplant.workers.dev
+quiet.msftlivecloudsrv.workers.dev
+
+# Generic
+
+/ldn20_seek
+/ldn21_amazon
+/ldn22_samsung
+/ldn23_samsung
+/ldn25_cv_au

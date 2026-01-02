@@ -1,0 +1,78 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/nighthawk-and-coming-pentest-tool-likely-gain-threat-actor-notice
+# Reference: https://www.mdsec.co.uk/2022/05/nighthawk-0-2-catch-us-if-you-can/
+# Reference: https://otx.alienvault.com/pulse/637ded425913a7ae19e7113e
+
+sephus.me
+
+# Reference: https://twitter.com/1ZRR4H/status/1600569404705619988
+
+clrf.net
+corporate-document-exchange.com
+
+# Reference: https://twitter.com/Gi7w0rm/status/1600977276417589248
+
+3.229.134.140:443
+
+# Reference: https://twitter.com/MichalKoczwara/status/1601278387141496832
+
+offensive-operations.live
+urbanhealthgoods.com
+
+# Reference: https://twitter.com/1ZRR4H/status/1615791320982818830
+
+eagle03group02.optumshadow.org
+secure.mail-nationalmedtrans.com
+secure.health-colony.com
+ww1.login-nammcal.com
+
+# Reference: https://twitter.com/MichalKoczwara/status/1615796586952462346
+
+cs1group2.optumshadow.org
+evildropper.optumshadow.org
+healthsteward.org
+squanchy.optumshadow.org
+support.bison-health.com
+
+# Reference: https://twitter.com/MichalKoczwara/status/1637568569939558440
+
+http://34.218.250.200
+
+# Reference: https://twitter.com/MichalKoczwara/status/1639015448720056320
+
+http://3.131.91.138
+3.131.91.138:443
+mscorp-updates.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.nighthawk/
+
+http://18.209.228.133
+http://3.222.117.120
+http://3.239.198.0
+http://3.80.28.25
+http://35.172.211.108
+http://44.200.195.245
+http://44.211.119.3
+http://54.147.42.17
+http://54.167.66.68
+http://54.210.163.44
+http://54.221.16.152
+http://54.83.116.99
+18.223.133.48:443
+18.232.124.93:443
+3.139.95.199:443
+3.144.120.49:443
+3.15.28.114:443
+3.20.31.238:443
+3.215.16.34:443
+3.8.125.204:443
+34.204.173.44:443
+35.172.165.79:443
+44.200.94.254:443
+44.206.0.25:443
+52.56.190.57:443
+64.227.120.161:443
+8.219.143.40:443
+8.219.81.129:443

@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: diablonet, diablonettop
+
+# Reference: https://x.com/suyog41/status/1929855753206083762
+# Reference: https://www.virustotal.com/gui/file/6bc703d3b1b4a6b42dd069eb8950bdfab134431be67bd5a3023cc260d2779e31/detection
+# Reference: https://www.virustotal.com/gui/file/ca012fc1895a72bd0a9bb53c45a4f92df68bb725202bdcc7a39a280873d9623f/detection
+# Reference: https://www.virustotal.com/gui/file/00a6a2e31191492d497fc1433f0b42eb0c9b1c60885a30f8fa30213ef5a1f8aa/detection
+
+http://62.113.42.127
+31.13.208.182:12345
+93.115.104.223:12345
+diablonet.site
+s3.twcstorage.ru
+panel.diablonet.site

@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: dmloader, dunloader ,frpc, icmpinger, kmlog, krnrat, ladon, moriya, nbtscan, odriz, simpoboxspy, tesdat, wmihacker
+
+# Reference: https://www.trendmicro.com/en_us/research/25/d/earth-kurma-apt-campaign.html
+# Reference: https://documents.trendmicro.com/assets/txt/EarthKurma-IOCssVJ3RcK.txt
+
+http://103.238.214.88
+http://149.28.147.63
+http://166.88.194.53
+http://185.239.225.106
+http://38.147.191.103
+http://38.60.199.225
+http://45.77.250.21
+103.238.214.88:443
+149.28.147.63:443
+166.88.194.53:443
+185.239.225.106:443
+38.147.191.103:443
+38.60.199.225:443
+45.77.250.21:443
+dfsg3gfsga.space
+igtsadlb2ra.pw
+ihyvcs5t.pw
+vidsec.cc

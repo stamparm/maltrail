@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ldpinch, pinch, xinch
+
+# Reference: https://www.virustotal.com/gui/file/2487f97932337e68e5010a2197c2902f9031cab6d2639a401818648fee1d14b9/detection
+# Reference: https://www.virustotal.com/gui/file/70b5259803ff9def1544b794371a68fd8dc732d7f94e9201d2a62309756c884b/detection
+
+petrolium.net
+
+# Reference: https://www.virustotal.com/gui/file/ba35d78f95b8254fd3f22d3c33a7f793fef0c26ebffa30b511d9c62ec34d9c25/detection
+
+a-a1.no-ip.info

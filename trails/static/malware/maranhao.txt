@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: maranhao stealer
+
+# Reference: https://x.com/solostalking/status/1921902825056989343
+# Reference: https://x.com/setThreatTitle/status/1921922457616736666
+# Reference: https://www.virustotal.com/gui/ip-address/76.76.21.21/relations
+
+maranhaogang.fun
+ttjrmvhlxnioelsfepui.supabase.co

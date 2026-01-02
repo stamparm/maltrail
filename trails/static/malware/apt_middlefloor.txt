@@ -1,0 +1,48 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt-unk2
+
+# Reference: https://research.checkpoint.com/2024/disinformation-campaign-moldova/
+# Reference: https://cert.pl/uploads/docs/Raport_CP_2023.pdf
+
+cert-pl.pl
+comunicacion-presidencia-gov.es
+comunidad-madrid.es
+energie-gov.md
+eupm-moldova.md
+europa-ec.eu
+europa-eppo.eu
+europa.social
+europa.study
+freepresunlimited.org
+golebewski.pl
+gov-md.com
+interior-gov.es
+isw-org.pl
+ivention.pl
+litexpo-portal.lt
+mailgon.online
+mailorun.su
+mailos.ru
+mc-md.com
+mcgov.md
+md-mec.com
+mec-gov.md
+moldova-energie.md
+moldova-mediu.md
+moldova-social.md
+nask-pl.com
+nnmnnm.ru
+noname05716.ru
+otllook.com
+pass-check.online
+sapsap.site
+social-moldova.md
+socialisti.md
+socialistii.com
+sso-log.com
+te-storg.com
+urm-lt.com
+viilnius.lt
+vilnius-summit.lt

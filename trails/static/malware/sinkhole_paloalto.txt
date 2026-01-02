@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: 72.5.65.111 is the historical data. Actual one is 198.135.184.22
+
+# Reference: https://knowledgebase.paloaltonetworks.com/KCSArticleDetail?id=kA10g000000ClGECA0
+# Reference: https://www.virustotal.com/gui/ip-address/72.5.65.111/relations
+# Reference: https://live.paloaltonetworks.com/t5/community-blogs/new-update-in-palo-alto-networks-hosted-sinkhole-ip-address/ba-p/1224043
+
+# 72.5.65.111
+198.135.184.22

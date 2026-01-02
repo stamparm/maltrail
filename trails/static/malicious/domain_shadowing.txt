@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://unit42.paloaltonetworks.com/domain-shadowing/
+# Reference: https://otx.alienvault.com/pulse/632c56f223abe8ea3c2e18b6
+
+elitepackagingblog.com
+bancobpmmavfhxcc.barwonbluff.com.au
+baqrxmgfr39mfpp.halont.edu.au
+carriernhoousvz.brisbanegateway.com
+login.elitepackagingblog.com
+ocwdvmjjj78krus.halont.edu.au
+snaitechbumxzzwt.barwonbluff.com.au
+tomsvprfudhd.barwonbluff.com.au
+training.halont.edu.au
+wiguhllnz43wxvq.vembanadhouse.com

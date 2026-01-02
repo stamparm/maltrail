@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: akey stealer
+
+# Reference: https://x.com/skocherhan/status/1913384431437451757
+# Reference: https://app.validin.com/detail?find=AKEY%20PRIVATE%20-%20Admin%20Login&type=raw (# 2025-04-19)
+# Reference: https://www.virustotal.com/gui/file/0b9a9159e8411d495218794fe8c1448ee9738ba1a0ac683aedceea280da7e0fd/detection
+
+http://93.88.201.35

@@ -1,0 +1,82 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/david_jursa/status/1131487385034870784
+# Reference: https://www.virustotal.com/gui/ip-address/139.45.197.8/relations
+# Reference: https://www.virustotal.com/gui/ip-address/139.45.197.9/relations
+# Reference: https://otx.alienvault.com/pulse/5ce68d4336316432e2a36c43
+
+alspearowa.com
+ammankeyan.com
+ascraftan.com
+azoaltou.com
+bedrapiona.com
+beludicolor.com
+bestaryua.com
+bodelen.com
+buylnk.com
+byfoongusor.com
+cobalten.com
+dolohen.com
+eikegolehem.com
+geedoovu.net
+graizoah.com
+inabsolor.com
+itnuzleafan.com
+itpatratr.com
+ittorchicer.com
+kerumal.com
+lauhoosh.net
+louchees.net
+lowtyroguer.com
+netpatas.com
+onstunkyr.com
+upgulpinon.com
+apps8kjdjglkdfg.herokuapp.com
+dns0101.herokuapp.com
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/home-routers-under-attack-malvertising-windows-android-devices
+
+cigaretteinserver.com
+expensiveserver.com
+immediatelyserver.com
+modificationserver.com
+parametersserver.com
+payswithservers.com
+phosphateserver.com
+respectsserver.com
+reverencegserver.com
+http://193.238.153.10
+http://46.166.160.187
+
+# Reference: https://twitter.com/david_jursa/status/1114134608671649792
+# Reference: https://pastebin.com/gn941S6A
+
+caminhaodasorte.club
+caminhaodasorte.online
+caminhaodasorte.xyz
+cursoscentro.site
+lojascentro.club
+lojascentro.online
+lojascentro.xyz
+
+# Reference: https://twitter.com/david_jursa/status/1108688563506417664
+
+cursosgratis2019.tk
+
+# Reference: https://twitter.com/david_jursa/status/1351171678945091594
+
+ipornogratis1.hospedagemdesites.ws
+
+# Reference: https://twitter.com/david_jursa/status/1391001390642761729
+
+g1noticias.me
+
+# Reference: https://twitter.com/siimi_m_/status/1496058188570968064
+
+xxpornogratis.pagina-online.ws
+
+# Generic trails
+
+/1/1407888/?var=
+/api/reverse?var=

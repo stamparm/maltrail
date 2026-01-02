@@ -1,0 +1,45 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://itw01.com/FOCQDE4.html
+# Reference: http://reddittt.com/post/8pcl6a/
+
+people.dohabayt.com
+
+# Reference: https://citizenlab.ca/2015/08/what-we-know-about-the-south-korea-niss-use-of-hacking-teams-rcs/
+
+androidgplay.us.to
+bijiaexhibition.com
+boardingpasstohome.com
+cdc-asia.org
+droidlatestnews.com
+enjoyyourandroid.com
+facebook-update.info
+free.dramakorea.asia
+getnewandroid.com
+hulahope.mooo.com
+link.sexyhub.co
+mytelkomsel.co
+mywealthpop.com
+nkpro.lalanews.net
+pantheon.tobban.com
+play-mob.org
+publiczone.now.im
+reflect.dalnet.ca
+samsung-update.net
+secure.anyurl.org
+shrook.mooo.com
+telegram-apps.org
+update.indoorapps.com
+video.sexyhub.co
+nkpro.lalanews.net
+androidgplay.us.to
+hulahope.mooo.com
+publiczone.now.im
+reflect.dalnet.ca
+pantheon.tobban.com
+
+# Reference: https://citizenlab.ca/2012/10/backdoors-are-forever-hacking-team-and-the-targeting-of-dissent/
+
+ar-24.com
+rcs-demo.hackingteam.it

@@ -1,0 +1,40 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://web.archive.org/web/20120106212034/http://amada.abuse.ch/blocklist.php?download=domainblocklist
+
+http-harddrive.us
+http-mp3downloadtorrent.tk
+http-networkrouteit.info
+http-pcshop.co.cc
+http-programming.co.cc
+http-securityguard.tk
+http-tourismsea.tk
+httpactive.net
+httpbuild.net
+httpbuyonline.net
+httpconfig.com
+httpdisk.net
+httpdomain.net
+httpexplore.net
+httpfield.net
+httpgreen.net
+httpipaddress.tk
+httplightweb.eu
+httplive.net
+httpload.com
+httpload.net
+httpnets.eu
+httpnew.net
+httpset.net
+httpsky.net
+httpsolution.eu
+httpsquer.com
+httptestip.tk
+httpweb.eu
+httpwebit.info
+httpwebworld.net
+web-myworking.com
+web-sitecat.eu
+web-worldcars.us
+websoft-pro.me

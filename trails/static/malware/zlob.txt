@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2005-042316-2917-99&tabid=2
+# Reference: http://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/zlob
+
+vnp7s.net
+zxserv0.com
+dumpserv.com
+/bsfd.php

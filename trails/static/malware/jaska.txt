@@ -1,0 +1,56 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: garystealer, jaskago
+
+# Reference: https://cybersecurity.att.com/blogs/labs-research/behind-the-scenes-jaskagos-coordinated-strike-on-macos-and-windows
+# Reference: https://www.virustotal.com/gui/file/7bc872896748f346fdb2426c774477c4f6dcedc9789a44bd9d3c889f778d5c4b/detection
+# Reference: https://www.virustotal.com/gui/file/f38a29d96eee9655b537fee8663d78b0c410521e1b88885650a695aad89dbe3f/detection
+# Reference: https://www.virustotal.com/gui/file/6efa29a0f9d112cfbb982f7d9c0ddfe395b0b0edb885c2d5409b33ad60ce1435/detection
+# Reference: https://www.virustotal.com/gui/file/f2809656e675e9025f4845016f539b88c6887fa247113ff60642bd802e8a15d2/detection
+# Reference: https://www.virustotal.com/gui/file/85bffa4587801b863de62b8ab4b048714c5303a1129d621ce97750d2a9a989f9/detection
+# Reference: https://www.virustotal.com/gui/file/37f07cc207160109b94693f6e095780bea23e163f788882cc0263cbddac37320/detection
+# Reference: https://www.virustotal.com/gui/file/e347d1833f82dc88e28b1baaa2657fe7ecbfe41b265c769cce25f1c0e181d7e0/detection
+# Reference: https://www.virustotal.com/gui/file/c714f3985668865594784dba3aeda1d961acc4ea7f59a178851e609966ca5fa6/detection
+# Reference: https://www.virustotal.com/gui/file/9b23091e5e0bd973822da1ce9bf1f081987daa3ad8d2924ddc87eee6d1b4570d/detection
+# Reference: https://www.virustotal.com/gui/file/1c0e66e2ea354c745aebda07c116f869c6f17d205940bf4f19e0fdf78d5dec26/detection
+# Reference: https://www.virustotal.com/gui/file/e69017e410aa185b34e713b658a5aa64bff9992ec1dbd274327a5d4173f6e559/detection
+# Reference: https://www.virustotal.com/gui/file/6cdda60ffbc0e767596eb27dc4597ad31b5f5b4ade066f727012de9e510fc186/detection
+# Reference: https://www.virustotal.com/gui/file/44d2d0e47071b96a2bd160aeed12239d4114b7ec6c15fd451501c008d53783cf/detection
+# Reference: https://www.virustotal.com/gui/file/8ad4f7e14b36ffa6eb7ab4834268a7c4651b1b44c2fc5b940246a7382897c98e/detection
+# Reference: https://www.virustotal.com/gui/file/888623644d722f35e4dcc6df83693eab38c1af88ae03e68fd30a96d4f8cbcc01/detection
+# Reference: https://www.virustotal.com/gui/file/3f139c3fcad8bd15a714a17d22895389b92852118687f62d7b4c9e57763a8867/detection
+# Reference: https://www.virustotal.com/gui/file/207b5ee9d8cbff6db8282bc89c63f85e0ccc164a6229c882ccdf6143ccefdcbc/detection
+# Reference: https://www.virustotal.com/gui/file/17abde02a70482368bedb932f792b2b4064c4747c52662d855701651aa5fc7c7/detection
+
+191.101.2.220:1337
+198.12.73.120:1337
+3.6.115.182:18560
+3.6.122.107:18560
+3.6.30.85:18560
+3.6.98.232:18560
+45.119.210.18:1337
+62.72.57.78:7248
+64.190.113.138:1337
+
+# Reference: https://x.com/suyog41/status/1815659891790352779
+# Reference: https://search.censys.io/search?q=services.http.response.body%3D%22%5C%22Nothing+Here+MotherFetcher%5C%22%22&resource=hosts
+# Reference: https://www.virustotal.com/gui/file/f6629ac35b8b064785f782e39dd0aa12da574a3d84c966f94dc015a5465d4053/detection
+
+172.245.55.41:7248
+172.245.55.43:7248
+172.245.55.53:7248
+
+# Generic
+
+/api/v1/bulla/?id=cloldp0fm000djjtkuhka3err
+/api/v1/bulla/?id=cln0hnnun0000rxwn99y3ueza
+/api/v1/bulla/?id=clp1b25bm001ajj8l1mzaehhw
+/api/v1/bulla/?id=
+/api/v1/bulla?id=
+/api/v1/bulla/?id=Subchannel
+/api/v1/bulla/?Subchannel
+/api/v1/bulla/?
+/?id=cloldp0fm000djjtkuhka3err
+/?id=cln0hnnun0000rxwn99y3ueza
+/?id=clp1b25bm001ajj8l1mzaehhw

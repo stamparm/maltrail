@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://myip.ms/info/whois/38.102.150.27
+# Reference: https://www.virustotal.com/en/ip-address/38.102.150.27/information/
+
+38.102.150.27
+
+# Reference: https://www.virustotal.com/en/ip-address/104.244.14.252/information/
+
+104.244.14.252
+
+# Reference: https://www.threatcrowd.org/searchTwo.php?data=sinkhole
+# Reference: https://www.virustotal.com/en/ip-address/216.66.15.109/information/
+
+sinkhole-iad1-1.cwg.fsi.io
+216.66.15.109

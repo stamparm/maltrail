@@ -1,0 +1,36 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://trac.i2p2.no/browser/installer/resources/certificates/ssl
+
+i2p-projekt.de
+i2p.mooo.com
+i2pseed.creativecowpat.net
+reseed.onion.im
+
+# Reference: https://www.reddit.com/r/i2p/comments/7pl7a0/need_working_reseed_servers/
+
+i2p.novg.net
+itoopie.atomike.ninja
+reseed.memcpy.io
+reseed.atomike.ninja
+i2p.manas.ca
+i2p-0.manas.ca
+download.xxlspeed.com
+reseed.i2p-projekt.de
+reseed.i2p.vzaws.com
+ieb9oopo.mooo.com
+i2p2.no
+
+# Reference: https://www.sentinelone.com/blog/hunting-for-honkbox-multistage-macos-cryptominer-may-still-be-hiding/
+# Reference: https://otx.alienvault.com/pulse/640134ee9052f4e129521989
+
+i2p.net
+i2pd.xyz
+i2pgit.org
+banana.incognet.io
+netdb.i2p2.no
+reseed-fr.i2pd.xyz
+reseed.diva.exchange
+reseed.i2pgit.org
+reseed2.i2p.net

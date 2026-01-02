@@ -1,0 +1,115 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/space-pirates-tools-and-connections/
+# Reference: https://www.virustotal.com/gui/ip-address/141.164.35.87/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.76.145.22/relations
+# Reference: https://www.virustotal.com/gui/file/f6c4c84487bbec5959068e4a8b84e515de4695c794769c3d3080bf5c2bb63d00/detection
+# Reference: https://www.virustotal.com/gui/file/84eb2efa324eba0c2e06c3b84395e9f5e3f28a3c9b86edd1f813807ba39d9acb/detection
+# Reference: https://www.virustotal.com/gui/file/0f818f9b39c262087b3bdaca6783406e1ecf51696c4c98632095e47f713ce7ce/detection
+# Reference: https://www.virustotal.com/gui/file/19b797b92b2879cde03d894e954a25c4ae2d85c9e50fa43beb2ec8458f6fef7b/detection
+# Reference: https://www.virustotal.com/gui/file/5ec2134f34f128edd61124ef6ea7a9f9c55c6ef58c610907aa87f6d9b308dca6/detection
+# Reference: https://www.virustotal.com/gui/file/d6af2d1df948e2221a4bdaa3dd736dc0646c95d76f1aa1a1d314e5b20185e161/detection
+# Reference: https://www.virustotal.com/gui/file/45c944889a482ae2e0e0a8e260c3be737cb612c8804164badef61e8a8713b92f/detection
+# Reference: https://www.virustotal.com/gui/file/ce1fb1a7bd7c108bceb71b0ca92d8d04b244e1bd7e9e7db5082e0c1d7e836f94/detection
+# Reference: https://www.virustotal.com/gui/file/5b4e69c19738490df9cc55dee7bfdab49eff2ef98003aced28a66cebabbf2bec/detection
+# Reference: https://www.virustotal.com/gui/file/e5f471dcd4f5a47f0a53fc389e58c70b9ef81805c503ed6b100950d02ee7f777/detection
+# Reference: https://www.virustotal.com/gui/file/4a7cf906c8cc871176d0702245953eeee5065f9651186cd8ae594e6835b8a8eb/detection
+
+http://103.101.178.152
+http://123.1.151.64
+http://154.213.21.207
+http://170.178.190.213
+http://192.225.226.123
+101.37.16.125:2121
+103.101.178.152:53
+120.78.127.189:6500
+121.89.210.144:6600
+154.211.161.161:443
+154.85.48.108:8080
+170.178.190.213:443
+192.225.226.123:443
+192.225.226.217:8443
+192.225.226.218:443
+207.148.121.88:7000
+45.77.16.91:51094
+47.108.89.169:7000
+omgod.org
+0077.x24hr.com
+alex.dnset.com
+amazon-corp.wikaba.com
+api.microft.dynssl.com
+app.hostareas.com
+apple-corp.changeip.org
+as.amazon-corp.wikaba.com
+asd.powergame.0077.x24hr.com
+bamo.ocry.com
+cdnsvc.microft.dynssl.com
+chdsjjkrazomg.dhcp.biz
+comein.journal.itsaol.com
+community.reportsearch.dynamic-dns.net
+dnsinfo.microft.dynssl.com
+docs.microft.dynssl.com
+edge.microft.dynssl.com
+elienceso.kozow.com
+erdcserver.microft.dynssl.com
+eset.zzux.com
+exowa.microft.dynssl.com
+fgjhkergvlimdfg2.wikaba.com
+fileserverrt.reportsearch.dynamic-dns.net
+flashplayeractivex.info
+freewula.strangled.net
+fssprus.dns04.com
+ftp.microft.dynssl.com
+gamepoer7.com
+gigabitdate.com
+goon.oldvideo.longmusic.com
+journal.itsaol.com
+js.journal.itsaol.com
+lck.gigabitdate.com
+lib.hostareas.com
+loge.otzo.com
+mail.playdr2.com
+mcafee-update.com
+miche.justdied.com
+micro.dns04.com
+microft.dynssl.com
+mktoon.ftp1.biz
+news.flashplayeractivex.info
+noon.dns04.com
+ns2.gamepoer7.com
+ns9.mcafee-update.com
+oldvideo.longmusic.com
+playdr2.com
+pop.playdr2.com
+powergame.0077.x24hr.com
+q34ewrd.youdontcare.com
+reportsearch.dynamic-dns.net
+rt.ftp1.biz
+ruclient.dns04.com
+safer.ddns.us
+sdo.microft.dynssl.com
+search.microft.dynssl.com
+serviechelp.changeip.us
+shareddocs.microft.dynssl.com
+smsreport.microft.dynssl.com
+speedtest.reportsearch.dynamic-dns.net
+sprfilet.microft.dynssl.com
+srcier0wqesj1.microft.dynssl.com
+srv.xxxy.biz
+ssl.gigabitdate.com
+sslvpn.microft.dynssl.com
+staticd.dynamic-dns.net
+stmspeedtest.reportsearch.dynamic-dns.net
+szuunet.strangled.net
+tombstone.kozow.com
+toogasd.www.oldvideo.longmusic.com
+toon.mrbasic.com
+update.flashplayeractivex.info
+w.asd3.as.amazon-corp.wikaba.com
+web.miscrosaft.com
+webdocsshare.microft.dynssl.com
+werwesf.dynamic-dns.net
+wserver1.microft.dynssl.com
+wwa1we.wbew.amazon-corp.wikaba.com
+ybcps4.freeddns.org

@@ -1,0 +1,40 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/Max_Mal_/status/1439181057664897024
+
+bankunited.online
+kmslogistik.com
+logmein-basic.xyz
+syncun.com
+
+# Reference: https://twitter.com/Max_Mal_/status/1439981811615023113
+# Reference: https://www.virustotal.com/gui/file/f456625935e64ec63f65cf7d49b25d93369c6b55246ba3e625bd7e28acb22fb3/detection
+
+cortinastelasytrazos.com
+fundacionverdaderosheroes.com
+orquideavallenata.com
+
+# Reference: https://www.trendmicro.com/en_us/research/21/k/Squirrelwaffle-Exploits-ProxyShell-and-ProxyLogon-to-Hijack-Email-Chains.html
+# Reference: https://otx.alienvault.com/pulse/619bafa5be96b9097b0aa0f9
+
+dloadr.al
+aparnashealthfoundation.aayom.com
+xf.dloadr.al
+trojan.xf.dloadr.al
+aayomsolutions.co.in/etiste/quasnam-4966787
+agoryum.com/lPLd50ViH4X9/r.html
+aparnashealthfoundation.aayom.com/quasisuscipit/totamet-4966787
+arancal.com/HgLCgCS3m/be.html
+constructorachg.cl/eFSLb6eV/j.html
+decinfo.com.br/s4hfZyv7NFEM/y9.html
+dongarza.com/gJW5ma382Z/x.html
+grandthum.co.in/9Z6DH5h5g/be.html
+headlinepost.net/3AkrPbRj/x.html
+imprimija.com.br/BIt2Zlm3/y5.html
+iperdesk.com/JWqj8R2nt/be.html
+mcdreamconcept.ng/9jFVONntA9x/r.html
+oel.tg/MSOFjh0EXRR8/j.html
+omoaye.com.br/Z0U7Ivtd04b/r.html
+stunningmax.com/JR3xNs7W7Wm1/y1.html
+taketuitions.com/dTEOdMByori/j.html

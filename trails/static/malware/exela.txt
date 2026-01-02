@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: exela stealer
+
+# Reference: https://threatfox.abuse.ch/browse/tag/ExelaStealer/
+# Reference: https://www.virustotal.com/gui/ip-address/54.241.95.51/relations
+
+smartpoliceax.online
+smartpoliceax.website
+
+# Reference: https://x.com/cyberfeeddigest/status/1836027020968358371
+# Reference: https://x.com/JAMESWT_MHT/status/1836037938406215937
+# Reference: https://www.virustotal.com/gui/file/08a49e628cb398f2bc902e09bb6ad42bfc97ce09aca0aa3ae359a17e7c432b64/detection
+
+bulletenergyllc.homes
+quickpresentationdoc.xyz
+
+# Reference: https://www.virustotal.com/gui/file/7cabb829aa08d7ba5b18d08cb59bb8250cd187eea4a2573f3abdcf59afb68f5b/detection
+# Reference: https://www.virustotal.com/gui/file/8c4863fa4c55b1cc96385268f6dc2eb90bcd97d653dcd065b49ac3bb95d88226/detection
+
+paul-vocational.gl.at.ply.gg
+zhongxiangsteels.store

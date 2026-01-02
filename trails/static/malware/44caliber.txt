@@ -1,0 +1,65 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: BlackGuard
+
+# Reference: https://twitter.com/nao_sec/status/1370702500798418946
+# Reference: https://twitter.com/James_inthe_box/status/1370747970887372800
+# Reference: https://app.any.run/tasks/65cbca2e-5864-474e-ae74-9ce0a08feffe/
+
+thebestsparklingshinecleanings.site
+
+# Reference: https://twitter.com/3xp0rtblog/status/1499748871362261001
+# Reference: https://twitter.com/ViriBack/status/1500083044522287104
+# Reference: https://www.virustotal.com/gui/file/67843d45ba538eca29c63c3259d697f7e2ba84a3da941295b9207cdb01c85b71/detection
+
+http://185.173.157.26
+
+# Reference: https://twitter.com/ViriBack/status/1500112154690826245
+
+greenblguard.shop
+umpulumpu.ru
+
+# Reference: https://twitter.com/3xp0rtblog/status/1501980464789131271
+# Reference: https://www.virustotal.com/gui/file/db1499fa5ea0d7bc198609ef58218e8c95a63e19a4c59bcd5f6e81a0439beb1b/detection
+
+hukamaha.ru
+
+# Reference: https://blog.cyble.com/2022/04/01/dissecting-blackguard-info-stealer/
+# Reference: https://www.zscaler.com/blogs/security-research/analysis-blackguard-new-info-stealer-malware-being-sold-russian-hacking
+# Reference: https://otx.alienvault.com/pulse/6246de981b008f991a3bf734
+
+mirtonewbacker.com
+onetwostep.at
+win.mirtonewbacker.com
+
+# Reference: https://tria.ge/220331-thnx7aedd2
+
+funkyjazz.me
+
+# Reference: https://twitter.com/3xp0rtblog/status/1516092338065612804
+# Reference: https://www.virustotal.com/gui/file/6e178c0fb8198d21b85f9179c731a2e203e2c112bc017848c4b2361ef1411619/detection
+
+ritmflow.online
+
+# Reference: https://twitter.com/ViriBack/status/1611525160259190785
+# Reference: https://twitter.com/r3dbU7z/status/1640339717957865473
+# Reference: https://tria.ge/230107-a5brlacd34/static1
+# Reference: https://www.virustotal.com/gui/url/510a1f5cde00812300b8a8d394ca7361b0c768f833a0317398fa227f9f414522/detection
+
+http://45.15.156.9
+
+# Reference: https://cybersecurity.att.com/blogs/labs-research/blackguard-stealer-extends-its-capabilities-in-new-variant
+# Reference: https://www.virustotal.com/gui/file/88e9780ce5cac572013aebdd99d154fa0b61db12faffeff6f29f9d2800c915b3/detection
+
+http://23.83.114.131
+
+# Reference: https://twitter.com/Jane_0sint/status/1640334062781906945
+# Reference: https://www.virustotal.com/gui/file/68e983bce97ebcc87c5b15ce031db19dabc0e0b628bad23ca061fe286247841b/detection
+
+http://45.15.157.162
+
+# Reference: https://twitter.com/suyog41/status/1762745899946790941
+# Reference: https://www.virustotal.com/gui/file/273b950907a8685b9460659e26fd1d6e601f1f71d00a1b2ca0296c49a46eece9/detection
+
+a0925500.xsph.ru

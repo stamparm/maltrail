@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: StelyBuilder
+
+# Reference: https://twitter.com/James_inthe_box/status/1400922272399904770
+# Reference: https://app.any.run/tasks/323e7307-cec4-425a-8852-892f9b526ca3/
+
+stelybuilder.wtf

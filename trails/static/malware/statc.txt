@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zscaler.com/blogs/security-research/statc-stealer-decoding-elusive-malware-threat
+# Reference: https://www.virustotal.com/gui/file/f4d60dde0ba2d06e34adb688c135613077659b2b7c0770b09a083b25168048f1/detection
+# Reference: https://www.virustotal.com/gui/file/df2f7a537144773da74a60b84475156a0d44b9bcb474579aab07ef9cc767642b/detection
+# Reference: https://www.virustotal.com/gui/file/e68649a91df324229a6f33685a5ba3827767c8105bcd3c6808ac9e06a4a76045/detection
+# Reference: https://www.virustotal.com/gui/file/1fb9aade0adfe23305c9d2b75597977b35f9c04d3c37922b36da6b156b1adf76/detection
+# Reference: https://www.virustotal.com/gui/file/9e867a93b0496b019e18dd781615f4b14b7ab105e05897e1ec6f9233e9823c8a/detection
+
+37.27.10.46:48026
+5.78.80.160:53375
+topgearmemory.com
+check.topgearmemory.com
+
+# Generic
+
+/dw/9c890e1b2b4f2723a68fc905268ee010cae232be.txt
+/kdsfedafa/stat?c=
+/kdsfedafa/

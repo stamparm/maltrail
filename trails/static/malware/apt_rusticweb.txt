@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/fmc_nan/status/1714956705971458377
+# Reference: https://www.virustotal.com/gui/ip-address/89.117.188.126/relations
+# Reference: https://www.virustotal.com/gui/file/1387b77a41e5a244c03ea7f5c90a2e528abe0ed7a4e6cb659183f7112c546046/detection
+
+awesscholarship.in
+
+# Reference: https://www.seqrite.com/blog/operation-rusticweb-targets-indian-govt-from-rust-based-malware-to-web-service-exfiltration/
+
+epar.in
+parichay.epar.in
+
+# Reference: https://twitter.com/Cuser07/status/1742437262078660874
+# Reference: https://www.virustotal.com/gui/file/23c54a0185284f7e9a0231f5bbd4c3527e2750c0686cb5744cb388059fbb0ec9/detection
+# Reference: https://www.virustotal.com/gui/file/9455bee3d642e0ce7949e5df1996a90621e76e991ae973da4dbae5d0e93ce33b/detection
+# Reference: https://www.virustotal.com/gui/file/ed97029f5bf90353b50b1cc76e0961e0c2729736da64885a1ef1150de124ceab/detection
+# Reference: https://www.virustotal.com/gui/file/39b3295e921c1e531391981bdaf5309792d653952a98448fda0c1a3d5037d78d/detection
+
+estttsec.in
+apsdighi.estttsec.in
+nicdsa.estttsec.in

@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.threatcrowd.org/searchTwo.php?data=sinkhole
+
+sinkhole.gladtech.net
+74.200.48.169

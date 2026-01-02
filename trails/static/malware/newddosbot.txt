@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: genasep
+
+# Reference: https://twitter.com/James_inthe_box/status/1184080702817492992
+# Reference: https://app.any.run/tasks/db8b2e63-be7d-4b41-b3a5-4c55db80c35c/
+
+pimmelmenschenhassen327.com
+
+# Reference: https://twitter.com/Mesiagh/status/1202711049784328193
+
+leavemealonenowitslol.com
+plesleavemybnetalonebiatch.cz
+sometimeyougetabuz.ru
+
+# Reference: https://twitter.com/wwp96/status/1202715543259795466
+
+canyousuckmytralalalakla.com
+regthisshitifyounowmylol.com
+
+# Generic trails
+
+/exodus/gate.php

@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/banthisguy9349/status/1823429531455381584
+# Reference: https://app.any.run/tasks/33db7d03-8612-41be-9b24-cc2de4e810f3
+# Reference: https://www.virustotal.com/gui/file/223bf2519343fcff9c376a2ff15622e7c02ce48f2ecffb10f1534983ffc19fd5/detection
+
+xmb.pythonanywhere.com

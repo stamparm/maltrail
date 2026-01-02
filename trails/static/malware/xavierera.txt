@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: xavierera stealer
+
+# Reference: https://x.com/Malcoreio/status/1851623725751267646
+# Reference: https://x.com/suyog41/status/1851956995877732469
+# Reference: https://thehackernews.com/2024/10/researchers-uncover-python-package.html
+# Reference: https://tria.ge/241030-zwk2ca1drg/behavioral2
+# Reference: https://www.virustotal.com/gui/file/f0bd049e78b3629f21194b4d1044ff3a2b988649356cc55cdf0e6985a5b6ae8b/detection
+# Reference: https://www.virustotal.com/gui/file/c6309489b3f61e00ec320db6c0e6ffd2875a3f94f86ee00b30946fa6ba535551/detection
+
+coinsw.app
+tryenom.com
+tinyvago.com/pip/x/requirements.php

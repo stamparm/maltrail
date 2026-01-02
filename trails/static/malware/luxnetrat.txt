@@ -1,0 +1,63 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/MalwareConfig/status/748763361333039104
+# Reference: https://malwareconfig.com/config/013302098a460735535b598bbe62b58b/
+
+121.0.132.23:10
+
+# Reference: https://twitter.com/MalwareConfig/status/748763155153625092
+
+keztherapist.hotpto.org
+
+# Reference: https://twitter.com/MalwareConfig/status/748762942212960256
+
+doni123.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748762930489937920
+
+01007849003.no-ip.biz
+
+# Reference: https://twitter.com/MalwareConfig/status/748762877784240129
+
+ayub.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748762849925672964
+
+sami123456.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748762824411713537
+
+s70black.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748756904705298433
+
+annomous.no-ip.biz
+
+# Reference: https://twitter.com/MalwareConfig/status/748626900449361920
+
+steamhacks.zapto.org
+
+# Reference: https://twitter.com/MalwareConfig/status/748626562996654080
+
+bisutvaritnod5.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/aa712cb602c3d229e1f454182b17dea81cba9ded275a1465e6614e043427ff4f/detection
+
+141.255.154.225:4431
+
+# Reference: https://www.virustotal.com/gui/file/de78ed1b0cd3be09bf68580467233fa9b4975dc55c7e80bf4a59229c39fb3767/detection
+
+141.255.145.85:4431
+
+# Reference: https://www.virustotal.com/gui/file/1717f043b5ea0db5a43ef7bca9820a3c656dca8336139ccc499683c63ad0f1c3/detection
+# Reference: https://app.any.run/tasks/bba2fb98-4eb6-4115-9bfa-e6f13d44bf62/
+
+191.205.215.182:4431
+windowsconnect.duckdns.org
+
+# Reference: https://app.any.run/tasks/3f711d7e-b3b0-4bea-94ce-356db8aeb293/
+# Reference: https://www.virustotal.com/gui/file/0fe88d21d325c9e139eb9c383e5916178311392915a3029da2ccc18540f03293/detection
+
+191.205.215.182:2334
+regedxasd.duckdns.org

@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/VK_Intel/status/1156983051974533120
+# Reference: https://www.virustotal.com/gui/file/b77a0939dc6720e349f36e368a4f222295baf3d7fdd1ef851c19fa163ade1cc5/detection
+
+linexd.com
+
+# Reference: https://www.virustotal.com/gui/file/a1376ef05be8e2d1cf2930106b938bf49abb7109464869bc75172e930bbbedeb/detection
+
+207.246.69.63:443
+
+# Reference: https://www.virustotal.com/gui/file/58cd83ae52a029d43d3e02c897bb94ca94bd311eb33e231b0d417abd70766c43/detection
+
+141.255.147.210:9999
+ravandell.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/353eece36ec9179a8bd9cd4f9ffd44cb987672cb88649839d614af76cd46a493/detection
+
+3.17.202.129:12869

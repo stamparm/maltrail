@@ -1,0 +1,92 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: DirtJump, Dishigy, Russkill
+
+# Reference: http://www.deependresearch.org/2011/10/dirt-jumper-ddos-bot-new-versions-new.html
+# Reference: https://krebsonsecurity.com/2011/11/ddos-attack-on-krebsonsecurity-com/
+# Reference: https://www.virustotal.com/gui/file/02422d93668f19b8057064998e228316a2a2ff9c8aacb2968c9567da21e48dd6/detection
+# Reference: https://www.virustotal.com/gui/file/eff9b75161853b46ad9f492480b3d39cbdbd23b02c16d50b291a3797b9bb4db8/detection
+# Reference: https://www.virustotal.com/gui/file/b20a60146c1bde2ad084956435df36544cbb3c016e14ca87fa2b1fe08386f46a/detection
+# Reference: https://www.virustotal.com/gui/file/aaa04b2672f882feed85a87f795ce4bc93cd1d850e3ff828230468ca6fd00189/detection
+# Reference: https://www.virustotal.com/gui/file/d5c515f37ad67075247f7eccb92b660dc46bc328ecdd0cc8d3a86e09bc354d0d/detection
+# Reference: https://www.virustotal.com/gui/file/5176e4b5ed951a7da59ceb4a0e858f174fe3d1ae4671b0a8bc3a413b305e242a/detection
+
+http://46.252.130.102
+http://95.211.63.38
+abacava.net
+asdaddddaaaa.com
+greathills6.com
+hotklass.com
+jfasfasfasfasf.com
+kidala.info
+mwas.ru
+nntudazashel.ru
+noteye.biz
+s0r.ru
+startraider.com
+whozdadx.org
+wow-siti.ru
+xruw0q.com
+xzrw0q.com
+zprw6q.com
+
+# Reference: https://www.virustotal.com/gui/file/f6c24e33601ae015c2f969405359a923d268415b75fdb0bc0a7dc51f708abeb5/detection
+
+demoralize.biz
+missiontech.us
+
+# Reference: https://twitter.com/P3pperP0tts/status/1128030457264611328
+
+botnetik.tk
+
+# Reference: https://www.virustotal.com/gui/file/02048b5b419b6611288f49d7ad456fa65c564ac33381699ef7713204864c25ec/detection
+
+dahaka.top
+
+# Reference: https://www.virustotal.com/gui/file/8e04edab996f90fed3f78417b95a2b78f8043ae02bc2af7528ec74152a01a901/detection
+# Reference: https://www.virustotal.com/gui/file/9b853f2cf4c9128d85a7f5d65cf73651179036a3fb2638ef277bc3ab5d1eb57b/detection
+
+http://176.9.171.210
+
+# Reference: https://www.virustotal.com/gui/file/00c64a620c38418d70ca906ea6d8eaee63df987f24148208ddf6336619521bdb/detection
+
+horror-struck-leaps.000webhostapp.com
+saasasg9.beget.tech
+/hYhnasun7t2d/mgo.php
+/ujnhuxbnzhcw23/mgo.php
+/hYhnasun7t2d/
+/ujnhuxbnzhcw23/
+
+# Reference: https://www.virustotal.com/gui/file/003de3820c90a5e25935b458e0f6467d4f0cbbf29b0766346262d6588d4a10fb/detection
+
+aczxfapz.beget.tech
+amzonilh.beget.tech
+asdasdrf.beget.tech
+i96979z4.beget.tech
+confineless-compari.000webhostapp.com
+double-minded-elect.000webhostapp.com
+/3qweqewqwe/mgo.php
+/DAasdasdasdasd23/mgo.php
+/hnjhSNunasu82/mgo.php
+/njBYSA25ASDA2/mgo.php
+/nUHBA8NU3DSADN7/mgo.php
+/3qweqewqwe/
+/DAasdasdasdasd23/
+/hnjhSNunasu82/
+/njBYSA25ASDA2/
+/nUHBA8NU3DSADN7/
+
+# Reference: https://www.virustotal.com/gui/file/e3c424e1f704de92bd1729af03c76b0f87855d6aa59c00094a174ca7fc9ad10a/detection
+# Reference: https://www.virustotal.com/gui/file/e014f83f3459a07140ee8f0adb93604de1b276531c798650c09f80278b70bef8/detection
+# Reference: https://www.virustotal.com/gui/file/b6afcb13fa2b18b96005c6df31627d297a84ac24223dff5508deb2fcca89af41/detection
+# Reference: https://www.virustotal.com/gui/file/73663147f8ce5a7aaec7c92829abdff905f655721b2769e284b5ed5f38bb13be/detection
+
+http://51.15.143.142
+qubit.email
+
+# Generic
+
+/c4/m_d.php
+/f2/m_d.php
+/update/m_d.php

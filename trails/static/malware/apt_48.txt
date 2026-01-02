@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt-c-48
+
+# Reference: https://x.com/blackorbird/status/1861348202156564993
+# Reference: https://mp.weixin.qq.com/s/Xb8bEZMV3FHC1O6lWt-4pg
+# Reference: https://app.validin.com/detail?find=b0caff7b71c1e189a304b3420d6315c34af4476777845cfc95fde03f9a5b1d1a&type=hash&ref_id=316ceb33ab1#tab=host_pairs
+
+panbaiclu.com
+vpn616865750.softether.net

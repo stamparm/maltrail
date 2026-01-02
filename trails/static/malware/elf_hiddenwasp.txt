@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.intezer.com/blog-hiddenwasp-malware-targeting-linux-systems/
+
+103.206.122.245:8080
+103.206.123.13:8080
+103.206.123.13:8787
+103.206.122.245:8787
+103.206.122.245:61061
+103.206.123.13:61061

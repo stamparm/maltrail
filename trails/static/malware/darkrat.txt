@@ -1,0 +1,82 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: blackspider
+
+# Reference: https://twitter.com/MalwareConfig/status/748771081998049280
+
+darkratbyonidrori.esy.es
+
+# Reference: https://twitter.com/MalwareConfig/status/748771045876731905
+
+darkratwithfire.esy.es
+
+# Reference: https://twitter.com/MalwareConfig/status/748764988429389825
+
+crossfirearmafree.esy.es
+
+# Reference: https://twitter.com/MalwareConfig/status/748764976572018688
+
+fsdfid.x10.mx
+
+# Reference: https://twitter.com/MalwareConfig/status/748764943244140544
+
+ultraserieshd.com
+
+# Reference: https://twitter.com/MalwareConfig/status/748764913653288960
+
+trickbook.esy.es
+
+# Reference: https://twitter.com/MalwareConfig/status/748629325348487168
+
+mstressx.pe.hu
+
+# Reference: https://twitter.com/MalwareConfig/status/748627040530747392
+
+pexaun.com.br
+
+# Reference: https://twitter.com/MalwareConfig/status/748627014991609856
+
+zikoro.esy.es
+
+# Reference: https://twitter.com/P3pperP0tts/status/1166491923911184385
+# Reference: https://twitter.com/sS55752750/status/1166713802961895425
+
+81.177.135.217:53620
+mh.owak-kmyt.ru
+
+# Reference: https://twitter.com/P3pperP0tts/status/1166981700037021697
+
+u403161sq2.ha002.t.justns.ru
+
+# Reference: https://twitter.com/P3pperP0tts/status/1167083511385378816
+
+45.67.231.23:53623
+/IRemoteClient
+
+# Reference: https://twitter.com/tkanalyst/status/1175417561527115778
+# Reference: https://app.any.run/tasks/3241402e-8a4e-4974-9e19-68a484e66903/
+
+http://104.223.20.200
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, DarkRAT)
+
+advcash.network
+tuu.nu
+
+# Reference: https://twitter.com/fr3dhk/status/1204369398557036544
+
+http://178.62.187.103
+
+# Reference: https://twitter.com/P3pperP0tts/status/1230631918963691520
+
+http://67.215.224.144
+
+# Reference: https://github.com/silence-is-best/c2db#darkrat
+# Reference: https://www.virustotal.com/gui/ip-address/104.244.75.179/relations
+
+http://104.244.75.179
+
+# Reference: https://www.virustotal.com/gui/domain/darkratboris.no-ip.biz/detection
+
+darkratboris.no-ip.biz

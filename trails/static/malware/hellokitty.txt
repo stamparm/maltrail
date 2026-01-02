@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: HelloGookie
+
+# Reference: https://www.cadosecurity.com/post/punk-kitty-ransom-analysing-hellokitty-ransomware-attacks
+# Reference: https://www.bleepingcomputer.com/forums/t/750580/hellokitty-ransomware-crypt-read-me-unlocktxt-support-topic/
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+# Reference: https://otx.alienvault.com/pulse/6023fce0be3a277ad0519a50/
+
+decrypts3nln3tic.onion
+3r6n77mpe737w4sbxxxrpc5phbluv6xhtdl5ujpnlvmck5tc7blq2rqd.onion
+6x7dp6h3w6q3ugjv4yv5gycj3femb24kysgry5b44hhgfwc5ml5qrdad.onion
+tdoe2fiiamwkiadhx2a4dfq56ztlqhzl2vckgwmjtoanfaya4kqvvvyd.onion
+x6gjpqs4jjvgpfvhghdz2dk7be34emyzluimticj5s5fexf4wa65ngad.onion
+
+# Reference: https://unit42.paloaltonetworks.com/vice-society-targets-education-sector/
+# Reference: https://otx.alienvault.com/pulse/638f64f615fd94f02af0d0ac
+
+gunyhng6pabzcurl7ipx2pbmjxpvqnu6mxf2h3vdeenam34inj4ndryd.onion
+ssq4zimieeanazkzc5ld4v5hdibi2nzwzdibfh5n5w4pw5mcik76lzyd.onion
+
+# Reference: https://twitter.com/AlvieriD/status/1781135035837325726
+
+gookie256cvccntvenyxrvn7ht73bs6ss3oj2ocfkjt5y6vq6gfi2tad.onion

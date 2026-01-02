@@ -1,0 +1,535 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: TAG-124, kongtuke
+
+# Reference: https://malasada.tech/the-landupdate808-fake-update-variant/
+
+acsmaterial.com
+backalleybikerepair.com
+careers-advice-online.com
+digimind.nl
+eco-bio-systems.de
+ecohortum.com
+ecowas.int
+edveha.com
+evolverangesolutions.com
+fajardo.inter.edu
+fup.edu.co
+itslife.in
+lauren-nelson.com
+mocanyc.org
+monitor.icef.com
+natlife.de
+netzwerkreklame.de
+razzball.com
+septicfl.com
+sixpoint.com
+sunkissedindecember.com
+thecreativemom.com
+zoomzle.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-29-v10677/1924
+
+tayakay.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-07-v10715/2033
+
+pushcg.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-18-v10744/2147
+
+eliztalks.com
+franklinida.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-19-v10745/2148
+
+genhil.com
+tickerwell.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-20-v10746/2151
+
+safigdata.com
+nyciot.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-21-v10747/2154
+
+elizgallery.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-25-v10750/2164
+
+codereviewerss.com
+esaleerugs.com
+ilsotto.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-26-v10753/2171
+
+nastictac.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-05-v10791/2234
+
+chewels.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-06-v10792/2238
+
+coeshor.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-09-v10793/2248
+
+habfan.com
+iognews.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-10-v10795/2253
+
+dechromo.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-11-v10796/2254
+
+enerjjoy.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-12-v10800/2257
+
+djnito.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-13-v10805/2263
+
+opgears.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-16-v10808/2270
+
+sdrce.com
+theinb.com
+tibetin.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-17-v10809/2275
+
+selmanc.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-18-v10810/2278
+
+calbbs.com
+dsassoc.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-19-v10811/2280
+
+esondent.com
+gwcomics.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-20-v10812/2282
+
+hdtele.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-23-v10813/2287
+
+boneyn.com
+satpr.com
+sokrpro.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-24-v10816/2293
+
+dhusch.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-26-v10817/2296
+
+enethost.com
+fastard.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-27-v10818/2299
+
+discoves.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-30-v10819/2306
+
+ambiwa.com
+gcafin.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-03-v10829/2323
+
+usbkits.com
+
+# Reference: https://app.validin.com/detail?ipv4_filter=AS+399629&header_hash_filter=f0007e9e8bcc49e6b5ea&type=hash&find=4cb2c207d5a9bb582aa3ddd06786d1afa0d8bada#tab=host_pairs (# 2025-01-09)
+
+agretex.com
+akerusa.com
+akmcons.com
+bapalal.com
+cetainc.com
+comtekinc.com
+cyberetc.com
+divexpo.com
+ecrut.com
+harmarpets.com
+iconcss.com
+isogun.com
+macorbur.com
+mallternet.com
+maxcgi.com
+mirugby.com
+netsolut.com
+onlinelas.com
+opteme.com
+paulsss.com
+ppdpharmaco.com
+prpages.com
+pursyst.com
+raysre.com
+rc1g3as.top
+remaxnoc.com
+rimstarintl.com
+samaxwell.com
+srpkoa.com
+sunotels.com
+telback.com
+unclezekes.com
+vononline.com
+willchar.com
+wqenpene.com
+xaides.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-09-v10834/2338
+
+exodvs.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-23-v10844/2386
+
+rystrom.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-24-v10845/2388
+
+sinobz.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-27-v10846/2393
+
+opticna.com
+
+# Reference: https://x.com/malware_traffic/status/1884476331821326816
+# Reference: https://www.malware-traffic-analysis.net/2025/01/28/index.html
+# Reference: https://www.virustotal.com/gui/ip-address/216.245.184.27/relations
+
+indbk.com
+sesraw.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-20-v10887/2545
+
+computertecs.com
+janhugo.com
+vfclan.co
+vfclan.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-21-v10888/2548
+
+kkmic.com
+loycos.com
+shairwest.com
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Kongtuke/ (# 2025-03-22)
+
+aecint.com
+debolts.com
+evolytix.com
+fnbsuffield.com
+glccf.com
+hillfire.dns.army
+kimjohan.com
+lifewis.com
+llewen.com
+pirahnas.com
+saytunka.com
+scanpaq.com
+selbe.ar
+szshenyao.com
+tacscc.com
+tecnogrup.com
+vessweb.com
+vglweb.com
+ynzal.com
+zxcaem.com
+airbluefootgear.com/wp-includes/images/xits.php
+contactsyracuse.org/wp-admin/js/qrtz.php
+gardenworksproject.org/wp-admin/maint/nALIELIz.txt
+gardenworksproject.org/wp-admin/maint/QRlqoMji.txt
+loopbackanalytics.com/wp-includes/gdsayy.php
+peritiemilia.com/wp-includes/wasd_wp.php
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-14-v10860/2442
+
+eecsys.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-24-v10865/2473
+
+infinett.com
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-04-04-IOCs-forKongTuke-web-inject-leading-to-fake-CAPTHA-page.txt
+
+dixiemgmt.com
+eiesystems.com
+inteklabs.com
+lancasternh.com
+lkcharles.com
+ronsamuel.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-24-v10889/2559
+
+pdmfg.com
+wccdefense.com
+
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/yet-another-nodejs-backdoor-yanb-a-modern-challenge/
+
+compralibri.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-24-v10913/2664
+
+mrdltd.com
+vickmarine.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-25-v10914/2668
+
+ronthom.com
+teklits.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-28-v10915/2678
+
+jimriehls.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-29-v10916/2684
+
+alapige.com
+jimriehls.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-30-v10917/2687
+
+uhaknews.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-06-v10921/2709
+
+anncrman.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-07-v10922/2714
+
+aimpes.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-13-v10926/2729
+
+digiscap.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-14-v10927/2734
+
+frederichoms.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-16-v10929/2740
+
+itrtruck.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-19-v10930/2746
+
+chproduct.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-30-v10937/2779
+
+anichind.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-10-v10947/2811
+
+ncmtraders.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-11-v10948/2815
+
+leftykreh.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-12-v10949/2818
+
+hillcoweb.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-16-v10951/2826
+
+cellinifurniture.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-24-v10956/2844
+
+swedrent.com
+
+# Reference: https://threatfox.abuse.ch/browse/tag/LandUpdate808/ (# 2025-06-29)
+
+abtsi.com
+czzz.com
+dealmakerwealthsociety.com
+dncoding.com
+fjcad.com
+hydroquebec-client.info
+kemrox.com
+pemalite.com
+piedsmontlaw.com
+rshank.com
+vpn289280989.v4.softether.net
+z-v2-071924.kailib.com
+
+# Reference: https://x.com/skocherhan/status/1944624974318449135
+
+smithenv.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-09-11-v11013/3030
+
+mtmra.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-09-15-v11015/3033
+
+webcre8.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/js.kongtuke/ (# 2025-09-18)
+
+http://147.45.45.177
+http://188.245.105.73
+http://188.245.167.86
+144.31.221.122:6060
+144.31.221.126:6060
+144.31.221.37:6060
+144.31.221.75:6060
+144.31.221.82:6060
+144.31.221.84:6060
+144.31.221.88:6060
+85.209.129.105:6060
+a82523.top
+bernnaum.com
+bradtae.com
+captchaverift.com
+choutek.com
+cloud-flaer-verif.com
+colliel.live
+comparisons-builder-loves-ratios.trycloudflare.com
+considering-infringement-subject-myself.trycloudflare.com
+cute-pudding-05af50.netlify.app
+deathmatchuk.com
+devindicator.dev
+eomaguera.com
+ferry-addressed-adams-vice.trycloudflare.com
+ffclive.com
+florence-hrs-savage-serial.trycloudflare.com
+genuine-seahorse-f5e9c4.netlify.app
+geology-gilbert-domain-thesaurus.trycloudflare.com
+homeeick.com
+homemick.live
+ichmidt.com
+industries-ii-wine-details.trycloudflare.com
+joebesser.com
+johnoton.live
+logical-whose-niagara-durable.trycloudflare.com
+math1st.com
+mersinet.com
+mtmra.com
+murphkirk.com
+okunevv.com
+porsasystem.com
+rfwklaw.com
+saewh.com
+tchmitt.live
+tmello.com
+unique-kataifi-8d2aac.netlify.app
+valentine-platform-wood-examination.trycloudflare.com
+vcsinfo.com
+wilwinson.com
+windowsmsncn.org
+z98123.top
+
+# Reference: https://www.virustotal.com/gui/ip-address/141.98.6.28/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.66.27.67/relations
+# Reference: https://www.virustotal.com/gui/file/0163bc688504d4cb19ff42eb24ca1a77e01b0f37adb16415a5f2d79ca132bcd3/detection
+# Reference: https://www.virustotal.com/gui/file/c1aa2b72365e21cea0d8546dd5e6b7ebb397b4a796944c188f7eff8b04e9b2ad/detection
+# Reference: https://www.virustotal.com/gui/file/fd152793620f7d50f18588d0920383073a9379fafd4112704644b5f580617eb0/detection
+
+bryncoed.com
+hlherb.com
+mlampell.com
+pariaian.com
+pcdcinc.com
+sessomania.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-10-28-v11050/3094
+# Reference: https://www.virustotal.com/gui/file/9d191b9509efd7fcb00d7a1e7fef34537a5898aec106518608f46733a86eb6a3/detection
+
+rodriggez.com
+
+# Reference: https://app.validin.com/detail?find=3d2200f8de7ec7a1e44c942b5608740b22e4a4cf1884bb3ef1c2f449dbe420fb&type=hash&ref_id=f57dab8291f#tab=host_pairs (# 2025-11-07)
+
+0451js.com
+allgetrich.com
+angelflowery.com
+bitterendpub.com
+castleera.com
+chungj.com
+chunjingyun.com
+cigosofa.com
+cnttys.com
+deshea.com
+feeshow.com
+fs-jinjiahao.com
+fyszy.com
+gujindesign.com
+henghui123.com
+hjjobs.com
+izhuanxin.com
+jiulianjiaodai.com
+jj669.com
+joeunled.com
+liantuo56.com
+lnjobs.com
+michiwang.com
+nannyou.com
+neo-edu.com
+njnanyang.com
+rimarx.com
+rongfeida.com
+saeam.com
+saolele.com
+slsm001.com
+soha-studio.com
+stcztech.com
+syxyey.com
+t1tj.com
+taizihu.com
+tendo-mikoshikai.com
+tjantai.com
+un2co.com
+wiwq1.com
+wl1123online.com
+xinkangmall.com
+xyhosl.com
+yingdelawyers.com
+yinshua100.com
+yintonglian.com
+yinuodatiu.com
+ynjbp.com
+yungangtie.com
+zidongsaodiji.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.49.68.206/relations
+
+edentista.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/64.190.113.60/relations
+
+virtvan.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.61.136.207/relations
+# CERT_FINGERPRINT_SHA256-HOST=e7c9226a4d5d5423c58b5b19556958d86e440c8d2e547303539d4eeac47a4dd5
+
+icloucl.net
+reechel.com
+reviews-icloud.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/193.149.180.42/relations
+
+nakaizu.com
+
+# Reference: https://www.virustotal.com/gui/file/3765fad885151a3b6055104aab0b36b53aca42c1c5c5ed3f1721c721c3085a39/detection
+
+apraadhi.com
+golflinksltd.com
+omgtelecom.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/64.95.13.162/relations
+
+ukhorizons.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/206.71.149.57/relations
+
+abqsales.com

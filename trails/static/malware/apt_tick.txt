@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blogs.jpcert.or.jp/ja/2019/02/tick-activity.html
+
+menu.han-game.com
+menu.rakutenline.com
+menu.sa-guard.com
+rbb.gol-unkai4.com
+rp.thumbbay.com
+amamihanahana.com
+han-game.com
+rakutenline.com
+sa-guard.com
+
+# Reference: https://image.ahnlab.com/file_upload/asecissue_files/ASEC%20REPORT_vol.95.pdf
+# Reference: https://otx.alienvault.com/pulse/5d10b9b00e51b1938fd552b5
+# Reference: https://pastebin.com/91vYTTiZ
+
+englandprevail.com
+kot.gogoblog.net
+memsbay.com
+poi.cydisk.net
+pre.englandprevail.com
+update.saranmall.com
+
+# Reference: https://www.welivesecurity.com/2023/03/14/slow-ticking-time-bomb-tick-apt-group-dlp-software-developer-east-asia/
+
+http://103.127.124.117
+http://103.127.124.119
+slientship.com
+travelasist.com
+mssql.waterglue.org
+oracle.eneygylakes.com

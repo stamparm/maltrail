@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/setThreatTitle/status/1932813125444653214
+# Reference: https://app.validin.com/detail?find=Olymp%20Loader&type=raw&ref_id=1fedd3b0dc3#tab=host_pairs (# 2025-06-12)
+
+185.112.144.211:3000
+185.196.8.108:3000
+olympl.top
+olympwashere.com

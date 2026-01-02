@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: petya, petwrap, green petya
+
+# Reference: https://www.us-cert.gov/ncas/alerts/TA17-181A
+# Reference: https://www.lmntrix.com/Lab/Lab_info.php?id=24
+# Reference: https://twitter.com/hasherezade/status/1142163448622718976
+
+coffeinoffice.xyz
+#french-cooking.com
+mischa5xyix2mrhd.onion
+mischapuk6hyrn72.onion
+petya3sen7dyko2n.onion
+petya3jxfp2f7g3i.onion

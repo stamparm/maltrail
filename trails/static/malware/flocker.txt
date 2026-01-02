@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: fsociety ransomware, flocker ransomware
+
+# Reference: https://github.com/marktsec/Ransomware_Official_Domains
+# Reference: https://app.any.run/tasks/5b1e2c02-79f7-46bc-8b85-7609c211069a
+
+flock4cvoeqm4c62gyohvmncx6ck2e7ugvyqgyxqtrumklhd5ptwzpqd.onion

@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1599855818564075520
+# Reference: https://www.cleafy.com/cleafy-labs/pixpirate-a-new-brazilian-banking-trojan
+# Reference: https://www.virustotal.com/gui/file/d1aacf30acbd2bea792688b17f987b8f1d4796d2eace36bbc25dab350b11ada3/detection
+# Reference: https://www.virustotal.com/gui/file/b5f6079b8f2319a40944c0c6e9abd486969591fb4af7e9b4dbc6b146f9d5fa0f/detection
+
+47.253.48.150:9200
+apendgo.com
+applebalanyou.com
+cdown883.oss-us-east-1.aliyuncs.com
+down883.oss-us-east-1.aliyuncs.com
+update.apendgo.com

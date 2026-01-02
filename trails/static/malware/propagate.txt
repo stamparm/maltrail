@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/328ee3be7f3581c6d6d0b499759eee44c244e2adcc80cf23d3c6e1a165f6e5fb/detection
+
+googletime.bit
+popandshop.ru
+shopandpop.ru
+shopandpop.su
+shoptowin.ru
+
+# Reference: https://www.virustotal.com/gui/file/ba91e275af7a9833160d3d4ae095cb7cd4a80f15c0f711f25b7171342dc8e5c1/detection
+
+no4smoking.com
+usazimut.com
+usmostik.com

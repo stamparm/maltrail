@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: scarab ransomware
+
+# Reference: https://twitter.com/fofabot/status/1743101610551910629
+
+http://103.61.224.73
+http://128.1.84.122
+http://34.124.126.240
+http://34.130.209.173
+http://34.130.92.17
+http://34.95.244.148
+http://45.207.37.214
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Scarab/
+# Reference: https://twitter.com/banthisguy9349/status/1741834758215147923
+
+balad.shop
+ffvpn.vip
+monitor.cll5.fact.solutions
+shuxh888.cc
+toblo3.balad.shop

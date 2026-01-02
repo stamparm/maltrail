@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: lanfilt
+
+# Reference: https://www.virustotal.com/gui/file/a40660cfc2d1d5aebc2184b76d378e336d3a92f785e594ddbaa4516ec24f45f1/detection
+
+94.73.33.36:64241
+0catch.no-ip.info

@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/Threatlabz/status/1694504166071390383
+# Reference: https://www.sentinelone.com/blog/threat-actor-interplay-good-days-victim-portals-and-their-ties-to-cloak/
+# Reference: https://otx.alienvault.com/pulse/64ef6e79f617dd47a15b55a8
+
+47h4pwve4scndaneljfnxdhzoulgsyfzbgayyonbwztfz74gsdprz5qd.onion
+cloak7jpvcb73rtx2ff7kaw2kholu7bdiivxpzbhlny4ybz75dpxckqd.onion
+dcpuyivlbzx56hqwsvey33bxobxw3timjgljjy3index6qvdls5bjoad.onion
+wwwieqvblhnel7wsb6jpxeen3dbmsqyozj2gzl2oyn6swrkq27jtusqd.onion
+zxzs677rphmjznqgqzlsmjtqwqlydq47rwjesrt4dkkh6cc2ftlfhuqd.onion
+
+# Reference: https://twitter.com/banthisguy9349/status/1752421209730416930
+
+185.38.142.22:443
+
+# Reference: https://twitter.com/karol_paciorek/status/1753381039290941772
+# Reference: https://www.virustotal.com/gui/ip-address/185.38.142.22/relations
+
+cloak.su
+slezer.su
+
+# Reference: https://x.com/banthisguy9349/status/1803114935221653556
+
+http://80.76.49.112
+
+# Reference: https://x.com/siri_urz/status/1905592498765848616
+
+z6ig22odfrlgttti64avskvguqpjlmixzzaepm3xn2pmjkare5rjwpid.onion
+
+# Reference: https://x.com/DarkWebInformer/status/1969191779648880899
+
+cloak2yayxbqywine5h5qytcbave7bpe6o4u2wfqkay4u2hmjisdtvad.onion

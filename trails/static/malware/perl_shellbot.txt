@@ -1,0 +1,161 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/smii_mondher/status/1201820356694163457
+# Reference: https://www.virustotal.com/gui/file/bbe1d3956f261da4f405dfee2b65064e8d096285be33d1640eb33cfb5433a014/detection
+
+http://134.209.80.195
+
+# Reference: https://twitter.com/xuy1202/status/1368882451381170177
+# Reference: https://www.virustotal.com/gui/domain/dvl.by.ru/relations
+
+dvl.by.ru
+
+# Reference: https://twitter.com/xuy1202/status/1377896014774857728
+
+apistat.me
+
+# Reference: https://unit42.paloaltonetworks.com/cve-2022-22954-vmware-vulnerabilities/
+
+http://193.56.28.202
+http://5.39.217.212
+
+# Reference: https://www.virustotal.com/gui/file/482105e1f8f610a7425f00f77766600dd2cf33fc6423195f57543d3559c60263/detection
+
+http://157.230.116.194
+
+# Reference: https://www.virustotal.com/gui/file/febb320ab5a977d0d0eb42839c67927a4dbcb3c277c8a3ba5cebd36699e14b52/detection
+
+157.230.116.194:6060
+
+# Reference: https://asec.ahnlab.com/en/49769/
+# Reference: https://www.virustotal.com/gui/file/543868663928f6b8294df168893c81e66017bd2775d22e252cdd9c2370712b2d/detection
+# Reference: https://www.virustotal.com/gui/file/e8464f397d0ea3c741c80c04a8bcb9f7a288caccc47435501e85b07d2eefaad8/detection
+# Reference: https://www.virustotal.com/gui/file/e1b3cdbaf7cdea2615e47e8ce4ea25e22f15e8578be39642723313200c855cb5/detection
+# Reference: https://www.virustotal.com/gui/file/e00d7c8771e649d82163114a4a0306de24c9be3e56d973e55f88fe5f3835d955/detection
+# Reference: https://www.virustotal.com/gui/file/df726ef89d31c5c4a9e392b724d143ad06603bd3a37f505e42d90f00cc627e57/detection
+# Reference: https://www.virustotal.com/gui/file/b0b6589fb48f7a46f0917fbf08f77dceddf37d1b3f357483eb426f1f93306e28/detection
+# Reference: https://www.virustotal.com/gui/file/70ceeabaed3667ab82680e300e15d6eec70d70c50dc5a2a383b71adee8d5da30/detection
+
+http://164.132.224.207
+http://185.161.208.234
+http://193.233.202.219
+http://34.225.57.146
+http://80.68.196.6
+http://80.94.92.241
+158.69.39.171:1080
+164.90.240.68:6667
+170.178.191.18:6667
+176.123.2.3:6667
+192.3.140.202:1080
+192.3.141.163:6667
+206.189.139.152:6667
+218.17.160.23:1080
+49.212.234.206:3303
+51.195.42.59:8080
+62.8.79.2:1080
+81.95.119.150:6667
+91.236.182.1:6667
+x-x-x.online
+gsm.ftp.sh
+idip.do.am
+/futai/perl
+/iposzz/dred
+
+# Reference: https://twitter.com/sicehice/status/1645818266806353920
+
+http://207.246.71.152
+
+# Reference: https://twitter.com/sicehice/status/1679895531693170688
+# Reference: https://www.virustotal.com/gui/file/b9f5c5abe1f94b51ce6be69ce5bdf6f1c55642b5cf49b788024fd88a444305ec/detection
+
+http://109.206.242.25
+http://45.77.154.55
+http://87.120.88.52
+
+# Reference: https://twitter.com/sicehice/status/1687579613042536449
+# Reference: https://www.virustotal.com/gui/file/d212102ce18ee5ff4b87afe953cc5e1ceaa17b5dc1553b4390275fa7598a2be8/detection
+
+http://185.225.75.21
+http://2.59.254.175
+
+# Reference: https://twitter.com/SecureSh3ll/status/1722776396248846648
+
+http://168.181.185.230
+
+# Reference: https://github.com/stamparm/maltrail/issues/19236
+# Reference: https://app.any.run/tasks/f5d9ccaa-b151-41b1-898a-619ab84ebf83/
+
+http://117.17.191.45
+
+# Reference: https://twitter.com/sicehice/status/1747690714551464281
+# Reference: https://www.virustotal.com/gui/file/82798a494bb85f5f845ec1c9d5c0ca68d1b0430b6ffb134784ab01df75688daf/detection
+
+http://91.121.47.45
+http://91.218.67.46
+
+# Reference: https://twitter.com/sicehice/status/1750005766134673626
+# Reference: https://www.virustotal.com/gui/file/357e5e667d724606c04d867d9b9477065d64cd6f9cf5e7a51526da9efa4acb47/detection
+
+http://94.156.64.79
+
+# Reference: https://twitter.com/banthisguy9349/status/1769672204373921924
+
+http://205.185.121.68
+
+# Reference: https://twitter.com/r3dbU7z/status/1775105554517516509
+# Reference: https://www.virustotal.com/gui/ip-address/152.228.218.54/relations
+# Reference: https://www.virustotal.com/gui/ip-address/212.227.231.142/relations
+# Reference: https://www.virustotal.com/gui/ip-address/54.38.221.217/relations
+
+152.228.218.54:81
+openssh.run
+pci.sh
+ssh.fail
+sshd.run
+systemd-reboot.services
+eu.ssh.fail
+init.pci.sh
+init.sshd.run
+intel.pci.sh
+irc.ssh.fail
+reboot.ssh.fail
+retry.sshd.run
+service.sshd.run
+slot1.pci.sh
+usb.pci.sh
+cache2.systemd-reboot.services
+collections.systemd-reboot.services
+ftp-eu.systemd-reboot.services
+nod.systemd-reboot.services
+smtp10.systemd-reboot.services
+
+# Reference: https://twitter.com/sicehice/status/1784252501677490200
+# Reference: https://www.virustotal.com/gui/file/2d31a2122db73c121e20758610d60ae06580f83e8d6aa9f16b1fa3e0b6499713/detection
+
+143.198.179.9:6667
+davinci.root.sx
+
+# Reference: https://twitter.com/banthisguy9349/status/1788638239269560513
+# Reference: https://www.virustotal.com/gui/file/b3fb5502b9114b9b7f1d9009afd1d70259b1b491ae9ea79063cbccc5e3b0194c/detection
+# Reference: https://www.virustotal.com/gui/file/57a06b8d29e0d8b69c4148c4294e29d27b187b1c6249036e8bff88f31f4fc86f/detection
+# Reference: https://www.virustotal.com/gui/file/3fa036e166ed6c1ee2e99b393c58f6928c806aa237b0372fc5adcc5288670818/detection
+
+http://103.14.48.254
+194.233.87.73:443
+
+# Reference: https://twitter.com/banthisguy9349/status/1788654668735746062
+
+154.202.59.229:8443
+154.202.59.229:99
+
+# Reference: https://x.com/SecureSh3ll/status/1810068039980732446
+
+deep-fm.de/tmp/files/
+
+# Reference: https://x.com/Rash0m0n__/status/1946185831275778071
+# Reference: https://www.virustotal.com/gui/file/677f7d4cb749ff8f3dc2659336b1ca8501909dbcf9ad62051de055367ab3a22f/detection
+# Reference: https://www.virustotal.com/gui/file/5c3e13001d8b92218fcbcacdf74606cbb7e36ec2a3dc8d7a963a40fac2cca249/detection
+
+http://213.108.198.227
+213.108.198.227:8080

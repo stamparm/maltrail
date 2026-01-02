@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2018/08/threat-roundup-0810-0817.html
+
+strangerthingz.club
+chubbyoasis.top
+
+# Reference: https://blog.talosintelligence.com/2019/05/threat-roundup-0426-to-0503.html (# Win.Malware.Tovkater-6956309-0)
+
+caribz.club
+mirraclez.club
+shadeunit.club
+giroboard.top
+liquidmiracle.top
+smilesawat.top
+duckandbear.top
+skycrimes.top
+fowlerfootball.top
+fruitnext.top
+gratify.triobol.ru
+shipboard.dicier.ru
+skeleton.walforder.ru

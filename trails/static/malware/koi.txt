@@ -1,0 +1,115 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: koi loader, koi stealer
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-04-04-IOCs-from-Koi-Loader-Stealer-activity.txt
+# Reference: https://app.validin.com/detail?find=em-p.com&type=raw&ref_id=4601439c6e9#tab=host_pairs
+
+http://195.123.218.28
+http://195.123.218.36
+http://195.123.218.37
+http://195.123.218.40
+http://195.123.218.46
+
+# Reference: https://x.com/1ZRR4H/status/1797809897800687796
+# Reference: https://x.com/1ZRR4H/status/1798023836186632394
+# Reference: https://x.com/V3n0mStrike/status/1798040558646317552
+# Reference: https://www.virustotal.com/gui/file/b6cd42853c9f137da206ed6dfd50f8b2d1e02c11279893410ff410a9bd505682/detection
+
+http://81.19.141.115
+dsestimation.com/wp-content/uploads/2015/10/
+shalom.pt/50/
+/azoxyphenetole04.php
+/filenoncontrabandsvb1.ps1
+/filepiemagli2x6.ps1
+/inadvisable34.ps1
+/overtalkerf4yri.php
+/perikarya30lv.php
+/triacidsIO.ps1
+
+# Reference: https://x.com/V3n0mStrike/status/1798053456168824917
+
+http://45.86.162.187
+crowcrm.eu/adserver/docs/images/
+/forefacesCHi.php
+/innomineOG57P.ps1
+/politerl3.ps1
+/smileful9Zm.php
+
+# Reference: https://x.com/V3n0mStrike/status/1800549934975869433
+
+http://89.251.22.227
+lechiavetteusb.it/imgs/usb/logo/
+/khesariQUXH.ps1
+/andantezWA.php
+/arteriomalacia4hc.php
+/wizeninglYZn.ps1
+
+# Reference: https://x.com/V3n0mStrike/status/1803576931763274162
+# Reference: https://www.virustotal.com/gui/file/df9551c24b9cc63454b309c7ccf46b6e8120b78a296f955b509a570d7fb4f5ee/detection
+
+http://176.10.111.71
+/bitteredXD3.php
+/eriocomiXQ.ps1
+/incarcerative7iEA.php
+/zietrisikiteFtK.ps1
+
+# Reference: https://x.com/V3n0mStrike/status/1804262773058343263
+# Reference: https://www.virustotal.com/gui/file/950eee474cf4cb3b59178b348cfd618460dc7a895b6a024aa7b3c07845b5c6ab/detection
+
+http://195.54.160.202
+/nyctalopicAWm.ps1
+/pinspotterEtbYF.php
+/untormentedXz.php
+
+# Reference: https://x.com/malware_traffic/status/1804280281026957668
+
+http://78.142.29.113
+
+# Reference: https://x.com/YungBinary/status/1849568882551329002
+# Reference: https://www.virustotal.com/gui/file/05aa8655f5729f4e0f2582c216c9132cabe52111f211541148c8c44b55dbe02d/detection
+
+http://91.202.233.209
+
+# Reference: https://unit42.paloaltonetworks.com/macos-malware-targets-crypto-sector/
+# Reference: https://www.virustotal.com/gui/file/b3a1eb37e91a2a9715d1ebf6c9887b6fc340cea2548fd1d8b97bacd5d0219622/detection
+# Reference: https://www.virustotal.com/gui/file/642d9415d6f5da9a421492d8d1e5b52fbe1770a60a6ba6d5715f037b6dae6a7f/detection
+
+http://185.212.47.132
+http://5.255.101.148
+
+# Reference: https://x.com/salmanvsf/status/1896843476555465009
+# Reference: https://www.virustotal.com/gui/file/0dca445d8e18257609de5910a24f6eaeca4330e1ea077c0e04bf65365fb9850b/detection
+
+http://185.14.31.13
+/wp-content/includes/drachmaeTy.php
+
+# Reference: https://x.com/salmanvsf/status/1903026193680494595
+# Reference: https://www.virustotal.com/gui/file/dbea0387cea59ca3fffda6aa56788cf6423374356c98abe74149a5890676c4ff/detection
+
+http://94.247.42.253
+casettalecese.it/wp-content/uploads/2022/10/bivalviaGrr.php
+casettalecese.it/wp-content/uploads/2022/10/hemigastrectomySDur.php
+/wp-content/uploads/2022/10/bivalviaGrr.php
+/wp-content/uploads/2022/10/hemigastrectomySDur.php
+
+# Reference: https://www.virustotal.com/gui/ip-address/172.210.58.69/relations
+# Reference: https://www.virustotal.com/gui/file/2d7409fe87d091db99cd1cb278eb13c472acf165168593e4b529407ff72a1890/detection
+
+dns-microsoftupdateonline.us
+dnsgoogleupdate.xyz
+
+# Reference: https://x.com/YungBinary/status/1971379446562144732
+# Reference: https://www.virustotal.com/gui/file/01a305a8ea3889c2634f961133d2bead611a655634fdd3107a7fc5f1e978cfdd/detection
+# Reference: https://www.virustotal.com/gui/file/6ce5530952337a618def3b0d4e4ff53fd597c351c9d2fdd7e6e3564ea772a22e/detection
+# CERT_FINGERPRINT_SHA256-HOST=1b6442e4d59ea9cf4952a71157c83a00e586dc962f982605b6f99508059ca42d
+
+http://185.100.159.153
+4kkaxgfdw7l1yvv4t9v.com
+bagsmart.app
+bagsmart-cdn.app
+
+# Generic
+
+/index.php?id=&subid=Xtxgn5mh

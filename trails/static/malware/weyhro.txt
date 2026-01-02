@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: weyhro ransomware
+
+# Reference: https://x.com/AlvieriD/status/1897774692569600225
+
+xtxtpqpyaaek4p4525ksepyyy75gfvi47fptm2gftw7cn656rnfhzdqd.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1897890751612436807
+
+185.106.94.255:3000
+194.87.85.168:3000
+p7teg7yh2dwxg2tsbgnki3zrt5p7wgaegtfh4cobeqbhcq55nwt2m6yd.onion
+weyhro27ruifvuqkk3hxzcrtxv2lsalntxgkv6q2j3znkhdqudz54rqd.onion
+
+# Reference: https://www.virustotal.com/gui/domain/weyhro.hk/relations
+
+weyhro.hk
+
+# Reference: https://x.com/MalGamy12/status/1996862347470885141
+# Reference: https://en.fofa.info/result?qbase64=IldleWhybyBDMiI%3D
+# Reference: https://urlscan.io/search/#hash%3A734136d3e68c06c53c3a74b546979752fd90e6a8c855fcae4432aae34737e08e
+
+46.37.123.214:4444
+upleake.pro

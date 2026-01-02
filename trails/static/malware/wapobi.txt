@@ -1,0 +1,107 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: qvod, viking
+
+# Reference: https://www.symantec.com/ko/kr/security-center/writeup-print/2010-070508-5150-99
+
+ns098.com
+ns1631261.com
+ns1631262.com
+ns1631262.info
+ns1631262.net
+ns1631262.org
+ns1631263.com
+ns1631263.info
+ns1631263.net
+ns1631263.org
+ns2000wip.com
+ns2275ab.com
+ns3000wip.com
+ns4000wip.com
+ns5000wip.com
+ns529.com
+ns768.com
+ns792.com
+nsb927.com
+nsd907.com
+nsdownusa.com
+nsdownusa.info
+nsdownusa.net
+nsdownusa.org
+nsdownusa.us
+nse917.com
+nshh987.com
+nso9012.com
+nsopk876.com
+nssv987.com
+nst690.com
+nsv33987.com
+nsv987.com
+nsvbg987.com
+nsvhn987.com
+nsvjn987.com
+nsvw3987.com
+nsyh6778.com
+wap517.com
+wap517.info
+wap517.mobi
+wap517.net
+wap517.org
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan:Win32/Qvod.A
+
+baky.dxkogg1018bak.info
+list.dx673tg.info
+usy.usdx1019us4.us
+yer.dxkogg1017er.info
+yy1.dxkogg1016yi.info
+
+# Reference: https://www.virustotal.com/gui/file/bea455325dff4aa639928c7023a989ae8cb6304cf99caa893617f86f59e93ec5/behavior/VirusTotal%20Cuckoofork
+
+list.dx673tg.info
+qhuc1.dxniaoa.com
+
+# Reference: https://app.any.run/tasks/db2a6f73-5d71-4cce-8e9e-18fd702b0c64/
+# Reference: https://www.threatcrowd.org/listMalware.php?antivirus=Virus.Win32.Qvod.a
+# Reference: https://www.virustotal.com/gui/file/a112780bf63a37f39c39b0d4017272894450de3c5c625b473277c12a908b5147/detection
+
+wap517.biz
+wap517.us
+wap517.biz
+wap517.info
+wap517.net
+nsdownusa.com
+wap517.com
+nsdownusa.org
+nsdownusa.net
+nsdownusa.us
+wap517.me
+nsdownusa.info
+ns1631261.com
+ns1631262.info
+ns1631262.net
+ns1631262.com
+ns1631262.org
+
+# Reference: https://www.f-secure.com/v-descs/viking_h.shtml
+
+54088.org
+
+# Reference: http://secure.lavasoft.com/mylavasoft/malware-descriptions/blog/Win32VikingAX45db9e92ad
+
+52.nsvhn987.com
+52.nsvjn987.com
+52.ns2275ab.com
+52.ns768.com
+1.nsb927.com
+52.nsb927.com
+52.ns792.com
+52.ns529.com
+52.ns098.com
+
+# Reference: https://totalhash.cymru.com/analysis/?51a3f65ab5ec6616d3c6ef9fd84fc633f76f4604
+# Reference: https://www.hybrid-analysis.com/sample/6e4f6307149599c10bd23252197d181b58cbe2909e290fbb05c03a9a07210603?environmentId=1
+
+wowchian.com
+jarvisupdater.luckystar188.com

@@ -1,0 +1,445 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+#################################################################
+#                 Maltrail Changelog File                       #
+#################################################################
+
+[+] Added functionality
+[-] Deleted functionality
+[!] Bug fixing
+[=] Minor update or changed functionality
+
+#################################################################
+
+
+
+- Version 0.87 -> 0.88 (Upcoming release)
+
+
+
+
+
+- Version 0.86 -> 0.87 (01 Nov 2025)
+
+[=] "potential sql injection" heur is improved (Issue #19356)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 0.85 -> 0.86 (01 Oct 2025)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+- Version 0.84 -> 0.85 (01 Sep 2025)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+- Version 0.83 -> 0.84 (01 Aug 2025)
+
+[=] Multiple improvements for Maltrail in Docker (Issues #19323, #19325)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+[-] Removing defunct blacklist (Issue #19339)
+
+
+- Version 0.82 -> 0.83 (01 Jul 2025)
+
+[!] Fix the bug of self-stored XSS in aliases (Issue #19321)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.81 -> 0.82 (01 Jun 2025)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.80 -> 0.81 (01 May 2025)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.79 -> 0.80 (01 Apr 2025)
+
+[!] Fix the bug of using a custom path configuration file (Issue #19304)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+[-] Removing defunct blacklist (Issue #19305)
+
+
+- Version 0.78 -> 0.79 (01 Mar 2025)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 0.77 -> 0.78 (01 Feb 2025)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 0.76 -> 0.77 (01 Jan 2025)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 0.75 -> 0.76 (01 Dec 2024)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 0.74 -> 0.75 (01 Nov 2024)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 0.73 -> 0.74 (01 Oct 2024)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 0.72 -> 0.73 (01 Sep 2024)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.71 -> 0.72 (01 Aug 2024)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.70 -> 0.71 (01 Jul 2024)
+
+[=] Maltrail docker container run is improved (Issue #19260)
+[=] php-inj detection is improved (Issue #19262)
+[=] Python 3.12 compability is improved (Issue #19257)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 0.69 -> 0.70 (01 Jun 2024)
+
+[=] cruzit feed URL changed (Issue #19253)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.68 -> 0.69 (01 May 2024)
+
+[+] Support of simpleton IPv6 bogon address handling was added
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+
+
+- Version 0.68 -> 0.69 (01 May 2024)
+
+[+] Support of simpleton IPv6 bogon address handling was added
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 0.67 -> 0.68 (01 Apr 2024)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.66 -> 0.67 (01 Mar 2024)
+
+[=] Handling usage of pcapy lib instead of pcapy-ng is improved (Issue #19242)
+[=] Fixed /server.py and /sensor.py restart in docker container (Issue #19243)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.65 -> 0.66 (01 Feb 2024)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.64 -> 0.65 (01 Jan 2024)
+
+[+] Customisable blacklists via BLACKLIST option in /maltrail.conf file (Issue #19230)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+
+- Version 0.63 -> 0.64 (01 Dec 2023)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+
+- Version 0.62 -> 0.63 (01 Nov 2023)
+
+[=] FAIL2BAN_REGEX and REMOTE_SEVERITY_REGEX options were updated to handle "potential iot-malware download" heur (Issue #19207)
+[=] Abuseipdb feed was updated (Issue #19208)
+[=] "potential remote code execution" heur for CVE-2016-0545 detection is updated (Issue #19210)
+[=] "potential remote code execution" heur is updated for MacOS process list tracking in HTTP POST-req (Issue #19214)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+
+- Version 0.61 -> 0.62 (01 Oct 2023)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+[=] Updates for mass_scanner and worst_asns trails
+
+
+
+
+- Version 0.60 -> 0.61 (01 Sep 2023)
+
+[!] Workaround to have working searx server (Issue #19199)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 0.59 -> 0.60 (01 Aug 2023)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.58 -> 0.59 (01 Jul 2023)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.57 -> 0.58 (01 Jun 2023)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.56 -> 0.57 (01 May 2023)
+
+[!] Fixed login page GUI issue for mobile devices (Issue #19153)
+[!] Fixed incorrect parsing of ViriBack feed (Issue #19154)
+[=] Added new descriptions in "Specific detections" Wiki chapter
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.55 -> 0.56 (01 Apr 2023)
+
+[=] Minor update for /feeds/emergingthreatsdns.py (Issue #19147)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.54 -> 0.55 (01 Mar 2023)
+
+[!] Fixed unauthenticated OS command injection vulnerability in http.py (Issue #19146)
+[=] Minor update for _process_packet func in sensor (Issue #19129)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+
+- Version 0.53 -> 0.54 (01 Feb 2023)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.52 -> 0.53 (01 Jan 2023)
+
+[-] Defunct 360-netlab feeds were deleted (Issue #19138)
+[=] "potential data leakage" heur is improved
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.51 -> 0.52 (01 Dec 2022)
+
+[=] "potential iot-malware download" heur is improved
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.50 -> 0.51 (01 Nov 2022)
+
+[+] New Wiki pages are added
+[!] Fixed deadlock of Docker output to stdout (Issue #19121)
+[!] Definition of network interfaces is improved (Issue #19123)
+[!] Fixed regex for /360bigviktor.py feed (Issue #19124)
+[!] Fixed syscalls handling (Issue #19125)
+[=] "potential remote code execution" heuristic is improved
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.49 -> 0.50 (01 Oct 2022)
+
+[=] "potential remote code execution" heur for CVE-2022-30190 detection is updated
+[=] "Maltrail detection nuances" wiki-page is updated
+[=] "Trail classes" wiki-page is updated
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+- Version 0.48 -> 0.49 (01 Sep 2022)
+
+[!] Fixed row rendering in UI (Issue #19109)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.47 -> 0.48 (01 Aug 2022)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.46 -> 0.47 (01 Jul 2022)
+
+[+] "potential ssti injection" heuristic is added (CVE-2022-26134)
+[=] "potential data leak" heuristic is improved
+[=] "Trail-classes" wiki page is updated
+[=] /requirements.txt file is updated (pcapy-ng)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.45 -> 0.46 (01 Jun 2022)
+
+[+] New Wiki page is added
+[=] "potential remote code execution" heuristic is improved (CVE-2022-1388)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.44 -> 0.45 (01 May 2022)
+
+[+] systemd-based realization for Maltrail sensor.py, server.py and ipset/iptables ban-list (dedicated repo) have added
+[+] New Wiki pages are added
+[=] "potential remote code execution" heuristic is improved (detection for Java-related RCE stuff)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.43 -> 0.44 (01 Apr 2022)
+
+[=] "potential remote code execution" heuristic is improved
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.42 -> 0.43 (01 Mar 2022)
+
+[=] "potential remote code execution" heuristic is improved
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.41 -> 0.42 (01 Feb 2022)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.40 -> 0.41 (01 Jan 2022)
+
+[+] "potential remote code execution" heuristic is extended for log4j/log4shell (CVE-2021-44228) vulnerability detection
+[+] "generic_log4shell.txt" and "hacked_log4j.txt" trails were added for log4j/log4shell (CVE-2021-44228) vulnerability static detection
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.39 -> 0.40 (01 Dec 2021)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.38 -> 0.39 (01 Nov 2021)
+
+[=] "potential directory traversal" heuristic is extended
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.37 -> 0.38 (03 Oct 2021)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.36 -> 0.37 (02 Sep 2021)
+
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.35 -> 0.36 (02 Aug 2021)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.34 -> 0.35 (04 Jul 2021)
+
+[+] Added the prototype of heur for potential web scanning attempts
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.33 -> 0.34 (10 Jun 2021)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.32 -> 0.33 (10 Jun 2021)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.31 -> 0.32 (10 May 2021)
+
+[!] Fixed PR_END_OF_FILE_ERROR bug, when using HTTPS for Maltrail's server (Issue #16217)
+[!] Fixed bug with TLSv1_2_METHOD (Issue #16250)
+[+] Added displaying real IP behind Cloudflare's one (Issue #20)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.30 -> 0.31 (01 Apr 2021)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.29 -> 0.30 (01 Mar 2021)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.28 -> 0.29 (01 Feb 2021)
+
+[+] Two new UI features (hide threat and report false positive options)
+[+] Auto-refresh for Maltrail web-page (/?refresh=N, where N in seconds. Issue #624)
+[+] Maltrail demo pages are released: maltraildemo.github.io
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+[=] Potential DNS changer heur is improved
+[+] Implemented colorized console output
+[=] Minor style revamp and improved look and feel on mobile phones
+[-] Memory check is removed
+[+] Added info for proper Maltrail citation (/CITATION.cff)
+[=] Added starting and ending times to console output
+
+
+
+- Version 0.27 -> 0.28 (01 Jan 2021)
+
+[+] Implementing support for LOGSTASH_SERVER (Logs in JSON format)
+[+] Implementing REMOTE_SEVERITY_REGEX (Issue #13251)
+[=] Sensor is able to get started without server (Issue #6020)
+[=] Multiple updates and optimizations for regular static trails and the whitelist

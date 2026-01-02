@@ -1,0 +1,311 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: allasenha
+
+# Reference: https://blog.talosintelligence.com/new-banking-trojan-carnavalheist-targets-brazil/
+# Reference: https://github.com/Cisco-Talos/IOCs/blob/main/2024/05/carnavalhiest.txt
+# Reference: https://www.virustotal.com/gui/file/cd9f5773bd7672a3e09f2d05ef26775e8c7241879d5f4d13c5c5bc1704c49fa1/detection
+# Reference: https://www.virustotal.com/gui/file/f848c0f66afc7b5a10f060c1db129529a974ae0ad71a767f7c7793351bb7ca04/detection
+
+http://104.41.51.80
+http://191.233.241.96
+http://191.233.248.170
+http://191.234.212.140
+http://191.235.233.246
+http://191.239.116.217
+http://191.239.123.241
+http://4.203.105.118
+104.41.51.80:445
+191.233.241.96:445
+191.233.248.170:445
+191.234.212.140:445
+191.235.233.246:445
+191.239.116.217:445
+191.239.123.241:445
+4.203.105.118:445
+adobe-acrobat-visualizer.brazilsouth.cloudapp.azure.com
+nfe-digital.top
+nf-e.pro
+nfe-visualizer.app.br
+nota-fiscal.nfe-digital.top
+notafiscaleletronica.nf-e.pro
+
+# Reference: https://x.com/P4nd3m1cb0y/status/1816633164959490474
+# Reference: https://x.com/johnk3r/status/1816653528984609222
+# Reference: https://www.virustotal.com/gui/file/983b6872647ecccc58d0d40eaa67cd0c9dbe8ba28a43bb05f697f86657604d44/detection
+
+http://20.201.125.111
+191.233.240.34:1833
+cdlqg.com
+cdgtr.com
+cdgwl.com
+cdgwr.com
+cdhqf.com
+cdhqh.com
+cdhql.com
+cdhqm.com
+cdhqp.com
+cdhqs.com
+cdhqy.com
+cdhrn.com
+cdhtn.com
+cdhwp.com
+cdhwq.com
+cdhwr.com
+cdhxn.com
+cdhxr.com
+cdhzn.com
+cdhzr.com
+cdjcn.com
+cdjfq.com
+cdjgn.com
+cdjgp.com
+cdjgq.com
+cdjhn.com
+cdjkp.com
+cdjlk.com
+cdjnf.com
+cdjnj.com
+cdjnl.com
+cdjnm.com
+cdjpb.com
+cdjpd.com
+cdjph.com
+cdjpm.com
+cdjpp.com
+cdjpx.com
+cdjpz.com
+cdjqc.com
+cdjqd.com
+cdjqj.com
+cdjqn.com
+cdjrk.com
+cdjrn.com
+cdjrp.com
+cdjrr.com
+cdjtp.com
+cdjwr.com
+cdjzp.com
+cdkbq.com
+cdkdn.com
+cdkdq.com
+cdkdr.com
+cdkfq.com
+cdkgl.com
+cdkgn.com
+cdkgp.com
+cdkgr.com
+cdkhn.com
+cdkhp.com
+cdkjn.com
+cdkkn.com
+cdkkp.com
+cdkkq.com
+cdklp.com
+cdklz.com
+cdknc.com
+cdknl.com
+cdknq.com
+cdkpb.com
+cdkpg.com
+cdkph.com
+cdkpk.com
+cdkpn.com
+cdkpp.com
+cdkpz.com
+cdkqh.com
+cdkqk.com
+cdkqs.com
+cdkqx.com
+cdkrc.com
+cdkrg.com
+cdkrk.com
+cdkrq.com
+cdkrr.com
+cdktl.com
+cdktp.com
+cdktq.com
+cdktr.com
+cdkwl.com
+cdkwq.com
+cdkxl.com
+cdkxp.com
+cdkxr.com
+cdkzp.com
+cdkzq.com
+cdkzr.com
+cdlbc.com
+cdlbg.com
+cdlbk.com
+cdlck.com
+cdlcp.com
+cdldm.com
+cdldp.com
+cdldt.com
+cdldz.com
+cdlfd.com
+cdlff.com
+cdlfk.com
+cdlfp.com
+cdlfq.com
+cdlgk.com
+cdlgn.com
+cdlgq.com
+cdlgr.com
+cdlgt.com
+cdlhb.com
+cdlhm.com
+cdlhx.com
+cdljd.com
+cdlkb.com
+cdlkm.com
+cdlkn.com
+cdlkp.com
+cdlkz.com
+cdlld.com
+cdllj.com
+cdlln.com
+cdllz.com
+cdlnb.com
+cdlnf.com
+cdlng.com
+cdlnn.com
+cdlnq.com
+cdlnr.com
+cdlpb.com
+cdlpf.com
+cdlph.com
+cdlpj.com
+cdlpm.com
+cdlpn.com
+cdlpp.com
+cdlpx.com
+cdlpy.com
+cdlqg.com
+cdlqj.com
+cdlqm.com
+cdlqn.com
+cdlqq.com
+cdlqr.com
+cdlrb.com
+cdlrk.com
+cdlrq.com
+cdlrr.com
+cdlrz.com
+cdlth.com
+cdltp.com
+cdltq.com
+cdlty.com
+cdltz.com
+cdlwb.com
+cdlwf.com
+cdlwk.com
+cdlwm.com
+cdlwn.com
+cdlwp.com
+cdlwq.com
+cdlwr.com
+cdlxc.com
+cdlxf.com
+cdlxm.com
+cdlxn.com
+cdlxp.com
+cdlxr.com
+cdlpj.store
+documento.cdlpj.com
+documento.cdlpj.store
+
+# Reference: https://x.com/pollo290987/status/1819078258404872449
+# Reference: https://www.virustotal.com/gui/file/96da7e87fcdb8b7e45c196af70ca77d709e019c2b9c370d93bd41358a1a3370f/detection
+# Reference: https://www.virustotal.com/gui/file/27c6fbaddd96e9b309822dd5973eb348f2caca54440cdb834721b288b0ffef01/detection
+
+http://4.203.136.48
+4.203.136.48:445
+d9e2f58c10e2d53c74e4ef0c636025292.brazilsouth.cloudapp.azure.com
+
+# Reference: https://x.com/pollo290987/status/1836128433216094246
+# Reference: https://www.virustotal.com/gui/file/081a9a073e32f7e8e24b9660a10b841bd6ebd3620f57b1dc07953cffaa969dee/detection
+
+http://20.201.119.30
+20.201.119.30:445
+relatorio-fiscais.store
+notafiscal.relatorio-fiscais.store
+/nota-estadual/cliques.php
+/nota-estadual/?notafiscal=
+
+# Reference: https://x.com/JAMESWT_MHT/status/1836363260691456399
+# Reference: https://x.com/naumovax/status/1839313160052019281
+# Reference: https://app.any.run/tasks/eba8e075-ff9a-4b46-890c-68295e548a72
+# Reference: https://tria.ge/240918-mvh45swfkf/behavioral2
+
+http://191.233.243.92
+191.233.243.92:445
+20.206.203.66:6054
+20.206.203.66:7568
+qcc4c32baa53d874f5df7.brazilsouth.cloudapp.azure.com
+
+# Reference: https://x.com/malwrhunterteam/status/1858775106547310667
+# Reference: https://www.virustotal.com/gui/file/e9d6e8b056fd682cda321cd94548c968dc1040c2c2eb7ef24bdef9e8c22fea00/detection
+# Reference: https://www.virustotal.com/gui/file/4169e5ce8b85ef6c68fab065f7ec17b298726495339b9af62746374d7a4aaf9c/detection
+# Reference: https://www.virustotal.com/gui/file/e5b99e4994612dcbfcbf162f2d117e435a0410413b5f5803707a603aba24a86a/detection
+# Reference: https://www.virustotal.com/gui/file/b0f8ecdb634adeee9adf0ce6ef1e3dc8a1eb3bf5b6f244e5dc0ffa828e3f4c02/detection
+
+http://154.205.156.20
+170.238.45.167:9456
+24.152.39.13:55417
+24.152.39.13:9456
+38.60.209.93:1299
+adsklbb.org
+/Painel/atualizar_dados.php
+
+# Reference: https://x.com/smica83/status/1968046323887927720
+# Reference: https://app.validin.com/detail?find=%C3%81rea%20Restrita%20-%20Acesso%20Negado&type=raw&ref_id=b409ab6dc1a#tab=host_pairs (# 2025-09-17)
+# Reference: https://app.validin.com/detail?find=Sodr%C3%A9%20Santoro%20Cnpj%3A%20%2032.648.758%2F0001-27Sodr%C3%A9%20Santoro%20Leil%C3%B5es&type=raw&ref_id=b409ab6dc1a#tab=host_pairs (# 2025-09-17)
+# Reference: https://app.validin.com/detail?find=Lista%20de%20Pe%C3%A7as%20para%20Manuten%C3%A7%C3%A3o&type=raw&ref_id=b409ab6dc1a#tab=host_pairs (# 2025-09-17)
+# Reference: https://www.virustotal.com/gui/file/3407bb223e1337cb41cd96dd8121489f88bface0ad5e9586f1d3ab4ba2ba1c1b/detection
+# Reference: https://www.virustotal.com/gui/file/3acf90b3f1a6b59da39d08a8d7cf0965045babc97ae0c2f998ff068fe5452f16/detection
+# Reference: https://www.virustotal.com/gui/file/c4699cfa6f4162c4d6272f7916685034cd506f64ea54653423e36bf33ee790dc/detection
+
+angrydasorte.com.br
+armazenautopecas.online
+atlantapecas.com
+barrosautopecas.online
+carassinatura.online
+casteloautopecas.online
+catarinenseautopecas.online
+contagemrr.lat
+danfe.top
+descontotoken.one
+dominioautopecas.online
+emagrecaem30dias.online
+fitautopecas.online
+leiloesonline.vip
+linkonline.lat
+lowprofile.lat
+lowprofiledow.lat
+lowprofiledown.lat
+lowprofiledownl.lat
+maracapecas.com
+marquesautopecas.online
+mcarrinho.one
+molinaautopecas.online
+operatrix.top
+parisautopecas.online
+pdfbrowser.icu
+pdfmail.icu
+piqueriautopecas.online
+renovaautopecas.com
+sampasorte.online
+serialtokendesconto.one
+valedaspecasdesmonte.com
+vipeventos.online
+api.placedelacom.com
+/painel/download.php
+/painel/serv.php
+/painel/serv2.php
+
+# Reference: https://x.com/banthisguy9349/status/1968205449565720758
+# Reference: https://www.virustotal.com/gui/file/1cf4e02463c33dce2f8a86f2fdb68ca61c76759d38d743afd774d112db1faf3c/detection
+
+supersimples.top

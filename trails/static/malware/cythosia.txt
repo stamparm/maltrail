@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ViriBack/status/1111440848787402752
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, Cythosia)
+
+evih.scamfreeweb.com
+
+# Reference: https://twitter.com/ScumBots/status/1298006498497441792
+# Reference: https://www.virustotal.com/gui/file/6d7f3ef876c9088d81bf546a349cb00924953866f5b949d1543aa0dd5da69716/detection
+
+blackuniverse.eu
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60 (# Cythosia)
+
+newtutopro.alwaysdata.net

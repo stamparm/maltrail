@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blogs.blackberry.com/en/2023/05/cmdstealer-targets-portugal-peru-and-mexico
+
+factura61.click
+multa-ansr-pt.fun
+sunat-pe.fun

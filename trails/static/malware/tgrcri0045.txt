@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: tgr-cri-0045
+
+# Reference: https://unit42.paloaltonetworks.com/initial-access-broker-exploits-leaked-machine-keys/
+
+http://109.176.229.89
+http://138.199.21.243
+http://169.150.198.91
+http://190.211.254.95
+http://194.114.136.95
+http://194.5.82.11
+http://195.123.240.233
+http://213.252.232.237
+http://67.43.234.96
+http://98.159.108.69
+109.176.229.89:443
+138.199.21.243:443
+169.150.198.91:443
+190.211.254.95:443
+190.211.254.95:8080
+194.114.136.95:443
+194.5.82.11:443
+195.123.240.233:443
+213.252.232.237:443
+67.43.234.96:443
+98.159.108.69:443

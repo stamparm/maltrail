@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: edge stealer
+
+# Reference: https://twitter.com/sarfraz432/status/1679031523948007424
+# Reference: https://www.virustotal.com/gui/file/092b92e270df6c32c6cd99a7d958905cb0658a8e231d11d3ff6598e4b85758ed/detection
+# Reference: https://www.virustotal.com/gui/file/9a1b0174d256b3c4b708085e8138cfe20702144fb5591e8f7e39ffd1c483d6e6/detection
+
+213.142.151.196:21
+edgeguard.business

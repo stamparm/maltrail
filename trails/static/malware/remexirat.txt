@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security-center/writeup/2015-110911-3433-99
+
+5.39.44.16:443
+
+# Reference: https://www.symantec.com/security-center/writeup/2015-110911-4128-99
+# Reference: https://www.virustotal.com/gui/ip-address/87.117.204.143/relations
+# Reference: https://www.virustotal.com/gui/file/9be5fa0e44b2fe964f292db44236ecf2d790465a9d42fe550dff20faca5a2d52/detection
+# Reference: https://www.virustotal.com/gui/file/f7e44314521c04626d586e07cbab655ee59a5a0805cccef8311f669c175f5d86/detection
+
+87.117.204.143:80

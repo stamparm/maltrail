@@ -1,0 +1,40 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: phantom stealer
+
+# Reference: https://x.com/Fact_Finder03/status/1889533943906533841
+
+phantom.ceo
+stealer.phantom.ceo
+
+# Reference: https://x.com/Fact_Finder03/status/1889702965298057339
+
+phantom-crypter.vip
+
+# Reference: https://x.com/solostalking/status/1899178554065354997
+
+phantomservicess.sell.app
+phtm.pw
+stealer.phtm.pw
+
+# Reference: https://x.com/suyog41/status/1902549568157626672
+# Reference: https://www.virustotal.com/gui/file/edbf5b0f2d51a788719d2c38ea765fc9cd52c6d9887ff30d2e98898bda24d2f3/detection
+
+phantomsoftwares.site
+
+# Reference: https://x.com/JAMESWT_WT/status/1951179559799316557
+# Reference: https://www.virustotal.com/gui/file/94a8a1c63b652807eadeb970c1682499c3b4747a0ec0f063af531aec9708b963/detection
+# Reference: https://www.virustotal.com/gui/file/c18fd74484de9681ac1dc7ecf9786964ac4e7dba20983cd249ee4ce544809834/detection
+
+samc0ndubai.com
+server.samc0ndubai.com
+
+# Reference: https://x.com/solostalking/status/1974022633483112833
+# Reference: https://www.virustotal.com/gui/file/74198831c9211b33775a6fb0b324731d701c44fd716484715453261252e5d6cb/detection
+
+193.233.113.101:1111
+
+# Reference: https://x.com/mayank_cti/status/2006824190108930523
+
+flood.ink

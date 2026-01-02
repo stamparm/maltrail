@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/minas-miner-on-the-way-to-complexity/109692/
+# Reference: https://otx.alienvault.com/pulse/6464eb7691adf1a5d60ade14
+
+185.243.112.239:443

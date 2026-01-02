@@ -1,0 +1,121 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/solostalking/status/1920002211205075236
+# Reference: https://app.validin.com/detail?find=Cyber%20Stealer%20-%20Secure%20Access&type=raw&ref_id=d5c18b6f84c#tab=host_pairs (# 2025-05-07)
+
+http://176.65.144.220
+cyberstealer.live
+
+# Reference: https://x.com/skocherhan/status/1940320477228278051
+# Reference: https://app.validin.com/detail?find=Cyber%20Products&type=raw&ref_id=a8eac5efc40#tab=host_pairs (# 2025-07-02)
+# Reference: https://app.validin.com/detail?type=raw&find=%2Fwebpanel%2Fpanel%2F#tab=host_pairs (# 2025-07-02)
+
+http://176.65.142.82
+cyberproducts.io
+paxrobot.digital
+
+# Reference: https://x.com/solostalking/status/1947143367336534254
+# Reference: https://app.validin.com/detail?find=Cyber%20Stealer%20-%20Secure%20Access&type=raw&ref_id=b60b8372986#tab=host_pairs (# 2025-07-21)
+
+http://155.94.155.220
+http://85.196.8.118
+lotteryiota.com
+wbarenux.pro
+
+# Reference: https://x.com/Fact_Finder03/status/1954744100693172561
+
+wibrpix.pro
+
+# Reference: https://x.com/YungBinary/status/1948393006731518192
+# Reference: https://www.esentire.com/blog/cyber-stealer-analysis-when-your-malware-developer-has-fomo-about-features
+
+arcticawe.com
+bitfazerup.com
+borealbash.com
+cationchimpan.org
+cyberdarkduck.live
+emiumprigs.com
+famecountant.org
+gratioly.life
+interfelab.com
+matineprosmoobort.com
+melodytech.com.tw
+padtech.top
+roupoutwesolv.com
+savetrom.top
+zeptrixus.com
+
+# Reference: https://x.com/Fact_Finder03/status/1950771961954726349
+# Reference: https://www.virustotal.com/gui/file/01cb5a170ccb486184841f7adf57026bf18fdd25d71824ebe40161256a3f1f9b/detection
+# Reference: https://www.virustotal.com/gui/file/260c17f9aa96c9ca3870e69a7361178c487534c89d004ccae5206a7d214ba43c/detection
+# Reference: https://www.virustotal.com/gui/file/a10edf5d78913af57c4c55ae366a601a72a6d95757cfed67e213c3e2b4131173/detection
+
+synproxy.live
+
+# Reference: https://x.com/Fact_Finder03/status/1952219177982595220
+
+helloworldcyber.live
+
+# Reference: https://x.com/ChickenWhisker/status/1954864627973558727
+
+185.196.11.200:443
+185.208.156.52:443
+5.101.84.80:443
+87.120.93.214:443
+94.26.90.176:443
+cyber-irbwjfjekwd.live
+javaupdatesync.top
+information.awarness.office.javaupdatesync.top
+
+# Reference: https://x.com/ChickenWhisker/status/1958778496458822098
+
+cyber-destroyer.live
+cyber-r7jwnkqlrorjs.live
+
+# Reference: https://x.com/galkofahi/status/1968213761384386831
+# Reference: https://urlscan.io/result/01995690-7c2a-7705-8c5a-ddd76cf98105/
+# Reference: https://urlscan.io/result/0199568f-b6b8-7066-93b0-fe1045a11a57/
+
+http://195.177.94.232
+arbitrationengine.com
+
+# Reference: https://x.com/ShanHolo/status/1968575374670848249
+
+pacebotters.com
+
+# Reference: https://x.com/Fact_Finder03/status/1972513146813465049
+
+cyber-hawk.live
+
+# Reference: https://x.com/solostalking/status/1976234882813788655
+# TITLE-HOST=CYBER STEALER
+
+176.65.141.143:443
+202.148.54.90:443
+cyberv2.live
+dorklife.vip
+
+# Reference: https://x.com/solostalking/status/1982706549425611014
+# Reference: https://urlscan.io/result/019a24c5-f016-74a8-9b0b-b19a16b18c3b/
+
+http://69.30.247.233
+
+# Reference: https://x.com/AUZombie/status/1984582595833970877
+# Reference: https://x.com/volrant136/status/1984639246108344467
+# TITLE-HOST=CYBER STEALER
+
+69.30.247.233:3004
+94.74.182.77:3003
+94.74.182.77:3004
+dang-ky-huy-the-visa-vn.com
+iloveboats9.vip
+mazar3.net
+vn-tech-huy-the-visa.com
+madinah-backend.mazar3.net
+tech.dang-ky-huy-the-visa-vn.com
+
+# Generic
+
+/webpanel/panel/crypto_clipper_api.php
+/webpanel/panel/dns_check.php

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf8">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta name="robots" content="noindex, nofollow">
+        <title>Maltrail</title>
+        <link rel="stylesheet" type="text/css" href="css/thirdparty.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css?id=222">
+        <link rel="stylesheet" type="text/css" href="css/media.css">
+        <script type="text/javascript" src="js/errorhandler.js"></script>
+        <script type="text/javascript" src="js/thirdparty.min.js"></script>
+        <script type="text/javascript" src="js/papaparse.min.js"></script>
+    </head>
+    <body>
+        <div id="header_container" class="header noselect">
+            <div id="logo_container">
+                <span id="logo"><!LOGO!></span>
+            </div>
+            <div id="calendar_container">
+                <center><span id="spanToggleHeatmap" style="cursor: pointer"><a class="header-a header-period" id="period_label"></a><img src="images/calendar.png" style="width: 25px; height: 25px; vertical-align: top"></span></center>
+            </div>
+            <ul id="link_container">
+                <li class="header-li"><a class="header-a" href="https://github.com/stamparm/maltrail/blob/master/README.md" id="documentation_link" target="_blank">Documentation</a></li>
+                <li class="header-li link-splitter">|</li>
+                <li class="header-li"><a class="header-a" href="https://github.com/stamparm/maltrail/wiki" id="wiki_link" target="_blank">Wiki</a></li>
+                <li class="header-li link-splitter">|</li>
+<!--                <li class="header-li"><a class="header-a" href="https://docs.google.com/spreadsheets/d/1lJfIa1jPZ-Vue5QkQACLaAijBNjgRYluPCghCVBMtHI/edit" id="collaboration_link" target="_blank">Collaboration</a></li>
+                <li class="header-li link-splitter">|</li>-->
+                <li class="header-li"><a class="header-a" href="https://github.com/stamparm/maltrail/issues/" id="issues_link" target="_blank">Issues</a></li>
+                <li class="header-li link-splitter hidden" id="login_splitter">|</li>
+                <li class="header-li"><a class="header-a hidden" id="login_link">Log In</a></li>
+                <li class="header-li"></li>
+            </ul>
+        </div>
+
+        <div id="heatmap_container" class="container hidden" style="text-align: center">
+            <div>
+                <button id="heatmap-previous" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" type="button" role="button">
+                    <span class="ui-icon ui-icon-carat-1-w"></span>
+                </button>
+                <button id="heatmap-next" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" type="button" role="button">
+                    <span class="ui-icon ui-icon-carat-1-e"></span>
+                </button>
+            </div>
+
+            <div style="display: inline-block; float: top; vertical-align: top; margin-top: 5px">
+                <div id="cal-heatmap" style="display: inline-block"></div>
+            </div>
+        </div>
+
+        <div id="main_container" class="container hidden">
+            <div id="status_container" style="width: 100%; text-align: center">
+                <div>
+                    <ul style="list-style: outside none none; overflow: hidden; font-family: sans-serif; padding: 0px; display: inline-block; white-space: nowrap">
+                        <li id="btnDrawThreats" class="status-button noselect" style="background: rgb(31, 119, 180); background: radial-gradient(rgb(174, 199, 232) 0%, rgb(31, 119, 180) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" title="Threats">
+                            <h4 id="threats_count">-</h4>
+                            <span class="dynamicsparkline" id="threats_sparkline"></span>
+                            <h6>Threats</h6>
+                        </li>
+                        <li id="btnDrawEvents" class="status-button noselect" style="background: rgb(255, 127, 14); background: radial-gradient(rgb(255, 187, 120) 0%, rgb(255, 127, 14) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" title="Events">
+                            <h4 id="events_count">-</h4>
+                            <span class="dynamicsparkline" id="events_sparkline"></span>
+                            <h6>Events</h6>
+                        </li>
+                        <li id="btnDrawSeverity" class="status-button noselect" style="background: rgb(44, 160, 44); background: radial-gradient(rgb(152, 223, 138) 0%, rgb(44, 160, 44) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" title="Severity">
+                            <h4 id="severity_count">-</h4>
+                            <span class="dynamicsparkline" id="severity_sparkline"></span>
+                            <h6>Severity</h6>
+                        </li>
+                        <li id="btnDrawSources" class="status-button noselect" style="background:rgb(214, 39, 40); background: radial-gradient(rgb(255, 152, 150) 0%, rgb(214, 39, 40) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" title="Sources">
+                            <h4 id="sources_count">-</h4>
+                            <span class="dynamicsparkline" id="sources_sparkline"></span>
+                            <h6>Sources</h6>
+                        </li>
+                        <li id="btnDrawTrails" class="status-button noselect" style="background:rgb(148, 103, 189); background: radial-gradient(rgb(197, 176, 213) 0%, rgb(148, 103, 189) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0)" title="Trails">
+                            <h4 id="trails_count">-</h4>
+                            <span class="dynamicsparkline" id="trails_sparkline"></span>
+                            <h6>Trails</h6>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <!--<label>title</label>-->
+                    <img id="graph_close" src="images/close.png" class="hidden" title="close">
+                </div>
+                <div id="chart_area">
+                </div>
+            </div>
+
+            <table width="100%" border="1" cellpadding="2" cellspacing="0" class="display compact" id="details">
+            </table>
+        </div>
+
+        <noscript>
+            <div id="noscript">
+                Javascript is disabled in your browser. You must have Javascript enabled to utilize the functionality of this page.
+            </div>
+        </noscript>
+
+        <div id="bottom_blank"></div>
+        <div class="bottom noselect">Powered by <b>M</b>altrail (v<b><!VERSION!></b>)</div>
+
+        <ul class="custom-menu">
+            <li data-action="hide_threat">Hide threat</li>
+            <li data-action="report_false_positive">Report false positive</li>
+        </ul>
+
+        <script type="text/javascript" src="js/demo.js"></script>
+        <script defer type="text/javascript" src="js/main.js?v=1750700161"></script>
+    </body>
+</html>

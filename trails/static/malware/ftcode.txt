@@ -1,0 +1,256 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1179318187588014080
+# Reference: https://app.any.run/tasks/4c32ed32-d6f6-4f13-8a9e-b80a93903881/
+
+185.120.144.147:80
+185.158.248.151:80
+simplebutmatters.com
+selltokengarff.com
+ktxhome.com
+
+# Reference: https://www.certego.net/en/news/malware-tales-ftcode/
+
+southerntransitions.com
+southerntransitions.net
+
+# Reference: https://otx.alienvault.com/pulse/5d8c84e81ec4039d1b005284
+
+aheshotboard.info
+theshotboard.net
+tith.in
+qvo5sd7p5yazwbrgioky7rdu4vslxrcaeruhjr7ztn3t2pihp56ewlqd.onion
+
+# Reference: https://twitter.com/Racco42/status/888168747160285185
+
+m1-systems.xyz
+
+# Reference: https://twitter.com/reecdeep/status/1179672368958058496
+
+goteamrob.com
+isdes.com
+
+# Reference: https://twitter.com/reecdeep/status/1181822906629795840
+
+heritage-insuranceagency.com
+heritageinsuranceco.com
+
+# Reference: https://twitter.com/reecdeep/status/1183638995655450624
+
+dhinsuranceservices.com
+upstatefinancialconsultants.com
+
+# Reference: https://twitter.com/reecdeep/status/1184055154838032384
+
+contractorquote.info
+cnyboypower.com
+
+# Reference: https://twitter.com/reecdeep/status/1184124740631498754
+
+heritageinsuranceagencies.com
+
+# Reference: https://twitter.com/reecdeep/status/1184777885468508161
+
+heritageins.co
+heritageagencies.com
+
+# Reference: https://twitter.com/reecdeep/status/1186223241741983744
+
+dennishughesagency.com
+hagertyquote.com
+
+# Reference: https://app.any.run/tasks/26105848-f1d3-49cd-9448-5fb7de7c9b63/
+
+jestersofnewyork.com
+
+# Reference: https://twitter.com/VirITeXplorer/status/1186960988471545857
+
+jestersofnewyork.com
+bsspta.org
+bsspta.com
+
+# Reference: https://twitter.com/reecdeep/status/1188723805302218755
+
+thrivingforyou.com
+thomasmargiotti.com
+adranswers.com
+nnrebar.com
+
+# Reference: https://twitter.com/reecdeep/status/1188741877190811648
+
+tugnutz.com
+
+# Reference: https://app.any.run/tasks/47034cbd-a8f9-49ab-b075-8a54e9e305fe/
+
+confessyoursins.mobi
+surviveandthriveparenting.com
+
+# Reference: https://pastebin.com/DB2pFiNr
+
+positivelifeology.com
+drkko.com
+positiveparentology.com
+foodforthoughtkids.com
+kkphd.com
+slipacard.com
+respectandacceptdiversity.com
+surviveandthriveparenting.com
+
+# Reference: https://twitter.com/reecdeep/status/1191259036647342080
+# Reference: https://pastebin.com/vD6td8rm
+
+hopedalebooks.com
+dbimages.com
+thegratitudelistproject.org
+
+# Reference: https://twitter.com/reecdeep/status/1192402331494764545
+
+shadysidechurch.com
+
+# Reference: https://twitter.com/reecdeep/status/1192833873991872512
+
+cfmontessori.com
+
+# Reference: https://www.cert-pa.it/notizie/possibile-nuova-campagna-ftcode/
+# Reference: https://www.cert-pa.it/wp-content/uploads/2019/11/evento_TT4825_20191118-093753.txt
+
+willjohnson.net
+aphistoryonline.com
+meganjohnson.net
+
+# Reference: https://twitter.com/reecdeep/status/1196355343678353408
+# Reference: https://pastebin.com/8cZzvMGm
+
+jzinky.com
+rideswithoutsaddle.com
+
+# Reference: https://www.cert-pa.it/wp-content/uploads/2019/11/evento_TT4825_20191118-113854.txt
+
+kenworthreevesjr.com
+embracealegacy.com
+chasingredford.com
+
+# Reference: https://twitter.com/reecdeep/status/1197477734253027333
+# Reference: https://pastebin.com/nzEJJaB1
+
+giveono.com
+clothingaddiction.club
+
+# Reference: https://twitter.com/reecdeep/status/1198927020312453121
+
+rkeindustries.com
+rkeindustries.net
+rkeindustries.info
+rancholacolina.info
+
+# Reference: https://twitter.com/0xSirDom/status/1199667780515225600
+
+ese.emarv.com
+its1ofakind.com
+lotsofbiz.com
+
+# Reference: https://twitter.com/reecdeep/status/1204017823896555521
+
+mcorea.com
+pupusas.net
+
+# Reference: https://twitter.com/0xSirDom/status/1204461098717585410
+
+securewebgateway.com
+unifiedthreatmanagementutm.com
+
+# Reference: https://www.cert-pa.it/wp-content/uploads/2019/12/evento_TT5018_20191213-170742.txt
+
+aurelianoelle.com
+
+# Reference: https://www.kpn.com/security-blogs/FTCODE-taking-over-a-portion-of-the-botnet.htm
+# Reference: https://www.virustotal.com/gui/ip-address/185.107.227.241/details
+
+agvlmjawmta0.top
+agvlmjawmta1.top
+agvlmjawmtax.top
+agvlmjawmtay.top
+agvlmjawmtaz.top
+agvlmjawmtew.top
+agvlmjawmzew.top
+agvlmjawmzex.top
+agvlmtkxmjuy.top
+agvlmtkxmtq2.top
+agvlmtkxmtq4.top
+agvlmtkxmtq5.top
+agvlmtkxmtuw.top
+agvlmtkxmtux.top
+agvlmtkxmtuy.top
+ahmwmtkxmtq2.top
+amq1mtkxmtq2.top
+bxfmmtkxmtq2.top
+ehuxmtkxmtq2.top
+ehuxmtkxmtq3.top
+rkeinsustries.com
+
+# Reference: https://app.any.run/tasks/fb7c57f9-6218-42f2-bd5f-977b7b293fea/
+
+whoisyourhero.com
+
+# Reference: https://twitter.com/reecdeep/status/1234410379201187840
+
+guthriebiblebaptistchurch.com
+siemtools.com
+tribalalpha.com
+
+# Reference: https://twitter.com/luc4m/status/1241000563262853121
+
+carlaarrabito.it
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1241007134109831169
+# Reference: https://app.any.run/tasks/531ca9d6-c9b6-4c82-8cfe-1c3fa50534cb/
+
+mgm.perc-up.com
+tetto.carlaarrabitoarchitetto.it
+
+# Reference: https://twitter.com/reecdeep/status/1244574825659711491
+
+jasonrsheldon.com
+vertexadvising.com
+
+# Reference: https://twitter.com/malware_traffic/status/1245854180134141952
+# Reference: https://twitter.com/reecdeep/status/1247126679040000001
+# Reference: https://app.any.run/tasks/39bc7e7f-5e07-4ef1-b9cc-600aba7ad7e1/
+
+chrishenel.com
+
+# Reference: https://twitter.com/reecdeep/status/1247115815993987072
+
+danielrmurray.com
+
+# Reference: https://twitter.com/Mesiagh/status/1184133243592773632
+
+abbyehughes.com
+katieebecker.com
+dankobasa.com
+
+# Reference: https://twitter.com/500mk500/status/1273215443218706433
+
+tugnutz.com
+minorleaguepub.com
+
+# Reference: https://twitter.com/reecdeep/status/1273522967935356933
+
+mialeeka.com
+selltokengarffhonda.com
+
+# Generic trails
+
+/?need=5a5210f
+/?need=6ff4040
+/?need=9f5b9ee
+/?need=aegzfej
+/?need=dfgee52
+/?need=e9791ad
+/?need=marzo05
+/?need=negato0
+/?need=stafhxt
+/?need=stdgeyt
+/?need=streetm
+/?need=vgtzvgt

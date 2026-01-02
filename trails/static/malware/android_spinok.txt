@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/DoctorWebLtd/malware-iocs/blob/master/Android.Spy.SpinOk/README.adoc
+# Reference: https://www.virustotal.com/gui/file/06a1e49dbfd7960e46e53a6e9912c296085242d02347d3c9a45b5d1fc57d0d4d/detection
+
+d1yrmah2q06l56.cloudfront.net
+d2ynw8so8bj9er.cloudfront.net
+d3hdbjtb1686tn.cloudfront.net
+ngx-hubs-257sgbon4w.mmpls.cc
+s.hisp.in

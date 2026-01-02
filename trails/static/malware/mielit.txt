@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mesub
+
+# Reference: https://www.virustotal.com/gui/file/5ff3a096559e706a3e076c63df0cace2bb778fc63d5a702181d7b912abb8a50f/detection
+
+94.73.33.36:41000
+spazioprograms.no-ip.biz

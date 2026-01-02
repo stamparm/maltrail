@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.area1security.com/resources/operation-doos/
+
+coldflys.com
+shoterup.com
+barsupport.org
+forskys.com

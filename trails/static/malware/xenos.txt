@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: xenos grabber
+
+# Reference: https://twitter.com/TLP_R3D/status/1652946271550799873
+
+http://15.228.188.115
+http://45.136.6.215
+http://79.110.63.21

@@ -1,0 +1,94 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://decoded.avast.io/janrubin/parrot-tds-takes-over-web-servers-and-threatens-millions/
+# Reference: https://github.com/avast/ioc/blob/master/ParrotTDS/network.txt
+# Reference: https://twitter.com/unmaskparasites/status/1361814973983322114
+
+2ctmedia.com
+accountablitypartner.com
+altcoinfan.com
+avanzatechnicalsolutions.com
+codigodebarra.co
+codingbit.co.in
+craigconnors.com
+expresswayautopr.com
+fioressence.com
+lilscrambler.com
+markbrey.com
+mattingsolutions.co
+maxxcorp.net
+nuwealthmedia.com
+spillpalletonline.com
+srkpc.com
+statclick.net
+syncadv.com
+walmyrivera.com
+webcachestorage.com
+weightlossihp.com
+wholesalerandy.com
+xomosagency.com
+
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/d/thwarting-loaders-from-socgholish-to-blisters-lockbit-payload/iocs-thwarting-loaders-socgholish-blister.txt
+# Reference: https://otx.alienvault.com/pulse/62558b29c777552cb77d1347
+
+windsorbongvape.ca
+apps.weightlossihp.com
+platform.windsorbongvape.ca
+
+# Reference: https://twitter.com/malware_traffic/status/1144726582596186120
+# Reference: https://www.malware-traffic-analysis.net/2019/06/28/index.html
+# Reference: https://twitter.com/malware_traffic/status/1144027142696656896
+
+ruscacademy.in
+thetechhaus.com
+triplegconsults.com
+ntri.triplegconsults.com
+green.mattingsolutions.co
+
+# Reference: https://twitter.com/Bank_Security/status/1115131039511396352
+# Reference: https://www.malware-traffic-analysis.net/2019/04/05/index.html
+# Reference: https://twitter.com/malware_traffic/status/1113975722773831680
+
+cr-acad.com
+sineadholly.com
+ufro.cl
+med.ufro.cl
+snap.cr-acad.com
+static.spillpalletonline.com
+tops.sineadholly.com
+
+# Reference: https://blog.sucuri.net/2022/06/analysis-massive-ndsw-ndsx-malware-campaign.html
+
+go.statclick.net
+visit.statclick.net
+
+# Reference: https://threatfox.abuse.ch/ioc/1149624/
+# Reference: https://www.virustotal.com/gui/ip-address/45.130.201.22/relations
+
+webfiledata.com
+storage.webfiledata.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-25-v10514/1322
+
+visitclouds.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-30-v10519/1339
+
+followcache.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-02-08-v10527/1366
+
+visitscloud.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-05-17-v10598/1649
+
+public.clickstat360.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-17-v10647/1826
+
+jswebcloud.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-30-v10678/1926
+
+load.webdatahoster.com

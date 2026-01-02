@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: satan, satanlock
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2016-063002-4327-99&tabid=2
+
+185.127.26.186/add.php
+
+# Reference: https://blog.alyac.co.kr/1451
+
+dcwqsuh6dxnlsokm.onion
+dcwqsuh6dxnlsokm.onion.sx
+
+# Reference: https://app.any.run/tasks/11c6a8f4-8dbf-4c90-8007-f56005324677/
+
+dcwqsuh6dxnlsokm.onion.lu
+
+# Reference: https://x.com/PaduckLee/status/1917046174911238173
+# Reference: https://www.virustotal.com/gui/file/3ce0e2e5ddace46f10a93292b57a48407662ee0c2ff0c8004f99a34d544c7dc3/detection
+
+satanlock2p4c3ad7gxmx3ur7wwdwlywebo2azv3vv5qlmjmole2zbyd.onion
+
+# Reference: https://ransomfeed.it/stats.php?page=group-profile&group=satanlockv2
+
+tzhwmgguyxrg6q3tu4q3gvopcjynrhw6ryx2bdl5ghisdkyunfua5xyd.onion

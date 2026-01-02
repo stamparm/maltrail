@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://unit42.paloaltonetworks.com/unit42-henbox-chickens-come-home-roost/
+
+work.andphocen.com
+andphocen.com
+w3.ezua.com
+lala513.gicp.net
+logitechwkgame.com
+www5.zyns.com
+www3.mefound.com
+w3.changeip.org
+admin.nslookupdns.com
+cdncool.com
+dns.cdncool.com
+tcpdo.net
+3w.tcpdo.net
+md5c.net
+jackhex.md5c.net
+up.outhmail.com
+outhmail.com
+queryurl.com
+update.queryurl.com
+re.queryurl.com
+mail.queryurl.com
+adminsysteminfo.com
+info.adminsysteminfo.com

@@ -1,0 +1,44 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: World Leaks DLS
+
+# Reference: https://x.com/rivitna2/status/1822685197432680612
+# Reference: https://www.virustotal.com/gui/file/861d1f84a99049948c9f936b6ee8c9a126b8ce03526412aaac8a70647fa24f77/detection
+# Reference: https://www.virustotal.com/gui/file/68126666bfd9d367d7248bd2d29fc3e2279e038fbd1ef8cfcd044e6504b3ee67/detection
+
+huntersinternational.net
+api.huntersinternational.net
+hunters33dootzzwybhxyh6xnmumopeoza6u4hkontdqu7awnhmix7ad.onion
+hunters33mmcwww7ek7q5ndahul6nmzmrsumfs6aenicbqon6mxfiqtd.onion
+hunters55rdxciehoqzwv7vgyv6nt37tbwax2reroyzxhou7my5ejyid.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1823254460082360371
+
+185.244.181.173:3389
+
+# Reference: https://x.com/RakeshKrish12/status/1845720465865605252
+# Reference: https://x.com/AlvieriD/status/1864985293100564501
+
+huntersinternational.blog
+huntersinternational.bond
+huntersinternational.info
+huntersinternational.ltd
+huntersinternational.net
+hunterinternational.online
+huntersinternational.org
+huntersinternational.ru
+huntersinternational.su
+huntersinternational.top
+huntersinternational.vip
+huntersinternational2.org
+
+# Reference: https://www.thedfirspot.com/general-8-1
+
+hunters33mmcwww7ek7q5ndahul6nmzmrsumfs6aenicbqon6mxfiqyd.onion
+hunters55atbdusuladzv7vzv6a423bkh6ksl2uftwrxyuarbzlfh7yd.onion
+
+# Reference:https://x.com/AlvieriD/status/1924778207636529257 (# World Leaks DLS)
+
+twniiyed6mydtbe64i5mdl56nihl7atfaqtpww6gqyaiohgc75apzpad.onion
+worldleaksartrjm3c6vasllvgacbi5u3mgzkluehrzhk2jz4taufuid.onion

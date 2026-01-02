@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.intego.com/mac-security-blog/osx-linker-new-mac-malware-attempts-zero-day-gatekeeper-bypass/
+
+108.168.175.167:111
+108.168.175.167:875
+108.168.175.167:2049

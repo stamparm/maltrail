@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cd00r, j-magic
+
+# Reference: https://blog.lumen.com/the-j-magic-show-magic-packets-and-where-to-find-them/
+# Reference: https://www.bleepingcomputer.com/news/security/stealthy-magic-packet-malware-targets-juniper-vpn-gateways/
+# Reference: https://github.com/blacklotuslabs/IOCs/blob/main/Jmagic_IOCs.txt
+# Reference: https://search.censys.io/hosts/198.46.158.172
+# Reference: https://www.virustotal.com/gui/file/5e3c128749f7ae4616a4620e0b53c0e5381724a790bba8314acb502ce7334df2/detection
+
+198.46.158.172:443
+198.46.158.172:8080
+198.46.158.172:8443

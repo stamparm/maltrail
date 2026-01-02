@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.sentinelone.com/labs/sandman-apt-a-mystery-group-targeting-telcos-with-a-luajit-toolkit/
+# Reference: https://www.virustotal.com/gui/file/0b962ad02e8eef3c717ce6fcfda9587f92ebe9e7ed6ee93be6bc1103daa4e8bf/detection
+
+encagil.com
+explorecell.com
+mode.encagil.com
+ssl.explorecell.com

@@ -1,0 +1,199 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: SOVA, Nexus
+
+# Reference: https://www.f5.com/labs/articles/threat-intelligence/f5-labs-investigates-malibot
+# Reference: https://www.cleafy.com/cleafy-labs/sova-malware-is-back-and-is-evolving-rapidly
+# Reference: https://www.virustotal.com/gui/ip-address/5.101.0.44/relations
+# Reference: https://www.virustotal.com/gui/file/bfa9a861d953247eea496f4a587f59e9ee847e47a68c67a4946a927c37b042c4/detection
+# Reference: https://www.virustotal.com/gui/file/90ce9980da2d0b4b5493061de20b482d0410468977ff97f4abef088e2d133ad2/detection
+# Reference: https://www.virustotal.com/gui/file/4f9fb1830f47c3107b2c865a169fab46f02f6e3aeb9a3673877e639755af172a/detection
+# Reference: https://www.virustotal.com/gui/file/0c9616a945dd44871c7e0b76de33ed92c88ab69bb55dbd180ad75df030a0210b/detection
+# Reference: https://www.virustotal.com/gui/file/0c9616a945dd44871c7e0b76de33ed92c88ab69bb55dbd180ad75df030a0210b/detection
+
+81.19.139.34:1080
+91.232.105.4:1080
+busthetrel.xyz
+cialarynan.xyz
+covid19-hhs.com
+dorelicinycass.xyz
+juradannagaha.xyz
+malemasenafis.xyz
+mining-x.tech
+mycrypto-app.com
+qusahaunad.xyz
+trust-nft.app
+udapppacel.xyz
+walananlpi.xyz
+xireycicin.xyz
+
+# Reference: https://www.threatfabric.com/blogs/sova-new-trojan-with-fowl-intentions.html
+# Reference: https://otx.alienvault.com/pulse/613b490772350348717d33b0
+# Reference: https://www.virustotal.com/gui/file/795b279f312a773f7f556a978387f1b682f93470db4c1b5f9cd6ca2cab1399b6/detection
+
+a0545193.xsph.ru
+l8j1nsk3j5h1msal973nk37.fun
+
+# Reference: https://www.cleafy.com/cleafy-labs/sova-malware-is-back-and-is-evolving-rapidly
+# Reference: https://www.virustotal.com/gui/ip-address/185.106.93.34/relations
+# Reference: https://www.virustotal.com/gui/ip-address/65.108.243.141/relations
+# Reference: https://www.virustotal.com/gui/ip-address/81.19.139.34/relations
+# Reference: https://www.virustotal.com/gui/file/f050effef52d04feafe277f40064caf220a4acf5dd442975533c8135b952f17e/detection
+# Reference: https://www.virustotal.com/gui/file/9621358e53377ab8b0145ea3b8c01c90be60604825d37bd085557845e63dd3a4/detection
+# Reference: https://www.virustotal.com/gui/file/f8077bb0ace3caea945cacf74c57153b4af35b8198fa9e07c657b3e8200eadfd/detection
+# Reference: https://www.virustotal.com/gui/file/6a83410c79f9e58e134f07f6e5c953e43c7dfa10046b04a9be14a822cb5d0eb0/detection
+# Reference: https://www.virustotal.com/gui/file/0b1f76ccc734fa7f9e533b839d85c4bd7ed676e7c3e581fc4a0b1cb989fe4a58/detection
+
+apinerqpinsad.site
+domain4ghost.site
+domainwpatnlfq.site
+inj4ghost.site
+inj4ka.space
+injqvadpyrs.site
+miningaitubriat.site
+omainwpatnlfq.site
+panel2jueprasqb.site
+panel3ghost.site
+panel4ghost.site
+panel4ka.site
+panel4ka.space
+panelquartiquf.site
+socrersutagans.site
+squareapp.online
+trustpquegpan.site
+satandemantenimiento.com
+wecrvtbyutrcewwretyntrverfd.xyz
+/api/?access=0&accounts=%5B%5D&botid=
+/api/?access=1&accounts=%5B%5D&botid=
+/api/?access=0&accounts=[]&botid=
+/api/?access=1&accounts=[]&botid=
+/api/?method=accessinfo&accessibility=0&botid=
+/api/?method=accessinfo&accessibility=1&botid=
+/api/?method=admininfo&admin=0&botid=
+/api/?method=admininfo&admin=1&botid=
+/api/?param=accessibility&value=0&botid=
+/api/?param=accessibility&value=1&botid=
+/api/?param=admin&value=0&botid=
+/api/?param=screen&value=0&botid=
+/api/?param=screen&value=1&botid=
+/api/?param=sms&value=0&botid=
+/api/?param=sms&value=1&botid=
+
+# Reference: https://twitter.com/malwrhunterteam/status/1567876515613786117
+# Reference: https://www.virustotal.com/gui/file/aba460774bb3f99be3be6a0fa08845f75a8c55ba2663c7bcbd9713139844cebf/detection
+
+zasxdcfvgbhnjmkazsxdcfvgbhnjmk.xyz
+
+# Reference: https://twitter.com/malwrhunterteam/status/1603105037399605250
+# Reference: https://www.virustotal.com/gui/file/76d4de84e32bc7f40a131f51e1fc56213b05391cb3a809330a4296c224f9cc22/detection
+
+azqewrtynuytcdrxrszaesxcdtfvbgu.shop
+azqewrtynuytcdrxrszaesxcdtfvbgu.xyz
+bvgcfxdzsexrectvyubinmlklnjbhvgyctxrry.xyz
+odeialaipodushkijdutrebeatrafinat.shop
+zomiapppcalisis.shop
+
+# Reference: https://twitter.com/malwrhunterteam/status/1621230303133024256
+# Reference: https://www.virustotal.com/gui/file/d9fa9002accd6020f5e605f906268b90731015e34a6f33aa25fe396151012f14/detection
+
+http://176.107.160.43
+
+# Reference: https://www.virustotal.com/gui/file/463ced138092bb7c3086256ecb22c4d2688ad9ca7227e30cbf1e9b64bf1c9191/detection
+# Reference: https://www.virustotal.com/gui/file/02ccb25e14c745fc2a13b314112d0bd84ad003214ff2ccd2c43d5fa5e6e4784e/detection
+
+http://5.161.22.162
+5.161.22.162:5000
+letmetakebaby.net
+
+# Reference: https://twitter.com/0xchak/status/1632675520935604224
+# Reference: https://twitter.com/0xchak/status/1632675523997442048
+# Reference: https://www.virustotal.com/gui/file/37c23fed12edf688ae4d72bbf65815546feefe346421070085938b8506e6a0d9/detection
+# Reference: https://www.virustotal.com/gui/file/182cc43b2817250ebd80a116f82a7a410ded22ea12821ca192f8a8d29d3b0b09/detection
+
+http://5.161.23.122
+http://5.161.97.57
+5.161.23.122:5000
+5.161.97.57:5000
+delicesevsinsevenler.page
+nexsuslazim.net
+yenihaberbizimsizden.co.vu
+
+# Reference: https://twitter.com/0xrb/status/1633034670815469569
+# Reference: https://threatfox.abuse.ch/browse/tag/Nexus/
+
+http://109.206.240.7
+http://176.107.160.28
+http://176.107.160.53
+http://176.107.160.57
+http://176.107.160.64
+http://45.143.138.133
+http://45.81.243.180
+http://45.81.243.181
+http://45.81.243.203
+http://45.81.243.204
+http://85.217.144.111
+http://85.217.144.112
+http://85.217.144.114
+http://85.217.144.115
+http://85.31.45.101
+http://85.31.45.128
+176.123.6.135:5000
+176.123.6.139:5000
+176.123.6.140:5000
+176.123.6.143:5000
+176.123.6.144:5000
+176.123.6.78:5000
+5.161.105.24:5000
+5.161.116.222:5000
+5.161.16.185:5000
+5.161.16.85:5000
+5.161.17.33:6699
+5.161.182.30:6699
+5.161.189.178:5000
+5.161.192.183:5000
+5.161.201.122:5000
+5.161.22.136:6699
+5.161.22.241:5000
+5.161.23.29:6699
+5.161.48.75:6699
+5.161.88.148:6699
+aaaksdasfak12512.net
+aaasksasfdk125asf12.net
+aaksdk12512.net
+aaksdk12512gs.net
+aasfaksd24k12512.net
+
+# Reference: https://twitter.com/S4nsLimit3/status/1633481095579664386
+# Reference: https://www.virustotal.com/gui/file/76e72d5118c632c1266b6b745e3502ce4abeca5ff76124c01e5837059c7e2a68/detection
+
+http://176.107.160.16
+
+# Reference: https://blog.cyble.com/2023/03/09/nexus-the-latest-android-banking-trojan-with-sova-connections/
+
+youtubeadvanced.net
+youtubevanvedadw.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1635355420268314624
+# Reference: https://twitter.com/0x6rsk/status/1635946336368443396
+# Reference: https://www.virustotal.com/gui/file/376d13affcbfc5d5358d39aba16b814f711f2e81632059a4bce5af060e038ea4/detection
+# Reference: https://www.virustotal.com/gui/file/8e3c7f755f08831739743c8f68b8ac7c263914e723258f9317bc08c01ca111f2/detection
+
+http://193.42.32.87
+blog-italia.club
+
+# Reference: https://twitter.com/0x6rsk/status/1635955119597420544
+# Reference: https://www.virustotal.com/gui/file/9b4539ea135f28a219788db09652ff51b77f20b235e8399de306c94dc7681097/detection
+
+http://85.217.144.114
+
+# Reference: https://twitter.com/malwrhunterteam/status/1638290975696080901
+# Reference: https://www.virustotal.com/gui/ip-address/79.137.192.10/relations
+# Reference: https://www.virustotal.com/gui/file/ea40b950dc088504f51181e8ea4e0d1cb500797967637e7124bfbbdb29395635/detection
+
+http://85.31.45.130
+block-blog.xyz
+copy-blog.info
+copy-blog.online
+drill-blog.ink
+tab-blog.info

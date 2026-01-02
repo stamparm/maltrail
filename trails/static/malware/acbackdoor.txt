@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.intezer.com/blog-acbackdoor-analysis-of-a-new-multiplatform-backdoor/
+# Reference: https://app.any.run/tasks/d1c4e349-a7ac-43f7-9a5a-311576301f02/
+# Reference: https://otx.alienvault.com/pulse/5dd2d3d2701b87c92d825fa4
+
+185.198.56.53:443
+193.29.15.147:443

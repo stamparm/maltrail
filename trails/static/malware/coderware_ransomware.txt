@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1331921031406235655
+# Reference: https://www.virustotal.com/gui/file/08124c7d2c97ffd108f1b7c9bba86aaeff5a41d16c77fcf11b3a8c9504f93424/detection
+
+40.118.242.207:8989
+hellokaptan.duckdns.org

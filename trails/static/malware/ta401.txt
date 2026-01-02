@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-19-v10445/1054
+
+francescatmorrison.icu
+isabeljwade.icu
+jayyburrows.icu
+jessicakphillips.icu

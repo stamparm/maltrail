@@ -1,0 +1,69 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2019/08/14/balkans-businesses-double-barreled-weapon/
+# Reference: https://otx.alienvault.com/pulse/5d542bc2799b2d63ad0e4f3c
+# Reference: https://www.hybrid-analysis.com/sample/95b5ef4e0284f82d4f6e68d750645f3475e174e10a2c33da18e372a212976a8d?environmentId=100
+
+bestfriendsroot.com/smart.php
+bestfriendsroot.com/weather.php
+bestfriendsroot.com/zagreb.php
+consaltingsolutionshere.com/smart.php
+consaltingsolutionshere.com/weather.php
+consaltingsolutionshere.com/zagreb.php
+dogvipcare.net/kversion.php
+hvar.dogvipcare.net/dekol.php
+kimdotcomfriends.com/smart.php
+kimdotcomfriends.com/weather.php
+kimdotcomfriends.com/zagreb.php
+limosinevipsalon.com/kversion.php
+luxembourgprotections.com/kversion.php
+malmevipbikes.se/kversion.php
+split.malmevipbikes.se/dekol.php
+zagreb.porezna-uprava.com/dekol.php
+bestfriendsroot.com
+consaltingsolutionshere.com
+dogvipcare.net
+kimdotcomfriends.com
+limosinevipsalon.com
+luxembourgprotections.com
+malmevipbikes.se
+porezna-uprava.com
+
+# Reference: http://www.porezna-uprava.hr/Lists/Vijesti/Vijest.aspx?ID=1979
+
+porezna-uprava.net
+
+# Reference: https://www.porezna-uprava.hr/Stranice/Vijesti.aspx
+
+porezna-uprava.org
+
+# Reference: https://www.virustotal.com/gui/file/9f6f2d00a93d8bb4b6e7fc9b33de55ca91c567e8e30de46ae86339f75587768a/detection
+# Reference: https://app.any.run/tasks/648e7423-e557-4cda-bda5-be277bb387d9
+# Note: downloaded from porezna-uprava.org
+
+www.zagrebseba.net/mms.php
+www.amsterdamtodubrovnik.com/mms.php
+www.lizardgreat.co/mms.php
+zagrebseba.net
+amsterdamtodubrovnik.com
+lizardgreat.co
+
+# Reference: https://twitter.com/malwrhunterteam/status/1184743591677190144
+
+80.82.67.18:11555
+
+# Reference: https://twitter.com/ESETresearch/status/1194949974674550784
+
+goldenwatchi.se
+hummerh2.info
+sottopal.com
+ntp.goldenwatchi.se
+ntp.hummerh2.info
+ntp.sottopal.com
+
+# Reference: https://www.virustotal.com/gui/file/dc2afce339e4e674f03f3c710d804050481bca242fb5762e4fdcb78aa88ad79b/behavior/Dr.Web%20vxCube
+
+94.1dovnc.exe
+94.140.116.20:11299
+/crofw.php?s=

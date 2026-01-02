@@ -1,0 +1,6 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/swisscom_csirt/status/1354052879158571008
+
+http://45.142.213.40/cc.txt

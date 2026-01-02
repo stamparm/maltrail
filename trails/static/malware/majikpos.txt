@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2017-031620-1424-99&tabid=2
+
+umbpan.pw
+umbpan.xyz
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, MajikPOS)
+
+http://185.10.57.107
+http://54.37.141.202
+
+# Reference: https://twitter.com/JCyberSec_/status/1282987890134441990
+# Reference: https://www.virustotal.com/gui/file/cde13f404c6b57c4ae0eee9143c9a157a114bab32c9230109946565bfb491271/detection
+
+http://46.161.27.57
+185.56.80.137:5555
+
+# Reference: http://tracker.viriback.com/dump.php (# 05-04-2020, MajikPOS)
+
+http://185.234.217.6
+
+# Generic
+
+/1d00rs3cyruty/

@@ -1,0 +1,41 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Dustsquad, Octopus, Nomadic Octopus, Paperbug
+
+# Reference: https://securelist.com/octopus-infested-seas-of-central-asia/88200/
+
+blondehairman.com
+certificatesshop.com
+desperados20.es
+giftfromspace.com
+hovnanflovers.com
+humorpics.download
+latecafe.in
+mikohanzer.website
+porenticofacts.com
+prom3.biz.ua
+/0ct0pus3.php
+
+# Reference: https://twitter.com/Rmy_Reserve/status/1197448735422238721
+# Reference: https://www.virustotal.com/gui/file/f5941f3d8dc8d60581d4915d06d56acba74f3ffad543680a85037a8d3bf3f8bc/detection
+
+cookiesqueen.com
+poisonfight.com
+
+# Reference: https://www.prodaft.com/resource/detail/paperbug-nomadic-octopus-paperbug-campaign
+
+http://185.32.126.102
+http://185.99.133.244
+http://194.180.174.154
+http://199.188.200.245
+http://44.227.65.245
+http://44.227.76.166
+http://54.36.185.101
+http://86.106.137.150
+http://91.208.184.79
+http://91.219.238.239
+http://94.140.114.20
+footcoinball.com
+islandsnake.com
+lovingearthy.com

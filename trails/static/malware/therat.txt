@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/karol_paciorek/status/1816092709674770706
+# Reference: https://www.deepinstinct.com/blog/the-russian-spyagent-a-decade-later-and-rat-tools-remain-at-risk
+# Reference: https://app.validin.com/detail?find=SpY-Agent%20v1.2&type=raw&ref_id=9eaaabba9cd#tab=host_pairs_v2
+# Reference: https://www.virustotal.com/gui/file/1565d137d235b65af1d1e4963ebc02eaf36cc81f870534674983bc6f67e5e274/detection
+# Reference: https://www.virustotal.com/gui/file/055b1959dd1e2de0cb28051206e54da4dd7bb32d492ce608629e457c76c20d60/detection
+
+http://172.86.99.171
+http://23.19.227.217
+crypto-st.art
+thief.lol
+
+# Reference: https://x.com/banthisguy9349/status/1819082273037471896
+# Reference: https://www.virustotal.com/gui/file/ce1df5c0b5636f4a1b5f6a3f9903c7a98179b5fcb77f5a53377b0b8b0d94ef9b/detection
+
+103.230.218.240:6666
+103.230.218.240:8888
+sister-1324943887.cos.ap-guangzhou.myqcloud.com
+
+# Reference: https://app.validin.com/detail?find=SpY-Agent%20v1.2&type=raw&ref_id=b44d7938862#tab=host_pairs (# 2025-09-15)
+
+http://178.16.54.226
+http://45.141.233.190
+http://95.129.234.23
+mygoodpanelka.xyz

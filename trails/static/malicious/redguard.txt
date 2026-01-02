@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/wikiZ/RedGuard
+# Reference: https://threatfox.abuse.ch/browse/tag/RedGuard/
+
+121.42.9.148:443
+142.171.229.78:2096
+23.105.197.219:443
+43.138.110.8:443

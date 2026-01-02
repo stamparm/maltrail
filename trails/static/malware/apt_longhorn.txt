@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt-c-39, lambert, coloredlamberts, longhorn, plexor
+
+# Reference: https://malpedia.caad.fkie.fraunhofer.de/actor/longhorn
+# Reference: https://securelist.com/unraveling-the-lamberts-toolkit/77990/
+# Reference: https://www.virustotal.com/gui/ip-address/82.141.230.145/relations
+# Reference: https://www.virustotal.com/gui/file/94c9400a7c092d39b053b98d3fb9b241ebd40d820894fa0aaf806d5f813eba06/detection
+# Reference: https://www.virustotal.com/gui/file/b8734ada49e290d12a5a178a67e5ae45e1e3348e54a1f57ef4cdb92ff8c84086/detection
+
+103.242.119.71:443
+120.50.38.187:443
+161.5.6.206:3128
+cdn.fmlstatic.com
+fmlstatic.com
+financasdebrasil.com
+uaefinance.org

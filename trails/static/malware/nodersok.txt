@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: divergent, nodersok
+
+# Reference: https://www.microsoft.com/security/blog/2019/09/26/bring-your-own-lolbin-multi-stage-fileless-nodersok-campaign-delivers-rare-node-js-based-malware/
+
+d23cy16qyloios.cloudfront.net
+d26klsbste71cl.cloudfront.net
+d2d604b63pweib.cloudfront.net
+d3jo79y1m6np83.cloudfront.net
+d1fctvh5cp9yen.cloudfront.net
+d3cp2f6v8pu0j2.cloudfront.net
+dqsiu450ekr8q.cloudfront.net
+#
+Du0ohrealgeek.org
+Hi5urautopapyrus.org
+Ex9ohiamistanbul.net
+Eek6omyfilmbiznetwork.org

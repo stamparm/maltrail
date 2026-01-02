@@ -1,0 +1,197 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://go.recordedfuture.com/hubfs/reports/cta-2021-0616.pdf
+# Reference: https://github.com/Insikt-Group/Research/blob/master/RedFoxtrot%20June%202021
+# Reference: https://otx.alienvault.com/pulse/60cc709013f5498fe7e60120
+
+adobesupport.net
+hostmail1.com
+kelimelerdunyasi.org
+stratejibilimi.com
+superkelimeler.com
+adtl.mywire.org
+appinfo.camdvr.org
+aries.epac.to
+billing.epac.to
+capture.kozow.com
+chock.mywire.org
+coreldraw.kozow.com
+czconnections.ddns.info
+drdo.dumb1.com
+drdo.mypop3.net
+dsgf.chickenkiller.com
+elienceso.kozow.com
+exat.dnset.com
+exat.zyns.com
+execserver.giize.com
+exujjat.xxuz.com
+fashget.theworkpc.com
+fivenum.mooo.com
+foreverlove.zzux.com
+forum.camdvr.org
+fukebutt.zzux.com
+googleupdate.myz.info
+gulistan.wikaba.com
+hcl.sexidude.com
+honoroftajik.dynamic-dns.net
+https.dnset.com
+https.ikwb.com
+https.otzo.com
+https.vizvaz.com
+inbsnl.ddns.info
+inbsnl.ddns.ms
+indiaeducation.mefound.com
+indian.mefound.com
+indianmail.zyns.com
+itsupport.firewall-gateway.net
+jpgdowngaussip.ddns.info
+kastygost.compress.to
+koreckaccord01.zzux.com
+laugh.toh.info
+lexuz.dns05.com
+lexuz.x24hr.com
+linkedin.organiccrap.com
+locker.camdvr.org
+login.kozow.com
+logonfaker.longmusic.com
+macfee.webredirect.org
+macfeesyn.ns01.info
+macfeeupdate.ddns.info
+mall.mywire.org
+manual.gleeze.com
+manuals.wikaba.com
+menus.giize.com
+menus.kozow.com
+mfedownload.freetcp.com
+mfeupdate.ddns.info
+mfeupload.freetcp.com
+miche.justdied.com
+msgsober.xxuz.com
+msn.dnsnet.com
+nicodonald.accesscam.org
+niteast.strangled.net
+notice.theworkpc.com
+nproccshow.zyns.com
+otc.toythieves.com
+pisces.zzux.com
+prace.gleeze.com
+pracute.camdvr.org
+queryinfo.mrbonus.com
+quickheal.firewall-gateway.net
+randomanalyze.freetcp.com
+rastelcs.kozow.com
+rci.ddns.info
+redhatboy.dynamic-dns.net
+scorpio.zzux.com
+secindia.mywire.org
+secssl.ooguy.com
+secssl.theworkpc.com
+secupdate.kozow.com
+skylineline.crabdance.com
+skylineqaz.crabdance.com
+smcupdate.mooo.com
+srcrail.kozow.com
+sunway2.chickenkiller.com
+supports.casacam.net
+supports.gleeze.com
+sysman.ddnsgeek.com
+sysmantec.firewall-gateway.net
+sysmantec.organiccrap.com
+tajikstantravel.dynamic-dns.net
+tele.zyns.com
+thinkv.dynamic-dns.net
+thinkv.epac.to
+trand.mefound.com
+trendiis.sixth.biz
+updateinfo.kozow.com
+uzwatersource.dynamic-dns.net
+water.xxuz.com
+wawaqq.ddns.info
+whitepages.dynamic-dns.net
+wsliversourcecor.epac.to
+yatedo.organiccrap.com
+
+# Reference: https://www.recordedfuture.com/chinese-apt-groups-target-afghan-telecommunications-firm/
+# Reference: https://otx.alienvault.com/pulse/61544024e496818edcda5f98
+
+darkpapa.chickenkiller.com
+dhsg123.jkub.com
+
+# Reference: https://www.virustotal.com/gui/file/00efd6ece111a99e1aea36636baba3fdf2f021eb8c9cdef84350c78654d5c99c/detection
+# Reference: https://www.virustotal.com/gui/file/8a3e3de44128ae2abada62c68f1e9f21468fb5103aa52f8320c8e1ea6a13dcd1/detection
+
+moshen.xyz
+holyshit.dynamic-dns.net
+mobai.moshen.xyz
+
+# Reference: https://twitter.com/Cyberteam008/status/1781204417481679199
+# Reference: https://www.virustotal.com/gui/ip-address/165.22.211.185/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.188.228.165/relations
+# Reference: https://www.virustotal.com/gui/file/ed34d7d905f4169ea14e27410028b6b34cb1b55342638649670ccb1994332c35/detection
+
+bbsaili.camdvr.org
+checkout_dns.dynamic-dns.net
+ciscoteam.ignorelist.com
+indiabsnl.com
+indiabsnl.in
+isronrsc.giize.com
+isrosdsc.camdvr.org
+mail.indiabsnl.com
+mail.indiabsnl.in
+ftp.checkout_dns.dynamic-dns.net
+ftp.isronrsc.giize.com
+sts.isronrsc.giize.com
+
+# Reference: https://x.com/Cyberteam008/status/1808321922087936030
+# Reference: https://www.virustotal.com/gui/ip-address/103.218.240.213/relations
+# Reference: https://www.virustotal.com/gui/ip-address/103.45.68.125/relations
+# Reference: https://www.virustotal.com/gui/ip-address/144.91.66.12/relations
+# Reference: https://www.virustotal.com/gui/ip-address/154.26.153.129/relations
+# Reference: https://www.virustotal.com/gui/ip-address/167.179.105.81/relations
+# Reference: https://www.virustotal.com/gui/ip-address/192.236.195.253/relations
+# Reference: https://www.virustotal.com/gui/ip-address/193.124.93.153/relations
+# Reference: https://www.virustotal.com/gui/file/e4fe0bd698d7d4b346f2a77440f99157388f796a98e0fe26b2448f074b38428a/detection
+
+cheapnews.online
+googiao.top
+gov4us.online
+indiavoice.site
+jiocircle.site
+kazcell.info
+kazinfo.net
+kaznews.shop
+kaztelecom.shop
+kz-news.site
+newseason.online
+newsforname.site
+newtelecom.shop
+nur-tv.shop
+nurkaz.shop
+protondiscover.com
+
+# Reference: https://x.com/Cyberteam008/status/1817738163387023520
+# Reference: https://www.virustotal.com/gui/ip-address/23.227.196.31/relations
+
+ncell.app
+
+# Reference: https://x.com/Cyberteam008/status/1873548744593232365
+# Reference: https://www.virustotal.com/gui/ip-address/139.84.168.246/relations
+# Reference: https://www.virustotal.com/gui/ip-address/64.227.184.126/relations
+
+indiabs.nl
+indiabsnl.net
+
+# Reference: https://x.com/Cyberteam008/status/1882654346804080880
+# Reference: https://www.virustotal.com/gui/file/8571f53a54efaf13ab5a1eabe1f33eb5d489cac32f23581c090db28577de5efe/detection
+# Reference: https://www.virustotal.com/gui/file/fd03a2d1c9ece4db62da7b4f8ca0f70c896a9b5370afdbc799092ea491892fdc/detection
+# Reference: https://www.virustotal.com/gui/file/44538a8b50c093cf17c6fbd799a51a39bac9a5f6fe8081e3f6d169a298a54a6f/detection
+
+135.181.243.34:8080
+164.132.27.225:8080
+192.51.188.47:443
+194.126.202.217:443
+anywheres.run.place
+appsupport.my-router.de
+appupdate.firewall-gateway.de
+appupdate.my-router.de

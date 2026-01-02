@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/blog/research/77725/from-shamoon-to-stonedrill/
+
+www.chrome-up.date
+service1.chrome-up.date
+service.chrome-up.date
+webmaster.serveirc.com
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2017-022712-2204-99&tabid=2
+
+service.chrome-up.date
+msservice.site
+cloud.services-mozilla.com

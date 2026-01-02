@@ -1,0 +1,49 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt-31, bronze vinewood, zirconium
+
+# Reference: https://www.secureworks.com/research/bronz-vinewood-uses-hanaloader-to-target-government-supply-chain
+
+wshnews.com
+
+# Reference: https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/apt31-new-attacks/
+# Reference: https://otx.alienvault.com/pulse/610a40dee36aae4fcd35e9cf
+# Reference: https://www.virustotal.com/gui/file/33f136069d7c3a030b2e0738a5ee80d442dee1a202f6937121fa4e92a775fead/detection
+# Reference: https://www.virustotal.com/gui/file/efdbb19fb65bcf5c4a8feb3eab784682d01f3e75f711674e4d469d4dfe4a21f3/detection
+
+20.11.11.67:443
+be-government.com
+drmtake.tk
+edgecloudc.com
+flushcdn.com
+gitcloudcache.com
+hostupoeui.com
+rsnet-devel.com
+api.flushcdn.com
+api.hostupoeui.com
+const.be-government.com
+inst.rsnet-devel.com
+
+# Reference: https://www.cert.ssi.gouv.fr/uploads/CERTFR-2021-CTI-013.pdf
+
+last-key.com
+api.last-key.com
+
+# Reference: https://twitter.com/h2jazi/status/1519769353297747970
+# Reference: https://www.virustotal.com/gui/ip-address/31.192.107.152/relations
+# Reference: https://www.virustotal.com/gui/file/c4343d5a53495095cf0d44c308c2bb6ad1a10ccf97aef62e49ae03c27d980c5d/detection
+
+intranet-rsnet.com
+microsoft-products.com
+offline-microsoft.com
+super-encrypt.com
+cdn.microsoft-official.com
+office.microsoft-products.com
+p1.offline-microsoft.com
+portal.intranet-rsnet.com
+portal.super-encrypt.com
+
+# Reference: https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/apt31-cloud-attacks/
+
+yandexpro.net

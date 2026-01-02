@@ -1,0 +1,31 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://malware.news/t/lammers-stealers-and-rats-same-technics-like-formbook-malware-to-install-jrat-and-hawkeye/21919
+
+indigo2.publicvm.com
+nandos777.ddns.net
+netwokers.ddns.net
+gray7.serveftp.com
+cryoutlouds.dynu.net
+dengsman.duckdns.org
+realwire123.ddns.net
+cryoutloud.dynu.net
+audreysaradin.no-ip.org
+evansabide24.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/a890acc9b1eef4c003a004f2e69de19eaa0bbdcd543579da605c63ea5e51cc32/detection
+
+79.134.225.72:1819
+
+# Reference: https://www.virustotal.com/gui/file/af98b75861c35316e855b27a866cf24e3f27645250a37bc3f7cbaa38d62c8bf5/detection
+
+79.134.225.72:33440
+
+# Reference: https://www.virustotal.com/gui/file/c8be4ea82b3c7ca8df79f48f0aaab706b60b3507f3add67d1f05d1f908e18f0e/detection
+
+79.134.225.72:8877
+
+# Reference: https://www.virustotal.com/gui/file/23488b8f8008a7473d40119201b83d35ed8ddd1812f8c16076d1f2307cb8632e/detection
+
+expressjokes.mywire.org

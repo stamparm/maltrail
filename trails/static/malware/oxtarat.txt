@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.qurium.org/alerts/phishing-attack-against-azerbaijani-political-and-human-right-activities/
+# Reference: https://research.checkpoint.com/2023/operation-silent-watch-desktop-surveillance-in-azerbaijan-and-armenia/
+# Reference: https://otx.alienvault.com/pulse/63f501a647a7fa099bbb4af9
+# Reference: https://www.virustotal.com/gui/file/0480196a784ba66b586e716045ef117bc743d67bce33da1bda985124e2c4ecb6/detection
+# Reference: https://www.virustotal.com/gui/file/0628d2743617d9df821014a1c32dd33dd68c3986d8f84a347959b2797b1c8077/detection
+# Reference: https://www.virustotal.com/gui/file/4028d0c029db6996f701a2f546f7fd7eb31ef2b7c41f5d3f159261faa03da24f/detection
+
+avvpassport.info
+edupoliceam.info
+filecloudservices.xyz
+filesindrive.info
+mediacloud.space
+shoesbuysellone.live
+smartappsfoursix.xyz

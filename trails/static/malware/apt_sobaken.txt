@@ -1,0 +1,59 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: firmachagent, SPECTR, Vermin
+# CERT-UA: UAC-0020
+
+# Reference: https://www.welivesecurity.com/wp-content/uploads/2018/07/ESET_Quasar_Sobaken_Vermin.pdf
+
+akamaicdn.ru
+akamainet021.info
+akamainet022.info
+akamainet023.info
+akamainet024.info
+akamainet066.info
+akamainet067.info
+cdnakamai.ru
+mailukr.net
+notifymail.ru
+tech-adobe.dyndns.biz
+windowsupdate.kiev.ua
+
+# Reference: https://malpedia.caad.fkie.fraunhofer.de/details/win.vermin
+# Reference: https://cert.gov.ua/article/37815 (Ukrainian)
+# Reference: https://www.virustotal.com/gui/file/621b0d5a0c91b1d90588b78bc04fa961412601ab392b91b9d3995498a417dca4/detection
+
+http://176.119.2.194
+http://176.119.2.195
+http://176.119.2.212
+http://176.119.2.214
+getmod.host
+meteolink.host
+netbin.host
+stormpredictor.host
+syncapp.host
+
+# Reference: https://cert.gov.ua/article/6280422
+# Reference: https://www.virustotal.com/gui/ip-address/171.22.120.50/relations
+# Reference: https://www.virustotal.com/gui/ip-address/91.225.219.185/relations
+# Reference: https://www.virustotal.com/gui/ip-address/94.232.249.88/relations
+# Reference: https://www.virustotal.com/gui/file/b474e4db82023d913a00b6c127e1ba6c2b65129e906c4babdf01a69ef8851e84/detection
+# Reference: https://www.virustotal.com/gui/file/250f49264ff06c39f2222d4d7e73685ad39e72effe806341ccbe73d1fc759743/detection
+
+http://171.22.120.50
+prozorro.online
+ukraero.space
+aviasys.somee.com
+code.ukraero.space
+firma.ukraero.space
+mail.ukraero.space
+
+# Reference: https://x.com/smica83/status/1950515843110154388
+# Reference: https://x.com/JAMESWT_WT/status/1950522465068720460
+# Reference: https://www.virustotal.com/gui/file/076edddf05a35a150d4e973eca9e7acd6249abca54f2d12ca05f0464aaca37e6/detection
+
+aeroua.online
+telegrarn.fun
+gw.telegrarn.fun
+ukr.somee.com
+u_a_sux.aeroua.online

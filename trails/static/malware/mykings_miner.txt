@@ -1,0 +1,271 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: hexmen, mykings, smominru                (Reference: https://www.csoonline.com/article/3439400/secrets-of-latest-smominru-botnet-variant-revealed-in-new-attack.html)
+# Note: "Smominru Monero mining botnet"             (Reference: https://www.proofpoint.com/us/threat-insight/post/smominru-monero-mining-botnet-making-millions-operators)
+# Note: "MyKings == Smominru"                       (Reference: https://news.sophos.com/en-us/2019/12/18/mykings-botnet-spreads-headaches-cryptominers-and-forshare-malware/)
+
+# Reference: https://github.com/guardicore/labs_campaigns/blob/master/Smominru/connect_backs.md
+
+bee12.bumblebeeservers.com
+d20.xtrmserver.com
+down.1226bye.pw
+gamesoxalic.com
+ftp.0603bye.info
+garrafa8.itaucredicard.tk
+grinknowledge.com
+js.1226bye.xyz
+pc.pc0416.xyz
+server.triangleww.com
+wmi.1217bye.host
+worldsender.info
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/uncovering-a-mykings-variant-with-bootloader-persistence-via-managed-detection-and-response/
+
+js.mykings.top
+down.mysking.info
+ok.xmr6b.ru
+ftp.ftp0118.info
+
+# Reference: https://www.virustotal.com/gui/domain/ok.mymyxmra.ru/relations
+# Reference: https://www.virustotal.com/gui/domain/64.mymyxmra.ru/relations
+# Reference: https://www.virustotal.com/gui/file/51b2e2689bd489e910d7d7e9e1a52cfaee55bace7c72d25b172c7d9ebc47d70c/behavior/Tencent%20HABO
+# Reference: https://www.virustotal.com/gui/file/865e781dc4f9d8560dd6d26407b327a1af629aeeaf6c23d331822247854fad83/behavior/Tencent%20HABO
+
+mymyxmra.ru
+http://45.58.135.106/xpdown.dat
+http://103.95.28.54/xpdown.dat
+http://103.213.246.23/xpdown.dat
+http://74.222.14.61/xpdown.dat
+http://78.142.29.152/xpdown.dat
+
+# Reference: https://www.virustotal.com/gui/file/8b9bbb66b441769bc97700dead974aa558cbe1ce2fae85cf951dab7dc83aca8e/behavior/Tencent%20HABO
+
+http://103.213.246.23/xpdown.dat
+
+# Reference: https://github.com/guardicore/labs_campaigns/blob/master/Hexmen/domains.md
+# Reference: https://www.guardicore.com/2017/12/beware-the-hex-men/
+
+cct119.com
+cyg2016.xyz
+msns.cn
+mykings.top
+mys2016.info
+mys2018.xyz
+down.mys2016.info
+js.mys2016.info
+js.mykings.top
+hc58.msns.cn
+down.mys2018.xyz
+js.mys2018.xyz
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/smominru-monero-mining-botnet-making-millions-operators
+
+64.mymyxmra.ru
+64.myxmr.pw
+down.down0116.info
+down.my0115.ru
+down.my0709.xyz
+down.mys2016.info
+down.oo000oo.club
+ftp.ftp0118.info
+ftp.oo000oo.me
+ftp.ruisgood.ru
+js.my0115.ru
+js.mys2016.info
+wmi.my0115.ru
+wmi.my0709.xyz
+wmi.mykings.top.info
+wmi.oo000oo.club
+cyg2016.xyz
+xmr.5b6b7b.ru
+xmr.xmr5b.ru
+
+# Reference: https://twitter.com/360Netlab/status/1083232080065105921
+# Reference: https://blog.netlab.360.com/mykings-the-botnet-behind-multiple-active-spreading-botnets/
+
+100.43.155.171:280
+104.37.245.82:8888
+118.190.50.141:8888
+209.58.186.145:8888
+213.23.167.180:9999
+23.27.127.254:8888
+47.52.0.176:8888
+47.88.216.68:8888
+67.229.144.218:8888
+b591.com
+b5w91.com
+cnc.f321y.com
+down0116.info
+f4321y.com
+ftp0118.info
+ftp.ftp0118.info
+kill1234.com
+mysking.info
+mykings.pw
+mykings.top
+oo000oo.club
+oo00oo.info
+oo000oo.me
+
+# Reference: https://twitter.com/DissectMalware/status/985712345669357573
+
+wmi.oo000oo.club
+js.oo000oo.club
+
+# Reference: https://www.virustotal.com/gui/file/49ec786759920dd3116fddcd45e0b14936a0954c21f272527754659c31cde86d/behavior/Dr.Web%20vxCube
+# Reference: https://www.virustotal.com/gui/file/ac99d6ecf20ede3c1064a5790ea66d4080776c7369dc7f878c3dcd658dc7d5ee/detection
+
+179.178.9.126:5552
+
+# Reference: https://www.virustotal.com/gui/file/eaef82223eeb8cf404a1d46613d36b9e582304b215201b5e557db578dd73e04e/behavior/Dr.Web%20vxCube
+
+xmr.xmr6b.ru
+
+# Reference: https://www.virustotal.com/gui/file/eaef82223eeb8cf404a1d46613d36b9e582304b215201b5e557db578dd73e04e/behavior/Dr.Web%20vxCube
+
+45.58.135.106:13000
+
+# Reference: https://research.checkpoint.com/kingminer-the-new-and-improved-cryptojacker/
+
+112adfdae.tk
+1b051fdae.tk
+869d4fdae.tk
+qwerr.ga
+a.1b051fdae.tk
+a.869d4fdae.tk
+a.qwerr.ga
+q.112adfdae.tk
+
+95.179.131.54:9760
+homewrt.com
+w.homewrt.com
+
+# Reference: https://twitter.com/faisalusuf/status/1202098388151525377
+
+103.106.250.161:8161
+103.106.250.162:8162
+167.88.180.175:8175
+172.83.155.170:8170
+192.236.160.237:8237
+80.85.158.117:8117
+wmi.1103.xyz
+
+# Reference: https://www.okcode.net/article/87061
+
+js.0603bye.info
+wmi.1103bye.xyz
+
+# Reference: https://litl-admin.ru/bezopasnost/ostavil-sistemu-bez-zashhity-v-internet.html
+
+http://139.5.177.19/s.jpg
+http://173.208.139.170/s.txt
+http://173.208.139.170/2.txt
+http://139.5.177.19/3.txt
+
+# Reference: https://www.virustotal.com/gui/file/7f78d8a2cf889230fcd0dcd3d12418835c6c2e37ea396c13ae5222eccd978e8a/behavior/Dr.Web%20vxCube
+
+http://45.58.135.106/xpdown.dat
+http://45.58.135.106/ok/down.html
+http://45.58.135.106/ok/64.html
+http://45.58.135.106/ok/vers.html
+http://64.32.3.186/kill.txt
+http://64.32.3.186/down.txt
+http://208.51.63.150/down.exe
+http://64.32.3.186/item.dll
+http://64.32.3.186/b.exe
+http://45.58.135.106/vers1.txt
+http://64.32.3.186/64.rar
+http://66.117.2.182/xpxmr.dat
+http://45.58.135.106/xpxmr.dat
+http://45.58.135.106/ok/xmrok.html
+http://45.58.135.106/xmrok.txt
+http://64.32.3.186/downs.txt
+http://208.51.63.150/downs.exe
+http://174.128.239.250/kill.txt
+http://174.128.239.250/downs.txt
+http://174.128.239.250/down.txt
+http://174.128.239.250/64.rar
+http://45.58.135.106/kill.txt
+http://45.58.135.106/down.txt
+http://185.112.156.92/down.exe
+http://66.117.6.174/ups.rar
+http://174.128.248.10/b.exe
+http://174.128.248.10/64work.rar
+http://198.148.90.34/0228.rar
+http://174.128.248.10/64.rar
+http://223.25.247.240/ok/ups.html
+
+# Reference: https://sophos.files.wordpress.com/2019/12/mykings_report_final.pdf
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/malware-MyKings
+# Reference: https://otx.alienvault.com/pulse/5dfa53868beb2b5dae6335ec
+
+0603bye.info
+0814ok.info
+1103bye.xyz
+1217bye.host
+1226bye.xyz
+5b6b7b.ru
+b591.com
+b5w91.com
+down0116.info
+f321y.com
+f4321y.com
+ftp1202.site
+ioad.pw
+jpgo.ru
+kill0604.ru
+kill1234.com
+kr1s.ru
+kriso.ru
+my0115.ru
+my0709.xyz
+mykings.pw
+mymyxmra.ru
+mys2016.info
+mys2018.xyz
+mysking.info
+myxmr.pw
+oo000oo.club
+pc0416.xyz
+rucop.ru
+ruisgood.ru
+tftp0930.host
+uf4321y.com
+ums1128.site
+upme0611.info
+wpd0126.info
+wpdtest1017.site
+xmr5b.ru
+xmr6b.ru
+zcop.ru
+
+# Reference: https://www.virustotal.com/gui/ip-address/223.25.247.152/relations
+
+loader0807.site
+load.wpd0126.info
+mssql.loader0807.site
+
+# Reference: https://twitter.com/Max_Mal_/status/1460753754840604680
+
+http://103.124.105.246
+http://174.128.235.243
+http://199.168.100.74
+http://23.236.69.114
+223.25.247.152:8152
+199.168.100.74:8074
+
+# Generic
+
+/xpdown.dat
+/xpwpd.dat
+/xpxmr.dat
+/xmrok.txt
+/ok/64.html
+/ok/down.html
+/ok/ups.html
+/0228.rar
+/64work.rar
+/power.txt
+/s.txt
+/helloworld.msi

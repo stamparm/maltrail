@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://symantec-enterprise-blogs.security.com/threat-intelligence/taiwan-malware-dns
+# Reference: https://www.virustotal.com/gui/ip-address/135.148.113.190/relations
+# Reference: https://www.virustotal.com/gui/file/f5937d38353ed431dc8a5eb32c119ab575114a10c24567f0c864cb2ef47f9f36/detection
+# Reference: https://www.virustotal.com/gui/file/a89ebe7d1af3513d146a831b6fa4a465c8edeafea5d7980eb5448a94a4e34480/detection
+
+msedgeapi.net
+ctl.msedgeapi.net
+ns1.msedgeapi.net
+e7mbj24j75ws4z4rmtw1cq4shz.cbcxahydy0000.ctl.msedgeapi.net

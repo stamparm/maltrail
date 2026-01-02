@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: deathransom, wacatac
+
+# Reference: https://github.com/StrangerealIntel/malware-notes/blob/master/Ransomware/DeathRansom.md
+
+scat01.mcdir.ru
+scat01.tk
+
+# Reference: https://twitter.com/D3LabIT/status/1473333286160281610
+# Reference: https://www.virustotal.com/gui/file/86952c77e9a4833a30b35c9c0f44c608756efdfc4e09df5be4049643a82e71dc/detection
+
+cv19vaccinazionesanita.com

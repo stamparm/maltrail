@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: vector stealer
+
+# Reference: https://twitter.com/RustyNoob619/status/1712096251670303112
+# Reference: https://x.com/banthisguy9349/status/1814923181343314158
+
+http://185.196.10.77
+185.196.10.77:443
+vectorstealer.com

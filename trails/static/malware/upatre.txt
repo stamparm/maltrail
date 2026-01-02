@@ -1,0 +1,283 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=TrojanDownloader:Win32/Upatre.A#tab=2
+# Reference: https://app.any.run/tasks/bd1cae6f-68d5-49b9-8d3d-347d12770d23/
+
+mytarta.com
+cyclivate.com
+pentruder.co.uk
+huyontop.com
+
+# Reference: https://researchcenter.paloaltonetworks.com/2018/07/unit42-upatre-continues-evolve-new-anti-analysis-techniques/
+
+doghunter.bit
+bookreader.bit
+
+# Reference: https://blog.talosintelligence.com/2019/03/threat-roundup-0315-0322.html (Win.Malware.Upatre-6894504-0)
+
+ncaappraisers.com
+
+# Reference: https://twitter.com/neonprimetime/status/1116754139281805317
+# Reference: https://www.virustotal.com/gui/file/f9a4c6e5f2bac899b95772bb1b380b4a6f376c71b6c14385aa9154197e1a677d/detection
+
+http://181.189.152.131
+181.189.152.131:14101
+181.189.152.131:14102
+181.189.152.131:14103
+181.189.152.131:14105
+181.189.152.131:14107
+181.189.152.131:14109
+181.189.152.131:14116
+181.189.152.131:14120
+181.189.152.131:14122
+181.189.152.131:14123
+181.189.152.131:14124
+181.189.152.131:14127
+181.189.152.131:14134
+181.189.152.131:14137
+181.189.152.131:14138
+181.189.152.131:14141
+181.189.152.131:14142
+181.189.152.131:14144
+181.189.152.131:14145
+181.189.152.131:14146
+181.189.152.131:14147
+181.189.152.131:14148
+181.189.152.131:14152
+181.189.152.131:14154
+181.189.152.131:14163
+181.189.152.131:443
+
+# Reference: https://blog.talosintelligence.com/2020/02/threat-roundup-0221-0228.html (# Win.Dropper.Upatre-7594799-0)
+# Reference: https://www.virustotal.com/gui/ip-address/38.65.142.12/relations
+
+http://38.65.142.12
+38.65.142.12:12502
+38.65.142.12:12509
+38.65.142.12:12556
+38.65.142.12:12557
+38.65.142.12:12558
+38.65.142.12:12559
+38.65.142.12:12564
+38.65.142.12:12565
+38.65.142.12:12567
+38.65.142.12:12568
+38.65.142.12:12569
+38.65.142.12:12570
+38.65.142.12:12571
+38.65.142.12:12558
+38.65.142.12:12559
+38.65.142.12:12570
+
+# Reference: https://www.virustotal.com/gui/file/5b93b78b1eb0b91d1776b10896a90eae107fe3d7366924f8b052ff4db32f3b0b/detection
+
+frontierforex.com
+
+# Reference: https://blog.talosintelligence.com/2020/03/threat-roundup-0228-0306.html (# Win.Downloader.Upatre-7601201-0)
+
+grupodolcearte.com
+
+# Reference: https://blog.talosintelligence.com/2020/03/threat-roundup-0313-0320.html (# Win.Malware.Upatre-7618803-1)
+
+talonstamed.com
+
+# Reference: https://twitter.com/killamjr/status/1248638073740693504
+
+huyontop.com
+
+# Reference: https://www.virustotal.com/gui/file/ee0ac3404c5cecc9b89ace7827cd7c7b97ef18e2098b59fc0196ac543289eb60/detection
+
+cutiepiesonline.com
+junoandjove.com
+
+# Reference: https://www.virustotal.com/gui/file/815ea1fe70c2427f4d862cf47f8c03af0a1db8768f79edec22aaad15be7d0d12/detection
+
+177.124.228.4:46539
+mrcarabiner.com
+sprachreisenengland.info
+uclimbing.com
+
+# Reference: https://www.virustotal.com/gui/file/76b3bece7f8bb2219553bcd0c38efbf52deeab5aa898e103d20db1c50f4a3995/detection
+# Reference: https://www.virustotal.com/gui/ip-address/104.239.157.210/relations
+
+cihunemyror.eu
+ciliqikytec.eu
+divesosisor.eu
+dixesywyruc.eu
+fodakyhijyv.eu
+foxivusozuc.eu
+gacezobeqon.eu
+gadufiwabim.eu
+gatedyhavyd.eu
+jefapexytar.eu
+jewuqyjywyv.eu
+kefuwidijyp.eu
+lyruxyxaxaw.eu
+lyvejujolec.eu
+marytymenok.eu
+nojejecebuw.eu
+nopegymozow.eu
+puvopalywet.eu
+qeqinuqypoq.eu
+rockthecasbah.eu
+rynazuqihoj.eu
+ryqecolijet.eu
+tucyguqaciq.eu
+tulyboputal.eu
+tunujolavez.eu
+xukovoruput.eu
+xuqohyxeqak.eu
+xwzlsv.eu
+
+# Reference: https://www.virustotal.com/gui/file/368499385fa5b8b67bada3ba25a43a5cb642def22959d15adbaef6e132954f25/detection
+
+3horses.com.hk
+ruedigerbaltissen.com
+
+# Reference: https://www.virustotal.com/gui/domain/wizardprocessor.com/relations
+# Reference: https://www.virustotal.com/gui/ip-address/91.195.240.87/relations
+
+wizardprocessor.com
+
+# Reference: https://www.virustotal.com/gui/file/7f331108488a518d8eaa26984d0987f0449ae731611473b2893d74b3f9e07fa9/detection
+# Reference: https://www.virustotal.com/gui/file/a5f6f9e771b21bd2f65ff2e2b82abe1551232071d1e980cf212e52fb859b7b9a/detection
+
+evaniz.com
+merrymilkfoods.com
+
+# Reference: https://otx.alienvault.com/pulse/5f9023f047fe8f86b7dde7cb
+
+ashburnes.com
+freedataverification.com
+partners-gs.com
+protecca.com
+sellmakers.com
+tmupi.com
+
+# Reference: https://blogs.cisco.com/security/talos/upatre-ssl
+# Reference: https://otx.alienvault.com/indicator/ip/217.160.235.239
+# Reference: https://www.virustotal.com/gui/file/0116a687f1f10b70480274bd131bc98214686db234654fd0d0abb52903d54207/detection
+
+alvarezsantos.com
+cabezasdealambre.eu
+constanzana.eu
+donjimeno.eu
+giraldocrespo.com
+gonde13.com
+hbanela.com
+hermanosalvarez.com
+hitachimriservice.com
+hodramoua.org
+host2fast.ro
+howtodealwith-depression.com
+imoveisemribeiraopretosp.com.br
+kuboimpresion3d.com
+mariacantalapiedra.com
+masd-10.com
+missoluciones.es
+piszolla.com
+
+# Reference: https://www.virustotal.com/gui/file/3dd419aeb4188df348524ec89da4e5b352ccb8f59c49d8d5654e52ffbbcee544/detection
+
+197.149.90.166:12202
+
+# Reference: https://www.virustotal.com/gui/file/bc88c7dd392c7eeebd099247153e2c37744005326a6c296b3324a0ecd7777b10/detection
+# Reference: https://www.virustotal.com/gui/file/d2a6a0f3663eca9ee1e0bfabad3b5f75e66c369493ade59df4c0413d92021ab3/detection
+
+188.120.194.101:13142
+
+# Reference: https://www.virustotal.com/gui/file/9770f2af593d209914f01f04a777abbc3ea4e38430de16dbfe6c8d94aab3e2f3/detection
+
+38.65.142.12:12559
+
+# Reference: https://www.virustotal.com/gui/file/3272701a231964a5025985380daca6dfd25ca2343db330fddf77337c420b7c46/detection
+
+38.65.142.12:12557
+
+# Reference: https://app.any.run/tasks/5cd1f1cc-8c98-484a-bd7c-cf259bd2f954/
+
+114.215.174.118:4437
+
+# Reference: https://www.virustotal.com/gui/file/1f8c957ab634dde7b792ef80327766808d0984498b51fd0dfb6e5d8cb30558fb/detection
+
+cd.inf3rn0.com
+cd.niex.cc
+wikiseo.tech
+wikiseo.space
+
+# Reference: https://www.virustotal.com/gui/file/2504b299450d5f83132b06ac63d134aa421ebf1c4003a4cab0bb011b0df8bc42/detection
+
+cry-havok.org
+maitikio.com
+
+# Reference: https://www.virustotal.com/gui/file/20723f6b95d5baa1ec4c4fe88be1bf1a39986de5644427780e43ecf3ad6ad4c5/detection
+
+bulkbacklinks.com
+
+# Reference: https://blog.talosintelligence.com/2021/09/threat-roundup-0903-0910.html (# Win.Dropper.Upatre-9891078-1)
+
+allblockchainsolutions.xyz
+foxyinternetdownloadmanager.com
+manager4youdrivers.ru
+marisana.xyz
+payments-online.xyz
+qwertys.info
+watira.xyz
+wfsdragon.ru
+
+# Reference: https://www.virustotal.com/gui/file/01e4d1b415ed9f84051e265ab59a1c7440be3952aa55a993d2832a04409206ea/detection
+
+traderstruthrevealed.com
+
+# Reference: https://www.virustotal.com/gui/domain/emrlogistics.com/relations
+
+emrlogistics.com
+
+# Reference: https://www.virustotal.com/gui/file/c69e1b61019545f412511264ad95921ead6ec31af7013b16eac7222a2b53a8f4/detection
+
+meribhiwebsite.com
+ozonemicrosystems.com
+
+# Reference: https://www.virustotal.com/gui/file/008c078451fb88e52591c82af15e1d8dda0165341ab2ca431c7eacb38f717844/detection
+
+mokulgroup.com
+wayzatabaycharters.com
+/2010out.osa
+
+# Reference: https://blog.talosintelligence.com/2022/03/threat-roundup-0311-0318.html (# Win.Downloader.Upatre-9941263-0)
+
+dcmsservices.com
+
+# Reference: http://blog.talosintelligence.com/2022/04/threat-roundup-0408-0415.html (# Win.Packed.Upatre-9942982-0)
+
+abaseenexpress.com
+chinasemservice.com
+
+# Reference: https://blog.talosintelligence.com/2022/05/threat-roundup-0429-0506.html (# Win.Malware.Upatre-9948887-0)
+
+advancehomesbd.com
+directcanadaei.com
+
+# Reference: https://www.virustotal.com/gui/file/0d7ac33cf6fb2e073b14f7cad14b6c5004ce4a7d11249d489ba07d8e8c1357ed/detection
+
+/tz.gxout.com
+
+# Reference: https://www.virustotal.com/gui/file/b9bb1f9f4a64fc4261c2dafe932d89c2e34bf3ed47e8052799e55accd92806ed/detection
+
+http://45.201.214.25
+http://45.201.214.59
+45.201.214.25:86
+45.201.214.45:8080
+45.201.214.59:86
+
+# Reference: https://www.virustotal.com/gui/file/c06374cf5325babbb57e4ac95e48607cbb121c60844b4ea2f88a6fc07f93e99f/detection
+
+nishantmultistate.com
+
+# Generic
+
+/monuk11/analyst0-2d1671/
+/analyst0-2d1671/
+/images/monuk11.png
+/Plugin/Connecter?a=

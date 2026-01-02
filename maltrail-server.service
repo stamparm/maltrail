@@ -1,0 +1,16 @@
+[Unit]
+Description=Maltrail. Server of malicious traffic detection system
+Documentation=https://github.com/stamparm/maltrail#readme
+Documentation=https://github.com/stamparm/maltrail/wiki
+Requires=network.target
+Before=maltrail-sensor.service
+After=network-online.target
+
+[Service]
+User=root
+WorkingDirectory=/opt/maltrail/
+ExecStart=/usr/bin/python3 server.py
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target

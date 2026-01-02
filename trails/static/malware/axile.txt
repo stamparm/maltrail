@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: axile stealer
+
+# Reference: https://twitter.com/suyog41/status/1734227876604784777
+# Reference: https://www.virustotal.com/gui/file/f8e9d94e5981b3a7edba88e679334f213707e30e9d612317c71ce03e10a4a516/detection
+
+axile.su
+
+# Reference: https://twitter.com/banthisguy9349/status/1735615575680811075
+
+http://91.142.74.67
+91.142.74.67:443

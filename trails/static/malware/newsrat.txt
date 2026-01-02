@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/suyog41/status/1694238749688049738
+# Reference: https://www.virustotal.com/gui/file/f04a424cef63ed60e7db28cc87728832b5331c22b04d8dac22fe1278ca742e38/detection
+# Reference: https://www.virustotal.com/gui/file/defe09698ccd67a50252a0e963654a1990f5b318f08a35e5ba1e539fcdc0e411/detection
+# Reference: https://www.virustotal.com/gui/file/e6deb7fd15eac9d62a5cfc319891eb1494075d7768f97a2c2c38ccba30618cb1/detection
+# Reference: https://www.virustotal.com/gui/file/3819de4c3ab20848c67907b2454229137f0fe9109f3c8b12843b4d9afc92a0dc/detection
+# Reference: https://www.virustotal.com/gui/file/23aef3c468ef4cec6fa7a41d79ad48631f90161c095616a9f7507db8b6350bc6/detection
+
+52.53.74.111:19440
+54.219.247.190:19440
+nkstoreads.com

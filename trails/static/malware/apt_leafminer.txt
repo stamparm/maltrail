@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/blogs/threat-intelligence/leafminer-espionage-middle-east
+
+adobe-flash.us
+adobe-plugin.bid
+ilhost.in
+iqhost.us
+microsoft-office-free-templates.in
+microsoft-office-free-templates-download.btc-int.in
+offiice365.us

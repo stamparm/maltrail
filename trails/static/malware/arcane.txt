@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/x42x5a/status/1115980225127571456
+
+arcane.es3n.in
+
+# Reference: https://twitter.com/ViriBack/status/1156910654885978113
+
+arc.h-s.site
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, Arcane)
+# Reference: https://fidelissecurity.com/threatgeek/threat-intelligence/arcane-stealer-v/
+
+sw1.k1.com.ua
+/arcane/login.php
+/arcane/recv.php
+
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-23, Arcane)
+
+f0402687.xsph.ru

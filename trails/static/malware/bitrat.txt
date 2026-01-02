@@ -1,0 +1,1245 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://krabsonsecurity.com/2020/08/22/bitrat-the-latest-in-copy-pasted-malware-by-incompetent-developers/
+
+unknownposdhmyrm.onion
+
+# Reference: https://twitter.com/InQuest/status/1306629050052509698
+# Reference: https://twitter.com/James_inthe_box/status/1306632726594740228
+
+212.8.246.213:4858
+a2204a0w.beget.tech
+
+# Reference: https://twitter.com/James_inthe_box/status/1312131470119510017
+# Reference: https://www.virustotal.com/gui/file/ba318072fe85e168c5fd55a30760ac306f75fa76c2d5ec40533b0505cda1c26d/detection
+
+193.239.147.16:4561
+
+# Reference: https://www.virustotal.com/gui/file/1309f6fa224d2fd53c8fd1399fdb06cc602c80456650fcac7a99ff972ef33fa9/detection
+
+193.239.147.16:5995
+
+# Reference: https://app.any.run/tasks/33316cee-cc80-4b93-afa1-a7d986787900/
+
+86.105.252.202:1337
+
+# Reference: https://app.any.run/tasks/cb155241-20d8-4544-b8fb-bc094c6b4a41/
+
+185.244.128.7:9944
+
+# Reference: https://app.any.run/tasks/698342fb-4581-496e-bcef-d372de715556/
+
+62.173.149.200:1488
+
+# Reference: https://twitter.com/wwp96/status/1328339029021118465
+# Reference: https://app.any.run/tasks/27a07edd-459f-47d7-895b-30be0fa69ccb/
+# Reference: https://app.any.run/tasks/ecc90db0-667c-4848-a3a7-42763f7de0bd/
+
+79.134.225.14:8070
+nexty.dnsupdate.info
+
+# Reference: https://twitter.com/wwp96/status/1336838211008667651
+# Reference: https://app.any.run/tasks/53b96245-a143-47f7-bd16-764eb7ff6c6c/
+
+http://192.236.195.143
+192.236.195.143:44220
+
+# Reference: https://app.any.run/tasks/716bb70e-5d69-4d95-a090-8b9fd091ff46/
+
+5.9.86.48:4559
+watchmovie.world
+
+# Reference: https://twitter.com/reecdeep/status/1345411411829260289
+# Reference: https://twitter.com/James_inthe_box/status/1345428580499509248
+# Reference: https://app.any.run/tasks/73fc7745-00d6-4ad3-839a-0b615a9143c0/
+# Reference: https://www.virustotal.com/gui/file/f5d02bf8a1a6612e21e2165e2008c66347e60436a43b3bf7cae2edc323f50d44/detection
+
+45.15.143.195:5366
+kabuto.tk
+
+# Reference: https://twitter.com/executemalware/status/1348826729176059905
+# Reference: https://pastebin.com/riNucR5r
+
+45.15.143.216:5210
+
+# Reference: https://app.any.run/tasks/76f62a1a-a1b5-468c-bb08-132270b8736d/
+
+185.239.242.74:5505
+
+# Reference: https://app.any.run/tasks/adcf19e2-10b0-41c7-a224-409b3ed01c53/
+
+76.6.213.195:1337
+iceyrattedyou.ddns.net
+
+# Reference: https://app.any.run/tasks/d192b25d-d66f-4860-a80a-25b618431c27/
+
+51.81.241.89:8331
+
+# Reference: https://twitter.com/James_inthe_box/status/1366773490112630786
+# Reference: https://app.any.run/tasks/0974f171-7f1d-4086-a33e-0907f343d2fb/
+
+192.227.217.243:5060
+bitmama.ddns.net
+
+# Reference: https://twitter.com/wwp96/status/1366840097719652359
+# Reference: https://app.any.run/tasks/c56eff7f-f8c5-4c54-9ca4-4365650c380f/
+
+185.118.164.167:2442
+ps5gaming.ddns.net
+
+# Reference: https://app.any.run/tasks/031a6166-c9bd-4c62-bab7-de2f9ea03cc1/
+
+51.195.57.232:4480
+bbtratlopaspm21.net
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1367780791711858689
+# Reference: https://app.any.run/tasks/21ba270a-dc77-4c47-a62f-3f646a72b75f/
+
+192.129.178.226:8080
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1369611654800044033
+
+allplainbartatibotr.com
+
+# Reference: https://www.virustotal.com/gui/file/e2acc1548804137b072871cac70133b33fc2c81906c0b5454eb3ca721b2487ef/detection
+# Reference: https://www.virustotal.com/gui/file/102a1c8cb0870145e85fb2ef39e407559b9ee06cf493b1a1c0a8b3cafa154060/detection
+# Reference: https://www.virustotal.com/gui/file/e3cb90b326221bd741b7d25101723686645d3cee8a15e2e2aa70cc08f5a7932f/detection
+
+105.112.108.188:4567
+185.244.30.156:4567
+79.134.225.13:4567
+primo1.hopto.org
+
+# Reference: https://twitter.com/Circuitous__/status/1395078617709826052
+# Reference: https://twitter.com/ffforward/status/1395083197776646146
+# Reference: https://tria.ge/210519-lwckr1nhex/behavioral1
+
+37.153.1.10:9001
+5.9.29.183:9002
+92.38.163.191:9001
+94.130.246.106:9001
+cajyn27ifx3cmmfj.com
+et5bjiyeg33jmp.com
+itzdfcc.com
+lwbgzobn3.com
+nazwe6jz.com
+spvnm.com
+xegkrcp52yyadqby4jxta.com
+
+# Reference: https://twitter.com/StopMalvertisin/status/1396136539520786432
+# Reference: https://tria.ge/210522-96v87ajff6/behavioral1
+# Reference: https://www.virustotal.com/gui/file/1c63ebb7a2f131b8f7a79c14dde26f4bedcc30409c780057e08b193ccbdf4e7c/detection
+
+193.169.254.216:6464
+
+# Reference: https://app.any.run/tasks/746e2df0-b32c-46e8-b119-bb9050c4b252/
+
+79.134.225.75:7739
+
+# Reference: https://twitter.com/reecdeep/status/1400481387258552326
+# Reference: https://www.virustotal.com/gui/file/960908cfb5d254bac4b09f16688589ec62197ba1372f8bb06915b6db03ccf437/detection
+
+79.142.76.244:43147
+0b1.duckdns.org
+
+# Reference: https://twitter.com/phage_nz/status/1402796421691056130
+# Reference: https://tria.ge/210610-tvq26cva56
+
+45.133.1.212:50855
+faithheals.duckdns.org
+
+# Reference: https://twitter.com/James_inthe_box/status/1408506126157504515
+# Reference: https://app.any.run/tasks/95bb54c8-f98f-4063-ac8b-9cb392a4c831/
+
+20.98.18.253:2222
+resereved.nerdpol.ovh
+
+# Reference: https://twitter.com/pollo290987/status/1411593842160189440
+# Reference: https://www.virustotal.com/gui/file/827db97b1bc0843a4098668d4571804efdcc68a9047b0df4963bf0d1262dfe7e/detection
+
+192.121.245.14:9088
+publiquilla.linkpc.net
+
+# Reference: https://gist.github.com/silence-is-best/ac1440dcf7aec90a53905ae86559e621
+# Reference: https://www.virustotal.com/gui/file/18b96a50da281d031e2ce58c2143a9c1bf4868c710bbcc61b7d147038b449e2b/detection
+
+191.101.130.145:2880
+eewe.ddns.net
+
+# Reference: https://twitter.com/Racco42/status/1422325067577495552
+# Reference: https://app.any.run/tasks/33ed2642-b879-4507-a0c2-66136fde62ae/
+
+20.194.35.6:7904
+
+# Reference: https://twitter.com/b3ard3dav3ng3r/status/1445892714965340167
+
+redlabelvacation.com
+
+# Reference: https://twitter.com/tosscoinwitcher/status/1484599260108574722
+# Reference: https://twitter.com/James_inthe_box/status/1484606522667663362
+# Reference: https://www.virustotal.com/gui/file/61f2d36c819dbbdc6d78cb574b399788fedc0b74b253144a3421f3363f7716d9/detection
+
+bitranew3500.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/55afaccb3c05610eefaa5cbe314c9809d38a0665cfbe12ae7e30f6e0be9f1493/detection
+
+5.39.217.241:7500
+privatemicrosoft.ddns.net
+
+# Reference: https://github.com/pr0xylife/nworm/blob/main/nworm_10.02.2022.txt
+
+hvnctoday.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/0e0e32d97744830242368a28d0d6031818d690e865849dd4eddda23ece80ac01/detection
+# Reference: https://www.virustotal.com/gui/file/794bcfb84b20f5e74a85d54aa222cc580600a7a6f9ee90ad667989ee1f2f13a5/detection
+
+3.139.82.211:9050
+79.134.225.79:9050
+learnatallcost2.ddns.net
+xcloudfiled.serveirc.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2022-02-09%20BitRAT%20IOCs
+
+bitratnew9100.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/5f4bd8751b7f69a3c41de37b2ffdb32a4434c4c9af179211f7047b18cfd34302/detection
+
+136.175.200.54:8090
+
+# Reference: https://twitter.com/tosscoinwitcher/status/1494045089449975808
+# Reference: https://twitter.com/James_inthe_box/status/1494051152312233985
+# Reference: https://www.virustotal.com/gui/file/a3164dd898dcd6458275e739d3e05383e831d80b30f30c07cdc0eac7c4189ff7/detection
+
+verifiedrisky.duckdns.org
+
+# Reference: https://twitter.com/peterkruse/status/1494056302330404874
+
+bitpeople.duckdns.org
+fourgenerationbit.duckdns.org
+jointbitandstrig.duckdns.org
+newmanes.duckdns.org
+page1bit.duckdns.org
+whelenjs.duckdns.org
+wsnan2js.duckdns.org
+yakbitpeople.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/3ab1f343f5fde1980fdb3735cff794d025fc2f9814fbf7cb0bdb64c1030ca621/detection
+
+103.73.64.115:9700
+spotlessbeautydivine0722.nerdpol.ovh
+
+# Reference: https://twitter.com/c_APT_ure/status/1503777711898206211
+
+185.213.155.164:55140
+toopdyno2.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/9a54f6643e51b0d853270b541259cdbe937867cc6774cfe01c81c3cbbde6d3bd/detection
+
+5.254.30.26:1177
+dr875782.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/9d23dc18603087f549b815ee1f6961fb7a64311d936d0821ace690f11e1bab72/detection
+
+212.192.241.252:9264
+guemzovhdf.ratkings.net
+
+# Reference: https://www.virustotal.com/gui/file/f346cda71cf69d00c47867ee844a76729ff28ffd1375b6979a5aa1b1b3d7b626/detection
+
+212.192.241.50:9464
+vmaufhqzia.ratkings.net
+
+# Reference: https://www.virustotal.com/gui/file/f6175e31dfb760d4656d19bd3e3ba305f5b45db735ff12e99a3df7a8d6475f66/detection
+# Reference: https://www.virustotal.com/gui/file/f6175e31dfb760d4656d19bd3e3ba305f5b45db735ff12e99a3df7a8d6475f66/detection
+# Reference: https://www.virustotal.com/gui/file/c089132bfcb9452baec5075eb27b2570826bebf49d7afc59dfdb7ae87b5137e3/detection
+# Reference: https://www.virustotal.com/gui/file/ae5b0eab5769b53f1e200d8f78b9f9cf89917109a8d9af92197dcbda20dbba5b/detection
+# Reference: https://www.virustotal.com/gui/file/092fa70e35f528348dc884f505bb9e7c21b8d882f2200d1aec4bbf028f4d4b62/detection
+
+45.133.1.136:4873
+goxnaugeuvns.ratkings.net
+
+# Reference: https://www.virustotal.com/gui/file/79dfc139c47db4388bd5211adea4e189fd1b1d2202897320b277a9a4b32bbcf5/detection
+# Reference: https://www.virustotal.com/gui/file/9c241d5e281ea864900820ab6b3275141a9c8dddf49a71991c2f79a67205eee9/detection
+
+91.134.183.114:6930
+ovjaicyencbapr.ratkings.net
+
+# Reference: https://www.virustotal.com/gui/file/f346cda71cf69d00c47867ee844a76729ff28ffd1375b6979a5aa1b1b3d7b626/detection
+
+212.192.241.50:9464
+vmaufhqzia.ratkings.net
+
+# Reference: https://www.virustotal.com/gui/file/de6c971541126d3eb172fde067de88fc073e836399968a94f1fef3dcc4fd4a4c/detection
+
+136.144.41.129:9573
+gtceaolbutc.ratkings.net
+
+# Reference: https://www.virustotal.com/gui/file/d88c2ef2778e2cfa03ca27f59f1e6b67e86dccb3bf4a4c68436b66e3988cd8d8/detection
+
+195.133.40.167:9824
+vmolaihvlqivszey.ratkings.net
+
+# Reference: https://www.virustotal.com/gui/file/2d01db532167eebf691872391503f9a78db139e34310814e25498ae0637f93c2/detection
+
+37.0.11.164:9174
+vmoauhrqf.ratkings.net
+yqbzpqutnalf.ratkings.net
+
+# Reference: https://www.virustotal.com/gui/file/24a7122da520f5da0773a6a91277a7fecc23d55e49600e212777ddb480d53cc0/detection
+
+195.133.40.197:9581
+usnapqofbwk.ratkings.net
+
+# Reference: https://twitter.com/James_inthe_box/status/1511749376900624385
+# Reference: https://app.any.run/tasks/bd0eae1d-a5cd-4355-821d-60744feb7c6e/
+
+88.214.59.176:9200
+bitratnew9200.duckdns.org
+
+# Reference: https://twitter.com/pr0xylife/status/1522561274852302848
+# Reference: https://www.virustotal.com/gui/ip-address/194.147.140.17/relations
+
+194.147.140.17:9300
+bitrat9300.duckdns.org
+
+# Reference: https://blog.checkpoint.com/2022/05/10/a-german-car-attack-on-german-vehicle-businesses/
+# Reference: https://www.virustotal.com/gui/file/b2fab34e628b367bc6520abc456cbfc90c4b8ac8307ad87b91d3016c2bc479d1/detection
+# Reference: https://www.virustotal.com/gui/file/b740cf13ea8ab620eeb11eed8e4e9ca3123681818c8371829880318f83345c6c/detection
+
+86.107.21.237:57387
+pingsolex.duckdns.org
+bornagroup.ir/11d/
+bornagroup.ir/js/
+
+# Reference: https://www.virustotal.com/gui/file/122cd4f33d1e1b42ce0d959bc35e5d633b029f4869c5510624342b5cc5875c98/detection
+
+31.210.20.235:9870
+fantasticbeast.ddnsgeek.com
+
+# Reference: https://www.virustotal.com/gui/file/cb2e737c30449e86e13554939c36df07594c746510d2f04c18a0c1a519e92ab1/detection
+
+65.108.68.54:890
+maraipasoo.duckdns.org
+
+# Reference: https://twitter.com/tosscoinwitcher/status/1534604532218404865
+# Reference: https://tria.ge/220608-wjbelaeeb4
+
+20.106.79.78:2223
+oka.nerdpol.ovh
+
+# Reference: https://www.virustotal.com/gui/file/21e45f1ffe142084c79bb640f43a153d592b96af0be126ed0a940a8889bc251c/detection
+
+45.61.136.146:1234
+martinman99.hopto.org
+
+# Reference: https://github.com/0xToxin/Malware-IOCs/blob/main/Bitrat/Bitrat-%2027062022
+
+154.16.67.29:9400
+bitrat9400.duckdns.org
+
+# Reference: https://twitter.com/1ZRR4H/status/1549093200916258823
+
+181.141.0.128:1880
+iuhnkiuygbf.con-ip.com
+
+# Reference: https://github.com/0xToxin/Malware-IOCs/blob/main/Bitrat/Bitrat-%2019072022
+# Reference: https://tria.ge/220719-qtstqscdh2
+
+103.133.105.50:1234
+
+# Reference: https://twitter.com/AttackTrends/status/1553307387091623936
+
+186.169.80.56:9090
+
+# Reference: https://twitter.com/StopMalvertisin/status/1565568583597686784
+# Reference: https://www.virustotal.com/gui/ip-address/80.76.51.102/relations
+
+80.76.51.102:2005
+newbithere.duckdns.org
+
+# Reference: https://twitter.com/StopMalvertisin/status/1565572045534281728
+
+163.123.143.143:3569
+
+# Reference: https://twitter.com/pollo290987/status/1571907276839190572
+# Reference: https://www.virustotal.com/gui/file/3a18ac9245706d2eb1475b7bb627a03efec0463f524adc713d013c70537df5f1/detection
+
+181.141.1.33:1880
+vejnvieud.con-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/625849473746926fd45c8a714a8fd3074c764965db161403bf7eeaf7a23312d9/detection
+
+181.141.0.128:1880
+fvdvdcscvf.con-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/9015e5c60b8bd504c8fb6eff20e85f022ab7bdef3209c8743d328f23c864ec39/detection
+
+bendicion777.con-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/549231f34e28b90177ef7320d4117a912eee1e21f297dbda3d46e3f8e2460e56/detection
+
+191.88.250.98:1880
+diosdameabundancia.con-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/d9ed267f681db665c7a6bcb4c0ddc9c6b00da96dbbedbb4b8d33a7dd6cfe30c1/detection
+
+83.20.55.25:8222
+nhry9tg.giize.com
+
+# Reference: https://twitter.com/0xToxin/status/1584611253481533440
+
+154.16.67.29:9090
+194.5.98.21:9090
+bit9090.duckdns.org
+bitone9090.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/c2abff320bd2bb1dc6fb2ee158102776a1e49874b5db0e3dcb14e01f9dd8f358/detection
+
+194.31.98.182:5901
+bit.tocat.co
+
+# Reference: https://www.virustotal.com/gui/file/ce0e9806304449c8eeab1059717c26051c975b34ebad0eaf6091b61cf9f9ec8e/detection
+# Reference: https://www.virustotal.com/gui/file/483919bfc0da6d92481d70ca620e1ee0aebb3d81931d88a894ac32328e8808e8/detection
+
+20.12.20.153:2223
+20.150.203.158:2223
+davidmanne.casacam.net
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.bit_rat/
+# Reference: https://www.virustotal.com/gui/file/de846ac791561337ffff910b091bb8bc10e5897c1a4fb76e2f32e52a3451495c/detection
+
+http://185.127.19.10
+http://3.83.255.104
+http://8.208.102.114
+http://8.209.67.224
+101.99.94.203:1234
+103.125.190.185:1234
+103.133.110.241:3390
+103.140.250.132:9178
+103.145.254.223:5027
+103.151.123.132:3071
+103.151.125.18:1234
+103.153.183.127:897
+103.153.79.240:1234
+103.161.177.249:5506
+103.89.91.38:3390
+104.154.231.62:5050
+104.194.10.209:2222
+104.208.31.182:2222
+104.215.84.159:9090
+104.43.200.50:2222
+107.155.164.5:4898
+107.172.44.141:2030
+115.78.134.34:6606
+115.78.134.34:7707
+128.90.115.225:3490
+134.19.179.179:8973
+134.195.89.8:6666
+134.195.89.96:12321
+134.255.30.252:11115
+135.148.74.241:8080
+136.144.41.204:5506
+136.144.41.246:43360
+136.144.41.42:6703
+136.144.41.46:2222
+136.244.96.52:1234
+136.244.96.52:9898
+139.28.218.235:62316
+139.99.21.207:1900
+141.95.6.169:9404
+142.4.200.50:1234
+142.44.145.208:6060
+144.126.134.7:9090
+145.249.106.195:7355
+147.124.208.212:3389
+148.251.67.180:5505
+151.106.56.110:36000
+152.89.160.131:8973
+152.89.162.59:9090
+154.16.67.29:9300
+156.223.214.66:1234
+156.223.215.205:1234
+157.90.140.22:55060
+158.69.144.161:1234
+158.69.152.26:54329
+159.223.57.212:8471
+159.69.234.3:4041
+161.97.106.212:6655
+162.244.82.93:2222
+172.105.27.61:4898
+172.93.187.249:5433
+172.93.187.249:8765
+172.94.118.99:1117
+172.94.8.172:1117
+173.44.50.137:55500
+173.44.50.137:58881
+173.44.50.139:58440
+173.44.50.141:63753
+178.159.39.203:5552
+178.238.8.135:4898
+178.33.222.243:1238
+178.33.222.243:50855
+179.43.141.103:1234
+179.43.157.158:7777
+179.43.175.71:4444
+179.43.176.27:7777
+179.43.187.144:1111
+181.141.0.128:3005
+181.141.1.33:7777
+181.141.3.208:1880
+181.141.5.133:1880
+182.190.87.87:1555
+182.191.220.118:1555
+185.140.53.134:7565
+185.140.53.137:2331
+185.140.53.161:6600
+185.140.53.165:55441
+185.140.53.60:1234
+185.153.222.198:6471
+185.156.172.149:3988
+185.157.160.136:1975
+185.157.160.147:1975
+185.157.160.198:1975
+185.157.161.248:1975
+185.157.161.53:97
+185.157.162.119:57436
+185.157.162.75:443
+185.158.113.59:45324
+185.16.204.192:7777
+185.19.85.143:3050
+185.19.85.166:3050
+185.19.85.169:83
+185.19.85.176:3050
+185.19.85.181:3050
+185.202.175.36:5162
+185.205.210.40:1337
+185.206.144.26:5505
+185.215.113.102:1234
+185.244.26.233:1169
+185.244.30.143:31337
+185.244.30.19:1120
+185.244.30.28:4898
+185.244.36.230:1236
+185.246.220.122:1488
+185.29.11.26:443
+185.81.157.28:2030
+186.169.55.209:9090
+191.101.130.175:7663
+191.101.130.4:9090
+192.121.245.44:9088
+192.121.245.46:9082
+192.121.245.48:9083
+192.121.245.67:9096
+192.121.245.94:9082
+192.3.76.153:5200
+193.161.193.99:45642
+193.187.91.102:9090
+193.56.29.105:1982
+194.124.76.239:50354
+194.147.140.15:9200
+194.147.140.15:9300
+194.147.140.219:2405
+194.147.140.22:9400
+194.147.140.26:9300
+194.163.152.240:4898
+194.29.101.219:9700
+194.33.45.44:1414
+194.5.97.107:8921
+194.5.97.116:27629
+194.5.97.146:8850
+194.5.97.241:8921
+194.5.98.120:1234
+194.5.98.145:2405
+194.5.98.15:5162
+194.5.98.189:672
+194.5.98.207:672
+194.5.98.252:4400
+194.5.98.33:55441
+194.5.98.52:55441
+194.5.98.72:2405
+194.85.248.211:1337
+195.133.40.220:6992
+195.133.40.51:5867
+195.206.105.10:3988
+197.26.105.145:1234
+199.195.253.181:5200
+199.195.253.181:9700
+2.56.59.146:1234
+2.56.59.239:7355
+2.56.59.48:7355
+2.56.59.72:9264
+2.56.59.82:6992
+2.58.149.245:4012
+20.106.72.179:2222
+20.112.83.244:2222
+20.114.21.181:2222
+20.114.61.232:2222
+20.115.149.198:2222
+20.124.111.166:2223
+20.151.200.9:6606
+20.169.8.10:5877
+20.171.84.250:2288
+20.80.15.232:2222
+20.80.30.45:2222
+20.80.31.89:2222
+20.80.51.178:2222
+20.84.45.190:5877
+20.88.45.202:2222
+20.88.54.36:2222
+20.98.138.214:2288
+201.219.204.73:1882
+203.145.171.102:9999
+203.159.80.155:4444
+203.159.80.177:5025
+203.159.80.181:25914
+203.159.80.18:6841
+203.159.80.242:6805
+207.244.226.86:5633
+209.127.19.155:5200
+212.192.241.187:5520
+212.192.241.19:4898
+212.192.241.225:5215
+212.192.241.41:6841
+212.192.241.42:4488
+212.192.241.51:9173
+212.192.241.59:4898
+212.192.241.87:3678
+212.192.241.95:45001
+212.192.246.250:4480
+212.83.173.68:2576
+213.152.161.117:8973
+213.152.161.211:8973
+213.152.162.10:8973
+213.152.162.149:46525
+213.152.162.154:43763
+213.152.162.15:8973
+213.152.162.5:8973
+213.152.186.163:8973
+213.152.186.173:8973
+213.152.187.205:43413
+213.152.187.220:43763
+213.227.155.219:443
+216.108.228.52:1100
+217.138.212.57:54515
+217.64.149.101:1975
+217.64.149.93:1975
+217.64.151.123:65431
+23.105.131.195:49645
+23.105.171.80:33957
+23.146.242.85:1111
+23.19.227.243:5505
+23.19.227.243:8887
+23.84.180.96:5506
+3.21.21.95:6518
+31.210.20.187:43417
+31.210.20.236:4444
+31.210.21.114:1234
+31.210.21.21:43360
+31.220.44.253:28754
+31.7.63.14:38294
+34.121.150.14:4542
+37.0.10.19:5678
+37.0.10.252:4444
+37.0.10.62:6992
+37.0.10.63:6236
+37.0.10.6:6620
+37.0.11.177:4444
+37.0.11.183:4444
+37.0.11.212:4444
+37.0.11.221:4444
+37.0.11.99:6620
+37.0.14.212:55441
+37.0.8.108:8080
+37.120.152.157:3039
+37.120.234.40:1234
+4.236.162.205:2288
+40.88.44.226:2223
+41.102.231.123:300
+41.102.33.8:300
+41.102.8.156:300
+41.216.183.61:8973
+41.225.216.176:1234
+41.225.46.176:1234
+41.227.43.76:1234
+41.232.215.20:1440
+41.36.83.211:1440
+45.133.1.179:442
+45.133.1.54:43417
+45.135.165.63:817
+45.137.22.189:7744
+45.137.22.58:1780
+45.139.105.147:1234
+45.139.236.5:1234
+45.144.225.107:43360
+45.144.225.109:6036
+45.15.143.171:5506
+45.153.241.244:5506
+45.61.137.250:4898
+45.76.189.89:5555
+45.85.90.235:4300
+46.105.77.230:5200
+47.87.239.56:312
+5.181.234.150:9090
+5.189.188.138:4898
+5.206.224.224:3361
+5.230.84.38:2222
+5.253.84.122:4898
+51.195.108.215:4899
+51.222.69.215:8320
+51.81.241.82:1738
+51.89.194.152:7777
+52.151.235.140:2222
+52.188.19.78:9090
+52.252.234.34:2222
+62.197.136.15:5103
+62.210.55.136:3566
+64.44.135.174:105
+65.108.23.97:1234
+66.94.108.214:6655
+72.11.137.166:55050
+73.138.124.217:8808
+74.124.24.29:2225
+74.201.28.127:9070
+74.201.28.32:5506
+77.247.127.37:1777
+79.134.225.103:443
+79.134.225.103:6443
+79.134.225.103:8443
+79.134.225.14:12121
+79.134.225.29:2331
+79.134.225.70:50855
+79.134.225.71:3050
+79.134.225.7:2331
+79.134.225.90:4898
+79.134.225.9:2349
+79.137.109.121:50855
+79.137.206.203:7777
+79.18.45.237:1900
+79.44.6.111:1900
+8.208.27.150:4550
+80.209.229.141:4898
+81.31.197.143:1234
+82.102.23.139:55888
+83.25.236.230:8222
+84.252.95.54:1234
+84.252.95.55:1234
+84.38.129.103:43413
+84.38.129.115:43147
+84.38.129.118:43413
+88.214.56.192:2021
+88.214.59.176:9100
+88.99.219.185:4041
+89.246.100.9:8700
+89.248.173.187:5506
+91.109.178.2:25874
+91.109.178.8:4777
+91.109.180.8:25874
+91.109.186.4:25874
+91.109.188.3:25874
+91.109.190.4:25874
+91.109.190.9:25874
+91.134.183.121:4500
+91.192.10.70:63803
+91.193.75.135:47582
+94.26.90.47:2030
+95.141.215.167:9009
+95.217.123.103:1234
+art92sh.com
+bitr8637.duckdns.org
+doctorsbit.duckdns.org
+dorimebit.duckdns.org
+leaflet304.casacam.net
+mjam8948.duckdns.org
+noimagebit.duckdns.org
+zopp.nerdpol.ovh
+
+# Reference: https://twitter.com/r3dbU7z/status/1597228559608651776
+# Reference: https://www.virustotal.com/gui/file/e600b012427e134b3289c2b2875eba4d93f75f88246f811ec5e55a38e29561b1/detection
+
+185.65.134.182:58690
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2022-11-29%20BitRAT%20IOCs
+
+20.29.116.28:5877
+winery.nsupdate.info
+
+# Reference: https://twitter.com/wwp96/status/1628880611900370952
+# Reference: https://app.any.run/tasks/26a5f039-2b79-4c89-a7b4-78063c9570de/
+
+181.141.0.128:1880
+mbappeohalaan.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/38bb0013914337fb7c5b008df846d33b12ce8e64fc331e472709bab2ec896e61/detection
+
+194.5.98.57:55441
+trotox.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/fe8bab89eac98c439b430b9aab940a7026508a588d7c8abc55f01e3f8cb5d315/detection
+
+40.82.152.253:1337
+
+# Reference: https://www.virustotal.com/gui/file/f10d43cfd07a986f1f3c75eb7c90af7e1d841530709f8dcac64bfbfcb53ec736/detection
+
+2.58.149.23:3071
+54.87.130.189:3071
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.bit_rat/ (# 2023-08-05)
+
+104.223.91.190:1234
+199.127.60.151:8889
+45.81.39.62:7011
+47.87.136.103:400
+62.210.11.126:9024
+wefriendsright.xyz
+aaaxxx60.hopto.org
+rproxy.wefriendsright.xyz
+
+# Reference: https://www.virustotal.com/gui/file/128965b0fad5d21ae6bea49cf624fde094b7eb836cab72e69ad3e145800bca4e/detection
+
+bit100.accesscam.org
+
+# Reference: https://www.virustotal.com/gui/file/5334f8f8e40c60116207f4cf9ec1d84496b655719e1bd7eac894e5d7c5e97f21/detection
+
+172.105.27.61:3246
+172.105.27.61:4898
+5.189.188.138:3246
+5.189.188.138:4898
+bot.banker-info.org
+userverify00009999.me
+dia.userverify00009999.me
+
+# Reference: https://github.com/Gi7w0rm/MalwareConfigLists/blob/main/BitRat/bitrat_c2s_found_2020_to_2023.txt
+
+http://91.243.32.131
+103.178.236.86:443
+104.144.69.100:8080
+109.237.110.136:6656
+109.248.150.119:443
+142.11.195.250:18164
+145.239.202.9:4598
+152.89.162.38:65529
+152.89.162.41:63940
+159.69.247.120:1234
+172.111.134.17:4898
+178.20.40.235:7777
+179.43.140.164:1234
+179.43.140.170:8048
+185.157.161.104:65312
+185.157.161.136:443
+185.157.161.205:1975
+185.157.162.100:58181
+185.157.162.107:4783
+185.157.162.126:443
+185.157.162.234:54262
+185.174.40.147:5200
+185.203.116.147:8080
+185.225.75.68:3569
+185.239.242.149:5552
+185.239.242.237:63582
+185.239.242.244:4845
+185.244.30.105:6660
+185.244.30.195:3324
+185.58.92.227:5354
+185.58.95.125:4500
+185.7.214.8:4884
+192.253.229.215:5877
+193.142.146.202:1234
+193.239.147.53:50494
+193.239.147.77:6505
+194.147.140.104:10101
+2.56.212.226:1995
+2.56.212.226:443
+2.56.213.183:1234
+2.56.57.68:3678
+207.32.219.70:1877
+208.67.104.96:1234
+212.193.30.54:3680
+213.227.154.159:6517
+217.64.149.183:1973
+217.8.117.165:591
+217.8.117.165:8090
+217.8.117.165:8888
+220.247.167.232:5000
+23.105.131.186:8787
+23.105.131.186:9000
+23.105.131.195:4898
+23.105.131.209:7777
+23.239.28.245:4898
+31.220.4.216:9622
+37.0.11.155:4670
+37.120.208.46:1973
+37.120.212.229:49269
+37.120.212.229:53003
+37.139.128.233:3569
+37.46.150.134:8899
+45.144.225.32:1234
+45.144.225.3:3333
+45.83.89.148:5567
+45.95.168.128:23202
+5.181.234.150:60519
+51.178.13.102:5541
+74.201.28.92:3569
+77.247.127.39:44912
+79.134.225.101:3460
+79.134.225.38:4897
+79.134.225.40:9208
+79.134.225.52:4898
+79.134.225.69:1973
+79.134.225.93:4898
+79.134.225.99:4898
+82.129.66.137:2222
+86.61.77.167:1133
+87.78.165.108:25625
+89.163.140.102:1234
+89.248.173.187:4898
+91.151.89.242:3434
+91.193.75.209:1122
+93.115.20.35:443
+1120bitratjan.duckdns.org
+234sfdf.duckdns.org
+2361.zapto.org
+3igfjainmt55y3my7smiftw7s7nz4oxa5hgqwqkbebww4onunmcyoiid.onion
+4napo6g3cp6av4hmxmwzi5lyojpfk3i2kl2tpssb2wvidqsa3kzo6eyd.onion
+5fah5s7ryyaifbfj63jhnbr3vdtcbmigmfd4hbnkta76k2bpv5pzzhad.onion
+67djysypkc42peusgs6cyabxmzammvflzqeqm6qzkpvw65jd6isc6gyd.onion
+6rmm37to6q6idiryu6uqdoygib6j7dab2asqmzn3ezbqj2b53sdaipqd.onion
+adanmsi92.duckdns.org
+agences.ddns.net
+ahcsecurity.ddns.net
+akata123.duckdns.org
+akatabit1915.duckdns.org
+apk.theworkpc.com
+arroyosantiago098.duckdns.org
+asdfh76.duckdns.org
+asedft223.duckdns.org
+asfdfr33.duckdns.org
+b3efnprozuwv675pte5b5oorbflwxsoeujbsojtnrrfbbpwfvlpdhvyd.onion
+bboy-hacks91.ddns.net
+bendecidobendiciones.con-ip.com
+bendicioneees.con-ip.com
+bendiciones2.con-ip.com
+bendiciones5.con-ip.com
+bendicionespatoelmundo.con-ip.com
+benditodios.con-ip.com
+bilt.shipnotifica.com
+biret.linkpc.net
+bit747.duckdns.org
+bita.plumfixa.com
+bitbros.kozow.com
+bitm01071.duckdns.org
+bitnewcav.duckdns.org
+bitrat6060.duckdns.org
+bitrat7090.duckdns.org
+bitratluckshinjisix130.freeddns.org
+bitratt.ndnet2.org
+bless.con-ip.com
+breswew.duckdns.org
+cabalfenix.ddns.net
+carlaangaritape1.con-ip.com
+carmenariasu283.duckdns.org
+carreor.ddns.net
+cbbotf.hopto.org
+ckjruifbnswdcy.con-ip.com
+cloudframehost.ddnsgeek.com
+cluluvsu-34807.portmap.host
+cmwuchisaa.con-ip.com
+con.microgent.ru
+connect.holix.de
+connection.accesscam.org
+coows4drmxtsbjfj47tkoiguo2lzozkvw3sd47tcyv2zsgk6ysrcprid.onion
+counteract.duckdns.org
+covid1987.ddns.net
+covid66758.ddns.net
+crueysaderf.con-ip.com
+deafqefwqeg.duckdns.org
+dfeefrtythg.duckdns.org
+dffhdgjdggfgf.duckdns.org
+diosesfiel.con-ip.com
+djgfhyjtrgfv.duckdns.org
+dominoduck2108.duckdns.org
+drfcjug.duckdns.org
+eichelberger.duckdns.org
+ejuejehth.con-ip.com
+elensias.duckdns.org
+engr101.gotdns.ch
+etjfhyjgjdtrjdsr.duckdns.org
+ewmkjdfvkp7fnlx43r4oykku2fgmrrhcr6ulpmndnsnwck2hiyvazlad.onion
+executivemoney.ddns.net
+ezispice.duckdns.org
+fbdndfntr.duckdns.org
+fdbefdhu.duckdns.org
+fdshfiwebfc.duckdns.org
+fghhjuyg.duckdns.org
+fhethdfhfdh.duckdns.org
+fhijnfdvjdsd.duckdns.org
+foxtrap96.duckdns.org
+frameworkscan.ddns.net
+fshdshsegsgsg.duckdns.org
+fwucbuhdbcuh.con-ip.com
+gentlemanhost.ddnsgeek.com
+gfeqqgeag.duckdns.org
+gh9st.mywire.org
+godfavor.duckdns.org
+gopnik.hopto.org
+grtgrnmwljenf.con-ip.com
+gumerez.xyz
+haxor123.ddns.net
+hneufvwouve.con-ip.com
+homeplace.kozow.com
+honeypotsep.duckdns.org
+houseofc.duckdns.org
+htdjdgcjgd.duckdns.org
+htmlbit.duckdns.org
+hypervisor.access.ly
+idegasbre.ddns.net
+imvpkvmuf6ogks2sieg4whs46zeoieyewpk2bnh6wh72mi45utbirtyd.onion
+itisnicedaytodie.duckdns.org
+jairoandresotalvarorend.linkpc.net
+jamjamp22-45642.portmap.host
+jegebit.duckdns.org
+jehovaesmipastor.con-ip.com
+johnbolton009.duckdns.org
+katsun3.tw
+kimonda700.duckdns.org
+kjhegxechiassewleatp3wbjyo7jqm2yhhofutzuvd2sem3pnd5hscad.onion
+kosueo.theworkpc.com
+kot-pandora.duckdns.org
+lapoire5.hopto.org
+linksphere.duckdns.org
+lkuygjg.duckdns.org
+logonapplication.ddns.net
+marcete.duckdns.org
+markemoney.con-ip.com
+mcowduciush.duckdns.org
+microupdate.securitytactics.com
+millonesdebendiones.con-ip.com
+minecraftserver682.ddns.net
+monedisssxv.duckdns.org
+moneymaker.con-ip.com
+moonli.ddnsking.com
+n7dua2r7ev3r6fsisszycs7fvy4a36epnfje5s7lz5eiduoxetqg55ad.onion
+ncjnifhuifd.con-ip.com
+nd4xk3pjdrzutcrgnkee64xusx67kzeesew6sdav3rev4xqmwla55jad.onion
+netflix32.duckdns.org
+newbitpeople.duckdns.org
+newrome01.servequake.com
+ngheonhungbuon24.ddns.net
+nvwourhebv.con-ip.com
+odbwdl2cbgqrpxsrf74earyfrchj4zmierwspqgvjaqsqk24vprmsbqd.onion
+otx66i7lyk5mdfdu55a7v2qkcsq2apyjferoizgzw5yblmf74uvkrkqd.onion
+pedroleonta822.con-ip.com
+pradeepprabhu705.hopto.org
+privatelayer.ddnsgeek.com
+queentaline.ddns.net
+r26hzsxsgtf7uhxalcwrufskghyueq35juekcvt3zetfiip7uec476yd.onion
+racksbit.duckdns.org
+reallyweirdshowcase.duckdns.org
+redddhattt.ddns.net
+regidis.mooo.com
+remford.ddnsking.com
+reyhrwwet4y.duckdns.org
+reyhrwwet4y.duckdns.org 
+rfrehdfbss.duckdns.org
+rmbazjpmjebkre6rzgtreih64a2sshn2ehcyygaid7qo4oir6z6sityd.onion
+rxbwrzmdaw27pt7lrrhophwwlcyuqkw3n2dhpr5gu5bjh3ut2ot2mwid.onion
+sangredecristo.con-ip.com
+sddvniduchdj.con-ip.com
+sef7qgz77oamhl5gimls62lekmig5ormf6dcgftblhaxt2cn7emkbuid.onion
+serese.duckdns.org
+serverpsmhosting.ddnsgeek.com
+sfbvwvwsev.duckdns.org
+sh1673009.duckdns.org
+shdtjdtjf.duckdns.org
+sheet.duckdns.org
+shftjsesed.duckdns.org
+shiestybitrat.dvrlists.com
+snkno.duckdns.org
+solex-feb.duckdns.org
+spicywonder.duckdns.org
+srijvnsriuvsnv.duckdns.org
+szdvdsdsgvds.duckdns.org
+tcki6mrrcnrt33qy52viv7m64y6hepkv646nnzglrkbgytyt6b2hdrid.onion
+techz.duckdns.org
+thedreamteam.ddns.net
+todatmonsye.duckdns.org
+trixhosting.ddnsgeek.com
+troopdyno.duckdns.org
+troopn.duckdns.org
+turbotaxbitgroup.duckdns.org
+under101.duckdns.org
+utfghjhkyut.duckdns.org
+uwegcujwhbc.con-ip.com
+v13cracker.ddns.me
+venomin2.ddns.net
+venomzilla07.ddns.net
+verouvhisbdwdc.con-ip.com
+vhsivhyugve.duckdns.org
+wer89.duckdns.org
+windows.theworkpc.com
+windowsnonbooterminernet.8h.re
+winwin76997708nk.awsmppl.com
+wwww.ddnsgeek.com
+xcosgate.ddns.net
+xdjnibkfm366vswudhfwb5gaihqxkxvov7q6gv3fqcm3bw46b5rydsqd.onion
+xf4qc3736xwdf6i2uucgpesiyak27mavpa6f23hzwq5gso2j435gobyd.onion
+xwm.dynuddns.com
+yosire.duckdns.org
+zeunc5eb7ccgvaz5fxhqzgycrlsilnezv42wytlf6alvcfghlhhy27qd.onion
+zwlknt25w6fs6ffnkllvutcepgp7mz6dsndkbki4l2fr27rnk7o4b7yd.onion
+
+# Reference: https://threatfox.abuse.ch/ioc/1165760/
+
+2.56.212.66:443
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.bit_rat/ (# 2023-10-19)
+
+123.206.29.183:1234
+147.78.241.56:313
+167.235.26.247:9300
+179.43.142.55:1995
+185.157.162.241:1302
+185.31.111.198:25001
+193.42.32.25:1234
+194.147.140.172:9300
+195.201.242.216:443
+2.59.254.205:2022
+2.59.254.205:9005
+2.59.254.206:2022
+2.59.254.206:9005
+20.25.180.188:8889
+213.142.151.240:8181
+46.175.146.21:9300
+5.181.7.60:4831
+91.92.244.240:1234
+95.217.41.220:443
+bitnow7005.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/0bb0f435520df613a503125417be1b89a5bde3b65ca19e47ccc691fbe57b2b87/detection
+# Reference: https://www.virustotal.com/gui/file/09a70564723d4a33bb06b1ad49c656f3b4ff32bc50af5fdd08bf3f1f70735bdb/detection
+
+73.138.124.217:1605
+73.138.124.217:8808
+adata.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/076c7c52331a749837109758009152d0ff98e5198e96776c659ab0673ad902ef/detection
+
+20.106.72.179:2222
+20.88.45.202:2222
+
+# Reference: https://www.virustotal.com/gui/file/0c602e272eae731e7b179b0e5a695b9fbe25b4191f34e3c70f81abfaac3a87f1/detection
+
+20.98.2.6:2222
+
+# Reference: https://www.virustotal.com/gui/file/a7a9b76da30d023bb6d2b3e75eccb0229f0d0bf9626fecd9fb8570144270cb0f/detection
+
+191.91.180.70:5020
+montessaul512.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/c0fdaa3363e1d5a564ddcc39dfa9e38fa832acfd728c5a1b1e6a9cd7a5147ba9/detection
+
+185.140.53.171:8717
+
+# Reference: https://www.virustotal.com/gui/file/f6631cb0b90dad50436e54e1626d6684bb4188a451dd1168e72df5ca67583af7/detection
+
+http://94.242.61.211
+103.153.182.247:6161
+94.242.61.211:443
+
+# Reference: https://www.esentire.com/blog/fake-browser-updates-delivering-bitrat-and-lumma-stealer
+
+77.221.151.31:4444
+
+# Reference: https://x.com/IronNetTR/status/1800965373338190138
+
+159.100.13.218:8889
+178.236.247.210:8080
+45.207.52.74:8080
+46.226.163.38:8080
+51.195.145.87:8092
+77.221.151.31:4444
+77.91.101.145:443
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.bit_rat/ (# 2024-08-10)
+
+http://116.122.95.74
+http://193.233.132.136
+103.153.182.89:1234
+106.69.2.59:6637
+109.70.236.80:53166
+111.90.158.139:1234
+136.144.41.26:4444
+139.28.219.45:443
+139.28.219.47:64576
+158.58.168.61:1337
+162.33.178.83:6969
+173.44.50.140:4550
+178.20.40.235:5555
+185.140.53.55:5506
+185.244.36.230:1240
+185.250.148.54:4898
+193.233.132.136:4404
+194.33.45.3:4898
+194.5.98.113:1234
+194.5.98.46:1180
+202.182.106.243:12341
+204.77.8.221:5506
+213.152.162.15:53525
+23.105.131.193:100
+23.105.131.220:4898
+23.105.131.237:1734
+27.124.20.145:8082
+47.75.99.242:1234
+51.89.205.208:5506
+65.21.3.192:1234
+79.134.225.73:19099
+87.98.177.182:3131
+93.115.35.146:9887
+94.237.49.140:2222
+95.252.122.216:1900
+7ix5nfolcp4ta4mk2dtihev73rw7d2edpbd5tp7sf7zgmpv66fpxnwqd.onion
+7sbl4dpbubwjjghdquwg47fyq7rookd4bgm2ypm2kjzkivd7tomvczqd.onion
+bkc56e3jgy5zlfq7ialxyppztuh4dgranlyauupid4uc2ze5hg2cshqd.onion
+cm3thejmzhlxpvowsv2dk4ybpovmoaqal7o7gqirhgvj24l4ww7w7zid.onion
+lvyowbbwycqoqwjmpmnpfyhzdcvxthuuabmcsocjamvzfgwzdat5wwid.onion
+nwgj3ux4huyfgbrwj5i2uwbxdu2ddd33eqrpq44dwooaoqo4ntmpc6qd.onion
+obqdy2u226qjiavs42z4z6zgcf6tefsoxaqzjvohmoy7kafdwgqgjkqd.onion
+uccqm6p3b2uqka6elyimvq7hiancgmhymprzgrxd6i6u3ovwentsolqd.onion
+vbd3hiruwgcquiwrhpvaxann2ieo3tw3iznqlrp2z6mqyaonh4rswjqd.onion
+amazonservices.onthewifi.com
+atdf.ddns.net
+best.supportredirect.net
+bitrat.nsupdate.info
+bitratfanboy2-45086.portmap.io
+bitrtdollars.itsaol.com
+blackid-51579.portmap.host
+dopeonlineforwarding.xyz
+dreamz.duckdns.org
+elevenpaths.cc
+encrypted-channel.duckdns.org
+felixgodis.ddns.net
+godcheatfn.ddns.net
+gotti.ddnsgeek.com
+hailisbetter.ddns.net
+hopyboss.com
+hureseyd.top
+imen.ddns.net
+jocker02.linkpc.net
+madehamozza.ddns.net
+mfocuz.com
+mianoffice221.kozow.com
+mybtrpub.dynuddns.com
+nig.jalenscoonwog.info
+omeno.duckdns.org
+onlyforbit.blogdns.net
+paintedkitty.duckdns.org
+postal-23.ioomoo.xyz
+pvstub.ddns.net
+vslt.info
+yatzufn.ddns.net
+
+# Generic
+
+/step_1.php?hwid=
+/step_2.php?hwid=
+/hwid_update.php?hwid_old=
+/client/clientcreate.php?hwid=

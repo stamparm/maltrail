@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: worldtracker stealer
+
+# Reference: https://x.com/suyog41/status/1818925664281805300
+# Reference: https://www.virustotal.com/gui/file/e2203e4c9f38b1749b1de44b142ce1c985c22bd61f45e13d514a9660bbd05da3/detection
+
+carpinterosdealuminio.com.uy/_include/css/fancybox/worldtracker.php
+
+# Generic
+
+/_include/css/fancybox/worldtracker.php

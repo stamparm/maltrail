@@ -1,0 +1,123 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: silence
+
+# Reference: https://twitter.com/ViriBack/status/1589011959487565824
+# Reference: https://www.virustotal.com/gui/ip-address/88.214.27.100/relations
+# Reference: https://www.virustotal.com/gui/file/b95a764820e918f42b664f3c9a96141e2d7d7d228da0edf151617fabdd9166cf/detection
+
+hiperfdhaus.com
+
+# Reference: https://twitter.com/ViriBack/status/1598662271026298880
+# Reference: https://app.any.run/tasks/a2a9baa2-8a17-40a2-bae7-175894bb4061/
+# Reference: https://www.virustotal.com/gui/file/80b9c5ec798e7bbd71bbdfffab11653f36a7a30e51de3a72c5213eafe65965d9/detection
+# Reference: https://www.virustotal.com/gui/file/5cc8c9f2c9cee543ebac306951e30e63eff3ee103c62dadcd2ce43ef68bc7487/detection
+
+jirostrogud.com
+
+# Reference: https://blog.talosintelligence.com/breaking-the-silence-recent-truebot-activity/
+# Reference: https://www.virustotal.com/gui/file/5cc8c9f2c9cee543ebac306951e30e63eff3ee103c62dadcd2ce43ef68bc7487/detection
+# Reference: https://www.virustotal.com/gui/file/80b9c5ec798e7bbd71bbdfffab11653f36a7a30e51de3a72c5213eafe65965d9/detection
+
+http://88.214.27.100
+http://88.214.27.101
+gbpooolfhbrb.com
+tddshht.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/92.118.36.213/relations
+# Reference: https://www.virustotal.com/gui/file/ff8c8c8bfba5f2ba2f8003255949678df209dbff95e16f2f3c338cfa0fd1b885/detection
+
+qweastradoc.com
+
+# Reference: https://www.virustotal.com/gui/file/b803db527f146f0d356700e24836a2e888f74c3dd2196a99f73caa0e57007f34/detection
+
+droogggdhfhf.com
+
+# Reference: https://twitter.com/josh_penny/status/1644772861758906368
+# Reference: https://www.virustotal.com/gui/ip-address/45.182.189.228/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.182.189.229/relations
+# Reference: https://www.virustotal.com/gui/ip-address/81.19.135.61/detection
+# Reference: https://www.virustotal.com/gui/file/d5bbcaa0c3eeea17f12a5cc3dbcaffff423d00562acb694561841bcfe984a3b7/detection
+
+fuanshizmo.com
+guerdofest.com
+
+# Reference: https://www.huntress.com/blog/critical-vulnerabilities-in-papercut-print-management-software
+# Reference: https://otx.alienvault.com/pulse/6442b7e5b5d6799e3f13f7af
+
+anydeskupdate.com
+anydeskupdates.com
+netviewremote.com
+updateservicecenter.com
+windowcsupdates.com
+windowservicecemter.com
+windowservicecenter.com
+upd488.windowservicecemter.com
+
+# Reference: https://threatbook.io/domain/dremmfyttrred.com
+
+dremmfyttrred.com
+
+# Reference: https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-131a
+# Reference: https://otx.alienvault.com/pulse/645e41ad40119c9b4d3e920e
+
+ber6vjyb.com
+decrypt.support
+
+# Reference: https://twitter.com/IronNetTR/status/1659224944662700032
+
+http://45.182.189.91
+http://45.227.253.100
+45.182.189.91:443
+
+# Reference: https://twitter.com/TLP_R3D/status/1659176453001363458
+
+http://46.161.40.92
+http://45.182.189.103
+http://45.182.189.118
+http://45.182.189.119
+46.161.40.92:443
+45.182.189.103:443
+45.182.189.118:443
+45.182.189.119:443
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1659623820750143500
+
+essadonio.com
+
+# Reference: https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-158a
+# Reference: https://otx.alienvault.com/pulse/648107945daaa56965c6b5f1
+
+connectzoomdownload.com
+zoom.voyage
+
+# Reference: https://thedfirreport.com/2023/06/12/a-truly-graceful-wipe-out/
+# Reference: https://otx.alienvault.com/pulse/64877fcf823431cc11354174
+
+ecorfan.org
+hrcbishtek.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.silence/ (# 2023-09-11)
+
+http://179.60.150.120
+http://193.29.13.157
+http://45.182.189.120
+http://45.182.189.200
+http://45.182.189.71
+http://46.161.40.128
+http://92.118.36.210
+http://92.118.36.252
+blocksdeer.com
+bluespiredice.com
+cdn-backdl.com
+dragonetzone.com
+files-gate.com
+listofword.com
+midnigthwaall.com
+nitutdra.com
+nomoresense.com
+revisionnumeer.com
+romidonionhhgtt.com
+ronoliffuion.com
+rprotecruuio.com

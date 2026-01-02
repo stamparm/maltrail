@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Skeeyah-CU/detailed-analysis.aspx
+
+agent.wizztrakys.com
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Skeeyah-BN/detailed-analysis.aspx
+
+down.hejie123.com
+wsxc123.cc
+y2.zsocms.net

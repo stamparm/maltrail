@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/JAMESWT_WT/status/1952729228975153388
+# Reference: https://app.any.run/tasks/6ecc79a1-a83f-4297-bc8c-bfb84e46d54d
+
+185.102.115.108:4000
+
+# Reference: https://www.virustotal.com/gui/file/d0edc4af81fa2f7ad6cef89068516eebd943db68b6023ba54736f836857326dc/detection
+# Reference: https://www.virustotal.com/gui/file/073bf29d57ae8fb0e40a2b036c0c258f4a26a33de72df154f8c936c3ec696bca/detection
+
+80.78.242.83:4000
+83.166.244.24:4000
+
+# Reference: https://x.com/biggie_linz/status/1953046156482683345
+# Reference: https://app.validin.com/detail?find=%F0%9F%91%A0%20SOSIHVNC%20Panel%20%F0%9F%91%A0&type=raw&ref_id=bc741ff6bec#tab=host_pairs (# 2025-08-06)
+
+http://155.94.155.132
+http://185.102.115.108
+http://80.78.242.83
+http://83.166.244.24
+http://83.217.208.72
+155.94.155.132:4000
+155.94.155.132:8000
+155.94.155.132:8001
+185.102.115.108:8000
+80.78.242.83:8000
+83.166.244.24:8000
+83.217.208.72:8000
+83.217.208.72:8001
+2pan.online
+2pan.ru

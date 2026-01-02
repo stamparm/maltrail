@@ -1,0 +1,119 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.jpcert.or.jp/2018/06/plead-downloader-used-by-blacktech.html
+
+panasocin.com
+totalpople.info
+yasonbin.info
+em.totalpople.info
+gstrap.jkub.com
+office.panasocin.com
+woc.yasonbin.info
+
+# Reference: https://www.welivesecurity.com/2018/07/09/certificates-stolen-taiwanese-tech-companies-plead-malware-campaign/
+
+amazon.panasocin.com
+office.panasocin.com
+okinawas.ssl443.org
+
+# Reference: https://otx.alienvault.com/pulse/5db0438c08e53c4d7931e3f4
+
+update.panasocin.com
+
+# Reference: https://twitter.com/8th_grey_owl/status/1262047338006065155
+
+harb.bbsindex.com
+
+# Reference: https://unit42.paloaltonetworks.com/bendybear-shellcode-blacktech/
+
+inkeslive.com
+rutentw.com
+web2008.rutentw.com
+wg1.inkeslive.com
+
+# Reference: https://twitter.com/BushidoToken/status/1446602218170376199
+# Reference: https://www.virustotal.com/gui/ip-address/45.32.61.175/relations
+# Reference: https://www.virustotal.com/gui/file/358bc9f08b34d9323bbca6eeb23f19ad38d51c98ac81dbf91ebd482921f67ca4/detection
+
+centosupdates.com
+centosupdate.dynamic-dns.net
+centrosupdate.proxydns.com
+ns1001.centosupdates.com
+systeminfo.centosupdates.com
+update.centosupdates.com
+updates.centosupdates.com
+
+# Reference: https://twitter.com/nahamike01/status/1467499135171710977
+# Reference: https://www.virustotal.com/gui/ip-address/103.195.150.181/relations
+# Reference: https://www.virustotal.com/gui/file/c2b23689ca1c57f7b7b0c2fd95bfef326d6a22c15089d35d31119b104978038b/detection
+# Reference: https://www.virustotal.com/gui/file/8c3df0e4d7ff0578d143785342a8033fb6e76ce9f61c2ea14c402f45a76ab118/detection
+
+centos.onthewifi.com
+redhatstate.hopto.org
+
+# Reference: https://twitter.com/nao_sec/status/1446277006690119681
+# Reference: https://insight-jp.nttsecurity.com/post/102h7vx/blacktechflagpro (Japanese)
+# Reference: https://www.virustotal.com/gui/ip-address/45.32.23.140/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.76.184.227/relations
+# Reference: https://www.virustotal.com/gui/file/54e6ea47eb04634d3e87fd7787e2136ccfbcc80ade34f246a12cf93bab527f6b/detection
+# Reference: https://www.virustotal.com/gui/file/ba27ae12e6f3c2c87fd2478072dfa2747d368a507c69cd90b653c9e707254a1d/detection
+# Reference: https://www.virustotal.com/gui/file/655ca39beb2413803af099879401e6d634942a169d2f57eb30f96154a78b2ad5/detection
+# Reference: https://www.virustotal.com/gui/file/e197c583f57e6c560b576278233e3ab050e38aa9424a5d95b172de66f9cfe970/detection
+# Reference: https://www.virustotal.com/gui/file/77680fb906476f0d84e15d5032f09108fdef8933bcad0b941c9f375fedd0b2c9/detection
+# Reference: https://www.virustotal.com/gui/file/e81255ff6e0ed937603748c1442ce9d6588decf6922537037cf3f1a7369a8876/detection
+
+http://107.191.61.40
+http://172.104.109.217
+http://139.162.87.180
+172.104.109.217:8080
+config.zapto.org
+macfee-update.serveftp.com
+microsoftonline.com.authorizeddns.net
+org.misecure.com
+/index.htmld?flag=
+/index.htmld?flagpro=
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.181.80.111/relations
+
+centos1.chinabrands.xyz
+centos2.chinabrands.xyz
+
+# Reference: https://x.com/TuringAlex/status/1827706865259843983
+# Reference: https://www.virustotal.com/gui/ip-address/111.253.195.162/relations
+# Reference: https://www.virustotal.com/gui/ip-address/111.253.211.105/relations
+# Reference: https://www.virustotal.com/gui/file/1e1e4500b5102b130dcc6bc2ca5feffd8c9f3426ad4b596543b84fc1edb09f5f/detection
+
+activate.linkblackclover.com
+
+# Reference: https://x.com/malwrhunterteam/status/1893295404575297665
+# Reference: https://x.com/G60930953/status/1895820902400737444
+# Reference: https://dmpdump.github.io/posts/Kivars/
+# Reference: https://app.validin.com/detail?find=212.115.54.194&type=ip4&ref_id=fd9bbd3c264#tab=resolutions (# 2025-03-01)
+# Reference: https://www.virustotal.com/gui/file/0931feef56951022c1559db77e5f01191a208ffb06f0a6f77597ba17b722de03/detection
+# Reference: https://www.virustotal.com/gui/file/1286aa5c73cf2c8058c52271869a5727d71ca5bd4dd0854be970d2a25cb52bf8/detection
+
+212.115.54.194:443
+adobeupdate.serveusers.com
+evergo.dnset.com
+fibtec.jkub.com
+herace.https443.org
+idonotknow.lflinkup.com
+idonotknow.lflinkup.net
+idonotknow.serveusers.com
+linuxhome.jkub.com
+securitycenter.kozow.com
+
+# Reference: https://x.com/mopisec/status/1982643509812498846
+# Reference: https://www.virustotal.com/gui/ip-address/122.116.205.124/relations
+# Reference: https://www.virustotal.com/gui/file/a653ae9e9906c0e5a5b5ba6330e10c9bb6b42e71abd6e80198eaa1386ea03cfb/detection
+# Reference: https://www.virustotal.com/gui/file/da500cacff75e224bd8ed0375463c7c7004a8b2f7c2dee4a21ea24cba938f09a/detection
+
+122.116.205.124:443
+61.216.119.56:443
+223.200.120.73:443
+fortinetline.com
+microsoftvm.net
+csp.fortinetline.com
+portal.fortinetline.com
+portal.microsoftvm.net

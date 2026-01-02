@@ -1,0 +1,62 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mallox ransomware, targetcompany ransomware
+
+# Reference: https://twitter.com/siri_urz/status/1590993250537525249
+# Reference: https://www.virustotal.com/gui/file/34da973f1d154672b245f7a13e6268b4ffc88dea1ca608206b32759ec5be040c/detection
+# Reference: https://www.virustotal.com/gui/file/b03c87efe95bd53fed53a6b0a846104e98017453b9b77c812b6edfd42e8b16f0/detection
+# Reference: https://www.virustotal.com/gui/file/ee60c115e461f9eb7069164b671cf5d0af35d34121025267d38eca40215ef309/detection
+# Reference: https://www.virustotal.com/gui/file/a8b5f02592c40bc3f453fd155c5e88fbd69a6e1eaad1dae2b08aad4789b441d6/detection
+# Reference: https://www.virustotal.com/gui/file/6ac1b9b2313b59b905f39b4e0a50724b7c59b7e98ca35193f0437e3efd527a1c/detection
+
+http://193.106.191.141
+http://80.66.75.25
+http://80.66.75.27
+http://80.66.75.90
+http://80.66.75.98
+49.235.255.219:49871
+80.66.75.98:5552
+wtyafjyhwqrgo4a45wdvvwhen3cx4euie73qvlhkhvlrexljoyuklaad.onion
+
+# Reference: https://app.any.run/tasks/4b92f214-9d34-4528-8ea3-12ea56d18d40/
+
+http://80.66.75.37
+/a-Bdmkwzqec.bmp
+
+# Reference: https://twitter.com/James_inthe_box/status/1695130808900784131
+# Reference: https://app.any.run/tasks/8e54570c-963d-4ca3-a82f-98e6e1c495d3/
+
+http://91.215.85.142
+
+# Reference: https://twitter.com/1ZRR4H/status/1696961116490911898
+
+124.220.69.39:5040
+/zrzydata/
+
+# Reference: https://www.virustotal.com/gui/file/63a55286c370302d92a7ed5732267142a0035d9ee22c9c09f8228f688130170f/detection
+# Reference: https://www.virustotal.com/gui/file/c50af27f5a335aead068e65a14c9ae4140048f0785df9cfe7e80d6c276ddb0e9/detection
+
+gamemewsupdate.online
+raw.gamemewsupdate.online
+
+# Reference: https://www.virustotal.com/gui/file/7187d9ae5f724025ddac8faea3d058cfad7fe9749139c759a08be589eb15b584/detection
+
+gameupdate.site
+check.gameupdate.site
+
+# Reference: https://blog.sekoia.io/mallox-ransomware-affiliate-leverages-purecrypter-in-microsoft-sql-exploitation-campaigns/
+# Reference: https://github.com/SEKOIA-IO/Community/blob/main/IOCs/mallox/mallox_purecrypter_iocs_20240513.csv
+
+http://80.66.75.44
+http://80.66.76.251
+http://87.251.75.92
+
+# Reference: https://www.virustotal.com/gui/file/0427a9f68d2385f7d5ba9e9c8e5c7f1b6e829868ef0a8bc89b2f6dae2f2020c4/detection
+
+whyers.io
+
+# Generic
+
+/QWEwqdsvsf/ap.php
+/QWEwqdsvsf/

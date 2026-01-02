@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1509128921341734918
+# Reference: https://www.virustotal.com/gui/file/41e571339b44a1f4178a9506595ca15b0b38494bf77487f4243c815fd27b7516/detection
+
+103.145.87.248:82
+118.107.43.87:82
+lllroxzs.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1511047225606123530
+# Reference: https://www.virustotal.com/gui/file/9e9f5ada7d2471482efc8c5af8492a0e300801c7615ec042e4075f6704c6fb84/detection
+
+154.197.48.67:8080
+43.249.27.50:7316
+
+# Reference: https://twitter.com/Jirehlov/status/1518191609300455424
+# Reference: https://twitter.com/Arkbird_SOLG/status/1518313221219827712
+# Reference: https://www.virustotal.com/gui/file/8ff9a7248f52119053c9535df111eba4f0289cdb0f78b1cb6a0471ccee5c046c/detection
+
+206.233.128.31:7979
+42.202.98.11:808
+dachuan58.com
+7979.dachuan58.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1518885522747400194
+# Reference: https://app.any.run/tasks/59754779-5c4a-45e8-8a33-5abc936c1896/
+
+144.48.223.58:8080
+43.249.27.50:7316
+meiba88.com
+7316.meiba88.com

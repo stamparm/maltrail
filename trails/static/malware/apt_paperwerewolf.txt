@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: goffee
+
+# Reference: https://intezer.com/blog/tracing-a-paper-werewolf-campaign-through-ai-generated-decoys-and-excel-xlls/
+
+awalitalk.com
+easytrns.com
+fast-eda.my
+fastchessplay.com
+fungaros.com
+hakyru.com
+jantyroza.com
+ntpsync.online
+ruzede.com
+timealign.online
+timebits.online
+timecheck.site
+timefetch.online
+timeget.cloud
+timeget.online
+timemaster.site
+timematch.online
+timemirror.online
+timesync.cloud

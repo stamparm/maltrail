@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: hcrootkit, sutersu
+
+# Reference: https://www.welivesecurity.com/wp-content/uploads/2021/10/eset_fontonlake.pdf
+# Reference:https://www.lacework.com/blog/hcrootkit-sutersu-linux-rootkit-analysis/
+# Reference: https://otx.alienvault.com/pulse/616d81e373e59b8f75f96586
+# Reference: https://otx.alienvault.com/pulse/614d8aadc93405bd8c396125
+
+156.238.111.174:26657
+172.96.231.69:26657
+47.107.60.212:26657
+47.112.197.119:26657
+ekubhtlgnjndrmjbsqitdvvewcgzpacy.name
+esnoptdkkiirzewlpgmccbwuynvxjumf.name
+etzndtcvqvyxajpcgwkzsoweaubilflh.com
+hkxpqdtgsucylodaejmzmtnkpfvojabe.com
+nfcomizsdseqiomzqrxwvtprxbljkpgd.name
+pdjwebrfgdyzljmwtxcoyomapxtzchvn.com
+ruciplbrxwjscyhtapvlfskoqqgnxevw.name
+wcmbqxzeuopnvyfmhkstaretfciywdrl.name
+yhgrffndvzbtoilmundkmvbaxrjtqsew.com
+ywbgrcrupasdiqxknwgceatlnbvmezti.com
+hm2.yrnykx.com

@@ -1,0 +1,771 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: RADIOSTAR, VIDEOKILLER, HALFSHELL, UNC1151, Ghostwriter, Influence Activity, TA445, frostyneighbor, UAC-0057, UAC-0100, WhiteLynx, Storm-0257
+# CERT-UA: 4109, UAC-0057, UAC-0100
+
+# Reference: https://content.fireeye.com/web-assets/rpt-unc1151-ghostwriter-update
+# Reference: https://www.fireeye.com/blog/threat-research/2021/04/espionage-group-unc1151-likely-conducts-ghostwriter-influence-activity.html
+# Reference: https://otx.alienvault.com/pulse/6089a10aa27c23fdd4ee928e
+
+account-inbox.online
+accounts-inbox.ml
+accounts-telekom.online
+com-account.website
+credentials-telekom.online
+google-com.online
+inbox-admin.site
+interia-pl.site
+interia-pl.website
+login-inbox.online
+login-mail.online
+login-telekom.online
+login-verify.online
+logowanie-pl.site
+meta-ua.online
+net-account.online
+net-account.space
+net-accounts-mail.ru
+net-support.site
+net-verification.online
+net-verify.site
+net-verify.website
+no-replay-notification.ga
+onet-pl.online
+passport-yandex.ru
+ron-mil-pl.site
+ron-mil-pl.space
+ru-passport.online
+secured-auth.cf
+signin-telekom.online
+ua-agreements.online
+ua-login.site
+ua-passport.online
+ukroboronprom-com.site
+ukroboronprom.online
+verify-ua.online
+verify-ua.site
+wp-agreements.online
+wp-pl-potwierdz-dostep.site
+wp-pl.eu
+account.no-replay-notification.ga
+accounts-support.com-account.website
+accounts-support.net-account.space
+accounts-ukr.net-account.space
+accounts-ukr.net-verification.online
+accounts-verification.net-account.space
+acounts.net-verification.online
+api.passport-yandex.ru
+bezpieczenstwo.wp-pl.eu
+content.google-com.online
+csp.google-com.online
+dc-f87c0aa063b8.ron-mil-pl.space
+drive.google-com.online
+e.mail.ru.net-accounts-mail.ru
+facebook.com-account.website
+fc.google-com.online
+fonts.google-com.online
+gmx.net-account.online
+google.com-account.website
+i.ua-passport.online
+idsso.ukroboronprom-com.site
+konto.onet-pl.online
+mail.passport-yandex.ru
+mail.ru.net-accounts-mail.ru
+mail.secured-auth.cf
+microsoft.com-account.website
+net.ru-passport.online
+passport.inbox.lt.accounts-inbox.ml
+passport.inbox.lv.accounts-inbox.ml
+poczta.interia-pl.site
+poczta.ron-mil-pl.site
+poczta.ron-mil-pl.space
+poczta.wp-agreements.online
+poczta.wp-pl-potwierdz-dostep.site
+poczta.wp-pl.eu
+postmilgov.ua-login.site
+potwierdzenia.net-support.site
+potwierdzenie.wp-pl.eu
+ru.net-accounts-mail.ru
+shpsale.ukroboronprom.online
+verify.account-inbox.online
+verify.login-mail.online
+verify.login-telekom.online
+verify.signin-telekom.online
+vilni-ludi.ukroboronprom.online
+webmail.login-verify.online
+webmail.meta-ua.online
+yandex.ru-passport.online
+zashita.ukroboronprom.online
+
+# Reference: https://twitter.com/siedlmarpl/status/971593279224537088
+# Reference: https://www.hybrid-analysis.com/sample/fa48cd1fd8aab4a43e9ff1f7985c549040389036a03f9117f675d8737e1b34b5?environmentId=100
+# Reference: https://www.virustotal.com/gui/file/fa48cd1fd8aab4a43e9ff1f7985c549040389036a03f9117f675d8737e1b34b5/detection
+# Reference: https://github.com/stamparm/maltrail/pull/9325/commits/9feaaeddd717efdf2d6dab8b51d17cc5dd6157b6
+# Reference: https://www.fireeye.com/content/dam/fireeye-www/blog/pdfs/unc1151-ghostwriter-update-report.pdf
+
+88.99.104.179:1985
+88.99.132.118:1985
+
+# Reference: https://twitter.com/kyleehmke/status/1390243290826563591
+
+op-pl.site
+
+# Reference: https://twitter.com/kyleehmke/status/1390368185455677440
+
+verify-ua.space
+
+# Reference: https://twitter.com/kyleehmke/status/1392825232826802181
+
+com-validate.site
+com-verify.site
+
+# Reference: https://twitter.com/kyleehmke/status/1397746852213186561
+
+mil-secure.site
+
+# Reference: https://twitter.com/kyleehmke/status/1403278668445720579
+
+secure-firewall.site
+
+# Reference: https://twitter.com/James_inthe_box/status/1231247315672809473
+# Reference: https://www.virustotal.com/gui/file/3b701eac4e3a73aec109120c97102c17edf88a20d1883dd5eef6db60d52b8d92/detection
+# Reference: https://app.any.run/tasks/844d5358-bf5d-4a4a-89b2-d3bf06df79e3/
+# Reference: https://www.fireeye.com/content/dam/fireeye-www/blog/pdfs/unc1151-ghostwriter-update-report.pdf
+
+ggpht.ml
+socis.cf
+tk99.gq
+cloud-security.ggpht.ml
+
+# Reference: https://twitter.com/sekoia_io/status/1497239319295279106
+
+creditals-email.space
+meta-ua.space
+mil-gov.space
+mirrohost.space
+verify-email.space
+verify-mail.space
+
+# Reference: https://twitter.com/bread08/status/1497200607282798601
+
+bigmir.space
+ua-passport.space
+i.ua-passport.space
+id.bigmir.space
+
+# Reference: https://twitter.com/jaimeblascob/status/1497258705984835591
+
+akademia-mil.space
+authorization-inbox.site
+bigmir-net.site
+command-email.online
+konto-verify.space
+kontrola-poczty.space
+mirohost-creditals.space
+mirohost.site
+ron-mil.space
+sign-in-inbox.site
+sprawdzanie-konta.space
+ua-passport.site
+walidacja-poczty.space
+walidacja-uzytkownika.space
+walidacja-uzytkownika.website
+weryfikacja-konta.space
+weryfikacja-poczty.space
+weryfikacja-uzytkownika.website
+passport.command-email.online
+
+# Reference: https://twitter.com/Arkbird_SOLG/status/1497602147084644362
+# Reference: https://twitter.com/threatinsight/status/1497355737844133895
+# Reference: https://twitter.com/threatinsight/status/1497355994543779844
+# Reference: https://twitter.com/cybercdh/status/1497486233743863812
+# Reference: https://www.virustotal.com/gui/ip-address/84.32.188.80/relations
+# Reference: https://www.virustotal.com/gui/ip-address/84.32.188.141/relations
+# Reference: https://www.virustotal.com/gui/file/d7ce7d6de1aa23c9f54a11a84238ec07281745e4ba67ad1b548c71cc18158891/detection
+# Reference: https://www.virustotal.com/gui/file/31d765deae26fb5cb506635754c700c57f9bd0fc643a622dc0911c42bf93d18f/detection
+
+http://84.32.188.141
+http://84.32.188.96
+canada-deposit-gst.com
+canada-gst-deposit.com
+financial-gst-canada.com
+gst-canada-gov.com
+onlinereactivation-service.com
+wirelessequixtranscan247.com
+aplikacje.ron-mil.space
+
+# Reference: https://www.virustotal.com/gui/ip-address/208.91.197.91/relations
+
+croasian-connection.com
+demo009.space
+demo002.space
+demo006.space
+demo004.space
+demo008.space
+demo007.space
+demo005.space
+demo000.space
+demo001.space
+demo003.space
+emsun-mobile.online
+nowar44.site
+nowar66.site
+nowar22.site
+nowar88.site
+nowar00.site
+stopwar77.site
+stopwar55.site
+stopwar11.site
+stopwar33.site
+stopwar99.site
+ua-email.press
+us-news.online
+web-camera.live
+
+# Reference: https://community.riskiq.com/article/e3a7ceea/description
+# Reference: https://otx.alienvault.com/pulse/621cce4e2752128dbfe537ed
+
+creditals-mirohost.space
+kontrola-poczty.site
+mirohost.online
+mod-mil.online
+mod-mil.site
+secure-ua.space
+verification-email.space
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/asylum-ambuscade-state-actor-uses-compromised-private-ukrainian-military-emails
+# Reference: https://otx.alienvault.com/pulse/621f7303abae83b8f3814de0
+# Reference: https://www.virustotal.com/gui/file/de270380565fcf45aa6a18091fd75f0bbe22993ae6d7f225f1b088d06efe68d7/detection
+
+http://157.230.104.79
+http://45.61.137.231
+
+# Reference: https://cert.gov.ua/article/37626 (Ukrainian)
+# Reference: https://twitter.com/h2jazi/status/1500607147989684224
+# Reference: https://www.virustotal.com/gui/ip-address/185.175.158.27/relations
+# Reference: https://www.virustotal.com/gui/file/7f0511b09b1ab3a64c8827dd8af017acbf7d2688db31a5d98fea8a5029a89d56/detection
+
+185.175.158.27:8443
+xbeta.online
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1501197380225490949
+# Reference: https://app.any.run/tasks/4d96f03e-317e-498d-a9d7-e2d719a70b5b/
+# Reference: https://www.virustotal.com/gui/file/a7b7a7bfc7d0a41436596795bf7da8b9b9ed571e592b5b4770b70271d4fcadff/detection
+
+109.237.111.251:8880
+91.142.77.157:8880
+tvasahi.online
+
+# Reference: https://blog.google/threat-analysis-group/update-threat-landscape-ukraine/
+
+rambler-profile.site
+secure-ua.website
+ua-passport.top
+accounts.secure-ua.website
+i.ua-passport.top
+login.creditals-email.space
+post.mil-gov.space
+verify.rambler-profile.site
+
+# Reference: https://ti.qianxin.com/blog/articles/Analysis-of-attack-activities-of-suspected-aptorganization-unc1151-against-ukraine-and-other-countries/
+# Reference: https://otx.alienvault.com/pulse/622f3ca087e68a2746132fc8
+
+gov-ua.net
+vuxner.com
+
+# Reference: https://blog.google/threat-analysis-group/tracking-cyber-activity-eastern-europe/
+
+login-verify.top
+login-verification.top
+secure-ua.top
+ua-login.top
+
+# Reference: https://otx.alienvault.com/pulse/6272996039678903e0b73dd5
+
+accountsverify.top
+com-validation.top
+com-verification.top
+email-verify.top
+serure-email.online
+facebook.com-validation.top
+lt-facebook.com-verification.top
+lt-meta.com-verification.top
+lt-microsoftgroup.serure-email.online
+microsoftonline.email-verify.top
+noreply.accountsverify.top
+
+# Reference: https://cert.gov.ua/article/40263 (Ukrainian)
+# Reference: https://www.virustotal.com/gui/ip-address/159.65.18.143/relations
+
+ais-gos.top
+ao-opros.top
+awa-opros.top
+eti-opros.top
+eu-opros.top
+ev-gos.top
+ew-gos.top
+for-gos.top
+fori-opros.top
+jel-gos.top
+jo-opros.top
+tas-gos.top
+tense-gos.top
+tio-gos.top
+top-opros.top
+ui-opros.top
+uz-gos.top
+wers-gos.top
+wi-opros.top
+wm-gos.top
+world-opros.top
+ws-gos.top
+ye-gos.top
+yi-gos.top
+
+# Reference: https://cert.gov.ua/article/761668 (# UAC-0100)
+
+compensation-ukr.com
+compensations-ukrain.bar
+compensationukr.com
+europadonnaireland.org
+foundpomoshi.com
+helpzzfound.site
+kohhd.com
+peer-gos.top
+rivierafamily.com
+uacompensation.xyz
+pay.uacompensation.xyz
+
+# Reference: https://blog.google/threat-analysis-group/continued-cyber-activity-in-eastern-europe-observed-by-tag/
+
+com-pastas.top
+accounts-facebook.com-pastas.top
+accounts-gmail.com-pastas.top
+accounts-group.com-pastas.top
+
+# Reference: https://cert.pl/posts/2022/07/techniki-unc1151/
+
+interia.site
+kontrola-poczty.top
+safe-onet.online
+walidacja-konta.space
+walidacja-uzytkownika.space
+weryfikacja-uzytkownika.site
+weryfikacja-uzytkownika.top
+
+# Reference: https://www.virustotal.com/gui/ip-address/46.23.109.83/relations
+
+aff-gos.top
+all-ukraine.top
+alls-gos.top
+ams-gos.top
+aws-opros.top
+beez-gos.top
+bel-oprosov.top
+belaru-opros.top
+bell-gos.club
+besh-opros.top
+big-uah.club
+bild-gos.club
+bind-gos.cc
+biz-gos.top
+blic-opros.top
+boom-gos.club
+bui-gos.top
+cheap-gos.club
+chis-gos.top
+ci-uah.xyz
+compensatia.top
+del-gos.top
+dess-opros.top
+dopomog-uah.top
+dopomog-ukr.top
+ds-opros.top
+ever-gos.top
+fad-gos.top
+fam-gos.top
+farm-opros.top
+faw-opros.top
+fear-gos.top
+filial-ukr.top
+fiw-gos.top
+fuz-opros.top
+gen-gos.top
+gh-opros.top
+gigs-gos.top
+good-opros.top
+gos-kiev.top
+gov-ukraine.club
+green-gos.club
+ili-gos.top
+ind-gos.top
+inv-gos.top
+it-opros.top
+je-gos.top
+jez-ukr.top
+junior-gos.club
+kel-gos.top
+kog-opros.top
+kom-gos.top
+kon-opros.top
+kont-gos.top
+lin-gos.top
+los-gos.top
+nes-gos.top
+nis-opros.top
+nuo-gos.top
+offs-opros.top
+omp-gos.top
+payeurope.top
+payform.top
+paysys.top
+peer-gos.top
+pen-gos.top
+poland-survey.top
+pollsk-surv.top
+polsk-pay.top
+polsk-surv.top
+poslugi-online.top
+poslugi-ukr.top
+pro-gos.top
+promo-opros.top
+pub-gos.top
+rb-vopros.top
+rbi-opros.top
+rbj-survey.top
+rbq-opros.top
+rbs-opros.top
+rbt-opros.top
+ren-gos.top
+sio-gos.top
+state-uah.top
+subo-ukr.top
+ti-opros.top
+trust-gos.top
+turbo-gos.top
+ua-opros.top
+uah-sitez.top
+ukr-compens.top
+ukr-dopomog.top
+ukr-service.top
+ukr-siter.top
+ukr-uslugi.top
+uni-gos.top
+yes-uah.top
+zelensky-official.top
+
+# Reference: https://cert.gov.ua/article/1545776 (Ukrainian)
+
+chis-gos.top
+ec-compensation.xyz
+erinekenney.com
+hardingtwominuterule.com
+mygraphbook.com
+myua-compensations.xyz
+pro-gos.top
+tax-compensation.xyz
+tax-compenses.xyz
+ua-compens.top
+ua-compensation.top
+ua-compensations.xyz
+ua-compenses.top
+ua-taxes-compens.xyz
+uabayrakua.com
+uam-compensation.xyz
+uatax-compens.xyz
+uatax-compenses.xyz
+ukr-compens.xyz
+ukrainebayra.com
+edopomogaonline.yolasite.com
+korrespondentnet.webflow.io
+lnk.ukr-compens.xyz
+off.ukr-compens.xyz
+oon24opros.yolasite.com
+pay.ukr-compens.xyz
+uadop.webflow.io
+ukrainecenter.yolasite.com
+ukrahelpforall.ucraft.site
+
+# Reference: https://twitter.com/idclickthat/status/1567889191333158912
+
+big-uah.club
+gov-ukraine.club
+
+# Reference: https://github.com/prodaft/malware-ioc/tree/master/UNC1151
+
+account-login.top
+account-noreply.space
+account-passports.top
+accounts-gmail.com-check.online
+accounts-gmail.com-login.space
+accounts-login.top
+accounts-mail.site
+accounts-passport.top
+accounts-secure.com-firewall.online
+accounts-verify.space
+accounts.safe-mail.space
+accounts.secure-ua.site
+accounts.verify-email.space
+acount-pasport.site
+acount-passport.site
+bezpieczenstwo-danych.website
+bhwbehb.wecwe.com
+bokinteria.pl-kontrola-bezpieczenstwa.space
+bokinteria.weryfikacja-konta.pw
+com-firewall.online
+com-login.space
+com-verificate.top
+com-verification.online
+confirm.acount-pasport.site
+confirm.id-bigmir.site
+cookie-firewall.com-login.space
+dentyfikacja-uzytkownika.space
+departament-bezpieczenstwa.space
+dzial-bezpieczenstwa.space
+exprentis.com
+google.accounts.verify.no-reply.space
+google.com-firewall.online
+google.verifyprofiles.space
+group-rambler.site
+grupa-mailowa.weryfikacja-konta.link
+grupa-pocztowa.online
+i-ua.ml
+i-ua.space
+i.ua-login.top
+i.ua-passport.site
+iat.com.ua
+id-bigmir.site
+id-mail.site
+id.verify-mail.space
+identyfikacja-uzytkownika.link
+interia.pl-identyfikacja-uzytkownika.pw
+interia.poczta-mailowa.top
+interia.weryfikacja-poczty.space
+interia.weryfikacja-uzytkownika.site
+interii.konto-verify.space
+kemda.eu
+konto-onet.site
+konto.weryfikacja-uzytkownika.link
+konto.weryfikacja-uzytkownika.online
+konto.weryfikacja-uzytkownika.pw
+kontrola-bezpieczenstwa.link
+kontrola-bezpieczenstwa.pw
+kontrola-bezpieczenstwa.site
+kontrola-bezpieczenstwa.top
+kontrola-bezpieczenstwa.walidacja-uzytkownika.pw
+kontrola-konta.online
+kontrola-mailowa.top
+kontrola-poczty.link
+kontrola-poczty.pw
+krebas.lt
+kurioworld.cf
+login.meta-ua.top
+login.passport-verify.top
+login.verification-email.space
+login.verify-mail.space
+logowanie.identyfikacja-uzytkownika.link
+logowanie.kontrola-poczty.link
+mail-profiles.space
+mail.mil-gov.space
+meta-log.site
+meta-ua.top
+no-replay.space
+no-reply.accounts-verify.space
+no-reply.space
+no-reply.verifyprofiles.space
+okonto.kontrola-bezpieczenstwa.pw
+okonto.kontrola-poczty.pw
+passport-login.top
+passport-verify.top
+passport.i-ua.space
+passport.login-verify.top
+passport.meta-log.site
+passport.meta-ua.top
+passport.secure-ua.pw
+passport.secure-ua.space
+passportlogin.top
+pis.kontrola-bezpieczenstwa.site
+pl-identyfikacja-uzytkownika.pw
+pl-kontrola-bezpieczenstwa.space
+plklll.site
+poczta-mailowa.top
+poczta.bezpieczenstwo-danych.website
+poczta.departament-bezpieczenstwa.space
+poczta.identyfikacja-uzytkownika.space
+poczta.kontrola-bezpieczenstwa.link
+poczta.kontrola-bezpieczenstwa.top
+poczta.kontrola-konta.online
+poczta.kontrola-mailowa.top
+poczta.safe-onet.space
+poczta.sprawdzanie-zabezpieczen.space
+poczta.walidacja-konta.site
+poczta.walidacja-uzytkownika.pw
+poczta.weryfikacja-okonto.online
+poczta.weryfikacja-okonto.site
+poczta.wp-firewall.website
+pomoc.sprawdzanie-zabezpieczen.space
+pomoc.weryfikacja-okonto.online
+post.verify-mail.space
+potwierdzenie.konto-onet.site
+profiles-login.top
+rambler.account-noreply.space
+rtrrsfgsfg.site
+rwegfwfe.site
+safe-mail.space
+safe-onet.space
+sdfavavvvv.site
+secure-ua.pw
+secure-ua.site
+security.passportlogin.top
+service.kontrola-poczty.space
+sprawdzanie-zabezpieczen.space
+system-pocztowy.space
+system.walidacja-konta.link
+system.walidacja-konta.pw
+taysbb.ru
+ubsbha.ru
+ukr.account-login.top
+usluga.kontrola-poczty.top
+veirfy-ua.space
+verify.account-login.top
+verify.accounts-login.top
+verify.accounts-mail.site
+verify.accounts-passport.top
+verify.acount-passport.site
+verify.group-rambler.site
+verify.mail-profiles.space
+verify.no-replay.space
+verify.passport-login.top
+verify.passportlogin.top
+verify.profiles-login.top
+verifyprofiles.space
+walidacja-konta.link
+walidacja-konta.pw
+walidacja-konta.site
+walidacja-uzytkownika.pw
+weryfikacja-konta.link
+weryfikacja-konta.pw
+weryfikacja-okonto.online
+weryfikacja-okonto.site
+weryfikacja-uzytkownika.link
+weryfikacja-uzytkownika.online
+weryfikacja-uzytkownika.pw
+weryfikacja.system-pocztowy.space
+wirtualna.grupa-pocztowa.online
+wojskowa.akademia-mil.space
+wp-firewall.website
+
+# Reference: https://blog.google/threat-analysis-group/ukraine-remains-russias-biggest-cyber-focus-in-2023/
+# Reference: https://otx.alienvault.com/pulse/64403596d7a47d80451657c3
+
+meta-l.space
+passport-log.online
+passport-ua.site
+
+# Reference: https://cert.gov.ua/article/4905718 (Ukrainian)
+# Reference: https://www.virustotal.com/gui/file/35d1e819d2ac2535f0aa9e2294570135f37519386872c415e326146e931b8fb9/detection
+
+bourns.space
+yotsubasociety.website
+
+# Reference: https://blog.talosintelligence.com/malicious-campaigns-target-entities-in-ukraine-poland/
+# Reference: https://raw.githubusercontent.com/Cisco-Talos/IOCs/main/2023/07/malicious-campaigns-target-entities-in-ukraine-poland.txt
+# Reference: https://www.virustotal.com/gui/ip-address/94.131.108.109/relations
+
+carpetmarker.pw
+everything-everywhere.at.ply.gg
+frivol.space
+hssenglish.pw
+kebhana.site
+mingxing.pw
+sellmyhousequickly.website
+simplifymedia.pw
+wordrow.website
+wuzhenfestival.site
+
+# Reference: https://threatfox.abuse.ch/browse/tag/UNC1151/
+
+kurioworld.cf
+kurioworld.gq
+
+# Reference: https://twitter.com/StopMalvertisin/status/1697175561339306308
+# Reference: https://cert.gov.ua/article/5661411 (# UAC-0057)
+# Reference: https://app.validin.com/axon?type=dom&zone_filter=pw&limit=100000&find=ns1.gigaregister.com
+# Reference: https://www.virustotal.com/gui/ip-address/62.3.12.123/relations
+# Reference: https://www.virustotal.com/gui/file/f3d8c34443457d32de3c2687619037015e12bd2222c0e457e8c79fda2906d424/detection
+
+funwithme.pw
+officevibe.pw
+topibuzz.space
+windacarmelita.pw
+
+# Reference: https://cert.gov.ua/article/6280159
+# Reference: https://www.virustotal.com/gui/file/02d15669996853594424e5e7f957e12b2042b7775535bd2160953b4e84bb61cd/detection
+# Reference: https://www.virustotal.com/gui/file/2cde8de330a874020340f2110bd1fd013fab7e93ef884c9006a646b49b567a75/detection
+
+backstagemerch.shop
+empoweringparents.shop
+lauramcinerney.shop
+
+# Reference: https://x.com/BushidoToken/status/1816766449102225854
+# Reference: https://www.virustotal.com/gui/collection/2aa6b36a717be8bc49f7925434ca40f3ecb9f628414b491da3e985677508ca08/iocs
+
+bryndonovan.shop
+chaptercheats.shop
+clairedeco.shop
+connecticutchildrens.shop
+disneyfoodblog.shop
+eartheclipse.shop
+foampartyhats.shop
+ikitas.shop
+jackbenimblekids.shop
+kingarthurbaking.shop
+lansdownecentre.shop
+medicalnewstoday.shop
+moonlightmixes.shop
+penandthepad.shop
+petapixel.fun
+physio-pedia.shop
+semanticscholar.shop
+twisterplussize.shop
+utahsadventurefamily.shop
+weavesilk.space
+
+# Reference: https://www.sentinelone.com/labs/ghostwriter-new-campaign-targets-ukrainian-government-and-belarusian-opposition/
+
+americandeliriumsociety.shop
+cookingwithbooks.shop
+everythingandthedog.shop
+pigglywigglystores.shop
+sciencealert.shop
+
+# Reference: https://harfanglab.io/insidethelab/uac-0057-pressure-ukraine-poland/
+# Reference: https://github.com/HarfangLab/iocs/blob/main/TRR250801/trr250801_iocs.txt
+
+curseforge.icu
+kitchengardenseeds.icu
+medpagetoday.icu
+pesthacks.icu
+punandjokes.icu
+sweetgeorgiayarns.online
+taskandpurpose.icu
+
+# Reference: https://x.com/malwrhunterteam/status/1909235735850279070
+# Reference: https://x.com/malwrhunterteam/status/1909280553821741451
+# Reference: https://www.virustotal.com/gui/file/146df172a08f3b8bec4d5e2f3ac552af28ac2e17f682712f135e7c94c28263c8/detection
+
+rustyquill.top
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-12-08-White-Lynx-uses-CAPTCHA-macros.txt
+
+agelessinvesting.xyz
+
+# Generic
+
+/update/microsoft_corp
+/update/microsoft_corpsh
+/update/microsoft_corpshd
+/update/microsoft_crp
+/update/microsoft_crpn
+/win_update/upgrade

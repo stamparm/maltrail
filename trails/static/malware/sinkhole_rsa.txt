@@ -1,0 +1,42 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+notasinkhole.com
+
+# Reference: https://www.virustotal.com/en/ip-address/209.249.175.13/information/
+#            https://www.threatcrowd.org/ip.php?ip=209.249.175.13
+
+209.249.175.13
+
+# Reference: https://www.virustotal.com/en/ip-address/209.249.180.243/information/
+
+# Note: RSA Security
+
+209.249.180.243
+
+# Reference: https://www.virustotal.com/en/ip-address/209.249.180.246/information/
+
+209.249.180.246
+
+###
+
+haiyao.info
+
+# Reference: https://www.zoomeye.org/search?q=ip:128.199.76.241
+# Reference: https://www.virustotal.com/en/ip-address/128.199.76.241/information/
+
+# Note: haiyao.info and (dummy) "Hai Yao" can be found inside whois registrations or sinkhole responses
+
+128.199.76.241
+
+# Reference: https://www.zoomeye.org/search?q=ip:128.199.108.0
+
+128.199.108.0
+
+# Reference: https://censys.io/ipv4/198.199.105.129
+
+198.199.105.129
+
+# Reference: https://askdns.com/ip/67.205.153.100
+
+67.205.153.100

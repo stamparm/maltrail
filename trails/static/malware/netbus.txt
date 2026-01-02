@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://threatfox.abuse.ch/browse/tag/NetBus/
+
+115.110.249.115:12345
+14.1.57.196:12345
+14.1.57.196:20034
+193.2.67.75:12345
+193.2.67.75:20034

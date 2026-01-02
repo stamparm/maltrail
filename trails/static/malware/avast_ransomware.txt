@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: TargetCompany
+
+# Reference: https://twitter.com/th3_protoCOL/status/1503825505040023554
+# Reference: https://twitter.com/th3_protoCOL/status/1503827894707052550
+# Reference: https://twitter.com/petrovic082/status/1504009093220126722
+# Reference: https://app.any.run/tasks/c3cb8da8-0f92-49d9-8b7c-5c898e762364/
+# Reference: https://app.any.run/tasks/5bbe280d-4bf6-4526-bac6-04e8c84ad7fd/
+# Reference: https://www.virustotal.com/gui/file/0e2099222c6a42fc0071617d9a3920cf2e9bfd428051fbacae7182ceb980a528/detection
+
+http://91.243.44.142
+91.243.44.142:55333
+
+# Reference: https://twitter.com/th3_protoCOL/status/1505582658771857411
+# Reference: https://www.virustotal.com/gui/file/7c457febf39d9b68f8ef4657a69a95f92890b3cb39f5527f7fd11e38025a5cde/detection
+# Reference: https://www.virustotal.com/gui/file/d53b310a6bdffaab50ed38d99f0e97a0d13d5f3d91399d2483d1a404aaad4e5b/detection
+
+http://91.243.44.105
+91.243.44.105:2357

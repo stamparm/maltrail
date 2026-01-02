@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2014-030418-2633-99&tabid=2
+
+pizzachip.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1254674529311494144
+# Reference: https://www.virustotal.com/gui/file/17425e66428e284c2da73f3a7173e4291fb0b2bc76fd6d618921a9f0eb543340/detection
+
+iig143.000webhostapp.com/upload/

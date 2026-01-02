@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: casper stealer, HellsDaySecurity stealer
+
+# Reference: https://x.com/lontze7/status/1795721649427546592
+# Reference: https://x.com/karol_paciorek/status/1795800174620541331
+
+http://92.42.96.24
+hellsday.shop
+
+# Reference: https://x.com/banthisguy9349/status/1806610099474981095
+# Reference: https://x.com/banthisguy9349/status/1806633452130672810
+# Reference: https://www.virustotal.com/gui/file/b92411987bbf8329e7eab82321555a329c258921ed2b4d3e8755df2acf0785a9/detection
+# Reference: https://www.virustotal.com/gui/file/df3c84e2ca26eacdbc63bbb27935372451b2bfd8fd24504f09987def22e1c418/detection
+
+http://45.120.177.170
+http://92.42.96.16
+hellsday-client.shop
+lsrael.today
+casper.backlinker.pro
+
+# Reference: https://x.com/banthisguy9349/status/1807801253784621509
+
+dr-leads.com
+
+# Reference: https://x.com/DonPasci/status/1847251770826723338
+# Reference: https://x.com/banthisguy9349/status/1847259895046848564
+# Reference: https://app.any.run/tasks/7a9a0509-225a-411f-8a7d-fba316561f6d
+# Reference: https://urlscan.io/result/e510c593-3da8-4151-ae6b-da06a78194bc/
+
+http://82.115.223.194
+usdtpooldrop.com
+2c8b3f19-0325-4acc-a3dd-31a918e4dbf5.random.ironstarkkair.xyz

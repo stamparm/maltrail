@@ -1,0 +1,64 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://threatfox.abuse.ch/browse/tag/T34loader/
+
+193.233.18.157:443
+87.251.66.248:443
+cdn3-adb2.online
+cdn3-adb2.ru
+
+# Reference: https://threatfox.abuse.ch/browse/tag/T34loader/ (# 2024-01-17)
+
+http://116.202.214.113
+http://193.233.50.13
+http://194.110.247.198
+http://81.19.140.50
+http://95.216.37.49
+https://193.233.18.157
+https://45.86.86.197
+https://87.251.66.248
+https://94.103.188.147
+176.123.2.55:443
+185.84.163.105:443
+193.233.18.169:443
+193.233.203.153:443
+193.233.50.13:443
+213.232.235.210:443
+37.220.86.100:443
+37.220.86.73:443
+45.86.86.197:443
+81.19.140.204:443
+81.19.140.50:443
+85.239.34.8:443
+87.251.66.41:443
+88.151.192.34:443
+94.103.188.147:443
+95.216.37.49:443
+bl3mder3d.com
+cdn3-kit1.online
+cdn3.ru
+cloud5.5-systems.ru
+dev.5-systems.ru
+free-cdn.tech
+hel.syscare.sk
+node103.5-systems.ru
+vault.5-systems.ru
+
+# Generic
+
+/abd2wufkw/json.php
+/abd2wufkw/log.php
+/abd2wufkw/post.php
+/abd3wufkw/json.php
+/abd3wufkw/log.php
+/abd3wufkw/post.php
+/abd1wufkw/
+/abd2wufkw/
+/abd3wufkw/
+/abd4wufkw/
+/abd5wufkw/
+/abd6wufkw/
+/abd7wufkw/
+/abd8wufkw/
+/abd9wufkw/

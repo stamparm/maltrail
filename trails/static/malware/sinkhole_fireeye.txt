@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securitytrails.com/list/ns/ns1.sinkhole.systems
+# Reference: https://www.virustotal.com/gui/domain/fireeyeupdate.com/relations
+
+# Reference: https://www.virustotal.com/#/ip-address/50.116.17.41
+
+50.116.17.41
+
+# Reference: https://www.virustotal.com/#/ip-address/139.162.120.150
+
+139.162.120.150

@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1532649037777838080
+# Reference: https://tria.ge/220603-kw59yshghm/behavioral1
+
+43.134.208.19:7654
+
+# Reference: https://x.com/1ZRR4H/status/1944505298728702147
+# Reference: https://www.virustotal.com/gui/file/f9664abfa916ee4a7ad672159943a8848f7d9472c3355ac4750a12dfb903d3d7/detection
+# Reference: https://www.virustotal.com/gui/file/6ce0e2df1698a965627bd7afa2cf58a86cdb3cc691a150b0ad0e19eaa49c0481/detection
+# Reference: https://www.virustotal.com/gui/file/397daf7c35fe3ee2925f08e2308c44bb999cffe52b2f8c2cec316d0b16b5f30d/detection
+
+148.135.120.162:58443
+148.135.120.162:59443
+148.135.120.162:8443

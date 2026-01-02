@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/wwp96/status/1328082526582214658
+# Reference: https://twitter.com/luc4m/status/1340737667961679881
+# Reference: https://twitter.com/r3dbU7z/status/1342805793851248640
+# Reference: https://app.any.run/tasks/508dbeaf-a817-4162-b655-e6bfefe48ce2/
+# Reference: https://www.virustotal.com/gui/ip-address/45.140.88.145/relations
+# Reference: https://www.virustotal.com/gui/file/2f642efdf56b30c1909c44a65ec559e1643858aaea9d5f18926ee208ec6625ed/detection
+
+205.209.152.78:8000
+45.140.88.145:8000
+dfdfjkbcv.net
+profetestruec.net
+sjjjv.xyz
+winupdate.firewall-gateway.de

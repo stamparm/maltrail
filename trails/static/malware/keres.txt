@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/r3dbU7z/status/1813572166312759587
+# Reference: https://www.virustotal.com/gui/ip-address/212.232.22.121/relations
+# Reference: https://www.virustotal.com/gui/file/548414845ad569071e46fd3e53baa6f620d5bca23083dddbb33e0ef62f8227c4/detection
+
+appdownapp.com

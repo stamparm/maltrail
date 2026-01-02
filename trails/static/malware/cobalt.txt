@@ -1,0 +1,241 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2018/07/multiple-cobalt-personality-disorder.html
+
+api.outlook.kz
+api.fujitsu.org.kz
+api.asus.org.kz
+api.toshiba.org.kz
+api.miria.kz
+outlook.live.org.kz
+
+# Reference: https://securityaffairs.co/wordpress/75793/cyber-crime/cobalt-campaign-russia-romania.html
+
+apstore.info
+
+# Reference: https://www.group-ib.com/blog/renaissance
+
+kaspersky-security.com
+foxsecit.com
+ibm-notice.com
+spamhuas.com
+hoteltoren.com
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/new-modular-downloaders-fingerprint-systems-part-3-cobint
+
+ibfseed.com
+rietumu.me
+click-alfa.com
+activrt.com
+/xaczkajeieypiarll
+
+# Reference: https://www.zdnet.com/article/cobalt-threat-group-serves-up-spicyomelette-in-bank-attacks/
+
+/DOC2018.js
+
+# Reference: http://blog.morphisec.com/cobalt-gang-2.0
+
+e-dropbox.biz
+server.vestacp.kz
+
+# Reference: https://researchcenter.paloaltonetworks.com/2018/10/unit42-new-techniques-uncover-attribute-cobalt-gang-commodity-builders-infrastructure-revealed/
+
+alotile.biz
+fundsxe.com
+s3.sovereigncars.org.uk
+safesecurefiles.com
+document.cdn-one.biz
+mail.halcyonih.com
+transef.biz
+arubrabank.com
+outlook-368.com
+usasecurefiles.com
+safesecurefiles.com
+ms-server838.com
+msoffice-365.com
+total-share.biz
+bank-net.biz
+cdn-one.biz
+total-cloud.biz
+web-share.biz
+cloud-direct.biz
+n-document.biz
+my-documents.biz
+firstcloud.biz
+yourdocument.biz
+xstorage.biz
+safe-cloud.biz
+via24.biz
+zstorage.biz
+webclient1.biz
+bnet1.biz
+firstcloud.biz
+mycontent.biz
+total7.biz
+freecloud.biz
+contents.bz
+judgebin.bz
+
+# Reference: https://www.symantec.com/blogs/threat-intelligence/african-financial-attacks
+
+moneygram.servehttp.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1104730265442631680
+
+89.105.202.62:1080
+
+# Reference: https://twitter.com/ReaQta/status/1035512616121192448
+# Reference: https://reaqta.com/2018/03/spear-phishing-campaign-leveraging-msxsl/
+
+mail.hotmail.org.kz
+/owalanding/ajax.php
+
+# Reference: https://twitter.com/VK_Intel/status/1112981694846586880
+
+http://89.105.198.28/updates.rss
+http://89.105.198.28/command.php
+http://89.105.198.28/submit.php
+
+# Reference: https://twitter.com/vxsh4d0w/status/1119241467216707584
+# Reference: https://pastebin.com/DJkTEscy
+
+dacinda.info
+
+# Reference: https://securelist.com/fin7-5-the-infamous-cybercrime-rig-fin7-continues-its-activities/90703/ (# CobaltGoblin/EmpireMonkey)
+
+riscomponents.pw
+nlscdn.com
+
+# Reference: https://research.checkpoint.com/cobalt-group-returns-to-kazakhstan/
+# Reference: https://pastebin.com/5nSL9ZnG
+# Reference: https://otx.alienvault.com/pulse/5d44307215e7f548f4375a4b
+
+http://185.61.149.186
+kassanova.kz
+
+# Reference: https://twitter.com/AltShiftPrtScn/status/1183748663820083200
+
+fearlesslyhuman.org
+
+# Reference: https://twitter.com/vxsh4d0w/status/1184099646093905920
+# Reference: https://pastebin.com/X2hvjm6F
+
+5571875.info
+cafeestereo.com
+ecb-media.host
+
+# Reference: https://meltx0r.github.io/tech/2019/10/15/cobalt-gang-apt.html
+# Reference: https://twitter.com/MeltX0R/status/1184381285428531201
+
+bueatyslim.site
+relax-cream.com
+unvenbinusa.info
+ascoyabogados.inti.co.uk
+barriosanjose.inti.co.uk
+brallec.inti.co.uk
+ceramicoshuanchaco.inti.co.uk
+easyclubadmin-net.inti.co.uk
+ftp.inti.co.uk
+huanchacosurf.inti.co.uk
+inti.co.uk
+ladrilloschanchan.inti.co.uk
+mail.inti.co.uk
+me.inti.co.uk
+moromeinmobiliaria.inti.co.uk
+nirvan.inti.co.uk
+nirvana.inti.co.uk
+psicoaccion.inti.co.uk
+renacerfuneraria.inti.co.uk
+sbssanjorge.inti.co.uk
+screenmediastudio.inti.co.uk
+sermedicsac.inti.co.uk
+surfcastingtrujillo.inti.co.uk
+
+# Reference: https://twitter.com/MeltX0R/status/1186341387073142789
+
+0345432456.info
+centos-update.info
+paysimcard.info
+
+# Reference: https://twitter.com/ccxsaber/status/1186893838427836417
+
+fraud-bank.host
+
+# Reference: https://twitter.com/0xFrost/status/1187298632007061505
+# Reference: https://app.any.run/tasks/77cc933e-3985-4d59-acb6-156b686f68a8/
+
+http://198.50.168.67
+198.50.203.97:4444
+
+# Reference: https://twitter.com/MeltX0R/status/1195013744650272768
+
+adminassistance.info
+bestguesspass.info
+
+# Reference: https://twitter.com/ccxsaber/status/1197703169301606401
+
+boomedon.info
+
+# Reference: https://twitter.com/pmelson/status/1201980009767981058
+
+ipvpn.athkl.best
+
+# Reference: https://twitter.com/Marco_Ramilli/status/1203210454043987968
+
+http://45.77.239.169
+goknar-mobilya.com
+
+# Reference: https://twitter.com/MeltX0R/status/1203000023635701762
+
+cari-properti.info
+
+# Reference: https://twitter.com/MeltX0R/status/1208095892877774850
+
+telekom-support.info
+
+# Reference: https://www.fsec.or.kr/user/bbs/fsec/163/344/bbsDataView/1372.do
+# Reference: https://www.virustotal.com/gui/ip-address/89.144.25.170/relations
+# Reference: https://www.virustotal.com/gui/ip-address/89.144.25.171/relations
+# Reference: https://www.virustotal.com/gui/ip-address/89.144.25.172/relations
+# Reference: https://www.virustotal.com/gui/ip-address/89.144.25.173/relations
+# Reference: https://www.virustotal.com/gui/ip-address/89.144.25.174/relations
+# Reference: https://www.virustotal.com/gui/ip-address/89.144.25.243/relations
+
+89.144.25.170:80
+89.144.25.170:8080
+89.144.25.170:887
+89.144.25.171:887
+89.144.25.171:443
+89.144.25.171:80
+89.144.25.172:80
+89.144.25.173:5247
+89.144.25.173:34125
+89.144.25.174:80
+ileeds.date
+metromedium.xyz
+preachmail.com
+marketexon.com
+grinh.stream
+magnetes.xyz
+advement.com
+sloda.best
+swiftbump.xyz
+advertsion.com
+guall.date
+redwhizz.xyz
+purplemorph.com
+advertopolitan.com
+jonee.date
+fluxklix.xyz
+avertad.com
+iacain.date
+
+# Reference: https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/cobalt_upd_ttps/
+
+download.sabaloo.com
+maps.doaglas.com
+origin.cdn77.kz
+ecb-european.eu
+telekom-support.info
+timeswindows.com

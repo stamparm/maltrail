@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/Root0ne/status/1819078738367422944
+# Reference: https://x.com/Root0ne/status/1819078750862299539
+
+http://146.185.233.45
+http://89.23.100.181
+http://94.141.122.39
+http://94.141.122.57
+89.23.100.181:443
+fdsaffsda.lol
+hasmterkombat.net
+tonsroulette.click

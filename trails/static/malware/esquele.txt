@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: hidden bastard, esquele stealer
+
+# Reference: https://x.com/dan__mayer/status/1629275844605784066
+# Reference: https://x.com/iam_rajhans/status/1838559203427840091
+# Reference: https://blog.phylum.io/phylum-discovers-another-attack-on-pypi/
+# Reference: https://www.virustotal.com/gui/file/5e80cf76d925539350948eb0f06ad67d6fb690f4658398d71a3605f409d287fa/detection
+# Reference: https://www.virustotal.com/gui/file/73dc07b60aee34ad31a38b0f7e08e525f6cd4548b32f9ea3fd799bfa008ee956/detection
+
+esquelestealer.top
+esquelestealer.vip
+estlproyect.xyz
+
+# Reference: https://x.com/Fact_Finder03/status/1884558701589098790
+# Reference: https://www.virustotal.com/gui/file/723c03f3356bb89d17e30423354b09d503e76486be0ba0136dc4791f1200880a/detection
+
+esquelestealer.me

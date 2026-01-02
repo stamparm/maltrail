@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: datacarry ransomware
+
+# Reference: https://x.com/DarkWebInformer/status/1927029258800550127
+# Reference: https://x.com/RakeshKrish12/status/1930507710510063838
+# Reference: https://www.virustotal.com/gui/file/b1cf41363401fe5671e24fd55ee89b0c177140c482a8dab1b9891db509df52f6/detection
+# Reference: https://www.virustotal.com/gui/file/9b4e60fc6089912f84c96e77f8d905a6c1e9e76d15fdce96958a45ad0e8e6108/detection
+
+dcarryhaih5oldidg3tbqwnde4lxljytnpvberrwgj2vlvunopd46dad.onion

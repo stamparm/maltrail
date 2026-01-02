@@ -1,0 +1,36 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://blog.novirusthanks.org/2012/11/kbot-cc-malware/
+# Reference: https://www.exposedbotnets.com/2012/10/cheatmodernwarfarecom-multiple-http.html
+
+h4r3.hopto.org
+purenet.hopto.org
+smk.cheatgame.org
+hb.allo-hosting.org
+
+# Reference: https://www.cert.pl/en/news/single/newest-addition-a-happy-family-kbot/
+
+mensabuxus.net
+ogrthuvwfdcfri5euwg.com
+ogrthuvfewfdcfri5euwg.com
+
+# Reference: http://blog.novirusthanks.org/2012/11/kbot-cc-malware/
+
+ns224291.ovh.net
+http://ovatec.fr/xs
+
+# Reference: https://securelist.com/kbot-sometimes-they-come-back/96157/
+# Reference: https://otx.alienvault.com/pulse/5e4176a1c5f594d10f10c5c5
+
+http://213.252.245.146
+http://213.252.245.229
+havy-dutty.xyz
+my-backup-club-911.xyz
+sync-time.club
+sync-time.icu
+sync-time.info
+
+# Reference: https://www.virustotal.com/gui/file/d6aaa973bf484ee0225b637cd126549ec7d09469a0bfbfdeda88bd59fd23409e/detection
+
+migrsity.ru

@@ -1,0 +1,2466 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ta505, servhelper, sectorj04, fin11
+
+# Reference: https://www.cyberswachhtakendra.gov.in/alerts/ServHelper_Malware.html
+
+officemysuppbox.com
+checksolutions.pw
+rgoianrdfa.pw
+arhidsfderm.pw
+offficebox.com
+office365onlinehome.com
+afgdhjkrm.pw
+dedsolutions.bit
+dedoshop.pw
+asgaage.pw
+sghee.pw
+vesecase.com
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/servhelper-and-flawedgrace-new-malware-introduced-ta505
+
+afgdhjkrm.pw
+arepos.bit
+checksolutions.pw
+dedoshop.pw
+dedsolutions.bit
+pointsoft.pw
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/ta505-targets-us-retail-industry-personalized-attachments
+
+89.144.25.32:5655
+
+# Reference: https://twitter.com/malwrhunterteam/status/1117012829951995905
+
+aasdkkkdsa3442.icu
+joisff333.icu
+
+# Reference: https://twitter.com/bczyz1/status/1116660163522572292
+
+http://79.141.171.160/alg
+
+# Reference: https://twitter.com/TweeterCyber/status/1109088973039624197
+
+cdnavupdate.icu
+
+# Reference: https://twitter.com/avman1995/status/1094111896473608192
+
+rgdsghhdfa.pw
+
+# Reference: https://ti.360.net/blog/articles/excel-4.0-macro-utilized-by-ta505-to-target-financial-institutions-recently/ (Chinese)
+
+add3565office.com
+afsssdrfrm.pw
+office365advance.com
+office365homepod.com
+
+# Reference: https://twitter.com/Dinosn/status/1121264330710900738
+# Reference: https://www.cybereason.com/blog/threat-actor-ta505-targets-financial-enterprises-using-lolbins-and-a-new-backdoor-malware
+
+joisf333.icu
+zxskjkkjsk3232.pw
+
+# Reference: https://twitter.com/VK_Intel/status/1124541340124053505
+# Reference: https://twitter.com/anyrun_app/status/1118829445543006208
+
+fjiisiis33.icu
+houusha33.icu
+
+# Reference: https://branbot.ninja/2019/05/ta505-using-lolb-and-free-remote-access-program-rms/
+
+canyoning-austria.at
+159.69.48.50:5655
+
+# Reference: https://blog.yoroi.company/research/the-stealthy-email-stealer-in-the-ta505-arsenal/
+
+nettubex.top
+
+# Reference: https://blog.yoroi.company/research/ta505-is-expanding-its-operations/
+
+hans.me
+217.12.201.159:5655
+
+# Reference: https://twitter.com/HONKONE_K/status/1110757861779341313
+# Reference: https://otx.alienvault.com/pulse/5cee5e811bfb0840b6f2c14b
+
+http://202.168.154.158
+http://27.102.106.138
+http://92.38.135.204
+keepneedjust.info
+
+# Reference: https://otx.alienvault.com/pulse/5d00f923684ce2bac6dd094c
+
+amenyan.zouri.jp
+angelmariotti.xyz
+billyjimmyer.top
+canyoning-austria.at
+citroenmehari.dk
+dannysannyer.top
+datdepot.net
+furhatsth.net
+globe-trotterltd.com
+gohaiendo.com
+govhotel.us
+homeone.co.kr
+ianhennessee.com
+kabatas.ch
+kerrison.com
+kupitorta.net
+lecmess.top
+losabetos.com.sv
+profan.es
+slemend.com
+statesdr.top
+tommyhalfigero.top
+topdalescotty.top
+traveser.net
+tunnelview.co.uk
+vairina.top
+waiireme.com
+zonaykan.com
+169.239.129.103:8080
+94.156.133.183:8080
+http://103.73.66.137
+http://109.234.38.177
+http://116.203.180.29
+http://163.172.84.54
+http://167.179.119.235
+http://169.239.128.168
+http://169.239.128.169
+http://172.104.117.15
+http://172.104.104.166
+http://195.123.227.20
+http://45.76.206.149
+http://45.76.223.177
+http://66.42.45.55
+
+# Reference: https://twitter.com/VK_Intel/status/1139154944202878977
+
+trailerbla.icu
+
+# Reference: https://twitter.com/sS55752750/status/1143176372514381824
+
+medastr.com
+
+# Reference: https://securityaffairs.co/wordpress/79836/cyber-crime/ta505-group-malware.html
+
+arepos.bit
+dedsolutions.bit
+
+# Reference: https://twitter.com/reegun21/status/1144611338536099840
+# Reference: https://medium.com/@reegun/ta505-group-latest-analysis-found-unregistered-domains-4ea7dc4696c5
+
+http://169.239.129.61
+dsfk3322442fr44446g.icu
+gdskjkkkss.pw
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/ta505-begins-summer-campaigns-new-pet-malware-downloader-andromut-uae-south (#AndroMut)
+
+kreewalk.com
+
+# Reference: https://twitter.com/VK_Intel/status/1152669759382654976
+
+towerprod3.com
+
+# Reference: https://twitter.com/VK_Intel/status/1152675343389478912
+
+lotmoji.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1158484189685010432
+
+pinotnoir.xyz
+
+# Reference: https://twitter.com/DynamicAnalysis/status/1159564232469417988
+# Reference: https://www.virustotal.com/gui/file/b2b5c2d75bb83bb18e56a7057ae799936b7ce72a0385127eccafb252800cbbd6/detection
+
+aidsweden.serveblog.net
+37.120.159.243:21204
+
+# Reference: https://twitter.com/ClearskySec/status/1160944105394003968
+
+amnsns.com
+dsntu.top
+
+# Reference: https://documents.trendmicro.com/assets/pdf/APPENDIX_TA505-At-It-Again.pdf
+
+nonestored.com
+lotmoji.com
+fonetorap.com
+stalpina.com
+stelar.icu
+towerprod3.com
+senddocs.icu
+
+# Reference: https://www.cyberint.com/wp-content/uploads/2019/06/CyberInt_Legit-Remote-Access-Tools-Turn-Into-Threat-Actors-Tools_Report.pdf
+# Reference: https://otx.alienvault.com/pulse/5d7112fa67119654e03cffe8
+
+accountservice.link
+alertsofamericaservice.net
+alertsofamericaservice.org
+alertsonlineb.info
+alertsonlineb.site
+amazonalertsservice.com
+amazonalertsservice.net
+amazonsecuve.com
+amazonservericaseracalerts.ml
+amazonservericaseracalerts.tk
+amazonservicesaeqwec.com
+apleid-store.ga
+applebankoaofamelc.ga
+applebankoaofamelc.ml
+applecsertcas.ga
+appleicloudeservice.com
+appleicloudeservice.net
+appleicloudeservice.org
+appleidcustomersaer.com
+appleidcustomersaer.net
+appleidservcer.com
+appleidservcer.net
+appleidservcer.org
+appleredierect.net
+applesecurityservcer.net
+applesergalertsatmcustmer.com
+applesergalertsatmcustmer.net
+appleseritealerts.ml
+appleseritealerts.tk
+appleserverisa.link
+appleservicealerts.tk
+appleservicesficloude.com
+appleservicesficloude.org
+applesforcustmer.net
+applesforcustomers.com
+applesicloudeser.com
+applesrtskila.com
+applseraiaase.com
+appserrverlinkalert.com
+appstoreservices.com
+appstrmorestrge.com
+appteammores.com
+bankfoaemrica.ml
+bankodamericaser.cf
+bankodamericaser.ml
+bankodamericaser.tk
+bankofamerica-re.tk
+bankofamerica-reactivte.ml
+bankofamericabofa.ml
+bankofamericaservicese.cf
+bankooferamerico.cf
+bankooferamerico.ml
+banksofamericaservice.com
+banofameriservice.com
+boaalertsnotifationsservc.cf
+boalserricersvierfay.cf
+boalserricersvierfay.tk
+boaofamerica-serviceas.cf
+boaofamerica-serviceas.tk
+boaseerviceid.com
+boaserivaalertsnitoa.ml
+boaserivaalertsnitoa.tk
+boaservicalonotiservicesa.tk
+boaserviceraletst.cf
+boaservicertalak.com
+bof-1apiservicesalert.ml
+bof-1apiservicesalert.tk
+bof-apiservicesalert.tk
+bofamericaservicealertscusto.tk
+bofasserserivcersa.ga
+chasepnlineba.com
+chaseservericaserlaertsse.ml
+chaseservericaserlaertsse.tk
+chasservice.com
+comcasrerserc.ga
+comcasrerserc.tk
+comcasservicealerts.ga
+comcastertiser.tk
+comcastserivei.com
+comcastserviceaatinfo.tk
+comcstconnect.cf
+comcstserricer.tk
+confirmyurstclod.com
+coxservicealertscoxser.tk
+iclinstructstorge.com
+iclostoreservsubs.com
+icloudserviceate.casa
+icloudserviceate.com
+icloudserviceate.net
+icloudserviceate.nl
+icloudserviceate.org
+mangersecurityheleprservice.com
+microsoftoffice365box.com
+mystorageappsteam.com
+ofamericasertcercenterserverices.cf
+ofamericasertcercenterserverices.ga
+office365advance.com
+officemysuppbox.com
+officesupportbox.com
+onlineservicebanofamericaservice.ml
+onlineservicebanofamericaservice.tk
+regisrtwellsfasrgoserla.tk
+registriatirigonhernew.ga
+registriatirigonhernew.gq
+scureamazo.com
+scureamazonsec.com
+scureloginactiveamazo.com
+secure-alert.email
+secureamaz.com
+secureredirectonline.com
+secureredirectonline.net
+secureservicesercures.cf
+sercvbnofamericaalertss.ml
+sercvbnofamericaalertss.tk
+sercvboaof.com
+sercvboaof.net
+sericasboaofamericasercrboa.cf
+sericasboaofamericasercrboa.tk
+serveicealbanofamericase.com
+serveicealbanofamericase.net
+serveraserasalero.ml
+serverboaservice.cf
+serveriaos.com
+servericaseralertsforaccou.net
+serviboaalertsacess.ga
+servicapplecustomers.ga
+servicboas.com
+servicboaservicesupoboa.ga
+servicboaservicesupoboa.ml
+service-alert.link
+service-boaofamerica.cf
+service-boaofamerica.ml
+service-boaserive.cf
+service-boaserive.ml
+service-pp.xyz
+servicealerts.club
+servicealerts.net
+servicealerts.online
+servicealerts.site
+servicealerts.website
+servicealertsofservi.net
+servicealertsonline.site
+servicealoneapple.com
+servicebankofamericas.com
+servicebankofamericaseralerts.cf
+servicebankofamericaseralerts.tk
+serviceboa.com
+serviceboa.online
+serviceboaalertssofamerica.ga
+serviceboaalertssofamerica.ml
+serviceboaalertssofamerica.tk
+serviceboaamerica.cf
+serviceboaserser.com
+serviceerboaofamericasercila.tk
+servicefargoserc.com
+serviceofamericasecousre.ml
+serviceonlineidcustomer.com
+serviceralertboaserv.com
+serviceralertsamazonservice.com
+serviceralertsamazonservice.net
+serviceralertsdecuom.com
+serviceralertsdecuom.net
+servicerofamericaservice.ga
+servicerofamericaservice.ml
+servicerofamericaservice.tk
+servicesellsfargoservice.com
+servicesingnaletboa.com
+servicesingnvboa.com
+servicewallweralerts.ml
+servicewallweralerts.tk
+servicuiwells.com
+serviscesecuusreserc.cf
+servivwgofamerica.com
+servviceappleaccounts.net
+support-your-accounet.tk
+upgradeclduodplans.com
+upgradeoffice365.com
+verifed-account-896628153.com
+wellfaservicealerts.tk
+wellserfercfgtoserivcer.cf
+wellserfromgnd.ml
+wellsfarfoisservice.com
+wellsfinfpupadet.ga
+wellsfinfpupadet.ml
+wellsservicessu.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1171158166265925632
+# Reference: https://otx.alienvault.com/pulse/5d78dc8a0006495d5fb9296e
+
+update365-office-ens.com
+
+# Reference: https://twitter.com/HONKONE_K/status/1122335861083783168
+
+http://27.102.118.143/dom1
+http://109.234.38.177/dom4
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1174677285837971460
+# Reference: https://app.any.run/tasks/9c28f56e-8265-496d-868f-bde621b3e887/
+
+office365-update-en-gb.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1177166794026606592
+# Reference: https://twitter.com/James_inthe_box/status/1177272310652227586
+# Reference: https://www.virustotal.com/gui/ip-address/23.19.64.27/relations
+# Reference: https://www.virustotal.com/gui/ip-address/23.81.211.243/relations
+# Reference: https://www.virustotal.com/gui/ip-address/23.224.167.124/relations
+
+cbnrt.com
+cbnzr.com
+cbtqr.com
+cp253.top
+cp550.top
+cp57.top
+cp784.top
+cp885.top
+fdrdj.com
+ik49.com
+io04.com
+ir97.com
+iv62.com
+iw79.com
+ja30.com
+ji94.com
+jq43.com
+jv79.com
+la07.com
+lidatou.com
+lj47.com
+lo14.com
+lo42.com
+lo74.com
+md47.com
+ml49.com
+mp94.com
+ob07.com
+od92.com
+oe94.com
+oh93.com
+om62.com
+om63.com
+oq41.com
+oq42.com
+oq43.com
+oq46.com
+oq64.com
+os65.com
+os73.com
+pk858.top
+pk890.top
+pk903.top
+pk978.top
+pwnq56.com
+ql49.com
+qv64.com
+ue47.com
+uh06.com
+uh14.com
+uj57.com
+um64.com
+uy91.com
+uz03.com
+uz05.com
+uz06.com
+vq25.com
+vq39.com
+vq43.com
+vq47.com
+vu30.com
+vu34.com
+vy16.com
+vy40.com
+
+# Reference: https://github.com/StrangerealIntel/CyberThreatIntel/blob/master/cybercriminal%20groups/TA505/04-10-2019/Malware%20Analysis%2004-10-2019.md
+
+office365-update-eu.com
+windows-wsus-en.com
+
+# Reference: https://twitter.com/JayTHL/status/1181283994660413446
+
+dropbox-download.com
+windows-msd-update.com
+
+# Reference: https://twitter.com/58_158_177_102/status/1181497336800796672
+
+onedrive-cdn.com
+windows-fsd-update.com
+
+# Reference: https://twitter.com/dark_moon2019/status/1181913446192996355
+
+googledrive-en.com
+onedrive-sdn.com
+windows-sys-update.com
+
+# Reference: https://github.com/silence-is-best/c2db#unknowns
+
+dsfhhhhf44555.icu
+
+# Reference: https://twitter.com/kyleehmke/status/1182392669957431296
+
+googledrive-eu.com
+windows-upgrade-en.com
+
+# Reference: https://twitter.com/yvesago/status/1183709455395020801
+
+onedrive-en.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1183789692694626305
+
+office365-us-update.com
+
+# Reference: https://twitter.com/kyleehmke/status/1184071187703435264
+
+onedrive-download.com
+onedrive-download-en.com
+
+# Reference: https://twitter.com/kyleehmke/status/1183872877151555584
+
+windows-en-us-update.com
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/ta505-distributes-new-sdbbot-remote-access-trojan-get2-downloader
+# Reference: https://otx.alienvault.com/pulse/5da719a5ca8d0afb2368f4ef
+
+37.59.52.229:53
+drm-server13-login-microsoftonline.com
+en-gb-facebook.com
+news-server-drm-google.com
+office365-eu-update.com
+static-google-analtyic.com
+windows-cnd-update.com
+windows-me-update.com
+windows-se-update.com
+windows-update-sdfw.com
+windows-update-02-en.com
+
+# Reference: https://twitter.com/dark_moon2019/status/1181913446192996355
+
+ddf-08.onedrive-sdn.com
+ddf-09.onedrive-sdn.com
+
+# Reference: https://mp.weixin.qq.com/s/ujeIeb_BWoLWu420imwAOQ
+# Reference: https://otx.alienvault.com/pulse/5dad976536418494e8540014
+
+vtjxjkndo.club
+
+# Reference: https://habr.com/ru/company/pt/blog/471960/ (Russian)
+
+fdguyt5ggs.pw
+foxlnklnk.xyz
+gidjshrvz.xyz
+letitbe.icu
+pofasfafha.xyz
+
+# Reference: https://twitter.com/kyleehmke/status/1187668934637568005
+
+dropbox-download-eu.com
+windows-office365.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1188869479024873479
+
+office-en-service.com
+
+# Reference: https://evilcodeanalysis.com/2019/11/10/ta505-campaign-macro-analysis/
+
+box-en.com
+dropbox-en.com
+dropbox-er.com
+dropbox-eu.com
+googledrive-eu.com
+googledrive-en.com
+googledrive-gb.com
+googledrive-download.com
+cdn-onedrive-live.com
+onedrive-cdn.com
+onedrive-download-en.com
+onedrive-download.com
+onedrive-en-live.com
+onedrive-fn.com
+onedrive-sdn.com
+onedrive-sn.com
+own-eu-cloud.com
+syncdownloading.com
+sync-share.com
+
+# Reference: https://twitter.com/kyleehmke/status/1194212238829199361
+
+box-cnd.com
+
+# Reference: https://twitter.com/kyleehmke/status/1194719410096869376
+
+microsoft-cnd-en.com
+onehub-en.com
+
+# Reference: https://twitter.com/58_158_177_102/status/1194817643561115649
+
+microsoft-live-us.com
+onehub-en.com
+
+# Reference: https://habr.com/ru/company/pt/blog/475328/ (Russian)
+# Reference: https://twitter.com/PRODAFT/status/1123241137710555136
+
+http://185.55.243.15
+http://139.60.160.6
+http://45.227.252.54
+
+# Reference: https://twitter.com/kyleehmke/status/1196426021668560898
+
+onedrive-live-en.com
+
+# Reference: https://twitter.com/0xkyle/status/1196542491727671296
+
+microsoft-cnd.com
+
+# Reference: https://twitter.com/kyleehmke/status/1196834138076188672
+
+box-en-au.com
+
+# Reference: https://twitter.com/kyleehmke/status/1196857407026192385
+
+microsoft-store-en.com
+
+# Reference: https://twitter.com/kyleehmke/status/1197245912344678403
+
+sharefile-cnd.com
+
+# Reference: https://twitter.com/kyleehmke/status/1197269984583585794
+
+ms-home-live.com
+
+# Reference: https://twitter.com/kyleehmke/status/1199004305476505600
+
+windows-service-us.com
+
+# Reference: https://twitter.com/kyleehmke/status/1199377587233021953
+
+live-en.com
+
+# Reference: https://twitter.com/Vishnyak0v/status/1199620846823890944
+# Reference: https://www.virustotal.com/gui/file/4b0eafcb1ec03ff3faccd2c0f465f5ac5824145d00e08035f57067a40cd179d2/detection
+
+http://45.84.0.201
+
+# Reference: https://twitter.com/kyleehmke/status/1200026675028877314
+
+online-office365.com
+sharefiles-eu.com
+
+# Reference: https://twitter.com/kuermelecke/status/1200358343203794944
+
+boxfiles-en.com
+msonebox.com
+
+# Reference: https://twitter.com/kyleehmke/status/1201296812524654595
+
+jp-microsoft-store.com
+sharefiles-en.com
+
+# Reference: https://twitter.com/Nocturnus/status/1199369090873384960
+
+microsoft-home-en.com
+
+# Reference: https://twitter.com/KorbenD_Intel/status/1196514538830610432
+
+adobe-acrobat-dc.photos
+
+# Reference: https://twitter.com/58_158_177_102/status/1192828056257409024
+
+microsoft-hub-us.com
+
+# Reference: https://twitter.com/KorbenD_Intel/status/1190009469415120902
+
+office365portals.com
+
+# Reference: https://twitter.com/kyleehmke/status/1187330083301797888
+
+onedrive-us-en.com
+
+# Reference: https://twitter.com/kyleehmke/status/1186957284112551939
+
+windows-update-sys.com
+
+# Reference: https://twitter.com/kyleehmke/status/1186234709023645698
+
+windows-service-en.com
+
+# Reference: https://twitter.com/kyleehmke/status/1184935200536567808
+
+windows-wsus-update.com
+
+# Reference: https://twitter.com/kyleehmke/status/1184835609589899266
+
+drm-server-booking.com
+
+# Reference: https://twitter.com/DFNCERT/status/1184764901799141376
+
+onedrive-sd.com
+
+# Reference: https://twitter.com/kyleehmke/status/1184201184359395334
+
+windows-afx-update.com
+
+# Reference: https://twitter.com/j00dan/status/1183974283548082176
+
+office-365-update-en.com
+office-365-update-eu.com
+office-teml-en.com
+office365-en-gb.com
+windows-dev-sec.com
+windows-several-update.com
+windows-update-sdbt.com
+windows-wsus-eu.com
+
+# Reference: https://twitter.com/kyleehmke/status/1202659223416582144
+
+onms-home.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1204435739783643136
+
+upgrade-ms-home.com
+
+# Reference: https://twitter.com/wwp96/status/1205144862019993601
+
+windows-appstore-en.com
+
+# Reference: https://twitter.com/Vishnyak0v/status/1206520097571037184
+
+almagel.icu
+asfasfijfjsi55.xyz
+asggh554tgahhr.pw
+d8ufhhhfa448.xyz
+dfsgu747hugr.pw
+dfsugfygeyy4ggf.xyz
+dsgsdgpogsdj24dgoiu.xyz
+dsigoisdijgjg.xyz
+dsnnguyrygfu.xyz
+gabardina.xyz
+kilimadzhara.xyz
+kiparis.xyz
+kuarela.xyz
+ofiughfuu.xyz
+sgahugu4ijgji.xyz
+
+# Reference: https://twitter.com/pollo290987/status/1112921683592187904
+
+afsafasdarm.icu
+
+# Reference: https://twitter.com/CTI_Marc/status/1207588550256054272
+
+ms-en-microsoft.com
+
+# Reference: https://www.blueliv.com/cyber-security-and-cyber-threat-intelligence-blog-blueliv/research/servhelper-evolution-and-new-ta505-campaigns/
+
+cafafafa.xyz
+gabardine.xyz
+
+# Reference: https://twitter.com/vigilantbeluga/status/1207839470134808577
+
+recovery.hk
+ytufnh2mbniwh437.onion
+
+# Reference: https://twitter.com/lazyactivist192/status/1209198612296671234
+
+http://185.225.17.51
+fdg4a35ggs.pw
+gpskgsmgnbiiie.xyz
+gsdisodgjisjdgoiu.xyz
+
+# Reference: https://twitter.com/Vishnyak0v/status/1210528486512824321
+
+jopanovigod.xyz
+
+# Reference: https://twitter.com/James_inthe_box/status/1216704639409639425
+# Reference: https://twitter.com/AdamTheAnalyst/status/1216750358959214592
+
+eu-global-online.com
+fileshare-cnd.com
+ms-global-store.com
+
+# Reference: https://twitter.com/ffforward/status/1217062979474247685
+
+file-shares.com
+studio-stlsdr.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1217419206582591489
+
+xbox-en-cnd.com
+
+# Reference: https://twitter.com/CTI_Marc/status/1217761108628582401
+
+share-stores.com
+
+# Reference: https://twitter.com/ffforward/status/1219556769791455233
+
+general-lcfd.com
+share-downloading.com
+
+# Reference: https://twitter.com/kyleehmke/status/1219601729643253760
+
+365-api.com
+filedownloaderror.com
+office-documents-download.com
+
+# Reference: https://twitter.com/ffforward/status/1219928817353052160
+
+integer-ms-home.com
+one-drive-storage.com
+
+# Reference: https://twitter.com/ffforward/status/1220295937102356484
+
+global-logic-stl.com
+shared-download.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1220642159692566529
+
+shared-downloads.com
+
+# Reference: https://twitter.com/kyleehmke/status/1221466433940598786
+
+onedrive-live.eu
+onedrive-live.tel
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1221712320847585280
+
+files-downloads.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1221764200177000450
+
+store-in-box.com
+
+# Reference: https://github.com/StrangerealIntel/DailyIOC/blob/master/02-12-19/IOC%20TA505%20Nov19.md
+
+sharefile-us.com
+
+# Reference: https://twitter.com/bartblaze/status/1222633119414726656
+# Reference: https://app.any.run/tasks/6c345f4a-5da9-4e09-87eb-9aae63d241fc/
+
+fileshare-storage.com
+
+# Reference: https://twitter.com/ffforward/status/1222836467849887744
+# Reference: https://app.any.run/tasks/2a868379-f678-4bd1-9129-f7e2457d3524/
+
+clouds-share.com
+stt-box.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/27.255.75.142/relations
+# Reference: https://twitter.com/CTI_Marc/status/1207608334188187648
+
+daumcdnf.com
+daumcdnr.com
+daumcdns.com
+
+# Reference: https://twitter.com/ffforward/status/1223165772761124865
+
+microsoft-store-drm-server.com
+
+# Reference: https://twitter.com/ffforward/status/1223181053482934277
+
+clouds-doanload-cnd.com
+
+# Reference: https://www.fsec.or.kr/user/bbs/fsec/163/344/bbsDataView/1372.do
+
+oauth20.space
+oauth20.xyz
+
+# Reference: https://twitter.com/ffforward/status/1224292088231202816
+
+cloud-store-cdn.com
+microsoft-sback-server.com
+
+# Reference: https://twitter.com/abuse_ch/status/1224589159278563328
+
+one-drive-ms.com
+
+# Reference: https://www.virustotal.com/gui/domain/armyoffers.com/detection
+
+armyoffers.com
+
+# Reference: https://twitter.com/CTI_Marc/status/1224645859167670272
+
+wpad-home.com
+
+# Reference: https://twitter.com/ffforward/status/1227521876521562112
+
+fileshare-cdns.com
+
+# Reference: https://twitter.com/ffforward/status/1227913743918600193
+
+ms-home-store.com
+
+# Reference: https://twitter.com/stoerchl/status/1228245026439860224
+
+sharefiles-download.com
+
+# Reference: https://twitter.com/ffforward/status/1228275171557093378
+
+ms-upgrades.com
+
+# Reference: https://twitter.com/ffforward/status/1229332478793519104
+
+dl-sharefile.com
+
+# Reference: https://twitter.com/CTI_Marc/status/1229726315093381121
+
+cdn-box.com
+
+# Reference: https://twitter.com/RobbieWhite98/status/1230124602157871104
+
+ms-rdt.com
+
+# Reference: https://twitter.com/ffforward/status/1230806654083641344
+
+owncloud-cdn.com
+
+# Reference: https://twitter.com/Arkbird_SOLG/status/1230843132910149633
+# Reference: https://app.any.run/tasks/7a524832-8c69-4099-981f-03fd5078651e/
+# Reference: https://app.any.run/tasks/d8d2c728-9326-4135-92e7-84f232ea7c72/
+
+microsoft-ware.com
+
+# Reference: https://twitter.com/0xkyle/status/1230922342219554819
+
+clouds-cdn.com
+
+# Reference: https://twitter.com/teachemtechy/status/1230491319212089345
+
+dl-sync.com
+
+# Reference: https://twitter.com/stoerchl/status/1229739561368113152
+
+home-storages.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1225720630697484288
+
+auxin-box.com
+mainten-ferrum.com
+
+# Reference: https://twitter.com/ffforward/status/1227549670630658050
+
+0365-microsoft.com
+
+# Reference: https://twitter.com/ffforward/status/1225714591780438017
+
+download-cdn.com
+
+# Reference: https://twitter.com/ffforward/status/1225381879701962753
+
+shared-cnd.com
+
+# Reference: https://twitter.com/ffforward/status/1225375811966001160
+
+live-cnd.com
+
+# Reference: https://twitter.com/SummonPazuzu/status/1218856313154703360
+
+auth-itunes.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1218117812222406656
+# Reference: https://twitter.com/oguzpamuk/status/1218141250894946306
+# Reference: https://app.any.run/tasks/aac8cf8f-bd00-476b-9c38-d24751dc59f7/
+
+reselling-corp.com
+
+# Reference: https://www.blueliv.com/cyber-security-and-cyber-threat-intelligence-blog-blueliv/research/servhelper-evolution-and-new-ta505-campaigns/
+# Reference: http://www.rewterz.com/rewterz-news/rewterz-threat-alert-predator-the-thief-and-team-viewer-hijacking
+# Reference: https://twitter.com/SaudiDFIR/status/1177740045186457600
+# Reference: https://app.any.run/tasks/7ad3c08f-c1d1-4893-8227-3c47ed1ebe81/
+
+http://96.9.211.157
+0926tv.xyz
+afsasadaslfo3d3.xyz
+almagel.icu
+artrolife.club
+cafafafa.xyz
+foxlnklnk.xyz
+gabardine.xyz
+kuarela.xyz
+letitbe.icu
+soul-fly.xyz
+supremeconnect.xyz
+
+# Reference: https://www.binarydefense.com/an-updated-servhelper-tunnel-variant/
+
+kilimadzhara.xyz
+dsfhhhhf44555.icu
+fdsfsfsfs.xyz
+pointblanc.xyz
+loportat.icu
+hedonix.icu
+loprtaf.icu
+ggaooopdj44.pw
+specsrv.pw
+fdguyt5ggs.pw
+laph.icu
+kuarela.xyz
+afsasdfa33.xyz
+almagel.icu
+gabardina.xyz
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1230121702371270658
+
+dl-sync.com
+
+# Reference: https://twitter.com/CTI_Marc/status/1217795120482934784
+
+selling-group.com
+
+# Reference: https://twitter.com/CTI_Marc/status/1217440376870580224
+
+egnytefs.com
+
+# Reference: https://community.blueliv.com/#!/s/5dfb4e2282df413eb53345a4
+
+misbehavintv.online
+
+# Reference: https://twitter.com/CTI_Marc/status/1206554997946748928
+
+geo-st-microsoft.com
+
+# Reference: https://twitter.com/CTI_Marc/status/1205057065053495296
+
+onedrive-eu.com
+
+# Reference: https://twitter.com/CTI_Marc/status/1204694337688424448
+
+onedrive-en-eu.com
+
+# Reference: https://twitter.com/j00dan/status/1183974283548082176
+
+office365-update-en.com
+static-google-analytics.com
+
+# Reference: https://twitter.com/vikas891/status/1225759078976118784
+# Reference: https://www.virustotal.com/gui/ip-address/91.214.124.5/relations
+
+91.214.124.5:21313
+91.214.124.5:8080
+91.214.124.5:80
+
+# Reference: https://twitter.com/ffforward/status/1230809740420288513
+
+owncloud-cdn.com
+microsoft-ware.com
+
+# Reference: https://www.virustotal.com/gui/file/d538b3aa5da1d0e506b531fb5c1ef514f7251e7f922857b21167767b11c57ce6/behavior/Tencent%20HABO
+
+velquene.net
+
+# Reference: https://app.any.run/tasks/9425c7fd-efb2-4855-b8f5-9018a5b98c6c/
+
+reselling-corp.com
+
+# Reference: https://app.any.run/tasks/1145aeac-332f-43a7-b5d3-960a0a316c5d/
+
+http://179.43.147.77/pm1
+
+# Reference: https://twitter.com/stoerchl/status/1231902263708442624
+
+share-clouds.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1231961410638360576
+
+glr-ltd.com
+
+# Reference: https://twitter.com/Bl4ng3l/status/1232244436828086272
+
+mays-ltd.com
+
+# Reference: https://twitter.com/kyleehmke/status/1232353610786377730
+
+office-inf.com
+
+# Reference: https://twitter.com/Anastasis_King/status/1232362915820449796
+
+int-download.com
+
+# Reference: https://twitter.com/darb0ng/status/1233309320709726208
+# Reference: https://www.virustotal.com/gui/file/d49f9369278fbac2f3527c2a4b6476c337d848f918b33aabbb7e0cfeab1a2876/behavior/Tencent%20HABO
+
+faker.co.jp
+orderlynet.net
+krans.nl/~krans/
+solsin.top
+
+# Reference: https://documents.trendmicro.com/assets/Appendix-Latest-Spam-Campaigns-from-TA505-Now-Using-New-Malware-Tools-Gelup-and-FlowerPippi.pdf
+# Reference: http://vxcube.com/recent-threats-ioc/5d202a32a39bb57f131343b4/detail
+
+kreewalk.com
+bigpresense.top
+cathits.net
+bascif.com
+nettubex.top
+cmarcite.net
+shortag.icu
+handous.net
+safegross.com
+
+# Reference: https://otx.alienvault.com/pulse/5dd2da0615a3634fdb888562
+# Reference: https://app.any.run/tasks/19ac204b-9381-4127-a5ac-d6b68e0ee92c/
+
+2by7.com
+365boxms.com
+365boxoffice.com
+4y6f.com
+7hg6.com
+aasdkkkdsa3442.icu
+administrationcalm.icu
+adobeonlinecdn.com
+adobeonlinecdn.net
+adobeonlineid.com
+adobeupdate.net
+adobeupdt.com
+adobeupdt.net
+afgdhjkrm.pw
+afsafasdarm.icu
+agdshnjdi.xyz
+agfssr.xyz
+amnsns.com
+app1.boxfiles-en.com
+app2.boxfiles-en.com
+app3.boxfiles-en.com
+app4.boxfiles-en.com
+arhhaderm.pw
+arhidsfderm.pw
+asgaage.pw
+asgdscc.pw
+aureliostefaniniarte.com
+bascif.com
+bigpresense.top
+box365msmicrosoft.com
+box365office.com
+box-en-au.com
+btmurl.xyz
+bullettruth.com
+cathits.net
+cdf1.box-en-au.com
+cdf2.box-en-au.com
+cdf3.box-en-au.com
+cdn-003.dropbox-download.com
+cdn-004.dropbox-download.com
+cdnavupdate.icu
+cdn-onedrive-live.com
+checksolutions.pw
+clievland.pw
+clippersonly.icu
+cmarcite.net
+cmf-005.googledrive-en.com
+cmf-006.googledrive-en.com
+cn007.dropbox-cnd.com
+cn008.dropbox-cnd.com
+counciloflight.bravepages.com
+cumenpolim.icu
+datdepot.net
+ddf-09.onedrive-sdn.com
+dedoshop.pw
+digitalinvoicing.net
+dl1.onedrive-live-en.com
+dl1.sharefiles-eu.com
+dl1.sharefile-us.com
+dl2.onedrive-live-en.com
+dl2.sharefiles-eu.com
+dl2.sharefile-us.com
+dl3.onedrive-live-en.com
+dl3.sharefiles-eu.com
+dl3.sharefile-us.com
+dropbox-cdn.com
+dsfk3322442fr44446g.icu
+dsntu.top
+e-commerce-shop.com
+ehj.administrationcalm.icu
+elast.pw
+elienne.net
+en001.dropbox-cnd.com
+en002.dropbox-cnd.com
+engast.top
+en-gb-facebook.com
+esetcdnserver.icu
+esupdate.icu
+f67i.com
+facebook-drm-server.com
+fonetorap.com
+furhatsth.net
+g50e.com
+g78k.com
+gcnhqshn.pw
+gidjshrvz.xyz
+glbtmow.xyz
+globe-trotterltd.com
+gohaiendo.com
+google-analtyic.com
+handous.net
+hinessite.com
+hitterda.icu
+home365box.com
+homeofficepage.com
+i86h.com
+idoffice365.com
+jbswin.net
+joisff333.icu
+jp-microsoft-store.com
+jsmatrix.icu
+kdqtq.administrationcalm.icu
+kiserma.pw
+kmpg.icu
+kosmetolodzy.com
+kramerleonard.com
+kreewalk.com
+kupitorta.net
+ldtfair.top
+lecmess.top
+lindasconley.bravepages.com
+live-en.com
+local365office.com
+luchies.com
+main365office.com
+medastr.com
+microsoftbox365.com
+microsoft-cnd.com
+microsoftoffice365box.com
+microsoft-store-en.com
+ms365box.com
+msboxoffice.com
+mshomebox365.com
+ms-home-live.com
+msonebox.com
+mybox365ms.com
+myofficeboxsupport.com
+n57u.com
+nanepashemet.com
+nettubex.top
+ns1.domain-imminent3.com
+offficebox.com
+office365addons.com
+office365-en-gb.com
+office365-en-update.com
+office365homeboxmx.com
+office365homedep.com
+office365id.com
+office365idstore.com
+office365msbox.com
+office365ms.com
+office365onlinehome.com
+office365online.net
+office365suppurt.com
+office365-update-en.com
+office365-update-en-gb.com
+office365-update-eu.com
+officehomems.com
+officemsbox365.com
+officemysuppbox.com
+offices365mssupport.com
+officeservice365.com
+officesupportbox.com
+office-teml-en.com
+ogallar.com
+online-office365.com
+onms-home.com
+operasanpiox.bravepages.com
+orderlynet.net
+pack301.bravepages.com
+perlinisystems.com
+pointsoft.pw
+portos.icu
+protset.pw
+r48t.com
+rabtmw.xyz
+rasggagadfa.pw
+rayshash.com
+reandol.pw
+ref345.icu
+remoted.icu
+reporta.pw
+rff3faafefw.pw
+rgdsghhdfa.pw
+rgozxzvdfa.pw
+rostelekom.pw
+safegross.com
+secureav.pw
+servicebox365office.com
+setgo.pw
+shanakaplan.com
+sharefile-cnd.com
+sharefiles-en.com
+shortag.icu
+slemend.com
+smn-001.onedrive-cdn.com
+smn-002.onedrive-cdn.com
+sofet.pw
+soletto-poletto.com
+solsin.top
+specsrv.pw
+sscvl.fcpages.com
+stalpina.com
+statesdr.top
+stelar.icu
+store365office.com
+suppl.icu
+sysav.pw
+sysupdts.pw
+t69c.com
+thenewsletter.xyz
+theonly365office.com
+thesystem-alarm.xyz
+the-systemsecures.xyz
+the-systems-security.xyz
+tinkerspots.bravepages.com
+toocoolaisha.bravepages.com
+towerprod3.com
+trailerbla.icu
+traveser.net
+trictac.com
+tuftonmotors.com
+turl.icu
+ulda.com
+update365-office-ens.com
+updateavsystems.pw
+update-ms-en-office365.com
+update-msoffice365.com
+vairina.top
+velquene.net
+vesecase.com
+vinomag.pw
+virusssystemsalert.xyz
+virus-system-alert.xyz
+waiireme.com
+windows-cnd-update.com
+windows-dev-sec.com
+windows-msd-update.com
+windows-service-us.com
+windows-several-update.com
+windows-update-01-en.com
+windows-update-02-en.com
+windows-update-sdbt.com
+windows-update-sdfw.com
+windows-wsus-en.com
+windows-wsus-eu.com
+winserver.icu
+zonaykan.com
+
+# Reference: https://twitter.com/stoerchl/status/1234752919683129344
+
+shares-cloud.com
+
+# Reference: https://twitter.com/ffforward/status/1234790417088032769
+
+rdmsom.com
+
+# Reference: https://twitter.com/stoerchl/status/1235119246188789761
+
+cdn-downloads.com
+into-box.com
+
+# Reference: https://labs.sentinelone.com/breaking-ta505s-crypter-with-an-smt-solver/
+
+ms-break.com
+windows-avs-update.com
+
+# Reference: https://twitter.com/CTI_Marc/status/1232231302595850242
+
+att-download.com
+
+# Reference: https://twitter.com/reecdeep/status/1235902595471937537
+
+tnrff-home.com
+
+# Reference: https://twitter.com/stoerchl/status/1237274892086710273
+
+dl-icloud.com
+
+# Reference: https://twitter.com/3XS0/status/1237117715749486601
+# Reference: https://app.any.run/tasks/d65a6845-496f-47dc-83a5-be77f601022b/
+
+rdmsom.com
+
+# Reference: https://twitter.com/reecdeep/status/1237377821787541504
+
+dysoool.com
+/casemd
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1237381890392223744
+
+i-sharecloud.com
+
+# Reference: https://twitter.com/Bl4ng3l/status/1237664300782817280
+
+geo-st-microsoft.com
+
+# Reference: https://twitter.com/stoerchl/status/1237709197988560897
+
+get-downloads.com
+sharespoint-en.com
+
+# Reference: https://twitter.com/stoerchl/status/1240186802654400512
+
+onedrives-en-live.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1240221894726561792
+
+shares-cdns.com
+
+# Reference: https://twitter.com/stoerchl/status/1240231031900385280
+
+stat-downloads.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1240249220361105409
+
+clietns-download.com
+
+# Reference: https://twitter.com/stoerchl/status/1240553910563155969
+
+clients-share.com
+static-downloads.com
+
+# Reference: https://twitter.com/stoerchl/status/1240938115126173698
+
+getlink-service.com
+
+# Reference: https://twitter.com/luc4m/status/1276477397102145538
+# Reference: https://blog.prevailion.com/2020/03/the-curious-case-of-criminal-curriculum.html
+
+http://185.106.120.31
+http://185.141.27.172
+http://185.141.27.250
+http://185.183.96.23
+http://185.183.96.54
+http://185.244.150.143
+http://185.244.150.153
+http://185.82.202.66
+http://194.36.189.215
+http://23.227.199.17
+
+# Reference: https://twitter.com/stoerchl/status/1242027931611922434
+
+dyn-downloads.com
+
+# Reference: https://www.group-ib.com/media/silence_ta505_attacks_in_europe/
+
+http://195.123.246.126
+http://37.120.145.253
+
+# Reference: https://otx.alienvault.com/pulse/5ea06a3ce9030e041b86dbb5
+
+0202.com.tw/~miki/
+
+# Reference: https://twitter.com/InQuest/status/1262040559956492289
+# Reference: https://twitter.com/HONKONE_K/status/1262297609189732353
+# Reference: https://app.any.run/tasks/dd65fddf-1550-4880-9ca9-9793d2c0491e/
+
+http://54.38.127.28/pm3
+
+# Reference: https://otx.alienvault.com/pulse/5ed6792bbc276d41051ed969
+
+corp-storage.com
+fasts-downloads.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1268107667073110017
+# Reference: https://twitter.com/StopMalvertisin/status/1648604148848549888
+# Reference: https://twitter.com/StopMalvertisin/status/1648604152363368450
+# Reference: https://twitter.com/500mk500/status/1648629582990327810
+# Reference: https://www.virustotal.com/gui/file/ba55542c6fa12865633d6d24f4a81bffd512791a6e0a9b77f6b17a53e2216659/detection
+# Reference: https://www.virustotal.com/gui/file/617bc755b7ccae2195cbbdb2dcfe00b2d1c39a8e0c662f0960dec56328ea6290/detection
+# Reference: https://www.virustotal.com/gui/file/85307b9aa30453fc35eae4a95158e9d3ca733f0fdd05ecfffef582fed7f39a71/detection
+
+45.90.58.69:443
+filessz.com
+rmt-downloads.com
+dl-05678.rmt-downloads.com
+
+# Reference: https://twitter.com/stoerchl/status/1262678851790024705
+
+mslinks-downloads.com
+
+# Reference: https://twitter.com/stoerchl/status/1268442973236314112
+
+downloads-links.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1268471605967159296
+
+sharefileszz.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1268851078839373825
+
+store-downloads.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1268916855755829248
+
+shr-links.com
+
+# Reference: https://twitter.com/stoerchl/status/1269892097223598082
+
+eu-download.com
+
+# Reference: https://twitter.com/3XS0/status/1269964921363746823
+# Reference: https://app.any.run/tasks/f3a9d3af-4977-47fc-8254-f6405f195858/
+
+sdff-corp.com
+
+# Reference: https://twitter.com/stoerchl/status/1270256506911547397
+
+sl-downloads.com
+s89065339-onedrive.com
+s77657453-onedrive.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1272523582246182917
+# Reference: https://app.any.run/tasks/2e9f4798-f702-4ffa-9862-13cca0b8a012/
+
+nffsd-corp.com
+
+# Reference: https://twitter.com/stoerchl/status/1272791753968549888
+# Reference: https://app.any.run/tasks/1e318b34-e2fe-4ff9-8e38-b4bd8c267dd2/
+
+ex-downloads.com
+wire-share.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1273250157363187712
+# Reference: https://app.any.run/tasks/159437ba-68e0-4d7a-87cb-9cfa96d40880/
+
+mgrs-service.com
+
+# Reference: https://twitter.com/MsftSecIntel/status/1273359829390655488
+
+md-downloads.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1273965777767542787
+
+dropboxscdn.com
+
+# Reference: https://twitter.com/stoerchl/status/1274966047473520643
+# Reference: https://app.any.run/tasks/08cd47a3-e701-4731-8989-dda9cdb2e2e8/
+
+get-hlinks.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1275344470901473287
+
+dropboxccdn.com
+
+# Reference: https://twitter.com/stoerchl/status/1275346496939048960
+# Reference: https://twitter.com/JAMESWT_MHT/status/1275407351923847168
+# Reference: https://app.any.run/tasks/f78fbafa-203d-4921-98a1-99a00aa5e2b6/
+
+rapid-stores.com
+
+# Reference: https://twitter.com/stoerchl/status/1275691001726844929
+# Reference: https://app.any.run/tasks/84c47dd8-4191-4be1-99f2-e2939c26f22b/
+
+dropboxwcdn.com
+fast-gl-backups.com
+
+# Reference: https://twitter.com/stoerchl/status/1276040377863213057
+
+ex-stores.com
+
+# Reference: https://twitter.com/stoerchl/status/1276042652845322242
+
+dropboxrcdn.com
+
+# Reference: https://twitter.com/stoerchl/status/1276502893605126144
+
+boxrcdn.com
+
+# Reference: https://app.any.run/tasks/7838303e-c870-40e3-b869-79406a12008b/
+
+alpha-telemetry-microsoft.com
+
+# Reference: https://twitter.com/stoerchl/status/1277478441856765955
+
+google-us-cdn.com
+usr-telemetry-microsoft.com
+
+# Reference: https://twitter.com/stoerchl/status/1278229452665782272
+
+direct-share.com
+mira-store.com
+
+# Reference: https://twitter.com/stoerchl/status/1280043674869604352
+
+fast-bits.com
+personal-dss.com
+
+# Reference: https://twitter.com/stoerchl/status/1280361159909146624
+
+main-boost.com
+
+# Reference: https://www.gdatasoftware.com/blog/2020/07/36122-hidden-miners
+# Reference: https://otx.alienvault.com/pulse/5f0e11325ceed6cb0ef53fea
+
+almagel.icu
+asggh554tgahhr.pw
+dfsgu747hugr.pw
+esggh554tgahhr.pw
+gabardina.xyz
+hsggh554tgahhr.pw
+kuarela.xyz
+losos.cn
+nsggh554tgahhr.pw
+romashka.cn
+rotoscoping.xyz
+safuuf7774.pw
+sgahugu4ijgji.xyz
+sggh554tgahhr.pw
+
+# Reference: https://twitter.com/stoerchl/status/1290957897908748292
+# Reference: https://app.any.run/tasks/86156ead-9739-4c59-92f0-ed96d9cd6a8b/
+
+nellscorp.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1290976151440101382
+
+direct-space.com
+
+# Reference: https://twitter.com/BushidoToken/status/1291320059399409665
+
+definite-limits.com
+mop-shere.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1291050991882653696
+# Reference: https://twitter.com/500mk500/status/1291365085676482560
+
+yhti.net/~kafisher/a9l7aw.html
+
+# Reference: https://twitter.com/ScarletSharkSec/status/1291725232634462208
+# Reference: https://twitter.com/stoerchl/status/1291641283669372929
+
+ht-srl.com/t23p3.html
+none-class.com
+river-store.com
+
+# Reference: https://twitter.com/stoerchl/status/1278957624294244352
+
+global-downloads.com
+limo-ones.com
+
+# Reference: https://twitter.com/stoerchl/status/1277840563618951168
+
+google-eu-cdn.com
+
+# Reference: https://twitter.com/stoerchl/status/1277844593250312192
+
+direct-upt.com
+
+# Reference: https://pastebin.com/MK82QP21
+
+archifaktura.hu/nfxdutl.html
+davion.plus.com/iscyqz.html
+
+# Reference: https://pastebin.com/qRuPk9wj
+
+eduthermas.sk/vz0s4.html
+falcon1.net/~carolb/eedvmpj.html
+jqtrias.com/v61vd.html
+lewell.fr/2au7x.html
+newmedia.plus.com/bu2a8o.html
+razor.arnes.si/~osjkranjkr/h2j6x2n.html
+scottofyork.plus.com/ouwd7q.html
+verkeersovertredingen.nl/ozkk1g5.html
+
+# Reference: https://twitter.com/iot_savant/status/1293688439238533121
+
+petzel.be/kae443.html
+tremd-space.com
+
+# Reference: https://twitter.com/stoerchl/status/1293831179897118720
+
+oca-telemetry-microsoft.com
+
+# Reference: https://twitter.com/reecdeep/status/1293890734718963712
+# Reference: https://app.any.run/tasks/3c53ef78-5610-4d72-816c-82113136cad4/
+
+transff-reddon.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1293901394940841990
+# Reference: https://twitter.com/500mk500/status/1293902420783767554
+
+mwt.net/~blainee/6lim.html
+petzel.be/rlcgklh.html
+skegness.net/jr7ad.html
+travelhub.com.sg/psi50zi.html
+long-space.com
+
+# Reference: https://twitter.com/Supre31539665/status/1295285931566604288
+
+url-space.com
+
+# Reference: https://twitter.com/Supre31539665/status/1295290493144829952
+
+siron-del.com
+
+# Reference: https://twitter.com/Supre31539665/status/1293527530906017793
+
+band-switch.com
+
+# Reference: https://twitter.com/Supre31539665/status/1296050194115690498
+
+digitals-space.com
+
+# Reference: https://twitter.com/tbarabosch/status/1296073811536883713
+# Reference: https://www.virustotal.com/gui/file/875ac24276dbe23f119bf8c7ffac6e0063062718f1c6b83c9cfc75a929f5cef2/detection
+
+us-microsoft-store.com
+
+# Reference: https://twitter.com/stoerchl/status/1296354890814500864
+
+see-back.com
+
+# Reference: https://twitter.com/0xkyle/status/1296434217866362881
+
+one-drives.com
+
+# Reference: https://twitter.com/stoerchl/status/1296728116086398976
+
+backup-place.com
+
+# Reference: https://twitter.com/stoerchl/status/1297847720506515456
+# Reference: https://twitter.com/cybergoat69/status/1298239961859203072
+# Reference: https://pastebin.com/3Pia0BrL
+
+http://209.182.199.2/~safadijla/x0akjio.html
+alexanderjonesi.com/2352yw.html
+channelvue.com.au/daky21.html
+draco-artgallery.wz.cz/9cwpu.html
+drivingschoolburlington.ca/iw1m.html
+elektromehanika.co.rs/jsbxgj.html
+icmserver.net/x2twn.html
+injuredworkersadvocates.com/323p.html
+jav.ee/zggpa.html
+jlcarral.com/iqn4vx.html
+jsfactory.net/ru7s.html
+justdeckshamilton.ca/tqlc8.html
+lalettreauxelus.com/olayec.html
+lincolnshirefitness.co.uk/qc9n1b.html
+members.iitnet.net.au/~huyongtian/yi9puc.html
+nozawashoten.com/ekp72.html
+nytva-nmz.ru/75lo.html
+promoreclame.info/~test/xztv.html
+servitemequipos.cl/y25su1v.html
+skegness.net/i6froe9.html
+solartia.com/e6kk.html
+takeoneaudio.jp/lpjeap.html
+tepetate.com/aogpwrw.html
+travelhub.com.sg/fz8uj00.html
+near-fast.com
+
+# Reference: https://twitter.com/tbarabosch/status/1298208068480753666
+# Reference: https://www.virustotal.com/gui/file/36ded7132156a827adf289d72ddd9918eeae12d4e892ced050a55892bfb15a63/detection
+
+store-000846-live.com
+store-003774-live.com
+
+# Reference: https://twitter.com/stoerchl/status/1298505431829151744
+
+first-destin.com
+
+# Reference: https://twitter.com/stoerchl/status/1298905153286873088
+
+toppon-studio.com
+
+# Reference: https://twitter.com/stoerchl/status/1298864703901519873
+
+dropbox-cdns.com
+groms-dat.com
+
+# Reference: https://twitter.com/stoerchl/status/1300321990608384001
+
+west-dat.com
+
+# Reference: https://twitter.com/ffforward/status/1300338160195469317
+
+dropbox-cdnn.com
+
+# Reference: https://twitter.com/ffforward/status/1300340615541071873
+
+365online-message-box.com
+
+# Reference: https://unit42.paloaltonetworks.com/cybersquatting/
+# Reference: https://otx.alienvault.com/pulse/5f4e6c269783215ebfec5c61
+
+4ever21.com
+amazon-india.online
+com-finder-me.info
+facebookwinners2020.com
+micposoft.com
+microsoft-alert.club
+microsoft-sback-server.com
+microsoft-store-drm-server.com
+netflix-payments.com
+netflixbrazilcovid.com
+rbyroyalbank.com
+samsungeblyaiphone.com
+samsungpr0mo.online
+secure-wellsfargo.org
+store-in-box.com
+stt-box.com
+walrmart44.com
+whatsalpp.com
+xn--microsof-wyb.com
+
+# Reference: https://twitter.com/stoerchl/status/1301423510754127872
+# Reference: https://twitter.com/stoerchl/status/1301438288708894720
+
+fosdommtoi.com
+onehub-cdn.com
+
+# Reference: https://twitter.com/Supre31539665/status/1303012796288954370
+
+bak-home.com
+
+# Reference: https://twitter.com/Supre31539665/status/1303081207547256832
+
+short-share.com
+
+# Reference: https://twitter.com/stoerchl/status/1303611630496952326
+
+shortcut-links.com
+
+# Reference: https://twitter.com/stoerchl/status/1303614438969405440
+
+nels-ltd.com
+
+# Reference: https://twitter.com/stoerchl/status/1303973151827791874
+
+near-back.com
+onedrives-live.com
+
+# Reference: https://twitter.com/StanHoppe/status/1303735706465034249
+
+bluelook.es
+zodiaq.toilamit.com
+
+# Reference: https://twitter.com/stoerchl/status/1304366556936372226
+# Reference: https://twitter.com/ffforward/status/1304368897265725440
+
+ferra.xyz
+news-37876-mshome.com
+news-389767-mshome.com
+
+# Reference: https://twitter.com/stoerchl/status/1305421431270977537
+
+dropbox-cdnt.com
+pssd-ltdgroup.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1306158113607778304
+
+der-pallt.com
+
+# Reference: https://twitter.com/stoerchl/status/1310900242351521792
+
+shared-filez.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1316675596525735937
+
+uni-notepad.com
+
+# Reference: https://insights.oem.avira.com/ta505-apt-group-targets-americas/
+
+http://135.181.43.48
+http://135.181.87.102
+http://185.163.47.177
+http://93.157.62.61
+http://93.157.63.29
+http://93.157.63.48
+http://95.216.212.35
+asfgu3ha84vzg.cn
+asugahwy31.xyz
+bromide.xyz
+canttouchtthis.cn
+enroter1984.xyz
+jopanovigod.xyz
+neboley.cn
+sdsddgu.xyz
+teahgiaj3ig.cn
+
+# Reference: https://app.any.run/tasks/6a77f6f2-50fb-4a3e-ad20-e0bdd2ba7031/
+
+/9o0.php
+
+# Reference: https://www.fireeye.com/blog/threat-research/2020/10/threatpursuit-vm-threat-intelligence-and-hunting-virtual-machine.html
+# Reference: https://www.virustotal.com/gui/ip-address/155.94.160.116/relations
+# Reference: https://www.virustotal.com/gui/ip-address/192.99.69.95/relations
+
+alert511.com
+alerte511.com
+binom51.com
+
+# Reference: https://twitter.com/CTI_Marc/status/1335969659275849730
+
+bak0-store.com
+
+# Reference: https://twitter.com/ffforward/status/1335985701532413957
+
+share-gov.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1336651097340076033
+# Reference: https://twitter.com/_zero_q/status/1336941699256512512
+# Reference: https://twitter.com/_zero_q/status/1337328887769026562
+# Reference: https://twitter.com/_zero_q/status/1338380429733277697
+
+24-hrmed-sharepoint.com
+alltech-sharepoint.com
+amyx-sharepoint.com
+boydcorp-sharepoint.com
+cambriasolutions-sharepoint.com
+centerfield-sharepoint.com
+columbiahospitality-sharepoint.com
+csindustries-sharepoint.com
+ecoserv-sharepoint.com
+epsii-sharepoint.com
+eteaminc-sharepoint.com
+evergreenreg-sharepoint.com
+feedthechildren-sharepoint.com
+jamesimaging-sharepoint.com
+jetrord-sharepoint.com
+lexitaslegal-sharepoint.com
+linderco-sharepoint.com
+lviusa-sharepoint.com
+naperville203-sharepoint.com
+outback-sharepoint.com
+ppsvcs-sharepoint.com
+raveis-sharepoint.com
+schimenti-sharepoint.com
+smartandfinal-sharepoint.com
+smawins-sharepoint.com
+topgolf-sharepoint.com
+usicllc-sharepoint.com
+yearup-sharepoint.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1337328705018982401
+
+res-backup.com
+
+# Reference: https://twitter.com/_zero_q/status/1337330221683527680
+
+ms-downloading.com
+
+# Reference: https://twitter.com/jfslowik/status/1337465833602203648
+# Reference: https://twitter.com/SwitHak/status/1337467878073720832
+# Reference: https://twitter.com/jfslowik/status/1337468327644471296
+
+borne-ms.com
+contact-fnac.com
+notifications-fnac.com
+
+# Reference: https://twitter.com/Supre31539665/status/1338496049204355073
+
+local-download.com
+
+# Reference: https://twitter.com/sS55752750/status/1338526544742985732
+
+ms-debug-services.com
+
+# Reference: https://twitter.com/stoerchl/status/1339146678671204352
+
+docs-downloading.com
+ms-pipes-service.com
+
+# Reference: https://twitter.com/whoami73041612/status/1342109216136429568
+# Reference: https://www.virustotal.com/gui/ip-address/185.163.46.7/relations
+
+oca-telemetry-microsoft.com
+statsfe1-ws-microsoft.com
+store-077864-live.com
+
+# Reference: https://www.telekom.com/en/blog/group/article/inside-of-cl0p-s-ransomware-operation-615824
+
+xbox-ms-store-debug.com
+
+# Reference: https://twitter.com/stoerchl/status/1351584541312430083
+
+cdn-098636-metrics-mozilla.com
+cdn-738276555-us-akamai.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1359084925778071557
+# Reference: https://twitter.com/ffforward/status/1359099960025878528
+# Reference: https://app.any.run/tasks/4c8151c9-c02c-456a-bcb5-c2459b7b3b2f/
+# Reference: https://www.virustotal.com/gui/ip-address/34.76.121.139/relation
+
+online-docu-sign-ft.com
+online-docu-sign-st.com
+online-docu-sign-th.com
+
+# Reference: https://www.cert.ssi.gouv.fr/ioc/CERTFR-2021-IOC-001/
+
+filesharess.com
+syncdownload.com
+onesdrives.com
+
+# Reference: https://twitter.com/BushidoToken/status/1364607157107363840
+# Reference: https://www.zscaler.com/blogs/security-research/return-minebridge-rat-new-ttps-and-social-engineering-lures
+# Reference: https://app.any.run/tasks/40115012-a919-4208-bfed-41e82cb3dadf/
+# Reference: https://otx.alienvault.com/pulse/6036b5265ae36030329f4ad9/
+
+184.164.146.102:79
+billionaireshore.top
+bloggersglobbers.top
+brainassault.top
+corporatelover.top
+gentlebouncer.top
+greatersky.top
+realityarchitector.top
+unicornhub.top
+vikingsofnorth.top
+/~4387gfoyusfh_gut/~3fog467wugrgfgd43r9.bin
+/~8f3g4yogufey8g7yfg/~dfb375y8ufg34gfyu.bin
+/~munhgy8fw6egydubh/9gh3yrubhdkgfby43.php
+/~4387gfoyusfh_gut/
+/~8f3g4yogufey8g7yfg/
+/~munhgy8fw6egydubh/
+/~3fog467wugrgfgd43r9.bin
+/~dfb375y8ufg34gfyu.bin
+/9gh3yrubhdkgfby43.php
+
+# Reference: https://blog.morphisec.com/minebridge-on-the-rise-sophisticated-delivery-mechanism
+# Reference: https://otx.alienvault.com/pulse/6048edd2878a0c08ab80b406
+
+5tvstar.cn
+goldendragon888.cn
+ninjakick.club
+polarrsearch.xyz
+rogaikopyta.xyz
+simpledomen.club
+simplename.website
+sweepchance.club
+sweepchance.xyz
+update-system.cn
+updatesystem.website
+utkailipa.xyz
+
+# Reference: https://twitter.com/Circuitous__/status/1397255222427271169
+# Reference: https://pastebin.com/DeXjTP2Q
+# Reference: https://www.virustotal.com/gui/file/99811775df40b9988040f787af520531714fe8fbce7139886843b96fbb20cb4b/detection
+# Reference: https://www.virustotal.com/gui/file/94e6959c3653df07f65e583c929c4c698b1921be967f9fac8042bdd3b28748b5/detection
+# Reference: https://www.virustotal.com/gui/file/a9e78f7e12fbccb9d180c847e5da6552b3699ed618b206e169669a904e1ff55c/detection
+
+agentsv2.ivm.mv
+aims1.ezicodes.com
+akachi.co.za
+bizprobe.com
+blog.john1-9.com
+coeniglich.de
+creatalca.cl
+cursoscaruaru.com.br
+fate.sa
+impress-hrd.mysoftheaven.com
+mail-call.us
+newzroot.com
+proyectomoodle.labora.com.pe
+rainbowchildrensacademy.org
+savvyswitchdev.cimet.io
+sklep.northserwis.pl
+tervisdesign.com
+
+# Reference: https://twitter.com/banxen/status/1409701910320349190
+# Reference: https://www.zscaler.com/blogs/security-research/demystifying-full-attack-chain-minebridge-rat
+
+86.106.181.183:32672
+cloud-check.website
+simpleclub.site
+simpleclub.website
+simpledomen.website
+tradingview.cloud
+tradingview.cyou
+tradingview.digital
+tradingview.life
+
+# Reference: https://tria.ge/210624-pjnad62cna/behavioral1
+# Reference: https://www.virustotal.com/gui/ip-address/206.188.197.49
+
+afditnzurh.xyz
+afspfigjeb.cn
+asdjausg.cn
+dsfamsi4b.cn
+homate.xyz
+kbpsorjbus6.pw
+novacation.cn
+pgf5ga4g4b.cn
+sdfisdgj.xyz
+afditnzurh.xyz
+afspfigjeb.cn
+asdjausg.cn
+dsfamsi4b.cn
+homate.xyz
+kbpsorjbus6.pw
+novacation.cn
+pgf5ga4g4b.cn
+sdfisdgj.xyz
+
+# Reference: https://twitter.com/D3LabIT/status/1417455234692096030
+
+wondershare-filmora.com
+
+# Reference: https://www.mitiga.io/blog/mitiga-advisory
+
+adobe-documents.com
+adobe-view.com
+dropbox-online.com
+dropbox-online.pro
+elvacomtpro.co
+get-adobe.club
+imgur-online.com
+imguronline.com
+office-templatedownload.com
+safe-redirect.pw
+sajam.us
+share-download.com
+update-store.com
+microsoft.office-templatedownload.com
+microsoft.update-store.com
+
+# Reference: https://twitter.com/stoerchl/status/1446043823285624833
+
+cdn03664-dl-fileshare.com
+
+# Reference: https://twitter.com/ffforward/status/1446212189438754826
+# Reference: https://www.virustotal.com/gui/ip-address/46.161.40.87/relations
+# Reference: https://urlhaus.abuse.ch/browse.php?search=c1b4a0b9eadbf51e13343270b7ef85703b8a11ee736526f61193b821a72bef1f
+
+http://149.28.70.98
+http://193.42.36.110
+cdn-wfs-nspod.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/34.98.99.30/relations
+
+microsoft-update-ru.com
+
+# Reference: https://github.com/hpthreatresearch/iocs/blob/main/TA505/domains.txt
+
+cdn-8846-sharepoint-office.com
+cdnfilesdrop.com
+diarromonico.com
+dropmefilesbox.com
+dzikic-my-sharepoint.com
+dzikics-my-sharepoint.com
+int-onedrive.com
+us-dropbox.com
+
+# Reference: https://www.virustotal.com/gui/file/9c1643a07c97b89e8b9fbdf0ea661f98549cfaca9478d1b87ae52eee79e06567/detection
+# Reference: https://www.virustotal.com/gui/ip-address/185.163.47.254/relations
+
+asfnnf4334uub.xyz
+asfuhuhvuuye45ggv.xyz
+/pvviv/b.php
+
+# Reference: https://www.virustotal.com/gui/file/416646965182872874c8a60f578689e9167f538fc100b532608918a3dafb072f/detection
+
+potuybze.xyz
+
+# Reference: https://www.virustotal.com/gui/file/6a2cfe9be006f832070e4b0533d448d04d5cbbfb2c1f040810c38b9061d1c238/detection
+
+dssagrgbe3irggg.xyz
+
+# Reference: https://tria.ge/211217-z4gnwsfabq/behavioral2
+
+kasisausnasaysar.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.195.211.26/relations
+
+anonymous-sec.com
+dropbox-sdn.com
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/whatta-ta-ta505-ramps-activity-delivers-new-flawedgrace-variant
+# Reference: https://otx.alienvault.com/pulse/616edb080c112a848f7ad53f
+
+http://139.59.93.223
+http://141.164.41.231
+
+# Reference: https://app.any.run/tasks/996d0f74-79c7-46e8-84c0-5288e24f13a7/
+
+http://185.117.72.132
+
+# Reference: https://www.virustotal.com/gui/file/854b118f520d039841d36ad85a45194564e7609ce41796efcda4c07790f232c5/detection
+
+http://185.106.123.102
+http://194.36.191.26
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.36.191.26/relations
+
+woning-docu-d5.live
+
+# Reference: https://www.virustotal.com/gui/file/a18df85852e800649adafc1b168e1c4e5744823845b9994cd9724e5d987f3962/detection
+
+enroter1984.cn
+
+# Reference: https://www.virustotal.com/gui/file/49aae756adb08d63fedbc6d073531fad10432579bbe10fafa11ebfef51fe2fbe/detection
+
+http://185.117.73.52
+
+# Reference: https://twitter.com/fr0s7_/status/1545727793341861889
+# Reference: https://twitter.com/fr0s7_/status/1545728147466981377
+# Reference: https://www.virustotal.com/gui/file/a61b9e28e42be2f0caf386f9113f523a6a5849f1da30720c28100e232d003e69/detection
+
+http://185.117.73.66
+localreviewer.shop
+mail.localreviewer.shop
+
+# Reference: https://twitter.com/jaydinbas/status/1551947864225505281
+
+http://185.183.98.42
+
+# Reference: https://twitter.com/PRODAFT/status/1567093352885108737
+# Reference: https://www.prodaft.com/m/reports/TeslaGun_TLPWHITE.pdf
+# Reference: https://app.validin.com/axon?find=194.180.174.95&type=ip
+# Reference: https://www.virustotal.com/gui/ip-address/5.181.156.15/relations
+
+aasfhhvyyayssa.xyz
+aasouv636d.cn
+afggaiir3a.xyz
+aisiciciaisxuusuxic.xyz
+aonvjvisi3949vnao30cv.xyz
+aosdnvnauurt.xyz
+asdijoisad87ay3.cn
+asdyyauscuauusc.xyz
+asfggagsa3.xyz
+asfjjasguasus.xyz
+asfjjsdvv33gqrr2fv.cn
+asfpihbhbyd.xyz
+asfuuvhv3083f.xyz
+asgyyya6ychcha.xyz
+asncnasu73ydy.xyz
+asudjasdusad.xyz
+ccnausya553r3.xyz
+dfsrakizimoy34ggf.xyz
+dkaknvizisic.xyz
+hitnaiguat.xyz
+listjhueaa.cn
+nacuasujciiwi3.xyz
+psdgiigjsjavy3.xyz
+pssoduvnzud.xyz
+sacmmvivuasd.xyz
+sadiviai9d9asd.xyz
+sadivuuvua.xyz
+sagbbrrww2.cn
+sagiai3agar.cn
+saidifufaysydas.cn
+saidijfjv9as.xyz
+saidiviaiisj3.xyz
+sasdmvica883fen.xyz
+sasf6asf683jfsd.xyz
+saudhd7da7cjcu3.xyz
+saudjyyvv663.xyz
+sdgububue3.xyz
+soajfvhv235ua.xyz
+whereihjeu3.xyz
+
+# Reference: https://blog.talosintelligence.com/breaking-the-silence-recent-truebot-activity/
+# Reference: https://www.virustotal.com/gui/ip-address/45.227.253.102/relations
+
+http://45.227.253.102
+ms-online-store.com
+
+# Reference: https://twitter.com/Malwar3Ninja/status/1617423187415044099
+# Reference: https://tria.ge/230123-hmkksadg7w/behavioral1
+
+zoomapp.tech
+
+# Reference: https://twitter.com/1ZRR4H/status/1617661947851464704
+# Reference: https://raw.githubusercontent.com/CronUp/Malware-IOCs/main/2023-01-23_TA505_GoogleAds
+
+abobe.shop
+abobe.tech
+adob.store
+adob.tech
+anyidesck.website
+connecitferstcy.tech
+libeofice.store
+libeofice.tech
+libeofice.website
+liblreoffice.tech
+liblreofice.online
+liblreofice.space
+liblreofice.store
+liblreofice.tech
+liblreofice.website
+libraoffjlce.online
+littare2e1.shop
+liwenbass33.shop
+micrmsteams.online
+msteamsqw.online
+slack-soft.website
+teaimviewer.website
+teamsmsa.online
+teamvviewier.tech
+tirsogov.online
+tirsw9f.online
+w9irsgob.online
+
+# Reference: https://twitter.com/MalGamy12/status/1623035764954042386
+
+6v4q5w7di74grj2vtmikzgx2tnq5eagyg2cubpcnqrvvee2ijpmprzqd.onion
+
+# Reference: https://twitter.com/lazy_daemon/status/1645156714688200708
+
+binance-cloud.com
+aav.download-cdn.com
+
+# Reference: https://twitter.com/ThreatBookLabs/status/1689445206695784449
+# Reference: https://www.virustotal.com/gui/file/081e31fdb097aa2ae92bf480563338bf9c889a989c386c1a0c0a03f7b6c8a7c0/detection
+
+xgdhh33jfas.xyz
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.get2/
+
+101.78.26.130:443
+103.86.130.35:443
+103.86.130.50:443
+103.86.130.51:443
+103.86.130.54:443
+103.86.130.67:443
+103.86.130.68:443
+103.86.130.72:443
+103.86.130.74:443
+103.86.130.76:443
+103.86.130.79:443
+103.86.130.86:443
+103.86.131.102:443
+103.86.131.103:443
+103.86.131.106:443
+103.86.131.107:443
+103.86.131.46:443
+103.86.131.55:443
+103.86.131.57:443
+103.86.131.69:443
+103.86.131.78:443
+103.86.131.79:443
+103.86.131.87:443
+110.15.243.148:443
+117.52.115.212:443
+124.243.43.9:443
+124.243.53.149:443
+125.141.136.172:443
+125.141.144.228:443
+125.141.145.164:443
+125.141.145.165:443
+125.141.145.174:443
+125.141.145.175:443
+125.141.145.178:443
+125.141.145.185:443
+125.141.145.241:443
+125.141.145.252:443
+125.60.0.198:443
+125.60.0.199:443
+125.60.95.154:443
+125.60.95.157:443
+125.7.199.169:443
+133.186.222.87:443
+180.210.112.158:443
+188.160.7.36:443
+202.211.4.65:443
+203.252.173.121:443
+210.90.168.176:10443
+220.69.33.111:443
+220.69.33.123:443
+220.69.33.144:443
+220.69.33.164:443
+220.69.33.222:443
+220.69.33.225:443
+220.69.33.44:443
+220.69.33.47:443
+220.69.33.51:443
+220.69.33.53:443
+220.69.33.57:443
+220.69.33.60:443
+220.69.33.85:443
+27.101.221.227:443
+27.101.222.186:443
+27.101.222.24:443
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.get2/ (# 2024-04-03)
+
+103.86.130.103:443
+103.86.130.120:443
+103.86.130.61:443
+103.86.130.78:443
+103.86.130.83:443
+103.86.130.84:443
+103.86.130.85:443
+103.86.131.101:443
+103.86.131.147:443
+103.86.131.60:443
+103.86.131.70:443
+124.243.43.1:443
+125.141.145.190:443
+211.226.30.198:443
+211.226.30.202:443
+220.69.33.81:443
+220.69.33.83:443
+
+# Reference: https://www.virustotal.com/gui/file/80a17b8e5a11a7ff57cece8c428b9e31c8e9180e7f4056688ac6aafbce0f056e/detection
+
+sayygvyaycgcgye.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/94.158.245.225/relations
+
+94.158.245.225:443
+afditnzurh.xyz
+dadroy.club
+galaperoiu.xyz
+nimporta.xyz
+
+# Reference: https://www.virustotal.com/gui/file/9e3165191ecce4eea060db6eb4b15755041a711475ae89857db93cc01c2c2cf7/detection
+# Reference: https://www.virustotal.com/gui/file/679dd065b743c3f99bb012f89e73526d2a42a7c9b04fe4b85010c62fbaa7639d/detection
+# Reference: https://www.virustotal.com/gui/file/5ed7fb5362df1cc3405ad64ce0bf7f3eac739c29cd2e280ec34a0ae68f468aff/detection
+
+agutagndie.cn
+laprandie.cn
+zalerha7315.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/94.158.245.180/relations
+
+94.158.245.180:443
+dgiusghusegya363.xyz
+duudbfu44f.icu
+gsdisosjdgoiu.cn
+mail.rezeasy14.xyz
+refac47637.com
+rezeasy14.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.163.47.214/relations
+
+185.163.47.214:443
+lfoajhfhf.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.163.45.175/relations
+
+185.163.45.175:443
+asduuuag33.pw
+datingpartnership.net
+dhlcourier.info
+formationstop.win
+frention.org
+lfoajhfhf.xyz
+lpah.icu
+notice-wellsfargo-account-unusual-activity1.ml
+one-part.com
+pofhssri.pw
+rezeasy6.xyz
+rfffaoi3w.pw
+thsgrall.com
+updatecorpsuite.icu
+mail.one-part.com
+mail.rezeasy6.xyz
+
+# Generic trails
+
+/aggdst/Hasrt.php
+/bif/b.php
+/bkert/b.php
+/ghuae/huadh.php
+/rest/serv.php
+/doc/saz.php
+/docs/saz.php
+/docs/s.php
+/jab2/s.php
+/jimbo/s.php
+/portal/s.php
+/resist/b.php
+/sav/s.php
+/x/s.php
+/ppk/index.php
+/es/es.php
+/bvvtbbh.php
+/firstga990.php
+/gate990.php
+/ram90.php
+/f8h7ghd8gd8/index.php
+/f8h7ghd8gd8/
+/sdf4r3r3/
+/sdf4r3r3/WinDef.msi
+/seger_n/b.php
+/p/d?x=
+/p/m?x=
+/p/p?x=
+/p/r?x=

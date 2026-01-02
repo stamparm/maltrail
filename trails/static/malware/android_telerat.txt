@@ -1,0 +1,42 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://unit42.paloaltonetworks.com/unit42-telerat-another-android-trojan-leveraging-telegrams-bot-api-to-target-iranian-users/
+
+androydiha.ir
+ib3.ibot24.com
+gold.teleagent.ir
+mr-mehran.tk
+shahin-soori.ir
+09152104574nazimilad.000webhostapp.com
+abolking.000webhostapp.com
+botmohsan-apk.000webhostapp.com
+darkforceteam.000webhostapp.com
+mbosoba.000webhostapp.com
+mohsan024024.000webhostapp.com
+rr5.000webhostapp.com
+
+# Reference: https://twitter.com/LukasStefanko/status/1249120527995883520
+
+siteapi-iran6545852.fandogh.cloud
+sunpax.ga
+
+# Reference: https://app.any.run/tasks/53bb5a3c-13a5-4455-aaff-b4d0d9d8c708/
+
+162.0.229.203/RguhsT/
+
+# Reference: https://www.virustotal.com/gui/domain/texrec.org/relations
+# Reference: https://www.virustotal.com/gui/file/c71fd3fe85486a4b36d7756e7cd94bb2e2def906a1303a52f0ee86f1563dda2a/detection
+
+texrec.org
+
+# Reference: https://www.virustotal.com/gui/file/4af436e201119edf6b0e1b755b67f55a7b9a8e6e014480b45cbbff907658f29e/detection
+
+art-sf.000webhostapp.com
+
+# Generic trails
+
+/Bot/Ejsahahbot/
+/bots/rat/upload_file.php
+/hackelmi_bot/index.php
+/Ratjadidebot/index.php

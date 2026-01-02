@@ -1,0 +1,203 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/reecdeep/status/1208040420770492417
+# Reference: https://twitter.com/malware_traffic/status/1207824548021886977
+# Reference: https://app.any.run/tasks/70033afb-5152-4416-b603-afe7b819ef4e/
+
+atm506.com
+housefull2006.com
+
+# Reference: https://twitter.com/VK_Intel/status/1207917643291910144
+
+shiriez48.com
+
+# Reference: https://twitter.com/malware_traffic/status/1208205022925860865
+
+zyu33.com
+
+# Reference: https://app.any.run/tasks/cc287fb8-9060-4227-a0ac-a9ebf7787266/
+
+d-xelshop.com
+
+# Reference: https://app.any.run/tasks/6814a354-955e-4f85-a4ac-ce07b500e2fd/
+# Reference: https://app.any.run/tasks/8e5b6f19-c3e5-4c87-87ac-8c8e012cbb5f/
+# Reference: https://app.any.run/tasks/ae4f8b2d-c080-4571-8649-ffe7bb4ad9f8/
+# Reference: https://app.any.run/tasks/d6c8b439-ee01-4d9e-ae7f-10e2da68ae3a/
+
+/wp-content/plugins/loginpage/
+
+# Reference: https://www.cybereason.com/blog/valak-more-than-meets-the-eye
+# Reference: https://blog.talosintelligence.com/2020/07/valak-emerges.html
+# Reference: https://otx.alienvault.com/pulse/5ef4c94d7138ef0716193152
+# Reference: https://otx.alienvault.com/pulse/5f03875725d9d563fd038580
+
+360yunkang.com
+5continentsproperty.com
+7ayatok.com
+a0enorc6of7.com
+a2c491023580.com
+a4zy33hbmhxx70w9q.com
+a5c6a0cc95db01a9.com
+a8xui1akl9gjqucfa.com
+akidsdentistry.com
+amgvgrlm2w41l2lt373.com
+apartamentossupermolina.com
+atm506.com
+awh93dhkylps5ulnq-be.com
+bao-universe.com
+bbfjjf8.com
+bcp7mbg.com
+bdd1b2i68gj.com
+bee1d18255e.com
+bf8a8987e.com
+bp4prsdxo3vfexul.com
+bqoxits0mu0ga6aul.com
+c1j4xptyujjpyt8.com
+c3d189430.com
+c88gpm21qoal18bmk.com
+cab2cablink-space.com
+canesalt2tanzania.com
+classicstazz93buzz.com
+clownmice123.com
+conserviengenharia.com.br
+cot3d.com
+cryptoco.info
+cuetheconnect.com
+cuisine-enligne.com
+cursosler.com.br
+d-xelshop.com
+dieuwoqpq.com
+# digifish3.com
+e2o4bd6sh2b1sjk56-fv.com
+e5ud9xh7fppe78y.com
+ef0aba3698.com
+elkarmacompound.com
+f04qvvbwwhmxc09y.com
+fellowstock-puree.com
+fine-food-at-home.com
+fpwoueopwwoq.com
+freesubmissiondirectoryy.com
+ft23fpcu5yabw2.com
+g009clvp1l7.com
+h6e2at7du07f7a2ip.com
+hellenedney.com
+herzqvtpb99m0cn.com
+hexingmumen.com
+hges2gnmvvv8mv8yi.com
+hkjhz9bd1gpj4nfez.com
+hotjotchi.com
+housefull2006.com
+hswawuo7c8axfxw3.com
+hzo0aut97bfu7zweb.com
+i4y2du8rr6npqvhv.com
+ihatestarbucks.com
+iibb9j93k0z.com
+imebooksgiveaway.com
+ireiureoi0dwoi.com
+j5sfioue15kxqs.com
+jsi43qd1bmex0q5ygd.com
+juwoqoqpwieu.com
+k0ejxa1mfw2634fy.com
+k1n3pxnd5e6x2h09a-df.com
+k4xqhb6u4fo.com
+katedesktop64.com
+ke3rrzx.com
+kingprawbun28.com
+kuvk07l2dzj6wfc.com
+lcyaolu.com
+leasurefilletmarrow.com
+leekscheeks777.com
+lenceria2000.com
+lettucecharity2012.com
+lj2xwtcr7920v8.com
+ls9areetm1cxszmsg-ck.com
+m2mfbpsqgq0e2e20.com
+m8pwsczg0bbzw48j7.com
+mediationchantaljamet.com
+medpizzalavalouest.com
+mister-al.com
+msstolemybrain.com
+nasproje.com
+nbwvg2egflr8t2da1-wo.com
+nrhlxbt9covscex9b.com
+nrs2wjke0t2vz9.com
+nwwgbluv65j6g0xgr-xk.com
+oz10krn1rkxqnkcbdm.com
+p57zu1p9b3au2w6ghu.com
+poreslugle.com
+qiquan01.com
+qut6oga5219bf00e.com
+reflora-refraction.com
+rockyndawn.com
+rylandi2002.com
+s6oo5atdgmtceep8on.com
+se66ndx04fofu3sqv.com
+seokudos.com
+sheltercapsicum-old.com
+shengbo769.com
+shiriez48.com
+siicg8lgadurupkt.com
+sktrutx.com
+slw0s6ao.com
+sneakywillowrest.com
+snipscell-ss.com
+snowcraymar.com
+squidhala.com
+starzoooon777.com
+sunhutburgerzzz.com
+sweetmatchup.com
+sx-facemask.com
+syflzy.com
+tarimelaleteri.com
+testfeb22.com
+tpc2snch0g7njxjq.com
+travelconfidently.com
+ub1uxd9u4qz46t8y6s.com
+v0rzpbu.com
+voaxd.com
+voucherdome.com
+vrsv2haqaq3xy6x.com
+w30haeuku93xhw0e.com
+wishnwish.com
+wola4ru08w9i7jjpuc.com
+wonderfish-recipe2.com
+ws3lfkm.com
+wtrentacar.com
+wuxiyujingxuan.com
+x0fopmxsq5y2oqud.com
+xlxxy.com
+xzng9zrcihtm9jfs.com
+ya66lsx81lwxocgey.com
+ze2abug5d9vcrufg.com
+zgum52f88v3xf57682.com
+zhankai168.com
+zp9u2sk8nz5.com
+
+# Reference: https://pastebin.com/afCyHfcs
+# Reference: https://unit42.paloaltonetworks.com/valak-evolution/
+
+19geds-space.com
+19sped-lane.com
+2020aix.com
+22wedz-crate.com
+31pces-walk.com
+48boden-flow.com
+55sfors-cask.com
+59siwf-farm.com
+59xidd-fuel.com
+61wsov-ring.com
+64kapd-bowl.com
+81spdi-tick.com
+99swus-game.com
+aloveschool.com
+ctbrt.com
+ddc17.com
+delandwinebar.com
+joonaskallinen.com
+naturestyle-moebel.com
+restyle-prinner.com
+smc-coding.com
+thepicklepilot.com
+xfitnessproducts.com
+yongcan0f.com

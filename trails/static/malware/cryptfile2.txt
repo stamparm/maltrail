@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/BroadAnalysis/status/804164835650965504
+# Reference: https://broadanalysis.com/2016/11/30/rig-exploit-kit-via-the-eitest-delivers-cryptfile2-ransomware/
+
+/get_microsoft_version.php
+
+# Reference: https://twitter.com/BroadAnalysis/status/788085576234827776
+
+/u/affer.php

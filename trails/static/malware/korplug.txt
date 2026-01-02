@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Korplug-O/detailed-analysis.aspx
+
+nayanew1.no-ip.org
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2017-100603-1445-99&tabid=2
+
+dubkill.com

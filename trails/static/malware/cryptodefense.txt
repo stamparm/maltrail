@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.bleepingcomputer.com/virus-removal/cryptodefense-ransomware-information
+
+rj2bocejarqnpuhm.onion
+rj2bocejarqnpuhm.onion.gq
+rj2bocejarqnpuhm.onion.lt
+rj2bocejarqnpuhm.onion.cab
+rj2bocejarqnpuhm.onion.city
+rj2bocejarqnpuhm.onion.direct
+rj2bocejarqnpuhm.onion.link
+rj2bocejarqnpuhm.onion.nu
+rj2bocejarqnpuhm.tor2web.fi
+rj2bocejarqnpuhm.tor2web.blutmagie.de
+rj2bocejarqnpuhm.tor2web.org
+rj2bocejarqnpuhm.tor2web.ru
+rj2bocejarqnpuhm.tor-gateways.de
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2014-032622-1552-99&tabid=2
+
+machetesraka.com
+markizasamvel.com
+armianazerbaijan.com

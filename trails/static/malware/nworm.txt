@@ -1,0 +1,123 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://unit42.paloaltonetworks.com/goodbye-mworm-hello-nworm-trickbot-updates-propagation-module/
+# Reference: https://otx.alienvault.com/pulse/5ed0273a3fe965e82b4ced5f
+
+http://23.95.227.159
+
+# Reference: https://www.secuinfra.com/en/techtalk/n-w0rm-analysis-part-1/
+# Reference: https://www.secuinfra.com/en/techtalk/n-w0rm-analysis-part-2/
+# Reference: https://www.virustotal.com/gui/file/afc5a5a1a18f3e65bffa6e3d4e68ed90c102a942156db77ef570c4e8d1394dbc/detection
+
+http://15.188.246.78
+37.120.141.190:9031
+nyanmoney02.duckdns.org
+
+# Reference: https://github.com/pr0xylife/nworm/blob/main/nworm_10.02.2022.txt
+# Reference: https://www.virustotal.com/gui/file/c2b9521387ba444a21025af33ad1097fc6217bde590dace1c2e73cc0076b50b3/detection
+
+37.120.141.190:5057
+moneyhope81.duckdns.org
+nyanmoj.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/7fa3269279d91a759779a815e481379535743bd7aa1fda92b6c589910b58b724/detection
+# Reference: https://www.virustotal.com/gui/file/7f954fed667fd81635dcb03419dd93f78e1f8fef6b38f360c480b54c091032f4/detection
+
+14.52.171.20:8989
+61.78.78.100:8989
+0000000000000000.duckdns.org
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.nworm/ (# 2023-08-01)
+
+http://104.122.148.130
+http://104.97.17.117
+http://114.35.167.183
+http://122.176.75.121
+http://143.248.147.181
+http://143.248.153.74
+http://158.228.217.76
+http://191.190.84.243
+http://193.42.12.253
+http://23.204.189.35
+http://23.8.82.173
+http://23.9.169.37
+http://35.83.156.201
+http://61.31.57.182
+http://69.175.17.249
+103.231.166.41:6066
+103.91.210.142:8896
+107.151.222.196:443
+123.99.198.201:13091
+131.100.143.149:443
+136.144.41.4:84
+141.95.211.151:24029
+179.43.162.58:58001
+185.140.53.20:84
+185.222.58.39:3498
+194.55.224.189:58001
+20.48.21.149:443
+202.189.5.73:8712
+203.135.100.66:8712
+207.134.10.189:443
+209.234.235.238:443
+210.245.60.235:8213
+212.118.39.120:46588
+212.33.201.187:443
+213.3.43.23:58001
+221.194.155.218:443
+23.7.53.229:443
+35.168.183.178:443
+37.113.171.12:11320
+37.120.141.147:5052
+42.157.128.69:8896
+43.248.129.34:24252
+43.248.129.49:13091
+43.248.130.253:10085
+43.248.98.121:10085
+45.125.46.159:8712
+45.14.165.18:44810
+45.88.66.85:58001
+77.252.112.205:443
+85.58.162.169:36275
+
+# Reference: https://www.virustotal.com/gui/file/1b976a1fa26c4118d09cd6b1eaeceafccc783008c22da58d6f5b1b3019fa1ba4/detection
+
+http://15.188.246.78
+
+# Reference: https://threatfox.abuse.ch/ioc/1149216/
+
+166.88.132.34:58001
+
+# Reference: https://www.virustotal.com/gui/file/38632fe9e6d35b75209a9489d2b33822ef9544870b5bbec06b02950138fec3a6/detection
+
+194.169.175.43:58004
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.nworm/ (# 2023-08-14)
+
+194.33.191.53:58001
+194.49.94.103:58001
+198.50.248.228:58001
+2.56.254.54:5501
+212.224.86.54:58003
+37.139.129.243:58001
+5.188.159.44:58001
+91.92.248.33:4782
+91.92.252.74:58002
+
+# Reference: https://threatfox.abuse.ch/ioc/1155119/
+
+http://190.22.177.241
+
+# Reference: https://threatfox.abuse.ch/ioc/1187994/
+
+183.131.79.214:8896
+
+# Reference: https://threatfox.abuse.ch/ioc/1213631/
+
+195.20.16.103:18305
+
+# Generic
+
+/RILSXDKOPJHN.TXT
+/SSSSSSHSJSJSA.txt

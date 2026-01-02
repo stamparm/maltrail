@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trendmicro.com/vinfo/tr/threat-encyclopedia/malware/worm_prash.deu
+# Reference: https://programmersought.com/article/75313703494/
+
+tz.gxout.com            # Note: not whole gxout.com as it is not used exclusively by malware (e.g. http://api.gxout.com/proxy/check.aspx)
+/ip/route_tcp.aspx
+/ip/tcp.aspx

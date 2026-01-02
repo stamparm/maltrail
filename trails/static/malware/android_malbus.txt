@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: lazer, malbus
+
+# Reference: https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/malbus-popular-south-korean-bus-app-series-in-google-play-found-dropping-malware-after-5-years-of-development/
+
+# Reference: https://www.virustotal.com/gui/file/19162b063503105fdc1899f8f653b42d1ff4fcfcdf261f04467fad5f563c0270/detection (# MalBus Downloader)
+
+hferry.co.kr/data/fckeditor/media/image.mov
+hferry.co.kr/data/popup/pop(I).mov
+hferry.co.kr/data/popup/pop-image.mov
+img.kindermom.co.kr/frameart/detail/header.mov
+img.kindermom.co.kr/frameart/print/footer.mov
+img.kindermom.co.kr/mobile/images/down.mov
+yongmooncamp.or.kr/image/editor/btn_layer_search.mov
+yongmooncamp.or.kr/image/file/LogOff.mov
+yongmooncamp.or.kr/img/photoQuickPopup/btn_fail.mov
+
+# Reference: https://www.virustotal.com/gui/file/ecb6603a8cd1354c9be236a3c3e7bf498576ee71f7c5d0a810cb77e1138139ec/detection (# MalBus)
+
+edenenc.co.kr/Report/RptMyReport.asp
+hanbook.co.kr/partnershop/hanmail_ep.asp
+111.68.126.155:8080/ServiceDeskPlus/products.do
+103.53.176.145:8080/ServiceDeskPlus/products.do
+137.117.57.244:8080/ServiceDeskPlus/products.do
+difa.or.kr/common/asp/inc_Comn.asp
+
+# Generic (heur) detection
+
+/asp/inc_Comn.asp
+/partnershop/hanmail_ep.asp
+/Report/RptMyReport.asp
+/ServiceDeskPlus/products.do

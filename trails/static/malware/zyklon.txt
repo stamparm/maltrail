@@ -1,0 +1,45 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2016-061414-4226-99&tabid=2
+
+personalgateway1.ru
+gatewaypage1.ru
+
+# Reference: https://twitter.com/blankcard/status/1081081064347451393
+
+ne666an.xyz
+
+# Reference: http://benkow.cc/export.php
+
+http://193.38.54.155
+http://37.97.183.120
+
+# Reference: https://www.virustotal.com/gui/file/bd6b2c640872a9390787ee66b1001abfbd31995f0f0bc3949264b19ae820f02f/detection
+# Reference: https://www.virustotal.com/gui/domain/k9147783.beget.tech/relations
+# Reference: https://app.any.run/tasks/ba7cfc5e-71f3-4307-ac9d-da9b83d3ffea/
+# Reference: https://twitter.com/SeraphimDomain/status/1301189444372963338
+# Reference: https://twitter.com/James_inthe_box/status/1301194386538020864
+# Reference: https://twitter.com/James_inthe_box/status/1301201250449608706
+
+1tap.h1n.ru
+k9147783.beget.tech
+
+# Reference: https://open.appscan.io/article-235.html
+
+froglogst.ru
+froglogst.us
+game349forum.ru
+mylicense.ml
+vanguard-investmentintl.com
+
+# Reference: https://www.virustotal.com/gui/file/7744649643701535930b42c72994dff08ab03f008d1fea1260962dc99711ce69/detection
+
+pibk.hopto.org
+
+# Generic
+
+/api/status_zamarozki.dat
+/xo/gate.php
+/zyk/login.php
+/zyklon/login.php

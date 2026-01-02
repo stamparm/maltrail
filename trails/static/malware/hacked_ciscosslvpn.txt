@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cve-2025-20362, cve-2025-20333
+
+# Reference: https://x.com/DefusedCyber/status/1971492272966598683
+
+/+CSCOL+/csvrloader.jar
+/+CSCOL+/csvrloader64.cab
+/+CSCOU+/MacTunnelStart.jar

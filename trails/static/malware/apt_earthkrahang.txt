@@ -1,0 +1,57 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: dinodas, dinodasrat, linodas, linodasrat
+
+# Reference: https://www.welivesecurity.com/en/eset-research/operation-jacana-spying-guyana-entity/
+# Reference: https://github.com/eset/malware-ioc/tree/master/operation_jacana
+# Reference: https://www.virustotal.com/gui/ip-address/115.126.98.204/relations
+# Reference: https://www.virustotal.com/gui/ip-address/118.99.6.202/relations
+# Reference: https://www.virustotal.com/gui/ip-address/199.231.211.19/relations
+# Reference: https://www.virustotal.com/gui/file/15412d1a6b7f79fad45bcd32cf82f9d651d9ccca082f98a0cca3ad5335284e45/detection
+# Reference: https://www.virustotal.com/gui/file/e0f109836a025d4531ea895cebecc9bdefb84a0cc747861986c4bc231e1d4213/detection
+# Reference: https://www.virustotal.com/gui/file/d17fe5bc3042baf219e81cbbf991749dfcd8b6d73cf6506a8228e19910da3578/detection
+# Reference: https://www.virustotal.com/gui/file/18f4f14857e9b7e3aa1f6f21f21396abd5f421342b7f4d00402a4aff5a538fa1/detection
+# Reference: https://www.virustotal.com/gui/file/6fd7697efc137faf2d3ad5d63ffe4743db70f905a71dbed76207beeeb04732f2/detection
+# Reference: https://www.virustotal.com/gui/file/3f0aa01ed70bc2ab29557521a65476ec2ff2c867315067cc8a5937d63bcbe815/detection
+# Reference: https://www.virustotal.com/gui/file/a2c3073fa5587f8a70d7def7fd8355e1f6d20eb906c3cd4df8c744826cb81d91/detection
+# Reference: https://www.virustotal.com/gui/file/98b5b4f96d4e1a9a6e170a4b2740ce1a1dfc411ada238e42a5954e66559a5541/detection
+
+http://115.126.98.204
+http://118.99.6.202
+http://23.106.122.46
+http://23.106.122.5
+http://23.106.123.166
+115.126.98.204:443
+118.99.6.202:443
+199.231.211.19:30612
+199.231.211.19:8080
+115-126-98-204.hkt.cc
+118-99-6-202.hkt.cc
+centos-yum.com
+microsoft-setting.com
+update.centos-yum.com
+update.microsoft-setting.com
+
+# Reference: https://securelist.com/dinodasrat-linux-implant/112284/
+# Reference: https://www.trendmicro.com/en_us/research/24/c/earth-krahang.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/24/c/earth-krahang-exploits-intergovernmental-trust-to-launch-cross-government-attacks/earth_krahang_iocs.txt
+
+microsoft-settings.com
+security-microsoft.net
+server-microsoft.com
+update.microsoft-settings.com
+windows.server-microsoft.com
+update.windows.server-microsoft.com
+
+# Reference: https://x.com/Cyberteam008/status/1907257221118881893
+# Reference: https://www.virustotal.com/gui/file/9edf5313596432b4bad03bb7b16537c44652289b113430de7e3ed1cb5cf0760f/detection
+# Reference: https://www.virustotal.com/gui/file/d2a832f8430636b3c53e7fe75c1df20e07850f68024a39708a2491005470e674/detection
+
+118.107.221.43:443
+118.107.221.43:8080
+
+# Reference: https://x.com/Cyberteam008/status/1927207900033802624
+# Reference: https://www.virustotal.com/gui/file/339479cb5a54424b520ff85f297882d410b8ecf179a45bad2c112b8c14f7575c/detection
+
+118.107.221.43:5000

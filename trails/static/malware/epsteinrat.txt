@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/suyog41/status/1954807824229282260
+# Reference: https://www.virustotal.com/gui/file/0c73cbed294c58818152fb78471aa04252261d49ac09a95355c369bcfe16fdc2/detection
+
+testingherenigger.loophole.site

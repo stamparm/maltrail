@@ -1,0 +1,180 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mintluks
+
+# Reference: https://www.fireeye.com/blog/threat-research/2018/04/metamorfo-campaign-targeting-brazilian-users.html
+
+http://108.61.188.171
+http://187.84.229.107
+http://5.83.162.24
+alonsolazaro.com
+ibamanetibamagovbr.org
+panel-dark.com
+sistemasagriculturagov.org
+
+# Reference: https://blog.talosintelligence.com/2018/11/metamorfo-brazilian-campaigns.html
+
+pgs99.online
+srv99.tk
+mydhtv.ddns.net
+criadoruol.site
+jdm-tuning.ru
+500csgo.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1154846042606583808
+
+18.184.132.208:1241
+mabtucprevier.servehttp.com
+
+# Reference: https://twitter.com/abuse_ch/status/1210573602342555648
+
+backupdataz.com
+viewfilers.live
+
+# Reference: https://www.virustotal.com/gui/file/65a94cf2482bef94016962caa490a9258395b31350be45cb739d696fc0df1723/detection
+
+spanishbullfighters.com
+
+# Reference: https://twitter.com/1ZRR4H/status/1213266084259872768
+
+escapuliu.com
+
+# Reference: https://twitter.com/1ZRR4H/status/1188514211997065216
+
+http://18.209.163.113
+http://186.192.140.7
+
+# Reference: https://twitter.com/HaunterSec/status/1217266661306372096
+
+forbidden-gang.000webhostapp.com
+
+# Reference: https://app.any.run/tasks/eeabbc30-c92d-4fd8-b048-c5b0945f12f8/
+
+starwork209.hopto.org
+
+# Reference: https://twitter.com/1ZRR4H/status/1241035772528136192
+# Reference: https://app.any.run/tasks/ce5cb17b-d9c0-410d-9199-de612e3bb78f/
+# Reference: https://app.any.run/tasks/f6b169e1-bc72-412e-81ff-7839ef329c92/
+
+http://191.232.234.184
+http://3.136.20.196
+http://52.138.9.49
+
+# Reference: https://twitter.com/casual_malware/status/1242820486763077637
+# Reference: https://app.any.run/tasks/e1b7e293-1cbb-4de0-a991-8637e7442040/
+# Reference: https://www.virustotal.com/gui/ip-address/80.211.249.77/relations
+
+80.211.249.77:80
+patreon-megatron.duckdns.org
+puminhalmegatron.duckdns.org
+
+# Reference: https://app.any.run/tasks/38da815d-0840-4039-8ebb-7984747bbec7/
+
+novamultimidea.webcindario.com
+
+# Reference: https://twitter.com/abuse_ch/status/1245332975136497665
+
+imprensaes.com
+
+# Reference: https://app.any.run/tasks/d3670aa5-1c4e-4507-956b-1f9ec733849c/
+
+crisflores.ddns.net
+novodoid.ddns.net
+
+# Reference: https://twitter.com/struppigel/status/1285542013715218432
+# Reference: https://www.virustotal.com/gui/file/7d1afc6f3726b795584366ce4a0240542a60534098998122a36e36ee9fdd55e6/detection
+
+hackorchronix.no-ip.biz
+
+# Reference: https://twitter.com/0bfusCat/status/1247497286051139584
+# Reference: https://app.any.run/tasks/a78864d3-d8ed-45dc-84cc-91a28266ac7e/
+
+som.servemp3.com
+
+# Reference: https://www.virustotal.com/gui/file/389e63eb1537a6534189494774cb19313bc045b824e7f8192a0688484ac4438c/detection
+
+bejnz.com
+
+# Reference: https://twitter.com/wholekeys/status/1250974898157236225
+
+contratakpuma.duckdns.org
+
+# Reference: https://twitter.com/wwp96/status/1374524575338229763
+# Reference: https://app.any.run/tasks/6f464608-b712-4012-98be-c2064b6ba359/
+
+http://149.56.173.89
+http://152.89.247.161
+
+# Reference: https://twitter.com/James_inthe_box/status/1504833775586328577
+# Reference: https://app.any.run/tasks/502e0a39-bd0a-48b4-84f8-de64f28dfb61/
+
+egtdhfhnjgj.for-our.info
+hotliksjfu.isa-hockeynut.com
+
+# Reference: https://www.malware-traffic-analysis.net/2022/03/21/index.html
+
+nota-brasil.ga
+
+# Reference: https://github.com/CronUp/Malware-IOCs/blob/main/2022-05-13_Metamorfo_MX
+# Reference: https://www.virustotal.com/gui/file/7d419d762d4be488f677ad457fd196fa6076128cd9b4ab12bef90b489360f986/detection
+
+ckws.info
+k9b.site
+n5f.site
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1705126786009325607
+# Reference: https://app.any.run/tasks/938672ba-42f3-4db8-a667-761e26af9104/
+
+http://172.200.176.88
+/kitlouco.php
+
+# Reference: https://www.virustotal.com/gui/file/9820b21d74270de61e9c350b7e37f2bad95d6fd6a2ef1faca9f3ea40b04e3eda/detection
+
+http://168.119.104.103
+magulam1.x24hr.com
+mgl29up.servemp3.com
+mglp.serveirc.com
+/k1oa.php
+/k1o10.gt2
+/k1oaa3.gt2
+/k1oam1.gt2
+
+# Reference: https://twitter.com/1ZRR4H/status/1731779849948152311
+
+http://191.101.2.27
+contas.store
+enviocfdi.shop
+sva.gotdns.ch
+facturacions.northeurope.cloudapp.azure.com
+
+# Reference: https://twitter.com/pollo290987/status/1787707575540072623
+
+http://89.116.236.122
+facturacioncontable.com
+
+# Reference: https://x.com/johnk3r/status/1805691591232778303
+# Reference: https://www.virustotal.com/gui/file/a5eab84a0b6296da416841b74ccf9bcdb1c28f15f08b8f43e2e6db25bc8d7659/detection
+
+masatuverseiste.com
+3cblk.masatuverseiste.com
+7x214.masatuverseiste.com
+jlfub.masatuverseiste.com
+troll.masatuverseiste.com
+wn3zr.masatuverseiste.com
+baulerayguardamueble.from-wa.com
+
+# Reference: https://x.com/johnk3r/status/1807842056645365818
+
+http://3.145.213.63
+89.213.142.24:20265
+srvlevon01.dyndns.info
+
+# Generic trails
+
+/KR2YOQV54BEBZZ8.php
+/UCKT3P6RJ0MJE0X.php
+/A3A39HFYUV8HS5D.php
+/S3P0EBVE9LZA3DI.php
+/SLOUFO3R811WGET.php
+/Y1PO6BLN5A4JOBU.php

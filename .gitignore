@@ -1,0 +1,4 @@
+*.py[cod]
+*~
+Pipfile*
+docker-compose.override.yml

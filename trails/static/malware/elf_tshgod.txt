@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/malwrhunterteam/status/1819073189525242128
+# Reference: https://x.com/malwrhunterteam/status/1819073830851084612
+# Reference: https://www.virustotal.com/gui/file/dbbac1a6406cf6057326a74791f760ffe3d22064e2d238dd1ca11c69c3291997/detection
+# Reference: https://www.virustotal.com/gui/file/bb1766196ebe7ef3da53cceaf757381268b6fb3c49e0ecc4988eb399d8f7c4da/detection
+# Reference: https://www.virustotal.com/gui/file/b01f420f0500b0f89b23adf5c499cc1c177b8ba1ca27f01d7dfc769c96fbcf68/detection
+# Reference: https://www.virustotal.com/gui/file/9bc3d6b444fc9eb356de25ce87af11516652fcafc4f6e22255bdc821419f08a1/detection
+
+videoscachecdn.com
+2e9b25f23fd4480976277886d4a3726a.skypeupdate.com
+559b9685542bd0204aa508d03a1497b4.videoscachecdn.com

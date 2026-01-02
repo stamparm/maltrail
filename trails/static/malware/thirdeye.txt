@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: thirdeye stealer
+
+# Reference: https://www.fortinet.com/blog/threat-research/new-fast-developing-thirdeye-infostealer-pries-open-system-information
+# Reference: https://www.virustotal.com/gui/ip-address/94.103.89.198/relations
+# Reference: https://www.virustotal.com/gui/file/610aff11acce8398f2b35e3742cb46c6a168a781c23a816de2aca471492161b2/detection
+# Reference: https://www.virustotal.com/gui/file/263600712137c1465e0f28e1603b3e8feb9368a37503fa1c9edaaab245c63026/detection
+# Reference: https://www.virustotal.com/gui/file/c36c4a09bccdeda263a33bc87a166dfbad78c86b0f953fcd57e8ca42752af2fc/detection
+# Reference: https://www.virustotal.com/gui/file/a9d98b15c94bb310cdb61440fa2b11d0c7b4aa113702035156ce23f6b6c5eecf/detection
+# Reference: https://www.virustotal.com/gui/file/0a798b4e7bd4853ec9f0d3d84ad54a8d24170aa765db2591ed3a49e66323742c/detection
+# Reference: https://www.virustotal.com/gui/file/f6e6d44137cb5fcee20bcde0a162768dadbb84a09cc680732d9e23ccd2e79494/detection
+# Reference: https://www.virustotal.com/gui/file/5b2b19cd684dad798d76284f9e70bf4f0d48fcaf2456f39b5e93bea9f42fee6c/detection
+
+195.2.75.74:8000
+195.2.75.74:8080
+45.8.229.144:8000
+45.8.229.144:8080
+62.113.116.182:8000
+62.113.116.182:8080
+91.142.73.28:8000
+91.142.73.28:8080
+94.103.89.198:8000
+94.103.89.198:8080
+anime-clab.ru
+glovatickets.ru
+mangaanime.ru
+nalog-rt.ru
+ohmycars.ru
+rostecx.ru
+shlalala.ru
+
+# Generic
+
+/general/ch3ckState
+/ch3ckState

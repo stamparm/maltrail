@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.malwation.com/blog/technical-analysis-of-a-stealth-java-loader-used-in-phishing-campaigns-targeting-turkiye
+# Reference: https://www.virustotal.com/gui/file/d286acf63f5846e775ba23599e2b5be88d0564d24f29e0646f6cff207249c130/detection
+
+42dtw6kxl5zxfpo25yknm2hmqndafoqynk3m6j2luvhi4epeex6arvyd.onion
+4ufbghkgmeb7nevhki3vf5rfwmmrb4bb52xcw2qwbh3qo4x773ttnhqd.onion

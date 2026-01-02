@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt5, apt-5, pittypanda, ptiger, ptrat
+
+# Reference: https://apt.thaicert.or.th/cgi-bin/showcard.cgi?g=PittyTiger%2C%20Pitty%20Panda
+# Reference: https://paper.seebug.org/papers/APT/APT_CyberCriminal_Campagin/2014/2014.07.11.Pitty_Tiger/Pitty_Tiger_Final_Report.pdf
+# Reference: https://github.com/rsmudge/Malleable-C2-Profiles/blob/master/APT/pitty_tiger.profile
+
+acers.com.tw
+kimoo.com.tw
+paccfic.com
+foxcom.com.tw
+dopodo.com.tw
+trendmicroup.com
+lightening.com.tw
+avstore.com.tw
+helosaf.com.tw
+trendmicro.org.tw
+stareastnet.com.tw
+symantecs.com.tw
+seed01.com.tw
+skypetm.com.tw
+newb02.skypetm.com.tw
+
+# Reference: https://www.virustotal.com/gui/file/388d46cd5bed2c08c2bd90fa0cec35c90f9e4728579d639cce9ace75a20990be/detection
+
+killerhost.skypetm.com.tw

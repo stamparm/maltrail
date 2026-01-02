@@ -1,0 +1,84 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: fenix stealer
+
+# Reference: https://otx.alienvault.com/pulse/64c1336884593c36acc3e40e
+
+2repuvegobmx.com.mx
+annydesk.website
+citas-sat2023.com.mx
+citas-satmx.com
+citas-sregob-mexico.com
+citasatmx2023.lat
+consultacurp-gobmx.com.mx
+grafoce.com
+lbci-seguro.com
+mexico-curp.com
+siii-chile.com
+sre-curpmexico.com
+tramites-sat.com.mx
+whatsapp.website
+
+# Reference: https://twitter.com/pollo290987/status/1770534423529730084
+# Reference: https://www.virustotal.com/gui/file/e09eeac2e3c4c34d13dfee35719aa0e51e80372bee7dc54775726269dbaa9c52/detection
+# Reference: https://www.virustotal.com/gui/file/7a330367cf1002891a803094aadbb24f15010ccea5731f2d09d57bbd7ea128d0/detection
+
+http://45.61.136.32
+45.61.136.32:445
+d3vilsgg.xyz
+zlvsiexj6d.d3vilsgg.xyz
+
+# Reference: https://x.com/malmoeb/status/1826634606994751915
+# Reference: https://dfir.ch/posts/botnex_fenix/
+# Reference: https://www.metabaseq.com/threat/fenix-botnet/
+
+http://139.162.73.58
+http://193.149.190.150
+139.162.73.58:445
+193.149.190.150:445
+fja.com.mx
+pararrayos05fvd.bar
+update.pararrayos05fvd.bar
+/WgxVdpw67n/
+/WgxVdpw67n/xls.php
+/bramx/7684jasdtg.xls
+/bramx/ot.crypt
+/bramx/post.php
+/bramx/proxy.crypt
+/bramx/steal.crypt
+/load.bar/WgxVd
+
+# Reference: https://x.com/1ZRR4H/status/1846008518270153030
+# Reference: https://app.validin.com/detail?find=64.95.11.29&type=ip4&ref_id=6ea7eb58c3a#tab=resolutions
+# Reference: https://www.esentire.com/blog/fenix-botnet-targeting-latam-users
+# Reference: https://github.com/eSentire/iocs/blob/main/BotnetFenix/botnetfenix_iocs.txt
+
+d3f8cv.top
+d8f7ca.top
+pisosg8tr.xyz
+quantumservice.lat
+renovaserv.bio
+serviupdate.bio
+app.quantumservice.lat
+app.renovaserv.bio
+secure.serviupdate.bio
+secureaddress.pisosg8tr.xyz
+/d1zK3flPWA/
+/d1zK3flPWA/v.txt
+/d1zK3flPWA/w7H.xls
+/d1zK3flPWA/load.php
+/d1zK3flPWA/post.php
+/d1zK3flPWA/xls.php
+
+# Reference: https://x.com/Merlax_/status/1846682624523489528
+# Reference: https://app.any.run/tasks/e39237f4-fc17-470c-83ab-9cdeb378191e
+
+140.82.47.181:4000
+
+# Generic
+
+/Iw3qtP8qp3/
+/Iw3qtP8qp3/load.php
+/Iw3qtP8qp3/post.php
+/Iw3qtP8qp3/xls.php

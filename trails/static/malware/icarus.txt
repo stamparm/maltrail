@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/r3dbU7z/status/1602816478696595456
+# Reference: https://www.virustotal.com/gui/file/9731df8f9863071116f4e48ebcc533bca161c0b7639e320d2c196f89cd0cf455/detection
+# Reference: https://www.joesandbox.com/analysis/765069?idtype=analysisid#iocs
+
+20.168.39.13:8880
+
+# Reference: https://twitter.com/AnFam17/status/1626602061256163329
+# Reference: https://www.esentire.com/blog/esentire-threat-intelligence-malware-analysis-icarus-stealer
+
+http://193.31.116.239
+5.161.93.133:8880
+
+# Generic
+
+/crypt/public/Update_Downloads/

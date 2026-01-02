@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: unk_sneakystrike
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/attackers-unleash-teamfiltration-account-takeover-campaign
+
+http://3.216.140.96
+http://3.238.215.143
+http://3.255.18.223
+http://44.206.7.122
+http://44.206.7.134
+http://44.210.64.196
+http://44.210.66.100
+http://44.212.180.197
+http://44.218.97.232
+http://44.220.31.157
+3.216.140.96:443
+3.238.215.143:443
+3.255.18.223:443
+44.206.7.122:443
+44.206.7.134:443
+44.210.64.196:443
+44.210.66.100:443
+44.212.180.197:443
+44.218.97.232:443
+44.220.31.157:443

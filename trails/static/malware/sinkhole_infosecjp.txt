@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/grettir/malware-sinkholes/blob/905841db3b3cd86052d577c137ac9868c92dcb3b/malware_sinkholes.txt#L256
+# Reference: https://www.virustotal.com/en/ip-address/58.158.177.102/information/
+
+58.158.177.102

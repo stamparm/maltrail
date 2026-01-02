@@ -1,0 +1,136 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/david_jursa/status/1181925512798773249
+# Reference: https://app.any.run/tasks/14d9b5a2-d8d3-41f4-9557-f21aec01fa32/
+
+bobresources.club
+kzpqui.xyz
+tyasmi.xyz
+wuqjzc.xyz
+
+# Reference: https://twitter.com/EKFiddle/status/1172560479786389509
+
+jsxeaq.xyz
+jeitacave.org
+kyujep.xyz
+linksprut.xyz
+
+# Reference: https://twitter.com/tkanalyst/status/1184825216033099777
+
+bcardp.xyz
+kxzebd.xyz
+pfucmj.xyz
+richmond-news.xyz
+
+# Reference: https://twitter.com/david_jursa/status/1188023097380741120
+
+kywrmfmp.xyz
+
+# Reference: https://twitter.com/tkanalyst/status/1188778602306818048
+
+clubwaka.xyz
+tehwsmgnbsry.xyz
+xdzxxf.xyz
+
+# Reference: https://twitter.com/tkanalyst/status/1193873177765535750
+
+8weoaapw0hfvy6nz.pro
+
+# Reference: https://otx.alienvault.io/pulse/5d76621dedbdaf0f1265778e
+# Reference: https://pastebin.com/c8YEXjqW
+# Reference: https://www.virustotal.com/gui/ip-address/99.181.14.217/relations
+
+jeitacave.org
+zopso.org
+nw.brownsine.com
+pak.goifzy.com
+nxfiqz.dynu.net
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/purple-fox-ek-adds-exploits-cve-2020-0674-and-cve-2019-1458-its-arsenal
+# Reference: https://otx.alienvault.com/pulse/5f04b169061c731357704dd4
+
+casestudybuddy.club
+
+# Reference: https://twitter.com/FaLconIntel/status/1278870699663224832
+# Reference: https://app.any.run/tasks/1a5fa931-5bbd-4ea0-8af6-a2686dba7c1d/
+
+hartley-botanic.xyz
+
+# Reference: https://twitter.com/nao_sec/status/1286884185055981568
+# Reference: https://app.any.run/tasks/0b68b869-04fe-428f-bdbb-9b87a441c967/
+
+fixdevice.site
+shibuya109.xyz
+vkfaces.site
+
+# Reference: https://github.com/MBThreatIntel/ExploitKits/blob/master/PurpleFox-2020-09-17.txt
+
+dl.gblga.workers.dev
+noisy-base-38da.fb68b.workers.dev
+
+# Reference: https://twitter.com/MBThreatIntel/status/1314321011626504193
+
+grgtechnologies.online
+rawcdn.githack.cyou
+
+# Reference: https://labs.sentinelone.com/purple-fox-ek-new-cves-steganography-and-virtualization-added-to-attack-flow/
+# Reference: https://otx.alienvault.com/pulse/5f8ded9e549841cde6dc0c8c
+
+dl.fmhsi.workers.dev
+dl.gblga.workers.dev
+
+# Reference: https://twitter.com/MBThreatIntel/status/1341894084315607042
+
+steep-boat-06f5.qqztw.workers.dev
+
+# Reference: https://twitter.com/malware_traffic/status/1347001824319074304
+
+mythinkenergy.club
+nationalbiminitops.shop
+
+# Reference: https://twitter.com/nao_sec/status/1378546891349106692
+# Reference: https://app.any.run/tasks/0f8a285f-8ff1-47cd-9ccf-c9cb3397daf4/
+
+lncnawgcidtia.xyz
+lingering-math-ec29.7axrg.workers.dev
+
+# Reference: https://twitter.com/FaLconIntel/status/1398252713738063875
+
+ndliitceqntd.cloud
+
+# Reference: https://twitter.com/hpsecurity/status/1419593866018230275
+
+8ze.me
+aixgedbubirtsabkhotsswse.shop
+feneffecsdoteteat.aixgedbubirtsabkhotsswse.shop
+
+# Reference: https://twitter.com/MBThreatIntel/status/1450591974386384897
+
+aixgedbubirtsabkhotsswse.monster
+health-benefits.shop
+irkrimutodcnic.aixgedbubirtsabkhotsswse.monster
+
+# Reference: https://twitter.com/MBThreatIntel/status/1480659259712884736
+
+aeeorrpniuhmhwe.store
+ufd.cam
+efphoretsdnrseo.aeeorrpniuhmhwe.store
+
+# Reference: https://twitter.com/MBThreatIntel/status/1567604533458780160
+
+kvte.shop
+otsrhesa.rest
+dlsitim.otsrhesa.rest
+dtiipwmr.otsrhesa.rest
+efhehrs.otsrhesa.rest
+enossife.otsrhesa.rest
+khneiro.otsrhesa.rest
+tytmaf.otsrhesa.rest
+
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/08/old-exploit-kits-still-kicking-around-in-2023
+
+oernatel.shop
+otvidluioad.online
+via0.com
+uabeoee.otvidluioad.online

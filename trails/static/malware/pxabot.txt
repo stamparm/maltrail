@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: pxa stealer
+
+# Reference: https://x.com/s1dhy/status/1857477125718290522
+# Reference: https://blog.talosintelligence.com/new-pxa-stealer/
+# Reference: https://github.com/Cisco-Talos/IOCs/blob/main/2024/11/new-pxa-stealer.txt
+
+wis.aaawholesalecompany.com
+
+# Reference: https://x.com/luc4m/status/1934864757619900789
+# Reference: https://x.com/marsomx_/status/1935231491480445062
+# Reference: https://www.virustotal.com/gui/file/42fab8c46f0fbc661496d59201612ec752dd72e30768c2ccdec76093e22bced8/detection
+
+157.66.26.209:56001
+lp2tpju9yrz2fklj.lone-none-1807.workers.dev
+
+# Generic
+
+/Adonis/AdFnis_Bot
+/Adonis/Adonis_Bot
+/Adonis/Adonis_Bot0
+/Adonis/Adonis_XW_ENC
+/PXA/PXA_BOT
+/PXA/PXA_PURE_ENC
+/STC/STC_BOT
+/STC/STC_OTO
+/STC/STC_PUP
+/STC/STC_PURE.b64
+/STC/STC_PURE_ENC
+/STC/STC_XW_ENC

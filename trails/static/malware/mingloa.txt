@@ -1,0 +1,260 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: copper, copperstealer
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1355432089378811904
+# Reference: https://app.any.run/tasks/56691186-4155-4e8d-99b9-7ea14461ea97/
+
+c5c6ce33f7350bd4.xyz
+
+# Reference: https://app.any.run/tasks/347daeea-65cf-4313-9f27-9fc8b801bf47/
+
+d048129eb1be65d5.xyz
+
+# Reference: https://app.any.run/tasks/703c1edf-20f8-4126-a6ba-d85946594f8d/
+
+84cfba021a5a6662.xyz
+
+# Reference: https://www.virustotal.com/gui/file/10bb601f27c0aae7fb9cc88a45434a8dcd759c03698c00b322f8b7f78ed64164/detection
+
+d883c609695b3625.xyz
+
+# Reference: https://twitter.com/killamjr/status/1355825329282158599
+# Reference: https://app.any.run/tasks/28cfc35b-fb62-4330-b0f7-95602ad1ce79/
+
+5c98ff7eb35a6899.xyz
+84cfba021a5a6662.xyz
+ef6df4af06ba6896.xyz
+
+# Reference: https://www.virustotal.com/gui/file/7a248ce6634659b1c76ffee4aab3e349f1da55be1cfa07ea1d6e5d1d7b0972cc/detection
+
+c41676c07a61a961.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/34.94.64.66/relations
+# Reference: https://www.virustotal.com/gui/file/4aab1893578bd948f1d8b5ad701075daef0d578757975907fce8ad267b2416ad/detection
+
+7553014bd6a4211b.xyz
+c8dd8ae6dc4dc644.xyz
+
+# Reference: https://www.virustotal.com/gui/file/2755198c067b989c747387a036c3ff8d6c8a133a089d7363667c1b96174c7439/detection
+
+fe0432d95d40b8a2.xyz
+
+# Reference: https://www.virustotal.com/gui/file/095d8ef598b6a8c2bd27555cee6ed1aca6170b1db5ed63b6ce6044799ec1b3c0/detection
+
+f1mk3o7civy59zs.xyz
+
+# Reference: https://blog.talosintelligence.com/2021/04/threat-roundup-0423-0430.html (# Win.Malware.CopperStealer-9853616-1)
+
+75c104b52c9869a5.xyz
+f059009a45a12d8a.xyz
+
+# Reference: https://www.virustotal.com/gui/file/df9dd10baa78d72976a753f850ad3ad26bb9fb73fc4b1bf64ef47efd7d1c472b/detection
+
+c8224b778f8d7e73.com
+
+# Reference: https://www.virustotal.com/gui/file/a204a5703b2b783d6d70f05704cf0c750d0c3d18c8501fde4de61984a5161f97/detection
+
+52959825ae41ce72.com
+574e0f440d5d411d.com
+f4928790ef50aac3.com
+
+# Reference: https://www.virustotal.com/gui/file/16bb9009629972f1ae07205be70309c381ef43e7ed7bbe786f9a3cf8ef45d85a/detection
+
+8a33b8bfbbf0182b.xyz
+
+# Reference: https://www.virustotal.com/gui/file/9c279d032903836ea5b8305d188898ad2c3decd7b1a89bc259f7ee529fb964e9/detection
+
+05779b0d24fb315d.xyz
+y3fcf200c29fcfe249.xyz
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/now-you-see-it-now-you-dont-copperstealer-performs-widespread-theft
+
+1c6706c3d3e47cd1.com
+5071e6e7fd9c82ec.com
+60d5acb6460b4221.com
+687b318f1a4e0afc.com
+6c34589d7d1b8d7a.com
+768deefde7eecd74.com
+844106c92ac5210a.com
+9a3a97f6f45f2c2b.com
+a36e971e03d9cbf8.com
+b4f3ae0279bacc16.com
+back19e64ea00d6ecfe1.io
+c41676c07a61a961.com
+da5ae4747ff1851c.com
+eaa5cd71691e472c.com
+f27655e1f8eb05de.com
+ru94cb2b5ed89d7c.ru
+su94cb2b5ed89d7c.su
+
+# Reference: https://www.virustotal.com/gui/file/281d3a8cb18df039b0f94ecd86b7bfc6226f582c0ca529e0fa0eed24e875e676/detection
+
+fakeloveinc.com
+
+# Reference: https://www.trendmicro.com/en_us/research/22/f/websites-hosting-fake-cracks-spread-updated-copperstealer.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/f/websites-hosting-fake-cracks-spread-updated-copperstealer-malware/IOCs-websites-hosting-fake-cracks-spread-updated-copperstealer.txt
+# Reference: https://documents.trendmicro.com/assets/pdf/appendix-IoCs-websites-hosting-cracks-spread-malware-adware.pdf
+
+11sdhbvj.club
+1a3a3b7817f44949.xyz
+24d19c52f04b13a5.xyz
+4alpha.xyz
+4everfeel.xyz
+4legand.xyz
+4pieces.xyz
+679814b72cfad5d5.xyz
+7001d44e3399cd85.xyz
+8343a51b3aec209e.xyz
+895ae68c0dd074b4.xyz
+92187dce3cfa5aa2.xyz
+9961786d6834d212.xyz
+9ff9585a4f95f00a.xyz
+a34e9523693ae52d.xyz
+allemz.xyz
+b2104237bc7d6c98.xyz
+bismil.xyz
+brnomess.com
+browsechost.xyz
+btrasd.xyz
+c3ecdd1fbb9a92c1.xyz
+c57caf2ae132d0b4.xyz
+c7b55e305871a2ec.xyz
+ced83f6fa144bab3.xyz
+cnetdl.xyz
+cotraresi07.top
+crx24bac5.xyz
+daringman.xyz
+dcbap.com
+dream.pics
+dugdphost.xyz
+f5f5e40934718734.xyz
+feturen.xyz
+founanir.com
+gandis.xyz
+gloriouhost.xyz
+gujworks.com
+hklmm.com
+iadfna.xyz
+icoregames.net
+igmhb.com
+iibex.xyz
+interestvideo.com
+jupiters.xyz
+kamalsas.xyz
+kincofilez.xyz
+komelix.xyz
+lm15d.com
+lotrihost.xyz
+metriq.xyz
+munikar.xyz
+mycloudbook.xyz
+myroaster.xyz
+oysfob.com
+pandalytics.xyz
+peafiber.xyz
+photoa5260bc7.xyz
+pizbaserver.xyz
+pprq7.com
+ps4ux.com
+qdatasales.com
+rabil.xyz
+range6d109e83.xyz
+remotefilez.info
+rismz.xyz
+ryuuf.xyz
+stronglly.xyz
+subhans.xyz
+sygdf.xyz
+tadive.xyz
+tonia.xyz
+trkkrd.com
+tukiodrft.xyz
+tursd.xyz
+uvi4-servers.xyz
+uyhfd.xyz
+vimxhost.xyz
+yahsia.xyz
+yairs.xyz
+yiaris.xyz
+ytr556.xyz
+ytsda.xyz
+ziaris.xyz
+s.dcbap.com
+s.hklmm.com
+s.igmhb.com
+s.lm15d.com
+sahiltech.gujworks.com
+secure.trkkrd.com
+
+# Reference: https://www.trendmicro.com/en_us/research/22/h/copperstealer-distributes-malicious-chromium-browser-extension-steal-cryptocurrencies.html
+# Reference: https://otx.alienvault.com/pulse/62f6681dcbec570269873ff1
+
+ec083aa56dc0449a.com
+
+# Reference: https://twitter.com/jaydinbas/status/1642898531445886978
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/now-you-see-it-now-you-dont-copperstealer-performs-widespread-theft
+
+17eb4bd0cf2216ad.xyz
+1cd81defbab5fc17.xyz
+3b47af116e9c7975.xyz
+4d928c61332a7a36.xyz
+584013404cfbb28e.xyz
+62e4cb87e7e0fe29.xyz
+66124112b4188769.xyz
+6d8b0272c433fd35.xyz
+80ca3a4c7b51e846.xyz
+afc7178613230274.xyz
+b656b77e6eb18034.xyz
+bf2614e472c0e137.xyz
+d8b2d8b1562e74f4.xyz
+e5ee35320e7c970b.xyz
+e85c5b0caef0cd16.xyz
+f9a2622bda686855.xyz
+chromei.org
+up.chromei.org
+
+# Reference: https://twitter.com/jaydinbas/status/1646475092006785027
+# Reference: https://www.virustotal.com/gui/file/e3f31eabaa0b3bebe0c5152fc6097a8fbf1c6fd9e57d06fe8e9bd8860e8f07a6/detection
+# Reference: https://www.virustotal.com/gui/file/8a21eae144a23fffd35f8714964ff316caaa37fe464e8bbc143f4485119b5575/detection
+# Reference: https://www.virustotal.com/gui/file/5558eaebeeeb4c5c731b531305e7c97c9cf1b1449b0466f46430aa0549c256e9/detection
+# Reference: https://www.virustotal.com/gui/file/7fd6cb3e1648dd9d1994c65762826772ae32dc58fbc7ac51179a0b3526f1395f/detection
+# Reference: https://www.virustotal.com/gui/file/73fd83a9eb267fed5a3178b75a9bff0bac9e0864daed830fddf6a8686c286cbb/detection
+
+206.233.128.170:99
+39.104.65.2:777
+8.218.211.124:1678
+fnxitong.com
+cnzz.fnxitong.com
+so.fnxitong.com
+
+# Reference: https://twitter.com/jaydinbas/status/1646493034429792257
+# Reference: https://www.virustotal.com/gui/file/c28b673c5a4298564008a262ad06e8886d3d14f020ef1b3a9ab5dbd844a8bf58/detection
+# Reference: https://www.virustotal.com/gui/file/7ddd4a6aeb8712a2330ea4019a0a7532ad7ae8af1fa426abd564636a4e306332/detection
+
+1.13.162.124:99
+shuolanwl01.top
+rj.shuolanwl01.top
+tj.777dh.net
+
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/23/e/water-orthrus-new-campaigns-deliver-rootkit-and-phishing-modules/waterorthrus_iocs.txt
+
+0zpt4.za.com
+3hdr0.za.com
+
+# Reference: https://www.trendmicro.com/en_us/research/23/e/water-orthrus-new-campaigns-deliver-rootkit-and-phishing-modules.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/23/e/water-orthrus-new-campaigns-deliver-rootkit-and-phishing-modules/waterorthrus_iocs.txt
+# Reference: https://otx.alienvault.com/pulse/646256b304f749a5bdc942c3
+
+chromel.cn
+
+# Generic
+
+/info_old/ddd
+/info_old/a
+/info_old/e
+/info_old/g
+/info_old/r
+/info_old/w
+/info/retdl

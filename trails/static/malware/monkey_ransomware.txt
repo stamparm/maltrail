@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/MalGamy12/status/1972941165424165171
+# Reference: https://www.virustotal.com/gui/file/257de0e2744c99a12cbc1c1b37c76e0e8a010dde3125ec09468a16e4f8e0f121/detection
+
+http://179.43.139.126
+179.43.139.126:5000
+
+# Generic
+
+/stol.pnglooking

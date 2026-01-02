@@ -1,0 +1,41 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ItsReallyNick/status/1033413803470467072
+
+office365-update.cod
+
+# Reference: https://twitter.com/ItsReallyNick/status/1057138883861852192
+
+shop.strust.club
+
+# Reference: https://twitter.com/ItsReallyNick/status/1093569347178713095
+
+uploader.sx
+
+# Reference: https://twitter.com/JohnLaTwC/status/1035196338101608448
+
+149.28.14.103:535
+mighty-dead.ddns.net
+mighty-dead.spdns.de
+
+# Reference: https://twitter.com/KorbenD_Intel/status/989159297413189633
+
+agsnetworking.com
+career-pointkenya.com
+
+# Reference: https://twitter.com/TekDefense/status/977262721837273088
+
+159.89.106.106:55555
+
+# Reference: https://twitter.com/ItsReallyNick/status/925750629888413707
+
+jooyoptical.com
+
+# Reference: https://twitter.com/JohnLaTwC/status/918594521314705409
+
+hp.dns.hewlettpackerd.org
+
+# Reference: https://twitter.com/ItsReallyNick/status/907071683919577088
+
+0b5x9f39je7c9exe.minorme.party

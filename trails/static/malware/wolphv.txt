@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/FalconFeedsio/status/1706989111414849989
+# Reference: https://www.virustotal.com/gui/ip-address/216.128.145.30/relations
+
+# Note: despite on looking as a dummy thing, let it get detected as malware.
+
+http://216.128.145.30
+216.128.145.30:443
+chal.wolvsec.org
+wolphv.chal.wolvsec.org

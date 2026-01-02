@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: nosydownloader, nosydoor, nosyhistorian
+
+# Reference: https://www.welivesecurity.com/en/eset-research/longnosedgoblin-tries-sniff-out-governmental-affairs-southeast-asia-japan/
+# Reference: https://www.virustotal.com/gui/ip-address/103.159.132.75/relations
+# BANNER_0_HASH-HOST/IP=63647c10e95b6bc085f8e83573acbfc5
+
+assesscompplan.com
+blazenewso.com
+privacypolicy-my.com
+rethinkpayequity.com
+sslvpnserver.com
+threadstub.com

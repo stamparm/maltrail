@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/sS55752750/status/1157295636343152642
+
+http://46.153.17.202
+kshield.net
+
+# Reference: https://www.virustotal.com/gui/file/0c98a10b79ba64e9ed5508709b477439ee0060e14bd34fd78a6220164db84c95/detection
+
+unobscured-evaluati.000webhostapp.com
+
+# Reference: https://www.virustotal.com/gui/file/02c3c7826a0ad7ad4a4a22e8aaf13b998d0105691564395de1fec6cceb21e5dc/detection
+
+http://165.22.84.26

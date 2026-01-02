@@ -1,0 +1,155 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mystic stealer, seidr stealer
+
+# Reference: https://twitter.com/Yeti_Sec/status/1638537367567958016
+# Reference: https://urlscan.io/result/535841c6-ea4a-4e8c-85b7-e19bd5ad68e5/
+
+164.132.200.171:8005
+
+# Reference: https://www.virustotal.com/gui/file/a4b5d7012c1a971c6c7d95de1b2027153d83527b1a2c62fa0fca7770a76fb99a/detection
+# Reference: https://www.virustotal.com/gui/file/8eebef1167ba58681276502fdba907ce5f63d5bbbf68b887b2cc1b2dd4bbc177/detection
+# Reference: https://www.virustotal.com/gui/file/4c5bbf836913bccd7d8a18ea3ac742057b14fc739b05502e74d389e36fa829bb/detection
+# Reference: https://www.virustotal.com/gui/file/47439044a81b96be0bb34e544da881a393a30f0272616f52f54405b4bf288c7c/detection
+# Reference: https://www.virustotal.com/gui/file/39d3532ffb7565aa79bd6ae6f510ecc7ac29ed7cd0a98a7b948c10162c5c25c0/detection
+
+164.132.200.171:15555
+
+# Reference: https://www.virustotal.com/gui/file/b37ab91f8163344b775edc9a4378d44fdfddbac3b0cd3fceaf670f79b06bc362/detection
+
+164.132.200.171:15556
+727.gra.abcvg.ovh
+
+# Reference: https://twitter.com/0xrb/status/1653364901384003585
+
+http://135.181.47.95
+http://185.252.179.18
+http://188.40.116.251
+http://23.163.0.179
+http://43.154.7.225
+http://95.216.32.74
+
+# Reference: https://twitter.com/0xrb/status/1653723946892644355
+
+94.23.26.20:8005
+http://116.202.233.49
+http://159.65.229.149
+http://94.130.165.48
+
+# Reference: https://www.virustotal.com/gui/domain/africahelp.org/detection
+# Reference: https://urlscan.io/search/#hash%3Afaf14cca1e17a7676c15266507219e3319943b19e21287015b9c968f0244fde2
+
+africahelp.org
+
+# Reference: https://twitter.com/connectraek/status/1656232673243983873
+
+bhandarapolice.org
+cwbusinesswomen.org
+gujaratstudy.in
+hanoigarden.net
+marisolblooms.com
+spotifyapkpremium.net
+wowvillas.in
+
+# Reference: https://www.virustotal.com/gui/file/1480063e9d9d2c4359c5991471e1266e4501aea041eae1f32482eaa23b8f267b/detection
+
+79.137.206.141:13219
+
+# Reference: https://threatfox.abuse.ch/browse/tag/mystic/
+
+http://107.174.205.124
+http://138.201.88.153
+http://142.132.201.228
+http://167.235.34.144
+http://185.141.61.245
+http://193.233.254.61
+http://194.50.153.21
+http://212.113.106.114
+http://213.142.146.103
+http://45.9.74.110
+http://5.42.94.125
+http://5.75.183.169
+http://65.21.106.190
+http://79.137.206.141
+http://89.23.107.222
+http://89.23.107.241
+http://91.121.118.80
+http://94.130.164.47
+http://94.130.216.165
+http://94.23.17.222
+109.248.206.137:13219
+138.201.88.153:13219
+
+# Reference: https://www.virustotal.com/gui/file/7c185697d3d3a544ca0cef987c27e46b20997c7ef69959c720a8d2e8a03cd5dc/detection
+
+185.252.179.18:13219
+
+# Reference: https://www.cyfirma.com/outofband/mystic-stealer-evolving-stealth-malware/
+# Reference: https://otx.alienvault.com/pulse/649071937d0f8a435b37fafc
+
+http://194.169.175.123
+http://213.142.147.235
+
+# Reference: https://www.virustotal.com/gui/file/000003a7ca287a0474d3ea84eaa5106c70afdac54a5524b1cd6b110871484031/detection
+
+http://5.42.92.211
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.mystic_stealer/
+
+http://111.90.147.137
+http://137.184.185.41
+http://171.22.28.235
+http://185.196.9.84
+http://193.233.255.73
+http://193.233.49.38
+http://194.87.31.123
+http://194.87.31.124
+http://194.87.31.31
+http://194.87.31.61
+http://195.201.175.22
+http://3.111.145.27
+http://37.139.129.70
+http://5.42.64.18
+http://5.42.64.20
+http://5.42.92.43
+http://5.42.92.88
+http://51.222.106.173
+http://81.161.229.236
+http://89.187.189.193
+http://91.92.242.59
+http://91.92.244.211
+http://94.156.6.75
+http://94.156.67.155
+http://95.214.27.149
+13.208.166.206:443
+194.233.66.229:443
+/loghub/master
+
+# Reference: https://www.zscaler.com/blogs/security-research/mystic-stealer-revisited
+
+188.40.116.251:8005
+
+# Reference: https://www.virustotal.com/gui/ip-address/13.200.127.74/detection
+
+http://13.200.127.74
+
+# Reference: https://x.com/malpulse/status/1819692301041520646
+
+http://103.28.161.35
+
+# Reference: https://x.com/iam_rajhans/status/1840751452483944496
+# Reference: https://app.validin.com/detail?type=raw&find=WIN-4NHED479K4N
+
+http://91.92.254.234
+http://94.156.65.14
+http://94.156.68.7
+91.92.246.150:8004
+bezoeknummer34780912.info
+bezoeknummer4839829.info
+bezoeknummer657894.info
+bezoeknummer93874656.info
+kundennummer76840340.info
+kundennummer98767543.info
+my-easy.kundennummer98767543.info
+walletconnect.bezoeknummer657894.info

@@ -1,0 +1,55 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.cybereason.com/blog/exploit-kits-shade-into-new-territory
+# Reference: https://otx.alienvault.com/pulse/5d3eabdb752d69a7cf01855d
+
+againsafe.xyz
+apifortraffic.xyz
+autobinarysignals.club
+autobitcoingenerator.info
+autobitcoingenerator.shop
+autogenerator.info
+bestsystemrestore.xyz
+cashagain.xyz
+cheapgoogle.xyz
+dogfunnyvideos.xyz
+fourthbookdeliver.xyz
+fourthcloudupdate.xyz
+freshgoogle.xyz
+googleresearcher.xyz
+harvatiya-ads.info
+joindouble.pro
+makemoneywithus.vip
+male-cash.xyz
+male-safe.xyz
+maleagain.xyz
+microticket.xyz
+mymoneyonline.club
+myphotolife.site
+officeresearcher.xyz
+onegooglechecksim.xyz
+onegoogledeleterent.xyz
+onegoogleupdatetag.xyz
+pirateunblocker.me
+removekingonline.pro
+secondimageupload.xyz
+sexmovies.ws
+shutyourmix.info
+southgoogle.xyz
+streetofyoursecurity.club
+streetofyoursecurity.info
+testsystemupdate.xyz
+thirdimageupload.xyz
+threegooglechecksim.xyz
+threegooglecheckversion.xyz
+threegoogledeleterent.xyz
+threegoogleupdatetag.xyz
+todaymale.xyz
+tracpadsforgame.info
+twogooglechecksim.xyz
+twogoogledeleterent.xyz
+ultimategoogle.xyz
+updateversionswf.xyz
+westgoogle.xyz
+whatgoogle.xyz

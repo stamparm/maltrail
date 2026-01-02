@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/graph/g74623cac1167417891e21ce8d3855d802b3e43cd45af4ba68c9d603c2653307d
+# Reference: https://www.virustotal.com/gui/ip-address/37.120.247.182/relations
+# Reference: https://www.virustotal.com/gui/file/010e059068dabc1fc9bb9c88ec202ba8bd54a183ecac2da6477afa6beba0aa7f/detection
+                                               
+188.120.249.79:443
+188.127.232.78:443
+194.58.100.120:443
+37.120.247.182:443
+62.109.0.95:443
+chronyd.com
+box-host.cloudns.cl
+chronyd.tftpd.net
+doh.box-host.cloudns.cl
+qfilling.instanthq.com
+
+# Reference: https://www.virustotal.com/gui/file/ecbda4fe0363d87ff1d0e6fc659f81bb7ff2e0c044e89d8a37806f273c607570/detection
+
+cdn-app-web.mowal67825.workers.dev
+
+# Reference: https://www.virustotal.com/gui/file/f6ee0c28afae81813fd56dac902892916fc84cc516fb5a005c7381b0bf34c600/detection
+
+tiny-queen-ada8.mowal67825.workers.dev
+
+# Generic
+
+/tt0002/analyst0-2d1671_w512600.0851430942546626edac8a2149ce2d96/5/spk/
+/analyst0-2d1671_w512600.0851430942546626edac8a2149ce2d96/

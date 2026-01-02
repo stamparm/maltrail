@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/PRODAFT/status/1286580568801640448
+# Reference: https://twitter.com/neonprimetime/status/1589084560675201024
+# Reference: https://twitter.com/neonprimetime/status/1589086239931527168
+# Reference: https://urlscan.io/dom/8f93bd4e-7d78-485c-97e2-ee6ec6fb411a/
+# Reference: https://neonprimetime.blogspot.com/2022/11/xtramailer-spam-service-phishing-tool.html
+
+http://62.210.72.29
+http://62.210.81.212
+http://195.154.164.184
+http://195.154.164.25
+conferencias.falcorp.net
+
+# Generic
+
+/XtraMailerLogin
+/xtramailer/public/index.php
+/xtramailer/vendor/

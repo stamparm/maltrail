@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: APT-Q-43, VajraSpy
+
+# Reference: https://twitter.com/blackorbird/status/1509380434047606785
+# Reference: https://twitter.com/LukasStefanko/status/1509451238366236674
+# Reference: https://twitter.com/malwrhunterteam/status/1481312752782258176
+# Reference: https://twitter.com/malwrhunterteam/status/1481973884719149060
+# Reference: https://mp.weixin.qq.com/s/B0ElRhbqLzs-wGQh79fTww (Chinese)
+# Reference: https://www.virustotal.com/gui/file/5efd92887bb72f3d2186a2c0bcaf7b14b43d3e41722cb70acf0c59dfd4cfd7ba/detection
+
+http://212.24.100.197
+appplace.shop
+appz.live
+appzshare.club
+appzshare.digital
+apzshare.club

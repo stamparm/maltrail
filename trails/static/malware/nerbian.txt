@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/nerbian-rat-using-covid-19-themes-features-sophisticated-evasion-techniques
+
+fernandestechnical.com/pub/media/gitlog
+fernandestechnical.com/pub/media/ssl
+fernandestechnical.com/pub/health_check.php
+fernandestechnical.com/pub/health_check.phpp
+
+# Reference: https://x.com/malwrhunterteam/status/1838647203625341362
+# Reference: https://www.virustotal.com/gui/file/19e0aab36e15ddb57e684748ac73dbced7d08e35c5950fe53a3b4011cba1f7ac/detection
+
+http://91.92.249.195
+
+# Generic
+
+/pub/health_check.phpp

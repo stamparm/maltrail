@@ -1,0 +1,188 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: gobrut, marut, stealthworker
+
+# Reference: https://twitter.com/gwillem/status/1125363285883346945
+
+193.57.40.47:8081
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/02/new-golang-brute-forcer-discovered-amid-rise-e-commerce-attacks/
+
+5.45.69.149:7000
+
+# Reference: https://twitter.com/rommeljoven17/status/1126392967986438145
+
+198.245.61.201:7000
+94.156.189.176:7000
+
+# Reference: https://twitter.com/VK_Intel/status/1178766622686941184
+
+194.147.32.239:5693
+
+# Reference: https://www.fortinet.com/blog/threat-research/unveiling-stealthworker-campaign.html
+# Reference: https://otx.alienvault.com/pulse/5db180ab5034fd0844577b86
+# Reference: https://www.virustotal.com/gui/file/18d6d94cae986c07437759fdb2b9f27075306212c2397c0fdf7cadcd1ad40f6e/detection
+# Reference: https://www.virustotal.com/gui/file/42a1537bc70552884bb5aebcd7cc852a85a2a46f75cf00b781af367e1a94a8dc/detection
+
+109.94.110.24:7000
+162.213.249.72:8081
+185.180.199.26:8081
+185.180.199.26:8085
+185.205.209.131:7000
+185.206.147.79:7000
+190.97.167.130:8081
+190.97.167.241:8081
+193.109.69.52:7000
+193.37.213.69:8086
+193.57.40.44:8082
+193.57.40.47:8081
+194.147.32.239:5693
+194.61.24.231:8081
+198.245.61.201:7000
+2.56.242.128:12568
+212.129.52.141:7000
+212.73.150.182:7000
+37.252.5.154:8081
+45.227.255.213:8089
+45.89.228.105:28080
+46.17.43.23:11679
+5.101.0.13:7000
+5.188.86.19:6000
+5.188.86.29:7000
+5.45.69.149:7000
+54.39.219.79:8085
+69.12.66.194:11679
+81.22.45.137:7000
+81.22.45.137:8081
+85.217.171.124:7000
+91.92.128.77:7000
+92.63.192.247:8081
+92.63.197.158:7000
+94.156.189.176:7000
+95.211.194.136:7000
+formfactset.org
+gofermouse.top
+linuxserverb.xyz
+prioritywirreles.com
+sontorap.top
+swiftrocky.org
+teamsystems.info
+
+# Reference: https://twitter.com/tkanalyst/status/1226125887256416256
+# Reference: https://app.any.run/tasks/36f61504-d0ce-4bfe-be53-3f4a21817677/
+# Reference: https://www.virustotal.com/gui/file/8cdfbeadce5bbd316ec1e54b81dc469137e26a707d09f0f1cfe7843f08b9a7e5/detection
+
+176.121.14.156:8888
+http://176.121.14.156
+5spds4o9l.top
+is8r74eur.top
+o4s98myt4.top
+s4r95xmri.top
+ssde94d8k.top
+zfront.top
+
+# Reference: https://www.virustotal.com/gui/file/46204d823592d0586eee168f4b83d2a3d255bd2b1b92c55b9c089ce3c277554f/detection
+
+195.154.232.139:8888
+
+# Reference: https://www.virustotal.com/gui/file/a3bfec359a9f54a10f2660a5587cedd9d9bc7724d4c29aacb4e791b0992ad912/detection
+
+176.121.14.118:8888
+
+# Reference: https://twitter.com/The_d0c_T0R/status/1127233691451891712
+
+88.184.237.14:8888
+
+# Reference: https://www.virustotal.com/gui/file/c975794ff65c02b63fae1a94006a75294aac13277ca464e3ea7e40de5eda2b14/detection
+
+176.121.14.125:8888
+
+# Reference: https://www.virustotal.com/gui/file/6227bd0736cb4c7502066148606ef2d55ee179c0ef473d046e98ab9a53509b28/detection
+
+195.154.251.115:8085
+
+# Reference: https://www.virustotal.com/gui/file/80fb60d30475be5dbb69fc0fffaaf7045ec1984e54cbe20d7189efc9cef33fac/detection
+
+185.191.32.157:8888
+
+# Reference: https://www.virustotal.com/gui/file/71200512d3156e464339fa79563ec776b30b79ff10340ac50911d9b90f9e7131/detection
+
+185.191.32.158:8888
+
+# Reference: https://github.com/NavyTitanium/Misc-Malwares/tree/master/StealthWorker
+
+176.32.33.8:5487
+185.153.196.151:7214
+185.153.196.151:8349
+209.99.40.222:1400
+209.99.40.222:5487
+212.60.5.130:1400
+87.251.70.26:7381
+87.251.70.54:7214
+87.251.70.54:8349
+angry.wastebincan.xyz
+jokom.wastebincan.xyz
+jumanji.at
+marsiane.at
+
+# Reference: https://www.virustotal.com/gui/file/6a8338da3d4fd6371ce3eb8eac02be1f91552e72aa0556e1a8579473e6025ec7/detection
+
+91.240.118.73:8888
+
+# Reference: https://www.virustotal.com/gui/file/751b2cb58520a3eed88c7cfc2360facc52a73526aac9e3251d668019a81ac54a/detection
+
+185.191.32.170:8888
+
+# Reference: https://twitter.com/fr0s7_/status/1368243541571477513
+
+194.26.29.186:7391
+serveriusis.com
+
+# Reference: https://www.virustotal.com/gui/file/a815984315b712dc2067fcf34bc1ba95b9badebb78e20afb7fb3068bcdf1dbb7/detection
+
+176.121.14.113:8888
+
+# Reference: https://twitter.com/abuse_ch/status/1426084955503927296
+
+185.191.34.170:8888
+
+# Reference: https://www.virustotal.com/gui/file/bd9ce6bca4d8a4df594da58ea8b542ea7b3889ad4c784a1b8729c40d7a643e84/detection
+# Reference: https://www.virustotal.com/gui/file/a8875c3bad30270efe07611b8f68546d6cb6ab19f0105319ebaba0d624bab0bf/detection
+# Reference: https://www.virustotal.com/gui/file/940ea36c95934bc5293f43894ff5af8cd4c35c15dcf2f4032a9bf87050678406/detection
+# Reference: https://www.virustotal.com/gui/file/47a28d7a3c87af8dfa1066531f3a73947d5162a1d09ef2a4b0a1847c12ab2a64/detection
+
+92.255.85.17:8888
+
+# Reference: https://www.fortinet.com/blog/threat-research/gotrim-go-based-botnet-actively-brute-forces-wordpress-websites
+# Reference: https://otx.alienvault.com/pulse/6399aecdfd7196138a8067b9
+
+http://77.73.133.99
+
+# Reference: https://twitter.com/SecureSh3ll/status/1774458032157577347
+# Reference: https://www.virustotal.com/gui/file/6da009944c2d639260b769e02af19c62b8c121d1b2978d0c7a156b4bc4ef92ce/detection
+
+45.9.149.185:8082
+
+# Reference: https://www.virustotal.com/gui/file/9d26ae7888ceaedfe1e5f281f51f7ee509d612c2bd7640d51a3430174105e625/detection
+
+190.97.167.195:8888
+tuesok.top
+
+# Reference: https://x.com/malwrhunterteam/status/1995803532738347509
+# Reference: https://www.virustotal.com/gui/file/9b33985b89bbe12f56726dc5f7650ce0f32466ed4895be848c1a27c498534f78/detection
+
+http://199.231.235.104
+91.98.227.156:8084
+
+# Generic
+
+/bots/chkVersion?currVers=
+/bots/knock?worker=
+/gw?worker=
+/project/saveGood?host=
+
+# ELF
+
+/Stub_Linux_amd64.test
+/Stub_Linux_x86.test

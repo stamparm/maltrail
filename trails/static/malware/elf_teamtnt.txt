@@ -1,0 +1,378 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ta8220, hadooken, k4spreader, awssteal
+
+# Reference: https://www.trendmicro.com/vinfo/hk-en/security/news/virtualization-and-cloud/coinminer-ddos-bot-attack-docker-daemon-ports
+# Reference: https://cybersecurity.att.com/blogs/labs-research/teamtnt-delivers-malware-with-new-detection-evasion-tool
+
+kaiserfranz.cc
+irc.kaiserfranz.cc
+/ziggy_spread
+
+# Reference: https://www.cadosecurity.com/2020/08/17/teamtnt-the-first-crypto-mining-worm-to-steal-aws-credentials/
+# Reference: https://www.virustotal.com/gui/file/1aaf7bc48ff75e870db4fe6ec0b3ed9d99876d7e2fb3d5c4613cca92bbb95e1b/detection
+# Reference: https://otx.alienvault.com/pulse/5f3aa1e047a40112d69f524d
+
+6z5yegpuwg2j4len.tor2web.su
+dockerupdate.anondns.net
+sayhi.bplace.net
+teamtnt.red
+teamtntisback.anondns.net
+
+# Reference: https://otx.alienvault.com/pulse/5f58ff8e319f59c6e46496b1
+# Reference: https://www.virustotal.com/gui/file/0742efecbd7af343213a50cc5fd5cd2f8475613cfe6fb51f4296a7ec4533940d/detection
+
+85.214.149.236:443
+
+# Reference: https://techcommunity.microsoft.com/t5/azure-security-center/teamtnt-activity-targets-weave-scope-deployments/ba-p/1645968
+# Reference: https://otx.alienvault.com/pulse/5f5925486084399c89bda0ba
+# Reference: https://www.virustotal.com/gui/domain/rhuancarlos.inforgeneses.inf.br/detection
+
+rhuancarlos.inforgeneses.inf.br
+
+# Reference: https://unit42.paloaltonetworks.com/black-t-cryptojacking-variant/
+# Reference: https://otx.alienvault.com/pulse/5f7b7cfff93fa60ed6fd4ff4
+
+/BLACK-T/setup/
+/BLACK-T/beta
+/BLACK-T/CleanUpThisBox
+/BLACK-T/SetUpTheBLACK-T
+/BLACK-T/SystemMod
+/SetUpTheBLACK-T
+/only_for_stats/dup.php
+
+# Reference: https://twitter.com/r3dbU7z/status/1351256623814205441
+
+sampwn.anondns.net
+/SamPwn
+
+# Reference: https://twitter.com/r3dbU7z/status/1350479393135734787
+# Reference: https://www.cadosecurity.com/post/botnet-deploys-cloud-and-container-attack-techniques
+# Reference: https://otx.alienvault.com/pulse/6007314fbb9b9daf8afc505c
+
+http://45.9.150.36
+borg.wtf
+
+# Reference: https://unit42.paloaltonetworks.com/hildegard-malware-teamtnt/
+# Reference: otx.alienvault.com/pulse/601ad65bb1f0c3f6116d20ab/
+
+123.245.9.147:6667
+13.245.9.147:6667
+164.68.106.96:6667
+62.234.121.105:6667
+
+# Reference: https://www.lacework.com/8220-gangs-recent-use-of-custom-miner-and-botnet/
+# Reference: https://otx.alienvault.com/pulse/60a81875fa39fe6dbbe6f7d1
+
+irc.do-dear.com
+
+# Reference: https://unit42.paloaltonetworks.com/docker-honeypot/
+# Reference: https://unit42.paloaltonetworks.com/teamtnt-operations-cloud-environments/
+# Reference: https://otx.alienvault.com/pulse/60b0cd1697da17aefe01db85
+# Reference: https://otx.alienvault.com/pulse/60bdfb172c85862f931deced
+# Reference: https://www.virustotal.com/gui/ip-address/45.9.148.85/relations
+
+http://45.9.148.35
+irc.borg.wtf
+irc.teamtnt.red
+irc03.teamtnt.red
+ircbd.anondns.net
+pacu.borg.wtf
+xmrigdashboard.anondns.net
+
+# Reference: https://unit42.paloaltonetworks.com/teamtnt-cryptojacking-watchdog-operations/
+# Reference: https://otx.alienvault.com/pulse/60bf9746b81c47f6658b7e1a
+
+projectbluebeam.anondns.net
+
+# Reference: https://twitter.com/SethKingHi/status/1412729582751420419
+
+http://185.142.239.128
+
+# Reference: https://blog.netlab.360.com/wei-xie-kuai-xun-teamtntxin-huo-dong-tong-guo-gan-ran-wang-ye-wen-jian-ti-gao-chuan-bo-neng-li/
+# Reference: https://otx.alienvault.com/pulse/610ce11da606a4c5c78b28a3
+# Reference: https://www.virustotal.com/gui/ip-address/194.147.114.20/relations
+
+htxreceive.top
+pubzone.htxreceive.top
+oracle.htxreceive.top
+/htx-i.$
+/htx-i.arc
+/htx-i.arcle-hs38
+/htx-i.arm
+/htx-i.arm4
+/htx-i.arm4l
+/htx-i.arm4t
+/htx-i.arm4tl
+/htx-i.arm4tll
+/htx-i.arm5
+/htx-i.arm5l
+/htx-i.arm5n
+/htx-i.arm6
+/htx-i.arm64
+/htx-i.arm6l
+/htx-i.arm7
+/htx-i.arm7l
+/htx-i.arm8
+/htx-i.armv4
+/htx-i.armv4l
+/htx-i.armv5l
+/htx-i.armv6
+/htx-i.armv61
+/htx-i.armv6l
+/htx-i.armv7l
+/htx-i.dbg
+/htx-i.exploit
+/htx-i.i4
+/htx-i.i486
+/htx-i.i586
+/htx-i.i6
+/htx-i.i686
+/htx-i.kill
+/htx-i.m68
+/htx-i.m68k
+/htx-i.mips
+/htx-i.mips64
+/htx-i.mipseb
+/htx-i.mipsel
+/htx-i.mpsl
+/htx-i.pcc
+/htx-i.powerpc
+/htx-i.powerpc-440fp
+/htx-i.powerppc
+/htx-i.ppc
+/htx-i.pp-c
+/htx-i.ppc2
+/htx-i.ppc440
+/htx-i.ppc440fp
+/htx-i.root
+/htx-i.root32
+/htx-i.sh
+/htx-i.sh4
+/htx-i.sparc
+/htx-i.spc
+/htx-i.ssh4
+/htx-i.x32
+/htx-i.x32_64
+/htx-i.x64
+/htx-i.x86
+/htx-i.x86_32
+/htx-i.x86_64
+/s3f715/
+
+# Reference: https://twitter.com/t0001100000/status/1446048755577458694
+# Reference: https://www.anomali.com/blog/inside-teamtnts-impressive-arsenal-a-look-into-a-teamtnt-server
+# Reference: https://www.virustotal.com/gui/file/fe3c5c4f94b90619f7385606dfb86b6211b030efe19b49c12ead507c8156507a/detection
+# Reference: https://www.virustotal.com/gui/file/0dab485f5eacbbaa62c2dd5385a67becf2c352f2ebedd2b5184ab4fba89d8f19/detection
+
+http://45.9.148.182
+51.79.226.64:8080
+85.214.149.236:443
+chimaera.cc
+dl1.chimaera.cc
+irc.chimaera.cc
+/chimaera.cc
+/chimaera.cc_Version2.c
+/GRABBER_aws-cloud.sh
+/GRABBER_aws-cloud2.sh
+/GRABBER_google-cloud.sh
+/MOUNTSPLOIT_V2.sh.txt
+/TeamTNTbot.c
+/TeamTNT.sh
+/TNT_gpu.c
+
+# Reference: https://www.lacework.com/blog/teamtnt-continues-to-target-exposed-docker-api/
+# Reference: https://www.trendmicro.com/en_ae/research/21/k/teamtnt-upgrades-arsenal-refines-focus-on-kubernetes-and-gpu-env.html
+# Reference: https://otx.alienvault.com/pulse/6177d2c81029c2102d5fac47
+
+crypto.htxreceive.top
+
+# Reference: https://www.intezer.com/blog/malware-analysis/teamtnt-cryptomining-explosion/
+# Reference: https://otx.alienvault.com/pulse/6213ad9cfa105eaa69e553d2
+
+teamtnt.twilightparadox.com
+the.borg.wtf
+
+# Reference: https://twitter.com/suyog41/status/1637777342389972992
+# Reference: https://www.virustotal.com/gui/file/8640fbb75e9e6ee8f51f5b95b8ee263b3cd8225b4e4351536cfb1adb5fb32c66/detection
+
+http://128.199.240.129
+/php/rr/make-rr.sh
+
+# Reference: https://www.cadosecurity.com/previously-undiscovered-teamtnt-payload-recently-surfaced/
+# Reference: https://otx.alienvault.com/pulse/6414b965997992991b82531e
+
+donaldtrump.cc
+
+# Reference: https://blog.aquasec.com/teamtnt-reemerged-with-new-aggressive-cloud-campaign
+# Reference: https://blog.aquasec.com/threat-alert-anatomy-of-silentbobs-cloud-attack
+# Reference: https://www.virustotal.com/gui/file/4a05f0ce8c120c4e62403558d45b3df8c6fd0c38c3e4848819cf343594518784/detection
+# Reference: https://www.virustotal.com/gui/file/d907d41fef298203b18b59a17fa9e027df5f15b5b71df94031efc5405249541e/detection
+# Reference: https://www.virustotal.com/gui/file/4a05f0ce8c120c4e62403558d45b3df8c6fd0c38c3e4848819cf343594518784/detection
+# Reference: https://www.virustotal.com/gui/file/2531b25cb663c445991b71e3f03ff3d759e55725022a209c8a0ca5255751c6e2/detection
+
+207.154.218.221:8888
+ap-northeast-1.compute.internal.anondns.net
+everfound.anondns.net
+everlost.anondns.net
+silentbob.anondns.net
+/bin/tmate/x86_64
+
+# Reference: https://twitter.com/ShilpeshTrivedi/status/1708720269643440200
+# Reference: https://twitter.com/malwrhunterteam/status/1748754174819344410
+# Reference: https://www.virustotal.com/gui/file/a1dad8768ab2cb89d883979a99d23cbe586539b69530345f4069a399ff2eedf6/detection
+# Reference: https://www.virustotal.com/gui/file/36999b9b286ac24fb2874d3c523e591b4bf1d01ec76051e064d9e8c1ea18f431/detection
+# Reference: https://www.virustotal.com/gui/file/28dade8156a906e40b97d0ff7b65b9f4fd0c4f6572637786f259c0ab2f0bd035/detection
+
+http://5.42.67.2
+http://5.42.67.29
+http://5.42.67.3
+http://87.121.221.176
+89.185.85.102:8080
+89.185.85.102:8444
+89.185.85.102:9090
+89.185.85.102:9091
+89.185.85.102:9092
+89.185.85.102:9191
+c4kdeliver.top
+dw.c4kdeliver.top
+su95.c4kdeliver.top
+
+# Reference: https://www.fortinet.com/blog/threat-research/old-cyber-gang-uses-new-crypter-scrubcrypt
+# Reference: https://www.trendmicro.com/en_us/research/23/e/8220-gang-evolution-new-strategies-adapted.html
+# Reference: https://otx.alienvault.com/pulse/64638bb666005b906bc81c2b
+# Reference: https://www.virustotal.com/gui/ip-address/185.17.0.19/relations
+# Reference: https://www.virustotal.com/gui/file/0258d2414ff41c7eabc12a9deb00109974c17f3e4e061e97dcd61f9c4f0dc8dd/detection
+
+http://179.43.155.202
+http://185.17.0.19
+http://209.141.38.219
+http://45.142.122.11
+http://79.137.203.156
+letmaker.top
+jila.letmaker.top
+jira.letmaker.top
+pf.letmaker.top
+pwn.letmaker.top
+su-94.letmaker.top
+su-95.letmaker.top
+su95.letmaker.top
+work.letmaker.top
+
+# Reference: https://twitter.com/suyog41/status/1722121111037747498
+# Reference: https://www.virustotal.com/gui/domain/clu-e.eu/relations
+# Reference: https://www.virustotal.com/gui/file/dfc874f4d230dd5ac2552f1cc9439ee1e21e1de8e3bcaa652d0a5fa70274c7d3/detection
+
+clu-e.eu
+b.clu-e.eu
+cc.clu-e.eu
+
+# Reference: https://twitter.com/suyog41/status/1727196303556485504
+# Reference: https://www.virustotal.com/gui/file/6a2de1462b6877634782f710fb15e83c66b602b755e533dc2a87ea61061f53eb/detection
+# Reference: https://www.virustotal.com/gui/file/0c7579294124ddc32775d7cf6b28af21b908123e9ea6ec2d6af01a948caf8b87/detection
+
+107.189.7.84:14447
+9-9-8.com
+b.9-9-8.com
+m.9-9-8.com
+/brysj/m/enbash.tar
+/brysj/m/enbio.tar
+m.clu-e.eu
+
+# Reference: https://x.com/banthisguy9349/status/1796095476179095958
+# Reference: https://www.cadosecurity.com/blog/spinning-yarn-a-new-linux-malware-campaign-targets-docker-apache-hadoop-redis-and-confluence
+# Reference: https://www.virustotal.com/gui/file/74da05333c5b452e33e50a265182c10b985fad5c8da12a4f97e95da6a1d3597f/detection
+# Reference: https://www.virustotal.com/gui/file/fa5d68853dc1001c1cf063d80f41f49c604585128e66cd84d7627238ac70b391/detection
+
+http://47.96.69.71
+185.22.154.123:13337
+185.22.154.123:13339
+185.22.154.123:19951
+209.141.37.110:14447
+45.61.143.47:9123
+45.61.143.47:9900
+45.61.143.47:9999
+82.153.138.25:12345
+82.153.138.25:13339
+82.153.138.25:9123
+ww-1.us.to
+
+# Reference: https://x.com/banthisguy9349/status/1796118204982456761
+# Reference: https://www.virustotal.com/gui/ip-address/206.189.204.54/relations
+# Reference: https://www.virustotal.com/gui/file/852a577b227aa856399ae836d9db15eee38a4f62301a8590f80a009ec29dad8a/detection
+
+194.36.190.118:8080
+9-9-11.com
+9-9-12.com
+9-9-13.com
+b.9-9-11.com
+b.9-9-12.com
+b.9-9-13.com
+m.9-9-11.com
+
+# Reference: https://cybersecuritynews.com/bondnet-high-performance-bots-c2-server/
+# Reference: https://otx.alienvault.com/pulse/666163affcce4a1ff5cae35a
+# Reference: https://otx.alienvault.com/pulse/6670c9ec24067e93485c2b73
+# Reference: https://www.virustotal.com/gui/file/141a4fe4bae22f45ff5a7ceaf1f2ee7e828169da8630f38273dd4923daf34dd1/detection
+
+http://223.223.188.19
+46.59.210.69:7000
+46.59.214.14:7000
+84.46.22.158:7000
+47.99.155.111:51324
+mymst.top
+mymst007.top
+d.mymst.top
+m.mymst.top
+frp.mymst007.top
+
+# Reference: https://www.virustotal.com/gui/file/6235386f1072eca6a0d1a369294183c2eb606f02fdf7e53b33d688d6e26edaf7/detection
+
+registerit.anondns.net
+
+# Reference: https://app.validin.com/detail?type=hash&find=5eeab97e80cf6e5af1ed34dbdde204cecffbc73474e1fb228e03026e3fa1f4f7#tab=host_pairs_v2
+
+http://93.123.39.91
+http://93.123.39.92
+http://93.123.39.93
+http://93.123.39.94
+http://93.123.39.95
+http://93.123.39.96
+http://93.123.39.97
+
+# Reference: https://www.virustotal.com/gui/file/24af72ba43a642171ba3d118900d2ee44ecb11992ac09c2956f249ea0270e5a5/detection
+
+217.182.205.238:8080
+
+# Reference: https://app.validin.com/detail?find=154.216.18.134&type=ip4&ref_id=c9a1baecc70#tab=host_pairs_v2
+
+cryptohopperai.org
+
+# Reference: https://www.aquasec.com/blog/hadooken-malware-targets-weblogic-applications/
+# Reference: https://www.virustotal.com/gui/ip-address/185.174.136.204/relations
+
+http://89.185.85.102
+http://185.174.136.204
+fandak.top
+sck-dns.cc
+mi.fandak.top
+run.sck-dns.cc
+
+# Reference: https://x.com/sekoia_io/status/1841028285846679805
+# Reference: https://github.com/SEKOIA-IO/Community/blob/main/IOCs/8220Gang/8220_Gang_iocs_20242409.csv
+
+http://154.213.192.44
+http://157.230.29.135
+http://198.199.85.230
+http://51.222.111.116
+http://51.255.171.23
+http://64.227.170.227
+http://77.221.149.212
+on-demand.pw
+play.sck-dns.cc
+run.on-demand.pw
+
+# Reference: https://www.virustotal.com/gui/file/b87cbe8ef12660b98dc36cc5d10ab5b3367c710fd7f22e0eb3e866e8364ab781/detection
+
+leetdbs.anondns.net

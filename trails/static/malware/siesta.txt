@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fireeye.com/blog/threat-research/2014/03/a-detailed-examination-of-the-siesta-campaign.html
+
+freetrade.allowed.org
+gogotrade.apple.org.ru
+homepage.longmusic.com
+manslist.loopback.nu
+meeting.toh.info
+technology.acmetoy.com
+thales.myftp.info
+tradeproject.rlogin.org
+worldwide.chickenkiller.com
+billyjoebobshow.com
+bluecoate.com
+cloudcominc.com
+coachmotor.com
+comtoway.com
+deebeedesigns.ca
+drgeorges.com
+heliospartners.com
+kayauto.net
+microsofthomes.com
+mwa.net
+oewarehouse.com
+offerdahls.com
+olmusic100.com
+rbaparts.com
+rightnowautoparts.com
+skyslisten.com
+stapharrest.com
+whackcard.com
+woodagency.com

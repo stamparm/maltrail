@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://securelist.com/analysis/publications/58278/absolute-computrace-revisited/
+
+search.namequery.com
+search.us.namequery.com
+search64.namequery.com
+bh.namequery.com
+namequery.nettrace.co.za
+search2.namequery.com
+m229.absolute.com

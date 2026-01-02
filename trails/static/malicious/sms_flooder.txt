@@ -1,0 +1,38 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1217506047981584384
+# Reference: https://app.any.run/tasks/341f9416-a847-494b-8a14-a0bf3fd1d387/
+
+theyeru.ru
+
+# Reference: https://twitter.com/ANeilan/status/1616959844187099138
+
+webpage-citizensonline.zyns.com
+
+# Reference: https://www.virustotal.com/gui/file/05b31b80a86fbb8e8588bb88d72b5e2fffeca2a11da5c82afd57bd9fef991328/detection
+
+gghzj.cc
+
+# Generic
+
+/sms-bomb/
+/sms-bomber/
+/sms_bomb/
+/sms_bomber/
+/smsbomb/
+/sms%20bomb/
+/smsbomber/
+/sms%20bomber/
+/sms-flood/
+/sms-flooder/
+/sms%20flood/
+/sms%20flooder/
+/sms_flood/
+/sms_flooder/
+/smsflood/
+/smsflooder/
+/smsspoofer/
+/sms-spoofer/
+/sms%20spoofer/
+/sms_spoofer/

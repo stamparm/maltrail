@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ET_Labs/status/1387127004689010688
+# Reference: https://www.virustotal.com/gui/file/18ef73d53d2e54947f079c2dc9e57a5636a05b16df4025623e45ba9ebf72e5cd/detection
+
+lunarbuilder.000webhostapp.com

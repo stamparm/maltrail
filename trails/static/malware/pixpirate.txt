@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/Fact_Finder03/status/1993977211221950825
+# TITLE-HOST/IP=PixPirate C2 - Command & Control
+
+45.140.17.43:5000

@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.recordedfuture.com/research/redjuliett-intensifies-taiwanese-cyber-espionage-via-network-perimeter
+# Reference: https://www.virustotal.com/gui/ip-address/38.147.190.192/relations
+# Reference: https://www.virustotal.com/gui/ip-address/61.238.103.155/relations
+# Reference: https://www.virustotal.com/gui/ip-address/122.10.89.230/relations
+# Reference: https://www.virustotal.com/gui/ip-address/137.220.36.87/relations
+# Reference: https://www.virustotal.com/gui/ip-address/140.120.98.115/detection
+# Reference: https://www.virustotal.com/gui/ip-address/154.197.98.3/relations
+# Reference: https://www.virustotal.com/gui/ip-address/154.197.99.202/relations
+# Reference: https://www.virustotal.com/gui/ip-address/176.119.150.92/relations
+
+cond0r.com
+dns361.tk
+godblack.cf
+purple76.com
+sofeter.ml
+solana.onl
+togey.online
+yeeyeey.top
+cktime.ooguy.com
+javacheck.ooguy.com
+javaupdate.giize.com

@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: newbot loader
+
+# Reference: https://medium.com/walmartglobaltech/newbot-loader-81e2ba11c793
+# Reference: https://www.virustotal.com/gui/file/501a2d61bb9cdcdcbc1a77c1cf985c4d3781d60cb94380fbecac73cdbd2120ba/detection
+# Reference: https://www.virustotal.com/gui/file/92f3fdcbeb7175d86daaab7ac7e07db4558c0933e91552f9a50420e841a47bb3/detection
+
+45.15.157.139:1337

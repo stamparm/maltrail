@@ -1,0 +1,56 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: bouncing golf, golfspy
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/mobile-cyberespionage-campaign-bouncing-golf-affects-middle-east/
+# Reference: https://otx.alienvault.com/pulse/5d093c0e815e31a61883fc3b
+
+androidsmedia.com
+androidssystem.com
+mediadownload.space
+mediamobilereg.com
+secandroid.com
+sharpion.org
+shileyfetwell.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1337439778564935682
+
+http://95.216.88.43
+
+# Reference: https://www.virustotal.com/gui/file/5af00ecac0ea1ecaaf82d713305e0d62b16b1f53fdf6342302a6b47dd04a2c67/detection
+
+88.119.171.200:443
+services4me.net
+
+# Reference: https://www.virustotal.com/gui/file/01c6cea3f07ea33aa1912afc41496acd880c936ba593396f911f34845862b565/detection
+
+88.119.171.200:22222
+
+# Reference: https://twitter.com/malwrhunterteam/status/1543334380961144833
+# Reference: https://www.virustotal.com/gui/file/fb92499a2c14a2c0365d3632ba0fa83c919c6e0ab9d5bea069e3db902f931916/detection
+
+158.69.133.76:443
+158.69.133.76:55555
+programshope.com
+rahagasht.co
+
+# Reference: https://www.virustotal.com/gui/file/06a04eb878029028c54ec46c21f757b480cad1c78862934902988af63500837b/detection
+
+http://82.180.173.28
+/sdrdir/jdaskldata.php
+/jdaskldata.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1677314996714233856
+# Reference: https://www.virustotal.com/gui/file/3f9823fc8d28d7d2cc7b2b0bf4b5af897fc9931937c3841ef5d908ff196fc560/detection
+
+45.11.183.140:22222
+45.11.183.140:443
+91.245.253.50:22222
+91.245.253.50:4430
+/zada/bcfc.php
+
+# Generic
+
+/gzza/ibbc.php
+/pkherw/daat.php

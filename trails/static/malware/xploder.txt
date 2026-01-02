@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: xploder stealer
+
+# Reference: https://www.virustotal.com/gui/file/02dcac91a36af22f68101deee444d064e5ef17f0f739bd3dc495ace89a23391a/detection
+
+cloclo11.datacloudmail.ru

@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://otx.alienvault.com/pulse/5cf69ddaccc95ba1201603ef
+# Reference: https://blog.talosintelligence.com/2019/06/frankenstein-campaign.html
+
+droobox.online
+msdn.cloud
+search-bing.site

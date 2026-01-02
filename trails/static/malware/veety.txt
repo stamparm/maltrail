@@ -1,0 +1,70 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: veetyrat
+
+# Reference: https://x.com/ViriBack/status/1871558849649607162
+# Reference: https://app.validin.com/detail?find=VEETY%20Home%20%7C%20Advanced%20Hassle-Free%20RAT&type=raw&ref_id=2844dbcdf4f
+# Reference: https://www.virustotal.com/gui/file/d747e241dcbcaa9a177bceac2d374577884d15a4b8dd6ea2ef66aaccacaf45a2/detection
+# Reference: https://www.virustotal.com/gui/file/5edd920dde8b4001ea1e8e78c80dbf64056b41a6606aea29266d6f06b108d1a3/detection
+# Reference: https://www.virustotal.com/gui/file/f79c8bf4d9668425c1d9b226053f504af1f4bd047f79e49196dad81132efb5e0/detection
+# Reference: https://www.virustotal.com/gui/file/900e9e3d46261a92cd755fe1885195b91782cb7fdea69da3f5c4563240bf152a/detection
+# Reference: https://www.virustotal.com/gui/file/70846fd0bdf9f646a81cf05ef05b14ed393fe952ce205d2f923bf9345081e512/detection
+# Reference: https://www.virustotal.com/gui/file/5ca2fa3925f8ef2d637acdcc95478c8379c82331ed0858faccaad55e903ebc6e/detection
+# Reference: https://www.virustotal.com/gui/file/09dd13f5dcfb920f916c151d1b914090b9601f62c42062a448dad7dbd51c6fe5/detection
+
+eddit.me
+veety.xyz
+commands.eddit.me
+
+# Generic
+
+/veety/release/loader/
+/veety/servers/
+/veety/other/infected_counter/
+/veety/other/infected_counter/counter.php
+/veety/servers/VC2BA8/
+/veety/servers/VEVDVW/
+/veety/servers/VL973X/
+/veety/servers/VPFUOI/
+/veety/servers/VY671i/
+/veety/servers/VC2BA8/AddOnline.php
+/veety/servers/VC2BA8/AddUser.php
+/veety/servers/VC2BA8/CreateSSDirectory.php
+/veety/servers/VC2BA8/commander
+/veety/servers/VC2BA8/RemOnline.php
+/veety/servers/VC2BA8/UploadUserData.php
+/veety/servers/VC2BA8/WALKER/CreateSSDirectory.php
+/veety/servers/VC2BA8/WALKER/commander
+/veety/servers/VEVDVW/AddOnline.php
+/veety/servers/VEVDVW/AddUser.php
+/veety/servers/VEVDVW/CreateSSDirectory.php
+/veety/servers/VEVDVW/commander
+/veety/servers/VEVDVW/RemOnline.php
+/veety/servers/VEVDVW/UploadUserData.php
+/veety/servers/VEVDVW/WALKER/CreateSSDirectory.php
+/veety/servers/VEVDVW/WALKER/commander
+/veety/servers/VL973X/AddOnline.php
+/veety/servers/VL973X/AddUser.php
+/veety/servers/VL973X/CreateSSDirectory.php
+/veety/servers/VL973X/commander
+/veety/servers/VL973X/RemOnline.php
+/veety/servers/VL973X/UploadUserData.php
+/veety/servers/VL973X/WALKER/CreateSSDirectory.php
+/veety/servers/VL973X/WALKER/commander
+/veety/servers/VPFUOI/AddOnline.php
+/veety/servers/VPFUOI/AddUser.php
+/veety/servers/VPFUOI/CreateSSDirectory.php
+/veety/servers/VPFUOI/commander
+/veety/servers/VPFUOI/RemOnline.php
+/veety/servers/VPFUOI/UploadUserData.php
+/veety/servers/VPFUOI/WALKER/CreateSSDirectory.php
+/veety/servers/VPFUOI/WALKER/commander
+/veety/servers/VY671i/AddOnline.php
+/veety/servers/VY671i/AddUser.php
+/veety/servers/VY671i/CreateSSDirectory.php
+/veety/servers/VY671i/commander
+/veety/servers/VY671i/RemOnline.php
+/veety/servers/VY671i/UploadUserData.php
+/veety/servers/VY671i/WALKER/CreateSSDirectory.php
+/veety/servers/VY671i/WALKER/commander

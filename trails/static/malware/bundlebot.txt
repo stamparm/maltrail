@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://research.checkpoint.com/2023/byos-bundle-your-own-stealer/
+
+139.99.38.193:5505
+139.99.80.193:5505
+51.79.180.158:5505
+85.239.242.27:5505

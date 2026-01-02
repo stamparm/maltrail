@@ -1,0 +1,90 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ViriBack/status/1752143901572350166
+# Reference: https://www.rapid7.com/blog/post/2024/01/17/whispers-of-atlantida-safeguarding-your-digital-treasure/
+# Reference: https://www.virustotal.com/gui/file/17807f3edb53347dca477bd872b8a5bc10ef8c22b7cfe8c918c39e74508df317/detection
+# Reference: https://www.virustotal.com/gui/file/17afb80e07f4c6e69a4b2aec657b53f0b62d27c47b215cb34c285fbd43fd5ac2/detection
+# Reference: https://www.virustotal.com/gui/file/f935143dba2fb65eef931c1dac74a740e58e9e911a13457f4cfa4c73a0c673b3/detection
+# Reference: https://www.virustotal.com/gui/file/f3b6d4af3700673cb6e73c25d0917d363f95c4d61cff44c5fe668eabfcfaaab3/detection
+# Reference: https://www.virustotal.com/gui/file/edfbe46dcdc59201ba4027ed55fb9759e34e517db1a6a7aa8b4a462e00005586/detection
+# Reference: https://www.virustotal.com/gui/file/d79553cdc66fc78123ae14f2f4146ab92d06634be16b8f89eccf826fb72e79ae/detection
+# Reference: https://www.virustotal.com/gui/file/bd8f7fe3620e89a6ac3f3424c30850ea548fa0878bd6b90b8df4ddab73a5aecb/detection
+# Reference: https://www.virustotal.com/gui/file/22d237afec68101ed2bde08223559b314a79a73baf4e2af7563268b309641b6c/detection
+# Reference: https://www.virustotal.com/gui/file/1ca0963490ee1d3f15a52263ecffffa61d9c7a4ca99cbe27490487649d077567/detection
+# Reference: https://www.virustotal.com/gui/file/0777c8db67a27956cb7f06d81503cce8bc953b9c1080687176ed2091231228d7/detection
+
+http://166.1.160.10
+http://45.144.232.99
+http://5.42.64.32
+http://95.215.8.101
+166.1.160.10:443
+45.144.232.99:443
+45.144.232.99:6655
+45.144.232.99:6666
+5.42.64.32:443
+95.215.8.101:443
+95.215.8.101:6655
+95.215.8.101:6666
+
+# Reference: https://twitter.com/greenplan_it/status/1762726574179135596
+# Reference: https://www.virustotal.com/gui/file/99cdb23c98d2217b8aa02f199b419a97838ebf9dcd146fee04a2683147ade79e/detection
+# Reference: https://www.virustotal.com/gui/file/23b8ca72f4371d068a619aead41ad0d74d8c8e26843ffd9b96a3ef08e211d06c/detection
+
+http://193.124.33.148
+45.144.232.99:6655
+45.144.232.99:6666
+
+# Reference: https://twitter.com/kddx0178318/status/1770423146052493332
+# Reference: https://www.virustotal.com/gui/file/abaa862d3608c6c5ba1e3c787838b9f1e8d62b1826862e6fb8c861c294940bc0/detection
+# Reference: https://www.virustotal.com/gui/file/42fe205cc4f110e6577fc484006cf9dfcbab6831f1b32d5e32453a5a073e64cc/detection
+
+185.172.128.95:6655
+185.172.128.95:6666
+jbb123.webd.pro
+/gg/describe.tet
+/gg/shove.ke
+
+# Reference: https://www.virustotal.com/gui/file/3c6ecf51c06b40e1e12ac0fdab21e16392d4df58c2ef031b3950907937d7b718/detection
+
+newrides.es
+/gfdgfg/tetete.bin
+
+# Reference: https://www.virustotal.com/gui/file/b13aeb50d70147e9bcd6be89e95d7491a1ee670277fd6b1d0f83f9697fc9347a/detection
+
+timadesanya.com
+
+# Reference: https://www.virustotal.com/gui/file/aef398f7166fb39df8147765e8e942e7658717ac2ee21afe54d9e8acf2d38555/detection
+
+clothingmartbd.com
+/uuu/chicken.bin
+
+# Reference: https://twitter.com/1ZRR4H/status/1782643011702210691
+
+plastchim-t.com/te/gospel.bin
+plastchim-t.com/te/universe.tet
+
+# Reference: https://www.virustotal.com/gui/file/1557582d42d3490b2e740ec7a2624a6f1fbbbf4bda5cece7289d72a0fb1fd2dd/detection
+
+timeandremind.com/te1/tstreds.gagg
+/te1/tstreds.gagg
+/tstreds.gagg
+
+# Reference: https://x.com/karol_paciorek/status/1812807879390294092
+# Reference: https://x.com/banthisguy9349/status/1812874004526506210
+# Reference: https://urlscan.io/search/#filename:%22GY7HXsD.jpg%22
+
+http://77.105.160.40
+/GY7HXsD.jpg
+
+# Reference: https://x.com/greenplan_it/status/1849806267935576435
+# Reference: https://www.virustotal.com/gui/file/2c0391da9f44aa6e40a9009471e3ea0fc9d5c1b1a63d35189de81008b6815139/detection
+
+javierlopez.eu
+
+# Reference: https://x.com/greenplan_it/status/1850823354472689684
+# Reference: https://www.virustotal.com/gui/file/31b233d5cdd809be59e838bb2c27c29d8a914daa08a2490e03b5e5f8ed35e312/detection
+# Reference: https://www.virustotal.com/gui/file/37a585cf2c5bd89bfed2edac2795b968a535bb372719e5cc65140cae770e9fd5/detection
+
+185.234.216.181:6655
+185.234.216.181:6666

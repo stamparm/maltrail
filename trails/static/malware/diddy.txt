@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/suyog41/status/1963849721807540345
+# Reference: https://www.virustotal.com/gui/file/2a5f5484078f7eff5ef59bb7dfee59f063657f7973d87f00ca5928d6ad63eeba/detection
+
+dexpanel-ip.pages.dev
+dexpanel-port.pages.dev

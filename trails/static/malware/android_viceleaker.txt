@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/fanning-the-flames-viceleaker-operation/90877/
+# Reference: https://www.virustotal.com/gui/ip-address/185.51.201.133/relations
+
+185.51.201.133:80
+iliageram.ir
+
+185.141.60.213:80
+188.165.28.251:80
+188.165.49.205:80
+
+# Generic trails
+
+/reqcalllog.php
+/reqsmscal.php

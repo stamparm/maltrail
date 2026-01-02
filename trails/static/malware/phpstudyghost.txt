@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/blackorbird/status/1175951448678420480
+# Reference: https://github.com/blackorbird/APT_REPORT/tree/master/phpstudyGhost
+
+360se.net

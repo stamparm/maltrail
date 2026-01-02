@@ -1,0 +1,38 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt-c-60, apt-q-12, spyglace
+
+# Reference: https://threatbook.io/blog/Military-Topics-in-Focus:-APT-C-60-Threat-Continues-to-be-Exposed
+# Reference: https://www.virustotal.com/gui/ip-address/162.222.215.164/relations
+
+http://192.67.255.191
+http://23.254.225.177
+http://51.210.235.46
+milfbate.com
+nimdsrt.com
+
+# Reference: https://www.welivesecurity.com/en/eset-research/analysis-of-two-arbitrary-code-execution-vulnerabilities-affecting-wps-office/
+# Reference: https://www.virustotal.com/gui/file/d0c554c836f955997316acf30b5039b52e5c9a8b127a5f33107314a481663b5e/detection
+# Reference: https://www.virustotal.com/gui/file/b62c9168fcde444dbc3be1593e80747929dcf1a49cc6305b49456d68d0c49e71/detection
+# Reference: https://www.virustotal.com/gui/file/861911e953e6fd0a015b3a91a7528a388a535c83f4b9a5cf7366b8209d2f00c3/detection
+# Reference: https://www.virustotal.com/gui/file/4b74d5e09bca4898a782e938a8f9889b9ebadf8b0f14368bca90d9d0e68da472/detection
+
+rammenale.com
+
+# Reference: https://x.com/blackorbird/status/1843929280415490335
+# Reference: https://app.validin.com/detail?find=WIN-S5H0DDH257T&type=raw#tab=host_pairs_v2
+# Reference: https://app.validin.com/detail?find=WIN-R92OFI6ANNT&type=raw#tab=host_pairs_v2
+# Reference: https://app.validin.com/detail?find=WIN-9M19PDUO1OV&type=raw#tab=host_pairs_v2
+
+103.187.26.174:443
+103.187.26.175:443
+103.187.26.176:443
+103.187.26.177:443
+203.174.87.18:443
+juanjuan.cesy.top
+
+# Reference: https://global.ptsecurity.com/analytics/pt-esc-threat-intelligence/darkhotel-a-cluster-of-groups-united-by-common-techniques
+
+http://104.168.169.138
+http://192.236.209.113

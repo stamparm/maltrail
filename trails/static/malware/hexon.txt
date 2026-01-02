@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: hexon stealer
+
+# Reference: https://x.com/iam_rajhans/status/1849021930193449150
+# Reference: https://www.virustotal.com/gui/file/00aed34751bdaf8d098743144057a224f78078d121ac3eff885d5a0d24f77f4f/detection
+# Reference: https://www.virustotal.com/gui/file/326c21e845863ea6ebe7d09ec3915d99e18f95e575e97aac2f71ae41160327e1/detection
+
+http://20.19.32.198
+20.19.32.198:1337
+
+# Reference: https://x.com/P4nd3m1cb0y/status/1854208131468841434
+# Reference: https://www.virustotal.com/gui/file/ea98b6236b09fa6273d7519072abb53fb37821cdcf6fffd92fb523e1bbaec074/detection
+
+http://20.151.152.98
+20.151.152.98:443
+
+# Reference: https://x.com/solostalking/status/1856975401584635962
+# Reference: https://x.com/aaqeel87/status/1856983267397746711
+# Reference: https://tria.ge/241114-chhbzaslcv/behavioral10
+
+http://72.145.3.21
+20.151.152.98:1337
+
+# Reference: https://x.com/DaveLikesMalwre/status/1857555894944342385
+# Reference: https://app.validin.com/detail?find=Hexon%20Stealer&type=raw&ref_id=27d2b64685d#tab=host_pairs
+
+hexon.fun
+hexonst34l3r.com
+welovekedy.xyz
+sadasdsadasfwsqwdqw.hexonst34l3r.com
+
+# Reference: https://x.com/solostalking/status/1858407906518921426
+# Reference: https://www.virustotal.com/gui/file/25736cc8c0f0a7f546dc6293de6e5e22e000eba43cf06d9d1270fca9a551936f/detection
+
+http://4.233.148.165

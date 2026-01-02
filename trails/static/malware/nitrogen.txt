@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: nitrogen ransomware
+
+# Reference: https://x.com/AlvieriD/status/1840833064056078465
+
+nitrogenczslprh3xyw6lh5xyjvmsz7ciljoqxxknd7uymkfetfhgvqd.onion
+
+# Reference: https://blog.techevo.uk/analysis/network/2024/09/24/warmcookie-incident-walk-through.html
+
+195.123.226.84:8000
+91.92.245.26:443

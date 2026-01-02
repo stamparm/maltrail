@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ssebot
+
+# Reference: https://www.virusbulletin.com/virusbulletin/2017/11/vb2017-paper-peering-spam-botnets/ (# Chapter 5)
+
+91.220.131.143:50013
+send-safe.com
+
+# Reference: https://twitter.com/malware_traffic/status/1359585588240875529
+
+31.44.184.47:50025

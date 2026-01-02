@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fireeye.com/blog/threat-research/2019/03/winrar-zero-day-abused-in-multiple-campaigns.html
+
+http://31.148.220.53
+
+# Reference: https://app.any.run/tasks/6ee14431-ca2f-4039-8119-949ca57385ba/
+
+superevilc2domain.com
+
+# Reference: https://app.any.run/tasks/416d8efb-4713-4582-92ac-929f9cb06425/
+
+kasperskylab.ignorelist.com

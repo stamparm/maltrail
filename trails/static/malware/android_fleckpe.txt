@@ -1,0 +1,52 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/sh1shk0va/status/1650463164411138050
+# Reference: https://twitter.com/ReBensk/status/1650532641894965249
+# Reference: https://www.virustotal.com/gui/file/58b0693a2eeed78441f6983f9df4d6a98216292488808bf71e90ff8172b882fe/detection
+# Reference: https://www.virustotal.com/gui/file/afcb8fa283398e6403e5177049df7485646ecf0d4fc3c1d66559a64ffe2bde7f/detection
+
+slimedit.live
+m12.slimedit.live
+
+# Reference: https://securelist.com/fleckpe-a-new-family-of-trojan-subscribers-on-google-play/109643/
+
+http://54.245.21.104
+beautycam.xyz
+gifcam.xyz
+hdmodecam.live
+iprocam.xyz
+mveditor.xyz
+odskguo.xyz
+photoeffect.xyz
+toobox.online
+twmills.xyz
+a.hdmodecam.live
+ac.iprocam.xyz
+ad.iprocam.xyz
+ae.mveditor.xyz
+ap.iprocam.xyz
+api.odskguo.xyz
+b.hdmodecam.live
+b7.photoeffect.xyz
+b8c.mveditor.xyz
+ba.beautycam.xyz
+ba3.photoeffect.xyz
+d3.mveditor.xyz
+f0.photoeffect.xyz
+f6.beautycam.xyz
+f8a.beautycam.xyz
+fa.gifcam.xyz
+fb.gifcam.xyz
+fl.gifcam.xyz
+gbcf.odskguo.xyz
+l.hdmodecam.live
+m11.slimedit.live
+m13.slimedit.live
+t1.twmills.xyz
+t2.twmills.xyz
+t3.twmills.xyz
+track.odskguo.xyz
+vd.toobox.online
+ve.toobox.online
+vt.toobox.online

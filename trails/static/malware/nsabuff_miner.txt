@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://s.tencent.com/research/report/716.html
+
+x.csrss.website
+s.csrss.website
+t.honker.info
+sky.hobuff.info

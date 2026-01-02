@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2014/2014-11-19-operation-mangal-win32syndicasec-used-targeted-attacks-indian-organizations/operation-mangal-win32syndicasec-used-targeted-attacks-indian-organizations.csv
+
+aju.org
+gh.tk
+ie.tk
+kumar807.blogspot.com
+kumar807.livejournal.com
+kumar807.thoughts.com
+kumar807.tumblr.com
+kumar807.wordpress.com
+kumarsingh1976.wordpress.com
+ky.tk
+musictelevision.blogspot.com

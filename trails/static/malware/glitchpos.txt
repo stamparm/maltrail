@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2019/03/glitchpos-new-pos-malware-for-sale.html
+
+coupondemo.dynamicinnovation.net
+
+# Reference: https://twitter.com/James_inthe_box/status/1163911403775774720
+# Reference: https://app.any.run/tasks/9ff2b1a4-c847-47f4-94e2-c5b9e1fde66e/
+# Reference: https://www.virustotal.com/gui/domain/relayservice.org/relations
+
+relayservice.org
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, GlitchPOS)
+
+http://162.222.215.45
+cleanfooddiethetic.org
+
+# Reference: https://twitter.com/JCyberSec_/status/1292831825379889153
+
+http://185.203.117.7
+
+# Generic
+
+/l3k245j4k6gkl2hgl5kj6h7345kl/login.php
+/l456lk3j54jk6h75l4k364jlk3j654l7/login.php

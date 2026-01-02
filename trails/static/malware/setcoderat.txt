@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/Cyber_O51NT/status/1994278451134562446
+# Reference: https://mp.weixin.qq.com/s?__biz=MzI2MDc2MDA4OA==&mid=2247516773&idx=1&sn=a4d99b46312e0ae944d5f8e550e89a4d&poc_token=HLBqKWmjSFTOXh06v_qwMZfWtAAyQI0zdRXTV_Vg
+# Reference: https://www.virustotal.com/gui/file/bae947da1be848fa5224aa93f8047c29600f915eb0d68945ddaa3ac385cd22d2/detection
+# Reference: https://www.virustotal.com/gui/file/cc37eda00d8b6581f71d82ca2dfdde6c428478b5b8ff6e8c9b6375a8efa8d2b8/detection
+
+ndcwsww.com
+ssllndac.com
+xiongdaylf.com
+xionger.cc

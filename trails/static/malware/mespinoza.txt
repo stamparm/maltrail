@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mespinoza, pysa
+
+# Reference: https://thedfirreport.com/2020/11/23/pysa-mespinoza-ransomware/
+# Reference: https://otx.alienvault.com/pulse/5fbbe433e7310b552a62ce46
+
+194.36.190.74:443
+45.147.231.210:9999

@@ -1,0 +1,47 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: wapdropper
+
+# Reference: https://www.symantec.com/blogs/threat-intelligence/xhelper-android-malware
+
+dc.g1ee.com
+
+# Reference: https://securelist.com/unkillable-xhelper-and-a-trojan-matryoshka/96487/
+# Reference: https://www.virustotal.com/gui/file/b9eda09f2954755082f62e2d7c443552abbedd27a0f35d5054a896b6b20f9c1d/detection
+# Reference: https://www.virustotal.com/gui/file/7487d1365ad9c93e0d3a19755ce976d6a50f24f45f08ddae96a549ec8102e865/detection
+
+lp.cooktracking.com
+koapkmobi.com
+http://45.79.110.191
+http://45.33.9.178
+http://23.239.4.169
+http://172.104.215.170
+http://104.200.19.80
+http://104.237.159.24
+http://45.79.108.241
+http://66.175.218.92
+/v1/ls/get
+/admin201506/uploadapkfile/
+
+# Reference: https://www.virustotal.com/gui/file/7487d1365ad9c93e0d3a19755ce976d6a50f24f45f08ddae96a549ec8102e865/detection
+# Reference: https://research.checkpoint.com/2020/enter-wapdropper-subscribe-users-to-premium-services-by-telecom-companies/
+# Reference: https://www.virustotal.com/gui/domain/cooktracking.com/detection
+# Reference: https://www.virustotal.com/gui/domain/facebook1mob.com/detection
+
+http://13.229.16.115
+ks7br7.3q03on.com
+cooktracking.com
+facebook1mob.com
+
+# Reference: https://www.virustotal.com/gui/file/1d50b1e05dc2a357316738a731786f2095776eca8c8031be68f7191ff65174ad/detection
+
+13.228.232.113:8081
+13.229.16.115:8081
+18.140.39.211:8081
+koapkmobi.com
+okyesmobi.com
+
+# Reference: https://www.virustotal.com/gui/file/7487d1365ad9c93e0d3a19755ce976d6a50f24f45f08ddae96a549ec8102e865/detection
+
+ykbh.k818ax.com

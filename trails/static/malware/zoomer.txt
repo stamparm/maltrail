@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: zoomer stealer
+
+# Reference: https://medium.com/@TomiwaAmuda/unveiling-a-sophisticated-phishing-attack-159a47fe2f18
+
+carsight.s3.amazonaws.com
+comfucios.s3.us-west-2.amazonaws.com

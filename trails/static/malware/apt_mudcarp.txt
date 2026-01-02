@@ -1,0 +1,115 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt40, apt-c-40, leviathan, mudcarp, periscope
+
+# Reference: https://otx.alienvault.com/pulse/5ca740c67a9dbc78fe32f9b9
+# Reference: https://www.accenture.com/t20190305T200954Z__w__/us-en/_acnmedia/PDF-96/Accenture-Security-MUDCARP-Full-Report.pdf
+
+chemscalere.com
+eujinonline.sytes.net
+scsnewstoday.com
+thyssenkrupp-marinesystems.org
+wsmcoff.com
+
+# Reference: https://twitter.com/Vishnyak0v/status/1203986670623887361
+
+accountsx.bounceme.net
+
+# Reference: https://medium.com/@Sebdraven/apt-40-in-malaysia-61ed9c9642e9
+# Reference: https://twitter.com/ClearskySec/status/1110941178231484417
+# Reference: https://otx.alienvault.com/pulse/5e3dbad21b45e958a0d9e5a6
+
+http://152.89.161.5
+http://139.162.44.81
+http://207.148.79.152
+http://167.99.72.82
+http://159.65.197.248
+http://152.89.161.5
+http://195.12.50.168
+accountsx.bounceme.net
+byfleur.myftp.org
+capitana.onthewifi.com
+dynamics.ddnsking.com
+kulkarni.bounceme.net
+thestar.serveblog.net
+vvavesltd.servebeer.com
+
+# Reference: https://www.elastic.co/fr/blog/advanced-techniques-used-in-malaysian-focused-apt-campaign
+# Reference: https://otx.alienvault.com/pulse/5efa1262602caffb4ac35148
+
+armybar.hopto.org
+tomema.myddns.me
+
+# Reference: https://us-cert.cisa.gov/ncas/alerts/aa21-200a
+# Reference: https://otx.alienvault.com/pulse/60f597533e911956a673717b
+
+mlcdailynews.com
+mihybb.com
+microsql-update.info
+cnnzapmeta.com
+chemscalere.com
+thyssenkrupp-marinesystems.org
+thestar.live
+teledynegroup.com
+scsnewstoday.com
+wsmcoff.com
+yorkshire-espana-sa.com
+goo2k88yyh2.chickenkiller.com
+katy197.chickenkiller.com
+mail2.ignorelist.com
+nmw4xhipveaca7hm.onion.link
+porndec143.chickenkiller.com
+soure7788.chickenkiller.com
+testdomain2019.chickenkiller.com
+togetno992.mooo.com
+tojenner97.chickenkiller.com
+vser.mooo.com
+xbug.uk.to
+
+# Reference: https://otx.alienvault.com/pulse/61b2290ee7cb4628d56979d5
+
+appexistence.com
+bbranchs.com
+cankerscarcass.com
+dexercisep.com
+duutsxlydw.com
+guardggg.com
+iherlvufjknw.com
+laodailylive.com
+laodata.network
+laodiplomat.com
+laotranslations.com
+manaloguek.com
+musicandfile.com
+networkslaoupdate.com
+api.dreamsbottle.com
+cdn.aexhausts.com
+cm.musicandfile.com
+ja.iherlvufjknw.com
+news.duutsxlydw.com
+news.networkslaoupdate.com
+office.duutsxlydw.com
+ttxs.aexhausts.com
+
+# Reference: https://github.com/ti-research-io/ti/blob/main/ioc_extender/ET_Gh0st_Variant.json
+
+rninhsss.com
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/chasing-currents-espionage-south-china-sea (# TA423, Red Ladon, Red Ladon)
+# Reference: https://www.virustotal.com/gui/ip-address/139.59.60.116/relations
+
+http://172.105.114.27
+australianmorningnews.com
+heraldsun.me
+regionail.xyz
+theaustralian.in
+walmartsde.com
+image.australianmorningnews.com
+/?cwhe18nc
+/cwhe18nc.htm
+/cwhe18nc.js
+
+# Generic
+
+/D2_de2o@sp0/

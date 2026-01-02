@@ -1,0 +1,85 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/malwrhunterteam/status/1795205470140989754
+# Reference: https://x.com/JohnEskimSmith/status/1795548137387376921
+# Reference: https://www.virustotal.com/gui/file/6e670f5a4a984336a7041e490643fb1edd6948e9985761c53c621a6d4bad6809/detection
+# Reference: https://www.virustotal.com/gui/file/00d35cf5af2431179b24002b3a4c7fb115380ebda496d78849bf3d10055d8a88/detection
+
+http://91.215.85.79
+91.92.244.172:7121
+91.92.247.182:7121
+91.92.250.5:7121
+operationanonrecoil.ru
+operationvenetic.com
+operationvenetic.ru
+fsb.operationvenetic.ru
+dev.operationanonrecoil.ru
+mi6.operationanonrecoil.ru
+crome-update-gr.com
+majkisblogg.com
+xxxx-flash.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/91.92.244.237/relations
+# Reference: https://app.validin.com/detail?find=7ca77607d4510f323d3b9469b0135b4be5b6de0bf5022bdc5eb72ef9f757e7c4&type=hash&ref_id=a9ba33138e2#tab=host_pairs_v2
+
+91.92.244.237:7121
+fangbian.fun
+mitsui.lat
+stripepayts.day
+stripepayts.lol
+stripepayts.men
+tiaowen.cfd
+transportation.lat
+3ds.transportation.lat
+3dsecure.fangbian.fun
+3dsecure.mitsui.lat
+3dsecure.stripepayts.day
+3dsecure.stripepayts.lol
+3dsecure.tiaowen.cfd
+3dss.mitsui.lat
+sdskkk.mitsui.lat
+
+# Reference: https://app.validin.com/detail?find=91.92.250.102&type=raw&ref_id=3a5c740f9c5#tab=host_pairs_v2
+
+91.92.250.102:7121
+lala.rent
+3dsecure.lala.rent
+
+# Reference: https://x.com/ReBensk/status/1801300153674121390
+# Reference: https://x.com/0x6rss/status/1801312239531819214
+# Reference: https://www.virustotal.com/gui/file/760de204a1be08c16537894dbba322faaece52262ca318093c050933a8839f61/detection
+
+45.83.31.225:7777
+b6747drn.xyz
+chromee-update-it.com
+googie.icu
+helloword.vip
+kw2txo6.top
+w4i9xpy1.xyz
+wxitv2yf.xyz
+chrome.googie.icu
+glg.hfniansong.com
+helloworld.kwbhuah.cn
+
+# Reference: https://x.com/ValidinLLC/status/1801692687805907057
+
+cardioflow.tech
+guangye.xyz
+chrome-google.caddy.workers.dev
+chrome-stroe.nubigtree.workers.dev
+chrome.1176437969.workers.dev
+chrome.caridle.wang
+chrome.caridle.workers.dev
+chrome.guolingoogle.workers.dev
+chrome.seenke.com
+chrome.updatestar.com
+chrome.zsanjin.de
+chromegoogle.douzi.workers.dev
+dlgoogle.guangye.xyz
+dlgoogle.sodazhcn.workers.dev
+huiyi.workers.dev
+outside-lsioisl.985756400.workers.dev
+outside.sky-land.chat
+store.dunai.workers.dev
+y.huiyi.workers.dev

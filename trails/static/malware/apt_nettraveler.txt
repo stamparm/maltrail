@@ -1,0 +1,53 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://securelist.com/blog/research/35936/nettraveler-is-running-red-star-apt-attacks-compromise-high-profile-victims/
+
+allen.w223.west263.cn
+andriodphone.net
+bauer.8866.org
+buynewes.com
+cultureacess.com
+discoverypeace.org
+drag2008.com
+eaglesey.com
+enterairment.net
+gami1.com
+globalmailru.com
+hint09.9966.org
+imapupdate.com
+inwpvpn.com
+keyboardhk.com
+localgroupnet.com
+mailyandexru.com
+msnnewes.com
+newesyahoo.com
+newfax.net
+pkspring.net
+ra1nru.com
+ramb1er.com
+sghrhd.190.20081.info
+southstock.net
+spit113.minidns.net
+tsgoogoo.net
+vip222idc.s169.288idc.com
+viplenta.com
+vipmailru.com
+viprainru.com
+viprambler.com
+vipyandex.com
+vpnwork.3322.org
+wolf0.3322.org
+wolf001.us109.eoidc.net
+yahooair.com
+yangdex.org
+zeroicelee.com
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/nettraveler-apt-targets-russian-european-interests
+
+interfaxru.com
+info-spb.com
+tassnews.net
+riaru.net
+voennovosti.com
+mogoogle.com

@@ -1,0 +1,31 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/PRODAFT/status/1935697348111540562
+# Reference: https://catalyst.prodaft.com/public/report/antidot/overview
+# Reference: https://github.com/prodaft/malware-ioc/tree/master/AntiDot
+
+cloudmemoturowp.org
+dhuieowdwj89hd1jd1.club
+ellongerritassa.cfd
+foodlooc.online
+goalshet.store
+imonitussyberon.store
+kangarooeaglerabbit.info
+kitchencoocing.shop
+neuroflux42.com
+openkitchen22.site
+passionfruitsz.info
+portalmeowhjukolip.cloud
+portalmeowhjukolip.info
+progods.site
+shopdoorjshr.me
+southkelib.best
+taosaomao.online
+trustcdncloud.buzz
+trustcdncloud.click
+trustcdncloud.shop
+trustcdncloud.space
+tynaderouindeah.store
+vertonasaeledal.store
+zizzytantonedai.store

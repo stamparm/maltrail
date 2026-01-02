@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.malwarebytes.com/social-engineering/2019/09/new-social-engineering-toolkit-draws-inspiration-from-previous-web-campaigns/
+# Reference: https://otx.alienvault.com/pulse/5dadc1135030982fce540014
+
+asasasqwqq.xyz
+chrom-update.online
+drumbaseuk.com
+mnmnmnmnmnmn.club
+sygicstyle.xyz
+xyxyxyxyxy.xyz
+
+# Reference: https://twitter.com/tkanalyst/status/1196033182694379527
+
+chrome-update.online
+hugad.su
+hugytrtuie.xyz
+
+# Reference: https://twitter.com/tkanalyst/status/1196033831662309376
+
+mukandratourandtravels.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1333492466419331072
+# Reference: https://blog.malwarebytes.com/threat-analysis/2020/02/domen-toolkit-gets-back-to-work-with-new-malvertising-campaign/
+
+browsertelemetry.tk
+mix-world.best
+panel-admin.best
+search-one.info

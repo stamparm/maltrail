@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://thisissecurity.stormshield.com/2018/08/28/acridrain-stealer/
+# Reference: https://www.virustotal.com/#/ip-address/141.105.71.82
+# Reference: https://www.virustotal.com/#/ip-address/185.219.81.232
+
+http://141.105.71.82
+http://185.219.81.232
+akridrain.pro
+bigfilm.club
+powermta4.ru
+l6c4a163.justinstalledpanel.com
+
+# Reference: https://twitter.com/Gi7w0rm/status/1594964910806540294
+
+http://45.15.156.104
+
+# Reference: https://twitter.com/karol_paciorek/status/1696175997513564658
+
+http://45.15.156.111
+
+# Reference: https://www.virustotal.com/gui/file/3f22ecd8f8a7cb0ad1727820a01ed7201fd125835e4c67c2319656aa3bbace17/detection
+
+45.15.156.111:1300

@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/teoseller/status/1118119539525455874
+# Reference: https://blog.en.elevenpaths.com/2019/04/new-research-docless-vietnam-apt.html
+# Reference: https://www.virustotal.com/gui/ip-address/144.202.54.86/relations
+# Reference: https://twitter.com/h4ckak/status/1106212438976782337
+# Reference: https://app.any.run/tasks/748eccd0-8a7c-4401-81ef-0902419819de/
+
+http://144.202.54.86
+144.202.54.86:443

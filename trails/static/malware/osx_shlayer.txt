@@ -1,0 +1,126 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: shlayer, tarmac
+
+# Reference: https://www.carbonblack.com/2019/02/12/tau-threat-intelligence-notification-new-macos-malware-variant-of-shlayer-osx-discovered/
+
+20racknation.cr
+mixtypecloudtheclicks.icu
+mixtypedowngradetheclicks.icu
+tracking.marketing
+upgradebestfreshtheclicks.icu
+
+# Reference: https://blog.confiant.com/osx-shlayer-new-shurprise-unveiling-osx-tarmac-f965a32de887
+# Reference: https://otx.alienvault.com/pulse/5d8b8d62fc2de7f4104768e5
+
+activeuptodate.com
+agentinput.com
+alphaelemnt.com
+basicinitiator.com
+bemacexpert.com
+binarysources.com
+browserinterop.com
+commonprocesser.com
+dynamicmodule.com
+essentialchannel.com
+filtercommand.com
+flexiblelocator.com
+formatlog.com
+futuristmac.com
+highsecuritymac.com
+inettasks.com
+interfacehelper.com
+interfacesmode.com
+internetinterop.com
+logpartition.com
+lookupindex.com
+lookupmanager.com
+managementexplorer.com
+masterprotocols.com
+megamodule.com
+microstransaction.com
+opticalinput.com
+optimizationbit.com
+processformat.com
+protocolsmart.com
+publicanalyser.com
+resultsformat.com
+rotatornet.com
+smarttechupdate.com
+standarteng.com
+topinterfaces.com
+trustedmode.com
+updaterbit.com
+upgradedisplay.com
+api.activeuptodate.com
+api.agentinput.com
+api.alphaelemnt.com
+api.basicinitiator.com
+api.bemacexpert.com
+api.binarysources.com
+api.browserinterop.com
+api.commonprocesser.com
+api.dynamicmodule.com
+api.essentialchannel.com
+api.filtercommand.com
+api.flexiblelocator.com
+api.formatlog.com
+api.futuristmac.com
+api.highsecuritymac.com
+api.inettasks.com
+api.interfacehelper.com
+api.interfacesmode.com
+api.internetinterop.com
+api.logpartition.com
+api.lookupindex.com
+api.lookupmanager.com
+api.managementexplorer.com
+api.masterprotocols.com
+api.megamodule.com
+api.microstransaction.com
+api.opticalinput.com
+api.optimizationbit.com
+api.processformat.com
+api.protocolsmart.com
+api.publicanalyser.com
+api.resultsformat.com
+api.rotatornet.com
+api.smarttechupdate.com
+api.standarteng.com
+api.topinterfaces.com
+api.trustedmode.com
+api.updaterbit.com
+api.upgradedisplay.com
+
+# Reference: https://securelist.com/shlayer-for-macos/95724/
+
+80.82.77.84:80
+typicalarchive.com
+entrycache.com
+macsmoments.com
+api.typicalarchive.com
+api.entrycache.com
+api.macsmoments.com
+kodak-world.com
+
+# Reference: https://www.sentinelone.com/blog/coming-out-of-your-shell-from-shlayer-to-zshlayer/
+
+dqb2corklaq0k.cloudfront.net
+
+# Reference: https://www.virustotal.com/gui/file/558fcfd3568b805c1f7d3c6f4469d1fd7e750b9cddae2e090da6acffe4f9dcb1/detection
+# Reference: https://www.virustotal.com/gui/file/6c9617a30a5c04c4ed02bee4cf9658f87c00f5416bb8ab0603795c808e641426/detection
+# Reference: https://www.virustotal.com/gui/file/6d0d344c8ff5e5bde33a900101fba965b34c71ba5c2560b36fc600ac1670cb65/detection
+
+129.153.49.67:7001
+129.153.53.180:7001
+155.248.217.76:7001
+159.203.48.195:7001
+159.203.49.5:7001
+159.203.50.188:7001
+174.138.115.38:7001
+174.138.115.8:7001
+174.138.115.9:7001
+192.18.144.233:7001
+192.18.149.161:7001
+192.18.150.139:7001

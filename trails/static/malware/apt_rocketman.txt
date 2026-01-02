@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://blog.alyac.co.kr/1853
+
+seline.co.kr/datafiles/CNOOC.php
+causwc.or.kr/board_community01/board_community01/index2.php
+kumdo.org/admin/noti/files/iindex.php
+icare.or.kr/upload/board/index1.php
+cnjob.co.kr/data/blog/iindex.php
+notac.co.kr/admin/case/iindex.php
+ebsmpi.com/ipin/360/down.php
+
+# Reference: https://otx.alienvault.com/pulse/5ccaed31545df8f17b695ffe
+
+youngs.dgweb.kr/skin15/include/bin/home.php

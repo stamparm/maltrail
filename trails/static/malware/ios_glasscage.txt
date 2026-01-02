@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: CVE-2025-24201, CVE-2025-24085
+
+# Reference: https://x.com/blackorbird/status/1935239958895411440
+# Reference: https://weareapartyof1.substack.com/p/glass-cage-zero-day-imessage-attack
+
+51.76.129.13:443

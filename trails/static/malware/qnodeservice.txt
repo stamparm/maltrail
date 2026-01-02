@@ -1,0 +1,36 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/abuse_ch/status/1256235201807757315
+# Reference: https://www.virustotal.com/gui/file/3ae67819ee117c497abcef344333033b101007b443c820034333fbe6bd9aaf08/behavior/QiAnXin%20RedDrip
+# Reference: https://central.qhub.qua.one/scripts/wizard.js
+# Reference: https://app.any.run/tasks/6e4e6c41-6688-4b0b-b27f-0e1b40835159/
+
+central.qhub.qua.one
+ocentral.qua.one
+
+# Reference: https://twitter.com/James_inthe_box/status/1263482138453635072
+# Reference: https://app.any.run/tasks/7f2f7528-2279-4dd7-846a-3b992f21ee91/
+
+eurotools.hopto.org
+
+# Reference: https://twitter.com/abuse_ch/status/1313709414835269634
+# Reference: https://bazaar.abuse.ch/sample/bdc561ae53aa52900af298a57b5e2f920f9cdf74bccf674735dbab318499c2d0/
+
+piolozxx.ddns.net
+
+# Reference: https://gist.github.com/silence-is-best/0aa844b003c62c6ce491e91e168ac662
+# Reference: https://www.virustotal.com/gui/file/9c7fc51d9b11381d7cbdef16dea123d384455f9d8828340337a420dc21b8a0d7/detection
+
+akinventures.ddns.net
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1332274835532226566
+# Reference: https://bazaar.abuse.ch/sample/d529003a6e1708637cc07277bfbef218db0dcaec7eed84b28567910f439297ee/
+# Reference: https://www.virustotal.com/gui/file/e91d0fb200ad9549993aa67774ed8070c1d7d0fd49d4213f5c15ee3c132cda77/detection
+
+ntums.mooo.com
+
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/updated-qnode-rat-downloader-distributed-as-trump-video-scandal/
+# Reference: https://otx.alienvault.com/pulse/5ff5e9be50f5b69a031da3cb
+
+gatherlozx.hopto.org

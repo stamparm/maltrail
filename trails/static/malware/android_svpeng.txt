@@ -1,0 +1,192 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/ip-address/217.182.174.92/relations
+
+217.182.174.92:80
+
+# Reference: https://www.virustotal.com/gui/domain/myfbi.su/relations
+
+myfbi.su
+
+# Reference: https://www.virustotal.com/gui/file/0e47ada23442644247fe3e44ac66286eb258e3b98e85ebc6f8f58d39e9256a83/behavior/VirusTotal%20Droidy
+
+hotsexygirlshd.bid
+ip-identification.com
+
+# Reference: https://www.virustotal.com/gui/file/62aaff01aef5b67637676d79e8ec40294b15d6887d9bce01b11c6ba687419302/behavior/VirusTotal%20Droidy
+
+blackspace.top
+
+# Reference: https://www.virustotal.com/gui/domain/localgeoip.com/relations
+
+localgeoip.com
+
+# Reference: https://www.virustotal.com/gui/domain/statisticslocalip.com/relations
+
+statisticslocalip.com
+
+# Reference: https://twitter.com/KorbenD_Intel/status/1289299616358215680
+# Reference: https://www.virustotal.com/gui/domain/apiweb4server.com/relations
+# Reference: https://www.virustotal.com/gui/domain/web-update.net/relations
+# Reference: https://www.virustotal.com/gui/file/59d8f732eb04e64d29030bbb284a795bb9c7a7f44ccdbcf5a19e8c530224d7c0/detection
+# Reference: https://www.virustotal.com/gui/file/110978dba2325532f9229fb49d9729017130b7b702be3292573a2d396a83b209/detection
+# Reference: https://www.virustotal.com/gui/file/eb754fa482281473223e350991b9ffd6c230f9b36baf40ffbe6cdd4b046fd440/detection
+# Reference: https://www.virustotal.com/gui/file/c738463c0b51875f9d282dcc8e606ab8b084c70ed34d291164c6dabcaac24a2b/detection
+# Reference: https://www.virustotal.com/gui/file/cbe16301bf03a515efe3bc182d67417e92965e936f71fadc7629265aef80ae63/detection
+# Reference: https://www.virustotal.com/gui/file/74768e003c21f62c0ea72e77b2d3b54d0e731c5f5cb985aa39c2e809f97450c1/detection
+# Reference: https://www.virustotal.com/gui/file/da2fc2ac320422c065332238ce44dc9240bad4ac0fdf687ac6e7435c23e40400/detection
+# Reference: https://www.virustotal.com/gui/file/114cd487c332961a57162d025c07f05f9d948a989bcbcc8132a415dedcf3de1b/detection
+# Reference: https://www.virustotal.com/gui/file/69ed262c1a82f238e9ad25647d99e2c87f27725b498fd694930c59a828a706a8/detection
+# Reference: https://www.virustotal.com/gui/file/cacf697ce4cec184e7407a3396ed703c568b5149b713c4b6a44e9ccc5ddfb7cd/detection
+# Reference: https://www.virustotal.com/gui/file/d46d8bc2b4f5d641ba6bcda041e4e1d43eda80805b9660589278f80667136354/detection
+# Reference: https://www.virustotal.com/gui/file/e83ad122ee4b27d848adde9efa154467b7b7d0808b6a02b3d404462cc1bd3e80/detection
+# Reference: https://www.virustotal.com/gui/file/0410d2bfc80462032d834f5befb58f3c1273dadf417c928fa8ea91894a6391d6/detection
+# Reference: https://www.virustotal.com/gui/file/561341712038d9f942576d326265e1702be0f5b00bbd23dfb8f827a4a51d19dc/detection
+# Reference: https://www.virustotal.com/gui/file/1d1409c9a5a32863e18b585c433e7393548d349e44c7bcc9e9c4a97aacab0641/detection
+# Reference: https://www.virustotal.com/gui/file/5ffed5a12d532f5cb7644b57f17f8287c17da103372ad0429601b3d7155ae9e0/detection
+# Reference: https://www.virustotal.com/gui/file/4d494d8ec44b399f84c016c47eb7e3494f5ca30f51e3fd299fc1e503b64860b2/detection
+# Reference: https://www.virustotal.com/gui/file/53fd98d30a4ded91fb9c711d220abfc195c616c2504433bb187c6e64c3a02016/detection
+# Reference: https://www.virustotal.com/gui/file/dcaca4b6d1c6947037d8b21fb7682dbd793a1d37a8a4afe523c7e53ae3a50942/detection
+# Reference: https://www.virustotal.com/gui/file/94370e67f0348a7359348f291a12ddb0e4c39817cf80ce1476db257556bcb256/detection
+# Reference: https://www.virustotal.com/gui/file/d1d931509196222b5e01436ca2e88acc7a66e8c10d8a46cb7c15a4fe8693ee5b/detection
+# Reference: https://www.virustotal.com/gui/file/8dfd66a596146d5d04f0e5f266775de9d9d9b5343eeed3c5688c9b4ba8e379b2/detection
+# Reference: https://www.virustotal.com/gui/file/cc2ae6c544fd7773a476cbbe66a15693b6c404af0be129d85dcac5493d0a674d/detection
+# Reference: https://www.virustotal.com/gui/file/11410bbf9b7141dbe16361d3a4c84123d1672c2f57c0ab5d6faedfb52e628a1b/detection
+# Reference: https://www.virustotal.com/gui/file/b9fad31906cda789311abe18965afe4e01fc677df981e116240ae966c9f540a3/detection
+# Reference: https://www.virustotal.com/gui/file/a973f7dc7eea24c88ac75d4f2a5053f5ac1514b1827063fba6f6487720ce766c/detection
+
+http://13.209.155.49
+http://147.75.201.149
+http://185.43.220.245
+api4servername.com
+apicloudserver.com
+apidomainserver.com
+apiweb4server.com
+apiwebserver.com
+cloudserverapi.com
+cloud4serverapi.com
+domainserviceweb.com
+geo-statistics.com
+hostingwebserver.net
+infofacekook.com
+ipgeostatistics.com
+public2api.com
+server4api.com
+server4webapi.com
+servercloudweb.com
+smmproindex.com
+specialoffersale.com
+statistics-geoip.com
+web2apiserver.com
+web2hostingapi.com
+webdomain2api.com
+web-update.net
+
+# Reference: https://twitter.com/KorbenD_Intel/status/1289312873554956288
+
+apistudioweb.com
+check2sever.com
+geo-local.com
+geostatisticsworld.com
+localipgeo.com
+worldstatisticsip.com
+
+# Reference: https://www.virustotal.com/gui/domain/iphoneweer.com/relations
+
+iphoneweer.com
+
+# Reference: https://www.virustotal.com/gui/file/9bd84561e47e35beb6d39598e4580fc5f8ce02216b42535734650017d96c40d8/detection
+
+/stats/postback/dr_inst.php
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.8.60.38/relations
+
+amernirado.info
+davanalvai.net
+davawranat.com
+etruskbek.com
+homestrowa.com
+milenaikx.com
+pimanfilm.info
+svetlozdea.com
+webgeos.info
+weralooriw.com
+workqrawe.biz
+
+# Reference: https://www.virustotal.com/gui/file/ceec3bba45e08c41c7e6c39724b78c11337b2b22f6887ef078a08a40679b1eed/detection
+
+wanxelseng13.com
+
+# Reference: https://www.virustotal.com/gui/file/95b44cf2bcd154fdcdbbb01318e36b1101ef64aec553d4c365497f7833d44486/detection
+
+lintaiyang.e1.luyouxia.net
+
+# Reference: https://www.virustotal.com/gui/file/21771f84bb55468a0f400ee23e9f01efef7bac5b8df512dc807d1e9dd01c9978/detection
+
+http://146.0.72.81
+
+# Reference: https://www.virustotal.com/gui/file/353bc9fe8d835cac6bc1e41f88d6991ce3a9be3a9df38d14865f6dce4051c607/detection
+
+http://146.0.72.94
+
+# Reference: https://www.virustotal.com/gui/file/f716fa4a2b903b839c8e82ebbe26cfb8f8965a2bfe25ac008d7b62432e355492/detection
+
+89.32.251.122:4000
+
+# Generic
+
+/banza/new_ne.php
+/banza/new_t.php
+/basroo/new_ne.php
+/basroo/new_t.php
+/basta/new_ne.php
+/basta/new_t.php
+/bodriator/new_ne.php
+/bodriator/new_t.php
+/boobaa/new_ne.php
+/boobaa/new_t.php
+/boom/new_ne.php
+/boom/new_t.php
+/crymnews/time.php
+/garasikus/new_ne.php
+/garasikus/new_t.php
+/goof/new_ne.php
+/goof/new_t.php
+/hedrator/new_ne.php
+/hedrator/new_t.php
+/hichs/new_ne.php
+/hichs/new_t.php
+/kaakki/new_ne.php
+/kaakki/new_t.php
+/kazador/new_ne.php
+/kazador/new_t.php
+/news/new_ne.php
+/news/new_t.php
+/poodator/new_ne.php
+/poodator/new_t.php
+/ristan/new_ne.php
+/ristan/new_t.php
+/savog/new_ne.php
+/savog/new_t.php
+/stream/new_ne.php
+/stream/new_t.php
+/tamara/new_ne.php
+/tamara/new_t.php
+/top/new_ne.php
+/top/new_t.php
+/tops/new_ne.php
+/tops/new_t.php
+/tree/new_ne.php
+/tree/new_t.php
+/trx9/new_ne.php
+/trx9/new_t.php
+/versions/new_ne.php
+/versions/new_t.php
+/warhnares/new_ne.php
+/warhnares/new_t.php
+/wootoo/new_ne.php
+/wootoo/new_t.php
+/testo/detect.php
+/new_ne.php?id=
+/new_t.php?id=

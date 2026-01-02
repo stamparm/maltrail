@@ -1,0 +1,1452 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ViriBack/status/1045460579689922561
+
+jelouslaodnn.org
+
+# Reference: https://twitter.com/james_inthe_box/status/1034925258258624512
+# Reference: https://blog.ensilo.com/game-of-trojans-dissecting-khalesi-infostealer-malware
+
+botsphere.biz
+seeyouonlineservice.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1108789993923723264
+
+/DJvS7iHPfoXDzPvo/conf.php
+/DJvS7iHPfoXDzPvo/config.php
+/DJvS7iHPfoXDzPvo/gate.php
+/DJvS7iHPfoXDzPvo/login.php
+/DJvS7iHPfoXDzPvo/test.php
+/DJvS7iHPfoXDzPvo/util.php
+/DJvS7iHPfoXDzPvo
+
+# Reference: https://twitter.com/4chr4f2/status/1103316628245164032
+
+/NIwxn5JBvMom6naz/conf.php
+/NIwxn5JBvMom6naz/config.php
+/NIwxn5JBvMom6naz/gate.php
+/NIwxn5JBvMom6naz/login.php
+/NIwxn5JBvMom6naz/test.php
+/NIwxn5JBvMom6naz/util.php
+/NIwxn5JBvMom6naz
+
+# Reference: https://twitter.com/avman1995/status/1090972632261029891
+
+/03SleOcRkLyD69DQ/conf.php
+/03SleOcRkLyD69DQ/config.php
+/03SleOcRkLyD69DQ/gate.php
+/03SleOcRkLyD69DQ/login.php
+/03SleOcRkLyD69DQ/test.php
+/03SleOcRkLyD69DQ/util.php
+/03SleOcRkLyD69DQ
+
+# Reference: https://twitter.com/ViriBack/status/1069965350442283009
+# Reference: https://pastebin.com/PTkLE0se
+
+/bnAgxoxMGuqZidGE/conf.php
+/bnAgxoxMGuqZidGE/config.php
+/bnAgxoxMGuqZidGE/gate.php
+/bnAgxoxMGuqZidGE/login.php
+/bnAgxoxMGuqZidGE/test.php
+/bnAgxoxMGuqZidGE/util.php
+/bnAgxoxMGuqZidGE
+
+# Reference: https://twitter.com/malware_traffic/status/1110176575922864128
+
+/8pqPR0YZKhASBoKU/conf.php
+/8pqPR0YZKhASBoKU/config.php
+/8pqPR0YZKhASBoKU/gate.php
+/8pqPR0YZKhASBoKU/login.php
+/8pqPR0YZKhASBoKU/test.php
+/8pqPR0YZKhASBoKU/util.php
+/8pqPR0YZKhASBoKU
+
+# Reference: https://twitter.com/takerk734/status/1113851637292920832
+
+/9AhiTpcUu2lUfGvx/conf.php
+/9AhiTpcUu2lUfGvx/config.php
+/9AhiTpcUu2lUfGvx/gate.php
+/9AhiTpcUu2lUfGvx/login.php
+/9AhiTpcUu2lUfGvx/test.php
+/9AhiTpcUu2lUfGvx/util.php
+/9AhiTpcUu2lUfGvx
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/new-kpot-v20-stealer-brings-zero-persistence-and-memory-features-silently-steal
+
+/a6Y5Qy3cF1sOmOKQ/conf.php
+/a6Y5Qy3cF1sOmOKQ/config.php
+/a6Y5Qy3cF1sOmOKQ/gate.php
+/a6Y5Qy3cF1sOmOKQ/login.php
+/a6Y5Qy3cF1sOmOKQ/test.php
+/a6Y5Qy3cF1sOmOKQ/util.php
+/lmpUNlwDfoybeulu/conf.php
+/lmpUNlwDfoybeulu/config.php
+/lmpUNlwDfoybeulu/gate.php
+/lmpUNlwDfoybeulu/login.php
+/lmpUNlwDfoybeulu/test.php
+/lmpUNlwDfoybeulu/util.php
+/a6Y5Qy3cF1sOmOKQ
+/lmpUNlwDfoybeulu
+
+# Reference: https://twitter.com/jorgemieres/status/1125794853638615041
+
+newpepeloco.xyz
+
+# Reference: https://twitter.com/James_inthe_box/status/1095007960097419264
+
+/82tC6RWjKA3GkDHb/conf.php
+/82tC6RWjKA3GkDHb/config.php
+/82tC6RWjKA3GkDHb/gate.php
+/82tC6RWjKA3GkDHb/login.php
+/82tC6RWjKA3GkDHb/test.php
+/82tC6RWjKA3GkDHb/util.php
+/82tC6RWjKA3GkDHb
+
+# Reference: https://twitter.com/avman1995/status/1079312991189958658
+
+/9sEdsV5D3P0eJclX/conf.php
+/9sEdsV5D3P0eJclX/config.php
+/9sEdsV5D3P0eJclX/gate.php
+/9sEdsV5D3P0eJclX/login.php
+/9sEdsV5D3P0eJclX/test.php
+/9sEdsV5D3P0eJclX/util.php
+/9sEdsV5D3P0eJclX
+
+# Reference: https://twitter.com/James_inthe_box/status/1076673889701224448
+
+/x4q9214C6N4DuZ79/conf.php
+/x4q9214C6N4DuZ79/config.php
+/x4q9214C6N4DuZ79/gate.php
+/x4q9214C6N4DuZ79/login.php
+/x4q9214C6N4DuZ79/test.php
+/x4q9214C6N4DuZ79/util.php
+/x4q9214C6N4DuZ79
+
+# Reference: https://twitter.com/avman1995/status/1035588628355928065
+
+elysium-inc.info
+
+# Reference: https://twitter.com/James_inthe_box/status/1131847607813267456
+
+pinescop.top
+/r7bxRcw7Y2bKl5Vi/conf.php
+/r7bxRcw7Y2bKl5Vi/config.php
+/r7bxRcw7Y2bKl5Vi/gate.php
+/r7bxRcw7Y2bKl5Vi/login.php
+/r7bxRcw7Y2bKl5Vi/test.php
+/r7bxRcw7Y2bKl5Vi/util.php
+/r7bxRcw7Y2bKl5Vi
+
+# Reference: https://twitter.com/James_inthe_box/status/1134528134915678209
+
+benten09.futbol
+/BOH9KGa4jvUsU4jL/conf.php
+/BOH9KGa4jvUsU4jL/config.php
+/BOH9KGa4jvUsU4jL/gate.php
+/BOH9KGa4jvUsU4jL/login.php
+/BOH9KGa4jvUsU4jL/test.php
+/BOH9KGa4jvUsU4jL/util.php
+/BOH9KGa4jvUsU4jL
+
+# Reference: http://tracker.viriback.com/ (# Kpot)
+
+chookes991.ga
+/cZP67az9xbvAyTUU/conf.php
+/cZP67az9xbvAyTUU/config.php
+/cZP67az9xbvAyTUU/gate.php
+/cZP67az9xbvAyTUU/login.php
+/cZP67az9xbvAyTUU/test.php
+/cZP67az9xbvAyTUU/util.php
+/MjhK7giyH9XLSgi1/conf.php
+/MjhK7giyH9XLSgi1/config.php
+/MjhK7giyH9XLSgi1/gate.php
+/MjhK7giyH9XLSgi1/login.php
+/MjhK7giyH9XLSgi1/test.php
+/MjhK7giyH9XLSgi1/util.php
+/cZP67az9xbvAyTUU
+/MjhK7giyH9XLSgi1
+
+# Reference: https://twitter.com/VK_Intel/status/1140885797773676544
+
+activehostnet.com
+
+# Reference: https://twitter.com/benkow_/status/1140920162163613696
+
+http://5.188.60.24
+http://5.8.88.53
+
+# Reference: https://www.bleepingcomputer.com/news/security/vsdc-site-hacked-again-to-spread-password-stealing-malware/
+# Reference: https://github.com/DoctorWebLtd/malware-iocs/tree/master/VSDC
+# Reference: https://github.com/DoctorWebLtd/malware-iocs/tree/master/VSDC_CNET
+
+appnodejs.xyz
+centory20.xyz
+mginskjadivizija.club
+get-cert-ssl1.xyz
+my-helper.site
+my-super-puper-helper.xyz
+sync-time.info
+
+# Reference: https://twitter.com/killamjr/status/1143498263892582402
+
+betalco.biz
+
+# Reference: https://twitter.com/James_inthe_box/status/1144604109103722496
+
+/iWDf752n2PyeZWAn/conf.php
+/iWDf752n2PyeZWAn/config.php
+/iWDf752n2PyeZWAn/gate.php
+/iWDf752n2PyeZWAn/login.php
+/iWDf752n2PyeZWAn/test.php
+/iWDf752n2PyeZWAn/util.php
+/iWDf752n2PyeZWAn
+
+# Reference: https://twitter.com/benkow_/status/1128639735960875010
+
+solar3080z.xyz
+/FKpQDbwPieNVZbKt/conf.php
+/FKpQDbwPieNVZbKt/config.php
+/FKpQDbwPieNVZbKt/gate.php
+/FKpQDbwPieNVZbKt/login.php
+/FKpQDbwPieNVZbKt/test.php
+/FKpQDbwPieNVZbKt/util.php
+/FKpQDbwPieNVZbKt
+
+# Reference: https://twitter.com/James_inthe_box/status/1160150821830418432
+
+d3f4.com.hk
+/OfJ3qDlVoGBRGjYK/conf.php
+/OfJ3qDlVoGBRGjYK/config.php
+/OfJ3qDlVoGBRGjYK/gate.php
+/OfJ3qDlVoGBRGjYK/login.php
+/OfJ3qDlVoGBRGjYK/test.php
+/OfJ3qDlVoGBRGjYK/util.php
+
+# Reference: https://twitter.com/nao_sec/status/1162584523093114880
+# Reference: https://app.any.run/tasks/710afa6e-ec22-4c68-953b-707ddba8c597/
+
+http://82.146.44.97
+/ENQxMsOLJOdg0uDO/conf.php
+/ENQxMsOLJOdg0uDO/config.php
+/ENQxMsOLJOdg0uDO/gate.php
+/ENQxMsOLJOdg0uDO/login.php
+/ENQxMsOLJOdg0uDO/test.php
+/ENQxMsOLJOdg0uDO/util.php
+/ENQxMsOLJOdg0uDO
+
+# Reference: https://twitter.com/Racco42/status/1168523943638110210
+
+/ImgcsQGM6ZclLvqr/conf.php
+/ImgcsQGM6ZclLvqr/config.php
+/ImgcsQGM6ZclLvqr/gate.php
+/ImgcsQGM6ZclLvqr/login.php
+/ImgcsQGM6ZclLvqr/test.php
+/ImgcsQGM6ZclLvqr/util.php
+/ImgcsQGM6ZclLvqr
+
+# Reference: https://twitter.com/Paladin3161/status/1169588041372975104
+# Reference: https://pastebin.com/925dUBPZ
+
+47.88.102.244:80
+smart-net.rocks
+/UcPDF28Hzd7dMdbG/conf.php
+/UcPDF28Hzd7dMdbG/config.php
+/UcPDF28Hzd7dMdbG/gate.php
+/UcPDF28Hzd7dMdbG/login.php
+/UcPDF28Hzd7dMdbG/test.php
+/UcPDF28Hzd7dMdbG/util.php
+/UcPDF28Hzd7dMdbG
+
+# Reference: https://twitter.com/wwp96/status/1173650300185534468
+# Reference: https://app.any.run/tasks/7fe60e24-8022-4c69-8c61-41be5b9d7f1e/
+
+185.217.1.149:4040
+78801.duckdns.org
+ct77.duckdns.org
+zeleron.duckdns.org
+/Z6O0f04bowOkpUs1/conf.php
+/Z6O0f04bowOkpUs1/config.php
+/Z6O0f04bowOkpUs1/gate.php
+/Z6O0f04bowOkpUs1/login.php
+/Z6O0f04bowOkpUs1/test.php
+/Z6O0f04bowOkpUs1/util.php
+/Z6O0f04bowOkpUs1
+
+# Reference: https://app.any.run/tasks/a11b5227-7568-455a-b40d-4161c9779ed1/
+
+ct77.duckdns.org
+zeleron.duckdns.org
+
+# Reference: https://twitter.com/tkanalyst/status/1174092283206963200
+
+/cq2fKWVooVNMYqNW/conf.php
+/cq2fKWVooVNMYqNW/config.php
+/cq2fKWVooVNMYqNW/gate.php
+/cq2fKWVooVNMYqNW/login.php
+/cq2fKWVooVNMYqNW/test.php
+/cq2fKWVooVNMYqNW/util.php
+/cq2fKWVooVNMYqNW
+
+# Reference: https://twitter.com/tkanalyst/status/1175417561527115778
+
+/4rTpPY1f3zP4LAUq/conf.php
+/4rTpPY1f3zP4LAUq/config.php
+/4rTpPY1f3zP4LAUq/gate.php
+/4rTpPY1f3zP4LAUq/login.php
+/4rTpPY1f3zP4LAUq/test.php
+/4rTpPY1f3zP4LAUq/util.php
+/4rTpPY1f3zP4LAUq
+
+# Reference: https://twitter.com/58_158_177_102/status/1175542076747984896
+
+/cklzI56WuqpFRzFV/conf.php
+/cklzI56WuqpFRzFV/config.php
+/cklzI56WuqpFRzFV/gate.php
+/cklzI56WuqpFRzFV/login.php
+/cklzI56WuqpFRzFV/test.php
+/cklzI56WuqpFRzFV/util.php
+/cklzI56WuqpFRzFV
+
+# Reference: https://otx.alienvault.com/pulse/5d8dcf197ec3aea4d3e338df
+
+1stpubs.com
+2ndpub.com
+3eueu.com
+3prokladkaeu.com
+3pubss.com
+d3f4.com.hk
+detailsconfirm.in
+icherryls.com
+inewsmvo.com
+j5h4f9b6.com
+k0j8h7f6d5s4.com
+kaiwachis.ug
+maper.info
+qposhgames.com
+setseta.com
+/OfJ3qDlVoGBRGjYK/conf.php
+/OfJ3qDlVoGBRGjYK/config.php
+/OfJ3qDlVoGBRGjYK/gate.php
+/OfJ3qDlVoGBRGjYK/login.php
+/OfJ3qDlVoGBRGjYK/test.php
+/OfJ3qDlVoGBRGjYK/util.php
+/nshnobea4xwtldcc/conf.php
+/nshnobea4xwtldcc/config.php
+/nshnobea4xwtldcc/gate.php
+/nshnobea4xwtldcc/login.php
+/nshnobea4xwtldcc/test.php
+/nshnobea4xwtldcc/util.php
+/OfJ3qDlVoGBRGjYK
+/nshnobea4xwtldcc
+
+# Reference: https://github.com/silence-is-best/c2db#kpot-stealer
+
+allseasongudinc.tech
+
+# Reference: https://twitter.com/ViriBack/status/1183157722348433413
+
+/O0SYQ1VJ6mHPuotw/conf.php
+/O0SYQ1VJ6mHPuotw/config.php
+/O0SYQ1VJ6mHPuotw/gate.php
+/O0SYQ1VJ6mHPuotw/login.php
+/O0SYQ1VJ6mHPuotw/test.php
+/O0SYQ1VJ6mHPuotw/util.php
+/O0SYQ1VJ6mHPuotw
+
+# Reference: https://app.any.run/tasks/5ea9c799-eb73-4854-903a-a4a080659af0/
+
+/IFNn0HURvaodgeBZ/conf.php
+/IFNn0HURvaodgeBZ/config.php
+/IFNn0HURvaodgeBZ/gate.php
+/IFNn0HURvaodgeBZ/login.php
+/IFNn0HURvaodgeBZ/test.php
+/IFNn0HURvaodgeBZ/util.php
+/IFNn0HURvaodgeBZ
+
+# Reference: https://twitter.com/tkanalyst/status/1184655705103634435
+# Reference: https://app.any.run/tasks/20218f80-9838-41f4-b6d6-7dbbcd60107a/
+
+/oYiMdS2d7yfR6q1V/conf.php
+/oYiMdS2d7yfR6q1V/config.php
+/oYiMdS2d7yfR6q1V/gate.php
+/oYiMdS2d7yfR6q1V/login.php
+/oYiMdS2d7yfR6q1V/test.php
+/oYiMdS2d7yfR6q1V/util.php
+/oYiMdS2d7yfR6q1V
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, Kpot)
+
+29ieo.com.cn
+allseasongudinc.tech
+benten02.futbol
+benten09.futbol
+betalco.biz
+chookes991.ga
+dualup.top
+f0311980.xsph.ru
+f0311980.xsph.ru.xsph.ru
+fghjkmgru34.site
+gayaju.com
+hostfaze.com
+hujkl.info
+ikny.info
+intelz.duckdns.org
+japancinema.top
+kbctouch.com
+krtk.icu
+r353r3f5.cn
+rawdagger.top
+rumomult.me
+sidesabar.com
+vip-rocket.net
+/42KiBx84roLVRVSM/conf.php
+/42KiBx84roLVRVSM/config.php
+/42KiBx84roLVRVSM/gate.php
+/42KiBx84roLVRVSM/login.php
+/42KiBx84roLVRVSM/test.php
+/42KiBx84roLVRVSM/util.php
+/Ev8PVTOo1jtGOdVU/conf.php
+/Ev8PVTOo1jtGOdVU/config.php
+/Ev8PVTOo1jtGOdVU/gate.php
+/Ev8PVTOo1jtGOdVU/login.php
+/Ev8PVTOo1jtGOdVU/test.php
+/Ev8PVTOo1jtGOdVU/util.php
+/GvB0wmtoJOU0godt/conf.php
+/GvB0wmtoJOU0godt/config.php
+/GvB0wmtoJOU0godt/gate.php
+/GvB0wmtoJOU0godt/login.php
+/GvB0wmtoJOU0godt/test.php
+/GvB0wmtoJOU0godt/util.php
+/I6TztQVK42LugI4f/conf.php
+/I6TztQVK42LugI4f/config.php
+/I6TztQVK42LugI4f/gate.php
+/I6TztQVK42LugI4f/login.php
+/I6TztQVK42LugI4f/test.php
+/I6TztQVK42LugI4f/util.php
+/O0SYQ1VJ6mHPuotw/conf.php
+/O0SYQ1VJ6mHPuotw/config.php
+/O0SYQ1VJ6mHPuotw/gate.php
+/O0SYQ1VJ6mHPuotw/login.php
+/O0SYQ1VJ6mHPuotw/test.php
+/O0SYQ1VJ6mHPuotw/util.php
+/WVGL6O0q0gGoDjyC/conf.php
+/WVGL6O0q0gGoDjyC/config.php
+/WVGL6O0q0gGoDjyC/gate.php
+/WVGL6O0q0gGoDjyC/login.php
+/WVGL6O0q0gGoDjyC/test.php
+/WVGL6O0q0gGoDjyC/util.php
+/b1AGMDTxXuTs238l/conf.php
+/b1AGMDTxXuTs238l/config.php
+/b1AGMDTxXuTs238l/gate.php
+/b1AGMDTxXuTs238l/login.php
+/b1AGMDTxXuTs238l/test.php
+/b1AGMDTxXuTs238l/util.php
+/bouNyhBvTRiK3LoX/conf.php
+/bouNyhBvTRiK3LoX/config.php
+/bouNyhBvTRiK3LoX/gate.php
+/bouNyhBvTRiK3LoX/login.php
+/bouNyhBvTRiK3LoX/test.php
+/bouNyhBvTRiK3LoX/util.php
+/cGrwBRupP6VrBN9E/conf.php
+/cGrwBRupP6VrBN9E/config.php
+/cGrwBRupP6VrBN9E/gate.php
+/cGrwBRupP6VrBN9E/login.php
+/cGrwBRupP6VrBN9E/test.php
+/cGrwBRupP6VrBN9E/util.php
+/dPgPOEOROfCOTluG/conf.php
+/dPgPOEOROfCOTluG/config.php
+/dPgPOEOROfCOTluG/gate.php
+/dPgPOEOROfCOTluG/login.php
+/dPgPOEOROfCOTluG/test.php
+/dPgPOEOROfCOTluG/util.php
+/gQBljYzDJBnrt4JX/conf.php
+/gQBljYzDJBnrt4JX/config.php
+/gQBljYzDJBnrt4JX/gate.php
+/gQBljYzDJBnrt4JX/login.php
+/gQBljYzDJBnrt4JX/test.php
+/gQBljYzDJBnrt4JX/util.php
+/lycCcpwH8eKD6MW2/conf.php
+/lycCcpwH8eKD6MW2/config.php
+/lycCcpwH8eKD6MW2/gate.php
+/lycCcpwH8eKD6MW2/login.php
+/lycCcpwH8eKD6MW2/test.php
+/lycCcpwH8eKD6MW2/util.php
+/42KiBx84roLVRVSM
+/b1AGMDTxXuTs238l
+/bouNyhBvTRiK3LoX
+/cGrwBRupP6VrBN9E
+/dPgPOEOROfCOTluG
+/Ev8PVTOo1jtGOdVU
+/gQBljYzDJBnrt4JX
+/GvB0wmtoJOU0godt
+/I6TztQVK42LugI4f
+/lycCcpwH8eKD6MW
+/O0SYQ1VJ6mHPuotw
+/WVGL6O0q0gGoDjyC
+
+# Reference: https://www.virustotal.com/gui/file/6068630e627bccdc0f704cfb8e134e7e5191abdff4fba60cf40b0aa713bcd130/detection
+
+greatwall.pw
+/gKnyCmSmhfbijqv5/conf.php
+/gKnyCmSmhfbijqv5/config.php
+/gKnyCmSmhfbijqv5/gate.php
+/gKnyCmSmhfbijqv5/login.php
+/gKnyCmSmhfbijqv5/test.php
+/gKnyCmSmhfbijqv5/util.php
+/gKnyCmSmhfbijqv5
+
+# Reference: https://twitter.com/mszustak/status/1159824933171544064
+# Reference: https://www.virustotal.com/gui/ip-address/195.123.228.220/relations
+
+http://195.123.228.220
+subise.space
+/yJrHEIWpcUJPhcX4/conf.php
+/yJrHEIWpcUJPhcX4/config.php
+/yJrHEIWpcUJPhcX4/gate.php
+/yJrHEIWpcUJPhcX4/login.php
+/yJrHEIWpcUJPhcX4/test.php
+/yJrHEIWpcUJPhcX4/util.php
+/yJrHEIWpcUJPhcX4
+
+# Reference: https://twitter.com/nao_sec/status/1211975197219151876
+# Reference: https://app.any.run/tasks/6eb983e1-56f9-4db9-9f04-2aac95c0b1aa/
+
+mendexie.com
+/uiahrdC5L3J6Tj2v/conf.php
+/uiahrdC5L3J6Tj2v/config.php
+/uiahrdC5L3J6Tj2v/gate.php
+/uiahrdC5L3J6Tj2v/login.php
+/uiahrdC5L3J6Tj2v/test.php
+/uiahrdC5L3J6Tj2v/util.php
+/uiahrdC5L3J6Tj2v
+
+# Reference: https://app.any.run/tasks/6cfb6db2-2222-4990-828f-23085aa967a3/
+
+purple-review.ml
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.139.236.16/relations
+
+http://45.139.236.16
+/m1pVRncDeGIn6TWx/conf.php
+/m1pVRncDeGIn6TWx/config.php
+/m1pVRncDeGIn6TWx/gate.php
+/m1pVRncDeGIn6TWx/login.php
+/m1pVRncDeGIn6TWx/test.php
+/m1pVRncDeGIn6TWx/util.php
+/m1pVRncDeGIn6TWx
+
+# Reference: https://www.virustotal.com/gui/domain/kratosleloks.space/relations
+
+kratosleloks.space
+/uoMdQ6TL2v3BP1DK/conf.php
+/uoMdQ6TL2v3BP1DK/config.php
+/uoMdQ6TL2v3BP1DK/gate.php
+/uoMdQ6TL2v3BP1DK/login.php
+/uoMdQ6TL2v3BP1DK/test.php
+/uoMdQ6TL2v3BP1DK/util.php
+/uoMdQ6TL2v3BP1DK
+
+# Reference: https://www.virustotal.com/gui/ip-address/83.136.219.183/relations
+
+http://83.136.219.183
+/Rf4m5kw0B75BVl8Z/conf.php
+/Rf4m5kw0B75BVl8Z/config.php
+/Rf4m5kw0B75BVl8Z/gate.php
+/Rf4m5kw0B75BVl8Z/login.php
+/Rf4m5kw0B75BVl8Z/test.php
+/Rf4m5kw0B75BVl8Z/util.php
+/Rf4m5kw0B75BVl8Z
+
+# Reference: https://www.virustotal.com/gui/domain/toptopcop.info/relations
+# Reference: https://www.virustotal.com/gui/file/6fc40bcc2dadf4c2d64ba782de7341d28a3ec8c0d6c43581faecf2f86456842d/detection
+
+toptopcoorp.info
+toptopcop.info
+/aOKMGcfTyv9vEoEg/conf.php
+/aOKMGcfTyv9vEoEg/config.php
+/aOKMGcfTyv9vEoEg/gate.php
+/aOKMGcfTyv9vEoEg/login.php
+/aOKMGcfTyv9vEoEg/test.php
+/aOKMGcfTyv9vEoEg/util.php
+/aOKMGcfTyv9vEoEg
+
+# Reference: https://www.virustotal.com/gui/domain/kingboots.net/relations
+
+kingboots.net
+/cmZYVGSc6M7ULSAC/conf.php
+/cmZYVGSc6M7ULSAC/config.php
+/cmZYVGSc6M7ULSAC/gate.php
+/cmZYVGSc6M7ULSAC/login.php
+/cmZYVGSc6M7ULSAC/test.php
+/cmZYVGSc6M7ULSAC/util.php
+/cmZYVGSc6M7ULSAC
+
+# Reference: https://www.virustotal.com/gui/domain/nkpotu.xyz/relations
+
+nkpotu.xyz
+/Kpot/conf.php
+/Kpot/config.php
+/Kpot/gate.php
+/Kpot/login.php
+/Kpot/test.php
+/Kpot/util.php
+/Kpot1/conf.php
+/Kpot1/config.php
+/Kpot1/gate.php
+/Kpot1/login.php
+/Kpot1/test.php
+/Kpot1/util.php
+/Kpot2/conf.php
+/Kpot2/config.php
+/Kpot2/gate.php
+/Kpot2/login.php
+/Kpot2/test.php
+/Kpot2/util.php
+
+# Reference: https://www.virustotal.com/gui/domain/benten09.futbol/relations
+
+benten09.futbol
+/BOH9KGa4jvUsU4jL/conf.php
+/BOH9KGa4jvUsU4jL/config.php
+/BOH9KGa4jvUsU4jL/gate.php
+/BOH9KGa4jvUsU4jL/login.php
+/BOH9KGa4jvUsU4jL/test.php
+/BOH9KGa4jvUsU4jL/util.php
+/KIt2h6qJ1XT2jMa0/conf.php
+/KIt2h6qJ1XT2jMa0/config.php
+/KIt2h6qJ1XT2jMa0/gate.php
+/KIt2h6qJ1XT2jMa0/login.php
+/KIt2h6qJ1XT2jMa0/test.php
+/KIt2h6qJ1XT2jMa0/util.php
+/BOH9KGa4jvUsU4jL
+/KIt2h6qJ1XT2jMa0
+
+# Reference: https://www.virustotal.com/gui/domain/benten02.futbol/relations
+
+benten02.futbol
+/QU6M6L2o04P9gIbD/conf.php
+/QU6M6L2o04P9gIbD/config.php
+/QU6M6L2o04P9gIbD/gate.php
+/QU6M6L2o04P9gIbD/login.php
+/QU6M6L2o04P9gIbD/test.php
+/QU6M6L2o04P9gIbD/util.php
+/QU6M6L2o04P9gIbD
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.188.60.116/relations
+
+http://5.188.60.116
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.188.60.131/relations
+
+http://5.188.60.131
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.8.88.214/relations
+
+http://5.8.88.214
+/gq1y1LGk6VzgdVxh/conf.php
+/gq1y1LGk6VzgdVxh/config.php
+/gq1y1LGk6VzgdVxh/gate.php
+/gq1y1LGk6VzgdVxh/login.php
+/gq1y1LGk6VzgdVxh/test.php
+/gq1y1LGk6VzgdVxh/util.php
+/gq1y1LGk6VzgdVxh
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.8.88.28/relations
+
+http://5.8.88.28
+/lBwKpCPQuLhfsuPU/conf.php
+/lBwKpCPQuLhfsuPU/config.php
+/lBwKpCPQuLhfsuPU/gate.php
+/lBwKpCPQuLhfsuPU/login.php
+/lBwKpCPQuLhfsuPU/test.php
+/lBwKpCPQuLhfsuPU/util.php
+/lBwKpCPQuLhfsuPU
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.8.88.120/relations
+
+http://5.8.88.120
+/sgN94KvbANw30ajn/conf.php
+/sgN94KvbANw30ajn/config.php
+/sgN94KvbANw30ajn/gate.php
+/sgN94KvbANw30ajn/login.php
+/sgN94KvbANw30ajn/test.php
+/sgN94KvbANw30ajn/util.php
+/sgN94KvbANw30ajn
+
+# Reference: https://www.virustotal.com/gui/domain/betalco.biz/relations
+
+/PoQPvOnPEamMQIRK/conf.php
+/PoQPvOnPEamMQIRK/config.php
+/PoQPvOnPEamMQIRK/gate.php
+/PoQPvOnPEamMQIRK/login.php
+/PoQPvOnPEamMQIRK/test.php
+/PoQPvOnPEamMQIRK/util.php
+/PoQPvOnPEamMQIRK
+
+# Reference: https://www.virustotal.com/gui/domain/29ieo.com.cn/relations
+
+/5ZPoN2KiaQD4KUAi/conf.php
+/5ZPoN2KiaQD4KUAi/config.php
+/5ZPoN2KiaQD4KUAi/gate.php
+/5ZPoN2KiaQD4KUAi/login.php
+/5ZPoN2KiaQD4KUAi/test.php
+/5ZPoN2KiaQD4KUAi/util.php
+/5ZPoN2KiaQD4KUAi
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.8.88.54/relations
+
+http://5.8.88.54
+/Ev8PVTOo1jtGOdVU/conf.php
+/Ev8PVTOo1jtGOdVU/config.php
+/Ev8PVTOo1jtGOdVU/gate.php
+/Ev8PVTOo1jtGOdVU/login.php
+/Ev8PVTOo1jtGOdVU/test.php
+/Ev8PVTOo1jtGOdVU/util.php
+/s!mcGyYinUZXlR4B/conf.php
+/s!mcGyYinUZXlR4B/config.php
+/s!mcGyYinUZXlR4B/gate.php
+/s!mcGyYinUZXlR4B/login.php
+/s!mcGyYinUZXlR4B/test.php
+/s!mcGyYinUZXlR4B/util.php
+/Ev8PVTOo1jtGOdVU
+/s!mcGyYinUZXlR4B
+
+# Reference: https://www.virustotal.com/gui/domain/dualup.top/relations
+
+/jT1RERsUByHpsjOC/conf.php
+/jT1RERsUByHpsjOC/config.php
+/jT1RERsUByHpsjOC/gate.php
+/jT1RERsUByHpsjOC/login.php
+/jT1RERsUByHpsjOC/test.php
+/jT1RERsUByHpsjOC/util.php
+/jT1RERsUByHpsjOC
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.188.60.52/relations
+
+http://5.188.60.52
+/zvDmqwIxmtNwHQgZ/conf.php
+/zvDmqwIxmtNwHQgZ/config.php
+/zvDmqwIxmtNwHQgZ/gate.php
+/zvDmqwIxmtNwHQgZ/login.php
+/zvDmqwIxmtNwHQgZ/test.php
+/zvDmqwIxmtNwHQgZ/util.php
+/zvDmqwIxmtNwHQgZ
+
+# Reference: https://www.virustotal.com/gui/ip-address/23.106.122.161/relations
+
+http://23.106.122.161
+/MtvoZIjBXi0wAbXp/conf.php
+/MtvoZIjBXi0wAbXp/config.php
+/MtvoZIjBXi0wAbXp/gate.php
+/MtvoZIjBXi0wAbXp/login.php
+/MtvoZIjBXi0wAbXp/test.php
+/MtvoZIjBXi0wAbXp/utils.php
+/pB2DYqJyp9vxBPAH/conf.php
+/pB2DYqJyp9vxBPAH/config.php
+/pB2DYqJyp9vxBPAH/gate.php
+/pB2DYqJyp9vxBPAH/login.php
+/pB2DYqJyp9vxBPAH/test.php
+/pB2DYqJyp9vxBPAH/util.php
+/MtvoZIjBXi0wAbXp
+/pB2DYqJyp9vxBPAH
+
+# Reference: https://www.virustotal.com/gui/domain/helpmedoc.top/relations
+
+helpmedoc.top
+/XQoWWqs3VOS7TQif/conf.php
+/XQoWWqs3VOS7TQif/config.php
+/XQoWWqs3VOS7TQif/gate.php
+/XQoWWqs3VOS7TQif/login.php
+/XQoWWqs3VOS7TQif/test.php
+/XQoWWqs3VOS7TQif/util.php
+/XQoWWqs3VOS7TQif
+
+# Reference: https://www.virustotal.com/gui/domain/laurent1961.top/relations
+
+laurent1961.top
+/vSsOWDU6zPTd77Rs/conf.php
+/vSsOWDU6zPTd77Rs/config.php
+/vSsOWDU6zPTd77Rs/gate.php
+/vSsOWDU6zPTd77Rs/login.php
+/vSsOWDU6zPTd77Rs/test.php
+/vSsOWDU6zPTd77Rs/util.php
+/vSsOWDU6zPTd77Rs
+
+# Reference: https://www.virustotal.com/gui/domain/dbslc.xyz/relations
+
+dbslc.xyz
+/mat6qcqHR2wI3I6b/conf.php
+/mat6qcqHR2wI3I6b/config.php
+/mat6qcqHR2wI3I6b/gate.php
+/mat6qcqHR2wI3I6b/login.php
+/mat6qcqHR2wI3I6b/test.php
+/mat6qcqHR2wI3I6b/util.php
+/mat6qcqHR2wI3I6b
+
+# Reference: https://twitter.com/_lockhum/status/1227267926299947015
+
+5.8.88.118:80
+/llvCjlnmbuFvqnZK/conf.php
+/llvCjlnmbuFvqnZK/config.php
+/llvCjlnmbuFvqnZK/gate.php
+/llvCjlnmbuFvqnZK/login.php
+/llvCjlnmbuFvqnZK/test.php
+/llvCjlnmbuFvqnZK/util.php
+/llvCjlnmbuFvqnZK
+
+# Reference: https://twitter.com/P3pperP0tts/status/1227637456180260865
+
+45.153.185.12:80
+/prUjRYcU2rqFpZqv/conf.php
+/prUjRYcU2rqFpZqv/config.php
+/prUjRYcU2rqFpZqv/gate.php
+/prUjRYcU2rqFpZqv/login.php
+/prUjRYcU2rqFpZqv/test.php
+/prUjRYcU2rqFpZqv/util.php
+/prUjRYcU2rqFpZqv
+
+# Reference: https://twitter.com/_lockhum/status/1229458303811543041
+
+wcvxbvf.ug
+/w6YCCdhvPqUma6MY/conf.php
+/w6YCCdhvPqUma6MY/config.php
+/w6YCCdhvPqUma6MY/gate.php
+/w6YCCdhvPqUma6MY/login.php
+/w6YCCdhvPqUma6MY/test.php
+/w6YCCdhvPqUma6MY/util.php
+/w6YCCdhvPqUma6MY
+
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-29, Kpot)
+
+almondmilkoils.com
+/E6OCF8w8IPI6vxKa/conf.php
+/E6OCF8w8IPI6vxKa/config.php
+/E6OCF8w8IPI6vxKa/gate.php
+/E6OCF8w8IPI6vxKa/login.php
+/E6OCF8w8IPI6vxKa/test.php
+/E6OCF8w8IPI6vxKa/util.php
+/E6OCF8w8IPI6vxKa
+
+curtpsfdw.pw
+/ZEIwCZuU3rZzItV3/conf.php
+/ZEIwCZuU3rZzItV3/config.php
+/ZEIwCZuU3rZzItV3/gate.php
+/ZEIwCZuU3rZzItV3/login.php
+/ZEIwCZuU3rZzItV3/test.php
+/ZEIwCZuU3rZzItV3/util.php
+/ZEIwCZuU3rZzItV3
+
+# Reference: https://twitter.com/_lockhum/status/1234109084628135937
+
+fsbcvhjgfdsf.ug
+nenengdsa.ug
+/QnSrw25SkhlxsF5P/conf.php
+/QnSrw25SkhlxsF5P/config.php
+/QnSrw25SkhlxsF5P/gate.php
+/QnSrw25SkhlxsF5P/login.php
+/QnSrw25SkhlxsF5P/test.php
+/QnSrw25SkhlxsF5P/util.php
+/QnSrw25SkhlxsF5P
+
+myehterwallet.top
+/UJZfOVD59Rue1AtQ/conf.php
+/UJZfOVD59Rue1AtQ/config.php
+/UJZfOVD59Rue1AtQ/gate.php
+/UJZfOVD59Rue1AtQ/login.php
+/UJZfOVD59Rue1AtQ/test.php
+/UJZfOVD59Rue1AtQ/util.php
+/UJZfOVD59Rue1AtQ
+
+# Reference: https://app.any.run/tasks/a8cbe5ea-ae26-4b7a-bb1b-c91ea55e8878/
+
+paperblank.best
+/gHL6qufBKIulnp11/conf.php
+/gHL6qufBKIulnp11/config.php
+/gHL6qufBKIulnp11/gate.php
+/gHL6qufBKIulnp11/login.php
+/gHL6qufBKIulnp11/test.php
+/gHL6qufBKIulnp11/util.php
+/gHL6qufBKIulnp11
+
+purple-review.ml
+/ha9hUo4SN3vIId4z/conf.php
+/ha9hUo4SN3vIId4z/config.php
+/ha9hUo4SN3vIId4z/gate.php
+/ha9hUo4SN3vIId4z/login.php
+/ha9hUo4SN3vIId4z/test.php
+/ha9hUo4SN3vIId4z/util.php
+/ha9hUo4SN3vIId4z
+
+tonitrus.pw
+/3AX3AsO58eVAwtrm/conf.php
+/3AX3AsO58eVAwtrm/config.php
+/3AX3AsO58eVAwtrm/gate.php
+/3AX3AsO58eVAwtrm/login.php
+/3AX3AsO58eVAwtrm/test.php
+/3AX3AsO58eVAwtrm/util.php
+/3AX3AsO58eVAwtrm
+
+updates-windows-10-184623.com
+/mwOSKdIHjRgihkBY/conf.php
+/mwOSKdIHjRgihkBY/config.php
+/mwOSKdIHjRgihkBY/gate.php
+/mwOSKdIHjRgihkBY/login.php
+/mwOSKdIHjRgihkBY/test.php
+/mwOSKdIHjRgihkBY/util.php
+/mwOSKdIHjRgihkBY
+
+windows-updates-26351.com
+/o96xEVtEmxfoYNxf/conf.php
+/o96xEVtEmxfoYNxf/config.php
+/o96xEVtEmxfoYNxf/gate.php
+/o96xEVtEmxfoYNxf/login.php
+/o96xEVtEmxfoYNxf/test.php
+/o96xEVtEmxfoYNxf/util.php
+/o96xEVtEmxfoYNxf
+
+# Reference: https://pastebin.com/PTkLE0se
+
+finik18topw.cc
+
+# Reference: https://twitter.com/_lockhum/status/1234977889428180992
+
+782345698752364.site
+/yF6HyyMprPOqBuUx/conf.php
+/yF6HyyMprPOqBuUx/config.php
+/yF6HyyMprPOqBuUx/gate.php
+/yF6HyyMprPOqBuUx/login.php
+/yF6HyyMprPOqBuUx/test.php
+/yF6HyyMprPOqBuUx/util.php
+/yF6HyyMprPOqBuUx
+
+# Reference: https://app.any.run/tasks/828e1e86-c4ee-4251-a20d-6aacc6b4b9cf/
+
+vaxton.xyz
+/dTIROTUIUCpufBzh/conf.php
+/dTIROTUIUCpufBzh/config.php
+/dTIROTUIUCpufBzh/gate.php
+/dTIROTUIUCpufBzh/login.php
+/dTIROTUIUCpufBzh/test.php
+/dTIROTUIUCpufBzh/util.php
+/dTIROTUIUCpufBzh
+
+# Reference: https://twitter.com/Racco42/status/1241046353050025984
+# Reference: https://app.any.run/tasks/d29e6cc2-fadd-4e59-92fe-550aae8243c6/
+
+krt1.site
+krt2.site
+show1.website
+/uhGaUGnzIIOPpoP9/conf.php
+/uhGaUGnzIIOPpoP9/config.php
+/uhGaUGnzIIOPpoP9/gate.php
+/uhGaUGnzIIOPpoP9/login.php
+/uhGaUGnzIIOPpoP9/test.php
+/uhGaUGnzIIOPpoP9/util.php
+/uhGaUGnzIIOPpoP9
+
+# Reference: https://twitter.com/malware_traffic/status/1244661466210451457
+# Reference: https://app.any.run/tasks/973b4f49-f392-46ca-8397-16be6e52678c/
+
+gpreceipt.xyz
+show2.website
+krt3.site
+
+# Reference: https://www.virustotal.com/gui/file/bad8290785d6028eb61e94bc15d0450541ac2272725f17f78e43e80819bd3fd7/detection
+
+carloswint.com
+/pvHjofkaSnv19I10/conf.php
+/pvHjofkaSnv19I10/config.php
+/pvHjofkaSnv19I10/gate.php
+/pvHjofkaSnv19I10/login.php
+/pvHjofkaSnv19I10/test.php
+/pvHjofkaSnv19I10/util.php
+/pvHjofkaSnv19I10
+
+# Reference: https://www.virustotal.com/gui/domain/errrors.org/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.22.87/relations
+
+errrors.org
+/3Q3CjDVtYliFnLbi/conf.php
+/3Q3CjDVtYliFnLbi/config.php
+/3Q3CjDVtYliFnLbi/gate.php
+/3Q3CjDVtYliFnLbi/login.php
+/3Q3CjDVtYliFnLbi/test.php
+/3Q3CjDVtYliFnLbi/util.php
+/y8AUIMFKJIWBtHEx/conf.php
+/y8AUIMFKJIWBtHEx/config.php
+/y8AUIMFKJIWBtHEx/gate.php
+/y8AUIMFKJIWBtHEx/login.php
+/y8AUIMFKJIWBtHEx/test.php
+/y8AUIMFKJIWBtHEx/util.php
+/3Q3CjDVtYliFnLbi
+/y8AUIMFKJIWBtHEx
+
+# Reference: https://www.virustotal.com/gui/domain/errorr.org/relations
+
+errorr.org
+/3KWOVs3gXCruKZ5Y/conf.php
+/3KWOVs3gXCruKZ5Y/config.php
+/3KWOVs3gXCruKZ5Y/gate.php
+/3KWOVs3gXCruKZ5Y/login.php
+/3KWOVs3gXCruKZ5Y/test.php
+/3KWOVs3gXCruKZ5Y/util.php
+/3KWOVs3gXCruKZ5Y
+
+# Reference: https://twitter.com/ViriBack/status/1250582202821349376
+
+ghfjskdfg87s9fdgsdf.xyz
+/JlMvtmnVgoQlkPhw/conf.php
+/JlMvtmnVgoQlkPhw/config.php
+/JlMvtmnVgoQlkPhw/gate.php
+/JlMvtmnVgoQlkPhw/login.php
+/JlMvtmnVgoQlkPhw/test.php
+/JlMvtmnVgoQlkPhw/util.php
+/JlMvtmnVgoQlkPhw
+
+# Reference: https://www.virustotal.com/gui/domain/ledger-live.com/relations
+
+ledger-live.com
+/aeQbPVXTYgnP7ru5/conf.php
+/aeQbPVXTYgnP7ru5/config.php
+/aeQbPVXTYgnP7ru5/gate.php
+/aeQbPVXTYgnP7ru5/login.php
+/aeQbPVXTYgnP7ru5/test.php
+/aeQbPVXTYgnP7ru5/util.php
+/aeQbPVXTYgnP7ru5
+
+# Reference: https://app.any.run/tasks/703b396e-e7eb-41c1-ae88-64e9bc532b59/
+
+bumboxik.casa
+/kUikM2ah1Uj5XLFb/conf.php
+/kUikM2ah1Uj5XLFb/config.php
+/kUikM2ah1Uj5XLFb/gate.php
+/kUikM2ah1Uj5XLFb/login.php
+/kUikM2ah1Uj5XLFb/test.php
+/kUikM2ah1Uj5XLFb/util.php
+/kUikM2ah1Uj5XLFb
+
+# Reference: https://app.any.run/tasks/59bbc2dc-cb2e-4a01-b86c-000fd3af4f25/
+
+gatehub.site
+gatehub.services
+/jcSODJaIsEh9EQdn/conf.php
+/jcSODJaIsEh9EQdn/config.php
+/jcSODJaIsEh9EQdn/gate.php
+/jcSODJaIsEh9EQdn/login.php
+/jcSODJaIsEh9EQdn/test.php
+/jcSODJaIsEh9EQdn/util.php
+/jcSODJaIsEh9EQdn
+
+# Reference: https://twitter.com/James_inthe_box/status/1259916041431343104
+
+ezeyeteb.pw
+landasalksasdasldalsasd.pw
+/l566XeTbN5uIxD2E/conf.php
+/l566XeTbN5uIxD2E/config.php
+/l566XeTbN5uIxD2E/gate.php
+/l566XeTbN5uIxD2E/login.php
+/l566XeTbN5uIxD2E/test.php
+/l566XeTbN5uIxD2E/util.php
+/l566XeTbN5uIxD2E
+
+# Reference: https://twitter.com/DrStache_/status/1260948593755787264
+# Reference: https://twitter.com/DrStache_/status/1260948656817086464
+
+http://199.192.16.192
+/4HH7vV6QyB4mlXkG/conf.php
+/4HH7vV6QyB4mlXkG/config.php
+/4HH7vV6QyB4mlXkG/gate.php
+/4HH7vV6QyB4mlXkG/login.php
+/4HH7vV6QyB4mlXkG/test.php
+/4HH7vV6QyB4mlXkG/util.php
+/CiIEu0aqeUcr73gc/conf.php
+/CiIEu0aqeUcr73gc/config.php
+/CiIEu0aqeUcr73gc/gate.php
+/CiIEu0aqeUcr73gc/login.php
+/CiIEu0aqeUcr73gc/test.php
+/CiIEu0aqeUcr73gc/util.php
+/ElxpqG75wfnnfdCX/conf.php
+/ElxpqG75wfnnfdCX/config.php
+/ElxpqG75wfnnfdCX/gate.php
+/ElxpqG75wfnnfdCX/login.php
+/ElxpqG75wfnnfdCX/test.php
+/ElxpqG75wfnnfdCX/util.php
+/NxrYL5OoDfVBkXFo/conf.php
+/NxrYL5OoDfVBkXFo/config.php
+/NxrYL5OoDfVBkXFo/gate.php
+/NxrYL5OoDfVBkXFo/login.php
+/NxrYL5OoDfVBkXFo/test.php
+/NxrYL5OoDfVBkXFo/util.php
+/hbmzu5dsj5pgf9w5/conf.php
+/hbmzu5dsj5pgf9w5/config.php
+/hbmzu5dsj5pgf9w5/gate.php
+/hbmzu5dsj5pgf9w5/login.php
+/hbmzu5dsj5pgf9w5/test.php
+/hbmzu5dsj5pgf9w5/util.php
+/sfcKQOYCv0JlF2Z0/conf.php
+/sfcKQOYCv0JlF2Z0/config.php
+/sfcKQOYCv0JlF2Z0/gate.php
+/sfcKQOYCv0JlF2Z0/login.php
+/sfcKQOYCv0JlF2Z0/test.php
+/sfcKQOYCv0JlF2Z0/util.php
+/ycnnMC4C1AwrLTDz/conf.php
+/ycnnMC4C1AwrLTDz/config.php
+/ycnnMC4C1AwrLTDz/gate.php
+/ycnnMC4C1AwrLTDz/login.php
+/ycnnMC4C1AwrLTDz/test.php
+/ycnnMC4C1AwrLTDz/util.php
+/4HH7vV6QyB4mlXkG
+/CiIEu0aqeUcr73gc
+/ElxpqG75wfnnfdCX
+/hbmzu5dsj5pgf9w5
+/NxrYL5OoDfVBkXFo
+/sfcKQOYCv0JlF2Z0
+/ycnnMC4C1AwrLTDz
+
+# Reference: https://app.any.run/tasks/344fc763-9a51-4db8-be9b-542247f7288d/
+
+u6194635ml.ha004.t.justns.ru
+/v6u0xKNnKlaJ7kc2/conf.php
+/v6u0xKNnKlaJ7kc2/config.php
+/v6u0xKNnKlaJ7kc2/gate.php
+/v6u0xKNnKlaJ7kc2/login.php
+/v6u0xKNnKlaJ7kc2/test.php
+/v6u0xKNnKlaJ7kc2/util.php
+/v6u0xKNnKlaJ7kc2
+
+# Reference: https://www.virustotal.com/gui/file/9f09604bf981ee2a4961e4f170eff6bcb5b8c3145081ae6ac32c38be951a5702/detection
+
+alphacentauri.top
+/cuHzE6wwhrffNMds/conf.php
+/cuHzE6wwhrffNMds/config.php
+/cuHzE6wwhrffNMds/gate.php
+/cuHzE6wwhrffNMds/login.php
+/cuHzE6wwhrffNMds/test.php
+/cuHzE6wwhrffNMds/util.php
+/cuHzE6wwhrffNMds
+
+# Reference: https://www.virustotal.com/gui/file/c33355254dee2ff8f7172abab1302d78fe3b095efe617cb6560c929a5a9884de/detection
+
+imperiaygb.top
+/Cdrk6RPV15AP1CRS/conf.php
+/Cdrk6RPV15AP1CRS/config.php
+/Cdrk6RPV15AP1CRS/gate.php
+/Cdrk6RPV15AP1CRS/login.php
+/Cdrk6RPV15AP1CRS/test.php
+/Cdrk6RPV15AP1CRS/util.php
+/Cdrk6RPV15AP1CRS
+
+# Reference: https://pastebin.com/Hc73BzJT
+
+http://94.177.123.102
+dolboeb1700.com
+sinne.rs
+/2rmY8sjK8WN30kwm/conf.php
+/2rmY8sjK8WN30kwm/config.php
+/2rmY8sjK8WN30kwm/gate.php
+/2rmY8sjK8WN30kwm/login.php
+/2rmY8sjK8WN30kwm/test.php
+/2rmY8sjK8WN30kwm/util.php
+/bUjyAvgAIgcicUbB/conf.php
+/bUjyAvgAIgcicUbB/config.php
+/bUjyAvgAIgcicUbB/gate.php
+/bUjyAvgAIgcicUbB/login.php
+/bUjyAvgAIgcicUbB/test.php
+/bUjyAvgAIgcicUbB/util.php
+/w6EhBjfK88pZlmZE/conf.php
+/w6EhBjfK88pZlmZE/config.php
+/w6EhBjfK88pZlmZE/gate.php
+/w6EhBjfK88pZlmZE/login.php
+/w6EhBjfK88pZlmZE/test.php
+/w6EhBjfK88pZlmZE/util.php
+/2rmY8sjK8WN30kwm
+/bUjyAvgAIgcicUbB
+/w6EhBjfK88pZlmZE
+
+# Reference: https://www.virustotal.com/gui/file/98c8ac6434ebca027b504274f032810f113141869f0723d9ee14b41ce5687cec/detection
+
+newpkmdhhsddg.xyz
+palqeiytrdsa.xyz
+pmzqyiedsaaf.xyz
+sfnnvopeuytr.xyz
+
+# Reference: https://www.virustotal.com/gui/file/1c4cf16cf2d5ab2d063ab292a7214412ebb24cc9e444e49512d0752ab245acd2/detection
+
+/4AWhaIV5Ob86K3RU/conf.php
+/4AWhaIV5Ob86K3RU/config.php
+/4AWhaIV5Ob86K3RU/gate.php
+/4AWhaIV5Ob86K3RU/login.php
+/4AWhaIV5Ob86K3RU/test.php
+/4AWhaIV5Ob86K3RU/util.php
+/4AWhaIV5Ob86K3RU
+
+# Reference: https://twitter.com/ganeshnathan28/status/1297793478257184768
+
+ugan.ga
+/vgbR4qLJ4SX1s5in/conf.php
+/vgbR4qLJ4SX1s5in/config.php
+/vgbR4qLJ4SX1s5in/gate.php
+/vgbR4qLJ4SX1s5in/login.php
+/vgbR4qLJ4SX1s5in/test.php
+/vgbR4qLJ4SX1s5in/util.php
+/vgbR4qLJ4SX1s5in
+
+# Reference: https://www.virustotal.com/gui/file/e970a7e25e064e985a7788d8220787390e35b90c2913c81e272a14c2352b9c9e/detection
+
+dolboeb1701.com
+
+# Reference: https://www.virustotal.com/gui/file/5bf3c7ea3f294a61542eff3d830bd88e340fc0fd2a0dd033e3f8e1e0ec6b21e5/detection
+
+teoresp.com
+/oWbAlZnpC0DyM2ck/conf.php
+/oWbAlZnpC0DyM2ck/config.php
+/oWbAlZnpC0DyM2ck/gate.php
+/oWbAlZnpC0DyM2ck/login.php
+/oWbAlZnpC0DyM2ck/test.php
+/oWbAlZnpC0DyM2ck/util.php
+/oWbAlZnpC0DyM2ck
+
+# Reference: https://twitter.com/fr3dhk/status/1301935558042759175
+# Reference: https://twitter.com/makflwana/status/1302111989955571714
+# Reference: https://app.any.run/tasks/b11201de-af93-4c5f-8f63-7a0d7c3cd9e2/
+
+depressedpenguin.com
+mpzgbnserv639.xyz
+/IuygdNHZT973IPcf/conf.php
+/IuygdNHZT973IPcf/config.php
+/IuygdNHZT973IPcf/gate.php
+/IuygdNHZT973IPcf/login.php
+/IuygdNHZT973IPcf/test.php
+/IuygdNHZT973IPcf/util.php
+/IuygdNHZT973IPcf
+
+# Reference: https://www.virustotal.com/gui/file/26c21f2a072707e01a4b2089076c73b669a8e37437ca209a33c1be84eba562f8/detection
+
+kahostero.ug
+/vsv6TZz7lO2mO9Wm/conf.php
+/vsv6TZz7lO2mO9Wm/config.php
+/vsv6TZz7lO2mO9Wm/gate.php
+/vsv6TZz7lO2mO9Wm/login.php
+/vsv6TZz7lO2mO9Wm/test.php
+/vsv6TZz7lO2mO9Wm/util.php
+/vsv6TZz7lO2mO9Wm
+
+# Reference: https://app.any.run/tasks/2356b1ed-8316-4b7f-af94-60c18a2bbb1e/
+
+evograph.ro
+
+# Reference: https://twitter.com/wwp96/status/1337851918467674112
+# Reference: https://app.any.run/tasks/a614bd3a-f495-496f-8a2a-e81e87c1d2c3/
+# Reference: https://www.virustotal.com/gui/file/7646b0147df2edf9b202fc18be9d4d35d517b0489d9c88dd0cb1e64ed5696a39/detection
+# Reference: https://www.virustotal.com/gui/file/01ccc6cbb1afb814032940df44acc2ba09ec888a6413643811477c275a949ea7/detection
+# Reference: https://www.virustotal.com/gui/file/a9ae84e8a8995f05038f74cca87e44249dc00c9813d9e05a3ba485eb885ec6f8/detection
+
+cleimmo.ma
+
+# Reference: https://www.virustotal.com/gui/file/67f8302a2fd28d15f62d6d20d748bfe350334e5353cbdef112bd1f8231b5599d/detection
+
+bendes.co.uk
+
+# Reference: https://www.virustotal.com/gui/file/1e338ab4725c07542291d121f1e784814822c5f5b341ffccadcf326a85075a00/detection
+
+files-get.icu
+files-get.website
+files-get.world
+/FmdlmVONnZBLKWIg/conf.php
+/FmdlmVONnZBLKWIg/config.php
+/FmdlmVONnZBLKWIg/gate.php
+/FmdlmVONnZBLKWIg/login.php
+/FmdlmVONnZBLKWIg/test.php
+/FmdlmVONnZBLKWIg/util.php
+/FmdlmVONnZBLKWIg
+
+# Reference: https://www.virustotal.com/gui/file/30e0f88ee7389e069c18b6565d7dc02052f92c5fada78dbce41e88e9537c4288/detection
+
+mczeropufd.xyz
+opnfbqwbjuw.xyz
+oudfslhqwfb.xyz
+/4hY0kGTcCQffviCp/conf.php
+/4hY0kGTcCQffviCp/config.php
+/4hY0kGTcCQffviCp/gate.php
+/4hY0kGTcCQffviCp/login.php
+/4hY0kGTcCQffviCp/test.php
+/4hY0kGTcCQffviCp/util.php
+/4hY0kGTcCQffviCp
+
+# Reference: https://www.virustotal.com/gui/file/2f83e130e52cb13944899e81f4ecf49decf52e3949f6d41b45e8b1a19a658ed6/detection
+# Reference: https://www.virustotal.com/gui/file/f33c78cddcf99dd999b065644a17dcbac1b222a7f3342b3fe3293ddb6ecf0060/detection
+
+http://193.38.55.4
+http://213.226.100.185
+/cDILD8R6LQz2SaD5/conf.php
+/cDILD8R6LQz2SaD5/config.php
+/cDILD8R6LQz2SaD5/gate.php
+/cDILD8R6LQz2SaD5/login.php
+/cDILD8R6LQz2SaD5/test.php
+/cDILD8R6LQz2SaD5/util.php
+/cDILD8R6LQz2SaD5
+/configuration.php?botid=
+
+# Reference: https://www.virustotal.com/gui/file/587a4463673093554cd75b5c9ccb6c254a9d6e8769b1e45ea0390eb2b9d57bff/detection
+
+http://193.135.12.107
+/vmDzZJW7dNRhJNTj/conf.php
+/vmDzZJW7dNRhJNTj/config.php
+/vmDzZJW7dNRhJNTj/gate.php
+/vmDzZJW7dNRhJNTj/login.php
+/vmDzZJW7dNRhJNTj/test.php
+/vmDzZJW7dNRhJNTj/util.php
+/vmDzZJW7dNRhJNTj
+
+# Reference: https://www.virustotal.com/gui/file/cd039555413ac71cbe35630302740980827c5ead43d26d0286c1e8686c4d1e28/detection
+
+zhiosstin.xyz
+
+# Reference: https://www.virustotal.com/gui/file/254c5f30d9079fa63455340f9d5822c724efe21b5bbae20c5c9a5f8f4daf085e/detection
+
+websitetbox.com
+/tre7uBLDUveZOPkP/conf.php
+/tre7uBLDUveZOPkP/config.php
+/tre7uBLDUveZOPkP/gate.php
+/tre7uBLDUveZOPkP/login.php
+/tre7uBLDUveZOPkP/test.php
+/tre7uBLDUveZOPkP/util.php
+/tre7uBLDUveZOPkP
+
+# Reference: https://www.virustotal.com/gui/file/fe0d4a9ac1d0e3a626b44357e4469f402b9dad3f020776ecf771da693a782d61/detection
+
+menosita.top
+nedosert.top
+peredola.top
+/qgrBsvhMGmFxqil3/conf.php
+/qgrBsvhMGmFxqil3/config.php
+/qgrBsvhMGmFxqil3/gate.php
+/qgrBsvhMGmFxqil3/login.php
+/qgrBsvhMGmFxqil3/test.php
+/qgrBsvhMGmFxqil3/util.php
+/qgrBsvhMGmFxqil3
+
+# Reference: https://www.virustotal.com/gui/file/dd95377842932d77e225b126749e1e6e8ecd6f5c6540d084a551a80a54d02d7d/detection
+
+madrasdarbar.com/wp-admin/wp-image.php
+
+# Reference: https://www.virustotal.com/gui/file/e5db3f8163582703de63060fff21890efda191444d7aec40c4ee06911302bc5e/detection
+
+f0368762.xsph.ru
+/MqwfQWEQQdsfn/Index.php
+/MqwfQWEQQdsfn/conf.php
+/MqwfQWEQQdsfn/config.php
+/MqwfQWEQQdsfn/gate.php
+/MqwfQWEQQdsfn/login.php
+/MqwfQWEQQdsfn/test.php
+/MqwfQWEQQdsfn/util.php
+/MqwfQWEQQdsfn
+
+# Reference: https://www.virustotal.com/gui/file/4412624d06991fa64f684fcc6d66c787d040eaa12356885cf0a0919c732c82a3/detection
+
+/bgczXibj92HSlSCK/Index.php
+/bgczXibj92HSlSCK/conf.php
+/bgczXibj92HSlSCK/config.php
+/bgczXibj92HSlSCK/gate.php
+/bgczXibj92HSlSCK/login.php
+/bgczXibj92HSlSCK/test.php
+/bgczXibj92HSlSCK/util.php
+/bgczXibj92HSlSCK
+
+# Reference: https://www.virustotal.com/gui/file/27c6b638c0a8702b12d45fbd19b490ebccaf9021345cec94d6435269e9524880/detection
+# Reference: https://www.virustotal.com/gui/file/4a46d9aa9c4548342e007a130b1de39fc4cc5455b33a60d94896998538429890/detection
+
+http://74.118.138.240
+/4VBBONw1OGjP77ow/Index.php
+/4VBBONw1OGjP77ow/conf.php
+/4VBBONw1OGjP77ow/config.php
+/4VBBONw1OGjP77ow/gate.php
+/4VBBONw1OGjP77ow/login.php
+/4VBBONw1OGjP77ow/test.php
+/4VBBONw1OGjP77ow/util.php
+/4VBBONw1OGjP77ow
+
+# Reference: http://tracker.viriback.com/dump.php (# KPot)
+
+bstarking.com
+/dXjPRkIslRpOuC8Q/Index.php
+/dXjPRkIslRpOuC8Q/conf.php
+/dXjPRkIslRpOuC8Q/config.php
+/dXjPRkIslRpOuC8Q/gate.php
+/dXjPRkIslRpOuC8Q/login.php
+/dXjPRkIslRpOuC8Q/test.php
+/dXjPRkIslRpOuC8Q/util.php
+/dXjPRkIslRpOuC8Q
+
+# Reference: https://www.virustotal.com/gui/file/f86119913f4347b7514e00bf48b4484d6e65a8e696c36d650ae541a720ab958c/detection
+
+http://172.86.75.232
+/vCSJe8UuNtRtTjoO/Index.php
+/vCSJe8UuNtRtTjoO/conf.php
+/vCSJe8UuNtRtTjoO/config.php
+/vCSJe8UuNtRtTjoO/gate.php
+/vCSJe8UuNtRtTjoO/login.php
+/vCSJe8UuNtRtTjoO/test.php
+/vCSJe8UuNtRtTjoO/util.php
+/vCSJe8UuNtRtTjoO
+
+# Reference: https://www.virustotal.com/gui/file/5976a57f3c8b4054552c94932732274deb1e6ec6778e8deb1297fd3f28ceb231/detection
+
+3nity.xyz
+/pkBZgmGjnHgZLAJv/Index.php
+/pkBZgmGjnHgZLAJv/conf.php
+/pkBZgmGjnHgZLAJv/config.php
+/pkBZgmGjnHgZLAJv/gate.php
+/pkBZgmGjnHgZLAJv/login.php
+/pkBZgmGjnHgZLAJv/test.php
+/pkBZgmGjnHgZLAJv/util.php
+/pkBZgmGjnHgZLAJv
+
+# Reference: https://www.virustotal.com/gui/file/7c133b7ef0390e937c3ef6c9e505d0bd501d498714e574c25b42d866965f6ec3/detection
+
+dnslook.info
+reosio.com
+
+# Reference: https://tria.ge/200707-nzlfzyt29x/behavioral1
+
+http://89.249.67.27
+
+# Reference: https://www.virustotal.com/gui/file/0c146039c97ee376e46662f545294c97c4a7ba4e3e27d0bd2a6d63eb324bc505/detection
+
+bumboxik.asia
+dikiy.website
+tugarin.asia
+/EtRXeQ9wuhtbUqCD/Index.php
+/EtRXeQ9wuhtbUqCD/conf.php
+/EtRXeQ9wuhtbUqCD/config.php
+/EtRXeQ9wuhtbUqCD/gate.php
+/EtRXeQ9wuhtbUqCD/login.php
+/EtRXeQ9wuhtbUqCD/test.php
+/EtRXeQ9wuhtbUqCD/util.php
+/EtRXeQ9wuhtbUqCD
+
+# Reference: https://x.com/SquiblydooBlog/status/1920065836779462705
+# Reference: https://www.virustotal.com/gui/file/982b8f3faf7f38760a745441d847c86c203fc010e0b204f28861d445504c0821/detection
+# Reference: https://www.virustotal.com/gui/file/51873d2d9070f1a94149e4ef857952c6711b060ca7f2c122cc5b019212096d82/detection
+# Reference: https://www.virustotal.com/gui/file/aec4e5e79e5690c6f8f97334da9aa9898fb5ea68c6458efee70a45a88863c925/detection
+
+http://91.220.8.106
+/c8PD9mEo5MnhlJi1/Index.php
+/c8PD9mEo5MnhlJi1/conf.php
+/c8PD9mEo5MnhlJi1/config.php
+/c8PD9mEo5MnhlJi1/gate.php
+/c8PD9mEo5MnhlJi1/login.php
+/c8PD9mEo5MnhlJi1/test.php
+/c8PD9mEo5MnhlJi1/util.php
+/c8PD9mEo5MnhlJi1
+
+# Generic
+
+/kpotuvorot10.bit
+/rh/fw1.exe
+/rh/fw2.exe
+/rh/fw3.exe
+/rh/fw4.exe
+/rh/img1.php
+/rh/pegasun.exe

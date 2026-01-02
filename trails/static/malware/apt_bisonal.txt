@@ -1,0 +1,372 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: bisonal, tonto, tontoteam
+# CERT-UA: UAC-0018
+
+# Reference: https://researchcenter.paloaltonetworks.com/2018/07/unit42-bisonal-malware-used-attacks-russia-south-korea/
+
+euiro8966.organiccrap.com
+games.my-homeip.com
+jennifer998.lookin.at
+kted56erhg.dynssl.com
+hosting.tempors.com
+
+# Reference: https://twitter.com/Vishnyak0v/status/1216689015035977730
+
+etude.servemp3.com
+
+# Reference: https://docs.google.com/spreadsheets/d/1lDzylI6Jymz7EE0agRVUsL3kwmJSRDjXYjr5l5MUOEk/edit#gid=127522608 (# Bisonal)
+
+svyaztulaya.dynamic-dns.net
+uacmoscow.com
+
+# Reference: https://blog.talosintelligence.com/2020/03/bisonal-10-years-of-play.html
+
+0906.toh.info
+21kmg.my-homeip.net
+agent.my-homeip.net
+amanser951.otzo.com
+applejp.myfw.us
+dds.walshdavis.com
+dnsdns1.passas.us
+emsit.serveirc.com
+etude.servemp3.com
+euiro8966.organiccrap.com
+faceto.uglyas.com
+games.my-homeip.com
+hansun.serveblog.net
+hosting.tempors.com
+indbaba.myfw.us
+jennifer998.lookin.at
+kazama.myfw.us
+kfsinfo.byinter.net
+kreng.bounceme.net
+kted56erhg.dynssl.com
+mycount.mrslove.com
+navego.serveblog.net
+nayana.adultdns.net
+shinkhek.myfw.us
+since.qpoe.com
+usababa.myfw.us
+v3net.rr.nu
+wew.mymom.info
+
+# Reference: https://asec.ahnlab.com/1298
+# Reference: https://twitter.com/vigilantbeluga/status/1235496629811077121
+# Reference: https://otx.alienvault.com/pulse/5e612f6d1dadda20c4314b21
+
+imbc.onthewifi.com
+
+# Reference: https://twitter.com/nao_sec/status/1273209439764406272
+# Reference: https://app.any.run/tasks/4c751168-358a-49c9-b751-e5b4aad9b060/
+
+offices-update.com
+
+# Reference: https://securitykitten.github.io/2014/11/25/curious-korlia.html
+# Reference: https://www.virustotal.com/gui/ip-address/61.90.202.198/relations
+# Reference: https://www.virustotal.com/gui/file/dc9f17c87397428089e70aeea5af47f5588460b4ae5b8effb5370dc742eff1cf/detection
+
+http://61.90.202.198
+japanbaba.myfw.us
+koreamama.myfw.us
+
+# Reference: https://www.virustotal.com/gui/file/13c5eb2c8deaf1b4b51eac782cc1f1a7c64e2ee8a9a12d37c25b45b09524c354/detection
+
+shinkhw.myfw.us
+
+# Reference: https://www.virustotal.com/gui/file/98c59d682da617f993f3d57bb9e3ff076caa7469ddb0701c46715c25c9c0453d/detection
+
+nancyxi.gotdns.org
+nothree.myfw.us
+
+# Reference: https://www.virustotal.com/gui/file/80f8c3c2f44dc514500b49adc31b9b4e269ea2604fc09a94d7e4c6bce18223a1/detection
+
+webmaff.dns05.com
+
+# Reference: https://www.virustotal.com/gui/file/83231d8e25f1c8d74aa9eb07f18dca9154323e0f372b29d89a2ce2dcbfad6cf8/detection
+
+shinkhw.organiccrap.com
+
+# Reference: https://securelist.com/cactuspete-apt-groups-updated-bisonal-backdoor/97962/
+
+http://154.223.175.115/chapter1/user.html/
+http://154.95.17.145/chapter1/user.html/
+
+# Reference: https://www.ptsecurity.com/ru-ru/research/pt-esc-threat-intelligence/shadowpad-novaya-aktivnost-gruppirovki-winnti/ (Russian, # Bisonal IOC)
+
+g00gleru.wikaba.com
+
+# Reference: https://twitter.com/blu3_team/status/951647866531057665
+
+nubpubwizard.jetos.com
+worktrs.wikaba.com
+
+# Reference: https://vblocalhost.com/uploads/VB2020-Lunghi-Horejsi.pdf (# Cluster 3)
+
+abulasha-banama.onedumb.com
+best.indoingwulearn.com
+connts.zzux.com
+fdods.my03.com
+fdtg.dynamic-dns.net
+fose.mos2ioa.com
+gotomail.ddns.net
+gtfd.mos2ioa.com
+hellomydog.compress.to
+hellomydog.mrface.com
+indoingwulearn.com
+lucylucy.ninth.biz
+misova.mos2ioa.com
+mos2ioa.com
+mosclar.mrbonus.com
+mvp.onedumb.com
+nmbpo.com
+nubpubwizard.jetos.com
+relerc.ddns.net
+shuudans.com
+stcinet.com
+stcnet.ddns.net
+svyaztu.indoingwulearn.com
+svyaztulaya.dynamic-dns.net
+tsahimt.com
+tsowe.2waky.com
+tube.compress.to
+vip.fartit.com
+vip.onedumb.com
+worktrs.wikaba.com
+yandexmedia.serveuser.com
+
+# Reference: https://vblocalhost.com/uploads/VB2020-Lunghi-Horejsi.pdf (# Cluster 4)
+
+acivo.serveblog.net
+adobe-online.com
+adoberevise.com
+anna111.epac.to
+babyhome.lflink.com
+babyhome.mefound.com
+bluecat.mefound.com
+bluesky.jkub.com
+chrgeom.system-ns.net
+creepbeforeyouwalk.com
+developman.ocry.com
+doctor-s.dhcp.biz
+doctor-s.edns.biz
+finance.my-homeip.net
+free2015.longmusic.com
+freemusic.zzux.com
+gedadye.com
+gmarket.system-ns.org
+home-blog.dynssl.com
+hotadobes.com
+kakao.myonlineportal.org
+lovehome.zzux.com
+luckybabys.dnset.com
+lucylucy.dynamic-dns.net
+media.myonlineportal.net
+missca.justdied.com
+movie2014.passas.us
+music2014.passas.us
+officerevise.com
+offices-update.com
+online-offices.com
+redfish.misecure.com
+sdkpress.com
+serviceonline.otzo.com
+tcostream.dhcp.biz
+tradekorea.system-ns.org
+tvpot.system-ns.org
+uacmoscow.com
+videoservice.dnset.com
+webtvpot.system-ns.org
+wikipedia.dnset.com
+
+# Reference: https://vblocalhost.com/uploads/VB2020-Lunghi-Horejsi.pdf (# Cluster 5)
+
+adobeupdata.zzux.com
+adobeupdate.dns04.com
+baekmaonline.com
+beatidc.com
+bravojack.justdied.com
+chromeupdate.lflink.com
+cnnmirror.com
+gmailserverweb.com
+havsar.com
+lubny23.com
+maintenance.baekmaonline.com
+news-serverweb.com
+prettyrose.justdied.com
+shop.beatidc.com
+store.beatidc.com
+support.baekmaonline.com
+
+# Reference: https://vblocalhost.com/uploads/VB2020-Lunghi-Horejsi.pdf (# Cluster 6)
+
+bbc.xxxy.info
+daum.xxuz.com
+daummail.otzo.com
+facegooglebook.mrbasic.com
+ftp.sshdd.toythieves.com
+golfmsdn.com
+manage.yesterdayko.com
+msdn.ezua.com
+organisea.rutrackerbit.com
+rutrackerbit.com
+search.yesterdayko.com
+sshdd.toythieves.com
+tknow.squirly.info
+yandex.mrface.com
+yesterdayko.com
+
+# Reference: https://www.virustotal.com/gui/file/beb8c6dce6088512ef28a4431ad57ffb198bfe0cce2fa0f9442d1bf0a80c19a1/detection
+# Reference: https://www.virustotal.com/gui/file/d5da23df6242a672e8fd520db6d91926c7861c685dfb2b4e6b3cda70935af1a1/detection
+# Reference: https://www.virustotal.com/gui/file/b6584fe5d4e1c8fbbae108e79e87f8f82999aaae7b225f84cea3c7b37ab56256/detection
+
+search.system-ns.net
+ww1.system-ns.net
+ww7.system-ns.net
+ww12.system-ns.net
+/krsy/a.asp
+
+# Reference: https://www.virustotal.com/gui/file/dc9645b7ed1e88442b74be13298afa3d2dcca48e6563c548ce0442140d0246ea/detection
+
+comunity.system-ns.org
+
+# Reference: https://www.virustotal.com/gui/file/d181dc5c6806077378d6951cb3ec67074f0c953b8fde0c9c712331a046d38c8e/detection
+
+jobnate.system-ns.org
+
+# Reference: https://www.virustotal.com/gui/file/969bd3755589e616b8bcf553c7fbad2056a79fcd054edf9594f0ee54256609ac/detection
+
+gomalove.system-ns.org
+
+# Reference: https://twitter.com/8th_grey_owl/status/1412583883137110020
+# Reference: https://www.virustotal.com/gui/ip-address/67.205.76.102/relations
+# Reference: https://www.virustotal.com/gui/file/677e697644f7c0d83a30e2daaddb93fc5a4707292b4490e8bf8856e87a7a1af4/detection
+
+bitsshare.com
+myblogcloud.com
+myforumcloud.com
+mynotecloud.com
+myschedulecloud.com
+
+# Reference: https://www.virustotal.com/gui/file/b1ee236a36f04ca43d3c8e3ad6255b59e13902688d45ec78babcb046eac9e514/detection
+
+103.231.14.134:443
+
+# Reference: https://twitter.com/h2jazi/status/1537536029250490382
+# Reference: https://twitter.com/nao_sec/status/1538857219025817605
+# Reference: https://twitter.com/GroupIB_TI/status/1625050738933071873
+# Reference: https://www.sentinelone.com/labs/targets-of-interest-russian-organizations-increasingly-under-attack-by-chinese-apts/
+# Reference: https://www.group-ib.com/blog/tonto-team/
+# Reference: https://www.virustotal.com/gui/ip-address/137.220.176.165/relations
+# Reference: https://www.virustotal.com/gui/ip-address/64.233.167.99/relations
+# Reference: https://www.virustotal.com/gui/file/c7018ee3783f4b2fb19fedc78c59586390efa1b72c907867794bf42141eb767c/detection
+# Reference: https://www.virustotal.com/gui/file/7944fa9cbfef2c7d652f032edc159abeaa1fb4fd64143a8fe3b175095c4519f5/detection
+# Reference: https://www.virustotal.com/gui/file/ba2c89192643f05e64f49b5cb3513a6a5bbfa719225af3b72c83587b8b774e8d/detection
+
+http://137.220.176.165
+103.85.20.194:443
+137.220.176.165:443
+lingrevelat.com
+thresident.com
+wooordhunts.com
+instructor.giize.com
+news.wooordhunts.com
+upportteam.lingrevelat.com
+supportteam.lingrevelat.com
+/xhome.native.page/datareader.php
+/siteFiles/index.php?strPageID=
+/ru/news/index.php?strPageID=
+/ru/order/index.php?strPageID=
+
+# Reference: https://twitter.com/h2jazi/status/1538914969495928838
+# Reference: https://www.virustotal.com/gui/file/a56003dc199224113e9c85b0edb2197d4a4af91b15e7d0710873e2ef848c3221/detection
+
+ramblercloud.com
+
+# Reference: https://asec.ahnlab.com/en/51746/
+# Reference: https://otx.alienvault.com/pulse/644fbd07a98ffc006a3e71cc
+
+153.234.77.155:8080
+45.133.194.135:8080
+hairouni.serveblog.net
+
+# Reference: https://twitter.com/h2jazi/status/1555611666343133185
+# Reference: https://asec.ahnlab.com/ko/33948/ (Korean)
+# Reference: https://go.recordedfuture.com/hubfs/reports/cta-2023-0919.pdf (# TAG-74, TAG74)
+# Reference: https://www.virustotal.com/gui/ip-address/92.38.135.212/relations
+# Reference: https://otx.alienvault.com/pulse/62729ce9e66ec5fd15790d3a
+# Reference: https://www.virustotal.com/gui/file/56f714b1832d0eb58a688c843d417653b1219d3d0b7644049db7b6156b24274b/detection
+
+alleyk.onthewifi.com
+anrnet.servegame.com
+asheepa.sytes.net
+attachdaum.servecounterstrike.com
+attachmaildaum.serveblog.net
+attachmaildaum.servecounterstrike.com
+bizmeka.viewdns.net
+bucketnec.bounceme.net
+chsoun.serveftp.com
+ckstar.zapto.org
+daecheol.myvnc.com
+eburim.viewdns.net
+eduin21.zapto.org
+elecinfonec.servehalflife.com
+finance.my-homeip.com
+foodlab.hopto.org
+formsgle.freedynamicdns.net
+formsgle.freedynamicdns.org
+fresh.servepics.com
+global.freedynamicdns.net
+global.freedynamicdns.org
+hairouni.serveblog.net
+hamonsoft.serveblog.net
+hanseo1.hopto.org
+harvest.my-homeip.net
+hometax.onthewifi.com
+hwarang.myddns.me
+jaminss.viewdns.net
+janara.freedynamicdns.org
+jeoash.servemp3.com
+jstreco.myftp.biz
+kanager.bounceme.net
+kcgselect.servehalflife.com
+kjmacgk.ddnsking.com
+kookmina.servecounterstrike.com
+ksd22.myddns.me
+kumohhic.viewdns.net
+kybook.viewdns.net
+leader.gotdns.ch
+likms.hopto.org
+logindaums.ddnsking.com
+loginsdaum.viewdns.net
+mafolog.serveminecraft.net
+mailplug.ddnsking.com
+minjoo2.servehttp.com
+mintaek.bounceme.net
+munjanara.servehttp.com
+necgo.serveblog.net
+pattern.webhop.me
+pixoneer.myvnc.com
+plomacy.ddnsking.com
+proeso.servehttp.com
+prparty.webhop.me
+puacgo1.servemp3.com
+saevit.servebeer.com
+safety.viewdns.net
+samgiblue.servegame.com
+sarang.serveminecraft.net
+satreci.bounceme.net
+sejonglog.hopto.org
+signga.redirectme.net
+skparty.myonlineportal.org
+steering.viewdns.net
+stjpmsko.serveblog.net
+surveymonkey.myddns.me
+themiujoo.viewdns.net
+tsuago.servehalflife.com
+tsuagos.servehalflife.com
+unipedu.servebeer.com
+visdpaka.servemp3.com
+visual.webhop.me
+wwl1764.ddnsking.com

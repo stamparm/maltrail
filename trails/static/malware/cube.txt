@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cube stealer
+
+# Reference: https://x.com/solostalking/status/1904800197684707767
+# Reference: https://app.validin.com/detail?find=Cube%20Stealer&type=raw&ref_id=b0904e6654b#tab=host_pairs (# 2025-03-26)
+
+http://31.57.33.94
+ilovecat.fun

@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1195335031633432577
+
+yboa7nidpv5jdtumgfm4fmmvju3ccxlleut2xvzgn5uqlbjd5n7p3kid.onion
+
+# Reference: https://github.com/StrangerealIntel/malware-notes/blob/master/Ransomware/Antefrigus.md (# C2 uri params)
+
+/add_outstuk.php

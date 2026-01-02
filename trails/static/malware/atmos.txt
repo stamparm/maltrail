@@ -1,0 +1,65 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://lmntrix.com/lab/zeus-grandson-atmos-picks-up-the-family-trade/
+
+resvshop.ru
+/dEFyp4sJPZfp/
+
+# Reference: http://cybercrime-tracker.net/ccamdetail.php?hash=9af6ca182dbbd0690372075f2ef10f3218861449
+# Reference: https://www.virustotal.com/gui/file/835b192d28c2547ff4b1f9a9c6671f1728a4ab4221acb73a6dc710cfc49cdbe6/detection
+
+ruise.ru
+/NewAtm0/
+
+# Reference: http://cybercrime-tracker.net/ccamdetail.php?hash=fb541b4d571555c998341c0e856b8e5051f173a4
+
+sisr.cacsite.com
+
+# Reference: http://cybercrime-tracker.net/ccamdetail.php?hash=53d54c0b5ecbbb56e3a834a7134d95f6f20d1973
+
+audigier-sautel.com
+
+# Reference: http://cybercrime-tracker.net/ccamdetail.php?hash=bfde0c1f9f7b0918c6900c22934b3294ea1f1749
+
+sysupdate24.ddns.net
+
+# Reference: http://cybercrime-tracker.net/ccamdetail.php?hash=ee3da04210ec07ba09ee1097ab5c793864488b56
+
+r0b3nindy.pw
+
+# Reference: http://cybercrime-tracker.net/ccamdetail.php?hash=53249991f067aee762966d1556b8c0a2255de030
+
+oksagroupinc.ru
+
+# Reference: https://open.appscan.io/article-235.html
+
+1x1exit.ru
+alexhillipark.ru
+beroco.net
+blackbul.ru
+bluwartech.com
+chester.agenteinformaticos.ru
+chydube.ru
+clone147.com
+concorduea.com
+cytruscompany.pw
+dobasu.org
+emailupgrade.su
+jonnychangginc.ru
+kcaima.ru
+kingskillz.ru
+l3d.pp.ru
+neobankdoor.net
+nsdic.pp.ru
+pmscmarineinc.biz
+project-riptide.ru
+protestonlinecheck.ru
+secureaccount.ru
+shaddyfiles.ru
+swivalva.com
+swzgvvpnj54atkfbp6in.ru
+testmysserver.com
+tokimecltd.ru
+tranexestin.com
+wonforhall.com

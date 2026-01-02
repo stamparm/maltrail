@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/mcafee-discovers-pinkslipbot-exploiting-infected-machines-as-control-servers-releases-free-tool-to-detect-disable-trojan/
+# Reference: https://www.mcafee.com/enterprise/en-us/assets/solution-briefs/sb-quarterly-threats-may-2016-2.pdf
+
+bbxrsgsuwksogpktqydlkh.net
+dxmhcvxcmdewthfbnaspnu.org
+enwgzzthfwhdm.org
+feqsrxswnumbkh.com
+gpfbvtuz.org
+gyvwkxfxqdargdooqql.net
+hogfpicpoxnp.org
+hsdmoyrkeqpcyrtw.biz
+ivalhlotxdyvzyxrb.net
+jynsrklhmaqirhjrtygjx.biz
+lgzmtkvnijeaj.biz
+mfrlilcumtwieyzbfdmpdd.biz
+mwtfngzkadeviqtlfrrio.org
+nykhliicqv.org
+qrogmwmahgcwil.com
+rudjqypvucwwpfejdxqsv.org
+tqxllcfn.com
+uuwgdehizcuuucast.com
+vksslxpxaoql.com
+xwcjchzq.com
+
+# Generic trails
+
+/bot_serv

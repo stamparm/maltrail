@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cripto stealer
+
+# Reference: https://x.com/johnk3r/status/1932876436391575977
+# Reference: https://www.virustotal.com/gui/file/4abf09d93174c845dd542fed6d012d520d2733cf1e8f58250d3aa1dc33d3c037/detection
+# Reference: https://www.virustotal.com/gui/file/7a84e5e127b85d9722497da3c7f490e8aa50abb6b9013c24b62e9a1adf2ba933/detection
+# Reference: https://www.virustotal.com/gui/file/6a8f53fb60119717e448b36bd9588abfa01fd5176104304fcaaa8870c8153f36/detection
+
+bitbourne.net
+portandcargo.net
+storagedrvi.com
+documentnx.storagedrvi.com

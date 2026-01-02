@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1150794193494630401
+
+adminfinacex.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1059087094612602881
+
+mynetwork.ddns.net
+192.119.15.35:880
+
+# Generic trails
+
+/resiver.php?anti=

@@ -1,0 +1,55 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://unit42.paloaltonetworks.com/watchdog-cryptojacking/
+# Reference: https://otx.alienvault.com/pulse/602d71551b7f59ad26f84d23/
+
+http://146.71.79.230
+http://176.123.10.57
+http://185.181.10.234
+http://185.232.65.124
+http://185.232.65.191
+http://185.232.65.192
+http://185.247.117.64
+http://198.98.57.187
+http://209.182.218.161
+http://39.100.33.209
+http://45.153.240.58
+http://45.9.148.37
+http://47.253.42.213
+http://82.202.66.50
+http://83.97.20.90
+http://93.115.23.117
+http://95.182.122.199
+107.173.159.206:8880
+204.44.105.168:66
+205.209.152.78:8000
+ipzse.com
+py2web.store
+de.gengine.com.de
+de.gsearch.com.de
+us.gsearch.com.de
+
+# Reference: https://blogs.akamai.com/sitr/2021/02/bitcoins-blockchains-and-botnets.html
+# Reference: https://otx.alienvault.com/pulse/6036aa7bccf6732da47223b2/
+
+hearme.xyz
+powreofwish.com
+
+# Reference: https://www.antiy.cn/research/notice&report/research_report/WatchDogTrojans_Analysis.html
+# Reference: https://otx.alienvault.com/pulse/6537f2a810d99a320ca30f7d
+
+redislog.top
+
+# Generic
+
+/363A3EDC10A2930D/
+/363A3EDC10A2930DVNICE/
+/7356a3333e6999999999/
+/b2f628/
+/b2f628fff19fda999999999/
+/cf67356/
+/cf67356a3333e6999999999/
+/E5DB0E07C3D7BE80V52/
+/N3DN0E09C5D9BU70V1720/
+/tatavx1hym9z928m/

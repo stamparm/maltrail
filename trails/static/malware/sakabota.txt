@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://unit42.paloaltonetworks.com/xhunt-campaign-attacks-on-kuwait-shipping-and-transportation-organizations/
+# Reference: https://github.com/pan-unit42/iocs/blob/master/xHunt/xHunt_IOCs.csv
+
+6google.com
+alforatsystem.com
+antivirus-update.top
+check-updates.com
+firewallsupports.com
+microsoft-check.com
+pasta58.com
+sakabota.com
+traveleasy-kw.com
+windows-updates.com
+windows64x.com
+winx64-microsoft.com

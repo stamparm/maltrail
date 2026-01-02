@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/pancak3lullz/status/748146742571372544
+# Reference: https://www.virustotal.com/gui/ip-address/115.47.18.252/relations
+
+b.19891108.info
+v.19891108.info
+http://115.47.18.252
+115.47.18.252:5512

@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.circl.lu/assets/files/tr-13/tr-13-snifula-analysis-report-v1.3.pdf
+
+abc-forum.com.tw
+apocalp.com.tw
+as-forum.com.tw
+asteronew.com.tw
+closuresocks.com
+digmetacpan.com.tw
+financepfrro.com.tw
+goodloki.com.tw
+guardalarms.com
+gubkabob.com.tw
+hotmaking.com.tw
+man-forum.com.tw
+maserluk.com.tw
+masmitnd.com.tw
+mastermi.com.tw
+masterofor.com.tw
+membran.com.tw
+metdoman.com
+newgetp.com.tw
+newlifen.com.tw
+oberon323.com.tw
+oreon3.com.tw
+preon.com.tw
+properdom.com.tw
+puzillo.com.tw
+quaniter.com.tw
+qvazglas.com.tw
+shambabu.com.tw
+vkrmek.com.tw
+vnuess3.com.tw
+wednesltr.com.tw
+wehavechanse.com.tw

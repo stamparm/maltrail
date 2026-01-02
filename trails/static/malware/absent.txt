@@ -1,0 +1,48 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: stellar
+
+# Reference: https://yoroi.company/research/himera-and-absent-loader-leverage-covid19-themes/
+
+http://195.2.92.151
+
+# Reference: https://www.virustotal.com/gui/file/ae37209db56950dfed455c4e09734734852f969e5d758ed9407004b608f1953a/behavior/VMRay
+
+the.earth.li/~sgtatham/putty/latest/w64/putty.exe
+
+# Reference: https://twitter.com/ViriBack/status/1267397372537118721
+# Reference: https://www.virustotal.com/gui/file/5b52d6a3d5c7a7a7ea83bf33608e0e2f6d2e37da608d7badffaf539022b93cca/behavior/VirusTotal%20Jujubox
+
+103.91.210.187:886
+http://103.91.210.187
+http://217.8.117.132
+http://45.80.184.171
+3c166a6ea19b27cd.xyz
+y1fcf200c29fcfe249.xyz
+
+# Reference: https://app.any.run/tasks/2b9c3175-8d4c-4030-8ba7-0ec2b6591dc6/
+
+82cdaa53d777019e.xyz
+area.cyp360.com
+
+# Reference: https://www.virustotal.com/gui/file/1509eecbaba5b9c16a24f0ce1145ec046fed1ba7ab8ff369c365451284c401e3/detection
+
+http://185.22.155.62
+
+# Reference: https://www.virustotal.com/gui/file/a0466c95c557889af0e46fa4939c16bfbad85d9811b499085f1ffe62669e81d0/detection
+
+intel-corp-stealer-logs.host
+
+# Reference: https://www.virustotal.com/gui/file/a1d97920e39010368f369abd704fedf4c8152fc1e78cf4bbdd4798cee4acdd27/detection
+
+f0510896.xsph.ru
+
+# Generic
+
+/fkarelli/fjrusbftnf/
+/qefyur/6q7jcqdx/
+/6q7jcqdx/
+/fjrusbftnf/
+/fkarelli/
+/qefyur/

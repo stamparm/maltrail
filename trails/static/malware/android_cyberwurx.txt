@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.robtex.com/en/advisory/dns/in/sinkhole/
+
+sinkhole.in
+69.61.18.148

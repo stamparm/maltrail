@@ -1,0 +1,48 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/EKFiddle/status/1205354238290739200
+
+priv.inteleksys.com
+
+# Reference: https://otx.alienvault.com/pulse/5df362fcf73e2561e130f6c1
+
+4w6ylniamu6x7e3a.onion
+5frjkvw2w3wv6dnv.onion
+
+# Reference: https://twitter.com/tkanalyst/status/1220706451439570945
+
+view.inteleksys.com
+
+# Reference: https://documents.trendmicro.com/assets/pdf/Tech%20Brief_Operation%20Overtrap%20Targets%20Japanese%20Online%20Banking%20Users.pdf
+# Reference: https://otx.alienvault.com/pulse/5e68f7e638d16c09fa844701
+
+byte.inteleksys.com
+cionx.inteleksys.com
+sales.inteleksys.com
+shop.inteleksys.com
+xizr.inteleksys.com
+
+# Reference: https://twitter.com/nao_sec/status/1287404503608594432
+
+conforyou.ml
+
+# Reference: https://twitter.com/nao_sec/status/1294854699879825408
+
+cyoumer.tk
+
+# Reference: https://twitter.com/nao_sec/status/1314195117662564352
+
+sortsoft.tk
+
+# Reference: https://twitter.com/nao_sec/status/1322885953640308736
+
+softbring.tk
+
+# Reference: https://twitter.com/nao_sec/status/1384065957585248266
+
+optsoft.tk
+
+# Reference: https://twitter.com/nao_sec/status/1395666365474766854
+
+ystyle.tk

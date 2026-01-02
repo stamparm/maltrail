@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zscaler.com/blogs/research/innfirat-new-rat-aiming-your-cryptocurrency-and-more
+
+62.210.142.219:17231
+
+# Generic trails
+
+/IVictim

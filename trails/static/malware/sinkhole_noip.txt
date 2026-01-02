@@ -1,0 +1,70 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+94.73.26.136
+94.73.32.191
+94.73.35.110
+94.73.32.235
+94.73.22.163
+94.73.34.195
+94.73.22.187
+94.73.41.240
+94.73.33.36
+94.73.36.254
+94.73.26.122
+
+# Reference: https://www.virustotal.com/#/ip-address/78.159.135.230
+
+78.159.135.230
+
+# Reference: https://www.virustotal.com/#/ip-address/78.159.141.204
+
+78.159.141.204
+
+# Reference: https://www.virustotal.com/#/ip-address/78.159.143.172
+
+78.159.143.172
+
+# Reference: https://www.virustotal.com/#/ip-address/78.159.131.121
+
+78.159.131.121
+
+# Reference: https://www.virustotal.com/#/ip-address/78.159.131.80
+
+78.159.131.80
+
+# Reference: https://www.virustotal.com/#/ip-address/78.159.131.41
+
+78.159.131.41
+
+# Reference: https://www.virustotal.com/#/ip-address/78.159.134.214
+
+78.159.134.214
+
+# Reference: https://www.virustotal.com/#/ip-address/78.159.140.203
+
+78.159.140.203
+
+# Reference: https://www.virustotal.com/#/ip-address/78.159.140.212
+
+78.159.140.212
+
+# Reference: https://www.virustotal.com/#/ip-address/212.117.50.228
+
+212.117.50.228
+
+# Reference: https://www.virustotal.com/#/ip-address/212.117.48.248
+
+212.117.48.248
+
+# Reference: https://www.virustotal.com/#/ip-address/212.117.53.118
+
+212.117.53.118
+
+# Reference: https://www.virustotal.com/#/ip-address/212.117.42.212
+
+212.117.42.212
+
+# Reference: https://www.virustotal.com/#/ip-address/212.117.50.21
+
+212.117.50.21

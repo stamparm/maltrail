@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.252.176.129/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.252.176.47/relations
+# Reference: https://www.virustotal.com/gui/file/d4d76f3d7a5597b3eb7feffe0daca838611fce7419a46484e99e3b4aef5516af/detection
+# Reference: https://www.virustotal.com/gui/file/7ef0b7dc9ead8bbef4d3e14c63ef85acb9cbfd5cf9b22284e02f05103a009de5/detection
+# Reference: https://www.virustotal.com/gui/file/7e862f1563bc3b7341557567745d23500682e78db1e920ecc09647286744a203/detection
+# Reference: https://www.virustotal.com/gui/file/0f1e2476494cfb1a77cecadafc287935c1e3b9d20b42f14bb91add4a3ef86efd/detection
+# Reference: https://www.virustotal.com/gui/file/139c9608aec0d4d80a10d15e39c7de38910197eda67f4b2033019d08862cf63d/detection
+# Reference: https://www.virustotal.com/gui/file/f4f34b52b7fb2f49800cd5c72b410fc8ab270604216fe2c2afec718d7e18561a/detection
+
+172.86.123.69:7000
+188.127.227.25:7000
+5.252.176.47:7000
+cabinet-company.info
+ugroteches.ru
+wheelprom.ru
+games.cabinet-company.info
+filetransfer.io/data-package/hmiQV0vH/download
+filetransfer.io/data-package/sxb66DYM/download
+filetransfer.io/data-package/x250yuoZ/download
+s20.filetransfer.io/storage/download/WvkIEPCQDlGT
+
+# Reference: https://www.virustotal.com/gui/file/201f8dd57bce6fd70a0e1242b07a17f489c5f873278475af2eaf82a751c24fa8/detection
+
+http://91.219.151.47

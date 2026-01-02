@@ -1,0 +1,92 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mintstealer
+
+# Reference: https://twitter.com/ViriBack/status/1610393842787704835
+# Reference: https://www.virustotal.com/gui/file/05067bb1ebbce3dd4b18f736e18672f77ff8863cce2efd68796618fc92903bdc/detection
+
+ashvgcgfxdfcgvcgfdcg.best
+
+# Reference: https://twitter.com/ViriBack/status/1612239783513804800
+
+mintngjzqpcpenalfpgjtbhazks.fun
+
+# Reference: https://twitter.com/ViriBack/status/1612975594186186753
+
+datalab-technology.com
+e3q5q52vow7j7urr4qwrzrac75tvwer7kzre2xojzi2heb5egxt6uead.onion
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.mintstealer/
+
+http://85.114.96.2
+mint-stl.ru
+
+# Reference: https://twitter.com/ViriBack/status/1694795533167034544
+# Reference: https://tria.ge/230824-xx6ckagf91/behavioral2
+# Reference: https://www.virustotal.com/gui/file/cc93a4627a459d505c46de6fac342f856fb8f95b6a4fdcbd5e48be59aa4cbb7b/detection
+
+mint-stl.top
+
+# Reference: https://threatfox.abuse.ch/ioc/1152811/
+
+http://95.214.25.207
+
+# Reference: https://twitter.com/FalconFeedsio/status/1720010000821821446
+# Reference: https://www.virustotal.com/gui/ip-address/185.216.70.231/detection
+
+http://185.216.70.231
+
+# Reference: https://x.com/suyog41/status/1805140998210621917
+# Reference: https://www.virustotal.com/gui/file/1064ab9e734628e74c580c5aba71e4660ee3ed68db71f6aa81e30f148a5080fa/detection
+
+mint-c2.top
+
+# Reference: https://app.validin.com/detail?find=Mint%20-%20The%20best%20Stealer&type=raw&ref_id=ae53a14937c#tab=host_pairs_v2
+
+http://94.156.79.162
+mint-stealer.top
+
+# Reference: https://x.com/TLP_R3D/status/1824075286956175756
+
+http://154.216.20.114
+wedominatelawsuits.top
+
+# Reference: https://app.validin.com/detail?find=%3A%3A%3A%22keywords%22%3A%22Mint%2C%20Stealer%2C%20steal%2C%20malware%2C%20crypter%2C%20rat%2C%20exploit%2C%20wallet%2C%20fud%2C%20semi-fud%22&type=raw#tab=host_pairs_v2
+
+http://154.216.16.105
+http://154.216.19.213
+
+# Reference: https://x.com/DonPasci/status/1825633832252395635
+# Reference: https://search.censys.io/search?q=services.certificate%3D%225eeab97e80cf6e5af1ed34dbdde204cecffbc73474e1fb228e03026e3fa1f4f7%22&resource=hosts
+# Reference: https://app.validin.com/detail?type=hash&find=5eeab97e80cf6e5af1ed34dbdde204cecffbc73474e1fb228e03026e3fa1f4f7#tab=host_pairs_v2
+
+http://154.216.16.183
+http://154.216.17.240
+http://154.216.18.134
+http://154.216.18.135
+
+# Reference: https://app.validin.com/detail?type=raw&find=Mint+Stealer#tab=host_pairs (# 2024-12-14)
+
+mint-stealer.pw
+panel.mint-stealer.pw
+
+# Reference: https://x.com/ViriBack/status/1869076116193083498
+
+mint-stealer.sh
+
+# Reference: https://threatfox.abuse.ch/browse/tag/MintStealer/ (# 2024-12-15)
+
+http://168.100.9.29
+http://206.188.196.37
+http://206.188.197.237
+bi99ebz.top
+vuau3v3z.top
+
+# Reference: https://x.com/cepitaking/status/1901865516001640758
+
+r70yy6tp13omdovtarvgjhvjhnutan.top
+
+# Reference: https://www.virustotal.com/gui/ip-address/172.67.173.159/relations
+
+mint-stealer.sbs

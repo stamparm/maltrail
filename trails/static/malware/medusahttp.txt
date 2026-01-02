@@ -1,0 +1,48 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/tkanalyst/status/1180123233875443712
+# Reference: https://app.any.run/tasks/46a2470a-5220-46d1-91b8-97426893d661/
+# Reference: https://twitter.com/tkanalyst/status/1172155569966219264
+# Reference: https://app.any.run/tasks/eaf4b92a-d898-49cf-9f6b-65721ab88001/
+# Reference: https://twitter.com/w3ndige/status/1168814564269596672
+
+cdnshop78.world
+
+# Reference: https://twitter.com/sans_isc/status/1161427423679963136
+
+mtcunlocker.info
+
+# Reference: https://www.netscout.com/blog/asert/medusahttp-ddos-slithers-back-spotlight
+
+disability.su
+franchessko.top
+ircnews.wang
+khforum.biz
+kissyiurfound.bid
+kjnsfiosgjnlorgiko.ru
+scam-financial.org
+sgsdgsdger.ru
+troyamylove.gdn
+wooow1.ru
+youframegood.ru
+
+# Reference: https://app.any.run/tasks/e9225dcb-f19d-41a3-9f96-6591b282f537/
+
+dns-reciver.biz
+
+# Reference: https://app.any.run/tasks/02fc860e-cb3b-4ed4-84c5-95ee52d7e96a/
+
+joingrresmvmmbs.world
+
+# Reference: https://twitter.com/James_inthe_box/status/1202630279455596544
+# Reference: https://app.any.run/tasks/c8c6dd64-6864-4f77-86e2-b23b446bcc85/
+
+bestwalletapiandroid.world
+
+# Generic trails
+
+/admin/users/login/api/api.jsp
+/forums/members/api.jsp
+/forums/members/gate.php
+/wordpress/user/login/api.jsp

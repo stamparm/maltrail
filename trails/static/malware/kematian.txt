@@ -1,0 +1,43 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: kematian stealer
+
+# Reference: https://x.com/IronNetTR/status/1806351852910293443
+# Reference: https://x.com/suyog41/status/1806628193333334044
+# Reference: https://www.virustotal.com/gui/ip-address/82.117.255.71/relations
+
+http://82.117.255.71
+devs.sped.lol
+
+# Reference: https://x.com/ViriBack/status/1809037468164817376
+# Reference: https://www.virustotal.com/gui/file/60959a8e3fa1bcd054f005b3ec3cd591675f9b8f8f7c11ba39d309184bd20f8c/detection
+
+http://64.52.80.191
+64.52.80.191:8080
+
+# Reference: https://x.com/cyber_ra1/status/1815995083667460096
+
+http://103.190.81.201
+http://45.145.41.231
+http://95.211.96.106
+103.190.81.201:8080
+45.145.41.231:8080
+82.117.255.71:8080
+195.211.96.106:8080
+
+# Reference: https://x.com/1ZRR4H/status/1816917288961937534
+# Reference: https://www.virustotal.com/gui/file/0f788ce8d2eb6495a6fe809023a2681c7409f43cfcefbcdd04a461bd9d483372/detection
+
+win-rar.co
+
+# Reference: https://x.com/ViriBack/status/1826606753808601418
+# Reference: https://www.virustotal.com/gui/file/191a4689e60bdb661f8cf6395017416ea6d58b284b689e6177eb4d3b884d9afd/detection
+# Reference: https://www.virustotal.com/gui/file/c28dbf541779ad0be0fed1488710cc11994c12619746b2241b6015e7d04efbd2/detection
+
+mainstream.ngrok.app
+ratte.ngrok.app
+
+# Generic
+
+/kematian-stealer

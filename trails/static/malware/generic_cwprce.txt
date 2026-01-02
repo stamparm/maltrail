@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: CVE-2022-44877
+
+# Note: Centos Web Panel 7 Unauthenticated Remote Code Execution
+
+# Reference: https://twitter.com/1ZRR4H/status/1613235576626372608
+# Reference: https://twitter.com/1ZRR4H/status/1613599622408159233
+# Reference: https://twitter.com/GreyNoiseIO/status/1613227931307806728
+# Reference: https://viz.greynoise.io/query/?gnql=tags%3A%22CentOS%20Web%20Panel%20RCE%20CVE-2022-44877%20Attempt%22
+# Reference: https://viz.greynoise.io/ip/206.189.170.136
+
+http://192.99.246.94
+206.189.170.136:1234
+206.189.170.136:1900
+206.189.170.136:2031
+206.189.170.136:666
+206.189.170.136:81
+206.189.170.136:9181
+
+# Reference: https://twitter.com/GreyNoiseIO/status/1613227931307806728
+# Reference: https://viz.greynoise.io/query/?gnql=tags%3A%22CentOS%20Web%20Panel%20RCE%20CVE-2022-44877%20Attempt%22
+# Reference: https://viz.greynoise.io/ip/157.230.62.113
+
+157.230.62.113:2031
+157.230.62.113:2083
+157.230.62.113:2087
+
+# Reference: https://twitter.com/GreyNoiseIO/status/1613227931307806728
+# Reference: https://viz.greynoise.io/query/?gnql=tags%3A%22CentOS%20Web%20Panel%20RCE%20CVE-2022-44877%20Attempt%22
+# Reference: https://viz.greynoise.io/ip/180.183.132.35
+
+180.183.132.35:2087

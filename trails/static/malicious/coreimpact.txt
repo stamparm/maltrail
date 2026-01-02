@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/0xhido/status/1518654470481190912
+# Reference: https://blog.morphisec.com/vmware-identity-manager-attack-backdoor
+
+185.117.90.187:443

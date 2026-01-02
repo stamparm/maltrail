@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.securityjoes.com/post/operation-ice-breaker-targets-the-gam-bl-ing-industry-right-before-it-s-biggest-gathering
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-02-01-v10234/296
+# Reference: https://otx.alienvault.com/pulse/63dbf15bff5fab800ea7f371
+
+ponzix.net
+screenshot.icu
+screenshotcap.com
+screenshotlite.com
+xn--screnshot-jib.net
+xn--screnshot-iib.net

@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: spacebears ransomware
+
+# Reference: https://twitter.com/FalconFeedsio/status/1784926268930363632
+# Reference: https://twitter.com/karol_paciorek/status/1787462438905856173
+
+http://160.1.39.139
+http://92.51.2.31
+
+# Reference: https://x.com/RakeshKrish12/status/1843195597970649583
+
+5butbkrljkaorg5maepuca25oma7eiwo6a2rlhvkblb4v6mf3ki2ovid.onion

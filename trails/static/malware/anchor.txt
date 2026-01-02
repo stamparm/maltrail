@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/bryceabdo/status/1364213428152328192
+# Reference: https://www.virustotal.com/gui/file/0d6a10df6eeb1dbb88b4d625873ed13daa367e165374a72daa16170af3ee31a0/detection
+
+jetbiokleas.com
+nyhgloksa.com
+
+# Reference: https://thedfirreport.com/2021/03/08/bazar-drops-the-anchor/
+
+sluaknhbsoe.com
+xyskencevli.com
+
+# Reference: https://twitter.com/z0ul_/status/1372435497876852736
+# Reference: https://www.virustotal.com/gui/file/f93b838dc89e7d3d47b1225c5d4a7b706062fd8a0f380b173c099d0570814348/detection
+
+farfaris.com
+kalarada.com
+omelezatava.com

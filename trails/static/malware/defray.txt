@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/new-defray-ransomware-targets-education-and-healthcare-verticals
+# Reference: https://otx.alienvault.com/pulse/601da88ef3497825aaee8aaa/
+# Reference: https://www.virustotal.com/gui/file/08cf8ed94cc1ef6ae23133f3e506a50d8aad9047c6fa74568a0373d991261aa4/detection
+
+defrayable-listings.000webhostapp.com
+kinaesthetic-electr.000webhostapp.com

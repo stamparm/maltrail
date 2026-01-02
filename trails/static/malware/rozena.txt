@@ -1,0 +1,49 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/sicehice/status/1689863652122255360
+# Reference: https://www.virustotal.com/gui/file/6a793dd449a857f96d96ea8c6313eb8b47013cd77eedd8a9ecd3819a2cdebcbb/detection
+# Reference: https://www.virustotal.com/gui/file/fbf2a482863f407084fa7d28e347ff63aa638ee25f6fbabca5f706d2a4f399a4/detection
+# Reference: https://www.virustotal.com/gui/file/fb0e320e471fe16bf3c89e9df9c6cad6ff2421a87eae28c4140fccc708145165/detection
+# Reference: https://www.virustotal.com/gui/file/f175590e323545e8290bbb586a73ceb1dc7d3169d5021a2ad1fc2f44cb0848d9/detection
+# Reference: https://www.virustotal.com/gui/file/e0541b8f671059745ddc33a73c1e2630f17af037aa659dccefd2938e029f6e99/detection
+# Reference: https://www.virustotal.com/gui/file/db9f380c71dd4bbdf9af248ed701ff04f09dac1a5cf5a79153d097994d76a47b/detection
+# Reference: https://www.virustotal.com/gui/file/c0fc4539e047c56bb8b6cb1ee509f4779a6a4fe1310ec48cca2477a6f4893414/detection
+# Reference: https://www.virustotal.com/gui/file/bc028de7ecc185f30dbcc43df14595acb36472b9e60930453b70662bdc3694dd/detection
+# Reference: https://www.virustotal.com/gui/file/9df1aace14d21de1548f4e0d7d9fdc9f4a09a74f9591242a6a8528bc607a31e8/detection
+# Reference: https://www.virustotal.com/gui/file/8e3b379c591b97124c24ad8eea37b1ff941e69cffc4d2bbd3e4fd13277d3fb73/detection
+# Reference: https://www.virustotal.com/gui/file/762e61ebcaa040540121cdd8ee824771be3c2165fad3ed18b5fa5692f8c50d46/detection
+# Reference: https://www.virustotal.com/gui/file/5af4d9ddc94af933a66894baa265f307bb6c1286ae23ceac8b415a32d7f5e94e/detection
+# Reference: https://www.virustotal.com/gui/file/505876305c5705a86ea082c6f1c2ace9b1e3a0c2b55ae4959e3ff4d448ccea00/detection
+# Reference: https://www.virustotal.com/gui/file/38e0c5b50bb1a7d5c1d24209b45e8703a30907bb09239af9341053d5ca1b0c3d/detection
+# Reference: https://www.virustotal.com/gui/file/231b678fd52996574cb228114c7d694ad5e2cc156c88336d8390159d94ea96c1/detection
+# Reference: https://www.virustotal.com/gui/file/0036fa3fd8f64664ee1360de7c000fb2cb039874d87a3f092ffe7c16dcd0de3a/detection
+# Reference: https://www.virustotal.com/gui/file/0036fa3fd8f64664ee1360de7c000fb2cb039874d87a3f092ffe7c16dcd0de3a/detection
+
+100.42.74.199:10000
+100.42.74.199:10074
+100.42.74.199:10161
+100.42.74.199:10177
+100.42.74.199:10217
+100.42.74.199:10313
+100.42.74.199:10318
+100.42.74.199:10356
+100.42.74.199:10366
+100.42.74.199:10411
+100.42.74.199:10426
+100.42.74.199:10512
+100.42.74.199:10792
+100.42.74.199:10923
+100.42.74.199:10999
+100.42.74.199:1234
+100.42.74.199:8000
+
+# Reference: https://twitter.com/sicehice/status/1689846455354138624
+# Reference: https://www.virustotal.com/gui/file/4268f2f104ca4b113e1cc7be1bd867211267777abdf9fe14a4893257fd2b8918/detection
+
+54.90.187.191:5555
+54.90.187.191:8080
+
+# Reference: https://www.virustotal.com/gui/file/976d3ceb9ff879ef6cf9f2e23cc6e579806a8cc2f27ad389958ea4636807c1b2/detection
+
+141.255.144.2:4444

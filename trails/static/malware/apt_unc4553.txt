@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ridile
+
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/rilide-a-new-malicious-browser-extension-for-stealing-cryptocurrencies/
+
+ashgrrwt.click
+vceilinichego.ru
+
+# Reference: https://www.mandiant.com/resources/blog/lnk-between-browsers
+# Reference: https://www.virustotal.com/gui/file/0c878188752d6f1e3273d51abda81d97a1439e05131d891978232724a8267eee/detection
+
+http://146.70.79.75
+146.70.79.75:443
+2022-blanks.site
+extenision-app.com
+finandy.info
+finandy.online
+flnand.online
+kz-smartbank.com
+mareux.online
+mmarx.quest
+okxsat.xyz
+pr-tracker.online
+qivvi-3.click
+serienjunkies.us
+telegromcn.org
+vse-blanki.online

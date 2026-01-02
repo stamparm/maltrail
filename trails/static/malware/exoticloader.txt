@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://app.validin.com/detail?find=Project%20Exotic%20-%20Loader&type=raw&ref_id=46abec7e240#tab=reputation (# 2025-09-15)
+# Reference: https://www.virustotal.com/gui/file/2640f507a57560c53e9cb19633d8df792469714b96fc34e4a271c40dde9bea52/detection
+
+exot1c.vercel.app

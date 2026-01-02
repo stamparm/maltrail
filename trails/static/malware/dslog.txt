@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: dslogdrat
+
+# Reference: https://www.orangecyberdefense.com/fileadmin/general/pdf/Ivanti_Connect_Secure_-_Journey_to_the_core_of_the_DSLog_backdoor.pdf
+
+http://159.65.123.122
+159.65.123.122:443
+
+# Reference: https://blogs.jpcert.or.jp/en/2025/04/dslogdrat.html
+# Reference: https://www.virustotal.com/gui/file/1dd64c00f061425d484dd67b359ad99df533aa430632c55fa7e7617b55dab6a8/detection
+
+3.112.192.119:443

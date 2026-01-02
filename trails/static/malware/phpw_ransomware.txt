@@ -1,0 +1,43 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/29bd7a496412f181edd2e09ed765a5caf99b5e400eedce4dde698dbd55faf7a4/detection
+
+91.228.218.171:17890
+pr.dancingblack.online
+tobor.guspy.xyz
+
+# Reference: https://www.virustotal.com/gui/file/430069f19ad4a8bc46ce8238e5d700813e50390bbf463c3bd7f3eb2f2a9af11b/detection
+
+139.28.36.41:17890
+km1.dancingblack.online
+
+# Reference: https://www.virustotal.com/gui/ip-address/139.28.36.41/relations
+
+blackhohol.online
+dancingblack.online
+guspy.xyz
+maxvarlamoff.club
+1.blackhohol.online
+2.blackhohol.online
+3.blackhohol.online
+km1.maxvarlamoff.club
+km2.dancingblack.online
+km2.maxvarlamoff.club
+km3.dancingblack.online
+km3.maxvarlamoff.club
+tabor.guspy.xyz
+tony1.guspy.xyz
+tony2.guspy.xyz
+tony3.guspy.xyz
+
+# Reference: https://www.virustotal.com/gui/file/f1059c896152b8eb36c63478a4069b050557c7da07653b0fd35e0a52327068c1/detection
+
+54.36.214.76:17890
+hohol2.mooo.com
+km2.chickenkiller.com
+panelhs.chickenkiller.com
+
+# Reference: https://www.virustotal.com/gui/file/6368f8d5becb3a0a13fd2471c1e258a6f9b0c11dcad45a773d994a30226075d2/detection
+
+km3.chickenkiller.com

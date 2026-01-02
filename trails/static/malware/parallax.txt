@@ -1,0 +1,532 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/Racco42/status/1216993503118577665
+# Reference: https://www.virustotal.com/gui/file/4d7b06f10359312ac6b13883831e725c649665936acedc506be40e954d4b1208/detection
+
+185.140.53.134:7776
+
+# Reference: https://www.virustotal.com/gui/file/4c9b503d9fece2134e97eb34c3bb3847b9deca9ba05df999b59a5fb5e63c26ca/detection
+
+185.140.53.134:9095
+185.140.53.134:9096
+wealthybillza.insidedns.com
+
+# Reference: https://twitter.com/wwp96/status/1224779467215855619
+# Reference: https://app.any.run/tasks/75ddb147-59d7-49a1-a3a0-1c6b7de58f37/
+
+45.147.229.52:7071
+
+# Reference: https://twitter.com/James_inthe_box/status/1227213715860144128
+# Reference: https://pastebin.com/Re5jj5j2
+
+79.134.225.111:8141
+vahlallha.duckdns.org
+
+# Reference: https://twitter.com/VK_Intel/status/1237447871764496388
+# Reference: https://www.virustotal.com/gui/file/0a689281e5c807412fd9fca5f4a2d02f90e149da1ecc16179a09d88fa88eed74/detection
+# Reference: https://www.virustotal.com/gui/file/cd41b2a08b3b38cd8ce7a2420a635bd1d1780bce12218f93ee6f2366a19e2aeb/detection
+
+185.244.30.237:4181
+192.169.69.25:4181
+roboticsnetwork.duckdns.org
+
+# Reference: https://twitter.com/James_inthe_box/status/1247190083825848321
+# Reference: https://twitter.com/James_inthe_box/status/1247191401403564033
+
+hope.doomdns.org
+
+# Reference: https://www.virustotal.com/gui/file/f899a317b88fe6fc9dedcda1620b37c907082223244804df60ca664fc04ff265/detection
+
+105.112.176.133:1759
+
+# Reference: https://www.virustotal.com/gui/file/2a6cfd85bcb241ce4c4c1dcd325d9d85da8ae49a8f721632d319806085818408/detection
+
+216.38.7.237:7310
+
+# Reference: https://twitter.com/James_inthe_box/status/1247280998359789575
+
+franco20.dvrdns.org
+
+# Reference: https://twitter.com/malwrhunterteam/status/1250743756925677569
+
+5.253.114.116:7073
+
+# Reference: https://www.virustotal.com/gui/file/8c7262c3e94a7c143b0c8b76b051f7eef7b8a7e903dee5b1868b0230c19cc725/detection
+
+5.253.114.116:7072
+
+# Reference: https://www.virustotal.com/gui/file/1dfc66968527fbd4c0df2ea34c577a7ce7a2ba9b54ba00be62120cc88035fa65/detection
+
+23.105.131.162:2019
+
+# Reference: https://twitter.com/malwrhunterteam/status/1253290466717687808
+# Reference: https://www.virustotal.com/gui/file/2f370ffe4e15fde26e43812a3809fbaa3a8974c0a7cb6c5677985dbe8e46f782/detection
+
+kiht.felehton.ga
+
+# Reference: https://twitter.com/malwrhunterteam/status/1253345383163613184
+# Reference: https://www.virustotal.com/gui/file/00185cc085f284ece264e3263c7771073a65783c250c5fd9afc7a85ed94acc77/detection
+
+185.19.85.182:7310
+
+# Reference: https://twitter.com/abuse_ch/status/1255135289766363138
+# Reference: https://bazaar.abuse.ch/sample/4723ab5ed01fb642eb602ff59309d4d698e6011145ca1b757bb223b5a67fe159
+
+79.134.225.51:5147
+bhg.canadacentralregistrar.ca
+
+# Reference: https://twitter.com/malwrhunterteam/status/1260616207427928071
+# Reference: https://app.any.run/tasks/9b3c82f6-a2cc-465b-8958-be625d344f46/
+
+194.5.98.83:7310
+
+# Reference: https://twitter.com/James_inthe_box/status/1260634288044691456
+# Reference: https://www.virustotal.com/gui/file/6cf91b93dd7a3a6aca9878a5cf252af90000628486161243a086d6477d5d1f04/detection
+# Reference: https://www.virustotal.com/gui/file/d71ea69b5e2fa547ef05778e28b35398077e08f5a65aa2c38b46f1eddc78b373/detection
+
+54.39.221.47:3990
+pollianoammr22ja1.com
+secrfastexamplerepco998.info
+
+# Reference: https://twitter.com/James_inthe_box/status/1283740986087112705
+
+mikonsrebtlolli.info
+
+# Reference: https://www.virustotal.com/gui/file/828d51c52964a466fe6fc0fa5a1486c29493406b56e33314a6256487ea9d58c3/detection
+
+69.12.94.8:2233
+
+# Reference: https://www.virustotal.com/gui/file/7d82b25772cf7ffcdd2ba1db1f628ce7d931c0bb2861909f359f4b6c55a331c4/detection
+
+69.12.94.12:2233
+
+# Reference: https://www.virustotal.com/gui/file/6cf3ca79d3b6a05beb86f2641a03e9cb5cb8aa9cb085087830b5c27cf26a4fd1/detection
+# Reference: https://www.virustotal.com/gui/file/e3d9fba192a6ac072a26d8fe01bd46e588b8ac1a1884a9631bf065eda1030c4e/detection
+
+69.12.94.12:2555
+restreamnewsp1ot5s8.net
+
+# Reference: https://www.virustotal.com/gui/file/5ef891964f967642e02934a933984b6af3ba5043cac2bdc769d3296550a0f264/detection
+
+blupaycryptoexchange.com
+
+# Reference: https://www.virustotal.com/gui/file/f83198c03626e0cd56156ebe79ac221f9a875aa32a3a1aa783aba69f1df1e604/detection
+
+5.2.68.87:2111
+airgorobblelulu.tw
+
+# Reference: https://www.virustotal.com/gui/file/02343d32f41876a3ceaad992777865be673c9b331c018555ed135726f8ec0244/detection
+
+5.2.68.87:2555
+
+# Reference: https://www.virustotal.com/gui/file/95ecd030bb00219d1a549839f5b24d02b5fd3df7e967f8a38fceecb05cee5b1e/detection
+
+69.12.94.12:5550
+riposterpostnewapp.ml
+
+# Reference: https://www.virustotal.com/gui/file/c62e5304821abc306872ea97c88a8d7dc800f7b63380b2cf89153c639de4704c/detection
+# Reference: https://bazaar.abuse.ch/sample/c62e5304821abc306872ea97c88a8d7dc800f7b63380b2cf89153c639de4704c/
+
+69.12.94.12:9003
+rimi98wutsals.me
+
+# Reference: https://twitter.com/malwrhunterteam/status/1322141882516938753
+# Reference: https://www.virustotal.com/gui/file/d0dc216e6253b34bee652e5610a678235b5ff6f78b61a46455aa6d6d1969168e/detection
+# Reference: https://www.virustotal.com/gui/file/812ffdf59994608aafb5feabac1aa96c81a9af8de5f197d57c06b8f28b83aadc/detection
+# Reference: https://www.virustotal.com/gui/file/932265196175f2b8a3ac274ee1679119cf2bb7a5ee19fd359b7dc8bd258ae6a7/detection
+
+5.2.68.77:5550
+dudafersam1ina5ch8ilu.org
+hbreaspoksjdhzax8a1s5a.me
+
+# Reference: https://www.virustotal.com/gui/file/c2382986d2bacaacd5399abca6ba33ee39fec2e9f331b8493a7511bc23578adc/detection
+
+154.16.168.6:8910
+risptinshoppedtales193.ga
+
+# Reference: https://twitter.com/malwrhunterteam/status/1318505047102267394
+# Reference: https://www.virustotal.com/gui/file/ceb7af06283244c5fe9cba4e1c71013289d253229e15d68d6110fe9d19f3fa0d/detection
+
+5.2.68.77:2555
+jhpalettad158era.com
+
+# Reference: https://tria.ge/201127-133jlvst66/behavioral2
+
+179.43.166.58:2555
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1340590881804529670
+# Reference: https://app.any.run/tasks/bea35519-8b19-4c03-b62a-cb39afc96d66/
+
+51.195.57.228:2340
+cascapplxmain.ga
+
+# Reference: https://twitter.com/malwrhunterteam/status/1341713730623725568
+# Reference: https://www.virustotal.com/gui/file/8f9d53981687f9cb6b3e49f03565cdda8e4ca9ccce56122f435f8851d7425f2b/detection
+
+aprteb221ack.ga
+
+# Reference: https://twitter.com/malwrhunterteam/status/1351558775505879051
+# Reference: https://www.virustotal.com/gui/file/ac6a3cc9495a74bab45e1ef81bc4fec79dde5942547043629086937628fb321b/detection
+# Reference: https://www.virustotal.com/gui/file/eed8318b910689eafca6b4525253274aaea964bcb46a51f8c8033629d6d70e8f/detection
+
+5.2.68.115:8090
+cam3ik1ze9sre.co
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1354027942049968128
+# Reference: https://app.any.run/tasks/550f0f0c-43cb-4a3c-a2d6-6a0cea39fecb/
+
+5.2.68.115:2340
+madresakamikzre.pw
+
+# Reference: https://www.virustotal.com/gui/file/c0054f47a3edfcc977871a0e19413b9596ea15be86a338568333044ff10e07df/detection
+
+armatikamczparsll.co
+
+# Reference: https://app.any.run/tasks/32d37cb1-c5c7-4d78-99a3-20ddeb389428/
+
+saspkawaskioparls.pw
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1357292679378460680
+# Reference: https://www.virustotal.com/gui/file/3361515c7847b7f3aa44b45da30581ad9e5af35fdc2489ff95d312a3f4a5e4a7/detection
+# Reference: https://www.virustotal.com/gui/file/1f54c4b578cdcaf15c817f18ee715a8cf2b7944c44e268ae8fa8bc9427922bf2/detection
+# Reference: https://www.virustotal.com/gui/file/3e8962da569e1d2ab460b1713859a54d0f8f930a2b5113c95d109e94f231ecb0/detection
+# Reference: https://www.virustotal.com/gui/file/65b5b6932408f05edcbdf55630889e43b6dc105fa7f79d5949a83224c252a457/detection
+
+45.76.172.113:1331
+45.76.172.113:1336
+45.76.172.113:1339
+
+# Reference: https://twitter.com/malwrhunterteam/status/1362392047290834945
+# Reference: https://www.virustotal.com/gui/ip-address/5.2.68.114/relations
+# Reference: https://www.virustotal.com/gui/file/a4cad2ac92b79ee5a3c0b19e182832b2a6e3fd2ea731e65571561b0b307768a1/detection
+
+5.2.68.114:5555
+apopospmrte2021spm.info
+astrazetpcalfaspm.nl
+
+# Reference: https://www.virustotal.com/gui/file/89f0eed05def6bd2d4beb05d5e7021b866233cdb2e7e0ce61f785e41359fb233/detection
+
+faiterasianspmprlx.nl
+
+# Reference: https://twitter.com/vk_intel/status/1275997504702689282
+
+firestatedteam.com
+albaweatherstats.com
+
+# Reference: https://www.virustotal.com/gui/file/ebf0083ad227764b7963171f0c2d156f56ad5a5835ce1a74e3c85b4902b04695/detection
+
+51.195.57.232:5555
+granittloos.co
+
+# Reference: https://www.virustotal.com/gui/file/0cfa9021ddabb0a9f3306397234f3f19ce70da1082b4291bfe9477c974aebbec/detection
+
+caxxospmparllxmigo.nl
+
+# Reference: https://www.virustotal.com/gui/file/d4b6d8677ede31f299e565034f3d29009cb73910b6e156768f8e2e47649ede1d/detection
+
+103.92.29.151:6100
+
+# Reference: https://www.virustotal.com/gui/file/c7ef0948c014456a5ca8aa1d06114135720bfd540611ba7c2d5dd7898e1c46a9/detection
+
+borelli1spa.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/762d0dd4af7de2c8518562a993bb4203e0bbf01ef58a23df5fb12e37191e21c7/detection
+
+45.146.164.111:20190
+
+# Reference: https://www.joesandbox.com/analysis/781293#iocs
+# Reference: https://www.virustotal.com/gui/file/385eb4274de2282360a7010b5739769fb6dd69a889626c0fddc6a3a6d4c1251f/detection
+
+5.2.68.82:8090
+strattonprlxmaespm.com
+
+# Reference: https://www.virustotal.com/gui/file/8c6e507be687fd725cf66f3a4d405a43fc575a275024a5ed164e90b873fe447c/detection
+
+5.2.68.82:5555
+parallspmcachire.nl
+pigghiamlnwwe.nl
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1419955740903620648
+# Reference: https://www.virustotal.com/gui/ip-address/51.195.57.229/relations
+# Reference: https://www.virustotal.com/gui/file/9ccce653cb66833e9396151f5bc65f6c2744d955a9eaedad81eccd3da252803e/detection
+# Reference: https://www.virustotal.com/gui/file/5b9eef2199515e5bf4cd00a176b35747f8bc9984183213fec864aca2c1918a70/detection
+# Reference: https://www.virustotal.com/gui/file/df3dabd031184b67bab7043baaae17061c21939d725e751c0a6f6b7867d0cf34/detection
+
+51.195.57.229:2340
+51.195.57.229:5555
+51.195.57.236:2340
+bragaporcts.nl
+butbuydayfulti.nl
+maniaurubarprlxspm.nl
+
+# Reference: https://www.virustotal.com/gui/file/c5fb479351f4f11f64ef25d1efbf2332ecee7c61894e72db4e5546e44597be9e/detection
+
+akakanewssport1p9o3.ml
+
+# Reference: https://www.virustotal.com/gui/ip-address/51.195.57.226/relations
+# Reference: https://www.virustotal.com/gui/file/711b290f317b1daf9c0b0e3662ca2f14b3c1d4234f60ec25f9a236734636abbd/detection
+
+51.195.57.226:2340
+51.195.57.226:4480
+51.195.57.226:5555
+apatapisroulanttech.to
+apaterpateriomar.ml
+apato98tresanew.best
+apato98tresanew.xyz
+base98ballspotret.monster
+jewtsftwefd221hulok.com
+mandfaers221ldfk.info
+mazzacarrarak22j1.info
+parallpo98sspotsede.xyz
+parslx98twerrm.me
+pollianoammr22ja1.com
+remipo98sspotsede.com
+remipo98sspotsede.me
+retespizzastown.se
+rimi98wutsals.info
+rimme2s2mcos1.info
+tyttyarussi22m1n.info
+
+# Reference: https://www.virustotal.com/gui/file/ebf0083ad227764b7963171f0c2d156f56ad5a5835ce1a74e3c85b4902b04695/detection
+
+51.195.57.232:5555
+
+# Reference: https://www.virustotal.com/gui/file/26ba40a83c4dd2e31ae8d1cd1595cc9723cad21a4ee2f7c54d422350bce7effb/detection
+
+51.195.57.232:2340
+
+# Reference: https://www.virustotal.com/gui/ip-address/51.195.57.232/relations
+
+amimegutadowntown.com
+gaggiredaseprspm.com
+lukatobarespmparllx.co
+pallaspospmtaccaxa.pw
+recursiveredlmare.info
+xaoxiamiokongtantwrspm.pro
+
+# Reference: https://twitter.com/Malwar3Ninja/status/1423229743860645892
+# Reference: https://www.virustotal.com/gui/file/40ec98b570a94ad97200616b1bbb955d0aaa1f6edb5b26150ee73422c7d801f1/detection
+
+78.189.177.240:5000
+888myrat.duckdns.org
+
+# Reference: https://tria.ge/211006-qf3rsabbd4/behavioral1
+
+51.195.57.240:200
+ac121spsp.best
+
+# Reference: https://www.virustotal.com/gui/file/bc2cea17da33c23edbb0c86ab00b3ec3b4a2f4da84fb075922e41b7bf6b654f0/detection
+# Reference: https://www.virustotal.com/gui/file/cc35aa4ec7f4c7bf0bcd6f5137dfd353483267f0802d65eaf00e2f577a7047cd/detection
+
+195.140.215.120:9091
+hyui.org
+
+# Reference: https://tria.ge/211209-hwhsjsahh7/behavioral1
+
+kamikazemanager99.com
+
+# Reference: https://www.virustotal.com/gui/file/f0b3b36086e58964bf4b9d655568ab5c7f798bd89e7a8581069e65f8189c0b79/detection
+
+51.195.57.232:6080
+inpsaslimutari.com
+
+# Reference: https://www.virustotal.com/gui/file/109bfdae8e4393f6e61239d25b21cd4d457f8145a52984f7b6275a9da37ccffb/detection
+
+51.195.57.232:4000
+
+# Reference: https://www.virustotal.com/gui/file/f809d1923bb31c5a9a69d6954d92b04b76563688dd1018e68fce7d184505032c/detection
+
+51.195.57.232:3369
+
+# Reference: https://www.virustotal.com/gui/file/59b32a628b401bd18d4cdec9786cefae50a820d7b415610d9f9fc45574f615a1/detection
+
+51.195.57.232:8090
+
+# Reference: https://www.virustotal.com/gui/file/41ae4a22dbe73a3263a6556f0dd96a1e12909b23b69c9f93f3e86a5821aaa0ed/detection
+
+23.19.58.166:21501
+volc.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/01536060221b0484f233afadcd68ec1b182a184a5dde7868dd5a104a3cd5f6f1/detection
+
+80.85.156.209:8080
+
+# Reference: https://tria.ge/220506-jwjkhsheh7/behavioral1
+
+45.137.22.227:34645
+
+# Reference: https://www.virustotal.com/gui/file/03c2e8ccdc82eef8e5b5cd42ce591290e1c005f4d7e57ed818a12781282b1eb0/detection
+
+51.195.57.232:20190
+spaceworldappmacl.pro
+
+# Reference: https://www.virustotal.com/gui/file/d853393d45fc7123238bf7ce1cc87fbf72fe8aa757a8a3b9b77cd020f3327a25/detection
+
+149.28.114.92:443
+
+# Reference: https://www.virustotal.com/gui/file/3773a9f05b80cdbf5e6700ee8933cbac9c2955ee8a310d3cd79fbfc93132053b/detection
+
+http://149.28.114.92
+
+# Reference: https://www.virustotal.com/gui/file/1ed708d6db1322e85354b69bc835239f87a86edc73a8bce297214633698ef17f/detection
+
+149.28.114.92:29381
+
+# Reference: https://www.virustotal.com/gui/file/0d826eebb797ee5a20cc4d1dec19a5dcf713c43a3516024374e3add64c2b1e06/detection
+
+185.215.113.33:8875
+premiumfonts.net
+
+# Reference: https://www.virustotal.com/gui/file/ae867993da07d019454a6c7605b468fbd67ea6cc534c6a1610bc081a89440d63/detection
+
+185.65.135.169:54982
+
+# Reference: https://www.uptycs.com/blog/cryptocurrency-entities-at-risk-threat-actor-uses-parallax-rat-for-infiltration
+# Reference: https://otx.alienvault.com/pulse/640207a620d11fe38b78ef63
+# Reference: https://www.virustotal.com/gui/file/81b24e7846b6b3b27da6eaa4eeed89574bc1c1bdd847ba1650f28aaff8de311f/detection
+
+http://144.202.9.245
+
+# Reference: https://www.virustotal.com/gui/file/bc20f2645eb502cb91f6d52bfe5ae589acf2169a17529ea069e111590f882587/detection
+# Reference: https://www.virustotal.com/gui/file/24e20b764b18e29f1004f4e00975d58588f6d1e9ac02dc1e12373df5b48178c2/detection
+
+37.0.11.178:1178
+barbaram.dynip.online
+
+# Reference: https://twitter.com/James_inthe_box/status/1689027430668025856
+# Reference: https://twitter.com/Jane_0sint/status/1689159905247215616
+# Reference: https://app.any.run/tasks/65a9b249-82f1-41f0-aa5c-ffb132cfd0e8/
+# Reference: https://www.joesandbox.com/analysis/1288111/1/html#network
+# Reference: https://www.virustotal.com/gui/ip-address/5.8.18.42/relations
+# Reference: https://www.virustotal.com/gui/file/fbf003e40568ccf053e2abd44541c8a2da441970e6e59231612de39ee0d0273e/detection
+# Reference: https://www.virustotal.com/gui/file/27b642f76bef353065bb7643f082547b8df2817e1403646ec231744a36f1e292/detection
+# Reference: https://www.virustotal.com/gui/file/55de849673b3d780491bb00996943f1914de77692b1218e798821fe8c22ea55c/detection
+
+http://5.8.18.42
+texasgrudgecompany.com
+
+# Reference: https://app.any.run/tasks/d4d2d091-600a-414f-850a-c042f0c74777/
+# Reference: https://app.any.run/tasks/ee1a800c-2be4-414f-af47-29528ce35dcb/
+# Reference: https://app.any.run/tasks/4f3a5237-ea90-4d9b-a9cb-39176e3c4792/
+
+185.140.53.62:8141
+185.174.40.60:4181
+45.125.239.115:4181
+somsoammr.duckdns.org
+spmflc.duckdns.org
+
+# Reference: https://app.any.run/tasks/1f00f0dc-aa02-4bdc-a596-9cb985d8684e/
+
+luckysuccessprime.cc
+
+# Reference: https://app.any.run/tasks/e9320572-d324-47b0-8143-29eae8e68e22/
+# Reference: https://app.any.run/tasks/cfded501-c986-4b74-b2fa-12327194b0f8/
+# Reference: https://app.any.run/tasks/f028a0af-d0b0-49bb-b1ab-a78bb0b9ce85/
+# Reference: https://app.any.run/tasks/749b9880-1bec-42b5-8c00-12aacc0a7329/
+# Reference: https://app.any.run/tasks/9b3c82f6-a2cc-465b-8958-be625d344f46/
+
+194.5.98.43:7310
+194.5.98.83:7310
+194.5.98.98:7310
+23.105.131.227:7310
+23.105.131.252:7310
+
+# Reference: https://app.any.run/tasks/e409e72c-fd06-4f49-9a3f-c46d1db4c0d0/
+
+91.92.144.36:7333
+faremenazizu.ml
+
+# Reference: https://app.any.run/tasks/3920742a-c81f-498f-9c18-608c9c13c582/
+
+205.185.117.227:2550
+parrallax2.com
+
+# Reference: https://app.any.run/tasks/7d90b06a-b75e-485b-875b-af48711475f4/
+
+207.246.100.105:20190
+
+# Reference: https://app.any.run/tasks/09fd0344-1cf2-412e-8183-d678b019b36a/
+
+51.195.57.236:3990
+rottinculospattha.pw
+
+# Reference: https://app.any.run/tasks/6fef4bac-01ec-4e27-b923-8a7565c63ac2/
+
+51.195.57.233:6080
+trostryprllspmret.co
+
+# Reference: https://app.any.run/tasks/4406907a-646a-45f4-8fa6-06fded2c9286/
+
+51.195.57.236:5555
+
+# Reference: https://app.any.run/tasks/1e5ba1f3-f5fe-4088-afaf-7fe444a6bb4f/
+
+185.65.134.182:4747
+
+# Reference: https://app.any.run/tasks/e1fee7bc-8a72-481d-9f66-9d7065c5a767/
+
+51.195.57.233:20190
+matricianebpk2mas.pw
+
+# Reference: https://app.any.run/tasks/c03b186d-121d-4ab4-b8cd-722f10af7310/
+
+51.195.57.233:200
+wecp91bsp.com
+
+# Reference: https://app.any.run/tasks/789c84b4-f343-47bf-97ef-cacddaaf7647/
+# Reference: https://www.virustotal.com/gui/file/c4ca06766b0b2f5a7aeb24aa39d3b3695bcbe94b96a506dd9950e795064d875c/detection
+
+5.157.42.9:6080
+5.2.68.94:6080
+amarkilopaccasa.info
+
+# Reference: https://app.any.run/tasks/2532590c-ca79-4c3b-802b-a4b6b486f768/
+
+fetchdesignprint.co.za
+
+# Reference: https://app.any.run/tasks/f8fb4fec-5538-4df7-b528-330c990bf572/
+
+dienmay01.maudemo.com
+
+# Reference: https://www.esentire.com/blog/unveiling-parallax-rat-a-journey-from-infection-to-lateral-movement
+# Reference: https://otx.alienvault.com/pulse/6564bdc3ca670f9b0d224d84
+
+apipkg.click
+fortionlinevpn.com
+startus1.com
+startus2.com
+websyncapi.click
+websyncapi.eu
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/security-brief-tis-season-tax-hax
+# Reference: https://www.virustotal.com/gui/file/f6c901d8959b26428c5fbb9b0c4a18be2057bb4d22e85bfe2442c0a8744a9ff6/detection
+# Reference: https://www.virustotal.com/gui/file/eaf62f8007f763d1ebf4218fbf4d56ac771a4d445e93b963d1f136d4ce09f85b/detection
+
+193.142.146.101:20190
+charitytechw.com
+2023-w2.web.app
+g3w2host.web.app
+redirectit1.web.app
+sacmuo.web.app
+uploadfile2024.web.app
+/Knitste12
+
+# Reference: https://www.virustotal.com/gui/file/1b974834381da5b8ebec79ebaf038ba56fe574c121b0fc21458df4554d5a54be/detection
+
+176.113.81.61:8818
+aceid.cc
+
+# Reference: https://www.virustotal.com/gui/file/77577554473fa4e6edaab6aaffc2e5f766413866a6965cde6fe1cb526e7fd1df/detection
+
+195.10.205.75:5000
+/build/janmaslak
+
+# Reference: https://x.com/malwrhunterteam/status/1999436675316097263
+# Reference: https://www.virustotal.com/gui/file/be4cb40066c72827f2bf393b79c8b3f3cf135ae38cb33c919d3147d669d634a2/detection
+# Reference: https://www.virustotal.com/gui/file/8b6298cc5c50416b8ad4d792b9d09ba9b96ea9b474e8d9101db519cbcb6efdf7/detection
+# Reference: https://www.virustotal.com/gui/file/6338efe5267a3fc6a77d1a2d4378345ff512f5fe935c26c060bb9def97ebd354/detection
+# Reference: https://www.virustotal.com/gui/file/3348dbfa371efc25187b13641718fc93faafbc41571cc480b99ecbd54091e4c6/detection
+
+service-template0000.click
+service-template0000.dad

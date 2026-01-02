@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: bofamet stealer
+
+# Reference: https://x.com/solostalking/status/1937841436029812974
+# Reference: https://app.validin.com/detail?find=BOFAMET%20-%20%D0%90%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F&type=raw&ref_id=d42eb768314#tab=host_pairs (# 2025-06-25)
+
+147.45.45.122:8000
+193.233.113.69:8080
+34.88.148.229:8000
+
+# Reference: https://x.com/Fact_Finder03/status/1942126944100704355
+
+185.244.50.145:8080
+83.217.209.205:8000
+
+# Reference: https://x.com/Fact_Finder03/status/1942459621458719086
+
+217.144.189.8:8000
+
+# Reference: https://x.com/suyog41/status/1947203084700295478
+# Reference: https://www.virustotal.com/gui/file/598d912753e11a710294823f8154ceda4bcebc964dc52c18b961022f00101697/detection
+
+45.86.155.150:6368

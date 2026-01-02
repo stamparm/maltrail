@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: dior stealer
+
+# Reference: https://x.com/AUZombie/status/1985505524755079328
+
+diorstealer.com

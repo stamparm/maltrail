@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/albertzsigovits/status/1182265192312430597
+# Reference: https://app.any.run/tasks/62b53f5c-dc2d-4fd4-938f-9b269d8ad14c/
+# Reference: https://app.any.run/tasks/bf24b0d8-6eda-455e-80fc-226370fce0f9/
+
+stoneszx.com
+
+# Reference: https://twitter.com/albertzsigovits/status/1186255610163187714
+# Reference: https://www.virustotal.com/gui/file/ef6e5043196ec72a97eeed1e2f3e8d68b41d5061b17daba00a2014d013bd9de5/detection
+
+logover.su
+
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-23, Eredel)
+
+morgen.zzz.com.ua

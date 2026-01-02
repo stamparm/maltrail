@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: kiefgrabber
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1408662426493534211
+# Reference: https://www.virustotal.com/gui/file/644a9e06b6e9864873bf9c6e09bff07099e628d8b8c02e63d2c68998de6ca344/detection
+
+monster.casa
+
+# Generic
+
+/grabberstr
+/kiefgrabberstr
+/grabberstr?webhook=
+/kiefgrabberstr?webhook=

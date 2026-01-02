@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://news.drweb.com/show/?lng=en&i=13315&c=9
+# Reference: https://github.com/DoctorWebLtd/malware-iocs/tree/master/Trojan.MonsterInstall
+
+cortel8x.beget.tech
+reserve-system.ru
+s44571fu.bget.ru
+xyi-sosi-guboi-trisi.xyz
+cherry-pot.top
+corteli.com

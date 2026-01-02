@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/solostalking/status/1991814758283264272
+# Reference: https://x.com/solostalking/status/1993203430673072576
+# TITLE-IP=OctoRAT Center - Control Panel
+# TITLE-IP=OctoRAT Center - Login
+
+134.195.88.129:8000
+158.94.210.52:8000
+158.94.210.76:8000
+172.86.73.44:8000
+178.16.55.109:8000
+212.15.49.243:8000
+51.38.196.118:8000
+51.38.250.193:8000
+51.68.244.182:8000
+91.206.169.80:8000

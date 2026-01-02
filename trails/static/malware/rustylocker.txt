@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: rusty ransomware
+
+# Reference: https://x.com/mrglwglwgl/status/1997808192555032723
+# Reference: https://x.com/fbgwls245/status/1998322159672783211
+# Reference: https://www.virustotal.com/gui/file/613d4d0f1612686742889e834ebc9ebff6ae021cf81a4c50f66369195ca01899/detection
+# Reference: https://www.virustotal.com/gui/file/6e93d63053f03a1309628fdb267b45a30f81ebfdd1334b477697f5654ba7e9d5/detection
+
+rustyb2uj3aceqsouwei6rgrwvcpnwv7w4fkl5jdntryquabx4nlygyd.onion
+rustydl5ak6p6ajqnja6qzkxvp5huhe4olpdsq5oy75ea4o34aalpkqd.onion
+rustydxbsjmroied7cysqueazwpreyssngzogro67mzuboqprrs5liyd.onion
+rustye6pskjsu5vo2wlxg24ir3esf6jzcis7asgfgqltja6nr5cvjlad.onion
+rustyfso7zdjlhf3ukdj34pvq6gjnlz3ci6cyv5wun53ilzvvjo4bdad.onion
+rustyi5lcri2qaulc4g3l3itk6h4q47bu2kmxglqaihp52vzub7b27yd.onion
+rustynosqxg6f4rurkfj5qjplvcxgmxcq55e5uv4tvtrp4wgaz6ycqid.onion
+rustypiwiusst2zptoervivs4x3i2vvabd7jok5j5wae6upjdyxt5eid.onion
+rustyr2t5slcn66cnbiawdmledjog5ywlh2jnbmteijflxnel4h3dwyd.onion
+rustyshyjstdvkiffwl4pif7f6jrpzmhcnv2qcrtxn4ivnn2berxreid.onion
+rustyunet6zp35koogizqixpnn66fcz6ilosugnydhso6r6uerlgfzyd.onion
+rustyvkrpehhq7x2ellti6oa43mwwvdpsf3e7maddkhtmjxfgyp2rjqd.onion
+rustywua527xyupr5vqqaigvjgnkvibp3ugv2utjx7zoopat7yzfpgqd.onion
+rustyzoc5hc2mre56ug7lacant25o2gepoto3vghiajll4uw6cotmnqd.onion

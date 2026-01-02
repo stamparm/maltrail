@@ -1,0 +1,64 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/dateutil/dateutil/issues/984
+# Reference: https://otx.alienvault.com/pulse/5de6cb3b3b9daebee880eaba
+
+68.183.212.246:32258
+
+# Reference: https://twitter.com/blackorbird/status/1291016332905869312
+# Reference: https://mp.weixin.qq.com/s/dkPdXfGfSK097GI6Ln92lA (Chinese)
+# Reference: https://www.virustotal.com/gui/file/5f39c11b66c6a884347d71414046ccb6eb02676b151634a93d2a3672cd542441/detection
+
+199.247.5.158:3500
+dexy.top
+
+# Reference: https://twitter.com/DataNerdery/status/1366263351685226499
+# Reference: https://github.com/pypa/pypi-support/issues/923
+
+http://101.32.99.28
+
+# Reference: https://twitter.com/ESETresearch/status/1734525158600179844
+# Reference: https://www.welivesecurity.com/en/eset-research/pernicious-potpourri-python-packages-pypi/
+# Reference: https://github.com/eset/malware-ioc/tree/master/pypi_backdoor
+# Reference: https://www.virustotal.com/gui/file/0e8ed0c02275824da54dbf82cbc408460728ab0d1f5cdbb5285241f7716208a2/detection
+# Reference: https://www.virustotal.com/gui/file/104a5192cf032cee44b732d33458a27909cef45d7391e092b9c13acd5779bb39/detection
+# Reference: https://www.virustotal.com/gui/file/d06bdd15007a8594a8b7598cc5282969b1231c77e096b4e3fafeb97b3a278022/detection
+# Reference: https://www.virustotal.com/gui/file/91a12f012f91f97d5afcae217a0afafa122a058634f4c1e4f22c21f7598a361d/detection
+# Reference: https://www.virustotal.com/gui/file/ae3b32d20a391ed757ad441ffcb60908574ef4e231ba682929096365c13902c8/detection
+# Reference: https://www.virustotal.com/gui/file/d06bdd15007a8594a8b7598cc5282969b1231c77e096b4e3fafeb97b3a278022/detection
+# Reference: https://www.virustotal.com/gui/file/d1f7bc8e97e5621bea311692e930208edc63aa6f07a514feee3afe4373ac5559/detection
+
+204.152.203.78:5051
+204.152.203.78:5057
+204.152.203.78:6001
+204.152.203.78:6003
+sharesync.in
+blazywound.ignorelist.com
+
+# Reference: https://www.fortinet.com/blog/threat-research/malicious-pypi-packages-deploy-coinminer-on-linux-devices
+# Reference: https://www.virustotal.com/gui/file/f2b8efdee58873af84285e5f5e60ab8ca151c80cd16a1214a2a80bf4fd44d68a/detection
+
+papiculo.net
+
+# Reference: https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/
+
+136.243.156.120:53252
+210.117.212.93:4242
+
+# Reference: https://checkmarx.com/blog/over-170k-users-affected-by-attack-using-fake-python-infrastructure/
+# Reference: https://www.virustotal.com/gui/ip-address/162.248.100.117/relations
+
+pypihosted.org
+files.pypihosted.org
+
+# Reference: https://x.com/1ZRR4H/status/1802152702958346559
+# Reference: https://www.sonatype.com/blog/pypi-crypto-stealer-targets-windows-users-revives-malware-campaign
+# Reference: https://www.virustotal.com/gui/file/c9261c2d25020dbbf95988b92da70bbda552edf74834fd50ba9c7968798f4f52/detection
+# Reference: https://www.virustotal.com/gui/file/805df7cf2d5e364ed512286df545331a5e87d694a2b17dcfbead229a0da70139/detection
+# Reference: https://www.virustotal.com/gui/file/70e015e1c3763d31d20f5458c7013818f4a569b2017be24701be82edd5182cd7/detection
+# Reference: https://www.virustotal.com/gui/file/5d69ff956eb9f1086150739d26f417b9d8327b9eb4bab8a04d5ed3e5d5eb2cf5/detection
+
+51.77.140.144:8086
+83.143.112.61:8086
+api-hw.com

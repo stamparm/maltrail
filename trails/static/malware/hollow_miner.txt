@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/almost-hollow-and-innocent-monero-miner-remains-undetected-via-process-hollowing/
+
+39.99.146.107:47905
+37.187.154.37:4466

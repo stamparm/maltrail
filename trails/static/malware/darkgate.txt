@@ -1,0 +1,1662 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: darktrack, xegumumune
+
+# Reference: https://blog.ensilo.com/darkgate-malware
+
+akamai.la
+hardwarenet.cc
+ec2-14-122-45-127.compute-1.amazonaws.cdnprivate.tel
+awsamazon.cc
+battlenet.la
+a40-77-229-13.deploy.static.akamaitechnologies.pw
+
+# Reference: https://twitter.com/malwrhunterteam/status/1250477548414304258
+# Reference: https://app.any.run/tasks/6292fe0e-1d52-4363-ad99-2bc17abcf4ac/
+# Reference: https://www.virustotal.com/gui/file/35b3e9058bd8d6c6c23e01f71824e863903ba45eda62a86e528fbc41d5fd07d7/detection
+# Reference: https://www.virustotal.com/gui/file/6ba3ade54002646ddfdde55bfb1713cbc3f10709da264bb297405f91dd67b003/detection
+# Reference: https://www.virustotal.com/gui/file/30ced29862d6267e7710952d3b0d49884ae4bce99c9a3b93af0ea5f158b66569/detection
+# Reference: https://www.virustotal.com/gui/file/1d4623bb03f45717ca386a76d127b246ecffb2d7e07a2a9d776921982816d61b/detection
+
+http://185.214.10.220
+185.214.10.220:443
+185.214.10.220:53
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1683827058508550148
+# Reference: https://app.any.run/tasks/49bab573-cdf6-456f-b34c-287a22500f44/
+# Reference: https://www.virustotal.com/gui/file/394ee7c88a0925698ce1a2e0268ca49404591eb5cdd961d657d785993212cd86/detection
+# Reference: https://www.virustotal.com/gui/file/54f52ef506f6649c09838b9935aed223f0f320798e13fdb9541ffd1db3e08816/detection
+
+80.66.88.145:2351
+80.66.88.145:7891
+80.66.88.145:9999
+
+# Reference: https://twitter.com/1ZRR4H/status/1689586968697696256
+# Reference: https://twitter.com/banthisguy9349/status/1734308795445022874
+# Reference: https://www.virustotal.com/gui/file/8a93eabf56949eb69dc5c81a39645fec215d967d126751a8bb72e2f90a3c41c7/detection
+# Reference: https://www.virustotal.com/gui/file/5be83d13f20b4a044a8c8281d13723a808555cdd73a7ddcec37422a4e44fbd4e/detection
+
+http://178.33.94.35
+178.33.94.35:5864
+178.33.94.35:7262
+178.33.94.35:9999
+sanibroadbandcommunicton.duckdns.org
+
+# Reference: https://twitter.com/Gi7w0rm/status/1693432581583184029
+# Reference: https://twitter.com/aaqeel87/status/1693538456138363178
+# Reference: https://twitter.com/fr0s7_/status/1693577768762569192
+# Reference: https://tria.ge/230821-bb4qysaa78/behavioral2
+# Reference: https://tria.ge/230821-bcdwxsaa79/behavioral1
+# Reference: https://www.virustotal.com/gui/file/b1c0cde97930bbfd18ca72f10db85ab335e87a72b685f59ded5f34f3476397ce/detection
+# Reference: https://www.virustotal.com/gui/file/3aa8199d973e136fef73bdca391b460b7498c3625d9c0ffd607df325425bf85e/detection
+
+http://107.181.161.200
+107.181.161.200:443
+107.181.161.200:9999
+/msiffbjzugu
+/msihhlojhlc
+
+# Reference: https://twitter.com/AnFam17/status/1693508605855580225
+# Reference: https://www.virustotal.com/gui/file/14f5e6c5c7e02acf97a44e476850c5c3df08057f6b93a5aae298d98e6a4dcfe4/detection
+
+http://80.66.88.145
+80.66.88.145:2844
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.darkgate/
+
+149.248.0.82:2351
+178.63.53.44:2388
+179.60.149.3:2351
+179.60.149.3:9999
+185.173.36.98:2351
+80.66.88.145:2352
+80.66.88.145:2840
+80.66.88.145:2842
+80.66.88.145:2843
+
+# Reference: https://twitter.com/malwrhunterteam/status/1696458428221116509
+# Reference: https://twitter.com/fr0s7_/status/1696463467740307524
+# Reference: https://www.virustotal.com/gui/file/d837d25f20a7dbc969f83d1d9a5d3c72927c7ce0e24621ff91b88d0b9501e37b/detection
+
+5.188.87.58:2351
+5.188.87.58:9999
+/kzbrotjb
+/msivfzuxqjo
+/vfzuxqjo
+
+# Reference: https://www.virustotal.com/gui/file/540af6e934c1568893a2341f6604fb3b8905f7f02bb201bb01adfcf7ec43c146/detection
+
+185.12.14.32:1515
+
+# Reference: https://www.virustotal.com/gui/file/b8e739d6e8918493e3991524f597ece6b66a6f7dc163188cd2c46595e1ae16e4/detection
+
+185.12.14.32:666
+
+# Reference: https://twitter.com/h2jazi/status/1696561706313379968
+# Reference: https://www.virustotal.com/gui/domain/diskonline.net/detection
+
+diskonline.net
+
+# Reference: https://github.security.telekom.com/2023/08/darkgate-loader.html
+# Reference: https://otx.alienvault.com/pulse/64f09671ab42514bf1db37a3
+# Reference: https://www.virustotal.com/gui/ip-address/185.8.106.231/relations
+
+a-1bcdn.com
+drkgatevservicceoffice.net
+exemsi.com
+intranet.mcasavaya.com
+onlysportsfitnessam.com
+reactervnamnat.com
+xfirecovery.pro
+
+# Reference: https://www.virustotal.com/gui/file/55e5eafcbdb547dd2ebf3d7c51f3f2bd525f1ab1a518c4edc382901c854e91a6/detection
+# Reference: https://www.virustotal.com/gui/file/2095c0c7d5fa33244ce6637beeafa3f2b2cb3b2ae85e285eaea4ddecb83189a6/detection
+
+http://45.89.65.198
+45.89.65.198:9999
+/msidkbkejlq
+/msilrajnmvn
+
+# Reference: https://twitter.com/r3dbU7z/status/1697311330619859226
+# Reference: https://www.virustotal.com/gui/file/a8eed563dfc4c42a1f4aae628df948566bceda3aa3297eb61647156a52737e6f/detection
+# Reference: https://www.virustotal.com/gui/file/65927b3d364e4da4d1ca4005bdce57f83927e6414c8c13298d22a870981fa777/detection
+
+http://88.99.105.55
+198.167.212.168:2351
+198.167.212.168:9999
+198.167.212.197:2351
+198.167.212.197:9999
+198.167.212.236:2351
+198.167.212.236:9999
+88.99.105.55:2351
+88.99.105.55:9999
+evil.gift
+
+# Reference: https://gist.github.com/kirk-sayre-work/48a31b90e830a57adf5f3cf3726fe0d2
+
+wmnwserviceadsmark.com
+/bfyxraav
+/msiaybguqux
+/msiccoakvdg
+/msicvmskumh
+/msihlxovvqy
+/msijguavgpg
+/msikywiobng
+/msilrqozizy
+/msimqrqcjpz
+/msivwrwqepo
+/msixrtxvifv
+/msiwbzadczl
+/nhydgluw
+/wbzadczl
+
+# Reference: https://twitter.com/0xToxin/status/1701883445708771822
+# Reference: https://www.virustotal.com/gui/file/00985db874d9177de4a18999f7a420260b3a4665ba2b5b32aa39433ef79819df/detection
+
+158.160.81.26:2351
+158.160.81.26:9999
+zochao.com
+
+# Reference: https://twitter.com/AnFam17/status/1701963227955945552
+# Reference: https://www.virustotal.com/gui/file/1fd0757735263ab5a567fd7710cf66d55544c6f5e5b7adf11539a73b7c3c0b86/detection
+# Reference: https://www.virustotal.com/gui/file/4c33d08932b11c344a41d1798290156273c7ab90ff3b2e19a901d0df8bbad24e/detection
+# Reference: https://www.virustotal.com/gui/file/ad69260c01893e83429a85d3e9e75d28f1c6ba3fb7190799af09afe27d4193e9/detection
+# Reference: https://www.virustotal.com/gui/file/ad69260c01893e83429a85d3e9e75d28f1c6ba3fb7190799af09afe27d4193e9/detection
+# Reference: https://www.virustotal.com/gui/file/d28a4e5d6cb5c2d08468fff1d181c4b2a3efb708d500e8df2276da9f4743bbd8/detection
+# Reference: https://www.virustotal.com/gui/file/2e1e2e480f4fe00a18433af359c5025be4b28237cb3cf783f3cbb9900b9d5004/detection
+
+45.141.87.89:9999
+bikeontop.shop
+dreamteamup.shop
+positivereview.cloud
+whatup.cloud
+/bclrlapx
+/druunpfp
+/gjeolrdz
+/ktzkdpqn
+/msibclrlapx
+/msidruunpfp
+/msigjeolrdz
+/msiktzkdpqn
+/msisqffxrpe
+/sqffxrpe
+
+# Reference: https://twitter.com/1ZRR4H/status/1702180254717022342
+# Reference: https://twitter.com/Cyber0verload/status/1703130207199129814
+# Reference: https://www.virustotal.com/gui/ip-address/158.160.81.26/relations
+
+katiklan.tech
+shamharouch.info
+
+# Reference: https://twitter.com/bigmacjpg/status/1702074924167299378
+# Reference: https://gist.github.com/kirk-sayre-work/dabdba72fac1b5c05784e9d7b33a374f
+# Reference: https://www.virustotal.com/gui/ip-address/5.2.68.76/relations
+# Reference: https://www.virustotal.com/gui/file/17c56962bb463b1c3114667daba62419f312c4c0f5c27ab6692600cda729a322/detection
+
+antmanspshopsman.com
+antmanspshopsman.life
+coocooncookiedpo.com
+drkgatevservicceoffice.net
+msteamseyeappstore.com
+naserviceebaysmman.shop
+wmnwserviceadsmark.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/207.228.17.37/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.2.68.68/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.2.68.77/relations
+# Reference: https://www.virustotal.com/gui/file/18a0d947a4c46302099bd22516a25feb190fa10102b5a17f2529a832b24e9a89/detection
+# Reference: https://www.virustotal.com/gui/file/4d16a8c53aa578f2447def0cc1660f381824e37e15acef80b085385823536c34/detection
+# Reference: https://www.virustotal.com/gui/file/51352a550da2304a5bfd53ea0c8b12f36c1d36c6a06f1b4db955d4ccf2c80425/detection
+
+207.228.17.37:9999
+5.2.68.68:9999
+5.2.68.77:9999
+
+# Reference: https://twitter.com/1ZRR4H/status/1702230211826225323
+# Reference: https://twitter.com/DonPasci/status/1701342307658670209
+# Reference: https://twitter.com/ULTRAFRAUD/status/1702067641983119421
+# Reference: https://tria.ge/230911-zp39cabd92/behavioral1
+# Reference: https://www.virustotal.com/gui/file/9695f123c273711dea4ee0d79c915f5d17bed1cc1030ebb67b6453ca4a1cf1ef/detection
+# Reference: https://www.virustotal.com/gui/file/a9ee4f3dcb9ae9ef57d9677a899d5f1c011dcb17275e95baf87a869f4f3dadeb/detection
+
+178.236.247.102:27850
+178.236.247.102:9999
+advancedscannerip.com
+angryipscanner.net
+easywinscp.xyz
+openvpnhub.com
+winscphub.com
+putty-ssh.com
+
+# Reference: https://twitter.com/noexceptcpp/status/1702274371316797715
+
+advanced-ip-scainner.com
+advanced-ip-scannier.com
+tradingveiw-pro.com
+traiding-vieiw.com
+
+# Reference: https://twitter.com/TeamDreier/status/1702314915044995298
+
+handelsbankenchat.com
+
+# Reference: https://github.security.telekom.com/2023/08/darkgate-loader.html
+# Reference: https://www.virustotal.com/gui/file/449cd0c89be7aea4223ac17e1c5f7129344e53a6996971b6e88cbd2e0b904245/detection
+# Reference: https://www.virustotal.com/gui/file/bb37b05a34b2547941efdceee54ec8745e2ce7a7d5d0968c3b5c10274dc81880/detection
+# Reference: https://www.virustotal.com/gui/file/7551265227160a79bec4b60fecf8a14b7c8d5a460fe0872162479a3e7e48f8dd/detection
+# Reference: https://www.virustotal.com/gui/file/57d3c38951d34a39a6b32a5d450890571e6647098ea5dad59cf8831ffd358ae5/detection
+# Reference: https://www.virustotal.com/gui/file/4165601e3f6bd2857ab6a52f177255febf3b958c6ae58a905117d2f22c9b6859/detection
+
+185.143.223.64:2351
+185.143.223.64:9999
+5.34.178.21:2351
+5.34.178.21:9999
+89.248.193.66:2351
+89.248.193.66:9999
+avayacloud.com.global.prod.fastly.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1704231060865778097
+# Reference: https://www.virustotal.com/gui/file/97240a5b528433677bee9cc89e4f9fd7896bd77a30b0903b20bd6c9e3b23f694/detection
+
+http://185.130.226.95
+185.130.226.95:8080
+extinternal-cloud.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1704483766461173984
+# Reference: https://www.virustotal.com/gui/file/3af0a90d9a3cd77aa0353ec59bd8129fb799ee72daa6e61555c6228219385d43/detection
+# Reference: https://www.virustotal.com/gui/file/64e733d51b0e03957003f0b5e424efd1068f331226880e0c212de2c29b2a38d6/detection
+# Reference: https://www.virustotal.com/gui/file/1169c5ba2feae0192d2d8d45ce2fc3456bca1d6633d46b0f219bd62fddcca922/detection
+
+66.42.63.27:2351
+66.42.63.27:8080
+
+# Reference: https://twitter.com/suyog41/status/1704736895295770797
+# Reference: https://www.virustotal.com/gui/file/04a1c0e8cdb8449d0af5021e470a170de3be063e7646002048e7a3856abded2f/detection
+# Reference: https://www.virustotal.com/gui/file/19759c2d00ec0bf0480f8180790fe951704897a185ba19cde35e850ab00a8200/detection
+
+http://178.236.247.7
+http://178.236.247.73
+178.236.247.73:2351
+178.236.247.73:8080
+94.228.169.123:2341
+94.228.169.123:2351
+94.228.169.123:8080
+
+# Reference: https://www.virustotal.com/gui/file/01eb7b186d1035bf908cb1ec172489575ffeabd968a9049ead13ca046d382816/detection
+
+http://185.39.18.170
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-09-21%20DarkGate%20(url)%20IOCs
+# Reference: https://www.virustotal.com/gui/file/294fd94607187618c5646b38cd77dfd5170a13498bd0c29c3f4db4707e18ca09/detection
+
+http://45.144.28.158
+http://94.228.169.143
+94.228.169.143:2341
+94.228.169.143:2351
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-09-21%20DarkGate%20(PDFs)%20IOCs
+# Reference: https://www.virustotal.com/gui/file/0a1daf9cab1f5ca563dc40e1b76704d95a48cbee80aa517517bf01777bfd0077/detection
+
+http://5.42.77.33
+
+# Reference: https://twitter.com/pr0xylife/status/1705331101365891455
+# Reference: https://www.virustotal.com/gui/file/2eee7af95e457c97fb0bc3a91a00931c3c33e72f864e9bf4289565cba15ae484/detection
+
+http://5.42.76.197
+
+# Reference: https://github.com/Gi7w0rm/MalwareConfigLists/blob/main/DarkGate/darkgate_c2s_2023_09_25.txt
+
+http://5.188.87.58
+http://89.248.193.66
+http://94.228.169.123
+lampixx.hopto.org
+
+# Reference: https://twitter.com/naumovax/status/1706650967737876914
+# Reference: https://tria.ge/230926-kl1aysfh21/behavioral2
+# Reference: https://tria.ge/230926-kl1ayshb72/behavioral2
+# Reference: https://www.virustotal.com/gui/ip-address/192.185.209.192/relations
+# Reference: https://www.virustotal.com/gui/file/22415eade32f7fda78b169cf0451e5d354dc64f00bb2b592ecf0e61e83546f36/detection
+# Reference: https://www.virustotal.com/gui/file/e9a2c824d54b9aaa1b319c2a9ebcd060346de4f1264fe33f179db122eb4de706/detection
+# Reference: https://www.virustotal.com/gui/file/c46877388f85386b95a93ec2477139270c6e9be568d796e482c42a75e9f31687/detection
+# Reference: https://www.virustotal.com/gui/file/017404f2e1f30af124b18eee78b45780d9e4df3f01c16078970170963379a3f5/detection
+
+http://88.119.175.199
+http://94.131.106.78
+adam-xii-rpl.lifesimplle.com
+adam-xii-rpl.my.id
+cash-handling-app.lifesimplle.com
+cash-handling-app.my.id
+erwin-xii-rpl.lifesimplle.com
+erwin-xii-rpl.my.id
+onlytoday.lifesimplle.com
+stroongliife.lifesimplle.com
+vehicle-leasing.lifesimplle.com
+vehicle-leasing.my.id
+hostingbes.com
+
+# Reference: https://twitter.com/AnFam17/status/1706880089827291194
+
+thebesttime.buzz
+whereistime.buzz
+
+# Reference: https://github.com/pr0xylife/DarkGate/blob/main/DarkGate_27.09.2023.txt
+# Reference: https://www.virustotal.com/gui/ip-address/162.0.232.219/relations
+
+http://162.19.130.45
+http://84.246.85.121
+http://84.246.85.138
+
+# Reference: https://twitter.com/marqufabi/status/1707349541714800693
+
+nefzo.com/st/
+
+# Reference: https://twitter.com/Cryptolaemus1/status/1708869147688419507
+# Reference: https://github.com/pr0xylife/DarkGate/blob/main/DarkGate_01.10.2023.txt
+# Reference: https://www.virustotal.com/gui/file/8fa02af99bf10e756bc61dd214f3470ac85c2eb646c78f8fd2aa7932bc72c6bb/detection
+# Reference: https://www.virustotal.com/gui/file/3272bfd6a9c1b2110d9f493fa7902b7574d3c9a4c03481efeb0c5f3887fe3fc0/detection
+# Reference: https://www.virustotal.com/gui/file/1d7053102899df457b96b56671ac70ab69817bc1e97b96d42634a772d0d65995/detection
+
+http://136.244.92.148
+http://95.179.164.94
+http://95.179.241.172
+81.19.135.17:2351
+
+# Reference: https://twitter.com/1ZRR4H/status/1708923599107621064
+# Reference: https://twitter.com/1ZRR4H/status/1708926517730738487
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/battleroyal-darkgate-cluster-spreads-email-and-fake-browser-updates
+# Reference: https://www.virustotal.com/gui/file/7d4115e88411e7bcac9ed622dbb6554ff4015c6f9fed98a5427970ceada526e6/detection
+
+http://5.181.159.29
+http://79.110.62.96
+161.35.113.58:2351
+161.35.113.58:443
+5.181.159.29:445
+64.190.113.154:2351
+79.110.62.96:445
+greadeaoptimalle.com
+searcherbigdealk.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1709144034323665126
+
+http://185.225.75.67
+http://193.42.33.67
+http://194.180.48.144
+http://80.76.51.250
+http://94.156.6.6
+
+# Reference: https://twitter.com/1ZRR4H/status/1709358155912655196
+
+doomstreeyubun.com
+herbolikcsoonstreedj.com
+onlinesalesjerek.com
+onnlinebadroomstore.com
+rty777casinojoker.com
+
+# Reference: https://www.virustotal.com/gui/file/30e783a4a6fb580aa2075086a8d9a65e94cc7ac477735771ba4a03bf932b6c88/detection
+
+joagfhreetdsa.com
+
+# Reference: https://twitter.com/Tac_Mangusta/status/1711365259611484196
+# Reference: https://twitter.com/1ZRR4H/status/1711478745272303731
+# Reference: https://www.virustotal.com/gui/ip-address/162.33.179.65/relations
+# Reference: https://github.com/pr0xylife/DarkGate/blob/main/DarkGate_10.10.2023.txt
+# Reference: https://www.virustotal.com/gui/file/a595e3750f805ab59f28f5d32e37d2cc792b30149004506ec12138155db72f83/detection
+
+162.33.179.65:2351
+freedomsepter.com
+eugelens.com
+gertaret.com
+gertretans.com
+investmentlineup.com
+piret-wismann.com
+pointsdomer.com
+prestige-castom.com
+prestigiousdentistry.com
+starupsysteme.com
+trewisdert.com
+utefu6gkhb.com
+utphenter.com
+vintagecarsforlife.com
+wiinvestmentsmart.com
+wilenters.com
+ns1.freedomsepter.com
+ns1.investmentlineup.com
+ns1.starupsysteme.com
+ns1.wiinvestmentsmart.com
+
+# Reference: https://github.com/pr0xylife/DarkGate/blob/main/DarkGate_09.10.2023.txt
+
+162.33.178.63:2351
+195.211.98.105:2351
+81.19.135.139:2351
+81.19.135.139:8080
+getldrrgoodgame.com
+wilsoncallert.com
+
+# Reference: https://twitter.com/nahamike01/status/1711579010629882003
+# Reference: https://www.virustotal.com/gui/file/ebaaf85447b2381dcddf81aff916990168c7b5a3796af86d260a422f78d2c50b/detection
+
+cdn-ext.net
+thefortivpn.com
+
+# Reference: https://www.virustotal.com/gui/file/9921e057693d70d2f6bf13a04abf816c10fe209cff82cb533596ed313b9d2154/detection
+
+162.33.179.119:2351
+fredlomberhfile.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/85.209.11.135/relations
+
+albikolimbeznoeloz.net
+rayhenedeolekes.net
+safgabinirolez.com
+salyonefortunez.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1712256418483519885
+# Reference: https://www.virustotal.com/gui/file/9e101940dbd206578c80cc81888c2698a36a12f533361de8dde57aaf2307a3b6/detection
+# Reference: https://www.virustotal.com/gui/file/7097719cdc7b3061108c231dd081ecba1055bf9bf92c9232cb6b3f7fb3fac310/detection
+
+111.90.143.221:8080
+148.113.1.180:2351
+148.113.1.180:8080
+65.20.75.41:2351
+65.20.75.41:8080
+66.42.63.27:2351
+66.42.63.27:8080
+abcxzy.com
+vn.abcxzy.com
+vntricker.abcxzy.com
+
+# Reference: https://twitter.com/thehappydinoa/status/1712248302756933987
+
+148.113.1.180:2351
+162.33.178.63:2351
+185.130.227.202:2351
+195.211.98.105:2351
+54.39.198.245:2351
+94.130.49.223:2351
+
+# Reference: https://twitter.com/whichbuffer/status/1712397683820806598
+# Reference: https://www.virustotal.com/gui/file/5389e96b0a806fbf1d5772a49e7d7b9ab6cd0ef6fba6c2b098c4349491dcc0d3/detection
+# Reference: https://www.virustotal.com/gui/file/c4a7fd01029aa751b60b7163057176484c7a262f7e7f8cbed2fd4b0a0115be5e/detection
+
+54.39.198.245:8080
+darkie.org
+lmao.boutique
+
+# Reference: https://twitter.com/Gi7w0rm/status/1712510878351040774
+
+http://195.211.98.105
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2023-10-12-IOCs-for-DarkGate-from-Teams-chat.txt
+
+hgfdytrywq.com
+
+# Reference: https://github.com/pr0xylife/DarkGate/blob/main/DarkGate_13.10.2023.txt
+# Reference: https://www.virustotal.com/gui/file/f12d21bdf3eea879223737eb604feef8c0b15be9b48ad2b1d9d3b43117b0bb3e/detection
+
+http://212.113.118.178
+212.113.118.178:8080
+whoernet.co.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1713648985678954961
+# Reference: https://twitter.com/r3dbU7z/status/1713711055786889396
+
+http://163.123.142.175
+http://5.252.177.24
+
+# Reference: https://twitter.com/tiresearch1/status/1713849427851645113
+
+agency-clickminded.com
+blackfriday-clickminded.com
+clickminded.agency
+evoers.com
+tjzy.link
+
+# Reference: https://twitter.com/peterkruse/status/1713867133648556458
+
+dcqj.me
+ftkq.me
+fuzx.me
+kfgd.link
+kihd.me
+lfvy.me
+mylittleladder.xyz
+ocvs.me
+pfcj.me
+tjzy.link
+uige.me
+wheretosign.com
+xtqt.me
+
+# Reference: https://github.com/Gi7w0rm/MalwareConfigLists/blob/main/DarkGate/darkgate_c2s_2023_10_15.txt
+
+http://178.236.247.102
+http://66.42.63.27
+http://81.19.135.17
+
+# Reference: https://twitter.com/tiresearch1/status/1713948588106277136
+
+avchecknet.com
+
+# Reference: https://twitter.com/0xw4ifu/status/1714738953016746247
+# Reference: https://www.virustotal.com/gui/file/be0cdb902529b9ad41addaf963ec198ac8dd3ca61ef5a570e487290b6c7f3eeb/detection
+# Reference: https://www.virustotal.com/gui/file/50fff463ec4cd66302ed597a799a87099e892dfdfe8d3c45a58beb088c26daf8/detection
+
+http://5.2.68.89
+5.2.68.89:8080
+caiccolapololoman.info
+fabbavshopsafabs.com
+gargoilsmansge.shop
+gullittreshoppermainmoll.com
+
+# Reference: https://twitter.com/fr0s7_/status/1714760144808972655
+# Reference: https://www.virustotal.com/gui/ip-address/185.174.101.224/relations
+
+firestarted.com
+searchplase.com
+sftp.firestarted.com
+sftp.searchplase.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.darkgate/ (# 2023-10-19)
+
+annoyingannoying.vodka
+cheneseemeg7575.cash
+uiahbmajokriswhoer.net
+
+# Reference: https://twitter.com/r3dbU7z/status/1716560907134714052
+# Reference: https://www.virustotal.com/gui/ip-address/5.252.177.8/relations
+# Reference: https://www.virustotal.com/gui/file/99f25de5cc5614f4efd967db0dae50f20e2acbae9e98920aff3d98638b9ca1f1/detection
+
+iamupdate.com
+emtassistancecanada.top
+emtinvoice-id563862.info
+rapideparcel.shop
+
+# Reference: https://twitter.com/crep1x/status/1716853977709490295
+
+81.19.135.17:8080
+zoomadvertisingofferr.com
+zoomadvertisingooffer.com
+
+# Reference: https://www.virustotal.com/gui/file/5e2fbb72213db03bdfdcd641dfcb61b4cf00a96e1629e1fda3be0139923f00f6/detection
+# Reference: https://www.virustotal.com/gui/file/06cc011f34188a2156c18c1307fd625ac9a2ed916a4c7e01b40513a826bd24d0/detection
+# Reference: https://threatfox.abuse.ch/ioc/1197233/
+
+http://185.130.226.220
+http://194.26.192.233
+185.130.226.220:2351
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2023-10-25-IOCs-from-DarkGate-activity.txt
+# Reference: https://www.malware-traffic-analysis.net/2023/10/25/index.html
+
+http://5.252.177.243
+5.252.177.243:445
+82.117.253.34:2351
+82.117.253.34:8080
+taochinashowwers.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/148.251.234.93/relations
+
+afnoticias.site
+diskonline.net
+lnsstagram.com
+msdonations-help.org
+sharelnstagram.com
+tg-me.online
+videoyoutube.co
+vidguki.online
+whatsapps.support
+yandeksdisk.org
+youtubewatch.click
+
+# Reference: https://labs.withsecure.com/publications/darkgate-malware-campaign
+# Reference: https://otx.alienvault.com/pulse/6537e8def0365b581ec16e96
+
+149.248.0.82:9999
+5.34.178.21:81
+80.66.88.145:2841
+alianzasuma.com
+apisdata.xyz
+
+# Reference: https://threatfox.abuse.ch/ioc/1197650/
+# Reference: https://www.virustotal.com/gui/ip-address/195.123.233.201/relations
+
+195.123.233.144:2351
+195.123.233.201:2351
+195.123.233.206:2351
+profitcentronline.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-11-01%20DarkGate%20IOCs
+# Reference: https://www.virustotal.com/gui/ip-address/82.117.254.52/relations
+
+http://5.252.177.226
+5.252.177.226:445
+82.117.254.52:2351
+shsukadadyuikmmonk.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-11-03%20DarkGate%20IOCs
+# Reference: https://www.virustotal.com/gui/file/ae0f7106f8b0e11c5526a8f1326c4705266a24cc933b5caa4dca735692cd959f/detection
+
+http://5.252.178.249
+5.252.178.249:445
+195.123.233.152:2351
+195.123.233.152:8080
+showmoreresultonliner.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-11-02%20DarkGate%20IOCs
+
+http://5.252.178.251
+5.252.178.251:445
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.darkgate/ (# 2023-11-04)
+
+195.123.233.126:2351
+195.123.241.144:2351
+jeraldsin3dsajdklafdmonk.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.darkgate/ (# 2023-11-06)
+
+185.174.101.224:2351
+noheroway.com
+sftp.noheroway.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.darkgate/ (# 2023-11-07)
+
+http://185.130.227.202
+8sjimonstersboonkonline.com
+bitepieces.com
+hadfadf87yuadfad.com
+onlineserviceboonkers.com
+projecktupdatemonk.com
+tottalonlineservis.com
+voodmastrelinux.com
+sftp.bitepieces.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-11-07%20DarkGate%20IOCs
+
+adfincolniclo.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.darkgate/ (# 2023-11-08)
+
+185.130.226.220:8080
+185.130.227.202:8080
+185.174.101.224:443
+185.174.101.224:8080
+195.123.233.165:8443
+195.123.240.26:8080
+195.123.240.26:8443
+82.117.252.36:8080
+82.117.252.36:8443
+85.130.227.202:8080
+adhufdauifadhj13.com
+homeservicetreking.com
+jordanmikejeforse.com
+siliconerumble.com
+
+# Reference: https://www.virustotal.com/gui/file/c788100411c38388afc3438dccc05297ac7a77083f579e4a7e8d6e1479214fde/detection
+
+http://84.201.174.17
+84.201.174.17:8080
+faststroygo.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1726673116699722012
+# Reference: https://twitter.com/DonPasci/status/1786863985381286100
+# Reference: https://www.virustotal.com/gui/file/2aa219e648895ec611aa69f1a484c8e58866aa5f4c0ba020a65443b819d20c25/detection
+# Reference: https://www.virustotal.com/gui/file/3ee01212c840eaee1d11c78169d1deb7f9fa133cbb12f105918328f36afdd971/detection
+# Reference: https://www.virustotal.com/gui/file/51036e791f5b499287a974edd9628eb6b23319b936ef2fb4fbb5adaf34574051/detection
+# Reference: https://www.virustotal.com/gui/file/f0c52c5a043662df00cc16007118f05469241c64a36d64eeb4578c90db649442/detection
+
+http://45.154.98.21
+http://194.26.192.57
+188.246.224.221:2351
+188.246.224.221:8080
+91.92.245.171:8094
+screenshot.photos
+screenshot-viewer.com
+silversnake.xyz
+syscloud-systems.com
+aoxzn.syscloud-systems.com
+bdl.syscloud-systems.com
+jay.syscloud-systems.com
+pqzk.syscloud-systems.com
+pua.syscloud-systems.com
+/r-ops/yreuit.a3x
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.darkgate/ (# 2023-11-22)
+
+http://167.114.199.65
+http://188.246.224.221
+twittesling.com
+
+# Reference: https://otx.alienvault.com/pulse/6560841a3ac666c2f0862496
+# Reference: https://www.virustotal.com/gui/file/9c20ecaaaf7655f6ecb292536376b0d4b7e09e4ecc27061c95b602dd8b1e9928/detection
+
+private-edinmarketing.com
+
+# Reference: https://www.virustotal.com/gui/file/9bf13cd3e8786eec497fcdaa218f36fb4845af42a37b0bd0a43d7aed34be1881/detection
+# Reference: https://www.virustotal.com/gui/file/94b0ae2811286865d060c53ee1141d08d19ac72175bc974b261d3cbe66727e95/detection
+
+http://185.123.53.208
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2023-11-30-IOCs-for-DarkGate-activity.txt
+# Reference: https://www.virustotal.com/gui/file/6866488e8882873a60d2d94e3eb224ab005a5b9e9053146d2b6601b520673929/detection
+# Reference: https://www.virustotal.com/gui/file/90e38d684c63fee4e5d7bdd16c4409022bf9edfc7cf266b9e49936962ce37b03/detection
+# Reference: https://www.virustotal.com/gui/file/ad49d1f80cf05416c389106d99808665008fcde3feccab8574f2167a3e1334ed/detection
+
+http://158.160.77.234
+158.160.77.234:8080
+64.190.113.222:8080
+saintelzearlava.com
+trans1ategooglecom.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.darktrack_rat/
+
+http://5.181.159.64
+1.179.147.82:2100
+104.160.233.67:9880
+105.145.37.129:4756
+107.126.209.240:1177
+109.109.150.176:443
+110.34.3.219:9881
+110.49.145.29:2100
+110.49.145.29:2200
+110.49.146.188:2100
+110.49.150.8:2100
+110.77.137.106:2100
+113.53.54.176:2100
+113.53.54.177:2100
+113.53.54.178:2100
+113.53.54.179:2100
+116.68.155.171:2100
+116.68.155.172:2100
+117.240.142.82:502
+118.172.187.127:2100
+118.173.247.210:2100
+118.174.64.219:2100
+131.100.37.100:443
+131.255.216.137:4756
+137.221.0.204:10001
+137.221.0.224:10001
+137.221.0.49:10001
+137.221.1.15:10001
+137.221.14.191:10001
+137.221.14.192:10001
+137.221.14.194:10001
+137.221.14.196:10001
+137.221.14.197:10001
+137.221.14.198:10001
+138.255.235.15:4756
+142.163.191.62:443
+142.163.208.222:443
+142.163.243.218:443
+142.163.43.206:443
+142.163.55.30:443
+142.163.59.246:443
+142.165.224.86:443
+142.166.36.230:443
+142.176.134.226:4905
+142.176.134.250:4905
+142.177.197.250:4905
+142.177.204.66:4905
+142.177.204.70:4905
+149.210.28.96:443
+149.210.44.123:443
+149.210.44.189:443
+149.210.44.225:443
+149.210.50.244:443
+149.210.80.198:443
+154.5.78.149:2100
+154.51.165.119:10001
+154.51.165.120:10001
+154.60.77.197:10001
+154.60.78.105:10001
+154.62.176.1:10001
+154.62.179.11:10001
+154.62.179.24:10001
+154.62.179.25:10002
+154.62.179.2:10001
+154.62.179.4:10001
+155.170.122.23:444
+162.210.8.35:9880
+165.0.224.9:4756
+166.130.142.241:444
+166.130.170.194:444
+166.130.170.198:444
+166.130.171.53:444
+166.130.171.77:4441
+166.130.171.98:444
+166.130.33.29:444
+166.130.41.183:9881
+166.130.41.203:444
+166.130.48.237:444
+166.130.53.35:444
+166.130.6.117:9881
+166.130.71.228:9881
+166.130.87.98:9881
+166.130.9.253:9881
+166.140.125.65:443
+166.140.125.68:443
+166.140.125.69:443
+166.140.125.71:443
+166.140.125.72:443
+166.140.125.75:443
+166.140.125.76:443
+166.140.27.235:443
+166.140.27.237:443
+166.140.27.238:443
+166.140.75.111:1300
+166.140.82.1:1300
+166.150.128.148:443
+166.150.128.148:444
+166.151.162.214:443
+166.151.162.214:444
+166.151.162.215:443
+166.151.162.215:444
+166.151.162.216:443
+166.151.162.216:444
+166.151.162.217:443
+166.151.162.217:444
+166.151.56.79:9881
+166.151.58.56:443
+166.151.58.56:444
+166.151.58.57:443
+166.151.58.57:444
+166.151.58.58:443
+166.151.58.58:444
+166.151.58.61:443
+166.151.58.61:444
+166.151.58.62:443
+166.151.58.62:444
+166.151.58.63:443
+166.151.58.63:444
+166.151.58.64:443
+166.151.58.64:444
+166.151.58.65:443
+166.151.58.65:444
+166.151.58.66:443
+166.151.58.66:444
+166.153.210.163:9884
+166.154.11.33:443
+166.154.11.35:443
+166.154.121.42:443
+166.154.135.224:443
+166.154.31.197:3001
+166.154.31.197:703
+166.154.77.221:3001
+166.154.77.221:703
+166.154.77.222:3001
+166.154.77.222:703
+166.157.34.28:443
+166.157.34.28:444
+166.157.34.32:443
+166.157.34.32:444
+166.157.40.67:443
+166.157.40.68:443
+166.157.40.68:444
+166.161.142.118:443
+166.161.146.187:443
+166.161.146.188:443
+166.161.153.245:1300
+166.161.164.193:443
+166.164.115.107:3001
+166.164.115.107:703
+166.164.115.108:3001
+166.164.115.108:703
+166.167.90.238:1300
+166.167.90.239:1300
+166.167.90.243:1300
+166.167.90.245:1300
+166.167.90.246:1300
+166.193.101.187:444
+166.193.101.236:1177
+166.193.102.216:444
+166.193.103.247:1177
+166.195.6.212:1177
+166.203.163.2:444
+166.203.176.3:1177
+166.203.176.5:1177
+166.203.177.153:9881
+166.241.136.187:443
+166.241.140.123:443
+166.241.164.36:3001
+166.241.164.36:703
+166.249.62.100:443
+166.249.62.100:444
+166.249.62.101:443
+166.249.62.101:444
+166.249.62.103:443
+166.249.62.103:444
+166.249.62.104:443
+166.249.62.104:444
+166.249.62.110:443
+166.249.62.110:444
+166.249.62.111:443
+166.249.62.111:444
+166.249.62.112:443
+166.249.62.112:444
+166.249.62.113:443
+166.249.62.113:444
+166.249.62.115:443
+166.249.62.115:444
+166.249.62.117:443
+166.249.62.117:444
+166.255.153.125:3001
+166.255.153.125:703
+166.255.153.126:3001
+166.255.153.126:703
+173.181.132.96:2100
+173.181.133.39:2100
+173.181.133.40:2100
+173.181.133.42:2100
+173.181.133.46:2100
+173.181.133.47:2100
+173.181.133.48:2100
+173.181.133.52:2100
+173.181.137.56:2100
+173.181.137.59:2100
+173.181.139.248:2100
+173.181.139.249:2100
+173.181.141.106:2100
+173.182.107.226:444
+173.182.108.248:2100
+173.182.71.88:444
+173.182.9.172:2100
+173.224.241.133:449
+173.224.241.134:449
+173.224.245.130:444
+173.224.248.117:444
+174.5.120.9:443
+174.90.224.111:2100
+174.90.98.101:449
+180.180.108.108:2100
+180.180.108.10:2100
+180.180.108.124:2100
+180.180.108.153:2100
+180.180.108.203:2100
+180.180.108.206:2100
+180.180.108.214:2100
+180.180.108.237:2100
+180.180.108.30:2100
+180.180.108.44:2100
+180.180.108.77:2100
+184.151.141.45:6785
+184.151.142.11:9881
+184.151.142.14:9881
+184.151.142.16:9881
+184.151.142.17:9881
+184.151.142.9:9881
+184.151.143.134:444
+184.151.143.68:9881
+184.151.143.69:9881
+184.151.143.70:9881
+184.151.153.114:6785
+184.151.210.103:5100
+184.151.210.105:5100
+184.151.210.116:5100
+184.151.210.140:5100
+184.151.210.146:5100
+184.151.219.221:2100
+184.151.220.224:2100
+184.151.235.170:2100
+184.151.235.171:2100
+184.151.251.37:443
+184.70.50.102:443
+185.170.179.162:2100
+186.154.219.18:701
+186.154.252.210:701
+186.155.251.173:701
+186.216.241.139:2100
+186.28.229.58:701
+186.28.237.178:701
+186.29.78.74:701
+186.30.114.100:701
+186.30.114.92:701
+186.30.165.194:701
+186.30.165.50:701
+186.30.167.220:701
+186.30.31.42:701
+186.31.132.35:701
+186.31.140.66:701
+187.194.165.199:444
+187.228.141.78:444
+189.190.175.149:444
+189.190.83.55:444
+190.24.4.115:701
+190.25.237.164:701
+190.26.56.114:701
+192.34.129.160:9884
+193.192.196.184:10001
+193.192.196.184:2100
+193.192.196.186:10001
+193.192.196.186:2100
+193.192.209.202:10001
+193.192.209.202:2100
+194.137.1.7:2100
+194.197.65.193:2100
+194.197.66.239:2100
+194.197.66.3:2100
+194.197.66.60:2100
+194.197.67.160:2100
+194.197.67.199:2100
+194.251.16.130:2100
+194.251.16.131:2100
+194.251.16.179:2100
+194.251.16.251:2100
+194.251.18.93:2100
+199.19.216.215:9880
+2.54.234.48:4756
+2.54.80.4:4756
+2.55.105.130:4756
+2.55.105.132:4756
+2.55.105.224:4756
+2.55.105.227:4756
+2.55.106.22:4756
+2.55.112.229:4756
+2.55.112.248:4756
+2.55.112.251:4756
+2.55.112.253:4756
+2.55.113.10:4756
+2.55.113.15:4756
+2.55.113.168:4756
+2.55.113.171:4756
+2.55.113.20:4755
+2.55.113.20:4756
+2.55.113.9:4756
+2.55.122.171:4756
+2.55.124.25:4756
+2.55.66.78:4756
+2.55.70.127:4756
+2.55.71.111:4756
+2.55.71.15:4756
+2.55.78.118:4756
+2.55.79.174:4756
+2.55.84.215:4756
+2.55.87.112:4756
+2.55.99.215:4756
+200.52.213.250:444
+200.93.161.123:701
+203.150.226.21:10007
+203.150.226.21:11054
+205.200.10.254:448
+205.200.13.220:448
+205.200.239.230:448
+206.45.107.77:448
+206.45.125.191:448
+207.195.88.247:4433
+209.121.104.206:2100
+209.128.20.162:3001
+212.213.64.21:2100
+212.213.64.22:2100
+212.213.64.25:2100
+212.93.127.116:4756
+216.211.101.159:443
+216.226.43.203:8443
+24.222.224.146:443
+24.222.224.150:443
+24.222.224.154:443
+24.222.29.242:4905
+24.43.233.74:1300
+37.25.35.177:8090
+41.112.34.197:4756
+41.112.34.202:4756
+41.112.34.204:4756
+41.112.34.205:4756
+41.112.34.206:4756
+41.112.47.50:4756
+41.112.47.51:4756
+41.222.98.127:4756
+41.222.98.128:4756
+41.222.98.129:4756
+41.222.98.130:4756
+41.222.98.131:4756
+41.222.98.132:4756
+47.154.133.67:443
+47.177.106.145:443
+49.229.152.144:2100
+49.229.153.170:2100
+49.229.153.189:2100
+49.229.156.167:2100
+49.229.157.32:2100
+49.229.158.155:2100
+49.229.158.155:2200
+49.229.158.195:2100
+49.229.158.250:2100
+49.229.159.123:2100
+49.229.159.123:2200
+49.229.159.45:2100
+49.231.161.114:2100
+49.231.75.52:2100
+5.226.58.98:10001
+50.117.189.232:443
+50.117.189.232:6517
+50.52.164.186:443
+61.7.146.58:2200
+63.230.130.135:444
+63.40.16.49:443
+66.91.178.61:1300
+68.182.34.145:444
+68.182.34.155:2100
+68.182.35.70:2100
+68.182.35.71:2100
+70.28.194.190:443
+72.136.139.62:443
+72.139.229.151:444
+72.139.229.152:444
+72.139.242.101:444
+72.139.242.101:603
+72.139.242.102:444
+72.139.242.84:444
+72.139.242.87:444
+72.139.242.88:444
+72.139.242.89:444
+72.139.242.93:444
+72.139.242.94:444
+72.139.242.95:444
+72.139.242.99:444
+72.139.250.28:444
+72.139.250.29:444
+72.139.250.31:444
+72.142.179.175:444
+72.142.184.10:444
+72.142.184.11:444
+72.142.184.12:444
+72.142.184.13:444
+72.142.184.14:444
+72.142.184.19:444
+72.142.184.235:444
+72.142.184.236:444
+72.142.184.237:444
+72.142.184.239:444
+72.142.184.240:444
+72.142.184.241:444
+72.142.184.5:444
+72.142.184.6:444
+72.142.184.7:444
+72.142.184.8:444
+72.142.184.9:444
+72.234.167.45:1300
+72.234.97.25:1300
+72.235.209.221:1300
+72.253.168.115:1300
+72.253.200.110:1300
+74.198.226.178:444
+74.198.231.123:444
+74.198.231.125:444
+74.198.231.126:444
+74.198.231.131:444
+74.198.231.137:444
+74.198.231.138:444
+74.198.231.142:444
+74.198.231.143:444
+75.154.254.110:2100
+76.70.165.145:444
+76.70.192.207:2
+76.70.193.109:2
+76.70.194.221:443
+76.70.199.230:2
+76.70.199.33:1
+76.70.216.106:5100
+76.70.246.230:2100
+78.89.177.190:4000
+78.89.177.79:4000
+78.89.177.80:4000
+78.89.177.81:4000
+78.89.177.82:4000
+78.89.177.83:4000
+78.89.177.84:4000
+78.89.177.85:4000
+78.89.177.86:4000
+78.89.177.87:4000
+78.89.177.88:4000
+78.89.177.89:4000
+78.89.177.90:4000
+78.89.177.92:4000
+81.187.188.85:2100
+81.187.253.131:10001
+81.187.253.131:2100
+81.187.9.122:2100
+81.2.101.81:2100
+82.102.149.157:4756
+82.102.157.154:4756
+82.102.165.166:4756
+82.102.165.17:4756
+89.30.233.18:10001
+89.30.233.18:4756
+93.91.45.110:10001
+93.91.45.110:4756
+96.1.101.196:2100
+96.1.102.226:2100
+96.1.102.30:2100
+96.1.103.67:2100
+96.1.103.86:2100
+96.1.106.43:2100
+96.1.108.17:2100
+96.1.108.18:2100
+96.1.108.19:2100
+96.1.110.123:2100
+96.1.110.207:2100
+96.1.24.159:2100
+96.1.24.227:9880
+96.1.27.221:2100
+96.1.51.225:9880
+96.1.57.24:9880
+96.1.59.246:444
+96.1.60.107:444
+96.1.60.159:444
+96.1.60.221:444
+96.1.60.237:444
+96.1.60.38:444
+96.1.60.41:444
+96.1.60.56:444
+96.1.60.71:444
+96.1.60.95:444
+96.1.60.9:444
+96.1.61.126:444
+96.1.61.136:444
+96.1.61.170:444
+96.1.61.17:444
+96.1.61.22:444
+96.1.61.25:444
+96.1.61.70:444
+96.1.61.72:444
+96.1.61.86:444
+96.1.61.97:444
+96.1.62.245:9880
+96.1.74.194:2100
+96.1.74.199:2100
+96.1.96.200:2100
+96.1.96.203:2100
+96.1.98.118:2100
+96.1.98.11:444
+99.21.187.176:9884
+99.46.138.238:443
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2023-12-07-IOCs-for-DarkGate-infection.txt
+# Reference: https://www.virustotal.com/gui/file/1fce9ee9254dd0641387cc3b6ea5f6a60f4753132c20ca03ce4eed2aa1042876/detection
+
+46.101.78.238:443
+46.101.78.238:8080
+boxmedrbopdrv.com
+viewdobdrv.com
+widgetsfordeploy.com
+cdn-uk.widgetsfordeploy.com
+cdn.boxmedrbopdrv.com
+tos.viewdobdrv.com
+
+# Reference: https://any.run/malware-trends/darkgate
+# Reference: https://www.virustotal.com/gui/file/361b668f3ce4755916e9f7a9418e322953f31012188764513578f5dbf17a4e64/detection
+# Reference: https://www.virustotal.com/gui/file/77570807d724de32343044e5a166507704fabe813f805e3251554b7fc75bdf33/detection
+
+http://80.85.152.122
+80.85.152.122:2351
+80.85.152.122:8080
+87.106.16.115:9061
+
+# Reference: https://www.splunk.com/en_us/blog/security/enter-the-gates-an-analysis-of-the-darkgate-autoit-loader.html
+# Reference: https://raw.githubusercontent.com/executemalware/Malware-IOCs/main/2024-01-26%20DarkGate%20IOCs
+# Reference: https://www.virustotal.com/gui/ip-address/138.124.183.34/relations
+
+http://5.181.159.77
+http://5.252.177.104
+138.124.183.34:8094
+5.181.159.77:445
+5.252.177.104:445
+lili19mainmasters.com
+
+# Reference: https://www.malware-traffic-analysis.net/2024/01/25/index.html
+# Reference: https://www.virustotal.com/gui/ip-address/138.124.183.23/relations
+
+http://5.181.159.76
+5.181.159.76:445
+strongdomainsercgerhhost.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2024-01-29%20DarkGate%20IOCs
+
+http://5.181.159.23
+5.181.159.23:445
+stachmentsuprimeresult.com
+
+# Reference: https://www.malware-traffic-analysis.net/2024/01/30/index.html
+
+http://5.252.178.193
+5.252.178.193:445
+94.131.101.186:8094
+mainsercheronlinehostingbot.com
+
+# Reference: https://twitter.com/t3ft3lb/status/1757425725475344386
+# Reference: https://www.virustotal.com/gui/file/d1f7b494b4344221b2255d81873267e5a95daa8e92eb458f51ceaa71d10b25a4/detection
+# Reference: https://www.virustotal.com/gui/file/945412daf3de27b1a1021c6e82a114a03de39ea151a8a155b3940895307f9ee3/detection
+# Reference: https://www.virustotal.com/gui/file/93702f82d15092f2e0f4ad807f5afa80bdd1e3b7f7e78972db38036de729c677/detection
+
+46.246.97.61:7412
+share-files.pl
+
+# Reference: https://www.securitricks.com/cyber-spies-sticky-werewolf-decided-to-clean-out-companies-in-belarus-under-the-guise-of-downloading-ccleaner-monday-february-12-2024/
+# Reference: https://www.virustotal.com/gui/file/e50987f5f13de4a552778a691032d9fce3a102bfad3fb5b7edc4c48d2aa3b4f2/detection
+
+194.61.121.167:1145
+ru-storage.com
+mail.ru-storage.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2024-02-13%20DarkGate%20IOCs
+# Reference: https://www.virustotal.com/gui/ip-address/46.21.157.142/relations
+# Reference: https://www.virustotal.com/gui/file/5d59325692bbf6329dd4a781ecb3acfdab30860f933510155cb44c3bcfece5c5/detection
+
+http://95.164.63.54
+95.164.63.54:445
+prodomainnameeforappru.com
+proniklsu63nenick.com
+
+# Reference: https://twitter.com/AvastThreatLabs/status/1758461792844443650
+
+http://94.131.119.73
+94.131.119.73:445
+neninoklestron37men.com
+
+# Reference: https://twitter.com/DonPasci/status/1764668681848569990
+# Reference: https://twitter.com/banthisguy9349/status/1764669518998077826
+# Reference: https://tria.ge/240304-r8e2vsda2v/behavioral1
+# Reference: https://www.virustotal.com/gui/file/17c96c211562bf0f385a768af87a34a5caaefb7d4bd8ee487d97d8063095a17d/detection
+
+http://149.56.252.31
+145.239.202.110:8094
+145.239.202.110:81
+149.56.252.31:8094
+
+# Reference: https://www.virustotal.com/gui/file/02acf78048776cd52064a0adf3f7a061afb7418b3da21b793960de8a258faf29/detection
+
+nextroundst.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/68.178.229.178/relations
+
+tjtmovers.com
+
+# Reference: https://www.trendmicro.com/en_us/research/24/c/cve-2024-21412--darkgate-operators-exploit-microsoft-windows-sma.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/24/c/cve-2024-21412--darkgate-operators-exploit-microsoft-windows-smartscreen-bypass-in-zero-day-campaign/DarkGate-IoCs.txt
+# Reference: https://www.virustotal.com/gui/file/18d87c514ff25f817eac613c5f2ad39b21b6e04b6da6dbe8291f04549da2c290/detection
+# Reference: https://www.virustotal.com/gui/file/c1b7f6962216c0b888ba27c67e61d00541b6356d9af6ebcc4952e059f82f93f8/detection
+# Reference: https://www.virustotal.com/gui/file/64767dcc97f891924bff3938ed6a813361c7539e2c77af22b8e0e0f68599c831/detection
+# Reference: https://www.virustotal.com/gui/file/964fa0512b4b0bcc0e5c134ca5338afeb6122fb47df3142d2147d84772027837/detection
+
+http://141.95.114.22
+http://45.61.156.3
+141.95.114.229:2351
+141.95.114.229:8080
+45.147.228.138:8094
+51.195.192.51:8094
+94.156.71.75:8094
+aakritifitness.com
+asareholdings.com
+bizabiza.mywire.org
+duelmener-naturtrailpark.org
+elshoppingdelalimpieza.com.ar
+higreens.co.in
+jenb128hiuedfhajduihfa.com
+newdomainfortesteenestle.com
+pjnbadfjandkadm3kd.com
+projetodegente.com
+selectwendormo9tres.com
+streammobs.com
+wegrowcoaching.com
+
+# Reference: https://twitter.com/doc_guard/status/1773697536831709216
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-03-19-IOCs-from-DarkGate-infection.txt
+# Reference: https://github.com/pr0xylife/Pikabot/blob/main/Pikabot_26.03.2024.txt
+# Reference: https://www.virustotal.com/gui/file/014b804e71c3086d1f66be2069a20b8fd59a73bdf4bd79142392c4caf99c852e/detection
+# Reference: https://www.virustotal.com/gui/file/014b804e71c3086d1f66be2069a20b8fd59a73bdf4bd79142392c4caf99c852e/detection
+
+http://170.130.55.130
+170.130.55.130:445
+backupitfirst.com
+badbutperfect.com
+ingatecsus.com.br
+withupdate.com
+
+# Reference: https://twitter.com/mojoesec/status/1773433345688400110
+# Reference: https://www.virustotal.com/gui/ip-address/5.252.177.227/relations
+# Reference: https://www.virustotal.com/gui/file/b5b9e0b51c56e312949b25719df4f4e1ff5a9c382a26f891e9b8674c7c67722a/detection
+# Reference: https://www.virustotal.com/gui/file/5cd0ea535eb231c3971a30f6c1f0d6d6479eecb004fa3dae188971438414ef0a/detection
+
+madeyourbackup.com
+sacheschaemagrecimento.com
+
+# Reference: https://www.virustotal.com/gui/file/49e956cf03fa830cd0477c46f67d6df1dda14fffbb1dbfb745485c466f1ca34b/detection
+
+infocatalog.pics
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2024-04-02%20DarkGate%20IOCs
+
+31yc.com
+
+# Reference: https://www.virustotal.com/gui/file/f9d8b85fac10f088ebbccb7fe49274a263ca120486bceab6e6009ea072cb99c0/detection
+
+diveupdown.com
+
+# Reference: https://www.virustotal.com/gui/file/fa69faa4b720e67ed8e26f69e28f8ca0ce6b9a233498de638634464f995ed65d/detection
+
+buassinnndm.net
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2024-04-04%20DarkGate%20IOCs
+# Reference: https://www.virustotal.com/gui/file/5237e653da5478c91e1de3d51a9713753b4bc1b4c9be8e9136cd9d94e216ae77/detection
+
+http://86.104.72.124
+86.104.72.124:445
+irreceiver.com
+
+# Reference: https://github.com/pr0xylife/DarkGate/blob/main/DarkGate_09.04.2024.txt
+
+http://103.124.106.237
+http://45.89.53.187
+45.89.53.187:445
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2024-04-10%20DarkGate%20IOCs
+
+http://5.180.24.155
+5.180.24.155:445
+wassonite.com
+
+# Reference: https://www.virustotal.com/gui/file/12edc6113382af14d98debc9c8961a37cb85c1b88dc81ca4af772982f02b6121/detection
+
+http://78.142.18.222
+
+# Reference: https://www.virustotal.com/gui/file/db9654e864f86dedbf99f4380a4f7db182c17cd269bbb96bdf63e7ffb977ad37/detection
+
+wpseed.com
+
+# Reference: https://twitter.com/pollo290987/status/1782927532104298802
+# Reference: https://www.virustotal.com/gui/file/9210885dda9facfc569240e788cf6e87ba68a54ebeeab8c707293375f3265073/detection
+
+http://185.196.220.194
+
+# Reference: https://twitter.com/Tac_Mangusta/status/1786306925388349538
+# Reference: https://tria.ge/240502-s22gysca7v/behavioral2
+# Reference: https://www.virustotal.com/gui/file/40be7be16cdaa414898db0014d26afd9cf516ba209f074a95c346227e690acd4/detection
+
+dogmupdate.com
+
+# Reference: https://twitter.com/pollo290987/status/1787602077243289808
+
+http://77.75.230.59
+77.75.230.59:445
+findyourbackups.com
+
+# Reference: https://twitter.com/ginkgo_g/status/1787373903880606193
+# Reference: https://www.virustotal.com/gui/file/c3efbac8ebffcf3d8178ce23e59f3b4978f5a91bf93773889870d45cc1b554b0/detection
+# Reference: https://www.virustotal.com/gui/file/03ee2011ad671b1781015024ea53edfbff92c28c2b123bba02d6a6f462e74105/detection
+# Reference: https://www.virustotal.com/gui/file/3c6a0ce4b1671d500aa9845da17db5b8ed29d39adfd12ad182d4b3ba881fe8fb/detection
+# Reference: https://www.virustotal.com/gui/file/d6e6c786b793b46a1ee9b18b058e045d0aa1c83aa2b6aa493637f611d654d957/detection
+
+http://79.132.128.47
+http://94.156.8.166
+79.132.128.47:445
+94.156.8.166:1443
+94.156.8.166:443
+94.156.8.166:445
+document-cdn.org
+image-uploader.net
+cdn-nir-088.image-uploader.net
+
+# Reference: https://app.any.run/tasks/47e77437-129b-401a-b025-73eaeb577daa/
+
+http://193.142.146.203
+
+# Reference: https://twitter.com/pollo290987/status/1787926212737642831
+# Reference: https://www.virustotal.com/gui/file/173874e3043653514f5c49e0fec9473043c6cf9f6c441d23efd8555f0e9f1b90/detection
+
+updateleft.com
+
+# Reference: https://twitter.com/1ZRR4H/status/1788711993530073092
+# Reference: https://twitter.com/pr0xylife/status/1788716881932697693
+
+kindupdates.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.darkgate (# 2024-05-12)
+
+http://103.124.105.125
+backupssupport.com
+linktoxic34.com
+smbeckwithlaw.com
+
+# Reference: https://twitter.com/DonPasci/status/1790485311065063666
+# Reference: https://www.virustotal.com/gui/file/e9ad648589aa3e15ce61c6a3be4fc98429581be738792ed17a713b4980c9a4a2/detection
+
+flexiblemaria.com
+
+# Reference: https://x.com/DonPasci/status/1792958971055317219
+# Reference: https://tria.ge/240521-l6pkmahe56/behavioral2
+
+mylittlecabbage.net
+
+# Reference: https://github.com/pr0xylife/DarkGate/blob/main/DarkGate_27.05.2024.txt
+# Reference: https://www.virustotal.com/gui/file/d28c416add7fe55e7b1a20e30013e870cfb2eb3c9a5962ed4047766a43fa4f5e/detection
+
+http://91.222.173.113
+91.222.173.113:443
+kostumn1.ilabserver.com
+
+# Reference: https://blog.talosintelligence.com/darkgate-remote-template-injection/
+
+goingupdate.com
+
+# Reference: https://www.trellix.com/blogs/research/darkgate-again-but-improved/
+# Reference: https://www.virustotal.com/gui/file/85447a5118f3d8d48849fde8ef015d37f2058b4eebd5f99e7bb30f983b85db3a/detection
+
+45.140.146.2:443
+45.61.156.3:445
+45.63.52.184:8094
+5.252.177.213:445
+94.158.245.124:445
+adfhjadfbjadbfjkhad44jka.com
+adsfasdf.com
+cayennesxque.boo
+dalilylyticsdat.com
+porsherses.com
+rourtmanjsdadhfakja.com
+nl-2.dalilylyticsdat.com
+
+# Reference: https://unit42.paloaltonetworks.com/darkgate-malware-uses-excel-files/
+# Reference: https://www.virustotal.com/gui/file/357d56bce62f998931089a14e5da229ea7575497373b65634a55ade30dbbe854/detection
+
+http://167.99.115.33
+167.99.115.33:139
+167.99.115.33:445
+
+# Reference: https://x.com/DonPasci/status/1813528026967421123
+# Reference: https://x.com/malwrhunterteam/status/1813498998734364787
+# Reference: https://tria.ge/240717-ldf3savaqk/behavioral1
+# Reference: https://www.virustotal.com/gui/file/91cad120d25935177fa0b719c2ad17f692fe670b906ff2acb051d88c553acca0/detection
+
+eventgrids.online
+othergate.site
+
+# Reference: https://www.virustotal.com/gui/file/048bdbf44094f33d8e771d211f3ec409d262dcd118455a106aaff01f78e57e25/detection
+
+http://91.222.175.250
+
+# Reference: https://x.com/s1dhy/status/1825097477227151776
+# Reference: https://x.com/DonPasci/status/1825136764849107406
+# Reference: https://tria.ge/240818-k6qbgswglc/behavioral1
+
+http://72.5.43.165
+version6dkgate.duckdns.org
+/darkpacked.exe
+/darkpacked.zip
+
+# Reference: https://x.com/malwrhunterteam/status/1828171331327652066
+# Reference: https://www.virustotal.com/gui/file/7e18e5fe9e980c48ad67cc2ce7423e818e15c1256e2ffe4ce85c5cfbd5b30877/detection
+
+http://45.11.59.161
+
+# Reference: https://www.virustotal.com/gui/file/2f107897250337efcf1b12187bc5c252fd30f5472f7fdbad64073f3138accb82/detection
+
+applylawofattraction.com
+
+# Reference: https://www.proofpoint.com/au/blog/threat-insight/clipboard-compromise-powershell-self-pwn
+
+languangjob.com
+lashakhazhalia86dancer.com
+
+# Reference: https://www.virustotal.com/gui/file/d7f3f4b00fd87efb2e675c9d3f6df36e6fcff699e4c10407ac5513ae6ec1316c/detection
+# Reference: https://www.virustotal.com/gui/file/c912f3c16cf2ce905fcba0cb0d1c67a782e791eac1a6e542ee4e011c07909552/detection
+# Reference: https://www.virustotal.com/gui/file/913099f1a9433f3712a85f5f703f9b976123b22256b7ad2a7fef9b824c703f2f/detection
+
+147.45.47.80:21
+147.45.47.80:2105
+147.45.47.80:2118
+147.45.47.80:2139
+
+# Reference: https://x.com/ShanHolo/status/1857337492367655090
+
+darkgate.com
+
+# Reference: https://securityonline.info/malicious-npm-packages-threaten-crypto-developers-keylogging-and-wallet-theft-revealed/
+# Reference: https://www.virustotal.com/gui/file/31ba9f823bf3daa622862f4318edb1c7f425f7adcb7118daf0d5e088d3bd7090/detection
+# Reference: https://www.virustotal.com/gui/file/5a733c20d5b00006428ca3c4f82505bebc2d2300c709f490d3dea4fab497effb/detection
+
+http://209.151.151.172
+209.151.151.172:443
+69.164.209.197:3306
+indiefire.io
+
+# Reference: https://x.com/smica83/status/1883186019576717796
+# Reference: https://app.validin.com/detail?find=Puvers&type=raw&ref_id=9dfb0704a33#tab=host_pairs (# 2025-01-25)
+# Reference: https://www.virustotal.com/gui/file/6b6676267c70fbeb3257f0bb9bce1587f0bdec621238eb32dd9f84b2bcd7e3ea/detection
+# Reference: https://www.virustotal.com/gui/file/4fe8bbc88d7a8cc0eec24bd74951f1f00b5127e3899ae53de8dabd6ff417e6db/detection
+
+http://136.244.97.130
+http://149.248.56.79
+http://149.248.63.116
+http://155.138.149.77
+http://64.176.179.251
+http://64.176.181.132
+http://64.176.184.27
+http://78.141.219.49
+http://95.179.136.73
+http://95.179.156.215
+
+# Reference: https://x.com/malwrhunterteam/status/1887808919487021278
+# Reference: https://www.virustotal.com/gui/file/1ffa8b06cb779360f8c42ccd4527ae3076d25d11b3a90976f04ea430173e9b85/detection
+
+http://91.222.173.149
+coienubase.com
+toonotion.com
+
+# Reference: https://x.com/AzakaSekai_/status/1901595434101157898
+# Reference: https://www.virustotal.com/gui/file/c181be8a2492cb463d6159a955cb29a284e7848061e278be905ffda7bbf4e98d/detection
+
+cousidporke.icu
+
+# Reference: https://x.com/netresec/status/1912548354439147698
+# Reference: https://www.virustotal.com/gui/file/6fecdc1e6f8aadcda86600de8867ca86bd8da10d12998f71565d5425a9b4b007/detection
+
+5.45.72.213:3334
+/detectwebwallets
+
+# Reference: https://x.com/skocherhan/status/1925172295862997378
+# Reference: https://www.virustotal.com/gui/file/1fc1432384713d1a0f4b54255b186742d43e086cf8c5252185aa0e196bc5bccc/detection
+# Reference: https://www.virustotal.com/gui/file/44098f0e4b169c207a6baeaa3f90fc860f434eee4a03d57da3eedc39d3a920b5/detection
+
+104.245.240.71:39001
+104.245.240.71:49301
+104.245.240.71:58001
+loadingfreedlophr.com.de

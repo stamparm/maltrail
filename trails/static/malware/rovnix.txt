@@ -1,0 +1,66 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mayachok, rovnix
+
+# Reference: https://blogs.mcafee.com/mcafee-labs/rovnix-downloader-sinkhole-time-checks/
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2015/2015-12-09-rovnix-downloader-sinkhole-time-checks/rovnix-downloader-sinkhole-time-checks.csv
+
+c2bbagrsvbs2v6a7.onion
+ecloud86.com
+ecloud87.com
+ecloud88.com
+ecloud89.com
+ecloud90.com
+ecloud91.com
+elorfans2.com
+elorfans3.com
+elorfans4.com
+elorfans5.com
+elorfans6.com
+hbs63zj7mwj5g6w7.onion
+itnhi4vg6cktylw2.onion
+j7t4lg23tdhag3fn.onion
+mediacontent.us
+mediacontent2.us
+mediacontent3.us
+pg7iuaqu5b7fq36o.onion
+romnsiebabanahujtr.org
+romnsiebabanahujtr2.org
+romnsiebabanahujtr3.org
+srvdexpress3.com
+srvdexpress4.com
+srvdexpress5.com
+srvdexpress6.com
+srvdexpress7.com
+tornishineynarkkek.org
+tornishineynarkkek2.org
+tornishineynarkkek3.org
+transliteraturniefabriki.com
+upmisterfliremsnk.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=7d881aff2cc1f949fb6a39b51f049c1b
+
+gapirna.com
+emisioncontrol.com
+tsangakha.com
+
+# Reference: https://securelist.com/oh-what-a-boot-iful-mornin/97365/
+
+45.77.244.191:8090
+45.77.244.191:9090
+45.77.244.191:5050
+45.76.145.22:8080
+139.180.188.215:8433
+149.28.30.158:443
+bamo.ocry.com
+
+# Reference: https://unit42.paloaltonetworks.com/rovnix-declaration-generation-algorithm/
+
+inhabitantslaindourmock.cn
+kingwhichtotallyadminis.biz
+taxeslawsmockhigh.net
+thareplunjudiciary.net
+thworldthesuffer.biz
+townsunalienable.net
+transientperfidythe.biz

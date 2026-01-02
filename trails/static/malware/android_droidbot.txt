@@ -1,0 +1,47 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: dr0idbot
+
+# Reference: https://x.com/9823f_/status/1864672420633682321
+# Reference: https://www.cleafy.com/cleafy-labs/droidbot-insights-from-a-new-turkish-maas-fraud-operation
+# Reference: https://app.validin.com/detail?type=ip&find=193.26.115.7#tab=resolutions
+# Reference: https://app.validin.com/detail?type=ip&find=45.138.16.127#tab=resolutions
+# Reference: https://www.virustotal.com/gui/file/cc9a45540262aaa9b733384e218512eb596092ef698ba12beb9d239f98e8bbf6/detection
+# Reference: https://www.virustotal.com/gui/file/e0e8dce9af3a7d54e7a24db95eb3b61582da436d5e795ebebf06b9926073ce59/detection
+
+dr0id.best
+supportfb-business.com
+antrax.dr0id.best
+azzouz.dr0id.best
+bayk.dr0id.best
+baykpriv.dr0id.best
+client0.dr0id.best
+cms12.dr0id.best
+gaspar.dr0id.best
+giulloit.dr0id.best
+ie721f2d.ala.dedicated.aws.emqxcloud.com
+k358a192.ala.dedicated.aws.emqxcloud.com
+malankov.dr0id.best
+mars.dr0id.best
+pussy1.dr0id.best
+pussy1.supportfb-business.com
+pussy10.dr0id.best
+pussy11.dr0id.best
+pussy12.dr0id.best
+pussy13.dr0id.best
+pussy2.dr0id.best
+pussy3.dr0id.best
+pussy4.dr0id.best
+pussy5.dr0id.best
+pussy6.dr0id.best
+pussy7.dr0id.best
+pussy8.dr0id.best
+pussy9.dr0id.best
+ro.dr0id.best
+rustbridge.dr0id.best
+rustbridge2.dr0id.best
+terror.dr0id.best
+trashcode.dr0id.best
+turkfriend.dr0id.best
+zoouzz.dr0id.best

@@ -1,0 +1,125 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://resecurity.com/blog/article/evilproxy-phishing-as-a-service-with-mfa-bypass-emerged-in-dark-web
+# Reference: https://otx.alienvault.com/pulse/63175332703dcba6367c4087
+
+evilproxy.pro
+msdnmail.net
+pua75npooc4ekrkkppdglaleftn5mi2hxsunz5uuup6uxqmen4deepyd.onion
+rproxy.io
+top-cyber.club
+usd0182738s80.click
+cpanel.evilproxy.pro
+cpanel.pua75npooc4ekrkkppdglaleftn5mi2hxsunz5uuup6uxqmen4deepyd.onion
+gw1.usd0182738s80.click
+gw2.usd0182738s80.click
+login-live.rproxy.io
+
+# Reference: https://twitter.com/idclickthat/status/1585074008634294272
+# Reference: https://twitter.com/1ZRR4H/status/1585078166292672512
+# Reference: https://twitter.com/1ZRR4H/status/1585079705715474433
+
+amountdue001.com
+docxx2pdff.online
+domain4invoice.com
+fergusoncoinvoicing.com
+hodlranch.org
+invoic3online.com
+invoice1domain.com
+invoicedueonline.com
+onedrivebusiness.com
+yourbrand-18274.kxcdn.com
+
+# Reference: https://www.proofpoint.com/us/blog/email-and-cloud-threats/cloud-account-takeover-campaign-leveraging-evilproxy-targets-top-level
+
+1-net.com
+837.best
+abbotsfordbc.com
+ae-lrmed.com
+andrealynnsanders.com
+bdowh.com
+cad-3.com
+cdjcfc.com
+chiromaflo.com
+cmzo-eu.cz
+concur.bond
+concurcloud.us
+concursolution.us
+concursolutions.info
+cualn.com
+d8z.net
+dealemd.com
+dl2b.com
+dsa-erie.com
+# dse.best (# Ref: https://github.com/stamparm/maltrail/issues/19346)
+dse.buzz
+dsena.net
+e-csg.com
+etrax.eu
+farmacgroup.ca
+faxphoto.com
+fdh.aero
+finsw.com
+fortnelsonbc.com
+g3u.eu
+greatbayservices.com
+gwcea.com
+indevsys.com
+inteproinc.com
+jxh.us
+k4a.eu
+kayakingbc.com
+kirklandellis.net
+kofisch.com
+ld3.eu
+mde45.com
+mjdac.com
+n4q.net
+na-7.com
+na3.wiki
+nilyn.us
+p1q.eu
+pagetome.com
+parsfn.com
+pbcinvestment.com
+phillipsoc.com
+pwsarch.com
+re5.eu
+sloanecarpet.com
+ssidaignostica.com
+tallwind.com.tr
+ukbarrister.com
+utnets.com
+uv-pm.com
+vleonard.com
+wattsmed.com
+whoyiz.com
+wj-asys.com
+wmbr.us
+wwgstaff.com
+xp1.us
+xstpl.com
+
+# Reference: https://www.menlosecurity.com/blog/evilproxy-phishing-attack-strikes-indeed/
+# Reference: https://otx.alienvault.com/pulse/651d8320c33e63ab09baa409
+
+bartmfil.com
+catalogsumut.com
+earthscigrovp.com.au
+ivonnesart.com
+roxylvfuco.com.au
+sheridanwyolibrary.org
+triperlid.com
+vfuco.com.au
+lmo.bartmfil.com
+lmo.roxylvfuco.com.au
+lmo.triperlid.com
+mscr.earthscigrovp.com.au
+
+# Reference: https://x.com/0x534c/status/1937378632005222693
+
+msftdocs.com
+aadcdn.msftdocs.com
+munni.msftdocs.com
+ymnjb.msftdocs.com

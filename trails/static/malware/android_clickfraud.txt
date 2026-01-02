@@ -1,0 +1,352 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://news.sophos.com/en-us/2018/12/06/android-clickfraud-fake-iphone/
+
+mobbt.com
+act.mobbt.com
+ads.mobbt.com
+sdk.mobbt.com
+exevents.nativeone.co
+
+# Reference: https://www.virustotal.com/gui/file/ec54dbb4c55b92df2113fb07ef1486a39bb5c752272230bb774018573f537132/detection
+
+bearclod.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2013/2013-04-09-one-click-fraud-variant-on-google-play-in-japan-steals-user-data/one-click-fraud-variant-on-google-play-in-japan-steals-user-data.csv
+
+/?neosp_nontop_eropne01
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-04-29-fake-android-update-delivers-sms-click-fraud-europe/fake-android-update-delivers-sms-click-fraud-europe.csv
+
+6-androdid.ru
+alfabrong.eu
+bugstracking.xyz
+bugtracking.biz
+francia-apk.ru
+freeupgrade6.ru
+innotion.pw
+postway12.ru
+slidetracking.ru
+traff16.ru
+traffic2015.ru
+update-free-andr-6.ru
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-05-04-android-malware-clicker-dgen-found-google-play/android-malware-clicker-dgen-found-google-play.csv
+
+update-sys-android.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2017/2017-09-12-android-click-fraud-app-repurposed-ddos-botnet/android-click-fraud-app-repurposed-ddos-botnet.csv
+
+ybosrcqo.us
+
+# Reference: https://news.drweb.com/show/?lng=en&i=13464&c=14
+# Reference: https://www.virustotal.com/gui/file/8809ea2387e140002654da141745baf615964452c6f2e4fee6fa9c7be1be745f/detection
+# Reference: https://www.virustotal.com/gui/file/8a87f4ddb0b22c5f350029a1fb999ca058165eed05fa9dc79ab9dad9a6190e69/detection
+
+161.117.8.243:8998
+http://52.221.78.239
+
+# Reference: https://research.checkpoint.com/2020/android-app-fraud-haken-clicker-and-joker-premium-dialer/
+
+13.250.34.16:80
+13.56.233.20:80
+52.77.249.152:80
+
+# Reference: https://security.googleblog.com/2020/01/pha-family-highlights-bread-and-friends.html
+
+sabai5555.com
+/transaction/post_click
+
+# Reference: https://research.checkpoint.com/2020/google-play-store-played-again-tekya-clicker-hides-in-24-childrens-games-and-32-utility-apps/
+
+api.banzinc.xyz
+api.chauxincaidomainnua.icu
+api.felinae.icu
+api.kaluga.xyz
+api.leopardus.xyz
+api.lulquid.xyz
+api.mantaalfredi.icu
+api.maygaiproduct.icu
+api.megapelagios.site
+api.molatecta.icu
+api.namekitchen9.xyz
+api.nhudomainuong.xyz
+api.pantanal.xyz
+api.royalchowstudio.xyz
+api.somniosus.xyz
+api.sundaclouded.host
+api.whitewhalestudio.host
+app.slardar.icu
+waws-prod-dm1-033.cloudapp.net
+
+# Reference: https://www.virustotal.com/gui/file/189e980b1d1a429cfbc0b2d78a265ae9833ba2a9a744c193cbdd309870ec238d/detection
+
+2e70dwl6z-7cgfugryn.ru
+65wir8v9w-hz0yev62id.ru
+b3jawfqky-c8kuscp3i.ru
+l7vx0ks0nbf-p21w20tju3.ru
+x2ibvdpbc49-0fzmpry32.ru
+/apk_main.php?get_hash=
+
+# Reference: https://www.virustotal.com/gui/file/d1e5d625e10c8cef8414e96bfac0edc9900a64af318c4ed2a099629c6eb18c16/detection
+
+http://43.252.37.141/mainld/?m=
+
+# Reference: https://www.virustotal.com/gui/file/93263869039c20a7b5c100d6499923c424891d9956302cd74c9ca6951817d9c4/detection
+
+hdxx.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/jnd.txizd.cn/relations
+
+jnd.txizd.cn
+
+# Reference: https://www.virustotal.com/gui/domain/hezwl.cn/relations
+
+hezwl.cn
+
+# Reference: https://www.virustotal.com/gui/domain/servhost.xyz/relations
+# Reference: https://www.virustotal.com/gui/file/8233e24363796a3f558be6e8851e4f558d0f97f37e1c3a8a2828b8aa79e0e065/detection
+
+http://162.241.228.114
+servhost.xyz
+
+# Reference: https://www.virustotal.com/gui/file/336a3f85c2a651c612ceda2fe621d02ca9680791c465fcfa78cd4243ae412444/detection
+
+mlebupesbuk.000webhostapp.com
+
+# Reference: https://www.virustotal.com/gui/file/03469801287e1330b94d58b4c33521d809f34420805297e67e40666e51f039d3/detection
+
+bbq.aalyun.cn
+
+# Reference: https://www.virustotal.com/gui/file/000b5894281cc9037b05fdac8be112f2b32f63b9a3845c76f77eeef404545db7/detection
+
+cuiliyan.herokuapp.com
+
+# Reference: https://www.virustotal.com/gui/file/cf5db65c8a07b839d769e48bd0fe25db22653a11be22d884cf298cc4dcd581d3/detection
+# Reference: https://www.virustotal.com/gui/file/cf5db65c8a07b839d769e48bd0fe25db22653a11be22d884cf298cc4dcd581d3/detection
+# Reference: https://www.virustotal.com/gui/file/390bad4f55128db589db0d844a5354954529bbf49a773b03e7d8d9c819d2efff/detection
+# Reference: https://www.virustotal.com/gui/file/1956fecd252b0135a45b9b8d1bab0906de41f4627a782239117369404cefc4a7/detection
+
+115.91.26.2:3600
+122.114.52.195:2020
+211.149.157.40:2022
+93.179.127.52:52009
+ppyy.pro
+365s666.com
+365s777.com
+365s888.com
+365s999.com
+666py.cc
+7jf333.com
+7jf444.com
+84bethd.com
+84hd10.com
+84hd30.com
+919shui.com
+aisi111.com
+chenmo666.com
+gg3989.com
+gg4222.com
+gg4288.com
+gg4299.com
+gg4313.com
+gg4333.com
+gg4388.com
+gg4448.com
+gg4555.com
+gg4588.com
+huanci666.com
+jfjf7788vip.com
+mf820.com
+mf850.com
+mf860.com
+puck666.com
+vv9883.com
+vv9885.com
+vv9925.com
+vv9930.com
+vv9932.com
+xp069.com
+xp105.com
+xp109.com
+xp171.com
+xp173.com
+xp199.com
+xp265.com
+xp408.com
+xp528.com
+xp544.com
+xp569.com
+xp589.com
+xp636.com
+xp654.com
+xp778.com
+xuehuacdn.com
+xuehuaweb.com
+39u8heyw.xuehuacdn.com
+4euvjfxz.xuehuacdn.com
+8herqvk5.xuehuacdn.com
+bde59u3k.xuehuacdn.com
+bingnv.chenmo666.com
+bingnv.huanci666.com
+bingnv.puck666.com
+bk8ca2uq.xuehuacdn.com
+cdn.919shui.com
+cdn.xuehuaweb.com
+chenmo.chenmo666.com
+chenmo.huanci666.com
+chenmo.puck666.com
+cw794uxm.xuehuacdn.com
+d38nqm75.xuehuacdn.com
+dayu.chenmo666.com
+dayu.huanci666.com
+dayu.puck666.com
+dcq6f7tp.xuehuacdn.com
+dsjrgqk7.xuehuacdn.com
+eyz9w2hm.xuehuacdn.com
+fengxing.chenmo666.com
+fengxing.huanci666.com
+fengxing.puck666.com
+jf1.666py.cc
+jf2.666py.cc
+jfjf7788vip.com
+lina.chenmo666.com
+lina.huanci666.com
+lina.puck666.com
+m.365s666.com
+m.365s777.com
+m.365s888.com
+m.365s999.com
+m.7jf333.com
+m.7jf444.com
+m.aisi111.com
+m.gg3989.com
+m.gg4222.com
+m.gg4288.com
+m.gg4299.com
+m.gg4313.com
+m.gg4333.com
+m.gg4388.com
+m.gg4448.com
+m.gg4555.com
+m.gg4588.com
+m.mf820.com
+m.mf850.com
+m.mf860.com
+m.xp069.com
+m.xp105.com
+m.xp109.com
+m.xp171.com
+m.xp173.com
+m.xp199.com
+m.xp265.com
+m.xp408.com
+m.xp528.com
+m.xp544.com
+m.xp569.com
+m.xp589.com
+m.xp636.com
+m.xp654.com
+m.xp778.com
+mori.chenmo666.com
+mori.huanci666.com
+mori.puck666.com
+nq6svgdy.xuehuacdn.com
+nuc79h3v.xuehuacdn.com
+q9hus8jw.xuehuacdn.com
+s26z3ang.xuehuacdn.com
+s29dxeyf.xuehuacdn.com
+scpmhxju.xuehuacdn.com
+tf3k9ym2.xuehuacdn.com
+udv593m7.xuehuacdn.com
+wfnkuvdh.919shui.com
+wj37xnrk.xuehuacdn.com
+xiaoyu.chenmo666.com
+xiaoyu.huanci666.com
+xiaoyu.puck666.com
+
+# Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/new-malicious-clicker-found-in-apps-installed-by-20m-users/
+
+liveposting.net
+modooalba.net
+msideup.co.kr
+pangclick.com
+post-blog.com
+sideup.co.kr
+
+# Reference: https://www.virustotal.com/gui/file/65ed3b7af5c3eebafee8f2f9e5d50a3244dc66396f2b5597b8c95e60f1e95595/detection
+
+shun.ml
+xc.shun.ml
+
+# Reference: https://www.virustotal.com/gui/file/d293ec55b0425e8731b17b814b5d9c9abe73b9ee10f8ae808f1ec0f4a969aebe/detection
+
+youtubebplan.com
+
+# Reference: https://www.virustotal.com/gui/file/13994e31c63dfa6be7f865ebd604ede92b501a50dbf68c4e46956d224a01e0c2/detection
+
+service-9sbps84t-1256183612.bj.apigw.tencentcs.com
+
+# Reference: https://www.virustotal.com/gui/file/216554a232024c4f05238c5f1b869236180cbe598b9e1c3a69fdafef185add49/detection
+
+17ww.vip
+
+# Reference: https://x.com/AndreGironda/status/1946230523631894532
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/unmasking-malicious-apks-android-malware-blending-click-fraud-and-credential-theft/
+# Reference: https://www.virustotal.com/gui/ip-address/38.54.17.101/relations
+# Reference: https://www.virustotal.com/gui/ip-address/43.153.159.150/relations
+# Reference: https://www.virustotal.com/gui/file/833f794e49af17f484787ba5cb9988d2045512a44ee055093df2499c02610c8f/detection
+# Reference: https://www.virustotal.com/gui/file/e4611e7117d70ea006754f5ede482e27f22be5aa399926d886856cc5b9d3a583/detection
+# Reference: https://www.virustotal.com/gui/file/dc29b01006dc37b844d2f39d905af79ddaa442baaffb9cfbc30a47350605a281/detection
+# Reference: https://www.virustotal.com/gui/file/c7041db5c54c4864670216263d01eb61bdf583601f2d553173224da891248f26/detection
+# Reference: https://www.virustotal.com/gui/file/980797d43cd2d97f34aab68f2d73fe14399e3d67aadb96a7be4df0f3eede8016/detection
+# Reference: https://www.virustotal.com/gui/file/8dda9ffa00b4f563d9cd96f8e64acc2f2283ac321ee6f93e7da57c8b0ffb76b8/detection
+# Reference: https://www.virustotal.com/gui/file/8613d23d94750684edb9af2f75308925bd285d425b03dbed6d535698084efc00/detection
+
+156.244.25.144:9086
+156.244.56.23:9086
+38.54.17.101:9086
+38.54.56.178:9086
+671068.com
+ajz3j0ck.vip
+cna2fqyd.vip
+cx3wq6vwdfba.top
+cxubldn6.top
+daskhdkhkui.cc
+et2pdw1kdb9d.top
+f3jqk13z.vip
+fb07shdajkshdl.cc
+g5cfhfarurvm.top
+gdshksadfb07.cc
+hb9gd3d6c5ml.top
+hmom2xlb6cpa.top
+kodownapp.top
+q6rvrl49.vip
+sdajkjdlhshufb07.cc
+sem7gb5y.top
+tiaug4ve72ha.top
+uwnnxzhyt8a2.top
+wpf3qqet7udg.top
+xjbncv6u661n.top
+fb.daskhdkhkui.cc
+fb.fb07shdajkshdl.cc
+fb.gdshksadfb07.cc
+fb.kodownapp.top
+fb.sdajkjdlhshufb07.cc
+fb03.671068.com
+fb07.cx3wq6vwdfba.top
+fb07.et2pdw1kdb9d.top
+fb07.g5cfhfarurvm.top
+fb07.hb9gd3d6c5ml.top
+fb07.hmom2xlb6cpa.top
+fb07.uwnnxzhyt8a2.top
+fb072.ajz3j0ck.vip
+fb072.cna2fqyd.vip
+fb072.cxubldn6.top
+fb072.f3jqk13z.vip
+fb072.q6rvrl49.vip
+fb072.sem7gb5y.top
+fb37.tiaug4ve72ha.top
+fb37.wpf3qqet7udg.top
+fb37.xjbncv6u661n.top

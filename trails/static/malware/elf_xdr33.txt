@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cia hive
+
+# Reference: https://twitter.com/blackorbird/status/1612301597358592000
+# Reference: https://x.com/nextronresearch/status/1874690494930014703
+# Reference: https://blog.netlab.360.com/warning-hive-variant-xdr33-is-coming_cn/
+# Reference: https://blog.netlab.360.com/headsup_xdr33_variant_of_ciahive_emeerges/
+# Reference: https://www.virustotal.com/gui/file/f78075951f0272020ca33fee78c3cf9007a0db1842af5cd0eeab518ccc915b16/detection
+# Reference: https://www.virustotal.com/gui/file/0e2aeb9b2f0e0ba891cda89feeb22e15b6c1ffae6f8ada5aab9ef585972440b9/detection
+
+45.9.150.144:443
+45.9.150.144:20066

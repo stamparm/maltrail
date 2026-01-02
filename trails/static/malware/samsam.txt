@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://kc.mcafee.com/resources/sites/MCAFEE/content/live/PRODUCT_DOCUMENTATION/26000/PD26873/en_US/McAfee_Labs_Threat_Advisory-Ransomware-SAMAS_24Jan2018.pdf
+
+evilsecure9.wordpress.com
+followsec7.wordpress.com
+key88secu7.wordpress.com
+keytwocode.wordpress.com
+lordsecure4u.wordpress.com
+payforsecure7.wordpress.com
+secangel7d.wordpress.com
+union83939k.wordpress.com
+zeushelpu.wordpress.com
+
+# Reference: https://github.com/pan-unit42/iocs/blob/master/samsa/samsa_iocs.csv
+# Reference: https://github.com/pan-unit42/iocs/blob/master/samsa/updated_iocs.csv
+
+anonyme.com/Blog/paulcensy
+anonyme.com/Blog/pikasoart
+helpbyangel0.wordpress.com
+5hvtr4qvmq76zyfq.onion
+evpf4i4csbohoqwj.onion
+hjquyfuy5gd2s4qn.onion
+m4g2ndxonahrx4ub.onion
+qjvah4btqkppaudo.onion
+roe53ncs47yt564u.onion
+wzrw3hmj3pveaaqh.onion
+yerpexreg4rl7c46.onion
+
+# Reference: https://www.virustotal.com/gui/file/737e5d526d665c2ff0407b318debf8a49d11b18e3445e69ca4a4cea49d880fb3/detection
+
+mob.2zzz.ru

@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.esentire.com/blog/threat-actors-using-fake-quickbooks-software-to-scam-organizations
+# Reference: https://otx.alienvault.com/pulse/64639447e7b0053fdb137ecd
+# Reference: https://www.virustotal.com/gui/file/a1d864dbb3a3fd813cd0ac4bbe64ff9c645ed2dce64eeec333845e7d3cb533e4/detection
+
+103.251.94.106:27286
+quickbooks12.hopto.org
+quickbooks149.hopto.org

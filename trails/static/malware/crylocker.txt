@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.bleepingcomputer.com/news/security/the-crylocker-ransomware-communicates-using-udp-and-stores-data-on-imgur-com/
+# Reference: https://www.virustotal.com/gui/file/33f66a95e01e2650ea47405031d4ced2ad25db971e65a92319296ccef62b7964/detection
+
+neutx2ll7kh7zt.onion
+
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+
+d57uremugxjrafyg.onion

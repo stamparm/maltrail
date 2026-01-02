@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://socket.dev/blog/wget-to-wipeout-malicious-go-modules-fetch-destructive-payload
+# Reference: https://app.validin.com/detail?find=dc49570f35df856e73999339e9dfe087&type=hash&ref_id=cbc82d63f1e#tab=host_pairs (# 2025-05-04)
+# Reference: https://www.virustotal.com/gui/file/85937297596c3c0f4c3675eb82ba4cb373be7c1990482668a31d6b90a005caf3/detection
+# Reference: https://www.virustotal.com/gui/file/6a6a1d97db55c677be05e30276f8d58b49655f9b3f07ca02d0c7e7432d17441e/detection
+
+http://147.45.44.41
+flaregala.icu
+hyperwordstatus.icu
+infinityhel.icu
+kaiaflow.icu
+kaspamirror.icu
+kavarecent.icu
+mantrabowery.icu
+monsoletter.icu
+uniscomputer.icu
+vanartest.website
+
+# Generic
+
+/storage/de373d0df/a31546bf
+/storage/de373d0df/ccd7b46d
+/storage/de373d0df/f0eee999
+/storage/de373d0df/

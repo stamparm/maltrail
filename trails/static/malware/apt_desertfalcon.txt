@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/files/2015/02/The-Desert-Falcons-targeted-attacks.pdf
+
+ahmedfaiez.info
+fpupdate.info
+flushupate.com
+flushupdate.com
+ineltdriver.com
+mediahitech.info
+mixedwork.com
+plmedgroup.com
+pstcmedia.com
+advtravel.info
+linksis.info
+liptona.net
+linkedim.in
+iwork-sys.com
+nauss-lab.com
+nice-mobiles.com
+facebook-emoticons.bitblogoo.com
+abuhmaid.net
+blogging-host.info
+androcity.com
+tvgate.rocks
+
+# Reference: http://www.trendmicro.com/cloud-content/us/pdfs/security-intelligence/white-papers/wp-operation-arid-viper.pdf
+
+ahmedfaiez.info
+flushupdate.com
+flushupate.com
+ineltdriver.info
+mediahitech.com
+mixedwork.com
+plmedgroup.com
+pstcmedia.com

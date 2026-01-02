@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2016-030705-4930-99&tabid=2
+
+lclebb6kvohlkcml.onion.link
+lclebb6kvohlkcml.onion.nu
+bmacyzmea723xyaz.onion.link
+bmacyzmea723xyaz.onion.nu
+nejdtkok7oz5kjoc.onion.link
+nejdtkok7oz5kjoc.onion.nu
+
+# Reference: http://researchcenter.paloaltonetworks.com/2016/03/new-os-x-ransomware-keranger-infected-transmission-bittorrent-client-installer/
+
+lclebb6kvohlkcml.onion.link
+lclebb6kvohlkcml.onion.nu
+bmacyzmea723xyaz.onion.link
+bmacyzmea723xyaz.onion.nu
+nejdtkok7oz5kjoc.onion.link
+nejdtkok7oz5kjoc.onion.nu

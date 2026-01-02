@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/compfun-successor-reductor/93633/
+
+adstat.pw
+bill-tat.pw
+
+# Reference: https://securelist.com/compfun-http-status-based-trojan/96874/
+
+95.183.49.10:443
+95.183.49.10:80
+95.183.49.29:443
+95.183.49.29:80
+200.63.45.35:443
+200.63.45.35:80

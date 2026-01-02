@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.microsoft.com/en-us/security/blog/2023/08/24/flax-typhoon-using-legitimate-software-to-quietly-access-taiwanese-organizations/
+# Reference: https://otx.alienvault.com/pulse/64e86c65ba511d1d4c4aa590
+
+asljkdqhkhasdq.softether.net
+vpn437972693.sednc.cn
+vpn472462384.softether.net
+
+# Reference: https://x.com/Cyberteam008/status/1909432341702787180
+# Reference: https://x.com/skocherhan/status/1920679514096468212
+# Reference: https://www.virustotal.com/gui/file/a596d4a1ede0d022d77f0b03c723c7071ffec0e89b35f0d30fb9ff15feeb4969/detection
+
+http://149.28.137.179
+http://158.247.193.93
+http://158.247.226.80

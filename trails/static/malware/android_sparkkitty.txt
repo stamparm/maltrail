@@ -1,0 +1,54 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: sparkcat
+
+# Reference: https://securelist.ru/sparkcat-stealer-in-app-store-and-google-play/111638/
+
+99ai.world
+googleapps.top
+socket.99ai.world
+uploads.99ai.world
+api.googleapps.top
+dmbucket102.s3.ap-northeast-1.amazonaws.com
+
+# Reference: https://cdn.prod.website-files.com/66fbdb04ee8bb0436308fc15/68906c27437cf47518aba368_b2979d5ff63304c3cdbef9c065e46640_ClickTok-SparkKitty-TikTok-Shop-Scam-Report.pdf
+# Reference: https://www.virustotal.com/gui/ip-address/45.64.52.147/relations
+
+1826823.top
+236712.top
+2486567.top
+5668613.top
+67223556.top
+6761276.top
+6767565.top
+6786587.top
+6787657.top
+768667.top
+7877657.top
+8768657.top
+gtja689.top
+tiktokfra.top
+tiktokius.top
+tiktokju.top
+tiktokrfv.top
+tiktokshopseller.top
+tkdtg.top
+tkitore.top
+tkitvip.top
+tkshop166.top
+aa.5668613.top
+aa.6761276.top
+aa.6767565.top
+aa.6786587.top
+aa.6787657.top
+bb.236712.top
+bb.5668613.top
+bb.6767565.top
+bb.6787657.top
+cc.5668613.top
+cc.6767565.top
+cc.6787657.top
+jhj.67223556.top
+td.gtja689.top
+tz.2486567.top

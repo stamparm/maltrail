@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ShadowHammer
+
+# Reference: https://www.symantec.com/security-center/writeup/2019-032518-1710-99
+# Reference: https://mauronz.github.io/shadowhammer-backdoor/
+
+asushotfix.com

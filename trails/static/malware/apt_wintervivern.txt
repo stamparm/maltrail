@@ -1,0 +1,84 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: sharpshooter, ta473
+# CERT-UA: UAC-0114
+
+# Reference: https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/operation-sharpshooter-targets-global-defense-critical-infrastructure/?mid=1
+# Reference: https://www.mcafee.com/enterprise/en-us/assets/reports/rp-operation-sharpshooter.pdf
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2018/2018-12-12-operation-sharpshooter-targets-global-defense-critical-infrastructure/operation-sharpshooter-targets-global-defense-critical-infrastructure.csv
+# Reference: https://www.virustotal.com/gui/file/88a5287b6e9879e79240660408e2e868d9d332e3c37c753a05a40b87f1549646/detection
+
+http://137.74.41.56
+http://208.117.44.112
+http://34.214.99.20
+kingkoil.com.sg/board.php
+kingkoil.com.sg/query.php
+
+# Reference: https://www.domaintools.com/resources/blog/winter-vivern-a-look-at-re-crafted-government-maldocs
+# Reference: https://lab52.io/blog/winter-vivern-all-summer/
+# Reference: https://otx.alienvault.com/pulse/6152feb7f8ed6979d6eb5c10
+
+centr-security.com
+secure-daddy.com
+securemanage.com
+securetourspd.com
+
+# Reference: https://twitter.com/Cyber0verload/status/1620484493818855426
+# Reference: https://cert.gov.ua/article/3761104
+# Reference: https://www.virustotal.com/gui/ip-address/45.136.198.141/relations
+# Reference: https://www.virustotal.com/gui/file/05457a790782542d3f16c9b8368a077b458ff7349856e6da541223a51e94b9c8/detection
+# Reference: https://www.virustotal.com/gui/file/72028cff34d33e26bf01e4bf63c8b977ece33b3809bd6dd075bcff343895dc4b/detection
+
+bugiplaysec.com
+ocspdep.com
+troadsecow.com
+/76bja21412/c6bd801d882333fdb93dd17308b3e2de3a78cc05_.php
+/76bja21412/c6bd801d882333fdb93dd17308b3e2de3a78cc05_1.php
+/c6bd801d882333fdb93dd17308b3e2de3a78cc05.php
+/c6bd801d882333fdb93dd17308b3e2de3a78cc05_.php
+/c6bd801d882333fdb93dd17308b3e2de3a78cc05_1.php
+/gkaslnwqpasg/usersfolders/
+/gkaslnwqpasg/fx64g15g.xml
+/fjasmngptwq214.php
+/fjasmngptwq95824s.php
+/fx64g15g.xml
+/lg5362s5215098-xvbxzcnsaf4lmsa.php
+
+# Reference: https://twitter.com/felixaime/status/1621189712105951232
+
+applicationdevsoc.com
+security-ocsp.com
+
+# Reference: https://www.bleepingcomputer.com/news/security/winter-vivern-apt-hackers-use-fake-antivirus-scans-to-install-malware/
+# Reference: https://www.sentinelone.com/labs/winter-vivern-uncovering-a-wave-of-global-espionage/
+# Reference: https://otx.alienvault.com/pulse/64134d77740d6bc14f3a8349
+# Reference: https://www.virustotal.com/gui/file/a5115118908268569db2b1187b5b13b2cec9480585728d7da0abff38ecd771a6/detection
+
+marakanas.com
+ocs-romastassec.com
+/goog_comredira3cf7ed34f8.php
+/Kkdn7862Jj6h2oDASGmpqU4Qq4q4.php
+
+# Reference: https://twitter.com/felixaime/status/1636760060931248130
+# Reference: https://twitter.com/Cyber0verload/status/1636773766679109632
+
+ocsp-reloads.com
+ocsp-report.com
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/exploitation-dish-best-served-cold-winter-vivern-uses-known-zimbra-vulnerability
+
+nepalihemp.com
+oscp-avanguard.com
+
+# Reference: https://www.welivesecurity.com/en/eset-research/winter-vivern-exploits-zero-day-vulnerability-roundcube-webmail-servers/
+# Reference: https://otx.alienvault.com/pulse/653a74e3546b288fb2e329a3
+
+recsecas.com
+
+# Generic
+
+/wintervivern/server/
+/wintervivern/vivern/
+/wintervivern/vivern/getAnswer.php?username=
+/wintervivern/vivern/getcommand?username=

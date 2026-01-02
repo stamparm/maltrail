@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Chisbur-LO/detailed-analysis.aspx
+
+ivicker.usa.cc
+
+# Reference: https://www.virustotal.com/gui/file/9f560b3dbb4afdc6589788c9f39dec9727dcdb160064c739668c497c9a979d59/detection
+
+es3vl.edu.ar
+
+# Generic
+
+/wp-netfile/index.php

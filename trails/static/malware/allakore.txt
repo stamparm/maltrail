@@ -1,0 +1,42 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/_re_fox/status/1212070711206064131
+# Reference: https://app.any.run/tasks/238534d5-af31-4e02-a905-5fd2b9ddf729/
+# Reference: https://www.virustotal.com/gui/file/8b11db3a20f447b31cfc6a6af626c037b8f77ed0f96f7210f9d58a21f83e6eda/detection
+
+173.212.224.110:4140
+
+# Reference: https://blogs.blackberry.com/en/2024/01/mexican-banks-and-cryptocurrency-platforms-targeted-with-allakore-rat
+# Reference: https://www.virustotal.com/gui/file/a5af60355c423fa4cc9695b86a5697f847259eaee724065162d303cc4523d447/detection
+# Reference: https://www.virustotal.com/gui/file/99dd407dad93a7e36482c4f7468be97784a72b60ef8137ddb4ce74be81dd081c/detection
+# Reference: https://www.virustotal.com/gui/file/911e45d053bdf3a41e812203ae29db739cf3505a4e37209936c1cc83ee42e8e9/detection
+# Reference: https://www.virustotal.com/gui/file/5c9abccf24f650b925b78661170e7225676b450dcacb9e27c2e2c857f4019825/detection
+
+andripawl.com
+bstelam.com
+chaucheneguer.com
+debirpa.com
+dulcebuelos.com
+flapawer.com
+hhplaytom.com
+iomsape.com
+isepome.com
+manguniop.com
+narujiapo.com
+pedritobanana.line.pm
+pelicanomwp.com
+pemnias.com
+ppmunchi.com
+rudiopw.com
+trapajina.com
+uperrunplay.com
+uplayground.online
+zaguamo.com
+zulabra.com
+
+# Reference: https://www.virustotal.com/gui/file/8ff61163c7b74653da80dd1990123dd1977a5ec4e774f0c2f47d37f1360a6a9d/detection
+# Reference: https://www.virustotal.com/gui/file/911e495b079761cc452cf2225023e01932b421d982aa2b0e327eaf81d87e7acd/detection
+
+95.119.198.38:3898
+r6xyvcqm04wp1i4p.myfritz.net

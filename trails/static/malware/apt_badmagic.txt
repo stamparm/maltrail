@@ -1,0 +1,90 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/h2jazi/status/1573309097021444096
+# Reference: https://www.virustotal.com/gui/file/c75d905cd7826182505c15d39ebe952dca5b4c80fb62b8f7283fa09d7f51c815/detection
+
+http://185.166.217.184
+/CFVJKXIUPHESRHUSE4FHUREHUIFERAY97A4FXA/
+
+# Reference: https://twitter.com/h2jazi/status/1636768039273377797
+# Reference: https://www.virustotal.com/gui/ip-address/95.142.39.88/relations
+# Reference: https://www.virustotal.com/gui/file/2df66c8258ca164e2138997754c9226d88748612e4df16cfdcb0aa89c5c874f4/detection
+
+servicehost-update.net
+
+# Reference: https://securelist.com/bad-magic-apt/109087/ (# CommonMagic/PowerMagic)
+# Reference: https://www.virustotal.com/gui/ip-address/31.31.198.109/relations
+
+webservice-srv.online
+webservice-srv1.online
+
+# Reference: https://twitter.com/ShadowChasing1/status/1377973764164476932
+# Reference: https://twitter.com/ShadowChasing1/status/1377973769579360258
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/05/redstinger
+# Reference: https://www.virustotal.com/gui/ip-address/45.154.116.147/relations
+# Reference: https://www.virustotal.com/gui/file/fb48b9102388620bb02d1a47297ba101f755632f9a421d09e9ab419cbeb65db8/detection
+# Reference: https://www.virustotal.com/gui/file/301e819008e19b9803ad8b75ecede9ecfa5b11a3ecd8df0316914588b95371c8/detection
+
+http://176.114.9.192
+http://45.154.116.147
+http://91.234.33.108
+http://91.234.33.185
+185.166.217.184:2380
+securitysearch.ddns.net
+
+# Reference: https://twitter.com/ginkgo_g/status/1730523884649402872
+# Reference: https://www.virustotal.com/gui/ip-address/5.35.100.31/relations
+# Reference: https://www.virustotal.com/gui/file/fa89cbcc99939914e8655aac1f62e01d5bab35b6b4862441366290280be33e0c/detection
+# Reference: https://www.virustotal.com/gui/file/c1be9aa6f4ee71180d9779ab8ebae5a84c85b72083829d24e31787cfc9da6a96/detection
+# Reference: https://www.virustotal.com/gui/file/b748d7f3083d6868e1e71469dcbc2d3f6b92b4962d05040d92a0ab9378ad0da3/detection
+# Reference: https://www.virustotal.com/gui/file/22eb4239b472a868ca0ab01bda28203b0b58e1788ef779ec8858c4a4fb57aa40/detection
+
+5.35.100.31:443
+kassperskylaw.ru
+
+# Reference: https://bi.zone/eng/expertise/blog/core-werewolf-protiv-opk-i-kriticheskoy-infrastruktury/
+
+autotimesvc.com
+clodmail.ru
+contileservices.net
+licensecheckout.net
+passportyandex.net
+savebrowsing.net
+softdownloaderonline.net
+statusgeotrust.com
+tapiservicemgr.com
+uploaderonline.com
+uploadingonline.com
+versusmain.com
+winupdateronline.com
+winuptodate.com
+
+# Reference: https://x.com/alex_lanstein/status/1792291521884283058
+# Reference: https://www.virustotal.com/gui/ip-address/5.8.50.153/relations
+# Reference: https://www.virustotal.com/gui/file/7d784e925f73946a63491483369427f6468de328c1d19c2d3ee05ebce0aa4d25/detection
+
+russexportlogistics.ru
+mail.russexportlogistics.ru
+
+# Reference: https://x.com/suyog41/status/1793183460158312914
+# Reference: https://www.virustotal.com/gui/file/f68996c4d0a72a0b3c3f0757a7363678f7abd19df77c34288a135b9f425982d6/detection
+
+01yakutsk.ru
+mail.01yakutsk.ru
+
+# Reference: https://x.com/suyog41/status/1800049246462411209
+# Reference: https://www.virustotal.com/gui/file/33e611181d25079cf975c20bce8a5969dd63c326c694731465a24147eba1002d/detection
+
+asteriskx.ru
+
+# Reference: https://x.com/StrikeReadyLabs/status/1811797419971039539
+# Reference: https://www.virustotal.com/gui/ip-address/80.85.155.64/relations
+# Reference: https://www.virustotal.com/gui/file/42eecd06c7aea0a536f653dd1af238fa199df14f2adc4932443aa6f74889f582/detection
+
+astita.ru
+
+# Reference: https://x.com/fstenv/status/1828546982467518823
+# Reference: https://www.virustotal.com/gui/file/14037909d704c418a1d97835bcf7cf62239f0ad3dfd9fc4f4ca191f28fca894a/detection
+
+kb6ns.ru

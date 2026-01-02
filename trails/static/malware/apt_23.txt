@@ -1,0 +1,920 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt23, apt-c-23, micropsia, pierogi, AirdViper
+
+# Reference: https://www.symantec.com/blogs/expert-perspectives/ongoing-android-malware-campaign-targets-palestinians-part-1
+# Reference: https://www.symantec.com/blogs/expert-perspectives/ongoing-android-malware-campaign-targets-palestinians-part-2
+# Reference: https://content.connect.symantec.com/sites/default/files/2018-08/APT-C-23%20IOCs.pdf (Appendix)
+
+1jve.com
+aamir-khan.site
+accaunts-googlc.com
+account-gocgle.com
+account-googlc.com
+accountforuser.website
+accountforusers.website
+accounts-gocgle.com
+accounts-googlc.com
+accountusers.website
+accuant-googlc.com
+activedardash.club
+alain.ps
+alisonparker.club
+android-settings.info
+anifondnet.club
+apkapps.pro
+apkapps.site
+appchecker.us
+appuree.info
+arthursaito.club
+aryastark.info
+aslaug-sigurd.info
+assets-acc.club
+assistenza-dati.com
+baysidebride.net
+bbc-learning.com
+bellamy-bob.life
+bestbitloly.website
+billy-bones.info
+bitgames.world
+black-honey.club
+bob-turco.website
+buymicrosft.com
+cajaaekhart.club
+camilleoconnell.website
+caroline-nina.com
+cassy-gray.club
+cecilia-dobrev.com
+cecilia-gilbert.com
+cerseilannister.info
+chat-often.com
+christopher.fun
+claire-browne.info
+clarke-griffin.info
+clarke-taylor.life
+daario-naharis.info
+dachfunny.club
+dachfunny.us
+dardash.club
+dardash.fun
+dardash.info
+dardash.live
+david-mclean.club
+david-moris.website
+davina-claire.xyz
+davos-seaworth.info
+debra-morgan.com
+donna-paulsen.info
+dontrack.link
+easyshow.fun
+eleanor-guthrie.info
+eleanorguthrie.site
+engin-altan.website
+esofiezo.website
+everyservices.space
+exvsnomy.club
+ezofiezo.website
+face-book-support.email
+fasebcck.com
+fasebock.info
+fasebook.cam
+fasebookvideo.com
+fatehmedia.site
+firesky.site
+flirtymania.fun
+freya.miranda-barlow.website
+geny-wise.com
+gmailservice.us
+goldservice.site
+graceygretchen.info
+hareyupnow.club
+harper-monty.site
+harrykane.online
+harvey-ross.info
+hayleymarshal.com
+hazel-grace.info
+hctmial.com
+hcttmail.com
+help-live.club
+help-sec.club
+heyapp.website
+hitmesanjjoy.pro
+hoopoechat.com
+hotimael.com
+hotmailme.website
+hotpatches.net
+italk-chat.com
+italk-chat.info
+jack-wagner.website
+james-charles.club
+jimmykudo.online
+john-brown.website
+jon-snow.pro
+jorah-mormont.info
+joycebyers.club
+juana.fun
+kaniel-outis.info
+karenwheeler.club
+kate-austen.info
+katesacker.club
+katie.party
+kik-com.com
+kristy-milligan.website
+lagertha-lothbrok.info
+leonard-kim.website
+leslie-barnes.website
+lets-see.site
+lexi-branson.website
+lincoln-blake.website
+lindamullins.info
+liz-keen.website
+login-yohoo.com
+lord-varys.info
+lyanna-stark.info
+mail-accout.club
+mail-goog1e.com
+mail-mofa-pna.com
+mail-pmi-pna.com
+mail-police-sec.com
+mail-presidency.com
+margaery-tyrell.info
+maria-bouchard.website
+marklavi.com
+mary-crawley.com
+masuka.club
+matthew-stevens.club
+mauricefischer.club
+max-eleanor.info
+max-mayfield.com
+maxlight.us
+mediauploader.info
+meet-me.chat
+meetme.cam
+men-ana.fun
+michael-keaton.info
+miranda-barlow.website
+miwakosato.club
+mofa-help.site
+moneymotion.club
+ms-sysupdate.com
+msupdt.net
+myboon.website
+mygift.site
+mygift.website
+myjsonfile.xyz
+namybotter.info
+namyyeatop.club
+natemunson.com
+new.filetea.me
+nightchat.fun
+nightchat.live
+nissour-beton.com
+octavia-blake.world
+olivia-hartman.info
+ondrive.io
+oriential.website
+ososezo.club
+ososezo.site
+parrotchat.co
+pmi-pna.com
+pml-help.site
+pml-sac.info
+pmo-gov.info
+police-sec.club
+police-sec.info
+pure-talk.com
+rachel-green.info
+ragnar-lothbrok.info
+ran-togomory.com
+redirect-wa.com
+remoteaaddressconnect.com
+requiredvision.com
+rexkatsugeki.info
+richard-hines.website
+rocket-chat.com
+rose-sturat.info
+ross-gelller.info
+sahem.pcanywhere.net
+sahemnews.dynamicdns.co.uk
+sanblitch.club
+sanjynono.website
+sapport-accounts.com
+saratancredi.info
+sec-acoaunt.com
+sec-outluck.com
+secureaccountes.com
+selin-yilmaz.info
+sendbird-chat.com
+serv2.sandtengineers.info
+shahrukh-khan.club
+shailene-hazel.life
+shailene-tris.xyz
+sherlock-holmes.club
+shortupload.com
+show-me.fun
+so-chat.org
+sophie-deverau.xyz
+sopotfile.website
+spgbotup.club
+sportliner.website
+sybil-parks.info
+tawjihi2018.site
+tellme.site
+top4up.website
+tyrion-lannister.info
+upload999.com
+useraccount.website
+usr-accounts-validation.pw
+victor-stewart.info
+wa-loading.com
+wab-watzapp.com
+wab-whtsap.com
+web-wnatzapp.com
+web-wtsapp.com
+websetting.me
+wes-gibbins.com
+whatsaapp.us
+whatsapps.cam
+whatsusers.fun
+whatzopp.com
+whispers-talk.com
+white-hony.online
+whowatchyou.com
+win-laive.com
+winlife.host
+world-cup-live-2018.stream
+yahaoa.com
+yohoa-users.com
+young-spencer.com
+youngmija.club
+zachlieberman.club
+zee-player.com
+zee-player.website
+
+# Reference: https://research.checkpoint.com/apt-attack-middle-east-big-bang/
+
+exvsnomy.club
+namyyeatop.club
+spgbotup.club
+lindamullins.info
+namybotter.info
+hitmesanjjoy.pro
+ezofiezo.website
+sanjynono.website
+
+# Reference: https://twitter.com/ClearskySec/status/1022767002925129730
+# Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (2018-07-27: APT-C-23 Infrastructure and Micropsia samples)
+
+steve-harrington.com
+sophie-deverau.xyz
+shailene-tris.xyz
+shailene-hazel.life
+max-mayfield.com
+mauricefischer.club
+margaery-tyrell.info
+alisonparker.club
+young-spencer.com
+dardash.club
+joycebyers.club
+harvey-ross.info
+davina-claire.xyz
+arthursaito.club
+
+# Reference: https://twitter.com/ClearskySec/status/1067109104492134400
+# Reference: https://blog.radware.com/security/2018/07/micropsia-malware/
+
+samwinchester.club
+
+# Reference: https://twitter.com/ClearskySec/status/984700415055925248
+
+relationalsystems.net
+
+# Reference: https://twitter.com/jeFF0Falltrades/status/1132684186446438405
+
+katesalinas.icu
+
+# Reference: https://twitter.com/VK_Intel/status/1142498510845202440
+# Reference: https://twitter.com/P3pperP0tts/status/1142760589871259649
+# Reference: https://pastebin.com/djxQAE08
+# Reference: https://www.virustotal.com/gui/file/345b706ead4b917138c8e8aff0ca5526ee7738f67c19e0d9b2ab5487c90cf547/detection
+
+nfstate.club
+fasstt.space
+powzip.club
+gtmake.info
+pre23sence.club
+
+# Reference: https://unit42.paloaltonetworks.com/unit42-badpatch/
+
+pal4u.net
+pal2me.net
+pay2earn.net
+shop8d.net
+ts4shope.net
+pal4news.net
+
+# Reference: https://www.fortinet.com/blog/threat-research/badpatch-campaign-uses-python-malware.html
+# Reference: https://otx.alienvault.com/pulse/5db3616a90ebed5e230cb2d5
+
+tstapi.pal4u.net
+
+# Reference: https://www.cybereason.com/blog/new-cyber-espionage-campaigns-targeting-palestinians-part-2-the-discovery-of-the-new-mysterious-pierogi-backdoor
+# Reference: https://otx.alienvault.com/pulse/5e451c74a860e7f82bef4bc6
+
+linda-callaghan.icu
+nicoledotson.icu
+
+# Reference: https://twitter.com/blackorbird/status/1229245744109850624
+# Reference: https://www.virustotal.com/gui/file/d095f39823656a99b7bd7d9ad132d5aabbf59862a86253ce067329a491590d13/detection
+# Reference: https://www.virustotal.com/gui/ip-address/68.65.121.44/relations
+# Reference: https://www.virustotal.com/gui/ip-address/198.54.117.211/relations
+
+68.65.121.44:1883
+68.65.121.44:443
+198.54.117.211:1883
+198.54.117.217:1883
+198.54.117.215:1883
+198.54.117.212:1883
+198.54.117.218:1883
+
+# Reference: https://research.checkpoint.com/2020/hamas-android-malware-on-idf-soldiers-this-is-how-it-happened/
+# Reference: https://otx.alienvault.com/pulse/5e4a58ac2cf3129eb287becc
+
+catchansee.com
+
+# Reference: https://www.welivesecurity.com/2020/09/30/aptc23-group-evolves-its-android-spyware/
+
+cecilia-gilbert.com
+david-gardiner.website
+digital-apps.store
+javan-demsky.website
+linda-gaytan.website
+
+# Reference: https://twitter.com/malwrhunterteam/status/1314253545982525440
+# Reference: https://twitter.com/ShadowChasing1/status/1314490418516508673
+# Reference: https://www.virustotal.com/gui/file/d2724090e873775aeb0eb0e12c2d65ac43a7e6e608fdc4f3d74fa79ca85e468f/detection
+
+whispers-talk.site
+
+# Reference: https://twitter.com/ShadowChasing1/status/1314530949770559489
+# Reference: https://www.virustotal.com/gui/file/2d03ff4e5d4d72afffd9bde9225fe03d6dc941982d6f3a0bbd14076a6c890247/detection
+# Reference: https://www.virustotal.com/gui/file/2b70045d4878a20b8fca568c0b3414f2d255f3b2a7dfed85c84cf88d1b2f4e74/detection
+
+ruthgreenrtg.live
+
+# Reference: https://twitter.com/malwrhunterteam/status/1316365476042338306
+# Reference: https://twitter.com/LukasStefanko/status/1316395809055944704
+# Reference: https://twitter.com/ShadowChasing1/status/1316706683108782080
+# Reference: https://www.virustotal.com/gui/file/8c63a7d1f7d24ce40dcb751ac066d27ed19e0d3ee3f0071ea5984ab204c765f6/detection
+
+brian-garcia.work
+darrell-ferris.site
+tommy-swope.site
+
+# Reference: https://twitter.com/ShadowChasing1/status/1318564724062130176
+# Reference: https://www.virustotal.com/gui/file/db1c2482063299ba5b1d5001a4e69e59f6cc91b64d24135c296ec194b2cab57a/detection
+
+krasil-anthony.icu
+
+# Reference: https://twitter.com/ShadowChasing1/status/1329090011766038531
+# Reference: https://www.virustotal.com/gui/file/0d65b9671e51baf64e1389649c94f2a9c33547bfe1f5411e12c16ae2f2f463dd/detection
+# Reference: https://www.virustotal.com/gui/file/3da95f33b6feb5dcc86d15e2a31e211e031efa2e96792ce9c459b6b769ffd6a4/detection
+
+judystevenson.info
+
+# Reference: https://www.virustotal.com/gui/file/32eb4f92c8e82d3f401078725115d0604f9283ff8d9a088e7afbc150e08df295/detection
+
+http://198.54.115.130
+
+# Reference: https://www.cybereason.com/blog/new-malware-arsenal-abusing-cloud-platforms-in-middle-east-espionage-campaign
+# Reference: https://www.cybereason.com/hubfs/dam/collateral/reports/Molerats-in-the-Cloud-New-Malware-Arsenal-Abuses-Cloud-Platforms-in-Middle-East-Espionage-Campaign.pdf
+# Reference: https://www.virustotal.com/gui/file/f323a150d7597f46d29eb3a3c56f74e11d18caf164f9176c8c1b2fa0031cc729/detection
+
+artlifelondon.com
+brooksprofessional.com
+exchangeupdates.com
+forextradingtipsblog.com
+
+# Reference: https://team-cymru.com/blog/2020/12/16/mapping-out-aridviper-infrastructure-using-augurys-malware-addon/
+
+angeladeloney.info
+jack-fruit.club
+lordblackwood.club
+overingtonray.info
+
+# Reference: https://twitter.com/malwrhunterteam/status/1354457854833549316
+# Reference: https://www.virustotal.com/gui/file/144ba7c6090acbd2bc35411a815ccf801fd49abc5dde327b03f207ed868cdd6e/detection
+
+apps-market.site
+
+# Reference: https://twitter.com/malwrhunterteam/status/1356955845406449666
+# Reference: https://twitter.com/bl4ckh0l3z/status/1357066148102221829
+# Reference: https://www.virustotal.com/gui/file/53545abc493e3628fe352bb4d4baf72975bcf1dc25b834a8222680493dd2094c/detection
+
+amanda-hart.website
+
+# Reference: https://twitter.com/Timele9527/status/1358750034389422080
+# Reference: https://twitter.com/ShadowChasing1/status/1358757750050754560
+
+nancy-mulligan.live
+
+# Reference: https://twitter.com/ShadowChasing1/status/1359722828870787073
+# Reference: https://twitter.com/bl4ckh0l3z/status/1360664043271426055
+# Reference: https://www.virustotal.com/gui/file/649977c22c82c200e9fb9771982e682e684ba7f686bf470c9b65151484a0c519/detection
+
+stevensmalley.pro
+
+# Reference: https://twitter.com/IntezerLabs/status/1374020933132939271
+# Reference: https://analyze.intezer.com/files/e32dcca3d5771823c83d017d30ed49dc05428f1024f8a619b50ffa8c4a7b4688
+# Reference: https://www.virustotal.com/gui/file/e32dcca3d5771823c83d017d30ed49dc05428f1024f8a619b50ffa8c4a7b4688/detection
+# Reference: https://www.virustotal.com/gui/file/7b9087d91a31d03dd2c235d8debf8ed10f4b82c430a236d159e06e7fb47464a9/detection
+# Reference: https://www.virustotal.com/gui/file/aa507bbe5d2a32f6e1e3f311c1baf93fd4707def8596083f26683e85972f5ac0/detection
+
+nicholasuhl.website
+
+# Reference: https://twitter.com/ShadowChasing1/status/1374947562310995970
+# Reference: https://www.virustotal.com/gui/file/b6ed0833d4a19d2eca5f6f856c595d5329532ff116163047ed4e3a27c9f8bd69/detection
+# Reference: https://www.virustotal.com/gui/file/9a513ccf750527a2e24fb1b69d98f871bc265a21213a052b9bcec3ffb9546e4c/detection
+
+jamesmontano.life
+
+# Reference: https://www.cadosecurity.com/post/threat-group-uses-voice-changing-software-in-espionage-attempt
+# Reference: https://otx.alienvault.com/pulse/606cb1ee2db0eb990bdb1227
+
+adamnews.for.ug
+formore.for-more.biz
+mmksba.dyndns.org
+mmksba.simple-url.com
+new2019.mine.nu
+postmail.website
+webhoptest.webhop.info
+
+# Reference: https://twitter.com/blackorbird/status/1385120225260015616
+# Reference: https://about.fb.com/news/2021/04/taking-action-against-hackers-in-palestine/
+# Reference: https://about.fb.com/wp-content/uploads/2021/04/Technical-threat-report-Arid-Viper-April-2021.pdf
+
+accounts-goog-le.com
+advanced-files.club
+alishatnixon.site
+alttaeb.info
+amanda-hart.website
+amyacunningham.us
+anna-sanchez.online
+ansonwhitmore.live
+app-market.online
+apps-download.store
+apps-store.online
+autlook.live
+beauty-msg.com
+belcherjacky.info
+bourneliam.info
+calculator-1e016.appspot.com
+calculator-1e016.firebaseio.com
+cathy-seliver.icu
+chad-jessie.info
+charmainellauzier.host
+chat-14bb1.appspot.com
+chat-14bb1.firebaseio.com
+chat-update.live
+claytoniosep.live
+cynthiaecook.club
+darrell-ferris.site
+dash-chat-c02b3.appspot.com
+dash-chat-c02b3.firebaseio.com
+dash-chat.site
+day-on.site
+digital-apps.store
+donnamfelton.club
+drivesuplouders.000webhostapp.com
+enough-hamas.000webhostapp.com
+enti5abat.pw
+es-last-telegram.appspot.com
+es-last-telegram.firebaseio.com
+fasbcaok.com
+fasebaak.com
+faseback.com
+fasebaok.co
+fasebaok.com
+fasebaook.com
+fasebcak.co
+fasebcak.com
+fasebcck.com
+fasebcoki.com
+fasibauik.co
+fasitoak.com
+fast-download.pro
+fcaibaak.com
+fecolooklegon.000webhostapp.com
+files-store.host
+fire-upload.host
+frowtisice.club
+gallant-william.icu
+gifts-store.net
+goerge-amper.website
+goo-ply-download.com
+gp-market.com
+hadfnews.000webhostapp.com
+hamas31.000webhostapp.com
+hannah-parsons.info
+heidi-minaya.host
+herman-poore.info
+hidden-chat-e58d7.appspot.com
+hidden-chat-e58d7.firebaseio.com
+hidden-chat.online
+hookupdating.club
+hookupmsg.club
+iklood.co
+ikoad.co
+irenewansley.icu
+isaac-rowland.space
+jayboyadams.club
+jennifer-marler.pw
+jeremy-tanner.live
+jodiecarey.live
+joe-rumley.pw
+judystevenson.info
+julie-parker.top
+katesalinas.icu
+kentporter.site
+kevin-good.top
+kimberlycamp.club
+krasil-anthony.icu
+leticialittle.pro
+lets-msger.fun
+linda-callaghan.icu
+log-yoahao.co
+log-yoheo.info
+lonakodas.club
+lordblackwood.club
+loyronald.site
+magic-smile.co
+magic-smile.fun
+magic-store.online
+magic4smile.com
+magicchat-1f275.firebaseio.com
+magicsmile.fun
+margarita-smith.host
+marty-colvard.top
+marwapetersson.info
+melissa-garcia.site
+melissa-gonzalez.com
+mikkelbourke.pro
+mix-store.online
+moggfelicio.info
+moi-pna.pw
+moone-b9497.appspot.com
+moone-b9497.firebaseio.com
+nachat-152615.appspot.com
+nachat-152615.firebaseio.com
+networkmiddleast.net
+nicoledotson.icu
+norayowell.info
+overingtonray.info
+palpolice.icu
+paulycongalton.pro
+play-store-51182.appspot.com
+play-store-51182.firebaseio.com
+power-messenger.com
+products-office.online
+pure-talk.site
+putanything.com
+randy-severs.info
+richardbeman.info
+robert-conley.space
+robertking.site
+rythergannon.info
+samehnew-10a7c.appspot.com
+samehnew-10a7c.firebaseio.com
+sandra-franklin.fun
+scorerabbate.site
+sha-talk.co
+shortesly.website
+side-talk.com
+skelly-chester.icu
+smart-messenger.online
+social-store.online
+spartacuscrixus.club
+stacks-zadar.website
+stand-by-97c5c.appspot.com
+stand-by-97c5c.firebaseio.com
+stand-by.site
+stevenfloyd.icu
+stevensmalley.pro
+stikerscloud.com
+telegrom.org
+tim-jordan.info
+tommy-swope.site
+touch.ps
+ubanks.icu
+uri-ready.website
+url-redirect.website
+vedioplayers2020.000webhostapp.com
+vickeryduncan.site
+vista-chat.com
+wab-wahtsapp.com
+wannameet.co
+wendy-johnston.pw
+whispers-talk.site
+williedvazquez.club
+wine-talk.online
+winetalk-9ff2d.appspot.com
+winetalk-9ff2d.firebaseio.com
+
+# Reference: https://twitter.com/Timele9527/status/1399178504634134528
+# Reference: https://www.virustotal.com/gui/file/d82e23359a756affdadc194b0a4271bf8a05c1a5755185567a4595bed6bd8106/detection
+
+haleymartinez.me
+
+# Reference: https://twitter.com/BaoshengbinCumt/status/1401841701501603840
+# Reference: https://www.virustotal.com/gui/file/823bf27b1e559d6607f5224ab99de1c83bb5d36e2ed0e6644d551e94ec45d248/detection
+# Reference: https://www.virustotal.com/gui/file/49f368a61f5fbd49742b561786507a39a1d7594fa55b426288f90de0f448fb6c/detection
+# Reference: https://www.virustotal.com/gui/file/33442300d37af4b5f1dcfbefab206907e2c67d3105e065e493a1916543c6b0b3/detection
+
+lxsecurity.com
+peterabernathy.online
+
+# Reference: https://twitter.com/ClearskySec/status/1405169392602726406
+# Reference: https://www.virustotal.com/gui/file/5322543a3c5abd01a7853f061beeccb98296bc2e537f29d2368123967f13f336/detection
+
+howard-maria.me
+
+# Reference: https://twitter.com/k3yp0d/status/1462315310929825792
+# Reference: https://www.virustotal.com/gui/file/7e261941e31547484d098e611eabc2b682a1b4b1e140f2ba96fbb596c398d9bb
+
+bruce-ess.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1463273630184443915
+# Reference: https://twitter.com/LukasStefanko/status/1463290714339610628
+# Reference: https://www.virustotal.com/gui/file/33ae5c96f8589cc8bcd2f5152ba360ca61f93ef406369966e69428989583a14e
+
+diego-jackson.org
+
+# Reference: https://news.sophos.com/en-us/2021/11/23/android-apt-spyware-targeting-middle-east-victims-improves-its-capabilities/
+# Reference: https://www.virustotal.com/gui/file/e25ee5b4ddc1337a3b9cd11ac8c00cbcd4a61c3c3013d34a067977d4e6b2deea
+
+donald-grigg.site
+
+# Reference: https://github.com/ti-research-io/ti/blob/main/ioc_extender/ET_APT-C-23_MICROPSIA_Variant.json
+# Reference: https://www.virustotal.com/gui/file/87d005570aee7c6d503a8c065faa0897fac2c3a37144667883cf6bb6081f12b7/detection
+# Reference: https://www.virustotal.com/gui/file/c156d20045c3ca27bbe9258122e47f2a11e500480ba512a415ec88a953152ddf/detection
+
+ahnlabin.com
+digicertglobal.world
+dulichovietnam.net
+extrafeature.xyz
+hbamefphmqsdgkqojgwe.com
+infosec.jp
+kavalabonline.com
+mircosoftbox.com
+microsoftsonline.net
+odgarsupport.world
+officemodel.org
+unohcr.org
+upgradsource.com
+dns-c.ahnlabin.com
+full.extrafeature.xyz
+hanoi.dulichovietnam.net
+info.kavalabonline.com
+ns.mircosoftbox.com
+new.odgarsupport.world
+ns.upgradsource.com
+ns1.microsoftsonline.net
+ns2.microsoftsonline.net
+
+# Reference: https://unit42.paloaltonetworks.com/unit42-targeted-attacks-middle-east-using-kasperagent-micropsia/
+
+9oo91e.co
+acount-manager.com
+acount-manager.info
+acount-manager.net
+acount-manager.org
+akashipro.com
+al-amalhumandevelopment.com
+appppure.info
+appppure.net
+appppure.pro
+apppure.info
+arnani.info
+beauty-dance.net
+cecilia-dobrev.com
+cecilia-gilbert.com
+feteh-asefa.com
+go-mail-accounts.com
+google-support-team.com
+gooogel-drive.com
+gooogel.org
+kagami-adam.com
+kalisi.info
+kalisi.org
+kalisi.xyz
+mailsinfo.net
+margaery.co
+mary-crawley.com
+mavis-dracula.com
+mediafreeuploader.co.uk
+mediauploader.info
+mediauploader.me
+mydriveweb.com
+ran-togomory.com
+shildon-cooper.info
+stikerscloud.com
+upload101.net
+upload202.com
+upload404.club
+upload909.net
+upload999.com
+upload999.info
+upload999.net
+upload999.org
+useraccountvalidation.com
+
+# Reference: https://twitter.com/Timele9527/status/1425640885811777542
+# Reference: https://www.virustotal.com/gui/file/9e8f02051b24719f3f3382ebefeea17fcadf989f3cf155a81b25eaafe1a2d102/detection
+
+kristinthomas.work
+
+# Reference: https://twitter.com/ShadowChasing1/status/1424741904407687170
+# Reference: https://www.virustotal.com/gui/ip-address/198.54.116.130/relations
+# Reference: https://www.virustotal.com/gui/file/f2f36a72cfb25cef74ff0ea8e3ad1c49c6dc3e128fd60a2717f4c5a225e20df2/detection
+
+dorothymambrose.live
+rocketairexpresscs.live
+starslovecaster.live
+
+# Reference: https://twitter.com/malwrhunterteam/status/1478346806140579841
+# Reference: https://twitter.com/Arkbird_SOLG/status/1478366742757924868
+# Reference: https://twitter.com/bl4ckh0l3z/status/1478377750645854214
+# Reference: https://twitter.com/midnight_comms/status/1478397479905284103
+# Reference: https://www.virustotal.com/gui/file/8076707a45bc7868c3555eeeddfd60eb17b13d9243acdbf4d6c439e137a37e12/detection
+
+carbon-tour.com
+
+# Reference: https://twitter.com/RedDrip7/status/1365138723638177796
+# Reference: https://www.virustotal.com/gui/file/c9d7b5d06cd8ab1a01bf0c5bf41ef2a388e41b4c66b1728494f86ed255a95d48/detection
+
+juliansturgill.info
+/um2NxySaF4L5mSYE/KY1hNeVvrE1XCrKP/
+/um2NxySaF4L5mSYE/
+/KY1hNeVvrE1XCrKP/
+
+# Reference: https://news.sophos.com/en-us/2021/11/23/android-apt-spyware-targeting-middle-east-victims-improves-its-capabilities/
+# Reference: https://raw.githubusercontent.com/sophoslabs/IoCs/master/Android_C23-spyware.csv
+# Reference: https://otx.alienvault.com/pulse/619e54ddc69c917077b40a15
+
+donald-grigg.shop
+jose-ross.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1486652178383228931
+# Reference: https://twitter.com/LukasStefanko/status/1488085149719879680
+# Reference: https://www.virustotal.com/gui/file/f15a22d2bdfa42d2297bd03c43413b36849f78b55360f2ad013493912b13378a/detection
+
+thomas-stump.fun
+danny-cartwright.firm.in
+/RrlANnLstC/hgaurt
+/RrlANnLstC/nrezyny
+/RrlANnLstC/
+
+# Reference: https://twitter.com/malwrhunterteam/status/1499394673864888321
+# Reference: https://www.virustotal.com/gui/file/ee98fd4db0b153832b1d64d4fea1af86aff152758fe6b19d01438bc9940f2516/detection
+
+jeffrey-ruffin.fun
+/brkAQpb4SmGmNYwB/getLink/wUHGFF96Uru2u55L/GAqhYwmEz4CgeN98
+/brkAQpb4SmGmNYwB/
+/wUHGFF96Uru2u55L/GAqhYwmEz4CgeN98
+/wUHGFF96Uru2u55L/
+/GAqhYwmEz4CgeN98
+
+# Reference: https://www.cybereason.com/blog/operation-bearded-barbie-apt-c-23-campaign-targeting-israeli-officials
+# Reference: https://otx.alienvault.com/pulse/624e973b333d4016a094cdf4
+
+fausto-barb.website
+frances-thomas.com
+jarah-zeiman.website
+media-storage.site
+scott-chapin.com
+sites.google
+wanda-bell.website
+
+# Reference: https://twitter.com/malwrhunterteam/status/1518487313935917056
+# Reference: https://twitter.com/k3yp0d/status/1518661754275966977
+# Reference: https://www.virustotal.com/gui/file/ee7e5bd5254fff480f2b39bfc9dc17ccdad0b208ba59c010add52aee5187ed7f/detection
+
+elizabeth-steiner.tech
+jack-keys.site
+my-applications.store
+new-applications-2022.website
+
+# Reference: https://twitter.com/k3yp0d/status/1521837692631326720
+# Reference: https://www.virustotal.com/gui/file/7ecf4ac13b237925e9903ae7a1c287c3269315dba8e67c8171cb9dd6f148628e/detection
+
+marina-samuel.com
+/ump5e4srnbbgymwd/scdvr6evj3ms2gfh/p97md3bv79wvkdt5
+/ump5e4srnbbgymwd/scdvr6evj3ms2gfh/qe9xmn6px63xtpdf
+/ump5e4srnbbgymwd/scdvr6evj3ms2gfh/sjskhy2q8v967my4
+/ump5e4srnbbgymwd/scdvr6evj3ms2gfh/un4u2s5gwg6x7mz7
+/ump5e4srnbbgymwd/scdvr6evj3ms2gfh/
+/scdvr6evj3ms2gfh/
+/ump5e4srnbbgymwd/
+/p97md3bv79wvkdt5
+/qe9xmn6px63xtpdf
+/sjskhy2q8v967my4
+/un4u2s5gwg6x7mz7
+
+# Reference: https://www.virustotal.com/gui/ip-address/64.225.91.73/relations
+
+barairhate.com
+businessessmarketed.com
+businessesspromoted.com
+businessessreviewed.com
+businessesssimplified.com
+businessesstransformed.com
+granddaughterburn.com
+msframeworkx86.com
+reapeslough.com
+usastoreonts.com
+yasjobmootbenii.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1575836523341021185
+# Reference: https://www.virustotal.com/gui/file/a8ca778c5852ae05344ac60b01ad7f43bb21bd8aa709ea1bb03d23bde3146885/detection
+# Reference: https://www.virustotal.com/gui/file/682b58cad9e815196b7d7ccf04ab7383a9bbf1f74e65679e6c708f2219b8692b/detection
+
+junius-cassin.com
+orin-weimann.com
+/RFsfdg32DSFR/
+/t9ddAMv8Ye6g/
+
+# Reference: https://twitter.com/malwrhunterteam/status/1575944932128215040
+# Reference: https://www.virustotal.com/gui/file/fc791db30fd5ddc58b9fcb2b2a41ed7d5c5d83b70e5527ec6020b1c590dcd86f/detection
+
+jasmin-schaden.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1604242205316628480
+# Reference: https://twitter.com/midnight_comms/status/1604844450701664256
+# Reference: https://www.virustotal.com/gui/file/57fb9daf70417c3cbe390ac44979437c33802a049f7ab2d0e9b69f53763028c5/detection
+
+conner-margie.com
+
+# Reference: https://www.virustotal.com/gui/file/64abffeb33862252249348b59a53acc515e14499d697717a19abf0e656ba4214/detection
+
+leah-burke.com
+
+# Reference: https://twitter.com/RexorVc0/status/1642791282090078208 (# TwotailedScorpion, # TwinTailedScorpion)
+# Reference: https://www.ctfiot.com/106664.html (Chinese)
+
+bbalignit.com
+blaxaplayer.com
+newbestmethod.com
+qualityanysolution.com
+
+# Reference: https://twitter.com/fofabot/status/1753321293523677233
+
+clemochat.com
+kora442.com
+lapizachat.com
+reblychat.com
+voevanil.com
+wcup22qat.com
+wislisapp.com
+wobomov.com
+
+# Reference: https://x.com/k3yp0d/status/1836894621559050460
+# Reference: https://www.virustotal.com/gui/file/4a76f91cc38b97b61205f1a239bcde896a4c46b080fac5ae3cea718e92c651b2/detection
+
+snowshoewildernessclub.net
+
+# Generic (callback) path
+
+/Alyanak/check
+/Alyanak/mehro
+/api/hazard/oneo
+/api/white_walkers/
+/debby/weatherford/
+/debby/weatherford/Yortysnr
+/debby/weatherford/Ekspertyza
+/debby/weatherford/Zavantazhyty
+/debby/weatherford/Vydalyty
+/vcapicv/vchivmqecv/
+/vchivmqecv/vbqsrot
+/xqgjdxa/yhhzireha/
+/enterprise/Senterprise.php
+/enterprise/Wenterprise.php
+/AhmedMajdalani.php
+/Hamas.php
+/hamas_internal_elections.rar
+/SaudiRecognitionofIsrael.php
+
+# APK
+
+/MyGramIM.signed.apk
+
+# Reference: https://twitter.com/billyleonard/status/1757556382176313624
+# Reference: https://blog.google/technology/safety-security/tool-of-first-resort-israel-hamas-war-in-cyber/
+# Reference: https://services.google.com/fh/files/misc/tool-of-first-resort-israel-hamas-war-cyber.pdf
+# Reference: https://github.com/google/threat-team/blob/main/2024/2024-02-14-tool-of-first-resort-israel-hamas-war-cyber/indicators.csv
+
+businessservicesinc.net
+gamerocker.net
+jennifercanti.com
+kathleenhumphreystore.com
+morecoreservises.com

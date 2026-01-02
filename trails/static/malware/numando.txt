@@ -1,0 +1,103 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ESETresearch/status/1438827056037613570
+# Reference: https://www.welivesecurity.com/2021/09/17/numando-latam-banking-trojan/
+# Reference: https://github.com/eset/malware-ioc/tree/master/numando#cc-servers
+# Reference: https://otx.alienvault.com/pulse/6148684ff8845c58799c8287
+
+138.91.168.205:733
+20.195.196.231:733
+20.197.228.40:779
+enjoyds.s3.us-east-2.amazonaws.com
+lksluthe.s3.us-east-2.amazonaws.com
+procjdcals.s3.us-east-2.amazonaws.com
+rmber.s3.ap-southeast-2.amazonaws.com
+sucessmaker.s3.us-east-2.amazonaws.com
+trbnjust.s3.us-east-2.amazonaws.com
+webstrage.s3.us-east-2.amazonaws.com
+
+# Reference: https://twitter.com/johnk3r/status/1484606460814413825
+# Reference: https://bazaar.abuse.ch/sample/ee75f3b76903886f1a333afd9d8b882020e51b5960d480f1afb0424c4264dfe3/#iocs
+# Reference: https://tria.ge/220121-xmhhraagb2/behavioral1
+
+http://18.230.24.96
+cubomolemau.duckdns.org
+d4ni.duckdns.org
+danilasomcar.duckdns.org
+daniman.duckdns.org
+f3na3d3s.duckdns.org
+fernand.duckdns.org
+grinnshow.duckdns.org
+muchilin.duckdns.org
+newsnovocry.duckdns.org
+paiondelivery.duckdns.org
+primomig.duckdns.org
+qxg5muecaeghjtbl.duckdns.org
+subzerobilau.duckdns.org
+tjmangay.duckdns.org
+tjmiller.duckdns.org
+voldaniela.duckdns.org
+/01/postUP.php
+/bBW6tMsYA.css
+
+# Reference: https://www.virustotal.com/gui/file/068c11698ed7f3d8d6984011c298913994d7c3b7d720a54702808388075e950b/detection
+
+comerciodelegumes.duckdns.org
+modalintima1.northcentralus.cloudapp.azure.com
+/aviso2022/umbsllznb.php
+/umbsllznb.php
+
+# Reference: https://github.com/pan-unit42/tweets/blob/master/2022-02-17-IOCs-for-Bazil-targeted-malware-infection.txt
+# Reference: https://www.virustotal.com/gui/domain/gnjghnmjhgnjmgh.from-pr.com/detection
+
+clientes.is-saved.org
+gnjghnmjhgnjmgh.from-pr.com
+nfe5.doomdns.org
+nfe6.dyndns.ws
+plugtree.duckdns.org
+download2.go.dyndns.org
+/clientes/postUP.php
+
+# Reference: https://www.virustotal.com/gui/domain/gufhoifpd.is-an-artist.com/detection
+
+gufhoifpd.is-an-artist.com
+
+# Reference: https://www.virustotal.com/gui/domain/nota-fiscal.is-a-doctor.com/detection
+
+nota-fiscal.is-a-doctor.com
+
+# Reference: https://www.virustotal.com/gui/domain/orcamento2022.from-mi.com/detection
+
+orcamento2022.from-mi.com
+
+# Reference: https://www.virustotal.com/gui/domain/nota-fiscal-eletronica.servebbs.com/detection
+
+nota-fiscal-eletronica.servebbs.com
+
+# Reference: https://x.com/johnk3r/status/1791189402779070506
+# Reference: https://www.virustotal.com/gui/file/7014042370ac1c5eeda335b56f69623c39e4b9d25bbf463988d36e423c764141/detection
+# Reference: https://www.virustotal.com/gui/file/63cdceb8aa7441039d3cc779706d858944fe95036acc8721467e37bda88be43b/detection
+
+185.228.72.101:2109
+185.228.72.101:27735
+185.228.72.101:37637
+185.228.72.101:48838
+185.228.72.101:54634
+185.228.72.101:55888
+185.228.72.101:6616
+185.228.72.101:8646
+185.228.72.101:8943
+185.228.72.101:9473
+
+# Reference: https://x.com/1ZRR4H/status/1817297089187180643
+# Reference: https://x.com/johnk3r/status/1817315966608605231
+# Reference: https://www.virustotal.com/gui/file/37f0d5d39aff2fb15aca1038443a31901198121b28fe3118c888727194035c65/detection
+
+http://18.169.250.9
+freitaslogistica.com
+
+# Reference: https://x.com/suyog41/status/1853308621117075723
+# Reference: https://www.virustotal.com/gui/file/439356d2b82c3f6dc8ae7363917219d85826795c5a01a4e7244cd7ddb73d7ef7/detection
+
+sextadll.b-cdn.net

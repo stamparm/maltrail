@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fortinet.com/blog/threat-research/diavol-new-ransomware-used-by-wizard-spider
+# Reference: https://otx.alienvault.com/pulse/60df059aa243861016a3dc70
+
+http://173.232.146.118
+r2gttyb5vqu6swf5.onion
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1412400253244874758
+
+http://172.83.155.216
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1421437794388516877
+# Reference: https://www.shodan.io/host/45.11.183.175
+
+http://45.11.183.175
+45.11.183.175:22
+45.11.183.175:3389
+45.11.183.175:443
+45.11.183.175:5985
+
+# Reference: https://twitter.com/HeMan44623053/status/1484498988443258882
+
+diavol-news.net
+
+# Reference: https://www.thedfirspot.com/general-8-1
+
+7ypnbv3snejqmgce4kbewwvym4cm5j6lkzf2hra2hyhtsvwjaxwipkyd.onion
+
+# Generic
+
+/Bnyar8RsK04ug/

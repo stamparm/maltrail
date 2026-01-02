@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: zippyloader
+
+# Reference: https://twitter.com/Techhelplistcom/status/1047888912025362437
+
+akula.pw
+atakara.bid
+demeter.icu
+hades.pw
+premiumos.icu
+
+# Reference: https://www.virustotal.com/gui/file/f48db7f2fc8846629e3eba8b703f1887507b2c4520004b162061fb6e7c591b44/detection
+
+aresi.xyz

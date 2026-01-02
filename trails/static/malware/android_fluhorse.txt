@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://research.checkpoint.com/2023/eastern-asian-android-assault-fluhorse/
+
+fetc-net.com
+fetctw.xyz
+pcdstl.com
+spusp.xyz
+usadmin-3.top
+vpbankem.com
+yelove.xyz
+api.fetc-net.com
+api.fetctw.xyz
+api.usadmin-3.top
+api.vpbankem.com
+h5.spusp.xyz
+h5.yelove.xyz
+info1.yelove.xyz
+jp.yelove.xyz

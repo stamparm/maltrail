@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/cookiethief/96332/
+
+api-resource.youzicheng.net
+api-rssocks.youzicheng.net
+guard.yoboxtool.com
+zh.yomobi.net
+
+# Reference: https://infosecwriteups.com/mobile-malware-analysis-writeup-by-josue-martins-5574865ae0f1
+
+http://173.255.243.60

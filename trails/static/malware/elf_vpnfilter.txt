@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2018/05/VPNFilter.html
+
+zuh3vcyskd4gipkm.onion
+
+# Reference: https://www.trendmicro.com/en_us/research/21/a/vpnfilter-two-years-later-routers-still-compromised-.html
+
+toknowall.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1663551906667720705
+# Reference: https://raw.githubusercontent.com/CronUp/EnAnalisis/main/2023-06-03_ELFsample_IPs
+# Reference: https://www.virustotal.com/gui/file/a0747d99460564e6264dc91d722c0e4165ae0e837f80ca793c6a49a0d7671fc2/detection
+# Reference: https://www.virustotal.com/gui/file/f876b9a14d9770212b2dea07d2f2f093be8825de4e13bacb68f49ab29bfd8ca6/detection
+
+34.142.74.220:25561
+45.32.63.189:39544
+2qnwkei5wsvzep7wue7qoaz6zwrqlcszigrvspgsciiv4tkgcte4spad.onion
+4ql6davp4m5yq52wnq7go4aax6d5hfj7sbedhonjbzocljkt6mv7ubqd.onion
+hji3u2ii6cd4odzbj6mvzjdtg4o2dkpgczapu4uxsexcjjexlvfayqqd.onion
+hs5yzl5ayduio33byhymha5totm5ticzskvbzil63hrvr6xjva2aqjad.onion
+k2cq5r2q3xbn7htcgmkhnf7vxdzrqwkgq6sx3hqf4lou3vfaqrwm65ad.onion
+pookoyemxionqdovuta36cmae3eidm3mqdzrdvhfzpzld2cfwmg3kwad.onion
+qtrfscxzj6nkxbuyqion5mn6pwvg4pnz3jsl3ocdivozh4ac3xao27qd.onion
+qzmipdel7vxxnqegj6id5umiwcj45gljudw4mrvbj5rsx4sz7kd3kxid.onion
+xotbe22zdenxsrhvjwgxaldmhs6rf3li6g5fila22rqh4hbrp3l5nkad.onion

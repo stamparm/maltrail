@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: aegis stealer
+
+# Reference: https://x.com/ShadowOpCode/status/1923041509655355423
+# Reference: https://x.com/skocherhan/status/1923413527852679450
+# Reference: https://www.virustotal.com/gui/file/da94519b24f2fe6caaa5eb4a99c48be0b2911993fc5c09f2e7dc231360c22898/detection
+
+77.73.129.52:3000

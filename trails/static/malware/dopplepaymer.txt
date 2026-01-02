@@ -1,0 +1,75 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/pancak3lullz/status/1296105004185640960
+# Reference: https://twitter.com/pancak3lullz/status/1324718225062612993
+
+foxsmtp.com
+
+# Reference: https://twitter.com/0x3c7/status/1329694199487324161
+# Reference: https://twitter.com/GossiTheDog/status/1305507379870605313
+# Reference: https://twitter.com/malwrhunterteam/status/1329800283405299712
+# Reference: https://www.cybereason.com/blog/cybereason-vs-egregor-ransomware
+# Reference: https://www.intrinsec.com/egregor-prolock/
+# Reference: https://otx.alienvault.com/pulse/5fc942dcf06229396d3afec0
+# Reference: https://otx.alienvault.com/pulse/5fc94a8028a7e6be7487aea3
+# Reference: https://www.virustotal.com/gui/file/381ed40735167b76b29f53a84f4c524c7059b50367576f7d295d58d3d45d837d/detection
+
+akamai-technologies.digital
+akamai-technologies.host
+akamai-technologies.online
+akamai-technologies.site
+akamai-technologies.space
+akamai-technologies.website
+amajai-technologies.digital
+amajai-technologies.host
+amajai-technologies.industries
+amajai-technologies.network
+amajai-technologies.online
+amajai-technologies.site
+amajai-technologies.space
+amajai-technologies.support
+amajai-technologies.tech
+amajai-technologies.trade
+amajai-technologies.website
+amajai-technologies.work
+amamai-tecnologies.cloud
+amamai-tecnologies.digital
+amamai-tecnologies.space
+amapai-technologies.digital
+amapai-technologies.site
+amapai-technologies.space
+amapai-technologies.support
+amapai-technologies.website
+amapai-technologies.work
+amapai-technologies.world
+amatai-technologies.digital
+amatai-technologies.site
+amatai-technologies.space
+amatai-technologies.website
+amazai-technologies.online
+amazai-technologies.site
+amazai-technologies.space
+amazai-technologies.support
+amazai-technologies.website
+amazai-technologies.world
+atakai-technologies.host
+atakai-technologies.online
+atakai-technologies.space
+atakai-technologies.website
+atakai-technologies.work
+
+# Reference: https://twitter.com/0x3c7/status/1337325838824509440
+# Reference: https://twitter.com/smoothimpact/status/1342088568567697408
+
+cloudflace-network.digital
+rackspare-technology.digital
+rackspare-technology.download
+rackspare-technology.network
+rackspare-technology.online
+rackspare-technology.space
+stackpatc-technologies.digital
+
+# Reference: https://www.hackplayers.com/2021/02/sitios-cibercriminales-deepweb.html
+
+hpoo4dosa3x4ognfxpqcrjwnsigvslm7kv6hvmhh2yqczaxy3j6qnwad.onion

@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.alienvault.com/blogs/labs-research/madominer-part-1-install
+# Reference: https://www.alienvault.com/blogs/labs-research/madominer-part-2-mask
+# Reference: https://cybersecurity.att.com/blogs/labs-research/madominer-part-1-install
+
+bmw.hobuff.info
+boy.freebuf.info
+ca.posthash.org
+d.honker.info
+da.alibuf.com
+dns.alibuf.com
+etc.freebuf.info
+gle.freebuf.info
+liang.alibuf.com
+mx.alibuf.com
+qq.honker.info
+t.honker.info
+x.alibuf.com
+xmr.freebuf.info
+xt.freebuf.info
+
+# Reference: https://www.binarydefense.com/gh0stcringeformerly-cirenegrat/ (# MadoMiner)
+
+sky.hobuff.info

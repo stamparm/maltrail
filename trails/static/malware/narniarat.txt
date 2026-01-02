@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/RussianPanda95/Yara-Rules/blob/main/NarniaRAT/mal_NarniaRAT.yar
+# Reference: https://www.virustotal.com/gui/file/8f887de850a32ae8de88b5e37ba9bbf18de80f0d55d6a575d72c695055afa71b/detection
+
+45.77.71.28:4000

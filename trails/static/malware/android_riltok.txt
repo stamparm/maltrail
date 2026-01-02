@@ -1,0 +1,107 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/mobile-banker-riltok/91374/
+
+alr992.date
+avito-app.pw
+backfround2.pw
+background1.xyz
+blacksolider93.com
+blass9g087.com
+brekelter2.com
+broplar3hf.xyz
+buy-youla.ru
+cd78cg210xy0.com
+copsoiteess.com
+farmatefc93.org
+firstclinsop.com
+holebrhuhh3.com
+holebrhuhh45.com
+karambga3j.net
+le22999a.pw
+leboncoin-bk.top
+leboncoin-buy.pw
+leboncoin-cz.info
+leboncoin-f.pw
+leboncoin-jp.info
+leboncoin-kp.top
+leboncoin-ny.info
+leboncoin-ql.top
+leboncoin-tr.info
+myyoula.ru
+sell-avito.ru
+sell-youla.ru
+sentel8ju67.com
+subito-li.pw
+subitop.pw
+web-gumtree.com
+whitehousejosh.com
+whitekalgoy3.com
+youlaprotect.ru
+
+# Reference: https://twitter.com/benkow_/status/1151047351341072385
+# Reference: https://twitter.com/benkow_/status/1151049415345524736
+# Reference: https://pastebin.com/Yy4HBYaj
+
+^[a-z]{1,3}\-leboncoin\.(com|info|me|top)$
+^leboncoin\-[a-z]{1,3}\.(com|info|me|top)$
+
+# Reference: https://twitter.com/benkow_/status/1143805261024546816
+
+/3lfk3jGj/
+
+# Reference: https://twitter.com/sh1shk0va/status/1196385062457085953
+
+www-willhaben.com
+
+# Reference: https://www.virustotal.com/gui/file/c800581436c42547b16b4792543896a27b18b21dee01dda5458486d4152b5f53/detection
+
+analkarnavalbubenec.pw
+
+# Reference: https://www.virustotal.com/gui/file/3ea2f45fb183c5478568dd0d87c3a943180b53d0641961b9577da0c98456a184/detection
+
+abrakadabra.pw
+
+# Reference: https://www.virustotal.com/gui/file/f79342ecd3c84a175af4657a6e0d64018abd3e4d4ed4e92ee373e2ec3ea71fc1/detection
+
+abrakakj3123r.com
+
+# Reference: https://www.virustotal.com/gui/file/54971798ee22ab8a2571b677f654859859c5559003ce33cfe6b948085745cc04/detection
+
+abrakakjenber.com
+
+# Reference: https://www.virustotal.com/gui/file/96b662d71d994540026ab06b9220c58df5e22f2e92bedd1463b500a440e9ce94/detection
+
+abrakadabras.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1394420528925061128
+# Reference: https://twitter.com/bl4ckh0l3z/status/1394758637214650373
+# Reference: https://www.virustotal.com/gui/file/c800581436c42547b16b4792543896a27b18b21dee01dda5458486d4152b5f53/detection
+
+karambga3j.net
+lkrishtian1.com
+lkrishtifaa.com
+/relise2319/bee/
+
+# Reference: https://twitter.com/malwrhunterteam/status/1417189285619539968
+# Reference: https://www.virustotal.com/gui/file/854e71657a675dcb700414ed81ed5c30e3738b0524b1d50485c3f6e14c69f400/detection
+
+blebhebroolab.com
+
+# Reference: https://malware.news/t/inside-view-of-brazzzersff-infrastructure/62431
+
+tuneappservice.org
+/l3k42hj56h634gkj2lk14356jk4gh23k5jl6h4/gate.php
+/l3k42hj56h634gkj2lk14356jk4gh23k5jl6h4/
+
+# Generic (heur) detection
+
+/admindo/login.php
+/relise2319/gate.php
+/relise2319/gating.php
+/3lfk3jGj/gate.php
+/3lfk3jGj/gating.php
+/3lfk3jGj/report.php
+/3lfk3jGj/
+/relise2319/

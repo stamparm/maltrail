@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: babybotnet
+
+# Reference: https://twitter.com/siri_urz/status/1168875394122092546
+# Reference: https://www.virustotal.com/gui/file/2faf67bf5625e5f8354ded43fbde3ba43c0a343c41273a162b9f1cbce71dcb53/detection
+# Reference: https://www.virustotal.com/gui/file/53d2d132ff5848827c9841d0c02bbac2414052219f5b1191e14c3d8dc9d0bd77/detection
+# Reference: https://www.virustotal.com/gui/file/6a21fee44af49caf42d791fe3958e5ac9ff0de75915bd98c1ff9a0caff315a55/detection
+
+cyberinc.nl
+x0x22a3720.temp.swtest.ru
+
+# Generic trails
+
+/index.php?action=ADDBOT
+/index.php?action=KrijgCommands

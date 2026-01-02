@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://usa.visa.com/dam/VCOM/global/support-legal/documents/pfd-identifies-new-javascript-skimmer.pdf
+# Reference: https://otx.alienvault.com/pulse/5dce18c330083f1e431b3211
+
+http://188.127.251.244
+
+# Generic trails
+
+/index.php?pipka=
+/index.php?id=1&pipka=
+/index.php?id=2&pipka=

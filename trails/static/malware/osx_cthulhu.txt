@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cthulhu stealer
+
+# Reference: https://www.cadosecurity.com/blog/from-the-depths-analyzing-the-cthulhu-stealer-malware-for-macos
+# Reference: https://www.virustotal.com/gui/file/6483094f7784c424891644a85d5535688c8969666e16a194d397dc66779b0b12/detection
+# Reference: https://www.virustotal.com/gui/file/e3f1e91de8af95cd56ec95737669c3512f90cecbc6696579ae2be349e30327a7/detection
+# Reference: https://www.virustotal.com/gui/file/f79b7cbc653696af0dbd867c0a5d47698bcfc05f63b665ad48018d2610b7e97b/detection
+# Reference: https://www.virustotal.com/gui/file/de33b7fb6f3d77101f81822c58540c87bd7323896913130268b9ce24f8c61e24/detection
+# Reference: https://www.virustotal.com/gui/file/96f80fef3323e5bc0ce067cd7a93b9739174e29f786b09357125550a033b0288/detection
+
+89.208.103.185:4000

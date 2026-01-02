@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://ransomwaretracker.abuse.ch/tracker/padcrypt/
+
+nehvc5m3fs57dyrz.onion.link
+gnkltbsaeq35rejl.tor2web.org
+gnkltbsaeq35rejl.onion.cab
+gnkltbsaeq35rejl.onion.to
+
+# Reference: https://twitter.com/ThreatBookLabs/status/1693976061384507898
+# Reference: https://www.virustotal.com/gui/file/9ce1da25b40e79b1875d5be9535d312cc7a7280fb15f78619f444651dd79b183/detection
+
+ekmecacafenebdfl.com

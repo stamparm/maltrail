@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/briandfoy_perl/status/1354535622069919748
+# Reference: https://xakep.ru/2021/02/01/perl-com/ (Russian)
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=TrojanDownloader:Win32/Unruy.C#tab=2
+# Reference: https://www.virustotal.com/gui/file/1bb5c87f73c3f3fce2cf1eabbc51ab30ba7490c308e431e9d384f134b64e36e9/detection
+
+supernetforme.com
+superwebbysearch.com
+
+# Reference: https://twitter.com/ThreatBookLabs/status/1679480627438170112
+# Reference: https://www.virustotal.com/gui/file/2e7dd85cf12ebb039ea9ee21ec30c4faba4b52935f0eaee861a0ed0688d6d794/detection
+
+superkilldog.gnway.net

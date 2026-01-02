@@ -1,0 +1,258 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ScumBots/status/1047476994517192704
+
+senteena.com
+/wplog/loading.php
+/wplog/push.php
+
+# Reference: https://twitter.com/ScumBots/status/1045358257097904130
+
+dumps.com/jackposprivate12/loading.php
+mxcloudsumit.tk/swedenunit/jbs/xpanel/loading.php
+
+# Reference: https://twitter.com/ScumBots/status/1046078150701174786
+
+adobeflasherup1.com/wordpress/post.php
+javaoracle2.ru/wordpress/post.php
+
+# Reference: https://twitter.com/ScumBots/status/1044096744731156480
+
+654andro.net/insider/loading.php
+
+# Reference: https://twitter.com/ScumBots/status/1056000941923753985
+
+46.28.202.77/teamx/settings.php
+
+# Reference: https://twitter.com/ScumBots/status/1072986121871810561
+
+observatii.ro
+/panel/loading.php
+/panel/push.php
+
+# Reference: https://twitter.com/ScumBots/status/1074458986672463872
+
+185.145.130.142/ssl/settings.php
+
+# Reference: https://twitter.com/ScumBots/status/1074639418294718464
+
+cold-asice.biz/et/settings.php
+
+# Reference: https://twitter.com/ScumBots/status/1075050915424595969
+
+def3nd.mn/ca/settings.php
+
+# Reference: https://twitter.com/ScumBots/status/1079579238896939011
+
+freshfireboss.info/ssl/settings.php
+
+# Reference: https://twitter.com/ScumBots/status/1086719049088856064
+
+dumptrack2.ueuo.com/gate.php
+dumpcvv.epizy.com/gate.php
+
+# Reference: https://twitter.com/ScumBots/status/1087565616012316672
+
+otangcare.co.uk
+
+# Reference: https://twitter.com/ScumBots/status/1088117081583902722
+
+observatii.ro/dump/loading.php
+observatii.ro/dump/push.php
+observatii.ro/panel/loading.php
+observatii.ro/panel/push.php
+novitaz.com/msql/push.php
+novitaz.com/msql/loading.php
+
+adobeflasherup1.com/wordpress/post.php
+javaoracle2.ru/wordpress/post.php
+
+# Reference: https://twitter.com/ScumBots/status/1096055078753050624
+
+dumps.com/jackposprivate12/loading.php
+dumps.com/Panel/loading.php
+
+# Reference: https://twitter.com/ScumBots/status/1096820015372951552
+
+/dump/push.php
+
+# Reference: https://twitter.com/ScumBots/status/1097523740592750594
+
+dumps.com/managercc/loading.php
+
+# Reference: https://twitter.com/ScumBots/status/1103999440334045184
+
+maculastudios.com
+/lina/loading.php
+
+# Reference: https://twitter.com/ScumBots/status/1105429303104278528
+
+/roy/settings.php
+
+# Reference: https://twitter.com/ScumBots/status/1105496012808953856
+
+/goose/loading.php
+/goose/push.php
+
+# Reference: https://twitter.com/ScumBots/status/1105495931842191361
+
+/alinew/loading.php
+/alinew/push.php
+
+# Reference: https://twitter.com/ScumBots/status/1105495848023142402
+
+/uhgf/loading.php
+/uhgf/push.php
+
+# Reference: https://twitter.com/ScumBots/status/1105495770365681665
+
+/system32/loading.php
+/jackposprivate12/loading.php
+/system32/push.php
+/jackposprivate12/push.php
+
+# Reference: https://twitter.com/ScumBots/status/1105495516262076416
+
+/ocz2/up.php
+
+# Reference: https://twitter.com/ScumBots/status/1105495351946035200
+
+/x1/settings.php
+
+# Reference: https://twitter.com/ScumBots/status/1105495271386112002
+
+/al/loading.php
+/al/push.php
+
+# Reference: https://twitter.com/ScumBots/status/1109113268457668610
+
+/katrina/settings.php
+
+# Reference: https://twitter.com/ScumBots/status/1109582309890707462
+
+/calc/settings.php
+
+# Reference: https://twitter.com/ScumBots/status/1110265736029712384
+
+/ssl/settings.php
+
+# Reference: https://twitter.com/ScumBots/status/1110265564428226565
+
+/nis/settings.php
+
+# Reference: https://twitter.com/ScumBots/status/1110265483264167939
+
+/bis/settings.php
+
+# Reference: https://twitter.com/ScumBots/status/1110566954031562754
+
+/p/post.php
+
+# Reference: https://twitter.com/ScumBots/status/1110890541833703424
+
+/pasnel/loading.php
+
+# Reference: https://twitter.com/ScumBots/status/1117995141829136384
+
+/trinapanel/settings.php
+
+# Reference: https://twitter.com/VK_Intel/status/1123463742958768128
+
+analytics-akadns.com
+
+# Reference: https://twitter.com/VK_Intel/status/1126371295850061824
+
+akamai-analytics.com
+
+# Reference: https://twitter.com/ScumBots/status/1183583933759397888
+
+chukky.xyz
+
+# Reference: https://www.virustotal.com/gui/file/11432a93644762ef87d2c0625fa5c922a1230e672d04dbc92d4850f553cee3f5/detection
+
+315andro.net
+
+# Reference: https://twitter.com/ScumBots/status/1205308250486460416
+
+http://208.98.63.226
+
+# Reference: https://twitter.com/ScumBots/status/1218959122290311168
+# Reference: https://www.virustotal.com/gui/file/d461d2dfd0577f00f016fd24bb2e0d936caf61d6490010ba86ecedb82d5d9bfc/detection
+
+313andro.net
+
+# Reference: https://twitter.com/ScumBots/status/1240681442612518914
+
+jonyxx.com
+
+# Reference: https://twitter.com/ScumBots/status/1249935907580502017
+
+999andro.com
+
+# Reference: https://blog.centurylink.com/alina-point-of-sale-malware-still-lurking-in-dns/
+# Reference: https://otx.alienvault.com/pulse/5efe216885df0bd533601b7e
+
+akamai-analytics.com
+akamai-information.com
+akamai-technologies.com
+analytics-akadns.com
+sync-akamai.com
+
+# Reference: https://app.any.run/tasks/4ba45add-4db5-44fc-82b0-a5b9781ab620/
+# Reference: https://app.any.run/tasks/012fd951-3db2-4ef2-84df-64c785bde1a8/
+
+someligeoas.com
+uipoqworkas.com
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60 (# Alina)
+
+aloha.support
+heretheycome.cc
+myideasis.com
+notdown.su
+summ3r.ca
+ufo365.in
+
+# Reference: https://www.virustotal.com/gui/file/369700acfb29267aa7c1a0f7a660bfba13039daa3ecdfc738696323dd31f2a1f/detection
+
+backers12.cc
+
+# Reference: https://www.virustotal.com/gui/file/31e02366648172dda7c2d4b2bb1f6265e2c82a573aaa927ef280f767944f8d65/detection
+
+666approved.ru
+approved666.pro
+
+# Reference: https://www.virustotal.com/gui/file/0022698153988cdeaddaafbb6b009d554750e6c24a4f76ceabb1d460ca10af48/detection
+
+http://208.98.63.228
+
+# Generic callback trails
+
+/admin/loading.php
+/dmp/push.php
+/dmp/loading.php
+/dpt/push.php
+/dpt/loading.php
+/extralog/loading.php
+/folder/gate1.php
+/folder/loading.php
+/friend/loading.php
+/fyzeee/settings.php
+/insider/loading.php
+/jack/loading.php
+/jackposprivate12/loading.php
+/lina/loading.php
+/lina/push.php
+/managercc/loading.php
+/managercc/push.php
+/msql/loading.php
+/msql/push.php
+/Paxel/loading.php
+/xpanel/loading.php
+/teamx/settings.php
+/wplog/loading.php
+/wplog/push.php
+/panel/loading.php
+/panel/push.php
+/whynot/sam.php

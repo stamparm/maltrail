@@ -1,0 +1,72 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1479767752885874688
+# Reference: https://twitter.com/malwrhunterteam/status/1479769153196154880
+# Reference: https://twitter.com/malwrhunterteam/status/1479848910705287168
+# Reference: https://twitter.com/malwrhunterteam/status/1479862845324021763
+# Reference: https://twitter.com/impost0r_/status/1479600560240222208
+# Reference: https://twitter.com/felixaime/status/1481312381028478977
+# Reference: https://twitter.com/felixaime/status/1481312391602348035
+# Reference: https://www.virustotal.com/gui/ip-address/213.238.178.108/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.32.253.0/relations
+# Reference: https://www.virustotal.com/gui/ip-address/46.102.106.30/relations
+# Reference: https://www.virustotal.com/gui/file/6112e0aa2a53b6091b3d7834b60da6cd2b3c7bf19904e05765518460ac513bfa/detection
+# Reference: https://www.virustotal.com/gui/file/005526de4599f96a4a1eba9de9d6ad930de13d5ea1a23fada26e1575f4e3cf85/detection
+# Reference: https://www.virustotal.com/gui/file/cabc62b3077c2df3b69788e395627921c309e112b555136e99949c5a2bbab4f2/detection
+
+4api.net
+4bash.net
+4need.net
+4perl.net
+black-crystal.net
+carbonblackz.art
+cmder.co
+combolist.cloud
+coolmint.net
+de4dot.net
+dev-c.net
+dnspy.dev
+dnspy.net
+filesr.net
+inject1byte.com
+mingw64.net
+obs-studio.net
+sandboxies.com
+sandboxies.net
+shortbase.net
+streamlabsobs.net
+toolbase.co
+tools-utilities.net
+tor-browser.co
+torfiles.net
+windows-software.co
+windows-software.net
+xampp.download
+xiiideath.com
+zippyfiles.net
+
+# Reference: https://twitter.com/rcwht_/status/1480524547300507653
+# Reference: https://www.virustotal.com/gui/ip-address/172.96.187.189/relations
+# Reference: https://www.virustotal.com/gui/file/d4a6ee469acfb4a9313f32bdd5736e0e0ce63fc4f39b209b452b8da3032234e7/detection
+# Reference: https://www.virustotal.com/gui/file/d137af5ef50e84b4344abab5c0af53435670795e196b61feec24dae1828b69a5/detection
+
+duck.black
+
+# Reference: https://twitter.com/felixaime/status/1486640964013809665
+
+cpu-z.org
+cygwin.download
+gpu-z.org
+kmspico.download
+minecraft-download.win
+minecraftz.net
+mingw.download
+
+# Reference: https://www.virustotal.com/gui/ip-address/172.105.80.154/relations
+
+idmdownload.net
+linkbase.net
+obs-studio.co
+openbullet.net
+tlauncherminecraft.net

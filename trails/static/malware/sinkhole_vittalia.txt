@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/#/domain/xfx.epiphenomenonsponsorships.com
+# Reference: https://www.virustotal.com/#/domain/kdv.decipheringwarns.com
+
+38.134.105.124
+38.134.106.117
+38.134.106.119
+38.134.106.123
+38.134.106.124
+38.134.106.125
+38.134.106.126

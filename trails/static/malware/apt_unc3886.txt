@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: tinyshell, redpenguin, riflespine, mopsled, castletap
+
+# Reference: https://www.bleepingcomputer.com/news/security/chinese-cyberspies-backdoor-juniper-routers-for-stealthy-access/
+# Reference: https://cloud.google.com/blog/topics/threat-intelligence/china-nexus-espionage-targets-juniper-routers
+# Reference: https://censys.com/junos-and-redpenguin/
+# Reference: https://www.virustotal.com/gui/file/5bef7608d66112315eefff354dae42f49178b7498f994a728ae6203a8a59f5a2/detection
+
+101.100.182.122:22
+116.88.34.184:22
+118.189.188.122:22
+129.126.109.50:22
+158.140.135.244:22
+223.25.78.136:22
+45.77.39.28:22
+8.222.225.8:22
+
+# Reference: https://www.trendmicro.com/en_us/research/25/g/revisiting-unc3886-tactics-to-defend-against-present-risk.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/25/g/unc3886/revisiting-unc3886-tactics.txt
+
+118.193.63.40:22
+47.246.68.13:22

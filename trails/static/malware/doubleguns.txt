@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.netlab.360.com/shuangqiang/
+
+w15773.com
+cs.wconf5.com
+cs.ledfaguang.com
+pro.csocools.com
+white.fei46413.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/154.93.148.114/relations
+
+sinpun.com
+sishendm.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/154.93.152.138/relations
+
+58rfid.com
+by7748.com
+icoco8.com
+nembeo.com
+sinpim.com

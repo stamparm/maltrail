@@ -1,0 +1,52 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: runningrat, sysrat
+
+# Reference: https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/gold-dragon-widens-olympics-malware-attacks-gains-permanent-presence-on-victims-systems/
+
+http://200.200.200.13
+http://223.194.70.136
+
+# Reference: https://tria.ge/210211-b3vr83s2n2/behavioral1
+
+103.75.46.74:8000
+
+# Reference: https://tria.ge/201227-yzvphwjjge/behavioral1
+# Reference: https://tria.ge/201226-wcd7ymx7qa/behavioral1
+
+134.122.178.123:51010
+23.105.200.208:51010
+oplay.pw
+node.oplay.pw
+
+# Reference: https://www.virustotal.com/gui/file/edaa1187ac70766bad70abd2b63eacc1717b4023ff153c335dfcbb75b29a80b9/detection
+# Reference: https://www.virustotal.com/gui/file/884989ff2f7abace698616a0114a0a45d1e69fefff9c789b51e027c0e2b6546e/detection
+
+45.61.187.215:51011
+my.oplay.pw
+
+# Reference: https://www.virustotal.com/gui/file/668f57ef1db9c8a0d87fb6fd5d64abe3fb4e7f4ef710ea350d787577d89bc227/detection
+
+106.248.239.235:51012
+
+# Reference: https://hunt.io/blog/runningrat-from-remote-access-to-crypto-mining
+# Reference: https://www.virustotal.com/gui/file/b10884a495070c2f9ee183bbbb6d1b8f7351fc75d094f4bb212c38c859a6e867/detection
+
+http://111.230.17.245
+http://123.249.105.45
+http://139.162.102.163
+http://175.178.80.86
+http://24.199.123.1
+http://5.88.5.140
+139.162.102.163:3306
+139.162.102.163:3389
+139.162.102.163:445
+24.199.123.1:1234
+24.199.123.1:4000
+24.199.123.1:5000
+52.77.233.194:8080
+81.31.197.208:443
+81.31.197.208:8088
+404111.xyz
+host.404111.xyz

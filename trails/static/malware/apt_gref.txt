@@ -1,0 +1,191 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fireeye.com/blog/threat-research/2014/09/forced-to-adapt-xslcmd-backdoor-now-on-os-x.html
+
+allshell.net
+attoo1s.com
+kasparsky.net
+kocrmicrosoft.com
+microsoft.org.tw
+microsoftdomainadmin.com
+microsoftsp3.com
+softwareupdatevmware.com
+windowsnine.net
+cdngoogle.com
+cisco-inc.net
+mremote.biz
+officescan.biz
+oprea.biz
+battle.com.tw
+diablo-iii.mobi
+microsoftupdate.ws
+msftncsl.com
+square-enix.us
+updatamicrosoft.com
+powershell.com.tw
+gefacebook.com
+attoo1s.com
+msnupdate.bz
+googlemapsoftware.com
+
+# Reference: https://blog.lookout.com/multiyear-surveillance-campaigns-discovered-targeting-uyghurs
+# Reference: https://www.lookout.com/documents/threat-reports/us/lookout-uyghur-malware-tr-us.pdf
+# Reference: https://otx.alienvault.com/pulse/5efca5ec3da9c1ceace695fc
+
+androidsapps.ml
+babyedu-online.com
+googleanalyseservice.net
+googlleservice.com
+symantecupdate.net
+vipappdownload.com
+wephone.top
+6006.secpert.com
+6006.upupdate.cn
+amote-366.vicp.cc
+android.apps.us.to
+androidapps.duia.in
+androidapps.fvk.cc
+androidapps.home.hn.org
+androidapps.jetos.com
+androidapps.linkpc.net
+androidapps.myfirewall.org
+androidapps.nerdpol.ovh
+androidapps.npff.co
+androidapps.nsupdate.info
+androidapps.spdns.eu
+androidapps.spdns.org
+androidapps.tempors.com
+coco.wikaba.com
+cookedu-online.com
+englishedu-online.com
+heartsys.dnsapi.info
+joke.upupdate.cn
+nortonservice.net
+phpyahoo.mrbasic.com
+s101.secpert.com
+s2.upupdate.cn
+ss903.w3.ezua.com
+ss904.w3.ezua.com
+sz.secpert.com
+tree.ddns.us
+turknews-online.com
+turkyedu-online.com
+umare.zyns.com
+vipapkdownload.com
+youtube.dynamicdns.org.uk
+
+# Reference: https://www.welivesecurity.com/en/eset-research/badbazaar-espionage-tool-targets-android-users-trojanized-signal-telegram-apps/
+
+148.251.87.245:4432
+185.239.227.14:3023
+217.163.29.84:7011
+45.133.238.92:6023
+45.154.12.132:4332
+45.63.89.238:1011
+62.210.28.116:2011
+flygram.org
+signalplus.org
+
+# Reference: https://threatfox.abuse.ch/browse/tag/BadBazaar/
+
+103.27.186.156:443
+103.27.186.195:443
+154.202.59.169:443
+45.154.12.151:443
+45.154.12.202:443
+92.118.189.164:443
+
+# Reference: https://www.volexity.com/blog/2023/09/22/evilbamboo-targets-mobile-devices-in-multi-year-campaign/
+# Reference: https://github.com/volexity/threat-intel/blob/main/2023/2023-09-22%20EvilBamboo/indicators/iocs.csv
+# Reference: https://www.virustotal.com/gui/file/0fea799ce00c7d6f26ccb52a2ecbe6b9605cfb9910f2a309a841caedf3b102d7/detection
+# Reference: https://www.virustotal.com/gui/file/1caf33e5cb45de1d3616bda85bea6c4d915365eb7444c8d7c56cebd12b69d105/detection
+# Reference: https://www.virustotal.com/gui/file/f7132750db2a8ca8eb9e9e5a32377aa506395d02bacbb918f835041f5f035c4c/detection
+# Reference: https://www.virustotal.com/gui/ip-address/45.154.12.132/relations
+
+142.132.131.28:10433
+142.132.131.28:10434
+142.132.131.28:10435
+142.132.131.28:3251
+148.251.87.247:10433
+148.251.87.247:10434
+148.251.87.247:10435
+148.251.87.247:3251
+195.154.60.3:10433
+195.154.60.3:10434
+195.154.60.3:10435
+195.154.60.3:3251
+23.88.28.222:4432
+62.210.30.158:10433
+62.210.30.158:10434
+62.210.30.158:10435
+62.210.30.158:3251
+95.216.187.21:6656
+adoptewer.com
+allwhatsapp.net
+bhvghg.com
+comeflxyr.com
+everydayinfo.top
+fgttgvh.com
+flygram.orgproxy1.signalplus.org
+fufijxgkg.com
+ggl.whoscaller.net
+goldplusapp.net
+graphicdata.net
+ignitetibet.net
+in7n.com
+jindjjdtc.com
+kmcuft.com
+o21q.com
+omarwhatsapp.org
+orgproxy1.signalplus.org
+thetubeplus.com
+tibetone.org
+tinmf.org
+tryhrwserf.com
+tubevideoplus.org
+upd.whoscaller.net
+uyghurdict.com
+uyghurinfo.net
+whoscaller.net
+
+# Reference: https://twitter.com/naumovax/status/172042145649913054
+# Reference: https://tria.ge/231103-l385vsfh7v
+# Reference: https://tria.ge/231103-nfveasbe23
+# Reference: https://tria.ge/231005-2xj7jshg69
+# Reference: https://www.virustotal.com/gui/file/f86420f5a92a39d92beef7279f219da3efad85dfb64fad06809d8add6dc451df/detection
+
+telegram5.org
+telegramrc.com
+telegramxo.com
+api.telegram5.org
+api.telegramrc.com
+app.telegramrc.com
+down.telegramxo.com
+tgpc.telegramrc.com
+/cc/adr/mobi
+/cc/info/rep
+
+# Reference: https://threatfox.abuse.ch/browse/tag/BadBazaar/
+
+154.212.147.129:443
+789aa654.top
+jkapp88.top
+k1-ai-jk.789aa654.top
+k3-ai-jk.jkapp88.top
+
+# Reference: https://twitter.com/naumovax/status/1744741775661756421
+# Reference: https://tria.ge/240109-rhyraacacq/behavioral1
+# Reference: https://www.virustotal.com/gui/file/bdb84b702752c4065fa36f7c6f7038eed2bfda6d09c32d69512896077b66c097/detection
+
+api--telegram.ru
+
+# Reference: https://citizenlab.ca/2025/04/uyghur-language-software-hijacked-to-deliver-malware/
+# Reference: https://www.virustotal.com/gui/file/94a87dadeaac24bbc26c85d032b86a45cfd131516666e8e5d888f78986d1e993/detection
+
+gheyret.com
+gheyret.net
+uheyret.com
+anar.gleeze.com
+tengri.ooguy.com
+wanar.gleeze.com

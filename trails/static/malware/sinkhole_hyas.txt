@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/#/ip-address/192.169.69.25
+
+sinkhole.hyas.com
+192.169.69.25
+192.169.69.26

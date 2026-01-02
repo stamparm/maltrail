@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cephalus ransomware
+
+# Reference: https://x.com/fbgwls245/status/1960132631460528240
+# Reference: https://www.virustotal.com/gui/file/a34acd47127196ab867d572c2c6cf2fcccffa3a7a87e82d338a8efed898ca722/detection
+
+cephalus6oiypuwumqlwurvbmwsfglg424zjdmywfgqm4iehkqivsjyd.onion

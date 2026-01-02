@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trellix.com/blogs/research/oneclik-a-clickonce-based-apt-campaign-targeting-energy-oil-and-gas-infrastructure/
+
+7dqtdjxfycaqhjvc2qmx5js4aq0juygw.lambda-url.us-east-1.on.aws
+b2zei88b61.execute-api.eu-west-2.amazonaws.com
+d1ismqgtp337lz.cloudfront.net
+dyydej4wei7fq.cloudfront.net
+dzxwmpi8xepml.cloudfront.net

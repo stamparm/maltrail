@@ -1,0 +1,108 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: monti
+
+# Reference: https://twitter.com/hatching_io/status/1318213481213165570
+# Reference: https://tria.ge/201019-52sls692an
+
+contirecovery.info
+m232fdxbfmbrcehbrj5iayknxnggf6niqfj6x4iedrgtab4qupzjlaid.onion
+
+# Reference: https://www.hackplayers.com/2021/02/sitios-cibercriminales-deepweb.html
+
+fylszpcqfel7joif.onion
+htcltkjqoitnez5slo7fvhiou5lbno5bwczu7il2hmfpkowwdpj3q2yd.onion
+
+# Reference: https://twitter.com/GossiTheDog/status/1426114648609337344
+# Reference: https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/lockfile-ransomware-new-petitpotam-windows
+# Reference: https://otx.alienvault.com/pulse/612365feb824f7976425bb2e
+
+209.14.0.234:443
+
+# Reference: https://github.com/ti-research-io/ti/blob/main/ioc_extender/BB_Conti.json
+
+belatedconstructs.com
+clublatino.xyz
+fanyglo.com
+groupmentro.com
+intensewarer.com
+saferoiworks.com
+todevelopskills.com
+zanzibor.com
+
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+
+continews.click
+continewsnv5otx5kaoje7krkto2qbu3gtqef22mnr7eaxw3y6ncz3ad.onion
+
+# Reference: https://twitter.com/Dashowl/status/1498169213168586752
+
+http://185.14.28.109
+185.14.28.109:443
+
+# Reference: https://medium.com/@arnozobec/analyzing-conti-leaks-without-speaking-russian-only-methodology-f5aecc594d1b
+
+contirec7nchr45rx6ympez5rjldibnqzh7lsa56lvjvaeywhvoj3wad.onion
+l66orrehfw4hovqme625bavlpz7m2achabov3iyqy76cai44oao6neqd.onion
+q3mcco35auwcstmt.onion
+/zeh7dkwfdxw99tdk/
+
+# Reference: https://twitter.com/pollo290987/status/1499313323564806147
+
+43oxsnqlub6aydymkwpn3agaaj7u2qexx4wybgrwug46c6cyldhuheid.onion
+
+# Reference: https://twitter.com/silentpush/status/1514637523426885635
+
+juhazigeza.com
+
+# Reference: https://thedfirreport.com/2021/11/29/continuing-the-bazar-ransomware-story/
+# Reference: https://otx.alienvault.com/pulse/61a4fea45999d467dfe004e7
+
+perdefue.fr
+
+# Reference: https://us-cert.cisa.gov/ncas/alerts/aa21-265a
+# Reference: https://otx.alienvault.com/pulse/614c2c93689f6ced6333d91b
+# Reference: https://www.virustotal.com/gui/file/4ff6499f7b73579748b2bf0fe9db201d1f722d989b4712e77fd8e216e31a104a/detection
+
+http://82.118.21.1
+162.244.80.235:443
+185.141.63.120:443
+
+# Reference: https://twitter.com/marvinkklyvo/status/1517952097936883712
+# Reference: https://www.virustotal.com/gui/ip-address/146.70.71.184/relations
+# Reference: https://www.virustotal.com/gui/ip-address/37.120.222.242/relations
+
+continews.bz
+wildcard-in-use.continews.bz
+
+# Reference: https://www.virustotal.com/gui/ip-address/89.45.4.98/relations
+
+continews.club
+continews.xyz
+
+# Reference: https://www.virustotal.com/gui/file/904e0855772f56721cc157641a26bb7963651e5a45c3bb90764328b17081abd5/behavior/Zenbox
+
+contirecj4hbzmyzuydyzrvm2c65blmvhoj2cvf25zqj2dwrrqcq5oad.onion
+
+# Reference: https://twitter.com/1ZRR4H/status/1555627392563118081
+# Reference: https://mp.weixin.qq.com/s/cGS8FocPnUdBconLbbaG-g
+
+80.209.241.3:8888
+
+# Reference: https://twitter.com/Unit42_Intel/status/1600179579272024068
+# Reference: https://1275.ru/ioc/2459/monti-ransomware-iocs/
+# Reference: https://www.trendmicro.com/en_us/research/23/h/monti-ransomware-unleashes-a-new-encryptor-for-linux.html
+# Reference: https://www.virustotal.com/gui/file/edfe81babf50c2506853fd8375f1be0b7bebbefb2e5e9a33eff95ec23e867de1/detection
+
+mblogci3rudehaagbryjznltdp33ojwzkq6hn2pckvjq33rycmzczpid.onion
+monti5o7lvyrpyk26lqofnfvajtyqruwatlfaazgm3zskt3xiktudwid.onion
+
+# Reference: https://www.fortiguard.com/threat-signal-report/4736/new-conti-ransomware-campaign-observed-in-the-wild-1
+
+contirec.poc.onion
+
+# Reference: https://unit42.paloaltonetworks.com/royal-ransomware/
+# Reference: https://otx.alienvault.com/pulse/645ba0f99be16ee5437ba95d
+
+royal2xthig3ou5hd7zsliqagy6yygk2cdelaxtni2fyad6dpmpxedid.onion

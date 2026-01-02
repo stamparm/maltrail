@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/blackorbird/status/1176695813822648326
+# Reference: https://blog.telsy.com/wp-content/uploads/2019/09/DeadlyKiss_TAAR.pdf
+
+http://81.4.100.197
+orionfile.com
+tawaranmurah.com

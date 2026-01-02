@@ -1,0 +1,429 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2010-011922-2056-99&tabid=2
+
+rmnzerobased.com
+awecerybtuitbyatr.com
+awrcaverybrstuktdybstr.com
+qwevrbyitntbyjdtyhvsdtrhr.com
+yeiolertxwerh.com
+ytioghfdghvcfgbgvdf.com
+
+# Reference: https://web.archive.org/web/20120106212034/http://amada.abuse.ch/blocklist.php?download=domainblocklist
+
+awecerybtuitbyatr.com
+fget-career.com
+nagwa.mooo.com
+poopthree.com
+zahlung.name
+
+# Reference: https://research.checkpoint.com/ramnits-network-proxy-servers/
+
+k0ntuero.com
+oaifpapl.com
+vupkimcu.com
+nkootxbt.com
+ramilhgme.com
+havonolwc.com
+anulwyqw.com
+mtankfqv.com
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/sload-and-ramnit-pairing-sustained-campaigns-against-uk-and-italy
+
+xohrikvjhiu.eu
+
+# Reference: https://www.virustotal.com/#/file/66699ca374cf3e41ed56559ca5849b432733f6698af0d7ca069c50716b8c014a/behavior
+
+stromoliks.com
+promoliks.com
+pornoliks.com
+
+# Reference: https://totalhash.cymru.com/analysis/?ad13a92a6b2d5dc85276d86c9536767386dba37e
+# Reference: https://www.virustotal.com/gui/file/d3c6fd31788c213762c3a330257f1eea1f24f0bda50e44641dd79a2fe37907d9/detection
+
+abbyycommunity.com
+
+# Reference: https://twitter.com/VK_Intel/status/1092554468497989632
+
+newrendomainnext.com
+
+# Reference: https://twitter.com/VK_Intel/status/1045340516559278081
+
+net-info.info
+
+# Reference: https://twitter.com/pollo290987/status/1110189491728334849
+
+supnewdmn.com
+
+# Reference: https://twitter.com/VK_Intel/status/1115533117467627520
+# Reference: https://github.com/k-vitali/ramnit-re/blob/master/2019-04-09-ramnit_client_botnet_dga.txt
+
+firstcrypttestingfree.com
+awxmyvbdep.com
+yinhbygrm.com
+rfoghyrpkljtmaf.com
+bwwtnkysunpa.com
+aqwmiphorpa.com
+udmyjkkbye.com
+jqqfiiuajow.com
+bfopeafbutexacmdk.com
+sucxshtffgitu.com
+suadurtto.com
+aidylvvhmwpnip.com
+glwkxqjjutyccmax.com
+fduaxbnjgntk.com
+ciytmtvarkucn.com
+xjchwlvxhakebv.com
+enovvejrmghen.com
+pilwocpaj.com
+evqtjqbkpffhhnyp.com
+gsciljwcjwwtnvjflh.com
+nylpscgnkglaosv.com
+kugmjxfea.com
+xfbgthmvyvw.com
+nmwprnfbryifxebapxf.com
+sxvhjgui.com
+byschplxmorfeee.com
+xshwkvppmwtsbld.com
+fvhqcwetlpnpm.com
+hqsdywcg.com
+quvnfxgmwe.com
+kgpigdehnulwyvdoxpt.com
+jfnwxxircwx.com
+muahfvjsvr.com
+dgooodsqe.com
+vxvxwwiefignkacrvq.com
+hvyxqwda.com
+estxikwflqyiuwu.com
+lwnlwalvrwt.com
+cehfkwweq.com
+edvdnudrmiuansfht.com
+jhfqsdntkbvpe.com
+qxssoxhj.com
+hafjuglmoqyjnvdcd.com
+ixgwkuqtydvmeiuo.com
+oibwiqayyy.com
+nhrnuqncnlvmlmc.com
+lbqgkgutngeks.com
+kcjudtmwvdbel.com
+dbooojfb.com
+ixvrjrgyqmgeaxgxl.com
+ugwbusodliwg.com
+
+# Reference: https://twitter.com/SickPeaSec/status/1138513877090443264
+# Reference: https://app.any.run/tasks/556d8b64-060e-425a-b71c-be8f59981310/
+# Reference: https://www.virustotal.com/gui/ip-address/121.41.39.145/relations
+
+121.41.39.145:7443
+
+# Reference: https://blog.talosintelligence.com/2019/07/threat-roundup-0712-0719.html (# Win.Malware.Ramnit-7057249-1)
+
+atfpjouljn.com
+bphnopydih.com
+bwnkdjlesbf.com
+echrepdvcd.com
+esxfrepgcyyvoim.com
+fbhtsymefdwstuivosx.com
+ffdjiuvufw.com
+gwlqggasgcluo.com
+haqcdkwtukdegysigtv.com
+hivlcjcvux.com
+htiobrofuirwkgn.com
+jhapjgvatltxunklfwk.com
+mbtseiltigrijncw.com
+ntqchcmoegeif.com
+qdvmstrtkslghpmunuk.com
+qmbmbyqkltqfbbtxxc.com
+rghwarmlxmqivfmcs.com
+saqjrigpkuins.com
+tswgqcseq.com
+uacwwgvrdgqscbwb.com
+vqrsxslnbqt.com
+wgpvglbadxo.com
+wwteytsfaiyrrg.com
+ybhiodxwwmoymuv.com
+ykvhpxixrqgid.com
+
+# Reference: https://twitter.com/nao_sec/status/1160566105829601281
+# Reference: https://app.any.run/tasks/c5f89af4-b740-4a25-bd21-7371c103c006/
+
+pizdavamjaposhki.com
+falls.transil.space
+busatan-tokyo.site
+
+# Reference: https://malwarebreakdown.com/2017/07/24/the-seamless-campaign-drops-ramnit-follow-up-malware-azorult-stealer-smoke-loader-etc/
+
+eppixrakqeueuttiuvi.com
+hdyejdn638ir8.com
+tmgmgjcvt.com
+
+# Reference: https://twitter.com/nao_sec/status/1170284036809355264
+# Reference: https://app.any.run/tasks/d3226768-0b3f-496b-bff8-f9cdb519cf73/
+
+firstlabelserverlive.com
+
+# Reference: https://twitter.com/tkanalyst/status/1173121485889667073
+# Reference: https://app.any.run/tasks/ec7b7dc9-823e-4dc8-8aae-f7c2ff2c6128/
+
+duiqemfxnwcvndtoq.com
+ghjwekbefv.com
+mgpcuaph.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.180.102.147/relations
+
+aytpgnkdcmsmaqyeqms.com
+firstlabelserverlive.com
+gcgyxdkpl.com
+njojdicg.com
+rfprukfsdf.com
+unitariumstate.com
+vkaisyssaikqxpsb.com
+
+# Reference: https://twitter.com/pancak3lullz/status/740566474427752451
+
+58.215.79.72:7158
+
+# Reference: https://twitter.com/pancak3lullz/status/739876007029575681
+
+45.34.191.159:1996
+
+# Reference: https://twitter.com/pancak3lullz/status/739571723826139136
+
+hzgunn.com
+
+# Reference: https://app.any.run/tasks/7f756e5c-cc68-4b59-b64d-62db4cada914/
+
+103.85.110.75:8080
+
+# Reference: https://app.any.run/tasks/213b39c9-2831-4195-97fd-faccbc0c183c/
+
+homestudios.co
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1233800063459217409
+
+uodtkaehsnyqd.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1233830197922795521
+
+wdenobvxggva.com
+
+# Reference: https://github.com/silence-is-best/c2db#ramnit
+
+yx-lj.com
+
+# Reference: https://blog.talosintelligence.com/2020/10/threat-roundup-1016-1023.html (# Win.Trojan.Zegost-9778522-0)
+
+srawslorpower.com
+
+# Reference: https://www.virustotal.com/gui/file/150604b884a85bbc9f3202f9fed47c5adfd80d652274f74b7396737c66c7390b/detection
+
+vtboss.yolox.net
+
+# Reference: https://blog.talosintelligence.com/2021/09/threat-roundup-0903-0910.html (# Win.Dropper.Ramnit-9890464-0)
+
+ahpygyxe.com
+boeyrhmrd.com
+enbbojmjpss.com
+fbrlgikmlriqlvel.com
+gjvoemsjvb.com
+gugendolik.com
+jpcqdmfvn.com
+maajnyhst.com
+msoalrhvphqrnjv.com
+oqmfrxak.com
+rdslmvlipid.com
+rrmlyaviljwuoph.com
+tdccjwtetv.com
+tpxobasr.com
+ugcukkcpplmouoah.com
+xpdsuvpcvrcrnwbxqfx.com
+
+# Reference: https://blog.talosintelligence.com/2021/09/threat-roundup-0910-0917.html (# Win.Virus.Ramnit-9892317-0)
+
+aofmfaoc.com
+auqpdabknaty.com
+bheabfdfug.com
+ctiprlgcxftdsaiqvk.com
+cxownbsefbc.com
+dnjvsqdkisxqtbyghsm.com
+doisafjsnbjesfbejfbkjsej88.com
+fbtsotbs.com
+fkqrjsghoradylfslg.com
+fnvweaywlctnxsi.com
+ghvcoagkccor.com
+iutwddseukcdplwpslq.com
+lwqmgevnftflytvbgs.com
+mpfyngouhnboktq.com
+mudsaoojbjijj999.com
+notalyyj.com
+nvrnisdf.com
+onaxjbfinflx.com
+pkjkgprlgtu.com
+qoraprfuu.com
+sinjydtrv.com
+wiulqdhkoqmih.com
+wydvmjaantfg.com
+xnvxmdujhycgicmgso.com
+
+# Reference: https://blog.talosintelligence.com/2021/10/threat-roundup-0924-1001.html (# Win.Virus.Ramnit-9897435-0)
+
+edirhtuawurxlobk.com
+flkheyxtcedehipox.com
+iihsmkek.com
+mtsoexdphaqliva.com
+testetst.ru
+tfjcwlxcjoviuvtr.com
+tlmmcvqvearpxq.com
+twuybywnrlqcf.com
+ubgjsqkad.com
+uulwwmawqjujuuprpp.com
+wcqqjiixqutt.com
+
+# Reference: https://www.virustotal.com/gui/file/00015c49de22a4ff844b8e67a70f935e345b685b5532458e73424e509e2a57dd/detection
+
+fkjdeljfeew32233.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1561284336812433410
+# Reference: https://pastebin.com/cCEGrva2
+
+http://1.14.77.243
+http://1.15.141.79
+http://1.15.227.237
+http://103.197.92.89
+http://103.233.252.9
+http://103.56.114.177
+http://106.55.40.173
+http://110.40.188.48
+http://110.40.221.40
+http://111.67.199.195
+http://114.67.115.154
+http://116.255.252.163
+http://117.50.172.185
+http://119.204.251.142
+http://120.27.155.152
+http://121.127.235.111
+http://121.4.54.184
+http://124.221.202.185
+http://125.129.22.19
+http://129.211.35.154
+http://14.29.230.62
+http://150.138.82.56
+http://150.158.189.134
+http://170.178.162.249
+http://170.178.162.254
+http://190.105.227.46
+http://202.115.194.221
+http://220.117.244.145
+http://222.186.138.30
+http://222.186.20.19
+http://23.224.230.178
+http://23.248.192.126
+http://36.112.66.174
+http://36.234.143.92
+http://36.90.16.225
+http://39.96.60.121
+http://41.205.140.245
+http://43.248.98.104
+http://45.125.46.45
+http://45.125.47.149
+http://47.103.35.188
+http://47.107.244.81
+http://58.234.8.165
+http://8.141.57.157
+http://92.27.72.161
+101.89.174.168:88
+110.173.51.132:8080
+111.1.73.98:88
+112.113.93.50:8090
+112.74.38.76:443
+112.86.146.2:79
+114.132.62.231:81
+115.238.252.25:8443
+118.190.207.113:88
+119.29.75.34:82
+119.91.126.14:443
+120.194.168.198:9000
+120.76.241.217:443
+121.4.162.194:443
+121.40.77.50:8069
+121.42.140.93:83
+122.224.146.7:8080
+123.56.250.122:443
+124.128.211.100:88
+139.155.236.125:81
+153.35.244.9:8888
+153.36.242.50:8888
+172.81.208.46:443
+182.87.223.30:8090
+185.174.61.153:443
+186.79.187.225:82
+211.159.148.24:443
+216.85.168.225:443
+218.76.46.172:8082
+220.171.95.18:88
+221.215.126.169:6443
+221.226.25.45:88
+222.64.88.33:82
+222.92.136.196:81
+39.171.45.122:81
+43.142.171.60:81
+43.142.77.208:81
+43.248.97.136:81
+47.104.139.94:2222
+47.104.227.108:8888
+47.104.31.123:8000
+47.107.68.219:443
+47.114.186.40:443
+47.242.36.213:443
+47.97.250.12:8086
+49.234.111.115:88
+5.189.162.129:8080
+60.179.33.135:88
+60.184.227.15:9000
+60.2.126.123:8001
+61.162.103.43:8086
+8.142.110.22:443
+81.69.198.155:81
+
+# Reference: https://blog.talosintelligence.com/threat-roundup-1028-1104/ (# Win.Dropper.Ramnit-9976458-0)
+
+acwuxyrasn.com
+arkdnbwpf.com
+augrkyqwgni.com
+gsxgbfendh.com
+hxblclgkdw.com
+ltvfyknd.com
+nwgehuej.com
+ochmemne.com
+ovedpgmh.com
+plsjybruf.com
+qqximuos.com
+qsatesrenfj.com
+qymovaxblw.com
+rohpwrralh.com
+rqcryxlm.com
+rybnpwpdxp.com
+shlbftknj.com
+spbmrgvk.com
+tqfgavkr.com
+urnjufcm.com
+wevufrlvbmp.com
+weyvrdbd.com
+xdxocfqkpfs.com
+xkluqdruhdy.com
+yhvvaanlaw.com
+
+# Reference: https://twitter.com/RacWatchin8872/status/1785315911546679501
+
+http://220.133.11.95
+
+# Reference: https://x.com/JustWantToQ1/status/1732240355775361280
+# Reference: https://x.com/JustWantToQ1/status/1732240788745035788
+# Reference: https://x.com/JustWantToQ1/status/1732241048619917725
+# Reference: https://www.virustotal.com/gui/file/8fbbc95cd03d4a1254249d880a30f70afc36c0c58562be7fa1910d55f8785be9/detection
+
+103.107.190.125:8138
+121.61.112.86:9090
+122.51.42.74:9090
+222.187.232.168:8880

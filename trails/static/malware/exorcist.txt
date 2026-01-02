@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/3xp0rtblog/status/1286191924462915584
+# Reference: https://app.any.run/tasks/de469303-2e77-4a1e-9a8b-ed56c35bf1d0/
+# Reference: https://www.virustotal.com/gui/file/f86e27e58356c554269b93713ea53b797d92359f0abb25bf70fe2de278278f7f/detection
+
+http://217.8.117.26
+
+# Reference: https://twitter.com/GrujaRS/status/1286293126097903617
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+
+4dnd3utjsmm2zcsb.onion
+7iulpt5i6whht6zo2r52f7vptxtjxs3vfcdxxazllikrtqpupn4epnqd.onion
+
+# Generic
+
+/gateinfo
+/gatedrives
+/pay/auth
+/pay/loadchat
+/pay/img/exorcist.png
+/pay/img/exorcistclient.png
+/pay/order

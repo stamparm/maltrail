@@ -1,0 +1,167 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: crypminal
+
+# Reference: https://twitter.com/malwrhunterteam/status/1121825095792590849
+# Reference: https://twitter.com/James_inthe_box/status/1121825506133811201
+
+olex.live
+
+# Reference: https://twitter.com/malwrhunterteam/status/1121858510441132032
+# Reference: https://twitter.com/James_inthe_box/status/1121868484642631680
+
+branchesv.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1126013665155670016
+# Reference: https://twitter.com/James_inthe_box/status/1126096193862287360
+
+159.69.88.115:443
+
+# Reference: https://twitter.com/James_inthe_box/status/1185530740911423488
+
+vdscloud.net
+
+# Reference: https://research.checkpoint.com/2020/bandook-signed-delivered/
+# Reference: https://otx.alienvault.com/pulse/5fc6a8431725dbaccdb8b860
+
+2ndprog.monster
+branchesv.com
+ercuc.com
+ewsdocs.com
+horizongb.com
+htname.info
+idcmht.com
+jtoolbox.org
+mainsrv.top
+mxtms.com
+nopejohn.com
+ntsclouds.com
+olex.live
+p2020.xyz
+pronews.icu
+raysdoor.com
+styleco.me
+tancredis.com
+vdscloud.net
+vsimperial.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1340931119454281728
+# Reference: https://app.any.run/tasks/fee6dab8-02dd-4978-8254-251725f98360/
+
+pdafact.com
+
+# Reference: https://www.welivesecurity.com/2021/07/07/bandidos-at-large-spying-campaign-latin-america/
+# Reference: https://otx.alienvault.com/pulse/60e6c811e797f56de6d1689a
+# Reference: https://www.virustotal.com/gui/file/9bed6ae8561bb3c54099044c461f305ae0214e8e9972c5ab362f493e2ac07e38/detection
+# Reference: https://www.virustotal.com/gui/file/435fa80c1088c8e2b821cf86d5f5a6c2cebf41e3b12d067473c79ab5773d3862/detection
+# Reference: https://www.virustotal.com/gui/file/bc089259a1da012b1331933427fdf29e62e0c66cc4ca69c2319dd45f13a95c5d/detection
+
+185.243.114.89:7891
+194.5.250.103:7891
+45.142.214.31:7892
+ladvsa.club
+ngobmc.com
+d1.ngobmc.com
+d2.ngobmc.com
+
+# Reference: https://www.virustotal.com/gui/file/ba153e449ee926c019b548997c32d0579b9c6f350b1590a025d5d9a216ddbffd/detection
+# Reference: https://www.virustotal.com/gui/file/59825e4ff55b539a70952ab80643aaee6499b9d0153fb3b8a19eea74a0a425c4/detection
+
+185.106.122.71:7891
+194.87.48.126:7893
+megawoc.com
+panjo.club
+r1.panjo.club
+r2.panjo.club
+r3.panjo.club
+r4.panjo.club
+r5.panjo.club
+s1.megawoc.com
+s2.megawoc.com
+s3.megawoc.com
+
+# Reference: https://twitter.com/d4rksystem/status/1479166627757182977
+# Reference: https://www.virustotal.com/gui/file/afb157bd39e2433f203487c3e69a299413cf762a3ba25c927e82f258672e3ad9/detection
+# Reference: https://www.virustotal.com/gui/file/4bf9325fe8d721e60c2a5beee8dbdf275ab9c5de309e162ecc81d1cdf7369cef/detection
+
+5.34.182.29:4443
+91.238.50.105:4441
+cumumberpro.org
+
+# Reference: https://twitter.com/pollo290987/status/1570071111773351942
+# Reference: https://tria.ge/220720-vhh8dacddr
+# Reference: https://www.virustotal.com/gui/file/9dccab9f649757289944f61121e2502f7b3a1ae74a64a35f06dace2001c219d1/detection
+
+193.200.16.175:9991
+193.200.16.175:9995
+80.233.134.242:9991
+80.233.134.242:9995
+91.193.18.203:9991
+91.193.18.203:9995
+deapproved.ru
+
+# Reference: https://tria.ge/220624-raj8xsfeb2
+# Reference: https://tria.ge/220710-y5araschbp
+# Reference: https://tria.ge/220624-q4th1sfdf7
+
+iamgood.blogdns.net
+
+# Reference: https://twitter.com/AttackTrends/status/1618708133114970115
+# Reference: https://www.virustotal.com/gui/file/dd2c5cbd606b64013fb99910089d5f449de478381ad491f8044fffd7ca10ff48/detection
+# Reference: https://www.virustotal.com/gui/file/c1c7a5fe3203fe7ecd6b4581a12f85803174d5e2b8df2e98cccb8a5d740b1d36/detection
+# Reference: https://www.virustotal.com/gui/file/353dcc4479725da180b0c12fdc433d46fddefdced3a967e7fe528d030a61a791/detection
+
+83.97.20.141:7072
+83.97.20.141:7073
+83.97.20.141:7075
+bomes.ru
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1686348118256758784
+# Reference: https://twitter.com/malware_traffic/status/1686467130814791680
+# Reference: https://twitter.com/malware_traffic/status/1686558539643240448
+# Reference: https://www.virustotal.com/gui/file/45f880488ec80a5c3edb83fc2ad753d0b006530aba6184599c243ad00c3c86cf/detection
+# Reference: https://www.virustotal.com/gui/file/a35cdfa4fd7f2219b2d252e14b1d60436e08b2ab4f4f057e205cbd1804637d11/detection
+# Reference: https://www.virustotal.com/gui/file/c9a515d62d84d72e6d5c347d4b6d14df36e680e0f7605dcede9303a895b0361c/detection
+# Reference: https://www.virustotal.com/gui/file/d07ebdfc498225f3ee0db77b8caa7eec1ef8833cf781cc936889a990ddda50ed/detection
+
+185.10.68.127:6591
+185.10.68.127:6592
+185.10.68.127:6593
+185.10.68.52:6591
+185.10.68.52:6592
+185.10.68.52:6593
+vrunabo.su
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.bandook/
+# Reference: https://www.virustotal.com/gui/file/01e8536751080ea135c3ad7ae9187d06cdcccddfc89bc0d41ea4281eeb3e9fb4/detection
+# Reference: https://www.virustotal.com/gui/file/8f63e5d7bb5080bc013c16b18548562d57af5dc8f60641a19aecec6e15de77ee/detection
+# Reference: https://www.virustotal.com/gui/file/fa683328c33044dc03a980fd332e5634b7498d30659789e103fff5317fb39a28/detection
+# Reference: https://www.virustotal.com/gui/file/8dc3ad5966ab09d3fbf5cd9650afc65a39dfd0786e332d63ab54dd9cf388d707/detection
+
+83.97.20.153:5081
+83.97.20.153:5082
+83.97.20.153:5083
+83.97.20.153:5085
+gombos.ru
+humut.su
+
+# Reference: https://www.malware-traffic-analysis.net/2023/08/01/index.html
+
+demando.ru
+
+# Reference: https://www.fortinet.com/blog/threat-research/bandook-persistent-threat-that-keeps-evolving
+# Reference: https://otx.alienvault.com/pulse/658c37500d4737e0ef37ec5c
+# Reference: https://www.virustotal.com/gui/file/0de04187616e5cf62d6e5dc512e64500b19d8c5ecd9e896462a9203a7eb96b08/detection
+# Reference: https://www.virustotal.com/gui/file/313fef1d9a30fe8a40f4a8b1aefa74dbae9b4a6a1b33138bf694df1af29dcf59/detection
+
+45.67.34.219:7662
+77.91.100.237:4451
+
+# Reference: https://x.com/WaChinYu1/status/1895445495390318951
+# Reference: https://global.ptsecurity.com/analytics/pt-esc-threat-intelligence/the-evolution-of-dark-caracal-tools-analysis-of-a-campaign-featuring-poco-rat
+# Reference: https://www.virustotal.com/gui/file/026c4d8a4ca5a408c790ce22f1550e222b5367a8aad14d910e89887ca522a6db/detection
+# Reference: https://www.virustotal.com/gui/file/1637d55437505e7e940d828f7a2066c1356ab236d00b1df73e90a4498e347356/detection
+
+185.216.68.143:9841
+185.216.68.143:9846

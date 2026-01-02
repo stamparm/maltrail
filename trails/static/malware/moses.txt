@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mosesstaff, strifewater
+
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+
+moses-staff.se
+mosesstaffm7hptp.onion
+
+# Reference: https://www.fortinet.com/blog/threat-research/guard-your-drive-from-driveguard
+# Reference: https://otx.alienvault.com/pulse/620ce6762c243df4fb194d83
+# Reference: https://www.virustotal.com/gui/file/ff15558085d30f38bc6fd915ab3386b59ee5bb655cbccbeb75d021fdd1fde3ac/detection
+
+http://87.120.8.210
+techzenspace.com
+
+# Generic
+
+/RVP/index1.php
+/RVP/index2.php
+/RVP/index3.php
+/RVP/index4.php
+/RVP/index5.php
+/RVP/index6.php
+/RVP/index7.php
+/RVP/index8.php
+/RVP/index9.php

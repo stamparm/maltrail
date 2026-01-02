@@ -1,0 +1,49 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: BlackGuard, cherryspy, hatvibe
+# CERT-UA: UAC-0063
+
+# Reference: https://www.bitdefender.com/blog/businessinsights/deep-dive-into-downex-espionage-operation-in-central-asia/
+# Reference: https://cert.gov.ua/article/4697016 (Ukrainian)
+# Reference: https://www.virustotal.com/gui/ip-address/172.104.62.59/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.203.117.6/relations
+# Reference: https://www.virustotal.com/gui/ip-address/79.124.60.180/relations
+# Reference: https://www.virustotal.com/gui/file/cb9405390b4eb81beebb91ee596f77103e6ee47927c3f27d85474d06e2250e31/detection
+# Reference: https://www.virustotal.com/gui/file/70d8e503fd199de816815b88e82fe70802955437cdc3785cbd0d34e0343ce5f1/detection
+# Reference: https://www.virustotal.com/gui/file/75395359af2d61b2434d68fbee12ebc9947c4d113ca8363dd060caab76077474/detection
+
+http://139.99.126.38
+http://206.166.251.216
+http://84.32.188.123
+diagnostic-resolver.com
+ms-webdav-miniredir.com
+net-certificate.services
+
+# Reference: https://cert.gov.ua/article/6280129
+# Reference: https://www.virustotal.com/gui/ip-address/185.158.248.198/relations
+# Reference: https://www.virustotal.com/gui/ip-address/194.31.55.131/relations
+
+http://45.136.198.184
+http://5.45.70.178
+enrollmentdm.com
+trust-certificate.net
+
+# Reference: https://x.com/lontze7/status/1878800751532896679
+# Reference: https://blog.sekoia.io/double-tap-campaign-russia-nexus-apt-possibly-related-to-apt28-conducts-cyber-espionage-on-central-asia-and-kazakhstan-diplomatic-relations/
+# Reference: https://search.censys.io/hosts/38.180.206.61
+# Reference: https://search.censys.io/hosts/38.180.207.137
+# Reference: https://app.validin.com/detail?find=dd9aef0ce3d64a9dd4009357637617fc&type=hash&ref_id=1065472a0a3#tab=host_pairs
+
+http://38.180.206.61
+http://38.180.207.137
+38.180.207.137:45323
+background-services.net
+download-resourses.info
+energieecoinnov.info
+energieecotech.info
+lookup.ink
+
+# Generic
+
+/hftqlbgtg.php

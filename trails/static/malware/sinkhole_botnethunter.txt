@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+sinkholeredirect.us
+ns1.sinkholeredirect.us
+ns2.sinkholeredirect.us
+sinkhole1.botnethunter.org
+sinkhole2.botnethunter.org
+
+52.5.245.208

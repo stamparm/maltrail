@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/eset/malware-ioc/tree/master/potao
+
+truecryptrussia.ru
+mntexpress.com
+worldairpost.com
+worldairpost.net
+camprainbowgold.ru
+poolwaterslide2011.ru

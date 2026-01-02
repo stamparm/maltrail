@@ -1,0 +1,78 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: frigidstealer
+
+# Reference: https://x.com/karol_paciorek/status/1822980605753114959
+# Reference: https://x.com/DonPasci/status/1825633832252395635
+# Reference: https://www.virustotal.com/gui/ip-address/154.216.18.135/relations
+# Reference: https://search.censys.io/search/report?resource=hosts&q=services.certificate%3D%225eeab97e80cf6e5af1ed34dbdde204cecffbc73474e1fb228e03026e3fa1f4f7%22&virtual_hosts=EXCLUDE&field=dns.names&num_buckets=10
+
+banshee-stealer.com
+postutleveringssted.com
+refbofa39b.com
+refdcu20n.com
+ycf6a3d4lbdfksa3pvpe2xozacvb42fpttn3kah4bqt7txr3dxgwxpad.onion
+
+# Reference: https://x.com/victorkubashok/status/1823040370583732704
+# Reference: https://x.com/philofishal/status/1823169123490103693
+# Reference: https://www.virustotal.com/gui/file/11aa6eeca2547fcf807129787bec0d576de1a29b56945c5a8fb16ed8bf68f782/detection
+# Reference: https://www.virustotal.com/gui/file/00284601ed89be5b44d9a4219f7ee271dfd68186937b41a26c283a6a129e7a28/detection
+# Reference: https://www.virustotal.com/gui/file/7210ce47323d4bdeb99bd27b22f00099000c473a04048e2c90576f81d1194647/detection
+# Reference: https://www.virustotal.com/gui/file/7a6c0b683961869fc159bf8da1b4c86bc190ee07b0ad5eb09f99deaac4db5c69/detection
+# Reference: https://www.virustotal.com/gui/file/95b554f13d27126d04504cf35da185f572cfd6497cd86d6be0f21eb98fc4c75c/detection
+
+http://45.142.122.92
+
+# Reference: https://app.validin.com/detail?type=hash&find=5eeab97e80cf6e5af1ed34dbdde204cecffbc73474e1fb228e03026e3fa1f4f7#tab=host_pairs_v2
+
+sytm.online
+
+# Reference: https://www.virustotal.com/gui/ip-address/154.216.16.105/relations
+
+collabland-verify.online
+
+# Reference: https://app.validin.com/detail?find=HACKEANDO%20CASAS&type=raw&ref_id=e153e64af3b#tab=host_pairs_v2
+
+droncheck.online
+hackeandocasas.me
+waltinan.ru
+
+# Reference: https://x.com/osint_barbie/status/1831085346374783081
+# Reference: https://www.virustotal.com/gui/file/358816e6b5926214983e138e8691f5f25504dacdec08c104a0c7b52eeac1823d/detection
+
+http://41.216.183.214
+
+# Reference: https://x.com/arch1ehic0x/status/1831459539465728485
+# Reference: https://x.com/arch1ehic0x/status/1831459543823609981
+# Reference: https://www.virustotal.com/gui/file/5ae4ff4c22d2cdba36b53c0ce9caabde6b8a4854592efa3540f9510012e17fe1/detection
+# Reference: https://www.virustotal.com/gui/file/c1b3a35ebcf757f2b1fa06d73e145720373d4bcb13dfc3a186f4264005b21838/detection
+
+http://147.45.68.247
+
+# Reference: https://x.com/suyog41/status/1844013703567704461
+
+http://45.11.180.233
+
+# Reference: https://x.com/solostalking/status/1870503365429629038
+
+http://195.133.13.96
+http://95.216.34.106
+195.133.13.96:443
+95.216.34.106:443
+c531524d-cdb6-4a98-a143-52e4de26831c.stylecoverk.shop
+
+# Reference: https://x.com/_CPResearch_/status/1877366027933175838
+# Reference: https://research.checkpoint.com/2025/banshee-macos-stealer-that-stole-code-from-macos-xprotect/
+# Reference: https://www.virustotal.com/gui/file/ce371a92e905d12cb16b5c273429ae91d6ff5485dda04bfedf002d2006856038/detection
+# Reference: https://www.virustotal.com/gui/file/d04f71711e7749a4ff193843ae9ce852c581e55eaf29b8eec5b36c4b9c8699c2/detection
+# Reference: https://www.virustotal.com/gui/file/00c68fb8bcb44581f15cb4f888b4dec8cd6d528cacb287dc1bdeeb34299b8c93/detection
+
+http://41.216.183.49
+
+# Reference: https://x.com/suyog41/status/1884489913753850191
+# Reference: https://x.com/osint_barbie/status/1884536534960951717
+# Reference: https://www.virustotal.com/gui/file/fda900b0409d38a18360b700ee8c2a83cff4616da2ada8eb90448f5b583411ec/detection
+# Reference: https://www.virustotal.com/gui/file/4faffe6e1e2236937bc72360fb05f0503724e8dd6dbd6d4c5957a0316b6e83ff/detection
+
+askforupdate.org

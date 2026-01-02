@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/9823f_/status/1853411034192556058
+# Reference: https://search.censys.io/search?q=services.http.response.html_tags%3D%22%3Ctitle%3EContador%3C%2Ftitle%3E%22&resource=hosts
+# Reference: https://search.censys.io/hosts/140.99.164.82
+# Reference: https://search.censys.io/hosts/148.101.133.15
+# Reference: https://search.censys.io/hosts/167.172.181.77
+# Reference: https://search.censys.io/hosts/167.88.166.158
+
+http://167.172.181.77
+http://34.110.137.167
+34.110.137.167:443
+140.99.164.82:5000
+140.99.164.82:5050
+148.101.133.15:8080
+167.88.166.158:5000

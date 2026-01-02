@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: crypto24 ransomware
+
+# Reference: https://x.com/AlvieriD/status/1909770614899933569
+# Reference: https://x.com/TLP_R3D/status/1909958210716414114
+# Reference: https://app.validin.com/detail?find=Public%20Data%20Storage&type=raw&ref_id=870d032aaff#tab=host_pairs (# 2025-04-09)
+
+http://45.63.9.192
+mcxholdings.com
+nnvsec.online
+j5o5y2feotmhvr7cbcp2j2ewayv5mn5zenl3joqwx67gtfchhezjznad.onion

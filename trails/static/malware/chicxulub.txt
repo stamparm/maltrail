@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: chicxulub impact
+
+# Reference: https://x.com/abuse_ch/status/2003512381457203312
+# Reference: https://tria.ge/251222-xqkghs1jgz/behavioral1
+
+turbokent.name

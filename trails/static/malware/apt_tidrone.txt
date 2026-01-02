@@ -1,0 +1,50 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: clntend, cxclnt, tidrone
+
+# Reference: https://www.trendmicro.com/en_us/research/24/i/tidrone-targets-military-and-satellite-industries-in-taiwan.html
+# Reference: https://www.virustotal.com/gui/ip-address/45.121.50.185/relations
+# Reference: https://www.virustotal.com/gui/file/dbed5812f7dbf8ff2276f896ba2ad6b1c206c2cf2569667348c7f47048032e65/detection
+# Reference: https://www.virustotal.com/gui/file/d8d6dcb17ea0be642c2aef7ee7164a69cd0da1824c138fdb9e931f54cbe5c121/detection
+# Reference: https://www.virustotal.com/gui/file/d6bedad375c34999966c84dd56350961c5a99cfa89b0cd5e10aaba737d3b451f/detection
+# Reference: https://www.virustotal.com/gui/file/35bd7839a815d65604f3ca85a3c473266c31779946728b9a14dc6020f0b707ac/detection
+# Reference: https://www.virustotal.com/gui/file/8c49c2c2703e9a935773f96afe3ad305a34f07b1c68b0ef01d2deefcb6d2aa73/detection
+
+fghytr.com
+microsoftsvc.com
+tpckcapital.top
+vmwaresync.com
+windowswns.com
+auto-update.microsoftsvc.com
+bestadll.fghytr.com
+client.wns.windowswns.com
+server.microsoftsvc.com
+service.symantecsecuritycloud.com
+symantecsecuritycloud.com
+time.vmwaresync.com
+update.microsoftsvc.com
+upgrade.microsoftsvc.com
+wns.windowswns.com
+wot.tpckcapital.top
+
+# Reference: https://x.com/Thisism23567356/status/1944354803582124297
+# Reference: https://www.virustotal.com/gui/file/95829d5acf7898d2a55efb680eb9c3f7492caabf53637aa0b00f54a77fe64ac4/detection
+# Reference: https://www.virustotal.com/gui/file/945beda7286c39f8493dc3b1bc2c46baf5300603322566bbb322c64076681ab8/detection
+
+uppaycn.com
+onmondayr.s3.ap-east-1.amazonaws.com
+
+# Reference: https://x.com/Thisism23567356/status/1942179237391126687
+# Reference: https://www.virustotal.com/gui/file/062b4a8f62ddc0ec1413c53e2603ca35262c39d5197f6373f17f3e901d023804/detection
+# Reference: https://www.virustotal.com/gui/file/1f000332e413990043f2d0937b57b0599e0125ef367d9a5a557834e240493aa5/detection
+# Reference: https://www.virustotal.com/gui/file/33168e7a4f00990778a0187d656ee3d3579a22c1c1786d4fe7e66fa2e089bb9b/detection
+# Reference: https://www.virustotal.com/gui/file/4e9d2ca5da069bd5bbb103c836ed000dc9757ff4a7b564253abfbcc8ce95296a/detection
+# Reference: https://www.virustotal.com/gui/file/57090a27a634bf87b46f28f92f0181fc2512a1ecf54fb111c793fafc1a231326/detection
+# Reference: https://www.virustotal.com/gui/file/5920a5232d1daa6f860f9e652d4e770f9d0a3c3ec6dc51d3144ce0d4346246b6/detection
+# Reference: https://www.virustotal.com/gui/file/8be2ac404e8f96fa9413ce70754c42424f51196b4c36107f94f01a320cbc0c74/detection
+
+154.23.184.30:5178
+hp.kt168.org
+eupractic.s3.ap-east-1.amazonaws.com
+totting.s3.ap-east-1.amazonaws.com

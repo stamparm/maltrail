@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/naumovax/status/1797966572851749236
+# Reference: https://checkmarx.com/blog/when-the-hunter-becomes-the-hunted/
+# Reference: https://www.virustotal.com/gui/file/49ac5872f91182bac543788dfd168eb4e103c11f42b1585879d6999ede367500/detection
+
+http://128.199.113.162
+
+# Reference: https://x.com/g0njxa/status/1825839111753584837
+
+http://198.44.140.105
+http://3.20.250.248
+http://94.79.54.73
+avtochehov.ru
+dview.click
+transportesyexcavacionescostacalida.es
+
+# Generic
+
+/stwittc/upwawsfrg.php
+/XtfcshEgt/upwawsfrg.php
+/upwawsfrg.php
+/zawautng.php

@@ -1,0 +1,44 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trendmicro.com/en_us/research/22/e/netdooka-framework-distributed-via-privateloader-ppi.html
+
+http://89.38.131.155
+http://93.115.21.45
+
+# Reference: https://tria.ge/220610-qvxjbabehm/behavioral1
+
+89.38.131.155:27134
+
+# Reference: https://tria.ge/220610-qvz97sbehp/behavioral1
+
+93.115.21.45:27134
+
+# Reference: https://tria.ge/220617-w92pgachhm
+
+sarfoods.com
+
+# Reference: https://tria.ge/220617-w991vafeb7
+
+vipsofts.xyz
+
+# Reference: https://twitter.com/Gi7w0rm/status/1649005498069401601
+# Reference: https://tria.ge/230420-ml7q5sbc8z/behavioral2
+# Reference: https://tria.ge/230420-mpceeabc9z/behavioral2
+# Reference: https://www.virustotal.com/gui/file/b7d9f37e382bbb34858885e08b72ae41a73e484a9b30f8f0e16bd3f546daa018/detection
+
+http://195.201.81.165
+195.201.81.165:21891
+195.201.81.165:27134
+
+# Reference: https://twitter.com/AnFam17/status/1649024639224406016
+# Reference: https://www.virustotal.com/gui/file/04cb77bc5419b345a9e75d6ecd9ca985201d24d9da28204ce92b0fc4de6b4e41/detection
+
+http://142.132.213.242
+142.132.213.242:27134
+
+# Reference: https://twitter.com/AnFam17/status/1649024639224406016
+# Reference: https://www.virustotal.com/gui/file/b7d9f37e382bbb34858885e08b72ae41a73e484a9b30f8f0e16bd3f546daa018/detection
+
+http://195.201.105.43
+195.201.105.43:21891

@@ -1,0 +1,54 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: 000stealler, 000stealer, ChameleonProject
+
+# Reference: https://www.virustotal.com/gui/file/dd5a3883084debd7533c0fb23c0281f44ea364f7ff980411a86c08f34ceca31b/detection
+# Reference: https://www.virustotal.com/gui/file/1559baf28affd409648fa83da214dd01ff6e6c757f196162d57647361ca69575/detection
+
+193.38.55.252:7777
+
+# Reference: https://www.virustotal.com/gui/file/5d6c176341db385db8e279629a038781c08e15e33e052ac4c26ad58457871e4e/detection
+
+185.112.83.228:7777
+
+# Reference: https://twitter.com/ViriBack/status/1557157076983549953
+# Reference: https://twitter.com/ViriBack/status/1557162864871350273
+# Reference: https://www.virustotal.com/gui/file/2772ecb3f1fe0e36f2f5b00351c632f4044cf9816fff0d5e577f9665f4d4d6f3/detection
+
+f0692042.xsph.ru
+subarctic-knives.000webhostapp.com
+
+# Reference: https://www.virustotal.com/gui/file/9dcf6e9f586ff0350fe9a9bf9dad35b603c305dd6f9c329bbdf75cca0182ffc7/detection
+
+jsaoqskkqtech.xyz
+
+# Reference: https://www.virustotal.com/gui/file/0077e7d6e90ad972b64e90c343c617482f39505deff44ebff99ff49041252dcb/detection
+
+http://185.112.83.111
+185.112.83.111:5555
+microsoftvisualstudio.wtf
+mail.microsoftvisualstudio.wtf
+
+# Reference: https://www.virustotal.com/gui/file/2a26b6eb7aaa22c772c0f3e0f3e86bf8aec814041f9cfcef522abacbc3557ebe/detection
+
+latteparzialmentescremato.ml
+
+# Reference: https://www.virustotal.com/gui/file/834515f39e92aebf57fa605e96cbe5348801c53fa355caee2565b4ea2fbb6d97/detection
+
+185.17.0.37:7777
+
+# Reference: https://twitter.com/fr0s7_/status/1701263685220487432
+# Reference: https://pastebin.com/v688VrMx
+# Reference: https://www.virustotal.com/gui/file/629b9c1b37492e4ad9b2468d1d54dbd1cdb3a899104042e69a45250d45296aa1/detection
+# Reference: https://www.virustotal.com/gui/file/b77afaed568ef351d921524af9efcf79b1fa4bc133f3c887072841a7ebeca1c0/detection
+
+139.180.159.121:1080
+139.180.159.121:30996
+45.76.190.214:1080
+45.76.190.214:121
+google-api.softether.net
+
+# Generic
+
+/panel/sql/db_write.php

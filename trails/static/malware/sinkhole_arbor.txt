@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/en/ip-address/23.253.126.58/information/
+# Reference: http://onlinecurl.com/ (URL pgdex.com)
+# Reference: https://www.virustotal.com/gui/domain/rockthecasbah.eu/relations
+
+23.253.126.58
+104.239.157.210
+104.239.159.210

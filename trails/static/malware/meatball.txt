@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://ics-cert.kaspersky.com/publications/reports/2023/07/20/common-ttps-of-attacks-against-industrial-organizations-implants-for-remote-access/
+
+booking-onlines.com
+freetranslatecenter.com
+onlinemapservices.com
+onlinenewscentral.com
+apps.onlinemapservices.com
+edit.onlinemapservices.com
+help.freetranslatecenter.com
+help.onlinemapservices.com
+search.onlinemapservices.com

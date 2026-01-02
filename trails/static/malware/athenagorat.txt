@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2017/02/athena-go.html
+
+athenabeicoxjr2l.onion.link
+athenabeicoxjr2l.onion.to
+teenhangout.tk
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60
+
+adefrabet.com
+bullstray.hol.es
+chaseonlinepc.com
+night-hunter.webege.com
+omniousdestiny.x10.mx
+skidgethit.x10.mx
+tehvexah.com
+thegiot.com
+lovin.us

@@ -1,0 +1,518 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: eugenloader
+
+# Reference: https://gist.githubusercontent.com/Jquinn147/0891fdd018372a8cbf4e0f381ebab7a8/raw/60e9a48b2922538f87eab8849e012d67ea91cc25/FakeBatCampaign_020223
+
+aida-x64.top
+ccleaner-cdn.top
+cpu-id.top
+crystaldiskinfo.top
+filezilla.top
+gpg4wins.top
+extractor-ultra.top
+lightshoot.top
+paintnet.top
+ultraiso.top
+
+# Reference: https://twitter.com/malwrhunterteam/status/1620171409438969860
+# Reference: https://www.virustotal.com/gui/ip-address/185.26.122.20/relations
+
+09formser.online
+7ziq.online
+7ziq.site
+7ziq.website
+7zlp.online
+90formser.online
+90formser.site
+blenderr.online
+blenderr.site
+blenderr.website
+blendler.online
+celfcu.online
+celfcu.site
+celfcu.space
+celfcu.website
+cirtix.site
+citrilxs.website
+citrixl.online
+citrixl.site
+citrixl.space
+citrixl.website
+citrixs.online
+citrixs.site
+citrlix.online
+citrlix.site
+citrlix.website
+citrlx.online
+citrlxx.online
+citrrix.online
+citrrix.site
+cittix.online
+cittrix.online
+cittrix.site
+cittrix.website
+clitrix.online
+clitrlix.online
+clitrlix.site
+clitrlix.website
+cltl.space
+cltl.website
+cltrix.online
+cltrixx.site
+diiscord.online
+dilscord.online
+disccord.online
+discordl.site
+discorld.online
+discorld.site
+discorrd.online
+discorrd.site
+discorrd.website
+disscord.website
+entcu.site
+entcu.space
+entcu.website
+omenote.online
+omenote.site
+oneenote.online
+oneenote.site
+onemote.site
+onenole.website
+onenolte.online
+onenolte.site
+onenolte.space
+onenolte.website
+onenoote.website
+onenotee.online
+onenotee.site
+onenotee.website
+onenotes.site
+onenotes.website
+onenotesx.website
+onenotex.online
+onenotle.site
+onenotle.website
+onenottes.online
+onenottes.site
+onenottes.website
+onenoute.site
+onnenote.online
+onnenote.website
+tmsteams.site
+v9-formss.website
+vvws9forms.online
+whatlsapp.website
+www-citi.online
+www-citi.space
+www-citi.website
+www-dcu.online
+
+# Reference: https://twitter.com/malwrhunterteam/status/1620174777083363328
+
+pcapp.store
+
+# Reference: https://twitter.com/gorimpthon/status/1625409314080030720
+# Reference: https://www.virustotal.com/gui/file/9f7c8b9f7205a8b5a29dfec9b77d906f858ef0da602f1658a915ce6e6fef4b15/detection
+
+advert-job.site
+
+# Reference: https://twitter.com/malwrhunterteam/status/1620866243199930368
+
+bbasecaupe.space
+
+# Reference: https://www.virustotal.com/gui/ip-address/134.209.96.222/relations
+
+ddockerf.site
+docckerf.site
+dockeerf.site
+dockkerf.site
+doockerf.site
+webbexx.site
+webeexx.site
+weebexx.site
+wwebexx.site
+
+# Reference: https://twitter.com/idclickthat/status/1620526292314750976
+
+www-apeswap.com
+
+# Reference: https://twitter.com/idclickthat/status/1620525514858590209
+
+neonbats.fun
+
+# Reference: https://twitter.com/idclickthat/status/1620560824623575040
+
+cyber-ghostsvpn.com
+cyberghost-vpnpro.com
+cyberghostpro-vpn.com
+cyberghostprovpn.com
+cyberghosts-vpn.com
+cyberghostvpn-pro.com
+cyberghostvpnpro.com
+cybergostsvpn.com
+gamingtop-vpn.com
+gamingtopvpn.com
+pandaa-vpn.com
+pandaavpn.com
+pandavpn-pro.com
+vpn-4games.com
+vpn4-games.com
+vpn4gamespro.com
+
+# Reference: https://twitter.com/idclickthat/status/1620494704512217088
+
+zoom-in.tech
+zoomcloud.tech
+zoomcloud.tech 
+zoomnow.tech
+zoomonline.tech
+
+# Reference: https://twitter.com/kyleehmke/status/1626233802690539521
+
+teieqram.me
+teiergam.com
+teleqram.co
+telergam.co
+
+# Reference: https://twitter.com/Iamdeadlyz/status/1634759371308826625
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-03-13-v10266/357
+# Reference: https://www.recordedfuture.com/new-crypto-drainer-phishing-pages-siphon-cryptocurrency-seconds
+
+pingpongtool.xyz
+redeem-circle.com
+rewards-decentraland.com
+usdc-circle.com
+
+# Reference: https://twitter.com/idclickthat/status/1637936437747396610
+# Reference: https://www.virustotal.com/gui/ip-address/94.131.101.55/relations
+# Reference: https://www.virustotal.com/gui/file/92651f9418625e5281b84cccb817e94e6294b36c949b00fcd4046770b87f10e4/detection
+
+88.119.175.124:443
+citrixisdownload.com
+citrixteams.com
+citrixteams.shop
+citrixteams.world
+fortigroup.shop
+fortigroups.com
+
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/10/clever-malvertising-attack-uses-punycode-to-look-like-legitimate-website
+
+keeqass.info
+ķeepass.info
+xn--eepass-vbb.info
+
+# Reference: https://twitter.com/1ZRR4H/status/1770306554194977113
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2024/01/atomic-stealer-rings-in-the-new-year-with-updated-version
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2024/03/fakebat-delivered-via-several-active-malvertising-campaigns
+# Reference: https://www.virustotal.com/gui/ip-address/62.204.41.98/relations
+# Reference: https://www.virustotal.com/gui/file/0956ab422b6bcc44fed1504b524c8bb8c4491da42552c3b179d6bbcb3dc24c85/detection
+
+ads-analyze.online
+ads-analyze.site
+ads-analyze.top
+ads-analyze.xyz
+ads-change.online
+ads-change.site
+ads-change.top
+ads-change.xyz
+ads-creep.top
+ads-creep.xyz
+ads-eagle.top
+ads-eagle.xyz
+ads-forget.top
+ads-hoop.top
+ads-hoop.xyz
+ads-moon.top
+ads-moon.xyz
+ads-pill.top
+ads-pill.xyz
+ads-star.online
+ads-star.site
+ads-star.top
+ads-star.xyz
+ads-strong.online
+ads-strong.site
+ads-strong.top
+ads-strong.xyz
+ads-tooth.top
+ads-tooth.xyz
+ads-work.site
+ads-work.top
+ads-work.xyz
+loader-x.ru
+1q.loader-x.ru
+ananas.loader-x.ru
+checker.loader-x.ru
+google.loader-x.ru
+jiga.loader-x.ru
+test1.loader-x.ru
+
+# Reference: https://twitter.com/crep1x/status/1778378600611184767
+# Reference: https://twitter.com/r3dbU7z/status/1783142417648046283
+# Reference: https://twitter.com/r3dbU7z/status/1783187744333668525
+# Reference: https://www.virustotal.com/gui/file/d069437eda843bd7a675a1cca7fd4922803833f39265d951fa01e7ad8e662c60/detection
+
+cdn-inform.com
+utm-adrooz.com
+utm-adschuk.com
+utm-adsgoogle.com
+utm-adsname.com
+utm-advrez.com
+utm-drmka.com
+utm-fukap.com
+utm-msh.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1784272027190272405
+
+republiktani.com
+
+# Reference: https://twitter.com/RacWatchin8872/status/1784300549761798186
+
+avastdefender.com
+
+# Reference: https://twitter.com/g0njxa/status/1787953744627593258
+
+avastcsw.com
+
+# Reference: https://twitter.com/ShanHolo/status/1784485074257224119
+# Reference: https://www.virustotal.com/gui/ip-address/89.163.213.231/relations
+
+dowloadsoc.cloud
+dowlosutr.click
+winloadsys.org
+
+# Reference: https://twitter.com/Threat_Down/status/1788261435061182970
+
+inkckape.org
+
+# Reference: https://twitter.com/Threat_Down/status/1788962340278534580
+# Reference: https://www.virustotal.com/gui/ip-address/195.211.96.230/relations
+
+advanced-lp-sccanner.com
+farccstcr.com
+fcrccstcr.com
+mccnpay.com
+store-stecmpcwered.com
+tcnkceper.com
+teamvlcwer.com
+todciist.com
+trcdingvlew.com
+zcomus.net
+
+# Reference: https://twitter.com/ValidinLLC/status/1788989788453847107
+# Reference: https://www.virustotal.com/gui/ip-address/5.34.179.12/relations
+
+appbambcohr.com
+cxecupay.com
+oncscurcevirtual.com
+paychcx.com
+
+# Reference: https://app.validin.com/detail?find=195.123.210.212&type=ip4&ref_id=618f759225d#tab=resolutions
+# Reference: https://app.validin.com/detail?find=195.123.224.175&type=ip4&ref_id=618f759225d#tab=resolutions
+# Reference: https://app.validin.com/detail?find=195.123.240.182&type=ip4&ref_id=618f759225d#tab=resolutions
+# Reference: https://app.validin.com/detail?find=195.123.240.212&type=ip4&ref_id=618f759225d#tab=resolutions
+# Reference: https://app.validin.com/detail?find=195.211.96.219&type=ip4&ref_id=618f759225d#tab=resolutions
+
+accountusalliance.com
+amazlcn.com
+appdcel.com
+appgostc.com
+apponpcy.com
+appusmobile.com
+bcnusly.com
+cmerantbank.com
+cppgcsto.com
+cppgustc.com
+cpspayroll.net
+eppripplinc.com
+gppgusto.com
+identitytrinet.net
+loginpatriotsoftware.com
+mylsclved.com
+paycomcnline.com
+paylccity.com
+paylooity.com
+pcychex.com
+pcyiocity.com
+pcylccity.com
+pcylocity.com
+pcyloclty.com
+pcyrollpartners.com
+rcbby.com
+securezenefits.com
+surcpayroll.com
+virtuaibox.net
+
+# Reference: https://twitter.com/crep1x/status/1790848244047651256
+
+getmess.io
+app.getmess.io
+docs.getmess.io
+utd-corts.com
+utd-forts.com
+
+# Reference: https://x.com/pe4Chscreeching/status/1792564741413503164
+# Reference: https://x.com/Intel_Ops_io/status/1797921085222252648
+# Reference: https://x.com/JAMESWT_MHT/status/1797979550326124624
+
+amydlesk.com
+monkeybeta.com
+notlilon.co
+notliion.com
+utr-jopass.com
+notion.kyngsacademy.com
+
+# Reference: https://x.com/MichalKoczwara/status/1798074330452287779
+
+sssservicesindia.com
+anydlesk.sssservicesindia.com
+
+# Reference: https://x.com/pe4Chscreeching/status/1792565866095059227
+
+http://109.107.182.209
+
+# Reference: https://blog.sekoia.io/exposing-fakebat-loader-distribution-methods-and-adversary-infrastructure/
+# Reference: https://app.validin.com/detail?find=185.196.11.96%2F28&type=ip&ref_id=dfcf47cebfb#tab=resolutions (# 2025-05-01)
+
+brow-ser-update.top
+dhl-taxe.com
+firefly-iota.net
+hand-brake.site
+hand-brake.store
+iotafire-fly.com
+iotalottery.org
+lotteryiota.org
+notilon.co
+notlon.top
+photoshop-adobe.shop
+photosnop-adode.shop
+photosnop-adode.site
+photosnop-adode.store
+razer-cortex.digital
+notion.ilusofficial.com
+
+# Reference: https://x.com/crep1x/status/1810208737925190114
+
+protonpin.com
+protonsvin.com
+protonsvip.com
+usm-pontic.com
+vmvares.com
+vmvere.com
+vmveres.com
+webaxt.com
+websext.com
+websixt.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/ps1.eugenloader/
+
+0212top.online
+0212top.site
+0212top.top
+0212top.xyz
+0909kses.top
+11234jkhfkujhs.online
+11234jkhfkujhs.xyz
+1212stars.online
+1212stars.site
+1212stars.top
+1212stars.xyz
+2311forget.site
+2311forget.xyz
+2610asdkj.online
+2610asdkj.top
+2610asdkj.xyz
+2610kjhsda.online
+2610kjhsda.site
+2610kjhsda.top
+2610kjhsda.xyz
+3010cars.online
+3010cars.site
+3010cars.top
+3010cars.xyz
+3010offers.online
+3010offers.site
+3010offers.top
+3010offers.xyz
+343-ads-info.top
+364klhjsfsl.top
+465jsdlkd.top
+756-ads-info.site
+756-ads-info.top
+756-ads-info.xyz
+875jhrfks.top
+98762341tdgi.online
+98762341tdgi.site
+98762341tdgi.top
+98762341tdgi.xyz
+999-ads-info.top
+aipanelnew.ru
+aipanelnew.site
+cdn-ads.ru
+cdn-ads.site
+cdn-new-dwnl.ru
+clk-brood.online
+clk-brood.top
+cornbascet.ru
+dns-inform.top
+ganalytics-api.com
+gotrustfear.ru
+gotrustfear.site
+hpr-rtlernt.com
+infocdn-111.online
+infocdn-111.site
+infocdn-111.xyz
+rtc-moostas.com
+test-pn.ru
+test-pn.site
+topttr.com
+trustdwnl.ru
+udr-offdips.com
+urd-apdaps.com
+utd-gochisu.com
+utd-horipsy.com
+utr-gavlup.com
+utr-krubz.com
+utr-provit.com
+
+# Reference: https://x.com/crep1x/status/1841016785853722651
+
+147.45.113.135:443
+80.66.81.199:443
+bab-dadhi.com
+expressovvpn.com
+ghd-34kaspod.com
+jdl-borsh.com
+jpt-bulsa.com
+nordvpnos.com
+nrdvpn.pro
+piavpn.pro
+privatevpnos.com
+privatvpn.pro
+sufsharkos.com
+surfshrkvpn.pro
+vpnexprss.pro
+vpnspia.com
+
+# Reference: https://x.com/RussianPanda9xx/status/1843778886456488240
+# Reference: https://app.validin.com/detail?type=hash&find=37875588c49849c2fed4de1eb787de1b#tab=host_pairs_v2
+
+efex-digital.com
+fid-66dibi.com
+ggood66-drg.com
+hpt-doop69fg.com
+job-4soutre.com
+upk-boomtisk.com
+ust-cnnak63.com
+verisignhub.com
+englishfolkexpo.efex-digital.com
+mail.ust-cnnak63.com
+
+# Reference: https://www.malwarebytes.com/blog/news/2024/11/hello-again-fakebat-popular-loader-returns-after-months-long-hiatus
+# Reference: https://www.virustotal.com/gui/ip-address/194.36.191.196/relations
+
+ghf-gopp1rip.com
+job-4soutre.com
+jpt-bulsa.com

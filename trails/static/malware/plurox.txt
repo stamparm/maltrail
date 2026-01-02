@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases:  plurox, trickster
+
+# Reference: https://securelist.com/plurox-modular-backdoor/91213/
+# Reference: https://otx.alienvault.com/pulse/5d0920bbc9d9077e664ad5cf
+
+obuhov2k.beget.tech
+webdynamicname.com
+
+# Reference: https://app.any.run/tasks/adcd35b9-f9b2-4707-ab8a-5caed42a3cbf/
+
+151.248.116.134:25998

@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases:  derialock, infinitycrypt, infinitylock
+
+# Reference: https://www.acronis.com/en-us/blog/posts/derialock-demands-victims-pay-ransom-skype
+# Reference: https://app.any.run/tasks/5534f563-39a6-4e21-ad37-3bd5f1c1a407/
+# Reference: https://app.any.run/tasks/e7a658b4-6175-46bb-aeef-3269ce408328/
+# Reference: https://app.any.run/tasks/8ee84f6d-cf36-4eb8-9ffc-e4d5ac1e23f8/
+
+arizonacode.bplaced.net
+
+# Generic
+
+/rnsm/add.php?type=

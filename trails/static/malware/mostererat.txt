@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fortinet.com/blog/threat-research/mostererat-deployed-anydesk-tightvnc-for-covert-full-access
+
+efu66.com
+huanyu3333.com
+idkua93dkh9590764478t18822056bck.com
+mostere.com
+osjfd923bk78735547771x3690026ddl.com
+xxxxxx25433693728080140850916444.com
+zzzzzzz0379098305467195353458278.com

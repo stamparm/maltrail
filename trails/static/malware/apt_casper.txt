@@ -1,0 +1,6 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.welivesecurity.com/2015/03/05/casper-malware-babar-bunny-another-espionage-cartoon/
+
+jpic.gov.sy/css/images/_cgi/

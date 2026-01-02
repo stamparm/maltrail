@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: dragonforce ransomware
+
+# Reference: https://github.com/marktsec/Ransomware_Official_Domains#dragonforce
+
+3pktcrcbmssvrnwe5skburdwe2h3v6ibdnn5kbjqihsg6eu6s6b7ryqd.onion
+m6srkaxpsggnfqwan7skjbyzgoxi3zpbwd2q2nulsv6l2rxddanfhkad.onion
+z3wqggtxft7id3ibr7srivv5gjof5fwg76slewnzwwakjuf3nlhukdid.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1866375557262569632
+
+45.135.232.195:2001
+45.135.232.195:3001
+
+# Reference: https://x.com/AlvieriD/status/1977984782740189485
+
+dragongo.org
+
+# Reference: https://x.com/solostalking/status/1978765939827982662
+
+46.29.238.160:443
+dragonforce.life

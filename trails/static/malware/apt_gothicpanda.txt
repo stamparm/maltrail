@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt3, apt-c-3, ups
+
+# Reference: https://www.fireeye.com/blog/threat-research/2014/11/operation_doubletap.html
+
+securitywap.com
+bedircati.com
+lamb-site.com
+playboysplus.com
+walterclean.com
+
+# Reference: https://www.fireeye.com/blog/threat-research/2015/07/demonstrating_hustle.html (# APT3’s campaign)
+
+link.angellroofing.com
+psa.perrydale.com
+report.perrydale.com
+rpt.perrydale.com
+vic.perrydale.com

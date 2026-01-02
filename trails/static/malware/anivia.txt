@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: aniviacrt, anivia stealer
+
+# Reference: https://x.com/solostalking/status/1996614537185992818
+
+51.38.250.193:7777

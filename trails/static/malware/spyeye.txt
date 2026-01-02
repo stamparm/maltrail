@@ -1,0 +1,326 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://web.archive.org/web/20120106212034/http://amada.abuse.ch/blocklist.php?download=domainblocklist
+
+1ns4n3.de
+acidsource.com
+admineye1.com
+alimonyforces.com
+alimonyforcessd34.com
+apocalypt2.net
+appppa1.ru
+barcalys-trial.com
+barcalys-trial2.com
+bibiblocksberg.net
+bmwcars.1.vg
+bntx.net
+bolbos.co.cc
+bp.olofyj.ru
+carheavens.ru
+clickxfinder.com
+clickxsearche.com
+cnc0098510m.cz.cc
+cocainy.net
+cpucardioholder.com
+craken.biz
+cronbronzvon.net
+damptime.com
+datingtipstricks.info
+djayw.net.in
+dust.wxhelz.net
+ecomersik.com
+elcoluna.mobi
+eye.b0x.su
+fast-advertisement.net
+fastertraders.net
+feldmar.ru
+fenieneec.info
+festivaloffire.net
+fhfhfe880.com
+findtoup.com
+forwardmotionconcepts.com
+gancetode.com
+gaxnet32.com
+gerulisdedas.com
+getcouponow.com
+gold.perfurtorkerhortar.com
+google-stat.org
+googlemaps3.com
+googlemaps5.com
+govnozhest.cz.cc
+haspo6lita.com
+hertulna-bestdeal.com
+huteraq.com
+igrajvpas.com
+imagenabotam.com
+indiatoursback.in
+infinitehackers.net
+infro.anexelymoweq.in
+ipchecker001.com
+ipchecker911.com
+kaisserz-awe.net.in
+kanyx.org
+keppeo.com
+lanlabs.net
+lanxiouspower.com
+lasbok.com
+laso5palop.com
+lloydstsb.bz
+market.ecommrs.info
+mejerlahome2.com
+melatocasotravez.in
+metallocon.ru
+microsoft-spynet.com
+milinewo.be
+moox.cz.cc
+moun1r.co.cc
+ms-stats.info
+mydocuments4you4.com
+mylodka24.net
+myrestricted.info
+nerukabbcompany.com
+ns-creative.com
+on.rucl.ru
+oraltablets.info
+otorviseberukumudak.com
+overclock.osa.pl
+peosoe.com
+peosorew.com
+petrenckolekha.com
+picomarkets.ru
+pjhksdf469kjsdfkhsdf.co.cc
+planita.org
+privathosting.eu
+qoclick.dyndns.org
+qualitaetvorun.org
+quantummechanic.cc
+rantigalta-industrellio.net
+rapeisntfunny.info
+reg.kygalu.ru
+rubbikcube.net.in
+russianelite-jabber.org
+secure-suite.net
+securebankingserver.net
+seotraffbuss.com
+serv2.com
+serv3.com
+servers01.org
+shalis.org
+simrako.com
+siriusprojbck.net.in
+slord.codzs.com
+solvota.com
+sportmybet.com
+statistictoolbox.com
+tas-club.co.cc
+the-secure.com
+theimageshare.com
+timgad1.com
+track0n.com
+troliatakuyut.net
+turaminich.co.cc
+tydklsbjfujklvjhksjhfj.co.cc
+underground-infosource.info
+upd-host.net
+updatejp.com
+urchinpip.osa.pl
+verificationstreet.com
+vewiews.com
+visitorcounter.net.in
+visitorcounterback.net.in
+vtfkp.net
+vyrus.redirectme.net
+wardefer.com
+webapp.datejebemupicku.com
+weqnext.com
+100myr.com
+3hosting4u.ir
+4587avvv.1gb.ru
+ateapple.com.ua
+atlas55.com
+backorderru.com
+black-hosting.ru
+bringithomedude.com
+bx1.biz
+bxpartner.com
+connectionsupport.org
+euarabsmeconf.com
+exxcalibur.tv
+galichina.zaporizhzhe.ua
+hackhound.org.uk
+koburana.ru
+m10000.net
+mapper-guide.org
+microsoft-spynet.com
+mindfuckweed.ru
+newnut.ru
+pornourl.tv
+ppobhkmn598d4k83.com
+privathosting.be
+privathosting.eu
+servers02.org
+spys.fvds.ru
+updsys.net
+voidrage.com
+wefucktheworld.u2m.ru
+worlddatahouse.com
+x188188x.su
+xableupper.com
+zaredivdudku2.com
+zlo.rxfly.net
+
+# Reference: https://www.virustotal.com/gui/file/8a3a33f5170428f06b1558319a9b9da10ab12c897b8076a4afc0f54685591da2/detection
+
+finkoprom.cc
+
+# Reference: https://www.virustotal.com/gui/file/5524b9c7b39afcc90f048e41e2d51b92f3cc3176ff9f1e013e079719643c17b5/detection
+
+199.2.137.203:8080
+1nbank.info
+/ll382hfs.php
+
+# Reference: https://www.virustotal.com/gui/file/d9d447464ea615571b7956194da92288fc841f7f45984d2a5e66c4bf0de2336d/detection
+# Reference: https://www.virustotal.com/gui/file/b03cdae487f32826411b89c580aee99059e56b46d66daf1401b33410d40be79d/detection
+# Reference: https://www.virustotal.com/gui/file/03ec9000b493c716e5aea4876a2fc5360c695b25d6f4cd24f60288c6a1c65ce5/detection
+
+http://217.8.117.31
+
+# Reference: https://www.virustotal.com/gui/file/d468812d07107735d39b09cb9e522bc8c7f0631f62ab2a84816b8b082064840f/detection
+
+ganja.mine.nu
+
+# Reference: https://twitter.com/ViriBack/status/1329581239775490051
+# Reference: https://www.virustotal.com/gui/ip-address/45.15.143.167/relations
+# Reference: https://www.virustotal.com/gui/file/68be2ba319d445f1a1d7da73d9ad26b894f55f85f1b943ab5b5251ddfc0bc439/detection
+
+http://45.15.143.16
+
+# Reference: https://www.virustotal.com/gui/file/998b6e8629ba041d76687fe1e49313166cf8c6d646fc317c4ba3f9ec6ffe9f79/detection
+
+http://185.136.169.200
+
+# Reference: https://www.virustotal.com/gui/file/d88cb891d36dc09bb88fcef9fcb8ba6efe6f5034ae76e5b630ab86e54afff1cc/detection
+
+rackz.su
+
+# Reference: https://twitter.com/malwrhunterteam/status/1255907032944775171
+# Reference: https://twitter.com/DrStache_/status/1330103577608597509
+# Reference: https://app.any.run/tasks/8c728e87-57f8-4989-a46a-b3a3c16f3ec6/
+
+http://93.115.21.62
+softcheck3u.biz
+
+# Reference: https://www.virustotal.com/gui/file/3e9010b9bb30fecbfdc85061884ea18fc448b203a926cb06b678f972efb384d3/detection
+# Reference: https://app.any.run/tasks/b13265f9-e55b-4045-bd5a-498aeab9a8ee/
+
+http://83.220.168.237
+
+# Reference: https://twitter.com/benkow_/status/1340620614323847168
+# Reference: https://www.virustotal.com/gui/file/157f3d072b0c8a5248333201e38fde1d19ccc64b0d2b7b699cce1d081412faba/detection
+
+5eta5jd58hb4.top
+djeshwxzsiz.biz
+gxd3fp7fe7cac6jzn2sac.online
+gw397iwauwsf.top
+pmvqurd9qxq2.top
+/ognqeWyEPv/
+/pfdUwxYphg/
+/pw48h9w5hg95hg9/
+
+# Reference: https://blog.talosintelligence.com/2021/02/threat-roundup-0212-0219.html (# Win.Packed.Zbot-9831585-0)
+# Reference: https://www.virustotal.com/gui/file/2ef0561cfd0ce84b4686be84984d94445aeea0cbdf3d68d4145aa0322055c2ff/detection
+
+google-adsense-n1.com
+vizit-tracker-n192.com
+
+# Reference: https://twitter.com/wwp96/status/1372010182293741568
+# Reference: https://app.any.run/tasks/ef9a1555-f349-41c8-9643-16512c11e5d4/
+# Reference: https://www.virustotal.com/gui/file/f577b55f66304cbec61d7504a51ef5669eaf0d5731f236410c3939e515e56040/detection
+
+http://203.159.80.228
+kapreja09.top
+wertuest.xyz
+whatitis.site
+/Saint/gate.php
+
+# Reference: https://www.virustotal.com/gui/file/d8495ddaa8b21c9bfe0900bcaadbae6506bfa49960fa5ac85231755a644e4072/detection
+
+http://62.113.119.39
+
+# Reference: https://www.virustotal.com/gui/file/80089398298806065692b86f30f1f1552b628921d35dabb1a3db212aba1f1794/detection
+
+update-0019992.ru
+
+# Reference: https://www.virustotal.com/gui/file/f14a21a2bb9ca84b12046b2b9c1131a5da91816c58a37e4b1476d716d22299f6/detection
+
+f0527568.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/8d262242545f777228a77492d4339fd285f0d8fae64ead5350d40f644acd0e4c/detection
+
+f0428447.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/347609df31e7f70e2f268de0ee34453fa4a86d71b778058eeb0156ad00f04c48/detection
+
+koletrezzo22.ru
+/frmcp/
+/frmcp0/
+/frmcp1/
+/frmcp2/
+/frmcp3/
+/frmcp4/
+/frmcp5/
+/frmcp6/
+/frmcp7/
+/frmcp8/
+/frmcp9/
+
+# Reference: https://github.com/hardenedlinux/hardenedlinux-zeek-script/blob/master/scripts/frameworks/intel/OSINT/CYBERCRiME-03-03-19.txt
+
+gfydwsbtvoypxuqk.onion
+
+# Reference: https://www.virustotal.com/gui/file/7f9ddf78ed8a286233f20e608565008400f86d384965dfae1880e2f278c143b3/detection
+
+http://185.255.135.33
+
+# Reference: https://www.virustotal.com/gui/file/ec77b5b3dcb1e24ecd670726d4fcd7c70157ce0660b80545faffc4e7158cfa30/detection
+
+5eta5jd58hb4.top
+tvq8rv4zpf.top
+udre3kvzatwrx6ues4p2u.top
+vgeu635upa.xyz
+
+# Reference: https://www.virustotal.com/gui/file/708125a76a920c0b4c0c052bcdb237d633235924a433bdb214d2d197ec1a771b/detection
+
+http://163.172.40.27
+
+# Reference: https://www.virustotal.com/gui/file/862cf502d8135eb2323079048a5f5abfa73a73e6cd57b85459b692412bda2ac5/detection
+
+http://146.0.72.91
+
+# Reference: https://www.virustotal.com/gui/file/c222122fe3e1206ba2363c17fb37ae2f8e271840e17b3bb9ba5359f2793f9574/detection
+
+smm2021.net
+
+# Reference: https://www.virustotal.com/gui/file/74a2b267766930ee664b7e52796a666a8e33e70e139f7cef27e4b1a247c4f1fc/detection
+
+http://185.215.113.13
+
+# Reference: https://www.virustotal.com/gui/file/1b2eaff481b083525a42635e86bbeb6ca0e7c1c9c3d880ba29754b9a2277b962/detection
+
+http://188.130.139.47
+
+# Reference: https://www.virustotal.com/gui/file/10c024451d477f4d48311d69e198eabb766e701282e1c6c51aeaaa86a6ada333/detection
+
+fr4edxs1231.co.cc
+
+# Reference: https://www.virustotal.com/gui/file/c1553c510428edfa5b806bf5c57d068e14cc25d1f3f97afdd1fd75dba4fa1611/detection
+
+a0508590.xsph.ru
+
+# Generic
+
+/testcp1/gate.php
+/Botnets/Citadel/
+/Botnets/SpyEye1.3.48/
+/files/spyeye/

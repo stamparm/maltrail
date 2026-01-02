@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: scylla stealer, scylla 3.12 stealer
+
+# Reference: https://x.com/solostalking/status/1932056277003448733
+# Reference: https://app.validin.com/detail?find=S%D1%81ylla%20v3.12%20-%20Login&type=raw&ref_id=1a2a2ce8d16#tab=host_pairs
+
+http://193.124.117.178
+ssklsaf123scyllasdkc334.online

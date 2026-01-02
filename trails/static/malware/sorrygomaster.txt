@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: sorrygomaster stealer
+
+# Reference: https://twitter.com/Jane_0sint/status/1674425418429112329
+# Reference: https://app.any.run/tasks/a8445e52-98a3-4116-a5cf-ebd2c2b47fd3/
+
+http://185.106.93.137
+185.106.93.137:443
+
+# Reference: https://twitter.com/g0njxa/status/1680651213811904516
+# Reference: https://app.any.run/tasks/cfee50df-73a6-4ffc-a7cd-d82cefa5affb/
+
+http://193.233.255.86
+193.233.255.86:443

@@ -1,0 +1,52 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Earth Empura, POISON CARP, Evil Eye
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/new-android-spyware-actionspy-revealed-via-phishing-attacks-from-earth-empusa/
+# Reference: https://otx.alienvault.com/pulse/5ee23a52bdc07efff9330a96
+
+http://114.215.41.93
+apiforssl.com
+appbuliki.com
+bloomberg.com.cm
+doubles.click
+freenunn.com
+geo2ipapi.org
+goforssl.top
+gotossl.ml
+search-sslkey-flush.com
+umutyole.com
+
+# Reference: https://about.fb.com/news/2021/03/taking-action-against-hackers-in-china/
+# Reference: https://otx.alienvault.com/pulse/605caf0881cf2953063d2fab
+
+anayurt.net
+apkhl.pw
+apkprue.info
+apkpure.bz
+geo2ipapi.org
+gotossl.ml
+icptime.com
+istiqlaihaber.com
+misran.org
+newyorkingsite.com
+playgoog1e.com
+preservtyg.com
+sslportservices.com
+strunhvgpk.com
+uhtpuerdfbnm.com
+uyghur-news.com
+uyghur-soft-market.com
+uyghurhaber.com
+
+# Reference: https://www.virustotal.com/gui/file/29796512ab27d97e38f15a4b4a37349d1125f00bc69a3e5cbd85dcaab6205817/detection
+
+149.248.9.92:10801
+
+# Generic
+
+/RcsDataSys//ws/httpsData/command
+/RcsDataSys/ws/httpsData/rece
+/RcsDataSys//ws/httpsData/
+/RcsDataSys/ws/httpsData/

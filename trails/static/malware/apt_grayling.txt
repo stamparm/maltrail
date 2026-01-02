@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/grayling-taiwan-cyber-attacks
+# Reference: https://cybersecuritynews.com/apt-group-custom-malware/
+# Reference: https://otx.alienvault.com/pulse/65257b05864d3e1624233f65
+# Reference: https://otx.alienvault.com/pulse/65281d5afbb224d10c5f287e
+
+45.148.120.23:91

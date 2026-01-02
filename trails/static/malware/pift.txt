@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://kc.mcafee.com/resources/sites/MCAFEE/content/live/PRODUCT_DOCUMENTATION/23000/PD23873/en_US/McAfee%20Labs%20Threat%20Advisory-W32-Pift.pdf
+
+e.ppift.in
+e.ppift.com
+e.ppift.net
+
+# Reference: https://otx.alienvault.com/indicator/file/70c351166dfab54758a5f220aab33ba7cc4b0c483d097ee418814307b6b6f352/
+
+e.ppidn.in
+e.ppidn.com
+e.ppidn.net

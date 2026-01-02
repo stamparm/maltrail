@@ -1,0 +1,151 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: gomorrah
+
+# Reference: https://twitter.com/wwp96/status/1221866487637520384
+# Reference: https://app.any.run/tasks/ab0e79ca-5626-4c49-a988-3960d0d51beb/
+# Reference: http://tracker.viriback.com/dump.php (2020-02-29, Lucifer)
+
+/lucif/Panel/
+/lucifer/Panel/
+/Panel/lucif/
+/Panel/lucifer/
+
+# Reference: https://app.any.run/tasks/c0d5e3fb-fae8-4dff-bad9-31ed982966b5/
+
+drrahnama.com/cabin/lucifer/
+/cabin/lucifer/
+
+# Reference: https://app.any.run/tasks/9ab40dbe-ed2e-40b4-bf1e-cff0a3748973/
+
+turasogutmas.com/lucifer/lucifer/
+/lucifer/lucifer/
+
+# Reference: https://github.com/stamparm/maltrail/pull/7250#issuecomment-596404626
+# Reference: https://twitter.com/wwp96/status/1221866487637520384
+
+/task.php?hwid=
+
+# Reference: https://twitter.com/Jouliok/status/1241633571028205568
+# Reference: https://app.any.run/tasks/5a576512-7227-4dc0-8fe5-02647c2851cc/
+
+hojokk.com
+/0x//gate.php?hwid=
+/0x//logs.php?hwid=
+/0x/photos.php?hwid=
+/0x//screen.php?hwid=
+
+# Reference: https://twitter.com/abuse_ch/status/1245290444445155329
+
+posit.monster
+/luci/Panel/
+
+# Reference: https://research.checkpoint.com/2020/rudeminer-blacksquid-and-lucifer-walk-into-a-bar/
+# Reference: https://otx.alienvault.com/pulse/5f6225bf864da5b2c1061152
+
+122.112.179.189:50208
+guyeyuyu.com
+qf2020.top
+qianduoduo.pw
+tyz2020.top
+
+# Reference: https://twitter.com/ViriBack/status/1427409427620061189
+# Reference: https://app.any.run/tasks/5680dd62-cda1-4fdf-aee1-044cb015fd3f/
+
+tospititouaromatos.shop
+/bot/cosanostra/
+/cosanostra/Panel/
+
+# Reference: https://twitter.com/ViriBack/status/1469467888771903491
+# Reference: https://www.virustotal.com/gui/file/bf50e436f5cf59017b5816d9ae250841b61550b795c7f59756e8bc98891f2f21/detection
+
+kashdreamz.run
+/gom_v4/gate.php
+/gom_v4/task.php?hwid=
+/gom_v4/Panel/
+/gom_v4/Panel/login.php
+
+# Reference: https://www.virustotal.com/gui/file/688445b18619e5c7f9023e7aadc7b7b1e2cb1302ce730ba642830845928302cf/detection
+
+gomorrah.pw
+
+# Reference: https://twitter.com/James_inthe_box/status/1491810604281065473
+# Reference: https://app.any.run/tasks/ed26285d-afb7-418d-a55a-56618127a2b3/
+
+fbbddfbdf.7m.pl
+
+# Reference: https://www.virustotal.com/gui/file/b06f938b3823443406c499ff1995722b56e83d0c8b4d9ac646d4d29b4d59082d/detection
+
+http://193.56.146.29
+/errlog002/gate.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1258099799066243072
+
+solarparkcleaning.co.uk
+
+# Reference: https://twitter.com/ViriBack/status/1581735919287435264
+
+gbam-gbam.xyz
+
+# Reference: https://twitter.com/ViriBack/status/1587044517202591745
+# Reference: https://app.any.run/tasks/28671a49-2215-46de-bd9e-41b7920d803c/
+# Reference: https://www.virustotal.com/gui/file/ef78b1b49ad05f85aae748ebff3df2bb06adf6e6d8a2d775f477a4f45245b812/detection
+# Reference: https://www.virustotal.com/gui/file/60b8f361c66d8d0b6468477676ebe822c369cda322937fab97d8a28ec15ab57e/detection
+
+directport123.com
+myserverpot.com
+sanjuanbot.net
+
+# Reference: https://twitter.com/FalconFeedsio/status/1675754340101783554
+
+jjffhdjbjncsutyeiks.000webhostapp.com
+/Panel.Gomorrah/Panel/login.php
+/Panel.Gomorrah/Panel/
+/Panel.Gomorrah/
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.gomorrah_stealer/
+
+cetkom.yunethosting.rs
+eerier-safety.000webhostapp.com
+hasidic-lettering.000webhostapp.com
+mavelecgr.com
+panel.cheater-zone.com
+saucepainel.pt
+sjunmel.org
+team-x.work.gd
+ziglar.xyz
+
+# Reference: https://threatfox.abuse.ch/ioc/1188725/
+
+cyberwistee.000webhostapp.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.gomorrah_stealer/ (# 2023-10-17)
+
+botnetlogs.store
+kaminnekretninemail.com
+secure.biiclick.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.lucifer/
+
+lucifer14341.000webhostapp.com
+
+# Reference: https://x.com/cyberfeeddigest/status/1825989502160007622
+# Reference: https://x.com/V3n0mStrike/status/1826075064837509308
+# Reference: https://www.virustotal.com/gui/file/f7cc154fd7de548cba0a99570e9f2af4abb9a2e1da56e787ee7c30c238bd5bdd/detection
+# Reference: https://www.virustotal.com/gui/file/fe3de45ad47e26517330e5e6094271a4f502d71cbf7a7c1149ce0174c6c82c46/detection
+
+zillelandverify.com
+
+# Reference: https://x.com/DonPasci/status/1826143868519129510
+
+http://51.105.242.96
+53d5-66-154-102-195.ngrok-free.app
+alltorq-net.oncallservices.ca
+bigcuck69.xyz
+evil-pinky.com
+ghostghostcom.000webhostapp.com
+
+# Generic
+
+/root//gate.php?hwid=

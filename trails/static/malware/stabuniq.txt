@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2012-121809-2437-99&tabid=2
+
+anatwriteromist.com
+bbcnews192.com
+belsaw920.com
+benhomelandefit.com
+midfielderguin.com
+prominentpirsa.com
+sovereutilizeignty.com
+yolanda911.com

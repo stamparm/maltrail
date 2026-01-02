@@ -1,0 +1,118 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/Ransomware-Snatch
+# Reference: https://news.sophos.com/en-us/2019/12/09/snatch-ransomware-reboots-pcs-into-safe-mode-to-bypass-protection/
+# Reference: https://otx.alienvault.com/pulse/5deeb5125acfb93dac569703
+# Reference: https://github.com/StrangerealIntel/malware-notes/blob/master/Ransomware/Snatch.md
+
+193.188.22.29:443
+193.188.22.29:80
+193.188.22.29:37462
+193.188.22.26:443
+193.188.22.26:80
+193.188.22.25:443
+193.188.22.25:80
+67.211.209.151:3306
+37.59.146.180:443
+37.59.146.180:80
+45.147.228.91:443
+45.147.228.91:80
+185.61.149.242:443
+185.61.149.242:80
+94.140.125.150:443
+94.140.125.150:80
+91.218.114.4:443
+91.218.114.4:80
+91.218.114.11:443
+91.218.114.11:80
+91.218.114.25:443
+91.218.114.25:80
+91.218.114.26:443
+91.218.114.26:80
+91.218.114.31:443
+91.218.114.31:80
+91.218.114.32:443
+91.218.114.32:80
+91.218.114.37:443
+91.218.114.37:80
+91.218.114.38:443
+91.218.114.38:80
+91.218.114.77:443
+91.218.114.77:80
+91.218.114.79:443
+91.218.114.79:80
+mydatasuperhero.com
+mydatassuperhero.com
+storedataresback.com
+snatch24uldhpwrm.onion
+snatchh5ssxiorrn.onion
+snatch6brk4nfczg.onion
+
+# Reference: https://thedfirreport.com/2020/06/21/snatch-ransomware/
+
+91.229.77.161:443
+
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+
+snatch.press
+hl66646wtlp2naoqnhattngigjp5palgqmbwixepcjyq5i534acgqyad.onion
+
+# Reference: https://twitter.com/AlvieriD/status/1688495453975740416
+# Reference: https://www.virustotal.com/gui/ip-address/193.106.174.177/relations
+# Reference: https://www.virustotal.com/gui/ip-address/34.88.205.176/relations
+# Reference: https://www.virustotal.com/gui/ip-address/89.191.234.83/relations
+
+dwhyj2.top
+filesnatchcloud.top
+microsteam.top
+snatchnews.top
+snatchteam.cc
+snatchteam.top
+sn76920193ch.top
+sntech2ch.top
+autodiscover.snatchteam.top
+smtp.snatchteam.top
+superset.filesnatchcloud.top
+sznmsngiwuj.filesnatchcloud.top
+test.filesnatchcloud.top
+
+# Reference: https://www.virustotal.com/gui/file/b33621091c67374f6e52d6be659017beebd661c5714b0fdc5b1ed291707b1fc1/detection
+
+38.207.173.58:8000
+
+# Reference: https://www.virustotal.com/gui/file/7f2b2a00ed7fde1f435bb185a9580c0a9bb8b39ae316ab55c5f156b9234d311e/detection
+# Reference: https://www.virustotal.com/gui/file/684a3f917c78cfd9bd213d3e3ec02a16e263ea7963ab09f109be81c9fc15e157/detection
+
+38.207.173.58:8080
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.188.88.252/relations
+
+chcld11543gndla.cc
+chcld70718sndle.cc
+filesnatchcloud.pro
+googlesupport.top
+microsoftcoreservice.app
+sn7382cldre.cc
+
+# Reference: https://www.virustotal.com/gui/ip-address/5.180.154.76/relations
+
+dwhyuu.top
+
+# Reference: https://app.validin.com/detail?find=81.94.150.179&type=ip4&ref_id=aa9bfadcf3f#tab=resolutions
+
+filesnatchcloud.cc
+
+# Reference: https://x.com/lontze7/status/1844602509471457646
+# Reference: https://www.virustotal.com/gui/file/7339f9564065633e406dc131cb63394f530504ca78fb7215d7882cd05e191e47/detection
+# Reference: https://www.virustotal.com/gui/file/3a68cd7db885a8b3c3124386739fb31a6bf459bfa53cd0e63bf1e1bcf706496c/detection
+
+23.225.71.50:9000
+router.ody.cc
+
+# Reference: https://x.com/petikvx/status/1862956598622114242
+# Reference: https://tria.ge/241117-y63tgaxgjf
+# Reference: https://www.virustotal.com/gui/file/73c88d66c962fcc00140eebbc1953ec0593350798ee71fc7489ef1daf4cc2055/detection
+# Reference: https://www.virustotal.com/gui/file/63de3269fcc8c9293013e1a5e7cc9c3243783f1ce6c104d0472f7dc0cdbb2a78/detection
+
+http://167.99.82.104

@@ -1,0 +1,56 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/b47ff5c9418fab12e713bbc99eff16c7d5f577e67016c90bd4e5b1977b64d9a8/detection
+
+61.43.242.67:10916
+
+# Reference: https://www.virustotal.com/gui/file/2f3277aba420da2a288cbd30024bea3767e82efdce04ed0cfe9e0929201c2392/detection
+# Reference: https://www.virustotal.com/gui/file/ee9426abdd39d6eb868e65c4b4ccd276c6799b713bf97f953678823fa582b424/detection
+
+45.138.209.14:10916
+
+# Reference: https://twitter.com/malwrhunterteam/status/1311614965489565701
+# Reference: https://twitter.com/bl4ckh0l3z/status/1311642008872779777
+# Reference: https://www.virustotal.com/gui/file/3c2c4c71711a02774f9d9fcd8521be24255944c2c907cde51005372b81a583ee/detection
+
+112.213.97.158:8989
+
+# Reference: https://www.virustotal.com/gui/file/e66623efb899c4b05130d7e816e12843b250cbe93e1b4c0043fa3bba2b77aaba/detection
+
+45.138.209.244:9016
+
+# Reference: https://www.virustotal.com/gui/file/95177aaf20f41801a3faa33130de0ca8a4ab8e44045577fb254fdcc3755ef9ab/detection
+
+45.138.209.36:20615
+
+# Reference: https://www.virustotal.com/gui/file/9047542a50e42ad84053867f25d150c1d4a79cea118500c1daeb06500ee377aa/detection
+
+69.165.64.154:8989
+
+# Reference: https://www.virustotal.com/gui/file/e00db7caf92016086bec1033d661889f93effe275b964e1600fab665717fd937/detection
+
+103.214.168.125:8080
+
+# Reference: https://twitter.com/malwrhunterteam/status/1331329557341855749
+# Reference: https://twitter.com/bl4ckh0l3z/status/1333536151970467840
+# Reference: https://www.virustotal.com/gui/file/fca770703f02f4d64565cf039dfec07bdc54d3d4f16d7c7da887c369cb3ce95e/detection
+
+45.158.32.13:9090
+
+# Reference: https://www.virustotal.com/gui/file/7392165c25ede3b57727020ea27422835ab0a21b3abd1c664e0e3f2a8b61375b/detection
+
+5.180.97.222:8989
+
+# Reference: https://www.virustotal.com/gui/file/c722412bd39421f6ce00f390bef32d7fac3b0be352a15e64ca5514935a3a9245/detection
+
+http://185.249.216.70
+185.249.216.70:8989
+
+# Generic
+
+/api/zhuan_bo
+
+# APK
+
+/보안카메라.apk

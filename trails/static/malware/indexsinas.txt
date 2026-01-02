@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.guardicore.com/labs/smb-worm-indexsinas/
+# Reference: https://github.com/guardicore/labs_campaigns/blob/master/Indexsinas/files.md
+# Reference: https://otx.alienvault.com/pulse/60dd70ecf3795ef2a7fd26c7
+# Reference: https://www.virustotal.com/gui/file/f1b61028b481abab7ba36d24c5f6671ee1473604c2a548ae128279c18cd59fbc/detection
+
+176.118.208.39:1166
+151.106.6.34:1188
+indexsinas.me
+1.indexsinas.me
+2.indexsinas.me
+a.ccmd.website
+b.ccmd.website

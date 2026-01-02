@@ -1,0 +1,3402 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://en.wikipedia.org/wiki/Browser_hijacking
+
+atajitos.com
+coolwebsearch.info
+conduit.com
+conduit-download.com
+conduit-services.com
+coupon-server.com
+getwizard.com
+gosave.com
+istartsurf.com
+delta-search.com
+incredibar.com
+onewebsearch.com
+results-hub.com
+rockettab.com
+searchassist.net
+searchult.com
+searchgol.com
+searchnu.com
+snap.do
+taplika.com
+vosteran.com
+
+# Reference: (dork: How to remove Search (Removal Guide))
+
+searchallgo.com
+set.tidaltv.com
+cdn.themobideal.com
+az815563.vo.msecnd.net
+az439107.vo.msecnd.net
+soundfrost.org
+adsdelivery1.com
+astromenda.com
+zym.tollbahsuburban.com
+wkwindowsflash.com
+searchmania.info
+static.zixizyxetaz.com
+ahi.couprbi.com
+rna.lilychino.com
+bizigames.org
+omniboxes.com
+binkiland.com
+windows-scan.com
+checkupdatenow.com
+sy.eu.angsrvr.com
+spiltstr.com
+mysearch123.com
+searchbulls.com
+viceice.com
+pcsupportapp.com
+gangnamgame.net
+streaming-errors.com
+newpoptab.com
+public-box.ru
+helpfulhint.net
+sevensoftwerr.com
+adsrvmedia.adk2.net
+creative.m2pub.com
+123rede.com
+dregol.com
+ividi.org
+jogostempo.com
+mysportsxp.com
+omiga-plus.com
+portaldosites.com
+tohotweb.com
+top8844.com
+protectedio.com
+easyrecipesaccess.com
+qvo6.com
+sidecubes.com
+start.qone8.com
+vidcreek.tv
+mystartsearch.com
+searchalgo.com
+defaultsearchtab.com
+webssearches.com
+mywebsearch.com
+imesh.net
+mlstat.com
+mysearchdial.com
+vidolog.com
+stamplive.com
+qvo6.com
+noticiasalpunto.com
+willyoupressthebutton.com
+ilividlive.com
+glesafe.com
+searchmagnified.com
+binkiland.com
+downlite.net
+trovi.com
+mysearch.avg.com
+findgala.com
+elex.com
+trolatunt.com
+zoomzoomapp.com
+thecoupontime.com
+stormvade.net
+mossnet.info
+outobox.net
+webspades.info
+babylon.com
+sweet-page.com
+plusnetwork.com
+dosearches.com
+brownbarknote.com
+iwebar.com
+only-search.com
+qone8.com
+findallnow.net
+certified-toolbar.com
+searchgol.com
+searchcompletion.com
+searchbomb.info
+22find.com
+flipora.com
+ultimate-search.net
+buenosearch.com
+nationzoom.com
+qvo6.com
+safesear.ch
+sweetpacks-search.com
+luckysearches.com
+istart123.com
+speedbit.com
+searchfec.com
+bing.vc
+oursurfing.com
+myemailxp.com
+viceice.com
+yoursearch.me
+alawar.com
+searchsafe.com
+startnow.com
+myoivu.com
+buscarenlaweb.com
+safebrowsesearch.com
+start-search.com
+next-search.net
+your-home-page.net
+serfsearch.com
+accoona.com
+cassiopesa.com
+dalesearch.com
+myvv9.com
+protectedio.com
+allinchrome.com
+www-search.net
+omiga-plus.com
+seekmx.com
+sweetim.com
+expressfind.net
+softonic.com
+omniboxes.com
+dnsioweb.net
+dregol.com
+searchpile.com
+123rede.com
+spot-search.com
+piesearch.com
+eshield.com
+searchpagefix.com
+blekko.com
+mygridsearch.com
+searchbetter.com
+netmahal.com
+start-search.com
+vosteran.com
+globasearch.com
+yoursocialconnections.com
+friendlyerror.com
+golliver.com
+yessearches.com
+16start.com
+wajam.com
+crawler.com
+www-search.info
+go-search.ru
+search-quick.com
+wow.com
+aartemis.com
+fastsearchings.info
+zquirrel.com
+delta-homes.com
+quick-seeker.com
+maximum-search.com
+sidecubes.com
+installmac.com
+bitable.com
+kilo-search.com
+searchnewtab.com
+eazel.com
+yourcurrentnewsnow.com
+personal-browser.com
+iminent.com
+moviesfanatic.com
+searchult.com
+gboxapp.com
+start.search.us.com
+mysearch-engine.net
+safefinder.com
+wisersearch.com
+trovi.com
+znoo.net
+hot-finder.com
+avg.nation.com
+delta-homes.com
+online-adnetwork.com
+thecoolestmoviesearch.com
+get-search.com
+helpbar.com
+enhanced-search.com
+looksafesearch.com
+govome.com
+realcoolmoviesearch.com
+trovigo.com
+webbrowsersearch.com
+bitcro.com
+searchtotal.info
+searchesplace.info
+broadband-search.com
+undefined.com
+yourtv.link
+lookforithere.info
+delta-search.com
+startnow.com
+surfvox.com
+findamo.com
+creativetoolbars.com
+searchouse.info
+goodforsearch.info
+protectedsearch.com
+delta-homes.com
+youfoundit.net
+searchiy.gboxapp.com
+metacrawler.com
+searchbrowsing.com
+searchdominion.info
+fastosearch.info
+top-arama.info
+newscrawler.com
+search-guide.info
+scour.com
+look-for-it.info
+findwide.com
+searchonme.com
+searchy.easylifeapp.com
+royal-search.com
+lookineo.com
+gophoto.it
+mytelevisionxp.com
+houmpage.com
+better-search.net
+searchisfun.info
+browse-search.com
+search.yourmapsnow.com
+v9.com
+shopathome.com
+findwide.com
+internet-start.net
+atajitos.com
+goinf.ru
+buzzdock.com
+rabbitsearch.net
+portalsepeti.com
+oursurfing.com
+arabyonline.com
+native-search.com
+vi-view.com
+netbetterresults.com
+searchalgo.com
+allsearches.net
+mywebfinding.com
+myinterestsxp.com
+mygamesxp.com
+vhomepage.com
+tube-bar.com
+pesquisa.ninja
+beesq.net
+searchandfly.info
+info.com
+helpmefindyour.info
+a-searchpage.info
+22find.com
+customsearchplus.com
+yellowmoxie.com
+home.chromatic.rocks
+speed-find.com
+search-guru.com
+palikan.com
+hao123.com
+calcitapp.info
+default-search.net
+awesomehp.com
+mysearchsocial.com
+wonderfulsearches.info
+fixsearch.info
+jogostempo.com
+searchsun.info
+secury-search.com
+freshy.com
+homesearch-hub.info
+pageset.com
+hdvideobar.com
+coppingo.com
+laban.vn
+2345.com
+zingload.com
+webisgreat.info
+iminent.com
+searchonlinenow.net
+snjsearch.com
+beautifulcalendar.net
+top-arama.com
+appexsports.trafficmanager.net
+appexbingfinance.trafficmanager.net
+appexbingweather.trafficmanager.net
+pipoffers.apnpartners.com
+kqzyfj.com
+zapmeta.ws
+ivelog.com
+getwebbar.com
+ads234.com
+ads345.com
+safesearch.net
+interyield.jmp9.com
+interyield.td563.com
+filebulldog.com
+arcadefrontier.com
+
+# Reference: http://www.rescuemybrowser.com/fwdservice-com-virus-removal
+
+fwdservice.com
+
+# Reference: https://www.threatcrowd.org/listMalware.php?antivirus=PUP
+
+stylemy.info
+stylezip.info
+stylefun.info
+styleapp.info
+
+# Reference: http://www.shouldiremoveit.com/Linkey-104782-program.aspx
+
+mlstat.com
+linkeyproject.com
+
+# Reference: http://www.shouldiremoveit.com/Search-App-by-Ask-123845-program.aspx
+
+tbapi.search.ask.com
+
+# Reference: http://junkwareremoval.com/category/hijacker/
+
+webpageing.com
+buscasonline.com
+email-dhp.com
+searchtp.com
+searchgamegap.com
+didisearch.com
+download-offer.com
+epolife.com
+plugin-search2update.com
+mysearchdock.com
+greathub.net
+raaz.io
+virusdefense.info
+ibryte.com
+maxwebsearch.com
+getmaps.co
+easyclassifiedsaccess.com
+dashingpool.com
+ooxxsearch.com
+searchmwio.com
+searchfreem.com
+searchcoun.com
+searchmab.com
+searchlttrn.com
+search2000s.com
+searchotva.com
+so-v.com
+newtab-mediasearch.com
+crazytvsearch.com
+searchtnr.com
+livesmartsearch.com
+searchwebknow.com
+universalSearches.com
+sosodesktop.com
+fvpimageviewer.com
+safesidetabsearch.com
+searchhome-page.com
+myhomepage-7.info
+uninstallmaster.com
+wondrousmoviessearch.com
+onesearch.org
+searchradioa.com
+sugabit.net
+safesidesearch.com
+newtabtvgamasearch.com
+newtab-tvplussearch.com
+tvaddictsearch.com
+medianewtabsearch.com
+mp3esmovies.com
+newsearch123.com
+aqovd.com
+mybeesearch.com
+easyinterestsaccess.com
+iqasearch.com
+beautifulcalendar.net
+login-help.net
+searchinfast.com
+qqovd.com
+isearch123.com
+rockettab.com
+secury-search.com
+secure-surf.com
+explorednow.com
+portalsepeti.com
+yourspeedtestnow.com
+mysocialhubxp.com
+myradioxp.com
+yourweatherinfonow.com
+searchllw.com
+searchfdd.com
+searchmyis.com
+yourmapscenter.com
+searchfmn.com
+feelbegin.com
+yourinstantweather.com
+searchgeniusinfo.com
+softorama.com
+filmate-search.com
+yourmapsnow.com
+internetquickaccess.com
+wowmusix.com
+yourtelevisionnow.com
+coldsearch.com
+internet-start.net
+socialdownloadr.com
+inspsearch.com
+qword.com
+www-mysearch.com
+homesearch-hub.info
+the-searcheng.info
+lookineo.com
+quivisi.com
+searchitknow.com
+utop.it
+globalseca.com
+youfoundit.net
+smartshopSave.com
+allinsearch.com
+bilisearch.com
+intsearch.info
+mysearch.com
+kilo-search.com
+searchtheuniverse.info
+myway.com
+thecoolestmoviesearch.com
+smartshopping.com
+fdownloadr.com
+results-hub.com
+asiastarter.com
+docksearch.net
+usearch.co.id
+gotsearch.co.uk
+ourwebsearch.com
+search.holainput.com
+speeddialsearch.com
+safestsearches.com
+play-bar-search.com
+coolermoviesearch.com
+search.newtabfun.com
+intabsearch.com
+easydialsearch.com
+uppersearch.tk
+search.siderspace.com
+search.al-cmf.com
+search.mytvxp.com
+search.search101sweets.com
+search.gingerbroom.com
+search.texiday.com
+search.yourinstantsocialhub.com
+search.myhoroscopesxp.com
+search.searchcads.com
+gold-page.com
+zeta-search.com
+search.searchtrmypa.com
+search.searchdirma.com
+search.searchwmo.com
+search.searchyff.com
+search.cantstopplaying.com
+pico-search.com
+yoursearchcentral.com
+whaatnext.com
+search.fc-cmf.com
+search.di-cmf.com
+safesearch.raaz.io
+search.ibryte.com
+maxwebsearch.com
+search.getmaps.co
+search.easyclassifiedsaccess.com
+search.dashingpool.com
+ooxxsearch.com
+search.searchmwio.com
+search.searchfreem.com
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=tbccint.com
+
+tbccint.com
+
+# Reference: http://www.freefixer.com/b/remove-seebars-uprise-website-from-chrome-firefox-and-internet-explorer/
+
+seebars.uprise.website
+here.sendevent.net
+
+# Reference: http://www.removetips.net/how-to-effectively-remove-starsunnysetgadget-inbrowser-hijacker-removal-guide/
+# Reference: https://www.virustotal.com/en/ip-address/54.69.179.176/information/
+
+starsunnysetgadget.in
+unitspybookukset.net
+bestwebnutfunblack.com
+unitspybookukset.org
+fastunitdatagood.in
+starsunnysetgadget.name
+bestwebnutfunblack.org
+homecompleteblue.in
+trafficonlingetstorage.in
+softwaresupermyuk.in
+fastunitdatagood.name
+epicscanpronice.name
+bestwebnutfunblack.net
+epicscanpronice.in
+bestwebnutfunblack.me
+unitspybookukset.org
+bestwebnutfunblack.com
+bestwebnutfunblack.me
+bestwebnutfunblack.biz
+unitspybookukset.in
+masteriod.info
+masternate.info
+bestwebnutfuntoolkit.in
+masteria.in
+masternard.info
+masteroid.info
+masteroids.info
+
+# Reference: http://www.fixingvirus.com/how-can-i-remove-htxpm-tonginjs-info-completely/
+tonginjs.info
+
+# Reference: http://www.fixingvirus.com/stop-www-designer-safari-net-from-taking-your-safari-pop-up-ads-removal/
+
+designer-safari.net
+
+# Reference: http://www.fixingvirus.com/locked-on-chumsearch-com-remove-chumsearch-to-reset-your-homepage/
+
+chumsearch.com
+
+# Reference: http://www.fixingvirus.com/assist-you-to-remove-eshopcomp-com-redirect-easily/
+
+eshopcomp.com
+
+# Reference: https://www.virustotal.com/en/domain/service.downloadadmin.com/information/
+# Reference: https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=SoftwareBundler:Win32/Dowadmin
+
+service.downloadadmin.com
+
+# Reference: https://www.virustotal.com/en/domain/installmonetizer.com/information/
+
+installmonetizer.com
+
+# Reference: https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=SoftwareBundler:Win32/OutBrowse
+
+desk-top-app.info
+dmdataserver.com
+
+# Reference: http://deletemalware.blogspot.hr/2012/01/remove-eorezo-adwarepup-uninstall-guide.html
+
+ads.eorezo.com
+
+# Reference: http://www.pchell.com/support/hotbar.shtml
+
+hotbar.com
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=dl.revenyou.com
+
+revenyou.com
+
+# Reference: https://www.mywot.com/en/scorecard/yac.mx
+
+yac.mx
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/adware-and-puas/OpenCandy/detailed-analysis.aspx
+
+opencandy.com
+
+# Reference: http://www.scumware.org/report/letitbit.net
+
+letitbit.net
+
+# Reference: https://forums.geforce.com/default/topic/691148/amd-scams-its-community-with-the-help-of-raptr/
+
+raptr.com
+
+# Reference: https://www.virustotal.com/en/file/bc19f0f37781995dcf71861e55c7b54f34254a14f08d4ddd59d36476a60bd087/analysis/
+# Reference: https://answers.yahoo.com/question/index?qid=20140303182352AAMfdNt
+
+mediaplayercodecpack.com
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2016-030108-4942-99&tabid=2
+
+pcspeeduppro.com
+
+# Reference: https://www.threatcrowd.org/listMalware.php?antivirus=PUA.OneSystemCare
+
+onesystemcare.com
+ionesystemcare.info
+healerweb.net
+magicpro.org
+realget.info
+domenjob.com
+zipoffice.info
+systemhealerhost.net
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2013-090315-5025-99&tabid=2
+
+d3d6wi7c7pa6m0.cloudfront.net
+imp.oi-imp1.com
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2014-102313-0732-99&tabid=2
+
+winzipper.com
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2016-030112-0955-99&tabid=2
+
+tweakbit.com
+
+# Reference: http://junkwareremoval.com/adware/topflix-removal-guide/
+
+topflix.info
+
+# Reference: http://www.shouldiremoveit.com/Tuto4pc-7592-program.aspx
+
+tuto4pc.com
+tuto4pcgroup.com
+
+# Reference: http://junkwareremoval.com/pup/remove-mysafetab-adware/
+
+mysafetab.com
+
+# Reference: http://junkwareremoval.com/pup/anyflix-removal-guide/
+
+anyflix.info
+
+# Reference: http://junkwareremoval.com/pup/driverrestore-removal-guide/
+
+driverrestore.com
+
+# Reference: http://junkwareremoval.com/pup/web-updater-removal-guide/
+
+getwebupdater.com
+
+# Reference: http://junkwareremoval.com/pup/remove-installfaster-new-tab/
+
+installfaster.com
+
+# Reference: http://junkwareremoval.com/pup/quicky-translator-removal-guide/
+
+quickytranslator.com
+
+# Reference: http://junkwareremoval.com/pup/browser-guardian-removal-guide/
+
+browserguardian.com
+
+# Reference: http://junkwareremoval.com/pup/win-security-removal-guide/
+
+winsecurity.net
+
+# Reference: http://junkwareremoval.com/pup/browsing-safeguard-removal-guide/
+
+browsingsafeguard.com
+
+# Reference: http://junkwareremoval.com/pup/browserwatchdog-removal-guide/
+
+browserwatchdog.com
+
+# Reference: http://junkwareremoval.com/pup/tesla-browser-removal-guide/
+
+teslabrowser.com
+
+# Reference: http://junkwareremoval.com/pup/my-speed-test-xp-removal-guide/
+
+myspeedtestxp.com
+
+# Reference: http://junkwareremoval.com/pup/gizmodock-removal-guide/
+
+gizmodock.com
+
+# Reference: http://junkwareremoval.com/pup/remove-hybrid-browser/
+
+hybridbrowser.com
+
+# Reference: http://junkwareremoval.com/pup/weather-ping-removal-guide/
+
+weatherping.com
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/adware-and-puas/File%20Association%20Manager/detailed-analysis.aspx
+
+download.yourfileinfo.com
+
+# Reference: https://www.herdprotect.com/domain-playnow.chaseswing.eu.aspx
+
+chaseswing.eu
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2014-063009-1324-99&tabid=2
+
+databssint.com
+spccint.com
+spccinta.com
+seccint.com
+
+# Reference: http://www.shouldiremoveit.com/Freeware-de-Toolbar-92555-program.aspx
+
+freeware.de
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/SearchSuite.aspx
+
+secondofferdelivery.com
+
+# Reference: http://malwarefixes.com/threats/pup-optional-bandoo/
+
+bandoo.com
+
+# Reference: https://malwaretips.com/blogs/search-module-plus-goobzo-removal/
+
+www-searching.com
+
+# Reference: http://www.enigmasoftware.com/metrohotspottoolbar-removal/
+
+metrohotspot.com
+
+# Reference: http://www.2-spyware.com/remove-easydocmerge-toolbar.html
+
+easydocmerge.com
+
+# Reference: http://www.enigmasoftware.com/biggamecountdowntoolbar-removal/
+
+biggamecountdown.com
+
+# Reference: http://www.enigmasoftware.com/allvideos283xyzpopups-removal/
+
+allvideos.283.xyz
+
+# Reference: http://www.enigmasoftware.com/clkdowninfo-removal/
+
+clkdown.info
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=khit.cn
+
+khit.cn
+
+# Reference: https://superuser.com/questions/642002/is-driverpack-solution-trustworthy
+# Reference: https://sitecheck.sucuri.net/results/update.drp.su
+
+drp.su
+
+# Reference: https://malwr.com/analysis/ZGVjOTM1NGZlZTgyNDU0ZmFiZmNmZWIzZTc4OGJlNTc/
+
+searchcubed.net
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2016-080910-2648-99&tabid=2
+
+2ndrequest.me
+4threquest.me
+
+# Reference: https://malwaretips.com/blogs/pup-optional-nextlive-a-removal/
+
+newnext.me
+
+# Reference: https://malwaretips.com/blogs/pup-optional-remarkit-a-removal/
+
+re-markit.co
+
+# Reference: https://malwaretips.com/blogs/remove-chedot-ads/
+
+chedot.com
+
+# Reference: https://malwaretips.com/blogs/remove-advanced-pc-tuneup/
+
+advancedpctuneup.com
+
+# Reference: https://malwaretips.com/blogs/remove-scanguard-virus/
+
+scanguard.com
+
+# Reference: https://malwaretips.com/blogs/remove-pro-pc-cleaner-virus/
+
+propccleaner.com
+
+# Reference: https://malwaretips.com/blogs/remove-pixel-uprise-website/
+
+uprise.website
+
+# Reference: https://www.virustotal.com/en/domain/initilizeinstall.net/information/
+
+initilizeinstall.net
+
+# Reference: https://www.virustotal.com/en/domain/resume-install.net/information/
+
+resume-install.net
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2017-031320-5331-99&tabid=2
+
+ustechsupport.com
+
+# Reference: http://software.sonicwall.com/applications/gav/index.asp?ev=v&v_id=21164
+
+www.installtrk.com
+stats.crossrider.com
+app-static.crossrider.com
+cotssl.crossrider.com
+
+# Reference: http://blog.checkpoint.com/2017/06/01/fireball-chinese-malware-250-million-infection/
+
+attirerpage.com
+s2s.rafotech.com
+trotux.com
+startpageing123.com
+funcionapage.com
+universalsearches.com
+thewebanswers.com
+nicesearches.com
+youndoo.com
+giqepofa.com
+mustang-browser.com
+forestbrowser.com
+luckysearch123.com
+ooxxsearch.com
+search2000s.com
+walasearch.com
+hohosearch.com
+yessearches.com
+d3l4qa0kmel7is.cloudfront.net
+d5ou3dytze6uf.cloudfront.net
+d1vh0xkmncek4z.cloudfront.net
+d26r15y2ken1t9.cloudfront.net
+d11eq81k50lwgi.cloudfront.net
+ddyv8sl7ewq1w.cloudfront.net
+d3i1asoswufp5k.cloudfront.net
+dc44qjwal3p07.cloudfront.net
+dv2m1uumnsgtu.cloudfront.net
+d1mxvenloqrqmu.cloudfront.net
+dfrs12kz9qye2.cloudfront.net
+dgkytklfjrqkb.cloudfront.net
+
+# Reference: https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/adw_sensave
+
+updaterss.com
+
+# Reference: http://junkwareremoval.com/hijacker/search-searchquicks-com-removal-procedures/
+
+searchquicks.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-searchptrack-com-redirect/
+
+searchptrack.com
+
+# Reference: http://junkwareremoval.com/hijacker/search-froktiser-com-removal-guide/
+
+froktiser.com
+
+# Reference: http://junkwareremoval.com/hijacker/foxsearch-removal-guide/
+
+foxsearch.me
+
+# Reference: http://junkwareremoval.com/hijacker/search-searchw3m-com-removal-procedures/
+
+searchw3m.com
+
+# Reference: http://junkwareremoval.com/hijacker/search-searchvfr-com-removal-steps/
+
+searchvfr.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-terrificshoper-com-hijacker/
+
+terrificshoper.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-gordondeals-co-hijacker/
+
+gordondeals.co
+
+# Reference: http://junkwareremoval.com/hijacker/remove-startinf-com-redirect/
+
+startinf.com
+
+# Reference: http://junkwareremoval.com/hijacker/hp-mysearch-com-removal-guide/
+
+mysearch.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-nowsearch-info-redirect/
+
+nowsearch.info
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-searchtpg-com-hijacker/
+
+searchtpg.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-searchptp-com-redirect/
+
+searchptp.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-hoosearch-com-redirect/
+
+hoosearch.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-ishimotto-com-mac-os-safari/
+
+ishimotto.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-webstart-redirect/
+
+webstart.me
+
+# Reference: http://junkwareremoval.com/hijacker/myhomepage-pro-removal-steps/
+
+myhomepage.pro
+
+# Reference: http://junkwareremoval.com/hijacker/search60-com-removal-guide/
+
+search60.com
+
+# Reference: http://junkwareremoval.com/hijacker/12startpage-com-removal-guide/
+
+12startpage.com
+
+# Reference: http://junkwareremoval.com/hijacker/incognito-search-com-removal-steps/
+
+incognito-search.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-flagbeg-com-mac-os-safari/
+
+flagbeg.com
+
+# Reference: http://junkwareremoval.com/hijacker/webcrawler-com-removal-guide/
+
+webcrawler.com
+
+# Reference: http://junkwareremoval.com/hijacker/search-anysearchmac-com-removal-guide/
+
+anysearchmac.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-tab-pdfbaron-com-redirect/
+
+pdfbaron.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-myprivacyassistant-com-search/
+
+myprivacyassistant.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-entireweb-com-redirect/
+
+entireweb.com
+
+# Reference: http://junkwareremoval.com/hijacker/searchmobi-net-removal-guide/
+
+searchmobi.net
+
+# Reference: http://junkwareremoval.com/hijacker/googlesearch-removal-guide/
+
+googlesearch.me
+
+# Reference: http://junkwareremoval.com/hijacker/remove-myportal-us-search/
+
+myportal.us
+
+# Reference: http://junkwareremoval.com/hijacker/remove-mbrowser-us-search/
+
+mbrowser.us
+
+# Reference: http://junkwareremoval.com/hijacker/remove-ibrowser-io-search/
+
+ibrowser.io
+
+# Reference: http://junkwareremoval.com/hijacker/remove-gsearch-io-search/
+
+gsearch.io
+
+# Reference: http://junkwareremoval.com/hijacker/remove-gosrch-co-search/
+
+gosrch.co
+
+# Reference: http://junkwareremoval.com/hijacker/remove-gobrowser-mobi-search/
+
+gobrowser.mobi
+
+# Reference: http://junkwareremoval.com/hijacker/remove-websrch-net-search/
+
+websrch.net
+
+# Reference: http://junkwareremoval.com/hijacker/searchpage-com-removal-guide/
+
+searchpage.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-iexplore-co-search/
+
+iexplore.co
+
+# Reference: http://junkwareremoval.com/hijacker/browsersearch-net-removal-guide/
+
+browsersearch.net
+
+# Reference: http://junkwareremoval.com/hijacker/mobisearch-co-removal-guide/
+
+mobisearch.co
+
+# Reference: http://junkwareremoval.com/hijacker/remove-startme-today-redirect/
+
+startme.today
+
+# Reference: http://junkwareremoval.com/hijacker/remove-privateseeker-homepage-private-seeking-com/
+
+private-seeking.com
+
+# Reference: http://junkwareremoval.com/hijacker/expendresults-com-removal-steps/
+
+expendresults.com
+
+# Reference: http://junkwareremoval.com/hijacker/wisesearches-com-removal-guide/
+
+wisesearches.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-2000-search2000-com/
+
+search2000.com
+
+# Reference: http://junkwareremoval.com/hijacker/newtab-today-removal-guide/
+
+newtab.today
+
+# Reference: http://junkwareremoval.com/hijacker/remove-search-searchbuscar-com-redirect/
+
+searchbuscar.com
+
+# Reference: http://junkwareremoval.com/hijacker/remove-mydailysearch-com-redirect/
+
+mydailysearch.com
+
+# Reference: http://junkwareremoval.com/hijacker/search-hometab-com-removal-guide/
+
+hometab.com
+
+# Reference: https://malwaretips.com/blogs/remove-adamant-pristineapp-com/
+
+pristineapp.com
+
+# Reference: https://malwaretips.com/blogs/remove-pixelk-octogames-net/
+
+octogames.net
+
+# Reference: https://www.pcrisk.com/removal-guides/11926-search-socialaddons-top-redirect
+
+socialaddons.top
+
+# Reference: https://www.pcrisk.com/removal-guides/8565-www-searching-com-redirect
+
+www-searching.com
+
+# Reference: https://www.pcrisk.com/removal-guides/8183-safesear-ch-browser-hijacker
+
+safesear.ch
+
+# Reference: https://www.pcrisk.com/removal-guides/8148-taplika-com-browser-hijacker
+
+taplika.com
+
+# Reference: https://www.pcrisk.com/removal-guides/8398-mysearchpage-net-browser-hijacker
+
+mysearchpage.net
+
+# Reference: https://www.pcrisk.com/removal-guides/7805-default-search-net-virus
+
+default-search.net
+
+# Reference: https://www.pcrisk.com/removal-guides/7154-remove-hao123-browser-hijacker-virus
+
+hao123.com
+
+# Reference: https://www.pcrisk.com/removal-guides/8876-xtab-browser-hijacker
+
+delta-homes.com
+key-find.com
+luckysearches.com
+istartsurf.com
+isearch.omiga-plus.com
+v9.com
+mystartsearch.com
+webssearches.com
+omniboxes.com
+sweet-page.com
+do-search.com
+
+# Reference: https://www.pcrisk.com/removal-guides/8333-lasaoren-com-browser-hijacker
+
+lasaoren.com
+
+# Reference: https://www.pcrisk.com/removal-guides/7049-remove-safe-search-redirect-toolbar
+
+safesearch.net
+
+# Reference: https://www.pcrisk.com/removal-guides/7219-remove-qone8-browser-hijacker
+
+qone8.com
+
+# Reference: https://blog.talosintelligence.com/2018/08/threat-roundup-0803-0810.html
+
+www.wizzmonetize.com
+ionesystemcare.info
+www.rothsideadome.pw
+www.usatdkeyboardhelper.pw
+
+# Reference: https://blog.talosintelligence.com/2018/08/threat-roundup-0803-0810.html
+
+lip.healthcakes.men
+
+# Reference: https://www.microsoft.com/security/portal/threat/encyclopedia/Entry.aspx?Name=Adware:Win32/Chekua
+
+z11.cnzz.com
+z4.cnzz.com
+
+# Reference: https://www.virustotal.com/#/file/2098df714d8b57bbe7e57ce922146e5f8f41aa8d842e2cc10adbb23eccb8ed21/behavior
+# Reference: https://www.threatcrowd.org/ip.php?ip=95.211.95.250
+
+tracknl.info
+proxysync.info
+updatecoincide.info
+pressreleasesync.info
+get-your-app.info
+updatesync.info
+www.get-your-app.info
+kosher-toolbar.info
+mindyourapp.info
+get-your-file.info
+alawardownloads.info
+bulletinsync.info
+c1.storagepl1.info
+c2.storagepl1.com
+i1.storagepl1.info
+keep-app.info
+keepapp.info
+kosher-file.info
+kosher-transfer.info
+nanoavi.info
+nlstorage.info
+r1.storagepl1.info
+r2.storagepl1.com
+reportnl.info
+reportpl1.com
+reportpl1.info
+storagenl.info
+storagepl1.com
+storagepl1.info
+tracknl.info
+wp.alawar.com
+www.alawardownloads.info
+www.nlstorage.info
+www.reportnl.info
+www.reportpl1.com
+www.reportpl1.info
+www.storagenl.info
+www.storagepl1.com
+www.storagepl1.info
+www.tracknl.info
+www.updatesync.info
+updatesync.info
+reportpl1.info
+reportpl1.com
+tracknl.info
+alawar.com
+alawardownloads.info
+reportnl.info
+storagenl.info
+storagepl1.com
+storagepl1.info
+
+# Reference: https://blog.talosintelligence.com/2018/08/threat-roundup-0817-0824.html
+
+downloadfastfree.com
+imp.fusioninstall.com
+install.oinstaller2.com
+secure.oinstaller6.com
+
+# Reference: https://www.virustotal.com/en/file/bf03b92b5a35c70d8fc16b4c3083ca4b3e385aa385e8b29ed6c2fc6f9785b572/analysis/
+
+cdnrep.reimage.com
+reimageplus.com
+
+# Reference: https://blog.checkpoint.com/2017/06/01/fireball-chinese-malware-250-million-infection/
+
+attirerpage.com
+s2s.rafotech.com
+trotux.com
+startpageing123.com
+funcionapage.com
+universalsearches.com
+thewebanswers.com
+nicesearches.com
+youndoo.com
+giqepofa.com
+mustang-browser.com
+forestbrowser.com
+luckysearch123.com
+ooxxsearch.com
+search2000s.com
+walasearch.com
+hohosearch.com
+yessearches.com
+d3l4qa0kmel7is.cloudfront.net
+d5ou3dytze6uf.cloudfront.net
+d1vh0xkmncek4z.cloudfront.net
+d26r15y2ken1t9.cloudfront.net
+d11eq81k50lwgi.cloudfront.net
+ddyv8sl7ewq1w.cloudfront.net
+d3i1asoswufp5k.cloudfront.net
+dc44qjwal3p07.cloudfront.net
+dv2m1uumnsgtu.cloudfront.net
+d1mxvenloqrqmu.cloudfront.net
+dfrs12kz9qye2.cloudfront.net
+dgkytklfjrqkb.cloudfront.net
+
+# Reference: https://www.threatcrowd.org/ip.php?ip=208.91.196.4
+# Reference: http://bgp.he.net/ip/208.91.196.4#_dns
+
+208.91.196.4
+advforward.com
+altresults.com
+amitaz.com
+buypremiumdeals.com
+cdn-images.com
+centralizedsearch.com
+cnomy.com
+completefwd.com
+discovereddeals.com
+dmnfwd.com
+domainfwd.com
+domainfwding.com
+fastdomainfwd.com
+findcrazydeals.com
+findfreshdeals.com
+freeresultsguide.com
+freesearchresults.com
+globaldomainfwd.com
+globalizedsearch.com
+globalsearchdirect.com
+internetmadesecure.com
+keyresultsguide.com
+keywordqueryresults.com
+malkm.com
+monster.tm
+mypageresults.com
+mysearchcentral.com
+namefwd.com
+newsearchstation.com
+ns1004.ztomy.com
+onlinefastsearch.com
+organisedsearch.com
+pagequeryresults.com
+prevalentsearch.com
+quickfwd.com
+rediscoversearch.com
+resultfwding.com
+sdomainparking.com
+searchacross.com
+searchdirectresults.com
+searchdiscovered.com
+searchedforward.com
+searchedresults.com
+searchedreveal.com
+searcheduncovered.com
+searchelementary.com
+searchesexplored.com
+searchesinteractive.com
+searchesinvent.com
+searchesresult.com
+searchfundamental.com
+searchharbor.com
+searchhotspot.com
+searchignited.com
+searchingexplore.com
+searchingmagnified.com
+searchinguncovered.com
+searchinvented.com
+searchmagnified.com
+searchmagnitude.com
+searchmeaningful.com
+searchprimo.com
+searchprominent.com
+searchqueryresults.com
+searchrediscovered.com
+searchreinvented.com
+searchremagnified.com
+searchresponses.com
+searchresultsguide.com
+searchtargeted.com
+searchtermresults.com
+sendfwd.com
+sitequeryresults.com
+smartseekerz.com
+targetedinfo.com
+targetedlistings.net
+targetedtopic.com
+thebettersearch.com
+thegreatestsearch.com
+theuniquesearch.com
+theusefulsearch.com
+universalfwd.com
+usinternetsearch.com
+valuedsearch.com
+virlz.com
+webqueryresults.com
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=allmodel-pro.com
+
+allmodel-pro.com
+
+# Reference: https://removeviruswithease.blogspot.com/2018/07/solution-remove-ua1lunraccom.html
+
+ua1.lunrac.com
+
+# Reference: https://documents.trendmicro.com/assets/rpt/rpt-hazards-ahead.pdf
+
+allmodel-pro.com
+sp-storage.spccint.com
+jsgnr.eshopcomp.com
+cnfg.toolbarservices.com
+
+# Reference: https://forums.malwarebytes.com/topic/186439-removal-instructions-for-vkontaktedj/
+# Reference: https://www.virustotal.com/#/file/c93d70c03c538ece89b661b2c39063d26f27496582bd922d6dfb203f5f3336d2/detection
+
+dj-reserve.com
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/adware-and-puas/Malware%20Protection%20Live/detailed-analysis.aspx
+
+malwareprotectionlive.com
+
+# Reference: https://www.threatcrowd.org/ip.php?ip=54.69.220.239
+
+appare.org
+appearan.org
+applicationfirst.info
+applicationmyweb.info
+appliest.org
+appnfiles.info
+apps-n-downloads.info
+armourbox.info
+asuperoptimizer.net
+asuperoptimizerutility.com
+beautyfirstuk.com
+besst.in
+best-installer.info
+bluebuza.com
+bluegrates.xyz
+bluegratin.com
+blueprises.com
+browserutilily.info
+browsingwithoptpro.net
+bulletinsync.info
+cachedtypeshop.com
+ceterofcommands.info
+chariotoptic.com
+cleaner-pc-reports.org
+cleanpc-superinf.com
+clearcleanpc-superinf.com
+clearingbrowser.info
+commandandcontrol.info
+commandcenteral.info
+compcardirect.com
+contextlist.info
+contextlist.net
+contextmsc.info
+couponcreator.me
+coupongoldbox.info
+cybeitrapp.info
+cybermindapp.info
+cyber-mind.info
+cybermindtool.info
+datacontrol.info
+datadownloadscan.info
+datafastguruscan.com
+datafilehomescan.info
+datagetbarukscan.com
+datainstallerscan.info
+datalength.info
+datasendmyukscan.info
+directoryfire.in
+directparser.info
+discountitplace.com
+discountitplace.net
+documenttpro.in
+documenttpro.net
+documenttstatement.net
+downloadatag.com
+downloadbloggergrou.info
+downloadcardc.com
+downloaddatascan.info
+downloaddspider.com
+downloaddspider.net
+downloaddsystem.com
+downloaddweb.in
+downloaddweb.info
+downloadzipscan.com
+downmytool.info
+drivernetuk.info
+easyformat.in
+easyformat.info
+easyprobar.info
+factorygood.com
+factorygood.net
+factorygood.org
+fastboxzipscan.net
+fastdatafunscan.info
+fastgrabmysetuk.com
+filedownloadfrist.com
+filedownloadfrist.net
+filemagnet.info
+filesarehere.com
+finalocean.com
+finalocean.info
+finalocean.net
+findville.xyz
+finedbitposition.in
+foreverysun.info
+freenetest.com
+freeoptpro.net
+getfiledown.info
+getfilesssnow.com
+gethexnow.net
+gethomeukscan.com
+getlikemobj.info
+getoptpro.com
+getterfire.info
+getthefilenow.info
+gettheoptpro.net
+get-your-app.info
+get-your-file.info
+givemefilesnow.info
+goldoog.com
+goodis.org
+grabestnew.com
+groupsetzipmyjob.net
+guruboxtrafficsol.info
+homestecst.com
+hoomenew.com
+houseofappsnfun.info
+infinitypositive.info
+infinitypositive.xyz
+infouninstallsysopt.net
+initilizeinstall.net
+installationrestart.net
+installationresumer.org
+installdrivergold.info
+installdrivermy.info
+installerenew.com
+installeresume.info
+installeropticfree.com
+install-renew.org
+install-resumesupport.com
+installresuming.com
+instancewrap.net
+jetfree.org
+jobbent.net
+joblondo.com
+jobsidiary.com
+jobsidized.net
+johnsmithsky.com
+johnsmithsky.org
+keep-app.info
+keepapp.info
+keepa-super-clean-pc.info
+keeper-cleaner-pc-reports.org
+keepthefile.info
+kosher-file.info
+kosher-toolbar.info
+kosher-transfer.info
+laboratorymsc.in
+laboratorymsc.info
+laboratorymsc.xyz
+letoptpro.com
+levelstate.xyz
+librarysafe.net
+librarysafe.org
+livedriverget.info
+livedrivernet.info
+livedriverset.info
+livesport.xyz
+lordartresources.info
+lovered.info
+lowerthepriceapp.com
+lowerthepriceapp.net
+maximumall.net
+maximusuksky.com
+maximusuksky.net
+megamusic.info
+megasttorage.com
+mindyourapp.info
+modelshared.xyz
+multiplezonemsc.in
+multiplezonemsc.info
+multipositive.info
+multipositive.xyz
+mymirrorbox.net
+myresourcestype.net
+namehelper.xyz
+nanoavi.info
+newgeet.in
+newspapersonal.com
+newspapersonal.net
+newsted.info
+newyourbookinstall.info
+nowsystemoptimizeremove.com
+onlineroler.xyz
+optbroandbrowse.net
+optimizeitsys.org
+optimizeresumer.info
+optimizerprobrowser.info
+optimizerpro.info
+optimizerproresume.info
+optimizerproresumer.com
+optimizerprostarter.net
+optimizerprosurf.info
+optimizerprosurfing.info
+optimizerproutil.com
+optimizerproutility.info
+optimizerproweb.info
+optimizerremovalpro.info
+optimizerresumepro.net
+optimizersuperset.com
+optimizersurfingpro.net
+optimizeruninstall.com
+optimizeruninstall.info
+optimizethesystem.net
+optipro.info
+optiprosapp.net
+optisuperresumerapp.org
+optprobrowser.info
+optpro.info
+optproinformation.com
+optproinstallresume.net
+optproremoval.com
+optproremoval.info
+optprorep.info
+optpro-reporting.com
+optproreporting.info
+optproresume.info
+optproresumer.info
+optprosetupresume.com
+optprosurf.info
+optprosurfing.info
+optproutility.info
+optproweb.info
+opt-pto-utility.info
+optsupresume.com
+optsysfastuninstall.com
+optsystemtools.com
+optuninstallpro.info
+optuninstallpro.net
+papertpros.net
+parsersea.info
+parserword.xyz
+pcleaners-superb.info
+placewherefileslive.info
+placeyourcommandz.info
+positivejob.xyz
+pressreleasesync.info
+probeautymmy.com
+producerpositive.info
+producerpositive.xyz
+proffidrivergold.info
+proffidriversun.info
+prooptimzerweb.com
+propertyparent.info
+propertyparents.info
+providerstore.xyz
+providerzip.xyz
+removalofoptpro.net
+removeal-sysopt.info
+removemysysopt.info
+remove-system-optimizer.org
+resourcestype.info
+resourcestype.net
+ressuperpccleaer-rep.net
+restart-install.info
+restartinstall.info
+re-startinstall.net
+restart-supercleanerpc.net
+resumeandsupport.net
+re-sumeer-cleanyourpcdata.com
+resumeinstall.com
+resumeinstalleroptpro.com
+resume-install.net
+resumeinstall.org
+resumeinstallutil.info
+resumeitoptimizer.net
+resumemyinstall.info
+resumemysuperoptimizer.org
+resumemysysopt.org
+resumeofinstall.org
+resumeofsysoptimizer.com
+resumeoptimizerpro.com
+resumeoptpro.com
+resumerapp.com
+resume-restarter.com
+resumerofsystem-optimizer.net
+resumesetup.info
+resumesetupoptpro.net
+resumesetuposuper.info
+resumestartup.info
+resumesuperopt.org
+resumesuperpcclean.info
+resumetheinstall.org
+resumetheoptimizersys.net
+reviveinstall.com
+rootriver.info
+safeguar.com
+safelbe.net
+safelled.net
+safeni.net
+safetero.net
+safetery.net
+safetta.net
+schemaocean.info
+schemaocean.net
+schemaoceanonline.net
+senddatastarscan.net
+sendjobwebmyget.com
+settie.info
+settish.com
+settish.info
+settlefield.com
+settlefield.info
+settlefield.org
+settlemen.info
+settless.net
+settless.org
+settline.net
+settsia.info
+setupresume.net
+setupresumer-supopt.com
+setup-revive.info
+shippingbox.info
+showtpro.net
+simplequote.info
+simplevision.info
+skyprobar.info
+softappsdownloadplace.info
+software-house.info
+solutionnetuk.info
+solverpcleaners-superb.info
+spcleanrep.info
+sportset.xyz
+sportsuper.xyz
+startandresume.info
+starter-cleanpc-superinf.com
+startupresume.org
+stoppercleanyourpcdata.com
+storagery.info
+storagery.net
+sunnyepicmy.info
+sunriselib.info
+sunusadirall.org
+super-clean-pc.info
+superesumer.net
+supermelodyusa.info
+supermusicusa.info
+supermusicveteran.info
+supermusicveterans.info
+superoptimizeita.com
+superoptimizeit.com
+superoptimizer.info
+superoptimizer-resume.info
+superoptimizerresumer.com
+superoptimizersb.info
+superoptimizerset.info
+superoptimizers.info
+superoptimizersurf.com
+superoptimizersurfd.com
+superoptimizertimec.net
+superoptimizertime.net
+superoptimizerutility.com
+superoptimizerutils.com
+superoptimizerwebbing.com
+superoptiresume.net
+superpcclean.com
+superpcclean.info
+superpccleanss.com
+surrpprtsetupresume.info
+sysmyopt-remove.info
+sysoptimizeit.net
+sysoptimizerresume.org
+sysopt-quick.info
+sysoptremovalreport.info
+sysoptremoving.com
+systemoptimize.info
+systemoptimize.org
+system-optimizer.info
+systemoptimizer-remove.net
+system-optimizerresume.info
+systemoptimizerresumer.info
+systemoptimizer-today-remove.net
+systemtooptimize.net
+systemutility.info
+tabpositive.info
+tabpositive.xyz
+takeitsoftit.com
+takeitsoftit.net
+takesuperoptimizerutils.com
+take-the-file.info
+techine.info
+techine.net
+terminalive.com
+themirrorbox.net
+theresourcestype.net
+thesunning.com
+theweb-superoptimizer.com
+thismode.xyz
+thisposition.info
+tracknl.info
+transferdlace.com
+transferdweb.net
+transfer-gansta.info
+transfer-master.info
+transffermy.in
+uninstsystemopt.org
+uniqueset.info
+updatecoincide.info
+updatesync.info
+usaprroffi.com
+utilofoptpro.net
+utilresumeinstall.com
+vanishsupercleanerpc.net
+versionwind.xyz
+virtuallyreality.info
+visionpositive.info
+visionpositive.xyz
+webbel.info
+weberg.info
+webermuda.info
+weberry.net
+webery.info
+webery.net
+weblo.info
+weblood.info
+webprotectionsoft.info
+webstem.info
+websten.info
+web-superoptimizer.com
+weeblive.com
+whatawebsuperoptimizer.com
+winsysfilter.info
+wordproducer.info
+ziipget.com
+zillionnetuk.info
+zipbookinstall.info
+zippocracy.com
+ziprata.com
+
+# Reference: https://www.symantec.com/blogs/threat-intelligence/pua-microsoft-store-porn-gambling
+# Reference: https://otx.alienvault.com/pulse/5cb592cc43f18227f4cf3eff
+
+myservicessapps.com
+myservicessapps.com/firebase/offer2.php
+myservicessapps.com/firebase/offer3_1010.php
+myservicessapps.com/firebase/offer3_15_3.php
+myservicessapps.com/firebase/offer3_17_11.php
+myservicessapps.com/firebase/offer3_3.php
+myservicessapps.com/firebase/offer3_arab.php
+myservicessapps.com/firebase/offer3_echo_country_120217.php
+myservicessapps.com/firebase/offer3_ip.php
+myservicessapps.com/firebase/offer3_kfir.php
+myservicessapps.com/firebase/offer3_test.php
+myservicessapps.com/firebase/offer3_test33.php
+myservicessapps.com/firebase/offer3.php
+myservicessapps.com/firebase/offer309.php
+myservicessapps.com/firebase/offer33.php
+myservicessapps.com/firebase/offer333.php
+myservicessapps.com/firebase/offer35.php
+myservicessapps.com/firebase/offer4.php
+myservicessapps.com/firebase/offer5.php
+myservicessapps.com/firebase/offer55.php
+myservicessapps.com/firebase/offer6.php
+myservicessapps.com/firebase/win_new_cl.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1125543661259771904
+
+anyplace-control.com
+anyplace-gateway.info
+
+# Reference: https://twitter.com/raby_mr/status/1126706972466659328
+# Reference: https://app.any.run/tasks/8d827ab9-2ce5-4730-8652-b07328fa7814
+
+lifopp-sacoho.com
+
+
+# Reference: https://www.reverse.it/sample/c314fcf73fbd90c06867864834c7f62e29d2a217bde9b4bdc9b004e6b55d4697?environmentId=100
+# Reference: https://www.virustotal.com/#/file/c314fcf73fbd90c06867864834c7f62e29d2a217bde9b4bdc9b004e6b55d4697/detection
+
+wintoflashsuggestor.net
+
+# Reference: https://twitter.com/raby_mr/status/1131448142665097217
+# Reference: https://app.any.run/tasks/bdbca682-3f93-44ea-af57-e0174a660bcf/
+
+getgosoft.com
+static.215.3.202.116.clients.your-server.de
+
+# Reference: https://twitter.com/MalwarePatrol/status/1132329992384331781
+# Reference: https://twitter.com/MalwarePatrol/status/1132148797566590977
+
+bannerpt.casino.com
+banner3.casino.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1133960734587662336
+
+brestschool7.iatp.by
+
+# Reference: https://twitter.com/Mesiagh/status/1134186444799430656
+
+securybrowse.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1134504318059601920
+
+banner.dafapunter.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1134866707791667201
+
+dynamicdownloads.tweakbit.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1135229093732134913
+
+banner.it.casino.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1135953868939026432
+
+chat.ygosu.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1136859839236153344
+
+t1.daumcdn.net
+
+# Reference: https://twitter.com/MalwarePatrol/status/1137584613935763457
+
+url.tudown.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1138671778505666560
+
+123juzi.net
+
+# Reference: https://twitter.com/MalwarePatrol/status/1139034163795939328
+
+alsaei.com
+
+# Reference: https://twitter.com/LukasStefanko/status/1139064061809893376
+
+freegifts.top
+
+# Reference: https://blog.talosintelligence.com/2019/06/threat-roundup-0607-0614.html (# PUA.Win.Adware.Qjwmonkey-6992589-0)
+
+x.93ne.com
+cdn.zry97.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1143382823002345472
+
+software.goop.co.il
+
+# Reference: https://twitter.com/MalwarePatrol/status/1146100756493328384
+
+fastsoft.onlinedown.net
+
+# Reference: https://twitter.com/MalwarePatrol/status/1147006698441334785
+
+tool1.91danji.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1147550303501324288
+
+irc-files.org
+
+# Reference: https://twitter.com/MalwarePatrol/status/1149543416478306304
+
+premium.roxypalace.com
+
+# Reference: https://twitter.com/MalwarePatrol/status/1151355352832716803
+
+getfreevideo.world
+
+# Reference: https://twitter.com/MalwarePatrol/status/1152080131550138368
+
+dl.xetapp.us
+
+# Reference: https://twitter.com/Paladin3161/status/1151809951762964480
+# Reference: https://www.virustotal.com/gui/file/aacadf7b3bfc2ac8a9a342e5372c77218efa9c67602c3a15441094170a5f52d4/detection
+
+dl.ludashi.com
+dlres-a.iyims.com
+
+
+# Reference: https://www.virustotal.com/gui/ip-address/173.231.184.61/relations
+
+emnosy.com
+fa8072.com
+fnauendaieghidy.in
+kosher-toolbar.info
+kosher-transfer.info
+prgrjgcamebtawru.com
+rrsavings.com
+skype-soft.com
+trtromg.com
+update-srv.info
+
+# Reference: https://threatpost.com/malvertising-ad-blockers-mac-malware/146861/
+
+dailyads.org
+
+# Reference: https://www.virustotal.com/gui/ip-address/138.201.38.188/relations
+
+apps-windows.com
+besplatnyeprogrammy.ru
+downserv.ru
+freeversion.ru
+freeversions.ru
+installpack.download
+installpack.net
+installpack.ru
+mirprogramm.ru
+moiprogrammy.net
+servtodown.ru
+sftcdn.ru
+sftpps.ru
+sftwr.ru
+soft-apps.ru
+softcdn.ru
+softfiles.ru
+softhome.ru
+softmen.ru
+softobase.com
+tvoiprogrammy.ru
+
+# Reference: https://twitter.com/peterkruse/status/1161918179985244160
+
+anymediaconverter.com
+searcreetch.com
+
+# Reference: https://blog.malwarebytes.com/pups/2019/08/qxsearch-hijacker-fakes-failed-installs/
+
+bigsrch.xyz
+chissk.icu
+qxsearch.com
+wajm.icu
+xv11.xyz
+
+# Reference: https://unit42.paloaltonetworks.com/newly-registered-domains-malicious-abuse-by-bad-actors/
+
+installsvpn.com
+ketoweightlosspillsreviews.com
+llzvrjx.site
+mercinogenitor.com
+mey12d4.xyz
+system-alert-m99.xyz
+
+# Reference: https://unit42.paloaltonetworks.com/takedowns-and-adventures-in-deceptive-affiliate-marketing/
+
+beerandcupcakes.com
+bigislandroofing.com
+burnfat4tips.com
+cbdlifereview.com
+eastcoastrandr.com
+fallingrockfilms.com
+fastdiet4lines.world
+health4burnfats.world
+inteligen.org
+justinbieberfannews.com
+keywestinns.com
+mkmarketingservices.com
+modularelectronicsystems.com
+naturalgarciniacambogia.net
+onlinebusinesstrainingacademy.org
+onlinebusinesstrainingschool.org
+onlinebusinessu.org
+onlinejobtrainingacademy.com
+onlinejobtrainingschool.com
+onlineworktrainingschool.com
+pageinvestmentgroup.com
+printercustomersupportonline.com
+purefitketo.net
+saltwaterfall.com
+test.303.lt
+thelimitlessmind.asia
+urbansquares.com
+weightloss4tmz.com
+welcometomydiabeticlife.com
+
+
+# Reference: https://www.microsoft.com/security/blog/2017/06/22/understanding-the-true-size-of-fireball/?source=mmpc
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Win32%2FGhokswa
+# Reference: https://www.virustotal.com/gui/domain/xa.firefox1.com/relations
+# Reference: https://malaysia.norton.com/online-threats/trojan.fireball-2017-060502-2214-99-writeup.html
+
+dmv9o2kt858uv.cloudfront.net
+firefox1.com
+
+# Reference: https://blog.ensilo.com/leveraging-reputation-services
+
+tuwoqol.com
+wugulaf.com
+cwnpu.com
+bdubnium.com
+pydac.com
+dabfd.com
+fodfr.com
+codfs.com
+qaofd.com
+ziuet.com
+pocxc.com
+uyvsa.com
+bxvdc.com
+adofd.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2014/2014-12-16-installcube-how-russian-programmers-turn-adware-into-cash/installcube-how-russian-programmers-turn-adware-into-cash.csv
+
+cubinapi.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-01-28-file-hosting-site-turns-file-adware/file-hosting-site-turns-file-adware.csv
+
+file-space.org
+castplatform.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-08-10-bing-vc-hijacks-browser-using-legitimate-applications/bing-vc-hijacks-browser-using-legitimate-applications.csv
+
+fixbrowserredirect.net
+
+# Reference: https://www.virustotal.com/gui/file/be4bbb433bca473c960bc696b1dfb10202f827abab3a19a7fed37ed18d7ed814/behavior/VirusTotal%20Jujubox
+
+update.clientstaticserv.com
+
+# Reference: https://twitter.com/securiteoff/status/740562516699447296 (# LoadMoney)
+
+bpeouxcwqhenm.lasersteam178.ru
+
+# Reference: https://app.any.run/tasks/8f28abcc-cbaf-4f47-bbfa-b00f515a1a4f/ (# ICELoader)
+# Reference: https://any.run/report/ee5f807ada03b89e19c2e222d260c613f7961cc8ccf879638f1dc1ad44d10968/8b24b983-95cd-46aa-8629-7c94d5012cb2
+# Reference: https://www.virustotal.com/gui/file/8cad0b2ebf1e7cb466414a1110a01cb41292dbbe51cd9eeac8a54934bafef850/detection
+
+lulusoft.com
+webcompanion.com
+/nano_download.php?partner=
+/request/autok?user=
+/request/conditions?user=
+/request/offers?user=
+/request/report?user=
+
+# Reference: https://app.any.run/tasks/053837ea-0070-473d-93d7-a6953d7e973d/
+# Reference: https://www.virustotal.com/gui/domain/ocrtoword.com/relations
+
+appuniverseapplication.com
+ocrtoword.com
+securestudies.com
+
+# Reference: https://www.securityhome.eu/malware/malware.php?mal_id=19882282935775d0c2205563.12724842
+
+staticpm.com
+updaterss.com
+dpliveupdate.com
+
+# Reference: https://www.virustotal.com/gui/domain/i.installportal.com/relations
+
+installportal.com
+
+# Reference: https://www.virustotal.com/gui/domain/finalocean.info/relations
+# Reference: https://www.virustotal.com/gui/file/1a671f3dab3fc3a7dc7f5858b4d841e23295e69bed22027ed074d4875053caf0/detection
+
+finalocean.info
+
+# Reference: https://www.virustotal.com/gui/domain/qihuweb.com/relations
+
+qihuweb.com
+
+# Reference: https://www.virustotal.com/gui/domain/appsflyer.tk/relations
+
+appsflyer.tk
+
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-29, CrownAdsPro)
+
+1410.165-227-83-163.site
+
+# Reference: https://www.virustotal.com/gui/file/f5690282a935eb4a3f1c09d07abbe1c07f4da5f2ae776d4bb903f9bd1927e558/behavior/VirusTotal%20Cuckoofork
+
+fsl.sytes.net
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?name=win32%2Fghokswa
+
+qbitka.com
+chromlum.org
+firefox1.com
+brobgser.com
+
+# Reference: https://app.any.run/tasks/939750d4-9ec4-4abc-b13d-0152de016a56/
+
+wisecleaner.net
+
+# Reference: https://blog.malwarebytes.com/detections/adware-searchenginehijack/
+
+searchprivacyplus.com
+elastisearch.com
+securedsearch.xyz
+bettersearch.co
+searchdimension.com
+
+# Reference: https://www.virustotal.com/gui/file/1ffe8993ba53ddbfcf3994270b51432db5b9bf4e9e625daed42ed016e75cee20/behavior/Tencent%20HABO
+
+getyoutubedownloader.com
+rp.ytdcdn.com
+os.ytdcdn.com
+os2.ytdcdn.com
+
+# Reference: https://www.virustotal.com/gui/domain/pcfixertools.net/detection
+
+pcfixertools.biz
+pcfixertools.info
+pcfixertools.net
+
+# Reference: https://www.virustotal.com/gui/domain/thegetbooks.tk/relations
+# Reference: https://www.virustotal.com/gui/file/02a3bd5c67c6c168df1226ba471f1a057e3ecdd408502aecb08902dbaeb1f516/detection
+# Reference: https://www.virustotal.com/gui/file/45ed1baee046475f88f037702ceb1d7cec1a099f39b9248bbe4bf23622683afe/detection
+
+express-book.net
+thegetbooks.tk
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/exposing-modular-adware-how-dealply-iserik-and-managex-persist-in-systems/
+# Reference: https://documents.trendmicro.com/assets/Appendix-Exposing-Modular-Adware-How-DealPly-IsErIk-ManageX-Persist-in-Systems.pdf
+
+adofd.com
+boqudo.com
+bujot.com
+buluw.com
+busucak.com
+butapujo.com
+bxvdc.com
+cabarula.com
+cunakod.com
+daqah.com
+ddukmql.com
+eakqz.com
+focuquc.com
+fotuwuk.com
+gahuwa.com
+gapoloha.com
+gasasot.com
+gujujoh.com
+gukacado.com
+hahofaba.com
+hajanac.com
+hoduqoq.com
+hufunuk.com
+jafuq.com
+juronu.com
+kanrq.com
+katunaq.com
+kugocu.com
+lomokonu.com
+mogaf.com
+norugu.com
+nusojog.com
+nutojo.com
+pacudoh.com
+pajuwu.com
+pawotapu.com
+pocxc.com
+pofufaco.com
+pudacasa.com
+pugugu.com
+puloja.com
+qajolos.com
+qaloqum.com
+qamopo.com
+qukusut.com
+rokuq.com
+rududulu.com
+ruqut.com
+sanupu.com
+sastts.com
+suhacuc.com
+tawuhoju.com
+tdfpa.com
+tocopada.com
+toluhuku.com
+tomupaj.com
+tuwoqol.com
+uyvsa.com
+wagng.com
+wavbsly.com
+wugulaf.com
+yxhpa.com
+zahirq.com
+d1etigj2h443kd.cloudfront.net
+d1hpofzsaxmzog.cloudfront.net
+d274eq41c39r2n.cloudfront.net
+d2b46e7ax2atfi.cloudfront.net
+d2vut1jfnnygcg.cloudfront.net
+d2wv7denc1jx9z.cloudfront.net
+d2zyvlskj53q65.cloudfront.net
+d33wv995bk7lag.cloudfront.net
+d36lv9781gxp5z.cloudfront.net
+d3s1tkg9f4254q.cloudfront.net
+d3tq9gtc0bxu1s.cloudfront.net
+dlrabaly59cp3.cloudfront.net
+dnodjoiz0vcnz.cloudfront.net
+
+# Reference: https://www.virustotal.com/gui/domain/pc.publicnewsetup.com/relations
+
+publicnewsetup.com
+pc.publicnewsetup.com
+
+# Reference: https://www.virustotal.com/gui/domain/diskfixer.net/relations
+
+diskfixer.net
+
+# Reference: https://www.virustotal.com/gui/domain/back.visitorpower.website/relations
+
+back.visitorpower.website
+
+# Reference: https://www.virustotal.com/gui/domain/toupdate15.com/relations
+
+toupdate15.com
+
+# Reference: https://www.virustotal.com/gui/domain/mainbook.xyz/relations
+
+mainbook.fun
+mainbook.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/dreamtrips.cheap/relations
+
+dreamtrips.cheap
+
+# Reference: https://www.virustotal.com/gui/domain/madmax.utyuytjn.com/relations
+
+utyuytjn.com
+madmax.utyuytjn.com
+stats.utyuytjn.com
+updates.utyuytjn.com
+
+# Reference: https://www.virustotal.com/gui/domain/cdn.piytrwd.com/relations
+
+piytrwd.com
+cdn.piytrwd.com
+
+# Reference: https://www.virustotal.com/gui/domain/thebestoffersintheweb.com/relations
+
+thebestoffersintheweb.com
+
+# Reference: https://www.virustotal.com/gui/domain/search.tube-bar.com/relations
+
+tube-bar.com
+search.tube-bar.com
+
+# Reference: https://app.any.run/tasks/769e4025-809e-46f7-b7f6-e12f153192ce/
+
+rp.downloadagentcdn.com
+
+# Reference: https://www.virustotal.com/gui/domain/youtube4kdowloader.club/detection
+
+youtube4kdowloader.club
+
+# Reference: https://www.virustotal.com/gui/domain/freekzvideo.cloud/relations
+
+freekzvideo.cloud
+
+# Reference: https://www.virustotal.com/gui/file/7e5065352271d66bd2a28613971b45c0fb9f7bcfb499b1aebecc49167ec9d7a2/detection
+# Reference: https://www.virustotal.com/gui/file/2509244e823a1f6308438b44e9bb6fa808fec72a9a48d5f730dfbf6c3aca5d85/detection
+
+atbc0003.top
+mediadownloader25.tk
+
+# Reference: https://www.virustotal.com/gui/file/6248a41a5e4230433e2a0e33f26dbed558e9bc21b51302124ee931921da3e657/detection
+
+hostas5.ml
+
+# Reference: https://www.virustotal.com/gui/file/c507fa7630f7a24b9f2b1dca969a15b253d73b81b520fedc6de0df2116f2fa0f/detection
+
+159.89.214.31:1081
+
+# Reference: https://twitter.com/Lokesh42651261/status/1281601993816117250
+
+getgoodvideo.com
+memishooee.pw
+
+# Reference: https://twitter.com/ebotpoloskun/status/1281659298850975747
+
+sys-optimize.com
+
+# Reference: https://www.virustotal.com/gui/file/fa06ba9b45a5babc68f6ffc5de448ec908a28fc2a59ea977b13c687c5265dcea/detection
+
+multinstaller.com
+
+# Reference: https://twitter.com/malware_traffic/status/1291123970138345474
+
+ec2-35-166-136-23.us-west-2.compute.amazonaws.com
+
+# Reference: https://www.virustotal.com/gui/file/22527477a0a4edbea690de10ef82d201f379502661178c19f9d6ae7628c6552a/detection
+# Reference: https://www.virustotal.com/gui/file/10cca6904c98f6ce94e9a21c0490fc5e507985a0d363baab3a31856f02653dde/detection
+# Reference: https://www.virustotal.com/gui/file/1cee6c397376c0f8363085d86cbd82cbe635ace6ba4bfb2a732a8e2c657a2fe2/detection
+# Reference: https://www.virustotal.com/gui/file/04873ec6fa6d05edc4557ce7b14115dce3325d2d551812035fed8c1e574af802/detection
+# Reference: https://www.virustotal.com/gui/file/ad3edea038dcb17af1e16e997e58d589eceef3b0a0e8e25d2c3907e4abcb506f/detection
+
+adcash.cf
+ayurew.pw
+filedistrserver.pw
+hostas.ml
+hostpp.gq
+hostpp2.tk
+lighteningplayer.com
+ngnbinfo.com
+o-browser.ru
+technologieberri.com
+trumpmoney.world
+
+# Reference: https://www.virustotal.com/gui/file/65a3cf860cd4202c15508db6d8b8bcb7352671fdd49d50b0504817bb78099331/detection
+
+adasf.pw
+
+# Reference: https://www.virustotal.com/gui/file/0231fea50ab5ea4e6d28f75b3d459b8995d1e960ec3acbef2525ffd1ef25d2bd/detection
+
+astra2yedek.xyz
+
+# Reference: https://www.virustotal.com/gui/file/b4d7152c04dac5636ed49806ef24f407008e8c0b35beacb25b5a3030d3b5f2dc/detection
+
+68.10.46.234:63274
+install-apps.com
+/gcache.php?get=
+
+# Reference: https://www.virustotal.com/gui/file/e9a81285534c5a8903f43d2372ea805a2229fc02cda52f73acf7c9bbf1f647d4/detection
+
+http://213.152.46.35
+gnutella-cache.no-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/757475e379dcdcb988f99c49071f89d442e42185671bfd8099e58abce96aa118/detection
+
+techdudez.com
+vernweb.homeip.net
+
+# Reference: https://www.virustotal.com/gui/file/a7c2e176ffe6e436474710b251feb0cf3130abff45cd9db35610fb9564250ba1/detection
+
+bazooka1.servehttp.com
+
+# Reference: https://www.virustotal.com/gui/domain/rainwater.dyndns.org/relations
+
+rainwater.dyndns.org
+
+# Reference: https://www.virustotal.com/gui/domain/gridcoin.ddns.net/relations
+
+gridcoin.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/c37610626f34ae52d04777a188012cf2212b0cebd6920af46b72808234e223bd/detection
+
+fb38099g.bget.ru
+
+# Reference: https://www.virustotal.com/gui/domain/lekkit.hopto.org/relations
+# Reference: https://www.virustotal.com/gui/file/345499b5161a6d57b633cad88d83e321b82776d84ceea8661901ae4f115dd0b5/detection
+# Reference: https://www.virustotal.com/gui/file/aa0e351ada009aef1453a2aa3a761d7a5a10165dfaa4bc71bd0a70a866ad790e/detection
+
+46.219.3.46:6121
+80.229.219.2:6121
+lekkit.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/d5416dd14fa8c3f7ce2d74b911ce58d1cbea20a134df0c70d2629c7eb17d2b83/detection
+
+tlcgame.000webhostapp.com
+
+# Reference: https://www.virustotal.com/gui/file/15bfc9228e363adc4defd04e5b7de623e5cfa4dc3fe17ce3af8aafbb40891054/detection
+
+kapulainen.ru
+
+# Reference: https://www.virustotal.com/gui/file/6c08d13df99935ff66413bc7d7bd29105b6e1fe94956ec31ebcc5fe154eaf6e4/detection
+
+magazin-molk.ru
+
+# Reference: https://www.virustotal.com/gui/file/3debbdd17414b4d5669b16d14c2ef1640b336a2391669b054f46f195bd0db235/detection
+
+netgoldcold.ru
+
+# Reference: https://www.virustotal.com/gui/file/8e0aa3908d88a4f7ba87b2d79528fde38dd35de60add227c64aa2cd4df87f8a7/detection
+
+protubemarket.ru
+
+# Reference: https://www.virustotal.com/gui/file/ca545d08e3e0e84306d593b776e716bd3ef8d6bb88d52c567aab1f17f16e4b66/detection
+
+jj8o12.ru
+
+# Reference: https://www.virustotal.com/gui/file/f477e8a1a465b8c4c985b44abf48d35f049d7d45ccee732f70c0a3ac57675f2c/detection
+
+midget-interrupt.ru
+
+# Reference: https://www.virustotal.com/gui/file/57bba4e3ea155ff39b21b094bd032df4850c3d4858a263fb2e2053fa011f88c0/detection
+
+friendly-whether.ru
+
+# Reference: https://www.virustotal.com/gui/file/cf647d208d28e1cea6ec5b656c8b78cec1b210296620d7b51dd9ba39de80f93b/detection
+
+far-seems-so.ru
+
+# Reference: https://www.virustotal.com/gui/file/1fd371c42965c9b78b2a045aab6c00e6ce72848926acec529b1f19f03e12815f/detection
+
+h-url.ru
+
+# Reference: https://www.virustotal.com/gui/file/9e6691f721894587aee06708ea5ef7a20f9d498d113b5a7a8ef2b5bd86a30330/detection
+# Reference: https://www.virustotal.com/gui/file/cdfb901be160865b5f630fd2fee3d1b6d8be8a99baf38508ba5a86f343eaca76/detection
+# Reference: https://www.virustotal.com/gui/file/b83345ca1cd3d915323898b9a965f4950ea3ac8796ea853f1a8f0ea7ddfab600/detection
+# Reference: https://www.virustotal.com/gui/file/de0ce3fbc63b86b4b0aecf14b4f6ff5ceb9b49e44055d52282b67940eaec22c8/detection
+# Note: LeopardRemote
+
+170.231.122.20:50519
+170.231.122.20:50524
+170.231.122.20:50539
+170.231.122.20:50591
+170.231.122.20:58738
+170.231.122.20:58753
+170.231.122.20:5992
+170.231.122.20:5993
+170.231.122.20:8081
+67.15.100.252:8081 
+67.228.235.91:8081
+69.171.224.85:8081
+88.191.253.157:8081
+tecnox.serveftp.com
+
+# Reference: https://www.virustotal.com/gui/file/2c2f8822781e4c0bf3aacf5a56bf48e69f2082b8d2a70b443ea6596f09712736/detection
+
+dlsft.com
+
+# Reference: https://blog.talosintelligence.com/2020/08/threat-roundup-0821-0827.html (# Win.Adware.Dealply-9476483-0)
+
+opensubcdn.com
+
+# Reference: https://www.virustotal.com/gui/file/80c337a33fc8d05cdc36a00309e612b8cef3aab238387ccfe90a42086299b965/detection
+
+gamelauncherzx.000webhostapp.com
+zxpwd.net
+
+# Reference: https://www.virustotal.com/gui/file/3bd83025885889f9bc9667122229381baa0755fb4263498436665198a0c4e2ba/detection
+
+bepy.mercice.ru
+download123.igg.biz
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=PUA:Win32/ProtectionLive
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/adware-and-puas/Malware%20Protection%20Live/detailed-analysis.aspx
+
+malwareprotectionlive.com
+
+# Reference: https://twitter.com/krabsonsecurity/status/1313539398407872514
+# Reference: https://app.any.run/tasks/7087ef7b-fb26-4559-bc77-ad5d5cdff01b/
+# Reference: https://www.virustotal.com/gui/file/d29380831b7a5b62c0d56e0d2a7a196863ff1c3199434172ee199a36cb929312/detection
+
+silkysmoothtechnologies.com
+
+# Reference: https://www.virustotal.com/gui/file/edf2ca24702f42481d63d6795f03140b990033b8feefb7ce54a9e05c04c5910b/detection
+
+mixerlabs.pw
+
+# Reference: https://www.virustotal.com/gui/file/bccda4cb9ddeaf6a6940a0f9242acbbdeace1144a5ae6ace53fa3742036d6daf/detection
+
+116.202.96.103:35601
+122.163.90.56:35601
+122.170.148.201:35601
+125.127.38.228:35601
+149.28.236.40:35601
+149.28.61.241:35601
+157.33.221.218:35601
+185.82.203.241:35601
+95.179.202.146:35601
+
+# Reference: https://www.virustotal.com/gui/file/c8e34c3709e2b3c3c4274e3aacda7926f5d66ef360abb5fd8d0ab7af82663758/detection
+# Reference: https://www.virustotal.com/gui/file/5020097c0bec419f9a6cf72a704f543cbfe483e23583e65624b24a6ea89ff142/detection
+# Reference: https://www.virustotal.com/gui/file/19d8f243bff1a1147ccee0919517ddf084beb2b4e18ade5e7c6fa48f1ef7d53a/detection
+# Reference: https://www.virustotal.com/gui/file/1b224352d3f9f52b82754d9b5e33c79a7af19b45964ada5819a89e1048bd5b4f/detection
+# Reference: https://www.virustotal.com/gui/file/daa1dc5767b9b7ea9cf17027da52dd0f2f1037a9529fa163e901ecf5e2e16c8a/detection
+# Reference: https://www.virustotal.com/gui/file/d3d8e04ca7b2f955115ec00f4288c5fb5f1f1cf53a513641924cbe70a0046688/detection
+
+http://91.198.22.70
+185.117.73.213:22346
+185.82.203.178:22346
+185.82.203.241:22346
+185.45.193.21:26874
+185.45.193.24:26874
+185.82.203.241:26874
+185.82.203.178:42123
+185.82.203.241:42123
+178.162.197.90:55554
+185.117.73.213:55554
+185.82.203.178:55554
+185.82.203.241:55554
+80.64.131.131:55554
+89.185.100.230:55554
+555544111.ddns.net
+dns-seed.ddns.net
+dnsseed111.ddns.net
+p-x.ddns.net
+stratumtest.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/1cd758ddde58d45aa48668e35bef479d6ba2bee17e7973aa1329038b4fa15b0e/detection
+# Reference: https://www.virustotal.com/gui/file/a47bb2cbc41f25f5072dda8470acb169e274b3b232ba926926af132844a30c84/detection
+# Reference: https://www.virustotal.com/gui/file/eb5b9e04efc873885372ffa2468b9b5fbfe01b600b614e583c3dd7e12f5bad7f/detection
+# Reference: https://www.virustotal.com/gui/file/a210dee30e3fc0faf89d515915f8470facad466aa69d894988e48dfdecdfe3b8/detection
+# Reference: https://www.virustotal.com/gui/file/5b091d1046936aead1dbf05a8c1fa430d97ca08d0c6b059bca2f5ffae4f16c57/detection
+# Reference: https://www.virustotal.com/gui/file/c20b22b8b721d59f727f50499f2a4f1d910dd382ce8372e4a9149b33f2ccdc82/detection
+# Reference: https://www.virustotal.com/gui/file/6b67af76c8664bc7ad930e22f045d7b0f48061eb9bcddaf93f6ade1521512898/detection
+# Reference: https://www.virustotal.com/gui/file/58997332a250135cfe7a519a042a4dc684ba78169728b51189a41932b89bbd20/detection
+# Reference: https://www.virustotal.com/gui/file/4669c76cf3a17fc56b9158bfea226f08600319b280bbbd30a0a331f6b9cbb040/detection
+# Reference: https://www.virustotal.com/gui/file/91c33abbf3149e8389d76d560061aaca556dcad5136fcfe1c2f9b839d3e49f48/detection
+# Reference: https://www.virustotal.com/gui/file/ed5abdb1c68270c4f4a1eea59d8462f33ba6cd3f7ec27867e727b8d19e5bae2f/detection
+# Reference: https://www.virustotal.com/gui/file/d1ca6c73a297ab7b3b74c5ea17067f317f5f2913ed2c13f5b68ab4ca52d75922/detection
+# Reference: https://www.virustotal.com/gui/file/e741cf28d72e4a558b865925db838df24889d545019ada7267a49218a04ad5cc/detection
+
+31.44.184.131:50002
+31.44.184.131:50004
+31.44.184.131:50006
+31.44.184.131:50008
+31.44.184.131:50010
+31.44.184.131:50012
+31.44.184.131:50014
+31.44.184.131:50016
+31.44.184.131:50020
+31.44.184.131:50022
+31.44.184.131:50024
+31.44.184.131:50026
+31.44.184.131:50028
+
+# Reference: https://www.virustotal.com/gui/file/9986d552ddece42c51746b5036129af2a3895067d4efd7192d98753484a4f703/detection
+
+drivsnfosproduits.info
+dynainfo.info
+pubjeuxinfos.info
+
+# Reference: https://www.virustotal.com/gui/file/997ccb8eeae59f2bbf61b9109f9529ab5878c476a9af8900e8b7893981473618/detection
+
+passportinfo.info
+
+# Reference: https://www.virustotal.com/gui/file/997e52086407ef7b0269bb0db644b63398bb47a3b95a7690b156fd6c519efe56/detection
+
+promotionalmaterial.info
+
+# Reference: https://www.virustotal.com/gui/file/99d700ab312b817c4445167d6a2839290408b219382ea4e9a73bcb715b002513/detection
+
+vault8166.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/cd80fcedd8640c9716a1f5f958820b68ec334db0567195e7049a9d2d9638edcc/detection
+# Reference: https://www.virustotal.com/gui/file/f282a81d2132d6b55ac136f0b5e2b25c9381e0644d4365ab3fa94ac2cefbd207/detection
+
+cooctdlfast.com
+
+# Reference: https://www.virustotal.com/gui/domain/themarketingadscenter.com/relations
+# Reference: https://www.virustotal.com/gui/file/13c3bb8e213e007e97fb1fb062d038d36033e2a621403a72333c34001a9abe18/detection
+
+themarketingadscenter.com
+
+# Reference: https://www.virustotal.com/gui/file/d7708009dab68d023994b50e5ac57008ca0ad92f1cc77740a3355b2e290db364/detection
+
+bestxserver.com
+
+# Reference: https://www.virustotal.com/gui/file/479abcf388f7ed891a9d9f7bffb047d280c96d7c4e61605db5461e5e12d6bb13/detection
+
+breathy.spatula.ru
+
+# Reference: https://www.virustotal.com/gui/file/b8ef3f4ec30a27d13e2c866e505122a835ec5c29ddb49b241a9bf811346239d3/detection
+
+denweryankee.top
+ecosystem.unvocal.ru
+
+# Reference: https://twitter.com/makflwana/status/1230491081264918529
+# Reference: https://app.any.run/tasks/f99ea14e-1bfc-4ec9-8982-71c739e90b59/
+
+vepodenohopp.com
+
+# Reference: https://www.virustotal.com/gui/file/0e0a32e9fb5df0af609a1bfde940b79c9d8293318db9c289e7258b3bfd6f3189/detection
+
+conicono.com
+softpan.com
+sofstan.com
+softstan.com
+
+# Reference: https://www.virustotal.com/gui/file/4185e7399f1668550ee42c4125b3ee0b85daa854e3e7f39c9b971c516f3252ad/detection
+
+voa-update.windowsnas.co.kr
+/adlistener/adpatchconf.php
+
+# Reference: https://www.virustotal.com/gui/file/fd4d92484fbde6ee372fa1faef562e9faaf4fed4d3d8dd4398feb02d46e23520/detection
+
+1.163.108.170:28081
+36.226.254.253:28081
+36.231.108.97:28081
+36.231.111.26:28081
+tw001plz.myidcddns.com
+tw002plz.myidcddns.com
+tw003plz.myidcddns.com
+tw004plz.myidcddns.com
+
+# Reference: https://www.virustotal.com/gui/domain/d1js21szq85hyn.cloudfront.net/relations
+# Reference: https://www.virustotal.com/gui/file/47062916c6850c693865f62b871c0d2b60a905fe150ccad360b212492b0afacc/detection
+
+d1js21szq85hyn.cloudfront.net
+
+# Reference: https://twitter.com/malekal_morte/status/1155430255005327360
+# Reference: https://www.virustotal.com/gui/file/a132e237454b0f2997562a1cee228b9a0bd371912ed53308426f642d80a13ec3/detection
+
+45.114.8.167:53
+92.246.76.123:53
+
+# Reference: https://www.virustotal.com/gui/file/428886f0f31d1612bc1e99d7b1419b0af71b9e06b02192fef69958c3e61d5a68/detection
+
+lucid.pw
+
+# Reference: https://www.virustotal.com/gui/file/089e160f41209c682e1f19a0f09aa42ec57c0fde96c5015a1d1654885a4958bc/detection
+
+destorage.info
+/installmate/php/get_cfg.php
+/installmate/php/track_installer_products.php
+
+# Reference: https://www.virustotal.com/gui/file/dee17cdfa8d6f6d535aa55ff6674f372a1e50ce661c9bf89fc5ff7d5526bcf97/detection
+# Reference: https://www.virustotal.com/gui/domain/integrator.mediabarservices.ru/relations
+
+mediabarservices.ru
+
+# Reference: https://www.virustotal.com/gui/file/c99c7d7d6cad65d2c8dc11d63d78c05709e108b8dfdcadca231bba8415117961/detection
+# Reference: https://www.virustotal.com/gui/file/fa39722efbcfe057422ca6552fd4ef67ae767e89fdb8405eda04b18bdb50148f/detection
+
+http://54.204.28.26
+browserguardian-a.akamaihd.net
+
+# Reference: https://www.virustotal.com/gui/file/da3207277994f0f06f3a073922e522bf6589596d84565b4ed1b05183fd68bc35/detection
+
+aristocrat.aines.ru
+longstanding.mohurs.ru
+
+# Reference: https://www.virustotal.com/gui/file/af96c50fe1c3f0318b89768c4a026a4a6eeb13450dbccfa501d7c2c3c471834f/detection
+# Reference: https://otx.alienvault.com/indicator/file/fbaeff3f3802172d1bf6ac6203eeb66093c5995b7b586d9dc3938c5827077431/
+
+a0015919.xsph.ru
+
+# Reference: https://app.any.run/tasks/308113b1-d748-4174-8c3f-490166c36b1b/
+
+http://91.221.36.33
+/auth/SteamBrute.txt
+/auth/SteamBruteAuth2.php
+
+# Reference: https://www.virustotal.com/gui/file/d27f0cb98afe012fe2a8a7d0e18d5df8512805a280adea6739fccb703869fded/detection
+
+tracker.cnsystem.cc
+
+# Reference: https://www.virustotal.com/gui/domain/benjaminstrahs.com/relations
+
+benjaminstrahs.com
+
+# Reference: https://www.virustotal.com/gui/domain/gengxin.th520.com/relations
+# Reference: https://www.virustotal.com/gui/file/e21347486736a38ba48f625969d88f44b8f128c358a7285e7d8dccb3a61a3b84/detection
+
+gengxin.th520.com
+
+# Reference: https://bad-bytes.blogspot.com/2011/08/little-analysis-on-that-zugo-toolbar.html
+
+tbupdate.zugo.com
+
+# Reference: https://www.virustotal.com/gui/file/467be337fdab67f355fae05c24b370205498b324854464a39b88d0afd794c2dd/behavior
+
+data.oppoos.com
+data.icecentury.com
+
+# Reference: https://www.virustotal.com/gui/file/96701ee98517a4131272c84c7fc305ba4e3805e44aa763473daa65899e76c17b/detection
+
+toolsfreeprivacy.online
+
+# Reference: https://www.virustotal.com/gui/file/5ffff381d6867c986dfa88dca3f8d68c161b63ecef377a6e8ceca1a8a56bb5c6/detection
+
+immortality.space
+
+# Reference: https://www.virustotal.com/gui/file/8e3f5b8a80b9d89962d813fdfafafb88f7e378ea54e8e3a0e3fb562b81c1d36a/detection
+# Reference: https://www.virustotal.com/gui/file/976bfbb13605185f1f60974944696cd6671fcf09ba70bee02ee633bc230f98ca/detection
+
+14.207.115.160:81
+rhz.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/53db78784d6d04449e8a91ea1032bf6fadeb7dbd84b6549f984cc0fd2c131feb/detection
+
+a0416695.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/domain/flv-player.us/relations
+
+flv-player.us
+
+# Reference: https://www.virustotal.com/gui/file/4658e73f798ac94a601478b71bb90701c51cadc946df4eb31a59c0161fbcaadb/detection
+
+500miles.club
+
+# Reference: https://www.virustotal.com/gui/domain/gjaosihe.nmvhpedn.com/relations
+
+gjaosihe.nmvhpedn.com
+
+# Reference: https://www.virustotal.com/gui/file/509ff691db7623522a62a64474c0f718b7885cbbd2d12c0c07d04d2ef021dec3/detection
+# Reference: https://www.virustotal.com/gui/file/710470d7112b00aa7517f2060b21dc0f74484a558524279a9d3a298cf037fecc/detection
+
+optimizepro.biz
+optimizepro.info
+optimizepro.org
+optimizerpro.co
+
+# Reference: https://www.virustotal.com/gui/domain/w.nanweng.cn/relations
+# Reference: https://www.virustotal.com/gui/file/40e61157113d86e9e8180ac17c2318c3c8215657a998656db471324d497614d3/detection
+
+w.nanweng.cn
+
+# Reference: https://www.virustotal.com/gui/file/f0cfc1874776e43ea4c43e858a3642309486fd2fa1321f3c2f6d6a287ff0d4d3/detection
+# Reference: https://www.virustotal.com/gui/file/e0de3202387192ec9c076e547b912f54b29eca479a80af3e12fd52e63848a5dd/detection
+
+homestarzipset.net
+groupmodel.biz
+moodmodel.biz
+parentmodel.biz
+ringmynorth.biz
+
+# Reference: https://www.virustotal.com/gui/file/956d2c62112e5d31e9b51c7ecefe07f307c4067f8e499dfdf2fbb86838f53e43/detection
+
+drivinfosproduits.info
+dynainfo.info
+electronicdatabases.info
+passportinfo.info
+promotionalmaterial.info
+
+# Reference: https://www.virustotal.com/gui/domain/default.minefilter.com/relations
+
+default.minefilter.com
+
+# Reference: https://www.virustotal.com/gui/file/978e78b794216973d296980fbbb8de127207413f886d1d9f3de92bcf0f1c0423/detection
+
+badolina.com
+grbit.link
+ijnewhb.com
+stuffpicks.com
+madmax.stuffpicks.com
+stats.stuffpicks.com
+stats.ijnewhb.com
+static.badolina.com
+static.grbit.link
+
+# Reference: https://unit42.paloaltonetworks.com/proactive-detector/
+
+69av19.xyz
+99s13.xyz
+cc222.com
+fs10.xyz
+hfcclixb.xyz
+hobbytoypark.com
+jemstutoring.com
+krk13pearland.com
+theav9.xyz
+
+# Reference: https://www.virustotal.com/gui/file/6ed0baeb39fcd8d4ae9e5b578588b18985c4c9fe2cdd188918daa01b5f2e45cb/detection
+
+categic.com
+cathogen.com
+
+# Reference: https://www.virustotal.com/gui/file/49b8b7d8ca1bdd82866a963a61dec3706a4949c0d515af531555c37f44ceba68/detection
+
+96.31.223.107:8041
+linux.ddnsgeek.com
+linux.medtrio.com
+
+# Reference: https://www.virustotal.com/gui/domain/pug88000nf.pubmatic.com/relations
+
+pug88000nf.pubmatic.com
+
+# Reference: https://www.virustotal.com/gui/file/3ce3450a031904764855554e0c5d3e58379d1875f7267399059023bf4c4afeb6/detection
+
+sybadee.info
+
+# Reference: https://www.virustotal.com/gui/file/603a124aee5107db3d39af26554d76830f07b228e47c89c7fdd2fad6aeb45f95/detection
+
+patchserver.no-ip.info
+ranonlineshop.no-ip.info
+/3dran/patch/FixSuit1000.thor
+/3dran/patch/2FixSuit1000.thor
+/3dran/patch/fixEVO1.thor
+
+# Reference: https://www.virustotal.com/gui/file/0887dffd0d1e0e8ed84a5e587bae0caa32f380a7384790b1caeffdcf711d1aa6/detection
+
+nowitfix.ru
+
+# Reference: https://www.virustotal.com/gui/file/491a3949c03fa21d71104b94e91b6031ace0661d2f4ad635ad817a84a2caf47c/detection
+
+itnow-fix.ru
+
+# Reference: https://www.virustotal.com/gui/file/63df37f9d2e2b01e6206b738823ec17e7fa57fe2e49c2e783d704264b7a7b295/detection
+
+mavrlaldhnkp.floattenmidget.ru
+
+# Reference: https://www.virustotal.com/gui/file/a109566c51b9c1406e692705ae44bc6c6a7759fd15f914c4a5e0dff8e6a4569e/detection
+
+vncqsjxpzswbzm.floattenmidget.ru
+
+# Reference: https://www.virustotal.com/gui/file/63df37f9d2e2b01e6206b738823ec17e7fa57fe2e49c2e783d704264b7a7b295/detection
+
+ztwonlevsofi.floattenmidget.ru
+
+# Reference: https://www.virustotal.com/gui/file/74862ff17b9a4c1700d98fc5aa09fc7d1f823b77f86e74c8bf20549bef820bf4/detection
+
+akaevyudcijm.floattenmidget.ru
+
+# Reference: https://www.virustotal.com/gui/file/431c755cb88d1d767e4d55349eaf3a2a8cb54e3bf44638f07b4408f414b81fbf/detection
+
+adssyscom.com
+monttr.info
+mtxapi1.com
+
+# Reference: https://www.virustotal.com/gui/file/0743f2ccfd94143ac06690b2d6e49ca786a91ce7b2b666ac56ee5e36613fb155/detection
+
+requested404.com
+superstationcity.com
+/C_Installer/UltraMediaBurner.exe
+
+# Reference: https://www.virustotal.com/gui/domain/dl.charcdn.com/relations
+# Reference: https://www.virustotal.com/gui/domain/ms.charcdn.com/relations
+
+charcdn.com
+dl.charcdn.com
+ms.charcdn.com
+
+# Reference: https://www.virustotal.com/gui/file/d09d3ff42064b090594c5559f1e9891d9940540977ecf1282795a142d01ca3e2/detection
+
+q663753j.beget.tech
+
+# Reference: https://otx.alienvault.com/pulse/6107ba1b5d5f408dfc26a73b
+# Reference: https://www.virustotal.com/gui/file/a94d56067aa15f28f66a139eecc90e49b008bfa1f0faf7d65721ecfb68a6a6a2/detection
+
+cayzt.snyzt.org
+
+# Reference: https://www.virustotal.com/gui/file/1cd33422e321683501ac60a0ba384e542bb2e06af3964f79e08fd67797cda809/detection
+
+cicipip.com
+dinfo.3dpchip.com
+rp.cicipip.com
+os.cicipip.com
+os2.cicipip.com
+
+# Reference: https://www.virustotal.com/gui/file/88d67d2fc69192ccfb078858902e90a427eef8556e733cf081c9771de0fa088b/detection
+
+cu25760.tmweb.ru
+
+# Reference: https://www.jayceooi.com/download-%E8%BF%85%E9%9B%B7-xunlei-thunder-5-english-language-pack/
+# Reference: https://www.virustotal.com/gui/ip-address/47.97.179.170/relations
+
+47.97.179.170:18996
+
+# Reference: https://www.virustotal.com/gui/domain/kophack.ru/relations
+
+kophack.ru
+
+# Reference; https://www.virustotal.com/gui/file/e2d752905327a343b039e661da0709522d3d49e51e1897dc26916f06eb839110/detection
+
+a1625116.hostink.ru
+
+# Reference: https://www.virustotal.com/gui/file/d58daec45d8e0740bc632fd99b18df06bff95125cc7ab68196a1b7270e1acdfa/detection
+
+o1233239.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/0fc777df6a399966c974b059d9e35fc2de39e89f07c8893e6d7ace8bd79581ae/detection
+
+digimatic.biz
+torrentex.ru
+download.torrentex.ru
+
+# Reference: https://www.virustotal.com/gui/file/352e7dc677ba56843e45de312a17df3bbbb7a6c23a1852138d7dcb78b4ee788c/detection
+
+kovkaph5.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/2b42d446979171648bd5b8829896a663f725e0d32bd9dee9330f4c54b1c8d846/detection
+
+actical.ru
+othere.ru
+esly.othere.ru
+waic.actical.ru
+
+# Reference: https://www.virustotal.com/gui/domain/forces.wintertorg.ru/relations
+
+wintertorg.ru
+forces.wintertorg.ru
+
+# Reference: https://www.virustotal.com/gui/file/ca63c28390f5c00d0a0ecd9e615a40d1c2f0c4f5402c3b5b1874ef50e5c95848/detection
+
+sft-cloud.com
+
+# Reference: https://www.virustotal.com/gui/domain/file-downloadd.ru/relations
+
+file-downloadd.ru
+
+# Reference: https://www.virustotal.com/gui/file/29fe0d6d05a3e3fa769cc5ee5305cc2c1d4d948ed024d9666832131fd1eadb88/detection
+# Reference: https://www.virustotal.com/gui/file/1e7e3ec422ccf56bb39a5e3c0bc799edcfe8555a982c55d1407f3b1840692e52/detection
+
+167.88.124.131:51568
+cdn2dload.com
+webf.linkpc.net
+
+# Reference: https://www.virustotal.com/gui/file/a6c1c675c605b963425a2e7e96887d042d20b406121dacf6995d3b0ffc3639d2/detection
+
+loadre.ru
+bitrix316.timeweb.ru
+pisbrat5.tmweb.ru
+
+# Reference: https://twitter.com/peterkruse/status/1482782316401418242
+# Reference: https://pastebin.com/DQWTYzkM
+
+18video-on.com
+1music-online.me
+aljeveiligheid.nl
+bro3.biz
+detectvid.com
+download-app.net
+downloadit-on.com
+express-new.com
+express-news.me
+jenetje.com
+jenetje.nl
+jesteigertje.nl
+pressfishblue.top
+rockstorageplace.com
+se07.biz
+smartklick.biz
+steentjesxxl.nl
+to5s.biz
+vdsteenxxl.com
+0.express-news.me
+1.express-news.me
+2.express-news.me
+3.express-news.me
+4.express-news.me
+5.express-news.me
+6.express-news.me
+7.express-news.me
+8.express-news.me
+9.express-news.me
+10.express-news.me
+0.18video-on.com
+1.18video-on.com
+2.18video-on.com
+3.18video-on.com
+4.18video-on.com
+5.18video-on.com
+6.18video-on.com
+7.18video-on.com
+8.18video-on.com
+9.18video-on.com
+10.18video-on.com
+0.downloadit-on.com
+1.downloadit-on.com
+2.downloadit-on.com
+3.downloadit-on.com
+4.downloadit-on.com
+5.downloadit-on.com
+6.downloadit-on.com
+7.downloadit-on.com
+8.downloadit-on.com
+9.downloadit-on.com
+10.downloadit-on.com
+0.download-app.net
+1.download-app.net
+2.download-app.net
+3.download-app.net
+4.download-app.net
+5.download-app.net
+6.download-app.net
+7.download-app.net
+8.download-app.net
+9.download-app.net
+10.download-app.net
+anvzoq.pressfishblue.top
+
+# Reference: https://www.virustotal.com/gui/domain/dl.installiq.com/relations
+
+installiq.com
+dl.installiq.com
+
+# Reference: https://twitter.com/SBousseaden/status/1484262297484812291
+# Reference: https://www.virustotal.com/gui/file/62f70676e880a23fd80f05c78c8c8ae3a375f0870181da9e8aaf35d216680d8c/detection
+# Reference: https://www.virustotal.com/gui/file/6f7c75db73622e6cd41bae796e85c802e1f34b870794131f2ecf2d15eb705098/detection
+# Reference: https://www.virustotal.com/gui/file/8643b08ea59d4ff75b1721b173c9ec6d02127349397739e40f2eccd325bd7bfd/detection
+
+zxcfdsa.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/0001c74fff5cc52cda9e2a0c3722c213dbcb81c670c3b5139dea8c36616b29de/detection
+
+webinternetsecurity.com
+
+# Reference: https://www.virustotal.com/gui/file/8350a3a65abbc7a2ecb5c8d997341289370d26d1f6ad65e9bd99f04c806baa89/detection
+
+45.12.32.61:443
+
+# Reference: https://www.virustotal.com/gui/file/236b912d1fa4009de1e4b24a8160f350d2ca4364cebb5a97f1643a944d882728/detection
+
+ponorogu.live
+
+# Reference: https://www.virustotal.com/gui/file/05589626bcc897fc77b84ce6ec20da7f629ae95288d45847f16313faad808089/detection
+
+service-domain.xyz
+
+# Reference: https://www.virustotal.com/gui/file/01477f9d3b2f708d29f91132b4d17ee53bfb7eb6b57379745f66246d26610062/detection
+
+testrequest.info
+api.testrequest.info
+api2.testrequest.info
+api3.testrequest.info
+api4.testrequest.info
+api5.testrequest.info
+
+# Reference: https://twitter.com/benkow_/status/1503342565407526914
+# Reference: https://www.virustotal.com/gui/file/9b89bfe3eaf508cd460eae532abdbb4d73272640265c1c0408da4bd9ddbb142f/detection
+
+http://151.248.116.199
+/remote_packer_data
+
+# Reference: https://www.virustotal.com/gui/file/67b08b9e275023ccad3f6648a4567cf5fba0d58ab68ecbffaee053950a5cc29b/detection
+
+sotted.ru
+kolos.sotted.ru
+widespread.vincula.ru
+
+# Reference: https://www.virustotal.com/gui/file/6ba896b28bf3f63e4a733635ea9fea8f7c3cd01d67fa3c0469e7f41d8bb463a2/detection
+
+176.57.217.197:3306
+
+# Reference: https://www.virustotal.com/gui/file/520784c0445e48419956cfe9dbd4b8cc3b223609d0f89b3d8c2edfc522120e98/detection
+
+tunmi13.ddns.net
+
+# Reference: https://www.virustotal.com/gui/domain/gamesense.click/relations
+
+gamesense.click
+
+# Reference: https://www.virustotal.com/gui/domain/cometrbx.xyz/relations
+
+cometrbx.xyz
+
+# Reference: https://twitter.com/BushidoToken/status/1522969539805384706
+
+blockanoadblockr.website
+differid.com
+htstfftrck.com
+impressyi.online
+news-easy.org
+notadsnow.com
+reistivelbife.com
+sandhyapi.online
+serviceone.info
+umonions.com
+
+# Reference: https://www.virustotal.com/gui/file/0001fa90535306d93eb691b5d1906c32478396943dde09a4586a19bfb7b0ea57/detection
+
+d1picnfwewmhyp.cloudfront.net
+
+# Reference: https://twitter.com/James_inthe_box/status/1535373385160486912
+# Reference: https://scammer.info/t/amanvpn-trojan/99127
+# Reference: https://app.any.run/tasks/de75f5f9-94a4-421d-940f-99fa1e2bd850/
+# Reference: https://app.any.run/tasks/f80cac1b-b7ac-4dbd-8899-ebd97fa01d50/
+
+43.154.154.166:9166
+10.17ce.holadns.com
+amanvpn.online
+
+# Reference: https://www.virustotal.com/gui/ip-address/190.123.44.218/relations
+# Reference: https://www.virustotal.com/gui/file/2fb567bdec66d96231b28d90d8198e7074cce5c77932094a0249ff35dd7e222d/detection
+# Reference: https://www.virustotal.com/gui/file/c18cff12b8a90ac443d9b229a4b5babe27a3867564bbcacb310a9c15f1e1193e/detection
+
+espanex.net
+
+# Reference: https://www.virustotal.com/gui/file/d63527ca64cd4ee0eab0ced2415529641ebe62f4120b1c853939b39ade515abd/detection
+
+phone-mine-give.gq
+
+# Reference: https://www.virustotal.com/gui/file/0001efb8d8e875cf47a5a95fb0c15bf54b7c710eae1444b9dca30c0db414da96/detection
+
+reqapi.ru
+
+# Reference: https://www.virustotal.com/gui/file/43d9be6bd4805a0ac49944630a07fe75b9685740c5f69f145cec22e580699d42/detection
+# Reference: https://www.virustotal.com/gui/file/249d8d9100947ab56140151fa59474e95fdf44e883163068576df2a2cc9405d9/detection
+
+s-f-t.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/51.158.129.218/relations
+
+mdgt.to
+mediaget.com
+media-get.com
+media-get.ru
+
+# Reference: https://www.virustotal.com/gui/file/989897d53925afc4380277c3ad61f0ae45927383762208c9aade79b3bb6fc661/detection
+
+xsnseed.xyz
+autoseeds.xsnseed.xyz
+
+# Reference: https://www.virustotal.com/gui/file/f72ee83436cb1f82366bfaafb14a4c0cb99826c02166fc0bd21fb6e7eb5190c6/detection
+
+d4w1kp01cnm54.cloudfront.net
+
+# Reference: https://www.virustotal.com/gui/file/2d3274df572455cf53f0c6311516fc3c88e81988d46340be04b8918da5760b8a/detection
+
+http://23.106.215.64
+
+# Reference: https://www.virustotal.com/gui/file/c19e58873ff83a81b781c0e406d1c032a77c24e407fb0bfabb43e8c1a5d8a809/detection
+# Reference: https://www.virustotal.com/gui/file/7f239a3a31e98287e020eb2fc5323924f928fba8b762435efbff4da07bbd93c0/detection
+# Reference: https://www.virustotal.com/gui/file/58d751675433fefca907c0c367e257961c67fd1eb02f7ebb96ce5205bf4caa9a/detection
+
+auth.360mon.cn
+
+# Reference: https://www.virustotal.com/gui/file/00009a6dc31621199d0d70b05b15fae993bf70e06ffdd9b283615b934d9eed41/detection
+
+blockey.ru
+discriminate.blockey.ru
+
+# Reference: https://www.virustotal.com/gui/file/84c842e3090e3e21a4aa180b4c4dea16dabf613964a7f926f360db6f9fc92e20/detection
+
+108.61.73.119:8100
+140.228.162.213:9998
+144.76.109.79:9998
+159.253.149.12:8794
+70.87.43.40:8000
+81.173.3.139:8082
+82.147.38.180:8000
+buddyvu.net
+
+# Reference: https://www.virustotal.com/gui/file/7eb5ac862db8e4be2d6c51f51acecf6e8edb096b61a4da965a17b1582792d4d4/detection
+
+radicmenu.xyz
+
+# Reference: https://www.virustotal.com/gui/file/f5690282a935eb4a3f1c09d07abbe1c07f4da5f2ae776d4bb903f9bd1927e558/detection
+
+fsl.sytes.net
+
+# Reference: https://www.virustotal.com/gui/file/000f9c586e2f54378a2a5256e9eecae35f2a527b4816c94b28e5eaa720766fc6/detection
+
+gamersguide.top
+
+# Reference: https://twitter.com/James_inthe_box/status/1587194894128291840
+# Reference: https://app.any.run/tasks/bc1e8ab0-3b1a-4c73-afc6-9d7e79355ce2/
+# Reference: https://www.virustotal.com/gui/file/1c8a957392cb532918eedc1de43a2a6e3532d038a760f63d82fc1a6e998b6a3e/detection
+
+check-data.xyz
+api.check-data.xyz
+api2.check-data.xyz
+api3.check-data.xyz
+api4.check-data.xyz
+api5.check-data.xyz
+/api2/google_api_ifi
+
+# Reference: https://www.virustotal.com/gui/file/4117b6a6aea958e243a28f51b7506f2b9805d59572fc358160e9a7f832cdbb28/detection
+
+experthostings.ru
+moreinstalls.ru
+dlc.experthostings.ru
+
+# Reference: https://www.virustotal.com/gui/file/01dc49272964013d343129932871d0f92695f7d05bbbdb6c4415ca5c417c10f8/detection
+
+http://195.20.55.245
+curriculars.ga
+shipment.top
+
+# Reference: https://www.securityjoes.com/post/raspberry-robin-detected-itw-targeting-insurance-financial-institutes-in-europe
+# Reference: https://malwaretips.com/blogs/remove-eu-adbison-redirect-com/
+
+adbison-redirect.com
+as.adbison-redirect.com
+eu.adbison-redirect.com
+us.adbison-redirect.com
+
+# Reference: https://www.virustotal.com/gui/file/1a431b46726719f8a3edf7c4379c39ee6db91c922e5863897c9cf4cbab8da647/detection
+
+mixapi.xyz
+
+# Reference: https://www.virustotal.com/gui/file/00007792522749122587048cb2187e109e3b22b05925edb8b551657d182ddc67/detection
+
+downlloaddatamy.info
+getapplicationmy.info
+c1.downlloaddatamy.info
+c2.downlloaddatamy.info
+r1.getapplicationmy.info
+
+# Reference: https://www.virustotal.com/gui/file/56399f6fa4383d51efc562487f8da78993b40fb2ded2af626db42dc5b956e734/detection
+
+mwcseed.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/0001f13f45dc8410dd1f975822a8147c61c165128c28ca22571d5ffd896db2ed/detection
+
+level-users.xyz
+linq-goody-best.com
+listsearchfind.xyz
+
+# Reference: https://www.virustotal.com/gui/file/006d8c5591f1df7515e1ece575242b307f1aa604615cd9b204faef814241484e/detection
+
+check-data.xyz
+api.check-data.xyz
+api2.check-data.xyz
+api3.check-data.xyz
+api4.check-data.xyz
+api5.check-data.xyz
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-15-v10323/556
+
+133455789.xyz
+testupdate.info
+
+# Reference: https://www.virustotal.com/gui/file/472ccfb865c81704562ea95870f60c08ef00bcd2ca1d7f09352398c05be5d05d/detection
+
+64.183.202.102:8443
+
+# Reference: https://www.virustotal.com/gui/file/23adcac29eaa2c0cf99ec66432517e95bba1361aadf96e72283a489cd0eac596/detection
+
+9i7ffdgvffibow7.vrnserver.ru
+zd6ofm54qsu6ici.friendsgrabber.ru
+
+# Reference: https://www.virustotal.com/gui/file/acec4b97c27ed6b3255dc52f7117756376c6e1cf9df22ac866d74d10d790602c/detection
+
+http://154.222.228.133
+154.222.228.134:7000
+
+# Reference: https://www.virustotal.com/gui/file/95502a9d694270e89bc12ca7d1f5830f3613ead2461fea6f4effc611d5b77a0f/detection
+
+downor3.space
+flighyu.space
+freeo9.space
+iifiledownload34.space
+down.flighyu.space
+set.downor3.space
+up.freeo9.space
+
+# Reference: https://www.virustotal.com/gui/file/14789558d88b4d6e20366e8e7aa9a123482ee62b011b3c3eed276eb1aee05895/detection
+
+cribcelery.xyz
+dogquarter.website
+sistersshame.xyz
+bon.cribcelery.xyz
+
+# Reference: https://www.virustotal.com/gui/file/0026549afa73e22912cbed3888cfa7f8e86fc7df8191c1770681a550016301b4/detection
+
+dlld-001.ru
+
+# Reference: https://www.virustotal.com/gui/file/3f844e0caccfb57a8fe3fd897c4513a20c7ad4e26569ac84167ea3a192eb8a2d/detection
+# Reference: https://www.virustotal.com/gui/file/2e41f5618eebd6a2d1a078e522a246bfa3a1ab494cfef6a35f668105711851f9/detection
+
+43.249.193.48:82
+qjmm666.com
+
+# Reference: https://twitter.com/ULTRAFRAUD/status/1703462794488598907
+# Reference: https://threatfox.abuse.ch/ioc/1190361/
+# Reference: https://www.virustotal.com/gui/file/90de6b93f296541a5c245597349f2cd569472985cecbc14a1b0ccdb0951f5f13/detection
+# Reference: https://www.virustotal.com/gui/file/219393af90aa19338af5bc2ceb0892e8e6317438cf38508b652ff7a6ad9bbe50/detection
+# Reference: https://www.virustotal.com/gui/file/2ed1f5d437461caad1a296b63561bd9477d96f95f67591ebb914a7f1d6ceece9/detection
+# Reference: https://www.virustotal.com/gui/file/4e55c10e79e88019cc44951789afefd670fadaa18570a9ad3bfac0a495b7278f/detection
+
+2.155.18.40:9000
+77.225.104.91:9000
+46.25.249.37:23768
+46.27.153.138:23768
+47.63.191.10:23768
+serrapirate2121.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/93c56f2a7edf543df3e88ebb557917d87ca53cae6c34da4f2b161d7089b04b38/detection
+
+http://173.249.27.120
+173.249.27.120:45454
+ultimatefakkers.ddns.net
+updates.ultimate-fakkers.co.network
+
+# Reference: https://twitter.com/naumovax/status/1747985922098966617
+# Reference: https://tria.ge/240116-da7gkabfck/behavioral1
+# Reference: https://www.virustotal.com/gui/file/4fc7ad1276074ef0d8b76492fdda4e096985cea9ec395fa13533f80d3ed8d2d6/detection
+# Reference: https://www.virustotal.com/gui/file/b95918223f9ace3d071e44550fd34f34c180b81e28f5e79cc4eba55006c8a6b0/detection
+
+154.91.65.76:7211
+154.91.65.76:7212
+
+# Reference: https://www.virustotal.com/gui/file/217013de55939b477e098a11a75f84d76abadd0c0faadab13bb044e6a7a69c3d/detection
+
+212.113.106.102:12600
+
+# Reference: https://www.virustotal.com/gui/file/0e0272d21046552694e6577542d1c1957206a9d6bdcad3eb80a5824dc30cbe23/detection
+# Reference: https://www.virustotal.com/gui/file/e5a29f76897ba68d88a9ef979deeae6bffb52d9355a855897e2002432f041e57/detection
+
+artificiusbrowser.com
+browseruniverse.com
+crxdragonsync.com
+crxdragonupdate.com
+
+# Reference: https://www.virustotal.com/gui/file/bb5ef9f70483ed7c79e37eca9dd136a514a346943edfe2803e27d1f6b262f05a/detection
+
+support.clz.kr
+
+# Reference: https://www.virustotal.com/gui/file/d0fda8c65b04f468c2db458e5ed48f46b715d506903ca4ca6e85fd30eb71896e/detection
+
+srv472339.hstgr.cloud
+/ZeusBrute/version/index.php
+
+# Reference: https://www.virustotal.com/gui/ip-address/88.208.60.228/relations
+# Reference: https://www.virustotal.com/gui/file/005f8aa6648fedeb4d7078c276527d9215c68b5f7caead4f7cbce8abe906c7c2/detection
+# Reference: https://www.virustotal.com/gui/file/0272643518e3db8b1a448753ab7990ee12ed15f0627d379e6d64edbb70028536/detection
+
+huyakww.info
+mnogolik002.xyz
+pichuga-dl.xyz
+valencia-dl.xyz
+vivinod4.xyz
+
+# Reference: https://x.com/suyog41/status/1798572330224132594
+# Reference: https://www.virustotal.com/gui/file/690d111294d46e755ea58ea92f485eac3e56961adf543543f8fca073148e8c5b/detection
+
+helsinki-dtc.com
+
+# Reference: https://x.com/malwrhunterteam/status/1818552423838818526
+# Reference: https://www.virustotal.com/gui/file/f9c071e45e8f9fa30579200ef896c46f2ce249a26311721f2c0a932cb64a358d/detection
+
+mord0r.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/eacfd543ad19f8edec0588a447777494f1fb7446150fd38ca4ede9e6cfcbf6a8/detection
+
+ec2-54-196-152-208.compute-1.amazonaws.com
+
+# Reference: https://x.com/malwrhunterteam/status/1831236296791970191
+# Reference: https://www.virustotal.com/gui/file/11c9a475bb7edcdf66f71c04a2481cfa70491bc90d462b5b8d587e895824ffc5/detection
+# Reference: https://www.virustotal.com/gui/file/293366b84dabe9b0a1e84c37659d0bbad2c85b4c4ad9c104923364ad69c6c8b4/detection
+
+192.46.214.232:443
+
+# Reference: https://x.com/banthisguy9349/status/1838597449910251943
+# Reference: https://www.joesandbox.com/analysis/1477772/0/html
+
+http://185.132.133.160
+http://185.132.133.163
+http://185.132.133.213
+cleverjumper.com
+openfrost.net
+
+# Reference: https://tria.ge/240928-zfp1csyckc/behavioral1
+
+cherax.menu
+dash.cherax.menu
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/4962
+# Reference: https://www.virustotal.com/gui/file/2016ee7c46aa21a217b3a9a9bb3e6a365f88c2e6b89d1160cbaf56f78825d26c/detection
+
+emkei.cz
+
+# Reference: https://x.com/naumovax/status/1892941777125966035
+# Reference: https://www.virustotal.com/gui/file/00407ce9ed73474cd85562bf41701ac98e49af2b0f8db2be64f9200a435728b7/detection
+# Reference: https://www.virustotal.com/gui/file/003b014f596ac7e497000ce6825d7dd1731060664e196547819de87b1beeaa0e/detection
+
+unknownapps.site
+unknownp.one
+auth.unknownapps.site
+auth.unknownp.one
+hwid.unknownapps.site
+
+# Reference: https://www.virustotal.com/gui/file/0292346ee706d14230eecf114adc5cd285d86b3e441870e7c13e841e2067a6f0/detection
+
+livesoftupdate.pw
+du99bxbhloj38.livesoftupdate.pw
+
+# Reference: https://www.virustotal.com/gui/file/831e53a134324b52d8cc74e53f78f6792c51e7683c10d587e1a45d062c87227a/detection
+
+finddatao.top
+ndishcor.bid
+secularistsarakolet.site
+get.ndishcor.bid
+
+# Reference: https://x.com/JAMESWT_WT/status/1910556202045411823
+# Reference: https://www.virustotal.com/gui/file/9a3bdc7f41b16ccb32cdcad65376dfad2dd5086c38017c8b80ce4708176cc940/detection
+
+meusams.club
+sso.meusams.club
+
+# Reference: https://www.virustotal.com/gui/file/86fefb67b3ffa6096e6e17d48a543c6e3b82a1a983b2d7853a4444fc6623a39c/detection
+
+phat-atc.site
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-08-19-IOCs-for-Chrome-extensions-leading-to-adware-or-PUP.txt
+
+owhit.com
+pixatab.xyz
+pixatab.xyz.evh.nqp.temporary.site
+play.owhit.com
+
+# Reference: https://www.virustotal.com/gui/file/83a871c1cafc6d14dc799e0c277aeaa36c50d42ea9f5f5ef5f01b35ae0fedaa7/detection
+
+mvploader.net
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/7973
+# Reference: https://www.virustotal.com/gui/file/0cea0bbc5baf77278ac516525de7eca38af7459fb0e5d950ed41199ae1c8aab9/detection
+# Reference: https://www.virustotal.com/gui/file/022b17b3d5b72aae22a7fd8d51167fa8c48ee4880be813df82e9b8bc04e66e23/detection
+
+searchnowexpert.com
+yfdnzfa.com

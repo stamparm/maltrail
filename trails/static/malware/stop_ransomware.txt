@@ -1,0 +1,371 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: djvu ransomware, stop ransomware
+
+# Reference: https://twitter.com/petrovic082/status/1187762565969043457
+# Reference: https://app.any.run/tasks/03afa5cb-2d8d-4cd0-a7ab-4e1bd7464db6/
+
+ring1.ug
+
+# Reference: https://twitter.com/abuse_ch/status/1209817867719467009
+# Reference: https://www.virustotal.com/gui/domain/ring2.ug/relations
+
+ring2.ug
+
+# Reference: https://github.com/silence-is-best/c2db#filecoderstop
+
+/As73yhsyU34578hxxx/
+/As73yhsyU34578hxxx1/
+/Asjdi435784ihjk65pen2/
+/ydtftysdtyftysdfsdpen3/
+/SDf565g/get.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1270993904154873856
+# Reference: https://app.any.run/tasks/b0502ef7-61f7-4e9e-87a1-bc7c3a102980/
+
+cjto.top
+
+# Reference: https://www.virustotal.com/gui/file/00ef13f2b577fca62b2100d9cb6306873abe2b57e97a05137217d911d449dd73/detection
+
+mopg.top
+
+# Reference: https://www.virustotal.com/gui/file/a36dabb110579e39137deb5f2330b86e581999d6cc5fa181112fe9742eb5f078/detection
+# Reference: https://www.virustotal.com/gui/file/67e2337ee7de4cdd82c33357bf01d4f8098f2119bbeaad61b8e481c7a6671328/detection
+# Reference: https://www.virustotal.com/gui/ip-address/85.114.134.88/detection
+
+85.114.134.88:483
+85.114.134.88:486
+
+# Reference: https://www.virustotal.com/gui/file/3e6319246954aaa778f47a51b4e4ecacbdb160b309bae9bbe8047c26c91d39d6/detection
+
+cleaner-ge.hk
+
+# Reference: https://twitter.com/petrovic082/status/1390009991889883142
+# Reference: https://app.any.run/tasks/63ff91aa-f934-451a-9b83-e2794469ed86/
+
+jfus.top
+
+# Reference: https://www.virustotal.com/gui/file/8209fcebdc81bc471b8abd57c07a18a7f222803f625028e26e343fde63183fda/detection
+
+plnv.top
+
+# Reference: https://twitter.com/petrovic082/status/1391394902911631369
+# Reference: https://app.any.run/tasks/3d45121d-8f5a-470a-aa2a-e3e16de0350c/
+# Reference: https://www.virustotal.com/gui/ip-address/35.235.74.220/relations
+
+asvb.top
+vafc.top
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.147.84.117/relations
+# Reference: https://app.any.run/tasks/a4883cc0-1a44-4151-9c2b-6207d97cf99b/
+
+qgam.top
+vrta.top
+
+# Reference: https://www.virustotal.com/gui/file/bdc895d2aa005210b2de94f02a65dbe899333b84cb0aeb9d8db3e7b50b071ad8/detection
+
+http://188.120.251.192
+
+# Reference: https://www.virustotal.com/gui/file/59b4861575e8fc6183373e223bc070e6ba89357692de09983fb807095aeaa61f/detection
+
+motiwa.xyz
+
+# Reference: https://cybleinc.com/2021/06/21/djvu-malware-of-stop-ransomware-family-back-with-new-variant/
+# Reference: https://otx.alienvault.com/pulse/60d21834aced9b05606c1f05
+
+a0142503.xsph.ru
+blvd.top
+bruze2.ug
+qpao.top
+trustglobalmail.online
+vjsi.top
+
+# Reference: https://www.virustotal.com/gui/file/ea7a287a8e15a510ef664a89ee62c1b08585573d2f6d6ba8fcd3c5e66f16a16d/detection
+
+astdg.top
+dgos.top
+tbpws.top
+znpst.top
+
+# Reference: https://www.virustotal.com/gui/file/dc3de176fd9ede42f3694824fb770e442f3d3ff0293c1c74b245e887df7a86e8/detection
+
+jfes.top
+
+# Reference: https://www.virustotal.com/gui/file/659b32b98b48e30f28ab64f2922d869d26061a6ac8ebbbe33def7c8fc532e27a/detection
+
+google-analitics91.com
+
+# Reference: https://twitter.com/petrovic082/status/1421750589768208385
+# Reference: https://app.any.run/tasks/e5c4e259-cf8b-4e45-98b2-bb0712840529/
+
+securebiz.org
+
+# Reference: https://twitter.com/James_inthe_box/status/1421820297511014407
+
+ns1.kriston.ug
+ns2.chalekin.ug
+ns3.unalelath.ug
+ns4.andromath.ug
+
+# Reference: https://www.virustotal.com/gui/file/6dc95e37a28289a5b17c8ab7e8eafb06216960e3ee9ed8a045faf8cc019238f7/detection
+
+pool.ug
+root.ug
+
+# Reference: https://www.virustotal.com/gui/file/5d425861016578b96fff3d295a1e371827e4f3f55cfee47f37bfb75e876a8460/detection
+
+loot.ug
+ymad.ug
+
+# Reference: https://www.virustotal.com/gui/file/b22a4ee6962714dad7adda4f93d1281185c1e2c8eabb1ba09725cb4cdedc550a/detection
+
+morgem.ru
+
+# Reference: https://www.virustotal.com/gui/ip-address/34.105.199.171/relation
+# Reference: https://app.validin.com/detail?type=ip&find=188.40.141.211#tab=resolutions
+# Reference: https://www.virustotal.com/gui/file/0e55e17532909ad5ad34eb4e35d791b27c6951dd15a8baba34c29ae572c884d0/detection
+# Reference: https://www.virustotal.com/gui/file/178fb69c394a6d86a3695acbb025bc2f3be31dea683ee6e5016af0566eef8111/detection
+# Reference: https://www.virustotal.com/gui/file/f51e4b8f7e7ff68015af698d833134bb6be1b4a435fc49221db9d1d79e11babf/detection
+
+aeus.top
+ahss.top
+chpp.top
+crpa.top
+csji.top
+idfn.top
+iiql.top
+jfas.top
+jibw.top
+losm.ch
+roaf.top
+viio.top
+vtxa.top
+yapv.top
+yual.top
+
+# Reference: https://www.virustotal.com/gui/file/ebf5cd3eb76a82bca18e9eca391f5cad9d8e0562d80b3254129033564402494b/detection
+
+http://37.49.230.185
+
+# Reference: https://twitter.com/petrovic082/status/1459837360728903680
+# Reference: https://app.any.run/tasks/269821a9-1484-45c4-8660-30eb870bdf68/
+
+kotob.top
+pqkl.org
+
+# Reference: https://www.virustotal.com/gui/file/f9a647a6b8e2a922e086637ced33dbc68b24663976b62b1724524f1ab6aee555/detection
+
+dell1.ug
+dell2.ug
+
+# Reference: https://app.any.run/tasks/e78cd7d6-db4a-4a14-92a1-bbe7752672cd/
+
+tzgl.org
+
+# Reference: https://www.virustotal.com/gui/file/146a75f914fc8f45e4c18af2278f9a3ec7c01a1f5555e5246c969ffc0d2cbc99/detection
+
+rcacademy.at
+
+# Reference: https://www.virustotal.com/gui/file/19720c2af17300161ade07a7bfe4e92b8c637e8069adc75a01093e6d61248869/detection
+
+http://91.241.19.49
+/hBugs2D/
+/hBugs2D/index.php
+
+# Reference: https://www.virustotal.com/gui/file/7653bacd87517a11299cd5e30317f121b1518796cf748bb78120b12511827a9d/detection
+
+rsuehfidvdkfvk.top
+
+# Reference: https://www.virustotal.com/gui/file/9cbaafcc5fabe81105cbe09a869c1576dcb8c09c53386a6426ebead635502a67/detection
+
+videsouhd.xyz
+
+# Reference: https://www.virustotal.com/gui/file/0bec9e0dc30fdd13d5a6afb47189153ce97522441ced18650fc340c952bc5627/detection
+
+parubey.info
+patmushta.info
+
+# Reference: https://www.virustotal.com/gui/file/eaa30524226cd9b7a5b1b9665865e5c72ba11a4c637da66e0a369b0ec2f74106/detection
+
+http://194.145.227.161
+/dlc/sharing.php
+
+# Reference: https://www.virustotal.com/gui/file/d1154f3e7f36ddc29616cb0f0dd7e7edeb3a3f51c55afffa5dccade75ba56fee/detection
+
+lencu.top
+
+# Reference: https://www.virustotal.com/gui/file/6f963c847c632323886c67b2a6e03f95c2609522857310b7f502532ae742505d/detection
+
+rate0000my7777poo.com
+
+# Reference: https://www.virustotal.com/gui/file/0480910be1aff1fcbb6279cc5401fa8839cc9e9640f9bd7133cdc6581cb9267f/detection
+
+govole.info
+spolaect.info
+
+# Reference: https://app.any.run/tasks/1ba24008-9819-4fda-9098-d2e769715470/
+
+fuyt.org
+zerit.top
+
+# Reference: https://www.virustotal.com/gui/file/001807f9c24cb224cc074f66a2c9ab8b86dde7c752a7a60632bd2b06080fafbd/detection
+
+blackhk1.beget.tech
+
+# Reference: https://twitter.com/petrovic082/status/1521863588654325762
+# Reference: https://www.virustotal.com/gui/file/c1ae256c64e09895b3b81fc03d85390eb233363c5acfb547e3879f46f80d04a8/detection
+
+vnjt.top
+
+# Reference: https://app.any.run/tasks/b55643ea-3448-4bd0-b156-fc47c9de5a9d/
+
+ugll.org
+
+# Reference: https://app.any.run/tasks/2abb44b0-86f5-4e6c-a805-63c58f6a5186/
+
+rgyui.top
+
+# Reference: https://www.virustotal.com/gui/file/d1cdab058056e0e4cbf2a08851d493d9f46d1d36e65f7b284d2ecc3558e80660/detection
+
+uaery.top
+
+# Reference: https://www.virustotal.com/gui/file/decc3ce6573d8e60fb8a0597a6489ca2364a17955baa4d82156d31052d8d8c31/detection
+
+garts.at
+prospectsnorth.com
+uknovodom.ru
+
+# Reference: https://www.virustotal.com/gui/file/0287ac2500cd06804c3264d535d6c78cf9f3bd8bfb7014a0c4658d60f887ee9b/behavior/Zenbox
+
+acacaca.org
+
+# Reference: https://app.any.run/tasks/2ffe18e9-b524-44bd-8ed9-295b32c27f6b/
+
+s-f-t.online
+
+# Reference: https://www.virustotal.com/gui/file/00c750cd38d99194ed9f19540f3a7668a8e88a317694d926a95351db00466121/detection
+
+abababa.org
+
+# Reference: https://www.virustotal.com/gui/file/09fb6bb883ca633aa0aa3eea9735d8b041b3cdfa03a49fa12a32896968708d96/detection
+
+allejee.com
+
+# Reference: https://www.virustotal.com/gui/file/296dd7285f1ad62e82f9e0be677c58d9bb1866527df43504852f362006e0f969/detection
+
+completed-doc.com
+
+# Reference: https://www.virustotal.com/gui/file/1dc17189bf89777a1c6e18d73a7926d7c4c55d8720243469db8dda7c5a85aafa/detection
+
+http://45.67.229.148
+/i8thzhzk3r1j4pi0jeumymym0pz.php
+/jt5n22r09m16iw3skz6s17q26.php
+/pqka8zxvdb58psmqvmieeu2.php
+/sq001xgfne87qod2ymy47slfwlhdv.php
+/tgh9vf0m4woi4pg1umieukzo1.php
+/whxhhav09avxdtiixnymgfu268t.php
+
+# Reference: https://www.virustotal.com/gui/file/02053acd7e416a858781cbeec65cd7a3662772e03ba92a4c818da40aa9141dd7/detection
+
+abibiall.com
+
+# Reference: https://malware.news/t/inside-view-of-brazzzersff-infrastructure/62431
+
+http://91.243.83.127
+/sjdhgfgshdgfhhjsdpenelop26/zzjdfgsdfhgdfvbcbvnvb/get.php
+/sjdhgfgshdgfhhjsdpenelop26/zzjdfgsdfhgdfvbcbvnvb/
+/sjdhgfgshdgfhhjsdpenelop26/
+/zzjdfgsdfhgdfvbcbvnvb/
+
+# Reference: https://www.virustotal.com/gui/file/74eea5611f9e692dd23287ec590ff6f7ebb6fdc252f9ef443a53d3fa87858693/detection
+
+spaceris.com
+
+# Reference: https://www.virustotal.com/gui/file/0087f3d1704774a52b988e4fea04c9c47422f20e0af68c2b7dd3c79f73d50f42/detection
+
+bihsy.com
+
+# Reference: https://twitter.com/sS55752750/status/1632084207378874368
+# Reference: https://www.virustotal.com/gui/file/01d56d62cb296ae57618f4f201f37fbc6ea2f580cad067aa94386740787a917f/detection
+
+http://95.217.25.224
+zexeq.com
+
+# Reference: https://www.virustotal.com/gui/file/0c31938a4ae468dbfe9ee5c2d3d6cd8e79ce2d64e28e9fbe4d5271c0b0bcdbdf/detection
+
+colisumy.com
+
+# Reference: https://www.virustotal.com/gui/file/02a8f44506f086128b18c4efb473c58406026d467f4fdcad07c5d02ffe97df47/detection
+
+galandskiyher5.com
+gobr1on.top
+gobs2or.top
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.stop/
+
+http://189.232.58.103
+http://190.187.52.42
+http://211.53.230.67
+
+# Reference: https://app.validin.com/axon?find=89.191.234.21&type=ip
+# Reference: https://www.virustotal.com/gui/file/2aa3c6dd94498a7a640f8c4aef123024be8edc16d77da79f84354339aff235b3/detection
+
+gobo11fc.top
+gobo12fc.top
+gons07fc.top
+gons11fc.top
+gons12fc.top
+thre02bb.top
+
+# Reference: https://www.virustotal.com/gui/file/3e9c5961ee8a2a0c30539e79f9ddfb8870f5488d9571562fb1d90c8440dffdf3/detection
+
+http://91.92.241.91
+gobo30cl.top
+
+# Reference: https://www.virustotal.com/gui/file/0b780f2f177a4e7295595e660c059f01eca9594bcb2edc823244d2769fee62b0/detection
+
+sajdfue.com
+
+# Reference: https://www.virustotal.com/gui/file/038b7c5ed3a557413c4d693d13c91e3c8139623baa68e09dffd5dcd1de268672/detection
+
+cajgtus.com
+sdfjhuz.com
+
+# Generic
+
+/375687husgfdg443geinerin/47w5youghsig/get.php
+/375687husgfdg443geinerin/47w5youghsig/
+/375687husgfdg443geinerin/
+/47w5youghsig/get.php
+/47w5youghsig/
+/6454hgvghfgtyryfgfgvcvsydtfystdsbvdfpenelop/sdfsvfbvsbdfdfgdfhfgserwcv/get.php
+/6454hgvghfgtyryfgfgvcvsydtfystdsbvdfpenelop/sdfsvfbvsbdfdfgdfhfgserwcv/
+/6454hgvghfgtyryfgfgvcvsydtfystdsbvdfpenelop/
+/sdfsvfbvsbdfdfgdfhfgserwcv/get.php
+/sdfsvfbvsbdfdfgdfhfgserwcv/
+/Asjdi435784ihjk65pen2/get.php
+/fhsgtsspen6/get.php
+/nddddhsspen6/get.php
+/sgfjsgdfgsgddagdpen4/get.php
+/Asjdi435784ihjk65pen2/
+/fhsgtsspen6/
+/nddddhsspen6/
+/sgfjsgdfgsgddagdpen4/
+/files/penelop/
+/tesptc/penelop/
+/files/penelop/updatewin.exe
+/files/penelop/updatewin1.exe
+/files/penelop/updatewin2.exe
+/files/penelop/3.exe
+/files/penelop/4.exe
+/files/penelop/5.exe
+/tesptc/penelop/3.exe
+/tesptc/penelop/4.exe
+/tesptc/penelop/5.exe
+/penelop/3.exe
+/penelop/4.exe
+/penelop/5.exe
+/penelop/updatewin.exe
+/penelop/updatewin1.exe
+/penelop/updatewin2.exe

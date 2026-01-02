@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: bear stealer
+
+# Reference: https://x.com/solostalking/status/2001693512165904701
+
+94.156.114.203:5000

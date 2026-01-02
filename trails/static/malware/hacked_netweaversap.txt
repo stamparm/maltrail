@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: CVE-2025-31324
+
+# Reference: https://x.com/cyb3rops/status/1917112018978456026
+# Reference: https://www.thestack.technology/cvss-10-sap-netweaver-bug-is-under-active-attack/
+# Reference: https://nvd.nist.gov/vuln/detail/CVE-2025-31324
+
+http://142.229.236.35
+http://91.217.230.111
+167.88.186.143:9999
+31.42.185.110:8080
+67.216.182.99:8443
+8.140.60.39:8081
+fw110-114.001.infraplex.net
+mscs-qa.mckesson.com

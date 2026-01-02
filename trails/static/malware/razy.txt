@@ -1,0 +1,165 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/razy-in-search-of-cryptocurrency/89485/
+
+gigafilesnote.com
+apiscr.com
+happybizpromo.com
+nolkbacteria.info
+2searea0.info
+touristsila1.info
+touristsworl.xyz
+solkoptions.host
+solkoptions.site
+mirnorea11.xyz
+miroreal.xyz
+anhubnew.info
+kidpassave.xyz
+
+# Reference: https://twitter.com/Paladin3161/status/1219260202840576000
+# Reference: https://pastebin.com/WUQYwSuc
+
+leshdksvc.ug
+vcdjhbgerwgdfkn.ru
+
+# Reference: https://blog.talosintelligence.com/2020/02/threat-roundup-0214-0221.html (# Win.Malware.Razy-7588195-0)
+
+dill10n1.pw
+ijust1fy.pw
+j0011y.pw
+j0nhy.pw
+j5cool.xyz
+jo15y.xyz
+jo1b9.co
+jong37.pw
+js0c892.se
+jsbook.info
+jsoc8492.us
+klub046.co
+klub11n.us
+ktfr34ks.pw
+l0vew1n5.xyz
+ligue1.fun
+ligue1.shop
+lip4u5.se
+lip616.co
+sm0osh.xyz
+snd616.co
+son0fman.pw
+
+# Reference: https://blog.talosintelligence.com/2020/04/threat-roundup-0410-0417.html (# Win.Packed.Razy-7660763-0)
+# Reference: https://www.virustotal.com/gui/file/0043c76fcf327b85962b67d87f015663c2651181debaf1cf8b631d1fd7c48e64/detection
+
+apistroppelsees.biz
+jooholadomfing.info
+server-massil.com
+
+# Reference: https://blog.talosintelligence.com/2021/09/threat-roundup-0903-0910.html (# Win.Malware.Razy-9891222-0)
+# Reference: https://www.virustotal.com/gui/file/b8ebbc5c591d08aaad829e3f6aa62072213ed1aa8ffb2538d6ed5ed05db767e2/detection
+
+103.88.33.222:1219
+103.88.33.222:9004
+besthotel360.com
+o4qa2f.cn
+
+# Reference: https://www.virustotal.com/gui/file/4781f071350a3723af72ac390f7633477fdde86127ebe679e89afeb01ea78494/detection
+
+zeybui.net
+/-20NWGB/EVnYC?rndad=
+/EVnYC?rndad=
+
+# Reference: https://www.virustotal.com/gui/file/033cfcb0dcfab09dd991a259a89a1d62361d75555fc3c61b38d6c3d99c534b1b/detection
+
+aporasal.net
+/-20QIXK/EVnYC?rndad=
+
+# Reference: https://www.virustotal.com/gui/file/5cedfb830e09bb204d06dd06ce5c3b5ff786b39ccb594eaf2518ac21236e5e93/detection
+
+regecish.net
+/-36721BWUA/2pRLi?rndad=
+/2pRLi?rndad=
+
+# Reference: https://www.virustotal.com/gui/file/3f6548ce93f6ed46194ce1a112d06469f98e1a6486f87ec97d18e02588e71cd4/detection
+
+onizatop.net
+/-20VHDG/EVnYC?rndad=
+
+# Reference: https://blog.talosintelligence.com/2022/01/threat-roundup-0107-0114.html (# Win.Malware.Razy-9935321-0)
+
+gyaott.top
+fileapi.gyaott.top
+httpapi.gyaott.top
+
+# Reference: https://www.virustotal.com/gui/file/39f2dfc00b1de331c4c0923a1d0f49e70b75669d81646289debd8b12bea10b75/detection
+
+moneytrack.website
+
+# Reference: https://www.virustotal.com/gui/file/8501ecc1e81ea29bd1be1dde7523c712c1a5ce63479346bdd1750a7aa52838a0/detection
+
+195.123.247.21:3001
+
+# Reference: https://gist.github.com/malwareforme/bc7654546ac89eee0f21346f1de95302
+# Reference: https://www.virustotal.com/gui/file/00282e8247a1ce5f89d3be211ad7843a1c99d611dee2a123ad5a15c054dea4bc/detection
+
+bugivugi.org
+grigblog.club
+perclickbest.club
+
+# Reference: https://www.virustotal.com/gui/file/0126aa26e7c694b3a0a60e9acac20070de9a4fd88ae08beb54e5ee87676ac155/detection
+
+siempleplacesame.xyz
+
+# Reference: https://blog.talosintelligence.com/2022/06/threat-roundup-0617-0624.html (# Win.Packed.Razy-9953445-0)
+
+482gaw0sq9.com
+9umr3xr0vf.com
+b8wbmktdse.com
+flc4hf8xai.com
+j6lqyapabz.com
+jmynj5jgr4.com
+knqqiu9lwb.com
+phwpsjm6ji.com
+pjo4lk3lvp.com
+pmsiuv2egu.com
+qa0vhboy2f.com
+qxkzoeroiz.com
+t2p13nfjuf.com
+xcnvk6lg46.com
+xuzdlwf11z.com
+yfpsjoxgiu.com
+
+# Reference: https://www.virustotal.com/gui/file/39554c75d8367a7d9af3931aa95d11b250cc8281ce3d47fd0a3b4347c06b7b41/detection
+# Reference: https://www.virustotal.com/gui/file/7766a035821be76edaa1b2c7d8569a7491740fa0cae5b1f71cc0d5bb29bf598d/detection
+
+45.147.229.70:5566
+
+# Reference: https://www.virustotal.com/gui/file/119cda5413afb3e82e5ccbdab791533297108b7808d3c842437eb1ad091fa3f2/detection
+
+104.244.76.93:1454
+x.l0o01.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/35.205.61.67/relations
+# Reference: https://www.virustotal.com/gui/file/000773145fb3b112f95a0a45d1466ae0d9cf39a2f7cf38de60ee67457213993f/detection
+
+wxanalytics.ru
+74.wxanalytics.ru
+170.74.wxanalytics.ru
+
+# Reference: https://www.virustotal.com/gui/file/9b3703f8805d035d0f2b616db88de100402da1e8798dd66666bb46cf5c1d70a0/detection
+
+6407.merseine.com
+
+# Reference: https://twitter.com/ThreatBookLabs/status/1692527264909426935
+# Reference: https://www.virustotal.com/gui/file/734336b3a4ff51df473754d7060d448c195895718ecd207da2948e354147b33b/detection
+
+6z67ktagcb.com
+jtopi00gue.com
+kdphcunl0n.com
+ryloqqkuai.com
+yz8gflpfb0.com
+zicpopjdjc.com
+
+# Reference: https://www.virustotal.com/gui/file/0ed382465ccc41e05662bdf5a99dba156721d7ec31e80d2b9ed9c2838ae76e88/detection
+
+updatemybox.dnsd.me

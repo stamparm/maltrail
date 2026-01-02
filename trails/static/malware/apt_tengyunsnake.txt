@@ -1,0 +1,56 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt-c-61, apt-q-122
+
+# Reference: https://twitter.com/blackorbird/status/1416008782962855936
+# Reference: https://mp.weixin.qq.com/s/Jpw7TqyPzOy57RAZDQdlWA (Chinese)
+# Reference: https://otx.alienvault.com/pulse/60f1832853d980c86f70a513
+
+a0x.herokuapp.com
+fcdn.pythonanywhere.com
+o-s.herokuapp.com
+p92.herokuapp.com
+sysupdate.pythonanywhere.com
+w0m.herokuapp.com
+
+# Reference: https://twitter.com/s1ckb017/status/1470315624102600712
+# Reference: https://twitter.com/GGGGh0st/status/1470349494323580928
+# Reference: https://twitter.com/k3yp0d/status/1470333776295247872
+# Reference: https://twitter.com/HONKONE_K/status/1470581158635520000
+# Reference: https://mp.weixin.qq.com/s/Jpw7TqyPzOy57RAZDQdlWA (Chinese)
+# Reference: https://www.virustotal.com/gui/file/4ec021cc3dbb2b0de7313e41063026e3ef4777baf4dec2bdad7cd2d515bf0fe2/detection
+# Reference: https://www.virustotal.com/gui/file/2cc0f8a85df2b2b0dd4c6942125bf82e647e9ac7bb91467ac5c480cf5e1dd4ff/detection
+# Reference: https://www.virustotal.com/gui/file/193c921f7ab12c0066014ffad37a98ee57ecd5101dae2ddeb5e39200eb704431/detection
+# Reference: https://www.virustotal.com/gui/file/5e565fe047d24cb879cd051992073bb0e22588543c3511502b0d7745b8c048fd/detection
+
+jl3.000webhostapp.com
+os.herokuapp.com
+p-v.herokuapp.com
+pn0.herokuapp.com
+ps9.000webhostapp.com
+
+# Reference: https://twitter.com/h2jazi/status/1603076130499690498
+# Reference: https://twitter.com/h2jazi/status/1603076133020483584
+# Reference: https://twitter.com/h2jazi/status/1603403975499317250
+# Reference: https://www.virustotal.com/gui/file/dd2937ddf4f01bff1c5c46abef61a762a4e3dfb109d13fd38a98e9a7f82ac5c5/detection
+
+en-db.herokuapp.com
+
+# Reference: https://twitter.com/JVPv5sIM3eFmGyi/status/1603224777044676609
+# Reference: https://www.virustotal.com/gui/file/a7b70acfb198410e39f94c9797241458be53fe965124d38c60a3294d6d84b3b4/detection
+# Reference: https://www.virustotal.com/gui/file/0aeda32f977c98c8160491358491d0ad0898dcaa3366bde60c0a3bf8541e7b3f/detection
+
+en-docs.herokuapp.com
+media.randreports.org
+
+# Reference: https://twitter.com/RexorVc0/status/1631197867476938752
+
+a0w.herokuapp.com
+il1.000webhostapp.com
+
+# Reference: https://mp.weixin.qq.com/s/s740Y3HaXBXkS5RJi9LaHQ
+# Reference: https://otx.alienvault.com/pulse/63ff7b6b6584638eea652256
+
+en-localhost.herokuapp.com
+en-office365updatescente.herokuapp.com

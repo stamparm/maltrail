@@ -1,0 +1,100 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: unc2628, unc2659, .rh94k, hades ransomware
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1331588273643413505
+# Reference: https://twitter.com/JAMESWT_MHT/status/1331599141877805059
+# Reference: https://app.any.run/tasks/056d7a48-4e36-4b7f-a4d0-c895841b66ce/
+# Reference: https://www.virustotal.com/gui/file/6d656f110246990d10fe0b0132704b1323859d4003f2b1d5d03f665c710b8fd3/detection
+# Reference: https://www.virustotal.com/gui/file/afb22b1ff281c085b60052831ead0a0ed300fac0160f87851dacc67d4e158178/detection
+
+securebestapp20.com
+
+# Reference: https://twitter.com/petrovic082/status/1364149992101982209
+# Reference: https://app.any.run/tasks/101a068a-9893-4c8b-95e5-efbb98b9128c/
+# Reference: https://www.virustotal.com/gui/domain/catsdegree.com/detection
+# Reference: https://www.virustotal.com/gui/file/12ee27f56ec8a2a3eb2fe69179be3f7a7193ce2b92963ad33356ed299f7ed975/detection
+
+catsdegree.com
+temisleyes.com
+
+# Reference: https://app.any.run/tasks/230f18f6-ec8c-4654-8d0a-410e1e769b05/
+
+a0525271.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/b6855793aebdd821a7f368585335cb132a043d30cb1f8dccceb5d2127ed4b9a4/detection
+
+baroquetees.com
+rumahsia.com
+
+# Reference: https://www.fireeye.com/blog/threat-research/2021/05/shining-a-light-on-darkside-ransomware-operations.html
+# Reference: https://otx.alienvault.com/pulse/609c0ee81a709f9d805ce108
+
+http://45.77.64.111
+http://173.234.155.208
+104.193.252.197:443
+162.244.81.253:443
+185.180.197.86:443
+athaliaoriginals.com
+ctxinit.azureedge.net
+darksidedxcftmqa.onion
+darksidfqzcuhtk2.onion
+koliz.xyz
+lagrom.com
+los-web.xyz
+sol-doc.xyz
+
+# Reference: https://twitter.com/darktracer_int/status/1394244644150472711
+
+erc4xzvrchka5izw.onion
+
+# Reference: https://securityscorecard.com/blog/new-evidence-supports-assessment-that-darkside-likely-responsible-for-colonial-pipeline-ransomware-attack-others-targeted
+
+159.65.225.72:22
+darksidc3iux462n6yunevoag52ntvwp6wulaz3zirkmh4cnz6hhj7id.onion
+542lsflqr4hgurjx.onion
+Erc4xzvrchka5izw.onion
+Fylszpcqfel7joif.onion
+Gtmx56k4hutn3ikv.onion
+Ixltdyumdlthrtgx.onion
+Ru4rklde4l4sghhf.onion
+hxt254aygrsziejn.onion
+
+# Reference: https://github.com/ti-research-io/ti/blob/main/ioc_extender/BB_Darkside.json
+
+sparkle-dallas.com
+
+# Reference: https://www.virustotal.com/gui/file/b1fec85f2708e55f07e6301f8ac4f61457d8b5706dc72705d89a9001ee90ca5d/detection
+
+xiiideath.com
+
+# Reference: https://tria.ge/220720-n29q4sfad4
+
+khfsk3ffg3av3rha.onion
+
+# Reference: https://tria.ge/220720-n2p2psfac5
+
+m6s6axasulxjkhzh.onion
+
+# Reference: https://tria.ge/220720-q4fl6agbbr
+
+o76s3m7l5ogig4u5.onion
+
+# Reference: https://raw.githubusercontent.com/blackorbird/APT_REPORT/master/APT-hunting/hunting-cobaltstrike-beacons-in-the-dark.pdf
+
+tgbyhnedc.com
+abc.tgbyhnedc.com
+
+# Reference: https://twitter.com/Gi7w0rm/status/1708819610554798353
+# Reference: https://www.virustotal.com/gui/file/4ad5bffd5cbfa20c0b70086d00ada009238c6719103214dc87131ef9ab26c3c1/detection
+
+evilserver.xyz
+
+# Reference: https://www.virustotal.com/gui/file/0153dfca06bfeec8f5d4acc7acc0fc956b207bb477a39f4995fa1373317cb419/detection
+
+dedikus.h19.ru
+
+# Reference: https://www.thedfirspot.com/general-8-1
+
+ixltdyumdlthrtgx.onion

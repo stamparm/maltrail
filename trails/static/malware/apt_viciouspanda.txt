@@ -1,0 +1,94 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: byeby, microcin, mikroceen, vicious panda
+
+# Reference: https://research.checkpoint.com/2020/vicious-panda-the-covid-campaign/
+
+dw.adyboh.com
+wy.adyboh.com
+feb.kkooppt.com
+compdate.my03.com
+jocoly.esvnpe.com
+bmy.hqoohoa.com
+bur.vueleslie.com
+wind.windmilldrops.com
+adyboh.com
+kkooppt.com
+esvnpe.com
+hqoohoa.com
+vueleslie.com
+windmilldrops.com
+
+# Reference: https://twitter.com/Sebdraven/status/1244532660690718722
+# Reference: https://app.any.run/tasks/38c37dfa-b070-4b28-b475-a09763f00d8c/
+
+msdtcupdate.com
+
+# Reference: https://www.welivesecurity.com/2020/05/14/mikroceen-spying-backdoor-high-profile-networks-central-asia/
+# Reference: https://github.com/avast/ioc/tree/master/Microcin
+# Reference: https://github.com/eset/malware-ioc/tree/master/mikroceen/
+# Reference: https://github.com/ti-research-io/ti/blob/main/ioc_extender/ET_APT-C-23_MICROPSIA_Variant.json
+
+612bb.sheetsbrandnewday.com
+9hnvb8917gzr.com
+ans.moutw.com
+app.obokay.com
+bzz.utakatarefrain.com
+future-hope2011.com
+kliju.wulinon.com
+log.bestrongerlouder.com
+nan.thanhale.com
+offcialwrittencomplaint.com
+parked.wulinon.com
+qrot.apjgtipty.com
+runtime.heroisshit.com
+update.heroisshit.com
+yuemt.zzux.com
+apjgtipty.com
+bestrongerlouder.com
+heroisshit.com
+moutw.com
+obokay.com
+sheetsbrandnewday.com
+thanhale.com
+utakatarefrain.com
+wulinon.com
+
+# Reference: https://securelist.com/microcin-is-here/97353/
+# Reference: https://otx.alienvault.com/pulse/5ef2300c6b8792647750e3bf
+
+apps.uzdarakchi.com
+forum.mediaok.info
+forum.uzdarakchi.com
+owa.obokay.com
+mediaok.info
+obokay.com
+uzdarakchi.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1507747753824333826
+# Reference: https://twitter.com/malwrhunterteam/status/1508497950254764033
+# Reference: https://twitter.com/ni_fi_70/status/1508725950829277184
+# Reference: https://www.virustotal.com/gui/file/5e79390f5268043f4dc6aec0206249014038ee8acd001b8a35e141f8fdbce002/detection
+# Reference: https://www.virustotal.com/gui/file/b8841879796c1139202764daf2224c61d7442625e07c9c923b66f2b31bef2226/detection
+
+credibusco.com
+/credibus/aids/designUnmarriedCooker
+/designUnmarriedCooker
+
+# Reference: https://twitter.com/dewan202/status/1244595728175030272
+# Reference: https://www.virustotal.com/gui/ip-address/58.64.209.84/relations
+# Reference: https://www.virustotal.com/gui/file/3ada06dfaa959fce18cd7eb3eb9e967f4645060495355cf0fb3af70469d1a55a/detection
+
+http://58.64.209.84
+58.64.209.84:1080
+58.64.209.84:443
+dnsrequery.com
+googleupdating.net
+systemupdating.com
+cloud.googleupdating.net
+cloud.msseces.com
+cloud.systemupdating.com
+clouds.googleupdating.net
+clouds.osppsvc.com
+ns.dnsrequery.com

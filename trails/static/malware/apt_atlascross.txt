@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://nsfocusglobal.com/warning-newly-discovered-apt-attacker-atlascross-exploits-red-cross-blood-drive-phishing-for-cyberattack/
+# Reference: https://otx.alienvault.com/pulse/6514782fe337d1b070430c99
+# Reference: https://www.virustotal.com/gui/file/380f5069a6d9b4689058ba53876b0571a9f81cf8d1388d71ee555118a0d967c8/detection
+# Reference: https://www.virustotal.com/gui/file/9c2f990f2d23f380f1cf8f83e9e23749f7ef097bda5b530c7d43fbf5feb3ba99/detection
+# Reference: https://www.virustotal.com/gui/file/2ef26042422e2cf48870e6d97921f8d916f6886457d013602623d06906f10fda/detection
+# Reference: https://www.virustotal.com/gui/file/5e914133503e60491b445e5a06f3fa8144463340a3c9dc6d875bbfdcd6ff7f55/detection
+
+activequest.goautodial.com
+chat.thedresscodeapp.com
+crm.cardabel.com
+data.vectorse.com
+engage.adaptqe.com
+ops-ca.mioying.com
+order.staging.photobookworldwide.com
+public.pusulait.com
+search.allaccountingcareers.com
+secure.poliigon.com
+superapi-staging.mlmprotec.com

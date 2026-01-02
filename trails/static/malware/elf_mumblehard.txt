@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/wp-content/uploads/2015/04/mumblehard.pdf
+# Reference: https://github.com/eset/malware-ioc/tree/master/mumblehard
+
+http://194.54.81.163
+194.54.81.163:25
+194.54.81.162:53
+194.54.81.163:54321
+194.54.81.164:25
+advseedpromoan.com
+pratioupstudios.org
+seoratingonlyip.net
+seoratingonlyup.net
+softexp.narod.ru

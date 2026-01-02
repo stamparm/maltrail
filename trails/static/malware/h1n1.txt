@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://tracker.viriback.com/dump.php (# 25-04-2020, H1N1)
+# Reference: https://blogs.cisco.com/security/h1n1-technical-analysis-reveals-new-capabilities
+
+/h1n1/admin.php
+/h1n1/gate.php
+/h1n1/index.php
+/h1n1/login.php

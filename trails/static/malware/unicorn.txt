@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/k3yp0d/status/1843183999617052988
+# Reference: https://securelist.ru/unicorn-data-stealing-scripts/110606/
+# Reference: https://www.virustotal.com/gui/file/79aa0a235f894c82f864c22321c34444de52fd687785a5f001db48f451fea986/detection
+# Reference: https://www.virustotal.com/gui/file/e071e3ec550fde5ff3d5ac5615d2b808d044cfa5efe338bc7e51f33a05ea0928/detection
+
+petition-change.org
+petition-roi.org
+support.petition-change.org
+the-main-father-of-great-democracy.petition-change.org
+yandex-drive.petition-change.org
+z0ke60ai.petition-roi.org

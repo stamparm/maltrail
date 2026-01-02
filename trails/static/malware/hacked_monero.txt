@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/7ab9afbc5f9a1df687558d570192fbfe9e085712657d2cfa5524f2c8caccca31/community
+
+91.210.104.245
+45.9.148.65
+hashmonero.com
+xmrsupport.co
+www.hashmonero.com
+node.xmrsupport.co
+node.hashmonero.com

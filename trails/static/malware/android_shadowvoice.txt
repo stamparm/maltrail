@@ -1,0 +1,76 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ninoseki/status/1156776407852175365
+# Reference: https://www.virustotal.com/gui/file/7866a42e59b40406ae0dd49d32f8968b1294fdc117e9a312f8ca2022d79b0b4c/detection
+
+http://1.164.140.34
+http://154.209.245.177
+http://154.209.245.229
+
+# Reference: https://twitter.com/ninoseki/status/1154517770643447808
+
+http://1.171.37.80
+http://114.43.190.204
+http://118.167.138.177
+http://220.137.206.32
+175.126.168.152:8080
+
+# Reference: https://twitter.com/ninoseki/status/1149555293610577927
+
+http://59.115.58.44
+183.111.122.155:8080
+
+# Reference: https://twitter.com/ninoseki/status/1148849321552404480
+
+http://142.11.194.138
+http://142.11.212.48
+http://142.11.212.49
+http://142.11.212.55
+http://142.11.212.60
+http://142.11.212.61
+http://142.11.212.67
+http://142.11.212.68
+
+# Reference: https://twitter.com/051R15/status/1070504102851895297
+
+http://172.247.55.43
+
+# Reference: https://twitter.com/ninoseki/status/1161798647849209856
+
+http://1.163.43.187
+http://103.126.241.218
+http://118.160.94.222
+http://59.115.60.141
+http://154.209.249.165
+61.43.242.78:8080
+
+# Reference: https://twitter.com/ninoseki/status/1167738104070819840
+# Reference: https://www.virustotal.com/gui/file/faa08e92b3fca55180fc043396f5a3752099ce8e971468b02ce129241121ec48/detection
+
+183.111.122.132:8080
+
+# Reference: https://twitter.com/ninoseki/status/1171554093828984832
+
+http://111.241.162.124
+http://114.45.86.63
+http://118.160.10.8
+http://118.166.113.62
+http://118.168.71.220
+http://61.228.39.17
+
+# Reference: https://twitter.com/ninoseki/status/1203276570636570624
+# Reference: https://www.virustotal.com/gui/ip-address/154.209.236.32/relations
+
+http://1.160.11.174
+http://154.209.236.32
+szwmxb.com
+
+# Reference: https://twitter.com/ninoseki/status/1209819518706413570
+
+http://45.76.160.81
+http://45.77.32.121
+http://63.211.111.56
+64.156.14.183:3010
+owly.space
+rmb520.com

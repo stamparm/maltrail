@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: rocco1337, rocco stealer
+
+# Reference: https://x.com/Fact_Finder03/status/1885655291334672519
+
+http://4.233.144.204
+rocco1337.com
+
+# Reference: https://x.com/Fact_Finder03/status/1911332286550646980
+# Reference: https://app.validin.com/detail?first_seen=2024-04-03&type=raw&find=Rocco1337+Hub#tab=host_pairs (# 2025-04-13)
+
+http://195.85.207.145
+http://4.233.149.35
+rocco1337.site

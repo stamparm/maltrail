@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2018/10/tracking-tick-through-recent-campaigns.html
+
+adc-home.com/28732.html
+oonumaboat.com/cx/index.php

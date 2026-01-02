@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1412822549193502720
+# Reference: https://twitter.com/ReBensk/status/1412828121473032195
+# Reference: https://www.virustotal.com/gui/file/b9bd17f9c43f2c9fb72cedd4332fd42875b2a9b2b15640ccafc8917bfd78ca3a/detection
+
+imaginary-farm.000webhostapp.com

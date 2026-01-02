@@ -1,0 +1,106 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: crypt0l0cker
+
+# Reference: http://www.welivesecurity.com/wp-content/uploads/2014/12/torrent_locker.pdf
+# Reference: http://www.emergingthreats.net/products/etpro-ruleset/daily-ruleset-update-summary/daily-ruleset-update-summary-12232014
+
+allwayshappy.ru
+casinoroyal7.ru
+cryptdomain.dp.ua
+deadwalk32.ru
+doubleclickads.net
+it-newsblog.ru
+js-static.ru
+lagosadventures.com
+lebanonwarrior.ru
+nigerianbrothers.net
+octoberpics.ru
+princeofnigeria.net
+royalgourp.org
+server38.info
+ssl-server24.ru
+tweeterplanet.ru
+tweeter-stat.ru
+updatemyhost.ru
+walkingdead32.ru
+worldnews247.net
+
+# Reference: http://www.welivesecurity.com/wp-content/uploads/2014/12/torrent_locker.pdf
+
+4ptyziqllh5iyhx4.onion
+tisoyhcp2y52ioyk.onion
+nne4b5ujqqedvrkh.onion
+nne4b5ujqqedvrkh.onion
+a5xpevkpcmfmnaew.onion
+3v6e2oe5y5ruimpe.onion
+udm744mfh5wbwxye.onion
+iet7v4dciocgxhdv.onion
+
+# Reference: http://blog.fox-it.com/2014/10/15/torrentlocker-spreading-in-the-netherlands/
+
+postnl-tracktrace.com
+postnl-track.com
+server4love.ru
+octoberpics.ru
+
+# Reference: http://blog.dynamoo.com/2014/12/something-evil-on-4616130024.html
+
+worldstocktrends.net
+trackmepls.ru
+casinoroyal7.ru
+worldnews247.ru
+clubstore29.ru
+yourwebsupport.ru
+countryregion.ru
+chooseyourhost.ru
+
+# Reference: https://ransomwaretracker.abuse.ch/tracker/torrentlocker/  (as seen on 2017-09-06)
+
+baggir.org
+bedrifg.org
+bigdoggi.biz
+birufolen.com
+cerbyk.org
+dirtyslim.org
+dumberg.org
+feellgood.org
+fhgetyh.com
+freemooon.org
+geriky.org
+gfjhfg.com
+ghdeg.com
+hgdre.org
+kinomix.org
+kowoplosezox.com
+nerfetyv.org
+olimpian.org
+oprtiwyx.com
+pakezspohos.org
+peqbkinexyr.org
+redtable.biz
+ropytowero.com
+sawsvore.net
+sfasdik.com
+velajsweg.com
+velodrivve.biz
+verekt.biz
+vitrok.org
+vizkore.biz
+wotreposdo.net
+xefarporove.net
+xxryposdrt.org
+
+# Reference: https://blog.talosintelligence.com/2017/03/crypt0l0cker-torrentlocker-old-dog-new.html
+
+giftbests.com
+
+# Reference: https://www.bleepingcomputer.com/forums/t/574608/crypt0l0cker-support-topic/
+
+tidisow.ru
+lepodick.ru
+
+# Reference: https://app.any.run/tasks/a7be8d93-403e-4a6f-8c5b-713878a8f313/
+
+gojoyme.org

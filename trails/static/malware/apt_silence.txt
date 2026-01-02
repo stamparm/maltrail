@@ -1,0 +1,65 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.group-ib.com/resources/threat-research/silence_2.0.going_global.pdf
+# Reference: https://otx.alienvault.com/pulse/5d5d6e09e5809a8cb83bcea1
+
+bankrebres.ru
+basch.eu
+cardisprom.ru
+counterstat.club
+counterstat.pw
+fpbank.ru
+itablex.com
+mobilecommerzbank.com
+pharmk.group
+zaometallniva.ru
+
+# Reference: https://www.virustotal.com/gui/ip-address/193.232.180.65/relations
+
+1bmank.ru
+1m-lombard.ru
+1m6ank.ru
+1mbabk.ru
+1mbakn.ru
+1mbamk.ru
+1mbanc.ru
+1mbanck.ru
+1mbang.ru
+1mbanj.ru
+1mbank.biz
+1mbank.info
+1mbank.me
+1mbank.net
+1mbank.online
+1mbank.su
+1mbankru.ru
+1mbanl.ru
+1mbnak.ru
+1mbonk.ru
+1mbsnk.ru
+1mbunk.ru
+1mcredit.ru
+1mliked.ru
+1mnank.ru
+1mvank.ru
+1mvklad.ru
+1nnbank.ru
+abp.ru
+maybank.ru
+morefin.ru
+odinmbank.ru
+onembank.ru
+xn--1---7cdbdjx3ajbffshlvpuz.xn--p1ai
+xn--1--8kcadhu0aibfergltoty.xn--p1ai
+xn--1-8sbc1bhi.xn--p1ai
+xn--1-8sbydbel6b.xn--p1ai
+xn--80absjpcg.com
+
+# Reference: https://twitter.com/Bank_Security/status/1148120505838424065
+# Reference: https://www.group-ib.com/media/silence-apt/
+# Reference: https://www.virustotal.com/gui/file/3b84b2948b95c291986b793e1d8e935792c298ee6b5bdd05b4d908738bf40156/detection
+# Reference: https://www.virustotal.com/gui/file/d2134c83bd8fa18306ad6ca0a8fa08471f717ba3a0f81eb06a46ef4890c9cb01/detection
+
+185.20.187.89:443
+http://185.20.187.89

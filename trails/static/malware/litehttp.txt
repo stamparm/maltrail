@@ -1,0 +1,63 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: asurahttp, litehttp
+
+# Reference: https://viriback.com/recent-litehttp-activities-and-iocs/
+
+http://103.194.170.51
+http://172.81.133.27
+http://176.223.131.228
+http://62.77.155.65
+babycute.thats.im
+bananaloop.ru
+k9stock.com
+partnerwithuss.ru
+posalive.su
+razilov06.hldns.ru
+sketchie.ru
+tik-media.info
+topksa.net
+x420.me
+xanull.phy.sx
+yylisah0.beget.tech
+
+# Reference: https://twitter.com/ViriBack/status/983011333506588672
+# Reference: https://pastebin.com/nwWHHFe0
+
+posalive.su
+
+# Reference: https://twitter.com/ViriBack/status/1046928533375856640
+
+areablankserver.tk
+
+# Reference: https://twitter.com/malwrhunterteam/status/1114510622610403328
+
+litehttp.altervista.org
+
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-23, LiteHTTP)
+
+aflamdirectory.com/wp-content/ip/login/
+temp-malware.website
+
+# Reference: https://pastebin.com/Hc73BzJT
+
+http://191.233.19.144
+
+# Reference: https://twitter.com/ViriBack/status/1292268351927062533
+# Reference: https://app.any.run/tasks/b1167180-50f0-44f7-9cd6-48a088272134/
+
+sipecah.com
+
+# Reference: https://www.virustotal.com/gui/file/a2962040f801773fae82967a810ec9bc277fd9ad7d7225a5bee6e963e9d7d5f6/detection
+# Reference: https://www.virustotal.com/gui/file/6e7e5b7d845c68cabb9a68d71157e538f5a98caa0148de5d8d75c748a035e440/detection
+
+linktoyourpanel.com
+
+# Reference: https://www.virustotal.com/gui/file/ecb57d82441acae2cf0a0ba4e9f74daeea1beebf4c5c94084784ff763a0e2896/detection
+
+http://92.63.192.98
+
+# Generic
+
+/bot.php?req=

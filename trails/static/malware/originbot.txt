@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: originbotnet
+
+# Reference: https://www.fortinet.com/blog/threat-research/originbotnet-spreads-via-malicious-word-document
+
+nitrosoftwares.shop
+softwarez.online
+
+# Reference: https://twitter.com/ViriBack/status/1705735976478191712
+# Reference: https://www.virustotal.com/gui/file/31bafec65a924ad459c79bf379f524af75e74efaa98d0cf724469f9cb43b920e/behavior
+
+ltm-canada.com
+turinapparrels.com
+zzlsteel.cc
+
+# Reference: https://twitter.com/Gi7w0rm/status/1706061724099457411
+# Reference: https://www.virustotal.com/gui/file/9bd123cf9a41a9a9fd219fd8fcba7ba20543470d4b5c911ba07489b04fd74428/detection
+
+adobedld.xyz
+productdownload.online
+scandocument.online
+
+# Reference: https://twitter.com/ViriBack/status/1710081396620886458
+# Reference: https://www.virustotal.com/gui/file/fb43a0ac6648f6e5e02832c5d56a5550e98cd3ab1b5d39bdd30d27cdcd31450b/detection
+
+veit-intl.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1737480831176720415
+# Reference: https://www.virustotal.com/gui/file/031e8313a4a7e79b8bbae0059e63968a39e692dad4b10e64ebbab85da0d23f5c/detection
+
+spf-asia.com

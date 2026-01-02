@@ -1,0 +1,79 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: FantasyMW
+
+# Reference: https://twitter.com/noexceptcpp/status/1626531709373104128
+# Reference: https://labs.k7computing.com/index.php/goatrat-attacks-automated-payment-systems/
+# Reference: https://www.virustotal.com/gui/ip-address/200.9.155.188/relations
+# Reference: https://www.virustotal.com/gui/file/45d5b2fa6e5a0674485896769fd10be36a6b8bb6274d3828cf5067e68029f9d8/detection
+
+191.101.131.50:3008
+yakuzacheckers.com
+goatrat.com
+api.goatrat.com
+srv.yakuzacheckers.com
+vnc.goatrat.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1636140226782326784
+# Reference: https://www.virustotal.com/gui/file/de5c7f799b80f0eb54c5397b2ec0ff08d0a9a4a92feaa290287a34241cf9d0f7/detection
+
+aaa0.surge.sh
+
+# Reference: https://www.virustotal.com/gui/domain/theworldisfantasy.online/relations
+# Reference: https://www.virustotal.com/gui/file/6d973486be33192793e3c96510736d6121034330525119985b24b20675d1a28a/detection
+
+theworldisfantasy.online
+api.theworldisfantasy.online
+apks.theworldisfantasy.online
+
+# Reference: https://twitter.com/malwrhunterteam/status/1667193862975021056
+# Reference: https://twitter.com/noexceptcpp/status/1667211273895919616
+# Reference: https://www.virustotal.com/gui/ip-address/194.5.156.138/relations
+# Reference: https://www.virustotal.com/gui/file/35f0347d122d902c79dfdb04605e0def82d37dabe474bcfb252fef86c3ee845e/detection
+
+88remoteservices.com
+headwind-remote.com
+smsstore66.xyz
+smsstore88.xyz
+smsstore99.xyz
+super88.xyz
+superstore77.xyz
+superstore88.xyz
+superstore99.xyz
+travel.smsstore88.xyz
+travel.smsstore99.xyz
+
+# Reference: https://www.virustotal.com/gui/file/47ad88bf98e616d563187b4472e041458743f4a5e6e10259392090a80659548f/detection
+
+apkrajatoto88.com
+gacorrt88.com
+
+# Reference: https://www.virustotal.com/gui/file/f9a23939277d371343966ab1af7609adc58e4e7a74a03572c7737ff098e57d44/detection
+
+robodopix.online
+api.robodopix.online
+apks.robodopix.online
+
+# Reference: https://twitter.com/noexceptcpp/status/1694303799014228161 (# FantasyMW)
+
+j6jvmwqorhq4xpjkcy26d3i4au6pz6nyroqxreefmnl7yxgcruxzkmyd.onion
+
+# Reference: https://twitter.com/noexceptcpp/status/1727487289666703476
+# Reference: https://www.virustotal.com/gui/file/bf7c415a3580713bd0e0827baa578fd048da08eb1de0aa509d224f53ee37baa2/detection
+# Reference: https://www.virustotal.com/gui/file/b2c99c8268764aa12f1a838e784360e48d9e6ad805b2927eec3d128a93ba3bb1/detection
+# Reference: https://www.virustotal.com/gui/file/7270b04b69f575f6c49aa612835057b9498b6bae6fd32fcefd27bbfdc6758cfb/detection
+# Reference: https://www.virustotal.com/gui/file/13a49d3597c5573df41105852a498d2bcc2b78b348b3de1e875ca4d10c231749/detection
+
+criminalmw.fun
+api.criminalmw.fun
+apix.criminalmw.fun
+clientes.criminalmw.fun
+customersapi.criminalmw.fun
+hvnc.criminalmw.fun
+
+# Reference: https://twitter.com/0x6rss/status/1760659083198144735
+
+46.250.224.255:443
+droidweb.net
+vnc.droidweb.net

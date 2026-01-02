@@ -1,0 +1,51 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/akaclandestine/status/1785372719863025801
+# Reference: https://jfrog.com/blog/attacks-on-docker-with-millions-of-malicious-repositories-spread-malware-and-phishing-scams/
+
+blltly.com
+byltly.com
+bytlly.com
+cinurl.com
+failhostingpolp.ru
+fancli.com
+geags.com
+gohhs.com
+gts794.com
+hdvipmovies.com
+hotmovies25.com
+imgfil.com
+jinyurl.com
+ltlly.com
+miimms.com
+picfs.com
+rd.lesac.ru
+shoxet.com
+shurll.com
+soneservice.shop
+ssurll.com
+tinourl.com
+tinurli.com
+tinurll.com
+tiurll.com
+tlniurl.com
+tweeat.com
+urlca.com
+urlcod.com
+urlgoal.com
+urllie.com
+urllio.com
+urloso.com
+urluso.com
+urluss.com
+vittuv.com
+download-click-here-59lrx.blogspot.com
+
+# Reference: https://any.run/cybersecurity-blog/crackedcantil-breakdown/
+# Reference: https://otx.alienvault.com/pulse/65ba54eeaea0fcd931ff3b3b
+
+afashionstudio.com
+airfiltersing.com
+aitmrzn.ru
+ercwwol.ua

@@ -1,0 +1,89 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/h4kb4n/status/1730499474123092033
+# Reference: https://www.liansecurity.com/#/main/news/mlRmJIwB203zX1eeD8-r/detail
+# Reference: https://www.virustotal.com/gui/file/e63b1b0abe42763086d87c3ca1ca8ff16314625a586b8d4d9033ab02e00b0c0b/detection
+# Reference: https://www.virustotal.com/gui/file/53a1fda39458afaf6207336ba58f2dc4c9ac5f3e654c8624e19def31e5bdef50/detection
+# Reference: https://www.virustotal.com/gui/file/4f6d3a26aab7631c4e75ea5c0e326fe3196ae419fcad61f9cb90580f5dd12c47/detection
+# Reference: https://www.virustotal.com/gui/file/121037ba265b20310e871bc804c9c0facb6c3ac05686d95de19c97129bc91716/detection
+
+http://47.57.138.89
+http://47.57.2.128
+http://8.212.47.67
+http://8.212.102.80
+http://8.212.1.70
+http://8.212.101.76
+47.57.138.89:443
+47.57.2.128:443
+8.212.47.67:443
+8.212.102.80:443
+8.212.1.70:443
+8.212.101.76:443
+111.230.69.193:30003
+123.207.46.147:30003
+139.199.224.36:30003
+175.178.152.90:30003
+183.230.11.65:55555
+42.193.237.57:30003
+43.138.166.95:30003
+47.104.243.76:31537
+47.243.20.149:30001
+47.243.54.214:30001
+8.210.234.182:30001
+8.217.20.74:30001
+8.218.52.8:30001
+awwb90.com
+az25ru.com
+bibi115s.com
+bw103hgycgi.com
+bw111uam.com
+bw112uuuuuuu.com
+bw115dsvwerfoijsd.com
+bw121ffu.com
+bw126zzhyyds.com
+bw16wcnmader.com
+bw183khgftdfgh.com
+bw26f.com
+bw26yidingyaotingzhu.com
+bw36a.com
+bw36diannew.com
+bw39top.com
+bw6nmddk.com
+bw6st.com
+bw80houhou.com
+isk5uz.com
+iudjd119.com
+mumrsn8i.com
+sjdnbw81.com
+skmw100.com
+wknbw25.com
+zcimeb5im.com
+126sand.oss-accelerate.aliyuncs.com
+26qewsdz.oss-accelerate.aliyuncs.com
+6fdhgbtreh.oss-accelerate.aliyuncs.com
+6oiue.oss-accelerate.aliyuncs.com
+80xbdfs.oss-accelerate.aliyuncs.com
+abhjbw115jks.oss-accelerate.aliyuncs.com
+axvsag103sdvsbd.oss-accelerate.aliyuncs.com
+bhjasd183.oss-accelerate.aliyuncs.com
+bw1cloudfile1.oss-accelerate.aliyuncs.com
+bw36file.oss-accelerate.aliyuncs.com
+bw39file.oss-accelerate.aliyuncs.com
+bw5file1.oss-cn-hangzhou.aliyuncs.com
+bw89file.oss-accelerate.aliyuncs.com
+cxvsdf121gfhe.oss-accelerate.aliyuncs.com
+ev10mgmt.oss-accelerate.aliyuncs.com
+fdasfewmm26dsafdas.oss-ap-southeast-1.aliyuncs.com
+ff115f.oss-accelerate.aliyuncs.com
+ff119f.oss-accelerate.aliyuncs.com
+file100fg.oss-accelerate.aliyuncs.com
+gg81fnew.oss-accelerate.aliyuncs.com
+if90f.oss-accelerate.aliyuncs.com
+jbsa111.oss-accelerate.aliyuncs.com
+ma36twegt.oss-accelerate.aliyuncs.com
+wb25f.oss-accelerate.aliyuncs.com
+
+# Generic
+
+/andrioddunv.txt

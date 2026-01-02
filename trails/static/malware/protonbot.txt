@@ -1,0 +1,15 @@
+  
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, ProtonBot)
+
+riela.site
+
+# Reference: https://twitter.com/3XS0/status/1217364636217020416
+
+187.ip-54-36-162.eu
+
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-23, ProtonBot)
+
+backend.eastkingz.ru

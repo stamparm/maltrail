@@ -1,0 +1,65 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.jpcert.or.jp/2018/03/malware-tscooki-7aa0.html
+
+jpcerts.jpcertinfo.com
+jpcert.ignorelist.com
+twnicsi.ignorelist.com
+twcertcc.jumpingcrab.com
+okinawas.ssl443.org
+apk36501.flnet.org
+appinfo.fairuse.org
+carcolors.effers.com
+edu.microsoftmse.com
+eoffice.etowns.org
+epayplus.flnet.org
+fatgirls.fatdiary.org
+gethappy.effers.com
+iawntsilk.dnset.com
+inewdays.csproject.org
+ktyguxs.dnset.com
+lang.suroot.com
+langlang.dnset.com
+longdays.csproject.org
+lookatinfo.dnset.com
+newtowns.flnet.org
+ntp.ukrootns1.com
+office.dns04.com
+savecars.dnset.com
+splashed.effers.com
+sslmaker.ssl443.org
+
+# Reference: https://blogs.jpcert.or.jp/ja/2018/10/tscookie-1.html
+
+fashion.androiddatacenter.com 
+mediaplayer.dnset.com
+mediaplayers.ssl443.org
+sakurings.flnet.org
+
+# Reference: https://otx.alienvault.com/pulse/5cefea2ba96ed6c584873f79
+
+cartview.viamisoftware.com
+microsoft.com.appstore.dynamicdns.co.uk
+
+# Reference: https://blogs.jpcert.or.jp/ja/2020/02/elf_tscookie.html
+# Reference: https://otx.alienvault.com/pulse/5e5d73ada7d154fb01a9d2f3
+
+app.dynamicrosoft.com
+home.mwbsys.org
+
+# Reference: https://twitter.com/ESETresearch/status/1237045688023896065
+# Reference: https://www.virustotal.com/gui/file/ffe8d4f87b6e0e9166226ebf4836f50ecf771ced2d9509e572dc8013e359843c/detection
+# Reference: https://www.virustotal.com/gui/file/62840976ab695211447b47ea4555ae665c7039c74a3f2167d660a85283eae86b/detection
+
+cybermon.fortigatecloud.com
+
+# Reference: https://twitter.com/ESETresearch/status/1382054011264700416
+# Reference: https://www.virustotal.com/gui/file/638cfbe609d7f3e88767133be5ea5f9a75f1d703275f38eb9ec2414e179483b9/detection
+# Reference: https://otx.alienvault.com/pulse/6089df8623aedef9273750b5
+
+220.135.71.92:443
+
+# Reference: https://www.virustotal.com/gui/file/06a9c71342eeb14b7e8871f77524e8acc7b86670411b854fa7f6f57c918ffd2b/detection
+
+http://60.244.52.29

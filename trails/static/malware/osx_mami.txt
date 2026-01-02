@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.intego.com/mac-security-blog/ay-mami-new-dns-hijacking-mac-malware-discovered/
+
+squartera.info
+gorensin.info
+honouncil.info
+sincentre.info
+regardens.info
+angeing.info
+definitial.info
+humption.info
+lilovakia.info
+accessful.info
+
+# Reference: https://www.scmagazineuk.com/new-mac-malware-mami-hijacks-dns-connections/article/1473476
+
+82.163.142.137:53
+82.163.143.135:53

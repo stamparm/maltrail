@@ -1,0 +1,350 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: 404 keylogger, snake keylogger, gaboongrabber, vipkeylogger
+
+# Reference: https://habr.com/ru/company/group-ib/blog/477198/ (Russian)
+
+404projects.xyz
+
+# Reference: https://app.any.run/tasks/c87283f6-7087-4ab5-91ac-f8fdfa25ce9e/
+
+srvc13.turhost.com
+
+# Reference: https://app.any.run/tasks/94023cca-f07c-4a5f-8a72-2cc9fc4eb1be/
+
+blackhillls.ddns.net
+
+# Reference: https://twitter.com/wwp96/status/1328308638470066177
+# Reference: https://app.any.run/tasks/c16aff7d-63be-4654-bc27-ae78b489fcee/
+
+167.88.170.103:21
+167.88.170.103:35060
+
+# Reference: https://twitter.com/wwp96/status/1331116035680980992
+# Reference: https://app.any.run/tasks/e3dd7875-4ef2-4f7f-ac5b-8616f3c132c4/
+
+ckfashion.shop
+
+# Reference: https://app.any.run/tasks/13b60c7f-f80e-4a7a-8f21-afd287113465/
+# Reference: https://app.any.run/tasks/4b675b8e-4a84-4d75-a4a1-4dc6868bdc5a/
+
+92.53.96.254:35705
+bitrix370.timeweb.ru
+
+# Reference: https://app.any.run/tasks/40ed1720-a991-4a6a-9e76-25907a359531/
+
+188.225.21.131:35076
+vh340.timeweb.ru
+
+# Reference: https://app.any.run/tasks/824f076f-c5e6-473a-84b6-d114a4837863/
+
+176.57.209.21:59257
+premium34.timeweb.ru
+
+# Reference: https://twitter.com/reecdeep/status/1364226980120465412
+
+itrader-germany.de
+
+# Reference: https://twitter.com/reecdeep/status/1371750624140857345
+
+endovision.xyz
+
+# Reference: https://twitter.com/Racco42/status/1372290134931083266
+# Reference: https://app.any.run/tasks/bb98a4a5-192e-42c3-9fbc-7625dfffd4ff/
+
+imginternational.xyz
+
+# Reference: https://twitter.com/whitehoodie4/status/1374289414935961600
+
+vespang.tk
+
+# Reference: https://twitter.com/ps66uk/status/1381918013214064646
+# Reference: https://tria.ge/210413-s27a2natdx
+
+govidanatur.xyz
+
+# Reference: https://twitter.com/ps66uk/status/1382274063658258440
+# Reference: https://www.virustotal.com/gui/file/92a4c8920eda2528675ed61d4e72b4e2e6f51f6c47aab88581bab36d656a224a/detection
+
+nobetone.xyz
+
+# Reference: https://twitter.com/BushidoToken/status/1387495666184822785
+
+nobettwo.xyz
+
+# Reference: https://gist.github.com/silence-is-best/852a1c7c7dcf29fdc8d5df73433e7676
+# Reference: https://www.virustotal.com/gui/file/a2c1e79d6f5f36ab9af9d623c37dedf201cb3552bade7cfc1f00bcaeaed98d5e/detection
+
+lokalboyz.com
+
+# Reference: https://www.virustotal.com/gui/domain/maisoui.us/relations
+# Reference: https://www.virustotal.com/gui/file/64a17ddefb0368f4512f3d89fabbb0e220f80d2febd28b21fc4262779ceea635/detection
+
+maisoui.us
+
+# Reference: https://www.virustotal.com/gui/domain/1bayer.com/relations
+# Reference: https://www.virustotal.com/gui/file/dd7d3cad1f509caedc2ea7a255a74cdc75498eeca31b67a5fa581ca67ba8b761/detection
+
+1bayer.com
+
+# Reference: https://twitter.com/reecdeep/status/1406925281928134661
+
+iykmoreentrprise.org
+
+# Reference: https://gist.github.com/silence-is-best/ac1440dcf7aec90a53905ae86559e621
+# Reference: https://www.virustotal.com/gui/file/dc5458e66a8c76f55a5f490f5c9d12ea6e92a67c6ed74dbe40ca066a149d1659/detection
+
+cressi.xyz
+
+# Reference: https://app.any.run/tasks/2be51146-6800-4820-a38a-8321bb6b6c5e/
+
+hisensetech.xyz
+
+# Reference: https://gist.github.com/silence-is-best/e2af8aa61000e4b740934331291c619b
+# Reference: https://www.virustotal.com/gui/file/193ac87ce3fbdcbc7def7776cac94b2548c0eabcfa179f701b96f65d9cfe7631/detection
+
+efinancet.shop
+
+# Reference: https://www.virustotal.com/gui/file/413c67ee147430c3d1a39e18601b33b90e3c434db8850949c08e8b1a4fa4f399/detection
+
+krsmakina.com
+
+# Reference: https://www.virustotal.com/gui/file/23cfe2786b8343a225d7d8ca6906c364ab19d6f594c92dfea39c8f2eb26a635f/detection
+
+guanyjfoods.com
+mail.guanyjfoods.com
+
+# Reference: https://www.virustotal.com/gui/file/f861b22de2dce92e689b895e8b862fe51bfab56cf466db8d1ea7513682cd3c36/behavior/VirusTotal%20ZenBox
+
+trietlongvinhvien.info
+
+# Reference: https://twitter.com/James_inthe_box/status/1486356525798998019
+# Reference: https://www.virustotal.com/gui/file/db977a845e1b88d303bf7633ba8153a579e7be33904b0a46fc2cf61ac820801b/detection
+
+http://18.159.59.253
+rfebatics.xyz
+
+# Reference: https://www.virustotal.com/gui/file/f77eb03582184792bb5bb2e7ca6f80de3e31e0ffb4e4084b28999858f1f489b0/detection
+
+http://3.112.243.28
+febbdin.xyz
+
+# Reference: https://www.virustotal.com/gui/file/f4b4716fd756e090bc988dc4ca0ad23bdf22a238c3d1b4a329582fb936e8ee92/detection
+
+febquip.shop
+
+# Reference: https://www.virustotal.com/gui/file/c2672e6fd55b129125a19c7837943c0844c03ec02dcf165af183f9e4df4dccbc/detection
+
+bajoost.xyz
+
+# Reference: https://www.virustotal.com/gui/file/b9a46bd95fc23d278e97b151eecdfb95a0bc7649374a1c30fe6b95b384c7d196/detection
+
+ackuc.icu
+
+# Reference: https://twitter.com/peterkruse/status/1498602381403209730
+
+yikun.cf
+
+# Reference: https://twitter.com/James_inthe_box/status/1507047796121096193
+# Reference: https://app.any.run/tasks/66fcd49d-0527-4f23-a1c1-c72d9ce0ac85/
+
+facts-jo.com
+
+# Reference: https://www.fortinet.com/blog/threat-research/deep-dive-into-a-fresh-variant-of-snake-keylogger-malware
+# Reference: https://otx.alienvault.com/pulse/6185218842a91bb63bda21dc
+# Reference: https://www.virustotal.com/gui/file/0910e1c2d33a73a0e5a7b5e87eaaae42b839de9bb6ab3f42a52cf3c438e1a56f/detection
+
+http://3.64.251.139
+restd.xyz
+
+# Reference: https://www.virustotal.com/gui/file/6aaa23c5aa6f2fb2e99f5ec667194e22c4a9922df0106473d96b1d12fa7a93c5/detection
+
+http://163.123.142.134
+
+# Reference: https://twitter.com/0xToxin/status/1544369084405583873
+
+dragonfruitting.com
+
+# Reference: https://github.com/0xToxin/Malware-IOCs/blob/main/Snake%20Keylogger/Snake%20Keylogger%20-%2013072022
+# Reference: https://www.virustotal.com/gui/file/b629c1f60a745592eee61cad2f7c0acd9fb4e594a67d6c7af2dbc5faeb87abbf/detection
+
+185.244.36.213:21
+185.244.36.213:587
+resultboxx.xyz
+ftp.resultboxx.xyz
+mail.resultboxx.xyz
+
+# Reference: https://twitter.com/pollo290987/status/1565225398857879559
+# Reference: https://www.virustotal.com/gui/file/29824b969da3b9237bf59813a07dea7c3294e2506be355a26e19932a9d8f82d3/detection
+
+injectmmmmme.fra1.digitaloceanspaces.com
+
+# Reference: https://twitter.com/kienbigmummy/status/1578388073422807040
+
+http://185.216.71.120
+/Nwdhlnuy.bmp
+
+# Reference: https://twitter.com/reecdeep/status/1583409946791620608
+
+grupoasei.com
+ftp.grupoasei.com
+mail.grupoasei.com
+mx1.grupoasei.com
+
+# Reference: https://gist.github.com/silence-is-best/213f7b2112a46acd56ceb78bf79286a8
+# Reference: https://www.virustotal.com/gui/file/010287dcbcc3d730f170eb5b0cc06fe5b1c612e15c0228460e534b26a3f4c8dd/detection
+
+http://208.67.105.148
+cp5ua.hyperhost.ua
+
+# Reference: https://twitter.com/osipov_ar/status/1636096845335130115
+# Reference: https://www.virustotal.com/gui/file/1e8a5f0e7ee689b8f452fe93c90173c278a88de1995d866241793b9232d58951/detection
+# Reference: https://www.virustotal.com/gui/file/8fb593875f0bf9a1ecf72114935267caa80e7f2b2a268c3570927e4138070dd0/detection
+
+http://37.139.128.83
+
+# Reference: https://twitter.com/reecdeep/status/1649379258916012032
+
+premium76.web-hosting.com
+
+# Reference: https://twitter.com/Gi7w0rm/status/1706061724099457411
+# Reference: https://www.virustotal.com/gui/file/b84d48bebe60d57c67a020d3e880a7ef138b12bdbad198785e62c952f03d10fc/detection
+# Reference: https://www.virustotal.com/gui/file/647816ec76f04594da29576e94eb3febd405dd027379bc558b20babe65b11712/detection
+
+67.223.118.35:21
+product-secured.com
+ftp.product-secured.com
+server.product-secured.com
+
+# Reference: https://tria.ge/230924-yzl75sba35/behavioral1
+# Reference: https://tria.ge/230924-yzy7psba43/behavioral1
+
+179.43.183.46:21
+179.43.183.46:49564
+179.43.183.46:61104
+179.43.183.46:61857
+179.43.183.46:64572
+
+# Reference: https://www.virustotal.com/gui/file/d14b001c207c2e6ef60e9afd599e8ad815789893ababa09eda19fead65cf2337/detection
+
+http://185.254.37.174
+/droidsnakebase654.txt
+/SNA$$$KELOGGER.vbs
+
+# Reference: https://x.com/LambdaMamba/status/1800453924564181470
+# Reference: https://app.any.run/tasks/65855217-7209-4eae-a572-b030a2305b22/
+# Reference: https://app.validin.com/detail?find=51.38.247.67&type=ip4&ref_id=ecb7b580fb3#tab=resolutions
+# Reference: https://www.virustotal.com/gui/file/0018c0cdaf6f58880005d8df0e7ad30d69f37e8b8dde22ee42d451f4d9a28e66/detection
+
+51.38.247.67:8081
+91.92.253.149:8081
+91.92.255.235:8081
+94.156.65.197:8081
+94.156.68.12:8081
+aborters.duckdns.org
+anotherarmy.dns.army
+varders.kozow.com
+
+# Reference: https://www.virustotal.com/gui/file/88137ef5ca05130558e846da3d480008f2e5488a7543872195f64daa5a04b365/detection
+
+scratchdreams.tk
+
+# Reference: https://x.com/smica83/status/1799528493308326146
+# Reference: https://www.virustotal.com/gui/file/c4420198c5909626c59a7a886d334f9923271d22bda392f8aaf330243a6d2aec/detection
+
+http://103.130.147.85
+
+# Reference: https://x.com/JAMESWT_MHT/status/1817917359681659095
+# Reference: https://www.virustotal.com/gui/file/7855973b58ef009de33b592c971b329ef9b1fdbb4713f018f296b18fa8ef1ce1/detection
+
+zulpine.shop
+
+# Reference: https://x.com/James_inthe_box/status/1821188882672840928
+# Reference: https://www.virustotal.com/gui/file/364e3f7f87ccbc304a6e85871f635059c8f641a3122161c5a56d1ae74a0dd392/detection
+
+http://192.3.176.138
+
+# Reference: https://x.com/r3dbU7z/status/1822608072822358145
+# Reference: https://www.virustotal.com/gui/file/2e8c08abc070d55f30338ad1f69d6f9946fa7d31d069c3b4bc37b97053b569f5/detection
+# Reference: https://www.virustotal.com/gui/file/a50376b1375f041a534a74ea0cecd6429b4e26747059a4a4c72ef91bb04d7080/detection
+
+courtage-psd.com
+investdirectinsurance.com
+malesytisconbox.com
+/assuence/litesolidCha/Atne.op
+/assuence/litesolidCha/DckVak.op
+/assuence/litesolidCha/Ebagelog.bd
+/assuence/litesolidCha/Nede.op
+/assuence/litesolidCha/Victim_SID.bd
+/assuence/litesolidCha/
+/capturing/vestingHa/Hoen.nu
+/capturing/vestingHa/Rea.nu
+/capturing/vestingHa/
+
+# Reference: https://x.com/Unit42_Intel/status/1836057109999358273
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-09-16-IOCs-for-Snake-KeyLogger.txt
+
+208.91.199.223:587
+inhousepick.com
+smtp.inhousepick.com
+
+# Reference: https://www.virustotal.com/gui/file/030fcc7717abd44083b6595ca0a44c0cdbcc152c804e15a65b6d1b606cce3c17/detection
+# Reference: https://www.virustotal.com/gui/file/1553ee99551f86b662b79b94fb8c9f25b3f9d313d18a0eb530f455c01f176dff/detection
+
+185.198.59.26:587
+91.235.128.162:587
+cybertechllc.top
+mail.cybertechllc.top
+
+# Reference: https://x.com/JAMESWT_MHT/status/1847176120359158254
+
+fibraunollc.top
+mail.fibraunollc.top
+
+# Reference: https://x.com/D3LabIT/status/1851600275045257604
+# Reference: https://www.virustotal.com/gui/file/0bf14f54289ebfc62957d04c37844749f673b6fdf6731576f3193b0c44df3dee/detection
+
+185.174.173.11:587
+el-rohim.com
+mail.el-rohim.com
+
+# Reference: https://x.com/JAMESWT_MHT/status/1861047971271352705
+# Reference: https://www.virustotal.com/gui/file/b5d25a995424fd4d4fe5303ca4e90ceeb2794989f58213bda32b29c8716c5cfb/detection
+
+cia.tf
+
+# Reference: https://www.virustotal.com/gui/file/07b6cba9318388db735e8a3c5c1dd86e7d5d303f4b3e09116fe36678e9aaa88c/detection
+
+http://185.82.219.133
+
+# Reference: https://x.com/skocherhan/status/1902701607294468244
+# Reference: https://www.virustotal.com/gui/file/3baacd97c7e1eb077e33c920a93dc7f001268cabef1c63949aed6c2a0f728e54/detection
+
+supamemo.sbs
+mail.supamemo.sbs
+
+# Reference: https://x.com/skocherhan/status/1902878049768513550
+# Reference: https://www.virustotal.com/gui/file/2bbdd359b3fc69ed367f1c1bf8d00d747a1674d54c11758cc0e9a6900980fab1/detection
+
+199.188.200.59:587
+groupscrea.com
+webmail.groupscrea.com
+
+# Reference: https://x.com/skocherhan/status/1912156127065678097
+# Reference: https://www.virustotal.com/gui/file/03de6aad7b89873d4d70027b0f2a55fb65ee82cb6c668206e447ada9a8a5af60/detection
+
+eagerteck.com
+movieaklargida.com
+office.eagerteck.com
+
+# Reference: https://www.virustotal.com/gui/file/13a0b8475d70549e63cc395d03f72c45b685d0a0727b4f98410f3193e93faaf2/detection
+
+209.54.102.152:1111
+
+# Reference: https://x.com/smica83/status/1985756247476351179
+# Reference: https://x.com/skocherhan/status/1985872274134880396
+# Reference: https://www.virustotal.com/gui/file/21ef045bc0f31750070ee021b7e781e3b833d5b08797512e646cb10bdf602045/detection
+
+abnaahassantradingcollc.com
+mail.abnaahassantradingcollc.com

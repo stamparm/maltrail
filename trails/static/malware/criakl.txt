@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Mal~Criakl-A/detailed-analysis.aspx
+
+avtomoika234.cc
+
+# Reference: https://twitter.com/avman1995/status/1077443326478086144
+
+helpxm72.beget.tech

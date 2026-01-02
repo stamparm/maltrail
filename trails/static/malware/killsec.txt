@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: k1llsec ransomware
+
+# Reference: https://x.com/RakeshKrish12/status/1835582643796377691
+# Reference: https://en.fofa.info/result?qbase64=ImtpbGwgc2VjdXJpdHkiICYmIHBvcnQ9IjgwODEi
+# Reference: https://en.fofa.info/result?qbase64=IktJTEwgU0VDVVJJVFkiICYmIHBvcnQ9IjgwODIi
+
+77.91.77.187:8082
+82.147.84.98:8081
+82.147.84.98:8082
+82.147.84.98:8083
+93.123.39.65:8081
+94.156.8.154:8081
+kill432ltnkqvaqntbalnsgojqqs2wz4lhnamrqjg66tq6fuvcztilyd.onion
+ks5424y3wpr5zlug5c7i6svvxweinhbdcqcfnptkfcutrncfazzgz5id.onion

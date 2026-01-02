@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1151264600588898304
+# Reference: https://app.any.run/tasks/35ea78b8-beca-4c01-b116-5a4cbe95ae3a/
+
+http://103.70.137.115
+
+# Reference: https://any.run/report/f7f22bb8626869e6a87f045680b877bb98b5bff14c8c10e734896192a1bccd6b/86ebef01-beec-4d51-809e-96499ad3e093
+# Reference: https://app.any.run/tasks/874eba9f-d537-45a5-a5ba-d4dea9c3112f
+
+http://103.70.137.107
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, Aspire)
+
+http://103.70.136.107
+
+# Generic
+
+/AspirePanel/

@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/1ZRR4H/status/1409523630250266634
+# Reference: https://threatpost.com/brazilian-banking-trojan-communicates-via-microsoft-sql-server/132325/
+# Reference: https://securityintelligence.com/new-banking-trojan-mnubot-discovered-by-ibm-x-force-research/
+
+200.68.38.30:1433
+correo.goreantof.cl

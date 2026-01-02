@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: areses, perf, scano
+
+# Reference: https://www.virustotal.com/gui/file/861f1d674f8a048a58db464348883e384d9f0adb619b4a985b77f2519d09f163/detection
+
+xeseretuo.com
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Worm:Win32/Scano.C@mm&threatId=-2147394397
+# Reference: https://www.virustotal.com/gui/file/15acab77c1b390b119dd0027938230ce9ca98b0ef1531352b08992ad073d267f/detection
+# Reference: https://vms.drweb.com/virus/?i=103884&lng=en
+
+http://207.46.250.119/g/m.php
+http://84.22.161.192/s/f.php
+http://85.249.23.35/m2/g.php
+http://85.249.23.43/0.exe

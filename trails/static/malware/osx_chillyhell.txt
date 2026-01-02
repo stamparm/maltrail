@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/osint_barbie/status/1965775276090232942
+# Reference: https://www.jamf.com/blog/chillyhell-a-modular-macos-backdoor/
+# Reference: https://www.virustotal.com/gui/file/9a2f76fecb290b94b214e8a61d0008690f56e2326901ed7fa67b2f8f035d8953/detection
+
+http://148.72.172.53
+http://93.88.75.252
+148.72.172.53:1001
+148.72.172.53:53
+148.72.172.53:8080
+93.88.75.252:1001
+93.88.75.252:53
+93.88.75.252:8080

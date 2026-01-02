@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/malwrhunterteam/status/1922587000646848586
+# Reference: https://www.seqrite.com/blog/operation-barrelfire-noisybear-kazakhstan-oil-gas-sector/
+# Reference: https://www.virustotal.com/gui/file/da98b0cbcd784879ba38503946898d747ade08ace1d4f38d0fb966703e078bbf/detection
+# Reference: https://www.virustotal.com/gui/file/d48aeb6afcc5a3834b3e4ca9e0672b61f9d945dd41046c9aaf782382a6044f97/detection
+# Reference: https://www.virustotal.com/gui/file/1eecfc1c607be3891e955846c7da70b0109db9f9fdf01de45916d3727bff96e0/detection
+# Reference: https://www.virustotal.com/gui/file/a40e7eb0cb176d2278c4ab02c4657f9034573ac83cee4cde38096028f243119c/detection
+# Reference: https://www.virustotal.com/gui/file/26f009351f4c645ad4df3c1708f74ae2e5f8d22f3b0bbb4568347a2a72651bee/detection
+# Reference: https://www.virustotal.com/gui/file/6d6006eb2baa75712bfe867bf5e4f09288a7d860a4623a4176338993b9ddfb4b/detection
+# Reference: https://www.virustotal.com/gui/file/fb0f7c35a58a02473f26aabea4f682e2e483db84b606db2eca36aa6c7e7d9cf8/detection
+# Reference: https://www.virustotal.com/gui/file/1bfe65acbb9e509f80efcfe04b23daf31381e8b95a98112b81c9a080bdd65a2d/detection
+
+http://178.159.94.8
+178.159.94.8:443
+77.239.125.41:443
+77.239.125.41:8443
+wellfitplan.ru

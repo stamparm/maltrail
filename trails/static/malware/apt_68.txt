@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt-c-68, apt-q-15
+
+# Reference: https://twitter.com/Timele9527
+
+softwarediskservice.com
+star.softwarediskservice.com

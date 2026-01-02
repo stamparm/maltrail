@@ -1,0 +1,44 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: LazyScript
+
+# Reference: https://isc.sans.edu/forums/diary/Malicious+Word+Document+Delivering+an+Octopus+Backdoor/26918/
+# Reference: https://app.any.run/tasks/7353f3a6-ac18-493c-8795-80a655aca736/
+# Reference: https://app.any.run/tasks/2375a880-cd06-4a78-b401-7cac10255dbb/
+# Reference: https://www.hybrid-analysis.com/sample/ab32fed5cdd9fd87f961011bc992f00070b73b6083e1e20e79fb2cc03d062903/5fe1f94b72a08b0abc74ef3e
+# Reference: https://www.virustotal.com/gui/file/3f4ce9fcbe40c1f445aa844e4561346e9ff1cb812a6d8937387a31be7fb88592/detection
+
+18.189.43.84:80
+18.189.43.84:8080
+18.189.43.84:81
+51.103.66.128:8080
+hpsj.firewall-gateway.net
+
+# Reference: https://twitter.com/wwp96/status/1364612616816103425
+
+http://159.89.238.15
+
+# Reference: https://twitter.com/ShadowChasing1/status/1481899660411228160
+# Reference: https://www.virustotal.com/gui/file/a5b35fc5382b05668f3b8a7cdf9a1aa8e331e7beb47778bb721e46a2bac609e8/detection
+
+http://128.199.7.40
+
+# Reference: https://threatfox.abuse.ch/browse/malware/ps1.octopus/
+
+http://162.248.161.252
+http://34.173.57.207
+130.61.242.29:443
+149.81.74.204:8080
+149.81.74.205:8080
+149.81.74.206:8080
+149.81.74.207:8080
+149.81.87.18:8080
+162.248.161.252:443
+164.92.250.55:443
+167.99.117.245:8080
+65.108.17.222:8080
+
+# Generic
+
+/hpjs.php

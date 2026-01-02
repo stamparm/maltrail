@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: prism, waterdrop
+
+# Reference: https://otx.alienvault.com/pulse/60c31c4e4978e9721446c121
+
+457467.com
+rammus.me
+wa1a1.com
+waterdropx.com
+spmood222.mooo.com
+s.rammus.me
+sw.rammus.me
+r.waterdropx.com
+zzz.457467.com

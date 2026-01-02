@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2019/07/08/south-korean-users-backdoor-torrents/
+# Reference: https://otx.alienvault.com/pulse/5d2324dff5731ca4c8fc46aa
+
+bitgamego.com
+helloking.site
+higamebit.com
+jtbcsupport.site
+kingdomain.site

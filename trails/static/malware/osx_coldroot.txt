@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.intego.com/mac-security-blog/osxcoldroot-and-the-rat-invasion/
+# Reference: https://www.virustotal.com/gui/ip-address/45.77.49.118/relations
+
+arinsjhub.info.tm
+45.77.49.118:80

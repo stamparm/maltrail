@@ -1,0 +1,58 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ViriBack/status/1032606530942717957
+
+visitik.stream
+
+# Reference: https://www.netskope.com/blog/analysis-godzilla-botnet-loaders-evasive-techniques
+# Reference: https://www.virustotal.com/#/ip-address/47.91.76.119
+
+btt5sxcx90.com
+hyoeyeep.ws
+jusevengwassresbet.ws
+justjohnwilhertthet.ws
+kruibhez.ws
+rottastics36w.net
+sinmanarattot.ws
+/k/forum.php
+
+# Reference: https://twitter.com/ViriBack/status/1063251319446753280
+
+/kanorgate.php
+/kanorindex.php
+
+# Reference: https://twitter.com/ViriBack/status/1145135557548367872
+
+fdsfddfgdfgdf.ru
+
+# Reference: https://twitter.com/ViriBack/status/1150755391254519813
+# Reference: https://app.any.run/tasks/23b2e36e-6f70-47b6-912a-7a8ecad0dd01/
+
+dfgdfcfxsddf.ru
+dfgdfcfxsddfafg.ru
+ewtfdghd.ru
+fdghdf344.ru
+fdsfsgagdfgdf.ru
+qwerkkc.ru
+/index234index.php
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, Godzilla)
+
+pounds.ngrok.io
+
+# Reference: https://github.com/silence-is-best/c2db#godzilla-loader
+
+filesdb.ru
+
+# Reference: https://app.any.run/tasks/c96cc06a-cd90-4f1a-ba5b-15a1ed44c0be/
+
+crocotan.com
+findidlist.com
+
+# Reference: https://twitter.com/ViriBack/status/1725543759759200692
+
+kfdhsa.ru
+maralskds.ug
+ns1.timecheck.ug
+ns2.timecheck.ug

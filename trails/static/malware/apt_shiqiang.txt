@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/stolen-certificates-shiqiang-gang/
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2014/2014-05-03-stolen-certificates-shiqiang-gang/stolen-certificates-shiqiang-gang.csv
+
+newyorkonlin.com
+tibetcongress.oicp.net

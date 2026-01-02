@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/en/ip-address/23.253.46.64/information/
+# (e.g. http://msdnblog.com/)
+
+23.253.46.64

@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://s.tencent.com/research/report/824.html
+# Reference: https://otx.alienvault.com/pulse/5dad999983a999aa0bf4e0b1
+
+http://110.157.232.117
+3.zhzy999.net
+w.zhzy999.net
+der.kuai-go.com
+fwq.kuai-go.com
+images.kuai-go.com
+korea.kuai-go.com
+sex.kuai-go.com
+update.kuai-go.com
+usa.kuai-go.com
+wx.kuai-go.com

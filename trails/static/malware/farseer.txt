@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://unit42.paloaltonetworks.com/farseer-previously-unknown-malware-family-bolsters-the-chinese-armoury/
+
+cdncool.com 
+dns.cdncool.com 
+outhmail.com 
+up.outhmail.com 
+tcpdo.net 
+sony36.com 
+md.sony36.com 
+newfacebk.com 
+app.newfacebk.com 
+windowsnetwork.org 
+update.newfacebk.com 
+netvovo.windowsnetwork.org 
+honor2020.ga 
+update.tcpdo.net 
+adminsysteminfo.com 
+md5c.net 
+linkdatax.com 
+csip6.biz 
+adminloader.com 
+outhmail.com  
+cdncool.com 
+www3.mefound.com 
+w3.changeip.org 
+www5.zyns.com

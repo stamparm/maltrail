@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: fredy stealer, smd69 stealer
+
+# Reference: https://x.com/Gi7w0rm/status/1842352010969883022
+# Reference: https://www.virustotal.com/gui/file/7cd8a6190b57fa29a3bca92b3e300766cf87bf07fd5036c40e39a0a2540d0fa2/detection
+# Reference: https://www.virustotal.com/gui/file/e3b3a0f44eb44ef701100d3b96fc61e745f415037c452b1ce718b60b95f3c339/detection
+
+5.161.22.78:6969
+85-10-201-145.cprapid.com
+activat.my
+activewin.online
+karibik-swingertreff.de
+mail.karibik-swingertreff.de

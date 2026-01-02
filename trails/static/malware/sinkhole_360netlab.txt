@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: curl -vv
+# "Server: 360Netlab-sinkhole"
+
+47.75.69.19
+47.89.17.225
+47.89.44.247
+123.59.120.219
+123.59.213.72

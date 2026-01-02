@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: utg-q-015, operation run
+
+# Reference: https://x.com/blackorbird/status/1927669064308314381
+# Reference: https://ti.qianxin.com/blog/articles/operation-run-the-cyber-carnival-of-offshore-patriots-en/
+# Reference: https://mp.weixin.qq.com/s/IPzuok7ej_ghTn59R9PRbA
+# Reference: https://otx.alienvault.com/pulse/682d301dfe9ec47fb4c06550
+# Reference: https://app.validin.com/detail?type=dom&find=updategoogls.cc#tab=host_pairs (# 2025-05-28)
+
+194.34.254.219:10404
+194.34.254.219:10410
+209.250.254.130:13389
+209.250.254.130:15672
+209.250.254.130:16379
+biodao.finance
+chormeupdatetool.xyz
+naipump.xyz
+updategoogls.cc
+beta.naipump.xyz
+molecular-mazda-forests-shop.trycloudflare.com
+safe-controls.oss-cn-hongkong.aliyuncs.com
+
+# Generic
+
+/DSfsdasgaa/shell/
+/DSfsdasgaa/

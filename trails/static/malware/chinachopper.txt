@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: china chopper
+
+# Reference: https://blog.talosintelligence.com/2019/08/china-chopper-still-active-9-years-later.html
+# Reference: https://otx.alienvault.com/pulse/5d655ebc59a1b06f8c097c1f
+
+101.78.142.74:8001
+139.180.199.167:1012
+198.13.42.229:8667
+43.245.222.57:8667
+78.155.201.168:8667
+http://107.181.160.197
+http://107.182.28.64
+http://172.96.241.10
+http://185.228.83.51
+http://188.166.74.218
+http://202.144.193.177
+http://45.55.211.79
+
+# Reference: https://businessinsights.bitdefender.com/deep-dive-into-a-corporate-espionage-operation
+# Reference: https://otx.alienvault.com/pulse/6310c8b1ae9f85af2d64d77d
+
+node-sdk-sample-760723cc-b7e7-43ef-9f5b-9eca39acdefe.s3.us-west-1.amazonaws.com
+app.jetboatpilot.com/utils/optimize/ver.ico

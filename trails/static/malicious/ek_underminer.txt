@@ -1,0 +1,82 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/07/exploit-kits-summer-2019-review/
+# Reference: https://otx.alienvault.com/pulse/5d40766ecabf3f345b3811db
+
+http://67.198.185.100
+http://67.198.185.101
+38.75.137.9:9088
+
+# Reference: https://twitter.com/david_jursa/status/1183728660710338561
+
+coolsite.best
+hotsite.best
+
+# Reference: https://otx.alienvault.com/pulse/5da587654157105b0c51beb6
+# Reference: https://pastebin.com/PDbXSYzX
+
+androidosfree.com
+attendantscloud.club
+cjcedu.club
+howtocom.site
+onetouchauthentication.club
+onetouchauthentication.icu
+onetouchauthentication.online
+onetouchauthentication.xyz
+serverssky.club
+shortu.icu
+shortu.live
+sorico.club
+sorico.xyz
+thatvent.org
+themoff.com
+themofft.com
+well-known-services.space
+well-known-services.website
+well-known.online
+well-known.services
+wwwsafefinderformac.com
+
+# Reference: https://twitter.com/tkanalyst/status/1184840339070148609
+
+lookupdns.club
+
+# Reference: https://twitter.com/tkanalyst/status/1210663918953123841
+
+104.37.175.94:443
+
+# Reference: https://twitter.com/david_jursa/status/1223740643912093696
+# Reference: https://app.any.run/tasks/f6e34b80-b1eb-4941-8ca6-7332ac0b07dd/
+
+coolsite.best
+hotsite.best
+
+# Reference: https://twitter.com/adrian__luca/status/1228696452970487811
+# Reference: https://www.virustotal.com/gui/domain/shorico.club/relations
+
+shorico.club
+
+# Reference: https://twitter.com/nao_sec/status/1270205452387663872
+
+2020recommend.club
+
+# Reference: https://twitter.com/david_jursa/status/1326648367049486337
+
+http://213.159.203.207
+
+# Reference: https://twitter.com/MBThreatIntel/status/1451614044176076801
+
+http://169.197.142.162
+169.197.142.162:4433
+jsonpost.xyz
+web.jsonpost.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1464434083639877632
+
+169.197.142.89:14333
+/10aderre3/
+
+# Reference: https://twitter.com/MBThreatIntel/status/1573342157272133632
+
+http://216.250.255.122

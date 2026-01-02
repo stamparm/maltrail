@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://otx.alienvault.com/pulse/5626932167db8c47d3ce1b96/
+# Reference: http://telussecuritylabs.com/threats/show/TSL20151008-01
+
+corpsone.agropecuaria.ws
+mttconstrutora.engenharia.ws
+smartcell.webcindario.com
+gfxcorp.engenharia.ws

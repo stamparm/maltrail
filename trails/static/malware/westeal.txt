@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Commodity RAT, WeControl
+
+# Reference: https://unit42.paloaltonetworks.com/westeal/
+# Reference: https://otx.alienvault.com/pulse/608b31a2e547eec5928d6293
+
+wesupply.io
+wesupply.to

@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.elastic.co/security-labs/declawing-pumakit
+# Reference: https://www.virustotal.com/gui/ip-address/89.23.113.204/relations
+# Reference: https://www.virustotal.com/gui/file/8ad422f5f3d0409747ab1ac6a0919b1fa8d83c3da43564a685ae4044d0a0ea03/detection
+# Reference: https://www.virustotal.com/gui/file/71cc6a6547b5afda1844792ace7d5437d7e8d6db1ba995e1b2fb760699693f24/detection
+# Reference: https://www.virustotal.com/gui/file/30b26707d5fb407ef39ebee37ded7edeea2890fb5ec1ebfa09a3b3edfc80db1f/detection
+
+opsecurity1.art
+rhel.opsecurity1.art
+sec.opsecurity1.art

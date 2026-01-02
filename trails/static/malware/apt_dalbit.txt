@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: m00nlight
+
+# Reference: https://1275.ru/ioc/1401/dalbit-m00nlight-apt-iocs/ (Russian)
+# Reference: https://asec.ahnlab.com/en/47455/
+# Reference: https://otx.alienvault.com/pulse/63ed0da62aae6e8426eeb9ce
+
+103.118.42.208:8080
+175.24.32.228:8888
+45.136.186.175:443
+45.93.28.103:8080
+45.93.31.75:7777
+91.217.139.117:8001
+91.217.139.117:8080
+91.217.139.117:8443
+m00nlight.top
+zxcss.com
+aa.zxcss.com
+ff.m00nlight.top
+fk.m00nlight.top
+mod.m00nlight.top
+sk1.m00nlight.top
+
+# Reference: https://asec.ahnlab.com/ko/56715/
+# Reference: https://www.virustotal.com/gui/file/af1d3ce6dcec8c320f7985f8e073076879c609e908484a162605eed001df7d27/detection
+
+yxavkb.xyz
+lt.yxavkb.xyz

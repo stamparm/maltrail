@@ -1,0 +1,292 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/fumik0_/status/1016767284122214400
+
+cookiesdough.tk
+
+# Reference: https://twitter.com/ViriBack/status/1046896338892406784
+
+very.ruvmp.ru
+/gate/setOnline.php
+
+# Reference: https://twitter.com/fumik0_/status/1050643239273779200
+
+testantik.ml
+
+# Reference: https://twitter.com/James_inthe_box/status/1109835474493829120
+# Reference: https://pastebin.com/tvn8EMyS
+
+search.ac.ug
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, Arkei)
+
+slipcentral.com
+
+# Reference: https://twitter.com/benkow_/status/1055005039733944320
+
+filipmoris.ru.com
+
+# Reference: https://www.virustotal.com/gui/file/3f706cae67af4a80592cb751dc6615d8b094381c6d39a3c2c734b7399c374e07/detection
+
+arkei.foxovsky.ru
+
+# Reference: https://www.virustotal.com/gui/file/0e4ed11a85e1b9f33695d12541f546b832c71466d9028ef1d783bfab3f948901/detection
+
+a0446764.xsph.ru
+
+# Reference: https://app.any.run/tasks/98681d08-941f-4b16-a0bc-263c1d0e55ba/
+# Reference: https://github.com/tjnel/yara_repo/blob/master/trojans/arkei_stealer.yara
+# Reference: https://infosec.cert-pa.it/analyze/536fc78ee97d2eea3a0e4b58364cd957.pdf
+# Reference: https://otx.alienvault.com/indicator/file/d683da1f88fd8aaa0645c95aa1c2396e31f81dc1d0dd529c8d13179d654b9620/
+# Reference: https://any.run/report/ef347bff5f4f139d04a50bc9272323d17714b638e5645047bfa9e0bf90d38635/b85be957-a60f-4b36-812b-009bed2acc57
+# Reference: https://otx.alienvault.com/indicator/file/c06c94d831aa3170ecf8f0fddd33c383696ca2169cad412c77f64848ccf2817b/
+# Reference: https://any.run/report/3895c8d1bc26750d298e9fa09b47642940cba88736cbc2fc3dbb9ad67ee9f1e0/29e69c61-a7d6-41f0-b1ab-5b4757803136
+
+synchronization.ml
+privatlux.pw
+fdsgdsfg543.zzz.com.ua
+kolyanologi.zzz.com.ua
+nagiby.zzz.com.ua
+spawnmas.ru
+
+# Reference: https://www.virustotal.com/gui/file/74e5bf86405ad3d894b95c70d21d75dbde5233967254ec7048ed283f0a719da6/detection
+
+doeros.xyz
+funzel.info
+hqans.com
+nezzzo.com
+poderoa.com
+vromus.com
+vxeudy.com
+
+# Reference: https://twitter.com/maldatabase/status/1388826892246081537
+# Reference: https://otx.alienvault.com/pulse/608e9574fe0220cf9bb407bf/
+
+bestbundledealer.com
+macakslcaq.ug
+malcacnba.ac.ug
+
+# Reference: https://tria.ge/211116-jr5bescgh2
+
+file-file-host4.com
+/tratata.php
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.69.161/relations
+
+host-file-host0.com
+host-file-host6.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/47.74.89.149/detection
+# Reference: https://www.virustotal.com/gui/file/364e6eb302ea9226c69d3efc8485f827e61bab6e2ea34fb85c8a87a604e3ed5c/detection
+
+file-file-host8.com
+host-host-file6.com
+host-host-file8.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/178.218.220.198/relations
+
+file-file-host6.com
+file-host-host6.com
+
+# Reference: https://www.silentpush.com/blog/privacy-tools-not-for-you
+
+coin-coin-coin-2.com
+file-file-file1.com
+file-file-file2.com
+file-file-host4.com
+file-file-host6.com
+file-file-host8.com
+file-host-host0.com
+file-host-host6.com
+host-coin-data-1.com
+host-data-coin-11.com
+host-file-file0.com
+host-file-file4.com
+host-file-host-3.com
+host-file-host0.com
+host-file-host6.com
+host-file-host9.com
+host-host-file6.com
+host-host-file8.com
+host-host-host5.com
+
+# Reference: https://www.virustotal.com/gui/file/9c64e3f0031d56a3def2ca8f059af3c7c8d7a38d09c74e3a8284a9484ec55e59/detection
+
+coin-coin-data-6.com
+data-file-data-7.com
+
+# Reference: https://www.virustotal.com/gui/file/1022aed4c67e1fd0bc605d815bf9152d040a3288e91391f9637cbb55e54f0a03/detection
+
+data-host-coin-8.com
+
+# Reference: https://twitter.com/xuy1202/status/1479098379422793734
+# Reference: https://pastebin.com/58R86i8C
+
+file-coin-data-5.com
+host-file-coin-4.com
+
+# Reference: https://www.virustotal.com/gui/file/469a4633e8a76e67f66ce8917c0797943b383289f1d317c06aa79977d8bfae79/detection
+
+coin-coin-file-9.com
+
+# Reference: https://tria.ge/220110-pt27qseeeq
+
+http://185.7.214.239
+/POeNDXYchB.php
+
+# Reference: https://tria.ge/220103-lnnwdahfan
+
+homesteadr.link
+
+# Reference: https://tria.ge/220119-t22cmabeh7
+
+/7vlcKuayFx.php
+
+# Reference: https://tria.ge/220204-rbkabaahbk
+
+195124.prohoster.biz
+
+# Reference: https://tria.ge/220204-rblhdaahbl
+
+sadasew94okl234.000webhostapp.com
+
+# Reference: https://blogs.blackberry.com/en/2022/02/threat-thursday-arkei-infostealer
+# Reference: https://otx.alienvault.com/pulse/6213a2e1681a9a5b5de9634d
+# Reference: https://otx.alienvault.com/pulse/621cfae42fb5d419780687b5
+
+http://37.252.15.126
+http://85.208.185.13
+coin-file-file-19.com
+googe.link
+saskatche.link
+tuntutul.link
+/dhbuc2mgys.php
+/kyhvowljlf.php
+
+# Reference: https://twitter.com/ViriBack/status/1502469584003215368
+
+http://45.61.137.204
+file-coin-coin-10.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.10.244.53/relations
+
+file-coin-host-12.com
+
+# Reference: https://www.virustotal.com/gui/file/3841c77465ae42152868692241e9fd883a48d1a8a72eadbfb266e9a34eb660a9/detection
+
+data-file-data-18.com
+
+# Reference: https://www.virustotal.com/gui/file/0287ac2500cd06804c3264d535d6c78cf9f3bd8bfb7014a0c4658d60f887ee9b/behavior/Zenbox
+
+data-host-file-16.com
+
+# Reference: https://www.virustotal.com/gui/file/00c750cd38d99194ed9f19540f3a7668a8e88a317694d926a95351db00466121/detection
+
+data-coin-data-13.com
+artiskzsh.com
+authymysexy.info
+eamfighttacticstools.info
+nftmatrixed.info
+
+# Reference: https://www.virustotal.com/gui/file/616cfd724afe8376aae36c9f065ebdf0a17590c0d1b71c95d6b1d960091807a6/detection
+
+host-coin-file-17.com
+
+# Reference: https://www.virustotal.com/gui/file/aa4e3080ea3f2be26633502137be3e95f41ab43d4966fd9201b0b68fb66c7cfe/detection
+
+1landota.click
+janolavave.xyz
+
+# Reference: https://www.virustotal.com/gui/file/1aa2d32ab883de5d4097a6d4fe7718a401f68ce95e0d2aea63212dd905103948/detection
+
+2rundota.click
+
+# Reference: https://twitter.com/l205306/status/1601581548893274112
+
+tradinview.co
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.arkei_stealer/
+
+http://104.244.76.207
+http://116.202.178.78
+http://116.202.183.213
+http://116.202.4.170
+http://135.181.104.248
+http://135.181.96.153
+http://157.90.127.76
+http://159.69.100.194
+http://162.55.179.90
+http://162.55.189.141
+http://167.235.228.217
+http://172.105.111.160
+http://185.234.247.21
+http://185.242.104.143
+http://194.32.78.135
+http://194.4.49.90
+http://195.201.254.191
+http://213.226.114.217
+http://23.88.105.196
+http://23.88.108.1
+http://23.88.111.187
+http://45.11.229.188
+http://45.159.248.173
+http://45.159.248.53
+http://45.61.137.236
+http://45.8.147.224
+http://54.159.203.55
+http://77.91.103.114
+http://77.91.103.222
+http://78.46.254.202
+http://78.47.130.133
+http://79.124.78.101
+http://88.198.122.116
+http://93.174.93.178
+http://94.130.188.83
+http://94.131.97.110
+http://95.216.205.133
+http://95.217.244.218
+http://95.217.245.31
+http://95.217.246.111
+http://95.217.246.212
+http://95.217.246.234
+http://95.217.246.240
+http://95.217.246.94
+159.69.102.194:1080
+162.213.251.134:1118
+198.251.88.22:1080
+49.12.9.140:1080
+12322.kl.com.ua
+a343345.me
+bibil.pavelromaska.ru
+ciaociao.top
+data.topababa.com
+hotticketsale.com
+masdjksajkda.zzz.com.ua
+onenote.com.tr.ht
+s381167.smrtp.ru
+selousgame.com
+themedzone.com
+vstilla44.zzz.com.ua
+wooe.link
+/LBsx06U4hn.php
+/Nihuya.php
+/eBhv4xpn8w.php
+
+# Reference: https://threatfox.abuse.ch/ioc/1213614/
+
+http://91.92.250.149
+
+# Reference: https://www.virustotal.com/gui/file/f0f493386af31b13728fc52b0aa124e57e21ba575bef14742d49d49ac99ab860/detection
+# Reference: https://www.virustotal.com/gui/file/132e2edbf9a97eb30b59d2fa9dde82d8e8d80440e35b23dee73b8df6db748ddc/detection
+
+stealer1.zzz.com.ua
+
+# Reference: https://www.virustotal.com/gui/file/0001d24c788cde6714601d20373dd9d9146de51e7c1c6fc3a0785e5444db6b97/detection
+
+bobmangay.zzz.com.ua
+
+# Generic
+
+/server/grubConfig
+/server/checkingLicense

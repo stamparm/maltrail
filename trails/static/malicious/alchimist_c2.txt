@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2022/10/alchimist-offensive-framework.html
+
+149.28.36.160:443
+149.28.36.160:50423
+149.28.36.160:8443
+149.28.54.212:443
+149.28.54.212:50423
+149.28.54.212:8443
+95.179.246.73:443
+95.179.246.73:50423
+95.179.246.73:8443
+
+# Reference: https://twitter.com/alexey_firsh/status/1582010477902966785
+# Reference: https://twitter.com/alexey_firsh/status/1582033602040430592
+
+45.32.74.229:8443
+
+# Reference: https://twitter.com/IronNetTR/status/1779989608710701261
+
+153.92.1.145:49410

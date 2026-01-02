@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: Cisco-given name for current APT
+
+# Reference: https://twitter.com/HaoZhixiang/status/1704717698280857829
+# Reference: https://www.virustotal.com/gui/domain/karabakhtelekom.com/detection
+
+karabakhtelekom.com
+
+# Reference: https://twitter.com/RexorVc0/status/1735567049747784177
+# Reference: https://mp.weixin.qq.com/s?__biz=MzUyMjk4NzExMA==&mid=2247494512&idx=1&sn=151caeb7b46c3a6a58af714a576a8442&chksm=f9c1d879ceb6516fc6f52a837ad5d8084ab4cc643ea6bbb035e979ba80b5c76bd90ecfa9bb11&scene=178&cur_album_id=1955835290309230595#rd
+# Reference: https://www.virustotal.com/gui/file/60416198c9b2105c9204638fd00e154e2f5c32ba45f5a8ae2671bae565c062e9/detection
+# Reference: https://www.virustotal.com/gui/file/3a679cb98f88d7d6bd84dcfe9717238c08c05942055bdb798103224e7f2f2ca9/detection
+
+139.84.231.199:8080
+193.161.193.99:31570

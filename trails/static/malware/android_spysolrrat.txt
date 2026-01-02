@@ -1,0 +1,357 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: btmob, btmobrat, spysolr
+
+# Reference: https://x.com/malwrhunterteam/status/1844722906342776851
+# Reference: https://www.virustotal.com/gui/ip-address/95.214.235.153/relations
+# Reference: https://www.virustotal.com/gui/file/fd7862f15a800509b22fc6d76869f8fac415068a565f91184948c70d82fa6f94/detection
+# Reference: https://www.virustotal.com/gui/file/35d37c5dd01eb86daa2c7246af7eab5d57c14cbac88426a1b6fd46024147cc16/detection
+
+http://95.214.235.153
+spysolr.com
+spysolr.site
+dasjjdhsa.ddnsking.com
+rabonaspor.zapto.org
+ws.spysolr.com
+/spysolr/private/SpySolr_80541.php
+/spysolr/private/
+/private/SpySolr_80541.php
+/SpySolr_80541.php
+
+# Reference: https://app.validin.com/detail?find=91.230.121.22&type=ip4&ref_id=8bd25805d39#tab=resolutions
+
+shop.serveirc.com
+
+# Reference: https://x.com/malwrhunterteam/status/1912477234410979587
+# Reference: https://www.virustotal.com/gui/file/2f62417d45d086627d7866334eebe4c055f2e40647fbf5f23b6dc8530288e5f6/detection
+# Reference: https://www.virustotal.com/gui/file/6d0b751bd996229cf446c3f04cd5b98f4582581de037464674e3148b2ac4078b/detection
+
+http://212.224.88.213
+212.224.88.213:8080
+yaarsa.com
+/yaarsa/private/yarsap_80541.php
+/private/yarsap_80541.php
+/yarsap_80541.php
+
+# Reference: https://x.com/malwrhunterteam/status/1893375597373497616
+# Reference: https://www.virustotal.com/gui/file/7a2d8fb6c994192427e0ade05cfdf641d4c201ac3bf906e35968ba913482f97f/detection
+
+drw24f61xvhvm.cloudfront.net
+
+# Reference: https://x.com/alberto__segura/status/1907728158616338595
+# Reference: https://www.virustotal.com/gui/file/f4e0c62bce2ad484f42039f23614746032fd88f1319c88e7fa86789da3f271a0/detection
+
+http://195.160.221.203
+195.160.221.203:8080
+venmosupport.live
+
+# Reference: https://x.com/alberto__segura/status/1907396142788166127
+# Reference: https://www.virustotal.com/gui/file/e0c94374706d468a00d294ca14dc9db2a0bdedbe530362632f1833fad4ae0da7/detection
+
+http://79.133.57.141
+79.133.57.141:8080
+e-ifade.xyz
+speedone.lol
+
+# Reference: https://www.virustotal.com/gui/file/eb8be8185170848495c9212510d8b4b7d3a6a5c9567fe71fe0344df41d12d28d/detection
+
+appespiao.cfd
+padariadojoao.shop
+mykurt.zapto.org
+ws.padariadojoao.shop
+
+# Reference: https://app.validin.com/detail?find=Speedone%20Plesk%20Hosting&type=raw&ref_id=325610f67b3#tab=host_pairs (# 2025-04-08)
+
+00firsatkoyak.click
+020majenrdggs.click
+101-selank2ee.click
+11oo11uczs.click
+123gontrsams.click
+223xassda.click
+2847284682732.xyz
+3e5ebakamam.sbs
+3wseads.click
+4xbabalarsanga.click
+523852385235235.xyz
+7sds8dwdw.click
+875c101.click
+9-678-4-76-54-2-1.pro
+99segloqoq.click
+a-101-com-sadece-online-ozel.sa.com
+a-101-com-stanley.sa.com
+a-101-com-tr-harca-harca-bitmez.sa.com
+a-101-com.sa.com
+a-101-harca-bitmez.sa.com
+a-101-harca.sa.com
+a-101-stanley.sa.com
+a-a-a-a-a-a-adfdgd.sbs
+a1-0-0-1-f-i-r-s-a-t.sbs
+a1-1.dw5x5wxwxw.click
+a101-com.shop
+a101-com.store
+a1djaw2ma.click
+a1hepsuczza.store
+a1o1.bayraminiz.click
+a1o1.bayramkapinda.click
+a1o1.byrmfirsatlari.click
+a1o1.plwldxlaxw.click
+a1o1.twxa33wx.click
+ak-dddd-d-d-d-d.sbs
+ak-tfrskmss.sbs
+ak-thessswws.sbs
+ak-thfksmsghs.sbs
+aktarve-burdansorgula.cyou
+aktarve-iletisim-sorgula.cyou
+aldin-aldin-firsatlari.sa.com
+ao1ofkrstsa.click
+basvruziraattbnkkmobillgiris.duckdns.org
+bayram-ozelkaraaca.com
+bayramfirsatiniz.click
+bayramkapinda.click
+bayramozel-karaaca.xyz
+biburadayiz.shop
+bnancesglloblgrs.cloud
+bonudlugunlr.shop
+bu-cuma-a-101-de-aldin-aldin.sa.com
+bzburadayz.shop
+cepte-indirim.sa.com
+d2xs2gg2eaaw.click
+dasgsdfyhetq.click
+dgasdwgastweqa.click
+dgsdhdfjds.click
+dsgdfhdfjde.click
+dsgsdqwetq.click
+dw5x5wxwxw.click
+e-iadebasvuruonline.click
+e-iadebasvuruonlineweb.click
+e-onlineiadebasvuru.click
+elastic-jang.213-209-143-21.plesk.page
+fbdlketgowax.click
+fhdfdfjgd.click
+firsatinkalbi.shop
+firsatlrkaraalca.com
+frs7012.sa.com
+frstlar56912.sa.com
+gaegyequhquqw-ashgwuqgwa.sbs
+gahusuhgwqhuqwi-wfqhuwfquhas.icu
+gasdgsdhsdshda.click
+gasfgugwqfgufas-asfguhqwfas.cfd
+gasfgugwqfgufas-asfguhqwfas.cyou
+gasgufusafuwq-safuhwfqfwq.cyou
+gasgufusafuwq-safuhwfqfwq.sbs
+geri-aktarma-ekrani.my
+geriye-donuk-aktarim-ekrani.cyou
+geriye-donuk-aktarim-sorgy.my
+geriye-donuk-transferler-ekrani.sbs
+geriyedonukaktarimekrani.cfd
+geriyedonukaktarimlar.cyou
+girisonlinewebsayfa.click
+girisweb-onlinebaslangic.click
+gracious-feynman.213-209-143-21.plesk.page
+grsjsgjsgjwqsadsdasda.sbs
+guvenliislemmerkezi.cyou
+harca-harca-bitmez.sa.com
+harcaharcwx.click
+hemenbasvur-zirraattbnkkkciftcii.duckdns.org
+hemenbsvru-zirraatttbnnkkk.duckdns.org
+hemengiris-zirraattbnnnk.duckdns.org
+hepgetalsvrs.click
+holiganbetl088.com
+holliganbet1088.com
+igfuwqgfqwu-safuhgwqufwq.cyou
+ihauqhsqhsqu-uqhhqsuqusq.sbs
+iletisim-sorgulama-ve-aktarim.cfd
+indirim-soleni.sa.com
+is-d0d0-s-s.sbs
+is-d0d0-s-s33.sbs
+is-ddwwsss.sbs
+is-de1frskmps.sbs
+is-derst.sbs
+is-is-is-is-issyonldnr.sbs
+islem-sorgulat-ve-aktar.cyou
+islembasvurugirispageweb.click
+islemgiris-onlinewebpage.cyou
+islemgrisloginweb.click
+islemleriniz-burdan-gerceklestirin.cyou
+islemleriniz-online-olarak-burada.cyou
+izmrkwxdwxw.click
+izypzyy.click
+jca1913cm0r5ovgt.xn--holiganbt1048-bp2g.com
+karaaca-bayramozel.com
+klicaawxd.life
+klicaawxd.store
+kmaphnafiewra.shop
+krdbizcin.com
+llo-sokynslned.sbs
+loginpagegirisweb.click
+mafkdslawws.click
+mail.onlineozel-karaaca.com
+mblgarntiipromosyonn.duckdns.org
+mining.mrbit.ltd
+newlginbnnancetr.xyz
+nisan-ayi-ozel-kampanya.click
+nisan-sokta.com.tr
+nisan-sokta.info.tr
+nisan-sokta.net.tr
+nisan-sokta.org.tr
+ns1.requestverificationform.com
+ns2.requestverificationform.com
+odemeler.work.gd
+onemkasttr.click
+online-sorgu-ekrani.click
+online-yonlendirime-servisi.click
+online-yonlendirimgeriaktarim.cyou
+onlineaktarimvetransferler.cfd
+onlinebasvurhizliguvenli.click
+onlinebasvursistemguvenli.click
+onlinegiriswebislemlerin.click
+onlineherzamankara-caa.com
+onlineozel-karaaca.com
+onlinewbbncaccounts.online
+onlinewebegiris-page.click
+onlinewebgirisiade.click
+onlline-geri-yonlendirim-ekrani.cyou
+playptos.sbs
+plesk.my
+pleskliveblock.click
+plwldxlaxw.click
+ptowoxwx.click
+pxxoxoxoxoox.click
+qwtasdhsdfhjs.click
+ramazan-ozl-karaa-ca.com
+ramazanozlbnanncegrs.space
+revokecash.business
+revokecash.homes
+revokecashh.club
+revokecashh.xyz
+s-0-kssssswwwws.sbs
+seker-kampanyasii.com
+sitemaps.otocd.com
+so-k2dakmfpswws.sbs
+so-kdakmfpswws.sbs
+so-kggg4s.sbs
+sok-dakmpsg.sbs
+sok-fffwwssfs.sbs
+sok-firsatlar-burada.sbs
+sokd-4frskmps.sbs
+sokfirstkm-s.sbs
+sokta-nisangunleri.biz.tr
+sokta-nisangunleri.com.tr
+sokta-nisangunleri.net.tr
+sokta-nisanzamani.info.tr
+sokta-nisanzamani.net.tr
+sokta-nisanzamani.org.tr
+sorgu-islemler-burda.cyou
+sorgu-islemleriniz-kaldigi-yerden-burda.cyou
+ss-s-s-s-s-s-s-s.sbs
+stanley-indirim-kampanyasi.sa.com
+stanley-indirimi.za.com
+stanley-sadeceonlineozel.sa.com
+stupefied-elbakyan.193-200-78-20.plesk.page
+svwind.com
+tasllxwx.click
+terminals.run.place
+termo1o1.click
+tr-bnncsslogin.info
+twxa33wx.click
+txlwldxlwxwx.click
+vakifbnkkkmobillbasvru.duckdns.org
+vakifbnkkkmpnyalar.duckdns.org
+volvol23123ssssd21333.shop
+wildcard.otocd.com
+xn--bizburadayk-8zb.shop
+xn--bz-hepbu-tkbh.shop
+xn--bzburadayz-5ub.shop
+xn--bzburadayz-xubi.shop
+xn--holiganbt1048-bp2g.com
+xn--kampanya-0kb.shop
+xn--kampanya-ykb.shop
+xn--kampanyaburda-ebc.shop
+xwxaxwx.click
+y-y-y-y-y-y-ysswws.sbs
+zamanimiharcadimkalaniyladevam.sbs
+ziraaatbnkkk-hemenbasvurr.duckdns.org
+ziraatbnk-basvuruhemen.duckdns.org
+ziraattbnkk.duckdns.org
+zraatbnkmblefes.duckdns.org
+
+# Reference: https://x.com/malwrhunterteam/status/1915092920090157433
+# Reference: https://www.virustotal.com/gui/file/dc0477d8bb664eee64a754d11698e8bb75001d647446bf0bba4b50d60a03c064/detection
+
+http://78.135.93.123
+78.135.93.123:8080
+
+# Reference: https://x.com/setThreatTitle/status/1921178155676577996
+# Reference: https://x.com/Unit42_Intel/status/1925944984550727717
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-05-21-IOCs-for-BTMOB-RAT-activity.txt
+# Reference: https://cyble.com/blog/btmob-rat-newly-discovered-android-malware/
+# Reference: https://www.linkedin.com/pulse/critical-android-malware-alert-btmobrat-hijacks-accessibility-jkswc/
+# Reference: https://app.validin.com/detail?find=f2b6ff50e6bd9a80496e29374edd0429&type=hash&ref_id=65da602c295#tab=host_pairs (# 2025-05-10)
+# Reference: https://www.virustotal.com/gui/file/5dc96cc17bff061543f6abdb89a784633385769ee44a5a178305be2f87bcd0fc/detection
+# Reference: https://www.virustotal.com/gui/file/03c18eadd89efe3d666d28b005762a4d70df512ab6aaae84de5b687da9970757/detection
+# Reference: https://www.virustotal.com/gui/file/7f1d1f17d4d2e2de2d8ad3e1d5103588a57d6dc9910747ea17a4714f8c75c766/detection
+# Reference: https://www.virustotal.com/gui/file/25cf915fdfe20daf38a068fe03cc0562365582e7dad92affd39c2a1b90877f10/detection
+# Reference: https://www.virustotal.com/gui/file/e0a861342890bf20d5bdd45e10ad3ba651a2864e038b0f9fe58b42fade71ab99/detection
+# Reference: https://www.virustotal.com/gui/file/9b8bb17b4e2fa73ee48704858f8777999000f01e600d10f32e6af5755d3fd992/detection
+# Referecne: https://www.virustotal.com/gui/file/72e0fd372524f5fe4fa57c46ff7e900c8a927c3a3897e98d80b2c1cdbfb2a2ae/detection
+# Reference: https://www.virustotal.com/gui/file/efc62988f761a8ef7f2cbb3d31745a3da576ce2f22ad0c3cf53a5f1cce8e57ab/detection
+# Reference: https://www.virustotal.com/gui/file/4da39142d4213af77ef879ea96f80742098a679192624f1742b16d552bf458cf/detection
+# Reference: https://www.virustotal.com/gui/file/82921ffa2e59f886416814df602206b21ec7b9428f7604e8a109f40d2205c3f5/detection
+# Reference: https://www.virustotal.com/gui/file/fb5727a294de7f5601ae09b4cbe184cfc36efbfca5e7945403383bc65bd18743/detection
+# Reference: https://www.virustotal.com/gui/file/113b87bc89be0088039245af71f61b0b4fb6aea6f06feaf1f6acc3ab5f242e29/detection
+# Reference: https://www.virustotal.com/gui/file/a9f93807bd7c24a77974c3720790d22f9cf0f33297fd6684237cc29c9bf762d8/detection
+
+http://144.172.104.43
+http://154.62.226.217
+http://172.86.67.39
+http://172.86.70.246
+http://206.206.125.203
+http://212.224.88.236
+http://216.238.107.61
+http://77.111.101.185
+144.172.104.43:8080
+154.62.226.217:8080
+172.86.67.39:8080
+172.86.70.246:8080
+206.206.125.203:8080
+212.224.88.236:8080
+216.238.107.61:8080
+77.111.101.185:8080
+brazilmob.com
+spainmob.com
+server.brazilmob.com
+
+# Reference: https://x.com/Merlax_/status/1924600836635640049
+
+http://191.96.79.133
+
+# Reference: https://x.com/Fact_Finder03/status/1954752906999046634
+
+bt-mob.net
+
+# Reference: https://x.com/1ZRR4H/status/1958221187349385543
+# Reference: https://x.com/Merlax_/status/1958236477831156172
+# Reference: https://x.com/johnk3r/status/1958268002744602877
+
+http://45.61.139.108
+aflp-gob-ar.com
+brou.com-uy.click
+com-uy.click
+ebanking.brou.com-uy.click
+ingreso-online.onl
+/yarsap_80541.php
+
+# Reference: https://x.com/Merlax_/status/1976304328756387976
+
+http://191.101.131.165
+http://209.50.227.162
+191.101.131.165:443
+209.50.227.162:8080
+
+# Reference: https://x.com/Merlax_/status/1976304332032168440
+
+http://170.238.45.182
+170.238.45.182:3000
+170.238.45.182:443
+170.238.45.182:8080

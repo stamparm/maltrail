@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/en/eset-research/stealth-falcon-preying-middle-eastern-skies-deadglyph/
+# Reference: https://www.virustotal.com/gui/ip-address/135.125.78.187/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.244.129.61/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.25.50.60/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.14.227.55/relations
+# Reference: https://www.virustotal.com/gui/file/5671b3a89c0e88a9bfb0bd5bc434fa5245578becfdeb284f4796f65eecbd6f15/detection
+
+chessandlinkss.com
+easymathpath.com
+joinushealth.com

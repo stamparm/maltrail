@@ -1,0 +1,52 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/struppigel/status/1955842747396477110
+# Reference: https://www.gdatasoftware.com/blog/2025/08/38247-justaskjacky-ai-trojan-horse-comeback
+# Reference: https://www.virustotal.com/gui/file/8ecd3c8c126be7128bf654456d171284f03e4f212c27e1b33f875b8907a7bc65/detection
+# Reference: https://www.virustotal.com/gui/file/1619bcad3785be31ac2fdee0ab91392d08d9392032246e42673c3cb8964d4cb7/detection
+# Reference: https://www.virustotal.com/gui/file/2cc721b9d15bc691c12caa91db2ea0b93660860a11e4ebcd6be2b69f28219f1b/detection
+# Reference: https://www.virustotal.com/gui/file/8ecd3c8c126be7128bf654456d171284f03e4f212c27e1b33f875b8907a7bc65/detection
+# Reference: https://www.virustotal.com/gui/file/f05855fc1041a19649f2486ceb6a68b259d8969275f8ef455f17207f09be653b/detection
+
+images-searcher.com
+imagelooker.com
+justaskjacky.com
+justaskjackyapp.com
+pix-seek.com
+recipelister.com
+install.justaskjackyapp.com
+
+# Reference: https://x.com/SquiblydooBlog/status/1956307119835406737
+# Reference: https://app.validin.com/detail?find=f5104fd747a24fbf3819&type=hash&ref_id=5bc184289ef#tab=host_pairs (# 2025-08-24)
+
+ckvlhijb4e8g0yatim.com
+ti6z9jifenndi51udt.com
+vs95c0m7c6dnn2yzmm.com
+vtqgo0729ilnmyxs9q.com
+api.ckvlhijb4e8g0yatim.com
+api.ti6z9jifenndi51udt.com
+api.vs95c0m7c6dnn2yzmm.com
+api.vtqgo0729ilnmyxs9q.com
+testbunnyapi.derptest.info
+testbunnyins.derptest.info
+
+# Reference: https://x.com/MrGlaive/status/1958856344364003706
+# Reference: https://www.virustotal.com/gui/file/c10d362378d3f9c3f26389165730a30a1cc299b4e06460460d39ad5213713811/detection
+
+goaskbobby.com
+goaskbobbyapp.com
+wtvu1eqigx75.com
+donwload.goaskbobby.com
+install.goaskbobbyapp.com
+static.goaskbobbyapp.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/18.161.156.59/relations
+
+askbettyhowweb.com
+j6vmldsufhwx8zn69z.com
+modelingmasterclassai.com
+mlz0hrjkzj4w.com
+mzov0vidjojo.com
+api.j6vmldsufhwx8zn69z.com
+install.askbettyhowweb.com

@@ -1,0 +1,45 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: katz stealer
+
+# Reference: https://x.com/solostalking/status/1922941912647922146
+
+katz-stealer.com
+
+# Reference: https://x.com/MalGamy12/status/1925962073504125211
+# Reference: https://www.nextron-systems.com/2025/05/23/katz-stealer-threat-analysis/
+# Reference: https://www.virustotal.com/gui/file/85f2455dfe4edd531a7074bd3ad2b49d065b42e9caa5129a075728961767b6b7/detection
+# Reference: https://www.virustotal.com/gui/file/0ae5909ec67708788039bf92462649c1191315df94778b514037d9a0052410df/detection
+
+185.107.74.40:3131
+31.177.109.39:3131
+katzstealer.com
+twist2katz.com
+pub-ce02802067934e0eb072f69bf6427bf6.r2.dev
+
+# Reference: https://x.com/MalasadaTech/status/1926471487403294805
+# Reference: https://app.any.run/tasks/896696ab-d46a-482f-8bb5-eece4a373be7
+# Reference: https://www.virustotal.com/gui/file/a1d5e2f5a6b47be2607ad836feff83356a9436b23f84b42f1972f7d21c82b7d6/detection
+
+185.107.74.40:27016
+195.182.25.71:423
+
+# Reference: https://x.com/skocherhan/status/1926724427317723327
+# Reference: https://www.virustotal.com/gui/file/925e6375deaa38d978e00a73f9353a9d0df81f023ab85cf9a1dc046e403830a8/detection
+
+zxczxczxczxc.twist2katz.com
+
+# Reference: https://www.sentinelone.com/blog/katz-stealer-powerful-maas-on-the-prowl-for-credentials-and-crypto-assets/
+
+katz-panel.com
+
+# Reference: https://app.validin.com/detail?find=Katz%20Stealer&type=raw&ref_id=8c65b251982#tab=host_pairs (# 2025-07-19)
+
+http://91.239.208.129
+
+# Reference: https://x.com/AUZombie/status/1984560103736115312
+
+1484830d-c3bd-4aec-824c-0cdb3736b783.top
+5ab6117b-d4c1-419b-9ef4-9dcfdd54843a.top
+ab3d56c6-46b2-47bd-812f-be8fc3c06a32.top

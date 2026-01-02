@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/jorgemieres/status/1130938371101089794
+
+u36206.test93w.ru
+
+# Reference: https://twitter.com/SoulRage6/status/1131094456055324680
+
+jucomshop.biz
+
+# Reference: https://twitter.com/SoulRage6/status/1120365084998602752
+
+file-box.ru
+
+# Reference: https://twitter.com/0bfusCat/status/1108035773226459137
+
+besserwissen.biz
+
+# Reference: https://twitter.com/ni_fi_70/status/1103946500625887232
+
+bsd-tools.biz
+
+# Reference: https://twitter.com/s_metanka/status/1155771535631818753
+
+http://185.130.215.114

@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: antarcticaloader
+
+# Reference: https://twitter.com/suyog41/status/1746855106006626600
+# Reference: https://www.virustotal.com/gui/file/0184da37044346dc32c3023b1b0fd98550561324bf89ec2f56af41c248131b3f/detection
+
+pythaxprivate.net
+cauth.pythaxprivate.net
+nodes.pythaxprivate.net
+pv.pythaxprivate.net
+
+# Reference: https://x.com/naumovax/status/1856731672386940983
+# Reference: https://www.virustotal.com/gui/file/09ba8609a22683e410e009800dc3554e101bde9563ea48af252e1442679edf72/detection
+
+http://86.105.252.138

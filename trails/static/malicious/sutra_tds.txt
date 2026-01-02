@@ -1,0 +1,71 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trendmicro.es/media/misc/malware-distribution-tools-research-paper-en.pdf
+# Reference: http://cybercrime-tracker.net/index.php?search=sutra
+# Reference: https://www.virustotal.com/gui/file/c67b167fbefa1ac049f552706b018c71afe792d1afe0ab4f4d3ea8fc51180461/behavior/VirusTotal%20Droidy
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Bckdr-AZV/detailed-analysis.aspx
+# Reference: https://www.malwaredomainlist.com/mdl.php?inactive=on&sort=Description&search=&colsearch=All&ascordesc=DESC&quantity=50&page=1527
+
+24tds.com
+4ucredit.ru
+abrantube.com
+adsgangsta.com
+apptds.com
+arentube.com
+aystaff.com
+beertraffic.biz
+clickstatonlinetreker.com
+deevidos.com
+dinatds.com
+dtr.abrantube.com
+eliottube.com
+felixooriums.net
+fjppppwphhzjhgpr.info
+free.hotloveplanet.com
+getmarketschoice.com
+gmstat550.com
+hasystempro.com
+iprofit.cc
+keepingangeraway.com
+lunotes.com
+megaenot.in
+mytds.info
+newtds.com
+ntlligent.info
+nudistic.com
+olimptds.com
+onotole.abrantube.com
+processingrealise.com
+promobucks008.pro
+reservedir004.ru
+ruut.greensocks.org
+searchmyporn.com
+search-tracker.com
+sextgpgalleriesfree.biz
+shit-around.com
+sobakevich.biz
+structuredds.net
+survicetwoweeks.net
+sutrarita.eu
+tds.tubeadvert.com
+teantube.com
+traff1.com
+trafficworld.biz
+tubeator.com
+tubeella.com
+tubenech.com
+tubetds.com
+tubether.com
+tubeud.com
+vidoexxnx.pro
+whitewidow.ciscofreak.com
+xrass.com
+yatds.com
+zxtds.biz
+
+# Generic
+
+/su/in.cgi
+/sutra/in.cgi
+/tds/in.cgi

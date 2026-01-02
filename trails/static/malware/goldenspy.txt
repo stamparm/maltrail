@@ -1,0 +1,36 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://trustwave.azureedge.net/media/16908/the-golden-tax-department-and-emergence-of-goldenspy-malware.pdf
+# Reference: https://www.virustotal.com/gui/domain/ningzhidata.com/relations
+# Reference: https://www.virustotal.com/gui/ip-address/223.112.21.2/relations
+# Reference: https://www.virustotal.com/gui/ip-address/49.232.156.177/relations
+# Reference: https://www.virustotal.com/gui/file/dca72d5beb70bd3f9a66f0fadd8f909b12f798cdfc551221de2cde2e26c1d4a7/detection
+# Reference: https://www.virustotal.com/gui/file/c7387e5e05f3c282a27e268486f4bf7d6cb6c807a59f650c0f5fd798c5b1cdd6/detection
+
+223.112.21.2:9005
+223.112.21.2:9006
+ningzhidata.com
+
+# Reference: https://medium.com/@dinu135dk/goldenball-goldenspy-v2-0-e7d643aae63c
+# Reference: https://otx.alienvault.com/pulse/5efcf6e7a474863cb3e0e02c
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/goldenspy-chapter-4-goldenhelper-malware-embedded-in-official-golden-tax-software/
+
+axnfw.cn
+tax-assistant.com
+tax-assistant.info
+tax-helper.ltd
+
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/goldenspy-chapter-two-the-uninstaller/
+# Reference: https://otx.alienvault.com/pulse/5efdf978b02962fa06cea81a
+
+223.112.21.2:8090
+
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/goldenspy-chapter-5-multiple-goldenspy-uninstaller-variants-discovered/
+# Reference: https://otx.alienvault.com/pulse/5f3aeb65fc7a7cb0b37b9b28
+
+120.53.238.96:8090
+218.94.149.58:8090
+222.186.130.200:9006
+39.98.110.234:8111
+nbdigit.com

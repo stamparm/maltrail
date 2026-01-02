@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: unit 29155, unit29155
+
+# Reference: https://x.com/Now_on_VT/status/1835602817949524270
+# Reference: https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-249a
+# Reference: https://www.virustotal.com/gui/file/0dd61a16c625c49ffefaf4ce24cabf9a074028a06640d9bbb804f735ff56dfa3/detection
+
+http://185.245.84.227
+185.245.84.227:443
+
+# Reference: https://www.virustotal.com/gui/file/106b59048e0260e608b0f004a38016abcc77f79bef5d29d5c21ec43e13c07154/detection
+
+http://192.227.173.23
+http://45.137.22.118

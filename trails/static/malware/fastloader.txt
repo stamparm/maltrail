@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ViriBack/status/1226184045912055809
+
+panelmilok.online
+
+# Reference: https://twitter.com/ViriBack/status/1228759001258741761
+
+mircocrop.space
+
+# Reference: https://twitter.com/James_inthe_box/status/1229492585774796800
+
+binjorhpil.space
+
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-23, Fastloader)
+
+http://185.125.230.11
+
+# Reference: https://twitter.com/James_inthe_box/status/1232048139969781760
+
+http://31.42.188.22

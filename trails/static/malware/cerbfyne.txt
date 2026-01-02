@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cerbfyne stealer
+
+# Reference: https://x.com/suyog41/status/1861369532750909873
+# Reference: https://www.virustotal.com/gui/file/f9c3e203ceacffc76e52ef953c2a652f2bfad1c33698fa949e04e3b0d2fcaabf/detection
+
+tundara.dev
+b.tundara.dev
+c.tundara.dev
+w.tundara.dev

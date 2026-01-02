@@ -1,0 +1,142 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://news.sophos.com/en-us/2020/08/25/lemon_duck-cryptominer-targets-cloud-apps-linux/
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/Trojan-LDMiner.csv
+# Reference: https://blog.talosintelligence.com/2020/10/lemon-duck-brings-cryptocurrency-miners.html
+# Reference: https://otx.alienvault.com/pulse/5f85cce401067cfef71f580b
+# Reference: https://app.any.run/tasks/5984f91c-c654-4dd6-a937-85a160678934/
+
+bddp.net
+d.ackng.com
+info.ackng.com
+info.amynx.com
+info.zz3r0.com
+jdjdcjq.top
+lplp.ackng.com
+p.awcna.com
+p.b69kq.com
+p.k3qh4.com
+t.amynx.com
+t.jdjdcjq.top
+t.tr2q.com
+t.zer2.com
+t.zer9g.com
+t.zz3r0.com 
+w.zz3r0.com
+
+# Reference: https://twitter.com/craiu/status/1370331555575574528
+# Reference: https://twitter.com/craiu/status/1370373495176192000
+
+cdn.chatcdn.net
+p.estonine.com
+
+# Reference: https://twitter.com/smii_mondher/status/1372814578036379651
+
+down.sqlnetcat.com
+t.netcatkit.com
+t.sqlnetcat.com
+
+# Reference: https://blog.talosintelligence.com/2021/05/lemon-duck-spreads-wings.html
+
+t.bb3u9.com
+t.hwqloan.com
+d.hwqloan.com
+t.ouler.cc
+ps2.jusanrihua.com
+aeon-pool.sqlnetcat.com
+apis.890.la
+wakuang.eatuo.com
+dqIUHfNYL.kr
+vTr1RG2d9jQ.jp
+f56Ov2bn.cn
+zd0OVCFb.jp
+eEy8QwB.jp
+eiv0VGAD.cn
+XnxA8pv.jp
+aV4Rq7lNZ.kr
+EMYDH4vzVK.cn
+QlhcXbC.kr
+RuesiAlJTCg.kr
+Mua1s5tV.kr
+CUQmXrN2Ac.jp
+d2btrgUkxO.jp
+gktTpF.cn
+ikKGVEgplC.kr
+9o6XVWm.kr
+g9Ve5b6T4.cn
+7M03nX.jp
+
+# Reference: https://otx.alienvault.com/pulse/609c462f9597c178baaed88d
+
+api.890.la
+cs2.sqlnetcat.com
+ps2.hwqloan.com
+vhosts.hwqloan.com
+
+# Reference: https://www.microsoft.com/security/blog/2021/07/22/when-coin-miners-evolve-part-1-exposing-lemonduck-and-lemoncat-modern-mining-malware-infrastructure/
+# Reference: https://github.com/craiu/iocs/blob/main/lemonduck/hashes.txt
+# Reference: https://otx.alienvault.com/pulse/610151adc4b4722cd17e9a3b
+
+js88.ag
+amynx.com
+b69kq.com
+bb3u9.com
+cdnimages.xyz
+hwqloan.com
+netcatkit.com
+pp6r1.com
+sqlnetcat.com
+zer9g.com
+zz3r0.com
+
+# Reference: https://twitter.com/Max_Mal_/status/1461489065904283653
+
+v.bddp.net
+
+# Reference: https://twitter.com/Max_Mal_/status/1471939090555748365
+
+ss700.co
+t.ss700.co
+
+# Reference: https://www.virustotal.com/gui/file/76da22fdf93798c12e8bb063d2508697db805bfad0e7bac56c15a6ed6af7918d/detection
+
+209.141.42.32:6363
+
+# Reference: https://www.antiy.cn/research/notice&report/research_report/20230310.html
+# Reference: https://otx.alienvault.com/pulse/64154c3a55623201002a8caa
+
+http://120.52.51.13
+http://172.104.73.9
+http://172.105.204.237
+http://216.250.99.49
+172.105.204.237:443
+216.250.99.49:443
+ppabbny.com
+wbeahh.com
+d.ttr3p.com
+dl.hago.net
+down.bddp.net
+i.hago.net
+ii.hago.net
+info.hago.ne
+log.bddp.net
+loop.abbbny.com
+loop2.hago.net
+lplp1.ackng.net
+oop.abbbny.com
+oop.hago.net
+oop2.hago.net
+update.ackng.com
+pull.update.ackng.com
+t.ackng.com
+update.bddp.net
+
+# Generic
+
+/kr.bin
+/m6.bin
+/m6g.bin
+/nvd.zip
+/if_mail.bin
+/xr.zip

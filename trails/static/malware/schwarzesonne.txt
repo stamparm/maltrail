@@ -1,0 +1,69 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: schwarzesonne, talsab
+
+# Reference: https://www.virustotal.com/gui/file/9468b06e5835941dbb2a9a748285c914983e2cc0d6e2cb915455a70c79a1e7e8/detection
+
+216.250.120.222:6622
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Backdoor:Win32/Talsab.C
+
+serkan0132.zapto.org
+
+# Reference: https://www.virustotal.com/gui/file/f28dfb8651047f59010ae22c420f9532d9c4d2a82ef2ff1e9e0b6c8003011892/detection
+
+serkan0132.zapto.org.ovh.net
+
+# Reference: https://www.virustotal.com/gui/file/bd90af7845be45553583a60ab5db24a2cda624aca16365c59e40bf4c240e54ca/detection
+
+78.159.131.80:1234
+
+# Reference: https://www.virustotal.com/gui/file/50d14ae929d861e6b7d613ca95c017af0ebca7b6715b443239d7632b2954c70b/detection
+
+93.190.51.47:1665
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1262721959768489992
+# Reference: https://app.any.run/tasks/6d04fc5b-085f-46e0-ab3a-02f400ea78dd/
+
+79.134.225.86:2017
+
+# Reference: https://www.virustotal.com/gui/file/3c47797426208cc0db694778554e887b550b3e85ea6e5dd96242c46d4d5e942c/detection
+
+82.227.27.166:1337
+ratolga.duckdns.org
+
+# Reference: https://twitter.com/killamjr/status/1291487929794269186
+# Reference: https://app.any.run/tasks/aaf96798-0514-44c7-8caf-8d22fa625b92/
+
+172.245.157.103:6564
+
+# Reference: https://www.virustotal.com/gui/file/caada025b798ce92eac45a05f2a880e3d2c168f88a39af68f1168061a6755f42/detection
+
+52.79.196.189:6622
+mscht.myq-see.com
+
+# Reference: https://www.virustotal.com/gui/file/40c07c91c650c71a6292ba9e1e0d7535bacfdf0f4b7fe91446a3fdcbfab6e7a0/detection
+
+snowrage.no-ip.biz
+snowrage.no-ip.biz.ovh.net
+
+# Reference: https://www.virustotal.com/gui/file/ec836a95a5a7946c047f52c804a8433886ce8d58d1aaf11d62b19ba39f507bb1/detection
+
+piskoloq.no-ip.biz
+piskoloq.no-ip.biz.ovh.net
+
+# Reference: https://www.virustotal.com/gui/file/cc0b3ad06cb4fd05c07943e3dd9958115613cb32a3f947eb5103aac2b1c5f60d/detection
+# Reference: https://www.virustotal.com/gui/file/ea55d8070281c26f18c0add2224a1ee55ce93f34bb7b07368f0ec631f1e9000b/detection
+
+darksnake.org
+gutegute.no-ip.biz
+subutex.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/d9c3ecc2211626669e6a64f867829b42f059f07f4f2eade2df0d8538973c862c/detection
+
+176.90.209.182:1414
+
+# Reference: https://www.virustotal.com/gui/file/0b30ce05a8283cff7b7467755302bc18e71e4fe7dba7fe593aebd1b7d7dd26ca/detection
+
+mydak88.dynnamn.ru

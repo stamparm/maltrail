@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ViriBack/status/1693239576611959168
+# Reference: https://tria.ge/230820-pck7wsfe29/behavioral1
+# Reference: https://www.virustotal.com/gui/file/13cfb4fb95ffa90509a63b39f2f15a00c802cbeb4164c487e40f8dfb5c892d43/detection
+
+caspersecurity.xyz
+panel.caspersecurity.xyz
+tools.caspersecurity.xyz

@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.lgoogloader/
+# Reference: https://app.any.run/tasks/698f65e2-2af2-4969-8d52-f388744af33b/
+
+http://85.217.144.143
+foryourbar.org
+galandskiyher1.com
+galandskiyher2.com
+gejevesd.beget.tech
+kyliansuperm92139124.shop
+prejetcloud.com
+resellcraft.com
+smallfishes.net
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.customerloader/
+
+http://5.42.94.169
+kyliansuperm92139124.sbs
+kyliansuperm92139124.world
+
+# Reference: https://twitter.com/James_inthe_box/status/1695083980410982598
+# Reference: https://app.any.run/tasks/c36701a1-632b-484b-ae45-b9bc65b5a902/
+
+http://5.42.64.2
+
+# Reference: https://www.virustotal.com/gui/file/907ed7e8aa2058d9e4509c779c9525356965992271ade6991af8bd4bbcdee260/detection
+
+preconcert.pw
+
+# Generic
+
+/files/1un.config.CfgEncFile
+/files/2UN.config.CfgEncFile
+/1un.config.CfgEncFile
+/2UN.config.CfgEncFile

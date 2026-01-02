@@ -1,0 +1,81 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/blog/research/64599/shylockcaphaw-malware-trojan-the-overview/
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2011-092916-1617-99&tabid=2
+
+brainsphere.cc
+commonworldme.cc
+extensadv.cc
+gigacat.cc
+nw-serv.cc
+online-upd.at
+somesystems.cc
+stat-servise.cc
+str-main.su
+topbeat.cc
+www-protection.su
+
+# Reference: https://www.threatcrowd.org/listMalware.php?antivirus=Backdoor.Win32.Caphaw
+
+forces.ely6ejym7d.ru
+shenguimei.com
+cq3426.3322.org
+forces.sweetgal.ru
+damawang.wicp.net
+edal.cc
+sted.cc
+ambi.cc
+pare.cc
+cude.cc
+dvo.cc
+
+# Reference: https://www.virustotal.com/gui/file/71946da89e7bddb24b8e143215fe2031f9f1722c67581f25b9d85d62e3f25594/detection
+
+jub.cc
+ioh.cc
+sge.su
+
+# Reference: https://www.virustotal.com/gui/ip-address/204.95.99.251/relations
+
+abp.cc
+acow.cc
+agra.cc
+aingo.cc
+ajo.cc
+akf.cc
+amia.cc
+cene.cc
+ckr.cc
+coob.cc
+drg.cc
+duti.cc
+dza.cc
+eewuiwiu.cc
+elg.cc
+enp.cc
+eux.cc
+eym.cc
+gdm.cc
+gmz.cc
+guodeira.cc
+gva.cc
+ioh.cc
+jub.cc
+kico.cc
+kre.cc
+lavo.cc
+merand.cc
+mwr.cc
+nafe.cc
+nel.cc
+nmbc.cc
+orx.cc
+pmr.cc
+rgf.cc
+rwn.cc
+soks.cc
+solt.cc
+sorg.cc
+tohk5ja.cc
+vbp.cc

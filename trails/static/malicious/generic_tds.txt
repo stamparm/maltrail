@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-16-v10839/2363
+# Reference: https://www.virustotal.com/gui/file/f35e9dd4f358b5cdb53eaff4d8840d99501c5d4e5348c016f16a2d28cd932622/detection
+# Reference: https://www.virustotal.com/gui/file/f08ae75829343c2e68d8b25077b49144e11dd819f87e2caf390bcfb3df9596b1/detection
+# Reference: https://www.virustotal.com/gui/file/77f69e4325fa7c0facb40242521799a29589e7e3eb6a391c2777c4445f7286a5/detection
+# Reference: https://www.virustotal.com/gui/file/1062ecc8e9c4381c2feed6943baed9e0313e2b072cc62cac88b35d1f5d4af0d9/detection
+
+massearchtraffic.top
+cdn1.massearchtraffic.top
+cdn2.massearchtraffic.top
+cdn3.massearchtraffic.top
+cdn5.massearchtraffic.top
+kolobsgw.pages.dev
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-21-v10864/2466
+
+allcareservicesga.com
+foxroofinginc.com

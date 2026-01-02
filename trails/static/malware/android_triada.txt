@@ -1,0 +1,244 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/attack-on-zygote-a-new-twist-in-the-evolution-of-mobile-threats/74032/
+
+bridgeph2.zgxuanhao.com
+bridgeph2.zgxuanhao.com
+bridgeph3.zgxuanhao.com
+bridgeph3.zgxuanhao.com
+bridgeph4.zgxuanhao.com
+bridgeph2.viewvogue.com
+bridgeph3.viewvogue.com
+bridgeph3.viewvogue.com
+bridgeph4.viewvogue.com
+bridgecr1.tailebaby.com
+bridgecr2.tailebaby.com
+bridgecr3.tailebaby.com
+bridgecr4.tailebaby.com
+bridgecr1.hanltlaw.com
+bridgecr2.hanltlaw.com
+bridgecr3.hanltlaw.com
+bridgecr4.hanltlaw.com
+
+# Reference: https://www.virustotal.com/gui/file/7487d1365ad9c93e0d3a19755ce976d6a50f24f45f08ddae96a549ec8102e865/detection
+# Reference: https://research.checkpoint.com/2020/enter-wapdropper-subscribe-users-to-premium-services-by-telecom-companies/
+# Reference: https://www.virustotal.com/gui/domain/cooktracking.com/detection
+# Reference: https://www.virustotal.com/gui/domain/facebook1mob.com/detection
+
+http://13.229.16.115
+ks7br7.3q03on.com
+cooktracking.com
+facebook1mob.com
+
+# Reference: https://www.virustotal.com/gui/file/1d50b1e05dc2a357316738a731786f2095776eca8c8031be68f7191ff65174ad/detection
+
+13.228.232.113:8081
+13.229.16.115:8081
+18.140.39.211:8081
+koapkmobi.com
+okyesmobi.com
+
+# Reference: https://www.virustotal.com/gui/file/b9eda09f2954755082f62e2d7c443552abbedd27a0f35d5054a896b6b20f9c1d/detection
+# Reference: https://www.virustotal.com/gui/file/7487d1365ad9c93e0d3a19755ce976d6a50f24f45f08ddae96a549ec8102e865/detection
+
+http://104.200.19.80
+http://104.237.159.24
+http://45.79.108.241
+http://66.175.218.92
+/admin201506/uploadApkFile/
+
+# Reference: https://www.virustotal.com/gui/file/7487d1365ad9c93e0d3a19755ce976d6a50f24f45f08ddae96a549ec8102e865/detection
+
+ykbh.k818ax.com
+
+# Reference: https://www.virustotal.com/gui/file/4d7b0bf5fc807c595cf2d6f66616cd7666c9df1705c86245ab1d39cdd9292ca2/detection
+# Reference: https://www.virustotal.com/gui/file/6ab4ec24b302262a2080ceeb4dc3ccbfd126da5f74fa00d0c4d6987cd89f387e/detection
+
+104.31.71.166:8082
+112.124.34.197:8083
+112.124.34.197:8086
+szmm889.com
+
+# Reference: https://www.virustotal.com/gui/file/73e767a236bfaa30555f7bd87cee34fffd8655a3f8143e19930d13f0d66e3399/detection
+
+http://39.108.217.60
+http://39.108.61.29
+117.135.144.63:8081
+121.40.109.196:8088
+139.129.132.111:8001
+/channel/paymentHandle.action?requestId=
+
+# Reference: https://twitter.com/bl4ckh0l3z/status/1381230619573772291
+# Reference: https://www.virustotal.com/gui/file/48df7e81fdf467ead04c190ff14b80b57715e6cec228190ddf2ebad5b165e5fa/detection
+
+sdk.caymancloud.org
+sdk.tarrdigrade.net
+
+# Reference: https://www.virustotal.com/gui/file/356bfe27e9aef54f73491085fac97e0ee57b884238349cc2ec9d50687aeb96a5/detection
+
+http://118.89.213.101
+http://119.29.74.131
+
+# Reference: https://www.virustotal.com/gui/file/0826f6f8046c7b256280c20c742db3abeb9db35ad02e0360d32970012ff371aa/detection
+
+ws.addlions.com
+/getSHDisList?imei=
+
+# Reference: https://securelist.com/triada-trojan-in-whatsapp-mod/103679/
+# Reference: https://otx.alienvault.com/pulse/612605554a4b91207bd0a6ae
+
+c8xwor.com
+dgmxn.c8xwor.com
+t1k22.c8xwor.com
+
+# Reference: https://www.virustotal.com/gui/file/0000f195ca3a1f2f67e34b1773deb311b2006a19e2153f7459e8cc97728ed569/detection
+
+112.74.111.42:8000
+112.74.111.56:9039
+116.62.181.149:8088
+120.55.89.238:8977
+121.40.109.196:8088
+121.42.157.151:8080
+211.149.191.196:3002
+211.149.203.146:3002
+
+# Reference: https://www.virustotal.com/gui/file/0000549493ab0d135020eee2f59115e2e814d9738ec6eb80b9a3ffaa467b7db6/detection
+
+116.62.181.149:8080
+209.99.40.222:8080
+209.99.40.223:8080
+
+# Reference: https://twitter.com/_CPResearch_/status/1592871876296314880
+
+8fgd4.com
+ofgyz.com
+s0ve7.com
+00p9l.ofgyz.com
+6bqky.8fgd4.com
+ddeur.s0ve7.com
+p7819.ofgyz.com
+qi821.8fgd4.com
+quqaf.s0ve7.com
+
+# Reference: https://www.virustotal.com/gui/file/f41abc5c2d12c01e1a46af175fba5250922e29fae66ed1cb3db8a69029200fd4/detection
+
+45.33.48.159:9898
+
+# Reference: https://www.virustotal.com/gui/file/8ff8df72eb043a681d1aad9a3c15bfccdb352b6c88a2b7233f25c97bc104427e/detection
+
+http://192.155.87.37
+http://3.0.183.141
+161.117.177.93:12038
+zxczj.top
+5.zxczj.top
+7.zxczj.top
+/thirdsdk/flowcashpack/
+
+# Reference: https://www.virustotal.com/gui/file/1e9a72adef1055a7672f93f669bc17f174fd0839848a9bf45093656e88abaac7/detection
+
+http://101.201.175.19
+http://120.76.103.4
+http://120.77.67.185
+http://123.56.165.2
+http://14.17.100.182
+http://222.186.173.17
+http://222.73.129.195
+182.16.92.10:17001
+182.16.92.10:17002
+acw88.top
+653.acw88.top
+
+# Reference: https://www.virustotal.com/gui/file/00b8119d5e91e955162f0a567e1247d528ea6e2f77417c299224066d57a2ec8c/detection
+
+http://185.2.81.106
+114.55.34.122:8080
+148.66.21.154:10091
+180.178.39.28:48631
+47.241.47.128:13002
+47.241.47.128:13003
+47.241.47.128:16002
+8.214.24.66:13002
+19h52e.mszuyu.com
+17.us.silverwinds.xyz
+
+# Reference: https://www.virustotal.com/gui/file/0005897de768029da8a3675b9319a32d3a0b8c3c5b7358431ab343e4837d661f/detection
+
+208.91.197.46:8080
+
+# Reference: https://www.malwarebytes.com/blog/news/2023/01/preinstalled-malware-infested-t95-tv-box-from-amazon
+# Reference: https://otx.alienvault.com/pulse/63d962b95fd4f2fd095a8aae
+
+dy.kr.wildpettykiwi.info
+
+# Reference: https://www.virustotal.com/gui/file/017b241c1f4c86e3f26ceda374f9cba6fd060d36caa91d22556c2e85ea7f8e83/detection
+
+174.139.72.162:8100
+3.234.181.234:8100
+
+# Reference: https://mp.weixin.qq.com/s/MKDRGVnJFoUd4v1tc47PXQ
+# Reference: https://otx.alienvault.com/pulse/6531315c5029eeeaab2f94c0
+# Reference: https://www.virustotal.com/gui/file/1132e542f18a8af000b437a1c25632fbd7df06c4a040076e82c3f94a6c794a28/detection
+
+apkcar.com
+cbphe.com
+cbpheback.com
+dcylog.com
+flyermobi.com
+ycxrl.com
+adbsdk.flyermobi.com
+adc.flyermobi.com
+rnznd.ycxrl.com
+ymex.apkcar.com
+ymlog.apkcar.com
+ymsdk.apkcar.com
+z3rv.ycxrl.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/apk.triada/
+
+fmwhat.download
+file.fmwhat.download
+
+# Reference: https://securelist.com/triada-trojan-modules-analysis/116380/
+
+0r23b.uhabq9.com
+68u91.66foh90o.com
+773i8h.k6zix6.com
+7u6h8.xyz
+ad1x7.mea5ms.com
+app-file.b-cdn.net
+hm1es.uhabq9.com
+is5jg.3zweuj.com
+jmll4.66foh90o.com
+lnwxfq.qz94.com
+lptkw.s4xx6.com
+lvqtcqd.pngkcal.com
+mp2y3.sm20j.xyz
+ompe2.7u6h8.xyz
+qrchq.vrhoeas.com
+sm20j.xyz
+tqq6g.66foh90o.com
+unkdj.xyz
+v58pq.mpvflv.com
+vg1ne.uhabq9.com
+w0g25.66foh90o.com
+xc06a.0pk05.com
+xcbm4.0pk05.com
+xjl5a.unkdj.xyz
+ya27fw.k6zix6.com
+zqsvl.uhabq9.com
+
+# Reference: https://x.com/Jane_0sint/status/1922324670797259179
+# Reference: https://app.any.run/tasks/27e699df-b754-4ddd-9bcb-997f5a98150f/
+
+2l3kg.xyz
+w5auz.xyz
+9yrh7.mea5ms.com
+cw65e.2l3kg.xyz
+e9tec.w5auz.xyz
+kivr8.wd6vy.com
+lptkw.s4xx6.com
+u209.wo87sf.com
+v8d1a.2l3kg.xyz
+xc06a.0pk05.com
+xcbm4.0pk05.com

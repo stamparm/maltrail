@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: nokoyawa ransomware
+
+# Reference: https://blog.talosintelligence.com/2022/06/de-anonymizing-ransomware-domains-on.html
+
+lirncvjfmdhv6samxvvlohfqx7jklfxoxj7xn3fh7qeabs3taemdsdqd.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1843195597970649583
+
+nokoleakb76znymx443veg4n6fytx6spck6pc7nkr4dvfuygpub6jsid.onion
+
+# Reference: https://www.thedfirspot.com/general-8-1
+
+6yofnrq7evqrtz3tzi3dkbrdovtywd35lx3iqbc5dyh367nrdh4jgfyd.onion
+noko65rmtaiqyt2cw2h4jrxe3u56t2k7ov3nd22hoji4c5vnfib2i4yd.onion

@@ -1,0 +1,75 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://who.is/nameserver/ns1.sinkhole.shadowserver.org/
+# Reference: http://who.is/nameserver/ns2.sinkhole.shadowserver.org/
+
+74.208.64.145
+74.208.15.160
+
+# Reference: http://www.dailychanges.com/shadowserver.org/
+
+87.106.24.200
+87.106.26.9
+74.208.164.166
+74.208.64.191
+
+# Reference: https://www.threatcrowd.org/searchTwo.php?data=sinkhole
+
+sinkhole-00.shadowserver.org
+sinkhole-01.shadowserver.org
+sinkhole-02.shadowserver.org
+sinkhole-03.shadowserver.org
+sinkhole-04.shadowserver.org
+213.165.83.176
+87.106.253.18
+50.21.181.152
+87.106.20.192
+74.208.153.9
+
+# Reference: https://censys.io/ipv4/87.106.149.153
+
+87.106.149.153
+
+# Reference: https://censys.io/ipv4/87.106.149.145
+
+87.106.149.145
+
+# Reference: https://www.virustotal.com/en/ip-address/216.218.185.162/information/
+
+216.218.185.162
+
+# Reference: https://myip.ms/info/whois/184.105.192.2
+
+184.105.192.2
+
+# Reference: https://www.virustotal.com/en/ip-address/216.218.135.114/information/
+
+216.218.135.114
+
+# Reference: https://www.virustotal.com/gui/ip-address/216.218.208.114/information
+
+216.218.208.114
+
+# Reference: https://www.virustotal.com/en/ip-address/178.162.203.202/information/
+
+178.162.203.202
+178.162.217.107
+178.162.203.211
+178.162.203.226
+5.79.71.205
+5.79.71.225
+85.17.31.82
+85.17.31.122
+
+# sc-a.sinkhole.shadowserver.org
+217.160.6.63
+
+# sc-b.sinkhole.shadowserver.org
+87.106.250.34
+
+# sc-c.sinkhole.shadowserver.org
+87.106.34.1
+
+# sc-d.sinkhole.shadowserver.org
+87.106.86.28

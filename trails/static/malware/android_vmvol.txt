@@ -1,0 +1,114 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mvlove, vmvol
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Andr~Vmvol-A/detailed-analysis.aspx
+# Reference: https://www.virustotal.com/gui/file/c2e91dd0e8cbc897442f4aae636191957899997512d8cf0c86a83794a1433cd8/detection
+# Reference: https://www.virustotal.com/gui/file/d60272bb470ce6a861dc1a818723f0680ed86ba525b352020a993f1df32b9676/detection
+# Reference: https://www.virustotal.com/gui/file/acfdf55d3ff9a1835c49fea9adcb6328594dec2263f6713746dac53c0ae2ea39/detection
+
+audrjs888.com
+skql888.com
+uip9.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1318160055615819776
+# Reference: https://twitter.com/bl4ckh0l3z/status/1318170573873287169
+# Reference: https://www.virustotal.com/gui/domain/seemonitor.xyz/relations
+# Reference: https://www.virustotal.com/gui/file/f9cd2435f3d468336ec42492e5a2be9d3f2098961bf0f256d05faa03ca6980c5/detection
+# Reference: https://www.virustotal.com/gui/file/0f6d13c78ec7eafd44faf4dbba21c4716ef7ca493e2af6c79e11b4e842b109d0/detection
+
+api003.seemonitor.xyz
+api004.seemonitor.xyz
+api0805.seemonitor.xyz
+api0806.seemonitor.xyz
+api080803.seemonitor.xyz
+api080805.seemonitor.xyz
+api081201.seemonitor.xyz
+api081301.seemonitor.xyz
+api081601.seemonitor.xyz
+api081602.seemonitor.xyz
+api081702.seemonitor.xyz
+api081703.seemonitor.xyz
+api081902.seemonitor.xyz
+api082002.seemonitor.xyz
+api082102.seemonitor.xyz
+api082104.seemonitor.xyz
+api082301.seemonitor.xyz
+api082501.seemonitor.xyz
+api082604.seemonitor.xyz
+api082701.seemonitor.xyz
+api082803.seemonitor.xyz
+api082804.seemonitor.xyz
+api082904.seemonitor.xyz
+mmapi001.seemonitor.xyz
+seemonitor.xyz
+
+# Reference: https://twitter.com/jorgemieres/status/1318199984563642368
+# Reference: https://www.virustotal.com/gui/domain/cubetv.xyz/relations
+
+api080803.cubetv.xyz
+api081301.cubetv.xyz
+api081401.camerac.xyz
+api082902.camerac.xyz
+api083102.camerac.xyz
+api083103.camerac.xyz
+api083105.camerac.xyz
+api090501.camerac.xyz
+api090601.camerac.xyz
+api091602.camerac.xyz
+api091901.camerac.xyz
+api092001.camerac.xyz
+api092002.camerac.xyz
+api092401.camerac.xyz
+api092801.camerac.xyz
+api092901.camerac.xyz
+api100901.cubetv.xyz
+api101101.cubetv.xyz
+mmapi001.camerac.xyz
+camerac.xyz
+cubetv.xyz
+
+# Reference: https://twitter.com/malwrhunterteam/status/1351264285960396800
+# Reference: https://www.virustotal.com/gui/file/335753114db81b531c6870445c2a0385f0bfa0caeb433eb9465ac1ef4ddeea3d/detection
+
+dfh123001.xxyymonitor.space
+xxyymonitor.space
+
+# Reference: https://www.virustotal.com/gui/file/1e4ac37ed8c7b704ae0ac57e1a8b29728fecddb360e84b8e8353e2876202d3ef/detection
+
+http://107.191.61.74
+107.191.61.74:8080
+
+# Reference: https://www.virustotal.com/gui/file/77babe6a7f1b0433a30a510a851211d8eb974ef243715e98fbd3e883e2c12557/detection
+
+149.56.246.81:8080
+
+# Reference: https://twitter.com/malwaremansys/status/1424903265905381400
+# Reference: https://twitter.com/malwaremansys/status/1425699916861480964
+# Reference: https://twitter.com/j_yh_/status/1425717839814533124
+# Reference: https://www.virustotal.com/gui/file/a86bc112fc5c4acb967ee8bb6a62e45a626645e07fcf0a092e17312bd212fa5a/detection
+# Reference: https://www.virustotal.com/gui/file/41fe3f00d43cb61d67cd1891001c65e2fd0493f39a6527c9535e1e2d7daac7e4/detection
+
+23.27.35.130:8080
+23.27.35.158:8080
+23.27.35.141:8080
+23.27.35.146:8080
+goldmoon29.com
+omgsil88.net
+
+# Reference: https://www.virustotal.com/gui/file/5f1ae2a2d5c53c0af2c0e7ae7f0feb89ea8042126801515d5cc3aec0341e95e2/detection
+
+51.222.103.60:8080
+
+# Reference: https://www.virustotal.com/gui/file/edfbc02edf21030938d3ecb04db8738c8d60318671a3dd47756dc064a5207f68/detection
+
+198.50.216.98:8080
+
+# Reference: https://www.virustotal.com/gui/file/c40f705220ac011a293e6be01fd117743b4425098f265d2785c58b55c4b76bb6/detection
+
+149.56.32.172:8080
+
+# APK
+
+/yatalk.apk

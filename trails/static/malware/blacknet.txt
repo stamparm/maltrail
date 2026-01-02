@@ -1,0 +1,471 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: blackteam, blacknet, blackout
+
+# Reference: https://twitter.com/makflwana/status/1210466313954414592
+
+5ineprojects.com
+hckrmytest.com
+netdz.ga
+davidescu.000webhostapp.com
+kiraamora.000webhostapp.com
+
+# Reference: https://twitter.com/tkanalyst/status/1212695828931973122
+# Reference: https://app.any.run/tasks/607a63ec-0ab5-45a9-b255-df78eb73bd79/
+
+weboss.in
+
+# Reference: https://twitter.com/wwp96/status/1218260858524065794
+
+meublesinde.in/black/
+
+# Reference: https://twitter.com/wwp96/status/1218263835007758336
+# Reference: https://app.any.run/tasks/6feea8e2-7390-4439-bb23-a35df75422e1/
+
+r-s.us
+
+# Reference: https://twitter.com/jorgemieres/status/1222611503125356544
+
+vintosw0.beget.tech
+
+# Reference: https://twitter.com/ps66uk/status/1228268374649659392
+# Reference: https://app.any.run/tasks/9be4f8eb-e828-4ca5-ba76-6f8db7f1627a/
+
+sinsixclaw.com
+
+# Reference: https://twitter.com/ViriBack/status/1228676828107300864
+
+agentreef.xyz
+agent.agentreef.xyz
+
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-23, BlackNet)
+
+davidaredetoate.000webhostapp.com
+davidescu.000webhostapp.com
+kiraamora.000webhostapp.com
+lex1qlist3.temp.swtest.ru
+loadbytes.tn
+mailstealer.zzz.com.ua
+meublesinde.in
+piratashost.top
+raders.ru
+semanariolaprensa.com
+sinsixclaw.com
+snapk.org
+vovagaka.myjino.ru
+wwe23pro.myjino.ru
+xblackeyex.000webhostapp.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1242173577639550976
+
+antivirus-covid19.site
+corona-antivirus.com
+instaboom-hello.site
+
+# Reference: https://app.any.run/tasks/e5dcc906-4f08-464b-b738-e39a0458dd4f/
+# Reference: https://app.any.run/tasks/c0432968-da70-46ef-a4ff-5156603ae3ae/
+# Reference: https://www.virustotal.com/gui/file/18cc40d5c56f621dc4b1386b37892ce9723145c7e2b580053386bf93dd329dfa/detection
+
+developersblacknet.ru
+
+# Reference: https://www.virustotal.com/gui/file/c860d4c575c1548da86c9a6a9a4e63d48612fe28cae7f12097542f2ea4b013bd/behavior/VirusTotal%20Jujubox
+# Reference: https://app.any.run/tasks/f57a3fd0-fbfe-4534-9992-39e784ada8cb/
+
+bootpay.ru
+
+# Reference: https://any.run/report/c205d50556fe7ae5923452dbe6f5fc118229966bb1a7ce6ac87a9f2d371c987d/d51e29b1-1f91-4b7e-a55d-4d0a001b0b1f
+# Reference: https://urlhaus.abuse.ch/url/339364/
+# Reference: https://bbs.kafan.cn/thread-2179435-1-1.html
+
+/US-2020-20-03-16-18-40-0569324B-9414737A-3C853917-C61460EF-C4978359.com
+
+# Reference: https://www.virustotal.com/gui/file/3d9a2aa28c67d76ebd6512789014880dabb0b21164970f3618294899323fb3e6/detection
+
+rat3.ddns.net
+
+# Reference: https://twitter.com/ganeshnathan28/status/1261677808268369922
+
+cryptobitnex.co.za
+
+# Reference: https://twitter.com/jorgemieres/status/1273290086159978496
+
+informavoce.com
+
+# Reference: https://pastebin.com/Hc73BzJT
+
+blacknet.riskpi.xyz
+mozillabgsvc.com
+
+# Reference: https://pastebin.com/SgZamRit
+
+zeronine.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/6f508df03a36256666b092ab63082350dd09b8ecc05c4f5a2fcf89f9a2f8a885/detection
+
+a0439294.xsph.ru
+
+# Reference: https://twitter.com/jstrosch/status/1307178150753951750
+
+bigblackcandles.com
+
+# Reference: https://www.virustotal.com/gui/file/1079bedb436d38bc482f574f2b4fe72facb44d73a2dcdea05bb712eccce34eb5/detection
+
+9551777.com
+
+# Reference: https://www.virustotal.com/gui/file/1cefc8caf3c75d1392107e3f298fa3b8d8e2013fd5092106fbc80d810d3086c5/detection
+
+siresconsultancy.com
+
+# Reference: https://www.virustotal.com/gui/file/892265446bf18edaf83a4a0b7fb3caf3d477ba0a5e90e74cc1899c24057c4389/detection
+
+sf-rp.8u.cz
+
+# Reference: https://www.virustotal.com/gui/file/d59ca79e15d5aebdcfa02af91fdbeb41948809b3565c3f709b20c22aba124b46/detection
+
+cofix.best
+
+# Reference: https://www.virustotal.com/gui/file/35918e2f5f7b00f8d6e25f50c82c245360dbce7223395ec00278ab0c0eae0c77/detection
+# Reference: https://www.virustotal.com/gui/file/c502e863775e1cc16e55c8aabd72c1004e10a622b191bc213f53169945e70bbd/detection
+
+rupturnet.cf
+bot.rupturnet.cf
+rupturnet.000webhostapp.com
+
+# Reference: https://www.virustotal.com/gui/file/1c70eae778246e46fd769c80dd2064775b3658945b72ccfe996a7300f8125457/detection
+
+kommand.rf.gd
+
+# Reference: https://www.virustotal.com/gui/file/019e4cbc3cb028b67a0c89f4d9622bf7b0cac6491d8f6317e67535d43060a756/detection
+
+ancient-parrot-9.loca.lt
+
+# Reference: https://www.virustotal.com/gui/file/f6627bae86836a0887c75570820bff07faeefab6a1d43f7f17f7bd8aa88f9288/detection
+
+rabcheat1g.temp.swtest.ru
+
+# Reference: https://www.virustotal.com/gui/file/72ce0182331318feeff29f09110646e7fc2b920a54ab3ed520f147bc2d6389ce/detection
+
+f0428648.xsph.ru
+
+# Reference: https://app.any.run/tasks/ea87cfd7-8752-4fb5-878c-464b9644ed60/
+
+timecforgoodnes.ml
+
+# Reference: https://twitter.com/ActorExpose/status/1371583520095764483
+# Reference: https://www.virustotal.com/gui/file/ffb71aeb0750c6186d35d8d57af40cc29d9e0f4b6fedf19a9112b1f9ed25eb05/detection
+
+d3n1s.ddns.net
+
+# Reference: https://app.any.run/tasks/8cecc0bf-7361-433a-be4a-903441b04b49/
+
+a0524310.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/6cb6ab6580717849f78333ac66f81c3d1ce54da7399f67c27f801288af53dea9/detection
+
+ytgyuityuity.ru
+
+# Reference: https://www.virustotal.com/gui/file/df3f3055639a54a1924fe04095c8637d75778ea2a5629befa90e6b3acb575e46/detection
+
+66.42.72.69:1629
+hudbwgybfhuanrurhwaryfvwahfbabhvfu.000webhostapp.com
+ogrlhekhlaopphfohrjxvrmqqiekiuffoeiewvkszsmlapwtphntjv.xyz
+
+# Reference: https://twitter.com/ActorExpose/status/1408147756250718217
+
+noctorships.ga
+
+# Reference: https://twitter.com/wwp96/status/1409712008308543490
+# Reference: https://app.any.run/tasks/e69eb744-e765-4846-94ea-670cf65b988d/
+
+http://34.227.13.244
+
+# Reference: https://www.virustotal.com/gui/file/d238aea078ca1bb99a80ec2bf5d07acb818d72e7823ea8e767eefde95a038401/detection
+
+a0541862.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/7d78ea77dc1c637bdf79d77826d15ccf8643971650ce2a8d227c704e7b2915f9/detection
+
+monomolecular-tone.000webhostapp.com
+
+# Reference: https://www.virustotal.com/gui/file/82259f0bdaf02774ef0ee028b6c7cb5b90a9173100b972766451c0e8517260dd/detection
+
+micros0ftcenter.xyz
+
+# Reference: https://app.any.run/tasks/c7a882c2-53e4-47b1-ab72-0e30731fefdb/
+
+f0575824.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/662d28a50cfb32217d228d11579e0ad93e605aee8561510b3f65ea2c2f7c3444/behavior/C2AE
+
+104.43.56.21:1515
+
+# Reference: https://www.virustotal.com/gui/file/45efeab42297dcbb8c90617857c3285d54300c42067d2d97a6b5c81c309608a5/behavior/C2AE
+
+monomolecular-tone.000webhostapp.com
+
+# Reference: https://www.virustotal.com/gui/file/95327ef19128783c4c944ced80d70cdbb7c9f793b62b5b1fbf8474a9669df6fc/behavior/C2AE
+
+http://52.170.98.207/BlackNET/
+
+# Reference: https://www.virustotal.com/gui/file/4270d8ec16dbef1de0e939b564d2e4b8f6ac625e7bb8d889329f6e4242ed3d1a/behavior/C2AE
+
+http://194.147.142.237/panel/
+
+# Reference: https://www.virustotal.com/gui/file/21ef402f740ed2ca7168c4fa38c1e73bc794b25f234b37b6b187a30326875c49/behavior/VirusTotal%20ZenBox
+
+app-bb0934ca-0bfa-4d4a-8a2d-7a97c690cc5b.cleverapps.io
+
+# Reference: https://www.virustotal.com/gui/file/5aae35b2a067e952ad25e32104deec2a35d61b6f4a05f17c74c65ec9b0db6674/behavior/C2AE
+
+clods.1974.fvds.ru
+
+# Reference: https://twitter.com/ViriBack/status/1476546715222261762
+# Reference: https://www.virustotal.com/gui/file/3a08351b37e4130b4161d54b05b50019b8c383190212fb4c960d9b17d771dbba/detection
+# Reference: https://www.virustotal.com/gui/file/54fbd98e84cd3ad3fb727f18c9c74cddaa2085e4c73d3f6a8e2ce55bdd109c1d/detection
+
+qube.host
+
+# Reference: https://www.virustotal.com/gui/file/889e7f3c146e41dd6b10abae35e45370a43f6a1ab2d8239167c39fe3ad538211/detection
+
+a0616585.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/c846c3dce306db0d16df26f8f8a60f397c081ef2ed19ad36321eb61efc097faf/detection
+
+f0591243.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/c4435b62b445a1196d2b297fca54a1c6e7405d7e5a6d41192d7e342873966111/detection
+
+mozillaupdater.com
+
+# Reference: https://www.virustotal.com/gui/file/fbcc9818cd2879848cf1f03df8568cfe5aa21cf21997452e240972766be5e860/detection
+
+a0506564.xsph.ru
+
+# Reference: https://tria.ge/201205-l4l9pd71qe/behavioral1
+
+redbulllogistics.online
+
+# Reference: https://tria.ge/201109-3fyklnqg4j/behavioral1
+
+thehacker.club
+
+# Reference: https://twitter.com/jstrosch/status/1544340409882640384
+
+djemz.7m.pl
+
+# Reference: https://tracker.viriback.com/dump.php (2022-07-11)
+
+http://141.95.36.169
+http://142.202.136.146
+http://144.202.31.227
+http://161.97.82.232
+http://173.212.243.4
+http://176.123.6.234
+http://185.101.105.100
+http://194.87.139.107
+http://195.242.110.69
+http://20.107.191.24
+http://34.70.128.92
+http://34.95.184.102
+http://45.133.1.98
+http://52.240.152.251
+http://54.94.123.220
+http://64.225.31.236
+http://74.208.16.112
+http://95.216.56.249
+167.172.170.114:9828
+167.172.170.114:9999
+54.247.73.114:2224
+91.134.238.134:8010
+1827.webhost-02.my-host.network
+19372005.v-thevillas.com
+753783-cs86780.tmweb.ru
+acccx.fgocheat.net
+alasema.ly
+black.bahadiruyanik.com
+blaskshell.ru
+bluenet888.000webhostapp.com
+bmarksports.com
+boat.salvajesrp.com
+botmanage.tk
+botz.ipv6d.xyz
+central-testfull.tecnologia.ws
+clicpaiement.ca
+cod2.site
+cybersecurityteam.es
+darkpanel.ddns.net
+dima1111363.asyx.ru
+dsulum.anonymous-sec.com
+f0415335.xsph.ru
+f0439478.xsph.ru
+f0479834.xsph.ru
+f0494027.xsph.ru
+fimapolyakov.xyz
+furyx.de
+gamehackworld.tk
+ganepix.com
+hotelcomfortinnlegacy.com
+i9789238.beget.tech
+jelliia446.446.axc.nl
+kawaski.herokuapp.com
+krmben.mooo.com
+leyzz.xyz
+liosion.0verl0rd.team
+livecryptorates.xyz
+lolyouhacked.ddns.net
+lolznet.xyz
+mailquickdiate.com
+mansoni85.ddns.net
+mansoni85.redirectme.net
+marcusorr.kryptonnetworks.net
+metaleptical-agent.000webhostapp.com
+micros0ft1nfo.top
+msupdate.saforta.com
+mxgroup.agency
+net.honey-mc.ru
+nickptt.com
+nicurb.com
+nuevo-proyecto6915.000webhostapp.com
+onlyfans.surf
+panel.gajarweb.eu
+panel.pkbmlambefoundation.com
+perc30.beget.tech
+projectvoid.xyz
+safefileshare.ml
+silentupload.com
+sitebotnet.000webhostapp.com
+srmakhzan.com
+taikhoan247.tk
+techsystems.xyz
+testnexus1123.tk
+trlink.me
+u104047.test-handyhost.ru
+u12546174b5.ha004.t.justns.ru
+v01dsec.org
+wealonetogether.com
+xn--b1aew.cc
+zerocc.xyz
+
+# Reference: https://twitter.com/Yeti_Sec/status/1608828765915983876
+
+http://80.85.157.98
+
+# Reference: https://twitter.com/wwp96/status/1628846140799045636
+# Reference: https://app.any.run/tasks/00d4fb30-a74d-495b-9aec-98f61e17ad38/
+
+193.161.193.99:57920
+ffhackti-57920.portmap.io
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.blacknet_rat/
+
+http://100.26.17.80
+http://146.19.191.190
+http://18.117.193.148
+http://185.212.44.211
+http://45.130.138.51
+http://54.237.66.139
+bankslip.info
+chomotrov.rf.gd
+ecrew.sytes.net
+finalb.xyz
+hksec.hk
+officialcomerce1.xyz
+pako.saturncnc.tk
+rtmmodz.a2hosted.com
+saturncnc.tk
+theblogreader-blog.wtf
+valsinki.xyz
+zee.zight.ru
+zenginlerclubmuck.xyz
+
+# Reference: https://www.virustotal.com/gui/file/a17bcab96e44efca5e206d06d67c06ee9e496eef0f69573897464797a930cd44/detection
+
+mrrobot.m-x.cfd
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.blacknet_rat/ (# 2023-08-27)
+
+http://190.123.44.228
+http://190.123.44.240
+http://20.163.158.142
+20.163.158.142:443
+crypromo.com
+freepalestine.top
+maddoxdevelopment.online
+auth08-verify3.dynamic-dns.net
+bagelswap.site
+bot.gsmgit.com
+op.mrstealth.pagekite.me
+p.kcchann.com
+pay-3ds.ru
+ts.bagelswap.site
+whywishyouweredead.us
+
+# Reference: https://threatfox.abuse.ch/ioc/1188919/
+
+clearmu.top
+/blacknet/receive.php
+
+# Reference: https://twitter.com/fofabot/status/1743101610551910629
+
+http://101.35.240.162
+http://68.233.120.219
+http://80.143.34.59
+http://93.192.197.63
+gamehostingkings.com
+
+# Reference: https://www.virustotal.com/gui/file/0a5220a137d6ca7bd1f5cf4fa3416ce8516b99d126bc763f45829827938d0544/detection
+
+http://51.89.19.244
+
+# Reference: https://twitter.com/banthisguy9349/status/1770027028848210102
+# Reference: https://www.virustotal.com/gui/ip-address/93.123.85.52/relations
+
+http://93.123.85.52
+
+# Reference: https://x.com/IronNetTR/status/1808137243451613382
+# Reference: https://www.virustotal.com/gui/file/ef6be2ef7c49e898204b1d71fe1b37dd57c04834ad0e0556658b8d97ee5092b2/detection
+# Reference: https://www.virustotal.com/gui/file/e4beca6c9317d76ca8659fe7d262ddf27ed5b57a26a3f8306154376942f505db/detection
+
+http://216.73.156.90
+
+# Reference: https://github.com/marktsec/Ransomware_Official_Domains?tab=readme-ov-file#blackout
+
+black3gnkizshuynieigw6ejgpblb53mpasftzd6pydqpmq2vn2xf6yd.onion
+
+# Reference: https://www.virustotal.com/gui/file/a0dab2a400f5e933864d89b83c2a5f279e6db75b0b2e75a46619ca052228cf19/detection
+
+http://94.26.90.79
+94.26.90.79:8080
+diicotsec.ru
+/animeNET/check_panel.php
+
+# Generic trails
+
+/@@@2211003355662200@@@/
+/0GrT5VbKIKf/
+/1-x-x-x-1/
+/black//check_panel.php
+/mrrobot/check_panel.php
+/blacknet/login.php
+/myblackn/login.php
+/Bot-Net/BlackNET/
+/BlackNET/Panel/
+/BlackNET/Panel/receive.php
+/BlackNET%20-%20Compiled/
+/BlackNET%20-%20Plugins%20Source%20Code/
+/BlackNET%20-%20Source%20Code/
+/BlackNET-3.7.0/
+/BlackNET-master/
+/BlackNET-2-master/
+/BlackNET-Panel/
+/blacknet/
+/BlackNETPanel/
+/BlackNET%20Panel/
+/NiggaNet/receive.php
+/uJKGWJTjXBP2/
+/uJKGWJTjXBP2/receive.php
+/connection.php?data=
+/getCommand.php?id=
+/receive.php?command=
+/flags/Client.exe

@@ -1,0 +1,241 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~HawkEye-ES/detailed-analysis.aspx
+
+mail.tonysizzo.com
+
+# Reference: https://malware.news/t/lammers-stealers-and-rats-same-technics-like-formbook-malware-to-install-jrat-and-hawkeye/21919
+
+smtp.doctorework.com
+
+# Reference: https://twitter.com/ViriBack/status/1035692468459720704
+
+deltafood-ae.com
+
+# Reference: https://www.symantec.com/blogs/threat-intelligence/african-financial-attacks
+
+noreply377.ddns.net
+
+# Reference: https://twitter.com/James_inthe_box/status/1110190083750019072
+# Reference: https://twitter.com/James_inthe_box/status/1113756951102590976
+
+lumsdancorp.com
+
+# Reference: https://twitter.com/x42x5a/status/1111655960991490048
+
+ftp.cnvester.com
+
+# Reference: https://twitter.com/x42x5a/status/1115572987816742912
+
+se1ec.com
+
+# Reference: https://otx.alienvault.com/pulse/5cb4b6a2d0c46e38f066376a/
+
+toshioco.com
+spldernet.com
+tfvn.com.vn
+jhssourcingltd.com
+pioneerfitting.com
+positronicsindia.com
+guideofgeorgia.org
+gulfclouds.site
+shirkeswitch.net
+scseguros.pt
+happytohelpyou.in
+
+# Reference: https://twitter.com/Racco42/status/1124275914530013184
+# Reference: https://app.any.run/tasks/6edf4315-11f1-4dca-91fd-4bb581382a5e
+
+smtp.lavadaexpress.pw
+
+# Reference: https://twitter.com/x42x5a/status/1126039075843190784
+
+tain00.5gbfree.com
+
+# Reference: https://twitter.com/dvk01uk/status/1121281997643636736
+# Reference: https://app.any.run/tasks/653e0ec4-396d-4930-b91c-9b110debf1cf
+
+ftp.nxgenbiz.us
+
+# Reference: https://twitter.com/anyrun_app/status/1133252677402537984
+# Reference: https://app.any.run/tasks/a73f9b70-0f5b-4deb-826f-9e7099ede0fb/
+
+smtp.uml-db.com
+
+# Reference: https://twitter.com/_Bear_Crawl_/status/1134092277071134720
+
+mail.constreite-qatar.com
+mail.riyyan.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1140603897523949568
+# Reference: https://app.any.run/tasks/7555c697-f2af-42e5-8a14-ae19d7657aa9/
+
+91.216.163.91:36530
+
+# Reference: https://twitter.com/dvk01uk/status/1143456085090738177
+# Reference: https://app.any.run/tasks/f6d94749-2625-42be-820a-3ccab8f28242/
+
+103.6.205.50:26
+mail.smpn15bogor.sch.id
+
+# Reference: https://twitter.com/Racco42/status/1143983818631725058
+# Reference: https://app.any.run/tasks/ae33444d-5393-4745-aff2-bcc06a3ea326/
+
+192.185.73.15:26
+mail.balbaagroup.com
+
+# Reference: https://twitter.com/ZeroCERT/status/1146285140068438016
+# Reference: https://www.virustotal.com/gui/file/4c10f8881ab7b1b47a4db73fb9052e23efbfcecf4b2b28c569c01faba944d482/detection
+
+ftp.dm1electronics.com
+
+# Reference: https://twitter.com/dvk01uk/status/1154687819702575105
+
+ftp.testproeg.com
+
+# Reference: https://twitter.com/luc4m/status/1156214374371135489
+
+aceccgo.tk
+
+# Reference: https://twitter.com/Paladin3161/status/1161055030671110144
+# Reference: https://pastebin.com/DGEcZt5y
+
+qstorm.chickenkiller.com
+193.161.193.99:2928
+193.161.193.99:44611
+
+# Reference: https://twitter.com/dms1899/status/1165107157760696320
+
+ftp.valuelineadvisors.com
+
+# Reference: https://twitter.com/DynamicAnalysis/status/1169344017118703616
+# Reference: https://app.any.run/tasks/143df945-a0fe-4de3-9c89-afce01d0ab96/
+
+mail.workpluswork.com
+198.187.29.251:26
+
+# Reference: https://twitter.com/malware_traffic/status/1170125264208236545
+# Reference: https://app.any.run/tasks/ba8f9d14-8899-4186-863e-ffd30e63284f/
+
+kasoa.biz
+mail.smpn15bogor.sch.id
+103.6.205.50:26
+
+# Reference: https://app.any.run/tasks/607d8b8e-fe55-4c2e-86b5-8279492575ae/
+
+workpluswork.com
+
+# Reference: https://twitter.com/smica83/status/1179406369302159361
+
+160.153.162.10:50344
+
+# Reference: https://twitter.com/Racco42/status/1179455381514457090
+
+ftp.apricotprint.co.uk
+
+# Reference: https://twitter.com/raby_mr/status/1179738468244570113
+# Reference: https://app.any.run/tasks/b24abaf3-41bc-4bc2-8567-31e068293cb1/
+
+mail.jointexbd.com
+
+# Reference: https://twitter.com/P3pperP0tts/status/1183066613655977985
+
+smtp.enginelogs.top
+
+# Reference: https://twitter.com/P3pperP0tts/status/1183067119782694912
+
+smtp.enginelogroom.top
+
+
+# Reference: https://app.any.run/tasks/a4efbb3e-574e-471b-a222-263a33030f4b/
+
+ftp.tashipta.com
+
+# Reference: https://www.virustotal.com/gui/url/762cf17c948844c04b4ac7c5dffe1f890a8f8d21562d2ed206f05bc2f11b3739/details
+# Reference: https://app.any.run/tasks/01a23c82-2d09-425f-bccf-548936bfa905
+
+business24crm.io
+orbit.vivawebhost.com
+
+# Reference: https://app.any.run/tasks/364289e6-6a3d-4e70-812e-fcc440a7e82b/
+
+server1.monovm.com
+
+# Reference: https://twitter.com/wwp96/status/1199059684638052352
+
+ftp.tashipta.com
+
+# Reference: https://app.any.run/tasks/b871fb13-1784-419b-96a4-1dc7042d814c/
+
+maxcoopar5.ddns.net
+
+# Reference: https://any.run/malware-trends/hawkeye (Note: as seen on 2019-12-04)
+
+smtp.blowtac-tw.com
+smtp.bmssrevis.com
+smtp.ibemakine.com
+smtp.agavecomquista.com
+smtp.enginelogs.top
+
+# Reference: https://twitter.com/wwp96/status/1222567146531774467
+# Reference: https://app.any.run/tasks/27409472-b7c0-41ef-98d5-e3948915e42e/
+
+kpatelbyes.com
+
+# Reference: https://app.any.run/tasks/0e139b9a-0af2-4a57-bbe9-5384f1c324d7/
+
+176.223.208.10:42679
+
+# Reference: https://app.any.run/tasks/5f70ea8a-dfce-4a60-8657-388f3d330857/
+
+43.255.154.108:50597
+
+# Reference: https://twitter.com/ViriBack/status/1148364925225578497
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-23, Hawkeye)
+
+chemright.site
+
+# Reference: https://app.any.run/tasks/86da5ee4-b911-43f0-956f-58cc5614dc79/
+# Reference: https://app.any.run/tasks/2faacf5c-9526-4c55-b196-fb2f82028df5/
+# Reference: https://www.virustotal.com/gui/domain/robotrade.com.vn/relations
+
+robotrade.com.vn/wp-content/images/views/
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1277541744284967138
+# Reference: https://app.any.run/tasks/fd420619-09fc-4d24-a792-fec1d7257819/
+
+server165.web-hosting.com
+
+# Reference: https://www.virustotal.com/gui/file/4a290e64f632ec28fcb8c70da91c2fae31d808543f538c1a4b6029c24c3e6545/detection
+
+198.54.115.141:12096
+198.54.115.141:21
+ftp.unitedexchangeholdings.com
+
+# Reference: https://www.virustotal.com/gui/file/3bd8ac2a6a92cb4f392b9169516ff13a6fd44588a14b8ea1f98ef9c213ffccec/detection
+
+177.96.162.148:28900
+
+# Reference: https://blog.talosintelligence.com/2021/04/threat-roundup-0416-0423.html (# Win.Dropper.HawkEye-9852573-0)
+
+jennyh1.tk
+obonwa.ml
+outka.tk
+tsq-hk.com
+ymams.cf
+ymams.gq
+
+# Reference: https://www.virustotal.com/gui/file/bd9993a284abffdd70331768a9d59b1df345d649b82db8c4813a1ce1316c0d65/detection
+
+194.5.98.45:7666
+infinityking.ddns.net
+
+# Reference: https://blog.talosintelligence.com/threat-roundup-0331-0407-2/ (# Win.Dropper.HawkEye-9995256-0)
+
+delta.http80.info
+monarch1.myddns.me
+
+# Reference: https://www.virustotal.com/gui/file/3357103a936771b6a07ad55ee10d2fba8c3bc287d9a7761bb773f242ef979357/detection
+
+dns112.duckdns.org

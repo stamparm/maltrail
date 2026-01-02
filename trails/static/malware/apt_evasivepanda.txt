@@ -1,0 +1,43 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Bronze Highland, Daggerfly
+
+# Reference: https://twitter.com/h2jazi/status/1296919948598673409
+# Reference: https://blog.malwarebytes.com/threat-analysis/2020/07/chinese-apt-group-targets-india-and-hong-kong-using-new-variant-of-mgbot-malware/
+# Reference: https://otx.alienvault.com/pulse/5f170c74a81587f5b2b6be5f
+# Reference: https://www.virustotal.com/gui/domain/governmentmm.com/relations
+# Reference: https://app.any.run/tasks/e5ad4dd0-32f7-45a6-8012-44711ed04f0e/
+
+122.10.89.172:10560
+122.10.89.170:9552
+45.77.140.81:81
+governmentmm.com
+flash.governmentmm.com
+
+# Reference: https://www.welivesecurity.com/en/eset-research/evasive-panda-leverages-monlam-festival-target-tibetans/
+
+update.devicebug.com
+
+# Reference: https://symantec-enterprise-blogs.security.com/threat-intelligence/daggerfly-espionage-updated-toolset
+# Reference: https://www.virustotal.com/gui/file/5c52e41090cdd13e0bfa7ec11c283f5051347ba02c9868b4fddfd9c3fc452191/detection
+# Reference: https://www.virustotal.com/gui/file/5687b32cdd5c4d1b3e928ee0792f6ec43817883721f9b86ec8066c5ec2791595/detection
+# Reference: https://www.virustotal.com/gui/file/23acab55f533cad2471516d15f52a85d7f3a64e9589b6bfc76981dde39d1e0d4/detection
+# Reference: https://www.virustotal.com/gui/file/dfd28fa39cfa6a8e06ea897a6df78f9e27d36bba192b43e83790ff09879ac2bc/detection
+# Reference: https://www.virustotal.com/gui/file/a0b125e69a8b3619b372fe363bd2cf2c2c3772c2eec39fa40f86c47b1a0d16d9/detection
+# Reference: https://www.virustotal.com/gui/file/82c36fe8429b63c59d06d3741d1e4de7b60e196d1106a678fe052cc73909a997/detection
+# Reference: https://www.virustotal.com/gui/file/82a662cc06c49714efd8ed9086e20181659535718c515aa583efc70206256085/detection
+
+103.96.128.44:10001
+103.96.128.44:16564
+103.96.131.150:19876
+103.96.131.150:40020
+
+# Reference: https://x.com/TuringAlex/status/1859969605084823621
+# Reference: https://www.bleepingcomputer.com/news/security/chinese-cyberspies-use-new-ssh-backdoor-in-network-device-hacks/
+# Reference: https://www.virustotal.com/gui/file/94e8540ea39893b6be910cfee0331766e4a199684b0360e367741facca74191f/detection
+
+223.165.4.175:81
+45.125.64.200:33200
+45.125.64.200:33220
+45.125.64.200:33223

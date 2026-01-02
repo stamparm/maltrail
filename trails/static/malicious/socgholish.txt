@@ -1,0 +1,5195 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/wastedlocker-ransomware-us
+# Reference: https://research.nccgroup.com/2020/06/23/wastedlocker-a-new-ransomware-variant-developed-by-the-evil-corp-group/
+# Reference: https://otx.alienvault.com/pulse/5ef67e89cde1d0c1b00dd02c
+
+adsmarketart.com
+advancedanalysis.be
+advertstv.com
+advokat-hodonin.info
+amazingdonutco.com
+bettyware.xyz
+celebratering.xyz
+cofeedback.com
+consultane.com
+devicelease.xyz
+fakeframes.xyz
+feedbackgive.com
+flablenitev.site
+gadgetops.xyz
+guiapocos.xyz
+hotphonecall.xyz
+justbesarnia.xyz
+kordelservers.xyz
+lendojekam.xyz
+lgrarcosbann.club
+lpequdeliren.fun
+ludwoodgroup.xyz
+msoftwares.info
+mwebsoft.com
+net-giftshop.info
+paiolets.com
+penaz.info
+respondcritique.xyz
+rostraffic.com
+szn.services
+traffichi.com
+transvil2.xyz
+triomigratio.xyz
+tritravlife.xyz
+typiconsult.com
+uplandcaraudio.xyz
+utenti.info
+utenti.live
+veisllc.xyz
+websitelistbuilder.com
+websitesbuilder.info
+wineguroo.xyz
+woofwoofacademy.xyz
+backup.awarfaregaming.com
+click.clickanalytics208.com
+connect.clevelandskin.com
+connect.clevelandskin.net
+connect.clevelandskin.org
+cushion.aiimss.com
+dns.proactiveads.be
+link.easycounter210.com
+rocket2.new10k.com
+track.positiverefreshment.org
+
+# Reference: https://www.menlosecurity.com/blog/increase-in-attack-socgholish
+# Reference: https://twitter.com/BushidoToken/status/1370429928160759812
+
+news.pocketstay.com
+
+# Reference: https://twitter.com/tosscoinwitcher/status/1379505361787359233
+
+5e7936bb.news.pocketstay.com
+
+# Reference: https://twitter.com/Wanna_VanTa/status/1392537130396700681
+# Reference: https://www.virustotal.com/gui/ip-address/81.4.122.193/relations
+
+login.wwpcrisis.com
+
+# Reference: https://twitter.com/malware_traffic/status/1420490383881129990
+# Reference: https://www.virustotal.com/gui/ip-address/141.255.161.180/relations
+
+certification.mountainaireautoglass.com
+public.clickstat360.com
+fe1eaf89.office.drpease.com
+
+# Reference: https://blog.group-ib.com/prometheus-tds
+
+4107e577.payment.refinedwebs.com
+e186aeb2.news.pocketstay.com
+
+# Reference: https://twitter.com/neonprimetime/status/1475841620428062724
+
+80e16d50.xen.hill-family.us
+a962296f.xen.hill-family.us
+
+# Reference: https://twitter.com/MBThreatIntel/status/1466107514030751747
+# Reference: https://www.virustotal.com/gui/ip-address/179.43.169.31/relations
+
+jobs.tracybrey.com
+popcorn.net-zerodesign.com
+second.pmservicespr.com
+eba80de9.xen.hill-family.us
+
+# Reference: https://twitter.com/th3_protoCOL/status/1460356964140007424
+# Reference: https://www.virustotal.com/gui/ip-address/87.249.50.201/relations
+# Reference: https://www.virustotal.com/gui/file/89380aa78a9797c1906c1c8c8a646c08155eb3d16b79d8ad502789a59f0f7f9f/detection
+
+upstream.fishslayerjigco.com
+xen.hill-family.us
+
+# Reference: https://www.virustotal.com/gui/file/89380aa78a9797c1906c1c8c8a646c08155eb3d16b79d8ad502789a59f0f7f9f/detection
+
+368757c6.upstream.fishslayerjigco.com
+
+# Reference: https://www.virustotal.com/gui/file/9e663136610eb7a07dafe19a706445c2c0527ef586b7d3fbaa36e54173ac7394/detection
+
+05579f9d.xen.hill-family.us
+
+# Reference: https://www.virustotal.com/gui/file/d1ed30acb9aee0c8ee12c4ce10102ab732b9f304cabf9b3df302654c667e6beb/detection
+
+0e9ff460.xen.hill-family.us
+
+# Reference: https://www.virustotal.com/gui/file/1913554c81ea9fa5004189f067bc8618d628b85ca6dbc8964ec6bf7a4bfc0385/detection
+
+71d665d8.xen.hill-family.us
+
+# Reference: https://twitter.com/MBThreatIntel/status/1478515956968083456
+
+255e7219.xen.hill-family.us
+second.pmservicespr.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1440443682369388549
+# Reference: https://www.virustotal.com/gui/ip-address/81.4.122.101/relations
+
+e73fb99b.push.youbyashboutique.com
+push.youbyashboutique.com
+paggy.parmsplace.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1480595880629587971
+
+bfa73f60.xen.hill-family.us
+
+# Reference: https://twitter.com/SecurityAura/status/1487564086929936388
+
+7a3a7f86.xen.hill-family.us
+
+# Reference: https://expel.com/blog/incident-report-spotting-socgholish-wordpress-injection/
+
+notify.aproposaussies.com
+
+# Reference: https://twitter.com/cr4shtest/status/1494365444421128203
+
+a5b420bd.host.integrativehealthpartners.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1494453598087835673
+
+staticvisit.net
+20go.staticvisit.net
+43cbb37d.host.integrativehealthpartners.com
+go.staticvisit.net
+rotation.ahrealestatepr.com
+
+# Reference: https://twitter.com/bryceabdo/status/1499048636319162371
+# Reference: https://www.virustotal.com/gui/ip-address/91.219.236.192/relations
+
+12cff833.widget.windsorbongvape.com
+1dd355b6.widget.windsorbongvape.com
+48bb0f7a.widget.windsorbongvape.com
+b94c3406.widget.windsorbongvape.com
+widget.windsorbongvape.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1508575992041771013
+
+design.lawrencetravelco.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1513635853309861895
+
+fasttracklegal.com
+lines.fasttracklegal.com
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1516062361488171018
+
+expugements.com
+priority.expugements.com
+
+# Reference: https://github.com/CronUp/Malware-IOCs/blob/main/2022-04-21_SocGholish-FakeUpdates
+
+2ctmedia.com
+bonneltravel.com
+brannonsmiles.com
+chandlermethodist.org
+codigodebarra.co
+pomdev.com
+vipveinsaz.com
+windsorbongvape.com
+1.widget.windsorbongvape.com
+connect.codigodebarra.co
+doors.vipveinsaz.com
+energy.pomdev.com
+matrix.2ctmedia.com
+missions.chandlermethodist.org
+patients.brannonsmiles.com
+stuff.bonneltravel.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1521201292005154816
+
+factor.vtaxlaw.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1524125086206332932
+
+extra-tegic.com
+java.extra-tegic.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1526197418940932097
+
+agrandatubolsillo.com
+jump.agrandatubolsillo.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1528860847178936320
+
+academiadecontables.com
+parked.academiadecontables.com
+
+# Reference: https://medium.com/walmartglobaltech/socgholish-campaigns-and-initial-access-kit-4c4283fea8ee
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-May/030669.html
+
+irsbusinessaudit.net
+irsbusinessaudit.tax
+irsgetwell.net
+
+# Reference: https://twitter.com/bigmacjpg/status/1529921079132704788
+
+newhomessection.com
+schedule.newhomessection.com
+
+# Reference: https://blog.sucuri.net/2022/06/analysis-massive-ndsw-ndsx-malware-campaign.html
+
+bumpy.daniyalmedicaltech.com
+contractor.thecaninescholar.com
+craft.cheesedome.com
+mamba.cpncredit.com
+market.bluestonechiropractic.com
+mines.cajonsoul.com
+rotation.craigconnors.com
+sdk.expresswayautopr.com
+staff.beeboykind.com
+trace.mukandratourandtravels.com
+
+# Reference: https://twitter.com/th3_protoCOL/status/1536791876577112065
+
+stradlings.com
+reviews.stradlings.com
+official.stradlings.com
+
+# Reference: https://twitter.com/1ZRR4H/status/1537501582727778304
+
+ibgenesis.org
+genesis.ibgenesis.org
+
+# Reference: https://twitter.com/atorrrr/status/1537107577418485761
+
+northphxchiro.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1539000348941201408
+
+jcscateringaz.com
+spool.jcscateringaz.com
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1539681817497853952
+# Reference: https://www.virustotal.com/gui/ip-address/176.10.124.180/relations
+
+step.ifsguy.com
+2a2da470.step.ifsguy.com
+374d1389.step.ifsguy.com
+4f8d0e70.step.ifsguy.com
+6ea0e2c3.step.ifsguy.com
+c95a786e.step.ifsguy.com
+e316bac0.step.ifsguy.com
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1539976468876251140
+# Reference: https://twitter.com/C0ryInTheHous3/status/1539976414920704005
+# Reference: https://www.virustotal.com/gui/ip-address/45.10.42.26/relations
+
+cloud.bncfministries.org
+craft.cheesedome.com
+genesis.ibgenesis.org
+hope.point521.com
+market.bluestonechiropractic.com
+mycontrol.alohaalsomeansgoodbye.com
+repair.annetamkin.com
+republic.beboldskincare.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1541775825833701377
+
+app.pgica.org
+00f4910b.app.pgica.org
+0220f52a.app.pgica.org
+084d2671.app.pgica.org
+0a08fe76.app.pgica.org
+108ada69.app.pgica.org
+11e53a7d.app.pgica.org
+16d356f0.app.pgica.org
+1cf74659.app.pgica.org
+1d7757ca.app.pgica.org
+21acf799.app.pgica.org
+21dcdf19.app.pgica.org
+271dbdf0.app.pgica.org
+284f616a.app.pgica.org
+295cef1b.app.pgica.org
+38c385af.app.pgica.org
+4689d20c.app.pgica.org
+539f0a1a.app.pgica.org
+5d322fe2.app.pgica.org
+71d44b01.app.pgica.org
+721ddcba.app.pgica.org
+80269b64.app.pgica.org
+8b64ae28.app.pgica.org
+96af898b.app.pgica.org
+9a5c5bc1.app.pgica.org
+9f08af01.app.pgica.org
+b51d496b.app.pgica.org
+b7e15726.app.pgica.org
+bcf0d5de.app.pgica.org
+cd8403ad.app.pgica.org
+d50f86a6.app.pgica.org
+dd465211.app.pgica.org
+e7ec2c33.app.pgica.org
+ed09a0b9.app.pgica.org
+f4fbd5fe.app.pgica.org
+f5de9db0.app.pgica.org
+
+# Reference: https://twitter.com/ex_raritas/status/1544788160688709633
+
+hunter.libertylawaz.com
+
+# Reference: https://twitter.com/ex_raritas/status/1545057620142092293
+
+center.blueoctopuspress.com
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1545111100089421824
+
+gohnson.advanceditsolutionsaz.com
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1545111873779113986
+
+expert.stmhonline.com
+hope.point521.com
+portfolio.rainbowgraffixx.com
+puzzle.tricityintranet.com
+stanley.planilla2021.com
+
+# Reference: https://twitter.com/ex_raritas/status/1547335182478233601
+
+cloud.bncfministries.org
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1547654346162155523
+# Reference: https://twitter.com/MBThreatIntel/status/1567880847667372032
+# Reference: https://www.virustotal.com/gui/ip-address/45.10.43.78/relations
+# Reference: https://www.virustotal.com/gui/domain/deal-institute.com/relations
+
+deal-institute.com
+dreamworkscdc.com
+courses.deal-institute.com
+diamond.speaktomyheart.org
+havana.littlehavanacigarstore.com
+nivea.dreamworkscdc.com
+reserves.deal-institute.com
+volume.stoneoakcapital.net
+west.bykikarose.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1549094591881613312
+
+call.pgee.org
+performer.stmhonline.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1549111888839163904
+
+smithfirm.agency
+deal.smithfirm.agency
+
+# Reference: https://twitter.com/bigmacjpg/status/1549110513879113730
+
+bundles.trovatogroup.com
+
+# Reference: https://twitter.com/jtrombley90/status/1549497835455975425
+
+diamond.speaktomyheart.org
+
+# Reference: https://twitter.com/mossdinger/status/1549822318826102784
+
+record.usautosaleslv.com
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1550186874488102913
+
+cats.johnbeach.us
+cardo.diem-co.com
+query.dec.works
+record.usautosaleslv.com
+training.ren-kathybermejo.com
+
+# Reference: https://twitter.com/ex_raritas/status/1552329776337018880
+
+master.ilsrecruitment.com
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1552330589583429632
+
+mafia.carverdesigngroup.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2022-08-01%20SocGholish%20IOCs
+# Reference: https://www.virustotal.com/gui/domain/ssl.topgearoutfitters.com/relations
+
+cruize.updogtechnologies.com
+ssl.topgearoutfitters.com
+0bcd.ssl.topgearoutfitters.com
+1059.ssl.topgearoutfitters.com
+3305.ssl.topgearoutfitters.com
+4519.ssl.topgearoutfitters.com
+68b0.ssl.topgearoutfitters.com
+85c4.ssl.topgearoutfitters.com
+c575.ssl.topgearoutfitters.com
+c946.ssl.topgearoutfitters.com
+d307.ssl.topgearoutfitters.com
+d754.ssl.topgearoutfitters.com
+dc6d.ssl.topgearoutfitters.com
+ee32.ssl.topgearoutfitters.com
+f31e.ssl.topgearoutfitters.com
+f44b.ssl.topgearoutfitters.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1555294439181934592
+
+casting.faeryfox.com
+telegram.godsmightywhispers.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2022-08-03%20SocGholish%20IOCs
+
+flunkypixels.com
+fallout.flunkypixels.com
+d26f.fallout.flunkypixels.com
+
+# Reference: https://twitter.com/unmaskparasites/status/1554186000112295936
+
+d2j09jsarr75l2.cloudfront.net
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1555596453720072192
+
+docklar.howicanstart.com
+
+# Reference: https://twitter.com/TIP_Rider/status/1555754746492878855
+
+predator.foxscalesjewelry.com
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1555596453720072192
+
+docklar.howicanstart.com
+
+# Reference: https://twitter.com/mojoesec/status/1557767047618215936
+
+templates.victoryoverdieting.com
+00f7.templates.victoryoverdieting.com
+0573.templates.victoryoverdieting.com
+06a6.templates.victoryoverdieting.com
+0c0f.templates.victoryoverdieting.com
+0c51.templates.victoryoverdieting.com
+0e13.templates.victoryoverdieting.com
+0f2b.templates.victoryoverdieting.com
+1087.templates.victoryoverdieting.com
+1212.templates.victoryoverdieting.com
+13af.templates.victoryoverdieting.com
+15cf.templates.victoryoverdieting.com
+1adc.templates.victoryoverdieting.com
+1d23.templates.victoryoverdieting.com
+1ea9.templates.victoryoverdieting.com
+1f96.templates.victoryoverdieting.com
+2168.templates.victoryoverdieting.com
+245c.templates.victoryoverdieting.com
+279d.templates.victoryoverdieting.com
+27fc.templates.victoryoverdieting.com
+297d.templates.victoryoverdieting.com
+2eb4.templates.victoryoverdieting.com
+2ee9.templates.victoryoverdieting.com
+3023.templates.victoryoverdieting.com
+3413.templates.victoryoverdieting.com
+3954.templates.victoryoverdieting.com
+3b2d.templates.victoryoverdieting.com
+3cec.templates.victoryoverdieting.com
+3ecb.templates.victoryoverdieting.com
+3ee6.templates.victoryoverdieting.com
+442d.templates.victoryoverdieting.com
+4517.templates.victoryoverdieting.com
+460f.templates.victoryoverdieting.com
+483e.templates.victoryoverdieting.com
+48a5.templates.victoryoverdieting.com
+53b4.templates.victoryoverdieting.com
+53d1.templates.victoryoverdieting.com
+5907.templates.victoryoverdieting.com
+5d87.templates.victoryoverdieting.com
+5da1.templates.victoryoverdieting.com
+5ed8.templates.victoryoverdieting.com
+6715.templates.victoryoverdieting.com
+6811.templates.victoryoverdieting.com
+69cd.templates.victoryoverdieting.com
+6d93.templates.victoryoverdieting.com
+7b7b.templates.victoryoverdieting.com
+7e5f.templates.victoryoverdieting.com
+7edf.templates.victoryoverdieting.com
+8356.templates.victoryoverdieting.com
+850b.templates.victoryoverdieting.com
+8a93.templates.victoryoverdieting.com
+8e7e.templates.victoryoverdieting.com
+9125.templates.victoryoverdieting.com
+9880.templates.victoryoverdieting.com
+9d0f.templates.victoryoverdieting.com
+9ec0.templates.victoryoverdieting.com
+a19a.templates.victoryoverdieting.com
+a232.templates.victoryoverdieting.com
+a267.templates.victoryoverdieting.com
+a4a5.templates.victoryoverdieting.com
+a53d.templates.victoryoverdieting.com
+a850.templates.victoryoverdieting.com
+a9e3.templates.victoryoverdieting.com
+abe8.templates.victoryoverdieting.com
+add5.templates.victoryoverdieting.com
+b2aa.templates.victoryoverdieting.com
+b9e8.templates.victoryoverdieting.com
+ba2b.templates.victoryoverdieting.com
+bba6.templates.victoryoverdieting.com
+bc68.templates.victoryoverdieting.com
+bec3.templates.victoryoverdieting.com
+c4b8.templates.victoryoverdieting.com
+c622.templates.victoryoverdieting.com
+c97a.templates.victoryoverdieting.com
+cb51.templates.victoryoverdieting.com
+cb9c.templates.victoryoverdieting.com
+cf6d.templates.victoryoverdieting.com
+cf8f.templates.victoryoverdieting.com
+dc2c.templates.victoryoverdieting.com
+dcfxfjuk.templates.victoryoverdieting.com
+de86.templates.victoryoverdieting.com
+deae.templates.victoryoverdieting.com
+e089.templates.victoryoverdieting.com
+e15b.templates.victoryoverdieting.com
+e1f8.templates.victoryoverdieting.com
+e4aa.templates.victoryoverdieting.com
+e64d.templates.victoryoverdieting.com
+e8ed.templates.victoryoverdieting.com
+ead6.templates.victoryoverdieting.com
+ec99.templates.victoryoverdieting.com
+efca.templates.victoryoverdieting.com
+f440.templates.victoryoverdieting.com
+f7bb.templates.victoryoverdieting.com
+fd0a.templates.victoryoverdieting.com
+fd24.templates.victoryoverdieting.com
+ffee.templates.victoryoverdieting.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2022-08-10%20SocGholish%20IOCs
+
+telegram.godsmightywhispers.com
+00ac.telegram.godsmightywhispers.com
+0176.telegram.godsmightywhispers.com
+02b4.telegram.godsmightywhispers.com
+0323.telegram.godsmightywhispers.com
+03e7.telegram.godsmightywhispers.com
+070a.telegram.godsmightywhispers.com
+0de5.telegram.godsmightywhispers.com
+0ebf.telegram.godsmightywhispers.com
+1304.telegram.godsmightywhispers.com
+15c6.telegram.godsmightywhispers.com
+1773.telegram.godsmightywhispers.com
+197b.telegram.godsmightywhispers.com
+1ad6.telegram.godsmightywhispers.com
+1dc0.telegram.godsmightywhispers.com
+1fbb.telegram.godsmightywhispers.com
+2176.telegram.godsmightywhispers.com
+246e.telegram.godsmightywhispers.com
+26b6.telegram.godsmightywhispers.com
+29ff.telegram.godsmightywhispers.com
+2b1c.telegram.godsmightywhispers.com
+3123.telegram.godsmightywhispers.com
+331c.telegram.godsmightywhispers.com
+3761.telegram.godsmightywhispers.com
+3c2b.telegram.godsmightywhispers.com
+411a.telegram.godsmightywhispers.com
+4394.telegram.godsmightywhispers.com
+439f.telegram.godsmightywhispers.com
+43bb.telegram.godsmightywhispers.com
+46ab.telegram.godsmightywhispers.com
+487d.telegram.godsmightywhispers.com
+48c9.telegram.godsmightywhispers.com
+4a3d.telegram.godsmightywhispers.com
+4a79.telegram.godsmightywhispers.com
+4ecf.telegram.godsmightywhispers.com
+4efd.telegram.godsmightywhispers.com
+5a0c.telegram.godsmightywhispers.com
+5a7b.telegram.godsmightywhispers.com
+5b43.telegram.godsmightywhispers.com
+5eb8.telegram.godsmightywhispers.com
+682b.telegram.godsmightywhispers.com
+6831.telegram.godsmightywhispers.com
+6cbd.telegram.godsmightywhispers.com
+6ff8.telegram.godsmightywhispers.com
+7973.telegram.godsmightywhispers.com
+7fbe.telegram.godsmightywhispers.com
+8126.telegram.godsmightywhispers.com
+825e.telegram.godsmightywhispers.com
+8294.telegram.godsmightywhispers.com
+8445.telegram.godsmightywhispers.com
+84ca.telegram.godsmightywhispers.com
+8865.telegram.godsmightywhispers.com
+88de.telegram.godsmightywhispers.com
+8ac0.telegram.godsmightywhispers.com
+8cf2.telegram.godsmightywhispers.com
+8fa9.telegram.godsmightywhispers.com
+9482.telegram.godsmightywhispers.com
+972d.telegram.godsmightywhispers.com
+9f60.telegram.godsmightywhispers.com
+9f7d.telegram.godsmightywhispers.com
+9fc4.telegram.godsmightywhispers.com
+a0a2.telegram.godsmightywhispers.com
+a0ed.telegram.godsmightywhispers.com
+a1b2.telegram.godsmightywhispers.com
+a247.telegram.godsmightywhispers.com
+a5e7.telegram.godsmightywhispers.com
+ad08.telegram.godsmightywhispers.com
+af74.telegram.godsmightywhispers.com
+b04d.telegram.godsmightywhispers.com
+b2a8.telegram.godsmightywhispers.com
+b605.telegram.godsmightywhispers.com
+ba8a.telegram.godsmightywhispers.com
+bcc4.telegram.godsmightywhispers.com
+be4f.telegram.godsmightywhispers.com
+be52.telegram.godsmightywhispers.com
+c22c.telegram.godsmightywhispers.com
+c3c4.telegram.godsmightywhispers.com
+c6d8.telegram.godsmightywhispers.com
+c703.telegram.godsmightywhispers.com
+c80b.telegram.godsmightywhispers.com
+c962.telegram.godsmightywhispers.com
+cd8d.telegram.godsmightywhispers.com
+d03a.telegram.godsmightywhispers.com
+d064.telegram.godsmightywhispers.com
+d095.telegram.godsmightywhispers.com
+d169.telegram.godsmightywhispers.com
+d494.telegram.godsmightywhispers.com
+d5ae.telegram.godsmightywhispers.com
+e149.telegram.godsmightywhispers.com
+e207.telegram.godsmightywhispers.com
+e49a.telegram.godsmightywhispers.com
+e944.telegram.godsmightywhispers.com
+ed03.telegram.godsmightywhispers.com
+eee8.telegram.godsmightywhispers.com
+f9f6.telegram.godsmightywhispers.com
+fbd1.telegram.godsmightywhispers.com
+fc2d.telegram.godsmightywhispers.com
+fea8.telegram.godsmightywhispers.com
+fef5.telegram.godsmightywhispers.com
+ff79.telegram.godsmightywhispers.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2022-08-18%20SocGholish%20IOCs
+
+140f.templates.victoryoverdieting.com
+1f95.telegram.godsmightywhispers.com
+2178.templates.victoryoverdieting.com
+231a.templates.victoryoverdieting.com
+24e3.telegram.godsmightywhispers.com
+506f.telegram.godsmightywhispers.com
+58f0.telegram.godsmightywhispers.com
+674b.telegram.godsmightywhispers.com
+73a2.templates.victoryoverdieting.com
+7fd4.telegram.godsmightywhispers.com
+890c.telegram.godsmightywhispers.com
+8e31.templates.victoryoverdieting.com
+93ce.telegram.godsmightywhispers.com
+9f72.telegram.godsmightywhispers.com
+bbda.telegram.godsmightywhispers.com
+bd6c.telegram.godsmightywhispers.com
+bd7d.telegram.godsmightywhispers.com
+daea.templates.victoryoverdieting.com
+f886.templates.victoryoverdieting.com
+
+# Reference: https://twitter.com/mojoesec/status/1561805273651617793
+
+breatheinnew.life
+cloudnoze.com
+activation.thepowerofhiswhisper.com
+restructuring.breatheinnew.life
+029b.activation.thepowerofhiswhisper.com
+04c2.activation.thepowerofhiswhisper.com
+05b3.activation.thepowerofhiswhisper.com
+0d35.activation.thepowerofhiswhisper.com
+10cc.activation.thepowerofhiswhisper.com
+15e3.activation.thepowerofhiswhisper.com
+1a29.activation.thepowerofhiswhisper.com
+20cf.activation.thepowerofhiswhisper.com
+22da.activation.thepowerofhiswhisper.com
+23c2.activation.thepowerofhiswhisper.com
+2e29.activation.thepowerofhiswhisper.com
+39e6.activation.thepowerofhiswhisper.com
+47d7.activation.thepowerofhiswhisper.com
+5bea.activation.thepowerofhiswhisper.com
+622a.activation.thepowerofhiswhisper.com
+66c5.activation.thepowerofhiswhisper.com
+6711.activation.thepowerofhiswhisper.com
+69ad.activation.thepowerofhiswhisper.com
+6b44.activation.thepowerofhiswhisper.com
+7365.activation.thepowerofhiswhisper.com
+75b4.activation.thepowerofhiswhisper.com
+7eba.activation.thepowerofhiswhisper.com
+7fe8.activation.thepowerofhiswhisper.com
+8386.activation.thepowerofhiswhisper.com
+84a3.activation.thepowerofhiswhisper.com
+8739.activation.thepowerofhiswhisper.com
+8769.activation.thepowerofhiswhisper.com
+8814.activation.thepowerofhiswhisper.com
+90b2.activation.thepowerofhiswhisper.com
+9fc0.activation.thepowerofhiswhisper.com
+b436.activation.thepowerofhiswhisper.com
+b539.activation.thepowerofhiswhisper.com
+b864.activation.thepowerofhiswhisper.com
+bd71.activation.thepowerofhiswhisper.com
+bda8.activation.thepowerofhiswhisper.com
+c1e0.activation.thepowerofhiswhisper.com
+c36d.activation.thepowerofhiswhisper.com
+d018.activation.thepowerofhiswhisper.com
+d5f5.activation.thepowerofhiswhisper.com
+d742.activation.thepowerofhiswhisper.com
+dbf1.activation.thepowerofhiswhisper.com
+e827.activation.thepowerofhiswhisper.com
+ee93.activation.thepowerofhiswhisper.com
+f2fd.activation.thepowerofhiswhisper.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1562194024361910273
+# Reference: https://www.virustotal.com/gui/ip-address/77.91.127.52/relations
+
+activation.thepowerofhiswhisper.com
+state.thegshrevolution.com
+templates.victoryoverdieting.com
+2d58.state.thegshrevolution.com
+3359.state.thegshrevolution.com
+a946.state.thegshrevolution.com
+5128.templates.victoryoverdieting.com
+bd96.activation.thepowerofhiswhisper.com
+
+# Reference: https://twitter.com/EKFiddle/status/1567196965108350977
+
+thepowerofgodswhisper.com
+roles.thepowerofgodswhisper.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1567698456235634688
+
+clean.godmessagedme.com
+community.wbaperformance.com
+havana.littlehavanacigarstore.com
+puzzle.tricityintranet.com
+secretary.rentamimi.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1569452267199397888
+# Reference: https://www.virustotal.com/gui/ip-address/84.32.188.27/relations
+
+fluctuations.trendylevels.com
+09b0.fluctuations.trendylevels.com
+4e11.fluctuations.trendylevels.com
+c8d5.fluctuations.trendylevels.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1569877691964485632
+
+business.mygshplus.com
+prompt.zonashoppers.academy
+tutorials.girandolashutkindconstruction.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1570781615445659650
+
+moments.abledity.com
+14df.moments.abledity.com
+15df.moments.abledity.com
+15e3.moments.abledity.com
+15e3.moments.abledity.com
+1a7f.moments.abledity.com
+21e9.moments.abledity.com
+21e9.moments.abledity.com
+2938.moments.abledity.com
+2938.moments.abledity.com
+2a21.moments.abledity.com
+2baa.moments.abledity.com
+2baa.moments.abledity.com
+3a4e.moments.abledity.com
+3a4e.moments.abledity.com
+4327.moments.abledity.com
+4328.moments.abledity.com
+4805.moments.abledity.com
+4805.moments.abledity.com
+48ba.moments.abledity.com
+48ba.moments.abledity.com
+4f8d.moments.abledity.com
+4f8d.moments.abledity.com
+5762.moments.abledity.com
+5996.moments.abledity.com
+5996.moments.abledity.com
+5ec3.moments.abledity.com
+5ec3.moments.abledity.com
+6bab.moments.abledity.com
+6bcf.moments.abledity.com
+6bcf.moments.abledity.com
+7133.moments.abledity.com
+713d.moments.abledity.com
+713d.moments.abledity.com
+774a.moments.abledity.com
+774a.moments.abledity.com
+79d3.moments.abledity.com
+7dfe.moments.abledity.com
+7fc8.moments.abledity.com
+7fc8.moments.abledity.com
+8801.moments.abledity.com
+8801.moments.abledity.com
+93ff.moments.abledity.com
+9473.moments.abledity.com
+9569.moments.abledity.com
+9569.moments.abledity.com
+957c.moments.abledity.com
+957c.moments.abledity.com
+981b.moments.abledity.com
+981b.moments.abledity.com
+98a7.moments.abledity.com
+99c5.moments.abledity.com
+9c7f.moments.abledity.com
+9c7f.moments.abledity.com
+a0bc.moments.abledity.com
+a0bc.moments.abledity.com
+a119.moments.abledity.com
+a119.moments.abledity.com
+aa5c.moments.abledity.com
+aa93.moments.abledity.com
+ad46.moments.abledity.com
+ad46.moments.abledity.com
+b1b8.moments.abledity.com
+b1b8.moments.abledity.com
+b30b.moments.abledity.com
+b30b.moments.abledity.com
+b6dc.moments.abledity.com
+b6dc.moments.abledity.com
+bee4.moments.abledity.com
+blockf583.moments.abledity.com
+c077.moments.abledity.com
+c34f.moments.abledity.com
+c416.moments.abledity.com
+c4d2.moments.abledity.com
+c4d2.moments.abledity.com
+c7ec.moments.abledity.com
+c91c.moments.abledity.com
+c91c.moments.abledity.com
+c98a.moments.abledity.com
+c98a.moments.abledity.com
+ccf3.moments.abledity.com
+ce5b.moments.abledity.com
+ce5b.moments.abledity.com
+cf69.moments.abledity.com
+cf69.moments.abledity.com
+d2f8.moments.abledity.com
+dd98.moments.abledity.com
+dd98.moments.abledity.com
+e1bb.moments.abledity.com
+e8b6.moments.abledity.com
+ebfc.moments.abledity.com
+ee73.moments.abledity.com
+ef1b.moments.abledity.com
+f634.moments.abledity.com
+f634.moments.abledity.com
+f86e.moments.abledity.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1573403271292919808
+
+custom.usmuchmedia.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1572679483467104257
+
+notes.fumcpittsburg.org
+
+# Reference: https://twitter.com/MBThreatIntel/status/1574509979784314880
+
+2topost.com
+hair.2topost.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1574814847405101059
+
+4tosocialprofessional.com
+registermegod.online
+jobs.registermegod.online
+memorial.4tosocialprofessional.com
+171d.jobs.registermegod.online
+1f5a.jobs.registermegod.online
+31dd.jobs.registermegod.online
+5b9.jobs.registermegod.online
+a979.jobs.registermegod.online
+
+# Reference: https://twitter.com/MBThreatIntel/status/1575241303302209537
+# Reference: https://www.virustotal.com/gui/ip-address/179.43.133.40/relations
+
+mynewtopboyfriend.store
+mystylingmylife.xyz
+accounts.mynewtopboyfriend.store
+basket.stylingtomorrow.com
+fundraising.mystylingmylife.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1575959652483100674
+
+actors.jcracing.com
+
+# Reference: https://twitter.com/EKFiddle/status/1575981962330005504
+
+people.zonashoppers.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1578145447969173504
+# Reference: https://www.virustotal.com/gui/ip-address/159.69.101.84/relations
+
+4tosocial.com
+balance.tyvekracebibs.com
+football.4tosocial.com
+internal.blessedfoodshalalmeat.com
+01c2.jobs.registermegod.online
+039b.internal.blessedfoodshalalmeat.com
+0580.jobs.registermegod.online
+0846.jobs.registermegod.online
+09ce.jobs.registermegod.online
+0a52.jobs.registermegod.online
+0feb.jobs.registermegod.online
+2cee.jobs.registermegod.online
+2e9d.jobs.registermegod.online
+3ae0.jobs.registermegod.online
+45b9.jobs.registermegod.online
+51b4.jobs.registermegod.online
+5502.jobs.registermegod.online
+5650.jobs.registermegod.online
+579c.jobs.registermegod.online
+5876.jobs.registermegod.online
+5a3b.jobs.registermegod.online
+5acc.jobs.registermegod.online
+5ae0.jobs.registermegod.online
+6165.internal.blessedfoodshalalmeat.com
+6b09.jobs.registermegod.online
+6fca.jobs.registermegod.online
+74fc.internal.blessedfoodshalalmeat.com
+7802.jobs.registermegod.online
+7a88.jobs.registermegod.online
+9ca7.jobs.registermegod.online
+a67f.internal.blessedfoodshalalmeat.com
+alerdnlxfbd.balance.tyvekracebibs.com
+b076.jobs.registermegod.online
+ba13.jobs.registermegod.online
+c090.jobs.registermegod.online
+cojdmfx.balance.tyvekracebibs.com
+d971.internal.blessedfoodshalalmeat.com
+df35.jobs.registermegod.online
+e095.jobs.registermegod.online
+f37b.jobs.registermegod.online
+fdc0.jobs.registermegod.online
+gnc.balance.tyvekracebibs.com
+ivmwafpgas.balance.tyvekracebibs.com
+krmmfpoesa.balance.tyvekracebibs.com
+mupbap.balance.tyvekracebibs.com
+n.balance.tyvekracebibs.com
+pmtmmwuovln.balance.tyvekracebibs.com
+rbfafmalbyv.balance.tyvekracebibs.com
+ructexyljspfju.balance.tyvekracebibs.com
+sjsvifluhvbwgw.balance.tyvekracebibs.com
+sqotbcdzvrfml.balance.tyvekracebibs.com
+tpousltzamjbio.balance.tyvekracebibs.com
+ummhjsoxcpat.balance.tyvekracebibs.com
+vvuuqjpbzoe.balance.tyvekracebibs.com
+xbdtiykgxuhg.balance.tyvekracebibs.com
+xscbxhbtw.balance.tyvekracebibs.com
+xtwhfnjmgayrj.balance.tyvekracebibs.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1579491968035721218
+
+houses.in-vermont.com
+d477.houses.in-vermont.com
+e2c0.houses.in-vermont.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1579915319145295872
+# Reference: https://www.virustotal.com/gui/ip-address/185.185.87.19/relations
+
+demand.sageyogatherapies.com
+360c.demand.sageyogatherapies.com
+dbeb.demand.sageyogatherapies.com
+f292.demand.sageyogatherapies.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1580283780350504960
+
+allsunstates.com
+ecar.allsunstates.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1580921898556276736
+
+offerings.love4lifewellness.com
+1303.offerings.love4lifewellness.com
+1e06.offerings.love4lifewellness.com
+213d.offerings.love4lifewellness.com
+3d96.offerings.love4lifewellness.com
+4c0f.offerings.love4lifewellness.com
+4d87.offerings.love4lifewellness.com
+7d2d.offerings.love4lifewellness.com
+7d3a.offerings.love4lifewellness.com
+8a4b.offerings.love4lifewellness.com
+980f.offerings.love4lifewellness.com
+a574.offerings.love4lifewellness.com
+ca59.offerings.love4lifewellness.com
+cebf.offerings.love4lifewellness.com
+d1a0.offerings.love4lifewellness.com
+d3c5.offerings.love4lifewellness.com
+d7d8.offerings.love4lifewellness.com
+dd68.offerings.love4lifewellness.com
+e962.offerings.love4lifewellness.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1580971576144822272
+
+engine.discoveryhypnosis.com
+resale.adkelly.com
+resort.reliablecommunityservices.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1582131308763185152
+# Reference: http://lists.emergingthreats.net/pipermail/emerging-sigs/2022-October/030777.html
+
+c1ypsilanti.org
+festival.robingaster.com
+training.c1ypsilanti.org
+
+# Reference: https://twitter.com/C0ryInTheHous3/status/1582370010659311616
+# Reference: https://www.virustotal.com/gui/ip-address/91.208.197.151/relations
+
+consultant.meredithklemmblog.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1582439318320447489
+
+family.1ablecommunity.com
+school.cherry-street-portrait-studios.com
+
+# Reference: http://lists.emergingthreats.net/pipermail/emerging-sigs/2022-October/030779.html
+
+jsfconnections.com
+discover.jsfconnections.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1583210388627542018
+
+furniture.nothingordinarydesign.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1585404776732594181
+
+chess.north-atlantic.com
+
+# Reference: https://community.emergingthreats.net/t/daily-ruleset-update-summary-2022-10-27/109
+
+shipwrecks.ggentile.com
+
+# Reference: https://twitter.com/MBThreatIntel/status/1588630860236218368
+
+portraits.studio-94-photography.com
+
+# Reference: https://twitter.com/mojoesec/status/1590380057180409856
+# Reference: https://www.virustotal.com/gui/ip-address/195.133.88.19/relations
+
+campaign.tworiversboat.com
+07cf.campaign.tworiversboat.com
+188e.campaign.tworiversboat.com
+2344.campaign.tworiversboat.com
+41be.campaign.tworiversboat.com
+4453.campaign.tworiversboat.com
+4f0a.campaign.tworiversboat.com
+54d9.campaign.tworiversboat.com
+6041.campaign.tworiversboat.com
+60eb.campaign.tworiversboat.com
+6950.campaign.tworiversboat.com
+6980.campaign.tworiversboat.com
+6dfd.campaign.tworiversboat.com
+737d.campaign.tworiversboat.com
+7502.campaign.tworiversboat.com
+7ae3.campaign.tworiversboat.com
+8322.campaign.tworiversboat.com
+848b.campaign.tworiversboat.com
+85fe.campaign.tworiversboat.com
+8b79.campaign.tworiversboat.com
+ab78.campaign.tworiversboat.com
+ac96.campaign.tworiversboat.com
+bc4a.campaign.tworiversboat.com
+ca21.campaign.tworiversboat.com
+cd74.campaign.tworiversboat.com
+e0c7.campaign.tworiversboat.com
+f121.campaign.tworiversboat.com
+f253.campaign.tworiversboat.com
+f622.campaign.tworiversboat.com
+
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2022-November/030798.html
+
+coinangel.online
+rate.coinangel.online
+0096.rate.coinangel.online
+0ed7.rate.coinangel.online
+0f71.rate.coinangel.online
+247d.rate.coinangel.online
+3162.rate.coinangel.online
+3f5a.rate.coinangel.online
+4862.rate.coinangel.online
+5a75.rate.coinangel.online
+5c31.rate.coinangel.online
+7507.rate.coinangel.online
+860a.rate.coinangel.online
+881f.rate.coinangel.online
+8941.rate.coinangel.online
+8cff.rate.coinangel.online
+90222.rate.coinangel.online
+9e033.rate.coinangel.online
+bef30.rate.coinangel.online
+c4e85.rate.coinangel.online
+c62f8.rate.coinangel.online
+c827.rate.coinangel.online
+cefd.rate.coinangel.online
+f098.rate.coinangel.online
+fd24.rate.coinangel.online
+
+# Reference: https://blog.sucuri.net/2022/11/new-socgholish-malware-variant-uses-zip-compression-evasive-techniques.html
+
+community.backpacktrader.com
+course.netpickstrading.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-11-16-v10174/162
+
+factors.djbel.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-11-22-v10179/172
+
+dashboard.skybacherslocker.com
+montage.travelguidediva.com
+
+# Reference: https://blog.sucuri.net/2022/11/new-wave-of-socgholish-cid27x-injections.html
+
+mini.ptipexcel.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-11-28-v10183/182
+
+mask.covidturf.com
+pastor.cntcog.org
+perspective.cdsignner.com
+progress.cashdigger.com
+wiki.clotheslane.com
+
+# Reference: https://twitter.com/nosecurething/status/1597655258666500097
+# Reference: https://www.virustotal.com/gui/ip-address/82.180.154.113/relations
+
+diary.lojjh.com
+03c.discover.jsfconnections.com
+0454.discover.jsfconnections.com
+0dd3.discover.jsfconnections.com
+1113a.diary.lojjh.com
+18249.diary.lojjh.com
+186e.discover.jsfconnections.com
+1ca79.diary.lojjh.com
+1ffb.discover.jsfconnections.com
+22fa9.diary.lojjh.com
+25a02.diary.lojjh.com
+2dbb6.diary.lojjh.com
+2ff2.discover.jsfconnections.com
+3157.diary.lojjh.com
+31d6.discover.jsfconnections.com
+35e5.discover.jsfconnections.com
+397b.discover.jsfconnections.com
+3af2.discover.jsfconnections.com
+3b1a.discover.jsfconnections.com
+3ba9.discover.jsfconnections.com
+3da2.discover.jsfconnections.com
+41b9.discover.jsfconnections.com
+4200.discover.jsfconnections.com
+4519.discover.jsfconnections.com
+47bbd.diary.lojjh.com
+48e2.discover.jsfconnections.com
+4d9c.discover.jsfconnections.com
+4f60.discover.jsfconnections.com
+5468.discover.jsfconnections.com
+55444.diary.lojjh.com
+55904.diary.lojjh.com
+55f4.discover.jsfconnections.com
+59b8.discover.jsfconnections.com
+6390.discover.jsfconnections.com
+63e7b.diary.lojjh.com
+643a4.diary.lojjh.com
+685e.discover.jsfconnections.com
+69d2.discover.jsfconnections.com
+6a535.diary.lojjh.com
+6d417.diary.lojjh.com
+6e1b.discover.jsfconnections.com
+6eae.discover.jsfconnections.com
+7041e.diary.lojjh.com
+72e34.diary.lojjh.com
+7329.discover.jsfconnections.com
+7490.discover.jsfconnections.com
+7a2e.discover.jsfconnections.com
+7ebb0.diary.lojjh.com
+7f6e.discover.jsfconnections.com
+86f2e.diary.lojjh.com
+888c.discover.jsfconnections.com
+88d5a.diary.lojjh.com
+8b9b.discover.jsfconnections.com
+8ee8.discover.jsfconnections.com
+8f1e3.diary.lojjh.com
+91d1.discover.jsfconnections.com
+94265.diary.lojjh.com
+95f09.diary.lojjh.com
+97418.diary.lojjh.com
+99ec.discover.jsfconnections.com
+9c3af.diary.lojjh.com
+a200.discover.jsfconnections.com
+a37e.discover.jsfconnections.com
+a489.discover.jsfconnections.com
+a650.discover.jsfconnections.com
+a7eb.discover.jsfconnections.com
+a9a8f.diary.lojjh.com
+a9dcb.diary.lojjh.com
+ad96.discover.jsfconnections.com
+b1c10.diary.lojjh.com
+b36f.discover.jsfconnections.com
+b3ab.discover.jsfconnections.com
+b8b46.diary.lojjh.com
+ba9e.discover.jsfconnections.com
+bcd8d.diary.lojjh.com
+c01a.discover.jsfconnections.com
+c06bd.diary.lojjh.com
+c202.discover.jsfconnections.com
+c4205.diary.lojjh.com
+c4cce.diary.lojjh.com
+c5a5b.diary.lojjh.com
+c67da.diary.lojjh.com
+c6ab.discover.jsfconnections.com
+c6f54.diary.lojjh.com
+ca03c.diary.lojjh.com
+ca1a.discover.jsfconnections.com
+cb2d.discover.jsfconnections.com
+cedfd.diary.lojjh.com
+d3157.diary.lojjh.com
+d561.discover.jsfconnections.com
+d9a6.discover.jsfconnections.com
+dc7ac.diary.lojjh.com
+dd79.discover.jsfconnections.com
+df05.discover.jsfconnections.com
+e488.discover.jsfconnections.com
+e54ed.diary.lojjh.com
+f3f96.diary.lojjh.com
+f63d5.diary.lojjh.com
+fe14.discover.jsfconnections.com
+feaf.discover.jsfconnections.com
+test.diary.lojjh.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1600166713257082882
+
+fate.truelance.com
+09283.fate.truelance.com
+1cd4d.fate.truelance.com
+206bc.fate.truelance.com
+3978b.fate.truelance.com
+3cc9d.fate.truelance.com
+73d86.fate.truelance.com
+86248.fate.truelance.com
+a406c.fate.truelance.com
+ad373.fate.truelance.com
+cf0bc.fate.truelance.com
+d824c.fate.truelance.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-12-09-v10192/201
+
+automatic.tworiversboats.com
+logistics.socialtrendsmanagement.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-12-13-v10195/205
+
+library.covebooks.com
+modernism.designpaw.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-12-15-v10197/208
+
+brooklands.harteverything.com
+deposit.coveprice.com
+fittingroom.gibbsjewelry.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-12-19-v10199/212
+
+navyseal.bezmail.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1606124410619953153
+
+shrubs.emptyisland.pics
+09f51.shrubs.emptyisland.pics
+0b854.shrubs.emptyisland.pics
+0c77b.shrubs.emptyisland.pics
+30e92.shrubs.emptyisland.pics
+311a7.shrubs.emptyisland.pics
+3d442.shrubs.emptyisland.pics
+44255.shrubs.emptyisland.pics
+44cb0.shrubs.emptyisland.pics
+4c4f6.shrubs.emptyisland.pics
+55c1e.shrubs.emptyisland.pics
+5ac88.shrubs.emptyisland.pics
+5d36b.shrubs.emptyisland.pics
+70ef8.shrubs.emptyisland.pics
+72fd8.shrubs.emptyisland.pics
+7f868.shrubs.emptyisland.pics
+801e9.shrubs.emptyisland.pics
+82c8c.shrubs.emptyisland.pics
+82e97.shrubs.emptyisland.pics
+849e8.shrubs.emptyisland.pics
+84cbe.shrubs.emptyisland.pics
+88c3a.shrubs.emptyisland.pics
+8e5e6.shrubs.emptyisland.pics
+8f5b3.shrubs.emptyisland.pics
+974d4.shrubs.emptyisland.pics
+9ce8c.shrubs.emptyisland.pics
+a024b.shrubs.emptyisland.pics
+a02eb.shrubs.emptyisland.pics
+a060c.shrubs.emptyisland.pics
+a58cf.shrubs.emptyisland.pics
+ac436.shrubs.emptyisland.pics
+b0ca2.shrubs.emptyisland.pics
+b1498.shrubs.emptyisland.pics
+b63e6.shrubs.emptyisland.pics
+d41ba.shrubs.emptyisland.pics
+da6ae.shrubs.emptyisland.pics
+dce42.shrubs.emptyisland.pics
+e0324.shrubs.emptyisland.pics
+e28c3.shrubs.emptyisland.pics
+e65e4.shrubs.emptyisland.pics
+ea0a5.shrubs.emptyisland.pics
+eb7f3.shrubs.emptyisland.pics
+ec818.shrubs.emptyisland.pics
+f9e1a.shrubs.emptyisland.pics
+fc364.shrubs.emptyisland.pics
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2022-12-23-v10204/229
+
+abcbarbecue.xyz
+milonopensky.store
+exclusive.milonopensky.store
+extcourse.zurvio.com
+internship.ojul.com
+perspective.abcbarbecue.xyz
+
+# Reference: https://twitter.com/BroadAnalysis/status/1608846475408334849
+
+digijump.online
+navyseal.digijump.online
+
+# Reference: https://twitter.com/RootkitHalo/status/1610647981266698242
+# Reference: https://twitter.com/BroadAnalysis/status/1613255257789693953
+# Reference: https://www.virustotal.com/gui/ip-address/88.119.169.108/relations
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-01-16%20Socgholish%20IOCs
+
+hjgk67kg.xyz
+tradingvein.xyz
+asset.tradingvein.xyz
+taxes.rpacx.com
+00c61.asset.tradingvein.xyz
+017c1.asset.tradingvein.xyz
+02878.asset.tradingvein.xyz
+038d1.asset.tradingvein.xyz
+08b67.asset.tradingvein.xyz
+09f05.asset.tradingvein.xyz
+0bab.asset.tradingvein.xyz
+0e1b4.asset.tradingvein.xyz
+0e2a8.asset.tradingvein.xyz
+0f1e4.asset.tradingvein.xyz
+0f891.asset.tradingvein.xyz
+10239.asset.tradingvein.xyz
+120e9.asset.tradingvein.xyz
+1430a.asset.tradingvein.xyz
+14f03.asset.tradingvein.xyz
+1609f.asset.tradingvein.xyz
+19168.asset.tradingvein.xyz
+1923c.asset.tradingvein.xyz
+1b351.asset.tradingvein.xyz
+1b3f9.asset.tradingvein.xyz
+1bb9e.asset.tradingvein.xyz
+1bed6.asset.tradingvein.xyz
+1cc73.asset.tradingvein.xyz
+1d652.asset.tradingvein.xyz
+2022c.asset.tradingvein.xyz
+21686.asset.tradingvein.xyz
+21f60.asset.tradingvein.xyz
+22712.asset.tradingvein.xyz
+231a0.asset.tradingvein.xyz
+23cc6.asset.tradingvein.xyz
+2628a.asset.tradingvein.xyz
+2632b.asset.tradingvein.xyz
+28a55.asset.tradingvein.xyz
+299a2.asset.tradingvein.xyz
+2a136.asset.tradingvein.xyz
+2aa07.asset.tradingvein.xyz
+2c17b.asset.tradingvein.xyz
+2c1b7.asset.tradingvein.xyz
+2c803.asset.tradingvein.xyz
+2d56f.asset.tradingvein.xyz
+2d6e5.asset.tradingvein.xyz
+32339.asset.tradingvein.xyz
+34464.asset.tradingvein.xyz
+34761.asset.tradingvein.xyz
+3a305.asset.tradingvein.xyz
+3ba3d.asset.tradingvein.xyz
+3c4d5.asset.tradingvein.xyz
+3f90a.asset.tradingvein.xyz
+40481.asset.tradingvein.xyz
+43f97.asset.tradingvein.xyz
+47e13.asset.tradingvein.xyz
+4c7b2.asset.tradingvein.xyz
+4ca03.asset.tradingvein.xyz
+4d253.asset.tradingvein.xyz
+51402.asset.tradingvein.xyz
+53409.asset.tradingvein.xyz
+53a13.asset.tradingvein.xyz
+55a17.asset.tradingvein.xyz
+569ef.asset.tradingvein.xyz
+56b94.asset.tradingvein.xyz
+57783.asset.tradingvein.xyz
+58c94.asset.tradingvein.xyz
+5997b.asset.tradingvein.xyz
+5b5db.asset.tradingvein.xyz
+5d2d6.asset.tradingvein.xyz
+5f9a4.asset.tradingvein.xyz
+60bab.asset.tradingvein.xyz
+6135d.asset.tradingvein.xyz
+62c9a.asset.tradingvein.xyz
+63445.asset.tradingvein.xyz
+65008.asset.tradingvein.xyz
+6536b.asset.tradingvein.xyz
+68722.asset.tradingvein.xyz
+698a5.asset.tradingvein.xyz
+6b4f7.asset.tradingvein.xyz
+6b56f.asset.tradingvein.xyz
+6c05f.asset.tradingvein.xyz
+6c921.asset.tradingvein.xyz
+6cb86.asset.tradingvein.xyz
+6e15f.asset.tradingvein.xyz
+702f7.asset.tradingvein.xyz
+70dda.asset.tradingvein.xyz
+72d85.asset.tradingvein.xyz
+73de8.asset.tradingvein.xyz
+74f84.asset.tradingvein.xyz
+79711.asset.tradingvein.xyz
+79985.asset.tradingvein.xyz
+79d52.asset.tradingvein.xyz
+7b9ff.asset.tradingvein.xyz
+7c6ad.asset.tradingvein.xyz
+7dc78.asset.tradingvein.xyz
+7e1df.asset.tradingvein.xyz
+7ebcb.asset.tradingvein.xyz
+832d8.asset.tradingvein.xyz
+8535f.asset.tradingvein.xyz
+85392.asset.tradingvein.xyz
+85dfb.asset.tradingvein.xyz
+88f80.asset.tradingvein.xyz
+8b020.asset.tradingvein.xyz
+92a6f.asset.tradingvein.xyz
+960fe.asset.tradingvein.xyz
+97861.asset.tradingvein.xyz
+98489.asset.tradingvein.xyz
+98f6f.asset.tradingvein.xyz
+9a165.asset.tradingvein.xyz
+9a281.asset.tradingvein.xyz
+9d048.asset.tradingvein.xyz
+9dd7a.asset.tradingvein.xyz
+9f42e.asset.tradingvein.xyz
+a4357.asset.tradingvein.xyz
+a59dd.asset.tradingvein.xyz
+a5fc6.asset.tradingvein.xyz
+a6426.asset.tradingvein.xyz
+a6f0a.asset.tradingvein.xyz
+a79af.asset.tradingvein.xyz
+af4a5.asset.tradingvein.xyz
+b1565.asset.tradingvein.xyz
+b3b7c.asset.tradingvein.xyz
+b90b1.asset.tradingvein.xyz
+be02b.asset.tradingvein.xyz
+c06b8.asset.tradingvein.xyz
+c2409.asset.tradingvein.xyz
+c3a15.asset.tradingvein.xyz
+c4a3a.asset.tradingvein.xyz
+c4a9b.asset.tradingvein.xyz
+c536e.asset.tradingvein.xyz
+c792b.asset.tradingvein.xyz
+c7eb9.asset.tradingvein.xyz
+c9a6e.asset.tradingvein.xyz
+c9f6f.asset.tradingvein.xyz
+ca03b.asset.tradingvein.xyz
+cb330.asset.tradingvein.xyz
+cbd80.asset.tradingvein.xyz
+cd06e.asset.tradingvein.xyz
+cd480.asset.tradingvein.xyz
+cdeae.asset.tradingvein.xyz
+cef0b.asset.tradingvein.xyz
+d05e5.asset.tradingvein.xyz
+d1027.asset.tradingvein.xyz
+d2189.asset.tradingvein.xyz
+d3bac.asset.tradingvein.xyz
+d42e4.asset.tradingvein.xyz
+d8e39.asset.tradingvein.xyz
+db1b7.asset.tradingvein.xyz
+dbcc5.asset.tradingvein.xyz
+dc4f0.asset.tradingvein.xyz
+df2ea.asset.tradingvein.xyz
+e0b8e.asset.tradingvein.xyz
+e4d38.asset.tradingvein.xyz
+ec53e.asset.tradingvein.xyz
+f1215.asset.tradingvein.xyz
+f1f3a.asset.tradingvein.xyz
+f63a3.asset.tradingvein.xyz
+fa7a1.asset.tradingvein.xyz
+fce2f.asset.tradingvein.xyz
+fff3c.asset.tradingvein.xyz
+
+# Reference: https://twitter.com/TrollgeMark/status/1615201164819312641
+
+blender3d.teamironwulf.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/84.32.190.152/relations
+
+cockroachracing.site
+dentureforfree.online
+betting.cockroachracing.site
+market.dentureforfree.online
+712ed.betting.cockroachracing.site
+ea707.betting.cockroachracing.site
+a5cbe.market.dentureforfree.online
+d1840.market.dentureforfree.online
+
+# Reference: https://twitter.com/bigmacjpg/status/1617535206206103554
+
+tophandsome.gay
+rendezvous.tophandsome.gay
+256a7.rendezvous.tophandsome.gay
+98c60.rendezvous.tophandsome.gay
+9c91f.rendezvous.tophandsome.gay
+f47ac.rendezvous.tophandsome.gay
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-01-23-v10226/278
+# Reference: https://www.virustotal.com/gui/ip-address/88.119.169.108/relations
+
+signing.unitynotarypublic.com
+79689.signing.unitynotarypublic.com
+8296f.signing.unitynotarypublic.com
+ac008.signing.unitynotarypublic.com
+b2a44.signing.unitynotarypublic.com
+d4520.signing.unitynotarypublic.com
+fccb4.signing.unitynotarypublic.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1622601928285777922
+
+samples.muzikcitysound.com
+10a44.samples.muzikcitysound.com
+189d2.samples.muzikcitysound.com
+7382406.samples.muzikcitysound.com
+82406.samples.muzikcitysound.com
+85638.samples.muzikcitysound.com
+c4f22.samples.muzikcitysound.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-02-09-v10240/306
+
+shock.creatingaharmoniouslife.net
+
+# Reference: https://twitter.com/bigmacjpg/status/1626232889439559680
+
+distributor.techsavvyauto.com
+1cf5b.distributor.techsavvyauto.com
+2a60c.distributor.techsavvyauto.com
+362e5.distributor.techsavvyauto.com
+4ba6a.distributor.techsavvyauto.com
+56707.distributor.techsavvyauto.com
+5a6de.distributor.techsavvyauto.com
+6b82a.distributor.techsavvyauto.com
+6d38a.distributor.techsavvyauto.com
+73178.distributor.techsavvyauto.com
+77ce0.distributor.techsavvyauto.com
+7d29c.distributor.techsavvyauto.com
+87134.distributor.techsavvyauto.com
+8e96c.distributor.techsavvyauto.com
+9129d.distributor.techsavvyauto.com
+99550.distributor.techsavvyauto.com
+9d2de.distributor.techsavvyauto.com
+9f4a6.distributor.techsavvyauto.com
+abf24.distributor.techsavvyauto.com
+ae274.distributor.techsavvyauto.com
+b5014.distributor.techsavvyauto.com
+c0263.distributor.techsavvyauto.com
+cc904.distributor.techsavvyauto.com
+cd758.distributor.techsavvyauto.com
+cf9c4.distributor.techsavvyauto.com
+d2f23.distributor.techsavvyauto.com
+e18fc.distributor.techsavvyauto.com
+ede78.distributor.techsavvyauto.com
+ef85f.distributor.techsavvyauto.com
+vbae32.distributor.techsavvyauto.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1628447546702983175
+
+calendar.wishmarkets.com
+152a8.calendar.wishmarkets.com
+1bc71.calendar.wishmarkets.com
+2a0b5.calendar.wishmarkets.com
+3f290.calendar.wishmarkets.com
+63f03.calendar.wishmarkets.com
+63f3c.calendar.wishmarkets.com
+669a6.calendar.wishmarkets.com
+74eae.calendar.wishmarkets.com
+78196.calendar.wishmarkets.com
+82d20.calendar.wishmarkets.com
+8a277.calendar.wishmarkets.com
+948cb.calendar.wishmarkets.com
+98684.calendar.wishmarkets.com
+9a016.calendar.wishmarkets.com
+abb93.calendar.wishmarkets.com
+be394.calendar.wishmarkets.com
+c1a20.calendar.wishmarkets.com
+caf13.calendar.wishmarkets.com
+e4f88.calendar.wishmarkets.com
+fba61.calendar.wishmarkets.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-02-21-v10248/321
+
+subscribe.3gbling.com
+
+# Reference: https://twitter.com/bigmacjpg/status/1628792773422841857
+
+decision.alshafipdk.com
+035f2.decision.alshafipdk.com
+0fd9a.decision.alshafipdk.com
+33784.decision.alshafipdk.com
+9b57e.decision.alshafipdk.com
+afa2d.decision.alshafipdk.com
+
+# Reference: https://twitter.com/AnFam17/status/1628995393143832576
+
+publicccescpolace.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-02-28-v10255/336
+
+accountability.thefenceanddeckguys.com
+catalog.iroldzyn.com
+oxford.courstify.com
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/ta569-socgholish-and-beyond
+# Reference: https://otx.alienvault.com/pulse/63fcc40dc61f21260d830fdb
+
+active.aasm.pro
+amplifier.myjesusloves.me
+auction.wonderwomanquilts.com
+baget.godmessaged.me
+best.theascent-group.com
+canonical.fmunews.com
+casting.austinonline.shop
+chicago.beboldskin.com
+cigars.pawscolours.com
+collapse.tradingiswar.com
+common.dotviolationsremoval.com
+episode.foxscales.com
+expense.brick-house.net
+expert.stmhonline.net
+fork.topgeargroup.shop
+friscomusicgroup.com
+governing.beautynic.com
+group5.corralphacap.com
+hares.lacyberlab.net
+hemi.mamasbakery.net
+hook.adieh.com
+kinematics.starmidwest.com
+loans.mistakenumberone.com
+minion.maxxcorp.net
+montage.travelguidediva.commycontrol.alohaalsomeansgoodbye.com
+myfood.silverspringfoodproject.org
+natural.cpawalmyrivera.com
+office.cdsigner.com
+passphrase.singinganewsong.com
+people.fl2wealth.com
+podcasts.momsgrabcoffee.com
+premiere.4tosocialbeginners.com
+repo.allgoodsnservices.com
+requests.pleaseactivate.me
+rituals.fashionediter.com
+shortsaledamagereports.com
+smiles.cahl4u.org
+sodality.mandmsolicitors.com
+sonic.myr2b.me
+squad.incumetrics.com
+telemetry.usacyberpages.net
+tickets.kairosadvantage.com
+travel.dianatokaji.com
+vacation.thebrightgift.com
+vacation.thebrightgift1.com
+wallpapers.uniquechoice-co.com
+zoom.themyr2bpodcast.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-03-08-v10261/349
+
+tool.pearldentalgroup.ca
+1bd2b.tool.pearldentalgroup.ca
+2bd38.tool.pearldentalgroup.ca
+33d5b.tool.pearldentalgroup.ca
+3419c.tool.pearldentalgroup.ca
+35d15.tool.pearldentalgroup.ca
+4ec4c.tool.pearldentalgroup.ca
+545fd.tool.pearldentalgroup.ca
+5bd21.tool.pearldentalgroup.ca
+a4c86.tool.pearldentalgroup.ca
+ae141.tool.pearldentalgroup.ca
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-03-15-v10268/360
+
+favor.thehouseplantblog.com
+056b3.favor.thehouseplantblog.com
+dfd87.favor.thehouseplantblog.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/94.103.94.237/relations
+
+0c966.favor.thehouseplantblog.com
+0cc55.favor.thehouseplantblog.com
+0e607.favor.thehouseplantblog.com
+0f139.decision.alshafipdk.com
+14894.decision.alshafipdk.com
+14ef7.decision.alshafipdk.com
+1e3f0.decision.alshafipdk.com
+23f3e.decision.alshafipdk.com
+28b76.decision.alshafipdk.com
+319f1.favor.thehouseplantblog.com
+343b2.favor.thehouseplantblog.com
+35362.decision.alshafipdk.com
+4e6d8.decision.alshafipdk.com
+5866c.decision.alshafipdk.com
+5f1b0.decision.alshafipdk.com
+5f1dc.decision.alshafipdk.com
+7be4b.favor.thehouseplantblog.com
+7c511.decision.alshafipdk.com
+8c884.decision.alshafipdk.com
+8f539.favor.thehouseplantblog.com
+91374.favor.thehouseplantblog.com
+9aeed.decision.alshafipdk.com
+a2a65.decision.alshafipdk.com
+a3aca.decision.alshafipdk.com
+ab38d.decision.alshafipdk.com
+asasa.0f139.decision.alshafipdk.com
+c2182.favor.thehouseplantblog.com
+cd530.decision.alshafipdk.com
+fcbbb.decision.alshafipdk.com
+ff0a7.decision.alshafipdk.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-03-27-v10278/415
+
+lap.detroitdragway.com
+03271.lap.detroitdragway.com
+17b25.lap.detroitdragway.com
+874d3.lap.detroitdragway.com
+f7145.lap.detroitdragway.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-03-30-v10281/420
+
+examples.propertytax4less.com
+life.judyfay.com
+unit4.majesticpg.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-03-31-v10282/422
+
+agreement.panworldtradersllc.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-04-07-v10287/444
+
+cloudid.teacherhamish.com
+95a25061cfbcd33.cloudid.teacherhamish.com
+awt.cloudid.teacherhamish.com
+bhv.cloudid.teacherhamish.com
+ceg.cloudid.teacherhamish.com
+craj.cloudid.teacherhamish.com
+csidr.cloudid.teacherhamish.com
+ctr.cloudid.teacherhamish.com
+ddf.cloudid.teacherhamish.com
+dey.cloudid.teacherhamish.com
+dfed.cloudid.teacherhamish.com
+dtcyw.cloudid.teacherhamish.com
+dwqjh.cloudid.teacherhamish.com
+ego.cloudid.teacherhamish.com
+eij.cloudid.teacherhamish.com
+eitm.cloudid.teacherhamish.com
+exu.cloudid.teacherhamish.com
+fud.cloudid.teacherhamish.com
+fuuo.cloudid.teacherhamish.com
+fuwde.cloudid.teacherhamish.com
+ggy.cloudid.teacherhamish.com
+gqd.cloudid.teacherhamish.com
+gty.cloudid.teacherhamish.com
+guhs.cloudid.teacherhamish.com
+hgt.cloudid.teacherhamish.com
+hlcrn.cloudid.teacherhamish.com
+huecz.cloudid.teacherhamish.com
+icl.cloudid.teacherhamish.com
+ikps.cloudid.teacherhamish.com
+ilyg.cloudid.teacherhamish.com
+iubs.cloudid.teacherhamish.com
+iye.cloudid.teacherhamish.com
+joyp.cloudid.teacherhamish.com
+jsjha.cloudid.teacherhamish.com
+jxwk.cloudid.teacherhamish.com
+knkj.cloudid.teacherhamish.com
+kpst.cloudid.teacherhamish.com
+kqre.cloudid.teacherhamish.com
+lnf.cloudid.teacherhamish.com
+mqdvr.cloudid.teacherhamish.com
+ndplj.cloudid.teacherhamish.com
+nhrgd.cloudid.teacherhamish.com
+nxmz.cloudid.teacherhamish.com
+nzwl.cloudid.teacherhamish.com
+oibi.cloudid.teacherhamish.com
+oiiis.cloudid.teacherhamish.com
+omz.cloudid.teacherhamish.com
+padr.cloudid.teacherhamish.com
+pcxv.cloudid.teacherhamish.com
+pntft.cloudid.teacherhamish.com
+qadr.cloudid.teacherhamish.com
+qirrl.cloudid.teacherhamish.com
+qjd.cloudid.teacherhamish.com
+qjhl.cloudid.teacherhamish.com
+rad.cloudid.teacherhamish.com
+sfy.cloudid.teacherhamish.com
+shlft.cloudid.teacherhamish.com
+smptz.cloudid.teacherhamish.com
+sof.cloudid.teacherhamish.com
+sol.cloudid.teacherhamish.com
+tbw.cloudid.teacherhamish.com
+tdk.cloudid.teacherhamish.com
+tvtkb.cloudid.teacherhamish.com
+tynxo.cloudid.teacherhamish.com
+usar.cloudid.teacherhamish.com
+vqdvu.cloudid.teacherhamish.com
+wyslt.cloudid.teacherhamish.com
+wzkb.cloudid.teacherhamish.com
+xhno.cloudid.teacherhamish.com
+xmw.cloudid.teacherhamish.com
+ymqmr.cloudid.teacherhamish.com
+ypid.cloudid.teacherhamish.com
+yuoyy.cloudid.teacherhamish.com
+zdyw.cloudid.teacherhamish.com
+ziti.cloudid.teacherhamish.com
+zmar.cloudid.teacherhamish.com
+znsxo.cloudid.teacherhamish.com
+zvmh.cloudid.teacherhamish.com
+zydbp.cloudid.teacherhamish.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-04-11%20Socgholish%20IOCs
+
+wzkb.cloudid.teacherhamish.com
+zvmh.cloudid.teacherhamish.com
+
+# Reference: https://twitter.com/threatcat_ch/status/1648208634709516288
+
+reseller.wonderfulworldblog.com
+app.reseller.wonderfulworldblog.com
+eajpx.reseller.wonderfulworldblog.com
+eok.reseller.wonderfulworldblog.com
+grp.reseller.wonderfulworldblog.com
+plwfv.reseller.wonderfulworldblog.com
+pxcg.reseller.wonderfulworldblog.com
+qpivi.reseller.wonderfulworldblog.com
+tji.reseller.wonderfulworldblog.com
+ylz.reseller.wonderfulworldblog.com
+zcnm.reseller.wonderfulworldblog.com
+
+# Reference: https://www.virustotal.com/gui/domain/picture.mercedesbestphoto.store/relations
+
+mercedesbestphoto.store
+picture.mercedesbestphoto.store
+4ef9e.picture.mercedesbestphoto.store
+74ed4.picture.mercedesbestphoto.store
+cba8e.picture.mercedesbestphoto.store
+
+# Reference: https://twitter.com/threatcat_ch/status/1651567538239676423
+
+trackrecord.wheresbecky.com
+
+# Reference: https://twitter.com/mojoesec/status/1653443385200455681
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-05-10%20Socgholish%20IOCs
+# Reference: https://www.virustotal.com/gui/ip-address/5.255.119.147/relations
+
+score.symposiumhaiti.com
+azjnb.score.symposiumhaiti.com
+dhbd.score.symposiumhaiti.com
+emvng.score.symposiumhaiti.com
+hgkr.score.symposiumhaiti.com
+jrt.score.symposiumhaiti.com
+len.score.symposiumhaiti.com
+phclj.score.symposiumhaiti.com
+qkud.score.symposiumhaiti.com
+rxt.score.symposiumhaiti.com
+tghrr.score.symposiumhaiti.com
+ucuav.score.symposiumhaiti.com
+vwy.score.symposiumhaiti.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-03-v10315/527
+# Reference: https://www.virustotal.com/gui/ip-address/88.210.11.17/relations
+
+blockchain.shannongougenheim.com
+promo.kingdombusinessconnections.com
+
+# Reference: https://twitter.com/threatcat_ch/status/1655819677648420864
+
+sync.webappclick.net
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-08-v10318/536
+
+backroom.tauetaepsilon.org
+
+# Reference: https://twitter.com/unmaskparasites/status/1656026559923503104
+
+framework.rankinfiles.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-10-v10320/544
+
+prototype.siliconvalleyga.com
+
+# Reference: https://twitter.com/threatcat_ch/status/1658027896928190467
+
+books.friendsofthefolsomlibrary.org
+scripts.asi.service
+
+# Reference: https://twitter.com/threatcat_ch/status/1660535867365105666
+
+commercial.tedgorka.com
+
+# Reference: https://twitter.com/threatcat_ch/status/1660890149910183936
+# Reference: https://www.virustotal.com/gui/ip-address/94.131.96.55/relations
+
+accounting.bridgemastersllc.com
+assist.cabinetelcea.com
+friends.foflib.org
+adqw.accounting.bridgemastersllc.com
+atm.accounting.bridgemastersllc.com
+brv.accounting.bridgemastersllc.com
+bvtk.accounting.bridgemastersllc.com
+dcrf.accounting.bridgemastersllc.com
+eotl.accounting.bridgemastersllc.com
+epfnr.accounting.bridgemastersllc.com
+fefip.accounting.bridgemastersllc.com
+fsn.accounting.bridgemastersllc.com
+ftjp.accounting.bridgemastersllc.com
+hnir.accounting.bridgemastersllc.com
+iemv.accounting.bridgemastersllc.com
+isi.accounting.bridgemastersllc.com
+jcqx.accounting.bridgemastersllc.com
+jpc.accounting.bridgemastersllc.com
+jpdp.accounting.bridgemastersllc.com
+lckn.accounting.bridgemastersllc.com
+nqla.accounting.bridgemastersllc.com
+ogf.accounting.bridgemastersllc.com
+qczbu.accounting.bridgemastersllc.com
+qmipp.accounting.bridgemastersllc.com
+vfhrf.accounting.bridgemastersllc.com
+xpu.accounting.bridgemastersllc.com
+zpn.accounting.bridgemastersllc.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-22-v10329/584
+
+assist.cabinetelcea.com
+broadcast.ninemuses.io
+commercial.tedgorka.com
+forum.leewhitman-raymond.com
+friends.foflib.org
+round.macayafoundation.org
+teaching.eduvisuo.com
+trademark.iglesiaelarca.com
+training.defcon1.us
+tube.saltminecomics.com
+vip.dueprocess.us
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-23-v10330/587
+
+booty.midatlanticlaw.org
+internal.metro1properties.us
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-26-v10333/592
+# Reference: https://www.virustotal.com/gui/ip-address/88.119.169.145/relations
+
+archives.finanpress.com
+enterprise.alliantlaw.us
+exclusive.transversalbranding.com
+initiatives.ayitiexpo.com
+product.sammyhallam.com
+sapphire.abogados.services
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-25-v10332/590
+
+strategy.transversalgroup.co
+
+# Reference: https://twitter.com/threatcat_ch/status/1664643709298769920
+
+failure.mathgeniusa.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-05-31-v10336/602
+
+background.bodyguardchicago.com
+hardware.deltavis.com
+masterclass.teamupnetwork.org
+
+# Reference: https://twitter.com/threatcat_ch/status/1665706881489289217
+
+dashboard.smartmetereducationnetwork.com
+
+# Reference: https://twitter.com/threatcat_ch/status/1666706124836405248
+
+roadmap.jufp.com
+trust.resourcehost.net
+
+# Reference: https://twitter.com/threatcat_ch/status/1668596702696054785
+# Reference: https://www.virustotal.com/gui/ip-address/47.91.94.97/relations
+
+specific.autonerdmobilerepairs.com
+
+# Reference: https://twitter.com/threatcat_ch/status/1668628110244470791
+
+portable.nodirtyelectricity.com
+
+# Reference: https://twitter.com/FirstWatchCyber/status/1678473223678074882
+# Reference: https://www.virustotal.com/gui/domain/rfc.zitoprohealth.com/relations
+
+sandwiches.tropipackfood.com
+rfc.zitoprohealth.com
+aktbh.rfc.zitoprohealth.com
+asag.rfc.zitoprohealth.com
+awz.rfc.zitoprohealth.com
+bipja.rfc.zitoprohealth.com
+bleu.rfc.zitoprohealth.com
+bxgs.rfc.zitoprohealth.com
+cgjmz.rfc.zitoprohealth.com
+chx.rfc.zitoprohealth.com
+cxrx.rfc.zitoprohealth.com
+ergnc.rfc.zitoprohealth.com
+exm.rfc.zitoprohealth.com
+eyc.rfc.zitoprohealth.com
+fnpzb.rfc.zitoprohealth.com
+grfqk.rfc.zitoprohealth.com
+hfi.rfc.zitoprohealth.com
+hhv.rfc.zitoprohealth.com
+iqq.rfc.zitoprohealth.com
+ivac.rfc.zitoprohealth.com
+ivwjo.rfc.zitoprohealth.com
+izabz.rfc.zitoprohealth.com
+izjh.rfc.zitoprohealth.com
+jiou.rfc.zitoprohealth.com
+jkqr.rfc.zitoprohealth.com
+jrj.rfc.zitoprohealth.com
+jzwm.rfc.zitoprohealth.com
+klxqb.rfc.zitoprohealth.com
+kmo.rfc.zitoprohealth.com
+ljkc.rfc.zitoprohealth.com
+lkodf.rfc.zitoprohealth.com
+lkor.rfc.zitoprohealth.com
+lllb.rfc.zitoprohealth.com
+mdlph.rfc.zitoprohealth.com
+mfi.rfc.zitoprohealth.com
+njg.rfc.zitoprohealth.com
+odd.rfc.zitoprohealth.com
+omqia.rfc.zitoprohealth.com
+oztir.rfc.zitoprohealth.com
+plb.rfc.zitoprohealth.com
+qaw.rfc.zitoprohealth.com
+qdzfa.rfc.zitoprohealth.com
+qhiyk.rfc.zitoprohealth.com
+qrpf.rfc.zitoprohealth.com
+qtor.rfc.zitoprohealth.com
+qvo.rfc.zitoprohealth.com
+royls.rfc.zitoprohealth.com
+rpie.rfc.zitoprohealth.com
+ruush.rfc.zitoprohealth.com
+rxqo.rfc.zitoprohealth.com
+sbm.rfc.zitoprohealth.com
+sgn.rfc.zitoprohealth.com
+sre.rfc.zitoprohealth.com
+ugj.rfc.zitoprohealth.com
+uqa.rfc.zitoprohealth.com
+uvjr.rfc.zitoprohealth.com
+vaa.rfc.zitoprohealth.com
+xep.rfc.zitoprohealth.com
+xsjs.rfc.zitoprohealth.com
+yzk.rfc.zitoprohealth.com
+zpzk.rfc.zitoprohealth.com
+zqf.rfc.zitoprohealth.com
+zuy.rfc.zitoprohealth.com
+zwe.rfc.zitoprohealth.com
+
+# Reference: https://www.virustotal.com/gui/domain/plan.gemmadeealexander.com/relations
+
+plan.gemmadeealexander.com
+aqkc.plan.gemmadeealexander.com
+bnp.plan.gemmadeealexander.com
+bxwnu.plan.gemmadeealexander.com
+cehqr.plan.gemmadeealexander.com
+chrb.plan.gemmadeealexander.com
+crudp.plan.gemmadeealexander.com
+czien.plan.gemmadeealexander.com
+dfwg.plan.gemmadeealexander.com
+dsb.plan.gemmadeealexander.com
+dwq.plan.gemmadeealexander.com
+ehwzp.plan.gemmadeealexander.com
+eopec.plan.gemmadeealexander.com
+ephv.plan.gemmadeealexander.com
+euop.plan.gemmadeealexander.com
+eygmj.plan.gemmadeealexander.com
+fcttc.plan.gemmadeealexander.com
+fsvjg.plan.gemmadeealexander.com
+fybjv.plan.gemmadeealexander.com
+fznju.plan.gemmadeealexander.com
+giyr.plan.gemmadeealexander.com
+gosp.plan.gemmadeealexander.com
+gybym.plan.gemmadeealexander.com
+iaqoa.plan.gemmadeealexander.com
+ipt.plan.gemmadeealexander.com
+ixne.plan.gemmadeealexander.com
+jhfn.plan.gemmadeealexander.com
+joi.plan.gemmadeealexander.com
+juk.plan.gemmadeealexander.com
+jxb.plan.gemmadeealexander.com
+ljz.plan.gemmadeealexander.com
+mdzvw.plan.gemmadeealexander.com
+mkzk.plan.gemmadeealexander.com
+mmup.plan.gemmadeealexander.com
+mnt.plan.gemmadeealexander.com
+mvysa.plan.gemmadeealexander.com
+nrs.plan.gemmadeealexander.com
+nvso.plan.gemmadeealexander.com
+oqry.plan.gemmadeealexander.com
+pcapxzwzh.plan.gemmadeealexander.com
+pdqp.plan.gemmadeealexander.com
+phhai.plan.gemmadeealexander.com
+pwygu.plan.gemmadeealexander.com
+qdyfq.plan.gemmadeealexander.com
+qyyy.plan.gemmadeealexander.com
+qzl.plan.gemmadeealexander.com
+rbaw.plan.gemmadeealexander.com
+sbwsh.plan.gemmadeealexander.com
+snb.plan.gemmadeealexander.com
+tang.plan.gemmadeealexander.com
+tgm.plan.gemmadeealexander.com
+tyxsp.plan.gemmadeealexander.com
+uazmg.plan.gemmadeealexander.com
+udjb.plan.gemmadeealexander.com
+uehi.plan.gemmadeealexander.com
+vcxhq.plan.gemmadeealexander.com
+vflak.plan.gemmadeealexander.com
+vhgf.plan.gemmadeealexander.com
+vlv.plan.gemmadeealexander.com
+vno.plan.gemmadeealexander.com
+vqeiy.plan.gemmadeealexander.com
+wcq.plan.gemmadeealexander.com
+wcter.plan.gemmadeealexander.com
+xebaj.plan.gemmadeealexander.com
+xfgit.plan.gemmadeealexander.com
+xght.plan.gemmadeealexander.com
+xkp.plan.gemmadeealexander.com
+xkt.plan.gemmadeealexander.com
+xtmre.plan.gemmadeealexander.com
+xzwzh.plan.gemmadeealexander.com
+ynz.plan.gemmadeealexander.com
+yzsr.plan.gemmadeealexander.com
+zvl.plan.gemmadeealexander.com
+
+# Reference: https://threatfox.abuse.ch/browse/tag/SocGholish/ (# 2023-08-09)
+
+45.77.195.105:14235
+7c5xek1a1pe7nnn.top
+96roafw91vs3hqv.top
+9xkcaayaagvr1p2.top
+aiys71ubj6cbeqg.com
+aiys71ubj6cbeqg.fun
+aiys71ubj6cbeqg.top
+artwork.siddavisart.com
+brands.shopperstreets.com
+c3c73sqbsxtwssv.top
+career.humandesigns.com
+collaboration.porchlightcs.org
+cosplay.univisuo.com
+deploy.vanquicktech.com
+described.moraver.com
+devops.livinginthenowbook.info
+efjcfmbnnmnhkdn.top
+excluded.everyadpaysmefirst.com
+feooa21nl5o8j4o.com
+feooa21nl5o8j4o.fun
+feooa21nl5o8j4o.top
+forbes.firstmillionaires.com
+form.haysllc.net
+gammalambdalambda.org
+ibm.deltavis.net
+ilinkads.com
+illustrations.ipocla.org
+inside.awesomepotions.com
+marathon.teachmemoney.net
+mentoring.yogayield.net
+modification.grebcocontractors.com
+names.expressyourselfesthetics.com
+o1gpxolsxcnfz4y.top
+offer.rpacxtaxappeal.com
+old.onepercentage.org
+practices.bodyandsoulmassage.com
+prepare.dawarel3mda.com
+qnv5ufhs524zc6d.top
+r89kq6esetljq7r.fun
+r89kq6esetljq7r.top
+reception.q-dent.com
+reporting.theamericasfashionfest.com
+static.laytonroadconstruction.com
+sermon.pastorbriantubbs.com
+superposition.mathgeniusacademy.com
+templates.jdlaytongrademaker.com
+therapy.rationallifestyleconsulting.org
+toolkit.mobileautorepairmechanic.com
+ttnznxatnj23395.com
+ttnznxatnj23395.fun
+ttnznxatnj23395.top
+w4zgt6l5hrxgvlz.top
+wudugf.top
+xxyd.excluded.everyadpaysmefirst.com
+ypdvqxh5qie08md.top
+
+# Reference: https://www.virustotal.com/gui/ip-address/193.243.147.167/relations
+
+profit.3stepsprofit.com
+stuff.libertydentalcourse.ca
+00e8d.stuff.libertydentalcourse.ca
+01134.stuff.libertydentalcourse.ca
+081d8.stuff.libertydentalcourse.ca
+0ab96.stuff.libertydentalcourse.ca
+0f9ae.stuff.libertydentalcourse.ca
+15246.stuff.libertydentalcourse.ca
+205c4.stuff.libertydentalcourse.ca
+2338d.stuff.libertydentalcourse.ca
+25211.stuff.libertydentalcourse.ca
+29374.stuff.libertydentalcourse.ca
+296fc.stuff.libertydentalcourse.ca
+2f8b1.stuff.libertydentalcourse.ca
+3388c.stuff.libertydentalcourse.ca
+38e39.stuff.libertydentalcourse.ca
+39c4f.stuff.libertydentalcourse.ca
+3f5a6.stuff.libertydentalcourse.ca
+3fffa.stuff.libertydentalcourse.ca
+423e5.stuff.libertydentalcourse.ca
+484f9.stuff.libertydentalcourse.ca
+4b770.stuff.libertydentalcourse.ca
+4c44f.stuff.libertydentalcourse.ca
+4d7d6.stuff.libertydentalcourse.ca
+4fd2d.stuff.libertydentalcourse.ca
+52957.stuff.libertydentalcourse.ca
+549e9.stuff.libertydentalcourse.ca
+5df5f.stuff.libertydentalcourse.ca
+63716.stuff.libertydentalcourse.ca
+654d3.stuff.libertydentalcourse.ca
+6e451.stuff.libertydentalcourse.ca
+72df2.stuff.libertydentalcourse.ca
+751c7.stuff.libertydentalcourse.ca
+7f074.stuff.libertydentalcourse.ca
+7ff24.stuff.libertydentalcourse.ca
+87621.stuff.libertydentalcourse.ca
+897a1.stuff.libertydentalcourse.ca
+8c02d.stuff.libertydentalcourse.ca
+8cb2d.stuff.libertydentalcourse.ca
+8d434.stuff.libertydentalcourse.ca
+8edce.stuff.libertydentalcourse.ca
+8f426.stuff.libertydentalcourse.ca
+956ed.stuff.libertydentalcourse.ca
+99c5e.stuff.libertydentalcourse.ca
+9be49.stuff.libertydentalcourse.ca
+a86a2.stuff.libertydentalcourse.ca
+a94df.stuff.libertydentalcourse.ca
+aae49.stuff.libertydentalcourse.ca
+b0be5.stuff.libertydentalcourse.ca
+b2a19.stuff.libertydentalcourse.ca
+b5f51.stuff.libertydentalcourse.ca
+b847d.stuff.libertydentalcourse.ca
+b897c.stuff.libertydentalcourse.ca
+bd0d3.stuff.libertydentalcourse.ca
+bd202.stuff.libertydentalcourse.ca
+be554.stuff.libertydentalcourse.ca
+c1137.stuff.libertydentalcourse.ca
+c18a5.stuff.libertydentalcourse.ca
+d3f33.stuff.libertydentalcourse.ca
+d74c8.stuff.libertydentalcourse.ca
+de463.stuff.libertydentalcourse.ca
+de986.stuff.libertydentalcourse.ca
+df798.stuff.libertydentalcourse.ca
+e35f7.stuff.libertydentalcourse.ca
+e4b0d.stuff.libertydentalcourse.ca
+e590c.stuff.libertydentalcourse.ca
+e5a84.stuff.libertydentalcourse.ca
+e743f.stuff.libertydentalcourse.ca
+e86c4.stuff.libertydentalcourse.ca
+f5951.stuff.libertydentalcourse.ca
+
+# Reference: https://threatfox.abuse.ch/ioc/1149408/
+
+timeline.transversallearning.com
+afhb.timeline.transversallearning.com
+aqkm.timeline.transversallearning.com
+bejlc.timeline.transversallearning.com
+bopnm.timeline.transversallearning.com
+bps.timeline.transversallearning.com
+bwm.timeline.transversallearning.com
+cay.timeline.transversallearning.com
+cin.timeline.transversallearning.com
+cpg.timeline.transversallearning.com
+cyoiw.timeline.transversallearning.com
+czhuy.timeline.transversallearning.com
+derp.timeline.transversallearning.com
+ewzn.timeline.transversallearning.com
+fex.timeline.transversallearning.com
+ffuu.timeline.transversallearning.com
+flxo.timeline.transversallearning.com
+fotxi.timeline.transversallearning.com
+fvawk.timeline.transversallearning.com
+fxhwx.timeline.transversallearning.com
+gbquv.timeline.transversallearning.com
+gcrtd.timeline.transversallearning.com
+gvr.timeline.transversallearning.com
+gy.timeline.transversallearning.com
+hdbi.timeline.transversallearning.com
+htbb.timeline.transversallearning.com
+icf.timeline.transversallearning.com
+iduy.timeline.transversallearning.com
+ielwp.timeline.transversallearning.com
+ifvaa.timeline.transversallearning.com
+iqxw.timeline.transversallearning.com
+jcne.timeline.transversallearning.com
+jjrdv.timeline.transversallearning.com
+lam.timeline.transversallearning.com
+lbq.timeline.transversallearning.com
+lee.timeline.transversallearning.com
+lyq.timeline.transversallearning.com
+mjg.timeline.transversallearning.com
+mta.timeline.transversallearning.com
+ndrjb.timeline.transversallearning.com
+nkh.timeline.transversallearning.com
+nnvic.timeline.transversallearning.com
+nprui.timeline.transversallearning.com
+nwy.timeline.transversallearning.com
+ocd.timeline.transversallearning.com
+olaec.timeline.transversallearning.com
+pcw.timeline.transversallearning.com
+pkho.timeline.transversallearning.com
+qdx.timeline.transversallearning.com
+qru.timeline.transversallearning.com
+qytn.timeline.transversallearning.com
+rbafo.timeline.transversallearning.com
+rxhi.timeline.transversallearning.com
+sgsr.timeline.transversallearning.com
+tgy.timeline.transversallearning.com
+tngh.timeline.transversallearning.com
+uxiy.timeline.transversallearning.com
+vjfn.timeline.transversallearning.com
+vpqi.timeline.transversallearning.com
+wngw.timeline.transversallearning.com
+wpn.timeline.transversallearning.com
+wvj.timeline.transversallearning.com
+xjwn.timeline.transversallearning.com
+xrsd.timeline.transversallearning.com
+yddq.timeline.transversallearning.com
+yjojm.timeline.transversallearning.com
+ymeln.timeline.transversallearning.com
+yrzs.timeline.transversallearning.com
+zcj.timeline.transversallearning.com
+zpk.timeline.transversallearning.com
+
+# Reference: https://threatfox.abuse.ch/ioc/1149713/
+
+x64.nvize.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-16-v10395/866/1
+# Reference: https://www.virustotal.com/gui/ip-address/23.146.184.29/relations
+
+workout.oystergardener.net
+aqwc.workout.oystergardener.net
+derp.workout.oystergardener.net
+mnem.workout.oystergardener.net
+xjytw.workout.oystergardener.net
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-08-31%20SocGholish%20IOCs
+# Reference: https://www.virustotal.com/gui/domain/photo.beyoudcor.com/relations
+
+photo.beyoudcor.com
+acecc.photo.beyoudcor.com
+akmc.photo.beyoudcor.com
+alc.photo.beyoudcor.com
+amzue.photo.beyoudcor.com
+aooe.photo.beyoudcor.com
+awva.photo.beyoudcor.com
+bbx.photo.beyoudcor.com
+bdme.photo.beyoudcor.com
+bdoji.photo.beyoudcor.com
+beyz.photo.beyoudcor.com
+bghi.photo.beyoudcor.com
+bidba.photo.beyoudcor.com
+bmywc.photo.beyoudcor.com
+bwoq.photo.beyoudcor.com
+bzean.photo.beyoudcor.com
+bzw.photo.beyoudcor.com
+cgyhj.photo.beyoudcor.com
+cooll.photo.beyoudcor.com
+csrop.photo.beyoudcor.com
+ctg.photo.beyoudcor.com
+cxxvl.photo.beyoudcor.com
+deo.photo.beyoudcor.com
+derp.photo.beyoudcor.com
+dpv.photo.beyoudcor.com
+dsnc.photo.beyoudcor.com
+dvfo.photo.beyoudcor.com
+edpse.photo.beyoudcor.com
+edpvt.photo.beyoudcor.com
+ehwox.photo.beyoudcor.com
+ehy.photo.beyoudcor.com
+ekoj.photo.beyoudcor.com
+eulgc.photo.beyoudcor.com
+fe31a.photo.beyoudcor.com
+fhfya.photo.beyoudcor.com
+frlx.photo.beyoudcor.com
+ftcq.photo.beyoudcor.com
+fysmz.photo.beyoudcor.com
+fyuzv.photo.beyoudcor.com
+fzcbn.photo.beyoudcor.com
+ghtr.photo.beyoudcor.com
+gkz.photo.beyoudcor.com
+goigt.photo.beyoudcor.com
+hjoh.photo.beyoudcor.com
+hxfk.photo.beyoudcor.com
+iasyo.photo.beyoudcor.com
+igqck.photo.beyoudcor.com
+iks.photo.beyoudcor.com
+irq.photo.beyoudcor.com
+ixthq.photo.beyoudcor.com
+iyxk.photo.beyoudcor.com
+jak.photo.beyoudcor.com
+jbotd.photo.beyoudcor.com
+jcsm.photo.beyoudcor.com
+jvhzs.photo.beyoudcor.com
+jvwh.photo.beyoudcor.com
+jwpke.photo.beyoudcor.com
+jxd.photo.beyoudcor.com
+jxj.photo.beyoudcor.com
+jxjfx.photo.beyoudcor.com
+jxqn.photo.beyoudcor.com
+keeoh.photo.beyoudcor.com
+kihe.photo.beyoudcor.com
+kiwer.photo.beyoudcor.com
+kix.photo.beyoudcor.com
+kkap.photo.beyoudcor.com
+kme.photo.beyoudcor.com
+koa.photo.beyoudcor.com
+kxyck.photo.beyoudcor.com
+llgo.photo.beyoudcor.com
+lrzym.photo.beyoudcor.com
+lxgik.photo.beyoudcor.com
+lxqyd.photo.beyoudcor.com
+lyjtq.photo.beyoudcor.com
+lzkts.photo.beyoudcor.com
+mgbys.photo.beyoudcor.com
+mhaia.photo.beyoudcor.com
+mkctu.photo.beyoudcor.com
+motbw.photo.beyoudcor.com
+mvdml.photo.beyoudcor.com
+mxn.photo.beyoudcor.com
+mxru.photo.beyoudcor.com
+naaeo.photo.beyoudcor.com
+nbp.photo.beyoudcor.com
+nfrxf.photo.beyoudcor.com
+nhu.photo.beyoudcor.com
+nlrtr.photo.beyoudcor.com
+nro.photo.beyoudcor.com
+ntpj.photo.beyoudcor.com
+nzy.photo.beyoudcor.com
+ogk.photo.beyoudcor.com
+ojx.photo.beyoudcor.com
+olgg.photo.beyoudcor.com
+omkxm.photo.beyoudcor.com
+omrj.photo.beyoudcor.com
+ouyjm.photo.beyoudcor.com
+owrke.photo.beyoudcor.com
+oxkky.photo.beyoudcor.com
+pfkfp.photo.beyoudcor.com
+piu.photo.beyoudcor.com
+pzcle.photo.beyoudcor.com
+qbh.photo.beyoudcor.com
+qsfre.photo.beyoudcor.com
+qtcq.photo.beyoudcor.com
+rgf.photo.beyoudcor.com
+rmap.photo.beyoudcor.com
+rohyf.photo.beyoudcor.com
+rtk.photo.beyoudcor.com
+sah.photo.beyoudcor.com
+sbica.photo.beyoudcor.com
+sbm.photo.beyoudcor.com
+scste.photo.beyoudcor.com
+scy.photo.beyoudcor.com
+sdoh.photo.beyoudcor.com
+sgiy.photo.beyoudcor.com
+siir.photo.beyoudcor.com
+sly.photo.beyoudcor.com
+smb.photo.beyoudcor.com
+sqerh.photo.beyoudcor.com
+svc.photo.beyoudcor.com
+syvs.photo.beyoudcor.com
+thz.photo.beyoudcor.com
+tisiw.photo.beyoudcor.com
+tmqt.photo.beyoudcor.com
+tqhet.photo.beyoudcor.com
+tuld.photo.beyoudcor.com
+udjw.photo.beyoudcor.com
+ufb.photo.beyoudcor.com
+ufp.photo.beyoudcor.com
+uivb.photo.beyoudcor.com
+uqhm.photo.beyoudcor.com
+usk.photo.beyoudcor.com
+uwner.photo.beyoudcor.com
+vajx.photo.beyoudcor.com
+vaz.photo.beyoudcor.com
+vbbbo.photo.beyoudcor.com
+vdxs.photo.beyoudcor.com
+vih.photo.beyoudcor.com
+vihgp.photo.beyoudcor.com
+viszo.photo.beyoudcor.com
+vlnq.photo.beyoudcor.com
+vsbvu.photo.beyoudcor.com
+vukps.photo.beyoudcor.com
+vurcw.photo.beyoudcor.com
+wag.photo.beyoudcor.com
+wfq.photo.beyoudcor.com
+wfr.photo.beyoudcor.com
+wsg.photo.beyoudcor.com
+wyu.photo.beyoudcor.com
+xkm.photo.beyoudcor.com
+xnng.photo.beyoudcor.com
+xol.photo.beyoudcor.com
+xqasu.photo.beyoudcor.com
+xtya.photo.beyoudcor.com
+yjx.photo.beyoudcor.com
+ytf.photo.beyoudcor.com
+ywaaj.photo.beyoudcor.com
+ywuj.photo.beyoudcor.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-31-v10407/912
+
+assay.porchlightcommunity.org
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-01-v10408/915
+
+standard.architech3.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-08-v10413/928
+
+2023.ebeenj.com
+derp.2023.ebeenj.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-07-v10412/926
+# Reference: https://www.virustotal.com/gui/ip-address/5.182.207.83/relations
+
+ghost.blueecho88.com
+
+# Reference: https://threatfox.abuse.ch/ioc/1155842/
+
+creativity.kinchcorp.com
+
+# Reference: https://www.virustotal.com/gui/domain/excluded.everyadpaysmefirst.com/relations
+
+bfwy.excluded.everyadpaysmefirst.com
+bvsjg.excluded.everyadpaysmefirst.com
+chsgc.excluded.everyadpaysmefirst.com
+cjc.excluded.everyadpaysmefirst.com
+cmuxl.excluded.everyadpaysmefirst.com
+ddrz.excluded.everyadpaysmefirst.com
+elept.excluded.everyadpaysmefirst.com
+fnq.excluded.everyadpaysmefirst.com
+fvhw.excluded.everyadpaysmefirst.com
+fzd.excluded.everyadpaysmefirst.com
+hkt.excluded.everyadpaysmefirst.com
+hnrh.excluded.everyadpaysmefirst.com
+ivgu.excluded.everyadpaysmefirst.com
+jnkt.excluded.everyadpaysmefirst.com
+joux.excluded.everyadpaysmefirst.com
+kaqz.excluded.everyadpaysmefirst.com
+ldty.excluded.everyadpaysmefirst.com
+lhat.excluded.everyadpaysmefirst.com
+mfu.excluded.everyadpaysmefirst.com
+mmz.excluded.everyadpaysmefirst.com
+oaj.excluded.everyadpaysmefirst.com
+olx.excluded.everyadpaysmefirst.com
+owwcm.excluded.everyadpaysmefirst.com
+pvdb.excluded.everyadpaysmefirst.com
+pwn.excluded.everyadpaysmefirst.com
+qee.excluded.everyadpaysmefirst.com
+qgqr.excluded.everyadpaysmefirst.com
+qyvp.excluded.everyadpaysmefirst.com
+reg.excluded.everyadpaysmefirst.com
+rjos.excluded.everyadpaysmefirst.com
+ruop.excluded.everyadpaysmefirst.com
+sguqd.excluded.everyadpaysmefirst.com
+srtrq.excluded.everyadpaysmefirst.com
+syyrb.excluded.everyadpaysmefirst.com
+taaq.excluded.everyadpaysmefirst.com
+tcp.excluded.everyadpaysmefirst.com
+vajm.excluded.everyadpaysmefirst.com
+vdjjv.excluded.everyadpaysmefirst.com
+vgx.excluded.everyadpaysmefirst.com
+vizt.excluded.everyadpaysmefirst.com
+vzno.excluded.everyadpaysmefirst.com
+wivhv.excluded.everyadpaysmefirst.com
+xxyd.excluded.everyadpaysmefirst.com
+yahk.excluded.everyadpaysmefirst.com
+yaqpv.excluded.everyadpaysmefirst.com
+ygloz.excluded.everyadpaysmefirst.com
+ypxju.excluded.everyadpaysmefirst.com
+zagso.excluded.everyadpaysmefirst.com
+zid.excluded.everyadpaysmefirst.com
+zirpl.excluded.everyadpaysmefirst.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-18-v10419/957
+
+layout.oystergardens.us
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-09-v10435/1022
+
+sommelier.peppertreecanyon.com
+
+# Reference: https://twitter.com/DonPasci/status/1714193725872546254
+
+codek.me
+
+# Reference: https://www.virustotal.com/gui/ip-address/23.146.184.23/relations
+# Reference: https://www.virustotal.com/gui/file/4b0d33612e84b8eba30c35fbeced44d05a343378dd728e72e2c59e8bb5acced6/detection
+
+result.garrettcountygranfondo.org
+bazj.result.garrettcountygranfondo.org
+kooh.result.garrettcountygranfondo.org
+kqx.result.garrettcountygranfondo.org
+pagz.result.garrettcountygranfondo.org
+wvnqm.result.garrettcountygranfondo.org
+xro.result.garrettcountygranfondo.org
+
+# Reference: https://threatfox.abuse.ch/ioc/1197239/
+
+webdataspace.com
+
+# Reference: https://www.virustotal.com/gui/file/80d2a6a9a5963c3efe42dc071eed5ca42e4140806980d08385dceda6b73b9810/detection
+
+caching.oysterfloats.com
+agaig.caching.oysterfloats.com
+atsl.caching.oysterfloats.com
+cor.caching.oysterfloats.com
+dedb.caching.oysterfloats.com
+ekjk.caching.oysterfloats.com
+evusn.caching.oysterfloats.com
+ezsq.caching.oysterfloats.com
+fkaul.caching.oysterfloats.com
+ggjaw.caching.oysterfloats.com
+ghfs.caching.oysterfloats.com
+gjtw.caching.oysterfloats.com
+gwqkn.caching.oysterfloats.com
+hds.caching.oysterfloats.com
+hja.caching.oysterfloats.com
+iek.caching.oysterfloats.com
+imruf.caching.oysterfloats.com
+jay.caching.oysterfloats.com
+jfv.caching.oysterfloats.com
+klkrv.caching.oysterfloats.com
+korf.caching.oysterfloats.com
+koy.caching.oysterfloats.com
+lld.caching.oysterfloats.com
+lqvc.caching.oysterfloats.com
+mksw.caching.oysterfloats.com
+nknc.caching.oysterfloats.com
+nvu.caching.oysterfloats.com
+ouk.caching.oysterfloats.com
+qdrxu.caching.oysterfloats.com
+qkatp.caching.oysterfloats.com
+rhvy.caching.oysterfloats.com
+slc.caching.oysterfloats.com
+summ.caching.oysterfloats.com
+sym.caching.oysterfloats.com
+tee.caching.oysterfloats.com
+tsqew.caching.oysterfloats.com
+ucbwp.caching.oysterfloats.com
+ujz.caching.oysterfloats.com
+wafh.caching.oysterfloats.com
+wriaq.caching.oysterfloats.com
+wykac.caching.oysterfloats.com
+ykwv.caching.oysterfloats.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/66.135.17.87/relations
+
+novelty.akibacreative.com
+bdrd.novelty.akibacreative.com
+derp.novelty.akibacreative.com
+hjgs.novelty.akibacreative.com
+kolu.novelty.akibacreative.com
+mdt.novelty.akibacreative.com
+qrr.novelty.akibacreative.com
+vbt.novelty.akibacreative.com
+vtpuv.novelty.akibacreative.com
+war.novelty.akibacreative.com
+wed.novelty.akibacreative.com
+xgw.novelty.akibacreative.com
+zcff.novelty.akibacreative.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/178.236.247.167/relations
+
+cloudid.coffeeonboard.com
+ado.cloudid.coffeeonboard.com
+buxvt.cloudid.coffeeonboard.com
+dbw.cloudid.coffeeonboard.com
+edvcg.cloudid.coffeeonboard.com
+ftnm.cloudid.coffeeonboard.com
+inhs.cloudid.coffeeonboard.com
+jdzrn.cloudid.coffeeonboard.com
+jtafp.cloudid.coffeeonboard.com
+swtos.cloudid.coffeeonboard.com
+thg.cloudid.coffeeonboard.com
+txbi.cloudid.coffeeonboard.com
+unrld.cloudid.coffeeonboard.com
+vlp.cloudid.coffeeonboard.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/166.1.173.27/relations
+# Reference: https://www.virustotal.com/gui/file/f4fd6bcb39e216fd41239d2772fec9723633ee751bf98f1b5092ed2c468722e2/detection
+# Reference: https://www.virustotal.com/gui/file/962b861f7ff40c9137997aaa0fb7b826a63c4bf2142ba1ce972878007bcdb9c9/detection
+# Reference: https://www.virustotal.com/gui/file/41843deee50290bbaec9fbac1e06315267abab4920ef73c5bf084a974233da8b/detection
+
+settings.oysterfloats.org
+atxk.settings.oysterfloats.org
+dbfyq.settings.oysterfloats.org
+josi.settings.oysterfloats.org
+wau.settings.oysterfloats.org
+
+# Reference: https://threatfox.abuse.ch/ioc/1212175/
+# Reference: https://www.virustotal.com/gui/ip-address/86.110.209.38/relations
+
+cachetransferjs.com
+googlecloudad.com
+googlecloudns.com
+googlecloudstream.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-12-26-v10493/1234
+
+places.creeksidehuntingpreserve.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-01-02-v10497/1255
+
+ebooks.ferrelljoe.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.130.47.125/relations
+
+content.garretttrails.org
+retraining.allstardriving.org
+
+# Reference: https://www.virustotal.com/gui/ip-address/51.81.69.81/relations
+
+event.coachgreb.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/88.119.175.241/relations
+
+surprise.refillpantrysd.com
+
+# Reference: https://threatfox.abuse.ch/browse/tag/SocGholish/ (# 2024-01-16)
+
+cachewebspace.com
+dashboard.renovationsruth.com
+ficinity.com
+webcachedata.com
+
+# Reference: https://twitter.com/threatcat_ch/status/1748445377009701022
+# Reference: https://twitter.com/unmaskparasites/status/1749522406459470110
+
+acuiplast.com
+binder-sa.com
+iredelltx.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/128.254.207.87/relations
+
+colors.usajicgu.com
+buac.colors.usajicgu.com
+cip.colors.usajicgu.com
+diuf.colors.usajicgu.com
+ehxzh.colors.usajicgu.com
+ejv.colors.usajicgu.com
+fzeh.colors.usajicgu.com
+ivh.colors.usajicgu.com
+mfwe.colors.usajicgu.com
+qgh.colors.usajicgu.com
+wlc.colors.usajicgu.com
+wwu.colors.usajicgu.com
+ylcjk.colors.usajicgu.com
+
+# Reference: https://www.virustotal.com/gui/domain/cachespace.net/relations
+
+cachespace.net
+huangguanshoujidenglubocaihuangguan.cachespace.net
+ing.cachespace.net
+orgping.cachespace.net
+ping.cachespace.net
+pingz.cachespace.net
+pqowieur123.cachespace.net
+www1.cachespace.net
+
+# Reference: https://twitter.com/Gi7w0rm/status/1752027448554799159
+# Reference: https://www.virustotal.com/gui/ip-address/178.236.246.25/relations
+# Reference: https://www.virustotal.com/gui/file/3d631200f845cf30b255f801bae4325cbca841014809158f54a66e08e2e0f80e/detection
+
+honors.howamerica.com
+clbh.honors.howamerica.com
+ojjg.honors.howamerica.com
+tnlz.honors.howamerica.com
+
+# Reference: https://twitter.com/Gi7w0rm/status/1751964881702539494
+
+miner.eastestsite.com
+
+# Reference: https://twitter.com/Gi7w0rm/status/1752368138224644194
+# Reference: https://www.virustotal.com/gui/ip-address/185.130.47.125/relations
+# Reference: https://www.virustotal.com/gui/ip-address/192.185.36.1/relations
+# Reference: https://www.virustotal.com/gui/file/582d65214a8a5b3abce108bb30ee1283aaebf6ecf490508f3422275fffbe25d0/detection
+
+allstardriving.org
+garretttrails.org
+content.garretttrails.org
+retraining.allstardriving.org
+
+# Reference: https://www.virustotal.com/gui/ip-address/88.119.169.207/relations
+
+our.openarmscv.org
+abdc.our.openarmscv.org
+ivr.our.openarmscv.org
+nzq.our.openarmscv.org
+
+# Reference: https://www.virustotal.com/gui/ip-address/104.161.32.84/relations
+
+day.50adayplan.com
+big.day.50adayplan.com
+fslq.day.50adayplan.com
+ssi.day.50adayplan.com
+vmalf.day.50adayplan.com
+wy.big.day.50adayplan.com
+yddk.day.50adayplan.com
+yui.day.50adayplan.com
+
+# Reference: https://twitter.com/threatcat_ch/status/1758514768980451421
+
+absolutecache.com
+
+# Reference: https://urlhaus.abuse.ch/browse/tag/SocGholish/ (# 2024-02-20)
+
+003c.discover.jsfconnections.com
+00573.lap.detroitdragway.com
+034b.campaign.tworiversboat.com
+0447e.signing.unitynotarypublic.com
+04be.fluctuations.trendylevels.com
+0609.fluctuations.trendylevels.com
+08c16.asset.tradingvein.xyz
+09100.samples.muzikcitysound.com
+094f.roles.thepowerofgodswhisper.com
+09532.samples.muzikcitysound.com
+0d4d.offerings.love4lifewellness.com
+0d94f.language.sebtomato.com
+0dcf.portraits.studio-94-photography.com
+0e118.language.sebtomato.com
+11b32.diary.lojjh.com
+1254.fluctuations.trendylevels.com
+1311.demand.sageyogatherapies.com
+15380.shrubs.emptyisland.pics
+15497.shrubs.emptyisland.pics
+158a3.samples.muzikcitysound.com
+17ae3.signing.unitynotarypublic.com
+18ef8.samples.muzikcitysound.com
+195f.roles.thepowerofgodswhisper.com
+19d8e.diary.lojjh.com
+19fca.lap.detroitdragway.com
+1ad2f.diary.lojjh.com
+1c5f3.language.sebtomato.com
+1d96.roles.thepowerofgodswhisper.com
+210a1.fate.truelance.com
+221dc.shrubs.emptyisland.pics
+23e9.moments.abledity.com
+254b.portraits.studio-94-photography.com
+2689.moments.abledity.com
+2a812.calendar.wishmarkets.com
+2b3d1.signing.unitynotarypublic.com
+2bdc.fluctuations.trendylevels.com
+2c06a.signing.unitynotarypublic.com
+2cc5.moments.abledity.com
+2cef.demand.sageyogatherapies.com
+2e545.fate.truelance.com
+2f24d.signing.unitynotarypublic.com
+308e.moments.abledity.com
+328c.roles.thepowerofgodswhisper.com
+32b3c.fate.truelance.com
+3365.templates.victoryoverdieting.com
+33e0.portraits.studio-94-photography.com
+3503.fork.topgeargroup.shop
+3552.fluctuations.trendylevels.com
+3590c.signing.unitynotarypublic.com
+38d5.portraits.studio-94-photography.com
+3cab.portraits.studio-94-photography.com
+3d378.samples.muzikcitysound.com
+3f092.shrubs.emptyisland.pics
+3f15f.diary.lojjh.com
+430f.portraits.studio-94-photography.com
+43301.signing.unitynotarypublic.com
+433de.samples.muzikcitysound.com
+43af5.fate.truelance.com
+43bb.activation.thepowerofhiswhisper.com
+45acf.language.sebtomato.com
+464f7.language.sebtomato.com
+4a69.portraits.studio-94-photography.com
+4b12.portraits.studio-94-photography.com
+4b59f.signing.unitynotarypublic.com
+4bb4b.signing.unitynotarypublic.com
+4c30.portraits.studio-94-photography.com
+4cf0.roles.thepowerofgodswhisper.com
+4dfb9.distributor.techsavvyauto.com
+5111.roles.thepowerofgodswhisper.com
+51929.shrubs.emptyisland.pics
+53fdb.signing.unitynotarypublic.com
+5478.portraits.studio-94-photography.com
+5597d.fate.truelance.com
+55a1e.lap.detroitdragway.com
+568f4.diary.lojjh.com
+57a9.roles.thepowerofgodswhisper.com
+582eb.language.sebtomato.com
+59c19.distributor.techsavvyauto.com
+5a77.fluctuations.trendylevels.com
+5c5df.shrubs.emptyisland.pics
+5d1b3.shrubs.emptyisland.pics
+5e88e.lap.detroitdragway.com
+610a.roles.thepowerofgodswhisper.com
+613b.roles.thepowerofgodswhisper.com
+61983.samples.muzikcitysound.com
+61ed2.signing.unitynotarypublic.com
+6313.moments.abledity.com
+6346c.language.sebtomato.com
+63566.language.sebtomato.com
+6401f.samples.muzikcitysound.com
+642fa.language.sebtomato.com
+6617.discover.jsfconnections.com
+66d80.samples.muzikcitysound.com
+66d9b.fate.truelance.com
+6a8a0e9a749bb0.lap.detroitdragway.com
+6d41.portraits.studio-94-photography.com
+6d4e.portraits.studio-94-photography.com
+6e2ca.shrubs.emptyisland.pics
+70982.fate.truelance.com
+70b52.samples.muzikcitysound.com
+73b7b.signing.unitynotarypublic.com
+74a76.diary.lojjh.com
+75a5.roles.thepowerofgodswhisper.com
+7684.telegram.godsmightywhispers.com
+777b.campaign.tworiversboat.com
+78811.signing.unitynotarypublic.com
+793f9.tool.pearldentalgroup.ca
+7ada.portraits.studio-94-photography.com
+804b.portraits.studio-94-photography.com
+807f.portraits.studio-94-photography.com
+81004.signing.unitynotarypublic.com
+81207.fate.truelance.com
+843ba.shrubs.emptyisland.pics
+85f26.fate.truelance.com
+873f1b8f.priority.expugements.com
+8a11.roles.thepowerofgodswhisper.com
+8ad7.portraits.studio-94-photography.com
+8ae97.rendezvous.tophandsome.gay
+8ba8e.signing.unitynotarypublic.com
+8dd98.samples.muzikcitysound.com
+93eae.diary.lojjh.com
+9425.fluctuations.trendylevels.com
+94786.signing.unitynotarypublic.com
+9659.fluctuations.trendylevels.com
+999da.distributor.techsavvyauto.com
+9aba0.language.sebtomato.com
+9c8c.fluctuations.trendylevels.com
+9c98c.shrubs.emptyisland.pics
+9cb98.signing.unitynotarypublic.com
+9cdff.signing.unitynotarypublic.com
+9f1c9.language.sebtomato.com
+a12ec.language.sebtomato.com
+a165.school.cherry-street-portrait-studios.com
+a2724.language.sebtomato.com
+a481.moments.abledity.com
+a8b1.moments.abledity.com
+aba0c.language.sebtomato.com
+abstractoons.com
+acdcb.samples.muzikcitysound.com
+acry.nodes.gammalambdalambda.org
+ad4c1.samples.muzikcitysound.com
+ae86.portraits.studio-94-photography.com
+afaee.distributor.techsavvyauto.com
+afcsm.2023.ebeenj.com
+aff80.samples.muzikcitysound.com
+agas.layout.oystergardens.us
+aiyj.nodes.gammalambdalambda.org
+alq.honors.howamerica.com
+anip.score.symposiumhaiti.com
+ant.settings.oysterfloats.org
+aptu.our.openarmscv.org
+atrqp.caching.oysterfloats.com
+avgdm.colors.usajicgu.com
+axe.settings.oysterfloats.org
+ayhy.workout.oystergardener.net
+b0187.samples.muzikcitysound.com
+b0f69.fate.truelance.com
+b203f.asset.tradingvein.xyz
+b415.roles.thepowerofgodswhisper.com
+b821f.samples.muzikcitysound.com
+b909.portraits.studio-94-photography.com
+b9e9.telegram.godsmightywhispers.com
+b9ef.moments.abledity.com
+bb59b.shrubs.emptyisland.pics
+bbmr.settings.oysterfloats.org
+bcf87.fate.truelance.com
+bedc.fluctuations.trendylevels.com
+bercx.workout.oystergardener.net
+billdeckhart.com
+blh.2023.ebeenj.com
+bmnp.colors.usajicgu.com
+bno.layout.oystergardens.us
+bosur.sync.oystergardens.club
+bov.day.50adayplan.com
+buif.settings.oysterfloats.org
+bwxj.colors.usajicgu.com
+byedp.nodes.gammalambdalambda.org
+c15a4.shrubs.emptyisland.pics
+c2717.fate.truelance.com
+c364e.calendar.wishmarkets.com
+c48b.templates.victoryoverdieting.com
+c5675.distributor.techsavvyauto.com
+c83d5.distributor.techsavvyauto.com
+c8ae.portraits.studio-94-photography.com
+c8ce.portraits.studio-94-photography.com
+c9b0.campaign.tworiversboat.com
+ca026.shrubs.emptyisland.pics
+ca565.distributor.techsavvyauto.com
+cad29.shrubs.emptyisland.pics
+caxc.sync.oystergardens.club
+caxsf.rfc.zitoprohealth.com
+cbi.layout.oystergardens.us
+cbkn.sync.oystergardens.club
+cc248.fate.truelance.com
+cc84.demand.sageyogatherapies.com
+cd242.signing.unitynotarypublic.com
+cddcc.shrubs.emptyisland.pics
+cely.scheme.corycabana.net
+cenb.sync.oystergardens.club
+cfc.2023.ebeenj.com
+cggq.scheme.corycabana.net
+cht.layout.oystergardens.us
+ciqcy.scheme.corycabana.net
+cjzh.places.creeksidehuntingpreserve.com
+ckzg.2023.ebeenj.com
+cmnda.cloudid.coffeeonboard.com
+cnt.sync.oystergardens.club
+cpi.reseller.wonderfulworldblog.com
+cqya.places.creeksidehuntingpreserve.com
+cra.layout.oystergardens.us
+ctbxr.reseller.wonderfulworldblog.com
+cttpb.settings.oysterfloats.org
+cuoi.score.symposiumhaiti.com
+cxox.scheme.corycabana.net
+czljz.reseller.wonderfulworldblog.com
+d008.roles.thepowerofgodswhisper.com
+d270a.calendar.wishmarkets.com
+d2725.shrubs.emptyisland.pics
+d4719.shrubs.emptyisland.pics
+d596a.distributor.techsavvyauto.com
+d5cc.fluctuations.trendylevels.com
+dad.day.50adayplan.com
+dbs.result.garrettcountygranfondo.org
+dcb7.campaign.tworiversboat.com
+dece.sync.oystergardens.club
+df607.shrubs.emptyisland.pics
+dht.rfc.zitoprohealth.com
+dja.colors.usajicgu.com
+djurw.our.openarmscv.org
+dmq.layout.oystergardens.us
+dno.settings.oysterfloats.org
+dofza.layout.oystergardens.us
+dswhq.layout.oystergardens.us
+dth.settings.oysterfloats.org
+dufhl.scheme.corycabana.net
+dvkq.colors.usajicgu.com
+dxe.scheme.corycabana.net
+dygc.2023.ebeenj.com
+dymqu.sync.oystergardens.club
+dzmar.workout.oystergardener.net
+e2bcd.diary.lojjh.com
+e3651.lap.detroitdragway.com
+e4a8.portraits.studio-94-photography.com
+e4da.portraits.studio-94-photography.com
+e6243.fate.truelance.com
+e63c.moments.abledity.com
+e6c2f.distributor.techsavvyauto.com
+e9a4.moments.abledity.com
+ea44a.samples.muzikcitysound.com
+eastcoastmotorhomes.co.uk
+ebdeb.shrubs.emptyisland.pics
+ebmw.scheme.corycabana.net
+ec7dd.samples.muzikcitysound.com
+ec98.portraits.studio-94-photography.com
+ecde3.samples.muzikcitysound.com
+ed1ef301.factor.vtaxlaw.com
+ed798.samples.muzikcitysound.com
+ehm.result.garrettcountygranfondo.org
+ejb.workout.oystergardener.net
+enuph.layout.oystergardens.us
+eqdf.2023.ebeenj.com
+eqtnk.reseller.wonderfulworldblog.com
+ese.nodes.gammalambdalambda.org
+esteticalocarno.com
+etuh.settings.oysterfloats.org
+ezla.score.symposiumhaiti.com
+f069f.signing.unitynotarypublic.com
+f17d.portraits.studio-94-photography.com
+f2d19.signing.unitynotarypublic.com
+f50d9.fate.truelance.com
+f75c1.calendar.wishmarkets.com
+f97c4.samples.muzikcitysound.com
+f985f.diary.lojjh.com
+fa30.campaign.tworiversboat.com
+fa67.portraits.studio-94-photography.com
+familyexplorers.com
+fatgq.places.creeksidehuntingpreserve.com
+fb29.school.cherry-street-portrait-studios.com
+fbad3.lap.detroitdragway.com
+fbf.score.symposiumhaiti.com
+fc14.demand.sageyogatherapies.com
+fch.rfc.zitoprohealth.com
+fd1df.signing.unitynotarypublic.com
+fd4a.portraits.studio-94-photography.com
+fdfik.sync.oystergardens.club
+ff677.signing.unitynotarypublic.com
+ffujj.our.openarmscv.org
+fglmw.members.openarmscv.com
+fksva.plan.gemmadeealexander.com
+frex.result.garrettcountygranfondo.org
+frkd.our.openarmscv.org
+frn.workout.oystergardener.net
+ftja.our.openarmscv.org
+furnesscavsjuniors.co.uk
+futu.places.creeksidehuntingpreserve.com
+fvuzp.settings.oysterfloats.org
+fyj.sync.oystergardens.club
+fyxk.workout.oystergardener.net
+games.iglesiaelarca.org
+gaszz.members.openarmscv.com
+gben.scheme.corycabana.net
+gbk.reseller.wonderfulworldblog.com
+gbn.2023.ebeenj.com
+gewji.sync.oystergardens.club
+ggu.result.garrettcountygranfondo.org
+gho.colors.usajicgu.com
+gko.scheme.corycabana.net
+gmyb.scheme.corycabana.net
+gnreb.caching.oysterfloats.com
+grfpn.cloudid.coffeeonboard.com
+gsbhr.our.openarmscv.org
+gtjo.reseller.wonderfulworldblog.com
+gvcc.workout.oystergardener.net
+hbm.sync.oystergardens.club
+hdiw.scheme.corycabana.net
+hdzba.score.symposiumhaiti.com
+heckelmann.info
+her.scheme.corycabana.net
+hflll.places.creeksidehuntingpreserve.com
+hgb.plan.gemmadeealexander.com
+hgxb.members.openarmscv.com
+hhgs.sync.oystergardens.club
+hhypp.plan.gemmadeealexander.com
+hjdm.score.symposiumhaiti.com
+hlgx.colors.usajicgu.com
+hlgx.workout.oystergardener.net
+hlhxz.score.symposiumhaiti.com
+hmhsd.day.50adayplan.com
+hmrg.reseller.wonderfulworldblog.com
+hpgbf.scheme.corycabana.net
+hqw.places.creeksidehuntingpreserve.com
+hrpg.sync.oystergardens.club
+hujcy.result.garrettcountygranfondo.org
+hvp.score.symposiumhaiti.com
+hwpr.honors.howamerica.com
+hzu.our.openarmscv.org
+ibaft.places.creeksidehuntingpreserve.com
+ice.settings.oysterfloats.org
+iconicstreamstv.com
+ijko.rfc.zitoprohealth.com
+ikfk.scheme.corycabana.net
+ioc.places.creeksidehuntingpreserve.com
+ipiwa.reseller.wonderfulworldblog.com
+iqvs.reseller.wonderfulworldblog.com
+itks.nodes.gammalambdalambda.org
+iwg.honors.howamerica.com
+ixg.settings.oysterfloats.org
+iys.scheme.corycabana.net
+izmkh.layout.oystergardens.us
+izu.places.creeksidehuntingpreserve.com
+jakj.settings.oysterfloats.org
+japcr.reseller.wonderfulworldblog.com
+jau.result.garrettcountygranfondo.org
+jbvia.places.creeksidehuntingpreserve.com
+jchdq.scheme.corycabana.net
+jes.reseller.wonderfulworldblog.com
+jfbi.score.symposiumhaiti.com
+jfyme.result.garrettcountygranfondo.org
+jhvqt.scheme.corycabana.net
+jioqu.honors.howamerica.com
+jko.result.garrettcountygranfondo.org
+jngdf.scheme.corycabana.net
+jngh.result.garrettcountygranfondo.org
+jqj.result.garrettcountygranfondo.org
+jsj.result.garrettcountygranfondo.org
+jsrb.scheme.corycabana.net
+jtvo.2023.ebeenj.com
+jtw.plan.gemmadeealexander.com
+juvb.sync.oystergardens.club
+jyl.sync.oystergardens.club
+jztn.2023.ebeenj.com
+kecju.places.creeksidehuntingpreserve.com
+kfx.sync.oystergardens.club
+kghn.colors.usajicgu.com
+kheg.sync.oystergardens.club
+khiba.plan.gemmadeealexander.com
+kkzgh.layout.oystergardens.us
+kld.workout.oystergardener.net
+klhby.2023.ebeenj.com
+klqj.score.symposiumhaiti.com
+kmm.score.symposiumhaiti.com
+konr.settings.oysterfloats.org
+krc.workout.oystergardener.net
+ksda.2023.ebeenj.com
+ksi.2023.ebeenj.com
+kuoa.places.creeksidehuntingpreserve.com
+kuwi.layout.oystergardens.us
+kvt.places.creeksidehuntingpreserve.com
+kyeof.colors.usajicgu.com
+kzu.settings.oysterfloats.org
+language.sebtomato.com
+lbymv.2023.ebeenj.com
+lcmk.scheme.corycabana.net
+ldmx.2023.ebeenj.com
+lds.sync.oystergardens.club
+ldsjx.workout.oystergardener.net
+leir.settings.oysterfloats.org
+lewio.scheme.corycabana.net
+lex.day.50adayplan.com
+lfr.settings.oysterfloats.org
+lgr.our.openarmscv.org
+lgvup.workout.oystergardener.net
+lkwh.sync.oystergardens.club
+lmm.scheme.corycabana.net
+lnuw.reseller.wonderfulworldblog.com
+lof.honors.howamerica.com
+lqhx.settings.oysterfloats.org
+lsa.2023.ebeenj.com
+lunh.2023.ebeenj.com
+lvdhg.scheme.corycabana.net
+lvumu.novelty.akibacreative.com
+lxa.colors.usajicgu.com
+lxdi.2023.ebeenj.com
+lxndd.2023.ebeenj.com
+lzv.sync.oystergardens.club
+mel.places.creeksidehuntingpreserve.com
+members.openarmscv.com
+mevwz.2023.ebeenj.com
+mhlb.layout.oystergardens.us
+miri.2023.ebeenj.com
+mjh.layout.oystergardens.us
+mjlfa.reseller.wonderfulworldblog.com
+mkng.honors.howamerica.com
+mlm.reseller.wonderfulworldblog.com
+mmq.workout.oystergardener.net
+mnkg.sync.oystergardens.club
+mofx.colors.usajicgu.com
+moonshinephilly.com
+mphqg.2023.ebeenj.com
+mroqy.layout.oystergardens.us
+mtc.reseller.wonderfulworldblog.com
+mumh.result.garrettcountygranfondo.org
+mvxw.scheme.corycabana.net
+navai.sync.oystergardens.club
+ndpt.layout.oystergardens.us
+nen.layout.oystergardens.us
+nggw.sync.oystergardens.club
+nkb.layout.oystergardens.us
+nked.result.garrettcountygranfondo.org
+nkfxt.scheme.corycabana.net
+nkp.2023.ebeenj.com
+nmtu.settings.oysterfloats.org
+nodes.gammalambdalambda.org
+nrh.members.openarmscv.com
+ntg.scheme.corycabana.net
+ntl.scheme.corycabana.net
+nulah.2023.ebeenj.com
+nwxnr.places.creeksidehuntingpreserve.com
+nzk.settings.oysterfloats.org
+obmcj.scheme.corycabana.net
+ocbnx.sync.oystergardens.club
+ocqd.rfc.zitoprohealth.com
+ocy.result.garrettcountygranfondo.org
+ohlxc.settings.oysterfloats.org
+oiou.plan.gemmadeealexander.com
+omnh.our.openarmscv.org
+oolmu.members.openarmscv.com
+oplk.colors.usajicgu.com
+oqbkc.2023.ebeenj.com
+oqk.layout.oystergardens.us
+otpa.settings.oysterfloats.org
+ouxl.sync.oystergardens.club
+oyjgq.sync.oystergardens.club
+pbpb.colors.usajicgu.com
+pcpdt.reseller.wonderfulworldblog.com
+pdbsx.reseller.wonderfulworldblog.com
+pfu.score.symposiumhaiti.com
+pfwi.novelty.akibacreative.com
+pfyk.2023.ebeenj.com
+piedixterrabra.it
+piokf.sync.oystergardens.club
+pje.reseller.wonderfulworldblog.com
+pkic.reseller.wonderfulworldblog.com
+pkxs.score.symposiumhaiti.com
+poa.2023.ebeenj.com
+powvj.sync.oystergardens.club
+pva.layout.oystergardens.us
+pxv.2023.ebeenj.com
+pzhke.score.symposiumhaiti.com
+pzr.2023.ebeenj.com
+qaiq.our.openarmscv.org
+qbkbc.colors.usajicgu.com
+qdzzg.sync.oystergardens.club
+qej.settings.oysterfloats.org
+qgnk.cloudid.coffeeonboard.com
+qkf.nodes.gammalambdalambda.org
+qpq.plan.gemmadeealexander.com
+qrlkv.plan.gemmadeealexander.com
+qsn.reseller.wonderfulworldblog.com
+quinnconstructioninc.com
+quxgr.sync.oystergardens.club
+qvpb.2023.ebeenj.com
+qzg.honors.howamerica.com
+ral.layout.oystergardens.us
+rfqgc.2023.ebeenj.com
+rhtbc.2023.ebeenj.com
+rhu.workout.oystergardener.net
+rmdqo.our.openarmscv.org
+rmvh.result.garrettcountygranfondo.org
+rnpn.result.garrettcountygranfondo.org
+ropft.sync.oystergardens.club
+rqqm.colors.usajicgu.com
+rsal.our.openarmscv.org
+rszxy.workout.oystergardener.net
+ruv.colors.usajicgu.com
+rxaf.reseller.wonderfulworldblog.com
+ryrgg.workout.oystergardener.net
+rzt.2023.ebeenj.com
+safetyofficer.pk
+sbn.novelty.akibacreative.com
+sbu.reseller.wonderfulworldblog.com
+scheme.corycabana.net
+scorejumpers.com
+scripts.asi.services
+sdigg.sync.oystergardens.club
+segurosams.com.br
+sevenstarminicabs.co.uk
+sfh.scheme.corycabana.net
+sgvw.places.creeksidehuntingpreserve.com
+shizk.day.50adayplan.com
+sjnaw.result.garrettcountygranfondo.org
+sll.honors.howamerica.com
+slma.our.openarmscv.org
+smmp.sync.oystergardens.club
+spn.nodes.gammalambdalambda.org
+spt.2023.ebeenj.com
+sqgu.2023.ebeenj.com
+str.honors.howamerica.com
+svhii.day.50adayplan.com
+sxq.places.creeksidehuntingpreserve.com
+sxsq.2023.ebeenj.com
+syir.2023.ebeenj.com
+sync.oystergardens.club
+tac.reseller.wonderfulworldblog.com
+tbbj.scheme.corycabana.net
+tbiv.workout.oystergardener.net
+tdbzj.sync.oystergardens.club
+tgp.2023.ebeenj.com
+thqk.honors.howamerica.com
+tjmz.our.openarmscv.org
+tkk.2023.ebeenj.com
+tne.reseller.wonderfulworldblog.com
+tpjnl.2023.ebeenj.com
+tsvzi.scheme.corycabana.net
+uaa.reseller.wonderfulworldblog.com
+ubi.score.symposiumhaiti.com
+ufcj.scheme.corycabana.net
+ugv.reseller.wonderfulworldblog.com
+uimx.result.garrettcountygranfondo.org
+ujii.sync.oystergardens.club
+uku.score.symposiumhaiti.com
+ulpyx.result.garrettcountygranfondo.org
+una.settings.oysterfloats.org
+una.workout.oystergardener.net
+une.settings.oysterfloats.org
+unquu.workout.oystergardener.net
+upny.layout.oystergardens.us
+urpco.places.creeksidehuntingpreserve.com
+uscc.score.symposiumhaiti.com
+usjmh.2023.ebeenj.com
+uvht.2023.ebeenj.com
+uvozm.reseller.wonderfulworldblog.com
+uvqe.2023.ebeenj.com
+vbbl.our.openarmscv.org
+vbdm.settings.oysterfloats.org
+vby.places.creeksidehuntingpreserve.com
+vclw.day.50adayplan.com
+vcmk.result.garrettcountygranfondo.org
+vcozm.reseller.wonderfulworldblog.com
+veal.scheme.corycabana.net
+vfn.honors.howamerica.com
+vfzl.honors.howamerica.com
+vgm.day.50adayplan.com
+vsniq.result.garrettcountygranfondo.org
+vubc.reseller.wonderfulworldblog.com
+vvbd.places.creeksidehuntingpreserve.com
+vvv.layout.oystergardens.us
+vxdu.rfc.zitoprohealth.com
+vyivw.layout.oystergardens.us
+vzx.result.garrettcountygranfondo.org
+wactus.shop
+wec.colors.usajicgu.com
+weolg.result.garrettcountygranfondo.org
+wfp.2023.ebeenj.com
+whmpu.places.creeksidehuntingpreserve.com
+wimur.2023.ebeenj.com
+wkcsh.reseller.wonderfulworldblog.com
+wnaj.scheme.corycabana.net
+wnkhh.novelty.akibacreative.com
+wvig.places.creeksidehuntingpreserve.com
+wvmnz.scheme.corycabana.net
+wwo.our.openarmscv.org
+wwsvf.layout.oystergardens.us
+wxbku.reseller.wonderfulworldblog.com
+wxj.layout.oystergardens.us
+wxnxm.scheme.corycabana.net
+wybig.day.50adayplan.com
+xalh.sync.oystergardens.club
+xbo.members.openarmscv.com
+xbsky.score.symposiumhaiti.com
+xcpl.our.openarmscv.org
+xcz.score.symposiumhaiti.com
+xfhfv.2023.ebeenj.com
+xhwni.2023.ebeenj.com
+xizc.settings.oysterfloats.org
+xmqpj.result.garrettcountygranfondo.org
+xqtr.result.garrettcountygranfondo.org
+xqz.scheme.corycabana.net
+xrhs.scheme.corycabana.net
+xtw.layout.oystergardens.us
+xvku.sync.oystergardens.club
+xvuz.sync.oystergardens.club
+xwhb.places.creeksidehuntingpreserve.com
+xwxqw.settings.oysterfloats.org
+xzfh.our.openarmscv.org
+yap.plan.gemmadeealexander.com
+yaz.scheme.corycabana.net
+ygjxh.colors.usajicgu.com
+ygt.scheme.corycabana.net
+yhvtg.rfc.zitoprohealth.com
+yiw.layout.oystergardens.us
+yjdbn.score.symposiumhaiti.com
+ykqmh.places.creeksidehuntingpreserve.com
+yla.sync.oystergardens.club
+ylr.places.creeksidehuntingpreserve.com
+ysy.novelty.akibacreative.com
+ywaaa.sync.oystergardens.club
+ywn.reseller.wonderfulworldblog.com
+yyzh.sync.oystergardens.club
+yzs.places.creeksidehuntingpreserve.com
+yzux.honors.howamerica.com
+zbkn.settings.oysterfloats.org
+zenrecoveryspa.com
+zfrbi.our.openarmscv.org
+zgwqx.2023.ebeenj.com
+zhlr.2023.ebeenj.com
+zjt.2023.ebeenj.com
+zjvgn.sync.oystergardens.club
+zmm.2023.ebeenj.com
+zojx.accounting.bridgemastersllc.com
+zolbr.novelty.akibacreative.com
+zpbvl.settings.oysterfloats.org
+zrfpu.result.garrettcountygranfondo.org
+zrxqu.2023.ebeenj.com
+zrz.sync.oystergardens.club
+ztbyf.honors.howamerica.com
+zwxe.workout.oystergardener.net
+zxs.sync.oystergardens.club
+zzona.layout.oystergardens.us
+zzot.reseller.wonderfulworldblog.com
+zzpft.result.garrettcountygranfondo.org
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.59.170.106/relations
+
+aphqj.members.openarmscv.com
+bzg.members.openarmscv.com
+ccmk.members.openarmscv.com
+ccsfc.members.openarmscv.com
+ciw.members.openarmscv.com
+ciwb.members.openarmscv.com
+cot.members.openarmscv.com
+dmrg.members.openarmscv.com
+eeiia.members.openarmscv.com
+eezc.members.openarmscv.com
+etto.members.openarmscv.com
+exks.members.openarmscv.com
+fgdb.members.openarmscv.com
+ggiq.members.openarmscv.com
+gzj.members.openarmscv.com
+hjpg.members.openarmscv.com
+hqert.members.openarmscv.com
+jmcoj.members.openarmscv.com
+jwqr.members.openarmscv.com
+ktjd.members.openarmscv.com
+ktuj.members.openarmscv.com
+mjxef.members.openarmscv.com
+mtv.members.openarmscv.com
+mub.members.openarmscv.com
+nqhrw.members.openarmscv.com
+nvcep.members.openarmscv.com
+pbf.members.openarmscv.com
+rlc.members.openarmscv.com
+rpe.members.openarmscv.com
+rrlv.members.openarmscv.com
+ryij.members.openarmscv.com
+skv.members.openarmscv.com
+tfsrl.members.openarmscv.com
+twy.members.openarmscv.com
+uam.members.openarmscv.com
+uinuj.members.openarmscv.com
+vcrv.members.openarmscv.com
+wwk.members.openarmscv.com
+zej.members.openarmscv.com
+ztpr.members.openarmscv.com
+
+# Reference: https://twitter.com/threatcat_ch/status/1761392083749781964
+
+stake.libertariancounterpoint.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/23.95.182.9/relations
+
+collection.aixpirts.com
+499.collection.aixpirts.com
+aely.collection.aixpirts.com
+consq.collection.aixpirts.com
+dxnm.collection.aixpirts.com
+jca.collection.aixpirts.com
+joq.collection.aixpirts.com
+mue.collection.aixpirts.com
+prhll.collection.aixpirts.com
+pszd.collection.aixpirts.com
+qnak.collection.aixpirts.com
+qqmw.collection.aixpirts.com
+svi.collection.aixpirts.com
+uuw.collection.aixpirts.com
+vupy.collection.aixpirts.com
+xerr.collection.aixpirts.com
+ytjc.collection.aixpirts.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/213.252.232.161/relations
+
+aus.mimico-cooperative.org
+apmsr.aus.mimico-cooperative.org
+dojud.aus.mimico-cooperative.org
+ond.aus.mimico-cooperative.org
+oyit.aus.mimico-cooperative.org
+qrk.aus.mimico-cooperative.org
+wshks.aus.mimico-cooperative.org
+zofav.aus.mimico-cooperative.org
+
+# Reference: https://twitter.com/mojoesec/status/1767278333882986506
+# Reference: https://www.virustotal.com/gui/ip-address/23.184.48.90/relations
+
+round.fishingreelinvestment.com
+fwaf.round.fishingreelinvestment.com
+gaxn.round.fishingreelinvestment.com
+lws.round.fishingreelinvestment.com
+nknsz.round.fishingreelinvestment.com
+umo.round.fishingreelinvestment.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/37.128.207.92/relations
+
+welcome.visionaryyouth.org
+
+# Reference: https://twitter.com/seguridadyredes/status/1768574348732895550
+
+themancav.com
+pluralism.themancav.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/193.26.115.80/relations
+
+policy.donnafrey.com
+acmj.policy.donnafrey.com
+dkca.policy.donnafrey.com
+ftyz.policy.donnafrey.com
+grqt.policy.donnafrey.com
+jtxj.policy.donnafrey.com
+krenl.policy.donnafrey.com
+ljtu.policy.donnafrey.com
+nilv.policy.donnafrey.com
+oijga.policy.donnafrey.com
+qikae.policy.donnafrey.com
+rjot.policy.donnafrey.com
+skovb.policy.donnafrey.com
+tfpv.policy.donnafrey.com
+uqakr.policy.donnafrey.com
+xugix.policy.donnafrey.com
+zjxwd.policy.donnafrey.com
+zuwy.policy.donnafrey.com
+
+# Reference: https://x.com/threatcat_ch/status/1798333648099582316
+# Reference: https://www.virustotal.com/gui/ip-address/154.29.75.236/relations
+
+apicachebot.com
+memoryloader.com
+api.memoryloader.com
+load.memoryloader.com
+hostmaster.apicachebot.com
+mail.apicachebot.com
+suspicious-noed.absolutecache.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/128.254.207.135/relations
+
+http://128.254.207.135
+distributors.commdistinc.com
+asu.distributors.commdistinc.com
+bfdj.distributors.commdistinc.com
+bhsu.distributors.commdistinc.com
+blalg.distributors.commdistinc.com
+cwk.distributors.commdistinc.com
+dihql.distributors.commdistinc.com
+eub.distributors.commdistinc.com
+ewjhx.distributors.commdistinc.com
+fyv.distributors.commdistinc.com
+ghq.distributors.commdistinc.com
+htpj.distributors.commdistinc.com
+ijpwy.distributors.commdistinc.com
+ivav.distributors.commdistinc.com
+jigg.distributors.commdistinc.com
+jpgg.distributors.commdistinc.com
+kchq.distributors.commdistinc.com
+lhj.distributors.commdistinc.com
+libgr.distributors.commdistinc.com
+lil.distributors.commdistinc.com
+luchn.distributors.commdistinc.com
+mfzp.distributors.commdistinc.com
+muy.distributors.commdistinc.com
+obl.distributors.commdistinc.com
+oec.distributors.commdistinc.com
+pobr.distributors.commdistinc.com
+qbf.distributors.commdistinc.com
+rah.distributors.commdistinc.com
+rpyeu.distributors.commdistinc.com
+rzg.distributors.commdistinc.com
+sag.distributors.commdistinc.com
+sdanx.distributors.commdistinc.com
+sdce.distributors.commdistinc.com
+sfm.distributors.commdistinc.com
+tnnqq.distributors.commdistinc.com
+tpceo.distributors.commdistinc.com
+vix.distributors.commdistinc.com
+vsmm.distributors.commdistinc.com
+wbsaf.distributors.commdistinc.com
+wkogs.distributors.commdistinc.com
+wxjjh.distributors.commdistinc.com
+xkcwb.distributors.commdistinc.com
+xsimw.distributors.commdistinc.com
+zltq.distributors.commdistinc.com
+zlufm.distributors.commdistinc.com
+zrfzb.distributors.commdistinc.com
+
+# Reference: https://twitter.com/threatcat_ch/status/1772255373174468684
+# Reference: https://twitter.com/threatcat_ch/status/1772274512752439685
+# Reference: https://twitter.com/ValidinLLC/status/1772278217400828174
+# Reference: https://app.validin.com/detail?type=ip&find=146.0.77.153%2F28#tab=resolutions
+# Reference: https://app.validin.com/detail?find=179.60.147.94&type=ip4#tab=resolutions
+# Reference: https://www.virustotal.com/gui/file/3a17861f1584b5dac24b2f0cbee89793a69239592b8bee5fe6fce4923f9c8cf6/detection
+
+alakabaranetworks.com
+applaudcity.com
+aws-geoips-data.net
+aws-wwcloud.net
+cdn-serveq.net
+cdn.next2.cx
+next2.cx
+nkfinsdg.com
+playvideocdn.com
+representativehome.com
+webfullcloudcenter.com
+
+# Reference: https://twitter.com/Nzc2ZjZjNjY/status/1772626397032219046
+# Reference: https://www.virustotal.com/gui/ip-address/217.12.209.83/relations
+# Reference: https://www.virustotal.com/gui/domain/tiqcdn.net/relations
+
+cdn-iestars.net
+cdn-itdata.net
+tiqcdn.net
+domain.tiqcdn.net
+tags.tiqcdn.net
+usersync.tiqcdn.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/128.254.207.82/relations
+
+catching.fishingrealinvestments.com
+akvbk.catching.fishingrealinvestments.com
+bnc.catching.fishingrealinvestments.com
+bsjjm.catching.fishingrealinvestments.com
+bxtj.catching.fishingrealinvestments.com
+ckwxb.catching.fishingrealinvestments.com
+cxpm.catching.fishingrealinvestments.com
+dch.catching.fishingrealinvestments.com
+dpb.catching.fishingrealinvestments.com
+dqytx.catching.fishingrealinvestments.com
+eilfq.catching.fishingrealinvestments.com
+evdmq.catching.fishingrealinvestments.com
+fmgc.catching.fishingrealinvestments.com
+gccb.catching.fishingrealinvestments.com
+ggy.catching.fishingrealinvestments.com
+hlku.catching.fishingrealinvestments.com
+hxq.catching.fishingrealinvestments.com
+jme.catching.fishingrealinvestments.com
+ker.catching.fishingrealinvestments.com
+klyct.catching.fishingrealinvestments.com
+kxhu.catching.fishingrealinvestments.com
+lyup.catching.fishingrealinvestments.com
+meyl.catching.fishingrealinvestments.com
+mjdj.catching.fishingrealinvestments.com
+mnusx.catching.fishingrealinvestments.com
+ngc.catching.fishingrealinvestments.com
+ogffd.catching.fishingrealinvestments.com
+ors.catching.fishingrealinvestments.com
+pif.catching.fishingrealinvestments.com
+pvmxl.catching.fishingrealinvestments.com
+qmhs.catching.fishingrealinvestments.com
+qqsar.catching.fishingrealinvestments.com
+rbmi.catching.fishingrealinvestments.com
+rnnp.catching.fishingrealinvestments.com
+ropwc.catching.fishingrealinvestments.com
+rqqi.catching.fishingrealinvestments.com
+ryaa.catching.fishingrealinvestments.com
+rzb.catching.fishingrealinvestments.com
+sncr.catching.fishingrealinvestments.com
+src.catching.fishingrealinvestments.com
+svf.catching.fishingrealinvestments.com
+sxo.catching.fishingrealinvestments.com
+tfl.catching.fishingrealinvestments.com
+vhlje.catching.fishingrealinvestments.com
+wajnj.catching.fishingrealinvestments.com
+xafeb.catching.fishingrealinvestments.com
+xtvu.catching.fishingrealinvestments.com
+yhejt.catching.fishingrealinvestments.com
+yyidr.catching.fishingrealinvestments.com
+zetm.catching.fishingrealinvestments.com
+zgcl.catching.fishingrealinvestments.com
+zptom.catching.fishingrealinvestments.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/146.19.254.43/relations
+
+camps.topgunnbaseball.com
+
+# Reference: https://twitter.com/mojoesec/status/1774861227102999000
+# Reference: https://www.virustotal.com/gui/ip-address/193.26.115.181/relations
+# Reference: https://www.virustotal.com/gui/file/15aee31510eaa09ba1ddd3e5d21ee79f76c67d21b42150ec9d569b6645b8afab/detection
+
+schedule.golfballnutz.com
+exrkk.schedule.golfballnutz.com
+jin.schedule.golfballnutz.com
+kkf.schedule.golfballnutz.com
+knpx.schedule.golfballnutz.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/23.137.253.76/relations
+# Reference: https://twitter.com/mojoesec/status/1777406441940472170
+
+pool.hjdeboer.com
+chf.pool.hjdeboer.com
+dnfb.pool.hjdeboer.com
+ell.pool.hjdeboer.com
+nrrr.pool.hjdeboer.com
+sgm.pool.hjdeboer.com
+xoot.pool.hjdeboer.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/208.91.197.13/relations
+
+loans.fishingreelinvestments.com
+derp.loans.fishingreelinvestments.com
+dvy.loans.fishingreelinvestments.com
+esdbz.loans.fishingreelinvestments.com
+fbo.loans.fishingreelinvestments.com
+ftw.loans.fishingreelinvestments.com
+hee.loans.fishingreelinvestments.com
+hga.loans.fishingreelinvestments.com
+hts.loans.fishingreelinvestments.com
+hvi.loans.fishingreelinvestments.com
+hzypx.loans.fishingreelinvestments.com
+itbc.loans.fishingreelinvestments.com
+iyi.loans.fishingreelinvestments.com
+jefw.loans.fishingreelinvestments.com
+lcbp.loans.fishingreelinvestments.com
+pbf.loans.fishingreelinvestments.com
+qevbw.loans.fishingreelinvestments.com
+rbo.loans.fishingreelinvestments.com
+thmx.loans.fishingreelinvestments.com
+tsk.loans.fishingreelinvestments.com
+usmc.loans.fishingreelinvestments.com
+uvm.loans.fishingreelinvestments.com
+vsedt.loans.fishingreelinvestments.com
+wpda.loans.fishingreelinvestments.com
+ygbo.loans.fishingreelinvestments.com
+yrt.loans.fishingreelinvestments.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/77.221.149.184/relations
+
+register.arpsychotherapy.com
+rbf.register.arpsychotherapy.com
+slf.register.arpsychotherapy.com
+tfuq.register.arpsychotherapy.com
+uaz.register.arpsychotherapy.com
+
+# Reference: https://twitter.com/threatcat_ch/status/1782739184383410325
+# Reference: https://twitter.com/threatcat_ch/status/1782744235411726748
+# Reference: https://www.virustotal.com/gui/ip-address/65.21.119.50/relations
+# Reference: https://www.virustotal.com/gui/file/3c65b9c86eac169a0d20e43b1beee74f20d57274ef300e0be7aca9a9f98090c5/detection
+
+aihere.online
+arunrail.com
+cclining.com
+cclining.org
+d3bk.com
+docufreezer.pro
+invite-tls.team
+ipscanadvsf.com
+norunia.com
+notionso.online
+pdftoconvert.online
+scanner-ip.com
+screenhate.org
+singularityplus.net
+toconvertpdf.site
+toppdfconverter.org
+transpassional.sbs
+zoomis.pro
+zoomus.pro
+
+# Reference: https://twitter.com/mojoesec/status/1785382958829801593
+# Reference: https://www.virustotal.com/gui/ip-address/45.88.186.159/relations
+# Reference: https://www.virustotal.com/gui/file/284bc8114d14aff11ea38c2955a4689f369ce3581cc0aac3cc7cabb524d0da3d/detection
+
+demo.betterbuiltdogs.com
+cjj.demo.betterbuiltdogs.com
+dbup.demo.betterbuiltdogs.com
+fet.demo.betterbuiltdogs.com
+ljx.demo.betterbuiltdogs.com
+pbsi.demo.betterbuiltdogs.com
+qvts.demo.betterbuiltdogs.com
+undm.demo.betterbuiltdogs.com
+vmts.demo.betterbuiltdogs.com
+vytzv.demo.betterbuiltdogs.com
+yznkm.demo.betterbuiltdogs.com
+zfd.demo.betterbuiltdogs.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.66.248.122/relations
+
+muse.krazzykriss.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/147.45.78.74/relations
+
+premium.davidabostic.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-05-06-v10590/1615
+# Reference: https://www.virustotal.com/gui/ip-address/77.83.199.148/relations
+
+colo.oystergarden.net
+mkpmg.colo.oystergarden.net
+prdyd.colo.oystergarden.net
+ygf.colo.oystergarden.net
+zniup.colo.oystergarden.net
+
+# Reference: https://twitter.com/mojoesec/status/1790101412203962465
+# Reference: https://www.virustotal.com/gui/file/05ed08f3354563a05b5affe271c2b520bf7f3545a05373adf8d8ab38af4c29ae/detection
+
+location.oysterfloats.us
+jsbzd.location.oysterfloats.us
+
+# Reference: https://www.esentire.com/blog/fake-browser-updates-delivering-bitrat-and-lumma-stealer
+# Reference: https://www.virustotal.com/gui/ip-address/65.21.119.50/relations
+# Reference: https://www.virustotal.com/gui/file/377e8cbb841c1011a0a0583fc51e169b6411362a8789519fcfe3035def3eb405/detection
+
+chatgpt-app.cloud
+updatess.mooo.com
+mail.norunia.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/173.44.141.51/relations
+# Reference: https://www.virustotal.com/gui/file/00bd0cf7ab5874ed15fb851a2361678b6b1d1d5804ce7262a09a115459514910/detection
+
+scada.paradizeconstruction.com
+
+# Reference: https://x.com/threatcat_ch/status/1803409043660181755
+# Reference: https://www.virustotal.com/gui/ip-address/206.206.123.249/relations
+# Reference: https://app.validin.com/detail?find=206.206.123.249&type=ip4&ref_id=5dcb880f244#tab=resolutions
+
+jsincloud.com
+jswebcache.com
+premium.davidabostic.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-06-24-v10626/1760
+
+partners.gloriadeicr.com
+cqfk.partners.gloriadeicr.com
+cud.partners.gloriadeicr.com
+mqa.partners.gloriadeicr.com
+svq.partners.gloriadeicr.com
+wwwf.partners.gloriadeicr.com
+ybo.partners.gloriadeicr.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-07-29-v10655/1856
+# Reference: https://www.virustotal.com/gui/file/57efd223aaecb720177e1f5260a396ddb7b15182a392cc354aff1d9f1f1addd1/detection
+# Reference: https://www.virustotal.com/gui/file/4d3e77fedd259c8a8aa8a17ae2ce97dee90104fee907bca1ac10fb3450921b93/detection
+# Reference: https://www.virustotal.com/gui/file/07056be341c49d3043615c4f21c67bf8568d753037a6ff43db5b23697d29b8ce/detection
+
+living.miraclesofeucharisticjesus.org
+edi.living.miraclesofeucharisticjesus.org
+fxjsm.living.miraclesofeucharisticjesus.org
+gxvk.living.miraclesofeucharisticjesus.org
+ursn.living.miraclesofeucharisticjesus.org
+wgce.living.miraclesofeucharisticjesus.org
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-05-v10659/1875
+
+donors.eucharisticjesus.net
+bhuiw.donors.eucharisticjesus.net
+cqp.donors.eucharisticjesus.net
+cwh.donors.eucharisticjesus.net
+cylua.donors.eucharisticjesus.net
+dderp.donors.eucharisticjesus.net
+derp.donors.eucharisticjesus.net
+dhsv.donors.eucharisticjesus.net
+dvo.donors.eucharisticjesus.net
+gdfwj.donors.eucharisticjesus.net
+gdhnc.donors.eucharisticjesus.net
+gjyt.donors.eucharisticjesus.net
+hedo.donors.eucharisticjesus.net
+hmyb.donors.eucharisticjesus.net
+iflui.donors.eucharisticjesus.net
+ikc.donors.eucharisticjesus.net
+iod.donors.eucharisticjesus.net
+jcc.donors.eucharisticjesus.net
+kevjw.donors.eucharisticjesus.net
+kik.donors.eucharisticjesus.net
+lwflf.donors.eucharisticjesus.net
+lzxj.donors.eucharisticjesus.net
+mabs.donors.eucharisticjesus.net
+mlnb.donors.eucharisticjesus.net
+njjmw.donors.eucharisticjesus.net
+odfdt.donors.eucharisticjesus.net
+pvk.donors.eucharisticjesus.net
+tcvwu.donors.eucharisticjesus.net
+them.donors.eucharisticjesus.net
+trsu.donors.eucharisticjesus.net
+tuhys.donors.eucharisticjesus.net
+tyoa.donors.eucharisticjesus.net
+veb.donors.eucharisticjesus.net
+wgaj.donors.eucharisticjesus.net
+wginh.donors.eucharisticjesus.net
+wrag.donors.eucharisticjesus.net
+wzt.donors.eucharisticjesus.net
+xraib.donors.eucharisticjesus.net
+xza.donors.eucharisticjesus.net
+ytrh.donors.eucharisticjesus.net
+zead.donors.eucharisticjesus.net
+zpip.donors.eucharisticjesus.net
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-19-v10669/1904
+# Reference: https://www.virustotal.com/gui/ip-address/178.236.246.252/relations
+
+sponsor.printondemandagency.com
+mvqj.sponsor.printondemandagency.com
+odtym.sponsor.printondemandagency.com
+qqizt.sponsor.printondemandagency.com
+yuzn.sponsor.printondemandagency.com
+
+# Reference: https://www.virustotal.com/gui/file/9e2a099e6e7ee331f011008436d48c949fede6ac4f6536276b7850b1b31e59bf/detection
+# Reference: https://www.virustotal.com/gui/file/8a4f5c4b6f7446e4f888b009541750cd8dc2c44ea6bdda21da2192c0c5adc45d/detection
+
+contest.printondemandmerchandise.com
+aui.contest.printondemandmerchandise.com
+gca.contest.printondemandmerchandise.com
+hufh.contest.printondemandmerchandise.com
+ipoil.contest.printondemandmerchandise.com
+izc.contest.printondemandmerchandise.com
+ngao.contest.printondemandmerchandise.com
+oxvs.contest.printondemandmerchandise.com
+pmvnh.contest.printondemandmerchandise.com
+pxvr.contest.printondemandmerchandise.com
+qhhj.contest.printondemandmerchandise.com
+qubvs.contest.printondemandmerchandise.com
+rjb.contest.printondemandmerchandise.com
+smog.contest.printondemandmerchandise.com
+ynowk.contest.printondemandmerchandise.com
+zrs.contest.printondemandmerchandise.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-09-02-v10679/1932
+
+podcast.lisameyerson.com
+aph.podcast.lisameyerson.com
+awaco.podcast.lisameyerson.com
+bjzvm.podcast.lisameyerson.com
+cshqe.podcast.lisameyerson.com
+derp.podcast.lisameyerson.com
+dld.podcast.lisameyerson.com
+dlovc.podcast.lisameyerson.com
+eohhe.podcast.lisameyerson.com
+fheb.podcast.lisameyerson.com
+fvk.podcast.lisameyerson.com
+gepo.podcast.lisameyerson.com
+gjeh.podcast.lisameyerson.com
+gmh.podcast.lisameyerson.com
+gowuq.podcast.lisameyerson.com
+hfkcs.podcast.lisameyerson.com
+honw.podcast.lisameyerson.com
+hvoq.podcast.lisameyerson.com
+iary.podcast.lisameyerson.com
+jhkdi.podcast.lisameyerson.com
+kvxp.podcast.lisameyerson.com
+lik.podcast.lisameyerson.com
+lllf.podcast.lisameyerson.com
+mlgt.podcast.lisameyerson.com
+mtq.podcast.lisameyerson.com
+mxk.podcast.lisameyerson.com
+myplq.podcast.lisameyerson.com
+nrux.podcast.lisameyerson.com
+nrvc.podcast.lisameyerson.com
+pha.podcast.lisameyerson.com
+qdnxm.podcast.lisameyerson.com
+rfp.podcast.lisameyerson.com
+rhau.podcast.lisameyerson.com
+rjee.podcast.lisameyerson.com
+snrqh.podcast.lisameyerson.com
+spv.podcast.lisameyerson.com
+tpbq.podcast.lisameyerson.com
+uhsp.podcast.lisameyerson.com
+urp.podcast.lisameyerson.com
+vnsg.podcast.lisameyerson.com
+wsyup.podcast.lisameyerson.com
+yhn.podcast.lisameyerson.com
+ypqm.podcast.lisameyerson.com
+yyab.podcast.lisameyerson.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-22)
+
+104.238.179.144:443
+147.45.78.74:443
+162.252.175.41:443
+172.81.182.179:443
+172.96.10.215:443
+173.44.141.51:443
+178.236.246.252:443
+185.217.197.52:443
+185.33.84.157:443
+185.76.79.50:443
+193.107.109.18:443
+193.107.109.59:443
+198.74.56.166:443
+207.148.0.16:443
+217.144.191.125:443
+217.195.153.158:443
+23.95.182.48:443
+45.77.78.73:443
+45.94.168.134:443
+50.114.37.59:443
+50.114.37.86:443
+50.116.61.64:443
+51.15.16.116:443
+86.124.171.111:443
+88.119.175.92:443
+94.156.248.15:443
+94.156.248.8:443
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-10-13)
+
+170.75.167.85:443
+198.98.48.223:443
+216.189.145.234:443
+88.119.175.180:443
+
+# Reference: https://x.com/threatcat_ch/status/1851566183876550946
+# Reference: https://x.com/threatcat_ch/status/1851718952121991366
+# Reference: https://urlscan.io/result/d192df9c-7d81-4d0e-97a1-0b85ca533a80/
+
+keenmagwife.live
+objmapper.com
+thewayofmoney.us
+variablescopetool.com
+winanimperialpower.top
+customer.thewayofmoney.us
+virtual.urban-orthodontics.com
+
+# Reference: https://threatfox.abuse.ch/browse/tag/SocGholish/ (# 2024-10-30)
+
+apistateupdater.com
+circle.innovativecsportal.com
+cive.free.thebitmeister.com
+cxwm.podcast.lisameyerson.com
+czo.free.thebitmeister.com
+djt.free.thebitmeister.com
+drddn.free.thebitmeister.com
+ebjmr.free.thebitmeister.com
+fetchdataajax.com
+free.thebitmeister.com
+house.zionanakwenze.com
+jeju.podcast.lisameyerson.com
+jepw.free.thebitmeister.com
+khu.free.thebitmeister.com
+kvlig.free.thebitmeister.com
+lab.free.thebitmeister.com
+loopconstruct.com
+lpgv.free.thebitmeister.com
+majorbrdide.com
+myvz.free.thebitmeister.com
+nhall.free.thebitmeister.com
+oln.free.thebitmeister.com
+outfit.dianamercer.com
+promiseresolverdev.com
+qdif.free.thebitmeister.com
+qqmb.free.thebitmeister.com
+range.cccinvolve.org
+rooms.fierceatfifty.com
+shades.whatisaweekend.com
+syx.free.thebitmeister.com
+therapy.emergencepsychservices.com
+vryv.free.thebitmeister.com
+wccw.free.thebitmeister.com
+yqf.free.thebitmeister.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-11-10)
+
+172.96.8.206:443
+205.185.119.10:443
+38.180.242.241:443
+45.76.250.221:443
+50.114.37.19:443
+62.60.154.114:443
+86.124.170.114:443
+88.119.175.247:443
+91.240.202.172:443
+
+# Reference: https://x.com/TRACLabs_/status/1859727076124999714
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.136.48/relations
+# Reference: https://www.virustotal.com/gui/file/27909ef2e03908e4c0011acebe377a541e41db03843f5856b5e3e58887d8b79d/detection
+# Reference: https://www.virustotal.com/gui/file/b5c26533650b7da90c162b945533be126b640f4957d6a0376977d6b42e06b3fd/detection
+
+cases.pcohenlaw.com
+cxhkh.cases.pcohenlaw.com
+geui.cases.pcohenlaw.com
+kwsww.cases.pcohenlaw.com
+xrqax.cases.pcohenlaw.com
+
+# Reference: https://x.com/TRACLabs_/status/1861073149070041377
+
+dashnex.plexusmarket.fund
+
+# Reference: https://x.com/TRACLabs_/status/1862161709353365776
+# Reference: https://www.virustotal.com/gui/ip-address/137.220.63.132/relations
+
+studio.lacrenshawcrossing.com
+
+# Reference: https://x.com/TRACLabs_/status/1866078172489437386
+# Reference: https://www.virustotal.com/gui/ip-address/166.88.159.66/relations
+
+material.amstillroofing.com
+
+# Reference: https://x.com/TRACLabs_/status/1868788183112315339
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.146.6/relations
+# Reference: https://www.virustotal.com/gui/file/8e513dc4b7ddfc0980e41338699d19d3e64ec841a3e2fbf30dfe84d5aa68f827/detection
+
+clients.dedicatedservicesusa.com
+sectors.bowentaxlaw.com
+axpr.sectors.bowentaxlaw.com
+cobt.sectors.bowentaxlaw.com
+fgmtp.sectors.bowentaxlaw.com
+ijngp.sectors.bowentaxlaw.com
+msux.sectors.bowentaxlaw.com
+qlu.sectors.bowentaxlaw.com
+touqp.sectors.bowentaxlaw.com
+uag.sectors.bowentaxlaw.com
+urue.sectors.bowentaxlaw.com
+vlxnj.sectors.bowentaxlaw.com
+zter.sectors.bowentaxlaw.com
+correo.dedicatedservicesusa.com
+hermes.dedicatedservicesusa.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-04-v10734/2111
+
+strategies.mvpstrat.com
+aaaaa.strategies.mvpstrat.com
+ajyqv.strategies.mvpstrat.com
+asao.strategies.mvpstrat.com
+bdi.strategies.mvpstrat.com
+dbgq.strategies.mvpstrat.com
+eccr.strategies.mvpstrat.com
+efr.strategies.mvpstrat.com
+fioii.strategies.mvpstrat.com
+fmhc.strategies.mvpstrat.com
+fqv.strategies.mvpstrat.com
+fvps.strategies.mvpstrat.com
+gitae.strategies.mvpstrat.com
+gqha.strategies.mvpstrat.com
+gqn.strategies.mvpstrat.com
+gqpme.strategies.mvpstrat.com
+gvf.strategies.mvpstrat.com
+hwve.strategies.mvpstrat.com
+ibih.strategies.mvpstrat.com
+iwzs.strategies.mvpstrat.com
+jqpc.strategies.mvpstrat.com
+jyez.strategies.mvpstrat.com
+jzyk.strategies.mvpstrat.com
+keayx.strategies.mvpstrat.com
+kkgs.strategies.mvpstrat.com
+loqpj.strategies.mvpstrat.com
+mkotl.strategies.mvpstrat.com
+mkxm.strategies.mvpstrat.com
+onsau.strategies.mvpstrat.com
+osm.strategies.mvpstrat.com
+qdofg.strategies.mvpstrat.com
+qkv.strategies.mvpstrat.com
+quf.strategies.mvpstrat.com
+rfuef.strategies.mvpstrat.com
+rulj.strategies.mvpstrat.com
+sgokz.strategies.mvpstrat.com
+shfgf.strategies.mvpstrat.com
+srivl.strategies.mvpstrat.com
+tpguf.strategies.mvpstrat.com
+ulj.strategies.mvpstrat.com
+wgfcg.strategies.mvpstrat.com
+wlmnn.strategies.mvpstrat.com
+wuih.strategies.mvpstrat.com
+xlkwu.strategies.mvpstrat.com
+xpvrk.strategies.mvpstrat.com
+xuxv.strategies.mvpstrat.com
+yts.strategies.mvpstrat.com
+zmv.strategies.mvpstrat.com
+zrn.strategies.mvpstrat.com
+zyf.strategies.mvpstrat.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-11-v10739/2129
+
+events.socalpocis.org
+adj.events.socalpocis.org
+aeyi.events.socalpocis.org
+avc.events.socalpocis.org
+buki.events.socalpocis.org
+bzfp.events.socalpocis.org
+cha.events.socalpocis.org
+chf.events.socalpocis.org
+cms.events.socalpocis.org
+dfg.events.socalpocis.org
+ebbm.events.socalpocis.org
+edah.events.socalpocis.org
+gogju.events.socalpocis.org
+gtj.events.socalpocis.org
+gxq.events.socalpocis.org
+hdqem.events.socalpocis.org
+ixkix.events.socalpocis.org
+jygtq.events.socalpocis.org
+kxqsr.events.socalpocis.org
+lcxsk.events.socalpocis.org
+lzt.events.socalpocis.org
+mbw.events.socalpocis.org
+mep.events.socalpocis.org
+ndur.events.socalpocis.org
+ngfet.events.socalpocis.org
+ntqq.events.socalpocis.org
+oil.events.socalpocis.org
+omrua.events.socalpocis.org
+ppzdn.events.socalpocis.org
+pzhe.events.socalpocis.org
+rrtid.events.socalpocis.org
+sim.events.socalpocis.org
+szgje.events.socalpocis.org
+szl.events.socalpocis.org
+tqne.events.socalpocis.org
+tqqen.events.socalpocis.org
+tuw.events.socalpocis.org
+tzc.events.socalpocis.org
+varu.events.socalpocis.org
+whnhg.events.socalpocis.org
+ygtvv.events.socalpocis.org
+ysflo.events.socalpocis.org
+zessk.events.socalpocis.org
+zmscf.events.socalpocis.org
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-18-v10744/2147
+
+staff.plenarykcg.com
+ady.staff.plenarykcg.com
+bxf.staff.plenarykcg.com
+drcm.staff.plenarykcg.com
+edb.staff.plenarykcg.com
+evy.staff.plenarykcg.com
+fntkn.staff.plenarykcg.com
+igeha.staff.plenarykcg.com
+jbfrh.staff.plenarykcg.com
+jwvqy.staff.plenarykcg.com
+kuotc.staff.plenarykcg.com
+lnr.staff.plenarykcg.com
+opw.staff.plenarykcg.com
+pcbpy.staff.plenarykcg.com
+pclok.staff.plenarykcg.com
+pzzay.staff.plenarykcg.com
+rgjn.staff.plenarykcg.com
+rmzrc.staff.plenarykcg.com
+rvjmm.staff.plenarykcg.com
+sjwrx.staff.plenarykcg.com
+snk.staff.plenarykcg.com
+syzzz.staff.plenarykcg.com
+utbw.staff.plenarykcg.com
+uukdz.staff.plenarykcg.com
+vdvv.staff.plenarykcg.com
+ycujr.staff.plenarykcg.com
+youxj.staff.plenarykcg.com
+zhw.staff.plenarykcg.com
+zrdg.staff.plenarykcg.com
+zrggz.staff.plenarykcg.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-25-v10750/2164
+
+lessons.southsidechurchofchristla.org
+ource.scriptsafedata.com
+source.scriptsafedata.com
+aaa.lessons.southsidechurchofchristla.org
+cov.lessons.southsidechurchofchristla.org
+cumd.lessons.southsidechurchofchristla.org
+dwya.lessons.southsidechurchofchristla.org
+ehkhl.lessons.southsidechurchofchristla.org
+esske.lessons.southsidechurchofchristla.org
+flchc.lessons.southsidechurchofchristla.org
+fqpeo.lessons.southsidechurchofchristla.org
+fyvd.lessons.southsidechurchofchristla.org
+hhx.lessons.southsidechurchofchristla.org
+https.lessons.southsidechurchofchristla.org
+ijxm.lessons.southsidechurchofchristla.org
+jwcy.lessons.southsidechurchofchristla.org
+klrag.lessons.southsidechurchofchristla.org
+mdl.lessons.southsidechurchofchristla.org
+mldjx.lessons.southsidechurchofchristla.org
+ncyp.lessons.southsidechurchofchristla.org
+obef.lessons.southsidechurchofchristla.org
+qihdv.lessons.southsidechurchofchristla.org
+qppwq.lessons.southsidechurchofchristla.org
+rnjj.lessons.southsidechurchofchristla.org
+spsl.lessons.southsidechurchofchristla.org
+tew.lessons.southsidechurchofchristla.org
+uske.lessons.southsidechurchofchristla.org
+vcja.lessons.southsidechurchofchristla.org
+yaez.lessons.southsidechurchofchristla.org
+yeuo.lessons.southsidechurchofchristla.org
+yew.lessons.southsidechurchofchristla.org
+yoebo.lessons.southsidechurchofchristla.org
+yxqnj.lessons.southsidechurchofchristla.org
+yyey.lessons.southsidechurchofchristla.org
+zgp.lessons.southsidechurchofchristla.org
+zvymi.lessons.southsidechurchofchristla.org
+
+# Reference: https://x.com/TRACLabs_/status/1871152723388682404
+
+office.enewlaw.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-02-v10781/2210
+
+trc20.kcgrocks.com
+aaa.trc20.kcgrocks.com
+aawh.trc20.kcgrocks.com
+ayb.trc20.kcgrocks.com
+bris.trc20.kcgrocks.com
+cdaw.trc20.kcgrocks.com
+chha.trc20.kcgrocks.com
+depd.trc20.kcgrocks.com
+dupcl.trc20.kcgrocks.com
+dvhg.trc20.kcgrocks.com
+dxhe.trc20.kcgrocks.com
+ekn.trc20.kcgrocks.com
+ezj.trc20.kcgrocks.com
+femk.trc20.kcgrocks.com
+fxc.trc20.kcgrocks.com
+hkjak.trc20.kcgrocks.com
+jblz.trc20.kcgrocks.com
+jxv.trc20.kcgrocks.com
+kcmxy.trc20.kcgrocks.com
+lklvj.trc20.kcgrocks.com
+lxdrh.trc20.kcgrocks.com
+nse.trc20.kcgrocks.com
+nuvth.trc20.kcgrocks.com
+oarzj.trc20.kcgrocks.com
+ozdff.trc20.kcgrocks.com
+poj.trc20.kcgrocks.com
+wdrj.trc20.kcgrocks.com
+wihzf.trc20.kcgrocks.com
+ywzu.trc20.kcgrocks.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-05-v10791/2234
+
+law.kimsavagelaw.com
+cujy.law.kimsavagelaw.com
+dqpgb.law.kimsavagelaw.com
+dyt.law.kimsavagelaw.com
+egodu.law.kimsavagelaw.com
+eja.law.kimsavagelaw.com
+fsur.law.kimsavagelaw.com
+ggsp.law.kimsavagelaw.com
+gqatp.law.kimsavagelaw.com
+gvwh.law.kimsavagelaw.com
+ims.law.kimsavagelaw.com
+ivhg.law.kimsavagelaw.com
+jurkw.law.kimsavagelaw.com
+jwoo.law.kimsavagelaw.com
+kul.law.kimsavagelaw.com
+mxq.law.kimsavagelaw.com
+nooo.law.kimsavagelaw.com
+numaz.law.kimsavagelaw.com
+oclc.law.kimsavagelaw.com
+pjs.law.kimsavagelaw.com
+rar.law.kimsavagelaw.com
+sjig.law.kimsavagelaw.com
+tmowh.law.kimsavagelaw.com
+tnpz.law.kimsavagelaw.com
+umkq.law.kimsavagelaw.com
+utg.law.kimsavagelaw.com
+vfaw.law.kimsavagelaw.com
+woc.law.kimsavagelaw.com
+xul.law.kimsavagelaw.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-09-v10793/2248
+
+material.amstillroofing.com
+aaa.material.amstillroofing.com
+abuyw.material.amstillroofing.com
+akzht.material.amstillroofing.com
+anl.material.amstillroofing.com
+asg.material.amstillroofing.com
+bxy.material.amstillroofing.com
+cmku.material.amstillroofing.com
+gmmiw.material.amstillroofing.com
+gym.material.amstillroofing.com
+hil.material.amstillroofing.com
+itmto.material.amstillroofing.com
+jetxf.material.amstillroofing.com
+ooeyi.material.amstillroofing.com
+pla.material.amstillroofing.com
+qkn.material.amstillroofing.com
+sqkn.material.amstillroofing.com
+terb.material.amstillroofing.com
+vjorq.material.amstillroofing.com
+wmj.material.amstillroofing.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-12-v10800/2257
+
+riders.50kfor50years.com
+agqxp.riders.50kfor50years.com
+ggja.riders.50kfor50years.com
+hbuv.riders.50kfor50years.com
+klaq.riders.50kfor50years.com
+kolw.riders.50kfor50years.com
+lbhz.riders.50kfor50years.com
+lluc.riders.50kfor50years.com
+mjp.riders.50kfor50years.com
+nughk.riders.50kfor50years.com
+oozmo.riders.50kfor50years.com
+ovgt.riders.50kfor50years.com
+pbyit.riders.50kfor50years.com
+qvyvi.riders.50kfor50years.com
+qxxj.riders.50kfor50years.com
+rqeda.riders.50kfor50years.com
+tbq.riders.50kfor50years.com
+tha.riders.50kfor50years.com
+uadew.riders.50kfor50years.com
+uprpi.riders.50kfor50years.com
+usk.riders.50kfor50years.com
+vhnrz.riders.50kfor50years.com
+vhxhm.riders.50kfor50years.com
+vmonh.riders.50kfor50years.com
+wcjp.riders.50kfor50years.com
+wgj.riders.50kfor50years.com
+wswzb.riders.50kfor50years.com
+wyll.riders.50kfor50years.com
+xqlh.riders.50kfor50years.com
+ygj.riders.50kfor50years.com
+ygt.riders.50kfor50years.com
+yoymx.riders.50kfor50years.com
+yxf.riders.50kfor50years.com
+zapz.riders.50kfor50years.com
+zexl.riders.50kfor50years.com
+zqe.riders.50kfor50years.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-13-v10805/2263
+
+mentor.omgwowhq.org
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-16-v10808/2270
+
+trust.scriptobject.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-17-v10809/2275
+
+clients.dedicatedservicesusa.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-19-v10811/2280
+
+demo.ezra-ai.com
+agwa.demo.ezra-ai.com
+buuao.demo.ezra-ai.com
+ccjz.demo.ezra-ai.com
+derp.demo.ezra-ai.com
+iopuz.demo.ezra-ai.com
+ipimd.demo.ezra-ai.com
+mkgd.demo.ezra-ai.com
+mnsty.demo.ezra-ai.com
+nibvx.demo.ezra-ai.com
+nsgs.demo.ezra-ai.com
+opa.demo.ezra-ai.com
+sdlru.demo.ezra-ai.com
+tltnx.demo.ezra-ai.com
+uabyu.demo.ezra-ai.com
+uleor.demo.ezra-ai.com
+vbjr.demo.ezra-ai.com
+vzfy.demo.ezra-ai.com
+waz.demo.ezra-ai.com
+wimf.demo.ezra-ai.com
+wyn.demo.ezra-ai.com
+xlu.demo.ezra-ai.com
+xyfe.demo.ezra-ai.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-26-v10817/2296
+
+stock.letsgoautomotive.com
+qytn.stock.letsgoautomotive.com
+xof.stock.letsgoautomotive.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-30-v10819/2306
+
+chain.buyclosersonline.com
+aaa.chain.buyclosersonline.com
+cqda.chain.buyclosersonline.com
+gicw.chain.buyclosersonline.com
+ugbhe.chain.buyclosersonline.com
+ztzzj.chain.buyclosersonline.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-01-02)
+
+137.220.63.132:443
+155.138.206.121:443
+166.88.159.66:443
+170.75.160.84:443
+172.96.10.211:443
+172.96.10.214:443
+198.98.59.241:443
+207.90.238.101:443
+23.146.184.165:443
+38.180.136.48:443
+38.180.146.6:443
+86.124.168.255:443
+88.119.175.152:443
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-09-v10834/2338
+# Reference: https://www.virustotal.com/gui/file/d57e9b5dff8131002aade29e2333e732d955d841e23ab0dd1ec73eccfc57d0df/detection
+
+static.buyweatherstriponline.com
+awx.static.buyweatherstriponline.com
+fdab.static.buyweatherstriponline.com
+gpfj.static.buyweatherstriponline.com
+ikqn.static.buyweatherstriponline.com
+oemb.static.buyweatherstriponline.com
+rekt.static.buyweatherstriponline.com
+uybd.static.buyweatherstriponline.com
+yyb.static.buyweatherstriponline.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-23-v10844/2386
+# Reference: https://www.virustotal.com/gui/file/5d26e6bbeb5235c8d3e1d327681df72f7e9f91e2165b742db00da76278423d24/detection
+
+customer.aaddigitalstrategies.com
+
+# Reference: https://www.virustotal.com/gui/file/ae0447bc6ba0fdabbdf832d548879aca2fb1f9f64fe9668bb0a3a469ffc10868/detection
+
+gemini.1stpagegold.com
+
+# Reference: https://x.com/malware_traffic/status/1884476331821326816
+# Reference: https://www.malware-traffic-analysis.net/2025/01/28/index.html
+
+http://147.45.47.98
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-13-v10859/2441
+# Reference: https://www.virustotal.com/gui/file/e9d40289741116602c57f73b9b42747dd42b3a9bb3ecc965c918cc0844badb22/detection
+
+portal.miaariacademy.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-02-v10822/2313
+
+slot.buyaiphoneonline.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-06-v10830/2328
+
+zone.ebuilderssource.com
+aaa.zone.ebuilderssource.com
+awfb.zone.ebuilderssource.com
+aye.zone.ebuilderssource.com
+cyk.zone.ebuilderssource.com
+ddx.zone.ebuilderssource.com
+flyx.zone.ebuilderssource.com
+gkzmk.zone.ebuilderssource.com
+h894.zone.ebuilderssource.com
+htdt.zone.ebuilderssource.com
+hyj.zone.ebuilderssource.com
+mer.zone.ebuilderssource.com
+pfu.zone.ebuilderssource.com
+pzb.zone.ebuilderssource.com
+qjapf.zone.ebuilderssource.com
+vdf.zone.ebuilderssource.com
+vfej.zone.ebuilderssource.com
+vkv.zone.ebuilderssource.com
+wdp.zone.ebuilderssource.com
+wvay.zone.ebuilderssource.com
+zycz.zone.ebuilderssource.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-13-v10836/2351
+
+order.buyanemostatonline.com
+aaa.order.buyanemostatonline.com
+bbcv.order.buyanemostatonline.com
+btl.order.buyanemostatonline.com
+ckgag.order.buyanemostatonline.com
+cx.order.buyanemostatonline.com
+cxxhz.order.buyanemostatonline.com
+egqxa.order.buyanemostatonline.com
+envuh.order.buyanemostatonline.com
+gwrwn.order.buyanemostatonline.com
+iajop.order.buyanemostatonline.com
+ibray.order.buyanemostatonline.com
+jzud.order.buyanemostatonline.com
+kol.order.buyanemostatonline.com
+kxwhf.order.buyanemostatonline.com
+mnlvp.order.buyanemostatonline.com
+nalpg.order.buyanemostatonline.com
+niag.order.buyanemostatonline.com
+obdb.order.buyanemostatonline.com
+ogw.order.buyanemostatonline.com
+omu.order.buyanemostatonline.com
+pjop.order.buyanemostatonline.com
+pmiqu.order.buyanemostatonline.com
+qslgh.order.buyanemostatonline.com
+rcx.order.buyanemostatonline.com
+rvua.order.buyanemostatonline.com
+rzhh.order.buyanemostatonline.com
+sip.order.buyanemostatonline.com
+udyqv.order.buyanemostatonline.com
+ulm.order.buyanemostatonline.com
+vpey.order.buyanemostatonline.com
+wamzv.order.buyanemostatonline.com
+wpnci.order.buyanemostatonline.com
+wtcp.order.buyanemostatonline.com
+wvtg.order.buyanemostatonline.com
+wxdu.order.buyanemostatonline.com
+wzse.order.buyanemostatonline.com
+yfbtl.order.buyanemostatonline.com
+ylssf.order.buyanemostatonline.com
+zfw.order.buyanemostatonline.com
+zhh.order.buyanemostatonline.com
+zpu.order.buyanemostatonline.com
+zwxb.order.buyanemostatonline.com
+zxtc.order.buyanemostatonline.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-20-v10841/2375
+
+trial.buyintercomsonline.com
+ctiai.trial.buyintercomsonline.com
+eyi.trial.buyintercomsonline.com
+gcd.trial.buyintercomsonline.com
+hak.trial.buyintercomsonline.com
+huph.trial.buyintercomsonline.com
+kcirl.trial.buyintercomsonline.com
+qzxm.trial.buyintercomsonline.com
+rgtf.trial.buyintercomsonline.com
+uwq.trial.buyintercomsonline.com
+vwi.trial.buyintercomsonline.com
+ybbc.trial.buyintercomsonline.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-21-v10842/2377
+
+crm.bestintownpro.com
+fim.crm.bestintownpro.com
+hth.crm.bestintownpro.com
+ifw.crm.bestintownpro.com
+nwynx.crm.bestintownpro.com
+rjk.crm.bestintownpro.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-22-v10843/2382
+
+app.andredenault.com
+apvyg.app.andredenault.com
+flfsv.app.andredenault.com
+hpmd.app.andredenault.com
+irshg.app.andredenault.com
+lxhcl.app.andredenault.com
+nkj.app.andredenault.com
+oey.app.andredenault.com
+ourh.app.andredenault.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-28-v10847/2397
+# Reference: https://www.virustotal.com/gui/file/f8ee2a0ff206c40aac5b18030da151e8bbf1100d3a68d2b0cd24aff634d31cca/detection
+
+subscribe.bigeznola.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-29-v10848/2399
+# Reference: https://www.virustotal.com/gui/file/3b44e8410d9d4a3676666b7d2ee3177799ecf806468af6801c1947bd5fdc99eb/detection
+# Reference: https://www.virustotal.com/gui/file/54411095936810f8e4273df7a3eedc496c3a099ef5744e379418007ca86b0ec4/detection
+# Reference: https://www.virustotal.com/gui/file/cf2a69560ede73e4e88b9c223c097dae72bd1a5cfabd7dd6901b51d3f59d8ee5/detection
+
+webmail.ebuildingsource.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-01-31-v10850/2408
+# Reference: https://www.virustotal.com/gui/file/d258936eb4ce610a7d079de16850758b065eebad7d1116198749b37641ab0d79/detection
+# Reference: https://www.virustotal.com/gui/file/397a782455c0f91dde7b0547b3d49496c01fd6cdfffb4f4f1f5d0639b7a1d5f6/detection
+# Reference: https://www.virustotal.com/gui/file/35182c52dd4d0fba9b11f56abbe5a498af8331ba263eccfb776b4456b82976b2/detection
+
+cpanel.buyjlindustriesonline.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-03-v10851/2413
+# Reference: https://www.virustotal.com/gui/file/d50b01e26a18bf63288094c34f0e774e37f2bc09ba9e8cfbef81cbf07923ce65/detection
+# Reference: https://www.virustotal.com/gui/file/5dfeee68bb237f318053ccbdb0525b5d3c8d06758a7eda7bea55c807509782f1/detection
+
+btctrading.crestlinesolutions.work
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-04-v10852/2417
+# Reference: https://www.virustotal.com/gui/file/569b06e8525e6fb813cb0870d88176e0888076422ad483de3393c527ef0e6850/detection
+# Reference: https://www.virustotal.com/gui/file/47a1648d8e4208ca58c59851c2bb2e0dc0636eff8ac2eebb6de3dfcef4ed3fc6/detection
+# Reference: https://www.virustotal.com/gui/file/4539d6e0e59c3ce2f81b5dfb0dbb827bb0aca53eee96617db3e4a7c1529dcac1/detection
+
+newsite.iapmd.org
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-05-v10853/2419
+# Reference: https://www.virustotal.com/gui/file/2ebec8c4294a90c4bc066a90299683ee61cde44653b77a074e35d94db2b6cb98/detection
+
+support.myfirstdealplaybook.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-06-v10854/2421
+# Reference: https://www.virustotal.com/gui/file/fc6918f18f51de3e0145c444e9212368be8f206a88ea309d156900f2930be95b/detection
+
+ceo.cowholesaling.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-07-v10855/2423
+# Reference: https://www.virustotal.com/gui/file/c8c8f37ee2c561aa834585b6cb8c4b0c24492874041d05d2215abd13a0a4760a/detection
+# Reference: https://www.virustotal.com/gui/file/74ed07bfd0dd7c4200c174d305a79898e6128f2ee4d59f4e2fb87e4844471915/detection
+# Reference: https://www.virustotal.com/gui/file/2c43cd7e1a46220e51ad8393980b35c6b9a745b95207150885d943ee00acf78e/detection
+# Reference: https://www.virustotal.com/gui/file/0dd00aa41d2bd22a0ff2c22c9cc595a8f26f3a5c953747c79636afff20d2d3c9/detection
+# Reference: https://www.virustotal.com/gui/file/071008f97ce8b2578fd384ced6a90dc3bc29fa8e114e2f77b2acf2004f77d027/detection
+
+hub.unlimitedcashflowevent.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-10-v10856/2427
+# Reference: https://www.virustotal.com/gui/file/e776d69aaab295189dcd2d8724503deeb929539debca30be515429fd4454d3ae/detection
+
+preview.jpainting.ca
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-12-v10858/2435
+# Reference: https://www.virustotal.com/gui/file/fd5a13a9d7f6874a0873b6fdc15e69454fdb2b48b19853c4863d21c6efa368c5/detection
+
+academy.entrepreneurwealthhub.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-14-v10860/2442
+# Reference: https://www.virustotal.com/gui/file/d552fe952f696c0fbe541442a0fd8fe110b0edfc92e95b8e5c06840d0793359d/detection
+# Reference: https://www.virustotal.com/gui/file/933173b2c2bf1e79914cf05e2901f1330a15177f2951e52338e6a7baa5a1ab96/detection
+# Reference: https://www.virustotal.com/gui/file/721ddaa60d0212cabd5fa013d13054cca02da05199e25c1020c513957a2fffc8/detection
+
+exchange.tuckx.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-18-v10861/2454
+# Reference: https://www.virustotal.com/gui/file/38ba42fe0a49ecefdb150f068809f774c740b5d033647f3a95916ad300b7c4f3/detection
+
+programs.edlester.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-18-v10861/2454
+# Reference: https://www.virustotal.com/gui/file/ecceb4020a0b20a8cd0133a82debb77da930c67e1386d77bd57ebdc00a92c8ab/detection
+# Reference: https://www.virustotal.com/gui/file/c61efef7735edcbbe5cac3bb196081716301666c7220f6155c482761012e194f/detection
+# Reference: https://www.virustotal.com/gui/file/b74c17d99d9f6f74d26a3436c1aa1e066e1ca39d8b0fa1954dbe0a4767697b0c/detection
+# Reference: https://www.virustotal.com/gui/file/7e1a15af44d35c1d33b4c0cd793b03c99cfbc583bbc39163bca9804be28eba4a/detection
+# Reference: https://www.virustotal.com/gui/file/4fcc1a99ccc32080ff48ef3274ffacb9f1ec9f2fa154af44b069287717a06039/detection
+
+certificate.hypnotherapy-training.co.nz
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-20-v10863/2464
+# Reference: https://www.virustotal.com/gui/file/90178251ca0b263f1407d71d03727ab603f35d2d02ce5f9e010cf436a5e92741/detection
+# Reference: https://www.virustotal.com/gui/file/781417368f3a70a1bfa3ba0b8e21022a1a414cee918619f62fa4bd977e16f4c8/detection
+# Reference: https://www.virustotal.com/gui/file/4f4757bd44f2dabd4edc21ebc7d6e3d75ed86ca3fa98f452d15578fd1c3f95f5/detection
+# Reference: https://www.virustotal.com/gui/file/325295d3b1fe35a4f68eb39aecae71c35dfc6f96599d3e060dc1326f7562f40c/detection
+
+seminary.envisionfonddulac.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-21-v10864/2466
+# Reference: https://www.virustotal.com/gui/file/f6c62808577052c94f37fc0bef6e4cce8b26230e204265e05c05c44d0ec886a3/detection
+
+envisionfonddulac.envisionfonddulac.org
+estate.envisionfonddulac.org
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-24-v10865/2473
+# Reference: https://www.virustotal.com/gui/file/2c11f40ff91bba47459749611643ecd03dd53afdcc61c47b7d5fb6dc0595a63c/detection
+# Reference: https://www.virustotal.com/gui/file/8a9b83c125e53dfda4148d26c4bc09c564b7dde85fe848259758061528b0b19d/detection
+# Reference: https://www.virustotal.com/gui/file/9b120c66edbb49669280fe65de1e07f2d445f954f111d8f3ac1781f272a74553/detection
+
+adx-crm.com
+software.adx-crm.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-24-v10865/2473
+# Reference: https://www.virustotal.com/gui/file/911546acff396d5514a93384ff4965001c31bbc6ac0eaac492b3253439378782/detection
+# Reference: https://www.virustotal.com/gui/file/792aaadd8df4156824913c93aee4ad68e5dbbf7bc504ca1741eb03f4290cd32e/detection
+# Reference: https://www.virustotal.com/gui/file/6feee8b241ed4f4653b335dfae640bfd0a73910e20c5eeb12bae51adc8af4390/detection
+# Reference: https://www.virustotal.com/gui/file/6e4ee2e9a130db048683b5ee30acffa112df47250807b107ba231b7b8402e9a7/detection
+
+sponsor.sewacanada.org
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-25-v10866/2476
+# Reference: https://www.virustotal.com/gui/file/f6f26ff7ad73e6591b750a28b9ff198bd6895e92d54e5b2d5676c6403553ce00/detection
+# Reference: https://www.virustotal.com/gui/file/7b93800103a52af6b15852da398986d5af56e006dc72c19e98581f3753e455e7/detection
+# Reference: https://www.virustotal.com/gui/file/3bd2cca6e5d5048b469b97aa12d2822bb5a1344a3afc57cb7a3a13f0582d4d95/detection
+# Reference: https://www.virustotal.com/gui/file/1b8d9f1c3ebc42dabe485a910aa939356dc20e6ce34c6d5db51ad7185dd323c4/detection
+
+cluster.buydoorlitesandlouvers.com
+
+# Reference: https://www.virustotal.com/gui/file/b2e1331c8d42a1a3da8ed0d12ec905a0085d22ac75473d3fe3a357c84212054f/detection
+
+mail.aestheticfina.com
+
+# Reference: https://www.virustotal.com/gui/file/4000d6480d4d224f3a825dc97854293ce953185688f311c0b59b90246d95c688/detection
+
+round.micha.ai
+
+# Reference: https://www.virustotal.com/gui/file/a9c583a71eb9e6d31fa0485bf0b2cebbf3df5f4315f8a7b61a9c937f50bc4ed2/detection
+# Reference: https://www.virustotal.com/gui/file/56e773674a47447c1f04025ccf1fbac0d407489c3f39291f5b03dab133af22b5/detection
+# Reference: https://www.virustotal.com/gui/file/2367b558a20c91959ed177c4f33662ae06d55f63e911c51236c6ac131c5ad4f2/detection
+
+windows.envisionfonddulac.net
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-03-v10870/2491
+# Reference: https://www.virustotal.com/gui/file/3b08ef18ddb0ace9c08ab3b4b8fad934833752ba9f51949fa6f9160dba9069e1/detection
+# Reference: https://www.virustotal.com/gui/file/0056da862028a3a673c93f205b45dc1725a3281bede3edf5e82f8c94048b81cb/detection
+# Reference: https://www.virustotal.com/gui/file/806e577dab72e5951c7cdfaff6b2c90369650c8bb7b528acf325db26f4711fcb/detection
+
+exclusive.nobogoods.com
+publication.garyjobeferguson.com
+whcms.greendreamcannabis.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-04-v10871/2494
+# Reference: https://www.virustotal.com/gui/file/c123b36e36b83ffb33e5092a6e13df1b05edc89ac58462ad728d93369d1c8400/detection
+# Reference: https://www.virustotal.com/gui/file/ea44e596ac502027702782ec5477bd884e2d806115e732752ce1547f7d653f7d/detection
+
+kreativelife.net
+cpanel.kreativelife.net
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-05-v10872/2497
+# Reference: https://www.virustotal.com/gui/file/6a6e061526bdd776a70786f5f50cb408a7c27cefeeb9190139fcb0d4e5e7a219/detection
+# Reference: https://www.virustotal.com/gui/file/81a9f9329ab215d854be48382c25da0269c560cb89960a3f5e9ceb7b13ce2d63/detection
+
+nevada.mandros.us
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-10-v10875/2506
+
+forum.envisionfonddulac.info
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-11-v10876/2509
+
+catalog.sjsailboats.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-12-v10877/2511
+
+webmail.denver-computer.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-14-v10881/2526
+
+secure.lme-co.com
+
+# Reference: https://x.com/malwrhunterteam/status/1912061717393056022
+# Reference: https://www.virustotal.com/gui/file/5fb78448a8d27c2c38b9d2104740c2bb920bb28a146411dad816f82595a9b8cf/detection
+
+mops.dzierzgon.pl/wp-admin/admin-ajax.php
+
+# Reference: https://www.virustotal.com/gui/file/02bb686a62b4c1b6d5bbd9c72fea86dda4721603dae34f5abcac7bcd0d04d1c0/detection
+# Reference: https://www.virustotal.com/gui/file/0038abaf2d815caa1ae38a373b6362a77e5f4c9c9a9f786af157d4186f936d26/detection
+
+cpanel.imirp.co.uk
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-25-v10890/2569
+# Reference: https://www.virustotal.com/gui/file/fe21f7d46d3f21142560dfbc7b5f94ec7f8ebff239d984f7d95b0b6fe9fbc9cd/detection
+# Reference: https://www.virustotal.com/gui/file/bf8fdee791b4d129d23636a283cccf372d3ad55a57c60e8e3e28a9a3a6ea3983/detection
+# Reference: https://www.virustotal.com/gui/file/56f8e860f1ce5887d0a3ac32f49dd0a58a2191080dc76e0f2ef9fbbcad3992d7/detection
+
+staff.tompsettsportslaw.com
+
+# Reference: https://www.virustotal.com/gui/file/865ef5729878a9227bb016cf164d088bef04ce5ac1171267a0ea27b0108af149/detection
+# Reference: https://www.virustotal.com/gui/file/a7224dfef21bbd2907f752744151c2634aac25f331ac3a84ed65a9ad2753de77/detection
+# Reference: https://www.virustotal.com/gui/file/b112d5bfde617275e50a06ed232612f149b250c5759171733e9972283d62d1e1/detection
+# Reference: https://www.virustotal.com/gui/file/b40a54f694ff3b7233476242955294db945918d59659baf8db8ac01912b8e184/detection
+
+music.homesalemedia.com
+
+# Reference: https://www.virustotal.com/gui/file/56fe165a28973515ea541b17e531bca3e74fb5f5bb2dc70b93c24831c8662cba/detection
+# Reference: https://www.virustotal.com/gui/file/f47d64fbd205aaad4590f95291c650a8d7e83a309f0d7d291f3aad1b3a46f1e3/detection
+
+images.briansmallwood.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-28-v10893/2579
+
+beta.buildersdroneview.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-31-v10894/2583
+
+roundcube.lamoillerealtors.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-01-v10895/2585
+
+pa-portal.premierhomeviews.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-02-v10896/2590
+# Reference: https://www.virustotal.com/gui/file/15215ead7382922b95fbaa075375f2b179df87e1edbb1f33abc703e6d74a6535/detection
+# Reference: https://www.virustotal.com/gui/file/7070c0964fa845daa5ce2fd312de513ed23bc5c17a7a462ea1e30394ed494f90/detection
+
+secure.novelty-press.com
+
+# Reference: https://app.validin.com/detail?find=303c42db5b7152000cf696795d605ac2&type=hash&ref_id=9a8ba8c1b58#tab=host_pairs (# 2025-06-07)
+
+apple-department.info
+haesenlu.physio-pro.app
+linkdirectpage.info
+paypal-securelogin.com
+wsimple.info
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-03-v10897/2592
+
+landing.survival-kitz.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-04-v10898/2594
+
+phpmyadmin.emeraldpineventures.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-07-v10899/2599
+
+myvrhost.viottoholdings.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-08-v10900/2605
+
+customer.adroitbookkeepingsolutions.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-09-v10901/2610
+
+members.viottoenterprises.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-10-v10902/2615
+
+cloud.emeraldpinesenterprises.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-11-v10903/2618
+
+cpanel.gemstonebookkeepingservices.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-14-v10904/2625
+
+chamberscertifiedbookkeeping.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-16-v10907/2636
+
+signin.certifiedbk.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-18-v10909/2641
+
+booking.driveawayrentals.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-21-v10910/2650
+
+cpanel.freein-deed.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-22-v10911/2654
+
+valleypreptutoring.us
+secure.gatecollegesystem.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-23-v10912/2657
+
+ishimotors.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-24-v10913/2664
+
+promo.kimmwhite.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-25-v10914/2668
+
+files.fnomworldwide.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-28-v10915/2678
+
+cpanel.paulmaguire.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-29-v10916/2684
+
+retiremepaul.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-04-30-v10917/2687
+
+portal.bottomlinepracticesolutions.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-01-v10918/2694
+
+progress.moneymatrixonline.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-02-v10919/2699
+
+feedback.5moves2monetizechallenge.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-05-v10920/2706
+
+order.meetandeatsac.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-06-v10921/2709
+
+email.gwlawgroupattorneys.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-07-v10922/2714
+
+charity.cafedantorels.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-08-v10923/2721
+
+thefertilemine.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-13-v10926/2729
+
+oceandentalcare.com
+roammco.com
+photoreport.roamdetail.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-14-v10927/2734
+
+beginning.sparkattraction.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-15-v10928/2738
+
+rivercitymech.biz
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-16-v10929/2740
+
+kmmagency.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-19-v10930/2746
+
+aamplify.media
+feedback.greeneconsultinggroup.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-20-v10931/2747
+
+app.nerduptechnology.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-21-v10932/2752
+
+alifsemi.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-22-v10933/2759
+
+fork.trace467.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-27-v10934/2770
+
+donation.benjaminssoldiers.com
+images.nashbashracing.com
+promo.summat10n.org
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-28-v10935/2774
+
+feedback.jjsbootjack.com
+prepare.adroitbookkeeping.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-29-v10936/2777
+
+robstuder.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-30-v10937/2779
+
+cpanel.help4dad.org
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-02-v10938/2783
+
+pre-order.chablalker.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-03-v10939/2786
+
+grapheno.us
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-04-v10940/2790
+
+cpanel.doggiefountain.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-10-v10947/2811
+
+publynx.com
+billing.roofnrack.us
+dev.couplesparks.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-11-v10948/2815
+
+secure.nashbashmotorsports.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-12-v10949/2818
+
+files.myamericanmadestory.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-06-15)
+
+47.130.8.25:443
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-17-v10952/2834
+
+cpanel.realizr.today
+specification.saferunion.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-20-v10954/2839
+
+stirngo.com
+app.symphoniabags.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-23-v10955/2843
+
+photo.suziestuder.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-24-v10956/2844
+
+folders.emeraldpinesolutions.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-25-v10957/2846
+
+cpanel.productdevelopmentplan.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-26-v10958/2851
+
+ai.lanpdt.org
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-27-v10959/2857
+
+m.cpa2go.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-07-26)
+
+184.162.20.43:443
+
+# Reference: https://x.com/YungBinary/status/1951306227562033354
+# Reference: https://www.virustotal.com/gui/ip-address/45.56.162.61/relations
+# Reference: https://www.esentire.com/blog/unpacking-shadowcoils-ransomhub-ex-affiliate-credential-harvesting-tool
+# Reference: https://github.com/eSentire/iocs/blob/main/ShadowCoil/ShadowCoil-IoCs-07-24-2025.txt
+
+app.novationseo.com
+
+# Reference: https://www.silentpush.com/blog/socgholish/
+
+cp.envisionfonddulac.biz
+docs.nynovation.com
+download.romeropizza.com
+images.therunningink.com
+mgmt.studerandson.us
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-30-v10960/2860
+
+sample.tcroadgear.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-07-01-v10961/2863
+
+cpanel.thekooljack.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-10-05)
+
+184.162.20.200:443
+46.137.225.200:443
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-11-08)
+
+157.112.78.134:443
+
+# Reference: https://arcticwolf.com/resources/blog/romcom-utilizing-socgholish-to-deliver-mythic-agent-to-usa-companies-supporting-ukraine/
+
+157.254.167.144:443
+2.59.161.132:443
+smashingboss.com
+email.smashingboss.com
+
+# Generic
+
+/Chrome.Quick.Update.ver.101.65.65282.js
+/Chrome.Update.3b1362.js
+/Chrome.Update.88fe59.js
+/Opera.Update.426482.js

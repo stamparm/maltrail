@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ZeroT
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2017-020319-3309-99&tabid=2
+# Reference: https://www.proofpoint.com/us/threat-insight/post/APT-targets-russia-belarus-zerot-plugx
+
+riaru.net
+tassnews.net
+versig.net
+yandax.net

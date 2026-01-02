@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: gromozon, linkoptimizer
+
+# Reference: https://www.virusbulletin.com/virusbulletin/2006/12/what-next-trojan-linkoptimizer
+
+notetol.com
+shiptrop.com
+wlow.net
+
+# Reference: https://www.virustotal.com/gui/file/b9d68a8b7dbcc8bd19bb523e996199b3bc540d1e678d43b4c7e5ffb8cb6d2b6e/detection
+
+wschooler.com
+shiptrop.com
+fullows.com
+thumbstring.net
+
+# Reference: https://www.12website.com.au/products/virus_archive/virus_sep06.htm
+
+http://81.227.219.29/1/pic.gif
+http://166.65.130.116/1/pic.gif
+http://120.19.148.181/1/pic.gif
+http://195.225.177.145/1/pic.gif
+http://81.227.219.29/2/pic2.gif
+http://166.65.130.116/2/pic2.gif
+http://120.19.148.181/2/pic2.gif
+http://195.225.177.145/2/pic2.gif
+gromozon.com
+
+# Generic
+
+/common/hint_js.php?e=

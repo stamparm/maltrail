@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2015/2015-04-20-beebone-update/beebone-update.csv
+
+en.pudn.com/downloads27/sourcecode/windows/control/detail85571_en.html
+
+# Reference: https://www.virustotal.com/gui/file/03dcdbb89a49cbb1d067a41409092634609dc0777d4341856b4115822e0ed03d/detection
+
+winupdateserver1.s3h.net

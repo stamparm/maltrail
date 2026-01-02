@@ -1,0 +1,143 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zscaler.com/blogs/research/qealler-new-jar-based-information-stealer
+# Reference: https://twitter.com/James_inthe_box/status/1121462484517281792
+
+37.139.12.136:443
+37.139.12.169:16901
+37.139.12.169:23980
+82.196.11.96:443
+82.196.11.96:54869
+82.196.11.96:56636
+128.199.60.13:443
+128.199.60.13:46061
+128.199.60.13:47222
+139.59.76.44:4000
+146.185.139.123:6521
+159.65.84.42:10846
+159.65.84.42:11268
+159.65.84.42:12536
+176.58.117.125:8650
+176.58.117.125:8676
+176.58.117.125:8796
+188.166.150.227:8298
+192.81.222.28:39871
+192.81.222.28:41210
+gregoryteebuilders.co.uk
+hiexgroup.co.uk
+hiexsgroup.co.uk
+kingagroup.co.uk
+larrgroup.co.uk
+lcbodywowrksltd.online
+mcneilspecs.com
+mcneilspecs.org
+mcneilspecs.net
+otorgroup.co.uk
+prestigebuildersltd.com
+prestigebuildersltd.net
+prestonbuildersltd.co.uk
+salmogroup.co.uk
+stgeorgebuildltd.co.uk
+txjxgroup.co.uk
+ultrogroup.co.uk
+willsonsolicitors.biz
+willsonsolicitors.online
+willsonsolicitors.store
+
+# Reference: https://twitter.com/shotgunner101/status/1087443983213776896
+
+fipcoltd.co.uk
+82.196.11.96:55326
+
+# Reference: https://twitter.com/James_inthe_box/status/1085002569846378498
+
+txjxgroup.co.uk
+37.139.12.136:37541
+37.139.12.136:37778
+
+# Reference: https://twitter.com/vmray/status/1037400892256002049
+
+gdragroup.co.uk
+
+# Reference: https://twitter.com/vmray/status/1037400896999747584
+
+139.59.76.44:4000
+
+# Reference: https://twitter.com/James_inthe_box/status/1035190253697396737
+
+fschgroup.co.uk
+
+# Reference: https://twitter.com/Jouliok/status/1117722051610066944
+# Reference: https://www.virustotal.com/gui/file/5cf52d8e3924e2c4f4cb80283a46617d862c692b1167eed1baccfaefdf154092/detection
+# Reference: https://www.virustotal.com/gui/ip-address/179.43.156.194/relations
+
+csaxgroup.co.uk
+
+# Reference: https://twitter.com/Jouliok/status/1239462497234620417
+# Reference: https://app.any.run/tasks/e37f267a-c676-4dd0-b354-c2bd18a8c25c/
+
+198.199.101.103:80
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1271000190326104065
+# Reference: https://app.any.run/tasks/93695ad2-3fc1-47da-8545-9d464602b789/
+# Reference: https://app.any.run/tasks/268632d2-f57b-489e-87e8-f163e0a500c1/
+
+198.199.119.212:80
+
+# Reference: https://app.any.run/tasks/52d93953-36c4-4e3d-b06b-7172646f59f8/
+
+tneigroup.com/sites/all/libraries/mailchimp/vendor/phpunit/phpunit/src/Util/Log/
+
+# Reference: https://app.any.run/tasks/df4aa385-3ffd-4e89-b771-97a8615cfdbd/
+
+165.227.36.192:80
+
+# Reference: https://app.any.run/tasks/cfe41dcb-9880-43aa-a6e2-78c54217d2ab/
+
+159.203.25.235:80
+
+# Reference: https://twitter.com/dubstard/status/1300723661582802946
+# Reference: https://app.any.run/tasks/3fef3fcf-7e0d-4351-88fe-a75a65651aa5/
+
+134.122.40.139:80
+
+# Reference: https://app.any.run/tasks/0052b414-64d4-4266-af5e-b69b89166750/
+
+179.43.145.229:80
+
+# Reference: https://twitter.com/wwp96/status/1366469787451334670
+# Reference: https://app.any.run/tasks/0f7365da-65be-4708-9ce5-74d7dea11f6a/
+
+179.43.145.245:80
+
+# Reference: https://twitter.com/RangXOR/status/1369017982047883268
+# Reference: https://app.any.run/tasks/bccc3fa8-327e-4b85-ac7d-a790809ed126/
+
+31.7.61.2:80
+
+# Reference: https://twitter.com/wwp96/status/1371817625320316930
+# Reference: https://app.any.run/tasks/ff2a002c-0e28-4765-af18-216f11b069df/
+
+31.7.61.14:80
+
+# Reference: https://twitter.com/wwp96/status/1374089256017260544
+# Reference: https://app.any.run/tasks/6c11e9da-e849-430e-9c71-9f12c8fcd846/
+
+192.111.146.186:80
+creoz.co.uk
+
+# Reference: https://twitter.com/wwp96/status/1382001304923439106
+# Reference: https://app.any.run/tasks/6756eeb9-f27b-4426-8d55-90acae5387b1/
+
+79.143.87.120:80
+
+# Reference: https://twitter.com/RangXOR/status/1384307356008288260
+# Reference: https://app.any.run/tasks/c36631b6-3c7d-4576-9cf3-9d42949bd8df/
+
+192.254.79.67:80
+
+# Generic trails
+
+/lib/qealler
+/qealler-reloaded/

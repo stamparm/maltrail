@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/banthisguy9349/status/1731275131903709342
+# Reference: https://twitter.com/banthisguy9349/status/1740362538980638787
+# Reference: https://twitter.com/banthisguy9349/status/1740377458694672628
+# Reference: https://www.virustotal.com/gui/file/40b588aad2491fcbea86a9afb7eb6594a94d4a26dba6caaee325805edbe6fd9d/detection
+# Reference: https://www.virustotal.com/gui/file/121092a9f5b2750c06c1c9ad13c502bdb3c643f8b674380591723a59df673989/detection
+# Reference: https://www.virustotal.com/gui/file/08871a6131aaa4700a135dcc909182cbb4827dd0d735a89b051c81611b773a89/detection
+# Reference: https://www.virustotal.com/gui/file/c9b247b73f6b53d3ef3f2c0ce52b60f650910b7679345fa4e4ce5948e40fc2de/detection
+
+http://91.92.255.21
+http://91.92.251.25
+91.92.255.21:3000
+91.92.255.21:7575
+91.92.251.25:8000

@@ -1,0 +1,79 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt43, apt-c-43
+
+# Reference: https://www.welivesecurity.com/2019/08/05/sharpening-machete-cyberespionage/
+# Reference: https://www.welivesecurity.com/wp-content/uploads/2019/08/ESET_Machete.pdf
+# Reference: https://otx.alienvault.com/pulse/5d4818218a872ad45f4d4e85
+
+6e24a5fb.ngrok.io
+adtiomtardecessd.zapto.org
+artyomt.com
+ceofanb18.mipropia.com
+djcaps.gotdns.ch
+f9527d03.ngrok.io
+koliast.com
+lawyersofficial.mipropia.com
+mcsi.gotdns.ch
+tobabean.expert
+tokeiss.ddns.net
+u154611594.hostingerapp.com
+u929489355.hostingerapp.com
+
+# Reference: https://securelist.com/el-machete/66108/
+
+agaliarept.com
+blogwhereyou.com
+frejabe.com
+grannegral.com
+java.serveblog.net
+plushbr.com
+xmailliwx.com
+
+# Reference: https://blog.360totalsecurity.com/en/apt-c-43-steals-venezuelan-military-secrets-to-provide-intelligence-support-for-the-reactionaries-hpreact-campaign/
+
+op-icaro.site
+
+# Reference: https://www.virustotal.com/gui/file/825a9c8312acaf025e3389391811d5de212db4886f9ffd9392beeeed63d1223d/detection
+
+sangeet1.000webhostapp.com
+
+# Reference: https://twitter.com/ShadowChasing1/status/1382869518830039041
+# Reference: https://twitter.com/ShadowChasing1/status/1382869522965667840
+# Reference: https://www.virustotal.com/gui/file/813c8b8b43be5a928a5cd841bea08d7d5453ab8a1196e3c81abd7a144027247b/detection
+# Reference: https://www.virustotal.com/gui/file/a140a4e60c699dcf110678fca8cfd259660d21c428256898a65f9d3f196b8c13/detection
+
+http://185.70.187.110
+31.207.45.243:8080
+soldatenkovarten.com
+surgutneftegazappstore.com
+
+# Reference: https://research.checkpoint.com/2022/state-sponsored-attack-groups-capitalise-on-russia-ukraine-war-for-cyber-espionage/
+# Reference: https://otx.alienvault.com/pulse/624c29baad734a210134b02c
+
+31.207.44.72:8080
+correomindefensagobvemyspace.com
+solutionconect.online
+asymmetricfile.blogspot.com
+postinfomatico.blogspot.com
+great-jepsen.51-79-62-98.plesk.page
+intelligent-archimedes.51-79-62-98.plesk.page
+
+# Reference: https://x.com/ginkgo_g/status/1812766451360731465
+# Reference: https://x.com/StrikeReadyLabs/status/1834788474878079269
+# Reference: https://www.virustotal.com/gui/file/e936445935c4a636614f7113e4121695a5f3e4a6c137b7cdcceb6f629aa957c4/detection
+
+blushaak.co.kr/data/member/resource/
+
+# Reference: https://app.validin.com/detail?find=43.240.239.76&type=ip4&ref_id=c3e81320c9c#tab=resolutions
+# Reference: https://www.virustotal.com/gui/file/29f8fac13d1500c521ebcd6213e3c4316bd2097a2824f967c66ec74a432ce9ee/detection
+
+funkytothemoon.live
+
+# Reference: https://x.com/0xmh1/status/1869632128029442442
+# Reference: https://app.validin.com/detail?find=212.224.107.244&type=ip4&ref_id=ee39f8a47e5#tab=resolutions
+
+pompst.store
+pumapomp.store
+skyscopeups.cfd

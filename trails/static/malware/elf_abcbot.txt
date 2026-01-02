@@ -1,0 +1,49 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.joesecurity.org/reports/report-ae8f8cf967ca15a7689f2d1f79fbc5dc.html
+# Reference: https://www.virustotal.com/gui/file/6845ffef723d4f8e3649f10d2ae41cc4dc6a469c832d656416b703700aec64b6/detection
+
+103.209.103.16:22
+103.209.103.16:26800
+
+# Reference: https://blog.netlab.360.com/abcbot_an_evolving_botnet_en/
+# Reference: https://otx.alienvault.com/pulse/618ba76b7c2662115fbeaf0d
+
+dgixyyfug.com
+dgixyyfug.tk
+enjuyzkpr.com
+enjuyzkpr.tk
+fgiudxyyg.com
+fgiudxyyg.tk
+gdgiyyfxu.com
+gdgiyyfxu.tk
+gdiuyyfgx.com
+gdiuyyfgx.tk
+gfgiudyyx.com
+gfgiudyyx.tk
+guyfixdyg.com
+guyfixdyg.tk
+knjpeuzyr.com
+knjpeuzyr.tk
+nejpzykru.com
+nejpzykru.tk
+nerjyzkup.com
+nerjyzkup.tk
+nkrjpezyu.com
+nkrjpezyu.tk
+rpzkjueyn.com
+rpzkjueyn.tk
+unpeykzjr.com
+unpeykzjr.tk
+xgudyfyig.com
+xgudyfyig.tk
+ygfydgxui.com
+ygfydgxui.tk
+ypnuejrkz.com
+ypnuejrkz.tk
+yugxdigfy.com
+yugxdigfy.tk
+zrkyenupj.com
+zrkyenupj.tk
+vgnaovx6prvmvoeabk5bxfummn3ltdur3h4ilnklvaox4lge2rp4nzqd.onion

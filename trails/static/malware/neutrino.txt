@@ -1,0 +1,62 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Neutrino POS (variant), Neutrino BOT
+
+# Reference: https://twitter.com/jorgemieres/status/1133742922363473920
+# Reference: https://www.virustotal.com/gui/file/e1d01f22ab0a9c71415cf0c511348d82ddc075e5f70f6fcee1526d8691faff2d/detection
+
+l3nd20dl.cn
+r4t5u7o9p0.com
+
+# Reference: https://www.virustotal.com/gui/file/ca64848f4c090846a94e0d128489b80b452e8c89c48e16a149d73ffe58b6b111/community
+# Reference: https://www.virustotal.com/gui/file/6462736db60391ba067e01fe70aedf65b84db03ba38b9379bd70f611ffce31b9/behavior/VirusTotal%20Jujubox
+# Reference: https://www.virustotal.com/gui/file/8ed370d01aebe5735684934f12d65821824b607c1aadf959916049aaf889027f/behavior/Tencent%20HABO
+# Reference: https://www.virustotal.com/gui/file/a7e3149c14c87a8b98662babf7aa8921b11cf97838141276f77f762ee2552644/behavior/Tencent%20HABO
+# Reference: https://www.virustotal.com/gui/file/f374702a41a8468ca98ecb1c5884181d9f4ed7b7f78815c9bf4c6c05087e317d/behavior/Dr.Web%20vxCube
+# Reference: https://www.virustotal.com/gui/file/a61116b983361080810858f35c4f05040cdd092463b6fd10bfecc509817cb548/behavior/VirusTotal%20Cuckoofork
+# Reference: https://www.virustotal.com/gui/file/64c1f92d3860ce5cb1a980d065569dac361c94e7db86fccbe4b57a231c381577/behavior/QiAnXin%20RedDrip
+# Reference: https://www.virustotal.com/gui/file/bf026f69939fa941f19e3693acd5e42788800688b1fccdb635f89abe5d320374/behavior/Dr.Web%20vxCube
+# Reference: https://www.virustotal.com/gui/file/5789793b9e2d83a895edace975cf5f970858b17b19166f4cacaf7b8719f286ab/behavior/Lastline
+# Reference: https://github.com/StrangerealIntel/CyberThreatIntel/blob/master/Additional%20Analysis/Neutrino/Analysis_2020-02-08.md
+
+saferunater.top
+saferunater.xyz
+saferunater.space
+godomenbit.bit
+backconnect.bit
+smokemenowhhalala.bit
+nutsystem1.bit
+resploit.ml
+roulettedac.xyz
+antbiterium.net
+reconnectvib.xyz
+12online.ga
+nurofenpanadol.su
+civet.ziphaze.com
+# ist.fellig.org  # part of PH2 (used in similar cases)
+
+# Reference: https://twitter.com/ViriBack/status/1302412584000401414
+
+megaconnect.io
+
+# Reference: https://www.virustotal.com/gui/file/c48f27f7719fe5c9c748eb54e91d08b36035f5e5ce6beb35070ac5f43ac67b1b/detection
+
+ltimjipfpblfecycotlh.com
+one2three4.website
+rgermemiretlera.ml
+secret.flywheelsites.com
+tarciocurhealthmag.ml
+uinames.org
+
+# Reference: https://www.virustotal.com/gui/file/dd04df23943ca8a6752c3aca56c8f300289cac4c3548c7707e70077e928042b9/detection
+
+update-microsoft.com
+
+# Generic
+
+/NGeFybqfquWi95G2/login.php
+/n/tasks.php
+/director/tasks.php
+/neutrino/ntr/tasks.php
+/ntr/tasks.php

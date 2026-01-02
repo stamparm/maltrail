@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://sysdig.com/blog/labrat-cryptojacking-proxyjacking-campaign/
+# Reference: https://www.virustotal.com/gui/file/d329f248910dd66c4fa9c514f79d876da56ba85c4b5d756002cb13c0c4409588/detection
+# Reference: https://www.virustotal.com/gui/file/d329f248910dd66c4fa9c514f79d876da56ba85c4b5d756002cb13c0c4409588/detection
+# Reference: https://www.virustotal.com/gui/file/7162a27a795d3ae13d0b8a6df0d7aa75fbefa74f8cb086ee46fdab0368d8ea07/detection
+
+1.234.16.54:7070
+123.30.179.206:8189
+coffee-abandoned-predicted-skype.trycloudflare.com
+karma-adopt-income-jeffrey.trycloudflare.com
+passage-television-gardening-venue.trycloudflare.com
+separate-discussing-refrigerator-field.trycloudflare.com
+
+# Generic
+
+/apiapi/api/raw/master/
+/apiapi/api/raw/master/sec/
+/apiapi/api/raw/master/sec/dx
+/apiapi/api/raw/master/initd

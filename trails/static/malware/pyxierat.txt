@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://threatvector.cylance.com/en_us/home/meet-pyxie-a-nefarious-new-python-rat.html
+# Reference: https://unit42.paloaltonetworks.com/vatet-pyxie-defray777/5/
+# Reference: https://otx.alienvault.com/pulse/5de672a960a698b92dca4793
+# Reference: https://otx.alienvault.com/pulse/5fa9eae63b953f47ae203707
+
+athery.bit
+babloom.bit
+benreat.com
+bookrah.com
+c1oudflare.com
+dopearos.com
+fearlesslyhuman.org
+floppys.bit
+foods-pro.com
+hekutn.com
+hwartless.bit
+mustome.com
+ololo.space
+planlamaison.com
+safealyzer.com
+sarymar.com
+teamchuan.com
+tedxns.com

@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.reddit.com/r/AskNetsec/comments/3onw2c/looking_for_ips_from_snortsuricata_sinkholes/
+    
+212.227.20.19
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=sinkhole.dk
+
+sinkhole.dk

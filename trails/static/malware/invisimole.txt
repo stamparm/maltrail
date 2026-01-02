@@ -1,0 +1,53 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: RC2CL, rc2fm
+# CERT-UA: UAC-0035
+
+# Reference: https://github.com/eset/malware-ioc/tree/master/invisimole
+# Reference: https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf
+# Reference: https://otx.alienvault.com/pulse/5eeb8b9d068b1ec75b7d7bb3
+
+activationstate.sytes.net
+advstatecheck.sytes.net
+akamai.sytes.net
+blabla234342.sytes.net
+statbfnl.sytes.net
+time.servehttp.com
+updchecking.sytes.net
+wlsts.net
+update.xn--6frz82g
+adstat.red
+statad.de
+amz-eu401.com
+adtrax.net
+153.re
+ns.statads.de
+ns1.statads.de
+ns2.statads.de
+
+# Reference: https://cert.gov.ua/article/37829 (Ukrainian)
+
+45.95.11.34:3000
+45.95.11.34:88
+
+# Reference: https://www.cybercom.mil/Media/News/Article/3098856/cyber-national-mission-force-discloses-iocs-from-ukrainian-networks/
+# Reference: https://www.virustotal.com/gui/ip-address/195.154.255.211/relations
+
+aaaaaaaaaaaae.153.re
+aaaaaaaaaaaae.mx1.be
+a8y1a442fibixcolmcy8eiyfncvafk7iqcnarcqxaaaaaaaaaaaaaaaalaaiaa.aaaaaaaaaaaae.153.re
+a8yk66yshlbixcolmcy8eiyfncvafk7iqcnarcqxaaaaaaaaaaaaaaaalaaiaa.aaaaaaaaaaaae.mx1.be
+a8yq99tadibixcolmcy8eiyfncvafk7iqcnarcqxaaaaaaaaaaaaaaaalaaiaa.aaaaaaaaaaaae.mx1.be
+
+# Reference: https://x.com/lontze7/status/1830473978747474224
+# Reference: https://threatfox.abuse.ch/browse/malware/win.rc2fm/
+# Reference: https://www.virustotal.com/gui/file/7011bf19f2a85c487bf96ba07cca7c61f32e32212f0548c6b26e8d3410230632/detection
+# Reference: https://www.virustotal.com/gui/file/419685e23cc278d8391881c8aa79227e55e4ebb40a2dae48c820f4ed9550bb25/detection
+
+http://89.22.236.120
+89.22.236.120:5511
+
+# Generic
+
+/c10n3r.zip

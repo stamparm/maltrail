@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Worm%3AWin32%2FSohanad.AL
+# Reference: https://www.reverse.it/sample/53543cfbfa4702752ef51e8a36422fd2215c24efd08d3e20f2b2dad100cc8c9a?environmentId=100
+
+nklmtf[0-9][^.]*[0-9].t35.com
+stoopp30stoopp30.t35.com

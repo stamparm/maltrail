@@ -1,0 +1,1232 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: brute ratel
+
+# Reference: https://twitter.com/Unit42_Intel/status/1545207290919264258
+# Reference: https://twitter.com/MichalKoczwara/status/1544403381539717121
+# Reference: https://twitter.com/MichalKoczwara/status/1544566096837152769
+# Reference: https://twitter.com/MichalKoczwara/status/1544944208250904582
+# Reference: https://unit42.paloaltonetworks.com/brute-ratel-c4-tool/
+
+104.6.92.229:443
+13.82.141.216:443
+137.184.199.17:443
+138.68.50.218:443
+138.68.58.43:443
+139.162.195.169:443
+139.180.187.179:443
+142.93.230.121:443
+146.190.225.113:443
+146.190.225.33:443
+147.182.247.103:443
+149.154.100.151:443
+15.206.84.52:443
+152.67.78.82:443
+159.223.49.16:443
+159.65.186.50:443
+162.216.240.61:443
+164.90.181.205:443
+170.254.185.1:443
+172.105.102.247:443
+172.81.62.82:443
+174.129.157.251:443
+178.33.38.76:443
+178.79.143.149:443
+178.79.168.110:443
+178.79.172.35:443
+18.130.233.249:443
+18.133.26.247:443
+18.176.11.157:443
+18.217.179.8:443
+18.236.92.31:443
+185.138.164.112:443
+185.166.214.143:443
+188.166.230.164:443
+194.29.186.67:443
+194.87.70.14:443
+20.74.155.146:443
+213.168.249.232:443
+3.110.56.219:443
+3.113.109.1:443
+3.133.7.69:443
+3.27.18.66:443
+31.184.198.83:443
+34.195.122.225:443
+34.243.172.90:443
+34.250.32.179:443
+35.170.243.216:443
+45.144.225.3:443
+45.76.155.71:443
+45.79.36.192:443
+52.199.127.115:443
+52.48.51.67:443
+52.90.228.203:443
+54.229.102.30:443
+54.90.137.213:443
+54.92.22.199:443
+70.34.214.250:443
+85.208.22.36:443
+89.100.107.65:443
+92.255.85.173:443
+92.255.85.44:443
+94.130.130.43:443
+ds.windowsupdate.eu.org
+spectrumofinnovation.org
+
+# Reference: https://twitter.com/MichalKoczwara/status/1553781412133838848
+
+digitalhealthrecord.live
+
+# Reference: https://github.com/conexioninversa/MalwareIntel/blob/main/C2_All.csv
+# Reference: https://github.com/conexioninversa/MalwareIntel/blob/main/C2_BruteRatel.txt
+
+http://13.113.188.183
+http://13.114.203.227
+http://13.115.214.254
+http://149.28.251.203
+http://159.65.114.157
+http://170.254.185.1
+http://175.41.221.5
+http://18.163.6.122
+http://18.176.11.157
+http://18.178.100.187
+http://18.182.126.252
+http://18.198.216.248
+http://3.114.23.145
+http://3.127.118.115
+http://35.156.199.19
+http://35.74.220.117
+http://35.77.140.201
+http://45.137.117.219
+http://52.194.85.123
+http://52.198.179.162
+http://54.168.127.93
+http://54.178.240.29
+http://54.238.217.34
+http://54.249.104.32
+http://54.249.138.251
+http://54.92.22.199
+http://54.92.4.22
+107.148.27.54:443
+107.148.27.54:8443
+13.114.203.227
+13.79.28.122:443
+13.82.141.216:443
+146.190.225.79:443
+152.67.78.82:443
+159.65.114.157:443
+159.65.144.75:443
+159.69.175.197:8443
+162.216.240.61:4443
+162.216.240.61:8443
+164.90.181.205:443
+167.172.140.210:443
+167.71.12.46:443
+167.71.62.156:3200
+176.34.152.127:443
+178.128.98.154:443
+178.33.38.76:8443
+178.33.49.56:8443
+185.193.125.142:443
+185.198.26.229:443
+194.87.70.14:10443
+2.34.225.206:9002
+2.37.28.171:9002
+216.250.96.208:443
+3.144.154.208:443
+3.17.10.52:443
+3.25.139.251:443
+3.99.59.202:443
+34.226.141.245:443
+37.119.57.169:9002
+37.119.57.195:9002
+44.204.63.95:443
+45.137.117.219:443
+45.43.2.62:443
+47.242.33.173:443
+54.194.184.233:443
+54.235.16.137:443
+54.93.134.133:443
+64.227.11.231:443
+70.34.214.250:8443
+79.3.12.7:9002
+94.102.49.64:443
+francodp.dyndns.tv
+
+# Reference: https://twitter.com/IronNetTR/status/1603042127251877889
+
+systemresync.com
+
+# Reference: https://twitter.com/MichalKoczwara/status/1606419631601762304
+
+213.227.155.115:1337
+
+# Reference: https://twitter.com/MichalKoczwara/status/1631683477648072706
+
+/bruteratel-1.2.2-pwn3rzs-cyberarsenal/
+/brtEvilTest.elf
+
+# Reference: https://twitter.com/TLP_R3D/status/1641897525752758272
+
+207.148.113.47:443
+
+# Reference: https://twitter.com/TLP_R3D/status/1642081016939442176
+
+104.168.117.105:443
+107.191.60.134:443
+13.40.142.110:443
+139.162.82.133:443
+146.190.229.227:443
+188.166.72.93:443
+193.149.180.84:443
+31.42.189.61:443
+46.101.107.95:443
+
+# Reference: https://twitter.com/drb_ra/status/1651296543960334336
+
+http://13.114.78.162
+
+# Reference: https://twitter.com/drb_ra/status/1652383717187256320
+
+3.28.39.6:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383732576272386
+
+18.134.141.72:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383745448525824
+
+31.42.189.61:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652383764075495425
+
+51.77.112.254:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383768160657408
+
+51.77.112.254:43698
+
+# Reference: https://twitter.com/drb_ra/status/1652383784233316354
+
+64.226.109.199:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383798468698112
+
+94.198.97.58:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383803514445828
+
+94.198.97.58:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652383820551794694
+
+104.168.117.105:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383825379377152
+
+104.168.117.105:8666
+
+# Reference: https://twitter.com/drb_ra/status/1652383844266303495
+
+104.207.132.71:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383847806386179
+
+104.207.132.71:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652383861391740930
+
+104.234.118.123:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652383875941711874
+
+104.234.239.217:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383879435636737
+
+104.234.239.217:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652383896972013568
+
+107.191.60.134:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383900520312838
+
+107.191.60.134:8444
+
+# Reference: https://twitter.com/drb_ra/status/1652383920237817857
+
+142.93.31.106:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383931138809857
+
+142.93.38.206:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383953343348736
+
+144.91.97.213:443
+
+# Reference: https://twitter.com/drb_ra/status/1652383956866564096
+
+144.91.97.213:9191
+
+# Reference: https://twitter.com/drb_ra/status/1652383960205336586
+
+144.91.97.213:9999
+
+# Reference: https://twitter.com/drb_ra/status/1652383976391073793
+
+154.26.154.154:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652383995835953153
+
+154.202.59.96:5443
+
+# Reference: https://twitter.com/drb_ra/status/1652384000457973763
+
+154.202.59.96:7443
+
+# Reference: https://twitter.com/drb_ra/status/1652384004916510722
+
+154.202.59.96:12306
+
+# Reference: https://twitter.com/drb_ra/status/1652384018661363719
+
+162.216.240.61:4443
+
+# Reference: https://twitter.com/drb_ra/status/1652384022033494017
+
+162.216.240.61:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652384033748156418
+
+164.90.217.130:443
+
+# Reference: https://twitter.com/drb_ra/status/1652384048419930115
+
+185.239.173.42:3003
+
+# Reference: https://twitter.com/drb_ra/status/1652384061858410499
+
+185.239.173.43:3003
+
+# Reference: https://twitter.com/drb_ra/status/1652384073124380674
+
+185.239.173.44:3003
+
+# Reference: https://twitter.com/drb_ra/status/1652384084667117569
+
+188.166.72.93:443
+
+# Reference: https://twitter.com/drb_ra/status/1652384189168197633
+
+193.149.180.84:443
+
+# Reference: https://twitter.com/drb_ra/status/1652384193865818113
+
+193.149.180.84:8443
+
+# Reference: https://twitter.com/drb_ra/status/1652384206914215941
+
+206.81.1.31:443
+
+# Reference: https://twitter.com/drb_ra/status/1652384216275984387
+
+207.148.113.47:443
+
+# Reference: https://twitter.com/drb_ra/status/1652384232935677953
+
+217.76.52.219:443
+
+# Reference: https://twitter.com/drb_ra/status/1652384236198846466
+
+217.76.52.219:9999
+
+# Reference: https://twitter.com/drb_ra/status/1653108484244660239
+
+18.188.54.77:443
+
+# Reference: https://twitter.com/drb_ra/status/1653108501936234514
+
+http://52.198.193.213
+
+# Reference: https://twitter.com/drb_ra/status/1653470915592634387
+
+http://18.177.226.88
+
+# Reference: https://twitter.com/drb_ra/status/1653470955807621122
+
+139.59.169.19:443
+
+# Reference: https://twitter.com/drb_ra/status/1653833314774425654
+
+139.162.242.79:443
+
+# Reference: https://twitter.com/drb_ra/status/1654455366783049728
+
+139.224.234.194:9999
+
+# Reference: https://twitter.com/drb_ra/status/1654455385183461377
+
+157.254.195.201:8443
+
+# Reference: https://twitter.com/drb_ra/status/1654920467042430978
+
+146.190.65.47:443
+
+# Reference: https://twitter.com/drb_ra/status/1655645264495927317
+
+107.148.9.252:443
+
+# Reference: https://twitter.com/drb_ra/status/1656007624150663169
+
+http://54.199.58.143
+
+# Reference: https://twitter.com/drb_ra/status/1656732418592604173
+
+16.16.162.142:443
+
+# Reference: https://twitter.com/drb_ra/status/1656732437462777866
+
+http://54.150.80.3
+
+# Reference: https://twitter.com/MichalKoczwara/status/1656593586568282114
+# Reference: https://www.virustotal.com/gui/file/11fce5929abdc82579e655e1dad28f06c26d53c177bca46543a3706095083a7a/detection
+
+134.209.48.173:443
+165.227.15.170:443
+176.34.158.147:443
+feedbackform.mooo.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/
+
+http://118.107.43.100
+http://118.107.43.96
+http://118.107.43.98
+http://13.112.226.27
+http://13.114.48.174
+http://13.230.243.50
+http://18.176.20.234
+http://18.176.35.161
+http://18.178.161.19
+http://18.178.244.246
+http://3.115.144.47
+http://35.72.0.113
+http://35.72.100.201
+http://35.72.94.12
+http://35.73.220.65
+http://35.75.220.206
+http://35.75.27.89
+http://35.75.94.192
+http://35.76.16.247
+http://35.78.13.37
+http://35.79.109.52
+http://43.207.23.110
+http://43.207.8.102
+http://52.192.109.110
+http://52.192.166.233
+http://52.193.175.78
+http://52.193.185.144
+http://52.193.2.2
+http://52.193.203.8
+http://52.194.178.19
+http://52.196.36.24
+http://52.196.50.60
+http://52.196.8.3
+http://52.197.222.201
+http://52.197.43.5
+http://52.198.154.115
+http://52.68.31.77
+http://54.168.95.3
+http://54.178.188.94
+http://54.238.220.105
+http://54.248.200.60
+http://54.249.130.36
+http://54.249.158.59
+http://54.249.200.119
+http://54.249.216.44
+http://54.249.26.2
+http://54.65.93.113
+http://54.92.24.114
+http://54.95.222.110
+http://8.222.133.105
+103.25.188.178:443
+107.148.27.54:8441
+107.148.27.54:8445
+112.213.121.11:443
+112.213.121.20:443
+112.213.121.7:443
+116.62.139.1:8443
+118.107.43.100:443
+118.107.43.96:443
+118.107.43.98:443
+138.68.135.52:8443
+142.93.7.24:443
+143.198.176.115:443
+143.198.239.130:8443
+143.92.58.179:443
+143.92.58.182:443
+143.92.58.183:443
+149.154.158.184:445
+15.164.245.79:443
+15.206.79.179:443
+15.206.79.179:8443
+165.232.151.8:443
+165.232.151.8:8443
+167.99.137.218:7020
+167.99.137.218:7100
+168.100.10.117:8080
+170.64.169.229:443
+172.86.123.8:443
+176.113.115.53:6002
+18.188.54.77:8443
+18.193.106.166:8080
+18.208.87.99:51005
+213.219.214.113:443
+213.227.155.115:443
+217.182.54.211:8443
+217.25.91.146:48889
+23.254.167.32:5915
+23.92.22.235:4042
+24.199.118.20:12000
+24.199.89.40:443
+3.19.120.166:443
+3.221.126.84:51005
+34.206.147.4:51005
+38.55.96.159:6081
+45.123.191.15:443
+45.147.230.225:443
+47.115.215.203:8443
+47.252.28.13:443
+50.116.29.40:4043
+50.16.83.73:51001
+54.238.205.126:80
+74.234.98.215:443
+74.235.81.74:8443
+82.84.39.65:8080
+87.121.221.22:443
+auditprosec.com
+near-org.top
+sentisupport.com
+symantecuptimehost.com
+teenieshopus.com
+wsibc.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-08-01)
+
+165.227.224.30:443
+167.71.60.103:443
+172.105.71.205:443
+24.199.114.243:443
+54.211.243.10:443
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-08-05)
+
+http://52.193.188.236
+140.82.46.164:443
+179.43.144.250:443
+179.43.144.250:8443
+83.97.73.90:443
+
+# Reference: https://news.sophos.com/en-us/2023/05/18/the-phantom-menace-brute-ratel-remains-rare-and-targeted/
+# Reference: https://otx.alienvault.com/pulse/648a0804f0c7af02f1fefd6e
+
+prefectrespond.online
+instrumentation-database-fc-lows.trycloudflare.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-08-07)
+
+http://18.181.114.13
+139.59.211.172:443
+83.97.73.90:2563
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-08-08)
+
+http://18.181.114.13
+54.171.30.223:443
+
+# Reference: https://threatfox.abuse.ch/ioc/1149177/
+
+212.71.235.150:443
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-08-11)
+
+http://13.231.24.246
+http://35.74.154.31
+104.168.59.22:443
+146.190.219.130:443
+20.212.219.56:8443
+77.246.103.180:443
+88.218.61.244:443
+91.103.253.43:443
+91.103.253.43:43890
+
+# Reference: https://twitter.com/drb_ra/status/1690434731899273216
+
+20.212.219.56:8443
+
+# Reference: https://twitter.com/drb_ra/status/1691159436197322752
+
+164.92.145.128:7810
+
+# Reference: https://threatfox.abuse.ch/ioc/1150549/
+
+88.218.61.244:8053
+
+# Reference: https://threatfox.abuse.ch/ioc/1150627/
+
+http://54.248.102.18
+
+# Reference: https://twitter.com/drb_ra/status/1694420794208612717
+
+193.149.190.194:443
+
+# Reference: https://threatfox.abuse.ch/ioc/1152229/
+
+http://54.65.8.67
+
+# Reference: https://twitter.com/drb_ra/status/1695507953745334494
+
+5.188.87.50:443
+5.188.87.50:8443
+
+# Reference: https://threatfox.abuse.ch/ioc/1152719/
+
+http://13.114.110.144
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-10-01)
+
+http://13.113.45.138
+http://18.180.64.43
+http://3.112.185.142
+http://54.238.135.178
+http://54.238.220.242
+http://54.248.35.92
+104.37.184.181:37971
+146.190.219.130:12023
+18.219.153.204:443
+212.71.235.150:8444
+217.76.52.219:8443
+24.199.115.9:443
+38.126.114.218:443
+38.126.114.218:7437
+45.133.195.58:2443
+45.133.195.58:8443
+45.140.17.42:443
+45.140.17.42:8443
+45.89.55.81:443
+45.89.55.81:8443
+54.155.238.133:443
+64.190.113.179:443
+8.219.217.130:443
+84.32.131.78:443
+91.223.208.155:8443
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-10-09)
+
+http://103.15.186.10
+http://104.21.35.110
+http://13.113.204.244
+http://13.114.224.91
+http://13.115.223.29
+http://13.230.94.200
+http://172.67.218.228
+http://18.176.27.91
+http://196.51.37.139
+http://35.73.40.176
+http://52.196.213.220
+http://54.150.47.200
+http://54.92.112.126
+103.15.186.10:443
+104.21.35.110:443
+161.35.170.123:443
+161.97.130.22:443
+172.111.143.246:8888
+172.67.218.228:443
+178.68.16.136:65357
+18.154.185.115:443
+18.154.185.36:443
+18.238.132.55:443
+18.238.132.5:443
+18.238.132.74:443
+18.238.132.97:443
+18.66.112.114:443
+18.66.112.122:443
+18.66.112.58:443
+18.66.112.89:443
+185.216.71.108:8443
+188.166.157.170:443
+194.49.94.20:10443
+206.189.24.107:443
+206.71.148.131:443
+209.97.189.230:443
+219.94.128.44:443
+45.67.229.237:12821
+46.101.1.45:443
+52.85.247.113:443
+52.85.247.52:443
+52.85.247.5:443
+52.85.247.92:443
+54.198.145.43:443
+89.238.73.27:443
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2023-12-17)
+
+http://13.112.86.223
+http://13.113.86.16
+http://35.72.81.251
+http://35.79.47.244
+http://43.206.199.216
+http://52.197.96.6
+http://54.150.226.102
+http://54.249.68.233
+http://54.250.116.148
+2.34.147.152:9002
+211.76.170.240:443
+5.42.65.45:50000
+54.198.145.43:8080
+8.212.128.240:59873
+8.212.128.240:8443
+91.92.247.69:8443
+91.92.254.156:8443
+
+# Reference: https://www.virustotal.com/gui/file/0d5af47bde7fdbb370d48611fd5800ec9be785aa77e1fca4badd4d2d3647447d/detection
+
+azureclouder.com
+
+# Reference: https://twitter.com/drb_ra/status/1754395948233437187
+
+http://35.73.145.106
+
+# Reference: https://twitter.com/jaydinbas/status/1758492116366377193
+# Reference: https://www.virustotal.com/gui/file/b90a7868c72e76d5a750f9d5a049c8b9ff3dac9c2895a1c238b9ba96c94644fd/detection
+# Reference: https://www.virustotal.com/gui/file/8165798fec8294523f25aedfc6699faad0c5d75f60bc7cefcbb2fa13dbc656e3/detection
+
+vinci-onedrive.azurewebsites.net
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2024-03-31)
+
+http://13.113.189.83
+http://18.181.61.11
+http://3.112.78.101
+http://3.115.218.3
+http://52.193.137.127
+138.124.183.209:8443
+157.230.247.198:443
+185.250.151.246:8443
+213.199.35.149:443
+3.36.144.103:443
+46.8.221.19:443
+46.8.221.19:8443
+5.253.43.96:8010
+69.176.89.82:443
+84.246.85.147:443
+88.151.192.114:443
+92.118.112.155:443
+93.66.153.13:9002
+95.179.159.107:443
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.brute_ratel_c4/ (# 2024-06-22)
+
+http://18.177.14.165
+http://3.115.31.102
+http://52.68.210.54
+http://54.249.228.34
+http://54.95.170.58
+118.107.7.146:443
+31.27.187.236:9002
+45.135.232.38:8443
+45.76.53.16:443
+45.77.136.43:8443
+
+# Reference: https://x.com/Threatlabz/status/1804918852528357791
+
+94.232.249.86:7444
+94.232.249.87:7444
+barsen.monster
+kurvabbr.pw
+
+# Reference: https://x.com/MichalKoczwara/status/1808039481032786239
+
+splunkapi.com
+
+# Reference: https://x.com/banthisguy9349/status/1808550048847818947
+
+81.69.248.100:8000
+
+# Reference: https://x.com/nahamike01/status/1808655269691543684
+
+61.164.242.162:8888
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s.csv
+
+http://13.112.130.229
+http://13.115.70.76
+http://176.34.50.52
+http://18.180.118.60
+http://35.76.131.174
+104.129.181.195:443
+106.14.122.162:5000
+143.92.42.200:8443
+148.135.35.239:8443
+185.237.165.247:8443
+206.166.251.107:4443
+206.166.251.107:8443
+42.192.107.173:5000
+45.77.172.240:8443
+8.138.39.245:37443
+91.92.254.19:443
+
+# Reference: https://x.com/malwrhunterteam/status/1815713225138143245
+# Reference: https://www.virustotal.com/gui/file/6529e924420db80091f2d132caad8c18f22f9c4c2496e41bf0b3309fd187f508/detection
+
+liveupdatesmonitor.com
+
+# Reference: https://x.com/JAMESWT_MHT/status/1816043377990778894
+# Reference: https://www.virustotal.com/gui/file/e1f94ba658acde6223eba8c5f869226a521fb64af7b6259baf06866812f752b6/detection
+# Reference: https://www.virustotal.com/gui/file/241719892a747862ca98f44bbe4b22336fabbafe0cae7e3a8b30d2a9290c48de/detection
+
+haileigh-oakes.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-08-24)
+
+http://18.177.226.4
+http://43.206.47.12
+http://54.65.7.247
+103.234.72.154:50000
+114.132.183.203:443
+158.247.250.152:50000
+167.172.89.184:443
+167.172.89.184:8443
+212.64.13.7:443
+38.147.172.226:443
+43.159.193.173:443
+47.237.111.1:443
+
+# Reference: https://www.virustotal.com/gui/file/36a028434c55dd9fe73958b563815f52e4cbfebb5115bbd798e6e7270b457f9d/detection
+
+br.libjs.xyz
+
+# Reference: https://x.com/malwrhunterteam/status/1828024457686061312
+# Reference: https://www.virustotal.com/gui/file/3a1f90acf560c1f5b675fcecb8b172c7eba7190c4f511c59759f2a2ab2c4bdff/detection
+
+dkq4prtotbji7.cloudfront.net
+fifgroup.azureedge.net
+/informasi-perusahaan/informasi-umum
+/informasi-perusahaan
+/informasi-umum
+/mitra-fifgroup
+
+# Reference: https://x.com/malwrhunterteam/status/1828753063047500237
+# Reference: https://www.virustotal.com/gui/file/079e3171048286472cff2b0267cd2d6a90bf9d7f45255f48031bf4bf2ac3b0b4/detection
+
+javaforyouedu.in
+
+# Reference: https://x.com/malwrhunterteam/status/1829130035808059668
+# Reference: https://www.virustotal.com/gui/ip-address/104.234.25.56/relations
+# Reference: https://www.virustotal.com/gui/file/59c2266a4db4250a90592075c32f49dc4341921414d78e9b9b9e092a083ba7a8/detection
+
+1398daufhauidhjkadf.com
+systematictld.com
+
+# Reference: https://blog.talosintelligence.com/threat-actors-using-macropack/
+
+http://122.114.10.239
+s-logistics.net
+dns1.s-logistics.net
+dns2.s-logistics.net
+d1209brpqetpa4.cloudfront.net
+d2v6ycjbdzo6ui.cloudfront.net
+d2wpc9lcvgj680.cloudfront.net
+d2z6sfzo660xrm.cloudfront.net
+d3qrqtfazjdt5i.cloudfront.net
+/HubsExtension/Resource/Type/c8d984.php
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-07)
+
+http://35.79.171.237
+http://54.248.85.250
+104.248.7.160:443
+104.248.7.160:8443
+161.35.73.220:443
+161.35.73.220:61337
+167.172.243.32:443
+209.38.196.51:443
+24.144.92.172:443
+3.254.105.98:443
+45.61.137.15:8443
+54.70.52.38:443
+80.255.6.12:40000
+81.95.8.165:40000
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-14)
+
+http://13.231.40.125
+http://35.73.247.226
+77.221.149.199:8443
+92.118.112.193:443
+
+# Reference: https://x.com/malwrhunterteam/status/1837467196655640968
+# Reference: https://www.virustotal.com/gui/file/c3f8ebc9cfb7ebe1ebbe3a4210753b271fecf73392fef98519b823a3e7c056c7/detection
+
+plantytime.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-22)
+
+http://54.178.38.136
+157.230.63.141:443
+164.90.144.91:443
+185.106.176.250:8443
+205.209.126.137:41867
+81.95.8.178:40000
+94.156.67.247:443
+
+# Reference: https://x.com/iam_rajhans/status/1839221953980149808
+# Reference: https://www.virustotal.com/gui/file/45257b5cd16d391bc37afe4a6534610cb1bb70c14dbec15b5594ad798d31933f/detection
+
+d19uqbwzyx9r4z.cloudfront.net
+
+# Reference: https://x.com/malwrhunterteam/status/1839924221201220056
+# Reference: https://www.virustotal.com/gui/file/b67ce96362756c7a8f22e535b6a73aa9edbb84568c591efab378c0e3a5257368/detection
+
+74.50.84.181:443
+
+# Reference: https://github.com/pr0xylife/Latrodectus/blob/main/Latrodectus_03.10.2024.txt
+
+combazarunet.com
+
+# Reference: https://github.com/pr0xylife/Latrodectus/blob/main/Latrodectus_04.10.2024.txt
+# Reference: https://www.virustotal.com/gui/file/07282b92613d88cdeb02dc30835216268c7ec378bb0ff7a08bb280775a8f82c3/detection
+
+141.98.234.114:8042
+185.106.92.80:8042
+82.115.223.150:8042
+obobobo.com
+pobegskichi.com
+sosachwaffen.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-10-13)
+
+http://52.198.166.185
+http://54.178.8.63
+http://54.248.167.251
+http://57.180.68.148
+120.26.97.135:23333
+143.198.123.32:8443
+18.201.190.57:443
+194.48.154.64:443
+34.211.116.85:443
+47.113.193.147:443
+47.113.193.147:8443
+47.93.240.197:444
+52.250.14.157:8443
+54.71.218.247:443
+81.19.141.238:10443
+87.120.127.145:1080
+94.232.247.68:443
+
+# Reference: https://github.com/pr0xylife/Latrodectus/blob/main/Latrodectus_16.10.2024.txt
+# Reference: https://www.virustotal.com/gui/file/0cf42f02249025e69a65c5395e04c3e220cf59cbf02daf1f04b036d740fbf96c/detection
+# Reference: https://www.virustotal.com/gui/file/02e54ffdb478f964dc486197e239c802bffef514bedfa3a30f50f9b8fea8bfbd/detection
+
+185.106.92.108:8810
+185.106.92.109:8810
+185.106.92.110:8810
+berzzuzz.com
+deltaso.com
+soccoc.africa
+
+# Reference: https://x.com/malwrhunterteam/status/1854823012798738814
+# Reference: https://www.virustotal.com/gui/file/c96ec96ea29372311cbef1d2b23f0e51b06f1f6184a41da985142929d9fa2f02/detection
+# Reference: https://www.virustotal.com/gui/file/714944899f2b0fe6496ac15359ba90fb9d9891a84111fc7dc3cd5b1093b17347/detection
+
+45.143.166.83:8822
+45.143.166.83:8877
+80.66.76.106:8822
+80.66.76.106:8877
+ergiholim.com
+rolefenik.com
+waffaffa.com
+xomamox.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-11-10)
+
+http://13.115.99.135
+http://52.69.75.103
+http://54.249.240.178
+http://54.249.244.152
+http://54.250.147.219
+http://57.180.74.95
+104.207.132.109:443
+159.89.105.196:443
+164.90.146.24:443
+165.232.139.231:443
+23.168.152.67:8443
+23.168.152.68:443
+94.156.166.170:1378
+94.232.247.97:21
+
+# Reference: https://github.com/pr0xylife/Latrodectus/blob/main/Latrodectus_19.11.2024.txt
+# Reference: https://www.virustotal.com/gui/file/14ffcbbfb305287ea15264df3363567f36a26917ae2018af0f40e2009b8a7184/detection
+
+46.249.49.83:4438
+94.232.40.38:4438
+guaaug.com
+uayyau.com
+
+# Reference: https://x.com/Cryptolaemus1/status/1856774655534637418
+# Reference: https://www.virustotal.com/gui/file/0f23855e56eb6ec760717be43280eeeeaec1aeef939f9ae6a41daf1b8e3bd306/detection
+
+45.143.166.230:9043
+87.120.37.120:9043
+azuredcloud.world
+burjog.com
+memorun.life
+samomol.com
+
+# Reference: https://x.com/P4nd3m1cb0y/status/1861171310824693892
+
+146.70.213.35:443
+162.254.85.213:443
+162.254.86.108:443
+185.75.240.211:443
+35.161.207.170:443
+84.46.239.89:443
+
+# Reference: https://x.com/malwrhunterteam/status/1861747344770843000
+# Reference: https://www.virustotal.com/gui/file/196b4d327d8cc1fab8d801c19872c0b084d7485aeb1a103396652ff40fae45e1/detection
+
+http://147.45.124.228
+147.45.124.228:443
+
+# Reference: https://github.com/pr0xylife/Latrodectus/blob/main/Latrodectus_02.12.2024.txt
+# Reference: https://www.virustotal.com/gui/file/f2170f7dc2f97434ef4514ed4272dc8792177038a085f248ba33f9259720afda/detection
+# Reference: https://www.virustotal.com/gui/file/c3baf0446831b6968a30ea23647ac559ee62219f91daae5c1b0a9787f9c860b9/detection
+# Reference: https://www.virustotal.com/gui/file/658b8c47d7193c7c31a2540b2f54fcdfb9298d8346a4ad3be7e684ef946f57a5/detection
+
+103.57.249.207:6542
+94.232.43.224:6542
+huanvn.com
+vutarf.com
+
+# Reference: https://github.com/pr0xylife/Latrodectus/blob/main/Latrodectus_17.12.2024.txt
+# Reference: https://www.virustotal.com/gui/file/1552c43ecf6eeb5e2fe13cc1c25e6bdacf227222afaa9a523d996b6331945505/detection
+
+94.232.40.41:8817
+94.232.46.11:8817
+cronoze.com
+muuxxu.com
+
+# Reference: https://x.com/vmray/status/1943638986255147103
+# Reference: https://www.vmray.com/analyses/Latrodectus-version-2-2-Whenasked/report/network.html
+# Reference: https://www.virustotal.com/gui/file/5ec37444f9ead97f89b74b0b0ee6707bd67a61cb1ad1aa7f5ba85613b722cf4a/detection
+
+mnkcr.com
+
+# Reference: https://x.com/smica83/status/1870090463610302821
+# Reference: https://www.virustotal.com/gui/file/ea60a02b914e79c8c108e95cf0e23bea502b5f37f6a57a3fdf0ea0707e75e945/detection
+
+assetmanagement.azureedge.net
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-01-02)
+
+http://13.113.63.238
+http://13.230.79.217
+http://52.193.97.60
+http://52.68.181.183
+http://54.250.141.217
+104.207.132.109:1443
+107.174.0.170:8443
+167.179.104.231:443
+206.233.249.131:443
+34.213.47.69:443
+38.60.245.46:50000
+46.8.226.42:40006
+47.239.236.221:443
+60.204.234.238:53790
+95.169.196.118:443
+95.169.196.36:443
+96.73.26.29:443
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2026-01-25)
+
+http://13.115.136.78
+http://18.178.2.109
+http://18.180.198.238
+http://3.113.130.207
+http://3.113.172.92
+http://35.73.109.249
+http://35.74.213.62
+http://52.193.73.199
+http://54.150.26.198
+http://54.95.38.246
+111.196.130.95:8443
+111.196.132.53:8443
+13.114.100.24:50000
+147.182.139.208:443
+147.45.47.167:24637
+157.230.181.46:8443
+2.37.211.140:9002
+34.154.249.225:443
+
+# Reference: https://x.com/skocherhan/status/1883656572305563894
+
+192.3.173.102:8443
+
+# Reference: https://x.com/malwrhunterteam/status/1900533940382740711
+# Reference: https://www.virustotal.com/gui/file/83859acdf4ac22927fa88f715666653807501db6f1865a3657599b4c5d130bb2/detection
+# Reference: https://www.virustotal.com/gui/file/a8a494eafd9b63902a549c9d239d1011fe9f636a6822c331d7d6543b35d2f60c/detection
+# Reference: https://www.virustotal.com/gui/file/ec3ca0877e599ae9c40cbcec51a9a4718114e33d9e2d9d8c72f5f24d7cebdcbf/detection
+
+108.181.182.132:3355
+108.181.182.132:4994
+108.181.182.132:7999
+194.76.227.108:3355
+194.76.227.108:4994
+194.76.227.108:7999
+dimidroli.com
+domskufidona.com
+streameqst.live
+
+# Reference: https://thedfirreport.com/2025/03/31/fake-zoom-ends-in-blacksuit-ransomware/
+
+megupdate.com
+administrative-manufacturer-gw.aws-usw2.cloud-ara.tyk.io
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-05-04)
+
+http://13.112.11.137
+http://18.176.122.97
+http://18.177.187.233
+http://18.178.51.37
+http://18.180.239.207
+http://35.79.81.8
+http://43.206.86.29
+http://52.193.158.188
+http://52.195.138.226
+http://52.197.164.145
+http://52.198.46.216
+http://52.68.26.242
+http://52.69.244.101
+http://54.178.158.125
+http://54.249.53.66
+http://54.250.0.227
+http://54.64.181.201
+http://54.65.69.99
+http://54.95.221.112
+http://57.180.194.188
+http://57.180.221.59
+http://57.181.102.240
+111.196.128.217:8443
+111.196.132.41:8443
+111.90.151.162:8443
+152.32.239.207:50000
+154.82.92.74:443
+157.245.194.205:8443
+165.227.163.243:443
+173.249.198.224:8547
+195.158.82.221:8081
+196.251.117.235:35983
+196.251.118.24:35712
+196.251.84.250:31982
+31.31.207.21:443
+46.8.122.253:443
+54.190.65.166:443
+54.221.185.249:443
+54.90.212.140:443
+8.217.196.192:443
+93.66.148.225:9002
+93.71.143.16:9002
+
+# Reference: https://x.com/SBousseaden/status/1930754413741646200
+# Reference: https://www.virustotal.com/gui/file/4350994cb7d895bba32b6ec2c3163df6e6214ade3877d87c6f2dea3e00d48300/detection
+
+45.227.253.10:9543
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-06-14)
+
+http://13.114.64.131
+http://13.115.238.27
+http://18.177.128.103
+http://18.178.98.166
+http://18.181.128.244
+http://43.207.26.109
+http://54.238.60.218
+13.59.118.129:443
+161.35.238.129:443
+3.255.173.2:443
+34.244.7.74:443
+46.101.106.2:443
+54.210.52.218:443
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-07-26)
+
+http://13.115.124.159
+http://52.197.160.186
+http://54.168.191.225
+http://54.178.93.60
+http://54.65.227.196
+http://54.95.193.41
+104.164.55.75:4443
+165.227.163.243:31337
+2.37.23.207:9002
+3.250.194.11:443
+34.154.223.30:443
+45.77.79.169:4444
+46.8.120.229:443
+98.70.49.169:443
+
+# Reference: https://www.virustotal.com/gui/file/64a95de2783a97160bac6914ee07a42cdd154a0e33abc3b1b62c7bafdce24c0c/detection
+
+5.188.86.233:8080
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-10-05)
+
+http://13.115.109.98
+http://18.182.173.57
+http://35.75.149.18
+http://35.75.178.12
+http://35.79.147.99
+http://35.79.211.69
+http://52.194.178.241
+http://52.194.63.154
+http://52.197.117.100
+http://52.68.99.67
+http://52.69.230.91
+http://54.238.45.243
+http://54.65.57.175
+http://54.92.35.242
+http://54.95.36.98
+http://57.182.172.83
+http://57.182.176.173
+http://57.182.82.20
+144.91.103.204:8080
+178.16.55.52:9090
+207.180.216.244:8443
+35.161.118.138:443
+5.183.219.132:443
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-08-11)
+
+http://18.181.52.48
+http://3.115.56.24
+http://35.76.36.180
+http://52.68.211.55
+135.125.107.53:443
+135.125.107.53:9443
+138.197.223.39:443
+178.16.55.52:443
+192.142.18.214:443
+195.158.82.221:11002
+20.218.139.119:443
+207.180.216.244:443
+43.139.115.146:443
+
+# Reference: https://www.netresec.com/?page=Blog&month=2025-12&post=Latrodectus-BackConnect
+
+dauled.com
+erbolsan.com
+kasym500.com
+kasymdev.com
+samderat200.com

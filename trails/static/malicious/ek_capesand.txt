@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/nao_sec/status/1269422460362870784
+
+shophandbag.store
+
+# Reference: https://twitter.com/nao_sec/status/1287755458153869312
+
+http://136.224.101.95

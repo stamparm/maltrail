@@ -1,0 +1,95 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: HeaderTip, scarab, spacecolon, cosmicbeetle
+
+# CERT-UA: UAC-0026
+
+# Reference: http://www.symantec.com/content/en/us/enterprise/media/security_response/docs/Scarab_IOCs_January_2015.txt
+
+apple.dynamic-dns.net
+autocar.ServeUser.com
+blackblog.chatnook.com
+bulldog.toh.info
+cew58e.xxxy.info
+coastnews.darktech.org
+demon.4irc.com
+dynamic.ddns.mobi
+expert.4irc.com
+football.mrbasic.com
+gjjb.flnet.org
+imirnov.ddns.info
+jingnan88.chatnook.com
+lehnjb.epac.to
+logoff.25u.com
+logoff.ddns.info
+ls910329.my03.com
+mailru.25u.com
+Markshell.etowns.net
+mydear.ddns.info
+nazgul.zyns.com
+newdyndns.scieron.com
+newoutlook.darktech.org
+photocard.4irc.com
+pricetag.deaftone.com
+rubberduck.gotgeeks.com
+shutdown.25u.com
+sorry.ns2.name
+sskill.b0ne.com
+text-First.flnet.org
+uudog.4pu.com
+will-smith.dtdns.net
+ndcinformation.acmetoy.com
+service.authorizeddns.net
+text-first.trickip.org
+yellowblog.flnet.org
+
+# Reference: https://twitter.com/h2jazi/status/1505887653111209994
+# Reference: https://twitter.com/fstenv/status/1505915405562482696
+# Reference: https://twitter.com/aRtAGGI/status/1506010831221248002
+# Reference: https://cert.gov.ua/article/38097 (Ukrainian)
+# Reference: https://www.virustotal.com/gui/file/7239cac92aaf6bbbbf4e657bc65a385e495a67a15aa6bbad0e25f23407a77ba9/detection
+
+104.155.198.25:8080
+ebook.port25.biz
+mert.my03.com
+product2020.mrbasic.com
+
+# Reference: https://www.virustotal.com/gui/file/6bcb972bbd526433d9ad733eb7acfec2bc2e35686e9491a380fd5f7a09bf3276/detection
+
+autocar.suroot.com
+
+# Reference: https://twitter.com/jaydinbas/status/1663916211975987201
+# Reference: https://www.virustotal.com/gui/file/71c87103296e5ccc2ff34316668a7e6142a64faddd6c61150025a23764c7905a/detection
+# Reference: https://www.virustotal.com/gui/file/cb611e5e85c3f730116630d47ec136d15c1b5f6a98a69b05d2262fcb1d7629d9/detection
+
+d1lhk2kflvant7.cloudfront.net
+
+# Reference: https://www.welivesecurity.com/en/eset-research/scarabs-colon-izing-vulnerable-servers/ (# Scarab, SpaceColon, CosmicBeetle)
+# Reference: https://otx.alienvault.com/pulse/64e62628ed1119d03d3db75a
+# Reference: https://www.virustotal.com/gui/file/f33f012efbd536bae89ded0b45271b4c7d75f7f23eebbe7b36f18ad13217e0ac/detection
+
+akamaicdnup.com
+cdnupdate.net
+b.688.org
+d.piii.net
+ss.688.org
+sys.688.org
+u.cbu.net
+u.piii.net
+up.awiki.org
+update.cbu.net
+update.inet2.org
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.scarab_ransom/ (# 2024-01-01)
+
+http://103.61.225.186
+http://154.61.74.33
+http://24.144.120.189
+us.notfound.my.id
+
+# Reference: https://www.welivesecurity.com/en/eset-research/cosmicbeetle-steps-up-probation-period-ransomhub/
+# Reference: https://github.com/eset/malware-ioc/tree/master/cosmicbeetle
+
+lockbitblog.info
+up.vctel.com

@@ -1,0 +1,35 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: dunghill
+
+# Reference: https://blog.talosintelligence.com/2022/06/de-anonymizing-ransomware-domains-on.html
+
+http://89.38.225.166
+89.38.225.166:443
+myob.live
+login.myob.link
+wemo2ysyeq6km2nqhcrz63dkdhez3j25yw2nvn7xba2z4h7v7gyrfgid.onion
+
+# Reference: https://twitter.com/Threatlabz/status/1645455117024641024
+
+p66slxmtum2ox4jpayco6ai3qfehd5urgrs4oximjzklxcol264driqd.onion
+
+# Reference: https://www.sentinelone.com/blog/dark-angels-esxi-ransomware-borrows-code-victimology-from-ragnarlocker/
+# Reference: https://otx.alienvault.com/pulse/6528501905a1f9a70a132b7c
+
+lyoevnzm3ewiq6jeyyuob2wfou7gh47yotuucsrwlf6ju3xrw43wacad.onion
+qspjx67hi3heumrubqotn26cwimb6vjegiwgvrnpa6zefae2nqs6xqad.onion
+
+# Reference: https://x.com/AlvieriD/status/1819012839291367883
+
+nsalewdnfclsowcal6kn5csm4ryqmfpijznxwictukhrgvz2vbmjjjyd.onion
+
+# Generic
+
+# Reference: https://x.com/RakeshKrish12/status/1819617802514231307
+
+http://103.155.93.115
+http://179.43.190.2
+
+/x656v767x

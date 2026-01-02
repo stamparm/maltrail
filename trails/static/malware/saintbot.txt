@@ -1,0 +1,166 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: lorec53, saintbear, UNC2589, TA471, GrimPlant, Elephant Implant
+
+# CERT-UA: UAC-0056
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2021/04/a-deep-dive-into-saint-bot-downloader/
+# Reference: https://otx.alienvault.com/pulse/6073a320686d4c625b3c94db
+
+380222001.xyz
+68468438438.xyz
+name1d.site
+update-0019992.ru
+
+# Reference: https://twitter.com/ViriBack/status/1383531638785679364
+# Reference: https://app.any.run/tasks/10d320aa-5591-42ac-a23a-d3301a15a3df/
+
+bashervlmao.to
+proapi.services
+qzp.me
+
+# Reference: http://report.threatbook.cn/ST.pdf
+
+baiden00.ru
+update3d.xyz
+
+# Reference: https://cert.gov.ua/article/18273
+
+eumr.site
+
+# Reference: https://twitter.com/souiten/status/1491620147626328064
+# Reference: https://www.virustotal.com/gui/file/e7614325ee4042c456d3170f224924905661d1f5388f9a6bbb524737c646eb23/detection
+
+3237.site
+
+# Reference: https://twitter.com/s1ckb017/status/1494047314792665088
+
+flexspace.app
+
+# Reference: https://twitter.com/angel11VR/status/1381568772419563527
+
+gosloto.site
+
+# Reference: https://www.virustotal.com/gui/file/461eeadbe118b5ad64a62f2991a8bd66bdcd3dd1808cd7070871e7cc02effad7/detection
+
+1924.site
+
+# Reference: https://www.virustotal.com/gui/file/2b15ade9de6fb993149f27c802bb5bc95ad3fc1ca5f2e86622a044cf3541a70d/detection
+
+2330.site
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.128.123.215/relations
+
+2055.site
+
+# Reference: https://www.virustotal.com/gui/file/a4b705baac8bb2c0d2bc111eae9735fb8586d6d1dab050f3c89fb12589470969/detection
+
+1020.site
+
+# Reference: https://unit42.paloaltonetworks.com/ukraine-targeted-outsteel-saintbot/
+# Reference: https://otx.alienvault.com/pulse/621ccab95c4b796eeea2ee78
+# Reference: https://www.virustotal.com/gui/ip-address/176.113.115.133/relations
+# Reference: https://www.virustotal.com/gui/file/d99f998207c38fe3ab98b0840707227af4d96c1980a5c2f8f9ac7062fab0596d/detection
+
+1000019.xyz
+1017.site
+1120.site
+1202.site
+almamaterbook.ru
+bgicovid19.com
+buking.site
+noch.website
+orpod.ru
+otrs.website
+polk.website
+sinoptik.site
+sony-vaio.ru
+superiortermpapers.org
+update0019992.ru
+webleads.pro
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.146.164.37/relations
+# Reference: https://www.virustotal.com/gui/file/b72188ba545ad865eb34954afbbdf2c9e8ebc465a87c5122cebb711f41005939/detection
+
+15052021.space
+150520212.space
+150520213.space
+1681683130.website
+16868138130.space
+32689657.xyz
+32689658.xyz
+32689659.xyz
+33655990.cyou
+99996665550.fun
+
+# Reference: https://www.sentinelone.com/blog/threat-actor-uac-0056-targeting-ukraine-with-fake-translation-software/
+# Reference: https://otx.alienvault.com/pulse/6231982af2f142466916acd1
+
+dictionary-translator.eu
+
+# Reference: https://cert.gov.ua/article/38374 (Ukrainian)
+# Reference: https://www.virustotal.com/gui/file/9e9fa8b3b0a59762b429853a36674608df1fa7d7f7140c8fccd7c1946070995a/detection
+
+http://194.31.98.124
+194.31.98.124:443
+
+# Reference: https://cert.gov.ua/article/39882 (Ukranian)
+
+http://212.192.246.115
+212.192.246.115:443
+
+# Reference: https://twitter.com/h2jazi/status/1544368077286039552
+# Reference: https://www.virustotal.com/gui/file/024054ff04e0fd75a4765dd705067a6b336caa751f0a804fefce787382ac45c1/detection
+
+skreatortemp.site
+
+# Reference: https://twitter.com/h2jazi/status/1546501371725320193
+# Reference: https://cert.gov.ua/article/703548 (Ukrainian)
+# Reference: https://www.virustotal.com/gui/file/8f7ce71d5995ebd5fa353228eb83f3180eb74513aeaa8a8a1245f1340a993ec2/detection
+# Reference: https://www.virustotal.com/gui/file/aadd8c7c248915c5da49c976f24aeb98ccc426fb31d1d6913519694a7bb9351a/detection
+
+http://136.144.41.177
+syriahr.eu
+/trfetsrteyrhdb/djkjnnsbdbfbbgb/
+/djkjnnsbdbfbbgb/
+/nzXlLVas-VALvDh9lopkC/
+/trfetsrteyrhdb/
+/Xnk75JwUcIebkrmENtufIiiKEmoqBN/
+
+# Reference: https://twitter.com/ViriBack/status/1591250489894907904
+# Reference: https://tria.ge/221112-cez3lsdb67
+
+supportmozilla.org
+
+# Reference: https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/nodaria-ukraine-infostealer (# Infostealer.Graphiron)
+# Reference: https://otx.alienvault.com/pulse/63e3bf96dbc8676b49e3939e
+# Reference: https://www.virustotal.com/gui/file/878450da2e44f5c89ce1af91479b9a9491fe45211fee312354dfe69e967622db/detection
+# Reference: https://www.virustotal.com/gui/file/0d0a675516f1ff9247f74df31e90f06b0fea160953e5e3bada5d1c8304cfbe63/detection
+
+http://208.67.104.95
+
+# Reference: https://cert.gov.ua/article/3947787 (Ukrainian)
+
+/info_index_test_tst.html
+
+# Reference: https://twitter.com/threatintel/status/1641784206865977346
+# Reference: https://www.virustotal.com/gui/file/d45e6caaab18518b4ea415f3fb0eb8acb5ed4f4c7d2b338a83b9fa8959d8bb81/detection
+# Reference: https://www.virustotal.com/gui/file/99c5a44dc2fc79e05ce646626c4827fac9511eaa2fa1f9a269997fe50d8a7d97/detection
+# Reference: https://www.virustotal.com/gui/file/674261a4660c04e3c4f6b90248ef1d66939e93d23f833723443ddb4e054b8226/detection
+# Reference: https://www.virustotal.com/gui/file/2b8b6abaec672499b16f924c65357888f66dd5f7b080f1497a6fde8de93eb307/detection
+
+194.165.59.173:443
+software-xcloud.com
+
+# Reference: https://www.virustotal.com/gui/file/e8207e8c31a8613112223d126d4f12e7a5f8caf4acaaf40834302ce49f37cc9c/detection
+
+128858.site
+/wp-adm/gate.php
+
+# Generic
+
+/hvwstxaaov/index.php
+/hvwstxaaov/gate.php
+/hvwstxaaov/login.php
+/hvwstxaaov/

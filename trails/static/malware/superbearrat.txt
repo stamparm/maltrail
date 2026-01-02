@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://interlab.or.kr/archives/19416
+# Reference: https://www.virustotal.com/gui/ip-address/89.117.139.230/relations
+# Reference: https://www.virustotal.com/gui/file/282e926eb90960a8a807dd0b9e8668e39b38e6961b0023b09f8b56d287ae11cb/detection
+# Reference: https://www.virustotal.com/gui/file/5305b8969b33549b6bd4b68a3f9a2db1e3b21c5497a5d82cec9beaeca007630e/detection
+
+hironchk.com

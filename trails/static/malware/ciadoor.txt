@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/eef2d16204884af202ff23b708ed2d075db40b8d4e2826ac1c4111539209507c/detection
+
+diabolic.no-ip.info
+
+# Reference: https://www.virustotal.com/gui/file/6e853d6f85db11e9fd906941774575b6e309ca6d393004e1780b44dc570bc3f0/detection
+
+theef.lcirc.net

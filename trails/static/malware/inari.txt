@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: inari loader
+
+# Reference: https://x.com/DarkWebInformer/status/1911853388792467949
+# Reference: https://x.com/solostalking/status/1912461060629561676
+
+213.176.114.228:8080
+62.60.157.47:8080
+65.87.7.103:8080
+65.87.7.115:8080
+77.239.97.85:8080

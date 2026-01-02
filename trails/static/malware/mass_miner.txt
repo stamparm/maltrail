@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: MyKings (Smominru) != MassMiner (KingMiner)
+
+# Reference: https://cybersecurity.att.com/blogs/labs-research/massminer-malware-targeting-web-servers
+
+list.idc3389.top
+down.idc3389.top
+vps.idc3389.top
+idc3389.top
+down.kingminer.club
+list.kingminer.club
+rat.kingminer.club
+kingminer.club

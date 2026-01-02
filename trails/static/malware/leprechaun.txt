@@ -1,0 +1,46 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: LeprechaunHvnc
+
+# Reference: https://twitter.com/naumovax/status/1775185431237206209
+# Reference: https://www.virustotal.com/gui/file/1d0753beaabc660960bb5297f43eae38128647c2a23b02b2550646d58aff8797/detection
+# Reference: https://app.validin.com/detail?find=spain.orac.site&type=dom&ref_id=80a9b8a67cb#tab=host_pairs
+
+http://208.76.221.164
+http://208.76.222.95
+http://208.76.223.18
+http://208.76.223.24
+http://208.85.16.231
+http://208.85.18.81
+http://208.85.19.202
+http://208.85.21.19
+http://208.85.22.156
+http://45.63.43.26
+http://65.20.100.103
+http://65.20.101.128
+http://65.20.101.247
+http://65.20.102.99
+http://65.20.103.129
+http://65.20.103.182
+http://65.20.104.167
+http://65.20.104.62
+http://65.20.105.111
+http://65.20.105.46
+http://65.20.105.70
+http://65.20.106.101
+http://65.20.106.109
+http://65.20.106.192
+http://65.20.106.221
+http://65.20.106.47
+http://65.20.106.93
+http://65.20.107.127
+http://65.20.96.236
+http://65.20.97.150
+http://65.20.99.225
+
+# Generic
+
+/c2.php?action=fetchcommand
+/c2.php?action=fetchcommand&botid=
+/c2.php?action=installnewbot

@@ -1,0 +1,103 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/DCSO_CyTec/status/1592866591926255619
+# Reference: https://medium.com/@DCSO_CyTec/506854c5f2e2
+
+101.114.114.114:9002
+106.120.215.202:8089
+106.52.119.45:8081
+107.175.172.101:8081
+111.198.172.129:8089
+113.125.92.32:8081
+114.113.238.83:9000
+114.113.238.84:6523
+114.247.91.205:8081
+114.251.223.84:8081
+115.236.55.14:11111
+116.236.40.57:8081
+116.54.125.202:8081
+116.6.102.21:8081
+116.6.102.24:8081
+123.60.8.91:8081
+124.193.100.170:18081
+124.193.100.170:8079
+124.207.115.69:28081
+124.239.137.136:8081
+124.250.18.111:8080
+129.9.99.60:8081
+145.0.20.133:8081
+145.0.231.36:8081
+168.63.1.206:8081
+183.196.0.25:8081
+183.196.83.220:8081
+183.6.106.176:8877
+183.6.50.76:8081
+185.185.185.56:8081
+19.129.255.45:8081
+202.100.20.88:53961
+202.100.229.104:8081
+202.107.201.3:8081
+218.22.14.11:8081
+218.76.15.13:8081
+219.238.141.242:8081
+220.168.209.150:8081
+220.248.243.82:8081
+220.248.250.19:8081
+221.195.106.200:8081
+221.195.106.200:9090
+222.85.157.82:8081
+36.112.11.14:8081
+47.93.253.22:8081
+58.240.32.125:8081
+58.49.84.64:8081
+58.49.84.65:80
+58.49.84.67:443
+59.37.29.163:8081
+60.3.88.11:8081
+61.130.180.110:8081
+61.144.203.171:8081
+61.178.243.162:9009
+88.1.46.128:8081
+88.1.46.214:8081
+dsm.hn.sgcc.com.cn
+finance.yto.net.cn
+hbszyy.gcptrial.com
+hbzyjxkh.cn
+oa.pumch.cn
+sgwpdm.ah.sgcc.com.cn
+zhyy.hbszyy.cn
+
+# Reference: https://twitter.com/Jane_0sint/status/1680873413366218753
+# Reference: https://app.any.run/tasks/0ee5b1f6-9f7e-4d7e-8951-fddf56b9ae35/
+# Reference: https://app.any.run/tasks/72fb809d-dd81-451f-80ef-997a59c235e5/
+
+111.203.161.31:8081
+47.100.65.182:8081
+
+# Reference: https://securelist.com/hz-rat-attacks-wechat-and-dingtalk/113513/
+# Reference: https://www.virustotal.com/gui/file/6d6f2a08905f7f4f80fa051ff8da93beaefa468189d94b860c1a90e1d2cc3ebb/detection
+# Reference: https://www.virustotal.com/gui/file/ce06477c913ab053ec64f163ce3597606b7341b582b9706d8992e98677bcabe2/detection
+# Reference: https://www.virustotal.com/gui/file/1400210f2eedab36caff8ce89d6d19859ba3116775981b2be8b5069ef109c2c3/detection
+# Reference: https://www.virustotal.com/gui/file/ee2b0c3e1d0b77806d22ab01eb75b77b98b99c5c09571f10135d4a74995f8a8d/detection
+# Reference: https://www.virustotal.com/gui/file/6210ec0e905717359e01358118781a148b6d63834a54a25a95e32e228598c391/detection
+# Reference: https://www.virustotal.com/gui/file/0cca3449ff12cb75c9fd9cf4628b5d72f5ac67d1954dc97d9830436207c4c917/detection
+# Reference: https://www.virustotal.com/gui/file/028198b41e27665d633850e5c5c1f6b5ea7fe1d621c10a1d8c869091dc67eb6c/detection
+# Reference: https://www.virustotal.com/gui/file/4b7ff9f742d2362bcabe096aab1a98d26242b76edda39060a3c2aa3fd387193f/detection
+# Reference: https://www.virustotal.com/gui/file/1e07585f52be4605be0459bc10c67598eebe8c5d003d6e2d42f4dbbd037e74c1/detection
+# Reference: https://www.virustotal.com/gui/file/5d78fc86a389247d768a6bdf46f3e4fd697ed87c133b99ee6865809e453b2908/detection
+# Reference: https://www.virustotal.com/gui/file/b21a84a6cb9b47f6e0fe0956ac546628ddbe525b742c4219442aaf20c21ea8a1/detection
+# Reference: https://www.virustotal.com/gui/file/ba3effbaa1e35c1f80a3ef048b4e8bfdba83cb21475d7bf92ecec5b6ee0997b7/detection
+# Reference: https://www.virustotal.com/gui/file/8bd3a195b34af71ce3b6994fd34154aeaab6962d126d4c6123ee8ab4d48c85f7/detection
+# Reference: https://www.virustotal.com/gui/file/7558db1ed5124d5a9d5abe750e237cadceebc56ca70ca1a7bb7977eae5a21223/detection
+# Reference: https://www.virustotal.com/gui/file/5970941a41fe96c918f818913375f529899a07b0612d78e5c4e528861fdf8d4d/detection
+
+http://218.193.83.70
+111.21.246.147:8081
+113.125.92.32:8081
+120.53.133.226:8082
+123.232.31.206:8081
+20.60.250.230:8081
+218.65.110.180:8081
+29.40.48.21:8081
+58.49.21.113:8081

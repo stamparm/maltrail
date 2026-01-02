@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: hellcat ransomware, morpheus ransomware
+
+# Reference: https://x.com/AlvieriD/status/1849777930076823821
+
+hellcakbszllztlyqbjzwcbdhfrodx55wq77kmftp4bhnhsnn5r3odad.onion
+
+# Reference: https://x.com/siri_urz/status/1876568230376173978
+# Reference: https://www.virustotal.com/gui/file/93aa8b0f950a7ea7f0cee2ba106efaacf673bb2b504ca0b9e87f9ea41acfb599/detection
+
+izsp6ipui4ctgxfugbgtu65kzefrucltyfpbxplmfybl5swiadpljmyd.onion

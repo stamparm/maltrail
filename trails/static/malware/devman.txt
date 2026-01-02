@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: devman ransomware, devman21
+
+# Reference: https://x.com/RakeshKrish12/status/1909169075365835014
+
+qljmlmp4psnn3wqskkf3alqquatymo6hntficb4rhq5n76kuogcv7zyd.onion
+
+# Reference: https://x.com/karol_paciorek/status/1909197870877622457
+# Reference: https://app.validin.com/detail?find=Devman%27s%20Place&type=raw&ref_id=b162f6d1f25 (# 2025-04-07)
+
+http://83.217.209.210
+83.217.209.210:137
+
+# Reference: https://x.com/DarkWebInformer/status/1941526237597532665
+
+wugurgyscp5rxpihef5vl6b6m5ont3b6sezhl7boboso2enib2k3q6qd.onion
+
+# Reference: https://x.com/karol_paciorek/status/1942140407481000093
+# Reference: https://app.validin.com/detail?find=DEVMAN%202.0%20-%20Leaked%20Data&type=raw&ref_id=ddd03b61953#tab=host_responses (# 2025-07-07)
+
+http://86.106.85.43
+
+# Reference: https://x.com/pcrisk/status/1999371729215635507
+# Reference: https://www.virustotal.com/gui/file/386bc982f8bd9fa68cce5f448816fae5cea648d744c1bc69e1ea5afc560f3582/detection
+
+tygjm32hxyqienrgwxveiaw3azbjmfaln2znn2hldz2oe6v453ngwlyd.onion

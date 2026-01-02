@@ -1,0 +1,84 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.securityweek.com/red-alert-android-trojan-rent-500-month
+# Reference: https://twitter.com/0bfusCat/status/1036577317190021127
+
+95.213.251.200:7878
+
+# Reference: https://twitter.com/0bfusCat/status/1037972328834125825
+# Reference: https://www.virustotal.com/gui/domain/ffpanel.ru/relations
+# Reference: https://www.virustotal.com/gui/file/c95157bd9f0525d2fd8d7f3981ebdcb2fcb35f903351122ac6d2f56cf66fe823/detection
+
+185.100.222.10:7878
+5.189.224.136:7878
+ffpanel.ru
+
+# Reference: https://twitter.com/0bfusCat/status/1034888139813408768
+
+185.100.222.205:7878
+185.100.222.218:7878
+185.100.222.220:7878
+185.100.222.222:7878
+185.100.222.223:7878
+185.100.222.227:7878
+185.100.222.23:7878
+185.100.222.28:7878
+185.100.222.42:7878
+185.100.222.55:7878
+185.100.222.58:7878
+185.100.222.62:7878
+185.100.222.67:7878
+185.100.222.76:7878
+185.100.222.77:7878
+185.100.222.80:7878
+
+# Reference: https://www.virustotal.com/gui/file/90449d73026e4dce2ad333934d5a8158ca36b24d495e73adda6c520ddf1b49e4/detection
+
+146.0.72.81:7878
+
+# Reference: https://www.virustotal.com/gui/file/f0fd8878043e7c863fe1b9264ef2023e523b60874a03721aba55cf8e22182869/detection
+# Reference: https://www.virustotal.com/gui/file/c7b8d475196d923ecf45a8c9174ed74558d52066b6edbd49cda99d51ea586ee6/detection
+
+146.0.72.82:7878
+
+# Reference: https://www.virustotal.com/gui/file/d8489e44237e5f083c067cb8c2a6ee9d0ef22a5931468eea6ca5a1d0dbfa39bf/detection
+# Reference: https://www.virustotal.com/gui/file/51a2dd34c1b46c1abfe84e49145b0e1755eb6ac568dec27da92c57dcb3d63d74/detection
+
+146.0.72.83:7878
+
+# Reference: https://www.virustotal.com/gui/file/a5db9e4deadb2f7e075ba8a3beb6d927502b76237afaf0e2c28d00bb01570fae/detection
+
+146.0.72.84:7878
+
+# Reference: https://www.virustotal.com/gui/file/f7f442fd6d056e9ee86aff801af85bf6f8b9cc2de4f09d7341925b9f841f2c12/detection
+# Reference: https://www.virustotal.com/gui/file/b83bd8c755cb7546ef28bac157e51f04257686a045bbf9d64bec7eeb9116fd8a/detection
+
+146.0.72.85:7878
+
+# Reference: https://www.virustotal.com/gui/file/7f1d23a5bb9f13bdc7a09ea95f4628f8f621884468ae7c8ba5f4d1571104d7df/detection
+
+146.0.72.85:7878
+
+# Reference: https://www.virustotal.com/gui/file/02417b01f05ab4f20fd1a0bacbb302c63a44c0d2f4cd1ba51cfdaaaee465f6a3/detection
+# Reference: https://www.virustotal.com/gui/file/ed3c19bdaacfa5f8e55e5ec945ab6875be8a26469020e0091188748cea3343d0/detection
+
+146.0.72.91:7878
+
+# Reference: https://www.virustotal.com/gui/file/c69552b648b5b65c23be4299f35cabdd3fcc8163cce1c87cd84aa4f8523e6d56/detection
+# Reference: https://www.virustotal.com/gui/file/b9d87d53658fbd3c0b417fc6adb1a2225426fdfe3c07edb8332b9947a4bfdc80/detection
+
+146.0.72.94:7878
+
+# Reference: https://www.virustotal.com/gui/file/4e7c604d1801e5b15b87c7f7377e752eaa882e03e1d7add5b1840864c3f79722/detection
+
+146.0.72.96:7878
+
+# Reference: https://www.virustotal.com/gui/file/f29f67fc91eeb462c275980038688b9856216c6db6157f5fc751d43a88acf5bf/detection
+# Reference: https://www.virustotal.com/gui/file/a3e99c4fd34742520b6a668ada2ce5fe15315bb956f431627185917a8a439b9d/detection
+
+146.0.72.97:7878
+
+# Generic
+
+/client_ip.php?key=

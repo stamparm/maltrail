@@ -1,0 +1,280 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: krbanker
+
+# Reference: https://twitter.com/Paladin3161/status/1185196100220665856
+
+0x0x0x0x0.best
+0x0x0x0x0.club
+0x0x0x0x0.xyz
+1c1c1c1c.best
+oiwcvbnc2e.stream
+
+# Reference: https://twitter.com/Kafan_MalwareHT/status/1359153542783774727
+# Reference: https://app.any.run/tasks/7200fdbe-b752-41d1-8a74-9822e75cd2fc/
+# Reference: https://www.virustotal.com/gui/file/1ac1a77ff3cf20c46f132c214a737ec2c2086f4ab42068a55a8ac30abfea432d/detection
+
+r.pengyou.com
+users.qzone.qq.com/fcg-bin/cgi_get_portrait.fcg?uins=
+
+# Reference: https://www.virustotal.com/gui/file/008e45f4d75d423d8f77cec6b80ae4f87248b4c66ca6efba019329ea735e8eda/detection
+
+14.18.141.27:33355
+
+# Reference: https://www.virustotal.com/gui/file/eb603df8f80f6863a6602e73e335a0b3eb35087e19e5b518a141ad5189055fdc/detection
+
+14.18.141.27:8668
+
+# Reference: https://malpedia.caad.fkie.fraunhofer.de/details/win.krbanker
+# Reference: https://www.virustotal.com/gui/file/008c859fb13090cf9a14190cbadf0aa6176264e18b2c9c34389f18f993fa5e42/detection
+
+/fcg-bin/cgi_get_portrait.fcg?uins=
+
+# Reference: https://tria.ge/220725-kbamjsbeck/behavioral1
+# Reference: https://tria.ge/220725-kh522aagg8/behavioral1
+
+91.208.245.116:10020
+nxxxn.ga
+r.nxxxn.ga
+fuck88.f3322.net
+
+# Reference: https://tria.ge/220722-pea5psfccn/behavioral1
+
+http://106.126.11.167
+
+# Reference: https://tria.ge/220624-mg3lmabfdq/behavioral1
+
+110.42.64.64:11022
+
+# Reference: https://tria.ge/220710-qc7xbsbegj/behavioral1
+
+43.248.201.209:24303
+qq2457600534.e2.luyouxia.net
+
+# Reference: https://www.virustotal.com/gui/file/b313ca691222060976a9e84c2844ef65adca90aa71edfd236114fc4af316bc7e/detection
+
+42.192.232.209:3650
+58.247.212.48:6666
+
+# Reference: https://www.virustotal.com/gui/file/43459add0078b6a62c05541b6c4c1c4b8447019635b1d3b2fe41f306fc149820/detection
+
+42.192.232.209:8896
+
+# Reference: https://www.virustotal.com/gui/file/76e37df391e311f92a1030c3a2a68f35e8c5308e5b07eea741164b9400d3f69d/detection
+
+118.112.248.123:3650
+42.192.232.209:8000
+
+# Reference: https://www.virustotal.com/gui/file/efdd712dc7ccee416dc25ee6b80cab926708d74ed65e4d905703a3729a7239bc/detection
+
+45.32.212.57:3650
+
+# Reference: https://www.virustotal.com/gui/file/b6573c414cddba0170719c4a5d82bd7b38b2042793c4ff0064cd9bdd81d572ed/detection
+
+42.192.232.209:8888
+
+# Reference: https://www.virustotal.com/gui/file/9dec29df40e9a23c04321040e36ae0c84f686af11ce7115642431e879b7fbceb/detection
+
+103.39.222.89:3650
+
+# Reference: https://www.virustotal.com/gui/file/83d9bd147a4b5903426cc01c0b5592a5ad0c405f74ca13c873e8593c2b7f7bc3/detection
+
+103.27.109.51:3650
+
+# Reference: https://www.virustotal.com/gui/file/2ebf6b0c3c6c42169746f3c8da7069a74c77a92b7783a50160f8f3f9c38f931a/detection
+
+111.67.196.146:3650
+
+# Reference: https://www.virustotal.com/gui/file/0f4d1a9ac1322f2bb0ae03ff90a2ef81237e626965c33098e49be650050caf8c/detection
+
+27.124.4.165:3650
+
+# Reference: https://twitter.com/AttackTrends/status/1610266530046001152
+# Reference: https://tria.ge/230103-nl53zsbc37/behavioral1
+
+110.88.128.233:5210
+
+# Reference: https://app.any.run/tasks/4f1dcbf3-ca4d-4b60-9067-2571e59bd99f/
+
+http://45.119.55.12
+103.97.131.17:3366
+
+# Reference: https://tria.ge/221107-vfn1vabadk/behavioral1
+
+http://139.196.217.38
+139.196.217.38:8089
+
+# Reference: https://www.virustotal.com/gui/domain/a1free9bird.com/relations
+# Reference: https://tria.ge/221106-a9r95sadg5/behavioral1
+
+a1free9bird.com
+bj6po.a1free9bird.com
+dhl4mql.a1free9bird.com
+do6fli.a1free9bird.com
+do7fli.a1free9bird.com
+do8fli.a1free9bird.com
+do9fli.a1free9bird.com
+jg5epm.a1free9bird.com
+ka7ds.a1free9bird.com
+w1upte.a1free9bird.com
+
+# Reference: https://www.virustotal.com/gui/file/0918b05df1a6cd88ceb4cafd219b376aa40753145c5ea627cb57c9917edac033/detection
+
+47.98.62.252:11420
+tomyun.320.io
+
+# Reference: https://www.virustotal.com/gui/file/0545f4dd8f18e92ac706629803628ebb1cefc62b27e65edcc9cc8f8278d9659d/detection
+
+lovesnow.320.io
+/mainhttp.snow
+
+# Reference: https://twitter.com/JustWantToQ1/status/1688984468755722241
+# Reference: https://twitter.com/tosscoinwitcher/status/1689108220772761600
+# Reference: https://tria.ge/230809-c8dfpsgf64/behavioral1
+
+118.123.237.35:12345
+
+# Reference: https://twitter.com/naumovax/status/1716436449392804049
+# Reference: https://tria.ge/231013-qkln3abh97/behavioral2
+# Reference: https://tria.ge/231015-rcnzwshe36/behavioral2
+# Reference: https://tria.ge/231018-j2ehradh45/behavioral2
+
+124.223.107.201:8899
+gcstcp.com
+
+# Reference: https://twitter.com/naumovax/status/1716832738777694593
+# Reference: https://pastebin.com/4NNs1s2S
+# Reference: https://tria.ge/231014-htx5fsae49/behavioral1
+# Reference: https://www.virustotal.com/gui/file/9fa041f6e4e3c863bc19a93f9b4ffe92cf098e38605fa3877b6370021e1c3eb4/detection
+
+101.32.211.148:9999
+103.148.186.25:54188
+103.97.229.172:2022
+110.249.149.5:5667
+110.40.188.162:11451
+115.238.196.227:1314
+123.99.198.148:5253
+124.220.3.178:5667
+144.48.8.94:2022
+154.23.176.18:2022
+154.23.178.149:2022
+154.23.178.57:2022
+154.23.182.22:2022
+154.34.112.223:2035
+154.55.128.124:2022
+156.236.64.97:2022
+206.119.81.10:2022
+206.119.82.44:2022
+206.238.199.63:2022
+38.181.21.52:2022
+38.181.22.72:2022
+38.181.22.72:56700
+38.55.205.246:2022
+
+# Reference: https://twitter.com/Artilllerie/status/1734242372165234931
+# Reference: https://tria.ge/231211-nk1rwaegb3/behavioral1
+
+8.218.159.17:2123
+anydesk.cyou
+
+# Reference: https://twitter.com/Gi7w0rm/status/1767161955733696771
+
+43.248.188.181:2222
+43.248.188.181:8181
+43.248.188.181:9003
+
+# Reference: https://x.com/RacWatchin8872/status/1792318833916604778
+# Reference: https://www.virustotal.com/gui/file/8569e3cba9bf7027444a864791f914ff4c6a635f5ad290e0256e873a8f910e85/detection
+
+8.142.75.21:7878
+
+# Reference: https://x.com/RakeshKrish12/status/1802592009191895522
+# Reference: https://www.virustotal.com/gui/file/0136c5ae084a671a07274a9101bf69a9c8348ad0181a519dcc163eecc0a739d0/detection
+
+154.12.52.131:3093
+154.88.4.13:3093
+156.245.32.229:3093
+156.245.32.230:3093
+156.245.32.232:3093
+156.245.32.233:3093
+156.245.32.239:3093
+156.245.33.11:3093
+156.245.33.12:3093
+156.245.33.17:3093
+156.245.33.22:3093
+156.245.33.23:3093
+156.245.33.24:3093
+156.245.33.25:3093
+156.245.33.26:3093
+156.245.33.27:3093
+156.245.33.28:3093
+156.245.33.9:3093
+156.245.34.35:3093
+156.245.34.39:3093
+156.245.34.41:3093
+156.245.34.46:3093
+156.245.34.50:3093
+156.245.34.59:3093
+156.245.34.60:3093
+156.245.34.61:3093
+156.245.35.77:3093
+156.245.35.80:3093
+156.245.36.101:3093
+156.245.36.102:3093
+156.245.36.124:3093
+156.245.37.137:3093
+156.245.37.138:3093
+156.245.37.141:3093
+156.245.37.143:3093
+156.245.37.145:3093
+156.245.37.146:3093
+156.245.37.151:3093
+156.245.38.163:3093
+156.245.38.166:3093
+156.245.38.185:3093
+156.245.39.207:3093
+156.245.39.210:3093
+160.121.84.148:3093
+160.121.91.148:3093
+222.186.172.42:8000
+47.245.26.232:3093
+47.251.6.29:3093
+47.254.125.114:3093
+47.74.20.127:3093
+47.88.90.104:3093
+
+# Reference: https://x.com/pollo290987/status/1814790235802247397
+# Reference: https://www.virustotal.com/gui/file/331485c01b91a54a2ee03351cb80f04fb271f74344765c9706e5204f87d5d7b1/detection
+
+206.238.197.185:3760
+wwwfp.oss-cn-hongkong.aliyuncs.com
+
+# Reference: https://x.com/pollo290987/status/1826270379440238638
+# Reference: https://www.virustotal.com/gui/file/e3a2778322ac4ddfbf4a9b2cb7d9921e996f857ecc50344b6248cf2e5394c756/detection
+
+216.83.53.185:3760
+luynhk.com
+
+# Reference: https://x.com/cyberfeeddigest/status/1854635756213748144
+# Reference: https://www.virustotal.com/gui/file/ccc9f3d84c2251de94f54d03c62257b21ec7eeef29c16931fae4e06ef367c3fe/detection
+# Reference: https://www.virustotal.com/gui/file/c19c0c771c944d193c6bfd6336ac954797bf86ef8239aded15cf394e5384f93f/detection
+# Reference: https://www.virustotal.com/gui/file/7943c00ba872084e2882c51073cb8a6b1afedb182718abbcbe023175d3096bc5/detection
+
+http://154.44.26.68
+103.205.254.196:8488
+103.239.244.218:8898
+154.44.26.68:8868
+
+# Reference: https://x.com/banthisguy9349/status/1865365655169491231
+# Reference: https://www.virustotal.com/gui/file/005118ebbbd6ce878eb3d73ea61440cfc904c8a07f10ed84f56669ae6c68f456/detection
+
+222.186.172.42:1000
+222.186.172.42:8080
+
+# Reference: https://x.com/RedDrip7/status/1971481601231200594
+# Reference: https://www.virustotal.com/gui/file/0bf46cee5f8f746e634d0e4e2a52a34c1741641d01da6dfe245bd1718c1a591b/detection
+
+104.143.47.71:12345
+104.143.47.71:8080
+qaqchawu.com

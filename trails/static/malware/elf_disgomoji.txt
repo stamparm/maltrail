@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: zkarletflash, UTA0137
+
+# Reference: https://www.volexity.com/blog/2024/06/13/disgomoji-malware-used-to-target-indian-government/
+# Reference: https://www.virustotal.com/gui/file/f2eca0ed18b7d5bd800b597bd429c028c62524da777bf4e09e14440c50ce1529/detection
+# Reference: https://www.virustotal.com/gui/file/c981aa1f05adf030bacffc0e279cf9dc93cef877f7bce33ee27e9296363cf002/detection
+# Reference: https://www.virustotal.com/gui/file/2abaae4f6794131108adf5b42e09ee5ce24769431a0e154feabe6052cfe70bf3/detection
+
+ordai.quest
+
+# Reference: https://x.com/malwrhunterteam/status/1815620670581047381
+# Reference: https://www.virustotal.com/gui/file/37d2afb613302607bd61fe337e2709226bb7cbd919d913b32aad2212c97fbee5/detection
+
+185.215.113.5:443
+
+# Generic
+
+/kxcsugka.php

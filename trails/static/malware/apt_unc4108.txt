@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ghostweaver
+
+# Reference: https://trac-labs.com/dont-ghost-the-socgholish-ghostweaver-backdoor-574154dd9983
+# Reference: https://app.validin.com/detail?find=192.52.167.63&type=ip4&ref_id=5e5d97557ba#tab=resolutions
+
+akami-cdns.com
+cdns-clfr-dns.com
+content-cdnsclfr.com
+query-dns-cdn.com
+query-js-ajax.com

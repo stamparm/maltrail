@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/alphasoc/status/1816851184356888979
+# Reference: https://cloud.google.com/blog/topics/threat-intelligence/apt45-north-korea-digital-military-machine
+# Reference: https://www.virustotal.com/gui/file/8aa6612c95c7cef49709596da43a0f8354f14d8c08128c4cb9b1f37e548f083b/detection
+# Reference: https://www.virustotal.com/gui/file/6ca3c2a6001f1149ff75ab46402dee40d97602bab0b43ac144ca70fbd2101404/detection
+# Reference: https://www.virustotal.com/gui/file/38f0f2d658e09c57fc78698482f2f638843eb53412d860fb3a99bb6f51025b07/detection
+
+http://84.38.134.56
+84.38.134.56:1337
+84.38.134.56:8080

@@ -1,0 +1,228 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fireeye.com/blog/threat-research/2015/12/latentbot_trace_me.html
+
+remotesupport.aariverside.com
+office.ontimedatasolutions.com
+estream.homelinux.com
+sba-vig.vig.pl
+sba2-vig.vig.pl
+itmanager.maspex.com
+gate.spacesoft.kr
+supremogw2.nanosstems.it
+cmc.counterp.com
+dataroad.iptime.org
+/:Bot_Engine-
+
+# Reference: https://twitter.com/OttoScav/status/1150816480432459776
+
+http://18.218.52.120
+floresbelasflore.online
+
+# Reference: https://twitter.com/BroadAnalysis/status/796379886738874368
+
+http://104.232.39.109
+
+# Reference: https://twitter.com/tmmalanalyst/status/796650651631505408
+
+http://108.61.186.143
+
+# Reference: https://twitter.com/malware_traffic/status/856924240158896128
+
+http://37.72.175.221
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1233304373394014209
+# Reference: https://app.any.run/tasks/1ab4fd49-b2cd-4594-becc-1526f33b495a/
+
+23.81.246.246:6260
+35.180.191.157:443
+
+# Reference: https://twitter.com/casual_malware/status/1235056986762309634
+
+http://3.136.20.196
+
+# Reference: https://twitter.com/casual_malware/status/1235379921616240640
+
+35.180.191.157:443
+45.147.229.21:1942
+
+# Reference: https://twitter.com/malwrhunterteam/status/1238045857527840769
+# Reference: https://www.virustotal.com/gui/file/dd4e0a45af01b740dd516db513e8eccc47b7c7efc8da10fc9ce05029118459a6/detection
+
+http://45.147.228.82
+144.208.127.96:4548
+45.147.228.82:44562
+
+# Reference: https://www.virustotal.com/gui/ip-address/168.62.217.235/relations
+
+http://168.62.217.235
+
+# Reference: https://www.virustotal.com/gui/file/6d895905107555a59600ea6bae6cb3392d758654a7258cb70f3d40fc16eafc8f/detection
+
+http://167.114.179.73
+167.114.179.73:12129
+
+# Reference: https://www.virustotal.com/gui/ip-address/160.20.147.130/relations
+
+http://160.20.147.130
+160.20.147.130:1942
+160.20.147.130:1948
+
+# Reference: https://www.virustotal.com/gui/ip-address/146.71.87.161/relations
+
+http://146.71.87.161
+146.71.87.161:4921
+146.71.87.161:9141
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.147.231.27/relations
+
+http://45.147.231.27
+45.147.231.27:1942
+
+# Reference: https://twitter.com/JayTHL/status/1243263282963714049
+
+167.114.179.73:9093
+
+# Reference: https://www.virustotal.com/gui/ip-address/52.171.138.139/relations
+
+http://52.171.138.139
+
+# Reference: https://www.virustotal.com/gui/ip-address/144.208.127.96/relations
+
+http://144.208.127.96
+144.208.127.96:4548
+144.208.127.96:7197
+
+# Reference: https://twitter.com/ScumBots/status/1243605306262855681
+
+http://45.147.231.94
+45.147.231.94:1942
+
+# Reference: https://www.virustotal.com/gui/ip-address/52.172.31.99/relations
+
+http://52.172.31.99
+
+# Reference: https://twitter.com/ScumBots/status/1245010065792344069
+
+45.147.231.37:1948
+
+# Reference: https://twitter.com/baberpervez2/status/1252754482548617216
+
+http://13.77.122.15
+http://3.134.118.103
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1255412539317465088
+
+192.236.147.100:51224
+192.236.147.100:1950
+
+# Reference: https://app.any.run/tasks/8dc4772c-0619-456c-86da-4cf946230712/
+
+192.236.147.100:1950
+192.236.147.100:51224
+
+# Reference: https://app.any.run/tasks/0def6418-2cf6-4ac7-a53f-12ec4b6871eb/
+
+http://152.67.44.175
+152.67.44.175:9010
+
+# Reference: https://app.any.run/tasks/c7ff6fcb-77b3-4580-98b1-7a2548dd7d0d/
+
+51.161.122.15:8081
+54.39.233.92:1010
+
+# Reference: https://twitter.com/wwp96/status/1330330478260477953
+
+188.13.113.233:2020
+51.178.161.234:443
+
+# Reference: https://twitter.com/seguridadyredes/status/1480852275233017857
+
+65.52.64.191:443
+
+# Reference: https://twitter.com/seguridadyredes/status/1485553297968746498
+# Reference: https://www.virustotal.com/gui/file/237bd5f549893d37bac13eccf70e195b540cb51d71bd6d9b74aa1cf40ada155b/detection
+
+13.78.141.178:443
+
+# Reference: https://www.virustotal.com/gui/file/7a8a5b763d3c81fd31866dd55ea5e3e44004793d7f494f6be366d7f6f06f291f/detection
+
+191.8.238.4:3933
+servicesofhall.thruhere.net
+
+# Reference: https://cys-centrum.com/ru/news/module_trojan_for_unauthorized_access (Russian)
+
+http://95.211.204.14
+95.211.204.14:443
+95.211.204.14:8098
+
+# Reference: https://twitter.com/StopMalvertisin/status/1555792045935329280
+
+104.168.190.164:9050
+
+# Reference: https://twitter.com/ankit_anubhav/status/1555522253235691520
+
+gennenmimaiehiinnjynnyjiidfcncc.ciscofreak.com
+
+# Reference: https://twitter.com/StopMalvertisin/status/1555792537692307456
+
+ifnnfnmcmacfdccnnjynnyjiidfcncc.collegefan.org
+
+# Reference: https://twitter.com/ankit_anubhav/status/1555521068734902272
+# Reference: https://tria.ge/220805-wxs7kaddfk/behavioral1
+
+http://167.114.137.244
+http://40.69.102.105
+167.114.137.244:48514
+40.69.102.105:25466
+chjjhjmomaoheoojjbynnyjiidfcncc.cable-modem.org
+gennenmimaiehiinnjynnyjiidfcncc.ciscofreak.com
+odbbdbmgmagdfggbbnynnyjiidfcncc.blogsyte.com
+
+# Reference: https://twitter.com/StopMalvertisin/status/1555792537692307456
+# Reference: https://www.virustotal.com/gui/file/2ae9ad51dd10043bb0d6cf22c55df1e5be0578a2d6938609aac1c30fe803d663/detection
+
+http://104.232.32.101
+
+# Reference: https://twitter.com/pollo290987/status/1555658174392320001
+
+http://146.71.81.191
+http://146.71.81.192
+146.71.81.192:39522
+146.71.81.193:3953
+dfttftebfndftglflcctntbnctcc.cable-modem.org
+
+# Reference: https://twitter.com/0xToxin/status/1557368528113737731
+
+http://20.204.31.168
+martelinasse.com
+/$DIGITNFE00028910003840000027771
+
+# Reference: https://twitter.com/0xToxin/status/1557369794982182919
+# Reference: https://github.com/0xToxin/Malware-IOCs/blob/main/LatentBot/LatentBot%20-%2010082022
+
+http://20.121.114.115
+http://20.198.64.152
+20.198.64.152:6321
+zaqgqebbkmesbqcsmaaszkzz.access.ly
+zcbgbkllaskmbqcsmaaszkzz.cable-modem.org
+zcbgbkllaskmbqcsmaaszkzz.ddns.me
+zelglajjcmasbqcsmaaszkzz.brasilia.me
+zkjgjcqqescmbqcsmaaszkzz.blogsyte.com
+
+# Reference: https://twitter.com/0xToxin/status/1696812177854697528
+
+http://167.114.7.82
+23.254.204.192:3948
+23.254.204.229:3948
+
+# Generic
+
+/$rdgate
+/$rdgate?ACTION=
+/&app?ACTION=HELLO
+/&app?ACTION=START&ID=
+/A3A39HFYUV8HS5D.php
+/gkidofull.iso
+/blkoiunder.iso

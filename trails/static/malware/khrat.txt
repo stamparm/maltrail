@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.forcepoint.com/blog/security-labs/trojanized-adobe-installer-used-install-dragonok%e2%80%99s-new-custom-backdoor
+
+cookie.inter-ctrip.com
+help.inter-ctrip.com 
+bit.inter-ctrip.com
+kh.inter-ctrip.com

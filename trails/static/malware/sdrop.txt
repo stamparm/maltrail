@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/StopMalvertisin/status/1669279550596091911
+# Reference: https://www.virustotal.com/gui/file/b621c0e744c03b45c0b32f244a6b8b4a84c449ffde4a62e52d8acfdf6fac264a/detection
+# Reference: https://www.virustotal.com/gui/file/a4d7844280a7af693b468225e73496e2341faac96db6bc5194e58e22e2bf3413/detection
+
+golden-starship-baec18.netlify.app
+
+# Reference: https://www.virustotal.com/gui/file/02f7d85676e1567768625f293a05f6ada4addc6a96bed6387ec927c13034bf03/detection
+
+betmaniaplus.com
+
+# Reference: https://twitter.com/fr0s7_/status/1726729168090501533
+# Reference: https://www.virustotal.com/gui/file/90b2e8d07344df9f9b479d00783b3eadf8615aa640f0015cec7710805e988f56/detection
+
+supportlights.com
+
+# Reference: https://www.virustotal.com/gui/file/9c856675c6cec93b0ab072320e843d7c71a326283564b4e980b329f1667f38b4/detection
+# Reference: https://www.virustotal.com/gui/file/4095f0f580ca2d0351ffcb1f0c9c9edfa567e30c4475f8341d332dec6e760acf/detection
+# Reference: https://www.virustotal.com/gui/file/34787993afbda403ac7a979390152799fd5c0470009c874ace928c37fbc53c66/detection
+# Reference: https://www.virustotal.com/gui/file/0fca562dbc87dc6e99c7c0b9dccabb3e0162687da5f324f0c94bd3a1bac67573/detection
+
+expandenvironmentstrings.000webhostapp.com

@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2022/01/25/watering-hole-deploys-new-macos-malware-dazzlespy-asia/
+# Reference: https://otx.alienvault.com/pulse/61f1686a1d5bc2fd58041e1e
+
+88.218.192.128:5633
+amnestyhk.org
+amnestyhq.org
+fightforhk.com

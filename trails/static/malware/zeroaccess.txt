@@ -1,0 +1,96 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: max++, smiscer, sirefef
+
+# Reference: http://resources.infosecinstitute.com/zeroaccess-malware-part-4-tracing-the-crimeware-origins-by-reversing-injected-code/
+
+intensedive.com
+
+# Reference: https://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/trojan_zeroaccess_infection_analysis.pdf
+
+suzukimxm.cn
+iivxhdcd.cn
+
+# Reference: http://blog.malwaremustdie.org/2013/10/and-again-zeroaccesssirefef-is-not-dead.html
+
+huyftdr.artisanent.info
+rewdert.aasdgaa.info
+jihuyg1.aasdgaa.info
+egthyrf.aasdgaa.info
+hytgder.artisanent.info
+ztgdbsw.artisanent.info
+mgthnse.artisanent.info
+rsdfcs1.artisanent.info
+fretsdf.aasdgaa.info
+grsjli1.aasdgaa.info
+mscderg.artisanent.info
+zdegfsg.artisanent.info
+fseggs2.aasdgaa.info
+gedsetu.aasdgaa.info
+swdasc1.aasdgaa.info
+idwrlliewrwp.com
+sd.newaot.com
+
+# Reference: http://cleanbytes.net/zeroaccess-malware-served-via-google-alerts
+
+download-upload2.com
+
+# Reference: http://research.zscaler.com/2013/07/tracking-botnet-infection.html
+# Reference: http://botnetlegalnotice.com/zeroaccess/files/Ex_1_Decl_Heath.pdf
+
+qvhobsbzhzhdhenvzbs.com
+mbbcmyjwgypdcujuuvrlt.com
+wuyigrpdappakoahb9.com
+jzlevndwetzyfryruytkzkb.com
+glzhbnbxqtjoasaeyftwdmhzjd.com
+kttvkzpwufmrditdojlgytxyb.com
+vgfsowmleomwconnxmnyfhle.com
+vmtsukcbbqmmndojqirbbij.com
+gozapinmagbclxbwin.com
+nbqkgysciuuhadgpjfquvpu.com
+cjelaglawfoyidgyapv.com
+jpciukjdkqxgreoikpgya.com
+qhdsxosxtvmhurwezsipzq.com
+omakfdwkhrpqudxvapy.com
+chvhcncpqttfpcibtmetg.com
+ezcfogjitbqwnornezx.com
+rwdtklvrqnffdqkyuugfklip.com
+uinrpbrfrnqggtorjdpqg.com
+xlotxdxtorwfmvuzfuvtspel.com
+mkvrpknidkurcrftiqsfjqdxbn.com
+waajenyndxxbjolsbesd.com
+jgisypzilnrperlwcionbt.com
+fwmavqvphidhnrxcxvcnx.com
+dclixvfpttrlcnindvrnyeic.com
+evtrdtikvzwpscvrxpr.com
+atenrqqtfrzozqrqbdzwkxzyuc.com
+oqcllyhefbhhaijaxq.com
+jgvkfxhkhbbjoxggsve.com
+litcyleyzrglkulaifkrx.com
+hzhrjmeeczcgxodmqyz.com
+fnyxzjeqxzdpeocarhljdmyjk.com
+sqdfmslznztfozshtidmigmsbh.com
+vdlhxlmqhfafeovqohwrbaskrh.com
+nmfvaofnginwocnidecxnpcs.com
+euuqddlxgrnxlrjjbhytukpz.com
+vzsjfnjwchfqrvylhdhxa.com
+vjlvchretllifcsgynuq.com
+dxgplrlsljdjhqzqajkcau.com
+qbsiauhmoxfkrgfqey.com
+ssarknpzvpkteqnaia.com
+adhavzpbykyffaxqtts.com
+loanxohaktcocrovagkaa.com
+mxyawkwuwxdhuaidissclggy.com
+erspiwscuqslhjflgbbgcfbc.com
+spujplpdupiwbghiedhqeja.com
+xttfdqrsvlkvmtewgiqolttqi.com
+jlcemszzlsfvtvwsszrysooca.com
+eagdbqufytdxvzbavzriwzgw.com
+spujplpdupiwbghiedhqeja.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.zeroaccess/
+
+119.24.45.206:16464
+200.114.107.96:16464
+208.100.26.240:16464

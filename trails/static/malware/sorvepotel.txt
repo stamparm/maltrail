@@ -1,0 +1,49 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/smica83/status/1972662700359528788
+# Reference: https://tria.ge/250929-rbt5hs1j13/behavioral1
+# Reference: https://www.virustotal.com/gui/file/a395c3d88f4c72fa292b03df2693ea937cf370b24d84dd13143066eb24a0eb92/detection
+
+expansiveuser.com
+/api/itbi/o7IxR0U6A2fZkNdo0dL1E5Amj1MpqE6d
+/o7IxR0U6A2fZkNdo0dL1E5Amj1MpqE6d
+
+# Reference: https://x.com/smica83/status/1973296266395439184
+# Reference: https://tria.ge/251001-jszsbscj6s/behavioral1
+# Reference: https://www.virustotal.com/gui/file/123d03c144a357af78a5106a02deadd8349fa52e09d7801f5f850f3192048174/detection
+
+sorvetenopote.com
+/api/itbi/ug562V8iUfM8j9FeZ6E69g8umGOSGdXf
+/ug562V8iUfM8j9FeZ6E69g8umGOSGdXf
+
+# Reference: https://x.com/johnk3r/status/1973822539836293543
+# CERT_FINGERPRINT_SHA256-HOST=afe9e157e4abf920353a7e81d5c34cb80b04bab996351a680db3d3ac7594af1b
+
+casadecampoamazonas.com
+tropicalexecutivehotel.com
+/api/itbi/startup/
+
+# BANNER_0_HASH-HOST=2bc989dbc5ccc7c725e88c1fba53a6ac
+
+expansivebot.com
+seleniumprime.com
+arenahamburguer.com
+zapgrande.com
+oultimojogo.com
+
+# Reference: https://www.trendmicro.com/en_gb/research/25/j/self-propagating-malware-spreads-via-whatsapp.html
+# Reference: https://documents.trendmicro.com/assets/txt/WhatsApp%20Self-Propagating%20Malware%20IoCs-VAeQJ5r.txt
+
+adoblesecuryt.com
+bravexolutions.com
+etenopote.com
+expahnsiveuser.com
+imobiliariaricardoparanhos.com
+saogeraldoshoping.com
+sorvetenoopote.com
+sorvetenopoate.com
+sorvetenopotel.com
+sorv.etenopote.com
+
+

@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.surfright.nl/nl/support/dorifel-decrypter
+# Reference: http://securelist.com/blog/incidents/33898/dorifel-is-much-bigger-than-expected-and-its-still-active-and-growing/
+
+ipo90.com
+1nlreality.sk
+avtoclub.eu
+vnk.sk
+zalil.ru
+yerty90.com
+oianowifna.ru
+greatnewidea1.ru
+greatnewidea12.ru
+organizasyonservisi.com
+unionfilesexchnges.su
+windows-update-server.com
+wesaf341.org
+xertgfd.ru

@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ViriBack/status/1430604948241276928
+# Reference: https://app.any.run/tasks/80ad68fa-4eff-48a2-be8d-c2c4754eb412/
+
+199.247.17.103:5050
+
+# Generic
+
+/gate/fetch_options?
+/gate/fetch_options?username=

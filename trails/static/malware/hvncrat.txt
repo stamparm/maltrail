@@ -1,0 +1,224 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: NT_HVNC
+
+# Reference: https://twitter.com/James_inthe_box/status/1144626442304552960
+
+23.81.246.175:443
+
+# Reference: https://twitter.com/PRODAFT/status/1139419259816124416
+
+http://13.232.142.19
+
+# Reference: https://twitter.com/PRODAFT/status/1104782941547192320
+
+23.82.19.60:8070
+
+# Reference: https://twitter.com/James_inthe_box/status/1088774712233058306
+
+78.24.220.215:443
+
+# Reference: https://twitter.com/James_inthe_box/status/1039936854345150464
+
+74.118.139.159:77
+
+# Reference: https://twitter.com/James_inthe_box/status/1148652274727575558
+
+sertacio12.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1159861664960749569
+
+23.83.133.215:443
+
+# Reference: https://twitter.com/VK_Intel/status/1161493315134603265
+
+217.182.208.91:81
+
+# Reference: https://twitter.com/DynamicAnalysis/status/1223303076100169730
+
+leaben.pw
+
+# Reference: https://twitter.com/James_inthe_box/status/1223307741877297157
+
+buhjike.host
+
+# Reference: https://twitter.com/VK_Intel/status/1224327255104446464
+# Reference: https://www.virustotal.com/gui/file/df2bea2c7d1f9f2a27a62e291cff41e1b3ec677014c98048e82301cd10d36493/detection
+
+94.103.81.79:5010
+
+# Reference: https://twitter.com/DynamicAnalysis/status/1224787828351098880
+
+brewaz.club
+zulutwit.site
+
+# Reference: https://twitter.com/JasonMilletary/status/1225820677732737024
+# Reference: https://www.virustotal.com/gui/ip-address/49.51.172.149/relations
+
+avnjila.website
+axelerode.club
+basorkiq.host
+brewaz.club
+buhjike.host
+leaben.pw
+loubanas.xyz
+nuhjir.site
+rubense.xyz
+verobani.website
+zulutwit.site
+
+# Reference: https://twitter.com/VK_Intel/status/1230220315445383176
+
+45.138.172.177:95
+
+# Reference: https://twitter.com/ViriBack/status/1080826513266749451
+
+jurasik.serveminecraft.net
+
+# Reference: https://app.any.run/tasks/2b11413b-1bff-44b8-adc1-f43ceeb81e98/
+
+23.106.160.147:443
+
+# Reference: https://app.any.run/tasks/c6711e73-4541-451b-b968-77231e7f46fc/
+
+45.147.230.231:443
+
+# Reference: https://app.any.run/tasks/35820425-8f3c-4e20-a5ae-ad9f0c1cb875/
+
+45.147.228.40:443
+
+# Reference: https://app.any.run/tasks/2a384131-f172-4933-9f92-0296d1d42a2f/
+
+45.147.230.186:443
+
+# Reference: https://app.any.run/tasks/06bc97c7-9be1-4a26-93d5-af11cede68ea/
+
+172.81.132.241:95
+
+# Reference: https://twitter.com/James_inthe_box/status/1242798335641059328
+
+wgyvjbse.pw
+
+# Reference: https://www.virustotal.com/gui/ip-address/161.117.177.248/relations
+
+aquolepp.pw
+barbeyo.xyz
+bhajkqmd.xyz
+bwambztl.xyz
+dhteijwrb.host
+rizoqur.pw
+siloban.pw
+soficatan.site
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1287761442289135617
+# Reference: https://app.any.run/tasks/b18e788b-3f54-4288-a7fe-eb039b3b5cd9/
+# Reference: https://app.any.run/tasks/36a0a516-b912-4d37-8bdc-29ba7a65deb5/
+
+172.241.29.106:443
+
+# Reference: https://app.any.run/tasks/26b7265a-7a8d-489e-b6b5-56ff9bac0f97/
+
+64.44.141.42:80
+
+# Reference: https://twitter.com/N3utralZ0ne/status/1349796440881545216
+# Reference: https://twitter.com/James_inthe_box/status/1349815934656016384
+# Reference: https://bazaar.abuse.ch/sample/4bdabf667555e37d4bf5afdcb3b4331c68571ca798340cbf6f3b2c206b840975/
+
+172.93.201.155:443
+
+# Reference: https://twitter.com/ViriBack/status/1396086752255913984
+# Reference: https://twitter.com/StopMalvertisin/status/1396119095699939331
+# Reference: https://www.virustotal.com/gui/file/2ffe1cc7a03b55ebc8f3fb94b29cd23af5ec531ecfab006acf2b1afa28131300/detection
+
+http://178.63.120.107
+178.63.120.107:777
+
+# Reference: https://youtu.be/pKD9p0EIZEs?t=1992
+# Reference: https://github.com/pan-unit42/tweets/blob/master/2021-12-10-IOCs-for-TA551-IcedID-infection-with-Cobalt-Strike-and-DarkVNC.txt
+
+88.119.161.75:8080
+88.119.161.76:8080
+
+# Reference: https://github.com/pan-unit42/tweets/blob/master/2022-01-12-IOCs-for-IcedID-with-Cobalt-Strike-and-DarkVNC.txt
+
+45.147.228.197:8080
+
+# Reference: https://tria.ge/220120-l7yvpaheek/behavioral1
+
+test1625092.duckdns.org
+
+# Reference: https://youtu.be/pKD9p0EIZEs?t=1701
+
+88.119.161.88:8080
+
+# Reference: https://www.virustotal.com/gui/file/32415b86619f83e08de9456a9e9da7b8d4a33336d7212a9d58e7866986cad27e/detection
+# Reference: https://www.virustotal.com/gui/file/5eb8faaa26074c63c1ed70cbed1b0446786cf7102945e0d783b191eaa71e6795/detection
+
+111.90.151.182:4899
+111.90.151.182:5555
+111.90.151.182:5651
+111.90.151.182:8080
+
+# Reference: https://www.virustotal.com/gui/file/ca66249e968fe933a119ab7c1d89ab669ec2a59f4dbe71ebfd1a1d553f38cfe9/detection
+
+195.62.47.132:6785
+hvncmoney.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/ca66249e968fe933a119ab7c1d89ab669ec2a59f4dbe71ebfd1a1d553f38cfe9/detection
+
+195.62.47.132:6785
+hvncmoney.duckdns.org
+
+# Reference: https://twitter.com/benkow_/status/1500483190074585088
+# Reference: https://tria.ge/220305-1nsa5abaer/behavioral1
+# Reference: https://www.virustotal.com/gui/file/721fc592907ebd7164e3152b160f4d33dd3afdae084f596adc48c5d9f3a4fa4c/detection
+
+185.177.59.38:444
+
+# Reference: https://twitter.com/c_APT_ure/status/1554801583979991043
+
+194.213.3.182:8000
+
+# Reference: https://www.virustotal.com/gui/file/78bf839b8dbb956925e0d3a3f72ad939143310fd8db627f6df8f509070e81a03/detection
+
+2.152.208.135:5500
+aimtech.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/fb89d38753668d9b9a2eb00607694fc2e25351e7fa727a613780f289bba97090/detection
+
+193.43.104.183:5500
+
+# Reference: https://twitter.com/fr0s7_/status/1712788618824106443
+# Reference: https://www.virustotal.com/gui/file/2730a449c43a2c7ca7d4783678ba47405d6775ad0a73de6bc6305c92f1f5f7a4/detection
+
+20.211.121.138:9982
+
+# Reference: https://x.com/James_inthe_box/status/1892608373763285320
+
+kjhvnc.duckdns.org
+mathewhvnc.twilightparadox.com
+
+# Reference: https://www.virustotal.com/gui/file/9cc7143a739aa369c2622850940e4c6290bb0b49778064e8893cc2924d37293a/detection
+
+holashgfg.org
+
+# Reference: https://x.com/malwrhunterteam/status/1969091630486409683
+# Reference: https://www.virustotal.com/gui/file/9218598caf39b406b32800c109c5c8ffb6754cd34923b39fb5b0bd4dc498b597/detection
+# Reference: https://www.virustotal.com/gui/file/5f2c8bcc9ab73cea69b5fbddffe946fcd29ff081d52678f7f567ba0160cdcf8e/detection
+
+bioenhancedcbd.net
+
+# Reference: https://x.com/malwrhunterteam/status/1987867312871936199
+# Reference: https://www.virustotal.com/gui/file/b01290e662a174d1747926c180036ce772dea2ca31d2998c6795631740d4fd2d/detection
+
+http://149.248.78.149
+http://173.44.141.52
+/Y7ibICVua4GV/download/hvnc
+/Y7ibICVua4GV/download/
+/Y7ibICVua4GV/
+
+# Generic
+
+/error_faust.php
+/milagrecf.php

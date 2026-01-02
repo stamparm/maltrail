@@ -1,0 +1,46 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: UFR Stealer, Ruftar, Ustealer
+
+# Reference: https://twitter.com/malwrhunterteam/status/1096363455769202688
+# Reference: https://www.virustotal.com/gui/file/0b75ea7216032413f20489e5829b17fdada64da22b50702f60cc7f42f707e8f8/detection
+
+/sites/default/ufr.php
+
+# Reference: https://www.virustotal.com/gui/file/759d7b36d83dbf612fcacadb05c465f9c268f1284665c90ef749fb4d951c6c6b/detection
+
+kakao.my-homeip.com
+
+# Reference: https://www.virustotal.com/gui/file/a19ac59a3916bb7a8e66cb98c829fa52daa320fff53b61fc18c34d73577e3ff9/detection
+
+f0486959.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/bcdfd65deeddc44759cca573e8f1a742ab6ed16197639cd960bba55523396cf5/detection
+
+cloudbot.info
+loadit.pw
+
+# Reference: https://www.virustotal.com/gui/file/5cd0d4bec903cb5349473b9e971270adf821941f37954e39bafa0260071dddcd/detection
+
+185.161.210.150:22
+
+# Reference: https://www.virustotal.com/gui/file/8274ffc04a5e1ea0263b2a9e66c2950249442d8ca5dab368b484459f5db61b9d/detection
+
+news.soxx.us
+
+# Reference: https://www.virustotal.com/gui/file/0b271a2468a2a63bba509eceb5adfc1b5d11efd60424cac13290544225a895ae/detection
+
+tiptronic.soxx.us
+
+# Reference: https://www.virustotal.com/gui/file/da99ced7a5483898ad112dd7f5d5013141c38a35edbfedb54222b41b2ac25403/detection
+
+f0532501.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/3817a84e9420da3a04b0762c6a0b94fd0bb8a2dbe712c3ca5946a67ece3a52cb/detection
+# Reference: https://www.virustotal.com/gui/file/4c44d3696d7b47e81b65879fc324ecf60916c645963bcacb096a0ed19c603a3b/detection
+
+37.140.192.94:21
+37.140.192.94:61869
+37.140.192.94:64984
+news-vkontakte.ru

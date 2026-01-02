@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan:Win32/Viknok
+
+certix-z3.com
+c8-sky-walk.org
+cronzeg-bung8.com
+crownsix5.com
+cum-rebolt6.com
+curcatto-step1.com
+tragromert-c2.net

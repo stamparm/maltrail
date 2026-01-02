@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: # Reference: https://x.com/fbgwls245/status/2001330718509768918
+# BANNER_0_HASH-HOST=50e98fe49f1fa8198e4d734c00bae6a8
+
+ausare.net
+wesir.net
+osirisbm3357xrccnid23nlyuqwzbgqheaei6dxvyi34tbkqr3bmvfid.onion

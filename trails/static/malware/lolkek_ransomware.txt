@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: lol ransomware
+
+# Reference: https://www.sentinelone.com/blog/lolkek-unmasked-an-in-depth-analysis-of-new-samples-and-evolving-tactics/
+# Reference: https://otx.alienvault.com/pulse/64d40aab25cb10d904e06dad
+
+mmcbkgua72og66w4jz3qcxkkhefax754pg6iknmtfujvkt2j65ffraad.onion
+
+# Reference: https://x.com/9823f_/status/1847240824163041426
+# Reference: https://x.com/simonekrausora1/status/1847225748014145539
+# Reference: https://search.censys.io/hosts/82.215.64.105
+# Reference: https://www.virustotal.com/gui/file/4998131d9da04240464355e09181f10dc42234fc08f58d710b4d821ea89fc635/detection
+
+82.215.64.105:6969
+82.215.64.105:8585
+pop.yashylgala.com

@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: kelvinsecurity ransomware
+
+# Reference: https://www.thedfirspot.com/general-8-1
+
+kelvinsecteamcyber.wixsite.com
+
+# Reference: https://gist.github.com/hrbrmstr/db75143d512faa983f7438b3f17e2f5a
+
+vipsuscription.org

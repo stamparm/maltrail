@@ -1,0 +1,39 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/mac-malware-that-spoofs-trading-app-steals-user-information-uploads-it-to-website/
+# Reference: https://otx.alienvault.com/pulse/5d889b787ac4650bd767f511
+
+193.37.212.176:25733
+193.37.212.176:25734
+193.37.212.176:25735
+193.37.212.176:25736
+appstockfolio.com/panel/upload.php
+gmzera54l5qpa6lm.onion
+owpqkszz.info
+
+# Reference: https://www.welivesecurity.com/2020/07/16/mac-cryptocurrency-trading-application-rebranded-bundled-malware/
+
+http://193.37.214.7
+http://193.37.212.97
+http://85.209.88.123
+http://85.217.171.87
+apperdenta.com
+cointrazer.com
+creditfinelor.com
+cupatrade.com
+latinumtrade.com
+licatrade.com
+maccatreck.com
+macstockfolio.com
+nagsrsdfsudinasa.com
+narudina.com
+repbaerray.pw
+stepbystepby.com
+trezarus.com
+trezarus.net
+
+# Reference: https://twitter.com/michalmalik/status/1407672957028253703
+# Reference: https://twitter.com/BushidoToken/status/1407673941099962370
+
+troxtrade.com

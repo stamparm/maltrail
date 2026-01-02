@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://unit42.paloaltonetworks.com/blitz-malware-2025/
+
+e445a00fffe335d6dac0ac0fe0a5accc-9591beae439b860-b5c7747.hf.space
+swizxx-blitz-net.hf.space

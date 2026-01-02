@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.sekoia.io/bluefox-information-stealer-traffer-maas/
+# Reference: https://github.com/SEKOIA-IO/Community/blob/main/IOCs/bluefox/bluefox_iocs_20221102.csv
+
+193.106.191.130:17322
+31.41.244.152:47567
+45.8.147.200:51425
+46.148.114.177:38990
+79.137.198.63:42998
+91.241.19.49:35767
+94.131.107.223:51176
+
+# Reference: https://habr.com/ru/company/pt/blog/704174/ (Russian)
+
+185.53.46.24:64486
+45.8.147.121:29806
+45.8.147.133:13867
+5.182.39.226:2304
+94.131.104.43:6573

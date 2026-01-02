@@ -1,0 +1,180 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/sh1shk0va/status/1186968376930897926 (# Ginp)
+# Reference: https://twitter.com/PRODAFT/status/1187620160401793024
+
+http://64.44.133.36
+carnivors284.info
+
+# Reference: https://www.threatfabric.com/blogs/ginp_a_malware_patchwork_borrowing_from_anubis.html
+# Reference: https://www.virustotal.com/gui/file/0ee075219a2dfde018f17561467272633821d19420c08cba14322cc3b93bb5d5/detection
+
+http://64.44.51.107
+
+# Reference: https://twitter.com/Bank_Security/status/1252524936876490754
+# Reference: https://otx.alienvault.com/pulse/5e9df6e58b881d548e838801
+
+http://8.208.27.214
+change923.ru
+coronafinder.rest
+covidfinder.uno
+criticchaireducate.top
+mysteryquickchunkstreet.top
+nightpieceenergy.top
+onlyscaredivideriot.top
+recallquestionactscare.top
+riotlogicaware.top
+unfairpriority.top
+
+# Reference: https://twitter.com/LukasStefanko/status/1257709568378974208
+
+canvasfuture.top
+diarysuitepause.com
+illegalvaguecomic.top
+
+# Reference: https://twitter.com/ESETresearch/status/1273980366911614977
+
+volcanohentiny.top
+
+# Reference: https://twitter.com/ReBensk/status/1309479304976187393
+# Reference: https://www.virustotal.com/gui/file/ed0826ed6d89e9b1687ebe951c9a4637743b6e793b33185ddf936d2355544752/detection
+# Reference: https://www.virustotal.com/gui/ip-address/47.242.37.235/relations
+# Reference: https://twitter.com/malwrhunterteam/status/1322248738782531590
+# Reference: https://twitter.com/malwrhunterteam/status/1322641489046941697
+# Reference: https://twitter.com/bl4ckh0l3z/status/1322996430026481665
+# Reference: https://www.virustotal.com/gui/ip-address/161.117.186.81/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.193.91.74/relations
+# Reference: https://www.virustotal.com/gui/ip-address/47.241.7.226/relations
+
+pecadoras.club
+pecadoras10.club
+andmouse.top
+beastmode.top
+brandnewcadillac.top
+calibribird.top
+carserviceno1.top
+chipndeep.top
+chipsnfish.top
+clbpecas.club
+cnmotoparts.online
+flowerpower.top
+handsomecats.top
+humanshield.top
+japanesecarz.top
+riseagain.top
+shapeformz.top
+slideglide.top
+tapatio.top
+twotones.top
+windowtint.top
+zamilska.top
+
+# Reference: https://twitter.com/RickyLafleur1/status/1207226045914587136
+# Reference: https://www.virustotal.com/gui/file/c6559133aad4284821f98da04a06d84596e2f5c663fcc5a057872ec30201862e/detection
+
+cewavato.tk
+animalaround.info
+designpriorityozone.info
+
+# Reference: https://www.virustotal.com/gui/file/4c9e0b01dcca87dbd9e437d130d1bf411227c731568292d8ebcb7160883b1459/detection
+# Reference: https://www.virustotal.com/gui/file/6218f3b24ee3ea3bfcf249110f21d6cc9657e91e51f3a8e41de558b8a3c46882/detection
+
+dopestteam.cc
+notfamous.top
+
+# Reference: https://twitter.com/alberto__segura/status/1362663582761107457
+# Reference: https://twitter.com/malwrhunterteam/status/1364303934089756676
+# Reference: https://www.virustotal.com/gui/ip-address/47.254.151.225/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.96.194/relations
+# Reference: https://www.virustotal.com/gui/file/bc20fa0965799c2c13925b69c9288ada16acb5c4a62b48127a20c2190f159597/detection
+# Reference: https://www.virustotal.com/gui/file/a14570d87c3ba0414fbc045481f4c8174ad9f04f2c454da73eaa13b3535625bb/detection
+# Reference: https://www.virustotal.com/gui/file/b85be20ff09d095dc73ffe5b72928a89204f32548b62c1e8fa57d28f7b269f67/detection
+# Reference: https://www.virustotal.com/gui/file/c4ddf45835c0daf73a62c50cd3ad7c17b6364bcb45879c4ae3fd4470f216856b/detection
+# Reference: https://www.virustotal.com/gui/file/f248d317d69a25f18252039c2a26c15c323c4b45e043829e6e4de1e541ee5046/detection
+# Reference: https://www.virustotal.com/gui/file/151af7bf33a3ec01a180f27c4d5711043746b74b3b2b7012e298b6307853ce02/detection
+
+beastmodehit.top
+cliamsresistant.top
+fatgoose.top
+fearisallyouknow.top
+gladiatorboy.top
+greatduck.cc
+hugsofducks.top
+kingsallivan.top
+quickregistration.top
+purefoe.cc
+rapsongz.top
+rumorfamiliarproject.info
+silverball.cc
+snowshoes.top
+sorryfordelay.top
+
+# Reference: https://twitter.com/alberto__segura/status/1369933419568914435
+# Reference: https://twitter.com/RickyLafleur1/status/1371400458485514244
+# Reference: https://www.virustotal.com/gui/ip-address/34.77.2.213/relations
+
+behaverear.site
+littlemorebrandy.top
+paperships.top
+purefoe.top
+remembergreet.site
+
+# Reference: https://www.virustotal.com/gui/file/96b662d71d994540026ab06b9220c58df5e22f2e92bedd1463b500a440e9ce94/detection
+
+bubenecvdele.top
+
+# Reference: https://twitter.com/pmmkowalczyk/status/1394643757803479045
+# Reference: https://www.virustotal.com/gui/file/d0b3ade2417fb8f5971efccaf98bdc9e19b78d73b86b95f487835d650d851cca/detection
+
+gunfirebob.top
+jackblack.cc
+
+# Reference: https://twitter.com/pmmkowalczyk/status/1394644174931210244
+# Reference: https://www.virustotal.com/gui/file/f58e5f2164a6026501fe9ac8e0a447ccb4248793604f2195c887bf240746f2c5/detection
+# Reference: https://www.virustotal.com/gui/file/4e03693c001466a5c3cb544befc3317090ef83754054fdf5df6d9bb5c76c4125/detection
+
+luckypunch.top
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.91.118/relations
+
+badhabits.top
+bigballgame.top
+coldcoolcoco.top
+crawlbone.top
+goldenbullet.top
+greatduck.cc
+levelthree.top
+purefoe.cc
+sitandread.top
+sunshinecat.top
+sweetseventeen.top
+weatherleather.top
+
+# Reference: https://twitter.com/malwrhunterteam/status/1450789734549176323
+# Reference: https://www.virustotal.com/gui/file/86318dc3762b3493d0b680ff5bc33d1273579dd82702cfc8ae1181d18cf3244d/detection
+
+approvegravityacid.club
+
+# Reference: https://muha2xmad.github.io/malware-analysis/ginp/
+# Reference: https://www.virustotal.com/gui/ip-address/45.8.124.108/relations
+# Reference: https://www.virustotal.com/gui/file/0ea7462bec3d1f3166513468b8f0df4cbce347a12985337bc07880889003d348/detection
+
+advancedbuffs.top
+greedythomas.top
+insideluck.cc
+
+# Reference: https://www.virustotal.com/gui/ip-address/47.254.144.42/relations
+
+chilledknife.top
+dirtysocks.top
+workshoptable.top
+
+# Generic
+
+/api200/_ping.php
+/api200/_sms.php
+/api201/_ping.php
+/api201/_sms.php
+/getFile_b0bffe7506764da001745457d16fe6e8.php
+/getPhoto_b0bffe7506764da001745457d16fe6e8.php

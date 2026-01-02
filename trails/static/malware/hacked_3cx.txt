@@ -1,0 +1,41 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://objective-see.org/blog/blog_0x73.html
+# Reference: https://www.crowdstrike.com/blog/crowdstrike-detects-and-prevents-active-intrusion-campaign-targeting-3cxdesktopapp-customers/
+# Reference: https://news.sophos.com/en-us/2023/03/29/3cx-dll-sideloading-attack/
+# Reference: https://www.sentinelone.com/blog/smoothoperator-ongoing-campaign-trojanizes-3cx-software-in-software-supply-chain-attack/
+# Reference: https://www.huntress.com/blog/3cx-voip-software-compromise-supply-chain-threats
+# Reference: https://www.3cx.com/blog/news/desktopapp-security-alert/
+# Reference: https://www.reddit.com/r/crowdstrike/comments/125r3uu/20230329_situational_awareness_crowdstrike/
+# Reference: https://otx.alienvault.com/pulse/6424b50b497f4c02507674fc
+
+acharryblogs.com
+akamaicontainer.com
+akamaitechcloudservices.com
+azuredeploystore.com
+azureonlinecloud.com
+azureonlinestorage.com
+dunamistrd.com
+glcloudservice.com
+journalide.org
+msedgepackageinfo.com
+msedgeupdate.net
+msstorageazure.com
+msstorageboxes.com
+officeaddons.com
+officestoragebox.com
+pbxcloudeservices.com
+pbxphonenetwork.com
+pbxsources.com
+philip.je
+qwepoi123098.com
+sbmsa.wiki
+sourceslabs.com
+visualstudiofactory.com
+zacharryblogs.com
+
+# Reference: https://www.welivesecurity.com/2023/04/20/linux-malware-strengthens-links-lazarus-3cx-supply-chain-attack/
+# Reference: https://www.virustotal.com/gui/file/cc307cfb401d1ae616445e78b610ab72e1c7fb49b298ea003dd26ea80372089a/detection
+
+23.254.211.230:443

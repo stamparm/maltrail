@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: underground ransomware
+
+# Reference: https://x.com/RacWatchin8872/status/1832048141064888700
+# Reference: https://www.watchguard.com/wgrd-security-hub/ransomware-tracker/underground
+# Reference: https://tria.ge/240905-q2rawasbmk
+# Reference: https://tria.ge/240905-qx3hcasflb
+
+ehehqyhw3iev2vfso4vqs7kcrzltfebe5vbimq62p2ja7pslczs3q6qd.onion
+undgrddapc4reaunnrdrmnagvdelqfvmgycuvilgwb5uxm25sxawaoqd.onion
+
+# Reference: https://github.com/marktsec/Ransomware_Official_Domains#underground
+
+47glxkuxyayqrvugfumgsblrdagvrah7gttfscgzn56eyss5wg3uvmqd.onion

@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: 0debug stealer
+
+# Reference: https://x.com/iam_rajhans/status/1842812405035810958
+# Reference: https://x.com/solostalking/status/1861732334443389162
+# Reference: https://app.validin.com/detail?type=ip&find=5.42.81.134#tab=host_pairs_v2
+
+http://195.10.205.207
+http://5.42.81.134
+0debug.cc
+debugiwjef8w9euf892jfis893u409wi09eif90w3.onion
+electrum.rostamasadi.website
+stream.rostamasadi.website
+swesub.rostamasadi.website
+
+# Reference: https://urlscan.io/result/2ef98e1f-82e3-4442-b973-46716770a5e4/
+
+yalemensi.com
+
+# Reference: https://urlscan.io/result/5f1bb4c4-7b2d-4ed3-85ef-2b6ebbc8d7d0/
+
+booklng.biz
+admin.booklng.biz
+
+# Reference: https://urlscan.io/result/1a266f10-70a9-4d0e-8664-87291b3b7c5d/
+
+admin-panels.info

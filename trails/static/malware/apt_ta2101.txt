@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/ta2101-plays-government-imposter-distribute-malware-german-italian-and-us
+
+http://104.168.174.32
+http://104.168.198.208
+http://104.168.198.230
+http://104.168.215.54
+http://108.174.199.10
+http://192.119.68.225
+http://198.50.168.67
+http://54.39.233.131
+http://54.39.233.175
+conbase.top
+uspsdelivery-service.com

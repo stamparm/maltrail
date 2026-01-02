@@ -1,0 +1,31 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: brave prince, gold dragon, ghost419
+
+# Reference: https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/gold-dragon-widens-olympics-malware-attacks-gains-permanent-presence-on-victims-systems/
+
+eodo1.000webhostapp.com
+follow_dai.000webhostapp.com
+trydai.000webhostapp.com
+followgho.byethost7.com
+ink.inkboom.co.kr
+nid-help-pchange.atwebpages.com
+
+# Reference: https://x.com/malwrhunterteam/status/1851566881825538348
+# Reference: https://www.virustotal.com/gui/file/6153da017a50ba3f781c78b6a3a2be3552b9371574da657d97d0063a40b17bbf/detection
+
+154.19.200.133:8087
+0523qyfw.com
+nyazz.com
+scrt1.nyazz.com
+ssh.0523qyfw.com
+
+# Reference: https://x.com/malwrhunterteam/status/1851567599701705051
+# Reference: https://www.virustotal.com/gui/file/04102f13e59243cd2a96c435e9cc3c6dc3b52c988865926434a3b8cb643e5e63/detection
+
+107.148.61.127:8084
+0523qyfw.cn
+one.0523qyfw.com
+redi.nyazz.com
+ssh.0523qyfw.cn

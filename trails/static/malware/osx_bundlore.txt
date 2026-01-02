@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: bundlore loader, surfbuyer
+
+# Reference: https://blog.confiant.com/new-macos-bundlore-loader-analysis-ca16d19c058c
+# Reference: https://otx.alienvault.com/pulse/5df796363d73907fec7cd95c
+
+appsdown.urbanvillager.xyz
+
+# Reference: https://twitter.com/ConfiantIntel/status/1393215825931288580
+# Reference: https://twitter.com/ConfiantIntel/status/1393215865831796742
+# Reference: https://otx.alienvault.com/pulse/60abf2db6d36f0bf7b63dd7b
+
+mapperstate.com

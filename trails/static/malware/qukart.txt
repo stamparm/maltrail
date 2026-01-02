@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: berbew, quart, padodor
+
+# Reference: https://i.crn.com/sites/default/files/ckfinderimages/userfiles/images/crn/custom/2019/BBCylance_LC_Q319_Threat_Report.pdf
+# Reference: https://www.virustotal.com/gui/file/c1e541b88dd80a91bce7735563577e463537198112760e1cb8edaf16cf3c9d67/detection
+# Reference: https://www.virustotal.com/gui/file/c36ee11372c2048a81dd4f76a23d2b337ae93d87b579a9ae4136fb1f6cacb00d/detection
+
+gaz-prom.ru
+
+# Reference: https://www.virustotal.com/gui/file/accb5e47b47ec12df0fcef431c82fccbaa443ab8d5b97c68e945035ff6922bdc/detection
+# Reference: https://www.virustotal.com/gui/file/7940f3cb1cb87a585267492452213d780f25912fb31216c9d6b3f978cebe69a1/detection
+
+http://176.111.174.63
+176.111.174.63:1500

@@ -1,0 +1,56 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: lilithbot, lilithrat, punk-003
+
+# Reference: https://twitter.com/ViriBack/status/1433534389338714115
+# Reference: https://tria.ge/210902-znsq8aegdk/behavioral1
+# Reference: https://www.virustotal.com/gui/file/06e8f574a284848160eda6f5b8384d3023d98fdf727db44cfa07fd22139ab5f5/detection
+# Reference: https://www.virustotal.com/gui/file/006bb86b29f11cd6a517db136478b940f8a7966acff4251188c5b82207beadae/detection
+# Reference: https://www.virustotal.com/gui/file/fe498281daf27f0c6a5db9859192e2e8371f03f36a92d83e3f691677426dde18/detection
+# Reference: https://www.virustotal.com/gui/file/e82d16bc77bdfb25fb2e316bb65e9e565ec07aad7bd8441ea09c4abfda04806d/detection
+# Reference: https://www.virustotal.com/gui/file/ed5a02370568674fdf12bae74a035daf1c6fabba84d1a3a0f7baf257ad3a6259/detection
+
+92.63.106.112:8228
+
+# Reference: https://twitter.com/petrovic082/status/1544755976791810051
+# Reference: https://tria.ge/220706-tqrn2sghc6/behavioral1
+
+yeuajcizwytgmrntijhxphs6wn5txp2prs6rpndafbsapek3zd4ubcid.onion
+
+# Reference: https://twitter.com/ViriBack/status/1557836030421630977
+# Reference: https://tria.ge/220811-zp8h3accfr
+
+77.73.133.12:4545
+
+# Reference: https://twitter.com/suyog41/status/1597551731520331776
+# Reference: https://twitter.com/ViriBack/status/1597695372972867584
+# Reference: https://www.virustotal.com/gui/file/7a0062813d69d62db1fb105db7b41a858c4d009fd2183f66086d28d6a8a2a7c5/detection
+
+31.13.195.81:4545
+weee2133.com
+
+# Reference: https://x.com/JangPr0/status/1806549977184825496
+# Reference: https://www.virustotal.com/gui/ip-address/62.113.118.157/detection
+# Reference: https://www.virustotal.com/gui/file/0aaec376904434197bae4f1a10ecfe8d4564d95fdfa8236ea960535710661c5f/detection
+
+62.113.118.157:37555
+
+# Reference: https://medium.com/s2wblog/threat-tracking-analysis-of-punk-003s-lilith-rat-ported-to-autoit-script-30dd59e68213
+# Reference: https://www.virustotal.com/gui/file/2189aa5be8a01bc29a314c3c3803c2b8131f49a84527c6b0a710b50df661575e/detection
+
+185.231.154.22:52720
+62.113.118.157:57860
+93.183.93.185:57860
+mq734121.info
+
+# Generic
+
+/gate/18c389a0-8bc0-4987-95e6-fa1d9e1d0fe2/registerBot
+/gate/baf85cb1-4e1a-4828-a43b-733a2439a283/registerBot
+/gate/690488ae-547c-4304-a743-bf805b264859/registerBot
+/gate/994d795c-f824-411a-b64e-1d18b316b099/registerBot
+/gate/f1b3659f-a07b-49f8-bc26-83438686dc55/registerBot
+/gate/e8cfd5a0-a4bd-4c23-8ab1-bb051d9040be/registerBot
+/gate/ed1907e1-371f-46d9-838e-f03745be7143/registerBot
+/gate/f9a17d8a-5157-4676-a62b-87860e649298/registerBot

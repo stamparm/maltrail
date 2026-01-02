@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/domain/poweryo.info/relations
+
+poweryo.info
+
+# Reference: https://www.virustotal.com/gui/file/4f0aaf862be190906bfe37689e10018532868d172209cc65ca35d2b1d4b826b2/detection
+
+91.193.75.59:11856
+
+# Reference: https://www.virustotal.com/gui/file/db60d64da20a3f60e3dad295ff2d9a305adc1f3f208c97a3223e99d33820be49/detection
+
+185.19.85.155:8153
+
+# Reference: https://www.virustotal.com/gui/file/a5c337beb2e41e7d67b1059947b120be8634c3365eff2e9e8b03a6a5d518c5de/detection
+
+clubcaddy.com
+
+# Reference: https://www.virustotal.com/gui/file/32fffb628f22d4b49577af3336a1007567358cc97acf25f1d2c65a5aadff06c4/detection
+
+km-americanschool.com
+
+# Reference: https://www.virustotal.com/gui/file/25c680623c787f7a5f4384cfd0b68f699703a0bc88363e5e5a576d66b900bbbf/detection
+# Reference: https://www.virustotal.com/gui/file/1804fd980f3e5865bc398c9e5ddd61c1a3c3e9f8a5854e0ca0b2d71ab5ad2390/detection
+
+191.101.169.85:38683
+38.68.33.67:38683
+mbofficialdns.ddns.net

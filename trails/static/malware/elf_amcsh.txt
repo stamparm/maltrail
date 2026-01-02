@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: bioset
+
+# Reference: https://twitter.com/IntezerLabs/status/1409844721992749059
+# Reference: https://twitter.com/JAMESWT_MHT/status/1409848815948111877
+# Reference: https://tria.ge/210629-qnkk6y9ncn/behavioral1
+
+103.145.122.146:52257
+
+# Reference: https://tria.ge/210629-81lvaaqjt2/behavioral1
+
+103.145.122.146:60259
+
+# Reference: https://tria.ge/210629-tk275vf9ws/behavioral1
+
+103.145.122.146:52256
+nc.cai1688.com
+
+# Reference: https://tria.ge/210629-a3bgwhl18s/behavioral1
+
+103.145.122.146:60520
+
+# Reference: https://tria.ge/210629-8hc2latlcx/behavioral1
+
+103.145.122.146:60365

@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/AnFam17/status/1738452514163282028
+# Reference: https://www.esentire.com/blog/phantomcontrol-returns-with-ande-loader-and-swaetrat
+
+dns-govv.ink

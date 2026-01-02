@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mave stealer
+
+# Reference: https://x.com/NullPwner/status/1921664159545962765
+
+mavedashboard.lol
+beta.mavedashboard.lol
+upload.mavedashboard.lol
+web.mavedashboard.lol
+
+# Reference: https://x.com/Fact_Finder03/status/1934942713507422322
+
+maveproj3ct.lol
+beta.maveproj3ct.lol
+web.maveproj3ct.lol

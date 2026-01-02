@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://community.rapid7.com/community/infosec/blog/2012/12/06/skynet-a-tor-powered-botnet-straight-from-reddit
+
+6ceyqong6nxy7hwp.onion
+owbm3sjqdnndmydf.onion
+4njzp3wzi6leo772.onion
+qdzjxwujdtxrjkrz.onion
+x3wyzqg6cfbqrwht.onion
+niazgxzlrbpevgvq.onion
+ua4ttfm47jt32igm.onion
+6tkpktox73usm5vq.onion
+4bx2tfgsctov65ch.onion
+gpt2u5hhaqvmnwhr.onion
+7wuwk3aybq5z73m7.onion
+742yhnr32ntzhx3f.onion
+f2ylgv2jochpzm4c.onion
+6m7m4bsdbzsflego.onion
+xvauhzlpkirnzghg.onion
+h266x4kmvmpdfalv.onion
+jr6t4gi4k2vpry5c.onion
+ceif2rmdoput3wjh.onion
+uzvyltfdj37rhqfy.onion
+uy5t7cus7dptkchs.onion

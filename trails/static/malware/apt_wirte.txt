@@ -1,0 +1,138 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ashenloader, ashtag, ashenorchestrator, ashenstager, ashenlepus
+
+# Reference: https://blog.talosintelligence.com/2018/02/targeted-attacks-in-middle-east.html
+# Reference: https://twitter.com/SaudiDFIR/status/1119666633251930113
+# Reference: https://twitter.com/James_inthe_box/status/1119932303088578561
+# Reference: https://twitter.com/MoBustami/status/1119959411156488192
+# Reference: https://x.com/malwrhunterteam/status/1998743764630732932
+# Reference: https://www.virustotal.com/gui/file/d9dc90fd23cd2ad5e5a1b9df65d36f5328e0bfec7c278b2b6010d9812012ec5a/detection
+
+194.38.11.3:1790
+foxlove.life
+office-update.services
+office365-update.com
+share2file.pro
+check.office365-update.com
+download.share2file.pro
+eg.foxlove.life
+fox.foxlove.life
+jo.foxlove.life
+update.share2file.pro
+
+# Reference: https://www.securityartwork.es/2019/01/18/grupo-wirte-atacando-a-oriente-medio/
+# Reference: https://www.securityartwork.es/2019/01/25/wirte-group-attacking-the-middle-east/
+
+micorsoft.store
+office365-update.co
+104.24.108.64:2082
+104.24.109.64:2082
+185.86.79.243:2082
+
+# Reference: https://twitter.com/malwrhunterteam/status/1233666708616941570
+# Reference: https://twitter.com/SBousseaden/status/1222465015975948289
+# Reference: https://app.any.run/tasks/b63ec8f5-70a6-4379-97e9-acbe3ce5ecde/
+# Reference: https://app.any.run/tasks/4c404a75-4caf-430b-a901-c18bc8fb0824/
+# Reference: https://securelist.com/wirtes-campaign-in-the-middle-east-living-off-the-land-since-at-least-2019/105044/
+# Reference: https://otx.alienvault.com/pulse/61a4fb7c9b88f16b103c151d
+
+104.28.1.134:2087
+172.86.75.211:80
+allaccounting.ca
+dentalmatrix.net
+doctoressolis.com
+est-clinic.com
+firstohiobank.com
+kneeexercises.net
+niftybuysellchart.com
+nutrition-information.org
+omegaeyehospital.com
+pocket-property.com
+stgeorgebankers.com
+unitedfamilyhealth.net
+
+# Reference: https://twitter.com/h2jazi/status/1518629712364515329
+# Reference: https://www.virustotal.com/gui/file/d767e2ba31b75714aeb1cc3995de9191a53bd184e213780987e51e315ec2e4c5/detection
+
+imagine-world.com
+
+# Reference: https://twitter.com/h2jazi/status/1543957383193444352
+# Reference: https://www.virustotal.com/gui/file/58ff981332189a0a2e0b1152f36a5eb58402501fcf218339deab69a187edf823/detection
+# Reference: https://www.virustotal.com/gui/file/467b59feba8ebaa7ef81b19ca69c133c07953affebeaf32f2d284b12533391be/detection
+# Reference: https://www.virustotal.com/gui/file/086e49e431272b1ea8e3c1d7a9e297a8c50891db833bf180f2a5e9035f1bee8b/detection
+
+http://20.43.53.72
+thefinanceinvest.com
+/okceG
+
+# Reference: https://twitter.com/h2jazi/status/1567247803184779266
+# Reference: https://twitter.com/h2jazi/status/1567247805986574341
+# Reference: https://www.virustotal.com/gui/file/e21362195463fe7c953afe07bea6a26ffead024c7f7394f51b683cbfe139b917/detection
+# Reference: https://www.virustotal.com/gui/file/08a8ecc39817a81bb9cde3775ce7289d56e678e94b56b120e06eca171634a97d/detection
+
+neweconomysolution.com
+sun-tourist.com
+
+# Reference: https://x.com/k3yp0d/status/1857000802067345730
+# Reference: https://research.checkpoint.com/2024/hamas-affiliated-threat-actor-expands-to-disruptive-activity/
+
+bankjordan.com
+dentalaccord.com
+easybackupcloud.com
+economymentor.com
+economystocking.com
+egyptican.com
+egyptskytours.com
+egypttourism-online.com
+ellemedic.com
+finance-analyst.com
+financecovers.com
+financeinfoguide.com
+healthcarb.com
+healthoptionstoday.com
+healthscratches.com
+jordanrefugees.com
+jordansons.com
+king-pharmacy.com
+master-dental.com
+microsoftliveforums.com
+microsoftteams365.com
+microsoftwindowshelp.com
+printspoolerupdates.com
+qrdorks.com
+saudiarabianow.org
+saudiday.org
+suppertools.com
+support-api.financecovers.com
+theshortner.com
+trendingcharts.finance-analyst.com
+wellhealthtech.com
+
+# Reference: https://unit42.paloaltonetworks.com/hamas-affiliate-ashen-lepus-uses-new-malware-suite-ashtag/
+# Reference: https://www.virustotal.com/gui/file/9979ed5993fb6d678727e6dacb15d26c1b4f07f16404b62dc8b5e25a359d9aec/detection
+
+healthylifefeed.com
+medicinefinders.com
+onlinefieldtech.com
+softmatictech.com
+status.techupinfo.com
+systemsync.info
+technoforts.com
+techtg.com
+techpointinfo.com
+techupinfo.com
+widetechno.info
+account.techupinfo.com
+api.healthylifefeed.com
+api.medicinefinders.com
+api.softmatictech.com
+api.systemsync.info
+api.technology-system.com
+api.widetechno.info
+apiv2.onlinefieldtech.com
+auth.onlinefieldtech.com
+cdn.techpointinfo.com
+forum.technoforts.com
+forum.techtg.com

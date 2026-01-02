@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: roundpress
+
+# Reference: https://x.com/ESETresearch/status/1922919002700914746
+# Reference: https://www.welivesecurity.com/en/eset-research/operation-roundpress/
+# Reference: https://github.com/eset/malware-ioc/tree/master/operation_roundpress
+
+docx.cfd
+hfuu.de
+hijx.xyz
+ikses.net
+ivo.icu
+jiaw.shop
+kmjg.shop
+lsjb.digital
+raxia.top
+rnl.world
+rzu.icu
+sqj.fr
+tgh24.xyz
+tuo.world

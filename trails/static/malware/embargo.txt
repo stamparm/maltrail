@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: embargo ransomware
+
+# Reference: https://github.com/marktsec/Ransomware_Official_Domains
+# Reference: https://www.joesandbox.com/analysis/1476971/0/html
+
+embargobe3n5okxyzqphpmk3moinoap2snz5k6765mvtkk7hhi544jid.onion

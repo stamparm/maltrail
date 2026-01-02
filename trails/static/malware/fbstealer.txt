@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: solan stealer
+
+# Reference: https://securelist.com/threat-in-your-browser-extensions/107181/
+# Reference: https://otx.alienvault.com/pulse/62fcc493cda0d97c834981d7
+
+ctcodeinfo.com
+juwakaha.com
+
+# Reference: https://twitter.com/suyog41/status/1719703280459063314
+# Reference: https://www.virustotal.com/gui/file/0cebe55127c6c9722eb7e350ded0969af80f2e0334848a117b8b91225e2b6ebc/detection
+
+phaiphoi.online
+
+# Reference: https://www.virustotal.com/gui/file/47c77b3a1f93756b54cc729f0c83a78415ca962bcce7707b32f063ba6dd9bbd6/detection
+
+seven-bot.ddns.net
+
+# Reference: https://twitter.com/suyog41/status/1755539070456045802
+# Reference: https://www.virustotal.com/gui/ip-address/51.79.244.21/relations
+# Reference: https://www.virustotal.com/gui/file/ed9fec75ada3273b6f076742a0c7fa5697174429175646100bc56368be6c0d33/detection
+# Reference: https://www.virustotal.com/gui/file/6bfda4bef788b11e0e6e1ea9250c431fdaaf3391b2286d1b7dda8e1f00c8541f/detection
+# Reference: https://www.virustotal.com/gui/file/cf456f512dbbe01f41d8bd57b0eb5e1bc915184d323800dbe320f34010106b51/detection
+# Reference: https://www.virustotal.com/gui/file/2184f8bcfce3c518166d93a072cbc290a434b5dd0ce957a38d0d0816438663ab/detection
+
+microsoft-pdf.serveftp.com
+pdfmicrosoft.ddns.net

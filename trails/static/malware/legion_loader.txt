@@ -1,0 +1,84 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.deepinstinct.com/2019/12/18/untangling-legion-loaders-hornet-nest-of-malware/
+
+4tozahuinya2.info
+craftupdate4.top
+ddtupdate2.top
+fastupdate2.me
+fastupdate2.top
+fastupdate4.top
+foxupdate2.me
+gmsmz.top
+kisshit2.info
+lowupdate4.top
+luxurious-crypto.com
+myheroin2.info
+nonstopporno1.info
+ntupdate4.top
+rrudate2.top
+rrudate4.top
+satantraff2.info
+slupdate2.top
+snupdate2.top
+snupdate4.top
+statinstall1.info
+softupdate2.me
+softupdate4.me
+ssdupdate2.top
+sslupdate2.top
+sslupdate4.top
+ssupdating.me
+stnupdate2.me
+suspiria2.info
+updateinfo4.top
+upload-stat4.info
+whereismyshit1.info
+zdesnetvirusov2.info
+legion1488.info
+legion17.top
+legion17.net
+legion17.best
+legion17.com
+legion17.info
+
+# Reference: https://twitter.com/jorgemieres/status/1224456882842038273
+# Reference: https://pastebin.com/verbXZRv
+
+api-update1.biz
+army17.com
+army18.org
+fakeshoping777.icu
+gatelegion.icu
+gatelegion1.icu
+kisshit1.info
+kisshit2.info
+legion1488.info
+legion17.best
+legion17.club
+legion17.com
+legion17.icu
+legion17.in
+legion17.info
+legion17.me
+legion17.net
+legion17.top
+legions.icu
+legions17.biz
+mylegions.icu
+toplegions.icu
+toplegions3.icu
+truelegion17.org
+uploadlegions1.icu
+
+# Reference: https://twitter.com/jorgemieres/status/1226937862031073280
+
+17legion.org
+
+# Generic
+
+/test/us/1.exe
+/test/us/2.exe
+/test/eu/1.exe
+/test/eu/2.exe

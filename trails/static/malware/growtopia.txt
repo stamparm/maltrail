@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: growtopia stealer, projectosprey
+
+# Reference: https://x.com/Fact_Finder03/status/1932681699927691577
+# Reference: https://app.validin.com/detail?find=Project%20Osprey%20v1.5&type=raw&ref_id=8db486ebf77#tab=host_pairs
+
+projectosprey.xyz
+mail.projectosprey.xyz

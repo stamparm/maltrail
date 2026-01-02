@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.malwaremustdie.org/2016/10/mmd-0060-2016-linuxudpfker-and-chinaz.html
+
+112.74.28.133:15432
+116.31.123.159:54124
+121.10.172.185:12322
+121.10.172.185:15432
+121.10.172.185:18090
+121.18.231.85:7169
+166.62.125.38:88
+171.92.208.129:3123
+180.97.220.3:58595
+180.97.220.28:8080
+192.169.180.138:10991
+192.169.180.138:55678
+192.169.136.53:55679
+220.169.242.158:6666
+222.186.21.202:8080
+222.187.221.224:51457
+222.187.239.242:46510
+43.248.8.171:8833
+61.147.110.13:51201
+61.160.215.153:8090
+valalala.com
+
+# Reference: https://www.intezer.com/blog-chinaz-introduces-new-undetected-malware/
+# Reference: https://otx.alienvault.com/pulse/5df3e78c2041104fd1d10966
+# Reference: https://www.virustotal.com/gui/domain/l11l1.com/relations
+
+l11l1.com

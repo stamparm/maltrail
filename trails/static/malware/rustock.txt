@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://web.archive.org/web/20120106212034/http://amada.abuse.ch/blocklist.php?download=domainblocklist
+
+go-thailand-now.com
+hollybible.com
+
+# Reference: https://ieeexplore.ieee.org/document/8756252
+
+2a00lgjuhgeolhiv.cn
+a93mxfbpvjwaj.cn
+abitw8cla8ivmwla170.cn
+bdbg07nhwe0xmob.cn
+cmfvxqyh70ah.cn
+crrynn079anwqnbdb.cn
+hxqemsa0oicb.cn
+ii69wglkwhth.cn
+jgmjf1kagrqvn.cn
+jjotsu77xshqea.cn
+kmpmofrbute1ff5.cn
+kqpmpa1od07m8c.cn

@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: giftedcrook stealer
+
+# CERT-UA: UAC-0226
+
+# Reference: https://cert.gov.ua/article/6282946
+# Reference: https://www.virustotal.com/gui/file/f8a31715840852e8ef04016b31f909123f2aa864f3850c45eb511fd1885b4037/detection
+# Reference: https://www.virustotal.com/gui/file/a02506468e632875a2c9c9c16e730b8bdc52f7450b28ee7bd8f5ac014b264e53/detection
+# Reference: https://www.virustotal.com/gui/file/0a4777725673f9f7114ddceddd80e5a72ad3a4d20fd2014d4c60e2cc1a6cefc2/detection
+# Reference: https://www.virustotal.com/gui/file/c8bb0dbc952c9dc2bbc550a300ed033ad5d2416390891ed1e800b08ad3ab5d3a/detection
+
+37.120.239.187:6501
+89.44.9.186:3240

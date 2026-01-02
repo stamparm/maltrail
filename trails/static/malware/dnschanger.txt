@@ -1,0 +1,106 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ninoseki/status/1171791792934490116
+
+http://23.225.121.242
+http://23.225.205.131
+
+# Reference: https://twitter.com/ninoseki/status/1172809449125236738
+
+http://23.225.121.147
+
+# Reference: https://twitter.com/ninoseki/status/1172979198144548864
+
+http://23.225.205.16
+
+# Reference: https://otx.alienvault.com/pulse/5d8c7a842e515ed07ae338de
+
+downloadsecurity.info
+windsecdown.xyz
+update.strds.ru
+update.rmedia15.ru
+
+# Reference: https://team-cymru.com/blog/2021/01/26/illuminating-ghostdns-infrastructure/ (# Changer IP addresses)
+# Reference: https://github.com/stamparm/maltrail/pull/14078
+
+http://104.248.84.36
+http://134.122.17.197
+http://134.122.20.72
+http://134.209.114.117
+http://134.209.119.201
+http://134.209.119.215
+http://134.209.194.227
+http://134.209.208.12
+http://134.209.208.32
+http://134.209.208.34
+http://134.209.208.60
+http://134.209.208.89
+http://134.209.208.90
+http://134.209.208.91
+http://142.93.7.241
+http://157.245.240.62
+http://157.245.253.224
+http://157.245.80.115
+http://157.245.87.63
+http://157.245.95.131
+http://157.245.95.198
+http://159.65.197.126
+http://159.65.197.220
+http://159.65.197.67
+http://159.65.197.70
+http://159.65.202.16
+http://159.65.228.195
+http://159.65.228.2
+http://159.65.228.60
+http://159.65.228.79
+http://159.65.236.178
+http://159.89.84.50
+http://161.35.113.178
+http://161.35.113.198
+http://162.243.14.132
+http://165.22.199.47
+http://167.172.39.220
+http://167.71.73.30
+http://168.61.52.32
+http://178.62.254.221
+http://188.166.104.122
+http://188.166.104.148
+http://188.166.105.104
+http://188.166.31.41
+http://188.166.38.126
+http://188.166.90.70
+http://191.252.178.203
+http://192.241.150.141
+http://192.241.165.214
+http://192.81.214.228
+http://198.211.110.224
+http://51.81.53.144
+http://51.81.53.171
+http://64.227.10.49
+http://64.227.22.224
+
+# Reference: https://github.com/ti-research-io/ti/blob/main/ioc_extender/ET_DNSChanger.json
+
+babbleify.ru
+bistr4.ru
+doctorpops.ru
+e1faffb3e614e6c2fba74296962386a7.ru
+monitoring-deneg.ru
+nobeltec.ru
+rmedia15.ru
+rustechnogroup.ru
+salesbar.ru
+sangta.ru
+strds.ru
+studygur.ru
+
+# Reference: https://www.virustotal.com/gui/file/77dbd0335a1fdacc8b43b0dbdcd5be5d32864e99c774ac5bd3b2563c30ced5e8/detection
+# Reference: https://www.virustotal.com/gui/file/a4b653616bd4ccb36b158ae37b5123505ffe9af29a3c956af19deb09a19505b6/detection
+
+downsecsoft.xyz
+trafficrafik.ru
+saltlog.downsecsoft.xyz
+/loader/log?hw=
+/loader?osver=
+updatesoft.theworkpc.com

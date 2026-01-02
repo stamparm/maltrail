@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.cleafy.com/cleafy-labs/bingomod-the-new-android-rat-that-steals-money-and-wipes-data
+# Reference: https://tria.ge/240424-nha4fahc21/behavioral1
+# Reference: https://www.virustotal.com/gui/file/28c73252639991a508898a9cd99833bfe64b4d20e2971e39ae461f25db8c29a7/detection
+
+101.99.92.10:13500
+101.99.92.11:13500
+
+# Reference: https://x.com/Sh4dow3x3/status/1940436891050144025
+# Reference: https://x.com/JAMESWT_WT/status/1940476561922445355
+# Reference: https://tria.ge/250702-v69p8szm12/behavioral3
+# Reference: https://www.virustotal.com/gui/file/8b31874073fd9d5810247aea86d29dd37057cf23dd62c4e8c8bca5a483e65c0f/detection
+
+104.168.143.135:13500
+104.168.143.135:8055
+certifica-lt.com
+io-cert.com

@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: nelsy stealer
+
+# Reference: https://x.com/solostalking/status/1867144415057424624
+# Reference: https://www.virustotal.com/gui/file/ce12f0e0cd3a3807463c8c538808d613798b11d961a94eabf0ba9d67851106f3/detection
+
+customer.sellauth.com
+login.intogame.lol
+
+# Generic
+
+/nelsy/login

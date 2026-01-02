@@ -1,0 +1,44 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2017-020114-1619-99&tabid=2
+
+microsoftnewupdate.com
+progsupdate.com
+
+# Reference: http://researchcenter.paloaltonetworks.com/2017/01/unit42-downeks-and-quasar-rat-used-in-recent-targeted-attacks-against-governments/
+
+downloadtesting.com
+gameoolines.com
+onlinesoft.space
+newphoneapp.com
+gamestoplay.bid
+smartsftp.pw
+galaxysupdates.com
+galaxy-s.com
+datasamsung.com
+progsupdate.com
+topgamse.com
+bandtester.com
+speedbind.com
+ukgames.tech
+wallanews.publicvm.com
+wallanews.sytes.net
+noredirecto.redirectme.net
+dynamicipaddress.linkpc.net
+downloadlog.linkpc.net
+havan.qhigh.com
+kolabdown.sytes.net
+rotter2.publicvm.com
+ftpserverit.otzo.com
+webfile.myq-see.com
+downloadmyhost.zapto.org
+help2014.linkpc.net
+safara.sytes.net
+exportball.servegame.org
+viewnet.better-than.tv
+down.downloadoneyoutube.co.vu
+netstreamag.publicvm.com
+hostgatero.ddns.net
+subsidiaryohio.linkpc.net
+helpyoume.linkpc.net

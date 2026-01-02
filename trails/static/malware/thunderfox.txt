@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: blustealer, spyex
+
+# Reference: https://decoded.avast.io/anhho/blustealer/
+# Reference: https://otx.alienvault.com/pulse/614989548875be69f7098292
+
+bojtai.club
+mail.bojtai.club
+shepherd.myhostcpl.com
+
+# Reference: http://lists.emergingthreats.net/pipermail/emerging-sigs/2022-May/030658.html
+
+premium12.web-hosting.com

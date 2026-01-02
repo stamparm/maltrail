@@ -1,0 +1,99 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://blog.morphisec.com/new-global-attack-on-point-of-sale-systems
+
+104.237.131.29:443
+185.135.157.138:8080
+185.202.174.84:443
+185.202.174.91:443
+185.80.233.166:443
+209.126.106.228:443
+217.12.218.95:22222
+34.245.88.113:9090
+35.182.31.181:443
+45.247.22.27:4444
+46.166.173.109:443
+47.75.151.154:443
+5.39.219.15:8081
+89.105.194.236:443
+93.115.26.171:443
+http://188.166.105.24
+http://192.81.223.204
+http://2.72.0.200
+http://37.139.21.20
+bbing.co.za
+standardcertifications.com
+
+# Reference: https://twitter.com/VK_Intel/status/1129285394254782464
+
+akamai1811.com
+
+# Reference: https://securityintelligence.com/posts/more_eggs-anyone-threat-actor-itg08-strikes-again/
+# Reference: https://otx.alienvault.com/pulse/5d67f0d925230d8605a4f565
+
+bradpitt.kz
+cloudserv.ink
+cloudservers.kz
+jobhyper.com
+rediffmail.kz
+usstaffing.services
+usastaffing.services
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/fin6-compromised-e-commerce-platform-via-magecart-to-inject-credit-card-skimmers-into-thousands-of-online-shops/
+
+storage.googleapis.com/volusionapi/resources.js
+
+# Reference: https://www.fireeye.com/blog/threat-research/2019/04/pick-six-intercepting-a-fin6-intrusion.html
+
+103.73.65.116:443
+103.73.65.116:80
+176.126.85.207:443
+176.126.85.207:80
+185.202.174.31:443
+185.202.174.31:80
+185.202.174.41:443
+185.202.174.41:80
+185.202.174.44:443
+185.202.174.44:80
+185.202.174.80:443
+185.202.174.80:80
+185.202.174.84:443
+185.202.174.84:80
+185.202.174.91:443
+185.202.174.91:80
+185.222.211.98:443
+185.222.211.98:80
+31.220.45.151:443
+31.220.45.151:80
+46.166.173.109:443
+46.166.173.109:80
+62.210.136.65:443
+62.210.136.65:80
+89.105.194.236:443
+89.105.194.236:80
+93.115.26.171:443
+93.115.26.171:80
+
+# Reference: https://twitter.com/Vishnyak0v/status/1222097238371045376
+
+ns1.dot.net.in
+
+# Reference: https://quointelligence.eu/2020/07/golden-chickens-evolution-of-the-maas/
+# Reference: https://otx.alienvault.com/pulse/5f15cf8184b0933459303d95
+
+json.digebuy.com
+office.fielnnam.com
+origin.cdn77.kz
+secure.jobscur.com
+web.rossnnam.com
+xo.mikeplein.com
+
+# Reference: https://dti.domaintools.com/skeleton-spider-trusted-cloud-malware-delivery/
+# Reference: https://github.com/DomainTools/SecuritySnacks/blob/main/2025/Skeleton-Spider-Trusted-Cloud-Malware-Delivery.csv
+# Reference: https://www.virustotal.com/gui/file/9f940783a6bbeaca52308b32e7bc0060222f3705c2db2ab00f59c6615e5e577f/detection
+# Reference: https://www.virustotal.com/gui/file/785cbaa2284689b66b5da694572a63a5f9eadc6025fc469cf16f05fa0d0bb848/detection
+
+bobbyweisman.com
+93f4f4.bobbyweisman.com
+/kakfgar

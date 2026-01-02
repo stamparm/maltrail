@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.crowdstrike.com/blog/carbon-spider-embraces-big-game-hunting-part-1/
+# Reference: https://www.crowdstrike.com/blog/carbon-spider-embraces-big-game-hunting-part-2/
+# Reference: https://otx.alienvault.com/pulse/612f3d563c0ce5d63ed47842
+
+http://185.163.45.249
+againcome.com
+alphalanding.com
+besaintegration.com
+chauvinistable.com
+colahasch.com
+electroncador.com
+petshopbook.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1275914690627899392
+# Reference: https://twitter.com/ThreatHive/status/1275918481800617984
+# Reference: https://app.any.run/tasks/d40e13a1-f17a-449c-8ac4-a7fd947f986b/
+
+charjackyum.com
+gemmiparalyzed.com
+jaglamorous.com
+judicialance.com
+neighborhoodlumish.com
+podestablished.com
+spontaneousance.com
+spoolopedia.com
+temptationone.com

@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/naumovax/status/1939722076262203490
+# Reference: https://www.virustotal.com/gui/file/a5ace968e0e7f2e30fc37795b9ee727ca73b3ada7b12b4209a18124bbb0d54df/detection
+# Reference: https://www.virustotal.com/gui/file/af1fbe4b6ffd4c728def34ce8c5b9d3fdc7ffe8a2f829eb29ce3333495e47421/detection
+# Reference: https://www.virustotal.com/gui/file/74136bd5e58d12d190cbda4fb383e7653099d90446b42e9393ae7bd684df1c17/detection
+# Reference: https://www.virustotal.com/gui/file/d87d9cfd36f16139f16b819400f138327234e641b66443a36b95446ca2bef65d/detection
+
+217.156.50.228:8176
+217.156.50.228:8181
+217.156.50.228:8185
+217.156.50.228:8221

@@ -1,0 +1,126 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt39, chafer, itg07
+
+# Reference: https://www.symantec.com/blogs/threat-intelligence/chafer-latest-attacks-reveal-heightened-ambitions
+
+win7-update.com
+
+# Reference: https://twitter.com/clearskysec/status/976170940722708480
+
+j-alam.com
+win10-update.com
+dnrslv.gq
+skf-group.info
+yjksdrl.tk
+eseses.tk
+jevxvideo.com
+dnmails.gq
+microsoftcert.xyz
+
+# Reference: https://unit42.paloaltonetworks.com/new-python-based-payload-mechaflounder-used-by-chafer/
+
+http://134.119.217.87
+http://185.177.59.70 
+turkiyeburslari.tk 
+xn--mgbfv9eh74d.com 
+ytb.services
+
+# Reference: https://twitter.com/VK_Intel/status/1093001266974916608
+
+mycrossweb.com
+offsetweb.com
+
+# Reference: https://twitter.com/VK_Intel/status/1074910586423648256
+
+dropboxengine.com
+
+# Reference: https://twitter.com/ClearskySec/status/1123542294186070016
+# Reference: https://twitter.com/ClearskySec/status/1123542295616327680
+# Reference: https://otx.alienvault.com/pulse/5cc9ab085bab461b1df43a24
+
+http://185.206.144.174
+http://213.252.245.77
+http://213.252.245.78
+http://46.165.206.252
+http://51.77.163.86
+http://85.217.170.226
+http://94.100.21.230
+http://94.242.204.105
+0ffice36o.com
+acrobatverify.com
+adobelicence.com
+adpolicer.org
+anyportals.com
+cloudipnameserver.com
+defender-update.com
+googie.email
+hpserver.online
+jscript.online
+lowconnectivity.com
+mailservice-verify.stream
+microsoftfixer.com
+mobily-sa.com
+msn-com.dynu.net
+msnconnection.com
+mycrossweb.com
+stackwebonline.com
+supermario2018.com
+telenorco.com
+updatenodes.site
+updatesecuritypatch.com
+verify-accounts-support.com
+websys-corpo.com
+windows-update.dynu.net
+
+# Reference: https://otx.alienvault.com/pulse/5d07985dd0bbe4b2a97fc1c5
+# Reference: https://securityintelligence.com/posts/observations-of-itg07-cyber-operations/
+
+nvidia-services.com
+sabre-airlinesolutions.com
+sabre-css.com
+
+# Reference: https://www.bitdefender.com/files/News/CaseStudies/study/332/Bitdefender-Whitepaper-Chafer-creat4491-en-EN-interactive.pdf
+
+redjewelry.biz
+apigoogle-accounts.biz
+update-microsoft.space
+
+# Reference: https://www.justice.gov/usao-edva/pr/iranian-hackers-indicted-stealing-data-aerospace-and-satellite-tracking-companies
+# Reference: https://otx.alienvault.com/pulse/5f638d3debeb942fca73d6a6
+
+idc-team.net
+saveingone.com
+tleanalyser.com
+
+# Reference: https://blog.reversinglabs.com/blog/rana-android-malware
+# Reference: https://blog.reversinglabs.com/hubfs/Blog/rana_android_malware/IOC_SHA1_list.txt
+# Reference: https://blog.reversinglabs.com/hubfs/Blog/rana_android_malware/IOC_C2_list.txt
+# Reference: https://blog.reversinglabs.com/hubfs/Blog/rana_android_malware/IOC_suspicious_domains.txt
+# Reference: https://www.ic3.gov/Media/News/2020/200917-2.pdf
+# Reference: https://otx.alienvault.com/pulse/5fcfb6a59d838e973b829715
+
+100ostad.ir
+ccloudflare.com
+chembook.ir
+ctci.ir
+elfdomainone.com
+facedomainpc.com
+facedomaintv.com
+fullplayersoftware.com
+irchemistry.com
+irchemistry.net
+ktci.ir
+lifedomainwar.com
+milanionline.ir
+sadostad.com
+sadostad.ir
+softwareplayertop.com
+wherisdomaintv.com
+whoisdomainpc.com
+
+# Reference: https://twitter.com/ShadowChasing1/status/1442164286210535428
+# Reference: https://www.virustotal.com/gui/file/7d5adc2b78b96996e8e5790fd224a3cc379c4721fca2671d5b8a1c03852ca66e
+
+srvuptcloud.com

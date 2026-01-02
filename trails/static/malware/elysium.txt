@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: elysium, zeromax
+
+# Reference: https://twitter.com/vxvault/status/1278306582028095488
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1278443957786152960
+# Reference: https://app.any.run/tasks/3776ca8d-0cc4-4067-8652-19716b2f9b67/
+
+enibenny.space
+
+# Reference: https://twitter.com/3xp0rtblog/status/1286275313589264384
+
+elysium-shop.net
+
+# Reference: https://www.virustotal.com/gui/file/0030bea6b460c2b02b6fda9b89f44d80245e7a074e409ad07a908e5ddbf9a2b6/detection
+
+manholi.xyz

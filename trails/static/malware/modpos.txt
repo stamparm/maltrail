@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://otx.alienvault.com/pulse/565492f367db8c7a156c4b09/
+
+109.72.149.42
+91.218.39.217
+130.0.237.22

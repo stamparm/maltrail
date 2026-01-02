@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: Skimmer-attacks, which target PerfectAudience platform
+
+# Reference: https://twitter.com/sansecio/status/1260917664064638976
+
+perfectaudience.org
+
+# Reference: https://twitter.com/unmaskparasites/status/1260963991125463040
+# Reference: https://twitter.com/ESETresearch/status/1272408821072384000
+# Reference: https://www.virustotal.com/gui/domain/listrakbi.org/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.146.51.230/relations
+
+listrakbi.org

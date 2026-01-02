@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Attor.pdf
+# Reference: https://otx.alienvault.com/pulse/5d9f00e7d4eece051c8846c6
+
+idayqh3zhj5j243t.onion

@@ -1,0 +1,588 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://unit42.paloaltonetworks.com/matanbuchus-malware-as-a-service/
+
+biznesplanet-bnpparlba.com
+biznesplanet-parlbabnp.com
+biznesplanet-parlbas.com
+biznesplanet.parlbabnp.com
+bos24-logowan.com
+bos24-logowanie.com
+bos24-online.com
+citationsherbe.at
+dostawapapajohns.online
+eonsabode.at
+flowsrectifie.at
+ibos-online24.com
+ibos24-login.com
+ibos24-online.com
+idea-secure-login.com
+login-biznesplanet.com
+login-bos24.com
+odatingactualiz.at
+onlinepapajohns.online
+papa-johns-dostawa.digital
+papa-johns-dostawa.online
+sso-cloud-idea.com
+wallet-secure.biz
+wallet-secure.me
+wallet-secure.org
+wallet-secure.site
+wallet-secure.xyz
+
+# Reference: https://app.validin.com/axon?source=DNS&type=ip&find=91.203.192.125
+
+bos-bank.com
+business-start-lng.com
+business-startlng.com
+kbc-kbctouch.com
+kbckbctouch.com
+kbctouchkbc.com
+lng-secure.com
+online-allorbank.com
+paribas-login-secure.com
+paribas-logowanie.com
+secure-bankgetin.com
+secure-getinbank.com
+sso-cloud-idea-bank.com
+systemfixpc.com
+
+# Reference: https://tria.ge/211202-rttayahgan/behavioral2
+# Reference: https://www.virustotal.com/gui/ip-address/194.104.136.9/relations
+# Reference: https://www.virustotal.com/gui/file/32814d7581dcbcfeca8fce229bdb12bf92f006aea54c3f393cbbef341c897877/detection
+
+193.56.146.73:52777
+auth-azuread.at
+authadazure.at
+authazuread.at
+azureauthad.at
+beliale232634.at
+belialp632298.at
+belialq449663.at
+belialr878539.at
+belialw869367.at
+checkingsoftwareupdate.at
+checkingupdatesoftware.at
+microsofte-e3eb6679a69042bea3968ecb029a669f.at
+microsoftq-886ef884f3294f81a8e09ad83c63aa6b.at
+microsoftr-e7014da3ab60439c951764ac28cf3735.at
+microsoftw-02235fc8b7744fe6ba843e40a54ab843.at
+softupdate.at
+softwarecheckingupdate.at
+softwareupdatechecking.at
+windows433828system.at
+windows526398system.at
+windows694237system.at
+windows998443system.at
+windowssystem268877.at
+
+# Reference: https://twitter.com/StillAzureH/status/1502486160022863874
+# Reference: https://www.virustotal.com/gui/ip-address/185.250.148.209/relations
+
+212.193.48.150:443
+212.193.48.150:54398
+99847956-velial-37884455info.at
+allservicesystemupdate.at
+allserviceupdate.at
+allvelial-99865338.at
+business73586763-velial-29254835.at
+caqjkuufvb.at
+ceqemqwerm.at
+check-soft-system.at
+ddpkarrosmfh.at
+driverwindowsupdate.at
+fgwiuyos.at
+jdrbsnhwfu.at
+megaupdatesystemservice.at
+myupdatesystemservice.at
+obnrmqct.at
+oecongiuwx.at
+peahhmii.at
+realvelial-82995964.at
+sixpccxn.at
+topvelial-55623758.at
+update-soft-check-system.at
+update-soft-system-check.at
+update-system-check-soft.at
+update-system-soft-check.at
+updatebd.at
+updatehome.at
+updatenetwork.at
+updateweb.at
+wayuniqs.at
+windowsdriverupdate.at
+yissquzaetxx.at
+/asZmZK/yueoTE/XQBMcu2.php
+/asZmZK/yueoTE/
+/XQBMcu2.php
+
+# Reference: https://github.com/pan-unit42/tweets/blob/master/2021-11-15-IOCs-for-Matanbuchus-Qakbot-CobaltStrike-and-spambot-activity.txt
+
+http://190.14.37.84
+193.56.146.60:443
+193.56.146.60:44413
+193.56.146.61:443
+193.56.146.61:44413
+
+# Reference: https://www.virustotal.com/gui/file/01ac2b3990a1cf431549d25cc7b1b280d7a9cb80c9ab3c9bdd804b19e941143a/detection
+
+get-fun-24.com
+getnek.com
+toponlinefilm24.com
+
+# Reference: https://www.virustotal.com/gui/file/004ee7c387f293638fb885c2a6faa06130382bf7960c41c6d3941cb6e297aebd/detection
+
+fantasy-soccer-24.com
+fashion-academy.net
+
+# Reference: https://www.virustotal.com/gui/file/0013582e2fc3a977271a354b0bb64403d88969e2ca51aea9959e9e664bc332bc/detection
+
+create-new-house-take.xyz
+onenew-cloudapps.com
+
+# Reference: https://medium.com/@DCSO_CyTec/a-deal-with-the-devil-analysis-of-a-recent-matanbuchus-sample-3ce991951d6a
+
+azure-dbupdate.cloud
+azureboot.com
+azureliveapps.com
+roamingslivedb.com
+/BNUwRuzkgS/
+/BNUwRuzkgS/auth.php
+/BNUwRuzkgS/index.php
+/vmagtc/njqeee/requets/index.php
+/njqeee/requets/index.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1529422038468796417
+# Reference: https://www.virustotal.com/gui/ip-address/35.246.201.219/relations
+# Reference: https://www.virustotal.com/gui/file/d9e6395917a1d1103c40f710310de0cf64c370d167def378e9b88f3af247a1b0/detection
+
+azure-dbupdate.at
+azure-updatedb.at
+azuretelemetry.xyz
+statsazure.xyz
+/cAUtfkUDaptk/ZRSeiy/requets/index.php
+/cAUtfkUDaptk/
+/ZRSeiy/
+/cAUtfkUDaptk/ZRSeiy/
+/ZRSeiy/requets/index.php
+
+# Reference: https://www.virustotal.com/gui/file/02dce7f57e4933edf84cbe525d8115defd5ecafd5b2b203be6a2ec7aa0099bc7/detection
+
+buyinvestment24.com
+negarehgallery.com
+
+# Reference: https://twitter.com/pr0xylife/status/1537511268591992840
+# Reference: https://www.joesandbox.com/analysis/1014730#iocs
+# Reference: https://www.virustotal.com/gui/file/2d8740ea16e9457a358ebea73ad377ff75f7aa9bdf748f0d801f5a261977eda4/detection
+# Reference: https://www.virustotal.com/gui/file/face46e6593206867da39e47001f134a00385898a36b8142a21ad54954682666/detection
+
+213.226.114.15:443
+213.226.114.15:48195
+34.118.54.36:443
+34.118.54.36:48195
+collectiontelemetrysystem.com
+telemetrysystemcollection.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/34.118.54.36/relations
+
+internationalcservice.quest
+mycommonaccess.quest
+
+# Reference: https://www.virustotal.com/gui/ip-address/80.66.64.63/relations
+
+amcabigieluckydomones.net
+hponosdomonosdemens.net
+kraledemensdpamu.net
+tramerdesnomates.net
+
+# Reference: https://github.com/pr0xylife/Matanbuchus/commit/b8a6dbcb41748ab656c6ce5a1976ae879c84f5e1
+# Reference: https://www.virustotal.com/gui/ip-address/185.9.147.200/relations
+# Reference: https://www.virustotal.com/gui/ip-address/31.41.244.227/relations
+# Reference: https://www.virustotal.com/gui/ip-address/31.41.244.228/relations
+# Reference: https://www.virustotal.com/gui/ip-address/31.41.244.237/relations
+# Reference: https://www.virustotal.com/gui/file/bba5a4ddc964c7cc25ce0c04eb21f5fdf6270ddbe18b7df13c4596057d87637e/detection
+# Reference: https://www.virustotal.com/gui/file/d8c21ff6fe4617b22ff37e74a1d29adb08d3164d43d7ed205c207964f4313a72/detection
+
+31.41.244.230:65383
+communicationreporting.at
+communicationreporting.com
+servicreporting.at
+servicreporting.com
+slgemseller.com
+telemetryreporting.at
+telemetryreporting.com
+telemetryservic.at
+telemetryservic.com
+updatesservic.at
+updatesservic.com
+/mtaggsM/YmQzcuM/auth.aspx
+/mtaggsM/YmQzcuM/home.aspx
+/mtaggsM/YmQzcuM/
+/mtaggsM/
+/YmQzcuM/
+/KkfUWR/kFAWCs/requets/index.php
+/kFAWCs/requets/index.php
+/KkfUWR/kFAWCs/
+/kFAWCs/
+/KkfUWR/
+
+# Reference: https://twitter.com/James_inthe_box/status/1539274565968310272
+# Reference: https://gist.github.com/silence-is-best/1bc62a53c1a0ddb3a8bcdff19bc80c3e
+
+/m8YYdu/mCQ2U9/auth.aspx
+/m8YYdu/mCQ2U9/home.aspx
+/m8YYdu/mCQ2U9/
+/m8YYdu/
+/mCQ2U9/
+
+# Reference: https://www.virustotal.com/gui/ip-address/31.41.244.224/relations
+
+teammanaging.at
+
+# Reference: https://github.com/pan-unit42/tweets/blob/master/2022-06-17-IOCs-for-Matanbuchus-with-Cobalt-Strike.txt
+
+instance-manager.at
+
+# Reference: https://www.virustotal.com/gui/file/037b340417857e618b37cfc3c6b4e6d01717ca0cedfaf57c4d98f368f432f10d/detection
+
+noblecreativeaz.com
+testdomainsdrive.com
+
+# Reference: https://unit42.paloaltonetworks.com/matanbuchus-malware-as-a-service/
+
+/kntwtopnbt/iqiw922vv5/AveBelial.xml
+/kntwtopnbt/iqiw922vv5/gate.php
+/kntwtopnbt/iqiw922vv5/
+/iqiw922vv5/
+/kntwtopnbt/
+
+# Reference: https://tracker.viriback.com/dump.php (2022-07-11)
+
+http://193.56.146.60
+http://193.56.146.61
+http://45.9.20.136
+http://45.9.20.139
+45.9.20.137:63994
+azure-telemetry-software.com
+checkupdate.at
+statisticglors.com
+telemetry-azure.com
+zoomforment.com
+/fBieeA/
+/fBieeA/gbpGKC/
+/fBieeA/gbpGKC/gataway.php
+/gbpGKC/
+/ktbrupvunz/
+
+# Reference: https://otx.alienvault.com/pulse/62e3c66f3c31769773f307f7
+# Reference: https://www.virustotal.com/gui/ip-address/193.56.146.62/relations
+# Reference: https://www.virustotal.com/gui/ip-address/193.56.146.65/relations
+
+http://193.56.146.62
+http://193.56.146.65
+193.56.146.62:443
+193.56.146.65:443
+193.56.146.62:48195
+193.56.146.65:48195
+
+# Reference: https://twitter.com/ViriBack/status/1558806912011063297
+# Reference: https://tria.ge/220814-qksglseder
+# Reference: https://www.virustotal.com/gui/file/96072100adb88a4c6cf2af97325e0fae4c0a33c1ff3e973c57457588f9a6fa14/detection
+
+162.0.232.35:17944
+193.56.146.137:17944
+listupdateschecks.com
+listupdatescheckstime.com
+/AcMZWB/MmGQYf/auth.aspx
+/mZkBXKz/BzQEspX/auth.aspx
+/AcMZWB/MmGQYf/
+/mZkBXKz/BzQEspX/
+/AcMZWB/
+/BzQEspX/
+/MmGQYf/
+/mZkBXKz/
+
+# Reference: https://github.com/cyberark/malware-research/blob/master/MatanbuchusLoader/IoCs.md
+
+193.56.146.130:49356
+193.56.146.133:49356
+193.56.146.134:49356
+193.56.146.135:49356
+193.56.146.140:46273
+193.56.146.141:46273
+193.56.146.142:46273
+193.56.146.143:46273
+193.56.146.170:62008
+193.56.146.171:62008
+193.56.146.172:62008
+193.56.146.173:62008
+193.56.146.202:46921
+193.56.146.203:46921
+193.56.146.204:46921
+193.56.146.205:46921
+193.56.146.62:44413
+193.56.146.65:44413
+45.139.236.18:42991
+45.139.236.68:42991
+45.139.236.72:42991
+45.139.236.88:42991
+/9c9f7205d4c044fc93588012b9579c8e/c55bdcc4/xsUN.php
+/c55bdcc4/xsUN.php
+/MovziZNRvB/jSQEaDeuzw/ZZseYR.php
+/MovziZNRvB/jSQEaDeuzw/
+/MovziZNRvB/
+/jSQEaDeuzw/
+/a695f579464142de/qefrb.php
+/b0868b6b-7f2c-4ac6-ba54-ba9b13744d17/clinton45.xml
+/d8b8d14f-6842-46ec-b254-e92ffe990498/4ad4e44f
+/d8b8d14f-6842-46ec-b254-e92ffe990498/b32f9ccc
+/f5126584-3f68-4e0c-868a-dcb2455f8146/Y2xpbnRvbjQ1.xml
+/Y2xpbnRvbjQ1.xml
+/viZbYkaLLA/kpDgbe/oqas.php
+/viZbYkaLLA/kpDgbe/
+/viZbYkaLLA/
+/kpDgbe/
+/www/update/v11.0/qptqkd.php
+
+# Reference: https://twitter.com/HaoZhixiang/status/1588460772082188289
+# Reference: https://www.virustotal.com/gui/ip-address/176.113.115.219/relations
+# Reference: https://www.virustotal.com/gui/ip-address/176.113.115.195/relations
+
+176.113.115.195:47488
+188.127.239.132:47488
+backoffices.at
+eurogov.org
+firstupdates.at
+gateupdates.at
+messageupdate.at
+softex.at
+updatenetworkingloc.at
+/tgJIZY/AzXviN/fpNj/index.php
+/tgJIZY/AzXviN/fpNj/
+/tgJIZY/AzXviN/
+/AzXviN/
+/tgJIZY/
+/fpNj/index.php
+
+# Reference: https://github.com/pan-unit42/tweets/blob/master/2021-12-07-IOCs-for-Qakbot-and-Matanbuchus-activity.txt
+
+193.56.146.73:52777
+193.56.146.74:52777
+
+# Reference: https://twitter.com/malwrhunterteam/status/1591397779544625152
+# Reference: https://bazaar.abuse.ch/sample/b0620f36f136d0c8e4c036a67798de2902bbd45bd21bd026102d53285d56622c/
+# Reference: https://tria.ge/221109-b2yydseebj
+# Reference: https://www.virustotal.com/gui/file/f8beb42baf57fb20f539d24cf9f0c5abfab951706b00c725cd05e80e3080c079/detection
+# Reference: https://www.virustotal.com/gui/file/b0620f36f136d0c8e4c036a67798de2902bbd45bd21bd026102d53285d56622c/detection
+
+206.81.11.20:81
+it-south-bridge.com
+/new_style/UimbTD.dll
+/new_style/xMbdNh.dll
+/XbnZ/XmznAcQ
+/XmznAcQ
+
+# Reference: https://twitter.com/embee_research/status/1775099583548583995
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-03-26-IOCs-for-Matanbuchus-infection-with-Danabot.txt
+# Reference: https://www.virustotal.com/gui/file/aae12d026de664b5c1069242ff9d2a4c42a00ba22173d0b859b4cb129bc68d30/detection
+# Reference: https://www.virustotal.com/gui/file/9c4f04d2707f8e14c6dc3cad1facc1ecc919480c9f50f85b47a27c87625b0b54/detection
+# Reference: https://www.virustotal.com/gui/file/43aa76bec0e160c4e4a587e452b3303fa7ac72f08521bcbdcae2c370d669e451/detection
+
+http://194.67.193.69
+194.67.193.69:443
+194.67.193.69:59619
+91.195.240.123:59619
+astrologytop.com
+deptoftreasury.org
+gammaproject.dev
+maxrecovery.org
+myfundsrecovery.org
+sunproject.dev
+sweetapp.page
+treasurybanks.org
+usdatarecovery.org
+bologna.sunproject.dev
+download.astrologytop.com
+download.deptoftreasury.org
+download.maxrecovery.org
+download.myfundsrecovery.org
+download.usdatarecovery.org
+file.astrologytop.com
+file.deptoftreasury.org
+file.maxrecovery.org
+file.myfundsrecovery.org
+file.usdatarecovery.org
+florence.sunproject.dev
+get.astrologytop.com
+get.deptoftreasury.org
+get.maxrecovery.org
+get.myfundsrecovery.org
+get.usdatarecovery.org
+rome.sunproject.dev
+turin.sunproject.dev
+venice.sunproject.dev
+
+# Reference: https://twitter.com/ValidinLLC/status/1773287240883441830
+
+infotime.page
+berlin.infotime.page
+bremen.infotime.page
+hamburg.infotime.page
+heidelberg.infotime.page
+munich.infotime.page
+
+# Reference: https://www.virustotal.com/gui/file/d60e15c212e162c5e284abcd46dbddc44863a4566ea350a1a96f00d1ebda54fb/detection
+# Reference: https://www.virustotal.com/gui/file/46ddd5f8d70d53df471747001d37f1eb2dbaa2a6c93ac616f7ade25a1914238a/detection
+# Reference: https://www.virustotal.com/gui/file/21802c42bd60a952998f4ac1b5192fa6015edf9f62cf271f66ddbb1b28ccc475/detection
+
+http://194.67.193.66
+http://194.67.193.67
+http://194.67.193.68
+194.67.193.66:443
+194.67.193.67:443
+194.67.193.67:59619
+194.67.193.68:443
+devcloud.page
+programvenders.app
+softkey.app
+topsystem.lol
+webstat.page
+/blogs/skinny/bleat/index.php
+
+# Reference: https://twitter.com/malpulse/status/1775966558356992215
+# Reference: https://twitter.com/malpulse/status/1775966550257725788
+# Reference: https://twitter.com/malpulse/status/1775966538190766436
+# Reference: https://www.virustotal.com/gui/file/aa0687832273122eb77be11e11a34bc40f533e38bbbf65262a4bd8fab3987301/detection
+
+193.143.1.196:443
+193.143.1.196:62478
+193.143.1.197:443
+193.143.1.198:62478
+193.143.1.207:443
+193.143.1.207:62478
+dumingas.com
+iseberkis.com
+musarno.app
+somakop.app
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-06-17-IOCs-from-Matanbuchus-infection-with-Danabot.txt
+# Reference: https://www.virustotal.com/gui/file/ef98cb2bd884a12f033dd768236692d73c2aa31dd34f5a798928cd56ba9c3bb5/detection
+
+194.67.193.206:443
+194.67.193.206:59619
+ahazko.com
+ricoshea.com
+ycchio.com
+/blog666/index.aspx
+/blog666/useraccount.aspx
+/blogs/skinny/bleat/index.php
+
+# Reference: https://x.com/ViriBack/status/1804113723629388130
+
+http://194.67.193.205
+aberzing.com
+ahaamthuc.com
+ardoelur.com
+barusake.com
+chubcharm.com
+comarmo.com
+dolipox.com
+duigore.com
+fedelize.com
+lameruka.com
+maduroma.com
+marusto.com
+monesam.com
+pentefaith.com
+rebusand.com
+reliseti.com
+seburax.com
+sekubar.com
+yerifest.com
+/project/blog666/
+/site666/blog/
+
+# Reference: https://x.com/ViriBack/status/1839831425714966845
+# Reference: https://x.com/JAMESWT_MHT/status/1839919053541880185
+
+http://194.67.193.10
+http://194.67.193.11
+http://194.67.193.12
+http://194.67.193.13
+http://194.67.193.14
+http://194.67.193.15
+http://194.67.193.16
+http://194.67.193.17
+http://194.67.193.18
+http://194.67.193.19
+194.67.193.10:4433
+194.67.193.11:4433
+194.67.193.12:4433
+194.67.193.13:4433
+194.67.193.14:4433
+194.67.193.15:4433
+194.67.193.16:4433
+194.67.193.17:4433
+194.67.193.18:4433
+194.67.193.19:4433
+
+# Reference: https://x.com/PRODAFT/status/1944703477650772443
+# Reference: https://github.com/prodaft/malware-ioc/tree/master/Matanbuchus
+# Reference: https://www.virustotal.com/gui/file/a2849b1f41536603b726149ed7f68e26218825dfacbe3c4fc5d354cb45b842d9/detection
+# Referecne: https://www.virustotal.com/gui/file/16554fc2949a590f6c166fb1c5f4eb113aa1e2863033dac932b573445dab77b1/detection
+# Reference: https://www.virustotal.com/gui/file/a6782b28381398ab79bff8359b2fde359cc35ec156a94fa421d46f5322873fc6/detection
+
+193.105.134.246:5354
+
+# Reference: https://x.com/TLP_R3D/status/1944729295823286597
+# Reference: https://x.com/MalGamy12/status/1949253513747284062
+# Reference: https://app.validin.com/detail?find=%5Cn%20%20%20%20%20%20%20%20Matanbuchus%20-%20%5CnLogin%5Cn%5Cn%20%20%20%20&type=raw&ref_id=17a7806fb71#tab=host_pairs (# 2025-07-14)
+
+http://103.71.22.245
+http://179.60.149.213
+http://185.39.19.164
+http://193.105.134.245
+http://202.148.54.91
+http://5.252.155.81
+http://91.236.116.139
+http://91.236.116.242
+http://94.159.113.197
+
+# Reference: https://x.com/pr0xylife/status/1945830033081156077
+# Reference: https://www.morphisec.com/blog/ransomware-threat-matanbuchus-3-0-maas-levels-up/
+# Reference: https://www.virustotal.com/gui/file/1c231ce353ad79d8592bac614afbe62cf5d882cdfd08d2f26aeb14c840a5f926/detection
+
+nicewk.com
+
+# Reference: https://x.com/pr0xylife/status/1945830033081156077
+# Reference: https://www.morphisec.com/blog/ransomware-threat-matanbuchus-3-0-maas-levels-up/
+# Reference: https://www.virustotal.com/gui/file/0f41536cd9982a5c1d6993fac8cd5eb4e7f8304627f2019a17e1aa283ac3f47c/detection
+
+emorista.org
+
+# Reference: https://www.virustotal.com/gui/file/11f7184fca713a9d63b2b64c99658483f6e7b7346c11c7c1d182532c9492b680/detection
+
+nimbusvaults.com
+
+# Reference: https://app.validin.com/detail?find=94.159.113.84&type=ip4&ref_id=1f5ed82a946#tab=resolutions
+# Reference: https://www.virustotal.com/gui/file/211cea7a5fe12205fee4e72837279409ace663567c5b8c36828a3818aabef456/detection
+
+genericfixer.com
+unipatcher.com
+
+# Reference: https://x.com/pr0xylife/status/1945830033081156077
+# Reference: https://www.morphisec.com/blog/ransomware-threat-matanbuchus-3-0-maas-levels-up/
+# Reference: https://www.virustotal.com/gui/file/da9585d578f367cd6cd4b0e6821e67ff02eab731ae78593ab69674f649514872/detection
+
+fixuplink.com
+/fixuplink/application-patch/daily-2025-01/sysmender_connector.php
+
+# Generic
+
+/GtHODfM/qilZw/YjtK.php
+/qilZw/YjtK.php
+/qilZw/
+/GtHODfM/
+/YjtK.php
+/disjdifijdjifsdd.dat

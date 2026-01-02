@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://cyble.com/blog/new-cheana-stealer-targets-vpn-user/
+# Reference: https://www.virustotal.com/gui/file/acf807def82c4b56752a9fa9b081dbb37ba9cc9f6e1c522568ff502b6b49b6db/detection
+# Reference: https://www.virustotal.com/gui/file/ba8058b704a55e50c24383a765fd74b38d7dbbf8546c4f179266c265403174b8/detection
+
+ganache.live
+warpvpn.net
+
+# Generic
+
+/api/v1/helper/ganache-link

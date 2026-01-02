@@ -1,0 +1,51 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://any.run/cybersecurity-blog/salvador-stealer-malware-analysis/
+# Reference: https://www.virustotal.com/gui/file/21504d3f2f3c8d8d231575ca25b4e7e0871ad36ca6bbb825bf7f12bfc3b00f5a/detection
+# Reference: https://www.virustotal.com/gui/file/7950cc61688a5bddbce3cb8e7cd6bec47eee9e38da3210098f5a5c20b39fb6d8/detection
+
+muletipushpa.cloud
+t01.muletipushpa.cloud
+t02.muletipushpa.cloud
+t03.muletipushpa.cloud
+t04.muletipushpa.cloud
+t05.muletipushpa.cloud
+t06.muletipushpa.cloud
+t07.muletipushpa.cloud
+t08.muletipushpa.cloud
+t10.muletipushpa.cloud
+t11.muletipushpa.cloud
+t12.muletipushpa.cloud
+t13.muletipushpa.cloud
+t14.muletipushpa.cloud
+t15.muletipushpa.cloud
+ta01.muletipushpa.cloud
+
+# Reference: https://x.com/ReBensk/status/1930622816057249959
+# Reference: https://labs.k7computing.com/index.php/android-spyware-alert-fake-government-app-targeting-android-users-in-india/
+# Reference: https://www.virustotal.com/gui/file/ccdeffcb79ed62985f1532e39c717688c77b707706598b13cc74c670ae3dd6a3/detection
+# Reference: https://www.virustotal.com/gui/file/3b50c4986023d274b1c8c518b63d0b04936886a1eea90a7240181789c2c0b139/detection
+
+apr08queen.cloud
+mariainfotech1.cloud
+mariainfotechs.cloud
+plnishah21.cloud
+pkcoment.cloud
+taniyaxcloud-t81x.com
+modi01.pkcoment.cloud
+no09.mariainfotechs.cloud
+num07.taniyaxcloud-t81x.com
+po09.plnishah21.cloud
+w06.mariainfotech1.cloud
+xyz12.apr08queen.cloud
+
+# Reference: https://any.run/malware-trends/salvador/
+# Reference: https://app.any.run/tasks/9e855885-3cf6-45aa-afb6-728a4229a5b8
+# Reference: https://app.any.run/tasks/59473bdd-72aa-444c-86e4-9931761e375d
+# Reference: https://www.virustotal.com/gui/file/ca6dfcfc0e656d723401f11f58a39fe1699f5b3d87550aed2e38c02947902629/detection
+
+mariainfotechd91.cloud
+saahspace.cloud
+amit07.saahspace.cloud
+yoyo01.mariainfotechd91.cloud

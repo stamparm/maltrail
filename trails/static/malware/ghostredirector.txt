@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: comdai, gamshen
+
+# Reference: https://www.welivesecurity.com/en/eset-research/ghostredirector-poisons-windows-servers-backdoors-side-potatoes/
+# Reference: https://github.com/eset/malware-ioc/tree/master/GhostRedirector#network
+
+881vn.com
+cs01.shop
+brproxy.868id.com
+gobr.868id.com
+q.822th.com
+xz.868id.com
+xzs.868id.com

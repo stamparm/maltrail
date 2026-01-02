@@ -1,0 +1,132 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ViriBack/status/1749184882822029564
+# Reference: https://www.virustotal.com/gui/file/d53ce8c0a8a89c2e3eb080849da8b1c47eaac614248fc55d03706dd5b4e10bdd/detection
+
+http://91.92.254.204
+
+# Reference: https://www.virustotal.com/gui/file/39be6860bcfb27532af023acf6d29c23e8b56c1ed4fc657d011d1746afc00a9f/detection
+# Reference: https://www.virustotal.com/gui/file/8ccc88661ff389e966b0fe378482ece1979113a296fcea5127ce560d889de541/detection
+# Reference: https://www.virustotal.com/gui/file/2a80fbf0919eaf7f46f8d84bc9657bbebb041a02d0e9b6a0cc66ed925dbfeff1/detection
+
+http://91.92.253.186
+http://91.92.254.166
+http://91.92.254.233
+
+# Reference: https://www.virustotal.com/gui/file/6e67ad1a4aaf6373ca42ed195ff7a1bf1752bee36ac9d7c129f021a29ec2fab0/detection
+
+http://91.92.247.123
+http://91.92.247.161
+
+# Reference: https://www.virustotal.com/gui/file/70bbe17e106d5112380cc14f8b2cf155910ea79544b1fe3c849e2d87b422e783/detection
+
+http://91.92.253.187
+
+# Reference: https://twitter.com/banthisguy9349/status/1767491444401426515
+
+http://94.156.69.176
+http://94.156.69.180
+
+# Reference: https://twitter.com/Cyberteam008/status/1767958798931529768
+# Reference: https://www.virustotal.com/gui/ip-address/94.156.69.117/relations
+
+http://167.88.172.140
+http://94.156.69.116
+http://94.156.69.117
+http://94.156.69.176
+http://94.156.69.180
+canadapost-redelivery-package.com
+
+# Reference: https://twitter.com/banthisguy9349/status/1768186615246041538
+# Reference: https://www.virustotal.com/gui/ip-address/91.92.250.221/relations
+
+http://91.92.242.250
+http://91.92.245.224
+http://91.92.250.221
+http://91.92.250.222
+http://91.92.250.225
+advancecuttinq.com
+finerlime.com
+freshlidsl.com
+incityinc.live
+notifyscnn.shop
+paragongeochen.com
+safelndg.com
+
+# Reference: https://twitter.com/banthisguy9349/status/1769716062625403165
+
+http://52.233.92.138
+
+# Reference: https://twitter.com/malpulse/status/1773660816253866213
+
+mobiel-inloggen-nl.info
+
+# Reference: https://x.com/Gi7w0rm/status/1808823644258238897
+# Reference: https://www.virustotal.com/gui/file/b357c7f065b1cb7f07c91097794424d1aecb6356893798eb4a6ee138ee87bfa0/detection
+# Reference: https://www.virustotal.com/gui/file/0b34dc8ab9785f77e515cee2ae28d0c040d534d0ae3d4c7322ed4859c984f749/detection
+
+20.163.171.63:8880
+pcapi-server.com
+solutionhub.cc
+
+# Reference: https://www.virustotal.com/gui/file/0a18067c173a7c4bdc24b8d3a847814b30733cecfdcc305c431a3d1fcc322536/detection
+
+warzone-meta.net
+/ev643v4/api.php
+
+# Reference: https://www.virustotal.com/gui/file/087ca6e9485fd8fef25c435817ac6a42c0dccee7b2dbb84bd644183d6b11a768/detection
+
+http://185.215.113.19
+/Vi9leo/index.php
+
+# Reference: https://x.com/RustyNoob619/status/1819685359489319294
+
+http://185.196.9.86
+
+# Reference: https://x.com/RustyNoob619/status/1819699431727378529
+# Reference: https://www.virustotal.com/gui/file/6c49b93c8f1af8c1c6c398852102e8e95ac4127568acbfb234cf2737843f6f26/detection
+# Reference: https://www.virustotal.com/gui/file/ea0313d18708ae75598dd09a8a5d535ea95d631caf8e33e4a657d932a6ca6816/detection
+# Reference: https://www.virustotal.com/gui/file/28681dc720f47253cdc952621192d3753c8daf5a2c01803c4ab1560f449d500a/detection
+
+http://91.92.240.13
+91.92.240.13:1256
+
+# Reference: https://x.com/banthisguy9349/status/1837491978059055464
+# Reference: https://www.virustotal.com/gui/file/aabd22fa9354e0c79521ecd0f8e870f908ff5afd39e603b9820c9676176f626f/detection
+# Reference: https://www.virustotal.com/gui/file/94baeeec64be568f45216d4f4bc554551788a96fb828f2a758be84d980bcd3cd/detection
+# Reference: https://www.virustotal.com/gui/file/4c5ca5701285337a96298ebf994f8ba013d290c63afa65b5c2b05771fbbb9ed4/detection
+
+http://185.216.214.225
+fusionflow-meta.net
+
+# Reference: https://x.com/D3LabIT/status/1838239460737118466
+# Reference: https://tria.ge/240923-rkp7xssalc/behavioral2
+# Reference: https://www.virustotal.com/gui/file/3fa4e2db3d9404f713f1f79a4eb79dda148325407408ef9d9a605479377295c8/detection
+
+191.252.83.213:21
+191.252.83.213:60059
+191.252.83.213:60411
+191.252.83.213:60487
+competitivenocturnal.shop
+compressedsupernatural.shop
+evirtualservicesreviews.com
+
+# Reference: https://www.virustotal.com/gui/file/44ecbf08130581ba184320f0a09dffd1357d063be12cc3898b4cb2ee343c240b/detection
+
+191.252.83.213:60067
+191.252.83.213:60625
+191.252.83.213:60855
+desckvbrat.com.br
+
+# Reference: https://x.com/skocherhan/status/1924809504710967545
+# Reference: https://www.virustotal.com/gui/file/01ba7a12c47b1bdfa060bcc3111e5e6bf43af27ed0c6f8499ac8d48042446888/detection
+
+topnumberonecracks.pro
+/pOystJHS/
+/pOystJHS/Core.php
+
+# Generic
+
+/zhark/api.php
+/zhark/login.php

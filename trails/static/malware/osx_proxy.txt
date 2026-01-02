@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/trojan-proxy-for-macos/111325/
+# Reference: https://www.virustotal.com/gui/file/ac5f8508185dc1b5b197e5710a1febcae2008f1225a9487ce0d0cea8e69e96ab/detection
+# Reference: https://www.virustotal.com/gui/file/4d46fac39a9a2e2bee806685b24245944e3dabae8e14a6389a6d9339e47a7154/detection
+
+140.99.196.134:6101
+147.182.137.203:6101
+akamaized.ca
+register.akamaized.ca

@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/kaushikkpal/status/1992185422299189329
+# TITLE-HOST/IP=NeuroRAT C2 - Панель управления
+
+38.180.53.74:8080
+38.180.53.74:8088
+38.180.53.74:8888

@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?name=win32/miuref
+
+esearchpage.com
+esearchpage.org

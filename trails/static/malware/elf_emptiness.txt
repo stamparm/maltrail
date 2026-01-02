@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.netlab.360.com/emptiness-a-new-evolving-botnet/
+
+emp.web2tor.cf
+bruhitsnot.tk
+bruhitsnot.cf
+emptiness.web2tor.cf
+version2.ilove26.cf
+luckyhere.mashiro.tk
+imtesting.shiina.ga
+ggwp.emptiness.tk

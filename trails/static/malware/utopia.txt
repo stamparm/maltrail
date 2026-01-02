@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: utopia stealer
+
+# Reference: https://x.com/solostalking/status/1929400610912137391
+# Reference: https://www.virustotal.com/gui/file/3ef494abad5838faf59d103eed63f8bd100078495bc60d1f1a1ffd6cbcfb3e21/detection
+
+54.39.167.143:3000

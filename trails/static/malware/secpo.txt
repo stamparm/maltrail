@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: secp0 ransomware
+
+# Reference: https://x.com/PRODAFT/status/1897304125831885011
+# Reference: https://x.com/AlvieriD/status/1897313060165181506
+# Reference: https://app.validin.com/detail?find=185.178.46.228&type=ip4&ref_id=a464205bc1d#tab=resolutions
+
+secp0-news.net
+secp0-support.net
+secponewsxgrlnirowclps2kllzaotaf5w2bsvktdnz4qhjr2jnwvvyd.onion

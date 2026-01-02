@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2016-061609-4326-99&tabid=2
+
+video.today-nytimes.com
+api.officeonlinetool.com
+ie.update-windows-microsoft.com
+travel.tripmans.com
+dns.undpus.com
+secure2.sophosrv.com
+update.nfkllyuisyahooapis.com
+www.go-gga.com
+images.defexpoindia14.com
+update.micrdsoft.com
+support.f--secure.com
+store.outlook-microsoft.net
+b.support.outlook-microsoft.net
+logon.had-one-job.com
+www.avgfree.us
+mail.upgoogle.com
+wbmail.city-library.com
+library.cpgcorp.org

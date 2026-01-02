@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: shortleash backdoor
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-24-v10956/2844
+# Reference: https://securityscorecard.com/wp-content/uploads/2025/06/LapDogs-STRIKE-Report-June-2025.pdf
+# Reference: https://www.virustotal.com/gui/file/9b954bfc2949d07eb41446225592eaa65ed3954cd2b93a13c574bb89147a4465/detection
+# Reference: https://www.virustotal.com/gui/file/33ff77940436498a50bbb05391324964063cd3c93f2e66b07d1cb31442bb1513/detection
+# Reference: https://www.virustotal.com/gui/file/1a180186e6fbaf6fa88f934965290235e8418976d6f3546dbf100217d1752db4/detection
+
+103.106.230.31:443
+103.131.189.2:443
+103.131.189.36:443
+119.31.186.253:4511
+northumbra.com
+ns.northumbra.com
+study.northumbra.com

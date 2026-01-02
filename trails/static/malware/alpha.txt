@@ -1,0 +1,40 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ViriBack/status/1165962706165358592
+
+acrobatfree.zzz.com.ua
+
+# Reference: https://twitter.com/James_inthe_box/status/1096812027698470913
+
+haribot.securezdns.pw
+
+# Reference: https://twitter.com/James_inthe_box/status/1248225775288893442
+# Reference: https://app.any.run/tasks/4ebbf99c-702f-4d34-a53f-12d645f0a326/
+
+microsoftrenat.site
+
+# Reference: https://www.virustotal.com/gui/file/4be683ad42ab96e3ca873dffe89699391e51e647994ac769da03f664387756c6/detection
+# Reference: https://app.any.run/tasks/5f43d7d9-4c07-44f5-88de-ae89ee6ad04a/
+
+windowsupdateserver.cf
+
+# Reference: https://twitter.com/sicehice/status/1646155898010624001
+# Reference: https://www.virustotal.com/gui/file/295899b745c86d2a2c3d418d71e0b045d003f2739af1e358ad39767287505276/detection
+
+172.81.61.224:2321
+
+# Generic
+
+/antivirus.php?hwid=
+/main/alpha/admin/php/running.php
+/main/alpha/admin/php/protobuf-net.dll
+/main/alpha/admin/php/BouncyCastle.Crypto.dll
+/main/alpha/admin/php/Newtonsoft.Json.dll
+/main/alpha/admin/php/System.Data.SQLite.dll
+/main/alpha/admin/php/System.Data.SQLite.EF6.dll
+/main/alpha/admin/php/System.Data.SQLite.Linq.dll
+/main/alpha/admin/php/EntityFramework.dll
+/main/alpha/admin/php/System.Security.Cryptography.ProtectedData.dll
+/main/alpha/admin/php/EntityFramework.SqlServer.dll
+/main/alpha/admin/php/version.php

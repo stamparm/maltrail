@@ -1,0 +1,118 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: deadringer
+
+# Reference: https://securelist.com/analysis/publications/69567/the-chronicles-of-the-hellsing-apt-the-empire-strikes-back/
+
+freebsd.extrimtur.com
+articles.whynotad.com
+guaranteed9.strangled.net
+hosts.mysaol.com
+web01.crabdance.com
+imgs09.homenet.org
+second.photo-frame.com
+
+# Reference: https://securelist.com/the-naikon-apt/69953/
+# Reference: https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/07205555/TheNaikonAPT-MsnMM1.pdf
+
+ahzx.eicp.net
+bkav.imshop.in
+googlemm.vicp.net
+mncgn.51vip.biz
+myanmartech.vicp.net
+thailand.vicp.net
+ubaoyouxiang.gicp.net
+vietnam.gnway.net
+
+# Reference: https://research.checkpoint.com/2020/naikon-apt-cyber-espionage-reloaded/
+
+ajtkgygth.com
+bbs.forcejoyt.com
+blog.toptogear.com
+cpc.mashresearchb.com
+dathktdga.com
+dns.jmrmfitym.com
+dns.seekvibega.com
+kyawtun119.com
+kyemtyjah.com
+mon-enews.com
+n91t78dxr3.com
+news.nyhedmgtxck.com
+qisxnikm.com
+rad.geewkmy.com
+realteks.gjdredj.com
+rrgwmmwgk.com
+spool.jtjewifyn.com
+sugano.trictalmk.com
+wdrfjkg129.com
+
+# Reference: https://twitter.com/Arkbird_SOLG/status/1387548235246473220
+# Reference: https://www.bitdefender.com/files/News/CaseStudies/study/396/Bitdefender-PR-Whitepaper-NAIKON-creat5397-en-EN.pdf
+# Reference: https://otx.alienvault.com/pulse/6089e5d691047973f36af713
+
+150.109.184.127:3333
+150.109.184.127:4444
+150.109.178.252:2356
+150.109.184.127:4152
+150.109.184.127:1111
+150.109.184.127:4528
+150.109.184.127:792
+150.109.184.127:7859
+150.109.184.127:7954
+150.109.184.127:15784
+150.109.178.252:3333
+150.109.178.252:4444
+150.109.178.252:2356
+150.109.178.252:4152
+150.109.178.252:1111
+150.109.178.252:4528
+150.109.178.252:792
+150.109.178.252:7859
+150.109.178.252:7954
+150.109.178.252:15784
+47.241.127.190:443
+
+# Nebulae Backdoor
+
+aloha.fekeigawy.com
+cat.suttiphong.com
+cent.myanmarnewsrecent.com
+dns.seekvibega.com
+http.jmrmfitym.com
+java.tripadvisorsapp.com
+mail.tripadvisorsapp.com
+news.dgwktifrn.com
+osde.twifwkeyh.com
+php.tripadvisorsapp.com
+dgwktifrn.com
+fekeigawy.com
+jmrmfitym.com
+myanmarnewsrecent.com
+seekvibega.com
+suttiphong.com
+tripadvisorsapp.com
+twifwkeyh.com
+wahatmrjn.com
+
+# RainyDay backdoor
+
+124.156.241.24:8550
+asp.asphspes.com
+asphspes.com
+dthjxc.com
+tnelgnmc.com
+
+# Reference: https://www.cybereason.com/blog/deadringer-exposing-chinese-threat-actors-targeting-major-telcos#lateral-movement-paexec
+# Reference: https://otx.alienvault.com/pulse/610a4bcdb92be5581d1071f0
+
+a.jrmfeeder.org
+afhkl.dseqoorg.com
+jdk.gsvvfsso.com
+my.eiyfmrn.com
+nw.eiyfmrn.com
+ttareyice.jkub.com
+
+# Reference: https://www.virustotal.com/gui/domain/familymart-pay.cc/community
+
+familymart-pay.cc

@@ -1,0 +1,184 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: dustyhammock, meltingclaw, romcom, rustyclaw, shadyhammock, singlecamper, snipbot, uat-5647, CVE-2023-36884
+# CERT-UA: UAC-0132
+
+# Reference: https://unit42.paloaltonetworks.com/cuba-ransomware-tropical-scorpius/
+# Reference: https://otx.alienvault.com/pulse/62f36c89909d6b719ba8d340
+
+combinedresidency.org
+optasko.com
+
+# Reference: https://cert.gov.ua/article/2394117 (Ukrainian)
+# Reference: https://www.virustotal.com/gui/file/c149474f97140c3381bda3ad2451f253e08e7ad4be76a68ac3a6f15bc4bd4e63/detection
+
+185.56.137.104:4444
+69.49.231.103:4444
+69.49.245.55:4444
+4qzm.com
+advanced-ip-scaner.com
+advanced-ip-scanners.com
+aspx.io
+notfiled.com
+mill.co.ua
+ua.aspx.io
+mil.ua.aspx.io
+gov.mil.ua.aspx.io
+
+# Reference: https://twitter.com/Unit42_Intel/status/1588199843981402114
+# Reference: https://twitter.com/malware_traffic/status/1588211727891570688
+
+wveeam.com
+
+# Reference: https://www.proofpoint.com/us/daily-ruleset-update-summary-20221104
+
+keepas.org
+you-supported.com
+
+# Reference: https://twitter.com/TLP_R3D/status/1655687889391431680
+# Reference: https://twitter.com/TLP_R3D/status/1655844785075224576
+# Reference: https://twitter.com/TLP_R3D/status/1656270702700273666
+# Reference: https://twitter.com/k3yp0d/status/1655840102638137347
+# Reference: https://twitter.com/k3yp0d/status/1655841493934800896
+# Reference: https://www.virustotal.com/gui/ip-address/104.234.10.207/relations
+# Reference: https://www.virustotal.com/gui/file/c118895776e75eaa291d2a5f54f1de4f48756aec28cebaa1bf6fd9beb5d36301/detection
+# Reference: https://www.virustotal.com/gui/file/1308146f161ed60c86532dd2d2de8de8b0401e27023fc56f83903f137fccacfd/detection
+# Reference: https://www.virustotal.com/gui/file/a5dae9b7ff88276f699eece44eb4b183f1b1de6bef9e159c417ba621a949f744/detection
+
+104.234.10.207:7931
+15.235.203.250:444
+2.57.90.16:7931
+217.195.153.39:7931
+46.246.98.15:7931
+postnordpakker.com
+rdp-devolutions.com
+startleague.net
+wexonlake.com
+/itrdd/kcrs/file1.txt
+/itrdd/kcrs/file2.txt
+/itrdd/kcrs/
+
+# Reference: https://twitter.com/Joseliyo_Jstnk/status/1675803590462685185
+# Reference: https://twitter.com/suyog41/status/1692424324874211646
+# Reference: https://twitter.com/blackorbird/status/1694622415006105954
+# Reference: https://blogs.blackberry.com/en/2023/07/romcom-targets-ukraine-nato-membership-talks-at-nato-summit
+# Reference: https://explore.avertium.com/resource/two-microsoft-zero-day-vulnerabilities-exploited-by-attackers
+# Reference: https://cert.gov.ua/article/5077168 (# UAC-0168)
+# Reference: https://www.virustotal.com/gui/ip-address/213.139.204.173/relations
+# Reference: https://www.virustotal.com/gui/file/3a3138c5add59d2172ad33bc6761f2f82ba344f3d03a2269c623f22c1a35df97/detection
+# Reference: https://www.virustotal.com/gui/file/a61b2eafcf39715031357df6b01e85e0d1ea2e8ee1dfec241b114e18f7a1163f/detection
+# Reference: https://www.virustotal.com/gui/file/ddf15e9ed54d18960c28fb9a058662e7a26867776af72900697400cb567c79be/detection
+# Reference: https://www.virustotal.com/gui/file/6dc514b4b2090ddc852fc6ea62da0965c663d57bbfd1a4120360ef6fb914ec85/detection
+
+http://104.234.239.26
+http://74.50.94.156
+104.234.239.26:137
+104.234.239.26:139
+104.234.239.26:445
+109.105.198.145:8080
+65.21.27.250:8080
+altimata.org
+bentaxworld.com
+finformservice.com
+penofach.com
+ukrainianworldcongress.info
+dashboard.penofach.com
+/mds/D--------------------------
+/mds/O--------------------------
+/mds/s--------------------------
+/MSHTML_C7/RFile.asp
+/MSHTML_C7/start.xml
+/MSHTML_C7/zip_k1.asp
+/MSHTML_C7/zip_k2.asp
+/MSHTML_C7/zip_k3.asp
+/MSHTML_C7
+
+# Reference: https://twitter.com/TLP_R3D/status/1705917480844120192
+# Reference: https://www.trendmicro.com/en_us/research/23/j/void-rabisu-targets-female-leaders-with-new-romcom-variant.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/23/j/void-rabisu-targets-female-political-leaders/ioc-void-rabisu-targets-female-political-leaders-with-new-slimmed-down-ROMCOM-variant.txt
+# Reference: https://www.virustotal.com/gui/ip-address/185.250.150.204/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.137.155.163/relations
+
+budgetnews.org
+digitalsolutionstime.com
+kayakahead.net
+mctelemetryzone.com
+netstaticsinformation.com
+pap-cut.com
+redditanalytics.pm
+speedymarker.com
+wirelessvezion.com
+wplsummit.com
+
+# Reference: https://twitter.com/DmitriyMelikov/status/1721991958464205142
+# Reference: https://www.virustotal.com/gui/ip-address/201.174.21.202/relations
+# Reference: https://www.virustotal.com/gui/file/b9ea82bd961210c69cf1141321be7378629e49b84102479d2e476c60e1c00a3f/detection
+# Reference: https://www.virustotal.com/gui/file/b595ed2252d82bbfea276d40615c4a2bf580a1da4a6892c47361fdb3f9299204/detection
+
+http://201.174.21.202
+201.174.21.202:137
+201.174.21.202:139
+201.174.21.202:445
+/abc/filename111111111111.url
+/filename111111111111.url
+
+# Reference: https://unit42.paloaltonetworks.com/snipbot-romcom-malware-variant/
+# Reference: https://app.validin.com/detail?find=185.225.74.94&type=ip4&ref_id=65ec9bcbe4c#tab=resolutions
+
+certifysop.com
+cethernet.com
+cloudcreative.digital
+dns-msn.com
+docstorage.link
+drv2ms.com
+drvmcprotect.com
+fastshare.click
+fileshare.direct
+ilogicflow.com
+linedrv.com
+mcprotect.cloud
+olminx.com
+publicshare.link
+sitepanel.top
+webtimeapi.com
+xeontime.com
+1drv.fileshare.direct
+adobe.cloudcreative.digital
+
+# Reference: https://blog.talosintelligence.com/uat-5647-romcom/
+
+adbefnts.dev
+adcreative.pictures
+apisolving.com
+copdaemi.top
+creativeadb.com
+devhubs.dev
+dnsresolver.online
+pos-st.top
+store-images.org
+wirelesszone.top
+/ipns/k51qzi5uqu5dgn9wgsaxb7cfvinmk27eusoufaxrp8qd1ri5kamf41bg7gpydm
+/k51qzi5uqu5dgn9wgsaxb7cfvinmk27eusoufaxrp8qd1ri5kamf41bg7gpydm
+
+# Reference: https://www.welivesecurity.com/en/eset-research/romcom-exploits-firefox-and-windows-zero-days-in-the-wild/
+
+correctiv.sbs
+cwise.store
+devolredir.com
+economistjournal.cloud
+journalctd.live
+redirconnectwise.cloud
+redircorrectiv.com
+redjournal.cloud
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-11-26-v10753/2171
+
+1drv.us.com
+
+# Reference: https://www.welivesecurity.com/en/eset-research/update-winrar-tools-now-romcom-and-others-exploiting-zero-day-vulnerability/
+
+campanole.com
+gohazeldale.com
+melamorri.com
+srlaptop.com

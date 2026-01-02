@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cve-2021-44228
+
+# Reference: https://twitter.com/1ZRR4H/status/1469333475476094986
+# Reference: https://www.lunasec.io/docs/blog/log4j-zero-day/
+# Reference: https://www.cronup.com/log4shell-nuevo-0-day-y-exploit-rce-en-apache-log4j-cve-2021-44228/
+# Reference: https://twitter.com/sans_isc/status/1469364731567824904
+# Reference: https://www.virustotal.com/gui/domain/bingsearchlib.com/detection
+# Reference: https://research.nccgroup.com/2021/12/12/log4shell-reconnaissance-and-post-exploitation-network-detection/
+
+awsdns-2.org
+bingsearchlib.com
+dataastatistics.com
+eg0.ru
+flofire.de
+log4j-test.xyz
+nijat.space
+psc4fuel.com
+pwn.af
+ds.rce.ee

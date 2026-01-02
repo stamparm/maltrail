@@ -1,0 +1,235 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: taurus, taurusproject
+
+# Note: TaurusProject is the fork of PredatorTheThief stealer (../malware/static/predatory.txt trail)
+
+# Reference: https://twitter.com/3xp0rtblog/status/1254079067810336768
+# Reference: https://twitter.com/3xp0rtblog/status/1254114481942040577
+# Reference: https://app.any.run/tasks/61ce3caf-0d75-4cd0-95f1-cdd44ddb4493/
+# Reference: https://www.virustotal.com/gui/domain/bit-browser.gq/relations
+# Reference: https://twitter.com/James_inthe_box/status/1254125471555436544
+# Reference: https://twitter.com/jorgemieres/status/1259962391573475334
+# Reference: https://twitter.com/prsecurity_/status/1260334912122482689
+# Reference: https://www.virustotal.com/gui/ip-address/185.219.83.222/relations
+# Reference: https://twitter.com/VK_Intel/status/1261382405148995584
+# Reference: https://www.virustotal.com/gui/file/96607a386593afb5d45891a249e3601512e25acfebd8230a35182db5745650bc/detection
+
+http://185.141.62.161
+http://185.219.83.222
+http://95.216.10.214
+bit-browser.gq
+daxex.pro
+
+# Reference: https://twitter.com/James_inthe_box/status/1263176296244195328
+
+cogihold.site
+
+# Reference: https://twitter.com/abuse_ch/status/1269174732773097472
+
+atest001.website
+
+# Reference: https://twitter.com/abuse_ch/status/1271549660453376000
+
+cloudstage.xyz
+
+# Reference: https://twitter.com/ViriBack/status/1273589449453158401
+# Reference: https://www.virustotal.com/gui/file/4a30ef818603b0a0f2b8153d9ba6e9494447373e86599bcc7c461135732e64b2/detection
+
+http://64.225.22.106
+
+# Reference: https://twitter.com/James_inthe_box/status/1280527680727773185
+# Reference: https://app.any.run/tasks/5b39778e-1c2e-4251-8c21-ded227538485/
+
+zyvcin.xyz
+
+# Reference: https://www.virustotal.com/gui/file/01f5fabbe0becd840f1bace45121dec48ee52173e55171ec3ab194bac4e3001e/detection
+
+bigfit.top
+
+# Reference: https://twitter.com/ebotpoloskun/status/1282790949274484739
+# Reference: https://www.virustotal.com/gui/file/7c4765154e0479b7b44230d75f1a3260105cd9f456d8d5a4e885db6d731fdb87/detection
+
+http://45.76.184.43
+pixel-tool.com
+
+# Reference: https://pastebin.com/Hc73BzJT
+
+http://45.77.251.131
+http://82.146.49.38
+poiuytrewq3.site
+
+# Reference: https://pastebin.com/SgZamRit
+
+http://63.250.45.226
+http://89.42.210.196
+maildc1519217828.mihandns.com
+nitariun.be
+
+# Reference: https://bazaar.abuse.ch/sample/4986e69190027128e0c573f0aa29978102dde196ddf47391ad1c60c54f68e0e9/
+
+http://185.244.173.50
+
+# Reference: https://twitter.com/abuse_ch/status/1290346445313318912
+# Reference: https://app.any.run/tasks/1a88bfa1-8994-4685-b6d5-2fd6ebb8fe5e/
+
+http://185.189.12.182
+brightpatio.site
+
+# Reference: https://app.any.run/tasks/8a7aa566-0331-47f3-b58d-90f9e7166038/
+# Reference: https://www.virustotal.com/gui/file/e14c3c88ac4763c9d1b8207410bf3b209a85589ce1d0d506603f7584881f9d2e/detection
+
+maskarad123.ru.com
+
+# Reference: https://www.virustotal.com/gui/file/a8837286d98135c4439c08704f5899e0c89c64442a2451c35ca2ec89327fd451/detection
+
+bookingswarfacesec.com
+
+# Reference: https://www.virustotal.com/gui/file/e259f88377da0872a17da118c6778a038b335128ec5c99a08f065173f6d18fe4/detection
+# Reference: https://www.virustotal.com/gui/ip-address/109.94.110.54/relations
+
+http://85.217.171.72
+109.94.110.54:6006
+mariadbstatist.com
+schdule.co.uk
+wordgamestrue.com
+
+# Reference: https://www.virustotal.com/gui/file/1aa13497c5ec7a71da7239c37960f234f3361a02eca49b24bf501dfee34fe566/detection
+# Reference: https://www.virustotal.com/gui/file/add8ed0a262a58caf6552f83c401f1801fd75027931e50334962ff4376bf47f1/detection
+
+pc-checkup.com
+
+# Reference: https://www.virustotal.com/gui/file/0aa7e5149b71880bca19ba129239d92f8e6862c2ba5a57724b640ef4132f11a6/detection
+
+trickthehourse.net
+
+# Reference: https://www.virustotal.com/gui/file/12e3d517d50bf7e583589fefa020711c10a8d2e99cab761491dcd9e7ca58d7f3/detection
+
+duckmewoo.net
+
+# Reference: https://twitter.com/ViriBack/status/1312183031398981636
+# Reference: https://app.any.run/tasks/deb4c239-e67b-46c5-af54-97677c8abf15/
+# Reference: https://www.virustotal.com/gui/file/581c1be63fcaf1cb732fd92f196bebfb711c704504acbd421614d43ee4ab284d/detection
+# Reference: https://www.virustotal.com/gui/file/b596c3b28d3181c28e9a263184ba46a462ac44d8a77c59c4d8a13c59f5888933/detection
+
+http://62.77.157.109
+http://85.209.91.120
+domain2222.com
+louchmong.top
+mzaakdufic.xyz
+steller-family.ru
+
+# Reference: https://www.virustotal.com/gui/file/37a1a4f77d19838a36b907cbaada85b1a0d264a6e6bd4622dabf20e2f672dfd5/detection
+
+jtvah.jtvah
+kizykw.obus
+
+# Reference: https://www.virustotal.com/gui/file/fa58004a1d00387c51636d131f74d0a614973d74a88a14408daa540892a0d84e/detection
+
+73ntbswfmt84n228s8xlosct3j3ktp.biz
+
+# Reference: https://www.virustotal.com/gui/file/1075f95bff8ac62feedc1373267a6d32d559b35b29bc430a355fcba0220fa163/detection
+
+http://62.113.117.96/cfg/
+http://62.113.117.96/dlls/
+http://62.113.117.96/log/
+
+# Reference: https://www.virustotal.com/gui/file/0773af8db04a5c0d400f13a6d0f7d071fc3b82b93d6b099cd4b7c3f3708f056c/detection
+
+eternamlucis.com
+
+# Reference: http://tracker.viriback.com/dump.php (# 2021-01-11, Taurus)
+
+http://176.123.7.44
+http://185.92.148.230
+http://195.2.67.88
+http://195.2.74.126
+http://62.113.112.137
+http://81.91.179.71
+arsgdcxdfgh.space
+babbleabode.site
+bigfit.top
+bigmastodon.top
+clxxsun.space
+domain2222.com
+frankinshteyn.ru
+homymemekas.space
+magicocorp.ml
+newpredatorrabotatsuka.site
+poigxdffghm.website
+poiuytrewq3.site
+serhuwadwtr.site
+steller-family.ru
+trafferdlyavseh.club
+
+# Reference: https://twitter.com/1ZRR4H/status/1349512371522383882
+# Reference: https://www.virustotal.com/gui/file/500ed3874fbce955e3b8ac1531452a785a35b62ae4fd159e35448ec3e52765c2/detection
+# Reference: https://www.virustotal.com/gui/file/b4182140ad3d0508e52cfca844f6202c54480e9626de7d2b9fc7af6e618a1eed/detection
+# Reference: https://www.virustotal.com/gui/file/eadf68391314007ba0c5b1d3a557c86cc36a75eaaf08e7d54d0f59b6ff7b7bda/detection
+
+exiredprojectint.xyz
+
+# Reference: https://www.virustotal.com/gui/file/90f48855702eae722f2f5309ce2f103eb20acf0d70b34f92b592d5f04a2f8c48/detection
+
+thesellminingpanelka.space
+
+# Reference: https://twitter.com/pmmkowalczyk/status/1369275271011041281
+# Reference: https://www.virustotal.com/gui/file/d466ef9698569363af4f08b64235817c7838c726c1faee300582aab3d90f5683/detection
+
+bocksmoke.com
+reputinodaedo.pw
+
+# Reference: https://twitter.com/pollo290987/status/1404814960329465869
+# Reference: https://www.virustotal.com/gui/file/79df2c0e7e331b3baa2dd5a241cbf05986f2482e8024e26a3362afdd790e94cf/detection
+
+xixteam.xyz
+
+# Reference: https://www.virustotal.com/gui/file/3eb5aa8c88a1dc5c4c9ef34898571101b745383d2716bc47e43174fa15a4ff76/detection
+
+monerdomen.ru
+
+# Reference: https://www.virustotal.com/gui/file/9440c909017e0dce037077754e11cbc635a11d3e76e8f9db0528163184f7dedb/detection
+
+wanderwalk.top
+
+# Reference: https://www.virustotal.com/gui/ip-address/51.91.209.190/relations
+# Reference: https://www.virustotal.com/gui/file/b6843d2b8b3cdabff777e5003f77d3bbddf26e6dd1956f110600ee0a22b738c1/detection
+
+23hfdne.com
+23hfdne.xyz
+
+# Reference: https://www.virustotal.com/gui/file/4245088e2600188006929bc88f455b57e849ef1748c0bda3e9bd3c4dd23ae017/detection
+
+http://202.59.9.104
+
+# Reference: https://www.virustotal.com/gui/file/be989cce99323b9816e07c30583a7900fabc1e9f66643bc943b9f5a6a456e9c4/detection
+
+vnh.wtf
+
+# Reference: https://twitter.com/h2jazi/status/1294086706447220737
+# Reference: https://www.virustotal.com/gui/file/7d5cf8d69b31ace472fc28e57f4b5dcd7fa0ba5c0107b6fc89d921ae7687fc60/detection
+
+funpet.uk
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.taurus_stealer/
+
+http://212.109.218.124
+http://45.138.72.202
+http://45.138.72.240
+http://5.39.222.46
+http://51.195.70.170
+http://80.78.245.80
+http://95.181.152.81
+http://95.181.157.82
+163.5.169.23:8080
+chakazi.xyz
+ckinbaro.site
+tigercomeback.com
+
+# Generic
+
+/gate/cfg/?post=
+/gate/log/?post=
+/gate/log?post=
+/loader/complete/

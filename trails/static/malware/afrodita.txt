@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1229835654172987393
+# Reference: https://www.virustotal.com/gui/domain/bojanbogdan.com/relations
+
+bojanbogdan.com
+/postPic/evil.jpg
+
+# Reference: https://dissectingmalwa.re/not-so-nice-after-all-afrodita-ransomware.html
+
+content-delivery.in
+http://riskpartner.hr/wp-content/notnice.jpg
+
+# Reference: https://www.trendsmap.com/twitter/tweet/1201957880909484033
+
+http://content-delivery.in/verynice.jpg
+
+# Generic
+
+/verynice.jpg
+/notnice.jpg

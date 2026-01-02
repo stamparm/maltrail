@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/07/exploit-kits-summer-2019-review/
+# Reference: https://otx.alienvault.com/pulse/5d40766ecabf3f345b3811db
+
+accomplishedsettings.cdn-cloud.club
+adsfast.site
+cdn-cloud.club
+fastimage.site

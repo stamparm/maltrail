@@ -1,0 +1,53 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.wired.com/wp-content/uploads/2014/09/wp-pos-ram-scraper-malware.pdf
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Win32/Jinupd
+
+dailygiftclub.info
+dailygiftclub1.info
+priv8darkshop.com
+sopvps.hk
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, JackPOS)
+
+dozceb.com
+
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-29, JackPOS)
+
+http://45.124.132.108
+daspors.com
+
+# Reference: https://twitter.com/ScumBots/status/1053281715404374016
+
+/load/jckpos/Panel/loading.php
+
+# Reference: https://www.virustotal.com/gui/file/b43af33c2e4142f4cc169c1eb0536f9e654e376eef3f15273eb5fe3cd5e854fb/detection
+
+123andro.net
+312andro.net
+654andro.net
+888andro.net
+
+# Reference: https://www.virustotal.com/gui/file/4e66074bb19405843f24666ad4260f2284f982fc836bab9550c9549e4c5cf228/detection
+
+accounts.wordpress-catalog.com
+helpus.su
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60 (# JackPOS)
+
+adwordss-gogle.com
+bancomers-enlinea-mx-net.net
+magicsystem.info
+pagomiscuentas-enlinea.com
+pos.cu.cc
+pp-lastschrift.de
+priceupdate.pw
+
+# Reference: https://www.virustotal.com/gui/file/9477160d0dfb44a9abbd5ce68a69b2aaf9ca7c0a7c232c93609c59b62589742e/detection
+
+l1v3f1r3.us
+
+# Generic
+
+/Paxel/admin.php

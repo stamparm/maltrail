@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: patriot stealer
+
+# Reference: https://x.com/solostalking/status/1861736646661882234
+
+patriotstealer.xyz

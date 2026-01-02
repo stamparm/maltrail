@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/1nt3l_hunt/status/1998712488125464689
+# Reference: https://www.virustotal.com/gui/file/559f75220301f380d72bbc347a6c0184a2a1ae8ab6ce57e30786b678b48687c5/detection
+# TITLE-IP=Stinger C2 Panel
+
+http://95.181.173.212

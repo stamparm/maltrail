@@ -1,0 +1,350 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: emissary panda, apt27, apt 27, threat group 3390, bronze union, iron tiger, tg-3390, temp.hippo, group 35, ziptoken, goblin panda, emissary panda, cycldek, luckymouse
+
+# Reference: https://securelist.ru/luckymouse-hits-national-data-center/90213/
+
+bbs.sonypsps.com
+update.iaacstudio.com
+wh0am1.itbaydns.com
+google-updata.tk
+windows-updata.tk
+
+# Reference: https://securelist.com/luckymouse-ndisproxy-driver/87914/
+
+http://103.75.190.28
+http://213.109.87.58
+
+# Reference: https://www.secureworks.com/research/a-peek-into-bronze-unions-toolbox
+
+language.wikaba.com
+solution.instanthq.com
+trprivates.com
+mildupdate.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1476105632751267840
+# Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (2018-06-21: EmissaryPanda waterhole in Mongolia's president and parliament websites)
+
+activity.maacson.com
+bbs.maacson.com
+dns.itbaydns.com
+fasterwall.com
+govmn.tk
+static.fasterwall.com
+update.fasterwall.com
+wh0am1.itbaydns.com
+maacson.com
+
+# Reference: https://twitter.com/MeltX0R/status/1179800013150527488
+
+tdjsyqty0takah2x.gitoos.com
+
+# Reference: https://twitter.com/Vishnyak0v/status/1287308019336990720 (# HyperBro backdoor)
+# Reference: https://www.virustotal.com/gui/file/36fad80a5f328f487b20a3f5fc5f1902d50cbb1bd9167c44b66929a1288fc6f4/detection
+# Reference: https://www.virustotal.com/gui/file/788bd34d3c5d12b9767f8ac5587f1970597c47fb06713a6070d430a593bb4945/detection
+
+http://139.180.208.225/ajax
+
+# Reference: https://medium.com/@Sebdraven/gobelin-panda-against-the-bears-1f462d00e3a4
+
+36106g.com
+cv3sa.gicp.net
+kmbk8.hicp.net
+sd123.eicp.net
+
+# Reference: https://medium.com/@Sebdraven/malicious-document-targets-vietnamese-officials-acb3b9d8b80a
+
+dn.dulichbiendao.org
+gateway.vietbaotinmoi.com
+web.thoitietvietnam.org
+hn.dulichbiendao.org
+halong.dulichculao.com
+cat.toonganuh.com
+new.sggpnews.com
+dulichculao.com
+wouderfulu.impresstravel.ga
+toonganuh.com
+coco.sodexoa.com
+
+# Reference: https://medium.com/@Sebdraven/goblin-panda-changes-the-dropper-and-reused-the-old-infrastructure-a35915f3e37a
+
+skylineqaz.crabdance.com
+tele.zyns.com
+tajikstantravel.dynamic-dns.net
+uzwatersource.dynamic-dns.net
+
+# Reference: https://medium.com/@Sebdraven/goblin-panda-continues-to-target-vietnam-bc2f0f56dcd6
+# Reference: https://otx.alienvault.com/pulse/5ccabe9589bea41847a35a0f
+
+web.hcmuafgh.com
+
+# Reference: https://blogs.quickheal.com/apt-27-like-newcore-rat-virut-exploiting-mysql-targeted-attacks-enterprise/
+
+115.214.104.26:81
+http://192.167.4.10
+http://43.242.75.228
+aibeichen.cn
+
+# Reference: https://unit42.paloaltonetworks.com/emissary-panda-attacks-middle-east-government-sharepoint-servers/
+
+185.12.45.134:443
+
+# Reference: https://twitter.com/MeltX0R/status/1175309376493629440
+# Reference: https://meltx0r.github.io/tech/2019/09/19/emissary-panda-apt.html
+
+awvsf7esh.dellrescue.com
+language.wikaba.com
+solution.instanthq.com
+yofeopxuuehixwmj.redhatupdater.com
+
+# Reference: https://otx.alienvault.com/pulse/5da9dc215c51c8a86a2d19f1
+
+chatsecure.uk.to
+chatsecurelite.uk.to
+chatsecurelite.us.to
+encryptit.qc.to
+privatehd.us.to
+sex17.us.to
+
+# Reference: https://marcoramilli.com/2020/03/19/is-apt27-abusing-covid-19-to-attack-people/
+# Reference: https://otx.alienvault.com/pulse/5e734d45158714422bc4e774
+
+motivation.neighboring.site
+
+# Reference: https://twitter.com/_marklech_/status/1268138088167018498
+# Reference: https://securelist.com/cycldek-bridging-the-air-gap/97157/
+
+http://103.253.25.73
+24h.tinthethaoi.com
+cdn.laokpl.com
+cophieu.dcsvnqvmn.com
+hanghoa.trenduang.com
+hcm.vietbaonam.com
+images.webprogobest.com
+info.coreders.com
+khinhte.chinhsech.com
+kinhte.chototem.com
+lat.conglyan.com
+login.dangquanwatch.com
+login.diendanlichsu.com
+login.giaoxuchuson.com
+login.thanhnienthegioi.com
+login.vietnamfar.com
+luan.conglyan.com
+mychau.dongnain.com
+news.cooodkord.com
+news.trungtamwtoa.com
+nghiencuu.onetotechnologys.com
+nhantai.xmeyeugh.com
+quocphong.ministop14.com
+thanhnien.vietnannnet.com
+thegioi.kinhtevanhoa.com
+thoitiet.yrindovn.com
+tinmoi.thoitietdulich.com
+tinmoi.vieclamthemde.com
+tintuc.daikynguyen21.com
+toiyeuvn.dongaruou.com
+web.hcmuafgh.com
+web.laomoodwin.com
+web.laovoanew.com
+tinthethaoi.com
+laokpl.com
+dcsvnqvmn.com
+trenduang.com
+vietbaonam.com
+webprogobest.com
+coreders.com
+chinhsech.com
+chototem.com
+laovoanew.com
+conglyan.com
+dangquanwatch.com
+diendanlichsu.com
+giaoxuchuson.com
+thanhnienthegioi.com
+vietnamfar.com
+conglyan.com
+dongnain.com
+cooodkord.com
+trungtamwtoa.com
+onetotechnologys.com
+xmeyeugh.com
+ministop14.com
+vietnannnet.com
+kinhtevanhoa.com
+yrindovn.com
+thoitietdulich.com
+vieclamthemde.com
+daikynguyen21.com
+dongaruou.com
+hcmuafgh.com
+laomoodwin.com
+laovoanew.com
+
+# Reference: https://twitter.com/pancak3lullz/status/1286021877375303682
+# Reference: https://twitter.com/pancak3lullz/status/1286027620740726785
+# Reference: https://app.any.run/tasks/949f2624-505c-4f10-a304-1671492f9a22/
+# Reference: https://www.virustotal.com/gui/file/96e38c55174bf287fe0c21a4d8fa633a252d526bc57cd1b042c473816edb0fbf/detection
+
+27.124.26.136:1943
+27.124.26.136:59486
+265g.site
+gj.wxb2568.cn
+
+# Reference: https://medium.com/@Sebdraven/rtf-royal-road-drops-a-new-backdoor-mfc-and-links-with-goblin-panda-90db06f80611
+# Reference: https://otx.alienvault.com/pulse/5f43f48c0712b9c5245d4824
+# Reference: https://www.virustotal.com/gui/ip-address/91.218.113.17/relations
+
+ckvyk.com
+ckvyk.net
+ggfnv.com
+jgkgv.net
+jkncj.com
+kmbk8.hicp.net
+
+# Reference: https://otx.alienvault.com/pulse/5fd1090b830e4fba81b06cef
+
+chrome-upgrade.com
+microlynconline.com
+vegispaceshop.org
+
+# Reference: https://www.virustotal.com/gui/file/99cc8ee3a385c767e25ebaf2dcaefdc8c091150c1a7dadbda6b08356c34bb889/detection
+
+adobesys.com
+
+# Reference: https://securelist.com/the-leap-of-a-cycldek-related-threat-actor/101243/
+# Reference: https://otx.alienvault.com/pulse/606dd51193fe95bf9552902e
+
+cutepaty.com
+giaitrinuoc.com
+phongay.com
+phong.giaitrinuoc.com
+cloud.cutepaty.com
+static.phongay.com
+
+# Reference: https://www.trendmicro.com/en_us/research/21/d/iron-tiger-apt-updates-toolkit-with-evolved-sysupdate-malware-va.html
+# Reference: https://otx.alienvault.com/pulse/607094697706cc521d0f0788
+
+35.187.148.253:443
+35.220.135.85:443
+47.75.49.32:443
+85.204.74.143:443
+89.35.178.105:443
+settings-win.dyndns-office.com
+
+# Reference: https://www.virustotal.com/gui/file/051400edf4aae2a1041743c1b12740a9e03cf51b6f9491e7e08138640dcd0db6/detection
+# Reference: https://www.virustotal.com/gui/file/094f0713e788800496344035e388efce5bb176102ecb705443de0045ae6c2dfc/detection
+# Reference: https://www.virustotal.com/gui/file/6784171c7bfabec50350f3a9042df871f4c2ec635133fa000ffa7079a3f2908a/detection
+# Reference: https://www.virustotal.com/gui/file/9dcf1501177b898785315d1f3024cd8371da1c77401c0075aa2421bd5b056740/detection
+# Reference: https://www.virustotal.com/gui/file/9f7f7b98342621e106def4e55e98fc10c99fbf7e785257e603ded5cef7b099fb/detection
+
+teamviewsoft.com
+buy.teamviewsoft.com
+support.teamviewsoft.com
+
+# Reference: https://twitter.com/autumn_good_35/status/1486296569641340930
+# Reference: https://www.verfassungsschutz.de/SharedDocs/publikationen/DE/cyberabwehr/2022-01-bfv-cyber-brief.pdf (German)
+
+103.79.77.200:443
+104.168.236.46:443
+87.98.190.184:443
+
+# Reference: https://www.virustotal.com/gui/file/074edd82af9bbfd98dd0da167f3712cf5cb3569f66bf308bd5f44b50634ac065/detection
+
+i1mc.xyz
+jiqun.i1mc.xyz
+
+# Reference: https://twitter.com/BushidoToken/status/1577605361930063876
+# Reference: https://www.trendmicro.com/en_us/research/22/h/irontiger-compromises-chat-app-Mimi-targets-windows-mac-linux-users.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/h/iron-tiger-compromises-chat-application-mimi,-targets-windows,-mac,-and-linux-users/IOCs-IronTiger-compromises-chat-application-mimi-targets-windows-mac-linux-users.txt
+# Reference: https://www.virustotal.com/graph/embed/gdc80667c54cc46cba1038b34efa40a737bb9468fc9f34febb618e19227758d81
+# Reference: https://www.virustotal.com/gui/file/07aa739fa4942cfd68d4a075568456797f11ae34db5cd56f88d80185bc1d7a29/detection
+
+http://104.168.211.246
+http://104.168.236.46
+http://139.180.216.65
+http://45.142.214.193
+http://45.77.250.141
+http://80.92.206.158
+104.168.211.246:443
+139.180.216.65:443
+45.142.214.193:443
+45.77.250.141:443
+80.92.206.158:443
+dataanalyticsclub.com
+ntp-server.asia
+updatelive-oline.com
+center.veryssl.org
+trust.veryssl.org
+time.ntp-server.asia
+time1.ntp-server.asia
+linux.updatelive-oline.com
+windows.updatelive-oline.com
+
+# Reference: https://x.com/TuringAlex/status/1977626210609049683
+# Reference: https://www.trendmicro.com/en_us/research/22/l/probing-weaponized-chat-applications-abused-in-supply-chain-atta.html
+# Reference: https://www.virustotal.com/gui/ip-address/8.219.76.37/relations
+# Reference: https://www.virustotal.com/gui/file/db4497090a94d0189aa3c3f4fcee30d5381453ec5aa38962e2ca971074b74e8b/detection
+# Reference: https://otx.alienvault.com/pulse/6399f1943fb578ccb093a7b7
+
+amazonawsgarages.com
+cornm100.io
+livehelp100services.com
+livehelpl00service.com
+livelyhellp.chat
+s3amazonbucket.com
+windowstearns.com
+analyaze.s3amazonbucket.com
+analysis.windowstearns.com
+files.amazonawsgarages.com
+max.cornm100.io
+s.livelyhellp.chat
+service.livehelpl00service.com
+services.livehelp100services.com
+unix.s3amazonbucket.com
+
+# Reference: https://www.trendmicro.com/en_us/research/23/c/iron-tiger-sysupdate-adds-linux-targeting.html
+# Reference: https://otx.alienvault.com/pulse/63ff5a60ca3dccd68551ba17
+
+88tech.me
+atlas-sian.net
+gitlabs.me
+myvandyke.net
+ybupdate.me
+dev.gitlabs.me
+oa.88tech.me
+oa.myvandyke.net
+jira.atlas-sian.net
+order.myvandyke.net
+
+# Reference: https://cofense.com/blog/open-source-gh0st-rat-still-haunting-inboxes-15-years-after-release/
+# Reference: https://otx.alienvault.com/pulse/6448506f7a10b2c157ec8fc4
+
+cloudservicesdevc.tk
+youkesdt.asia
+api.youkesdt.asia
+datacache.cloudservicesdevc.tk
+
+# Reference: https://twitter.com/felixaime/status/1698741466619838510
+# Reference: https://www.virustotal.com/gui/file/12e1f50d7c9cf546c90545588bc369fa90e03f2370883e7befd87e4d50ebf0df/detection
+# Reference: https://www.virustotal.com/gui/file/ee66ebcbe872def8373a4e5ea23f14181ea04759ea83f01d2e8ff45d60c65e51/detection
+
+http://38.54.119.239
+154.93.7.99:8090
+38.54.119.239:443
+
+# Reference: https://blog.eclecticiq.com/chinese-state-sponsored-cyber-espionage-activity-targeting-semiconductor-industry-in-east-asia
+# Reference: https://www.virustotal.com/gui/file/ce226bd1f53819d6654caf04a7bb4141479f01f9225ac6fba49248920e57cb25/detection
+# Reference: https://www.virustotal.com/gui/file/29741e60dca8a68021be35525a6b46533d6da1735c8cd91281bc244c89810860/detection
+# Reference: https://www.virustotal.com/gui/file/7201e604359019b484f6a6ac4d8cba55e413df36e46b90af1e4de6718613fa0a/detection
+# Reference: https://www.virustotal.com/gui/file/6e3c3045bb9d0db4817ad0441ee3c95b8fe3e087388d1ceefb9ebbd2608aef16/detection
+# Reference: https://www.virustotal.com/gui/file/3443bb895444c1c7fa0beab54f93a79083cd2b5f09dfb4889d7d31fcf00a6330/detection
+
+http://23.224.61.12
+http://45.32.33.17
+45.32.33.17:443
+
+# Reference: https://x.com/skocherhan/status/1942043295292481785
+
+103.243.26.213:8000

@@ -1,0 +1,7 @@
+
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ScumBots/status/1050350492688244736
+
+glodd.esy.es/post.php

@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: doenerium, offend stealer
+
+# Reference: https://twitter.com/fr0s7_/status/1646964540788154368
+# Reference: https://www.virustotal.com/gui/file/ff8658ec855ed2a77642fd0b182e2620234c27bf99ee4df38008e05b54f0d120/detection
+
+kqnfkpoccicxiudstqonfotuwsrhuxkwhqjjfsbjhonoubrccy.nl
+doenerium.kqnfkpoccicxiudstqonfotuwsrhuxkwhqjjfsbjhonoubrccy.nl
+
+# Reference: https://twitter.com/ULTRAFRAUD/status/1704578927677649012
+# Reference: https://www.virustotal.com/gui/file/229037ea33eb267cc08621c8967ab4022f811461f716592ae95be23a8191bfe6/detection
+
+anydesks.co

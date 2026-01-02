@@ -1,0 +1,51 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ps66uk/status/1166286937239498752
+# Reference: https://app.any.run/tasks/24dd4285-0447-48c3-a021-c51f51aa7d42/
+
+206.81.27.160:80
+
+# Reference: https://twitter.com/killamjr/status/1171047180615999492
+# Reference: https://app.any.run/tasks/3c588494-a132-46e6-b6a7-08789ae33f87/
+
+157.230.240.195:80
+kerznerltd.co.uk
+
+# Reference: https://twitter.com/killamjr/status/1191193275841097728
+# Reference: https://app.any.run/tasks/d37c57d5-61ad-4dda-947b-35537eb19e87/
+
+157.245.160.150:80
+
+# Reference: https://app.any.run/tasks/810fbb4d-abcc-48a6-b99d-ded78122dbd9/
+
+138.68.240.146:80
+
+# Reference: https://twitter.com/Jouliok/status/1216620099458797568
+# Reference: https://app.any.run/tasks/65960a09-3b59-403f-9e13-4354dc7a8fa4/
+# Reference: https://app.any.run/tasks/6e482780-e562-4906-a564-f966a52eba70/
+
+159.65.1.52:80
+
+# Reference: https://app.any.run/tasks/384e2734-19e9-4ebc-a451-8742704b0802/
+# Reference: https://app.any.run/tasks/57c18800-9554-4ac5-a80e-af5dd6887094/
+
+157.245.59.53:80
+
+# Reference: https://app.any.run/tasks/73534538-2816-419b-9982-5176ca9e8c42/
+# Reference: https://app.any.run/tasks/eb5bb329-5fad-47d5-9828-c6303eb86f93/
+
+159.203.61.115:80
+
+# Reference: https://twitter.com/Jouliok/status/1234452192783929344
+# Reference: https://app.any.run/tasks/fe51895d-177e-4b32-be5a-d26631cf7c77/
+
+165.227.47.143:80
+
+# Reference: https://app.any.run/tasks/f23b0c32-0bc6-4e91-aed5-adeaf6522eed/
+
+198.199.101.103:80
+
+# Reference: https://app.any.run/tasks/a9442201-a070-4946-abf8-2c7a39f17d89/
+
+179.43.141.91:80

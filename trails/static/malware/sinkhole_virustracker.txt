@@ -1,0 +1,47 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: domains@virustracker.info (using for WHOIS records)
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=brucegarrod.com
+# Reference: https://www.threatcrowd.org/email.php?email=domains@virustracker.info
+
+# Reference: https://www.virustotal.com/en/ip-address/52.28.3.6/information/
+
+52.28.3.6
+
+# Reference: https://www.virustotal.com/en/ip-address/52.28.249.128/information/
+
+52.28.249.128
+
+# Reference: https://www.virustotal.com/en/ip-address/46.101.183.146/information/
+
+46.101.183.146
+
+# Reference: https://www.virustotal.com/en/ip-address/46.101.184.102/information/
+
+46.101.184.102
+
+# Reference: https://www.virustotal.com/en/ip-address/69.195.129.67/information/
+
+69.195.129.67
+
+# Reference: https://www.virustotal.com/en/ip-address/69.195.129.69/information/
+
+69.195.129.69
+
+# Reference: https://www.virustotal.com/en/ip-address/69.195.129.70/information/
+
+69.195.129.70
+
+# Reference: https://www.virustotal.com/en/ip-address/69.195.129.72/information/
+
+69.195.129.72
+
+# Reference: https://www.virustotal.com/en/ip-address/69.195.129.74/information/
+
+69.195.129.74
+
+# Reference: https://www.virustotal.com/en/ip-address/206.189.61.126/information/
+
+206.189.61.126

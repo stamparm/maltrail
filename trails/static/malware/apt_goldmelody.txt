@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: AUDITUNNEL, IHS Back-Connect backdoor
+
+# Reference: https://www.secureworks.com/research/gold-melody-profile-of-an-initial-access-broker
+# Reference: https://otx.alienvault.com/pulse/6511e50028c3953453406132
+
+http://149.28.193.216
+http://149.28.207.120
+http://149.28.200.140
+http://195.123.240.183
+http://64.190.113.185
+149.28.193.216:443
+149.28.207.120:443
+149.28.200.140:443
+195.123.240.183:443
+64.190.113.185:443
+67.205.135.147:53
+40.76.20.11:21

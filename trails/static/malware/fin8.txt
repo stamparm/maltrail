@@ -1,0 +1,102 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: shelltea, powersniff, ragnarloader
+
+# Reference: http://blog.morphisec.com/security-alert-fin8-is-back
+# Reference: https://otx.alienvault.com/pulse/5cfe69a12dbf3290f262bfba
+
+cdn-amaznet.club
+reservecdn.pro
+telemetry.host
+telemerty-cdn-cloud.host
+wsuswin10.us
+104.193.252.162:443
+37.1.204.87:443
+
+# Reference: https://www.root9b.com/sites/default/files/whitepapers/PoS%20Malware%20ShellTea%20PoSlurp.pdf
+
+# POWERSNIFF C2 DOMAINS
+
+vseflijkoindex.net
+vortexclothings.biz
+unkerdubsonics.org
+popskentown.com
+
+# SHELLTEA C2 DOMAINS
+
+neofilgestunin.org
+verfgainling.net
+straubeoldscles.org
+olohvikoend.org
+menoograskilllev.net
+asojinoviesder.org
+
+# Reference: https://atr-blog.gigamon.com/2019/07/23/abadbabe-8badf00d:-discovering-badhatch-and-a-detailed-look-at-fin8's-tooling/
+# Reference: https://otx.alienvault.com/pulse/5d372fa407ebb8017386ea36
+
+ashkidiore.org
+asilofsen.net
+druhanostex.net
+kapintarama.net
+manrodoerkes.org
+moreflorecast.org
+nduropasture.net
+preploadert.net
+subarnakan.org
+troxymuntisex.org
+
+# Reference: http://click.broadcasts.visa.com/xfm/?30761/0/0624013ddc6f39785bf56d504f3b812e/
+# Reference: https://otx.alienvault.com/pulse/5df2a079d801c25e0a68d90e
+
+diolucktrens.org
+fraserdolx.org
+
+# Reference: https://norfolkinfosec.com/pos-malware-used-at-fuel-pumps/
+# Reference: https://www.virustotal.com/gui/domain/ns.akamai1811.com/relations
+# Reference: https://www.virustotal.com/gui/file/2d311d46eb32389faa6ef72ed7126b63401c9071a57cb91a70f4c50815dc82fd/detection
+
+akamai1811.com
+ns.akamai1811.com
+
+# Reference: https://www.bitdefender.com/files/News/CaseStudies/study/394/Bitdefender-PR-Whitepaper-BADHATCH-creat5237-en-EN.pdf
+
+192-129-189-73.sslip.io
+192-129-189-73.sslip.io
+198-46-140-52.sslip.io
+us-west.com
+
+# Reference: https://businessinsights.bitdefender.com/deep-dive-into-a-fin8-attack-a-forensic-investigation
+# Reference: https://otx.alienvault.com/pulse/6103b9a8eaebf348cca49179
+
+104-168-237-21.sslip.io
+api-cdn.net
+api-cdnw5.net
+git-api.com
+
+# Reference: https://twitter.com/Richard_S81/status/1483562403061190663
+# Reference: https://www.trendmicro.com/en_us/research/22/a/new-ransomware-spotted-white-rabbit-and-its-evasion-tactics.html
+
+104-168-132-128.nip.io/cae260
+
+# Reference: https://securityaffairs.com/150028/hacking/fin8-citrix-netscaler.html
+# Reference: https://otx.alienvault.com/pulse/64edf1fe10794c40a79f86b2
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/2023-08-25%20Citrix%20CVE-2023-3519%20attacks.csv
+
+http://45.66.248.189
+http://85.239.53.49
+45.66.248.189:443
+85.239.53.49:443
+173-44-141-47.nip.io
+
+# Reference: https://x.com/PRODAFT/status/1897660610437124579
+# Reference: https://catalyst.prodaft.com/public/report/ragnar-loader/overview
+# Reference: https://github.com/prodaft/malware-ioc/tree/master/RagnarLoader
+# Reference: https://www.virustotal.com/gui/file/838ad9a8c49660120ccd52d79b9eeaa43ea62eedaa9ae4c1451fb0edce4978ec/detection
+# Reference: https://www.virustotal.com/gui/file/cf564ee374cec08d17e9e173dc6e489339d788431efa3cf30134511d44c9847f/detection
+# Reference: https://www.virustotal.com/gui/file/dae284f6383b7b59d92947fb79e556582d9a4f5a860846925713093cb9a874fa/detection
+
+http://104.238.34.209
+104.238.34.209:443
+173.44.141.126:443
+104-238-34-209.nip.io

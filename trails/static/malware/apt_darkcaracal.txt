@@ -1,0 +1,43 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://info.lookout.com/rs/051-ESQ-475/images/Lookout_Dark-Caracal_srr_20180118_us_v.1.0.pdf
+# Reference: https://www.virustotal.com/gui/file/fb101e91397dddbdf7aeb799cb3651b233e37997ecbdb8e5b6247f5775b915ad/detection
+# Reference: https://www.virustotal.com/gui/file/ce583821191345274cd954b2db7da9742c239fe413fc17dcb97ffdd7b51cb072/detection
+
+accountslogin.services
+adobe-flashviewer.accountslogin.services
+adobeair.net
+adobeinstall.com
+ancmax.com
+arablivenews.com
+arabpublisherslb.com
+axroot.com
+cma-cgrm.com/ebusiness/ne.abc
+dropboxonline.com
+ecowatchasia.com
+etn9.com
+fbtweets.net
+globalmic.net
+gsec.in
+iceteapeach.com
+jaysonj.no-ip.biz
+kaliex.net
+mangoco.net
+mecodata.com
+megadeb.com
+nancyrazzouk.com
+nvidiaupdate.com
+opwalls.com
+orange2015.net
+paktest.ddns.net
+planethdx.com
+playermea.com
+roxsoft.net
+sabisint.com
+secureandroid.info
+skypeservice.no-ip.org
+skypeupdate.com
+tenoclock.net
+tweetsfb.com
+watermelon2017.com

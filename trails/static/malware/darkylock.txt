@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: darkylock ransomware
+
+# Reference: https://x.com/banthisguy9349/status/1865400722096795847
+# Reference: https://www.virustotal.com/gui/file/27f907d49acfadec766589e03ed4c3d32ab1b7199f32a3f2a61b47f3a0f2c91a/detection
+
+147.185.221.17:13315
+4d6gcx7h.moy.su

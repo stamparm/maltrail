@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/neonprimetime/status/1116740246790602753
+
+45.63.84.83:5050
+thenewleaf.ddns.net
+
+# Reference: https://twitter.com/James_inthe_box/status/1598744837192568832
+# Reference: https://app.any.run/tasks/12345c8b-d245-4e6f-9c3c-8993d50ff52c/
+# Reference: https://app.any.run/tasks/4178f280-0746-4633-b435-fcfa28dfb46b/
+
+182.185.116.41:1605
+182.185.5.143:1605
+esteticamarbai.es
+pujakumari.duckdns.org

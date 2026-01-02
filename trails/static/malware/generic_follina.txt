@@ -1,0 +1,261 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: MS-MSDT "Follina" Attack Vector, CVE-2022-30190
+
+# Reference: https://twitter.com/drb_ra/status/1530363861223849984
+# Reference: https://twitter.com/felixaime/status/1531246534494507008
+# Reference: https://app.any.run/tasks/713f05d2-fe78-4b9d-a744-f7c133e3fafb/
+# Reference: https://www.virustotal.com/gui/file/4a24048f81afbe9fb62e7a6a49adbd1faf41f266b5f9feecdceb567aec096784/detection
+
+miniformats.com
+xmlformats.com
+
+# Reference: https://twitter.com/StopMalvertisin/status/1531430782015000576
+
+http://141.98.215.99
+
+# Reference: https://twitter.com/MBThreatIntel/status/1531398009103142912
+# Reference: https://twitter.com/h2jazi/status/1513870903590936586
+
+sputnikradio.net
+
+# Reference: https://twitter.com/SBousseaden/status/1531614356340936705
+# Reference: https://twitter.com/malwrhunterteam/status/1531640739989442561
+
+coolrat.xyz
+
+# Reference: https://twitter.com/malwrhunterteam/status/1531709311746985984
+# Reference: https://www.virustotal.com/gui/file/e8f0a2f79a91587f1d961d6668792e74985624d652c7b47cc87367cb1b451adf/detection
+
+http://109.248.59.74
+
+# Reference: https://twitter.com/malwrhunterteam/status/1531725207836274691
+
+http://192.53.120.84
+
+# Reference: https://bazaar.abuse.ch/sample/1d2e14a5b728a225123c12a1bbd29fca644e92c88777242de932d12b2c536f76/
+# Reference: https://tria.ge/220601-kceynabahj/behavioral1
+
+45.11.19.116:8000
+
+# Reference: https://isc.sans.edu/diary/28698
+
+159.75.19.3:8000
+708b-27-122-14-41.ap.ngrok.io
+ef75-27-122-14-41.ap.ngrok.io
+
+# Reference: https://twitter.com/malwrhunterteam/status/1531943388102201347
+# Reference: https://www.virustotal.com/gui/file/248296cf75065c7db51a793816d388ad589127c40fddef276e622a160727ca29/detection
+
+http://212.138.130.8
+
+# Reference: https://twitter.com/malwrhunterteam/status/1531945537192304640
+
+212.138.130.24:9443
+
+# Reference: https://twitter.com/StopMalvertisin/status/1532174278212599808
+# Reference: https://www.virustotal.com/gui/file/4fdec1c9111132a7f57fabfa83a6b7f73b3012d9100a790deaa53df184c1d4c4/detection
+
+attend-doha-expo.com
+files.attend-doha-expo.com
+
+# Reference: https://twitter.com/StopMalvertisin/status/1532550178171138048
+
+http://45.76.53.253
+seller-notification.live
+
+# Reference: https://twitter.com/malwrhunterteam/status/1532611343882276864
+
+http://65.20.75.158
+
+# Reference: https://twitter.com/malwrhunterteam/status/1532614206058639360
+
+68.183.36.18:8000
+68.183.36.18:9000
+
+# Reference: https://www.fortinet.com/blog/threat-research/analysis-of-follina-zero-day
+# Reference: https://otx.alienvault.com/pulse/6299dec4dbc2bc4e416dd27b
+
+exchange.oufca.com.au
+
+# Reference: https://twitter.com/StopMalvertisin/status/1533659744015368192
+# Reference: https://tria.ge/220606-ecvffsdhf4/behavioral2
+
+93.115.26.76:8000
+windowsupdate.services
+
+# Reference: https://www.virustotal.com/gui/ip-address/94.242.55.115/relations
+
+windows-updates.link
+
+# Reference: https://twitter.com/malwrhunterteam/status/1534184385313923072
+# Reference: https://www.virustotal.com/gui/file/ffa22c40ac69750b229654c54919a480b33bc41f68c128f5e3b5967d442728fb/detection
+
+195.2.67.189:444
+garmandesar.duckdns.org
+fcloud.nciinform.ru
+
+# Reference: https://twitter.com/h2jazi/status/1534897064391344133
+# Reference: https://www.virustotal.com/gui/file/3413fb77fd7034e902b7a053d576594ba8c451e597d2aa345500fec7d32de3bf/detection
+
+telefacer.com
+files.telefacer.com
+
+# Reference: https://twitter.com/StopMalvertisin/status/1534399316022169601
+
+seller-notification.live
+
+# Reference: https://twitter.com/StopMalvertisin/status/1534383820400914432
+
+http://158.255.2.245
+
+# Reference: https://twitter.com/StopMalvertisin/status/1535189817566597120
+# Reference: https://www.virustotal.com/gui/file/719a07f46b6fce1615a7b4bd1ed3e4d2cb86d7275ae37d3325ff2e9db64e2185/detection
+
+203.171.20.127:8080
+updatebkav.cf
+
+# Reference: https://twitter.com/DmitriyMelikov/status/1535372451479453696
+# Reference: https://www.virustotal.com/gui/file/f17f5c8eac3a18c961705a61385e1d2894cc8f22fb33aa3e076a40b826384c60/detection
+
+http://45.32.185.177
+
+# Reference: https://twitter.com/StopMalvertisin/status/1536921844561096704
+
+117.48.146.246:8003
+
+# Reference: https://twitter.com/StopMalvertisin/status/1537403718236520448
+
+101.33.231.81:62563
+159.75.135.162:61256
+
+# Reference: https://twitter.com/StopMalvertisin/status/1537463417967366145
+
+http://172.70.130.89
+
+# Reference: https://twitter.com/StopMalvertisin/status/1538766748249636869
+# Reference: https://www.virustotal.com/gui/file/211a1f74eea68ebe7178d90f0df0446a87cdda865145c397b7a32e253086139e/detection
+
+summit.didns.ru
+upgrade.4nmn.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1538832573115383808
+
+120.79.114.32:39114
+120.79.114.32:61112
+
+# Reference: https://twitter.com/malwrhunterteam/status/1538878427419353088
+# Reference: https://www.virustotal.com/gui/file/bc6898f0e66582ab92307809a409797749b49948fc265767579b224755b0a17b/detection
+# Reference: https://www.virustotal.com/gui/file/2cd00158eb897fc12c064848839d1cd2e3f6699575809a4e90554caa333a1db6/detection
+
+http://64.190.113.51
+64.190.113.51:8000
+
+# Reference: https://twitter.com/StopMalvertisin/status/1539870664232169472
+
+http://2.58.149.200
+
+# Reference: https://twitter.com/h2jazi/status/1541991988806950917
+# Reference: https://www.virustotal.com/gui/file/e96e066197c5b3fd38e7a12318a232de2c8a703a0f419e0b7e30087f7525e530/detection
+
+consumerfinanceguide.com
+
+# Reference: https://twitter.com/h2jazi/status/1544354209390264327
+# Reference: https://www.virustotal.com/gui/file/590b8232022d73d93d73172abd71cb9a79cd2bc3cbba454d88120fd39ca8b3a7/detection
+# Reference: https://www.virustotal.com/gui/file/542f99d44146474e143a6fd94453a98a542dd48837d93c197e7e01a3fba6603d/detection
+
+medicarepartus.com
+medicareplanupgrade.xyz
+schemas.medicareplanupgrade.xyz
+z3.medicarepartus.com
+
+# Reference: https://twitter.com/StopMalvertisin/status/1544328595094786048
+
+103.85.25.44:1762
+wfatd.com
+
+# Reference: https://twitter.com/srujankumar_k/status/1544285021443223553
+# Reference: https://threatresearch.ext.hp.com/stealthy-opendocument-malware-targets-latin-american-hotels/
+# Reference: https://www.virustotal.com/gui/file/10037dcdfbe006f14125b3b5fec8ab336ce996c1fe8af03114597b51d446b843/detection
+
+unimed-corporated.com
+webnar.info
+
+# Reference: https://twitter.com/StopMalvertisin/status/1551723838844850177
+
+http://106.15.186.165
+
+# Reference: https://twitter.com/StopMalvertisin/status/1551709585047957504
+
+akmalreload.com
+
+# Reference: https://twitter.com/StopMalvertisin/status/1553970459712319488
+
+polpharmar.com
+
+# Reference: https://blog.reversinglabs.com/blog/threat-analysis-follina-exploit-powers-live-off-the-land-attacks
+# Reference: https://otx.alienvault.com/pulse/62e7afc79b6b8f9ef625fb5a
+
+seller-notification.live
+t1bet.net
+telecomly.info
+tibetyouthcongress.com
+
+# Reference: https://twitter.com/StopMalvertisin/status/1555076748521668613
+# Reference: https://www.virustotal.com/gui/file/2eebcca69259f143341824873e64c77cb4b3649f92b446ead06ccf4093f433e4/detection
+
+47.112.178.28:39119
+
+# Reference: https://twitter.com/StopMalvertisin/status/1561451379776188416
+
+i.delegao.moe
+
+# Reference: https://twitter.com/h2jazi/status/1563148823463006208
+# Reference: https://www.virustotal.com/gui/file/a4218c9f2d4dd2ba8f8fd0421755d4b38633473b519396bf36bc92739b70e691/detection
+
+dry-arugula-8aamh19sw82nuimqnc9za02k.herokudns.com
+mhhfc0vsxv4t68ee.b.requestbin.net
+
+# Reference: https://twitter.com/StopMalvertisin/status/1563302303855423489
+# Reference: https://www.virustotal.com/gui/file/812f20d2efdf9807d425cb63ea737d4bbc4774af375dbc6d3164b913c450b1be/detection
+
+45.67.229.164:7497
+
+# Reference: https://www.virustotal.com/gui/file/3fcf9917efe125b7c5e205549e470a8bc7eef2388d55397391f39017e015c41d/detection
+
+raycial.servehttp.com
+
+# Reference: https://twitter.com/StopMalvertisin/status/1577704142516105219
+
+http://13.234.135.58
+
+# Reference: https://twitter.com/t3ft3lb/status/1533813054927998976
+
+http://5.230.73.250
+http://5.230.73.63
+
+# Reference: https://twitter.com/MichalKoczwara/status/1583011068817080320
+
+18.181.220.197:9001
+
+# Reference: https://twitter.com/StopMalvertisin/status/1584873038536769536
+
+zhiqiansec.com
+
+# Reference: https://twitter.com/MichalKoczwara/status/1606419631601762304
+
+213.227.155.115:8080
+
+# Reference: https://twitter.com/StopMalvertisin/status/1621014077568069633
+# Reference: https://www.virustotal.com/gui/file/eefa573b6ba5ca1d3359f2ce7a49ad3f777f6b40763d1be1f09e5f8ecdeea90f/detection
+
+munnajupitor.store
+
+# Reference: https://twitter.com/StopMalvertisin/status/1621014085180731395
+
+marketing-line.site
+
+# Reference: https://news.sophos.com/en-us/2023/07/10/clop-at-the-top/
+
+45.141.157.113:13899

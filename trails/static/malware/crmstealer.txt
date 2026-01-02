@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: crm stealer
+
+# Reference: https://x.com/Fact_Finder03/status/1944793522755809706
+# Reference: https://app.validin.com/detail?find=Stealer%20CRM%20Login&type=raw&ref_id=6061ee30491#tab=host_pairs (# 2025-07-14)
+
+http://66.78.40.36

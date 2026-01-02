@@ -1,0 +1,31 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://research.checkpoint.com/2021/indigozebra-apt-continues-to-attack-central-asia-with-evolving-tools/
+# Reference: https://otx.alienvault.com/pulse/60ddbf90b3211a60e87da15f
+
+2019mfa.com
+google-upgrade.com
+ictdp.com
+id597.link
+kginfocom.com
+laccessal.org
+mahallafond.com
+mfa-uz.com
+muincxoil.com
+ungov.org
+usascd.com
+6z98os.id597.link
+cdn.muincxoil.com
+help.2019mfa.com
+hwyigd.laccessal.org
+index.google-upgrade.com
+infodocs.kginfocom.com
+m.usascd.com
+mofa.ungov.org
+ns01-mfa.ungov.org
+ousync.kginfocom.com
+post.mfa-uz.com
+tm.2019mfa.com
+update.ictdp.com
+uslugi.mahallafond.com

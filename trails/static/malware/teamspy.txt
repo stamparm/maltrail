@@ -1,0 +1,241 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://kasperskycontenthub.com/wp-content/uploads/sites/43/vlpdfs/theteamspystory_final_t2.pdf
+
+politnews.org
+bannetwork.org
+planetanews.org
+bulbanews.org
+r2bnetwork.org
+newslite.org
+kortopla.org
+news-top.org
+countlist.org
+checkmeil.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1111371723092299776
+
+edjsqvg.ua/single.php
+
+# Reference: https://twitter.com/w1mp1k1ng/status/963908169733984256
+
+disk.karelia.pro
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1271002745194119168
+# Reference: https://app.any.run/tasks/37222531-270d-4c7d-a79d-25d6476553e1/
+
+office360.work
+
+# Reference: https://app.any.run/tasks/101376ff-5daa-4b49-a1b9-fb391c852079/
+
+liskcrypto.top
+
+# Reference: https://www.virustotal.com/gui/file/0709e1a9ea9226bc0fcfeef6cf06baf6c5225e0515eee7c3a4f636847f39d154/detection
+
+claimdoge.io
+multidoge.info
+
+# Reference: https://twitter.com/g0njxa/status/1701212547305607283
+# Note: Related web-pages can contain the key-word "phichichi" and this simplifies the search, despite on author of #19240 is formally correct.
+
+http://109.230.199.181
+http://109.236.85.145
+http://178.32.216.234
+http://185.141.63.172
+http://193.242.211.141
+http://209.141.36.106
+http://212.8.242.211
+infigames.com
+mexyz.xyz
+wdxyz.xyz
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.teamspy/ (# 2023-09-21)
+
+aibyngu.ru
+aioeuqo.ru
+aqwxeyo.ru
+ccodoom.net
+cegbqbq.net
+ddcedue.info
+ddpkzaq.info
+diixuoo.info
+ebelkye.ua
+eeepdcn.ua
+eeonagf.ua
+eodqdlj.ua
+eojyaqr.ua
+exokckg.ua
+
+# Reference: https://www.bitsight.com/blog/unveiling-socks5systemz-rise-new-proxy-service-privateloader-and-amadey
+# Reference: https://www.virustotal.com/gui/file/002aa08c90ce40498a872e4376b62c416afa07f9a7b86bed2c416815f04e47b5/detection
+
+109.230.199.181:1074
+109.236.81.104:1074
+109.236.85.145:1074
+151.80.38.159:1074
+176.31.254.229:1074
+185.141.63.172:1074
+185.141.63.2:1074
+185.141.63.4:1074
+185.141.63.84:1074
+185.141.63.85:1074
+188.165.192.126:1074
+188.165.192.18:1074
+188.165.195.130:1074
+190.2.135.77:1074
+193.242.211.141:1074
+195.154.174.130:1074
+195.154.176.206:1074
+195.154.176.209:1074
+195.154.178.238:1074
+195.154.188.211:1074
+195.154.235.51:1074
+195.154.241.165:1074
+195.154.242.37:1074
+195.154.243.38:1074
+195.154.251.21:1074
+195.154.251.99:1074
+195.154.252.221:1074
+195.154.253.49:1074
+212.8.242.211:1074
+217.23.5.14:1074
+217.23.6.51:1074
+217.23.9.168:1074
+37.187.122.227:1074
+37.187.122.227:53
+37.187.142.187:1074
+37.187.143.172:1074
+37.187.148.204:1074
+51.159.66.125:1074
+51.159.66.125:53
+62.210.204.131:1074
+88.80.145.110:1074
+88.80.145.142:1074
+88.80.147.200:1074
+88.80.147.205:1074
+88.80.147.36:1074
+88.80.148.219:1074
+88.80.148.33:1074
+88.80.148.8:1074
+91.121.171.208:1074
+91.121.30.185:1074
+91.92.111.131:1074
+91.92.111.132:1074
+91.92.111.133:1074
+94.23.58.173:1074
+bbdzhhw.com
+bddns.cc
+datasheet.fun
+ddqkbno.info
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.141.63.172/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.212.44.205/relations
+# Reference: https://www.virustotal.com/gui/file/b13d66c7e4fddd3775e17b86311b6f90aa22249b82342c4432c8168254e2ff7d/detection
+# Reference: https://www.virustotal.com/gui/file/0031569d0965d2f1bc26ed03833263fa8da35d11b7ca86ed53b2a0f65b6cf419/detection
+
+http://217.23.5.14
+begin-static.bit
+gerovizerz.info
+google-analytics.bit
+send-monitoring.bit
+star-fox.bit
+updated.bit
+
+# Reference: https://app.any.run/tasks/ffd78911-f8dd-46cf-8f29-7d7ead93788b/
+
+195.154.118.238:1074
+eovzciq.ua
+
+# Reference: https://threatfox.abuse.ch/ioc/1211909/
+
+hitsturbo.com
+never.hitsturbo.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.socks5_systemz/ (# 2023-12-26)
+
+http://152.89.198.214
+http://185.196.8.22
+http://194.49.94.194
+http://34.29.85.190
+http://45.155.250.90
+http://69.30.233.162
+http://79.132.130.163
+141.98.234.31:53
+163.172.86.213:1074
+185.237.206.223:53
+195.154.220.76:53
+45.155.250.90:53
+65.109.80.185:2023
+69.30.215.106:1074
+69.30.253.122:1074
+81.31.197.38
+81.31.197.8:53
+88.80.147.105:53
+91.92.137.249:1074
+95.216.13.16:1074
+95.216.227.177:2023
+95.216.98.218:1074
+95.216.98.218:2023
+bonudgd.com
+boridqh.com
+buyfejn.com
+bvhangh.com
+habrafa.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.socks5_systemz/ (# 2024-03-24)
+
+http://185.237.206.77
+http://193.242.211.154
+http://195.16.74.230
+http://34.16.47.102
+http://45.142.214.240
+http://91.211.247.89
+http://93.123.39.219
+152.89.198.214:53
+217.23.9.168:53
+45.155.249.96:2023
+81.31.197.38:53
+91.211.247.248:53
+93.123.39.238:2023
+
+# Reference: https://x.com/tosscoinwitcher/status/1800630038154399965
+# Reference: https://tria.ge/240611-y16ceazfma/behavioral1
+# Reference: https://www.virustotal.com/gui/file/f26ccf06906fea8a18dc2fc61374d44e1506106a6264d4aba5330acf9d2aa21a/detection
+
+http://95.163.241.63
+bobisawinner.xyz
+chatgptencoder.site
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.socks5_systemz/ (# 2024-09-24)
+
+
+http://185.196.8.214
+http://185.208.158.248
+http://185.237.165.53
+http://185.237.206.119
+http://194.59.30.121
+http://31.214.157.103
+http://31.214.157.42
+http://45.11.182.29
+http://45.155.249.117
+http://45.155.250.128
+http://45.155.250.188
+http://45.155.250.229
+http://45.155.250.89
+http://45.88.90.160
+http://79.110.49.184
+http://79.110.49.244
+http://87.121.105.244
+http://89.105.201.240
+http://92.119.114.79
+http://93.123.39.193
+http://94.156.8.14
+185.141.63.27:2023
+194.59.31.219:2023
+195.154.173.35:2023
+45.156.23.96:2023
+89.105.201.183:2023
+bheuiyo.com
+bhhdhhj.com
+dtolnhd.info

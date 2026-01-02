@@ -1,0 +1,147 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/avman1995/status/1052467368851636225
+
+msboxoffice.com
+
+# Reference: https://twitter.com/Jan0fficial/status/1121738294277169152
+# Reference: https://app.any.run/tasks/b50aa97f-0dc2-4515-99e4-942030cc687c
+# Reference: https://www.virustotal.com/gui/domain/rl.ammyy.com/details
+# Reference: https://www.virustotal.com/gui/ip-address/209.239.123.75/relations
+
+209.239.123.75:443
+rl.ammyy.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1067100582152876032
+# Reference: https://app.any.run/tasks/fb0e8309-59a9-4c15-9c07-44c99967970c
+
+office365id.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1067806790182625280
+
+office365homedep.com
+
+# Reference: https://twitter.com/pollo290987/status/1004729116833218560
+
+thespecsupportservice.com
+
+# Reference: https://twitter.com/hexlax/status/988881472403763200
+
+169.239.129.38:443
+
+# Reference: https://twitter.com/anyrun_app/status/1095559956429004801
+# Reference: https://app.any.run/tasks/d6de545d-f1fd-4db9-a04e-1ecb2c53a357
+
+update365office.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1134032089383297027
+
+79.141.168.132:80
+
+# Reference: https://twitter.com/VK_Intel/status/1135497995351449600
+# Reference: https://www.virustotal.com/gui/file/c76e57800aa901071a462a0fe0bb5dddb6433cba5cf2cc26337dc10625409d51/behavior/VirusTotal%20Cuckoofork
+
+185.117.89.130:80
+
+# Reference: https://twitter.com/James_inthe_box/status/1138411458830655488
+
+185.117.89.139:80
+
+# Reference: https://twitter.com/VK_Intel/status/1141437268349083649
+
+149.154.157.229:80
+
+# Reference: https://twitter.com/VK_Intel/status/1142292041189273600
+
+169.239.128.185:80
+
+# Reference: https://twitter.com/James_inthe_box/status/1121111654899388417
+
+169.239.128.119:80
+
+# Reference: https://twitter.com/VK_Intel/status/1144618818494447616
+
+94.156.133.185:80
+
+# Reference: https://twitter.com/malware_traffic/status/1019300011396517891
+
+t69c.com
+
+# Reference: https://tccontre.blogspot.com/2019/07/interesting-com-object-abused-by.html
+
+54.38.127.28:80
+
+# Reference: https://asec.ahnlab.com/1242
+# Reference: https://otx.alienvault.com/pulse/5d39d735d1f1f7e30a26b767
+# Reference: https://twitter.com/VK_Intel/status/1154452221255278593
+# Reference: https://www.virustotal.com/gui/file/3a79c6de1954d53bce81924e0bd2cbd5906005b2a87458320ca4c72fbd5c6f54/detection
+# Reference: https://blog.alyac.co.kr/2437 (Korean)
+
+http://139.180.195.36
+http://169.239.128.36
+http://27.102.70.196
+http://45.67.229.36
+http://92.38.135.67
+
+# Reference: https://twitter.com/James_inthe_box/status/1159149234974625793
+
+http://109.94.209.91
+http://45.84.0.82
+
+# Reference: https://www.virustotal.com/gui/file/cb114123ca1c33071cf6241c3e5054a39b6f735d374491da0b33dfdaa1f7ea22/detection
+
+http://185.117.89.145
+http://54.38.127.28
+
+# Reference: https://twitter.com/hexlax/status/988881472403763200
+
+untorsnot.in
+
+# Reference: https://twitter.com/AttackTrends/status/1638537592458170370
+# Reference: https://www.virustotal.com/gui/file/d34545c4f89d3cfc70e755f31c883715eec25d0e692e40810aab9682c5830c0c/detection
+
+179.60.146.3:443
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1699376219777650821
+# Reference: https://app.any.run/tasks/e5b1b737-fcbc-483a-9d15-66468d271740/
+# Reference: https://www.virustotal.com/gui/file/c4c0df629f8dbb15bf56089c1bb1f31e4fcc485376ec771942a997bb1654ee9b/detection
+
+94.46.246.100:2727
+newstte.giize.com
+
+# Reference: https://twitter.com/Cyberteam008/status/1769709515241312306
+
+136.243.104.235:3222
+136.243.104.235:82
+136.243.104.242:3222
+136.243.104.242:82
+136.243.18.122:3222
+136.243.18.122:82
+136.243.18.81:3222
+136.243.18.81:82
+23.105.254.132:3222
+23.105.254.132:82
+23.111.102.192:3222
+23.111.102.192:82
+23.111.200.64:3222
+23.111.200.64:82
+23.111.203.68:3222
+23.111.203.68:82
+
+# Reference: https://x.com/banthisguy9349/status/1846572332200218686
+
+http://109.94.209.178
+http://178.130.39.138
+http://185.140.248.17
+http://194.67.213.73
+http://45.133.74.232
+http://83.149.17.194
+http://94.228.113.30
+
+# Generic trail
+
+/date1.dat
+/duo.dat
+/uno.dat
+/dat3.omg

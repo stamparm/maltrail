@@ -1,0 +1,51 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://news.drweb.com/show/?i=2341&lng=en&c=14
+# Reference: https://vms.drweb.com/virus/?i=1816029&lng=en
+
+http://46.17.63.144/stat_svc/
+godofwar3.rr.nu
+ironmanvideo.rr.nu
+killaoftime.rr.nu
+gangstasparadise.rr.nu
+mystreamvideo.rr.nu
+bestustreamtv.rr.nu
+ustreambesttv.rr.nu
+ustreamtvonline.rr.nu
+ustream-tv.rr.nu
+ustream.rr.nu
+
+# Reference: https://www.intego.com/mac-security-blog/flashback-botnet-is-adrift/
+# Reference: https://www.virustotal.com/gui/ip-address/194.98.50.137/relations
+
+bxkigfjcjbom.com
+igwlpmmitcar.com
+stebqigidqbnaqu.in
+xanuymlgjpay.com
+
+# Reference: http://contagiodump.blogspot.com/2012/04/osxflashbackk-sample-mac-os-malware.html
+
+cvsqsmuiaaiyh.com
+cvsqsmuiaaiyh.in
+cvsqsmuiaaiyh.info
+cvsqsmuiaaiyh.kz
+cvsqsmuiaaiyh.net
+rfffnahfiywyd.com
+rfffnahfiywyd.in
+rfffnahfiywyd.info
+rfffnahfiywyd.kz
+rfffnahfiywyd.net
+scfoijdccqtmj.com
+scfoijdccqtmj.in
+scfoijdccqtmj.info
+scfoijdccqtmj.kz
+scfoijdccqtmj.net
+
+# Generic (https://archive.f-secure.com/weblog/archives/Aquilino-VB2012.pdf)
+
+/auupdate/
+/owncheck/
+/stat_d/
+/stat_n/
+/stat_svc/

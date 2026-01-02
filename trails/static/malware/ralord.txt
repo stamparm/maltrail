@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: RALord ransomware
+
+# Reference: https://x.com/AlvieriD/status/1904637841067356352
+# Reference: https://x.com/RakeshKrish12/status/1905188616340464110
+# Reference: https://x.com/siri_urz/status/1905166212083888261
+
+ralord3htj7v2dkavss2hjzviviwgsf4anfdnihn5qcjl6eb5if3cudq.onion
+ralord3htj7v2dkavss2hjzviviwgsf4anfdnihn5qcjl6eb5if3cuqd.onion
+ralordqe33mpufkpsr6zkdatktlu3t2uei4ught3sitxgtzfmqmbsuyd.onion
+ralordt7gywtkkkkq2suldao6mpibsb7cpjvdfezpzwgltyj2laiuuid.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1911310666478105026
+
+novazzitmugtbjwuttc5hhsemkmvwh3iyt27oeeunu5mkw62qpfeykid.onion

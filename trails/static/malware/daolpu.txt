@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: daolpu stealer
+
+# Reference: https://x.com/MalwareUtkonos/status/1815375751056679385
+# Reference: https://x.com/Threatlabz/status/1815442461545951710
+# Reference: https://www.crowdstrike.com/blog/fake-recovery-manual-used-to-deliver-unidentified-stealer/
+# Reference: https://www.virustotal.com/gui/file/803727ccdf441e49096f3fd48107a5fe55c56c080f46773cd649c9e55ec1be61/detection
+
+172.104.160.126:5000
+172.104.160.126:8099
+
+# Reference: https://x.com/crep1x/status/1815687199397957848
+
+156.67.220.23:5000

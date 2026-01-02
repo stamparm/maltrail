@@ -1,0 +1,81 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/LukasStefanko/status/1240944599281041409
+# Reference: https://twitter.com/LukasStefanko/status/1240955168209977344
+# Reference: https://twitter.com/f3d__/status/1240955033652465667
+# Reference: https://www.cybereason.com/blog/eventbot-a-new-mobile-banking-trojan-is-born
+
+ora.carlaarrabitoarchitetto.com
+ora.studiolegalebasili.com
+pub.welcometothepub.com
+
+# Reference: https://twitter.com/LukasStefanko/status/1250057836324958211
+
+marta.martatovaglieri.it
+
+# Reference: https://pastebin.com/kcP37mBd
+
+blindsidefantasy.com
+carlaarrabitoarchitetto.com
+douglasshome.com
+martatovaglieri.it
+next.nextuptravel.com
+nextuptravel.com
+ora.blindsidefantasy.com
+pub.douglasshome.com
+rxc.rxcoordinator.com
+rxcoordinator.com
+studiolegalebasili.com
+themoil.site
+
+# Reference: https://twitter.com/apkdetect/status/1269856086858874880
+
+chiefsa.online
+chiefsa.site
+
+# Reference: https://twitter.com/malwrhunterteam/status/1278767603285098498
+# Reference: https://www.virustotal.com/gui/ip-address/188.127.226.227/relations
+
+datingoffersxxx.fun
+datingoffersxxx.online
+datingoffersxxx.site
+datingoffersxxx.space
+datingoffersxxx.xyz
+freewwifisearchonilnei.online
+freewwifisearchonilnei.site
+freewwifisearchonlne.online
+freewwifisearchonlne.site
+freewwifisearchonlne.space
+freewwifisearchonlne.website
+instabridga.fun
+instabridga.website
+livenettvapp.fun
+xdatingoffers.fun
+xdatingoffers.online
+xdatingoffers.site
+xdatingoffers.space
+xdatingoffers.website
+xxdatingoffers.fun
+xxdatingoffers.online
+xxdatingoffers.site
+xxdatingoffers.space
+xxdatingoffers.website
+xxxdatingoffers.fun
+xxxdatingoffers.online
+xxxdatingoffers.site
+xxxdatingoffers.space
+xxxdatingoffers.website
+xydatingoffers.fun
+xydatingoffers.online
+xydatingoffers.site
+xydatingoffers.space
+xydatingoffers.website
+
+# Reference: https://twitter.com/ReBensk/status/1283065330097692675
+
+rsi.stephaniegagne.com
+
+# Generic
+
+/gate_cb8a5aea1ab302f0_c

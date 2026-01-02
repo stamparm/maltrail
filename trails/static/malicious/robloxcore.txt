@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ActorExpose/status/1372543297147842563
+# Reference: https://www.virustotal.com/gui/ip-address/45.144.225.75/relations
+
+gen.rolimons.gg
+rbx-api.com
+rbx-api.online
+rbxapiz.xyz
+roblox-giftcard.com
+roblox.graphics
+rolimons.co.uk
+rolimons.gg

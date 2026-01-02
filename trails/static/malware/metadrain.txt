@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: metadrain stealer
+
+# Reference: https://twitter.com/AlvieriD/status/1772337953651519674
+
+whywouldyouwantthisaddressotherthantocommitacrime-sono.onion

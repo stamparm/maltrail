@@ -1,0 +1,35 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1240311121644367873
+# Reference: https://app.any.run/tasks/a2672714-e848-4973-bc1c-22df35497296/
+
+172.94.4.82:2850
+
+# Reference: https://twitter.com/P3pperP0tts/status/1241387018061520901
+
+fuehaoisdfhjaefouiads.info
+
+# Reference: https://twitter.com/abuse_ch/status/1247461316014624769
+# Reference: https://bazaar.abuse.ch/sample/2a254dcb87e159b1cbc69f3b57521cbd423b016d0ec5310b4b81ba254cb9d7dc
+
+172.94.4.82:3440
+unfoundation.website
+
+# Reference: https://www.virustotal.com/gui/file/55e87d567b732fa0b9094dba99a477953f5d7f724a336bc37b22ac439de7fa7e/detection
+
+172.94.4.82:1107
+
+# Reference: https://app.any.run/tasks/840b1916-66fb-4b64-8849-c5d0361e7b7e/
+
+155.138.196.149:9851
+
+# Reference: https://www.virustotal.com/gui/file/c904659bc15e2b4b3a760bc17111bbcd97b29aa2a8ec2956f24602fcecc5ee86/detection
+
+194.5.97.42:2525
+
+# Reference: https://app.any.run/tasks/3824f7e9-c06a-4a3d-870c-054846bffa78/
+
+185.19.85.139:6606
+185.19.85.139:7707
+185.19.85.139:8808

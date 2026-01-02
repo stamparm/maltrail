@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/SecureSh3ll/status/1616894985437167623
+# Reference: https://blogs.jpcert.or.jp/en/2023/05/gobrat.html
+# Reference: https://www.virustotal.com/gui/file/2c1566a2e03c63b67fbdd80b4a67535e9ed969ea3e3013f0ba503cfa58e287e3/detection
+# Reference: https://www.virustotal.com/gui/file/3e44c807a25a56f4068b5b8186eee5002eed6f26d665a8b791c472ad154585d1/detection
+# Reference: https://www.virustotal.com/gui/file/de8a2f5eacdacda18ad990638aad4d563faade3525816fb784ce476fefe822b0/detection
+
+38.54.111.251:58888
+38.54.85.246:58888
+5.8.16.23:58888
+5.8.95.16:58888
+54.38.220.85:58888
+94.23.162.163:58888
+vealcat.com
+ktlvz.dnsfailover.net
+su.vealcat.com
+wpksi.mefound.com

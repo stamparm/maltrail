@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: spora ransomware, RCRU64 ransomware, sc0rpio
+
+# Reference: https://twitter.com/Jane_0sint/status/1660916458447069184
+# Reference: https://app.any.run/tasks/26a952bb-e25c-4a4f-b939-9ed4f1d6c682/
+# Reference: https://www.virustotal.com/gui/file/1ce6d97cfebac138220ecfa39b3db255c24f9c4de8bd7e2cd51919c9847ae5df/detection
+
+185.147.34.53:3586
+
+# Reference: https://tria.ge/240718-k932ravgrc/behavioral2
+
+rofossecurity.xyz

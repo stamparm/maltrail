@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.phylum.io/phylum-discovers-seroxen-rat-in-typosquatted-nuget-package/
+# Reference: https://www.virustotal.com/gui/file/e7dc6a2f0c65a2c6f3d7cc2a11c3fd2acb4e23af1e55a8769366766ee22278c3/detection
+# Reference: https://www.virustotal.com/gui/file/8bf56c92865fade8d06d4a57e1d049bccd3041842b2a1c71503a29729a71073d/detection
+# Reference: https://www.virustotal.com/gui/file/075acd923103e731e91140e663756699e7379a7f63ea31487434ce04cca02b02/detection
+
+http://66.23.238.220

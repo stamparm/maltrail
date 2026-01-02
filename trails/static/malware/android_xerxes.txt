@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/LukasStefanko/status/1244563630638731266
+
+newbot.ug
+
+# Reference: https://www.virustotal.com/gui/file/a2259b180c0f57fe77ad0e2f5f69fef75fe9fd96bf46c81618376555b678b5f5/detection
+
+jomgegar.org
+
+# Reference: https://x.com/Unit42_Intel/status/1821189625026683179
+# Reference: https://urlscan.io/result/2a75f38f-c414-4c8a-ae43-be411651c44e/
+# Reference: https://search.censys.io/hosts/144.217.61.133
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-08-06-Xerxes-Android-Botnet-activity.txt
+
+http://144.217.61.133
+botnetbywrick.xyz
+insta-cart.shop
+testing1.insta-cart.shop
+
+# Generic
+
+/xerxes/gate.php
+/xerxes/login.php

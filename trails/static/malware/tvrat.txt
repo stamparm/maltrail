@@ -1,0 +1,66 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/SaudiDFIR/status/1177740045186457600
+# Reference: https://app.any.run/tasks/7ad3c08f-c1d1-4893-8227-3c47ed1ebe81/
+
+0926tv.xyz
+
+# Reference: https://twitter.com/James_inthe_box/status/1224448088971964418
+
+123faster.top
+creatorz123.top
+memodoris.com
+
+# Reference: https://twitter.com/fe7ch/status/1242733588526874624
+# Reference: https://github.com/DoctorWebLtd/malware-iocs/blob/master/FakeChromeUpdate/README.adoc
+
+google.chrome.get-update.online
+traficbouncer.xyz
+traficbouncerbackup.xyz
+
+# Reference: https://app.any.run/tasks/d18f732d-e903-4910-a324-a7589071519d/
+
+http://185.193.38.185
+
+# Reference: https://app.any.run/tasks/101376ff-5daa-4b49-a1b9-fb391c852079/
+
+momogilagi.ddns.net
+cob.payeermine.com
+liskcrypto.top
+
+# Reference: https://twitter.com/Lokesh42651261/status/1316732932292145152
+# Reference: https://app.any.run/tasks/530da726-e903-425b-9a08-30c505603f3e/
+# Reference: https://www.virustotal.com/gui/file/d0f83f2f4daf6e2ee229cbd249cd4b600d2e306bc03ff42b0ab07c2786fb4737/detection
+
+tg.payeermine.com
+
+# Reference: https://app.any.run/tasks/c8ad3fb0-62a1-4dca-8dcf-72b10b1e6422/
+
+payeermine.com
+
+# Reference: https://www.virustotal.com/gui/file/e598882e2ce472e702b24fa92485d17d961b9036f622dd27511d735092ba045b/detection
+# Reference: https://app.any.run/tasks/2ce79039-efc9-44b6-8774-2e63aec21979/
+
+bingoroll3.net
+mycalibra.me
+
+# Reference: https://app.any.run/tasks/a0f09fc4-ba9c-413c-a4ec-2e6f6d3f0e5d/
+
+135.181.187.43:40355
+
+# Reference: https://twitter.com/MBThreatIntel/status/1433466986051170306
+
+https-center.net
+widolapsed.info
+
+# Reference: https://twitter.com/MBThreatIntel/status/1439995792693944324
+# Reference: https://www.virustotal.com/gui/file/223d8c94877ac7e689733ab7131b749393c7570c2653cd1955f5cb2b4d68deae/detection
+
+todosobretenis.com
+
+# Generic trails
+
+/g4t3_indata.php
+/l6w8n3/update.php
+/indexes_data.php

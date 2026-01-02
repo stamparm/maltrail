@@ -1,0 +1,57 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://app.any.run/tasks/ef5e4050-f026-43cd-a302-f2add47842b8/
+
+kilolo.site
+http://37.72.175.188/home
+
+# Reference: https://app.any.run/tasks/a765d9db-07f4-4784-a1a9-df0191028cff/
+# Reference: https://app.any.run/tasks/15cf5ad4-b8e8-4b35-8a6e-bc545e05cb73/
+# Reference: https://app.any.run/tasks/143e18ad-cf17-480f-a067-e039653ea2f0/
+# Reference: https://www.virustotal.com/gui/file/785c2845af631f33fda47b5a0fe5ccb338389b15e028e1ae7fa418d991e2c38f/detection
+
+googlechromeupdater.twilightparadox.com
+157.245.243.62:448
+185.186.247.114:448
+52.168.145.147:448
+
+# Reference: https://app.any.run/tasks/fc593e44-56b0-4c0f-af5a-e73b9a4289f1/
+# Reference: https://app.any.run/tasks/e4b24234-48c9-4c59-b0c2-8a670bc7de77/
+
+germes.site
+http://167.172.244.210/home
+
+# Reference: https://app.any.run/tasks/b41dc437-37cd-4162-a881-045b9c4db91e/
+
+theelder.site
+http://206.189.191.187/shop
+
+# Reference: https://app.any.run/tasks/4e3a1e05-cacc-4a60-8a5e-481cca474b10/
+
+handelreg.cf
+89.223.89.122:8085
+
+# Reference: https://app.any.run/tasks/1aea0270-972f-4808-b8ab-78bdaed82be6/
+
+s8ej573cny8q24s29fenny8q24s8.duckdns.org
+185.186.247.114:443
+
+# Reference: https://app.any.run/tasks/f0531b6a-39a6-4d63-8558-e3617bfe70ba/
+# Reference: https://app.any.run/tasks/7c7a05f2-018e-412c-a24c-8cbc790db76f/
+
+amazonchik.site
+185.236.78.122:8110
+
+# Reference: https://app.any.run/tasks/c8d18e84-c38a-443f-a2db-4a6d56c120e8/
+
+185.20.186.77:9999
+
+# Reference: https://app.any.run/tasks/988530ec-09a1-461f-8845-60db6c61f9ff/
+
+kasperskylab.ignorelist.com
+178.128.104.195:9999
+
+# Reference: https://app.any.run/tasks/e0cabfbc-1c4c-443d-ac2b-f685f9702a59/
+
+80.211.11.227:9999

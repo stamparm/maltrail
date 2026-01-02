@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cryptgh0st, mauricrypt
+
+# Reference: https://www.virustotal.com/gui/file/8b4aefeb0aa21fe2ce3db514772d6dcec320218789792faeb9820f441559c1ee/detection
+# Reference: https://www.virustotal.com/gui/file/79ae77b4c1b2f944355d87bd2396d671dd6783f3b238c66064de4a7b8ef57b6b/detection
+# Reference: https://www.virustotal.com/gui/file/627a173974f13a09a7be1b001604bcd89f8593ae82bd133181de425b4dc1ba3d/detection
+# Reference: https://www.virustotal.com/gui/file/4652d97f65f45ba49cd80fe6a5418391d802a0bf9b67bbce3b20888de262b561/detection
+# Reference: https://www.virustotal.com/gui/file/215fc5a73f57acdcf3af51dcff79738754e7865520a74975a36d414dbb372322/detection
+
+144.126.232.4:9090

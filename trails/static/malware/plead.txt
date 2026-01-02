@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2019/05/14/plead-malware-mitm-asus-webstorage/
+
+google.com.dns-report.com
+update.asuswebstorage.com.ssmailer.com
+
+# Reference: https://twitter.com/aRtAGGI/status/1138141404386009088
+
+app.panasocin.com
+
+# Reference: https://twitter.com/8th_grey_owl/status/1301710803448463362
+# Reference: https://www.virustotal.com/gui/file/15b8dddbfa37317ccdfbc340764cd0f43b1fb8915b1817b5666c4816ccb98e7c/detection
+
+osscach2023.hicloud.tw
+
+# Reference: https://blogs.jpcert.or.jp/en/2020/11/elf-plead.html
+# Reference: https://otx.alienvault.com/pulse/5fb41f49ab5f8e9f642e41dd
+# Reference: https://www.virustotal.com/gui/file/ca0e83440b77eca4d2eda6efd9530b49ffb477f87f36637b5e43f2e428898766/detection
+# Reference: https://www.virustotal.com/gui/file/5b5f8c4611510c11d413cb2bef70867e584f003210968f97e0c54e6d37ba8d8d/detection
+
+mx.msdtc.tw
+
+# Reference: https://www.virustotal.com/gui/file/12d1fbf0cb5feeb889ba159b102a2bb12d2129c23fbf2f1996fe7b69c946679e/detection
+
+love99i.myvnc.com
+
+# Reference: https://www.virustotal.com/gui/file/93ec9f526155913dcca5206d0198a0640a493619591d48bb7d86287695e413a1/detection
+
+http://220.134.146.241
+220.134.146.241:443
+peanuts.linestw.com
+pounds.mrbonus.com

@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.securelist.com/en/blog/208194129/The_MiniDuke_Mystery_PDF_0_day_Government_Spy_Assembler_0x29A_Micro_Backdoor
+# Reference: http://blog.crysys.hu/2013/02/miniduke/
+
+arabooks.ch
+artas.org
+tsoftonline.com
+eamtm.com
+news.grouptumbler.com
+
+# Reference: https://securelist.com/miniduke-is-back-nemesis-gemina-and-the-botgen-studio/64107/
+
+algherolido.it/img/common/thumb/thumb.php
+rtproductionsusa.com/wp-includes/images/smilies/icon_gif.php
+store.extremesportsevents.net/index.php
+tangentialreality.com/cache/template/yoo_cache.php
+extremesportsevents.net

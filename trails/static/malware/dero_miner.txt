@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.wiz.io/blog/dero-cryptojacking-campaign-adapts-to-evade-detection
+# Reference: https://securelist.com/dero-miner-infects-containers-through-docker-api/116546/
+# Reference: https://www.virustotal.com/gui/file/016c765b66d5f79417b0447f9fac54ee40cde748d63785757b6a305a4aef3321/detection
+# Reference: https://www.virustotal.com/gui/file/06d080c816f099cccab56e4b596128e73cd63f524bdc2ddf5dd78c26f409f219/detection
+# Reference: https://www.virustotal.com/gui/file/68656198c24d6b32c4916a5686906c62baf7d6baae3b1d7dc615e43cb6d3fca8/detection
+# Reference: https://www.virustotal.com/gui/file/49e8422e5f273a564c15755711ab2a35a1deb2105bbe1a0a8ce670c9b38721e5/detection
+# Reference: https://www.virustotal.com/gui/file/e1de787777faba85dcca4e10d945553aefdba14b1995cca7cf0721ee571c7e96/detection
+
+http://209.141.32.182
+http://209.141.49.113
+167.235.7.72:10300
+191.252.185.100:10300
+209.141.32.182:10300
+209.141.54.161:10300
+204.12.199.25:10300
+5.161.123.196:10300
+windowsupdatesupport.link
+community-pools.mysrv.cloud
+dero-eu.friendspool.club
+dero.friendspool.club
+dero2sats.friendspool.club
+derotest.friendspool.club
+dero-node-orionure-us.mysrv.cloud
+dero-node-va.mysrv.cloud
+dero-node-yashnik-eu.mysrv.cloud
+dero-stats.friendspool.club
+d.windowsupdatesupport.link
+h.windowsupdatesupport.link
+name.windowsupdatesupport.link

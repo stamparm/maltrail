@@ -1,0 +1,328 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: kaiten, tsunami
+
+# Reference: https://www.virustotal.com/gui/file/ca42237354f76bd8aebb97635887c286cddc8d3b6cca2581fa228acf335b3a8c/detection
+
+111.230.241.23:2407
+46.149.233.35:2407
+
+# Reference: https://www.virustotal.com/gui/file/29f6d8954e676d9260e308a1bc756edb1063cfa72fd6bfedd5f4fb10ba162043/detection
+
+185.61.149.22:2407
+
+# Reference: https://www.virustotal.com/gui/file/c474957d40c9ed89392bdde1b787455ab31a9df891a4c74fab2bf98b39f2c846/detection
+
+145.239.93.125:9090
+46.149.233.35:9090
+
+# Reference: https://www.virustotal.com/gui/file/1a4e0aa435da8d3c79e7dbd80b0eefe4e555cce41fab475f7f7859a293f86c0b/detection
+
+147.135.210.184:9090
+216.58.203.46:9090
+
+# Reference: https://www.virustotal.com/gui/file/4284f64189359326e4bbbeb329aee11e0db96824d5fae1de96a95ad4949ffedf/detection
+
+153.92.210.165:2407
+
+# Reference: https://www.virustotal.com/gui/file/903ebfde5701b26c60656ee466fee31633448c37188d18318db9d2c7bfded076/detection
+
+51.68.124.148:2407
+
+# Reference: https://www.virustotal.com/gui/file/eb2433bf487a405b631464430f9ba5f02d95f7d63a59dd288a3db9d2d0611373/detection
+
+176.58.123.223:2407
+
+# Reference: https://www.virustotal.com/gui/file/13bcf15acbf45759342cd62e2e112dd0c46acf9a14af7784dda17f5ee6fc749b/detection
+
+107.191.110.201:2407
+
+# Reference: https://www.virustotal.com/gui/file/283a67dd7536db0e316282d437c2917c336d97045ce867df2d326e588f5922c0/detection
+
+176.10.127.126:2407
+
+# Reference: https://www.virustotal.com/gui/file/8dcdccf9fcb42c1f6c191ced0347711297c88efc51518ea1ab29bbda001661a4/detection
+
+68.66.253.100:2407
+
+# Reference: https://twitter.com/MalwarePatrol/status/1334346751805939718
+
+bash.givemexyz.in
+
+# Reference: https://twitter.com/r3dbU7z/status/1341404311771881478
+
+small.anondns.net
+
+# Reference: https://www.virustotal.com/gui/file/94224bbc8f9a24bf162cc9635a07a3863dfa46d234c96ccf37162b9ffbbe3e29/detection
+
+46.29.163.28:6667
+
+# Reference: https://www.lacework.com/8220-gangs-recent-use-of-custom-miner-and-botnet/
+# Reference: https://otx.alienvault.com/pulse/60a81875fa39fe6dbbe6f7d1
+
+givemexyz.in
+givemexyz.xyz
+pwndns.pw
+thegov.win
+winscp.top
+
+# Reference: https://www.virustotal.com/gui/file/b8dcadd2affaa6c9ea5629958ccb8e4c19a5c412dd3fb83cfd210dc079359196/detection
+
+185.130.104.131:443
+
+# Reference: https://www.virustotal.com/gui/file/137b3b10a347a78a8ce0c167befd35a187e2923ae3c782e0b69102cd5069fcbb/detection
+# Reference: https://www.virustotal.com/gui/file/0c2d6843d5c00616cd4823b71206c8efcdc43b09a0f0682e3200e9822343f979/detection
+
+derpcity.ru
+exposedbotnets.ru
+fflyy.su
+wired.kei.su
+wireless.kei.su
+
+# Reference: https://twitter.com/abuse_ch/status/1473561613634609153
+
+144.172.71.180:8080
+
+# Reference: https://tria.ge/211223-mgh7zsacfq/behavioral1
+
+156.67.220.165:8080
+198.8.91.14:8080
+45.132.241.68:8080
+
+# Reference: https://threatfox.abuse.ch/browse/tag/log4j/
+
+91.200.103.249:8080
+l33t-ppl.info
+
+# Reference: https://www.sentinelone.com/blog/from-the-front-lines-8220-gang-massively-expands-cloud-botnet-to-30000-infected-hosts/
+# Reference: https://otx.alienvault.com/pulse/62d67a7459b9250ab5c7cc96
+
+bashgo.pw
+letmaker.top
+onlypirate.top
+oracleservice.top
+a.oracleservice.top
+b.oracleservice.top
+jira.letmaker.top
+jira.onlypirate.top
+pwn.letmaker.top
+pwn.onlypirate.top
+pwn.oracleservice.top
+
+# Reference: https://twitter.com/r3dbU7z/status/1569694183723601922
+# Reference: https://elfdigest.com/brief/8a04585157033b86cb2c104f441d236bc3255b46127355f8342b75ab40eb3e35
+# Reference: https://www.virustotal.com/gui/file/c79afea44f153d74b5019e90fa7728b00dcb6ab6abd4649fd474d3a883fa96ad/detection
+
+93.95.229.203:8080
+lesliejust.is
+whatwill.be
+irc.whatwill.be
+
+# Reference: https://www.virustotal.com/gui/file/0013b356966c3d693b253cdf00c7fdf698890c9b75605be07128cac446904ad9/detection
+
+c4k-ircd.pwndns.pw
+
+# Reference: https://www.virustotal.com/gui/file/7d82f5f3e1dd21e9cf32fc39caa9d07f85830e48d1961727193fdcea7354cffa/detection
+
+213.171.212.254:4443
+koro.root.sx
+
+# Reference: https://www.virustotal.com/gui/file/19ab31fa87af2250e61ca847252de21bb966b29aad477eea6c7046b210545e54/detection
+
+dump.giraffe.su
+
+# Reference: https://unit42.paloaltonetworks.com/gobruteforcer-golang-botnet/
+# Reference: https://otx.alienvault.com/pulse/640ff035d461c89f3f2c4472
+# Reference: https://www.virustotal.com/gui/file/426b573363277554c7c8a04da524ddbf57c5ff570ea23017bdc25d0c7fd80218/detection
+
+http://5.253.84.159
+fi.warmachine.su
+
+# Reference: https://www.virustotal.com/gui/file/4f363c0a8685134c06355fbe7a92b56423a2e50d687bfad72cf2650a5fbc1b7c/detection
+
+hsbc-irc.pwndns.pw
+
+# Reference: https://elfdigest.com/brief/fac919fc38c456cd30216a6d190fc258049ceb9ede4cefcc60f666d66178f641
+
+96.49.241.146:6667
+irc.byroe.org
+li1094-151.members.linode.com
+
+# Reference: https://elfdigest.com/brief/03318a0061d4ee846a5fffd3d613f228dfced98b8be589d40842724e047de1f6
+
+121.130.2.180:6667
+
+# Reference: https://blog.malwaremustdie.org/2016/02/mmd-0052-2016-skidddos-elf-distribution.html#tsunami
+
+binarys.x10.mx
+/DOGDICKS/Binarys.sh
+/qbot/Binarys.sh
+/Sharky/gb.sh
+
+# Reference: https://blog.malwaremustdie.org/2016/04/mmd-0053-2016-bit-about-elfstd-irc-bot.html#stdbot
+# Reference: https://www.virustotal.com/gui/file/492780a9ac9f03305538b360d8a836c038da4920e8c1ae620988b120613c0b1f/detection
+
+148.81.111.111:8080
+49.231.211.193:8080
+51.210.8.204:8080
+pokemoninc.com
+bnet.pokemoninc.com
+xxx.pokemoninc.com
+
+# Reference: https://twitter.com/sicehice/status/1672091400647872513
+# Reference: https://www.virustotal.com/gui/file/6ce7c8c27da5fea91c1d4ac53cdf54c1b73262b4afa74c0b89f48c7dd6543936/detection
+
+http://106.246.224.219
+http://160.16.103.108
+/.l/pty1
+/.l/pty2
+/.l/pty3
+/.l/pty4
+/.l/pty5
+/.l/pty6
+/.l/pty7
+/.l/pty8
+/.l/pty9
+/.l/pty10
+/.l/pty11
+/.l/pty12
+/.l/pty1?ddos
+/.l/pty2?ddos
+/.l/pty3?ddos
+/.l/pty4?ddos
+/.l/pty5?ddos
+/.l/pty6?ddos
+/.l/pty7?ddos
+/.l/pty8?ddos
+/.l/pty9?ddos
+/.l/pty10?ddos
+/.l/pty11?ddos
+/.l/pty12?ddos
+/.p/pty1
+/.p/pty2
+/.p/pty3
+/.p/pty4
+/.p/pty5
+/.p/pty6
+/.p/pty7
+/.p/pty8
+/.p/pty9
+/.p/pty10
+/.p/pty11
+/.p/pty12
+/.s/pty1
+/.s/pty2
+/.s/pty3
+/.s/pty4
+/.s/pty5
+/.s/pty6
+/.s/pty7
+/.s/pty8
+/.s/pty9
+/.s/pty10
+/.s/pty11
+/.s/pty12
+/pty1?ddos
+/pty2?ddos
+/pty3?ddos
+/pty4?ddos
+/pty5?ddos
+/pty6?ddos
+/pty7?ddos
+/pty8?ddos
+/pty9?ddos
+/pty10?ddos
+/pty11?ddos
+/pty12?ddos
+
+# Reference: https://elfdigest.com/brief/039704e9624f6695984a7963651e08485ddbe1c9c318af55f32d4f9c56a08bf0
+
+66.172.9.3:8080
+
+# Reference: https://twitter.com/sicehice/status/1673820114737856515
+# Reference: https://www.virustotal.com/gui/file/1807074f3f44725948ad31ed5ec4d3e4470a92f7a90a32f7b5c9b1db426efe4c/detection
+
+http://129.146.245.251
+194.59.165.52:8080
+deutschland-zahlung.eu
+bin.deutschland-zahlung.eu
+bins.deutschland-zahlung.eu
+dasan.deutschland-zahlung.eu
+i.deutschland-zahlung.eu
+irc.deutschland-zahlung.eu
+oiii.deutschland-zahlung.eu
+p.deutschland-zahlung.eu
+tomato.deutschland-zahlung.eu
+w.deutschland-zahlung.eu
+
+# Reference: https://twitter.com/sicehice/status/1672091588670140417
+
+http://160.16.103.108
+http://34.141.20.101
+
+# Reference: https://twitter.com/sicehice/status/1660409111983398913
+
+http://190.211.252.19
+
+# Reference: https://asec.ahnlab.com/en/54647/
+# Reference: https://otx.alienvault.com/pulse/6491a53dfa6ec351f8b52557
+
+ircx.us.to
+ircxx.us.to
+
+# Reference: https://www.virustotal.com/gui/file/fe4b75a8ddc0fa7ee2fda3a9dd066b122acbd672ec5fb34946e68879959d4887/detection
+
+138.197.78.18:8080
+de-zahlung.eu
+p.de-zahlung.eu
+
+# Reference: https://www.virustotal.com/gui/file/dd9d84c78e0caea7c8a0eb5d20580d65ab1ac3794b528f3a97636cf9b0d4437b/detection
+
+138.197.78.18:2407
+162.249.2.189:2407
+173.255.240.191:2407
+185.61.149.22:2407
+185.62.137.56:2407
+68.66.253.100:2407
+irc.de-zahlung.eu
+
+# Reference: https://www.virustotal.com/gui/file/ba5a6709c81fdf71420a81742fc9b5ab02d83c6d9dda77bd6e0e0dd6ad8f265b/detection
+
+194.59.165.21:8080
+dkrd.exposedbotnets.ru
+
+# Reference: https://www.virustotal.com/gui/file/b4cbd5ce32c87b5fc2dab1c544e0a8c89708984d3264221fc515ba4a6622ab4e/detection
+
+http://139.180.185.248
+
+# Reference: https://www.virustotal.com/gui/file/1f9cda58cea6c8dd07879df3e985499b18523747482e8f7acd6b4b3a82116957/detection
+
+85.120.225.141:8080
+
+# Reference: https://twitter.com/redrabytes/status/1774918859339808843
+
+94.156.8.116:1337
+
+# Reference: https://www.akamai.com/blog/security-research/2024-php-exploit-cve-one-day-after-disclosure
+
+http://147.139.29.228
+http://86.48.2.49
+
+# Reference: https://x.com/redrabytes/status/1842487058050302368
+
+http://121.40.85.244
+
+# Reference: https://x.com/redrabytes/status/1842487061573447915
+
+180.210.203.64:23
+180.210.203.65:23
+199.115.114.193:81
+207.58.186.35:81
+207.58.188.113:81
+207.58.188.114:81
+207.58.188.115:81
+207.58.188.116:81
+212.193.56.186:81
+64.131.73.13:81
+64.131.81.98:81

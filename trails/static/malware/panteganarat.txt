@@ -1,0 +1,38 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: pantegana, panteganaC2, cta-2024-0716, tag-100
+
+# Reference: https://hunt.io/malware-families/pantegana-rat
+# Reference: https://go.recordedfuture.com/hubfs/reports/cta-2024-0716.pdf
+
+104.244.79.119:443
+144.202.125.201:443
+173.254.229.93:443
+198.98.49.41:443
+205.185.117.73:443
+205.185.121.169:443
+205.185.122.35:443
+205.185.126.208:443
+205.185.127.12:443
+207.246.108.119:443
+209.141.37.217:443
+209.141.42.131:443
+209.141.46.83:443
+209.141.47.6:443
+209.141.50.215:443
+209.141.57.75:443
+216.238.68.36:443
+38.54.115.34:443
+38.54.15.164:443
+45.32.107.53:443
+
+# Reference: https://www.recordedfuture.com/research/rednovember-targets-government-defense-and-technology-organizations
+
+198.98.50.218:443
+198.98.53.163:443
+198.98.61.155:443
+205.185.124.24:443
+209.141.37.254:443
+209.141.57.116:443
+45.61.187.124:443

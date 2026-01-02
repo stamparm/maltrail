@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.linkedin.com/posts/kaushik%7Epal_chinese-c2-ugcPost-7406908024747020289-NwjM
+# TITLE-HOST/IP=C2 控制台
+
+http://38.54.81.177
+106.54.226.192:8080

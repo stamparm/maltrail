@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/amnesty/status/1868604055708143655
+# Reference: https://x.com/smica83/status/1868657766451322961
+# Reference: https://www.amnesty.org/en/latest/news/2024/12/serbia-authorities-using-spyware-and-cellebrite-forensic-extraction-tools-to-hack-journalists-and-activists/
+# Reference: https://www.virustotal.com/gui/ip-address/185.86.148.174/relations
+# Reference: https://www.virustotal.com/gui/file/d55e492d5fce87898e065572a5553d1ac1389cd12bf3d28cabc1218cb29780af/detection
+# Reference: https://www.virustotal.com/gui/file/54ee2c4f3e2396b6f92def135d68abd35d63ca7f9c304633a36f705ba4728cb7/detection
+
+185.86.148.174:443

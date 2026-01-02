@@ -1,0 +1,80 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.vincss.net/2021/05/re022-phan-1-phan-tich-nhanh-mau-ma-doc-gia-mao-cong-van-cua-uy-ban-kiem-tra-tw-VietNam.html
+# Reference: https://research.checkpoint.com/2021/chinese-apt-group-targets-southeast-asian-government-with-previously-unknown-backdoor/
+# Reference: https://otx.alienvault.com/pulse/60b8bbf9744408d3a83062f7
+# Reference: https://www.virustotal.com/gui/file/6f66faf278b5e78992362060d6375dcc2006bcee29ccc19347db27a250f81bcd/detection
+
+http://107.148.165.151
+http://45.121.146.88
+http://45.91.225.139
+107.148.165.151:443
+45.121.146.88:443
+45.91.225.139:443
+
+# Reference: https://twitter.com/ShadowChasing1/status/1485514043679199233
+# Reference: https://twitter.com/nao_sec/status/1485525023410757632
+# Reference: https://www.virustotal.com/gui/file/811a020b0f0bb31494f7fbe21893594cd44d90f77fcd1f257925c4ac5fabed43/detection
+# Reference: https://www.virustotal.com/gui/file/4747e6a62fee668593ceebf62f441032f7999e00a0dfd758ea5105c1feb72225/detection
+
+oiqezet.com
+office.oiqezet.com
+
+# Reference: https://twitter.com/h2jazi/status/1537442234605244416
+# Reference: https://www.virustotal.com/gui/file/b023e2b398d552aacb2233a6e08b4734c205ab6abf5382ec31e6d5aa7c71c1cb/detection
+
+http://103.213.247.48
+
+# Reference: https://twitter.com/nao_sec/status/1583465428005040130
+# Reference: https://twitter.com/StopMalvertisin/status/1583663484725694464
+# Reference: https://www.virustotal.com/gui/file/ca7f297dc04acad2fab04d5dc2de9475aed4186805f6c237c10b8f56b384cf30/detection
+# Reference: https://www.virustotal.com/gui/file/f2779c63373e33fdbd001f336df36b01b0360cd6787c1cd29a6524cc7bcf1ffb/detection
+
+http://139.180.138.49
+/IRg4hRs9/tzM1cuw5.png
+/IRg4hRs9/j3kzZ9Yo.php
+/IRg4hRs9/
+/tzM1cuw5.png
+/j3kzZ9Yo.php
+
+# Reference: https://twitter.com/t3ft3lb/status/1590313981025349634
+# Reference: https://www.virustotal.com/gui/file/1a15a35065ec7c2217ca6a4354877e6a1de610861311174984232ba5ff749114/detection
+
+http://45.76.190.210
+45.76.190.210:443
+/IGxWyLQI/2Onp0som.php
+/IGxWyLQI/
+/2Onp0som.php
+
+# Reference: https://twitter.com/nao_sec/status/1611030643693195264
+# Reference: https://twitter.com/kienbigmummy/status/1612361272972185601
+# Reference: https://www.virustotal.com/gui/file/32a0f6276fea9fe5ee2ffda461494a24a5b1f163a300bc8edd3b33c9c6cc2d17/detection
+
+http://139.180.137.73
+/YbZe6AQE/KJ8oqzlG.png
+/YbZe6AQE/
+/KJ8oqzlG.png
+
+# Reference: https://twitter.com/nao_sec/status/1662790230691450886
+# Reference: https://www.virustotal.com/gui/file/21f173a347ed111ce67e4c0f2c0bd4ee34bb7ca765da03635ca5c0df394cd7e6/detection
+
+13.236.189.80:8001
+/G0AnyWhere_up.jsp
+
+# Reference: https://twitter.com/nao_sec/status/1682299350435901441
+# Reference: https://www.virustotal.com/gui/file/3b4b9f56d5bec5cf3cd3fd6b917d43b2ff8a0b1d22a00b577e8d2bcbb90f7418/detection
+
+template-content.azurecloudapp.workers.dev
+
+# Reference: https://twitter.com/nao_sec/status/1740589856995303751
+# Reference: https://www.virustotal.com/gui/file/ff35cfed656c0cac5571beae7170a2fec007e75417c1d0c4fd7af4185759ec38/detection
+
+openxmlformats.shop
+schemas.openxmlformats.shop
+
+# Reference: https://x.com/t3ft3lb/status/1805172999236006066
+# Reference: https://www.virustotal.com/gui/file/cd24a44f2fcb9e8bbedee3ba9a2d1026272f1296a584f8832022eda57b98574c/detection
+
+http://38.54.31.43
+/WindowsTime/update.php?Data=

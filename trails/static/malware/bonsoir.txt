@@ -1,0 +1,6 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/Emm_ADC_Soft/status/1347503787703988224
+
+5w4okefqrb66br3ibnb573ac7ds77buxtjxozhvvnbs4wy6cqmwhsyad.onion

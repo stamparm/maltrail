@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://web.archive.org/web/20120106212034/http://amada.abuse.ch/blocklist.php?download=domainblocklist
+
+3-d-0.com
+66kooum.com
+77quvo.com
+8efhuiudhfodundn.com
+akmnds.net
+bbazzas.com
+bg78ruhevroujiodjfoir.com
+boiuehwfscp9ufhefuhc.com
+downtraff.com
+fastprosearch.com
+Fwild.biz
+indep29.com
+jarntauiuva91.com
+kasperskiy-huesos.com
+light.raystats.com
+mmslive.info
+morphyauctions.biz
+mytvhere.com
+pupseg.tv
+shop4898.com
+teencantryit.us
+the-goodlike.com
+wr7sfhiud9fphidscjoijhsfdc.com
+
+# Reference: https://www.virustotal.com/gui/file/3bb7060b220056e6f65b93c35be0c8e1f9c9ce8b574568d879bf30c2ccfbd128/detection
+
+45.138.172.36:80

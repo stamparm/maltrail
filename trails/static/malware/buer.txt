@@ -1,0 +1,204 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: buer, buerak, buerloader, rustyloader
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/buer-new-loader-emerges-underground-marketplace
+# Reference: https://otx.alienvault.com/pulse/5de7f39a22918ce26c2c2f1b
+
+134.0.119.53:8080
+173.212.204.171:443
+185.130.104.187:443
+45.76.247.177:8080
+ffload01.top
+garrisontx.us
+
+# Reference: https://www.virustotal.com/gui/file/e7211c80d7f75f2bc5b82acce679c53d834b0a1c58e160b170f7da843e5bd3c9/detection
+
+ortalrustytyo.com
+
+# Reference: https://twitter.com/VK_Intel/status/1217905276545839105
+
+megoliks.net
+
+# Reference: https://twitter.com/VK_Intel/status/1220750726676336641
+
+108.62.118.46:443
+
+# Reference: https://www.virustotal.com/gui/domain/sikorskyleze.com/relations
+
+sikorskyleze.com
+
+# Reference: https://app.any.run/tasks/bc9f23f8-1754-4975-924a-6c1cb5eaa03f/
+
+lodddd01.info
+
+# Reference: https://securelist.com/mokes-and-buerak-distributed-under-the-guise-of-security-certificates/96324/
+
+kkjjhhdff.site
+ldfidfa.pw
+oderstrg.site
+
+# Reference: https://www.proofpoint.com/uk/threat-insight/post/buer-new-loader-emerges-underground-marketplace
+
+93345fdd.libertycolegios.com
+jf8df87sdfd.yesteryearrestorations.net
+
+# Reference: https://twitter.com/James_inthe_box/status/1194358787513077766
+# Reference: https://www.virustotal.com/gui/file/fcdf29266f3508bd91d2446f20a73a811f53e27ad1f3e9c1f822458f1f30b5c9/detection
+# Reference: https://twitter.com/James_inthe_box/status/1194367229879472129
+
+itop01.top
+loood1.top
+
+# Reference: https://twitter.com/nao_sec/status/1254025079635075073
+# Reference: https://app.any.run/tasks/9db8e3f8-bc1b-4a12-9a19-1681c6e27b8e/
+# Reference: https://www.virustotal.com/gui/file/4e2a2755b00b276e03677a1444df7317bef390529fa774f9999f907cbce73157/detection
+
+http://95.217.81.68/api/download/
+http://95.217.81.68/api/downloadmodule/
+http://95.217.81.68/api/update/
+95.217.81.68:443
+95.217.81.68:8080
+
+# Reference: https://twitter.com/James_inthe_box/status/1254034019819220992
+# Reference: https://app.any.run/tasks/c5e79956-bd0c-436b-9380-f4c3bcd5468f/
+
+http://108.62.118.46/api/download/
+http://108.62.118.46/api/downloadmodule/
+http://108.62.118.46/api/update/
+108.62.118.46:443
+108.62.118.46:8080
+
+# Reference: https://twitter.com/James_inthe_box/status/1258389737577934849
+
+oopscll5.top
+
+# Reference: https://www.virustotal.com/gui/file/765ce3d6bab4deabdb55e34ed66f54b8f04f74496a011e4308dc7c307776b27b/detection
+
+morenodorf.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1306273667748442112
+
+doamvola.top
+kackdelar.top
+
+# Reference: https://gist.github.com/silence-is-best/0aa844b003c62c6ce491e91e168ac662
+# Reference: https://www.virustotal.com/gui/file/611ebfdce09ab9d4966796e03fbe0a6e9bc4f6e4a8f81d941d0a5b39c0bab6ff/detection
+
+bankcreditsign.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1333530280968159234
+# Reference: https://twitter.com/VK_Intel/status/1333647007920033793
+# Reference: https://app.any.run/tasks/2105adb9-16c4-424f-8fa5-3a98c526ce42/
+
+basiliskbank.com
+
+# Reference: https://twitter.com/nao_sec/status/1334289601125445633
+# Reference: https://app.any.run/tasks/daf21461-db00-47b7-a33e-a61e864ddc1a/
+
+officewestunionbank.com
+
+# Reference: https://www.virustotal.com/gui/file/844919458855173173e4ce0a36fce779d7a653027ac090b61efb15b79baaefc5/detection
+# Reference: https://app.any.run/tasks/ee0dfdd4-ff45-466b-a63f-a63caa53222b/
+
+188.166.56.214:443
+tonkeysaldconf.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1340944120383221761
+# Reference: https://app.any.run/tasks/6a0a9d19-30b2-4381-a58d-1dca0ca84e2c/
+# Reference: https://twitter.com/malwrhunterteam/status/1386747541593722887
+# Reference: https://www.virustotal.com/gui/file/1826dcb3d75b9894645ed9f3c8dff15e3804c42061d5d77ef28975d5b4207cda/detection
+
+http://185.59.103.74
+/stealerConfig/
+
+# Reference: https://twitter.com/ffforward/status/1338876857647849473
+# Reference: https://www.virustotal.com/gui/file/110832d77e7e042955d0bee350f739c3348b3c67ca6f690f02a487d28aefaff4/detection
+
+softwareconsbank.com
+
+# Reference: https://www.virustotal.com/gui/file/ce8c56d52e1f156e13071b65cc73794b143f3f3714a26166e6600023b81ee2fd/detection
+
+randomresultgenerator.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1356280129433976833
+# Reference: https://www.virustotal.com/gui/file/4f7ccbc55dda5ed45be0fc7dc48b18719556ac9018d5aa4eb9f9ff0470eaca95/detection
+
+webgraitupeople.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1359606553251205123
+# Reference: https://app.any.run/tasks/b729ef4b-ead6-462c-8f49-e63b75ef680c/
+
+dtermalherbhos.com
+
+# Reference: https://tria.ge/210212-qj1pxv26za
+
+antipublicwestbank.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1361809700635873281
+
+complexofferstobakn.com
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/new-variant-buer-loader-written-rust
+
+authcert-ca.com
+cembank-api.com
+docusigner-api.com
+gerstaonycostumers.com
+miyfandecompany.com
+ocumentssign-api.com
+orderverification-api.com
+serevalutinoffice.com
+techlog.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1401956858471104515
+# Reference: https://www.virustotal.com/gui/file/6b9805753680676940bc0a6ef8080d0b59204894dd083edb8af7e927df277ede/detection
+
+textajobson.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1410690698945335298
+# Reference: https://twitter.com/James_inthe_box/status/1415766314669412354
+# Reference: https://gist.github.com/silence-is-best/7b8211fc0ef0f35e1f71fa18fc91856b
+
+hejoysa.com
+lebatyo.com
+
+# Reference: https://www.fortinet.com/blog/threat-research/signed-sealed-and-delivered-signed-xll-file-delivers-buer-loader
+# Reference: https://otx.alienvault.com/pulse/60f694ae9a2e2533cb900d55
+
+shipmentofficedepot.com
+
+# Reference: https://twitter.com/abuse_ch/status/1422627502758014976
+# Reference: https://twitter.com/James_inthe_box/status/1422631599070334983
+# Reference: https://www.virustotal.com/gui/file/88689636f4b2287701b63f42c12e7e2387bf4c3ecc45eeb8a61ea707126bad9b/detection
+
+cerionetya.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1422940199676366852
+
+luareraopy.com
+
+# Reference: https://blog.group-ib.com/prometheus-tds
+
+secure-doc-viewer.com
+
+# Reference: https://www.virustotal.com/gui/file/c9dfdced8b7b1b7b4105151efd59a6662c22a246289cb346b7b025e0ec77dc15/detection
+
+backups.fun
+reservestation.host
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2021-08-19%20BuerLoader%20IOCs
+# Reference: https://app.any.run/tasks/0e192d85-50f3-4d02-b8ca-f4311c1ef6e3/
+
+awmelisers.com
+
+# Generic trails
+
+/abc/traff.php
+/dmi/traff.php
+/fnc/recondms.php
+/nana/kum.php
+/F9AD454C4558101186797/
+/q7dWHqsFcfEBPjYCebyHcZC4iLkUuWng/
+/SdqEeGAiQQwXDHmCGzevx73CuQrcUW6H/

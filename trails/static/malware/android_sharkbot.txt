@@ -1,0 +1,274 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/_icebre4ker_/status/1459178538960097289
+# Reference: https://www.cleafy.com/cleafy-labs/sharkbot-a-new-generation-of-android-trojan-is-targeting-banks-in-europe
+
+sharkedtest1.xyz
+sharkedtestuk.xyz
+
+# Reference: https://twitter.com/midnight_comms/status/1459190518420852739
+# Reference: https://twitter.com/_icebre4ker_/status/1461241411307769857
+# Reference: https://www.virustotal.com/gui/file/4f1822817690d89943e7e57468ab4366e360772c0adce67bf74a7224b3732dee/behavior/VirusTotal%20R2DBox
+
+c2hhcmtlzdq3cg9qqkk.xyz
+c2hhcmtlzdq2cg9qqkk.info
+c2hhcmtlzdq3cg9qqkk.info
+c2hhcmtlzdq2cg9qqkk.xyz
+c2hhcmtlzdq2cg9qqkk.cc
+c2hhcmtlzdq2cg9qqkk.com
+c2hhcmtlzdq2cg9qqkk.net
+c2hhcmtlzdq2cg9qqkk.top
+c2hhcmtlzdq3cg9qqkk.top
+c2hhcmtlzdq2cg9qqkk.ru
+
+# Reference: https://twitter.com/_icebre4ker_/status/1462707330877898754
+
+nddwb2pcstlmsedgzgz.top
+
+# Reference: https://twitter.com/cleafylabs/status/1491414401651458049
+# Reference: https://www.virustotal.com/gui/ip-address/31.214.157.112/relations
+# Reference: https://www.virustotal.com/gui/file/4b7945e3756abb48e2a9b62d8a3a7f633811a1073a20a7d46c121e29b41b6c31/detection
+
+m3bvakjjouxir0zkzmd.xyz
+mjaynhbvakjjouxir0z.xyz
+mnbvakjjouxir0zkzmd.xyz
+
+# Reference: https://blog.fox-it.com/2022/03/03/sharkbot-a-new-generation-android-banking-trojan-being-distributed-on-google-play-store/
+
+mjayoxbvakjjouxir0z.xyz
+n3bvakjjouxir0zkzmd.xyz
+statscodicefiscale.xyz
+
+# Reference: https://twitter.com/_icebre4ker_/status/1506728296771461126
+# Reference: https://www.virustotal.com/gui/file/917d7a3dff486a6b2908607dccf5d8a2929e05bb1ce988aec40bcb194d999bd0/detection
+
+sigmastats.xyz
+
+# Reference: https://research.checkpoint.com/2022/google-is-on-guard-sharks-shall-not-pass/
+# Reference: https://otx.alienvault.com/pulse/62500ff8c7a4efb7d9e74ffb/
+
+0f995b6f93c819a0.xyz
+74071141daaf3521.xyz
+c2hhcmtlzdq5cg9qqkk.top
+mjaynxbvakjjouxir0z.xyz
+mjaznxbvakjjouxir0z.xyz
+ndlwb2pcstlmsedgzgz.top
+y2znlm93bmvysuq0m3b.xyz
+
+# Reference: https://twitter.com/malwrhunterteam/status/1525052607005446150
+# Reference: https://www.virustotal.com/gui/ip-address/185.219.221.65/relations
+# Reference: https://www.virustotal.com/gui/file/38b625b22d181132c67d9012cc86a8c15af3416e4d39ae9007d2c02792b2ce2b/detection
+
+http://185.219.221.65
+11358f75eef6ac5c.xyz
+122503f3e91e84bf.xyz
+c3f2c437622918b0.live
+f3eac8de096e59ca.live
+
+# Reference: https://twitter.com/_CPResearch_/status/1539598489495150593
+
+aftelcom.top
+comappday.site
+gematolink.xyz
+gematonick.xyz
+originativ.co
+vansciver.me
+
+# Reference: https://www.virustotal.com/gui/ip-address/176.10.125.87/relations
+
+61b5b05e79ddc1bf.info
+66300d872f8568f0.xyz
+6a1b9ec71eb4d837.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.158.249.30/relations
+
+6a00a421e44ead9e.live
+7a4edf69ed3d21f9.live
+80b51e6b4a4942d8.live
+92cf772e294ea095.store
+d6c73e3ea9b2429d.live
+
+# Reference: https://blog.fox-it.com/2022/09/02/sharkbot-is-back-in-google-play/
+# Reference: https://www.virustotal.com/gui/ip-address/109.230.199.47/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.212.47.113/relations
+# Reference: https://www.virustotal.com/gui/file/7f2248f5de8a74b3d1c48be0db574b1c6558d6edae347592b29dc5234337a5ff/detection
+
+confirst.xyz
+constint.xyz
+mefika.me
+wwdvisi.xyz
+yaseka.me
+23080420d0d93913.live
+7f3e61be7bb7363d.live
+browntrawler.store
+
+# Reference: https://muha2xmad.github.io/malware-analysis/sharkbot/
+
+04ff9f101c72a417.com
+3634b259b56f2866.live
+6d829850c8eb7892.top
+8d6102613d7d4ccc.xyz
+b5c4f49eae222c10.store
+e30a26a32a8020f1.info
+efd909761db065cf.net
+
+# Reference: https://twitter.com/tiresearch1/status/1572859851264659459
+# Reference: https://www.virustotal.com/gui/ip-address/185.158.249.89/relations
+
+0b125b25007220d9.xyz
+1b0f3fddf8845df6.xyz
+3ddafe944f1dba48.xyz
+437435a4cce520bc.xyz
+614e7cd1c623698a.xyz
+75b84d88067cb231.xyz
+827c153abcc78ce2.live
+a7b8fa0a1e291cc2.xyz
+b6a30d41c85f0edb.xyz
+d48c662d57cd23e8.xyz
+
+# Reference: https://www.bitdefender.com/blog/labs/android-sharkbot-droppers-on-google-play-underlines-platforms-security-needs/
+# Reference: https://www.virustotal.com/gui/file/843a901c7633fc5e21e32e3f82a08f97874772e471dce3ab3d425482010a7137/detection
+
+http://94.198.53.205
+cdopea.store
+
+# Reference: https://twitter.com/sh1shk0va/status/1600508602334281729
+# Reference: https://www.virustotal.com/gui/ip-address/91.242.217.65/relations
+
+downloadlastversion.online
+neednewupdate.art
+norriscras.online
+norriscras.shop
+norriscras.store
+
+# Reference: https://twitter.com/tiresearch1/status/1615314211328118786
+
+2369341ad9bbc9a6.xyz
+2a2258751af08761.store
+3e98c5e2e712f2fc.xyz
+431f4c8044b780c4.xyz
+c9267e7172c23fea.store
+cd306c22c6332008.xyz
+f15d584827297704.xyz
+
+# Reference: https://twitter.com/tiresearch1/status/1615647303670595585
+
+f20ae55adaaf797f.xyz
+fae361e39435d13c.xyz
+
+# Reference: https://twitter.com/tiresearch1/status/1618178137170530306
+# Reference: https://www.virustotal.com/gui/ip-address/79.132.131.131/relations
+# Reference: https://www.virustotal.com/gui/ip-address/91.242.217.147/relations
+
+35fbe7fc67cdc20d.top
+5c8a1c8e588044cb.store
+cc4d3debe7c33d08.live
+
+# Reference: https://twitter.com/tiresearch1/status/1625429564737605634
+# Reference: https://www.virustotal.com/gui/file/d65577010625a3901da78bb81b20aa055aa62dbe8de15b9a0fe8b1d5dfe00f20/detection
+
+075a42f94213a494.live
+124261b08c52b166.xyz
+12d6363d1d12242d.live
+2ada1ec5a15bbced.info
+32a31a288e34d925.top
+35b98a2504c08951.live
+3ab3704445b56546.xyz
+3e95e96af806995d.xyz
+3f1428dbce716305.live
+40794e8ff97061d5.top
+45ba560c3a67b2e5.xyz
+4f581a978fe0eadf.live
+5139097f5ef3edc1.xyz
+5e6acd8a05c2bb35.xyz
+61567e8ef6965503.store
+69a4e33b882cffaf.xyz
+77eb439d6788793e.com
+7dc286fdab8292dc.xyz
+81041b70fdc3a8d2.xyz
+871d9314bb8bf8da.xyz
+87a312e6bb2524d4.xyz
+8d7c621736f6cb25.xyz
+97329b880926f524.xyz
+99fd4d0f8e4508c3.top
+9ac0dbea6cd369e3.xyz
+9c8b601990eacf18.live
+a41997fcd5e0bd32.xyz
+bcc1326dc8ca5b17.xyz
+be016d6a8fe57dff.xyz
+c097a245578c61ef.xyz
+d1192c1490791020.xyz
+d3a9f935b1c82ed3.xyz
+d8aa80c3bfe1dad4.xyz
+db8360c1867c1b98.top
+de3dea888febbf08.xyz
+e91d4ba9a1864c7d.live
+ed77f5c9d1885750.top
+f176cf5598f68448.live
+
+# Reference: https://twitter.com/tiresearch1/status/1685300034827657216
+
+086df9b3b637e40d.info
+5a8777db35d45d0a.live
+5fbceaaab6d92be6.live
+c6b80df70fc9e5f5.top
+c6ca0e00a6e60000.top
+efd67574d8f47f75.info
+
+# Reference: https://threatfox.abuse.ch/browse/malware/apk.sharkbot/ (# 2023-11-20)
+
+http://109.230.199.126
+http://109.230.199.150
+http://109.230.199.47
+http://109.230.199.99
+http://176.10.111.192
+http://176.10.111.199
+http://176.10.111.236
+http://176.10.118.146
+http://176.10.118.210
+http://176.10.119.156
+http://176.10.125.87
+http://185.158.248.19
+http://185.158.249.172
+http://185.158.249.30
+http://185.158.249.39
+http://185.158.249.89
+http://185.158.251.207
+http://185.158.251.232
+http://185.158.251.96
+http://185.212.44.119
+http://185.212.47.113
+http://185.212.47.146
+http://185.212.47.160
+http://185.212.47.161
+http://185.212.47.163
+http://185.212.47.207
+http://185.212.47.91
+http://185.219.220.136
+http://185.219.220.199
+http://185.219.220.78
+http://185.219.221.139
+http://185.219.221.240
+http://185.219.221.99
+http://194.76.224.43
+http://194.76.226.146
+http://194.76.227.205
+http://37.10.71.172
+http://45.11.180.20
+http://45.11.180.240
+http://45.11.180.82
+http://45.11.182.33
+http://45.11.182.62
+http://67.223.117.90
+http://79.132.128.91
+http://79.132.131.131
+http://79.132.133.244
+http://91.240.202.132
+http://91.240.202.161
+http://91.241.93.150
+http://91.242.217.147
+admfor.me
+admforall.xyz
+poletio.space
+stathere.me

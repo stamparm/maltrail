@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1162451395439558656
+# Reference: https://app.any.run/tasks/d2e3503a-8b53-4012-8ee3-ee45cb680f67/
+# Reference: https://www.virustotal.com/gui/file/7d06241c1da715c7ee0975cfbb8803e3de0b6d144c1a538033c63861363c5888/detection
+
+176.31.68.30:21
+176.31.68.30:58994
+176.31.68.30:8080

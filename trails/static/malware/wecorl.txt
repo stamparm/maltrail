@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2008-110306-2212-99&tabid=2
+
+robot.10wrj.com
+ls.cc86.info
+ls.lenovowireless.ne
+ls.playswomen.com

@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.hackplayers.com/2021/02/sitios-cibercriminales-deepweb.html
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+# Reference: https://www.thedfirspot.com/general-8-1
+
+cuba4mp6ximo2zlo.onion
+cuba4ikm4jakjgmkezytyawtdgr2xymvy6nvzgw5cglswg3si76icnqd.onion
+test.cuba4ikm4jakjgmkezytyawtdgr2xymvy6nvzgw5cglswg3si76icnqd.onion
+
+# Reference: https://www.mandiant.com/resources/unc2596-cuba-ransomware
+
+irrislaha.com
+leptengthinete.com
+siagevewilin.com
+surnbuithe.com

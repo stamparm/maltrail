@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/earthlink_writeup.jsp?docid=2013-121813-2446-99
+
+5ji235jysrvwfgmb.onion
+5ji235jysrvwfgmb.onion.gq
+5ji235jysrvwfgmb.onion.lt
+5ji235jysrvwfgmb.onion.cab
+5ji235jysrvwfgmb.onion.city
+5ji235jysrvwfgmb.onion.direct
+5ji235jysrvwfgmb.onion.link
+5ji235jysrvwfgmb.onion.nu
+5ji235jysrvwfgmb.tor2web.fi
+5ji235jysrvwfgmb.tor2web.blutmagie.de
+5ji235jysrvwfgmb.tor2web.org
+5ji235jysrvwfgmb.tor2web.ru
+5ji235jysrvwfgmb.tor-gateways.de

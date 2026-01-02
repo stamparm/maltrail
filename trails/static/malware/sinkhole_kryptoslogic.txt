@@ -1,0 +1,47 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note (from Kryptos Logic): "These are sinkholes. If you need more information please contact us at support (at) kryptoslogic (dot) com."
+
+35.205.77.128
+35.231.151.7
+
+# Reference: https://www.zoomeye.org/searchResult?q=%22Sinkholed%20by%20Kryptos%20Logic%22
+
+35.229.93.46
+35.196.209.61
+35.227.45.208
+35.231.184.254
+35.231.133.53
+35.231.113.243
+
+# Reference: https://www.virustotal.com/#/ip-address/35.195.89.151
+
+ns1.kryptoslogicsinkhole.net
+ns2.kryptoslogicsinkhole.com
+ns3.kryptoslogicsinkhole.org
+35.195.89.151
+
+# Reference: https://censys.io/ipv4?q=%22This+domain+has+been+sinkholed+by%22
+
+35.231.198.14
+35.237.3.162
+35.231.151.7
+35.237.128.253
+35.231.120.186
+35.195.89.151
+35.196.4.223
+35.205.77.128
+35.237.210.75
+35.196.92.211
+35.227.97.120
+35.212.43.152
+35.212.64.89
+
+# Reference: https://securitytrails.com/domain/ns1.kryptoslogicsinkhole.net/dns
+
+35.227.57.252
+
+# Reference: https://www.joesecurity.org/reports/report-ae8f8cf967ca15a7689f2d1f79fbc5dc.html
+
+147.75.63.87

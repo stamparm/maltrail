@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/r3dbU7z/status/1359738514368299009
+# Reference: https://app.any.run/tasks/fa0623d6-85d6-4e0c-acc9-c84893750308/
+# Reference: https://www.virustotal.com/gui/file/6426db69f669688838e2076c5fa7616b8c6d3d7a2c195b613387c90cf1f26c0a/detection
+
+repo.do-cu.site

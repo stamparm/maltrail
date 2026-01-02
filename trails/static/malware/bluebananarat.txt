@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://sakhackingarticles.blogspot.com/2014/08/blue-banana-rat.html
+# Reference: https://twitter.com/MalwareConfig/status/748754583019630592
+
+almostgotme.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748754509430599680
+
+Spagrat.chickenkiller.com
+
+# Reference: https://twitter.com/MalwareConfig/status/748625150132768770
+
+hackdobem.no-ip.org
+
+# Reference: https://twitter.com/MalwareConfig/status/748625142834728960
+# Reference: https://malwareconfig.com/config/e38edbe6f2ac89b2a7b4bde5933fe7c3/
+
+109.230.253.249:1000
+109.230.253.249:1001
+
+# Reference: https://x.com/malwrhunterteam/status/1816473175347089655
+# Reference: https://www.virustotal.com/gui/file/c1983298ecdc326786f1d57bc7d878bd987dd70403799c8cde0f0126782b3d04/detection
+# Reference: https://www.virustotal.com/gui/file/5e462ff984204f9c3b27c11c6f11ad5e1ed0c8d32303f778206bc405b4e6202b/detection
+
+148.163.72.40:1000
+45.62.170.9:3867
+45.62.170.9:6700
+backupnoike.ddns.net

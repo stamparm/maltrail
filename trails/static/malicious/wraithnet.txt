@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/naumovax/status/1996918150038991176
+# Reference: https://app.any.run/tasks/35479d53-9156-41df-b6cf-0cf2e37dea42
+# Reference: https://www.virustotal.com/gui/file/fafb6c5e12dfeefaba5ac8982d5bb13dd206cfcd328b9d36aa87257f762ee24a/detection
+
+194.36.188.77:52273
+wraithbot.net
+backup.wraithbot.net
+skx.wraithbot.net
+ult.wraithbot.net
+ultbu1.wraithbot.net
+ultbu2.wraithbot.net
+ns1.phosphorus.com.br
+web.phosphorus.com.br
+salesteam.qpoe.com

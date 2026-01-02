@@ -1,0 +1,49 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/00bdcc03cb7cabe7a4db739e65ecce1c9aa80683a70c14f340787176cc0e403b/detection
+
+http://186.2.171.17
+
+# Reference: https://www.zscaler.com/blogs/security-research/ffdroider-stealer-targeting-social-media-platform-users
+
+http://152.32.228.19
+
+# Reference: https://www.virustotal.com/gui/file/486e1c03a4b928423f31adf401727361fbe39d591182a908e9e3e7649f2d4789/detection
+# Reference: https://www.virustotal.com/gui/file/39bea3a89b6520d957082541990bd170949d4dff6e4c7a86fa5ad849fe56f5ff/detection
+# Reference: https://www.virustotal.com/gui/file/46aec4bddcb10420cedb370205aec884f978b795b2080f8de24e47d810ea5f5b/detection
+# Reference: https://www.virustotal.com/gui/ip-address/101.36.107.74/relations
+
+http://101.36.107.74
+9awi.pw
+tthbnmy.com
+md.9awi.pw
+md.tthbnmy.com
+
+# Reference: https://otx.alienvault.com/indicator/ip/186.2.171.3
+
+http://186.2.171.3
+
+# Reference: https://blog.360totalsecurity.com/ru/%D1%81%D0%B5%D0%BA%D1%80%D0%B5%D1%82%D0%BD%D1%8B%D0%B9-%D1%81%D0%BE%D1%84%D1%82-cyberduck-%D0%B4%D0%BB%D1%8F-%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9-%D1%80%D0%B5/
+
+begood.pw
+rulifer.pw
+seemorebty.com
+
+# Reference: https://tria.ge/220411-h3sw4aedg9/behavioral1
+
+http://103.136.40.167
+http://152.32.193.91
+
+# Reference: https://www.virustotal.com/gui/file/bc6c07a16be6ffebe1498ecca6b0c14b20b996700187df497a7370d4e4a3236d/detection
+
+http://103.106.202.174
+
+# Generic
+
+/seemorebtu/
+/seemorebty/
+/seemorebtu/il.php
+/seemorebtu/poe.php
+/seemorebty/il.php
+/seemorebty/poe.php

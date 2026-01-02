@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2016-022506-5606-99&tabid=2
+
+kiifd.pozon7.net
+shop.ownpro.net
+pad.werzo.net
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2017-062313-3354-99&tabid=2
+
+call.raidstore.org
+technology.macosevents.com
+press.infomapress.com
+24h.centralstatus.net

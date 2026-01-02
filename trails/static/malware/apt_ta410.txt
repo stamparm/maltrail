@@ -1,0 +1,45 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: FlowCloud, LookBack, LookingFrog, Witchetty
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/ta410-group-behind-lookback-attacks-against-us-utilities-sector-returns-new
+# Reference: https://otx.alienvault.com/pulse/5edf9678c760e3c7ca6fdf77
+
+asce.email
+ffca.caibi379.com
+daveengineer.com
+energysemi.com
+powersafetraining.net
+powersafetrainings.org
+
+# Reference: https://threatpost.com/espionage-group-utilities-spy-tool/156425/
+
+188.131.233.27:55555
+188.131.233.27:55556
+
+# Reference: https://twitter.com/AnonySecAgency/status/1316292983508013056
+# Reference: https://www.welivesecurity.com/2022/04/27/lookback-ta410-umbrella-cyberespionage-ttps-activity/
+# Reference: https://github.com/eset/malware-ioc/tree/master/ta410
+# Reference: https://www.virustotal.com/gui/file/0ac8315ba368579850dfb334dbde9e418b60473c90c31334820c56b7f4ef43dc/detection
+# Reference: https://www.virustotal.com/gui/file/ff72aba3dc218190bc40fec95ef569df3c3ecd4da5fb435ed889e24e94d2a222/detection
+# Reference: https://www.virustotal.com/gui/file/c88d0f7d623b2a2c066dd6b15597d1f4c44d89e7a8e660e28c3494f441826ea5/detection
+
+http://161.82.181.4
+http://43.254.216.104
+http://43.254.219.153
+http://45.124.115.103
+103.139.2.93:1702
+dlaxpcmghd.com
+eset-sync.com
+nsfwgo.com
+translateupdate.com
+cahe.microsofts.com
+smtp.nsfwgo.com
+s.eset-sync.com
+update.translateupdate.com
+
+# Reference: https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/witchetty-steganography-espionage
+
+bigbluedc.com
+a.bigbluedc.com

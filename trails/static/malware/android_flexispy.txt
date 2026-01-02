@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.randhome.io/blog/2017/04/23/lets-talk-about-flexispy/
+# Reference: https://www.virustotal.com/gui/domain/trkps.com/relations
+
+58.137.119.227:880
+http://58.137.119.229
+http://58.137.119.230
+trkps.com
+
+# Reference: https://kknews.cc/tech/x5ox6gg.html
+
+202.176.88.55:8880
+
+# Generic
+
+/RainbowCore/gateway
+/Core/gateway

@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: bby stealer
+
+# Reference: https://x.com/karol_paciorek/status/1862151620252803572
+# Reference: https://app.validin.com/detail?find=Bby%20Stealer&type=raw&ref_id=1f768c2bc4a#tab=host_pairs
+
+http://212.24.110.187
+getbby.top
+lustcdn.ru
+01.symsym.info
+4i9o.l.time4vps.cloud

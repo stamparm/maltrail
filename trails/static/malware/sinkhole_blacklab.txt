@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.threatcrowd.org/searchTwo.php?data=sinkhole
+
+sinkhole.blacklab.io
+67.215.255.139
+
+# Reference: https://www.reddit.com/r/AskNetsec/comments/3onw2c/looking_for_ips_from_snortsuricata_sinkholes/
+
+sinkhole.blacklistthisdomain.com
+81.166.122.234
+106.187.96.49
+
+# Reference: https://who.is/nameserver/ns1.blacklistthisdomain.com/
+
+ns1.blacklistthisdomain.com
+ns2.blacklistthisdomain.com
+67.215.255.131
+
+# Reference: https://www.virustotal.com/#/ip-address/155.94.222.13
+
+155.94.222.13

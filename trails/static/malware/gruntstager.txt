@@ -1,0 +1,60 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ScumBots/status/1172135478902046720
+
+52.199.197.146:80
+
+# Reference: https://twitter.com/ScumBots/status/1169077866702737408
+
+198.211.113.157:8080
+
+# Reference: https://twitter.com/ScumBots/status/1160361541033742336
+
+167.71.152.243:80
+
+# Reference: https://twitter.com/pmelson/status/1157692645277360129
+
+fa88415f.ngrok.io
+
+# Reference: https://twitter.com/pmelson/status/1156746540482027521
+
+185.203.116.53:80
+
+# Reference: https://twitter.com/ScumBots/status/1173960309381455872
+
+78.141.211.143:80
+
+# Reference: https://twitter.com/ScumBots/status/1173961712585912324
+
+5.200.18.88:8080
+
+# Reference: https://twitter.com/ScumBots/status/1173960722868555777
+
+5.200.18.88:80
+
+# Reference: https://twitter.com/ScumBots/status/1192823351816970240
+
+77.40.217.72:7777
+
+# Reference: https://twitter.com/ScumBots/status/1173772785258291201
+# Reference: https://twitter.com/ScumBots/status/1245781122556051457
+# Reference: https://www.virustotal.com/gui/file/34488e4d52acab96869bb4626aff4478669324fbf8a6eae1dbb9bbdce2b39b8c/detection
+
+185.219.82.186:83
+web-don.site
+
+# Reference: https://twitter.com/bryceabdo/status/1409861561620041733
+# Reference: https://www.virustotal.com/gui/file/c538472cd9af46f9f72ec09194aecada626acfde0506e07e3a872a6e95a8f0a2/detection
+
+http://75.119.150.91
+
+# Reference: https://twitter.com/ScumBots/status/1274492809047916544
+# Reference: https://www.virustotal.com/gui/file/9ef787759b1e7fc432544a2eea27861563573b0f334bd45c960192a3793a9e65/detection
+
+18.132.60.101:7777
+
+# Reference: https://twitter.com/ScumBots/status/1507783772141506571
+# Reference: https://www.virustotal.com/gui/file/b78029fdb5c7d721b7fb81ffeb567b85177a35efe3d04491932469974cf0fa53/detection
+
+backtry-45299.portmap.host

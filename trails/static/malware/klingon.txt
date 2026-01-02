@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.intezer.com/blog/malware-analysis/klingon-rat-holding-on-for-dear-life/
+# Reference: https://otx.alienvault.com/pulse/60cb66ed91d51ab92ec3535f
+# Reference: https://tria.ge/210618-c4magxqr6a
+
+185.188.183.144:1141
+185.188.183.144:6711
+185.188.183.144:7510
+185.188.183.144:8011
+185.188.183.144:8310
+
+# Reference: https://tria.ge/210618-m32446gmda/behavioral1
+
+94.177.123.134:9998
+
+# Reference: https://tria.ge/210618-f49n1ljv3n/behavioral1
+
+88.214.27.40:1131
+
+# Reference: https://tria.ge/210618-g2yqf53nnj
+
+51.83.216.211:1141

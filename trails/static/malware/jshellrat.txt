@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/IntezerLabs/status/1392470152105635845
+# Reference: https://www.virustotal.com/gui/file/3f83442dfd38e0d98feb80d84bf9a7cf0735d3c580905f973d527eaca2193a8e/detection
+# Reference: https://www.virustotal.com/gui/file/e1a17d692d654a9f7847d40bcd4d78e3383fb76f5bc20fc566831fdb2336c95a/detection
+
+185.227.153.177:520
+queennight.tk

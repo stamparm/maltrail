@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fortinet.com/blog/threat-research/merkspy-exploiting-cve-2021-40444-to-infiltrate-systems
+# Reference: https://www.virustotal.com/gui/file/92eb60179d1cf265a9e2094c9a54e025597101b8a78e2a57c19e4681df465e08/detection
+# Reference: https://www.virustotal.com/gui/file/95a3380f322f352cf7370c5af47f20b26238d96c3ad57b6bc972776cc294389a/detection
+# Reference: https://www.virustotal.com/gui/file/0ffadb53f9624950dea0e07fcffcc31404299230735746ca43d4db05e4d708c6/detection
+# Reference: https://www.virustotal.com/gui/file/dd369262074466ce937b52c0acd75abad112e395f353072ae11e3e888ac132a8/detection
+# Reference: https://www.virustotal.com/gui/file/6cdc2355cf07a240e78459dd4dd32e26210e22bf5e4a15ea08a984a5d9241067/detection
+
+http://45.89.53.46
+
+# Generic
+
+/google/olerender.html

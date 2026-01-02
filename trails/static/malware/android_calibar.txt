@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1314247496483430400
+# Reference: https://www.virustotal.com/gui/file/d2724090e873775aeb0eb0e12c2d65ac43a7e6e608fdc4f3d74fa79ca85e468f/detection
+
+aandroidwake.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/164.68.125.72/relations
+
+foropana.com
+phalictec.com
+veneflix.com
+
+# Reference: https://www.virustotal.com/gui/file/8269a8f262ac11458179b8a5ec5161ebee24f9537da30100739febf1269d347f/detection
+
+164.68.125.72:5001
+74.208.148.14:5001
+87.106.195.175:5001
+medianewsxyz.com

@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/teamcymru_S2/status/1388162870051999746
+# Reference: https://www.linkedin.com/posts/marcusmurrayse_truesec-apt-polisen-activity-6773961433953669120-xwmJ
+
+citrx.cloud
+disneyofficial.top
+fascinatiom.com
+favourita.buzz
+hamleys.cloud
+msft-ncsi.com
+nikohub.in
+prgstservice.com
+sysopsworld.com
+vsamtechnologies.com

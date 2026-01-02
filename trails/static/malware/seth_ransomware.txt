@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/GrujaRS/status/1353319339856900096
+# Reference: https://www.virustotal.com/gui/file/58c852525bf3bea185db34a79c2c5640c02f8291cdbdbe8dd7c0a9d4682f4b2c/detection
+# Reference: https://www.virustotal.com/gui/file/3bb9e8735f1d10fb0072cdb368889d751a6666d5ff3a61488b26b35a5eac6c8d/detection
+
+tantoporciento.com/cc/gate.php
+tantoporciento.com/cc/inc/check_command.php
+
+# Reference: https://www.virustotal.com/gui/file/353e32edaaafc595a680342a3fe4d7a256ce1b3261c7b49f0ecff59d86befc99/detection
+
+kaif-tut.com
+
+# Reference: https://twitter.com/ViriBack/status/1383782637794299922
+# Reference: https://app.any.run/tasks/48e84f23-951c-46ed-8253-742187dcc104/
+
+infobao3jdo.com
+
+# Generic
+
+/check_command.php?HWID=

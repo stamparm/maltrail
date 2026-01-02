@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://resources.malwarebytes.com/files/2021/02/LazyScripter.pdf
+# Reference: https://otx.alienvault.com/pulse/603693b42a32d06720efad59/
+# Reference: https://twitter.com/h2jazi/status/1366759252757512194
+# Reference: https://www.virustotal.com/gui/file/0652962c5dace16ed170a932e3ce7eb3097b34bc809343fbb96b27cf3d22a5c7/detection
+
+iatassl-telechargementsecurity.duckdns.org
+varifsecuripass.duckdns.org
+
+# Reference: https://lab52.io/blog/very-very-lazy-lazyscripters-scripts-double-compromise-in-a-single-obfuscation/
+# Reference: https://otx.alienvault.com/pulse/6228d0ba244cc5a2d6457b25
+# Reference: https://www.virustotal.com/gui/ip-address/147.182.192.241/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.81.157.186/relations
+# Reference: https://www.virustotal.com/gui/ip-address/66.29.130.204/relations
+# Reference: https://www.virustotal.com/gui/file/23ea10f4b1a73a4e8b13466fff8983110216779d2d3cefe1fc151c6bb65c3b42/detection
+
+http://185.81.157.186
+185.81.157.186:1995
+45.91.92.112:449
+gowaymevps.xyz
+gowaymevpslink1.xyz
+gowaymevpslink2.xyz
+gowaymevpslink3.xyz
+gowaymevpslink4.xyz
+gowaymevpslink5.xyz
+securessl.fit
+internetexploraldon.sytes.net
+milla.publicvm.com
+smscs.publicvm.com
+stub.ignorelist.com
+vistacp-enhance.duckdns.org
+u1153246fov.ha004.t.justns.ru
+bsjsiq3ytpt3efsn6wnu3pukxil6q6plty6m6dcz.duckdns.org
+jbizgsvhzj22evqon9ezz8bmbupp1s6cprmriam1.duckdns.org
+saqicpcgflrlgxgoxxzkbfrjuisbkozeqrmthrzo.duckdns.org

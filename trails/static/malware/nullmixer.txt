@@ -1,0 +1,52 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/nullmixer-oodles-of-trojans-in-a-single-dropper/107498/
+# Reference: https://otx.alienvault.com/pulse/6334443264821a04f52170e1
+
+all-mobile-pa1ments.com.mx
+all-smart-green.com
+am1420wbec.com
+azilominehostz.xyz
+banhamm.com
+buy-fantasy-fo0tball.com.sg
+buy-fantasy-gmes.com.sg
+careerguide4u.online
+connectini.net
+egsagl.com
+eurekabike.com
+faseaegasdfase.com
+fennsports.com
+flexnetinformatica.com.br
+ginta.link
+islamic-city.com
+one-wedding-film.com
+onlinehueplet.com
+patchlinks.com
+remik-franchise.ru
+remviagra.com
+reoseio.com
+signaturebusinesspark.com
+sovels.ru
+spaldingcompanies.com
+stdcdn.com
+sxhxrj.com
+topniemannpicksh0p.cc
+tvqaq.cn
+whsddzs.com
+dll1.stdcdn.com
+source3.boys4dayz.com
+stylesheet.faseaegasdfase.com
+tengenuzui.s3.pl-waw.scw.cloud
+zenitsu.s3.pl-waw.scw.cloud
+
+# Reference: https://twitter.com/Gi7w0rm/status/1613542330715324419
+# Reference: https://tria.ge/230111-r37jxsdc66/behavioral2
+
+resettools.xyz
+
+# Reference: https://www.virustotal.com/gui/file/000e5cefeb611d72332acd698462d8bf905caca5f7fc8df6fba36580da526ae9/detection
+
+inosuke.s3.pl-waw.scw.cloud
+kimetsunoaiba.s3.nl-ams.scw.cloud
+shingekinokyojin.s3.pl-waw.scw.cloud

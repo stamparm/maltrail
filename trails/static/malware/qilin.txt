@@ -1,0 +1,40 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: qilin ransomware, agendacrypt
+
+# Reference: https://x.com/RakeshKrish12/status/1843195597970649583
+
+kbsqoivihgdmwczmxkbovk7ss2dcynitwhhfu5yw725dboqo5kthfaad.onion
+
+# Reference: https://x.com/AlvieriD/status/1861058605715185937
+
+ijzn3sicrcy7guixkzjkib4ukbiilwc3xhnmby4mcbccnsd7j2rekvqd.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1897178718164148251
+# Reference: https://github.com/TheRavenFile/Daily-Hunt/blob/main/Qilin%20Ransomware
+
+176.113.115.209:21
+176.113.115.97:21
+188.119.66.189:21
+85.209.11.49:21
+wikileaks-v2.com
+wikileaks-v2.net
+wikileaksv2.com
+24kckepr3tdbcomkimbov5nqv2alos6vmrmlxdr76lfmkgegukubctyd.onion
+wlh3dpptx2gt7nsxcor37a3kiyaiy6qwhdv7o6nl6iuniu5ycze5ydid.onion
+
+# Reference: https://www.trendmicro.com/en_ie/research/22/h/new-golang-ransomware-agenda-customizes-attacks.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/h/new-golang-ransomware-agenda-customizes-attacks/IOCs-blog-New%20Golang%20Ransomware%20Agenda%20Customizes%20Attacks.txt
+
+ozsxj4hwxub7gio347ac7tyqqozvfioty37skqilzo2oqfs4cw2mgtyd.onion
+pmbvfcoawmpkpqtcrv3fmtqyvxufbpiidrseseypvxrmlbh727aoqmyd.onion
+ygo44wtbprhx2kvibtgjj3rrjo3f4fccuhuavy6vnvtrvihpruqdjuad.onion
+
+# Reference: https://x.com/banthisguy9349/status/1908947785119908124
+
+ng2gzceugc2df6hp6s7wtg7hpupw37vqkvamaydhagv2qbrswdqlq6ad.onion
+
+# Reference: https://x.com/fbgwls245/status/1947444210531230132
+
+securo45z554mw7rgrt7wcgv5eenj2xmxyrsdj3fcjsvindu63s4bsid.onion

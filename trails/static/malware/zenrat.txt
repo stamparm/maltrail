@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/zenrat-malware-brings-more-chaos-calm
+
+185.156.72.8:9890
+185.186.72.14:9890
+bitwariden.com
+crazygameis.com
+geogebraa.com
+obsploject.com
+
+# Reference: https://x.com/solostalking/status/1981283831572550021
+# BODY_SHA1-IP=696d9ef5febd1d7217795b3dc123d1cc2ee74006
+
+185.158.251.148:4000

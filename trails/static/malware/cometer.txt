@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/vupt_bka/status/1192342494240899072
+# Reference: https://otx.alienvault.com/pulse/5dc4a4f38927b91b775b19dc
+
+vpnet.mooo.com
+vpcpnet.mooo.com
+update-rnicrosoft.mooo.com
+serve1.mooo.com
+video.avantvideo.ca

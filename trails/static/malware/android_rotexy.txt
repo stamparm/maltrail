@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/the-rotexy-mobile-trojan-banker-and-ransomware/88893/
+
+blackstar.pro
+darkclub.net
+freedns.website
+gms-service.info
+googleapis.link
+holerole.org
+lineout.pw
+secondby.ru
+sky-sync.pw
+streamout.space
+synchronize.pw
+sync-weather.pw
+test2016.ru
+
+# Reference: https://twitter.com/malwrhunterteam/status/1316409465940463616
+# Reference: https://twitter.com/bl4ckh0l3z/status/1316720613185257474
+# Reference: https://www.virustotal.com/gui/file/f09d0c8b91d4525294e2820486d8c6aabe3461a4595498305ad60686564d971f/detection
+
+http://176.57.70.238
+/repeater/getaway

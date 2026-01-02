@@ -1,0 +1,166 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ailurophile stealer, mranon stealer, poisonx stealer
+
+# Reference: https://x.com/P4nd3m1cb0y/status/1820508693001052396
+# Reference: https://www.virustotal.com/gui/file/4d38d7c7161ccb08998f90079a565f32a296f1bf404001b9e6bbc4d4558d53fd/detection
+
+http://103.252.123.135
+cliptc.me
+
+# Reference: https://x.com/struppigel/status/1824445414336065723
+# Reference: https://www.gdatasoftware.com/blog/2024/08/38005-ailurophile-infostealer
+# Reference: https://app.validin.com/detail?find=Ailurophile%20Stealer&type=raw&ref_id=510e34a7612#tab=host_pairs_v2
+# Reference: https://www.virustotal.com/gui/file/e04dbe0de745fc8026710034af6a00fc8dc38569440ce8ebebe74cd4dc0a6dc5/detection
+
+ailurophilestealer.com
+ailurophilestealer.shop
+
+# Reference: https://x.com/ViriBack/status/1842905700902621329
+# Reference: https://search.censys.io/hosts/36.50.233.24/data/table#80-TCP-HTTP
+
+http://36.50.233.24
+ailurophilestealer.design
+
+# Reference: https://x.com/banthisguy9349/status/1842909245597004012
+# Reference: https://urlscan.io/result/c1767060-8892-481c-93a1-23812fc46db4/related/
+
+4g.snitservice.com.br
+abh.saafi-adnen.space
+admin.rpsu.ac.bd
+admin.unholysl.com
+ahkfamily.xyz
+altalan.rootberke.pro
+api.aadharuclservice.buzz
+api.botsapi.in
+api.lalitpurnic.xyz
+api.securecode.store
+api.service24.live
+apps.shahbiponi.com
+at.rsinfo.fun
+baze-x.com
+billingbilliard.com
+bonakidsilaakrigs.x10.bz
+cims.cognilabs.org
+clickherehere.site
+conecta4g.painelnetvip.site
+control.sanvi.xyz
+cooperative.stack.net.ng
+cps-c.net
+cruising.rayweb.eu
+ea.0ms.at
+espablo.pl
+find.atozonlineservice.com
+flash.globalwealthforge.com
+guvenli-gettr-hizmetleri-com.online
+guvenli-odeme-hizmeti.online
+hhh00.xyz
+hiderlink.minilirux.tech
+htcheatsvip.x10.mx
+kanis.app
+keygen.icycracks.site
+korcanbabapanel2024.online
+lalitpurnic.online
+leomarkz.ansartechnologys.com
+lunarcenter.io
+m.optimaltrading.net
+manage.sastv.in
+mastt3rpanel.com
+megabot-otp.org
+minechecker.ru
+monitoringsystem2.co.za
+muhasebe.madnessdigitaladvert.com
+netflix.sweepsclub.online
+odeme-islemleri-guvenli.com
+painel.conexaomaster.com
+painel.webconect.online
+panel.itudyokta.com
+panelrakuten.dev
+personelgiris.madnessdigitaladvert.com
+portal.digitizingmill.com
+portaldoemprendedor.online
+psh4xniga.bonakidkaylahat.x10.bz
+publisher.sd-ads.com
+realbetofc.online
+realtimeupdate.in
+rinvpn.lottokerala.in
+rsapi.online
+secure.bliscity.com
+secure.maincitytrust.com
+sem.vidrinne.com
+servicestudioufa.ru
+sipagi.my.id
+skillattendance.online
+staff.latencyrp.no
+str.citway.com.br
+study.sunsky.pk
+support.adregio.net
+syscore.bankbcj.com
+tc210098.studentcapture.com
+tc236376.studentcapture.com
+templates.future-webdesign.de
+tr-alisveris.com.tr
+upi.digitalsevapoint.in
+vishal.studentcapture.com
+vpn.freedomsg.info
+vpn.pwngod.com
+xauranet.com
+xauranet.com.googlebot.com.tr
+xb0x.theworkpc.com
+zonemulti.online
+zumvpn.zumvpn.com
+
+# Reference: https://x.com/iam_rajhans/status/1845315917028216915
+# Reference: https://www.virustotal.com/gui/file/a17ee88b0d84732b31ce7fe1dac1d0d946b36af422ea7a49b2213450016e0a06/detection
+# Reference: https://www.virustotal.com/gui/file/c5f5014655f3dae1afec845506a2c842422b1ccef3e19376c48509b67ad0d081/detection
+
+http://103.116.8.66
+hostnost.net
+lemehost.net
+dash.lemehost.net
+upload.hostnost.net
+
+# Reference: https://app.validin.com/detail?find=Ailurophile%20Stealer%20-%20Login%20page&type=raw#tab=host_pairs_v2
+
+manestvli.shop
+
+# Reference: https://x.com/raghav127001/status/1847401222372016307
+# Reference: https://app.any.run/tasks/2ef1e1ba-d014-44d9-ac43-89a242877b6d
+
+poisonx.in
+poisonx.net
+
+# Reference: https://x.com/iam_rajhans/status/1851232093314884029
+# Reference: https://x.com/DarkWebInformer/status/1852520806368022959
+# Reference: https://search.censys.io/hosts/89.187.25.192
+
+http://89.187.25.192
+89.187.25.192:3306
+89.187.25.192:443
+89.187.25.192:5985
+
+# Reference: https://app.validin.com/detail?find=700fd1dd3248552629ca510feca2cf29&type=hash#tab=host_pairs
+
+http://87.120.114.49
+ssag00v-0ffical.com
+xxdync.com
+api.xxdync.com
+loader.ssag00v-0ffical.com
+
+# Reference: https://app.validin.com/detail?find=700fd1dd3248552629ca510feca2cf29&type=hash#tab=host_pairs (# 2024-11-26)
+
+http://179.43.171.201
+http://193.151.136.249
+
+# Reference: https://x.com/solostalking/status/1904745885365657697
+
+http://179.43.176.30
+
+# Reference: https://app.validin.com/detail?find=Login%20-%20PoisonX&type=raw#tab=host_pairs (# 2025-07-08)
+
+zoomsmeeting.net
+
+# Generic
+
+/ailurophile?data=

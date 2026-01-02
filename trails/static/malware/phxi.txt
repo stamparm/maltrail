@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: crunexy stealer, phxi stealer
+
+# Reference: https://threatfox.abuse.ch/browse/tag/PhxiStealer/
+# Reference: https://www.virustotal.com/gui/file/38ddce5492cd579acdf5b2c6167716e15dc9883be9f6ece094bf91fe0fb64883/detection
+# Reference: https://www.virustotal.com/gui/file/2dbacd53dce63fbbea0c95e377982a9e15bdc9da89cf57a6fa4bfb96c4b7721d/detection
+
+bettershaders.xyz
+rblxshaders.com
+files.rblxshaders.com
+
+# Reference: https://app.validin.com/detail?find=173.255.204.62&type=ip4&ref_id=04a1ac2c8a9#tab=resolutions
+
+bettershaders.com
+shaderify.com
+
+# Generic
+
+/RblxShaders1.0.2.rar

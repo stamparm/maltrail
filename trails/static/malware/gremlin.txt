@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: gremlin stealer
+
+# Reference: https://x.com/solostalking/status/1911803721354195082
+# Reference: https://unit42.paloaltonetworks.com/new-malware-gremlin-stealer-for-sale-on-telegram/
+# Reference: https://www.virustotal.com/gui/file/d1ea7576611623c6a4ad1990ffed562e8981a3aa209717065eddc5be37a76132/detection
+
+http://207.244.199.46
+
+# Reference: https://app.validin.com/detail?find=Gremlin%20Access&type=raw&ref_id=a880bb952b5#tab=host_pairs (# 2025-04-30)
+# Reference: https://app.validin.com/detail?find=7a99e247c72c42f94d5706f152e2b5be&type=hash&ref_id=9b85b823383#tab=host_pairs (# 2025-04-30)
+# Reference: https://app.validin.com/detail?find=41a4f594571aeda5fa0c51910c512fda3f44b948&type=hash&ref_id=9b85b823383#tab=host_pairs (# 2025-04-30)
+
+http://159.65.7.52
+
+# Reference: https://www.team-cymru.com/post/fingerprinting-malware-c2s-with-tags
+# Reference: https://app.validin.com/detail?find=Gremlin%20Access&type=raw&ref_id=2c16669308a#tab=host_pairs (# 2025-08-04)
+
+http://138.124.60.33
+http://217.119.129.92
+express-shipping.shop
+order-id811237.pro
+testx.nexy.one

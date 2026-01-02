@@ -1,0 +1,35 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/asruex-backdoor-variant-infects-word-documents-and-pdfs-through-old-ms-office-and-adobe-vulnerabilities/
+# Reference: https://www.virustotal.com/gui/file/b261f49fb6574af0bef16765c3db2900a5d3ca24639e9717bc21eb28e1e6be77/detection
+# Reference: https://www.virustotal.com/gui/domain/themoviehometheather.com/relations
+
+themoviehometheather.com
+
+# Reference: https://blogs.jpcert.or.jp/en/2016/06/asruex-malware-infecting-through-shortcut-files.html
+
+datainfocentre.com
+enewscenters.com
+eworldmagazine.org
+housemarket21.com
+institute-secu.org
+login-confirm.com
+media-total.org
+office365-file.com
+online-dropbox.com
+product-report24.com
+requestpg.net
+response-server.com
+sbidnest.com
+secu-docu.net
+seminarinfocenter.net
+send-error.net
+send-form.net
+sendspaces.net
+service365-team.com
+servicemain.com
+supportservice247.com
+vdswx.net
+vodsx.net
+wzixx.net

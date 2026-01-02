@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: darkrace, darktrace
+
+# Reference: https://twitter.com/RakeshKrish12/status/1766129721627312385
+# Reference: https://www.virustotal.com/gui/file/0adde4246aaa9fb3964d1d6cf3c29b1b13074015b250eb8e5591339f92e1e3ca/detection
+# Reference: https://www.virustotal.com/gui/file/0e60d49a967599fab179f8c885d91db25016be996d66a4e00cbb197e5085efa4/detection
+# Reference: https://www.virustotal.com/gui/file/2b15e09b98bc2835a4430c4560d3f5b25011141c9efa4331f66e9a707e2a23c0/detection
+
+g3h3klsev3eiofxhykmtenmdpi67wzmaixredk5pjuttbx7okcfkftqd.onion
+wkrlpub5k52rjigwxfm6m7ogid55kamgc5azxlq7zjgaopv33tgx2sqd.onion

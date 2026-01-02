@@ -1,0 +1,20 @@
+  
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: goodnews
+
+# Reference: https://twitter.com/ReBensk/status/1259477803331772416
+# Reference: https://www.virustotal.com/gui/file/cb59740f9ed824cf12e410c3953a3dda011a1cfdde8387879467d0391e970710/detection
+
+webdesksolution.in
+
+# Reference: https://www.zscaler.com/blogs/security-research/android-apps-targeting-jio-users-india
+# Reference: https://www.virustotal.com/gui/file/5e028cd8db864a677a99abdf87fa678196147b7bea4ee20a61b832ec548eef3c/detection
+
+bharatnewsin.weebly.com
+govlapp.weebly.com
+
+# APK
+
+/Tiktik-h.apk

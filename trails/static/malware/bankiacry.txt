@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1350402137881251840
+# Reference: https://twitter.com/malwrhunterteam/status/1350410590561464320
+# Reference: https://twitter.com/malwrhunterteam/status/1350411921976143874
+# Reference: https://www.virustotal.com/gui/file/b625df3af182060e3ee589f95669a76f43840f93df0a66fb942af51895de5504/detection
+
+bankia-server.com

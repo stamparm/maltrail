@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/PrakkiSathwik/status/1917839783260479928
+# Reference: https://platform.censys.io/hosts/45.91.201.178
+  
+45.91.201.178:5173
+
+# Reference: https://x.com/NullPwner/status/1918047850363047994
+
+62.233.53.22:5173
+91.211.249.147:5173
+92.119.114.111:5173

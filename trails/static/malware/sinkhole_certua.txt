@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/domain/sinkhole.cert.gov.ua/relations
+
+sinkhole.cert.gov.ua
+3.73.33.225

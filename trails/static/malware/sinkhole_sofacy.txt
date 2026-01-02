@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://cymon.io/130.211.96.168
+
+130.211.96.168
+
+# Reference: https://cymon.io/54.147.199.149
+
+54.147.199.149
+
+# Reference: https://www.bleepingcomputer.com/news/security/microsoft-disrupts-apt28-hacking-campaign-aimed-at-us-midterm-elections/
+
+157.56.161.162
+
+# Reference: https://www.virustotal.com/#/ip-address/40.112.210.240
+
+40.112.210.240
+
+# Reference: https://www.virustotal.com/#/ip-address/52.45.178.122
+
+52.45.178.122
+
+# Reference: https://www.virustotal.com/#/ip-address/52.28.203.25
+
+52.28.203.25

@@ -1,0 +1,217 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/earthlink_writeup.jsp?docid=2018-013106-5656-99
+# Reference: https://app.any.run/tasks/a5c15ead-071a-404b-b297-9bffb9ef3de9/
+
+bleepingcomputer.bit
+nomoreransom.bit
+esetnod32.bit
+emsisoft.bit
+gandcrab.bit
+
+# Reference: https://cert.gov.ua/news/43
+
+cryptsen7fo43rr6.onion
+cryptsen7fo43rr6.onion.to
+cryptsen7fo43rr6.onion.cab
+
+# Reference: https://twitter.com/avman1995/status/1041733448560521217
+
+zsr7pln56d2ovr85.com
+alldonemostbe.space
+
+# Reference: https://www.fortinet.com/blog/threat-research/gandcrab-honor-among-thieves.html
+
+politiaromana.bit
+malwarehunterteam.bit
+gdcb.bit
+gandcrab.bit
+nomoreransom.coin
+nomoreransom.bit
+
+# Reference: https://blog.talosintelligence.com/2020/05/threat-roundup-0522-0529.html (# Win.Ransomware.Gandcrab-7867602-0)
+
+zonealarm.bit
+
+# Reference: https://www.bleepingcomputer.com/news/security/gandcrab-ransomware-version-2-released-with-new-crab-extension-and-other-changes/
+
+gdcbmuveqjsli57x.onion
+gdcbmuveqjsli57x.hiddenservice.net
+gdcbmuveqjsli57x.onion.guide
+gdcbmuveqjsli57x.onion.rip
+gdcbmuveqjsli57x.onion.plus
+gdcbmuveqjsli57x.onion.to
+
+# Reference: https://blog.talosintelligence.com/2019/03/threat-roundup-0315-0322.html (Win.Ransomware.Gandcrab-6900355-0)
+# Reference: https://app.any.run/tasks/942074f1-2647-4fff-9b85-5179d4eac4b6/
+
+carder.bit
+ransomware.bit
+wowservers.ru
+
+# Reference: https://twitter.com/CryptoInsane/status/1119253648549269505
+
+gandcr4cponzb2it.onion
+
+# Reference: https://twitter.com/VK_Intel/status/1123880277170892800
+# Reference: https://www.virustotal.com/gui/file/59ac9dc1100246bd7e225a5216b588c121ede5393aeccc8db530dee7c25644af/detection
+# Reference: https://twitter.com/James_inthe_box/status/1123918290513027072
+
+http://185.105.4.112
+
+# Reference: https://twitter.com/GrujaRS/status/1123678562765168643
+
+gandcrabmfe6mnef.onion
+
+# Reference: https://twitter.com/blackorbird/status/1108200419543535616
+# Reference: https://twitter.com/dvk01uk/status/1126044416966365184
+# Reference: https://app.any.run/tasks/abfb50a4-02a7-424e-a430-76d056973968
+# Reference: https://app.any.run/tasks/d32f4239-0ea9-49b9-b6f4-abb34c0a1976/
+
+kakaocorp.link
+
+# Reference: https://news.sophos.com/en-us/2019/05/24/gandcrab-spreading-via-directed-attacks-against-mysql-servers/
+
+172.96.14.134:5471
+
+# Reference: https://www.bleepingcomputer.com/news/security/release-of-gandcrab-52-decryptor-ends-a-bad-ransomware-story/
+
+gdcbghvjyqy7jclk.onion
+gdcbghvjyqy7jclk.onion.top
+gdcbghvjyqy7jclk.onion.casa
+gdcbghvjyqy7jclk.onion.guide
+gdcbghvjyqy7jclk.onion.rip
+gdcbghvjyqy7jclk.onion.plus
+
+# Reference: https://app.any.run/tasks/93642402-010b-4213-95b0-7556a858a91a/
+
+poketeg.com/uploads/assets/sodehe.png
+perovaphoto.ru/wp-content/pictures/methesim.gif
+nesten.dk/wp-content/pics/amdedemede.gif
+fabbfoundation.gm/wp-content/pictures/esesme.bmp
+wpakademi.com/content/graphic/ruzuesde.gif
+pp-panda74.ru/data/images/mozu.gif
+wash-wear.com/includes/assets/meseimam.jpg
+perfectfunnelblueprint.com/uploads/image/mefu.jpg
+mimid.cz/uploads/pictures/mesefume.png
+oceanlinen.com/news/assets/thkaheam.png
+6chen.cn/wp-content/pics/esmo.bmp
+boatshowradio.com/news/assets/imheim.bmp
+asl-company.ru/news/pictures/eszuke.bmp
+
+# Reference: https://www.exposedbotnets.com/2018/07/gandcrab-v4-ransomware-cnc.html
+
+pp-panda74.ru
+priceclub.su
+
+# Reference: https://blog.talosintelligence.com/2020/02/threat-roundup-0214-0221.html (# Win.Dropper.Gandcrab-7586670-0)
+# Reference: https://www.virustotal.com/gui/file/39fe1f5c0e995dda7cc659ddd07e2bb7834281d108d42123f723cf31785c0c8d/detection
+
+bon.aungercote.org
+ver.sceinsheru.org
+
+# Reference: https://www.virustotal.com/gui/file/71c5ebef2322bb2b17869c2a534218d961a2977f5855ca1b0b610aa843bbb4f7/detection
+# Reference: https://app.any.run/tasks/47f92596-55d3-4987-af29-257bbfa879ec/
+# Reference: https://www.virustotal.com/gui/ip-address/151.80.147.153/relations
+# Reference: https://www.virustotal.com/gui/file/ce8ffbde6be48267504fca611b177d0e286765de09c66e8741dfcf851e8dac88/detection
+
+151.80.147.153:53
+http://145.249.105.102
+http://188.68.221.93
+http://217.8.117.33
+http://49.51.163.133
+http://51.15.200.136
+http://51.15.241.96
+http://51.83.128.59
+http://8.208.83.31
+http://80.249.146.208
+http://80.249.146.244
+http://84.38.183.181
+http://91.218.114.15
+http://91.218.114.29
+jinf43ufm0edurygk49.bit
+menosita.top
+
+# Reference: https://app.any.run/tasks/7ab13499-5188-434b-b6a5-f97867bd8f91/
+
+macartegrise.eu/includes/pictures/
+poketeg.com
+perovaphoto.ru
+fabbfoundation.gm
+asl-company.ru/includes/graphic/
+perfectfunnelblueprint.com
+pp-panda74.ru
+
+# Reference: https://www.virustotal.com/gui/file/2de9c89b2f4a3300194b9ce87f735a2816c7357dc4821a92ae8be63343072d8b/detection
+# Reference: https://www.virustotal.com/gui/file/23edbbdaa2734912f4a177f1d32763e2e203301ae4bcfd567989454b67ee2ceb/detection
+
+windowsupdates.bit
+/smo19915/
+
+# Reference: https://www.virustotal.com/gui/file/98615ebbad272ff4420749554287aef711ddd49ff88d79562cfeb1106b06b152/detection
+
+alphyoworksplat.com
+
+# Reference: https://twitter.com/InQuest/status/1089112747252568069
+# Reference: https://app.any.run/tasks/3ef495db-2eaa-465d-a070-d833605c010e/
+# Reference: https://www.virustotal.com/gui/file/646ea0533b7e5cd772518052108c8df3fc03340c8d420c2d8afb8eb9a4552082/detection
+
+94.237.60.17:4588
+companyreviews.serveftp.com
+
+# Reference: https://www.virustotal.com/gui/file/9d9158a75478895b59135c2499756ac20e3e256c5f450a0fc5ded064299b1a6c/detection
+
+oblomoff.fun
+/margrethe/index.php
+
+# Reference: https://www.virustotal.com/gui/file/672abd2aa01ebe42e5cb0a7b7a2dfa1717940d1b1b22b4c679914fea7bc803be/detection
+
+alvares.fun
+/hermogenes/index.php
+
+# Reference: https://www.virustotal.com/gui/file/4d7748771f551c4286b53753c6671eedc60f832ea5b72b109b1e3e5fd4635794/detection
+
+getsee.club
+getsee.fun
+
+# Reference: https://www.virustotal.com/gui/file/69619b9da51be6f63cee8c98461549396659970fc4097b6a6de17bf459535442/detection
+
+allods-blood.space
+
+# Reference: https://www.virustotal.com/gui/file/7333ee63076b4988eb9e2b157fdb578119a77f3ef683b57bcd0b84256091c7ec/detection
+
+dermidon.website
+/shakuntala/989419/index.php
+/shakuntala/index.php
+
+# Reference: https://www.virustotal.com/gui/file/3f6dd7e908e603273a4cd34cc419b4220f3e65a630d44a4e96517b3b2ea32a7a/detection
+
+http://217.61.17.155
+
+# Reference: https://www.virustotal.com/gui/file/cc02f6d7a7d4793a522e0427b2bf1f73d7fd07d1200a5bc0b33229b46a4d58da/detection
+
+garbage-barabage.tech
+
+# Generic
+# Reference: https://www.virustotal.com/gui/file/0582d318ac26381d966f74111e80150e5b62525e0cecb07b3f5c47b62723fd39/detection
+
+/ak3nzor93jne93kwp/
+/api/load/dll
+/api/load/downloads
+/api/load/loadnew
+/api/load/ping
+
+# Reference: https://blog.talosintelligence.com/threat-roundup-0210-0217/ (# Win.Dropper.Gandcrab-9987386-0)
+
+kiyanka.club
+proxy-exe.bit
+
+# Reference: https://www.virustotal.com/gui/domain/doomaricom.ddns.net/community
+# Reference: https://www.virustotal.com/gui/file/a15228037ec75c1215f1ed7bd43e664efacb64a9491b3e10bb172f9e4e58093a/detection
+
+doomaricom.ddns.net
+
+# Reference: https://x.com/banthisguy9349/status/1816804719722938629
+
+http://185.215.113.8

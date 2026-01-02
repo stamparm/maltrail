@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: dracula stealer
+
+# Reference: https://twitter.com/g0njxa/status/1785014471217569836
+# Reference: https://twitter.com/g0njxa/status/1785399699597398475
+# Reference: https://app.any.run/tasks/3d66d4a9-4204-4334-9aa2-e28a6e5f952c/
+# Reference: https://www.virustotal.com/gui/file/53675b8f40217ae76e9b676e3d204b47ffc14f20e705af530e3c9386a8edae2e/detection
+
+195.10.205.74:1953
+195.10.205.74:3000

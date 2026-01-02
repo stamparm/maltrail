@@ -1,0 +1,39 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://pulsedive.com/indicator/?iid=22110
+# Note: botsmustdie@gmail.com (using for WHOIS records)
+#       securityscorecard.com
+#       honeybot.us
+
+# Reference: https://www.virustotal.com/en/ip-address/208.100.26.234/information/
+
+# 208.100.26.234
+
+# Reference: https://www.virustotal.com/#/ip-address/208.100.26.240
+
+208.100.26.240
+
+# Reference: https://www.virustotal.com/#/ip-address/208.100.26.241
+
+# 208.100.26.241  # Note: owner recently started to use it as a scanner
+
+# Reference: https://www.virustotal.com/#/ip-address/208.100.26.242
+
+208.100.26.242
+
+# Reference: https://www.virustotal.com/#/ip-address/208.100.26.251
+
+208.100.26.251
+
+# Reference: https://www.virustotal.com/#/ip-address/208.100.26.250
+
+208.100.26.250
+
+# Reference: https://www.virustotal.com/gui/ip-address/208.100.26.245/relations
+
+208.100.26.245
+
+# Reference: https://www.virustotal.com/gui/ip-address/208.100.26.238/relations
+
+# 208.100.26.238

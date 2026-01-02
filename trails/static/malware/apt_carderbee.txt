@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/carderbee-software-supply-chain-certificate-abuse
+
+103.151.28.11:8090
+111.231.100.228:8888
+active-microsoft.com
+gobay.info
+ofo.ac
+cdn.ofo.ac
+cdn.stream-amazon.com
+githubassets.akamaixed.net
+ms-f7-sites-prod-cdn.akamaixed.net
+ms-g9-sites-prod-cdn.akamaixed.net 
+tjj.active-microsoft.com

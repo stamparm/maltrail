@@ -1,0 +1,642 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: VizaviBot, L3mon
+
+# Reference: https://www.welivesecurity.com/2019/08/22/first-spyware-android-ahmyth-google-play/
+
+radiobalouch.com
+/Debugging/process/process/resolving/system/ReadAllTracks.php
+
+# Reference: https://twitter.com/LukasStefanko/status/1244584890361839616
+
+193.161.193.99:27229
+
+# Reference: https://twitter.com/malwrhunterteam/status/1262415009419874305
+
+tryanotherhorse.com
+
+# Reference: https://www.virustotal.com/gui/file/675f5f887a66d21ea0d314e359f97ba9caa5d04436ef904deeaeaa4c83f06018/detection
+
+95.8.94.174:4000
+bhblack.duckdns.org
+
+# Reference: https://twitter.com/malwrhunterteam/status/1263081748482723840
+
+95.8.94.174:4444
+
+# Reference: https://twitter.com/malwrhunterteam/status/1265733202674581507
+
+turktelekom-bilgilendirme.com
+
+# Reference: https://blacklist.cyberthreatcoalition.org/vetted/url.txt
+
+ahmyth.ddnsking.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1297073202024325120
+
+zebraking.ddnsking.com
+
+# Reference: https://www.virustotal.com/gui/file/b039f0ab2a62a5e1f42c5c0f1d34fc247cb6c0fa65ce33629fccbd28b1d0d064/detection
+
+193.161.193.99:38442
+c0cf28ed20-51369.portmap.host
+
+# Reference: https://twitter.com/malwrhunterteam/status/1305940469927550977
+
+maladiescoronavirus.com
+
+# Reference: https://twitter.com/LukasStefanko/status/1306143556281737217
+
+176.31.193.59:22222
+tweensangoma.servebbs.com
+
+# Reference: https://www.virustotal.com/gui/file/82b49c84601b36ae1dc7d3056b33bb58716551e85c006354e030d0dc8f6059a2/detection
+
+193.161.193.99:49487
+
+# Reference: https://twitter.com/malwaretracekr/status/1304189932055834624
+# Reference: https://www.virustotal.com/gui/file/6a1bb59bd1faa3dbca7df51eb6b265b0fd2b5220d99a5befb2a0aabdb9a946da/detection
+
+/nhsave.apk
+/pentapp.apk
+
+# Reference: https://twitter.com/malwrhunterteam/status/1309567899649138689
+
+/GBWhatsapp.apk
+
+# Reference: https://twitter.com/malwrhunterteam/status/1317395859726807040
+# Reference: https://twitter.com/bl4ckh0l3z/status/1318126608226582529
+# Reference: https://www.virustotal.com/gui/file/00ee72e69290217f5e6977750a873887e8a9ab91d7f91a3004c9d04148ec28b5/detection
+# Reference: https://www.virustotal.com/gui/ip-address/85.10.199.40/relations
+
+213.230.90.191:3232
+85.10.199.40:80
+
+# Reference: https://twitter.com/malwrhunterteam/status/1328391739523141640
+# Reference: https://twitter.com/bl4ckh0l3z/status/1329082787723317250
+
+http://118.167.70.214
+http://123.253.110.27
+123.253.110.27:8662
+123.253.110.27:8889
+/kbcapital.apk
+
+# Reference: https://twitter.com/malwrhunterteam/status/1329353263498596352
+
+http://114.43.113.63
+http://123.253.109.211
+/woori.apk
+
+# Reference: https://www.virustotal.com/gui/file/deb4098d86440e52832eb6f17b38cb2c82e50e9f6de21819e61b0ada5189bbe9/detection
+# Reference: https://twitter.com/bl4ckh0l3z/status/1329437919162081282
+
+122.10.114.159:1234
+/Aarogya%20Setu_v1.4.1-ok_sign.apk
+
+# Reference: https://twitter.com/malwrhunterteam/status/1332421014886752262
+# Reference: https://www.virustotal.com/gui/file/9550de103b11a99e2ff9551a99e61001ab33d86b86baf76a3265e1a30c2d8493/detection
+
+http://45.143.93.59
+/HDLiveWallpaper.apk
+
+# Reference: https://twitter.com/malwrhunterteam/status/1333506610245885960
+# Reference: https://twitter.com/bl4ckh0l3z/status/1333742182466023425
+# Reference: https://www.virustotal.com/gui/file/8b9ba90a1c7758714e68333c9541cf9fd99b368d0e3df62e91b003af60311047/detection
+
+123.253.110.74:7272
+123.253.110.74:8889
+http://61.228.224.127
+
+# Reference: https://twitter.com/malwrhunterteam/status/1334126697462030337
+# Reference: https://twitter.com/malwrhunterteam/status/1351868441402118147
+# Reference: https://twitter.com/malwrhunterteam/status/1356668707062353924
+# Reference: https://twitter.com/bl4ckh0l3z/status/1334164150763851781
+# Reference: https://twitter.com/bl4ckh0l3z/status/1352927204372586496
+# Reference: https://twitter.com/bl4ckh0l3z/status/1352927832754843652
+# Reference: https://www.virustotal.com/gui/file/f155131f21cb1fbabc5e1d4e29858caea240bc30a38826ce0671c27eb231cb0b/detection
+# Reference: https://www.virustotal.com/gui/file/cd361f4f5cfd28c11a9e305f841cc173a04911fbf37ef8cad798a37a4ebe2a69/detection
+# Reference: https://www.virustotal.com/gui/file/cd361f4f5cfd28c11a9e305f841cc173a04911fbf37ef8cad798a37a4ebe2a69/detection
+# Reference: https://www.virustotal.com/gui/file/b1cf84700e37ff608ea0ebd179dc6909ad48f0a68031ac88d276ad334d7c0f39/detection
+
+http://178.132.3.230
+178.132.3.230:5987
+iwillsecureyou.com
+myabcxyz.ddns.net
+obs1.ddns.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1344989314409754625
+# Reference: https://twitter.com/bl4ckh0l3z/status/1345446556003143681
+# Reference: https://www.virustotal.com/gui/file/6d1a8a655b62220ba415b06e34a7a7970fe745074d83608fadc57fc0c22fe3a7/detection
+
+93.115.28.37:42474
+pigeonmessenger.app
+
+# Reference: https://twitter.com/malwrhunterteam/status/1349329349380550656
+# Reference: https://www.virustotal.com/gui/domain/umengs.sanxikou.cc/relations
+# Reference: https://www.virustotal.com/gui/file/d0f36b9a19cee045c79af58d58b24dcab3850dfd21d1079920ac6f1e8554666e/detection
+
+47.240.50.196:42474
+47.91.170.222:42474
+umengs.sanxikou.cc
+
+# Reference: https://www.virustotal.com/gui/file/209998484f18f69fe608d658b9f5c8afdb4530308ddcf06b20703a764d89e7d1/detection
+
+http://103.93.79.32
+103.93.79.32:9000
+
+# Reference: https://twitter.com/sysk1ll3r/status/1371567150704525316
+# Reference: https://github.com/CYB3RMX/MalwareAnalysis101/blob/master/Android/Kbank/ReportKbank.txt
+
+103.159.80.61:8700
+
+# Reference: https://www.virustotal.com/gui/domain/crayzzik.ddns.net/relations
+# Reference: https://www.virustotal.com/gui/file/99949dfcbcf839e50ed3aa42ebdbf2d3aa1b26847eef8bff7cdbd5f7bcb30614/detection
+
+crayzzik.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/f941fae5480184428b3724bef1bd2fafd4d8c959ba831563d6877f09e6426b36/detection
+
+193.161.193.99:51805
+
+# Reference: https://www.virustotal.com/gui/file/3a998217822cc5db7d6540f6d1cc907400a97c55d397438e05a14539a299f8c9/detection
+
+176.9.70.180:22222
+dihavnewapp.xyz
+
+# Reference: https://www.virustotal.com/gui/file/8c99919e6837d693f7cbd1cb8f6fe4d354dd28d1a9864cd898934cb6dccb1d59/detection
+
+193.161.193.99:37614
+cheeta-37614.portmap.host
+
+# Reference: https://www.virustotal.com/gui/file/f90ac69c7817cd7164c03f3b78f03045bb6a3ebb6d2c4f01b36387cb3e5ca37b/detection
+
+108.61.210.74:1166
+185.141.62.35:1166
+208.101.60.87:1166
+213.244.123.150:1166
+66.220.147.44:1166
+93.115.28.195:1166
+scr.selfip.net
+
+# Reference: https://www.virustotal.com/gui/file/4a7eea45ace28678e0fabb77196d9845eeb80e675006ca4b58a5fe6e360c3e7d/detection
+
+3.130.209.29:21572
+
+# Reference: https://twitter.com/malwrhunterteam/status/1481236472061743104
+# Reference: https://twitter.com/LukasStefanko/status/1481960668186226695
+# Reference: https://www.virustotal.com/gui/file/3db0d587001285f306fbdd73d29ad62ee826a0c27585ebaaf1d993504fdacc5f/detection
+
+chitchat.ngrok.io
+wetalk.ngrok.io
+
+# Reference: https://twitter.com/malwrhunterteam/status/1484835454985850882
+# Reference: https://www.virustotal.com/gui/file/c351bf2fa876cefe5fb8d6e6f5764364456f3fa89eef83d3743bd1702fffefd9/detection
+
+195.58.38.192:22222
+
+# Reference: https://www.virustotal.com/gui/file/d4ab7d2f4ba6875f149f4168646aa73f6fbd33479d32b34e5a31c72da73b382d/detection
+
+206.189.80.59:22964
+
+# Reference:  https://twitter.com/malwrhunterteam/status/1496800388321722370
+# Reference: https://www.virustotal.com/gui/file/be3341e32f700d6eb86540c1b4bf864b9a0da006bb56a97aa891d5be081d9046/detection
+
+robertapollysexy.com
+
+# Reference: https://www.virustotal.com/gui/file/be3341e32f700d6eb86540c1b4bf864b9a0da006bb56a97aa891d5be081d9046/detection
+
+androidrapido.com
+
+# Reference: https://www.virustotal.com/gui/file/2d7d3de64cd33f74e337c50855353506c3a45971e003f98fc137d5df62d9369b/detection
+
+3.141.142.211:12098
+
+# Reference: https://www.virustotal.com/gui/file/ddc9d251af6e67bce5f95065a1d49dd85bde2b2cc177c12cf36abdbfa1907d87/detection
+
+193.161.193.99:48147
+yourboss-48147.portmap.io
+
+# Reference: https://www.virustotal.com/gui/file/be3341e32f700d6eb86540c1b4bf864b9a0da006bb56a97aa891d5be081d9046/detection
+
+o731193.ingest.sentry.io
+
+# Reference: https://twitter.com/malwrhunterteam/status/1574465208340418575
+# Reference: https://www.virustotal.com/gui/ip-address/185.136.162.238/relations
+# Reference: https://www.virustotal.com/gui/file/49c8539b26c8c7134e2ee14688eb14410690d748e4a3c105d8722f3a8983013c/detection
+
+185.136.162.238:9108
+appreviewhelper.com
+chatindian.xyz
+beautynaturali.ddns.net
+server-chat1.chatindian.xyz
+
+# Reference: https://twitter.com/malwrhunterteam/status/1581003205516722176
+# Reference: https://www.virustotal.com/gui/file/fb40823417fabe77dda51d836c8b69699e14c528468b50aef6c917810ae02098/detection
+
+172.104.187.113:8092
+miya3jh1z.xyz
+c9dz99.miya3jh1z.xyz
+
+# Reference: https://twitter.com/malwrhunterteam/status/1590070110240538627
+# Reference: https://www.virustotal.com/gui/file/06a253cddba6ac9686939527075e2235b7741ea6903349d86a1a33543af7fcfa/detection
+
+letchitchat.info
+
+# Reference: https://twitter.com/ReBensk/status/1622580063664472064
+# Reference: https://www.virustotal.com/gui/file/1c6fa481ca4c332228be0e183e700e97febc1af6c90d07609514184434d2d70a/detection
+
+43.204.187.172:500
+hiddenpirates.com
+forward.hiddenpirates.com
+
+# Reference: https://www.welivesecurity.com/2023/05/23/android-app-breaking-bad-legitimate-screen-recording-file-exfiltration/
+# Reference: https://www.virustotal.com/gui/file/dcec293ce8daf454170b6bbb95d4ac6c70c943b40673ef4f225b96abc003093e/detection
+# Reference: https://www.virustotal.com/gui/file/aa06b4f63fb8037e1f57a063f6a6b5fbe4615247458433c578644628e54a4216/detection
+# Reference: https://www.virustotal.com/gui/file/0e88140c921493b587adcba8a586f289bedca8517c069cc8c7fbce21206453d8/detection
+# Reference: https://www.virustotal.com/gui/file/0e88140c921493b587adcba8a586f289bedca8517c069cc8c7fbce21206453d8/detection
+
+13.215.7.130:22222
+13.228.247.118:22222
+149.28.142.29:8085
+80876dd5.shop
+order.80876dd5.shop
+video-maker.ddns.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1678864160635904000
+# Reference: https://www.virustotal.com/gui/file/fe8658e2f2481671b689f53d341f45b06351bd2104afa7ed58a147923d36bf5a/detection
+
+aichats.shop
+
+# Reference: https://twitter.com/malwrhunterteam/status/1688651241922920449
+# Reference: https://www.virustotal.com/gui/file/25adacf654c3c0fb99ae8dcdb50abbac335163a61d4708c05eab787a9791914b/detection
+# Reference: https://www.virustotal.com/gui/file/70479e67efb9dc2f630410d87e8b8c62be879f16cb5623db3967a6b49b4f6ed3/detection
+
+185.136.162.238:56798
+exclusivestore.in
+server.chatindian.xyz
+
+# Reference: https://twitter.com/RustyNoob619/status/1694022693014712377
+# Note: censys.io request: (services.http.response.html_title="L3MON Manager") and services.port=`22533`
+
+103.146.202.41:22533
+123.60.143.74:22533
+124.70.52.134:22533
+13.232.81.83:22533
+13.234.245.217:22533
+138.3.244.157:22533
+138.68.144.100:22533
+139.59.7.66:22533
+141.144.230.252:22533
+144.91.106.189:22533
+156.67.208.71:22533
+157.230.203.142:22533
+161.35.56.10:22533
+161.97.152.170:22533
+164.92.112.142:22533
+167.71.18.99:22533
+172.104.236.174:22533
+172.104.238.185:22533
+172.105.246.70:22533
+178.250.246.46:22533
+18.139.227.135:22533
+18.236.82.135:22533
+185.17.144.140:22533
+185.208.172.225:22533
+188.166.160.193:22533
+195.123.212.30:22533
+195.211.101.219:22533
+206.81.7.25:22533
+207.246.114.52:22533
+209.58.169.94:22533
+3.0.97.175:22533
+3.142.246.136:22533
+3.211.28.243:22533
+3.91.220.81:22533
+34.251.151.96:22533
+43.156.240.185:22533
+43.204.149.24:22533
+43.240.224.206:22533
+45.149.187.61:22533
+47.108.249.177:22533
+47.254.244.11:22533
+47.63.166.22:22533
+54.169.201.111:22533
+54.237.80.247:22533
+54.37.139.152:22533
+65.0.18.71:22533
+65.1.3.80:22533
+65.108.61.91:22533
+68.183.131.1:22533
+82.146.49.131:22533
+88.198.152.124:22533
+91.191.147.97:22533
+
+# Reference: https://threatfox.abuse.ch/browse/tag/L3MON/
+
+http://144.24.156.3
+http://161.97.102.40
+http://34.251.151.96
+http://54.200.196.104
+110.50.87.237:85
+122.165.225.42:22555
+128.140.80.159:22533
+128.199.111.140:22333
+139.162.30.197:22533
+157.245.23.86:22533
+157.245.23.86:22535
+158.101.25.78:443
+158.101.25.78:9000
+159.203.16.141:22533
+161.97.102.40:22533
+167.71.139.50:22533
+170.187.226.247:22533
+172.233.82.22:22533
+173.254.240.26:22533
+173.254.240.26:443
+178.128.31.16:3001
+184.169.216.66:443
+184.75.254.203:22533
+188.166.160.193:22535
+189.169.129.114:22533
+20.102.192.219:22533
+20.117.108.93:22533
+20.122.16.244:22533
+200.54.37.90:22533
+207.246.114.52:443
+209.250.254.13:22533
+213.136.73.171:22533
+3.22.132.176:22533
+45.79.237.45:21533
+51.77.159.52:22533
+54.255.204.248:22533
+82.176.77.143:22733
+db.nya.lat
+host.md-faisal.com
+l3mon.emilemilchen.de
+md-faisal.com
+moodle1.feja111.de
+nontonlah.site
+nya.lat
+srv001e.feja111.de
+zoonux.nontonlah.site
+
+# Reference: https://www.virustotal.com/gui/file/23d4cd610194c825dc926fe5e84e6d5c999d25b6bbd766d19b543ee18160245c/detection
+# Reference: https://www.virustotal.com/gui/file/d058774436ddef427174561ff235be10207f7804d9e185a484849d0cb2267985/detection
+
+00x19.hopto.org
+
+# Reference: https://twitter.com/ShilpeshTrivedi/status/1726114982570651870
+# Reference: https://www.virustotal.com/gui/file/601637fa23a28872bf48a9e441e35be2acc5f99a6a4d64ea9eaa6fe89aa115d5/detection
+# Reference: https://www.virustotal.com/gui/file/c8772f743faa1c33fbe1ecc966cc52669115470734fdd54874dde774b35c1979/detection
+# Reference: https://www.virustotal.com/gui/file/83a9f69242ef8bc5484c3724dee9399a185fee69b3a8538d3d05e1ab74202e96/detection
+# Reference: https://www.virustotal.com/gui/file/601637fa23a28872bf48a9e441e35be2acc5f99a6a4d64ea9eaa6fe89aa115d5/detection
+
+142.4.102.7:8092
+k7hu3a.top
+c91phchat.k7hu3a.top
+
+# Reference: https://twitter.com/karol_paciorek/status/1729070903936565401
+# Reference: https://tria.ge/231127-k9kkeafe96/static1
+
+122.144.6.226:4782
+
+# Reference: https://www.virustotal.com/gui/file/88736218aa4249a8f2964ff8d55105eb69bb0549eddc849c70c6b10e4951ae60/detection
+
+197.0.122.231:1122
+updatt.publicvm.com
+
+# Reference: https://twitter.com/karol_paciorek/status/1750481398626947286
+
+91.245.44.46:4446
+91.245.44.46:81
+
+# Reference: https://www.virustotal.com/gui/file/20ed03b4ef00bd5ea698568e1a5968825dbba032169027b4a13ad4a783eb316f/detection
+
+46.246.98.161:6000
+
+# Reference: https://twitter.com/banthisguy9349/status/1756398753081143615
+# Reference: https://www.virustotal.com/gui/file/76fa625d0ce6ad454d44541fad76438f5fdc9311b7327b85b742454e2b1dd3d9/detection
+
+http://45.86.163.142
+212.83.61.197:22222
+45.86.163.142:22533
+
+# Reference: https://twitter.com/malwrhunterteam/status/1775570507976306713
+# Reference: https://www.virustotal.com/gui/file/8509cd3cada43f74b8b9a65719bd4f7c24efb605ae35369508ea35ea0fe53689/detection
+
+18.220.222.33:28213
+3.130.209.29:28213
+phpdownload.ngrok.io
+
+# Reference: https://www.virustotal.com/gui/file/e91632459ff0d51d26b252abff714ddfead9640db3b1f27f68691098aa405adc/detection
+
+191.96.225.117:22222
+
+# Reference: https://www.virustotal.com/gui/file/a531c100e710cf93ec06a5f6cabbab9ec16781ec13e817e7e7e993bd731b3dfe/detection
+
+3.23.182.29:28213
+
+# Reference: https://www.virustotal.com/gui/file/a292336facd58d89b4054b146b7b0f026265cf5c703effaa08f4658ede8710b0/detection
+# Reference: https://www.virustotal.com/gui/file/f888f5d58f151f1c0ad3f55bf85f4b772a57ed85e9d2d6342245a3d0ac3531e5/detection
+
+18.220.222.33:28213
+3.130.209.29:28213
+3.131.123.134:28213
+3.23.182.29:28213
+
+# Reference: https://twitter.com/banthisguy9349/status/1786315751189627088
+# Reference: https://www.virustotal.com/gui/file/c3292950fef6f98574e95b4a1909d04b6c9599368ec3ae8bfa5c9f68c8c1d104/detection
+
+http://20.15.225.122
+http://43.204.230.44
+144.91.106.189:5693
+212.227.241.124:22533
+
+# Reference: https://x.com/malwrhunterteam/status/1796248266176348241
+# Reference: https://www.virustotal.com/gui/file/e587e03e0cd461c0bb39242cafe11ea8a326457363f87b56a0b926ffdfced5d8/detection
+
+3.6.115.64:18928
+3.6.122.107:18928
+3.6.30.85:18928
+
+# Reference: https://www.virustotal.com/gui/file/e80a759719c397bbcce7408ab9d26a8089c35c873ecbba2922ac54329ce8defd/detection
+
+89.47.160.244:23
+
+# Reference: https://threatfox.abuse.ch/browse/tag/L3MON/ (# 2024-08-10)
+
+http://64.227.190.73
+193.47.46.10:4433
+207.180.223.109:22522
+78.141.216.219:22533
+lemon.haryadi.my.id
+mail.mirpurpac.com
+
+# Reference: https://threatfox.abuse.ch/browse/tag/L3MON/ (# 2024-08-18)
+
+http://188.227.74.5
+136.243.243.33:22222
+14.170.216.223:22533
+51.20.2.165:3000
+
+# Reference: https://www.virustotal.com/gui/file/2b62153c7b521049da195360f2b1669aa05d3a3f0ab1223de5ca539476e77d1d/detection
+
+216.83.41.170:8092
+cnasa.nasa6.com
+
+# Reference: https://x.com/malwrhunterteam/status/1861168455115841875
+# Reference: https://x.com/midnight_comms/status/1863061794711024066
+# Reference: https://www.virustotal.com/gui/file/ae1090dd954a6167e6fad3071c2b7fafb5afa7ab5d2c2c2c0966647523aa9bbc/detection
+
+http://173.208.142.79
+173.208.142.79:5128
+173.208.142.79:9108
+myfiles.homes
+
+# Reference: https://x.com/banthisguy9349/status/1865050260994773073
+# Reference: https://urlhaus.abuse.ch/browse/tag/L3mon/ (# 2024-12-07)
+
+http://139.59.55.116
+http://207.246.114.52
+http://64.227.131.111
+103.230.121.243:22533
+198.199.74.62:22533
+3.106.41.21:22533
+
+# Reference: https://www.virustotal.com/gui/file/25736ce23b6b6c1844fdc4896627ce67c7d81455c438fa8284f619b0e09ff69d/detection
+# Reference: https://www.virustotal.com/gui/file/dc2998d4fd1f5efcd910d7d11ae1ed73e158d6dec801fb968a34dca75d205562/detection
+# Reference: https://www.virustotal.com/gui/file/708ad22228e9690b127201b1ec7e7ffc942b92b83d3f3c2391bb20906ce343a5/detection
+
+23.158.232.33:5715
+b1upxpt.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/f2d7bbf408702addd766ae6ebbe94fa1f3b5a4a25a52c726e36f35c40f5e8b27/detection
+
+37.27.220.239:7543
+mskqizcno.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/f2d7bbf408702addd766ae6ebbe94fa1f3b5a4a25a52c726e36f35c40f5e8b27/detection
+
+94.136.188.113:3596
+o24kjcv.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/d4debf4e8e415e57c7122e8ade40aafe4fb2353036122baba24d0859d6ac611e/detection
+
+37.27.220.239:8275
+sm1yobedu.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/d145f6ff2debd6c97e7e144f1de339fb563b6c58c5881405693664725c996e21/detection
+
+94.136.188.113:3477
+in3.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/ac32d11ba327cbf8cd3dabf6420a259b79a11266cfeca98c1ba97700d0592fb1/detection
+
+194.233.93.236:6581
+sg5.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/a7fb6855c2a8954851fbf60b38fde214d3e06d5c3977ec065e5eb79423ef0506/detection
+
+94.136.188.113:3809
+
+# Reference: https://www.virustotal.com/gui/file/a729f91a1bc0315cda44708a6981d895a3d375df157efefd59e499055a722f8f/detection
+
+129.159.229.61:2029
+in1.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/a3191d20dc2b18d5f04f9c4278eb20de7be666dea7325893296568d6f2f65f88/detection
+
+144.24.139.70:4424
+l4hdhrd.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/a2435be4f18cc290b853f6cbeb84143d22b4ead1ebd34f94d287900935a2d25f/detection
+
+209.126.80.197:8438
+us4.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/97c7e314dd7a7ba86175ba071dad2e8a1d4f6d23a3f53c26e5222691095c9dd7/detection
+
+94.136.188.113:1398
+
+# Reference: https://www.virustotal.com/gui/file/9210fd61ad5f29c67547a70b885edffb46b106d64e0257cf436d8b0c033f7cca/detection
+
+209.126.80.197:4705
+us4.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/8b1688903520fe225ec1027f7ae9e26e4aab245ceb62c3d59e66f59264f5e61b/detection
+
+80.190.85.84:5080
+uk1.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/88660ac88815cb492b6d5729a150d8920e2695c83046ae64fce15c9c739c9afe/detection
+
+185.141.35.22:6890
+tr3.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/773f247cfa3c99f60d858de72070cb7b1d64c0550a779e2e0654c06998f6761a/detection
+
+129.151.142.36:8940
+6n2esjp.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/69c297a8afd11011807ab3c2a4b9c1c8ccfef34be083386b35f1e202c5d5dfda/detection
+
+37.27.220.239:6168
+sm1yobedu.localto.net
+
+# Reference: https://www.virustotal.com/gui/file/3f6215a313e3ef7b3b16a2dc32cdadf44f8d97c6709a0c72caeae8a21f3d9459/detection
+# Reference: https://www.virustotal.com/gui/file/58b2c1563319d953e26a95b7d1f7857e2d1f545dd896e394f88a2f3c62aedaec/detection
+
+80.190.85.84:5793
+
+# Reference: https://www.virustotal.com/gui/file/41de077029fcbf2eac886f41dadab3706adb326f08baca0abba22f3b1dd17425/detection
+
+194.233.93.236:7219
+
+# Reference: https://www.virustotal.com/gui/file/3b32d440d9327450776b18f0305ae674bd6cdca34c34b5523345f94b22636023/detection
+
+194.233.93.236:3965
+
+# Reference: https://www.virustotal.com/gui/file/051f88c2bf6f0097b3b1b0964a8f09673982646fc569e3b1d4689787575cd23b/detection
+
+194.233.93.236:6666
+
+# Reference: https://x.com/skocherhan/status/1893291986519572789
+# Reference: https://app.validin.com/detail?find=L3MON%20Manager&type=raw&ref_id=240cc7bba4c#tab=host_pairs (# 2025-02-22)
+
+http://103.61.224.224
+http://103.84.207.50
+http://105.96.237.247
+http://146.56.51.149
+http://165.154.213.90
+http://167.99.133.236
+http://195.230.22.20
+http://195.35.36.215
+http://68.183.82.193
+http://80.225.221.151
+http://90.188.90.39
+152.67.26.134:443
+185.191.141.46:5000
+195.230.22.20:90
+dailycheapdeals.com
+tritanumakassar.com
+l3mon.dailycheapdeals.com
+ecwowk4g0co4kwo4s8k4gw4k.195.35.36.215.sslip.io
+ns1.tritanumakassar.com
+ns2.tritanumakassar.com
+nxts.eu.org
+rnv.nxts.eu.org
+
+# Generic
+
+/pgb9umnsh_m1pgb9umn.html
+
+# APK
+
+/AF_News.apk
+/AVATRADE_APP.apk
+/build.s.apk
+/ChatinIncognito.apk
+/ROCKFORT_APP.apk
+/Pigeon_Messenger.apk
+/whatsapplite.apk

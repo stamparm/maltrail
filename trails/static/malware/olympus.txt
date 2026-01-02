@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: olympus stealer
+
+# Reference: https://x.com/Fact_Finder03/status/1928007989899710568
+
+196.251.84.108:5000
+e-mail-kyc.com
+gh2c8se62k.sbs
+ledger-changelog.live
+ledger-desktop-21091.live
+ledger-update-changelog.live
+olympus.mov
+validatie.icu
+
+# Generic
+
+/olympus_stealer

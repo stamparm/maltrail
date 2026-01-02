@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zscaler.com/blogs/research/saefko-new-multi-layered-rat
+# Reference: https://otx.alienvault.com/pulse/5d517a359da59958f72dc6c8
+
+http://3.121.182.157
+acpananma.com
+f0278951.xsph.ru
+maprivate.date
+industry.aeconex.com
+deqwrqwer.kl.com.ua

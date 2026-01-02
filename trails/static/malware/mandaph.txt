@@ -1,0 +1,57 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: koceg, socks
+
+# Reference: https://hk-en.norton.com/online-threats/w32.mandaph-2008-042816-0445-99-writeup.html
+
+google-analytics.info
+atomakayan.biz
+haydex.info
+fewfwe.com
+fewfwe.net
+geil-de.info
+dns-blabla.org
+vvsecurity.cn
+winupdate.cn
+vipxxxzone.com
+hq-pharma.org
+portvn.in
+samoeono.cn
+conceptinvestin.com
+inewbusiness.com
+tatushki.info
+
+# Reference: https://blog.talosintelligence.com/2019/11/threat-roundup-1025-1101.html (# Win.Trojan.Socks-7363151-0)
+# Reference: https://www.virustotal.com/gui/file/7a92f41ceb86c2ad5e0d637437ab0c4d639cd226b967431893ad4a52a5002f42/behavior/VirusTotal%20Jujubox
+
+blinko-usa.com
+satellife.info
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Backdoor:Win32/Koceg.gen!B
+
+gudook.info
+satellife.info
+fewfwe.net
+blinko-usa.com
+conceptinvestin.com
+tgspk.ru
+
+# Reference: https://www.virustotal.com/gui/file/d4636cbb7e260b6169d2744f2e9146ccece764b36ae02263d30c473b68af3d47/behavior/VirusTotal%20Cuckoofork
+# Reference: https://www.virustotal.com/gui/file/90124cd4336df0889ecdc3c6ec1c30f86902149c06a6d881f635118ec1e49ec7/behavior/VirusTotal%20Cuckoofork
+
+blinko-usa.com
+fewfwe.net
+satellife.info
+
+# Reference: https://www.virustotal.com/gui/file/c63d9fe2966fd2e6b319857ca035ef745a739c8bc7870cf542dcace0274d9f4c/behavior/VirusTotal%20Cuckoofork
+
+stattos.com
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=figace.info
+
+figace.info
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=geil-de.info
+
+geil-de.info

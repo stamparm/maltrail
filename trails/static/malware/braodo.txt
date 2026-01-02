@@ -1,0 +1,50 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: braodo stealer
+
+# Reference: https://x.com/suyog41/status/1844758100131152105
+# Reference: https://www.virustotal.com/gui/file/af5ab6e3ab6b2d53d35187e041a2cf9d299083227e11f7472a952f53d8846f57/detection
+
+hasaki.life
+
+# Reference: https://x.com/suyog41/status/1845755809000522144
+# Reference: https://www.virustotal.com/gui/file/c3a7c6be0f583109dd59bcec90977843ebdc2f378ce9897c98909825b1981322/detection
+
+beautifulths.ing
+
+# Reference: https://x.com/suyog41/status/1846154546512265519
+# Reference: https://www.virustotal.com/gui/file/9700876627728172cff34697558a29bd0951ca7f6d8d47a134bb00315ce76cea/detection
+# Reference: https://www.virustotal.com/gui/file/41b22e0263177715a0f2accd316d88dcf926e4a8eb633761514f8c094b809bef/detection
+
+prtsc.tokyo
+
+# Reference: https://x.com/JAMESWT_MHT/status/1901723196027699277
+# Reference: https://www.virustotal.com/gui/file/113fdf97b74d93f77623efdc462351f19d953c0e3836138ef0ec93409da7584e/detection
+
+barry.wooz.org
+
+# Reference: https://x.com/malwrhunterteam/status/1912921916601487495
+# Reference: https://x.com/malwrhunterteam/status/1915028146878812303
+# Reference: https://x.com/malwrhunterteam/status/1916792289210290340
+# Reference: https://x.com/1ZRR4H/status/1912934049435308100
+# Reference: https://app.validin.com/detail?find=7f65fbfe80e8112dcafe81b24056956f5cb0b3ca&type=hash&ref_id=570e5592e19#tab=host_pairs (# 2025-04-18)
+# Reference: https://app.validin.com/detail?type=hash&find=922ce2e604263be67365b67efe281fc6#tab=host_pairs (# 2025-04-28)
+# Reference: https://www.virustotal.com/gui/file/85b28bf4e6cd33224190ec6895df80d97172345cefc635641997d12b56d5bfaf/detection
+# Reference: https://www.virustotal.com/gui/file/a2b8b3e4efdae5236ce8a59825d590ef4031ea9eae714acf4ce17ae716265010/detection
+# Reference: https://www.virustotal.com/gui/file/09d89fae0d03f938547ad6c5176d2ea3527fcdbee1b39f67c0757fccbc60f9cf/detection
+# Reference: https://www.virustotal.com/gui/file/063f36d7af72855132e7825c61a0d280836c1755678e85298390622c7ffe616f/detection
+# Reference: https://www.virustotal.com/gui/file/51cc45bacc8d6824baeae8502013c70d5d4befd792cf49d6877a9901c371f2ed/detection
+# Reference: https://www.virustotal.com/gui/file/cdd8f3f51875a8df2345e2c5bf0326d482ba4d82c2f3657e90ac3b3c114fb03e/detection
+
+adsteam-manager.website
+ld-manager.site
+ld-manager.website
+rose-manager.website
+rose-tien-manager.website
+sea-manager.site
+sealingshop.click
+sealingshop.pro
+tieudungnhanh247.com
+travelrevert.org
+travelrevert.site

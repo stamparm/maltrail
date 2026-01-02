@@ -1,0 +1,35 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: clop ransomware, darkweb ransomware, nefilm ransomware
+
+# Reference: https://twitter.com/darktracer_int/status/1367095920274247688
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+# Reference: https://news.sophos.com/en-us/2023/07/10/clop-at-the-top/
+# Reference: https://github.com/threatlabz/ransomware_notes/blob/main/clop/clop2.txt
+
+ekbgzchl6x2ias37.onion
+hxt254aygrsziejn.onion
+npkoxkuygikbkpuf5yxte66um727wmdo2jtpg2djhb2e224i4r25v7ad.onion
+santat7kpllt6iyvqbr7q4amdv6dzrh6paatvyrzl7ry3zm72zigf4ad.onion
+
+# Reference: https://x.com/AlvieriD/status/1801940816102826418
+
+he1p-center.com
+he1p-me.com
+
+# Reference: https://x.com/AlvieriD/status/1899258988476223761
+
+2vi357dgf4246nvrcsavrt5jsrm7pfqim4t2n3ykzedjim5bzqezmlyd.onion
+
+# Reference: https://x.com/AlvieriD/status/1920819610359648300
+
+pubstorm.com
+pubstorm.net
+
+# Reference: https://x.com/RakeshKrish12/status/2003360989186797928
+# BANNER_0_HASH-IP=116c931c5c79c4bfe32c7ab669062178
+
+http://79.124.62.130
+http://79.124.62.134
+http://79.124.62.74

@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://pytorch.org/blog/compromised-nightly-dependency/#how-to-check-if-your-python-environment-is-affected
+# Reference: https://www.virustotal.com/gui/ip-address/140.238.153.95/relations
+# Reference: https://www.virustotal.com/gui/file/2385b29489cd9e35f92c072780f903ae2e517ed422eae67246ae50a5cc738a0e/detection
+
+h4ck.cfd

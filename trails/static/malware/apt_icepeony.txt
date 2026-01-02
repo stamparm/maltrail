@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/nao_sec/status/1846898971693940782
+# Reference: https://nao-sec.org/2024/10/IcePeony-with-the-996-work-culture.html
+
+http://103.150.186.219
+http://103.99.60.108
+http://103.99.60.119
+http://103.99.60.93
+http://107.148.37.63
+http://149.115.231.17
+http://149.115.231.39
+http://154.213.17.225
+http://154.213.17.237
+http://154.213.17.244
+http://165.22.211.62
+http://173.208.156.144
+http://173.208.156.19
+http://204.12.205.10
+http://45.195.205.88
+http://63.141.255.16
+http://64.227.133.248
+88k8cc.com
+d45qomwkl.online
+googlesvn.com
+k8ccyn.com
+k9ccin.com
+
+# Reference: https://x.com/nahamike01/status/1847553875504746768
+
+http://172.233.1.11
+128.199.70.91:8080

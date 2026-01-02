@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/philofishal/status/1438406827750744068
+# Reference: https://twitter.com/craiu/status/1438417363129585667
+# Reference: https://objective-see.com/blog/blog_0x66.html
+# Reference: https://otx.alienvault.com/pulse/6142fd26e097d46325c36660
+# Reference: https://otx.alienvault.com/pulse/615c2d1a7d0b5ecb55d2a7a9
+
+http://47.75.123.111
+iterm2.net
+kaidingle.com
+mzstatics.com
+apps.mzstatics.com
+rjxz.jxhwst.top
+
+# Reference: https://www.sentinelone.com/blog/macos-zuru-resurfaces-modified-khepri-c2-hides-inside-doctored-termius-app/
+# Reference: https://www.virustotal.com/gui/file/dead760f40f0541b3c466fa61c820a47428c4f780df9518e090df4fd1a94eb5c/detection
+# Reference: https://www.virustotal.com/gui/file/977f9bd4875f6bc887504864d538122b0354aae931fc3d38cb56cde1823cab59/detection
+# Reference: https://www.virustotal.com/gui/file/8ac593fbe69ae93de505003eff446424d4fd165cda6f85c8c27e8e1cb352b06e/detection
+# Reference: https://www.virustotal.com/gui/file/45fc4294348a6d6ad4b6db3ba93c2d968efebba48f301e1b6e7b2a311cd295eb/detection
+
+http://47.238.28.21
+47.238.28.21:53
+termius.fun
+termius.info
+ctl01.termius.fun
+download.termius.info
+
+# Generic
+
+/fwjNY/v.php

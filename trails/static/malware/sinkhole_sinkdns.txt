@@ -1,0 +1,53 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://censys.io/ipv4?q=8ea980a43f642626e10cae611d0ae91aecbe0876f74b1657ef041764a0ca1e3d
+
+sinkdns.org
+furthermore.sinkdns.org
+ns0.sinkdns.org
+96.126.112.224
+
+euphoria.sinkdns.org
+166.78.158.73
+
+ns1.sinkdns.org
+178.79.159.82
+
+ns2.sinkdns.org
+106.186.21.174
+
+ns3.sinkdns.org
+50.116.57.116
+
+ns4.sinkdns.org
+23.92.24.20
+
+ns5.sinkdns.org
+213.219.37.5
+
+ns6.sinkdns.org
+45.79.141.164
+
+nxd.sinkdns.org
+23.92.16.214
+
+# Reference: https://censys.io/ipv4/66.228.42.216
+
+66.228.42.216
+
+# Reference: https://censys.io/ipv4/106.185.32.148
+
+106.185.32.148
+
+# Reference: https://censys.io/ipv4/85.159.211.21
+
+85.159.211.21
+
+# Reference: https://censys.io/ipv4/96.126.116.157
+
+96.126.116.157
+
+# Reference: https://censys.io/ipv4/23.239.17.167
+
+23.239.17.167

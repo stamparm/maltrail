@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://arcticwolf.com/resources/blog/cherryloader-a-new-go-based-loader-discovered-in-recent-intrusions/
+# Reference: https://www.virustotal.com/gui/file/8c42321dd19bf4c8d2ef11885664e79b0064194e3222d73f00f4a1d67672f7fc/detection
+
+http://141.11.187.70

@@ -1,0 +1,36 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/backdoored-free-download-manager-linux-malware/110465/
+# Reference: https://www.virustotal.com/gui/ip-address/172.111.48.101/relations
+# Reference: https://www.virustotal.com/gui/file/2214c7a0256f07ce7b7aab8f61ef9cbaff10a456c8b9f2a97d8f713abd660349/detection
+
+http://172.111.48.101
+172.111.48.101:443
+fdmpkg.org
+deb.fdmpkg.org
+ns1.fdmpkg.org
+ns2.fdmpkg.org
+u.fdmpkg.org
+0727bedf5c1f85f58337798a63812aa986448473.u.fdmpkg.org
+1302d044a712b67a2278f433e21c396c7d3f1a11.u.fdmpkg.org
+1edcc19ab85f9872a9f64275adeaea158dd3dda7.u.fdmpkg.org
+22b9e197a23daad123f58bea48d50fc9c41c3bb3.u.fdmpkg.org
+2468a425f5ae44a33961dd4acb7219dab15dc62d.u.fdmpkg.org
+2c9bf1811ff428ef9ec999cc7544b43950947b0f.u.fdmpkg.org
+36c00c39e88ca6d263c480324773650b6b2735d7.u.fdmpkg.org
+3cf3cfdf9738c1bd52113c3c33d2d771c260ce35.u.fdmpkg.org
+5d6167ef729c91662badef0950f795bf362cbb99.u.fdmpkg.org
+649645a74cd8de0e3e9866f42b6c49d2b3fda2c9.u.fdmpkg.org
+856a10b2f5d6e1d1548145aa724f0dbeaf8c5d59.u.fdmpkg.org
+8c830c3ff721375d5f41607fe75b4cb62d4fde17.u.fdmpkg.org
+8e367bd504e00803c49f9a340bf7f04514b9924b.u.fdmpkg.org
+abc.u.fdmpkg.org
+ac26ad30f7055b09933f49666f6bcd68574623c6.u.fdmpkg.org
+ad97c43a6fdc64da089a92c377e1be442ee2be75.u.fdmpkg.org
+b88639355835ae357b753bd54fbacc0be9784293.u.fdmpkg.org
+c3a05f0dac05669765800471abc1fdaba15e3360.u.fdmpkg.org
+c6d76b1748b67fbc21ab493281dd1c7a558e3047.u.fdmpkg.org
+df4ac5d9f4f0824a646e4362317c5e381b7ef6d3.u.fdmpkg.org
+ea080320f3fc7be037d41542746a23c7ae7701d8.u.fdmpkg.org
+f6626644a2545068bb87719de177b033d694f948.u.fdmpkg.org

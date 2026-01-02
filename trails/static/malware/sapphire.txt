@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: sapphire stealer
+
+# Reference: https://github.com/Cisco-Talos/IOCs/blob/main/2023/08/sapphirestealer-goes-open-source.txt
+# Reference: https://www.virustotal.com/gui/file/5d0719c5e29e96b81ec8198e8bba5d531a2dc433c3107be6263dee33b54d578a/detection
+
+portfolio-roman.ml

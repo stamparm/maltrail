@@ -1,0 +1,200 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/LookoutThreats/status/1339074028015919106
+# Reference: https://twitter.com/malwrhunterteam/status/1255144050228752388
+# Reference: https://twitter.com/bl4ckh0l3z/status/1339976719453794306
+# Reference: https://blog.lookout.com/lookout-discovers-new-spyware-goontact-used-by-sextortionists-for-blackmail
+# Reference: https://www.virustotal.com/gui/domain/w-video.vip/relations
+# Reference: https://www.virustotal.com/gui/file/7c5c552028d30b0a0b208bb90ff5191c0341c3dbf88b29b2e8686a88711ef1dd/detection
+# Reference: https://www.virustotal.com/gui/file/29805b908d65bd1a45ab742cd4f1db6c59dc9b8f2312e821f0c01258f36fe5f0/detection
+# Reference: https://www.virustotal.com/gui/file/628ee109965ea2bdcddd235d9873ac10aa469ca8247a8a89acd3e04e940dabe8/detection
+
+107.151.194.116:8080
+27.124.6.226:8091
+27.124.6.226:8083
+27.124.6.244:8085
+a-video.vip
+bo-dycam.com
+dalbam.vip
+download-file.top
+grd77.cn
+hdcamera.vip
+ladysizi.top
+live-live.vip
+livetalk.top
+livetalk.vip
+mimi18s.top
+mimibox.top
+mimicwt.net
+mimimsg.net
+mmbox.top
+momomsg.top
+my-player.vip
+oncamera.top
+oncamera.vip
+oncast.top
+red-v10.com
+red-v8.com
+redvios.com
+ser-chat.com
+signal-live.vip
+signaltalk.top
+super-voice.vip
+tele-gram.vip
+tocast.vip
+twi-tter.vip
+v-talk.top
+v-talk.vip
+videosound.vip
+voicecontrol.top
+voicesupport.vip
+vtalk.vip
+w-video.vip
+zerobt.net
+zerobyte.top
+
+# Reference: https://twitter.com/malwaremansys/status/1375296162907840514
+# Reference: https://www.virustotal.com/gui/ip-address/27.124.6.226/relations
+# Reference: https://www.virustotal.com/gui/ip-address/27.124.6.244/relations
+# Reference: https://www.virustotal.com/gui/ip-address/180.215.254.23/relations
+# Reference: https://www.virustotal.com/gui/file/1eb701008665d10cbd430e56a2f34e9e7d55a01d5a4306c1ffc79d81b0bf2696/detection
+# Reference: https://www.virustotal.com/gui/file/aaa4e1befb67204d356bbe83568bdc2c0f11231c951ea90789ef0400b1d91b59/detection
+# Reference: https://www.virustotal.com/gui/file/b4a7b9d054693c73bac7c795e8edcc4c45726e93f3f638134de977d33d0d4dc4/detection
+# Reference: https://www.virustotal.com/gui/file/b4a7b9d054693c73bac7c795e8edcc4c45726e93f3f638134de977d33d0d4dc4/detection
+# Reference: https://www.virustotal.com/gui/file/9b6418ec31ab3cd4ad7fb014e8062ddb27d8b568b057a13f7b9f57c47e536521/detection
+# Reference: https://www.virustotal.com/gui/file/c4695ce886c90071740902bb4a9d85682db99f71446bf49cdefd3303af5b80a1/detection
+# Reference: https://www.virustotal.com/gui/file/2592beed857a50463d19c33b9d1fecf145e19122d1197f0a385ee67b359464af/detection
+# Reference: https://www.virustotal.com/gui/file/75852f888b8f21404fccb3d73398d4abbd00755733c6b839f9741bab7cb7a3c3/detection
+# Reference: https://www.virustotal.com/gui/file/bfde789d9b604bd5be8651aa4233b024805361ef5acb6313220c644b0a3ade33/detection
+# Reference: https://www.virustotal.com/gui/file/5a2c8b6a693e121ca4e897c556bde059ac7b3a912c6d18147b3ca67a42a945ad/detection
+# Reference: https://www.virustotal.com/gui/file/2e4cb2826b760db0defcb9f30d9768cf627470c54f8341fbc6f9bb67fbab731d/detection
+# Reference: https://www.virustotal.com/gui/file/3056130621de439f622b9e2889b6f12ea976bc025318ddaa1e9b5cf35f226cff/detection
+# Reference: https://www.virustotal.com/gui/file/dd6e9b2096bd7e3cceffeaeb05bb6084830d5c32a06e9730d5853026fd3ca15c/detection
+# Reference: https://www.virustotal.com/gui/file/5a2c8b6a693e121ca4e897c556bde059ac7b3a912c6d18147b3ca67a42a945ad/detection
+# Reference: https://www.virustotal.com/gui/file/f16cb9b2bc058c4e3bc9806e14fff0d749020d646c762936d6854e4ff254528a/detection
+# Reference: https://www.virustotal.com/gui/file/02d52f45ab0f75dd79161c25d621848d4754dda8443d16c81dc78a6bbc0bdac8/detection
+
+180.215.254.23:6506
+180.215.254.23:8085
+180.215.254.23:8203
+180.215.254.23:8405
+180.215.254.23:8607
+180.215.254.23:9607
+180.215.254.23:9901
+180.215.254.23:9903
+180.215.254.23:9905
+180.215.254.23:9906
+180.215.254.23:9908
+180.215.254.23:9910
+180.215.254.23:9911
+180.215.254.23:9925
+a-video.vip
+b-video.top
+bo-dycam.com
+c-gallery.top
+dalbam.vip
+g-video.top
+hb-video.top
+hdcamera.vip
+hdtalk.vip
+jp-voice.com
+king-video.top
+ladysizi.top
+lets-go.top
+live-live.vip
+livetalk.vip
+mimibox.top
+mmbox.top
+my-it.top
+my-player.vip
+oncamera.top
+oncamera.vip
+oncast.top
+panelembrain.vip
+play-video.net
+redios.top
+redvios.com
+sec-ret.top
+ser-chat.com
+ser-tv.com
+signal-live.vip
+signaltalk.top
+super-voice.vip
+t-gallery.top
+tele-gram.vip
+tocast.vip
+twi-tter.vip
+u-video.top
+v-talk.top
+videosound.top
+videosound.vip
+voicecontrol.vip
+voicesupport.vip
+vtalk.vip
+w-video.vip
+wvideo1.top
+
+# Reference: https://twitter.com/malwrhunterteam/status/1399426263916425219
+# Reference: https://www.virustotal.com/gui/file/913724315d80ebb1057dbdb2bf5e808a957dc76e52a6f01f0f932966c229ce20/detection
+
+http://180.215.254.23
+27.124.6.244:6506
+
+# Reference: https://www.virustotal.com/gui/file/6da89dfbafae43dd3d0a1cff24c77cabd01a5b0a421ba42bc8ccf5abae94ae18/detection
+
+180.215.254.23:8304
+
+# Reference: https://www.virustotal.com/gui/file/83f7ad90826b5967335883da51a4338c6ecc02d01f74bd6edda52a9823dd23aa/detection
+
+27.124.3.92:7405
+
+# Reference: https://twitter.com/malwrhunterteam/status/1403310991539163138
+# Reference: https://www.virustotal.com/gui/file/9e1e419157af339be8f238164eb984e570a53211bdef915babf1290904dbfd3b/detection
+
+27.124.6.244:6304
+
+# Reference: https://www.virustotal.com/gui/ip-address/180.215.228.174/relations
+# Reference: https://www.virustotal.com/gui/file/5764c4ad0f9a1947230551bfaed2b722f7108a1190001613de75e6c50830f9f3/detection
+
+180.215.228.174:5813
+myvideo3.top
+q-gallery.top
+r-gallery.top
+tele-gram.top
+videosound2.top
+ygtalk.top
+
+# Reference: https://www.virustotal.com/gui/file/58a9135a49fb03b330ee39cd6905d482e6ceb7a6008998f9242ea62957c63fed/detection
+
+118.99.37.123:8080
+
+# Reference: https://www.virustotal.com/gui/file/3d6bb3d3d2e6813ff52eef872570875b07126fe8bf110a59621c13842a8cc315/detection
+
+27.124.3.92:7415
+
+# Reference: https://www.virustotal.com/gui/ip-address/118.107.43.244/relations
+
+boangallery.top
+d-gallery.top
+goldmoon.top
+videodate.top
+z-gallery.top
+
+# Reference: https://twitter.com/malwrhunterteam/status/1578343255556882432
+# Reference: https://twitter.com/LukasStefanko/status/1578371093579980801
+# Reference: https://wezard4u.tistory.com/6215 (Korean)
+# Reference: https://www.virustotal.com/gui/file/736564fddd25a31f7d30b32ccefc08f8e9117fe9deba4ec9676a26b7e010a15e/detection
+
+118.107.11.35:7394
+118.107.15.134:7394
+137.220.129.5:7394
+
+# Generic
+
+/JYSystem/
+/JYSystem/restInt/
+/JYSystem/restInt/collect/postData
+/JYSystem/restInt/log/app
+/JYSystem/restInt/v3/collect/
+/JYSystem/ws/appLink

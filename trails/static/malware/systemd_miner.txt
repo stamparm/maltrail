@@ -1,0 +1,69 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/JiaYu_521/status/1151807281018748928
+# Reference: https://blog.netlab.360.com/systemdminer-propagation-through-ddg/
+
+aptgetgxqs3secda.d2web.org
+aptgetgxqs3secda.onion.in.net
+aptgetgxqs3secda.onion.ly
+aptgetgxqs3secda.onion.mn
+aptgetgxqs3secda.onion.pet
+aptgetgxqs3secda.onion.to
+aptgetgxqs3secda.onion.ws
+aptgetgxqs3secda.tor2web.io
+aptgetgxqs3secda.tor2web.fyi
+rapid7cpfqnwxodo.d2web.org
+rapid7cpfqnwxodo.onion.in.net
+rapid7cpfqnwxodo.onion.ly
+rapid7cpfqnwxodo.onion.mn
+rapid7cpfqnwxodo.onion.pet
+rapid7cpfqnwxodo.onion.to
+rapid7cpfqnwxodo.onion.ws
+rapid7cpfqnwxodo.tor2web.io
+rapid7cpfqnwxodo.tor2web.fyi
+
+# Reference: https://twitter.com/JiaYu_521/status/1211142314124439552
+
+94.237.85.89:8080
+wqegg4zvhvq4yjro.d2web.org
+wqegg4zvhvq4yjro.onion.to
+wqegg4zvhvq4yjro.onion.mn 
+wqegg4zvhvq4yjro.onion.in.net 
+wqegg4zvhvq4yjro.tor2web.io 
+wqegg4zvhvq4yjro.tor2web.su
+
+# Reference: https://twitter.com/JiaYu_521/status/1213047025551298561
+
+trump3mtcnmxzfix.d2web.org
+
+# Reference: https://twitter.com/JiaYu_521/status/1202435231732645888
+
+2x4tmsvwneqhkeey.tor2web.io
+2x4tmsvwneqhkeey.4tor.ml
+2x4tmsvwneqhkeey.onion.mn
+2x4tmsvwneqhkeey.onion.in.net
+2x4tmsvwneqhkeey.onion.to
+2x4tmsvwneqhkeey.onion.nz
+
+# Reference: https://twitter.com/JiaYu_521/status/1151796179543310336
+
+java7c4qjjash3gn.onion.ws
+
+# Reference: https://twitter.com/JiaYu_521/status/1263389123554848768
+
+2iuu6o3zbmwynik2.tor2web.su
+2iuu6o3zbmwynik2.tor2web.io
+2iuu6o3zbmwynik2.tor2web.to
+2iuu6o3zbmwynik2.tor2web.in
+
+# Reference: https://twitter.com/IntezerLabs/status/1290248549255577601
+# Reference: https://analyze.intezer.com/files/616356443c43b632ea7c6fa9ca96bf2ef25b683beb96e5bee7606c1bb0f28976
+
+120.27.26.189:81
+
+# Reference: https://unit42.paloaltonetworks.com/pgminer-postgresql-cryptocurrency-mining-botnet/
+
+dreambusweduybcp.onion
+nssnkct6udyyx6zlv4l6jhqr5jdf643shyerk246fs27ksrdehl2z3qd.onion
+ojk5zra7b3yq32timb27n4qj5udk4w2l5kqn5ulhnugdscelttfhtoyd.onion

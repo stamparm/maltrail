@@ -1,0 +1,62 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/persistent-actor-targets-ledger-cryptocurrency-wallets
+# Reference: https://otx.alienvault.com/pulse/5fa472e97ef9fd555c12347d
+
+au-ledger.com
+ca-ledger.com
+com-client.email
+de-ledger.com
+dogcat.space
+dogcowbat.com
+fr-ledger.com
+funnerhere.com
+homeandfamilyuniverse.com
+it-ledger.com
+ledger-chain.com
+ledger-chain.info
+ledger-live.io
+ledger-support.io
+ledger.buzz
+ledger.deals
+ledger.legal
+ledger.org.pl
+ledger.report
+ledgermailer.io
+ledgersupport.io
+legder-support.io
+legder.com
+lmao.money
+loldevs.com
+nl-ledger.com
+numisconsult.com
+nz-ledger.com
+quikview-update.com
+quikview.work
+t-mobile-sq.com
+theironshop.net
+tmobile.digital
+us-ledger.com
+usa-ledger.com
+xn--ldger-6za.com
+xn--ldger-n51b.com
+xn--ldgr-vvac.com
+xn--ledge-xbb.com
+xn--ledgr-9za.com
+xn--ledgr-q51b.com
+ledger.uk.com
+ledger.us.org
+secure.hbccing.com
+
+# Reference: https://twitter.com/idclickthat/status/1657753962718658560
+
+aps-ledegere.com
+e-ledger.live
+explore-ledger.info
+ledgerappnode.org
+ledgęres.com
+lledger.com-web3panel.com
+lėdger.net
+qfsbackupledger.com
+walleet-ledger.com

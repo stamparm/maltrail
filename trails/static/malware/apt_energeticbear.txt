@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: iron liberty, tg-4192, dragonfly, crouching yeti
+
+# Reference: https://lab52.io/blog/the-geopolitical-and-potential-cyber-influence-of-russia-in-africa/
+
+satanal.info
+tureg.info
+ecco0.b13x.org
+kanri.rbridal.net
+
+# Reference: https://securelist.com/energetic-bear-crouching-yeti/85345/
+# Reference: https://www.virustotal.com/gui/ip-address/155.207.63.4/relations
+# Reference: https://www.virustotal.com/gui/ip-address/51.159.28.101/relations
+
+http://51.159.28.101
+http://155.207.63.4
+lite.ultralitedesigns.com

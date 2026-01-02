@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.f-secure.com/weblog/archives/00002227.html
+
+jaifr.com
+qfsl.net
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2011-082908-4116-99&tabid=2
+
+jifr.co.be
+jifr.co.cc
+jifr.net
+
+# Reference: http://blog.appriver.com/2011/08/morto-worm-spreads-to-weak-systems/
+
+jifr.info
+jifr.co.cc
+jifr.co.be
+jifr.net
+qfsl.net
+qfsl.co.cc
+qfsl.co.be

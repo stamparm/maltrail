@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/JayTHL/status/1195428854141276161
+
+coalaxyz123.bootme.club
+
+# Reference: https://github.com/silence-is-best/c2db#coala-bot
+# Reference: https://www.virustotal.com/gui/ip-address/185.170.43.187/relations
+
+http://185.170.43.187
+
+# Generic
+
+/jjj888/skghn.php

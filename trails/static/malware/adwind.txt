@@ -1,0 +1,2493 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: AlienSpy, Frutas, jFrutas, Unrecom, Sockrat, JSocket, jRat, sambaspy, sambaspyrat
+
+# Reference: https://www.secureworks.com/blog/spam-campaign-distributes-adwind-rat
+
+euforiafryz.pl
+pepepepe.myvnc.com
+millzjsocsingwi80gm.duckdns.org
+milzwiregma.no-ip.biz
+edebiyazarlar.com
+kulturatesesi.com
+
+# Reference: https://malwr.com/analysis/MjAwMGIwMmU0Y2Q4NDkzOGExOTRhNDQ5YWY1ODkxZGI/
+
+uploadp2p.publicvm.com
+
+# Reference: https://otx.alienvault.com/indicator/file/72ccbfa43b24d291ff34941ef3a61c61016650189125221ef769a910b02878e3
+
+repair.sytes.net
+cvpimddvt.sytes.net
+
+# Reference: https://abuse.ch/downloads/blog/adwind_domains_20170828.txt
+
+1323.dvrcam.info
+1329.mypsx.net
+1330.ddnsking.com
+1331.ddnsking.com
+1332.bounceme.net
+1333.hopto.org
+1990.nflfan.org
+1suser.ddns.net
+2016today.duckdns.org
+2112.bounceme.net
+achyne.publicvm.com
+alienware.ddns.net
+alienware-pc.loginto.me
+amarachi.hopto.org
+amazongifts.ddns.net
+artwell8.hopto.org
+asderman.no-ip.org
+asiatravelagency.ddns.net
+asorock.mooo.com
+benx234.ddns.net
+blackhills.ddns.net
+blast.ddns.net
+bombing212.ddns.net
+bomira.ddns.net
+carlos88.ddns.net
+carlosluize88.zapto.org
+cartolarepresentacoes.com.br
+charlesdukem.chickenkiller.com
+chikazz.ddns.net
+chriswork999.ddns.net
+chuksthedon.duckdns.org
+cjpufffy.hopto.org
+code203.ddns.net
+coneptor.qarallax.com
+controlx.ddns.net
+controlxx.ddns.net
+dam5i6.linkpc.net
+davvid3948.ddns.net
+dehaizegroup35.hopto.org
+dev.null.vg
+dnso.ddns.net
+doingtracks.duckdns.org
+donaldroberts2014.duckdns.org
+dongabby.hopto.org
+donmark22.myddns.rocks
+donsea.hopto.org
+dubaiexchange.dynu.net
+ekehken.myddns.rocks
+ellatrujillo.com
+eni-procurement.info
+essztednsbk.ddns.net
+exporttaipei.publicvm.com
+express4.dynns.com
+faridaminmohamm.hopto.org
+fetch.duckdns.org
+ghostmoney1.hopto.org
+ghostmoney2.ddns.net
+ghostmoney3.dnsdojo.com
+goodjob88.ignorelist.com
+googlemapsup.ddns.net
+guvencingiller.com
+gw1001099.chickenkiller.com
+gw1001099.duckdns.org
+gypsypy.duckdns.org
+hajimusa.ddns.net
+importloggm.duckdns.org
+indominestuff33.hopto.org
+infocolornido.publicvm.com
+infotradelinks.ddns.net
+isaijra52elizgewigm.duckdns.org
+itumobig.ddns.net
+jackboy7204.zapto.org
+jaybrizzy.gotdns.ch
+jbpreshandes5gm1906.duckdns.org
+jeffe231.ddns.net
+jeremizo888.ddns.net
+jhomeland.ddns.net
+johnevan227.ddns.net
+jra52prealiyoundogm.duckdns.org
+jry1234.ddns.net
+jsoktin.sytes.net
+justyjohnxplodes.ddns.net
+kaycee7.ddns.net
+kenxx.ddns.net
+kingdon.dynu.net
+kurtangle083.publicvm.com
+lagos042.ddns.net
+lashy.ddns.net
+lastbornk1.ddns.net
+lawpush.ddns.net
+lcannex.ddns.net
+macdanielo.hopto.org
+manzorro.duckdns.org
+mariopuzo.ddns.net
+markowen.duckdns.org
+markscot.ddns.net
+mbolo2017.hopto.org
+mickyjakey.blogsyte.com
+moneyghost.ddns.net
+moorexx.hopto.org
+morggy11.ddns.net
+mrcapable01.publicvm.com
+mropera12.no-ip.biz
+ms15hinet.publicvm.com
+ninja-445.ddns.net
+nono198011.ddns.net
+nonomee2017.ddns.net
+obi234.ddns.net
+obi333.ddns.net
+obilosgini.ddns.net
+officebrighty.ddns.net
+online1.mywire.org
+onlything4now.ddns.net
+ourjra52fullexchgm.duckdns.org
+owen6000.hopto.org
+palletbush.hopto.org
+panini101.chickenkiller.com
+pharhmonk1.hopto.org
+phererol12.ddns.net
+phone2347.ddns.net
+pjizzy.hopto.org
+pool0852.hopto.org
+presjra52opdoxgm.duckdns.org
+prince.hackermind.info
+r00tshit.ddns.net
+r00tziby.ddns.net
+reversebaglanti.com
+robbieadanfo.ddns.net
+robinjmcca.ddns.net
+ronytazz2121.ddns.net
+scar231.zapto.org
+securitypoint.ddns.net
+selfmademan2.ddns.net
+selfmademan.ddns.net
+shadoweye1.ddns.net
+shittu09.hopto.org
+sidney212.ddns.net
+sill.no-ip.biz
+sinslave.damnitjim.xyz
+softcode2017.hopto.org
+songs.linkpc.net
+steve654321.ddns.net
+svchost.publicvm.com
+talentino.ddns.net
+teamoluwa.ddns.net
+tonychucks96.hopto.org
+tonystark001.publicvm.com
+trustkemi.duckdns.org
+unblocker.bounceme.net
+unknowjbireestagm.duckdns.org
+unknunon878.chickenkiller.com
+vyperps.no-ip.biz
+wallstsxer.hopto.org
+wongchin11.ddns.net
+workstation-spartan.ddns.net
+www.creativeforwardings.cf
+www.jrocketmassive.cf
+www.malaika-jp.com
+www.roofmantf.cf
+xsubin3310.sytes.net
+yadangz.ddns.net
+
+# Reference: https://www.hybrid-analysis.com/sample/4f65cd98a90fc9ec7d8a5bb1087758f6c89251d365479c0c2429d023b6a732c2?environmentId=100
+
+masterentity.cf
+
+# Reference: https://www.threatminer.org/report.php?q=KL_AdwindPublicReport_2016.pdf&y=2016
+
+11111111.noip.me
+24rinces.no-ip.biz
+abdav21.ddns.net
+abudon1990.no-ip.org
+abudon22.no-ip.info
+abusite11.ddns.net
+abyugos.no-ip.info
+abyugos0.no-ip.info
+achuprn.ddns.net
+admin50.no-ip.org
+admin8090.no-ip.org
+admin90.no-ip.info
+adolfo196938.ddns.net
+agary917.ddns.net
+aisulu.ddns.net
+aisulu.ddns.net
+ajeolokun.ddns.net
+akwotie.ddns.net
+albertfrankie.no-ip.org
+alicejav777.ddns.net
+alicejav777.duckdns.org
+alien10socket.ddns.net
+alien12socket.ddns.net
+alien15socket.ddns.net
+alien17socket.ddns.net
+alien19socket.ddns.net
+alien1socket.ddnsking.com
+alien4socket.gotdns.ch
+alien6socket.ddns.net
+alien9socket.ddns.net
+alwadwte.ddns.net
+anglekeys.ddns.net
+anthonywilkinson10.ddns.net
+aptsite.ddns.net
+audreysaradin.no-ip.org
+avprojets.no-ip.biz
+ayomide1.ddns.net
+ayomide123.ddns.net
+backconnect123.ddns.net
+badmanthing.ddns.net
+banban66.ddns.net
+baronbreeze.ddns.net
+barratty.ddns.net
+basketmain1.duckdns.org
+basketxrtz.ddns.net
+ben770.ddns.net
+benabangwu.linkpc.net
+biafra147.ddns.net
+biggestchurch.ddns.net
+biggiechurch.ddns.net
+biggymoney01.no-ip.biz
+biggymoney03.no-ip.biz
+biggymoney03.no-ip.biz
+biggymoney2.no-ip.biz
+blessingonblessings.dnsfor.me
+blessingonblessings.ufcfan.org
+bms123.twilightparadox.com
+bongotedllc.no-ip.org
+brownvictor.ddns.net
+bsmarket.ddns.net
+budapest.ddns.net
+budapest89.hopto.me
+bugattiboss.servehttp.com
+bullgard.ddns.net
+calito888.ddns.net
+carlos1388.ddns.net
+ceo.gotdns.ch
+ceoceocompany.gotdns.ch
+chadin.serveftp.com
+chewc47.ddns.net
+chiefonodugo.ddns.net
+chima147.linkpc.net
+chklagos.no-ip.biz
+chris101.ddns.net
+chriswoolmer00.no-ip.info
+chriswork99.ddns.net
+cjfitness.ddns.net
+clemens.dynns.com
+coralgroups.no-ip.biz
+correctip.noip.me
+crest01.serveftp.com
+crest02.serveftp.com
+crested01.serveftp.com
+crested01.serveftp.com
+damuk1.ddns.net
+dave1033.ddns.net
+dellboy11.ditchyourip.com
+dellboy13.dnsiskinky.com
+dellboy15.couchpotatofries.org
+dellboy16.eating-organic.net
+dellboy17.quicksytes.com
+dellboy17.quicksytes.com
+dellboy18.securitytactics.com
+deprueba1.no-ip.org
+deprueba1.no-ip.org
+destinynnam.ddns.net
+dish-darkcomet2.linkpc.net
+divinee.no-ip.biz
+divinemove.ddns.net
+doingtracks.ddns.net
+donhamza.no-ip.org
+donorder.ddns.net
+dsfgc.ddns.net
+dydx69.ddns.net
+egbowanted2js.ddns.net
+egbowantedjs.ddns.net
+egbowantedjs.fishdns.com
+egede.no-ip.biz
+egombute.duckdns.org
+egombute.no-ip.biz
+emekau2002.ddns.net
+emenike.no-ip.info
+escobar.serveftp.com
+evanovik.ddns.net
+ewillsin.ddns.net
+father60.bounceme.net
+felbankgmailjs.no-ip.info
+felixres015js.zapto.org
+felixresult.no-ip.org
+filezilla.no-ip.biz
+fingers.noip.me
+flexyou.chickenkiller.com
+floffman.linkpc.net
+floffman11.no-ip.org
+focusloa.ddns.net
+francemaes15.duckdns.org
+franklin49.ddns.net
+frankwoodsales.ddns.net
+froidthefucker.ddns.net
+fulga01.ddns.net
+gabito234.serveftp.com
+galaxymoni.ddns.net
+geogelewis90.ddns.net
+georgea.serveftp.com
+gist.no-ip.info
+gmoneydns.duckdns.org
+godwin231.zapto.org
+godwin4real.ddns.net
+goodloves.ddns.net
+goods11.ddns.net
+goooodymegma.no-ip.org
+gta2.ddns.net
+harry150.ddns.net
+harryaleandro.ddns.net
+hdllsy11.no-ip.org
+hedie1979.no-ip.org
+henrry747.serveminecraft.net
+henrygalaxy.publicvm.com
+herura.ddns.net
+hisandu.ddns.net
+holymoney.crabdance.com
+hustler.no-ip.org
+hydrabad-ur.ddns.net
+ifeanyi147.ddns.net
+igbankwuruns.no-ip.info
+ike-jsocket.publicvm.com
+importantloggmal.no-ip.biz
+importloggm.duckdns.org
+indologisticsltd.no-ip.biz
+integralhcs.no-ip.biz
+intergralhcs.no-ip.biz
+iykeben00.no-ip.info
+jacobjsockresyah.no-ip.info
+jacobremittance.duckdns.org
+jadoltd.ddns.net
+jagas21.ddns.net
+jamescage112.no-ip.biz
+javgretest015.chickenkiller.com
+jayson2j.no-ip.org
+jcures.serveftp.com
+jegs.ddns.net
+jesus11.ddns.net
+jgabi.serveftp.com
+jidespa0024yahjs.no-ip.org
+jiokekachi.ddns.net
+jjsmits7.serveftp.com
+joeban.chickenkiller.com
+jonnybary.no-ip.biz
+jry123.ddns.net
+jsocserveronline.read-books.org
+jsucket.hackermind.info
+judalien.ddns.net
+jupita10.ddns.net
+just2015.ddns.net
+justice.linkpc.net
+justicebro.linkpc.net
+justics.no-ip.org
+justicsbro.no-ip.org
+justmealone.ddns.net
+justnd2001.no-ip.biz
+justyjohnxplodes.ddns.net
+jvaoluwade.ddns.net
+kane2244.ddns.net
+keithoffman25.ddns.net
+kifego.servehalflife.com
+kingsman.no-ip.org
+kipapos.gotdns.ch
+kissfromarose.ddns.net
+klasik101.ddns.net
+klydest.ddns.net
+kokoman.no-ip.biz
+kuom.ddns.net
+lagostj.servebeer.com
+lashsecurities.ddns.net
+lawrex.publicvm.com
+layziebone009.ddns.net
+leonardomateus131.ddns.net
+leosplint86.ddns.net
+link2bros.ddns.net
+link2bross.ddns.net
+linsom05.noip.me
+lisalove.myftp.biz
+livesyn03.midexim.com
+loandept227.ddns.net
+loandept2281.ddns.net
+logisticsltd.no-ip.biz
+madman1.ddns.net
+magabox126.ddns.net
+mainlandbridge.ddns.net
+manbks123.ddns.net
+mariopuzo.ddns.net
+mascott.ddns.net
+masterchris211.ddns.net
+masterchris221.ddns.net
+mavado.serveblog.net
+max1239.ddns.net
+mcvin.corotext.com
+mega123b.ddns.net
+michael22244.ddns.net
+mikey0147.ddns.net
+mikkyserial.redirectme.net
+millzjsoctrinwi80gm.duckdns.org
+money12.from-ny.net
+money12.from-ok.com
+moneyboss.ddns.net
+moneycee.ddns.net
+moneymind.ddns.net
+moore11.no-ip.info
+morval.ddns.net
+mrmoney.no-ip.biz
+mropera12.no-ip.biz
+mukor.ddns.net
+munachim.linkpc.net
+muratozkan.ddns.net
+myifyboy.serveftp.com
+mypres001.serveftp.com
+myyveon.ddns.net
+nbw09o.gotdns.ch
+newbj.no-ip.biz
+nickre015jsock.duckdns.org
+nikresut015js.no-ip.org
+nikresut015js.zapto.org
+nklove66.no-ip.info
+nonnykey.ddns.net
+nono147.ddns.net
+oba147.ddns.net
+obaniko1111.ddns.net
+obicharls.redirectme.net
+officetartousi.no-ip.biz
+ogawilli.collegefan.org
+okoro.ddns.net
+okpole123.ddns.net
+okwychrist2004.gotdns.ch
+olavroy4.ddns.net
+olavroy44.ddns.net
+omaricha.no-ip.org
+ome.no-ip.info
+onlything4now.ddns.net
+onyechina.ddns.net
+opendoors.myftp.org
+otimmo.ddns.net
+ottimo.ddns.net
+otunba.ddns.net
+panel2.collegefan.org
+passmore1.publicvm.com
+perfomiracles247.duckdns.org
+peter123456.ddns.net
+phcity2090.bounceme.net
+philsa.ddns.net
+plainview.duckdns.org
+plainview.myvnc.com
+pompin02.serveftp.com
+ppppppp12.ddns.net
+prince24.ddns.net
+prince240.no-ip.biz
+professor.myvnc.com
+psarda.ddns.net
+quaver.publicvm.com
+rayman.ddns.net
+reversebaglanti.com
+rmg-20.ddns.net
+roadmaster2013.ddns.net
+rx450.ddns.net
+salesexport.sytes.net
+saleshore201.serveblog.net
+sambahs.ddns.net
+septt.dvrcam.info
+serialcheck55.serveblog.net
+settlement.ddns.net
+shadowmek.ddns.net
+shadowmekz.ddns.net
+silverback.noip.me
+smart12456.ddns.net
+songs.linkpc.net
+spa1dingdiljayah.no-ip.biz
+star01.ddns.net
+starboy.noip.me
+starboy.ufcfan.org
+stevemartins02.no-ip.biz
+stitatn.no-ip.org
+swift.ddns.net
+tanwilliam.ddns.net
+taraba111.gotdns.ch
+tcheckk.ddns.net
+tchecks.ddns.net
+tetetes2222.chickenkiller.com
+theman111.ddns.net
+thisreason.ddns.net
+tiwamade.ddns.net
+toba123.ddns.net
+tojaxx.ddns.net
+tonychucks.chickenkiller.com
+toolsoffice.ddns.net
+tpalmer1955.ddns.net
+trusplus111.gotdns.ch
+ucnas2008.ddns.net
+uniteknolog.ddns.net
+uniteknolog.duckdns.org
+upperway60.no-ip.org
+upright2.no-ip.org
+upright22.no-ip.org
+uyu.webhop.me
+valchijioke.publicvm.com
+vasocserver.read-books.org
+vaspakou.ddns.net
+versionfive.ddns.net
+vivipas.ddnsking.com
+vmoney.ddns.net
+web2016web.webhop.me
+wellspring4life.ddns.net
+whichway.ddns.net
+willyd01.ddns.net
+wlkd.myftp.org
+workshopjs.ddns.net
+workshopjs.fishdns.com
+writtings.ddns.net
+xsubin3310.sytes.net
+ypfbackup.mylenovoemc.com
+zivva007.ddns.net
+zoee.noip.me
+zubi009.serveftp.com
+
+# Reference: https://twitter.com/Racco42/status/1053747018835869696
+
+wellcomehome.duckdns.org
+
+# Reference: https://twitter.com/Racco42/status/1097498140452810752
+
+flexio.ddns.net
+
+# Reference: https://twitter.com/Racco42/status/1106671338775814149
+
+goldenshoe.ddns.net
+
+# Reference: https://twitter.com/neonprimetime/status/958078465252712448
+
+vvrhhhnaijyj6s2m.onion.top
+
+# Reference: https://twitter.com/neonprimetime/status/993594473375588352
+
+oluwadey231.zapto.org
+
+# Reference: https://twitter.com/ps66uk/status/1097845468816687105
+
+joewhizz.duckdns.org
+
+# Reference: https://twitter.com/pancak3lullz/status/1068534966898839552
+
+godslove.ddns.net
+
+# Reference: https://twitter.com/ViriBack/status/1089338471091712001
+
+q9999.ddns.net
+
+# Reference: https://twitter.com/malware_traffic/status/917487556455010304
+
+103.68.223.153:6890
+
+# Reference: https://twitter.com/VK_Intel/status/1079681130771689472
+
+frontier222.duckdns.org
+
+# Reference: https://twitter.com/_SecJesus/status/1016678994366877697
+
+slimy.duckdns.org
+
+# Reference: https://twitter.com/Ring0x0/status/900075907548839936
+
+89.35.228.242:4781
+
+# Reference: https://twitter.com/malware_traffic/status/790346116835385344
+
+boscpakloka.myvnc.com
+
+# Reference: https://twitter.com/MalwareConfig/status/693588665788932096
+
+tobytori18.myftp.org
+
+# Reference: https://twitter.com/MalwareConfig/status/644624264239415296
+
+jvupdate.dynamic-dns.net
+
+# Reference: https://twitter.com/Racco42/status/1116788270007037952
+# Reference: https://app.any.run/tasks/c19017e3-75ec-4b45-ba4f-4f56bbf58ca8
+
+185.244.29.102:2556
+
+# Reference: https://twitter.com/MalwareConfig/status/931684471992135680
+
+hard.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748754895767908352
+
+vantira.no-ip.biz
+
+# Reference: https://twitter.com/MalwareConfig/status/748754830357700608
+
+yosefmahmud95478.no-ip.biz
+
+# Reference: https://twitter.com/MalwareConfig/status/748754786917289984
+
+erasmuspor.duckdns.org
+
+# Reference: https://twitter.com/JayTHL/status/1141347511694741505
+
+waytoomuchparties1.com
+fedex.itemdb.com
+uspslabel.itemdb.com
+
+# Reference: https://twitter.com/Bank_Security/status/1145935816650350593
+# Reference: https://app.any.run/tasks/79248157-36f0-410f-8102-91614cc06dd2/
+
+185.140.53.14:5050
+
+# Reference: https://pastebin.com/S4ggik78
+
+goodfellas2019.ddns.net
+graceofgood.hopto.org
+metalin.ddns.net
+ogaemma.duckdns.org
+richardavis.duckdns.org
+
+# Reference: https://twitter.com/coderippers/status/1154036702152761345
+
+saka1.ddns.net
+
+# Reference: https://twitter.com/James_inthe_box/status/1160942568487567360
+# Reference: https://app.any.run/tasks/127d99d5-3ee4-41cb-a26e-b9ae031a4112/
+
+pluginsrv.duckdns.org
+37.48.92.195:1350
+67.207.93.17:7744
+
+# Reference: https://twitter.com/de_aviation/status/1097547526763433985
+
+checkogauzor.duckdns.org
+dxyasser0.linkpc.net
+flexio.ddns.net
+goodattack.ddns.net
+goodfellas2019.ddns.net
+graceofgood.hopto.org
+metalin.ddns.net
+morelogs2019.duckdns.org
+ogaemma.duckdns.org
+richardavis.duckdns.org
+slimmy1.duckdns.org
+snopsd.duckdns.org
+sukepatel101.ddns.net
+unknownsoft.hopto.org
+
+# Reference: https://twitter.com/reecdeep/status/1170984733511045121
+# Reference: https://app.any.run/tasks/774e7417-ce26-4471-835a-6524b986dfcf/
+
+79.134.225.83:7075
+165.22.129.173:7756
+galakhov.duckdns.org
+pluginsrv1.duckdns.org
+
+# Reference: https://twitter.com/wwp96/status/1171090871535755264
+# Reference: https://app.any.run/tasks/2152b87a-0c8d-4f1e-a195-69d7544ef572/
+
+185.203.116.78:1010
+
+# Reference: https://unit42.paloaltonetworks.com/the-legend-of-adwind-a-commodity-rat-saga-in-eight-parts/
+# Reference: https://www.kaspersky.com/blog/adwind-rat/11252
+
+adwind.com.mx
+unrecom.net         # UnReCoM RAT
+alienspy.net        # AlienSpy
+jsocket.org         # JSocket
+unknowsoft.com
+jconnectpro.info    # jConnectPro
+unknowncrypter.co   # UnknownCrypter
+jbifrost.com        # JBifrost
+
+# Reference: https://twitter.com/Racco42/status/983634634151026688
+
+newisajrat.duckdns.org
+
+# Reference: https://any.run/report/a4bb70fb8fbb09d86e3529329b651de1677d1f8bec9b9fe324d22b797c1e2493/fb061418-d173-4a35-97eb-1f55e39e4f74
+
+103.125.191.152:7777
+103.125.191.152:4040
+
+# Reference: https://app.any.run/tasks/600106b9-844f-4321-8c2b-3726853ff132/
+
+hustle4eva1.sytes.net
+hustle4eva2.3utilities.com
+194.5.98.19:8881
+
+# Reference: https://app.any.run/tasks/57d385a6-d464-4ae2-b764-9dcabe301d47/
+# Reference: https://app.any.run/tasks/7b6da450-57c0-43f5-85fc-28942ddaf4a0/
+
+rootsec.publicvm.com
+172.111.141.34:33
+
+# Reference: https://app.any.run/tasks/2adfe124-4d95-4be5-8d73-0e52c1c73b6f/
+# Reference: https://app.any.run/tasks/41ed1be7-3a73-4e97-a46d-d491e2d4b3be/
+
+103.125.191.152:7777
+
+# Reference: https://app.any.run/tasks/0764b917-12f4-484d-8ff5-cde26bc42355/
+
+joeiyke22.duckdns.org
+79.134.225.121:7442
+
+# Reference: https://app.any.run/tasks/3e41a622-1010-4f42-8fe1-2838cd95c292/
+
+respainc.duckdns.org
+79.134.225.99:4379
+
+# Reference: https://app.any.run/tasks/c6fc3d14-00a0-461e-89c4-9212d5f2cb87/
+
+chance2019.ddns.net
+194.5.98.37:20131
+
+# Reference: https://twitter.com/wwp96/status/1186369055642607616
+
+tradcan.duckdns.org
+185.165.153.150:4145
+
+# Reference: https://pastebin.com/29uSdMAk
+# Reference: https://app.any.run/tasks/6272b39e-7fea-4134-819e-6d3b6b5a0d2b
+# Reference: https://www.virustotal.com/gui/file/7a01202131c133a5f78134f264383e827a68164a05e5927da485527da00f8b32/detection
+
+0000rrrvvv.duckdns.org
+addahost.ddns.net
+lexd.duckdns.org
+respainc.duckdns.org
+
+# Reference: https://twitter.com/wwp96/status/1192098993158918145
+# Reference: https://app.any.run/tasks/4c70e0e0-ce08-4bd8-ae00-77791545807f/
+
+95.213.195.71:3999
+mamased.duckdns.org
+
+# Reference: https://twitter.com/JayTHL/status/1194068036396945409
+# Reference: https://www.virustotal.com/gui/ip-address/185.140.53.90/relations
+
+185.140.53.90:8585
+dbanks.duckdns.org
+
+# Reference: https://app.any.run/tasks/ee9dd5cd-a707-42a1-b300-6c9cc10cfcda/
+
+powerpower19.duckdns.org
+
+# Reference: https://twitter.com/wwp96/status/1199055385073737728
+# Reference: https://app.any.run/tasks/14341c9a-57ab-4cca-ae4f-25bc5576c918/
+
+198.50.217.185:1988
+
+# Reference: https://twitter.com/wwp96/status/1199412810545090560
+# Reference: https://app.any.run/tasks/bd69d3e3-4981-4843-91ed-3c4032c3e348/
+
+79.134.225.101:1994
+gudluck19.duckdns.org
+
+# Reference: https://twitter.com/JayTHL/status/1199367622896357380
+
+216.38.2.206:5252
+mirabk.duckdns.org
+
+# Reference: https://any.run/malware-trends/adwind
+
+1gstemos.duckdns.org
+avt.duckdns.org
+bytelop4902.ddns.net
+cash001.duckdns.org
+ceodon1.ddns.net
+fishecthinker.ddns.net
+info1.duckdns.org
+ipvhosted.duckdns.org
+labelinfo.dubya.us
+mansa19ke.ddns.net
+money1234.duckdns.org
+moran101.duckdns.org
+mrmarkangel.duckdns.org
+onelove03.duckdns.org
+slimyuyo.duckdns.org
+tecklink.publicvm.com
+thompson62.ddns.net
+wasjar.dynu.net
+
+# Reference: https://any.run/malware-trends/adwind
+# Reference: https://www.virustotal.com/gui/file/298adda417fab32b1cb54c2ea841659c5f9ff24881a03383c49276516e587cc8/detection
+
+verified.duckdns.org
+
+# Reference: https://any.run/malware-trends/adwind
+# Reference: https://www.virustotal.com/gui/file/4556c57ecdf0e6cca993a84702e9fd25b5775a38d920bb4a93a21367c3eed825/detection
+
+79.134.225.92:4040
+
+# Reference: https://www.virustotal.com/gui/file/8931addad269815939959d2edfd3fb94df5af596bc84ba8280b14ad79291a6fe/detection
+
+79.134.225.92:7890
+
+# Reference: https://any.run/malware-trends/adwind
+# Reference: https://www.virustotal.com/gui/file/feea58a8648cc911ae870ba1b3cde32682f165eb867a9c8aee8571fe010d679a/detection
+
+204.152.219.76:1177
+79.134.225.92:1177
+starboy.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/7beac47a408dec7b7ce999180ca781a7b531b77e530be76188b857a0947a555a/detection
+
+79.134.225.92:4050
+menaxe212.warzonedns.com
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2015-041523-0201-99&tabid=2
+
+moneybank92.no-ip.biz
+
+# Reference: https://citizenlab.ca/2015/12/packrat-report/
+
+daynews.sytes.net
+deyrep24.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/1034193815505199107
+
+money12.from-ok.com
+
+# Reference: https://twitter.com/MalwareConfig/status/976617168728150016
+
+osbka.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/804767558343725056
+
+imporlogbomyah.zapto.org
+
+# Reference: https://twitter.com/MalwareConfig/status/781777898424373248
+
+kuslarinhayati.com
+
+# Reference: https://twitter.com/MalwareConfig/status/778991643710066688
+
+sara2011.no-ip.biz
+
+# Reference: https://twitter.com/MalwareConfig/status/753247025546878976
+
+linsom05.noip.me
+
+# Reference: https://twitter.com/MalwareConfig/status/753246708075786240
+
+opendoors.myftp.org
+
+# Reference: https://twitter.com/MalwareConfig/status/753245062289584129
+
+jry123.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/753243777674907648
+
+dave1033.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748764868694593536
+
+anglekeys.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748762322001244165
+
+valien1.no-ip.biz
+
+# Reference: https://twitter.com/MalwareConfig/status/748757699723079680
+
+stitatn.no-ip.org
+
+# Reference: https://twitter.com/MalwareConfig/status/748756558545166336
+
+jacobjsockresyah.no-ip.info
+
+# Reference: https://twitter.com/MalwareConfig/status/748756520741908480
+
+felixres015js.zapto.org
+
+# Reference: https://twitter.com/MalwareConfig/status/748756450181197824
+
+alicejav777.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748756425472503808
+
+raydonovan2015.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748756369205964800
+
+mukor.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748756331763339264
+
+oba147.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748756282450915328
+
+alien6socket.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748756247667544064
+
+salesexport.sytes.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748756177744343041
+
+trusplus111.gotdns.ch
+
+# Reference: https://twitter.com/MalwareConfig/status/748754751060209664
+
+opjis123.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748754718189449216
+
+getegoowo.no-ip.biz
+
+# Reference: https://twitter.com/MalwareConfig/status/748754687596195840
+
+uaelab.mypsx.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748625656041340929
+
+okpole123.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748625186820333568
+
+blessuslord2014.no-ip.biz
+
+# Reference: http://securitywarrior.ca/index.php/2015/11/03/ratcheting-down-on-jsocket-a-pc-and-android-threat/
+
+d370.cc
+saleshore201.serveblog.net
+floffman11.no-ip.org
+akwotie.ddns.net
+hydrabad-ur.ddns.net
+bright207.ddns.net
+stevemartins02.no-ip.biz
+ipcorrect.ddns.net
+linsom05.noip.me
+chriswoolmer00.no-ip.info
+justicsbro.linkpc.net
+felbankgmailjs.no-ip.info
+justicebro.linkpc.net
+frookze.ddns.net
+moukenji.ddns.net
+felixres015js.zapto.org
+budapest89.hopto.me
+toolsoffice.ddns.net
+alien12socket.ddns.net
+evanovik.ddns.net
+princelarry.ddns.net
+nemere.no-ip.org
+alicejav777.ddns.net
+lawkimsun.ddns.net
+arseisa.no-ip.org
+blessingonblessings.hopto.me
+nikresut015js.zapto.org
+dotpago.ddns.net
+williasom.ddns.net
+jshkoi.ddns.net
+egbowantedjs.ddns.net
+mrmoney.no-ip.biz
+olavroy4.ddns.net
+whichway.ddns.net
+chriswork.ddns.net
+dave1033.ddns.net
+filezilla.no-ip.biz
+johnsonsammy.ddns.net
+abdav21.ddns.net
+tpalmer1955.ddns.net
+adolfo196938.ddns.net
+ome.no-ip.info
+lazarus.ufcfan.org
+tomluke12.publicvm.com
+vyperps.no-ip.biz
+logisticsltd.no-ip.biz
+ben770.ddns.net
+leonardomateus131.ddns.net
+opendoors.myftp.org
+jjsmits7.serveftp.com
+mega123b.ddns.net
+tools4chima.ddns.net
+paulcoe.no-ip.org
+iykeben00.no-ip.info
+agentwhite.ddns.net
+panel.myactivedirectory.com
+philsa.ddns.net
+mtrealm.ddns.net
+peter123456.ddns.net
+quaver.publicvm.com
+livesyn03.midexim.com
+dellboy13.dnsiskinky.com
+emenike.no-ip.info
+raydonovan2015.ddns.net
+sync.ebaeuropa.eu
+prinve24.ddns.net
+wlkd.myftp.org
+dydx69.ddns.net
+mikkyserial.redirectme.net
+11111111.noip.me
+jamestommyyy.ddns.net
+myyveon.ddns.net
+khaleeel.no-ip.biz
+jsocket2-giftedhands.linkpc.net
+bbullgard.ddns.net
+dish-darkcomet2.linkpc.net
+okpole123.ddns.net
+hackmakers.ddns.net
+okshallowstonex.no-ip.info
+prince24.ddns.net
+mrsrizap.myftp.info
+mukor.ddns.net
+fredkill.chickenkiller.com
+herura.ddns.net
+froidthefucker.ddns.net
+albertfrankie.no-ip.org
+correctip.noip.me
+donhamza.no-ip.org
+amina.pointto.us
+basketxrtz.ddns.net
+indologisticsltd.no-ip.biz
+goods11.ddns.net
+jsocserveronline.read-books.org
+henrygalaxy.publicvm.com
+svchost.myvnc.com
+versionfive.ddns.net
+tchecks.ddns.net
+badmanthing.ddns.net
+klydest.ddns.net
+t3rr0r.ddns.net
+officetartousi.no-ip.biz
+intergralhcs.no-ip.biz
+jidespa0024yahjs.no-ip.org
+elviscarson.ddns.net
+zivva007.ddns.net
+floffman.linkpc.net
+madman1.ddns.net
+trusplus111.gotdns.ch
+ewillsin.ddns.net
+harry150.ddns.net
+damuk1.ddns.net
+workshopjs.ddns.net
+hach.duckdns.org
+jonnybary.no-ip.biz
+infowinboth.ddns.net
+judalien.ddns.net
+integralhcs.no-ip.biz
+
+# Reference: https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/07195002/KL_AdwindPublicReport_2016.pdf
+
+103.25.58.218:3353
+104.152.185.187:7777
+104.202.126.19:7777
+107.161.114.56:1234
+108.61.224.179:3000
+108.61.224.179:8080
+108.61.224.179:9090
+109.73.76.106:1000
+134.19.176.153:7777
+149.202.153.121:7777
+149.71.103.182:1920
+151.236.19.63:7777
+162.13.83.237:2022
+163.47.20.20:1978
+167.88.14.106:1270
+167.88.14.106:1280
+167.88.2.174:7777
+173.209.43.46:2010
+173.209.43.46:2019
+173.254.223.111:1777
+173.254.223.116:8668
+173.254.223.66:2223
+173.254.223.86:2070
+173.254.223.86:2637
+174.127.99.129:1030
+174.127.99.129:1050
+174.127.99.129:1950
+174.127.99.130:2888
+174.127.99.134:2888
+174.127.99.135:3371
+174.127.99.135:4420
+174.127.99.150:8484
+174.127.99.150:8585
+174.127.99.152:5035
+174.127.99.154:2828
+174.127.99.159:1819
+174.127.99.161:9050
+174.127.99.167:1234
+174.127.99.183:1313
+174.127.99.188:2065
+174.127.99.188:2080
+174.127.99.195:100
+174.127.99.220:8282
+174.127.99.234:1033
+178.175.138.166:1604
+178.175.138.168:1707
+178.175.138.168:1970
+178.175.138.207:1960
+178.175.138.238:1505
+178.175.138.238:1506
+184.17.1.67:2556
+184.75.210.205:2525
+185.10.56.24:7777
+185.17.1.160:1777
+185.17.1.162:1030
+185.17.1.166:2556
+185.17.1.182:1900
+185.17.1.190:8729
+185.17.1.194:4040
+185.17.1.198:2556
+185.17.1.198:2888
+185.17.1.205:2808
+185.17.1.206:1502
+185.17.1.223:7777
+185.17.1.226:9033
+185.17.1.227:9874
+185.17.1.229:1010
+185.17.1.235:1819
+185.17.1.235:2546
+185.17.1.242:2556
+185.17.1.250:2000
+185.17.1.48:2556
+185.17.1.60:2888
+185.17.1.68:9762
+185.17.1.70:2556
+185.17.1.70:4142
+185.17.1.71:1089
+185.17.1.72:2556
+185.17.1.72:2558
+185.17.1.80:1988
+185.17.1.80:2509
+185.17.1.80:5564
+185.19.85.151:1505
+185.24.234.50:7780
+185.29.9.16:9729
+185.32.221.5:3368
+185.5.175.222:2556
+185.5.175.222:7777
+185.75.59.145:1246
+185.75.59.145:2556
+185.75.59.145:4444
+185.84.181.73:2345
+185.84.181.79:8167
+185.84.181.80:5467
+185.84.181.80:7982
+185.84.181.81:7854
+185.84.181.82:5173
+185.84.181.85:5463
+185.84.181.92:7654
+185.84.181.92:8767
+185.84.181.94:4020
+185.84.181.94:5020
+185.84.181.96:2999
+188.95.54.106:1234
+191.101.151.13:1920
+192.64.11.253:2011
+193.105.134.78:1910
+198.101.10.208:1234
+198.27.105.165:7778
+198.27.126.224:1234
+198.50.222.252:1240
+198.50.248.30:8888
+199.16.31.184:1235
+199.16.31.184:1240
+199.16.31.184:1290
+199.16.31.184:5555
+199.16.31.186:1114
+199.255.138.17:7777
+199.255.138.19:1234
+199.255.138.38:7790
+199.255.138.38:7795
+199.255.138.43:7777
+204.152.219.120:1033
+204.152.219.70:5900
+204.45.207.49:7777
+204.45.207.53:1209
+204.45.207.53:1616
+204.45.207.53:2221
+212.7.208.71:9575
+212.7.208.86:101
+212.7.208.88:2556
+212.7.218.136:1030
+213.184.126.142:1202
+213.208.129.204:1030
+213.208.129.211:1030
+213.208.129.218:1030
+213.208.129.220:1030
+213.208.152.218:1030
+216.107.152.237:8006
+216.185.114.219:1909
+216.185.114.219:1974
+216.185.114.219:1990
+216.38.2.192:7777
+216.38.2.216:3345
+216.38.8.189:1234
+23.105.128.147:3370
+23.105.128.148:1234
+23.105.131.155:3000
+23.105.131.155:3000
+23.105.131.188:7777
+23.105.131.209:1112
+23.227.196.198:2023
+23.227.196.207:2040
+23.227.199.118:2014
+23.227.199.121:2015
+23.227.199.72:2040
+23.227.199.72:2828
+23.231.23.182:1010
+31.171.155.72:774
+46.151.208.242:62622
+46.151.208.242:8787
+46.151.208.242:9034
+46.151.208.242:9797
+46.20.33.104:1381
+46.20.33.76:2070
+5.187.34.231:2015
+5.254.106.208:2804
+5.254.106.251:4020
+5.254.112.21:4020
+5.254.112.21:4050
+5.254.112.24:4020
+5.254.112.36:1920
+5.254.112.56:4711
+5.254.112.60:1900
+5.254.112.60:1990
+5.254.112.60:1991
+5.79.79.67:4040
+5.79.79.70:9090
+50.7.199.164:2015
+51.254.21.25:7070
+67.215.4.74:4505
+67.215.4.75:1974
+67.215.9.231:1910
+67.215.9.232:5050
+67.215.9.232:5054
+67.215.9.232:50555
+67.215.9.235:1257
+69.65.7.141:1880
+79.172.242.87:2040
+79.172.242.97:1720
+80.82.209.178:1960
+82.221.111.133:1044
+85.195.203.29:1501
+85.195.203.29:8181
+85.195.203.29:9988
+85.195.203.33:1508
+85.195.203.9:1960
+89.163.154.145:2010
+91.109.22.100:7777
+91.236.116.105:1930
+91.236.116.136:1050
+94.156.219.237:1040
+95.140.125.35:1090
+95.140.125.37:1901
+95.140.125.46:1099
+95.140.125.62:200
+95.140.125.76:200
+95.140.125.85:1920
+11111111.noip.me
+24rinces.no-ip.biz
+abdav21.ddns.net
+abudon1990.no-ip.org
+abudon22.no-ip.info
+abusite11.ddns.net
+abyugos.no-ip.info
+abyugos0.no-ip.info
+achuprn.ddns.net
+admin50.no-ip.org
+admin8090.no-ip.org
+admin90.no-ip.info
+adolfo196938.ddns.net
+agary917.ddns.net
+aisulu.ddns.net
+ajeolokun.ddns.net
+akwotie.ddns.net
+albertfrankie.no-ip.org
+alicejav777.ddns.net
+alicejav777.duckdns.org
+alien10socket.ddns.net
+alien12socket.ddns.net
+alien15socket.ddns.net
+alien17socket.ddns.net
+alien19socket.ddns.net
+alien1socket.ddnsking.com
+alien4socket.gotdns.ch
+alien6socket.ddns.net
+alien9socket.ddns.net
+alwadwte.ddns.net
+anglekeys.ddns.net
+anthonywilkinson10.ddns.net
+aptsite.ddns.net
+audreysaradin.no-ip.org
+avprojets.no-ip.biz
+ayomide1.ddns.net
+ayomide123.ddns.net
+backconnect123.ddns.net
+badmanthing.ddns.net
+banban66.ddns.net
+baronbreeze.ddns.net
+barratty.ddns.net
+basketmain1.duckdns.org
+basketxrtz.ddns.net
+ben770.ddns.net
+benabangwu.linkpc.net
+biafra147.ddns.net
+biggestchurch.ddns.net
+biggiechurch.ddns.net
+biggymoney01.no-ip.biz
+biggymoney03.no-ip.biz
+biggymoney2.no-ip.biz
+blessingonblessings.dnsfor.me
+blessingonblessings.ufcfan.org
+bms123.twilightparadox.com
+bongotedllc.no-ip.org
+brownvictor.ddns.net
+bsmarket.ddns.net
+budapest.ddns.net
+budapest89.hopto.me
+bugattiboss.servehttp.com
+bullgard.ddns.net
+calito888.ddns.net
+carlos1388.ddns.net
+ceo.gotdns.ch
+ceoceocompany.gotdns.ch
+chadin.serveftp.com
+chewc47.ddns.net
+chiefonodugo.ddns.net
+chima147.linkpc.net
+chklagos.no-ip.biz
+chris101.ddns.net
+chriswoolmer00.no-ip.info
+chriswork99.ddns.net
+cjfitness.ddns.net
+clemens.dynns.com
+coralgroups.no-ip.biz
+correctip.noip.me
+crest01.serveftp.com
+crest02.serveftp.com
+crested01.serveftp.com
+damuk1.ddns.net
+dave1033.ddns.net
+dellboy11.ditchyourip.com
+dellboy13.dnsiskinky.com
+dellboy15.couchpotatofries.org
+dellboy16.eating-organic.net
+dellboy17.quicksytes.com
+dellboy18.securitytactics.com
+deprueba1.no-ip.org
+destinynnam.ddns.net
+dish-darkcomet2.linkpc.net
+divinee.no-ip.biz
+divinemove.ddns.net
+doingtracks.ddns.net
+donhamza.no-ip.org
+donorder.ddns.net
+dsfgc.ddns.net
+dydx69.ddns.net
+dydx96.ddns.net
+egbowanted2js.ddns.net
+egbowantedjs.ddns.net
+egbowantedjs.fishdns.com
+egede.no-ip.biz
+egombute.duckdns.org
+egombute.no-ip.biz
+emekau2002.ddns.net
+emenike.no-ip.info
+escobar.serveftp.com
+evanovik.ddns.net
+ewillsin.ddns.net
+father60.bounceme.net
+felbankgmailjs.no-ip.info
+felixres015js.zapto.org
+felixresult.no-ip.org
+filezilla.no-ip.biz
+fingers.noip.me
+flexyou.chickenkiller.com
+floffman.linkpc.net
+floffman11.no-ip.org
+focusloa.ddns.net
+francemaes15.duckdns.org
+franklin49.ddns.net
+frankwoodsales.ddns.net
+froidthefucker.ddns.net
+fulga01.ddns.net
+gabito234.serveftp.com
+galaxymoni.ddns.net
+geogelewis90.ddns.net
+georgea.serveftp.com
+gist.no-ip.info
+gmoneydns.duckdns.org
+godwin231.zapto.org
+godwin4real.ddns.net
+goodloves.ddns.net
+goods11.ddns.net
+goooodymegma.no-ip.org
+gta2.ddns.net
+harry150.ddns.net
+harryaleandro.ddns.net
+hdllsy11.no-ip.org
+hedie1979.no-ip.org
+henrry747.serveminecraft.net
+henrygalaxy.publicvm.com
+herura.ddns.net
+hisandu.ddns.net
+holymoney.crabdance.com
+hustler.no-ip.org
+hydrabad-ur.ddns.net
+ifeanyi147.ddns.net
+igbankwuruns.no-ip.info
+ike-jsocket.publicvm.com
+importantloggmal.no-ip.biz
+importloggm.duckdns.org
+indologisticsltd.no-ip.biz
+integralhcs.no-ip.biz
+intergralhcs.no-ip.biz
+iykeben00.no-ip.info
+jacobjsockresyah.no-ip.info
+jacobremittance.duckdns.org
+jadoltd.ddns.net
+jagas21.ddns.net
+jamescage112.no-ip.biz
+javgretest015.chickenkiller.com
+jayson2j.no-ip.org
+jcures.serveftp.com
+jegs.ddns.net
+jesus11.ddns.net
+jgabi.serveftp.com
+jidespa0024yahjs.no-ip.org
+jiokekachi.ddns.net
+jjsmits7.serveftp.com
+joeban.chickenkiller.com
+jonnybary.no-ip.biz
+jonnybary.no.ip.biz
+jry123.ddns.net
+jsocserveronline.read-books.org
+jsucket.hackermind.info
+judalien.ddns.net
+jupita10.ddns.net
+just2015.ddns.net
+justice.linkpc.net
+justicebro.linkpc.net
+justics.no-ip.org
+justicsbro.linkpc.net
+justicsbro.no-ip.org
+justmealone.ddns.net
+justnd2001.no-ip.biz
+justyjohnxplodes.ddns.net
+jvaoluwade.ddns.net
+kane2244.ddns.net
+keithoffman25.ddns.net
+kifego.servehalflife.com
+kingsman.no-ip.org
+kipapos.gotdns.ch
+kissfromarose.ddns.net
+klasik101.ddns.net
+klydest.ddns.net
+kokoman.no-ip.biz
+kuom.ddns.net
+lagostj.servebeer.com
+lashsecurities.ddns.net
+lawrex.publicvm.com
+layziebone009.ddns.net
+leonardomateus131.ddns.net
+leosplint86.ddns.net
+link2bros.ddns.net
+link2bross.ddns.net
+linsom05.noip.me
+lisalove.myftp.biz
+livesyn03.midexim.com
+loandept227.ddns.net
+loandept2281.ddns.net
+logisticsltd.no-ip.biz
+madman1.ddns.net
+magabox126.ddns.net
+mainlandbridge.ddns.net
+manbks123.ddns.net
+mariopuzo.ddns.net
+mascott.ddns.net
+masterchris211.ddns.net
+masterchris221.ddns.net
+mavado.serveblog.net
+max1239.ddns.net
+mcvin.corotext.com
+mega123b.ddns.net
+michael22244.ddns.net
+mikey0147.ddns.net
+mikkyserial.redirectme.net
+millzjsoctrinwi80gm.duckdns.org
+money12.from-ny.net
+money12.from-ok.com
+moneyboss.ddns.net
+moneycee.ddns.net
+moneymind.ddns.net
+moore11.no-ip.info
+morval.ddns.net
+mrmoney.no-ip.biz
+mropera12.no-ip.biz
+mukor.ddns.net
+munachim.linkpc.net
+muratozkan.ddns.net
+myifyboy.serveftp.com
+mypres001.serveftp.com
+myyveon.ddns.net
+nbw09o.gotdns.ch
+newbj.no-ip.biz
+nickre015jsock.duckdns.org
+nikresut015js.no-ip.org
+nikresut015js.zapto.org
+nklove66.no-ip.info
+nonnykey.ddns.net
+nono147.ddns.net
+oba147.ddns.net
+obaniko1111.ddns.net
+obicharls.redirectme.net
+officetartousi.no-ip.biz
+ogawilli.collegefan.org
+okoro.ddns.net
+okpole123.ddns.net
+okwychrist2004.gotdns.ch
+olavroy4.ddns.net
+olavroy44.ddns.net
+omaricha.no-ip.org
+ome.no-ip.info
+onlything4now.ddns.net
+onyechina.ddns.net
+opendoors.myftp.org
+otimmo.ddns.net
+ottimo.ddns.net
+otunba.ddns.net
+panel2.collegefan.org
+passmore1.publicvm.com
+perfomiracles247.duckdns.org
+peter123456.ddns.net
+phcity2090.bounceme.net
+philsa.ddns.net
+plainview.duckdns.org
+plainview.myvnc.com
+pompin02.serveftp.com
+ppppppp12.ddns.net
+prince24.ddns.net
+prince240.no-ip.biz
+professor.myvnc.com
+psarda.ddns.net
+quaver.publicvm.com
+rayman.ddns.net
+reversebaglanti.com
+rmg-20.ddns.net
+roadmaster2013.ddns.net
+rx450.ddns.net
+salesexport.sytes.net
+saleshore201.serveblog.net
+sambahs.ddns.net
+septt.dvrcam.info
+serialcheck55.serveblog.net
+settlement.ddns.net
+shadowmek.ddns.net
+shadowmekz.ddns.net
+silverback.noip.me
+smart12456.ddns.net
+songs.linkpc.net
+spa1dingdiljayah.no-ip.biz
+star01.ddns.net
+starboy.noip.me
+starboy.ufcfan.org
+stevemartins02.no-ip.biz
+stitatn.no-ip.org
+swift.ddns.net
+tanwilliam.ddns.net
+taraba111.gotdns.ch
+tcheckk.ddns.net
+tchecks.ddns.net
+tetetes2222.chickenkiller.com
+theman111.ddns.net
+thisreason.ddns.net
+tiwamade.ddns.net
+toba123.ddns.net
+tojaxx.ddns.net
+tonychucks.chickenkiller.com
+toolsoffice.ddns.net
+tpalmer1955.ddns.net
+trusplus111.gotdns.ch
+ucnas2008.ddns.net
+uniteknolog.ddns.net
+uniteknolog.duckdns.org
+upperway60.no-ip.org
+upright2.no-ip.org
+upright22.no-ip.org
+uyu.webhop.me
+valchijioke.publicvm.com
+vasocserver.read-books.org
+vaspakou.ddns.net
+versionfive.ddns.net
+vivipas.ddnsking.com
+vmoney.ddns.net
+web2016web.webhop.me
+wellspring4life.ddns.net
+whichway.ddns.net
+willyd01.ddns.net
+wlkd.myftp.org
+workshopjs.ddns.net
+workshopjs.fishdns.com
+writtings.ddns.net
+xsubin3310.sytes.net
+ypfbackup.mylenovoemc.com
+zivva007.ddns.net
+zoee.noip.me
+zubi009.serveftp.com
+
+# Reference: https://www.virustotal.com/gui/file/c3939fa97d68cd3d0f4e2cd60639d85a193c45ac5f2521c5323e990283bcabf4/detection
+
+3.17.202.129:14376
+
+# Reference: https://www.virustotal.com/gui/file/cf563cd799e928394992ddd48155288dabf9066cc99cbaa8071537ad021283eb/detection
+
+178.124.140.136:1819
+
+# Reference: https://www.virustotal.com/gui/file/d5f6a3da788d841a7e274cfe96c51de1ff93c52665d8907074a432e088812cd9/detection
+
+181.58.154.33:1990
+octubre132.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/218c3f051a1bc1a97df08bba2b2c4f94bcdadd2e96bf5edc8ef5a344f761e80f/detection
+
+prueba111.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/1aa680dad128402bed8655d4537f72f872120a825cd279052f3c83f6edf72aea/detection
+
+valeriaaaa.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/0ded916662ff3a40b98b7a8e2ae85e466797dc508baf2a6ccf97b1b5a8d425fd/detection
+
+contoda.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/367def98e7a3d0b3af07add144180dc09e4e29b1eb9181a51c338a9cf09b8f06/detection
+
+79.134.225.97:4040
+
+# Reference: https://www.virustotal.com/gui/file/90424d7871460fc8bed6d97ee6e04f239aa94881577bc7c73a8d948ad301396a/detection
+
+79.134.225.97:2265
+catoma.ddns.mobi
+
+# Reference: https://www.virustotal.com/gui/file/2c62f7a1c4181be5c5f51b5f24e47560621c11a05d4378627221bcd9ec3ef33f/detection
+
+194.5.97.192:3883
+79.134.225.118:3883
+asorock0011.ddns.net
+wcbradley.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/3ce95411c9c15376383825de3c8e76de13771dcff174f407e40e77449c6d4ee2/detection
+
+79.134.225.118:3838
+
+# Reference: https://www.virustotal.com/gui/file/d266db16312bb5928539e4c6e755d426b632a1dbd889335aad6f53c9b08d2208/detection
+
+79.134.225.72:1960
+
+# Reference: https://www.virustotal.com/gui/file/37a10b36393dbfdea470b479a3c360d402c0f40158aa85f276b7686a728a50e5/detection
+
+23.239.31.129:7758
+pluginsrv2.duckdns.org
+
+# Reference: https://app.any.run/tasks/b6a3ff74-0425-441d-8cbb-fa3b855562cf/
+
+20bigblessings.mydissent.net
+79.134.225.50:8882
+
+# Reference: https://www.virustotal.com/gui/file/cead736f873fae8439376046c523aedcd22255ffb6e234e8a8d976ed0b696c40/detection
+
+187.58.54.82:2013
+191.32.226.191:2013
+
+# Reference: https://www.virustotal.com/gui/file/9974f24c3f7b6580ee8fe870c9c2397a847c82a960430b0314a653b0c1bd75e9/detection
+
+191.32.178.215:2013
+191.32.178.215:3131
+
+# Reference: https://www.virustotal.com/gui/file/b9ba82d60dfd07cd3c2cf1e5a1d5049deae50feb64829ecde09de88a9f248cd3/detection
+
+179.162.213.108:2323
+
+# Reference: https://www.virustotal.com/gui/file/bdb9c8539ea244ec09071e6a1de0cef521cd8b275c0a0b1fb1e99d77b71b9ec3/detection
+
+179.181.230.151:2323
+
+# Reference: https://www.virustotal.com/gui/file/5e86b9db438a55e4e5ff295b83ac8d85c58d9a2a81e992f72aaa7f13729f4e56/detection
+
+186.212.120.244:2013
+
+# Reference: https://www.virustotal.com/gui/file/7456d8c042bb6ce20fc0675fcda36def6a2e913f9aba6895bd846b13e2cfc688/detection
+
+41.190.3.139:2011
+41.190.30.38:2011
+41.190.31.111:2011
+91.192.100.13:2011
+
+# Reference: https://www.virustotal.com/gui/file/706d442630e1505c69f1ccd33e74ae87a5a228cea5dd3de1337f38157e1915c3/detection
+
+41.190.3.228:2011
+
+# Reference: https://www.virustotal.com/gui/file/037ea24fae24dbea5b016a5fbae69ad4866426665e673c43b6b9def1f5c2b287/detection
+
+41.190.31.78:2011
+
+# Reference: https://www.virustotal.com/gui/file/ce56803cae1069908fc47087d6d8fbd1278ae72bc36966694e35da564822446e/detection
+
+91.192.100.4:2011
+
+# Reference: https://www.virustotal.com/gui/file/5fb861fc7742dfb97b04558d23ab4c260eaf2c1178d811a429c86e18f38edb28/detection
+
+91.192.100.4:9222
+
+# Reference: https://www.virustotal.com/gui/file/395a63b07a1275522ed8867d6402abba3b81bfcafedfdd4cc42d9d7b12b03868/detection
+
+41.203.78.170:2011
+
+# Reference: https://www.virustotal.com/gui/file/f2d38c3ec356af1e8841756673967128d0cbe51a491b68ced4ae1dd6a9db4166/detection
+
+41.190.31.123:2011
+
+# Reference: https://www.virustotal.com/gui/file/ab4e72ae86ecc5ec5fd7fe5e727ebc069c4803fd34e975c6054fa85cf4a73f8a/detection
+
+41.203.78.32:2011
+
+# Reference: https://www.virustotal.com/gui/file/3dde4252454cac3c661872c21e33422701d2ca7cb13355960201a8dfe7ee2f51/detection
+
+41.203.78.138:2011
+
+# Reference: https://www.hybrid-analysis.com/sample/d5dd3ecdd85e2c9e45c0b1e4985b28b33bc2ff187a7ae3d971fe6a216755c85e?environmentId=100
+# Reference: https://www.virustotal.com/gui/file/d5dd3ecdd85e2c9e45c0b1e4985b28b33bc2ff187a7ae3d971fe6a216755c85e/detection
+
+baykusgiller.com
+vcvk7exvko3z2bds.onion.to
+
+# Reference: https://twitter.com/wwp96/status/1222645211240726530
+# Reference: https://app.any.run/tasks/39f45632-4342-42e0-ada0-56dff7c84970/
+
+178.124.140.147:1789
+helstonswanadoo.ddns.net
+
+# Reference: https://app.any.run/tasks/817c99d5-5ef1-4ca3-a693-7539d094a166/
+
+216.38.8.164:4001
+20bigblessings2.couchpotatofries.org
+
+# Reference: https://www.virustotal.com/gui/file/ed5949c09e6857ed50b3c291a0650b461804b2bbe73d4cbabd8018aea0fb8981/detection
+
+141.255.150.182:1010
+zueirayoutube3.ddns.net
+
+# Reference: https://research.checkpoint.com/2020/the-turkish-rat-distributes-evolved-adwind-in-a-massive-ongoing-phishing-campaign/
+
+103.75.18.143:1505
+104.168.172.6:1505
+142.11.193.240:1505
+142.11.217.142:1505
+192.236.199.190:1505
+192.64.119.165:1505
+192.64.119.206:1505
+23.254.230.161:1505
+50.118.227.137:1505
+12724.xyz
+15438.xyz
+21736.xyz
+
+# Reference: https://twitter.com/pancak3lullz/status/1230549131367788544
+# Reference: https://app.any.run/tasks/31b6c79e-2e31-4968-975c-2af7bea669ac/
+
+194.5.99.230:1119
+anyi.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/db878d867305c1d582c7fd4dd24ad7a5551fe21fbc9c8df3937b771697d9c6a9/detection
+
+137.101.45.115:7778
+starhost323.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=08f111153f02f4b9fdac7a90bbbf598b
+
+googlemail.zapto.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=60b449cc43809e98ebf9396022728827
+
+prietochris18.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=19dd4dbb5bf05fc9b4149bd109eaff98
+
+nokia3310.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=049b159904ba88686c5237a447e93c7a
+
+rolltrain.noip.us
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=48da549826c2395fc84d1f6f9487aca1
+
+richardvitalis.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=4ec5ee22e0e37a77414921c67b4cd869
+
+felixduck.duckdns.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=4ec5ee22e0e37a77414921c67b4cd869
+
+felixduck.duckdns.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=008b081a545a04bdc543763b9058dd7f
+
+miikeymouse1978.hopto.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=1ec7139605fce1f9f74cfca213d3bba7
+
+lionelmor.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=47ec9de5272c4e5bda7aa6608a296894
+
+karenmontari.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=b21909930198ff5b2a6bd5496310f8fc
+
+trackman.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=b34ce1853b0fdddae09bec7879ce0178
+
+workshopnonso12.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=3726b2045c3963595eb8514d4ec6489e
+
+dlee01.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=015139b1eee53a37ad5fffd56abb4b88
+
+lucky2wise.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=0a5608d197c8e5a8c69ae4732a097847
+
+msrtcse.noip.me
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=15aca7a095165c10ec7ebcb3e1e4250a
+
+doncjpd.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=1600004daf446b8fb77c0334e1c74d93
+
+code202.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=352dd07c7b5c43582c564ec39e93b768
+
+abdullahjbi.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=554fc5f47852fc2944c8d84233d51ce7
+
+kareer.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=9adde43f51fa6cfabe98f006435c39fb
+
+jra5johre70gm.duckdns.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=a12604f45faf2cd81752042bd31f1470
+
+lucho9977.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=c106c2d5ce7b9fa2d29f0e4fc1ea24df
+
+saleshack.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=e8d1071a1b92f5a69cf28b85eccb9c55
+
+poweleric.hopto.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=f272ad54c27bd1a3c669c98e00b71dab
+
+newbomb2016.no-ip.info
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=f5dc493adda7d2da828150139059b19f
+
+cjempire.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=b095aa4f9bb4de5aaa2b16b8c308171f
+
+maxxisng.duckdns.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=1b419e93c31499a974550e5f48bdd521
+
+bbuser.no-ip.biz
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=27295b1d7b2f3b62abb2d1289cd1334d
+
+iremit2017.duckdns.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=27d2dd80ce043b5cba504d2e8f45a237
+
+justasking.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=2a9a3cb74dc59df9a0dcc8d70c5fbf55
+
+catchmeifucan.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=3019bd742a0df8e2b7ea5d241df693c8
+
+freshstatz.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=46e207ad21ee8c935590470e416d141e
+
+chintonlntecc.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=5d1803a306a0cbfc0c4bb695e06f73a9
+
+kukere.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=61ae6691dbf4ab6c0aa9ba598fcc31da
+
+chintonlntecc.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=7331a1e782f6bba4c6c68c495bbe527f
+
+frankman703.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=79fd6d1b5aea5747e5523918b7bc0bc5
+
+mrichard00721.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=7bd499b2c26661f097699fca1c86b74b
+
+maryfrasch0984.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=a03f9e760f2acb05797e0114e9cee802
+
+simcogroups.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=a99041586a202ab4ec000401f31ce2b2
+
+darlington.hopto.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=dd233fc76a9dd8fece2fc9caad93de16
+
+mrfresh.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=e7ce709d176060de6f8d80a051c67597
+
+snackebay.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=ee2692da8fb00bb189c2268c255c65c7
+
+r00tlife.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=89e5e2337ee7a24d3ad242cc44a630f2
+
+kristinadodge.sytes.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=648662d41155ec99a8b527eef83edaf2
+
+ipy.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=615f6f5691b9bb649e0be624e71ab110
+
+jamesdilon.no-ip.biz
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=e09ac3cff56f465cffef95b880c21b5a
+
+frankola.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=0f762d23fb96ef3f255c624b4afc8b12
+
+shadowincz.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=14778a33bcd47cc4a29fe49028ce5e41
+
+amosmarcus87.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=2769eb1e8ee85895d658b08a89be2cd9
+
+ciaamerica.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=41441ce70f4da20519c255966544d371
+
+hackmakersme.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=a15d1360270e11664a103284be7dbae8
+
+gedy.linkpc.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=d7d5a45d7fdcd283e82f34de17472b14
+
+jbiimpologm.duckdns.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=34780a2ef04a3747e1f0e7be18755613
+
+unknows.no-ip.biz
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=c375f322573614e22c555cfcc2badb1b
+
+pop2231.no-ip.biz
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=8c102d0c291da868adf7ad3be17efa74
+
+jbiimpologm.duckdns.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=1d9be66932ac114d34ad4492b084e855
+
+henry101.linkpc.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=1bdb80883d3d9c225ce06295bdacab12
+
+configservi2013.sytes.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=66306de38869d8c513a18d0669efb514
+
+desgarrada.no-ip.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=859aee85c906edc27d302db3acf41e36
+
+jefffernando.no-ip.biz
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=8e2882ef522ed2e92e9a4486ce156f63
+
+desperado.zapto.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=9d0a2a943af15d84dd8068888d000db9
+
+selkrom.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=2c73ab73d3171be073746f51e43b4a57
+
+ikemello.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/976df4e2e00197cb77ee00b3240cd34ad4fe56692be59bbd6991803b77f79b8f/detection
+# Reference: https://www.virustotal.com/gui/file/dc5cb8bef2fbbe0d393b6126bd4ce188eb94179123aced7bdb6e10d515016f35/detection
+
+212.114.52.84:2803
+79.134.225.72:5098
+egd147.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/c14b152207f83bfa7e3098aa504cbdef2c5aec9fadf80d37f9f83dfaf1d1e4d3/detection
+
+79.134.225.97:2016
+godbless.camdvr.org
+
+# Reference: https://twitter.com/Racco42/status/1246027148168749057
+# Reference: https://app.any.run/tasks/8918883c-f6cf-4307-9326-d8c0a88873d4/
+
+103.99.1.76:9087
+
+# Reference: https://www.virustotal.com/gui/file/d13b7029d5d26cf40400b796447f8889962b352073217885606a5c8b11463069/detection
+
+79.134.225.114:5040
+samesame.publicvm.com
+
+# Reference: https://www.zscaler.com/blogs/research/compromised-wordpress-sites-used-distribute-adwind-rat
+# Reference: https://otx.alienvault.com/pulse/5eaacfb46ed903dfb0b097dd
+# Reference: https://www.virustotal.com/gui/file/ec654df6004e6806372c1a46260335925fca79ad53ee6f1e659679a2a70e08f3/detection
+# Reference: https://www.virustotal.com/gui/file/86f977659524bde3ab16750590eb503a5b900dc1b317508ef439f16eb3dd97a0/detection
+# Reference: https://www.virustotal.com/gui/file/74f8ea60c4fee2432b1001978264e2e37a51142de29ff2f580d69e6cfd3cbf45/detection
+# Reference: https://www.virustotal.com/gui/file/c055353eb7e266784cb5e3e0008ee663611a88be7202b6aa9e075d13c065a91f/detection
+# Reference: https://www.virustotal.com/gui/file/5a0c8206316607e62ab69bbd94218be0566acc772aa9a3321c8f66f34e7d61f2/detection
+
+212.114.52.236:9932
+23.105.131.223:1010
+37.48.92.195:6025
+45.153.240.114:5252
+45.153.240.114:5858
+79.134.225.111:1010
+79.134.225.45:1010
+dlee889.mywire.org
+gwiza1988.hopto.org
+lay.dubya.us
+praisesalways.ddns.net
+wawa.cleansite.us
+
+# Reference: https://www.virustotal.com/gui/file/268b0ce9a1447c0ae385ecf69c3a1a171f9de836a36f27b792a34831060379e3/detection
+
+79.134.225.72:2990
+hurricane.rapiddns.ru
+
+# Reference: https://app.any.run/tasks/afa3e293-a1d0-436d-8773-8b0cd3656aba/
+
+185.140.53.161:20982
+
+# Reference: https://app.any.run/tasks/b4d3c6ab-d3d3-4020-b595-6fee469d31ea/
+
+213.208.129.198:5564
+
+# Reference: https://twitter.com/Bank_Security/status/1263021792727306240
+# Reference: https://www.seqrite.com/blog/java-rat-campaign-targets-co-operative-banks-in-india/
+
+151.106.30.114:9045
+jasmon6.3utilities.com
+
+# Reference: https://www.virustotal.com/gui/file/2fed1e0576e9e953e25b3c9d9672d8316f697527db3725d5d7bce9617b039d04/detection
+
+axibaindofour.sytes.net
+
+# Reference: https://app.any.run/tasks/94ec3065-3b39-447a-ae65-b70a58946dd0/
+
+167.86.118.236:7777
+
+# Reference: https://app.any.run/tasks/e45777f7-9155-47ef-a624-117ba4a15695/
+
+185.165.153.116:7896
+xvetcons085.linkpc.net
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1298562581137956864
+# Reference: https://app.any.run/tasks/c942cf10-80c1-4100-bd51-a4bb407a1588/
+
+193.26.21.227:7215
+network2020.ddns.net
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1298569831919353858
+# Reference: https://app.any.run/tasks/958a6366-340f-4503-add3-0a3fc7e20e6f/
+
+185.140.53.132:6868
+abc77.linkpc.net
+
+# Reference: https://twitter.com/Racco42/status/1301120815421968386
+# Reference: https://app.any.run/tasks/24992ec2-23f5-4ca4-bd10-4aa588131bde/
+
+154.233.66.26:10587
+armsvc.duckdns.org
+
+# Reference: https://twitter.com/SiberTurkce/status/1313377160124682240
+# Reference: https://app.any.run/tasks/fb4719ef-cae2-4f73-9497-0c9d12249741/
+# Reference: https://app.any.run/tasks/b3a95dd8-0a07-4b0d-8370-07d2b931f53f/
+
+185.136.168.164:4090
+azbbhooo.3utilities.com
+
+# Reference: https://cert-agid.gov.it/news/jrat-strade-alternative-per-una-rapida-analisi/
+# Reference: https://app.any.run/tasks/dd9bf9e0-861b-41e5-b58f-c17befd75278/
+
+ramos01.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/1ab093181a323979ae2f347e515c96be3c129e37fb2a3f6410826d1d8263d195/detection
+
+boardxe.ddns.net
+
+# Reference: https://gist.github.com/silence-is-best/0aa844b003c62c6ce491e91e168ac662
+# Reference: https://www.virustotal.com/gui/file/38b51c4953d002e0d7f4b261aebf8cb58905619ab1a8220ffb99b24d3fed812f/detection
+
+185.19.85.164:7435
+
+# Reference: https://app.any.run/tasks/15a27dc2-7f6c-4b12-960b-d02cad791ad9/
+
+148.72.153.208:5408
+host-windows10.publicvm.com
+limitededitionphotos.nl/wp-includes/ID3/jre.zip
+
+# Reference: https://blog.malwarebytes.com/cybercrime/2017/01/from-a-fake-wallet-to-a-java-rat/
+
+104.239.166.119:8080
+jamoos88.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/b999586a2660a5df73e36bd7f40b7bc40386165672a8a18048d2b5ec638004fb/detection
+
+84.195.75.31:3175
+firestormy.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/dfa4ffb05bc1416ff28302312f1929d7d394755f59ae36a4fc0b8797650256e7/detection
+# Reference: https://www.virustotal.com/gui/file/c5be24f2b7855a0caad13979c9e1192f36cd121108b488a134d6db67c37c2c6d/detection
+
+ntums330.hopto.org
+
+# Reference: https://twitter.com/reecdeep/status/1355126694928068610
+
+103.114.107.184:7180
+
+# Reference: https://www.hybrid-analysis.com/sample/598b45c25244fd8bfbf4fe23aa068fd05c24e05e36855aa55a6838e9ca173aed
+
+91.236.116.180:6969
+91.236.116.180:7676
+
+# Reference: https://app.any.run/tasks/c26517b3-2873-456c-867e-41921424ffbd/
+
+193.218.118.85:2580
+n3wt0nmax1.duckdns.org
+
+# Reference: https://app.any.run/tasks/bb0d0f56-8693-4e95-93df-5d562303bf7c/
+
+140.238.243.50:2021
+
+# Reference: https://app.any.run/tasks/54fcf03d-ee51-4b6f-a403-97eb3d2edd42/
+
+154.44.177.60:7215
+bmuvictoire.ddns.net
+
+# Reference: https://app.any.run/tasks/4c190041-3f57-4414-9bbc-d67a0742078a/
+
+178.175.138.167:6022
+vvrhhhnaijyj6s2m.onion.casa
+
+# Reference: https://twitter.com/reecdeep/status/1434787970943492098
+
+185.140.53.8:3285
+45.144.225.174:3285
+jrat.io
+
+# Reference: https://www.virustotal.com/gui/file/eabf2a334e6ee01ef29a63ecacf050b04ad560849eeb2fd2fd6d4c0459e51611/detection
+
+3.131.147.49:16035
+3.138.180.119:16035
+minoip.ddns.net
+rtdns.ddns.net
+
+# Reference: https://tria.ge/220831-ffn9aaafg8/behavioral1
+
+3.138.180.119:19773
+
+# Reference: https://twitter.com/James_inthe_box/status/1567559608318971907
+# Reference: https://app.any.run/tasks/ce2d9c54-1d92-485c-b1da-6b641cecd5c5/
+
+185.222.58.76:2023
+ogolo2.ddns.net
+
+# Reference: https://twitter.com/cluster25_io/status/1575792572043345920
+
+192.236.233.134:1505
+198.84.122.7:1505
+69.49.244.100:1505
+99.83.154.118:1505
+54121.ml
+bafaholding.online
+discovery.tk
+findingisaure.ml
+runtimecollectors.tk
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2022-02-14%20JavaStealer%20IOCs
+
+62.197.136.69:1122
+
+# Reference: https://www.virustotal.com/gui/file/961ff06f1d74e63d4127f4ae1994af49a31752ccfb10a252e369fb054e9702af/detection
+
+217.69.7.171:8000
+
+# Reference: https://www.virustotal.com/gui/file/17a05455a01f38f0e104c4860bc2b92195f40f898299bac2d3d7f123571f9ab3/detection
+
+176.97.70.164:4411
+
+# Reference: https://twitter.com/James_inthe_box/status/1656394858918195200
+# Reference: https://app.any.run/tasks/679e49d2-b526-4b30-b41a-87c409097fa8/
+
+78.142.18.221:441
+
+# Reference: https://twitter.com/doc_guard/status/1668330410353500162
+# Reference: https://twitter.com/Jane_0sint/status/1668596338810814466
+# Reference: https://app.any.run/tasks/6c428953-1a1f-48a0-82ae-8a1ada4608a0/
+# Reference: https://www.virustotal.com/gui/file/967bd12470b7d6f3812162595d8d6668bb21ba5234f5bba6ea96b0738e52db9a/detection
+
+185.196.220.2:4433
+savuom.web.app
+
+# Reference: https://app.any.run/tasks/c9885212-b5db-4784-845f-bedf7c6bcef0/
+
+23.26.248.208:2222
+rat19.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/def443516429c35414f868da0dc682e6d5964f069fc494f6a934333d03b3eeb6/detection
+# Reference: https://www.virustotal.com/gui/file/a1d76293458ba27ac804188fa7d0e699610cfa9d68da12ec725e3675b363168f/detection
+# Reference: https://www.virustotal.com/gui/file/0082f5c5f567821fa16dd2f979a60c349a134208a5f7d37e5153b6462adaa73a/detection
+
+103.212.81.154:1313
+mountain101.ddns.net
+
+# Reference: https://twitter.com/James_inthe_box/status/1699500419607884142
+# Reference: https://app.any.run/tasks/ce1f0992-988f-4131-8b64-771dc55e6eb3/
+# Reference: https://www.virustotal.com/gui/file/634b6c0a26e822e2c6ba3d9f667c6d41abb76ea8b171b8376907e5151a95b227/detection
+
+89.117.74.176:9090
+
+# Reference: https://www.virustotal.com/gui/file/15981db13e40f04523d3be5e12a03490e9483d4afd2cf0361443d558f941518d/detection
+
+89.117.74.176:8081
+
+# Reference: https://www.virustotal.com/gui/file/6e0dca64a5a1ce09c1a4bca1b3ebdd317c01e028c412bc608c9fd0d1ad8d0c00/detection
+
+89.117.74.176:2626
+
+# Reference: https://www.virustotal.com/gui/file/e8c778bd86e7bb720eea9bf3fedadda06cf5b9d0b4abc11cf50b5622e66e963a/detection
+
+62.197.136.5:5020
+vjroyal.gleeze.com
+
+# Reference: https://www.virustotal.com/gui/file/e69dd2879033239de6a756acd60d3bd692cf4bb474cd830f9a0ed03ebe364315/detection
+
+185.101.94.172:5500
+
+103.212.81.151:5083
+employeenet.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/189342805525785366fe64e471aafa9560af419f9111b113a04d7c842868800a/detection
+
+147.185.221.18:27255
+think-sports.gl.at.ply.gg
+
+# Reference: https://www.virustotal.com/gui/file/a746ca9f01e67dd9f52984b5449c49d237c6e758ce7e71ac4720365e44c931ee/detection
+
+141.98.10.96:8088
+
+# Reference: https://twitter.com/Jane_0sint/status/1787782727514701929
+# Reference: https://app.any.run/tasks/fe46b867-7153-41fe-9db6-2b33580d7328/
+
+147.185.221.19:45197
+19.ip.gl.ply.gg
+
+# Reference: https://cert-agid.gov.it/wp-content/uploads/2024/06/adwind_11-06-2024.json
+# Reference: https://www.virustotal.com/gui/file/063c961e2a855512edf72da7174b2e772900091e8ac0002bcd396878059230c0/detection
+
+65.38.120.211:7709
+
+# Reference: https://cert-agid.gov.it/wp-content/uploads/2024/06/adwind_11-06-2024.json
+# Reference: https://www.virustotal.com/gui/ip-address/65.38.120.211/relations
+# Reference: https://www.virustotal.com/gui/file/0c3f4046b57e0e5b5d87b817641c1142b9b1fb5ae9d3502b8d14f413c3c942b8/detection
+
+65.38.120.211:7720
+718port.cloud
+associacao.site
+bardoprimo.site
+batatadoce.host
+batataria.shop
+batatas.site
+batatascodes.store
+borges.press
+casadasmassas.site
+casadomarceneiro.store
+casadospets.fun
+casafreitas.shop
+centraldemonitoramento.site
+clubdevendas.site
+clubdobolinha.shop
+construtorasilvaemendes.com
+csrss.pro
+cuidadoresdeidosos.site
+floriculturamadelena.cloud
+frutariadazeze.store
+guardianrat.shop
+guiaantoniogetulio.shop
+guiaturisticoantoniogetulio.shop
+imagems17.appsabs.site
+imagems20.appsabs.site
+immobiliarebelliniepecunia.xyz
+imperio23.cloud
+imperio23.site
+imperiodosabor.shop
+ittnetprovisorio1.websiteseguro.com
+javmonitor.shop
+lojasdamamae.cloud
+merceariadobraz.shop
+moduloj.lamsnajs.site
+padariamaebela.shop
+passo2.appsabs.site
+peixariadobranco.store
+petshopdog.shop
+piracanjuba.fun
+pitdogdamamae.shop
+pizzariamadeira.store
+schwefel.shop
+suacasa.host
+vendasbatatas.online
+vendascasa.cloud
+vendascasa.shop
+vendascasaonline.site
+vendasdatiazeze.website
+vendasdecasa.shop
+vendasdecasas.online
+wordkl.fun
+ch23.gotdns.ch
+ch24.gotdns.ch
+api.qpps.site
+go.qpps.site
+
+# Reference: https://www.virustotal.com/gui/file/5b72625c2a976372c4301920e6ec66fbb900dfa2411a707cb8725ae7f76bde79/detection
+
+65.38.120.211:35521
+
+# Reference: https://www.virustotal.com/gui/file/4e846215bf3b51801c78ed9624eb665bdc6e4c0974a2708e554557bdcff4ef37/detection
+
+d1edjitku05yrj.cloudfront.net
+
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/sambaspy-rat-targets-italian-users/113851/
+# Reference: https://www.virustotal.com/gui/file/493c06f71f857d2f349bc2072677d94c9186656de21452fe2a6641e43c95288e/detection
+
+belliniepecuniaimmobili.com
+belliniepecuniaimmobili.com.br
+belliniepecuniaimmobilisrl.online
+belliniepecuniaimmobilisrl.shop
+belliniepecuniaimmobilisrl.xyz
+bpecuniaimmobili.info
+bpecuniaimmobili.online
+bpecuniaimmobili.xyz
+immobiliarebelliniepecunia.info
+immobiliarebelliniepecunia.online
+immobilibelliniepecunia.me
+immobilibelliniepecunia.online
+immobilibelliniepecunia.shop
+immobilibelliniepecunia.site
+immobilibelliniepecunia.xyz
+appsabs.site
+lamsnajs.site
+lskbd.site
+qpps.site
+serverakp.site
+wedmail.site
+66d68ce73c83226a.ngrok.app
+
+# Reference: https://threatfox.abuse.ch/browse/malware/jar.adwind/ (# 2024-09-24)
+
+103.151.123.225:5000
+103.187.4.71:1990
+107.175.101.209:7865
+107.182.129.86:2023
+109.206.243.106:1605
+109.248.144.177:1947
+139.28.37.109:5200
+141.101.134.39:7896
+141.101.134.51:7896
+155.94.211.9:42119
+172.111.141.63:5888
+172.93.187.66:19844
+178.170.138.163:1983
+185.106.123.201:702
+185.140.53.137:5000
+185.19.85.160:9641
+185.19.85.175:7412
+185.222.57.238:7788
+185.222.58.110:1780
+185.222.58.242:1781
+185.244.26.223:7551
+192.236.198.236:1505
+192.236.198.236:1506
+194.180.48.197:8123
+194.5.98.52:1407
+194.5.98.5:1604
+201.212.118.175:444
+202.55.132.51:2245
+202.55.132.51:2256
+204.44.127.146:20188
+23.105.131.204:2828
+37.0.14.215:5200
+43.226.229.92:72
+45.138.16.101:1900
+45.147.231.41:5001
+45.74.38.17:5000
+46.183.220.114:44147
+46.183.222.88:22288
+46.183.223.47:7777
+46.183.223.64:22364
+66.154.111.3:1993
+79.110.62.95:2023
+79.134.225.10:2022
+79.134.225.69:7551
+79.134.225.77:6020
+80.85.154.91:6600
+84.38.129.32:33160
+ianticrish.tk
+pnauco5.ddns.net
+
+# Reference: https://www.fortinet.com/blog/threat-research/multilayered-email-attack-how-a-pdf-invoice-and-geofencing-led-to-rat-malware
+# Reference: https://www.virustotal.com/gui/file/a1c2861a68b2a4d62b6fbfc7534f498cefe5f92f720466d24ae1b66ebc9f5731/detection
+
+130.51.20.126:4435
+jw8ndw9ev.localto.net
+l5ugb6qxh.localto.net
+
+# Reference: https://x.com/JAMESWT_WT/status/1923350275974131939
+# Reference: https://x.com/JAMESWT_WT/status/1923357014803062942
+# Reference: https://app.any.run/tasks/c3024fe3-e73c-4416-9a50-1d7b07bc069d
+
+31.14.17.141:4414
+1po56mdxc.localto.net
+dc8vcreun.localto.net
+pqtejl5dd.localto.net
+fdsxzxcgghadahdhgadsfdsfhghgcxvyjdsjjthrgbewagddxhg.ngrok.dev
+
+# Reference: https://www.virustotal.com/gui/file/182e8a68a27aef377d289f49d6323f4293e6605c2ada0bf111cf70d2802dbde3/detection
+
+194.5.99.111:17175
+ikenna.dynamic-dns.net

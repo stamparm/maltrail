@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/malwrhunterteam/status/1838500098101084428
+# Reference: https://app.validin.com/detail?find=BLACKNOTE&type=raw&ref_id=23a0459a923#tab=host_pairs_v2
+# Reference: https://www.virustotal.com/gui/file/ddf1aa91bcbad92708982d12fed7fc674f2b90f4c20c23b0ac4552f946ba914b/detection
+
+http://45.120.177.133
+45.120.177.133:22
+45.120.177.133:3000
+black-note.com

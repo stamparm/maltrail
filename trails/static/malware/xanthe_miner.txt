@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2020/12/xanthe-docker-aware-miner.html
+# Reference: https://s.tencent.com/research/report/1177.html
+# Reference: https://otx.alienvault.com/pulse/5fc6767d4cca089129062db9
+# Reference: https://www.virustotal.com/gui/domain/xanthe.sh/detection
+
+138.68.14.52:8080
+165.22.48.169:8080
+34.92.166.158:8080
+xanthe.sh
+monero.gktimer.com
+xanthe.anondns.net
+
+# Generic
+
+/adnckil
+/adnckil2
+/xanthe

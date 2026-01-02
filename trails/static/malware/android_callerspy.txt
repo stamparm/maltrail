@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/mobile-cyberespionage-campaign-distributed-through-callerspy-mounts-initial-phase-of-a-targeted-attack/
+# Reference: https://otx.alienvault.com/pulse/5de55f62ae6f760eb8aab74a
+
+18.206.105.66:3000
+3.95.71.123:3000
+40.114.109.69:3000
+52.21.5.241:2000
+gooogle.press

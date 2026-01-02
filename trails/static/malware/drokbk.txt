@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.secureworks.com/blog/drokbk-malware-uses-github-as-dead-drop-resolver
+# Reference: https://otx.alienvault.com/pulse/6397730b50d5920f113f9446
+
+http://142.44.149.199
+http://142.44.198.202
+activate-microsoft.cf
+dns-iprecords.tk
+oracle-java.cf
+universityofmhealth.biz
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-04-25-v10307/507
+
+sync-system-time.cf
+update-windows-security.tk
+
+# Generic
+
+/gsdi546gsja

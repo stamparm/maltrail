@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2019/10/threat-roundup-1011-1018.html (# Win.Worm.Esfury-7292180-1)
+
+0-0-0-0-0-0-0-0-0-0-0-0-0-37-0-0-0-0-0-0-0-0-0-0-0-0-0.info
+0-0-0-0-0-0-0-0-0-0-0-0-0-9-0-0-0-0-0-0-0-0-0-0-0-0-0.info
+2e-01j-y1a-zu-s-no-bq-q1p8-qjr-j1hr-nh8-22-af3q-7q-gu-7.info
+5-68-wk-5g-z2-pu6-e5x-4h-yij-yx-duv-wpx-2r8-7vc-ox-4q-u.info
+81r-x7-tr2p-7c-5lk-huxs-0wq-bma-0wvi-2y-a8s-elw-hv-o0-6.info
+h6y-aj-r6-ut0-jwl-9-th9-i4k-nt1s-sz4-mk4-ahr-hf8-yi-c-6.info
+i-9t3-sy-7i-5j3-sf7-8z5-54-n8v7r-0-ih7-36992m-o3-0q-g-3.info
+mw9g-ns-k-q0-e3r-6s-23-m2wf-7xy1z0-c0u-5wc-g0rb-2-1-5-l.info
+p9b-8-na-5w-2z3-djmu-7pk-qy-0-bok-re9-ym-v9h-av-njx-2es.info
+rb-e-e3-j-fi-1-il-h-il-3e-z-u-r-u-lk-h-wm-3-6-g-0o-s-dx.info
+v32c-to-5-8w-0yc-tzl8-h2a-7f-ezc-oxt1-7-8y-0elh-be-3k-d.info
+xz5-af-fj-o4-it-ok-n-9j-zjg-pz9x-1z-zekv-y4f-acg-cq3v-j.info
+z-hk-yl8-k-7o-8z-l-v-uhb-u-td-8i-oe-0gp-e2g-we6-ws-2vpd.info

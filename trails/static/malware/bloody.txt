@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/3xp0rtblog/status/1380087553676697617
+# Reference: https://urlscan.io/result/036b941a-116c-46af-89ca-f09243400b81/
+# Reference: https://app.any.run/tasks/acca20de-9928-4ba1-be07-86884f79bf74/
+# Reference: https://www.virustotal.com/gui/file/f1e69833ed94c69e8e447ab280d677dbf3bd7df8fcc3aa1fc819fbe58703e9c7/detection
+# Reference: https://www.virustotal.com/gui/file/8e0fb8a88118787644f807d2c7d746cf2d35888aff6031a28888f024187f6d02/detection
+
+a0524310.xsph.ru
+gwrg23445b235245ner.mcdir.me
+
+# Generic
+
+/BBBBBBBB/
+/AAAAA_BBBB_BBC.php

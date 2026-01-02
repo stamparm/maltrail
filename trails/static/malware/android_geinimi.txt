@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2011-010111-5403-99&tabid=2
+
+widifu.com
+udaore.com
+frijd.com
+islpast.com
+piajesj.com
+qoewsl.com
+weolir.com
+uisoa.com
+riusdu.com
+aiucr.com

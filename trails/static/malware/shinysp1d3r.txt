@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: shinysp1d3r ransomware
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-11-21-IOCs-for-ShinySp1d3r-ransomware.txt
+# Reference: https://www.virustotal.com/gui/file/670a269d935f1586d4f0e5bed685d15a38e6fa790f763e6ed5c9fdd72dce3cf2/detection
+# Reference: https://www.virustotal.com/gui/file/62dc6ed7c83769648b5c59ad9cc2a4e26daec96a952eb44c93fd45f2011a3444/detection
+# Reference: https://www.virustotal.com/gui/file/3bf53cddf7eb98d9cb94f9aa9f36c211a464e2c1b278f091d6026003050281de/detection
+
+sh1nysp1d3rxyz123456789abcdefghijklmnopqrstuvwxyz.onion

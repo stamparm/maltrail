@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/ip-address/161.117.190.36/relations
+# Reference: https://www.virustotal.com/gui/ip-address/188.116.36.203/relations
+
+banlinrbsocg.com
+banlinrbsogr.com
+banlinrbstsr.com
+notsogoodfairy.com
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/VBS~Thrower-B/detailed-analysis.aspx
+
+fuck-japan.com

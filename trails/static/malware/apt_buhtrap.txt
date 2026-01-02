@@ -1,0 +1,56 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: UAC-0008
+
+# CERT-UA: #3967
+
+# Reference: https://securelist.ru/news-buhtrap/89540/
+
+engde.fr/community/viewforum.php
+focus.tula.su/viewforum.php
+topic.penza.su/viewtopic.php
+
+# Reference: https://securelist.ru/buhtrap-strikes-again/90980/
+
+avidium.ru.com
+slingshop.ru.com
+khabmama.eu
+sibmama.eu
+edinstvennaya.eu
+shkolazhizni.eu
+zhenskoe-mnenie.eu
+allwomens.eu
+
+# Reference: https://otx.alienvault.com/pulse/5cf6846544f75bf827720cb4
+# Reference: https://www.virustotal.com/gui/file/b475f14a1ffdeaf883c73e97724544b9bba0f6c481830bd25e3ba0d0f69b9181/detection (# Win32/Spy.Buhtrap.AK, ESET-NOD32)
+
+redmond.corp-microsoft.com
+
+# Reference: https://www.welivesecurity.com/2019/07/11/buhtrap-zero-day-espionage-campaigns/
+# Reference: https://otx.alienvault.com/pulse/5d270b29fccc021c80764db4
+
+corp-microsoft.com
+hdfilm-seyret.com
+ipv6-microsoft.org
+secure-telemetry.net
+services-glbdns2.com
+
+# Reference: https://twitter.com/c_APT_ure/status/1171102216784158720
+# Reference: https://www.virustotal.com/gui/file/2598455a3dc8ff8282adc081f87bceddb101281d168ebaee98bce784c21e6e40/detection
+
+http://195.123.227.99
+/g_38472341.php
+
+# Reference: https://cert.gov.ua/article/37246
+
+alt-2cdn.net
+ipv6-wpnc.net
+ns2-dns.com
+ns3-dns.com
+nais-gov.org
+nais-gov.com
+wpc-v0cdn.org
+cs1.wpc-v0cdn.org
+mail.nais-gov.org
+widget.forum-pokemon.com

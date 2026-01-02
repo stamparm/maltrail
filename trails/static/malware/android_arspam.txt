@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2011-121915-3251-99&tabid=2
+# Reference: https://forensics.spreitzenbarth.de/2011/12/22/detailed-analysis-of-android-arspam/
+
+dhofaralaezz.com
+i7sastok.com
+dmahgareb.com
+mafia.clubme.net
+4pal.net
+howwari.com
+forum.te3p.com
+htoof.com
+vb.roooo3.com
+alsa7ab.com
+riyadhmoon.com
+forum.althuibi.com
+2wx2.com
+mdmak.com
+too-8.com
+3z1z.com
+w32w.com
+forum.65man.com

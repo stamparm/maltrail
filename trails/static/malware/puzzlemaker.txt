@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/puzzlemaker-chrome-zero-day-exploit-chain/102771/
+# Reference: https://otx.alienvault.com/pulse/60c088d3fd6e59ee86c1b78b
+
+media-seoengine.com

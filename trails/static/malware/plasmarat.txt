@@ -1,0 +1,98 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: splori, plasmahttp
+ 
+# Reference: https://twitter.com/ScumBots/status/1072202340990574592
+
+example.no-ip.org
+mc-cosmo.ddns.net
+killuakiller.ddns.net
+killyourselfplease.ddns.net
+muncher.servemp3.com
+
+# Reference: https://www.reverse.it/sample/c49e4890b35240dac26a5863a30d35f6bcf035e0b11a45542604a88d8e236eeb
+
+usermata-64665.portmap.host
+
+# Reference: https://twitter.com/MalwareConfig/status/748764358516224001
+
+iufgaj.hopto.org
+
+# Reference: https://twitter.com/MalwareConfig/status/748756771636862976
+
+blackmiladw0rm.no-ip.org
+
+# Reference: https://twitter.com/MalwareConfig/status/748756761864052737
+
+ipv7.no-ip.org
+
+# Reference: https://twitter.com/MalwareConfig/status/748755644711186432
+
+opopop1234.ddns.net
+
+# Reference: https://twitter.com/MalwareConfig/status/748755633340444672
+
+kingofus.myq-see.com
+
+# Reference: https://twitter.com/MalwareConfig/status/748755622850469888
+
+thereishopeleft.chickenkiller.com
+
+# Reference: https://twitter.com/MalwareConfig/status/748755607801344000
+# Reference: https://malwareconfig.com/config/e4b7f3820b592a23ad46afde64508797/
+
+104.179.66.196:775
+
+# Reference: https://twitter.com/MalwareConfig/status/748755556437864448
+# Reference: https://malwareconfig.com/config/76cb5bce76374b32613c7a2d3b7d03f5/
+
+5.254.112.20:9020
+
+# Reference: https://twitter.com/MalwareConfig/status/748755521474170880
+
+inqqqez.esy.es
+
+# Reference: https://twitter.com/MalwareConfig/status/748755482530058241
+
+live.smtp.pl
+
+# Reference: https://twitter.com/MalwareConfig/status/748625444975611905
+
+bekogvaz.ddns.net
+
+# Reference: https://blog.talosintelligence.com/2020/04/threat-roundup-0417-0424.html (# Win.Dropper.Zusy-7670542-0)
+# Reference: https://www.virustotal.com/gui/file/0980d48896b8db3ce274d3603f2250044b8dd93f7c8f160bb01c627906063b69/detection
+
+alphakrew.zapto.org
+darksproxys.zapto.org
+djurres.no-ip.org
+dnsiw.org
+estherr.no-ip.biz
+fariz089.no-ip.org
+fatboy.no-ip.org
+herdingground.zapto.org
+nickhairline.no-ip.org
+odoms.no-ip.biz
+plasma.zapto.org
+plasmarat.pw
+porotocolcode.sytes.net
+r7.mooo.com
+rooted.no-ip.biz
+slav3.zapto.org
+smeagle.no-ip.biz
+superpredator.no-ip.biz
+vanillakilla123.no-ip.biz
+xxzzxxy.servecounterstrike.com
+
+# Reference: https://www.virustotal.com/gui/file/58d8b914d14c384570efb3f5b9dcaea59ffbb424ee018406e0a9cb8afa3ead5c/detection
+
+92.242.62.46:1177
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60
+
+tacticalpvp.us
+
+# Reference: https://www.virustotal.com/gui/file/b948c182279525a11b84c54a8b8288e6ee905ae5baf8e09a45fbe4a76f9b856d/detection
+
+astrocheat.com

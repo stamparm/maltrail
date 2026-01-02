@@ -1,0 +1,214 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: play ransomware
+
+# Reference: https://twitter.com/fbgwls245/status/1408632067181604865
+# Reference: https://otx.alienvault.com/pulse/60db5d29be7b348bae7da15f
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+# Reference: https://www.virustotal.com/gui/file/77a398c870ad4904d06d455c9249e7864ac92dda877e288e5718b3c8d9fc6618/detection
+
+hivecust6vhekztbqgdnkks64ucehqacge3dij3gyrrpdp57zoq3ooqd.onion
+hiveleakdbtnp76ulyhi52eag6c6tyc3xw7ez7iqy6wc34gd2nekazyd.onion
+
+# Reference: https://twitter.com/ESETresearch/status/1454101625409265665
+# Reference: https://www.virustotal.com/gui/file/6a0449a0b92dc1b17da219492487de824e86a25284f21e6e3af056fe3f4c4ec0/detection
+# Reference: https://www.virustotal.com/gui/file/bdf3d5f4f1b7c90dfc526340e917da9e188f04238e772049b2a97b4f88f711e3/detection
+
+http://194.5.212.190
+
+# Reference: https://twitter.com/ChristiaanBeek/status/1473649747487506444
+# Reference: https://twitter.com/ankit_anubhav/status/1473651830068371460
+# Reference: https://www.virustotal.com/gui/domain/msupdate.us/relations
+# Reference: https://www.cybereason.com/blog/powerless-trojan-iranian-apt-phosphorus-adds-new-powershell-backdoor-for-espionage
+# Reference: https://www.virustotal.com/gui/file/bdf347ce89860bdde9e0b4eba3673fbcb0c5a521e4887b620106dc73650358da/detection
+# Reference: https://www.virustotal.com/gui/file/1604e69d17c0f26182a3e3ff65694a49450aafd56a7e8b21697a932409dfd81e/detection
+# Reference: https://www.virustotal.com/gui/file/2bc46b0362fa7f8f658ce472958a70385b772ab9361625edc0a730211629a3c4/detection
+
+http://148.251.71.182
+148.251.71.182:1389
+msupdate.us
+newdesk.top
+symantecserver.co
+cp443.newdesk.top
+kcp53.msupdate.us
+kw.newdesk.top
+me.newdesk.top
+mimt.newdesk.top
+mint.newdesk.top
+tcp443.msupdate.us
+tcp.newdesk.top
+tcp43.newdesk.top
+tcp433.newdesk.top
+tcp443.newdesk.top
+tvp443.newdesk.top
+work.newdesk.top
+kcp53.symantecserver.co
+tcp.symantecserver.co
+tcp443.symantecserver.co
+update.symantecserver.co
+/symantec_linux.x86
+/symantec.tmp
+
+# Reference: https://twitter.com/r3dbU7z/status/1493685356260122628
+# Reference: https://www.virustotal.com/gui/file/21774b77bbf7739178beefe647e7ec757b08367c2a2db6b5bbc0d2982310ef12/detection
+# Reference: https://www.virustotal.com/gui/file/56e19d98b9490e9ea5d3328f99f6955c671f116843a7026af07ab49fe1f7c808/detection
+
+149.28.54.212:443
+ntdtv.tk
+
+# Reference: https://twitter.com/KorbenD_Intel/status/1505929192285913089
+# Reference: https://www.virustotal.com/gui/ip-address/107.173.231.114/relations
+
+aptmirror.eu
+kcp53.aptmirror.eu
+tcp443.aptmirror.eu
+
+# Reference: https://www.trendmicro.com/en_us/research/22/i/play-ransomware-s-attack-playbook-unmasks-it-as-another-hive-aff.html
+
+http://67.205.182.129
+
+# Reference: https://www.cisa.gov/uscert/ncas/alerts/aa22-257a
+# Reference: https://otx.alienvault.com/pulse/632323f7b974ea595174c847
+
+buylap.top
+gupdate.us
+mssync.one
+msupdate.top
+tcp443.org
+upmirror.top
+winstore.us
+
+# Reference: https://bazaar.abuse.ch/sample/7210e765a1076443d68f12d79b3eea55f3dbabfcb410a6cbfb40d4ee546d9df9/
+# Reference: https://app.any.run/tasks/815fb18e-0269-482a-8c24-6b23610fa345/
+
+147.53.196.47:9090
+
+# Reference: https://app.any.run/tasks/3c6c45d2-f174-4178-a76e-c06f75b0a95a/
+
+185.25.204.244:9090
+
+# Reference: https://twitter.com/felixaime/status/1602568604809142272
+
+ateliernow.com
+onemusicllc.com
+realmacnow.com
+
+# Reference: https://www.virustotal.com/gui/file/9b7215231b3f4ff05723395f9c7ff756ad8d467a09d5e554a846d5de7deedc89/detection
+
+143.244.153.27:81
+cloudstarsolution.com
+
+# Reference: https://news.sophos.com/en-us/2023/08/10/image-spam-attack/
+# Reference: https://otx.alienvault.com/pulse/6501bfd29568305b0a5a9c4f
+
+aircourier-company.com
+carpoollk.com
+safedelivery-company.com
+3emyw4wto7tgupbisnbdbkbyaamb7p7dpxp6lnfqwyemskmmar3fugad.onion
+dexmb25nic6n25sclnf44rrgynquns7u3zjqa33x3uztwbmsuptf7gyid.onion
+exmb25nic6n25sclnf44rrgynquns7u3zjqa33x3uztwbmsuptf7gyid.onion
+fq5rdcppmv7cqjhretm3owbnj4hskcv37bcgx5rpbdbhqfefzix4tiyd.onion
+um2kc2ahigbq7t2rchk3tnxnjzvrddbhxkcy573dqxci44wvi4ge5cad.onion
+xaoqohhckbb3pnxtyqzj6pkuzckt2urbeiyd5xlanmw52expmohl7dyd.onion
+
+# Reference: https://www.virustotal.com/gui/ip-address/147.135.11.223/community
+# Reference: https://www.virustotal.com/gui/ip-address/185.247.71.106/community
+# Reference: https://www.virustotal.com/gui/ip-address/5.181.234.58/community
+# Reference: https://app.validin.com/detail?find=c49a94dd93c30c8005c0bffff0be97fc8ffea8e9&type=hash&ref_id=88419886175#tab=host_pairs
+
+http://134.255.210.26
+http://139.99.68.157
+http://147.135.11.223
+http://147.135.36.162
+http://152.89.162.138
+http://178.175.139.202
+http://185.184.192.110
+http://185.247.71.106
+http://185.253.98.242
+http://185.9.146.103
+http://188.92.78.249
+http://190.2.142.25
+http://190.97.163.213
+http://193.106.31.98
+http://193.239.86.18
+http://195.206.107.202
+http://198.244.200.160
+http://217.182.199.126
+http://31.135.14.182
+http://31.210.70.186
+http://37.120.143.202
+http://46.105.107.231
+http://49.12.133.171
+http://5.181.234.58
+http://51.161.128.135
+http://66.70.179.236
+http://77.83.247.80
+http://79.137.69.34
+http://86.105.25.218
+http://89.38.224.2
+http://91.132.139.66
+http://91.193.5.90
+http://92.38.162.11
+http://95.213.164.11
+134.255.210.26:443
+139.99.68.157:443
+147.135.11.223:443
+147.135.36.162:443
+152.89.162.138:443
+178.175.139.202:443
+185.184.192.110:443
+185.247.71.106:443
+185.253.98.242:443
+185.9.146.103:443
+188.92.78.249:443
+190.2.142.25:443
+190.97.163.213:443
+193.106.31.98:443
+193.239.86.18:443
+195.206.107.202:443
+198.244.200.160:443
+217.182.199.126:443
+31.135.14.182:443
+31.210.70.186:443
+37.120.143.202:443
+46.105.107.231:443
+49.12.133.171:443
+5.181.234.58:443
+51.161.128.135:443
+66.70.179.236:443
+77.83.247.80:443
+79.137.69.34:443
+86.105.25.218:443
+89.38.224.2:443
+91.132.139.66:443
+91.193.5.90:443
+92.38.162.11:443
+95.213.164.11:443
+178-175-139-202.static.as43289.net
+185-184-192-110.hosted-by-worldstream.net
+
+# Reference: https://twitter.com/siri_urz/status/1614617014210908163
+# Reference: https://www.virustotal.com/gui/file/61c63be1e0ebf23a616e02f8929364f270b03190ab9132fa638b3dd20b6dc109/detection
+
+k7kg3jqxang3wh7hnmaiokchk7qoebupfgoik6rha6mjpzwupwtj25yd.onion
+mbrlkbtq5jonaqkurjwmxftytyn2ethqvbxfu4rgjbkkknndqwae6byd.onion
+
+# Reference: https://twitter.com/RakeshKrish12/status/1650758351234514946
+
+37wb3ygyb3r2vf2dt5o3ca62zlduuowvkkwjrtbcgc5iri4t6rnzr7yd.onion
+slg7tnjb65swwyaebnyymyvo73xm36hxwugdsps7cwcxicizyzyt2byd.onion
+zi34ocznt242jallttwvvhihrezjdzfgflf3uhdv6t3z23hhcn54efid.onion
+
+# Reference: https://explore.avertium.com/resource/an-in-depth-look-at-play-ransomware
+
+/ahgffxvbghgfv
+/asdfgsdhsdfgsdfg
+
+# Reference: https://www.virustotal.com/gui/file/5bc9478d90533ebccf09c7204999853bae36db997b230e2809090c7827c8ced0/detection
+
+xb6q2aggycmlcrjtbjendcnnwpmmwbosqaugxsqb4nx6cmod3emy7sad.onion
+
+# Reference: https://www.thedfirspot.com/general-8-1
+
+k7kg3jqzffsxe2z53jjx4goybvxu3a557kpsqakpwi6mrvfgcdo55tid.onion

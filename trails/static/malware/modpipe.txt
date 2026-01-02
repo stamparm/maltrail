@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2020/11/12/hungry-data-modpipe-backdoor-hits-pos-software-hospitality-sector/
+# Reference: https://www.virustotal.com/gui/file/aa4be907464d9f8a9d744491b11375fad20d300f459ea26fc8be10905af53660/detection
+# Reference: https://www.virustotal.com/gui/file/297457aa65d6cd9e787109603fc4a510412af974eabbc1af791863ae4f00fb2d/detection
+# Reference: https://www.virustotal.com/gui/file/57e8bfc5c698a9d1970baa1fe52dfb5f31cd3233c325b4a9c8623ca8cfe3cfef/detection
+# Reference: https://otx.alienvault.com/pulse/5fad7ec43bd4572731eec59d
+
+http://194.32.76.192
+http://23.19.58.114
+http://5.135.230.136
+http://88.99.177.103
+http://91.209.77.172
+ouidji12345.ddns.net
+shj145ertyb.ddns.net
+subzeroday.zapto.org

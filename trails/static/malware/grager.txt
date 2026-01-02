@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: plephij
+
+# Reference: https://symantec-enterprise-blogs.security.com/threat-intelligence/cloud-espionage-attacks
+# Reference: https://www.virustotal.com/gui/file/ab6a684146cec59ec3a906d9e018b318fb6452586e8ec8b4e37160bcb4adc985/detection
+# Reference: https://www.virustotal.com/gui/file/97551bd3ff8357831dc2b6d9e152c8968d9ce1cd0090b9683c38ea52c2457824/detection
+
+7-zip.tw

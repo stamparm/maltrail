@@ -1,0 +1,56 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Atlantida Malwate V1.2, Burmilla
+
+# Reference: https://twitter.com/ViriBack/status/1222502680146272256
+
+http://5.188.60.21
+http://5.188.60.58
+http://5.188.60.59
+tracking45-website.com
+
+# Reference: https://twitter.com/fr3dhk/status/1224419842733891586
+
+http://45.14.14.38
+
+# Reference: https://app.any.run/tasks/6e7f9535-4d14-4ca3-9145-d3acf9130275/
+# Reference: https://www.virustotal.com/gui/ip-address/92.63.197.188/relations
+
+http://92.63.197.188
+
+# Reference: http://tracker.viriback.com/dump.php (# snapshot 2020-02-23, Borr)
+
+173.212.204.171:443
+94.103.9.155:8080
+a0394611.xsph.ru
+hypercleaner.su
+
+# Reference: https://twitter.com/3xp0rtblog/status/1522491178641510404
+# Reference: https://www.virustotal.com/gui/file/965fb78c4ed7616cbe8d76e3f44f95a41c1da76adc1194368e2ccea3792a37d4/detection
+# Reference: https://www.virustotal.com/gui/file/fe9361cba34be3a6f42b29bd843eb3d1ab86c42a0b0988f98cf293df2c5e7203/detection
+
+95.143.179.147:55555
+
+# Reference: https://www.virustotal.com/gui/file/72e384d9b7eb7da5a73d79b4a5f25b4de4855b689e250d07618776fe9064e54b/detection
+
+95.143.179.147:61274
+
+# Reference: https://www.virustotal.com/gui/file/461694a06c43b486a33915222fbcffe628d137d88025e6f5349602b1d798264c/detection
+
+http://62.182.156.187
+/delonl.php?hwid=
+/gateonl.php?hwid=
+
+# Reference: https://twitter.com/crep1x/status/1626280162009440259
+# Reference: https://tria.ge/230216-v3pkwsae3v/behavioral2
+# Reference: https://www.virustotal.com/gui/file/64cc46d0c04ea1e634e211d905b2ba071f6ef0dad74e3614784d40246000aa92/detection
+# Reference: https://www.virustotal.com/gui/file/2462a42b61bdd6a70dafef1f402f091b39531bed4baef1dab04f85281246195b/detection
+
+http://194.190.153.137
+194.226.121.108:2525
+softhubfree.site
+
+# Reference: https://www.virustotal.com/gui/file/ce4f4df08dda9778407122ddcef79796651032ee0b7442cfba708597e75e1e7d/detection
+
+http://178.20.42.14

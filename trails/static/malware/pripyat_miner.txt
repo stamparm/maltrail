@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/3xp0rtblog/status/1501330153900703745
+# Reference: https://www.virustotal.com/gui/file/9a45c640e91c9140c994f9e9ca5cfaea2f11000f988d538482356aa385ece7ba/detection
+# Reference: https://www.virustotal.com/gui/file/cfb899331aa5fefe8580a9272df61dbfcd29bcfb218081a4d071764ac2100777/detection
+
+http://92.63.97.156
+217.29.58.241:3333
+
+# Reference: https://www.virustotal.com/gui/file/ed1aabcdedf0291922f6d550eb2747ca05761adc05f27187b98e832109e53add/detection
+
+217.29.58.241:6016
+
+# Reference: https://www.virustotal.com/gui/file/f0579ee716938bba4591c885c6b5e1a4b7573f4693732ce9ff580f65d9608048/detection
+
+185.241.194.201:3333
+
+# Reference: https://www.virustotal.com/gui/file/bf0f48a502b44bfb836041cc10d2f8d43dbf6169de30c45e1e5417a5d121ba20/detection
+
+217.29.58.241:6001
+cloud-proxy-hs.ml
+
+# Reference: https://www.virustotal.com/gui/file/4c4db9faeb1bd7b7171e47bd886cf835c77f198a23c7618e80f356c5babaf295/detection
+
+http://62.109.4.68
+
+# Reference: https://blog.cyble.com/2022/11/23/fake-msi-afterburner-sites-delivering-coin-miner/
+# Reference: https://otx.alienvault.com/pulse/637f8c6c3feec05efb23b514
+
+http://45.87.0.89
+
+# Reference: https://x.com/V3n0mStrike/status/1829338282980749453
+# Reference: https://x.com/1ZRR4H/status/1829564485230797033
+# Reference: https://www.virustotal.com/gui/file/54daf89aa3776125914b24afe9c24b16f8bf92c87ccb954b2a4963cccedfcecd/detection
+
+kaspersky-secure.ru

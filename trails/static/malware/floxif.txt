@@ -1,0 +1,47 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: fixflo, floodfix, pioneer
+
+# Reference: https://app.any.run/tasks/23110db1-3a36-4a1b-8545-fc741e8f88bf/
+# Reference: https://app.any.run/tasks/3d849b0e-215f-4c79-907d-59959af62142/
+# Reference: https://app.any.run/tasks/06a9ef45-5731-4ffc-b9fa-d058c6448162/
+# Reference: https://app.any.run/tasks/5199c947-5151-491c-8de1-d2ef49de7278/
+# Reference: https://app.any.run/tasks/faed2503-a908-4107-bdae-4ebc6403a154/
+# Reference: https://app.any.run/tasks/fa99b6f3-78b3-4583-ab8c-6bc6c3091e16/
+
+5isohu.com
+aieov.com
+
+# Reference: https://app.any.run/tasks/48930e8c-2cc9-4ab5-8561-759ce09aa0dc/
+
+dell1.ug
+
+# Reference: https://app.any.run/tasks/1d79a1fd-f55a-4799-b7dc-be6c9feb83e0/
+
+az.vip-server.org
+
+# Reference: https://app.any.run/tasks/e01840fa-cf78-4dcf-9c67-97e818c5ea43/
+# Reference: https://app.any.run/tasks/88cc7364-9a97-4a06-900d-c6cc349065dc/
+
+dell2.ug
+hotsalegnom.com
+
+# Reference: https://www.virustotal.com/gui/file/624f93af57eec04aa4223aa39cb91e13a25bd5df095de9e8808ec46cb3f7ba0b/detection
+
+johnhop77.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/2be1a58d23fc46b34ea0b7a76719937111872c5610d882db56d6fda1ddc4bb7b/detection
+
+217.8.117.10:5555
+
+# Reference: https://www.virustotal.com/gui/file/0000f4ef0163e1d738378741f783e39c16f2625988e9738ed1fdcb818f42cb6f/detection
+
+87.98.185.184:8829
+
+# Generic
+
+/AJshdiu4856834hokin52/ASdj475yq38hojisg/
+/AJshdiu4856834hokin52/
+/ASdj475yq38hojisg/
+/AJshdiu4856834hokin52/ASdj475yq38hojisg/get.php

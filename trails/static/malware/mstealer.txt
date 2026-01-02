@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/suyog41/status/2001250286699209123
+# Reference: https://www.virustotal.com/gui/file/48f41519ad7accd125b3f4f366e79ea255f8daf69efb1d01a44e87cb74aa234e/dtection
+
+b4b611ce6104215e86fa681a6581ce11.r2.cloudflarestorage.com
+pub-304f09dc703a4574984c75c25e77ab06.r2.dev
+
+# Generic
+
+/mstealer/logs/

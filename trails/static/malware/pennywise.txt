@@ -1,0 +1,39 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1525249950900072448
+# Reference: https://blog.cyble.com/2022/06/30/infostealer/
+# Reference: https://otx.alienvault.com/pulse/62bdd38a0c76fccd886b9ba8
+# Reference: https://app.any.run/tasks/7a662bf3-d2bd-46e4-ab10-a225b605a71b/
+
+185.246.116.237:5001
+
+# Reference: https://twitter.com/ViriBack/status/1598862401109037056
+# Reference: https://twitter.com/1ZRR4H/status/1598911165782183936
+# Reference: https://twitter.com/AnFam17/status/1598940585229840385
+# Reference: https://app.any.run/tasks/512c40ae-bd30-4fcc-8d01-fc587391c24a/
+
+http://45.15.156.81
+http://77.73.133.126
+
+# Reference: https://twitter.com/crep1x/status/1638596449226170370
+
+185.220.35.84:5001
+
+# Reference: https://www.virustotal.com/gui/file/015d6a4b1c9aae0842ba40dedcb0d4f2d891ea82575dad5a991454101393d4ea/detection
+
+82.115.223.71:5001
+
+# Reference: https://app.any.run/tasks/e749fcd5-d0b6-4e9f-a990-aa75d1c46963/
+
+185.220.35.84:5003
+
+# Reference: https://twitter.com/suyog41/status/1678999888103710722
+# Reference: https://www.virustotal.com/gui/file/3ca976ebf76c20f45d400ba70877b49f003d31293c3e40f2983196b24ea3fb93/detection
+
+193.233.232.195:8899
+77.105.147.158:5001
+
+# Generic
+
+/gate.php?namelog=

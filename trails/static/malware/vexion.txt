@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: vexion stealer
+
+# Reference: https://x.com/solostalking/status/1858406758005272821
+# Reference: https://search.censys.io/search?q=services.http.response.html_title%3D%22Vexion+Stealer%22&resource=hosts
+
+http://20.117.225.167
+http://20.3.252.60
+20.117.225.167:3389
+20.3.252.60:3389
+20.3.252.60:8080

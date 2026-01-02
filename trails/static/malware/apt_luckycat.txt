@@ -1,0 +1,97 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: sepulcher, ta413, exilerat, luckycat, shadownet
+
+# Reference: http://www.trendmicro.com/cloud-content/us/pdfs/security-intelligence/white-papers/wp_luckycat_redux.pdf
+
+89757.x.gg
+bailianlan.c.dwyu.com
+cattree.1x.biz
+charlesbrain.shop.co
+clbest.greenglassint.net
+duojee.info
+fidk.rkntils.dnset.com
+fireequipment.website.org
+footballworldcup.website.org
+frankwhales.shop.co
+goodwell.all.co.uk
+havefuns.rkntils.10dig.net
+hi21222325.x.gg
+jeepvihecle.shop.co
+johnnees.rkntils.10dig.net
+killmannets.0fees.net
+kinkeechow.shop.co
+kittyshop.kilu.org
+lucysmith.0fees.net
+maritimemaster.kilu.org
+masterchoice.shop.co
+perfect.shop.co
+pumasports.website.org
+rkntils.10dig.net
+rkntils.dnset.com
+rukiyeangel.dyndns.pro
+sunshine.shop.co
+tb123.xoomsite.com
+tbda123.gwchost.com
+tennissport.website.org
+toms.0fees.net
+tomsburs.shop.co
+tomygreen.0fees.net
+vpoasport.shopping2000.com
+waterpool.website.org
+
+# Reference: https://blog.talosintelligence.com/2019/02/exilerat-shares-c2-with-luckycat.html
+
+27.126.188.212:80
+27.126.188.212:8003
+27.126.188.212:8005
+mondaynews.tk
+peopleoffreeworld.tk
+gmailcom.tw
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/chinese-apt-ta413-resumes-targeting-tibet-following-covid-19-themed-economic
+# Reference: https://otx.alienvault.com/pulse/5f4faad08bc69edf206bf6b6
+
+http://107.151.194.197
+107.151.194.197:443
+107.151.194.197:8080
+118.99.13.4:1234
+118.99.13.4:8099
+dalailamatrustindia.ddns.net
+welfaretibet.tk
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/ta413-leverages-new-friarfox-browser-extension-target-gmail-accounts-global
+# Reference: https://otx.alienvault.com/pulse/6037c5dff774e1d70491bf0d/
+
+167.179.99.136:443
+indiatrustdalailama.com
+nangsihistory.vip
+vaccine-icmr.net
+vaccine-icmr.org
+you-tube.tv
+
+# Reference: https://twitter.com/threatinsight/status/1531688214993555457
+
+tibet-gov.web.app
+
+# Reference: https://www.recordedfuture.com/chinese-state-sponsored-group-ta413-adopts-new-capabilities-in-pursuit-of-tibetan-targets
+# Reference: https://www.virustotal.com/gui/ip-address/134.122.129.102/relations
+# Reference: https://www.virustotal.com/gui/ip-address/172.105.35.111/relations
+# Reference: https://www.virustotal.com/gui/ip-address/192.46.213.63/relations
+
+airjaldi.online
+applestatic.com
+flex-jobs.in
+freetibet.in
+jobflex.in
+newsindian.xyz
+rediffpapers.com
+tibet.bet
+tibetancongress.com
+tibetanyouthcongress.com
+
+# Generic trails
+
+/aqqee
+/qqqzqa

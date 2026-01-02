@@ -1,0 +1,389 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ficker stealer, fickle stealer, merkava, zudochka
+
+# Reference: https://twitter.com/malwrhunterteam/status/1330249483045785604
+# Reference: https://www.virustotal.com/gui/file/3b1dc7e0c9154fe384c695f8eec5622ab2ba88bf59d990def6b2c11d8519cecf/detection
+
+45.90.218.220:8000
+tracker-place.top
+
+# Reference: https://www.domaintools.com/resources/blog/identifying-network-infrastructure-related-to-a-who-spoofing-campaign
+# Reference: https://otx.alienvault.com/pulse/5fc7b50f3599afc7ab4cc5a7
+
+adverting-cdn.com
+european-who.com
+health-world-org.com
+office-pulgin.com
+who-international.com
+
+# Reference: https://twitter.com/anyrun_app/status/1338471840902213635
+# Reference: https://app.any.run/tasks/44cd1390-8ea7-414f-9d8c-d24668623f5a/
+
+brokstrot.com
+
+# Reference: https://www.virustotal.com/gui/file/872e60f7287bd2382587dacdf69b70f3c2e7c7e2ceb5677b58cd540a97369bbc/detection
+# Reference: https://www.virustotal.com/gui/file/94e60de577c84625da69f785ffe7e24c889bfa6923dc7b017c21e8a313e4e8e1/detection
+
+ferguslawn.com
+sweyblidian.com
+
+# Reference: https://www.virustotal.com/gui/file/90929f4e6bd28d6a197fef323930502ac1a3dcc9de8d4dba02dc6702fd570e14/detection
+
+mobilesuit.top
+
+# Reference: https://app.any.run/tasks/24af325e-9770-47a1-affd-6659f99c7a49/
+
+47.91.94.48:4153
+venecia.club
+gambinos.club
+
+# Reference: https://app.any.run/tasks/0d19c78e-e054-4b16-b199-96d614d7e0b8/
+
+93.114.128.74:80
+
+# Reference: https://twitter.com/James_inthe_box/status/1358787345886048257
+
+roanokemortgages.com
+satursed.com
+sweyblidian.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1364956102815801348
+
+wouatiareves.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1364984475944427521
+
+sweyblildian.com
+
+# Reference: https://twitter.com/malware_traffic/status/1367152943158468610
+
+nvgeeforsegt.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1367526827221204996
+
+baadababada.ru
+
+# Reference: https://twitter.com/pmmkowalczyk/status/1374003454805413891
+# Reference: https://www.virustotal.com/gui/file/414ae59a12db299866abacb6e65d1d2aed26ec9197969821fe77bb52ca64ed17/detection
+
+dl-link.live
+lukkeze.club
+
+# Reference: https://twitter.com/James_inthe_box/status/1376920282053574657
+
+q17ar45.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1379452830616973312
+
+tren0.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1380168560329158663
+
+s5iwc.ru
+
+# Reference: https://pastebin.com/wtxn3CZZ
+
+derferper.ru
+
+# Reference: https://pastebin.com/qsf3se6f
+
+qm30098.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1382709049209212928
+
+45des29.ru
+
+# Reference: https://www.virustotal.com/gui/file/2c94c16d59f1724838477b73e18f833e473b96b6581f1c7fc0f26d94532588b0/detection
+# Reference: https://www.virustotal.com/gui/file/2c94c16d59f1724838477b73e18f833e473b96b6581f1c7fc0f26d94532588b0/detection
+
+cdnserverhostingdomainname.site
+38en4scmfu95q.s3.eu-central-1.amazonaws.com
+glku5jgmh3t.s3.eu-central-1.amazonaws.com
+mpon5x7b2wql011cua.s3.eu-central-1.amazonaws.com
+msvqcywpwg.s3.eu-central-1.amazonaws.com
+
+# Reference: https://twitter.com/fr0s7_/status/1384609686515822596
+# Reference: https://www.virustotal.com/gui/file/70fc1260fbdc236698b140e7957c2bb5d85cf90230241bf0cf332eeeec74da99/detection
+
+rand934.xyz
+
+# Reference: https://www.virustotal.com/gui/file/6727d1a8cecb816f5565a8a61190d48bece1db0d946e98d64d4c08d1575e0bf8/detection
+
+fluzz.ga
+
+# Reference: https://www.virustotal.com/gui/file/2b5e66f542d00a343e78c42c875f8e32c2b4626c74235217bae3375600f2a4a1/detection
+
+57umant.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1395522304575221765
+# Reference: https://www.malware-traffic-analysis.net/2021/05/20/index.html
+
+q09pi7.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1395118996278685696
+
+traverso.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1396842645968744453
+
+gromber6.ru
+
+# Reference: https://twitter.com/pmmkowalczyk/status/1397852887955410947
+
+obtiron.ru
+
+# Reference: https://www.virustotal.com/gui/file/9a9926376a027f80eb56912ae54db483382e6566a54a139d6c7b384b3bd06409/detection
+
+kor0leva.ru
+
+# Reference: https://twitter.com/Racco42/status/1405164909353111552
+# Reference: https://tria.ge/210616-rzw7rvzrm2
+
+http://80.87.192.115
+zarroamarf.tk
+
+# Reference: https://www.malware-traffic-analysis.net/2021/06/17/index.html
+
+pr1zm0met.ru
+
+# Reference: https://www.malware-traffic-analysis.net/2021/06/15/index.html
+
+larn9kany.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1407350358503006220
+
+t578qnar.ru
+
+# Reference: https://otx.alienvault.com/pulse/60d2f6ee92c20710aad95809
+
+pospvisis.com
+
+# Reference: https://twitter.com/malware_traffic/status/1408095271985295360
+# Reference: https://twitter.com/James_inthe_box/status/1410617868530556940
+# Reference: https://www.virustotal.com/gui/ip-address/8.211.241.0/relations
+
+kubantr0.ru
+rar1tet.ru
+srand04rf.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1415317286857035776
+
+4a5ikol.ru
+
+# Reference: https://twitter.com/pollo290987/status/1415214263635955714
+
+bukkva.link
+fickotstuk.space
+
+# Reference: https://twitter.com/pollo290987/status/1410540829698105346
+# Reference: https://www.virustotal.com/gui/file/742ad3be42f5023d4fbd854fa6f1eb80054b94d537aaa32e7d7ae1db6dd6683e/detection
+
+game2030.site
+
+# Reference: https://twitter.com/James_inthe_box/status/1417854879633010688
+
+falan4zadron.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1422577139677687814
+
+fiom65pre.ru
+
+# Reference: https://tria.ge/220119-t22y6abeh8
+
+prunerflowershop.com
+
+# Reference: https://www.virustotal.com/gui/file/642c7333927b2581ffc854f55793677a203788fb55a53e8916ae58d4cd0828f5/detection
+
+http://185.163.45.132
+
+# Reference: https://blogs.blackberry.com/en/2021/08/threat-thursday-ficker-infostealer-malware
+# Reference: https://otx.alienvault.com/pulse/611618c0e4b32eb1ca06861f
+
+asfasfvcxvdbs.com
+min0sra.ru
+pirocont70l.ru
+s0lom0n.ru
+
+# Reference: https://github.com/cyberark/malware-research/blob/master/FickerStealer/IoCs.md
+
+http://45.141.84.139
+http://93.115.22.72
+http://95.217.5.249
+139.59.66.32:81
+195.154.168.132:81
+mamkindomen.info
+
+# Reference: https://twitter.com/0xrb/status/1627623872832086016
+
+77.246.156.93:8000
+79.143.73.170:8000
+91.228.224.98:8000
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.fickerstealer/ (# 2024-01-07)
+
+http://157.90.16.209
+http://176.111.174.143
+http://176.111.174.250
+http://185.18.52.47
+http://185.215.113.109
+http://185.66.15.228
+http://188.68.221.233
+http://195.133.40.204
+http://195.2.73.253
+http://195.2.85.152
+http://2.56.212.247
+http://203.159.80.162
+http://34.106.112.240
+http://34.65.142.243
+http://34.90.166.4
+http://34.91.253.186
+http://34.94.171.115
+http://35.203.73.169
+http://35.228.242.21
+http://37.0.8.225
+http://45.141.87.55
+http://45.142.212.149
+http://45.67.231.4
+http://45.93.201.181
+http://47.251.40.103
+http://47.254.170.221
+http://51.195.94.249
+http://79.110.52.39
+http://8.208.86.224
+http://8.209.71.17
+http://8.211.195.96
+http://80.249.131.115
+http://82.146.50.68
+http://82.148.19.199
+http://84.38.181.56
+http://92.62.115.177
+http://94.103.80.188
+http://94.103.86.101
+http://95.213.179.67
+109.234.36.165:8080
+193.222.62.238:8080
+193.233.205.71:8080
+209.209.112.124:8080
+45.143.136.12:8080
+45.143.137.61:8080
+45.91.8.125:8080
+5.178.2.214:8080
+80.66.64.12:8080
+80.66.64.195:8080
+80.66.64.219:8080
+87.251.79.110:8080
+90.156.230.53:8080
+91.228.224.98:8080
+94.103.88.115:8080
+94.103.90.147:8080
+95.213.216.165:8080
+95.213.216.212:8080
+alogsme.link
+alpacino.best
+alpacino.club
+baskettorchaff.net
+blogsme.link
+bukkva.best
+bukkva.club
+bukkva.online
+bukkva.space
+clogsme.link
+daymong.ru
+deniedfight.com
+dfthdsb.link
+ed2efjw.link
+fasdas.link
+fickita.info
+fickitc.link
+game2030.space
+gavrik.club
+goodideal.org
+grilledwings.top
+gurums.best
+gurums.club
+gurums.link
+gurums.space
+gzgbnserv639.xyz
+hetooppentyir.com
+kefkfkf.link
+landoflegendstore.net
+linkappc.link
+linkappd.link
+lukkeze.best
+lukkeze.space
+malletmissile.ru
+menrere.top
+mistral3.xyz
+opendoors.top
+promakerboi.com
+sdgserv29.xyz
+truzen.best
+truzen.club
+truzen.site
+truzen.space
+untouchablename.com
+venecia.best
+wejqwed.link
+
+# Reference: https://twitter.com/smica83/status/1786882055667650885
+# Reference: https://www.fortinet.com/blog/threat-research/fickle-stealer-distributed-via-multiple-attack-chain
+# Reference: https://www.virustotal.com/gui/file/022bf939e575b38578560fbba65a4cbebc43e5fbb54983fc845dbbc81420ff7c/detection
+# Reference: https://www.virustotal.com/gui/file/375663f99ac64d51b89090becef2594659260487982a67fb2b3373604d1ddfc0/detection
+
+http://144.208.127.230
+http://185.213.208.245
+138.124.184.210:445
+185.213.208.245:445
+ciphercall.net
+cryptolabstudio.com
+silentpdf.line.pm
+surroundedbycare.com
+
+# Reference: https://x.com/malwrhunterteam/status/1892839749641007191
+# Reference: https://x.com/malwrhunterteam/status/1893253949425160408
+# Reference: https://www.virustotal.com/gui/file/badb915188b5292cb1a22624aa386ab0ad8279d5bd2678926123560ecffe0e0c/detection
+# Reference: https://www.virustotal.com/gui/file/cc91ede2b25640c1fb7174deeea861dd2cb400b717d7a8f674dd59c678941ac5/detection
+# Reference: https://www.virustotal.com/gui/file/b1fa0c62e07f9ad0a625fd1474a197c1d687b985714c3d697981f5fbe4993266/detection
+
+185.186.76.247:1828
+193.149.176.228:443
+193.149.176.228:8080
+193.149.176.228:8081
+b8-crypt0x.com
+malwarehunterteam.net
+
+# Reference: https://x.com/JAMESWT_MHT/status/1904246001851936867
+# Reference: https://app.any.run/tasks/8571e661-1024-41c0-b826-e4fdc100b560
+
+82.115.223.231:8080
+
+# Reference: https://x.com/TLP_R3D/status/1905591757296775266
+# Reference: https://www.virustotal.com/gui/file/eef6cf314280f0a8bd7724dc8095783596fa6657ac95ee63a01c4b0228f26833/detection
+# Reference: https://www.virustotal.com/gui/file/2740f00c8d9732b8afaf2ff6b5325fdaa7d58ae0b72568c030076ce068c4d8f7/detection
+# Reference: https://www.virustotal.com/gui/file/1f1147b7a5491864eb01724197a1767809bf866b6e5725bc22894edbc844b48f/detection
+
+0xffsec.net
+eatertoken.com
+api.eatertoken.com
+/f7sjdjf2w1/payload/remote/
+/f7sjdjf2w1/payload/
+/f7sjdjf2w1/
+
+# Reference: https://www.virustotal.com/gui/file/8a002abcc4c6463c9a66a2e038b95bbab3bc7db1ab2bf40b857b9a8edb0a26f7/detection
+
+pussyfoot.info
+
+# Reference: https://x.com/malwrhunterteam/status/1916807196240662569
+# Reference: https://www.virustotal.com/gui/file/7449a1c921bd632368140fb5f363507c2ee12fef5410382ed58488f558d42739/detection
+
+http://185.126.66.215
+kytxnf.com
+win-rar.net
+wlnrar.shop
+/3fa7f5a9e0a248be8c79/checkUpdates.php
+/3fa7f5a9e0a248be8c79/submitForm.php
+/3fa7f5a9e0a248be8c79/payload/fickle/payload.ps1
+/3fa7f5a9e0a248be8c79/payload/fickle/
+/payload/fickle/

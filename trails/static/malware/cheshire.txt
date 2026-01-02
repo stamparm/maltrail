@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://kernelmode.info/forum/viewtopic.php?f=16&t=3981
+
+holidayapartments4you.com
+euro-rafting.com
+holidayapartments-paris.com
+paris-holidayapartments.com
+franceholidayapartments.com
+apartmentsin-paris.com
+raftingholiday.com
+eurorafting-tr.com
+turkeyextremerafting.com
+raftingtours-turkey.com
+divextreme-ar.com
+crazy-jump.com
+dive-extreme.com
+tandemskydive-ar.com
+groupdive.com
+skydivelessons.com
+bungee4you-br.com
+brazil-crazybungee.com
+bungeejumping-br.com
+groupbungee-br.com
+divextreme-au.com
+crazyjump-uy.com

@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://labs.sentinelone.com/fade-dead-adventures-in-reversing-malicious-run-only-applescripts/
+# Reference: https://github.com/SentineLabs/aevt_decompile
+# Reference: https://otx.alienvault.com/pulse/5ffdd6a9627c3945d43537d7
+
+43.249.204.223:8080
+budaybu10000.com
+wodaywo.com
+wodaywo65465182.com

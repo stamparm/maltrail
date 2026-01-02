@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/crimeware-report-gopix-lumar-rhysida/110871/
+# Reference: https://www.virustotal.com/gui/file/3dc6f9019e500a28ff1bb54f51ff14bc5687b37859a5417a230dc139e4276c27/detection
+# Reference: https://www.virustotal.com/gui/file/7ee681e494d942d7dcc399f5f81fa48cad01e41742d1882790ad4d8d115e25ca/detection
+
+9de1.com

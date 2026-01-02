@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/2c723ae13f8953c743155d39a6caa46ca42336cfe054b05b4a88f2a038a46f44/detection
+
+bl4kjj.zapto.org
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60 (# Warbot)
+
+3linkhg.hostoi.com
+animedz.fulba.com
+ilovemountains.netne.net
+isgbot.com
+shirowawa.uphero.com
+terfaclackboom.webege.com
+testhehack.2fh.co
+warbot.webatu.com
+
+# Generic
+
+/warbot/index.php
+/warbot/?p=
+/warbot1/

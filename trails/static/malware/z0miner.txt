@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.netlab.360.com/threat-alert-z0miner-is-spreading-quickly-by-exploiting-elasticsearch-and-jenkins-vulnerabilities/
+# Reference: https://otx.alienvault.com/pulse/604927f069f823287892768f
+
+178.62.202.152:8080
+27.1.1.34:8080
+
+# Reference: https://www.wiz.io/blog/cryptojacking-attacks-summer-2023
+
+175.118.126.65:8002
+
+# Reference: https://asec.ahnlab.com/en/62564/
+
+107.180.100.247:88
+15.235.22.212:5690
+15.235.22.213:59240

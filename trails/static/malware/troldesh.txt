@@ -1,0 +1,62 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: shade ransomware, troldesh
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2015-060408-1522-99&tabid=2
+
+gxyvmhc55s4fss2q.onion
+gxyvmhc55s4fss2q.onion.to
+gxyvmhc55s4fss2q.onion.cab
+
+# Reference: https://sensorstechforum.com/dexter-virus-troldesh-ransomware-removal-restore-files/
+
+cryptsen7fo43rr6.onion
+cryptsen7fo43rr6.onion.to
+cryptsen7fo43rr6.onion.cab
+
+# Reference: http://www.kernelmode.info/forum/viewtopic.php?f=16&t=4275
+
+cryptorzimsbfbkx.onion
+cryptorzimsbfbkx.onion.to
+cryptorzimsbfbkx.onion.cab
+
+# Reference: https://twitter.com/Artilllerie/status/1151802957912059904
+
+a4ad4ip2xzclh6fd.onion
+
+# Reference: https://app.any.run/tasks/a7ecdc15-ffec-4572-ad62-6782a294e5a7/
+
+http://motorcycleadventuresvietnam.com/wp-admin/css/colors/blue/2c.jpg
+
+# Reference: https://app.any.run/tasks/5969785f-01b6-4c8b-8f96-32466151cc52/
+
+cart.tamarabranch.com
+
+# Reference: https://www.malware-traffic-analysis.net/2019/10/15/index.html
+
+2vvby3tu.com
+3gyd.com
+atmacareklame.ch
+kelurahanmojosurakarta.com
+uzbqlyhj25pp77w.com
+w2qrrab6rk5det.com
+
+# Reference: https://any.run/malware-trends/troldesh (Note: as seen on 2019-12-04)
+
+qxq.ddns.net
+hunterdekaron.net
+
+# Reference: https://www.virustotal.com/gui/file/5f2190dddd7d0119e4d7b4d648a9b8ec5ee4a9dca8e8f58e53538eee00dc973e/detection
+
+141.105.66.243:2233
+
+# Reference: https://www.virustotal.com/gui/file/c160b80b1c8dc7a6d052caf167088b472b58b7554434d30a68b6dc8c62b68d38/detection
+
+185.220.101.193:10193
+
+# Reference: https://www.virustotal.com/gui/file/b993840717808f4ba6df40c5a36c39aac513621718b881d44c23ba1c6a6d3169/detection
+
+136.243.4.139:8008
+b2afikprcfzqdbcv.onion
+s2oxwaedphciavio.onion

@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: DreamC2 - A Telegram bot to automatically buy API/C2 plans to send DDOS attacks
+
+# Reference: https://x.com/redrabytes/status/1887495258482634787
+# Reference: https://x.com/redrabytes/status/1887495287909896220
+
+http://45.13.225.11
+138.124.110.255:1337
+138.124.110.255:2115
+138.124.110.255:999
+dreamproxy.cc
+muffins.chat
+cloud.dreamproxy.cc
+no6mu624zvin3qee3m73ejg5gk76au6wwauqqoy3g4w5h7ulhqpbc6id.onion
+
+# Reference: https://x.com/redrabytes/status/1905716713896943775
+# Reference: https://x.com/redrabytes/status/1905716721060888881
+# Reference: https://app.validin.com/detail?find=Abrissyo&type=raw&ref_id=80bac3ed66d#tab=host_pairs (# 2025-03-29)
+
+http://104.234.168.3
+http://185.121.12.191
+104.234.168.3:1337
+104.234.168.3:8080
+abrissy.info
+dreamproxy.ru
+iggor.xyz

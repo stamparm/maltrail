@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: celestial stealer
+
+# Reference: https://www.trellix.com/blogs/research/anatomy-of-celestial-stealer-malware-as-a-service-revealed/
+# Reference: https://www.virustotal.com/gui/file/00a722c3d7b2b33aaa091fb28f695aa79a0fd1d560e4f86e0bd0da1768ffc6fa/detection
+
+http://92.246.138.20
+api-unreal.com
+capguru-solver.com
+celestial-stealer.dev
+counters-strike2.org
+now-here.fun
+prnt-screen.com
+python-developers.net
+unity-api.net
+gonnacrack.discloud.app
+nodeupdater.discloud.app
+publicimgura.discloud.app
+admin.celestial-stealer.dev
+spinit.discloud.app
+zerostone.discloud.app

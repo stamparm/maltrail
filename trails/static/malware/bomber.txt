@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/malwrhunterteam/status/1820523164813971924
+# Reference: https://www.virustotal.com/gui/file/16850c77bf09f655c7aa7c65627de8bd1dbddeabc4ed16c769b956d3201ae357/detection
+
+despacito5.com
+imagine777.com
+search.despacito5.com
+uik.imagine777.com
+
+# Reference: https://www.virustotal.com/gui/file/44ec508d1efa14ec9ed7ab962a950d43cde06a8248bec0e070cecb240e6bbdf8/detection
+
+skyfall0.com
+caceo.despacito5.com
+kiu.skyfall0.com

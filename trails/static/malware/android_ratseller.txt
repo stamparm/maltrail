@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1499379595107352584
+# Reference: https://twitter.com/LukasStefanko/status/1499387199523020811
+# Reference: https://www.virustotal.com/gui/file/f8c19ead3bb56531f966e8f989b1991d0c7cb9e464e8697aa0a04223414c3efc/detection
+# Reference: https://www.virustotal.com/gui/file/c12faa542f0ab8b674a42b6a039ac47c7f72f55930843c904e16d478ff28dc40/detection
+
+3.141.73.172:10009
+3.141.73.172:4555
+
+# Reference: https://www.virustotal.com/gui/file/c5f7fcb282a5f6951838af453f800087b8f4d1ea0d85f7349751479fa259a9d1/detection
+# Reference: https://www.virustotal.com/gui/file/757898c2b7f8ca34b9a6216468fe70be4f7157bea0da208913bfc2211f59ebee/detection
+
+185.255.45.217:6666
+darkwilim.hopto.org

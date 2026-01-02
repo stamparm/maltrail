@@ -1,0 +1,40 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ScumBots/status/1057717510227849216
+
+/treasureHunter/gate.php
+
+# Reference: https://twitter.com/ScumBots/status/1094811119154356224
+
+/treasureHarm/gate.php
+
+# Reference: https://twitter.com/ScumBots/status/1109113350158454787
+
+/paper/gate.php
+/conhost/gate.php
+
+# Reference: https://twitter.com/ScumBots/status/1163802629853646848
+
+leg1.ml
+/cc/rss.php
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, TreasureHunter)
+
+http://51.15.252.204
+/oficialmuieingaoaza.php
+
+# Reference: https://twitter.com/ScumBots/status/1218958792383221769
+
+http://212.47.232.210
+lookarround.bet
+/paper/gate.php
+/lookarround/gate.php
+
+# Reference: https://twitter.com/TI_ESC/status/1472965038738706442
+# Reference: https://habr.com/ru/company/pt/blog/432172/ (Russian)
+# Reference: https://www.virustotal.com/gui/file/3ba60e42f7d7eca5b2cfcbdd2a9bc726ab0d655de691e7d9bfa530f7e693746d/detection
+# Reference: https://www.virustotal.com/gui/file/5bb0a4586afcab73283fe9c9fe910f9a96d7821886d4cf989c000f1c07b561f1/detection
+
+http://151.80.237.222
+files5437787.hopto.org

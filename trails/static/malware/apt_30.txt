@@ -1,0 +1,41 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2015/05/20081935/rpt-apt30.pdf
+
+appsecnic.com
+autoapec.com
+aseanm.com
+bigfixtools.com
+bluesixnine.com
+cbkjdxf.com
+creammemory.com
+iapfreecenter.com
+km-nyc.com
+km153.com
+lisword.com
+newpresses.com
+
+# Reference: https://twitter.com/Vishnyak0v/status/1252495730486456321
+# Reference: https://www.virustotal.com/gui/ip-address/103.233.10.152/relations
+
+103.233.10.152:3306
+103.233.10.152:4433
+103.233.10.152:8080
+http://103.233.10.152
+
+# Reference: https://twitter.com/3XS0/status/1253426730217291778 (# Lecna/BACKSPACE, NETEAGLE)
+# Reference: https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/eagle-eye-is-back-apt30/
+
+172.247.197.189:443
+gordeneyes.com 
+kabadefender.com 
+techmicrost.com
+
+# Generic trails
+
+/ForZRLnk1z/
+/ForZRLnk3z/
+/Lnk1z/
+/clntcmd.php
+/clntsignin.php

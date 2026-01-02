@@ -1,0 +1,159 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.isightpartners.com/2015/09/teslacrypt-2-0-cyber-crime-malware-behavior-capabilities-and-communications/
+# Reference: https://otx.alienvault.com/pulse/55f9d9b74637f26df7745066/
+
+teenpornotube.org
+ledshoppen.nl
+shmetterheath.ru
+ezglobalmarketing.com
+fgainterests.com
+serenitynowbooksandgifts.com
+
+# Reference: http://www.dynamoo.com/files/teslacrypt.csv
+
+hagurowrob.ru
+toftevenghertbet.ru
+blagooooossss.com
+brostosoosossss.com
+ggergregre.com
+poponkia.com
+blagooooossss.com
+brostosoosossss.com
+ggergregre.com
+poponkia.com
+soft2webextrain.com
+softextrain64.com
+workcccbiz.in
+chromedoors.ru
+debatelocator.ru
+growthtoys.ru
+hedtheresran.ru
+listfares.ru
+littmahedtbo.ru
+wordlease.ru
+mytorsmired.ru
+dns1.mikymaus.in
+dns1.softextrain644.com
+dns9.auth-mail.ru
+soft2webextrain.com
+softextrain64.com
+workcccbiz.in
+
+# Reference: https://blog.talosintelligence.com/2019/08/threat-roundup-0726-0802.html (# Win.Ransomware.TeslaCrypt-7090181-1)
+
+ant.trenz.pl
+aiszao.com
+aldcea.com
+azuyzw.com
+bsieau.com
+ergcgi.com
+exukeu.com
+fasuoi.com
+fogwee.com
+giyxhd.com
+gknysc.com
+hzadcu.com
+ihpuyg.com
+iiiavb.com
+lxecov.com
+ogcfic.com
+uunzlo.com
+ymjjaz.com
+ymxunc.com
+yqnonu.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-01-06-new-teslacrypt-ransomware-arrives-via-spam/new-teslacrypt-ransomware-arrives-via-spam.csv
+# Reference: https://wordpress.org/support/topic/issue-with-wp-admin-includes-misc-php/
+
+/wp-content/plugins/theme-check/misc.php
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-03-15-teslacrypt-arrives-via-neutrino-exploit-kit/teslacrypt-arrives-via-neutrino-exploit-kit.csv
+
+nutqauytva[0-9a-z]+\.com
+nutr3inomiranda1.com
+
+# Reference: https://otx.alienvault.com/pulse/553f3c1bb45ff55db8148b1c/
+# Reference: http://blogs.cisco.com/security/talos/teslacrypt
+# Reference: https://www.mysonicwall.com/sonicalert/searchresults.aspx?ev=article&id=818
+# Reference: https://blog.talosintelligence.com/2020/01/threat-roundup-0103-0110.html (# Win.Ransomware.TeslaCrypt-7501245-1)
+# Reference: https://blog.talosintelligence.com/2020/04/threat-roundup-0410-0417.html (# Win.Ransomware.TeslaCrypt-7661903-0)
+
+vostorgspa.kz
+
+# Reference: https://app.any.run/tasks/f04d9295-9e1e-42a8-8345-8d6eabdaa650/
+
+http://iqinternal.com/pmtsys/fonts/wstr.php
+http://goktugyeli.com/wstr.php
+
+# Reference: https://www.virustotal.com/gui/file/5862be4afb09c5c0ab9dd62d7c5e08f3d7e1f91656996200b7016e68c73515ca/behavior/Dr.Web%20vxCube
+
+tesla.new.uneargo.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/91.243.75.133/detection
+# Reference: https://www.virustotal.com/gui/ip-address/104.223.125.172/detection
+# Reference: https://www.virustotal.com/gui/ip-address/93.158.215.86/detection
+# Reference: https://www.virustotal.com/gui/ip-address/190.102.111.127/detection
+# Reference: https://www.virustotal.com/gui/ip-address/107.161.159.30/detection
+
+agonecloop.at
+angortra.at
+begumvelic.at
+bematvocal.at
+bonmawp.at
+drossstoic.at
+heliofetch.at
+javakale.at
+keratadze.at
+oftpony.at
+parsesun.at
+tuttianent.at
+
+# Reference: https://medium.com/@sauravchaudhary/tesla-crypt-ransomware-analysis-eb9b1dc5be0f
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Ransom-ASA/detailed-analysis.aspx
+
+7tno4hib47vlep5o.tor2web.org
+7tno4hib47vlep5o.tor2web.blutmagie.de
+7tno4hib47vlep5o.tor2web.fi
+7tno4hib47vlep5o.42kdb12.net
+7tno4hib47vlep5o.42kjb11.net
+
+# Reference: https://app.any.run/tasks/6c1c68d6-4a89-494e-b9d4-e187efed66a4/
+
+imagescroll.com
+biocarbon.com.ec
+stacon.eu
+
+# Reference: https://app.any.run/tasks/50505486-e200-43f3-9c50-c6d34bbafacb/
+
+anybug.net
+
+# Reference: https://blog.talosintelligence.com/2021/03/threat-roundup-0226-0305.html (# Win.Ransomware.TeslaCrypt-9835471-1)
+
+big-cola.com
+dustywinslow.com
+hongsi.com
+lovemydress.pl
+lutheranph.com
+
+# Reference: https://www.virustotal.com/gui/file/83132f3b20ceb78e94def0168d00f2d237edd58320099c45d8bd319e6adedd6b/detection
+
+biocarbon.com.ec
+imagescroll.com
+surrogacyandadoption.com
+worldisonefamily.info
+music.mbsaeger.com
+
+# Reference: https://blog.talosintelligence.com/2022/07/threat-roundup-0715-0722.html (# Win.Ransomware.TeslaCrypt-9957356-0)
+
+heizhuangym.com
+jessforkicks.com
+
+# Generic
+
+(7tno4hib47vlep5o|7vhbukzxypxh3xfy|akdfrefdkm45tf33fsdfsdf|epmhyca5ol6plmx3|nn54djhfnrnm4dnjnerfsd|p4fhmjnsdfbm4w4fdsc|pts764gt354fder34fsqw45gdfsavadfgsfg|sondr5344ygfweyjbfkw4fhsefv|uiredn4njfsa4234bafb32ygjdawfvs|5rport45vcdef345adfkksawe|tes543berda73i48fsdfsd|yyre45dbvn2nhbefbmh|ww34werwejhjwrtnjfgkm|po4dbsjbneljhrlbvaueqrgveatv|w6bfg4hahn5bfnlsafgchkvg5fwsfvrt|dd7bsndhr45nfksdnkferfer|kk4dshfjn45tsnkdf34fg|k4restportgonst34d23r|kkd47eh4hdjshb5t|tt54rfdjhb34rfbnknaerg|ytrest84y5i456hghadefdsd)\.[a-z0-9._-]+
+
+/bstr.php
+/wstr.php
+/g76dbf

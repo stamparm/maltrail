@@ -1,0 +1,51 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.sophos.com/en-us/medialibrary/PDFs/technical-papers/sophoslabs-matrix-report.pdf
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/Ransomware-Matrix
+
+blushing-gasket.000webhostapp.com
+che.mygoodsday.org
+eman.mygoodsday.org
+fb.mygoodsday.org
+fredstat.000webhostapp.com
+jnss.mygoodsday.org
+jostat.000webhostapp.com
+jostat.mygoodsday.org
+mai-hoand.000webhostapp.com
+murik.xyz
+murikos.in
+no7654324wesdfghgfds.000webhostapp.com
+nobad.mygoodsday.org
+prcp.mygoodsday.org
+pre.mygoodsday.org
+testercmd.in
+third.mygoodsday.org
+tru.mygoodsday.org
+tstat.mygoodsday.org
+updateplayernow.win
+
+# Reference: https://www.virustotal.com/gui/domain/atx.ikonz.org/relations
+
+atx.ikonz.org
+
+# Reference: https://www.virustotal.com/gui/file/a6df222572f57fabf6896d7dd6cca8e9ed8941e896b3094f7707ad9a700696c3/detection
+# Reference: https://app.any.run/tasks/d523d8c3-20d0-423e-ae1e-fb9b1b9b47e7/
+
+pro.ikonz.org
+
+# Reference: https://www.virustotal.com/gui/file/d87d1fbeffe5b18e22f288780bf50b1e7d5af9bbe2480c80ea2a7497a3d52829/detection
+
+qsc.ikonz.org
+
+# Reference: https://www.virustotal.com/gui/file/4bcc82954a5a6a30ddcdc8e51eaa1369c169f8c0d90b9abc90d9979d91388716/detection
+
+nsp.ikonz.org
+
+# Reference: https://www.virustotal.com/gui/file/e91832d091a86ed4a3a6c62dfd90d894b9d792fe968ed8c5733df2813d2fb5cf/detection
+
+fredstat.000webhostapp.com
+
+# Generic
+
+/addrec.php?apikey=

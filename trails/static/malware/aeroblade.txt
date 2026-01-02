@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/Horgh_rce/status/1731734043165659304
+# Reference: https://x.com/asdasd13asbz/status/1834106761210675362
+# Reference: https://blogs.blackberry.com/en/2023/11/aeroblade-on-the-hunt-targeting-us-aerospace-industry
+# Reference: https://www.virustotal.com/gui/file/2610948c1f245729f6224e17961b1bc23ed01329ad42d74cdde8df50cde5318b/detection
+# Reference: https://www.virustotal.com/gui/file/853a0eac35404a837b52ae9216c1037187b60d408745d0d7d15937b7c011683d/detection
+# Reference: https://www.virustotal.com/gui/file/6fde9910059507789fdbc18c56996f319831bc1e58dd9e90870eccddcbf35b70/detection
+
+http://151.106.27.217
+151.106.27.217:443

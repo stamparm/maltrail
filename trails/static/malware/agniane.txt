@@ -1,0 +1,45 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: agniane stealer
+
+# Reference: https://twitter.com/MalGamy12/status/1688984207752663040
+# Reference: https://twitter.com/karol_paciorek/status/1689196611807678464
+# Reference: https://twitter.com/ViriBack/status/1689447082040373249
+# Reference: https://tria.ge/230810-bnacwaac7y/behavioral1
+
+http://62.109.0.213
+6rbygv.ru
+
+# Reference: https://twitter.com/MalGamy12/status/1703004559440769332
+# Reference: https://www.virustotal.com/gui/file/abce9c19df38717374223d0c45ce2d199f77371e18f9259b9b145fe8d5a978af/detection
+
+central-cee-doja.ru
+
+# Reference: https://twitter.com/naumovax/status/1708855368292434374
+# Reference: https://tria.ge/231002-rhp45sbd41/behavioral1
+
+trecube.store
+
+# Reference: https://twitter.com/1ZRR4H/status/1730336285900861711
+# Reference: https://www.virustotal.com/gui/file/5a4ea5abd5f2150b2cc346cf7564454cb6d4bfdda2876324f88e267eb8242d90/detection
+# Reference: https://www.virustotal.com/gui/file/03f7a178f3c544e4329eb12850086dea6a822bda80938a0000220d77563afece/detection
+
+trecube.com
+unotree.ru
+
+# Reference: https://blogs.cisco.com/security/agniane-stealer-information-stealer-targeting-cryptocurrency-users
+# Reference: https://www.virustotal.com/gui/file/bf84946b575cd42bd2bb324eab355b0848430e029d30e4890a347654ae9e1409/detection
+# Reference: https://www.virustotal.com/gui/file/07f2e6d851a488c3448aba1d10f89ec1b725385b47a6bdf30549e53d65b1df4d/detection
+
+imitato23.store
+trecube13.ru
+wood100home.ru
+
+# Reference: https://www.virustotal.com/gui/file/daea71a3094e0c90554a77e95b0b354d1515f99e70fa5013f09302a5bb04dde0/detection
+
+nc1337.online
+
+# Generic
+
+/gate?id=1&build=yungway

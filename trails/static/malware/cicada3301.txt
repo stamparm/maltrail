@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cicada ransomware
+
+# Reference: https://www.truesec.com/hub/blog/dissecting-the-cicada
+# Reference: https://www.watchguard.com/wgrd-security-hub/ransomware-tracker/cicada3301
+
+cicadabv7vicyvgz5khl7v2x5yygcgow7ryy6yppwmxii4eoobdaztqd.onion
+
+# Reference: https://unit42.paloaltonetworks.com/repellent-scorpius-cicada3301-ransomware/
+
+103.42.240.37:3389
+
+# Reference: https://x.com/TLP_R3D/status/1847225529759371426
+# Reference: https://www.virustotal.com/gui/file/2dc8e6c63948dd6c313ef14bf14f0fecabb8384a7a310b771e81d4cc776d2cc4/detection
+# Reference: https://www.virustotal.com/gui/file/65103ed62bf26e5bab1b56756771bc129d2c6ff6a419cab858d29d0ff233bef2/detection
+
+datasmetric.com

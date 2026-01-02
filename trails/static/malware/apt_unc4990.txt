@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.mandiant.com/resources/blog/unc4990-evolution-usb-malware
+
+apiworld.cf
+bobsmith.apiworld.cf
+captcha.grouphelp.top
+captcha.tgbot.it
+davebeerblog.eu.org
+eu1.microtunnel.it
+euserv3.herokuapp.com
+evinfeoptasw.dedyn.io
+geraldonsboutique.altervista.org
+lucaespo.altervista.org
+lucaesposito.herokuapp.com
+microtunnel.it
+monumental.ga
+ncnskjhrbefwifjhww.tk
+studiofotografico35mm.altervista.org
+wjecpujpanmwm.tk
+eldi8.github.io/src.txt
+evh001.gitlab.io/src.txt
+arstechnica.com/civis/members/frncbf22.1062014/about/
+luke.compeyson.eu.org/runservice/api/public.php
+luke.compeyson.eu.org/runservice/api/public_result.php
+luke.compeyson.eu.org/wp-admin.php
+
+# Generic
+
+/c0s1ta/index.php
+/c0s1ta/
+/updater.php?from=USB1

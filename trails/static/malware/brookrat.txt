@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/suyog41/status/1760147252356731332
+# Reference: https://www.virustotal.com/gui/file/3d272ef7562fc65dda3f33defba915d8da22891fe6dec0fba196eaf2ad198680/detection
+# Reference: https://www.virustotal.com/gui/file/f2b198f3ec234ba515c7a2b073bcaa865cdb34d94b3a8089e231f5534108cf1d/detection
+# Reference: https://www.virustotal.com/gui/file/a42413637e124c25f3e968d8425a3039e6a746311760de4bb2864ff52b8b833d/detection
+# Reference: https://www.virustotal.com/gui/file/3d5ae3b378711d84d338e80f74a9b36c6e70b5672624867ef11d611bd5c78046/detection
+# Reference: https://www.virustotal.com/gui/file/3d272ef7562fc65dda3f33defba915d8da22891fe6dec0fba196eaf2ad198680/detection
+# Reference: https://www.virustotal.com/gui/file/01c64ad960cf903c8103fb41832355c4976f5195f74a3f70f9db78dc171f8194/detection
+
+88.165.183.110:32768

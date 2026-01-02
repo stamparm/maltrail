@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/eset/malware-ioc/tree/master/groundbait
+
+disk-fulldatabase.rhcloud.com
+wallejob.in.ua
+wallex.ho.ua
+gils.ho.ua
+literat.ho.ua
+lefting.org
+# celebrat.net
+bolepaund.com
+
+# Reference: https://www.virustotal.com/gui/file/a72fd9b23d0388ddcf38e6ca324a6853d08f261360236bb14e5594e879f9ea88/behavior
+
+celebrat.net/wd.php

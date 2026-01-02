@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fortinet.com/blog/threat-research/gotitan-botnet-exploitation-on-apache-activemq
+# Reference: https://www.virustotal.com/gui/file/457fddcfc4ed73804d03e12b3680b20d048a44c8bf39f26a37fa3026e2a4be28/detection
+
+http://194.38.22.53
+http://91.92.242.14
+103.118.253.34:5177
+199.231.186.249:8000
+34.16.140.209:6661
+91.92.242.14:1456
+
+# Generic
+
+/main-linux-amd64s

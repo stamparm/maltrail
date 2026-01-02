@@ -1,0 +1,123 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/0xToxin/status/1595421236267552770
+# Reference: https://www.virustotal.com/gui/file/e65b9ad61006d81f08238af12c9572075432264982cb62eb39415ff5a326964b/detection
+
+http://185.209.160.47
+http://45.134.174.158
+
+# Reference: https://twitter.com/0xToxin/status/1595433228562833408
+# Reference: https://twitter.com/0xToxin/status/1595437210937225216
+# Reference: https://twitter.com/500mk500/status/1595435370560520192
+# Reference: https://www.virustotal.com/gui/ip-address/31.42.176.127/relations
+
+http://31.42.176.127
+laplas.app
+laplasejd3i352krigq45dj4s75colxxj4ll3bsflmr4ir76dg5qb3yd.onion
+
+# Reference: https://twitter.com/0xToxin/status/1595840204635504641
+# Reference: https://www.virustotal.com/gui/ip-address/45.159.189.115/relations
+
+http://193.56.146.168
+clipper.guru
+
+# Reference: https://twitter.com/suyog41/status/1596118044471795712
+# Reference: https://www.virustotal.com/gui/file/955025ec2a4a635f597080fac9287b2692b69536b16f7c736a041a163011cb85/detection
+
+04068790.com
+
+# Reference: https://twitter.com/0xToxin/status/1597674380464562176
+# Reference: https://tria.ge/221128-cfkdjsfd36/behavioral1
+
+http://79.137.206.137
+
+# Reference: https://twitter.com/0xToxin/status/1598047072535867393
+
+http://104.193.255.50
+http://167.86.100.179
+http://185.223.93.251
+http://194.87.216.44
+http://31.42.176.127/
+http://45.159.188.118
+http://45.159.188.158
+http://45.159.189.115
+http://79.137.204.208
+http://95.214.55.244
+atlantasanad.space
+crypto-bloktopia.xyz
+xshow.tv
+
+# Reference: https://threatfox.abuse.ch/ioc/1068398/
+
+http://45.159.189.105
+
+# Reference: https://twitter.com/doc_guard/status/1620050799488540674
+# Reference: https://www.virustotal.com/gui/file/601404a367761761bf1d5dcb5e3ba4d3d00231a30925e32c0e14381ebbb725ed/detection
+
+http://162.248.224.213
+
+# Reference: https://twitter.com/r3dbU7z/status/1624059501258190853
+# Reference: https://www.virustotal.com/gui/file/bd7dfd1a455f14482be1b6838b767d5a10ca0426fd4232dd69a159b94e94a492/detection
+
+http://31.172.79.130
+most-wntonlyfunns.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1626288456795291650
+# Reference: https://app.any.run/tasks/19f3070c-7ac7-4049-b1fb-019747514790/
+# Reference: https://app.any.run/tasks/bc4008f9-9b92-4c3a-bd7f-d192edbaf320/
+
+http://45.84.121.44
+/bot/regex
+
+# Reference: https://twitter.com/Gi7w0rm/status/1637524594998247426
+# Reference: https://github.com/Gi7w0rm/MalwareConfigLists/blob/main/Raccoon_v2/additional_payloads/add_plds.md
+
+http://185.223.93.251
+185.106.92.140:8080
+
+# Reference: https://www.virustotal.com/gui/file/d1bd5a14d886e71aa5855ce74c84aa7cefa1f782e32cd2140c3a10d91084105d/detection
+
+searchseedphase.online
+
+# Reference: https://twitter.com/James_inthe_box/status/1645539872441270272
+# Reference: https://app.any.run/tasks/63ceea5c-4761-4e99-aec6-9477c885a178/
+
+http://176.113.115.25
+
+# Reference: https://www.virustotal.com/gui/file/08fa2eaf0a93a4b1cc98e8eb518f3e55f4cd46c8f698b66db9c86eb76c323133/detection
+
+http://163.123.142.220
+
+# Reference: https://www.virustotal.com/gui/file/1697c4a0b4a650062f3e7d73612e581c8f74a2b829fb3c6a07ab6b0211843ea7/detection
+
+http://45.159.189.33
+
+# Reference: https://www.virustotal.com/gui/file/076765520388312f563d23a0bf30f6069b6d6745faf1d1cf2bf1be5e45866c7e/detection
+
+http://185.106.92.74
+
+# Reference: https://twitter.com/g0njxa/status/1681776434635849728
+
+lpls.tuktuk.ug
+
+# Reference: https://threatfox.abuse.ch/ioc/1151740/
+
+http://206.189.229.43
+
+# Reference: https://www.virustotal.com/gui/file/242867c81e34fc4311208216b6b3d33d6d449c78a751a5b7971bcef6f982c318/detection
+
+http://185.209.161.189
+
+# Reference: https://app.any.run/tasks/b7fa7d0f-9241-488b-b8f0-59e5a699a8da/
+
+http://185.209.161.89
+
+# Generic
+
+/bot/online?guid=
+/bot/online?key=
+/bot/regex?key=
+/.well-known/dmi1dfg7n.kjylug
+/.well-known/ofg7d45fg312.sfhg
+/.well-known/rewrerwef.fdf

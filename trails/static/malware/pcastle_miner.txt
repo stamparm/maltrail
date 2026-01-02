@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://otx.alienvault.com/pulse/5cf7d0cbf93d596345518a6a
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/monero-mining-malware-pcastle-zeroes-back-in-on-china-now-uses-multilayered-fileless-arrival-techniques/
+# Reference: https://github.com/guardicore/labs_campaigns/blob/master/Lemon_Duck/IoCs/domains.md
+
+ackng.com
+amxny.com
+awcna.com
+zer2.com
+
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/Trojan-LDMiner.csv
+# Reference: https://news.sophos.com/en-us/2020/08/25/lemon_duck-cryptominer-targets-cloud-apps-linux/
+# Reference: https://otx.alienvault.com/pulse/5f454b50b99ebdf2374b8dde
+
+http://167.71.87.85
+b69kq.com
+jdjdcjq.top
+k3qh4.com
+zer9g.com
+zz3r0.com

@@ -1,0 +1,36 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://web.archive.org/web/20120106212034/http://amada.abuse.ch/blocklist.php?download=domainblocklist
+
+armyerror.ru
+bayjail.ru
+bizzproffi.com
+cn89212.com
+coolblender.ru
+discountprowatch.com
+ftpshki.cc
+hjwbxhqr.cn
+hotgas.ru
+laafleur.com
+lodfewpleaser.com
+losefmosef777.net
+preflopp.com
+proobizz.cc
+sa-ppas12.com
+sicha-linna8.com
+statcount.cn
+tunemug.ru
+uhjjs.com
+ultrarua.com
+vurmo-st6.cn
+
+# Reference: https://blog.talosintelligence.com/2018/09/threat-roundup-0907-0914.html (Win.Dropper.Bredolab-6681668-0)
+
+7896.sytes.net
+creditoshabbo.hopto.org
+ereticus1.no-ip.org
+humberto1992.zapto.org
+imacdrake.no-ip.org
+remotes.no-ip.biz
+tanne0214.zapto.org

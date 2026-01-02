@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: solarbot
+
+# Reference: https://malpedia.caad.fkie.fraunhofer.de/details/win.solarbot
+# Reference: https://www.welivesecurity.com/2013/09/25/win32napolar-a-new-bot-on-the-block/
+# Reference: https://github.com/hardenedlinux/hardenedlinux-zeek-script/blob/master/scripts/frameworks/intel/OSINT/CYBERCRiME-03-03-19.txt
+# Reference: https://www.virustotal.com/gui/file/2ee8846bdef4b6fdfb1d310df07bbf8b71e7da4bc0a98953ed4150a86e2d1518/detection
+# Reference: https://www.virustotal.com/gui/file/294dff3b6e6c238d4f86b55ff5dd880d74e55858cc91e63bf8a07bfeb1c0da2f/detection
+
+alfadente.com.br
+dabakhost.be
+elzbthfntr.com
+principallyliving.com
+xyz25.com
+yandafia.com
+
+# Generic
+
+/bot/solarbot/
+/Solarbot/
+/Solarbot/Panel/
+/Solarbot/plung/
+/Solarbot/plung/MessageBox.bin
+/Solarbot/plung/GetAntiVirus.bin
+/Solarbot/plung/WalletSteal.bin
+/solbrwq/

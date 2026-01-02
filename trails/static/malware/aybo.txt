@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://otx.alienvault.com/pulse/5ec6fbc1f539d7ff4b966616
+# Reference: https://www.virustotal.com/gui/file/a555153e36470ad95d984475b3bc829a7b2d336e6623c4bf5c65ec8b2e3c9d0c/detection
+# Reference: https://www.virustotal.com/gui/file/25f063854235c5f3ef5e3b5ce7c18ca4d15c9ad2bcb8a39e19dcd06531286d65/detection
+
+areyouaredo.org
+blt2blt.ru
+mirt.webstyle.ru
+y-andex.ru
+
+# Reference: https://www.trendmicro.com/vinfo/ru/threat-encyclopedia/malware/worm_aybo.a
+# Reference: https://www.virustotal.com/gui/file/2ff6364fc1c012560e7c7ad4206b94802246bc7775491cf2b80661fc35c72803/detection
+
+http://88.214.207.83
+etobylovjanvare.ru
+glorymolly.com
+la2deluxe.net
+nogiledeneli.ru
+pervogoaprela.ru
+wearehungry.info
+
+# Generic
+
+/0942c3aad278ce5ea571a61712b4506a.php
+/0a751581d5e1b56c29c213ee06c99419.php
+/classes/s.php?query=
+/help/manual/google_add.php?query=

@@ -1,0 +1,87 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: power stealer
+
+# Reference: https://twitter.com/karol_paciorek/status/1755574656591921644
+
+http://172.206.90.104
+http://20.199.21.227
+http://20.39.248.72
+http://20.79.179.111
+ntstealer.com
+ntstealer.com.tr
+ntstealer.online
+ntstealer.xyz
+powerauths.com
+powerstealer.com
+powerstealer.fun
+powerstealer.ml
+powerstealer.online
+powerstealer.tk
+powerstealer.xyz
+
+# Reference: https://twitter.com/ULTRAFRAUD/status/1767247782992105947
+
+bbystealer.com
+bbystealer.com.tr
+bbystealer.online
+bbystealer.rip
+bbystealer.wtf
+bbystealer.xyz
+nt-stealer.com
+nt-stealer.online
+nt-stealer.xyz
+
+# Reference: https://twitter.com/e24111111154168/status/1775878090876428408
+
+http://20.110.42.40
+
+# Reference: https://x.com/solostalking/status/1889664072221859914
+# Reference: https://www.virustotal.com/gui/ip-address/4.245.224.165/detection
+# Reference: https://app.validin.com/detail?find=NT%20Stealer&type=raw&ref_id=dbaa6e20ebb#tab=host_pairs
+
+http://172.174.209.45
+http://20.55.203.53
+http://4.245.224.165
+araskrglssrla.site
+nt-stealers.com
+ntsteal.com
+ntsteal.com.tr
+ntstealer.shop
+ntstealer.store
+ntstealerv1.com
+ntsteallers.com
+
+# Reference: https://twitter.com/RacWatchin8872/status/1787827669855269350
+
+77.90.14.85:5000
+
+# Reference: https://x.com/iam_rajhans/status/1831739822286762453
+# Reference: https://search.censys.io/hosts/51.120.13.41
+
+http://51.120.13.41
+
+# Reference: https://app.validin.com/detail?find=Power%20Stealer&type=raw&ref_id=a612c3b1221#tab=host_pairs_v2
+
+hukumdarcraft.com
+
+# Reference: https://x.com/iam_rajhans/status/1836719419524784438
+# Reference: https://x.com/banthisguy9349/status/1836818142535811492
+# Reference: https://search.censys.io/hosts/4.178.136.102
+# Reference: https://urlscan.io/search/#filename:%220905a74092fa43fce6218aa48f6a26a4.jpg%22
+
+http://4.178.136.102
+sourcecode.homes
+
+# Reference: https://x.com/iam_rajhans/status/1853362795351269820
+
+http://20.117.200.140
+
+# Reference: https://x.com/iam_rajhans/status/1855225896409432342
+
+http://77.90.53.11
+
+# Reference: https://x.com/solostalking/status/1859907768695795949
+
+http://74.226.252.100

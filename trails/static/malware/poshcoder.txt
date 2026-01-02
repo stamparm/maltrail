@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://doc.emergingthreats.net/bin/view/Main/2018679
+
+zpwibfsmoowehdsm.onion
+zpwibfsmoowehdsm.onion.gq
+zpwibfsmoowehdsm.onion.lt
+zpwibfsmoowehdsm.onion.cab
+zpwibfsmoowehdsm.onion.city
+zpwibfsmoowehdsm.onion.direct
+zpwibfsmoowehdsm.onion.link
+zpwibfsmoowehdsm.onion.nu
+zpwibfsmoowehdsm.tor2web.fi
+zpwibfsmoowehdsm.tor2web.blutmagie.de
+zpwibfsmoowehdsm.tor2web.org
+zpwibfsmoowehdsm.tor2web.ru
+zpwibfsmoowehdsm.tor-gateways.de

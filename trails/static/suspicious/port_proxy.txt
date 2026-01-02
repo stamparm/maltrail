@@ -1,0 +1,49 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/pmelson/status/1331018695531958272
+# Reference: https://twitter.com/ScumBots/status/1108054788804145153
+# Reference: https://twitter.com/ScumBots/status/1056727832037150727
+
+bi-tree.ru
+ngrok.io
+portmap.host
+portmap.io
+
+# Reference: https://my-homeip.de/portmapper/what_is_this
+
+portmapper.myonlineportal.net
+
+# Reference: https://www.virustotal.com/gui/domain/natfrp.cloud/relations
+
+natfrp.cloud
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-02-v10456/1090
+# Reference: https://www.virustotal.com/gui/domain/ngrok-free.app/relations
+# Reference: https://app.validin.com/axon?find=34.211.83.157&type=ip
+
+ngrok.app
+ngrok.com
+ngrok.dev
+ngrok.pizza
+ngrok-free.app
+ngrok-free.dev
+
+# Reference: https://app.validin.com/axon?find=54.218.37.147&type=ip
+
+hotspotproxy.tk
+
+# Reference: https://x.com/malwrhunterteam/status/1829127614868439316
+# Reference: https://www.virustotal.com/gui/file/d8b11b8b437f83a1ad55c954b4a80081abfaf3c29cbc922d57b76bc20745111a/detection
+
+ngrok.pro
+
+# Reference: https://app.validin.com/detail?find=ngrok%20-%20Online%20in%20One%20Line&type=raw&ref_id=c3be71a968e#tab=host_pairs (# 2025-06-26)
+
+dev-ngrok.com
+stage-ngrok.com
+
+# Reference: https://github.com/stamparm/maltrail/issues/19330
+# Reference: https://github.com/ekzhang/bore
+
+bore.pub

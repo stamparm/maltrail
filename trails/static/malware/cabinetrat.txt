@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: uac-0245
+# CERT-UA: UAC-0245
+
+# Reference: https://x.com/BlueEye46572843/status/1980596930758537681
+# Reference: https://cip.gov.ua/ua/news/cert-ua-poperedzhaye-pro-cilespryamovani-ataki-na-sili-oboroni-z-vikoristannyam-novogo-bekdoru-cabinetrat
+# Reference: https://www.virustotal.com/gui/file/ca3bff769bbd14478751eb92260ce7f62264dbc65431645ce6fe42835066e972/detection
+
+http://5.101.85.24
+20.112.250.113:18700
+20.112.250.113:42831
+20.112.250.113:20046
+20.112.250.113:33976
+20.112.250.113:443

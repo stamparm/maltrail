@@ -1,0 +1,94 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/nullcookies/status/1038170765093466112
+
+softnew.website
+
+# Reference: https://its-ownz.blogspot.com/2015/02/blue-botnet-http-botnet.html
+
+burimche.net
+
+# Reference: https://twitter.com/MalWebHunter/status/948672815263203333
+
+dattieclavong.com
+
+# Reference: https://twitter.com/nullcookies/status/1141140952779825152
+
+giangholuankiem.com
+volamthailan.com
+
+# Reference: https://twitter.com/stvemillertime/status/1155896477195091971
+
+attack.s2lol.com
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, BlueBot)
+
+volamtayson.top
+
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-23, BlueBotNet)
+
+anonprixorbooter.byethost11.com
+jxshxt.com
+
+# Reference: https://twitter.com/benkow_/status/1243223303596187653
+
+talismans.xyz
+
+# Reference: https://twitter.com/wwp96/status/1332140439869288448
+# Reference: https://app.any.run/tasks/3e9c5860-4882-466c-8cfd-de1404da4cfa/
+
+jx2-bavuong.com
+
+# Reference: https://www.virustotal.com/gui/file/bb93c1481e598344d6c7c3858805cab0e21f5de3398de460a919a6deb412b7f7/detection
+
+87.251.71.226:2997
+a0550192.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/2881ff4bbfc0488b016cfacf4d5d76f3ed24208795a98fe95e8e0a1a50e95fdf/detection
+
+a0552922.xsph.ru
+
+# Reference: https://twitter.com/suyog41/status/1641445217948815368
+# Reference: https://www.virustotal.com/gui/file/723ab0317856f31e6fb60d9753988322f154c9834d6b2f263bf3ab6736d3885b/detection
+# Reference: https://www.virustotal.com/gui/file/d238ae1c89cfe5b5e8891f7653cb87dd737133a00aedc85fe7c1cd73095c58dd/detection
+
+nguoimay.click
+v1.nguoimay.click
+
+# Reference: https://www.virustotal.com/gui/file/38295e1c3c4d53287ad186fa3abc3ec5e01f091348ffe209b8e9e0ad1509e166/detection
+# Reference: https://www.virustotal.com/gui/file/3ab445ab8933bcd307f66ac9969b9a18e94721aef37886f2c64b23922ec345ab/detection
+
+500aevolam.com
+antibot.xyz
+backouff.ddns.net
+botatt.ddns.net
+bots.ddns.net
+cchaze.ddnsking.com
+docs.antibot.xyz
+idh0.onthewifi.com
+jx1vn.net
+khanhphuong.ddns.net
+killbot.antibot.xyz
+killbot.ddns.net
+kziz.ddns.net
+mubongtoi.com
+ngochoa.ddns.net
+phamninh.ddns.net
+serv90.serveftp.com
+uzpsr.ddns.net
+
+# Generic
+
+/newbot/proxy
+/newbot/blog
+/newbot/target
+/newbot/botlogger.php
+/botlogger.php
+/ResidentEvil/blog
+/ResidentEvil/botlogger.php
+/ResidentEvil/proxy
+/ResidentEvil/target
+/ResidentEvil/target.ip
+/ResidentEvil/target.method
+/ResidentEvil/target.port

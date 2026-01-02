@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://blog.malwaremustdie.org/2015/07/mmd-0037-2015-bad-shellshock.html
+
+kill.et2046.com
+sb.et2046.com

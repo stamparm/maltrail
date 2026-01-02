@@ -1,0 +1,43 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ubel
+
+# Reference: https://twitter.com/malwrhunterteam/status/1364350402389569538
+# Reference: https://www.virustotal.com/gui/file/91d3a20106899c1029f4b5e44e0321ec8666f9e230444ee6882816efbc3e5ee7/detection
+
+sicurezza-appsistem.com
+
+# Reference: https://twitter.com/alberto__segura/status/1362041070134116356
+# Reference: https://twitter.com/f3d__/status/1362450506598203398
+# Reference: https://twitter.com/malwrhunterteam/status/1361748757407277057
+# Reference: https://twitter.com/f3d__/status/1362450506598203398
+# Reference: https://www.virustotal.com/gui/file/0ee1e241416b3f182f8e8e3e1e52721f344cba7c0ea4ad1ab71157d6331d043d/detection
+
+pinnatipartite-abil.000webhostapp.com
+quantumbots.xyz
+
+# Reference: https://twitter.com/f3d__/status/1416067172389040132
+# Reference: https://www.virustotal.com/gui/file/f2af79157b65d1091020fe5db8f8a403758f7fbc4007e0f4b9b0b78cb9862ad4/detection
+# Reference: https://www.virustotal.com/gui/file/1fb81ff3d18f5c9d75f9c7117dec76ece31c2f80ea7cc3b5d932b8ce58516246/detection
+
+smoothcbots.xyz
+
+# Reference: https://www.cleafy.com/cleafy-labs/ubel-oscorp-evolution
+# Reference: https://otx.alienvault.com/pulse/6103d52622c707d847e0cf41
+
+callbinary.xyz
+gogleadser.xyz
+marcobrando.xyz
+montanatony.xyz
+omegabots.xyz
+
+# Reference: https://twitter.com/_icebre4ker_/status/1451093326300594178
+# Reference: https://www.virustotal.com/gui/file/486d6a713d8c907df70a919729ac685328ab91a8977c2e352165640c4bd4d507/detection
+
+leevinsbots.xyz
+/api/trashcan/billboard/rhino
+
+# APK
+
+/securityweb.apk

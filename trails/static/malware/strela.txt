@@ -1,0 +1,75 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://medium.com/@DCSO_CyTec/shortandmalicious-strelastealer-aims-for-mail-credentials-a4c3e78c8abc
+
+http://193.106.191.166
+http://45.142.212.20
+
+# Reference: https://twitter.com/1ZRR4H/status/1654573411618680833
+# Reference: https://www.virustotal.com/gui/file/f6810204e0bd8619ed494ade1e38a88567674e14704cae2382d1e3ec280a2705/detection
+# Reference: https://www.virustotal.com/gui/file/4e37d4cd3f8de9d0231ebfbed388be78184cabbd9dbd1ee19dd24d8a5d7ccc32/detection
+# Reference: https://www.virustotal.com/gui/file/150077e091c12aaa9d670093c4fd467da65f008d46a1c1ab7998cb32b04914d3/detection
+
+http://91.215.85.209
+
+# Reference: https://twitter.com/AgidCert/status/1695004388190806210
+
+http://193.109.85.77
+
+# Reference: https://twitter.com/d4rksystem/status/1768351504761528620
+# Reference: https://securityliterate.com/unpacking-strela-stealer/
+# Reference: https://www.virustotal.com/gui/file/3b1b5dfb8c3605227c131e388379ad19d2ad6d240e69beb858d5ea50a7d506f9/detection
+
+http://45.9.74.12
+
+# Reference: https://x.com/JAMESWT_MHT/status/1810641866393534474
+# Reference: https://app.any.run/tasks/a3fd75f7-0421-4c28-902a-116771d6aedf/
+
+http://45.9.74.13
+45.9.74.13:445
+45.9.74.13:8888
+
+# Reference: https://x.com/0xToxin/status/1811656147943752045
+# Reference: https://tria.ge/240712-hpknkavfkg/behavioral2
+# Reference: https://www.virustotal.com/gui/file/05ac9f3e72e99e8b77722c952f92047502a0fea92175b276cfa54d0fd800313a/detection
+
+http://45.9.74.32
+45.9.74.32:445
+45.9.74.32:8888
+
+# Reference: https://www.virustotal.com/gui/file/d14812c99bcac204a3aed4fdf0781565e2d9a0b31a142a3c66af5299e7045071/detection
+
+http://193.109.85.231
+
+# Reference: https://x.com/JAMESWT_MHT/status/1851926962513584324
+# Reference: https://app.any.run/tasks/91de6d70-1cf6-4eec-8f67-6664a1ee3290
+# Reference: https://www.virustotal.com/gui/file/61dec72e8eecb528868123eaef1b056808507f8640efc95ebc841ab2d04aadd7/detection
+# Reference: https://www.virustotal.com/gui/file/0fd75a0d146cdb4bc99a15ccdf6361a3120e4c07b6c36e20ce0c5053f3d622fd/detection
+# Reference: https://www.virustotal.com/gui/file/98380e6e237abc223179d11d81351f363e1613da9fbf27ef471f9db35c173420/detection
+# Reference: https://www.virustotal.com/gui/file/bdbc2d1a5c04cbc769b1b2ca25fd6b4c6466e2d93d37e4fa2cadb8d6dca9e43f/detection
+# Reference: https://www.virustotal.com/gui/file/cb9e9cdb11efbdd02a41ee8f1d2f9b20a043a70d9f5410a6e1b2373a3ff416d5/detection
+
+http://94.159.113.82
+94.159.113.82:445
+94.159.113.82:8888
+
+# Reference: https://x.com/JAMESWT_MHT/status/1857379843844845879
+# Reference: https://www.virustotal.com/gui/file/16d767a9d05c17140fd3f1a6c6e106015681c3b8f46b32f3a1b4f97663ce5e4a/detection
+
+http://94.159.113.79
+94.159.113.79:445
+94.159.113.79:8888
+
+# Reference: https://x.com/Unit42_Intel/status/1889378454287581678
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-02-10-IOCs-for-StrelaStealer-activity.txt
+# Reference: https://www.virustotal.com/gui/file/f33e8db7a25ec1c123fa8fb3094daaa5d6a630c1c19a4bcd61dca06ed7c339ff/detection
+
+http://193.143.1.205
+193.143.1.205:445
+193.143.1.205:8888
+
+# Reference: https://x.com/skocherhan/status/1929677946912231568
+# Reference: https://www.virustotal.com/gui/file/197c089e1ee5c1d5599146cb3adb70423a84574e811fbc22ad7fe4d5374d3d0e/detection
+
+109.176.30.246:7705

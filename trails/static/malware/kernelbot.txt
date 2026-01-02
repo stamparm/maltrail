@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/477e43123f4e56a0b8ed79f9bac188d2bdc39b24a840b25306b8847a48ce01dc/detection
+# Reference: https://www.virustotal.com/gui/file/a86004a26020d94bc732b42d689510264567cfa0850ddd552cbd7eb1cd5a76b7/detection
+
+n4578755asto.mcdir.ru
+nav555asto.mcdir.ru
+navasto0000.mcdir.ru
+n4578755asto.mcdir.ru
+
+# Generic
+
+/kyky/gate.php
+/ya/getcfg.php

@@ -1,0 +1,837 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: gamarue
+
+# Reference: http://www.microsoft.com/security/portal/threat/Encyclopedia/Entry.aspx?Name=Win32/Gamarue#tab=2
+
+cityhotlove.com
+clothesshopuppy.com
+conpastcon.com
+freefinder.me
+grrrff24213402.com
+grrrff2452.com
+iurhjfnmflsdf.com
+lanamakotrue.com
+mgrsdfkprogerg.com
+pastinwest.com
+puppyclothesshop1.net
+puppyclothesshop2.net
+
+# Reference: http://www.malware-traffic-analysis.net/2015/10/20/index.html
+
+motherbeing-news.com
+mindfucktoys.com
+mommycums.com
+musictocheer.com
+731pro.pw
+
+# Reference: https://www.aldeid.com/wiki/48e29119b03641499492336695c29ffd
+
+suckmycocklameavindustry.in
+xdqzpbcgrvkj.ru
+anam0rph.su
+orzdwjtvmein.in
+ygiudewsqhct.in
+bdcrqgonzmwuehky.nl
+somicrososoft.ru
+
+# Reference: https://www.virustotal.com/gui/file/06f7c12171e1608547eb5ae2d39af72835519fdf56aaaeb1dcc6be853dac22a9/behavior/VirusTotal%20Jujubox
+
+tvrstrynyvwstrtve.com
+somicrososoft.ru
+rtvwerjyuver.com
+ygiudewsqhct.in
+anam0rph.su
+orzdwjtvmein.in
+suckmycocklameavindustry.in
+
+# Reference: https://blogs.quickheal.com/worm-gamarue-what-it-is-and-how-does-it-evolve/
+# Reference: https://app.any.run/tasks/956e225d-f0cd-4439-a0ab-ceb7547327ac/
+# Reference: https://app.any.run/tasks/6bef4110-7ca8-49ff-b3bb-136f4cfdc462/
+
+sobea.in
+thesecond.in
+
+# Reference: https://www.virustotal.com/en/domain/amnsreiuojy.ru/information/
+# Reference: https://www.threatcrowd.org/malware.php?md5=8bdfb5f4f2292eba9a2e68eb1aab7840
+
+amnsreiuojy.ru
+morphed.ru
+deltaheavy.ru
+
+# Reference: https://www.virustotal.com/en/domain/bdcrqgonzmwuehky.nl/information/
+
+bdcrqgonzmwuehky.nl
+
+# Reference: https://malwr.com/analysis/YzA2MGY4MDE2NzNmNDEyMmE3OWEzZDQ5ZTEwMjZmZTc/
+
+amnsreiuojy.ru
+xdqzpbcgrvkj.ru
+anam0rph.su
+orzdwjtvmein.in
+ygiudewsqhct.in
+bdcrqgonzmwuehky.nl
+somicrososoft.ru
+rentipod.ru
+lnx-games.su
+
+# Reference: https://blog.avast.com/andromeda-under-the-microscope
+
+atomictrivia.ru
+designthefuture.ru
+gvaq70s7he.ru
+getuptateserv.eu
+disorderstatus.ru
+ac6ruv8t.ru
+
+# Reference: https://www.virustotal.com/gui/domain/4nbizac8.ru/relations
+
+4nbizac8.ru
+
+# Reference: https://blog.avast.com/andromeda-under-the-microscope
+
+differentia.ru
+disorderstatus.ru
+http://differentia.ru/diff.php
+http://disorderstatus.ru/order.php
+
+# Reference: https://lists.openinfosecfoundation.org/pipermail/oisf-users/2018-October/016203.html
+
+atomictrivia.ru
+http://atomictrivia.ru/atomic.php
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=3044af3a89e9e110889ba9d0923f25f3
+
+xxtyr0xg4w.ru
+76236osm1.ru
+sxxtyr0xg4w.ru
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/W32~Gamarue-AT/detailed-analysis.aspx
+
+hzmksreiuojy.biz
+hzmksreiuojy.com
+hzmksreiuojy.in
+hzmksreiuojy.nl
+hzmksreiuojy.ru
+
+# Reference: https://blog.talosintelligence.com/2018/09/threat-roundup-0907-0914.html (Win.Dropper.Gamarue-6682684-0)
+
+awele.duckdns.org
+dogged.cf
+genpral.top
+pafindo.me
+safemann.tk
+siyaghasourccing.com
+www.greenfleld.com
+www.slompbit.xyz
+
+# Reference: https://www.virustotal.com/en/file/198dbf18747c4592fcce43c3b1c45f9706f9c3fb781e8ac9f23f0c2418caa5ca/analysis/
+
+differentia.ru
+atomictrivia.ru
+39slxu3bw.ru
+76236osm1.ru
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Backdoor:Win32/Gamarue
+# Reference: https://totalhash.cymru.com/analysis/?ab3a71d5d1dfec699ccfbaddbb4ac5a2ad34c617
+# Reference: https://totalhash.cymru.com/analysis/?767f89633e21fc96b430a17058b572720eaf7228
+
+faumoussuperstars.ru
+a.nas.ru
+b.nas.ru
+c.nas.ru
+powerrembo.ru
+lunaizemlya.ru
+/intro/data.php
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=3845acda05dcf834d9f2237fd3db40b4
+
+sbws3v7zh.ru
+
+# Reference: https://blog.talosintelligence.com/2019/07/threat-roundup-0628-0705.html (# Win.Trojan.Gamarue-7008527-0)
+
+srv1000.ru
+srv1100.ru
+srv1200.ru
+srv1300.ru
+srv1400.ru
+trkhaus.ru
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Androm-PE/detailed-analysis.aspx
+
+afawydymss.blogoveg.org
+azipev.blogoveg.org
+ikvbog.blogoveg.org
+ipufukavyd.blogoveg.org
+iqtpyty.blogoveg.org
+odenatl.blogoveg.org
+omomeqygex.blogoveg.org
+ozywopesb.blogoveg.org
+ugejiju.blogoveg.org
+uglz.blogoveg.org
+ujoparq.blogoveg.org
+ules.blogoveg.org
+uxykeh.blogoveg.org
+ysoc.blogoveg.org
+yzuhk.blogoveg.org
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Androm-NE/detailed-analysis.aspx
+
+ie.n502.com
+900cpa.cc
+
+# Reference: https://www.group-ib.com/resources/threat-research/Anunak_APT_against_financial_institutions.pdf
+# Reference: https://www.virustotal.com/gui/file/98413cf9281d4b00f6503c18256aab3b7cb5b2c7017f3579388cc4641e8a1696/detection
+
+ddnservice10.ru
+ddnservice11.ru
+/and/jopagate.php
+
+# Reference: https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf
+
+dvdonlinestore.net
+eastmedia2112.com
+mustache-styles.com
+onlinestoreonsale.com
+pradahandbagsshoes.com
+vhideip.com
+wisheshub.com
+99mesotheliomalawyers.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1188056259209158656
+# Reference: https://www.virustotal.com/gui/file/8faa02e77c596d1c0e443de4939df308b27f163bae6268ad864d96a3d3e5ff84/detection
+
+45.14.15.15:777
+
+# Reference: https://www.virustotal.com/gui/file/5fc7a819f5640918045e0431b4c31c8fa87c1c1485a4f6da7103ad9da620251b/detection
+
+212.7.208.155:10001
+rogerfries8.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/4550db4e0c0f9e871b99164c94185e3b8cc92d3d5463d20092e8559aefe454d7/detection
+# Reference: https://www.virustotal.com/gui/file/4550db4e0c0f9e871b99164c94185e3b8cc92d3d5463d20092e8559aefe454d7/detection
+
+mikemonk88.ddns.net
+
+# Reference: https://www.welivesecurity.com/2017/12/04/eset-takes-part-global-operation-disrupt-gamarue/
+
+/last.so
+/nonc.so
+
+# Reference: https://app.any.run/tasks/ad7d17b0-bb0f-4e2a-a2d9-7d567af9ff10/
+# Reference: https://www.virustotal.com/gui/file/828ba0c795e14a3c712ca8d0f14ef2514ed4b20c97e12f8d684938ff1cba5bc4/detection
+
+cs-server1.biz
+/forums/gate.php
+
+# Reference: https://www.virustotal.com/gui/file/3d38f6288716d6999a04bbc008dd4e6a38feb189f5dd6931d761a406410a6c21/detection
+
+139.60.162.173:500
+
+# Reference: https://www.virustotal.com/gui/file/e9a38bfedb18323cccc332b57e03ddd777233cf7fc9b0a24e19d8bf0da8cff9b/detection
+
+212.83.170.126:1604
+walter2013.noip.me
+
+# Reference: https://www.virustotal.com/gui/file/6b6ff1efd1dd41901c9c23dfd6d03ff6c1f6d846bf8ac8002b3af61744426e11/detection
+
+192.69.169.25:3636
+lucas1mhood.chickenkiller.com
+
+# Reference: https://www.virustotal.com/gui/file/ef9af3475e2eee26db26435fc16bb6801e6128534c8938c3112137ebb7f4a87e/detection
+
+hitech.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/cd4783ab3a4d1bf09e7d0bd110fb4311c276ccf41d6de73f54d0d27011e31871/detection
+
+192.69.169.25:3434
+13344.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/c326d1a58d4744381a1855999fba0d086dc64122cab26fe5c8c44e4c9cbe57f7/detection
+
+noipman.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/cd560bc3c0e51d8fa03083cd7d3a82635323ff51d829f7ec510921985f0fd7fb/detection
+
+192.69.169.25:4360
+
+# Reference: https://twitter.com/pancak3lullz/status/743214087882964993
+
+gainsgul.com
+
+# Reference: https://www.virustotal.com/gui/file/922ee5638720359e21cff65edf319d48308006624dee8f9e748badba96d3a46d/detection
+
+185.125.205.79:1994
+194.5.97.219:1994
+
+# Reference: https://blog.talosintelligence.com/2019/12/threat-roundup-1206-1213.html (# Win.Trojan.Gamarue-7440316-0)
+
+v1.eakalra.ru
+v1.op17.ru
+
+# Reference: https://www.virustotal.com/gui/file/cacbd08d64993a3bd970009d9995123a6560a7933ee2b33a7a8ecb8cdc4e105a/detection
+
+23.105.131.156:1204
+
+# Reference: https://www.virustotal.com/gui/file/229726fcfbf8428b459f3b06fe29a79a7d7e8af6f4e91bf8349613de0c67f209/detection
+
+80.69.173.234:3317
+94.237.60.17:3317
+bonding79.ddns.net
+chrisle79.ddns.net
+engine79.ddns.net
+goodgt79.ddns.net
+jacknop79.ddns.net
+smath79.ddns.net
+whatis79.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/ad1ca75a4a53cabc0c79880e75c9e3dedbfd0e58060c3636b22309d671ad3afd/detection
+
+31.220.15.39:3317
+
+# Reference: https://www.virustotal.com/gui/file/ec92ac95fdff2353122e835649c26f0eaedd3bbb17ff0c01426df4d1eba83257/detection
+
+142.44.161.51:3317
+178.209.46.144:3317
+185.101.92.3:3317
+
+# Reference: https://www.virustotal.com/gui/file/ee9145a92b10c2b670da3621c5178f487393cbc2b637d8cacb4ab27177be14bd/detection
+
+103.136.43.131:3317
+168.235.111.253:3317
+205.185.125.42:3317
+
+# Reference: https://www.virustotal.com/gui/file/d2214c4a547a6e8ad01b18812d29fb7f6b41d0bc95aa6c968ac4cdaafe2e50b9/detection
+
+103.125.217.169:3317
+105.112.99.176:3317
+199.195.250.222:3317
+209.182.219.33:3317
+
+# Reference: https://www.virustotal.com/gui/file/f3a4ebd570b06ed0579deb807f38d0f79db560abdbc3d0d6e632975aa66e161d/detection
+
+79.134.225.112:3421
+ceo221.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/74f31b810bdefbbfdfc62983c7ef36e4acdcad5d193ab20639164161c4b56a17/detection
+
+againme666.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/c6ef5c97443a3612b0bd662c502b5712ab46579600cafb8d800d27aebe21212a/detection
+
+103.200.6.79:3330
+
+# Reference: https://www.virustotal.com/gui/file/b1cf88b282a213caf2e41be175e24b480f9d5e3719a5c32e0ba09f0d9845852f/detection
+
+103.219.154.223:7865
+
+# Reference: https://www.exposedbotnets.com/2012/10/cheatmodernwarfarecom-multiple-http.html
+
+cheatmodernwarfare.com
+
+# Reference: http://cybercrime-tracker.net/index.php?s=0&m=1000&search=Andromeda
+
+crdshop.club
+starmanspo.com
+backofficemail3.com
+www.shopbaite.ru
+lipetskrulit.com
+and4.junglebeariwtc1.com
+deluxearmy.pw
+www.hfaggron.tk
+botghoster.livehost.fr
+poppingb.com
+dnshksd3asdns1421344d.com
+poppingx.com
+knockknock-jokes.com
+youbeboom.pw
+the8020.info
+www.dnshdakjasdns14213.com
+1natojobservice.ru
+a2kiaymoster1902.com
+ladylee.pw
+mynew1337bots.com
+just-a-downloader.su
+akiaymoster1.com
+tom91jerry.ws
+sonic4us.ws
+porn4us.ws
+androbandrofand02.com
+hfcool.info
+letsgetfreemovies.info
+androbeta.0pu.ru
+styxb1tch35.su
+j1nxfyr3.su
+premium.zam99.com
+darkness.su
+ghostink.sytes.net
+internationaltravelconsultantsinc.com
+xylox.su
+adobe-helper.cloudapp.net
+dortnath.com
+ns1.androha.com
+xvident.pw
+voscomptesenligne.eu
+theassassinscreedrevolution.com
+belakey.com
+localmw.org
+skyline2050.net
+whitewidow.ciscofreak.com
+televisionhunter.com
+www.mydowncenter.me
+www.welovegiveaways.net
+checkbs.com
+www.istanbulnakliyecileri.com
+solutionswiki.com
+flambiipanel.zz.mu
+www.panel-gc.co.uk
+crispershf.hc0.me
+moneybooster.info
+fahfasd.pw
+stateqa.biz
+myinstalls.info
+coco.3chp.tk
+devbug.su
+techmanagement.info
+down4life.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/b3d54955c9ca43f6ef179cb6028e7db400a93b1c968e7c9688f4df636222998d/behavior/SNDBOX
+# Reference: https://www.virustotal.com/gui/file/4ff01b3b9719b2e70578028c2ccc940c8f6dd1e3a76c99996c6a7ee967dc21e4/behavior/Dr.Web%20vxCube
+# Reference: https://www.virustotal.com/gui/file/05d11121fc781001e2909495c9c0790d4df3a366be0982ade0bd53e357a67c52/behavior/Yomi%20Hunter
+# Reference: https://app.any.run/tasks/beb1b1d4-3050-42b2-b1b7-0c33d3970a5c/
+
+bighecks.net
+imageshells.com
+sonic4us.ru
+sonic4me.com
+yahgodz.com
+
+# Reference: https://www.virustotal.com/gui/file/8bb670d4647757345f1f42e06d4ff367e8d3ac6953806ad1b89cee34eba6bc5a/behavior/SecondWrite
+
+dom-adobe-directs.com
+list-adobe-directs.com
+
+# Reference: https://www.virustotal.com/gui/file/45bc69145ccdd28e465e49ba22e8f53597fc3466ee939600d0687dc6893e60b3/detection
+
+ceraslog.com
+
+# Reference: https://www.virustotal.com/gui/file/22877da44952a51311553e3a0af27dc96af1b484c7c69d9735b2734c6f901fd7/detection
+
+192.169.69.22:7997
+ifraneifrane.duckdns.org
+
+# Reference: https://twitter.com/campuscodi/status/1228185851533971456
+# Reference: https://securitynews.sonicwall.com/xmlpost/project-androm-backdoor-trojan/
+# Reference: https://www.virustotal.com/gui/file/1ea6b3e99bbb67719c56ad07f5a12501855068a4a866f92db8dcdefaffa48a39/detection
+
+159.100.250.231:8080
+
+# Reference: https://blog.talosintelligence.com/2020/02/threat-roundup-0207-0214.html (# Win.Packed.Gamarue-7580018-0)
+
+delvernet.info
+faumoussuperstars.ru
+junglebeariwtc1.com
+martivitapoint.info
+nutqauytva100azxd.com
+nutqauytva10azxd.com
+nutqauytva11azxd.com
+nutqauytva2azxd.com
+nutqauytva3azxd.com
+nutqauytva4azxd.com
+nutqauytva5azxd.com
+nutqauytva6azxd.com
+nutqauytva7azxd.com
+nutqauytva8azxd.com
+nutqauytva9azxd.com
+oingee.pw
+otter.pw
+powerrembo.ru
+spotxte.com
+uzuzuseubumaandro.com
+uzuzuseubumaandro1.com
+vedivenivici.ml
+
+# Reference: https://www.virustotal.com/gui/file/cd4f887b06895f619e594f0d76b4ae482bf9a43a7ed890633ebbda91847a48e9
+# Reference: https://www.virustotal.com/gui/file/7f1d2b99b1ef2e823cadbac1c60602dbb981b7c52527eb61c0f5671ccb559171/
+
+megascor.no-ip.biz
+megascor.no-ip.info
+
+# Reference: https://www.virustotal.com/gui/file/f924757fb5fe3afdd09f8aedb2fc9070fa06d3dc4482c8481ef63583d78a05d9/detection
+
+168.235.111.253:4415
+
+# Reference: https://www.virustotal.com/gui/file/ce6d7cf3883ed8caaf2628f51350058e5064e1b48c8336f35cf42b0228935409/detection
+
+105.112.96.56:3317
+
+# Reference: https://www.virustotal.com/gui/file/252f598736cac5b295bf7ea563323765cbdcf68298bb78eed87189b7efa18175/detection
+
+william1979.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/712b588b3ccbe530cbb146c90a97622b99f468fa323caf5f6edeb962c186d14b/detection
+
+168.235.111.253:9889
+rss99.mooo.com
+
+# Reference: https://www.virustotal.com/gui/file/bd8112f04dcf2b238e82d40fb834bd2dd917d37cacd827562d67531f7d3312fa/detection
+
+miedoo.no-ip.org
+medo0.myq-see.com
+medoo.publicvm.com
+
+# Reference: https://www.virustotal.com/gui/domain/cp.wf0lr73a.ru/relations
+
+wf0lr73a.ru
+
+# Reference: https://www.virustotal.com/gui/domain/cp.0iiqjolt.ru/relations
+
+0iiqjolt.ru
+
+# Reference: https://www.virustotal.com/gui/file/fbcdd5c542bb5c66303e621829f0cd654be0bfb38ed0c50a335ef3c9dae0201f/detection
+
+196.70.51.118:2020
+njtttts.ddnsgeek.com
+
+# Reference: https://www.virustotal.com/gui/file/c3affb76ff0fad78d77b0153b5c2a99d5bbd8d829ef13661c0af58d2988db344/detection
+
+194.127.179.195:8901
+rolpositive.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/b575e9afc3c85dfaa992c9abd8f96374f5940b69d57cb419192612acffd41315/detection
+
+79.134.225.97:3421
+
+# Reference: https://www.virustotal.com/gui/file/66e1c6c1d989dd81fe43174e2b6ae5de46a05e2215a0812acd23aba776e3a08b/detection
+
+79.134.225.123:54567
+
+# Reference: https://www.virustotal.com/gui/file/eee70c6f6c2808d5f6673c3ecf1ac719473c88e7ddb6bafe4b797e3ae680b0b8/detection
+
+178.124.140.138:1000
+
+# Reference: https://www.virustotal.com/gui/file/6836f63b647319ea9122c7cb7170deced0ea5be098849eb11676e3c49e50f11b/detection
+
+178.124.140.145:1000
+
+# Reference: https://www.virustotal.com/gui/file/fb233f14d4303e3afe6f3bcc2cf5782384caf179e9bb5deeaf96389ce33073b4/detection
+
+178.124.140.144:5000
+
+# Reference: https://www.virustotal.com/gui/file/7de873a85f31d324dfca704270914ee2b2b97e62003990a781204d94ff2f3f86/detection
+
+140.82.57.249:8989
+
+# Reference: https://blog.talosintelligence.com/2020/05/threat-roundup-0508-0515.html (# Win.Trojan.Chthonic-7770498-0)
+# Reference: https://www.virustotal.com/gui/file/cba9bf98c34bf75ec7458f6f06b381484d38ec087f915d57d441564dbc07e161/detection
+# Reference: https://www.virustotal.com/gui/file/2f66ded6ef7996170c47e2a5caa56f2d95fd827ffbbe51779813d37ff5576a11/detection
+
+baidishenko111.in
+karaokeboom.ru
+tangchenbeijianhealth.com
+/system4_1030.php
+/gate777.php
+
+# Reference: https://www.virustotal.com/gui/file/e813076a2f031757f2edd919c87a842e192074eae0de81fa6d8cd0b4fcbfdd6a/detection
+
+bestbrightday.ru
+connect-s3892.ru
+connect-support-server.ru
+
+# Reference: https://www.welivesecurity.com/2017/12/04/eset-takes-part-global-operation-disrupt-gamarue/
+# Reference: https://www.platinbilisim.com.tr/TR/Medya/Duyurular/gamarue-andromeda-botnet
+# Reference: https://otx.alienvault.com/pulse/5a27c085ace18f318adf4707
+
+designfuture.ru
+4nbizac8.ru
+
+# Reference: https://www.virustotal.com/gui/file/7819f9c809a1ae0789faf865668adc5c0989f022d8c9a139de250ba999562fbd/detection
+
+bastbot.com
+
+# Reference: https://www.virustotal.com/gui/file/d308d078d4af0ed2b7036a773c6e7fc9ccaf06ddac965ea0ff489a2b52baae47/detection
+
+79.134.225.59:9877
+
+# Reference: https://www.virustotal.com/gui/file/16fb367c0f26b94aef6b68375c48235cea6bfdd7df222f5becce8133d4802390/detection
+
+2020logs.duckdns.org
+
+# Reference: https://blog.talosintelligence.com/2020/12/threat-roundup-1211-1218.html (# Win.Trojan.Gamarue-9809766-0)
+
+bolte.pw
+ggell.pw
+xviesse.pw
+kpxkubowvkllwf.cc
+kqhmknyidxjuxx.com
+kwnyotlewqgwyl.cc
+llswdkqmxgjcnu.com
+lpblgqdmnjnjqa.net
+lxybtvndxcfnbx.net
+maxbyulweifvcy.net
+mhaclspkylcgle.in
+mpqjgedlgobigs.com
+mvrayrcjuobjly.tw
+obifmsurqodhbb.com
+ongyichcmybdrb.cc
+pktthwxaqvmktb.net
+pmkgfsxvuqlovm.cc
+qalhugqpkgbeyk.com
+qglscxdeacnhnx.in
+qjjvlpqqfmiixq.in
+qojpalhvxdmrqn.tw
+qpragpmmbglnkk.in
+qudqihusnvymjx.cc
+
+# Reference: https://www.virustotal.com/gui/file/55a753ad229fddda9d7c63bb2ee52bdd2a4eb9e4dc66c570b44bc6e785631588/detection
+
+somethingnice.hc0.me
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60
+
+aaa18aaa18.pw
+aboula.pw
+androcp.cloudns.pw
+anene.info
+armi.blutu.pl
+brooksidebiblefellowship.org
+daddystar.info
+daretosay.webege.com
+deadhost.info
+dxg-darren.info
+dxg-tommy.info
+eastmedia2112.com
+filer.comeze.com
+furysro.com
+ghost12.eu
+gibson-ventures.info
+gogalaxy.info
+hfcool.info
+hussainibuilder.com
+internationaltravelconsultantsinc.com
+jobtwitterz.biz
+juanita.esy.es
+kdp-ventures.info
+knockknock-jokes.com
+kompirisojajca.servepics.com
+ladylee.pw
+londonpaerl.co.uk
+longroad.nl
+macdaviddfirst.info
+mustache-styles.com
+mynew1337bots.com
+nav1111sto.mcdir.ru
+nav555asto.mcdir.ru
+serwer1440854.home.pl
+serwer1455415.home.pl
+simpleone.info
+strongshild.net
+theshangai.info
+tom91jerry.ws
+tovia.info
+tumor.hostoi.com
+wtfshogunatemacabrewtf.in
+
+# Reference: https://www.virustotal.com/gui/file/5e7255d226436680b2238c47580ead1ff27bea44d4cc6f2ab66294d022212f1a/detection
+
+captioncodes.ru
+eriksiversen.ru
+finley.su
+juliussdietz.ru
+offparking.ru
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60 (# skyload)
+# Reference: https://www.virustotal.com/gui/domain/flashbox.pw/relations
+
+flashbox.pw
+nettlerok.net
+
+# Reference: https://www.virustotal.com/gui/file/8fdfe6a44d63b089160ca3bacdb87965184a43e0ec577c4400b98846f263f72d/detection
+
+pacifista.ru
+restless.su
+
+# Reference: https://s3.amazonaws.com/snort-org/www/rules/community/community-rules.tar.gz
+# Reference: https://snort-org-site.s3.amazonaws.com/production/release_files/files/000/012/156/original/snort3-community-rules.tar.gz
+
+cd5c5c.com
+disk57.com
+
+# Reference: https://www.virustotal.com/gui/file/299790ad7148fcae3d433c8265533e2fcbb620c04ab4896d44a1f9dc5b8e3f61/detection
+
+tiptronic.soxx.us
+
+# Reference: https://www.virustotal.com/gui/file/69904a0d0ec00db94dc780b7a594f7f802f809b8462dc1206d11f21287e68d3e/detection
+
+tanparranbely.info
+tindidntenyco.win
+
+# Reference: https://www.virustotal.com/gui/file/83156627debe5f0f4076f3bda3e4022ff59e555557567fd7df51de2367197289/detection
+
+178.34.151.27:81
+
+# Reference: https://blog.talosintelligence.com/2021/04/threat-roundup-0326-0402.html (# Win.Trojan.Gamarue-9847820-0)
+# Reference: https://www.virustotal.com/gui/file/73e47101d430251d0c38797726970270391bd3d6be996eb44cb7caa06f4bb5a2/detection
+# Reference: https://www.virustotal.com/gui/file/e87ed54a3f88bcd0445e7dd4e0aa2426de0a062921612401910289316c9cd58f/detection
+
+http://176.103.56.116
+http://185.141.27.206
+adventurernw.top
+conclusionsig.ru
+disarmamentjy.bid
+encampmentev.top
+kuwiran.top
+permittedsm.net
+po-sutoshno.ru
+principleoe.ru
+reconnaissancebm.top
+
+# Reference: https://www.virustotal.com/gui/file/d577fbe0863045ae0b7cf5785e7a1de614248d261e159ad47ff62e8c92b7a2d9/detection
+
+nni.noip.me
+
+# Reference: https://www.virustotal.com/gui/file/9f126a9083f4dfad8d401004da13bf385c448549f489ffedc32d72708f2cac85/detection
+
+fykqx.ru
+
+# Reference: https://github.com/hardenedlinux/hardenedlinux-zeek-script/blob/master/scripts/frameworks/intel/OSINT/CYBERCRiME-03-03-19.txt
+
+/bot/andromeda/
+/bot/andro/
+
+# Reference: https://www.virustotal.com/gui/file/5c50555a33fcc0ed8b4aaf0884f44e8fe6d5f8567f3f600307850189c146676f/detection
+# Reference: https://www.virustotal.com/gui/file/518999aef358f1161d48d65e928b7efaedc80c28973be19bbc702c855f3e7f1f/detection
+
+googlecdn1.com
+
+# Reference: https://www.virustotal.com/gui/file/2418fe492073621aa81bf922d8f2c792c47be04e6777cf3a9c6b68b5b26caf16/detection
+
+tessatiszue.com
+
+# Reference: https://www.virustotal.com/gui/file/3eb684a9ffe92d0a14763313981355b91333ae1b4c160f681172dc740234f6e3/detection
+# Reference: https://www.virustotal.com/gui/file/82a3358ea0ea9a5e4d00357591ad43aee90a24f165e4c5e2aaec8d0c957af149/detection
+
+184.105.192.2:8080
+185.20.226.41:8080
+5.135.28.118:8080
+5.63.155.195:8080
+briangriffinforever.com
+onemoreres-bbb.com
+
+# Reference: https://www.virustotal.com/gui/file/42e50aab4e532ac25dfae283c2d14ddd3b4c9d74a06dcb469537f7519a0ff1a9/detection
+
+217.12.209.122:8080
+91.215.153.21:8080
+91.215.153.60:8080
+
+# Reference: https://www.virustotal.com/gui/file/07498877e79ec7e25b488ff9c1504d6a1eb3f51640dc91216b1713d73f518646/detection
+
+clavierimsiom.sytes.net
+
+# Reference: https://www.virustotal.com/gui/file/3484edee44e7922bbe9fb852535e30609ad6f55449a46be7359e9de20ddd030d/detection
+
+197.52.152.255:9003
+yoworldservices.space
+
+# Reference: https://www.virustotal.com/gui/file/a4caa86960de5591889c9b5285ca5f6e5a0c1f16a4e4f57609de38ba4d873b3f/detection
+
+205.185.118.52:8090
+
+# Reference: https://www.virustotal.com/gui/file/6bae0686b6e895bb9096b11255c42827f303abb2e31116366baab930831a27ed/detection
+
+37.49.224.139:8080
+
+# Reference: https://www.virustotal.com/gui/file/6d76908697cbb0957e65bd47d0b88c563ed53c7ba7133f6f26f4c84193407e79/detection
+
+37.49.224.139:8088
+
+# Reference: https://www.virustotal.com/gui/file/f59a248f39d52510c4a03b5c1788553039f297e3e33602fd009dbf0133cc7cd3/detection
+# Reference: https://www.virustotal.com/gui/file/b3dc6c845f8a7858a5f5ed41fc775d68759d97483ecbdf31e0d84eeef49b646c/detection
+
+45.144.225.26:4871
+juwsdbgje.ratkings.net
+
+# Reference: https://blog.talosintelligence.com/2022/06/threat-roundup-0617-0624.html (# Win.Malware.Gamarue-9952453-0)
+
+aega.co.kr
+hellobetta.com
+
+# Reference: https://www.virustotal.com/gui/file/aa6cd85b2786ee3d927f133474dd5ac42a3166cca2a2d7cc52eba78bf542dafe/detection
+
+79.110.62.174:81
+1235125125125.hopto.org
+23631251235.ddns.net
+36123623672437247.zapto.org
+365123561235125.mooo.com
+373462345235235.kozow.com
+58457643534.chickenkiller.com
+63663113.crabdance.com
+73456345345.sytes.net
+8248124892849.awsmppl.com
+89696969.ignorelist.com
+
+# Reference: https://www.virustotal.com/gui/file/092910024190a2521f21658be849c4ac9ae6fa4d5f2ecd44c9055cc353a26875/detection
+
+nefosferta.com
+
+# Reference: https://www.virustotal.com/gui/file/01124095bab86e66b7ec98013e2cf128eb346f5618109c541ccfe487506fc823/detection
+
+11111.dtdns.net
+
+# Reference: https://www.virustotal.com/gui/file/1b5f80dc2902e202e19d9a6b5bec1b8d807085c71ab0e8d73d871bab76541abf/detection
+
+11189.dtdns.net
+
+# Reference: https://www.virustotal.com/gui/file/0295a5c10eb8153ce949967f60dd1c6dce4660ee7ec1fc94557aa0c15d576bb6/detection
+
+12231.dtdns.net
+
+# Reference: https://www.virustotal.com/gui/file/015af3a97c3277381d8f1d85830e6e30a4978365a96accc882fca25698d9d64b/detection
+
+23321.dtdns.net
+
+# Reference: https://www.virustotal.com/gui/file/001a998cd84266f89f3499bd4181b1eca31feffb00fc9087f65a9f8735ba0068/detection
+
+90394.dtdns.net
+
+# Reference: https://www.virustotal.com/gui/file/011221cfeb93b12146fa71229aa34baecd3837534810ce2dfd92fe7957261895/detection
+
+67655.dtdns.net
+
+# Reference: https://www.virustotal.com/gui/file/0ce793800f932bf62f8c42225950badc276c3e1035007ce506300635daf4eb84/detection
+
+87787.dtdns.net
+
+# Reference: https://www.mandiant.com/resources/blog/turla-galaxy-opportunity
+# Reference: https://www.virustotal.com/gui/file/71d6772d62124342b158e27f8b6ce7d78dba93ed19d24bf8938516efa2510891/detection
+
+yelprope.cloudns.cl
+
+# Reference: https://www.virustotal.com/gui/file/e8147a4899d9c10e6f8a61a9ddfa9e329991f0f8706b85391143177507f44a9e/detection
+# Reference: https://www.virustotal.com/gui/file/a1b01b4d5e384a322f725b1de0ed10dcf68c0040f7421694d5c28fb34ee42cd3/detection
+
+185.65.135.177:12962
+ugxrgmmq.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/72164510a007742bb233421f25a00a974292b745b44a9a172faced8c0c4cec82/detection
+
+103.212.81.154:3342
+7fxcmft-olcmjfjxdk.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/09360fd5c956e6e80683e3749211e7a5511d94c992adc739f4d92b98bf60ac4f/detection
+
+0000.no-ip.biz
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.andromeda/
+
+chaseonlineprivatebanking.blogspot.com
+privatebankinghsbc.blogspot.com
+
+# Generic
+
+/0011ldr.php
+/0022ldr.php
+/00044ldr.php
+/00055ldr.php
+/blob64.php

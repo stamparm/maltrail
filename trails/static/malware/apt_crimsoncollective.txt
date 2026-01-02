@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: crimson collective
+
+# Reference: https://www.rapid7.com/blog/post/tr-crimson-collective-a-new-threat-group-observed-operating-in-the-cloud/
+
+http://195.201.175.210
+http://3.215.23.185
+http://45.148.10.141
+http://5.9.108.250
+195.201.175.210:443
+3.215.23.185:3000
+3.215.23.185:8082
+45.148.10.141:443
+45.148.10.141:8080
+5.9.108.250:22
+5.9.108.250:443

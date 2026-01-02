@@ -1,0 +1,90 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/pan-unit42/iocs/blob/master/gorgon/domains.txt
+# Reference: https://www.virustotal.com/gui/file/24adef104d6f177525f24c927e764cf8e53c0ce50fbdd1c414305d5fc8b15116/detection
+
+0-day.us
+acorn-paper.com
+asaigoldenrice.com
+brevini-france.cf
+diamondfoxpanel.ml
+fast-cargo.com
+guelphupholstery.com
+ocha-gidi.xyz
+onedrivenet.xyz
+panelonetwothree.ga
+panelonetwothree.ml
+securebotnetpanel.tk
+stemtopx.com
+stevemike-fireforce.info
+stevemikeforce.com
+xyz-storez.xyz
+zupaservices.info
+t2m.io/GbiSgY
+
+# Reference: https://twitter.com/h4ckak/status/1145984273985331200
+# Reference: https://otx.alienvault.com/pulse/5d1b49a55c01f486b6ff8cf2
+
+bylgay.hopto.org
+microsoftoutlook.duckdns.org
+
+# Reference: https://github.com/StrangerealIntel/CyberThreatIntel/blob/master/Pakistan/APT/Gorgon/23-08-19/Malware%20analysis%2025-08-19.md
+# Reference: https://otx.alienvault.com/pulse/5d68fb8d77464e86898969f5
+
+1688jtn.com
+41230077.net
+6474sss.com
+grupomsi.com
+hongmenwenhua.com
+ichoubyou.net
+klapki.online
+qp0o1j3-dmv4kwncw8e.win
+sukfat.com
+theaterloops.com
+thedip.zone
+tourismmanagement.mba
+xaasxasxasx.blogspot.com
+ycsfuoabdicating.review
+
+# Reference: https://twitter.com/Rmy_Reserve/status/1171381881461338112
+# Reference: https://app.any.run/tasks/bb1279af-7fff-4b37-8439-7b303f113082/
+
+sxasxasxssaxxsasxasx.blogspot.com
+
+# Reference: https://twitter.com/MisterCh0c/status/1188219763660591107
+# Reference: https://app.any.run/tasks/c32b295c-08f4-4337-8f7f-378ba7f9e02b/
+
+asdiamecwecw8cew.blogspot.com
+
+# Reference: https://unit42.paloaltonetworks.com/aggah-campaign-bit-ly-blogspot-and-pastebin-used-for-c2-in-large-scale-campaign/
+
+bjm9.blogspot.com
+buydildoonline.blogspot.com
+emawattttson.blogspot.com
+miganshumarataa.blogspot.com
+treffictesgn.blogspot.com
+
+# Reference: https://twitter.com/Zhx_8885/status/1227219569095262208
+# Reference: https://www.virustotal.com/gui/domain/gritodopovo.com.br/relations
+
+gritodopovo.com.br
+
+# Reference: https://twitter.com/Arkbird_SOLG/status/1272512736795283456
+
+dixis.bounceme.net
+
+# Reference: https://www.seqrite.com/blog/gorgon-apt-targeting-msme-sector-in-india/
+# Reference: https://otx.alienvault.com/pulse/5f34028dcae5e941a198b11d
+
+m9c.net/uploads/15882060892.jpg
+m9c.net/uploads/15882060891.jpg
+
+# Reference: https://www.virustotal.com/gui/file/ec76393c14e8014ec4ffb6597699394b792696c97e1f25b2abc006884ea57b35/detection
+
+196.185.215.228:81
+x-ghost91.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/6cb398873ff8759283d8aecc2077baaf56c30fa91490367f7431485ae8aee377/detection
+
+downloads.blogsyte.com

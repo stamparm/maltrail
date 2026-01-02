@@ -1,0 +1,86 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: BackdoorDiplomacy, Quarian, Turian
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2013/2013-10-07-quarian-group-targets-victims-with-spearphishing-attacks/quarian-group-targets-victims-with-spearphishing-attacks.csv
+
+andyothers.acmetoy.com
+keep.ns3.name
+
+# Reference: https://www.welivesecurity.com/2021/06/10/backdoordiplomacy-upgrading-quarian-turian/
+# Reference: https://otx.alienvault.com/pulse/60c341dc8964edd2e2fcb651
+
+microsoftbuys.com
+officenews365.com
+pmdskm.top
+vpnkerio.com
+worldmessg.com
+bill.microsoftbuys.com
+buffetfactory.oicp.io
+dnsupdate.dns1.us
+dnsupdate.dns2.us
+dynsystem.imbbs.in
+freedns02.dns2.us
+icta.worldmessg.com
+intelupdate.dns1.us
+officeupdate.ns01.us
+officeupdates.cleansite.us
+systeminfo.cleansite.info
+systeminfo.myftp.name
+systeminfo.oicp.net
+szsz.pmdskm.top
+update.officenews365.com
+updateip.onmypc.net
+web.vpnkerio.com
+winupdate.ns02.us
+
+# Reference: https://www.bitdefender.com/files/News/CaseStudies/study/426/Bitdefender-PR-Whitepaper-BackdoorDiplomacy-creat6507-en-EN.pdf
+# Reference: https://otx.alienvault.com/pulse/6390cbe098c9fb94d48e7a1c
+
+alberto2011.com
+crmdev.org
+delldrivers.in
+efanshion.com
+ejalase.org
+fastpaymentser-vice.com
+fazlol-lah.net
+fazlollah.net
+irir.org
+microsoftshop.org
+oracleapps.org
+payamra-dio.com
+payamradio.com
+skypecloud.net
+250f7cloud.crmdev.org
+29c04uc.ejalase.org
+62ffauc.ejalase.org
+7f4d9fcanet.microsoftshop.org
+cloud.fastpaymentser-vice.com
+cloud.microsoftshop.org
+cloud.skypecloud.net
+info.fazlol-lah.net
+info.fazlollah.net
+info.payamra-dio.com
+info.payamradio.com
+mail.irir.org
+mci.ejalase.org
+news.alberto2011.com
+picture.efanshion.com
+plastic.delldrivers.in
+proxy.oracleapps.org
+srv.fazlollah.net
+srv.payamradio.com
+support.vpnkerio.com
+uc.ejalase.org
+
+# Reference: https://unit42.paloaltonetworks.com/playful-taurus/
+# Reference: https://otx.alienvault.com/pulse/63c82cfb80f9e85b9b69c3cc
+
+adboeonline.net
+mfaantivirus.xyz
+pfs1010.com
+pfs1010.xyz
+scm.oracleapps.org
+update.adboeonline.net
+update.delldrivers.in

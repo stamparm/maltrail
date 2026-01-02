@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: bagle, beagle
+
+# Reference: https://www.virustotal.com/gui/file/4ffcb61c23a0b61b501f8ac90d26b0bc0cc010131ff60561149946414a2dba13/detection
+# Reference: https://www.f-secure.com/v-descs/mitglied.shtml
+
+/scr5.php?p=

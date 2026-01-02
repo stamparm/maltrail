@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mamona ransomware, blacklock ransomware
+
+# Reference: https://x.com/AlvieriD/status/1899944777870958696
+# Reference: https://x.com/fbgwls245/status/1902612473590829334
+
+bdhjur3agrogoxvwobbzpptkxhyewnjrhzqj4ug2dyfhf3dopyvvurid.onion
+owt3kwkxod2pvxlv3uljzskfhebhrhoedrh5gqrxyyd6rrco4frzj5ad.onion
+
+# Reference: https://x.com/solostalking/status/1901862827201372594
+
+185.158.113.114:5000
+
+# Reference: https://x.com/RakeshKrish12/status/1923627041414386113
+# Reference: https://github.com/TheRavenFile/Intel-Stories/blob/main/IOC%20Stories
+
+193.239.86.204:3000
+zdkexsh2e7yihw5uhg5hpsgq3dois2m5je7lzfagij2y6iw5ptl35gyd.onion
+
+# Reference: https://x.com/fbgwls245/status/1939876480571646258
+# Reference: https://www.virustotal.com/gui/file/57f7bfb5b37364563c03ed29228a43e44936edb4ea1f232b6c74c2ecd06cce1d/detection
+
+4ozbomcjurd64vgeblkoqeqirvawi3dddswriw6qespscmequmqlshyd.onion

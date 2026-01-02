@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/blackorbird/status/1804033252811772107
+# Reference: https://cybersecurity.att.com/blogs/labs-research/highly-evasive-squidloader-targets-chinese-organizations
+# Reference: https://www.virustotal.com/gui/file/3eeffe9f56f5dffe7e7f2a2a68b15453041a338272b605ca2ae9e83b87945b2f/detection
+
+123.56.225.31:443
+139.224.17.182:443
+myhuaweicloud.xyz
+ns1.myhuaweicloud.xyz
+ns2.myhuaweicloud.xyz
+
+# Reference: https://www.trellix.com/blogs/research/threat-analysis-squidLoader-still-swimming-under-the-radar/
+
+121.41.14.96:443
+38.55.194.34:443
+39.107.156.136:443
+47.116.178.227:443
+8.140.62.166:443

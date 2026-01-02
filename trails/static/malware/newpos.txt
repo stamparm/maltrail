@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: posnewt
+
+# Reference: https://twitter.com/ScumBots/status/1176903876076867585
+# Reference: https://www.virustotal.com/gui/file/437eaeebea0b290128165051fc6086936701de7bfba84db87607a2677ce89253/detection
+# Reference: https://www.virustotal.com/gui/ip-address/46.161.30.200/relations
+
+http://46.161.30.200
+es-correos24.net
+es-correos24.com
+es-correos.com
+
+# Reference: https://www.virustotal.com/gui/file/70b387a63a7ee51c0f2c7d32651b7adc910398ff64da5d958d26626c07375eee/detection
+
+vacation-promos.com
+
+# Generic trails
+
+/ujakj/ek.php
+/bfmwym.php
+/ca38in.php
+/exsit8sq.php
+/f32nve.php
+/f624b21f.php
+/h7vnf8.php
+/hwwqcgzv.php
+/pydaojoo.php
+/rdr7gb.php
+/t43kl0.php
+/t92171x.php
+/tuzhsc.php
+/wmxx8o.php
+/ycoy24xo.php
+/yq2elf8m.php
+/zcsr0cnf.php

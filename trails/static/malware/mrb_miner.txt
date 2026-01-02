@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://s.tencent.com/research/report/1105.html
+
+145.239.225.15:21
+145.239.225.18:21
+145.239.225.15:3341
+145.239.225.18:3341
+mrbfile.xyz
+mrbpool.xyz
+vihansoft.ir

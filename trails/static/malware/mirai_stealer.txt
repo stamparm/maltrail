@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/malwrhunterteam/status/1996266810375610370
+# Reference: https://www.virustotal.com/gui/file/fb7c17c2fa0a0edaee8e87f42895485c9202fbbb2c4ac663ff876523e05125ad/detection
+
+http://151.244.40.234
+151.244.40.234:1337
+
+# Reference: https://x.com/suyog41/status/2003347956410589409
+# Reference: https://www.virustotal.com/gui/ip-address/193.26.115.208/relations
+# Reference: https://www.virustotal.com/gui/file/6d5303ece56d64ba28dd2217083151ba90fc8ef0ac85cdf3251e06d73a7b2ef9/detection
+
+193.26.115.208:1337
+miraisystem.xyz
+miraisystem1337.xyz

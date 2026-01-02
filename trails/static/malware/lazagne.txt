@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/silence-is-best/c2db#lazagne
+
+http://185.86.148.123
+
+# Reference: https://twitter.com/James_inthe_box/status/1254872331924561920
+# Reference: https://app.any.run/tasks/29bb877d-526e-4cf7-bf6c-1eff56e16188/
+# Reference: https://www.virustotal.com/gui/file/434ea880ad59cffded73a776f3a01a75e6afef21fc6dca45b364fd3f0ba54de3/detection
+
+185.219.168.96:3369
+
+# Reference: https://www.virustotal.com/gui/file/78a00877311cb26a93cd6b14f29e8d0d3dd5027d0b79eb806cd2b08edf208b6d/detection
+
+f0398143.xsph.ru
+
+# Reference: https://cert.gov.ua/article/6279419 (# UAC-0188)
+# Reference: https://www.virustotal.com/gui/file/10a6c318be4f1a2f56eedd855e7e5fd4a883a17022b933cd58fa73c184363019/detection
+
+patient-docs-mail.com
+yemmyusa.com

@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/wastedlocker-technical-analysis/97944/
+# Reference: https://app.any.run/tasks/d17fd622-30d2-4f28-ba9d-6d52c56ed105/
+# Reference: https://app.any.run/tasks/cc081a1a-4462-474e-9bd8-2606d7801968/
+# Reference: https://www.virustotal.com/gui/file/905ea119ad8d3e54cd228c458a1b5681abc1f35df782977a23812ec4efa0288a/detection
+# Reference: https://www.virustotal.com/gui/file/aa611e434c68ed01b921d8254089d05916d63d597cb4b09b8507242d7f7fe182/detection
+# Reference: https://www.virustotal.com/gui/ip-address/153.92.0.100/relations
+
+supportbackup.esy.es
+supportservice.netai.net
+backupsupport.esy.es
+backupsupport.comxa.com
+quicks.hol.es
+quick.comuf.com
+
+# Reference: https://www.darktrace.com/en/blog/evil-corp-intrusions-wasted-locker-ransomware-detected-by-darktrace/
+
+techgreeninc.com
+investimentosefinancas.com
+
+# Reference: https://www.virustotal.com/gui/file/0ac2ac1255cbfd71e91cdd21c2ebb2c8832ae645961724b3830e151fb50c61b5/detection
+
+91.236.116.180:4532
+
+# Reference: https://www.bitdefender.com/files/News/CaseStudies/study/397/Bitdefender-PR-Whitepaper-RIG-creat5362-en-EN.pdf
+
+162.144.127.197:3786
+46.22.57.17:5037
+
+# Generic
+
+/c/c13.php
+/z/c13.php
+/c13/dwn13.dmp
+/z/dwn13.dmp

@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: gelsevirine, wolfsbane
+
+# Reference: https://www.welivesecurity.com/2021/06/09/gelsemium-when-threat-actors-go-gardening/
+# Reference: https://github.com/eset/malware-ioc/tree/master/gelsemium
+# Reference: https://otx.alienvault.com/pulse/60c1c9c738e6f7877568a75e
+
+4vw37z.cn
+acro.ns1.name
+domain.dns04.com
+info.96html.com
+microsoftservice.dns1.us
+pctftp.otzo.com
+sitesafecdn.hopto.org
+traveltime.hopto.org
+sitesafecdn.dynamic-dns.net
+travel.dns04.com
+
+# Reference: https://securelist.com/the-sessionmanager-iis-backdoor/106868/
+# Reference: https://otx.alienvault.com/pulse/62bdd015f5fa4bc82a0e920c
+
+http://202.182.123.185
+http://207.148.109.111
+
+# Reference: https://x.com/ESETresearch/status/1859542499414458623
+# Reference: https://www.welivesecurity.com/en/eset-research/unveiling-wolfsbane-gelsemiums-linux-counterpart-to-gelsevirine/
+# Reference: https://github.com/eset/malware-ioc/tree/master/gelsemium
+# Reference: https://www.virustotal.com/gui/file/ccf8e4d6e661ceaea598851923bb8b983bd820ffd02448b8245e6ac780977784/detection
+# Reference: https://www.virustotal.com/gui/file/fddec9ff14ebd957038f9c24843bff935c4f73651e9704b553dec116851f7ae5/detection
+
+asidomain.com
+dsdsei.com

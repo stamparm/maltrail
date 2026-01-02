@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/killamjr/status/1158851037308080133
+
+e50e078f.www2.haciendarealhoa.com
+
+# Reference: https://twitter.com/whitehoodie4/status/1372129685040214016
+# Reference: https://app.any.run/tasks/d3e948a4-f22c-4c7c-8cf7-fc34eafd98be/
+
+103.151.123.132:1818
+70t0fetezakya3egl.c1.biz

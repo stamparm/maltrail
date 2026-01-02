@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://cyber.wtf/2023/12/06/the-csharp-streamer-rat/
+# Reference: https://www.virustotal.com/gui/file/056cf0d4afdf17648e83739e3e96b53fa802bd0750fe6e74cdbe2fcea2b03c7e/detection
+# Reference: https://www.virustotal.com/gui/file/6a082dd209ec019de653f71e0ee22e6613ce5e9010b8fa089b02f79a1a90652a/detection
+
+mvlng.com/dotcom-client.png
+thevsf.co.uk/serverhpuk.png

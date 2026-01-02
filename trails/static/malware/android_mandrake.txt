@@ -1,0 +1,31 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/LukasStefanko/status/1260890232943190018
+# Reference: https://www.bitdefender.com/files/News/CaseStudies/study/329/Bitdefender-PR-Whitepaper-Mandrake-creat4464-en-EN-interactive.pdf
+
+androidfirmware.ca
+androidfirmware.cc
+androidfirmware.ir
+androidfirmware.top
+androidfrimware.com
+android-soft.top
+livingstream.mobi
+nfmmlrkagflemt.top
+rendfiles.top
+xjkbhysexthnpl.top
+
+# Reference: https://securelist.com/mandrake-apps-return-to-google-play/113147/
+# Reference: https://www.virustotal.com/gui/ip-address/45.142.122.12/relations
+
+ricinus-ca.ru
+ricinus-cb.ru
+ricinus-cc.ru
+ricinus.ru
+ricinus.su
+toxicodendron.ru
+mail.ricinus-ca.ru
+mail.ricinus-cb.ru
+mail.ricinus-cc.ru
+mail.ricinus.ru
+mail.ricinus.su

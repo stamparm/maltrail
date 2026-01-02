@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/liuya0904/status/1134660970112999425
+
+http://165.227.140.184
+http://37.228.129.58
+http://45.77.54.157
+http://95.179.142.161
+
+# Reference: https://twitter.com/liuya0904/status/1130305878085652481
+
+/slpr

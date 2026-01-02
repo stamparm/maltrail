@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-07-31-4L4MD4R-ransomware-from-ToolShell-exploit-activity.txt
+# Reference: https://www.virustotal.com/gui/file/33067028e35982c7b9fdcfe25eb4029463542451fdff454007832cf953feaf1e/detection
+# Reference: https://www.virustotal.com/gui/file/09165176854fa3c7ba9c35c25649a7da4bf4e9e160582729c9645751e8c14b30/detection
+
+145.239.97.206:443
+145.239.97.206:445
+bpp.theinnovationfactory.it
+ice.theinnovationfactory.it

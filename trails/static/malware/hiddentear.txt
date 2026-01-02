@@ -1,0 +1,166 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: .locked ransomware, trigona ransomware
+
+# Reference: https://twitter.com/malwrhunterteam/status/1043475192130031616
+
+vipturkiye.com
+
+# Reference: https://twitter.com/P3pperP0tts/status/1176830047510044673
+
+radioisangano.com/admin/assets/bootstrap/css/write.php
+
+# Reference: https://twitter.com/malwareforme/status/714632342766292993
+
+sarkemc0der.altervista.org
+
+# Reference: https://twitter.com/sdkhere/status/945977958967029761
+
+freemandida.pe.hu
+
+# Reference: https://twitter.com/killamjr/status/1277670729430040579
+# Reference: https://www.virustotal.com/gui/domain/alkhaleejpk.info/relations
+# Reference: https://app.any.run/tasks/e3888497-0259-48ef-a695-0745abcfdc48/
+
+alkhaleejpk.info
+
+# Reference: https://www.virustotal.com/gui/file/252442f0d8efc5276d735431c89a9319ced8676de53048d6296bae4c8b329be2/detection
+
+pmjh161182.ddns.net
+
+# Reference: https://twitter.com/fuscator/status/1300822841638760454
+# Reference: https://app.any.run/tasks/36bb27cb-c66e-4cbf-89f5-135e220ef9a7/
+
+enfiniql2buev6o.m.pipedream.net
+
+# Reference: https://www.virustotal.com/gui/file/c4a8dcdf79572f3b35baa67d238e7ff9352cac1b6a0709fa57d6d4613c312e15/detection
+
+172.111.131.19:5500
+bldovf.kozow.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1116679966941417472
+# Reference: https://app.any.run/tasks/ce935847-7c61-4ec8-9921-6adc13b3862e
+# Reference: https://app.any.run/tasks/a01d8bd5-5a70-4398-b6fe-c34d7deee229
+# Reference: https://www.virustotal.com/gui/file/6dfb9490b10f90cfb5c0b7f2db24bc0eb3924664540ac24d5a1b32a4614078f8/detection
+
+nebezpecnyweb.eu
+/cmFuc29td2FyZQ/checkin.php
+/cmFuc29td2FyZQ/detail.php
+/cmFuc29td2FyZQ/platba.php
+/cmFuc29td2FyZQ/platebni_brana.php
+/cmFuc29td2FyZQ/
+
+# Reference: https://twitter.com/petrovic082/status/1147167008393486338
+# Reference: https://pastebin.com/NRaUyHLV
+
+2anwyjsh7qgbuc5i.onion
+
+# Reference: https://twitter.com/bartblaze/status/980877270565957633
+
+sweet-candy.co.nf
+
+# Reference: https://twitter.com/petrovic082/status/1333875610247106566
+# Reference: https://twitter.com/petrovic082/status/1334577260674867202
+# Reference: https://app.any.run/tasks/e681877f-e1df-4f27-9799-9d99e752ac75/
+# Reference: https://app.any.run/tasks/47b2c8fd-f4df-4698-9518-b3b99a89f5bc/
+# Reference: https://www.virustotal.com/gui/domain/wzl.pagekite.me/detection
+
+wzl.pagekite.me
+
+# Reference: https://twitter.com/malwrhunterteam/status/1344576519377735680
+# Reference: https://www.virustotal.com/gui/file/8ce6a8ccaecc732b079334a7d0a304bf862efdf55b567484c0985d47e35be73d/detection
+
+http://84.252.95.236
+
+# Reference: https://www.virustotal.com/gui/file/f2a369cde7e5939c9926e22946f4e3a06c445fe4f5140f9169e970f6dcc4d370/detection
+# Reference: https://www.virustotal.com/gui/file/0666a76ee0b364945262c3e94d439bb6645703c10bad79269fc698e168065a42/detection
+
+http://51.15.91.55
+
+# Reference: https://twitter.com/ViriBack/status/1408210500312342529
+# Reference: https://app.any.run/tasks/bd3c7dc3-04ad-4c45-930b-9328c37f5ca0/
+
+durasen95.com
+
+# Reference: https://www.virustotal.com/gui/file/928d415963b1321d8cfd583509d6c0da8e618b6d51f50063c9deb0016319c20e/detection
+
+http://51.68.173.95
+
+# Reference: https://www.virustotal.com/gui/file/ee9166052d6255e39402ed5d142af5e129189cd42c61550bb70b5744a3ba52ef/detection
+
+sh1318074.a.had.su
+
+# Reference: https://www.virustotal.com/gui/file/21f8dd656b8c24630ff81f87500d0eb01c8d9402286a550809219960c2d91772/detection
+
+185.193.127.92:8080
+broadridge.bz
+
+# Reference: https://twitter.com/siri_urz/status/1600493916092043265
+# Reference: https://twitter.com/Threatlabz/status/1647983763975204864
+# Reference: https://unit42.paloaltonetworks.com/trigona-ransomware-update/
+# Reference: https://otx.alienvault.com/pulse/64134f9903e0366b9d8ccfc0
+
+3x55o3u2b7cjs54eifja5m3ottxntlubhjzt6k6htp5nrocjmsxxh7ad.onion
+6n5tfadusp4sarzuxntz34q4ohspiaya2mc6aw6uhlusfqfsdomavyyd.onion
+
+# Reference: https://twitter.com/petikvx/status/1621173013218750464
+# Reference: https://app.any.run/tasks/a5b337ca-5f34-47af-b26b-7dbedf08c2ce/
+# Reference: https://www.virustotal.com/gui/file/03386b61c4c2ba5553fbfab4895a9b521bc1ee9625519342f3f2bd4e5a8776ed/detection
+
+blasze.tk
+ww25.blasze.tk
+ww38.blasze.tk
+
+# Reference: https://twitter.com/ViriBack/status/1639730028480004097
+# Reference: https://www.virustotal.com/gui/file/f4ccf27e85556a81883eccb965d02b84158ff3697bd62f6445e6f9396a33d901/detection
+
+ransomwareraas10201.000webhostapp.com
+
+# Reference: https://www.trendmicro.com/en_us/research/23/f/an-overview-of-the-trigona-ransomware.html
+# Reference: https://otx.alienvault.com/pulse/64a2e5d062000ad64ecc27fb
+
+aeey7hxzgl6zowiwhteo5xjbf6sb36tkbn5hptykgmbsjrbiygv4c4id.onion
+
+# Reference: https://www.bleepingcomputer.com/news/security/ukrainian-activists-hack-trigona-ransomware-gang-wipe-servers/
+
+trigonadymasnuz2dlk2ihsruv6cwcfthosqfwlucwai6idvywqfldqd.onion
+
+# Reference: https://twitter.com/Threatlabz/status/1725201184372506941
+
+znuzuy4hkjacew5y2q7mo63hufhzzjtsr2bkjetxqjibk4ctfl7jghyd.onion
+
+# Reference: https://asec.ahnlab.com/en/61000/
+
+2.57.149.233:3366
+
+# Reference: https://www.huntress.com/blog/attacking-mssql-servers
+
+http://2.57.149.230
+2.57.149.230:445
+2.57.149.233:3377
+
+# Reference: https://twitter.com/1ZRR4H/status/1777163879040061651
+# Reference: https://www.virustotal.com/gui/file/dc640a9e1594f9f4e18973b10944e1bf8188a8ad4457231d7fcd661d59e225bd/detection
+# Reference: https://www.virustotal.com/gui/file/a918496f5d22b553e5028bab20e1432702cbf1b91d1e7888ee122d7e47e76f82/detection
+
+http://2.57.149.232
+
+# Reference: https://www.thedfirspot.com/general-8-1
+
+krsbhaxbki6jr4zvwblvkaqzjkircj7cxf46qt3na5o5sj2hpikbupqd.onion
+trigonax2zb3fw34rbaap4cqep76zofxs53zakrdgcxzq6xzt24l5lqd.onion
+
+# Reference: https://x.com/salmanvsf/status/1902190863645835483
+# Reference: https://www.virustotal.com/gui/file/3df15024814fc57c66bfa8f959e68304465d0781c366418682cbb134dd936f6c/detection
+
+wittenhorst.eu
+projectlalii6-zggcfhpd.4everland.app
+
+# Generic
+
+/verma/login/
+/verma/plugins/
+/verma/connection.php
+/verma/receive.php?pc=
+/write.php?computer_name=

@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Silent C2
+
+# Reference: https://x.com/BushidoToken/status/2003261783776330084
+
+147.93.186.198:3000

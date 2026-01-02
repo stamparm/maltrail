@@ -1,0 +1,191 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: nixscare, cliper
+
+# Reference: https://twitter.com/MBThreatIntel/status/1240389621638402049
+# Reference: https://twitter.com/James_inthe_box/status/1240400306858573825
+# Reference: https://app.any.run/tasks/9bde133d-2b57-4c69-82b2-ce92afc70617/
+
+poullight.ru
+
+# Reference: https://app.any.run/tasks/23c181f3-e5f2-4d9a-904b-633cb012c1e8/
+
+f0427103.xsph.ru
+ru-uid-507352920.pp.ru
+
+# Reference: https://app.any.run/tasks/b66ff3b4-4759-4a20-afb3-c990a292d3a2/
+
+trygame.space
+
+# Reference: https://yoroi.company/research/poulight-stealer-a-new-comprehensive-stealer-from-russia/
+
+fff.gearhostpreview.com
+u43692210a.ha003.t.justns.ru
+
+# Reference: https://app.any.run/tasks/62249e09-2e7e-4f32-be86-49f088b7376f/
+
+f0438390.xsph.ru
+ru-uid-507352920.pp.ru
+
+# Reference: https://app.any.run/tasks/212e60a0-040d-493b-83ae-8fb76d35866a/
+
+a0445863.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/9fbeb15b04961823c2515cfc616771ee35223843e25e948f4d3f026c649c3edd/detection
+
+a0448257.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/7c8a8c2512efcf4404041d3209f29c8c36847b240d6d068b7c31d71e0cba31c6/detection
+
+a0437968.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/0cb672ae92c9060554c56d0d258bd12911b04ab39a64dc3b7a5aa6c650be3f2e/detection
+
+a0439894.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/8d90d2620d1d78e64a9698aa82d82faf3a55fe82930819fe95b94c619b9d4354/detection
+
+a0438444.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/bcc1d08cf7ef2bf8cb9237cfe7733887bb7d92016be227884ffa1d0d237cd4c2/detection
+
+a0446373.xsph.ru
+
+# Reference: https://app.any.run/tasks/ce6080f0-e59e-407a-82b5-7ea30fc07626/
+
+a0458095.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/e9b2559e5ba7876b670ecced318041832ffbf732cf41eec6961059d266db7846/detection
+
+f0448893.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/d3449368c6443b3f49bdbc3db8f88dc092bf85d105bd79024d5de2a435ca8519/detection
+
+a0465927.xsph.ru
+
+# Reference: https://twitter.com/ViriBack/status/1302231419595427840
+# Reference: https://app.any.run/tasks/cb8f5a85-ac33-4c11-942c-504a357a2147/
+
+f0467229.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/d089b0fa5b668a5d9609fb508b4cb54589a6b7175e251aabe49d55daaadbb909/detection
+
+a0462628.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/640e849e13872d89e7202377a80f03b24d8d5416eb7ff20d15b43f99953bff7b/detection
+
+pappys-bot.ru
+
+# Reference: https://app.any.run/tasks/d2555b1f-0b96-4944-b994-a85c95b53054/
+
+f0479078.xsph.ru
+ru-uid-507352920.pp.ru
+
+# Reference: https://www.virustotal.com/gui/file/2511f20fdac1eb6540abc14a517ef581b56d490720c24d2cf15b7a62dbf11f24/detection
+
+j1120688.myjino.ru
+
+# Reference: https://www.carbonblack.com/blog/tau-threat-discovery-cryptocurrency-clipper-malware-evolves/
+
+btchit.me
+dviros.smabit.ru
+api.foxovsky.ru
+ru-uid-507352920.pp.ru
+/v1/checkLicense.php
+
+# Reference: https://twitter.com/wwp96/status/1366419056404881408
+# Reference: https://app.any.run/tasks/bb327a05-fad0-4767-a849-443970c3609b/
+# Reference: https://app.any.run/tasks/f1329dfd-0b7c-468b-97a3-d03591d27b03/
+
+http://78.198.121.158
+skvvmlpfc3lmdwtxquh.hopto.org
+/connection/gate.php
+
+# Reference: https://www.virustotal.com/gui/file/dab749cd49cb34a8346d1f7378d4a21026eb862ed21a69e80f933b272528724d/detection
+
+f0461909.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/3ab84e2d793ef9ea7fc868fe03fbfb5c29ccf0905ce7ea00ea9679d10f2bdfc4/detection
+
+f0462894.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/ae05c2823e081c88fe13cdb2871af229d5d3f3b5844b56976036cec82798c899/detection
+
+f0480319.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/23b0f136b22e56a577fb8bbd5b9c2a24373e7e77f12f066320f835b3ee435d7a/detection
+
+f0483754.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/6727aa51ac5492a7b7d46155517bdbffb108a3a69880dcafbe7e8d6938fce06d/detection
+
+f0481257.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/0350e75d55a2e942890387d8c741f3e0e6ff666f9f4215ed2ddae2e59bc47dbb/detection
+
+f0481150.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/396a7b8b961055021e3d1eff4e5b361810ea9d53f4b93594455503037cec7f6f/detection
+
+f0438351.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/ccfc26836ba4b65c91e998b38bb9889a339301df90ebdb036658765beeca870c/detection
+
+f0508216.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/f5643a823d1a22c0f031ba9f25a1514c594fe307205700b8b1213203d81fe0d0/detection
+
+f0482882.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/0318a3476c03b1bad0546d65e103ba05c286764b68826e4b018daa3e8941edb2/detection
+
+f0516318.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/5a560e27e6203c9ab87a58776ed3344469e1a8ca27e3edf76350dae4888d4196/detection
+
+f0517251.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/7743b78361c11bd024425cad3a25ae668917acc40e7279f091af60342509f92d/detection
+
+a0467918.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/66b4c3a55257000256c1336e6e9d143d633cb74c72fc1c1fba1567fc5ed85778/detection
+
+a0482502.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/7743b78361c11bd024425cad3a25ae668917acc40e7279f091af60342509f92d/detection
+
+a0467918.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/a4fe69af036b0b0768e65279b2d41fb8c8e28944f5e19a316f2afa0aab92b78c/detection
+
+f0511896.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/aecec28faa43d79a1111cf6b9cc56ac59655707f1385e955db08fce53c06c5f1/detection
+
+a0502332.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/6865a25b4b98840bbc46fec0505348bb105a61f87bc203a04751490cc1109d03/detection
+
+a0505710.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/e79c305bd28a431137c6b11d6ebb7c70e3fe635f429d03de4a833c550fdad238/detection
+
+a0504845.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/145b761fa9598ac8cf551c4de34600d0a4df18ecddb27e51b1df199dd1bb4b6c/detection
+
+f0543322.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/145b761fa9598ac8cf551c4de34600d0a4df18ecddb27e51b1df199dd1bb4b6c/detection
+
+f0543322.xsph.ru
+
+# Reference: https://twitter.com/AttackTrends/status/1637499757672247297
+
+f0533095.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/049a6bf2a170c5310ce9de8d8541c3f915efdd45dd853eaf4128d4f31702833e/detection
+
+porncamsworld.com

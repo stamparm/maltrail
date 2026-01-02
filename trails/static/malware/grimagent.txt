@@ -1,0 +1,39 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/bryceabdo/status/1352359414746009608
+# Reference: https://twitter.com/ViriBack/status/1322901089415475201
+# Reference: https://www.virustotal.com/gui/ip-address/161.117.191.245/relations
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.80.104/relations
+
+5spds4o9l.top
+blackkeys.top
+blackspiders.top
+chaseltd.top
+classrooms.asia
+defrgt5h6yfj7gyrjh.info
+eaglesandsnakes.top
+ewfr4g5dh6gsfgd.xyz
+f5g4dr6hfjt67ghg.link
+fedakaronline.xyz
+ge5r6h7tjrfrhegs.top
+microsoftaccess.top
+microsoftsystemcloud.com
+microsoftupdate.top
+networkauto.info
+networkauto.top
+networklight10.com
+newalphabet.top
+systemltd.link
+wellsfargobank.top
+wgdbrqyf.icu
+wildwest.top
+/wIvnlKphbw
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.92.202/relations
+
+microsoftestore.top
+microsoftltdcorp.com.pl
+microsofttop.wiki
+microsoftupdate.work
+mirosoftplaymarket.top

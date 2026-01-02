@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.clearskysec.com/wp-content/uploads/2020/12/Pay2Kitten.pdf
+# Reference: https://otx.alienvault.com/pulse/5fdbc3e2c2073f76f015fd04
+
+2bsecure.tech
+tunnels4.me
+
+# Reference: https://www.hackplayers.com/2021/02/sitios-cibercriminales-deepweb.html
+
+pay2key2zkg7arp3kv3cuugdaqwuesifnbofun4j6yjdw5ry7zw2asid.onion
+
+# Reference: https://www.morphisec.com/blog/pay2key-resurgence-iranian-cyber-warfare/
+# Reference: https://www.virustotal.com/gui/file/d8e423c8644b686ad3376f38f3e4df55a152ee4cac2af3079651263f002d8c26/detection
+# Reference: https://www.virustotal.com/gui/file/a05c18e81911608cf2edb19907092d542548abb695e48e3217dfbec2f3dfcd04/detection
+# Reference: https://www.virustotal.com/gui/file/9c06ea83553c6dab3d831e1046cee237a9c1b1ed79b3b2e37ed9f3c8a38643eb/detection
+# Reference: https://www.virustotal.com/gui/file/39d3ba87a27eae69a01666b0ecbb8c60259be4b3decf4cdd1d950c98c6c0b08c/detection
+
+gos-usa.xyz

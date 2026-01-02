@@ -1,0 +1,35 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/23/h/mmrat-carries-out-bank-fraud-via-fake-app-stores/IOC_stealthy-android-malware-mmrat-carries-out-bank-fraud-via-fake-app-stores.txt
+
+103.147.225.170:8088
+104.234.10.8:8088
+167.88.166.221:8088
+172.86.96.152:8088
+172.86.97.173:8088
+172.86.97.85:8088
+202.79.169.188:8088
+202.95.15.135:8088
+217.148.142.58:8088
+27.124.19.133:8088
+27.124.20.29:8088
+27.124.41.223:8088
+27.124.44.230:8088
+27.124.47.53:8088
+45.61.128.113:8088
+62.72.27.139:8088
+62.72.27.90:8088
+
+# Reference: https://twitter.com/malwrhunterteam/status/1699066868177506555
+# Reference: https://www.virustotal.com/gui/file/c59926f594e6ffb35d27d74ab73e922b8613131bea94e5004f1c6804a937a540/detection
+# Reference: https://www.virustotal.com/gui/file/83ecc70d7cc14956afcd3810c5f341540fa0df3e930c927084e804362247b05b/detection
+
+216.83.58.177:8088
+216.83.58.177:8554
+love4u.space
+adb007.top
+api.adb007.top
+rstp.adb007.top
+rtsp.adb007.top
+socket.adb007.top

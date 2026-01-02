@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/to-crypt-or-to-mine-that-is-the-question/86307/
+
+protnex.pw
+biserdio.pw

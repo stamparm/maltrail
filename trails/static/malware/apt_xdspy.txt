@@ -1,0 +1,131 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: xdigo
+
+# Reference: https://www.zdnet.com/article/eset-discovers-a-rare-apt-that-stayed-undetected-for-nine-years/
+# Reference: https://www.welivesecurity.com/2020/10/02/xdspy-stealing-government-secrets-since-2011/
+# Reference: https://github.com/eset/malware-ioc/tree/master/xdspy/
+# Reference: https://vblocalhost.com/uploads/VB2020-Faou-Labelle.pdf
+# Reference: https://otx.alienvault.com/pulse/5f7b6dec91a6842be8aa386c
+# Reference: https://cert.by/?p=1458 (Russian)
+
+365downloading.com
+boborux.com
+chtcc.net
+cracratutu.com
+daftsync.com
+documentsklad.com
+download-365.com
+downloadsprimary.com
+dropsklad.com
+easytosay.org
+ferrariframework.com
+file-download.org
+filedownload.email
+getthatupdate.com
+jerseygameengine.com
+maiwegwurst.com
+migration-info.com
+minisnowhair.com
+nomatterwhat.info
+officeupdtcentr.com
+seatwowave.com
+theslideshare.com
+wildboarcontest.com
+
+# Reference: https://twitter.com/t3ft3lb/status/1578448091476131841
+# Reference: https://www.virustotal.com/gui/file/6d975d2b3557bc3eebc8b24fdafca6244c9a0f485a0a6406c0fe12f41f6ae5d0/detection
+
+best-downloader.com
+download24center.com
+global-downloader.com
+my1businessconnection.com
+
+# Reference: https://twitter.com/t3ft3lb/status/1640373954018770945
+# Reference: https://www.virustotal.com/gui/file/60f2a6de283d37aba090db3be84a2da761717f20d6cfed002d4d0ef3a139f626/detection
+
+just-downloads.com
+
+# Reference: https://x.com/malwrhunterteam/status/1816855989859106913
+# Reference: https://x.com/t3ft3lb/status/1817943106181861704
+# Reference: https://www.virustotal.com/gui/file/a08029b0a01228a2a4904da723862dcd0e7b8de2b825bb6a70ec5148737cc5de/detection
+
+sbordokumentov.com
+
+# Reference: https://x.com/malwrhunterteam/status/1900654391742316938
+# Reference: https://www.virustotal.com/gui/ip-address/216.252.233.7/relations
+# Reference: https://www.virustotal.com/gui/file/59b907430dde62fc7a0d1c33c38081b7dcf43777815d1abcf07e0c77f76f5894/detection
+# Reference: https://www.virustotal.com/gui/file/745d7ff35fa716b105e85d492deff029d0dc04270612a4973923a63978395d4e/detection
+# Reference: https://www.virustotal.com/gui/file/796b057a6d2b6e8e7ef7b9a81b2203ebc361eb4c6b4d8e4b13640c1a681df0a3/detection
+
+fakturaaa.com
+file-bazar.com
+trxpay.cc
+
+# Reference: https://harfanglab.io/insidethelab/sadfuture-xdspy-latest-evolution/
+# Reference: https://www.virustotal.com/gui/file/155b94be1c3dca48314f6f2ee0c89c09553851ecc9ceefc436e16ebb7fca5f1a/detection
+# Reference: https://www.virustotal.com/gui/file/050018ecd9792776ef435c794695078cfe70ad9852f0eaab8527adba58143c73/detection
+
+aoc-upravleniye.com
+bukhgalter-x5group.com
+bystryvelosiped.com
+cellporyad.com
+chistyyvozdukh.com
+doverennyye-fayly.com
+downloading24.com
+dversteklo.com
+dwd765m.com
+easy-download24.com
+faylbox365.com
+faylsklad.com
+file-magazin.com
+full-downloader.com
+khitrayalisitsa.com
+khoroshayamych.com
+kletchatayarubashka.com
+krasnayastena.com
+laultrachunk.com
+magnitgroup.com
+melodicprogress.com
+moy-fayl.com
+moy-pdf.com
+nevynosimayapchela.com
+nniir.com
+obmen-faylami.com
+otpravkafaylov.com
+pdf-bazaar.com
+pdf-reyestr.com
+pdf-sklad.com
+pdfdepozit.com
+pdfmagazin.com
+pdfsklad.com
+pechalnoyebudushcheye.com
+promenimath.com
+protej.org.nniir.com
+quan-miami.com
+reyestr-faylov.com
+ru-pochta365.com
+ru-sistema.com
+serayagrust.com
+seychaspozzhe.com
+skachivanie-failov.com
+skachivanie-failov24.com
+slomannyymonitor.com
+sogrevayushchiynapitok.com
+svobodnoepredlozheniye.com
+temnayamashina.com
+tvoi-fayly.com
+tvoy-disk.com
+utrenneyesolntse.com
+vash-disk.com
+vashazagruzka365.com
+vashi-fayly.com
+zagruzka-pdf.com
+zagruzkadannykh.com
+zagruzkafayla.com
+zelenyysalat.com
+zetta-strakhovaniye.com
+zhestovyyliker.com
+zimniyeravlecheniya.com
+/wevjhnyh/

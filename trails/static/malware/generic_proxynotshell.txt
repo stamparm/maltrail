@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cve-2022-41040, cve-2022-41082
+
+# Reference: https://securelist.com/cve-2022-41040-and-cve-2022-41082-zero-days-in-ms-exchange/108364/
+# Reference: https://otx.alienvault.com/pulse/63a1c4d6c162819ce1894c47
+
+auzreservices.com
+service.auzreservices.com
+sync.service.auzreservices.com
+
+# Reference: https://businessinsights.bitdefender.com/technical-advisory-proxyhell-exploit-chains-in-the-wild
+# Reference: https://www.virustotal.com/gui/file/91605641a4c7e859b7071a9841d1cd154b9027e6a58c20ec4cadafeaf47c9055/detection
+# Reference: https://www.virustotal.com/gui/file/897d688bbff48f9af36fc4f45caa99ddb18bb87b8b8385ba4b3d525bbfdd1b6f/detection
+
+http://38.108.119.121
+149.28.249.156:443
+155.138.240.251:443
+45.77.146.144:443
+45.77.91.209:443
+66.42.116.130:443
+91.206.178.76:443
+devoterfo.com
+lostbussiness.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/ps1.powershell_web_backdoor/ (# 2024-09-24)
+
+51.159.36.26:5000

@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ViriBack/status/1126984754090467328
+
+r1jy.tk
+
+# Reference: https://twitter.com/James_inthe_box/status/1126933667429797888
+
+http://194.67.223.90
+
+# Reference: https://twitter.com/James_inthe_box/status/1222291570352766978
+
+dodoos.ru
+
+# Reference: https://www.virustotal.com/gui/file/75f49a4f213216d6315db59c1a9875a0071ba0f6db493ae4723cd7eedb67abb2/detection
+
+fuckingav.xyz
+
+# Reference: https://www.virustotal.com/gui/file/064112f09881f78b8cb5cae1379ee68fb81920d5eb725868a341ec4584d9dc3e/detection
+
+rocketx.fun
+hokage.ru/antivirus.php
+
+# Generic
+
+/fifa/fifa.php

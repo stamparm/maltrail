@@ -1,0 +1,94 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: oldgremlin, tinyfluff
+
+# Reference: https://rt-solar.ru/events/news/1915/ (Russian)
+# Reference: https://www.securitylab.ru/blog/company/solarsecurity/349248.php (Russian)
+# Reference: https://twitter.com/ShadowChasing1/status/1293834710703996928
+# Reference: https://twitter.com/Vishnyak0v/status/1296696059264196608
+# Reference: https://www.virustotal.com/gui/file/076b9fac004cc230dec755809994595d75a8720bf57b90819158e549a25ff102/detection
+# Reference: https://www.virustotal.com/gui/file/095989e0b524af5e8cae7ac1b9c9018c0d7b5078691f129752c185535c975e68/detection
+# Reference: https://www.virustotal.com/gui/file/0d6af4ebf5db891483091b2029a94a338907580191750c95f586440d32c1c533/detection
+# Reference: https://www.virustotal.com/gui/file/207cb54af358203cb7811202ef84e8dca523634951ddd5d7da101799136d4a5e/detection
+# Reference: https://www.virustotal.com/gui/file/23cfbb0bf1e110a79678f45c29897e6090b660d3df420bbb916fc3f1bc12eead/detection
+# Reference: https://www.virustotal.com/gui/file/268953af63bad4895dd06c024fd1ec2af2c134623a0e100e26894e4d6bab741e/detection
+# Reference: https://www.virustotal.com/gui/file/2df544ea3d70cde13fb66db5b82f1cf03fb1c53e7c7af95acafef5d98852b5a8/detection
+# Reference: https://www.virustotal.com/gui/file/6269fd417f93e7c0d7cab576b35dc3b6f6a58c0f04e75533bad84987c228f0e6/detection
+# Reference: https://www.virustotal.com/gui/file/65267892a81d5e6c38c12d808623314ed9798156f3c24df2e8e906394fd51396/detection
+# Reference: https://www.virustotal.com/gui/file/75fa551eec71d6d8b9817266813715c2bbb7a537005587f9f1e0d058a05febc6/detection
+# Reference: https://www.virustotal.com/gui/file/a77edbac6349f42a4220b91fdd9eef7b1bd964e14a9151a543abfecba4195925/detection
+# Reference: https://www.virustotal.com/gui/file/c598aa9156c5d1bacbdd7a4038c3cfe086611af1417b3a2e890c672eb199045e/detection
+# Reference: https://www.virustotal.com/gui/file/c6a2d72497aba7889a34f8805a859f6717b53d4959c6ec067d87de8103f91fe7/detection
+# Reference: https://www.virustotal.com/gui/file/e7d2deba4fccbea79ffa209ebe0ce49f98aecfb340c8d6ec3ea1773cb12cb07e/detection
+
+http://192.248.165.254
+http://45.61.138.170
+curly-sound-d93e.ygrhxogxiogc.workers.dev
+late-salad-2839.yriqwzjskbbg.workers.dev
+odd-thunder-c853.tkbizulvc.workers.dev
+old-mud-23cb.tkbizulvc.workers.dev
+hello.tyvbxdobr0.workers.dev
+
+# Reference: https://twitter.com/_re_fox/status/1301143311391109120
+# Reference: https://app.any.run/tasks/f21e3a4f-b734-4285-96b4-d2f274e19413/
+
+ccdn.microsoftdocs.workers.dev
+
+# Reference: https://www.group-ib.com/blog/oldgremlin
+# Reference: https://otx.alienvault.com/pulse/5f6ccbe362057a239425fc18
+
+http://136.244.67.59
+http://45.61.138.170
+http://5.181.156.84
+http://95.179.252.217
+rbcholding.press
+broken-poetry-de86.nscimupf.workers.dev
+calm-night-6067.bhrcaoqf.workers.dev
+curly-sound-d93e.ygrhxogxiogc.workers.dev
+hello.tyvbxdobr0.workers.dev
+ksdkpwpfrtyvbxdobr1.tiyvbxdobr1.workers.dev
+ksdkpwprtyvbxdobr0.tyvbxdobr0.workers.dev
+noisy-cell-7d07.poecdjusb.workers.dev
+old-mud-23cb.tkbizulvc.workers.dev
+rough-grass-45e9.poecdjusb.workers.dev
+wispy-fire-1da3.nscimupf.workers.dev
+wispy-surf-fabd.bhrcaoqf.workers.dev
+
+# Reference: https://blog.group-ib.com/oldgremlin_comeback
+# Reference: https://www.virustotal.com/gui/file/f36305e01515b73607f0f8941d9093fabe1b7a7e3f90c18f137403a0f016cdff/detection
+# Reference: https://www.virustotal.com/gui/file/0a0889330501ee52ca5fe2b2f41fbcad7d26afce8bc430c7fe274e6ebe64c680/detection
+
+http://161.35.41.9
+http://192.248.176.138
+http://46.101.113.161
+161.35.41.9:53:53
+46.101.113.161:53
+a3c65c.org
+eccbc8.com
+mirfinance.org
+ns1.a3c65c.org
+ns2.a3c65c.org
+ns3.a3c65c.org
+ns4.a3c65c.org
+ns1.eccbc8.com
+ns2.eccbc8.com
+ns3.eccbc8.com
+ns4.eccbc8.com
+
+# Reference: https://twitter.com/ShadowChasing1/status/1552595370961944576
+# Reference: https://twitter.com/k3yp0d/status/1552619518777868288
+# Reference: https://www.virustotal.com/gui/file/fb92611e3260e372be7799d17dd03109f5d0882efa3838923787ca8e16e31e06/detection
+# Reference: https://www.virustotal.com/gui/file/5b229e1a2a86f59258d007385cf167760c3bb3377de41cf69c9ead4256c4fc45/detection
+
+http://164.92.205.182
+
+# Reference: https://twitter.com/ShadowChasing1/status/1562242596789170177
+# Reference: https://www.virustotal.com/gui/file/49ee0b0d3dc11891d98a0ce31e2b91b2b5ded55e1ff9ae7cc1a4116b9acddebd/detection
+
+http://45.32.147.46
+
+# Reference: https://twitter.com/ShadowChasing1/status/1566699481768542208
+# Reference: https://www.virustotal.com/gui/file/9e6861c43efafcf3733d697ad91cd656e32702c46432f71e75ee26711c6dd953/detection
+
+http://159.65.198.79

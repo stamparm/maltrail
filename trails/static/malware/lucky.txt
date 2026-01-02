@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/laceworklabs/status/1082790093453123584
+# Reference: https://www.lacework.com/elf-of-the-month-new-lucky-ransomware-sample/
+
+http://111.90.141.104

@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ULTRAFRAUD/status/1705209115000070206
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/screentime-sometimes-it-feels-like-somebodys-watching-me
+
+http://109.107.173.72
+
+# Reference: https://twitter.com/ULTRAFRAUD/status/1705209115000070206
+# Reference: https://www.virustotal.com/gui/file/60ba10a5bdafa65987f36aa9ba884f686e36788bea22a7f6a7026fa18cbbab1d/detection
+
+http://87.251.67.84

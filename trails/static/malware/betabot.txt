@@ -1,0 +1,335 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: neurevt
+
+# Reference: https://twitter.com/James_inthe_box/status/1131561504375836673
+
+zolaelectrics.com
+
+# Reference: https://twitter.com/pollo290987/status/1100450079515783169
+
+moscow11.host
+
+# Reference: https://twitter.com/justmlwhunting/status/1088734644072255489
+
+kas919be.pw
+
+# Reference: https://twitter.com/pollo290987/status/1083026735841587202
+
+moscow77.online
+
+# Reference: https://twitter.com/jorgemieres/status/1136354513592307712
+
+russk3.icu
+
+# Reference: https://twitter.com/P3pperP0tts/status/1142245531604934656
+
+bundasteels.com
+
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Trojan:Win32/Neurevt.A#tab=2
+
+strike-file-hosting.us
+
+# Reference: https://threatrecon.wapacklabs.com/malware/betabot/dnsmh6Ew2rsF8V9Ipwy7RtjSKcFv6JQ6lBm37nriIHM%3D
+
+upcomingsong.com
+
+# Reference: https://pastebin.com/CenCYkHs
+
+sinsec.net
+wachaoutlol.com
+
+# Reference: https://www.virustotal.com/gui/domain/hellokiwi.in/relations
+# Reference: https://www.virustotal.com/gui/file/978527e2afa1887c75a995f7271942d7735fbefc13f2caef5a85010943c90996/detection
+
+hellokiwi.in
+
+# Reference: https://blog.talosintelligence.com/2019/10/threat-roundup-for-september-27-to.html (# Win.Malware.Neurevt-7192122-0)
+
+12thegamejuststarted10k12.com
+2uandmearevideos2k2.com
+6worldwipemek6.com
+allegro.ga
+doombringer.pw
+dqwjnewkwefewaaaaa3.com
+emicrosoft.eu
+fapncam.com
+frizzcams.com
+frky7.name
+kasn5.name
+marklou1.eu
+myssfii.eu
+pl1.co.vu
+s1allegro.net
+theafam.info
+up-windows.in
+update-silo.com
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, BetaBot)
+
+piszej.xyz
+squickycab.ga
+usb-drive.ru
+xiaodaoj.club
+
+# Reference: https://app.any.run/tasks/4b59b6c9-f5da-4134-ae98-46a885ff30e2/
+
+russk6.icu
+russk7.icu
+russk8.icu
+russk9.icu
+
+# Reference: https://app.any.run/tasks/1add35db-0da6-44dd-8020-135abe5196db/
+
+pitchstak.ga
+
+# Reference: https://app.any.run/tasks/dbdbcdc9-8903-48f5-aa5c-b89928456031/
+
+russk11.icu
+
+# Reference: https://pastebin.com/p0vBRBTE
+
+betabot.pw
+mandahp.ie
+riyanshoppingbags.com
+rollscar.pk
+
+# Reference: https://pastebin.com/EscWd1Cx
+
+asdsadasrdc.ug
+cvxmhbfghdsd.ug
+micozup.ru
+puruntis.ug
+timecheck.ug
+
+# Reference: https://news.sophos.com/en-us/2020/05/14/raticate/
+
+negrodesigns.ga
+stngpetty.ga
+webxpo.ga
+
+# Reference: https://www.virustotal.com/gui/file/33ea7a0d037f1c8f8ef8f567e83fde7329a4158986d5c331ded698eaa2408410/detection
+
+173.46.85.68:2016
+
+# Reference: https://twitter.com/ganeshnathan28/status/1298112354631155712
+# Reference: https://www.virustotal.com/gui/domain/winqits.com/relations
+
+winqits.com
+
+# Reference: https://app.any.run/tasks/5585447c-1870-4140-9cbe-1566c51f5d3c/
+
+sinomatics.ga
+
+# Reference: https://app.any.run/tasks/7331a0a9-6747-4ae4-a94f-cf11c6d57261/
+# Reference: https://www.virustotal.com/gui/file/d55d2d63aad9a8d3ca2c5f7fbbd8074d792c2a58ebc6e8dd00b369256cf2a1c8/behavior/Dr.Web%20vxCube
+# Reference: https://app.any.run/tasks/9a16b195-297a-4f0d-8c27-9be517448789/
+
+russk16.icu
+beyondthebold.com
+
+# Reference: https://www.virustotal.com/gui/file/634ad02fba5314a9c69334923a448c452550e08427ca7edb11d2d984eb66c115/detection
+# Reference: https://www.virustotal.com/gui/file/548b424bedcb831086fb9ab5b6e284a7a71a53e430acad99155153a869844570/detection
+# Reference: https://www.virustotal.com/gui/file/72ce154f40ba7fe038a21f18c4be45ab20e7d0a7759b072503c506ad3ba56d30/detection
+# Reference: https://www.virustotal.com/gui/file/65c1b7b845bb0bf116c7a72fbf146e351c8e3138ec99f9015e502f96640e264d/detection
+
+alldayever231.su
+askjhdaskdhshjfhf.ru
+fdsfsgagdfgdf.ru
+kanorkanor23.ru
+kdfrghdkfj34.ru
+kikidoyoulabme222.ru
+micozup.ru
+skdjgfbsdkjbfns3423.ru
+sprakitiktitkitik2322225431.ru
+tantarantantan23.ru
+tarssdsfdfsdr23.ru
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60 (# Betabot)
+
+adamestrde.in
+androcp.cloudns.pw
+clivertradesbiz.in
+dqwjnewkwefewaaaaa1.com
+exchangeprofitchop.biz
+fallencrafts.info
+germoetwa.com
+leadstome.fr
+liklemvor.sx
+lovingthe.crabdance.com
+mypaintdressk13.com
+securedcomputer.eu
+tempotac.biz
+theshangai.info
+truslibiz.in
+
+# Reference: https://www.hybrid-analysis.com/sample/c41082bc8e07d463a822f4c159d19520dcf9b1679912fe0d702856012ae6a22a?environmentId=100
+# Reference: https://www.virustotal.com/gui/file/43f5b7549f48647435bd16f0b3de6af89b9c290ab9ae258b6d5d3f171e58b22f/behavior
+
+i784we65o4ikes.pw
+i784we65o4ikes.ru
+i784we65o4ikes.org.ru
+bmwirving.com
+weqrandcx.su
+
+# Reference: https://open.appscan.io/article-235.html
+
+bitdefenderesupdate.ru
+bothobo.ru
+downstars.ru
+gongotraa.com
+gtrtoolie.com
+ilous.ru
+indexer4.ru
+jfijalgjiookfuje.su
+kolno.pw
+krovne.win
+krustpil.top
+magoooo.su
+opixib.bid
+paweln1.ru
+vulica.top
+
+# Reference: https://app.any.run/tasks/2709ed88-8c4b-42ca-807e-3cccef76233e/
+
+russk16.icu
+russk17.icu
+morningstarlincoln.co.uk/site/llllllllll/
+
+# Reference: https://twitter.com/wwp96/status/1369334028558626822
+
+rusianlover.icu
+siidocumentos.icu
+
+# Reference: https://twitter.com/malwrhunterteam/status/1375035932441726978
+
+xtkehjjerbk.icu
+
+# Reference: https://www.virustotal.com/gui/file/b20f5ca59efe8878614e7a7e385b8ec1b2cdb35ec5d30a6e31f442a9d701fe65/detection
+
+asm3aafs4gzafzf5ag.pw
+fule12ziasxh.ru
+geomansre123a.ru
+hisellv7aza4er.pw
+hitechawarereer.pw
+leloner.pw
+w85naonerash.ru
+
+# Reference: https://www.virustotal.com/gui/file/b900f3615a19ad4b55f2f70351455d722386b6a9ec76e0a3875489ef51854800/detection
+
+berlivildn.ru
+burtestbuldes.ru
+daulmustrong.ru
+maizonaterstin.ru
+paracetomolinfo.ru
+sainportz.ru
+sentembertolls.ru
+verybadprozak.ru
+
+# Reference: https://twitter.com/pollo290987/status/1394938640376209412
+# Reference: https://www.virustotal.com/gui/file/3a2c441a96936c089c1444f4cd50436593fcd43a18c80a1699fc6b2d62dd6907/detection
+
+moscow13.at
+russk17.icu
+russk18.icu
+
+# Reference: https://www.virustotal.com/gui/file/d6893d59585fdf607092668ae7cdf9e3cd508efe18678c832f7c42c9a58bebb1/detection
+
+rusav1.icu
+rusav2.icu
+
+# Reference: https://www.virustotal.com/gui/ip-address/23.106.215.83/relations
+
+moscow22.icu
+pppfinder.icu
+
+# Reference: https://www.virustotal.com/gui/ip-address/204.16.247.190/relations
+
+moscow11.at
+
+# Reference: https://www.virustotal.com/gui/ip-address/213.227.155.145/relations
+
+russk5.icu
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.193.38.160/detection
+
+russk12.icu
+russk13.icu
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.153.240.151/detection
+
+russk14.icu
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.147.229.23/relations
+
+russk15.icu
+
+# Reference: https://www.virustotal.com/gui/ip-address/213.227.154.134/detection
+
+xmpzi.icu
+
+# Reference: https://www.virustotal.com/gui/file/923945b086c39c8a6ec66ad3645d44212a8e92d080e6699f9ea0ccf55e43a77a/detection
+
+eastexs.com
+
+# Reference: https://www.virustotal.com/gui/file/054b7c5d38a00ecfc40168d4dc21610139c5ab6a46d2a0e851ef100397d5e5e9/detection
+
+cwjamaica.us
+
+# Reference: https://www.virustotal.com/gui/file/d315d64f46a55ef8edbce45aa779ee321bb76cf17a28c21a9c10efc22431ca0d/detection
+
+botstars.net
+
+# Reference: https://www.virustotal.com/gui/file/468f9abc380cedf17528958eb0ccd8e42e100e05ecb250f31a11d3f946765990/detection
+
+brascase-br.com
+
+# Reference: https://app.any.run/tasks/c4ea39c5-00d6-4388-861b-fa189d3f9e0b/
+
+globalxpert.pw
+qvpumps.com
+rosnfet.com
+woeer.com/pixies/admin/admin/temp/be/megaman/order.php
+
+# Reference: https://www.virustotal.com/gui/file/65fd867d489a0524338fd453a0855d29bb6e0e7e23f9c741f6fd10da870f76e7/detection
+
+dedimartbay.top
+
+# Reference: https://blog.talosintelligence.com/2021/08/neurevt-trojan-takes-aim-at-mexican.html
+
+russk19.icu
+russk20.icu
+russk21.icu
+russk22.icu
+saltoune.xyz
+
+# Reference: https://www.virustotal.com/gui/file/98327e81ee52ed71a10d4549f7cb77ae437b357a7ad4dde250a0e6d11b9f58c3/detection
+
+bbb1.chickenkiller.com
+
+# Reference: https://twitter.com/jaydinbas/status/1547530236878852096
+# Reference: https://www.virustotal.com/gui/file/ad75622a00b54405304b7ce02a23fee02b7c57fddd00b482687fd97866ecb562/detection
+# Reference: https://www.virustotal.com/gui/file/08ad8bfa45d107b5ddd904f002abb2cd9402bca5564025b3cf4fb309c1371046/detection
+
+chtoluca.com.mx
+ciijus.org
+colegiovillahidalgo.edu.mx
+culturasmetropolitanas.org
+gonal.com.mx
+javiersantos.info
+russiandancingmen.top
+
+# Reference: https://www.virustotal.com/gui/file/4da1fd9481e885bfc18198bcdbf5e045bc631c4189b1300676515704605085a6/detection
+
+sedrftgz.anondns.net
+
+# Generic
+
+/j7csltegf/login.php
+/panels_encoded/login.php
+/panels_encoded/logout.php
+/skins/betpla/PHP/
+/div/me.exe
+/wid/logout.php
+/kin/logout.php

@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://research.checkpoint.com/ceidpagelock-a-chinese-rootkit/
+
+58fei.xyz
+tj999.top
+
+# Passive DNS for 42.51.223.86
+
+66sf.top
+suel.top
+tt78.top
+xiu8888.top
+
+# Passive DNS for 118.193.211.11
+
+scjygh.com

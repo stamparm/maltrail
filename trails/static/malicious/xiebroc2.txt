@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/MichalKoczwara/status/1836811909053456781
+# Reference: https://x.com/MichalKoczwara/status/1836811918809452612
+
+150.158.31.113:8000
+150.158.31.113:8889
+192.3.39.153:8000
+192.3.39.153:8889
+193.134.209.241:8000
+193.134.209.241:8889
+209.146.125.199:8000
+209.146.125.199:8889
+43.229.154.146:8000
+43.229.154.146:8889
+
+# Reference: https://x.com/Huntio/status/1854814842625867989
+
+38.47.227.55:8890
+
+# Generic
+
+/XiebroC2/TeamServer_linux
+/XiebroC2/profile.json

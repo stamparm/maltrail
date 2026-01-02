@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2007-030115-1234-99&tabid=2
+
+detailsnum.com
+wai-k-mart.com
+onemoreshoot.com
+wal-stop-mart.com
+jdo24nrojseklehfn.com
+superdigitalprices.com
+wmwbc.com
+vam-ars.com
+cameradealsusa.com
+michelleorea.com

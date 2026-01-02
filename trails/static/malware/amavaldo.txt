@@ -1,0 +1,104 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2019/08/01/banking-trojans-amavaldo/
+
+clausdomain.homeunix.com
+balacimed.mine.nu
+fbclinica.game-server.cc
+newcharlesxl.scrapping.cc
+
+# Reference: https://twitter.com/huntingneo/status/1332014388207886338
+# Reference: https://twitter.com/huntingneo/status/1331681054474838017
+
+emissaovivofaturasonline.eastus.cloudapp.azure.com
+faturadigitalvivopdf.brazilsouth.cloudapp.azure.com
+faturavivoemaberto.brazilsouth.cloudapp.azure.com
+vivodigitalfaturapdfvia.brazilsouth.cloudapp.azure.com
+
+# Reference: https://twitter.com/linecon0/status/1268862151214710787
+
+notafiscal2020.brazilsouth.cloudapp.azure.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1414100367256731648
+# Reference: https://www.virustotal.com/gui/file/78cb19e14cd4eb99db6fe1af47fb043ccbe735203a048d73464227ead1cdfed5/detection
+
+lubagalord.duckdns.org
+
+# Reference: https://github.com/pan-unit42/tweets/blob/master/2022-04-19-IOCS-for-infection-from-Brazil-malspam.txt
+
+projeto-nota.com
+download.kicks-ass.org
+gssfsfgf.scrapping.cc
+iofajfioshnguiosfui.from-pa.com
+sgfghfhdghdd.doesntexist.org
+
+# Reference: https://www.virustotal.com/gui/file/768c1e503c9a0c4a81afc764ada950e6353f47d8dddc9e59695e741e446e5885/detection
+
+claco.kicks-ass.net
+claco.kicks-ass.org
+
+# Reference: https://twitter.com/dodo_sec/status/1516906963623456768
+# Reference: https://bazaar.abuse.ch/sample/6cb693b434ef3c9155fd802d07ef6e3d77fb2ca90435d89fa945ddf525170a0a
+
+invoices.sappleserve.com
+
+# Reference: https://twitter.com/Merlax_/status/1772815651154935896
+# Reference: https://twitter.com/Merlax_/status/1776027433528967425
+# Reference: https://www.virustotal.com/gui/file/7010753c9d03382aed58ef5cd98fbd52f99151e6fec8ee6219fb70ea7259a786/detection
+# Reference: https://www.virustotal.com/gui/file/cc75e586b0786c4892d8097f65e21fde305f996be9e6d31bf66ac9c3346e2def/detection
+
+http://154.205.156.120
+http://5.181.156.5
+http://92.205.129.120
+http://92.205.232.18
+5.181.156.56:443
+alphavilleceara1e2.likescandy.com
+mod01geracaomambore.getmyip.com
+vdeptoscampitell.likes-pie.com
+
+# Reference: https://twitter.com/Merlax_/status/1783605653422190771
+
+http://92.205.231.161
+3illeceara1e2.likescandy.com
+copyringhtseguro.simple-url.com
+
+# Reference: https://twitter.com/Merlax_/status/1786179599346401698
+# Reference: https://www.virustotal.com/gui/ip-address/208.109.229.218/relations
+# Reference: https://www.virustotal.com/gui/file/1a5ec30fef595d3d49e16192e243042ef12c70448e1cb904f5d32183e08a43ae/detection
+
+38.60.209.132:443
+dramarcelarodriguesd.com
+linkcarconsorcios.iamallama.com
+linkcarconsorcios.simple-url.com
+
+# Reference: https://twitter.com/johnk3r/status/1789006682141384789
+# Reference: https://www.virustotal.com/gui/file/b989aab758a3a5dcc86254db772f142489e2953ce4ea67b2545fa6f77e057783/detection
+# Reference: https://www.virustotal.com/gui/file/f77b1fda578acd699b1e36858c8cb1ecddc49be6077720d9f0ddadb2459629bc/detection
+
+weloisaqueirozwe.from-nh.com
+
+# Reference: https://twitter.com/johnk3r/status/1790020410840342661
+# Reference: https://www.virustotal.com/gui/file/1e54d1176e17eeef5921d5d90c934d81badc333f8c17202265c4edf374088b4a/detection
+# Reference: https://www.virustotal.com/gui/file/e460284fa3bf7a98e2e4134f1e0e50c8f4075837063cf1e69455671528dd5b19/detection
+
+deptoscampitell.groks-this.info
+melhorenvio205.getmyip.com
+
+# Reference: https://x.com/johnk3r/status/1791537531395145751
+# Reference: https://www.virustotal.com/gui/file/1efc6dd80c1adc38ac308d71760acb2efcd420ef98519021f87522a5d1a333ff/detection
+# Reference: https://www.virustotal.com/gui/file/ba70c58df0fedc96caafb8e2ba91a170a5262db002c501bf1f5fac340ac5b9bf/detection
+
+centronvest.groks-this.info
+
+# Reference: https://x.com/Merlax_/status/1797747970537889904
+# Reference: https://www.virustotal.com/gui/ip-address/92.205.226.128/relations
+# Reference: https://www.virustotal.com/gui/file/0ce71484c8a2e5085e1f2742c16d21a2c852ccbe7a5785f3848944a22e2f9e19/detection
+# Reference: https://www.virustotal.com/gui/file/b984318b9db04ff72dd2067530b9841184510a6feb58862676d6f67a95644b39/detection
+
+http://208.109.233.38
+154.205.154.172:778
+208.109.233.38:443
+globoaves234.com
+lillidellheim.com
+grupotecnosege.likescandy.com

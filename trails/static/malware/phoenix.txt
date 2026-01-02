@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: PhoenixStealer
+
+# Reference: https://twitter.com/P3pperP0tts/status/1190913226726395904
+# Reference: https://app.any.run/tasks/2b8e14d9-9471-4116-a6f6-ddd535ae1030/
+
+162.211.86.20:587
+bhavnatutor.com
+
+# Reference: https://twitter.com/3xp0rtblog/status/1455111070566207493
+# Reference: https://www.virustotal.com/gui/file/e62467fc0e7982279b2752a3330e741135366e7b318890aa9613ccc5ddcfd37f/detection
+
+95.142.46.35:6666
+v798635.hosted-by-vdsina.ru
+
+# Reference: https://www.virustotal.com/gui/file/5d61d2fe577e2a1feac949e6ee980fc9589e4b9472bc4ae249e5d50371ce0e9a/detection
+
+194.87.248.102:3000
+s614657.smrtp.ru

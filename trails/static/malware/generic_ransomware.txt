@@ -1,0 +1,82 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/banthisguy9349/status/1752420692769865775
+
+http://218.185.248.252
+/ransomeware%20C++/
+/ransomeware%20C++%20updated/
+/ransomeware%20C++%20updated.zip
+/ransomeware%20C++.rar
+/ransomware%20using%20C++/
+/ransomware%20using%20C++.zip
+
+# Reference: https://www.virustotal.com/gui/ip-address/86.104.74.194/relations
+# Reference: https://www.virustotal.com/gui/file/de507ae4da0dfb431fa1161c5da5ca8dc0eb68bacd22b9ec5912edc4a35d95cb/detection
+
+infoimp.shop
+ns1.infoimp.shop
+ns2.infoimp.shop
+
+# Reference: https://x.com/banthisguy9349/status/1825119709873779032
+# Reference: https://www.virustotal.com/gui/file/f01e7871c609aef39328db4fadf4597eda70a5aa7c7458e0ce09c898c483e7cf/detection
+# Reference: https://www.virustotal.com/gui/file/dd34cf92d7782bb1f9214b73965ef298af464aa34b853cf43c970c12f3795faf/detection
+# Reference: https://www.virustotal.com/gui/file/aa472946c4635b17ba5723bfe7ea14214d3d8bab8428f2e70c325ffdd7031db2/detection
+# Reference: https://www.virustotal.com/gui/file/6aa142895456d666b3dfad4ddd00296a6719787114f9b28fda83147cdb28c513/detection
+
+quimeptwl1963.workers.dev
+snowy-sun-52b1.quimeptwl1963.workers.dev
+
+# Reference: https://x.com/banthisguy9349/status/1842953500894081380
+
+/HOW%20TO%20DECRYPT%20FILES.txt
+
+# Reference: https://x.com/banthisguy9349/status/1845844014643474618
+# Reference: https://urlquery.net/report/19eb09f3-6e40-41f9-a99f-a31e89b16f1e
+# Reference: https://www.virustotal.com/gui/file/2378b573c7799fac6884657f5df6d524f47aed4e5348c9104a4943ce6276653b/detection
+
+http://107.175.73.38
+
+# Reference: https://x.com/ShanHolo/status/1846254618130444671
+
+http://20.210.245.1
+
+# Reference: https://x.com/banthisguy9349/status/1847198891717865495
+
+http://45.146.253.82
+http://82.215.64.105
+
+# Reference: https://x.com/DaveLikesMalwre/status/1863045544773398766
+# Reference: https://app.any.run/tasks/0e966bc9-4e82-4fe0-a697-74a1e58e3f01
+
+usjjsjsj.com.ng
+
+# Reference: https://x.com/banthisguy9349/status/1854575385964368184
+# Reference: https://x.com/banthisguy9349/status/1875598155179491459
+# Reference: https://www.virustotal.com/gui/ip-address/84.247.147.214/relations
+
+84.247.147.214:8080
+
+# Reference: https://x.com/solostalking/status/1883765440440336619
+
+7dikawx73goypgfi4zyo5fcajxwb7agemmiwqax3p54aey4dwobcvcyd.onion
+
+# Reference: https://x.com/solostalking/status/1889733513173172414
+# Reference: https://www.virustotal.com/gui/ip-address/65.108.157.103/relations
+
+energiczneporanki.pl
+porannyrozruch.pl
+
+# Reference: https://x.com/BlinkzSec/status/1992217992524886158
+
+http://13.43.218.174
+/ransom.exe
+/ransom-sachin-hmi-p.exe
+/ransom-sachin-hmi-p2.exe
+
+# Reference: https://x.com/PaduckLee/status/2001214029713563682
+
+32ua46psni5i763ynwhteamgyz4nbme62pua7vquxlhzoncezgjiwiid.onion
+6w3tn5lvfquydnswtsqczhipoikje5v3nk5mchlq23j3junjujgnbrad.onion
+kpksna755tvlukst47xt6hgnvrymh5ceadcyrytixjt73kly3wtbzqid.onion
+vbzxvet5nbga7jblaksuorsrvdsoe2x5youwadt7ywywpqzbliwfzmid.onion

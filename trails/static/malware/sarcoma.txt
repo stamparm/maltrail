@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: sarcoma ransomware
+
+# Reference: https://x.com/AlvieriD/status/1844020539360530777
+# Reference: https://x.com/_operations6_/status/1909731494190301547
+# Reference: https://www.virustotal.com/gui/file/6669cfeba5619b6f4d80b1281adfe69c87d845ebaaf9e83c25efa01a8267e751/detection
+
+sarcomabwgzv7ogiulwqfmlul6mjcxy6o3owuld4lqguvevf4kgp3lqd.onion
+sarcomawmawlhov7o5mdhz4eszxxlkyaoiyiy2b5iwxnds2dmb4jakad.onion

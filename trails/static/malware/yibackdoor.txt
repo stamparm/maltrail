@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zscaler.com/blogs/security-research/yibackdoor-new-malware-family-links-icedid-and-latrodectus
+# Reference: https://www.virustotal.com/gui/file/af912f6f4bea757de772d22f01dc853fc4d7ab228dc5f7b7eab2a93f64855fbe/detection
+
+136.243.146.46:8898

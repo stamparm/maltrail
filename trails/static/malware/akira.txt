@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: akira ransomware, skira ransomware
+
+# Reference: https://twitter.com/AlvieriD/status/1645727165877460992
+
+akiral2iz6a7qgd3ayp3l6yub7xx2uep76idk3u2kollpj5z3z636bad.onion
+
+# Reference: https://twitter.com/1ZRR4H/status/1706954389217329191
+# Reference: https://www.virustotal.com/gui/file/3981ea2f66e197c3fb644184a33f2553fed51e175aa0402e77d1e324c96e1326/detection
+
+akira.red
+
+# Reference: https://x.com/1ZRR4H/status/1815734747198288251
+# Reference: https://blogs.blackberry.com/en/2024/07/akira-ransomware-targets-the-latam-airline-industry
+
+190.211.252.82:37654
+77.247.126.158:37654
+77.247.126.158:47001
+
+# Reference: https://x.com/1ZRR4H/status/1831897510551679490
+
+45.86.208.164:36514
+45.86.208.164:37654
+
+# Reference: https://www.thedfirspot.com/general-8-1
+
+akiralkzxzq2dsrzsrvbr2xgbbu2wgsmxryd4csgfameg52n7efvr2id.onion
+
+# Reference: https://x.com/AlvieriD/status/1897617781446545560
+
+mtgc3qvyedjnfu7cen2zsupdppi5ys5g2hm6xwujvoepw25p4dy6huid.onion

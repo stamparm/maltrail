@@ -1,0 +1,54 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/blackorbird/status/1404752748919156737
+# Reference: https://mp.weixin.qq.com/s/VTHvmRTeu3dw8HFyusKLqQ (Chinese)
+# Reference: https://www.virustotal.com/gui/file/5c715ca910ffbd80189cffd2705a5346f40bc466458e0223191d56be5a417c7b/detection
+# Reference: https://www.virustotal.com/gui/file/f491e27644a85915a1f92314c20e9fc63337a019f9463d34df262699d0a8a7ee/detection
+
+http://144.91.65.101
+helloworld.bounceme.net
+
+# Reference: https://www.virustotal.com/gui/file/04366d01542cba82787433d0d565c13b227a08fc6657bcb34269de48e452543a/detection
+# Reference: https://www.virustotal.com/gui/file/41576737cd3d9f1e04ca0b7d49b412ecc935da78b2ea007c92b84d85012b011e/detection
+
+93.104.215.45:9863
+gemtool.sytes.net
+
+# Reference: https://news.sophos.com/en-us/2025/03/27/pjobrat-makes-a-comeback-takes-another-crack-at-chat-apps/
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/PJobRAT_IOCs.csv
+# Reference: https://www.virustotal.com/gui/file/0ad9cd56764ef70bdfbd3b2d269020557135f075d63327dbaab1bf0e9d816fb5/detection
+# Reference: https://www.virustotal.com/gui/file/0ebcfbcda27b84b8f0db6d50abb1b0ff7831938913912156d27880704e69f1f2/detection
+# Reference: https://www.virustotal.com/gui/file/37c390ff137ac71004223c73b99a9d8eec8ae2e879dee679bda29c09e1b11a37/detection
+# Reference: https://www.virustotal.com/gui/file/44a05d1e36938c0d6039e0986de91744482d86d641d1d981f3e8a61385fb33a3/detection
+
+185.197.251.146:3574
+185.197.251.146:8181
+62.171.177.67:3574
+62.171.177.67:8181
+itechcube.xyz
+toolkitapi.xyz
+dependablework.wordpress.com
+lifestylespractice.wordpress.com
+westvist.myftp.org
+/m_chowa_srv/main.php
+/m_chowa_srv/
+
+# Generic
+
+/axbxcxdx123/count.php
+/axbxcxdx123/ping.php
+/axbxcxdx123/test.php
+/mainfiles/file_handler.php
+/senewteam2136/mainfiles/file_handler.php
+/senewteam2137/mainfiles/file_handler.php
+/senewteam2136/mainfiles/
+/senewteam2137/mainfiles/
+/senewteam2136/
+/senewteam2137/
+/shfppdlslfz_5699_hqp2o0o-3cMV/sjdf578hj_p-lm235_za0Oo-q/sjdf0oO2hq877pnzxii_iioOiupXxw.php
+/sjdf578hj_p-lm235_za0Oo-q/sjdf0oO2hq877pnzxii_iioOiupXxw.php
+/shfppdlslfz_5699_hqp2o0o-3cMV/sjdf578hj_p-lm235_za0Oo-q/
+/shfppdlslfz_5699_hqp2o0o-3cMV/
+/sjdf578hj_p-lm235_za0Oo-q/
+/sjdf0oO2hq877pnzxii_iioOiupXxw.php

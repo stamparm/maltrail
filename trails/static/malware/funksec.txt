@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: funksec ransomware, funklocker
+
+# Reference: https://x.com/DarkWebInformer/status/1864442083072737390
+
+7ixfdvqb4eaju5lzj4gg76kwlrxg4ugqpuog5oqkkmgfyn33h527oyyd.onion
+pke2vht5jdeninupk7i2thcfvxegsue6oraswpka35breuj7xxz2erid.onion
+ykqjcrptcai76ru5u7jhvspkeizfsvpgovton4jmreawj4zdwe4qnlid.onion
+
+# Reference: https://x.com/DarkWebInformer/status/1873113047176450424
+
+funknqn44slwmgwgnewne6bintbooauwkaupik4yrlgtycew3ergraid.onion
+funkxxkovrk7ctnggbjnthdajav4ggex53k6m2x3esjwlxrkb3qiztid.onion
+
+# Reference: https://x.com/siri_urz/status/1875119109714932159
+
+funkiydk7c6j3vvck5zk2giml2u746fa5irwalw2kjem6tvofji7rwid.onion
+
+# Reference: https://app.validin.com/detail?find=funksec.top&type=dom&ref_id=a2154eda57f#tab=host_pairs (# 2025-01-31)
+
+funksec.top
+funk45xqgrkrtej4743evcgv65oi3w4shwvjx3cvrdtqwul7gzkxuxqd.onion
+funk4ph7igelwpgadmus4n4moyhh22cib723hllneen7g2qkklml4sqd.onion
+funkhnsbaxojjjju65bhc7xuidjwvmwhdmgarvhbhs3szqkpzkmvnvid.onion
+funksec53xh7j5t6ysgwnaidj5vkh3aqajanplix533kwxdz3qrwugid.onion
+grams6ieqkqjjmydfqrdmy4htfymanghokatmgdkxsn42v6a6jpdt7yd.onion

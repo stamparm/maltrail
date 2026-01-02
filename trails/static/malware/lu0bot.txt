@@ -1,0 +1,151 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/fumik0_/status/1407981244474970115
+# Reference: https://fumik0.com/2021/06/24/lu0bot-an-unknown-nodejs-malware-using-udp/
+# Reference: https://www.virustotal.com/gui/file/3a8ffe53dce3cc92dd54f8ee34c3f9a8db950c80b53ffb44f36b43123297bea0/detection
+# Reference: https://www.virustotal.com/gui/file/61983e52070f7b422a9a674042e70bbedf492f5961881ebf49e87f5955439f76/detection
+
+5.188.206.211:19584
+asu00.xyz
+asu02.shop
+asu03.xyz
+asu04.shop
+asu05.fun
+asu06.xyz
+asu07.fun
+asu08.shop
+asu09.shop
+asu10.fun
+asu12.store
+asu13.one
+asu14.fun
+asu15.one
+ati71.fun
+hri0.asia
+hri0.xyz
+hri1.asia
+hri1.xyz
+hri10.xyz
+hri2.xyz
+hri3.xyz
+hri4.xyz
+hri5.xyz
+hri6.xyz
+hri7.xyz
+hri8.xyz
+hri9.xyz
+ldvelia.click
+ldvelia.work
+lu0.asia
+lu00.xyz
+lu01.xyz
+lu02.xyz
+lu03.xyz
+lu1.asia
+olo57.shop
+oun96.fun
+tes01.xyz
+tes02.xyz
+tes03.xyz
+tes04.xyz
+tes05.xyz
+tes06.xyz
+lu0.sytes.net
+lu0.viewdns.net
+
+# Reference: https://twitter.com/benkow_/status/1446108260256272393
+# Reference: https://tria.ge/211007-qy43kacfgq/behavioral1
+# Reference: https://www.virustotal.com/gui/file/2d721df670fdb63c643b3de2dcdd46311b8d94d2753b47ad0035392644dee77a/detection
+
+olo57.shop
+ran38.fun
+ran38a.fun
+
+# Reference: https://twitter.com/benkow_/status/1469238517066838018
+# Reference: https://tria.ge/211210-lg2tnagac7/behavioral1
+
+nkn61.shop
+9ad3a65b61891639132275091.qpi.nkn61.shop
+
+# Reference: https://twitter.com/benkow_/status/1489306140760592386
+# Reference: https://bazaar.abuse.ch/sample/858bafe27080124fc1560894b00cf8c0c672df0bd0a66dbd08cf28b4cf9e1ee5/
+
+vck11.fun
+opi.vck11.fun
+1ab5669c68291643944772843.benkow.vck11.fun
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.lu0bot/
+
+acb89.shop
+acs31.fun
+aea03.shop
+baf35.fun
+buz85.shop
+byk31.shop
+cbq74.shop
+cdh80.fun
+cxp83.shop
+dae51.shop
+ddz85.shop
+dmz24.fun
+ekg69.fun
+eoi12.shop
+eyj16.fun
+fce11.fun
+fuk09.fun
+fuk95.shop
+hqg03.shop
+icv74.fun
+ioc39.shop
+ior87.shop
+irg13.fun
+irj55.shop
+jai17.shop
+jhn44.shop
+keb73.fun
+llw18.fun
+mkx5.shop
+nbp10.fun
+nox41.shop
+odq70.shop
+pom39.fun
+rmu99.fun
+sqe04.fun
+tic53.shop
+uod61.fun
+vhi46.shop
+vij68.fun
+xio23.com
+xjl92.shop
+xlf07.shop
+ykf88.fun
+zdm85.shop
+zgg58.shop
+zxd12.fun
+
+# Reference: https://any.run/cybersecurity-blog/lu0bot-analysis/
+# Reference: https://app.any.run/tasks/4696b947-92f0-4413-95dc-644c45ca99a6/
+
+juz09.cfd
+hsh.juz09.cfd
+59c58bb5317016932210991180008a04a642894b53635018356690221232f.hsh.juz09.cfd
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-28-v10428/994
+
+eus80.fun
+tinh73.shop
+xdk03.fun
+apo.eus80.fun
+bic.xdk03.fun
+mko.tinh73.shop
+
+# Reference: https://www.trendmicro.com/en_us/research/23/k/attack-signals-possible-return-of-genesis-market.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/23/k/attack-signals-possible-return-of-genesis-market/iocs-attack-signals-possible-return-of-genesis-market.txt
+# Reference: https://otx.alienvault.com/pulse/65609160cddfd2987cac2ef3
+
+fast-difficult.monster
+ewk48.shop
+ps1-local.com
+mxb.ewk48.shop
+230927151335115.mxb.ewk48.shop

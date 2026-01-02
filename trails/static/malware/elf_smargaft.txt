@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.xlab.qianxin.com/smargaft_abusing_binance-smart-contracts_en/
+# Reference: https://www.virustotal.com/gui/file/d321530ff92745c26e4ae27445eff67587bf3b3f9be8f9159f316fee91ddcc29/detection
+
+185.132.125.193:81
+185.132.125.193:82
+45.95.146.93:81
+45.95.146.93:82
+94.103.188.167:81
+94.103.188.167:82

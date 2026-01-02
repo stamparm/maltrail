@@ -1,0 +1,166 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.360totalsecurity.com/en/secret-stealing-trojan-active-in-brazil-releases-the-new-framework-solarsys/
+# Reference: https://www.cybereason.com/hubfs/dam/collateral/iocs/chaes-malware-iocs.pdf
+# Reference: https://www.cybereason.com/hubfs/dam/collateral/reports/11-2020-Chaes-e-commerce-malware-research.pdf
+# Reference: https://otx.alienvault.com/pulse/5f8df90c19bf9317b8aec1e8/
+# Reference: https://otx.alienvault.com/pulse/5fb55aefd9bf4c5a155f42d8/
+# Reference: https://app.any.run/tasks/933fb929-7527-48d3-82bc-dd574e109738/
+# Reference: https://any.run/report/ee21c659ab9c4ddb0f7e2ae58df94e78c8455c4254aaebb4894c08d6705292db/933fb929-7527-48d3-82bc-dd574e109738
+# Reference: https://any.run/report/4de0654de126bed1381a09aa3685b1a3dc47ac195d9c0566e9e2bec2897f921d/9b05a527-9cc0-47bf-9388-e1e47d3dda8a
+# Reference: https://www.virustotal.com/gui/file/d353a3725adba02e2db889c86e8f53fef15b497538023689c70fd0269f269e22/detection
+# Reference: https://www.virustotal.com/gui/file/19831b8a02d57396525fab89922e6257ebdcff44ff7866e13536be30654c998a/detection
+# Reference: https://www.virustotal.com/gui/file/cf1928a26bec7fa0a08ec88584d55c354e7ae0053ca618cca95608f2bc2d34b2/detection
+# Reference: https://www.virustotal.com/gui/file/e051c9a186b9f84400a01b23e5cba63ed895d8fa753390239432638a983a6268/detection
+# Reference: https://www.virustotal.com/gui/file/7700f5cc5eb3149b67e8c06d893fd9a85afbe9a5c582a6db9f88a784605866cc/detection
+# Reference: https://www.virustotal.com/gui/file/ffef8252643991e1565edf6f1203b47d18b391689bb8affbd9fc3ac528cb3613/detection
+# Reference: https://www.virustotal.com/gui/file/cd937db90ce7cf8e118b9ce26e26d34e022c5ae12b4e0e381f01ee72934fecae/detection
+# Reference: https://www.virustotal.com/gui/ip-address/176.123.7.218/relations
+# Reference: https://www.virustotal.com/gui/ip-address/176.123.7.135/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.15.27.216/relations
+
+http://176.123.7.135
+abcdireito.com.br
+awsgold.xyz
+awsvirtual.blogspot.com
+awsvirtual.xyz
+cnxtours.com.br
+evolved-thief.online
+exviado.com.br
+seriscojamais.live
+angel-mars2020.ddns.net
+archive-earth2020.ddns.net
+breaking-jupiter2020.xyz
+cleanupett.ddns.net
+cloud-mercury2020.ddns.net
+gbviadinho.ddns.net
+playing-uranus2020.ddns.net
+running-saturn2020.ddnsking.com
+satan-venus2020.ddns.net
+storage-venus2020.ddns.net
+uploading-neptune2020.3utilities.com
+uploading-neptune2020.bounceme.net
+uploading-neptune2020.cyou
+uploading-neptune2020.ddns.net
+uploading-neptune2020.ddnsking.com
+uploading-neptune2020.freedynamicdns.net
+uploading-neptune2020.freedynamicdns.org
+uploading-neptune2020.gotdns.ch
+uploading-neptune2020.hopto.org
+uploading-neptune2020.icu
+uploading-neptune2020.io
+uploading-neptune2020.monster
+uploading-neptune2020.myddns.me
+uploading-neptune2020.myftp.biz
+uploading-neptune2020.myftp.org
+uploading-neptune2020.myvnc.com
+uploading-neptune2020.online
+uploading-neptune2020.onthewifi.com
+uploading-neptune2020.redirectme.net
+uploading-neptune2020.servebeer.com
+uploading-neptune2020.serveblog.net
+uploading-neptune2020.servecounterstrike.com
+uploading-neptune2020.serveftp.com
+uploading-neptune2020.servegame.com
+uploading-neptune2020.servehalflife.com
+uploading-neptune2020.servehttp.com
+uploading-neptune2020.serveirc.com
+uploading-neptune2020.serveminecraft.net
+uploading-neptune2020.servemp3.com
+uploading-neptune2020.servepics.com
+uploading-neptune2020.servequake.com
+uploading-neptune2020.site
+uploading-neptune2020.so
+uploading-neptune2020.space
+uploading-neptune2020.sytes.net
+uploading-neptune2020.top
+uploading-neptune2020.viewdns.net
+uploading-neptune2020.webhop.me
+uploading-neptune2020.website
+uploading-neptune2020.work
+uploading-neptune2020.xyz
+uploading-neptune2020.zapto.org
+
+# Reference: https://decoded.avast.io/anhho/chasing-chaes-kill-chain/
+# Reference: https://github.com/avast/ioc/blob/master/Chaes/network.txt
+
+176.123.3.100:443
+176.123.3.107:443
+176.123.7.135:8080
+176.123.8.149:443
+191.252.110.241:443
+191.252.110.75:443
+192.3.83.116:8080
+198.23.153.130:443
+198.23.153.130:8080
+200.234.195.91:443
+23.94.137.19:8080
+23.94.17.126:8080
+23.94.53.122:8080
+23.94.53.123:8080
+23.94.53.18:8080
+91.208.184.164:443
+91.208.184.164:8080
+apoiodesign.com/language/overrides/p.php
+atlas.med.br/wp-content/themes/twentysixteen/proxy.php
+awsvirtual.blogspot.com
+bkwot3kuf.com
+bodnershapiro.com/blog/wp-content/themes/twentyten/p.php
+chopeecia.com.br/D4d0EMeUm7/index.php
+cliq-no.link
+comercialss.com
+dmt-sys.net
+dragaobrasileiro.com.br/wp-content/themes/getCorsFile.php
+exviado.com.br
+f84f305c.com
+sys-dmt.net
+/_cpNWfkzfoO/index.php
+/aL39HvYB4/index.php
+/D4d0EMeUm7/index.php
+/wL38HvYBiOl/index.php
+/dsa/chaes/online.bin
+/_cpNWfkzfoO/
+/aL39HvYB4/
+/D4d0EMeUm7/
+/wL38HvYBiOl/
+/aws/bulkNewAdditionalData.php
+/aws/bulkNewLogin.php
+/aws/bulkNewProcess.php
+/aws/bulkNewUrl.php
+/aws/isTela.php
+/aws/newCaixaAcesso.php
+/aws/newContaBBPF.php
+/aws/newContaCef.php
+/aws/newMercadoCartao.php
+/aws/newMercadoCredito.php
+/aws/newMercadoPago.php
+/aws/newPersonalData.php
+/aws/newProfileImage.php
+/aws/newQRMPClient.php
+
+# Reference: https://twitter.com/AvastThreatLabs/status/1494721193336836104
+# Reference: https://www.virustotal.com/gui/ip-address/23.95.164.230/relations
+
+freecdn.uk.to
+localhost-cdn.xyz
+youdown.xyz
+mercadodescartaveis.com.br/wp-content/themes/orchid-store/d.php
+sinproesc.org.br/wp-content/themes/Divi/plus.php
+
+# Reference: https://blog.morphisec.com/chaes-chronicles
+# Reference: https://www.morphisec.com/hubfs/Chae$_Chronicles_Chaes4.1.pdf
+# Reference: https://otx.alienvault.com/pulse/65aa793c91404980f88ffc61
+
+protection.shop
+totalavprotection.shop
+webcamcheck.online
+
+# Generic
+
+/pacotes/chstea_v1.msi
+/pacotes/chstea01.rar
+/pacotes/spm2.rar
+/tarefas/install.js
+/_cpNWfkzfoO/index.php
+/_cpNWfkzfoO/

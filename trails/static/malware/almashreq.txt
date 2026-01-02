@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/JayTHL/status/1127334608142503936
+# Reference: https://twitter.com/JayTHL/status/1130544160350580736
+# Reference: https://app.any.run/tasks/e2a700b7-13a6-4bc8-8dde-5088535631e4/
+
+adobereader.azurewebsites.net
+systemservicex.azurewebsites.net

@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: deborm
+
+# Reference: https://www.virustotal.com/gui/file/4af1930405627247fcfdab3706fde4c2347d8a8499e31ef2045399965a2c6209/detection
+
+http://125.206.117.59
+fukyu.jp
+fukyu.jp.ovh.net
+
+# Generic
+
+/updata/TPDB.php

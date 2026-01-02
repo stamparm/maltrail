@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: sinowal
+
+# Reference: https://ask.wireshark.org/questions/10839/filters-for-torpig-sinowal-etc
+
+kolipso.info
+ret9unj.com
+alzan.info
+tsforme.com
+useforme.com
+
+# Reference: https://disassemble.blog/2019/02/02/torpig/
+# Reference: https://www.trendmicro.com/vinfo/us/threat-encyclopedia/archive/malware/tspy_agent.zh
+
+us22.ru
+mtbinfo.ru
+katrin7.com
+vermyt7.com
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=PWS%3AWin32%2FSinowal
+
+myadib7.com
+vermyt7.com
+katrin7.com
+777level.com
+
+# Generic
+
+/alpha/x25.php
+/beta/x25.php
+/gamma/x25.php
+/gamma/balanserint.php

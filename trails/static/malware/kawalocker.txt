@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: kawa4096
+
+# Reference: https://x.com/siri_urz/status/1938507634417496147
+# Reference: https://www.virustotal.com/gui/file/f3a6d4ccdd0f663269c3909e74d6847608b8632fb2814b0436a4532b8281e617/detection
+
+kawasa2qo7345dt7ogxmx7qmn6z2hnwaoi3h5aeosupozkddqwp6lqqd.onion
+
+# Reference: https://www.ransomware.live/group/walocker
+
+weepangrbqjfsxd2noz4bmolztnqsma3vw4c6qfnbfusadzd2m26emqd.onion

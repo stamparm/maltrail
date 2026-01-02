@@ -1,0 +1,107 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: qarallax, quaverse, qrat, qontroller, qrypter
+
+# Reference: https://twitter.com/James_inthe_box/status/1043139494462021637
+
+mikkymouse.duckdns.org
+
+# Reference: https://twitter.com/Jan0fficial/status/975731389277536257
+
+vvrhhhnaijyj6s2m.onion
+
+# Reference: https://twitter.com/B_H101/status/964555082795749376
+# Reference: https://www.hybrid-analysis.com/sample/be51c1448074956b86138e3b570bd852c8aa992a923fe1d27b05e474bf8db569
+# Reference: https://www.forcepoint.com/blog/x-labs/look-qrypter-adwind%E2%80%99s-major-rival-cross-platform-maas-market
+# Reference: https://tracker.h3x.eu/c2/1340
+# Reference: https://www.certego.net/en/news/nearly-undetectable-qarallax-rat-spreading-via-spam/
+
+vvrhhhnaijyj6s2m.onion.top
+vvrhhhnaijyj6s2m.onion.casa
+buzw55o32jgyznev.onion.top
+
+# Reference: https://twitter.com/MalwareConfig/status/646494127178293248
+# Reference: https://malwareconfig.com/config/5e5ede8def359b180433b24e331d28d5/
+
+gtfoods.com.ru
+frecarn.co
+schelbye.com
+soqda.com
+valtce.com
+
+# Reference: https://twitter.com/MalwareConfig/status/646494423208062976
+# Reference: https://malwareconfig.com/config/b7aa0ad9044847635ada0c862c2c837c/
+
+quaverse.com
+178.62.3.250:1777
+
+# Reference: https://twitter.com/dvk01uk/status/977294472101974016
+# Reference: https://app.any.run/tasks/008a1799-a927-4004-a9aa-c23996bff4f0
+
+ebukaalilonu.zapto.org
+
+# Reference: https://twitter.com/wwp96/status/1184455756327903233
+
+qthebest.3-a.net
+
+# Reference: https://app.any.run/tasks/c084d14e-2e7c-4284-94a0-75ac31361faa/
+
+dd122.duckdns.org
+
+# Reference: https://app.any.run/tasks/5e062ace-5b73-4ba5-8db9-45f70d8722d8/
+
+185.222.58.155:4040
+
+# Reference: https://app.any.run/tasks/0ef13441-dbda-44e8-9f2d-2e2071d6eb0d/
+
+85.217.171.52:4040
+
+# Reference: https://app.any.run/tasks/902062cc-7e7e-4457-a370-58df2cca2e72/
+
+45.138.172.206:4040
+
+# Reference: https://app.any.run/tasks/0b91fd86-975b-4103-be72-ae0bf9fd969b/
+
+185.205.209.241:4040
+
+# Reference: https://app.any.run/tasks/428bb04a-3639-4901-8317-de565f850db7/
+
+favmoodwork.duckdns.org
+185.227.82.48:4040
+
+# Reference: https://app.any.run/tasks/fb07de67-288a-4210-9a00-ce3a80c413c2/
+
+armsnafgh.sytes.net
+
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/rats-and-spam-the-nodejs-qrat/
+# Reference: https://otx.alienvault.com/pulse/5f453d277c7f7999d8391260
+
+environment.spdns.org
+environment.theworkpc.com
+rtdqhub.home-webserver.de
+rtdqhub.redirectme.net
+
+# Reference: https://twitter.com/reecdeep/status/1317091358545481729
+# Reference: https://app.any.run/tasks/4eb04a88-fad5-4444-b9ec-d308a2a62fd3/
+
+francis77.hopto.org
+
+# Reference: https://twitter.com/reecdeep/status/1329383212804665347
+# Reference: https://app.any.run/tasks/7fe19dc8-4b05-41ed-93ee-f23e025b9b90/
+
+tmv2020.zapto.org
+
+# Reference: https://app.any.run/tasks/55d9aa69-4dc4-41af-9d21-26808c91bd0b/
+
+185.244.30.187:9868
+promatias.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/47b3c7d88103ff95fa9a87b1b71e9ce815a745cc895394680b777590b98aac60/detection
+
+milax.cf
+
+# Reference: https://www.virustotal.com/gui/file/be0dc158152fc2de2e3552779884f45e7ac9cb1a62456d23d0a6ee78e357c757/detection
+
+213.152.186.163:42601
+dothra.duckdns.org

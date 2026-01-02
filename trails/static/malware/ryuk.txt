@@ -1,0 +1,317 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/AltShiftPrtScn/status/1154871704625262597
+
+http://107.174.34.203/login/process.php
+
+# Reference: https://twitter.com/AltShiftPrtScn/status/1169180923281256448
+
+http://45.77.74.90
+
+# Reference: https://twitter.com/malwrhunterteam/status/1171741931623395328
+
+109.236.92.162:21
+109.236.92.162:80
+185.254.121.157:21
+185.254.121.157:80
+
+# Reference: https://twitter.com/VK_Intel/status/1171782155581689858
+# Reference: https://www.virustotal.com/gui/ip-address/66.42.76.46/relations
+
+66.42.76.46:21
+66.42.76.46:80
+
+# Reference: https://www.fireeye.com/blog/threat-research/2020/03/the-cycle-of-adversary-pursuit.html
+# Reference: https://otx.alienvault.com/pulse/5e8369d35fd7d069d77f06ea
+
+http://104.156.255.79
+http://149.28.50.31
+http://45.32.161.213
+http://45.63.8.219
+aaatus.com
+avrenew.com
+besttus.com
+bigtus.com
+brainschampions.com
+checkwinupdate.com
+ciscocheckapi.com
+cleardefencewin.com
+cmdupdatewin.com
+comssite.com
+conhostservice.com
+cylenceprotect.com
+defenswin.com
+easytus.com
+findtus.com
+firsttus.com
+freeallsafe.com
+freeoldsafe.com
+greattus.com
+havesetup.net
+iexploreservice.com
+jomamba.best
+livecheckpointsrs.com
+livetus.com
+lsassupdate.com
+lsasswininfo.com
+microsoftupdateswin.com
+myservicebooster.com
+myservicebooster.net
+myserviceconnect.net
+myserviceupdater.com
+myyserviceupdater.com
+renovatesystem.com
+service-updater.com
+servicesbooster.com
+servicesbooster.org
+servicesecurity.org
+serviceshelpers.com
+serviceupdates.net
+serviceuphelper.com
+sophosdefence.com
+target-support.online
+taskshedulewin.com
+thedemocraticpost.com
+timesshifts.com
+topsecurityservice.net
+topservicehelper.com
+topservicesbooster.com
+topservicesecurity.com
+topservicesecurity.net
+topservicesecurity.org
+topservicesupdate.com
+topservicesupdates.com
+topserviceupdater.com
+update-wind.com
+updatemanagir.us
+updatewinlsass.com
+updatewinsoftr.com
+web-analysis.live
+windefenceinfo.com
+windefens.com
+winsysteminfo.com
+winsystemupdate.com
+worldtus.com
+yoursuperservice.com
+
+# Reference: https://thedfirreport.com/2020/10/08/ryuks-return/
+# Reference: https://otx.alienvault.com/pulse/5f7f039322d638212355d28a
+
+martahzz.com
+nomadfunclub.com
+
+# Reference: https://threatconnect.com/blog/threatconnect-research-roundup-possible-ryuk-infrastructure/
+
+backup1nas.com
+backup1service.com
+backup-helper.com
+backup-leader.com
+backupmastter.com
+backupnas1.com
+backup-simple.com
+bakcup-checker.com
+bakcup-monster.com
+boost-servicess.com
+elephantdrrive.com
+nas-helper.com
+nas-leader.com
+nasmasterservice.com
+nasmastrservice.com
+nas-simple-helper.com
+open1vpn.com
+service-boostter.com
+service-checker.com
+service-hellper.com
+service-leader.com
+
+# Reference: https://twitter.com/kyleehmke/status/1325990680603320320
+
+driver-boost.com
+driver-upd.com
+service-boost.com
+servicesgit.com
+
+# Reference: https://twitter.com/kyleehmke/status/1326127930511155202
+
+dwndrivers.com
+ncedrive.com
+upddrivers.com
+
+# Reference: https://twitter.com/kyleehmke/status/1326130718276276224
+
+driversna.com
+servicehellps.com
+servicesen.com
+
+# Reference: https://twitter.com/kyleehmke/status/1326153492445212673
+
+download-chrome.com
+download-firefox.us
+download-flash.com
+
+# Reference: https://twitter.com/kyleehmke/status/1326483008577286144
+
+backuphel.com
+drivegit.com
+servicesups.com
+
+# Reference: https://twitter.com/kyleehmke/status/1329152134273708038
+
+msofficeupdate.com
+new-office.org
+
+# Reference: https://twitter.com/kyleehmke/status/1329769388984164354
+# Reference: https://twitter.com/kyleehmke/status/1329855123024195584
+
+hustlernystripclub.com
+walkswithsierra.com
+
+# Reference: https://twitter.com/kyleehmke/status/1328358220553924609
+
+beerpong101.com
+growtancy.com
+hustlerclubnewyork.com
+
+# Reference: https://twitter.com/kyleehmke/status/1330712200537845760
+
+360footwears.com
+bangkokasia1travel.com
+ukumentary.com
+zsplace.com
+
+# Reference: https://twitter.com/kyleehmke/status/1330712199271239685
+
+climinus.com
+hayridumanli.com
+mysocialsoftware.com
+
+# Reference: https://community.riskiq.com/article/0bcefe76
+
+balanarr.com
+bukaguka.com
+daemon-update.com
+hotlable.com
+hunbabe.com
+myobtain.com
+nasmasterservice.com
+primeviref.com
+raingamess.com
+servicemusthave.com
+starcyclone.com
+toyotacamryy.com
+webxyz.net
+
+# Reference: https://twitter.com/kyleehmke/status/1331937103467454464
+# Reference: https://twitter.com/kyleehmke/status/1331937107208769536
+
+artappartberlin.com
+growtancy.com
+tukunavi.com
+vloerplan.com
+
+# Reference: https://twitter.com/kyleehmke/status/1333806465270878208
+
+domnasemg.com
+run-tcp.com
+run-tcp.info
+run-tcp.me
+run-tcp.net
+run-upgrade.monster
+run-upgrade.xyz
+u6ycrtduvb6d5rttvub6d5.com
+updsql.me
+
+# Reference: https://twitter.com/kyleehmke/status/1333806471923068934
+
+3bysybsybs54syb44by.xyz
+explore-me.xyz
+update-chromeservices.com
+
+# Reference: https://twitter.com/kyleehmke/status/1334700210971402240
+
+htpdomrtx.com
+
+# Reference: https://twitter.com/kyleehmke/status/1334814207162920962
+
+hashsystem.xyz
+
+# Reference: https://twitter.com/jfslowik/status/1335273299887050753
+
+client-update.xyz
+
+# Reference: https://twitter.com/kyleehmke/status/1337088634084847617
+
+fashionweek.monster
+
+# Reference: https://twitter.com/kyleehmke/status/1339590089056243712
+
+clearhelperinthischekmachine-advisorworld.monster
+removerchangefile.monster
+
+# Reference: https://blog.truesec.com/2020/12/22/collaboration-between-fin7-and-the-ryuk-group-a-truesec-investigation/
+# Reference: https://www.virustotal.com/gui/domain/dmnadmin.com/detection
+
+dmnadmin.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1362710993571356674
+# Reference: https://app.any.run/tasks/80008e55-fb24-4f2d-9fbe-90f7c023d6b5/
+
+piesa6sapybbrz63pqmmwdzyc5fp73buya5cpli6pp5jpswndiu44id.onion
+
+# Reference: https://twitter.com/kyleehmke/status/1325773054195200001
+
+check1drivers.com
+drive-boost.com
+find1drivers.com
+view1drive.com
+view1drivers.com
+
+# Reference: https://twitter.com/TeamDreier/status/1378005931678699521
+
+microsoftupdate.work
+
+# Reference: https://twitter.com/TeamDreier/status/1378022389146091524
+
+etnbhivw5fjqytbmvt2o6zle3avqn6rrugfc35kmcmedbbgqbxtknlqd.onion
+
+# Reference: https://twitter.com/vikas891/status/1386666737882464257
+
+presidentschool14.com
+/ertyuisdaasd
+
+# Reference: https://twitter.com/vikas891/status/1387742949081972736
+# Reference: https://twitter.com/vikas891/status/1387744165128146950
+# Reference: https://beta.shodan.io/host/5.34.183.43
+
+http://5.34.183.43
+5.34.183.43:22
+5.34.183.43:4000
+5.34.183.43:443
+5.34.183.43:50050
+5.34.183.43:8000
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1492073646407524365
+# Reference: https://www.virustotal.com/gui/file/e5f4237d9196cebd591263f4467fb839c546aceaf49e6e516d93a58587efa37c/detection
+
+137.184.97.29:8080
+panganggroupco.biz
+
+# Reference: https://twitter.com/SBousseaden/status/1586811088586391557
+# Reference: https://www.virustotal.com/gui/file/a6142f3b7ef5349f1894a4cd7613fae26f4d0f99a39de48d54b9d9aa8b5e3473/detection
+
+d2wz4r5r609fdz.cloudfront.net
+/FhUUPVIG
+/PgBOdqSC
+/uSzJNAwF
+
+# Reference: https://twitter.com/ShanHolo/status/1772560454314832181
+# Reference: https://www.virustotal.com/gui/file/516b6a283d3af6ee848ba1e447bc95886ae7e868311de8a0185506695eb66bfe/detection
+# Reference: https://www.virustotal.com/gui/file/28668543f8008416074daf41c82c3aa0ead38b6ec45d87a8bcc7a6018b64d03e/detection
+
+http://95.217.135.190
+
+# Reference: https://twitter.com/naumovax/status/1788168248178921660
+# Reference: https://www.virustotal.com/gui/file/178627dcea4beceb2fde59b30285bf6a200d589821e04305ef553b145c1470f5/detection
+
+192.236.193.45:69

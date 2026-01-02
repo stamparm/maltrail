@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://threatvector.cylance.com/en_us/home/pcshare-backdoor-attacks-targeting-windows-users-with-fakenarrator-malware.html
+
+142.4.124.124:80
+45.32.181.48:80
+
+# Reference: https://www.virustotal.com/gui/file/e8f347745b1808db185c682af87896a941b4042f5de919e2010749152bda48ad/detection
+
+supports.casacam.net

@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf
+
+applemedia1218.com
+avssync3357.com
+bbmdroid.com
+bbmsync2727.com
+bluesync2121.com
+eastmedia1221.com
+eastmedia3347.co.cc
+eastmedia3347.com
+facemedia.co.cc
+kssync3343.com
+kssync3347.co.cc
+kssync3347.com
+mahee.kssync3343.co.cc
+mvssync8767.com
+32student3347.mooo.com
+winupdater2112.com

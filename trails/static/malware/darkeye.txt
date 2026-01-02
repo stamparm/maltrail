@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: darkeye stealer, prynt stealer
+                                               
+# Reference: https://twitter.com/josh_penny/status/1707342013329223927
+# Reference: https://www.zscaler.com/blogs/security-research/no-honor-among-thieves-prynt-stealer-s-backdoor-exposed
+
+darkeye.online

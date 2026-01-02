@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ranion ransomware
+
+# Reference: https://resources.infosecinstitute.com/malware-dark-web/
+
+ranionjgot5cud3p.onion
+
+# Reference: https://www.thedfirspot.com/general-8-1
+
+ranionv3j2o7wrn3um6de33eccbchhg32mkgnnoi72enkpp7jc25h3ad.onion
+ssg3qvvuilseciagm4nixjqu3rsiheny5lifjnwt6o5ann64iocy64ad.onion

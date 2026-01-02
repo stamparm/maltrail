@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://docs.emergingthreats.net/bin/rdiff/Main/2022562
+# Reference: http://www.vxsecurity.sg/2014/04/
+
+yuwurw46taaep6ip.onion

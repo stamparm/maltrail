@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-06-10-thrones-jon-snow-appears-to-employ-neutrino-exploit-kit/thrones-jon-snow-appears-to-employ-neutrino-exploit-kit.csv
+
+biolexa.tk
+d2ahave.top
+eilong.top
+eaautomatic.top
+tx7pck9cx.top
+
+# Reference: https://github.com/silence-is-best/c2db#neutrino
+
+slipcentral.com
+
+# Generic trails
+
+/panel/52/tasks.php

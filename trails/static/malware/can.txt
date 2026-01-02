@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: can stealer
+
+# Reference: https://x.com/smica83/status/1869103666684400019
+# Reference: https://www.joesandbox.com/analysis/1576991#iocs
+# Reference: https://www.virustotal.com/gui/file/06cd52aa2b3eb578ecc5f3a2719bba3f73e3c6b371e2b0a2c8fdaf44145b8794/detection
+
+canstealer.com

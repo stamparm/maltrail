@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/en/ip-address/183.236.2.18/information/
+
+183.236.2.18
+
+# Reference: curl -vv
+
+157.122.62.195
+157.122.62.196
+157.122.62.197
+157.122.62.198
+157.122.62.199
+157.122.62.200
+157.122.62.201
+157.122.62.202
+157.122.62.210

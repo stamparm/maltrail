@@ -1,0 +1,49 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fireeye.com/blog/threat-research/2017/12/targeted-attack-in-middle-east-by-apt34.html
+
+mumbai-m.site
+dns-update.club
+proxycheker.pro
+hpserver.online
+anyportals.com
+
+# Reference: https://twitter.com/QW5kcmV3/status/1033495729258606597
+
+pmoae.com
+
+# Reference: https://blog.talosintelligence.com/2018/04/fake-av-investigation-unearths-kevdroid.html
+# Reference: https://researchcenter.paloaltonetworks.com/2018/04/unit42-reaper-groups-updated-mobile-arsenal/
+
+cgalim.com
+hakproperty.com
+
+# Reference: https://www.virustotal.com/gui/file/facb0525447439cb402c1808e5a3a2436b887f8aa01af63201b1ca5350bee34e/detection
+# Reference: https://www.virustotal.com/gui/file/81973e40fdb988d38342c901f334c402dd08cf4372ca8cffe038b62dade30e19/detection
+# Reference: https://www.virustotal.com/gui/file/3a68d6bceb126fa26fa3549ccc8ac15d33066929152e628ae03edda4a1f42eae/detection
+
+iblcor.cafe24.com
+/bbs/pu.php?do=upload
+
+# Reference: https://twitter.com/h2jazi/status/1699821987361702229
+# Reference: https://x.com/malwrhunterteam/status/1814396386521260519
+# Reference: https://github.com/Cisco-Talos/IOCs/blob/main/2023/11/new-sugargh0st-rat.txt
+# Reference: https://github.com/Cisco-Talos/IOCs/blob/main/2024/06/sneakychef-sugargh0st-rat.txt
+# Reference: https://www.virustotal.com/gui/file/7c87451261dfce64fda987eb395694b5330fd958466c46c931440cd9dc227505/detection
+# Reference: https://www.virustotal.com/gui/file/d0775ec420a4938cbf1b2e9432677e08fcfbde6f424a8f7289e57e31f9334b74/detection
+
+drive-google-com.tk
+gommask.online
+account.drive-google-com.tk
+account.gommask.online
+accounts-youtube.drive-google-com.tk
+gmail.drive-google-com.tk
+login.drive-google-com.tk
+ssl-gstatic.drive-google-com.tk
+
+# Reference: https://x.com/blackorbird/status/1886245222923091975
+# Reference: https://www.genians.co.kr/blog/threat_intelligence/k-messenger
+
+imagedownloadsupport.com
+mailattachmentimageurlxyz.site

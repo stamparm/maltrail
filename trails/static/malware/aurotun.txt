@@ -1,0 +1,90 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: aurotun stealer, autorun stealer, monsterv2, ta585
+
+# Reference: https://x.com/netresec/status/1911755970415391204
+# Reference: https://x.com/netresec/status/1912411219702526351
+# Reference: https://x.com/naumovax/status/1912085949879644473
+# Reference: https://x.com/d4rksystem/status/1912216592680706339
+# Reference: https://x.com/RussianPanda9xx/status/1912182710610596001
+# Reference: https://www.virustotal.com/gui/file/e35b505de844f1c473307ae7fc372ca4eb9baa6c7eb4026fee7c49c8aa50f51c/detection
+# Reference: https://www.virustotal.com/gui/file/4c21b40c94fcd13b60b99ef1e4f372126a86e6f526c6cc134f205794c4357bd7/detection
+# Reference: https://www.virustotal.com/gui/file/06989b502e0cadb46535def4eb7ec5032ff49134ad1fabc4d0d7f5d4ab7da967/detection
+# Reference: https://www.virustotal.com/gui/file/3cb57f7e67ee1985e513f6e591fe143c1b8b2d0178f06e39e39da1e0f51484d4/detection
+
+146.190.108.105:7712
+155.138.150.12:7712
+198.251.84.107:7712
+45.227.252.199:7712
+46.4.119.125:7712
+62.60.226.101:40101
+62.60.226.101:40105
+62.60.226.114:40101
+
+# Reference: https://x.com/malwrhunterteam/status/1914787118788043092
+# Reference: https://www.virustotal.com/gui/file/fb28d84069e811c070daf8a8a270ee40c0eb4abb1507debca58e080138df4408/detection
+
+116.202.224.89:7712
+
+# Reference: https://x.com/malwrhunterteam/status/1918057946124001752
+# Reference: https://www.virustotal.com/gui/file/c6aa6ef106e0fc9cdc787367fd45dfd4c107ee5909ae63ba6032e226962192ec/detection
+# Reference: https://www.virustotal.com/gui/file/64366026bd9a8e783516a479c479d4087a24073f39f5ff8c1085e1aee2fd2572/detection
+# Reference: https://www.virustotal.com/gui/file/47a5dd46ce20c8170a150d3e63dccd3c225f05a1c81c8f6c69f74309881cff3d/detection
+
+194.26.29.217:7712
+
+# Reference: https://x.com/malwrhunterteam/status/1925482809335885925
+# Reference: https://www.virustotal.com/gui/file/fef9e2dbfbd225be795fd93fadb2ed4503486b23a2466968193cf75454d91aaf/detection
+# Reference: https://www.virustotal.com/gui/file/dd0e80a5d91d51608d0e1ddc0d69f4ee01787da82f4a0302ef86dcc24ab1df6c/detection
+# Reference: https://www.virustotal.com/gui/file/d655fbe6c21192193bb23ca587448aded5216824f8544408d20537768edf3a98/detection
+# Reference: https://www.virustotal.com/gui/file/c108c3c0689462b2cc42498e32252e9a48e0acb4e1c6e9cc45f5414a52f9bf4a/detection
+# Reference: https://www.virustotal.com/gui/file/93677409a5d774187b47a3e7e4007b95561c966ea74cf52f16af461b1026c56f/detection
+# Reference: https://www.virustotal.com/gui/file/8274f4acd25c2c8334ad9f8934248cd2f3b6cf181bec54a6e5f0c64ef544ea1b/detection
+# Reference: https://www.virustotal.com/gui/file/7cd1fd7f526d4f85771e3b44f5be064b24fbb1e304148bbac72f95114a13d8c5/detection
+# Reference: https://www.virustotal.com/gui/file/728fdd020d4242b4fc3fc856c7457306f290c683d0235999d02e595a83b40628/detection
+# Reference: https://www.virustotal.com/gui/file/44f00aab1ca89b8ff9c92ddaa96a4470df5929f805ec691c8566e4f496bb95ee/detection
+# Reference: https://www.virustotal.com/gui/file/29992c5ba3bfb8725195f97c627a9264178d304bc13b954b2ff52857ef95275b/detection
+# Reference: https://www.virustotal.com/gui/file/0e83e8bfa61400e2b544190400152a54d3544bf31cfec9dda21954a79cf581e9/detection
+
+83.217.208.77:7712
+
+# Reference: https://x.com/malwrhunterteam/status/1926957311328690519
+# Reference: https://x.com/Gi7w0rm/status/1929439628290834579
+# Reference: https://gi7w0rm.medium.com/hulucaptcha-an-example-of-a-fakecaptcha-framework-9f50eeeb2e6d
+# Reference: https://www.virustotal.com/gui/file/d221bf1318b8c768a6d824e79c9e87b488c1ae632b33848b638e6b2d4c76182b/detection
+
+91.200.14.69:7712
+d-nodes.shop
+uplink-routes.asia
+
+# Reference: https://x.com/skocherhan/status/1930474767858925736
+# Reference: https://www.virustotal.com/gui/file/02fdfc31c15f4a4aa3b4bee97c968c364c0d98fbe523ae9e62d4b3dd38263ce0/detection
+
+45.227.252.251:34561
+
+# Reference: https://x.com/d4rksystem/status/1932493717384147393
+# Reference: https://x.com/malwrhunterteam/status/1964079596799721603
+# Reference: https://www.virustotal.com/gui/file/81d0d644903a1e7c85569b60beb2eb8af3544b35b43a0cf9f9e9bf69c7a65584/detection
+
+198.251.84.224:7172
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/when-monster-bytes-tracking-ta585-and-its-arsenal
+
+109.120.137.128:7712
+139.180.160.173:7712
+144.172.117.158:7712
+212.102.255.102:7712
+79.133.51.100:7712
+84.200.154.105:7712
+84.200.17.240:7712
+84.200.77.213:7712
+
+# Reference: https://www.virustotal.com/gui/file/0076ce5fb83bbfffc0c3396e92c3b38343431f2c6c41804e25a6b2145b05b5cc/detection
+
+150.241.116.6:42873
+
+# Reference: https://www.virustotal.com/gui/file/1239710a91cc3a9c750e3a8bd7fd405a9e3708586af8b17f60dc8f72df8a781a/detection
+
+46.173.214.102:42873
+sprtsolutions.com

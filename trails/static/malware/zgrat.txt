@@ -1,0 +1,106 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: badernet
+
+# Reference: https://twitter.com/James_inthe_box/status/1401987886275170305
+# Reference: https://app.any.run/tasks/89bd1f8c-d02d-48dc-9577-5d1decc7ae0f/
+# Reference: https://www.virustotal.com/gui/file/cab2aafba47661454577b0f6755a7482928050a1e4219a2e78d4c25c382adfd4/detection
+
+51.222.195.7:30351
+
+# Reference: https://twitter.com/James_inthe_box/status/1410260077861249028
+# Reference: https://app.any.run/tasks/e050b60c-3ef6-4869-ae32-0fc6b8453619/
+
+3.136.10.67:81
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.zgrat/
+
+109.206.240.13:44810
+45.88.66.118:50003
+
+# Reference: https://threatfox.abuse.ch/ioc/1151534/
+
+evinfeoptasw.dedyn.io
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.zgrat/ (# 2023-08-23)
+
+http://103.171.0.200
+103.171.0.200:443
+103.212.81.156:58001
+105.91.156.57:5699
+188.40.167.232:39001
+194.169.175.191:39001
+45.128.96.133:58001
+gamemodz.duckdns.org
+
+# Reference: https://twitter.com/g0njxa/status/1707291119371841624
+# Reference: https://app.any.run/tasks/6cee07ce-6197-4507-bd68-5928b8247843/
+
+45.81.39.182:39001
+n1gger.ru
+cdn.n1gger.ru
+cnc.n1gger.ru
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1709112575718273057
+# Reference: https://www.virustotal.com/gui/file/771ec2a2b691842fdb6ae7d67ec69d22911f2538120b522a0082038f2ce77aa9/detection
+# Reference: https://www.virustotal.com/gui/file/c227ac7aeeaadfe9a22f373496103c5bec93f3ea478c57a290e2f4270772779e/detection
+
+5.253.19.33:8119
+5.253.19.33:9801
+staszewski.xaa.pl/datsdata/flatendsajkllldjhfdhloollodgfdkll/
+/flatendsajkllldjhfdhloollodgfdkll/
+
+# Reference: https://twitter.com/karol_paciorek/status/1729070903936565401
+# Reference: https://tria.ge/231127-k8793sfe94/behavioral2
+
+122.144.6.226:56001
+
+# Reference: https://www.virustotal.com/gui/file/0a65d5c09412040cf15bf2cca084741b4a1b386cbd0a88cd63c0cf867581b395/detection
+
+91.92.240.95:4000
+
+# Reference: https://www.virustotal.com/gui/file/18d1f61b65e1c3401c07f9ca765c3376331373c3a39fde8ea3be980c15e2c147/detection
+
+http://185.172.128.87
+/zima.php?mine=loader
+
+# Reference: https://twitter.com/karol_paciorek/status/1754472675655774703
+# Reference: https://tria.ge/240205-nn5j8sefc7/behavioral1
+
+194.147.140.159:58001
+
+# Reference: https://twitter.com/banthisguy9349/status/1763559926645887435
+# Reference: https://www.virustotal.com/gui/file/a2ce422c094c88468416e8a19a138e3a1ad7f837f51f59e3118846ad01a895b6/detection
+# Reference: https://www.virustotal.com/gui/file/12f9a5732ca7fcab2f05f066921b4029ac0a64bd521de54449e832834e44ff3c/detection
+
+http://91.92.252.5
+45.88.90.113:56001
+
+# Reference: https://twitter.com/1ZRR4H/status/1772509822203637819
+# Reference: https://www.virustotal.com/gui/file/5ad1b9c53c1d492d106be462c7c5bfb1293d12ccf430804add98a96d3a34adcc/detection
+
+45.128.96.133:39001
+91.92.250.169:8000
+
+# Reference: https://www.virustotal.com/gui/file/ad07503bc046f5b3d65eb61646fa826bc39560916c6e1ef2c3437b6465b30a82/detection
+
+http://159.253.120.145
+
+# Reference: https://twitter.com/karol_paciorek/status/1783491987305271442
+# Reference: https://www.virustotal.com/gui/file/1254ede011ea7c8ba1658bab1c14877d1a2dc85f8b4e2d04be6c5fc65f1c32b8/detection
+
+http://185.196.10.233
+185.196.10.233:35662
+/dll/ghghghgfg.xml
+/ghghghgfg.xml
+
+# Reference: https://x.com/James_inthe_box/status/1853510887187071404
+# Reference: https://www.virustotal.com/gui/file/1cefa883af0dd0b2096c109a23713dbbfbd18da633860a735141559755902485/detection
+# Reference: https://www.virustotal.com/gui/file/6f2ac7f7fc5078b027905f07f108ef7f051039bc53de8c93ec266abc7738c96d/detection
+
+134.255.234.103:5888
+
+# Reference: https://www.virustotal.com/gui/file/4f6458eb22b7932ed6fc18140e5a5d13907fca20fff2c0f77b904663856b7478/detection
+
+94.124.15.40:4449

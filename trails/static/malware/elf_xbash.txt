@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://researchcenter.paloaltonetworks.com/2018/09/unit42-xbash-combines-botnet-ransomware-coinmining-worm-targets-linux-windows/
+
+http://142.44.215.177
+http://144.217.61.147
+blockbitcoin.com
+scan.blockbitcoin.tk
+ejectrift.censys.xyz
+scan.censys.xyz
+api.leakingprivacy.tk
+png.realtimenews.tk
+news.realnewstime.xyz
+scan.realnewstime.xyz
+news.realtimenews.tk
+scanaan.tk
+3g2upl4pq6kufc4m.tk
+scan.3g2upl4pq6kufc4m.tk
+scan.vfk2k5s5tfjr27tz.tk
+e3sas6tzvehwgpak.tk
+xmr.enjoytopic.tk
+daknobcq4zal6vbm.tk
+d3goboxon32grk2l.tk
+/Xbash
+/XbashX
+/XbashY

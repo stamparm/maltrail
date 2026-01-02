@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://checkmarx.com/blog/surprise-when-dependabot-contributes-malicious-code/
+# Reference: https://otx.alienvault.com/pulse/6515d9fed3995ae722459581
+# Reference: https://www.virustotal.com/gui/file/d59dd9f06d99c9143f3b52970ccf70a0671f11d8b92f34a2541787f08ac2d2db/detection
+
+wagateway.pro
+send.wagateway.pro

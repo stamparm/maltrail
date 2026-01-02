@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2016-022616-3631-99&tabid=2
+# Reference: https://www.virustotal.com/gui/file/1dea68a2c55493dba620bbdc20849a22b309a71756b47215dad99d2375584da3/detection
+# Reference: https://www.virustotal.com/gui/file/ff36ac1ffebaa63fcc98bcf62a3b8f5b7a3c1edfd4a7ac23ab2c29edde6e1da9/detection
+
+ekateh.ru/media/images/76tg654viun76b
+autoshara.com.ua/system/logs/76tg654viun76b
+westport.in/vqmod/xml/76tg654viun76b
+
+# Reference: https://s3.amazonaws.com/snort-org/www/rules/community/community-rules.tar.gz
+# Reference: https://snort-org-site.s3.amazonaws.com/production/release_files/files/000/012/156/original/snort3-community-rules.tar.gz
+
+commorgan.ru
+vseforyou.ru
+
+# Reference: https://www.virustotal.com/gui/file/623e9901bcce67632e76e35c3cd26403db2188389a7c56081e1acc74adef91d4/detection
+
+fsb.monster
+
+# Generic
+
+/76tg654viun76b

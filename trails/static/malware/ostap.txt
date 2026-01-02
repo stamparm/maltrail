@@ -1,0 +1,139 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.cert.pl/en/news/single/ostap-malware-analysis-backswap-dropper/
+
+185.159.82.230:443
+217.28.218.217:443
+217.29.58.174:4433
+
+# Reference: https://twitter.com/bigmacjpg/status/1197229710591365122
+
+37.252.10.127:443
+
+# Reference: https://twitter.com/pollo290987/status/1196626465078611970
+
+185.130.104.240:443
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1167403459131465728
+
+185.180.199.91:443
+
+# Reference: https://twitter.com/bigmacjpg/status/1162031778246332417
+
+185.180.199.102:443
+
+# Reference: https://twitter.com/ps66uk/status/1159395052893933568
+
+185.130.104.236:443
+
+# Reference: https://twitter.com/JR0driguezB/status/1156119572770099200
+
+37.252.9.107:443
+
+# Reference: https://twitter.com/jcarndt/status/1154731650145763328
+
+185.159.82.15:443
+
+# Reference: https://twitter.com/HeavyMetalAdmin/status/1201945613321068544
+# Reference: https://app.any.run/tasks/78537482-f546-427d-97a9-6748adb5bf07/
+
+pathfinderglobaledupubltd.com.ng
+
+# Reference: https://twitter.com/reecdeep/status/1229752956096057345
+
+http://185.180.199.77
+
+# Reference: https://twitter.com/Bl4ng3l/status/1234523286492635137
+
+45.128.134.14:443
+
+# Reference: https://twitter.com/reecdeep/status/1239499634386534401
+
+45.128.134.20:443
+
+# Reference: https://twitter.com/reecdeep/status/1235878034827337728
+
+95.181.152.55:443
+/1/1.php?g=
+
+# Reference: https://twitter.com/reecdeep/status/1237414933442289666
+
+194.87.96.100:443
+/1/1.php?h=
+
+# Reference: https://twitter.com/sugimu_sec/status/1239929750564425730
+
+51.83.206.98:443
+
+# Reference: https://twitter.com/reecdeep/status/1270998363111112704
+
+185.159.82.226:443
+/wex/eq4fMY.php
+/eq4fMY.php
+
+# Reference: https://twitter.com/reecdeep/status/1272803491392692224
+
+185.159.82.228:443
+/ur5ZgJ/9d3yHQ.php
+/9d3yHQ.php
+
+# Reference: https://twitter.com/abuse_ch/status/1290690060636094472
+
+http://185.159.82.55
+
+# Reference: https://twitter.com/VirITeXplorer/status/1310606959796682752
+
+188.116.36.143:443
+
+# Reference: https://twitter.com/James_inthe_box/status/1313490504210935811
+# Reference: https://bazaar.abuse.ch/sample/106ca3e8433e718efb596839adf4450590206e49be91c2838523a48c75c5a957/
+
+188.116.36.89:443
+/zt2p40/jaY066.php
+
+# Reference: https://twitter.com/abuse_ch/status/1316708465688170499
+
+185.183.96.173:443
+/90/90.php
+
+# Reference: https://twitter.com/abuse_ch/status/1317373634361569280
+
+194.36.191.177:443
+/sim/sim.php
+
+# Reference: https://twitter.com/Racco42/status/1318311505587306498
+# Reference: https://app.any.run/tasks/666186fe-0fa2-49ce-8d17-a0a037c35c82/
+# Reference: https://app.any.run/tasks/ace3e761-eee2-46c1-8f43-f9dbccd14433/
+
+188.116.36.154:443
+/vw5aKm/j1vXTu.php
+/j1vXTu.php
+
+# Reference: https://twitter.com/abuse_ch/status/1338042129483001859
+# Reference: https://twitter.com/ffforward/status/1338099067625369601
+# Reference: https://urlhaus.abuse.ch/url/883464/
+# Reference: https://www.virustotal.com/gui/ip-address/188.127.224.100/relations
+
+http://188.127.224.100
+
+# Reference: https://twitter.com/notwhickey/status/1334621290418855939
+
+188.127.230.235:443
+/N47T4y/Rvrm2D.php
+/Rvrm2D.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1356315470190637058
+
+188.127.254.207:443
+/do/do.php?si=
+
+# Reference: https://twitter.com/Racco42/status/1404932242745483267
+# Reference: https://twitter.com/SteelSleuth/status/1404944960642822147
+# Reference: https://app.any.run/tasks/2c46076b-d0b3-489d-b84a-f62394876d57/
+
+rootpass.top
+
+# Reference: https://tria.ge/201203-34zxrv862j/behavioral1
+
+/x3/2D.php?si=

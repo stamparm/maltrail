@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: storm-2603, cve-2025-49704, cve-2025-49706, ak47c2
+
+# Reference: https://www.microsoft.com/en-us/security/blog/2025/07/22/disrupting-active-exploitation-of-on-premises-sharepoint-vulnerabilities/
+# Reference: https://research.checkpoint.com/2025/before-toolshell-exploring-storm-2603s-previous-ransomware-operations/
+# Reference: https://www.virustotal.com/gui/file/ab3aa2df76b111053d6afae75b409b63a154fb24feee0b0e5bb75858abf313ef/detection
+# Reference: https://www.virustotal.com/gui/file/1eb914c09c873f0a7bcf81475ab0f6bdfaccc6b63bf7e5f2dbf19295106af192/detection
+# Reference: https://www.virustotal.com/gui/file/24480dbe306597da1ba393b6e30d542673066f98826cc07ac4b9033137f37dbf/detection
+
+131.226.2.6:4141
+65.38.121.198:10000
+microsfot.org
+updatemicfosoft.com
+c34718cbb4c6.ngrok-free.app
+mail.microsfot.org
+msupdate.microsfot.org
+msupdate.updatemicfosoft.com
+ns1.updatemicfosoft.com
+update.updatemicfosoft.com

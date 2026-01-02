@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: BackoffPOS
+
+# Reference: https://www.virustotal.com/gui/file/11591204155db5eb5e9c5a3adbb23e99a75c3b25207d07d7e52a6407c7ad0165/detection
+# Reference: https://www.virustotal.com/gui/file/5fded48a9a02b4f9e422fe08f7cd248cc8d42c8c4a4b1ea8eb5eed7042e7a26f/detection
+
+http://81.4.111.176
+total-updates.com
+zoom2energy.com
+
+# Generic
+
+/windebug/updcheck.php

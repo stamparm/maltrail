@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.netlab.360.com/the-awaiting-roboto-botnet-en/
+# Reference: https://otx.alienvault.com/pulse/5dd569326404667477366526
+
+http://120.150.43.45
+http://213.159.27.5
+http://186.46.45.252
+http://66.113.179.13
+http://95.216.17.209
+http://144.76.139.83
+http://190.114.240.194
+citilink.dev6.ru

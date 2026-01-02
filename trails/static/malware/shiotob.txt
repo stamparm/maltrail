@@ -1,0 +1,115 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: bebloh, shiotob, urlzone
+
+# Reference: https://twitter.com/James_inthe_box/status/1094342521658863616
+# Reference: https://twitter.com/VK_Intel/status/1258059944026308608
+# Reference: https://github.com/k-vitali/Malware-Misc-RE/blob/master/2020-05-06-shioob-delphi-loader-vk.yar
+
+smart.cloudnetwork.kz
+static.apiinformation.kz
+secure.jscontentmaker.kz
+secure.jsc0nten1maker.com
+static.apiinformationsec.com
+mel.cloudcontentsmak.com
+nicru.supermicrotransapi.ru
+tel.jsapisettings.kz
+js.securetopdevelopment.kz
+noone.contentmakersbyakamai.ru
+
+# Reference: https://twitter.com/CybereasonJPSOC/status/942961231618383872
+
+homerbongasi.com
+medpromote.de
+nonedrola.com
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan%3AWin32%2FBublik.B
+
+safeoil.net
+armyclub.netquickring.net
+quickring.net
+genubajom.servegame.com
+tekiharob.sytes.net
+rivadolti.sendsmtp.com
+
+# Reference: https://twitter.com/VK_Intel/status/1108859461198856194
+# Reference: https://github.com/k-vitali/Malware-Misc-RE/blob/master/2019-03-21-signed-bot-loader-delphi-vk.misp.csv
+
+js.securetopdevelopment.kz
+mel.cloudcontentsmak.com
+nicru.supermicrotransapi.ru
+noone.contentmakersbyakamai.ru
+static.apiinformation.kz
+secure.jscontentmaker.kz
+secure.jsc0nten1maker.com
+static.apiinformationsec.com
+tel.jsapisettings.kz
+
+# Reference: https://johannesbader.ch/blog/the-dga-of-shiotob/
+
+2oidwapmv2cwp.com
+5g1xxzjvohrb5.com
+5ge4f3gzlywq1.net
+5hx2xw4yb52kr.com
+9g2rdi9uga.net
+bevgfijycd.net
+dogcurbctw.com
+e3oa4wglvd21xa.com
+e4zm4yxpnikf2.net
+ka9rik1aqu5li.net
+lr1eve4qog1m2.net
+mqmq1hvmtxzjv.net
+n9oonpgabxe31.net
+pbmnz59uzndpo.com
+pd4o4wu24vimn.com
+q9mqi2au2d5sv.com
+qtiixgafexkgze1.net
+rbp9pprrxgflut9.com
+rskb5bsfhm2fk5h.net
+rwmu35avqo12tqc.com
+s2i9eecchnsvh.com
+sen4i12uzyixx.com
+skwskzyp2ktoc.com
+tlmrzvpbpsqsb.net
+uvwpywhvji3.net
+vhklwvvon1.com
+wtipubctwiekhir.net
+x2lxslqz3wztw.net
+xg5mmhrtbog5b.net
+xtjqjmjt344l22w.com
+zzxeyzgy45yy2a.net
+
+# Reference: https://ti.360.net/blog/articles/URLZone-New-Approaches-to-Specifically-Target-Employees-in-Japanese-High-Tech-Companies-en/
+
+panisdar.com
+
+# Reference: https://twitter.com/bomccss/status/1062903420372180992
+
+abedirer.com
+
+# Reference: https://twitter.com/AES256bit/status/1110975623281823744
+
+lointora.com
+
+# Reference: https://twitter.com/bomccss/status/1110935942846533632
+
+podertan.com
+
+# Reference: https://twitter.com/bomccss/status/1103211371817197568
+
+baderson.com
+
+# Reference: https://twitter.com/CybereasonJPSOC/status/971063140497604609
+
+bobindrama.com
+donobiran.com
+fokuszgeodezia.hu
+
+# Reference: https://twitter.com/bomccss/status/1125667764868247552
+
+donersonma.com
+
+# Reference: https://www.virustotal.com/gui/file/0ee99d0674ba38ba50931d03f3ce6a4a2c415c3785ba0d99a5d8ed39ff165b1d/detection
+
+snowy-nature.ddns.net

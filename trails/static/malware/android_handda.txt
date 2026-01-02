@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1514607985770737672
+# Reference: https://twitter.com/malwrhunterteam/status/1514608635950686212
+# Reference: https://twitter.com/malwrhunterteam/status/1562741109171752960
+# Reference: https://www.virustotal.com/gui/file/c2cd40f1c21719d4611ff645c7f960d0070c19e8ad12cc55aded7b5a341c89a3/detection
+# Reference: https://www.virustotal.com/gui/file/89f350332be1172fc2d64ac8ecd7fd15a09a2bd6e0ab6a7898a48fb3e5c9eac3/detection
+# Reference: https://www.virustotal.com/gui/file/fd99acc504649e8e42687481abbceb71c730f0ab032357d4dc1e95a6ef8bb7ca/detection
+
+209.97.173.124:2239
+blackbeekey.com
+k7k7.co

@@ -1,0 +1,40 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/MeltX0R/status/1172046597942915072
+# Reference: https://meltx0r.github.io/tech/2019/09/11/rancor-apt.html
+
+http://167.71.237.100
+
+# Reference: https://unit42.paloaltonetworks.com/unit42-rancor-targeted-attacks-south-east-asia-using-plaintee-ddkong-malware-families/
+
+jdanief.xyz
+facebook-apps.com
+ftp.chinhphu.ddns.ms
+goole.authorizeddns.us
+google_ssl.onmypc.org
+microsoft.authorizeddns.us
+microsoft.https443.org
+msdns.otzo.com
+
+# Reference: https://research.checkpoint.com/rancor-the-year-of-the-phish/
+# Reference: https://otx.alienvault.com/pulse/5d94cb1196acaec6cb740e33
+
+754d56-8523.sexidude.com
+charleseedwards.dynamic-dns.net
+dsdfdscxcv.justdied.com
+dsgsdgergrfv.toythieves.com
+kibistation.onmypc.net
+nicetiss54.lflink.com
+oui6473rf.xxuz.com
+sfstnksfcv.jungleheart.com
+vvcxvsdvx.dynamic-dns.net
+
+# Reference: https://unit42.paloaltonetworks.com/rancor-cyber-espionage-group-uses-new-custom-malware-to-attack-southeast-asia/
+# Reference: https://otx.alienvault.com/pulse/5dfa52f208b44bd6293eb130
+# Reference: https://www.virustotal.com/gui/ip-address/139.162.14.25/relations
+
+http://199.247.6.253
+139.162.14.25
+bafunpda.xyz
+kfesv.xyz

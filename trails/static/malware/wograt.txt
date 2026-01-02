@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://asec.ahnlab.com/en/62446/
+# Reference: https://www.virustotal.com/gui/file/f04b9920d66794924ce66d8736cb6eeb73a88889fc7e8173ecfc21ec13bba8fe/detection
+# Reference: https://www.virustotal.com/gui/file/98db00ede0e4678737fb911797fd7546adc2ca4b9191094fb6ea1f6fbab6f6fb/detection
+# Reference: https://www.virustotal.com/gui/file/2032e976f4b44723895de17d7ed797d1464e93ac8afeb6ec069871518d01ca02/detection
+
+207.148.78.124:21
+45.63.62.213:21
+domaiso.com
+linuxwork.net
+newujs.com
+t0rguard.net
+ftp.newujs.com
+js.domaiso.com
+w.linuxwork.net
+w.newujs.com
+jp.anotepad.com/note/read/b896abi9
+
+# Generic
+
+/dddddd_oo
+/jquery.min-2.js
+/tt.php?fuckyou=

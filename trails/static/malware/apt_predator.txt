@@ -1,0 +1,163 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: CVE-2023-41991, CVE-2023-41992, CVE-2023-41993, Cytrox Predator
+
+# Reference: https://citizenlab.ca/2023/09/predator-in-the-wires-ahmed-eltantawy-targeted-with-predator-spyware-after-announcing-presidential-ambitions/
+# Reference: https://www.virustotal.com/gui/ip-address/192.169.7.252/relations
+# Reference: https://www.virustotal.com/gui/ip-address/2.58.14.241/relations
+# Reference: https://www.virustotal.com/gui/ip-address/2.58.15.120/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.230.68.136/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.230.78.27/relations
+
+almal-news.com
+betly.me
+chat-support.support
+cibeg.online
+notifications-sec.com
+sec-flare.com
+t-bit.me
+verifyurl.me
+wa-info.com
+whatssapp.co
+wts-app.info
+c.betly.me
+g.sec-flare.com
+notifications.wa-info.com
+web.whatssapp.co
+whatspp.wa-info.com
+whatssap.whatssapp.co
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-11-v10437/1028
+
+southchinapost.net
+
+# Reference: https://blog.sekoia.io/the-predator-spyware-ecosystem-is-not-dead/
+
+bni-madagascar.com
+cabinet-salyk.kz
+e-kgd.kz
+fr-monde.com
+jumia-egy.com
+kejoranews.net
+mmegi.co
+myfawry.net
+sdntribune.co
+suarapapua.co
+ulstur.co
+vlast-news.com
+yo-um7.com
+
+# Reference: https://www.recordedfuture.com/research/predator-spyware-infrastructure-returns-following-exposure-sanctions
+# Reference: https://www.virustotal.com/gui/ip-address/169.239.129.76/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.123.102.40/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.235.137.6/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.243.113.169/relations
+# Reference: https://www.virustotal.com/gui/ip-address/193.29.56.252/relations
+# Reference: https://www.virustotal.com/gui/ip-address/193.29.59.164/relations
+# Reference: https://www.virustotal.com/gui/ip-address/45.86.163.178/relations
+# Reference: https://www.virustotal.com/gui/ip-address/98.142.253.18/relations
+
+fruitynew.com
+gameformovies.com
+happytotstoys.com
+holidaypriceguide.com
+infoaomomento.com
+lesautreseux.com
+masoloyakati.com
+noisyball.com
+nyirangongovrai.com
+rhapresentacao.com
+toysfourtots.com
+yokananu.net
+
+# Reference: https://x.com/felixaime/status/1834939287202099248
+# Reference: https://github.com/SpyGuard/SpyGuard/commit/5d2c914d55089aa67fecd1ab065d085b4051fd4c
+
+1domainregistry.com
+beinfo.net
+bestshowineu.com
+blocoinformativo.com
+buysalesblog.com
+c1tvapp.com
+caddylane.com
+cheesyarcade.com
+colabfile.com
+despachosnegocios.com
+eclipsemonitor.com
+eppointment.io
+eroticsmoments.com
+espeednet.com
+flickerxxx.com
+gardalul.com
+healthyhub.io
+humansprinter.com
+infoshoutout.com
+keep-badinigroups.com
+locmap.org
+mapsloc.net
+mdundobeats.com
+myowndrive.net
+mypinpoint.org
+myprivatedrive.net
+mystudyup.com
+newsfunnel.net
+noadsview.com
+noticiafamosos.com
+nuurs.net
+onelifestyle24.com
+pedalmastery.com
+pepalaunch-airdrop.info
+pinnedplace.com
+promobyfit.com
+runconnect.net
+secneed.com
+secretspotnow.com
+secsafty.com
+shopstodrop.com
+speedbrawse.com
+street-maps.net
+summerspooks.com
+svcsync.com
+trigship.com
+updatepoints.com
+vslojasvendas.com
+
+# Reference: https://www.recordedfuture.com/research/predator-still-active-new-links-identified
+
+asistentcomercialonline.com
+barbequebros.com
+boundbreeze.com
+branchbreeze.com
+c3p0solutions.com
+canylane.com
+clockpatcher.com
+craftilly.com
+dollgoodies.com
+drivemountain.com
+gamestuts.com
+gettravelright.com
+gilfonts.com
+gobbledgums.com
+lawrdo.com
+longtester.com
+mappins.io
+mountinnovate.com
+mundoautopro.com
+myread.io
+nightskyco.com
+noticiafresca.net
+openstreetpro.com
+remixspot.com
+roadsidefoodie.com
+stableconnect.net
+starryedge.com
+statuepops.com
+steepmatch.com
+streamable-vid.com
+strictplace.com
+themastersphere.com
+traillites.com
+unibilateral.com
+wtar.io
+zipzone.io

@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: flesh stealer
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-09-v10717/2039
+# Reference: https://www.virustotal.com/gui/file/01855104b4877643dcada36aa841616e9753a6bee095928d175b36d3e3ac5fbe/detection
+
+utka.xyz

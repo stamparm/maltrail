@@ -1,0 +1,46 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: bkgstealer, byakugan stealer
+
+# Reference: https://twitter.com/ULTRAFRAUD/status/1762959782388932739
+# Reference: https://twitter.com/ULTRAFRAUD/status/1763690635893133755
+# Reference: https://twitter.com/DonPasci/status/1763181845833723935
+# Reference: https://www.fortinet.com/blog/threat-research/byakugan-malware-behind-a-phishing-attack
+
+207.244.251.87:8080
+209.145.55.141:8080
+blamefade.com.br
+thinkforce.com.br
+vmi1348820.contaboserver.net
+vmi1593693.contaboserver.net
+
+# Reference: https://x.com/iam_rajhans/status/1836656199485321516
+# Reference: https://www.virustotal.com/gui/ip-address/157.173.205.223/relations
+
+157.173.205.223:8080
+virtualpurple.com
+virtualpurple.online
+vmi1348820.contaboserver.net
+
+# Reference: https://x.com/iam_rajhans/status/1841826860654584024
+
+31.220.98.29:443
+31.220.98.29:8080
+89.117.72.231:443
+89.117.72.231:8080
+purpleadapter.com.br
+
+# Reference: https://x.com/SquiblydooBlog/status/1910654861278142666
+# Reference: https://app.any.run/tasks/142fbe04-31e0-486b-a5a0-1f889a4cfb0b
+# Reference: https://www.virustotal.com/gui/file/0966555bd577a1a3d45655422d0d41df77eb1834b93a56288ed336593b402d0e/detection
+
+66.94.101.51:443
+floravirtual.com.br
+tunneloop.com.br
+
+# Reference: https://x.com/Fact_Finder03/status/1934518640163828172
+# Reference: https://app.validin.com/detail?type=ip&find=86.48.26.83#tab=resolutions
+
+86.48.26.83:8080
+chocopurple.com.br

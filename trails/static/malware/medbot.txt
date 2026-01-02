@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: medbod, medbot
+
+# Reference: https://www.symantec.com/security-center/writeup/2006-120318-2712-99#technicaldescription
+# Reference: https://www.virusbulletin.com/virusbulletin/2007/01/real-motive-behind-stration/
+
+medbod.com
+up.medbod.com
+news.medbot.com
+seek[0-9]+\.(mootseek|zootseek)\.com
+
+# Reference: https://www.virustotal.com/gui/file/0ecc52b7663e36a79982f0ef5a74fbd973dc815fbde76f872ecaef8f0e9eb070/detection
+
+rcb.medbod.com

@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: warlock ransomware, x2anylock ransomware
+
+# Reference: https://x.com/DarkWebInformer/status/1932514533769114073
+
+elqfbcx5nofwtqfookqml7ltx2g6q6tmddys6e25vgu3al2meim6cbqd.onion
+
+# Reference: https://x.com/fbgwls245/status/1949291011127058905
+# Reference: https://www.virustotal.com/gui/file/983b4e6edd2b289dd1a389aed908861fd8f0bf7d8e82a916ebe6d4df8642ab54/detection
+# Reference: https://www.virustotal.com/gui/file/da8de7257c6897d2220cdf9d4755b15aeb38715807e3665716d2ee761c266fdb/detection
+
+zfytizegsze6uiswodhbaalyy5rawaytv2nzyzdkt3susbewviqqh7yd.onion

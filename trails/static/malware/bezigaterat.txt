@@ -1,0 +1,51 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: bezigate, boht, bozok
+
+# Reference: https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf
+
+ad2.admart.tv
+winupdatess.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/cdfbe9342c12702dd826de07c77b82bea5de6c558dc9ee59a43724868a4e4742/detection
+
+tangerroi072.bounceme.net
+
+# Reference: https://www.virustotal.com/gui/file/bc13ff9158778d5b489ca9b507a91486055f15b43253c31d1d994f9f217aaea8/detection
+
+31.13.81.17:1515
+
+# Reference: https://www.virustotal.com/gui/file/42d6fe0f7c7e8dd2e49809969fc84e3460fa5c9d4c169a0e5b229509b07fff50/detection
+
+31.13.82.17:1515
+
+# Reference: https://www.virustotal.com/gui/file/f9c16ae19f1035206bd5f5ef40bb3cb43822e3b2d2d4d53cf04317c05cbd5c02/detection
+
+141.255.154.36:1606
+love143.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/e793b50e7397502e9f5e4d336d0dc01c41a279341f1a16915282b74d36434539/detection
+# Reference: https://www.virustotal.com/gui/file/2c1b0f78d5e00598fc13dc4f7913f9be488b66fad448a24dc15f0806b62f5a8e/detection
+
+175.116.177.126:1515
+175.116.177.126:4500
+aceeacee.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/6d0059965ed7ba1663098e7165099814a63a373a67b63cb92054ff24b3d40d50/detection
+
+118.35.78.30:1515
+ddos.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/1e26b0f6d5577dc60f5d93936b1153e2e0a8728456a2717727fd459d937dc78d/detection
+
+183.96.97.150:8282
+
+# Reference: https://www.virustotal.com/gui/file/44a025c55b8f4e7851df5dd2da2509db28187d1654e8a8801ccb8baa6c7919f3/detection
+
+180.70.219.97:1515
+acau1.p-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/f7a22a546cf04fe0351ce14626a045574c0b01f4a7ada9bb2fb530552eb5e122/detection
+
+176.97.70.164:1166

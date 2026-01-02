@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/en/domain/he3ns1k.info/information/
+
+166.78.145.90
+166.78.144.80
+
+# Reference: https://www.reddit.com/r/sysadmin/comments/1pwlef/cryptolocker_known_command_and_control_center_ip/
+
+sinkhole.malware.suspended.domain

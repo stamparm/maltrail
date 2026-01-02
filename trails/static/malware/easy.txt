@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: easy stealer
+
+# Reference: https://twitter.com/bridewellsec/status/1707066212385955976
+# Reference: https://twitter.com/karol_paciorek/status/1716732886173270412
+# Reference: https://www.bridewell.com/insights/blogs/detail/uncovering-the-easy-stealer-infostealer
+
+192.162.241.82:3000
+193.233.255.86:3000
+46.151.29.182:3000
+77.91.124.52:3000
+82.115.223.227:3000
+91.103.252.210:3000

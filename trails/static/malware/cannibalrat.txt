@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1197650608058056704
+# Reference: https://app.any.run/tasks/82217da5-ea1e-4751-a783-0bc893758d65/
+
+35.192.197.199:8080
+
+# Generic trails
+
+/api/admin_90520735581359/

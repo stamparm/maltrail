@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/GelosSnake/status/1470841727825199117
+# Reference: https://www.virustotal.com/gui/file/f2e3f685256e5f31b05fc9f9ca470f527d7fdae28fa3190c8eba179473e20789/detection
+
+http://3.145.115.94
+
+# Generic
+
+/zambos_caldo_de_p.txt

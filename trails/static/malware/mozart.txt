@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/VK_Intel/status/1227234932960964609
+# Reference: https://www.virustotal.com/gui/file/051f15288d162db642ccb694cbd8dafeb71b89614ac711c350f992a7b2a9d7d7/detection
+
+93.188.155.2:53

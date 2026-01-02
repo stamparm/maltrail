@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.360totalsecurity.com/en/bondat-worm-struck-again-built-botnets-for-mining-cryptocurrency-and-attacking-wordpress/
+
+bellsyscdn.com
+urchintelemetry.com
+5.8.52.136/setup.php
+5.8.52.136/put.php
+5.8.52.136/php.zip
+5.8.52.136/get.zip
+
+# Reference: https://www.virustotal.com/gui/file/e5c94b799ad91049f97305b4ccff6e92e66f4da4d302177a8b578c3bb3f7cb43/detection
+# Reference: https://www.virustotal.com/gui/file/fe47274ca27ef6469eccacac38687e4a394ada4ac0eea0cb4842f55c17ac14ec/detection
+
+45.14.12.108:2341
+los-web.xyz
+sol-doc.xyz
+
+# Generic
+
+/sol/ID-482875588

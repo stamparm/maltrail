@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://blog.netlab.360.com/malicious-campaign-luoxk-is-actively-exploiting-cve-2018-2893/
+
+103.99.115.220:8080
+121.18.238.56:8080
+121.18.238.56:80
+luoxkexp.com
+luoxk.f3322.net

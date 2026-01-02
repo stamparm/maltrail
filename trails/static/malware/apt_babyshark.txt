@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/Neo23x0/signature-base/blob/master/yara/apt_babyshark.yar
+# Reference: https://otx.alienvault.com/pulse/5d932d449de02b0e8c0b8cba
+
+http://212.73.150.246
+
+# Reference: https://www.huntress.com/blog/targeted-apt-activity-babyshark-is-out-for-blood
+
+beastmodser.club
+frebough.com
+hodbeast.com
+retmodul.com
+worldinfocontact.club
+
+# Generic trails
+
+/gate/connect
+/gate/test
+/onedrive/winmm.php
+/sil/0304/d.php

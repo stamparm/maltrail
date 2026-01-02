@@ -1,0 +1,119 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: lynx ransomware
+
+# Reference: https://twitter.com/malwrhunterteam/status/1689029459255373826
+# Reference: https://twitter.com/siri_urz/status/1689229973591031808
+# Reference: https://x.com/MalGamy12/status/1795393457621737498
+# Reference: https://www.virustotal.com/gui/file/c41ab33986921c812c51e7a86bd3fd0691f5bba925fae612f1b717afaa2fe0ef/detection
+
+incblog7vmuq7rktic73r4ha4j757m3ptym37tyvifzp2roedyyzzxid.onion
+incpaykabjqc2mtdxq6c23nqh4x6m5dkps5fr6vgdkgzp5njssx6qkid.onion
+incpaysp74dphcbjyvg2eepxnl3tkgt5mq5vd4tnjusoissz342bdnad.onion
+
+# Reference: https://twitter.com/TLP_R3D/status/1730559767892955623
+# Reference: https://www.virustotal.com/gui/ip-address/89.191.234.83/relations
+
+incapt.blog
+incbackend.top
+
+# Reference: https://twitter.com/AlvieriD/status/1763566193355485460
+# Reference: https://www.virustotal.com/gui/ip-address/185.251.90.40/relations
+# Reference: https://www.virustotal.com/gui/ip-address/85.193.94.216/relations
+
+incapt.su
+
+# Reference: https://twitter.com/RakeshKrish12/status/1772166915345072315
+# Reference: https://app.validin.com/detail?find=94.140.114.211&type=ip4&ref_id=a2a099eef15#tab=resolutions
+
+ranzy-leak.hk
+ranzylock.hk
+thunderx.hk
+
+# Reference: https://x.com/AlvieriD/status/1817815655673929762
+# Reference: https://x.com/AlvieriD/status/1817818493615570951
+# Reference: https://github.com/marktsec/Ransomware_Official_Domains#lynx
+
+lynxbllrfr5262yvbgtqoyq76s7mpztcqkv6tjjxgpilpma7nyoeohyd.onion
+lynxblogco7r37jt7p5wrmfxzqze7ghxw6rihzkqc455qluacwotciyd.onion
+lynxblogmx3rbiwg3rpj4nds25hjsnrwkpxt5gaznetfikz4gz2csyad.onion
+lynxblogtwatfsrwj3oatpejwxk5bngqcd5f7s26iskagfu7ouaomjad.onion
+lynxblogxutufossaeawlij3j3uikaloll5ko6grzhkwdclrjngrfoid.onion
+lynxch2k5xi35j7hlbmwl7d6u2oz4vp2wqp6qkwol624cod3d6iqiyqd.onion
+lynxchatly4zludmhmi75jrwhycnoqvkxb4prohxmyzf4euf5gjxroad.onion
+lynxblog.net
+
+# Reference: https://x.com/t43cr0wl3r/status/1844897072685682946
+# Reference: https://unit42.paloaltonetworks.com/inc-ransomware-rebrand-to-lynx/
+
+incadmin.su
+incback.su
+incblog.su
+lynxchat.net
+lynxpanel.net
+lynxstorage1.net
+
+# Reference: https://github.com/marktsec/Ransomware_Official_Domains
+
+incblog6qu4y4mm4zvw5nrmue6qbwtgjsxpw6b7ixzssu36tsajldoad.onion
+
+# Reference: https://www.thedfirspot.com/general-8-1
+
+incbackfgm7qa7sioq7r4tdunoaqsvzjg5i7w46bhqlfonwjgiemr7qd.onion
+incbackrlasjesgpfu5brktfjknbqoahe2hhmqfhasc5fb56mtukn4yd.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1860957489908576613
+# Reference: https://github.com/TheRavenFile/IOC/blob/main/INC-Lynx%20Ransomware
+# Reference: https://app.validin.com/detail?find=46.173.214.156&type=ip4&ref_id=559e5d115ce#tab=resolutions
+
+inccdn1.lol
+inccdn2.lol
+inccdn3new.lol
+indro.top
+lynxback.pro
+lynxblog.media
+lynxstorage2.net
+merlynxblog.net
+merlynxchat.net
+ptachek.top
+testingmytools.com
+zataclub.shop
+admin.incback.su
+admin.inccdn1.lol
+admin.inccdn3new.lol
+admin.lynxback.pro
+api.incback.su
+api.inccdn1.lol
+api.lynxback.pro
+app.incback.su
+app.inccdn1.lol
+app.inccdn3new.lol
+app.lynxback.pro
+backend.incback.su
+backend.inccdn1.lol
+demo.incback.su
+demo.inccdn1.lol
+demo.lynxback.pro
+dev.inccdn1.lol
+dev.lynxback.pro
+meradmin.lynxblog.net
+meradmin.lynxchat.net
+navigation.lynxchat.net
+random.lynxpanel.net
+random.lynxstorage1.net
+staging.incback.su
+staging.inccdn1.lol
+staging.inccdn3new.lol
+staging.lynxback.pro
+
+# Reference: https://app.validin.com/detail?find=147.45.198.222&type=ip4&ref_id=1dd0681ecee#tab=resolutions
+
+incback.help
+incblog.help
+inccdn1.online
+inccdn2.online
+incrans.com
+lynxcdn.com
+lynxr.blog
+lynxr.help

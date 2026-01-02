@@ -1,0 +1,97 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: madmxshell, workersdevbackdoor
+
+# Reference: https://www.zscaler.com/blogs/security-research/malvertising-campaign-targeting-it-teams-madmxshell
+# Reference: https://www.threatdown.com/blog/workersdevbackdoor-and-madmxshell-converge-in-malvertising-campaigns/
+# Reference: https://www.virustotal.com/gui/file/93962847285d6f81273132e72d66b03a2e6e1a0ff46893e58ad3747762548922/detection
+# Reference: https://www.virustotal.com/gui/file/4a36a35aac6e37959e2337bb74ab9830c5f6c6965da6bb5112d4195350e8baf9/detection
+# Reference: https://www.virustotal.com/gui/file/24bff1753a60215bab00386ea11e774f0a04e2e45e70dabb122b5a697b67d174/detection
+# Reference: https://www.virustotal.com/gui/file/a8b0e013bd0d350035f12fd6703f7760a87cb218803e68c0eb482753961f2a41/detection
+# Reference: https://www.virustotal.com/gui/file/2264d2a23f365af0830b577360a724798a6132b1a2f4cd08a7ccfaa311ee920a/detection
+
+advaanced-ip-scanner.com
+advaanced-ip-scanner.net
+advanc3d-1p-scan.com
+advanc3d-1p-scan3r.com
+advanc3d-1p-scaner.com
+advanc3d-1p-scann.com
+advanc3d-1p-scanne.com
+advanc3d-1p-scanner.com
+advanc3d-1p-scans.com
+advanc3d-ip-scanner.com
+advanc3d-lp-scaner.com
+advanc3d-lp-scanner.com
+advanceb-ip-scanner.com
+advanceb-lp-scanner.com
+advanced-ip-saaner.com
+advanced-ip-scaaner.com
+advanced-ip-scaer.com
+advanced-ip-scaer.net
+advanced-ip-scanel.com
+advanced-ip-scanel.net
+advanced-ip-scanerr.com
+advanced-ip-scanerr.net
+advanced-ip-scanir.com
+advanced-ip-scanir.net
+advanced-ip-scanr.com
+advanced-ip-scanr.net
+advanced-ip-scanz.com
+advanced-ip-scanz.net
+advanced-lp-saanel.com
+advanced-lp-saaner.com
+advanced-lp-scanel.com
+advanced-lp-scannel.com
+advansed-ip-scanner.com
+advansed-ip-scanner.net
+advvanced-ip-scanner.com
+advvanced-ip-scanner.net
+angry1pscan.com
+angry1pscan3r.com
+angry1pscane.com
+angry1pscaner.com
+angry1pscat.com
+angryipo.org
+angryips.org
+angryipsca.com
+angryipsca.org
+angryipscan.net
+angryipscaner.com
+angryipscann.com
+angryipscap.com
+angryipscar.com
+angryipscat.com
+angryipscat.net
+angryipscat.online
+angryipscat.org
+angryipscat.tech
+anscan.org
+clockifpy.com
+clockifry.com
+clockify.site
+clockify.space
+clockiify.com
+getstorege.com
+ipscannerprtg.com
+keystore-explore.com
+kwzain.space
+litterbolo.com
+manageeengines.com
+manageeengines.net
+managengines.com
+managengines.net
+managengins.com
+managengins.net
+networkipscan.com
+networkscanip.com
+odvanced-ip-scanner.com
+paesslers.com
+prtgscan.com
+timedoct0r.com
+timedoctor.space
+timedoctors.online
+timedoctors.site
+timedoctors.space
+ns1.getstorege.com
+ns2.getstorege.com

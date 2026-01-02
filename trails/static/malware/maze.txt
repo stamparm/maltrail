@@ -1,0 +1,54 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/VK_Intel/status/1185255932474904576
+# Reference: https://www.virustotal.com/gui/file/f491fb72f106e879021b0bb1149c4678fb380c255d2ef11ac4e0897378793f49/detection
+# Reference: https://kc.mcafee.com/corporate/index?page=content&id=KB92734
+
+http://91.218.114.4
+http://91.218.114.11
+http://91.218.114.25
+http://91.218.114.26
+http://91.218.114.31
+http://91.218.114.32
+http://91.218.114.37
+http://91.218.114.38
+http://91.218.114.77
+http://91.218.114.79
+
+# Reference: https://github.com/StrangerealIntel/malware-notes/blob/master/Ransomware/Maze.md
+
+aoacugmutagkwctu.onion
+mazenews.top
+mazedecrypt.top
+
+# Reference: https://app.any.run/tasks/42be811a-6703-4a2a-ab68-ccbcdff12204/ (# Generic trails)
+
+/egbrcwix.jspx
+/qsumt.jspx
+/vfcb.jspx
+/laehhmcha.php
+/wordupd.tmp
+
+# Reference: https://labs.sentinelone.com/enter-the-maze-demystifying-an-affiliate-involved-in-maze-snow/
+# Reference: https://otx.alienvault.com/pulse/5f1b25b617bca397b446385c
+
+http://37.1.210.52
+
+# Reference: https://labs.sentinelone.com/case-study-catching-a-human-operated-maze-ransomware-attack-in-action/
+# Reference: https://otx.alienvault.com/pulse/5f358b6c166e1574edc183b8
+
+globalsign.icu
+ocspverisign.pw
+officecloud.top
+
+# Reference: https://twitter.com/AltShiftPrtScn/status/1296221522135330816
+# Reference: https://twitter.com/AltShiftPrtScn/status/1296351084420771840
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/Ransomware-Maze.csv
+
+94.232.40.167:9338
+
+# Reference: https://www.hackplayers.com/2021/02/sitios-cibercriminales-deepweb.html
+
+mazenews.online
+xfr3txoorcyy7tikjgj5dk3rvo3vsrpyaxnclyohkbfp3h277ap4tiad.onion

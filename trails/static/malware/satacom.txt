@@ -1,0 +1,88 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/1ZRR4H/status/1572376473247567875
+# Reference: https://twitter.com/1ZRR4H/status/1572376489131384835
+# Reference: https://www.virustotal.com/gui/file/7e3a4558ccddea6f44ce77f4e6385f5a40bb68b2552fe5d94d4ea9a592d9d660/detection
+
+led-menu.com
+lodspro.xyz
+prolods.xyz
+dtu2kitmpserg.cloudfront.net
+
+# Reference: https://securelist.com/satacom-delivers-cryptocurrency-stealing-browser-extension/109807/
+
+across-are.xyz
+air-are.xyz
+although-are.click
+back-may.com
+big-loads.com
+can-nothing.cfd
+church-h.click
+close-h.xyz
+current-h.click
+die-dns.com
+dns-beast.com
+don-die.com
+don-dns.com
+economy-h.xyz
+education-are.click
+ee-softs.com
+el-softs.com
+enough-are.xyz
+fbs-university.xyz
+file-send.cc
+file-send.live
+filesend.live
+filetosend-upload.net
+fire-h.xyz
+force-are.xyz
+future-h.click
+get-loads.com
+guy-seventh.cfd
+himself-are.click
+hit-mee.com
+hospital-h.xyz
+ht-dilemma.xyz
+ht-input.cfd
+ht-queen.cfd
+ht-specialize.xyz
+icl-surprise.xyz
+io-band.cfd
+io-previous.xyz
+io-strength.cfd
+medical-h.click
+moment-are.xyz
+new-high.click
+new-loads.com
+noname-domain.com
+old-big.com
+oo-blue.click
+oo-clearly.click
+oo-knowledge.xyz
+oo-station.xyz
+oo-strategy.xyz
+post-make.com
+punishment-chat.click
+risk-h.xyz
+rjjy-easily.xyz
+scope-chat.xyz
+shrimp-clock.click
+soft-end.com
+soft-kind.com
+soft-make.com
+softs-labs.com
+soon-soft.com
+stroke-chat.click
+teacher-are.click
+thousand-h.click
+tip-want.click
+web-lox.com
+
+# Reference: https://www.zscaler.com/blogs/security-research/black-hat-seo-poisoning-search-engine-results-ai-distribute-malware
+# Reference: https://www.virustotal.com/gui/file/28fdcbe2e62776a7ef0cbe012aea80499d37e8a24abbeafa4bd7ca0b47bb6da8/detection
+
+chat-gpt-5.ai
+guildish.com
+krea-ai.com
+llama-2.com

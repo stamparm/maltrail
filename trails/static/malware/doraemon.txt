@@ -1,0 +1,126 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Earth Lusca, sprysocks, ktlvdoor
+
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/a/earth-lusca-employs-sophisticated-infrastructure-varied-tools-and-techniques/technical-brief-delving-deep-an-analysis-of-earth-lusca-operations.pdf
+# Reference: https://www.virustotal.com/gui/file/95aa15baeef978b99e63a406fa06a1197f6f762047f9729f17bb49b72ead6477/detection
+
+dsyu.livehost.live
+dust.dnslookup.services
+
+# Reference: https://www.trendmicro.com/en_us/research/23/i/earth-lusca-employs-new-linux-backdoor.html
+# Reference: https://otx.alienvault.com/pulse/6509cd6cb1f6826dace407d7
+# Reference: https://www.virustotal.com/gui/ip-address/38.60.199.173/relations
+# Reference: https://www.virustotal.com/gui/file/f8ba9179d8f34e2643ee4f8bc51c8af046e3762508a005a2d961154f639b2912/detection
+# Reference: https://www.virustotal.com/gui/file/65b27e84d9f22b41949e42e8c0b1e4b88c75211cbf94d5fd66edc4ebe21b7359/detection
+
+bmssystemg188.us
+confenos.shop
+thebestone.beauty
+2e6veme8xs.bmssystemg188.us
+hcje7wgz.bmssystemg188.us
+rvxzn49eghqj.bmssystemg188.us
+sey74m56.bmssystemg188.us
+epdanspht.confenos.shop
+lt76ux.confenos.shop
+qlu7vkkf8.confenos.shop
+pfq6dskptkx.thebestone.beauty
+uasdhj1.thebestone.beauty
+
+# Reference: https://www.trendmicro.com/en_us/research/24/i/earth-lusca-ktlvdoor.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/24/i/earth-lusca-uses-ktlvdoor-backdoor-for-multiplatform-intrusion--/Indicators%20of%20Compromise%20-%20Earth%20Lusca%20Uses%20KTLVdoor%20Backdoor%20for%20Multiplatform%20Intrusion.txt
+
+http://106.15.90.75
+http://139.196.89.210
+http://47.100.160.164
+http://47.101.48.168
+http://47.95.168.191
+http://47.98.50.198
+101.200.156.217:81
+101.200.63.187:53
+101.201.35.96:53
+101.201.68.58:53
+101.201.69.42:443
+106.14.175.235:443
+106.15.193.24:443
+116.62.120.97:443
+116.62.142.53:443
+116.62.231.152:443
+118.31.53.137:443
+121.40.70.23:443
+123.56.45.175:443
+123.56.45.175:81
+123.57.218.176:81
+123.57.223.22:443
+123.57.223.22:81
+123.57.6.3:81
+123.57.60.94:443
+123.57.60.94:8081
+139.196.196.178:53
+139.224.254.181:53
+139.224.45.232:53
+182.92.101.4:443
+182.92.101.4:81
+182.92.155.149:81
+182.92.169.60:443
+182.92.169.60:8081
+182.92.233.242:443
+182.92.233.242:8081
+182.92.243.166:1433
+39.105.107.130:443
+39.105.107.130:8081
+39.105.121.123:9999
+39.106.13.202:443
+39.106.135.228:53
+39.106.40.121:53
+39.107.101.26:9999
+39.107.231.100:53
+39.107.67.131:81
+39.107.75.91:443
+39.107.75.91:81
+47.100.121.195:443
+47.100.59.42:443
+47.100.98.234:443
+47.101.137.187:8032
+47.101.43.111:53
+47.102.36.88:53
+47.93.38.26:53
+47.93.47.186:443
+47.94.143.163:443
+47.94.166.190:9999
+47.94.193.44:443
+47.94.194.248:53
+47.94.20.102:443
+47.94.200.23:443
+47.94.202.137:443
+47.94.223.124:9999
+47.94.227.15:443
+47.94.229.250:443
+47.94.229.250:8081
+47.95.12.152:53
+47.95.198.228:53
+47.96.106.167:443
+47.96.13.99:443
+47.96.135.49:443
+47.96.160.242:443
+47.96.5.136:443
+47.96.97.77:443
+47.97.109.62:443
+47.98.121.179:443
+47.98.173.175:443
+47.99.78.41:443
+59.110.136.109:9999
+59.110.226.246:443
+
+# Reference: https://x.com/Huntio/status/1837315740720087047
+# Reference: https://search.censys.io/hosts/8.147.119.97
+# Reference: https://search.censys.io/hosts/8.149.143.211
+
+http://8.147.119.97
+http://8.149.143.211
+8.147.119.97:22
+8.147.119.97:443
+8.147.119.97:62237
+8.149.143.211:22
+8.149.143.211:443

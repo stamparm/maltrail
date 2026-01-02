@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: C2s used also in "MalPuTTY" campaign
+
+# Reference: https://blogs.cisco.com/security/trojanized-putty-software
+# Reference: https://blog.avast.com/2014/01/27/malformed-filezilla-ftp-client-with-login-stealer/
+# Reference: https://www.virustotal.com/gui/ip-address/144.76.120.243/relations
+
+ngusto-uro.ru
+go-upload.ru
+aliserv2013.ru
+mtacc.michverlieben.de
+xgame2014job.ru

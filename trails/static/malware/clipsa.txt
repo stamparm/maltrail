@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://decoded.avast.io/janrubin/clipsa-multipurpose-password-stealer/
+# Reference: https://github.com/avast/ioc/blob/master/Clipsa/appendix_files/cnc_servers_all.txt
+
+besttipsfor.com
+chila.store
+globaleventscrc.com
+ionix.co.id
+mahmya.com
+mohanchandran.com
+mutolarahsap.com
+northkabbadi.com
+poly.ufxtools.com
+raiz.ec
+rhsgroup.ma
+robinhurtnamibia.com
+sloneczna10tka.pl
+stepinwatchcenter.se
+topfinsignals.com
+tripindiabycar.com
+videotroisquart.net
+wbbministries.org

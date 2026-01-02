@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ReBensk/status/1238357275581898753
+
+koapkmobi.com
+
+# Reference: https://labs.k7computing.com/?p=19247
+# Reference: https://twitter.com/ReBensk/status/1192376513447940097
+# Reference: https://www.virustotal.com/gui/file/b29d616b56d4432bc083b31d5c25dbbc1c3770b9e51bdc7b602e697b25dca1dd/detection
+
+52.221.7.34:8087
+advancedsz.com
+okyesmobi.com
+
+# Reference: https://www.virustotal.com/gui/file/52d8a6d2f5582b99f50ef6209bf3f4580b7a3528af2c25de6b57738f0488092a/detection
+
+http://172.104.214.199
+
+# Reference: https://twitter.com/ReBensk/status/1280842638120366081
+
+imageimitate.space
+
+# Reference: https://www.virustotal.com/gui/file/4a67a50ddd50a337549eb3c781f1f0ed4138d77193f8eb4cc3e104755d2d8394/detection
+
+http://188.166.8.29

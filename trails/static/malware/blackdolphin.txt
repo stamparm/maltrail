@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/PRODAFT/status/1706304496517697865
+# Reference: https://twitter.com/banthisguy9349/status/1706322255347658952
+# Reference: https://twitter.com/banthisguy9349/status/1706322737109586295
+
+http://83.151.14.101
+http://94.131.111.41
+83.151.14.101:8080
+94.131.111.41:8080
+jejewkiehs.onion
+
+# Reference: https://twitter.com/banthisguy9349/status/1708122157870444887
+
+91.215.85.189:8080
+
+# Reference: https://threatfox.abuse.ch/browse/tag/BlackDolphin/
+
+azukielement.site
+finersmash.com
+fireclier.com
+oqdomain.com
+pepe-trust.online
+teseblue.com
+trust-pepe.online
+velaexchange.ltd

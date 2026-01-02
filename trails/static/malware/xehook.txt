@@ -1,0 +1,50 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: xehook stealer
+
+# Reference: https://twitter.com/karol_paciorek/status/1760995567679705398
+
+xehook.cc
+
+# Reference: https://censys.com/stumbling-upon-xehookstealer-c2-instances/
+
+http://193.149.190.2
+193.149.190.2:22
+193.149.190.2:805
+boohers.xyz
+groomty.xyz
+ussrconnect.ru
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.xehook/ (# 2024-08-18)
+
+http://116.203.15.245
+http://116.203.167.104
+116.203.15.245:443
+116.203.167.104:443
+152.89.218.110:30000
+static.104.167.203.116.clients.your-server.de
+
+# Reference: https://app.validin.com/detail?type=hash&find=63e939086ab01ddefcef0cfd052b7368#tab=host_pairs_v2
+
+http://49.13.33.85
+49.13.33.85:443
+
+# Reference: https://x.com/ShanHolo/status/1832770502877720825
+# Reference: https://www.virustotal.com/gui/file/db5e56062b748acf6fdbdc393f79033037adf26cf39c97cac31c6e9f06aad14d/detection
+
+murderousattack.xyz
+
+# Reference: https://www.virustotal.com/gui/file/1593979c9b17db937b0808050f1d4e140818ecd523c980907a34a668a0fdf9f1/detection
+
+http://65.109.242.248
+http://78.47.101.48
+
+# Reference: https://www.virustotal.com/gui/file/538b7ba672871b4abafa371c63620c1e3adc13d472202ece1150844565b198c2/detection
+
+http://65.109.242.248
+http://78.47.101.48
+
+# Reference: https://www.virustotal.com/gui/file/d44d4c7c247bc243094566be737d62d604f7cdc115da792cd71e749d62576ab7/detection
+
+http://78.46.129.163

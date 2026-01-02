@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/benkow_/status/1207959333893488641
+
+http://23.249.161.111
+
+# Reference: https://twitter.com/DrStache_/status/1258328049139036160
+
+http://216.170.114.246
+
+# Reference: https://twitter.com/DrStache_/status/1258331132698951680
+
+http://23.247.102.120
+
+# Reference: https://twitter.com/Dr_N0b0dyh/status/1309394178321920000
+
+http://193.56.28.208
+
+# Generic trails
+
+/manabotnet/
+/manabotnet-ahsan/
+/manabotnet-king/
+/manabotnet-romas/
+/manabotnet-smith99/
+/manabotnet-stryka/
+/manabotnet-wandi/
+/manabotnet-work/
+/manabotnet-workfine/

@@ -1,0 +1,40 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/pollo290987/status/1834647573069475969
+# Reference: https://cofense.com/blog/new-malware-campaign-targeting-spanish-language-victims/
+# Reference: https://www.virustotal.com/gui/file/0296bdff0f4851332d610232db80fc292e328e0a5daaf772f285b9a332ef7cab/detection
+# Reference: https://www.virustotal.com/gui/file/0384df13259f165e9dd9308c2b0ad97767a05c1c1b5d8fd21a9319063d827545/detection
+# Reference: https://www.virustotal.com/gui/file/0f6a05f9a92cd0fc31f74d3539463bc5df534b6764e1a34ffdad294cd286ff91/detection
+# Reference: https://www.virustotal.com/gui/file/24449687e07ef734cd4e81e3047e014a1b6a40ca5347771055d113875c0d69a5/detection
+
+194.48.248.72:7831
+194.48.248.72:7833
+194.48.248.72:7835
+194.48.248.72:7836
+94.131.119.126:6541
+94.131.119.126:6542
+94.131.119.126:6543
+94.131.119.126:6545
+completardescarga.b-cdn.net
+gestordescargaonlines.b-cdn.net
+
+# Reference: https://x.com/pollo290987/status/1836158289891201279
+# Reference: https://x.com/pollo290987/status/1836158143635587521
+# Reference: https://x.com/pollo290987/status/1836644058468323474
+# Reference: https://www.virustotal.com/gui/file/a498241c9945a90f2092610652874600fad0e925cfc9545027c9c809ce8dabbc/detection
+# Reference: https://www.virustotal.com/gui/file/d2d38cc4e8be975a03af63f42d40a34de96eb72cd9969df74ba37ff62ed41e1d/detection
+# Reference: https://www.virustotal.com/gui/file/835841c98a85885d2fdd437f2e8f14edb9cb96f31b0d9b1a9a2eeef1d6ff379f/detection
+# Reference: https://www.virustotal.com/gui/file/585c4fdf3d5028e9af68b650088931ec09b024dd9aed0e0c290ca9b153cedebc/detection
+
+185.216.68.121:6211
+185.216.68.121:6212
+carpetaf1.b-cdn.net
+martes17160924f2.b-cdn.net
+miercolesf118.b-cdn.net
+miercolesf218.b-cdn.net
+
+# Reference: https://www.virustotal.com/gui/file/014456785de4d9081ddc213d36b5f56bfbd5e4e9a31b6fc4956ecf645c0df24e/detection
+# Reference: https://global.ptsecurity.com/analytics/pt-esc-threat-intelligence/the-evolution-of-dark-caracal-tools-analysis-of-a-campaign-featuring-poco-rat
+
+193.233.203.63:6211

@@ -1,0 +1,42 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Dnoper
+
+# Reference: https://twitter.com/demonslay335/status/1000222227546148871
+# Reference: https://www.virustotal.com/gui/file/80bc27ef05d51164ba3a66e6353a84e9c91de6f9961a15c99afe47be7a16e10b/detection
+
+demourl.co.nf
+
+# Reference: https://twitter.com/malwrhunterteam/status/1200485882966528000
+
+totes.bluetoes.org
+
+# Reference: https://twitter.com/James_inthe_box/status/1256227635690119175
+
+service-updater.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/f3d1e67363173e7fd5c9235d123f25b15d5d82b7d040eaf73c38135f592866ff/detection
+
+sf3q2wrq34.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/7cab3b7eca654f1333f9b8d23d0eab6c6c501526af08be51b3eb42d22959f2e2/detection
+
+45.144.225.16:4545
+blablaez.duckdns.org
+
+# Reference: https://twitter.com/Gi7w0rm/status/1708828170143646021
+
+http://193.117.208.146
+http://83.244.163.204
+
+# Reference: https://x.com/motuariki_/status/1878647449046380907
+
+angryip.net
+angryips.com
+angryipsc.org
+angryipscanner.org
+datadoghd.com
+nexcioud.com
+rancner.com
+roborware.net

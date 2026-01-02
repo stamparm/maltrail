@@ -1,0 +1,590 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: kimsrat
+
+# Reference: https://www.hybrid-analysis.com/sample/6712718d0ef08b5f73421e85fd35d3bb475f167ff657448164887e5e75f2fb2f?environmentId=100
+# Reference: https://www.virustotal.com/#/file/6712718d0ef08b5f73421e85fd35d3bb475f167ff657448164887e5e75f2fb2f/detection
+
+microsoft-net.myq-see.com
+yuotube.myq-see.com
+
+# Reference: https://www.virustotal.com/en/file/0aad3aa5a60e7f43a9c02d4157897e46007a0579e1e31d3565276a483025d369/analysis/1393442949/
+
+elmagic530.no-ip.info
+
+# Reference: https://www.virustotal.com/en/file/7dca5d237e5ae5dc8f5309ba88a991e2adcaa5abd97071915418369b2d65a262/analysis/1392547350/
+
+jokerhacking.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/b5244b5b67630706481d91da2cae09bcd6598d5f896498c558497b485ce04fb1/detection
+
+192.169.69.25:1607
+192.69.169.25:1607
+
+# Reference: https://www.virustotal.com/gui/file/915164e31542c1e1c581afa4c26014932b79dac6f307e411d1316b8839485ffd/detection
+
+192.69.169.25:6060
+ipvhost.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/8100fa867eb75f312ac7dd0fb7dbb22a330dd9e1e709bca91d58a7b79746de19/detection
+
+141.255.156.154:4444
+141.255.152.84:4444
+141.255.152.202:4444
+sleev.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/36e2cab17f1d577ce8bdd06d9350d2e664dd6e1eb160b6124b0bc5d6cd7472ad/detection
+
+194.5.98.31:1177
+
+# Reference: https://www.virustotal.com/gui/file/3a8c972e050d71832a5c4eaa64a122458da03907ba00e11ea77414b37549c5cf/detection
+
+78.159.135.230:28692
+showix.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/fe13c6ba03871e66fdb90b899c7fd1e3c93178116afb7c78e3bf44fdcd020aa8/detection
+
+exploor.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/9143323bf038e1434c9679097f69dc63f1c28a5636f77b41f781ecef78a709d9/detection
+
+kieffeng.zapto.org
+
+# Reference: https://www.virustotal.com/gui/file/0fd2c99f46d064b583b378d44f2505f0d45b6fe42743a4eb8339e14f5e235df8/detection
+
+cool-t.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/f1eee2cc43d0fe4d34063676f0d7d9bfebb09d4e17c1fbb35e2144e7b98ac302/detection
+
+79.134.225.122:8152
+
+# Reference: https://twitter.com/ScumBots/status/1210236846145515520
+
+actionmtasa.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/6e81745c75f8665737f2943577221d3e6aa87bb5d98e9f0cb01c52a46b3fba62/detection
+
+18.223.41.243:18090
+
+# Reference: https://www.virustotal.com/gui/file/9b13c262b60990077089f8d289d8b09f8b84e4dcdc0d6227e235270bf229bf6e/detection
+
+193.161.193.99:40197
+carmino77-40197.portmap.io
+
+# Reference: https://www.virustotal.com/gui/file/da2eb53310a9b8d6c4131288fcce98602f0e7b77085a02f7d7f69ac11565687b/detection
+
+193.161.193.99:37648
+
+# Reference: https://www.virustotal.com/gui/file/7bc4e604accf951f11e281e027a93b29fb62fa52496d60344b19b2c82d9b1181/detection
+
+kims1998.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/3bdc0b41d42dd4fb0d801dbbcabef21fc5d4dd074bd85f2317104cb43a1ddd8d/detection
+# Reference: https://www.virustotal.com/gui/file/dc77a97aac9c747896b617d5d818f5759c5b89daf01b17550dce69ec37189bc1/detection
+# Reference: https://www.virustotal.com/gui/file/ccbc2811197023ceb8a9827b0d7492598f808e9b6da59bec6aa9c1d7b580d8ae/detection
+
+103.212.180.234:4433
+147.50.241.204:4433
+182.232.217.172:4433
+182.232.217.182:4433
+182.232.217.194:4433
+182.232.225.43:4433
+182.232.228.46:4433
+182.232.46.30:4433
+223.205.80.236:4433
+223.205.82.15:4433
+223.205.82.192:4433
+223.205.82.213:4433
+223.205.83.13:4433
+223.205.86.102:4433
+223.205.86.13:4433
+223.205.86.146:4433
+223.205.87.7:4433
+223.206.144.116:4433
+223.206.144.152:4433
+223.206.144.41:4433
+223.206.144.9:4433
+223.206.145.243:4433
+223.206.145.82:4433
+223.206.146.120:4433
+223.206.146.15:4433
+223.206.147.149:4433
+223.206.148.100:4433
+223.206.148.194:4433
+223.206.149.109:4433
+223.206.151.150:4433
+223.206.151.156:4433
+223.206.151.33:4433
+223.206.64.227:4433
+223.206.65.2:4433
+223.206.65.33:4433
+223.206.66.199:4433
+223.206.67.132:4433
+223.206.67.230:4433
+223.206.67.245:4433
+223.206.68.104:4433
+223.206.70.166:4433
+223.206.70.198:4433
+223.206.71.133:4433
+223.206.71.28:4433
+43.229.151.248:4433
+77.78.103.20:4433
+94.229.67.133:4433
+103.212.180.234:4560
+147.50.241.204:4560
+182.232.217.172:4560
+182.232.217.182:4560
+182.232.217.194:4560
+182.232.225.43:4560
+182.232.228.46:4560
+182.232.46.30:4560
+223.205.80.236:4560
+223.205.82.15:4560
+223.205.82.192:4560
+223.205.82.213:4560
+223.205.83.13:4560
+223.205.86.102:4560
+223.205.86.13:4560
+223.205.86.146:4560
+223.205.87.7:4560
+223.206.144.116:4560
+223.206.144.152:4560
+223.206.144.41:4560
+223.206.144.9:4560
+223.206.145.243:4560
+223.206.145.82:4560
+223.206.146.120:4560
+223.206.146.15:4560
+223.206.147.149:4560
+223.206.148.100:4560
+223.206.148.194:4560
+223.206.149.109:4560
+223.206.151.150:4560
+223.206.151.156:4560
+223.206.151.33:4560
+223.206.64.227:4560
+223.206.65.2:4560
+223.206.65.33:4560
+223.206.66.199:4560
+223.206.67.132:4560
+223.206.67.230:4560
+223.206.67.245:4560
+223.206.68.104:4560
+223.206.70.166:4560
+223.206.70.198:4560
+223.206.71.133:4560
+223.206.71.28:4560
+43.229.151.248:4560
+77.78.103.20:4560
+94.229.67.133:4560
+
+# Reference: https://www.virustotal.com/gui/file/ae4eaf56217d5fd04988802042dd2579bcd6815dbccefb57f9986ac2869eb308/detection
+
+kinginho9508.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/91384d1426485aa5d0c7da0ee5f7b262f664c81c814c104d9ba9391216b850d0/detection
+
+45.247.189.120:1010
+
+# Reference: https://www.virustotal.com/gui/file/f9bfffe39d452b5ca52d260692c1d80dea08738b7cf3115f59795b790656f6c5/detection
+
+45.247.214.36:1010
+
+# Reference: https://www.virustotal.com/gui/file/f5aa0690692498ae2f00ba166d603e37180136723496f6e95e9beb5a86f6f97c/detection
+
+45.247.169.81:1010
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=c5e78fde3fa65bf0d7fc6f2dc5984fb9
+
+freedns2020.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=86c35eaff071aedf65bc752fc43d3ed7
+
+coolkhaled.zapto.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=dac68e02e32caa52e7f786af37680279
+
+ash1.ddns.net
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=e7377022966bd07a9af7616a42c8377c
+
+ayoubbousalem1.ddns.net
+
+# Reference: https://twitter.com/ScumBots/status/1238325752141144064
+
+164.163.39.186:2000
+libertadores.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/b23b48241e996ce0563311b0eb4f551f037c0134c3f5927c4eaaf2d9e8d32139/detection
+
+64.52.164.169:1111
+demonz.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/c8ee655113de05731cb117c6192be8c716d452889f2eaad5cc616aa44732638c/detection
+
+zdcgdgawr3.ddns.net
+
+# Reference: https://www.virustotal.com/en/file/6c18145ff39653968002e268066144ccabc61a6da4373a6bc0db9494374c484b/analysis/
+
+nerujeo.zapto.org
+nerujeo.no-ip.org
+
+# Reference: https://www.virustotal.com/gui/file/7c5078167c0f4f9c9889086585c055240df13c8a71612c48a0f68d74c0f8614e/detection
+
+141.255.152.244:82
+windowslive.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/82b31882742f1fd219dcb1911218dbb9a6ba2847d478d3d723c4d3893c3b659d/detection
+
+goodview1.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/445aed632342a6fb12b80843b1d818ff28cbeb38f10002f9a8af20ee51f51c80/detection
+
+nandos.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/e6b2b7696d3e986b8c9256f29d052cb0d1bfdd691ae01a4d43ff5c397d4a284b/detection
+
+141.255.158.206:3333
+
+# Reference: https://www.virustotal.com/gui/file/5072c8f2f159c8ef7687128ca90c6ce4209fbb1d6754bcb3c06d171a45932e10/detection
+
+etiphgkl9hj.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/234befabf415bbb030d02ba3fce6b2a441e08beea7589ccc0a1a3ee1861b70a6/detection
+
+aazzoo74.no-ip.org
+
+# Reference: https://twitter.com/ScumBots/status/1259181921503973376
+
+185.19.85.184:3008
+updateinfomcs.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/717fe12773df62261b136b85bb37f08b56cd94dfa0e51bcd5c80e4431bce1e28/detection
+
+141.255.153.81:4545
+windowsapplication.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/f9cfd6ba5df8eafa98f1156122e73ab5998dc787a7ff41def70a6e4654e819a7/detection
+
+207.244.113.46:6060
+
+# Reference: https://www.virustotal.com/gui/domain/hammoud777.ddns.net/relations
+# Reference: https://www.virustotal.com/gui/file/f96a93ff908d215ff19f1e80e6d4535b2312c984a1fb5ae04dce7c1d6a012947/detection
+
+141.255.147.63:4444
+141.255.155.10:4444
+
+# Reference: https://www.virustotal.com/gui/file/94eb8962825a9a1472fff5b8f70c381e05992b38c506a3d5cedee4ba9cae13fd/detection
+
+14.48.6.22:8458
+
+# Reference: https://www.virustotal.com/gui/file/4df3facb47904d7af4723f97e3000c87d8db8fee8e196201dda09f927a37f5ea/detection
+
+190.73.144.189:1332
+
+# Reference: https://www.virustotal.com/gui/file/a143d26f2de1818bf2a2696dc046625e5801b6bf5d02b2cf545e9d4389252fe6/detection
+
+62.215.122.90:5554
+tsm1.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/d580739fc1ddd55c6cae6273787c317ca72bfb79c6869ac74291dedf71d65fbc/detection
+
+189.27.135.149:2000
+189.27.135.149:81
+corvo1997.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/1dbdb667d0cada523ec1fa168e0ef5f7638f44344e0503063b27c59536898805/detection
+
+179.178.22.180:2000
+179.178.22.180:81
+
+# Reference: https://www.virustotal.com/gui/file/b19922704294d8f8af45370f9885b7d10f8cf3356b4b15594be06e9f81325a37/detection
+
+141.255.145.34:1177 
+141.255.146.94:1177
+
+# Reference: https://www.virustotal.com/gui/file/cf30333a2773e126d35ae4f606f4a902e79babba4f94c38e16bc7f73b1db6bd6/detection
+
+175.120.145.222:8420
+ehowl.r-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/0c7b534d22763305b1dc93539a5f8efc276cdd7d68f09b761ccf080e33b0b981/detection
+
+182.224.234.115:8080
+dfsadfa.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/b125d81c8cd6a8e1ae6c74926e499aae1caded94e4604fa973a70fb084a5f8f2/detection
+
+182.224.234.115:5552
+
+# Reference: https://www.virustotal.com/gui/file/5a42a158356ab88df9981fcc66642bac8df89bbd4c50b4117845f819ac054bf9/detection
+
+220.122.152.173:777
+sshzb.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/6ec12ea38c1dc261f60463e0f73edc32eca2b0f6847c9951045496b0fc4cf290/detection
+
+fadepc.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/a1cb207c1949bfe543a710e000c5df4c0c5903e0e8e2e702373856f9154e9f04/detection
+# Reference: https://www.virustotal.com/gui/file/a20e65b33caeb554fc4039b24564ee7b5c62c3644b5a34c242bfacb632d09350/detection
+
+186.13.51.112:82
+186.13.51.112:93
+gabriel1314.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/99b21b7f77d310935037e0d0537a1c542b689f6b7cc87d642cb266753bb9bc71/detection
+
+193.161.193.99:35166
+hackerjo5-35166.portmap.host
+
+# Reference: https://www.virustotal.com/gui/file/f4c184fac7d149137964a98a5141e7934f0974c10a14693bb7076979629b8574/detection
+
+91.235.168.223:963
+honza333.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/8942637722cccbcb47b1181cc4da4a7862dd821494e5852b070f156ba8095e99/detection
+
+aadlallame00.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/82c79779b68cd16c89797ae4c1ec6971af28dccc0538501e9269a6206f4adab1/detection
+
+41.104.34.34:81
+
+# Reference: https://www.virustotal.com/gui/file/f493f5b5ca609b2518761e9d667e0694b81f16578a33fc4817fcec12bf188952/detection
+
+41.104.54.237:81
+
+# Reference: https://www.virustotal.com/gui/file/d5a0e08c1a513627271ded03cc4037bfebecf222bd75ad49df998b9df5c09eeb/detection
+
+41.105.133.118:81
+
+# Reference: https://www.virustotal.com/gui/file/ce7e8c0c1fbc54c39f3abbe588afd57a26b5999fb8a7d6c12d68d3cbe1c8fdf9/detection
+
+41.105.47.177:81
+
+# Reference: https://www.virustotal.com/gui/file/2542b46508331616e44cda1d9f68a8deb0c334b60c2219198de695ca7197be5b/detection
+
+41.105.37.10:81
+
+# Reference: https://www.virustotal.com/gui/file/99657550be20c4260e6c06642c77ac42391d7954edd2e52dfe0e1eea677aac15/detection
+
+41.105.134.125:81
+
+# Reference: https://www.virustotal.com/gui/file/c9c020781d3ed38594921f19f59594399552cb92f4aa8a29a2003c158612247b/detection
+
+41.105.88.137:81
+
+# Reference: https://www.virustotal.com/gui/file/12afd50df207207fd284d665acaf4a02dbcdde92c8ff4dd93fd7906339ba1c12/detection
+
+41.105.248.35:81
+
+# Reference: https://www.virustotal.com/gui/file/386ae5a3d275c6016f20a2f3cf38648cc87f87aafaf58044c279258a6802b66d/detection
+
+41.111.54.89:81
+
+# Reference: https://www.virustotal.com/gui/file/f977bc8e009d6172ff35800bef74f3f488a5d5cd13e1f24a587496d87c61822e/detection
+
+197.207.175.122:81
+
+# Reference: https://www.virustotal.com/gui/file/3e046f72cd6cdfcedc003fbc6e515d78f023fa4c2262a3586609174a7f7a4c07/detection
+
+fotosdecuentas2.no-ip.biz
+mandanga.blogdns.com
+
+# Reference: https://www.virustotal.com/gui/file/929a4df7444925f3dffdaa9c90798a788c3d6f27cc1a7b1e702a9768bd69be89/detection
+
+amirafiqmal.sytes.net
+
+# Reference: https://www.virustotal.com/gui/file/45221e89ad4dfda5e2148c1b58eb2e027e85a275b69a0f180b0a3dc38f0c14f3/detection
+
+178.204.242.122:25565
+
+# Reference: https://www.virustotal.com/gui/file/59ffaa0fed59e78191435dd5b978679f179b071706fa6a25a9bf90fff6521597/detection
+
+105.103.91.224:2017
+
+# Reference: https://www.virustotal.com/gui/file/292f5bdc1c7c6d314004b6202aafe3ebcb1a83e96eb9652c82fad120e6d949b2/detection
+
+adeladel00.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/e529a1d37ba3b7b139e72471664da37a6ced2fc6f47c63cdbd8b8e3876d726d7/detection
+
+asma11.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/ce67905955c66ab330daa59b4e93ee5d9c0e27a76bf45b915b17afad2bee5750/detection
+
+adammarsam.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/cd11b1c3b8493c479db2eeb0449bd1c54131dcc3413d8aaea2ba8a3df5d55856/detection
+
+102.186.74.57:1177
+hacker1231.myftp.biz
+
+# Reference: https://www.virustotal.com/gui/file/f0bfa7135d4486854054e7a7de14fee7aa659d593a80f538beaeaf6d07a18166/detection
+# Reference: https://www.virustotal.com/gui/file/686a6c2eca050680ff07e0566b8d189d83d878e5f60ea7da4f58ad8f54ea45b3/detection
+# Reference: https://www.virustotal.com/gui/file/059d561bbe8d1545f992312f65fc8c7c6943819291f01fa69e6e25aa83964ce2/detection
+# Reference: https://www.virustotal.com/gui/file/47b44ff1262ceb0eb3514bb19505c2fe0fa822b5bd18855a8429a05cefddcfed/detection
+# Reference: https://www.virustotal.com/gui/file/a8f8eff61aae428e4ff4c7d329eaa2752f04bc581e72bf5293e67418a5275096/detection
+# Reference: https://www.virustotal.com/gui/file/25684d4c82d2f0d5d1782eb12ca976060fadf2d675d9a1218f573784bbc0fafa/detection
+# Reference: https://www.virustotal.com/gui/file/41351a95f1451c75ed85dc34c96b609138dcd60d796ce2087d02de84bcacca8c/detection
+# Reference: https://www.virustotal.com/gui/file/a7314d10f6805553838fb422f59c0757f2f492ab9f23aa35c72333eed80a7a2c/detection
+# Reference: https://www.virustotal.com/gui/file/ef7580b245e2b6776882b21d2cc72e64ecb43124fe3ddd4714763c776e8fa033/detection
+# Reference: https://www.virustotal.com/gui/file/02e0333146def4768eba9bc5278cf2d21d99e324234a3ad13c707e9b843daa75/detection
+# Reference: https://www.virustotal.com/gui/file/8b5635d658cccc475755876546faefeb53c85cfb468ff808122a82ca2076b935/detection
+# Reference: https://www.virustotal.com/gui/file/977150c7e082939db56431c4f5b46bccba89179ba595fcf7ae907689992027bb/detection
+# Reference: https://www.virustotal.com/gui/file/2c0060db96c41fc39182b83db92d29865a1c4bd33d96425606e19691d8bbb1f2/detection
+# Reference: https://www.virustotal.com/gui/file/3aaf8b51f35175446a0db2725e390ab8865104e37fab2042cb331b172bda60a4/detection
+
+178.73.192.45:1166
+178.73.192.8:1166
+178.73.218.37:1166
+179.43.143.184:1166
+179.43.143.188:1166
+188.126.90.15:1166
+188.163.42.57:1166
+188.163.43.75:1166
+46.118.86.19:1166
+46.246.12.11:1166
+46.246.14.5:1166
+46.246.14.69:1166
+46.246.26.43:1166
+46.246.26.68:1166
+46.246.4.42:1166
+46.246.4.9:1166
+46.246.6.10:1166
+46.246.6.2:1166
+46.246.6.8:1166
+46.246.80.13:1166
+46.246.80.9:1166
+46.246.84.16:1166
+46.246.84.17:1166
+46.246.86.3:1166
+46.246.86.8:1166
+
+# Reference: https://www.virustotal.com/gui/file/5cd0cfcda3e335adabb04d0d1dae086f87fcc2d5ab6aa1b4f78b3776daf331f4/detection
+# Reference: https://www.virustotal.com/gui/file/75ec831fb0a18aef8be8e35c5b7f323c06d62cf8eae1b43a5c310e90ec2d2eb2/detection
+
+178.73.192.74:1177
+178.73.192.8:1177
+179.43.143.184:1177
+179.43.143.188:1177
+188.163.43.75:1177
+46.246.12.39:1177
+46.246.12.9:1177
+46.246.14.37:1177
+46.246.4.9:1177
+46.246.6.10:1177
+46.246.80.13:1177
+46.246.84.16:1177
+46.246.86.73:1177
+
+# Reference: https://www.virustotal.com/gui/file/d1f80f13ba4b459c52c183a5116dd331d8488151795021d6cae9f3e37441f05b/detection
+# Reference: https://www.virustotal.com/gui/file/14d2a6529de7dacd82e81ba4aa919d38325276ded2586adaa288a8903f01bf07/detection
+
+37.239.13.5:2222
+93.182.172.133:2222
+scsc313.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/e6803f52b2b2f2941857fce408fd6d18637146c3a2dcae666c397dc0b2cdc3e8/detection
+# Reference: https://www.virustotal.com/gui/file/cd95a3bdb46555d5160562c3b42d972a5d4841e0a099fd8bc054a55e91784c46/detection
+
+jduhudhjwehuwe.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/1450903d9ec782796b9c01a25c94e3aa8594e027bf6693b2761fa0cde3f9bbfd/detection
+
+141.255.144.234:5656
+
+# Reference: https://www.virustotal.com/gui/file/a4463cdd77c5a1ade582a935aad6bd1388d76cbffc09bc3380962aae4786205b/detection
+
+dou7a.no-ip.biz
+doxall.no-ip.biz
+dr-fares.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/7bc5ed12f076a174ab2b7e39ace5f88cfe695c75f3bc67701f42736be6de04a7/detection
+
+88.111.236.191:21000
+dllhost.xyz
+
+# Reference: https://www.virustotal.com/gui/file/e4a60c43abad53c493a4f3ea13d14419b891a8e4b128f3177df60b30c157eef8/detection
+
+testewewewe.chickenkiller.com
+
+# Reference: https://www.virustotal.com/gui/file/fea35ca9cf90111c7bece2db783d2ac8a9fd5d42ff8a04d52bbe1d5a40ce9f50/detection
+
+1746.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/78547578fff5ee4d550b415e9fe2e9c9df2b39e2f01f1bb1f3aa83b55bd4398b/detection
+
+175.120.73.74:5552
+aduino.p-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/88e5235fd7945229de1b451d7a39ca5db8830f772d8e122803bc56149e1927a0/detection
+
+176.210.53.44:6666
+test213.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/251fffa15a1416c60c0016d91c3c966277e15325304a10b17eef63f7da2d3049/detection
+
+178.73.218.77:9001
+151.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/da5a21347e1a4b4b78ec27cfee10a591a40fec7698ae3aa1a9780fd376a4c32c/detection
+# Reference: https://www.virustotal.com/gui/file/785c026fa648587a3ba97e0036482d964865887e7f98def53b1b58b77934a2d8/detection
+# Reference: https://www.virustotal.com/gui/file/70ee11424fa96d81ecbd1dd9de32b8f0cabb08c02d22461d10e29914f1131e4d/detection
+
+181.141.14.102:3466
+181.141.2.156:3466
+46.246.26.17:3466
+navy3466.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/80f435b23288ff319dd463cf30ac09ec1bbf517d1704627ef8379a62d774defb/detection
+# Reference: https://www.virustotal.com/gui/file/4aea619145ae29196981c0a62cc28dff93b16690a08c9d4e7dd9b269983c0c04/detection
+# Reference: https://www.virustotal.com/gui/file/336a231a591aff421e767aa4c590eace4d59c506ef36101015b5cc9cccb181e7/detection
+# Reference: https://www.virustotal.com/gui/file/2cda796c5a5fb01aa218716db079601c8eed2a2e80e659058f3edd29d994196c/detection
+
+178.73.218.12:8000
+178.73.218.17:8000
+46.246.14.16:8000
+46.246.82.3:8000
+newssssssssssssss.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/2b859e5298892304a330c32e4ebd162bf8c103953cec0f76879ccd0d72fe7d8e/detection
+
+nein.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/187cd133ea4cfe055b90fc1fb0b8ca6e06af6a9b6a5cb928ec8b2ecb839aec62/detection
+
+mmd921uwcsadfg4.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/f1e4fd8579dd71bb4c265fa69c730982641642ce18bb59f1121710a41bfecb7e/detection
+# Reference: https://www.virustotal.com/gui/file/609e45c4baa297b7550e57b36ac0e7211207dc0b9598a4de128c94b5bf257e48/detection
+
+orjin.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/0d1083cfecdeb0b1c1325fa8b8edaa3b7c35ed9222a4ee0e0efaaad4c2ffa38e/detection
+
+141.255.145.7:4444
+141.255.146.139:4444
+141.255.152.212:4444
+141.255.152.34:4444
+141.255.153.172:4444
+141.255.153.233:4444
+141.255.156.42:4444
+141.255.158.93:4444
+177.63.243.164:4444
+177.82.177.2:4444
+177.82.177.243:4444
+177.82.177.247:4444
+177.82.48.136:4444
+177.82.49.224:4444
+177.82.54.117:4444
+179.234.102.210:4444
+187.57.9.222:4444
+27.81.118.11:4444
+windowslauncher.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/a3a8b02500027903f68cd92d4e802cb29edaa52b09e834b6cb77a47627d937f5/detection
+
+miningrus1.click

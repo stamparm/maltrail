@@ -1,0 +1,88 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: WizardUpdate
+
+# Reference: https://www.microsoft.com/security/blog/2022/02/02/the-evolution-of-a-mac-trojan-updateagents-progression/
+
+d35ep4bg5x8d5j.cloudfront.net
+d7rp2fva69arq.cloudfront.net
+daqi268hfl8ov.cloudfront.net
+dpqsxofvslaxjaiyjdok.s3.amazonaws.com
+ekogidekinvgwyzmeydw.s3.amazonaws.com
+events.optimizerservices.com
+grxqorfazgqbmzeetpus.s3.amazonaws.com
+lnzjvpeyarvvvtljxsws.s3.amazonaws.com
+oldbrlauserz.s3.amazonaws.com
+phdhrhdsp.s3.amazonaws.com
+qqirhvehhnvuemxezfxc.s3.amazonaws.com
+svapnilpkasjmwtygfstkhsdfrraa.s3.amazonaws.com
+tnkdcxekehzpnpvimdwquzwzgpehlnwgizrlmzev.s3.amazonaws.com
+xyxeaxtugahkwrcvbzsw.s3.amazonaws.com
+
+# Reference: https://twitter.com/sysopfb/status/1532442456343691273
+# Reference: https://www.jamf.com/blog/updateagent-adapts-again/
+# Reference: https://gist.github.com/sysopfb/19abb48672e940e778ec591c5028230c
+
+d2u7maudpwyo3n.cloudfront.net
+qolveevgclr.activedirec.com
+shhxpxrfcuocurentw.s3.amazonaws.com
+vrdazgynlt.comsysbuf.com
+vzhqu.snapitool.com
+xrcpsvz.snapitool.com
+
+# Reference: https://twitter.com/virusbtn/status/1526881288317243393
+# Reference: https://twitter.com/r3dbU7z/status/1647805038419476481
+# Reference: https://www.virustotal.com/gui/file/ac86512a483e31376c7465c7a6dc42d6c8d8b13e9d4d50c34e7cb982f7af1f0e/detection
+# Reference: https://www.virustotal.com/gui/file/212a8ea6003bbc660593b87d3ffe5ff844729c33407adc691c5932f98309ef5e/detection
+# Reference: https://www.virustotal.com/gui/file/ec4c9269a0259c35ac174ffe8d146b008fe1345c7055107c66b4f97382e509e2/detection
+
+optimizedevice.com
+etbnu.optimizedevice.com
+rgpypgqt.optimizedevice.com
+kaeqxczotdifgni.s3.amazonaws.com
+titrepljkdsuurm.s3.amazonaws.com
+tzpzqqhhphrshua.s3.amazonaws.com
+vrdazgynlt.comsysbuf.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1649674885319335936
+# Reference: https://www.virustotal.com/gui/file/965c27c2391651d198396be03ac91850134bbcef3e7871b469d5cdacd154e170/detection
+# Reference: https://www.virustotal.com/gui/file/939cebc99a50989ffbdbb2a6727b914fc9b2382589b4075a9fd3857e99a8c92a/detection
+# Reference: https://www.virustotal.com/gui/file/5f8b8f062e827b6aa2e029de43ecdaf068076a82c32a766ebe6e232ca3ccd2c7/detection
+# Reference: https://www.virustotal.com/gui/file/33a354c40ba1a59a9cadb0c13468688eb36665539c287dd7c6f515960964fd16/detection
+# Reference: https://www.virustotal.com/gui/file/ac86512a483e31376c7465c7a6dc42d6c8d8b13e9d4d50c34e7cb982f7af1f0e/detection
+
+activedirec.com
+comhelpermodule.com
+dynamiclush.com
+freemyvpn.com
+goldenpdf.com
+hotrodvpn.com
+plannervibe.com
+vastpdf.com
+diighfivhvgh.vastpdf.com
+dltedfjpmnv.streamslights.com
+fantaxy025025.activedirec.com
+gcwoekcbcvc.plannervibe.com
+guloasraowtic.goldenpdf.com
+gwkjjitxobksj.freemyvpn.com
+gxzkfmqkmi.vastpdf.com
+hebdiuxj.vastpdf.com
+irssoliruuuj.freemyvpn.com
+jnldhptcoc.hotrodvpn.com
+may0896170084.activedirec.com
+mdjfpdpn.goldenpdf.com
+mvap.comhelpermodule.com
+nfkwpzplcc.freemyvpn.com
+nmrsgojq.vastpdf.com
+ntmwu.hotrodvpn.com
+osgrtrqi.goldenpdf.com
+priv.activedirec.com
+qolveevgclr.activedirec.com
+rpqhnhxry.freemyvpn.com
+sasg.activedirec.com
+sfmmmhtqyhlnd.goldenpdf.com
+sftwkvedlqplh.goldenpdf.com
+sskiuaptplgidpb.freemyvpn.com
+utlvvtpyczdjbfyh.vastpdf.com
+xcuxkxtcxodmo.dynamiclush.com

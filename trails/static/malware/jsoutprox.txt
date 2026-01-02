@@ -1,0 +1,177 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/Racco42/status/1206561309514440704
+
+91.189.180.199:9989
+
+# Reference: https://twitter.com/Racco42/status/1257571120619950080
+# Reference: https://app.any.run/tasks/1cdf0023-aab0-4171-a429-389ec76e7b14/
+# Reference: https://www.virustotal.com/gui/file/03a80ceb3959f26b193175fc005bf418c4dc47b1e8d725e63a17a1418774b4b9/detection
+
+151.106.14.155:9060
+185.219.221.238:9050
+194.5.97.84:9989
+baccin.zapto.org
+posssdhm.ddns.net
+protogoo.ddnsking.com
+
+# Reference: https://twitter.com/Racco42/status/1277679773494530060
+# Reference: https://app.any.run/tasks/0e4b7c7b-01ab-44d4-96c8-58987c93a226/
+
+198.144.149.24:7098
+atjakataindospa.hopto.org
+
+# Reference: https://twitter.com/Racco42/status/1303370722363027459
+# Reference: https://app.any.run/tasks/c06a30a4-8724-486f-a15d-243f85fc3b6c/
+# Reference: https://www.fortinet.com/blog/threat-research/adversary-playbook-javascript-rat-looking-for-that-government-cheese
+# Reference: https://www.virustotal.com/gui/file/f1027d6f01718030a66872a82134418984c2de82e1aff32cb7cc106bf8d3375a/detection
+
+151.106.60.163:9895
+185.195.79.210:9895
+myabiggeojs.myftp.biz
+
+# Reference: https://app.any.run/tasks/28c107c6-754e-4f43-81f0-d4f29de8005f/
+
+185.19.85.169:5445
+carrinifho.hopto.org
+
+# Reference: https://twitter.com/Racco42/status/1323998737836974081
+
+185.19.85.169:6001
+dilahoste.servebeer.com
+
+# Reference: https://app.any.run/tasks/a8cc0cb9-9068-47c5-8bf8-038e711cfffe/
+
+185.158.249.72:4090
+gentos.myq-see.com
+
+# Reference: https://twitter.com/Racco42/status/1329514372784394241
+# Reference: https://app.any.run/tasks/cfb844bb-624d-4de2-ba12-49428f7bfa70/
+
+185.19.85.169:6886
+tuansibe.serveftp.com
+
+# Reference: https://twitter.com/Racco42/status/1329514036116025345
+# Reference: https://app.any.run/tasks/2bfbfb6a-c6fd-4863-9b95-946afeca0246/
+
+103.6.219.7:4090
+facoos.myq-see.com
+
+# Reference: https://app.any.run/tasks/674259d3-a080-4e5f-ad78-0e0bad98ce6b/
+
+154.21.15.45:9097
+rbpadeepna.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/c10ea9b5aade9e98b7c87a6926fed6356d903440a17590c519aec7a54e1e5165/detection
+
+185.19.85.156:9060
+afghphae.gotdns.ch
+
+# Reference: https://www.virustotal.com/gui/file/8609210993f4ebc6aa5332b0e5ebe67720b8721e27fcee79fc82a1c40b587a44/detection
+
+panarmjsdrew.gotdns.ch
+
+# Reference: https://app.any.run/tasks/94b2e6b8-0ae5-4348-9a71-458a77cecf98/
+
+185.19.85.169:6886
+gillnaman.theworkpc.com
+
+# Reference: https://app.any.run/tasks/6e7216b8-2cad-49bc-99f5-13c1aa7bfa80/
+
+tukiasema.fi/result/
+185.227.82.72:7909
+prosecondusibbdulo.gotdns.ch
+
+# Reference: https://twitter.com/Racco42/status/1402710878634512385
+# Reference: https://app.any.run/tasks/25f6b34b-c1a7-455d-bcd6-38cf2ffd77e6/
+
+185.19.85.169:9898
+kundecamton.serveftp.com
+
+# Reference: https://twitter.com/Racco42/status/1410355291221336065
+# Reference: https://app.any.run/tasks/8d0a8190-949f-4f8b-a559-b3ea14f3528a/
+
+185.19.85.169:7272
+dilideanter.zapto.org
+
+# Reference: https://twitter.com/Racco42/status/1420052739342675970
+# Reference: https://app.any.run/tasks/132f7241-39b9-4078-a04b-59a24e0b4336/
+
+79.134.225.32:6540
+gandahopter.ddns.net
+
+# Reference: https://app.any.run/tasks/32f40e92-3691-40ac-970e-ef3665466bf0/
+
+185.140.53.173:8975
+priidia.3utilities.com
+
+# Reference: https://twitter.com/petrovic082/status/1468153147252170757
+# Reference: https://app.any.run/tasks/26dd1750-a1f6-4616-a922-84644ee4aa88/
+
+79.134.225.98:5090
+cccicpatooluma.hopto.org
+
+# Reference: https://blogs.quickheal.com/multi-staged-jsoutprox-rat-targets-indian-cooperative-banks-and-finance-companies/
+# Reference: https://otx.alienvault.com/pulse/6176d3bc5a022fcaf2adf927
+
+apatee40rm.gotdns.ch
+dirrcharlirastrup.gotdns.ch
+feednet.myftp.biz
+marcelbosgath.zapto.org
+mathepqo.serveftp.com
+riyaipopa.ddns.net
+ruppamoda.zapto.org
+uloibdrupain.hopto.org
+
+# Reference: https://app.any.run/tasks/28621859-93c8-4cd2-9dd3-1463e1d53f69/
+
+79.134.225.79:9897
+
+# Reference: https://app.any.run/tasks/827a4445-db32-41c7-9777-f9f81e8b6884/
+
+91.192.100.11:8008
+hantopetrigd.ddns.net
+
+# Reference: https://twitter.com/petrovic082/status/1641057643912364033
+# Reference: https://app.any.run/tasks/6c532885-67cd-4fbc-93a0-0529bf42e74e/
+
+91.192.100.33:8911
+mewusengalsety.serveblog.net
+
+# Reference: https://twitter.com/bigmacjpg/status/1658860456360935432
+# Reference: https://www.virustotal.com/gui/file/77f41889804194e7766d75b8342ec8ec046d34b91bee77af0890e2b68c6787b1/detection
+
+79.134.225.40:9054
+desantrytoreh.servegame.com
+
+# Reference: https://www.virustotal.com/gui/file/85e69d7163b781f3668b0420c507095800e8ae3d4c6032bf6cf0d357bd387d36/detection
+
+79.134.225.40:8189
+jusdintinhoper.servebeer.com
+
+# Reference: https://app.any.run/tasks/b04570ed-a7b7-4f1b-aa61-e89c2cd2b990/
+
+91.192.100.14:4009
+manbaseredanseker.servebeer.com
+
+# Reference: https://www.resecurity.com/blog/article/the-new-version-of-jsoutprox-is-attacking-financial-institutions-in-apac-and-mena-via-gitlab-abuse
+# Reference: https://www.virustotal.com/gui/file/23a70784534361d01870b4cf39b88f955e4df614ee6129400d10f826d417eb43/detection
+
+185.244.30.218:8843
+43.228.157.158:8843
+buakzavytfopgsaxcz.ddns.net
+foitkdndboptpddsup.ddns.net
+hgtikdnlipotpfgder.ddns.net
+hudukpgdgfytpddswq.ddns.net
+kiftpuseridsfryiri.ddns.net
+mdytreudsgurifedei.ddns.net
+suedxcapuertggando.ddns.net
+ykderpgdgopopfuvgt.ddns.net
+ywetxpgvydaopdopiu.ddns.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.140.53.36/relations
+
+fashcavite.duckdns.org
+keepo331.ddns.net
+spadastroo.gotdns.ch

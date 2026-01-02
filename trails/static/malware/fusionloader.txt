@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.inde.nz/blog/a-cheaters-dilemma
+# Reference: https://www.virustotal.com/gui/file/e108e3c341322f281440ddfa10143a2481322815d6205c6c1d649c40a78bec30/detection
+
+collapselauncher.space
+fusionhacks.pro
+veruscheats.site

@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: vvs stealer
+
+# Reference: https://x.com/solostalking/status/1917937413814448637
+# Reference: https://app.validin.com/detail?find=VVS%20STEALER&type=raw&ref_id=67656be5a7e#tab=host_pairs (# 2025-05-01)
+# Reference: https://app.validin.com/detail?find=VVS%20%24tealer&type=raw&ref_id=a788baf1196#tab=host_pairs (# 2025-05-01)
+
+http://80.78.28.147
+delfiauto.lt
+delfiauto.ltd
+delfiautos.lt
+vvs.cymru
+lote45.onedriver.com.br
+solarbr.onedriver.com.br
+tupy.onedriver.com.br

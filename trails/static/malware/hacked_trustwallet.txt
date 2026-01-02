@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/TrustWallet/status/2004316503701958786
+# Reference: https://x.com/tuckner/status/2004335087920550012
+
+metrics-trustwallet.com
+api.metrics-trustwallet.com

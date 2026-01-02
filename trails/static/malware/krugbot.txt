@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/albertzsigovits/status/1182657546550730752
+# Reference: https://github.com/silence-is-best/c2db/blob/master/README.md#krugbot
+
+raiseyourdongers.wtf
+
+# Generic trails
+
+/absc/index.php

@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: nfcstealer, nextmind stealer
+
+# Reference: https://x.com/Fact_Finder03/status/1956696096752783631
+
+scannfc.info

@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://symantec-enterprise-blogs.security.com/threat-intelligence/cloud-espionage-attacks
+
+http://157.245.159.135
+http://89.42.178.13
+157.245.159.135:443
+89.42.178.13:443
+30sof.onedumb.com

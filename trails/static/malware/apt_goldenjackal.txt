@@ -1,0 +1,49 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/goldenjackal-apt-group/109677/
+# Reference: https://twitter.com/k3yp0d/status/1693249804166422939
+# Reference: https://www.virustotal.com/gui/file/6407fffce3c28fc5933c792b5a6ac7a42f4073e1544a4cf0de1b417d3994b9ea/detection
+
+abert-online.de/meeting/plugins.php
+acehigh.host/robotx.php
+ajapnyakmc.com/wp-content/cache/index.php
+assistance.uz/admin/plugins.php
+asusiran.com/wp-content/plugins/persian-woocommerce/include/class-cache.php
+asusiran.com/wp-content/themes/woodmart/inc/modules/cache.php
+cnom.sante.gov.ml/components/com_avreloaded/views/popup/tmpl/header.php
+croma.vn/wp-content/themes/croma/template-parts/footer.php
+den-photomaster.kz/wp-track.php
+djstuff.fr/wp-content/themes/twentyfourteen/inc/footer.php
+eyetelligence.ai/wp-content/themes/cms/inc/template-parts/footer.php
+finasteridehair.com/wp-includes/class-wp-network-statistics.php
+gradaran.be/wp-content/themes/tb-sound/inc/footer.php
+info.merysof.am/plugins/search/content/plugins.php
+invest.zyrardow.pl/admin/model/setting/plugins.php
+mehrganhospital.com/wp-includes/class-wp-tax-system.php
+meukowcognac.com/wp-content/themes/astra/page-flags.php
+nassiraq.iq/wp-includes/class-wp-header-styles.php
+new.jmcashback.com/wp-track.php
+news.lmond.com/wp-content/themes/newsbook/inc/footer.php
+pabalochistan.gov.pk/new/wp-content/cache/functions.php
+pabalochistan.gov.pk/new/wp-content/themes/dt-the7/inc/cache.php
+pabalochistan.gov.pk/new/wp-content/themes/twentyfifteen/content-manager.php
+pak-developers.net/internal_data/templates/bottom.jpg
+pak-developers.net/internal_data/templates/template.html
+perlesoie.com/wp-content/plugins/contact-form-7/includes/cache.php
+perlesoie.com/wp-content/themes/flatsome/inc/classes/class-flatsome-cache.php
+sbj-i.com/wp-content/plugins/wp-persian/includes/class-wp-cache.php
+sbj-i.com/wp-content/themes/hamyarwp-spacious/cache.php
+sokerpower.com/wp-includes/class-wp-header-styles.php
+tahaherbal.ir/wp-includes/class-wp-http-iwr-client.php
+technocometsolutions.com/wp-content/themes/seofy/templates-sample.php
+unitechlink.com/wp-content/cache/cache-functions.php
+weblines.gr/gallery/gallery_input.php
+wetter-bild.de/plugins.php
+winoptimum.com/wp-includes/customize/class-wp-customize-sidebar-refresh.php
+
+# Reference: https://www.welivesecurity.com/en/eset-research/mind-air-gap-goldenjackal-gooses-government-guardrails/
+
+http://196.29.32.210
+http://83.24.9.124
+83.24.9.124:443

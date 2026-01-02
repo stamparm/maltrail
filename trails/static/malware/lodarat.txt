@@ -1,0 +1,394 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: 888rat, gaza007, loda, lodalogger, lodarat
+
+# Reference: https://twitter.com/James_inthe_box/status/1047193599660576768
+
+torrentfreak.duckdns.org
+
+# Reference: https://twitter.com/DynamicAnalysis/status/1166433211548913668
+
+79.134.225.71:7070
+plunder.nsupdate.info
+
+# Reference: https://twitter.com/425a_/status/1166792682812952576
+# Reference: https://app.any.run/tasks/9654615e-a7d4-4f08-b29a-3a05d7012646/
+
+172.111.184.248:5000
+faith.dns-cloud.net
+
+# Reference: https://app.any.run/tasks/919aede4-0cb3-42c6-a2df-cda9221cf38b/
+
+monlait-57586.portmap.host
+193.161.193.99:37659
+
+# Reference: https://app.any.run/tasks/a0ac054a-1776-4121-978a-c5e5dfcd9bc0/
+
+adomazmc.duckdns.org
+
+# Reference: https://app.any.run/tasks/c4f94b73-2d0d-40e1-9c1b-d0c34b0c37d7/
+
+battying.duckdns.org
+88.150.227.112:11361
+
+# Reference: https://app.any.run/tasks/376bbb21-01c0-4ebf-8441-2acd7bdcce80/
+
+79.142.76.244:11361
+
+# Reference: https://twitter.com/killamjr/status/1192967390910394368
+# Reference: https://zerophagemalware.com/2018/01/23/maldoc-rtf-drop-loda-logger/
+# Reference: https://app.any.run/tasks/279e3b22-239a-470a-b3aa-63e3cefd8e75/
+
+193.161.193.99:37659
+monlait-57586.portmap.host
+
+# Reference: https://www.virustotal.com/gui/file/a402b91d84f226b0cbbe9c5f4fd8e079ace27a8dc66047d6e10685462e2b26bf/detection
+
+142.44.161.51:7070
+
+# Reference: https://twitter.com/killamjr/status/1221484462342459392
+# Reference: https://app.any.run/tasks/5bb47889-64a6-40bf-a77d-0ba2b2578942/
+
+79.142.76.244:64735
+breakthrough.hopto.org
+
+# Reference: https://blog.talosintelligence.com/2020/02/loda-rat-grows-up.html
+# Reference: https://otx.alienvault.com/pulse/5e4460cce66c474d5bb319a1
+
+4success.zapto.org
+breakthrough.hopto.org
+success20.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/e17570bb819f551412fec0cd61acc3b9d832f8990894c392c44ff00f9958d801/detection
+
+79.142.76.244:53916
+
+# Reference: https://www.virustotal.com/gui/file/e80013a61796dac4c6d90283a2b956e005605d188d5127ff57552bfad64ecac7/detection
+
+79.142.76.244:2089
+
+# Reference: https://www.virustotal.com/gui/file/861f52459f96e434a6e5f9a96153e781f31cfa60d9979b7fa94ee42892a674e7/detection
+
+79.142.76.244:4676
+
+# Reference: https://www.virustotal.com/gui/file/fbdc8ef710f6210128d96f4a1b195c11ae0c30e526d552d792824239460e23d7/detection
+
+88.150.227.112:4676
+
+# Reference: https://blog.talosintelligence.com/2020/09/lodarat-update-alive-and-well.html
+# Reference: https://www.virustotal.com/gui/file/0d181658d2a7f2502f1bc7b5a93b508af7099e054d8e8f57b139ad2702f3dc2d/detection
+# Reference: https://www.virustotal.com/gui/file/05d2fa5bb97f37edaaff99f58ffedbd438e928fb3881ede921a19b07fb884b0b/detection
+# Reference: https://www.virustotal.com/gui/file/866397c8db26190c5a346bd863d9beb81e53d96011af9a3be6eeb713bbb57287/detection
+# Reference: https://www.virustotal.com/gui/file/2d317bcccea4739b2deefcc3b14cf5eafe147162f62c5ff1288db3635b5c3f10/detection
+
+172.111.203.72:4000
+174.126.51.178:1543
+46.243.136.238:4000
+roodan888tools.atwebpages.com
+
+# Reference: https://www.virustotal.com/gui/file/1d2f52ed77b7e4cf1e9cbdb849b17fe0e8c6c75e4584a473368a0affc6cdfc42/detection
+
+107.175.145.170:1336
+
+# Reference: https://www.virustotal.com/gui/file/32398f9c7ae23b1efbaf973b7ee2c02bc8e1e39136ed2b84d66b5bb1c21d20c2/detection
+
+194.187.251.163:9735
+setupbases.awsmppl.com
+
+# Reference: https://www.virustotal.com/gui/file/5452c3094aa6f0c9502bdd114a577b6fd5ce65c9b9fe40f24b0aa7c2d121d1cf/detection
+
+82.246.130.70:1605
+lazytoxic.ddns.net
+
+# Reference: https://twitter.com/Racco42/status/1334846921568088064
+# Reference: https://app.any.run/tasks/c7fc7a6b-0d28-4994-a44c-0e07ebaf7d98/
+
+178.162.204.238:50253
+tmlo.awsmppl.com
+
+# Reference: https://twitter.com/bl4ckh0l3z/status/1344624887713947648
+# Reference: https://www.virustotal.com/gui/file/fb16f8f7d8b7432fbf799a645bee85f621fe8aae4f6b2bbdbcb981e420516476/detection
+
+193.161.193.99:48855
+hackerisback-48855.portmap.host
+
+# Reference: https://blog.talosintelligence.com/2021/02/kasablanka-lodarat.html
+# Reference: https://otx.alienvault.com/pulse/6022bda96385aadedec48a26/
+
+av24.co
+bangladesh-bank.com
+bdpolice.co
+bracbank.info
+isiamibankbd.com
+lap-top.xyz
+zep0de.com
+info.v-pn.co
+
+# Reference: https://twitter.com/wwp96/status/1371439283563823110
+# Reference: https://app.any.run/tasks/dfd6425b-3acd-4a6f-9220-3649557d0e42/
+
+69.12.88.10:80
+
+# Reference: https://www.virustotal.com/gui/file/c3c96926ad669bc7b7d227e92576aa525b36ed34e101f8a90577fabd5e186eeb/detection
+
+194.5.98.212:4001
+
+# Reference: https://www.virustotal.com/gui/file/53b7637945616f51b0ffa4de5c35685b87b2039473ebc4f69a1fb581c6236d19/detection
+
+188.244.63.241:4000
+
+# Reference: https://twitter.com/pollo290987/status/1410547188699176960
+# Reference: https://www.virustotal.com/gui/file/ee0abbecbe6b11ec824eae85a9b2a3a320cb705770c201361409ea3e5c6bbb73/detection
+
+79.159.238.125:49811
+
+# Reference: https://www.virustotal.com/gui/file/ad35057e3d652b30e43c1812c0147e5307ccf6aa92046eb2e00725d26d7664b1/detection
+
+78.189.177.240:4000
+
+# Reference: https://twitter.com/malwrhunterteam/status/1449375270910234628
+# Reference: https://twitter.com/LukasStefanko/status/1450007904413749248
+# Reference: https://www.virustotal.com/gui/file/7090c9075201589ca10073aa7292eceed05dc95d5fa792d7607aa73a6b94284b/detection
+
+193.161.193.99:50727
+888ratsetup-50727.portmap.host
+
+# Reference: https://twitter.com/alberto__segura/status/1450372347572244485
+# Reference: https://www.virustotal.com/gui/file/6c454bda271d459ed3325ac77ef503972d170d099f53623c057d02d194a295de/detection
+
+193.161.193.99:31594
+0pcnerd0-31594.portmap.host
+
+# Reference: https://www.virustotal.com/gui/file/2a53718b727ac8a57a3845cb79ca2f8f7cc78709267e89a6b8b0ccbb4f5444ff/detection
+
+207.204.249.34:30040
+
+# Reference: https://www.virustotal.com/gui/file/ae5b35dbed15013e4abf4ec50ee119c70f9d151206e27a77768ab619222252a4/detection
+
+77.78.103.126:5050
+insidentlyururmom.ddns.net
+
+# Reference: https://twitter.com/James_inthe_box/status/1507453853704228867
+# Reference: https://app.any.run/tasks/9e9f5102-66af-4bf0-b69a-5f0fb0c8623c/
+
+3.128.107.74:8080
+
+# Reference: https://www.virustotal.com/gui/file/52d60333dd75c0f9aa6ddefe840f22bb5906319c5f21a8edbfbeb118488df19c/detection
+
+187.20.18.202:32400
+anonimouspuro.ddns.net
+
+# Reference: https://www.welivesecurity.com/2021/09/07/bladehawk-android-espionage-kurdish/
+# Reference: https://otx.alienvault.com/pulse/6139c6cffcb1a0ba0ed60bc5
+
+888-tools.com
+apkup.xyz
+
+# Reference: https://www.virustotal.com/gui/file/0aeea48dc9c774a36110cb4c41168552c7b438b2e5ab16ed91a4e901da8d1299/detection
+
+194.5.98.212:5552
+
+# Reference: https://blog.talosintelligence.com/get-a-loda-this/
+
+193.161.193.99:64721
+catkiller7767-64721.portmap.io
+
+# Reference: https://threatfox.abuse.ch/browse.php?search=tag%3Aloda
+
+109.248.150.140:4000
+13.40.105.36:4000
+165.22.244.84:4000
+178.73.192.65:1199
+185.140.53.161:1999
+185.140.53.198:62748
+192.99.175.89:4000
+194.132.123.93:9800
+194.187.251.163:58867
+194.5.98.212:5005
+195.123.221.123:7842
+46.246.82.70:1199
+79.142.76.244:9735
+
+# Reference: https://twitter.com/r3dbU7z/status/1597741682023608320
+# Reference: https://twitter.com/r3dbU7z/status/1599488540291010560
+# Reference: https://www.virustotal.com/gui/file/00973673a54cfd2a206c7695fa86077d1a1803629d7207b1e5fb295255a25ae2/detection
+
+102.42.212.43:5552
+198.20.177.229:6666
+aboreda.linkpc.net
+secs.publicvm.com
+test202022.ddns.net
+upload.mywire.org
+
+# Reference: https://twitter.com/r3dbU7z/status/1599918165600784384
+
+evilteam.ddnsgeek.com
+genesh.publicvm.com
+munroe.work.gd
+sdf65dsf5df4dfs5555e8.ooguy.com
+semdoublebacks5f.ooguy.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1599920683428982784
+
+arieldon.linkpc.net
+kimo.camdvr.org
+pacsez.linkpc.net
+
+# Reference: https://www.virustotal.com/gui/file/f3a12208a4c61a4a8fbc72a6d52c1b8ba69b08205711f80a05bbb1f3f90129ba/detection
+
+91.109.180.7:4000
+1988.hopto.org
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.loda/
+
+3.141.204.47:27816
+
+# Reference: https://twitter.com/jaydinbas/status/1618944624902692865
+# Reference: https://www.virustotal.com/gui/file/86a95def10c2b7a23b7762126f12203915d83d3d27263cc002f6602c7f01ddd2/detection
+
+185.254.96.226:4000
+
+# Reference: https://twitter.com/James_inthe_box/status/1629225692188782593
+# Reference: https://app.any.run/tasks/f19dfba1-d71e-43b1-867b-e20d8f6a52e6/
+
+194.187.251.115:62848
+
+# Reference: https://www.virustotal.com/gui/file/292a0489b67040746e3ea18988e036b74eaad99d537f0b7f0e2df43dd7b43747/detection
+
+194.5.98.207:4000
+46.246.14.7:4000
+46.246.14.9:4000
+46.246.26.11:4000
+46.246.80.12:4000
+46.246.80.23:4000
+46.246.84.15:4000
+46.246.84.5:4000
+46.246.86.22:4000
+46.246.86.6:4000
+
+# Reference: https://www.virustotal.com/gui/file/fa237d90f2875ec6cabcefc252e1de9f9cc30c49db5d5da151e393352b675133/detection
+
+213.152.162.15:4110
+213.152.162.15:42525
+213.152.162.15:4833
+213.152.162.15:49094
+213.152.162.15:8848
+outside-agent.duckdns.org
+
+# Reference: https://twitter.com/pollo290987/status/1654218416218161153
+# Reference: https://www.virustotal.com/gui/file/c96f47b80211ab0b02937f6fa95f5ae2f2dc521278d2a340cb5d45f1b938a52d/detection
+
+104.128.188.112:8050
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.loda/ (# 15 Jun 2023)
+
+104.243.251.229:5552
+149.50.211.160:7777
+172.111.138.100:5552
+185.241.208.138:4000
+2.58.56.188:4000
+46.105.113.84:4000
+46.246.14.12:1199
+
+# Reference: https://www.virustotal.com/gui/file/4155a4cdb62c2e3849aba731beabc52b8544f0bf7ad8fa17d4da80d757a50d12/detection
+
+80.69.173.234:6942
+tempdomain.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/8d4263b12ae83ca07541c5077b66dff28c40609183f15ca244fcea310fc23e43/detection
+
+185.244.31.57:61
+lexdeerex.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/8f77248b0b07ff8f2ee5c6a18c1257b8ef6d653014df768457792ef2988fc50e/detection
+
+193.161.193.99:53926
+mogrem-53926.portmap.host
+
+# Reference: https://www.virustotal.com/gui/file/2d6b1ad6c5c98ea2c89c0b0d88d8743c89929adae06ffed93ee31cbd993843c2/detection
+
+3.138.180.119:10364
+3.22.15.135:10364
+
+# Reference: https://www.virustotal.com/gui/file/98600c65ed44e40bee4c5e07742c9f7bfd18f1ab2bca469f0ddf5c17581abd76/detection
+
+20.219.120.27:4000
+
+# Reference: https://www.virustotal.com/gui/file/2551a571a99fb4d75cdcb33388ee46757767d949fb098658e38144f77733db97/detection
+
+165.22.244.84:4000
+vbot.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/1aef8bcb98f2c4717c12da09c86794253e11864636cb19c14f9bd53ab5aa3394/detection
+
+147.185.221.180:30225
+
+# Reference: https://www.virustotal.com/gui/file/052fba70767b01cb674b9311a220181a87bdf47161280bb6335c6024e163139c/detection
+
+37.0.14.214:35152
+presh147osidufhj.ddns.net
+
+# Reference: https://twitter.com/1ZRR4H/status/1729713083004641491
+# Reference: https://www.virustotal.com/gui/ip-address/46.246.80.17/relations
+
+http://46.246.80.17
+46.246.80.17:443
+armenia2024.duckdns.org
+poconoconcertchorale.org
+puertocol20.duckdns.org
+servicios-cne.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/1fdbe240bd927bb80694c7f2c73731d1dc2aebe2e2ebe4a2db1a9616c8298251/detection
+
+46.246.26.19:4000
+
+# Reference: https://www.virustotal.com/gui/file/b9cdf70b71fa9f216dd7ad40d77d893ba095059d6f3beb7c4ed9bc5cb46ce784/detection
+
+46.246.82.8:2054
+
+# Reference: https://www.virustotal.com/gui/file/c734a5e8ec10c0a9e8b82f01e96ecadf9888b8a651fe2710630e056590862289/detection
+
+46.246.4.6:4000
+
+# Reference: https://www.virustotal.com/gui/file/292a0489b67040746e3ea18988e036b74eaad99d537f0b7f0e2df43dd7b43747/detection
+
+46.246.12.20:4000
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.loda/ (# 2023-12-17)
+
+167.88.166.159:4000
+171.252.110.10:5736
+213.152.161.20:17149
+45.155.249.183:1337
+
+# Reference: https://www.virustotal.com/gui/file/f70317a8c80a5dd5e7e6be4fa7ad7fa6f78c05b1de3bb6c98978913bc2ae3a27/detection
+
+105.191.48.145:5588
+
+# Reference: https://www.virustotal.com/gui/file/38ddb1173e31e882adfaf20f6f7ddaee582d041504743330d4497a315b097f33/detection
+
+102.101.209.215:5588
+
+# Reference: https://www.virustotal.com/gui/file/84ab74632c5918c7743b2a515eff5404a95b77f6fe46121d4f702ab4d299efa6/detection
+
+141.11.109.151:4000
+
+# Reference: https://x.com/James_inthe_box/status/1795443041769263254
+# Reference: https://app.any.run/tasks/90d9135e-9cdb-4f32-b1e2-15e0de582fbd/
+
+179.43.172.57:4000
+
+# Reference: https://www.virustotal.com/gui/file/1d23cb5e1998f4990da80d6ba99d09dc9feeca91452a885628180035ae23a6c1/detection
+
+46.246.84.65:1199
+
+# Reference: https://www.virustotal.com/gui/file/b26f4df5de6919f4e1a54f1e51d2a743a0db3d3adb0bbf79f367d2f86135b67c/detection
+
+46.246.6.65:1199
+
+# Reference: https://www.rapid7.com/blog/post/2024/11/12/lodarat-established-malware-new-victim-patterns/
+# Reference: https://github.com/rapid7/Rapid7-Labs/blob/main/IOCs/LodaRat/IOC's.txt
+# Reference: https://www.virustotal.com/gui/file/3ee65679547f3a62add9c23d2b7a7b8fa6de8614f8a90a3db24357310f95a19b/detection
+
+dlm1.kro.kr

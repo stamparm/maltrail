@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: moreeggs, pyramid
+
+# Reference: https://x.com/TheDFIRReport/status/1866123912658203055
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/security-brief-ta4557-targets-recruiters-directly-email
+
+http://172.96.139.82
+annetterawlings.com
+christianvelour.com
+davidopkins.com
+jacksallay.com
+johncboins.com
+johnshimkus.com
+julienolsson.com
+lisasierra.com
+markqualman.com
+mikedecook.com
+mitchellspearman.com
+wlynch.com
+a92837f.johnshimkus.com
+pin.howasit.com

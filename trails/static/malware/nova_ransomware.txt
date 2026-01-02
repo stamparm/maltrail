@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/marktsec/Ransomware_Official_Domains?tab=readme-ov-file#nova
+
+novag4k2te3mstt2xq5irywlpaw6edgkpiwgg4t2q7eecisj2qqtvbid.onion
+novaoddh3vxylxqpsfdjprliknbzgbkv6nkazpzu3cvykrgpyzuywryd.onion
+novatd4577pzlvdyy42slydhrhru7fpcflbbxlajcmbfrgzyeis6d3id.onion
+novavdivko2zvtrvtllnq45lxhba2rfzp76qigb4nrliklem5au7czqd.onion
+
+# Reference: https://www.ransomware.live/group/nova
+
+leak7y2247fj7dbb35rpfyxuyaqtwbshiwxp6h35ttzlhrxmhvi4fead.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1955177905065181388
+
+http://144.172.95.78
+ms5fasbpbfpbxmgtrhcspvg5ajmb2tpxdcg7x2wdd6equemuivqi5syd.onion
+
+# Reference: https://www.ransomware.live/group/nova (# 2025-10-01)
+
+novaxtychr6ohlc4zr5its73p6i7unpuhpwoodtzrg2y4w4seytatlid.onion
+pifk3xu3vad6cuxsjll4qjomyaaaoyvnyqppro75pazadzctrrvpdnyd.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1986999617813176748
+
+cceoxb5youzqo2uk7t7274ittlphj6vimzkjtu75yi5grceqozm5znid.onion

@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: nex stealer
+
+# Reference: https://x.com/solostalking/status/1927301429196136689
+# Reference: https://www.virustotal.com/gui/file/107429a7b775aaa8538df99f10afdb8c1078b42aef03dc212d05f07ed6c5ba9f/detection
+
+http://45.88.9.130
+http://45.88.9.146
+nex-stealer.store
+nexp.pro

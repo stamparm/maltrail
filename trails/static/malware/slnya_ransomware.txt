@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: soleenya
+
+# Reference: https://x.com/malwrhunterteam/status/1704788728076435829
+# Reference: https://x.com/malwrhunterteam/status/1852383709518770472
+# Reference: https://www.virustotal.com/gui/file/34dcfdc7d4c450f98de26b0c48bc532a2eb42b058bd9244a7ee0059c3bd84873/detection
+
+xzbltrroh4ocknyi7kj2ucjuw63fhyy23dh6lplydl545d33kbygw2id.onion

@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: lumar stealer, poverty stealer
+
+# Reference: https://twitter.com/g0njxa/status/1681213909141712900
+# Reference: https://app.any.run/tasks/ff200dc8-95d9-4ee8-afad-1ff9a9e83642/
+
+185.253.96.117:2227
+
+# Reference: https://twitter.com/idclickthat/status/1701761250131313079
+# Reference: https://threatfox.abuse.ch/ioc/1149699/
+# Reference: https://securelist.com/crimeware-report-gopix-lumar-rhysida/110871/
+# Reference: https://www.virustotal.com/gui/file/394a309124ec29edb79624fdec9a3c2412e38088dc306afddf97daba9a00adf6/detection
+
+69.46.15.167:2220
+feel-easy.games
+
+# Reference: https://twitter.com/naumovax/status/1716452167538577741
+# Reference: https://tria.ge/231015-rcnzwshe36/behavioral2
+
+146.70.169.164:2227
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Poverty/
+
+146.70.169.164:2227

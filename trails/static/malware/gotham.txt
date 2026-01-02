@@ -1,0 +1,36 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: gotham stealer
+
+# Reference: https://twitter.com/r3dbU7z/status/1699701230300270825
+# Reference: https://twitter.com/r3dbU7z/status/1699765218312630401
+# Reference: https://www.virustotal.com/gui/file/40c5ba301755ec898d9169a80b016d3cb70a5a0a07dd615d98318c45e01b3ce9/detection
+# Reference: https://www.virustotal.com/gui/file/6c44a15dc88f1ba8501aa5d8a1924050a72a488bf5a77ff965651e0d16ec2450/detection
+
+enuygunum.net
+fudfucker.com
+online-bilets.net
+ragez.xyz
+
+# Reference: https://twitter.com/FalconFeedsio/status/1705765083429863720
+# Reference: https://www.virustotal.com/gui/file/2bb685b222dc99c6e5f7cbab7dcbc3589bcb68919af4f9a9cb7612491231d05b/detection
+# Reference: https://www.virustotal.com/gui/file/af907b24a7126a3a1352bfc36c176fbba0c7ce5e3a6e3df569fea571f995b79d/detection
+
+37.221.120.142:2336
+37.221.120.142:443
+37.221.120.142:4748
+gotham.community
+
+# Reference: https://twitter.com/karol_paciorek/status/1706948934298423769
+# Reference: https://www.virustotal.com/gui/ip-address/37.221.120.155/community
+
+37.221.120.155:443
+
+# Reference: https://twitter.com/karol_paciorek/status/1723645410147778561
+# Reference: https://threatfox.abuse.ch/browse/tag/GothamStealer/
+
+http://45.131.2.208
+45.131.2.208:443
+gothamcommunity.com
+gothamcommunity.online

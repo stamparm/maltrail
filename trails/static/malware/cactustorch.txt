@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/securitydoggo/status/1158370884899495936
+# Reference: https://www.virustotal.com/gui/file/6205b0d2e4aa0e6f8a1e7de98bc6eee495d2c29b4ad9c8a15d00db7188743370/detection
+# Reference: https://github.com/stamparm/maltrail/pull/3141/commits/20d91d28b87ac5d8a1e24726843836f62257dee3
+
+basic.photo-cult.com

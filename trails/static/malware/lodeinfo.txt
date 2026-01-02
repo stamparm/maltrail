@@ -1,0 +1,64 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blogs.jpcert.or.jp/en/2020/02/malware-lodeinfo-targeting-japan.html
+# Reference: https://otx.alienvault.com/pulse/5e5d72a634cc90d8e450455d
+# Reference: https://app.any.run/tasks/4a2718d4-f4bd-4f97-80a8-9a40af880530/
+
+http://162.244.32.148
+http://193.228.52.57
+http://45.67.231.169
+
+# Reference: https://twitter.com/Arkbird_SOLG/status/1263105040643878914
+# Reference: https://app.any.run/tasks/90643f1b-1725-4666-afa6-d8934bf31f57/
+# Reference: https://www.virustotal.com/gui/file/641d1e752250d27556de774dbb3692d24c4236595ee0e26cc055d4ab5e9cdbe0/detection
+
+http://103.140.187.183
+
+# Reference: https://blogs.jpcert.or.jp/ja/2020/06/LODEINFO-2.html
+# Reference: https://otx.alienvault.com/pulse/5ee259d95d533681163d3517
+
+http://103.27.184.27
+http://103.204.172.210
+http://133.130.121.44
+http://167.179.101.46
+http://167.179.112.74
+http://172.105.232.89
+http://194.68.27.49
+amebaoor.net
+
+# Reference: https://blogs.jpcert.or.jp/en/2021/02/LODEINFO-3.html
+# Reference: https://www.virustotal.com/gui/file/3fda6fd600b4892bda1d28c1835811a139615db41c99a37747954dcccaebff6e/detection
+
+http://103.140.45.71
+http://139.180.192.19
+http://167.179.65.11
+http://167.179.84.162
+http://45.76.216.40
+evonzae.com
+
+# Reference: https://twitter.com/Metemcyber/status/1555373758709637120
+# Reference: https://www.virustotal.com/gui/file/31c87d9a84c7996a56024c93787de9332099faf707cd8d0166e5af9d491977b8/detection
+
+http://172.104.72.4
+http://172.105.223.216
+http://45.77.28.124
+
+# Reference: https://securelist.com/apt10-tracking-down-lodeinfo-2022-part-i/107742/
+# Reference: https://securelist.com/apt10-tracking-down-lodeinfo-2022-part-ii/107745/
+
+http://103.175.16.39
+http://172.104.112.218
+http://202.182.108.127
+http://5.8.95.174
+dvdsesso.com/11554.htm
+
+# Reference: https://www.macnica.co.jp/business/security/security-reports/pdf/cyberespionage_report_2023.pdf
+# Reference: https://www.virustotal.com/gui/file/7a4fd1cc932b96175055b2940242877cab728a9d7c7ee371cad8438b4e88a812/detection
+# Reference: https://www.virustotal.com/gui/file/632975a3642b0f2a6084880e59ffa19dfa8b08d13ac15b639e1e0ad3bdbf45bd/detection
+# Reference: https://www.virustotal.com/gui/file/f21745cc6306461d1ddb3c35ed6016468ce984bbd64bfb86139a392e3a45c495/detection
+
+http://167.179.106.224
+http://167.179.77.72
+http://185.126.236.166
+http://198.13.33.117

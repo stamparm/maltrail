@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zscaler.com/blogs/security-research/technical-analysis-riseloader
+
+147.45.44.166:3306
+185.209.21.88:3306
+41.216.183.36:3306

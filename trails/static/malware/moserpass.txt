@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: moserpass, moserware, click studios, PASSWORDSTATE
+
+# Reference: https://www.csis.dk/newsroom-blog-overview/2021/moserpass-supply-chain/
+# Reference: https://www.clickstudios.com.au/advisories/Incident_Management_Advisory-01-20210424.pdf
+# Reference: https://otx.alienvault.com/pulse/60898872413f3b439eda02e5
+
+passwordstate-18ed0.kxcdn.com
+passwordstate-18ed1.kxcdn.com
+passwordstate-18ed2.kxcdn.com
+passwordstate-18ed4.kxcdn.com
+passwordstate-18ed5.kxcdn.com

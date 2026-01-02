@@ -1,0 +1,43 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: sectre, voltron
+
+# Reference: https://twitter.com/Jane_0stin/status/1443876440064380946
+# Reference: https://otx.alienvault.com/pulse/6172b10f39505e8db9c38c82
+# Reference: https://yoroi.company/en/research/spectre-v4-0-the-speed-of-malware-threats-after-the-pandemics/
+# Reference: https://app.any.run/tasks/cce00a43-d583-4377-8891-04412d88d055/
+# Reference: https://www.virustotal.com/gui/file/9f8d67fdc1473c31193fb36e7ca37005c9af1c4052f8944c42f4eb0ba6188448/detection
+
+http://176.123.2.79
+archsatrap-uroxin-oarsman.cc
+balmlike-mends-officiates.cc
+conj-lithomancy-behove.cc
+enticement-reconclusion-pairedness.cc
+fley-dothideacea-joker.cc
+healthsomely-bone-idle-rufigallic.cc
+momental-scrooges-hoopster.cc
+nonradiancy-requisit-mank.cc
+surplus-twentyfourmo-protecting.cc
+voltaire-overproduction-bordering.cc
+
+# Reference: https://medium.com/walmartglobaltech/spectre-spc-v9-campaigns-and-updates-546c2e65e247
+
+chairermisassayssebate.xyz
+cyanoauricharesstealthful.xyz
+dystopianoverbiassperple.com
+electivesprotagonmillenary.xyz
+evanescingunsatanicallychrysal.com
+expansivenessburnishesitel.xyz
+gonorhynchidaeanalgesidaefascinatedly.xyz
+holosymmetryspecscollunbeatable.xyz
+pandemoniumpleurolysishummus.xyz
+pharyngologicalpseudoanginaperpetrable.com
+ponticcyclersrecubate.com
+sappedisomorphousnonappreciativeness.com
+serowakrasolaristic.xyz
+symphoniesreinflatablexerodermatic.com
+
+# Generic
+
+/v4/api_t.php

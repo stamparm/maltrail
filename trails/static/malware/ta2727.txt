@@ -1,0 +1,82 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/update-fake-updates-two-new-actors-and-new-mac-malware
+# Reference: https://cside.dev/blog/over-35-000-websites-targeted-in-full-page-hijack-linking-to-a-chinese-language-gambling-scam
+
+fastcloudcdn.com
+deski.fastcloudcdn.com
+slowlysmiling.fastcloudcdn.com
+
+# Reference: https://x.com/csideai/status/1892594410149318692
+# Reference: https://cside.dev/blog/over-35-000-websites-targeted-in-full-page-hijack-linking-to-a-chinese-language-gambling-scam
+# Reference: https://app.validin.com/detail?find=db4adf52b330ca1061ff0ef44ef9cdf9&type=hash&ref_id=3d0262671fd#tab=host_pairs (# 2025-02-24)
+
+15.197.148.33:6002
+3.33.130.190:6002
+hb2023js.com
+hbwzzjs.com
+hth088.com
+hth8989.vip
+jb2023js.com
+jbwzzjs.com
+jbwzzzjs.com
+jingbet2018.com
+jingbet55.com
+jingbet66.com
+jingbet88.com
+jingbet888.com
+jingbetfafa.com
+jingpinbo.cc
+jingpinbo.com
+jpb2022.com
+jpbkte.com
+ky0607.com
+ky0708.com
+ky072.vip
+ky073.vip
+ky075.vip
+ky076.vip
+ky079.vip
+kysport.cc
+kysport.online
+kysport.vip
+ld018.com
+ld8888.vip
+manbetx8080.com
+manbetx8688.com
+mlbetjs.com
+p11vt3.vip
+pt1818.com
+pt1818.vip
+pt188.vip
+pt2023.com
+ptfafa.com
+ptfafajs.com
+ptfajs.com
+qtybc.cc
+sb2023js.com
+sbw9188.com
+sbwtool.com
+sbwzzjs.com
+xl188.vip
+xl8989.vip
+yabo5060.com
+yabo6050.com
+yb2023js.com
+ybwsjb.com
+ybwworld.com
+ybwzzjs.com
+yibet2018.com
+yibet88.com
+yibetjs.com
+zuizhongjs.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-10-v10875/2506
+
+hemispheredrown.tech
+arpobe.hemispheredrown.tech
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-09-18-v11019/3042
+
+00704ae865ee.ngrok.app

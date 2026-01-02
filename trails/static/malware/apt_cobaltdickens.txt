@@ -1,0 +1,1257 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ta407, silent librarian, mabna institute, cobalt dickens
+
+# Reference: https://www.secureworks.com/blog/back-to-school-cobalt-dickens-targets-universities
+# Reference: https://www.secureworks.com/blog/cobalt-dickens-goes-back-to-school-again
+# Reference: https://otx.alienvault.com/pulse/5d78eaf37b37c503fb07d45a
+# Reference: https://www.proofpoint.com/us/threat-insight/post/threat-actor-profile-ta407-silent-librarian
+# Reference: https://otx.alienvault.com/pulse/5da4a7ab756627fcce84efcc
+
+1edu.in
+aill.cf
+aill.nl
+anvc.me
+atll.tk
+atna.cf
+atti.cf
+azll.cf
+azll.tk
+azlll.cf
+aztt.tk
+blibo.ga
+cave.gq
+ccli.cf
+cill.ml
+clll.cf
+clll.nl
+clll.tk
+cllt.cf
+cllt.tk
+cnen.cf
+cnma.cf
+cntt.cf
+crll.tk
+csll.cf
+ctll.tk
+cvnc.ga
+cvve.cf
+czll.tk
+cztt.tk
+e-library.me
+ebookfafa.com
+eduv.icu
+eill.cf
+eill.ga
+eill.nl
+elll.cf
+erta.ca
+etll.cf
+euca.cf
+euce.in
+euve.tk
+ezll.tk
+ezplog.in
+ezproxy.tk
+eztt.tk
+fill.cf
+flil.cf
+flll.cf
+iell.tk
+ill.pro
+illl.cf
+ills.cf
+itll.tk
+iull.tk
+izll.tk
+jhbn.me
+jlll.cf
+lett.cf
+lib-service.com
+lib1.bid
+lib1.pw
+liba.gq
+libb.ga
+libdo.cf
+libe.cf
+libe.ga
+libe.ml
+libf.ga
+libg.cf
+libg.ga
+libg.gq
+libg.tk
+libk.ga
+libloan.xyz
+libm.ga
+libn.gq
+libnicinfo.xyz
+librarylog.in
+libraryme.ir
+librt.ml
+libt.ga
+libt.ml
+libu.gq
+libv.ml
+libver.ml
+libw.gq
+lill.gq
+lill.pro
+llbt.tk
+llib.cf
+llib.ga
+llic.cf
+llic.tk
+llif.cf
+llii.cf
+llii.xyz
+llil.cf
+llil.nl
+llit.cf
+llit.site
+lliv.nl
+lliv.tk
+lliz.cf
+lllf.nl
+llli.cf
+llli.nl
+lllib.cf
+lllt.cf
+llse.cf
+lzll.cf
+mlib.cf
+mlibo.ml
+ncce.cf
+ncll.tk
+ncnc.cf
+nctt.tk
+necr.ga
+nicn.gq
+nika.ga
+nimc.cf
+nimc.ga
+nimc.ml
+nlib.ml
+nlll.cf
+nlll.tk
+nsae.ml
+ntil.cf
+ntll.cf
+ntll.tk
+nuec.cf
+nuec.ml
+rill.cf
+rnva.cf
+rtll.tk
+rvna.cf
+savantaz.cf
+sctt.cf
+shibboleth.link
+sitl.tk
+sitt.cf
+slli.cf
+ssll.cf
+stll.tk
+till.cf
+titt.cf
+tlit.cf
+tlll.cf
+tlll.tk
+tsll.cf
+ttil.nl
+ttit.cf
+ttll.cf
+uill.cf
+uitt.tk
+ulibe.ml
+ulibr.ga
+ulll.cf
+ulll.tk
+umlib.ml
+umll.tk
+uncr.me
+uni-lb.com
+unie.ga
+unie.gq
+unie.ml
+unin.icu
+unip.cf
+unip.ga
+unip.gq
+unip.ml
+unir.cf
+unir.ga
+unir.gq
+unir.ml
+unisv.xyz
+univ.red
+unll.tk
+untc.ir
+untc.me
+untf.me
+unts.me
+unvc.me
+utll.tk
+venc.cf
+visc.cf
+vsre.cf
+vtll.cf
+web2lib.info
+xill.cf
+xill.tk
+zedviros.ir
+zill.cf
+zlll.tk
+
+# Reference: https://twitter.com/peterkruse/status/1312826103388667904
+# Reference: https://www.virustotal.com/gui/ip-address/104.152.168.47/relations
+
+idp3.it.gu.se.itlf.cf
+login.ki.se.iftl.tk
+raven.cam.ac.uk.iftl.tk
+shib.york.ac.uk.iftl.tk
+shibboleth.mcgill.ca.iftl.tk
+sso.id.kent.ac.uk.iftl.tk
+sso.acu.edu.au.itlib.me
+itlf.cf
+iftl.tk
+
+# Reference: https://twitter.com/peterkruse/status/1312819332318146561
+# Reference: https://twitter.com/peterkruse/status/1315556534546558977
+
+cas.thm.de.itlib.me
+cas.thm.de.servisedesk.me
+itlib.me
+servisedesk.me
+
+# Reference: https://twitter.com/peterkruse/status/1313029599048208386
+
+ntulearn.ntu.ninu.me
+ninu.me
+
+# Reference: https://twitter.com/cybershtuff/status/1315574181493444613
+
+canvas.bham.vueu.me
+owl.uwo.vueu.me
+vueu.me
+
+# Reference: https://twitter.com/ShadowChasing1/status/1315855394506330113
+
+library.acu.edu.au.libit.me
+libit.me
+
+# Reference: https://blog.malwarebytes.com/malwarebytes-news/2020/10/silent-librarian-apt-phishing-attack/
+
+library.adelaide.crev.me
+signon.adelaide.edu.au.itlib.me
+blackboard.gcal.crev.me
+blackboard.stonybrook.ernn.me
+blackboard.stonybrook.nrni.me
+namidp.services.uu.nl.itlib.me
+uu.blackboard.rres.me
+librarysso.vu.cvrr.me
+ole.bris.crir.me
+idpz.utorauth.utoronto.ca.itlf.cf
+raven.cam.ac.uk.iftl.tk
+login.ki.se.iftl.tk
+shib.york.ac.uk.iftl.tk
+sso.id.kent.ac.uk.iftl.tk
+idp3.it.gu.se.itlf.cf
+login.proxy1.lib.uwo.ca.sftt.cf
+login.libproxy.kcl.ac.uk.itlt.tk
+idcheck2.qmul.ac.uk.sftt.cf
+lms.latrobe.aroe.me
+ntulearn.ntu.ninu.me
+adfs.lincoln.ac.uk.itlib.me
+cas.thm.de.itlib.me
+libproxy.library.unt.edu.itlib.me
+shibboleth.mcgill.ca.iftl.tk
+vle.cam.ac.uk.canm.me
+aroe.me
+canm.me
+crev.me
+crir.me
+cvrr.me
+ernn.me
+nrni.me
+rres.me
+sftt.cf
+
+# Reference: https://twitter.com/ViriBack/status/1317216042263941120
+
+blackboard.usc.caer.me
+elearn.cuhk.caer.me
+moodle.uni-ulm.caer.me
+sierra-sso.aut.caer.me
+caer.me
+
+# Reference: https://twitter.com/TeamDreier/status/1331940216811233288
+# Reference: https://twitter.com/TeamDreier/status/1331941213184856065
+
+auth.bath.ac.uk.ctit.tk
+auth.bath.ac.uk.titt.ml
+login.e.bibl.liu.se.ctit.tk
+login.manchester.ac.uk.ctit.tk
+shib-idp.ucl.ac.uk.trtt.tk
+ctit.cf
+ctit.tk
+titt.ml
+trtt.tk
+ztit.cf
+
+# Reference: https://twitter.com/TeamDreier/status/1335877271593377792
+
+milngavie.cent.gla.ac.uk.titt.gq
+titt.gq
+
+# Reference: https://twitter.com/TeamDreier/status/1321197043784843267
+
+login.e.bibl.liu.se.titt.ga
+titt.ga
+
+# Reference: https://twitter.com/TeamDreier/status/1320993672566050817
+
+sts.sydney.ediun.me
+ediun.me
+
+# Reference: https://twitter.com/TeamDreier/status/1320654814750138377
+
+shib-idp.ucl.ac.uk.vctt.cf
+vctt.cf
+
+# Reference: https://twitter.com/TeamDreier/status/1320475288996880387
+
+learn.snnu.me
+snnu.me
+
+# Reference: https://twitter.com/andsyn1/status/1320315221253259265
+# Reference: https://twitter.com/TeamDreier/status/1320295132164390912
+# Reference: https://twitter.com/andsyn1/status/1319744139303571457
+
+ilias.uni-marburg.edunm.me
+libproxy.unm.eduin.me
+shibboleth.mcgill.edliu.me
+edliu.me
+eduin.me
+edunm.me
+
+# Reference: https://twitter.com/TeamDreier/status/1320068459934482438
+# Reference: https://twitter.com/TeamDreier/status/1319219638966849536
+
+canvas.sydney.sunu.me
+monucp.u-cergy.sunu.me
+sunu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1319501314079031297
+# Reference: https://twitter.com/TeamDreier/status/1319219638966849536
+
+learn.polyu.sncu.me
+lms.unb.sncu.me
+sncu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1319284609612312576
+# Reference: https://twitter.com/TeamDreier/status/1318073712621608960
+
+cuhk.edu.hk.itlf.cf
+shib.dur.ac.uk.stit.cf
+sts.cuhk.edu.hk.itlf.cf
+itlf.cf
+stit.cf
+
+# Reference: https://twitter.com/TeamDreier/status/1318073179621986311
+
+moodle.uni-ulm.de.librm.me
+librm.me
+
+# Reference: https://twitter.com/TeamDreier/status/1318072706068320256
+
+q.utoronto.vrev.me
+vrev.me
+
+# Reference: https://twitter.com/TeamDreier/status/1321725647153233920
+
+weblogon.ltu.se.ztit.cf
+
+# Reference: https://twitter.com/TeamDreier/status/1322301000963805184
+
+innsida.ntnu.snnu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1322431397257191424
+
+canvas.ucdavis.snnu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1329822320471515143
+
+auth.bath.ac.uk.ztit.cf
+
+# Reference: https://twitter.com/andsyn1/status/1331321796226846721
+
+auth.bath.ac.uk.ctit.cf
+
+# Reference: https://twitter.com/TeamDreier/status/1332964881537114115
+
+shibboleth3.liv.ac.uk.sitl.tk
+
+# Reference: https://twitter.com/TeamDreier/status/1336251373097267202
+
+proxylogin.nus.edu.sg.vitl.ml
+vitl.ml
+
+# Reference: https://twitter.com/TeamDreier/status/1336273839148441602
+
+proxylogin.nus.edu.sg.cett.cf
+cett.cf
+
+# Reference: https://twitter.com/TeamDreier/status/1337664630219550722
+
+login.ezproxy.uws.edu.au.vitt.ga
+login.simsrad.net.ocs.mq.edu.au.vitt.ga
+uon.okta.com.vitt.ga
+vitt.ga
+
+# Reference: https://twitter.com/TeamDreier/status/1338977587977129992
+# Reference: https://twitter.com/TeamDreier/status/1338979116855554056
+# Reference: https://twitter.com/TeamDreier/status/1339231776900853760
+
+mylibrary.bu.ulibr.xyz
+mylibrary.ebu.ulibr.xyz
+onesearch.library.wwu.edu.ulibr.xyz
+ulibr.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1351094101341515777
+
+ezproxy.hkr.se.liblog.info
+liblog.info
+
+# Reference: https://twitter.com/TeamDreier/status/1351479481668661249
+# Reference: https://twitter.com/TeamDreier/status/1351797305926676480
+
+login.proxy1.dom1.nhtv.nl.liblog.info
+rps.hva.nl.liblog.info
+
+# Reference: https://twitter.com/TeamDreier/status/1351465253641596932
+
+innsida.ntnu.srrn.me
+srrn.me
+
+# Reference: https://twitter.com/TeamDreier/status/1351960402503098368
+
+shibboleth.mcgill.nlib.ml
+
+# Reference: https://twitter.com/TeamDreier/status/1383377868114206722
+
+edadfed.ed.ac.uk.ucnv.me
+edadfed.ed.ac.ukns.me
+ucnv.me
+ukns.me
+
+# Reference: https://twitter.com/TeamDreier/status/1383436461974835212
+
+auth.bath.ac.uk.ukns.me
+
+# Reference: https://twitter.com/TeamDreier/status/1384079500737011714
+# Reference: https://twitter.com/TeamDreier/status/1384092560281391108
+
+auth.bath.ac.uk.ncev.me
+bath.ac.uk.ncev.me
+oskicatp.berkeley.edu.ncev.me
+ncev.me
+
+# Reference: https://twitter.com/TeamDreier/status/1400360529579941889
+# Reference: https://www.virustotal.com/gui/ip-address/185.51.201.112/relations
+
+liblog.info
+ezp2.imu.edu.my.liblog.info
+ezproxy.um.edu.my.liblog.info
+hiof.no.liblog.info
+login.libezp2.utar.edu.my.liblog.info
+
+# Reference: https://twitter.com/TeamDreier/status/1401790878092611587
+
+tarcez.tarc.edu.my.liblog.info
+
+# Reference: https://twitter.com/TeamDreier/status/1401807769880215553
+
+login.libezp.utar.edu.my.liblog.info
+
+# Reference: https://twitter.com/TeamDreier/status/1402918680846114816
+
+ezproxy.yu.edu.jo.liblog.info
+
+# Reference: https://twitter.com/TeamDreier/status/1403275407420440577
+
+ezproxy.vid.no.liblog.info
+
+# Reference: https://twitter.com/TeamDreier/status/1410141072920125447
+
+login.datubazes.lanet.lv.liblog.info
+
+# Reference: https://twitter.com/TeamDreier/status/1414126424525578243
+
+cas.fsu.edu.libg.ml
+edu.libg.ml
+lproxy.nymc.edu.libg.ml
+libg.ml
+
+# Reference: https://twitter.com/TeamDreier/status/1438410098620223488
+
+ersta.me
+isavr.me
+nvfr.me
+tacvp.me
+tasav.me
+login.ki.se.ersta.me
+login.ki.se.isavr.me
+login.ki.se.nvfr.me
+login.ki.se.tacvp.me
+
+# Reference: https://twitter.com/TeamDreier/status/1438241771935371271
+
+asoec.me
+ecdv.me
+rsia.me
+tcnd.me
+login.ki.se.rsia.me
+login.ki.se.ecdv.me
+login.ki.se.tcnd.me
+login.ki.se.asoec.me
+
+# Reference: https://twitter.com/TeamDreier/status/1438117675868241921
+
+ecdv.me
+login.ki.se.ecdv.me
+
+# Reference: https://twitter.com/TeamDreier/status/1438015417600053250
+
+avne.me
+cvos.me
+mosc.me
+oucv.me
+swoc.me
+ucno.me
+idp.it.su.se.mosc.me
+idp.it.su.se.oucv.me
+idp.it.su.se.ucno.me
+
+# Reference: https://twitter.com/TeamDreier/status/1437793434287345675
+
+cvos.me
+login.proxy.bib.uottawa.ca.cvos.me
+
+# Reference: https://twitter.com/TeamDreier/status/1437783760603389960
+
+mosc.me
+idp.it.su.se.mosc.me
+
+# Reference: https://twitter.com/TeamDreier/status/1435161539422654464
+# Reference: https://twitter.com/TeamDreier/status/1433325012623269890
+# Reference: https://twitter.com/TeamDreier/status/1432956757689647105
+# Reference: https://twitter.com/TeamDreier/status/1432274952284221446
+
+liblog.info
+ezproxy2.hkr.se.liblog.info
+login1.ep.bib.mdh.se.liblog.info
+neptune.ndu.edu.lb.liblog.info
+psut.idm.oclc.org.liblog.info
+
+# Reference: https://twitter.com/TeamDreier/status/1423548509224058883
+
+megaservers.ir
+srtteam.ir
+
+# Reference: https://twitter.com/TeamDreier/status/1450008147293245447
+# Reference: https://twitter.com/TeamDreier/status/1450747167090556928
+
+libezpro.xyz
+ezp.isikun.edu.tr.libezpro.xyz
+sso.ub.edu.libezpro.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1456646709329727489
+# Reference: https://twitter.com/TeamDreier/status/1456519641229107201
+
+ulibc.xyz
+newcatalog.library.cornell.ulibc.xyz
+onesearch.library.rice.ulibc.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1463068783485009920
+
+lezpro.xyz
+login.ezproxy.uwc.ac.za.lezpro.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1463860492900970503
+
+edcu.me
+udun.me
+
+# Reference: https://twitter.com/TeamDreier/status/1466475837235027970
+
+nfas.me
+login.ki.se.nfas.me
+
+# Reference: https://twitter.com/TeamDreier/status/1473598462553952258
+
+logezpro.xyz
+library.gju.edu.jo.logezpro.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1475412283421601795
+
+login1.ep.bib.mdh.se.logezpro.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1475765012199354368
+
+ezproxy.mef.edu.tr.logezpro.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1478117520708149254
+
+bidi.uam.mx.logezpro.xyz
+ezp.twu.edu.logezpro.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1480289542565515267
+
+thespacebulls.info
+eis.gvsu.edu.thespacebulls.info
+shib.towson.edu.thespacebulls.info
+towson.edu.thespacebulls.info
+
+# Reference: https://twitter.com/TeamDreier/status/1486250419730984963
+
+proxy.mau.se.logezpro.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1491346120681078784
+
+neptune.ndu.edu.lb.logezpro.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1493135702091079760
+
+elibproxy.anu.ac.ke.logezpro.xyz
+kenli.nbu.bg.logezpro.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1501486600517210112
+
+zezpro.xyz
+ithenticate.zezpro.xyz
+ezproxy.lau.edu.lb.zezpro.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/136.243.52.8/relations
+
+1ezpro.xyz
+xezpro.xyz
+neptune.ndu.edu.lb.zezpro.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1503296891433410564
+
+ezproxy2.hkr.se.zezpro.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1517784173964107777
+
+libte.me
+microsoftonline.libte.me
+login.microsoftonline.libte.me
+
+# Reference: https://twitter.com/TeamDreier/status/1517783469828542464
+
+uk.libte.me
+ac.uk.libte.me
+bolton.ac.uk.libte.me
+idp.bolton.ac.uk.libte.me
+
+# Reference: https://twitter.com/TeamDreier/status/1518842981175996416
+
+ilino.me
+oine.me
+ostin.me
+edu.ilino.me
+edu.oine.me
+edu.ostin.me
+umflint.edu.ilino.me
+umflint.edu.oine.me
+umflint.edu.ostin.me
+libproxy.umflint.edu.ilino.me
+libproxy.umflint.edu.oine.me
+libproxy.umflint.edu.ostin.me
+login.libproxy.umflint.edu.ilino.me
+login.libproxy.umflint.edu.oine.me
+login.libproxy.umflint.edu.ostin.me
+
+# Reference: https://twitter.com/TeamDreier/status/1519621500919291904
+# Reference: https://twitter.com/TeamDreier/status/1520795328403935233
+# Reference: https://twitter.com/TeamDreier/status/1521373266799214593
+# Reference: https://www.virustotal.com/gui/ip-address/213.108.241.238/relations
+
+allib.me
+etrlib.me
+ilino.me
+libet.me
+libmi.me
+libsu.me
+libte.me
+nelib.me
+oine.me
+ostin.me
+otlib.me
+sirlib.me
+srlib.me
+strlib.me
+ulib.me
+uolib.me
+ezpa.library.ualberta.allib.me
+idp.bolton.ac.uk.ilino.me
+idp.bolton.ac.uk.libte.me
+login.libproxy.umflint.edu.ilino.me
+login.libproxy.umflint.edu.oine.me
+login.libproxy.umflint.edu.ostin.me
+login.microsoftonline.ilino.me
+login.microsoftonline.libte.me
+login.microsoftonline.nelib.me
+login.microsoftonline.otlib.me
+login.microsoftonline.srlib.me
+login.microsoftonline.strlib.me
+login.openathens.net.libmi.me
+login.proxy1.lib.uwo.ca.sirlib.me
+login.uleth.ca.ulib.me
+nyit.ent.sirsi.net.libsu.me
+sso2.identity.uoguelph.uolib.me
+ssologin.exeter.ac.uk.etrlib.me
+ssologin.exeter.ac.uk.libet.me
+
+# Reference: https://twitter.com/TeamDreier/status/1521760194849656833
+# Reference: https://www.virustotal.com/gui/ip-address/157.90.120.120/relations
+
+liblogin.xyz
+library.sutd.edu.sg.liblogin.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1522239764723863553
+
+login1pro.xyz
+
+# Reference: https://twitter.com/TeamDreier/status/1523553694867804161
+# Reference: https://twitter.com/TeamDreier/status/1523721652059602944
+# Reference: https://twitter.com/TeamDreier/status/1524611293205999617
+
+cnlib.me
+enlib.me
+rlib.me
+testlib.cnlib.me
+testlib.enlib.me
+catalogue.londonmet.ac.uk.cnlib.me
+ezpa.library.ualberta.enlib.me
+login.microsoftonline.enlib.me
+sso2.identity.uoguelph.enlib.me
+
+# Reference: https://twitter.com/TeamDreier/status/1526316357683499008
+
+aclib.me
+login.iit.edu.aclib.me
+weblogin.bu.edu.llib.me
+
+# Reference: https://twitter.com/TeamDreier/status/1527308905889472515
+
+libip.me
+libsi.me
+login.openathens.net.libip.me
+login.openathens.net.libsi.me
+
+# Reference: https://twitter.com/TeamDreier/status/1527368158687834114
+
+llibs.me
+liucat.lib.liu.edu.llibs.me
+
+# Reference: https://twitter.com/TeamDreier/status/1528348685708447745
+# Reference: https://www.virustotal.com/gui/ip-address/194.87.23.7/relations
+
+eaun.me
+uion.me
+unisr.me
+ease.ed.ac.unisr.me
+elia.sub.eaun.me
+find.shef.ac.uk.uion.me
+find.sheffield.uion.me
+
+# Reference: https://twitter.com/TeamDreier/status/1530123942165348353
+# Reference: https://www.virustotal.com/gui/ip-address/77.238.110.158/relations
+
+euin.me
+lrie.me
+onic.me
+riue.me
+sso.vu.lrie.me
+ease.ed.ac.riue.me
+
+# Reference: https://twitter.com/TeamDreier/status/1530910329462464512
+
+eduri.me
+opir.me
+login.wccnet.eduri.me
+sso.oakland.opir.me
+
+# Reference: https://twitter.com/TeamDreier/status/1531013356781555712
+
+eduir.me
+opir.me
+cas.csufresno.eduir.me
+
+# Reference: https://twitter.com/TeamDreier/status/1533368559702839296
+# Reference: https://www.virustotal.com/gui/ip-address/195.110.38.176/relations
+
+eduo.me
+miamioh.eduo.me
+auth.miamioh.eduo.me
+
+# Reference: https://twitter.com/TeamDreier/status/1533370504354091008
+# Reference: https://www.virustotal.com/gui/ip-address/195.110.38.176/relations
+
+ediu.me
+pcc.ediu.me
+login.pcc.ediu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1533526839997734914
+# Reference: https://www.virustotal.com/gui/ip-address/195.110.38.176/relations
+
+eduv.me
+erdu.me
+fsw.eduv.me
+njit.erdu.me
+sso.fsw.eduv.me
+webauth.njit.erdu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1533671590587768832
+# Reference: https://www.virustotal.com/gui/ip-address/195.110.38.176/relations
+
+ecdu.me
+ramapo.ecdu.me
+library2.ramapo.ecdu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1534192063402614784
+
+cnna.me
+kiue.me
+instructure.kiue.me
+instructure.cnna.me
+ki.instructure.kiue.me
+ki.instructure.cnna.me
+
+# Reference: https://twitter.com/TeamDreier/status/1534391270197628928
+# Reference: https://www.virustotal.com/gui/ip-address/195.110.38.176/relations
+
+cedu.me
+ebui.me
+ediu.me
+olit.me
+uedu.me
+urio.me
+conncoll.ebui.me
+quicklaunch.urio.me
+cas.conncoll.ebui.me
+id.quicklaunch.urio.me
+login.ezproxy.uniroma1.olit.me
+login.openathens.ebui.me
+login.pcc.ediu.me
+pcc.ediu.me
+openathens.ebui.me
+fsw.cedu.me
+fsw.uedu.me
+sso.fsw.cedu.me
+sso.fsw.uedu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1539332031095644160
+
+adui.me
+elbu.me
+elru.me
+goucher.adui.me
+goucher.elru.me
+microsoftonline.elbu.me
+adfs.goucher.adui.me
+adfs.goucher.elru.me
+login.microsoftonline.elbu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1539579783335579649
+
+openathens.euin.me
+login.openathens.euin.me
+
+# Reference: https://twitter.com/TeamDreier/status/1539613715716313091
+
+unnit.me
+login.ezproxy.uniroma1.unnit.me
+
+# Reference: https://twitter.com/TeamDreier/status/1539698078038589440
+
+ealu.me
+liucat.lib.liu.ealu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1540465491596267520
+# Reference: https://twitter.com/TeamDreier/status/1540466652554346498
+
+elou.me
+oedu.me
+test.elou.me
+idp.csu.oedu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1540791986827010052
+
+nedu.me
+ollu.me
+liucat.lib.liu.nedu.me
+liucat.lib.liu.ollu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1541750405943775232
+
+hemid.me
+
+# Reference: https://twitter.com/TeamDreier/status/1542155689631617025
+# Reference: https://www.virustotal.com/gui/ip-address/185.18.212.117/relations
+
+acuk.me
+cardiff.acuk.me
+login.cardiff.acuk.me
+
+# Reference: https://twitter.com/TeamDreier/status/1542241300111564800
+# Reference: https://www.virustotal.com/gui/ip-address/185.18.212.117/relations
+
+edou.me
+pndu.me
+rcedu.me
+ramapo.pndu.me
+ramapo.rcedu.me
+library2.ramapo.pndu.me
+library2.ramapo.rcedu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1542532506070794244
+# Reference: https://twitter.com/TeamDreier/status/1548362809238466561
+# Reference: https://www.virustotal.com/gui/ip-address/185.51.202.228/relations
+
+edll.me
+eolv.me
+nerb.me
+rnedu.me
+rnit.me
+rulk.me
+rvcon.me
+uvit.me
+login.nerb.me
+bolton.ac.uk.rulk.me
+ciff.login.nerb.me
+microsoftonline.eolv.me
+microsoftonline.rvcon.me
+uniroma1.rnit.me
+uniroma1.uvit.me
+uoguelph.rnedu.me
+ezproxy.uniroma1.rnit.me
+ezproxy.uniroma1.uvit.me
+identity.uoguelph.rnedu.me
+idp.bolton.ac.uk.rulk.me
+login.ezproxy.uniroma1.rnit.me
+login.ezproxy.uniroma1.uvit.me
+login.microsoftonline.eolv.me
+login.microsoftonline.rvcon.me
+sso2.identity.uoguelph.rnedu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1542616491861983237
+# Reference: https://twitter.com/TeamDreier/status/1548769825350107136
+# Reference: https://www.virustotal.com/gui/ip-address/185.18.212.117/relations
+
+edlv.me
+libun.me
+pdlu.me
+rvuk.me
+ulca.me
+unde.me
+goucher.pdlu.me
+goucher.unde.me
+microsoftonline.edlv.me
+microsoftonline.ulca.me
+uoguelph.libun.me
+adfs.goucher.pdlu.me
+adfs.goucher.unde.me
+bolton.ac.rvuk.me
+identity.uoguelph.libun.me
+idp.bolton.ac.rvuk.me
+login.microsoftonline.edlv.me
+login.microsoftonline.ulca.me
+sso2.identity.uoguelph.libun.me
+
+# Reference: https://twitter.com/TeamDreier/status/1542953972973068294
+
+comn.me
+cornn.me
+microsoftonline.comn.me
+microsoftonline.cornn.me
+login.microsoftonline.comn.me
+login.microsoftonline.cornn.me
+
+# Reference: https://twitter.com/TeamDreier/status/1543460845467930625
+
+lible.me
+bradley.lible.me
+logon.bradley.lible.me
+
+# Reference: https://twitter.com/TeamDreier/status/1543463124417781761
+
+ulibe.me
+bradley.ulibe.me
+logon.bradley.ulibe.me
+
+# Reference: https://twitter.com/TeamDreier/status/1543515353866723332
+
+eulib.me
+bradley.eulib.me
+logon.bradley.eulib.me
+
+# Reference: https://www.virustotal.com/gui/ip-address/104.21.19.105/relations
+
+ncbv.me
+
+# Reference: https://www.virustotal.com/gui/ip-address/172.67.171.15/relations
+
+12st.me
+12xb.me
+1r3o.me
+28ag.me
+32ex.me
+33qa.me
+67vr.me
+67yt.me
+bcfk.me
+bdhw.me
+c23e.me
+cqgp.me
+cuvl.me
+cx71.me
+cxam.me
+cynf.me
+d2a7.me
+d39j.me
+dbck.me
+dboc.me
+dhfb.me
+do78.me
+dwfa.me
+edmh.me
+ejna.me
+fdqk.me
+fgds.me
+fqmu.me
+fvne.me
+gajr.me
+gboe.me
+geuy.me
+glpk.me
+gujv.me
+hzse.me
+ip8h.me
+iqtw.me
+iwdz.me
+jfg5.me
+jfmn.me
+jiuf.me
+kdpn.me
+kqxt.me
+kxli.me
+l5oj.me
+lgyw.me
+lmpt.me
+lu7b.me
+mgyr.me
+mxig.me
+ncbv.me
+ndmb.me
+nz89.me
+omhw.me
+omth.me
+onhj.me
+pveq.me
+q5sl.me
+qlma.me
+rp6h.me
+rvgh.me
+rwpb.me
+rwzx.me
+rxsn.me
+t12u.me
+tlvd.me
+tumx.me
+twrb.me
+ua5v.me
+uieg.me
+umpb.me
+uwrd.me
+uxcz.me
+vbel.me
+vjwk.me
+wa13.me
+wdkz.me
+wghi.me
+wl6g.me
+wo2k.me
+wxpi.me
+wygo.me
+x27i.me
+xdor.me
+xdry.me
+xe91.me
+xfaj.me
+xgqf.me
+xrig.me
+xuoe.me
+xzat.me
+y1rk.me
+yc22.me
+yqik.me
+za78.me
+zeyg.me
+zjhb.me
+zkvb.me
+zvwb.me
+
+# Reference: https://twitter.com/TeamDreier/status/1544801657149689857
+
+llrn.me
+reun.me
+edu.llrn.me
+lcc.llrn.me
+cas.lcc.llrn.me
+cas.lcc.edu.llrn.me
+svcc.reun.me
+svproxy.svcc.reun.me
+login.svproxy.svcc.reun.me
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.110.38.176/relations
+
+redur.me
+rnuk.me
+urca.me
+urnd.me
+svcc.urnd.me
+bolton.ac.rnuk.me
+idp.bolton.ac.rnuk.me
+microsoftonline.redur.me
+microsoftonline.urca.me
+svproxy.svcc.urnd.me
+login.microsoftonline.redur.me
+login.microsoftonline.urca.me
+login.svproxy.svcc.urnd.me
+
+# Reference: https://twitter.com/TeamDreier/status/1547211813703585793
+
+ruit.me
+rvit.me
+urnit.me
+uniroma1.ruit.me
+uniroma1.rvit.me
+uniroma1.urnit.me
+ezproxy.uniroma1.ruit.me
+ezproxy.uniroma1.rvit.me
+ezproxy.uniroma1.urnit.me
+login.ezproxy.uniroma1.ruit.me
+login.ezproxy.uniroma1.rvit.me
+login.ezproxy.uniroma1.urnit.me
+
+# Reference: https://twitter.com/TeamDreier/status/1550501403440848897
+
+erlib.me
+plib.me
+rnlib.me
+slib.me
+cardiff.ac.erlib.me
+cardiff.ac.plib.me
+ease.ed.ac.rnlib.me
+ease.ed.ac.slib.me
+ease.ed.rnlib.me
+ease.ed.slib.me
+login.cardiff.ac.erlib.me
+login.cardiff.ac.plib.me
+
+# Reference: https://twitter.com/TeamDreier/status/1550716056154537986
+
+ledu.me
+rvedu.me
+zedu.me
+bradley.ledu.me
+bradley.rvedu.me
+bradley.zedu.me
+login.bradley.ledu.me
+login.bradley.rvedu.me
+login.bradley.zedu.me
+logon.bradley.ledu.me
+logon.bradley.rvedu.me
+logon.bradley.zedu.me
+
+# Reference: https://twitter.com/TeamDreier/status/1564899016575524865
+# Reference: https://www.virustotal.com/gui/ip-address/5.9.154.209/relations
+
+libraryezlogin.com
+ezproxy.fhstp.ac.at.libraryezlogin.com
+
+# Reference: https://twitter.com/TeamDreier/status/1582087294106107904
+# Reference: https://www.virustotal.com/gui/ip-address/88.135.39.148/relations
+
+lib4login.com
+ezpro.fa.ru.lib4login.com
+library.gju.edu.jo.lib4login.com
+login1.ep.bib.mdh.se.lib4login.com
+
+# Reference: https://twitter.com/TeamDreier/status/1751931807648366669
+
+liblogin.com
+ez.liblogin.com
+ezproxy.hkr.se.liblogin.com
+ezproxy.ug.edu.gh.liblogin.com
+ezproxy3.hkr.se.liblogin.com
+neptune.ndu.edu.lb.liblogin.com
+proxy.mau.se.liblogin.com
+proxy2.mau.se.liblogin.com
+
+# Reference: https://twitter.com/TeamDreier/status/1751931807648366669
+
+ezlibin.com
+libinpro.xyz
+balamand.edu.lb.ezlibin.com
+bib.mdh.se.ezlibin.com
+edu.jo.ezlibin.com
+edu.lb.ezlibin.com
+edu.tr.ezlibin.com
+ezproxy.mef.edu.tr.ezlibin.com
+ezsecureaccess.balamand.edu.lb.ezlibin.com
+jo.ezlibin.com
+lb.ezlibin.com
+li.ezlibin.com
+library1.zuj.edu.jo.ezlibin.com
+login.ezsecureaccess.balamand.edu.lb.ezlibin.com
+mau.se.ezlibin.com
+mdh.se.ezlibin.com
+mef.edu.tr.ezlibin.com
+ndu.edu.lb.ezlibin.com
+neptune.ndu.edu.lb.ezlibin.com
+proxy.mau.se.ezlibin.com
+se.ezlibin.com
+tr.ezlibin.com
+zuj.edu.jo.ezlibin.com
+libinpro.xyz
+bib.mdh.se.libinpro.xyz
+edu.jo.libinpro.xyz
+edu.lb.libinpro.xyz
+edu.sg.libinpro.xyz
+ezpro.libinpro.xyz
+jo.libinpro.xyz
+lau.edu.lb.libinpro.xyz
+lb.libinpro.xyz
+libra.libinpro.xyz
+librar.libinpro.xyz
+library.zuj.edu.jo.libinpro.xyz
+library1.zuj.edu.jo.libinpro.xyz
+library2.zuj.edu.jo.libinpro.xyz
+mail.library.zuj.edu.jo.libinpro.xyz
+mail.mdh.se.libinpro.xyz
+mail.proxy.mau.se.libinpro.xyz
+mail.proxy1.mau.se.libinpro.xyz
+mau.se.libinpro.xyz
+mdh.se.libinpro.xyz
+proxy.libinpro.xyz
+proxy.mau.se.libinpro.xyz
+proxy1.mau.se.libinpro.xyz
+se.libinpro.xyz
+sg.libinpro.xyz
+sutd.edu.sg.libinpro.xyz
+zuj.edu.jo.libinpro.xyz

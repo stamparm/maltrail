@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2014-021716-3303-99&tabid=2
+
+newss.effers.com
+
+# Reference: https://meltx0r.github.io/tech/2019/09/19/emissary-panda-apt.html
+
+awvsf7esh.dellrescue.com
+language.wikaba.com
+solution.instanthq.com
+yofeopxuuehixwmj.redhatupdater.com
+
+# Reference: https://www.virustotal.com/gui/file/7f66ab0add42d408d24178e51817fef7a8086b312dc9459ca9d4fd2bbff5bc4d/detection
+
+58.158.177.102:8080
+o00o.sytes.net
+
+# Reference: https://www.virustotal.com/gui/file/12c9e7295cc578254c99acdb07564f8eb100057ebc924b0ee78cd4359aeb1730/detection
+
+ccneniubi.vicp.cc

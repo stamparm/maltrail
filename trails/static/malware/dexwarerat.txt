@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/kaushikkpal/status/1984971892885979430
+# Reference: https://www.virustotal.com/gui/file/2dcde12a834a8525f0ba8d5856551d8ec97a407fbbe8b879be6213996b85ec76/detection
+# Reference: https://www.virustotal.com/gui/file/3af818607371add474954039b77e1cafadcb41e4f56fe0037fa41b781a49f76f/detection
+# Reference: https://www.virustotal.com/gui/file/f82bd7898222e1e8879b9099577a4fa133dc78e316772edb50b2214ff2550bc5/detection
+
+23.132.228.234:5000
+
+# Reference: https://x.com/AUZombie/status/1992205708084007051
+
+103.163.118.250:3000
+103.163.118.250:5000
+privacyoffice.org
+
+# Generic
+
+/api/webhook-stealer
+/webhook-stealer

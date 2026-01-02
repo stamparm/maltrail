@@ -1,0 +1,108 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trendmicro.co.uk/media/misc/wp-badwpad.pdf
+
+# Reference: https://twitter.com/malwaremustd1e/status/1125303785004212224
+# Reference: https://blog.redteam.pl/2019/05/badwpad-dns-suffix-wpad-wpadblocking-com.html
+# Reference: https://blog.redteam.pl/2019/05/badwpad-and-wpad-pl-wpadblocking-com.html
+
+wpad.cat
+wpad.cc
+wpad.computer
+wpad.cz
+wpad.direct
+wpad.domains
+wpad.ee
+wpad.gr
+wpad.group
+wpad.hr
+wpad.im
+wpad.info
+wpad.it
+wpad.live
+wpad.ltd
+wpad.lv
+wpad.name
+wpad.network
+wpad.pl
+wpad.plus
+wpad.pro
+wpad.sk
+wpad.systems
+wpad.tv
+wpad.tw
+wpad.vip
+wpad.ws
+wpad.xxx
+wpad.zone
+
+# Reference: https://twitter.com/smii_mondher/status/1163567422365995009
+
+http://95.168.185.183/wpad.dat
+
+# Reference: https://www.bleepingcomputer.com/virus-removal/remove-autoconfigurl-browser-hijacker
+
+fastaccessweb.com
+get-access.me
+mail.no-stop.net
+non-block.com
+non-block.net
+nonblock.net
+nonblocks.com
+none-stop.net
+no-stop.net
+notblocked.net
+no-blocked.com
+nonblock.net
+none-stop.net
+noneblock.com
+nostopped.net
+stoppblock.biz
+stoppblock.com
+stoppblock.me
+stoppblock.org
+un-blocking.com
+un-blocking.info
+un-blocking.net
+un-stop.com
+un-stop.net
+un-stop.org
+unblockservice.com
+unstop.me
+unstopp.me
+unstops.biz
+unstops.net
+unstopweb.com
+unstopweb.net
+unstopweb.org
+webunstop.org
+
+# Reference: https://www.wpadblock.com/
+# Reference: https://www.virustotal.com/gui/ip-address/144.76.184.43/relations
+
+144.76.184.43
+
+# Reference: https://github.com/stamparm/maltrail/blob/master/trails/static/malware/goldenspy.txt
+# Reference: https://trustwave.azureedge.net/media/16908/the-golden-tax-department-and-emergence-of-goldenspy-malware.pdf
+# Reference: https://twitter.com/Bank_Security/status/1276492568449122305
+# Reference: https://www.virustotal.com/gui/ip-address/110.110.110.1/relations
+
+http://110.110.110.1/wpad.dat
+
+# Reference: https://www.virustotal.com/gui/file/5d05b5938fc802c4e22f5b85cbf5b332297cc63800f2eb0fb4e667035587a6af/detection
+
+http://110.110.110.0/wpad.dat
+
+# Reference: https://www.virustotal.com/gui/file/295fbc396883109078e23b8e8f8b6cca423d8a0d9839ac4e6e6c54f0ea6104e3/detection
+
+http://110.110.110.2/wpad.dat
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/5091
+
+wpad.casa
+wpad.eco
+wpad.ltda
+wpad.ru
+wpad.top
+wpad.xyz

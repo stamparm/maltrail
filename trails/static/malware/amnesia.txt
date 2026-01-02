@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: amnesia stealer
+
+# Reference: https://x.com/FalconFeedsio/status/1826131722322227467
+# Reference: https://x.com/suyog41/status/1827981095171743788
+# Reference: https://x.com/raghav127001/status/1843488499829453081
+# Reference: https://x.com/banthisguy9349/status/1843704814594863612
+# Reference: https://www.virustotal.com/gui/file/06d1a9fd3099cfb0cc829db930ab25f75a532e5e670e1704844cf7b1000d6314/detection
+# Reference: https://www.virustotal.com/gui/file/b8b00ec5fefbe2cb4813a9b64e829ccd5e19dec542530cd4d8e8923a3ce2e9ae/detection
+# Reference: https://www.virustotal.com/gui/file/9f0460662f390a0c5ca40b0ae41a5205a72553c9df68e4afef53d9becf6fae12/detection
+
+amnesia333.store
+amnesia333.netlify.app
+anzorpasechnik.netlify.app

@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1378044484089376768
+# Reference: https://app.any.run/tasks/ab993f27-958c-4ab4-8da4-0bcd7fe35fcd/
+# Reference: https://www.virustotal.com/gui/ip-address/51.195.253.81/relations
+
+http://51.195.253.81
+
+# Reference: https://www.virustotal.com/gui/file/20d9d861d394186a13767104e970cd8a434c85be63bf64c31e7584747d54688d/detection
+
+itroublvehacker.cf
+
+# Reference: https://www.virustotal.com/gui/file/e8b855820c348e237274e7b9e3dedae481c90eeed588fe956529bc4451a7711e/detection
+
+itroublvehacker.gq
+
+# Generic
+
+/bypass_stealer

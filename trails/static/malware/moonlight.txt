@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: moon stealer
+
+# Reference: https://mp.weixin.qq.com/s/-26KdmJSWZpCjdj6tdqGIQ
+# Reference: https://otx.alienvault.com/pulse/5dad96cadbc82fac7a884f05
+
+apasajalah.host.sk
+
+# Reference: https://x.com/solostalking/status/1875818938850001393
+
+mxxn.lol
+chat.mxxn.lol
+v2.mxxn.lol
+
+# Reference: https://x.com/solostalking/status/1906942181170205170
+# Reference: https://www.virustotal.com/gui/file/2044b8449cad652b41ae40ba43e33f3c8d739d47b91d832657faeadd01e04ba0/detection
+
+http://20.220.24.60
+kill078.in
+
+# Generic trails
+
+/testms.php?mod=

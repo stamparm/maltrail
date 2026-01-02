@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.netlab.360.com/b1txor20-use-of-dns-tunneling_en/
+
+179.60.150.23:8000
+194.165.16.24:443
+194.165.16.24:53
+194.165.16.24:8228
+194.165.16.24:8229
+webserv.systems
+
+# Reference: https://www.virustotal.com/gui/file/2e955cf62f92b25cf96cbf6b248a836540fa67a4c754c876ccc5bc9461a291d2/detection
+
+http://179.60.150.23
+
+# Generic
+
+/b1t_1t.sh
+/b4d4b1t.elf

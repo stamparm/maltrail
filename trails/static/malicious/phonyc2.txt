@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/sicehice/status/1643716252639305730
+
+91.235.234.130:443
+91.235.234.130:8000
+
+# Reference: https://www.deepinstinct.com/blog/phonyc2-revealing-a-new-malicious-command-control-framework-by-muddywater
+
+137.74.131.24:443
+137.74.131.24:8000
+137.74.131.30:443
+137.74.131.30:8000
+157.90.152.26:443
+157.90.152.26:8000
+157.90.153.60:443
+157.90.153.60:8000
+178.32.30.3:443
+178.32.30.3:8000
+185.254.37.173:443
+185.254.37.173:8000
+195.20.17.44:443
+195.20.17.44:8000
+45.159.248.244:443
+45.159.248.244:8000
+65.21.183.238:443
+65.21.183.238:8000
+87.236.212.22:443
+87.236.212.22:8000
+
+# Generic
+
+/PhonyC2_v6/

@@ -1,0 +1,123 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Virus%3aWin32%2fSality.AU#tab=2
+# Reference: https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Virus%3aWin32%2fSality.AT#tab=2
+
+klkjwre77638dfqwieuoi888.info
+kukutrustnet777888.info
+kukutrustnet777.info
+kukutrustnet888.info
+kukutrustnet987.info
+klkjwre9fqwieluoi.info
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2008-042106-1847-99&tabid=2
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2006-011714-3948-99&tabid=2
+
+balsfhkewo7i487fksd.info
+bcash-ddt.net
+bclr-cash.net
+bddr-cash.net
+bmakemegood24.com
+bmoney-frn.net
+bperfectchoice1.com
+bpowqbvcfds677.info
+btrn-cash.net
+buynvf96.info
+bxxxl-cash.net
+kjwre77638dfqwieuoi.info
+kjwre9fqwieluoi.info
+kukutrustnet777.info
+kukutrustnet777.info
+kukutrustnet888.info
+kukutrustnet987.info
+oceaninfo.co.kr
+pedmeo222nb.info
+pzrk.ru
+technican.w.interia.pl
+
+# Reference: https://www.virustotal.com/en/file/1a8fb3836d4680a624edc83b234d77c0b94e184959abbd3c0ded7fb4990b3b0a/analysis/
+
+brandaoematos.com.br
+brucegarrod.com
+bharatisangli.in
+butacm.go.ro
+
+# Reference: https://www.fortinet.com/blog/threat-research/chinese-targeted-trojan-analysis.html (# Sality C2 URLs section)
+
+ahmediye.net
+althawry.org
+amsamex.com
+apple-pie.in
+arthur.niria.biz
+careerdesk.org
+g2.arrowhitech.com
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Sus~Sality-A/detailed-analysis.aspx
+
+aanna74.eu.interia.pl
+aarondastrup.com
+mikeevents.go.ro
+energetixjewelry.com
+yucelcavdar.com
+
+# Reference: https://www.virustotal.com/gui/file/4e588d4e2a136e2e3a452c848036f90e954506a132eb9c89c02d25d48a6f56b7/relations
+
+sagocugenc.sa.funpic.de
+eleonuccorini.com
+cityofangelsmagazine.com
+21yybuyukanadolu.com
+yucelcavdar.com
+
+# Reference: https://www.virustotal.com/gui/domain/padrup.com/relations
+
+padrup.com
+
+# Reference: https://www.virustotal.com/gui/domain/brucegarrod.com/relations
+
+brucegarrod.com
+
+# Reference: https://www.virustotal.com/gui/domain/al-somow.com/relations
+
+al-somow.com
+
+# Reference: https://www.virustotal.com/gui/domain/kivmachinerie.com/detection
+
+kivmachinerie.com
+
+# Reference: https://www.virustotal.com/gui/domain/rukgan.com/relations
+
+rukgan.com
+
+# Reference: https://www.virustotal.com/gui/domain/omeroglunakliyat.net/relations
+
+omeroglunakliyat.net
+
+# Reference: https://www.virustotal.com/gui/file/932d1cc02d144fcb83a70b62d01f29a7d6a7d2059158a0e0dc9188460d07abb8/detection
+
+bpfq02.com
+f5ds1jkkk4d.info
+g1ikddcvns3sdsal.info
+h7smcnr1wlsdn34fgv.info
+hkukud123ncs.info
+inform1ongung.info
+lukki6dnd2kdnc.info
+
+# Reference: https://www.virustotal.com/gui/ip-address/58.40.150.204/relations
+# Reference: https://www.virustotal.com/gui/file/9ae4daaa2d7778bbf5a7cbf1586f33c941b3c1bdef9c2b0a422e6472a72b50d4/detection
+
+http://89.149.227.194
+58.40.150.204:5517
+sosite_averi_sositeee.haha
+/sosite_averi_sositeee.haha
+/tratata5/
+
+# Reference: https://www.virustotal.com/gui/file/31241f536d0fa10e3c4ca6ea588f5fd1fb7b261211da961a353dcce4a0bd8ee7/detection
+
+http://89.119.67.154
+68.40.213.209:5619
+
+# Generic
+
+/images/logos_s.gif
+/t_100_v400/?rnd=

@@ -1,0 +1,1388 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fireeye.com/blog/threat-research/2017/05/threat-actors-leverage-eternalblue-exploit-to-deliver-non-wannacry-payloads.html
+
+hackqz.f3322.org
+120.209.40.157:8880
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Nitol-P/detailed-analysis.aspx
+
+dingtao333.3322.org
+
+# Reference: https://twitter.com/securiteoff/status/739574861543149568
+# Reference: https://www.virustotal.com/gui/file/20d841afa96e58fb7d2b4c5e8bb25d07ff36e25bbb14fc176f3f46c650cb016e/detection
+
+feng12763.3322.org
+qlsb.f3322.net
+
+# Reference: https://twitter.com/P3pperP0tts/status/1153026768590258179
+
+520yxsf.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2012/2012-04-19-digging-into-the-nitol-ddos-botnet/digging-into-the-nitol-ddos-botnet.csv
+
+aisini1314.3322.org
+bcl5736120.3322.org
+ccddos.net
+erwbtkidthetcwerc.com
+fangqi.6600.org
+fangqi.7766.org
+fuck0313.6600.org
+guangkuo119.3322.org
+kankan902.3322.org
+ksattack.6600.org
+maguss.3322.org
+maple110.3322.org
+mybaccy.3322.org
+rterybrstutnrsbberve.com
+rvbwtbeitwjeitv.com
+sousou123.3322.org
+xin9liao.gnway.net
+xinxin168.3322.org
+xiong97.3322.org
+yezi999.3322.org
+ylddos.3322.org
+zwx5060.3322.org
+
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/tale-of-the-two-payloads-trickbot-and-nitol/
+# Reference: https://github.com/AlienVault-OTX/Threat-Trends/blob/master/MaliciousDomains_UmbrellaRanking.csv
+
+e.googlex.me
+
+# Reference: https://asec.ahnlab.com/1031
+
+b.googlex.me
+
+# Reference: https://www.virustotal.com/gui/file/62010ae6b25999cbc37c935c163285f571294f4732965c66b9233a7573c13c10/detection
+
+w.googlex.me
+m.googlex.me
+
+# Reference: https://totalhash.cymru.com/network/?dnsrr:*.googlex.me
+
+w.googlex.me
+m.googlex.me
+googlex.me
+
+# Reference: https://twitter.com/pancak3lullz/status/748172641131847681
+# Reference: https://www.virustotal.com/gui/ip-address/110.173.30.68/relations
+
+110.173.30.68:1111
+110.173.30.68:1150
+110.173.30.68:1380
+110.173.30.68:1472
+110.173.30.68:2013
+110.173.30.68:2014
+110.173.30.68:6666
+110.173.30.68:8080
+110.173.30.68:8085
+110.173.30.68:8089
+xiaoaolong.f3322.org
+
+# Reference: https://twitter.com/pancak3lullz/status/744918444265578496
+# Reference: https://www.virustotal.com/gui/file/a2d02236c2a9684310d95d5a98734d17d226da16607f98903e0a5f9d62298521/detection
+# Reference: https://www.virustotal.com/gui/file/40ac46478014d0a89f787c25dd380424b0e16913bd5ff03db90c32b75aa10c35/detection
+
+173.254.236.5:8900
+45.34.191.179:8900
+119.147.145.218:8511
+wx137672811.f3322.net
+
+# Reference: https://twitter.com/pancak3lullz/status/740562923639046146
+# Reference: https://www.virustotal.com/gui/file/e39a3ca5574dfba2bd29a71b933c9bf22633baad10c7fcac5abbc700e5b8f175/detection
+
+183.60.202.97:1993
+longge520.f3322.net
+qlsb.f3322.net
+
+# Reference: https://twitter.com/pancak3lullz/status/739878964064194560
+
+aabao.top
+a.aklianfa.com
+
+# Reference: https://www.virustotal.com/gui/domain/leiyan.hk/relations
+
+leiyan.hk
+
+# Reference: https://twitter.com/pancak3lullz/status/739573412973150208
+
+zhaojinyi5045.f3322.org
+
+# Reference: https://twitter.com/pancak3lullz/status/742832969539158017
+
+125.88.146.61:9595
+hackxiao.top
+
+# Reference: https://www.virustotal.com/gui/file/9ea76521dacafc0437c12d3e7b2db5e4cd27054c476e87dfe9fb2934bbd3668b/detection
+
+gyddos.com
+
+# Reference: https://www.virustotal.com/gui/file/87c00a2dbc7aad92c63afe8633dde5253da9dd8c663dfe257ab17c087c967b16/detection
+
+61.160.232.140:65534
+5302000.publicvm.com
+
+# Reference: https://www.virustotal.com/gui/file/f5ce87456cad6b035e20df4e3c8cfd6f68353913dbb78be8383036842c54ec69/detection
+
+103.226.124.222:65534
+
+# Reference: https://www.virustotal.com/gui/file/a624fd04789db3e1327fd981ac01b79c1d432819e752291843e4e4778794d6aa/detection
+
+112.74.75.143:6666
+
+# Reference: https://www.virustotal.com/gui/file/96a8382fe8bd91e1cf9ab358cb03f597dc3bcef66503275c17b914e28b438c92/detection
+
+210.222.25.223:6666
+
+# Reference: https://www.virustotal.com/gui/file/22bd3e766de31699464b08467a47b6c44f4825e4984221f74209cdb9c2b26756/detection
+
+61.84.56.105:1234
+
+# Reference: https://www.virustotal.com/gui/file/1b9c5b63df29807ca8dd96c4878d33dc2b1a3bed6a11e8e7bb29ba7a868ac341/detection
+
+sexgb.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/bcf7e416d7fdb066b831720789ffffcde71e4e1ba99294a159ff342175d9c069/detection
+
+182.225.123.146:8080
+tv1004.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/6bf39bbb04edf94d46ba9f1a80ac41a3113eac9befc02dc72444aa8e5a68ea55/detection
+# Reference: https://www.virustotal.com/gui/file/4406f6e797db9308fb2e7d37483f96c71f91fadc98d45539bbe4137f6a8bb241/detection
+
+173.208.243.3:8090
+173.208.243.4:8914
+74.91.16.130:8089
+74.91.16.132:8914
+74.91.16.133:6688
+imddos.my03.com
+
+# Reference: https://www.virustotal.com/gui/file/8b7539df3ca2a8d75f9ce1da69b66b761ff1661fe42b03f18103cd0b0f068956/detection
+
+103.30.40.76:881
+103.70.77.18:881
+185.207.154.26:881
+185.207.154.91:881
+185.239.225.133:881
+193.42.27.224:881
+194.156.132.105:881
+222.186.59.89:881
+23.236.68.162:881
+23.236.68.175:881
+23.236.68.185:881
+23.236.68.213:881
+23.236.68.213:9999
+23.236.68.89:881
+23.236.68.89:9999
+23.236.68.99:881
+43.224.249.211:881
+45.116.77.70:881
+45.116.77.70:9999
+45.117.102.172:881
+45.120.156.139:881
+45.120.156.160:881
+45.120.156.160:9999
+45.120.156.178:881
+45.120.156.178:9999
+45.13.199.120:881
+45.13.199.120:9999
+45.137.10.85:881
+45.138.81.176:881
+45.138.81.176:9999
+78.142.194.122:881
+5123.2288.org
+
+# Reference: https://www.virustotal.com/gui/file/1d15ccc6dc69f1f0a40f2b1396220120577396a18a9d09ca79a0c267a50e23cf/detection
+
+211.243.120.137:2
+ghkdtldhs.p-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/295708d2a5ebd22cebe29b3f23a74e2d6f7f1056715324b35f5afc5e1d30ea57/detection
+
+112.152.98.136:1212
+
+# Reference: https://www.virustotal.com/gui/file/3eb70dc98b72cb6e0350f99848e4312fa37ca279c16bb011a9ff676ce530b879/detection
+
+a1104.r-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/4dea27a086a7fe58de28b8fcd61df55d8656dbcb1803e3ff385cb1e2beded384/detection
+
+chlehdgj.r-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/54171f4fd9b873b381f597c5b029433d325f27f7d1f1b7b1a131aaf182a47fe6/detection
+
+116.38.148.166:1542
+118.40.137.174:1542
+wnsdud0430.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/9619b87a5b19e587227eba60171d2763b1fe9f81b27c0207fb3d52233ffbd059/detection
+
+116.38.148.174:1542
+116.38.148.175:1542
+
+# Reference: https://www.virustotal.com/gui/file/21f59a60d6632320cad5a25dad18ec42d57bb4d3aebd3afac85ba7d81a5e09f1/detection
+
+175.118.59.183:8125
+
+# Reference: https://www.virustotal.com/gui/file/eb1982fba971cd54894c5755c6bb239ef92b1afcf21f16329f16580f5a103847/detection
+
+124.111.116.108:8125
+
+# Reference: https://www.virustotal.com/gui/file/45b6991cbb39b1598a993ff5b36eafc1308488ebdade8dbda7fe5a5d86c712c4/detection
+
+218.238.223.33:8080
+sexymon12.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/4685ce889d2e1ea74385dc9d0da97f279e258db237ca3c057fca0017c011d874/detection
+
+218.238.223.33:6414
+
+# Reference: https://www.virustotal.com/gui/file/4f0248164f3d33045922b8fb8e049df752abb52a4682164aa0dfeff2c1711d89/detection
+# Reference: https://www.virustotal.com/gui/file/e0e00179548df8be9a772b12744810e6ee3a1e48af967c8af3495ed7c541fac4/detection
+
+103.95.240.43:2018
+105.234.35.162:2018
+122.213.24.236:2018
+124.98.73.100:2018
+132.233.176.72:2018
+136.106.125.33:2018
+148.226.138.194:2018
+153.22.87.11:2018
+158.73.36.83:2018
+164.144.233.221:2018 
+182.224.234.115:2018
+182.224.234.115:2018 
+182.227.60.248:2018
+189.156.42.74:2018 
+193.207.245.146:2018 
+202.76.11.129:2018
+212.22.201.53:2018
+218.91.182.254:2018 
+28.207.215.223:2018
+43.249.242.252:2018 
+48.45.191.69:2018
+49.175.99.121:2018
+9.89.177.30:2018
+95.79.19.64:2018
+
+# Reference: https://www.virustotal.com/gui/file/fbbba2a2aadb00fdc81cbbd79523414297de75496ff3f2d11498fb1e5016d249/detection
+# Reference: https://www.virustotal.com/gui/file/13446373e14035431a35d0f9b1543cf5067c774b999f750fe43ba4e97ee66ab1/detection
+# Reference: https://www.virustotal.com/gui/file/f393bba5f1252dd68fec310b8f89cda0ec8f59816edb9602f5446df4ba6f6cb3/detection
+# Reference: https://www.virustotal.com/gui/file/09733d736979f2192a205d576ea3d792740a8cabef8b0e6827b824cc89ef7903/detection
+# Reference: https://www.virustotal.com/gui/file/96c68339d429c7bc375d18241952caf4e4c58b1c556aa66784288078a738c2d4/detection
+
+101.152.154.58:1800
+107.190.198.28:1800
+114.249.167.81:1800
+116.35.216.50:1800
+118.134.172.15:1800
+124.193.141.68:1800
+128.78.147.2:1800
+135.137.116.55:1800
+136.121.120.128:1800
+14.5.119.153:1800
+14.5.119.153:8808
+141.171.69.199:1800
+142.48.159.25:1800
+148.108.129.78:1800
+15.187.26.11:1800
+15.246.205.111:1800
+152.248.134.12:1800
+159.52.103.65:1800
+165.90.147.35:1800
+166.33.192.121:1800
+169.161.107.143:1800
+174.212.56.214:1800
+175.198.201.12:1800
+176.105.39.108:1800
+176.34.121.22:1800
+182.224.234.115:1800
+187.234.223.9:1800
+187.49.14.95:1800
+190.143.255.30:1800
+2.89.141.243:1800
+200.147.27.118:1800
+200.204.108.32:1800
+201.87.103.17:1800
+211.91.1.105:1800
+212.73.235.170:1800
+213.164.82.189:1800
+217.77.220.79:1800
+222.128.169.151:1800
+222.17.210.157:1800
+222.35.230.92:1800
+25.190.52.98:1800
+32.142.109.126:1800
+32.60.209.254:1800
+37.110.158.71:1800
+37.193.185.198:1800
+39.228.13.20:1800
+4.242.51.24:1800
+42.244.134.15:1800
+44.149.116.88:1800
+49.175.99.121:1800
+50.172.115.7:1800
+51.6.147.64:1800
+55.93.90.75:1800
+66.38.193.62:1800
+67.180.18.75:1800
+79.135.77.85:1800
+84.135.45.77:1800
+86.171.185.13:1800
+89.186.249.149:1800
+90.221.6.85:1800
+94.92.185.5:1800
+
+# Reference: https://www.virustotal.com/gui/file/b5fabc8dc9e2516642cac9e4bfbda280b6312f1ceb107436f723902c8ee2e841/detection
+
+140.143.145.162:29134
+
+# Reference: https://www.virustotal.com/gui/file/fe5855d961748d6922d5687f0d0f10f07e6c8555cc042d73ba1188801fab7367/detection
+
+gdownpack.jomodns.com
+
+# Reference: https://www.virustotal.com/gui/file/45d34e4733c9b34cf8e43e13515ebd02c5a3dc9a7a04304caea7f6199b3c1e8c/detection
+
+175.210.132.122:3
+194.120.222.177:3
+207.217.235.199:3
+21.190.31.193:3
+218.35.210.186:3
+45.232.19.203:3
+56.176.248.190:3
+
+# Reference: https://www.virustotal.com/gui/file/aaf036cbf8b7436e69dcc517576c4a01a002f1e204c729469e4217b71e1a8285/detection
+
+49.166.162.113:8080
+1145678.p-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/e259c7d12802a94129632c8287da2ef5d6ca2f06cac46eb4a0e264e2e69ce5be/detection
+# Reference: https://www.virustotal.com/gui/file/03d1ae34d48f1da0515fd077dc3a3c9d368dd884a605ee30096c32b4d0469e37/detection
+
+159.58.62.229:1900
+172.155.75.252:1900
+175.198.201.12:1900
+18.56.156.205:1900
+182.100.50.239:1900
+206.14.37.248:1900
+21.114.88.242:1900
+217.213.11.235:1900
+32.154.41.228:1900
+42.98.143.215:1900
+53.42.117.202:1900
+66.140.130.225:1900
+77.212.105.212:1900
+8.112.53.218:1900
+88.156.79.199:1900
+bkhwa123.p-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/2a315ec1fbd8a3dfb70ba259699a660389c8a13a158f0c29cace1e1d67131130/detection
+
+121.164.182.43:7327
+185.53.179.29:8889
+
+# Reference: https://www.virustotal.com/gui/file/bcf17bd4576d7494a71db278478a1f78112324c5bf847853e4d82c6c8dcde604/detection
+# Reference: https://www.virustotal.com/gui/file/441f5b8b76b7708eec2250570c714e1d5a35e0bdc867cfae54d639b4b1c4a200/detection
+# Reference: https://www.virustotal.com/gui/file/a31a9f60e27390091a25f134511f09c7776efab4b758b99cfdfe0498f88caf6d/detection
+# Reference: https://www.virustotal.com/gui/file/4c9fdb66f53b71a4c98892b62b26939006dd5d6b6353795a6181767b9258e2cc/detection
+# Reference: https://www.virustotal.com/gui/file/3dcca6757b9dd064348e0897dca21bf4cb8d7a5ce3fa5f54d934e7748684d908/detection
+
+105.209.90.18:2
+108.20.136.155:2
+116.153.65.5:2
+12.195.52.15:2
+129.250.78.28:2
+143.214.133.34:2
+148.108.158.204:2
+149.28.251.67:2
+153.159.107.21:2
+182.227.151.35:2
+220.122.152.173:2
+220.122.152.173:3
+36.109.39.24:2
+47.54.142.11:2
+60.151.26.34:2
+71.95.129.21:2
+81.167.103.8:2
+95.10.116.31:2
+
+# Reference: https://www.virustotal.com/gui/file/6e2bfdaf17806fa35c8b113fcf6931e22a6fcb8516c2f741bac6cbd63d62ca32/detection
+
+220.122.152.173:12
+
+# Reference: https://www.virustotal.com/gui/file/0a352acc084973c5ccbc13dd487fc5e3e746bb902c5420f98f6c74eb0c120c71/detection
+
+mhddos.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/37d02d69a4404525f924954e7ed61b389ae10283ca4cba9fa3e3a6fd66f5b102/detection
+# Reference: https://www.virustotal.com/gui/file/9bd0184051693d604f2b16ee748b3c4d1a9c988eef4f90fbd933db188dc7ab56/detection
+
+31.13.72.54:6300
+67.228.74.123:6300
+85.155.231.209:6300
+ziscoll.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/b7c16208e51ff8fed8e00a1a203b25f5dbab43f7dd3022f457995b8b726569c3/detection
+
+211.209.68.52:4368
+211.209.68.52:8080
+211.209.68.52:8500
+jjh0547.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/7f3f596898d41c390b96b234f6c7e6582004e2d2f0915186f679c4e1d786dc84/detection
+
+58.227.92.15:1234
+
+# Reference: https://www.virustotal.com/gui/file/927d0f45bf59f19e915b8a8807372f547d151b60455a7fe40f696b8742d3ae3a/detection
+
+103.101.205.121:7766
+107.183.180.136:7766
+110.42.0.146:53021
+154.213.17.131:7766
+43.230.144.18:7766
+apple.vzboot.com
+
+# Reference: https://www.virustotal.com/gui/file/3dd6bec54999df3bfdf712a225545fce48205c53af9960e428d5eef0ac32f54b/detection
+
+02nkh.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/0edc06c67de685862554ccd0f6add477d0f196d193ae111dcdde9887498ae0d1/detection
+# Reference: https://www.virustotal.com/gui/file/70122334d98ad43b6d45f70fa696ba0974e0e9a1e0f63750ab36477805426da9/detection
+# Reference: https://www.virustotal.com/gui/file/85223f374cc2b876e013e1984cd32ac22af1a72cc3811d4c816293979c382f8b/detection
+
+125.136.40.2:1478
+27.124.159.202:1478
+ghgha8191.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/83c86d011632b66600f2bc40928282b202f75f8486e7b936a8a18828871e3992/detection
+
+211.219.163.11:1234
+
+# Reference: https://www.virustotal.com/gui/file/c67203de44ad8c4aa81a362b6188ed83b055b5fb9551df21c384dee7fe6cbf39/detection
+# Reference: https://www.virustotal.com/gui/file/353d13e06c526bd774a603d43a0ef66826604eaddd933db2bee067b86393861a/detection
+
+104.18.44.248:2018
+124.156.99.141:2018
+121.54.174.199:2018
+wlxxlt.com
+
+# Reference: https://www.virustotal.com/gui/file/dc49649e53f19262d7b6c0b2d5fd3492d3ca1ab1b3d38f917c41c0525961b277/detection
+# Reference: https://www.virustotal.com/gui/file/78b7836e2f173a4b1b29ebce842d765abdb5cd115a2bd415f31b5f682c2fb8d6/detection
+
+103.246.246.148:8097
+182.254.229.239:2017
+myss.ddns.net
+xiaxiansheng.f3322.net
+
+# Reference: https://www.virustotal.com/gui/file/858a84f0c01e4e9863f619f1506b0eb3df0f0010c3481ff1a0d4fd810143cf62/detection
+
+47.93.189.22:7777
+
+# Reference: https://www.virustotal.com/gui/file/ecd057c283ad644e7420698275a704009762c251ca7dd0cee9699a3aa9b6ade7/detection
+
+182.254.229.239:2012
+98.126.167.245:8889
+base8.gyddos.com
+
+# Reference: https://www.virustotal.com/gui/file/dea81efe7bbe77d228c339afc803315c287f8d5c0c6ba17c1cb452fe856230ae/detection
+
+47.93.189.22:2017
+
+# Reference: https://www.virustotal.com/gui/file/aa9e1deace9a4a1bc717188d071cf825c1da0b92a666a5add251757682ee1358/detection
+
+39.116.22.96:2102
+sub070145.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/9535fbc5fb7a77e9a12a4b40e16d2de5ae81ffe170fa3abdc0c8056002056fc2/detection
+
+39.116.214.99:2102
+
+# Reference: https://www.virustotal.com/gui/file/0102d26be50617e603388e5d04887f82258922817d5c53f02050bab6ead3ce90/detection
+
+39.121.199.163:1597
+
+# Reference: https://www.virustotal.com/gui/file/54c198fc6d27e6990cd3c02918372cd29a17a479d8071788ec8d3cada76c08dc/detection
+
+14.48.223.211:1346
+
+# Reference: https://www.virustotal.com/gui/file/6b41dfe97a3ba4cc742d2d426f9b464694156b82b2b1d49245b3b2e8ab802dfa/detection
+
+221.141.101.24:203
+nj7979.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/0dcbe537215e61fa0d2a9817c8d38a6c7c53b7cb912c82ab8e7761026619dbda/detection
+
+codns2847.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/fea85f469ecfd4ad2ac356ebe671e2b050cc59c1891a0bf0a6759041812a1061/detection
+
+ydj1115.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/afad3c6be6939ec621cedc5b98897583030cf08178a485b4b6d68bf664cb178e/detection
+
+whwns5265.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/a58bfc1b857fcb16283bbce698ec52746bc9325b077a917e39d21cda8b2a5969/detection
+
+111.171.90.60:3625
+115.160.74.103:920
+
+# Reference: https://www.virustotal.com/gui/file/6db85922561469819c8ffaf0ec78c45ea82056373377df5d276c0a25947040b7/detection
+
+cjwk32.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/4fe03646f2f23c555d0d66d9105aba070f757fcd78166f935acb6c729c5e1ad3/detection
+
+211.223.6.162:1234
+tjdcksdl21.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/ea248a7a4724db933f8d792659a74b2b60d5d268606961baae75240b4eb29b93/detection
+
+45.64.113.197:8888
+binghe.tbfull.com
+
+# Reference: https://www.virustotal.com/gui/file/e59ff1c2c2350b29f745f2443c4760cb6a57fce5f7f50c0223ce47e7dc82f044/detection
+
+103.200.28.68:3600
+
+# Reference: https://www.virustotal.com/gui/file/a2eb66833fc95f4b80b7ffe1b7dec6054c19e58d1141e64f37d35ce1975f6137/detection
+
+45.64.113.197:3600
+
+# Reference: https://www.virustotal.com/gui/file/e49f2dabbb58e4c4db895a63ac02fb64da420278dcdfab8d41ff1edc5a50059a/detection
+
+125.77.30.170:3600
+bh.tbfull.com
+
+# Reference: https://www.virustotal.com/gui/file/921bb69a90829e33da52e088bf3144712796063219e70d6d54a2bd6f844a433d/detection
+
+125.77.30.157:28655
+125.77.30.157:8080
+xxg.tbfull.com
+
+# Reference: https://www.virustotal.com/gui/file/dc6934d639c55d886a2fa229f8aa9c8ccd980e4fa01a691ca7b6794345cda9d8/detection
+
+vtcmdr2.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/9a34004d08b5d0148bcd55f18532672664ac2d334cb622457134a946e033d48c/detection
+
+39.118.202.145:8795
+swchoco.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/e9c546e54233f4f75ff3118c92c51ecb6066ec878ef44c519f5e528284e3b73a/detection
+
+115.143.174.43:1024
+kaza2.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/3fe990f6e85733b6ba762d77de0b3795ec42ac0917cfa5c1edba1dac1250d1a0/detection
+
+148.81.111.121:65520
+mang75.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/375f60b24f38fb49b37154b859a91e1da829fdd5c92c147d2ca4e62cc4d6a4e4/detection
+
+kwj111.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/1a5756fd43ad80ce55b73b4c92c495143e5e6b4c0a58c6f3bdb0bff3f276dc7c/detection
+
+211.40.201.28:1234
+218.151.35.171:1126
+whdnqls3455.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/48762fa5a279dd4fbf2acfb1a947743807ba4c87c87f2920f335aad8397be050/detection
+
+kimbob0701.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/ad8ed264366df740bf96d120520bd46d69fd8b55fe7c1993d2a865ca598f2570/detection
+# Reference: https://www.virustotal.com/gui/file/69480a9a4542086c1761f80b8b45dbe4336f4ec807d1bd47dd3984cc93f4ce13/detection
+# Reference: https://www.virustotal.com/gui/ip-address/148.81.111.121/relations
+
+148.81.111.121:65520
+panti.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/144b82598213c7323628e77babb470bd7fde257a796322dccdfd8675ef6dbe78/detection
+
+duddnjs2666.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/25486ed1836c179cc7a5bb914416c24155b09e200bcc4dcb8f80080162f8a530/detection
+
+apple12313.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/82f7cc07b7e9d1afdb70b7d74d6dcc92ab4b400a5ffc3bfaf61e80565375d1f8/detection
+
+221.164.177.54:1275
+khu6912.codns.com
+
+# Reference: https://www.virustotal.com/gui/file/4461b7325e242ad0aaff2a074b9af07ce37c51ac757a923f34f29d0ba1e5a172/detection
+
+103.39.108.20:439
+
+# Reference: https://www.virustotal.com/gui/file/46d28851cb1883425f332155ecfebc60cac8de73a12c3dafe9cd5861f47fef12/detection
+# Reference: https://www.virustotal.com/gui/file/dd9a5c59550cbd4236bb1375884501e7c02c5f595f67e85a08cc7546a93d1d3d/detection
+
+202.182.109.83:5453
+ms6135.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/83a91a545bedf6da75da3e9adb242d07205a54d1856eb9dded2ba535f61de521/detection
+
+114.202.221.99:1234
+rainy.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/3eec229fcfcb83572d88a9e0ecacc9a4139507636bc9152eda70af056937d596/detection
+
+175.202.68.64:74
+74.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/df52f8cb46b162e51eae07a4225286645f05214a859395e53b0d490b0e496c26/detection
+# Reference: https://www.virustotal.com/gui/file/39e37d2e46ba4de1c3b4ef70fb516721edf4b6f928fde210d8b97f9105dea4d8/detection
+
+108.62.38.9:1980
+202.182.109.83:8084
+23.231.180.16:1980
+im8084.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/d939193ab28d70e97f2c83e03ac5e8e3d687103f1a3644c0cf17d903a3d46ff4/detection
+
+115.20.138.226:8080
+
+# Reference: https://www.virustotal.com/gui/file/4c24871d6b53a7dff74a9fdb9d5dbdad17714ac8ecfd3b71164f317dcf5987cc/detection
+
+tay.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/9f4cc33710c0ff1ebcb18e3c954992a0e859ba4c2ae8c16f9eafe996974ee714/detection
+
+122.47.204.39:1111
+
+# Reference: https://www.virustotal.com/gui/file/867007fc96982a04944096322e791e050126a2046bb258a3af46ba95c9ba433e/detection
+
+202.182.109.83:5000
+vvv.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/dcfb8d4cc29173bed201ec83f0d868948d7ac04436e8c01f43773d7c219e9e6c/detection
+
+377177.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/de65b98c43a3cda99e0a7666e7dcfc61b1a929c2f9538425e339a6c376a5e870/detection
+
+27.255.91.139:8889
+enigma.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/15d88a18aeac914c19721f7e30532d6806064e96d992c0078baa3943aaf7d6ab/detection
+
+jjh.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/5b8f2bd853448f2096b525d1be1a1ac820cc7637975dbdf1a0fdb749d16ecf43/detection
+
+175.197.46.45:1234
+
+# Reference: https://www.virustotal.com/gui/file/ae2a40cf592235ec4d81d81089f1683b27f68d85e02ed5228a5d0bfc7676e2d8/detection
+
+175.197.46.45:8080
+
+# Reference: https://www.virustotal.com/gui/file/a8b7ae73d19a5b2249bddc56e8b19132b915c5a92319d17e5d03fb0e9ac84676/detection
+
+125.188.55.151:5453
+sinb0603.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/df0a90eb2607791cef17ca2fb55c69d9e846ecb46d46ff2080b3cb17be345b19/detection
+
+191.101.156.86:1234
+
+# Reference: https://www.virustotal.com/gui/file/9391f82cc0d93ca42012680a558a8997eb9c7a09d0582428118a50534dec8fb6/detection
+
+plasma.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/3ef101b90b07f314052371efc7aa085330ee0f1bdea6f9d572d0d34b7129b25d/detection
+
+leehan.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/d9fd5a2b00137a5debbd388830ca6b08cfe1834d6b97e0f8700c5264c7503eb0/detection
+
+megaplug.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/a2131663703ac107eff36069bc8ae00867399b53261568d8deffdc710b8f26a7/detection
+
+125.185.28.159:2017
+kangyoung.0pe.kr
+qssen3.com
+
+# Reference: https://www.virustotal.com/gui/file/cf8ce3e6bff1053a4082054bc121c6c27cd7dabaecba75e9b4a75fd53b5cd805/detection
+# Reference: https://www.virustotal.com/gui/file/de810b4271928523ea28a4ff27dd3f0ba1f80afbd251859297b7e2e23417498c/detection
+
+124.51.251.75:1111
+ipacck.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/f8adf3064aeeb10342956c7d1ec3a057ebab9a9fc9f19b2ae8dd7447310a0cf3/detection
+# Reference: https://www.virustotal.com/gui/file/de65125c6ebfd7f769d60a6027fc1a2ac1d96f45bb8314df26cca8833f96e208/detection
+
+123.199.44.90:1111
+dlzn5.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/de87534dac0ddd04e2def5bae0235cabd6327269338be3bb39454e9df8be201f/detection
+
+202.182.109.83:8002
+smrmaak.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/c368c8e87b3a1a623f6c7d5cface9fbb9450e9df5367ce61f68ecdac523498b2/detection
+
+116.47.16.38:3027
+116.47.16.38:5723
+125.185.255.166:6974
+125.185.255.166:8041
+alzl8204.codns.com
+bot990815.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/de3f573a6937f4a296da3dec044e4c09acc624657a6500aaefae48f178ad7f2b/detection
+
+125.183.178.133:8080
+belita.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/795ec1c61d1b673c60bdcafcfd85f98ff410c8c38998700f8524e9cd3822f5d3/detection
+
+newspaper13.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/dde9fd0784eb0c406bf3692a37ad55b10a5db055e8cac35faf79d2247ee63dfa/detection
+
+112.173.122.139:9999
+145.142.132.17:9999
+156.214.106.3:9999
+169.56.119.26:9999
+180.1.93.13:9999
+191.200.68.255:9999
+204.42.81.23:9999
+215.241.55.10:9999
+kji2063.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/fa7dc1cea145f16ac82752c0aa483523179c10ba5f36c960af7e6758a5fbee1b/detection
+
+121.151.142.36:1004
+ghkdrkrp3361.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/8df2b1cba4406074b6cea16b98898767dc5da8c21898aaae0d3015ab2148d57d/detection
+
+59.1.5.187:7569
+njzom4.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/6dec17e272c3b6323563adba2fb8061b3c4830d6e93a9d8860d1ec51282103d4/detection
+
+124.49.245.153:2000
+cgswnsvy.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/72addcbe3ddf7f141ac6b4aa4633d7df6889a016a7852f7a21f27caf8c2931c1/detection
+
+119.57.17.56:6969
+skgksk1.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/1cd85136b020eb1648b7da99f08d9e28a6dc993f63f86cfa24013fb05dde6409/detection
+
+185.53.179.29:8889
+49.246.100.78:2132
+djdsh1234.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/f2fc80ab3be6052de89f9f021fcbe37e6eadca489d1d1391b00c6ef9f7d5f55c/detection
+
+125.185.111.243:1547
+geforce.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/d58d367264b7dba6a18104d4c1f31322f412a774001d05dfcca7d4664d9b6762/detection
+
+qwe98.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/1095aa0c52e2ca2c7fcdacf523909738e647aa16010ea4d524db04157e750fde/detection
+
+dawit.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/4afc956402998818fa6a7c6c256054ee76818526890bb4ab4a6900a21a497e7c/detection
+
+112.109.35.117:2015
+ckdals6629.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/8c1f49c0cca57133e43f9da2c6b3b3615d5115a078775152f62d3cfc14b96827/detection
+
+rakun.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/752ccd5ca733c234c217b609861f448a55382bbde2cfdce225586b5317e23f00/detection
+
+125.185.111.245:1505
+208.91.197.46:8889
+gore1.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/4e5c56bd68b3fa0abd8f9be58ced9b42b1d308c6289e45aa1e406c03b0d9cae9/detection
+
+apple12313.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/571cb90adedec0b343e66065e5962681cb26512b4434b66d6291250b094c6dff/detection
+
+211.51.190.33:5219
+hwangtitan.0pe.kr
+vmaxlzcs.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/aaf091413dbf27e35058fc6d54ffce0708df565e09224f8929ad3f7bb48a4b51/detection
+
+adminpect.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/39ec95926fb7827eb8b7168d103387add97fe45f4692c227243996f3d538055b/detection
+
+202.182.109.83:6072
+parkmyungho0807.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/f4b0dd680a7c786372fd464b7633175acb2d6712683258b5e077ece9ba28cc70/detection
+# Reference: https://www.virustotal.com/gui/file/d9a36b94a5c822a9e4ebb8083b09ce64c2f24150807f8f79f79caf04894b9477/detection
+
+108.62.38.9:1980
+cyj.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/594cbd3ec35db458173da5d8b660078082f50f75776890f2adb7214616f060a2/detection
+
+moca.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/56b6916589cfd4bd595a023a5589220bc65a1b6bee47b4ae8aed5d412e106038/detection
+
+218.51.174.141:1233
+darkhwang.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/e9b47234ce699f45489cb4f5b4ae902a6546ecc5243eae98a845db458af71613/detection
+
+211.107.93.160:1598
+torro.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/c47acd49903761290fd8af0b1eb9aa5d8dde11636b8f75198e985905c11c2575/detection
+
+ooo.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/3d05e450d6523d439d338cab07a10712bba95c92b62b81bf0d9900c61434f6bc/detection
+
+220.83.208.86:1111
+boden.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/851923cec1bf344fd2d098fac96286d50d816441b952d275da0207208a27505d/detection
+
+125.185.111.249:1111
+lon.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/78c67e0870e8cddef2235c5dfabebb4be72525b41b970b272415ee7335dec8b4/detection
+
+ll.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/1aa760b5f01661a0384aa24b1a3cae8c4749634832f552ca084046d6f342298a/detection
+
+116.47.16.68:1345
+haema.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/8ccd3bf9121b389f52ed9c2d00d37b5819b014eee8be2865f5cfbbe5f13e0118/detection
+
+ehskfem0.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/3326dbc308aaa419fcb2b084ace074e4784e18978612966ae6e0881cb395560b/detection
+
+123.199.44.73:1234
+leaf233.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/d04527afbd0646983fff65ef4776323c4fbb40cd8e3752656c8537a0fc94f394/detection
+
+121.1.82.6:1598
+godpore2.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/5d45468da3464caffade904269f9fe7a9873a094f7d43e6c7b7a48a06345d291/detection
+
+124.111.116.79:7300
+okm3041.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/0bc16584d1f0d6ea5408272428d4fcd5f2c6a9f960a248035e7cf7215b9d82b4/detection
+
+185.53.179.29:8889
+202.182.109.83:2003
+dngmlwp0807.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/fb78b1a9abb14ebf3e760d68d0706fec3ca80103342d9e49460884429a56f1a7/detection
+
+202.182.109.83:5001
+202.182.109.83:5002
+vvvv.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/97f5c57ec4dc858a01318cef358bd3bd5b6efc80eba59a78e7ccad0978776d1f/detection
+
+202.182.109.83:1111
+ntsystem12.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/d5c026e3d62bed7c47c7182bedcb8dcd7276847be65fc883c410c7a5362a8508/detection
+
+202.182.109.83:3332
+lll.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/5a9942a143d4831771483e57368e609cc5e3be75896811ae9af76fa723c87eb4/detection
+
+202.182.109.83:1111
+x-bot1.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/328b598fae5145478ba1a903bfcac22a1abc8748f8e42454322f3135c35118fb/detection
+
+221.158.94.60:2017
+dudtjr2204.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/10692a8c229514431a48daf10d4ee85cdbc5fde31c824b1a2a503d45e610d2a9/detection
+
+accounts.system-ns.org
+
+# Reference: https://www.virustotal.com/gui/file/c2b3c4885002ec21d09852112b182cb7647e377166811aa94b8bd420bff83a28/detection
+# Reference: https://www.virustotal.com/gui/file/6b7d26a793c3479771041e4d383a23d3b1aa256229354ac6656b3adca2ef5e13/detection
+# Reference: https://www.virustotal.com/gui/file/7981338a9bbabc9f3b0b994f42a455177ce1a2e06375191396f86ad559fb330a/detection
+
+222.186.170.37:33731
+43.248.201.209:33731
+1450291481aa.e2.luyouxia.net
+
+# Reference: https://www.virustotal.com/gui/file/48b4959a911633717fdf2a4203f9725bb5bedcc388779fabd8bb99aa3f545d05/detection
+
+113.17.169.50:28383
+xiongda520.e2.luyouxia.net
+
+# Reference: https://www.virustotal.com/gui/file/127fb2214c4d6a62a1f9dd8553651a9cbf9a286e92fe1350a5bd21ddbdab7402/detection
+
+rrrr.e2.luyouxia.net
+
+# Reference: https://www.virustotal.com/gui/file/41ee6340ebfd84c18801f37e07c4a07b55290b0217384a23b0764d474c02902f/detection
+
+43.248.201.133:23424
+a3299516270.e1.luyouxia.net
+
+# Reference: https://www.virustotal.com/gui/file/f45ba10facb210e812924233eb16958a1f2b30b77f8dd5d8c31c3e35c8cd1bbd/detection
+
+zhangshuaihua.tl-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/fe669f475ef07895d8b98d315c44a4b8e92fcc5b6b6b6640bcdf49ac2d367d69/detection
+
+110.173.24.147:3388
+chinagov.8800.org
+longge520.f3322.net
+rencaa.tl-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/bedfb723c5a4bfd8add895857f22292e25581ee0a52a2e9ac7b20e05b9a25210/detection
+# Reference: https://www.virustotal.com/gui/file/b966beaad69153f2f1153b5535affbbcde9a4b6d294e21931d30961e3af018a3/detection
+# Reference: https://www.virustotal.com/gui/file/6e247fafa17e8608e5c95a72147368f0680031763cd725b8e81ab20146da9225/detection
+
+184.168.221.83:9529
+218.25.11.244:5230
+218.25.11.244:7777
+coco416678.com
+xp-007.tl-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/49f434a3acb1e39880667f0052715db24d1862c3ac7e9da34902f038be40d32d/detection
+
+103.40.18.229:8085
+118.89.38.104:8085
+121.201.119.141:8085
+47.245.10.59:8085
+58.219.162.32:8085
+91.195.240.87:8085
+
+# Reference: https://www.virustotal.com/gui/file/320cbaf69872c3e6034339fff496278d0c42145a3769caa908ba93aee9b0bf66/detection
+
+103.40.18.229:1943
+118.89.38.104:1943
+121.201.119.141:1943
+47.245.10.59:1943
+58.219.162.32:1943
+91.195.240.87:1943
+
+# Reference: https://www.virustotal.com/gui/file/3d3daa6365e19e0bd3b5eaa49110d903b8ec3e2c5fcbd38760812bae8f74304e/detection
+# Reference: https://www.virustotal.com/gui/file/7d52e2f3801e157a0b45ad294e869ea3df9e5b50ffdb85286e4ae5fa97514449/detection
+
+118.193.167.101:8080
+ckddos.com
+hackxhzz.com
+liuxiaolong.tl-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/ade3c45495f06e319d59d7aa3405e4d38621a3207f00ec2cb2991ac38701a607/detection
+
+154.88.220.174:2016
+183.104.6.120:2017
+
+# Reference: https://www.virustotal.com/gui/file/58f6c79029264dc5efdc200328d21fb55273ae527745411de385c794776c180c/detection
+
+qq961034319.xicp.net
+
+# Reference: https://www.virustotal.com/gui/file/0def1ae74b321f7ca98614786e919107ef9a49d4309de742bef14fa0f3a31b2b/detection
+
+175.239.228.242:1111
+microsofr.myq-see.com
+
+# Reference: https://www.virustotal.com/gui/file/c91ba0c639bbd8c8ef5db35f5d1efa698e525f321aca3fc5957c2ccdd44838bc/detection
+
+195.133.40.211:1234
+ehqo1590.p-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/a5101c0cb5d2e776785489f46d08e3c7e0f40004f5bbf872f03a2953360be6ee/detection
+
+broseset.kro.kr
+pccomd.kro.kr
+rotpt.p-e.kr
+rwtpt.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/3a7d297d6b9460bca8e1f4f588165087fe2f744fbb3b2378b4dd8f336854bbab/detection
+
+112.157.165.138:6974
+eric9480.p-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/9b3dadfc95c0124b9fd6285edda2735e61ed00707a296f3c46697cd6129bea8e/detection
+
+39.115.120.205:1337
+vaccinebypass.p-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/7189029ba83980a63c55ff82d23a71e57213cd9835957fb290f61a25d70d6181/detection
+# Reference: https://www.virustotal.com/gui/file/55d78bb1a2de51941a7b408fffc47914352259f89446957bf84ff5dee9ed5a46/detection
+# Reference: https://www.virustotal.com/gui/file/8681b484e42b5a78f28c192468116301b65aeb8befbb9af106e5781209e175f3/detection
+
+103.31.15.178:10001
+103.31.15.178:10004
+103.31.15.178:10005
+103.31.15.178:51001
+103.31.15.178:51005
+dalloo.p-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/87c89e100fa6fb288321533b9f3cf633d1d51762365b34d224dfa66a65cb59ce/detection
+
+mu4040.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/542d926a79efb59d9d36dce0d20dfcdc9e681b851d81866909b9f6da2970a1c8/detection
+
+cu85891.tmweb.ru
+
+# Reference: https://www.virustotal.com/gui/file/99c50b658c632214f0b133f8742a5e6d2d34e47497d7a08ed2d80e4299be3502/detection
+
+185.130.104.156:4433
+
+# Reference: https://www.virustotal.com/gui/file/031c72a9f106f01ca176be87b8573db919294329e8d599f3a753813c680e8162/detection
+
+183.96.97.150:1118
+
+# Reference: https://www.virustotal.com/gui/file/03ed564263889a33e8b42e167d98445f644e2db65323ae35184d137ee664595f/detection
+
+admin1.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/17a3e00b753ee023241a195af7431a005bd453e8bd12848ed51c8fc1a7c884ab/detection 
+# Reference: https://www.virustotal.com/gui/file/2cd77706d94eec6d5ae9bbbc3076b91b32b5285d5d0dd6bcbf470638948b1c1a/detection
+
+211.222.215.118:2832
+dos.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/ba5e9c3bc02ecd78c4d232d4968c110345e151fc281cb327bbfd66fb40d8b08f/detection
+# Reference: https://www.virustotal.com/gui/file/c1905c36a6d911c176fbb62958d3b84e410ad67e3699bf19684bfa6fcbb92700/detection
+
+118.193.234.108:82
+121.180.252.168:5219
+221.157.221.7:5219
+titanhwang.0pe.kr
+
+# Reference: https://www.virustotal.com/gui/file/bcc10cc6981d88f8f3fcd524eb4e26c9373ac08e4092e7e20a7e967cb402ff6a/detection
+
+win.xkcdn.org
+
+# Reference: https://www.virustotal.com/gui/file/39e77fbb359d36d89e99fd9db9ec081b43fcd791ca347b59cda542827702f7f9/detection
+# Reference: https://www.virustotal.com/gui/file/da04b5c330671ac71e83ab1171e5b8c972e81ed47bcaebbefc552facd58199c2/detection
+
+xkcdn.org
+
+# Reference: https://www.virustotal.com/gui/file/d0e8ccd1ea46ed539932cd8eaeb8bb7b2f1443bb45e54896d0b575c80d205a1c/detection
+
+win.junshao8.com
+
+# Reference: https://www.virustotal.com/gui/file/91b4241c27c928d190125b4578ccdbf359c8a646382ccc3654b4325644056fae/detection
+
+158.69.184.138:8023
+junshao8.com
+
+# Reference: https://www.virustotal.com/gui/file/6e7ae6a0059bb4ed1d153115992b2aad090a1a0fe96de9b22997c4b5da08012a/detection
+
+118.193.233.10:77
+admin98.linkpc.net
+tazhao.7766.org
+
+# Reference: https://www.virustotal.com/gui/file/30f3218c8f317105d7d6509e8ff2c3c4a558d993a902620226f36239c1befef9/detection
+
+marnix.pdns.cz
+
+# Reference: https://www.virustotal.com/gui/file/dc08380bf09e4dc5990408a255d903fbd5f8ba4725877672336b7fcdb9e6c03f/detection
+
+speedhacker.vicp.net
+
+# Reference: https://www.virustotal.com/gui/file/1400bf46b76dc22291868713732f1e979595e7d6ba3d17f7ae3a0fc4995b7942/detection
+# Reference: https://www.virustotal.com/gui/file/7ad5b4b23e7fc6073a1207bb1cece5479f3f92aed99cf625629b7b7b7cc21142/detection
+# Reference: https://www.virustotal.com/gui/file/1e999153f0150768cfee72840aea63f38b16a88439a5f551dabdfe6d88245d98/detection
+
+154.223.132.91:3186
+222.186.169.223:3186
+23.245.49.210:3186
+43.225.124.228:3186
+58.218.213.135:3186
+wh1.f3322.net
+
+# Reference: https://www.virustotal.com/gui/file/bb7ae136f973d783473f914da994a6faca56e5a7649be526364cd8c62874ca3a/detection
+
+103.143.29.74:9090
+
+# Reference: https://www.virustotal.com/gui/file/aeed0f66abe67420a99e3e70b5e72f40be46512e81570dbf3e34ae18bc735ead/detection
+
+103.73.161.103:7007
+
+# Reference: https://www.virustotal.com/gui/file/a031b2755e57698badc7db5daed0824a3e545101a9701b96fcdc13c0d086fd89/detection
+
+222.187.254.41:8080
+
+# Reference: https://www.virustotal.com/gui/file/84da6256e64206d81f77ac4ffafcc434ef52b44787412248519b0d3c59a7c38d/detection
+
+23.236.68.99:7007
+43.229.37.253:7007
+
+# Reference: https://www.virustotal.com/gui/file/7e05ac71233f668bada1fa6cadfeae3ab40e9267e8f7ff14089bf398aceb5dd9/detection
+
+222.187.254.41:8023
+
+# Reference: https://www.virustotal.com/gui/file/49574de39cbfb22c8f9faa6dccbfbf9ba18caf61b038414bb8dd7354ca8a331c/detection
+
+103.91.209.213:5033
+23.236.68.99:8080
+43.229.37.253:8080
+45.119.127.17:7007
+45.119.127.17:8080
+
+# Reference: https://www.virustotal.com/gui/file/3e858356f149fa1398c1089c1ef755b8c3f122238e36a218761b5aef90ad878d/detection
+
+180.153.41.231:24444
+
+# Reference: https://www.virustotal.com/gui/file/db8f1ca71e1e37d44cab5cc31e35c0ecc576d46d194fce92efb66cb081b73b35/detection
+# Reference: https://www.virustotal.com/gui/file/7b77830758550a484bc582eab78087d501e3d160ef3b93224675fe1609eaae65/detection
+# Reference: https://www.virustotal.com/gui/file/6507b4bedf862510cf1ea8622a222889a9cc616f1fd8e86a11894e04084ec981/detection
+# Reference: https://www.virustotal.com/gui/file/2ff12a4fe3b8bec6e77beef67bdfea3fdff2f9b83ee2e594c71bbea9623766e7/detection
+
+113.106.202.60:25111
+113.106.202.60:4453
+113.106.202.60:8086
+922.f3322.net
+
+# Reference: https://www.virustotal.com/gui/file/2ff12a4fe3b8bec6e77beef67bdfea3fdff2f9b83ee2e594c71bbea9623766e7/detection
+# Reference: https://www.virustotal.com/gui/file/a4ced451440f0135e39a787cd3af2722477669212bce0f0acfa2ba2ea6824b55/detection
+
+115.231.218.29:7777
+43.225.105.206:25111
+lihaisong2017.f3322.net
+
+# Reference: https://www.virustotal.com/gui/file/927d0f45bf59f19e915b8a8807372f547d151b60455a7fe40f696b8742d3ae3a/detection
+
+103.101.205.121:7766
+103.206.23.217:7766
+107.151.159.243:7766
+107.183.180.136:7766
+107.183.180.136:7766
+110.42.0.146:53021
+154.209.13.36:7766
+154.213.17.131:7766
+43.230.144.18:7766
+
+# Reference: https://www.virustotal.com/gui/file/9af8b9d7794db80c5e194c3f98b7b13ac02a84854da2a709d48edaf410688288/detection
+# Reference: https://www.virustotal.com/gui/file/75473b3170e785b9e5dc897872b03c3f508bd5fb1e30b0d76009d2397b152640/detection
+# Reference: https://www.virustotal.com/gui/file/0b1d3f259345ed61457789a5b602f67950acc9e167024073f3b814a293fdf6e3/detection
+# Reference: https://www.virustotal.com/gui/file/057991ee15aae1a21e65f3a1d47c75541cf42850f9f0d92aa18bba8f7fae7b8b/detection
+
+47.100.207.39:45207
+jqzlvip.top
+
+# Reference: https://www.virustotal.com/gui/file/0af0670773e0171d1e1a519de689de13e15da0da3ff47c0ec9517694ea499555/detection
+# Reference: https://www.virustotal.com/gui/file/14f14ad1304b7a26e6a8dee18fd4be03f5615990bea1921532969d25f70753d3/detection
+
+1.117.35.116:8091
+c1.ro4.cc
+dk.523sew.com
+yk.523sew.com
+
+# Reference: https://www.virustotal.com/gui/file/00001957ce922939c9f6921dbf647ba09f02b28fd833740fe600d643a0be71cc/detection
+
+msktne.codns.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1560615464266768384
+
+http://124.221.180.10
+43.142.243.194:8000
+
+# Reference: https://www.virustotal.com/gui/file/0aa9e9b976f36c0985876ecb64606fdcedf961d9151c7a1451a75e9b396174c8/detection
+
+115.215.218.108:9000
+520hack.f3322.net
+qyzk.f3322.net
+
+# Reference: https://www.virustotal.com/gui/file/ab99e2b228b829fde07aec8da641a68be557fe14d211ca00120ea39f712c2b88/detection
+
+154.12.33.22:8080
+91.195.240.94:8081
+layer7.top
+
+# Reference: https://www.virustotal.com/gui/file/cfa67e04df92e2ecba77688f23713f1a16bcb0e0d2b9958da6cd3d91780fb47e/detection
+# Reference: https://www.virustotal.com/gui/file/309f565416f9d6b00354e0a9e28a51db537877139d0b49c7241deb1c5d2cb43e/detection
+
+154.80.232.16:8030
+0x0ss.sytes.net
+
+# Reference: https://www.virustotal.com/gui/file/012b7999560052b791a742c74cd0a1b2eb48082669ade22748b5d329d0576093/detection
+
+139.99.89.153:6974
+domain.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/00c12442a20623f0afb8b3e309eb471e140cd4805411e92300218127bbb60c1a/detection
+
+103.1.250.148:20001
+103.1.250.148:30002
+103.1.250.148:6200
+news22.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/01a57053b217c2bacba7f52e6a9f289963a79cf86c9c39a0db5e306e90449bff/detection
+
+103.1.249.137:20001
+103.1.249.137:30002
+103.1.249.137:6200
+news13.kro.kr
+
+# Reference: https://asec.ahnlab.com/en/44504/
+# Reference: https://otx.alienvault.com/pulse/63a5aae6d3c133acd38b9e73
+
+gy9.gyddos.com
+rlarnjsdud0502.kro.kr
+
+# Reference: https://www.virustotal.com/gui/ip-address/51.195.68.13/relations
+# Reference: https://www.virustotal.com/gui/file/1aa35f1d0e3f3c8c30cbb007682bd1b77e51bd84cacf78ccb65ae24d0585bf33/detection
+
+51.195.68.13:81
+0ddos.ddns.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/51.195.68.13/relations
+# Reference: https://www.virustotal.com/gui/ip-address/51.77.46.157/relations
+# Reference: https://www.virustotal.com/gui/file/fbd52b791d06f1e4fa0a21611111443161d4a53b717d3a14526235fc12ed4691/detection
+# Reference: https://www.virustotal.com/gui/file/6e1dc20fec38c780a4a527911639b93550807eaac321fba66589b0708127cdb7/detection
+
+51.195.68.13:11000
+51.195.68.13:11001
+51.77.46.157:11000
+filteressencemultiworld.super-guard.ru
+multiworldmulta.super-guard.ru
+mwobtservertest.super-guard.cloud
+usfysagxbcxxxsufgys.super-guard.cloud
+
+# Reference: https://www.virustotal.com/gui/file/bb1cfaffae81e7c8007d13eb950ac484d8cdd1bd00bf6f62eaacb19ecc4101ca/detection
+
+3.137.125.209:8889
+betnam.p-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/9203fc6450c0b5582afab6e39b1bc4119da2ff8995c9292bf5a1a8bfbbd0767c/detection
+
+112.157.129.164:8989
+172.8.197.45:8989
+177.58.146.116:8989
+182.109.222.188:8989
+187.160.171.5:8989
+36.161.44.156:8989
+41.212.248.228:8989
+cowmake.p-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/30b7b8b886d8f35fee9b9f647bdeaacef893fdfa2c9d4dbbdc5bb9713b763ac9/detection
+
+112.173.121.122:8080
+117.27.222.131:8080
+122.78.171.203:8080
+147.217.234.56:8080
+204.232.246.59:8080
+209.27.195.131:8080
+58.29.68.26:8080
+63.79.17.98:8080
+68.130.93.170:8080
+72.181.42.242:8080
+
+# Reference: https://www.virustotal.com/gui/file/75ef5ca064ecb828e9558bd4b72e947925d75d5c2a717861cdee64c36ca076c1/detection
+
+1505.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/33babfc60c023e03523e92f2e940eaae3db585629f8e857569bcd372fed0f729/detection
+
+125.177.239.165:1800
+1800.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/db44f3385876bde9324e0c9382a1ef36d89d72a8e8412de6ed20ffa340865f3f/detection
+
+180.65.17.116:1004
+1801.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/5fcfd8f85812c88ae3d035d7e12349ab34524852e068d9e2bb86c1dfdd85a4cb/detection
+
+152.16.89.63:3
+157.66.165.135:3
+162.117.114.207:3
+167.168.63.24:3
+172.92.12.96:3
+194.43.244.35:3
+217.193.63.240:3
+218.49.238.15:3
+221.243.12.57:3
+2006bestbb.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/3c85ec9da909d1fdab6fed0c68383553aa50c120cbcb6363c8c28adc97976fe2/detection
+
+221.139.33.126:1
+2006bestbest.kro.kr
+
+# Reference: https://www.virustotal.com/gui/file/6d35b13141f2d47e7284a254a6aac9903de02fefc128f5f64b3182ebf610d6de/detection
+
+100.42.74.199:10137
+
+# Reference: https://www.fortinet.com/blog/threat-research/gotitan-botnet-exploitation-on-apache-activemq
+# Reference: https://www.virustotal.com/gui/file/f75cb3e540b96cd54a966c512c854c832807e354772ae1a326b758394b01b607/detection
+
+42.121.111.112:81
+
+# Reference: https://www.virustotal.com/gui/file/03980a0d0a59f336cf903132c9d309a8d3c6684dba03bf97884462170e68f866/detection
+
+deusexhosting.com
+
+# Reference: https://asec.ahnlab.com/en/66790/
+# Reference: https://www.virustotal.com/gui/file/52991b00ba04504a2195d3a12521496170acbc1002176679bf59d3f2890e3d5d/detection
+# Reference: https://www.virustotal.com/gui/file/f97123d0450c2a436dff3d4e7c674c366833bcbf4f21ebd387dabba8737d1101/detection
+# Reference: https://www.virustotal.com/gui/file/d58355fed81b0412fb36dff5c210c70b32de67501962df3e350648835e0ae07c/detection
+# Reference: https://www.virustotal.com/gui/file/ebe2488e6a5a5e9512d3751ef6ba7e68c08ac072169cf9af0aed74db1f1ef1b0/detection
+# Reference: https://www.virustotal.com/gui/file/c78b22ec1a704a79847ec30404386253b2b2e48563bb7f55ccb8696cb88c60f0/detection
+# Reference: https://www.virustotal.com/gui/file/0ec9008ca4fd463a37d0bdcc6100619d9e28ea2d303951e9e2cb3c0d1446df79/detection
+
+104.19.188.23:2052
+118.41.52.155:2000
+118.41.52.192:2000
+118.41.52.19:2000
+118.41.52.74:2000
+118.41.52.81:2000
+119.201.201.183:8080
+121.181.165.136:2000
+121.181.165.158:2000
+121.181.165.207:2000
+121.181.165.244:2000
+121.181.165.91:2000
+14.63.199.245:2000
+211.224.88.48:8080
+gandigod.codns.com
+gandigod.ddns.net
+gandigod1.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/000e72e74f78b7441b3dfc5b845eaf5fe5d6a196630abf8c3c80ea14e6f683f3/detection
+
+154.201.87.185:48083
+
+# Reference: https://www.virustotal.com/gui/file/ed746438d971e50835c87707945102a52e1fe763fcb576869e08807d425f9511/detection
+# Reference: https://www.virustotal.com/gui/file/3dc6414f1c8447a3a73a713d660bc7b7ab809a54fd4a1b7543c874b81d2aea74/detection
+
+104.233.187.248:3000
+104.233.187.248:8000
+
+# Reference: https://www.virustotal.com/gui/file/1a37b3d670fb6a1fec1d2b139c9ed86984d1f444365031ef62f4a0c700ad5d54/detection
+
+167.179.93.14:3301
+zzzzz45329109.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/f994e7f72acda7acaef6a17d3b438f1a3d30906a0a135222c51d36d8c8851a19/detection
+
+142.93.202.126:6666
+myss.ter.tf

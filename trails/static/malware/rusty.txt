@@ -1,0 +1,72 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: rusty stealer
+
+# Reference: https://twitter.com/x3ph1/status/1755228858612089127
+# Reference: https://www.virustotal.com/gui/file/79e7ac368ed32889059e4614b62ce85a19832687137dab6fea7432181e0dd2bf/detection
+
+bingoocy.com
+blogskilz.com
+clockiyfi.me
+coacaips.com
+cursegro.com
+eeftooms.net
+femoafoo.com
+git-cdn-services.com
+glelroum.com
+goavoafu.com
+groacoaz.com
+janokroo.net
+joaphoad.com
+jodroacm.com
+kockaiho.com
+meksicie.net
+moxuthoo.net
+oargaung.com
+oarsoocm.com
+oogroopt.com
+oojitsoo.net
+oopursie.com
+phesheet.net
+ptompeer.net
+ratimsub.net
+riweeboo.com
+shaumpem.com
+vighooss.net
+waufooke.com
+weestuch.com
+wheweeze.net
+whotchie.net
+wuksosta.com
+
+# Reference: https://x.com/banthisguy9349/status/1810361702304583786
+# Reference: https://www.virustotal.com/gui/file/a98aec4a39f5f5ee41280cb17d9b4b5e9bc1eea2fb2ff0d7a962e2b74464d67c/detection
+
+crep.vip
+m.crep.vip
+silly.crep.vip
+x.crep.vip
+
+# Reference: https://www.virustotal.com/gui/file/8d9eac888ed21abbc303d2acd06b29ae4c1a3cdd0c9f2e36d679848495cc5103/detection
+
+81.219.193.10:21114
+81.219.193.10:21115
+81.219.193.10:21116
+
+# Reference: https://x.com/9823f_/status/1811112954965762474
+# Reference: https://app.validin.com/detail?type=raw&find=Aleia+boatnet#tab=host_pairs_v2
+
+http://91.92.240.102
+dredgepreve.com
+felllowrike.com
+feweatmore.org
+grepmook.com
+jetlask.com
+lonbebear.org
+
+# Reference: https://x.com/smica83/status/1870444302486454399
+# Reference: https://tria.ge/241221-pea5pszkdr/behavioral2
+# Reference: https://www.virustotal.com/gui/file/2821e4b0c4c57d6445fe078733a50a69d574aaf7857b12d61d048622e82ae26b/detection
+
+http://91.208.206.195

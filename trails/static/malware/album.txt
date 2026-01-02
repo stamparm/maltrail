@@ -1,0 +1,68 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zscaler.com/blogs/security-research/album-technical-analysis-new-multifunctional-stealer
+# Reference: https://github.com/threatlabz/iocs/blob/main/albumstealer/c2s.txt
+
+findalbum.top
+foundaz.xyz
+keeptosafe.top
+microtobig.xyz
+neuka.top
+ponamei.top
+rebrandtop.top
+shopalbum.xyz
+cdn.ponamei.top
+cdn.ubutun.xyz
+
+# Reference: https://www.bitdefender.com/files/News/CaseStudies/study/428/Bitdefender-PR-Whitepaper-S1deloadStealer-creat6669-en-EN.pdf
+
+appfree.club
+dolala.xyz
+micbig.top
+mictobig.xyz
+napala.top
+neukoo.top
+papazz.xyz
+poloke.top
+programe.top
+progriu.top
+puname.top
+shopproxy.live
+
+# Reference: https://threatfox.abuse.ch/browse/tag/AlbumStealer/
+
+albumcallgirl.top
+albumimages.top
+albumpga.top
+best-pc-games.net
+caklub.com
+cdn.albumcallgirl.top
+chaesik.com
+chatgpt-premium.com
+globalsalestore.com
+image-albums.com
+kudaqq.com
+leakonlyfan.top
+lydownload.net
+movies-box.net
+movies-cine.com
+myafarisha.com
+myprivatephotoalbum.top
+nctitds.top
+office-2023.com
+photoandfilms.com
+photography-hq.com
+pictures-album.com
+sportydesktops.com
+videovip.org
+www-x-videos.com
+x-album.com
+x-albums.com
+x-photobucket.top
+x-photos.net
+x-picture.net
+xphotos-album.com
+xphotos.net
+xpictures-albums.com
+xpictures.net

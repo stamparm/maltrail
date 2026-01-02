@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2017-051707-0237-99&tabid=2
+
+minecoins18.com
+super5566.com
+super1024.com
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/adylkuzz-cryptocurrency-mining-malware-spreading-for-weeks-via-eternalblue-doublepulsar
+
+microsoftcloudserver.com
+disgogoweb.com
+wa.ssr.la

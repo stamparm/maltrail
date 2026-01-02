@@ -1,0 +1,65 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.group-ib.com/blog/golddigger-fraud-matrix/
+# Reference: https://www.virustotal.com/gui/ip-address/18.139.164.24/relations
+# Reference: https://www.virustotal.com/gui/ip-address/3.0.153.116/relations
+# Reference: https://www.virustotal.com/gui/ip-address/54.255.120.224/relations
+# Reference: https://www.virustotal.com/gui/ip-address/54.255.91.81/relations
+
+cgovn.cc
+dg1e.com
+egovn.cc
+evnspa.cc
+evnspc.cc
+evnspe.cc
+evnspo.cc
+evnspr.cc
+gdtgovn.com
+govn.cc
+hds6y.cc
+ks8cb.cc
+ms2ve.cc
+smgeo.cc
+ty2zn.cc
+vietcp.cc
+vietgav.cc
+vietgov.cc
+vietgov0.cc
+vietgov1.cc
+vietgov22.cc
+vietgov3.cc
+vietgov33.cc
+vietgov4.cc
+vietgov5.cc
+vietgov6.cc
+vietgovn.cc
+viettgov.cc
+vitgov.cc
+wbke.cc
+zu7kt.cc
+api.zu7kt.cc
+cskh.evnspa.cc
+cskh.evnspc.cc
+cskh.evnspe.cc
+cskh.evnspo.cc
+cskh.evnspr.cc
+viet.cgovn.cc
+viet.egovn.cc
+viet.gdtgovn.com
+viet.govn.cc
+
+# Reference: https://otx.alienvault.com/pulse/65ce2fbf2d10c7204d57dec2
+
+bgt6.xyz
+bv8k.xyz
+gt6ss.xyz
+hzc5.xyz
+msc4.xyz
+qskm.xyz
+r6go.xyz
+t8bc.xyz
+tp7s.xyz
+vki9.xyz
+wsy6.xyz
+wts3.xyz

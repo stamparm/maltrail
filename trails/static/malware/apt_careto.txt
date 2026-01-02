@@ -1,0 +1,48 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://discussions.nessus.org/thread/7087
+
+nthost.shacknet.nu
+tunga.homedns.org
+prosoccer1.dyndns.info
+prosoccer2.dyndns.info
+nav1002.ath.cx
+pininfarina.dynalias.com
+wqq.dyndns.org
+pl400.dyndns.org
+services.serveftp.org
+sv.serveftp.org
+cherry1962.dyndns.org
+carrus.gotdns.com
+ricush.ath.cx
+takami.podzone.net
+dfup.selfip.org
+wwnav.selfip.net
+fast8.homeftp.org
+ctronlinenews.dyndns.tv
+mango66.dyndns.org
+gx5639.dyndns.tv
+services.serveftp.org
+redirserver.net
+swupdt.com
+msupdt.com
+appleupdt.com
+linkconf.net
+
+# Reference: http://kernelmode.info/forum/viewtopic.php?f=16&t=3159
+
+msupdate.ath.cx
+karpeskmon.dyndns.org
+isaserver.minrex.gov.cu
+
+# Reference: https://s3.amazonaws.com/snort-org/www/rules/community/community-rules.tar.gz
+# Reference: https://snort-org-site.s3.amazonaws.com/production/release_files/files/000/012/156/original/snort3-community-rules.tar.gz
+
+helpcenter1it6238.cz.cc
+helpcenter2br6932.cc
+oco-231-ms.xns01.com
+
+# Reference: https://github.com/ti-research-io/ti/blob/main/ioc_extender/ET_Lazarus.json
+
+updates.homeftp.org

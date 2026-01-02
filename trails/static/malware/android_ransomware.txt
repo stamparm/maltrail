@@ -1,0 +1,233 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2019/07/29/android-ransomware-back/
+
+rich7.xyz
+wevx.xyz
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2017/2017-07-07-leakerlocker-mobile-ransomware-acts-without-encryption/leakerlocker-mobile-ransomware-acts-without-encryption.csv
+
+goupdate.bid
+updatmaster.top
+
+# Reference: https://www.virustotal.com/gui/file/5648e9d7dd6d221538b531bc9c344c4e9793731e7ead56d2a41324c3e3e6cdc6/detection
+
+149.28.14.103:2222
+
+# Reference: https://twitter.com/malwrhunterteam/status/1253776019775016961
+# Reference: https://www.virustotal.com/gui/file/83028bc2bf977754b50d3a22ba9dad6a523e29c3238b0b28ff0e15ebd736489f/detection
+
+extrapooo.xyz
+
+# Reference: https://twitter.com/malwrhunterteam/status/1267862152209203200
+# Reference: https://www.virustotal.com/gui/file/4a87338c443a93b51bde7562b6f05dd27f029e3b873c33ad92b01dd219e88ea5/detection
+
+balancetonflic.alwaysdata.net
+/addslave.php
+
+# Reference: https://www.virustotal.com/gui/file/cad42bd864e33717558266be358e6e05075c889a2e18c963d521bbe048fb4dde/detection
+
+101.15.222.90:8953
+
+# Reference: https://twitter.com/ReBensk/status/1275329926602915850
+# Reference: https://twitter.com/LukasStefanko/status/1275711062290161669
+# Reference: https://www.welivesecurity.com/2020/06/24/new-ransomware-uses-covid19-tracing-guise-target-canada-eset-decryptor/ (# CryCryptor)
+
+covid19tracer.ca
+tracershield.ca
+
+# Reference: https://twitter.com/malwrhunterteam/status/1286231546148589569
+# Reference: https://blog.malware-unboxing.tech/2020/07/analysis-of-dcry-ransomware.html
+# Reference: https://www.virustotal.com/gui/file/cf071549df9491cb2e87396f5315e3e39e145ca9858fc510508cdaaf5e69546a/detection
+
+arefy.net/addslave.php
+
+# Reference: https://www.virustotal.com/gui/file/2456f3762cb6e757a37283a5e4f30371b9e680b090a259aab8a99bb6cb1a17fa/detection
+# Reference: https://www.virustotal.com/gui/file/5e00a36e45bc5afbb5992312bedb714d01d9a770b66cfa5527859afda0f0beae/detection
+
+g.bannerbroker.org
+g.biggeekpanel.org
+
+# Reference: https://www.virustotal.com/gui/file/6ad348b5e41932b85771f55a4531cb59c2ad985e3d6aa81d0d5f912b121177cb/detection
+# Reference: https://www.virustotal.com/gui/file/107060643d120f8019086576a873533850f9bf45b227df068d14c0446d536c19/detection
+# Reference: https://www.virustotal.com/gui/file/3b057013749d654d3ee1c6a68744b5466a4b1b6b9bca4b230999556f3be2e4c5/detection
+# Reference: https://www.virustotal.com/gui/file/eafde7edf46a134c6212e37668179cbdbdb0412cbc05e236b237bf05e479b14a/detection
+# Reference: https://www.virustotal.com/gui/file/062b3b180cc3390c1b3a179259374d46c8705e30c522721389b19f067dcbb720/detection
+# Reference: https://www.virustotal.com/gui/file/55bc80c31fa4520c584026a8caaff7d3a3378e9f4cdb7784f59541b59138e075/detection
+# Reference: https://twitter.com/bl4ckh0l3z/status/1312794353493069824
+
+217.107.219.160:1081
+http://217.107.219.160
+bomsbons.ru
+egfbf.ru
+freexe.ru
+locktop.ru
+sasambuka.ru
+sexmet.ru
+skmvdrk.ru
+srtue.ru
+
+# Reference: https://www.virustotal.com/gui/file/6fecf60e593221ec8ee0bbb8ea9136779ffd45466596144aafa1e53ee5913422/detection
+
+blockschain.great-site.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1314846396818903041
+# Reference: https://www.virustotal.com/gui/file/975a599eff3947322e1f5bef88b244d9c920eb592c9ce4b25924bfbd8c44dc43/detection
+
+62.78.143.35:24387
+hyppy.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/abd8276355c562c21cbfd1d1e1d34d787d4046ae3533d7e5ee473ad8b1c8c4f4/detection
+# Reference: https://www.virustotal.com/gui/file/07958ad195d15d9222227aebdbfed386210b8172717bcee635bc17f3c7448a36/detection
+# Reference: https://www.virustotal.com/gui/file/a62be8827a7444c42d92b41bbf0fe8c9c1dfc7734a286db2e1917fc136d0a606/detection
+# Reference: https://www.virustotal.com/gui/file/39b83d10ba249aa78714254ec015855f32cc8c624cf8b331ea5d6ba844f1ad12/detection
+# Reference: https://www.virustotal.com/gui/file/062a1905a6f6118d151b9ef0977aafd84853e98b7c9c1d47d616ceadb63c1753/detection
+# Reference: https://www.virustotal.com/gui/file/2530dfa86db84403af2865cf92013d9064a9a29bada97d18d36590f2be8be6fb/detection
+
+tesex.ru
+
+# Reference: https://twitter.com/sh1shk0va/status/1338999532701577216
+# Reference: https://twitter.com/huntingneo/status/1338536403966316551
+
+cyberpunk2077mobile.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1358148518876229633
+# Reference: https://www.virustotal.com/gui/file/4ba553d10ee8d711ee81c402488113d30d32ba06cae5961418e742fab3367204/detection
+
+ocurso-1.000webhostapp.com
+
+# Reference: https://www.virustotal.com/gui/file/12b7f32b76929f56e486fbbe70cf275705c490c8dd50d1cb3e9f735b8c074013/detection
+
+185.82.217.154:6666
+rfvgy.ddns.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1359404206021636097
+# Reference: https://www.virustotal.com/gui/file/29601a98e8394d14c0822b69e2e561e44524ded687ae062b6f1bbe98efb63678/detection
+
+bombert.ru
+
+# Reference: https://www.virustotal.com/gui/file/00f26dc437a9458a76fd160e947946904a1f6f76f5a25809b80ce5730e1005cf/detection
+
+kzfmvd.ru
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.212.130.105/relations
+
+htrdtg.ru
+lcllk.ru
+mmdemka.ru
+
+# Reference: https://www.virustotal.com/gui/file/69e05517bc4dd40df6e119e8b97be3e3baa87965e341e006c34323e9e86e9883/detection
+# Reference: https://www.virustotal.com/gui/file/668e8a6f5b08f45bc2b088bf5c27e66ccddcbe651b1f7b995298fbd27b636beb/detection
+# Reference: https://www.virustotal.com/gui/file/faa01068c77a15fb16f13768efb4fb092b5bb7baac949887b5176b5f6b86915e/detection
+# Reference: https://www.virustotal.com/gui/file/6dee5a64f1267e0a2059359ea864f0ecaff548745db24855e00113c387339200/detection
+# Reference: https://www.virustotal.com/gui/file/007c21937bdb09bd5e7a832bf9884af6f19fb4d7fcf97839b854c42f8fdd205e/detection
+
+http://104.21.10.142
+fanfarasa.ru
+hystrav.ru
+rksupport.ru
+smartsystems.su
+zipfail.ru
+
+# Reference: https://www.virustotal.com/gui/file/50062e81a608a33f1ddccf838540ea58ad8f2875f038ebde8c520ab5894b4592/detection
+
+zoal.myftp.org
+
+# Reference: https://twitter.com/malwrhunterteam/status/1379877366764277767
+# Reference: https://www.virustotal.com/gui/file/1da238ca303dd1f6863b1e8699224dba5669bdd9f95a23b2dabf2d13d83a1fdd/detection
+
+91.109.184.5:1196
+aldaet.dvrcam.info
+
+# Reference: https://twitter.com/malwrhunterteam/status/1400129123624886280
+# Reference: https://www.virustotal.com/gui/file/7204038839b0b2b8b1f54cd9044a389492af2b1e079433316b61ad24601188e9/detection
+
+stealer.ga
+
+# Reference: https://twitter.com/malwrhunterteam/status/1413427751210659841
+# Reference: https://www.virustotal.com/gui/file/488ace5b609f5a04530d06c5c5c9efce9dd7fd714f03a533c4fc7d18311ec324/detection
+
+googgle-playystore-butewoorse-komunitas.000webhostapp.com
+
+# Reference: https://twitter.com/ni_fi_70/status/836950478839758852
+
+exoduockgfq3ikf7.onion.cab
+
+# Reference: https://twitter.com/malwrhunterteam/status/1496820565306486790
+# Reference: https://twitter.com/ni_fi_70/status/1496819041662558215
+# Reference: https://www.virustotal.com/gui/file/44b42593333387e7ed6ed8ab2ebdbbb198da0342627d31ce707b4f60e85ba63b/detection
+
+http://91.193.102.219
+191.252.182.225:8088
+91.193.102.219:125
+
+# Reference: https://www.virustotal.com/gui/file/d13dbab622b75e54a2084d7109c072711188cb3e3c1664f67f3f020792ca96ae/detection
+
+141.255.146.22:2222
+141.255.158.135:2222
+41.111.100.63:2222
+
+# Reference: https://www.virustotal.com/gui/file/4d10145ed02e8d634e426c1e80bc5c5152188c31f5a2c41691fa03720c7f9ab2/detection
+
+41.104.89.102:2222
+
+# Reference: https://www.virustotal.com/gui/file/b7c92f4669f9e851695bda15d985efacb499e11b70921ca0f7cc2ed0cb23c400/detection
+
+198.7.62.204:1337
+
+# Reference: https://www.virustotal.com/gui/file/a88fd4ecb2bf4368b5048517bb07f05a4a107c97a47d8d4b3b27b3b98d05f024/detection
+# Reference: https://www.virustotal.com/gui/file/a25cf1ff6cda817b06a53980b427880083398d763a71e445427a665939ae604e/detection
+# Reference: https://www.virustotal.com/gui/file/102bb5d9a0892296f8ad04d240c2e612950d58254abdd44038fd45c76c483f53/detection
+
+102.156.198.182:2222
+197.0.185.97:2222
+20557413.hopto.org
+
+# Reference: https://twitter.com/0x6rsk/status/1647705550241628160
+# Reference: https://twitter.com/josh_penny/status/1647708524686852096
+# Reference: https://www.virustotal.com/gui/file/184356d900a545a2d545ab96fa6dd7b46f881a1a80ed134db1c65225e8fa902b/detection
+
+http://192.99.251.51
+http://84.234.96.117
+192.99.251.51:3000
+84.234.96.117:3000
+
+# Reference: https://twitter.com/ReBensk/status/1750208939084402907
+# Reference: https://www.virustotal.com/gui/file/4aa950f5eb0ef9ac25574524ead978d286caf110e97cf13c2e03dc282b01edf8/detection
+
+mohammadahad.xyz
+
+# Reference: https://www.virustotal.com/gui/file/54716de02eae180e0dfc50b6c167cd94c6fb90111902b6f4d40f47dd0a1b0195/detection
+
+fuyhi.top
+/api/dx_cy/api.php?phone=
+/dx_cy/api.php?phone=
+
+# Reference: https://twitter.com/banthisguy9349/status/1754884653549273579
+
+http://185.216.70.102
+
+# Reference: https://x.com/banthisguy9349/status/1850562197551796381
+# Reference: https://www.virustotal.com/gui/file/e7df0632fe903c7fd9358315068ad1f166305fad956133c385a1246d5889d5e5/detection
+
+0ihiqmrh5foj216jjalmvuefi7pdasik.yundunwaf5.com
+21vkc6879vd916u2.gfvip07as.com
+
+# Reference: https://x.com/suyog41/status/1958140266369753509
+
+/sisuryaofficialkuu
+/zexx_Good
+
+# APK
+
+/bjkim.apk
+/COVID19%20RANSOM%20PENIPU.apk
+/CyberPunk2077Mobile.apk
+/Datting%20Girl.apk
+/ranso-alert-acabacomtudo.apk
+/Threema1.apk
+/tiktokransomware.apk
+/youtubepremium.apk
+/자위영상.apk
+/vaimransom.apk

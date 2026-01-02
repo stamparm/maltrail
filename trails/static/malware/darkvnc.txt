@@ -1,0 +1,75 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1330802925334106113
+# Reference: https://bazaar.abuse.ch/sample/3785550afcc22a9c9cc82c4f6515f77eb9cc0984966aeb238d57e1ea3cb9d351/
+# Reference: https://analyze.intezer.com/analyses/61066573-8020-4b6c-b0b5-5db12c1de6bf/sub/660bae2e-6260-4a50-bc5d-4b07ed21d636
+# Reference: https://www.virustotal.com/gui/file/fa5a472855005b581eeca56451af9cee5a4a0b0d3e6ca3eee6e32c83660d545a/detection
+
+45.138.172.36:443
+
+# Reference: https://www.virustotal.com/gui/file/1bfed02713b2579f4cef2d9fa2304debbe6f77f8d0b31930979b27fc336eb43e/detection
+
+45.138.172.36:91
+
+# Reference: https://www.virustotal.com/gui/file/ffb09c6f4aa0f38562f240061aa6b11120add5658ffc903abde19e2542bcad5c/detection
+
+45.138.172.36:92
+
+# Reference: https://www.virustotal.com/gui/file/6c64e16b8272c34ec2fd5f6b6ee9c3d1aebb4b30978d43dfb5107231da4b5c4e/detection
+
+74.118.138.226:443
+
+# Reference: https://www.malware-traffic-analysis.net/2021/06/30/index.html
+
+172.241.27.226:443
+
+# Reference: https://twitter.com/malware_traffic/status/1416148059898138625
+# Reference: https://www.virustotal.com/gui/ip-address/167.71.236.175/relations
+
+analyticsnet.top
+bradiolum.top
+megorinas.top
+wenolira.top
+
+# Reference: https://isc.sans.edu/diary/28884
+
+135.181.175.108:8080
+
+# Reference: https://isc.sans.edu/diary/28448
+# Reference: https://twitter.com/malware_traffic/status/1516242488855564289
+
+45.153.241.142:443
+
+# Reference: https://twitter.com/malware_traffic/status/1524870765635592231
+
+78.31.67.3:443
+
+# Reference: https://twitter.com/malware_traffic/status/1526765659019001856
+
+88.119.161.118:8080
+
+# Reference: https://github.com/pan-unit42/tweets/blob/master/2022-06-21-IOCs-for-AA-distribution-Qakbot-with-DarkVNC-and-Cobalt-Strike.txt
+
+78.31.67.7:443
+
+# Reference: https://github.com/pan-unit42/tweets/blob/master/2022-06-28-IOCs-for-TA578-IcedID-Cobalt-Strike-and-DarkVNC.txt
+
+91.238.50.80:8080
+
+# Reference: https://github.com/pan-unit42/tweets/blob/master/2022-07-06-IOCs-for-TA578-contact-forms-IcedID-with-DarkVNC-and-Cobalt-Strike.txt
+
+188.40.246.37:8080
+
+# Reference: https://github.com/pan-unit42/tweets/blob/master/2022-07-21-IOCs-for-IcedID-with-DarkVNC-and-Cobalt-Strike.txt
+
+212.114.52.91:8080
+
+# Reference: https://www.elastic.co/security-labs/Elastic-Security-Labs-discovers-LOBSHOT-malware
+# Reference: https://www.virustotal.com/gui/file/e4ea88887753a936eaf3361dcc00380b88b0c210dcbde24f8f7ce27991856bf6/detection
+
+95.217.125.200:443
+
+# Reference: https://github.com/pan-unit42/tweets/blob/master/2023-05-02-IOCs-for-obama259-Qakbot.txt
+
+46.151.30.109:443

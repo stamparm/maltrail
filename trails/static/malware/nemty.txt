@@ -1,0 +1,65 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fortinet.com/blog/threat-research/nemty-ransomware-early-stage-threat.html
+# Reference: https://www.bleepingcomputer.com/news/security/new-nemty-ransomware-may-spread-via-compromised-rdp-connections/
+# Reference: https://otx.alienvault.com/pulse/5d8209f4a87bf2c8ae01f829
+
+zjoxyw5mkacojk5ptn2iprkivg5clow72mjkyk5ttubzxprjjnwapkad.onion
+
+# Reference: https://twitter.com/fbgwls245/status/1180291089074282496
+# Reference: https://app.any.run/tasks/f279fdb8-614e-4074-92c4-ddf01afbf86f/
+
+nemty.hk
+
+# Reference: https://twitter.com/fbgwls245/status/1206515293721387009
+# Reference: https://www.virustotal.com/gui/file/06c1428e1a41c30b80a60b5b136d7cb4a8ffb2f4361919ef7f72a6babb223dd3/detection
+
+nemty10.hk
+
+# Reference: https://www.bitdefender.com/files/News/CaseStudies/study/302/Bitdefender-WhitePaper-RDP-Abusers.pdf
+# Reference: https://otx.alienvault.com/pulse/5dfa406c021cc56f098db797
+
+mandevelopm.org
+megabitcoin.life
+mytele.ga
+workpc.biz
+
+# Reference: https://app.any.run/tasks/b8d618d7-66d8-4486-bfdd-e7d0aef82952/
+
+nemty.top
+
+# Reference: https://blog.talosintelligence.com/2020/02/threat-roundup-0214-0221.html (# Win.Packed.Mikey-7586709-0)
+
+0300ssm0300.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1232828557040029696
+
+nemty11.hk
+
+# Reference: https://app.any.run/tasks/92a980da-0cd9-4cdd-bad4-7a6f8ce12ebf/
+
+marsdefenseandscience.com
+
+# Reference: https://twitter.com/ffforward/status/1196343552810397696
+# Reference: https://app.any.run/tasks/f882f02a-39db-4d7f-84ac-0df93a7ea397/
+# Reference: https://app.any.run/tasks/3f9126b6-fbaa-4668-b965-c4b2bb927c28/
+
+169.159.105.25:4760
+4760.webhop.me
+drajacoffee.com/images/produk/q
+
+# Reference: https://www.virustotal.com/gui/file/b7c4445fc8ed51df42dced4c032ebcf4687576945679076505074503720e51f2/detection
+
+farid19394.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/193.38.55.91/relations
+# Reference: https://www.virustotal.com/gui/file/873fefe15709484416c5711082a309d99777bf510b9e624c7a1f26bacd0ce4f0/detection
+
+buydecrypt.hk
+nemty.top
+nemty2.top
+
+# Generic
+
+/public/gate?data=

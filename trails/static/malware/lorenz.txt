@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/darktracer_int/status/1400178008992862210
+# Reference: https://www.virustotal.com/gui/file/5b03b861884cb3e14a8b888c7dee2ee0d494933df863d504882345fa278d1ea5/detection
+
+172.86.75.63:8000
+lorenzmlwpzgxq736jzseuterytjueszsvznuibanxomlpkyxk6ksoyd.onion
+zxuuhjenklpfoffeqmfdbac2vwbkw3igz7ydryq7fi25lvxj277xpiad.onion
+
+# Reference: https://arcticwolf.com/resources/blog/lorenz-ransomware-chiseling-in/
+# Reference: https://github.com/rtkwlf/wolf-tools/blob/main/threat-intelligence/lorenz-ransomware-chiseling-in/lorenz-indicators.csv
+
+http://206.188.197.125
+137.184.181.252:443
+137.184.181.252:8443
+138.197.218.11:22
+138.68.19.94:22
+138.68.59.16:443
+138.68.59.16:8443
+159.65.248.159:22
+206.188.197.125:22
+64.190.113.100:22

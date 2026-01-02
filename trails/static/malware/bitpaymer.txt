@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://otx.alienvault.com/pulse/5dc30a296b9c96ad479431ea
+# Reference: https://www.virustotal.com/gui/file/bd327754f879ff15b48fc86c741c4f546b9bbae5c1a5ac4c095df05df696ec4f/detection
+
+195.123.213.19:443
+195.123.238.51:443
+45.129.96.9:443
+185.92.74.215:443
+esancendoc.esan.edu.pe

@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.threatcrowd.org/searchTwo.php?data=sinkhole
+# Reference: https://www.virustotal.com/en/ip-address/95.211.230.75/information/
+
+ns1.sinkhole.ru
+ns2.sinkhole.ru
+ns3.sinkhole.ru
+
+ns1.sugarbucket.us
+ns2.sugarbucket.us
+
+95.211.230.75
+46.165.240.181

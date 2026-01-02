@@ -1,0 +1,89 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ScumBots/status/1045358326157115392
+
+/images/logo/header.php
+
+# Reference: https://twitter.com/ScumBots/status/1075025493714497544
+
+/BusTown/gateway.php
+
+# Reference: https://twitter.com/ScumBots/status/1128109425787637760
+
+/elcamino/gateway.php
+
+# Reference: https://twitter.com/ScumBots/status/1150863681661652992
+# Reference: https://app.any.run/tasks/f93e701a-5f12-40d2-badb-922e2819add9/
+
+/w19218317418621031041543/gateway.php
+
+# Reference: https://twitter.com/ScumBots/status/1206787077901357057
+# Reference: https://www.virustotal.com/gui/file/6895d001820e92bba47728f46b79a92991af9c839b65a40411879880e5a3bc0d/detection
+
+01aa352830d06a5e4656ff8035906a6e.eu
+01aa352830d06a5e4656ff8035906a6e.in
+06d463a07b51be9296560eecd2e3f4c6.eu
+06d463a07b51be9296560eecd2e3f4c6.in
+0f619047c0ff622faa7edfe6b4a38bc7.eu
+0f619047c0ff622faa7edfe6b4a38bc7.in
+15a9f5a47e3c12a2b37e753d03b7de5e.eu
+15a9f5a47e3c12a2b37e753d03b7de5e.in
+161b0c4f46848dbdc4b09c5d48dc2992.eu
+161b0c4f46848dbdc4b09c5d48dc2992.in
+1ef370e0a85642bac5cb094032379d50.eu
+1ef370e0a85642bac5cb094032379d50.in
+25cfcba587c487f88ea0f0f039cb5127.eu
+25cfcba587c487f88ea0f0f039cb5127.in
+27d3ca64d5f533ad413c838a13691385.eu
+27d3ca64d5f533ad413c838a13691385.in
+377da3a0aa1921d7101745552ff75b2f.eu
+377da3a0aa1921d7101745552ff75b2f.in
+3c8ce9f57f152dd372ddaf177e282439.eu
+3c8ce9f57f152dd372ddaf177e282439.in
+4717a474ff8ada2da5642e2a9b8bb767.eu
+4717a474ff8ada2da5642e2a9b8bb767.in
+498484ec198c8388461e2643a3deec9b.eu
+498484ec198c8388461e2643a3deec9b.in
+4c5a4ea5e8ce5983b3158853945066b9.eu
+4c5a4ea5e8ce5983b3158853945066b9.in
+511801c667618febd17d51d0866da5ad.eu
+511801c667618febd17d51d0866da5ad.in
+5bc9f221df36afc449af2f5b708c53be.eu
+5bc9f221df36afc449af2f5b708c53be.in
+63e7466977a64d47d6153038a33ff3fa.eu
+63e7466977a64d47d6153038a33ff3fa.in
+71912f123fe7c1ea528b8f00169b82f7.eu
+71912f123fe7c1ea528b8f00169b82f7.in
+8f43ee94ec7c42b26363f69d63ea9f07.eu
+8f43ee94ec7c42b26363f69d63ea9f07.in
+99da910c926dc0e2a4111a2e6f4357eb.eu
+99da910c926dc0e2a4111a2e6f4357eb.in
+a2cfc75265f8460f1fadcc0b6153c186.eu
+a2cfc75265f8460f1fadcc0b6153c186.in
+a3361c16fa4370cff0b4211234c59441.eu
+a3361c16fa4370cff0b4211234c59441.in
+a9a69619d4659385694af4c64a59d420.eu
+a9a69619d4659385694af4c64a59d420.in
+b7b167f0f6db93bd0e5121726278c7b8.eu
+b7b167f0f6db93bd0e5121726278c7b8.in
+c62461b3a6717255b3422e3c533094f7.eu
+c62461b3a6717255b3422e3c533094f7.in
+c6dc11fafce7ed90df36003bedb22285.eu
+c6dc11fafce7ed90df36003bedb22285.in
+dba1dfe9410a4bbd57d02590095efd18.eu
+dba1dfe9410a4bbd57d02590095efd18.in
+btst.eu
+sslvpn.eu
+xpxt.eu
+/wp_auth/gateway.php
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60 (# Dexter)
+# Reference: https://www.virustotal.com/gui/file/dc6da239b81f09caa69af1609c79913f25f54c5e4958c1099a298024365cfafc/detection
+
+btst.co
+cash4beginners.com
+cvv3.su
+publicdns.in
+xupz.eu
+/bucs/gateway.php

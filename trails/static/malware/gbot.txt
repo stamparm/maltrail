@@ -1,0 +1,97 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Vertexbot, Vertexnet, Vernet, Dusvext
+
+# Reference: https://web.archive.org/web/20120106212034/http://amada.abuse.ch/blocklist.php?download=domainblocklist
+
+136136.com
+babyboompage.com
+babyshompage.com
+bigtelevideochanel.com
+blogsmonitoringservice.com
+checkserverstatux.com
+dolbyaudiodevice.com
+findeffectivecasino.com
+freeonlinedatingtips.net
+historykillerpro.com
+motherboardstest.com
+mywwwarchive.com
+pcdocpro.com
+protectyourpc-11.com
+qimufefah.cn
+qudeteyuj.cn
+securemywebconnection.com
+whysohardx.com
+xibudific.cn
+zoneck.com
+zoneft.com
+zonehs.com
+zonejm.com
+
+# Reference: https://www.virustotal.com/gui/file/a329fae10bf3aa655a0a09ea5503a7b9426432b593d94f2945acb7f22be05dda/detection
+
+mycoffeenet.com
+
+# Reference: http://benkow.cc/export.php
+
+policezonerp.com/vertenex/
+
+# Reference: https://www.virustotal.com/gui/file/73217b079cc622766a7c9bd449a8962cb7e600d56e75114346816aa769302674/detection
+
+loader1j.myjino.ru
+
+# Reference: https://www.virustotal.com/gui/file/e47b161fcc931fdd00111b4a2be4d5c8672e86fe87ae9e64d8aa3c12d17ab459/detection
+
+loader.vds2018.space
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60 (# Vertexnet)
+
+animedz.fulba.com
+cnteam.biz
+cyber-power.net16.net
+hasdasoid.com
+kross.tk
+setson.5gbfree.com
+sever1.webs.pm
+swagg.allalla.com
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60 (# g-bot)
+
+g00gle.su
+sx13.ws
+xoctel.ts9.ru
+
+# Reference: https://www.virustotal.com/gui/file/50c17fca7ae6af8011e1e2e2a8f063abc7afc79d62c5e2e9adaf238e2fbcdce0/detection
+
+xakup.ru
+
+# Reference: https://www.virustotal.com/gui/file/916a80af3f313774340641d976ec3b4c11bd0176a51d4063a36ff397a430fd15/detection
+
+rawwr.ru
+
+# Reference: https://twitter.com/ViriBack/status/1418969520002240512
+# Reference: https://app.any.run/tasks/38803085-8fc1-4c40-a706-d356cf6ac8b6/
+
+http://134.209.203.126
+
+# Reference: https://www.virustotal.com/gui/file/a5387eba23ba691aea50e326e51a0c856c6099fbc5c0cc20e6f2cc479fbd42e0/detection
+
+fuckthejews.coin
+
+# Reference: https://twitter.com/ViriBack/status/1544317972189253635
+
+http://193.233.193.67
+http://193.233.193.68
+
+# Generic
+
+/hoetnaca/
+/hornycock/
+/vertenex/
+/VertexNet/
+/VertexPanel/
+/1/adduser.php?uid=
+/1/tasks.php?uid=
+/chckr/index.php?q=
+/ddos/getcmd.php?id=

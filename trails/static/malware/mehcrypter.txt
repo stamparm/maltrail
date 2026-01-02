@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://decoded.avast.io/janrubin/complex-obfuscation-meh/
+# Reference: https://otx.alienvault.com/pulse/5f6810db101c4e124b8f13f4
+
+http://83.171.237.233
+
+# Reference: https://decoded.avast.io/janrubin/meh-2-2/
+# Reference: https://www.virustotal.com/gui/file/94d66002cb44415f2bc7fc25f8e624a85e56c198c74efbb82170a2a57927962e/detection
+# Reference: https://www.virustotal.com/gui/file/96f0c8e46a931e98e607e76015f6cad25f5f18bebf74edf5221a399c6d599cc5/detection
+
+http://83.171.237.231
+83.171.237.231:2435
+83.171.237.231:2470
+83.171.237.234:2435
+83.171.237.234:2470
+83.171.237.235:2435
+83.171.237.235:2470
+0.le4net00.net
+0.weathdata.nu

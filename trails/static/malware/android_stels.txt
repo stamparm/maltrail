@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2013-032910-0254-99&tabid=2
+
+androidflashplayer.net.ua
+ynfdbdybdd1.freeiz.com

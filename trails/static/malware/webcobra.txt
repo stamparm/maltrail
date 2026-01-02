@@ -1,0 +1,6 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2018/2018-11-13-webcobra-malware-uses-victims-computers-to-mine-cryptocurrency/webcobra-malware-uses-victims-computers-to-mine-cryptocurrency.csv
+
+saarnio.ru

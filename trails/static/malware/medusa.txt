@@ -1,0 +1,991 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: meduza stealer
+
+# Reference: https://twitter.com/siri_urz/status/1582325545031069697
+# Reference: https://www.virustotal.com/gui/file/2a0047fe9748f2a45196dbf75e4f1a951d249daad380cbc9eab85ff66fb35814/detection
+
+medusa-stealer.cc
+
+# Reference: https://twitter.com/g0njxa/status/1670054103899152384
+
+http://77.105.147.140
+
+# Reference: https://twitter.com/FalconFeedsio/status/1681963953507774464
+
+http://193.233.133.153
+http://193.233.133.198
+http://193.233.133.243
+http://193.233.133.97
+http://5.61.49.177
+http://77.105.146.254
+http://79.137.199.199
+
+# Reference: https://www.virustotal.com/gui/file/f0c730ae57d07440a0de0889db93705c1724f8c3c628ee16a250240cc4f91858/detection
+
+79.137.203.39:15666
+
+# Reference: https://www.virustotal.com/gui/file/ddf3604bdfa1e5542cfee4d06a4118214a23f1a65364f44e53e0b68cbfc588ea/detection
+# Reference: https://www.virustotal.com/gui/file/91efe60eb46d284c3cfcb584d93bc5b105bf9b376bee761c504598d064b918d4/detection
+
+79.137.203.37:15666
+
+# Reference: https://www.virustotal.com/gui/file/d2ab97a60d2ed615e91c640fe0ee59e5ddc63fe985cdf5e9f24e0bce80e9870d/detection
+# Reference: https://www.virustotal.com/gui/file/cbc07d45dd4967571f86ae75b120b620b701da11c4ebfa9afcae3a0220527972/detection
+# Reference: https://www.virustotal.com/gui/file/a73e95fb7ba212f74e0116551ccba73dd2ccba87d8927af29499bba9b3287ea7/detection
+
+79.137.207.132:15666
+
+# Reference: https://www.virustotal.com/gui/file/e2cc35ec3dcbd33d5d75fe7cabe4400dcdf06cf5e7fc3e94a1b3b6f2d8cbd125/detection
+# Reference: https://www.virustotal.com/gui/file/9e2b8c3888b8a93e8ebab39e7a6b636f921888edb7d15a6ab56b2e119693aaa8/detection
+
+77.105.147.140:15666
+
+# Reference: https://www.virustotal.com/gui/file/6d8ed1dfcb2d8a9e3c2d51fa106b70a685cbd85569ffabb5692100be75014803/detection
+
+185.106.94.105:15666
+
+# Reference: https://www.virustotal.com/gui/file/29cf1ba279615a9f4c31d6441dd7c93f5b8a7d95f735c0daa3cc4dbb799f66d4/detection
+
+167.88.15.114:15666
+
+# Reference: https://russianpanda.com/2023/06/28/Meduza-Stealer-or-The-Return-of-The-Infamous-Aurora-Stealer/
+# Reference: https://otx.alienvault.com/pulse/64a2f554317bc46cc4bdb6e7
+
+http://89.185.85.245
+
+# Reference: https://www.virustotal.com/gui/file/1bce735ad1009327c2cc1ba36aa3cad6ec6f4dc3d0b3fff104d283845670c674/detection
+
+5.42.72.7:15666
+
+# Reference: https://twitter.com/g0njxa/status/1717563999984717991
+# Reference: https://en.fofa.info/result?qbase64=aWNvbl9oYXNoPSItNTU5NjA4OTIwIg%3D%3D
+
+http://103.178.234.127
+http://104.194.128.75
+http://109.107.173.48
+http://109.107.181.169
+http://109.172.45.21
+http://116.202.205.243
+http://116.203.191.125
+http://146.70.161.13
+http://154.91.90.121
+http://162.33.179.114
+http://178.20.43.135
+http://178.20.46.217
+http://178.236.246.253
+http://178.236.246.39
+http://178.236.247.9
+http://185.106.92.204
+http://185.106.94.31
+http://185.106.94.70
+http://185.149.146.159
+http://185.161.251.204
+http://185.17.0.222
+http://193.233.133.81
+http://194.87.71.159
+http://20.0.25.177
+http://212.113.116.56
+http://212.118.52.90
+http://41.208.73.44
+http://45.150.65.121
+http://45.155.249.38
+http://45.74.19.107
+http://5.182.87.160
+http://5.182.87.27
+http://5.42.72.48
+http://5.42.72.7
+http://5.42.77.121
+http://5.42.77.239
+http://5.42.78.61
+http://51.81.243.237
+http://74.50.93.136
+http://77.105.147.136
+http://77.105.147.90
+http://78.141.239.24
+http://79.137.195.27
+http://79.137.202.225
+http://79.137.203.233
+http://79.137.203.254
+http://79.137.203.80
+http://79.137.205.179
+http://79.137.205.201
+http://79.137.207.226
+http://79.137.207.240
+http://79.137.207.251
+http://79.137.207.44
+http://8.217.23.144
+http://85.192.63.240
+http://85.192.63.35
+http://85.192.63.65
+http://89.185.85.132
+http://89.185.85.34
+http://89.208.103.215
+http://89.208.107.135
+http://89.208.107.158
+http://91.92.242.146
+http://94.228.162.22
+http://94.228.170.3
+http://94.228.170.86
+http://95.181.173.181
+http://95.181.173.233
+http://95.181.173.235
+http://95.181.173.28
+http://95.181.173.8
+http://95.216.100.78
+185.26.239.246:81
+202.92.4.174:8000
+izh-85-232.nm-s.ru
+journalpatrol.com
+knoxdevelopers.com
+limaxmakeup.com
+makinika.com
+markertingsbritishcouncil.com
+tehranuniversity.website
+dl.tehranuniversity.website
+xxmc-h5.xinxinmuchang.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.meduza/ (# 2023-12-07)
+
+http://5.182.86.32
+http://5.42.94.65
+adsmahsa.xyz
+appblendemulator.info
+appblendstacks.top
+basta-tourmoscow.ru
+cdn.morisniff.ir
+concert-uz.ru
+convhandvideo.info
+d1.morisniff.ir
+easyvideoconverters.com
+fhipp-dbms.top
+handbrakeconv.top
+highqualityconverter.com
+hp22.weket.shop
+ideastradeai.com
+ideastradeai.top
+ii.nggg.fun
+marz6.adsmahsa.xyz
+morisniff.cloudns.ph
+morisniff.ir
+nggg.fun
+nimmajic.online
+sc.nimmajic.online
+test.morisniff.cloudns.ph
+trustpilots.cam
+xampp.info
+
+# Reference: https://twitter.com/ShilpeshTrivedi/status/1737813215395074421
+# Reference: https://www.virustotal.com/gui/file/0a7fea34c7f7732b275a6b4422fa2868937a97bcb4465a2dcb9e7abb1bb3d3db/detection
+
+103.241.72.56:15666
+103.241.72.56:8080
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.meduza/ (# 2023-12-25)
+
+http://5.182.87.130
+http://80.85.241.169
+http://85.192.63.29
+http://89.208.106.112
+http://91.103.253.190
+http://92.246.136.222
+rocket.drno.me
+
+# Reference: https://twitter.com/FalconFeedsio/status/1741002630602883320
+
+http://79.137.194.188
+http://79.137.203.12
+
+# Reference: https://twitter.com/FalconFeedsio/status/1743260044857397436
+# Reference: https://twitter.com/RakeshKrish12/status/1743515007441322357
+# Reference: https://twitter.com/karol_paciorek/status/1753060077278277977
+
+http://141.98.83.242
+http://185.225.200.120
+http://45.141.215.173
+http://45.61.158.176
+http://45.61.165.114
+http://45.61.169.23
+http://45.93.20.207
+http://51.195.28.168
+http://77.232.142.8
+http://85.192.63.57
+http://91.103.253.184
+http://91.92.248.223
+http://94.228.162.149
+http://94.228.168.159
+94.228.162.149:15666
+jodev.fun
+d1.jodev.fun
+
+# Reference: https://twitter.com/banthisguy9349/status/1744362094869241869
+
+37.110.19.55:88
+ams-k-node1.vleo.ru
+bloodyservice.online
+cricketastroking.com
+dddd-new.vreexy.top
+fbadearnings.com
+first.bloodyservice.online
+game2.netbaazi.sbs
+iamabdulqadeer.com
+netbaazi.sbs
+rahgozargermany21.vreexy.top
+server-fr1.vreexy.top
+third.bloodyservice.online
+vreexy.top
+zeaas.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.meduza/ (# 2024-01-23)
+
+http://193.233.255.60
+http://212.113.116.110
+http://77.73.131.73
+goldelya.tech
+kharej.goldelya.tech
+medusa.goldelya.tech
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.meduza/ (# 2024-02-03)
+
+http://147.45.40.196
+http://147.45.40.99
+http://185.26.239.246
+http://2.56.109.134
+http://5.182.86.194
+http://5.42.73.251
+http://64.52.80.13
+http://77.105.147.196
+http://89.208.103.72
+89.208.103.177:15666
+abcd2.monster
+carte-vitale-assurance.org
+http://89.208.103.177
+node1.abcd2.monster
+oracle-panel.online
+tunel.oracle-panel.online
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.meduza/ (# 2024-02-04)
+# Reference: https://twitter.com/ViriBack/status/1761394956374049266
+
+http://45.15.159.130
+http://5.182.87.145
+http://79.137.197.6
+http://92.246.136.161
+http://94.156.65.246
+sono.pw
+sw.sono.pw
+enter.showconfig.ru
+
+# Reference: https://twitter.com/RustyNoob619/status/1758186122440503635
+
+http://94.228.162.3
+
+# Reference:  https://threatfox.abuse.ch/browse/malware/win.meduza/ (# 2024-02-27)
+
+http://109.107.181.83
+http://147.45.42.25
+http://147.45.75.185
+http://175.110.115.65
+http://45.138.74.228
+http://79.137.207.35
+http://91.103.253.227
+blazebit.bet
+ftp.huboftest.ir
+homeshopdigital.site
+huboftest.ir
+inspirestudiosteam.com
+mzile.com
+neweatz.com
+yes.homeshopdigital.site
+yes1.homeshopdigital.site
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.meduza/ (# 2024-03-17)
+
+http://144.202.23.219
+http://185.161.248.199
+http://217.197.107.145
+http://46.226.164.150
+http://46.226.166.200
+http://77.221.148.13
+http://79.137.207.163
+http://85.192.40.131
+http://89.185.85.207
+http://91.202.233.135
+http://95.181.173.126
+109.107.181.83.sslip.io
+147.45.42.25.sslip.io
+5.42.73.150.sslip.io
+79.137.207.163.sslip.io
+asqrecruitment.com
+autodiscover.inspirestudiosteam.com
+buygamingnfts.com
+ebookza.com
+fleekbusiness.com
+garciaprints.com
+gulfcoastcoffeeroasters.com
+homsiknet.com
+complete.homsiknet.com
+inc.sshadowso.ru
+northpm.xyzdiosteam.com
+panel.swain.ir
+pars.northpm.xyz
+skinsmonkey.complete.homsiknet.com
+testik2.nukhtarov.ru
+vpnu.top
+
+# Reference: https://twitter.com/BushidoToken/status/1769397465109655597
+
+http://103.241.72.56
+http://139.180.191.68
+http://185.112.83.36
+http://37.110.19.55:88
+http://45.138.16.132
+http://5.42.73.150
+http://77.105.147.157
+http://79.137.202.68
+http://79.137.207.132
+http://85.192.63.42
+dcu.golunite.com
+mg.inspirestudiosteam.com
+ug-argo.ru
+
+# Reference: https://urlscan.io/search/#filename:%22Meduza-Xf1ectds.png%22
+
+http://45.120.177.167
+/Meduza-Xf1ectds.png
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.meduza/ (# 2024-03-24)
+
+http://103.161.224.131
+http://5.42.106.164
+
+# Reference: https://app.validin.com/detail?type=raw&find=Meduza+Stealer#tab=host_pairs
+
+http://147.45.125.142
+http://217.196.98.138
+http://5.182.86.229
+http://79.137.202.60
+http://91.103.255.188
+http://94.156.10.121
+79.137.202.60.sslip.io
+bnd-servers.komakhazine.com
+clientcisco.com
+clientciscovpn.com
+coffin-jazzed.online
+coinmarketcap-tm.ru
+crdom.top
+izh-85-207.nm-s.ru
+komakhazine.com
+plano-safra.online
+purpleflowers.org
+roseflash.in
+salaamt.top
+al.salaamt.top
+sam.coffin-jazzed.online
+sam.coinmarketcap-tm.ru
+svma.arcovip.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.meduza/ (# 2024-04-11)
+# Reference: https://www.virustotal.com/gui/file/ccd22e81e0ae336c87a51d6273b7d2f813512226857d820aabe3e20f92a2b92f/detection
+# Reference: https://www.virustotal.com/gui/file/28f08075554d51a59cb56805c6e1e9923b2a2950a9f75e72a6071fd825eece01/detection
+# Reference: https://www.virustotal.com/gui/file/1a19faf516901697a43fd04342ba42298e7b126a2cab5236742addc526d82636/detection
+# Reference: https://www.virustotal.com/gui/file/512ec746b8318aa67bb11aa498a94d0e9848c241e7296c46757dcf1997e28be4/detection
+
+http://109.107.181.48
+http://109.120.176.38
+http://109.120.177.177
+http://109.120.177.48
+http://109.120.177.64
+http://109.120.178.115
+http://109.120.184.181
+http://147.45.69.114
+http://185.174.137.2
+http://193.233.232.6
+http://212.113.116.79
+http://37.221.93.9
+http://45.15.158.144
+http://45.150.64.135
+http://5.182.87.218
+http://5.42.101.184
+http://5.42.101.189
+http://5.42.107.163
+http://77.105.146.13
+http://77.105.147.171
+http://77.221.156.5
+http://77.232.142.83
+http://77.91.70.104
+http://79.137.195.24
+http://79.137.197.154
+http://79.137.199.246
+http://79.137.202.147
+http://79.137.202.152
+http://79.137.203.232
+http://81.19.137.248
+http://89.208.103.63
+http://89.208.105.144
+http://91.92.250.224
+http://94.142.138.190
+http://94.228.170.127
+183.249.20.106:8090
+185.174.137.2:15666
+209.141.35.151:888
+212.113.116.79:15666
+36.152.201.67:65535
+39.134.69.79:17080
+45.150.64.135:15666
+77.105.147.171:15666
+79.137.199.246:15666
+79.137.202.147:15666
+79.137.203.232:15666
+81.19.137.248:15666
+89.208.103.63:15666
+45.15.158.144.sslip.io
+topoldgate.site
+a.topoldgate.site
+aeza.mozeabi.online
+g2.sazmanemelalemotahed.tech
+hodin.iranneda.cfd
+ir.skhshop.xyz
+it12.nosuhiyan.site
+it13.intelvpn.site
+it45.intelvpn.site
+izh-85-44.nm-s.ru
+kivernik.ru
+krezify.softether.net
+mahdi.intelvpn.site
+minecraftcity21.site
+moscow-daily.ru
+mozg55.com
+mozeabi.online
+robot.minecraftcity21.site
+shatel.surreal1.store
+ssh1.rezamoody.online
+surreal1.store
+vpn.itops.one
+
+# Reference: https://twitter.com/drb_ra/status/1779039516499583111
+
+http://193.233.232.6
+
+# Reference: https://www.virustotal.com/gui/file/29a522d6063c16d08a83091979941a3e2cbc0857faa1dcf0154acc38c5fd34d4/detection
+
+109.107.181.83:15666
+
+# Reference: https://twitter.com/peterkruse/status/1781286319680848116
+# Reference: https://www.kruse.industries/l/en-analyse-af-meduza-stealer/
+
+bmo-canada-secure-onlinealert.com
+funtechco.top
+obsproject.viatorfabula.com
+online-geld-ontvangst.icu
+ontvangst-online.icu
+overeenkomstenonline.icu
+prex20.olinatok.is
+rufus.mygrayco.com
+safe-service.icu
+supportninja.top
+veilige-omgeving.icu
+vnekontakte.ru
+xdq20.top
+
+# Reference: https://twitter.com/banthisguy9349/status/1782452285806678109
+
+http://94.156.71.143
+
+# Reference: https://twitter.com/malpulse/status/1782403496110620888
+
+http://109.120.177.43
+
+# Reference: https://twitter.com/ShanHolo/status/1785267745954664871
+# Reference: https://www.virustotal.com/gui/file/53bcea75646e0a3ff08fea4990c0e3458eb5b518bfdd907444485499803ba25d/detection
+# Reference: https://www.virustotal.com/gui/file/9f2c70239fe518552ee44423564b075a85e0fc1e7bd80dc233bcc1f882ffceb9/detection
+
+oasisnetwor.one
+
+# Reference: https://x.com/drb_ra/status/1799876810689130617
+
+http://94.228.166.50
+
+# Reference: https://search.censys.io/search?q=services.software.uniform_resource_identifier%3D%22cpe%3A2.3%3Aa%3Ameduza-stealer%3Ameduza-stealer%3A%5C%2A%3A%5C%2A%3A%5C%2A%3A%5C%2A%3A%5C%2A%3A%5C%2A%3A%5C%2A%3A%5C%2A%22&resource=hosts
+
+http://109.107.181.111
+http://147.45.71.7
+http://31.177.108.30
+http://77.105.147.23
+http://77.221.157.6
+http://79.137.207.27
+http://89.169.52.127
+http://89.169.52.177
+http://89.169.53.116
+http://91.103.252.124
+http://91.214.78.238
+http://91.92.249.70
+
+# Reference: https://app.validin.com/detail?type=hash&find=3a7a175f1cd6cf6d80ed6190fa77401ba0e7a046
+
+closel.top
+uieaqo.life
+ail.servientregatracking.info
+chl.closel.top
+ci.closel.top
+cl.closel.top
+shop.uieaqo.life
+
+# Reference: https://www.virustotal.com/gui/file/03bf7f15e422037ce60e2f49dde182b69b3063fe62ba2030ef85790c2de523ca/detection
+
+45.59.120.155:15666
+
+# Reference: https://www.virustotal.com/gui/ip-address/154.26.130.199/detection
+
+http://154.26.130.199
+
+# Reference: https://www.virustotal.com/gui/ip-address/91.214.78.237/relations
+
+colse-com.top
+tracie.top
+talabat.cyou
+mobi.tracie.top
+test.colse-com.top
+
+# Reference: https://app.validin.com/detail?find=79.137.196.188&type=ip4&ref_id=dadabbd8ccf#tab=host_pairs_v2
+
+http://79.137.196.188
+newgame.tech
+fbr.newgame.tech
+ii.newgame.tech
+
+# Reference: https://app.validin.com/detail?find=77.73.131.73&type=ip4#tab=host_pairs_v2
+
+77-73-131-73.nip.io
+ger3online.website
+aa3.ger3online.website
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.meduza/ (# 2024-06-22)
+
+http://45.141.215.44
+http://45.59.120.155
+http://46.226.167.205
+http://5.182.87.173
+http://77.221.151.32
+http://79.137.205.182
+http://89.169.54.70
+http://94.228.168.216
+iriallo.shop
+katookivpn.com
+tala.monster
+vipserver.monster
+aref.katookivpn.com
+eflukpant.iriallo.shop
+hena.tala.monster
+shop.vipserver.monster
+
+# Reference: https://www.virustotal.com/gui/ip-address/91.214.78.237/relations
+
+http://91.214.78.237
+uieaqo.life
+shopi.uieaqo.life
+
+# Reference: https://search.censys.io/search?resource=hosts&sort=RELEVANCE&per_page=25&virtual_hosts=EXCLUDE&q=services.software.vendor%3D%22Meduza+Stealer%22
+
+http://109.120.176.15
+http://212.113.100.91
+http://38.22.104.179
+http://5.42.107.78
+http://77.105.146.121
+http://79.137.207.237
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s.csv
+
+http://104.161.36.41
+http://157.254.223.210
+http://45.141.215.119
+http://5.42.106.42
+http://77.221.157.163
+http://79.137.203.159
+109.107.181.83:8080
+
+# Reference: https://www.virustotal.com/gui/ip-address/85.192.63.3/detection
+
+http://85.192.63.3
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-08-18)
+
+http://109.237.99.23
+http://193.124.203.119
+http://193.33.153.62
+http://46.226.166.245
+http://74.208.205.101
+http://91.214.78.199
+
+# Reference: https://app.validin.com/detail?find=e7a2bb050f7ec5ec2ba405400170a27d&type=hash&ref_id=231b42e39bb#tab=host_pairs_v2
+# Reference: https://www.virustotal.com/gui/file/6fdcd1e9b9d86281ddc6a0f4f2003ec0dc3e4b90b5ed2b0d513eedc2816a184e/detection
+# Reference: https://www.virustotal.com/gui/file/34bf15220b0259eb2ed1d024f6e5e2ada2bd0a0501d0c1931e4097a787bb634b/detection
+
+http://138.124.101.41
+http://5.252.155.28
+http://77.105.146.8
+http://93.123.85.46
+http://95.181.173.98
+138.124.101.41:3389
+5.252.155.28:15666
+79.137.203.159.sslip.io
+95.181.173.98.sslip.io
+castopslots.club
+dapsoaa.shop
+de1.moscow.xn--6frz82g
+h.direct.pooyasharifi8208.ir
+izh-85-128.nm-s.ru
+klakloios.com
+moscow.xn--6frz82g
+ns2.dapsoaa.shop
+ns2.shoppaly.shop
+s-teamrn.com
+shoppaly.shop
+
+# Reference: https://x.com/banthisguy9349/status/1826296862942384508
+# Reference: https://x.com/banthisguy9349/status/1852726942207791211
+# Reference: https://www.virustotal.com/gui/file/2eab850166944175e5fac4c89706328a58dcef55dbc22ff20342d1d246ba76b9/detection
+
+5.42.106.42:15666
+soyjak.cafe
+soyjak.download
+
+# Reference: https://search.censys.io/hosts/5.42.103.11/data/table#80-TCP-HTTP
+
+http://5.42.103.11
+
+# Reference: https://search.censys.io/search?q=services.software.product%3D%22Meduza+Stealer%22&resource=hosts (# 2024-09-04)
+
+http://188.40.247.207
+http://62.133.60.75
+http://89.169.53.23
+http://89.208.97.95
+http://94.156.177.177
+http://94.228.162.24
+46.226.166.245.sslip.io
+77.105.147.243.sslip.io
+order.fastfoodshopbot.biz
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-08)
+
+http://109.107.181.162
+http://46.226.165.237
+http://95.181.173.140
+breratgvpn.ru
+metaanet.cfd
+naeb.pro
+panel.metaanet.cfd
+
+# Reference: https://x.com/RacWatchin8872/status/1832785087944884579
+
+http://45.9.148.254
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.meduza/ (# 2024-09-09)
+
+http://111.90.148.191
+http://176.124.222.218
+http://185.225.200.240
+http://45.15.157.116
+147.45.40.148:15666
+62.133.60.75:15666
+2koohe.rayangadget.com
+d1msk.pinkman7710.workers.dev
+de1.pinkman7710.workers.dev
+ded.shuprobika.ir
+germanyyy.pinkman7710.workers.dev
+mobilepedaryan.rayangadget.com
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-14)
+
+http://109.120.178.28
+http://195.133.18.15
+http://195.133.18.88
+http://5.42.102.43
+5.42.102.43.sslip.io
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.15.157.116/relations
+# Reference: https://app.validin.com/detail?find=61bb7807022669b2de848b1de015c03d&type=hash&ref_id=3783ad360af#tab=host_pairs_v2
+
+guven.top
+keloziro.life
+nena.guven.top
+mairacco.keloziro.life
+ns1.keloziro.life
+
+# Reference: https://app.validin.com/detail?find=e7a2bb050f7ec5ec2ba405400170a27d&type=hash#tab=host_pairs_v2
+# Reference: https://search.censys.io/hosts/144.76.68.247/data/table#80-TCP-HTTP
+
+http://144.76.68.247
+static.247.68.76.144.clients.your-server.de
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-09-22)
+
+http://109.120.179.61
+http://31.177.110.52
+http://5.42.103.173
+http://89.185.85.128
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-10-13)
+
+http://109.120.140.242
+http://109.120.177.224
+http://176.124.204.206
+http://178.236.247.3
+http://185.125.230.40
+http://194.87.29.74
+http://37.27.104.29
+http://45.66.228.64
+http://62.113.200.103
+http://77.105.166.152
+http://89.208.96.148
+http://91.103.140.83
+45-66-228-64.emome-ip.hinet.net
+dimagnific.ru
+frenchart.shop
+porkaloxov.com
+starchop.shop
+surfmail.cloud
+fake.starchop.shop
+fc.frenchart.shop
+imap.surfmail.cloud
+wp.dimagnific.ru
+
+# Reference: https://x.com/AzakaSekai_/status/1846046005365735617
+# Reference: https://www.virustotal.com/gui/file/5d5be2d807ae58e049ea38dc8fa0d084d63d3acedb1bfe47a0befcc6e14c95e3/detection
+# Reference: https://www.virustotal.com/gui/file/c2487b47247732551b8f1c684bfcfd817b51d941c8c0f23e041753076db5d85e/detection
+# Reference: https://www.virustotal.com/gui/file/ac959fbec830de21fed81b933d5b5bbb8bd7a4418b8601cde35cab8d9877dde3/detection
+# Reference: https://www.virustotal.com/gui/file/1f435761e91be42e620b4405fa04554f322992537cd36ee28891282d86197cce/detection
+
+109.107.181.162:15666
+109.120.177.224:15666
+
+# Reference: https://cert.gov.ua/article/6281018
+# Reference: https://app.validin.com/detail?type=ip&find=5.252.118.50#tab=host_pairs_v2
+
+http://212.34.150.110
+http://5.252.118.50
+http://62.60.217.124
+79.137.202.152:15666
+daryasystem.co
+mydrug.space
+rooh.buzz
+tamakala.com
+ghoul.rooh.buzz
+marzban.mydrug.space
+tp2.mydrug.space
+v2tav.tamakala.com
+yousef0.daryasystem.co
+
+# Reference: https://app.validin.com/detail?find=e7a2bb050f7ec5ec2ba405400170a27d&type=hash#tab=host_pairs
+# Reference: https://search.censys.io/hosts/212.23.222.212
+# Reference: https://www.virustotal.com/gui/file/538d4d8a7c5e83d94a882d56ab686dd505c71dc899a80af9dc36e0722c8ec1e5/detection
+# Reference: https://www.virustotal.com/gui/file/1c6a91d10482b92455584dfd29939c675d177d53d93442b6dbfe1fae43b859d7/detection
+# Reference: https://www.virustotal.com/gui/file/c148926cd51732632058fe48652b0f9baeade6c99aa14f27c93fe36369763771/detection
+# Reference: https://www.virustotal.com/gui/file/7159170db844714a035126cc3924c3150bb4b7246ac0ca2ee75cab81a029390e/detection
+# Reference: https://www.virustotal.com/gui/file/6ccd56fbf962a9cf4e4260dd5ea4cc73bbcf1f0fc7fe993a07398bb1bb132bdf/detection
+# Reference: https://www.virustotal.com/gui/file/32e07661ea1e45eb31f147ab54990c0c559b6413d58985ee834b58987156b654/detection
+
+http://109.172.94.66
+http://212.23.222.212
+http://31.56.7.238
+http://62.60.217.17
+109.172.94.66:15666
+212.23.222.212:3389
+23.254.231.83:76
+62.60.217.17:3389
+x1337.ooguy.com
+
+# Reference: https://x.com/banthisguy9349/status/1850630484847362459
+
+antiloxss.usite.pro/STLprograms/NEW/liveyours111/NewInstaller27/
+
+# Reference: https://x.com/banthisguy9349/status/1850632987844759664
+# Reference: https://www.virustotal.com/gui/file/dd9fa916c5f14c66b2e83243808072d2b084828167f9f2029366c91023c49532/detection
+# Reference: https://www.virustotal.com/gui/file/5a9a05d8b295d6c1ac506532cdbf631ad538a8e33e0d4bc9bc486851ff00cb10/detection
+
+http://62.197.48.140
+5.42.73.251:15666
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.15.158.144/relations
+# Reference: https://app.validin.com/detail?find=45.15.158.144&type=ip4#tab=resolutions
+
+molaali.click
+mozeabi.shop
+polasgury.ru
+promohappy.pro
+savanlar.click
+wilopes.ru
+aeza2.mozeabi.shop
+api.savanlar.click
+api.molaali.click
+sos.savanlar.click
+
+# Reference: https://app.validin.com/detail?find=panel.munernods.xyz&type=dom#tab=host_pairs
+
+munernods.xyz
+panel.munernods.xyz
+
+# Reference: https://app.validin.com/detail?find=109.107.181.83&type=ip4#tab=resolutions
+
+cloudbase.pro
+cyberkotik.ru
+gtkcinama.online
+locknet.website
+tgassistance.fun
+ooooooooooooooooooooooooooo.online
+ooooooooooooooooooooooooooooooo.online
+ooooooooooooooooooooooooooooooooooo.online
+next.cloudbase.pro
+ticket.gtkcinama.online
+uptime.cyberkotik.ru
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-30day.csv (# 2024-11-10)
+
+http://150.241.92.160
+http://150.241.98.41
+http://176.124.205.86
+http://194.87.189.21
+http://45.130.145.152
+
+# Reference: https://app.validin.com/detail?find=85.192.56.99&type=ip4&ref_id=1ba3050de31#tab=resolutions
+
+http://85.192.56.99
+85.192.56.99:443
+85-192-56-99.nip.io
+antidogm.xyz
+flizan.ru
+russia.antidogm.xyz
+supernode.flizan.ru
+
+# Reference: https://app.validin.com/detail?find=e7a2bb050f7ec5ec2ba405400170a27d&type=hash#tab=host_pairs (# 2024-11-20)
+
+http://147.45.44.228
+http://150.241.102.15
+http://62.60.244.198
+http://62.60.245.250
+http://62.60.245.252
+http://94.181.203.96
+
+# Reference: https://www.virustotal.com/gui/ip-address/77.221.156.5/relations
+
+bimeiransanam.sbs
+shatelmobile.bimeiransanam.sbs
+
+# Reference: https://app.validin.com/detail?find=e7a2bb050f7ec5ec2ba405400170a27d&type=hash#tab=host_pairs (# 2024-12-04)
+
+http://176.124.204.229
+http://193.3.19.151
+http://62.60.149.88
+http://62.60.217.159
+http://66.63.187.173
+http://95.181.162.143
+http://95.181.167.11
+recipesbookhere.com
+
+# Reference: https://x.com/banthisguy9349/status/1865684924583534779
+
+http://89.23.100.74
+
+# Reference: https://app.validin.com/detail?find=e7a2bb050f7ec5ec2ba405400170a27d&type=hash#tab=host_pairs (# 2024-12-21)
+
+http://147.45.44.216
+http://147.45.45.2
+http://147.45.78.8
+http://185.11.61.200
+http://185.196.9.85
+http://185.203.240.77
+http://185.243.114.91
+http://194.59.30.192
+http://194.59.31.25
+http://209.127.36.90
+http://45.136.196.76
+http://45.93.20.232
+http://45.93.20.95
+http://62.210.116.3
+http://62.60.226.62
+http://62.60.226.81
+http://64.52.80.94
+http://66.63.187.59
+http://77.239.119.53
+http://77.90.153.24
+http://80.76.49.171
+http://80.76.49.26
+http://80.76.49.97
+http://83.217.208.205
+http://94.154.35.46
+http://94.156.227.99
+http://95.216.0.247
+62-210-116-3.rev.poneytelecom.eu
+b-n-s0licitudenlinea.info
+comunicazionequantistica.com
+dvser.top
+glucometer-online.com
+gris1.com
+heartplayers.com
+levina.info
+myawesomecrm3.com
+myflowshop.com
+mypost-evri.com
+mypost-usps.com
+occ1red.pro
+produvbanc.site
+royalescort.net
+quantum-communication.com
+s0licitud-virtual-enlinea.top
+tracking-usps.com
+usps-mydeliver.com
+usps-mypackage.com
+usps-online-safe.com
+usps-sureness.com
+vikingernes.com
+vivahome.ru
+vyxpredictions.online
+mail.vyreality.com
+optimistic-wu.193-3-19-151.plesk.page
+
+# Reference: https://www.virustotal.com/gui/file/364cfd76642fd1f8ba1f69016e31e7727fca021be50a9c51af26e50884596195/detection
+
+http://176.126.86.20
+176.126.86.20:15666
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-01-02)
+
+http://107.189.17.171
+http://135.181.175.147
+http://138.124.53.89
+http://150.241.91.96
+http://172.86.88.132
+http://194.59.30.122
+http://45.136.50.73
+http://45.88.91.239
+http://5.154.181.87
+http://79.110.49.141
+http://79.110.49.200
+http://79.110.49.56
+http://95.216.28.239
+
+# Reference: https://app.validin.com/detail?find=e7a2bb050f7ec5ec2ba405400170a27d&type=hash#tab=host_pairs (# 2025-01-09)
+
+myparcel-evri.com
+vedi.194-59-31-25.cprapid.com
+
+# Reference: https://x.com/ShanHolo/status/1878147343062638608
+# Reference: https://www.virustotal.com/gui/file/5c0ead3d71e0c901aef2a4c7a2ad29212fcb9f8dc49c5e6b524f822ec65511fd/detection
+
+66.63.187.173:15666
+
+# Reference: https://app.validin.com/detail?find=e7a2bb050f7ec5ec2ba405400170a27d&type=hash#tab=host_pairs (# 2025-02-21)
+
+http://31.220.4.134
+http://45.93.20.15
+http://62.60.150.144
+
+# Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv
+
+http://188.214.129.216
+http://64.7.198.205
+
+# Generic
+
+/MeduzaPrivate%231.exe

@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/tuckner/status/1955681814204318040
+# Reference: https://www.virustotal.com/gui/file/7ab47b7b14f4d6848b9f4d410d1315ccc68e9a6714d94a2e870b6ba77d28e828/detection
+# Reference: https://www.virustotal.com/gui/file/e98756472404aeef70ba4d403339962989d9ed733fa0f6a23bdf4c2900d7e877/detection
+
+p92nd.pages.dev
+
+# Reference: https://x.com/tuckner/status/1955324189658784236
+# Reference: https://app.validin.com/detail?find=8061449b372f179674679ca308b6ffb9&type=hash&ref_id=8f3f0c8f322#tab=host_pairs (# 2025-08-14)
+
+locktcn.com
+niggboo.com
+
+# Reference: https://x.com/tuckner/status/1958645325650071755
+# Reference: https://x.com/tuckner/status/1958724997020885504
+# Reference: https://www.virustotal.com/gui/file/fa078483566de02cb64d970d06aa82470beee4c665cfee6915968cb0adb2c6c4/detection
+# Reference: https://www.virustotal.com/gui/file/1a728a7b7f68a71474a6a04f92960b18aae45ae5d00ea9a1d88174f8bd4ffa10/detection
+
+a849297.xyz
+g83u.pages.dev

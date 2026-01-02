@@ -1,0 +1,78 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1168145332082900992
+# Reference: https://app.any.run/tasks/7309b09f-62b5-4fc0-9078-6280a9352e5c/
+
+185.181.9.115:2012
+domekan.ru
+
+# Reference: https://app.any.run/tasks/d3490156-e16f-48a1-97d7-6c699b6cd19e/
+
+195.161.114.87:2012
+
+# Reference: https://app.any.run/tasks/146802f9-eb7d-44fb-8bfc-eb1d0a659831/
+
+45.12.212.225:2012
+
+# Reference: https://app.any.run/tasks/96560d81-041d-4720-a0bd-e67ac44e765f/
+# Reference: https://app.any.run/tasks/4cd1866f-a41e-40eb-a002-88b6c1b0ad74/
+
+45.67.229.12:2012
+
+# Reference: https://app.any.run/tasks/086b538d-bd40-4194-a7ef-359f021b203b
+
+45.84.0.117:2012
+
+# Reference: https://app.any.run/tasks/d96d47a2-5378-48d8-8443-afd83609972e/
+
+81.177.135.105:2012
+
+# Reference: https://app.any.run/tasks/8345668f-1efc-4234-8f18-5f52237e3ab1/
+
+81.177.136.64:2012
+
+# Reference: https://app.any.run/tasks/36c0ba31-c045-4202-b773-2a86043bfaa0/
+
+45.67.231.147:2012
+
+# Reference: https://app.any.run/tasks/ad6f0d8d-f929-43c8-bee3-d00ba0b57b09/
+
+195.161.41.174:2012
+
+# Reference: https://app.any.run/tasks/822fda71-64d4-4825-aee8-973c8d86901e/
+
+51.91.172.230:2012
+
+# Reference: https://app.any.run/tasks/468cccac-8d5c-46f2-bfdf-d56bd7ccb067/
+
+45.132.105.152:2012
+
+# Reference: https://app.any.run/tasks/559bb0b9-0333-4955-b17d-8ff32d08e68a/
+
+194.67.207.31:2012
+
+# Reference: https://app.any.run/tasks/56a857e4-11de-4ccf-b938-ba78b218c481/
+
+45.138.157.46:2012
+
+# Reference: https://app.any.run/tasks/89cf5d38-2a35-4bcb-a10b-4d7576d71a51/
+# Reference: https://app.any.run/tasks/c525bc5c-eb32-4443-8e76-06002c703b03/
+
+81.177.165.146:2012
+
+# Reference: https://app.any.run/tasks/4d5105c0-1c70-43a0-8ce8-b6697f42a993/
+
+81.177.165.146:2012
+
+# Reference: https://app.any.run/tasks/5ea9c799-eb73-4854-903a-a4a080659af0/
+
+5.45.127.135:2012
+
+# Reference: https://twitter.com/P3pperP0tts/status/1185106509048569856
+
+162.218.122.115:2012
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.12.212.225/relations
+
+l8801d50.justinstalledpanel.com

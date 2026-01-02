@@ -1,0 +1,47 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://securityaffairs.co/wordpress/8085/intelligence/finfisher-the-case-of-a-cyber-espionage-found-everywhere.html
+# Reference: https://community.rapid7.com/community/infosec/blog/2012/08/08/finfisher
+
+tiger.gamma-international.de
+ff-demo.blogdns.org
+
+# Reference: https://citizenlab.ca/2015/10/mapping-finfishers-continuing-proliferation/
+
+news-youm7.com
+
+# Reference: https://citizenlab.ca/2015/10/mapping-finfishers-continuing-proliferation/
+
+google.wwwhost.biz
+info.dynamic-dns.net
+pal2me.net
+pal4u.net
+shop8d.net
+wp.piedslibres.com
+workingulf.net
+
+# Reference: https://app.any.run/tasks/a717ebe4-e74f-4b0a-8233-b138906861a8/
+# Reference: https://twitter.com/billmarczak/status/511798673504620545
+
+184.82.101.234:53
+184.82.101.234:443
+
+# Reference: https://www.amnesty.org/en/latest/research/2020/09/german-made-finspy-spyware-found-in-egypt-and-mac-and-linux-versions-revealed/
+# Reference: https://otx.alienvault.com/pulse/5f6e34fc8c150f8d8fb9c337
+
+http://158.69.105.207
+http://172.241.27.171
+browserupdate.download
+
+# Reference: https://securelist.com/finspy-unseen-findings/104322/
+# Reference: https://otx.alienvault.com/pulse/6153383f0a31835f61921552
+
+45.86.136.138:443
+45.86.163.138:443
+79.143.87.216:443
+185.25.51.104:443
+109.235.67.175:443
+213.252.247.105:443
+108.61.190.183:443
+185.141.24.204:443

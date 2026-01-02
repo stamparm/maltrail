@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/jaydinbas/status/1655965383277400069
+# Reference: https://www.virustotal.com/gui/file/5af5c4eb8bd69890b35cf09aa325738b7fdab2cf95cbd0f41ec51dcdbcc165b9/detection
+
+d5k25trj9wkcz.cloudfront.net

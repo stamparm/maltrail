@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://s3.amazonaws.com/snort-org/www/rules/community/community-rules.tar.gz
+# Reference: https://snort-org-site.s3.amazonaws.com/production/release_files/files/000/012/156/original/snort3-community-rules.tar.gz
+# Reference: https://apt.securelist.com/apt/saguaro
+# Reference: https://www.virustotal.com/gui/file/ad9cc1045992078054e0250b3681cd7947f98a3f87a0a450c0aa2796dcbad8dd/detection
+
+eduarditopallares.mooo.com

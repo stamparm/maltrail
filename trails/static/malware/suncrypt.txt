@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: udochka
+
+# Reference: https://twitter.com/petrovic082/status/1361357632368443394
+# Reference: https://app.any.run/tasks/2cd292de-235d-497d-a7c8-a9fb0821213f/
+# Reference: https://www.virustotal.com/gui/file/e63c65e10f931a0fe4c6aeeb07e728fd7d6e1249d7cafdc6139faf0f7482e0b0/detection
+
+http://91.218.114.30
+http://91.218.114.31
+
+# Reference: https://www.hackplayers.com/2021/02/sitios-cibercriminales-deepweb.html
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+
+nbzzb6sa6xuura2z.onion
+x2miyuiwpib2imjr5ykyjngdu7v6vprkkhjltrk4qafymtawey4qzwid.onion

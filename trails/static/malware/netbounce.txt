@@ -1,0 +1,53 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fortinet.com/blog/threat-research/netbounce-threat-actor-tries-bold-approach-to-evade-detection
+# Reference: https://github.com/stamparm/maltrail/pull/15274
+
+applemart.biz
+boostfever.com
+demian.biz
+installcdn-aws.com
+jumpernode.com
+netbounce.net
+uploadhub.io
+uptime66.com
+xofinity.com
+c1.boostfever.com
+cdn.boostfever.com
+u1.boostfever.com
+dl.installcdn-aws.com
+connect.jumpernode.com
+download.jumpernode.com
+notif.jumpernode.com
+proxy.jumpernode.com
+bin.netbounce.net
+cdn.netbounce.net
+connect.netbounce.net
+file.netbounce.net
+newurl.netbounce.net
+proxy.netbounce.net
+update.netbounce.net
+m1.uptime66.com
+t1.xofinity.com
+packity.com/setup.exe
+
+# Reference: https://www.virustotal.com/gui/file/8ab3359eae64f24576cb2899e038039faecf80f1b16fb70c1d9a786665987a46/detection
+
+5.252.161.158:8000
+
+# Reference: https://www.virustotal.com/gui/file/16e1f65db822aa578f1d596554f7e8f806466cb240f6e8bd962178ac95421c9c/detection
+
+5.252.161.158:9000
+
+# Reference: https://www.virustotal.com/gui/file/5abc11b28f9d247500805d7994c613d557bcaf8766efa93f53f31370615d7e02/detection
+
+195.181.164.195:9000
+
+# Reference: https://www.virustotal.com/gui/file/33d90cc921ba7a0b372ef883b52395ad4bee9bb1990ababf947568c4040a8abb/detection
+
+195.181.169.92:9119
+
+# Generic
+
+/_controlPath/

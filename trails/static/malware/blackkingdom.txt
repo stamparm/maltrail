@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/vikas891/status/1373282066603859969
+# Reference: https://www.microsoft.com/security/blog/2021/03/25/analyzing-attacks-taking-advantage-of-the-exchange-server-vulnerabilities/
+# Reference: https://otx.alienvault.com/pulse/605e06522f4f0a6e847a3dfa
+# Reference: https://www.virustotal.com/gui/file/c4aa94c73a50b2deca0401f97e4202337e522be3df629b3ef91e706488b64908/detection
+
+uiiuui.com
+yuuuuu43.com
+yuuuuu44.com
+yuuuuu46.com

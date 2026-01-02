@@ -1,0 +1,6 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.guardicore.com/labs/please-read-me-opportunistic-ransomware-devastating-mysql-servers/
+
+hn4wg4o6s5nc7763.onion

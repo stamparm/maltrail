@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://researchcenter.paloaltonetworks.com/2017/04/unit42-the-blockbuster-sequel/
+
+daedong.or.kr
+#kcnp.or.kr
+#kosic.or.kr
+wstore.lt
+xkclub.hk
+
+# Reference: https://www.virustotal.com/gui/file/9c6a23e6662659b3dee96234e51f711dd493aaba93ce132111c56164ad02cf5e/relations
+
+www.kcnp.or.kr/include/license.asp
+kosic.or.kr/common/Mod_Parametcr.asp

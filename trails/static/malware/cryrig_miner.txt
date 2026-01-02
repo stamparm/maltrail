@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/suyog41/status/1683364976398938112
+# Reference: https://www.virustotal.com/gui/file/06f0cee3358ba7b573b6acd4f09dbb9112c821156a0703833728f3b0318ad8cf/detection
+
+http://139.162.249.91
+cracks4us.xyz
+fusioncoreforums.xyz
+cdn.cracks4us.xyz
+compute.fusioncoreforums.xyz
+telemetry-eu.cracks4us.xyz

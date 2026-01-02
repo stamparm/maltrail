@@ -1,0 +1,117 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.bushidotoken.net/2022/11/detecting-and-fingerprinting.html
+# Reference: https://urlscan.io/result/daca0fcd-bbc9-48c8-810d-89fee466b639
+
+77.73.133.88:5000
+
+# Reference: https://twitter.com/AuCyble/status/1605073308713484289
+
+torbrowser-download.com
+
+# Reference: https://www.virustotal.com/gui/file/cfe441f2482f79dd927e8ba2bd3e7a68c629fded5a4a57b585e2de8de8b725f1/detection
+
+38.105.93.92:8080
+69.72.28.30:8080
+91.192.38.107:8080
+
+# Reference: https://twitter.com/gejr_sec/status/1628126309573398549
+
+185.106.93.140:5000
+37.220.87.60:5000
+45.15.156.211:5000
+45.9.74.63:5000
+89.22.232.230:5000
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.titan_stealer/
+
+45.154.98.191:7441
+77.73.134.33:4510
+77.73.134.33:5000
+89.23.98.188:5000
+94.142.138.10:5000
+94.142.138.139:16804
+94.142.138.145:5000
+94.142.138.42:5000
+94.142.138.58:5000
+
+# Reference: https://twitter.com/D4RKR4BB1T47/status/1632564027900452865
+
+89.23.97.83:5000
+
+# Reference: https://twitter.com/BushidoToken/status/1633459935697838081
+# Reference: https://urlscan.io/result/4cc7ea06-564e-4d6c-815d-96f837633c58/
+
+5.75.159.186:5000
+
+# Reference: https://twitter.com/BushidoToken/status/1633458241421320192
+
+195.123.209.20:5000
+37.220.87.23:5000
+
+# Reference: https://twitter.com/RustyNoob619/status/1638848271782227968
+
+82.115.223.71:5000
+
+# Reference: https://twitter.com/josh_penny/status/1647893798268162048
+# Reference: https://twitter.com/josh_penny/status/1647893941776261121
+# Reference: https://twitter.com/robemtnez/status/1647908906478231553
+
+128.140.3.146:5000
+159.69.84.195:28015
+185.106.94.102:5000
+37.220.87.48:3000
+45.15.156.137:5000
+77.91.77.35:5000
+80.85.241.24:5000
+86.105.252.128:3000
+
+# Reference: https://twitter.com/Cyberwarzonecom/status/1647944334304591872
+
+101.43.85.101:5000
+82.115.223.186:5000
+94.142.138.139:5000
+
+# Reference: https://twitter.com/FalconFeedsio/status/1650771718049234946
+
+http://193.233.232.156
+http://77.73.131.208
+193.233.232.156:5000
+193.233.232.156:8080
+77.73.131.208:5000
+77.73.131.208:8080
+
+# Reference: https://twitter.com/serapis_2/status/1651978099955757058
+# Reference: https://www.virustotal.com/gui/file/6e712fe9340fa5d9ea0197a8956e71bea90762da5bd13e9a69b210bc7be77517/detection
+
+193.233.232.156:12345
+85.192.63.25:8080
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.titan_stealer/ (# 2023-10-29)
+
+http://77.91.84.192
+77.73.133.88:5000
+46.8.210.75:5000
+159.69.95.42:5000
+195.123.209.20:5000
+89.23.98.188:5000
+94.142.138.58:5000
+94.142.138.145:5000
+94.142.138.170:5000
+82.115.223.71:5000
+78.153.130.231:5000
+86.105.252.128:3000
+185.106.94.102:5000
+185.106.94.73:5000
+128.140.3.146:5000
+94.142.138.10:5000
+82.115.223.194:1000
+45.15.156.137:5000
+45.15.156.242:5000
+45.15.157.139:5000
+45.82.153.136:5000
+78.153.130.24:5000
+80.85.241.24:5000
+82.115.223.186:5000
+89.23.96.140:5000

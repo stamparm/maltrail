@@ -1,0 +1,530 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/bad_packets/status/1079251375987425280
+
+66.70.173.48:53
+
+# Reference: https://twitter.com/parseword/status/1093234498228097024
+
+144.217.191.145:53
+
+# Reference: https://twitter.com/bad_packets/status/1112087547050520577
+# Reference: https://twitter.com/bad_packets/status/1114236807367905280
+# Reference: https://www.ixiacom.com/company/blog/paypal-netflix-gmail-and-uber-users-among-targets-new-wave-dns-hijacking-attacks
+# Reference: https://securityboulevard.com/2019/04/paypal-netflix-gmail-and-uber-users-among-targets-in-new-wave-of-dns-hijacking-attacks/
+
+195.128.124.131:53
+195.128.124.150:53
+195.128.124.181:53
+195.128.126.165:53
+35.228.220.70:53
+
+# Reference: https://blog.talosintelligence.com/2019/04/seaturtle.html
+# Reference: https://blog.talosintelligence.com/2019/07/sea-turtle-keeps-on-swimming.html
+
+45.32.100.62:53
+95.179.150.101:53
+ns1.intersecdns.com
+ns2.intersecdns.com
+ns1.lcjcomputing.com
+ns2.lcjcomputing.com
+ns1.rootdnservers.com
+ns2.rootdnservers.com
+
+# Reference: https://blog.talosintelligence.com/2018/11/dnspionage-campaign-targets-middle-east.html (DNS Hijack Domains)
+
+185.20.187.8:53
+
+# Reference: https://twitter.com/david_jursa/status/1121719132137951232
+
+23.94.149.242:53
+172.245.14.114:53
+198.46.131.130:53
+
+# Reference: https://twitter.com/david_jursa/status/1131487385034870784
+# Reference: https://pastebin.com/s98awS0E
+
+176.123.7.80:53
+31.204.153.34:53
+
+# Reference: https://myonlinesecurity.co.uk/it-looks-like-another-dns-compromise-hack-happening/
+# Reference: https://www.bleepingcomputer.com/news/security/new-spam-campaign-controlled-by-attackers-via-dns-txt-records/
+
+ns1.firstdnshoster.com
+ns2.firstdnshoster.com
+188.225.25.33:53
+104.193.252.156:53
+104.193.252.177:53
+185.209.160.70:53
+190.2.147.146:53
+31.148.219.110:53
+
+# Reference: https://habr.com/ru/company/bizone/blog/456804/ (Russian)
+
+188.165.200.156:53
+217.12.210.54:53
+91.217.137.37:53
+
+# Reference: https://twitter.com/MetallicaMVP/status/1148919883255750656
+# Reference: https://forums.malwarebytes.com/topic/249242-removal-instructions-for-extenbro/
+
+45.86.180.227:53
+77.234.40.79:53
+116.203.6.218:53
+185.130.104.222:53
+185.162.93.213:53
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/home-routers-under-attack-malvertising-windows-android-devices
+
+217.12.218.114:53
+217.12.218.115:53
+217.12.218.116:53
+217.12.218.117:53
+217.12.218.118:53
+217.12.218.119:53
+217.12.218.120:53
+217.12.218.121:53
+46.17.102.10:53
+46.17.102.11:53
+46.17.102.12:53
+46.17.102.13:53
+46.17.102.14:53
+46.17.102.15:53
+46.17.102.16:53
+46.17.102.17:53
+46.17.102.18:53
+46.17.102.19:53
+46.17.102.20:53
+46.17.102.21:53
+46.17.102.22:53
+46.17.102.23:53
+46.17.102.24:53
+5.39.220.117:53
+5.39.220.118:53
+5.39.220.119:53
+5.39.220.120:53
+5.39.220.121:53
+5.39.220.122:53
+5.39.220.123:53
+5.39.220.124:53
+5.39.220.125:53
+5.39.220.126:53
+93.115.31.194:53
+93.115.31.195:53
+93.115.31.196:53
+93.115.31.197:53
+93.115.31.198:53
+93.115.31.199:53
+93.115.31.200:53
+93.115.31.201:53
+93.115.31.202:53
+93.115.31.203:53
+93.115.31.204:53
+93.115.31.205:53
+93.115.31.206:53
+93.115.31.207:53
+93.115.31.208:53
+93.115.31.209:53
+93.115.31.210:53
+93.115.31.211:53
+93.115.31.212:53
+93.115.31.213:53
+93.115.31.214:53
+93.115.31.215:53
+93.115.31.216:53
+93.115.31.217:53
+93.115.31.218:53
+93.115.31.219:53
+93.115.31.220:53
+93.115.31.221:53
+93.115.31.222:53
+93.115.31.223:53
+93.115.31.224:53
+93.115.31.225:53
+93.115.31.226:53
+93.115.31.227:53
+93.115.31.228:53
+93.115.31.229:53
+93.115.31.230:53
+93.115.31.231:53
+93.115.31.232:53
+93.115.31.233:53
+93.115.31.234:53
+93.115.31.235:53
+93.115.31.236:53
+93.115.31.237:53
+93.115.31.238:53
+93.115.31.239:53
+93.115.31.240:53
+93.115.31.241:53
+93.115.31.242:53
+93.115.31.243:53
+93.115.31.244:53
+
+# Reference: https://www.heise.de/security/meldung/Grossangriff-auf-Router-DNS-Einstellungen-manipuliert-2132674.html (German)
+
+5.45.75.11:53
+5.45.75.36:53
+
+# Reference: https://decoded.avast.io/threatintel/router-exploit-kits-an-overview-of-routercsrf-attacks-and-dns-hijacking-in-brazil/
+
+192.169.243.50:53
+104.238.80.102:53
+
+# Reference: https://www.welivesecurity.com/2016/06/02/crouching-tiger-hidden-dns/
+
+199.203.131.145:53
+199.203.131.150:53
+199.203.131.151:53
+199.203.131.152:53
+82.163.142.2:53
+82.163.142.3:53
+82.163.142.4:53
+82.163.142.5:53
+82.163.142.6:53
+82.163.142.7:53
+82.163.142.66:53
+82.163.142.67:53
+82.163.142.68:53
+82.163.142.69:53
+82.163.142.70:53
+82.163.142.130:53
+82.163.142.131:53
+82.163.142.132:53
+82.163.142.133:53
+82.163.142.134:53
+82.163.142.135:53
+82.163.142.136:53
+82.163.142.137:53
+82.163.142.138:53
+82.163.142.139:53
+82.163.142.140:53
+82.163.142.141:53
+82.163.142.142:53
+82.163.142.143:53
+82.163.142.144:53
+82.163.142.145:53
+82.163.142.146:53
+82.163.142.147:53
+82.163.142.148:53
+82.163.142.149:53
+82.163.142.150:53
+82.163.142.151:53
+82.163.142.152:53
+82.163.142.153:53
+82.163.142.154:53
+82.163.142.155:53
+82.163.142.156:53
+82.163.142.157:53
+82.163.142.158:53
+82.163.142.159:53
+82.163.142.160:53
+82.163.142.161:53
+82.163.142.162:53
+82.163.142.163:53
+82.163.142.164:53
+82.163.142.165:53
+82.163.142.166:53
+82.163.142.167:53
+82.163.142.168:53
+82.163.142.169:53
+82.163.142.170:53
+82.163.142.171:53
+82.163.142.172:53
+82.163.142.173:53
+82.163.142.174:53
+82.163.142.175:53
+82.163.142.176:53
+82.163.142.177:53
+82.163.142.178:53
+82.163.142.179:53
+82.163.142.180:53
+82.163.142.181:53
+82.163.142.182:53
+82.163.142.183:53
+82.163.142.184:53
+82.163.142.185:53
+82.163.142.186:53
+82.163.142.187:53
+82.163.142.188:53
+82.163.142.189:53
+82.163.143.131:53
+82.163.143.132:53
+82.163.143.133:53
+82.163.143.134:53
+82.163.143.135:53
+82.163.143.136:53
+82.163.143.137:53
+82.163.143.138:53
+82.163.143.139:53
+82.163.143.140:53
+82.163.143.141:53
+82.163.143.142:53
+82.163.143.143:53
+82.163.143.144:53
+82.163.143.145:53
+82.163.143.146:53
+82.163.143.147:53
+82.163.143.148:53
+82.163.143.149:53
+82.163.143.150:53
+82.163.143.151:53
+82.163.143.152:53
+82.163.143.153:53
+82.163.143.154:53
+82.163.143.155:53
+82.163.143.156:53
+82.163.143.157:53
+82.163.143.158:53
+82.163.143.159:53
+82.163.143.160:53
+82.163.143.161:53
+82.163.143.162:53
+82.163.143.163:53
+82.163.143.164:53
+82.163.143.165:53
+82.163.143.166:53
+82.163.143.167:53
+82.163.143.168:53
+82.163.143.169:53
+82.163.143.170:53
+82.163.143.171:53
+82.163.143.172:53
+82.163.143.173:53
+82.163.143.174:53
+82.163.143.175:53
+82.163.143.176:53
+82.163.143.177:53
+82.163.143.178:53
+82.163.143.179:53
+82.163.143.180:53
+82.163.143.181:53
+82.163.143.182:53
+82.163.143.183:53
+82.163.143.184:53
+82.163.143.185:53
+82.163.143.186:53
+82.163.143.187:53
+82.163.143.188:53
+82.163.143.189:53
+82.163.143.190:53
+95.211.158.129:53
+95.211.158.130:53
+95.211.158.131:53
+95.211.158.132:53
+95.211.158.133:53
+95.211.158.134:53
+95.211.158.135:53
+95.211.158.145:53
+95.211.158.146:53
+95.211.158.147:53
+95.211.158.148:53
+95.211.158.149:53
+95.211.158.150:53
+95.211.158.151:53
+
+# Reference: https://twitter.com/MASERGY/status/816720894424940544
+# Reference: https://searchsecurity.techtarget.com/news/450410127/Switcher-Android-Trojan-targets-routers-with-rogue-DNS-servers
+
+101.200.147.153:53
+112.33.13.11:53
+120.76.249.59:53
+
+# Reference: https://twitter.com/ninoseki/status/1157110166086569985
+
+185.205.210.23:53
+
+# Reference: https://security.stackexchange.com/questions/181328/did-i-just-get-dns-hijacked
+# Reference: https://www.virustotal.com/gui/ip-address/185.183.96.174/details
+
+185.183.96.174:53
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/852540935653208064
+
+46.105.86.80:53
+
+# Reference: https://twitter.com/david_jursa/status/1119573958095974400
+
+172.245.211.58:53
+23.94.66.186:53
+
+# Reference: https://twitter.com/ninoseki/status/1104181886824243200
+
+65.181.123.142:53
+65.181.123.143:53
+
+# Reference: https://twitter.com/strayanmegaman/status/1001580761684717568
+# Reference: https://www.bitdefender.com/box/blog/iot-news/800000-draytek-routers-risk-dns-hijacking-attack-update-firmware/
+
+38.134.121.95:53
+
+# Reference: https://twitter.com/ricmarks/status/966733953406291968
+
+18.219.162.248:53
+
+# Reference: https://twitter.com/leppie/status/661234162758721536
+
+23.91.114.130:53
+
+# Reference: https://twitter.com/abek42/status/642610851095158784
+
+5.152.219.51:53
+
+# Reference: https://twitter.com/teksquisite/status/473233221862182912
+
+184.107.180.178:53
+
+# Reference: https://twitter.com/nikcub/status/347579443994312704
+
+204.11.56.17:53
+
+# Reference: https://twitter.com/moukahal/status/194886840447279104
+
+213.109.79.255:53
+64.28.191.255:53
+67.210.15.255:53
+77.67.83.255:53
+85.255.127.255:53
+93.188.167.255:53
+
+# Reference: https://twitter.com/bugsbane/status/74691655663497216
+
+188.229.88.7:53
+
+# Reference: https://security.stackexchange.com/questions/104480/investigating-a-possible-rogue-dns-server-maybe-dnschanger
+
+93.158.212.36:53
+
+# Reference: https://blog.scrt.ch/2017/07/10/numerous-swiss-domain-names-temporarily-hijacked/
+# Reference: https://www.virustotal.com/gui/domain/ns1.dnshost.ga/relations
+# Reference: https://www.virustotal.com/gui/domain/ns2.dnshost.ga/relations
+
+46.183.219.205:53
+46.183.219.206:53
+46.183.219.227:53
+ns1.dnshost.ga
+ns2.dnshost.ga
+
+# Reference: https://twitter.com/david_jursa/status/1134355920639660037
+
+80.82.77.166:53
+
+# Reference: https://twitter.com/david_jursa/status/1166314807634604035
+
+23.227.192.58:53
+
+# Reference: https://twitter.com/david_jursa/status/1156517825122570240
+
+23.94.245.170:53
+
+# Reference: https://twitter.com/david_jursa/status/1114134608671649792
+
+23.92.222.100:53
+23.92.222.243:53
+
+# Reference: https://twitter.com/david_jursa/status/1106154345878507520
+
+198.12.64.210:53
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2007-011811-1222-99&tabid=2
+# Reference: https://www.virustotal.com/en/file/46a45be62c49ca51c4ae2e45727c6578e6872c3a9bc7ac7ccb9f83d96464e93a/analysis/
+
+85.255.115.21:53
+85.255.112.91:53
+
+# Reference: https://unit42.paloaltonetworks.com/xhunt-campaign-attacks-on-kuwait-shipping-and-transportation-organizations/ (Table 3, all related to dns. and ns. records)
+
+185.15.247.140:53
+213.202.217.4:53
+217.79.183.50:53
+217.79.183.53:53
+217.79.183.58:53
+217.79.185.65:53
+217.79.185.75:53
+217.79.185.90:53
+74.91.19.113:53
+82.102.14.222:53
+82.102.14.226:53
+82.102.14.227:53
+91.132.139.183:53
+91.132.139.254:53
+
+# Reference: https://twitter.com/david_jursa/status/1172522037254008833
+
+77.95.229.240:53
+
+# Reference: https://decoded.avast.io/simonamusilova/ghostdns-exploit-kit-strikes-back/
+
+192.3.207.10:53
+198.46.234.210:53
+
+# Reference: https://www.domaintools.com/resources/blog/finding-additional-indicators-with-passive-dns-within-domaintools-iris
+# Reference: https://otx.alienvault.com/pulse/5e3d2b649a5e2e8c862e769f
+
+142.53.169.189:53
+167.99.40.72:53
+185.205.210.23:53
+198.211.125.184:53
+82.102.14.218:53
+82.196.11.127:53
+89.163.206.26:53
+dns.cloudipnameserver.com
+dns.cloudnameservice.com
+dns.interland.com
+dnsnode.netnod.se
+ns1.cloudnamedns.com
+ns1.frobbit.se
+ns1.mmfasi.com
+ns2.cloudnamedns.com
+ns2.mmfasi.com
+ns3.mmfasi.com
+ns30.ucg.ae
+ns31.ucg.ae
+ns4.mmfasi.com
+resolve.cloudipnameserver.com
+resolve.cloudnameservice.com
+resolve.interland.com
+
+# Reference: https://twitter.com/NoceraInformat1/status/1222976385494519810
+
+89.207.131.21:53
+
+# Reference: https://www.bleepingcomputer.com/news/security/hackers-hijack-routers-dns-to-spread-malicious-covid-19-apps/
+
+109.234.35.230:53
+94.103.82.249:53
+
+# Reference: https://twitter.com/david_jursa/status/1130430875093618688
+
+158.255.7.150:53
+
+# Reference: https://twitter.com/david_jursa/status/1351171678945091594
+
+142.44.146.45:53
+54.39.167.237:53
+
+# Reference: https://securelist.com/ad-blocker-with-miner-included/101105/
+# Reference: https://otx.alienvault.com/pulse/604a40993962cb029d4ee31a
+
+142.4.214.15:53
+176.31.103.74:53
+185.192.111.210:53
+185.201.47.42:53
+37.59.58.122:53
+
+# Reference: https://twitter.com/david_jursa/status/1391001390642761729
+# Reference: https://github.com/stamparm/maltrail/pull/16502
+
+54.39.11.209:53
+92.205.27.135:53
+
+# Reference: https://twitter.com/James_inthe_box/status/1423006982487769088
+# Reference: https://gist.github.com/silence-is-best/c2c2bb4bc4e11d6e45b4aa8ebeafaf97
+
+45.138.72.52:53
+
+# Reference: https://twitter.com/siimi_m_/status/1496058188570968064
+
+51.161.42.78:53
+54.39.196.31:53

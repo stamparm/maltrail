@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.crowdstrike.com/blog/protecting-software-supply-chain-deep-insights-ccleaner-backdoor/
+# Reference: https://blog.talosintelligence.com/2017/09/avast-distributes-malware.html
+
+ab1145b758c30.com
+ab1abad1d0c2a.com
+ab1b0eaa24bb6.com
+ab1c403220c27.com
+ab23660730bca.com
+ab253af862bb0.com
+ab2d02b02bb3.com
+ab2da3d400c20.com
+ab2e1b782bad.com
+ab33b8aa69bc4.com
+ab3520430c23.com
+ab3c2b0d28ba6.com
+ab3d685a0c37.com
+ab693f4c0bc7.com
+ab6d54340c1a.com
+ab70a139cc3a.com
+ab890e964c34.com
+ab8cee60c2d.com
+ab99c24c0ba9.com
+aba9a949bc1d.com
+abccc097dbc0.com
+abce85a51bbd.com
+abf09fc5abba.com

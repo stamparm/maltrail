@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.aquasec.com/blog/perfctl-a-stealthy-malware-targeting-millions-of-linux-servers/
+# Reference: https://www.virustotal.com/gui/file/22e4a57ac560ebe1eff8957906589f4dd5934ee555ebcc0f7ba613b07fad2c13/detection
+# Reference: https://www.virustotal.com/gui/file/e16fb2a22fce5241565784b5a8518ed2becc9948d4c398093edbb70a946f9331/detection
+# Reference: https://www.virustotal.com/gui/file/a6d3c6b6359ae660d855f978057aab1115b418ed277bb9047cd488f9c7850747/detection
+# Reference: https://www.virustotal.com/gui/file/db81c115407267801b7c32bd3da0533306c7c586a82839ffe324e8794e3dcc01/detection
+# Reference: https://www.virustotal.com/gui/file/31ee4c9984f3c21a8144ce88980254722fd16a0724afb16408e1b6940fd599da/detection
+# Reference: https://www.virustotal.com/gui/file/ca3f246d635bfa560f6c839111be554a14735513e90b3e6784bedfe1930bdfd6/detection
+
+http://104.183.100.189/main/dist/avatar.php
+http://198.211.126.180/main/dist/avatar.php
+http://46.101.139.173/main/dist/avatar.php
+tivdagigpkjr6sn7futgyripfq3bao6yfgxnhx7eansqysvk2mttfwyd.onion

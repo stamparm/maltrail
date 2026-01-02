@@ -1,0 +1,53 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.threatfabric.com/blogs/xenomorph-a-newly-hatched-banking-trojan.html
+
+art12sec.ga
+kart12sec.gq
+simpleyo5.cf
+simpleyo5.tk
+homeandofficedeal.com
+
+# Reference: https://twitter.com/midnight_comms/status/1536430749221625859
+# Reference: https://www.virustotal.com/gui/ip-address/51.210.135.15/relations
+
+mobilsiparisver.com
+x2u2.art
+x2u2k.com
+x2y2.lol
+x2y2k.com
+promo.x2u2.art
+promo.x2u2k.com
+promo.x2y2.lol
+promo.x2y2k.com
+
+# Reference: https://www.threatfabric.com/blogs/xenomorph-v3-new-variant-with-ats.html
+# Reference: https://otx.alienvault.com/pulse/640ff37d304100830509a3a7
+
+cofi.hk
+dedeperesere.xyz
+had0.live
+jobviewer.co
+mi1kyway.tech
+vldeolan.com
+inj.had0.live
+team.mi1kyway.tech
+
+# Reference: https://www.virustotal.com/gui/file/8ba5f3c72ef0cc658dd832dbb1e1ffaf02d020a740847f93983b969d34a3281f/detection
+# Reference: https://www.virustotal.com/gui/file/ed83b57ee620fea71f250d21999452c864d716a9ff2cc5ffb3691f9714bed207/detection
+# Reference: https://www.virustotal.com/gui/file/e5fe0c6faf269c464436abd9692ae2f8328572a68c75ce2d68c281811fdfe0f3/detection
+
+safepageview.hk
+servicefreecontent.top
+servicefreecontent.xyz
+unlimconnect.hk
+bkp.had0.live
+
+# Reference: https://www.threatfabric.com/blogs/xenomorph
+# Reference: https://otx.alienvault.com/pulse/6511e2bded64cd4b4e9e1661
+
+92l.info
+fobocontentplus.online
+fobocontentplus.site
+fobocontentplus.top

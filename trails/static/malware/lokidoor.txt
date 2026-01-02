@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: mloki
+
+# Reference: https://securelist.com/loki-agent-for-mythic/113596/
+
+info-cloud.ru
+nsitelecom.ru
+telecomz.ru
+billing-gosuslugi.info-cloud.ru
+cloud.info-cloud.ru
+document.info-cloud.ru
+mail.nsitelecom.ru
+re.telecomz.ru
+st.telecomz.ru
+ui.telecomz.ru
+y.nsitelecom.ru
+ya.nsitelecom.ru

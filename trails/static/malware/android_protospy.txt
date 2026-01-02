@@ -1,0 +1,39 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: prospy, tospy
+
+# Reference: https://x.com/LukasStefanko/status/1973697698248413572
+# Reference: https://www.welivesecurity.com/en/eset-research/new-spyware-campaigns-target-privacy-conscious-android-users-uae/
+
+ai-messenger.co
+app-totok.io
+appupdate.ai
+latestversion.ai
+noblico.net
+sgnlapp.info
+signal.ct.ws
+spiralkey.co
+totok-pro.io
+totokapp.info
+totokupdate.ai
+encryption-plug-in-signal.com-ae.net
+download.appupdate.ai
+mail.app-totok.io
+static.appupdate.ai
+store.appupdate.ai
+store.latestversion.ai
+update.totokapp.info
+
+# Reference: https://x.com/volrant136/status/1973812417546367175
+# Reference: https://x.com/volrant136/status/1973812523528032641
+# Reference: https://x.com/volrant136/status/1973813021836464272
+# Reference: https://www.virustotal.com/gui/file/9a864f104e7fabb41e65847f78f9fb2fbac0bc1196ea61cafce19334ce28cb44/detection
+# Reference: https://www.virustotal.com/gui/file/2a7a3c72afcbc0d7804696e6dc96f69e775df235544d264e130976d1f95964a9/detection
+
+relaxmode.org
+signal-encryption-service.ct.ws
+totok-pro.app
+totok-shop.com
+/signsdhfg6aug/signsdhfg6aug/
+/signsdhfg6aug/

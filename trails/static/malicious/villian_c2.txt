@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/Exodia6542/status/1868246876488872145
+# Reference: https://www.virustotal.com/gui/file/3279418150d07dbd03b802ae1af8160af96b2e3eac147d5b7e862ae8956913aa/detection
+
+15.161.105.91:8080

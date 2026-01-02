@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fireeye.com/blog/threat-research/2021/04/unc2447-sombrat-and-fivehands-ransomware-sophisticated-financial-threat.html
+# Reference: https://otx.alienvault.com/pulse/608c30d78049ae7a24b0b431
+# Reference: https://us-cert.cisa.gov/ncas/analysis-reports/ar21-126a
+
+celomito.com
+cosarm.com
+feticost.com
+portalcos.com

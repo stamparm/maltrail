@@ -1,0 +1,46 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/benkow_/status/1486700404482134021
+# Reference: https://www.virustotal.com/gui/file/aafe3a4b60177935eafabd5453ed701b5dbed32ad735c6fb4dbec2645402a022/detection
+# Reference: https://www.virustotal.com/gui/file/5e18850b6929d4c3613ec166482910ad4aff5d49e3e21f858c613f940044773c/detection
+# Reference: https://www.virustotal.com/gui/file/098eeec339b99a05020195154d8927afb3d16ed530aace7e33515032788ca02e/detection
+
+http://45.9.20.132
+e6tfvc.federguda.ru
+install-cb.ru
+
+# Reference: https://urlhaus.abuse.ch/url/2000447/
+
+http://131.153.22.157
+
+# Reference: https://twitter.com/JustWantToQ1/status/1536276855397011456
+
+mail.call0000the7777cops.com
+mail.rate0000my7777poo.com
+
+# Reference: https://twitter.com/JustWantToQ1/status/1536279203544547329
+
+blue763st.buzz
+
+# Reference: https://twitter.com/r3dbU7z/status/1592434379800088576
+
+http://80.66.77.14
+http://80.66.77.138
+http://80.66.77.140
+
+# Reference: https://blog.bushidotoken.net/2022/11/detecting-and-fingerprinting.html
+# Reference: https://urlscan.io/search/#filename:%22misha.css%22
+# Reference: https://urlscan.io/search/#task.tags:%22misha%22
+
+http://31.14.40.216
+http://95.161.131.138
+bancosantandere.com
+ebanat6977769.com
+money868st.buzz
+super733st.buzz
+
+# Reference: https://twitter.com/karol_paciorek/status/1720412807278064090
+
+http://89.108.103.92
+89.108.103.92:443

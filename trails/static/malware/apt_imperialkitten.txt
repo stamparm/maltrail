@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: IMAPLoader
+
+# Reference: https://www.crowdstrike.com/blog/imperial-kitten-deploys-novel-malware-families/
+# Reference: https://otx.alienvault.com/pulse/65525ca657dbfce9173d57d2
+
+analytics-service.cloud
+analytics-service.online
+blackcrocodile.online
+cdn-analytics.co
+cdn.jguery.org
+cdnpakage.com
+fastanalizer.live
+fastanalytics.live
+jquery-cdn.online
+jquery-code-download.online
+jquery-stack.online
+prostatistics.live
+updatenewnet.com

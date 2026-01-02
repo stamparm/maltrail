@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.koi.ai/blog/4-million-browsers-infected-inside-shadypanda-7-year-malware-campaign
+
+cgatgpt.net
+yearnnewtab.com
+s-82923.gotocdn.com
+s-85283.gotocdn.com
+api.cgatgpt.net

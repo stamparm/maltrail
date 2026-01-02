@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trendmicro.com/vinfo/us/security/news/cybercrime-and-digital-threats/modified-teamviewer-tool-drops-trojan-spyware-on-victims
+
+intersys32.com
+rosalos.ug
+
+# Reference: https://www.cyjax.com/2021/05/27/financial-spear-phishing-campaigns-pushing-rats/
+# Reference: https://otx.alienvault.com/pulse/60afb5e9fc9ead03c5f4ca2d
+
+bbtcorpo.com
+bceaoportal.com
+chasetrustus.com
+cpbkuk.com
+cponlineuk.com
+esecurebanking.online
+multibankpa.com
+psbcn.com
+scotia-itrade.com
+scotia-itrade.online
+securebankapp.com
+securebankapp.online
+securemailbox.online
+secureportal.online
+thebnymellon.com
+trfincorporation.online
+
+# Reference: https://x.com/malwrhunterteam/status/1895392185543204985
+# Reference: https://www.virustotal.com/gui/file/9afdcd51be9d0170b0cf059b65be167e79a4c0da639bed25e542d3b1223d2b4d/detection
+
+http://195.19.105.83
+takethree.click
+/vfl4/update.php

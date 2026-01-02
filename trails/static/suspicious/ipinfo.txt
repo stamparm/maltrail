@@ -1,0 +1,447 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+2ip.me
+2ip.ua
+2ip.ru
+2ip.tools
+aboutmyip.com
+api.wipmania.com
+aruljohn.com
+bahoot.com
+bearsmyip.com
+checkip.amazonaws.com
+checkip.dns.he.net
+checkip.dyn.com
+checkip.dyndns.com
+checkip.dyndns.it
+checkip.dyndns.org
+checkip.me
+checkip.narak.com
+checkip.net
+checkip.org
+checkip.pw
+checkmyip.com
+check-my-ip.net
+cmyip.com
+cmyip.net
+crymyip.com
+curlmyip.com
+extreme-ip-lookup.com
+findmyipaddress.com
+findmyip.org
+formyip.com
+freegeoip.net
+geodatatool.com
+geoip.co.uk
+geoiptool.com
+geoip.vmn.net
+geoplugin.net
+get-myip.com
+getmyip.co.uk
+getmyip.org
+icanhazip.com
+ifconfig.co
+ifconfig.me
+inet-ip.info
+ip138.com
+ip-1.com
+ip2location.com
+ip2nation.com
+ip4.me
+ip4.telize.com
+ip6.telize.com
+ip-addr.es
+ip-address.cc
+ipaddresscheck.com
+ipaddress.com
+ipaddress.org
+ipaddressworld.com
+ip-address.ru
+ip-adress.com
+ip-adress.eu
+ip.amulex.com
+ip.anysrc.net
+ip-api.com
+ip.cctv.pk
+ip.spacecom.cc
+ip.telecom24.link
+2ip.telecom24.link
+ipchecker.info
+ip-check.info
+ipchicken.com
+ip.cn
+ip-detect.net
+ipecho.net
+ipify.org
+ipinfodb.com
+ipinfo.info
+ipinfo.io
+ip-info.org
+ip-info.xyz
+ipleak.net
+iplocation.net
+iplogger.ru
+ipmonkey.com
+ip.my-proxy.com
+ip-ping.ru
+ip-score.com
+ip.taobao.com
+ip.telize.com
+ip.tool.la
+iptrackeronline.com
+ip.tyk.nu
+ip.webmasterhome.cn
+ip-who-is.com
+j.maxmind.com
+l2.io
+localizaip.com.br
+meip.eu
+meuip.net.br
+mon-ip.com
+mycamip.com
+myexternalip.com
+myglobalip.com
+myipaddress.com
+myip.am
+myip.by
+myip.cc
+myip.cf
+myip.ch
+myip.cn
+myip.co.il
+myip.com.br
+myip.com.tw
+myip.com.ua
+myip.co.nz
+myip.cz
+myip.dk
+myip.dnsdynamic.org
+myip.dnsomatic.com
+myip.dramor.net
+myip.dtdns.com
+myip.easylife.tw
+myip.es
+myip.eu
+myip.fi
+myip.gr
+myip.gratis
+myip.heltech.se
+myip.ht
+myip.info
+myipinfo.net
+myip.io
+myip.is
+myip.israel.net
+myip.jacware.com
+myip.knet.ca
+myip.kz
+myip.ma
+#myip.ms
+myip.mudfish.net
+myip.mx
+myip.mysau.com.au
+myip.net
+myip.nl
+myip.nmonitoring.com
+myip.northstate.net
+myipnow.com
+myip.nu
+myipnumber.com
+myiponline.com
+myip.ozymo.com
+myip.report
+myip.rs.sr
+myip.ru
+myip.sdu.dk
+myip.se
+myip.shorty.org
+myip.si
+myip.surfeasy.com
+myip.telespex.com
+myip.tk
+myip.tw
+myip.ua.edu
+myip.uconn.edu
+myip.v6shell.org
+myip.zone
+mylocation.org
+my-ip.club
+nagano-19599.herokussl.com      # Note: CNAME of api.ipify.org
+qualmeuip.com.br
+readip.info
+shmyip.com
+show-ip.com
+showipinfo.net
+showip.net
+showmemyip.com
+showmyipaddress.com
+showmyipaddress.eu
+showmyip.com
+showmyip.com.ar
+showmyip.co.uk
+show-my-ip.de
+showmyip.gr
+showmyipnow.com
+smart-ip.net
+telize.com
+tell-my-ip.com
+tracemyip.com
+tracemyip.org
+trackip.net
+ultratools.com
+utrace.de
+vermiip.es
+vinflag.com
+whatismybrowser.com
+whatismyipaddress.com
+whatismyip.akamai.com
+whatismyip.ca
+whatismyip.com
+whatismyip.com.br
+whatismyip.everdot.org
+whatismyip.org
+whatismypublicip.com
+whatmyip.us
+whatsmyipaddress.com
+whatsmyipaddress.net
+whats-my-ip-address.org
+w.hatsmyip.com
+whatsmyip.net
+whatsmyip.org
+whatsmyip.us
+whatsmyip.website
+whereisip.net
+whoer.me
+whoer.net
+whoisping.com
+wsgeoip.lavasoft.com
+wtfismyip.com
+xmyip.com
+yougetsignal.com
+youip.net
+your-ip-address.com
+your-ip-fast.com
+yourip.us
+
+# Reference: https://twitter.com/James_inthe_box/status/1114150925218639872
+
+curlmyip.net
+
+# Reference: https://www.symantec.com/blogs/threat-intelligence/beapy-cryptojacking-worm-china
+# Reference: https://content.connect.symantec.com/sites/default/files/2019-04/Beapy_IOCs.txt
+
+jsonip.com
+ip.42.pl
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1121755894511960064
+# Reference: https://app.any.run/tasks/c18ca904-42a7-4cda-89ca-8960f38ff406
+
+freegeoip.app
+ip.sb
+
+# Reference: https://twitter.com/x42x5a/status/1132943885448163328
+# Reference: https://app.any.run/tasks/d268365b-1a68-48ff-a541-6fb147357de8/
+# Reference: https://www.virustotal.com/gui/domain/ipapi.co/relations
+
+ipapi.co
+
+# Reference: https://app.any.run/tasks/2f344183-0809-448e-bedc-3080631fa2c9/ (Note: direct IP usage for whatismyipaddress.com)
+
+66.171.248.178
+
+# Reference: https://twitter.com/fbgwls245/status/1180291089074282496
+# Reference: https://app.any.run/tasks/f279fdb8-614e-4074-92c4-ddf01afbf86f/
+
+api.db-ip.com
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-03-28-mcafee-labs-unlocks-lechiffre-ransomware/mcafee-labs-unlocks-lechiffre-ransomware.csv
+
+api.sypexgeo.net
+
+# Reference: https://www.hybrid-analysis.com/string-search/results/dadfd0d8b49c6852e76468b76d381248d8db9f18250b303ead54986bca8dd98f
+# Note: used by many different malware strains (ipinfo service used exclusively by malware)
+
+codeluxsoftware.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/89.39.105.12/relations
+# Note: used by many different malware strains (ipinfo service used exclusively by malware)
+
+http://89.39.105.12/ip.shtml
+
+# Reference: https://github.com/MISP/misp-warninglists/blob/master/lists/whats-my-ip/list.json
+
+checkip-waw.dyndns.com
+checkip.dyndns.es
+dawhois.com
+dnswatch.info
+dpool.sina.com.cn
+ident.me
+ifcfg.me
+ilmioip.it
+indirizzo-ip.com
+ip-info.ff.avast.com
+ip-secrets.com
+ip-whois.net
+ip.chinaz.com
+keliweb.it/mioip.php
+mio-ip.it
+mioip.biz
+mioip.ch
+mioip.info
+mioip.it
+mioip.org
+mioip.win
+my-ip-address.net
+myip.opendns.com
+whatismyip.li
+whatismyip.net
+whatsmyip.ie
+
+# Reference: https://web.archive.org/web/20190305000303/http://2019.ip138.com/ic.asp
+
+2019.ip138.com
+
+# Reference: https://www.virustotal.com/gui/file/66f15d02e1f4757719f48e0df25b23be59e28e75dc60d14c3e72849d7dd8bbcb/detection
+
+ipstack.com
+
+# Reference: https://twitter.com/JohnLaTwC/status/1204589592390688768
+# Reference: https://www.virustotal.com/gui/domain/get.geojs.io/relations
+
+get.geojs.io
+
+# Reference: https://www.virustotal.com/gui/ip-address/89.39.105.12/relations
+
+89.39.105.12/ip.shtml
+
+# Reference: https://www.virustotal.com/gui/ip-address/176.58.123.25/relations
+
+getmyip.win
+ident.me
+
+# Reference: https://www.virustotal.com/gui/file/84de767f4e5bb60b19a734dd60590bebad76c5e7622ee05f3f745edfd7730ae3/detection
+
+apps.game.qq.com/comm-htdocs/ip/get_ip.php
+
+# Reference: https://github.com/StrangerealIntel/malware-notes/blob/master/Ransomware/Ouroboros.md
+
+sfml-dev.org/ip-provider.php
+
+# Reference: https://www.virustotal.com/gui/file/e60b0b0e57ca395709aeae6016e39f4114c84272e32cf040f5d972372f212f08/detection
+
+sypexgeo.net
+
+# Reference: https://www.virustotal.com/gui/file/563d57c9f893a11d09e40edfd9e028bb3603ea7843b725521af03ef965f8970b/behavior/Tencent%20HABO
+
+geoip-db.com
+geolocation-db.com
+
+# Reference: https://www.virustotal.com/gui/domain/ipcode.pw/details
+
+ipcode.pw
+
+# Reference: https://www.virustotal.com/gui/file/db990dd20ae4390a2965b9de6839cda8a52fb0214fb5d90cbc2da9ccf0977dcd/detection
+
+api.rest7.com/v1/my_ip.php
+
+# Reference: https://www.virustotal.com/gui/file/b9cf5db42a5cc90339cd90d7a39ff5caae4a54decd174ddf097e148428909394/detection
+
+v4.ipv6-test.com/api/myip.php
+
+# Reference: https://www.virustotal.com/gui/file/8471b945edaa37d2cfeda1a7c367cf3f273e8dee7353e6cb309a74d33b6a87b7/detection
+
+myip.ipip.net
+
+# Reference: https://www.virustotal.com/gui/domain/eth0.me/relations
+
+eth0.me
+
+# Reference: https://www.virustotal.com/gui/domain/ip.urls.is/relations
+
+ip.urls.is
+
+# Reference: https://www.virustotal.com/gui/file/07dc515aadbd1a62cc510b9e2eea6297ba626119648419f9fe8f410a50e2779b/behavior
+
+7fw.de/ipraw.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1397230910341320715
+# Reference: https://app.any.run/tasks/6f591989-545b-4101-b7c1-69a0f1f6465d/
+
+api.mylnikov.org
+
+# Reference: https://www.virustotal.com/gui/file/460ae61f9b410506f5f5b0308107cad53cd3871087340541e3693b717c58843f/detection
+
+checkip.us-east-1.prod.check-ip.aws.a2z.com
+checkip.check-ip.aws.a2z.com
+
+# Reference: https://app.any.run/tasks/2d9dfe84-d56d-4523-82fb-95943eedff61/
+# Reference: https://seeip.org/
+
+seeip.org
+ip.seeip.org
+ip4.seeip.org
+ip6.seeip.org
+
+# Reference: https://twitter.com/AffableKraut/status/1487939198665601024
+
+my-ip.io
+api.my-ip.io
+api4.my-ip.io
+
+# Reference: https://www.virustotal.com/gui/domain/myip.wtf/relations
+
+myip.wtf
+ipv4.myip.wtf
+json.myip.wtf
+static.myip.wtf
+text.myip.wtf
+xml.myip.wtf
+
+# Reference: https://www.virustotal.com/gui/file/04ca768c17970bee6915e676e7e274e577cc8fefb4f072a801f5e3832d87783c/behavior/Zenbox
+
+httpbin.org/ip
+
+# Reference: https://blog.talosintelligence.com/2022/06/threat-roundup-0610-0617.html (# Win.Packed.Johnnie-9951653-0)
+
+ipwho.is
+
+# Reference: https://www.virustotal.com/gui/file/c192c4a8647935e35a756e0e9cb71a2b4536f927bee108ec1580e6d31fcca785/behavior/Zenbox
+
+ipwhois.app
+
+# Reference: https://www.virustotal.com/gui/file/d608d017b2063a0d01287a7a71e17a5d8db473e229af410886ba82d815b93fad/behavior
+
+ip.plyz.net
+
+# Reference: https://twitter.com/wwp96/status/1630019574816182272
+# Reference: https://app.any.run/tasks/8fb9ad39-57dc-444d-88d8-d71ac942cddc/
+
+whois.pconline.com.cn
+
+# Reference: https://www.virustotal.com/gui/ip-address/34.117.59.81/relations
+# Reference: https://www.virustotal.com/gui/file/a4b5d7012c1a971c6c7d95de1b2027153d83527b1a2c62fa0fca7770a76fb99a/detection
+
+http://34.117.59.8
+
+# Reference: https://www.virustotal.com/gui/file/911ff4db1232c44205f71456d652a3ebfa2992770ef94c5cc89f9843a235cbcc/detection
+
+whatismyipaddressnow.co
+
+# Reference: https://www.virustotal.com/gui/domain/myips.cc/detection
+
+myips.cc
+
+# Reference: https://elfdigest.com/brief/49215ba3fb3e632847843780a063d93942d3282d7cbbb99d72abd0b3993d429b
+# Reference: https://www.virustotal.com/gui/file/49215ba3fb3e632847843780a063d93942d3282d7cbbb99d72abd0b3993d429b/detection
+# Reference: https://www.virustotal.com/gui/file/4aa68a06c07154d01f6b1366a485253f375e084b4ddf00ba96cec0d583182a64/detection
+
+http://208.95.112.1
+
+# Reference: https://www.virustotal.com/gui/file/0018c0cdaf6f58880005d8df0e7ad30d69f37e8b8dde22ee42d451f4d9a28e66/detection
+
+reallyfreegeoip.org
+
+# Reference: https://www.virustotal.com/gui/file/5a9dc51122f46633e130716d169dd0c9a00ea5c47a90bf0636e9101183b34185/detection
+
+http://118.184.169.48/dyndns/getip

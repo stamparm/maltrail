@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.intezer.com/blog/malware-analysis/new-linux-backdoor-redxor-likely-operated-by-chinese-nation-state-actor/
+# Reference: https://otx.alienvault.com/pulse/604932f1d2f513a98e267929
+
+cloudjscdn.com
+update.cloudjscdn.com
+
+# Generic
+
+/yester/login.jsp

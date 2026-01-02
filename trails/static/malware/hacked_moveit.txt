@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/trustwave-action-response-zero-day-exploitation-of-moveit-cve-2023-34362/
+# Reference: https://otx.alienvault.com/pulse/647efbbf9d4d077da2df7dee
+
+dojustit.mooo.com
+
+# Reference: https://unit42.paloaltonetworks.com/threat-brief-moveit-cve-2023-34362/
+# Reference: https://otx.alienvault.com/pulse/648c3ebec4598a48e4a01eff
+
+http://165.227.147.215
+http://209.97.137.33
+http://5.252.189.130
+http://5.252.189.210
+http://5.252.190.100
+http://5.252.190.117
+http://5.252.190.119
+http://5.252.190.244
+http://5.252.191.103
+http://5.252.191.241
+http://5.252.191.31

@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/TuringAlex/status/1933075158476144877
+
+102.214.30.199:8080
+154.68.72.34:8080
+185.189.149.151:8080
+195.43.6.252:46588
+38.180.207.9:8080
+80.75.169.227:8080
+
+# Reference: https://blog.xlab.qianxin.com/pickai-the_backdoor_hiding_in_your_ai_stack/
+
+78.47.151.49:8878
+historyandresearch.com
+rubick.ai/wp-content/config.json
+rubick.ai/wp-content/tmux.conf
+rubick.ai/wp-content/vim.json

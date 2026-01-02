@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Description: Katya (КАТЯ) is not a malicious program itself, it is online SQLi scanner.
+
+# Reference: https://twitter.com/PRODAFT/status/1191988333855019009
+
+http://45.138.157.242

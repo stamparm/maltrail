@@ -1,0 +1,147 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: badspace backdoor
+
+# Reference: https://twitter.com/Cryptolaemus1/status/1785423804577034362
+# Reference: https://www.esentire.com/blog/esentire-threat-intelligence-malware-analysis-resident-campaign
+# Reference: https://www.elastic.co/security-labs/dipping-into-danger
+# Reference: https://www.virustotal.com/gui/ip-address/45.9.74.135/relations
+# Reference: https://www.virustotal.com/gui/file/dd25c36dc9e45b7e76ec55362a427cccd0b0fc20d291bdf8b15299aab6e35287/detection
+# Reference: https://www.virustotal.com/gui/file/c64cb9e0740c17b2561eed963a4d9cf452e84f462d5004ddbd0e0c021a8fdabc/detection
+# Reference: https://www.virustotal.com/gui/file/9786569f7c5e5183f98986b78b8e6d7afcad78329c9e61fb881d3d0960bc6a15/detection
+# Reference: https://www.virustotal.com/gui/file/9699022b7bd45a72cf29614bdd131400dbee0ab5d6a5c2e03ed1c13e7cf0eca0/detection
+# Reference: https://www.virustotal.com/gui/file/ccde1ded028948f5cd3277d2d4af6b22fa33f53abde84ea2aa01f1872fad1d13/detection
+
+http://185.49.69.41
+http://80.66.88.146
+employment-agency.top
+executive-search.top
+featured-jobs.top
+hays-findjobs.top
+human-resources.top
+job-search.top-mp.top
+jobs-specialist.top
+match-criteria.top
+new-jobs.top
+search-directly.top
+superior-selections.top
+top-mp.top
+work-for.top
+assets.work-for.top
+com.find-jobs.search-directly.top
+com.for-job-seekers.work-for.top
+com.job-search.executive-search.top
+com.job-search.hays-findjobs.top
+com.job-search.top-mp.top
+com.page-executive.employment-agency.top
+find-jobs.search-directly.top
+for-job-seekers.work-for.top
+hays.com.find-jobs.search-directly.top
+hays.com.for-job-seekers.work-for.top
+job-search.executive-search.top
+job-search.hays-findjobs.top
+job-search.top-mp.top
+michaelpage.com.job-search.executive-search.top
+michaelpage.com.job-search.hays-findjobs.top
+michaelpage.com.job-search.top-mp.top
+michaelpage.com.page-executive.employment-agency.top
+page-executive.employment-agency.top
+profession.jobs-specialist.top
+
+# Reference: https://x.com/struppigel/status/1800863319013965864
+# Reference: https://www.gdatasoftware.com/blog/2024/06/37947-badspace-backdoor
+# Reference: https://www.virustotal.com/gui/file/255cc818a2e11d7485c1e6cc1722b72c1429b899304881cf36c95ae65af2e566/detection
+
+uhsee.com
+
+# Reference: https://x.com/techevo_/status/1838691460289348038
+# Reference: https://x.com/ValidinLLC/status/1840812627951566858
+# Reference: https://www.virustotal.com/gui/ip-address/147.45.116.30/relations
+# Reference: https://blog.techevo.uk/analysis/network/2024/09/24/warmcookie-incident-walk-through.html
+
+bytebridges-hub.com
+checking-bots.site
+business.checkfedexexp.com
+quote.checkfedexexp.com
+
+# Reference: https://x.com/TLP_R3D/status/1841403882200584675
+# Reference: https://app.validin.com/detail?find=f87af72b6ed30d2da47440b53f5914f4209d3a81&type=hash&ref_id=cc0b7f7495f#tab=host_pairs_v2
+
+http://178.209.52.166
+http://194.71.107.41
+http://34.229.254.72
+http://38.180.91.117
+http://64.7.198.67
+178.209.52.166:443
+178.209.52.166:8080
+185.49.68.139:8080
+194.71.107.41:443
+194.71.107.41:8080
+34.229.254.72:443
+38.180.91.117:443
+64.7.198.67:443
+host25.clevernode2.ch
+
+# Reference: https://x.com/malwrhunterteam/status/1904885341439353158
+# Reference: https://www.virustotal.com/gui/file/2bf8594ea21ca101000de7993a55ecdfa5ef34c96b020d87b634ad23a6594d3d/detection
+
+http://89.46.232.52
+
+# Reference: https://x.com/bluish_red_/status/1973398975051915490
+# Reference: https://www.elastic.co/security-labs/revisiting-warmcookie
+# CERT_FINGERPRINT_SHA256-HOST=8c5522c6f2ca22af8db14d404dbf5647a1eba13f2b0f73b0a06d8e304bd89cc0
+
+http://149.248.58.85
+http://149.248.7.220
+http://176.31.45.36
+http://185.49.69.102
+http://185.49.70.98
+http://185.49.71.23
+http://195.82.147.3
+http://45.155.249.102
+http://62.60.238.115
+http://87.120.93.151
+http://87.251.67.92
+http://91.222.173.181
+http://91.222.173.219
+107.189.18.183:5000
+109.120.137.42:8080
+149.248.7.220:443
+151.236.26.198:8080
+155.94.155.155:8080
+170.130.165.112:443
+170.130.165.112:8080
+170.130.55.107:8080
+185.161.251.26:443
+185.195.64.68:443
+185.195.64.68:8080
+192.36.57.164:443
+192.36.57.164:8080
+192.36.57.50:443
+192.36.57.50:8080
+194.87.45.138:8888
+195.82.147.3:443
+45.153.126.129:8080
+83.172.136.121:443
+83.172.136.121:8080
+85.208.84.220:443
+87.120.126.32:8080
+87.120.93.151:443
+89.46.232.247:8080
+91.222.173.219:443
+91.222.173.91:443
+93.152.230.29:443
+93.152.230.29:8080
+170-130-165-112.cprapid.com
+170.130.55.107.sslip.io
+cryptriva.xyz
+dalllasplastics.com
+motoplanetx.one
+ns1.4345681.com
+ns2.4345681.com
+oreidaspreliminares.one
+pavimentigraniglia.info
+rollmeahaze.com
+shophost.one
+storsvc-win.com

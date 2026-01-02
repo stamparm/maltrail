@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2021/04/06/janeleiro-time-traveler-new-old-banking-trojan-brazil/
+# Reference: https://github.com/eset/malware-ioc/tree/master/janeleiro
+
+comunicador.duckdns.org
+acessoriapremierfantasiafaturas.eastus.cloudapp.azure.com
+arquivosemitidoscomsucesso.eastus.cloudapp.azure.com
+dinamicoscontratosvencidos.brazilsouth.cloudapp.azure.com
+eletronicadanfe.brazilsouth.cloudapp.azure.com
+emissaocomprovanteatrasado.eastus.cloudapp.azure.com
+emitidasfaturasfevereiro.brazilsouth.cloudapp.azure.com
+fatura-digital-arquiv-lo.brazilsouth.cloudapp.azure.com
+nota-eletronica-servicos.brazilsouth.cloudapp.azure.com
+portalrotulosfechamento.eastus.cloudapp.azure.com
+protocolo-faturamento-servico.brazilsouth.cloudapp.azure.com
+recuperaglobaldanfeonline.eastus.cloudapp.azure.com
+servicosemitidosglobalnfe.southcentralus.cloudapp.azure.com
+checa-env.cf3tefmhmr.eu-north-1.elasticbeanstalk.com
+slkvemnemim.us-east-1.elasticbeanstalk.com
+tasoofile.us-east-1.elasticbeanstalk.com
+
+# Generic
+
+/catalista/emails/checkuser.php
+/catalista/lixo/index.php
+/nfedown.php?dw=

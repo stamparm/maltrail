@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: DeftTorero, LebaneseCedar, VolatileCedar
+
+# Reference: https://www.checkpoint.com/downloads/volatile-cedar-technical-report.pdf
+
+saveweb.wink.ws
+carima2012.site90.com
+explorerdotnt.info
+dotnetexplorer.info
+dotntexplorere.info
+xploreredotnet.info
+erdotntexplore.info
+
+# Reference: https://securelist.com/defttorero-tactics-techniques-and-procedures/107610/
+# Reference: https://otx.alienvault.com/pulse/633acb17ed56f34d3779a9a4
+
+http://200.159.87.196
+200.159.87.196:3306

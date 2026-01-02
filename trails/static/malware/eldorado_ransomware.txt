@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: blocklock ransomware
+
+# Reference: https://x.com/AlvieriD/status/1798711107542245544
+# Reference: https://x.com/AlvieriD/status/1838838701972967587
+
+dataleakypypu7uwblm5kttv726l3iripago6p336xjnbstkjwrlnlid.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1800479631507915095
+# Reference: https://www.virustotal.com/gui/file/8badf1274da7c2bd1416e2ff8c384348fc42e7d1600bf826c9ad695fb5192c74/detection
+# Reference: https://www.virustotal.com/gui/file/cb0b9e509a0f16eb864277cd76c4dcaa5016a356dd62c04dff8f8d96736174a7/detection
+
+http://173.44.141.152

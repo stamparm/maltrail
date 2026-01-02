@@ -1,0 +1,68 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/1ZRR4H/status/1471717338491797504
+# Reference: https://www.joesandbox.com/analysis/540976/0/html
+# Reference: https://www.curatedintel.org/2021/12/tellyouthepass-ransomware-via-log4shell.html
+# Reference: https://www.virustotal.com/gui/file/460b096aaf535b0b8f0224da0f04c7f7997c62bf715839a8012c1e1154a38984/detection
+# Reference: https://www.virustotal.com/gui/file/533abb3f876c5ffc7e3a76874b0c4a3b4995848fa9a278c8a988af90945ecdac/detection
+# Reference: https://www.virustotal.com/gui/file/8abaa521a014cdbda2afe77042f21947b147197d274bf801de2df55b1e01c904/detection
+# Reference: https://www.virustotal.com/gui/file/dedeb1640850a6ef21cc0efb5f1f96309f62dc10308c6b6c35a9cdadaaeffa13/detection
+
+http://158.247.216.148
+http://45.76.99.222
+158.247.216.148:45826
+
+# Reference: https://cert.360.cn/report/detail?id=65fceeb4c09f255b91b17f11
+# Reference: https://otx.alienvault.com/pulse/6602ca1fb3a72911ae9de39a
+
+http://107.175.127.195
+http://45.130.22.219
+http://59.31.203.57
+http://93.95.228.70
+120.77.82.232:35064
+18.141.81.39:8089
+61.160.194.160:35130
+
+# Reference: https://www.virustotal.com/gui/file/9562ad2c173b107a2baa7a4986825b52e881a935deb4356bf8b80b1ec6d41c53/detection
+
+http://88.218.76.13
+
+# Reference: https://x.com/karol_paciorek/status/1801206196302475615
+# Reference: https://x.com/karol_paciorek/status/1801208765229764675
+
+cyberkiller.xyz
+7h85hmbyo-1327148465.cos.ap-hongkong.myqcloud.com
+
+# Reference: https://x.com/lontze7/status/1821042477022822834
+# Reference: https://app.validin.com/detail?find=info.php.locked&type=dom&ref_id=5f4a2e4fd97#tab=host_pairs_v2
+
+http://103.137.22.180
+http://118.89.106.204
+http://125.228.199.11
+http://163.18.23.113
+http://180.222.182.49
+http://193.42.42.28
+http://202.39.133.181
+http://203.70.224.72
+http://210.71.231.3
+http://27.82.11.178
+http://36.3.232.214
+http://59.126.21.22
+http://60.250.76.218
+oldmedia.kumaneko.me
+
+# Reference: https://x.com/banthisguy9349/status/1839929495718932634
+# Reference: https://urlhaus.abuse.ch/browse.php?search=4763e2a1ca96374f9667179ad965da9c291a9a27eb5eff3ec97c45af6cd52e7d
+
+http://111.180.190.195
+http://156.232.10.123
+http://49.232.20.75
+http://60.205.225.37
+36.3.232.214:2080
+
+# Reference: https://x.com/malwrhunterteam/status/1853773559706902640
+# Reference: https://www.virustotal.com/gui/file/e945f08a6353c40024256c164d755f022ca312c9fc512be4f05a1d99a64b10b2/detection
+# Reference: https://www.virustotal.com/gui/file/fe6f659301f5463d4c741d1426b659f847546da7976e56fcd6fb1a591172755b/detection
+
+http://193.42.60.116

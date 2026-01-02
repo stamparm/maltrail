@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/Circuitous__/status/1298745095450222592
+# Reference: https://otx.alienvault.com/pulse/5a9ec83b36bf43537ccd63a2
+# Reference: https://www.virustotal.com/gui/file/ab2402b6a105488653c81a0ce78f9d1f5e46d3593a8748d7afcad8bc5aa78949/detection
+
+pri0912.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/2a73c819492e26880763ffe5185882a07631f903d37e515851a2762dcdb794d5/detection
+# Reference: https://www.virustotal.com/gui/file/64ccba7e09293dd5ff41bacea66cb4d568b1c88ed3a36cadd8d6e025e503ccae/detection
+
+manutobis.top
+
+# Reference: https://www.virustotal.com/gui/file/daca210d2e3d76ce83565ab24f261d8b039621422d0f63fc114190fc5074ab24/detection
+
+googleservice.xyz
+
+# Reference: https://www.virustotal.com/gui/file/403666a149769ddd2ebb24c1063d71eed43e97051f08a61a37697c7d10d7a3af/detection
+
+templatesoffices.com
+
+# Reference: https://www.virustotal.com/gui/file/ea0a54e0d8250e7f6896b257472be0389f909f6988602f32bf452d970f0f8493/detection
+
+http://37.139.129.115
+noticia.link
+
+# Generic
+
+/deat1/index.php

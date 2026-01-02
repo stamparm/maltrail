@@ -1,0 +1,118 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cirenegrat, gh0stcringe, goldendragn, younglotus
+
+# Reference: https://twitter.com/lazyactivist192/status/1107781491759763459
+
+indonesias.me
+indonesias.website
+
+# Reference: https://twitter.com/lazyactivist192/status/1107830922441908224
+
+dllhost.website
+
+# Reference: https://twitter.com/lazyactivist192/status/1124915229257863168
+# Reference: https://pastebin.com/FiLvrApE
+
+106.13.96.196:8090
+
+# Reference: https://www.binarydefense.com/gh0stcringeformerly-cirenegrat/
+
+114.31.36.202:8111
+
+# Reference: https://twitter.com/James_inthe_box/status/1125086520229056512
+# Reference: https://twitter.com/James_inthe_box/status/1125088799007039488
+
+power888.tpddns.cn
+212951jh19.iok.la
+183.93.120.236:1009
+
+# Reference: https://www.binarydefense.com/gh0stcringeformerly-cirenegrat/
+# Reference: https://otx.alienvault.com/pulse/5d0bb06bfcfb71b7b0a3c383
+
+hobuff.info
+honker.info
+
+# Reference: https://twitter.com/lazyactivist192/status/1142256727385169922
+# Reference: https://pastebin.com/WL2zVYAG
+
+520lwj.f3322.net
+
+# Reference: https://twitter.com/P3pperP0tts/status/1143142047987195904
+# Reference: https://app.any.run/tasks/144b016e-e2b4-48c7-a622-687681f0ecd6/
+# Reference: https://app.any.run/tasks/451b0c7a-46f3-4fab-b80a-edbe65b5f093/
+
+yk.wookhost.me
+218.60.67.60:8000
+
+# Reference: https://twitter.com/P3pperP0tts/status/1144583482095624192
+
+103.45.174.46:8090
+103.45.174.46:8123
+
+# Reference: https://twitter.com/x42x5a/status/1144586285614587904
+# Reference: https://app.any.run/tasks/dd31df8b-8fd8-4717-a00f-6a0c4062a0a9/
+# Reference: https://twitter.com/x42x5a/status/1144587519281049601
+
+182.61.178.182:8000
+182.61.178.182:8080
+
+# Reference: https://www.fortinet.com/blog/threat-research/chinese-targeted-trojan-analysis.html (# Backdoor C2 URLs)
+
+122.112.245.78:8000
+122.112.245.78:55556
+204.24.133.116:8000
+204.24.133.116:55556
+218.31.126.140:8000
+218.31.126.140:55556
+
+# Reference: https://ti.qianxin.com/blog/articles/newly-disclosed-golden-eye-dog-black-gang/
+# Reference: https://otx.alienvault.com/pulse/5e12fa63c8f8ca38b987d577
+
+103.233.10.85:5769
+103.233.8.24:5768
+103.76.87.126:9772
+112.67.34.32:5767
+202.181.24.16:8596
+202.181.24.16:9118
+223.199.1.113:5767
+223.199.14.229:5767
+chenyon1314.xyz
+dpcq999.com
+globaltopgarlic.com
+hhlywsc.cn
+microsft-update.com
+sudaqiang123.com
+xunqing8888.xyz
+
+# Reference: https://app.any.run/tasks/043cf72f-5805-4f78-a1c5-d5d325b1a964/
+
+47.242.69.230:2019
+liyongdao.f3322.net
+
+# Reference: https://app.any.run/tasks/f7c54390-f481-4cee-8b40-b5b37496107a/
+# Reference: https://app.any.run/tasks/920c04fa-84c4-40e8-97cc-29ce5de59e72/
+
+qq.mt18.cc
+yy.mt18.cc
+mt18.cc
+
+# Reference: https://twitter.com/wwp96/status/1374090508927131653
+# Reference: https://app.any.run/tasks/90acd46a-b14e-45a3-ba0a-3f3cc042e2f1/
+
+43.251.104.122:3166
+caiyundf.cn
+
+# Reference: https://twitter.com/James_inthe_box/status/1524764818170806273
+# Reference: https://app.any.run/tasks/9f19f398-1011-4219-8376-b1831a30bffe/
+
+38.55.203.197:2323
+
+# Reference: https://x.com/skocherhan/status/1896830629683061057
+# Reference: https://www.virustotal.com/gui/file/300cb205d845737b169d76f03e996a6467d9b2e0cf1e4313b716a2514965536b/detection
+
+http://103.205.252.29
+103.205.252.29:2021
+103.205.252.29:5566
+jz3366.top

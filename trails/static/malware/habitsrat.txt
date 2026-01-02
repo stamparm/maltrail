@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.intezer.com/blog/malware-analysis/habitsrat-used-to-target-linux-and-windows-servers/
+# Reference: https://otx.alienvault.com/pulse/60804d7fe20cc136c9f73861
+
+brian-krebs-erectile-dysfunction.com
+krebsonfellatio.net

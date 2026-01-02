@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2019/08/08/varenyky-spambot-campaigns-france/
+# Reference: https://otx.alienvault.com/pulse/5d4c381ed489b1592220fa3e
+
+artisticday.icu
+astonishingwill.icu
+directfood.icu
+gradualrain.icu
+proapp.icu
+provincialwake.icu
+shrek.icu
+thinstop.icu
+jg4rli4xoagvvmw47fr2bnnfu7t2epj6owrgyoee7daoh4gxvbt3bhyd.onion

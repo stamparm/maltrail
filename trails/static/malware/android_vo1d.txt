@@ -1,0 +1,147 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/m0br3v/status/1834184155782865026
+# Reference: https://github.com/DoctorWebLtd/malware-iocs/blob/master/Android.Vo1d/README.adoc
+# Reference: https://www.virustotal.com/gui/file/2da9dc14f45fa1b9388451de6236a278a4726c413d8dd5008f91908e2dfeab6b/detection
+# Reference: https://www.virustotal.com/gui/file/6da0018e15e8b499e28e19c17aba1dc7fd64c3eb9d67f68b0a6f6ddb4b366031/detection
+
+6f33933ce4a5c0e1b32fea736a61351a.com
+bitemores.com
+catmos99.com
+meiboot.com
+
+# Reference: https://app.validin.com/detail?find=srv2415.domain.local&type=raw&ref_id=841f98285df#tab=host_pairs_v2
+
+0a597f79d876441d.com
+0a597f79d876441d.net
+111a2e0d676a4e94.com
+111a2e0d676a4e94.net
+1e93c45d9b414092.com
+1e93c45d9b414092.net
+57fd438a26874780.com
+57fd438a26874780.net
+9dcb18f50.com
+ed6927781.com
+f932283eb.com
+
+# Reference: https://app.validin.com/detail?find=43.228.124.207&type=ip4&ref_id=0511210739c#tab=resolutions
+
+daydayor.com
+ecvomacnhq.com
+fkfqyfszjd.com
+iptegrlhce.com
+omegpvxrav.com
+online993.com
+shopday88.com
+skikiy.com
+vxyfxrfqgo.com
+xlprrxbdxt.com
+xmzigyvewe.com
+yeawchzstj.com
+yejlujicmx.com
+zlbdnmjrtp.com
+
+# Reference: https://app.validin.com/detail?find=43.228.124.209&type=ip4&ref_id=2b281833a5f#tab=resolutions
+# Reference: https://www.virustotal.com/gui/ip-address/43.228.124.209/relations
+# Reference: https://www.virustotal.com/gui/file/c3c2d4b30a0c70c7b834ab864ab262d0e2c3ffb9231d917707660ac5acb06a23/detection
+# Reference: https://www.virustotal.com/gui/file/8429f30a002eb98def2ac66bb0f0b5d9dc2d17e895db29d71b71c8566bdebabd/detection
+# Reference: https://www.virustotal.com/gui/file/7c9c267eb5bf0b3040dc9da707ba7ea8dfd3da8944ed9839fd3aaadecb8eeedc/detection
+# Reference: https://www.virustotal.com/gui/file/6da0018e15e8b499e28e19c17aba1dc7fd64c3eb9d67f68b0a6f6ddb4b366031/detection
+# Reference: https://www.virustotal.com/gui/file/2da9dc14f45fa1b9388451de6236a278a4726c413d8dd5008f91908e2dfeab6b/detection
+# Reference: https://www.virustotal.com/gui/file/19d47db0561cb1e4f366ffdaa1ed1cd3c1aba5e24f5bfa4a9dee005a04c06a6a/detection
+# Reference: https://www.virustotal.com/gui/file/02e1fb1cce10aab28219e6f485dfd912876c99798134ecf4838a97e0dde54bef/detection
+
+http://43.228.124.209
+dogbats.com
+glimterra.com
+glowspan.com
+prowq.com
+snakeers.com
+tumune.com
+tumune3.com
+viewboot.com
+/api/config/needSms?packageName=
+
+# Reference: https://app.validin.com/detail?find=23.80.128.29&type=ip4&ref_id=9e70faaa7c6#tab=resolutions
+
+119center.com
+chinayouqin.com
+hyjxrmc.com
+jiaqin114.com
+nagoya3.com
+tctmobil.com
+wangdai360.com
+wjhs83.com
+
+# Reference: https://blog.xlab.qianxin.com/long-live-the-vo1d_botnet/
+# Reference: https://www.virustotal.com/gui/file/8f06df19579b128451c768351810cb33229797076503300688d1fe6df0750c59/detection
+
+128.1.71.243:21001
+156.236.118.27:21001
+156.236.118.48:21001
+156.59.87.29:12000
+156.59.87.29:12001
+38.61.8.11:21001
+38.61.8.12:21001
+38.61.8.13:21001
+38.61.8.14:21001
+38.61.8.31:21001
+38.61.8.33:21001
+69.28.62.38:21001
+69.28.62.39:21001
+69.28.62.41:21001
+69.28.62.42:21001
+69.28.62.48:21001
+69.28.62.49:21001
+69.28.62.50:21001
+69.28.62.51:21001
+69.28.62.52:21001
+69.28.62.60:21001
+69.28.62.61:21001
+adstat.ad3g.com
+adstat.moyu88.xyz
+adstat.ziyemy.shop
+adstat2.ziyemy.shop
+catmore23.com
+catmore88.com
+conannt.com
+csok997.com
+csskkjw.com
+dc16888888.com
+dcsdk.100ulife.com
+dcsdkos.dc16888888.com
+g.sxim.me
+gmslb.net
+haveits.com
+jaguar-distributor.syslogcollector.com
+kyc-holdings.com
+lbk-sol.com
+linkmob.org
+moyu88.xyz
+mymoyu.shop
+peercon.org
+phonegrid.org
+phonemesh.org
+qocoll.com
+ref.sxim.me
+reg.sxim.me
+remoredo.com
+safernetwork.io
+sklstech.com
+spiritlib.cyou
+ssl87362.com
+ssl8rrs2.com
+sxim.me
+synntre.com
+task.moyu88.xyz
+task.mymoyu.shop
+task1.ziyemy.shop
+task2.ziyemy.shop
+ttekf42.com
+ttss442.com
+update.ad3g.com
+works883.com
+works883.xyz
+wowokeys.com
+ziyemy.shop

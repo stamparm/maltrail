@@ -1,0 +1,44 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# CERT-UA: UAC-0104
+
+# Reference: https://blog.cyble.com/2022/02/24/jester-stealer-an-emerging-info-stealer/
+# Reference: https://www.virustotal.com/gui/file/e064da7a4731fe921e6ee5e068ecbab3bf655dfc84312e5f525564c60af01ca2/detection
+
+jesterdcuxzbey4xvlwwheoecpltru5be2mzuk4w7a7nrhckdjjhrbyd.onion
+
+# Reference: https://cert.gov.ua/article/40125 (Ukranian)
+# Reference: https://www.virustotal.com/gui/file/025e74a98cb22aab0eb2dbff69cb5abd4f1d529925d9e456f92f5fd6ff1e11c3/detection
+
+31.131.31.119:7777
+wasabiwallet.online
+lightnogu5owjjllyo4tj2sfos6fchnmcidlgo6c7e6fz2hgryhfhoyd.onion
+
+# Reference: https://www.virustotal.com/gui/file/ffd4e891c70948926a83d5413dfc3486b37f3ae42b58cf76b26387c131f561c2/detection
+
+http://46.173.214.33
+46.173.214.33:19797
+iqox575zftwvbkphhnbdxkg6pfrgcmeos3rebjwdt6ra2r73u5iq2jqd.onion
+
+# Reference: https://www.virustotal.com/gui/file/d7ab92491fd7d24d38dcbf1427ad17a97413f58b6c9b6b21ed7fce0760518f92/detection
+
+fosildfw5iuinsb5nwsvtv2nzmuvetynprzz2ftwlcp62usvnxivdyqd.onion
+
+# Reference: https://www.virustotal.com/gui/file/fba2d1302633e885ce37dd296d95b1d3da0de43275576398332da85b2e592202/detection
+
+http://188.127.231.94
+
+# Reference: https://www.virustotal.com/gui/file/dcb99d3c98782406105836a696d2d75591a2a03b62782c4b6bc372611a44e24a/detection
+
+91.243.59.17:1846
+
+# Reference: https://otx.alienvault.com/pulse/6278f548622f4585b46baaa1
+
+autodoka.com.ua/extra/Updater-Microsoft.exe
+dcshost.net/mail/OfficeUpdaterNew.exe
+igshop.net/uploads/Map021.xlsb
+igshop.net/uploads/Map023.xlsb
+igshop.net/uploads/Map026.xlsb
+igshop.net/uploads/Updater-Microsoft.exe
+marmaris.com.ua/misc/Updater-Microsoft.exe

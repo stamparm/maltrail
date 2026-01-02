@@ -1,0 +1,50 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: harnig, piptea
+
+# Reference: https://web.archive.org/web/20120106212034/http://amada.abuse.ch/blocklist.php?download=domainblocklist
+
+aahydrogen.com
+abtdiagnostic.com
+acofinder.com
+aebankonline.com
+afretroactive.com
+agrofee.com
+bastocks.com
+bbonusworld.com
+bcdfinder.com
+bfscooby.com
+bgroundplatt.com
+
+# Reference: https://malpedia.caad.fkie.fraunhofer.de/details/win.harnig
+# Reference: https://www.fireeye.com/blog/threat-research/2011/08/harnig-is-back.html
+# Reference: https://www.fireeye.com/blog/threat-research/2011/03/a-retreating-army.html
+# Reference: https://www.virustotal.com/gui/file/2c74f627df5854b94e8584438b88923f05b55b72021a46e00328311d1adf5a02/detection
+
+toshaa.com
+
+# Reference: https://otx.alienvault.com/pulse/5cc036b46dc3afcbff30041c
+
+4softget.com
+accrowd.com
+agsubscribe.com
+bestmanage.org
+daletter.com
+s2.bestmanage.org
+setup.bestmanage.org
+traffbucks.biz
+traffdollars.biz
+traffsale1.biz
+
+# Generic
+
+/b2b/d.nskf
+/b2b/e.kfew
+/b2b/f.qald
+/b2b/g.msdf
+/b2b/h.wnmd
+/bdqqu/
+/bghtr22/
+/maczjwtq/
+/pdzqq/

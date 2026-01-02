@@ -1,0 +1,78 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/update-fake-updates-two-new-actors-and-new-mac-malware
+
+rednosehorse.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-02-v10781/2210
+
+monsterpword.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-03-v10787/2221
+
+blackshelter.org
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-09-v10793/2248
+
+groundrats.org
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-13-v10805/2263
+
+streammain.top
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-12-16-v10808/2270
+# Reference: https://app.validin.com/detail?find=185.121.15.137&type=ip4&ref_id=c3a5a92e7dc#tab=resolutions
+
+blessedwirrow.org
+digdonger.org
+foundedbrounded.org
+goneflower.org
+hearforpower.org
+leatherbook.org
+modernkeys.org
+smthwentwrong.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-03-v10851/2413
+
+newgoodfoodmarket.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-14-v10860/2442
+
+apiexplorerzone.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-18-v10861/2454
+
+rapiddevapi.com
+ap-1739871718-ioj2rc-omeiiwaw3fgs3uq4wuooeceed5a96euw1b-s3alias.s3.eu-west-1.amazonaws.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-24-v10865/2473
+
+canaviva.org
+theteachersteacherllc.net
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-02-26-v10867/2481
+
+nacionalmedia.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-11-v10876/2509
+
+smartcn.cn
+
+# Reference: https://www.linkedin.com/posts/any-run_new-clickfix-scam-targets-us-users-with-fake-activity-7318275012543614979-xLko
+# Reference: https://www.virustotal.com/gui/ip-address/193.46.217.168/relations
+
+dynamicjsdevelopers.com
+interactivejsworld.com
+javascripterhub.com
+javascriptsynergy.com
+masteringjscode.com
+t.javascripterhub.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-18-v10883/2535
+
+training.preschoolproblems.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-21-v10888/2548
+
+store.alignfrisco.com

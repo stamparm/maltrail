@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cryptojoker ransomware
+
+# Reference: https://twitter.com/0xToxin/status/1646923640502378527
+# Reference: https://0xtoxin-labs.gitbook.io/malware-analysis/malware-analysis/plutocrypt-a-cryptojoker-ransomware-variant
+# Reference: https://www.virustotal.com/gui/file/b05328077aa1dd5dba4d8e25cb028dc4f533bd1dd69bc6d12ec2f8298598f803/detection
+# Reference: https://www.virustotal.com/gui/file/e8527f309846d18fbf85289283dcde7b19063a50b11263ba0d36663df8fcfd30/detection
+
+http://199.192.20.58
+199.192.20.58:3001
+deni.tk
+hostdone.ddns.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1648223790206185474
+# Reference: https://www.virustotal.com/gui/file/2db71ed1a5484b2659ad0af5ede85f479b4ba664ea66a4ab67fec1210ad30d84/detection
+
+pksdhsa.duckdns.org

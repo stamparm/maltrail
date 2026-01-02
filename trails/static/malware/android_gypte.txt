@@ -1,0 +1,57 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/malwrhunterteam/status/1271442793681104897
+# Reference: https://www.virustotal.com/gui/file/ae0288f3bdd0728d4ebf8db33def4591348e21702edc7ee0519c366739f8f7ea/detection
+
+178.216.251.89:40001
+
+# Reference: https://twitter.com/midnight_comms/status/1271444435239387137
+
+185.4.30.240:5000
+nevao.ir
+
+# Reference: https://twitter.com/malwrhunterteam/status/1312061021650137091
+# Reference: https://twitter.com/bl4ckh0l3z/status/1312119167521222656
+# Reference: https://www.virustotal.com/gui/file/21e077ae3b20cfeb04026bc1bba540e73bf28dc62a578e45595f1c5421d29b87/detection
+
+185.203.119.236:3000
+191.96.185.216:3000
+23.254.230.106:3000
+celebhub.xyz
+jeffs-tronicbox.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1656967248307707906
+# Reference: https://www.virustotal.com/gui/file/1fcec610d6436c9cca1713769a54733597633198ef87d847697b2227ce280cc5/detection
+
+tauball.com
+main.tauball.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1680108877444964352
+# Reference: https://www.virustotal.com/gui/ip-address/54.255.148.51/relations
+# Reference: https://www.virustotal.com/gui/file/e47e25d22095b79d251ab3a6d2c9b2cf301d1aedc50eea0a2556143e2704b312/detection
+# Reference: https://www.virustotal.com/gui/file/8f89ece28c03978e89e3853183775d0a0e4a39bf07a6be3fbf8aba2a3d6d05d6/detection
+
+tron-defi.download
+tron-trx.srl
+tron.srl
+tronapp.click
+tronbaby.shop
+tronbox.click
+troncyou.fun
+trondz.eu
+trongdn.site
+trongold.site
+tronlove.site
+tronluxe.site
+tronsx.blog
+trontop.xyz
+trontrx.ink
+trontrx.srl
+tronvin.xyz
+tronvip.buzz
+trx7777.online
+
+# APK
+
+/CeleHub.apk

@@ -1,0 +1,347 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: kinsing
+
+# Reference: https://www.lacework.com/h2miner-botnet/
+# Reference: https://zhuanlan.zhihu.com/p/101220054
+
+http://45.10.88.102
+http://91.215.169.111
+http://46.243.253.167
+http://195.123.220.193
+
+# Reference: https://www.lacework.com/h2miner-botnet/
+# Reference: https://github.com/lacework/lacework-labs/blob/master/blog/h2miner.csv
+# Reference: https://otx.alienvault.com/pulse/5e7baacc3c7b8864552f6774
+
+http://142.44.191.122
+http://217.12.221.12
+http://217.12.221.244
+http://45.10.88.102
+http://46.243.253.167
+http://82.118.17.133
+http://91.215.169.111
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/exposed-redis-instances-abused-for-remote-code-execution-cryptocurrency-mining/
+# Reference: https://otx.alienvault.com/pulse/5ea068474577163bf614eb39
+
+http://193.33.87.220
+
+# Reference: https://labs.f-secure.com/advisories/saltstack-authorization-bypass
+# Reference: https://twitter.com/blackorbird/status/1256944563668672513
+
+http://206.189.92.32
+http://217.12.210.192
+
+# Reference: https://www.virustotal.com/gui/file/96589ba7818fae9282b7f69920b7e42b9847e24b7eadc76d6702cbfa293aa43e/detection
+# Reference: https://www.virustotal.com/gui/file/20343854b8c348146bf17fe739ce9028a620f93116438291f1b0b89345e18520/detection
+
+http://217.12.221.12
+359328.selcdn.ru
+
+# Reference: https://twitter.com/IntezerLabs/status/1298992385041473547
+
+http://93.189.43.3
+
+# Reference: https://twitter.com/r3dbU7z/status/1361235377869185024
+
+http://92.242.40.225
+
+# Reference: https://twitter.com/r3dbU7z/status/1361237420067422208
+
+http://194.40.243.167
+
+# Reference: https://twitter.com/r3dbU7z/status/1361978671310000129
+
+http://194.38.20.199
+
+# Reference: https://twitter.com/r3dbU7z/status/1374715716323188743
+
+http://192.153.76.184
+479.bf.run
+
+# Reference: https://www.lacework.com/carbine-loader-cryptojacking-campaign/
+# Reference: https://github.com/lacework/lacework-labs/blob/master/blog/carbine_loader_iocs.csv
+# Reference: https://otx.alienvault.com/pulse/607e03d9ebfec697172c4b07
+# Reference: https://www.virustotal.com/gui/file/4ae513b6f46132aec7d1c268e6ee981af1ac0ab6d92c448c7c9bdedd63e3c303/detection
+# Reference: https://www.virustotal.com/gui/file/5f19a959b36c2696ef95873017b48ab03c3ae83ecae2ea5092a30fb6179f5c7c/detection
+
+185.183.84.197:8080
+jquery-dns-07.dns05.com
+sslcer.justdied.com
+
+# Reference: https://www.virustotal.com/gui/file/0dc0d5e9d127c8027c0a5ed0ce237ab07d3ef86706d1f8d032bc8f140869c5ea/detection
+
+http://45.9.148.85
+
+# Reference: https://www.virustotal.com/gui/file/39ac019520a278e350065d12ebc0c24201584390724f3d8e0dc828664fee6cae/detection
+
+http://85.214.149.236
+85.214.149.236:443
+zzhreceive.top
+oracle.zzhreceive.top
+/b2f628/idcheck/uid=
+
+# Reference: https://twitter.com/GelosSnake/status/1469341429541576715
+# Reference: https://twitter.com/GelosSnake/status/1469341664477167619
+
+http://185.154.53.140
+http://185.191.32.198
+http://44.240.146.137
+http://45.137.155.55
+
+# Reference: https://twitter.com/Cystrat_GmbH/status/1469296353276801029
+# Reference: https://twitter.com/1ZRR4H/status/1469333475476094986
+# Reference: https://twitter.com/eromang/status/1469362650534625282
+# Reference: https://twitter.com/alphasoc/status/1469463599844192256
+# Reference: https://twitter.com/craiu/status/1469994278986424327
+# Reference: https://pastebin.com/raw/R8WDSNtE
+# Reference: https://github.com/eromang/researches/tree/main/CVE-2021-44228
+
+http://62.181.147.15
+http://80.71.158.12
+http://80.71.158.44
+45.155.205.233:12344
+45.155.205.233:5874
+45.155.205.233:9999
+45.155.205.233:12344
+45.155.205.233:33602
+80.71.158.12:5557
+80.71.158.44:1534
+
+# Reference: https://twitter.com/1ZRR4H/status/1469698559775846403
+# Reference: https://threatfox.abuse.ch/browse/tag/log4j/
+
+http://82.118.18.201
+http://92.242.40.2
+194.40.243.149:1534
+82.118.18.201:1534
+92.242.40.21:5557
+
+# Reference: https://twitter.com/smii_mondher/status/1469945271031316485
+# Reference: https://twitter.com/bad_packets/status/1469859064809025538
+# Reference: https://twitter.com/bad_packets/status/1469958646431838210
+# Reference: https://threatfox.abuse.ch/browse/tag/log4j/
+
+103.104.73.155:8080
+185.250.148.157:47324
+185.250.148.157:8005
+77.88.196.86:8085
+/skziyb
+
+# Reference: https://twitter.com/0xDanielLopez/status/1470029308152487940
+
+http://93.189.42.8
+
+# Reference: https://twitter.com/bad_packets/status/1470237945177141249
+
+45.146.164.160:8081
+
+# Reference: https://twitter.com/bad_packets/status/1470230763022917633
+
+193.3.19.159:53
+
+# Reference: https://twitter.com/bad_packets/status/1470166113526829056
+
+http://155.94.154.170
+
+# Reference: https://twitter.com/bad_packets/status/1470291496532332545
+
+67.205.191.102:1099
+
+# Reference: https://twitter.com/bad_packets/status/1470639403546472449
+
+167.172.44.255:1099
+
+# Reference: https://twitter.com/entropyqueen_/status/1470285561638313986
+
+195.54.160.149:12344
+
+# Reference: https://twitter.com/bad_packets/status/1469504458925117441
+
+http://62.210.130.250
+
+# Reference: https://twitter.com/1ZRR4H/status/1470652195678965764
+
+45.146.164.160:8085
+
+# Reference: https://twitter.com/Max_Mal_/status/1472354457920974852
+
+http://194.40.243.149
+
+# Reference: https://twitter.com/bad_packets/status/1470914982405545986
+
+167.99.32.139:9999
+
+# Reference: https://twitter.com/r3dbU7z/status/1474906645704675329
+
+106.12.40.198:22222
+116.62.203.85:12222
+139.9.77.204:12345
+139.9.77.204:26573
+
+# Reference: https://blog.netlab.360.com/public-cloud-threat-intelligence-202112/
+# Reference: https://otx.alienvault.com/pulse/61ea977759cc28216fa93688
+
+http://194.40.243.24
+en2an.top
+
+# Reference: https://twitter.com/ankit_anubhav/status/1486984894953648131
+
+http://185.191.32.198
+http://82.117.252.83
+
+# Reference: https://twitter.com/tolisec/status/1507854421618839564
+
+http://178.20.40.227
+
+# Reference: http://lists.emergingthreats.net/pipermail/emerging-sigs/2022-October/030777.html
+# Reference: https://twitter.com/abuse_ch/status/1633512881726660625
+# Reference: https://www.virustotal.com/gui/domain/a-dog.top/relations
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/j/teamtnt-returns-or-does-it/IOCs-WatchDog-TeamTNT-returns-or-does-it.txt
+
+http://107.189.3.150
+http://205.185.118.246
+194.36.190.30:1414
+222.175.244.226:1414
+a-dog.top
+kiss.a-dog.top
+lova.a-dog.top
+touch.a-dog.top
+/b2f628/
+/bWVkaWEK/
+/s3f815/
+
+# Reference: https://twitter.com/suyog41/status/1615643102001369089
+# Reference: https://www.virustotal.com/gui/file/10317d5ec2be002836ca945c5de4a29c2dd78f5e2c06e7d4e9e31cfa250ec985/detection
+
+http://194.40.243.206
+
+# Reference: https://twitter.com/luc4m/status/1622707694414037016
+# Reference: https://search.censys.io/hosts/185.122.204.197/data/table
+
+http://185.122.204.197
+
+# Reference: https://twitter.com/suyog41/status/1638078294733012994
+# Reference: https://www.virustotal.com/gui/ip-address/140.99.32.48/relations
+# Reference: https://www.virustotal.com/gui/file/c06ce616069db5f71680efea46ebdf70649068e1f485587a4aa8b66acc8dd59f/detection
+# Reference: https://www.virustotal.com/gui/file/279a488ce2534a77c0b38389604285828659d499da2d2a3c562c32b77dddb965/detection
+# Reference: https://www.virustotal.com/gui/file/16c03a6aaa9d2d8747a73d4b6d0f8b983f9bb64612cec492439229f9ed984042/detection
+
+140.99.32.48:3355
+cc-ccbim.com
+c-px.com
+na-cs.com
+cc.cc-ccbim.com
+ct.c-px.com
+s.na-cs.com
+xccwp.a-dog.top
+
+# Reference: https://threatfox.abuse.ch/ioc/1150857/
+
+http://45.15.158.124
+
+# Reference: https://threatfox.abuse.ch/ioc/1150855/
+
+83.97.73.87:9000
+
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/honeypot-recon-enterprise-applications-honeypot-unveiling-findings-from-six-worldwide-locations/
+# Reference: https://otx.alienvault.com/pulse/64a59ca7b59439d7c6e3a019
+
+http://109.248.59.253
+http://185.122.204.196
+http://185.17.0.226
+http://185.209.29.94
+http://185.221.154.208
+http://185.224.212.104
+http://185.237.224.182
+http://185.246.90.203
+http://185.246.90.205
+http://185.246.90.206
+http://193.187.173.76
+http://194.169.160.157
+http://194.38.20.196
+http://194.38.20.225
+http://194.38.20.27
+http://194.38.23.2
+http://194.40.243.205
+http://31.184.240.34
+http://62.113.113.60
+http://62.113.115.166
+http://91.240.87.98
+http://93.185.166.75
+http://93.189.42.217
+http://93.189.46.81
+rolibztiz3zfysof5q2rja6airtmbw74am4oc4rgqsh3ktir6zwdmzid.onion
+
+# Reference: https://blog.aquasec.com/kinsing-malware-exploits-novel-openfire-vulnerability
+# Reference: https://otx.alienvault.com/pulse/64ef41c91baab11a7cb2d16a
+
+http://103.164.138.183
+http://109.237.96.124
+http://109.237.96.251
+http://152.89.198.113
+http://162.142.125.215
+http://167.248.133.36
+http://194.87.252.159
+http://5.35.101.62
+http://51.222.154.100
+http://65.21.151.9
+http://83.97.73.87
+
+# Reference: https://blog.aquasec.com/loony-tunables-vulnerability-exploited-by-kinsing
+# Reference: https://otx.alienvault.com/pulse/654ac58a27e7d638a81bbbbd
+# Reference: https://www.virustotal.com/gui/file/a01fe8c1bff66ff8258089d27ac947ca127d89fc3bcee4f95a25221689e1f6dd/detection
+
+http://194.233.65.92
+194.233.65.92:1337
+haxx.in
+
+# Reference: https://www.fortinet.com/blog/threat-research/gotitan-botnet-exploitation-on-apache-activemq
+
+http://185.122.204.197
+http://194.38.22.53
+
+# Reference: https://twitter.com/banthisguy9349/status/1782694612815012287
+# Reference: https://urlhaus.abuse.ch/host/93.183.94.157/
+
+http://93.183.94.157
+
+# Reference: https://twitter.com/banthisguy9349/status/1785933389947646374
+
+http://83.97.73.245
+83.97.73.245:3333
+83.97.73.245:9000
+
+# Reference: https://x.com/banthisguy9349/status/1850482884219425226
+
+cat.dashabi.in
+cat.xiaojiji.nl
+cat.xiaoshabi.nl
+sec.dashabi.in
+sec.xiaojiji.nl
+sec.xiaoshabi.nl
+shangmei-test.oss-cn-beijing.aliyuncs.com
+soc.xiaoshabi.nl
+
+# Reference: https://x.com/banthisguy9349/status/1865705579429179595
+# Reference: https://www.virustotal.com/gui/file/6de6bf5c97c8c78d61a9c8e1424c6fd29217f32f52f411c34a2ebb573e416ef5/detection
+
+pyats.top
+
+# Reference: https://x.com/BlinkzSec/status/1951344597398950175
+# Reference: https://urlhaus.abuse.ch/host/matrix.masscan.cloud/
+
+masscan.cloud
+matrix.masscan.cloud
+
+# Reference: https://x.com/BlinkzSec/status/1969107023791878384
+
+145.223.69.175:8000
+
+# Generic
+
+/kinsing
+/kinsing2
+/kinsing_aarch64

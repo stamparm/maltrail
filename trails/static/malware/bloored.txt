@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: derdero, dermedo
+
+# Reference: https://www.virustotal.com/gui/domain/crackedmindstechnologies.com/relations
+# Reference: https://www.virustotal.com/gui/file/63a8f86b9a324f05969f5915ba78a6cd710b40691d34284190c766c12d0e1d57/detection
+
+crackedmindstechnologies.com

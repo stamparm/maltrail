@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: TimosaraHackerTerm, Hade ransomware
+
+# Reference: https://www.microsoft.com/security/blog/2021/03/02/hafnium-targeting-exchange-servers/
+# Reference: https://twitter.com/BushidoToken/status/1369273531867992064
+# Reference: https://www.virustotal.com/gui/file/62842cffd1c663ac2b2abe85a9fd482fcffc1c2e0683d1a536d8791b9f99cd3b/detection
+
+101.37.76.66:5000
+shelltools-1254394685.cos.ap-shanghai.myqcloud.com
+
+# Reference: https://twitter.com/resecurity_com/status/1377137102094098439
+# Reference: https://www.infosecurity-magazine.com/news/hades-ransomware-linked-hafnium/
+
+bingoshow.xyz
+
+# Reference: https://twitter.com/Max_Mal_/status/1480284003617882121
+
+back.estonine.com
+bk.estonine.com
+does-no-exist33.estonine.com
+e.estonine.com
+indicate.estonine.com
+inducate.estonine.com
+load.estonine.com
+log.estonine.com
+moon.estonine.com
+p.estonine.com
+pslog.estonine.com
+sk.estonine.com
+sploit.estonine.com
+task.estonine.com

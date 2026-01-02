@@ -1,0 +1,194 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: nccTrojan, phantomnet, smanager, piratepanda, ironhusky, DNSep, portdoor
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/chinese-apt-operation-lagtime-it-targets-government-information-technology
+# Reference: https://www.virustotal.com/gui/ip-address/95.179.131.29/relations
+# Reference: https://vblocalhost.com/uploads/VB2020-20.pdf
+# Reference: https://vblocalhost.com/uploads/VB2020-Ozawa-etal.pdf
+# Reference: https://otx.alienvault.com/pulse/5f74cab71bb5d12e32842814
+
+95.179.131.29:8080
+http://95.179.131.29
+f1news.vzglagtime.net
+mtanews.vzglagtime.net
+news.vzglagtime.net
+org.senyulinjiu.xyz
+senyulinjiu.xyz
+
+# Reference: https://twitter.com/Sebdraven/status/1239476693737373698
+# Reference: https://app.any.run/tasks/8937295d-ea36-4398-96bd-20e7f3b193cb/
+
+103.249.87.72:443
+
+# Reference: https://twitter.com/Arkbird_SOLG/status/1255409992687116291
+# Reference: https://app.any.run/tasks/a4701084-98e4-49d2-9938-c7ca5239e2a0/
+
+217.69.8.255:443
+
+# Reference: https://twitter.com/Sebdraven/status/1331657002934824964
+# Reference: https://twitter.com/nao_sec/status/1331796610456535040
+# Reference: https://twitter.com/nao_sec/status/1362332815409303554
+# Reference: https://insight-jp.nttsecurity.com/post/102gr6l/ta428ncctrojan
+# Reference: https://sebdraven.medium.com/actor-behind-operation-lagtime-targets-russia-f8c277dc52a9
+# Reference: https://www.virustotal.com/gui/file/f5a78a155a219582db8959c3a96a1d91ed891801663b1cce0c599779773bc3f5/detection
+# Reference: https://www.virustotal.com/gui/file/46a9ca7d5364fbe5fd3d6ffb0f8d86e9a9e566708657e59ef8873d3ed536348d/detection
+# Reference: https://otx.alienvault.com/pulse/5fc5453982a82b8e4e6e7f58
+
+45.77.129.213:443
+custom.songuulcomiss.com
+news.niiriip.com
+niiriip.com
+songuulcomiss.com
+
+# Reference: https://insight-jp.nttsecurity.com/post/102glv5/pandas-new-arsenal-part-3-smanager
+# Reference: https://otx.alienvault.com/pulse/5fd3f1f18a7e313da2c01587
+
+coms.documentmeda.com
+freenow.chickenkiller.com
+office365.blogdns.com
+vgca.homeunix.org
+documentmeda.com
+
+# Reference: https://twitter.com/nao_sec/status/1338402034593144835
+# Reference: https://www.virustotal.com/gui/file/67458476cc289f7d0f0bda8938f959b8a1a515e23f37c9d16452b2e1d8adf5a4/behavior/VMRay
+
+45.76.210.68:443
+45.76.210.68:8080
+
+# Reference: https://sebdraven.medium.com/a-net-rat-target-mongolia-9c1439c39bc2
+# Reference: https://otx.alienvault.com/pulse/605b75b82d3c11af9e907851
+# Reference: https://www.virustotal.com/gui/file/2b038ad9bfb8c3f40e95e38b572bdf536d9fd2e7dd5cc0c66fbd0bdc1ed89fde/detection
+# Reference: https://www.virustotal.com/gui/file/1120275dc25bc9a7b3e078138c7240fbf26c91890d829e51d9fa837fe90237ed/detection
+# Reference: https://www.virustotal.com/gui/file/08be2c7239acb9557454088bba877a245c8ef9b0e9eb389c65a98e1c752c5709/detection
+
+185.82.218.40:443
+185.82.218.40:8080
+
+# Reference: https://blog.group-ib.com/task (# Albaniiutas/BlueTraveller/RemShell/Tmanger/Mail-O/Webdav-O)
+# Reference: https://labs.sentinelone.com/thundercats-hack-the-fsb-your-taxes-didnt-pay-for-this-op/
+# Reference: https://insight-jp.nttsecurity.com/post/102gkfp/pandas-new-arsenal-part-2-albaniiutas (Japanese)
+# Reference: https://www.virustotal.com/gui/file/47d1ba30b29b1c404ff05e9418b29f9bb2e8c0e12b17d2a7fac21e02c6a96dbb/detection
+# Reference: https://www.virustotal.com/gui/file/47d1ba30b29b1c404ff05e9418b29f9bb2e8c0e12b17d2a7fac21e02c6a96dbb/detection
+# Reference: https://www.virustotal.com/gui/file/cf36344673a036f5a96c1c63230c9c15bb5e4f440eafd4ba0dc01d44bb1df3bf/detection
+# Reference: https://www.virustotal.com/gui/file/71750c58eee35107db1a8e4d583f3b1a918dbffbd42a6c870b100a98fd0342e0/detection
+# Reference: https://www.virustotal.com/gui/file/690bf6b83cecbf0ac5c5f4939a9283f194b1a8815a62531a000f3020fee2ec42/detection
+
+http://199.247.6.37
+http://209.250.239.96
+http://45.32.188.226
+go.vegispaceshop.org
+
+# Reference: https://www.recordedfuture.com/china-linked-ta428-threat-group/
+
+ecustoms-mn.com
+olloo-news.com
+tsagagaar.com
+vzglagtime.net
+aircraft.tsagagaar.com
+bloomberg.mefound.com
+bloomberg.ns02.biz
+f1news.vzglagtime.net
+gazar.ecustoms-mn.com
+gogonews.organiccrap.com
+govi-altai.ecustoms-mn.com
+news.vzglagtime.net
+niigem.olloo-news.com
+nmcustoms.https443.org
+nubia.tsagagaar.com
+oolnewsmongol.ddns.info
+
+# Reference: https://twitter.com/nao_sec/status/1466715885423722498
+# Reference: https://www.virustotal.com/gui/file/eb3a81102e156b5ef5b702b6786f7e7ebfea8b4a8014b9d1ccd6bd042cd09f10/detection
+
+http://185.82.219.182
+185.82.219.182:443
+185.82.219.182:8080
+
+# Reference: https://twitter.com/TI_ESC/status/1489182133834989569 (# smanager, # phantomnet)
+# Reference: https://www.virustotal.com/gui/file/9d7ab77814174bf62907651281da573230c8e784ba0b41b11271fc7686f1fb5c/detection
+# Reference: https://www.virustotal.com/gui/file/dee417bfc52e65e81b795d8192219f5d281d0bbbb887b13c2fae4d21e2a2557b/detection
+
+aurobindos.com
+aiwqi.aurobindos.com
+fuji1.aurobindos.com
+
+# Reference: https://twitter.com/nao_sec/status/1493757788480491522
+# Reference: https://www.virustotal.com/gui/file/3fe63ab947941fe71c5ea60bda2a534c8f3caa6bbbe07dde34232be1fde33982/detection
+
+nppnavigator.net
+vpkimplus.com
+vpknpomashnic.com
+www1.nppnavigator.net
+www2.vpknpomashnic.com
+www7.vpkimplus.com
+
+# Reference: https://ics-cert.kaspersky.com/publications/reports/2022/08/08/targeted-attack-on-industrial-enterprises-and-public-institutions/
+# Reference: https://www.virustotal.com/gui/ip-address/160.202.162.122/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.180.174.10/relations
+# Reference: https://www.virustotal.com/gui/ip-address/54.36.189.105/relations
+# Reference: https://www.virustotal.com/gui/file/f6338b1ae85883085adf1cff315ba84a3b94cae256660d4b54c162940577afc5/detection
+# Reference: https://www.virustotal.com/gui/file/07541aff037f72d9c0cf12459d8a1d802741107ceff1e2ecd2be00a9f3cef306/detection
+
+cniitiic.com
+defensysminck.net
+idfnv.net
+nicblainfo.net
+ntcprotek.com
+redstrpela.net
+sdelanasnou.com
+doc.redstrpela.net
+fax.internnetionfax.com
+foudation.sdelanasnou.com
+info.ntcprotek.com
+kino.redstrpela.net
+krseoul93.idfnv.net
+ns28.ntcprotek.com
+server.dotomater.club
+tech.songuulcomiss.com
+video.nicblainfo.net
+www2.defensysminck.net
+www2.sdelanasnou.com
+www3.vpkimplus.com
+yjdjcnm.cniitiic.com
+
+# Reference: https://github.com/DoctorWebLtd/malware-iocs/blob/master/APT_DNSep/README.adoc
+
+darknightcloud.com
+dotomater.club
+golianbooks.com
+internnetionfax.com
+kommesantor.com
+morgoclass.com
+news-click.net
+swingfished.com
+sysclearprom.space
+www2.morgoclass.com
+term.internnetionfax.com
+atob.kommesantor.com
+rps.news-click.net
+www1.dotomater.club
+ns02.ns02.us
+snow.swingfished.com
+skype.swingfished.com
+dog.darknightcloud.com
+eye.darknightcloud.com
+home.sysclearprom.space
+tick.sysclearprom.space
+atlas.golianbooks.com
+dm.golianbooks.com
+
+# Reference: https://www.cybereason.com/blog/portdoor-new-chinese-apt-backdoor-attack-targets-russian-defense-sector
+
+http://45.63.27.162
+45.63.27.162:443
+
+# Reference: https://www.zscaler.com/blogs/security-research/illusory-wishes-china-nexus-apt-targets-tibetan-community
+
+104.234.15.90:59999
+45.154.12.93:2233
+beijingspring.niccenter.net
+penmuseum.niccenter.net
+tbelement.niccenter.net
+thedalailama90.niccenter.net

@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: termite ransomware
+
+# Reference: https://x.com/AlvieriD/status/1858495655120953647
+
+termiteuslbumdge2zmfmfcsrvmvsfe4gvyudc5j6cdnisnhtftvokid.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1867809096952688787
+
+http://193.43.104.153
+http://87.121.45.33

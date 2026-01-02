@@ -1,0 +1,225 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/blog/research/59387/an-sms-trojan-with-global-ambitions/
+
+x-bt.in
+y-bt.in
+botmgr.net
+anid.in
+icemob.net
+ftop.org
+midex.org
+wapon.org
+
+# Reference: https://www.virustotal.com/gui/file/a0915b66e686630304f895a3e5f697f8b3a0031ce0d5fb66c37ebc1b72b9a543/detection
+
+1downloadss0ftware.xyz
+
+# Reference: https://www.virustotal.com/gui/domain/moyandroid.ru/relations
+
+moyandroid.ru
+
+# Reference: https://www.virustotal.com/gui/file/448557264e7a95eeb21b8e76f1371e453603ff585bbebfb679dcd0e43514948a/detection
+
+arrayinfosystem.com
+
+# Reference: https://www.virustotal.com/gui/file/dcc0eae038c00e46651a3410b5ca22c5e7b1fd2853f6e2c697b0904bdfb42986/detection
+
+zouiri.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/37.1.218.29/relations
+# Reference: https://www.virustotal.com/gui/file/05ca36703d8b9fe02e65326e5cebb696cd7076c08dbdac0db9466fd22f82089d/detection
+# Reference: https://www.virustotal.com/gui/file/eae56e103309ad76d3b261dc94ad09feb85a5e259ce7162d8f22ff737b74a71a/detection
+# Reference: https://www.virustotal.com/gui/file/c4f2c7a614450ffe1aae4243ab7a2cf5bd45d336aa1b34e2963208a7bed9f2a2/detection
+
+apk-disc.ru
+diskandroid.eu
+free-apk.biz
+files-apk.ru
+filestack.ru
+wapsliv.ru
+
+# Reference: https://www.virustotal.com/gui/domain/vkero.ru/relations
+
+vkero.ru
+
+# Reference: https://www.virustotal.com/gui/file/a30242816d5b679ed6328d37cfc39deb52986b9900511f0b9e9adee024764030/detection
+
+android-google.ru
+
+# Reference: https://www.virustotal.com/gui/domain/wapkl.com/relations
+# Reference: https://www.virustotal.com/gui/file/04f41f8897c8cee3f296223255404eb2e32f58e698fe1e1382f466aaaeadec06/detection
+
+wapkl.com
+
+# Reference: https://www.virustotal.com/gui/file/2a4dc8f1d796fed3f3d4464059499fae4049a2db562cd91dbe3043eb59ccf973/detection
+
+winjitapps.com
+winjitwine.cloudapp.net
+
+# Reference: https://www.virustotal.com/gui/file/6849d86a99d366a580a718983b70285a5dca53dd9cdaf22359eae2b3858bd351/detection
+
+get-app-data1.xyz
+
+# Reference: https://www.virustotal.com/gui/file/eff8c27e3a026b789ca3b543754f145a8c53f502b979da1f2fcaf6d38e85d60e/detection
+
+navjivangroup.in
+
+# Reference: https://www.virustotal.com/gui/file/0bbc3d4b159a037803c784450daeb42004c56636cf23677fefbd7eeaef2f3909/detection
+
+tracker-stat.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/154.81.50.140/relations
+# Reference: https://www.virustotal.com/gui/domain/yp8.biz/relations
+
+gn8.biz
+yp8.biz
+
+# Reference: https://www.virustotal.com/gui/file/8c8aa01b8e2d156766fb28dad3892be886024e248fd376ca9c06ddb7f11deaf5/detection
+
+http://91.213.175.176
+
+# Reference: https://www.virustotal.com/gui/file/c6e8bc2fbbe26305e6fb4d0dbb9583a62fe2401a76e1300851124ebba89b60a2/detection
+
+waply.ru
+
+# Reference: https://www.virustotal.com/gui/file/0000764713b286cfe7e8e76c7038c92312977712d9c5a86d504be54f3c1d025a/detection
+
+m-001.net
+
+# Reference: https://www.virustotal.com/gui/file/00244c64562956e736ffb45e111e5245eed20abf02633a06ea4af4e95f132deb/detection
+
+kdfndsk.net
+
+# Reference: https://www.virustotal.com/gui/file/01a5a803246ca989b602302830b24719373ecf566bbc37b8e617b517906fa3b8/detection
+
+o5sms.ru
+
+# Reference: https://www.virustotal.com/gui/domain/pavd.pw/relations
+
+pavd.pw
+
+# Reference: https://www.virustotal.com/gui/file/00b6f18820453016120c3145a11069ceaa814145a69ab03f9424c60aa67e9bd4/detection
+
+view-ads-app-a.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/163.172.143.122/relations
+
+1deposit-android-soft-16.ru
+1deposit-android-soft-32.ru
+1deposit-android-soft-64.ru
+ads-for-app1024.xyz
+adsforapp1.com
+advertum.cash
+allfilesstorage.ru
+android-downloads16.ru
+android-downloads32.ru
+android-file-pro256.ru
+androidfilesdownload32.ru
+androidfilesdownload64.ru
+apk-files-download.ru
+apk-files-pro.ru
+download-apk-files.ru
+download-apk128.ru
+download-apk256.ru
+download-apk64.ru
+downloads-files.ru
+downloads-files24.ru
+downloadsfilesapk16.ru
+files-premium-128.ru
+files-premium-16.ru
+files-premium-256.ru
+files-premium-32.ru
+files-premium-64.ru
+files-server.ru
+files1024.ru
+files256.ru
+files32.ru
+files512.ru
+files64.ru
+filesandroids.ru
+filesapk.ru
+filesapk128.ru
+filesapk16.ru
+filesapk256.ru
+filesapk32.ru
+filesapk64.ru
+filesclub.ru
+filesdeposit.ru
+filesdownloads.ru
+fileslab.ru
+filesland.ru
+filesnets16.ru
+filesnets4096.ru
+filesnets8.ru
+filespremiumdownload.ru
+filespro1024.ru
+filespro128.ru
+filespro16.ru
+filespro2048.ru
+filespro256.ru
+filespro32.ru
+filespro512.ru
+filespro64.ru
+filespro8.ru
+filespronet.ru
+fs-1024.ru
+get-android-app-16.ru
+get-android-app-2048.ru
+get-android-app-32.ru
+get-android-app-64.ru
+get-app-android.ru
+get-app-data1.biz
+get-app-data1024.xyz
+get-data-app.ru
+get-files.ru
+getappdatasys.com
+getfiles24.ru
+getfilesapk.ru
+labgetfiles.ru
+luxury-storage.ru
+phonegetapk.ru
+premium-storage.ru
+show-app-ads.ru
+view-ads-app-a.biz
+view-ads-app-a.xyz
+view-ads-app-android.ru
+
+# Reference: https://www.virustotal.com/gui/file/0f2673d148934cb4dc36f7a753cecd76dffcfed899167ea42fc9c54bce31ebdb/detection
+
+lawsivo.ru
+ondate.xyz
+
+# Reference: https://www.virustotal.com/gui/file/0fd6684b7a549069e995b61cf2337ce4e29e2c7939cbc355a537196dd049670b/detection
+# Reference: https://www.virustotal.com/gui/file/002ce64afbff6f84f5a330675cbbf92643f5027c2a5a46aa5449f23658a83c2c/detection
+
+advertspy.biz
+mobofiles256.ru
+show-app-ads.ru
+view-xxx-video-online.ru
+
+# Reference: https://www.virustotal.com/gui/file/c8c3edb1738baa66d7615c16c5505d222c12fcf95740735bf92fc5d5dd74d3c8/detection
+
+http://195.94.233.66
+141.98.80.28:5400
+185.238.170.113:8080
+37.1.217.172:25000
+
+# Reference: https://www.virustotal.com/gui/file/00ac299d59ac38907f3dbb7d2f93c2fc44acbd52105bc8956e264abfd42df71c/detection
+
+rukodelniza.ru
+/phoneconvert/commander.php
+/phoneconvert/otstuk.php
+
+# Reference: https://www.virustotal.com/gui/ip-address/210.92.18.184/relations
+# Reference: https://www.virustotal.com/gui/file/770e43f3c2a948b8b88b28939c168db26ace575cd9b56c68885443b633c9889f/detection
+
+wzhuajione.ddns.info
+wzhuajione.myz.info
+wzhuajione.zzux.com
+wzhuajitwo.compress.to
+wzhuajitwo.edns.biz
+wzhuajitwo.freetcp.com
+wzhuajitwo.qhigh.com
+wzhuajitwo.vizvaz.com

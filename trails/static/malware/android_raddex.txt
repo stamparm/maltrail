@@ -1,0 +1,42 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: SilverAwk
+
+# Reference: https://www.virustotal.com/gui/file/4ddc1325ac72ceaca843b017b7b68ef54b9c63757fb72c38738b076353e0ee25/detection
+
+205.251.145.29:1740
+295.yao.cl
+
+# Reference: https://www.virustotal.com/gui/file/d4b69105a02386a4c1f11d9b14f75f9a115bcfe54548cffcc271cb3f7630fc78/detection
+
+94.177.251.146:1740
+
+# Reference: https://twitter.com/ShadowChasing1/status/1306793139324235777
+# Reference: https://www.virustotal.com/gui/file/b4c26137c1023814bed59733d4acafb5a47da5f8b6a11ca678738351cdc71892/detection
+# Reference: https://otx.alienvault.com/pulse/5faad9102d53772c465517a3
+
+205.251.155.71:1740
+chat.queerline.de
+wdate.rop.lt
+
+# Reference: https://twitter.com/malwrhunterteam/status/1338587339766042627
+
+chatsafe.tecnova.com.br/HelpingPeople/
+chatsafe.tecnova.com.br/Super/
+chatsafe.tecnova.com.br/Supernatural/
+
+# Reference: https://www.virustotal.com/gui/file/d9aea4cc97508bd71a7fbd88ac72a4097811a7a9dda096bb7cc1d75f477fd6c0/detection
+
+http://89.38.149.227
+/api/public_login_new/
+
+# Reference: https://twitter.com/malwrhunterteam/status/1443666744200114181
+# Reference: https://www.virustotal.com/gui/file/aab0a9b7ddbcd4948ba9702a69c7f1ab60140db0a69ba5a6eee88556bed93cff/detection
+
+coolvpn.cz
+secure.coolvpn.cz
+
+# APK
+
+/Al-Sultan.apk

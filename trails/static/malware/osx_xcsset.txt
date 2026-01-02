@@ -1,0 +1,104 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/objective_see/status/1294173000128856064
+# Reference: https://www.virustotal.com/gui/ip-address/46.101.126.33/relations
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/xcsset-mac-malware-infects-xcode-projects-performs-uxss-attack-on-safari-other-browsers-leverages-zero-day-exploits/
+
+adobestats.com
+avantistech.pro
+feleniuk.com
+findmedomain.com
+flixprice.com
+frederiklipfert.com
+gramforsale.com
+gramtobtc.com
+kittyvpn.com
+prostorify.com
+scanlow.com
+storifypro.com
+thudcorp.com
+titiez.com
+vpnkitty.com
+
+# Reference: https://www.sentinelone.com/blog/xcsset-malware-update-macos-threat-actors-prepare-for-life-without-python/
+# Reference: https://otx.alienvault.com/pulse/6304e95e39919cf7ead010b7
+
+adobefile.ru
+appledocs.ru
+gismolow.com
+gurumades.ru
+kinksdoc.ru
+melindas.ru
+superdocs.ru
+
+# Reference: https://x.com/MsftSecIntel/status/1971229503813726597
+# Reference: https://www.virustotal.com/gui/ip-address/95.142.35.237/relations
+# Reference: https://www.virustotal.com/gui/ip-address/95.142.37.80/relations
+# Reference: https://www.microsoft.com/en-us/security/blog/2025/09/25/xcsset-evolves-again-analyzing-the-latest-updates-to-xcssets-inventory/
+
+accapple.ru
+adguards.ru
+adobecdn.ru
+adobetrix.ru
+adobeupd.ru
+apple-net.ru
+applecdn.ru
+apsconfignet.ru
+bulknames.ru
+bulksec.ru
+castlenet.ru
+cdcache.ru
+cdnapple.ru
+cdnglobal.ru
+cdnroute.ru
+cdnsetapple.ru
+cdntor.ru
+chaoping.ru
+chartcdn.ru
+checkcdn.ru
+cloudtechs.ru
+devapple.ru
+devnetaps.ru
+devpages.ru
+devsmaster.ru
+diggimax.ru
+digichat.ru
+digitalcdn.ru
+dobecdn.ru
+dobetrix.ru
+elasticdns.ru
+figmacat.ru
+figmasol.ru
+figmastars.ru
+findmymac.ru
+fixmates.ru
+flowcdn.ru
+gigacells.ru
+gigachats.ru
+gironetcdn.ru
+gizmodoc.ru
+itoyads.ru
+mdscache.ru
+mobilecdn.ru
+netplanaps.ru
+regmaster.co
+regstats.ru
+rigglejoy.ru
+ripplenet.ru
+rublenet.ru
+rutornet.ru
+savewebname.ru
+sigmanow.ru
+sigmate.ru
+signadat.ru
+trinitysol.ru
+trixmate.ru
+unisyscat.ru
+updcdnapple.ru
+verifysign.ru
+verifystats.ru
+videocdnapp.ru
+vivatads.ru
+windsecure.ru
+mail.ripplenet.ru

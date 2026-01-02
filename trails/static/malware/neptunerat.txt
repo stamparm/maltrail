@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: masonrat
+
+# Reference: https://x.com/Unit42_Intel/status/1933222103659978921
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-06-11-IOCs-for-Neptune-RAT-version-5.3.txt
+
+107.172.232.84:2468
+185.167.160.222:2468
+89.34.230.15:2468
+apostlejob3.duckdns.org

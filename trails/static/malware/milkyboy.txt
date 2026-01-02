@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/silence-is-best/c2db#milkyboy
+
+qqwveqwevqwe.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/97bdab46b29be7a449f659206ce722e237e76c48cc631d0eb3fdf947e81bf2b4/detection
+
+5552324.duckdns.org
+555553.duckdns.org
+624224224.duckdns.org

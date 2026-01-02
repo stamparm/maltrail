@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/fr3dhk/status/1280197600218669056
+# Reference: https://app.any.run/tasks/6beafbc4-1126-4225-b91d-67059c084bcf/
+# Reference: https://www.virustotal.com/gui/file/a02f334d9685a850935a6df8b0708d5c1051d7b9969b30cb252396d96aea399d/detection
+
+gamesense.design
+
+# Reference: https://www.virustotal.com/gui/file/688a226a08c3d066f5586c50c152a64f72be920893d13b67ce3141efe0463044/detection
+
+a0418972.xsph.ru

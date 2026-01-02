@@ -1,0 +1,973 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/c716c56d401815842120a61140098f9e851d1f79cf4088a56ec6f1b6fd4bad62/detection
+# Reference: https://vms.drweb.com/virus/?i=14931549&lng=en
+# Reference: https://www.hybrid-analysis.com/sample/5b4cbd92c1cc6f946704b56845f6b3cec8caab2cb73eb9909f07e7e7d7849595?environmentId=200
+# Reference: https://blog.naver.com/ian3714/220366680356 (Korean)
+
+http://113.10.136.103
+http://220.142.173.138
+
+# Reference: https://twitter.com/malwaretracekr/status/1269636157710585856
+# Reference: https://www.virustotal.com/gui/file/09a5deb3219bf3b9b31814e861fc97aa5b29061e8622c31b79fe826eebe6bd63/detection
+
+http://1.174.90.183
+avke.tanske.me
+tanske.me
+
+# Reference: https://twitter.com/malwaretracekr/status/1271255418791063552
+
+htuto.isng.me
+isng.me
+
+# Reference: https://twitter.com/malwaretracekr/status/1273503346523947008
+
+edikopz1.aixdy.com.cn
+
+# Reference: https://twitter.com/malwaretracekr/status/1296215120373149696
+
+peuvnex.wuanvs.me
+wuanvs.me
+
+# Reference: https://twitter.com/malwaretracekr/status/1297096410513453056
+
+mn.cjmallhg.cn
+cjmallhg.cn
+
+# Reference: https://twitter.com/malwaretracekr/status/1297098257089228800
+
+cc.xcvcdd.vip
+xcvcdd.vip
+
+# Reference: https://twitter.com/malwaretracekr/status/1303518419086532608
+
+cjcookid.info
+
+# Reference: https://twitter.com/malwaretracekr/status/1304999127076335618
+
+tn.bklog.ink
+bklog.ink
+
+# Reference: https://twitter.com/malwaretracekr/status/1312765858154905601
+# Reference: https://www.virustotal.com/gui/file/2beb2a2d594bbef0f152c003502b355d8342057d37e1a00bd138cfca6b65264d/detection
+
+45.128.145.33:8899
+
+# Reference: https://twitter.com/malwaretracekr/status/1314457384484364288
+# Reference: https://www.virustotal.com/gui/ip-address/103.13.222.113/relations
+
+http://103.13.222.113
+km.maskmkb.info
+maskmkb.info
+
+# Reference: https://twitter.com/malwaretracekr/status/1316018657894395904
+# Reference: https://www.virustotal.com/gui/file/1ef082e1093d7191317fc66f6e8f027fa404fff4acda9bf502f5c942970fdecf/detection
+
+http://45.131.177.87
+hsl4.paociw.me
+paociw.me
+
+# Reference: https://twitter.com/malwaretracekr/status/1316921517507284997
+
+gh.easysmm.site
+easysmm.site
+
+# Reference: https://twitter.com/malwaretracekr/status/1317701339548250112
+
+n.wsdyt.ren
+wsdyt.ren
+
+# Reference: https://twitter.com/malwaretracekr/status/1318437666229112832
+
+xsziop.tmyds.xyz
+tmyds.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1319633694303293440
+
+sxi1.svipg.xyz
+svipg.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1321400280047513600
+
+tmqh.eklcu.xyz
+eklcu.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1321423819811090433
+
+voinxc1.voinxc.xyz
+voinxc.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1321707594491273216
+
+fe.ihjkljkl.site
+ihjkljkl.site
+
+# Reference: https://twitter.com/malwaretracekr/status/1321816802297479169
+
+ukcgyse9.qsjrk.xyz
+qsjrk.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1324603862250975237
+
+wkoxzu34.gkwjd.xyz
+gkwjd.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1324706392826015744
+
+ruxj.xmoru.me
+xmoru.me
+
+# Reference: https://twitter.com/malwaretracekr/status/1325669330135076864
+
+kend.xnoth.me
+xnoth.me
+
+# Reference: https://twitter.com/malwaretracekr/status/1325670176956715008
+
+esjl.ebrin.me
+ebrin.me
+
+# Reference: https://twitter.com/malwaretracekr/status/1326842245836759043
+
+gky1.bsiyw.me
+bsiyw.me
+
+# Reference: https://twitter.com/malwaretracekr/status/1331117613485735937
+
+stt.mamsqe.me
+mamsqe.me
+
+# Reference: https://twitter.com/malwaretracekr/status/1337405537583939585
+
+vr.auctios.site
+auctios.site
+
+# Reference: https://twitter.com/malwaretracekr/status/1341332054298873860
+
+bolpstu8.krxlp.xyz
+krxlp.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1343043680492347392
+# Reference: https://twitter.com/malwaretracekr/status/1343055891268923392
+# Reference: https://www.virustotal.com/gui/ip-address/45.131.177.20/relations
+# Reference: https://www.virustotal.com/gui/file/75a593ba4448f90f313c3add833d2b1c3ceae491a37ac1d635037fcca129784f/detection
+
+45.131.177.20:2021
+eilwo4.ripaq.me
+ripaq.me
+n.ydei.group
+ydei.group
+
+# Reference: https://twitter.com/malwrhunterteam/status/1341710227780104192
+# Reference: https://twitter.com/bl4ckh0l3z/status/1343299380149972996
+# Reference: https://www.virustotal.com/gui/file/86f1fd5ea17fad52b8a0c247d464e8fbfd35d8157892816b027fe2eed62b0bd2/detection
+
+123.253.110.85:8899
+
+# Reference: https://twitter.com/malwrhunterteam/status/1365311635099971592
+# Reference: https://twitter.com/bl4ckh0l3z/status/1365671448635973633
+# Reference: https://www.virustotal.com/gui/file/47cfb949ba578425c348aa4ed8a3d25e0650c9fae58db2d97c2686fb77dc7f8f/detection
+
+123.253.110.241:6988
+123.253.110.241:8889
+
+# Reference: https://twitter.com/malwrhunterteam/status/1371908225038229507
+# Reference: https://www.virustotal.com/gui/file/d1b04d8140ca4d845446c2b7ace2d1bafa2a4cf3f1065559c8713bb13ad810e1/detection
+
+123.253.110.169:8889
+
+# Reference: https://www.virustotal.com/gui/file/23d969b567c429ac013d608dddc90b2a8e9accd1134361ea91941fdbd2f14ce2/detection
+# Reference: https://www.virustotal.com/gui/file/2d4dc144c2c3f8a239ceccaf9597ce46e5509f646fb4d3958d982380109048eb/detection
+
+http://114.24.20.97
+
+# Reference: https://twitter.com/malwaretracekr/status/1344161911118602242
+
+426.tzroc.guru
+tzroc.guru
+
+# Reference: https://twitter.com/malwaretracekr/status/1344635995359088645
+
+isdx.ztod.com.cn
+
+# Reference: https://twitter.com/malwaretracekr/status/1344636428261543938
+
+cj-run.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1345371152751816706
+
+hion5.navero.space
+navero.space
+
+# Reference: https://twitter.com/malwaretracekr/status/1345375575809036293
+
+vuca.ksdf.pw
+ksdf.pw
+
+# Reference: https://twitter.com/malwaretracekr/status/1345732047650787328
+
+kr-bus.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1346455589220614144
+
+dm.netshodh.info
+netshodh.info
+
+# Reference: https://twitter.com/malwaretracekr/status/1347495191687557122
+
+mysuny.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1347800155202850817
+
+my-bus.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1347839178982133762
+
+sdreams.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1349235995540025344
+
+krteuw.me
+
+# Reference: https://twitter.com/malwaretracekr/status/1349648529866690560
+
+exaion.me
+oeubc.buzz
+
+# Reference: https://twitter.com/malwaretracekr/status/1349658556543365120
+
+eitjls.co
+
+# Reference: https://twitter.com/malwaretracekr/status/1350368005738295299
+
+ydie.press
+
+# Reference: https://twitter.com/malwaretracekr/status/1350362298481709057
+
+toeuc.guru
+
+# Reference: https://twitter.com/muz_so/status/1351814574165561344
+
+ponvi.space
+uionv10.ponvi.space
+
+# Reference: https://twitter.com/malwaretracekr/status/1352150909636075521
+
+kpm.msks.pw
+msks.pw
+
+# Reference: https://twitter.com/muz_so/status/1352909545174011905
+
+poinv.space
+rovcn2.poinv.space
+
+# Reference: https://twitter.com/malwaretracekr/status/1352988190932561923
+
+drde.uemvu.buzz
+uemvu.buzz
+
+# Reference: https://twitter.com/malwaretracekr/status/1352988812251566086
+# Reference: https://www.virustotal.com/gui/ip-address/103.148.244.75/relations
+
+kwins.xyz
+ragos.xyz
+ufits.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1352990551352565760
+# Reference: https://www.virustotal.com/gui/file/b57d88da797ded50b3da56e22711b7dc3b10f70cdcdff7426d1f97c65681a5cc/detection
+
+http://45.131.177.83
+lyum.fixuxg.me
+fixuxg.me
+
+# Reference: https://twitter.com/muz_so/status/1353276793726279680
+
+kopn2.uiover.live
+uiover.live
+
+# Reference: https://twitter.com/malwaretracekr/status/1353218951463923712
+
+coinozne.com
+
+# Reference: https://twitter.com/malwaretracekr/status/1353395335146557442
+
+shop-o.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1354807146387365888
+
+apr.mdus.pw
+mdus.pw
+
+# Reference: https://twitter.com/muz_so/status/1355484797020172290
+
+colth.xyz
+ufde.colth.xyz
+
+# Reference: https://twitter.com/muz_so/status/1355484709854175234
+
+cixi-bar.web.app
+
+# Reference: https://twitter.com/malwaretracekr/status/1366680087974662144
+
+munjalinb.info
+fs.munjalinb.info
+
+# Reference: https://twitter.com/malwrhunterteam/status/1367410100252667906
+# Reference: https://www.virustotal.com/gui/file/307eb3e21f421132341b08db353c5289e482c54b3c36abd03869713ad393e5d0/detection
+
+103.159.80.35:8889
+http://103.159.80.35
+
+# Reference: https://twitter.com/malwrhunterteam/status/1374820280636424201
+# Reference: https://twitter.com/bl4ckh0l3z/status/1374999967551660032
+# Reference: https://www.virustotal.com/gui/file/546f93d93d47c422b3193864c872a64f87fabd1dab845eecbf68195c41d35207/detection
+
+103.159.80.85:8779
+103.159.80.85:8889
+
+# Reference: https://www.virustotal.com/gui/file/4de20e5e5040ed22824bf89ba963587327569298195e31997382abc7513e27c0/detection
+
+103.159.80.155:8889
+
+# Reference: https://twitter.com/malwrhunterteam/status/1374293451848749059
+# Reference: https://www.virustotal.com/gui/file/c709ca9bf91d7dfac8c319b62d53c54be4d039611e3f8f29c7d361f3393de73c/detection
+
+103.159.80.95:5227
+
+# Reference: https://www.virustotal.com/gui/file/0e7788b8980c76bd4ae59ccd88743955f91137c1b0959c6b4a89acd81e097429/detection
+
+123.253.110.17:8889
+http://123.253.110.17
+
+# Reference: https://twitter.com/malwaretracekr/status/1381135262412021765
+
+srey.cab
+
+# Reference: https://twitter.com/malwaretracekr/status/1393822176797548544
+# Reference: https://www.virustotal.com/gui/file/0fcfe0e7efa1f3151e9ac6e1b723a5e3777c36699a313b64b1ca3c701bbeb9f7/detection
+
+195.85.43.191:82
+eovuc.guru
+k409.eovuc.guru
+
+# Reference: https://twitter.com/malwaretracekr/status/1395194150652321793
+# Reference: https://www.virustotal.com/gui/file/7f75003653eba784067c1c46b9436ae84c7ecca0c29c85d125fd3f3740c6f324/detection
+
+45.81.10.52:9090
+gfrt.cloud
+ztia.gfrt.cloud
+
+# Reference: https://twitter.com/malwrhunterteam/status/1416312926407991299
+# Reference: https://www.virustotal.com/gui/file/942376fff378455bad5ffce3b6230cfa26472241e01f60b7f7ba5e9ed7aef579/detection
+
+193.149.160.106:8080
+hycyifs.xyz
+
+# Reference: https://twitter.com/malwaretracekr/status/1419928327591063553
+
+xwou.market
+aeix.xwou.market
+
+# Reference: https://www.virustotal.com/gui/file/16f7d02cbacaec1a159d75c5b7f89084e3aa7bafd3755eb98453db684cf3c860/detection
+
+eodm.fit
+
+# Reference: https://twitter.com/malwrhunterteam/status/1422941350350163968
+# Reference: https://www.virustotal.com/gui/ip-address/111.241.240.98/relations
+# Reference: https://www.virustotal.com/gui/file/7465e343e8b1107998312ed6e6a3afb5ca4c1272ce6eb735f23dc8f58a4c3c8f/detection
+
+nosc.fit
+wnmc.fit
+tsepticxv.nosc.fit
+
+# Reference: https://twitter.com/malwaretracekr/status/1495425205971582976
+# Reference: https://www.virustotal.com/gui/file/d3d93d829cf70a4f075bb38407c30312cbe64048fdba1c66b07e6e0c783458b5/detection
+
+eobur.kr
+wrkvs.fit
+yuwc.eobur.kr
+
+# Reference: https://twitter.com/malwaretracekr/status/1505911469619425284
+
+zyqfr.com
+ogspf.zyqfr.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1595134230253608960
+# Reference: https://www.virustotal.com/gui/file/e8849f8b1bc003b0fb3b198259c6b87b14e125544e7bdda56f55f55276c79419/detection
+
+38.64.92.98:8989
+
+# Reference: https://twitter.com/malwrhunterteam/status/1621229258801569793
+# Reference: https://www.virustotal.com/gui/file/587d526df15a163ff2e610a848922af15d47ff6fab5a49d04269018737dc4f00/detection
+
+98.126.0.154:8886
+
+# Reference: https://www.virustotal.com/gui/file/64adef272a6f885fd7e1b7a4ac7b0e84b0d413773f819aeee210128aa6308939/detection
+
+http://70.36.102.54
+
+# Reference: https://www.virustotal.com/gui/file/822e4a98d4440e6473e92ae949fb333575ea6e569825ac7c3c6e725bea55c8d4/detection
+
+http://67.229.103.82
+
+# Reference: https://twitter.com/malwrhunterteam/status/1697536338566766918
+# Reference: https://www.virustotal.com/gui/file/03bbaa22f7c398067d2e8dd15983dac892bcfc580598cb52071a3bbf14ef411c/detection
+
+http://67.229.166.171
+watchomni.co
+
+# Reference: https://twitter.com/malwrhunterteam/status/1698081120737276170
+# Reference: https://twitter.com/sysk1ll3r/status/1698141936433893467
+# Reference: https://www.virustotal.com/gui/file/e1f5ef5fe1fe9bcb48b5faa08005e1414a464016a95e8ab560008f63122410fb/detection
+
+http://67.229.166.174
+
+# Reference: https://twitter.com/peterkruse/status/1715309603632578811
+# Reference: https://twitter.com/g0njxa/status/1715458635411714160
+# Reference: https://www.virustotal.com/gui/ip-address/154.19.201.139/relations
+# Reference: https://www.virustotal.com/gui/ip-address/154.19.201.140/relations
+# Reference: https://www.virustotal.com/gui/ip-address/154.19.201.141/relations
+# Reference: https://www.virustotal.com/gui/ip-address/154.19.201.142/relations
+# Reference: https://www.virustotal.com/gui/ip-address/154.19.201.213/relations
+# Reference: https://www.virustotal.com/gui/ip-address/154.19.201.214/relations
+# Reference: https://www.virustotal.com/gui/ip-address/154.19.201.215/relations
+# Reference: https://www.virustotal.com/gui/ip-address/154.19.201.27/relations
+# Reference: https://www.virustotal.com/gui/ip-address/154.19.201.28/relations
+
+114369.cn
+1tltd7.top
+25u7zwd.com
+3y9kb2p.com
+4c577wp.com
+4zm7yjm.com
+7qiej07.com
+abwan86.xyz
+abwan88.xyz
+abwan90.xyz
+abwan92.xyz
+abwan96.xyz
+abwan98.xyz
+bcredrm.com
+bdcv4zr.com
+ciytkg.com
+cujbch.com
+dd22233.com
+dd99933.com
+dhh43z0.com
+eve1m15.com
+fb64zv8.com
+fm7dbe.top
+fpn7wj.com
+gd1bwb.com
+h73352.top
+hqb63t0.com
+hvr7gl.com
+hy0gk6.com
+ifjl9n.com
+ij1rgg.com
+imgnetw.com
+jd89bo.com
+jvcit0.com
+jzj71vc.com
+kk14394.com
+kk97394.com
+lengpos728.com
+linshy894.com
+linshy895.com
+linshy896.com
+linshy897.com
+linshy898.com
+linshy911.com
+linshy913.com
+linshy918.com
+linshy923.com
+linshy924.com
+linshy925.com
+linshy926.com
+linshy927.com
+linshy928.com
+linshy929.com
+linshy930.com
+linshy931.com
+linshy932.com
+linshy933.com
+linshy934.com
+linshy935.com
+linshy936.com
+linshy937.com
+linshy938.com
+linshy939.com
+linshy940.com
+linshy941.com
+linshy942.com
+linshy943.com
+linshy944.com
+linshy945.com
+linshy946.com
+linshy947.com
+linshy949.com
+linshy953.com
+linshy963.com
+linshy964.com
+linshy965.com
+linshy974.com
+linshy975.com
+linshy976.com
+linshy981.com
+linshy982.com
+linshy990.com
+linshy993.com
+linshy995.com
+linshy997.com
+linshy998.com
+minshy01.com
+minshy02.com
+minshy03.com
+minshy04.com
+minshy11.com
+minshy13.com
+minshy14.com
+minshy15.com
+minshy16.com
+minshy17.com
+minshy19.com
+minshy20.com
+minshy21.com
+minshy22.com
+minshy23.com
+minshy24.com
+minshy25.com
+minshy46.com
+minshy51.com
+minshy52.com
+minshy53.com
+minshy54.com
+minshy55.com
+minshy56.com
+minshy57.com
+minshy58.com
+minshy59.com
+minshy60.com
+minshy61.com
+minshy62.com
+minshy63.com
+minshy64.com
+minshy71.com
+minshy72.com
+minshy76.com
+minshy77.com
+minshy93.com
+minshy94.com
+n6tb07.com
+ninshy05.com
+ninshy06.com
+ninshy07.com
+ninshy08.com
+ninshy09.com
+ninshy10.com
+ninshy11.com
+ninshy12.com
+ninshy13.com
+ninshy14.com
+ninshy15.com
+ninshy16.com
+ninshy17.com
+ninshy18.com
+ninshy19.com
+ninshy20.com
+ninshy21.com
+ninshy22.com
+ninshy23.com
+ninshy24.com
+ninshy25.com
+ninshy26.com
+ninshy27.com
+ninshy28.com
+ninshy29.com
+ninshy30.com
+ninshy31.com
+ninshy32.com
+ninshy33.com
+ninshy34.com
+ninshy35.com
+ninshy36.com
+ninshy37.com
+ninshy38.com
+ninshy39.com
+ninshy40.com
+ninshy41.com
+ninshy42.com
+ninshy43.com
+ninshy44.com
+ninshy45.com
+ninshy46.com
+ninshy47.com
+ninshy48.com
+ninshy49.com
+ninshy51.com
+ninshy52.com
+ninshy53.com
+ninshy54.com
+ninshy55.com
+ninshy56.com
+ninshy57.com
+ninshy58.com
+ninshy59.com
+ninshy60.com
+ninshy61.com
+ninshy62.com
+ninshy63.com
+ninshy67.com
+ninshy68.com
+ninshy69.com
+ninshy70.com
+ninshy71.com
+ninshy72.com
+ninshy73.com
+ninshy74.com
+ninshy75.com
+ninshy76.com
+ninshy77.com
+ninshy81.com
+ninshy82.com
+ninshy83.com
+ninshy84.com
+ninshy85.com
+ninshy86.com
+ninshy87.com
+ninshy88.com
+ninshy89.com
+ninshy93.com
+ninshy94.com
+ninshy95.com
+ninshy96.com
+ninshy97.com
+ninshy98.com
+ninshy99.com
+o1q43v.top
+oinshy01.xyz
+oinshy02.xyz
+oinshy03.xyz
+oinshy04.xyz
+oinshy05.xyz
+oinshy06.xyz
+oinshy07.xyz
+oinshy08.xyz
+oinshy09.xyz
+oinshy10.xyz
+oinshy11.xyz
+oinshy12.xyz
+oinshy13.xyz
+oinshy14.xyz
+oinshy15.xyz
+oinshy26.xyz
+oinshy31.xyz
+oinshy32.xyz
+oinshy34.xyz
+oinshy35.xyz
+oinshy36.xyz
+oinshy37.xyz
+oinshy38.xyz
+oinshy39.xyz
+oinshy40.xyz
+oinshy45.xyz
+ojiefk.com
+ophhyy.com
+or2jh7.com
+ovuev9.com
+p2wego.com
+p60r86.com
+pinshy01.xyz
+pinshy02.xyz
+pinshy03.xyz
+pinshy04.xyz
+pinshy05.xyz
+pinshy14.xyz
+pinshy15.xyz
+pinshy16.xyz
+pinshy17.xyz
+pinshy18.xyz
+pinshy31.xyz
+pinshy32.xyz
+pinshy33.xyz
+pinshy34.xyz
+pinshy35.xyz
+pinshy38.xyz
+pinshy39.xyz
+pinshy40.xyz
+pinshy41.xyz
+pinshy42.xyz
+pinshy43.xyz
+pinshy44.xyz
+pinshy45.xyz
+pinshy46.xyz
+qinshy06.xyz
+qinshy07.xyz
+qinshy08.xyz
+qinshy09.xyz
+qinshy10.xyz
+qinshy11.xyz
+qinshy12.xyz
+qinshy13.xyz
+qinshy14.xyz
+qinshy15.xyz
+qinshy16.xyz
+qinshy21.xyz
+qinshy22.xyz
+qinshy23.xyz
+qinshy24.xyz
+qinshy25.xyz
+qinshy26.xyz
+qinshy27.xyz
+qinshy28.xyz
+qinshy29.xyz
+qinshy30.xyz
+r20ym2j.com
+rczh8o4.com
+rinshy01.xyz
+rinshy02.xyz
+rinshy03.xyz
+rinshy04.xyz
+rinshy05.xyz
+rinshy06.xyz
+rinshy07.xyz
+rinshy08.xyz
+rinshy09.xyz
+rinshy10.xyz
+rinshy11.xyz
+rinshy12.xyz
+rinshy13.xyz
+rinshy14.xyz
+rinshy15.xyz
+rinshy18.xyz
+rinshy21.xyz
+rinshy22.xyz
+rinshy23.xyz
+rinshy24.xyz
+rinshy25.xyz
+rinshy26.xyz
+rinshy27.xyz
+rinshy28.xyz
+rinshy29.xyz
+rinshy30.xyz
+rinshy31.xyz
+rinshy32.xyz
+rinshy33.xyz
+rinshy34.xyz
+rinshy35.xyz
+rinshy41.xyz
+rinshy42.xyz
+rinshy43.xyz
+rinshy44.xyz
+rinshy45.xyz
+rinshy46.xyz
+rinshy47.xyz
+rinshy48.xyz
+rinshy49.xyz
+rinshy50.xyz
+sinshy06.xyz
+sinshy07.xyz
+sinshy08.xyz
+sinshy09.xyz
+sinshy10.xyz
+sinshy11.xyz
+sinshy12.xyz
+sinshy13.xyz
+sinshy14.xyz
+sinshy15.xyz
+sinshy16.xyz
+sinshy17.xyz
+sinshy18.xyz
+sinshy19.xyz
+sinshy20.xyz
+sinshy26.xyz
+sinshy27.xyz
+sinshy28.xyz
+sinshy29.xyz
+sinshy30.xyz
+sinshy31.xyz
+sinshy32.xyz
+sinshy33.xyz
+sinshy34.xyz
+sinshy35.xyz
+sinshy36.xyz
+sinshy37.xyz
+sinshy38.xyz
+sinshy39.xyz
+sinshy40.xyz
+sinshy44.xyz
+sinshy46.xyz
+sinshy47.xyz
+sinshy48.xyz
+sinshy49.xyz
+sinshy50.xyz
+soho1011.xyz
+soho1013.xyz
+soho1014.xyz
+soho1015.xyz
+soho1016.xyz
+soho1017.xyz
+soho1018.xyz
+soho1019.xyz
+soho1020.xyz
+soho1021.xyz
+soho1022.xyz
+soho1023.xyz
+soho1024.xyz
+soho1025.xyz
+soho1026.xyz
+soho1027.xyz
+soho1028.xyz
+soho1029.xyz
+soho1030.xyz
+soho1031.xyz
+soho1032.xyz
+soho118.cn
+soho119.cn
+soho122.cn
+soho124.cn
+soho127.cn
+soho129.cn
+soho130.cn
+soho131.cn
+soho132.cn
+un0anu.top
+vwr1f80.com
+w721c48.com
+winshy010.com
+winshy012.com
+winshy032.com
+winshy045.com
+winshy056.com
+winshy123.xyz
+winshy146.xyz
+winshy159.xyz
+winshy163.xyz
+winshy165.xyz
+winshy166.xyz
+winshy168.xyz
+winshy169.xyz
+winshy181.xyz
+winshy182.xyz
+winshy183.xyz
+winshy185.xyz
+winshy187.xyz
+winshy191.xyz
+winshy193.xyz
+winshy210.xyz
+winshy234.xyz
+winshy268.xyz
+winshy489.xyz
+winshy709.com
+winshy781.com
+winsy1001.xyz
+winsy1002.xyz
+winsy1003.xyz
+winsy1005.xyz
+winsy1006.xyz
+winsy1007.xyz
+winsy1008.xyz
+winsy1009.xyz
+winsy1010.xyz
+winsy1011.xyz
+winsy1012.xyz
+winsy1013.xyz
+winsy1014.xyz
+winsy1016.xyz
+winsy1017.xyz
+winsy1018.xyz
+winsy1019.xyz
+winsy1020.xyz
+winsy1021.xyz
+winsy1022.xyz
+winsy1023.xyz
+winsy1024.xyz
+winsy1025.xyz
+winsy1030.xyz
+winsy1031.xyz
+winsy1032.xyz
+winsy1033.xyz
+winsy1034.xyz
+winsy1035.xyz
+winsy1036.xyz
+winsy1037.xyz
+winsy1038.xyz
+winsy1039.xyz
+winsy1040.xyz
+winsy1041.xyz
+winsy1047.xyz
+winsy1048.xyz
+winsy1050.xyz
+winsy1051.xyz
+winsy1052.xyz
+winsy1053.xyz
+winsy1059.xyz
+winsy1060.xyz
+winsy1061.xyz
+winsy1062.xyz
+winsy1063.xyz
+winsy1064.xyz
+y5o9u4.com
+ya8r2i.com
+yn80jz.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/195.130.202.232/relations
+
+abwan198.xyz
+abwan200.xyz
+abwan202.xyz
+abwan204.xyz
+abwan206.xyz
+abwan208.xyz
+abwan210.xyz
+abwan212.xyz
+abwan214.xyz
+abwan216.xyz
+abwan218.xyz
+abwan220.xyz
+abwan222.xyz
+abwan224.xyz
+abwan226.xyz
+abwan228.xyz
+abwan230.xyz
+abwan36.xyz
+abwan38.xyz
+abwan40.xyz
+abwan42.xyz
+abwan44.xyz
+abwan46.xyz
+
+# Reference: https://twitter.com/BushidoToken/status/1769753697582551290
+# Reference: https://www.virustotal.com/gui/ip-address/43.156.153.132/relations
+
+es-ccorresd.top
+gb-akgpr.top
+gb-fnccf.top
+gb-ggdsj.top
+gb-gggzrf.top
+gb-ghysfg.top
+gb-gjsjb.top
+gb-hsjgd.top
+gb-jdkne.top
+gb-mnfjz.top
+gb-nuhuty.top
+gb-ryzutt.top
+gb-tytsh.top
+gb-uyndj.top
+gb-yeygs.top
+gb-yfysr.top
+
+# Generic
+
+/dor000ft.php
+/hp_state.php?telnum=
+/hp_getsmsblockstate.php?telnum=
+/index.php?type=join&telnum=
+/index.php?type=receivesms&telnum=
+
+# APK
+
+/app-release.apk
+/CJ대한통운 택배V_10.3.33.apk
+/CJ대한통운 택배V_11.10.18.apk

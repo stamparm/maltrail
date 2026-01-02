@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: project plague, evilbear
+
+# Reference: https://twitter.com/fr0s7_/status/1370737009677979648
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1371174503129219081
+# Reference: https://www.virustotal.com/gui/file/5090241dd376f6b456dbbdecf8a7781286e3d79b94b3f20757cc42095bce6548/detection
+# Reference: https://www.virustotal.com/gui/file/425125474825c83c556ddb9686d06c0fe3bed8fd1a6a7058b60a26189aec81ca/detection
+
+vb0x.hopto.org
+
+# Reference: https://twitter.com/ViriBack/status/1398735284242690053
+# Reference: https://app.any.run/tasks/636fc3a0-3973-4b83-b31c-aafa393c151d/
+# Reference: https://www.virustotal.com/gui/ip-address/203.28.246.111/relations
+
+anosiamala.online
+botboyz.online
+botboys.xyz
+fuck-nigger-jew-gypsies.xyz
+matix.cf
+nudesforeal.online
+plexic.xyz
+
+# Reference: https://twitter.com/malwrhunterteam/status/1402327317255491587
+
+http://212.192.241.97
+
+# Generic
+
+/~botboyz/
+/bot/check.php?hwid=

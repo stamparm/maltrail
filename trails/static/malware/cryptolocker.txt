@@ -1,0 +1,110 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://kc.mcafee.com/resources/sites/MCAFEE/content/live/PRODUCT_DOCUMENTATION/24000/PD24786/en_US/McAfee_Labs_Threat_Advisory_Ransom_Cryptolocker.pdf
+
+deadwalk32.ru
+imagecenterdown.ru
+officeimage.ru
+soudpmiyvxmd.org
+wxfaxwfotkcp.co.uk
+avlpfgiqwdudk.info
+irvggrirvsqqy.com
+gbpboroxfiep.co.uk
+xvaqocjidsht.info
+ngmneoxxoisqk.com
+jnwsjavtnkvmh.net
+ofoauksakmgs.info
+soywduppiyvf.com
+udsmjlwhfkmeg.net
+dyddkwwieairg.biz
+crjxtpyytwxf.com
+tmtntatjrhbj.net
+intkitmowpkrw.biz
+euepnfkkvrnnf.ru
+qgyvutxttqaj.net
+upjsdeujrdpv.biz
+vlqtsbjlaojjg.ru
+ehbktmjmyefwg.org
+estttyesdbrv.biz
+vnejtjydblua.ru
+jvrrrjysrthwg.org
+fdcwwuwoqvkso.co.uk
+uwuexnaukgiy.ru
+ynnivqvmcyxxr.org
+hjxywcvnbotlg.co.uk
+fxcyhrpfigvcu.info
+vupuoseotond.org
+mxoguylttevli.co.uk
+ifylakjpsgyhf.info
+sidwgwvsyqlxu.com
+hdauthcpbwblw.net
+oxibtrwnccaej.org
+ntmpidpuhvjxm.com
+pykluscfamoho.biz
+unbssmidrhqhn.biz
+dsfyhcdkeiprs.co.uk
+opnclitaxswlu.net
+qulxxxgkqjcun.ru
+bnhdumqalrkij.ru
+qdgwghjxusfnj.info
+igemsolqdaotb.org
+jjrtvxqpkhxem.org
+loppindadxdnv.info
+mkqclshftuqbu.com
+tnfhkwqywydsb.net
+hxgfjfggoebgr.biz
+uvdotgvjluqgb.ru
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2015-072908-2643-99&tabid=2
+
+decryptoraveidf7.onion.to
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2016-022219-1829-99&tabid=2
+
+annaflowersweb.com
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2016-021519-3303-99&tabid=2
+
+drivers-softprotect.eu
+testcryp.eu
+
+# Reference: http://www2.kedst.ac.uk/web/files/index.php?dir=Resources_for_International_Agents%2F&download=DECRYPT_INSTRUCTIONS.html
+
+erhitnwfvpgajfbu.onion
+erhitnwfvpgajfbu.onion.gq
+erhitnwfvpgajfbu.onion.lt
+erhitnwfvpgajfbu.onion.cab
+erhitnwfvpgajfbu.onion.city
+erhitnwfvpgajfbu.onion.direct
+erhitnwfvpgajfbu.onion.link
+erhitnwfvpgajfbu.onion.nu
+erhitnwfvpgajfbu.tor2web.fi
+erhitnwfvpgajfbu.tor2web.blutmagie.de
+erhitnwfvpgajfbu.tor2web.org
+erhitnwfvpgajfbu.tor2web.ru
+erhitnwfvpgajfbu.tor-gateways.de
+erhitnwfvpgajfbu.tor4u.net
+erhitnwfvpgajfbu.door2tor.org
+
+# Reference: https://twitter.com/jedisct1/statuses/638661301460422656
+
+nuservermail.net
+aservermail.net
+majorservice.net
+giantservice.net
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60
+
+34r6hq26q2h4jkzj.onion
+4sfxctgp53imlvzk.onion
+
+# Reference: https://s3.amazonaws.com/snort-org/www/rules/community/community-rules.tar.gz
+# Reference: https://snort-org-site.s3.amazonaws.com/production/release_files/files/000/012/156/original/snort3-community-rules.tar.gz
+
+jwqakoy3wdktb0.com
+
+# Reference: https://x.com/siri_urz/status/1838872590175146464
+# Reference: https://www.virustotal.com/gui/file/8d3f983d74612e5283c4e9d17562f8fd69c2ea3dc12d7a984d9645056f67be0e/detection
+
+lhwhi2kmewfas6tk47psgvqyluz5iwgdll5g6jyknq6rvxxg6soqooqd.onion

@@ -1,0 +1,259 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Anubis Networks
+
+# Note: jgou.veia@gmail.com (using for WHOIS records)
+
+# 195.22.26.248
+# Note: "We use that IP address for a lot of other stuff besides malware" (# Reference: https://www.alienvault.com/forums/discussion/10634/multiple-alarms-for-sinkhole-anubis-this-week)
+
+# Reference: https://rules.emergingthreats.net/open/snort-2.9.0/rules/emerging-trojan.rules
+
+195.22.26.231
+195.22.26.232
+
+# 195.22.26.192/26
+
+195.22.26.192
+195.22.26.193
+195.22.26.194
+195.22.26.195
+195.22.26.196
+195.22.26.197
+195.22.26.198
+195.22.26.199
+195.22.26.200
+195.22.26.201
+195.22.26.202
+195.22.26.203
+195.22.26.204
+195.22.26.205
+195.22.26.206
+195.22.26.207
+195.22.26.208
+195.22.26.209
+195.22.26.210
+# 195.22.26.211  # relay.net.vodafone.pt
+# 195.22.26.212  # relay2.net.vodafone.pt
+# 195.22.26.213  # relay3.net.vodafone.pt
+# 195.22.26.214  # relay4.net.vodafone.pt
+195.22.26.215
+195.22.26.216
+# 195.22.26.217  # anubisnetworks.com
+195.22.26.218
+195.22.26.219
+195.22.26.220
+195.22.26.221
+195.22.26.222
+195.22.26.223
+195.22.26.224
+195.22.26.225
+195.22.26.226
+195.22.26.227
+195.22.26.228
+195.22.26.230
+195.22.26.231
+195.22.26.232
+195.22.26.233
+195.22.26.234
+195.22.26.235
+195.22.26.236
+195.22.26.237
+195.22.26.238
+195.22.26.239
+195.22.26.240
+195.22.26.241
+195.22.26.242
+195.22.26.243
+195.22.26.244
+195.22.26.245
+195.22.26.246
+195.22.26.247
+195.22.26.249
+195.22.26.250
+195.22.26.251
+195.22.26.252
+195.22.26.253
+195.22.26.254
+195.22.26.255
+
+# Reference: https://www.virustotal.com/en/ip-address/195.22.26.248/information/
+# Reference: https://www.zoomeye.org/search?q=snkz%3D
+# Note: all domains get prefix [x]sso.<domain> on reaching sinkhole
+
+# Set-Cookie: snkz=x.y.z.w
+
+anbtr.com
+
+92.54.28.100
+72.5.161.4
+72.5.161.7
+72.26.218.71
+72.26.218.69
+107.6.74.79
+107.6.74.81
+107.6.74.84
+195.22.28.194
+195.22.28.195
+195.22.28.196
+195.22.28.197
+195.22.28.198
+195.22.28.199
+195.22.28.200
+195.22.28.221
+195.22.28.222
+162.217.98.132
+162.217.98.134
+162.217.98.136
+162.217.98.139
+162.217.98.144
+162.217.98.145
+162.217.98.149
+72.5.161.12
+72.5.161.16
+72.26.218.75
+173.231.189.27
+72.26.218.86
+
+# To find out the domain itself from redirected URL
+
+sso.anbtr.com/domain/
+xsso.anbtr.com/domain/
+
+# Reference: https://www.virustotal.com/en/ip-address/195.157.15.100/information/
+195.157.15.100
+
+# Reference: https://www.virustotal.com/en/ip-address/195.38.137.100/information/
+195.38.137.100
+
+# Reference: https://www.virustotal.com/en/ip-address/212.61.180.100/information/
+212.61.180.100
+
+# Reference: https://www.threatcrowd.org/ip.php?ip=89.185.44.100
+
+89.185.44.100
+
+# Misc. (e.g. Set-Cookie: snkz=)
+# Note: https://www.virustotal.com/#/domain/anam0rph.su
+
+195.38.137.100
+195.22.4.21
+63.251.126.8
+63.251.126.7
+63.251.126.6
+63.251.126.9
+63.251.126.14
+63.251.126.13
+63.251.126.12
+63.251.126.10
+212.61.180.100
+195.22.4.21
+195.38.137.100
+173.231.184.12
+173.231.184.59
+173.231.184.117
+173.231.189.14
+173.231.184.58
+173.231.184.123
+173.231.184.57
+173.231.184.55
+173.231.184.62
+173.231.184.52
+173.231.184.54
+173.231.184.56
+
+# Reference: https://community.riskiq.com/search/certificate/sha1/030231a0bf3178cc5f4af80735cb2df1b3f4a437
+# Reference: https://community.riskiq.com/search/certificate/sha1/1dc922d707c333a4fd86483868e40a2edeff3217
+
+172.104.43.202
+173.231.184.52
+173.231.184.54
+173.231.184.55
+173.231.184.56
+173.231.184.58
+173.231.184.59
+173.231.184.60
+173.231.184.61
+173.231.184.62
+63.251.126.4
+63.251.126.5
+64.95.103.180
+64.95.103.181
+64.95.103.182
+64.95.103.183
+64.95.103.184
+64.95.103.185
+64.95.103.186
+64.95.103.187
+64.95.103.188
+64.95.103.189
+64.95.103.190
+
+
+# Note: following DNS (sinkhole) servers redirect/reply all DNS requests to known Anubis sinkhole(s) (e.g. 195.22.26.248)
+
+# Reference: https://www.virustotal.com/gui/ip-address/184.73.137.229/relations
+# Reference: https://www.virustotal.com/gui/ip-address/34.229.84.179/relations
+# Reference: https://www.virustotal.com/gui/ip-address/34.230.76.81/relations
+# Reference: https://www.virustotal.com/gui/ip-address/54.227.204.233/relations
+
+184.73.137.229:53
+34.229.84.179:53
+34.230.76.81:53
+54.227.204.233:53
+
+# Reference: https://www.virustotal.com/gui/domain/xsso.setsupdates.com/relations
+
+107.6.74.89
+107.6.74.68
+206.191.152.40
+72.251.233.248
+206.191.152.36
+72.251.233.252
+107.6.74.74
+107.6.74.86
+
+# Reference: https://www.virustotal.com/gui/domain/nycnote.in/relations
+
+117.20.41.81
+63.251.126.5
+72.5.161.14
+72.5.161.6
+173.231.184.57
+173.231.184.54
+
+# Reference: https://www.virustotal.com/gui/domain/caller.work/relations
+
+199.21.76.89
+199.21.76.77
+199.21.76.85
+199.21.76.91
+162.217.98.139
+162.217.98.158
+199.21.76.88
+162.217.98.138
+162.217.98.140
+
+# Reference: https://www.virustotal.com/gui/domain/foreverysun.info/relations
+
+199.21.76.91
+162.217.99.137
+63.251.106.20
+199.21.76.74
+199.21.76.78
+199.21.76.92
+162.217.98.136
+162.217.98.133
+162.217.98.139
+
+# Misc. (e.g. Set-Cookie: btst=)
+
+63.251.235.69
+72.26.218.84
+72.26.218.79
+107.6.74.92
+162.217.98.158
+199.21.76.89
+162.217.99.132
+3.94.10.34

@@ -1,0 +1,41 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/pmelson/status/1166334659027963904
+# Reference: https://www.virustotal.com/gui/file/22da1dbc17f7a4436cb950998b96d83fbc022edb3f99a901825cd43e7fddca78/detection
+
+mondns.myftp.biz
+
+# Reference: https://twitter.com/James_inthe_box/status/1242138536607805446
+
+rdp3.dgsn.fr
+
+# Reference: https://app.any.run/tasks/0f8a91df-af4a-4aea-b0c0-2e99233440f6/
+
+91.193.75.98:1919
+homodwanouli.publicvm.com
+
+# Reference: https://twitter.com/sevenofnull/status/1272800406318481408
+# Reference: https://app.any.run/tasks/f1a366d3-9bc9-4718-b7f8-ce58382526fe/
+# Reference: https://app.any.run/tasks/1dcfa978-4a2e-423b-b34a-0796c48411ca/
+
+217.160.242.201:1919
+larbi.dgsn.fr
+moitoizabizabi4.xyz
+Poto.publicvm.com
+
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/MoDi-RAT-reflective-injection.csv
+
+mondns.myftp.org
+
+# Reference: https://app.any.run/tasks/3cc7fa8b-cacc-4c13-aa2b-bc1a3f40a1b8/
+
+62.75.216.133:1921
+134.119.219.2:21
+vps.dgsn.fr
+mama12.publicvm.com
+
+# Reference: https://x.com/marsomx_/status/1897939448098070669
+# Reference: https://www.virustotal.com/gui/file/297bd439157c3d70533403cc6d1d3f8e68319a9c5c75a8bdbf7239b9a17658ee/detection
+
+144.91.79.54:2025

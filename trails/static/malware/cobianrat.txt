@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zscaler.com/blogs/security-research/cobian-rat-backdoored-rat
+# Reference: https://www.virustotal.com/gui/file/cfc8324c59165b25b78c640ed77ebd7c867e042e09c95c218d84c5cd8e46910e/detection
+
+173.254.223.81:20000
+
+# Reference: https://twitter.com/James_inthe_box/status/1690041904103374848
+# Reference: https://app.any.run/tasks/3e830d26-49f3-43c7-a6f5-f2910fe102d3/
+# Reference: https://www.virustotal.com/gui/file/fbfb11eaab6cd7e0502bc02d8c7b7dae7666772d4cf594949ba1c0f20b7e5d37/detection
+# Reference: https://www.virustotal.com/gui/file/6d4a628479878baa8c4e0caea7a9b7c646b390a9f784236ba2284de713580deb/detection
+
+185.17.0.37:56355
+94.228.170.25:56355
+uknown.serveftp.com

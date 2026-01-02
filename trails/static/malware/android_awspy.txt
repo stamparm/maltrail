@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/ReBensk/status/1846848106509345113
+# Reference: https://labs.k7computing.com/index.php/awspy-new-spyware-targets-south-korean-android-users/
+
+phone-books.s3.ap-northeast-2.amazonaws.com

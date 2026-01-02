@@ -1,0 +1,170 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: keyboy, famoussparrow, pirate panda, tropic trooper, usbferry
+
+# Reference: https://citizenlab.ca/2016/11/parliament-keyboy/
+
+tibetvoices.com
+about.jkub.com
+eleven.mypop3.org
+backus.myftp.name
+
+# Reference: https://documents.trendmicro.com/assets/Tech-Brief-Tropic-Trooper-s-Back-USBferry-Attack-Targets-Air-gapped-Environments.pdf
+# Reference: https://otx.alienvault.com/pulse/5ebd510bcf2617c25c082fb3
+
+dpponline.trickip.org
+jupiter.qpoe.com
+mila1314.25u.com
+mila1314.4dq.com
+mila1314.ddns.info
+myinfo.ocry.com
+myzinfo.myz.info
+oldape.25u.com
+oldape.4dq.com
+
+# Reference: https://twitter.com/r0ny_123/status/1410537058418888705
+
+185.20.187.10:443
+
+# Reference: https://www.virustotal.com/gui/file/77bcebc65a7ac66da8ad8689b437b0cffecb2247dc58ade041cefe7ed2d46b5e/detection
+# Reference: https://www.virustotal.com/gui/file/6acc9ece44d4458a43851bd6ee11a9d2b33ba095ad288f7f9140d33d25d25fbc/detection
+# Reference: https://www.virustotal.com/gui/file/74593e081b0b9ab8683d77895035b424ba6e0f31c24ae7c270b18818b56a0d1d/detection
+# Reference: https://www.virustotal.com/gui/file/7150761f1767b3c25858925f867a226645bfe9cabcc6fb8e06f284e020489ae6/detection
+# Reference: https://www.virustotal.com/gui/file/446a393266d27961c09217054182bb4003346cc402e62c700ac3e334f9bfa035/detection
+# Reference: https://www.virustotal.com/gui/file/9fdc678b76cec3189f1d0ad32f838de1c3a5ec1b0aca4ee9df4aa1c65ebe6c94/detection
+# Reference: https://www.virustotal.com/gui/file/b15a3e0ca13cc21dace58ffb517b9f2b24ac6684ef823fa7a51a20ab7e7f69dd/detection
+# Reference: https://www.virustotal.com/gui/file/7150761f1767b3c25858925f867a226645bfe9cabcc6fb8e06f284e020489ae6/detection
+# Reference: https://www.virustotal.com/gui/file/7e1e16086e90cff8a33fdf0222410dd32773d7821ddd1b92a2ddb84eda573eb0/detection
+# Reference: https://www.virustotal.com/gui/file/2f6cb063966125e0a9f2aa72e471c05657f95a3ddd9f65329071b7ee4acedce6/detection
+
+http://159.75.83.212
+http://45.76.218.247
+101.32.36.76:443
+106.53.120.204:443
+114.251.216.125:1234
+118.195.161.141:443
+118.195.161.141:8443
+132.232.92.218:443
+134.175.197.144:443
+150.109.114.190:443
+155.138.155.181:443
+159.75.144.13:443
+159.75.81.151:443
+159.75.83.212:443
+212.182.121.97:443
+219.225.109.246:1234
+43.129.177.152:443
+43.134.194.237:443
+43.154.74.7:443
+43.154.85.5:443
+43.154.88.192:443
+45.76.218.247:443
+45.77.178.47:1234
+49.232.142.8:443
+82.156.178.135:443
+82.156.178.135:8443
+82.157.51.214:443
+82.157.62.199:8443
+buycheap.cn
+cnicchina.com
+ak.buycheap.cn
+api.cnicchina.com
+laishi.ddns.net
+
+# Reference: https://github.com/ti-research-io/ti/blob/main/ioc_extender/ET_APT-FamousSparrow.json
+# Reference: https://www.virustotal.com/gui/ip-address/103.15.28.228/relations
+
+awsdns-531.com
+offices-analytics.com
+redcrossco.com
+credits.offices-analytics.com
+resource.offices-analytics.com
+services.offices-analytics.com
+soffice.offices-analytics.com
+c11r.awsdns-531.com
+cdn181.awsdns-531.com
+llnw-dd.awsdns-531.com
+rdmail.redcrossco.com
+redsquare.redcrossco.com
+tranning.redcrossco.com
+
+# Reference: https://www.welivesecurity.com/2021/09/23/famoussparrow-suspicious-hotel-guest/
+# Reference: https://otx.alienvault.com/pulse/614d9d97468b5d59e66efeec
+
+kkxx888666.com
+cdn.kkxx888666.com
+
+# Reference: https://twitter.com/0x680x610x6A/status/1761993166780330420
+# Reference: https://www.virustotal.com/gui/file/8937e8dd520dc6555c5b2cd62897b8eb5352e43a12af488bd8594449ed114fd5/detection
+# Reference: https://www.virustotal.com/gui/file/98af7888655b8bcac49b76c074fc08877807ac074fb4e81a6cacfd1566d52f12/detection
+# Reference: https://www.virustotal.com/gui/file/9dff4c8f403338875d009508c64a0e4d4a5eeac191d7654a7793c823fb8e3018/detection
+
+techmersion.com
+blog.techmersion.com
+
+# Reference: https://securelist.com/new-tropic-trooper-web-shell-infection/113737/
+# Reference: https://www.virustotal.com/gui/ip-address/162.19.135.182/relations
+# Reference: https://www.virustotal.com/gui/ip-address/51.195.37.155/relations
+
+adobehomework.com
+athenatechlabs.com
+helpdesk.athenatechlabs.com
+
+# Reference: https://www.trendmicro.com/en_us/research/24/k/breaking-down-earth-estries-persistent-ttps-in-prolonged-cyber-o.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/24/k/breaking-down-earth-estries-persistent-ttps-in-prolonged-cyber-operations/iocs-breaking-down-earth-estries-persistent-ttps-in-prolonged-cyber-operations.txt
+
+amazoncdns.com
+ap.missmichiko.com
+auth.boxlibraries.com
+awsdns-531.com
+broadmediacloud.com
+cache10.newsfreecloud.com
+cachecloud.cloudflaresrv.com
+cas04.awsdns-531.com
+cdglobalclouds.com
+cdn101.cloudflaresrv.com
+cloudflaresrv.com
+cloudshappen.com
+cloudsrv.cloudfrontsrv.com
+dbacloudsupport.com
+de.huseinhbz.click
+emv1.cdglobalclouds.com
+emv1.techmersion.com
+euphemismscase.site
+flarecastdns.com
+ftp.techmersion.com
+ge.huseinhbz.click
+global.techmersion.com
+globalnetzone.b-cdn.net
+helpdesk.cloudshappen.com
+huseinhbz.click
+images.dbacloudsupport.com
+johannesburghotel.net
+kidshomeworkabc.global.ssl.fastly.net
+lync.realtxholdem.com
+mail.euphemismscase.site
+mail2-0da8aa1c.oxcdntech.com
+missmichiko.com
+ms119.newsfreecloud.com
+newsfreecloud.com
+nodtecloud.com
+ns.starkaero.com
+ns101.awsdns-531.com
+ns108.cloudshappen.com
+opengl.cloudshappen.com
+oxcdntech.com
+pay.johannesburghotel.net
+portal.cdglobalclouds.com
+portal.sppokemon.com
+portal.techmersion.com
+realtxholdem.com
+sppokemon.com
+ssl3.awsdns-531.com
+starkaero.com
+supports.dbacloudsupport.com
+supports.flarecastdns.com
+svn.truecdnnetwork.com
+techmersion.com
+truecdnnetwork.com
+zmail.broadmediacloud.com

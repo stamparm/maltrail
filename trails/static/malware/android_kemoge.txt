@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fireeye.com/blog/threat-research/2015/10/kemoge_another_mobi.html
+
+aps.kemoge.net
+
+# Reference: https://twitter.com/smii_mondher/status/1026747380614488064
+
+taosha.cc

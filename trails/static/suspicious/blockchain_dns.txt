@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/B-DNS/Resolver/blob/master/README.md
+
+bdns.at
+bdns.by
+bdns.co
+bdns.im
+bdns.io
+bdns.link
+bdns.nu
+bdns.pro
+b-dns.se

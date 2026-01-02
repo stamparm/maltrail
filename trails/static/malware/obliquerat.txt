@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2020/02/obliquerat-hits-victims-via-maldocs.html
+# Reference: https://otx.alienvault.com/pulse/5e52e7f72650f885faf158c8
+# Reference: https://app.any.run/tasks/ba03d3b0-cb43-4c07-86f1-097d5797ab65/
+# Reference: https://www.virustotal.com/gui/file/438230eff2aad1d53bdff9065c1648a8a798d618bbb23d3c3c1be45db3c1871b/detection
+
+185.117.73.222:3344
+
+# Reference: https://www.virustotal.com/gui/file/f5b007c75d953ed91595c1b1217d5f5301ef8043ea812472ccdb53472a350de3/detection
+
+81.61.77.92:3344
+
+# Reference: https://blog.talosintelligence.com/2021/02/obliquerat-new-campaign.html
+# Reference: https://www.virustotal.com/gui/file/0196bc9ac3db6f02cfa97323c8fce6cc7318b8f8fadb3e73bdf7971b3c541964/detection
+
+185.183.98.182:4701
+drivestransfer.com/myfiles/Dinner%20Invitation.doc/win10/Dinner%20Invitation.doc
+iiaonline.in/DefenceLogo/theta.bmp
+iiaonline.in/timon.jpeg
+iiaonline.in/9999.jpg
+iiaonline.in/merj.bmp
+iiaonline.in/111.jpg
+iiaonline.in/sasha.jpg
+iiaonline.in/111.png
+iiaonline.in/camela.bmp
+larsentobro.com/mbda/goliath1.bmp
+larsentobro.com/mbda/mundkol
+micrsoft.ddns.net

@@ -1,0 +1,50 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blogs.infoblox.com/cyber-threat-intelligence/prolific-puma-shadowy-link-shortening-service-enables-cybercrime/
+# Reference: https://otx.alienvault.com/pulse/654176711db9872180cb1660
+
+asdboloa.com
+baew.info
+bwkd.me
+cewm.link
+ddkn.cc
+dvcgg.com
+ezqz.link
+fbvn.info
+fssu.link
+fubsdgd.com
+giqj.me
+hhqm.link
+hpko.cc
+hygmi.com
+jlza.cc
+jrbc.info
+kfwpr.com
+khrig.com
+ksaguna.com
+ldka.info
+mjzo.me
+mpsi.cc
+nhcux.com
+ouzp.me
+regz.info
+rjvb.link
+rpzp.me
+scob.me
+sf8i.us
+shpw.info
+styi.info
+trqrh.com
+uelr.info
+uhje.me
+wkby.cc
+wqeh.link
+wrzt.link
+xbsf.link
+xnxk.me
+ymql.link
+yyds.is
+zoru.me
+zost.link
+zyke.link

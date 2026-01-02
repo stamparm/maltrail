@@ -1,0 +1,174 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: curl -vv
+
+54.193.11.207
+
+52.16.187.207
+160.16.212.198
+166.78.18.204
+
+# Reference: https://cymon.io/106.187.41.154
+# Reference: http://ipv4info.com/ip-address/sf39531/106.187.41.154.html
+# Reference: https://www.virustotal.com/en/ip-address/106.187.41.154/information/
+
+106.187.41.154
+
+# Reference: https://cymon.io/50.116.56.144
+# Reference: http://ipv4info.com/ip-address/s803086/50.116.56.144.html
+# Reference: https://www.virustotal.com/en/ip-address/50.116.56.144/information/
+
+50.116.56.144
+
+# Reference: https://www.virustotal.com/en/ip-address/193.107.19.236/information/
+
+193.107.19.236
+
+# Reference: https://www.virustotal.com/en/ip-address/104.238.158.106/information/
+
+104.238.158.106
+
+# Reference: https://www.virustotal.com/en/ip-address/192.155.89.148/information/
+
+192.155.89.148
+
+# Reference: https://www.virustotal.com/en/ip-address/69.195.140.123/information/
+
+69.195.140.123
+
+# Reference: https://www.virustotal.com/en/ip-address/54.86.225.156/information/
+
+54.86.225.156
+
+# Reference: https://censys.io/ipv4?q=80.http.get.headers.server%3Amalware-sinkhole
+
+67.205.153.100
+159.203.210.188
+
+# Reference: https://www.threatcrowd.org/ip.php?ip=5.135.183.154
+
+5.135.183.154
+
+# Reference: https://www.virustotal.com/#/ip-address/51.254.172.105
+
+51.254.172.105
+
+# curl 160.16.95.189 | grep "This is the sinkhole in Japan."
+
+# This is a sinkhole. Contact: allthesinkholes @ outlook.com
+# (Note: APT domains)
+
+139.59.250.183
+
+# Reference: https://www.virustotal.com/#/ip-address/178.128.69.132
+# (Note: APT C23 domains)
+
+178.128.69.132
+
+# Reference: https://www.virustotal.com/#/ip-address/103.232.215.138
+
+103.232.215.138
+
+# Reference: https://www.virustotal.com/#/ip-address/72.21.92.51
+
+72.21.92.51
+
+# Reference: https://www.virustotal.com/#/ip-address/192.241.211.213
+
+192.241.211.213
+
+# Reference: https://www.virustotal.com/#/ip-address/46.101.26.41
+
+46.101.26.41
+
+# Reference: https://www.virustotal.com/#/ip-address/45.55.91.45
+# "Sinkhole: trying to make the Internet a safer place"
+
+45.55.91.45
+
+# Reference: https://www.virustotal.com/#/ip-address/92.63.103.70
+# "Hello"
+
+92.63.103.70
+
+# Reference: https://www.virustotal.com/#/ip-address/103.210.239.43
+
+103.210.239.43
+
+# Reference: https://www.virustotal.com/#/ip-address/178.32.208.147
+
+178.32.208.147
+
+# Reference: https://www.virustotal.com/#/ip-address/46.101.245.114
+
+46.101.245.114
+
+# Reference: https://censys.io/ipv4?q=%22Sinkhole%3A+trying+to+make+the+Internet+a+safer+place%22
+
+45.55.91.45
+138.197.39.156
+
+# certificate (CN): malware-sinkhole
+
+138.197.240.163
+
+# Reference: https://www.virustotal.com/#/ip-address/173.230.128.18
+# Derp!
+
+173.230.128.18
+
+# Reference: https://censys.io/ipv4/207.246.78.226/raw#http
+
+207.246.78.226
+
+# Reference: https://censys.io/ipv4/198.23.252.166/table#80
+
+198.23.252.166
+
+# Reference: https://www.virustotal.com/gui/ip-address/52.16.225.15/relations
+
+52.16.225.15
+
+# Reference: https://www.virustotal.com/gui/ip-address/128.199.135.196/relations
+
+128.199.135.196
+
+# Reference: https://www.virustotal.com/gui/ip-address/188.166.213.21/relations
+
+188.166.213.21
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.14.31.88/relations
+
+185.14.31.88
+
+# Reference: https://www.virustotal.com/gui/ip-address/142.93.110.250/relations
+
+142.93.110.250
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.4.56.252/details
+
+194.4.56.252
+
+# Reference: https://www.virustotal.com/gui/ip-address/35.187.36.248/relations
+# Note: sinkhole-01.c.sinkhole-173409.internal (inside SSL/TLS certificate)
+
+35.187.36.248
+
+# Reference: https://blog.reversinglabs.com/blog/unpacking-kwampirs-rat
+# Reference: https://www.virustotal.com/gui/ip-address/172.105.123.10/relations
+
+172.105.123.10
+
+# Reference: https://www.virustotal.com/gui/ip-address/165.22.80.21/relations
+
+165.22.80.21
+
+# Reference: https://www.virustotal.com/gui/ip-address/93.90.223.185/relations
+
+93.90.223.185
+
+# Reference: https://x.com/felixaime/status/1869040141073105063
+# Reference: https://x.com/peterkruse/status/1869355101762343304
+
+91.205.105.146

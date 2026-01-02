@@ -1,0 +1,60 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://decoded.avast.io/danielbenes/warez-users-fell-for-certishell/
+# Reference: https://github.com/avast/ioc/blob/master/Certishell/network.txt
+# Reference: https://otx.alienvault.com/pulse/6262654e706664de85163a76
+
+http://165.227.157.168
+limousine-service.cz
+sivpici.php5.sk
+freetips.php5.sk
+profiit.fiit.stuba.sk
+reality.skarabeus.sk
+vavave.xf.cz
+forummanazera.sk//cms//PAU.vbs
+forummanazera.sk//cms//q.vbs
+forummanazera.sk/cms/123.ps1
+forummanazera.sk/cms/CINEMA.ps1
+forummanazera.sk/cms/Cache.ps1
+forummanazera.sk/cms/DD.ps1
+forummanazera.sk/cms/DED.ps1
+forummanazera.sk/cms/Deadpools.ps1
+forummanazera.sk/cms/ERR.ps1
+forummanazera.sk/cms/INSTALL.ps1
+forummanazera.sk/cms/Off.ps1
+forummanazera.sk/cms/Office.ps1
+forummanazera.sk/cms/Pass.ps1
+forummanazera.sk/cms/dead.ps1
+forummanazera.sk/cms/heslo.ps1
+forummanazera.sk/cms/data_script/Data/
+forummanazera.sk/GO/
+forummanazera.sk/aktivator.ps1
+forummanazera.sk/PPP.ps1
+forummanazera.sk/mafia.ps1
+forummanazera.sk/mic.ps1
+forummanazera.sk/nove.ps1
+forummanazera.sk/pay.ps1
+forummanazera.sk/pokemon.ps1
+forummanazera.sk/test.ps1
+forummanazera.sk/toaletak.ps1
+forummanazera.sk/toaletak3.ps1
+forummanazera.sk/toaletak4.ps1
+forummanazera.sk/toaletak5.ps1
+forummanazera.sk/totolast.ps1
+forummanazera.sk/wallpaper.bmp
+forummanazera.sk/xxs.ps1
+forummanazera.sk/xxss.ps1
+googleprovider.ru
+hotel-boss.eu/fonts/hba.ps1
+hotel-boss.eu/fonts/rar.ps1
+hotel-boss.eu/img/BBKali.ps1
+hotel-boss.eu/img/restika/KALI.ps1
+hotel-boss.eu/img/restika/KULI.ps1
+hotel-boss.eu/img/restika/MEG.ps1
+hotel-boss.eu/img/restika/SIM.ps1
+hotel-boss.eu/img/restika/SPI.ps1
+hotel-boss.eu/img/restika/VEN.ps1
+hotel-boss.eu/img/restika/
+msrousinov.cz/bam.oo
+ms.rousinov.cz/js/

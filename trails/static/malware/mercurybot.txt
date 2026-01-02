@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/albertzsigovits/status/1185166092089614336
+# Reference: https://app.any.run/tasks/56f43ee2-08cb-4724-b091-489eea8e28ce/
+
+darkrat.lh1.in
+
+# Reference: https://twitter.com/James_inthe_box/status/1185174236337299456 (# Generic trail)
+
+/api/zrcdr77/

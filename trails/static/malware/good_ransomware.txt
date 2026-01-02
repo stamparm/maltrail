@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ryzerlo
+
+# Reference: https://www.virustotal.com/gui/file/8c70d9b9ded95833b2ae8d523129fa07202b124e6373f49278c24fc2d0735401/detection
+
+gz2gqh5llhkjte4l.onion.dog

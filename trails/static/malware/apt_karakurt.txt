@@ -1,0 +1,39 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Karakurt Team, Karakurt Lair
+
+# Reference: https://www.cisa.gov/uscert/ncas/alerts/aa22-152a
+# Reference: https://www.virustotal.com/gui/ip-address/209.222.98.19/relations
+# Reference: https://www.virustotal.com/gui/ip-address/78.31.67.191/relations
+# Reference: https://otx.alienvault.com/pulse/62986c1750cc114c19b706ce
+
+karakurt.co
+karakurt.group
+karakurt.systems
+karakurt.tech
+blog.karakurt.tech
+internal.karakurt.tech
+omx5iqrdbsoitf3q4xexrqw5r5tfw7vp3vl3li3lfo7saabxazshnead.onion
+
+# Reference: https://twitter.com/CSICCybersecur1/status/1532431727292862464
+# Reference: https://www.shodan.io/host/94.156.174.204
+# Reference: https://www.virustotal.com/gui/ip-address/94.156.174.204/relations
+
+94.156.174.204:3051
+94.156.174.204:443
+94.156.174.204:8443
+karachat.group
+karachat.tech
+
+# Reference: https://twitter.com/S0ufi4n3/status/1542049327295696900
+
+178.255.220.111:3050
+
+# Reference: https://gist.github.com/hrbrmstr/db75143d512faa983f7438b3f17e2f5a
+
+3f7nxkjway3d223j27lyad7v5cgmyaifesycvmwq7i7cbs23lb6llryd.onion
+
+# Reference: https://www.thedfirspot.com/general-8-1
+
+karaleaks.com

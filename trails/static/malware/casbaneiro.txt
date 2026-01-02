@@ -1,0 +1,340 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: horabot
+
+# Reference: https://www.welivesecurity.com/2019/10/03/casbaneiro-trojan-dangerous-cooking/
+# Reference: https://otx.alienvault.com/pulse/5d95e1d8a958c288f7e3d6ed
+
+4d9p5678.myvnc.com
+agosto2019.servepics.com
+hostsize.sytes.net
+noturnis.zapto.org
+seradessavez.ddns.net
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1245383637442482178
+
+newlife2020.club
+vqz8.gotdns.ch
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1245399620945092609
+
+jkue.myftp.biz
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1268811438707159040
+
+nhoquemassa.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1272427444486766592
+# Reference: https://app.any.run/tasks/7ac99b76-0ac3-4764-bfa3-e35925ecb39b/
+
+albumdepremios.com.br
+hostmeusite.ddns.net
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1277476249988972544
+# Reference: https://app.any.run/tasks/00594f1b-f778-49ea-bfc5-2a0853a41347/
+
+apkelites10.com
+baza.alta-bars.ru
+
+# Reference: https://twitter.com/ffforward/status/1329507229066801153
+# Reference: https://www.virustotal.com/gui/ip-address/128.199.139.227/relations
+# Reference: https://pastebin.com/gNgD4PS2
+
+09dfwss6g1v73sya.online
+2xo0uaqv4cqds331mart.online
+3n1ujw621vaxpro.online
+4atcj6ygql4l.online
+4yw2twoy438df9qt.online
+6c48ax07dy25hvu0hub.online
+ah0nm2v13mhl8ynn.online
+cevda3jvv5oz1t37.online
+fd8nvvlufung.website
+k6ue95v1ca2r.online
+l155vcram2hl6ws0.online
+mpy8n37wvwu2.website
+mpy8n37wvwu2now.online
+p77x09sqwx37j1l2.online
+udndtiho0q7r.online
+v6pa59086808a28mpro.online
+x50zbqev4po5.online
+x6vl9710f400g7alstar.online
+yuphsa6qwtg5.online
+z5im1ou9o480se02pro.online
+zfi8ny6yi30s.website
+zfi8ny6yi30shub.online
+
+# Reference: https://www.virustotal.com/gui/file/be1ff9ea0cd1d99838eedabc9d4faba081d1fbf9c7c94d2575b70c64ba2298ed/detection
+
+chooseanother.com
+
+# Reference: https://twitter.com/ESETresearch/status/1367456126195924993
+# Reference: https://twitter.com/ESETresearch/status/1367456135389851648
+
+http://178.32.119.184/upa/2302
+http://46.4.141.206/a21/ld/index.php
+a8b.site
+cnn2602.gotdns.ch
+fiscal.canadaeast.cloudapp.azure.com
+
+# Reference: https://twitter.com/ffforward/status/1485619226023018498
+
+hunntjadhfgempresafactura.com
+solitudeempresasfactura.com
+tyjghhasdempresasfactura.com
+
+# Reference: https://twitter.com/ffforward/status/1486067904814764036
+# Reference: https://www.virustotal.com/gui/ip-address/77.243.85.107/relations
+
+down425.xyz
+down5861.serveblog.net
+62rdsfvcxza.freedynamicdns.net
+
+# Reference: https://twitter.com/1ZRR4H/status/1486075893596491785
+
+mgjw.zapto.org
+
+# Reference: https://twitter.com/pr0xylife/status/1486082528578576386
+# Reference: https://www.virustotal.com/gui/ip-address/149.248.50.230/relations
+# Reference: https://www.virustotal.com/gui/file/84da58457b87687c8247d862ca1c0c709a29e5e2856af27e52e433931fc1d0d5/detection
+# Reference: https://www.virustotal.com/gui/file/ee1869a4c8346e495891f8234258e1112363538bd84b102f5e57df6902488293/detection
+
+contmxlk.gotdns.ch
+contmx1.website
+contxm3.ddnsking.com
+
+# Reference: https://twitter.com/StopMalvertisin/status/1491336673518813184
+
+/Contador/serv.php
+
+# Reference: https://twitter.com/malware_traffic/status/1491514321309822978
+
+158.69.110.217:42112
+fischerpersianas.duckdns.org
+obarrielsoluctionssx.com
+/DocBr20?VF9C32I0402/4L84VA5UEVELFX0Q76L9S1K8J9/
+/DocBr20?VF9C32I0402/
+/4L84VA5UEVELFX0Q76L9S1K8J9/
+
+# Reference: https://twitter.com/1ZRR4H/status/1525175056283877379
+
+http://172.105.111.154
+/a1a/10/index.php
+
+# Reference: https://www.virustotal.com/gui/file/a41185db4d4c0accc3339f07a63965f0cbd7920fd38564f0c78944def57abfb6/detection
+
+mercadoenvios1.loseyourip.com
+
+# Reference: https://twitter.com/AvastThreatLabs/status/1560562872932978689
+
+http://172.105.111.154
+http://192.46.216.151
+tributaria.website
+vin6.icu
+
+# Reference: https://twitter.com/pollo290987/status/1571897876988719106
+# Reference: https://twitter.com/johnk3r/status/1572626297339224064
+# Reference: https://www.virustotal.com/gui/file/e35bc9f085d3c7ec459e11452913b20fb44bf32ecd9b5e6dd3e12598d127dae9/detection
+
+http://40.124.25.196
+/cliente/vamoqvamo.php
+/vamospracima/seligamano.php
+/vamospracima/vamoqvamo.php
+/vamoqvamo.php
+
+# Reference: https://twitter.com/nuria_imeq/status/1583106258202394625
+
+recibopagosmx2022.blob.core.windows.net
+
+# Reference: https://twitter.com/pollo290987/status/1653112689189609482
+
+http://185.185.87.45
+http://51.38.235.152
+http://89.117.37.61
+amarte.store
+fnfactura.cfd
+
+# Reference: https://github.com/Cisco-Talos/IOCs/blob/main/2023/05/new-horabot-targets-americas.txt
+
+http://137.220.53.87
+http://139.177.193.74
+http://185.45.195.226
+http://191.101.2.101
+http://212.46.38.43
+http://216.238.70.224
+facturacionmarzo.cloud
+wiqp.xyz
+
+# Reference: https://blog.sygnia.co/breaking-down-casbaneiro-infection-chain-part2
+# Reference: https://www.virustotal.com/gui/ip-address/45.32.90.70/relations
+
+http://185.183.98.135
+http://216.238.82.27
+http://45.32.90.70
+adjuntos.shop
+cgdf.shop
+contactofiscal.cfd
+factdigital.shop
+factudigital.cfd
+fiscalcgdf.shop
+serviciofac.shop
+xtream-ui.info
+live.xtream-ui.info
+
+# Reference: https://twitter.com/0xToxin/status/1694756006889206044
+
+agost.shop
+
+# Reference: https://twitter.com/Merlax_/status/1708941045122187358
+# Reference: https://www.virustotal.com/gui/file/50d0aa6d8cdc2d80ec611cacb8fc5c4bfe344f55b2c039b7b3faff8d2244238f/detection
+
+http://20.92.164.32
+serviciosfiscales.australiaeast.cloudapp.azure.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1717052375511265692
+# Reference: https://urlhaus.abuse.ch/browse/tag/TelegramLogin/
+# Reference: https://app.any.run/tasks/577f79cb-2fe6-401b-ad03-8397b7d0b82d/
+
+http://154.223.16.114
+http://62.72.22.30
+
+# Reference: https://twitter.com/V3n0mStrike/status/1719041666080755838
+
+oliga.canadacentral.cloudapp.azure.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1719337821490597905
+# Reference: https://app.any.run/tasks/f14e52db-90c9-4ea9-837b-7a3103065e0b/
+
+http://154.56.63.216
+
+# Reference: https://twitter.com/1ZRR4H/status/1727857791245627765
+# Reference: https://www.virustotal.com/gui/ip-address/154.223.16.114/relations
+# Reference: https://www.virustotal.com/gui/file/e278639e9d55ec17c5758a09fbceefd522c8bbcbef62eccfccc888786c66cddd/detection
+# Reference: https://www.virustotal.com/gui/file/cc3f1dff7aaa5a79a7ca130d74cf0337fb5bd666aced2c2f3f65ccf231af800d/detection
+
+http://149.100.158.179
+http://193.203.190.217
+http://38.54.20.180
+ambjulio.com
+facturacionmovistar.tech
+familysinaloa.website
+appsinteligentes.myftp.org
+dftssa.3utilities.com
+frances.gotdns.ch
+org.freedynamicdns.net
+
+# Reference: https://twitter.com/1ZRR4H/status/1769360501341851814
+# Reference: https://www.virustotal.com/gui/ip-address/38.54.20.37/relations
+# Reference: https://www.virustotal.com/gui/ip-address/86.38.217.167/relations
+# Reference: https://www.virustotal.com/gui/ip-address/89.116.236.122/relations
+# Reference: https://www.virustotal.com/gui/file/148ab112b116cb5d7fc484a4626ebd8958b7528ff87ca4d568ddd080f1e94a10/detection
+# Reference: https://www.virustotal.com/gui/file/0ea385ed685886ac4304f498bf6235e690f68c9e30e99f0f437a1e610e4abd17/detection
+# Reference: https://www.virustotal.com/gui/file/d1ed933bf75f604cebc4a9523689766e50102cdb53f447d83869155c3b020506/detection
+
+http://38.54.20.37
+http://86.38.217.167
+http://89.117.37.61
+adbd.tech
+amarte.store
+archivosdwn.cloud
+facturas.co.in
+facturasm.cloud
+facturasmex.cloud
+fsnat.shop
+satventasfac.tech
+a.3utilities.com
+ad2.gotdns.ch
+avs.myftp.biz
+ca1.sytes.net
+cnv.gotdns.ch
+cs2.servepics.com
+dsu.zapto.org
+ffv.webhop.me
+jan.viewdns.net
+tths.ddns.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/77.37.54.239/relations
+
+cfdimex.cloud
+salvec.tech
+url27.shop
+
+# Reference: https://twitter.com/pollo290987/status/1790815864247214389
+# Reference: https://www.virustotal.com/gui/file/266fa1100457df8b072af697ca7648a2ae3cd1138046c62635682d3598ea8bf0/detection
+# Reference: https://www.virustotal.com/gui/file/955445fdb6629b94f660a8dc407b2637f6e5bb719dfb7f4f8227f279ee23d9cd/detection
+# Reference: https://www.virustotal.com/gui/file/7001f88ca24e09b5748054d576753444e69759b6dda9cf768a9bbc2fe638f5c9/detection
+# Reference: https://www.virustotal.com/gui/file/34e5ee4a1fa1e918d2d6b24442d887ac0b1a9893d5fc3ed0170298b8eede9e41/detection
+
+http://86.38.217.167
+adjuntos33.shop
+adjuntosfctas.com
+flsq1.shop
+abgh.gotdns.ch
+ates.gotdns.ch
+dpt.servegame.com
+hng.gotdns.ch
+
+# Reference: https://app.validin.com/detail?type=dom&find=geradcontsad.pro
+# Reference: https://www.virustotal.com/gui/file/19cbff064f6a5854cab74e34f8e56f641afec0f53d509fa2036bcb73b1803172/detection
+
+geradcontsad.pro
+modcontxxaa.ddnsking.com
+
+# Reference: https://x.com/banthisguy9349/status/1821599369663013365
+# Reference: https://www.virustotal.com/gui/file/2e4a7ffd09bea043e948360bc0787dcc94ec5081a2bf9b193833d0c6cc683f20/detection
+
+contadcom.pro
+
+# Reference: https://x.com/Dkavalanche/status/1823015636810813863
+# Reference: https://x.com/Dkavalanche/status/1823015835973148987
+# Reference: https://www.virustotal.com/gui/file/7ca55e9a121e385736e90ee18fcdcd9c3b6d31dafccb1a415cb6fc3b00610f20/detection
+
+argetinoslaliga2025.com
+tigreslaliga.com
+
+# Reference: https://www.virustotal.com/gui/file/f27b7b3839e0b3190b0d4fc7a1cc180d59d258dc7db467bf5ec7e93407f6e542/detection
+
+supervisores.brazilsouth.cloudapp.azure.com
+/uols/getprimeiralinhaarquivo.php
+/getprimeiralinhaarquivo.php
+
+# Reference: https://www.fortinet.com/blog/threat-research/horabot-unleashed-a-stealthy-phishing-threat
+# Reference: https://www.virustotal.com/gui/file/aa2a5fcf25ebf21cf55b92debc2e61ce42385726a4f505773f50a99ea7cd4bf2/detection
+# Reference: https://www.virustotal.com/gui/file/39c6fc29dd2a761462c9fa234277eb1fa55e76eb5699651bad3618ec367545d0/detection
+# Reference: https://www.virustotal.com/gui/file/f178a97f40b1024df4065b028ca58705113b4b4b72566bc1f2d3cb5eb7eb779f/detection
+# Reference: https://www.virustotal.com/gui/file/f84533f0b76b6e5a2d6d3b354f1a76075621e81ab2193b5f052efe27d1b8094e/detection
+# Reference: https://www.virustotal.com/gui/file/edb9a5b44544b431874ca80042b18aa1fb6ba244247c06057b991c2d0f11faff/detection
+
+http://159.100.18.13
+http://209.74.71.168
+http://62.113.238.74
+http://64.7.198.192
+http://93.127.200.211
+aedes.store
+contablebar.shop
+contablecolim.shop
+contablefea.shop
+contablegbv.shop
+contableparq.shop
+contactswebaccion.space
+contactswebaccion.store
+facturasbuts.shop
+facturasdenix.shop
+facturasdetex.shop
+facturasendrs.shop
+labodeguitagaplata.store
+labodeguitaup.space
+supportwebmail.buzz
+updatec.lat
+webcorreio.pics
+d1.webcorreio.pics
+f5.contactswebaccion.space
+t4.contactswebaccion.store
+
+# Reference: https://www.virustotal.com/gui/file/ae804b3dc19c13ed75a377cd5c823d75f9ad75abedb6797683be4586878d34b9/detection
+
+ujshanmsupreme.ddns.net
+
+# Generic
+
+/J8v0x5a3a6v4x0BTCsc/

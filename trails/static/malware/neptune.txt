@@ -1,0 +1,72 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: neptune http loader
+
+# Reference: https://twitter.com/banthisguy9349/status/1742123105827344654
+# Reference: https://www.virustotal.com/gui/file/23e4e812b985eb7f0dfe4440a281d290681d48292b564e95389472a44067f382/detection
+# Reference: https://www.virustotal.com/gui/file/57bb1a9274ec2f2f65508b3eefd222b46f9c600c3352d80488d7f903937a409b/detection
+# Reference: https://www.virustotal.com/gui/file/4c58578a87a0f032ac2fb2889565de0d40c9c358d4e48dbdbe8ce74f8ccb62b7/detection
+
+http://194.33.191.106
+http://91.92.240.152
+http://91.92.240.153
+91.92.240.152:443
+
+# Reference: https://twitter.com/ViriBack/status/1744726264618119591
+# Reference: https://twitter.com/banthisguy9349/status/1744772559730593998
+# Reference: https://www.virustotal.com/gui/file/136ced869a73c98ae6c181e429709294168bfaa573a53d4c452edfe90c7b1d7d/detection
+
+http://91.92.246.39
+mfuk.app
+
+# Reference: https://twitter.com/banthisguy9349/status/1745123054731006197
+# Reference: https://www.virustotal.com/gui/file/2a3549512f5f9cf1b11a26897a79532adc548c3000fb7b07fcae6b49cd5222ad/detection
+
+tdboat.online
+
+# Reference: https://threatfox.abuse.ch/browse/tag/NeptuneLoader/
+
+http://91.92.240.65
+http://91.92.241.244
+http://91.92.252.7
+194.33.191.106:443
+91.92.241.244:443
+
+# Reference: https://twitter.com/banthisguy9349/status/1746847017819594803
+# Reference: https://www.virustotal.com/gui/ip-address/78.40.143.117/relations
+
+mystictesting.com
+
+# Reference: https://twitter.com/ShanHolo/status/1746909337635737647
+
+http://94.156.65.54
+sec4uallfortoday.click
+
+# Reference: https://threatfox.abuse.ch/browse/tag/NeptuneLoader/
+
+94.156.65.54:443
+
+# Reference: https://twitter.com/1ZRR4H/status/1752081741563453657
+# Reference: https://twitter.com/ShanHolo/status/1752274962688209347
+# Reference: https://www.virustotal.com/gui/file/2e5cabd0ef1a25258496aa4a32c0a23338f72df7da07b4753eefab0982c81540/detection
+# Reference: https://www.virustotal.com/gui/file/3fe54235b0e865027d709c18096c7078e8928a22b14f78306b8d2e4d0ea14248/detection
+# Reference: https://www.virustotal.com/gui/file/a6c05c63623b019614ab1d5cf533f9599d42fe18773d1d92cb1caccee809d2ae/detection
+
+http://91.92.245.88
+http://91.92.251.165
+ytmodsupport.com
+
+# Reference: https://twitter.com/banthisguy9349/status/1754140240652939341
+
+http://94.156.69.85
+
+# Reference: https://www.team-cymru.com/post/fingerprinting-malware-c2s-with-tags
+
+http://195.2.73.29
+http://196.251.81.133
+196.251.72.215:3000
+196.251.72.216:3000
+196.251.72.217:3000
+196.251.81.150:443
+196.251.81.133:443

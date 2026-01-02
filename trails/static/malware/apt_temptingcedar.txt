@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.avast.com/avast-tracks-down-tempting-cedar-spyware
+
+chat-world.site
+chat-messenger.site
+gserv.mobi
+arab-chat.site
+onlineclub.info
+free-apps.us
+network-lab.info
+kikstore.net
+
+# Reference: https://twitter.com/kyleehmke/status/1233024422581325824
+
+arab-download.com

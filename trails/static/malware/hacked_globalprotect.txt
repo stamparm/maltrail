@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: CVE-2024-3400, UPSTYLE, UTA0218
+
+# Reference: https://unit42.paloaltonetworks.com/cve-2024-3400/
+# Reference: https://github.com/volexity/threat-intel/blob/main/2024/2024-04-12%20Palo%20Alto%20Networks%20GlobalProtect/indicators/iocs.csv
+# Reference: https://www.virustotal.com/gui/file/3de2a4392b8715bad070b2ae12243f166ead37830f7c6d24e778985927f9caac/detection
+
+http://144.172.79.92
+http://172.233.228.93
+http://198.58.109.149
+http://66.235.168.222
+144.172.79.92:443
+172.233.228.93:443
+198.58.109.149:443
+66.235.168.222:443
+
+# Reference: https://twitter.com/johnk3r/status/1780994904526664128
+# Reference: https://www.virustotal.com/gui/file/523285df811fa5e7adb70d0a0c0c6cfee153f24d425b00b7abc26fbc8a26121f/detection
+
+216.250.118.219:1338
+216.250.118.219:5000

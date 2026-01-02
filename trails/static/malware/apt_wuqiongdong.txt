@@ -1,0 +1,51 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt-c-59, apt-q-11, shadowtiger
+
+# Reference: https://mp.weixin.qq.com/s/WBpML3BTxFPHmBgyunmEEA (Chinese)
+# Reference: https://otx.alienvault.com/pulse/61811ddc259f23fdd630e196
+
+http://190.2.147.128
+http://88.150.227.110
+http://89.38.99.11
+37.120.140.233:65505
+62.112.8.79:13
+66.70.220.100:25
+itoxtlthpw.com
+common.js.ftp.sh
+hao.360.mooo.com
+
+# Reference: https://twitter.com/Timele9527/status/1549950577349496832
+# Reference: https://mp-weixin-qq-com.translate.goog/s/jX8D8d-4q46pKHS0AIVgjw?_x_tr_sl=zh-CN&_x_tr_tl=en&_x_tr_hl=zh-CN&_x_tr_pto=wapp
+
+http://193.9.113.180
+http://62.112.8.79
+88.150.227.110:13
+chinfoset.com
+cchiwa.com
+docs-verify.com
+guest-mailclouds.com
+helpdesk-mailservice.com
+mail-drivecenter.com
+mail-hostfile.com
+morning-place.com
+waitnetwork.net
+oversea-cnki.net
+service-hq.com
+smartsystem36.com
+blue.chinfoset.com
+cloud.unite.un.org.docs-verify.com
+data.cchiwa.com
+datasectioninfo.com
+lion.waitnetwork.net
+mail.datasectioninfo.com
+microsoft.ccivde.com
+ms0ffice.guest-mailclouds.com
+netease.mail-drivecenter.com
+netease.smartsystem36.com
+
+# Generic
+
+/cloud/360log/safemon.php
+/sangfor/cloud/edrTL.php

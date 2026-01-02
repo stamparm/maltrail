@@ -1,0 +1,47 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Anon VNC, Pandora VNC
+# CERT-UA: UAC-0198
+
+# Reference:  https://twitter.com/Gi7w0rm/status/1520903004571979776
+# Reference: https://cip.gov.ua/en/news/p-yat-khakerskikh-ugrupuvan-yaki-naichastishe-atakuyut-ukrayinu
+
+hiddenvnc.com
+
+# Reference: https://x.com/malwrhunterteam/status/1820760765520855258
+# Reference: https://x.com/banthisguy9349/status/1824753568378765654
+# Reference: https://x.com/1ZRR4H/status/1820866909518098720
+# Reference: https://www.virustotal.com/gui/file/23b481cfb971a2e3370e5c1c666acf402e2f9bb5ce960fea63044e524cf676d7/detection
+
+http://186.2.171.76
+http://66.94.104.42
+http://66.94.109.162
+http://94.131.121.91
+186.2.171.76:443
+186.2.171.76:4433
+66.94.104.42:443
+66.94.109.162:443
+94.131.121.91:443
+anonvnc.com
+cloudfiles-secure-g0v.su
+nutrasupplier.com
+smart-vnc.com
+smartcloudflare.com
+vitaminer.com
+sync.anonvnc.com
+sync.hiddenvnc.com
+sync.smart-vnc.com
+sync.smartcloudflare.com
+wikisaude.com.br
+3w7pma5rntbxwate6mibwfxzj7viohfjckkqoj4mme3yfkk5zsg63tid.onion
+
+# Reference: https://x.com/StrikeReadyLabs/status/1822937076645470556
+# Reference: https://x.com/Cyber0verload/status/1822993045853225015
+# Reference: https://cert.gov.ua/article/6280345
+# Reference: https://www.virustotal.com/gui/file/02ec55a5a2ad775adccd333edd94ac0bd82129a233736f7240044e085b73b0b3/detection
+
+gbshost.net
+gbshost.org
+/IODWTgN8sswHA6Pn8HXWe1J/tox2/
+/IODWTgN8sswHA6Pn8HXWe1J/

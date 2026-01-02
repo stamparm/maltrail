@@ -1,0 +1,22 @@
+@media screen and (max-width: 680px) {
+    #status_container, #documentation_link, #collaboration_link, #issues_link, .link-splitter, .DTTT_container {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #details_info {
+        display: none !important;
+    }
+    #details_paginate, #details_filter, #details_filter label {
+        text-align: center;
+        float: unset;
+    }
+    #details_length {
+        display: none !important;
+    }
+
+    td:nth-child(1), td:nth-child(2), td:nth-child(3), td:nth-child(5), td:nth-child(6), td:nth-child(9), td:nth-child(11), td:nth-child(12), td:last-child, th:nth-child(1), th:nth-child(2), th:nth-child(3), th:nth-child(5), th:nth-child(6), th:nth-child(9), th:nth-child(11), th:nth-child(12), th:last-child {
+        display: none;
+    }
+}

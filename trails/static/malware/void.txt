@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: void stealer
+
+# Reference: https://x.com/solostalking/status/2003463472651399603
+
+151.243.113.71:8080
+185.100.157.118:8080
+185.107.74.138:8080
+193.221.200.26:8080
+193.233.112.254:8080
+193.233.113.148:8080
+83.217.209.227:8080
+alaskabrudka.xyz
+arabianairlines.sbs
+defender-telemerty.cc
+intercttp.xyz
+jjjgaasda.live
+maincc.icu
+ddccvyclo5p7qdwkvgithmfd2wensrnuvz6hfpjqupgsyzalvq6h4xid.onion
+
+# Reference: https://www.virustotal.com/gui/ip-address/23.94.252.247/relations
+
+voidreciver.sbs
+
+# Generic
+  
+/fakjak3ak/aghgfaasfaa/login
+/fakjak3ak/aghgfaasfaa/stats
+/fakjak3ak/aghgfaasfaa/
+/aghgfaasfaa/
+/fakjak3ak/

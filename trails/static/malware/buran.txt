@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1176116130810912768
+# Reference: https://app.any.run/tasks/9433fcc2-2d18-44be-bc4f-60cce50e05a9/
+
+http://54.39.233.131
+
+# Reference: https://twitter.com/malware_traffic/status/1181236355977924614
+
+http://54.39.233.175

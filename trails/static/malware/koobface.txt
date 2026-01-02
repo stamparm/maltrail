@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2008-080315-0217-99&tabid=2
+
+kyxct.in
+lskjf.in
+rtlyh.in
+ptyoj.in
+
+# Reference: https://x.com/banthisguy9349/status/1822172591257198842
+# Reference: https://www.virustotal.com/gui/file/0b65707dc763b373d32180ca103a05a809a02748cd4e71cab4f5069671e0b6e8/detection
+
+/.sys/?action=fbgen&v=102&crc=669

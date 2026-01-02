@@ -1,0 +1,1085 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2019/10/24/tracking-down-developer-android-adware/ (# AdDisplay)
+
+35.198.197.119:8080
+
+# Reference: https://twitter.com/sh1shk0va/status/1204022927596937217
+
+fbgg.xyz
+bmm.fbgg.xyz
+
+# Reference: https://securelist.com/mobile-subscriptions/91211/
+
+okyesmobi.com
+
+# Reference: https://twitter.com/sh1shk0va/status/1205511108582354944
+
+data.djmixer2018.com
+
+# Reference: https://www.virustotal.com/gui/file/9442af04b50af35a768984fc66c9302d4f840cc3183e0fd55c1e2dda4fab28ce/detection
+
+216.144.236.34:80
+
+# Reference: https://www.virustotal.com/gui/file/f02de53011911ce236fd4aa12356da4a47e0632cedd48bd150d2b99ed79890c8/detection
+# Reference: https://www.virustotal.com/gui/domain/freevideo.publicvm.com/relations
+
+freevideo.publicvm.com
+
+# Reference: https://www.virustotal.com/gui/file/af197de4ef661e2c0f416b64d2681afe77d9236c9d0cab447d89daadeb9e281c/detection
+
+admob.linkpc.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1243800098053767168
+# Reference: https://www.virustotal.com/gui/file/0b336a74a85635956783e20b2546df1629b82777eacac25c42de6232aff46623/detection
+
+easyphonetrack.com
+/spy_phone/test_connection.php
+
+# Reference: https://www.virustotal.com/gui/file/e1288cb54727e673ffbd90ef4fcda2079d9f8a3d7b22b54b4e4726864462987c/detection
+# Reference: https://www.virustotal.com/gui/file/47ea88989bc1b1e90ea66d535c8c412994dd6eddaee82a4b69d3cd0922d7b219/detection
+# Reference: https://www.virustotal.com/gui/file/4bd5d41f9008f2e83a4b20f1104b726d43396eda52466ac3a066f90e432fa509/detection
+# Reference: https://www.virustotal.com/gui/ip-address/103.230.236.33/relations
+# Reference: https://www.virustotal.com/gui/file/adee9a56c951603db3f529c60c9b3f33bb3ebb36de0e14357b68bbfc1cb73dca/detection
+
+103.230.236.33:7002
+103.230.236.33:7003
+108.177.126.188:5228
+115.231.99.251:5224
+117.121.49.79:7001
+118.89.97.82:8000
+121.46.20.44:7006
+121.46.30.54:7000
+124.160.158.19:5224
+153.37.235.46:5287
+183.131.1.79:5224
+183.232.25.180:7000
+183.232.25.185:7002
+203.205.146.122:14000
+210.14.153.100:7001
+43.247.88.117:7009
+47.99.133.113:8726
+[a-z]{1}\.appjiagu\.com
+/ad-service/ad/mark
+/jiagu/mark/msg
+/jiagu/mark/upgrade
+/jiagu/msgs
+/jiagu/t/infos
+
+# Reference: https://www.virustotal.com/gui/domain/okyesmobi.com/relations
+
+okyesmobi.com
+
+# Reference: https://twitter.com/ReBensk/status/1253577450732175361
+# Reference: https://www.virustotal.com/gui/file/5a713ab48f267ee3d0aff6e9391b8fad90b46d35a1ffe805714084f1db819fa9/detection
+
+corona389.com
+covid389.com
+indo389.com
+nomor389.com
+rmhggk.com
+sgp389.com
+togel389.com
+togel389.net
+togel389.xyz
+
+# Reference: https://documents.trendmicro.com/assets/Appendix_AdwareCampaignIdentifiedFrom182GameandCameraAppsonGooglePlayandThird-PartyStoresLike9Apps.pdf
+# Reference: https://www.virustotal.com/gui/domain/atc.anncute.com/relations
+
+atc.anncute.com
+
+# Reference: https://twitter.com/ReBensk/status/1263078801866539009
+
+cerberusapp.com
+
+# Reference: https://twitter.com/ReBensk/status/1264966323005726721
+
+dx20.siweidaoxiang.com
+
+# Reference: https://securelist.com/in-app-advertising-in-android/97065/
+# Reference: https://otx.alienvault.com/pulse/5ed008e401d1cb8a6361b42e
+
+ti.domainforlite.com
+uu.domainforlite.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1271078722364485635
+
+viptrack.pro
+
+# Reference: https://twitter.com/malwrhunterteam/status/1267493474359742465
+
+cocospy.com
+
+# Reference: https://www.virustotal.com/gui/file/075b63d6402f73369885719b88eea0ee09782f5c6c973a7687498bfd797c5b59/detection
+
+appsgeyser.com
+
+# Reference: https://www.virustotal.com/gui/domain/mobileslocator.info/relations
+
+mobileslocator.info
+
+# Reference: https://twitter.com/malwrhunterteam/status/1280939994622955520
+# Reference: https://twitter.com/midnight_comms/status/1280942919390769152
+# Reference: https://twitter.com/midnight_comms/status/1280943751985352705
+# Reference: https://twitter.com/malwrhunterteam/status/1281587594825019395
+
+andmon.ru
+anmon.ru
+amon.su
+android-monitor.ru
+android-monitor1.ru
+android-police.ru
+droimon20.ru
+monitor-android.ru
+
+# Reference: https://www.virustotal.com/gui/domain/co1linesu.ru/relations
+
+co1linesu.ru
+
+# Reference: https://twitter.com/malwrhunterteam/status/1285976285777473537
+# Reference: https://www.virustotal.com/gui/file/d1be492e47d62d6254871179c1d93752dbbcdc7b95470ace2870876068d9ea0e/detection
+
+spy-datacenter.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1294266667078430722
+
+mintrack.vip
+
+# Reference: https://twitter.com/malwrhunterteam/status/1287795588659060742
+
+neatspy.vip
+
+# Reference: https://twitter.com/malwrhunterteam/status/1288876216741756930
+
+trackier.vip
+
+# Reference: https://www.virustotal.com/gui/domain/ad-sdk.com/relations
+
+ad-sdk.com
+
+# Reference: https://www.virustotal.com/gui/file/15605ced1dad556841c2b03dae16485dc6b5458b3483e05377300a1ab242b03e/detection
+
+appsonee.ru
+
+# Reference: https://twitter.com/malwrhunterteam/status/1297075039913889793
+
+p2r.eu
+rofon.pl
+
+# Reference: https://www.virustotal.com/gui/file/79e6f6f4f3b97f63bcafb96ad48b240a347d4686cf26d45769b0ed42c72ba8c8/detection
+
+24la.top
+9iqcc.com
+fgwz.la
+
+# Reference: https://www.virustotal.com/gui/file/10249c439bcc5aa3188740b6ce9340b4b5fd5d9046b330519894ae2b65228c18/detection
+
+downloadandroidappapkmobile.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/140.205.143.143/relations
+
+http://140.205.143.143
+
+# Reference: https://twitter.com/bl4ckh0l3z/status/1301888619423162369
+# Reference: https://twitter.com/bl4ckh0l3z/status/1301889393641259012
+# Reference: https://www.virustotal.com/gui/file/090a9f47705fe00b60a7659ce926462943be2608e616359410fa0a3306646da4/detection
+
+d1wp6m56sqw74a.cloudfront.net
+
+# Reference: https://www.virustotal.com/gui/file/7022a2c3651de24a5462e4f1449e4e1d0f9590bdaf502777d68203235b08885d/detection
+
+fb7961un.bget.ru
+
+# Reference: https://twitter.com/NtSetDefault/status/1273407133476950016
+
+gostat.3g.cn
+goupdate.3g.cn
+
+# Reference: https://twitter.com/malwrhunterteam/status/1305919390110625803
+
+fix5.info
+
+# Reference: https://twitter.com/bl4ckh0l3z/status/1318143667333484549
+# Reference: https://www.virustotal.com/gui/file/a72f4b1b7555fd6b2c07211ff04618f9dc474640bc641b76753a98b4f08c849d/detection
+
+all-tracker.appspot.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/112.65.70.244/relations
+# Reference: https://www.virustotal.com/gui/file/20cf193b0834f8f8d96123b3632bc399ae7d6926bb08ddeef7890b1a3f1e3555/detection
+# Reference: https://www.virustotal.com/gui/file/ca9ab26f28cdb22aebac03ec98b2d685c2da94b6e9c7279ffa460c1fbac13879/detection
+
+c.sayhi.360.cn
+ebjvu.cn
+ez4q2.cn
+
+# Reference: https://www.virustotal.com/gui/file/065a303228aedaa959590458411e3903320fc43b580ef59dbda6b010d29eead1/behavior/VirusTotal%20Droidy
+
+android.bugly.qq.com
+config.saffffedk.com
+
+# Reference: https://www.virustotal.com/gui/domain/tansacethatron.info/relations
+
+tansacethatron.info
+
+# Reference: https://www.virustotal.com/gui/file/4844428109fd49b487a1a58ffcf77e767c6f17abd2af7b47167fd9d9572d41a9/detection
+
+14.215.171.169:9009
+/gamesdk/advert.jsp
+/gamesdk/doroot.jsp
+
+# Reference: https://www.virustotal.com/gui/file/c9b20fae8c56cea06085412724334084794a3acc7d4d00a7ed86fd078412956e/detection
+
+g3app.com
+
+# Reference: https://www.virustotal.com/gui/domain/app.wapx.cn/relations
+
+app.wapx.cn
+
+# Reference: https://twitter.com/bl4ckh0l3z/status/1345425686488612865
+# Reference: https://www.virustotal.com/gui/domain/mobikwik.com/detection
+# Reference: https://www.virustotal.com/gui/file/54233ca488ce498956cd6dbbb3d5d6492ebb1fc6477b14b34b53b16a04b1d7c4/detection
+
+jio.com
+rapi.mobikwik.com
+
+# Reference: https://www.virustotal.com/gui/domain/iface.zzwy168.com/relations
+# Reference: https://www.virustotal.com/gui/domain/line.zzwy168.com/relations
+# Reference: https://www.virustotal.com/gui/domain/sp.zzwy168.com/relations
+# Reference: https://www.virustotal.com/gui/domain/sp1.zzwy168.com/relations
+
+iface.zzwy168.com
+line.zzwy168.com
+sp.zzwy168.com
+sp1.zzwy168.com
+
+# Reference: https://www.virustotal.com/gui/domain/yz.wixsd.com/relations
+
+yz.wixsd.com
+
+# Reference: https://www.virustotal.com/gui/file/30ef7844bc89a00470dd98c52ec356db62533315d458d98bb858e1fa89885245/detection
+# Reference: https://www.virustotal.com/gui/ip-address/119.29.29.29/relations
+# Reference: https://www.virustotal.com/gui/domain/plugin-check.egret.com/relations
+
+http://119.29.29.29
+110.43.33.145:8080
+plugin-check.egret.com
+
+# Reference: https://www.virustotal.com/gui/file/1c8abde1aef379f903b780d6160e3d57d8bb6821e07888d272a509d84e42b7de/detection
+
+182.92.235.109:1234
+47.75.37.155:1234
+
+# Reference: https://www.virustotal.com/gui/domain/shrturl.site/relations
+
+shrturl.site
+
+# Reference: https://www.virustotal.com/gui/file/4a17ecb2a2d03a28708943eb01c151d09a991a98a308b640367d8068553fe2dc/detection
+
+picknstake.com
+
+# Reference: https://www.virustotal.com/gui/domain/veryfastapk.com/relations
+
+veryfastapk.com
+
+# Reference: https://www.virustotal.com/gui/domain/mob-stats.com/relations
+
+mob-stats.com
+
+# Reference: https://www.virustotal.com/gui/domain/mobile-tds.com/detection
+
+mobile-tds.com
+
+# Reference: https://www.virustotal.com/gui/domain/flupak.ru/relations
+
+flupak.ru
+
+# Reference: https://www.virustotal.com/gui/domain/applog.uc.cn/relations
+
+applog.uc.cn
+
+# Reference: https://www.virustotal.com/gui/file/2a574107b01743db1a9e32a1d1ffa70f5cecb42fe396a19773b380d8c0da4f74/detection
+
+114.55.93.104:9004
+139.129.132.111:8001
+
+# Reference: https://www.virustotal.com/gui/file/71de1ec3ff93e0d95c86c81ce89be1aa1fb58d6d7b936ddfc30ea2ccfa265858/detection
+# Reference: https://www.virustotal.com/gui/file/d5873242111d9a3e821dc50f221460221636bd0500500074f2b66a488f514ee5/detection
+
+115.159.131.193:10001
+115.159.131.193:10002
+115.159.131.193:10201
+
+# Reference: https://www.virustotal.com/gui/domain/uiltyfores.fun/relations
+
+uiltyfores.fun
+
+# Reference: https://www.virustotal.com/gui/file/b0b90abff8a2eb5ba7c6d2c346fabc0f8f6a0034b6189a87f723e11fcd554511/detection
+
+162.243.164.124:8080
+chatj.goldenbirdcoin.com
+
+# Reference: https://www.virustotal.com/gui/file/dc1a889aca76abdb76134ceaee0ca567845f1eef186b1ccdeb436b083f47c021/detection
+
+attresswhethe.fun
+professonsd.top
+
+# Reference: https://www.virustotal.com/gui/domain/adsdklead.com/relations
+
+adsdklead.com
+
+# Reference: https://www.virustotal.com/gui/file/ded96f94ab45bdb1e1a7380372bde2d76f81a91113aebe50ee45ec955cca3d16/detection
+
+ftpstudio8apps.hopto.org
+
+# Reference: https://www.virustotal.com/gui/domain/android.revmob.com/relations
+
+android.revmob.com
+
+# Reference: https://www.virustotal.com/gui/file/3669988a6eb8e3985b9aa59e9fedaa22b3c9416977d8f34ee86bf774661de714/detection
+
+zy.bql66.xyz
+/User/666666/0/jc/
+
+# Reference: https://www.virustotal.com/gui/file/da174f79c250c28ff9d6ce02511e6b7baa3ee0e13bd905c8ed8c37553c66bcd2/detection
+
+8.210.88.13:8080
+
+# Reference: https://www.virustotal.com/gui/file/88a8a8e837d67b334e6631dec233395489e82c00ef216145583841abf37637fd/detection
+
+prodlift.info
+prodlift.net
+prodliftnet.info
+techpoint.mobi
+
+# Reference: https://www.virustotal.com/gui/file/aa301b6e04ab2d5d134dfd92b22fe865fbb47423c2e5ab49b7b63cd61273ce86/detection
+
+danez.free.fr
+danez02600.ddnsking.com
+
+# Reference: https://www.virustotal.com/gui/file/649b0e3c4286391144c1d4247fdf38d7b7f5be0d6edfc046cb72d39164561c8a/detection
+
+enhanced.myftp.biz
+minhawebtv.online
+
+# Reference: https://www.virustotal.com/gui/file/8b3a18dabdf432db0147ee49d89f3b316903f4a87f2e6080e1da551912cbae0a/detection
+
+blackplay.ddns.net
+blackplay.space
+
+# Reference: https://www.virustotal.com/gui/file/368aef4f2fc2a3131f014236a959047fe5abc1967918e57e6c786828c1184513/detection
+# Reference: https://www.virustotal.com/gui/file/ca4c7a514509d84ed4c4ab3ef6c06454339799900256b6953ef4cd42ec3c2f9f/detection
+# Reference: https://www.virustotal.com/gui/file/000315fa8ff836283289c4352cfafaee97304cb8edd53958630453432d85c15e/behavior
+
+leadbolt.net
+leadboltads.net
+leadboltapps.net
+leadboltmobile.net
+ad.leadbolt.net
+ad.leadboltapps.net
+
+# Reference: https://www.virustotal.com/gui/file/96a3abe08b0c0c88d7a23af94fb5c2fd29b88b575604c986be8d13e10369b640/detection
+# Reference: https://www.virustotal.com/gui/file/0d457b8bb5741ca4b34d08dadcd44db273a0175d5d630217a8c466ba1bf80a52/detection
+# Reference: https://www.virustotal.com/gui/file/1b21355476eb07f8ab5bb79afeea3703a84b8b1d59cc1f18f4c6c92b46b6ec1a/detection
+# Reference: https://www.virustotal.com/gui/file/fa2539665db15e0d6cb519c253aec57f097c66d97f8bd6b62e83f72cbf0e390c/detection
+
+103.219.29.34:8081
+223.202.132.66:1883
+23.234.27.209:8181
+23.234.27.218:8081
+23.234.27.218:8181
+
+# Reference: https://twitter.com/malwrhunterteam/status/1384027287134167041
+# Reference: https://www.virustotal.com/gui/file/fdac05660885c0875e6f807fb9e6a11afb6bde14e2cd5fd24f603c28b2cc3c1a/detection
+
+tchsrvce.com
+
+# Reference: https://www.virustotal.com/gui/domain/stephenpjones.com/relations
+
+stephenpjones.com
+
+# Reference: https://www.virustotal.com/gui/domain/stat.appioapp.com/relations
+
+stat.appioapp.com
+
+# Reference: https://www.virustotal.com/gui/domain/m.96u.com/relations
+
+m.96u.com
+
+# Reference: https://www.virustotal.com/gui/file/8d54bbb91ea8f86d5de6de0644af7ac0c18ebef49bfa285a8a80c57e1a958c78/detection
+
+admarvel.link
+cdn.admarvel.link
+
+# Reference: https://www.virustotal.com/gui/file/764ccf8e1a0b9296e779d305c4cbd670956796a25822775e0bd3558bc82de1f0/detection
+
+appodeal.link
+ad.appodeal.link
+
+# Reference: https://www.virustotal.com/gui/domain/yingshi.ml/relations
+
+yingshi.ml
+
+# Reference: https://www.virustotal.com/gui/domain/glom.mobi/detection
+
+glom.mobi
+
+# Reference: https://www.virustotal.com/gui/file/a30961526fee6e09fd5d9b5a478fd2557971c5fea33134bb27c53c98cec0dff3/detection
+
+yourpornapp.com
+
+# Reference: https://www.virustotal.com/gui/file/774ff792b70d646053c4312ad015365e81c185764fe099892f0359cb545db676/detection
+
+222.126.246.252:8080
+shenzhen.us
+
+# Reference: https://www.virustotal.com/gui/file/3bb0dba9195fdd6d9447c43e37f553dce06ea4bad8e04c31a4b5667aec9038f9/detection
+
+218.200.227.123:90
+/wapServer/checksmsinitreturn
+
+# Reference: https://www.virustotal.com/gui/file/7e652c183cba8cad55f47bf5489c92cd50d4e3158f424010246af6ce6889197f/detection
+# Reference: https://www.virustotal.com/gui/file/a817a38d6f4b98b2ba5afffcc01fa05af1857a61e9b1e2a56703d53dbb1f1f2e/detection
+
+http://176.122.170.110
+
+# Reference: https://www.virustotal.com/gui/file/a29a85ac1fa6d3fe0584c7af52559d9c8bef2006097863ceb451c64f1af3652a/detection
+
+167.114.207.224:8383
+176.31.240.87:8005
+176.31.240.87:8025
+176.31.240.87:8035
+89.45.10.155:7777
+
+# Reference: https://www.virustotal.com/gui/file/c60cb1ddf2946dc80d0964823c860955ebe32774043a37ebeec62d0ab4e6e3e7/detection
+
+47.91.170.222:4346
+
+# Reference: https://www.virustotal.com/gui/ip-address/182.254.116.117/relations
+
+http://182.254.116.117
+
+# Reference: https://www.virustotal.com/gui/ip-address/180.150.191.127/relations
+# Reference: https://www.virustotal.com/gui/file/bab38eb899758207a4745ec5bbd93af3e2f9407cd10d0f2822177e9e90c4cb54/detection
+
+http://180.150.191.127
+
+# Reference: https://www.virustotal.com/gui/ip-address/180.150.189.181/relations
+# Reference: https://www.virustotal.com/gui/file/96b6ad9f1fb48787063fe2399e6e3d7e609365fc346d60fd2a4dc31413e7ef19/detection
+
+180.150.189.181:88
+
+# Reference: https://www.virustotal.com/gui/file/5cc8abd9f2bca50981b59fedc942198f5ce0b32412f99c760c50b6eccc61ef9d/detection
+
+http://114.55.98.58
+http://119.29.29.29
+http://121.36.11.191
+http://123.56.234.77
+
+# Reference: https://www.virustotal.com/gui/file/c5b4f5944f20be85e602b08d276b62fdab496eb6e0569196727dfb2e412c31ff/detection
+
+39.108.42.112:8080
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.113.120.215/relations
+
+http://45.113.120.215
+
+# Reference: https://www.virustotal.com/gui/ip-address/210.56.53.18
+
+http://210.56.53.18
+
+# Reference: https://www.virustotal.com/gui/file/522151d56d7339e0b8ee52ca4ef5f59dc94c330f653393c257f60bae5c2978fd/detection
+
+dior-aroma.ru
+
+# Reference: https://www.virustotal.com/gui/domain/bestphoneapps.mobi/relations
+
+bestphoneapps.mobi
+
+# Reference: https://www.virustotal.com/gui/file/138201f122c00ef31d7737a1964550cefd55c25e1e13f3e23efa755cba72879d/detection
+
+kinoleyka.com
+
+# Reference: https://www.virustotal.com/gui/file/d399c16d002a21eb38dee0aee7c5621071bca9bbfa6bbd0bc943aceab82f5e6f/detection
+
+adjust.live
+
+# Reference: https://www.virustotal.com/gui/file/e36e2e5c93ad88e7d658c7b4d1b571bd01992b0c9d20105d901266dbe51b3978/detection
+
+pk-app.pk051.com
+
+# Reference: https://www.virustotal.com/gui/file/45f12e0c6d7ed0241fee85ee9ef5f6b166cedaa6b0a6b11c8131a0220650360a/detection
+
+app-auth.pk1353.com
+pk-appv2.pk051.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/192.241.161.163
+
+http://192.241.161.163
+
+# Reference: https://www.virustotal.com/gui/file/8f4bbc0dca7842761a9025508b0ce988ebb6a37c35117dcf41d82c898a49427a/detection
+
+2017p666.com
+p666pay.com
+
+# Reference: https://www.virustotal.com/gui/domain/padmob.com/relations
+
+padmob.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/139.180.139.83/relations
+
+http://139.180.139.83
+
+# Reference: https://www.virustotal.com/gui/domain/api.adsnative123.com/relations
+
+api.adsnative123.com
+
+# Reference: https://www.virustotal.com/gui/file/8149bceeb215725bb8815e068c622f0e22782fdd1f3d0b8a46204d79ba754fb2/detection
+
+nude-moon.xyz
+
+# Reference: https://www.virustotal.com/gui/file/f22a264900622f9cc78772597e3014206cde3c18fda9cc44d3d7dde1db848117/detection
+
+video-sadik.ru
+
+# Reference: https://www.virustotal.com/gui/file/7e60e769b8a13b96603e889cde37a9b63319d80895c9c5e1d968afe29fce9cdc/detection
+
+http://203.107.1.65
+
+# Reference: https://www.virustotal.com/gui/domain/adskkkkk.com/relations
+
+adskkkkk.com
+
+# Reference: https://www.virustotal.com/gui/file/cd9dcc8565fa3dac872bd54ba80407a3909cffb69a5e54ec2b2f096ea0647b6d/detection
+
+104.21.89.60:8080
+64.137.255.24:8080
+imobuy.com
+/imobuy_2/track/device?bi=
+
+# Reference: https://www.virustotal.com/gui/domain/3g518.com/relations
+
+3g518.com
+
+# Reference: https://www.virustotal.com/gui/file/c31c0e965944d191ee3a664480f757827d40442b98bd4806cfdb4068c1f92db6/detection
+
+mmorpg-top.ru
+
+# Reference: https://twitter.com/midnight_comms/status/1466964511840215041
+# Reference: https://www.virustotal.com/gui/file/3e615893efada291557af470cad0d7d9b3cd03ac6996e927fcf241ecf5db1dc5
+
+linkscheater.xyz
+rocklinks.net
+roxymods.xyz
+
+# Reference: https://www.virustotal.com/gui/file/c38fbba1c188f925a1b0526a0062273704d6ea69e82f39b1f78f07871cebd9ba/detection
+
+danez.free.fr
+danez.no-ip.biz
+danez02600.ddns.net
+danez02600.ddnsking.com
+
+# Reference: https://www.virustotal.com/gui/file/35bfe43943134977b9e636e927f6a16b47e0abc24904c484a8864897d594ddd3/detection
+
+androidinja.ir
+
+# Reference: https://www.virustotal.com/gui/file/1f686a691c7b55e9bbd09c09c1e544ab8da468133a000f56a758d8b9bc110a05/detection
+# Reference: https://www.virustotal.com/gui/file/43e2aaf36f2f09ad21974d29dd1e13b4d6bc6c3800a1f7cf84443667e0f1bb94/detection
+
+army2.xyz
+
+# Reference: https://www.virustotal.com/gui/file/9ae20a49f5cabbbf8bc5f00d2e5583dc41ea960abec003b9b5cbc9cfadfd42a3/detection
+
+appspk.tk
+
+# Reference: https://www.virustotal.com/gui/ip-address/39.106.93.192/relations
+# Reference: https://www.virustotal.com/gui/file/26930b446b922b1caa0281f28178ed632bf138e9bd09b88f3a5310912d157235/detection
+# Reference: https://www.virustotal.com/gui/file/b9ae454fa127c13d1f92089f0a5bdf99bb61a5ab81155fa9cda346edf48de4c4/detection
+
+39.106.93.192:4080
+
+# Reference: https://www.virustotal.com/gui/file/be213916731932adbd469c9335b6b11bb4ad6e23adbf1907cbce921fad412da8/detection
+
+pubg.xtiii.cn
+
+# Reference: https://www.virustotal.com/gui/domain/glanmoran.com/relations
+
+glanmoran.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/82.97.9.52/relations
+# Reference: https://www.virustotal.com/gui/ip-address/82.97.9.54/relations
+# Reference: https://www.virustotal.com/gui/file/f8295fe047bffdfb37585236a712e57ae7c44fd90284cd79a658318fa41b902f/detection
+
+http://82.97.9.52
+http://82.97.9.54
+securemobilepay.mobi
+/wap/appli_android/android_data.pyl
+/wap/appli_android/android_etat.pyl
+/wap/appli_android/android_pub.pyl
+/wap/appli_android/android_get_track.pyl
+/wap/appli_android/android_quota_sms.pyl
+/wap/appli_android/android_pub.pyl
+/wap/appli_android/android_set_track_alias.pyl
+/wap/appli_android/conversations_am.pyl
+/wap/appli_android/list_video_appli_android.pyl
+/wap/appli_android/
+/wap/charme_android_catch_youtube_v/
+/appli_android/
+/charme_android_catch_youtube_v/
+
+# Reference: https://www.virustotal.com/gui/domain/qp8u.com/relations
+# Reference: https://www.virustotal.com/gui/file/3dcea48a9ab0a15dfbefae40d86a6c4e963406ae327b0f49ac52af7c49d134b0/detection
+
+cq6y.com
+pgd8.com
+qp8u.com
+m.cq6y.com
+cq6y.pgd8.com
+cq6ydl.qp8u.com
+cq6yimg.qp8u.com
+drimg.qp8u.com
+pjwdl.qp8u.com
+pjwimg.qp8u.com
+ysimg.qp8u.com
+
+# Reference: https://www.virustotal.com/gui/file/008eab30e8c4adb3eb47103bb6903d98756b8efe4ffd4dfb5ee97e92a1f8c5db/detection
+
+http://203.107.1.1
+http://203.107.1.65
+/122285/sign_d?host=
+/sign_d?host=
+
+# Reference: https://www.virustotal.com/gui/file/1604890fe1befaf0932ee2725040d559c8f6911c7910d72cf7ced087899f48e9/detection
+
+http://106.11.61.135
+http://106.11.61.137
+http://203.107.1.33
+/amdc/mobileDispatch?appkey=
+/187654/d?host=
+
+# Reference: https://www.virustotal.com/gui/domain/omnatuor.com/relations
+
+omnatuor.com
+
+# Reference: https://www.virustotal.com/gui/file/1268cf2664a4771703bd0a72682d21b5200a33aad2b211e999682511af39eab0/detection
+
+http://39.97.9.213
+120.55.66.216:8082
+/shanghaijinshu/
+
+# Reference: https://www.virustotal.com/gui/ip-address/147.139.40.148/relations
+# Reference: https://www.virustotal.com/gui/file/29b781ad5c499931d43503aec0363b830ec57bef2fd1a1eab833813fcdcdf88d/detection
+# Reference: https://www.virustotal.com/gui/file/444bcf05a445d12b8585bd26ae74dfcdeaa11dc6785436e674b5364c8a93c626/detection
+
+dreamloan.cc
+admin.dreamloan.cc
+api.dreamloan.cc
+callback.dreamloan.cc
+webpay.dreamloan.cc
+
+# Reference: https://www.virustotal.com/gui/file/3d037afb97e520b2c3a667ea025860f3fefab52558dc6326ea1ec92102a1b925/detection
+
+socialtools.ir
+
+# Reference: https://www.virustotal.com/gui/domain/xpromo-2013.herokuapp.com/relations
+
+xpromo-2013.herokuapp.com
+
+# Reference: https://www.virustotal.com/gui/file/84a02f8204acf339a0163c197783bbcf866a594ee999193037bd723791c078e2/detection
+
+http://203.119.217.116
+zhuoju.xyz
+apivvv.zhuoju.xyz
+
+# Reference: https://www.virustotal.com/gui/file/974d57885feffa366e3a9d3dde0c5dd670b965c4e5c49f967ff920b2940a1859/detection
+
+http://182.254.116.116
+
+# Reference: https://www.virustotal.com/gui/file/417050e482d4f2b6ac50083e6aca06c43bf0bd36309f4715ddcca083f049b237/detection
+
+94.182.98.173:8080
+jayezeh.cloudns.asia
+
+# Reference: https://www.virustotal.com/gui/domain/shuobofootball.xyz/relations
+# Reference: https://www.virustotal.com/gui/file/019e6911ffda0de05b0ff4427a3758e775e6f2fd50a2fcc55820a6362b28e645/detection
+
+211.99.103.107:88
+45.117.11.35:88
+45.117.11.52:88
+47.243.71.238:88
+shuobofootball.xyz
+pay.shuobofootball.xyz
+
+# Reference: https://www.virustotal.com/gui/file/66f1c53cb7278eb111911e8e003dc28b0cb34dcb2c8143e5bc39aa4c673872ad/detection
+
+77.232.39.253:2050
+glg.333wins.com
+
+# Reference: https://www.virustotal.com/gui/file/055dc1fc2c5452e56e4fae275f6452f4448131a9a54d29cee3f306b5f10070bc/detection
+
+http://101.35.101.89
+http://43.129.220.25
+cp2s.xyz
+subsworker.bid
+r2001.oss-cn-shanghai.aliyuncs.com
+ry8.oss-cn-shanghai.aliyuncs.com
+
+# Reference: https://www.virustotal.com/gui/domain/omnatuor.com/relations
+
+omnatuor.com
+
+# Reference: https://www.virustotal.com/gui/file/dd50fd8b3b3ee27144575cf9ac4d15e1177b7b92ac13d6da26992bfacfc84bd9/detection
+
+simplewordbook.45qq.ltd
+
+# Reference: https://www.virustotal.com/gui/domain/c-ccccc.cc/relations
+# Reference: https://www.virustotal.com/gui/ip-address/101.133.138.181/relations
+# Reference: https://www.virustotal.com/gui/file/fb9a910e212e23298fbf22104b1693cc99f070b3e40745b338362db9806d5a25/detection
+
+http://101.133.138.181
+101.133.138.181:8777
+c-ccccc.cc
+fu44.pw
+
+# Reference: https://www.virustotal.com/gui/file/0000e0ad9eb7ec8238c4f12833e3a88806aa204b89d5f50de67e9a5a38764c64/detection
+# Reference: https://www.virustotal.com/gui/file/000ddcca53633e01d53e1b9dcbbd6ac51afe05ff46e0766cb975baf1add3265f/detection
+
+115.28.52.43:8080
+my.zhxone.com
+pbj.jinchibao.net
+plus.zhxone.com
+v.wifiwin.cn
+
+# Reference: https://www.virustotal.com/gui/file/00140261bdd355c50a7c5483a9a993e305605c03c4280324d587b13ef5af320d/detection
+
+ep.jinchibao.net
+plus.zhxone.com
+sdkjk.idmzone.com
+sdks.zy333.cn
+
+# Reference: https://www.virustotal.com/gui/file/955f9a5c632aad3d0a1558622ee28167980cfb43fd68518b1953177dff179fb2/detection
+
+106.75.53.182:10002
+120.26.3.124:888
+156.224.96.163:888
+45.39.106.132:888
+47.254.19.2:888
+jkys567.com
+anzhuo.jkys567.com
+ios.jkys567.com
+pro.jkys567.com
+
+# Reference: https://www.virustotal.com/gui/file/15bd7f961eb5faf966bf657d8e341ada2da3607cff6f57523e8c9fd1463cb138/detection
+
+0baa5f33.n.funnullv9.com
+guon111.xyz
+uuc.guon111.xyz
+
+# Reference: https://www.virustotal.com/gui/file/0695ee8c60e28a4bef5774621d209019439ce06e335db509f10b86f51c724c68/detection
+
+aoqkl.xyz
+bjmft.xyz
+dnvzc.xyz
+guon111.xyz
+guon222.xyz
+guon333.xyz
+guon444.xyz
+hpdzf.xyz
+nxufa.xyz
+pjuip.xyz
+sihsf.xyz
+swvag.xyz
+xofxn.xyz
+yteqo.xyz
+uuc.aoqkl.xyz
+uuc.bjmft.xyz
+uuc.dnvzc.xyz
+uuc.guon111.xyz
+uuc.guon222.xyz
+uuc.guon333.xyz
+uuc.guon444.xyz
+uuc.hpdzf.xyz
+uuc.nxufa.xyz
+uuc.pjuip.xyz
+uuc.sihsf.xyz
+uuc.swvag.xyz
+uuc.xofxn.xyz
+uuc.yteqo.xyz
+picc-sum.s3.ap-east-1.amazonaws.com
+
+# Reference: https://www.virustotal.com/gui/file/58b81fa7e1b803538f921535c4b72917851970998dbcbeccef451e5bb812fc16/detection
+
+059600590b7a.org
+1d23f364e9b0.org
+227faf4e90c4.org
+59386f21552d.org
+5d20d3d5918f.org
+5d4c3f47cf3c.org
+5ed5ca64994e.org
+60fa2d754f8d.org
+622707d2c943.org
+93c74f9ca77c.org
+973347703a16.org
+aa30a9baac13.org
+bb4aee94ca70.org
+bbabc36c70e4.org
+bd1061637d92.org
+c80519824223.org
+c9a21e401aa5.org
+ceac45abf588.org
+d354d52518ae.org
+d87eee806634.org
+de878e071fb8.org
+e2ad631b2a83.org
+e3cfa68f0b5a.org
+ea63cd772591.org
+ea6da71817dd.org
+eb9eadbe3848.org
+f67354873b85.org
+
+# Reference: https://www.virustotal.com/gui/file/0fc5e6da2a29ab52ab77278af41eda3edee7494c5644532509897f8d2c6ec693/detection
+
+aff.mclick.mobi
+
+# Reference: https://www.virustotal.com/gui/file/ef121b020b542c90527aa59f4e30e5a3d68430f9e6d016c088fd308a8f708221/detection
+
+appmaket.giize.com
+
+# Reference: https://www.virustotal.com/gui/domain/sparkskillzs.com/relations
+
+sparkskillzs.com
+
+# Reference: https://blog.cyble.com/2022/11/30/fraudulent-digital-lending-andriod-app-steals-users-sensitive-data/
+# Reference: https://otx.alienvault.com/pulse/63888045dddb253caea1e2b0
+
+api.loanbee.tech
+sentry.weza.tech
+
+# Reference: https://www.virustotal.com/gui/file/0009dc6ad692ef42a290002a196641503fe3cde841d9217f1521f0a369094426/detection
+
+api.birbira.xyz
+api.oradaph.pw
+api.tridrongo.info
+arb.grattomania.space
+
+# Reference: https://www.virustotal.com/gui/file/1469559b1fddd9d14abccd01926b69d9b2413823d930f3bc2288c06a0e374943/detection
+
+134.122.135.75:60146
+
+# Reference: https://www.virustotal.com/gui/file/5f6ff9420855a2c45343f4e5a94bfc8595a83e2ccb15e65bfb9be0daef4ef9ef/detection
+
+http://106.14.171.33
+47.99.219.178:8080
+
+# Reference: https://www.virustotal.com/gui/file/00089643b17136ef3073908b5bcb395d36464b870467e50e910d531eab7a5a37/detection
+
+bigappboi.com
+clickfam.com
+
+# Reference: https://www.virustotal.com/gui/file/00ce5e1675879a4083b42aecc10deab5b64a0fd9b86f567421d6bdc156b860af/detection
+
+danez.free.fr
+danez.no-ip.biz
+danez02600.ddns.net
+danez02600.ddnsking.com
+
+# Reference: https://www.virustotal.com/gui/file/00dbf7146d68e49a910e3ec07eb978748543a6ae74a3b0bd736540e434cd975d/detection
+
+http://122.224.19.80
+http://115.231.216.109
+
+# Reference: https://www.virustotal.com/gui/file/d3d70b020d816a62f06df89517d0ae669e19d90884cfa143cca4b671b4e48ec4/detection
+
+http://100.42.74.199
+
+# Reference: https://www.virustotal.com/gui/ip-address/47.99.219.178/relations
+# Reference: https://www.virustotal.com/gui/file/001e8517c3114c6b02047fb2fb6888b7c80d7d99fc4810267c745e666d6421a9/detection
+
+47.99.219.178:8081
+
+# Reference: https://www.virustotal.com/gui/ip-address/106.14.119.141/relations
+# Reference: https://www.virustotal.com/gui/file/01c8ed914226d94e3a385912be404a0fd1594b3e8ae95edd70d92ec377752a59/detection
+
+http://211.99.99.236
+http://47.99.219.178
+106.14.119.141:8080
+211.99.99.236:88
+47.99.219.178:233
+/apijson/xiaapi/
+/apijson/xiaapi/xia1.json
+
+# Reference: https://www.virustotal.com/gui/file/103c39a0ec5c5c66478b00a42d4cfe614a1b70149e0f0cbfe41a853941d8c442/detection
+# Reference: https://www.virustotal.com/gui/file/103c39a0ec5c5c66478b00a42d4cfe614a1b70149e0f0cbfe41a853941d8c442/detection
+# Reference: https://www.virustotal.com/gui/file/00131493aa8bce1ae1fd233d94caafcb3e4ae928eab654f0ce3d87d22cf2ac08/detection
+
+gcld.xyz
+loveys.xyz
+woaiys.xyz
+yscxb.xyz
+yscxc.xyz
+api.loveys.xyz
+api.yscxb.xyz
+api.yscxc.xyz
+apicdn.woaiys.xyz
+gcpapi.yscxb.xyz
+ysapi.gcld.xyz
+d2yjkgrjody1qc.cloudfront.net
+d2yqd6s4llxprx.cloudfront.net
+d37xvfvxl95pq8.cloudfront.net
+
+# Reference: https://twitter.com/sysk1ll3r/status/1697054401733550133
+# Reference: https://tria.ge/230829-cqp2sahd98/behavioral1
+
+thetruthspy.com
+protocol-a946.thetruthspy.com
+
+# Reference: https://www.virustotal.com/gui/domain/pm.rqlds.cn/relations
+
+rqlds.cn
+ol.rqlds.cn
+pm.rqlds.cn
+qk.rqlds.cn
+wl.rqlds.cn
+ym.rqlds.cn
+
+# Reference: https://www.virustotal.com/gui/domain/ww.ikswr.cn/relations
+
+ikswr.cn
+cc.ikswr.cn
+hh.ikswr.cn
+qq.ikswr.cn
+tt.ikswr.cn
+ww.ikswr.cn
+ww.ikswr.cn
+
+# Reference: https://www.virustotal.com/gui/file/90e124a3f5a0406fec2e5b413c54b4902a12cf0f0594c4f1c7066c9e244a7269/detection
+
+api.zochao.com
+
+# Reference: https://twitter.com/noexceptcpp/status/1736751864836706438
+# Reference: https://www.virustotal.com/gui/file/e7bf41ee71b2bf14498b340e26f5c697cd15f8af8da362c88b1e7abf802b28c6/detection
+
+a-spy.com
+
+# Reference: https://www.virustotal.com/gui/domain/apkzzz.com/relations
+# Reference: https://www.virustotal.com/gui/file/03ef4cd9a4ff1d62d15dbad294def6ad4af2c65bc4471d5a4b86465b5779d75f/detection
+
+apkzzz.com
+
+# Reference: https://www.virustotal.com/gui/file/a2c891067734dbb22fb7fa48327173b07438acfc8077dc56df85128e77ad4645/detection
+
+116.31.174.58:13130
+116.31.174.58:18181
+douch666.tpddns.net
+/cfsfq_apk_cjwt.html
+
+# Reference: https://www.virustotal.com/gui/file/000011499d68e56e2c5853567c88c58ee20d38e5df538c9899959a040d49e97e/detection
+
+116.205.4.157:8890
+47.91.170.222:8080
+lingte.cc
+imgsx.lingte.cc
+
+# Reference: https://www.virustotal.com/gui/file/07d5b94fb903aa93ddf66c8298e1ccb8f615fd33239b5121b9070d61ca201690/detection
+
+173.231.184.122:9999
+46.8.8.200:9999
+
+# Reference: https://www.virustotal.com/gui/file/c1ec167e03c783615b4db8970975a0bfec61334c109715b61af7c3871c32119f/detection
+
+aqqq.zxuxogt.cn
+
+# Reference: https://twitter.com/noexceptcpp/status/1765374236510527898
+# Reference: https://www.virustotal.com/gui/file/2da13b787e9dcea186e5c1d60eabf9f017c380c963e193ef5026f3a46c911dcd/detection
+
+androidapk.biz
+spykontrol.com
+pc.spykontrol.com
+appkontrol.s3.amazonaws.com
+
+# Reference: https://www.humansecurity.com/learn/blog/satori-threat-intelligence-alert-proxylib-and-lumiapps-transform-mobile-devices-into-proxy-nodes
+
+lumiapps.io
+nsignal.net
+
+# Reference: https://www.virustotal.com/gui/file/00baa478e544b007e0563487bd10d95c101e3286a25a1141c8753468a6d730b3/detection
+
+dsss.gq
+
+# Reference: https://www.virustotal.com/gui/file/7e83453d04b9a28bbf4e618d6ce9c7b3c39ce831ac447345f94d92b10c64a474/detection
+
+truenaira.co
+app.truenaira.co
+
+# Reference: https://www.virustotal.com/gui/file/0006b60beef812e84cdb5003a55cb62f184171d865fc860e3c21264981bb8083/detection
+
+http://47.245.34.200
+121.43.228.180:8583
+
+# Reference: https://twitter.com/RacWatchin8872/status/1788909709249945803
+
+http://23.228.64.5
+http://23.228.77.144
+http://23.228.77.145
+http://23.228.77.147
+http://23.228.77.148
+http://23.228.77.155
+
+# Reference: https://www.virustotal.com/gui/file/000000a512a847e8ed28fdaf433d6dd601a88d74e5dd7d71bd07817b1ce3a2a2/detection
+
+android.downloadatoz.com
+topdata.downloadatoz.com
+
+# Reference: https://www.virustotal.com/gui/file/1f0d3e8ca830582c486a17de697b955e3431adf36418cb1ce9ead5089c60b5d7/detection
+
+freefire2021.giize.com
+
+# Reference: https://www.virustotal.com/gui/file/a949fca2d77feca5289355487f538ce7c2ea6f97ead82808697e0414d50b4b63/detection
+
+akisinn.info
+akisinn.site
+dewrain.life
+dewrain.site
+vaicore.site
+vaicore.store
+vaicore.xyz
+int.akisinn.info
+int.akisinn.site
+int.dewrain.life
+int.dewrain.site
+int.vaicore.site
+int.vaicore.store
+int.vaicore.xyz
+
+# Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/spyloan-a-global-threat-exploiting-social-engineering/
+
+mykreditandfear.com
+nihxdzzs.com
+pegetloanability.com
+hx.nihxdzzs.com
+prep.preprestamoshol.com
+preprestamoshol.com
+su.mykreditandfear.com
+tlon.pegetloanability.com
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-03-19-IOCs-for-Chinese-Language-trojanized-installers.txt
+# Reference: https://www.virustotal.com/gui/file/2232612b09b636698afcdb995b822adf21c34fb8979dd63f8d01f0d038acb454/detection
+
+http://1.192.136.196
+http://1.192.136.207
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/6913
+# Reference: https://www.virustotal.com/gui/file/c62a99449d7adc6f2005c665272db711fdc8ce95307bc557d6be069cc524f799/detection
+
+vanced.to
+
+# Reference: https://www.virustotal.com/gui/file/91a2af45e0827114a3c0b7cdfb358977198b1602016b8dc0ca7fff3e57e736d9/detection
+
+73ed366d3137ec936bd60b1184467776.com
+demaldefaces.top
+postback.info
+chigoe.demaldefaces.top
+
+# Reference: https://www.virustotal.com/gui/file/074fc4cd105dd1f1dfed3a22d4e38d3db19f1243917d959440bb91fd079b7b64/detection
+
+unknownlove.qzz.io

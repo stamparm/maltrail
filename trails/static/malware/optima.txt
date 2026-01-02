@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://web.archive.org/web/20120106212034/http://amada.abuse.ch/blocklist.php?download=domainblocklist
+
+4ego.teleffonov.net
+aukanah1.com
+bezlic2a.net
+bezlica.net
+dieta-doleta.ru
+fletcher9837.ws
+kaxn.ru
+lineage-4u.ru
+nullptr.ipq.co
+oliakoimds67.jino.ru
+rvk.jino.ru
+sukanaf.com
+sukanaf.net
+tolkui.iwl.by
+vasilijgaltsev.com
+white-pc.info
+x2.b0tx.com
+x8.skriptbox.ru
+x9.skriptbox.ru
+zx210.jino.ru

@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/af9977c76770b364ea633569bee7e8da713028fadfee1b6dd7a96884e110bfe8/detection
+
+packetriot.net
+pktriot.net
+
+# Reference: https://blog.eclecticiq.com/china-nexus-threat-actor-actively-exploiting-ivanti-endpoint-manager-mobile-cve-2025-4428-vulnerability
+
+dnstunnel.run
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-20-v10954/2839
+
+btunnel.in
+btunnel.co.in
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-06-23-v10955/2843
+
+localto.net
+localtonet.com

@@ -1,0 +1,71 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: matadoor
+
+# Reference: https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/dark-river-you-can-t-see-them-but-they-re-there/
+# Reference: https://www.virustotal.com/gui/ip-address/172.234.26.236/relations
+# Reference: https://www.virustotal.com/gui/ip-address/51.195.29.43/relations
+# Reference: https://www.virustotal.com/gui/file/ad6da02e3a4c98a29993cceb7a10e7af002fb00df0cd2228f83aea4ccfdf94b6/detection
+# Reference: https://www.virustotal.com/gui/file/a1797d212560de7fd187d0771e8948bd8e0e242bed0ca07665f78076f4e23235/detection
+# Reference: https://www.virustotal.com/gui/file/8c94a3cef4e45a1db05ae9723ce5f5ed66fc57316e9868f66c995ebee55f5117/detection
+# Reference: https://www.virustotal.com/gui/file/4f544e8756373520e98ed12b921ea7e05a93cf0152405ef3ac65133f7c8660a1/detection
+# Reference: https://www.virustotal.com/gui/file/0b06fb7f53bb7963ec2ff89d832b831763706e44d206a4d0a8c813ebee633e22/detection
+
+aliveyelp.com
+bestandgood.com
+bettertimator.com
+biowitsg.com
+cakeduer.com
+cameoonion.com
+capetipper.com
+casgone.com
+cravefool.com
+diemonge.com
+e5afaya.com
+editngo.com
+eimvivb.com
+endlessutie.com
+fetchbring.com
+fledscuba.com
+flowuboy.com
+futureinv-gp.com
+ganjabuscoa.com
+getmyecoin.com
+iemcvv.com
+interactive-guides.com
+investsportss.com
+ipodlasso.com
+ismysoulmate.com
+justlikeahummer.com
+kixthstage.com
+merudlement.com
+metaversalk.com
+mlaycld.com
+moveandtry.com
+myballmecg.com
+nuttyhumid.com
+offernewer.com
+otopitele.com
+outsidenursery.com
+primventure.com
+pursestout.com
+reasonsalt.com
+searching4soulmate.com
+speclaurp.com
+sureyuare.com
+tarzoose.com
+trendparlye.com
+wemobiledauk.com
+wharfgold.com
+xdinzky.com
+zeltactib.com
+ww12.flowuboy.com
+ww12.merudlement.com
+ww12.offernewer.com
+
+# Generic
+
+/chagent?_sid=
+/chagent_sh?_sid=
+/fontsupdate?_sid=

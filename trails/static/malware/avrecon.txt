@@ -1,0 +1,102 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: vilochka
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2016-031523-4708-99&tabid=2
+
+myhostclub.cc
+datanet.cc
+
+# Reference: https://twitter.com/SethKingHi/status/1397814848549900288
+# Reference: https://twitter.com/peterkruse/status/1397840742198951937
+# Reference: https://www.virustotal.com/gui/ip-address/146.185.251.154/relations
+# Reference: https://www.virustotal.com/gui/ip-address/51.158.47.74/detection
+# Reference: https://www.virustotal.com/gui/ip-address/94.228.213.3/detection
+# Reference: https://www.virustotal.com/gui/file/3b54782f1158902e162c1734fea7a4d0a79c439c75ef1038f042c046740eb8d5/detection
+
+188.138.41.157:8001
+agentad.cc
+appclone.cc
+bestonline.cc
+centrjob.cc
+certificatechecker.cc
+copyinv.cc
+crenwat.cc
+currentnow.cc
+doublespeed.cc
+driveinfo.cc
+fastdelivery.cc
+getcash.cc
+getlist.cc
+glomwork.cc
+lableok.cc
+microil.cc
+monek.cc
+objects.cc
+oldbog.cc
+onlineplay.cc
+progood.cc
+speedport.cc
+startsun.cc
+tacon.cc
+telestat.cc
+terminreg.cc
+tune4.cc
+zerophone.cc
+
+# Reference: https://blog.lumen.com/routers-from-the-underground-exposing-avrecon/
+# Reference: https://github.com/blacklotuslabs/IOCs/blob/main/AVrecon_IOCs.txt
+
+http://139.59.231.113
+http://148.72.155.112
+http://148.72.155.174
+http://148.72.155.187
+http://148.72.155.189
+http://155.254.23.254
+http://188.138.41.157
+http://188.138.70.19
+http://209.126.105.43
+http://209.126.107.197
+http://50.30.36.132
+http://50.30.36.27
+http://69.64.55.106
+http://85.25.214.74
+http://85.25.217.95
+139.59.231.113:5178
+148.72.155.112:5178
+148.72.155.174:5178
+148.72.155.187:5178
+148.72.155.189:5178
+155.254.23.254:5178
+188.138.41.157:5178
+188.138.70.19:5178
+209.126.105.43:5178
+209.126.107.197:5178
+50.30.36.132:5178
+50.30.36.27:5178
+69.64.55.106:5178
+139.59.231.113:8000
+148.72.155.112:8000
+148.72.155.174:8000
+148.72.155.187:8000
+148.72.155.189:8000
+155.254.23.254:8000
+188.138.41.157:8000
+188.138.70.19:8000
+209.126.105.43:8000
+209.126.107.197:8000
+50.30.36.132:8000
+50.30.36.27:8000
+69.64.55.106:8000
+85.25.214.74:8000
+85.25.217.95:8000
+85.25.214.74:5178
+85.25.217.95:5178
+cleandone.cc
+utcp.cc
+
+# Generic
+
+/lumi/ping.php
+/lumi/track.php

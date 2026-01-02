@@ -1,0 +1,168 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ta544
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/out-sandbox-wikiloader-digs-sophisticated-evasion
+
+astrolabecommunication.fr/wp-includes/9d8n190dn21.php
+centrograndate.it/plugins/content/jw_sigpro/jw_sigpro/includes/js/jquery_colorbox/example4/images/border3.php
+ilfungodilacco.it/wp-content/themes/twentytwentyone/fnc.php
+inspiration-canopee.fr/vendor/fields/assets/idnileeal/sifyhewmiyq/3jnd9021j9dj129.php
+ip-e-c.nl/wp-content/themes/twentytwentyone/hudiiiwj1.php
+osteopathe-claudia-grimand.fr/wp-content/themes/twentynineteen/blog.php
+studiolegalecarduccimacuzzi.it/Requests/tmetovcqhnisl/vendor/gyuonfuv/languages/vgwtdpera/Requests/5i8ndio12niod21.php
+tournadre.dc1-mtp.fr/wp-content/plugins/kona-instagram-feed-for-gutenbargwfn/4dionaq9d0219d.php
+vivalisme.fr/forms/forms/kiikxnmlogx/frrydjqb/vendor/9818hd218hd21.php
+yourbed.it/wp-content/themes/twentytwentyone/blog.php
+/frrydjqb/vendor/9818hd218hd21.php
+/9818hd218hd21.php
+/kona-instagram-feed-for-gutenbargwfn/4dionaq9d0219d.php
+/4dionaq9d0219d.php
+/sifyhewmiyq/3jnd9021j9dj129.php
+/3jnd9021j9dj129.php
+/twentytwentyone/fnc.php
+/twentytwentyone/hudiiiwj1.php
+/hudiiiwj1.php
+/vgwtdpera/Requests/5i8ndio12niod21.php
+/5i8ndio12niod21.php
+/9d8n190dn21.php
+
+# Reference: https://github.com/pr0xylife/WikiLoader/blob/main/WikiLoader_20.11.2023.txt
+
+baywatchrent.fr/doihn12ijok21.php
+hangdrums.fr/pofoiwjeniofj12.php
+mon-carnet-de-sante.fr/pqoicjein2.php
+ocube-consulting.fr/ofiuewq20o1.php
+/doihn12ijok21.php
+/ofiuewq20o1.php
+/pofoiwjeniofj12.php
+/pqoicjein2.php
+
+# Reference: https://twitter.com/fr0s7_/status/1729197909021954524
+# Reference: https://twitter.com/fr0s7_/status/1729203239969788386
+
+automaticamentes.com
+
+# Reference: https://github.com/pr0xylife/WikiLoader/blob/main/WikiLoader_27.11.2023.txt
+
+artofpinball.fr/iiniid21.php
+electricite-carbonnier.fr/aaiund21dowww.php
+loventi.fr/ioj9d122.php
+myoo.fr/okldmp1p2.php
+profsiena.it/ij0ddd.php
+reservation-taxig7.fr/oijppp1.php
+rocher-notaires.fr/hjdj0dwo.php
+sarl-walter.fr/okldmp1p2.php
+/aaiund21dowww.php
+/hjdj0dwo.php
+/iiniid21.php
+/ij0ddd.php
+/ioj9d122.php
+/oijppp1.php
+/okldmp1p2.php
+
+# Reference: https://github.com/pr0xylife/WikiLoader/blob/main/WikiLoader_18.12.2023.txt
+
+crash-it.it/duyg12d.php
+gya.com.bo/diubg12uin.php
+la-box-de-ginette.fr/iuhd9081j2dk21.php
+onucleo.com.br/uhyvbdkjqwd.php
+verdemanzana.com.bo/idub12ud21.php
+/diubg12uin.php
+/duyg12d.php
+/idub12ud21.php
+/iuhd9081j2dk21.php
+/uhyvbdkjqwd.php
+
+# Reference: https://twitter.com/Cryptolaemus1/status/1747394506331160736
+
+kashmirworldwide.com/ilw4kl.php
+multitraders.net/yv7clr.php
+thekostenfamilys.com/m1b7o3.php
+thichgiban.com/8sjdtu.php
+/8sjdtu.php
+/ilw4kl.php
+/m1b7o3.php
+/yv7clr.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1755575780967321635
+# Reference: https://www.virustotal.com/gui/file/efcf2f13dd57f4f7e2a4e7037104c6fceda84ce4effdc74873f11af715a3ea14/detection
+
+kontaktlines.com
+
+# Reference: https://asec.ahnlab.com/ko/63738/
+
+/twentyten/b9un4f.php
+/twentytwentyfour/34uo7s.php
+/twentytwentyfour/c2hitq.php
+/twentytwentyfour/c9wfar.php
+/twentytwentyfour/dqyzqp.php
+/twentytwentythree/hyhnv3.php
+/twentytwentythree/ovqugo.php
+/twentytwentythree/t51kkf.php
+/twentytwentytwo/n2gd2t.php
+/twentytwentytwo/nnzknr.php
+/twentytwentytwo/pam8oa.php
+
+# Reference: https://github.com/pr0xylife/WikiLoader/blob/main/WikiLoader_26.03.2024.txt
+
+13300.org/wp-content/themes/twentytwentythree/t51kkf.php
+alabamacarhorns.com/wp-content/themes/twentytwentyfour/34uo7s.php
+alternativetracks.com/wp-content/themes/twentytwentyfour/c9wfar.php
+amysinger.com/wp-content/themes/twentyten/b9un4f.php
+lurdyvanafernandesmkd.com/wp-content/themes/twentytwentytwo/pam8oa.php
+yukon.de/wp-content/themes/twentytwentytwo/n2gd2t.php
+/twentyten/b9un4f.php
+/twentytwentyfour/34uo7s.php
+/twentytwentyfour/c9wfar.php
+/twentytwentythree/t51kkf.php
+/twentytwentytwo/n2gd2t.php
+/twentytwentytwo/pam8oa.php
+
+# Reference: https://x.com/Cryptolaemus1/status/1823818909637906458
+# Reference: https://x.com/techevo_/status/1838691460289348038
+# Reference: https://x.com/ValidinLLC/status/1840812627951566858
+# Reference: https://github.com/pr0xylife/Warmcookie-Badspace/blob/main/Badspace_14.08.2024.txt
+# Reference: https://www.virustotal.com/gui/file/f4d2c9470b322af29b9188a3a590cbe85bacb9cc8fcd7c2e94d82271ded3f659/detection
+# Reference: https://www.virustotal.com/gui/file/b7aec5f73d2a6bbd8cd920edb4760e2edadc98c3a45bf4fa994d47ca9cbd02f6/detection
+# Reference: https://www.virustotal.com/gui/file/9d143e0be6e08534bb84f6c478b95be26867bef2985b1fe55f45a378fc3ccf2b/detection
+# Reference: https://www.virustotal.com/gui/file/87f57a7a4b4c83ecb3cdd5f274c95cd452c703de604f68aff6e59964b662e3f8/detection
+
+http://72.5.43.29
+checkfedexexp.com
+libys-new.lol
+servermacosdomain.com
+chrome.checkfedexexp.com
+portals.checkfedexexp.com
+
+# Reference: https://unit42.paloaltonetworks.com/global-protect-vpn-spoof-distributes-wikiloader/
+
+arbeitsschutz-mmk.de/plugins/search/contacts/chrndi.php
+carniceriamartinezadria.com/wp-content/themes/twentytwentyfour/rleoec.php
+elpgtextil.com/wp-content/themes/twentytwentyfour/44snwx.php
+estudioemm.com/wp-content/themes/twentytwelve/d4kih3.php
+jlholgado.com/wp-content/themes/twentytwentyfour/zca2ck.php
+/twentytwentyfour/44snwx.php
+/twentytwelve/d4kih3.php
+/twentytwentyfour/rleoec.php
+/twentytwentyfour/zca2ck.php
+
+# Reference: https://github.com/pr0xylife/WikiLoader/blob/main/WikiLoader_10.02.2024.txt
+
+auditoresdezaragoza.es/modules/dashgoals/t2apqe.php
+hablainglesfacil.com/wp-content/themes/twentytwentytwo/8rw0ar.php
+iconic-tec.de/modules/mod_feed/tmpl/e3ycof.php
+indiaaidfoundation.org/wp-content/themes/edumall-child/ethec4.php
+jalandharagroexport.com/wp-content/themes/twentytwentytwo/vqra4w.php
+lionsclub-issoire.org/wp-content/themes/twentytwenty/io3ryx.php
+sdtruckinglogistics.net/wp-content/themes/twentytwentytwo/cb2v5p.php
+velintra.org/wp-content/themes/twentytwentyone/bthdfl.php
+/dashgoals/t2apqe.php
+/mod_feed/tmpl/e3ycof.php
+/twentytwentyone/bthdfl.php
+/twentytwentytwo/8rw0ar.php
+/twentytwentytwo/cb2v5p.php
+/twentytwentytwo/vqra4w.php
+/twentytwenty/io3ryx.php
+/edumall-child/ethec4.php

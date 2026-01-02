@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.netlab.360.com/fodcha-a-new-ddos-botnet/
+# Reference: https://www.virustotal.com/gui/ip-address/45.88.202.115/relations
+
+folded.in
+fridgexperts.cc
+black.fridgexperts.cc
+xlsbj2011.fridgexperts.cc
+
+# Reference: https://blog.netlab.360.com/ddosmonster_the_return_of__fodcha_cn/
+
+blackpeeps.dyn
+bladderfull.indy
+chinkchink.libre
+chinksdogeaters.dyn
+cookiemonsterboob.com
+doodleching.com
+forwardchinks.com
+funnyyellowpeople.libre
+icarlyfanss.com
+kvsolutions.ru
+milfsfors3x.com
+obamalover.pirate
+peepeepoo.libre
+pepperfan.geek
+respectkkk.geek
+techsupporthelpars.oss
+tsengtsing.libre
+wearelegal.geek
+yellowchinks.dyn
+yellowchinks.geek

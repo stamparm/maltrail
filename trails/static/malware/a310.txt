@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: a310logger, blustealer
+
+# Reference: https://twitter.com/James_inthe_box/status/1410632701871230978
+# Reference: https://www.virustotal.com/gui/file/5dd39fa32d0446752e1e77f66e0d1fb32223feba4bf21ea3551a9f84a01e320c/detection
+
+fyayyildizolcum.com
+
+# Reference: https://tria.ge/210803-xd2l73hjla/behavioral1
+
+sabaint.me
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1577208191385231361
+# Reference: https://bazaar.abuse.ch/sample/46c448666ad8300643c8f42807cac9db14ba882c23eb45ce4aac4f4284fc0cb7/
+
+http://45.155.165.63
+
+# Reference: https://twitter.com/reecdeep/status/1696539420219056590
+# Reference: https://threatfox.abuse.ch/ioc/1152668/
+
+lucd.shop
+mail.lucd.shop

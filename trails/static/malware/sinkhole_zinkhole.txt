@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://who.is/nameserver/ns1.zinkhole.org/
+
+zinkhole.org
+178.32.140.251
+87.98.254.64
+151.80.78.61
+176.31.62.77
+176.31.62.78
+
+# Reference: https://www.reddit.com/r/AskNetsec/comments/3onw2c/looking_for_ips_from_snortsuricata_sinkholes/
+
+176.31.62.76
+94.23.175.2
+
+# Reference: http://suspended-domain.org
+suspended-domain.org

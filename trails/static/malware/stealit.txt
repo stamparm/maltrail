@@ -1,0 +1,166 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: myth stealer
+
+# Reference: https://twitter.com/crep1x/status/1760068698088296718
+# Reference: https://tria.ge/240220-ng26jaga36/behavioral2
+# Reference: https://tria.ge/240220-1awrdsfb3v/behavioral2
+
+http://20.127.165.86
+stealit.onrender.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1771456213366005937
+# Reference: https://twitter.com/r3dbU7z/status/1771456221549138137
+# Reference: https://www.joesandbox.com/analysis/1411948/0/html
+# Reference: https://www.virustotal.com/gui/file/8b63338eda21fab3d8f6962332c8ffe617bcb21287f623ababc9992e24be64eb/detection
+# Reference: https://www.virustotal.com/gui/file/d7eabd0402fa1c6cd5de13a50d96978be63ffee9d8a0094b0d382fe860ed5923/detection
+# Reference: https://www.virustotal.com/gui/file/ddad1649d171367b307aa77f14b10826d6a5ae1d1dc1656ef1a7ddbe6ca43af3/detection
+
+canonato.tech
+erareborn.shop
+nonlyreklamcilik.online
+stealit.online
+nonly.nonlyreklamcilik.online
+
+# Reference: https://x.com/SomeTestLeper/status/1817295211720261706
+# Reference: https://x.com/JAMESWT_MHT/status/1817555134387269960
+# Reference: https://app.any.run/tasks/356e47d4-5c5b-4076-a571-71c3efaeb6d8/
+# Reference: https://www.virustotal.com/gui/file/45b9784d3d22c0e2b414c36124a909ca605a187a9709eb410cd312d388b12a4e/detection
+
+20.199.16.17:443
+
+# Reference: https://threatfox.abuse.ch/browse/tag/stealit/ (# 2024-08-25)
+
+http://4.233.209.62
+20.199.87.174:443
+4.233.209.62:443
+4.233.218.3:443
+40.66.40.211:443
+98.66.170.171:443
+api.hellokittymeowmeow.xyz
+api.ilovecats.life
+deadlywarfare.com
+hellokittymeowmeow.xyz
+ilovecats.life
+ip235.ip-192-95-20.net
+kittycatmeow.xyz
+lxny.xyz
+ransomware.kittycatmeow.xyz
+xrczy.xyz
+
+# Reference: https://x.com/NDA0E/status/1827715428044714450
+
+http://192.95.20.235
+192.95.20.235:3000
+192.95.20.235:443
+192.95.20.235:8080
+
+# Reference: https://x.com/Jane_0sint/status/1923302068208513418
+# Reference: https://app.any.run/tasks/68dbab03-7ba3-4cff-b355-640267818d22
+
+185.224.3.219:8080
+
+# Reference: https://x.com/solostalking/status/1930638160221921720
+# Reference: https://www.trellix.com/blogs/research/demystifying-myth-stealer-a-rust-based-infostealer/
+
+185.224.3.219:443
+82.153.138.221:7340
+cocukporno.lol
+plaquist-simulator.com
+everlight-beta.netlify.app
+luraka-game.github.io
+myth.cocukporno.lol
+yomiragame.blogspot.com
+
+# Reference: https://x.com/AzakaSekai_/status/1931142768929435747
+# Reference: https://www.virustotal.com/gui/file/ffdae1755f2fdb1b468610f58e31b04f82e2716d80020b4086148b057c079f40/detection
+# Reference: https://www.virustotal.com/gui/file/b10fb3ca2dba2caf9f1bdc37421bf6d22930c7f9d4522d8e6c9bf160f44c37f4/detection
+
+161.97.114.114:8080
+dommenu.org
+cakewindgame.blogspot.com
+munalegames.blogspot.com
+tumiyagame.blogspot.com
+
+# Reference: https://x.com/Fact_Finder03/status/1964975980994589007
+# Reference: https://app.validin.com/detail?find=Stealit&type=raw&ref_id=c5325fe5a71#tab=host_pairs (# 2025-09-08)
+# Reference: https://www.fortinet.com/blog/threat-research/stealit-campaign-abuses-nodejs-single-executable-application
+# BANNER_0_HASH-HOST=5848346ee3554b6f6f32c938cf3920af
+# BANNER_0_HASH-HOST=6cea5305c9a1968ed08bc952bdd3731c
+# BANNER_0_HASH-HOST=ceba6d82b715415cfa3ed0849d29ae53
+# BANNER_0_HASH-HOST=750a6fba3f95558a3a1d72b57f412e57
+
+568.wtf
+emrebabakraladam.lol
+fenaciksgodadamlar.lol
+hnstore.store
+iloveanimals.shop
+kodemerdeka.cloud
+nexa.fund
+onro.app
+plempire.cloud
+powerlife.cloud
+qrfassid.website
+seyfooksck.dev
+soeasyinter.com
+special2u.net
+stealitpremium.lol
+stealitpublic.lol
+stealituptaded.lol
+stealitware.lol
+tanotif.com
+worldwars.xyz
+api.fenaciksgodadamlar.lol
+cloud.emrebabakraladam.lol
+cloud.fenaciksgodadamlar.lol
+cloud.stealitpremium.lol
+cloud.stealitpublic.lol
+cloud.stealituptaded.lol
+cloud.stealitware.lol
+cloud.worldwars.xyz
+hub.onro.app
+hub.onro.org
+posterr.airbornetrooper.live
+root.emrebabakraladam.lol
+root.fenaciksgodadamlar.lol
+root.iloveanimals.shop
+root.stealitpremium.lol
+root.stealitpublic.lol
+root.stealituptaded.lol
+root.stealitware.lol
+root.worldwars.xyz
+test.kodemerdeka.cloud
+
+# Reference: https://x.com/Jane_0sint/status/1948058703716122835
+# Reference: https://x.com/BlinkzSec/status/1948068951109292453
+# Reference: https://app.any.run/tasks/25c854e2-cc28-4100-bff7-c9cebdacbcc3
+# Reference: https://www.virustotal.com/gui/file/d133ab0dc7d8c4a6f0f48fa74a678c41739994601ec2f2f01d3f3d097a3a5777/detection
+# Reference: https://www.virustotal.com/gui/file/443728f46919b6ebe021eec32c2e221ff7be9dbd350603247691447807970510/detection
+
+mythstealer.win
+
+# Reference: https://www.virustotal.com/gui/file/264c4a730a67ed4d7ac8f589fcb52619bb75a766969975eb34cb20322b447c02/detection
+
+77.237.242.120:9999
+kedi.mythstealer.win
+
+# Reference: https://community.emergingthreats.net/t/games-and-myths-mythstealer-spotted-in-the-wild/2861
+
+combatshell.com
+combatsouls.com
+pokettohiro.com
+
+# Reference: https://x.com/solostalking/status/1965686151853076890
+
+213.136.81.217:8080
+
+# Reference: https://x.com/solostalking/status/1977578407186809250
+# Reference: https://www.virustotal.com/gui/file/46203e8463db20107c38a7c11b00184ceaf76bd0320ef3c982a9ff6c2092691f/detection
+
+213.136.82.168:8080
+
+# Generic
+
+/api/send/passwords
+/ste4litgroup

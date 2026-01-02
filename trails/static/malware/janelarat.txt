@@ -1,0 +1,197 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zscaler.com/blogs/security-research/janelarat-repurposed-bx-rat-variant-targeting-latam-fintech
+# Reference: https://www.virustotal.com/gui/file/330e5e616861cb2a69f2f443a0540a627bd042043aae17a1639ee5240dd20a6a/detection
+
+http://45.42.160.55
+104.161.94.37:3001
+439mdxmex.damnserver.com
+897midasgold.ddns.me
+9mdxmex.damnserver.com
+aigodmoney009.access.ly
+askmrpc747bm.mymediapc.net
+brockmex57.golffan.us
+cinfintymex.geekgalaxy.com
+cnt-blackrock.geekgalaxy.com
+disrupmoney979.ditchyourip.com
+dmrpc77bm.myactivedirectory.com
+freelascdmx979.couchpotatofries.org
+hotdiamond777.loginto.me
+i89bydzi.dynns.com
+ikmidasgold.ddns.me
+imrpc7987bm.mmafan.biz
+infintymex747.geekgalaxy.com
+infintymexb.geekgalaxy.com
+infintymexbrock.geekgalaxy.com
+irocketxmtm.hopto.me
+izt89bydzi.dynns.com
+j1d3c3mex.homesecuritypc.com
+jinfintymexbr.geekgalaxy.com
+jxjmrpc797bm.mydissent.net
+kakarotomx.dnsfor.me
+kktkarotomx.dnsfor.me
+megaskigoldmex.dvrcam.info
+minfintymexbr.geekgalaxy.com
+myfunbmdablo99.hosthampster.com
+myinfintyme09.geekgalaxy.com
+rexsrupmoney979.ditchyourip.com
+skigoldmex.dvrcam.info
+zeedinfintymexbrock.geekgalaxy.com
+
+# Reference: https://www.virustotal.com/gui/file/8e2b6a9a8249781d61dfeb65dfd1edc9cc3ad062e148abfd73bf05a359f5912d/detection
+
+45.133.18.35:3001
+goldmex.merseine.com
+
+# Reference: https://www.virustotal.com/gui/file/c3b3cf24665e78be302cd9271ee3e9a8aadbdb1d056fcee39153e4efb1810dff/detection
+
+104.161.94.41:3001
+porsche2023.est-le-patron.com
+
+# Reference: https://twitter.com/StopMalvertisin/status/1696131096503796048
+# Reference: https://www.virustotal.com/gui/file/2750bcbc271a24b8c7438bd11e804f3d913d1a89a6f652b2cb48a766c7cde05e/detection
+
+aizedamanga.serveminecraft.net
+tutorecd.ufcfan.org
+
+# Reference: https://twitter.com/1ZRR4H/status/1697504454877073737
+# Reference: https://twitter.com/1ZRR4H/status/1697510114104647749
+# Reference: https://app.validin.com/axon?find=45.42.160.13&type=ip
+# Reference: https://app.validin.com/axon?find=45.42.160.48/31&type=ip4
+# Reference: https://www.virustotal.com/gui/ip-address/45.42.160.13/relations
+
+http://167.88.168.229
+http://185.175.56.41
+http://45.133.17.24
+modularecenturion.blogdns.com
+modularkyoto.gotdns.com
+robertgoldlabel.dyndns-office.com
+ripcurliogfa.myvnc.com
+rolexnuevocnt.is-slick.com
+/cfdifacmaxtimbrefiscaldigital/
+
+# Reference: https://www.virustotal.com/gui/file/a645985e54682530fb63202e85f43856a3af8e276ebe662ca6c18abd84a8b29c/detection
+
+rolexpresidentcnt.issmarterthanyou.com
+
+# Reference: https://twitter.com/0xToxin/status/1719637665434251518
+# Reference: https://www.virustotal.com/gui/ip-address/103.73.65.129/relations
+# Reference: https://www.virustotal.com/gui/ip-address/144.172.122.128/relations
+# Reference: https://www.virustotal.com/gui/file/2a846c0fe9c377c1135f9e7550d1a40653007dea53ba4b370e75a40fc7169da1/detection
+# Reference: https://www.virustotal.com/gui/file/853be7b2327d1f9e46c9746b98a9e63179672053a56108df2374c84f7308daa7/detection
+
+http://144.172.123.14
+arcadaaliancamex.dyndns-wiki.com
+diamond9x.getmyip.com
+modcenturiongoldlabel.dyndns-at-home.com
+
+# Reference: https://gist.github.com/0xToxin/c2c2bea1f66fcddc0fdfa6252f761e13
+
+axeroldcapitalx9x.onthewifi.com
+hx9bemmexgold21.serveblog.net
+openxmegaeur97.serveblog.net
+orionprimexgold1.ddns.net
+orionprimexgold10.myftp.biz
+orionprimexgold11.myftp.org
+orionprimexgold12.myvnc.com
+orionprimexgold13.onthewifi.com
+orionprimexgold15.servebeer.com
+orionprimexgold16.serveblog.net
+orionprimexgold18.serveftp.com
+orionprimexgold19.servegame.com
+orionprimexgold2.ddnsking.com
+orionprimexgold23.serveminecraft.net
+orionprimexgold25.servepics.com
+orionprimexgold26.servequake.com
+orionprimexgold28.viewdns.net
+orionprimexgold29.webhop.me
+orionprimexgold3.3utilities.com
+orionprimexgold31.serveblog.net
+orionprimexgold4.bounceme.net
+orionprimexgold5.freedynamicdns.net
+orionprimexgold6.freedynamicdns.org
+orionprimexgold7.gotdns.ch
+orionprimexgold8.hopto.org
+orionprimexgold9.myddns.me
+orogold22cstrike.myddns.me
+pkdelasexgold24.servepics.com
+plataplatamygold9x9.bounceme.net
+privgold20x10.servegame.com
+vemmoneyxgold27.viewdns.net
+
+# Reference: https://twitter.com/StopMalvertisin/status/1723285420354793511
+# Reference: https://www.virustotal.com/gui/file/81e2bb8d5505d4aba6e44d4404a909a6217f9b513645b77224007dccc64669d2/detection
+
+india987.serveblog.net
+juliet543.myvnc.com
+pegapombo.serveftp.com
+
+# Reference: https://twitter.com/0xToxin/status/1723975159130779963
+
+lettsplay.org.es
+
+# Reference: https://twitter.com/1ZRR4H/status/1725609793216291100
+# Reference: https://gist.github.com/0xToxin/c5c6f91908d9dcb2f872d5b4d21f40be
+
+cfecobrodigital.site
+alpha123.serveblog.net
+bravo789.hopto.org
+charlie876.bounceme.net
+delta654.servecounterstrike.com
+echo456.redirectme.net
+foxtrot234.freedynamicdns.net
+hotel210.ddnsking.com
+kilo321.3utilities.com
+kilo789.hopto.org
+lima789.hopto.org
+mike234.bounceme.net
+november567.3utilities.com
+oscar876.servecounterstrike.com
+papa321.ddnsking.com
+quebec654.serveblog.net
+rome456.freedynamicdns.net
+romeo987.myvnc.com
+sierra123.onthewifi.com
+tango89.myvnc.com
+tango890.redirectme.net
+uniform456.freedynamicdns.net
+victor123.onthewifi.com
+victor234.bounceme.net
+whiskey567.3utilities.com
+whiskey890.redirectme.net
+xray876.servecounterstrike.com
+yankee321.ddnsking.com
+zulu567.onthewifi.com
+zulu654.serveblog.net
+
+# Reference: https://twitter.com/thehappydinoa/status/1725961767451324769
+
+freedomway.tk
+mwtsoluttionfactmontarf.com
+nno1.6nc060821.co
+wa-menorthcentralus-60w35q4qmzkoqnqvde04z.click
+zorqrha.us
+
+# Reference: https://twitter.com/Merlax_/status/1743380172768784598
+# Reference: https://pastebin.com/raw/yh2ePsr6
+
+http://191.96.224.153
+http://97.74.94.214
+http://92.205.162.178
+
+# Reference: https://x.com/johnk3r/status/1937900279099249141
+# Reference: https://www.virustotal.com/gui/ip-address/45.8.125.103/relations
+
+rastreiouniao.com
+app.rastreiouniao.com
+ssp2.rastreiouniao.com
+ssp3.rastreiouniao.com
+ssp4.rastreiouniao.com
+
+# Generic
+
+/16Psyche.txt
+/infectados.php
+/infectadosblackrock.php
+/kepler186f.txt

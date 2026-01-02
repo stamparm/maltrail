@@ -1,0 +1,60 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: blackbytent ransomware
+
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+
+6iaj3efye3q62xjgfxyegrufhewxew7yt4scxjd45tlfafyja6q4ctqd.onion
+f5uzduboq4fa2xkjloprmctk7ve3dm46ff7aniis66cbekakvksxgeqd.onion
+
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/blackbyte-ransomware-pt-1-in-depth-analysis/
+# Reference: https://otx.alienvault.com/pulse/616d438afb150f61aaa17eca
+
+http://45.9.148.114
+
+# Reference: https://www.zscaler.com/blogs/security-research/analysis-blackbyte-ransomwares-go-based-variants
+# Reference: https://otx.alienvault.com/pulse/62729a7f856828d9110d4d47
+
+7oukjxwkbnwyg7cekudzp66okrchbuubde2j3h6fkpis6izywoj2eqad.onion
+
+# Reference: https://research.nccgroup.com/2022/07/13/climbing-mount-everest-black-byte-bytes-back/
+# Reference: https://otx.alienvault.com/pulse/62d00411f49bfb5dd2362e88
+
+18.193.71.144:10443
+3.22.79.23:10443
+3.22.79.23:8080
+45.84.0.164:10443
+
+# Reference: https://twitter.com/cyb3rops/status/1639030126577942529
+# Reference: https://twitter.com/splinter_code/status/1642970055519399936
+# Reference: https://tria.ge/230321-wnvzsscd27/behavioral2
+
+a2dbso6dijaqsmut36r6y4nps4cwivmfog5bpzf6uojovce6f3gl36id.onion
+jbeg2dct2zhku6c2vwnpxtm2psnjo2xnqvvpoiiwr5hxnc6wrp3uhnad.onion
+tre7npfj65g4pxvjr2qyqwqkpo4heemj7ysgr6mtlf3rihgfradyjvad.onion
+
+# Reference: https://x.com/malwrhunterteam/status/1794501599605428429
+# Reference: https://www.virustotal.com/gui/file/8ddb75feee57f3675c5e709898d129a7c6bb87f57436788379cec22f6fc64574/detection
+
+senpjoekkf4hlth6ej5lyqoizi62ois6u44zpd5vucuzo3w4sz4tw3qd.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1805128724238782830
+
+http://193.201.9.245
+147.45.42.6:8080
+176.111.174.202:8081
+5.42.82.114:8080
+53d5skw4ypzku4bfq2tk2mr3xh5yqrzss25sooiubmjz67lb3gdivcad.onion
+tj3ty2q5jm5au3bmd2embtjscd3qjt7nfio2o7cr6moyy5kgil5pieqd.onion
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-06-v10921/2709
+# Reference: https://www.virustotal.com/gui/file/4a066569113a569a6feb8f44257ac8764ee8f2011765009fdfd82fe3f4b92d3e/detection
+
+alteksecurity.org
+myvisit.alteksecurity.org
+
+# Reference: https://x.com/RakeshKrish12/status/1946100969512865896
+
+193.201.9.222:443
+dounczge5jhw4iztnnpzp54kd4ot3tikhjsimurtcewqssgye6vvrhqd.onion

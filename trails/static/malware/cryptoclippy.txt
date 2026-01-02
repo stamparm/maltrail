@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://unit42.paloaltonetworks.com/crypto-clipper-targets-portuguese-speakers/
+# Reference: https://otx.alienvault.com/pulse/642ede8fc5b3e870156bb050
+
+hollygap.com
+mydigitalrevival.com
+pickconferences.com
+preflightdesign.com
+tunneldrive.com
+yogasmob.com
+
+# Reference: https://x.com/johnk3r/status/1933218957458075671
+
+wfjexuvqg9kw.com
+
+# Reference: https://x.com/johnk3r/status/1933222806617002246
+# Reference: https://intezer.com/blog/cryptoclippy-evolves-to-pilfer-more-financial-data/
+
+4a3d.com
+b3do.com
+ef0h.com
+flowmudy.com
+nicerypx.com
+yogarecap.com

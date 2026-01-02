@@ -1,0 +1,54 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1199442124015452160
+# Reference: https://app.any.run/tasks/3f16a087-1dd6-47df-b997-9d5346b37244/
+
+soranoproject.com
+
+# Reference: https://www.virustotal.com/gui/file/9fcaffca390b1b0c041239dab876742b86690d717cd48ae5348abde093edf71c/detection
+
+http://37.230.210.84
+
+# Reference: https://www.virustotal.com/gui/file/f1243024154e8e75a1b22fa70fb7e4658bea43e85319f9b44e27244483d1c7b0/detection
+# Reference: https://www.virustotal.com/gui/ip-address/194.187.123.166/relations
+
+194.187.123.166:65233
+
+# Reference: https://www.virustotal.com/gui/file/b767d664e044585db7d758044bb423b86c808dc36ba3a9a5451f2ddf367083ba/detection
+
+soranoproj.xyz
+
+# Reference: https://www.virustotal.com/gui/file/b767d664e044585db7d758044bb423b86c808dc36ba3a9a5451f2ddf367083ba/detection
+
+45.76.130.93:4782
+93.73.9.24:4782
+
+# Reference: https://www.virustotal.com/gui/file/9f04c769c8051c126d87c5f422f58284ed0c215a00434c03de52e1abb2bbe506/detection
+
+http://31.131.30.43
+
+# Reference: https://www.virustotal.com/gui/file/dcf6155e1d1db996bc1da6c4dc7c9553fa4bbf7b16c337c8756c69a08ce6b9be/detection
+
+soranobest.space
+
+# Reference: https://twitter.com/500mk500/status/1199451946903572480
+# Reference: https://www.virustotal.com/gui/ip-address/31.131.30.43/relations
+
+projecthokage.xyz
+sorano.xyz
+
+# Reference: https://twitter.com/3xp0rtblog/status/1268215241747435521
+
+projectsorano.xyz
+
+# Reference: https://twitter.com/3xp0rtblog/status/1321023470139002880
+# Reference: https://app.any.run/tasks/337af099-cee6-4851-a387-a6ea8227e309/
+# Reference: https://www.virustotal.com/gui/file/8b2cf557d269d890be19530098e140c8dc45da5441ba9e41d89945033ee84c3e/detection
+
+sh1067589.a.had.su
+
+# Generic trails
+
+/barracuda_obamov.php
+/sorano/xxx.php?hwid=

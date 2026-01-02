@@ -1,0 +1,70 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://unit42.paloaltonetworks.com/pkplug_chinese_cyber_espionage_group_attacking_asia/
+# Reference: https://pan-unit42.github.io/playbook_viewer/?pb=pkplug
+
+3w.tcpdo.net
+admin.nslookupdns.com
+adminloader.com
+adminsysteminfo.com
+andphocen.com
+app.newfacebk.com
+appupdatemoremagic.com
+cdncool.com
+csip6.biz
+dns.cdncool.com
+gooledriveservice.com
+honor2020.ga
+hwmt10.w3.ezua.com
+imw100pass.imwork.net
+info.adminsysteminfo.com
+jackhex.md5c.com
+jackhex.md5c.net
+lala513.gicp.net
+linkdatax.com
+logitechwkgame.com
+lzsps.ml
+mail.queryurl.com
+md.sony36.com
+md5c.net
+microsoftdefence.com
+microsoftserve.com
+mxdnsv6.com
+nslookupdns.com
+netvovo.windowsnetwork.org
+newfacebk.com
+news.tibetgroupworks.com
+outhmail.com
+ppt.bodologetee.com
+queryurl.com
+re.queryurl.com
+sm.umtt.com
+sony36.com
+tcpdo.net
+tibetgroupworks.com
+up.outhmail.com
+update.newfacebk.com
+update.queryurl.com
+update.tcpdo.net
+uyghurapps.net
+w3.changeip.org
+w3.ezua.com
+web.microsoftdefence.com
+web.outlooksysm.net
+webserver.servehttp.com
+windowsnetwork.org
+work.andphocen.com
+workwifi.andphocen.com
+www3.mefound.com
+www5.zyns.com
+yl.andphocen.com
+
+# Reference: https://unit42.paloaltonetworks.com/unsigned-dlls/
+# Reference: https://unit42.paloaltonetworks.com/stately-taurus-attacks-se-asian-government/
+# Reference: https://otx.alienvault.com/pulse/6511d6fd63ecbfd938c3580f
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-22-v10423/980
+
+uvfr43p.com
+uvfr4ep.com
+feed-5613.coderformylife.info

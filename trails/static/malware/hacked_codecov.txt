@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://about.codecov.io/security-update/
+# Reference: https://twitter.com/cyber__sloth/status/1384494906316660746
+# Reference: https://unit42.paloaltonetworks.com/codecov-bash-uploader/
+
+http://104.248.94.23/upload/v2
+http://178.62.86.114/upload/v2
+http://79.135.72.34/upload/v2

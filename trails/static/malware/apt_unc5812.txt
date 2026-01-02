@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/blackorbird/status/1851104711304495238
+# Reference: https://cloud.google.com/blog/topics/threat-intelligence/russian-espionage-influence-ukrainian-military-recruits-anti-mobilization-narratives
+# Reference: https://www.virustotal.com/gui/file/009fffad90a45f979313340fa6dcd4ec1ab8bf8d26f747deaaf18bb11d8e8b6f/detection
+
+civildefense.com.ua
+fu-laravel.onrender.com
+h315225216.nichost.ru

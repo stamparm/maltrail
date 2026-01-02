@@ -1,0 +1,74 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zscaler.com/blogs/security-research/malware-leveraging-xml-rpc-vulnerability-exploit-wordpress-sites
+# Reference: https://www.virustotal.com/gui/ip-address/217.8.117.48/relations
+# Reference: https://www.virustotal.com/gui/file/bf54147c819d26b7af7c76756ded7aa978fa200d04e245ce3e7659d369e32837/behavior
+# Reference: https://www.virustotal.com/gui/file/537aecdef2b5af57c643efcddf55d78548e5398ecc92d1521a3351310de0f8b3/behavior/QiAnXin%20RedDrip
+# Reference: https://www.virustotal.com/gui/file/31466310f110b29a998f9a8c0e7e2fea30f4d0a1e06fc53f2eb7a4a63ed642ca/detection
+# Reference: https://www.virustotal.com/gui/file/29233f9b14ccd56db1b00f51155df7e59ca819fceb4f5b74ded3f16b2daed67c/detection
+# Reference: https://www.virustotal.com/gui/file/16fa6dcdbff3cc7119bf587572f93702801cbfe1af6a5427d7aa7dc7d48aac53/detection
+
+http://217.8.117.48
+k6239847.lib
+/b56834fhdfh/1.php
+/b56834fhdfh/3.php
+/b56834fhdfh/update.php
+
+# Reference: https://www.virustotal.com/gui/file/645a2f9d0316b8873adee13088f567b3a0247f54dfd682f2134e0a1d0c4980ae/detection
+
+http://51.83.171.11
+
+# Generic
+
+/15728347858/getd.php
+/15728347858/log.php
+/15728347858/update.php
+/345765125/getd.php
+/345765125/log.php
+/345765125/update.php
+/3457651257/getd.php
+/3457651257/log.php
+/3457651257/update.php
+/87426525127/getd.php
+/87426525127/log.php
+/87426525127/update.php
+/b56834fhdfh/getd.php
+/b56834fhdfh/log.php
+/b56834fhdfh/update.php
+/b56834fhdfh/
+/h754828/getd.php
+/h754828/log.php
+/h754828/update.php
+/j537djjlhg763/getd.php
+/j537djjlhg763/log.php
+/j537djjlhg763/update.php
+/j537djjlhg763/
+/k698dkjhlkg/getd.php
+/k698dkjhlkg/log.php
+/k698dkjhlkg/update.php
+/k698dkjhlkg/
+/lk4238fh317/getd.php
+/lk4238fh317/log.php
+/lk4238fh317/update.php
+/lk4238fh317/
+/lk4138fh517/getd.php
+/lk4138fh517/log.php
+/lk4138fh517/update.php
+/lk4138fh517/
+/lkgskh64834/getd.php
+/lkgskh64834/log.php
+/lkgskh64834/update.php
+/lkgskh64834/
+/r6587438f17/getd.php
+/r6587438f17/log.php
+/r6587438f17/update.php
+/r6587438f17/
+/test48372/getd.php
+/test48372/log.php
+/test48372/update.php
+/test48372/
+/test569821098764/getd.php
+/test569821098764/log.php
+/test569821098764/update.php
+/test569821098764/

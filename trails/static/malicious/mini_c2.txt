@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://app.validin.com/detail?find=MiniC2&type=raw&ref_id=2700b700bba#tab=host_pairs
+# Reference: https://www.virustotal.com/gui/file/0715d8479c1c519c1238bedc6d0ee0529898ec925c3a8ad930616ffca878af85/detection
+
+http://94.103.125.155
+94.103.125.155:3306

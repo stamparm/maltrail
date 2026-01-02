@@ -1,0 +1,59 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.malwarebytes.com/threat-intelligence/2021/07/crimea-manifesto-deploys-vba-rat-using-double-attack-vectors/
+# Reference: https://otx.alienvault.com/pulse/6103af154ae2e3373990e70c
+# Reference: https://www.virustotal.com/gui/ip-address/75.126.173.133/relations
+# Reference: https://www.virustotal.com/gui/file/0661fc4eb09e99ba4d8e28a2d5fae6bb243f6acc0289870f9414f9328721010a/detection
+# Reference: https://www.virustotal.com/gui/file/03eb08a930bb464837ede77df6c66651d526bab1560e7e6e0e8466ab23856bac/detection
+
+cloud-documents.com
+cloud-documents.net
+cloud-documents.org
+
+# Reference: https://twitter.com/fr0s7_/status/1602348856615780353
+# Reference: https://twitter.com/h2jazi/status/1602354682281791489
+# Reference: https://twitter.com/StopMalvertisin/status/1602556148267290625
+# Reference: https://www.virustotal.com/gui/file/e5a302c3d53851be4e09585f7462346a6f7a71b02bf38d8483f5c48e2ab845c7/detection
+# Reference: https://www.virustotal.com/gui/file/f2c404c22fba58c3e69d2e1d526b100040874206b06c13052f2099867850f008/detection
+# Reference: https://www.virustotal.com/gui/file/f0a324064c2a2e981177c24fc5bcaa0131d7fc1380d56f94f6c28c259f92a843/detection
+# Reference: https://www.virustotal.com/gui/file/e7b68ee7b73b4d0debc5342fcadfd64598769d67af6b13909dffeee0c284ee47/detection
+# Reference: https://www.virustotal.com/gui/file/aa25233e5566d73102fa499f1ffb928af566c172ee89218ed9aa42e4edefcece/detection
+# Reference: https://www.virustotal.com/gui/file/72933000d4e210b981de3f768af24bcb6e545087ba36ca0c4bbf9c27a4962fc6/detection
+
+ekb.tanzedrom.ru
+/secure-document/t.php
+
+# Reference: https://twitter.com/StopMalvertisin/status/1605448155666882563
+# Reference: https://www.virustotal.com/gui/file/70e6f0bd0e4124f17f1afaafa2693b7b331270071e48d06327cc07396f6dfa4f/detection
+# Reference: https://twitter.com/StopMalvertisin/status/1605448159311929345
+
+msys.su
+/microsoft-office-word/t.php
+
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/malicious-macros-adapt-to-use-microsoft-publisher-to-push-ekipa-rat/
+
+http://146.70.87.218
+http://193.47.61.182
+http://85.208.136.130
+185.246.220.148:10443
+185.246.220.149:10443
+azure-tech.pro
+roskazna.net
+xlssmooth.xyz
+
+# Reference: https://twitter.com/StopMalvertisin/status/1608391566032531456
+# Reference: https://www.virustotal.com/gui/file/d17ef6704545d7f9fee15f8f499c02193accacd0fd0f8c33a7afd5ae18128d23/detection
+# Reference: https://www.virustotal.com/gui/file/cf4298dda440749c7154dc60a3713ebcbfd39d55fa549870abe63432c12cc756/detection
+
+broadwaysales.com
+
+# Reference: https://twitter.com/StopMalvertisin/status/1615534751460515840
+# Reference: https://www.virustotal.com/gui/file/2d52b21737552248917aab87a2c3bb4b15471a05b340b31577a57c749a9d1c07/detection
+
+mainstreetcred.com
+/office-analytics/t.php
+
+# Reference: https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/rilide-a-new-malicious-browser-extension-for-stealing-cryptocurrencies/
+
+nch-software.info

@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: exostub stealer, g1nzo, ginzo stealer, pykobodstbo, pykobodstbo stealer, odin stealer, zingo, zingo stealer
+
+# Reference: https://twitter.com/struppigel/status/1506933328599044100
+# Reference: https://otx.alienvault.com/pulse/625d4448254980b41c8632b6
+# Reference: https://blog.talosintelligence.com/2022/04/haskers-gang-zingostealer.html
+# Reference: https://blog.talosintelligence.com/2022/06/threat-roundup-0610-0617.html (# Win.Packed.Johnnie-9951653-0)
+# Reference: https://bazaar.abuse.ch/sample/3fd0837381babda7ef617b810457f0db32bd7c1f7e345480e6c525050ca818fa/
+# Reference: https://www.virustotal.com/gui/file/3fd0837381babda7ef617b810457f0db32bd7c1f7e345480e6c525050ca818fa/detection
+
+nominally.ru
+control.nominally.ru
+network.nominally.ru
+test.nominally.ru
+
+# Reference: https://www.virustotal.com/gui/file/f574f7fbd67667e074030065de6113343e724ef32491df635e74f920874e33c8/detection
+
+a0666760.xsph.ru
+
+# Reference: https://twitter.com/rcwht_/status/1620054644109225987
+# Reference: https://twitter.com/ViriBack/status/1620094050841034752
+# Reference: https://www.virustotal.com/gui/file/8e8ddaedf0f03a1c4caff563dc4aa73de9c52d5b7e0fbe650038e9279d08b2e9/detection
+
+rukovodstvo.site
+
+# Generic
+
+/g1nzo.php

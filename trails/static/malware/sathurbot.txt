@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/Entry.aspx?Name=Win32/Sathurbot#tab=2
+
+aerofix.eu
+cuptstech.eu
+djigurda.eu
+hujpizda.eu
+inuxland.eu
+prosmartraff.eu
+qwertytraff.org

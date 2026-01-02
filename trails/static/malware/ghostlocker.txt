@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ghostlocker ransomware, ghostsec
+
+# Reference: https://twitter.com/ShilpeshTrivedi/status/1721423814150795685
+# Reference: https://www.uptycs.com/blog/ghostlocker-ransomware-ghostsec
+
+http://195.2.79.117
+http://34.218.60.37
+http://88.218.61.141
+http://88.218.62.219
+videolan.pw
+
+# Reference: https://twitter.com/0x3A44/status/1723727146256900201
+
+http://94.103.91.246
+
+# Reference: https://twitter.com/karol_paciorek/status/1734848670011470024
+# Reference: https://twitter.com/g0njxa/status/1735025956413137142
+
+http://195.160.222.36
+http://94.103.91.246
+
+# Reference: https://x.com/DarkAtlasSquad/status/1787527200427618614
+
+http://41.216.183.31
+http://41.216.183.56

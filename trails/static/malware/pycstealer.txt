@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/b37d596d34d85e2125c461d4f92b017848d1ee0c113b480a8fb850ea9a83323d/detection
+
+42iek7bmkux1jnjsmqqz8t.hooks.webhookrelay.com
+
+# Reference: https://www.virustotal.com/gui/file/7a3a77156f5fd305b61d61fd17fb163749a11eef898b844941806a28541849ea/detection
+
+plstealer.ml
+mvdugj7gh2ansfe4jhz5ht.hooks.webhookrelay.com
+
+# Reference: https://www.virustotal.com/gui/file/d6dceaf3ca1376dac8ceb9f6d8b2a3159ad59b2244883d0c670bac7afd446fc0/detection
+
+g0cl3eczi5tixvyc0u89xf.hooks.webhookrelay.com
+
+# Reference: https://x.com/malwrhunterteam/status/1838901940421279833
+# Reference: https://www.virustotal.com/gui/file/50ff39e6d5e524a95771c4a219d0e1d15ec42175e6d79d264f8a1eee0c418a18/detection
+# Reference: https://www.virustotal.com/gui/file/84a15bc948acf97f686e27b33874e08bd04d6ce22b9112c4f7d4432850b6e24f/detection
+
+185.196.10.235:50001
+185.196.8.119:50001
+
+# Reference: https://x.com/raghav127001/status/1839724032683323885
+# Reference: https://www.virustotal.com/gui/file/99878c454cb9089231df93eb5232ca432297677ee4e0eb0c7508db32550833bc/detection
+
+144.24.200.179:8989

@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: now stealer
+
+# Reference: https://x.com/solostalking/status/1885205869995966823
+# Reference: https://x.com/Fact_Finder03/status/1885209370868203740
+# Reference: https://app.validin.com/detail?find=Now%20Stealer%20-%20Premium&type=raw&ref_id=106c68f9d4a#tab=host_pairs (# 2025-02-01)
+
+http://191.96.224.103
+bla4ckxcenter.shop
+kaiquebt.dev
+nowstealer.cc

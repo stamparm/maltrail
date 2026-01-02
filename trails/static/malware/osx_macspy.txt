@@ -1,0 +1,96 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: macspy
+
+# Reference: https://resources.infosecinstitute.com/malware-dark-web/
+
+macspy423ho54vap.onion
+
+# Reference: https://x.com/suyog41/status/1970063333228200230
+# Reference: https://www.virustotal.com/gui/file/a7abdee756da5492f2fa35682efe1c314697cca48358c2c3e107426a3666dbec/detection
+
+08jm.ru
+b-395.ru
+c-080.ru
+armlessmatrix.com
+ditchibuprofen.com
+msinfosupport.com
+h-214.ru
+k-342.ru
+m-754.ru
+n-585.ru
+q-083.ru
+s-537.ru
+s-819.ru
+aq3.b-395.ru
+b2.s-819.ru
+c5.c-080.ru
+c7.n-585.ru
+d.h-214.ru
+in.armlessmatrix.com
+in.ditchibuprofen.com
+k.m-754.ru
+k3x.s-537.ru
+m8.b-395.ru
+qk2.08jm.ru
+qz9.m-754.ru
+r.08jm.ru
+r.s-537.ru
+rk8.q-083.ru
+tq1.s-819.ru
+u5.08jm.ru
+v2.m-754.ru
+v5.k-342.ru
+w4.h-214.ru
+wq9.n-585.ru
+x.s-819.ru
+z.b-395.ru
+
+# Reference: https://x.com/suyog41/status/1971116308256391269
+# Reference: https://www.virustotal.com/gui/file/800b450cf9ca376bc24be2e2a7f4accef407cf042e104e6358d88e6d562db850/detection
+# BANNER_0_HASH-HOST=2a504073b2190b0a497965d049cc7b84
+
+msdomgate.top
+msfullshop.space
+msinfosupport.com
+mssysinfo.org
+
+# Reference: https://x.com/suyog41/status/1978711414761042238
+# Reference: https://x.com/moonlock_lab/status/1979210020693655962
+# Reference: https://www.virustotal.com/gui/ip-address/178.128.255.195/relations
+# Reference: https://www.virustotal.com/gui/file/9bda2553afc490dc9e6a1b3bdc03e6dd9c3cc5824c7ab8d8c7fd001dddd620f2/detection
+# Reference: https://www.virustotal.com/gui/file/b50ffb93972a6b50d3837c65eeed20a381c50a99de3ed47f4448661f4b6bc7bf/detection
+# Reference: https://www.virustotal.com/gui/file/cc023eb7bfaf5561f3ab838a40118009af065c5e31b27607e0dd5a51b15517b4/detection
+# Reference: https://www.virustotal.com/gui/file/7b8bf776e495b5098da070f0cc396cc46a276c6743aa08ac15c1d21fdfd0f9d8/detection
+# Reference: https://www.virustotal.com/gui/file/8ba28ca3ad94c590b297e379b8d56b1bf1e0f4b5a8d8f0782eb4b1912a341329/detection
+# Reference: https://www.virustotal.com/gui/file/eafd1246ddbfcea06a676fe6d73caf59d95021d7d1cb362a5efdf5a0dfae8f3b/detection
+# Reference: https://www.virustotal.com/gui/file/3eadc0d08e46da583ecd82b431341cd65c8b450aa0b426c7a3062831f0f1ad74/detection
+# Reference: https://www.virustotal.com/gui/file/545f3ae82e2addca3e5f647d55bea79ee299324400269978ab137f5fbfd84a9f/detection
+# Reference: https://www.virustotal.com/gui/file/dbb6d8eac40e5ef4a63f3683e356c08e35a5cfe5d817d6133b09b567e5ddb5ad/detection
+# BANNER_0_HASH-HOST=2a504073b2190b0a497965d049cc7b84
+
+androstar.space
+andydoorsel.top
+applesupport.top
+astaluega.space
+augstoreage.top
+basegate.top
+borshest.space
+dallburntwo.xyz
+defaultgate.space
+foggydoxz.xyz
+gatefr.top
+gatemoon.top
+goalbus.space
+growebnas.space
+oct-omnipower.top
+updstoper.top
+upgradewall.space
+woodlander.xyz
+
+# Reference: https://x.com/txhaflaire/status/2003104059667227088
+# Reference: https://www.jamf.com/blog/macsync-stealer-evolution-code-signed-swift-malware-analysis/
+# Reference: https://www.virustotal.com/gui/file/be961ec5b9f4cc501ed5d5b8974b730dabcdf7e279ed4a8c037c67b5b935d51a/detection
+
+gatemaden.space

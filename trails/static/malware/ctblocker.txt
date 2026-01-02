@@ -1,0 +1,56 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://kc.mcafee.com/resources/sites/MCAFEE/content/live/PRODUCT_DOCUMENTATION/25000/PD25696/en_US/McAfee_Labs_Threat_Advisory-CTB-Locker.pdf
+
+maisondessources.com
+pleiade.asso.fr
+scolapedia.org
+breteau-photographe.com
+voigt-its.de
+jbmsystem.fr
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2016-030312-3250-99&tabid=2
+# Reference: https://www.virustotal.com/en/file/1f97d3c11f9f68dd23cc1f94faaacb5f357475f5a6459eb38fb60406370de156/analysis/
+
+a1hose.com
+erdeni.ru
+studiogreystar.com
+
+# Reference: http://deepwebbrazil.blogspot.hr/
+
+23bteufi2kcqza2l.onion
+23bteufi2kcqza2l.onion.gq
+23bteufi2kcqza2l.onion.lt
+23bteufi2kcqza2l.onion.cab
+23bteufi2kcqza2l.onion.city
+23bteufi2kcqza2l.onion.direct
+23bteufi2kcqza2l.onion.link
+23bteufi2kcqza2l.onion.nu
+23bteufi2kcqza2l.tor2web.fi
+23bteufi2kcqza2l.tor2web.blutmagie.de
+23bteufi2kcqza2l.tor2web.org
+23bteufi2kcqza2l.tor2web.ru
+23bteufi2kcqza2l.tor-gateways.de
+mjof2bfjbfrucsou.onion
+mjof2bfjbfrucsou.onion.gq
+mjof2bfjbfrucsou.onion.lt
+mjof2bfjbfrucsou.onion.cab
+mjof2bfjbfrucsou.onion.city
+mjof2bfjbfrucsou.onion.direct
+mjof2bfjbfrucsou.onion.link
+mjof2bfjbfrucsou.onion.nu
+mjof2bfjbfrucsou.tor2web.fi
+mjof2bfjbfrucsou.tor2web.blutmagie.de
+mjof2bfjbfrucsou.tor2web.org
+mjof2bfjbfrucsou.tor2web.ru
+mjof2bfjbfrucsou.tor-gateways.de
+
+# Reference: https://blog.talosintelligence.com/2020/06/threat-roundup-0529-0605.html (# Win.Trojan.Mikey-7914350-0)
+# Reference: https://www.virustotal.com/gui/file/01bc3645259d6553ae26142e215713d74a4ab9b72ce70a0e407ef0b0c24f3a78/detection
+
+pf5dahldauhrjxfd.onion
+pf5dahldauhrjxfd.tor2web.org
+pf5dahldauhrjxfd.onion.cab
+vgqisyuzmsa7cenq.onion.cab
+vgqisyuzmsa7cenq.onion.lt

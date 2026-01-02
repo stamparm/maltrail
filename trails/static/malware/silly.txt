@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/W32~SillyFDC-DX/detailed-analysis.aspx
+#            https://www.antivenomcloud.com/threat_intelligence_center/signatures/show/29863
+
+hidatabase.cn

@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/rivitna2/status/1710049811297169681
+# Reference: https://twitter.com/1ZRR4H/status/1728515544481993071
+# Reference: https://www.virustotal.com/gui/file/a1bcb4ceb586cd9dc78323ce2888080ea88a58708a3a95e546bff46d74fc13c8/detection
+
+http://79.133.51.208
+krjv3wondknwdrlvzp6ktqcqkrlvpme2xjt3fu7ojqpaqgl3sm33bdqd.onion
+nn5ua7gc7jkllpoztymtfcu64yjm7znlsriq3a6v5kw7l6jvirnczyyd.onion

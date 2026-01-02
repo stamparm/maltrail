@@ -1,0 +1,74 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: dmsspy, lightspy
+
+# Reference: https://documents.trendmicro.com/assets/Tech-Brief-Operation-Poisoned-News-Hong-Kong-Users-Targeted-with-Mobile-Malware-via-Local-News-Links.pdf
+# Reference: https://otx.alienvault.com/pulse/5e7a2cf3969629482c97c6b5
+
+facebooktoday.cc
+googlephoto.vip
+hkrevolt.com
+hkrevolution.club
+messager.cloud
+poorgoddaay.com
+
+# Reference: https://securelist.com/ios-exploit-chain-deploys-lightspy-malware/96407/
+
+http://103.19.9.185
+103.19.9.185:3389
+45.134.0.123:8002
+45.134.1.180:50001
+45.83.237.13:8088
+/963852poi/login
+/963852oiu/login
+xxinc-media.oss-cn-shenshen.aliyuncs.com
+
+# Reference: https://twitter.com/dimitribest/status/1778181862696915233
+# Reference: https://www.virustotal.com/gui/file/ac7ec3aae34bc5ff7618b4761c6cc55ac6ff0c7358daf255387b8998dbf23aba/detection
+# Reference: https://www.virustotal.com/gui/file/4b973335755bd8d48f34081b6d1bea9ed18ac1f68879d4b0a9211bbab8fa5ff4/detection
+
+103.27.109.217:51200
+103.27.109.217:52202
+
+# Reference: https://www.threatfabric.com/blogs/lightspy-implant-for-ios
+# Reference: https://search.censys.io/hosts/103.27.109.28
+# Reference: https://search.censys.io/hosts/103.43.17.99
+# Reference: https://search.censys.io/hosts/222.219.183.84
+# Reference: https://search.censys.io/hosts/43.248.136.110
+
+103.27.109.28:22
+103.27.109.28:443
+103.27.109.28:3459
+103.27.109.28:43200
+103.27.109.28:43201
+103.27.109.28:43202
+103.27.109.28:43203
+103.43.17.99:34129
+103.43.17.99:54600
+103.43.17.99:54602
+222.219.183.84:22
+222.219.183.84:3389
+222.219.183.84:49000
+222.219.183.84:49001
+222.219.183.84:51200
+222.219.183.84:52202
+222.219.183.84:52203
+222.219.183.84:53501
+43.248.136.110:22
+43.248.136.110:3459
+43.248.136.110:43200
+43.248.136.110:43201
+43.248.136.110:43202
+43.248.136.110:43203
+43.248.136.110:443
+43.248.136.110:54600
+43.248.136.110:54602
+43.248.136.110:7000
+
+# Reference: https://x.com/Huntio/status/1851981431519744092
+# Reference: https://search.censys.io/hosts/43.248.8.108
+
+149.104.18.251:10000
+149.104.18.251:20000
+43.248.8.108:10002

@@ -1,0 +1,149 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: modiloader
+
+# Reference: https://twitter.com/Artilllerie/status/1299249738764689413
+# Reference: https://www.virustotal.com/gui/file/94dc4632159764895ff15118dacc7c5b4c3f84722b4ae5c89b9b120adeec92bf/detection
+# Reference: https://www.virustotal.com/gui/file/e832fe2b9251b58442d1c9e380ae5f5d338af57a43329f79786e333c15507ec4/detection
+# Reference: https://app.any.run/tasks/30d9b08f-32f4-4587-aa9b-3763a75158d1/
+# Reference: https://www.virustotal.com/gui/ip-address/5.45.65.79/relations
+
+5.45.65.79:2480
+eebucks.com
+malwarebytes-antiav.club
+
+# Reference: https://www.virustotal.com/gui/file/4b63c982aee1f4c3e13daae7b9b0e759886868ee8f4023273d24872f9cb134dc/detection
+
+5.45.65.79:3970
+
+# Reference: https://www.virustotal.com/gui/file/e8ab9b3a12a13d810cda38eebe879f86eb8ce05df931f3779d6f7d12117b114a/detection
+
+5.45.65.79:3590
+
+# Reference: https://www.virustotal.com/gui/file/463cc27ff212d544c70cc300dc0b604480133b282dc34b3c396cb6a12d0056ba/detection
+
+5.45.65.79:2980
+
+# Reference: https://www.virustotal.com/gui/file/2edafdccbc4a5c27a318ff171fcc8ac4a87d0794a32fd0a78b5bc6eb7e67bc2b/detection
+# Reference: https://www.virustotal.com/gui/file/bd00e5680241c32c2e1daa90c0c8423b849ed28493a357f6dbc41df3a2387e5d/detection
+
+http://37.1.206.213
+5.45.65.79:2780
+greencolor.top
+
+# Reference: https://app.any.run/tasks/648bae3a-f1e7-4da4-a36e-76d077f4e768/
+
+217.8.117.53:3590
+
+# Reference: https://www.virustotal.com/gui/file/e9ee1c2f01a7d2a469388977f47916e6ccc9efe5fb2c1191c7b5e92781f5e70d/detection
+
+195.22.26.248:8000
+
+# Reference: https://www.virustotal.com/gui/file/10028099a0d2c2aaa8e940228b415688d958b7b9fa5649f9577b96cfd0b96c51/detection
+
+217.8.117.79:16481
+
+# Reference: https://www.virustotal.com/gui/file/d968dc2aabd69cae18f1ffc2f6c6f2ce06447176b2278f09c4b3d923c8314afe/detection
+
+217.8.117.79:54193
+
+# Reference: https://www.virustotal.com/gui/file/4e64ca30a26bdd2acf5caac9455287f38e2d0dc383bbdbf7c46b15c1820e578d/detection
+
+217.8.117.74:3590
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1329728270326247425
+# Reference: https://bazaar.abuse.ch/sample/5c3f5dec5271e020a29643f1e75b7a6b07bb52562ee8426b21e7d76e9a46661b/
+# Reference: https://analyze.intezer.com/analyses/55ad918a-ba00-497f-a2c5-262c957aa52f/sub/dc9bf2d0-cfce-46e1-8b22-6034f5df3d68
+
+217.8.117.74:8364
+
+# Reference: https://www.virustotal.com/gui/file/ed5215be40b05fe324dfd185a741a48c604215482095e1953bfdad62725c8092/detection
+
+hwwleqqwkjdfuy.com
+
+# Reference: https://www.virustotal.com/gui/file/b2f7094f521419809d946a68870b02bdd3a928c5a4d57ccdaea3b8f49bb96151/detection
+
+217.8.117.97:33025
+
+# Reference: https://github.com/pan-unit42/tweets/blob/master/2020-12-10-IOCs-from-Ursnif-infection-with-Delf-variant.txt
+# Reference: https://www.virustotal.com/gui/file/b2cc1c54c3bbde2a7c0c0a32396bc6dba4d327d7a83278f478dce2f59d6751ef/detection
+
+79.110.52.28:15497
+
+# Reference: https://www.virustotal.com/gui/file/669946cb003998b4a5ab68a9c6d5ae5c2f5f61a17944e27f9337f2cf60b4c0c5/detection
+
+arikazan-tr.com
+/xvxaetxvxaetxvxaet/
+/Gerrmeuhzjkespaxdqqgkgrrtmeeuao
+/Okeaedjbdqjkshokyzlnkxiegvbzpqm12345
+/xvxaetxvxaetxvxaet/xvxa/Gerrmeuhzjkespaxdqqgkgrrtmeeuao
+/xvxaetxvxaetxvxaet/xvxa/Okeaedjbdqjkshokyzlnkxiegvbzpqm12345
+
+# Reference: https://www.virustotal.com/gui/file/e6d71dba4a3176c7fdb65a537049abc924b71a0bbd4930d33f26f98fe25c7041/detection
+
+185.140.53.4:7645
+blessings4x4.hopto.org
+
+# Reference: https://otx.alienvault.com/pulse/622f4f68476d6fb93502ddb8
+# Reference: https://www.virustotal.com/gui/file/0f4d50c980e179099c572e34e0bfde32460ab9ce844465ba2640ea68b64ffaea/detection
+
+http://92.53.105.248
+http://92.53.127.77
+/tst/ins_cont.php
+
+# Reference: https://twitter.com/wwp96/status/1635317482834767872
+# Reference: https://app.any.run/tasks/c3e70af0-64f1-4ad8-88ff-0b41ddd034ee/
+# Reference: https://www.virustotal.com/gui/file/9f8afb109c9b23b3b9645ecf1d44dd25d866472242239c766cac33a31d66a98d/detection
+
+cloud-doc.nerdpol.ovh
+
+# Reference: https://urlhaus.abuse.ch/host/87.121.221.212
+# Reference: https://www.virustotal.com/gui/file/09cd06d0f424d0bd748bc22933dea5e0e5ffe527fb4e686bb17c57ca702dc991/detection
+
+http://87.121.221.212
+87.121.221.212:7888
+adaisreal.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/61c50d45592f4facf7f845e14b2268edcbf7096492e5c5d61a319b8062328a6b/detection
+
+213.152.162.10:24535
+dwk.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/013a0521531b96d98a0a7a8ba08111cb6d8c51d30b895503a3e1eeac3949a75c/detection
+
+lordlucifer.freetcp.com
+
+# Reference: https://isc.sans.edu/diary/rss/30388
+# Reference: https://otx.alienvault.com/pulse/654ce52f3a03158c76e694a8
+# Reference: https://www.virustotal.com/gui/file/e3471a6c13327493f5d5990cce84c095e66d83a4554e01f3eb891c15750acf60/detection
+
+5528981.com
+betaplex.click
+grupolubriso.live
+k1l1b1.top
+xbavju.top
+/mvbg/?ZqHTM15=
+/?ZqHTM15=
+
+# Reference: https://twitter.com/karol_paciorek/status/1751972910191784072
+# Reference: https://www.virustotal.com/gui/file/47e114da6c23a27f3819cf2196a32ecce21d35af8e85d4ebebcdea6edc5e7914/detection
+
+147.50.253.30:8888
+
+# Reference: https://twitter.com/karol_paciorek/status/1782384606378967350
+
+209.126.87.92:8888
+premiere-coal-tonight-procedure.trycloudflare.com
+
+# Reference: https://twitter.com/banthisguy9349/status/1782385827080802708
+
+209.126.87.35:8080
+
+# Reference: https://x.com/marsomx_/status/1916050567073276124
+# Reference: https://www.sonicwall.com/blog/modirat-malware-uses-horus-protector-to-target-france
+# Reference: https://www.virustotal.com/gui/file/352011f27fdcc8e71a7e0171e7b88509b9848254404f8d91ce3c9d790c335d8a/detection
+
+http://144.91.92.251
+144.91.92.251:443
+144.91.79.54:2025

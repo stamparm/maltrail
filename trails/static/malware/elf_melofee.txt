@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.exatrack.com/melofee/
+# Reference: https://elfdigest.com/brief/a5a4284f87fd475b9474626040d289ffabba1066fae6c37bd7de9dabaf65e87a
+# Reference: https://www.virustotal.com/gui/file/a5a4284f87fd475b9474626040d289ffabba1066fae6c37bd7de9dabaf65e87a/detection
+
+173.209.62.186:8765
+data-yuzefuji.com
+
+# Reference: https://elfdigest.com/brief/8d855c28744dd6a9c0668ad9659baf06e5e448353f54d2f99beddd21b41390b7
+
+awszonwork.com
+ssm.awszonwork.com
+
+# Reference: https://blog.exatrack.com/melofee/
+
+cloudf1are.com
+git1ab.com
+
+# Reference: https://blog.xlab.qianxin.com/analysis_of_new_melofee_variant_en/
+# Reference: https://www.virustotal.com/gui/ip-address/45.76.144.47/relations
+
+http://45.92.156.166
+micrsofts-file.com
+filecache.micrsofts-file.com
+filemanage.micrsofts-file.com
+/klove/pskt

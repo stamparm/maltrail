@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/1ZRR4H/status/1811051822464856465
+# Reference: https://x.com/9823f_/status/1811105125814988860
+# Reference: https://x.com/ValidinLLC/status/1811410891138552260
+# Reference: https://www.virustotal.com/gui/file/a39a3acc18c84624489d91d25c4517097f18bf4cc3bb8282aa2689bcfd860b0f/detection
+
+91.92.240.71:8080
+boulangerie-contraire.com
+cyber4.up.railway.app
+segurancasantander.com
+suportesistemas-001-site1.etempurl.com
+upsdelivery-nl.com
+upsdeliveryfees.com
+ups-track.nl
+vaavasatittyprofoxrm.online
+perf.vaavasatittyprofoxrm.online
+/api/v1/Pegasus/DeletarComando
+/api/v1/Pegasus/DeletarComandoTodos
+/api/v1/Pegasus/InserirAtualizarToken
+/api/v1/Pegasus/InserirBase64
+/api/v1/Pegasus/InserirObjeto
+/api/v1/Pegasus/RecuperarComando
+
+# Reference: https://www.threatfabric.com/blogs/the-trojan-horse-that-wanted-to-fly-rocinante
+# Reference: https://www.virustotal.com/gui/file/23c51ed174a6014b3207b41a82c2aee0eea16df8fa1cd14c2864fb3307215070/detection
+# Reference: https://www.virustotal.com/gui/file/64ec090ea5e22648e46651b12569107f94b10c1e8e4635ef42716aaec28fd6bd/detection
+# Reference: https://www.virustotal.com/gui/file/a4886346e8bcfd20f6b5131f2440004675cf851fa86fef7594f8096f63eb6a38/detection
+# Reference: https://www.virustotal.com/gui/file/a39a3acc18c84624489d91d25c4517097f18bf4cc3bb8282aa2689bcfd860b0f/detection
+
+client1-production-200e.up.railway.app
+cyber4.up.railway.app
+ordinary-hammer-production.up.railway.app

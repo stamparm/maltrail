@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.group-ib.com/blog/krasue-rat/
+# Reference: https://www.virustotal.com/gui/file/b6db6702ca85bc80599d7f1d8b1a9b6dd56a8e87c55fc831dc9c689e54b8205d/detection
+# Reference: https://www.virustotal.com/gui/file/ed38a61a6b7af436120465d352baa4cdf4ed8f01a7db7245b6254353e52f818f/detection
+
+128.199.226.11:554

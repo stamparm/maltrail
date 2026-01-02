@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: trinity ransomware
+
+# Reference: https://github.com/marktsec/Ransomware_Official_Domains?tab=readme-ov-file#trinity
+
+txtggyng5euqkyzl2knbejwpm4rlq575jn2egqldu27osbqytrj6ruyd.onion

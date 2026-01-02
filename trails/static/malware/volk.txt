@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.vulnerability-lab.com/news/get_news.php?id=96
+# Reference: http://seclists.org/bugtraq/2012/Oct/66
+# Reference: http://www.securityfocus.com/cgi-bin/index.cgi?offset=0&limit=30&c=11&op=display_threads&ListID=1&mode=threaded&expand_all=true
+# Reference: http://www.exploit-db.com/exploits/21891/
+# Reference: http://packetstormsecurity.org/files/117295/vOlk-Botnet-Framework-4.0-XSS-SQL-Injection.html
+# Reference: http://hackingexpose.blogspot.de/2012/10/volk-botnet-framework-v40-multiple.html
+
+cl-con.com

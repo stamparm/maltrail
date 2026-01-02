@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/IntezerLabs/status/1346468323387588610
+# Reference: https://www.intezer.com/blog/research/operation-electrorat-attacker-creates-fake-companies-to-drain-your-crypto-wallets/
+# Reference: https://otx.alienvault.com/pulse/5ff48e62bee79beef89bef7e/
+# Reference: https://www.virustotal.com/gui/file/568326883f9157fe8f1a7c681e2df341973a75205cf81d627040d101ce24f1bb/detection
+# Reference: https://www.virustotal.com/gui/file/170cb5ea1a6b4af3c27358ba267a1309ed5118481619fc874f717262cb91fb77/detection
+
+193.38.55.131:3000
+193.38.55.131:3001
+213.226.100.140:3000
+213.226.100.140:3001
+kintum.io
+daopker.com
+jamm.to

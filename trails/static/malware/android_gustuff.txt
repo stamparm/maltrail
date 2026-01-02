@@ -1,0 +1,49 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://otx.alienvault.com/pulse/5cacfa0e75def65c067046e9
+# Reference: https://blog.talosintelligence.com/2019/04/gustuff-targets-australia.html
+
+homevideo2-12l.ml
+facebook-photos-au.su
+videohosting1-5j.gq
+
+# Reference: https://blog.talosintelligence.com/2019/10/gustuffv2.html
+
+instagram-shared.pw
+instagram-shared.store
+instagram-shared.info
+instagram-share.com
+intagram-share.com
+instagram-shared.net
+instagram-shared.com
+video-hd33.site
+video-hd30.site
+video-hd29.site
+video-hd24.site
+video-hd20.site
+video-hd18.site
+video-hd17.site
+hd-video5.site
+hd-video4.site
+video-hosting.site
+video-hd1.site
+video-hd.site
+hd-video1.site
+homevideo641a.cf
+homevideo651a.cf
+homevideo5-23b.ml
+homevideo631a.cf
+homevideo611a.cf
+homevideo4-23b.ml
+homevideo641a.ga
+homevideo3-23b.ml
+homevideo54-1a.ml
+videohosting32-e.cf
+videohosting23c.cf
+videohosting62-b.tk
+
+# Generic trails
+
+/api/v1/report/records.php
+/api/v2/aevents.php

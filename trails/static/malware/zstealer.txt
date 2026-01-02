@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ViriBack/status/1650647566701191168
+# Reference: https://twitter.com/tosscoinwitcher/status/1650652798110011392
+# Reference: virustotal.com/gui/file/e6a418950ce14e5a53be16dfef0452415a1e4017438429a76ce54eddfef06c75/detection
+
+russiaisbetterthanukraine.me
+ztools.mysellix.io

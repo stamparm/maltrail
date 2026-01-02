@@ -1,0 +1,43 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/toddycat/106799/
+
+eohsdnsaaojrhnqo.windowshost.us
+
+# Reference: https://securelist.com/toddycat-keep-calm-and-check-logs/110696/
+
+githubdd.workers.dev
+mfeagents.workers.dev
+solitary-dawn-61af.mfeagents.workers.dev
+
+# Reference: https://research.checkpoint.com/2023/stayin-alive-targeted-attacks-against-telecoms-and-government-ministries-in-asia/
+# Reference: https://www.virustotal.com/gui/file/877579185a72fbaf1afa78d3c50dbab187780d545d5375ba4c29147083176697/detection
+
+http://139.180.145.121
+139.180.145.121:443
+ad.fopingu.com
+admit.pkigoscorp.com
+backend.rtmcsync.com
+cdn.pkigoscorp.com
+cert.qform3d.in
+certexvpn.com
+machineaccountquota.com
+cyberguard.certexvpn.com
+eaq.machineaccountquota.com
+fopingu.com
+gist.gitbusercontent.com
+git.gitbusercontent.com
+idp.pkigoscorp.com
+imap.774b884034c450b.com
+ns01.nayatel.orinafz.com
+pic.rtmcsync.com
+pkigoscorp.com
+proxy.rtmcsync.com
+qaq2.machineaccountquota.com
+qform3d.in
+gitbusercontent.com
+raw.gitbusercontent.com
+rtmcsync.com
+sslvpn.pkigoscorp.com
+update.certexvpn.com

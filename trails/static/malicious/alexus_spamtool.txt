@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ecarlesi/status/1344217410052579328
+# Reference: https://twitter.com/neonprimetime/status/1344453312301703168
+
+serverehost.com
+
+# Reference: https://twitter.com/500mk500/status/1344556067481677824
+
+auvbaiunaiuolinam.com/mailer/alexus.php
+
+# Generic
+
+/mailer/alexus.php
+/alexusmailer.php

@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: N3Cr0m0rPh
+
+# Reference: https://research.checkpoint.com/2021/freakout-leveraging-newest-vulnerabilities-for-creating-a-botnet/
+# Reference: https://www.imperva.com/blog/python-cryptominer-botnet-quickly-adopts-latest-vulnerabilities/
+# Reference: https://blog.netlab.360.com/not-really-new-pyhton-ddos-bot-n3cr0m0rph-necromorph/
+# Reference: https://otx.alienvault.com/pulse/6009dc6c44b5b4406ffc3672
+# Reference: https://otx.alienvault.com/pulse/600ee8f9094928e77e838199
+# Reference: https://twitter.com/r3dbU7z/status/1351528961600323587
+# Reference: https://www.virustotal.com/gui/domain/gxbrowser.net/relations
+# Reference: https://www.virustotal.com/gui/file/b83c10749362c18fe459f2a32fb7451ff8a593f5ab48366839ba618d5ecc24b2/detection
+# Reference: https://www.virustotal.com/gui/file/d960520fff1e08ff2f38b36152a81716659a329944b26743344cd2bf783555c0/detection
+# Reference: https://www.virustotal.com/gui/file/b8f93878f97814cf7d6b3e75d35f671e7c7243b68a68d69a74d9f487262b1210/detection
+# Reference: https://www.virustotal.com/gui/file/c89fccc13cf8e6a2aa3bd89758a189270e50bf462cb4f3fe0e929aead3c60ac9/detection
+
+http://45.145.185.229
+185.10.68.175:6667
+193.239.147.224:9050
+193.239.147.224:6667
+45.145.185.229:6667
+45.145.185.83:6667
+45.145.185.83:9999
+aveixucyimxwcmph.xyz
+gxbrowser.net

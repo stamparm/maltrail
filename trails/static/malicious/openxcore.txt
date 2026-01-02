@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: Domains, that was used in Revive/OpenX-adserver injections
+
+# Reference: https://twitter.com/unmaskparasites/status/1489713705721876481
+# Reference: https://www.virustotal.com/gui/ip-address/95.179.242.76/relations
+
+addiktyo.com
+altanguis.com
+anicsteri.com
+sunnuse.com
+
+# Reference: https://blog.confiant.com/tag-barnakle-one-year-later-120-more-revive-adserver-hacks-f3e5b3bc8e70
+
+adbigline.network
+bibugal.network
+galikos.com
+hoshiwa.com
+line2lime.com
+overgalladean.com
+reticulumlyn.com
+topwindstar.com
+tucanastar.com
+wetral.com

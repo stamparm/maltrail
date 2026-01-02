@@ -1,0 +1,39 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://cyble.com/blog/airavat-malware-targeting-android-users/
+# Reference: https://www.virustotal.com/gui/file/c87fe7c159c1583ca09dd5ab31bf6743ddbb408828d0a77223c4a3bafcac90df/detection
+
+blindajeseguro.online
+dragomitch.com
+jhon-30119-default-rtdb.firebaseio.com
+
+# Reference: https://twitter.com/IronNetTR/status/1767991393270501508
+
+217.27.200.214:56920
+
+# Reference: https://x.com/Xanderuxsf5/status/1942505024200007718
+# Reference: https://x.com/Sh4dow3x3/status/1942509608360370469
+# Reference: https://app.validin.com/detail?find=AIRAVAT&type=raw&ref_id=bc03506a1fc#tab=host_pairs (# 2025-07-08)
+
+0q4icaej9tdtcgyygyg3m27bvsgnpxkl8h5fow1r6uh.pages.dev
+airmonitor.kozinbike.com
+andro01.wolfmatic.com.mx
+bchat.busybuilds.com
+chaporat.com
+col.hellopsikolog.com
+famprotect.silquetech.com
+fozi.servitecxagt.com
+maxx.firebaseapp.com
+print.ambrishbytes.tech
+rat.infranet.my.id
+rat.riyajchowdhury.xyz
+rat.ziara.site
+ratandroid.viewdns.net
+samrat.whf.bz
+seomaster.paltuhacker.com
+sibolhamti.satcom.id
+siparistedarik360.com
+tangonet.pages.dev
+tv9kannada.umbvafood.com
+virasystems.ir

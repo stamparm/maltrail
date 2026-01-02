@@ -1,0 +1,43 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/0xperator/status/1706402486083350586
+# Reference: https://www.zscaler.com/blogs/security-research/bunnyloader-newest-malware-service
+# Reference: https://www.virustotal.com/gui/file/182024beffcb7c5fbce36af989bf052dea4ed45fa0cc07156f3e39a24fc5178e/detection
+
+http://37.139.129.145
+
+# Reference: https://twitter.com/banthisguy9349/status/1738157420436656383
+# Reference: https://www.virustotal.com/gui/file/035ae10badc5ae4db898cdf876da90e4aa8110b2f772e296cac0a0cc5cf3f7ee/detection
+
+http://156.227.24.55
+
+# Reference: https://twitter.com/ShilpeshTrivedi/status/1737813215395074421
+# Reference: https://www.virustotal.com/gui/file/0a7fea34c7f7732b275a6b4422fa2868937a97bcb4465a2dcb9e7abb1bb3d3db/detection
+
+http://134.122.197.80
+
+# Reference: https://twitter.com/banthisguy9349/status/1740366290169295210
+# Reference: https://www.virustotal.com/gui/file/2fb990dd90044fd89d5e22233ffefbfce3fd4596493fcb87fab62ed56f8feb03/detection
+
+http://91.92.254.31
+/YW627AJSUWAK/add.php
+/YW627AJSUWAK/login.php
+/YW627AJSUWAK/
+
+# Reference: https://twitter.com/ViriBack/status/1757953408747569644
+# Reference: https://www.virustotal.com/gui/file/1a5ad9ae7b0dcdc2edb7e93556f2c59c84f113879df380d95835fb8ea3914ed8/detection
+
+hostloads.xyz
+ads.hostloads.xyz
+/BAGUvIxJu32I0/gate.php
+/BAGUvIxJu32I0/
+
+# Generic
+
+/Bunny/Echoer.php
+/Bunny/Heartbeat.php
+/Bunny/ResultCMD.php
+/Bunny/StealerRegistration.php
+/Bunny/TaskHandler.php
+/Bunny/Uploader.php

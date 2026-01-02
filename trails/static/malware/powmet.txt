@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/look-js_powmet-completely-fileless-malware/
+
+bogerando.ru
+
+# Reference: https://www.reddit.com/r/computerviruses/comments/6uxv93/powemetbattk_please_help/dmim83i/
+# Reference: https://www.virustotal.com/gui/domain/server2.aserdefa.ru/relations
+
+aserdefa.ru
+
+# Reference: https://www.virustotal.com/gui/domain/server2.bjdnxbgp3.ru/relations
+
+bjdnxbgp3.ru
+
+# Reference: https://www.hybrid-analysis.com/sample/b0b9beba8089d5ff30d11703648b1bc2083bac677da4cdd3a9ef007dd62282b4?environmentId=100
+# Reference: https://blogs.akamai.com/sitr/2017/09/detecting-file-less-malware-file-less-detection.html
+# Reference: https://blogs.quickheal.com/analysis-fileless-malware-quick-heal-security-labs/
+
+soplifan.ru
+
+# Generic
+
+/restore.Xml%20scrobj.Dll
+/setup.xml%20scrobj.dll
+/setup.xml,Heuristic
+/setup.xml&usg=

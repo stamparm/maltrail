@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2019/10/threat-roundup-1011-1018.html (# Win.Malware.Bublik-7340719-1)
+# Reference: https://www.virustotal.com/gui/file/0d105c7c5ac13e3840a816cd229b19305655df295c9bafaefe23bff7e337feeb/detection
+# Reference: https://www.virustotal.com/gui/ip-address/195.137.213.67/relations
+
+http://195.137.213.67
+bull-quantum-media.su
+coax-quantum-media.su
+evil-quantum-servers.su
+fast-quantum-servers.su
+intelbackupsrv.su
+intelbackupsvc.su

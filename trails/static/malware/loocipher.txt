@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1141758023536242689
+# Reference: https://www.fortinet.com/blog/threat-research/loocipher-can-encrypted-files-be-recovered.html
+# Reference: https://yoroi.company/research/loocipher-the-new-infernal-ransomware/
+
+hcwyo5rfapkytajg.onion
+
+hcwyo5rfapkytajg.onion.pet
+hcwyo5rfapkytajg.darknet.to
+hcwyo5rfapkytajg.onion.sh
+hcwyo5rfapkytajg.tor2web.xyz

@@ -1,0 +1,87 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: flytrap
+
+# Reference: https://news.drweb.com/show/?i=14244&lng=en
+# Reference: https://github.com/DoctorWebLtd/malware-iocs/blob/master/Android.PWS.Facebook/README.adoc
+# Reference: https://www.virustotal.com/gui/file/6a4c430a032f833fad3477f017a83427db73a58c2efd1e836e88a866c1b80607/detection
+
+applockkeep.xyz
+applockmaster.xyz
+horoscopedaily.xyz
+horoscopemagic.xyz
+inwellfitness.xyz
+lockitmaster.xyz
+superbrightflashlight.xyz
+cc.horoscopemagic.xyz
+data.applockkeep.xyz
+data.horoscopedaily.xyz
+mm.superbrightflashlight.xyz
+mxi.applockmaster.xyz
+shop.vfgrl.com
+wap.inwellfitness.xyz
+wap.lockitmaster.xyz
+
+# Reference: https://twitter.com/Cuser07/status/1458420592042934276
+# Reference: https://twitter.com/sh1shk0va/status/1461665573247594498
+
+build8.life
+jobone.host
+kcoffni.xyz
+
+# Reference: https://www.virustotal.com/gui/file/b2fa24bc68c7b410037a4a7234c1e7cb1a2890360195f5fae07f773a3b3f9f9a/detection
+
+fridaybook.live
+
+# Reference: https://twitter.com/ReBensk/status/1480177022701694976
+# Reference: https://www.virustotal.com/gui/file/d85b8b520c5857c1dedf36918f1257720dc5dab47315b9b2da371b70306727a5/detection
+
+roxum.info
+
+# Reference: https://blog.zimperium.com/flytrap-android-malware-compromises-thousands-of-facebook-accounts/
+# Reference: https://otx.alienvault.com/pulse/611392538c3c01b12885549a
+
+http://47.57.237.26
+165.232.173.244:3023
+manage-ads.com
+quanlysanpham.work
+
+# Reference: https://twitter.com/ReBensk/status/1483344828851441664
+# Reference: https://www.virustotal.com/gui/domain/vpacket.cc/relations
+# Reference: https://www.virustotal.com/gui/file/e1ee8693c59bbca5c5ff979ad35dcc3cfddf5a0a7b4cc6818e3dc980fea33b89/detection
+
+vpacket.cc
+api.vpacket.cc
+
+# Reference: https://labs.k7computing.com/index.php/facestealer-the-rise-of-facebook-credential-stealer-malware/
+
+webtrace.club
+/api_v0/udata
+
+# Reference: https://www.virustotal.com/gui/file/9f8e2b5730722e78bb3df03f9465f99dd583d63a6b1bcaf2f70fe437e0433f9b/detection
+# Reference: https://www.virustotal.com/gui/file/19b80966c27ac3e0668942b8916ec1aba6556384ade7e61a21015a7a2baafd03/detection
+
+name888.life
+
+# Reference: https://www.virustotal.com/gui/file/6590c5e57f483a949e3f420b50e6b9b9caec0be71bcf7b32ec5b1eeb6445dec6/detection
+
+dozenorms.club
+
+# Reference: https://www.trendmicro.com/en_us/research/22/e/fake-mobile-apps-steal-facebook-credentials--crypto-related-keys.html
+# Reference: https://otx.alienvault.com/pulse/628389be899915f3a5c86e87
+
+sufen168.space
+
+# Reference: https://www.virustotal.com/gui/file/016ac0393763684dd9539c1a17748e6bec838b4614f0c72311ca130a735a2348/detection
+
+hefreesstate.xyz
+
+# Reference: https://twitter.com/malwrhunterteam/status/1528097861472342017
+# Reference: https://www.virustotal.com/gui/file/a07e63fb0b0edc75361f191c3c15fad4f0fbffbbd73369499c0e393a4add7547/detection
+
+http://95.179.165.48
+
+# Reference: https://www.virustotal.com/gui/file/85fd33f70ad2cdbd887ca23f656063d5444a80277dc3a3febccdc33ef303d4d7/detection
+
+lockmanagerpro.top

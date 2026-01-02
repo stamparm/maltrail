@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fortinet.com/blog/threat-research/vipersoftx-new-javascript-threat
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1227071037633945600
+# Reference: https://twitter.com/VirITeXplorer/status/1352582236558798848
+# Reference: https://www.virustotal.com/gui/file/f82ca18a56a4737387ef58f7fb3118f541ceb0614b51fcf167d2e7c3dc6f2323/detection
+# Reference: https://www.virustotal.com/gui/file/dc81039dbc0bb4ce6fb04378d56727387be6d043f58d4aa2fed0eba1700bacd0/detection
+# Reference: https://www.virustotal.com/gui/file/d092e11e7c6c2f0197e28dc08dccf5ce15200e6391c15bc260a8f2e04fcfdea5/detection
+# Reference: https://www.virustotal.com/gui/file/f8661475c9ba5dafe80d38ec64587749e5e8e5226aade6257fe750d0f1d83c23/detection
+
+104.31.66.220:8880
+104.31.67.220:8880
+217.70.191.237:8880
+vipers.pw
+w0rld.ga
+seko.vipers.pw
+seko.w0rld.ga
+
+# Reference: https://decoded.avast.io/janrubin/vipersoftx-hiding-in-system-logs-and-spreading-venomsoftx/
+# Reference: https://otx.alienvault.com/pulse/637e287e50678e248d79eff4
+
+apps-analyser.com
+private-chatting.com
+wmail-blog.com
+wmail-service.com
+api.private-chatting.com
+
+# Reference: https://twitter.com/andsyn1/status/1617499609580048386
+# Reference: https://www.virustotal.com/gui/file/dfa591ace3247a973100bc8cd9958ddb14e89542c95edb556f5098d2add9b5ff/detection
+
+chatgigi2.com

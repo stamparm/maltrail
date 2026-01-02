@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.antivirus.cz/Blog/Documents/Check_Point-CopyCat_Research_Report.pdf
+# Reference: https://tunesgo.wondershare.com/android-tips/copycat-android-rooting.html
+
+mostatus.net
+mobisummer.com
+clickmsummer.com
+hummercenter.com

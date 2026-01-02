@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://researchcenter.paloaltonetworks.com/2015/11/bookworm-trojan-a-model-of-modular-architecture/
+# Reference: https://twitter.com/kienbigmummy/status/1557762252870385664
+# Reference: https://www.virustotal.com/gui/file/87ec9b5cb7f8dbdf5ea89cade8ab71b3303acff94b119c22bc2cc8c18a4e4260/detection
+
+bkmail.blogdns.com
+debain.servehttp.com
+linuxdns.sytes.net
+news.nhknews.hk
+sswmail.gotdns.com
+sswwmail.gotdns.com
+sysnc.sytes.net
+systeminfothai.gotdns.ch
+thailandbbs.ddns.net
+ubuntudns.sytes.net
+web12.nhknews.hk

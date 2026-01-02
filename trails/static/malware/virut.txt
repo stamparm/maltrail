@@ -1,0 +1,556 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.symantec.com/connect/blogs/snapshot-virut-botnet-after-interruption
+
+irc.zief.pl
+proxim.ircgalaxy.pl
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=88cca88f77be6b6902b4f8d606446eb3
+
+intelaids.su
+intelblog.su
+intelcore.su
+intelprog.su
+intelservice.su
+intelsecurity.su
+
+# Reference: http://www.symantec.com/security_response/writeup.jsp?docid=2007-041117-2623-99&tabid=2
+
+core.ircgalaxy.pl
+irc.zief.pl
+proxim.ircgalaxy.pl
+ru.brans.pl
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2007-090613-5727-99&tabid=2
+
+ircd.zief.pl
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2006-051402-1930-99&tabid=2
+
+proxima.ircgalaxy.pl
+
+# Reference: https://www.cert.pl/PDF/Report_Virut_EN.pdf
+# Reference: https://www.virustotal.com/gui/ip-address/148.81.111.121/relations
+
+adle.pl
+asyr.pl
+bigex.pl
+brans.pl
+brenz.pl
+bton.pl
+cfan.pl
+chura.pl
+civix.pl
+deps.pl
+egmon.pl
+epans.pl
+ghura.pl
+hamb.pl
+idet.pl
+idon.pl
+ircgalaxy.pl
+ixie.pl
+kerit.pl
+kilme.pl
+konter.pl
+lifty.pl
+lometr.pl
+meiu.pl
+merts.pl
+mugu.pl
+nels.pl
+nigim.pl
+play9.pl
+plip.pl
+ragom.pl
+remp.pl
+runk.pl
+sizi.pl
+strup.pl
+sums.pl
+tanz.pl
+timid.pl
+traum.pl
+trenz.pl
+tymis.pl
+valc.pl
+vand.pl
+vasli.pl
+volke.pl
+zief.pl
+alr4.ru
+bzug.ru
+cawt.ru
+dbut.ru
+gbil.ru
+gimbs.ru
+ijol.ru
+ilgo.ru
+ilopa.ru
+ketor.ru
+libis.ru
+lilke.ru
+limag.ru
+linug.ru
+migtu.ru
+mlix.ru
+pamip.ru
+qnx1.ru
+rdek.ru
+rolmi.ru
+rulm.ru
+tasb.ru
+tim4.ru
+varpo.ru
+vilq.ru
+wict.ru
+xalx.ru
+xdix.ru
+xitr.ru
+ziten.ru
+amfib.at
+difti.at
+egab.at
+ikepa.at
+kamfo.at
+maft.at
+mampo.at
+sox4.at
+adxhost.org
+
+# Reference: http://www.mcafee.com/threat-intelligence/malware/default.aspx?id=143054
+
+ntkrnlpa.info
+
+# Reference: https://twitter.com/SickPeaSec/status/1138513877090443264
+
+ilo.brenz.pl
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1153095094565842944
+
+brysla.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1154907180233056258
+
+ibubyx.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1154907190513283073
+
+oynist.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1154907175120191490
+
+hddrjx.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1154907204627161093
+
+xyeric.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1154907165666291713
+
+crmiso.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1154544537437532161
+
+cbucke.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1157806141042319360
+
+qshykj.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1158168534238859265
+
+laridk.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1159618126587281413
+
+ubelix.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1159618122338504704
+
+caijhi.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1160705405200322565
+
+dnfrun.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1160705433105051654
+
+yclhjc.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1160705424716423169
+
+lsadwd.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1162517405249220614
+
+lebocq.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1163966747923402752
+
+audiit.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1165416573823344641
+
+anguka.com
+deatur.com
+dztwsd.com
+frufee.com
+okayam.com
+oxamit.com
+sycfaw.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1167591059628707840
+
+autazo.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1168315439962873856
+
+adevee.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1168677698610323456
+
+djruen.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1175200706808209409
+
+apwgqa.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1175200724860448769
+
+sdmzzq.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1179549550681427968
+
+vnopus.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1181723824578019328
+
+tecise.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1182811018373849091
+
+yongar.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1185710922788167680
+
+auraot.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1185710944242012162
+
+karasa.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1185710938097364992
+
+finhjc.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1186072349692616704
+
+haomas.com
+
+# Reference: https://twitter.com/pancak3lullz/status/739874981320916992
+
+irroie.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1189334135720030208
+# Reference: https://twitter.com/DGAFeedAlerts/status/1189334131727044609
+# Reference: https://twitter.com/DGAFeedAlerts/status/1189334119563571200
+
+ebetho.com
+ovaroc.com
+whycjn.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1190421276650852358
+# Reference: https://twitter.com/DGAFeedAlerts/status/1190421271135305733
+# Reference: https://twitter.com/DGAFeedAlerts/status/1190421265678503938
+
+chnzcm.com
+hngbhp.com
+manewo.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1196581696260456449
+
+yoluna.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1198393661047918592
+
+toufou.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1198393643779969024
+
+cowuma.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1198031217679126529
+
+vefafm.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1201292744653717504
+
+imroot.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1202893279945248768
+
+dresey.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1204916848296439809
+
+kmbygf.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1204916841627471878
+
+amozzo.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1206003766241181698
+
+ieekuu.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1208540992430911488
+
+elpheo.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1208541001322774529
+
+gmtgoa.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1208541012873875458
+
+whmjdp.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1208541017907122177
+
+yjssyy.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1209627739134812166
+
+hfyeda.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1209627744478400515
+
+meddec.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1210715969179570176
+
+njgdzk.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1211439736579088384
+
+jyjtyy.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1213976474404954112
+
+nnfawu.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1213976479505272838
+
+sayyup.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1214338827160096769
+
+blusas.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1214338823628509185
+
+apkmod.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1214701677103788032
+
+hawovo.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1214701690915639303
+
+odaabo.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1214701700700917761
+
+xhamer.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1214701688059236355
+
+nyjyck.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1215063932647432193
+
+aiyall.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1215063937177341957
+
+makeja.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1223760794342641664
+
+haiasa.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1228109463720206336
+
+baoytv.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1228109448167743489
+
+asyeye.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1228275560650084352
+
+ueytyd.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1228471897563828232
+
+piblox.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1228471905725931520
+
+whalky.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1228471894489403393
+
+boimer.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1228834260682932225
+
+dokite.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1228834265833537537
+
+valito.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1231370920595480578
+
+gyyrlz.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1231370926635261952
+
+itseco.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1233907774561693696
+
+yodaca.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1235583631982243840
+
+shmtix.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1235719625800699907
+
+notsle.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1236444305704837120
+
+jacnor.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1236806531074703361
+
+llopai.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1240204042527297537
+
+wrkmen.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1257372282906869762
+# Reference: https://twitter.com/DGAFeedAlerts/status/1257372277957627905
+# Reference: https://twitter.com/DGAFeedAlerts/status/1257372266779881474
+
+feppmx.com
+huibed.com
+xoomda.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1257538452582776832
+
+fionia.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1257901065766305792
+
+bcride.com
+
+# Reference: https://twitter.com/DGAFeedAlerts/status/1257901071080579074
+
+vedela.com
+
+# Reference: https://www.virustotal.com/gui/file/03a54ea15676d646976cfa49215ca31f96c5b290ff3d5da82dff0e7476bca7a9/detection
+
+scozzf.com
+
+# Reference: https://twitter.com/wavehackr/status/1068970181572079616
+# Reference: https://chrisdietri.ch/post/virut-resurrects/
+
+77.73.69.179:9
+tbsgay.com
+ffiuli.com
+lexfal.com
+sexpsa.com
+volmio.com
+
+# Reference: https://www.virustotal.com/gui/file/58afc7fdfdf1f168c3914ed4f22345ec57e99a55a9134fa492ac7a8131c9ef07/detection
+
+ody.cc
+
+# Reference: https://www.virustotal.com/gui/ip-address/104.143.36.148/relations
+# Reference: https://www.virustotal.com/gui/file/00c185230c3cf2761d56197192f8cd664e8ae7516636b7ada04a4e0407e50eca/detection
+
+104.143.36.148:9
+
+
+# Reference: https://www.virustotal.com/gui/domain/d3vngcy706h320.cloudfront.net/relations
+
+d3vngcy706h320.cloudfront.net
+afuazu.com
+cing.pl
+exesjl.com
+fovali.com
+gemgbo.com
+iaourz.com
+indab.pl
+iqchk.pl
+kalevm.com
+lefi.pl
+mixewa.com
+mmamux.com
+oyleve.com
+rarops.com
+samb.pl
+wialtg.com
+xsrv.pl
+gpt.xsrv.pl
+hk1.uc.zone
+ps.indab.pl
+sp.iqchk.pl
+spn.samb.pl
+tsm.lefi.pl
+u0a.cing.pl
+
+# Reference: https://www.virustotal.com/gui/file/a9d6eb84990a80463f9581cc597de0fc9c406372f8911c58c315421d3b266e63/detection
+
+114.112.255.81:65520
+
+# Reference: https://www.virustotal.com/gui/file/a9d6eb84990a80463f9581cc597de0fc9c406372f8911c58c315421d3b266e63/detection
+
+http://111.90.151.64
+http://178.20.158.5
+http://89.212.28.47
+http://91.226.93.139
+109.206.176.19:999
+121.254.253.123:88
+bestpspgame.com
+hcargo.com
+hermanulloa.com
+lddwj.com
+qwert.mcdir.ru
+tesoeqwu.ru
+uugamasam-ru.1gb.ru
+uxtadson.ru
+
+# Reference: https://www.virustotal.com/gui/file/2061dec80f6d248a35748d31493ed5337aa980c3641777faff8f8e5d22d1dc30/detection
+
+188.190.122.92:999
+
+# Generic
+
+/mk/p0.php?a=
+/mk/p1.php?a=
+/mk/p2.php?a=
+/mk/p3.php?a=
+/mk/p4.php?a=
+/mk/p5.php?a=
+/mk/p6.php?a=
+/mk/p7.php?a=
+/mk/p8.php?a=
+/mk/p9.php?a=

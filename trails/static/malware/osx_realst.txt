@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://iamdeadlyz.gitbook.io/malware-research/july-2023/fake-blockchain-games-deliver-redline-stealer-and-realst-stealer-a-new-macos-infostealer-malware
+
+167.172.103.83:8080
+77.91.84.110:5000
+77.91.84.110:8000

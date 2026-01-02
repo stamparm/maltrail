@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/StopMalvertisin/status/1958533412832371058
+# Reference: https://www.virustotal.com/gui/file/bbeba46d7b7400efb1fc5fd23f0bc517b31f9def01706077403e6cd175274ef5/detection
+# Reference: https://www.virustotal.com/gui/file/109362ad4a98ff60ec55ffb22a396c298776a442da91e36757161cfea633256c/detection
+
+lokrlogalshit.icu
+
+# Reference: https://x.com/suyog41/status/1975088493148938567
+# Reference: https://www.virustotal.com/gui/file/92ee6fc6f498365ee3abd92bfbf3b0a064f4a038ec524aceb0f92db2fb3e1db5/detection
+
+168.235.103.57:3128

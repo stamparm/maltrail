@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.lookout.com/documents/threat-reports/lookout-discovers-monokle-threat-report.pdf
+# Reference: https://otx.alienvault.com/pulse/5d3870489001dda95a515528
+
+flyinthesky.gotdns.ch
+oldserver.servepics.com
+southparks.servebeer.com
+zebraland.myftp.biz

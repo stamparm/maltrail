@@ -1,0 +1,177 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: aguilaciega, apt36, apt-c-36, apt-q-98, blind eagle, blotchyquasar, tag-144
+
+# Reference: https://ti.360.net/blog/articles/apt-c-36-continuous-attacks-targeting-colombian-government-institutions-and-corporations-en/
+
+mentes.publicvm.com
+medicosco.publicvm.com
+ceosas.linkpc.net
+ceoempresarialsas.com
+ceoseguros.com
+diangovcomuiscia.com
+ismaboli.com
+
+# Reference: https://twitter.com/HONKONE_K/status/1145536069435195392
+
+medicosempresa.com
+
+# Reference: https://twitter.com/1ZRR4H/status/1503572957595111427
+# Reference: https://tria.ge/220314-3qe5padgh2
+
+181.131.217.174:2050
+febenvi.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/ebbc37e280f15408a2ff17bec1151cc64d151e20c1e59209a76b9eb3944d6704/detection
+
+181.130.5.112:33889
+defenderav.con-ip.com
+
+# Reference: https://twitter.com/th3_protoCOL/status/1517144901871235072
+# Reference: https://www.virustotal.com/gui/domain/polycomusa.com/community
+# Reference: https://www.virustotal.com/gui/file/13e36170821628f9097862556e42cbed5f1cccc6897405fc7edc8ae914675bf4/detection
+
+polycomusa.com
+ajaxcoder.polycomusa.com
+axu87794.polycomusa.com
+giraffebear.polycomusa.com
+hellmagers.polycomusa.com
+host-rami.polycomusa.com
+mega.polycomusa.com
+sainth.polycomusa.com
+sanctuary.polycomusa.com
+sicariop.polycomusa.com
+smakaf1.polycomusa.com
+therussian.polycomusa.com
+yty0do.polycomusa.com
+zhost.polycomusa.com
+zvoracle.polycomusa.com
+/hAkDVgKdlfL7jcn/
+
+# Reference: https://www.virustotal.com/gui/file/378e01925608bcd74544a5b5536c20a0007eb255e145370df228bb004aa59de2/detection
+
+103.151.124.233:666
+
+# Reference: https://www.virustotal.com/gui/file/f964f108f661de1c15e3cedee074cf1617ce02f85eb7e8613077f9ed95c4b37d/detection
+
+45.147.231.85:12632
+
+# Reference: https://www.virustotal.com/gui/file/e81baa5e7bf0fe2ebeb07983e71d05d09698e567d9bcaf17176e631156d01c60/detection
+
+181.130.9.145:6525
+marzo72022.con-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/95eb3d6f61d5082bee11ea47a7c90c0dcdc18af71985276ab56f648dcc549d87/detection
+
+2.56.59.208:7075
+
+# Reference: https://www.virustotal.com/gui/file/8c2215d43e7cd77c90a424ca6c81c1b94acf01eaecbb048447e171ebef0c2dfd/detection
+
+2.56.57.27:8080
+
+# Reference: https://www.virustotal.com/gui/file/8b437a76538722dc4535cbf3180005eb973caa6e9be13c6d3852fed1789960a0/detection
+
+181.130.9.145:6522
+enero2022.con-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/80e498268b8be964d5a74ca226218b17cb7a28a8929e70e2d2c3aed768e6308c/detection
+
+62.197.136.252:1655
+
+# Reference: https://research.checkpoint.com/2023/blindeagle-targeting-ecuador-with-sharpened-tools/
+
+upxsystems.com
+laminascol.linkpc.net
+systemwin.linkpc.net
+
+# Reference: https://otx.alienvault.com/pulse/64419d343c9d98fc279185f7
+
+dian.server.tl
+
+# Reference: https://twitter.com/Joseliyo_Jstnk/status/1654038642489442304
+# Reference: https://twitter.com/Joseliyo_Jstnk/status/1654038649514921984
+
+chileimportaciones.cl
+/udodinmauwa.txt
+
+# Reference: https://twitter.com/0xToxin/status/1654802474534830080
+# Reference: https://tria.ge/230506-mbyeqagg43/behavioral1
+# Reference: https://tria.ge/230506-mdhr2sgg55/behavioral2
+
+177.255.89.112:4203
+177.255.89.112:5220
+strekhost2066.duckdns.org
+
+# Reference: https://twitter.com/dark0pcodes/status/1678920710872244225
+
+cryptersandtools.minhacasa.tv
+vargasvargasabogadosnotificaciones.privat.lc
+
+# Reference: https://mp.weixin.qq.com/s/-7U1-NTP0EdVOtptzbHUsg (Chinese)
+
+autgerman.com
+subirfact.com
+autgerman.autgerman.com
+
+# Reference: https://www.zscaler.com/blogs/security-research/blindeagle-targets-colombian-insurance-sector-blotchyquasar
+# Reference: https://www.virustotal.com/gui/file/ec2dd6753e42f0e0b173a98f074aa41d2640390c163ae77999eb6c10ff7e2ebd/detection
+# Reference: https://www.virustotal.com/gui/file/eb4a92271d1e034d3107a4acb892b37cab12cda6afb6903690cc1b11fe700492/detection
+# Reference: https://www.virustotal.com/gui/file/c2081fafabc9816a2392f3936489d78f72dc794b8f0a8d370fadeb257b3b9a20/detection
+# Reference: https://www.virustotal.com/gui/file/b63b7ab595fe60b92be73ba8b6e620cbff34c0f369723de15159c17dbef5f152/detection
+# Reference: https://www.virustotal.com/gui/file/9c10849b9f11cda1187e3827089261eb6b2a1d15c58c0180379390a05a90ec28/detection
+# Reference: https://www.virustotal.com/gui/file/8038bd440b03f72d2f1147b2eb0642d6ab3bb54fc88dca1cade2df3b11cf207f/detection
+# Reference: https://www.virustotal.com/gui/file/7d2862bafaa267a5b2e9dae56c92018fe685c1a35ff5ec8f8196b3fe541c8dc6/detection
+# Reference: https://www.virustotal.com/gui/file/50d29874cbfe0d2cb5aa6e30d56cb62091a935214a8158173c065476893df49b/detection
+
+128.90.108.115:4799
+128.90.115.167:4799
+128.90.115.93:4799
+128.90.115.95:4724
+128.90.130.185:4724
+69.167.10.207:4845
+69.167.11.9:4724
+69.167.8.118:9057
+edificiobaldeares.linkpc.net
+equipo.linkpc.net
+perfect5.publicvm.com
+perfect8.publicvm.com
+
+# Reference: https://x.com/bigmacjpg/status/1841133075880632683
+# Reference: https://gist.github.com/kirk-sayre-work/354d875086bb533b3095dc06b7537869
+
+http://104.168.32.148
+http://107.172.130.147
+http://134.19.177.44
+http://134.255.227.248
+http://172.232.184.131
+http://185.29.10.52
+http://198.46.129.134
+http://45.79.190.156
+http://72.5.43.53
+35.34.5.27:443
+pub-4c182737706e41d29aee6cc5517f834d.r2.dev
+pub-6346c84860d5480393a1799fb277dfdc.r2.dev
+
+# Reference: https://www.recordedfuture.com/research/tag-144s-persistent-grip-on-south-american-organizations
+
+aseguradotelle.duckdns.org
+envio02-04.duckdns.org
+envio14-03.duckdns.org
+envio1414.duckdns.org
+envio19-05.duckdns.org
+envio21-05.duckdns.org
+envio2333.duckdns.org
+envio26-03.duckdns.org
+envio28-003.duckdns.org
+envio29.duckdns.org
+envio31-03.duckdns.org
+ojosostenerfebrero.duckdns.org
+qua25q.duckdns.org
+qua25qua.duckdns.org
+respaldito01.duckdns.org
+respaldito03.duckdns.org
+respaldomax3.duckdns.org
+respaldomax4.duckdns.org
+respaldomx1.duckdns.org
+respaldomx5.duckdns.org

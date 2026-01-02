@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/500mk500/status/1806256078851543318
+# Reference: https://app.validin.com/detail?find=cashout.pw&type=dom&ref_id=fc1c358a538#tab=host_pairs_v2
+
+cash-hosting.pw
+cashout.pw

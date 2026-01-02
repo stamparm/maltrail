@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.group-ib.com/blog/boolka/
+# Reference: https://www.virustotal.com/gui/ip-address/45.182.189.109/relations
+# Reference: https://www.virustotal.com/gui/file/2f10a81bc5a1aad7230cec197af987d00e5008edca205141ac74bc6219ea1802/detection
+# Reference: https://www.virustotal.com/gui/file/7266f20123edcb2e0b92ac0b63225b8db2c5ff349818b339ef1553bff06719e4/detection
+# Reference: https://www.virustotal.com/gui/file/9434e2f277f764bb75302cd5355ed45f7624f1d993a454a7dbaf68b7e9b4b3a2/detection
+# Reference: https://www.virustotal.com/gui/file/b2dbd3187c67883c0f77c17530f41e05950e9e38b2798773770fe37f5985e367/detection
+# Reference: https://www.virustotal.com/gui/file/227b8233071da4d3015cb04b69285885100c9f2e5d98b803b37d23afb798375a/detection
+
+http://45.182.189.109
+beonlineboo.com
+boolka.tk
+boolka24.tk
+1-update-soft.com
+update-brower.com
+updatebrower.com
+ns1.1-update-soft.com
+ns1.update-brower.com
+ns1.updatebrower.com
+ns2.updatebrower.com
+beef.beonlineboo.com
+mainnode.beonlineboo.com
+node.beonlineboo.com

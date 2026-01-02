@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: bcdropper, bcobserver
+
+# Reference: https://x.com/RakeshKrish12/status/1862036889714475123
+# Reference: https://justpaste.it/auk5t
+# Reference: https://www.welivesecurity.com/en/eset-research/bootkitty-analyzing-first-uefi-bootkit-linux/
+# Reference: https://github.com/eset/malware-ioc/tree/master/bootkitty
+# Reference: https://www.virustotal.com/gui/file/0a54fe932ebc3e4fd5aeaf094ac163c9e92d1efa7ab66af3d1cbd2cb9ee4c294/detection
+# Reference: https://www.virustotal.com/gui/file/f1f84819bdf395d42c36adb36ded0e7de338e2036e174716b5de71abc56f5d40/detection
+# Reference: https://www.virustotal.com/gui/file/9ee580a9be05b44a9b5102701c8cf45417c3a96617dbf73c40ac5ac4773dfe97/detection
+
+http://129.154.53.124
+129.154.53.124:22

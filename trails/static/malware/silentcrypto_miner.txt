@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/anyrun_app/status/1760248289251734007
+# Reference: https://twitter.com/Jane_0sint/status/1760278859960741917
+# Reference: https://app.any.run/tasks/3cdc58f1-33aa-4898-8a0a-25c1fb2c7034/
+# Reference: https://www.virustotal.com/gui/file/b8fb2da582b81416ff4bbbce86c1c74e651fa832bd455c0b94938075631bbc6a/detection
+
+sabellenladen.duckdns.org

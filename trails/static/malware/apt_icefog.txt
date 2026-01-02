@@ -1,0 +1,88 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/clearskysec/status/968104469014761472?lang=en
+
+kastygost.compress.to
+uzwatersource.dynamic-dns.net
+
+# Reference: https://speakerdeck.com/ashley920/into-the-fog-the-return-of-icefog-apt?slide=21
+
+appst0re.net
+
+# Reference: https://speakerdeck.com/ashley920/into-the-fog-the-return-of-icefog-apt?slide=35
+
+date.dellnewsup.net
+mn.dellnewsup.net
+news.dellnewsup.net
+win.dellnewsup.net
+dwm.dnsedc.com
+
+# Reference: https://speakerdeck.com/ashley920/into-the-fog-the-return-of-icefog-apt?slide=38
+
+poff.wha.la
+zorsoft.ns1.name
+tajikstantravel.dynamic-dns.net
+cospation.net
+mocus.cospation.net
+mitian123.com
+
+# Reference: https://speakerdeck.com/ashley920/into-the-fog-the-return-of-icefog-apt?slide=41
+
+tele.zyns.com
+trendiis.sixth.biz
+laugh.toh.info
+aries.epac.to
+
+# Reference: https://speakerdeck.com/ashley920/into-the-fog-the-return-of-icefog-apt?slide=44 (# root domains)
+
+01transport.com
+applelenovo.com
+benzerold.com
+blue-vpn.net
+comesafe.com
+eyellowarm.com
+kaboolyn.com
+knightpal.com
+kyssrcd.pw
+numnote.com
+suverycool.com
+
+# Reference: https://speakerdeck.com/ashley920/into-the-fog-the-return-of-icefog-apt?slide=49
+
+nicodonald.accesscam.org
+skylineqaz.crabdance.com
+youareexcellent.kozow.com
+
+# Reference: https://speakerdeck.com/ashley920/into-the-fog-the-return-of-icefog-apt?slide=55
+
+eagleoftajik.dynamic-dns.net
+tajikmusic.dynamic-dns.net
+https.ikwb.com
+
+# Reference: https://speakerdeck.com/ashley920/into-the-fog-the-return-of-icefog-apt?slide=56
+
+nitec.ns1.name
+game.sexidude.com
+bluesky.zyns.com
+moonlight.compress.to
+whitebirds.mefound.com
+niteast.strangled.net
+honoroftajik.dynamic-dns.net
+
+# Reference: https://otx.alienvault.com/pulse/5cf67ff667d9acf61c422cd2
+# Reference: https://www.virustotal.com/gui/domain/sportsnewsa.net/relations
+
+baagii.sportsnewsa.net
+basaa.sportsnewsa.net
+bulgaa.sportsnewsa.net
+russion.dnsedc.com
+ylineqaz-y25ja.crabdance.com
+xn--uareexcellent-or3qa.kozow.com
+zaluu.dellnewsup.net
+
+# Reference: https://twitter.com/ostinjohn/status/1158076164327583745
+# Reference: https://www.virustotal.com/gui/file/5e3cd28d9ab02de8d816b7a0719e715330b4ad28cb2d2778a5f54a3396620991/detection
+# Reference: https://app.any.run/tasks/3a08945b-62c3-4a0e-893b-bcdbdc920650/
+
+95.179.131.29:443

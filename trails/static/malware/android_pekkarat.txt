@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/TLP_R3D/status/1658084657311907841
+# Reference: https://www.virustotal.com/gui/file/0bfa583458f5f33f4536ff93a74153f297e90542f9590eba03c1642d1ff1412f/detection
+
+pekkarat.com

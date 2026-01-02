@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://cert-agid.gov.it/news/malware/falsa-comunicazione-cashback-di-stato-veicola-malware/
+
+failaspesa.altervista.org
+ffaadd332211.altervista.org

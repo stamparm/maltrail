@@ -1,0 +1,153 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: finaldraft, guidloader, squidoor, earth alux, vargeit, railload, railsetter, masqloader, rsbinject, jewelbug, CL-STA-0049
+
+# Reference: https://x.com/lontze7/status/1889701406065455276
+# Reference: https://www.elastic.co/security-labs/fragile-web-ref7707
+
+13.125.236.162:15701
+13.125.236.162:15702
+13.125.236.162:15703
+13.125.236.162:15709
+203.232.112.186:15701
+203.232.112.186:15702
+203.232.112.186:15703
+203.232.112.186:15709
+anyconnact.com
+autodiscovar.com
+aws-clouds.com
+azure-clouds.com
+checkponit.com
+d-links.net
+fortineat.com
+hobiter.com
+ictnsc.com
+microsoftcor.com
+online-wsus.net
+passjackpot.com
+radiws.com
+radiys.com
+vm-clouds.net
+vmphere.com
+activeapi.passjackpot.com
+adapter.radiws.com
+adapter.radiys.com
+app.radiws.com
+app.radiys.com
+cloud.autodiscovar.com
+cloud.online-wsus.net
+digert.ictnsc.com
+dns1.online-wsus.net
+dns2.online-wsus.net
+dns3.online-wsus.net
+media.passjackpot.com
+pol.vm-clouds.net
+poster.checkponit.com
+store.azure-clouds.com
+support.anyconnact.com
+support.fortineat.com
+support.vmphere.com
+update.hobiter.com
+
+# Reference: https://x.com/ValidinLLC/status/1891565443107733833
+
+crowdstrikb.com
+digiscert.com
+dosmain.com
+globalprotact.com
+outlooks365.com
+symantaec.com
+trendmicroa.com
+vsphera.com
+
+# Reference: https://unit42.paloaltonetworks.com/advanced-backdoor-squidoor/
+
+microsoftapimap.com
+zimbra-beta.info
+
+# Reference: https://www.trendmicro.com/en_us/research/25/c/the-espionage-toolkit-of-earth-alux.html
+# Reference: https://documents.trendmicro.com/assets/txt/Earth-Alux-IOCsMF1CeJD.txt
+
+upload-microsoft.com
+google.otp.us.kg
+
+# Reference: https://app.validin.com/detail?find=62d1c45957a44142e6868dd7d5d77431&type=hash&ref_id=13eba809dce#tab=host_pairs (# 2025-04-01)
+# Reference: https://app.validin.com/detail?find=47.239.181.114&type=ip4&ref_id=4eefbabd2e2#tab=host_pairs
+
+swiftsparrowtech.com
+
+# Reference: https://app.validin.com/detail?find=62d1c45957a44142e6868dd7d5d77431&type=hash&ref_id=13eba809dce#tab=host_pairs (# 2025-04-01)
+# Reference: https://app.validin.com/detail?find=47.83.167.136&type=ip4&ref_id=4eefbabd2e2#tab=host_pairs
+
+rubyrobinretail.com
+
+# Reference: https://app.validin.com/detail?find=62d1c45957a44142e6868dd7d5d77431&type=hash&ref_id=13eba809dce#tab=host_pairs (# 2025-04-01)
+# Reference: https://app.validin.com/detail?find=47.239.140.113&type=ip4&ref_id=4eefbabd2e2#tab=host_pairs
+
+azureoceandata.com
+
+# Reference: https://app.validin.com/detail?find=62d1c45957a44142e6868dd7d5d77431&type=hash&ref_id=13eba809dce#tab=host_pairs (# 2025-04-01)
+# Reference: https://app.validin.com/detail?find=47.236.69.137&type=ip4&ref_id=4eefbabd2e2#tab=host_pairs
+
+dtac-cloud.com
+
+# Reference: https://app.validin.com/detail?find=3f04b5e449e8c0e5701def6081749a45&type=hash&ref_id=201172d18a2#tab=host_pairs (# 2025-04-01)
+
+dtac-ithelp.com
+app.dtac-ithelp.com
+shop.dtac-ithelp.com
+
+# Reference: https://app.validin.com/detail?find=naive-admin-vue&type=raw&ref_id=485442c6359#tab=host_pairs (# 2025-04-01)
+# Reference: https://app.validin.com/detail?find=8608064e2e140f9d65320ae65ca47ad2&type=hash&ref_id=0662de6ded8#tab=host_pairs (# 2025-04-01)
+
+profitquantor.com
+r-ai.online
+alice.r-ai.online
+alice2.r-ai.online
+api.profitquantor.com
+api.r-ai.online
+user.api.profitquantor.com
+
+# Reference: https://app.validin.com/detail?find=8.213.214.220&type=ip4&ref_id=40113e2e164#tab=host_pairs (# 2025-04-01)
+
+my-oco-inc.online
+
+# Reference: https://app.validin.com/detail?find=8.213.198.215&type=ip4&ref_id=52eebcf8247#tab=host_pairs (# 2025-04-08)
+# Reference: https://app.validin.com/detail?find=CatPay&type=raw&ref_id=393c641c88e#tab=host_pairs (# 2025-04-08)
+
+tppays.com
+api.tppays.com
+d5.tppays.com
+merchant.tppays.com
+
+# Reference: https://www.security.com/threat-intelligence/jewelbug-apt-russia
+# Reference: https://www.virustotal.com/gui/ip-address/94.131.11.144/relations
+# Reference: https://www.virustotal.com/gui/ip-address/95.164.5.209/relations
+# BANNER_0_HASH-HOST=7e7b9e133036efc5b9b2a8095d0272ba
+# BANNER_0_HASH-HOST=c90ef63295c2e01194f464a718937c96
+# BANNER_0_HASH-HOST=e8ab7b9c8f3e045c30c2a9d9ca5a5d22
+# BANNER_0_HASH-HOST=ff54d8354c2c9229409d2b12e2462ead
+# CERT_FINGERPRINT_SHA256-HOST=9fa1e00beccd78f5af8e9b2b9b772c7f8229204ddaeb52ca0734977f8890b7ec
+# CERT_FINGERPRINT_SHA256-HOST=a2dca77c131f83038435cea68d6b053789e7c1f36ec2402eb45c9c0f5880465a
+# CERT_FINGERPRINT_SHA256-HOST=10d02112e51252018704cc604566babcc8519050b7b9596ef178bb475019094d
+# HEADER_HASH-HOST=e480368c2787783bdc37
+
+34.117.217.74:443
+95.164.5.209:443
+acrobe-dev.com
+defender-update.services
+fiberlux.vip
+kindylib.info
+ubuntu22c3sl-update.com
+blance.workers.dev
+cdn.kindylib.info
+ns.acrobe-dev.com
+ns.fiberlux.vip
+ns.kindylib.info
+ns.defender-update.services
+ns1.defender-update.services
+p1ayer.workers.dev
+update.ubuntu22c3sl-update.com
+app.blance.workers.dev
+v-proxy.p1ayer.workers.dev

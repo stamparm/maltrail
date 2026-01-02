@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trendmicro.com/en_us/research/21/a/earth-wendigo-injects-javascript-backdoor-to-service-worker-for-.html
+# Reference: https://otx.alienvault.com/pulse/5ff4910b62daeb96d924cce8
+
+anybodyopenfind.com
+googletwtw.com
+mail2000tw.com
+travelsiteadvisor.com

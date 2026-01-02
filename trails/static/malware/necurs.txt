@@ -1,0 +1,1063 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Trojan:Win32/Necurs
+
+pbmwtovcjeyvnauw.in
+dnsplast.com
+ogakdluohmssh.com
+bfedsudxfx.com
+jogdfliksma.com
+ccuqwbwoosxxiwc.com
+
+# Reference: https://app.any.run/tasks/94a610bd-850a-44fa-824a-cc376c3ffa4b/
+
+http://35.178.227.183
+
+# Reference: https://www.virustotal.com/gui/file/a2371b0be2adf98e2d3997422481c4af8e17ec92b56adb6e30a5741d1b1b63e8/detection
+# Reference: https://www.virustotal.com/gui/file/dca9207d71266ae57b4fc9fe2e5bf1868ed8d29a349f7a380e6be81d8e6337ed/detection
+# Reference: https://www.virustotal.com/gui/file/f66616828dbf38a57b527047551429e83ebd44f66c7b145ab648f211d6194438/detection
+# Reference: https://www.virustotal.com/gui/file/bb9c7c11074225013db8592380a092ede75f1f94a4b0a11bef355815685808f3/detection
+
+http://217.12.209.74
+http://5.149.249.169
+bpyjncvnaflzhv.com
+buqehalsykoeq.com
+dbdtaxcvncvljf.com
+dhioantswo.com
+erybgabbed.bit
+ihzzynqnqmnkz.com
+ivrzetmpxyic.com
+liststitch.com
+lnrokfaujbekeak.com
+martarella.de
+myzlwkqitwiiops.com
+oyuncini.net
+rortluutpyjcv.com
+samcssypnlaenmp.com
+tixvohhmagwj.com
+uqideojokcitfqb.com
+vqisqddgso.com
+welsbtrzbkeizgj.com
+wkfwcxxdxcr.com
+wqjfttpkogayma.com
+
+# Reference: https://www.virustotal.com/gui/file/5af629d71b1f8eaa8ef8c187cec83bf1270d17dc378376913cd1db07af0fb232/detection
+
+http://91.221.99.237
+gfhowkykwvh.com
+vwvuuotlka.com
+xhitdudjxnkblnu.com
+xiizmfgqxa.com
+
+# Reference: https://www.virustotal.com/gui/file/2884887799f0f40c53f22dcaefaef75a2ffa5ad3d281341c3ec25d78d7da4e72/detection
+
+http://5.149.250.148
+bmquupdlgw.com
+mptqmtbtjrnriz.com
+rynauzjgxjg.com
+zqjahtfithdylq.com
+
+# Reference: https://www.virustotal.com/gui/file/af7dfbaee491fed34df837c4b1e29e548bef9d6390f58fd410f597e2885d5aeb/detection
+
+drtiioyxjlnvpih.com
+fzbbbbjgibducg.com
+smmjzdgvjk.com
+sunfcncbiepjprx.com
+
+# Reference: https://www.virustotal.com/gui/file/a0a2504a8adf1489866b2c6fa52aac433e1c005a96c32c9ee4e1bc26c98f2dda/detection
+
+btenxibhvns.com
+nvgbdgzitjltax.com
+qjhjffnbsli.com
+uumptkhxxszuh.com
+
+# Reference: https://www.virustotal.com/gui/file/c1090aca990de156527644689fa5d9a72067ad7e6e69afa940eb4eb8f8775bc0/detection
+
+afikkcchevkeuxy.com
+pawxdijjmr.com
+rnrppezzzlpbmpp.com
+xyuuyghevo.com
+
+# Reference: https://www.virustotal.com/gui/file/e39b75065b244cdb8e2224126136c8484aa00e47a8a8b42af44e2cf3070d803e/detection
+
+ilebdeeisisjpjb.com
+rwtragjkgpcwiz.com
+smyuiyspkd.com
+xfgcclkaeytm.com
+
+# Reference: https://www.virustotal.com/gui/file/128afea20159002df69d26587752a96abe4087b5090211384883e0b1eea0eb85/detection
+
+dhualssstwkp.com
+mnwvmnqszdjg.com
+rafsggvvuhx.com
+ukhafcxobtvswi.com
+
+# Reference: https://www.virustotal.com/gui/file/684d7205bd975a993de07f4f8f0200e47470f1b4355e1ba64be8e8507490e8df/detection
+
+bubtwoijvfsb.com
+dddbmrpnwk.com
+hnvfcbzskjwp.com
+pcsojzwuhry.com
+
+# Reference: https://www.virustotal.com/gui/file/e1db0311e5f1d20501d150707a7c9082bd6ca813395ca7da97c5fe49bf655a3a/detection
+
+rtkoghfezogdkm.com
+tyiemqzzvkyf.com
+uroutfsple.com
+ztihndtxjvnuza.com
+
+# Reference: https://www.virustotal.com/gui/file/32d828d77b480ae4fc954d27286bc7b402d716d98ffc170dcae0bad9521ca4e0/detection
+
+fnmkrwbfewkq.com
+isjyfqjwsmg.com
+ukbkkamuvfnao.com
+ycdvgweclmif.com
+
+# Reference: https://www.virustotal.com/gui/file/41710468fa4feaf980d9c2daddddcf1529ef35aba4c52731eefa975b79643c8c/detection
+
+afunqpbuubcqe.com
+cmxhvzlvnece.com
+ezurkkjvicgbuph.com
+zatirdohckcopa.com
+
+# Reference: https://www.virustotal.com/gui/file/c33bc97ee0a48343c94c71720a39747356562f522420c82f2dc78b962af4b675/detection
+
+ldkcwswchryefq.com
+ptqcrnjypid.com
+rziqsyuvqo.com
+zxtnslpsrmolg.com
+
+# Reference: https://www.virustotal.com/gui/file/54291b2ae085ceb696c01633477ea20f3ce8f257a6482608bffcdec05b970ed3/detection
+
+http://31.184.225.12
+btfsyfomwyoi.com
+ddinkkfjkgamgjw.com
+qxqecnvtib.com
+xgfrvuspciqniyu.com
+
+# Reference: https://www.virustotal.com/gui/file/2d981fbe1a346c9d992be9faa7d50a38e2dec5a579090191f9a4965d3757fd60/detection
+
+bkwqqyqhpdv.com
+bsxmqpiurqgbcp.com
+pdakojoncd.com
+rxzyvaoaobh.com
+
+# Reference: https://www.virustotal.com/gui/file/0912df139531a0b0f2f6149a4de9dcc6ec9eea3381c85d5856756977b248cfee/detection
+
+hiilptflqmdpdq.com
+jnjaxfpjnffsxq.com
+sqgmoexedyiq.com
+vwteegfmkuhmjv.com
+
+# Reference: https://www.virustotal.com/gui/file/1e121f096eba3dd65bb254c4634ab399a013a1267516f6257ff62b427e1df346/detection
+
+abgvqtdgtsvo.com
+hdrkoeteqc.com
+wncxbyifmoyj.com
+ylqdjfeadhivvcm.com
+
+# Reference: https://www.virustotal.com/gui/file/339d15ca2d7767e0b4a00f80e4df11e4179c4fbe0e754aca20d57fc073236711/detection
+
+cdpqqqmfoduzni.com
+efwqdvaosk.com
+fybtsqyiktlgzyw.com
+zbjsuqjaqkce.com
+
+# Reference: https://www.virustotal.com/gui/file/2aeb85293dabf5f21fd814052a117838fe74d8674284599b95bb3d381b5eb86a/detection
+
+iffsreiuggf.com
+ucheqkbewyq.com
+upjvvqagtktzz.com
+yaqcxpvezxychl.com
+
+# Reference: https://www.virustotal.com/gui/file/350584ec572c3fef7d5323ad0cc8dad2ddf50243586cfbe7d6d7b70a4b955741/detection
+
+enmgvyusgh.com
+jkdxeakfmcbp.com
+neuogjxziozrpjr.com
+ufwfupbqlw.com
+
+# Reference: https://www.virustotal.com/gui/file/1ed1efcdc9fbbc331053c740dafb98edd03100a376d2707777dc8aa94e73a49c/detection
+
+dikondrnjczgvyc.com
+jfubbzadhz.com
+rzbiywzabld.com
+wvfuqhaaffkm.com
+
+# Reference: https://www.virustotal.com/gui/file/78c6bfee6264761c2e7836a6ce48b151f1fa8145c28a8276e31cb3bd4c9cd631/detection
+
+djcmmqatshevd.com
+mgtrawriusy.com
+rgcfhjpkdgxlpgx.com
+wyapcgnpgjdsgk.com
+
+# Reference: https://www.virustotal.com/gui/file/5d809d6e7fc7e3f801681285c3d7d8fa0d6b9d4a8550050b15688b8094291dd4/detection
+
+igzfpyarffrw.com
+mwvkjcfoicstof.com
+qwcambljcs.com
+zfrlkyiuoiw.com
+
+# Reference: https://www.virustotal.com/gui/file/469bd2397aedc633ff87fde4203b4ddc622b619968928b480ce164d55a6db570/detection
+
+exmmnjfuky.com
+kwthowehanecfrr.com
+rzplckpsjnrqry.com
+xikkpptsyvshlk.com
+
+# Reference: https://www.virustotal.com/gui/file/098ef11a20581a60f753efab66246e761497d8efe47794221257e4ed10d617f6/detection
+
+eupgshnssv.com
+qxshfoadrzf.com
+xmhlncvquohzfjn.com
+xofsaeaoxnunva.com
+
+# Reference: https://www.virustotal.com/gui/file/727526e2a5966da94c962926add0262d8f7eb2f2003f2bf0d7cf4986bb314eab/detection
+
+gakipaxnkf.com
+mabvyjnfsyg.com
+wcqmyyvjdivmf.com
+xvktdavely.com
+
+# Reference: https://www.virustotal.com/gui/file/64a1ebfda32a3851d163bf12ab927ae260a58063b430e21bb9230d70f5c62481/detection
+
+irobfveidvo.com
+pdmvfaaafkr.com
+whvuygaexrz.com
+wqseoynplkek.com
+
+# Reference: https://www.virustotal.com/gui/file/86c736c2f7fcf5119984b47ef4d7dc6717ec53f418438388a338abfb1874d7c4/detection
+
+buluynxuhjkxech.com
+eeqjnxiskwjbe.com
+epxgwarqocyyir.com
+wqssztjhlpzypp.com
+
+# Reference: https://www.virustotal.com/gui/file/d1d7d3764548c4d8213b0bfb4015c059d21fbc4aa542ff7af8cb347b192229be/detection
+
+http://91.223.223.6
+chbkosfcdss.com
+eiijbdptuts.com
+mfjqfqnypevnngp.com
+uqkfdippntpcr.com
+
+# Reference: https://www.virustotal.com/gui/file/304c586e92ab067751d1b4d23d2e5a8cac2b3248452b3ec6728cf0a61c8c9aa9/detection
+
+ityferxesmcle.com
+npfbapzkgghbuzv.com
+swmdoysheqxf.com
+ygfomqpxjii.com
+
+# Reference: https://www.virustotal.com/gui/file/731ea1781e8d842df5ee1c935b411f278e0ec188488281ebb5383b4f4983d94e/detection
+
+ekbmcwzkyeccdhu.com
+hjsqpbtjngxaj.com
+pkptwvosxfgyow.com
+zxsjtvyjbgrf.com
+
+# Reference: https://www.virustotal.com/gui/file/cc4d530f7dcf332cb9853cc817eb23c77d87177bf5469e4a051ac8ad8a17b4f6/detection
+
+blpsxdxmgw.com
+nlrvwxxtpyag.com
+nyflzrfqdsuyen.com
+xbgxfrbgdkgj.com
+
+# Reference: https://www.virustotal.com/gui/file/15e3b195aacc01ecca56730d6a26a82109fecc5a886e5e91798c916231eb2fbb/detection
+
+http://185.14.31.238
+bygpaeksrtm.com
+pbopulcxdayb.com
+sgaitvhgtozaja.com
+ysoqvssixnxbc.com
+
+# Reference: https://www.virustotal.com/gui/file/719d71eb48f5d3179248fa9b9fa74ce1814dd6c9c867feb3e6df283c83e108af/detection
+
+fzgfehujcsti.com
+mszkcuqwny.com
+oyurfzlfgdo.com
+qgbznvybrqd.com
+
+# Reference: https://www.virustotal.com/gui/file/ee96ac511b14c5497569a826a948c1ee1484ac773ba53cf8a029d92c835a50db/detection
+
+http://88.198.209.160
+eidimrqazgxxen.com
+jynrrayoalgyaf.com
+wokxslliwonyum.com
+xhkycunbhfknk.com
+
+# Reference: https://www.virustotal.com/gui/file/ac80a223c67bf9bb1fa0223b8583296e43e2d4b814ff26c28bf5e1d793981536/detection
+
+iulccfcbmdb.com
+kpezcjsybnn.com
+ltsxjcdhbioi.com
+rnzeqopvavvm.com
+
+# Reference: https://www.virustotal.com/gui/file/620dbfd61ca4e21b77fe5de476e7faacf3f808eaa4b62729a94ed72b109386b4/detection
+
+fsrdylwvszomp.com
+gsiwqvgzbhvsd.com
+pwojfqwyfenl.com
+uylmmvxqzhpsexf.com
+
+# Reference: https://www.virustotal.com/gui/file/f1392de697d0e7009c6e43c0cddbc13fd0827ef29110b947183d82f1e10cf58c/detection
+
+http://144.76.178.235
+aiogtfihbxdu.com
+cfxbfnkxdh.com
+fxjlvvnqsz.com
+mlicwvctclwv.com
+
+# Reference: https://www.virustotal.com/gui/file/5ca189a0bdbde72ab8a7a61cdd086fa94cf941280c5507b7ac70177e2b062e1f/detection
+
+dckfyefctkuuug.com
+eugomqxjzxbudm.com
+ohglxwzjxaxqg.com
+vfihhooupdhzj.com
+
+# Reference: https://www.virustotal.com/gui/file/f7c89990b652c72af29d5fc5f78dc5b92a01dac3af12466778fcf7b28084cf12/detection
+
+http://86.104.134.203
+hebjxlavflzkifw.com
+itjgajxibnturwk.com
+kajyhwnphxth.com
+rqrqlyvwqyvg.com
+
+# Reference: https://www.virustotal.com/gui/file/da5016a8ac426fbd9ae0a0c88ad25b4457cb66764934157ffb0ddf5210f2436a/detection
+
+dzsxwkllphlyss.com
+gcqnlxnxhuhxth.com
+mzbagemzknnferm.com
+oxvkpdwiifrl.com
+
+# Reference: https://www.virustotal.com/gui/file/7e7b6839ff5842301449c2c2f86ab052ac33690c518d8af4af47405116fdcd1d/detection
+
+cicuhopxydg.com
+kemowivuakv.com
+qrmiclwzpzs.com
+tczyjdynrkdg.com
+
+# Reference: https://www.virustotal.com/gui/file/6a64a9fc8698bb4035d504d4630d163dd081a0fbf21d449ee541c1c7908cf112/detection
+
+mjvntvxkulzx.com
+oqyfprjjwygh.com
+pdncsqqwrw.com
+wqfpmrpdjbn.com
+
+# Reference: https://www.virustotal.com/gui/file/53663de88dddec783240098a620cace93ad97d92618d474ec49fee3050de2e7d/detection
+
+dmyvlabyhzongrn.com
+fludycsnxffjijq.com
+jkgxmkfgrjexwu.com
+wkldawhnusqvncx.com
+
+# Reference: https://www.virustotal.com/gui/file/0a125f5bb01d82563393d13c727085e57d90dec26af593335c8a386bb1289117/detection
+
+eywwpprwvyslb.com
+kgofenforyurh.com
+qatlnaicqge.com
+ssctqbdmaqxxxu.com
+
+# Reference: https://www.virustotal.com/gui/file/c911721c0b3fe2a8ad3797b3bf638efac65dba8064ba180ac7ec938d93606c31/detection
+
+tfcwusokuogqy.com
+tiygagkdabpjr.com
+uygdxprlpqjewu.com
+yuqwgeembppd.com
+
+# Reference: https://www.virustotal.com/gui/file/9d03c4a321c1a323201f28bb681e354371ae662acec0f12cc059cdcaabeffa2a/detection
+
+bikoabnbpczp.com
+psajrscbjzzpfjy.com
+rxwfxyuhkj.com
+xcveltxmrm.com
+
+# Reference: https://www.virustotal.com/gui/file/00298a721d55b93394b695a56034b2abb6695bca8dc24c81f190b46b447e084c/detection
+
+auuucwrcjhcnfi.com
+lfgcfvdpwd.com
+mijgnasqmspi.com
+zszqbbyzkie.com
+
+# Reference: https://www.virustotal.com/gui/file/3519ea131f70694503e62295c8ba90b73c0c075ac6b7174d08e4f29a4c76b931/detection
+
+hkzvibvyembhx.com
+nhjzutiacxppuz.com
+vccdhkpars.com
+yszhdzobjx.com
+
+# Reference: https://www.virustotal.com/gui/file/f0e4d33533b84c7b79bb668cd567a6676ff6e40ff05b460650700cb516277d1d/detection
+
+jgkwcekqhlgmdzd.com
+kpvbxkclcor.com
+mckwmczkrelpx.com
+ngotjhcvghencv.com
+
+# Reference: https://www.virustotal.com/gui/file/2c50c6d71b2c2baab6dfe7ad773ebe7be6b815f0c715a447868f95bf57be0309/detection
+
+http://217.12.209.47
+bdzmrsavff.com
+chsaihaqdm.com
+eqbwcxqubc.com
+grzjqqifnkmt.com
+
+# Reference: https://www.virustotal.com/gui/file/f5978026b35933eab52a2f91239595c51af33a3afaa587a294ac4938e4496800/detection
+
+dbhyvjtzxgv.com
+rxvkfqsmvk.com
+txyriigfczuynv.com
+zgznvbfibu.com
+
+# Reference: https://www.virustotal.com/gui/file/ec0cfa77d8965f7677b7a4d24d1e0fe2d412239cef05a129ea192bc78644bf85/detection
+
+anpixuyayivb.com
+kbzjzncadrgefy.com
+sshzwnqabais.com
+xctpwxlgizucgav.com
+
+# Reference: https://www.virustotal.com/gui/file/84486c36d5b11e6eb5333d40f891f887cd1beefe127c5bdf959005c26929036b/detection
+
+erfznjylnfat.com
+jzynkgfetqwvw.com
+ngcyjffuylc.com
+qcidtpnwqul.com
+
+# Reference: https://www.virustotal.com/gui/file/c7ff0d12a3de08c2e01cd10e95621ad49854eb86db3b3cf7886af1fb3b8298be/detection
+
+kakuapafdyxb.com
+lacqymraant.com
+tmemdpjpyktfd.com
+umadafkcgczqftg.com
+
+# Reference: https://www.virustotal.com/gui/file/b8d7a37790f09406da88838e45b23d54e9a633986bb99a02bbaabd18add254fd/detection
+
+fanqjuvnmky.com
+icbzzaxkbd.com
+lqwzhmmywbdph.com
+rlsrtspqtkx.com
+
+# Reference: https://www.virustotal.com/gui/file/9029d3c58206ef2e8bbe65a8c061dc5d04f7eec24573602f9cdefb40507a9f28/detection
+
+fywqcvipewtm.com
+grisefdjfkb.com
+oxwzdmiotudaik.com
+vidycfltpxgavxy.com
+
+# Reference: https://www.virustotal.com/gui/file/2fe061afe6edc67814e3181723ef878ab1318dddb32b6c6918ade2f220777a20/detection
+
+bqcuddzqtxy.com
+ccnzrilkfjqvl.com
+hosyijuhvljos.com
+kpdittizuejw.com
+
+# Reference: https://www.virustotal.com/gui/file/f835c3aa79408944ddf7492a4f42092538485fd696217b010de1cc1447ca10ac/detection
+
+ovsoocwlrieuyot.com
+plryfrbwkyqodz.com
+sneeltmmyvugpxo.com
+yqaokgbzzohxvww.com
+
+# Reference: https://www.virustotal.com/gui/file/bc101041dac58253b8c32ab9a457f45beb35ffd422afeb150b791f07f2a3bbd1/detection
+
+cxxbowthwivwtqc.com
+flkyyumwvv.com
+gexiazuklixki.com
+xprobinysf.com
+
+# Reference: https://www.virustotal.com/gui/file/3db3401b155b347542d6922983bbebd38a65a80039db632c7d291f298cd5ea7b/detection
+
+http://185.14.28.231
+amykboepbncfxud.com
+soiolhtocj.com
+spckmuyuygmrksp.com
+xaeoqpdpmgu.com
+
+# Reference: https://www.virustotal.com/gui/file/4f0a4a3ea527b72ae938a7f3cb976fda8c10c0f72e2b6ab76dc25fcb6a730df9/detection
+
+http://128.199.176.195
+fdfvvlkgugokws.com
+mkzezviigvlkqf.com
+olaaqzklokdbzko.com
+uqwhokmcdjfisxi.com
+
+# Reference: https://www.virustotal.com/gui/file/b4eacc7165fad54f3413c19450c2000de780323ac9aee7ff6eb2ce46d230ef95/detection
+
+iwtzzroqeipgda.com
+qfgtmvbsnnxbpz.com
+uadcilkjpyk.com
+zjmlysvobmtc.com
+
+# Reference: https://www.virustotal.com/gui/file/8112f6300c2fef7def6a54d2670304bb9dcb9936189980c1a898d41e893437f9/detection
+
+iqkpdopcftnyzog.com
+lvoxukxxjy.com
+wnhihjkegc.com
+yopmaorxmxbsoq.com
+
+# Reference: https://www.virustotal.com/gui/file/178a5df4e07ef30948606ecffe115e02782f33cc86d484dcb50834d7ac90ede7/detection
+
+hygfwyjuaa.com
+rogvbbbllsm.com
+vgbmotnkxsxfr.com
+zlqxabhwlmrwqmu.com
+
+# Reference: https://www.virustotal.com/gui/file/3749d50c78745c8aef89b0dac4b260eb1251ad8f246a30f59faa05a70ae68832/detection
+
+epsxulbpkorzg.com
+fnfxftwftm.com
+kqzcxpeslfizd.com
+zxntwuyrbebvxn.com
+
+# Reference: https://www.virustotal.com/gui/file/c18a1b0b919983ad201fc185154f65a83569dc5d98ef33f7ee6f7cb03faada1d/detection
+
+azfbqvoykg.com
+eaekvlogiphq.com
+ogbnfeteusjqu.com
+qnwwveirhwta.com
+
+# Reference: https://www.virustotal.com/gui/file/103d47e9558c52f6a09181e85384c7fa389f367b068d84335b757788f7db476a/detection
+
+jeselumgqs.com
+lgiubrekzqypm.com
+mgzsxxqvwk.com
+okjrlzdlhuorqjp.com
+
+# Reference: https://www.virustotal.com/gui/file/920f0d17ee4da1e6269a8eedb7363e0c00bfd5a48c9bc382002628e7e5e2c9d8/detection
+
+ccxprtuepvup.com
+hxmtgcawtmjho.com
+llueshahggfu.com
+rhzimkzcapuvljt.com
+
+# Reference: https://www.virustotal.com/gui/file/e39768795e763127f39139a4d76b82f3df8d5911ad9958915558e94d079de555/detection
+
+erzsiflsbk.com
+fcuwticmpqdddw.com
+kqijtjzoepaozm.com
+npflohkbiht.com
+
+# Reference: https://www.virustotal.com/gui/file/b6e283664b591edb21914eb53bda0c5f8e1c412dfe0a4bdc8a230eb980d3c197/detection
+
+ofiruthduyqx.com
+orqhmrdrqwrqh.com
+xiijucpgjppm.com
+yugavlkwtp.com
+
+# Reference: https://www.virustotal.com/gui/file/32055ee5953b53f4b65d8f44b77101e232ab2d04773d4946e285dae8bd3c6647/detection
+
+bcykcolrnxm.com
+haxaqbvxbph.com
+kyevasnbuwlg.com
+sgifhkarau.com
+
+# Reference: https://www.virustotal.com/gui/file/20a292b6b5443001428e37067cc2a42128714e0fa0efcc5ba0bf1324d438cad8/detection
+
+cweabqnmqq.com
+hkaidgfccpghbn.com
+uzrnibeqcfidsaf.com
+xgobjnwjvv.com
+
+# Reference: https://www.virustotal.com/gui/file/15ce61c57b6408f551de6c06be809ef02abea549b2c62e2788e3c1eb3acf6c43/detection
+
+ebksweyilhuv.com
+itgfhzmrjheowpq.com
+tdbufybfvj.com
+vrsexwqqpoimoys.com
+
+# Reference: https://www.virustotal.com/gui/file/590894e4b40cd2c9291f5de3c77da20d51bff60e5b4099ccec7190129ac2b442/detection
+
+chmnwdjsymhhik.com
+gmzckpqwvef.com
+rfjtrirzkxa.com
+wbvrcakehpy.com
+
+# Reference: https://www.virustotal.com/gui/file/ba7bfc283e3ae958e168db594e178d58d52932c9df8f8c3df8386918837063b2/detection
+
+fqxaxsckipuax.com
+fshvbxglxthaptu.com
+hlcxabljey.com
+krxxhrnsbuo.com
+
+# Reference: https://www.virustotal.com/gui/file/4c8c2ae7d99c20f8f75d96b5d909a687339e3f06f6cabbed5e28a6862de6a4a9/detection
+
+pbfrfuwcfwurh.com
+srgppguhzlj.com
+vnnaztbktt.com
+wxxbtrymznbrd.com
+
+# Reference: https://www.virustotal.com/gui/file/3beee7a34a53fff3bc836345d4570c34ab0f98e14e8f8bfb92cd02eeb172b242/detection
+
+lwlmhikcokr.com
+nsqjranqqz.com
+nvscclrzeqnncdx.com
+tkxpwtufqdkvkj.com
+
+# Reference: https://www.virustotal.com/gui/file/523f0102872be73a30d999b4a44c85b2f13bd8ea5d7d8a4cf897ce0e67cb2d04/detection
+
+byqigfubmyd.com
+ctqbqwxzhbo.com
+mjdscxykirfnf.com
+xwyvvowytspeb.com
+
+# Reference: https://www.virustotal.com/gui/file/660361a5fe7af161278269b0de9801ccf8e7071740b452ffd72a440e53e17b1b/detection
+
+dwkkjdmpagnosc.com
+jdrywnfvlhf.com
+ktvfuwpbqvwhpou.com
+wihdzrjlibnss.com
+
+# Reference: https://www.virustotal.com/gui/file/1b7ca2667ecffd585d9539f73272477230be9fa468eb108a46a8853a820c3487/detection
+
+http://94.185.80.43
+bgsnrykfcevgaq.com
+bxifzxeczm.com
+gikspemjpmmnp.com
+vcwxpmlouxvdn.com
+
+# Reference: https://www.virustotal.com/gui/file/548f0f1ad617aef22bb18fdef145e8093d3c981ff987ede7bbd04673e21addcf/detection
+
+kcdqnxfstrsfx.com
+padlqgirgdlro.com
+sulsbrvigjrjmow.com
+tkavxcqhkgtfgqy.com
+
+# Reference: https://www.virustotal.com/gui/file/5a0ea6b811ceb6ccac96d3d083af015505ec025d0dbbf36ceffb527ef34ba377/detection
+
+http://217.12.209.26
+buigbdvbktbp.com
+hqgimdbryzjdw.com
+twpofwycaqln.com
+wykutntnkzol.com
+
+# Reference: https://www.virustotal.com/gui/file/0ef97d756f28afc3eb2393abef0b8902344503fbcf2fb5b491267a39402f4391/detection
+
+jgfgbleaitabdmu.com
+umfpuqnlxbf.com
+vvkedtdlkugtljm.com
+wpdxqtlbju.com
+
+# Reference: https://www.virustotal.com/gui/file/efccbb341400319fb3bffd7395c183c6b7d79ceabff15459fb330422ab2bd6d7/detection
+
+http://217.12.209.181
+doqmchqkggoha.com
+qxllfhnvcbmoksl.com
+rmxqngelame.com
+ygnboewdindev.com
+
+# Reference: https://www.virustotal.com/gui/file/abb284ac3cf384c487c8cb3245eff0c8dd42cca835364f439312b875e8e1142a/detection
+
+http://109.234.37.192
+gqfeimkxavzfqyb.com
+hqntpzcova.com
+ixdigvalekotpd.com
+uidrtnqaru.com
+
+# Reference: https://www.virustotal.com/gui/file/d8bc581331c3792e18c3f49adc6597d9d0e19a851cad256aa9b57eec9a96fb0f/detection
+
+belqgjzkwkndewi.com
+bovvoacbwzef.com
+dorjozbwuszb.com
+iikntuzatdn.com
+
+# Reference: https://www.virustotal.com/gui/file/e2e9509781628a032f1b9078ed2e913ed50f0094958de1d68d00351067f16486/detection
+
+futbick.ru
+ivqixqdwggj.com
+lnduzcrdjgfphoh.com
+mgwsmqsciii.com
+wfytuiovansyw.com
+
+# Reference: https://www.virustotal.com/gui/file/99c5d9c3419c061087e8770279ad54f1c58c34d29a5f5fcdb8123fe68accfc65/detection
+
+kxegraepuixquw.com
+lrgnkrsbvu.com
+vuemhgqqfsoi.com
+wrnaevlimtp.com
+
+# Reference: https://www.virustotal.com/gui/file/0c3366547743355c0d4abb90d13c77c80d1b592550e4b65931f0f5b39460e3d5/detection
+
+hkehzjacfsemhdy.com
+mduvlnvzvac.com
+rgwbvznvyt.com
+ymeomamwmyv.com
+
+# Reference: https://www.virustotal.com/gui/file/5a83fa4d6c228feea0cf17307480e0afeeebfc7627c59a11819f95dd14205231/detection
+
+http://91.200.14.102
+ekydrtbfzewtrux.com
+lghpulprgptj.com
+pisvxembwnsqx.com
+uptxvqgoyhxn.com
+
+# Reference: https://www.virustotal.com/gui/file/616eba7151854695e49cc8609dac6795c4bd67de83990b399bbe8225d60cca7f/detection
+
+fdlpvmahnplyj.com
+nuzjwiyxqc.com
+phfmpdixcofd.com
+ucjiznmkfikyj.com
+
+# Reference: https://www.virustotal.com/gui/file/c2e3c77f119db02e4f1d4fa79931fdf26e325e24387cbfa7b1935f952627b282/detection
+
+azmrbmmaglnotly.com
+mdijfsqeprxcf.com
+nlbzpprptpt.com
+xbqwvufewti.com
+
+# Reference: https://www.virustotal.com/gui/file/64dbfe25c487c42aa3d5b56e8961f0b51a7830aa2a124341a69e7da0e66729cf/detection
+
+bdnwwkdtmfx.com
+ecyayzekgozmp.com
+rhouwehszkowzcz.com
+wpqbnsufic.com
+
+# Reference: https://www.virustotal.com/gui/file/f2ce242a3146238b2597b154484bc7526c4d4936f28973c0b627ca040758cc11/detection
+
+basubcmpsd.com
+hkixiesanlkt.com
+quvmiqthxjkb.com
+wjflivffwpv.com
+
+# Reference: https://www.virustotal.com/gui/file/f1e2909e5fc66cf3723bcd84e35ca4db055915bc8b0699ee3f3d7696d72d0bb7/detection
+
+ghcawjdoalsfne.com
+iwzcmknokce.com
+kjvfveprny.com
+tjnatsflteq.com
+
+# Reference: https://www.virustotal.com/gui/file/291a7cc7397316854231eb1149935d203ff7675d55d31c15761a3901a635326b/detection
+
+http://86.104.134.191
+hwzncxxijxq.com
+ovrhncjxltpgb.com
+qgrqmvsebjknf.com
+qmvmddgjtppol.com
+
+# Reference: https://www.virustotal.com/gui/file/61515e44f4bfbf1740a280ab59b6aba2ca63e24af0ae21c5fd10b37facf741ca/detection
+
+http://173.231.184.55
+http://195.201.179.196
+http://208.100.26.251
+aaxnkbwfydw.sh
+agdslclbhsqcesgmc.pw
+aispjuck.sx
+aiystkoiupnbh.ki
+aonguponxk.cc
+awwblpdgxhpkovjhk.bit
+axqfjbtw.tv
+aynyqdbswaheldeaqd.xxx
+bbodaeyicangxyeytqhlr.pro
+bhpoivhjwdtjlu.org
+bhxjdlinmjhngpkhgrab.de
+bjsjghxypsktckijbs.to
+bkfaneqghxwkatnjg.xxx
+blwkytjfwptcfdda.mx
+bowotkvghywc.org
+capbexloyldgxxnjottqx.mn
+caqtapkikerrsfv.mn
+ceququpvudivu.nu
+charmnishwp.pw
+cjvvexle.jp
+ckfcleon.eu
+coavtkyrlcwsjovrojtf.su
+cocqasveq.bz
+ctjpfkfhiqoxywocmyq.tj
+cugrqvhocmlroxhwvb.bz
+cwapeqtvkihhlyjy.tj
+cydhoawwyd.ki
+daquknakcc.su
+darkhljstvpexolt.bz
+dbtcjfsq.in
+dcfqqyrojiq.net
+dcwkgbunoapqdkhkinyc.nf
+dedhdwp.net
+dewvdeippmucgrcobex.org
+dhomdioswwoulqjhq.in
+dihlenl.jp
+dkdnaruvybxuxwipuw.in
+dpoaymwg.pro
+dqwbhjcemwsqcpxpw.im
+drhbpek.nu
+edfyovxkjx.im
+edqsexownqqchchfvu.de
+ehrwklqvr.mn
+erjewfdmcnxoambcutm.mn
+eupkjtcahvvdjmcrfvxu.sc
+fagdayhyqbt.la
+fakjgdarlrmsylx.so
+fcmcwvlld.ir
+fcyinlpctyanugmk.nu
+fdceqnggpa.jp
+fdkydru.tv
+fdxfugkgijiiak.ga
+fhxmeumuxlrn.biz
+fikakwfqmxp.pro
+fmybwstueiliugabvts.kz
+fpxfxfgagbetustlslp.org
+fqjscbnvwhsuyf.sc
+ftfiucruggkmswtklgmk.su
+ftylmqofiqnkbdxqd.sc
+furltpw.pw
+gcrusypydea.so
+gfouysadkccfea.cm
+gfwxuuvgcbpxqiluojv.sx
+ggnnfikedbohbpk.xxx
+ghtrcbmoqajohmxiihj.to
+gkpqfexhhjd.tv
+gtmardgpkyswgyhmrevea.xxx
+gukcijyqychapcgudaxtc.mx
+hbqoluayhxqgwalmdhho.cx
+hcjvviadgv.com
+hldhapsyyyuyfho.nf
+holsugeixnrvhjo.net
+horfvaxefioth.kz
+hpahpkpxt.tv
+hravcowclkmikbju.bz
+htirjhrfyi.sh
+hwnfaeyyslcsodhyg.mn
+iaplwtjwlpgoggc.ms
+ibukwunfywd.sc
+ibxgmvcptnwlsa.tj
+idmaftmkohv.co
+idwoqdyvqgshsikpkid.ug
+ietwwieqokqfwspnv.biz
+ifhctylw.la
+ikdaqfvdxxkaspvpfer.biz
+ikwnitvlmowyfhqp.jp
+iqqalhcjximdafntgbb.co
+irmtejartbseguvsk.nf
+irqvaukuwmh.im
+itiycnrxiqqkh.bz
+iwfjbtbarjkk.cm
+iyfawyjodjsqnhjwv.pro
+jbqsymtt.mn
+jbvnigoaeq.mx
+jccprlyw.cm
+jcdryma.ac
+jckkishadunkqwhxtrq.mu
+jdrhdgucksriwj.su
+jgwdgokbcegyjvtma.nf
+jicrstxpprrgkpke.net
+jjywrhsqg.kz
+jldanff.ru
+jqeyxgolxkjrmswwfskb.cx
+jsppjjkoaodrhjpurrh.us
+jtnkcrasjbia.sx
+jvmarcenefiwggcpwvj.sx
+jvtcwhmyxyjfoax.eu
+jwbwdqfmo.de
+kbkexvwvtawwe.xxx
+kevuncspmabqdduq.su
+keyjtuyeaqb.jp
+kfkercuiq.tv
+kijoxeiti.sh
+kiqfoidra.bit
+kmeuvnnbqiencvsemhcuv.bz
+kmtljfipkj.cm
+ksfhrjn.org
+kukcbghjlbhulxrrni.jp
+kvfpxkuvil.xxx
+kwxtdusovpxweldao.mn
+lailomtbgga.bz
+laohtcoqei.pw
+lcpnuivdkbqarfnbpto.nu
+ldxrdhrin.sh
+leojdvbwgbaemljxbx.pro
+lhmqcgqlg.sh
+livelphpan.ac
+lkbpjchiu.su
+lqsamrsjvckyrrxaefa.jp
+ltpsasuhxaxk.ga
+lttoefuqwv.to
+lulvyxwnnthqyhqaiwrd.de
+lvhqarmmidupedtirtxx.ir
+lvpgiutkowjeetgodns.org
+lyxbqafeob.org
+mbdargh.tv
+mcdrilna.cx
+meqfwtmdnxg.bz
+mewueodshudxrtkll.cx
+mggrmneeymkbrhuvns.mu
+mllkmbfkuhhbcouubk.sh
+mohpqwnlqmamy.jp
+mpvoahmjefciemhlrhte.pw
+msulxxaaiysvp.so
+mtcrcopndudppw.us
+mugtruscuwerkbmbp.su
+muplboigfnfw.eu
+mxajnygnqjyrriy.in
+nbgxgevflkjeetu.bz
+ncibihrjhraoycjcox.cx
+ndmylrxvlt.in
+ndqvkpgykijl.sx
+nfitwlifvrphwptcflte.in
+nioeftsiabnwgktg.ac
+nklnbkiaqckah.me
+nmiyigunvyskqry.ir
+npeymgkde.so
+nplphjkptbpnwtcfci.to
+nqtdaabpvmqyopk.so
+nsqehjalkrosvqdjreh.xxx
+nsrxrqlwblraesmb.bz
+nviwfehxmafmdb.cc
+nwdwdltwpo.cm
+nxahmlylemhaglxbempl.ki
+nxevlchokgsbyokj.nf
+nydavkdgf.net
+odfaimsiiompnwxcbrl.ac
+oescwihvbekvqibcqp.mx
+oknfdokqcvhmdd.ac
+okoqdcyqwuggeupa.ms
+olftcuhjwnrggy.cx
+oncrgdx.eu
+oovshtwl.tv
+osbmdimsaxveusxjm.tj
+osiutxtwhpvobctsqy.cx
+ovoptnicenihgo.ir
+oxinddjfx.nf
+pbxemlxw.de
+pfgdaaiuirshxtberxp.me
+phdoqnlcvmkqygythkutg.co
+pinxchqmaxl.tj
+piydkebfg.jp
+pjfnfqtirhj.ac
+pjxgplhh.bz
+pmgfncjdahnswyhuw.pw
+ppjxadgtlignjbxit.cx
+pvniugflrhcwokgmnym.cm
+pwipqbwwgt.ki
+qbijyonvhgkavwituh.jp
+qddodusvrtpjftcc.bz
+qfjqeonnof.me
+qgblexccgeyngkdumtesv.eu
+qhfhmomokxcrsltqr.mu
+qjdqfvapinvmtxnfnbty.pro
+qlovmigfyimfronsdsy.nu
+qmkufhxucnb.in
+qnpxxodxslsp.org
+qqiioyewavmxgudnqmv.bz
+qsyfifltrjrgcjfop.eu
+quawxwswgtudonjltiowk.kz
+qyajescabyqdcxit.ga
+qyxaodo.in
+rbocbeyyt.jp
+rbwfamwtjnj.nu
+reodfasesxqlqcirdsfmd.nf
+rfpwktmrsvtifa.bz
+rikhjehndxm.so
+riufnwwnijnhowvgsuud.xxx
+rliqdwccgnntxt.su
+rlpngeddyjglkxohnj.eu
+roefbgjkfutrbtrdjjtr.bit
+rpppyvdg.mx
+rtxkfwlththgquqxe.jp
+runmotcttfqcc.cc
+rvmobmbn.to
+rxhqtutjbxexpjgy.sh
+rykpxrmfiuibjp.biz
+sctsblbdiungemnlc.com
+sexelgexhqva.mx
+simbqypwoelcje.pw
+sjmboqxf.pro
+soyxaavcpnkewvlpo.us
+sryssteln.sh
+sslqflogpfpfa.net
+ssoubivehxmilepheneso.nu
+ssrlbvxaqmr.tw
+sxpmeyexotcqrrywnn.sx
+tbebwonofbbniupxwddt.net
+tbwnrahiwmhujctelyum.sc
+tecgwnphpqxs.ki
+texaqvmvcrehmxdyn.in
+tklqxmliybym.ir
+tmeglvhvssnxjji.nf
+tmxgysjxrxqmvvudi.xxx
+tsbavhfswclpeq.ac
+tspfaafewqhtebnmdo.so
+turymhdpbrbfei.co
+twfjmusv.tv
+txccleliqeqvvgp.ir
+ucekahukwfmt.bz
+uckvhhysqpakta.tw
+uewcxaruqseqbyctecgt.sh
+uftfttroxa.nu
+ugimxwcbaapjdkjbfei.ru
+ugjuobscjfnfiibvsyqj.nu
+uqijyarsugesf.ki
+uqsvitgfdanncswpu.la
+utntbocumsslvnfbwqp.ir
+utptjnppjjxy.me
+uubnmdqw.org
+uyugesltholxc.ac
+vcftccdnh.sx
+vgbtksgjuwivuo.sc
+vgqhdknvtisrlko.ru
+vkcsedworaqoh.ms
+vksyvgsjgjp.me
+vlllsrot.tj
+vlmdgaboftc.ki
+vosxxkjxdtriek.sc
+vrljkauedsc.com
+vsawqfyhgtwnldttortbv.biz
+vsiihjpuyqemqosmtn.kz
+vvkofwafngfoiljbryn.sh
+waohvavefxycx.de
+wbkbdvtvww.la
+wcsnfdvorrprhh.to
+welxgdyupmhrq.sh
+wfulqjugetnwuuah.to
+wlewhbeafkuvelrkyfcu.com
+wmhkmtwoipwxc.sx
+wnklkrykfdpqvv.su
+wpglplknsqihdlm.net
+wsauceedippkue.org
+wwkmvlumrhsurd.ga
+xctufghpvb.ir
+xdbcgxquliab.eu
+xdcufqcgavw.ir
+xdftvgs.ga
+xeopgbmhstkbyy.to
+xfwximiqfqgxa.la
+xiflxxcah.la
+xmqfsiiuxrakoidgytqkj.tv
+xnwstcm.in
+xpkrnmdpsapxssogdb.eu
+xqswpepcnmibvnoojde.org
+xvnuklewxtmjrnowhu.so
+xwoturntqkoxaqoyr.cx
+xxkffnspr.cx
+xxruwtaqsqkcln.jp
+xxxlhkpwv.tw
+xyquvofrl.la
+xyyltgjujjndmddnyq.me
+ybdcmvhqf.de
+yckvipfutvtto.so
+yfpgvqisr.cc
+yhunkwfd.com
+ykcnsawqkryifqdxxvb.me
+yquvklhgpax.mu
+ytvchsjqfiejfulecaae.bit
+yxdocmmkl.nu
+
+# Reference: https://app.any.run/tasks/cf99d94c-05f5-4e54-a8d7-af35075afcee/
+
+35.178.227.183/forum/db.php
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1317432050379612161
+# Reference: https://app.any.run/tasks/be306d93-2ac9-4c37-a4e0-d22ded86afaa/
+# Reference: https://www.virustotal.com/gui/file/af43f7b15f3bd2fba585f291c9bdf6c033c889584981717344b449be43077c3b/detection
+# Reference: https://www.virustotal.com/gui/file/fdda1daf519735c7ea7a5f5419a3d468813281b152d94fdbe0fa2b4760ec117a/detection
+
+icaterp.com/scripts/img2.php
+icaterp.com/scripts/img3.php
+icaterp.com/scripts/img5.php
+masterdentalsolution.com/wp-includes/js/pegasun.exe
+temcowms.com/pda/view/jamkee.exe
+
+# Reference: https://www.virustotal.com/gui/file/d2358d7e11b4b31b0675863639e67f5b56622596149ddb3367822bcdb5e55212/detection
+
+http://5.149.248.164
+http://5.149.254.73
+
+# Generic
+
+/forum/db.php

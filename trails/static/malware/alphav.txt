@@ -1,0 +1,99 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: alphv, blackcat ransomware, noberus
+
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+
+2cuqgeerjdba2rhdiviezodpu3lc4qz2sjf4qin6f7std2evleqlzjid.onion
+alphvmmm27o3abo3r2mlmjrpdmzle3rykajqc5xsj7j7ejksbpsa36ad.onion
+
+# Reference: https://www.intrinsec.com/alphv-ransomware-gang-analysis/
+
+hosting-global-it-ss.com
+support-global-it-ss.com
+
+# Reference: https://twitter.com/1ZRR4H/status/1511394814402641925
+
+macp5jnjsxlh2dccflut3utoch4773jq2pbl6mgs3rjhyzunydonkqyd.onion
+
+# Reference: https://twitter.com/petrovic082/status/1544757119336988673
+# Reference: https://tria.ge/220705-qsa8ashfen
+
+zujgzbu5y64xbmvc42addp4lxkoosb4tslf5mehnh7pvqjpwxn5gokyd.onion
+
+# Reference: https://twitter.com/malwrhunterteam/status/1570298009413361668
+
+hysnmy3rr7wmxo5j3vutiujeoz5n6hueluwds6oqgbsqppbgyldgf5qd.onion
+
+# Reference: https://twitter.com/1ZRR4H/status/1603601891090485249
+
+http://174.138.39.225
+
+# Reference: https://www.bridewell.com/insights/news/detail/unravelling-alphv-(blackcat)-ransomware
+
+all-app-inc.com
+allautotechnow.com
+allcompanygroup.com
+allincservices.com
+allllcgroup.com
+alllocalcompany.com
+allonlinebusinessservices.com
+auto-tech-llc.com
+bestonlinebusinessgroup.com
+getautoappnow.com
+getautotechnow.com
+gethighappinc.com
+gethightechinc.com
+my-online-company.com
+myonlinecompanysolutions.com
+one-business-group.com
+online-company-group.com
+online-company-solutions.com
+onlinecoservices.com
+onlinecousa.com
+the-online-company.com
+theonlinecoinc.com
+theonlinecompanyinc.com
+webcloudmanageonline.com
+your-llc.com
+yourcompanystudio.com
+yourcosolutions.com
+yourincstudio.com
+youronlinebusinessshop.com
+
+# Reference: https://twitter.com/sicehice/status/1647771330492727296
+
+http://172.93.193.157
+
+# Reference: https://twitter.com/1ZRR4H/status/1655014346307559428 (# ExMatter)
+# Reference: https://www.virustotal.com/gui/file/9542097b42aca8a4af7b2d1851bb19e0eb27aa638b3fb82a6c506869799dfde3/detection
+
+64.227.80.81:22
+
+# Reference: https://twitter.com/andalusiahacker/status/1715058975576629448
+
+blkhatjxlrvc5aevqzz5t6kxldayog6jlx5h7glnu44euzongl4fh5ad.onion
+
+# Reference: https://www.esentire.com/blog/nitrogen-campaign-2-0-reloads-with-enhanced-capabilities-leading-to-alphv-blackcat-ransomware
+
+171.22.28.245:10443
+171.22.28.245:15159
+171.22.28.245:20407
+171.22.28.245:41337
+194.180.48.18:10443
+195.123.230.165:8000
+wnscp-tsa.net
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.blackcat/
+
+172.86.123.226:8443
+193.42.32.58:8443
+
+# Reference: https://twitter.com/StefanoFavarato/status/1737093641875706109
+
+alphvuzxyxv6ylumd2ngp46xzq3pw6zflomrghvxeuks6kklberrbmyd.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1831215617921429586
+
+85.209.11.49:21

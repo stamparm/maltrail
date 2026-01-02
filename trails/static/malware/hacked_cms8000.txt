@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/craiu/status/1885341007576801338
+# Reference: https://x.com/r0ny_123/status/1885687180338589711
+# Reference: https://www.cisa.gov/sites/default/files/2025-01/fact-sheet-contec-cms8000-contains-a-backdoor-508c.pdf
+# Reference: https://www.virustotal.com/gui/file/0de2e66cbc32bab2a82b7c1897baadfe463a4e4cedd81c138e73f0200770f473/detection
+
+202.114.4.119:111
+202.114.4.119:1110
+202.114.4.119:2049
+202.114.4.119:4045
+202.114.4.119:515
+202.114.4.119:9100

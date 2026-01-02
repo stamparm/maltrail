@@ -1,0 +1,76 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/3xp0rtblog/status/1556256431904546816
+# Reference: https://www.virustotal.com/gui/file/04642249b0ad41b1c6cc8862ec372c3b9b1e855d104a16a6a3fae694cc23ec0c/detection
+
+erbium.ml
+panel.erbium.ml
+
+# Reference: https://twitter.com/abuse_ch/status/1565290110572175361
+
+f0679086.xsph.ru
+
+# Reference: https://twitter.com/abuse_ch/status/1567126103159889920
+# Reference: https://tria.ge/220922-vf4rasfgaq
+# Reference: https://tria.ge/220922-vga6dabhg7
+
+a0715952.xsph.ru
+ozaron.beget.tech
+
+# Reference: https://twitter.com/ViriBack/status/1567487652659695616
+
+mamamiya137.ru
+a0712659.xsph.ru
+yuravogf.beget.tech
+
+# Reference: https://tria.ge/220922-vfsc9sfgal
+# Reference: https://tria.ge/220922-vfw2fsbhg6
+# Reference: https://tria.ge/220922-vf11eafgan
+
+http://77.73.133.53
+
+# Reference: https://www.virustotal.com/gui/file/0c089a5a5e2905bc317e99dfea517f95be2249288c6ca5dc717ae8c9d64a6777/detection
+
+http://89.185.85.53
+
+# Reference: https://www.virustotal.com/gui/file/2703b1fbd9115233e22a3038ea63911064d3cd9ae175533a2b01b50ef7b80396/detection
+
+a0726676.xsph.ru
+
+# Reference: https://twitter.com/Iamdeadlyz/status/1581909536515903491
+# Reference: https://twitter.com/Iamdeadlyz/status/1581909542446645248
+# Reference: https://tria.ge/221017-hm3rcsahe9/behavioral1
+
+a0724127.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/014847a9fde4534974d4cbdd4d71204d2421e41b3403083d73967323108eb2cc/detection
+
+http://77.73.133.50
+/cpulinuxActivateprofileSpace/authControl.php
+/cpulinuxActivateprofileSpace/
+
+# Reference: https://twitter.com/Yeti_Sec/status/1607052744682262528
+
+http://45.15.156.141
+
+# Reference: https://twitter.com/jstrosch/status/1609993839846256640
+# Reference: https://www.virustotal.com/gui/file/28ba7a9d27d9c464e00d81c0a6d2f75a1bf47d742e74f8215eb235f1c426db21/detection
+
+http://77.73.133.121
+http://77.73.134.59
+/AmnesiaBone/LearnMedal.php
+/AmnesiaBone/clearkey.dll
+/AmnesiaBone/freebl3.dll
+/AmnesiaBone/mozglue.dll
+/AmnesiaBone/nss3.dll
+/AmnesiaBone/softokn3.dll
+/AmnesiaBone/
+/NvidiaTestAdminCom/
+/VideoLinuxcategoryblobuser/
+
+# Generic
+
+/ErbiumDed/
+/ErbiumDed/api.php
+/ErbiumDed/gate.php

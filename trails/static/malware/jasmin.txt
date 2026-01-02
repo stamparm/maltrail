@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/fr0s7_/status/1370724103460651018
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1370740134937772037
+# Reference: https://app.any.run/tasks/6ef93fd5-9c68-4baa-9844-ba7f1b6c93ce/
+
+droidsec.tk
+
+# Reference: https://twitter.com/Nexus23_Labs/status/1371344500094861316
+
+cp-4.hkdns.co.za

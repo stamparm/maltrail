@@ -1,0 +1,83 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/wp-content/uploads/2017/07/Stantinko.pdf
+# Reference: https://www.welivesecurity.com/2017/07/20/stantinko-massive-adware-campaign-operating-covertly-since-2012/
+# Reference: https://github.com/eset/malware-ioc/tree/master/stantinko
+
+185.28.22.22:81
+195.226.218.234:80
+93.188.161.17:8000
+apihelper.org
+biosysltd.com
+biosysltd.org
+clients1.ultimate-discounter.com
+clients2.ultimate-discounter.com
+clients3.ultimate-discounter.com
+d3dupdate.com
+ghosterystore.com
+good-journal.net
+hdr-group.info
+hdr-group.net
+hdr-group.org
+icloudsrv.com
+icloudsrv.info
+icloudsrv.net
+icloudsrv.org
+judgebear.pro
+kbdmai.net
+mserrep.org
+nano-news.info
+news-true.net
+nvccupdate.com
+rdsbase.com
+robothemes.net
+safesurfing.me
+superbear.pro
+teddy-protection.com
+teddysave.me
+tmrobo.com
+tmrobo.org
+udiscount.net
+udiscounter.org
+ultimate-discounter.org
+upd-discounter.com
+update.ultimate-discounter.com
+vp9codec.com
+vp9codec.net
+wadgeotrust.com
+wannaupdate.com
+wsaudio.com
+wsaudio.net
+wsaudio.org
+wsslupdate.org
+wupdateservice.us
+
+# Reference: https://www.intezer.com/blog/research/stantinkos-proxy-after-your-apache-server/
+
+kdbmai.net
+
+# Reference: https://www.virustotal.com/gui/file/4a229ab274e364df92cc46ecbc9faab32f7b0955dab982658313f2faf9410863/detection
+
+45.113.202.180:608
+
+# Reference: https://twitter.com/struppigel/status/1405483373280235520
+# Reference: https://otx.alienvault.com/pulse/60d0aaf6060a9c3b804a4d0c
+
+110.42.4.180:2081
+45.113.202.180:2313
+
+# Reference: https://twitter.com/cci_forensics/status/1407621277783760897
+
+45.248.10.244:3000
+
+# Generic trails
+
+/images/banners/b1/index.php
+/kbdmai/index.php
+/kbdmai/dht/index.php
+/kbdmai/DRTIPROV/index.php
+/kbdmai/winsvc/index.php
+/kbdmai/anti_rstrui/index.php
+/kbdmai/
+/DRTIPROV/

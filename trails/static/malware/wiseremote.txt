@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: wiseremote stealer
+
+# Reference: https://twitter.com/Finch39487976/status/1694607580645986407
+# Reference: https://www.virustotal.com/gui/file/7c0fc3a5d613714ba8ba407f5fb2f142f9a55503d285a207f5f6d04c117d1558/detection
+# Reference: https://www.virustotal.com/gui/file/a23d8bf343734858756a417333b84d991a4210f440cf9fe98ad3d00ca11a8ba0/detection
+# Reference: https://www.virustotal.com/gui/file/fb6c38768020f6f5d40cf150ac704e3ab50404fdf08d2b58c40ca86215b73d2e/detection
+# Reference: https://www.virustotal.com/gui/file/bfdb29dbc920f90b481cf2abc49cbcfba2068a7bfe3a6fb10428c1bae08770de/detection
+
+alberteinsteinisgood.online
+dasxs.000webhostapp.com
+gracious-glade-83253.pktriot.net
+sogmores.000webhostapp.com

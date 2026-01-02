@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/_re_fox/status/1210623985832153088
+# Reference: https://twitter.com/James_inthe_box/status/1270783932854792192
+
+37.48.101.165:1337
+paravan.duckdns.org
+travma.duckdns.org
+
+# Reference: https://twitter.com/jeFF0Falltrades/status/1270709679375646720
+# Reference: https://app.any.run/tasks/d74ed6b2-7b3e-4bf7-9f3e-d9fcfcc9f62a/
+
+ehades.best
+hemera.best
+
+# Reference: https://twitter.com/Jan0fficial/status/1273182774145531906
+# Reference: https://app.any.run/tasks/2acc021a-531a-46c6-b684-43294746258f/
+
+78.141.222.66:7373
+95.179.176.250:8443

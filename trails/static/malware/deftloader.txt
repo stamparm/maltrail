@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/70d63e38ce2d2905ed7e21a6cc98d8d4cc182e8602377b7ec974002699caa64d/detection
+# Reference: https://www.virustotal.com/gui/file/82e79bff49360db964796a6533827e0b2f0d071ebb314cb0d0cb3a143f007321/detection
+# Reference: https://hybrid-analysis.com/sample/e4ccdbdc2c12bf2ee8c38e4ce5f12f5069d9f7ba525d9987ac0b2da4e3305b68
+
+a0391331.xsph.ru
+
+# Reference: https://app.any.run/tasks/88eeda80-2caf-4850-a81a-e3c8dd019ab4/
+
+defthack.ru
+
+# Generic
+
+/_DeftLoader9/
+/deftloader-ten/

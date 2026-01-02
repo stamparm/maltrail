@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://community.blueliv.com/#!/s/57dbcf1c82df4112747aa2d6
+# Reference: https://unit42.paloaltonetworks.com/dualtoy-new-windows-trojan-sideloads-risky-apps-to-android-and-ios-devices/
+
+zaccl.com
+pack.1e5.com
+rsys.topfreeweb.net
+abc.yuedea.com
+report.boxlist.info
+tt.51wanyx.net
+hk.pk2012.info
+center.oldlist.info
+up.top258.cn
+dl.dswzd.com

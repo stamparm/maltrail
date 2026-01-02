@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: blackrat, blackremote
+
+# Reference: https://twitter.com/James_inthe_box/status/1171068221291732995
+
+wire.mtcc.me
+
+# Reference: https://twitter.com/James_inthe_box/status/1184167852175056896
+# Reference: https://unit42.paloaltonetworks.com/blackremote-money-money-money-a-swedish-actor-peddles-an-expensive-new-rat/
+
+blackremote.pro
+speccy.dev
+
+# Reference: https://twitter.com/James_inthe_box/status/1191778751568154624
+# Reference: https://app.any.run/tasks/fbb5caab-0ad4-4ef9-8726-089c66932aa4/
+
+79.134.225.11:1982
+
+# Reference: https://twitter.com/JayTHL/status/1201193349618839553
+
+79.134.225.97:1982
+
+# Reference: https://twitter.com/DynamicAnalysis/status/1260291561402896384
+# Reference: https://app.any.run/tasks/62648dc9-3638-407d-a2b9-d7535d545947/
+
+91.193.75.228:8898

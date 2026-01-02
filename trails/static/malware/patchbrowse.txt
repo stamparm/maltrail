@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security-center/writeup/2015-080623-5927-99#technicaldescription
+
+# Reference: https://threatpoint.checkpoint.com/ThreatPortal/threat?threatId=340781&threatType=malwarefamily
+# Note: some sites declare it as PUP, but it has all characteristics of Trojan/Malware
+
+epicunitscan.info
+mynamedomain.koko

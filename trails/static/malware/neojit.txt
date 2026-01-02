@@ -1,0 +1,64 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: neojit, Psychlo NewBoss
+
+# Reference: https://www.mysonicwall.com/sonicalert/searchresults.aspx?ev=article&id=472
+# Reference: https://securitynews.sonicwall.com/xmlpost/psychlo-newboss-v1-0-bot-analysis/
+# Reference: https://www.virustotal.com/gui/file/c9840c130842133a682532561a74a98fce1e000eb47d3e74feda619cbdd958dc/detection
+# Reference: https://hybrid-analysis.com/sample/9111dabc35d3540fa4dcc9d1d14b1d7d9af5cdc095853a851b699f000f1a0ccf
+# Reference: https://vms.drweb.fr/virus/?i=1736313&lng=en
+# Reference: https://vms.drweb.fr/virus/?i=1738985&lng=en
+
+11f0a3.co.cc
+5eeb937af5c3804ff2ebb150cfb8646e.twilightparadox.com
+agv.mooo.com
+avast-oloko-bixo.ignorelist.com
+avsta.mooo.com
+bd5af1f6.dyndns.org
+psychlo.co.cc
+server1.u147852369.codisk.com
+
+# Reference: https://ideone.com/fork/CYMY4
+
+05a184.co.cc
+
+# Reference: https://lists.emergingthreats.net/pipermail/emerging-sigs/2012-December/020987.html
+
+e77lzbgasyhun.mooo.com
+f32w14gqqvnfax.mooo.com
+i9cofxif5uz6i7.mooo.com
+id0hx24nz8.mooo.com
+poqjik8iv0.mooo.com
+q04leu6wmk.mooo.com
+r4qjwq40c4.mooo.com
+tf6qzs0witws-0.mooo.com
+
+# Reference: https://www.virustotal.com/gui/file/7fb1b7bd625e41dcefbdefb85776a81e5144de9753b74d850b685e9db846bad5/detection
+
+7c3026.linkpc.net
+
+# Reference: https://www.virustotal.com/gui/file/19379cfa620af14d69ce3bba2a3c992b8c8bc265b077139bce216866d7f16c12/detection
+
+c3444e.linkpc.net
+psychlo.co.cc
+
+# Reference: https://www.virustotal.com/gui/file/00a111869dcd8dc58d17f9158fe2ac10115b728e41222a77728c68627f6e8c0a/detection
+
+ce9c39.linkpc.net
+
+# Generic
+
+/newg/a.php
+/bdj106_5613.php
+/dxohf241_5874.php
+/fdje106_5613.php
+/nnxybd231_5619.php
+/owxryn107_5613.php
+/taedi107_5613.php
+/twp211_5613.php
+/udhnj106_5613.php
+/uxm211_5613.php
+/vigpkh241_5688.php
+/yhxvgz106_5613.php
+/zkzd106_5613.php

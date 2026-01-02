@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: log:x stealer, logs-eye stealer
+
+# Reference: https://x.com/Rash0m0n__/status/1933069485583257756
+# Reference: https://x.com/Rash0m0n__/status/1933069490033721619
+
+root-in.tel
+zintel.cloud
+app.zintel.cloud
+buy.zintel.cloud
+dev.zintel.cloud
+go.zintel.cloud
+log.zintel.cloud
+logs-eye.root-in.tel
+pay.zintel.cloud
+portal.zintel.cloud
+py.zintel.cloud
+root.zintel.cloud
+status.zintel.cloud
+version.zintel.cloud

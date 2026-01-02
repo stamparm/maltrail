@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.virustotal.com/2025/08/code-insight-expands-to-uncover-risks.html
+# Reference: https://www.virustotal.com/gui/file/5c89ba9e1bbb7ef869e4553081a40cabbd91a70506d759fd4e97eefb0434c074/detection
+
+storagehb.cn
+api.storagehb.cn

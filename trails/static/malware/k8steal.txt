@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/r3dbU7z/status/1700548853924020331
+# Reference: https://www.virustotal.com/gui/ip-address/206.189.187.164/relations
+# Reference: https://www.virustotal.com/gui/file/c443f979bc46a4046674ab6b693b8e1ff3a8d7a908cc15bd51dc980730f0ed04/detection
+
+206.189.187.164:1337
+206.189.187.164:1338
+206.189.187.164:1339

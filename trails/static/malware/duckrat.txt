@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/VirITeXplorer/status/1304080218483818500
+# Reference: https://twitter.com/VirITeXplorer/status/1304080412868739082
+# Reference: https://www.virustotal.com/gui/file/4b1ffe4df1fa405add5439e82aca1f7c49070d5f7935fe0d50fa653d754b630c/detection
+# Reference: https://www.virustotal.com/gui/file/024d729bb1340e093d8d114c925fc0cd3ec4b90592bee28d0ad59da8649857fa/detection
+
+deansjuabsghansjk.ddns.net
+lusnuujajansussa.ddns.net

@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/LAB52io/status/1946170527241879969
+# Reference: https://lab52.io/blog/deedrat-backdoor-enhanced-by-chinese-apts-with-advanced-capabilities/
+# Reference: https://www.virustotal.com/gui/ip-address/185.228.92.29/relations
+# Reference: https://www.virustotal.com/gui/file/52f489d47618db8dfb503d6da98cbd76d08b063cc7ce0aac02b03601b6cae6a1/detection
+
+balletskirt969.ooguy.com
+doughnut767.kozow.com
+icecream887.gleeze.com
+luckybear669.kozow.com

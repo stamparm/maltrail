@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-28-v10428/994
+
+2022325luckyday.top
+21bustqisw2.top
+apsbvl.space
+axufcs.space
+bbd383ttka21.top
+bhgusz.space
+luckypapa.top
+luckypuppy.top
+tetstwitn12.xyz
+waytopmobi.com

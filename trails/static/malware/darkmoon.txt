@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/b36f92094c6d981bc7c561d63bc590ff7f1923b8d88909f909580b0f5983b563/detection
+
+64.4.45.62:1863
+johacker.no-ip.info

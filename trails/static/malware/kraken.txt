@@ -1,0 +1,40 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/StopMalvertisin/status/1310611311194038273
+# Reference: https://pastebin.com/LkcFW9y7
+
+http://95.156.77.75
+
+# Reference: https://twitter.com/ViriBack/status/1558890256652333056
+
+http://143.198.246.239
+143.198.246.239:443
+
+# Reference: https://twitter.com/D4RKR4BB1T47/status/1629037294341484544
+
+krakenccj3wr23452a4ibkbkuph4d6soyx2xgjoogtuamc3m7u7wemad.onion
+psqt2tb4vi3gh4t3fz5bq5owirnto2wdkle5fexfvyksa5erdapfiqid.onion
+
+# Reference: https://0xtoxin.github.io/malware%20analysis/KrakenKeylogger-pt1/
+# Reference: https://otx.alienvault.com/pulse/646b8ecbcec55ddc4b7d749a
+
+masherofmasters.cyou
+
+# Generic
+
+/panel/includes/bkill.php
+/panel/includes/btcplugin.php
+/panel/includes/country.php
+/panel/includes/day.php
+/panel/includes/d_elay.php
+/panel/includes/fileupload.php
+/panel/includes/f_i_l_e_h_o_s_t.php
+/panel/includes/get.php
+/panel/includes/idcontact.php
+/panel/includes/install_info.php
+/panel/includes/ip.php
+/panel/includes/persis.php
+/panel/includes/pinginfo.php
+/panel/includes/post.php
+/panel/includes/verif.php

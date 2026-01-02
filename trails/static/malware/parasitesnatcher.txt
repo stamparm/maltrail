@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trendmicro.com/en_us/research/23/k/parasitesnatcher-how-malicious-chrome-extensions-target-brazil-.html
+# Reference: https://documents.trendmicro.com/assets/txt/20231121_ParaSiteSnatcher_IoCsl7nn42H.txt
+
+backmnk.online
+mnksystem.online
+nonbrowm.com
+webgoalarm.online

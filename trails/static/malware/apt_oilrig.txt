@@ -1,0 +1,480 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt34, oilrig, helixkitten, greenbug, spearal, veaty
+
+# Reference: https://twitter.com/ClearskySec/status/1026297541581664257
+
+defender-update.com
+windowspatch.com
+herkhabar.com
+
+# Reference: https://researchcenter.paloaltonetworks.com/2018/07/unit42-oilrig-targets-technology-service-provider-government-agency-quadagent/
+
+rdppath.com
+cpuproc.com
+acrobatverify.com
+
+# Reference: https://researchcenter.paloaltonetworks.com/2018/09/unit42-oilrig-uses-updated-bondupdater-target-middle-eastern-government/
+
+withyourface.com
+
+# Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (2018-01-02: Iranian threat group Oilrig Bahrain decoy)
+
+window5.win
+
+# Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (2017-12-10: Oilrig-APT34)
+# Reference: https://www.fireeye.com/blog/threat-research/2017/12/targeted-attack-in-middle-east-by-apt34.html
+
+applicationframehost.in
+anyportals.com
+dns-update.club
+hpserver.online
+mumbai-m.site
+proxycheker.pro
+ressume.site
+opendns-server.com
+poison-frog.club
+tatavpnservices.com
+fireeyeupdate.com
+chrome-dns.com
+microsoft-publisher.com
+dnsupdateservers.net
+level3-resolvers.net
+mslicensecheck.com
+miedafire.com
+msoffice365update.com
+ntpupdateserver.com
+outlookteam.live
+
+# Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (2017-11-22: Oilrig - new old sample)
+
+winodwsupdates.me
+nsn1.winodwsupdates.me
+
+# Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (2017-11-16: Iranian Oilrig campaign with C2 coldflys[.]com)
+
+coldflys.com
+
+# Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (2017-11-14: ALMA Communicator by Oilrig sample)
+
+prosalar.com
+
+# Reference: https://otx.alienvault.com/pulse/5cb74e5ce1f7e4097ff06255
+# Reference: https://misterch0c.blogspot.com/2019/04/apt34-oilrig-leak.html
+
+myleftheart.com
+
+# Reference: https://unit42.paloaltonetworks.com/behind-the-scenes-with-oilrig/
+# Reference: https://otx.alienvault.com/pulse/5cc8494e1a6c9c572567ba7f
+
+msoffice-cdn.com
+office365-management.com
+
+# Reference: https://www.fireeye.com/blog/threat-research/2019/07/hard-pass-declining-apt34-invite-to-join-their-professional-network.html
+# Reference: https://otx.alienvault.com/pulse/5d3092fc4cd930e8cd6b1f76
+
+http://185.15.247.154
+cam-research-ac.com
+cdn-edge-akamai.com
+offlineearthquake.com
+
+# Reference: https://twitter.com/kyleehmke/status/1151944337598668801
+
+fuktheme.com
+goosegoosecome.com
+hugebricks.com
+offturn.com
+
+# Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (# 2018-05-13: PRB-Backdoor and its connection to Oilrig)
+# Reference: https://sec0wn.blogspot.com/2018/05/prb-backdoor-fully-loaded-powershell.html
+
+akamai-global.com
+outl00k.net
+linledin.net
+
+# Reference: https://twitter.com/silv0123/status/1166399156853846017
+
+withyourface.com
+
+# Reference: https://unit42.paloaltonetworks.com/xhunt-campaign-attacks-on-kuwait-shipping-and-transportation-organizations/ (Table 3.)
+
+whatzapps.net
+
+# Reference: https://twitter.com/ClearskySec/status/1209055280090288131
+
+lcepos.com
+
+# Reference: https://unit42.paloaltonetworks.com/xhunt-campaign-new-watering-hole-identified-for-credential-harvesting/
+# Reference: https://otx.alienvault.com/pulse/5e305bb0fdf782ede5a5405b
+
+6google.com
+alforatsystem.com
+antivirus-update.top
+cloudipnameserver.com
+ffconnectivitycheck.com
+firewallsupports.com
+flowconnectivity.com
+googie.email
+google-update.com
+lowconnectivity.com
+microsofte-update.com
+sakabota.com
+
+# Reference: https://intezer.com/blog-new-iranian-campaign-tailored-to-us-companies-uses-updated-toolset/
+
+manygoodnews.com
+
+# Reference: https://twitter.com/kyleehmke/status/1222970186162155523
+
+hr-westat.com
+westat-hr.com
+
+# Reference: https://twitter.com/GoCyberYourself/status/1224020878146654211
+
+godoycrus.com
+wastedsituation.com
+
+# Reference: https://twitter.com/kyleehmke/status/1224193166393344002
+
+lebanonbuilder.com
+
+# Reference: https://twitter.com/kyleehmke/status/1224546670576390145
+
+scoorpion.com
+
+# Reference: https://twitter.com/kyleehmke/status/1227993245025738753
+
+rimaga.com
+
+# Reference: https://www.clearskysec.com/wp-content/uploads/2020/02/ClearSky-Fox-Kitten-Campaign-v1.pdf
+# Reference: https://otx.alienvault.com/pulse/5e498b13d1107f3801d4b0b0
+# Reference: https://kc.mcafee.com/corporate/index?page=content&id=KB92581&locale=en_US
+# Reference: https://www.virustotal.com/gui/file/c6e71d457779d2802f78c7526a65268600ead6bf8dd75ef9bee5af85569336ef/behavior/VirusTotal%20Jujubox
+# Reference: https://www.virustotal.com/gui/file/40ba95b54dc4cf0754efcfaeef3bbd71aac65882f3c92b8814a82ea02969da84/behavior/Lastline
+
+185.32.178.176:80
+93.177.75.180:80
+95.211.210.55:80
+95.211.213.177:80
+95.211.213.168:80
+95.211.215.225:80
+95.211.104.253:80
+95.211.104.253:443
+95.211.104.253:2255
+
+# Reference: https://unit42.paloaltonetworks.com/unit42-oilrig-malware-campaign-updates-toolset-and-expands-targets/
+
+shalaghlagh.tk
+go0gIe.com
+winodwsupdates.me
+update-kernal.net
+googleupdate.download
+yahoooooomail.com
+upgradesystems.info
+
+# Reference: https://unit42.paloaltonetworks.com/oilrig-novel-c2-channel-steganography/ (# RDAT Backdoor)
+# Reference: https://otx.alienvault.com/pulse/5f18618ca64fbccf241e8746
+
+acrlee.com
+allsecpackupdater.com
+digi.shanx.icu
+intelligent-finance.site
+kizlarsoroyur.com
+kopilkaorukov.com
+oudax.com
+rdmsi.com
+sharjatv.com
+tprs-servers.eu
+wwmal.com
+
+# Reference: https://twitter.com/kyleehmke/status/1305342438479933442
+
+greenkeyllc-projects.com
+infopulsejobs.com
+
+# Reference: https://twitter.com/ShadowChasing1/status/1306780216384258049
+# Reference: https://www.virustotal.com/gui/file/0ee32e3ea3d83da9df6317d7c8c539f0f3622af82ef242d74fdca1e5d4ee427f/detection
+
+windowscredcity.com
+
+# Reference: https://twitter.com/kyleehmke/status/1332141973403291648
+
+careers-ntiva.com
+
+# Reference: https://twitter.com/kyleehmke/status/1332716197188661248
+
+klwebsrv.com
+
+# Reference: https://www.domaintools.com/resources/blog/identifying-critical-infrastructure-targeting-through-network-creation
+# Reference: https://otx.alienvault.com/pulse/5fcfc04c753344dd65c6135d
+
+ababab.biz
+alcirineos.com
+amazon-loveyou.com
+anhuisiafu.com
+bargertextiles.com
+berqertextiles.com
+boardexecutivemanagement.com
+boardsexecutives.com
+careers-ntiva.com
+cererock.com
+chinaconstructioncorp.com
+clearinghouseinternational.com
+connect-roofing.com
+cornerstoneconect.com
+exmngt.com
+groupsexecutive.com
+hoganlouells.com
+hscminkjet.com
+huopay.top
+indeptheva.com
+jiabolianjie0.com
+jinkangpu.co
+jlrootfile.com
+kent-lawfirm.net
+klwebsrv.com
+lavalingroup.com
+mngtboard.com
+oculus-au.info
+pet188.biz
+petrochinas.com
+renrenbaowang.com
+renrenbaowang.net
+stagmein.pl
+superrnax.com
+svn-stone.com
+us-customs.org
+virtual-slots.com
+virtualcaresadvisor.com
+wilsonconts.com
+wiqzi.com
+zj-tunq.com
+iafflocal290.org/sapm/Poland/china.php
+
+# Reference: https://twitter.com/kyleehmke/status/1338907878455963648
+
+donotfollowmeass.com
+
+# Reference: https://twitter.com/kyleehmke/status/1339410533410369537
+
+acceptplan.com
+confusedtown.com
+importantgate.com
+
+# Reference: https://twitter.com/kyleehmke/status/1340304704589492225
+
+crucialanswer.com
+endlesspromises.com
+forecasterman.com
+hopeisstamina.com
+unsecuredstorage.com
+
+# Reference: https://twitter.com/kyleehmke/status/1349041310704029701
+
+severalfissures.com
+
+# Reference: https://twitter.com/kyleehmke/status/1359828105804869634
+
+pluginmain.com
+
+# Reference:  https://research.checkpoint.com/2021/irans-apt34-returns-with-an-updated-arsenal/
+# Reference: https://otx.alienvault.com/pulse/606f347aadebd8f4dd043ac9
+
+sarmsoftware.com
+
+# Reference: https://twitter.com/AnonySecAgency/status/1405451968374444035
+# Reference: https://www.virustotal.com/gui/file/1f47770cc42ac8805060004f203a5f537b7473a36ff41eabb746900b2fa24cc8/detection
+# Reference: https://www.virustotal.com/gui/file/cb00ee3f246a3d3af6ba4f97546a39090a55dd8312b8531bd99efa353e267887/detection
+# Reference: https://www.virustotal.com/gui/file/f91c5250b33fc5f95495c5e3d63b5fde7ca538178feb253322808b383a26599d/detection
+
+mail.army.gov.lb
+
+# Reference: https://www.virustotal.com/gui/file/08261ed40e21140eb438f16af0233217c701d9b022dce0a45b6e3e1ee2467739/detection
+
+akastatus.com
+yciwftaie66jstpmds5sqtahecnue5we.dnsstatus.org
+yciwcgakeqowsbrieq1sqtahecq96qca.dnsstatus.org
+yciwftaketowstrmehpsqtahecnuetwb.dnsstatus.org
+yciwstrnecpwebaletpmqtahecnuec5d.dnsstatus.org
+yciwztanet1kcpnjds1wepwacqmz6frgxqlzutrxsmuux.defenderlive.com
+yciwfgpmeq5wstpke6psqtahecnue5we.defenderlive.com
+yciwfgroetpwetaletomqtahecq96qca.defenderlive.com
+yciwzbrue66jsbaoespsqtahecnuetwb.defenderlive.com
+
+# Reference: https://blog.morphisec.com/microsoft-equation-editor-backdoor
+# Reference: https://www.virustotal.com/gui/file/5b307600b1ceb84f29315c95e5b21776eb6154b79214528629e4fc2310cd50e3/detection
+# Reference: https://www.virustotal.com/gui/file/17f9db18327a29777b01d741f7631d9eb9c7e4cb33aa0905670154a5c191195c/detection
+
+http://138.68.234.128
+http://185.198.59.121
+185.198.59.121:137
+185.198.59.121:139
+185.198.59.121:445
+
+# Reference: https://twitter.com/__0XYC__/status/1468909913976025100
+# Reference: https://www.virustotal.com/gui/file/5b5b1608e6736c7759b1ecf61e756794cf9ef3bb4752c315527bcc675480b6c6/detection
+
+karachidha.org/docs/EOIForm.rtf
+bgre.kozow.com
+/Gfg786v6fcd6v8j09jg67f6/
+/Gfg786v6fcd6v8j09jg67f6/addentry2.php
+/Gfg786v6fcd6v8j09jg67f6/dolist.php
+
+# Reference: https://blog.malwarebytes.com/threat-intelligence/2022/05/apt34-targets-jordan-government-using-new-saitama-backdoor/
+# Reference: https://www.fortinet.com/blog/threat-research/please-confirm-you-received-our-apt
+# Reference: https://otx.alienvault.com/pulse/627ce7ceecf262a2aff36f9f
+# Reference: https://www.virustotal.com/gui/file/e0872958b8d3824089e5e1cfab03d9d98d22b9bcb294463818d721380075a52d/detection
+
+asiaworldremit.com
+astrazencea.com
+astrazeneeca.com
+cisco0.com
+coinbasedeutschland.com
+hsbcbkcn.com
+joexpediagroup.com
+ntu-sg-edu.com
+theworldbank.uk
+uber-asia.com
+valtronics-ae.com
+2fhj.asiaworldremit.com
+5s5gp24f8x.asiaworldremit.com
+p5p98ljg7e.asiaworldremit.com
+r2rcdvnasg.asiaworldremit.com
+3j3oyvsf8i.joexpediagroup.com
+j9jnkf7asv.joexpediagroup.com
+qcqrpjgasn.joexpediagroup.com
+t3tadulf8d.joexpediagroup.com
+ucu4dsvf8m.joexpediagroup.com
+vhvn201135.joexpediagroup.com
+zlz5ow818r.joexpediagroup.com
+2u21hipg70.uber-asia.com
+7w7rbgt13f.uber-asia.com
+jqj6po1g71.uber-asia.com
+ozo26hwfhl.uber-asia.com
+w0wiq48g7w.uber-asia.com
+
+# Reference: https://www.virustotal.com/gui/file/b69812221cd9328a70c90f771c58be44693de493df18f0a08ebd0bb6236e37a7/detection
+
+2zcf.uber-asia.com
+efezhyrzc9.joexpediagroup.com
+
+# Reference: https://twitter.com/t3ft3lb/status/1605487437995597826
+# Reference: https://www.virustotal.com/gui/file/d33da74a263c03bb9473ac6db7ef1a82c1ba0a5fd40a0dcc2bc1fcdf9eda5bd5/detection
+
+cardioteacher.com
+262t3my0gt.cardioteacher.com
+7a7n4j60g4.cardioteacher.com
+egef74rfrf.cardioteacher.com
+mxmbwci0gs.cardioteacher.com
+pkpqzvgb3t.cardioteacher.com
+shsz3eub38.cardioteacher.com
+u3u6gm4b34.cardioteacher.com
+zgz4sjvb33.cardioteacher.com
+
+# Reference: https://www.trendmicro.com/en_us/research/23/i/apt34-deploys-phishing-attack-with-new-malware.html
+# Reference: https://www.virustotal.com/gui/file/8a8a7a506fd57bde314ce6154f2484f280049f2bda504d43704b9ad412d5d618/detection
+# Reference: https://www.virustotal.com/gui/file/64156f9ca51951a9bf91b5b74073d31c16873ca60492c25895c1f0f074787345/detection
+
+tecforsc-001-site1.gtempurl.com
+
+# Reference: https://www.welivesecurity.com/en/eset-research/oilrig-persistent-attacks-cloud-service-powered-downloaders/
+# Reference: https://otx.alienvault.com/pulse/657b11ab57c4b75f5004b236
+
+host1.com/rt.ovf
+
+# Reference: https://x.com/Cyber_O51NT/status/1834069690777301121
+# Reference: https://research.checkpoint.com/2024/iranian-malware-attacks-iraqi-government/ (# spearal, veaty)
+# Reference: https://app.validin.com/detail?find=151.236.17.231&type=ip4&ref_id=29bbecc74a1#tab=resolutions
+# Reference: https://app.validin.com/detail?find=185.76.78.177&type=ip4&ref_id=70a5c38659b#tab=resolutions
+# Reference: https://www.virustotal.com/gui/ip-address/194.68.32.114/relations
+# Reference: https://www.virustotal.com/gui/ip-address/206.206.123.176/relations
+# Reference: https://www.virustotal.com/gui/ip-address/37.1.213.152/relations
+# Reference: https://www.virustotal.com/gui/file/1388f124c6af24eefe5483a5a50ab186abdf51a89875036f7383ea51139ab4b4/detection
+# Reference: https://www.virustotal.com/gui/file/413cef6cf83ff649c15c60fff888197183418fb9d2b84a12cd44e4607e6a6881/detection
+# Reference: https://www.virustotal.com/gui/file/81e3e31ffd8aa0a96f48eeb638eed9e9344ffb65537cbeb8a357c92f0999555c/detection
+# Reference: https://www.virustotal.com/gui/file/b85ffc8af90d4312aca9a81e0da00aabe6278fd9c92e933aec7e2da80c2c1f7e/detection
+# Reference: https://www.virustotal.com/gui/file/dcdaa9da5ee4750b1084f7dd99faeed2c713595bb156ac6491b29c2f9e0a1ade/detection
+
+151.236.17.231:53
+185.76.78.177:53
+194.68.32.114:53
+206.206.123.176:443
+206.206.123.176:8080
+37.1.213.152:39654
+37.1.213.152:8999
+91.132.95.117:53
+asiacall.net
+iqwebservice.com
+mofaiq.com
+spacenet.fun
+truetone.cfd
+admin.mofaiq.com
+apps.iqwebservice.com
+base32.iqwebservice.com
+ns1.asiacall.net
+ns1.iqwebservice.com
+ns1.mofaiq.com
+ns1.spacenet.fun
+ns2.iqwebservice.com
+ns2.mofaiq.com
+ns2.spacenet.fun
+
+# Reference: https://x.com/k3yp0d/status/1834192780605710659
+# Reference: https://app.validin.com/detail?find=helllllllllllllllllllllllllo&type=raw&ref_id=ad162dcfc0e#tab=dns
+
+fastasia.shop
+ns1.fastasia.shop
+ns2.fastasia.shop
+
+# Reference: https://x.com/Cyberteam008/status/1834415607825277069
+# Reference: https://x.com/Aarn63373424/status/1834496842580505035
+# Reference: https://en.fofa.info/result?qbase64=IHRpdGxlPT0iZ29vZF9uZXdzX3NpdGUi
+# Reference: https://www.zoomeye.hk/searchResult?q=title%3A%22good_news_site%22
+
+151.236.17.231:8080
+185.76.78.177:8080
+198.44.140.29:8080
+91.132.95.117:8081
+
+# Reference: https://x.com/ThreatBookLabs/status/1899472630849413627
+# Reference: https://x.com/ThreatBookLabs/status/1906670311145091390
+# Reference: https://x.com/ThreatBookLabs/status/1939972243238633634
+# Reference: https://threatbook.io/blog/id/1101
+# Reference: https://app.validin.com/detail?find=b60d5beecd0576e7c59f2195e2462822f9d096cd&type=hash&ref_id=f7daca57730#tab=host_pairs (# 2025-03-31)
+# Reference: https://app.validin.com/detail?find=3981e30d1289ce1be9210c929a68bca0&type=hash&ref_id=f7daca57730#tab=host_pairs (# 2025-03-31)
+# Reference: https://www.virustotal.com/gui/file/b607d60d680f1f1335902a666df843ac9cc58299af6731d2ad1a5ea617cf4a99/detection
+
+151.236.17.231:8989
+185.76.78.177:8989
+185.76.78.177:9090
+192.71.166.24:10443
+193.36.132.224:8080
+198.44.140.29:8989
+38.180.31.225:443
+38.180.31.225:8080
+89.46.233.239:10443
+89.46.233.239:8080
+91.132.95.117:8080
+91.132.95.117:8989
+95.156.204.168:10443
+95.156.204.168:443
+95.156.204.168:8080
+mytrustiq.com
+
+# Reference: https://hunt.io/blog/track-apt34-like-infrastructure-before-it-strikes
+
+38.180.18.189:8080
+38.180.140.30:8080
+biam-iraq.org
+iraqmailservice.com
+westagnews.com
+axoryvexity.eu
+plenoryvantyx.eu
+valtorynexon.eu
+valtryventyx.eu
+zyverantova.eu
+
+# Reference: https://x.com/ThreatBookLabs/status/1924470599394422785
+
+91.184.249.198:443

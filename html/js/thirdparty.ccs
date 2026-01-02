@@ -1,0 +1,27 @@
+// ==ClosureCompiler==
+// @compilation_level WHITESPACE_ONLY
+// @output_file_name thirdparty.min.js
+// @language ECMASCRIPT5
+// @code_url https://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js
+// @code_url https://cdn.jsdelivr.net/jquery.ui/1.11.3/jquery-ui.min.js
+// @code_url https://raw.githubusercontent.com/monkeymonk/jquery.loader.js/master/jquery.loader.min.js
+// @code_url https://cdn.jsdelivr.net/jquery.datatables/1.10.10/js/jquery.dataTables.min.js
+// @code_url https://cdn.jsdelivr.net/jquery.datatables/1.10.10/plugins/bootstrap/3/dataTables.bootstrap.js
+// @code_url https://cdn.jsdelivr.net/jquery.datatables/1.10.10/plugins/tabletools/js/dataTables.tableTools.min.js
+// @code_url https://cdn.jsdelivr.net/raphael/2.1.4/raphael-min.js
+// @code_url https://cdn.jsdelivr.net/d3js/3.5.12/d3.min.js
+// @code_url https://raw.githubusercontent.com/wa0x6e/cal-heatmap/master/cal-heatmap.min.js
+// @code_url https://cdn.jsdelivr.net/jquery.sparkline/2.1.2/jquery.sparkline.min.js
+// @code_url https://cdn.jsdelivr.net/jstorage/0.4.12/jstorage.min.js
+// @code_url https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.min.js
+// @code_url https://raw.githubusercontent.com/nnnick/Chart.js/master/Chart.min.js
+// @code_url https://raw.githubusercontent.com/Regaddi/Chart.StackedBar.js/master/src/Chart.StackedBar.js
+// @code_url https://raw.githubusercontent.com/garycourt/murmurhash-js/master/murmurhash3_gc.js
+// @code_url https://cdn.jsdelivr.net/jquery.sticky/1.0.1/jquery.sticky.min.js
+// @code_url https://cdn.jsdelivr.net/momentjs/2.10.6/moment.min.js
+// @code_url https://raw.githubusercontent.com/benkeen/d3pie/master/d3pie/d3pie.min.js
+// @code_url http://mindmup.github.io/editable-table/mindmup-editabletable.js
+// @code_url https://raw.githubusercontent.com/h2non/jshashes/master/hashes.min.js
+// ==/ClosureCompiler==
+
+// http://closure-compiler.appspot.com/home

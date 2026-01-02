@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: MontysThree, MT3
+
+# Reference: https://securelist.com/montysthree-industrial-espionage/98972/ (# MontysThree, MT3)
+# Reference: https://otx.alienvault.com/pulse/5f7f1fbb47295b54fbf69b6a
+
+autosport-club.tekcities.com
+dl10-web-stock.ru
+dl16-web-eticket.ru
+dl166-web-eticket.ru
+dl55-web-yachtbooking.xyz

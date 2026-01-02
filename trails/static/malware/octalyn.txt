@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: octalyn stealer
+
+# Reference: https://x.com/suyog41/status/1927982788822610121
+
+/Octalyn-Stealer
+/Octalyn-Stealer-C-Telegram
+
+# Reference: https://x.com/P4nd3m1cb0y/status/1934772083852009609
+# Reference: https://x.com/P4nd3m1cb0y/status/1934772087526453469
+# Reference: https://www.virustotal.com/gui/file/4fced2f585c02f9f6d205f002c775b396b1c903c57e134c8595d2940711ddc76/detection
+# Reference: https://www.virustotal.com/gui/file/5b933b528a56df08c9040aec9c1295b1e491abd29cb43187ffeac14fa59f6ecf/detection
+
+429081767.blob.core.windows.net
+josevendasbr.org
+ccuxj.josevendasbr.org
+cirz.josevendasbr.org
+ncgva.josevendasbr.org

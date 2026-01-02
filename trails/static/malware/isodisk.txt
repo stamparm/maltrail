@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/stvemillertime/status/1142592440479682560
+# Reference: https://twitter.com/stvemillertime/status/1142604668322889729
+
+ rick.ggiso.co
+ ris.ggiso.co

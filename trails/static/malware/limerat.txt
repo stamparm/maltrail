@@ -1,0 +1,325 @@
+
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Citrate
+
+# Reference: https://twitter.com/ScumBots/status/1088825084125401088
+
+144.202.70.19:1212
+194.67.209.128:9999
+91.160.178.111:1982
+94.237.28.110:1212
+morfey888-55156.portmap.host
+nerv7.ddns.net
+newnewlt.duckdns.org
+ngrok.dalao.pub
+office365update.duckdns.org
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1109090811801673730
+# Reference: https://twitter.com/blackorbird/status/1099940318026186753
+
+holydns.warzonedns.com
+projectblackhat.com
+
+# Reference: https://twitter.com/P3pperP0tts/status/1098968156125696000
+
+doverenewables.watchdogdns.duckdns.org
+
+# Reference: https://twitter.com/ScumBots/status/1112446136911048704
+
+netpipe.warzonedns.com
+
+# Reference: https://twitter.com/P3pperP0tts/status/1192365962332459009
+# Reference: https://app.any.run/tasks/ca1539a9-7e4b-4bbb-a25a-cb8202ac0985/
+
+185.140.53.93:5118
+xyzass.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/6ff74cd439a1ac27f495a78e2d9a4d90d8d78c9a2a1f5cf8371c93f9d7b0f714/detection
+
+185.217.1.190:1337
+185.217.1.190:1338
+
+# Reference: https://www.virustotal.com/gui/file/372bf82bf81274f9f246d4392f88e148de31c6a1fd4e43e86afb0c76b96fc376/detection
+
+79.134.225.77:5118
+oxcds.duckdns.org
+
+# Reference: https://app.any.run/tasks/927fdec0-3dd3-4da8-8e4e-3fd632c5589f/
+
+79.134.225.31:1212
+
+# Reference: https://app.any.run/tasks/296c5277-7954-42ac-96aa-f5955d2dfff7/
+
+139.194.4.144:6444
+
+# Reference: https://app.any.run/tasks/0b56092a-39bb-4c79-b379-dc63de439033/
+
+141.255.159.36:3301
+
+# Reference: https://www.virustotal.com/gui/file/af8b797b7d4710b273ba35952f445e308cd1644a1e1530487d40c1a439a2be95/detection
+
+91.218.65.24:8888
+
+# Reference: https://www.virustotal.com/gui/file/23b7968fb9289579e42123554ff58315e33a4b54edbf449f3b66ce3b15e73a64/detection
+
+91.218.65.24:7888
+
+# Reference: https://www.virustotal.com/gui/file/0deadc5f74d3e5b33a8743a1c41a5a67fe43b7e2ceda98ecd1cab4e855d52d4b/detection
+
+39.35.192.117:5643
+codertricks.zapto.org
+
+# Reference: https://www.virustotal.com/gui/file/b2c19cbe6c6f97b987ee5f38d4e8af4b259b9e2ddcb07ebd8e7b5cd981df6806/detection
+
+5.253.114.116:8052
+
+# Reference: https://twitter.com/ScumBots/status/1251919136210518021
+
+193.161.193.99:33011
+luisgrace000-33011.portmap.host
+
+# Reference: https://twitter.com/malwrhunterteam/status/1260573461312950272
+# Reference: https://www.virustotal.com/gui/file/3d56b121b85ea111f4e92b31f69c3bf9b10962f4dc3a1724029d8087008ad1a3/detection
+# Reference: https://twitter.com/malwrhunterteam/status/1260573461312950272/photo/1
+
+194.35.114.8:19001
+194.35.114.8:19002
+194.35.114.8:32552
+194.35.114.8:34443
+194.35.114.8:54000
+hustleking.myddns.me
+
+# Reference: https://twitter.com/ScumBots/status/1266690144016437250
+
+91.193.75.22:8989
+
+# Reference: https://www.virustotal.com/gui/file/b7068ae57689865398f221590abf6e2deb0607c775571a2cf16d8ca91c9c67ec/detection
+
+173.46.85.68:2017
+
+# Reference: https://www.virustotal.com/gui/file/d88b39939a162d699d12e9f317d4c8e6ae94a2bcc6318524c39e86c547da7726/detection
+
+86.99.25.192:8989
+
+# Reference: https://www.virustotal.com/gui/file/520108930b7f633761bb877605a9c21005f4cbf1a4ab2d0548a73294bc208238/detection
+
+193.161.193.99:57830
+mememigg-57830.portmap.host
+
+# Reference: https://www.virustotal.com/gui/file/a0240fcf4cc43ae636bd6ce76110aefa52961b8b65ed48e007dd58ddf032cdeb/detection
+
+193.161.193.99:50006
+simon123ac-50006.portmap.host
+
+# Reference: https://www.virustotal.com/gui/file/57702328585c0065461abed0ec07916b7176c8679a519a3714a7887743f7cc15/detection
+
+193.161.193.99:42607
+
+# Reference: https://www.virustotal.com/gui/file/efddb8625f7f35e91fad6672c67fe3c5073ba036d95e640de966fe68025afaff/detection
+
+104.211.119.95:7777
+
+# Reference: https://www.virustotal.com/gui/file/47bf790a982f69acdab7fa7a667d247099c56ef6e05c0150480080bb20f02a3c/detection
+
+164.68.122.235:1212
+
+# Reference: https://www.virustotal.com/gui/file/548a083bdc818bbd1525d308c567f814f28e8bad1a3f97235f1c9c6b4fd14e20/detection
+
+105.103.104.74:288
+
+# Reference: https://www.virustotal.com/gui/file/256e129e32a9015ac139ec3f714264a526b587523a5645fb4398526a87f19f8a/detection
+# Reference: https://www.virustotal.com/gui/file/5942b2182716e0c3844f5919316900df7e7d061f88529193511e343c7c4ddf3b/detection
+
+194.207.106.180:8080
+5.198.38.68:8080
+callumssss.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/8b9fd93906cbfe3753c41220bc9ad789d0cc7f279ccb223b7ced9e965a544c52/detection
+
+71.28.247.154:8085
+niggerssuk.hopto.org
+
+# Reference: https://tria.ge/210609-sqlka9lans/behavioral1
+
+ipcheck.servehttp.com
+
+# Reference: https://www.virustotal.com/gui/file/439551a7fe9f22c4e56edabd991a81ffcb5989393317f7bb496f5d543f3ba975/detection
+
+176.136.47.220:1605
+testingvmz.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/ea19c38f8a2c0eb0033242679c4bb5cc80d40ed636af56d0dc859abcba56656a/detection
+
+193.161.193.99:26626
+hackerhi2-26626.portmap.host
+
+# Reference: https://twitter.com/1ZRR4H/status/1513784893129564170
+# Reference: https://www.virustotal.com/gui/file/fa64447c03442b4318f5be308c9551489a452435fe29632ce96b787a9e3f7b42/detection
+
+149.56.200.166:5552
+
+# Reference: https://www.virustotal.com/gui/file/f626c77da4d999a88235af5b6dd31f0903922ed95a6dc1248ced0ff1dd4d055e/detection
+
+amadeus432.ddns.net
+
+# Reference: https://tria.ge/220725-g1f9vaabb2/behavioral1
+
+212.193.30.230:82
+
+# Reference: https://threatfox.abuse.ch/browse.php?search=malware%3Alime
+
+http://51.178.238.246
+102.133.180.23:5552
+13.229.238.144:11069
+13.229.238.144:19532
+132.148.158.104:8989
+134.255.220.10:555
+147.185.221.212:13247
+156.96.60.165:9987
+172.111.242.20:2033
+185.185.25.179:8989
+185.244.181.160:39431
+185.45.193.29:4204
+185.9.144.187:8030
+188.127.243.38:39431
+188.166.34.212:8008
+190.9.216.31:789
+192.210.214.85:3306
+192.252.213.230:13337
+192.3.157.96:3306
+192.53.173.38:8080
+193.218.118.85:8855
+193.38.55.77:14529
+194.5.98.102:7190
+194.5.98.182:3601
+195.133.18.236:63894
+2.56.212.39:4204
+206.123.140.95:15600
+212.102.39.205:45846
+3.124.142.205:19691
+3.131.207.170:17145
+3.141.177.1:18954
+3.142.167.4:18265
+3.142.81.166:12450
+3.17.7.232:11054
+3.22.30.40:18796
+41.225.34.198:433
+45.130.141.63:1337
+45.88.79.224:5195
+45.88.79.224:8030
+46.101.159.120:6666
+46.101.75.69:8008
+51.89.199.102:8927
+52.15.228.54:8008
+52.221.201.97:5555
+54.89.47.234:4782
+75.46.51.206:1805
+78.42.74.191:8888
+79.134.225.16:5657
+79.134.225.22:5656
+79.134.225.22:9088
+79.134.225.70:4204
+80.66.79.77:4043
+81.30.144.81:39431
+83.229.75.12:8080
+83.25.236.230:32600
+85.206.165.111:48627
+89.33.193.60:1987
+91.134.214.47:4204
+92.100.148.246:25556
+93.188.96.158:4782
+94.23.6.32:39431
+
+# Reference: https://www.virustotal.com/gui/file/ee35ce88923a17929d14269290e68f96591be911bf356a80503bf4bb2631a676/detection
+# Reference: https://www.virustotal.com/gui/file/de3756e445865f7b202e7ad6c3924c172181fc63fceafed5a1a7d40f0a2733ce/detection
+# Reference: https://www.virustotal.com/gui/file/839a7e7e67f861c394b6dbfa1b19fb0d40405ab10b3562e5f9e00c0ad89adc82/detection
+# Reference: https://www.virustotal.com/gui/file/5ef526a5db454c560bbddb600848086e3ce7ed873e1ad2b3835fe6f8babc3a37/detection
+# Reference: https://www.virustotal.com/gui/file/57e262fcedd272d0a3e08ceef6d2e9324a84712db2d2fc8eaae352a2bb7ace14/detection
+# Reference: https://www.virustotal.com/gui/file/508181dd284054e6aedca36be8b1029806d4760c5b432e2ec9111161cb2b7f8e/detection
+
+91.109.184.12:4466
+91.109.190.3:4466
+91.109.178.4:4466
+91.109.190.6:4466
+91.109.176.7:4466
+91.109.176.9:4466
+battlenet.sytes.net
+
+# Reference: https://www.virustotal.com/gui/file/4e30c0f05004a6553898351f672124bfd350ce77ee4aac8ecb8c2089a5ea4421/detection
+
+78.142.18.37:7878
+78.142.18.37:8989
+
+# Reference: https://any.run/cybersecurity-blog/limerat-malware-analysis/
+# Reference: https://www.virustotal.com/gui/file/6d08ed6acac230f41d9d6fe2a26245eeaf08c84bc7a66fddc764d82d6786d334/detection
+
+20.199.13.167:8080
+
+# Reference: https://www.virustotal.com/gui/file/14b6048c742fb7b6d0b19bed77de16d836dd8b992cd96df1af6f995618596773/detection
+
+199.59.148.97:8989
+niggaxd.ddnsking.com
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.limerat/
+
+http://27.3.162.17
+138.201.81.121:39431
+138.201.81.121:8030
+178.32.156.59:5553
+20.231.17.198:7000
+212.193.30.230:14982
+31.210.55.103:33313
+38.242.239.137:3309
+82.115.223.14:8030
+84.54.50.77:4658
+91.109.190.6:8080
+95.214.27.6:14982
+
+# Reference: https://threatfox.abuse.ch/ioc/1151946/
+
+93.115.35.130:4417
+
+# Reference: https://www.virustotal.com/gui/file/e39bed30de3f5c8ae05a37fc7756173650eee6d797f4ee6f5ef08d96e64f484f/detection
+# Reference: https://www.virustotal.com/gui/file/9f8bd04b2bfb69d4f68f7da502c47565e411aea2df98cf420f4b4562bedc8558/detection
+
+86.107.104.106:2057
+universalchina.pserver.ru
+
+# Reference: https://www.virustotal.com/gui/file/81b1e482430e791153d3408a09f318bc10fe54dec2f516dd6e19c5def0411a40/detection
+
+86.107.104.106:2056
+ilovesatan.m-x.cfd
+sataniloveyou.m-x.cfd
+
+# Reference: https://www.virustotal.com/gui/file/0b685b01bda8e87a2c0114c3df51746a4b7fd0eacfb9c7230c15ee3fae1be23b/detection
+
+185.150.24.55:7688
+chinomso.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/9f384ca1e5de60a03f5de450bd2251c6115c1359e8e38fc452e6b61fd717fb72/detection
+# Reference: https://www.virustotal.com/gui/file/6cb4e048892672d1946d85f48d562661efbc7370457484d0eadaae8178ee7b53/detection
+
+122.160.128.161:8080
+nyancatgithub.ddns.net
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.limerat/ (# 2024-03-24)
+
+91.92.253.74:14982
+93.44.164.107:6024
+
+# Reference: https://censys.com/blog/unmasking-the-infrastructure-of-a-spearphishing-campaign
+
+romanovas.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/972e6d439816cecc69293543e5a6e524848b000cdc7004bc20ae49c31d580dce/detection
+
+46.196.26.192:4785
+143.mywire.org
+deli.mywire.org
+
+# Reference: https://www.virustotal.com/gui/file/22c20689afeb66cdf4aa97381477482669d5d6624231abb472b03ab83a79b5ba/detection
+
+172.111.163.197:8989
+kral.ydns.eu

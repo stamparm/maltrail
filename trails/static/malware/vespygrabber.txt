@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/banthisguy9349/status/1735679468184686994
+# Reference: https://www.virustotal.com/gui/ip-address/34.120.137.41/relations
+
+vespy.shop

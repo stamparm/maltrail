@@ -1,0 +1,149 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://citizenlab.ca/2024/08/sophisticated-phishing-targets-russias-perceived-enemies-around-the-globe/
+# Reference: https://www.virustotal.com/gui/file/4a9a2c2926b7b8e388984d38cb9e259fb4060cccc2d291c7910be030ae5301a3/detection
+
+protondrive.me
+protondrive.online
+protondrive.services
+service-proton.me
+
+# Reference: https://x.com/MichalKoczwara/status/1823848259686949313
+# Reference: https://app.validin.com/detail?find=38.180.18.59&type=ip4&ref_id=3160b1058e5#tab=resolutions
+
+protondrive.cloud
+account.protondrive.cloud
+
+# Reference: https://x.com/MichalKoczwara/status/1825616253844861051
+# Reference: https://app.validin.com/detail?type=ip&find=38.180.87.136#tab=resolutions
+
+decryptor.me
+proton.decryptor.me
+
+# Reference: https://x.com/TLP_R3D/status/1825846559738626438
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.86.87/relations
+
+driveproton.me
+
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.86.201/relations
+
+driveshare.me
+
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.18.236/relations
+
+document-decryption.me
+proton.document-decryption.me
+
+# Reference: https://x.com/TLP_R3D/status/1828824260778885517
+# Reference: https://x.com/felixaime/status/1828811264354897956
+# Reference: https://x.com/felixaime/status/1828811266703393232
+# Reference: https://www.virustotal.com/gui/ip-address/45.133.195.117/relations
+
+accounts-proton.me
+drive-proton.com
+filestorage.me
+proton-drive.me
+proton-verify.me
+service-proton.com
+services-proton.me
+verify-proton.me
+account.proton-verify.me
+drive.proton-verify.me
+
+# Reference: https://x.com/Cyberteam008/status/1828989730840621365
+# Reference: https://en.fofa.info/result?qbase64=aGVhZGVyX2hhc2g9Ii0xNjkyOTY3NzM4IiAmJiBzZXJ2ZXI9PSJuZ2lueC8xLjE4LjAiICYmIGFzbj0iMjA2ODA0Ig%3D%3D
+
+account.protondrive.services
+account.service-proton.com
+account.services-proton.me
+
+# Reference: https://x.com/Cyberteam008/status/1829352207562481811
+# Reference: https://en.fofa.info/result?qbase64=aGVhZGVyX2hhc2g9IjY1ODMyNjkwMSIgJiYgamFybT0iMjdkNDBkNDBkMDAwNDBkMDAwNDJkNDNkMDAwMDAwNGFjMjRlNzdkNzY2NDY4NjdmMGY2YTBjNmQ5YjliYjAiICYmIHNlcnZlcj09Im5naW54LzEuMTguMCIgJiYgaXA9IjM4LjE4MC44Ni44Ny8xNiI%3D
+
+drive.proton.decryptor.me
+drive.proton.filestorage.me
+proton.driveshare.me
+proton.filestorage.me
+
+# Reference: https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/coldwastrel-space.html
+
+account-api.cloudstorageservice.online
+account-api.onlinestorageroute.space
+account-api.protondrive.online
+account.email-pm.me
+account.onlinestorageroute.space
+account.open-button.com
+account.proton-drive.me
+account.proton-service.services
+account.protondrive.online
+account.protondrive.onlinestorageroute.space
+account.secure-pm.me
+account.service-pm.me
+account.service-proton.me
+accounts.support-ukr.net
+center-facebook.com
+civic-synergy.online
+cloudstorageservice.online
+desktop-facebook.com
+drive.link-pm.me
+drive.secure-pm.me
+drive.service-pm.me
+drive.service-proton.me
+edisk.support-ukr.net
+email-pm.me
+email-ukr.net
+email.support-ukr.net
+en-us.center-facebook.com
+en-us.desktop-facebook.com
+fb-me.com
+fidh.tech
+fr-fr.center-facebook.com
+h.maiils.com
+link-pm.me
+livecloudaccount.com
+login.livecloudaccount.com
+login.security-gm.com
+login.support-gm.com
+m.h.maiils.com
+mail-ukr.net
+maiils.com
+mail-api.onlinestorageroute.space
+mail-api.protondrive.online
+mail.civic-synergy.online
+mail.fidh.tech
+mail.onetimeopportunity.store
+mail.onlinestorageroute.space
+mail.protondrive.online
+mail.support-ukr.net
+n.maiils.com
+na.maiils.com
+old.onlinestorageroute.space
+old.protondrive.online
+onetimeopportunity.store
+online-facebook.com
+onlinestorageroute.space
+open-button.com
+proton-service.services
+protondrive.onlinestorageroute.space
+reports.onlinestorageroute.space
+reports.protondrive.online
+ru-ru.center-facebook.com
+ru-ru.desktop-facebook.com
+secure-pm.me
+secure.onlinestorageroute.space
+secure.protondrive.online
+security-gm.com
+service-pm.me
+service.link-pm.me
+support-gm.com
+support-ukr.net
+view-menu.site
+webmail.civic-synergy.online
+
+# Reference: https://search.censys.io/certificates/d15350021f0ecc2faf863db6c41dbc415b4c85bf17d5d0f94785ea890fda3cc0
+
+shared-urls.me
+proton.shared-urls.me
+account.proton.shared-urls.me
+drive.proton.shared-urls.me

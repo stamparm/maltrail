@@ -1,0 +1,52 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ScumBots/status/1044222073797844994
+
+alienware123.duckdns.org
+
+# Reference: https://twitter.com/ScumBots/status/1046078291210317831
+
+momoh.ddns.net
+
+# Reference: https://twitter.com/ScumBots/status/1036939502508552192
+
+winconnection.ddns.net
+
+# Reference: https://twitter.com/ScumBots/status/1054722967538712577
+
+mokarex.duckdns.org
+
+# Reference: https://twitter.com/ScumBots/status/1068899880943448071
+
+windowstestresultso.ddns.net
+
+# Reference: https://twitter.com/ScumBots/status/1076911344098729990
+
+bowlinetestcracker.hopto.org
+
+# Reference: https://twitter.com/ScumBots/status/1081306014677372929
+
+holydns.warzonedns.com
+
+# Reference: https://twitter.com/ScumBots/status/1191421547967328257
+
+sb-rat.duckdns.org
+
+# Reference: https://twitter.com/ScumBots/status/1214776297605476352
+
+srblue-mobile.duckdns.org
+
+# Reference: https://twitter.com/ScumBots/status/1218958911107223552
+# Reference: https://www.virustotal.com/gui/file/c03b3abe50d00de2739e765ea4fc4e847ffb05bb0ccea1ca0ee21edc4e74eb15/detection
+
+36.233.26.150:6250
+
+# Reference: https://twitter.com/ScumBots/status/1246524015201705985
+# Reference: https://www.virustotal.com/gui/file/b1e2518cfaa0988b4d2c622e23038699325ee098a5b54dd2148e5c3f8b553de7/detection
+
+dragongamer.ddns.net
+
+# Reference: https://twitter.com/ScumBots/status/1249936010726846464
+
+alonewolf1992.zapto.org

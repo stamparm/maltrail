@@ -1,0 +1,56 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: fanta, flexnet, limebot, lipton
+
+# Reference: https://www.group-ib.ru/blog/fanta (Russian)
+# Reference: https://www.virustotal.com/gui/ip-address/178.132.1.240/relations
+
+av-tovar.ru
+perevod273.ru
+perevod901.ru
+ru-sdelka.ru
+sdelka-ru.ru
+sdelka211.ru
+sdelka221.ru
+shcet382.ru
+shcet491.ru
+tovar-av.ru
+viplata291.ru
+vyplata437.ru
+(gomon|perevod|sdelka|shcet|v[i,y]plata)[0-9]{2,3}\.ru
+
+# C2-s
+
+# Reference: https://www.virustotal.com/gui/ip-address/217.23.14.27/relations
+
+http://217.23.14.27
+onuseseddohap.club
+bad-racoon.club
+bad-racoon.live
+
+# Reference: https://twitter.com/m0br3v/status/1248589552169693184
+
+fgrhjk6756u4y34.icu
+
+# Reference: https://twitter.com/malwrhunterteam/status/1257709099468365824
+# Reference: https://www.virustotal.com/gui/ip-address/188.165.90.180/relations
+
+exsos.ru
+gomon48.ru
+seksex.ru
+sexsos.ru
+sextot.ru
+sosep.ru
+soses.ru
+sosev.ru
+soske.ru
+tutsos.ru
+zosos.ru
+
+# Reference: https://www.hybrid-analysis.com/sample/bd873063e1455338fe8e7aa11f0f392abf7fc25ceac785fbe2484ab396a14b2e
+
+/controller.php?mode=getTask
+/controller.php?mode=register_bot
+/controller.php?mode=setSmsStatus
+/controller.php?mode=setSaveInboxSms

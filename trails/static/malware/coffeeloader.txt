@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/Threatlabz/status/1904915721265832400
+# Reference: https://www.zscaler.com/blogs/security-research/coffeeloader-brew-stealthy-techniques
+# Reference: https://www.virustotal.com/gui/file/c930eca887fdf45aef9553c258a403374c51b9c92c481c452ecf1a4e586d79d9/detection
+# Reference: https://www.virustotal.com/gui/file/8941b1f6d8b6ed0dbc5e61421abad3f1634d01db72df4b38393877bd111f3552/detection
+# Reference: https://www.virustotal.com/gui/file/5538b88eb2effa211a9c324b001e02802b7ccd0008b3af9284e32ab105dc9e6f/detection
+# Reference: https://www.virustotal.com/gui/file/70fafd3fefca2fd4a061d34e781136f93a47d856987832041d3c703658d60fc1/detection
+
+freeimagecdn.com
+mvnrepo.net
+luoxsbshalendzfa.mvnrepo.net

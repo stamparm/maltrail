@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://threatvector.cylance.com/en_us/home/threat-spotlight-inside-udpos-malware.html
+
+service-logmeln.network
+
+# Generic trails
+
+/index.php?udpool=

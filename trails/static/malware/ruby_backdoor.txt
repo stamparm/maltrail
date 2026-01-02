@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zdnet.com/article/backdoor-code-found-in-11-ruby-libraries/
+# Reference: https://github.com/rest-client/rest-client/issues/713
+
+mironanoru.zzz.com.ua

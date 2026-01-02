@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: duvet stealer
+
+# Reference: https://x.com/naumovax/status/1911775775558177166
+# Reference: https://tria.ge/250404-lgpjbstxfz/behavioral1
+# Reference: https://www.virustotal.com/gui/file/6dfb346d84f040df8b063bf629ac588ccb22b48b412d320cd4109c838dd75b68/detection
+
+duvetstealer.com
+klew1.duvetstealer.com

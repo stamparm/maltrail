@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.mandiant.com/resources/mobileiron-log4shell-exploitation
+# Reference: https://www.mandiant.com/resources/blog/unc961-multiverse-financially-motivated
+# Reference: https://www.crowdstrike.com/blog/prophet-spider-exploits-citrix-sharefile/
+# Reference: https://otx.alienvault.com/pulse/6244606893ddbc9a6a5bbdeb
+# Reference: https://otx.alienvault.com/pulse/641c9c1ed12f8bb9ab022552
+# Reference: https://www.virustotal.com/gui/file/1c26b4078c75e10420f5a556e25654ff4c9aa864100cc2885e7bd1bddd86f8b6/detection (# HOLERUN)
+# Reference: https://www.virustotal.com/gui/file/ec8fcc5f5bc33d9cbe3b1d14a2c39b94ce8230e7d99ba4913881d03a3f84ab3f/detection (# HOLEDOOR)
+
+http://107.181.187.184
+http://149.28.71.70
+http://149.28.200.140
+http://162.33.178.149
+http://185.172.129.215
+http://195.149.87.87
+http://34.102.54.152
+http://45.61.136.188
+107.181.187.184:4242
+107.181.187.184:443
+149.28.71.70:443
+149.28.200.140:443
+162.33.178.149:443
+185.172.129.215:443
+195.149.87.87:443
+34.102.54.152:443
+45.61.136.188:443

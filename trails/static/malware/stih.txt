@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: stih stealer
+
+# Reference: https://www.virustotal.com/gui/file/2cce159b280973101d6007f843bd4e815972b557110548616e3824c66b3aa665/detection
+
+stealer.cloud
+
+# Reference: https://www.virustotal.com/gui/file/bbe382ab75d3c3cec4357e60522e7d6b79ca441408a27cb7d380bb58c524357e/detection
+
+hey.stealer.cloud

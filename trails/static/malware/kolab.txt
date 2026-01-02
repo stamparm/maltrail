@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.threatcrowd.org/domain.php?domain=s26.ubersexy.su
+
+ubersexy.su
+dontchawanta.su
+
+# Reference: https://app.any.run/tasks/8b133ab1-aed9-4e75-9a91-42a9274c18b9
+# Reference: https://www.virustotal.com/gui/file/55b25694b800324411465d204d9ea21bf78b937d98a624fa177b3d0617b83f0e/detection
+
+s11.ohbabycani.su
+s1.letsplay.su
+s16.letsplay.su
+s23.letsplay.su
+s4.ohbabycani.su
+s20.ohbabycani.su
+
+# Reference: https://www.f-secure.com/v-descs/net-worm_w32_kolab_qa.shtml
+
+hail.dsn2go.com
+scorti1.dns2go.com
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Chepvil-A/detailed-analysis.aspx
+# Reference: https://www.virustotal.com/gui/file/56b8d984420fcfc7b15ab965473e200fc93ff2613c05fb218cd48084e292000f/detection
+
+itisformebaby.biz
+ponel.biz
+
+# Generic
+
+/service/listener.php?affid=

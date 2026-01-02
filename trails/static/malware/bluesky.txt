@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/petrovic082/status/1541661571491020801
+# Reference: https://unit42.paloaltonetworks.com/bluesky-ransomware/
+# Reference: https://otx.alienvault.com/pulse/62f4e3f678f5f9f311fb1a67
+# Reference: https://app.any.run/tasks/4d633d99-eecd-4107-b82a-1d8089f60198/
+
+ccpyeuptrlatb2piua4ukhnhi7lrxgerrcrj4p2b5uhbzqm2xgdjaqid.onion
+kmsauto.us
+
+# Reference: https://twitter.com/Krish_04_GG/status/1605203420046331906
+# Reference: https://www.virustotal.com/gui/file/6d52e3cb4b0212c2183e0d1db1a144b1cdd939cd4ca8c071c83bfd878d5a5258/detection
+
+instantprizes.xyz

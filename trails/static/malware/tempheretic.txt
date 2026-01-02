@@ -1,0 +1,53 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.volexity.com/blog/2022/02/03/operation-emailthief-active-exploitation-of-zero-day-xss-vulnerability-in-zimbra/
+# Reference: https://otx.alienvault.com/pulse/61fd0be9d7317f7ecc082d80
+
+amazon-check.cf
+amazon-check.ga
+amazon-check.gq
+amazon-check.tk
+amazon-team.tk
+bruising-intellect.ml
+findtruth.ml
+iceywindflow.cf
+iceywindflow.gq
+iceywindflow.ml
+news-online.ml
+news-voice.ml
+newsonline.gq
+playquicksand.cf
+playquicksand.gq
+playquicksand.ml
+playquicksand.tk
+secretstep.tk
+spiritfield.cf
+spiritfield.ga
+spiritfield.ml
+spiritfield.tk
+spiritx.ga
+thunderchannel.cf
+thunderchannel.tk
+windsoft.cf
+yahoo-corporation.ml
+yahoo-corporation.tk
+chargedboltsentry.spiritfield.tk
+claygolem.spiritfield.ga
+feralrage.spiritfield.ga
+fireclaws.spiritfield.ga
+flameshock.spiritfield.tk
+mail.bruising-intellect.ml
+mx.newsonline.gq
+oaksage.spiritfield.ga
+opticaleel.iceywindflow.cf
+shadowmaster.iceywindflow.ml
+shadownight.playquicksand.tk
+shadownight.spiritfield.ga
+support.newsonline.gq
+tigerstrike.iceywindflow.ml
+update.secretstep.tk
+winderosion.spiritfield.ml
+windsource.thunderchannel.cf
+windsource.thunderchannel.tk
+yahoo-movie.spiritx.ga

@@ -1,0 +1,726 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: sdbot, agobot, gaobot, mybot
+# Note: Generic detection for many of other ircbot-families.
+
+# Reference: https://www.virustotal.com/#/domain/*.afraid.org
+
+1liil11liil1.afraid.org
+1llsklll.afraid.org
+b0ts.afraid.org
+bent.afraid.org
+blardy.afraid.org
+demrt.afraid.org
+eleven.afraid.org
+exaturbo.afraid.org
+fjpjllj1lx.afraid.org
+four.afraid.org
+franck78.afraid.org
+fuckthebac0n.afraid.org
+imiill11lnot.afraid.org
+hlph0pfIipf10p.afraid.org
+jkfdlklj2adf2.afraid.org
+keki.afraid.org
+knix.afraid.org
+kqjckleaayzt.afraid.org
+l.1ove.you.oil1y.afraid.org
+ltfmwujrxcq.afraid.org
+mlqpayvtnau.afraid.org
+mpfd.afraid.org
+msup.afraid.org
+nanak.afraid.org
+nightwish.afraid.org
+nmgpoqqiwmh.afraid.org
+passoire.afraid.org
+pwned.afraid.org
+serveme.afraid.org
+sjljjjjj.jjjjjjj.jjlj.afraid.org
+someothergoodhost.afraid.org
+till1liil1.afraid.org
+wyqggvow.afraid.org
+xanga.afraid.org
+xdcc.afraid.org
+xjtolamiy.afraid.org
+yang.afraid.org
+
+# Reference: https://twitter.com/James_inthe_box/status/1096802363749232640
+
+http://185.35.137.80
+
+# Reference: https://twitter.com/K_N1kolenko/status/1144188126677651457
+
+mortalkombat.thruhere.net
+
+# Reference: https://twitter.com/P3pperP0tts/status/1145971091866828801
+# Reference: https://app.any.run/tasks/387df345-6007-4c56-aa48-6aa44d4f095a/
+# Reference: https://www.virustotal.com/gui/file/b81ca6f100c2fd597c39948208131568da790dde8a12dea0f3de580888c633a8/detection
+
+58.218.66.92:2553
+winlinux.xyz
+
+# Reference: https://www.virustotal.com/gui/file/65e388df2853955500c1c2ae514f952152cbbcc038911e5fe71dec3532485685/detection
+
+yousifmubder1177.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/ed4cc8042d4286912c1ffebd74b0fea0f30bf8953e3afec10b5c2fbdb206d683/detection
+
+141.255.144.240:1976
+
+# Reference: https://www.virustotal.com/gui/file/04042bd5a351225fd6ccc9d5015a3fd184c63b9599c3580f76b1c653e1ffd5c5/detection
+
+boohoo.sytes.net
+
+# Reference: https://www.virustotal.com/gui/file/9daa81ca81375304d7f5293685f610d0a3e8c49c5272cff870d145d0f19685a4/detection
+
+204.95.99.183:6667
+xxl.myftp.org
+
+# Reference: https://www.virustotal.com/gui/file/2dc987a71327e847e7070a137170e09628a5d12f78694dad1d69978d8af2aa5c/detection
+# Reference: https://www.virustotal.com/gui/file/d3dea0fe858994a4387714b035d8e76f37c39f148888396249d299eefc0639c9/detection
+# Note: Tawsebot/Tawsibot
+
+204.95.99.183:7000
+[fe80::2c33:349f:8bec:ffa9]:49172
+[fe80::2c33:349f:8bec:ffa9]:49173
+
+# Reference: https://www.virustotal.com/gui/file/29ec4267f11581ca0fd67ce7df8c360d4803e54f58a2ab299e026ec0df73771f/detection
+
+dzdos.000webhostapp.com
+
+# Reference: https://www.virustotal.com/gui/file/82b3bc83ebd39cc76dfb9923920e3fc408de4700defb8f8639eda236ca825735/detection
+
+151.80.60.224:5858
+a.fefefu.net
+
+# Reference: https://www.virustotal.com/gui/file/7765889f8f7a2eb01e2c36f54e43917184d7a09a8a6552341f27ed126f060f6a/detection
+
+wifi-update.biz
+
+# Reference: https://www.virustotal.com/gui/file/6b8fec2e1b15c014d410908a92288fef017987298e2864d53029c6d33ce06ed9/detection
+
+osetgojnd.ddns.net
+
+# Reference: https://s3.amazonaws.com/snort-org/www/rules/community/community-rules.tar.gz
+# Reference: https://snort-org-site.s3.amazonaws.com/production/release_files/files/000/012/156/original/snort3-community-rules.tar.gz
+
+joydagaspy.biz
+
+# Reference: https://www.virustotal.com/gui/file/ad944301b5563064a76078bb93087bf222245d23e16427d0cc029171b838d99a/detection
+
+style.servebeer.com
+style.servebeer.com.ovh.net
+
+# Reference: https://blog.talosintelligence.com/2021/05/threat-roundup-0521-0528.html (# Win.Ircbot.Ircbot-9863290-0)
+
+acc7hr33.webhop.biz
+done.noteam.net
+f56.no-ip.info
+hol.mamadody.mobi
+irc.amcool.net
+irc.bejiyan.com
+irc.h4cky0u.org
+irc.indoirc.net
+irc.superbits.net
+ircftw.no-ip.info
+king.noteam.net
+lnx.ekolik.net
+mircbot.no-ip.biz
+n2.myip.org
+neo12.cjb.net
+neo12.xjb.net
+scan.kizlarevi.net
+sikwon.myvnc.com
+sikwon.myvnc.com.fraud.noiptos.com
+unk555.opendns.be
+unun.endofinternet.org
+urx.opendns.be
+v0ldem0rt.co.cc
+xrtw.no-ip.info
+
+# Reference: https://www.virustotal.com/gui/file/3dffd4999cc05844ca89e5cb44a0541efeb866588294908ae45e7b0fcf0ab957/detection
+
+setoxs.no-ip.info
+
+# Reference: https://www.virustotal.com/gui/file/758e52a09641d7c7dcff5758274bf9171115e2ae7da478c4bd1181c363621b8f/detection
+
+awalhupwz.no-ip.info
+
+# Reference: https://www.virustotal.com/gui/file/83b55971a05b05ce873c83f55ca4ebe7316d58f48846286b056b60c6be035350/detection
+
+witchdaboss.no-ip.info
+
+# Reference: https://www.virustotal.com/gui/file/cde288bf70a8c927aca5d347db655cc2f19ab82f8df4550120d3ac6e8b0799ad/detection
+# Reference: https://www.virustotal.com/gui/file/b1d787b4977b4f0a8672b477d7ef5047e4639c7a4faced063e07a2a3927a30fb/detection
+
+136.144.41.6:33632
+91.198.123.37:33632
+cjtelcom.p-e.kr
+
+# Reference: https://www.virustotal.com/gui/file/940230e40b3e54c2d080f813ac1e07816d350a5bcc8f32760293a3b172ce4096/detection
+
+thisisa.kicks-ass.net
+
+# Reference: https://www.virustotal.com/gui/file/ee5cbd6f0e98f889e8ce3d974f4beaccf1c3917165ef482cebf96c0d0ac5cabd/detection
+
+turko55.no-ip.biz
+turko55.no-ip.biz.ovh.net
+
+# Reference: https://www.virustotal.com/gui/file/3ee4b1c1550461e94faca840f690d010147d41c04147cf34ec327a4f775940a9/detection
+
+t3r.no-ip.info
+
+# Reference: https://www.bitdefender.com/blog/labs/how-we-tracked-a-threat-group-running-an-active-cryptojacking-campaign
+# Reference: https://otx.alienvault.com/pulse/60f0059134f2d6364de00c85
+
+http://207.148.118.221
+http://45.32.112.68
+194.33.45.197:8080
+arhive.online
+mexalz.us
+area17.mexalz.us
+cdn.arhive.online
+requests.arhive.online
+/.sherifu/.93joshua
+/.sherifu/
+/.93joshua
+
+# Reference: https://www.virustotal.com/gui/file/8bb00be4e25a15ec2034774875f9c938b9894773b832f4b86f4002a5d824fb08/detection
+
+643039787.3utilities.com
+643039787.4twenty.us
+643039787.905tech.com
+643039787.base-v.ch
+643039787.becompany.org
+643039787.beerprojects.com
+643039787.biz.tm
+643039787.blizzie.net
+643039787.bounceme.net
+643039787.candacechao.com
+643039787.carys.org
+643039787.com
+643039787.computersforpeace.net
+643039787.consortiummedia.com
+643039787.contem.bz
+643039787.cybscripts.com
+643039787.dara-dal.net
+643039787.ddns.net
+643039787.dianyglas.com
+643039787.dnmcoffman.com
+643039787.drreading.us
+643039787.embeddedonline.org
+643039787.embeddedsw.org
+643039787.fatesperfection.com
+643039787.fin-tech.com
+643039787.fintech-llc.com
+643039787.framed.net
+643039787.fuckcentral.com
+643039787.fulltimevillain.net
+643039787.goofyspeak.com
+643039787.home.kg
+643039787.hopto.org
+643039787.igliss.com
+643039787.info
+643039787.info.tm
+643039787.isihia-exi.ro
+643039787.kaleebso.com
+643039787.kein.hk
+643039787.kevinbradley.org
+643039787.lovethosetrains.com
+643039787.myvnc.com
+643039787.negeriau.net
+643039787.no-ip.biz
+643039787.no-ip.info
+643039787.parinternet.biz
+643039787.paulkelly.org
+643039787.redirectme.net
+643039787.rltk.org
+643039787.rltk.us
+643039787.rockingwranchinc.com
+643039787.ru
+643039787.servebeer.com
+643039787.serveblog.net
+643039787.servecounterstrike.com
+643039787.serveftp.com
+643039787.servegame.com
+643039787.servehttp.com
+643039787.serveminecraft.net
+643039787.servepics.com
+643039787.servequake.com
+643039787.sexyhosting.biz
+643039787.sytes.net
+643039787.thegmc.com
+643039787.tnebldc.org
+643039787.trailsendfarms.com
+643039787.uk.to
+643039787.vaughngass.com
+643039787.vxe6.net
+643039787.webhop.me
+643039787.wolmerica.com
+643039787.xn--bser-5qa.org
+643039787.xpresit.net
+643039787.yngling.com
+643039787.zapto.org
+740355666.americanelectricalservices.net
+740355666.embeddedonline.org
+740355666.home.kg
+740355666.hopto.org
+740355666.net
+740355666.no-ip.biz
+740355666.no-ip.info
+767549688.3utilities.com
+767549688.4twenty.us
+767549688.905tech.com
+767549688.americanelectricalservices.net
+767549688.amproliability.com
+767549688.asianfreshproduce.com
+767549688.base-v.ch
+767549688.becompany.org
+767549688.beerprojects.com
+767549688.biz
+767549688.biz.tm
+767549688.blizzie.net
+767549688.bounceme.net
+767549688.candacechao.com
+767549688.carys.org
+767549688.com
+767549688.computersforpeace.net
+767549688.consortiummedia.com
+767549688.contem.bz
+767549688.cybscripts.com
+767549688.dara-dal.net
+767549688.ddns.net
+767549688.ddnsking.com
+767549688.death-by-monkeys.com
+767549688.devi1.net
+767549688.dianyglas.com
+767549688.dnmcoffman.com
+767549688.drreading.us
+767549688.embeddedonline.org
+767549688.embeddedsw.org
+767549688.endlessconference.com
+767549688.etherbyte.com
+767549688.fatesperfection.com
+767549688.fernando-botero-sculpture.com
+767549688.fin-tech.com
+767549688.fintech-llc.com
+767549688.framed.net
+767549688.fuckcentral.com
+767549688.fulltimevillain.net
+767549688.funkar.nu
+767549688.getce.com
+767549688.gigaportal.pl
+767549688.goofyspeak.com
+767549688.gotdns.ch
+767549688.grupompr.com
+767549688.hiddencorner.org
+767549688.home.kg
+767549688.hopto.org
+767549688.igliss.com
+767549688.info
+767549688.info.tm
+767549688.isihia-exi.ro
+767549688.jlengineering.se
+767549688.kaleebso.com
+767549688.kein.hk
+767549688.kevinbradley.org
+767549688.lovethosetrains.com
+767549688.myftp.biz
+767549688.myftp.org
+767549688.myvnc.com
+767549688.negeriau.net
+767549688.net
+767549688.no-ip.biz
+767549688.no-ip.info
+767549688.no-ip.org
+767549688.noip.me
+767549688.parinternet.biz
+767549688.paulkelly.org
+767549688.profinet.ro
+767549688.qc.to
+767549688.redirectme.net
+767549688.rltk.org
+767549688.rltk.us
+767549688.rockingwranchinc.com
+767549688.ru
+767549688.servebeer.com
+767549688.serveblog.net
+767549688.servecounterstrike.com
+767549688.serveftp.com
+767549688.servegame.com
+767549688.servehalflife.com
+767549688.servehttp.com
+767549688.serveminecraft.net
+767549688.servemp3.com
+767549688.servepics.com
+767549688.servequake.com
+767549688.sexyhosting.biz
+767549688.shadir.com
+767549688.shop.tm
+767549688.smirt.ch
+767549688.surlenet.be
+767549688.sytes.net
+767549688.techgoodness.org
+767549688.theabernathyhome.com
+767549688.thegmc.com
+767549688.tnebldc.org
+767549688.trailsendfarms.com
+767549688.uk.to
+767549688.unibutton.com
+767549688.us.to
+767549688.vaughngass.com
+767549688.vxe6.net
+767549688.webhop.me
+767549688.wolmerica.com
+767549688.wtf-no.com
+767549688.xn--bser-5qa.org
+767549688.xpresit.net
+767549688.yngling.com
+767549688.zapto.org
+980917823.3utilities.com
+980917823.4twenty.us
+980917823.905tech.com
+980917823.americanelectricalservices.net
+980917823.amproliability.com
+980917823.asianfreshproduce.com
+980917823.base-v.ch
+980917823.becompany.org
+980917823.beerprojects.com
+980917823.biz
+980917823.biz.tm
+980917823.blizzie.net
+980917823.bounceme.net
+980917823.candacechao.com
+980917823.carys.org
+980917823.com
+980917823.computersforpeace.net
+980917823.consortiummedia.com
+980917823.contem.bz
+980917823.cybscripts.com
+980917823.dara-dal.net
+980917823.ddns.net
+980917823.ddnsking.com
+980917823.death-by-monkeys.com
+980917823.devi1.net
+980917823.dianyglas.com
+980917823.dnmcoffman.com
+980917823.drreading.us
+980917823.embeddedonline.org
+980917823.embeddedsw.org
+980917823.endlessconference.com
+980917823.etherbyte.com
+980917823.fatesperfection.com
+980917823.fernando-botero-sculpture.com
+980917823.fin-tech.com
+980917823.fintech-llc.com
+980917823.framed.net
+980917823.fuckcentral.com
+980917823.fulltimevillain.net
+980917823.funkar.nu
+980917823.getce.com
+980917823.gigaportal.pl
+980917823.goofyspeak.com
+980917823.gotdns.ch
+980917823.grupompr.com
+980917823.hiddencorner.org
+980917823.home.kg
+980917823.hopto.org
+980917823.igliss.com
+980917823.info
+980917823.info.tm
+980917823.isihia-exi.ro
+980917823.jlengineering.se
+980917823.kaleebso.com
+980917823.kein.hk
+980917823.kevinbradley.org
+980917823.lovethosetrains.com
+980917823.myftp.biz
+980917823.myftp.org
+980917823.myvnc.com
+980917823.negeriau.net
+980917823.net
+980917823.no-ip.biz
+980917823.no-ip.info
+980917823.no-ip.org
+980917823.noip.me
+980917823.parinternet.biz
+980917823.paulkelly.org
+980917823.profinet.ro
+980917823.qc.to
+980917823.redirectme.net
+980917823.rltk.org
+980917823.rltk.us
+980917823.rockingwranchinc.com
+980917823.ru
+980917823.servebeer.com
+980917823.serveblog.net
+980917823.servecounterstrike.com
+980917823.serveftp.com
+980917823.servegame.com
+980917823.servehalflife.com
+980917823.servehttp.com
+980917823.serveminecraft.net
+980917823.servemp3.com
+980917823.servepics.com
+980917823.servequake.com
+980917823.sexyhosting.biz
+980917823.shadir.com
+980917823.shop.tm
+980917823.smirt.ch
+980917823.surlenet.be
+980917823.sytes.net
+980917823.techgoodness.org
+980917823.theabernathyhome.com
+980917823.thegmc.com
+980917823.tnebldc.org
+980917823.trailsendfarms.com
+980917823.uk.to
+980917823.unibutton.com
+980917823.us.to
+980917823.vaughngass.com
+980917823.vxe6.net
+980917823.webhop.me
+980917823.wolmerica.com
+980917823.wtf-no.com
+980917823.xn--bser-5qa.org
+980917823.xpresit.net
+980917823.yngling.com
+980917823.zapto.org
+
+# Reference: https://www.virustotal.com/gui/file/f2a23faa2aeacdd5e19f1d406d57930fa75b08a4b6b447f6f8eb9bb0a1d148db/detection
+
+zidpc247.tugraz.at
+
+# Reference: https://www.virustotal.com/gui/file/c4b55a5073e12f805fc88f6749e62215e37bf8b4af97c871c5bce38f1eb4da14/detection
+
+129.27.9.247:6667
+
+# Reference: https://www.virustotal.com/gui/file/46ebd917c793bd1282435b86cc4c874cae68ae6e63e2a57db806a29b5a3d1d34/detection
+
+89.140.164.85:6667
+prodigybot.x10.bz
+tcpudpnet.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/c7f0ebd1694e263903cd320050e9df23cc633cb07c4e9961a1114ee09fa552ed/detection
+
+noiphoster.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/1b8c9d4d5f2193ea988db263713a32517be29332daef3cab580f0e5c4c763d35/detection
+
+204.95.99.39:81
+ilove.no-ip.org
+
+# Reference: https://www.virustotal.com/gui/file/b534d46182ca8c02df34cc1b96fac3c500c7d4c0fab1f4b1fb81cafee32e9437/detection
+
+hiphopadidas.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/47086ee5b4cbea835b9b727fe44275d12f511475c34814c2426f6c347af175ff/detection
+# Reference: https://www.virustotal.com/gui/file/681d8352c14a187f0919aa865c55f4136fce89dcc9fe5d56c085a52392914c73/detection
+
+209.141.46.166:6000
+
+# Reference: https://www.virustotal.com/gui/file/dc7fe24dc8f4f3b8b5587873549cb0c87b829bd17b986b0f8700ed6c807d8e53/detection
+
+115.28.224.27:8818
+dawon0123.no-ip.biz
+92ddos.com
+yes.92ddos.com
+
+# Reference: https://www.virustotal.com/gui/domain/lcirc.net/relations
+# Reference: https://www.virustotal.com/gui/file/49cc86d8ce429074f0e4669e2fd71dc6a52524f2d94ac1e1d5b5406535075944/detection
+
+lcirc.net
+abs.lcirc.net
+bdforum.lcirc.net
+gimcrack.lcirc.net
+
+# Reference: https://www.virustotal.com/gui/file/f4026645f0aa762bc87bb6d87c9ca467347a83b140fb9fa7b8590eaf1fe35077/detection
+
+43.229.37.253:2553
+cesi.f3322.net
+
+# Reference: https://www.virustotal.com/gui/file/fde14f779dbf4005ff07de9d667ec8bf6e8a001e2f399c04310fa76e4a8ebf99/detection
+
+abc.2zzz.ru
+
+# Reference: https://www.virustotal.com/gui/file/b076325e2c3053fa52247f81ae0063fceaef7926211244a2df247433cebe01e4/detection
+
+dat.2zzz.ru
+
+# Reference: https://www.virustotal.com/gui/file/67db7a4c89f54d878878d6a9800b5e19d1aaeb7b4a37fe47c17c2719ba13a392/detection
+
+nsatn.ftpaccess.cc
+
+# Reference: https://www.virustotal.com/gui/file/90cbdc79ef978b9722fb47b21381994df603ac4db7bb8fda3b8fc68c6ba0d9c3/detection
+
+4eq.in
+4xc.in
+5en.in
+9kn.in
+bc8.in
+di2.in
+jb2.in
+lo9.in
+w3y.in
+
+# Reference: https://www.virustotal.com/gui/file/946c737593d200fef75f80274971f01f0fd78527158c01e8c6b01da5afe002fc/detection
+
+83.47.56.120:6667
+oreokitkat.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/4dccedc21a38831b8405b6eb63ba90d1f7b7536746a0619c5041a9ba127b02b6/detection
+
+sf77.linkpc.net
+
+# Reference: https://twitter.com/malware_traffic/status/1524559086032986113
+# Reference: https://tria.ge/220510-xjzb4afgd4/behavioral1
+
+82.159.146.209:21
+82.159.146.209:6667
+oreokitkat.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/c6f8bdc3c9c610aa1b4ea00919c3d80a28e4dd28f37f3172fa15ee4b933b55a2/detection
+
+102.191.173.126:5566
+elkhwaja2031.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/d3b83993819f4fe07fe8f8e6863f307ba328daeae5960693de0b2f9a8c906b97/detection
+
+lscables.in
+
+# Reference: https://www.virustotal.com/gui/file/0d32b78b1bf80e755b0f9e10b4dd006ddaa85301f49191049a83b7776653d329/detection
+
+srv50.ru
+
+# Reference: https://www.virustotal.com/gui/file/4551711a947651658870a505a710e37236c91df20b1639be6782ae92567472bf/detection
+
+srv60.su
+
+# Reference: https://www.virustotal.com/gui/file/20ee80b0efc1f8748e9944859c11ad46df663708d2250a3ef707698bf39bf261/detection
+
+srv70.ru
+
+# Reference: https://www.virustotal.com/gui/file/4a36b93edbd1671c7af458f41d32f4b2bd1064e6d9029f83022219f42563c795/detection
+
+trik.su
+
+# Reference: https://www.virustotal.com/gui/file/fcc228315580e72ab3a3abc75d300e262ca42729bf76857a62d3d081e3c6f099/detection
+
+nigola5923.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/1779363cddd0e26ee727e5f9f0d0e754edd6b8c89de25a2146d11333556c9649/detection
+
+anunnakii.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/9c7461bfee4335477966e2f13ff2881eb80076411dd701d8112617fc2d50fb83/detection
+
+cndns.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/3567e40c979b3f58b58886f74d9b0e7cde7342959483ff5164517eac2f071bd7/detection
+
+45.32.25.28:7722
+fdns.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/333d568c954d47a98b2b81530673b67e0832291687b0f16ac415d2a3340a115e/detection
+
+bawts.no-ip.com
+
+# Reference: https://www.virustotal.com/gui/file/934a4fc13531238fe3f4576b40ead940a079f754279c11d6268a968ab154c9ff/detection
+
+190.14.37.10:8080
+magicpandas.fun
+my.magicpandas.fun
+
+# Reference: https://www.virustotal.com/gui/file/f6bb4507ceb5c1b62914998d8bcebef9f56e5d8ed4d4347d9fe5dfb7c2654cf1/detection
+# Reference: https://www.virustotal.com/gui/file/f1687af38fbd868fc3f161517ef7eda89a031eb52ff1867b5eb1e5240cfae426/detection
+
+173.252.102.16:7000
+cheez1.dynu.com
+cheez1.dynu.com.ovh.net
+
+# Reference: https://www.virustotal.com/gui/file/e2cbcef998b78148b03228bd07d8afcb7fcbeb6d9b3e2d8a98106f66654f45d5/detection
+
+1xx.myftp.org
+
+# Reference: https://www.virustotal.com/gui/file/499839f62ea8f13d090d0d28b45b9f2121526596522c60ec0c0bfdc2985ce0b1/detection
+
+xe-0-5-0.level4-co1-as30965.su
+xe-0-9-0.level4-co2-as30979.su
+
+# Reference: https://www.virustotal.com/gui/file/32203a0fe962a860a6465feb55d87fa18d8a58ce44a703d98fc103d71b7e22c2/detection
+
+82.3.97.99:6667
+
+# Reference: https://www.virustotal.com/gui/file/0090e8f902fb750a00655e427826f96face2562ee74cadc128fc900407b1b00e/detection
+
+hbsnypz.game-server.cc
+
+# Reference: https://www.virustotal.com/gui/file/9856ff85713fd6ac6974831cdf24367df20a4150c701f32ffc7374b89952eec7/detection
+
+myyworldds.game-server.cc
+
+# Reference: https://www.virustotal.com/gui/file/8efda0a5a27ec059425be33439a1f523e2cfa3b2ab3bf96da151b860cf95609c/detection
+
+125.no-ip.info
+
+# Reference: https://www.virustotal.com/gui/file/30fd67a3fc9837bef33bfe9a4bceafccc0575d3532b766d76a04c1717d3b1c11/detection
+
+067.no-ip.info
+
+# Reference: https://www.virustotal.com/gui/file/8eac4d93e6ea0b8471fb272a99672a7a59d93322a5d57e6d2c8fcdcb89b6db38/detection
+
+185.117.73.209:6667
+
+# Reference: https://www.virustotal.com/gui/file/b296fd3b28b3b1fa654e1ac857ab92557ab317cabf1fba3590ebd5566d973adc/detection
+
+69.162.170.175:6667
+botnet.zapto.org
+
+# Reference: https://twitter.com/SecureSh3ll/status/1764691570945581071
+
+154.35.175.201:6667
+154.35.175.201:6668
+154.35.175.201:6669
+154.35.175.201:7000
+170.178.191.18:6666
+170.178.191.18:6668
+170.178.191.18:6669
+170.178.191.18:7000
+173.245.201.28:6666
+173.245.201.28:6669
+173.245.201.28:7000
+82.76.255.62:6660
+82.76.255.62:6669
+82.76.255.62:7000
+94.125.182.255:6666
+94.125.182.255:6667
+94.125.182.255:6668
+
+# Reference: https://twitter.com/naumovax/status/1771180395205111914
+# Reference: https://tria.ge/240228-sltr6see94/behavioral1
+# Reference: https://tria.ge/240229-lbqt7scg95/behavioral1
+# Reference: https://www.virustotal.com/gui/file/01eb294240c25be95f4d6d304186358cfa35dacae3112b807829a0caf1e7c18b/detection
+
+178.162.203.202:2040
+178.162.203.211:2040
+178.162.217.107:2040
+5.79.71.205:2040
+85.17.31.82:2040
+
+# Reference: https://x.com/skocherhan/status/1942047759260946712
+# Reference: https://www.virustotal.com/gui/file/17dc80f435cb87e6f7a1d24cf1633e30e80a5e0507dd72943fa0a3a610d7fd2b/detection
+
+188.85.100.164:6667
+188.84.239.125:81
+188.85.100.164:81
+77.231.83.40:6667
+77.231.83.40:81
+
+# Reference: https://blog.virustotal.com/2025/08/code-insight-expands-to-uncover-risks.html
+# Reference: https://www.virustotal.com/gui/file/8f7a061901c935493e17f3f897a2b98b5ab21350593fda10a6936a84db5b28b7/detection
+
+45.145.185.229:1337
+
+# Reference: https://www.virustotal.com/gui/file/ae0f94227d69fce0d3f1a6dc46e1ccf83623599e1d4955e27073df347a867d06/detection
+
+217.160.108.243:6659

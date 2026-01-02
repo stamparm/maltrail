@@ -1,0 +1,249 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: BRUTED Framework
+
+# Reference: https://www.trendmicro.com/en_us/research/22/e/examining-the-black-basta-ransomwares-infection-routine.html
+# Reference: https://otx.alienvault.com/pulse/627b9512a86a3f40b4981328
+
+aazsbsgya565vlu2c6bzy6yfiebkcbtvvcytvolt33s77xypi7nypxyd.onion
+
+# Reference: https://quadrantsec.com/resource/technical-analysis/black-basta-malware-overview
+# Reference: https://otx.alienvault.com/pulse/63dd5bec114b33d472f59ea8
+
+danimos.com
+gerhiles.com
+zedorocop.com
+
+# Reference: https://twitter.com/ian_kenefick/status/1722771468822434056
+
+blockcentersys.net
+buyadvisershop.net
+gift4animals.com
+neobeelab.net
+prettyanimals.net
+startuptechnologyw.net
+stockinvestlab.net
+
+# Reference: https://twitter.com/ian_kenefick/status/1734745719016136986
+
+allcompanycenter.com
+getfnewssolutions.com
+
+# Reference: https://twitter.com/RakeshKrish12/status/1767807831309259148
+
+databasebb.top
+
+# Reference: https://x.com/RakeshKrish12/status/1793169588219486469
+
+onlylegalstuff.top
+
+# Reference: https://x.com/Threatlabz/status/1799108556698120648
+# Reference: https://github.com/threatlabz/ransomware_notes/blob/main/blackbasta/instructions_read_me.txt
+
+bastad5huzwkepdixedg2gekg7jk22ato24zyllp6lnjx7wdtyctgvyd.onion
+
+# Reference: https://x.com/RakeshKrish12/status/1806216139581669867
+# Reference: https://justpaste.it/943vz
+# Reference: https://www.virustotal.com/gui/ip-address/185.68.93.185/relations
+# Reference: https://www.virustotal.com/gui/ip-address/185.68.93.191/relations
+
+6y2qjrzzt4inluxzygdfxccym5qjy2ltyae7vnxtoyeotfg3ljwqtaid.onion
+onlylegalstuff3.top
+onlylegalstuff5.top
+stuffstevenpeters2.top
+
+# Reference: https://app.validin.com/detail?find=185.251.89.18&type=ip4&ref_id=aa9bfadcf3f#tab=resolutions
+
+tceight18pt.top
+tcelev11pt.top
+tcfift15pt.top
+tcfourt14pt.top
+tcninet19pt.top
+tcsevt17pt.top
+tcsixt16pt.top
+tcthirt13pt.top
+tctwel12pt.top
+tctwenty20pt.top
+tzeight18ht.top
+tzeight18pn.top
+tzeight18sr.top
+tzeight8vt.top
+tzelev11ht.top
+tzelev11sr.top
+tzelev11vt.top
+tzfift15ht.top
+tzfift15pn.top
+tzfift15sr.top
+tzfive5vt.top
+tzfourt14ht.top
+tzfourt14pn.top
+tzfourt14sr.top
+tznine9pn.top
+tznine9vt.top
+tzninet19ht.top
+tzninet19pn.top
+tzninet19sr.top
+tzone1vt.top
+tzsev7vt.top
+tzsevt17ht.top
+tzsevt17pn.top
+tzsevt17sr.top
+tzsevt17vs.top
+tzsix6vt.top
+tzsixt16ht.top
+tzsixt16pn.top
+tzsixt16sr.top
+tzten10sr.top
+tzten10vt.top
+tzthirt13ht.top
+tzthirt13pn.top
+tzthirt13sr.top
+tzthre3vt.top
+tztwel12ht.top
+tztwel12pn.top
+tztwel12sr.top
+tztwenty20ht.top
+tztwenty20pn.top
+tztwenty20sr.top
+tztwo2vt.top
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.251.89.18/relations
+
+admin.tceight18pt.top
+admin.tcsevt17pt.top
+admin.tcthirt13pt.top
+admin.tctwenty20pt.top
+api.tcsevt17pt.top
+api.tcthirt13pt.top
+api.tctwenty20pt.top
+app.tceight18pt.top
+app.tcsevt17pt.top
+app.tcthirt13pt.top
+backend.tceight18pt.top
+backend.tcsevt17pt.top
+backend.tcthirt13pt.top
+backend.tctwenty20pt.top
+demo.tceight18pt.top
+demo.tcsevt17pt.top
+dev.tceight18pt.top
+dev.tcthirt13pt.top
+dev.tctwenty20pt.top
+staging.tceight18pt.top
+staging.tcthirt13pt.top
+staging.tctwenty20pt.top
+
+# Reference: https://app.validin.com/detail?find=185.68.93.224%2F28&type=ip&ref_id=ed7cff96d8b#tab=resolutions
+
+databasebb3.top
+greenmotors2.top
+greenmotors5.top
+rxeight8ht.top
+rzeight18ht.top
+rzeight18pt.top
+rzeight18sr.top
+rzeight18vt.top
+rzeight8sb.top
+rzeight8sr.top
+rzeight8vt.top
+rzelev11ht.top
+rzfift15ht.top
+rzfift15pt.top
+rzfift15vt.top
+rzfourt14ht.top
+rzfourt14pt.top
+rzfourt14sr.top
+rzfourt14vt.top
+rzninet19ht.top
+rzninet19pt.top
+rzninet19sr.top
+rzninet19vt.top
+rzsevt17ht.top
+rzsevt17pt.top
+rzsevt17sr.top
+rzsevt17vt.top
+rzsixt16ht.top
+rzsixt16pt.top
+rzsixt16sr.top
+rzthirt13pt.top
+rzthirt13sr.top
+rzthirt13vt.top
+rztwel12ht.top
+rztwel12pt.top
+rztwel12sr.top
+rztwel12vt.top
+rztwenty20ht.top
+rztwenty20pt.top
+thesiliconroad1.top
+tzeight18sb.top
+tzeight18vs.top
+tzelev11sb.top
+tzfift15sb.top
+tzfift15vs.top
+tzfive5vs.top
+tzfourt14sb.top
+tzfourt14vs.top
+tzninet19sb.top
+tzninet19vs.top
+tzsevt17sb.top
+tzsixt16sb.top
+tzsixt16vs.top
+tzthirt13sb.top
+tzthirt13vs.top
+tztwel12sb.top
+tztwenty20sb.top
+tztwenty20vs.top
+zxeight8vs.top
+
+# Reference: https://app.validin.com/detail?find=webdav-server-web&type=raw&ref_id=3a41aea7787#tab=host_pairs
+
+databasebb5.top
+greenmotors6.top
+megatron3.top
+megatron4.top
+onlylegalstuff7.top
+onlylegalstuff8.top
+stuffstevenpeters4.top
+stuffstevenpeters5.top
+thesiliconroad2.top
+
+# Reference: https://x.com/RakeshKrish12/status/1843195597970649583
+
+stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion
+
+# Reference: https://www.reliaquest.com/blog/black-basta-social-engineering-technique-microsoft-teams/
+# Reference: https://app.validin.com/detail?type=ip&find=89.23.113.42#tab=resolutions
+
+qr-s1.com
+qr-s2.com
+qr-s3.com
+qr-s4.com
+qr-s5.com
+qr-send.com
+qr-snap.com
+qr-song.com
+qr-sso.com
+qr-sso2.com
+qr-sso3.com
+qr-st1.com
+companymartec.com
+hessetechnology.com
+cybersecurityadmin.onmicrosoft.com
+securityadminhelper.onmicrosoft.com
+supportadministrator.onmicrosoft.com
+supportserviceadmin.onmicrosoft.com
+
+# Reference: https://x.com/WhichbufferArda/status/1900215377973432454
+# Reference: https://x.com/1ZRR4H/status/1900637714581500173
+# Reference: https://blog.eclecticiq.com/inside-bruted-black-basta-raas-members-used-automated-brute-forcing-framework-to-target-edge-network-devices
+
+http://2.57.149.22
+http://2.57.149.231
+http://2.57.149.237
+http://2.57.149.25
+http://45.140.17.23
+http://45.140.17.24
+http://45.140.17.40
+http://45.155.249.55
+bionetcloud.com
+fuck-you-usa.com

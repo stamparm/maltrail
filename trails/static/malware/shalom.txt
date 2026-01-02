@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: shalomclient
+
+# Reference: https://x.com/K_N1kolenko/status/2000455405416103951
+
+213.165.60.65:9213

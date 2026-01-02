@@ -1,0 +1,1668 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: chanitor, hancitor
+
+# Reference: https://www.threatcrowd.org/listMalware.php?page=0&antivirus=Trojan:Win32/Chanitor
+
+o3qz25zwu4or5mak.onion
+o3qz25zwu4or5mak.tor2web.org
+o3qz25zwu4or5mak.tor2web.ru
+svcz25e3m4mwlauz.onion
+svcz25e3m4mwlauz.tor2web.org
+svcz25e3m4mwlauz.tor2web.ru
+um6fsdil5ecma5kf.onion
+um6fsdil5ecma5kf.tor2web.org
+um6fsdil5ecma5kf.tor2web.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1044957343568388097
+# Reference: https://pastebin.com/st49wnwB
+
+onthethatsed.ru
+tontheckcatan.ru
+
+# Reference: https://pastebin.com/bPV4gVVL
+
+heundthetrec.ru
+perranrowsin.com
+utteronhim.ru
+
+# Reference: https://pastebin.com/CQGHUK03
+
+caperlighleft.com
+hescatofme.ru
+ledeventutru.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1047490196319612928
+
+milliondollarlawsuit.co
+
+# Reference: https://twitter.com/malware_traffic/status/1113586907655680001
+
+waorveled.com
+
+# Reference: https://twitter.com/Antelox/status/914949407442862080
+
+kedmolorop.com
+
+# Reference: https://twitter.com/BroadAnalysis/status/880488094277009408
+
+repwasswithhow.com 
+
+# Reference: https://twitter.com/BroadAnalysis/status/783725374161186816
+
+gotevengsorol.ru
+
+# Reference: https://twitter.com/BroadAnalysis/status/753688954323529729
+
+wassuseidund.ru
+
+# Reference: https://twitter.com/mesa_matt/status/1113866153108148224
+# Reference: https://ghostbin.com/paste/27b9a/raw
+
+alldogspoop.co
+alldogspoop.org
+alldogspoop.biz
+alldogspoop.info
+alldogspoop.mobi
+alldogspoop.net
+cherryhillpooperscoopers.com
+pooperscooperfranchise.com
+shopalldogspoop.com
+
+# Reference: https://twitter.com/CapeSandbox/status/1132548710490148864
+
+hinsurefling.ru
+oneningsitar.com
+witoftrinreb.ru
+
+# Reference: https://twitter.com/VK_Intel/status/1143512697004331008
+# Reference: https://github.com/k-vitali/Malware-Misc-RE/blob/master/2019-06-25-hancitor-build-2705_437890-vk.txt
+
+hefidanot.com
+metyrofhe.ru
+usesindownne.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1145793372126416897
+
+totharduron.com
+
+# Reference: https://twitter.com/killamjr/status/1146108509324480514
+# Reference: https://app.any.run/tasks/fe00a2ef-0140-4335-8c29-31b2cf15e358/
+
+carbonatedcocktails.com
+fizzics.biz
+perlinisystems.com
+shanakaplan.com
+
+# Reference: https://twitter.com/VK_Intel/status/1146139326646034433
+# Reference: https://twitter.com/James_inthe_box/status/1145765244645433344
+# Reference: https://twitter.com/malware_traffic/status/1146503887215636480
+
+http://31.44.184.201/fknmo/gate.php
+http://31.44.184.33
+tonsruhatbab.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1153326001155272704
+
+forrolrestons.ru
+hersdintfortho.ru
+retredmuchwas.com
+
+# Reference: https://twitter.com/HerbieZimmerman/status/1166046889067896832
+# Reference: https://app.any.run/tasks/6a8b1b54-320e-4cf8-aed0-0140714fdd10/
+
+rolfikinme.ru
+sparherrestal.ru
+
+# Reference: https://twitter.com/K_N1kolenko/status/1096001487040331778
+
+ratlittonrigh.com
+tofttoldboand.ru
+fortroweventlac.ru
+
+# Reference: https://unit42.paloaltonetworks.com/unit42-vb-dropper-and-shellcode-for-hancitor-reveal-new-techniques-behind-uptick/
+
+betsuriin.com
+callereb.com
+evengsosandpa.ru
+felingdoar.ru
+gmailsign.info
+hecksafaor.com
+heheckbitont.ru
+hianingherla.com
+hihimbety.ru
+meketusebet.ru
+mianingrabted.ru
+moatleftbet.com
+mopejusron.ru
+muchcocaugh.com
+ningtoparec.ru
+nodosandar.com
+ritbeugin.ru
+rutithegde.ru
+surofonot.ru
+uldintoldhin.com
+unjustotor.com
+wassuseidund.ru
+
+# Reference: https://twitter.com/JayTHL/status/1179794844262305793
+# Reference: https://app.any.run/tasks/0e56d1f8-8606-42d1-8951-88e4d134981b/
+
+csinashville.com
+spausence.com
+
+# Reference: https://twitter.com/JayTHL/status/1179799689341886464
+
+cowandchickens.com
+chateaumorritt.ca
+thegbar.net
+thegbars.us
+thegbars.net
+fedtoner.com
+
+# Reference: https://twitter.com/JayTHL/status/1179796029425754112
+
+knoweent.ru
+wortionce.ru
+
+# Reference: https://twitter.com/K_N1kolenko/status/1182244055293599744
+
+compatime.ru
+mandanoter.ru
+warlarvars.com
+
+# Reference: https://twitter.com/malware_traffic/status/1182407518611529728
+
+avantusthea.com
+cornbeijnvoxin.com
+
+# Reference: https://twitter.com/K_N1kolenko/status/1183657536588865536
+
+branderryadhe.ru
+caputenedif.ru
+
+# Reference: https://pastebin.com/HLnQT4qy
+
+adu0.xyz
+asfpindia.org
+austinhcg.com
+bigsunshinebooks.com
+brydenstt.com
+dl-rw.com
+drewcanole.com
+episodez.online
+hygieneteam.nl
+pbssindia.in
+pflagakron.org
+talkshows.xyz
+yooball.com
+yourecovers.com
+cornbeijnvoxin.com
+digplaliatinte.ru
+dvdflowerrook.ru
+
+# Reference: https://twitter.com/wwp96/status/1184490107467788293
+
+asfpindia.org
+pbssindia.in
+viplace.pt
+
+# Reference: https://pastebin.com/bJ4ynhDe
+
+afmichicago.org
+african-trips.com
+aftablarestan.ir
+alferdows.com
+cenovia.com
+euroteriage.com
+gotladyhope.ru
+januserfish.ru
+
+# Reference: https://pastebin.com/Q6aPDCDt
+
+boatattorney.com
+keramenzakt.com
+linglentelevox.ru
+mdistellerryck.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1186885436397850624
+# Reference: https://app.any.run/tasks/742165cc-6e00-4483-af5e-6c49ae53b976/
+
+31.44.184.160:8080
+
+# Reference: https://twitter.com/K_N1kolenko/status/1187302956644929537
+
+durestuasben.ru
+sagitecheadle.com
+vladiondul.ru
+
+# Reference: https://pastebin.com/bKwb2Yig
+
+pmk-55.ru
+
+# Reference: https://twitter.com/K_N1kolenko/status/1188729131523031040
+
+penreleaplif.ru
+scangescangomu.ru
+wickawbarrysci.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1188771146105147392
+# Reference: https://app.any.run/tasks/de677fac-06c7-4c32-bd7a-05fc10cd5196/
+
+blakejordan.com
+
+# Reference: https://pastebin.com/JY6StTeK
+
+youqu0.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1188837744568688640
+
+pubarecaz.com
+
+# Reference: https://twitter.com/JayTHL/status/1189934275476492288
+
+damcoservices.com
+
+# Reference: https://twitter.com/K_N1kolenko/status/1190903765005750272
+
+selesesteq.ru
+thaverenta.ru
+wingritydet.com
+
+# Reference: https://pastebin.com/mWznRNAS
+
+3dpixelstudio.co
+amtours.net
+bbhs.org.ng
+brighter-homes.com
+businessmarker.ro
+caddyhk.com
+
+# Reference: https://twitter.com/BurnerVice/status/1201269199764475904
+
+cetotrumo.com
+krovsar.ru
+mamaboss.io
+page-store.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1201602127300354054
+
+ianfelton.info
+laticivue.com
+omni-groupllc.com
+
+# Reference: https://any.run/malware-trends/hancitor (Note: as seen on 2019-12-04)
+
+businessmarker.ro
+laadlifashionworld.com
+laticivue.com
+elesengrity.com
+beestunduras.com
+hismosedkaj.com
+huncribeen.com
+sageengineering.lk
+
+# Reference: https://pastebin.com/QBYe5kCA
+
+lardershe.ru
+thatimine.ru
+wintroperly.com
+
+# Reference: https://twitter.com/wwp96/status/1202642416098062336
+
+harrietljones.com
+
+# Reference: https://twitter.com/malware_traffic/status/1202704333114150918
+
+furnanadol.com
+
+# Reference: https://pastebin.com/qpuaEEun
+
+andalicur.ru
+lappoing.com
+theirchus.ru
+
+# Reference:
+
+barindice.ru
+lietarion.com
+legroaled.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1220036840192757762
+
+cousidrebn.ru
+hourtschem.com
+thicatlies.ru
+
+# Reference: https://pastebin.com/raw/2cpkJrW5
+
+rindicatle.ru
+tariroalz.com
+torssestih.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1221822109564858368
+# Reference: https://www.virustotal.com/gui/domain/kovasrot.cz/relations
+# Reference: https://pastebin.com/UmYZ30eH
+
+diermedir.com
+kovasrot.cz
+ussismates.ru
+wernmicaz.ru
+
+# Reference: https://twitter.com/turduckencat/status/1222556491745570816
+
+twereptale.com
+
+# Reference: https://pastebin.com/raw/3mpyeQPx
+
+charovalso.ru
+gengrasjeepram.com
+verectert.ru
+yaqeennews.96.lt
+
+# Reference: https://twitter.com/K_N1kolenko/status/1233366724357042176
+
+dundrazach.com
+turumency.ru
+wappreraf.ru
+
+# Reference: https://twitter.com/K_N1kolenko/status/1238071539825860608
+
+cludions.com
+othasidka.com
+thumbeks.com
+
+# Reference: https://isc.sans.edu/forums/diary/Hancitor+distributed+through+coronavirusthemed+malspam/25892/
+# Reference: https://otx.alienvault.com/pulse/5e6a5ded0435e2c043e7e206
+
+freetospeak.me
+
+# Reference: https://twitter.com/malware_traffic/status/1239629010377887746
+
+bralibuda.com
+greferezud.com
+
+# Reference: https://www.virustotal.com/gui/file/12f87dd075fc12c2b6b15a1eb5ca209ba056bb6aa2feaf3518163192a17a7a3b/detection
+
+primecaviar.com
+
+# Reference: https://twitter.com/JayTHL/status/1250274763479506945
+
+clarityupstate.com
+
+# Reference: https://twitter.com/200_okay_/status/1250278567352532993
+
+raihanchow.us/portfolio/tomcat1432u.php
+
+# Reference: https://twitter.com/malware_traffic/status/1250442899700891648
+
+maktabiprezidentivmkb.tj/glstj/seawolf126.php
+
+# Reference: https://twitter.com/JayTHL/status/1250460683977834496
+# Reference: https://www.virustotal.com/gui/ip-address/47.254.92.217/relations
+
+clarityupstate.com
+furcoatexchange.com
+furcoatliquidators.com
+furwholesaler.com
+re-fur-bished.com
+refurpose.com
+rentcoat.com
+rentmink.com
+rentminkcoat.com
+rentthecoat.com
+theminkcoat.com
+
+# Reference: https://twitter.com/DynamicAnalysis/status/1260275056644685824
+
+afya.geefto.com
+cashforfurcoat.com
+
+# Reference: https://twitter.com/K_N1kolenko/status/1265580857944936455
+
+nalinkrobej.ru
+restozaped.ru
+thozentaini.com
+fantavending.mobi/wp-content/themes/sketch-new/1
+oxorobotic.com/wp-content/themes/sketch/1
+fotobooth.at/wp-content/themes/sketch/1
+amatheakids.com/wp-content/themes/sketch/1
+wp.regalporn.com/wp-content/plugins/three-column-screen-layout/1
+
+# Reference: https://twitter.com/James_inthe_box/status/1283511249817358341
+
+schemeconnect.com
+sportbettingdubuque.com
+
+# Reference: https://app.any.run/tasks/07ce2b58-f619-4a3c-8232-b3a69a3233cb/
+
+overnightfile.com
+
+# Reference: https://twitter.com/K_N1kolenko/status/1318104716790943744
+
+netodughra.ru
+phercopar.com
+sjogetahit.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1318571872343052288
+# Reference: https://twitter.com/executemalware/status/1318625990931865602
+
+marspetcarelawsuit.com
+parkwayorthopedics.ca/transport.php
+volunteerslawsuit.com
+
+# Reference: https://app.any.run/tasks/31d5e956-b217-427a-8b87-1ddadfd12769/
+
+stylefersan.com
+nepbag.com
+functionalrejh.com
+
+# Reference: https://twitter.com/malware_traffic/status/1321182175916679168
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.127.167/relations
+
+breakingladd.com
+faneuil-lawsuit.com
+legacyhealthlawsuit.com
+marspetcarelawsuit.com
+nepbag.com
+oreillyautolawsuit.com
+partycitylawsuit.com
+tomykat.com
+worc-place.com
+ziverbsel.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1321467050422726656
+
+schrijfdrift.nl
+
+# Reference: https://twitter.com/ThreatHive/status/1321489094900371456
+
+blemecem.com
+epperhaptem.com
+peralsyste.com
+
+# Reference: https://www.virustotal.com/gui/file/84c98a0aefad86ecbdcc6f87909f2c2a9f6b1744f37b130f43ef36b29796146f/detection
+# Reference: https://www.virustotal.com/gui/file/01a9f5e9d83e6d8eb585b5448ca471ce795adc03ded41ccf8c12ca2f8309c77b/detection
+
+achremittanceservices.com
+
+# Reference: https://www.virustotal.com/gui/file/773f5e4bc9f8c4aac82f8cab8f416efe83f5a39735358301c6ca0559d61c8bf0/detection
+
+caperesto.ru
+succupen.com
+
+# Reference: https://www.virustotal.com/gui/file/fcba3daba91a4c061d7ea5ac9a2076668f9c029826e4b2b9d2894f90673f65ab/detection
+
+eventlarva.com
+
+# Reference: https://app.any.run/tasks/6199802d-512f-46b4-b0e7-8ba46dacbdb5/
+
+kuzinium.com
+shhirtradej.ru
+
+# Reference: https://www.malware-traffic-analysis.net/2020/11/04/index.html
+
+cootbooro.ru
+czyszczeniesrebra.pl
+dirtroadpestle.com
+juulslabel.nl
+kaibophil.com
+kuzinium.com
+megalodonjet.ru
+necemblem.ru
+rounzabout.ru
+shhirtradej.ru
+systemperal.ru
+taylorgolob.com
+ubercancellationfeelawsuit.com
+
+# Reference: https://www.virustotal.com/gui/file/cca24cf66321e5b2f63bb52b5183e9cc437bf1b59d5f34043307dbd3ab02ae62/detection
+
+cussoricti.com
+dirtroadpestle.com
+
+# Reference: https://twitter.com/Unit42_Intel/status/1324815102630121474
+# Reference: https://www.virustotal.com/gui/file/09b3c97457d3ad02204f2da76d1f9f4dadc681bcb32b0a58469461df2f7bd6b7/detection
+
+albilverde.com
+cussoricti.com
+fabickng.ru
+ithelpstaffing.com
+
+# Reference: https://twitter.com/malware_traffic/status/1326204620255842304
+# Reference: https://app.any.run/tasks/77f8bb6c-f055-4405-9438-c608ba947ebb/
+
+codathegorthe.ru
+taftahrice.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1328716329189220352
+# Reference: https://twitter.com/wwp96/status/1328743039045677057
+# Reference: https://app.any.run/tasks/060046bd-5c82-4bcf-b15e-7c36f40bbf92/
+# Reference: https://www.virustotal.com/gui/file/d13601fe7d4f9ceaf033421f18256c408d01ce9987cf413f1c10aec272d0ff10/detection
+
+easyactorwebsites.com
+summervillesouthernsmiles.com
+theriond.com
+
+# Reference: https://twitter.com/K_N1kolenko/status/1328996091237371906
+# Reference: https://twitter.com/Myrtus0x0/status/1329124918378647553
+
+brankinsto.ru
+duarreecto.ru
+edisrictisirs.ru
+finincin.com
+preargeoph.ru
+
+# Reference: https://twitter.com/K_N1kolenko/status/1329737222623535107
+
+denduchor.com
+frostation.ru
+jurenaree.ru
+
+# Reference: https://twitter.com/ffforward/status/1330909939607416840
+# Reference: https://twitter.com/James_inthe_box/status/1330914110804955137
+
+lecionewhounl.ru
+pulbilood.com
+shisougus.ru
+
+# Reference: https://twitter.com/ffforward/status/1331620320659304448
+
+lielftworiss.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1333463841347289088
+# Reference: https://app.any.run/tasks/3743aba9-0cf0-4401-91dc-ec8e4134751d/
+
+aribliffored.ru
+frosemodynd.ru
+propywast.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.133.40.192/relations
+
+denduchor.com
+finincim.com
+lielftworiss.com
+propywast.com
+prouserting.com
+pulbilood.com
+theriond.com
+trideprere.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1334150354515030016
+# Reference: https://twitter.com/James_inthe_box/status/1334170368521564163
+# Reference: https://twitter.com/Myrtus0x0/status/1334173921533325312
+# Reference: https://app.any.run/tasks/962ba100-b3fc-4d6e-b147-b2dfc6f18a0e
+
+behelzho.ru
+eaussill.com
+hossangerts.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1334531678602207243
+# Reference: https://twitter.com/K_N1kolenko/status/1334768640927920129
+# Reference: https://www.virustotal.com/gui/file/293d8e49687debac46ec1a4102b0d84df1ecb837ebe1e131e0362238c4063ff8/detection
+
+bandieve.com
+decturnearrips.ru
+exieverhiltur.ru
+looduchavens.ru
+otsoebabe.com
+
+# Reference: https://app.any.run/tasks/43c75fe6-d0a3-4a9e-8680-b16d0fee06c1/
+# Reference: https://www.virustotal.com/gui/ip-address/185.68.93.10/relations
+
+maduabin.com
+
+# Reference: https://app.any.run/tasks/b23524bb-3d6a-429d-93c0-d6c08e8f4335/
+# Reference: https://www.virustotal.com/gui/file/142b34879f514aaca5092081860f52f0578d551255186416f07914c91b7909c2/detection
+
+gadeforsenate.com
+nuatanste.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.43.223.169/relations
+
+leffersinda.ru
+pritursivers.ru
+shwashate.ru
+thircussovirom.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1338530303736889350
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.96.63/relations
+
+ductivery.com
+gade4senate.com
+gadebrigade.com
+gadeforsenate.com
+gadeforsenator.com
+gadeforussenate.com
+
+# Reference: https://twitter.com/executemalware/status/1338889235785523202
+# Reference: https://www.virustotal.com/gui/ip-address/185.87.194.148/relations
+
+bicescuryseu.ru
+forticheire.ru
+horyinwheorm.ru
+nentrivend.ru
+novearecoms.ru
+wourionlion.ru
+
+# Reference: https://www.virustotal.com/gui/file/774f95ecfc34799562ae36b87c3694f208b5e81cdf73befe10e2dfbce2397fa7/detection
+
+purclughtz.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/212.80.219.69/relations
+
+firodingdet.ru
+strucervach.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1339261429778579456
+
+bicescuryseu.ru
+meordsovellia.ru
+ulaginceter.com
+
+# Reference: https://twitter.com/ffforward/status/1349018081486659587
+# Reference: https://www.virustotal.com/gui/ip-address/91.215.170.225/relations
+
+ductivery.com
+fruciand.com
+peasseal.com
+purclughtz.com
+ulaginceter.com
+
+# Reference: https://twitter.com/executemalware/status/1339708971305852930
+# Reference: https://pastebin.com/nwD54q3u
+
+clientpreview.site
+crm.brees.com.au/multilist.php
+crm.brees.com.au/november.php
+plataforma.iestpasco.edu.pe/madera.php
+hvlegal.com.mx/twitchily.php
+phqindia.paramwebinfo.in/hardship.php
+phqindia.paramwebinfo.in/ubiety.php
+store.matstijmes.com/trephines.php
+
+# Reference: https://www.virustotal.com/gui/file/3191fd599a6738f152f95c0badb73598623b760b2171addf5aeb85b633e98450/detection
+
+spardethe.com
+
+# Reference: https://www.virustotal.com/gui/file/be2e214e37d5e54cbc7ec3e806083112abaaeb5b223714489c237cca53ef1361/detection
+
+neectuded.com
+
+# Reference: https://www.virustotal.com/gui/file/2074ad2dc62a398d62ab1f91d446ca269a4bc1cb5cbd5a677904afbf2d3685e0/detection
+
+cotaftation.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1349379545313411073
+
+conlymorect.ru
+requirend.com
+spabyasiande.ru
+
+# Reference: https://isc.sans.edu/forums/diary/Hancitor+activity+resumes+after+a+hoilday+break/26980/
+# Reference: https://www.malware-traffic-analysis.net/2021/01/12/index.html
+# Reference: https://otx.alienvault.com/pulse/5fff646040d1907e50f04814
+
+http://3.133.244.105/irs.php
+expertcircles.co.uk/assotiation.php
+libifield.co.za/oilcan.php
+libifield.co.za/figs.php
+savortrading.com/toweringly.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1349739212162035712
+# Reference: https://app.any.run/tasks/5c55844b-a62a-40cc-a492-27d33c547dd5/
+
+geopertsure.ru
+mailartmen.ru
+ocifirtaterity.com
+
+# Reference: https://twitter.com/malware_traffic/status/1351588946858315776
+# Reference: https://www.virustotal.com/gui/ip-address/185.220.177.176/relations
+
+opulteme.com
+
+# Reference: https://twitter.com/stoerchl/status/1351923918613999621
+
+areentthrices.ru
+cloolyepervir.com
+syleclisizame.ru
+
+# Reference: https://twitter.com/K_N1kolenko/status/1352217470459928577
+
+tharepirms.ru
+worteltiffee.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1354095154618011649
+# Reference: https://www.virustotal.com/gui/ip-address/213.5.229.12/relations
+# Reference: https://www.virustotal.com/gui/ip-address/95.216.84.231/relations
+# Reference: https://www.virustotal.com/gui/file/d64568ebb71238b5367d1a4feb69ffd1492c36e320ce13698967dced10a0ef31/detection
+
+anatereplage.com
+enincyrepater.ru
+iderfeirel.com
+locroplenes.ru
+surpopene.ru
+
+# Reference: https://twitter.com/K_N1kolenko/status/1355170344211017728
+
+imextralgall.ru
+poresson.com
+witeseurturan.ru
+
+# Reference: https://twitter.com/K_N1kolenko/status/1354738007983730688
+
+sicantort.com
+theirrissublu.ru
+woulauserpect.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1356614185828843520
+
+antialkinno.com
+knorshand.ru
+thistrespor.ru
+
+# Reference: https://twitter.com/K_N1kolenko/status/1357273962431082500
+
+buillingter.ru
+curishisral.ru
+efelsdvismade.com
+
+# Reference: https://twitter.com/K_N1kolenko/status/1357620421269610497
+
+feirecropl.com
+oresteseu.ru
+respoishis.ru
+
+# Reference: https://twitter.com/K_N1kolenko/status/1359069659438469122
+
+ludiesibut.ru
+sameastar.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1359183083929411584
+
+ceirsitsin.ru
+formawas.ru
+sibetaver.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1359519224046120961
+# Reference: https://app.any.run/tasks/3ccaa664-d690-4fa0-b514-7566fe2a6019/
+
+anumessensan.ru
+grectedparices.ru
+shifiticans.com
+
+# Reference: https://twitter.com/malware_traffic/status/1359585588240875529
+
+b2b.ebike-your-life.com/commemorative.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1359887832010035202
+# Reference: https://www.virustotal.com/gui/file/e44b3e5ed0dcbf05b28aa377e9dc263f249e702665d643c8b803be7ad99073c0/detection
+
+desuctoette.ru
+matuattheires.ru
+myinstabuzzz.co
+nuencres.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1361710425486680065
+
+belcineloweek.ru
+eviddinlahal.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1362064790995173378
+# Reference: https://twitter.com/K_N1kolenko/status/1362333103407198208
+
+hatuderefer.com
+thavelede.ru
+zinsubtal.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1364585517438832652
+# Reference: https://app.any.run/tasks/cce5a6ef-a46d-43f0-999a-69ae30d82376/
+# Reference: https://app.any.run/tasks/32c7a83a-c54b-4cad-a9bc-3f0515127a2e/
+
+aftereand.com
+sromecorlduce.ru
+sweyblidian.com
+
+# Reference: https://twitter.com/K_N1kolenko/status/1364891169294057472
+
+aftereand.com
+froplivernat.ru
+nevemicies.ru
+
+# Reference: https://twitter.com/executemalware/status/1366432635300573193
+
+losgedeones.com
+
+# Reference: https://twitter.com/K_N1kolenko/status/1366681253831979010
+# Reference: https://www.virustotal.com/gui/file/7bfd59b4c8b046bf15cb408e51ed482a9d19c3d9201d510978b82c9f58cf8e8a/detection
+
+ementincied.com
+noriblerughly.ru
+watoredprocaus.ru
+
+# Reference: https://twitter.com/K_N1kolenko/status/1367045073414848512
+
+duchateman.ru
+sonalsovele.ru
+witakilateg.com
+
+# Reference: https://twitter.com/malware_traffic/status/1367152943158468610
+# Reference: https://pastebin.com/raw/TvLvgpLm
+
+bgurbanglam.com/severely.php
+crm.basilrealty.in/beady.php
+mainctional.com
+
+# Reference: https://twitter.com/K_N1kolenko/status/1367414834220978176
+
+disrulaytin.ru
+puldefletat.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1367526827221204996
+# Reference: https://app.any.run/tasks/534e3de9-18fd-4468-803d-c7a8b835fae0/
+
+imilifeesinci.ru
+throsesspeotte.com
+
+# Reference: https://twitter.com/executemalware/status/1370023113124061186
+
+koepfamily.com
+
+# Reference: https://www.virustotal.com/gui/file/32a1f6000760b5eaa73ccfcbb44b2e26a575130cffdb2bb0ba5d0562e7e720c3/detection
+
+pensionskasse.gr
+
+# Reference: https://twitter.com/malware_traffic/status/1372705905880530950
+# Reference: https://www.malware-traffic-analysis.net/2021/03/18/index.html
+
+froursmonesed.com
+
+# Reference: https://twitter.com/fr0s7_/status/1374039545654751238
+# Reference: https://www.virustotal.com/gui/file/121e2902c085cf41c9b9cddab5bf499da02b01f36ef999aa9aa8f7d818a884ac/detection
+
+abouniteta.ru
+diverbsez.ru
+froursmonesed.com
+
+# Reference: https://twitter.com/NaomiSuzuki_/status/1376601663792836609
+# Reference: https://www.virustotal.com/gui/ip-address/188.130.139.76/relations
+
+gloporiente.ru
+probassita.com
+thabilemithe.ru
+
+# Reference: https://twitter.com/K_N1kolenko/status/1376842582311985156
+# Reference: https://www.virustotal.com/gui/ip-address/45.129.96.192/relations
+# Reference: https://www.virustotal.com/gui/ip-address/88.85.89.108/relations
+
+abouniteta.ru
+diverbsez.ru
+frobenalini.ru
+intaticducalso.ru
+lationvold.com
+popubjettor.ru
+proubleblecilm.ru
+tricilidiany.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1376920282053574657
+
+stionicksilid.com
+succupenous.ru
+
+# Reference: https://unit42.paloaltonetworks.com/hancitor-infections-cobalt-strike/
+# Reference: https://otx.alienvault.com/pulse/606790333e10af33e8950580
+
+allanabolicsteam.net
+alumaicelodges.com
+anabolicsteroidsbuy.info
+baadababada.ru
+backupez.com
+belcineloweek.ru
+bobcatofredding.com
+buckeyesecurity.net
+canadiantourismroundtable.com
+drivewaysnowservice.com
+g1smurt.ru
+gade4senate.com
+gadebrigade.com
+gadeforsenate.com
+gadeforussenate.com
+kilopaskal.ru
+klaustrofebia.ru
+myinstabuzzz.co
+mymooney.ru
+nepbag.com
+nvgeeforsegt.ru
+onlybamboofabrics.com
+oreillyautolawsuit.com
+pirijinko.ru
+roanokemortgages.com
+sromecorlduce.ru
+sungardspo.com
+trustpilot-scam.com
+try-dent.net
+wesleydonehue.org
+wheredidmarkmakehismoney.com
+wouatiareves.ru
+
+# Reference: https://twitter.com/executemalware/status/1379828268417826817
+
+save.makemoneywith.website
+
+# Reference: https://pastebin.com/wtxn3CZZ
+
+http://3.133.244.105
+nucala.inspia.net/antemeridian.php
+andrewsworld.com.ng/total.php
+andrewsworld.com.ng/weediness.php
+api.cdmvertical.com/cling.php
+ccucu.com/carry.php
+ccucu.com/refund.php
+itemp.ppdkuk.com/stipendless.php
+itemp.ppdkuk.com/unsurpassed.php
+mybrandedge.com/bridle.php
+mybrandedge.com/dyadic.php
+mybrandedge.com/scratchpad.php
+timberart.com.br/hi.php
+timberart.com.br/strobing.php
+databet96.com/tepidity.php
+databet96.com/tuneups.php
+educacionvirtualavanzada.mx/preserved.php
+educacionvirtualavanzada.mx/temblor.php
+latiounitere.ru
+twomplon.ru
+varembacen.com
+
+# Reference: https://twitter.com/phage_nz/status/1382471613963128838
+
+culadinces.ru
+merinocraft.ro/unbroken.php
+
+# Reference: https://pastebin.com/qsf3se6f
+
+coliessrass.ru
+dingulbolies.com
+aarambhaad.com.np/anointment.php
+citricadvertising.com/purgation.php
+citricadvertising.com/snuffbox.php
+educacionvirtualavanzada.mx/inexact.php
+impactmarketingservice.in/fuchsine.php
+impactmarketingservice.in/whipsaw.php
+itco.pe/shelly.php
+merinocraft.ro/tearing.php
+natural-healing-central.com/factorization.php
+somdeeppalace.com/comer.php
+xtracomsolutions.com/indispensable.php
+
+# Reference: https://inquest.net/blog/2021/04/16/unearthing-hancitor-infrastructure
+
+cametateleb.ru
+divelerevol.com
+polionallas.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1387053533871050757
+
+caperesto.com
+thuniopme.ru
+watiounds.ru
+
+# Reference: https://twitter.com/ScarletSharkSec/status/1387443189720788996
+# Reference: https://app.any.run/tasks/5021b093-9557-4512-b497-e83a5866bfc6/
+
+sumbahas.com
+
+# Reference: https://twitter.com/Artilllerie/status/1387783551836434433
+
+chasslace.ru
+lamuni8f.ru
+nencivelf.com
+somargesion.ru
+
+# Reference: https://gist.github.com/silence-is-best/852a1c7c7dcf29fdc8d5df73433e7676
+
+adrouterigh.com
+balcatioplo.ru
+lerevahel.com
+regatimmish.com
+windetheta.com
+
+# Reference: https://www.bleepingcomputer.com/news/security/cuba-ransomware-partners-with-hancitor-for-spam-fueled-attacks/
+
+emiratesminning.com/transfix.php
+
+# Reference: https://www.virustotal.com/gui/file/2b5e66f542d00a343e78c42c875f8e32c2b4626c74235217bae3375600f2a4a1/detection
+
+amaozedractue.ru
+chnicallimigue.com
+waystmefalicas.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1395522304575221765
+# Reference: https://www.malware-traffic-analysis.net/2021/05/20/index.html
+
+adahomemodifications.com/photocell.php
+adahomemodifications.com/nosebleed.php
+admin.mmlivemyanmar.com/wreak.php
+app.enlavaguada.org/accompanist.php
+sitio.vipsaesa.com/congenerical.php
+toomix.net/invest.php
+comitato-antimafia-lt.org/ageratum.php
+comitato-antimafia-lt.org/packinghouse.php
+agencia.viajesmairma.com.mx/aesthetic.php
+anghighschool.smsoft.in/jinks.php
+angprimary.smsoft.in/solve.php
+askisiologio.edu.gr/presswork.php
+binafif-est.com.sa/testatrix.php
+ibooking.campaignhub.net/hockey.php
+cloud.robi-nud.com/isolate.php
+demo.hmsmicro.uproducts.in/pentagonal.php
+demo.hmsmicroex.uproducts.in/spread.php
+graphixbird.com/sparsely.php
+graphixbird.com/taunt.php
+historybanks.net/jaundice.php
+insidebox.pt/negate.php
+kallaru.com/sourly.php
+nicelyeg.com/reichswehr.php
+nicelyeg.com/taoist.php
+skillsit.com.br/shrubbery.php
+skillsit.com.br/soul.php
+stybanigltd.com.ng/puppetry.php
+stybanigltd.com.ng/radome.php
+hellosiroco.com/depraved.php
+yayabo.net/zonal.php
+vaethemanic.com
+
+# Reference: https://twitter.com/malware_traffic/status/1395118996278685696
+
+thotainizent.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1396842645968744453
+# Reference: https://www.virustotal.com/gui/file/5280dff036e7982537d81d466d35d6db1df816a8bd3eb868adb5fe047d8a25f4/detection
+
+euvereginumet.ru
+thowerteigime.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1397562888055783426
+
+lansiagerri.ru
+nalbukers.com
+restanumb.ru
+
+# Reference: https://www.virustotal.com/gui/file/c6b741a2b74b8a16120ac09ea5e5e580d783fbc4978c5026dc8cbc51975b5814/detection
+
+alconothe.com
+deparnized.ru
+ereallfulaw.ru
+
+# Reference: https://twitter.com/ScarletSharkSec/status/1403060603930005505
+
+interconnect.bigweb.co.za/azure.php
+la-michna.com/circumstances.php
+newsdataworld.com/pong.php
+
+# Reference: https://twitter.com/executemalware/status/1403004291195961347
+
+countylandco.com
+
+# Reference: https://twitter.com/noexceptcpp/status/1405618889745108992
+
+thestaccultur.com
+
+# Reference: https://www.malware-traffic-analysis.net/2021/06/17/index.html
+
+arguendinfuld.ru
+
+# Reference: https://www.malware-traffic-analysis.net/2021/06/15/index.html
+
+pariamarraire.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1407350358503006220
+
+cobleignespos.ru
+moutraturche.ru
+vidompleury.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1407712274924511239
+
+cludimetifte.ru
+extilivelly.com
+sakincesed.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1408069644921933838
+
+eftegropecial.ru
+sloyeatfroyin.ru
+wouncring.com
+
+# Reference: https://pastebin.com/2d8fQg69
+
+aaawastudio.com
+aladainexpress.com
+alpharettaagency.com
+alwarfoodies.com
+anahurtado.co
+bhumisilveriio.com
+bikershop.biz
+codehunt.site
+ezdarsoft.com
+mawaqaatest.com
+mycollege.com.my
+renesh.in
+wallempire.in
+
+# Reference: https://twitter.com/ScarletSharkSec/status/1410617349254705153
+# Reference: https://twitter.com/ScarletSharkSec/status/1410671029568118796
+
+advansys.com.ar/liniment.php
+insolvenzthemen.de/skittish.php
+kafrawifood.com/phasic.php
+thehaider.com/await.php
+uesb9.com.my/sudsy.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1410617868530556940
+
+duclowtionly.ru
+raeonoran.com
+unteladenad.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1410634474812018697
+
+arboonksa.com/trichotomy.php
+
+# Reference: https://twitter.com/James_inthe_box/status/1412418524627210257
+
+hievescits.ru
+hosouggs.com
+mancause.ru
+
+# Reference: https://twitter.com/K_N1kolenko/status/1413384083875540993
+
+anspossthrly.ru
+sudepallon.com
+thentabecon.ru
+
+# Reference: https://twitter.com/ScarletSharkSec/status/1413195913863041031
+
+adstudiophotography.com/tibia.php
+greechip.net/underground.php
+gunsify.com/rattlebrained.php
+homevault.co.uk/subbase.php
+mohammadtalks.com/corking.php
+nextclickcorp.net/nondestructive.php
+virfilms.in/siderite.php
+
+# Reference: https://www.virustotal.com/gui/file/696417ed1765a36267ad83d28bf8038d8e56615485db555edd09fe5e84d59547/detection
+
+hadevatjulps.com
+
+# Reference: https://www.virustotal.com/gui/file/7952fe215ddf17bdcd41de3433f78f7cab2d4c1313fc8f31cbfbb6fd60605508/detection
+
+drairshicand.ru
+
+# Reference: https://www.virustotal.com/gui/file/5c79fc8686e2d6d950e467ac6ed0175c7ddcf5d9d8934545351dda28b8a8a2bb/detection
+
+sciandwourgy.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/194.226.60.15/relations
+
+arguendinfuld.ru
+cogymbealpar.ru
+fichadesta.com
+pariamarraire.ru
+sanduallsocco.ru
+
+# Reference: https://www.virustotal.com/gui/ip-address/37.221.65.115/relations
+
+brishiletse.ru
+musertwoolion.ru
+thestaccultur.com
+threcenvionsh.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1415317286857035776
+
+metweveer.ru
+omermancto.ru
+wortlybeentax.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1417854879633010688
+
+anithedtatione.ru
+thervidolown.com
+wiltuslads.ru
+
+# Reference: https://ioc.finsin.cl/Output_FINSIN_URL
+
+aniumbougual.ru
+dicausicezl.ru
+frougelylo.ru
+hrowedinizoin.ru
+lerevahel.ru
+lowermuccon.ru
+metatussi.ru
+pingerrhospea.com
+prournauseent.ru
+rhopulforopme.ru
+semareake.ru
+staciterst.ru
+suageorroufar.ru
+tembovewinated.ru
+thiceshouthas.ru
+thimolkanivind.ru
+undereasus.ru
+waxotheousch.ru
+wilewgracted.ru
+
+# Reference: https://gist.github.com/silence-is-best/ac1440dcf7aec90a53905ae86559e621
+
+gatiallyde.com
+tagnicredga.com
+trictuatiove.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1422577139677687814
+
+arviskeist.ru
+priekornat.com
+stionsomi.ru
+
+# Reference: https://www.virustotal.com/gui/ip-address/92.62.115.177/relations
+
+istramescit.com
+ublebderea.com
+
+# Reference: https://blog.group-ib.com/prometheus-tds
+
+afternearde.ru
+counivicop.ru
+obvionsweyband.ru
+saisepsdrablis.ru
+speritentz.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1438521416924610571
+
+agarreaters.ru
+plivatecez.com
+weratiands.ru
+
+# Reference: https://www.virustotal.com/gui/file/f9f8b16948f6493614c93ebdb6988afac3c621441c1def9cf35dc93eb736bb2e/detection
+
+usitemithe.ru
+foolockpary.ru
+thookedaurce.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1445758059360362509
+
+admieswrinis.com
+deptemain.ru
+hiciedtionds.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1446129911240953858
+
+cithernista.ru
+strictence.com
+wimberels.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1450476970119106560
+
+gintlyba.ru
+newnucapi.com
+stralonz.ru
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1458461330545991685
+
+foutpospaws.ru
+majoirtains.ru
+sucinenve.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.147.80.192/relations
+# Reference: https://www.virustotal.com/gui/ip-address/194.147.115.132/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.19.192.32/relations
+# Reference: https://www.virustotal.com/gui/file/8733e81f7ef203f4d1c4208b75c6ab2548259cc35d68df10ebf23a31e777871b/detection
+
+admieswrinis.com
+cithernista.ru
+deptemain.ru
+fordecits.ru
+forkineler.com
+givallinere.ru
+havoutry.ru
+hiciedtionds.ru
+strictence.com
+thatisheair.com
+wimberels.ru
+yemodene.ru
+
+# Reference: https://twitter.com/pr0xylife/status/1463174292657561607
+
+amesibiquand.ru
+johommeract.ru
+templogio.com
+
+# Reference: https://github.com/hpthreatresearch/iocs/blob/main/hancitor/urls.txt
+
+areentthrices.ru
+cloolyepervir.com
+conlymorect.ru
+forticheire.ru
+fruciand.com
+nentrivend.ru
+requirend.com
+spabyasiande.ru
+syleclisizame.ru
+
+# Reference: https://www.virustotal.com/gui/file/535d8896ca2605f68f26e6aa800c935e88acb41f50939e98215715f0967f6096/detection
+
+viciregony.com
+
+# Reference: https://twitter.com/drb_ra/status/1464248038554222618
+
+chrone-down.com
+cc.chrone-down.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1465704091573575681
+# Reference: https://twitter.com/James_inthe_box/status/1465706327720665091
+# Reference: https://twitter.com/James_inthe_box/status/1465707893320085507
+# Reference: https://www.virustotal.com/gui/ip-address/8.209.79.68/relations
+
+0bamandos.ru
+alh1mik.ru
+diuar5.ru
+f0rmula.ru
+frolol0.ru
+indisc0rt.ru
+kapis1n.ru
+r0nr0n.ru
+sineko7.ru
+cinommrai.ru
+erstnucesl.ru
+scoremillze.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1466067875320320002
+
+gincinen.com
+sucvewdetw.ru
+tposalons.ru
+
+# Reference: https://twitter.com/ScarletSharkSec/status/1465773991382167571
+# Reference: https://app.any.run/tasks/6abee4d3-cb85-4644-927d-b4ed4cdebd4f/
+
+shvpn.tanvir69.xyz
+
+# Reference: https://capesandbox.com/analysis/210857/
+
+counteent.ru
+madmilons.com
+simatereare.ru
+
+# Reference: https://www.virustotal.com/gui/file/ded4c0ee0f2f04783500e4cc11759b8c850dfede4d968fb2d7926f5f9bd00fce/detection
+
+nz-prosthodontists.org.nz
+
+# Reference: https://www.virustotal.com/gui/ip-address/188.127.237.160/relations
+# Reference: https://www.virustotal.com/gui/file/42e018690440b20a9b992bf7a96a502689c84baa2d68c81f18d7351fb13f1976/detection
+# Reference: https://www.virustotal.com/gui/file/773f5e4bc9f8c4aac82f8cab8f416efe83f5a39735358301c6ca0559d61c8bf0/detection
+
+babevandbu.ru
+chormetdendu.ru
+dughracdow.ru
+frobenalin.ru
+pritupertion.com
+sjogetahit.ru
+terrepade.ru
+thervidrmet.ru
+
+# Reference: https://www.virustotal.com/gui/file/21a8e05a15dbf50d62be98d762fc36867f1011465bf4306e4793ebe9222a0df0/detection
+
+fineladiver.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1471147036510613508
+
+joirmeraw.ru
+sibiquan.ru
+ybotedin.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1430901785514844161
+
+declassivan.ru
+idgentexpliet.ru
+intakinger.com
+
+# Reference: https://gist.github.com/silence-is-best/e2af8aa61000e4b740934331291c619b
+# Reference: https://www.virustotal.com/gui/file/571cba0431acea4739c5248de1b1d33e76e995b3c7454f4d88d2785ade6fdf74/detection
+
+corelince.ru
+hiltustra.com
+mernwel.ru
+
+# Reference: https://www.virustotal.com/gui/file/3da091b0ae2e3bbcb0b155f17eab773c37094994a2764344a553981f56a0793e/detection
+
+berofaked.ru
+harforusero.ru
+hinwasslysed.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1486370052001697796
+# Reference: https://twitter.com/James_inthe_box/status/1486376417193435138
+# Reference: https://www.virustotal.com/gui/file/c5a8bfdcd3b429b6b7ae7803b231a8c9f7e063b000d7ffb06f5aab843bbf188c/detection
+
+beetwedwornew.ru
+fountandevin.com
+nummasdocarm.ru
+tropitron5.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1488524695108562949
+
+otedsalon.com
+vewdeposd.ru
+ybirelin.ru
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2021-08-17%20Hancitor%20IOCs
+
+chopprousite.ru
+dver5otop.ru
+patiennerrhe.com
+thougolograrly.ru
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2021-08-18%20Hancitor%20IOCs
+
+solovin0.ru
+
+# Reference: https://twitter.com/k3dg3/status/1505949698284302341
+
+lumentsawfu.ru
+ockpitehou.ru
+nanogeelr.com
+
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2021-08-26%20Hancitor%20IOCs
+# Reference: https://otx.alienvault.com/pulse/6128b469632df908368e0a6f
+
+4maurpont.ru
+alf10nso.ru
+bhushankoli.com
+booklogic.info
+cresvin.com
+flowerr.ru
+interviewsetup.com
+iqcademy.in
+khushiyonkazariya.in
+lamme.news
+novatechexpo.in
+raipackers.com
+ststephenskisugu.church
+techzonecam.com
+webdev-wazoomstudio.online
+
+# Generic
+
+/1/forum.php
+/2/forum.php
+/3/forum.php
+/4/forum.php
+/5/forum.php
+/6/forum.php
+/7/forum.php
+/8/forum.php
+/9/forum.php
+/.well-known/ron.php
+/.well-known/rweaver732.php
+/123_123123.php
+/345_3429_34.php
+/342578_4378.php
+/34894385_4378.php
+/4234_32423.php
+/437843_347843.php
+/5787478_74.php
+/63943_54783.php
+/7834_2378.php
+/78435_347823.php
+/83922_543.php
+/852435_34859.php
+/89623_3247.php
+/admin/zaki.php
+/bdl/gate.php
+/dkywh9p/rick.php
+/fknmo/gate.php
+/glstj/seawolf126.php
+/ls/gate.php
+/ls5/forum.php
+/ls6/gate.php
+/plasma/gate.php
+/rglennn.php
+/rgovett.php
+/rhf26.php
+/rick.php
+/rickyv319.php
+/rigman43.php
+/rjohn10657.php
+/rjyoung007.php
+/rmdrinkwater.php
+/rmmurphy10.php
+/robbjorgensen.php
+/robby_hanshaw.php
+/robert.hicks.php
+/robert1325.php
+/roberto.rubbiani.php
+/robohip1.php
+/roger.ponniah.php
+/rogerpoitras7.php
+/rojas5439.php
+/roland.avignon.php
+/rolfanderson.php
+/rollntwist.php
+/ron_penfold.php
+/ronco9.php
+/rowantotal.php
+/roydsingh.php
+/rswmisc.php
+/rubencpa.php
+/rwhayne.php
+/ryanzeitler.php
+/sailnsadle.php
+/samurai40w.php
+/sasshm.php
+/sboles7.php
+/scooby6060.php
+/scottyw36.php
+/sd37667.php
+/seawolf126.php
+/senmotomajin.php
+/sfcw1.php
+/shark601.php
+/shellie.php
+/sherdian19.php
+/sheridanalan.php
+/shogin1.php
+/simonimp.php
+/sjj53.php
+/sjmod5.php
+/sjwhome.php
+/skovvaenget19.php
+/sl/gate.php
+/slamduncker.php
+/smittybar4.php
+/soberentexas.php
+/sophiagamble.php
+/soundm279.php
+/st.vanaaken.php
+/stefamherd.php
+/steve.heller.php
+/steveswanson22.php
+/storme.cosgrave.php
+/stormnz54.php
+/sullych43.php
+/t.carp.php
+/tankeukjf.php
+/tbcfix3.php
+/tbconsulting.php
+/technoemporium.php
+/terisitababe.php
+/terrybailey2009.php
+/thehornet1.php
+/thetafly.php
+/thomasautomotive.php
+/thomascarterpt.php
+/thong.5.php
+/timbrennan29.php
+/timeflyz97.php
+/tj.016677.php
+/tjholden.php
+/tjubell.php
+/tmoen3.php
+/tomcat1432u.php
+/tomgosse.php
+/tommino.php
+/tonynguyen854.php
+/tonypkeeling.php
+/topsprop1.php
+/ttregino.php
+/tss9999.php
+/tstanis5.php
+/vancewl.php
+/vmpereira.php
+/walli_sw.php
+/warren.php
+/wayneo125.php
+/waynerice816.php
+/wbasser.php
+/wbeliz2002.php
+/wbferguson.php
+/wco3520.php
+/wcwjr.php
+/wdavidmajor.php
+/wdepietro.php
+/weberdental.php
+/welch9172.php
+/wesleysebesta.php
+/westharbour.php
+/wggoep.php
+/wghoward.php
+/wheatstiger.php
+/whitej58.php
+/wildpitch.php
+/williamhcondon.php
+/willid5223.php
+/willieotero13.php
+/win.harris.php
+/winterof63.php
+/wjtconsult.php
+/wnothhelfer.php
+/woodcock_jack.php
+/wretchedchild5.php
+/wschnei106.php
+/wsr3214.php
+/wtomnelson.php
+/wturnermi.php
+/wwatone.php
+/wyckoff1012.php
+/x24spike.php
+/yazanmoussa.php
+/ykootss.php
+/yngwll57.php
+/yoshihito.shibahata.php
+/ytyniec.php
+/yuki_chan2004jp.php
+/ywingitt.php
+/zab4ksnk.php
+/zapoy/gate.php
+/zecoimbra1951.php
+/zeke112.php
+/zenrchi.php
+/zubairseiendom.php

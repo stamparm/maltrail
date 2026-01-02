@@ -1,0 +1,40 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/ta416-goes-ground-and-returns-golang-plugx-malware-loader
+# Reference: https://otx.alienvault.com/pulse/5fbc0c5ec4bfeaa7f7956ff4
+
+http://45.248.87.162
+
+# Reference: https://www.virustotal.com/gui/file/6a5b0cfdaf402e94f892f66a0f53e347d427be4105ab22c1a9f259238c272b60/detection
+
+45.248.87.162:110
+
+# Reference: https://twitter.com/h2jazi/status/1498308592495214592
+# Reference: https://twitter.com/aRtAGGI/status/1498314276104200193
+# Reference: https://www.virustotal.com/gui/file/effd63168fc7957baf609f7492cd82579459963f80fc6fc4d261fbc68877f5a1/detection
+
+http://103.107.104.19
+92.118.188.78:443
+zyber-i.com
+
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/good-bad-and-web-bug-ta416-increases-operational-tempo-against-european
+
+http://103.107.104.19
+http://45.154.14.235
+http://69.90.184.125
+103.107.104.19:443
+45.154.14.235:443
+69.90.184.125:443
+upespr.com
+
+# Reference: https://twitter.com/felixaime/status/1501150428016357378
+# Reference: https://twitter.com/fr0s7_/status/1501158252045901824
+# Reference: https://www.joesandbox.com/analysis/584888/0/html
+
+107.167.64.4:443
+
+# Reference: https://www.virustotal.com/gui/file/effd63168fc7957baf609f7492cd82579459963f80fc6fc4d261fbc68877f5a1/detection
+
+103.107.104.19:33182
+103.107.104.19:33255

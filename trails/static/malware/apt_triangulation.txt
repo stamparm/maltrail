@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/operation-triangulation/109842/
+
+addatamarket.net
+ans7tv.net
+anstv.net
+backuprabbit.com
+businessvideonews.com
+cloudsponcer.com
+datamarketplace.net
+growthtransport.com
+mobilegamerstats.com
+snoweeanalytics.com
+tagclick-cdn.com
+topographyupdates.com
+unlimitedteacup.com
+virtuallaughing.com
+web-trackers.com

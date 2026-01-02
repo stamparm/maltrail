@@ -1,0 +1,153 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: redaman, rtm
+
+# Reference: https://habr.com/ru/company/bizone/blog/456804/ (Russian)
+
+188.165.200.156:53
+217.12.210.54:53
+91.217.137.37:53
+f72bba81c921.livejournal.com
+webstatisticaonline.tech
+stat-counter-7.bit
+5aaw3unbkm5jqx7d.onion
+w762icwux5m5p2mg.onion
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1182673800934100993
+# Reference: https://app.any.run/tasks/b5efe598-732b-4f1b-83ec-b22a1388768d/
+
+http://185.206.147.143
+
+# Reference: https://unit42.paloaltonetworks.com/russian-language-malspam-pushing-redaman-banking-malware/
+# Reference: https://twitter.com/wwp96/status/1336059145875808259
+
+109.69.8.34:53
+151.80.147.153:53
+185.190.82.182:53
+212.73.150.183:53
+http://185.141.61.246
+namecha.in
+/name/d/stat-counter-3-1
+/p/g_3453456jawd346.php
+
+# Reference: https://www.symantec.com/security_response/earthlink_writeup.jsp?docid=2017-022117-0116-99
+
+cainmoon.net
+cash-money-analitica.bit
+fde05d0573da.bit
+micro4n.top
+money-cash-analitica.bit
+rtm.dev
+ssdcool.top
+vpnkeep.bit
+vpnomnet.bit
+vpntap.top
+webstatisticaonline.tech
+
+# Reference: https://app.any.run/tasks/23aa4331-4875-410f-bbc0-9840ed850182/
+
+stat-counter.bit
+
+# Reference: https://research.checkpoint.com/ponys-cc-servers-hidden-inside-the-bitcoin-blockchain/
+
+http://100.134.172.105
+http://100.134.78.108
+http://100.134.91.200
+http://100.136.150.254
+http://100.136.212.73
+http://100.136.54.151
+http://100.136.91.200
+http://100.174.103.136
+http://100.174.91.200
+http://102.39.91.200
+http://103.136.91.200
+http://117.49.185.203
+http://118.16.170.51
+http://118.16.85.217
+http://119.169.185.203
+http://119.169.85.217
+http://119.18.185.177
+http://119.18.94.156
+http://150.254.185.234
+http://150.254.227.99
+http://170.51.185.203
+http://170.51.35.216
+http://171.48.185.203
+http://172.104.54.151
+http://172.104.91.200
+http://172.105.100.134
+http://172.105.69.5
+http://185.177.119.169
+http://185.177.59.149
+http://185.203.116.47
+http://185.203.117.49
+http://185.203.118.16
+http://185.203.119.169
+http://185.203.119.18
+http://185.203.185.177
+http://185.203.185.203
+http://185.234.195.123
+http://185.234.72.50
+http://195.123.227.99
+http://195.123.91.200
+http://212.73.150.254
+http://212.73.72.50
+http://216.39.102.39
+http://216.39.91.200
+http://35.216.185.203
+http://35.216.85.217
+http://54.151.172.105
+http://54.151.91.200
+http://59.149.171.48
+http://59.149.85.217
+http://69.5.100.66
+http://69.5.172.104
+http://72.50.185.234
+http://72.50.91.200
+http://78.108.216.39
+http://85.217.170.51
+http://85.217.171.48
+http://85.217.59.149
+http://85.217.94.156
+http://91.200.100.134
+http://91.200.100.136
+http://91.200.100.174
+http://91.200.100.66
+http://91.200.102.39
+http://91.200.103.136
+http://91.200.172.104
+http://91.200.185.203
+http://91.200.69.5
+http://91.200.78.108
+http://94.156.118.16
+http://94.156.35.216
+
+# Reference: https://app.any.run/tasks/624d50c8-4270-4267-bc52-009ed08e3da2/
+# Reference: https://app.any.run/tasks/b749bb8c-8de8-405f-8749-6763b739b008/
+
+fsspdoccs.ru
+http://185.206.147.143
+http://185.206.146.92
+
+# Reference: https://app.any.run/tasks/f0e99e48-6355-4c64-8584-f45c730ba1b7/
+# Reference: https://app.any.run/tasks/f573ad33-b352-43c6-93cd-2b011749efde/
+
+fssspdocs.ru
+http://45.10.88.247
+
+# Reference: https://app.any.run/tasks/d7743786-c364-48fd-8f58-fe7163653d15/
+
+54.36.112.234:9001
+
+# Reference: https://app.any.run/tasks/a255389d-2363-4040-8a48-8de56a19cd3b/
+
+http://94.156.35.136
+
+# Reference: https://www.virustotal.com/gui/file/a290e2649c3974f7ad1ebb9d8c490e162e2aede7ad4c2fb32f9ba97b14a2479f/detection
+
+85.25.159.253:47044
+
+# Reference: https://www.virustotal.com/gui/file/51c34ee62d75014e48fdc523dd58fca0780d3d53209542580a090c33a1414570/detection
+
+http://91.215.153.31

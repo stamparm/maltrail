@@ -1,0 +1,45 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/3xp0rtblog/status/1289125217751781376
+# Reference: https://app.any.run/tasks/22aefda1-b415-42b8-a334-bce8013f2d8a/
+# Reference: https://www.virustotal.com/gui/file/eddb45dfe783cb38e0597ba1a04b8fe9cdc126970dba9287f7325e05f62329ce/detection
+
+ikaschyn.beget.tech
+
+# Reference: https://twitter.com/3xp0rtblog/status/1289677588487720963
+# Reference: https://app.any.run/tasks/29669897-d357-4093-83c8-31ceac4b940a/
+
+sumakokl.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/4b3cb90581dcd77c9ceffbd662b8dac70b68de5a03cd56940434cc035209d61d/detection
+
+h98801x4.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/d820ec7f9196a5cc3dbc2b5860334a2e174fede80efc3b8463756fb8767dddf9/detection
+
+bibaiboba.beget.tech
+
+# Reference: https://www.zscaler.com/blogs/research/purplewave-new-infostealer-russia
+# Reference: https://otx.alienvault.com/pulse/5f3a0f8fa66c69862c840229
+
+manget6z.beget.tech
+sh1213709.a.had.su
+
+# Reference: https://twitter.com/jorgemieres/status/1297897665443901440
+# Reference: https://www.virustotal.com/gui/file/2138b96364824088a5b94ccf34e7df7cdf639851c5db5f025580989061c7df81/detection
+
+http://185.188.183.241
+
+# Reference: https://twitter.com/ganeshnathan28/status/1300052824886308864
+
+http://80.87.196.41
+ad-nalitica.com
+
+# Reference: https://twitter.com/ganeshnathan28/status/1300728778700791809
+
+http://185.203.118.101
+
+# Generic
+
+/loader/zWZ2vBo8

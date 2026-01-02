@@ -1,0 +1,51 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2023-11-29-IOCs-for-JinxLoader-to-Formbook-XLoader.txt
+
+http://46.183.221.59
+wgs.com.pk/js/Qvaloe.vdf
+
+# Reference: https://twitter.com/InQuest/status/1730666218363769107
+# Reference: https://www.virustotal.com/gui/file/3e50539c39676aaae9fb7bf9946efd17eadc552d6f919d76eb23e3ba35e003d4/detection
+
+46.183.221.59:1986
+goldenarchme.com
+
+# Reference: https://twitter.com/ViriBack/status/1734058092336148839
+# Reference: https://www.virustotal.com/gui/file/eb084ed44cabbe60ecfcc565813ece7aec29b259d6ba029ee1749d6cd93bbed2/detection
+# Reference: https://www.virustotal.com/gui/file/833b39e5d4b15f65b5a1792038178d6afa3a661c566682274bf1dde5716a4d3f/detection
+# Reference: https://www.virustotal.com/gui/file/db0b9056105ec470e760eb9e9940ad871fdcd321e876dcccae3600d12e8ec38d/detection
+# Reference: https://www.virustotal.com/gui/file/ed04d8ebbc30c39278f1e22d2442853ff704f97f0e494d069034dee2239bc43a/detection
+# Reference: https://www.virustotal.com/gui/file/54cf52a9e70fd4c1451e174e177e1e085849b77ffba2e0949865aa69fc44b141/detection
+
+http://5.188.159.44
+http://51.255.78.213
+essentialdrivers.org
+gitlab.directory
+
+# Reference: https://twitter.com/g0njxa/status/1734136377372012993
+
+http://85.209.176.83
+
+# Reference: https://twitter.com/banthisguy9349/status/1734164621999608219
+
+loremipsum.network
+
+# Reference: https://twitter.com/ULTRAFRAUD/status/1734636248432558583
+
+http://85.209.176.83
+185.186.76.138:8080
+65.108.133.252:8080
+
+# Reference: https://www.virustotal.com/gui/file/89d088ade85ce2f16ae94fb9813f72e6b9cc0fbc0af649673daa698dcfe3491a/detection
+
+91.92.246.52:8585
+
+# Reference: https://threatfox.abuse.ch/browse/tag/JinxLoader/ (# 2024-01-16)
+
+http://185.196.8.93
+http://193.233.132.84
+http://91.92.241.73
+http://91.92.255.42
+185.175.56.193:8080

@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2022/10/11/polonium-targets-israel-creepy-malware/
+# Reference: https://github.com/eset/malware-ioc/tree/master/polonium
+
+http://212.73.150.174
+http://37.120.233.89
+http://45.80.149.71
+http://51.83.246.73
+http://94.156.189.103
+146.70.86.6:1433
+185.203.119.99:8080
+185.244.129.216:5055
+185.244.129.79:63047
+195.166.100.23:5055
+45.137.148.7:2121
+45.80.148.119:8080
+45.80.148.167:21
+45.80.148.167:5055
+45.80.148.186:8080
+45.80.149.108:8080
+45.80.149.154:1302
+45.80.149.154:21
+45.80.149.22:8080
+45.80.149.68:63047
+
+# Reference: https://twitter.com/k3yp0d/status/1658089065885884420
+# Reference: https://www.virustotal.com/gui/file/70e4b5d32abfa9134122ae36ba64d060bc6c1d33fbabcf7869d3df5e337698a4/detection
+# Reference: https://www.virustotal.com/gui/file/a81247a8a16bc1c0077346dacfa005d49f26386381819f3ed8e047b4382668fe/detection
+
+185.244.129.216:8080
+/t2kmBOZdMn/IZJXKKqgAJ?g7Bh7t=
+/t2kmBOZdMn/
+/IZJXKKqgAJ?g7Bh7t=
+/ui/chk?mactok=
+/ui/insrt?mactok=

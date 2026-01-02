@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/ip-address/158.69.201.47/relations
+# Note: curl -I 158.69.201.47 | grep "X-Sinkhole:"
+
+158.69.201.47

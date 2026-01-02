@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/AUZombie/status/19894521518701649971
+# Reference: https://www.virustotal.com/gui/file/2b44eba7f978fd9d9a5ee9e4bd1b398793f10d64d1339c8ae8b2d13bb897ca41/detection
+
+megakalashik.pro

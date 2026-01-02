@@ -1,0 +1,536 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/07/exploit-kits-summer-2019-review/
+# Reference: https://otx.alienvault.com/pulse/5d40766ecabf3f345b3811db
+
+http://212.109.198.22
+
+# Reference: https://twitter.com/VK_Intel/status/1170955066355998721
+
+http://188.225.38.30
+
+# Reference: https://twitter.com/david_jursa/status/1171034657137319936
+
+afgorc.xyz
+djhjqg.xyz
+drtest.xyz
+yjomnb.xyz
+
+# Reference: https://twitter.com/nao_sec/status/1171443035055390722
+
+cuwygawipu.tk
+
+# Reference: https://twitter.com/sans_isc/status/1172383709992931328
+# Reference: https://isc.sans.edu/diary/25318
+
+dhq.xyz
+gtglax.xyz
+mqtryi.xyz
+ootsfq.xyz
+yfmxng.xyz
+
+# Reference: https://twitter.com/nao_sec/status/1173228978997354496
+
+atztds17.world
+
+# Reference: https://twitter.com/tkanalyst/status/1195867354338455552
+# Reference: https://www.virustotal.com/gui/ip-address/94.130.90.228/relations
+
+http://188.225.84.132
+atztds25.world
+
+# Reference: https://twitter.com/BroadAnalysis/status/804164835650965504
+# Reference: https://broadanalysis.com/2016/11/30/rig-exploit-kit-via-the-eitest-delivers-cryptfile2-ransomware/
+
+clickonlaramietoyota.com
+
+# Reference: https://twitter.com/DynamicAnalysis/status/1182015863043567622
+# Reference: https://pastebin.com/dunyKxnG
+
+atztds177.world
+atztds37.world
+atztds775.world
+btcseller.club
+vapeshout.com
+worplace.com
+samsungt.com
+wwwdailyforex.com
+cryptaloot.pro
+go2batch.com
+fceacebook.com
+
+# Reference: https://twitter.com/adrian__luca/status/1148186673739685888
+
+scrappycoco.ru
+
+# Reference: https://twitter.com/tkanalyst/status/1187735439240773632
+
+reversepin.pro
+
+# Reference: https://twitter.com/tkanalyst/status/1188025346009919490
+
+fiestagoal.pro
+hipeoutset.pro
+
+# Reference: https://twitter.com/tkanalyst/status/1189558049901465601
+
+contactfiests.pro
+speakerboxnectar.info
+
+# Reference: https://twitter.com/tkanalyst/status/1193121699002114048
+
+http://173.82.114.254
+raisedsky.info
+trickfiesta.info
+
+# Reference: https://twitter.com/tkanalyst/status/1194648639693451266
+
+http://202.182.121.252
+booblegums.info
+stonefiesta.info
+
+# Reference: https://broadanalysis.com/2019/12/02/rig-exploit-kit-delivers-bot-ransomware/
+# Reference: https://otx.alienvault.com/pulse/5de907a4b04741669d476189
+
+bestwalletapiandroid.world
+lucretius-ada.com
+
+# Reference: https://twitter.com/david_jursa/status/1207613694621999104
+
+lendsblog.com
+atztds702cv.xyz
+
+# Reference: https://twitter.com/tkanalyst/status/1219244505640996864
+
+http://199.247.5.69
+fatykarying.xyz
+fiestalume.info
+
+# Reference: https://twitter.com/FaLconIntel/status/1230488503290449920
+
+tldrbox.top
+
+# Reference: https://twitter.com/FaLconIntel/status/1235580218842083329
+
+fiestagg.info
+morethanyouneed.xyz
+
+# Reference: https://app.any.run/tasks/828e1e86-c4ee-4251-a20d-6aacc6b4b9cf/
+
+http://82.146.46.180
+
+# Reference: https://twitter.com/FaLconIntel/status/1241568444551741441
+# Reference: https://app.any.run/tasks/e074bc0d-7edf-4e58-86ad-f7e3dd8df714/
+
+http://176.57.220.16
+
+# Reference: https://isc.sans.edu/forums/diary/CryptoShield+Ransomware+from+Rig+EK/22047/Hancitor/Pony
+
+need.southpadreforsale.com
+star.southpadrefishingguide.com
+
+# Reference: https://twitter.com/david_jursa/status/1250716073437073409
+
+likeaboss.club
+
+# Reference: https://twitter.com/nao_sec/status/1254025079635075073
+
+http://188.225.27.75
+
+# Reference: https://twitter.com/david_jursa/status/1278665984124039171
+
+meetingzoom.us
+
+# Reference: https://any.run/report/7e447d08da535d1ee4aff7f9b69b0a461c0a7c549c3a2444fc6486687badce45/4e32f20f-1228-4b2d-ae8d-4d472e586d87
+# Reference: https://www.acronis.com/en-us/blog/posts/meet-buran-new-delphi-ransomware-delivered-rig-exploit-kit
+
+makemoneyeasy.live
+http://82.146.63.94
+
+# Reference: https://twitter.com/jeromesegura/status/1286087207829176320
+
+http://142.93.161.173
+
+# Reference: https://twitter.com/nao_sec/status/1286896740822478848
+
+http://185.200.241.78
+slolimoso.space
+
+# Reference: https://twitter.com/MBThreatIntel/status/1289275954896936960
+
+http://185.119.58.181
+
+# Reference: https://twitter.com/nao_sec/status/1294871134001799168
+
+http://185.119.56.54
+
+# Reference: https://blog.malwarebytes.com/social-engineering/2020/09/malvertising-campaigns-come-back-in-full-swing/
+
+http://91.210.171.116
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2016/10/trick-bot-dyrezas-successor/
+# Reference: https://www.virustotal.com/gui/ip-address/162.219.29.77/relations
+
+afanasitrita.top
+azsmistnswezdezake.top
+best4ygottna4er.top
+bestbulikimygottna4er.top
+bestgreenpop4d.top
+bestlipopomulit32seder.top
+bestrkapolik23kalil.top
+bestwezdes2pope.top
+brastikorana.top
+britorikanosa.top
+bulikimygottna4er.top
+buyoasde1ingdse.top
+buyolodes2ingdse.top
+buyoloyogo12dse.top
+doberabokaseno.top
+elrapisokarino.top
+fashionswezdes2pope.top
+granbotakami.top
+herazari.top
+hihuravila.top
+jimantutago.top
+jonsolato.top
+jotutikaruma.top
+kalinpolik23kalil.top
+lipopomulit32seder.top
+losvaretakona.top
+mabestrdayobline2t.top
+masterdayobline2t.top
+mertitakotara.top
+mikalanovane.top
+milorapasata.top
+miropidevata.top
+mistnswezdezake.top
+mmsdrestrdayobline2t.top
+newdeuyogo12dse.top
+odnorkapolik23kalil.top
+opaopomulit32seder.top
+pirasokureta.top
+pirosumona.top
+pitakumata.top
+polikbestgreenpop4d.top
+popnswezdezake.top
+popsasesaesa1sa.top
+popssavestpalika2sed.top
+popstereet32sdre.top
+pritastromana.top
+pritoparivata.top
+rewitakinama.top
+rotukojuto.top
+sanegreenpop4d.top
+sanijokorujama.top
+tederosavito.top
+theasesaada2sae.top
+theasesabebesa2sae.top
+thesaaseazsw21sa.top
+thesaasesaesa1sa.top
+thesabebesa2sae.top
+tinasokapikada.top
+tritakataga.top
+tritoralikasa.top
+trutosakato.top
+vestkazatpalika2sed.top
+vestpalika2sed.top
+vestvavestpalika2sed.top
+vulkane7xoprit.top
+wezdes2pope.top
+
+# Reference: https://twitter.com/EKFiddle/status/1324488758217994241
+
+http://185.150.117.129
+
+# Reference: https://twitter.com/nao_sec/status/1332097156434391040
+
+http://95.216.179.33
+
+# Reference: https://twitter.com/nao_sec/status/1342099082739732480
+
+http://45.14.50.50
+
+# Reference: https://twitter.com/malware_traffic/status/1346307776583262209
+
+http://188.227.84.241
+
+# Reference: https://twitter.com/MalwarePatrol/status/1350111033260695555
+
+http://188.227.106.164
+anklexit.online
+
+# Reference: https://twitter.com/malware_traffic/status/1358878265923014656
+
+http://188.227.57.214
+
+# Reference: https://twitter.com/MBThreatIntel/status/1361824286499950601
+
+http://188.225.75.54
+
+# Reference: https://twitter.com/MBThreatIntel/status/1372674938901909505
+
+myallexit.xyz
+
+# Reference: https://www.bitdefender.com/files/News/CaseStudies/study/397/Bitdefender-PR-Whitepaper-RIG-creat5362-en-EN.pdf
+
+allindelivery.net
+clickadusweep.vip
+testclicktds.xyz
+testtrack.xyz
+zeroexit.xyz
+enter.testclicktds.xyz
+traffic.allindelivery.net
+zero.testtrack.xyz
+
+# Reference: https://twitter.com/nao_sec/status/1403322564580020227
+# Reference: https://twitter.com/david_jursa/status/1403319802161213440
+# Reference: https://app.any.run/tasks/f00d7529-d2b7-4ad8-86ea-3d3bd256d8c3/
+
+http://188.227.107.144
+exitmagall.xyz
+
+# Reference: https://twitter.com/malware_traffic/status/1412128664721014785
+
+http://188.227.84.67
+magicpeoplenew.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1423060348400070661
+
+http://45.138.24.172
+
+# Reference: https://twitter.com/MBThreatIntel/status/1461509514855784449
+
+http://31.44.3.35
+
+# Reference: https://twitter.com/MBThreatIntel/status/1471960582370721793
+
+http://45.138.26.11
+
+# Reference: https://twitter.com/MBThreatIntel/status/1480681882668785665
+
+http://45.138.24.135
+
+# Reference: https://twitter.com/MBThreatIntel/status/1483235125827571715
+
+http://45.138.27.29
+
+# Reference: https://twitter.com/seguridadyredes/status/1493918865209843712
+# Reference: https://systemweakness.com/rig-exploitation-kit-infection-malware-traffic-analysis-70fd1b430fdc
+
+24corp-shop.com
+adultbiz.in
+ciniholland.nl
+trustandprobaterealty.com
+stand.trustandprobaterealty.com
+
+# Reference: https://www.cisa.gov/uscert/ncas/alerts/aa22-055a
+# Reference: https://otx.alienvault.com/pulse/621cf48c69b2caf2c2f4bb3e/
+
+http://185.117.75.34
+
+# Reference: https://twitter.com/MBThreatIntel/status/1483235125827571715
+# Reference: https://blog.malwarebytes.com/threat-intelligence/2022/06/makemoney-malvertising-campaign-adds-fake-update-template/
+
+http://188.227.107.121
+http://188.227.107.92
+adcashtds2.xyz
+adcashtdssystem.site
+adsinside.xyz
+adsterramagic.me
+adstexx.xyz
+allmagnew.xyz
+alltomag.xyz
+an-era.shop
+ankgomag.xyz
+anklexit.online
+ankltrafficexit.xyz
+ankmagicgo.xyz
+blackexit.xyz
+ccgmaining.life
+ccgmaining.live
+ccgmaining.work
+clickadusweep.vip
+clickadusweeps.vip
+clickadutds.xyz
+clicksdeliveryserver.space
+clicktds2.xyz
+cryptomoneyinside.xyz
+cryptomoneyinsider.biz
+cryptomoneyinsider.link
+cryptomoneyinsider.site
+cryptomoneyinsider.work
+cryptomoneyinsiders.com
+cryptomoneyinsiders.site
+cryptomoneyinsiders.work
+cryptomoneytds.xyz
+cryptopaycard.shop
+cryptosuite.pro
+cryptosuitetds.com
+cryptotraffic.vip
+cryptotraffictds.online
+cryptotraffictdss.xyz
+cryptozerotds.xyz
+daiichisankyo-hc.live
+earncryptomoney.info
+exitmagall.xyz
+extradeliverytraffic.com
+extramoneymaker.vip
+familylabs.xyz
+fujimi.fun
+gettime.xyz
+hilldeliveryexit.xyz
+hillex.xyz
+hilllandings.xyz
+hillmag.xyz
+hillmagnew.xyz
+hilltopmagic.xyz
+hilltoptds.xyz
+hilltoptdsserver.xyz
+hilltoptdsservers.fun
+hilltoptrafficdelivery.com
+hilltoptrafficdelivery.xyz
+jillstuart-floranotisjillstu.art
+k-to-kd.me
+keitarotrafficdelivery.com
+keitarotrafficdelivery.xyz
+lahsahal.site
+magcheckall.me
+magicadss.xyz
+magicadsterra.xyz
+magicclickadu.xyz
+magickhill.xyz
+magickpeoplenew.xyz
+magicpopcash.xyz
+magicpropeller.xyz
+magicself.xyz
+magiczero.xyz
+makemoneyeazzywith.me
+makemoneynowwith.me
+makemoneywith.us
+makemoneywithus.work
+mizuno.casa
+money365.xyz
+myallexit.xyz
+myjobsy.com
+nawa-store.com
+newallfrommag.xyz
+newzamenaadc.xyz
+newzamenaclick.xyz
+newzamenaself.xyz
+newzamenazero.xyz
+nippon-mask.site
+northfarmstock.xyz
+offers.myjobsy.com
+offersstudioex.live
+openphoto.xyz
+partners.usemoney.xyz
+prelandingpages.xyz
+promodigital.me
+propellermagic.xyz
+sberbank.hourscareer.com
+sberjob.hourscareer.com
+selfadtracker1.online
+selfadtrackerexit.xyz
+selftraffictds.xyz
+selfyourads.xyz
+shop.mizuno.casa
+supersports.fun
+surprise.yousweeps.vip
+tracker.usemoney.xyz
+traffic.selfadtracker1.online
+traffic.usemoney.xyz
+trafficdeliveryclick.xyz
+trafficdeliveryoffers.com
+trafficdeliverysystem.world
+traffictrackerself.xyz
+tryphoto.xyz
+trytime.xyz
+usehouse.xyz
+usemoney.life
+usemoney.xyz
+ymalljp.com
+yousweeps.vip
+zamenaad.xyz
+zamenaclick.xyz
+zamenahil.xyz
+zamenazer.xyz
+zapasnoiadc.xyz
+zapasnoiclick.xyz
+zapasnoiself.xyz
+zapasnoizero.xyz
+zermag.xyz
+zernewmagcheck.xyz
+zerocryptocard.shop
+zeroexit.xyz
+zerok2exit.xyz
+zeroparktraffic.xyz
+zeroparktrakeroutside.shop
+zerotdspark.space
+zerotracker.shop
+offers.myjobsy.com
+partners.usemoney.xyz
+sberbank.hourscareer.com
+sberjob.hourscareer.com
+shop.mizuno.casa
+surprise.yousweeps.vip
+tracker.usemoney.xyz
+traffic.selfadtracker1.online
+traffic.usemoney.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1545097602235895808
+
+hilwertcrypt.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1546959336953376768
+
+zerwertcrypt.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1555287946940465153
+
+hiendalls.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1567604533458780160
+
+hgoawa.xyz
+
+# Reference: https://twitter.com/MBThreatIntel/status/1573356967627980805
+
+http://45.138.27.78
+
+# Reference: https://twitter.com/BroadAnalysis/status/1630680889771323392
+
+http://188.227.58.76
+
+# Reference: https://www.malware-traffic-analysis.net/2023/03/02/index.html
+
+http://188.227.106.13
+
+# Reference: https://www.prodaft.com/resource/detail/rig-rig-exploit-kit-depth-analysis
+# Reference: https://otx.alienvault.com/pulse/63ff8d8af1fd0864b3f71f96
+
+http://188.227.106.162
+http://188.227.106.81
+http://188.227.106.83
+http://188.227.57.93
+http://188.227.58.144
+http://188.227.58.152
+http://195.16.88.28
+http://45.138.26.51
+http://45.138.26.89
+
+# Reference: https://twitter.com/BroadAnalysis/status/1652320881501167616
+
+http://78.111.88.94
+cryptotdsinc.xyz
+popmag.xyz
+popwertcrypt.xyz
+
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/08/old-exploit-kits-still-kicking-around-in-2023
+
+http://45.138.27.52
+adsgoandway.xyz
+
+# Generic trails
+
+\b(atztds|mtxtds)[0-9a-z]+\.(world|xyz)

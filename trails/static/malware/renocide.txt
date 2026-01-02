@@ -1,0 +1,154 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Worm:AutoIt/Renocide.gen!A&ThreatID=-2147352191
+
+sousi.extasix.com
+zkarmy.dip.jp
+lemox.myhome.cx
+
+# Reference: https://totalhash.cymru.com/analysis/?763294eb5e3292275f068ad4ca537835b780f276
+
+nature.fam.cx
+ru.iozcluster.com
+kiu.akakapatama.com
+
+# Reference: https://totalhash.cymru.com/analysis/?54ec3a95ac14b6e42279df77ea1785219c1b7b66
+
+juiod.or.tp
+malandro.or.tp
+nimrod.iozcluster.com
+
+# Reference: https://totalhash.cymru.com/analysis/?2399cb6bc0fe078a9d8d8696fe1ef0444291f8ba
+
+kiu.akakapatama.com
+pimpumpam.orz.hm
+fly.nom6nom6.com
+
+# Reference: https://totalhash.cymru.com/analysis/?8dd1dafede7c96548c08c6d51c2b864ca6e7b386
+
+rttr.akakapatama.com
+cuack.aferioutyus.com
+iozisu.dip.jp
+
+# Reference: https://totalhash.cymru.com/analysis/?a64dc8dbad3f0aee1f5d02564d667bac2e5cc671
+
+flix.flufi403ss.com
+mosceyxh.dip.jp
+kiu.akakapatama.com
+
+# Reference: https://totalhash.cymru.com/analysis/?537c51d9902a2d0fb430a52e35a42e00f30ca965
+
+kiu.akakapatama.com
+mosceyxh.dip.jp
+flix.flufi403ss.com
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=e7850c4cd7f422fe0f87b1543a38037c
+
+jam.truxiumnow.com
+mouni.orz.hm
+rttr.akakapatama.com
+
+# Reference: https://totalhash.cymru.com/analysis/?6376b8504fbce49a60fc5e581b9c8b9aafb4530e
+
+pimpumpam.orz.hm
+rttr.akakapatama.com
+eiki.pyhkiouty.com
+
+# Reference: https://www.microsoft.com/security/portal/threat/encyclopedia/Entry.aspx?Name=Worm:Win32/Renocide.CF
+
+uda.ghutiesu.com
+saik.dip.jp
+kiu.akakapatama.com
+
+
+# Reference: https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/worm_renocide.ei (mutex: 6E523163793968624)
+#            https://otx.alienvault.com/indicator/file/00cc715d9bf40c0d399e8636fa534cd4fe3ba44afea5847fbfade0141a145ea7/
+
+suse.extasix.com
+ed9101d8.com
+
+# Reference: https://totalhash.cymru.com/analysis/?daa25843288d4d28f03d103dbd80e23d1e11784d
+
+girugiru.or.tp
+malandro.or.tp
+857yut8.ghutiesu.com
+
+# Reference: https://totalhash.cymru.com/analysis/?8dd1dafede7c96548c08c6d51c2b864ca6e7b386
+
+iozisu.dip.jp
+cuack.aferioutyus.com
+rttr.akakapatama.com
+
+# Reference: https://totalhash.cymru.com/analysis/?ec416096fdb79430ca610cfade43438aa5a805db
+
+gomenasai.or.tp
+76yr6s.trompizgerbo.com
+malandro.or.tp
+
+# Reference: https://totalhash.cymru.com/analysis/?08dd8c264d476d9eb0508ca45ee49624400897ba
+
+jam.truxiumnow.com
+rttr.akakapatama.com
+mouni.orz.hm
+
+# Reference: https://totalhash.cymru.com/analysis/?8b294ff0297c588e7460c5238f9c4ee712a46dbb
+
+njght.orz.hm
+huyyrs.dip.jp
+uty.kluenq.com
+
+# Reference: https://totalhash.cymru.com/analysis/?f4f3e2d0b887587b1c2b73ab1518b5a9725b22bb
+
+nimrod.iozcluster.com
+juiod.or.tp
+malandro.or.tp
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2008-102011-5014-99&tabid=2
+
+5eb149c0.com
+76b8ee50.com
+cd4b4b03.com
+cremitysxyu.com
+eyetremputi.com
+igoirusf.com
+toratoraamusi.com
+trompizgerbo.com
+truxiumnow.com
+
+# Reference: https://www.microsoft.com/security/portal/threat/encyclopedia/Entry.aspx?Name=Worm:AutoIt/Utoti.A
+# Reference: https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malicious-url/1395
+
+kasy.myhome.cx
+
+# Reference: http://sysadmins.ru/post8522200.html
+
+a3jhk2.jpn.ph
+fgn.a3jhk2.com
+
+# Reference: https://www.cloudshark.org/captures/76038eaa4a3b?filter=frame%20and%20eth%20and%20ip%20and%20udp%20and%20nbns
+
+a3ax.dip.jp
+sousi.dip.jp
+9dk2.orz.hm
+mexi.orz.hm
+
+# Reference: https://www.hybrid-analysis.com/sample/83ee8db2711034d27629bc99fad4701b477a81647cff29cc22cd09b151fba707?environmentId=100
+
+suse.extasix.com
+kasy.myhome.cx
+5eb149c0.com.cn
+5eb149c0.com
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=b07a502d5324918c699e3273eb65776a
+
+0358c1ad.com
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=75ec5e8d942dd9e9f001eb479a41514b
+
+d01c0a23.com
+
+# Reference: https://totalhash.cymru.com/analysis/?91afae25d0bd466576159fcac0d7bcb67f77aa01
+
+752b36f4.com
+

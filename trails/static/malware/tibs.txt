@@ -1,0 +1,63 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://otx.alienvault.com/pulse/5eda470731c54dfe5afd8e21
+# Reference: https://otx.alienvault.com/pulse/5cc0acf3e2ea558ad30f5fba
+# Reference: https://otx.alienvault.com/pulse/5e3d5ea92991d2507f3db12a
+
+1-extreme.biz
+4softget.com
+873hgf7xx60.com
+a57990057.cn
+aaaholic.com
+aacoast.com
+aaoutfit.com
+abonlinelive.com
+abretor.com
+abtdiagnostic.com
+accrowd.com
+agsubscribe.com
+ahonlinepro.com
+antivir-product.com
+antivir-product.net
+bcdfinder.com
+bestmanage.org
+bigshoeart.com
+cacrazy.com
+cashdeluxe.net
+cbphase.com
+cfcharm.com
+daletter.com
+duidrive.net
+game4all.biz
+greatinstant.net
+greatstylegift.com
+houserockart.com
+iframebiz.biz
+iframesite.biz
+iframeurl.biz
+installstorm.com
+settopworld.net
+soenkewahlers.de
+stereoartstudio.com
+sum4count.net
+toolbarbest.biz
+toolbarbiz.biz
+toolbarbucks.biz
+toolbardollars.biz
+toolbarmoney.biz
+toolbarnew.biz
+toolbarsale.biz
+toolbarurl.biz
+toolbarweb.biz
+traff4all.biz
+traffall.biz
+traffbest.biz
+traffbucks.biz
+traffdollars.biz
+traffmoney.biz
+traffmoney1.biz
+traffnew1.biz
+traffsale1.biz
+uniq-soft.com
+uniqcount.net

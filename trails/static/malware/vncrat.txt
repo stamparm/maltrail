@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: Generic trail for unclassified VNC-using RATs
+
+# Reference: https://x.com/malwrhunterteam/status/1833950448010621187
+# Reference: https://www.virustotal.com/gui/file/2a89e5d06b1d2b4a9c95c33443e10ba17891c7a99130c73c96bfa5df56393a5d/detection
+# Reference: https://www.virustotal.com/gui/file/df2ad041e020eeb7ae3483bda42799958a3dae719347afd8dc3b4949e2fa0fe9/detection
+
+212.162.151.147:5500
+wethemboyz.click
+mywecam.onthewifi.com

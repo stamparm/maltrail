@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2021/06/necro-python-bot-adds-new-tricks.html
+# Reference: https://twitter.com/051R15/status/1391573504290480128
+# Reference: https://twitter.com/xuy1202/status/1392089568384454657
+# Reference: https://twitter.com/xuy1202/status/1393384128456794116
+
+3og7wipgh3ruavi7gd6y3uzhcurazasln55hb6hboiavyk6pugkcdpqd.onion
+bp65pce2vsk7wpvy2fyehel25ovw4v7nve3lknwzta7gtiuy6jm7l4yd.onion.ws
+o4hlcckwlbcy7qhhohqswpqla6wx7c5xmsvk3k4rohknng4nofvgz5id.onion
+p2l44qilgm433bad5gbszb4mluxuejwkjaaon767m5dzuuc7mjqhcead.onion
+can6dodp.servepics.com
+ngiwge486ln9daoo.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/5266d0b4470a4d81e89e96388e5e583972ec7e2af77f4a153ab593fc2005a00d/detection
+
+lgjfdjlgjlvaf.hopto.org
+
+# Reference: https://twitter.com/xuy1202/status/1396728000222220288
+
+dui25pvlzkfzpkkc.cab
+dui25pvlzkfzpkkc.link
+dui25pvlzkfzpkkc.onion
+dui25pvlzkfzpkkc.pet
+dui25pvlzkfzpkkc.ws
+
+# Reference: https://twitter.com/xuy1202/status/1398251387629182984
+
+dui25pvlzkfzpkkc.onion.ws
+dui25pvlzkfzpkkc.onion.link
+dui25pvlzkfzpkkc.onion.cab
+dui25pvlzkfzpkkc.onion.pet

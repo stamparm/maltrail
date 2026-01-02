@@ -1,0 +1,50 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/abuse_ch/status/1141702499889553409
+
+47.96.84.138:80
+47.96.84.138:14578
+47.96.84.138:17450
+159.138.42.77:65535
+
+# Reference: https://twitter.com/James_inthe_box/status/1153385401278771201
+
+5.253.86.183:80
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2017/2017-06-16-mcafee-discovers-pinkslipbot-exploiting-infected-machines-as-control-servers-releases-free-tool-to-detect-disable-trojan/mcafee-discovers-pinkslipbot-exploiting-infected-machines-as-control-servers-releases-free-tool-to-detect-disable-trojan.csv
+
+/gwsup
+
+# Reference: https://blog.avast.com/fakecrack-campaign
+# Reference: https://otx.alienvault.com/pulse/62a084ef849cd814d827fb91
+
+104.155.207.188:8183
+
+# Reference: https://twitter.com/James_inthe_box/status/1575214817559793664
+
+34.80.59.191:8183
+
+# Reference: https://twitter.com/sicehice/status/1737327687037825220
+
+104.194.79.234:1081
+199.195.250.133:8000
+
+# Reference: https://twitter.com/luc4m/status/1639690470807810048
+
+34.80.59.91:8183
+
+# Reference: https://www.virustotal.com/gui/domain/dayzddos.co/relations
+
+dayzddos.co
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-03-26-v10560/1508
+
+asocks.com
+broxy.one
+
+# Reference: https://www.malware-traffic-analysis.net/2025/06/26/index.html
+# Reference: https://www.virustotal.com/gui/file/cdfa264eeb65a8b3ea2e49b248c7cb689899d3f9da2483d293365fdf1912313e/detection
+
+144.172.112.32:16443
+metallurgify.com

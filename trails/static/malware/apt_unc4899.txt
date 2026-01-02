@@ -1,0 +1,45 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: JumpCloud
+
+# Reference: https://twitter.com/blackorbird/status/1683742730617499650
+# Reference: https://www.sentinelone.com/labs/jumpcloud-intrusion-attacker-infrastructure-links-compromise-to-north-korean-apt-activity/
+
+alwaysckain.com
+canolagroove.com
+centos-pkg.org
+centos-repos.org
+datadog-cloud.com
+datadog-graph.com
+launchruse.com
+nomadpkg.com
+nomadpkgs.com
+primerosauxiliosperu.com
+reggedrobin.com
+toyourownbeat.com
+zscaler-api.org
+
+# Reference: https://www.mandiant.com/resources/blog/north-korea-supply-chain
+
+basketsalute.com
+contortonset.com
+prontoposer.com
+relysudden.com
+rentedpushy.com
+
+# Reference: https://twitter.com/ThreatBookLabs/status/1686582979563581440
+
+alwaysswarm.com
+sizzlesierra.com
+sweptshut.com
+
+# Reference: https://www.sentinelone.com/labs/comrades-in-arms-north-korea-compromises-sanctioned-russian-missile-engineering-company/
+
+redhat-packages.com
+centos-packages.com
+dallynk.com
+yolenny.com
+606qipai.com
+asplinc.com
+bsef.or.kr

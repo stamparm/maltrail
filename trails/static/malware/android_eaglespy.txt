@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/D3LabIT/status/1830892153758773731
+# Reference: https://www.d3lab.net/nuova-campagna-di-phishing-diffonde-malware-android-eaglespy/
+# Reference: https://www.virustotal.com/gui/file/7fbc2288f4cb082ac5276badad0b9336ee45276da143ab3a82c0e3ff5464e701/detection
+# Reference: https://www.virustotal.com/gui/file/abf68625e9563a5ce654342236af8107d9fd1eebd0fbbb8642d547a0187f2d12/detection
+# Reference: https://www.virustotal.com/gui/file/c8b221f74b253866e16f3e08d1fb38999130da1e6dd4e7dcaec5007a5da00632/detection
+
+185.112.83.153:7770
+185.112.83.153:7771
+safe-pancake.aeza.network
+
+# Reference: https://x.com/Fact_Finder03/status/1958787973169701239
+
+eagle-spy.com
+eaglespy.org
+eaglespy.shop

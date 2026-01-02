@@ -1,0 +1,78 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://gi7w0rm.medium.com/dynamicrat-a-full-fledged-java-rat-1a2dabb11694
+# Reference: https://github.com/Gi7w0rm/MalwareConfigLists/blob/main/DynamicRAT/IoC.txt
+# Reference: https://www.virustotal.com/gui/ip-address/178.18.255.246/detection
+# Reference: https://www.virustotal.com/gui/file/0cbc40baea499758a01ad897cfc6beb54dc1cbbad56eedcf5197f42a141c0188/detection
+# Reference: https://www.virustotal.com/gui/file/30787ef4c9be53e9f4caea0517e36b76a2e6aeddbeee1f5f5110c49518594020/detection
+# Reference: https://www.virustotal.com/gui/file/35ed386b65b34d4fd2369039c916bacddafd7d1af5e5eb9fdc62a34a9ccd4dc0/detection
+
+178.18.255.246:24464
+178.18.255.246:443
+giulianilex.com
+masfokmhg.web.app
+ountains.web.app
+sacomu.web.app
+smionsa.web.app
+
+# Reference: https://www.virustotal.com/gui/file/83cf9fb418ead6b97f8bcaea08a824ab312c47471cc2134b15aeb977fd7671a1/detection
+
+http://165.227.171.56
+165.227.171.56:19357
+165.227.171.56:24464
+165.227.171.56:24467
+russia-games.eu
+dynamic.russia-games.eu
+lille.russia-games.eu
+
+# Reference: https://www.virustotal.com/gui/file/2bce884652dc57673fb9e91b1f34f2d042cc85e803ab970d711fedaf73a5c897/detection
+# Reference: https://www.virustotal.com/gui/file/857048a8de80d814cf961c0a4b19c3ca7a688f404bfd9abcdd5bdabeb314c56c/detection
+# Reference: https://www.virustotal.com/gui/file/c634b9e27c0e2d08728c29dc038acca7042bfbefbbd30d2134e260c117748b6c/detection
+# Reference: https://www.virustotal.com/gui/file/d406c59e00743ec6b0510e5396640ffec5f172f0c4c642ba630a5ba7364856b5/detection
+
+193.142.146.220:24464
+193.142.146.220:9098
+
+# Reference: https://www.virustotal.com/gui/file/9055f4dd85136e6b051569b8f7d039117af487e8ebba78fc484e4256b79746b7/detection
+# Reference: https://www.virustotal.com/gui/file/693684406dd4102f97af2cf276fcee80f85182b589281edd53c1da2570346364/detection
+# Reference: https://www.virustotal.com/gui/file/51023526da90e068469593de68a439be2c4f239c59f7f0314ef10825d079e8fc/detection
+# Reference: https://www.virustotal.com/gui/file/3eb419b3c1993a4027c88b2c7758067fe9040173782e00c8a94e7d3b7c6b9fab/detection
+
+185.250.37.168:24464
+
+# Reference: https://www.virustotal.com/gui/file/83113087e77d0a6bceeec33e6d043838e8f2bc5d0cc722e937b160ad0a1e9c79/detection
+
+185.250.37.168:443
+
+# Reference: https://twitter.com/suyog41/status/1673351344642568193
+# Reference: https://www.virustotal.com/gui/file/c65c347ce9c62b8765831f0deb11be08eb8818c036587c1a2b0da2dab7aa5d7a/detection
+
+185.196.220.62:8080
+
+# Reference: https://twitter.com/Gi7w0rm/status/1673382718405484558
+# Reference: https://github.com/executemalware/Malware-IOCs/blob/main/2023-06-20%20Unknown%20Java%20Stealer%20IOCs
+
+193.142.146.220:2244
+
+# Reference: https://twitter.com/suyog41/status/1785943391374635154
+# Reference: https://www.virustotal.com/gui/file/ec5f6ff0fb6fbef44f59c12d6519cc59298127ce8dda49172ea76ab005aaa6ed/detection
+# Reference: https://www.virustotal.com/gui/file/ff6e806cccfd7f25a0e50982618134ed9829df4968329b5b58e005bf94833e43/detection
+# Reference: https://www.virustotal.com/gui/file/c964db7720dc9f429605db83fa92f015f0e31b51e733d239ebbee7337d5e882e/detection
+# Reference: https://www.virustotal.com/gui/file/afcbfc0cef8ec00205acf53d35286d5ab92c6a751e367bc0ed9747236cc47911/detection
+# Reference: https://www.virustotal.com/gui/file/7c19b02c2228cbc877b533db18cc4e108d2c95120014d59f226c28367c0c2859/detection
+# Reference: https://www.virustotal.com/gui/file/3a653b522d298cee099e6c1e7e161e52e7086a3075f33dfeef5ece769160dc31/detection
+# Reference: https://www.virustotal.com/gui/file/029dbafecb48f12325bfe7b96a475cb1c3a2615538b4f96bd4dbff573ac31d75/detection
+
+194.140.198.234:4040
+194.140.198.234:5550
+194.140.198.234:9090
+194.140.198.234:9091
+194.140.198.234:9992
+194.140.198.234:9993
+194.140.198.234:9994
+
+# Reference: https://x.com/suyog41/status/1805131027754434977
+# Reference: https://www.virustotal.com/gui/file/eef2472919964f84935c72e311fb335f855b7fc29c46531861b629c13094c5f6/detection
+
+79.244.69.177:5600

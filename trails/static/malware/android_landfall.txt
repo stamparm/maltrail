@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://unit42.paloaltonetworks.com/landfall-is-new-commercial-grade-android-spyware/
+
+http://45.155.250.158
+http://46.246.28.75
+45.155.250.158:443
+46.246.28.75:443
+91.132.92.35:22398
+92.243.65.240:22387
+brightvideodesigns.com
+healthyeatingontherun.com
+hotelsitereview.com
+projectmanagerskills.com

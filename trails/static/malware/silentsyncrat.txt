@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zscaler.com/blogs/security-research/malicious-pypi-packages-deliver-silentsync-rat
+# Reference: https://www.virustotal.com/gui/file/bbe8f3e78ca09b8deb0d476d45bedc2aa1401916e5de20819d9e745e2b7d3ab0/detection
+
+200.58.107.25:2104
+200.58.107.25:3000
+200.58.107.25:5000

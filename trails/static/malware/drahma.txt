@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: crisys, drahma
+
+# Reference: https://twitter.com/raby_mr/status/1206474609349971968
+# Reference: https://app.any.run/tasks/00542878-ae54-415d-b09b-cf1e88878299/
+
+zombietry4o3nzeh.onion

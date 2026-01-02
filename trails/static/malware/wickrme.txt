@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: hello ransomware
+
+# Reference: https://www.trendmicro.com/en_us/research/21/d/hello-ransomware-uses-updated-china-chopper-web-shell-sharepoint-vulnerability.html
+# Reference: https://otx.alienvault.com/pulse/609c1efba8300701e03c2784
+
+http://138.124.180.182
+micron.xxuz.com
+microsofts.dnsrd.com
+vlad-cdn.com

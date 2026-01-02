@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://intel471.com/blog/blankbot-a-new-android-banking-trojan-with-screen-recording-keylogging-and-remote-control-capabilities
+# Reference: https://www.virustotal.com/gui/file/fc5099e5be818f8268327aaf190cd07b4b4ebb04e9d63eefa5a04ea504f93d62/detection
+# Reference: https://www.virustotal.com/gui/file/11751c6aa3e5c44c92765876bc9cd46da90f466b9924b9b1993fa1c91157681d/detection
+# Reference: https://www.virustotal.com/gui/file/d163cc15a39fb36391bd67f6eaada6691f0c7bc75fc80282a4a258244163e12a/detection
+# Reference: https://www.virustotal.com/gui/file/b4b4b195e14e9fda5a6d890ddb57f93ef81d6d9a976078354450ee45d18c89e3/detection
+# Reference: https://www.virustotal.com/gui/file/8d6ca64e4c3c19587405e19d53d0e2f4d52b77f927621d4178a3f7c2bf50c2ea/detection
+# Reference: https://www.virustotal.com/gui/file/6681b0613fc6d5a3e1132f7499380eb9db52b03ab429f0c2109a641c9a2ea4d3/detection
+# Reference: https://www.virustotal.com/gui/file/1ceb26919abd7aae545faf123ec888032bf56999e2c143b720dfc8669f5420a5/detection
+
+185.255.92.185:8080
+79.133.41.52:8080

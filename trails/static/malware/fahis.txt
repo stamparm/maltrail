@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.linkedin.com/posts/kaushik%7Epal_c2-activity-7398663882388627456-3rzX
+# TITLE-IP=FAHIS-1 C2 - Command & Control
+
+192.169.7.221:5000
+ms-drivers.cam
+microsoft.ms-drivers.cam

@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: glove stealer
+
+# Reference: https://www.gendigital.com/blog/news/innovation/glove-stealer
+# Reference: https://www.virustotal.com/gui/file/56da496329d54587c31119d8878a7831a9814a92839aa6a9873ceeb91575b11a/detection
+
+hdsjfkgsadoghdsiougds.space
+volt-texs.online
+master.hdsjfkgsadoghdsiougds.space
+master.volt-texs.online
+
+# Generic
+
+/api/c4shlp3l
+/c4shlp3l

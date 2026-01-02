@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2020/06/higaisa/
+# Reference: https://otx.alienvault.com/pulse/5eda8caf8ef3aa0d8d0b8030
+# Reference: https://www.virustotal.com/gui/file/df999d24bde96decdbb65287ca0986db98f73b4ed477e18c3ef100064bceba6d/detection
+
+45.76.6.149:443
+comcleanner.info
+goodhk.azurewebsites.net
+sixindent.epizy.com
+zeplin.atwebpages.com
+
+# Reference: https://x.com/StrikeReadyLabs/status/1825885062186860714
+# Reference: https://x.com/VirITeXplorer/status/1835667782853140788
+# Reference: https://x.com/TuringAlex/status/1937442563285508449
+# Reference: https://www.tgsoft.it/news/news_archivio.asp?id=1568&lang=eng
+# Reference: https://github.com/StrikeReady-Inc/samples/blob/main/2024-08-20%20VN%20Oil%26Gas%20MSC/urls.txt
+# Reference: https://www.virustotal.com/gui/file/f1d519f43c36e24a89b351f00059a1bdb9afc2a339f7301117babb484e2cc555/detection
+# Reference: https://www.virustotal.com/gui/file/1e6c661d6981c0fa56c011c29536e57d21545fd11205eddf9218269ddf53d448/detection
+# Reference: https://www.virustotal.com/gui/file/9b73cd0be50e457d9355b702d8b6df09b77a1c92bd70bbdcb538d87eccf6eef0/detection
+
+http://152.42.226.161
+s2cloud-amazon.com
+api.s2cloud-amazon.com
+app-dimensiona.s3.sa-east-1.amazonaws.com
+bjj-files-production.s3.sa-east-1.amazonaws.com
+footracker-statics.s3.sa-east-1.amazonaws.com
+p-game.s3.sa-east-1.amazonaws.com
+speedshare.oss-cn-hongkong.aliyuncs.com
+xianggang000.oss-cn-hongkong.aliyuncs.com
+yitoo.oss-cn-hongkong.aliyuncs.com

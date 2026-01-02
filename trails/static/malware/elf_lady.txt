@@ -1,0 +1,28 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/bad_packets/status/1127450801834680320
+# Reference: https://www.virustotal.com/gui/file/b272c388844ece14a72458f5ee11f78aaa172dfec5cdffb3d8ed8cd84e3a736b/detection
+
+/ddgs.i686
+/ddgs.x86_64
+
+# Reference: https://twitter.com/JiaYu_521/status/1204248344043778048
+# Reference: https://otx.alienvault.com/pulse/5df15842e8b180c11b68d90e
+
+103.219.112.66:8000
+157.230.48.123:8000
+
+# Reference: https://s.tencent.com/research/report/948.html
+# Reference: https://otx.alienvault.com/pulse/5e863edb03f9ddbc8bc15b60
+
+http://61.129.51.79
+http://47.94.153.241
+http://47.101.35.209
+67.205.168.20:8000
+trumpzwlvlyrvlss.onion
+
+# Reference: https://blog.netlab.360.com/ddg-upgrade-to-new-p2p-hybrid-model/
+# Reference: https://otx.alienvault.com/pulse/5e8dfe6abd200e104b7cd7bb
+
+kez.tirueg.com

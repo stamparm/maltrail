@@ -1,0 +1,100 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: hemigate, trillclient, zingdoor, krustyloader
+
+# Reference: https://www.trendmicro.com/en_us/research/23/h/earth-estries-targets-government-tech-for-cyberespionage.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/23/h/earth-estries-targets-government-tech-for-cyberespionage/IOCs-earth-estries-targets-government-tech-for-cyberespionage.txt
+
+http://96.44.160.181
+103.159.133.205:443
+anynucleus.com
+dns2021.net
+jptomorrow.com
+jttoday.net
+keyplancorp.com
+linkaircdn.com
+lyncidc.com
+microware-help.com
+mncdntech.com
+oxcdntech.com
+publicdnsau.com
+rthtrade.com
+rtsafetech.com
+rtsoftcorp.com
+rtwebmaster.com
+substantialeconomy.com
+trhammer.com
+vultr-dns.com
+z7-tech.com
+access.trhammer.com
+cdn-6dd0035.oxcdntech.com
+cdn-7a3d.vultr-dns.com
+cdn728a66b0.smartlinkcorp.net
+cloudlibraries.global.ssl.fastly.net
+east.smartpisang.com
+ms101.cloudshappen.com
+nx2.microware-help.com
+shinas.global.ssl.fastly.net
+web9a78bc52.trhammer.com
+zmailssl3.global.ssl.fastly.net
+
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/24/k/earth-estries/IOC_list-EarthEstries.txt
+
+materialplies.com
+news.colourtinctem.com
+api.solveblemten.com
+esh.hoovernamosong.com
+vpn114240349.softether.net
+imap.dateupdata.com
+pulseathermakf.com
+infraredsen.com
+billing.clothworls.com
+helpdesk.stnekpro.com
+jasmine.lhousewares.com
+private.royalnas.com
+telcom.grishamarkovgf8936.workers.dev
+vpn305783366.softether.net
+vpn487875652.softether.net
+vpn943823465.softether.net
+
+# Reference: https://x.com/tdatwja/status/1873363875363688459
+# Reference: https://khonggianmang.vn/uploads/1_20241120_CV_APT_EARTHESTRIES_ce3a8ed572.PDF
+
+awsdns531.com
+officesanalytics.com
+c11r.awsdns531.com
+cas04.awsdns531.com
+cdn181.awsdns531.com
+credits.officesanalytics.com
+globalnetzone.bcdn.net
+llnw-dd.awsdns531.com
+resource.officesanalytics.com
+services.officesanalytics.com
+soffice.officesanalytics.com
+
+# Reference: https://www.synacktiv.com/publications/krustyloader-rust-malware-linked-to-ivanti-connectsecure-compromises
+# Reference: https://github.com/synacktiv/krustyloader-analysis
+
+farstream.org
+sysupdates.org
+2261992.s3.amazonaws.com
+acapros-app.s3-us-west-2.amazonaws.com
+ahha-asset.s3.ap-northeast-2.amazonaws.com
+api.farstream.org
+bbr-promo.s3.amazonaws.com
+be-at-home.s3.ap-northeast-2.amazonaws.com
+beansdeals-static.s3.amazonaws.com
+bigtimeassets.s3.amazonaws.com
+blog-app-system2.s3.amazonaws.com
+breaknlinks.s3.amazonaws.com
+check.sysupdates.org
+music.farstream.org
+ntp.sysupdates.org
+update.sysupdates.org
+video.farstream.org
+
+# Reference: https://www.security.com/threat-intelligence/toolshell-china-zingdoor
+
+kia-almotores.s3.amazonaws.com
+omnileadzdev.s3.amazonaws.com

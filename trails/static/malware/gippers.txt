@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trendmicro.tw/vinfo/us/threat-encyclopedia/malware/troj_gippers.a
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/C2~Gippers-A.aspx
+# Reference: https://www.virustotal.com/gui/file/80d87d1d216ecca078d27725656e34e72d254155020c98566ba8ab38db869c05/detection
+# Reference: https://www.virustotal.com/gui/domain/microsoft.mypicture.info/relations
+
+microsoft.mypicture.info

@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/malpulse/status/2000668698588201021
+# Reference: https://securelist.com/frogblight-banker/118440/
+# Reference: https://www.virustotal.com/gui/file/49adb773cbf33df4b4cb19b2751767161c9c6a43b78b6386f1b3969485693c2f/detection
+# Reference: https://www.virustotal.com/gui/file/0faf206c9018dff04885f2d88053735a7f2b64789292ad5a3ab0a9a47a77f260/detection
+# Reference: https://www.virustotal.com/gui/file/1cb8c7d8f9cd030553023cb05d57095b2a516f786a0601af577177aa68a406fc/detection
+# Reference: https://www.virustotal.com/gui/file/0ebac21f450785766437e4e5dcda121817b198786876744a52cba0627babd1a9/detection
+# BANNER_0_HASH-HOST=78fcc006d31b096e3e4b5074c19d58ec
+# TITLE-HOST/IP=Giriş — FROG Panel
+# TITLE-HOST/IP=FrogV2 - Device Management Panel
+
+45.138.16.208:8080
+form-space.org
+froglive.net
+redirect-workspace.com
+1249124fr1241og5121.sa.com
+farketmez28.duckdns.org
+
+# Generic
+
+/eraykarakaya0020/e-ifade-vercel
+/eraykarakaya0020/

@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: agfSpy, dneSpy, SLUB
+
+# Reference: https://www.trendmicro.com/en_us/research/20/j/operation-earth-kitsune-a-dance-of-two-new-backdoors.html
+# Reference: https://otx.alienvault.com/pulse/5f9992f3779702e42ddbdbcb
+# Reference: https://www.virustotal.com/gui/file/15d80e616b6b5fec3cfa0eeed5ac9037f34c4547ae27f5dfcaa5475501de4b95/detection
+# Reference: https://www.virustotal.com/gui/file/8304fcccaf18546caf94851c63dc8293eaf8de575ab442d4419aa9ed29ea8614/detection
+# Reference: https://www.virustotal.com/gui/file/f28876a7f162ff9cdd608f07ee45f8e9211da4304b3602152d0386ceeac82442/detection
+
+193.142.59.196:8081
+agf.zapto.org
+rs.myftp.biz
+selectorioi.ddns.net
+whoami2.ddns.net
+whoamimaster.ddns.net
+
+# Reference: https://www.trendmicro.com/en_us/research/23/b/earth-kitsune-delivers-new-whiskerspy-backdoor.html
+# Reference: https://otx.alienvault.com/pulse/63f39aecc4c6685175da5a49
+
+londoncity.hopto.org
+microsoftwindow.sytes.net
+updategoogle.servehttp.com

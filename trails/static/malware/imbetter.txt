@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/1ZRR4H/status/1633519085588815898
+# Reference: https://blog.cyble.com/2023/03/06/imbetter-new-information-stealer-spotted-targeting-cryptocurrency-users/
+# Reference: https://otx.alienvault.com/pulse/6408b92d87ffef744421620c
+
+http://103.174.103.56
+http://212.113.119.11
+http://212.113.119.127
+http://45.138.74.50
+http://85.192.63.32
+softeforyou.fun
+
+# Reference: https://twitter.com/bridewellsec/status/1631349963840970757
+# Reference: https://twitter.com/josh_penny/status/1633570434410065927
+# Reference: https://www.bridewell.com/insights/blogs/detail/threat-advisory-bridewell-malware-impersonating-online-tools-and-video-games
+# Reference: https://storage.pardot.com/838563/1677778600sCkbvnKT/Threat_Advisory_Bridewell_Sounds_the_Alarm_on_New_I_m_Better_Malware_I.pdf
+
+http://185.169.155.14
+http://185.254.37.122
+http://188.34.200.59
+http://195.133.40.3
+http://45.138.74.170
+http://45.138.74.204
+http://77.91.78.232
+currenyc-crypto.loan
+
+# Reference: https://twitter.com/0xrb/status/1633720528711331840
+
+http://212.113.106.195
+http://79.137.203.89
+http://86.105.252.128

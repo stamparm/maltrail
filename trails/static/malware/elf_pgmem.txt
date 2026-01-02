@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: JINX-0126
+
+# Reference: https://www.aquasec.com/blog/pg_mem-a-malware-hidden-in-the-postgres-processes/
+
+128.199.77.96:3232
+
+# Reference: https://www.wiz.io/blog/postgresql-cryptomining
+
+159.223.123.175:36287
+
+# Generic
+
+/dqQkiJwLFH
+/KfLhjeXuQc

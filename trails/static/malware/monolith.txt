@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: monolith stealer
+
+# Reference: https://x.com/solostalking/status/1886845682830729321
+
+195.88.218.77:9999
+
+# Reference: https://x.com/solostalking/status/1887362769219117183
+
+73.192.73.7:9999
+
+# Reference: https://x.com/skocherhan/status/1891058288957001956
+# Reference: https://app.validin.com/detail?find=Monolith%20-%20Private%20Stealer&type=raw&ref_id=fd434e8ba45#tab=host_pairs
+
+monolith.icu

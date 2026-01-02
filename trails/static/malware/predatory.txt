@@ -1,0 +1,2182 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: predator
+
+# Note: Team of Predator The Thief started to sell the new stealer "Taurus Project" -- https://twitter.com/3xp0rtblog/status/1254079067810336768
+
+# Reference: https://securelist.com/a-predatory-tale/89779/
+
+15charliescene15.myjino.ru
+axixaxaxu1337.us
+j946104.myjino.ru
+kristihack46.myjino.ru
+madoko.jhfree.net
+predatortop.xyz
+
+# Reference: https://twitter.com/malwrhunterteam/status/1111232628429078528
+
+saflot.com
+
+# Reference: https://twitter.com/ViriBack/status/1127406253888688128
+
+yaebalnah.tk
+
+# Reference: http://tracker.viriback.com/
+
+maugli8990.jhfree.net
+
+# Reference: https://twitter.com/nullcookies/status/1142152106675249152
+
+phonebookbase.com
+
+# Reference: https://twitter.com/nullcookies/status/1143665142896312320
+
+sslsecure.host
+
+# Reference: https://twitter.com/P3pperP0tts/status/1144512219192930304
+
+exobit.info
+
+# Reference: https://twitter.com/x42x5a/status/1148705602136420352
+
+j902757.myjino.ru
+
+# Reference: https://twitter.com/nao_sec/status/1148921796697051137
+# Reference: https://app.any.run/tasks/e5542610-5e5f-44c2-b3a9-6fcce651265a/
+
+http://209.97.168.79
+
+# Reference: https://twitter.com/P3pperP0tts/status/1150366481563160576
+
+hostss.mcdir.ru
+hostss2.mcdir.ru
+
+# Reference: https://twitter.com/malware_traffic/status/1154153340143636481
+
+http://92.63.192.142
+
+# Reference: https://twitter.com/P3pperP0tts/status/1160527641839112192
+
+bartsimpson.cash
+
+# Reference: https://twitter.com/benkow_/status/1160903620189184001
+
+http://109.94.110.157
+http://139.180.223.36
+http://165.22.186.154
+http://178.157.82.106
+http://178.62.188.204
+http://178.62.189.114
+http://178.62.191.13
+http://18.22.227.101
+http://18.222.210.14
+http://18.225.10.183
+http://185.146.156.38
+http://185.206.144.170
+http://185.206.147.170
+http://185.254.11.126
+http://185.254.121.141
+http://185.4.186.39
+http://185.60.133.242
+http://192.81.220.183
+http://193.124.117.116
+http://193.37.212.107
+http://2.56.214.102
+http://213.159.209.1
+http://31.184.197.158
+http://37.139.2.42
+http://37.19.193.213
+http://45.10.219.17
+http://46.101.160.184
+http://46.249.62.207
+http://5.196.214.131
+http://51.15.228.96
+http://77.83.173.97
+http://79.124.8.105
+http://81.177.180.205
+http://82.196.1.19
+http://82.196.9.220
+http://82.202.163.189
+http://83.220.174.244
+http://92.63.192.144
+
+# Reference: https://twitter.com/malware_traffic/status/1166838031556517888
+# Reference: https://www.virustotal.com/gui/file/ab9d492b71cb61129034b94296ae0e1bec9d2d12477c236e51ba6be372c33c15/detection
+# Reference: https://app.any.run/tasks/2141fadd-0379-404f-b8e1-917035910c4b/
+
+http://176.121.14.128
+
+# Reference: https://twitter.com/nao_sec/status/1171443035055390722
+
+amasingrow.space
+
+# Reference: https://twitter.com/david_jursa/status/1174357514223333380
+# Reference: https://app.any.run/tasks/e7bbf211-2ec7-411c-8a75-85ba41be28bc/
+# Reference: https://www.virustotal.com/gui/domain/digalitol.fun/relations
+# Reference: https://www.virustotal.com/gui/file/45ae50074dd5098b3e0fa4f71dc5dd02818d66c8f160f0749ce14d831593a825/detection
+
+digalitol.fun
+
+# Reference: https://twitter.com/CyberSecIntel1/status/1174774514011578369
+# Reference: https://app.any.run/tasks/a4205337-1835-4883-9fa8-c8697abb0271/
+
+bigdatacorp5.info
+pori89g5jqo3v8.com
+
+# Reference: https://twitter.com/pancak3lullz/status/1175075421177688064
+
+allpaysru.top
+hgkhjguruytruyts2543.info
+informdatagroup.info
+
+# Reference: https://twitter.com/pancak3lullz/status/1175080757007663112
+
+hgdhgfd253.space
+rasavagulle.site
+
+# Reference: https://twitter.com/P3pperP0tts/status/1177147328630861824
+
+jokertor.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1180124151320698880
+# Reference: https://app.any.run/tasks/3ab547c6-d615-46f4-8a96-94ba4458d48f/
+
+forrf0410.info
+
+# Reference: https://twitter.com/P3pperP0tts/status/1182624311431122946
+
+1loveyous.com
+
+# Reference: https://twitter.com/P3pperP0tts/status/1182624739778617346
+
+http://178.157.91.128
+
+# Reference: https://twitter.com/iocsvault/status/1176142679887044608
+
+http://178.62.187.173
+http://198.211.123.63
+http://31.184.196.206
+http://31.184.197.158
+http://31.184.197.226
+http://45.12.212.118
+http://51.15.232.242
+http://51.15.238.82
+http://95.215.205.56
+bkwriting.com
+chsiqp1337.siteme.org
+f0325989.xsph.ru
+f0328788.xsph.ru
+f0334493.xsph.ru
+f0335294.xsph.ru
+ihorluhor.site
+jokertor.com
+manillarout.com
+mygamerun.info
+newsjonhforyou.info
+testingservice1337.ru
+u4642627gu.ha003.t.justns.ru
+u50801ck.beget.tech
+w68426zc.bget.ru
+gey.co.nu
+
+# Reference: https://app.any.run/tasks/2c1d5942-b788-4316-952b-320f61494fd2/
+
+dadvexmail19mn.world
+
+# Reference: https://app.any.run/tasks/52656d24-b866-416c-b703-ee0fae0e3f78/
+
+fsdstat14tp.world
+
+# Reference: https://twitter.com/Paladin3161/status/1184444960684179458
+
+fmailserv19fd.world
+fsdstat14tp.world
+
+# Reference: https://twitter.com/tkanalyst/status/1184655705103634435
+# Reference: https://app.any.run/tasks/20218f80-9838-41f4-b6d6-7dbbcd60107a/
+
+134.0.119.53:8080
+
+# Reference: https://app.any.run/tasks/498a43e4-05fe-4413-afc2-842aa4d6764d/
+
+csdstat14tp.club
+
+# Reference: https://app.any.run/tasks/80750e99-21d6-4fd4-b245-0312fa3908ab/
+
+45.12.32.252:8080
+
+# Reference: https://twitter.com/P3pperP0tts/status/1185948204183048193
+
+http://51.254.175.185
+
+# Reference: https://twitter.com/P3pperP0tts/status/1188573760309399552
+
+http://213.252.246.227
+
+# Reference: https://app.any.run/tasks/08b002ed-3098-483f-b1d3-5169bd84bae1/
+
+donkixota.com
+jokertor.com
+
+# Reference: https://twitter.com/P3pperP0tts/status/1190723628452712451
+
+http://45.147.229.129
+
+# Reference: http://tracker.viriback.com/dump.php (# 2019-11-04, Predator)
+
+http://104.140.100.17
+http://139.99.165.3
+http://151.106.56.197
+http://162.213.250.245
+http://176.123.10.225
+http://178.157.91.128
+http://178.62.184.138
+http://178.62.184.38
+http://178.62.186.104
+http://178.62.186.72
+http://178.62.187.173
+http://178.62.188.192
+http://18.222.227.101
+http://185.101.94.211
+http://185.101.94.85
+http://185.14.186.129
+http://185.14.186.39
+http://185.238.0.33
+http://185.251.38.114
+http://185.251.38.186
+http://185.254.121.141
+http://185.254.121.243
+http://185.254.121.46
+http://185.254.121.55
+http://188.93.211.116
+http://190.97.167.122
+http://192.227.133.39
+http://192.81.220.183
+http://193.124.177.7
+http://195.123.209.80
+http://2.56.213.96
+http://31.184.197.115
+http://34.90.58.168
+http://35.245.208.94
+http://37.139.0.169
+http://37.19.192.128
+http://37.19.192.233
+http://37.19.192.234
+http://37.19.192.56
+http://37.19.193.213
+http://45.139.236.10
+http://45.139.236.63
+http://45.139.236.8
+http://45.147.229.129
+http://45.66.10.177
+http://45.66.9.135
+http://46.105.35.22
+http://46.166.176.231
+http://5.196.214.131
+http://5.8.88.211
+http://5.8.88.64
+http://63.250.34.112
+http://81.177.180.205
+http://81.177.181.154
+http://81.177.26.48
+http://82.118.21.26
+http://91.121.244.95
+http://91.134.17.203
+http://92.63.192.148
+http://92.63.197.172
+http://92.63.197.173
+http://93.95.97.162
+http://94.103.86.174
+http://94.103.9.155
+http://94.156.189.21
+http://94.250.250.206
+http://95.81.0.90
+http://95.81.1.50
+a0308837.xsph.ru
+a0312215.xsph.ru
+a0313517.xsph.ru
+a0313585.xsph.ru
+a0313594.xsph.ru
+android-power.space
+azazaza.zzz.com.ua
+bkwriting.com
+btcinvest.company
+dadafa.zzz.com.ua
+dd00nnzkndd.net
+dds.zzz.com.ua
+delediqv.beget.tech
+dewabitsoftware.com
+ecommerceweb.info
+f0261452.xsph.ru
+f0298833.xsph.ru
+f0301646.xsph.ru
+f0303372.xsph.ru
+f0303955.xsph.ru
+f0305836.xsph.ru
+f0307667.xsph.ru
+f0308034.xsph.ru
+f0309520.xsph.ru
+f0310816.xsph.ru
+f0311807.xsph.ru
+f0312177.xsph.ru
+f0312394.xsph.ru
+f0312923.xsph.ru
+f0313363.xsph.ru
+f0313565.xsph.ru
+f0313598.xsph.ru
+f0313709.xsph.ru
+f0314815.xsph.ru
+f0315145.xsph.ru
+f0316238.xsph.ru
+f0325469.xsph.ru
+f0325989.xsph.ru
+f0328788.xsph.ru
+f0330869.xsph.ru
+f0332771.xsph.ru
+f0334126.xsph.ru
+f0334493.xsph.ru
+f0335294.xsph.ru
+f0335981.xsph.ru
+f0336067.xsph.ru
+f0336825.xsph.ru
+f0336944.xsph.ru
+f0337960.xsph.ru
+f0337965.xsph.ru
+f0339905.xsph.ru
+f0341944.xsph.ru
+f0342518.xsph.ru
+f0343767.xsph.ru
+f0344006.xsph.ru
+f0344058.xsph.ru
+f0345047.xsph.ru
+f0345542.xsph.ru
+f0346049.xsph.ru
+f0346167.xsph.ru
+f0346274.xsph.ru
+f0346860.xsph.ru
+f0346875.xsph.ru
+f0347514.xsph.ru
+f0347879.xsph.ru
+f0347997.xsph.ru
+f0348663.xsph.ru
+f0349356.xsph.ru
+f0349361.xsph.ru
+f0349365.xsph.ru
+f0350124.xsph.ru
+f0351562.xsph.ru
+fightwithcapitalism.com
+gbuzr.info
+gey.co.nu
+ghost2go.icu
+h141748.s26.test-hf.su
+hypotherma.world
+ilmirkooo.tk
+jokertor.com
+kkkk.zzz.com.ua
+l.paquetesbestday.ecommerceweb.info
+l04070c0.justinstalledpanel.com
+l2e84637.justinstalledpanel.com
+l93b3638.justinstalledpanel.com
+lbc9d7ca.justinstalledpanel.com
+lernsehen.rocks
+lesfrection.zzz.com.ua
+lf7e27d8.justinstalledpanel.com
+log.dogepay.info
+logs.dogepay.info
+loxx.zzz.com.ua
+mail03.rhbhv.com
+maugli8990.jhfree.net
+my.dogepay.info
+noobyot.zzz.com.ua
+noteboockfix993.info
+osvaldoprotv.x10host.com
+pluzhnikov.com
+pskateboard.space
+pubengine.com
+pupkin.zzz.com.ua
+pw.coinpool.fun
+qe.zzz.com.ua
+s0wo2a82mz217.zzz.com.ua
+saflot.com
+samp-cash.ru
+samp03.zzz.com.ua
+sdstat597tp.world
+serawledindustries.com
+silvatech-staff.net
+simplestorikoste.com
+smbc-cn.com
+speedtransaction.com
+ssdclearlogs.kl.com.ua
+tinor.zzz.com.ua
+toonightly.zzz.com.ua
+tupafleks.zzz.com.ua
+u4461223c9.ha003.t.justns.ru
+u4642627gu.ha003.t.justns.ru
+u92905m0.beget.tech
+varietyawidefaster.pw
+vladimir-str.kl.com.ua
+volkovalenka738.myjino.ru
+websitename.pw
+xairooo.gq
+z999723i.beget.tech
+zoshclain.store
+
+# Reference: https://twitter.com/P3pperP0tts/status/1178818361943302145
+
+mondaylaptop24.info
+
+# Reference: https://twitter.com/0xFrost/status/1193994103928901632
+
+http://198.199.124.10
+
+# Reference: https://app.any.run/tasks/8f2f5795-4a55-4215-9331-7bf72834ff27/
+
+k95363qy.beget.tech
+
+# Reference: https://twitter.com/tkanalyst/status/1195867354338455552
+
+http://212.73.150.115
+
+# Reference: https://twitter.com/P3pperP0tts/status/1196477956501200897
+
+custsupport1000.com
+
+# Reference: https://twitter.com/James_inthe_box/status/1196469024814587904
+
+basketr.site
+
+# Reference: https://twitter.com/James_inthe_box/status/1196471733961641984
+
+cb32807.tmweb.ru
+
+# Reference: https://app.any.run/tasks/2ad09cea-5616-4f88-b285-6620804b1efd/
+
+basketr.site
+
+# Reference: https://twitter.com/JayTHL/status/1196916402927611905
+
+vochspak.su
+
+# Reference: https://twitter.com/MBThreatIntel/status/1199852167730851840
+
+jojwqr.xyz
+
+# Reference: https://any.run/malware-trends/predator (Note: as seen on 2019-12-04)
+
+constructioninc.zzz.com.ua
+56c8.zzz.com.ua
+kapkin2121.zzz.com.ua
+influg.zzz.com.ua
+steller2020.zzz.com.ua
+fsdf.ga
+awt.zzz.com.ua
+coockie.cf
+dedicate.ml
+stean.zzz.com.ua
+rotkit.tk
+socengi.tk
+nervozn.tk
+imsorrytest.zzz.com.ua
+c3ntral.kl.com.ua
+oboldenniy.zzz.com.ua
+snif-kz.kl.com.ua
+base.zzz.com.ua
+
+# Reference: https://twitter.com/James_inthe_box/status/1206615954198683648
+
+checksme.info
+greatsme.info
+
+# Reference: https://twitter.com/James_inthe_box/status/1208057953158197250
+
+grsme.info
+yoursmb.info
+
+# Reference: https://app.any.run/tasks/231af24e-0b76-4162-afcd-5c58b87c2772/
+
+http://51.38.140.5
+
+# Reference: https://twitter.com/Jouliok/status/1214451326551306240
+
+andrescrove.com
+
+# Reference: https://app.any.run/tasks/e4b9e806-d7ca-41d3-bf40-6e19b92a61c0/
+
+http://155.94.210.97
+
+# intitle:"Predator The Thief — Нативный стиллер с большим функционалом / Лучшая цена"
+
+snowpower.xyz
+getbitcoincampaign.com
+w68426zc.bget.ru
+childrnafrica.com
+liddlaymai.xyz
+vkonttakte.com
+predatel.top
+allahggdrop.xyz
+6fy7tg8y96f87tr.xyz
+resecpovak.com
+brave-software.info
+
+# Reference: https://twitter.com/James_inthe_box/status/1215342381232340992
+
+wangg-bg.site
+
+# Reference: https://app.any.run/tasks/af177398-af12-48ea-baa4-b1a4b611fb98/
+
+hammm.mcdir.ru
+
+# Reference: https://www.virustotal.com/gui/file/73e180287ba1f0a312fa5efc3595173912e32f2e9d606fb2ed78d161d4757ad2/detection
+
+http://5.182.210.246
+
+# Reference: https://twitter.com/_lockhum/status/1220565268017053696
+# Reference: https://www.virustotal.com/gui/ip-address/92.63.197.238/relations
+
+92.63.197.238:80
+abantra.info
+avatory.xyz
+barnote-bg.site
+barnote.site
+basketr.site
+bradgog.site
+checksme.info
+coinbase-promo.info
+coinbase-us1.info
+colfev12.site
+color34.site
+corp1.site
+corp2.site
+corp3.site
+corp4.site
+createsme.info
+daqrey-bg.site
+daqrey.site
+greatsme.info
+grsme.info
+kiototan-bg.site
+kiototan.site
+kvene1z.info
+lansome-bg.site
+lansome.site
+moiseww.info
+nesderx.site
+satrenb.site
+stranskl.site
+tar039tir.info
+testing-bg.site
+testing0.site
+tretthing-bg.site
+tretthing.site
+ttrrbaz.site
+wangg-bg.site
+wangg.site
+wasqana.site
+xavnost55.site
+yestroy-bg.site
+yestroy.site
+yoursmb.info
+zerbof.site
+zetthing-bg.site
+zetthing.site
+
+# Reference: https://www.virustotal.com/gui/file/5d652e35141d129a7504d164d7b4a4a3682f5196c760c315f089970da3aa81d6/detection
+
+newgtldsx1000.net
+yourprodx1000.net
+
+# Reference: https://www.virustotal.com/gui/file/9a1aeb86be5537da5e64caa78fa06d9e0d264dbc895f128e260f8c4f9f8ce9fd/detection
+
+topxsupportx.net
+
+# Reference: https://twitter.com/_lockhum/status/1221136628627931138
+
+104.168.99.170:80
+
+# Reference: https://www.virustotal.com/gui/file/2d6a2c49521f3dbfc9a6b9e128443b9c053d6593aa856ead2e2b8a4ea97ad029/detection
+
+2511463.top
+3435gfdsgsh34525vfdsgrdsg45235.xyz
+jertamsak.xyz
+
+# Reference: https://twitter.com/_lockhum/status/1221416142666944512
+
+111.90.157.12:80
+
+# Reference: https://twitter.com/_lockhum/status/1222149017657921538
+
+5.188.60.102:80
+
+# Reference: https://twitter.com/P3pperP0tts/status/1222504945204781056
+
+1win-pro.com
+cpadeer.com
+
+# Reference: https://twitter.com/turduckencat/status/1222938447817715714
+
+bubble2-bg.site
+
+# Reference: https://twitter.com/_antoniopirozzi/status/1223373301168340992
+
+j1040794.myjino.ru
+lucasik.tk
+
+# Reference: https://www.virustotal.com/gui/domain/ssxxzzz443.myjino.ru/relations
+
+ssxxzzz443.myjino.ru
+
+# Reference: https://www.virustotal.com/gui/domain/panelsstea.myjino.ru/relations
+
+panelsstea.myjino.ru
+
+# Reference: https://twitter.com/_lockhum/status/1223573274635927554
+
+chasiin.com
+
+# Reference: https://www.virustotal.com/gui/domain/mailadvert2551sz44.club/relations
+
+mailadvert2551sz44.club
+
+# Reference: https://twitter.com/_lockhum/status/1224056591152046082
+
+mrfixit.xyz
+
+# Reference: https://twitter.com/0xCARNAGE/status/1224137428275007488
+# Reference: https://app.any.run/tasks/21779415-089a-43cf-a99d-3a58bb88e184/
+
+daqrey-bg.site
+
+# Reference: https://app.any.run/tasks/63e6c3bc-15f2-4f35-b2db-50e67497d5d7/
+
+http://185.48.183.14
+
+# Reference: https://twitter.com/MBThreatIntel/status/1224783266688851968
+
+http://45.145.0.14
+
+# Reference: https://twitter.com/_lockhum/status/1226568758451372032
+
+j97463d7.beget.tech
+
+# Reference: https://www.virustotal.com/gui/domain/t917659s.beget.tech/relations
+
+t917659s.beget.tech
+
+# Reference: https://research.checkpoint.com/2020/predator-the-thief/
+
+15charliescene15.myjino.ru
+axixaxaxu1337.us
+btcinvest.company
+denbaliberdin.myjino.ru
+haijiangfriut.com
+j946104.myjino.ru
+kent-adam.myjino.ru
+kristihack46.myjino.ru
+madoko.jhfree.net
+sayhello.host
+u96191l2.beget.tech
+
+# Reference: https://www.virustotal.com/gui/ip-address/92.63.192.216/relations
+# Reference: https://app.any.run/tasks/e15f1e77-1804-44c5-aa61-96bbb590c86d/
+# Reference: https://twitter.com/killamjr/status/1228805026442665984
+
+92.63.192.216:80
+atest001.site
+neoneo.site
+neoneo-bg.site
+transcot.site
+transcot-bg.site
+
+# Reference: https://twitter.com/_lockhum/status/1228027229382356993
+
+iesque.com
+
+# Reference: https://twitter.com/_lockhum/status/1228773015502098436
+
+antonlapin81.myjino.ru
+
+# Reference: https://twitter.com/_lockhum/status/1229474439852707840
+
+mirovayatech.pk
+
+# Reference: https://www.virustotal.com/gui/file/9ac1be1a3555d940f63bf7c59711dae4ba32e6304f9490c2534b56db9f27a892/detection
+
+cp03107.tmweb.ru
+j1019553.myjino.ru
+
+# Reference: https://twitter.com/_lockhum/status/1229860590648254464
+
+smineolo39wings.in
+
+# Reference: http://tracker.viriback.com/dump.php (# snapshot 2020-02-23)
+
+2511463.top
+3435gfdsgsh34525vfdsgrdsg45235.xyz
+6fy7tg8y96f87tr.xyz
+6.zzz.com.ua
+agannochka228.siteme.org
+akres.rossokhin.siteme.org
+android-power.space
+antonlapin81.myjino.ru
+avada-kedavra.pw
+azazaza.zzz.com.ua
+bkwriting.com
+btcinvest.company
+bubble2.site
+by-matrakx.myjino.ru
+candy-room.ru
+chasiin.com
+checksme.info
+coinbase-promo.info
+comrade8.hk
+corp1.site
+corp2.site
+crown1.zzz.com.ua
+dadafa.zzz.com.ua
+darkloader.xyz
+dd00nnzkndd.net
+dds.zzz.com.ua
+delediqv.beget.tech
+deniska4091.offhst.ru
+dewabitsoftware.com
+djakwi0129121ksls1229.com
+domainmanagerz.net
+dqweewq.club
+ecommerceweb.info
+ef2e00ed.ngrok.io
+fabianoernesto100.siteme.org
+fightwithcapitalism.com
+forestrunamp.pw
+fort-nite-86.myjino.ru
+galijdanova.myjino.ru
+gamersxpro.net
+gbuzr.info
+geardox.site
+gerko.zzz.com.ua
+gey.co.nu
+ghost2go.icu
+glenios.club
+grassi009.myjino.ru
+grubyy1999.siteme.org
+guilty.zzz.com.ua
+h141748.s26.test-hf.su
+hamenergy.top
+hammm.mcdir.ru
+homeporno228.com
+hypotherma.world
+iesque.com
+ihorluhor.site
+ildar-mael-ru.myjino.ru
+ilmirkooo.tk
+j1040794.myjino.ru
+j1043204.myjino.ru
+j97463d7.beget.tech
+jertamsak.xyz
+jokertor.com
+justwer.site
+kaimakov123.siteme.org
+karraty.club
+kartaviyargus.zzz.com.ua
+kathbowling.ru
+kayblayhost.zzz.com.ua
+kingsman.zzz.com.ua
+kiototan.site
+kkkk.zzz.com.ua
+kovaliownik.siteme.org
+krestovskiy.nik.siteme.org
+kvark1905.siteme.org
+kvene1z.info
+l.paquetesbestday.ecommerceweb.info
+l04070c0.justinstalledpanel.com
+l17cce3a.justinstalledpanel.com
+l276eb20.justinstalledpanel.com
+l2e84637.justinstalledpanel.com
+l93b3638.justinstalledpanel.com
+lansome.site
+lbc9d7ca.justinstalledpanel.com
+lernsehen.rocks
+lesfrection.zzz.com.ua
+lf7e27d8.justinstalledpanel.com
+lkuszdhw.com
+log.dogepay.info
+logs-samp.xyz
+logs.dogepay.info
+loxx.zzz.com.ua
+lucasik.tk
+mail03.rhbhv.com
+margaery.club
+mastreb.site
+maugli8990.jhfree.net
+mine.kommanditgesel.icu
+mirovayatech.pk
+mrfixit.xyz
+my.dogepay.info
+mylovelyrose.info
+neoneo.site
+nesderx.site
+nestealler.kl.com.ua
+nikitakoteqka1.myjino.ru
+noobyot.zzz.com.ua
+noteboockfix993.info
+oocats.ru
+osvaldoprotv.x10host.com
+partnercoin.ml
+pluzhnikov.com
+pnumbrero3.ru
+pom4ekk.myjino.ru
+porno322.com
+pskateboard.space
+pubengine.com
+pupkin.zzz.com.ua
+pw.coinpool.fun
+qaqaqat.online
+qe.zzz.com.ua
+rfrnfrnj.hk
+s0wo2a82mz217.zzz.com.ua
+saflot.com
+samp-cash.ru
+samp03.zzz.com.ua
+sdstat597tp.world
+serawledindustries.com
+serverupp.club
+sevenapp.info
+silvatech-staff.net
+simplestorikoste.com
+sisadmin.zzz.com.ua
+smbc-cn.com
+smineolo39wings.in
+snowpower.xyz
+speedtransaction.com
+sqqwer.ru
+ssdclearlogs.kl.com.ua
+ssgcvb3435fsdgdfg5656sdfgsdfsdf.xyz
+startmoney.beget.tech
+steallog.tk
+steam-calculator.ru
+stillerayefarty.zzz.com.ua
+testing0.site
+tinor.zzz.com.ua
+toonightly.zzz.com.ua
+topsstore.site
+transcot.site
+trotdeiman.ga
+tupafleks.zzz.com.ua
+u4461223c9.ha003.t.justns.ru
+u4642627gu.ha003.t.justns.ru
+u555182sy8.ha003.t.justns.ru
+u6020431xa.ha003.t.justns.ru
+u92905m0.beget.tech
+updat.kommanditgesel.icu
+vaiscot.site
+varietyawidefaster.pw
+vlad-sosun.siteme.org
+vladimir-str.kl.com.ua
+vlojr.pw
+volkovalenka738.myjino.ru
+vps2365.webkevlar.net
+websitename.pw
+wergi.xyz
+willspaks.su
+wof78.site
+wqdtf54y6eu7i87t.ga
+xairooo.gq
+yoursmb.info
+z999723i.beget.tech
+zanlma.com
+zetthing.site
+zoshclain.store
+
+# Reference: https://app.any.run/tasks/b47f6b49-3817-4647-8f0a-506124526ee3/
+
+f0405566.xsph.ru
+
+# Reference: http://tracker.viriback.com/dump.php (2020-02-29, Predator)
+
+http://104.140.100.17/login
+http://104.149.216.48/login
+http://104.168.99.170/login
+http://104.238.173.124/login
+http://109.234.35.128/login
+http://109.234.39.207/login
+http://139.99.165.3/login
+http://149.28.121.130/login
+http://151.106.56.197/login
+http://155.94.210.84/login
+http://155.94.210.97/login
+http://161.129.65.180/login
+http://161.129.65.210/login
+http://161.129.65.92/login
+http://162.213.250.245/login
+http://172.105.58.163/login
+http://176.123.10.225/login
+http://176.53.162.98/login
+http://178.157.91.128/login
+http://178.62.184.138/login
+http://178.62.184.38/login
+http://178.62.186.104/login
+http://178.62.186.72/login
+http://178.62.187.173/login
+http://178.62.188.192/login
+http://178.62.188.204/login
+http://18.222.227.101/login
+http://185.101.94.211/login
+http://185.101.94.85/login
+http://185.132.53.138/login
+http://185.136.169.150/login
+http://185.14.186.129/login
+http://185.14.186.39/login
+http://185.219.81.127/login
+http://185.222.202.35/login
+http://185.231.71.17/login
+http://185.238.0.33/login
+http://185.248.102.242/login
+http://185.251.38.114/login
+http://185.251.38.186/login
+http://185.254.121.141/login
+http://185.254.121.243/login
+http://185.254.121.254/login
+http://185.254.121.46/login
+http://185.254.121.47/login
+http://185.254.121.55/login
+http://185.254.121.75/login
+http://185.254.188.76/login
+http://185.48.183.14/login
+http://188.225.85.87/login
+http://188.93.211.116/login
+http://190.14.38.100/login
+http://190.14.38.2/login
+http://190.97.167.122/login
+http://192.227.133.39/login
+http://192.81.220.183/login
+http://193.124.177.7/login
+http://193.19.118.145/login
+http://194.15.36.14/login
+http://195.123.209.80/login
+http://2.56.213.96/login
+http://2.59.42.194/login
+http://217.8.117.49/login
+http://31.184.196.237/login
+http://31.184.197.115/login
+http://31.184.197.219/login
+http://34.90.58.168/login
+http://35.245.208.94/login
+http://37.139.0.169/login
+http://37.19.192.128/login
+http://37.19.192.132/login
+http://37.19.192.147/login
+http://37.19.192.232/login
+http://37.19.192.233/login
+http://37.19.192.234/login
+http://37.19.192.56/login
+http://37.19.193.213/login
+http://45.139.236.10/login
+http://45.139.236.63/login
+http://45.139.236.64/login
+http://45.139.236.8/login
+http://45.141.86.44/login
+http://45.145.0.12/login
+http://45.147.229.129/login
+http://45.147.230.39/login
+http://45.66.10.177/login
+http://45.66.9.135/login
+http://46.105.35.22/login
+http://46.166.176.231/login
+http://46.17.96.3/login
+http://5.188.60.23/login
+http://5.188.60.62/login
+http://5.196.214.131/login
+http://5.8.88.211/login
+http://5.8.88.64/login
+http://51.15.194.141/login
+http://51.15.232.120/login
+http://63.250.34.112/login
+http://64.188.13.21/login
+http://66.11.124.208/login
+http://81.177.180.205/login
+http://81.177.181.154/login
+http://81.177.26.48/login
+http://82.118.21.26/login
+http://82.118.23.46/login
+http://89.105.202.94/login
+http://91.121.244.95/login
+http://91.134.17.203/login
+http://91.228.152.159/login
+http://92.53.107.201/login
+http://92.63.192.148/login
+http://92.63.192.234/login
+http://92.63.197.172/login
+http://92.63.197.173/login
+http://92.63.98.119/login
+http://93.95.97.162/login
+http://94.103.86.174/login
+http://94.103.9.155/login
+http://94.156.189.21/login
+http://94.250.250.206/login
+http://95.181.179.100/login
+http://95.215.205.56/login
+http://95.216.150.82/login
+http://95.81.0.90/login
+http://95.81.1.50/login
+
+# Reference: https://twitter.com/nullcookies/status/1115006946216747008
+
+lolkek.club
+
+# Reference: https://twitter.com/James_inthe_box/status/1114879968452829187
+
+http://141.105.68.131
+
+# Reference: https://twitter.com/MSteve25/status/1235240346516369409
+
+corp5.site
+
+# Reference: https://twitter.com/OttoScav/status/1235253153416835072
+
+http://35.205.213.237
+hrcorp1.site
+
+# Reference: https://app.any.run/tasks/c85eaa46-07df-4afe-a525-914d50ae164b/
+
+zixrk.site
+
+# Reference: https://twitter.com/_lockhum/status/1236565680385908736
+
+dreamkey.ru
+
+# Reference: https://www.virustotal.com/gui/ip-address/81.177.135.163/relations
+
+action-ground-51.myjino.ru
+could-chest-89.myjino.ru
+j1041747.myjino.ru
+
+# Reference: https://twitter.com/500mk500/status/1237402626532278275
+
+paskelupins.online
+
+# Reference: https://twitter.com/_lockhum/status/1239266255976247298
+
+zixrk.site
+
+# Reference: https://twitter.com/_lockhum/status/1239266945322684417
+
+nikitakoteqka1.myjino.ru
+
+# Reference: https://www.virustotal.com/gui/file/e3e6a99d5e9a85691e5338cb0401fc15fcbf50918d98e75e4cce587375fd79b1/detection
+
+obstratorvv.pw
+wid.badseek.com
+
+# Reference: https://twitter.com/_lockhum/status/1244017882683629569
+
+xenicolnc.space
+
+# Reference: https://www.virustotal.com/gui/domain/predatorwar.org/relations
+
+predatorwar.org
+
+# Reference: https://twitter.com/_lockhum/status/1244675508790591489
+
+satano.hostingem.ru
+
+# Reference: https://www.virustotal.com/gui/domain/fitoldday.site/relations
+# Reference: https://www.virustotal.com/gui/file/e60b0b0e57ca395709aeae6016e39f4114c84272e32cf040f5d972372f212f08/detection
+
+fitoldday.site
+
+# Reference: https://www.virustotal.com/gui/ip-address/145.239.23.7/relations
+
+vidar321.ru
+
+# Reference: https://app.any.run/tasks/582b81e4-57ad-4f74-becd-537f5f9c6c36/
+
+f0426035.xsph.ru
+
+# Reference: https://app.any.run/tasks/539a78ec-6088-4427-8ed6-b6d751ca6b19/
+
+a0403782.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/ip-address/217.8.117.35/relations
+
+http://217.8.117.35
+alanadating-a.pro
+alanadating-a.xyz
+alanadating-b.pro
+comeondating.pro
+forsometests.pro
+gloriadating-a.com
+gloriadating-a.pro
+gloriadating-b.pro
+gloriajeans-a.pro
+greetingsfromjamaica.pro
+heymisterwassup.pro
+iknowyouarehere.pro
+janinedating-a.com
+jannadating-b.pro
+jasminedate-b.pro
+jasminedating-a.xyz
+jeansdating-a.com
+jeniadating-a.pro
+jollydating-a.xyz
+prettygirls-a.xyz
+prettywomen-a.xyz
+
+# Reference: https://app.any.run/tasks/da618cd9-76ba-4b6b-b22e-dd3012b82669/
+
+a0400511.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/c773bb63460b30568bf6f20ab3cfe349f43f7ddd30846b797c5186deaf483739/behavior/VirusTotal%20Jujubox
+
+a0416367.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/5059b32dd9ca626730e5b191faae335c5c858fe0b365f3842e6cf3e995ad2ca9/behavior/VMRay
+
+a0418902.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/9c12bf28e69cda574a4e1712f7587e7f809cb87a511d988bbb073751be069ee9/detection
+
+olive2020.space
+rds2020.info
+
+# Reference: https://www.virustotal.com/gui/file/7b23592af3e84b93d199fb34eac0de7ed4ffd279d5fa831d4dd191b326744aa1/detection
+
+rds2020.space
+
+# Reference: https://pastebin.com/Hc73BzJT
+
+akashi1.zzz.com.ua
+productiondelphi.minehosting.xyz
+sokolovigor-97.myjino.ru
+
+# Reference: https://www.virustotal.com/gui/file/e8654b6d61f7d2ca43327f540a8cdf1610f5abf121865e0bcfdb9b0694353beb/detection
+
+a0410717.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/134adb392f3d6603f4e09ee5876515439d3fe44e9ed67f686f9b55975f03893c/detection
+
+a0411453.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/f9e6385aceb742d89071f365b6274377481c7e068c7adc50722448d8e54ab2a1/detection
+
+a0411821.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/5cb813cf80fb5d1c82299085a13f5c6d081def943c1a6c7efd99e16ad829d035/detection
+
+a0420267.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/154c8f1c3e4a37954da0712b4e1781d8175bea515aa388e96ddd6cdf5d989ca8/detection
+
+a0414744.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/a0ac1a13ea954a41e5731e035a10e5504a85836f2ee6f1c7fc7f3ab82b326feb/detection
+
+a0411209.xsph.ru
+
+# Reference: https://app.any.run/tasks/d9f51586-bdd9-49ec-8161-1864c3e8ad3b/
+
+cloacakoshki.myjino.ru
+
+# Reference: https://www.virustotal.com/gui/file/b43c299e09fca8431a847b9304b5ef5e85d7f28b4cacc91829edf4e9505c08ec/detection
+
+sadikov20166.myjino.ru
+
+# Reference: https://www.virustotal.com/gui/file/d8f9afb95c780c3673cf3ef4b9fa00531bdfc6dff4c84c70d64830a2fabce29c/detection
+
+f0381956.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/c60aef3e1a21ef93be0aae02374e4453a1b3a7e7241ea1e0b313951d033f0a06/detection
+
+w91926dc.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/ed25f740ed49ca013750a2b8d1cf1654c7603594eb0288ec785591b323e498be/detection
+
+x92522i5.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/3234ac20327c8f7bf6a09d13ccd4d09e8a02e5f17863ca3fe4f56ea56836e6e8/detection
+
+q74722vp.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/1af637cfcf9e606a63ac7fe166ce37d58617272bb2b9cfa91eafb9092105ee7a/detection
+
+q93124au.beget.tech
+
+# Reference: https://app.any.run/tasks/ea358853-27cd-49ce-b88b-3110c077a370/
+
+patreniaspeaks.com/fafa.gif
+111.90.149.143/cfg/
+111.90.149.143/dlls/
+111.90.149.143/log/
+
+# Reference: https://www.virustotal.com/gui/file/ab20e3479b43bc1815533992673d57b9688225ea611138f3ed455e46ebfa373c/detection
+
+sh1011619.had.su
+
+# Reference: https://www.virustotal.com/gui/file/3729f700009fbb9c0e8b973ca1c7c7986ac9f2b0352e53045a5962789f40f2c5/detection
+
+sh1074496.a.had.su
+
+# Reference: https://www.virustotal.com/gui/ip-address/8.208.78.114/relations
+
+dantero.ug
+tatvanto.ug
+vungto.ug
+
+# Reference: https://www.virustotal.com/gui/file/bff06818dd74bc161f445eade94b36ef0b5a19106c8a03033af599b846f50070/detection
+
+king-win.ru
+
+# Reference: https://www.virustotal.com/gui/file/54e30bc94aa5c057a950c47e28e8029af8567fa05b308c20ebd3853d84a11624/detection
+
+j1119081.myjino.ru
+
+# Reference: https://urlscan.io/result/3a401d5b-6274-4054-b563-27f76edbb0b1/
+# Reference: https://app.any.run/tasks/437b5bcb-6d45-40a6-9112-704aab01dd43/
+
+j1128723.myjino.ru
+
+# Reference: https://www.virustotal.com/gui/file/4e70233cfd97d0964cce3fde68d65d492e99e68e7587be1b80c70bd24f1ac951/detection
+
+f0301336.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/7134660e538c186847b39239db97acc16f6ebb0f6e5e6db8a8bfbc745a1be8ff/detection
+
+f0395086.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/07cda8fd287e149b195db70692870bf4d8ba988980060c4071a5aa9466b97604/detection
+
+a0446499.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/3487e3f25eb4cd19dc8f2bd024538131a2a0594e05e8e2bdedeebb5bb6073b4e/detection
+
+a0480986.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/8367cd6e21778f38ed15a956ac5ad36d464bc6684748f3cf9dfc3df691beeea3/detection
+
+f0424167.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/e08cf1af97ad8ad0126ff1152b58ec472a287054b0c0fd42631f684b21347db9/detection
+
+f0463846.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/48dd0ff9cbcca03ff1457c3077fbba54d7f1d149a486810ae0ab5e8258dd6334/detection
+
+startprojekt.xyz
+
+# Reference: https://www.virustotal.com/gui/file/3bfc2572f160fbaf81c4f831002bb16becb5ebc6c07cd337da2f101506ac86ab/detection
+
+9290106034.myjino.ru
+
+# Reference: https://www.virustotal.com/gui/ip-address/188.225.58.174/relations
+
+paysend.host
+paysend.press
+paysend.site
+paysend.vip
+
+# Reference: https://www.virustotal.com/gui/file/55b3a01d38ddca0c4794c5e98c4e7af0e90aa8a1d2345926717a1380ec8ce0d6/detection
+
+f0321448.xsph.ru
+
+# Reference: https://otx.alienvault.com/pulse/602fa9752fdcec52151e7c23
+
+wupd443.ax.lt
+
+# Reference: https://www.virustotal.com/gui/file/d0eafaf5ead88ede3928bca96c3bd676957d402246dbe63901f7f94a6919d174/detection
+
+http://185.212.47.95/sxxx777/api.php
+
+# Reference: https://twitter.com/3xp0rtblog/status/1367947082238205958
+# Reference: https://www.virustotal.com/gui/file/615805a74271a2b3718a9fc11cdf18ac9de300a16a8bf65e6c61fe9edca2763c/detection
+# Reference: https://www.virustotal.com/gui/file/d3cf923219247f7936a96f671eef187e2daeff38018c7546b3677a64bcc98b10/detection
+
+ifreegive.cf
+
+# Reference: https://www.virustotal.com/gui/file/50b79c710b9d1804abc46d3270ca8499fe46d77f8e4c58ca1a1c88a976f07a45/detection
+
+f0427701.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/b5b0593780ce7bcb4cdd8b26e02ed6b202d26e237ef716c905ca2ced2797926f/detection
+
+f0437552.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/f2d50c1bd8e87871243f19b5a40bd05c6a91683d4a2f3acb23b78fb503da1d66/detection
+
+f0441961.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/05475fe51de87538f94e1e19f1196d91c947ce7ece559c5c23e57cd34873c310/detection
+
+f0437249.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/0b74e3ae6e3fb13a47fbf576e82d87c82e77b58d94355a8fb249fcd2f8a6d1c2/detection
+
+f0460828.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/a15ed271b0be4ccc807fd0fcd92bbe4ebb468a25fa126429ba09be518483586c/detection
+
+f0493266.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/bc782d6cfa231886dd30ffd694043e32d5751e3c661aa3513820ba6beb903042/detection
+
+f0494457.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/467db31cfeb2db839f3b66c62c9938a77815518a0d6c80014206892bd902fad3/detection
+
+f0510954.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/85f2174cbf642b5e7d6a26be01c8d8099f1d9027df98ba63ca1dbde567149a18/detection
+
+f0510914.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/cb8b8773a2b3ab7cccbe72c349d1e0dc0cc4a9ecbec06daabc45fd1b42f6cf58/detection
+# Reference: https://www.virustotal.com/gui/ip-address/37.19.192.144/relations
+
+http://37.19.192.144
+
+# Reference: https://www.virustotal.com/gui/file/7353d3f00c51c95cd2259e2d546f1f981b60e49d19b297f6704addd1bbab35e1/detection
+
+a0452846.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/87ae29b57250471c6be52f83a4f56079463293ff92c78bd3af8dad87b6d8ce90/detection
+
+a0400947.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/9f41a385f38d140a6f96a03d70f4dd33847f4b8a662ba1fc11086332c2370af1/detection
+
+a0397623.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/db194f87b7c40edf1c8174b668d58983f93ed0e43587c7250ee69deca8b3422e/detection
+
+site.hvhcoin.space
+
+# Reference: https://www.virustotal.com/gui/file/d120d81d1b8ba103f3207bc5829250650c7796eb12246ec4471df424695d882e/detection
+
+a0405469.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/ebeba15cc833fe769a90cf07b024eca8e352f1e1719693a4f51af79b65d9227d/detection
+
+a0406890.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/9650dfca940876c20d9ad58e7af61ee4834c86acdb1e1ca8c85f6e499138b262/detection
+
+a0407434.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/bd673df1a435442103c22bc50de396438a0380f73322a0fd501f6421c6e492bf/detection
+
+a0402951.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/aabb92a697891d03e386687d3efe8bd452e7f5dcc720629de493a2c4095fb09c/detection
+
+a0419945.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/ed2ce8d14bca14241af86edc512d7dc0e62235a48fd9a1402c9ddcaaf4390f0c/detection
+
+f0368206.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/662aa4a4765d8816afff62cca44ded03d4448f703e0cd2b63ccf65b4b6e974a8/detection
+
+f0402912.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/61e1be93641fe3993a4caca5679d35eb1c927ac2d31430363517015a89534726/detection
+
+sh1054389.a.had.su
+
+# Reference: https://twitter.com/angel11VR/status/1381568772419563527
+# Reference: https://www.virustotal.com/gui/file/b24eac4c704502ee8952ad32384daec5894fd81d7bb668224730d4fb06293942/detection
+# Reference: https://www.virustotal.com/gui/file/0e1e2f87699a24d1d7b0d984c3622971028a0cafaf665c791c70215f76c7c8fe/detection
+# Reference: https://www.virustotal.com/gui/file/2b15ade9de6fb993149f27c802bb5bc95ad3fc1ca5f2e86622a044cf3541a70d/detection
+
+http://31.42.185.63
+31.42.185.63:8080
+name4050.com
+
+# Reference: https://www.virustotal.com/gui/file/678ae8bd325d40ba377e73535aada0fb44222ef89c43354c8fff445da3a6975d/detection
+
+dandiegoasd.xyz
+
+# Reference: https://github.com/hardenedlinux/hardenedlinux-zeek-script/blob/master/scripts/frameworks/intel/OSINT/CYBERCRiME-03-03-19.txt
+
+r98196lh.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/438dcfa8b47c8ea552befd2fe0e463c0119f268639369b4470f399bb46230d31/detection
+
+f0366846.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/49be70ba2eec73b174f32a65126b69743e9ffd23b3a37be691818266cd67a400/detection
+
+myblog123.zzz.com.ua
+
+# Reference: https://www.virustotal.com/gui/file/f03b679eb9a8759cd629ba5bfcc06b261de80f6ab4062cb7571a0c5cfc83f058/detection
+
+m96642oi.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/99349287ce67767cfc15716e489eb12a9c055fa8c59f8ed16ae56f3e2f6adef9/detection
+
+u0845161.isp.regruhosting.ru
+u492642faq.ha003.t.justns.ru
+xpanel.fun
+
+# Reference: https://www.virustotal.com/gui/file/e887f36062d3c8bf6d7724d489c4b9ee7ce5ee99e45da9a6f5f4b861a263106e/detection
+
+infoproxyg.temp.swtest.ru
+roteston.top
+
+# Reference: https://www.virustotal.com/gui/file/2c6b1838b77692fe681a01d6c480834bb0737840b38fb28b66819088d48b7ef3/detection
+
+stldbh.xyz
+
+# Reference: https://www.virustotal.com/gui/ip-address/217.8.117.66/relations
+
+2020best1.space
+2020best2.space
+
+# Reference: https://www.virustotal.com/gui/file/9ec62ccce0bbb225ebc3e37d40a57a472a42ec73656647d35db4d5f35771e39e/detection
+
+http://163.172.150.67
+
+# Reference: https://www.virustotal.com/gui/file/d93150b6d1a138e55cde2f992c23ccde48f70511d7ca978faac67ec009ba1d5d/detection
+
+botfrea8.beget.tech
+
+# Reference: https://github.com/blackorbird/APT_REPORT/blob/master/Cytrox/Predator_ioc.csv
+
+2y4nothing.xyz
+5m5.io
+addons.news
+adibjan.net
+adservices.gr.com
+adultpcz.xyz
+advertsservices.com
+advfb.xyz
+affise.app
+almasryelyuom.com
+alpineai.uk
+alraeeenews.com
+alraeesnews.net
+altsantiri.news
+amazing.lab
+ancienthistory.xyz
+android-apps.tech
+api-apple-buy.com
+api-telecommunication.com
+applepps.com
+apps-ios.net
+aramexegypt.com
+atheere.com
+audit-pvv.com
+bank-alahly.com
+bbcsworld.com
+bitlinkin.xyz
+bi.tly.gr.com
+bi.tly.link
+bit-li.com
+bit-li.ws
+bit-ly.link
+bit-ly.org
+bitlly.live
+bitlyrs.com
+bitt.fi
+bity.ws
+bityl.me
+blacktrail.xyz
+bmw.gr.com
+bookjob.club
+browsercheck.services
+bumabara.bid
+burgerprince.us
+businesnews.net
+canyouc.xyz
+carrefourmisr.com
+cbbc01.xyz
+celebrnewz.xyz
+cellconn.net
+charmander.xyz
+chatwithme.store
+citroen.gr.com
+ckforward.one
+clockupdate.com
+cloudstatistics.net
+cloudtimesync.com
+cnn.gr.com
+connectivitycheck.live
+connectivitycheck.online
+connectivitychecker.com
+covid19masks.shop
+crashonline.site
+cut.red
+cyber.country
+danas.bid
+distedc.com
+download4you.xyz
+dragonair.xyz
+eagerfox.xyz
+ebill.cosmote.center
+efsyn.online
+egyqaz.com
+engine.ninja
+enigmase.xyz
+enikos.news
+ereportaz.news
+espressonews.gr.com
+etisalategypt.tech
+etisalatgreen.com
+ewish.cards
+fastdownload.me
+fastuploads.xyz
+519c195138.xyz
+ferrari.gr.com
+ffoxnewz.com
+fimes.gr.com
+fireup.xyz
+fisherman.engine.ninja
+flexipagez.com
+forwardeshoptt.com
+getsignalapps.com
+getsignalapps.live
+getupdatesnow.xyz
+goldenscent.net
+goldenscint.com
+goldescent.com
+gosokm.com
+guardian-tt.me
+guardnews.live
+heaven.army
+heiiasjournai.com
+hellasjournal.company
+hellasjournal.website
+hellottec.art
+hempower.shop
+hopnope.xyz
+icloudeu.com
+icloudflair.com
+iibt.xyz
+ikea-egypt.net
+ilnk.xyz
+in-politics.com
+infosms-a.site
+inservices.digital
+insider.gr.com
+instagam.click
+instagam.in
+instagam.photos
+instegram.co
+invoker.icu
+ios-apps.store
+iosmnbg.com
+itcgr.live
+itly.link
+itter.me
+jquery-updater.xyz
+kathimerini.news
+kinder.engine.ninja
+koenigseggg.com
+kohaicorp.com
+koora-egypt.com
+kormoran.bid
+kranos.gr.com
+lamborghini-s.shop
+landingpg.xyz
+landingpge.xyz
+leanwithme.xyz
+lexpress.me
+lifestyleshops.net
+limk.one
+linkit.digital
+linktothisa.xyz
+link-m.xyz
+link-protection.com
+liponals.store
+livingwithbadkidny.xyz
+llinkedin.net
+lnkedin.org
+localegem.net
+lylink.online
+makeitshort.xyz
+mifcbook.link
+md-news-direct.com
+miniiosapps.xyz
+mitube1.link
+mlinks.ws
+mobnetlink1.com
+mobnetlink2.com
+mobnetlink3.com
+mozillaupdate.xyz
+msas.ws
+mycoffeeshop.shop
+myfcbk.net
+mytrips.quest
+myutbe.net
+mywebsitevpstest.xyz
+nabd.site
+nabde.app
+nassosblog.gr.com
+nemshi-news.xyz
+nemshi.net
+networkenterprise.net
+newsbeast.gr.com
+newslive2.xyz
+newzeto.xyz
+newzgroup.xyz
+niceonase.com
+niceonesa.net
+nikjol.xyz
+nissan.gr.com
+novosti.bid
+oilgy.xyz
+olexegy.com
+olxeg.com
+omanreal.net
+omeega.xyz
+onlineservices.gr.com
+orangegypt.co
+orchomenos.news
+otaupdatesios.com
+paok-24.com
+pastepast.net
+pdfviewer.app
+playestore.net
+pocopoc.xyz
+politika.bid
+politique-koaci.info
+prmopromo.com
+pronews.gr.com
+protothema.live
+proupload.xyz
+ps1link.xyz
+ps2link.xyz
+quickupdates.xyz
+qwert.xyz
+qwxzyl.com
+redeitt.com
+safelyredirecting.com
+safelyredirecting.digital
+sepenet.gr.com
+sephoragroup.com
+servers-mobile.info
+serviceupdaterequest.com
+sextape225.me
+shorten.fi
+shortenurls.me
+shortmee.one
+shortwidgets.com
+shortxyz.com
+simetricode.uk
+sinai-new.com
+sitepref.xyz
+smsuns.com
+snapfire.xyz
+sniper.pet
+solargoup.xyz
+solargroup.xyz
+speedy.sbs
+speedygonzales.xyz
+speedymax.shop
+sportsnewz.site
+sports-mdg.xyz
+static-graph.com
+stonisi.news
+supportset.net
+suzuki.gr.com
+svetovid.bid
+symoty.com
+syncservices.one
+synctimestamp.com
+syncupdate.site
+telecomegy-ads.com
+telenorconn.com
+tesla-s.shop
+teslal.shop
+teslal.xyz
+teslali.com
+tgrthgsrgwrthwrtgwr.xyz
+timestampsync.com
+timeupdate.xyz
+timeupdateservice.com
+tiny.gr.com
+tinylinks.live
+tinyulrs.com
+tinyurl.cloud
+tiol.xyz
+tly.gr.com
+tly.link
+tovima.live
+trecv.xyz
+trecvf.xyz
+trkc.online
+tsrt.xyz
+tw.itter.me
+twtter.net
+ube.gr.com
+uberegypt.cn.com
+updates4you.xyz
+updateservice.center
+updatetime.zone
+updatingnews.xyz
+updete.xyz
+url-promo.club
+url-tiny.app
+uservicescheck.com
+uservicesforyou.com
+utube.digital
+viva.gr.com
+vodafoneegypt.tech
+vodafonegypt.com
+wavekli.xyz
+we-site.net
+weathear.live
+weathernewz.xyz
+weathersite.online
+webaffise.com
+wha.tsapp.me
+worldnws.xyz
+wtc1111.com
+wtc2222.com
+wtc3333.com
+xf.actor
+xnxx-hub.com
+xyvok.xyz
+yallakora-egy.com
+yo.utube.digital
+yo.utube.to
+youarefired.xyz
+yout.ube.gr.com
+youtu-be.net
+youtub.app
+youtube.gr.live
+youtube.voto
+youtubesyncapi.com
+youtubewatch.co
+yuom7.net
+z2a.digital
+z2adigital.cloud
+z2digital.cloud
+zougla.gr.com
+zougla.news
+
+# Reference: https://citizenlab.ca/2021/12/pegasus-vs-predator-dissidents-doubly-infected-iphone-reveals-cytrox-mercenary-spyware/
+
+actumali.org
+eg-gov.org
+tribune-mg.xyz
+
+# Reference: https://twitter.com/angel11VR/status/1471945483245563909
+
+185.244.41.109:8080
+stun.site
+
+# Reference: https://www.virustotal.com/gui/file/ea6d7d61eff855e2b0eba6c9ba36a72deaf12db324154473163715356fbf699b/detection
+
+f0402038.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/ce0490b3c87dc1e5c07f8332655bc2a7a3ab5e4a91c6a9e85fbfbfb1c93d4c98/detection
+
+f0397448.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/f769926334ff93842429c7eda5c7ba1dedf3fb39a4b7b47decd0cbe7b9454170/detection
+
+193.203.214.98:8080
+
+# Reference: https://www.virustotal.com/gui/file/dab20f1d2f4ae0186fc5c37bef9d76feac85871e78075c1c8e4334fc11a48c40/detection
+
+maksimbust.xyz
+
+# Reference: https://www.virustotal.com/gui/file/3c29775f38bbea62a8cc7dab3ca1fc212877d5b4a645a08781ac5595196ce30c/detection
+
+de-sh.xyz
+
+# Reference: https://www.virustotal.com/gui/file/d7950b0e8623e91e0ca98624a8f0b55b0afa96f06553df3ac45e56ec26afb37c/detection
+
+blackcrypto.info
+
+# Reference: https://www.virustotal.com/gui/file/97a59bf298e617dac56c53b5258750b0c560768d7ee73fa6cb82c759a8b08e1a/detection
+
+playnt.myjino.ru
+
+# Reference: https://www.virustotal.com/gui/file/15f94c1a926a86bafd899d6ffbc3fc7bca1e039f536c3f82962bad15957e8e45/detection
+
+a0504978.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/01e7c820ff3cfd0c6d0a07d80db396ae0457d34d33edaaf307f81ae366657396/detection
+
+f0390736.xsph.ru
+
+# Reference: https://blog.google/threat-analysis-group/protecting-android-users-from-0-day-attacks/
+
+contents-domain.com
+redirecting.page
+shorten.fi
+s.bit-li.com
+
+# Reference: https://www.virustotal.com/gui/file/877dfdbe554a82a9782f5b3c955ce5f2b960ab93e9135a475b1d82e497d1efc3/detection
+
+stratbuks.com
+
+# Reference: https://www.virustotal.com/gui/file/012eb8871966ef9b32b2034fb9125a3ffbc2cc0ed9e6250cbb03e48018eae15a/detection
+
+f0382252.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/0120bd30336bf8ccaf7c6c460afe48fa1fcb6226576f380fd95c2722a20c3669/detection
+
+f0328343.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/23d188698bfec28e2e21f88485ef477e4975bedf9b4fa12c66d7a8788bb0f6fb/detection
+
+q91929nh.beget.tech
+
+# Reference: https://www.virustotal.com/gui/file/ad65a895a45c838cf049f563fa1505e4827ba9ccde186376bc16f27be804ed06/detection
+
+leninskiy.pp.ua
+
+# Reference: https://www.virustotal.com/gui/file/3e54912ae9d0e882d9d9727c83044f8a61425a051396a435cfa44e592060c2e8/detection
+
+caffreyloader.xyz
+
+# Reference: https://tracker.viriback.com/dump.php (2023-03-12)
+
+http://217.8.117.22
+http://85.217.170.122
+http://92.63.203.197
+13otshelnik.myjino.ru
+2511463.hk
+66eff2f0.myjino.ru
+a0361734.xsph.ru
+a0362657.xsph.ru
+a0366098.xsph.ru
+a0374801.xsph.ru
+a0377864.xsph.ru
+a0379189.xsph.ru
+a0383409.xsph.ru
+a0426813.xsph.ru
+a0426906.xsph.ru
+a0443876.xsph.ru
+a0451952.xsph.ru
+a0460788.xsph.ru
+a0492361.xsph.ru
+a0510057.xsph.ru
+a0511431.xsph.ru
+a0513742.xsph.ru
+a0516070.xsph.ru
+a0521844.xsph.ru
+a0542559.xsph.ru
+a0572544.xsph.ru
+a0608694.xsph.ru
+a0621682.xsph.ru
+alik-nikol-eyik.myjino.ru
+alorzeesmoneyone.000webhostapp.com
+analdevil0.offhst.ru
+arsik2os.beget.tech
+ascariproject.atwebpages.com
+atetov-renat.myjino.ru
+auth-site.site
+azorklgr.mcdir.ru
+bit1.zadc.ru
+c90465om.beget.tech
+ca72287.tmweb.ru
+cb94716.tmweb.ru
+cd33785.tmweb.ru
+cd88776.tmweb.ru
+cf78342.tmweb.ru
+ch44987.tmweb.ru
+ci94759.tmweb.ru
+ci98593.tmweb.ru
+cl29183.tmweb.ru
+co62857.tmweb.ru
+corticeiralogs.tk
+cv00879.tmweb.ru
+cvbosasdg.myjino.ru
+cw04739.tmweb.ru
+donwload-file-id.tk
+eupanel.club
+existencia.zadc.ru
+f0349352.xsph.ru
+f0350106.xsph.ru
+f0359371.xsph.ru
+f0363135.xsph.ru
+f0364535.xsph.ru
+f0365337.xsph.ru
+f0365613.xsph.ru
+f0365643.xsph.ru
+f0366099.xsph.ru
+f0366190.xsph.ru
+f0366319.xsph.ru
+f0366320.xsph.ru
+f0366375.xsph.ru
+f0366411.xsph.ru
+f0366646.xsph.ru
+f0366653.xsph.ru
+f0367059.xsph.ru
+f0367069.xsph.ru
+f0367075.xsph.ru
+f0367590.xsph.ru
+f0367805.xsph.ru
+f0368550.xsph.ru
+f0368581.xsph.ru
+f0368659.xsph.ru
+f0368664.xsph.ru
+f0368743.xsph.ru
+f0368779.xsph.ru
+f0368889.xsph.ru
+f0368902.xsph.ru
+f0368941.xsph.ru
+f0369478.xsph.ru
+f0369657.xsph.ru
+f0370029.xsph.ru
+f0371436.xsph.ru
+f0371440.xsph.ru
+f0371762.xsph.ru
+f0371780.xsph.ru
+f0371841.xsph.ru
+f0371929.xsph.ru
+f0372687.xsph.ru
+f0373359.xsph.ru
+f0373794.xsph.ru
+f0373892.xsph.ru
+f0374193.xsph.ru
+f0374271.xsph.ru
+f0374314.xsph.ru
+f0374780.xsph.ru
+f0374789.xsph.ru
+f0377543.xsph.ru
+f0380921.xsph.ru
+f0382427.xsph.ru
+f0382452.xsph.ru
+f0382537.xsph.ru
+f0382727.xsph.ru
+f0384297.xsph.ru
+f0384584.xsph.ru
+f0385129.xsph.ru
+f0386323.xsph.ru
+f0386523.xsph.ru
+f0386613.xsph.ru
+f0387123.xsph.ru
+f0387125.xsph.ru
+f0387286.xsph.ru
+f0387550.xsph.ru
+f0387814.xsph.ru
+f0387917.xsph.ru
+f0388394.xsph.ru
+f0388521.xsph.ru
+f0389117.xsph.ru
+f0389125.xsph.ru
+f0389792.xsph.ru
+f0390236.xsph.ru
+f0390360.xsph.ru
+f0390386.xsph.ru
+f0390624.xsph.ru
+f0390764.xsph.ru
+f0391587.xsph.ru
+f0391600.xsph.ru
+f0391715.xsph.ru
+f0391833.xsph.ru
+f0392041.xsph.ru
+f0392261.xsph.ru
+f0392823.xsph.ru
+f0393086.xsph.ru
+f0395256.xsph.ru
+f0396918.xsph.ru
+f0397413.xsph.ru
+f0397962.xsph.ru
+f0398595.xsph.ru
+f0399633.xsph.ru
+f0400099.xsph.ru
+f0401489.xsph.ru
+f0405143.xsph.ru
+f0406514.xsph.ru
+f0407518.xsph.ru
+f0409482.xsph.ru
+f0411205.xsph.ru
+f0413585.xsph.ru
+f0413710.xsph.ru
+f0414122.xsph.ru
+f0414884.xsph.ru
+f0415336.xsph.ru
+f0416084.xsph.ru
+f0417571.xsph.ru
+f0418572.xsph.ru
+f0418600.xsph.ru
+f0419638.xsph.ru
+f0419655.xsph.ru
+f0420298.xsph.ru
+f0420683.xsph.ru
+f0421339.xsph.ru
+f0421895.xsph.ru
+f0422700.xsph.ru
+f0423189.xsph.ru
+f0424303.xsph.ru
+f0424799.xsph.ru
+f0425464.xsph.ru
+f0427261.xsph.ru
+f0428629.xsph.ru
+f0429073.xsph.ru
+f0429638.xsph.ru
+f0429754.xsph.ru
+f0430032.xsph.ru
+f0430371.xsph.ru
+f0431595.xsph.ru
+f0436073.xsph.ru
+f0436764.xsph.ru
+f0436941.xsph.ru
+f0437861.xsph.ru
+f0438120.xsph.ru
+f0438626.xsph.ru
+f0438649.xsph.ru
+f0438704.xsph.ru
+f0438944.xsph.ru
+f0438989.xsph.ru
+f0439566.xsph.ru
+f0441924.xsph.ru
+f0441960.xsph.ru
+f0442070.xsph.ru
+f0442400.xsph.ru
+f0442504.xsph.ru
+f0442701.xsph.ru
+f0442802.xsph.ru
+f0442999.xsph.ru
+f0443419.xsph.ru
+f0443739.xsph.ru
+f0444003.xsph.ru
+f0444016.xsph.ru
+f0444307.xsph.ru
+f0445625.xsph.ru
+f0445653.xsph.ru
+f0446424.xsph.ru
+f0446537.xsph.ru
+f0447317.xsph.ru
+f0448132.xsph.ru
+f0449624.xsph.ru
+f0450245.xsph.ru
+f0450442.xsph.ru
+f0450585.xsph.ru
+f0450625.xsph.ru
+f0451130.xsph.ru
+f0451657.xsph.ru
+f0451906.xsph.ru
+f0453226.xsph.ru
+f0458234.xsph.ru
+f0458445.xsph.ru
+f0460630.xsph.ru
+f0461094.xsph.ru
+f0461314.xsph.ru
+f0461327.xsph.ru
+f0465157.xsph.ru
+f0468773.xsph.ru
+f0470046.xsph.ru
+f0471424.xsph.ru
+f0486042.xsph.ru
+f0486282.xsph.ru
+f0489199.xsph.ru
+f0490723.xsph.ru
+f0496687.xsph.ru
+f0500801.xsph.ru
+f0501258.xsph.ru
+f0503634.xsph.ru
+f0503872.xsph.ru
+f0514489.xsph.ru
+f0542021.xsph.ru
+fastcoin.biz
+fragar878.freehostia.com
+gfdhhfg.zzz.com.ua
+h152397.s27.test-hf.su
+h99138l6.beget.tech
+hobzycraft.tech
+instagramm.myjino.ru
+itsjokeanimals.myjino.ru
+j1050072.myjino.ru
+j1063616.myjino.ru
+j1073368.myjino.ru
+j1079376.myjino.ru
+j77353789.myjino.ru
+jesyxcn3.beget.tech
+joke-krekit.myjino.ru
+k95693sw.beget.tech
+katamo1.myjino.ru
+kurapet77.myjino.ru
+l3771.darkhost.top
+lb09463e.justinstalledpanel.com
+lee75278.justinstalledpanel.com
+logickpack.beget.tech
+mabmai133.myjino.ru
+mailforwf.myjino.ru
+mjane.darkhost.pro
+nan.zzz.com.ua
+neformal.ajci.tk
+neformalforum.ru
+netsteal.darkhost.pro
+nofex.tk
+nvits.space
+o99754lv.beget.tech
+p98512ap.beget.tech
+pass121314.zzz.com.ua
+payscard.online
+posilkidark.site
+pulka.pp.ua
+r96041kf.beget.tech
+ramilya41.myjino.ru
+rivixit.tk
+s64254.hostnl02.fornex.host
+s81142.hostde25.fornex.host
+s89051.hostde27.fornex.host
+sansan11e.myjino.ru
+sekretov.ml
+sh1013766.had.su
+sh1178960.a.had.su
+snowbank.myjino.ru
+stealnet.01sh.ru
+stilakpredator.kl.com.ua
+stillerdanila.myjino.ru
+student-dpgt.myjino.ru
+tesseractpower.in
+testr6server.myjino.ru
+thislord15.myjino.ru
+tuhjtrfu56.zzz.com.ua
+u688343lib.ha004.t.justns.ru
+u75728.test-handyhost.ru
+u92681aw.beget.tech
+v-kuznetsov032.myjino.ru
+valentinogods.zzz.com.ua
+vendoraccs.ru
+vishelposat.zzz.com.ua
+vl-smirnov.myjino.ru
+vlmadisson.tk
+vovahotplay.7m.pl
+wadim0675.myjino.ru
+x99951lw.beget.tech
+xenicoln.ru
+xixero9507.myjino.ru
+z96269eg.beget.tech
+zebi.freesite.vip
+zebi.zzz.com.ua
+
+# Reference: https://blog.talosintelligence.com/mercenary-intellexa-predator/
+# Reference: https://otx.alienvault.com/pulse/64712b3e142afa97df3f3cc4
+
+conlnk.one
+edolio5.com
+elpais.me
+fbc8213450838f7ae251d4519c195138.xyz
+guardnew.live
+lexpress-mg.xyz
+linkit.cloud
+nemshi-news.live
+redirecting.live
+shortely.xyz
+
+# Reference: https://www.virustotal.com/gui/file/893edf0ee31fe48cd48eeec42c12c3c07f73d97530ed6429cbc7af9eda3e9dcf/detection
+
+w9381610.beget.tech
+
+# Generic
+
+/api/check.get
+/api/Clipper.get
+/api/Clipper.post
+/api/Download.get
+/api/gate.get
+/api/info.get
+/sxxx777/api.php
+/upld/08A69F4B
+/upld/30BC8771
+/upld/7CD9E0E6
+/updl/AC38D1C7
+/upld/AEA1ABC2
+/upld/DF7784A8
+/upld/E1B6564A

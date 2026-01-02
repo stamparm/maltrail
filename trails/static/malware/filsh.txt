@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/suyog41/status/1914259386345943059
+# Reference: https://www.virustotal.com/gui/file/68b594364c49de20f54d4e94c45c31d26646fdfef924c2c1d7eb7f8c6e0f9ec9/detection
+
+113.45.207.44:13140

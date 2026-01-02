@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.linkedin.com/pulse/qdoor-new-backdoor-tool-blacksuits-arsenal-connectwise-uwvhc
+# Reference: https://thedfirreport.com/2025/03/31/fake-zoom-ends-in-blacksuit-ransomware/
+# Reference: https://www.virustotal.com/gui/ip-address/143.244.146.183/detection
+# Reference: https://www.virustotal.com/gui/file/0e2aa53017e3601b408715ddf84f787b4cff84f6d35324e487e942bfa50f16f6/detection
+
+143.244.146.183:443
+88.119.167.239:443

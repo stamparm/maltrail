@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2014-110618-0523-99&tabid=2
+
+comeinbaby.com
+
+# Reference: http://researchcenter.paloaltonetworks.com/2014/11/question-wirelurker-attribution-responsible/
+
+manhuaba.com.cn
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2014/2014-11-11-hooking-mac/hooking-mac.csv
+
+stty5.11.pl

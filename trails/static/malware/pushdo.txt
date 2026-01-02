@@ -1,0 +1,19 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.avast.com/2013/06/25/15507/
+
+anetsbuys.com
+
+# Reference: https://www.snort.org/search?query=27488
+
+hokneohabe.com
+
+# Reference: https://www.snort.org/rule_docs/1-27522
+
+taqeixoqbei.com
+
+# Generic
+# Reference: https://www.virustotal.com/gui/file/01493f22ce488e1cce8b5c9486b86f791f30439d550aad933830414917ce7c88/detection
+
+/?ptrxcz_

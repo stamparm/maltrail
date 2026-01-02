@@ -1,0 +1,88 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt-c-50
+
+# Reference: https://research.checkpoint.com/domestic-kitten-an-iranian-surveillance-operation/
+# Reference: https://twitter.com/malwrhunterteam/status/1340344596698677250
+# Reference: https://www.virustotal.com/gui/file/bd7779e6100e07b3eae67bfcdc53f1f08468651240229e284cca60e2b953496b/detection
+
+http://162.248.247.172
+http://190.2.144.140
+http://190.2.145.145
+http://89.38.98.49
+firmwaresystemupdate.com
+georgethompson.space
+ronaldlubbers.site
+stevenwentz.com
+/hass/answer.php
+/hass/get-function.php
+/hass/upload-log.php
+
+# Reference: https://twitter.com/blackorbird/status/1181868468620017665 (# Cyrus Attack)
+# Reference: https://mp.weixin.qq.com/s/yaLC8gs-U92X6WnYzuuQ7w
+# Reference: https://otx.alienvault.com/pulse/5d9db01cc5328d4649e0594c
+
+http://46.4.143.130
+198.50.220.44:80
+appsoftupdate.com
+lohefeshordeh.net
+ychatonline.net
+
+# Reference: https://www.blackberry.com/content/dam/blackberry-com/asset/enterprise/pdf/direct/mobile-malware-report.pdf
+
+systemdriverupdate.com
+ydownyload.net
+ynewnow.net
+
+# Reference: https://twitter.com/felixaime/status/1353622368913133569
+# Reference: https://twitter.com/malwrhunterteam/status/1753545424508440994
+# Reference: https://www.virustotal.com/gui/file/3c273166c5221614198a7bbe0ed8ed0738ca4b62321a8d44a43fa7353a9f7d70/detection
+# Reference: https://www.virustotal.com/gui/ip-address/62.112.8.199/relations
+# Reference: https://www.virustotal.com/gui/ip-address/62.112.8.244/relations
+# Reference: https://www.virustotal.com/gui/ip-address/62.112.8.60/relations
+# Reference: https://www.virustotal.com/gui/file/0d09d5e46e779d796a8d295043e5bbd90ac43705fa7ff7953faa5d8370840f93/detection
+# Reference: https://www.virustotal.com/gui/file/fcd0be3ff03bd5bfe725c63e274218342b209b55b4e8bd762d9a9891e781bcf1/detection
+# Reference: https://www.virustotal.com/gui/file/5e87acd4f1eca03e68df275b69bd0f79d328b29318abf25ae1e8ba6f238b34af/detection
+# Reference: https://www.virustotal.com/gui/file/679355b0f689d745eb6943ed3aa821615122a648f02f7a557aa99e0007834085/detection
+
+androidsystemswebview.com
+arzdigitals.com
+googleassisstants.com
+googleservicesforar.com
+ns1.googleassisstants.com
+ns2.googleassisstants.com
+/mmh/gt-func.php
+/mmh/lg-upld.php
+/mmh/on-answ.php
+/msd/gt-func.php
+/msd/lg-upld.php
+/msd/on-answ.php
+
+# Reference: https://www.virustotal.com/gui/file/a7edd5586ac6cd64eaa1d3fd19077b3cb9232f13514d86ea315a4e2f501ee14b/detection
+
+padre914.com
+
+# Reference: https://github.com/ti-research-io/ti/blob/main/ioc_extender/ET_Lazarus.json
+
+googlextabv.com
+newportschoolupdateserver.com
+
+# Reference: https://www.welivesecurity.com/2022/10/20/domestic-kitten-campaign-spying-iranian-citizens-furball-malware/
+
+sarayemaghale.hami24.net
+
+# Reference: https://x.com/ThreatBookLabs/status/2003261920439091378
+# BANNER_0_HASH-HOST=5e8a41edbe1f842ceeb0a1352bfdffbb
+# BANNER_0_HASH-HOST=ef01ed1e379280f4b4b6e551bb31a3b4
+
+androidsecurityupdate.com
+androidsystemsupdate.com
+googleupdateservicese.com
+
+# APK
+
+/farahv2.apk
+/negahdarigiahanv2.apk
+/ostadshajarianv5.apk
+/sarayemaghale.apk

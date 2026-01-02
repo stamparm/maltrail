@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: wave stealer
+
+# Reference: https://twitter.com/crep1x/status/1782887599788486787
+# Reference: https://tria.ge/240423-zzq2rsca28/behavioral2
+
+wave-assistant.com
+wavebysudryez.fr
+
+# Reference: https://twitter.com/NDA0E/status/1785413473465241956
+# Reference: https://www.virustotal.com/gui/ip-address/45.145.166.210/relations
+# Reference: https://app.validin.com/detail?find=Wave%20Stealer&type=raw&ref_id=618e1ee59d9#tab=host_pairs
+
+http://45.145.166.210

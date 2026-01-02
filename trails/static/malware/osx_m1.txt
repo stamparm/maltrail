@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: silver sparrow
+
+# Reference: https://redcanary.com/blog/clipping-silver-sparrows-wings/#technical-analysis
+# Reference: https://otx.alienvault.com/pulse/602fe5463185aba3fb999b4e/
+
+mobiletraits.com
+specialattributes.com
+api.mobiletraits.com
+api.specialattributes.com
+specialattributes.s3.amazonaws.com

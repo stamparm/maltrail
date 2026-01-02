@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: pylot, travle
+
+# Reference: https://securelist.com/travle-aka-pylot-backdoor-hits-russian-speaking-targets/83455/
+
+remember123321.com
+/zzw/ash.py

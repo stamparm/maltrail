@@ -1,0 +1,159 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1111270366465413122
+# Reference: https://app.any.run/tasks/be162d45-b998-48e8-8b03-5046aca364da
+
+/cryptbody.php
+/cryptbody2.php
+
+# Reference: https://twitter.com/kafeine/status/1112782594347864065
+
+green.cal-sal.net
+
+# Reference: https://blog.talosintelligence.com/2019/04/jasperloader-targets-italy.html
+# Reference: https://otx.alienvault.com/pulse/5cc1e10ad428f7a826d79b77
+
+adm.emeraldsurfsciences.net
+adm.esurf.info
+ami.diminishedvaluewashington.com
+ami.regroups.net
+arb.palaser.eu
+cash.andreachiocca.com
+cdn.diminishedvaluevehicle.com
+cdn.zaczvk.pl
+cloud.chachobills.com
+cloud.diminishedvaluecalifornia.com
+daco.nyccomputerconsulting.com
+dimi.diminishedvalueclaimflorida.com
+filter.emerald-surf.com
+filter.emeraldsurf.org
+giko.emeraldsurfscience.com
+green.4107irishivy.info
+green.cibariefoodconsulting.com
+green.datota.it
+gw.kalmanjm.ru
+img.ess-id.com
+irm.skofirm.net
+it.emeraldsurfsciences.info
+point.skandinavianbox.com
+pwss.proactionfluids.net
+red.greenmira.com
+sad.childrensliving.com
+salsa.recluta.in
+space.4fallingstar.info
+space.bajamelide.ch
+stats.emeraldsurfwatermanagement.com
+wws.bamberger.com
+wws.bfoh.net
+wws.emeraldsurfsciences.org
+wws.rheovesthr.com
+wws.skofirm.biz
+wws.skofirm.info
+wws.streghettaincucina.com
+
+# Reference: https://otx.alienvault.com/pulse/5ce6eec1572df29a2670d399
+
+breed.wanttobea.com
+tribunaledinapoli.recsinc.com
+tribunaledinapoli.lowellunderwood.com
+tribunaledinapoli.rntman.com
+tribunaledinapoli.prepperpillbox.com
+nono.littlebodiesbigsouls.com
+zzi.aircargox.com
+
+# Reference: https://twitter.com/reecdeep/status/1159354907574579201
+
+lite.blackownedbiz.com
+
+# Reference: https://twitter.com/reecdeep/status/1156868480173584384
+
+soft.deescustomcreations.com
+
+# Reference: https://twitter.com/Mesiagh/status/1164602756293775360
+# Reference: https://pastebin.com/ZZ9TwVCe
+
+koh.191northfront.com
+lite.714ashley.com
+koh.corkysfreshwater.com
+drive.deescreationstore.com
+drive.gstroop4822.org
+koh.bayonetbreaker.com
+mjvjmtkwodm0.top
+ogy5mtewod.top
+ogy5mtkwodmy.top
+ogy5mtqwod.top
+otnhmtiwod.top
+web.cfmontessori.com
+web.hopedaletech.com
+wss.cscondo.com
+wws.dbimages.com
+zgzimdkwod.top
+zgzimtawod.top
+zgzimtkwodmz.top
+zzi.recsinc.com
+
+# Reference: https://twitter.com/reecdeep/status/1168591160316743683
+
+cdn.simplehealthytasty.com
+
+# Reference: https://twitter.com/VirITeXplorer/status/1186960988471545857
+
+cdn.jestersofflorida.com
+
+# Reference: https://twitter.com/reecdeep/status/1247115815993987072
+
+cnyboypower.com
+
+# Reference: https://twitter.com/reecdeep/status/1273211745646055425
+
+z2uymda1mtk.top
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1273899099616612352
+
+documento.haileywilkinson.com
+documento.jescy.com
+documento.mialeeka.com
+documento.noothercouncil.com
+documento.selltokengarffhonda.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1277552282880692224
+# Reference: https://app.any.run/tasks/4286a00a-21c4-4e09-ada0-91e2b87917cf/
+
+documents.cfmontessori.com
+
+# Reference: https://twitter.com/reecdeep/status/1277558413493448704
+
+documents.hopedaletech.com
+
+# Reference: https://twitter.com/reecdeep/status/1290583348272934912
+# Reference: https://www.virustotal.com/gui/file/89b94592b404e0795d483a65885cc715aaa625922da9463461a97e152192998f/detection
+
+files.lauragoes.com
+nmgymda2mjc.top
+z2uymda2mjc.top
+
+# Reference: https://twitter.com/ffforward/status/1449469371592630276
+# Reference: https://twitter.com/sysopfb/status/1450088090224168963
+
+administradores.bet
+mummyvich.xyz
+/dxb/mx_cmd.php
+/dxb/mx_jscript.php
+
+# Reference: https://twitter.com/c_APT_ure/status/1458388621317246977
+
+uaic.nl
+/mxm/mx_jscript.php
+/mxm/mx_cmd.php
+
+# Generic trails
+
+/g_4483b40cb58cc06c3ba7.php
+/r_4555a10aad1a295db922.php
+/s_48f9a62b1d248862e51b.php
+/pec2/g_4483b40cb58cc06c3ba7.php
+/pec2/r_4555a10aad1a295db922.php
+/pec2/s_48f9a62b1d248862e51b.php
+/mx_cmd.php
+/mx_jscript.php

@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.humansecurity.com/blog/pareto-a-technical-analysis
+# Reference: https://otx.alienvault.com/pulse/60eec5891dc74a982170a512
+
+adadsrv.com
+admarketingads.com
+admguide.com
+admmart.com
+admobilerv.com
+adservernet.co
+adsrvus.com
+adstreamrv.com
+advertisementforyou.com
+aminaday.com
+digimobileworld.com
+digitalmobilespace.com
+fullfacility.net
+iamadsco.com
+kryptonads.com
+mobileadsrv.com
+rolladstech.com
+springrollfit.com
+streamadsonline.com
+videoscommercials.com
+webadsrv.com

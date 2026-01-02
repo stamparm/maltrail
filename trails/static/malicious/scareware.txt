@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/avman1995/status/1048135413980975104
+
+webs-net-techie-app.win
+
+# Reference: https://twitter.com/wwp96/status/1366627032587784193
+# Reference: https://www.virustotal.com/gui/ip-address/91.243.45.79/relations
+
+hostprotokolssn.cf
+hostprotokolssn.ga
+hostprotokolssn.gq
+hostprotokolssn.ml
+hostprotokolssntor.cf
+hostprotokolssntor.ga
+hostprotokolssntor.gq
+hostprotokolssntor.ml
+hostprotokolssntor.tk
+warningprotokol0091823ssn.cf
+warningprotokol0091823ssn.ga
+warningprotokol0091823ssn.gq
+warningprotokol0091823ssn.ml
+warningprotokol0091823ssn.tk

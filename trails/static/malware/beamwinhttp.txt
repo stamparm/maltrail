@@ -1,0 +1,44 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: BeamWinHTTP, ElectrumDoSMiner
+
+# Reference: https://twitter.com/P3pperP0tts/status/1122089616360734720
+# Reference: https://app.any.run/tasks/1d382767-1032-41bd-9a0c-4c3f31c44646
+# Reference: https://blog.malwarebytes.com/cybercrime/2019/04/electrum-ddos-botnet-reaches-152000-infected-hosts/
+# Reference: https://www.virustotal.com/gui/ip-address/178.159.37.113/relations
+# Reference: https://www.virustotal.com/gui/ip-address/188.214.135.174/relations
+# Reference: https://www.virustotal.com/gui/ip-address/194.63.143.226/relations
+# Reference: https://www.virustotal.com/gui/ip-address/217.147.169.179/relations
+
+btcore.ddns.net
+t-trade.net
+
+http://178.159.37.113
+http://188.214.135.174
+http://194.63.143.226  
+http://217.147.169.179
+
+# Reference: https://www.virustotal.com/gui/file/c0ad374cc3a8126ae76860b869450966c75fd1d3b95e81e00f631070e701f4fc/detection
+
+2azzarita.hopto.org
+azzarita.hopto.org
+bitc0ins.nl
+bitcoin-server.cf
+bitcoin.grey.pw
+borato10.hopto.org
+cybercoin.systems
+electrum.coinop.cc
+electrum.noinput.xyz
+
+# Reference: https://www.virustotal.com/gui/file/99bb9f836152c609248a01476021627d7b491b9e153cece8cff393a70af49031/detection
+
+xrm42.top
+nmr.xrm42.top
+230907161118223.nmr.xrm42.top
+
+# Generic trails
+
+/serviceaddresses.php
+/pingtransaction.php
+/pingsub.php

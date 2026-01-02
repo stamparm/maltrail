@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virusbulletin.com/virusbulletin/2014/07/mayhem-hidden-threat-nix-web-servers#citation.1
+# Reference: http://blog.malwaremustdie.org/2014/05/elf-shared-so-dynamic-library-malware.html
+
+hennersy.com
+/hennesystuff.php
+/sears/sears.php

@@ -1,0 +1,57 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: domino backdoor
+
+# Reference: https://twitter.com/TLP_R3D/status/1647632354926534657
+# Reference: https://twitter.com/ViriBack/status/1647664120374730755
+# Reference: https://twitter.com/josh_penny/status/1647678396371959810
+# Reference: https://securityintelligence.com/posts/ex-conti-fin7-actors-collaborate-new-domino-backdoor/
+# Reference: https://www.virustotal.com/gui/ip-address/185.158.249.135/relations
+# Reference: https://www.virustotal.com/gui/ip-address/195.123.245.30/detection
+# Reference: https://www.virustotal.com/gui/ip-address/65.108.255.127/detection
+# Reference: https://www.virustotal.com/gui/file/de9b3c01991e357a349083f0db6af3e782f15e981e2bf0a16ba618252585923a/detection
+# Reference: https://www.virustotal.com/gui/file/92651f9418625e5281b84cccb817e94e6294b36c949b00fcd4046770b87f10e4/detection
+# Reference: https://www.virustotal.com/gui/file/f1817665ea2831f775e23cbda27cbeb06d03e6c39bbfad920b50f40712dd37cb/detection
+# Reference: https://www.virustotal.com/gui/file/51e0512a54640be8e3477363c8d72d893c6edd20399bddf71e95eec3ddfdb42e/detection
+# Reference: https://www.virustotal.com/gui/file/e5af0b9f4650dc0193c9884507e6202b04bb87ac5ed261be3f4ecfa3b6911af8/detection
+
+http://135.181.204.45
+http://170.130.55.250
+http://178.23.190.73
+http://185.157.77.74
+http://185.225.17.202
+http://185.225.17.220
+http://194.87.148.85
+http://195.123.245.30
+http://213.166.71.155
+http://23.227.193.141
+http://45.67.34.236
+http://5.182.37.118
+http://65.108.255.127
+http://88.119.175.124
+http://94.158.247.23
+178.23.190.73:22
+178.23.190.73:443
+185.225.17.202:22
+185.225.17.202:443
+185.225.17.220:22
+185.225.17.220:443
+45.67.34.236:22
+45.67.34.236:443
+5.182.37.118:22
+5.182.37.118:443
+88.119.175.124:22
+88.119.175.124:443
+94.158.247.23:22
+94.158.247.23:443
+94.158.247.72:443
+deveparty.com
+es-megadom.com
+plus-lema.com
+upperdunk.com
+valenupd.com
+
+# Reference: https://x.com/solostalking/status/1937425422905737568
+
+galcg43xm7qgn4ahlbjpkbgsydgb7mv3tr4p5u2usxdjvr2jyixidbqd.onion

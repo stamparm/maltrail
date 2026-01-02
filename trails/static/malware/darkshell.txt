@@ -1,0 +1,36 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2012/2012-04-05-darkshell-ddos-botnet-evolves-with-variants/darkshell-ddos-botnet-evolves-with-variants.csv
+
+9527idc.vicp.net
+darkshellnew.com
+hwtt.3322.org
+sdqd666.3322.org
+sxzyong.com
+
+# Reference: https://www.virustotal.com/gui/file/672735005b28c21ad34494d7dafb31445dcad4a5f35e2551b72683f200ca84db/detection
+
+ddos.dnsnb8.net
+
+# Reference: https://www.virustotal.com/gui/file/200dce20e5d9c927faf6b2d142a959fc009ff4e79404ede8224a921564d11871/detection
+
+162.217.99.134:799
+
+# Reference: https://www.virustotal.com/gui/file/2e664666152e0379ba99417ee6d8ab8e7e025b8865167e592f76cb72b39f1f23/detection
+
+185.87.187.198:799
+
+# Reference: https://www.virustotal.com/gui/file/00136e1142712bb6b12aa29a07abda4eff8c3c48b719112685e1e35c973ea7b6/detection
+
+58.158.177.102:799
+
+# Reference: https://www.virustotal.com/gui/file/d1070d26c325446c4204c607dab74ca9f56d819baba9152c55ad107bf5f44db1/detection
+
+47.242.35.152:55535
+
+# Reference: https://www.virustotal.com/gui/file/65dae83b93e093dec51e0731bd904e25a3027ae60d099ccd3003fadaa0ed1eca/detection
+
+http://147.50.253.109
+/cdn/updater/api_getserverinfo.xml
+/cdn/updater/wzupd.xml

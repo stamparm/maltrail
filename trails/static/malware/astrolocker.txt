@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: MountLocker
+
+# Reference: https://news.sophos.com/en-us/2021/03/31/sophos-mtr-in-real-time-what-is-astro-locker-team/
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/Ransomware-MountLocker.csv
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/Ransomware-AstroLocker.csv
+# Reference: https://otx.alienvault.com/pulse/606c9900cc9dabf9542b6d8d
+
+albanallahacrab.club
+felpojdhf8980.cyou
+masskwearing.cyou
+padishahmurrka.best
+uragusexgre.club

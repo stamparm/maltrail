@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.cyphort.com/babar-suspected-nation-state-spyware-spotlight/
+
+horizons-tourisme.com/_vti_bin/_vti_msc/bb/
+gezelimmi.com/wp-includes/misc/bb/

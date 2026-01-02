@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.360totalsecurity.com/en/360-file-less-attack-protection-intercepts-the-banker-trojan-bbtok-active-in-mexico/
+
+diprolisa.mx/archivos/project/a9sid9aisd9
+diprolisa.mx/archivos/pdf
+mexicanagm.mx/contacto/gambler.php
+
+# Reference: https://research.checkpoint.com/2023/behind-the-scenes-of-bbtok-analyzing-a-bankers-server-side-components/
+# Reference: https://www.virustotal.com/gui/ip-address/147.124.213.152/relations
+# Reference: https://www.virustotal.com/gui/ip-address/173.249.196.195/relations
+# Reference: https://www.virustotal.com/gui/ip-address/176.31.159.196/relations
+# Reference: https://www.virustotal.com/gui/ip-address/216.250.251.196/relations
+# Reference: https://www.virustotal.com/gui/file/2721d0021adc0d44646b299edf6a4534e8072c02c3fbe346d2729715e2150f53/detection
+# Reference: https://www.virustotal.com/gui/file/dbc152473a11cfa663c65c0d37cf642e9054fb9d4a57907a4ce718f8c4126db5/detection
+# Reference: https://www.virustotal.com/gui/file/01b318132b56fb6de80e571573b1128cf87e46071e7163b2c8288de273da5b84/detection
+# Reference: https://www.virustotal.com/gui/file/4b8842d9ca77491b565033e4808f0872b84a5b48ec7ad9d947528967b8dc9b0a/detection
+# Reference: https://www.virustotal.com/gui/file/30c9e813ccdf56f11647c7f55bd195326744339d752628c5a9a2d9b6cc4e09d6/detection
+# Reference: https://www.virustotal.com/gui/file/fb7a958b99275caa0c04be2a821b2a821bb797c4be6bd049fa09144de349ea41/detection
+
+147.124.213.152:445
+216.250.251.196:445
+rendinfo.shop
+archivos.homelinux.net
+danfe.is-certified.com
+flymedlink.rendinfo.shop
+jalisco.is-a-socialist.com
+supplier.est-le-patron.com
+supplier.serveftp.net
+mexico.jalisco.is-a-socialist.com
+sodkvsodkv.supplier.serveftp.net
+tornoturn01.supplier.est-le-patron.com

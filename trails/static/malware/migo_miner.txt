@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.cadosecurity.com/migo-a-redis-miner-with-novel-system-weakening-techniques/
+
+http://103.79.118.221
+103.79.118.221:443
+103.79.118.221:6379

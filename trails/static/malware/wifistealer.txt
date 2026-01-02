@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: wifi stealer, wi-fi stealer
+
+# Reference: https://x.com/iam_rajhans/status/1829130552017838544
+# Reference: https://app.validin.com/detail?find=bf4b91f2b71df26109241f7e175c32a9&type=hash&ref_id=d54f06ba490#tab=host_pairs_v2
+
+wifistealer.netsons.org
+mail.wifistealer.netsons.org

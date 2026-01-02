@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: hioles
+
+# Reference: https://www.virusbulletin.com/virusbulletin/2014/03/proxycb-spam-proxy-under-radar
+# Reference: https://twitter.com/wwp96/status/1327927871734755328
+# Reference: https://app.any.run/tasks/b24bfbac-4f12-4149-b225-ac6c45f0ccdf/
+# Reference: https://www.virustotal.com/gui/file/3a556f310714f7aec2c7852c8b91908c301c378dfe52b0ae847f2736f76b7487/detection
+
+http://185.158.115.191
+185.158.115.191:1001
+185.158.115.191:1002
+
+# Reference: https://twitter.com/ozuma5119/status/1327945813016735745
+# Reference: https://www.virustotal.com/gui/file/72da56c912cfc9669d749a19728151b390683f00cf0ec31cedd6fe8b4a25289f/detection
+
+http://185.158.114.14
+185.158.114.14:1001
+185.158.114.14:1002
+195.62.53.223:1001
+195.62.53.223:1002
+upteambuilding.com
+
+# Reference: https://www.virustotal.com/gui/file/ecfac8e9f46464870ac293c79befaf8c2e6595558a7e5cb7eab73a9554c3d5b4/detection
+
+justdoits.pw
+
+# Reference: https://www.virustotal.com/gui/file/fe00d42bc9e19a8996586f7db386b3e4a01bbb943511640ac4416811e9c1ca5b/detection
+
+195.62.53.253:1001
+195.62.53.253:1002
+
+# Reference: https://www.virustotal.com/gui/file/0787164fbdfe7932910ff17d6bb80db38050ce0d9becc13c4de3b393d9b17b5d/detection
+
+185.158.114.235:1001
+185.158.114.235:1002

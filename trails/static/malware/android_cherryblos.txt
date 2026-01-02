@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trendmicro.com/en_us/research/23/g/cherryblos-and-faketrade-android-malware-involved-in-scam-campai.html
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/23/g/related-cherryblos-and-faketrade-android-malware-involved-in-scam-campaigns-/update-ioc-related-cherryblos-and-faketrade-android-malware-involved-in-scam-campaigns.txt
+
+chatgptc.io
+happyminder.buzz
+hugeversapi.com
+m1m1mapi.com
+robot999.net
+synthnet.ai
+dl.chatgptc.io
+dl.synthnet.ai
+008c.hugeversapi.com
+docs.synthnet.ai
+huapi.hugeversapi.com
+gptc.m1m1mapi.com
+h5.chatgptc.io
+h5.synthnet.ai
+smhapi.m1m1mapi.com
+sy.hugeversapi.com
+synthnet.m1m1mapi.com
+wapi.hugeversapi.com

@@ -1,0 +1,41 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: APT-Q-95
+
+# Reference: https://x.com/RedDrip7/status/1940637150158139764
+# Reference: https://x.com/RedDrip7/status/1940780494662390135
+# Reference: https://mp.weixin.qq.com/s/I907WsSIPfkTG8kYloj29w
+# Reference: https://github.com/RedDrip7/Report/blob/master/APT/Exclusive%20disclosure%20of%20the%20attack%20activities%20of%20the%20USA%20APT%20group%20NightEagle.pdf
+
+ccproxy.org
+comfyupdate.org
+coremailtech.com
+daihou360.com
+doubleclicked.com
+e-mailrelay.com
+fastapi-cdn.com
+flowgw.com
+fortisys.net
+haprxy.org
+lvusdupdates.org
+mirrors-openjdk.org
+ms-nipre.com
+sangsoft.net
+saperpcloud.com
+shangjuyike.com
+synologyupdates.com
+threatbookav.com
+wechatutilities.com
+wsupdatecloud.net
+app.flowgw.com
+cloud.synologyupdates.com
+dashboard.daihou360.com
+liveupdate.wsupdatecloud.net
+mirror1.mirrors-openjdk.org
+ms.wsupdatecloud.net
+rhel.lvusdupdates.org
+tracking.doubleclicked.com
+update.haprxy.org
+update.saperpcloud.com
+updates.ccproxy.org

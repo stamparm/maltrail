@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: Malware/Torpig Cabal
+
+# Note: dig foobar.com ANY @ns1.torpig-sinkhole.org
+
+85.214.50.92
+87.106.190.163
+85.214.83.150
+87.106.190.165
+87.106.190.169
+87.106.18.146
+
+# Reference: https://www.virustotal.com/gui/ip-address/87.106.18.122/relations
+
+87.106.18.122
+
+# Reference: https://www.virustotal.com/gui/ip-address/87.106.18.141/relations
+
+87.106.18.141
+
+# Reference: https://www.virustotal.com/gui/ip-address/87.106.190.153/relations
+# Reference: https://www.virustotal.com/gui/ip-address/87.106.190.154/relations
+# Reference: https://www.virustotal.com/gui/ip-address/87.106.190.157/relations
+# Note: whois ntklmtsslgfe.com | grep ns1.torpig-sinkhole.org
+
+87.106.190.153
+87.106.190.154
+87.106.190.157

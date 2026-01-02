@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.lastline.com/labsblog/exposing-rombertik-turning-the-tables-on-evasive-malware/
+# Reference: https://www.symantec.com/security_response/earthlink_writeup.jsp?docid=2015-050517-4726-99
+
+centozos.org.in
+
+# Reference: https://www.threatconnect.com/adversary-intelligence-behind-the-keyboard/
+# Reference: https://krebsonsecurity.com/2015/05/malware-evolution-calls-for-actor-attribution/
+
+centozos.org.in
+besty.firm.in
+cathybote.biz
+donsnook.pw
+hilary.org.in
+kallyguru.in
+norqren.com

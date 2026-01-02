@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ddosman, elknot, mayday
+
+# Reference: https://twitter.com/malwaremustd1e/status/1111983625661087745
+
+193.201.224.238:8852
+cctybt.com
+
+# Reference: https://imgur.com/a/57uOiTu
+
+103.119.28.12:8080
+/GHJFFGND/
+
+# Reference: https://www.virustotal.com/gui/file/29a10324c42af67447222fbc5403f66841cfe5fd9daa9cd10e65ff8a5c3aa36a/detection
+# Reference: https://www.virustotal.com/gui/file/341eaf64943db5f20044180233d81426b377b37bfcd6518e3b3e0157d40fcbe2/detection
+
+119.10.151.120:10711
+
+# Reference: https://www.virustotal.com/gui/file/2694707d095935025559b6e24890d49ac2f110d4d4dee44cb4fa2143f349b52c/detection
+
+34.125.159.155:1337
+
+# Reference: https://www.virustotal.com/gui/file/e76c7e5021715569c89e8c56fdb76dad300ae345da05ac4f2fa9a134db0bd549/detection
+# Reference: https://www.virustotal.com/gui/file/64adb6636257a98043b1f2891358d206fb44bdae3d9f33774dfaa9f7b0a2e8c1/detection
+
+93.123.85.52:1667
+93.123.85.52:2248
+raindos.top

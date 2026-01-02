@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: rootteam stealer
+
+# Reference: https://twitter.com/g0njxa/status/1724408541056729317
+# Reference: https://app.any.run/tasks/54b37910-b076-455c-9bf6-9c08bcb8bcba/
+
+http://77.91.76.15

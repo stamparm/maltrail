@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: 0mega ransomware
+
+# Reference: https://twitter.com/b3ard3dav3ng3r/status/1546461237105807360
+
+0mega.cc
+0mega-connect.biz
+omegalock5zxwbhswbisc42o2q2i54vdulyvtqqbudqousisjgc7j7yd.onion
+
+# Reference: https://x.com/GenThreatLabs/status/1976295017527308757
+
+sabitaxt.com
+fxa.sabitaxt.com

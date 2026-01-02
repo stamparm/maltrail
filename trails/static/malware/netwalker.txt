@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://malware-guide.com/blog/mailto-netwalker-ransomware-compromises-enterprise-networks
+# Reference: https://www.bleepingcomputer.com/news/security/netwalker-ransomware-infecting-users-via-coronavirus-phishing/
+
+rnfdsgm6wb6j6su5txkekw4u4y47kp2eatvu7d6xhyn5cs4lt4pdrqqd.onion
+
+# Reference: https://twitter.com/petrovic082/status/1287483320444616710
+# Reference: https://app.any.run/tasks/a7e0647c-81b2-4150-b944-3ae3e697c92a/
+
+pb36hu4spl6cyjdfhing7h3pw6dhpk32ifemawkujj4gp33ejzdq3did.onion

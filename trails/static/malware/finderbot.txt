@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ViriBack/status/1154377089077993474
+
+finabisope.host
+
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1213878934514864128
+
+newfoundfriend.xyz

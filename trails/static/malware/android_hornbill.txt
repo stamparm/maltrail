@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: sunbird, sunrat
+
+# Reference: https://resources.lookout.com/blog/lookout-discovers-novel-confucius-apt-android-spyware-linked-to-india-pakistan-conflict
+# Reference: https://twitter.com/malwrhunterteam/status/1484834556289200129
+# Reference: https://www.virustotal.com/gui/file/a7c9472841c7d20eba604eaca23557fb49642e15e7ce61886d9a34f029a69134/detection
+# Reference: https://www.virustotal.com/gui/file/6ca7fda71126ce64d3263e6e1471eda0921ce3796e71f89e40c1073fcc81a213/detection
+# Reference: https://www.virustotal.com/gui/file/311b661a411433ae27efe4d9cec87a5699d70fc54ed4d897113947a394c3fecd/detection
+# Reference: https://www.virustotal.com/gui/file/23c0e06aae4e0662c4f88d0c079cdda5e8005f46896f7a5ba52e414db7c8efa5/detection
+
+139.59.72.138:8080
+184.154.203.90:8080
+69.175.35.98:8080
+chatk.goldenbirdcoin.com
+data10.000webhostapp.com
+global134.000webhostapp.com
+sunshinereal.000webhostapp.com
+wixten.000webhostapp.com
+
+# Generic
+
+/abc/UpdateMobileState
+/spy/SignUp
+/spy/UpdateMobileState

@@ -1,0 +1,42 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: kerberods, khugepageds
+
+# Reference: https://twitter.com/malwaremustd1e/status/1118526993912307712
+# Reference: https://twitter.com/malwaremustd1e/status/1122003608927494145
+# Reference: https://blog.netlab.360.com/an-analysis-of-godlua-backdoor-en/
+
+systemten.org
+w.3ei.xyz
+w.21-3n.xyz
+t.w2wz.cn
+1.z9ls.com
+yxarsh.shop
+i.ooxx.ooo
+baocangwh.cn
+# img.sobot.com
+cloudappconfig.com
+heheda.tk
+
+# Reference: https://twitter.com/malwaremustd1e/status/1124352163868581888
+# Reference: https://community.atlassian.com/t5/Confluence-questions/How-come-my-confluence-installation-was-hacked-by-Kerberods/qaq-p/1054605
+# Reference: https://www.virustotal.com/gui/domain/d.heheda.tk/relations
+# Reference: https://twitter.com/_odisseus/status/1146409965260824578
+# Reference: https://blog.netlab.360.com/an-analysis-of-godlua-backdoor-en/
+
+c.heheda.tk
+ccc.heheda.tk
+d.heheda.tk
+dd.heheda.tk
+liuxiaobei.top
+
+# Reference: https://twitter.com/malwaremustd1e/status/1126869452748804096
+
+gwjyhs.com
+
+# Reference: https://twitter.com/stvemillertime/status/1151148881729789954
+# Reference: https://app.any.run/tasks/18f59c38-d586-40df-8ff0-3a7904f95a94/
+# Reference: https://app.any.run/tasks/fa7b0a82-6a06-4bb3-bd36-d733c6646fd1/
+
+fullmeshnet.eu

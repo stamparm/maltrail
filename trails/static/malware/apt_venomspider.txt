@@ -1,0 +1,143 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: goldenchickens, moreeggs, revc2, terraloader, terrastealer, terrastealerv2, terracryptor, venomlnk, venomloader
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/fake-jobs-campaigns-delivering-moreeggs-backdoor-fake-job-offers
+
+interrafcu.com
+usstaffing.services
+mail.rediffmail.kz
+onlinemail.kz
+api.cloudservers.kz
+secure.cloudserv.ink
+tonsandmillions.com
+contactlistsagregator.com
+
+# Reference: https://twitter.com/VK_Intel/status/1119082329324965893
+
+report.monicabellucci.kz
+
+# Reference: https://twitter.com/James_inthe_box/status/1204125950033575937
+# Reference: https://app.any.run/tasks/48907a8c-bc47-4552-a705-334e93d0edca/
+
+anuffrost.com
+dns.hahdyman.com
+
+# Reference: https://twitter.com/VK_Intel/status/1211758023376592896
+
+blog.jasonlees.com
+
+# Reference: https://twitter.com/VK_Intel/status/1286747453849468929
+# Reference: https://www.virustotal.com/gui/file/38f3a52e1ebd93db75f0fb6ce6172565cc0f27f0f86f32f470fa7a9c8de9f094/detection
+
+maps.doaglas.com
+
+# Reference: https://x.com/s1dhy/status/1825654074068578528
+# Reference: https://x.com/fr0s7_/status/1826559678668501494
+# Reference: https://app.any.run/tasks/57be831c-884f-4bc5-8287-f31c60c7d6ff/
+# Reference: https://app.any.run/tasks/97eb6e11-41c2-4861-a1f5-b48fc59bebec/
+# Reference: https://app.any.run/tasks/0397179e-485a-4b4c-bfb6-8c855ad24a71/
+
+http://65.38.121.145
+http://65.38.121.75
+sharefiles.center
+totalsphere.center
+api.totalsphere.center
+api.sharefiles.center
+vad.totalsphere.center
+
+# Reference: https://x.com/k3yp0d/status/1835549865155154285
+# Reference: https://www.virustotal.com/gui/file/01446c36f93532f2cd8af96396e22086f37aef1bb8e68b3b03076c9da5ec9737/detection
+
+http://72.5.43.19
+yerra.org
+/aaaQHvrzTFUuAh
+/ccckweJYfszthKpQa
+
+# Reference: https://x.com/k3yp0d/status/1838668770841108608
+# Reference: https://www.virustotal.com/gui/file/c0579b32a8dfad75f00078c48a25ae34c73950692104cfca6c299dcc9de27b4a/detection
+
+217.69.8.13:8082
+65.20.107.145:8080
+nopsec.org
+seopager.xyz
+
+# Reference: https://x.com/DaveLikesMalwre/status/1845590642430529630
+# Reference: https://www.virustotal.com/gui/file/b1781a062bfca853a3b556afe982e1800bb1e30cde0771cf7c62ca272503c788/detection
+
+170.75.168.151:8080
+
+# Reference: https://x.com/malwrhunterteam/status/1847583357485416896
+# Reference: https://www.virustotal.com/gui/file/1ddb7d620b40e406d07b5242683583071ef11dc43713ca03cf9c054b284d2fb7/detection
+
+http://170.75.168.151
+http://65.38.121.211
+fileio.center
+drive.fileio.center
+
+# Reference: https://x.com/r3dbU7z/status/1825446509082505613
+# Reference: https://www.virustotal.com/gui/file/4ca845b77a71cc1b5d8b367f3329a70cd7753c2d5d056b1dac51860a4815b859/detection
+# Reference: https://www.virustotal.com/gui/file/4ca845b77a71cc1b5d8b367f3329a70cd7753c2d5d056b1dac51860a4815b859/detection
+# Reference: https://www.virustotal.com/gui/file/28cb51c171d591b2bb35bc9a4379010fd37f66cfcd317a67cb73b24262dc17c6/detection
+# Reference: https://www.virustotal.com/gui/file/d2809ea33f5d54c9c6d1c6037f1b3e2c5e4d0bba2bf117023a00b0b8603ef31d/detection
+
+65.20.104.150:8080
+gdrive.rest
+winapi.net
+
+# Reference: https://www.zscaler.com/blogs/security-research/unveiling-revc2-and-venom-loader
+
+208.85.17.52:8082
+
+# Reference: https://x.com/DaveLikesMalwre/status/1872840653597823387
+# Reference: https://app.any.run/tasks/a2b2b424-9c0a-48ca-89a0-5535bfcc2cb5
+
+65.20.104.212:8080
+finatick.com
+
+# Reference: https://x.com/DaveLikesMalwre/status/1878933026547040271
+
+65.20.99.10:8080
+waveax.net
+
+# Reference: https://x.com/DaveLikesMalwre/status/1910770682071539863
+# Reference: https://www.virustotal.com/gui/file/0151383431f7d057aa48ddff60feaa3a6511ec0b0eb0b224136e0cbef93daf85/detection
+# Reference: https://www.virustotal.com/gui/file/18c8117c589f6986ff02504283c5af9906483a2d72ecad764ac597f04fc81ae9/detection
+# Reference: https://www.virustotal.com/gui/file/b24603f97e43ce0445f13d902adad63fb1763e5e1ddf16a31379dd13d467b09f/detection
+# Reference: https://www.virustotal.com/gui/file/207c283b7877f26e57b555dc638a297633920d3a3df81a492dd4e121d52d1872/detection
+
+http://65.20.104.138
+65.20.104.138:443
+65.20.104.138:445
+avadgray.org
+monstrack.org
+swissblog.org
+
+# Reference: https://x.com/RecordedFuture/status/1919777955368120356
+# Reference: https://x.com/skocherhan/status/1919869645646889308
+# Reference: https://www.recordedfuture.com/research/terrastealerv2-and-terralogger
+# Reference: https://go.recordedfuture.com/hubfs/reports/cta-2025-0501.pdf
+
+boldvertex.store
+jonatechlab.com
+swiftvantage.online
+wetransfers.io
+pub-ee3b9adcbb354679b5c35d5210673997.r2.dev
+qb-hos.pages.dev
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-05-14-v10927/2734
+
+api.incapdns.kz
+beta.w3.org.kz
+cast.voxcdn.kz
+developer.master.org.kz
+incapdns.kz
+mail.incapdns.kz
+master.org.kz
+ryanberardi.com
+stats.wp.org.kz
+tool.municipiodechepo.org
+voxcdn.kz
+w3.org.kz
+wp.org.kz

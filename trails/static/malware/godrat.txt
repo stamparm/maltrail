@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/godrat/117119/
+# Reference: https://www.virustotal.com/gui/file/2f57c1ee409b690337bc2d95863455d606917ca60d207c3d2bb0cf2ccd0bb1cf/detection
+# Reference: https://www.virustotal.com/gui/file/34a69a41d71116f98a116166c177151a7b237b20bd3b47888b34aad76f27a59a/detection
+# Reference: https://www.virustotal.com/gui/file/c24937a44084225df5fd8b2e06a2c335ef0beac5b829f22fb3d98383957bffdf/detection
+# Reference: https://www.virustotal.com/gui/file/14ebd6375740693cbbb96e4c0abb24129c6caea780acda633dc0e51715767c26/detection
+# Reference: https://www.virustotal.com/gui/file/e26efc253a47bf311abff125f53f860c0cabaa58592b3407de1380a6d3170265/detection
+# Reference: https://www.virustotal.com/gui/file/154e800ed1719dbdcb188c00d5822444717c2a89017f2d12b8511eeeda0c2f41/detection
+# Reference: https://www.virustotal.com/gui/file/67c0645892b01e1f72ef11e706902a7f465f005fac695806ba686528439a184c/detection
+# Reference: https://www.virustotal.com/gui/file/9f65fc1f458f2c33ac5547561a6ada98688817e3c362e9d38e2b2b6ce79df4bf/detection
+
+103.237.92.191:443
+118.107.46.174:443
+118.99.3.33:443
+154.91.183.174:443
+47.238.124.68:443
+dfbgvswrtegf.com
+holoohg.oss-cn-hongkong.aliyuncs.com
+txt888.oss-ap-southeast-1.aliyuncs.com

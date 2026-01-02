@@ -1,0 +1,241 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/2018/04/gravityrat-two-year-evolution-of-apt.html
+
+msoftupdates.com
+msoftupdates.eu
+mylogisoft.com
+
+# Reference: https://www.virustotal.com/gui/file/828595d68d450d68be7ac03bd654fdc1f47373b50f8ff23e0ef6e4f17e8856dc/detection
+
+3.17.202.129:19185
+
+# Reference: https://www.virustotal.com/gui/file/8115a146dc2059ab5f063c3cdfc9218c44d5a77bb21dbc03220db556454a3e79/detection
+
+3.19.3.150:19185
+
+# Reference: https://securelist.com/gravityrat-the-spy-returns/99097/
+# Reference: https://timesofindia.indiatimes.com/city/lucknow/pakistan-spy-lured-98-targets-with-bots/articleshow/69867201.cms
+# Reference: https://otx.alienvault.com/pulse/5f8dc76217a81be1371cb618
+
+bollywoods.co.in
+chat2hire.net
+click2chat.org
+cvstyler.co.in
+enigma.net.in
+gozap.co.in
+melodymate.co.in
+microsoftupdate.in
+mozillaupdates.com
+mozillaupdates.us
+msoftserver.eu
+nortonupdates.online
+orangevault.net
+savitabhabi.co.in
+sharify.co.in
+strongbox.in
+teraspace.co.in
+titaniumx.co.in
+wesharex.net
+windowsupdates.eu
+x-trust.net
+
+# Reference: https://app.any.run/tasks/0c397db6-3b87-45cc-9a07-b4ea0c3831c7/
+
+coreupdate.msoftupdates.com
+
+# Reference: https://blog.cyble.com/2021/11/11/gravity-rat-malware-returns-as-a-chat-application/
+
+androidsdkstream.com
+api1.androidsdkstream.com
+api2.androidsdkstream.com
+api3.androidsdkstream.com
+api4.androidsdkstream.com
+/foxtrot/61c10953.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1539530280712736769
+# Reference: https://twitter.com/sh1shk0va/status/1539591783855833088
+# Reference: https://www.virustotal.com/gui/file/a1d146a82df68ac82a02790b37f088ff8b644daddcaf4df2a37578bc54b243df/detection
+
+sdklibraries.com
+dl.androidsdkstream.com
+sdk2.sdklibraries.com
+
+# Reference: https://github.com/ti-research-io/ti/blob/main/ioc_extender/ET_GravityRAT.json
+
+0.lacofire.net
+00258f3b028de.org
+00bc1419999d5.org
+018199882ed55.org
+021e95a350585.org
+032762acbb37f.org
+03d640d743dac.org
+05.lacofire.net
+056df109e2477.org
+05f5eafb116e3.org
+061da5d844ea9.org
+065b2de2b4858.org
+09c82646e00a0.org
+0c1c2fd13db85.org
+0cf568f1aad1c.org
+0d6833a14e042.org
+0e6c9d3646d86.org
+0f21c28fc23da.org
+0f52953c47833.org
+1.dnsnb8.net
+4da5945d0280a.org
+57b5546f.top
+95f60339f6bb0.org
+alonesurprise.net
+bcybzoltm.com
+booomaahuuoooapl.net
+d.disgogoweb.com
+ektoexxkaxingxcxcums.com
+eoufaoeuhoauengi.in
+eoufaoeuhoauengi.net
+euljdnlccw.net
+evdcuukwqknlwsu.com
+f0f7594556f90.org
+familypartial.net
+fxcoin.in
+g.disgogoweb.com
+genevievemillicent.net
+grosvenorharrelson.net
+harriettakatherine.net
+hgrvrfrbmid.org
+karybbqjmfcf.com
+lrstnought.net
+madelainegranville.net
+morninglikely.net
+msp36-02.com
+mspa5-02.com
+mspl5-02.com
+mspo5-02.com
+mspu5-02.com
+mspv5-02.com
+napws.biz
+plpoiupakludkosa.in
+septemberharrelson.net
+silvesterwilliamson.net
+stillshake.net
+stillunderstand.net
+strangeshoulder.net
+thoughprobable.net
+uavnlrraj.com
+vlylnboqti.info
+vxypjbyp.biz
+vycmhjhkf.cc
+wizardtesla.com
+wvbqofcefhaggwsjorgy.com
+xbhvfkuedjjyyxf.ru
+ycwxyvehvpvcjaw.ru
+
+# Reference: https://twitter.com/malwrhunterteam/status/1636658463295012870
+# Reference: https://twitter.com/malwrhunterteam/status/1682268821577449472
+# Reference: https://www.virustotal.com/gui/file/caf0a39318cfc1e65eae773a28de62ce08b7cf1b9d4264e843576165411e2a84/detection
+# Reference: https://www.virustotal.com/gui/file/c6ff2eaf33c32dcd9a32e5388e04d4f80aa7fc3bc490e12d97ce1b988e9b1649/detection
+
+androidadbserver.com
+dev.androidadbserver.com
+/indigo/8a99d28c.php
+/jurassic/6c67d428.php
+
+# Reference: https://about.fb.com/wp-content/uploads/2023/05/Meta-Quarterly-Adversarial-Threat-Report-Q1-2023.pdf
+
+adb.androidadbserver.com
+androidwebkit.com
+bingechat.net
+chatico.co.uk
+cld.androidadbserver.com
+cloudinfinity.co.uk
+cloudstore.net.in
+comicum.co.uk
+craftwithme.uk
+crypted.co.in
+cvscout.uk
+cvwriter.co.in
+dev.jdklibraries.com
+hookups4u.com
+jdklibraries.com
+jre.jdklibraries.com
+jupiter.playstoreapi.net
+mars.playstoreapi.net
+moon.playstoreapi.net
+moviedate.co.uk
+ping.androidadbserver.com
+playstoreapi.net
+recoverbin.co.uk
+sexyber.net
+textra360.com
+vaultcloud.net
+venus.playstoreapi.net
+webbucket.co.uk
+
+# Reference: https://twitter.com/malwrhunterteam/status/1760319965859594358
+# Reference: https://www.virustotal.com/gui/file/0223dbaed92ebed13f4e7176462127f7d8d75cc1c8c8c60d0145c043006317d6/detection
+
+taila91cf.ts.net
+cybriks.taila91cf.ts.net
+
+# Reference: https://x.com/malwrhunterteam/status/1795790042620715391
+# Reference: https://www.virustotal.com/gui/file/08895b0c787f641c71f0cd505704aeb6d22b56cd00855407cbd9e8da7ea06585/detection
+
+androidstaticserve.com
+v2.androidstaticserve.com
+/blue/B67j96dg.php
+/B67j96dg.php
+
+# Reference: https://blog.talosintelligence.com/cosmic-leopard/
+
+androidmetricsasia.com
+cloudieapp.net
+javacdnlib.com
+mozillasecurity.com
+officelibraries.com
+rockamore.co.uk
+windowsupdatecloud.com
+zclouddrive.com
+dl01.mozillasecurity.com
+/cvscout/cvstyler_client.php
+/cwmb/d26873c6.php
+/golf/c6cf642b.php
+/hotriculture/671e00eb.php
+/indigo/8a99d28c.php
+/kangaroo/8a99d28c.php
+/m2c/m_client.php
+/microsoftupdates/6efbb147.php
+/microsoftupdates/741bbfe6.php
+/mswordupdates/c47d1870.php
+/opex/13942ba7.php
+/opex/7ab24931.php
+/quebec/5be977ac.php
+/rb/e7a18a38.php
+/sexyber/sexyberc.php
+/system/546f9a.php
+/voilet/8a99d28c.php
+/webbucket/strong_client.php
+/0fb1e3a0.php
+/13942ba7.php
+/546f9a.php
+/5be977ac.php
+/671e00eb.php
+/6efbb147.php
+/741bbfe6.php
+/78181d14.php
+/7ab24931.php
+/8a99d28c.php
+/a0b74607.php
+/c47d1870.php
+/c6cf642b.php
+/c9a5e83c.php
+/d26873c6.php
+/e7a18a38.php
+
+# Reference: https://x.com/MalwareHawk/status/1991051160195903567
+
+b17da333ec194ec4b767.d.requestbin.net
+
+# APK
+
+/savitabhabi.apk

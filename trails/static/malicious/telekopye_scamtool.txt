@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/en/eset-research/telekopye-hunting-mammoths-using-telegram-bot/
+# Reference: https://www.welivesecurity.com/en/eset-research/telekopye-chamber-neanderthals-secrets/
+# Reference: https://otx.alienvault.com/pulse/6564d0af3b26263e9db591d9
+
+2cdx.site
+3inf.site
+avito-rent.id7423.ru
+avito.id7423.ru
+boxberry.id7423.ru
+cdek.id7423.ru
+formaa.ga
+id0391.ru
+id23352352.ru
+id2770.ru
+id2918.site
+id39103.ru
+id66410.ru
+id7423.ru
+id8092.ru
+id82567.ru
+id83792.ru
+izi.id7423.ru
+kufar.id7423.ru
+olx.id7423.ru
+pay-sacure4ds.ru
+sbazar.id7423.ru
+youla.id7423.ru

@@ -1,0 +1,67 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: snappytcp
+
+# Reference: https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/tortoise-and-malwahare.html
+# Reference: https://blog.talosintelligence.com/seaturtle/
+
+http://108.61.103.186
+http://146.190.28.83
+http://168.100.10.187
+http://168.100.8.245
+http://168.100.9.203
+http://199.247.29.25
+http://31.13.195.52
+http://31.214.157.230
+http://45.80.148.172
+http://88.119.171.248
+http://93.115.22.212
+http://95.179.176.250
+al-marsad.co
+alhurra.online
+anfturkce.news
+aws.systemctl.network
+dhcp.systemctl.network
+eth0.secrsys.net
+lo0.systemctl.network
+nmcbcd.live
+querryfiles.com
+secrsys.net
+systemctl.network
+ud.ybcd.tech
+upt.mcsoft.org
+ybcd.tech
+
+# Reference: https://www.huntandhackett.com/blog/turkish-espionage-campaigns
+
+http://193.34.167.245
+boord.info
+forward.boord.info
+/c00n/connn.c
+/c00n/socat
+
+# Reference: https://www.virustotal.com/gui/file/d7164daf135404a0f0851ffe126a0a0afe17d7f1e68717617feb9cfc3deea89c/detection
+
+62.115.255.163:61265
+
+# Reference: https://blog.strikeready.com/blog/pivoting-through-a-sea-of-indicators-to-spot-turtles/
+# Reference: https://otx.alienvault.com/pulse/65a0740fefe93d8593b812af
+
+23be.xtechsupport.org
+ai-connector.goldchekin.com
+ai-connector.splendor.org
+ai-connector.splendos.org
+alarabiyaa.online
+caglayandergisi.net
+cn.sslname.com
+exp-al-marsad.co
+infohaber.net
+loading-website.net
+netssh.net
+nuceciwan.news
+serverssl.net
+solhaber.info
+solhaber.news
+update.qnetau.net
+xtechsupport.org

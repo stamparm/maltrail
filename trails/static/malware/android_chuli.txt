@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2013-032617-1604-99&tabid=2
+# Reference: https://www.virustotal.com/en/ip-address/64.78.161.133/information/
+
+http://64.78.161.133/android.php
+
+# Reference: https://www.virustotal.com/gui/file/b1b834e5f82072033b2c67bf20eecda7cb85d3707fc06e7b60851a87865838dd/detection
+
+androidapp.sytes.net
+androidapps.sytes.net

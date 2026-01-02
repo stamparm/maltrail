@@ -1,0 +1,213 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/ip-address/3.33.130.190/relations
+
+anonymousrat8.com
+
+# Reference: https://www.virustotal.com/gui/file/fd8e45999ee1f3bdd55ade8f89822a18253a7ce3bb12c13d1fdf2af0e933af78/detection
+
+176.221.16.167:60
+dssdhome.xyz
+mooscc.b-cdn.net
+bfqnflvsduwf.dssdhome.xyz
+olomzgzjvavq.dssdhome.xyz
+
+# Reference: https://www.virustotal.com/gui/file/d03321117ccc91fcf792e4427236677c0d547bd4a196330155f73e6290289e6c/detection
+
+qfpowfhhtbny.dssdhome.xyz
+
+# Reference: https://www.virustotal.com/gui/file/94d6af90cfb0d9ae767eb3f6a41f1ad583a3fb1e2108fdc6de7706a922855fe5/detection
+
+oaizrxidbmxt.dssdhome.xyz
+ohmvushosgjo.dssdhome.xyz
+
+# Reference: https://www.virustotal.com/gui/file/7ff1a20e8a37162f8a1a7bb00d7f5b9d0993cf7e232aa7e6373014fecd191d4d/detection
+
+wyvsmctyhhjx.dssdhome.xyz
+zunzepbmtner.dssdhome.xyz
+
+# Reference: https://www.virustotal.com/gui/file/7b7717164b9385d16b78c439667afe0ffab5aa6240ffd1c8ac2bb1f9b6b96e3e/detection
+
+uorjtbdrmyup.dssdhome.xyz
+zrmsqqeawolt.dssdhome.xyz
+
+# Reference: https://www.virustotal.com/gui/file/4fdb0465d2a66e1d810e072b8e205bf7445566a8e9a97c4cd3da0a7b4dc991a4/detection
+
+xn--ypd.dssdhome.xyz
+
+# Reference: https://www.virustotal.com/gui/file/37b85585451244443cd128a3c2427d2e9f7c6128314dcb623d6450369dafe827/detection
+
+ptxxuddhupts.dssdhome.xyz
+zmcskjrwmxrd.dssdhome.xyz
+
+# Reference: https://www.virustotal.com/gui/file/27fe9ce6d8a578711016c2b252d18362268b686356dfaaf2e9c28dd2c41d83df/detection
+
+clsvjqokiuar.dssdhome.xyz
+lbfasicomxbe.dssdhome.xyz
+
+# Reference: https://x.com/malwrhunterteam/status/1831255116965433474
+# Reference: https://www.virustotal.com/gui/file/40a491a455428c1cdcf8e47174ff88d2baf12e8b711b9a6d7986ef35e7719381/detection
+
+134.122.204.174:966
+nasasystem.com
+qbadmin.nasasystem.com
+yk.nasasystem.com
+
+# Reference: https://x.com/malwrhunterteam/status/1831249484589752704
+# Reference: https://www.virustotal.com/gui/file/0f85b67f0c4ca0e7a80df8567265b3fa9f44f2ad6ae09a7c9b7fac2ca24e62a8/detection
+
+nasa6.com
+h5.nasa6.com
+
+# Reference: https://x.com/vm001cn/status/1838210173611212864
+# Reference: https://app.any.run/tasks/95f81506-9fbc-474f-9729-73cbae8558db
+# Reference: https://www.virustotal.com/gui/file/5e23e5f248889ca7eea67fd69e2a1861e0e8bd0bfb24f71cc743ce5b9887db40/detection
+# Reference: https://www.virustotal.com/gui/file/c0c00b7972c677a06f73f305514e0e8779228aa8d73bd02bc539dbe6afdff857/detection
+# Reference: https://www.virustotal.com/gui/file/16cef4fe9060ca7f12afa9c77039859d010a8426a1bc1bb8aa4af3b321dd65a6/detection
+# Reference: https://www.virustotal.com/gui/file/574f47af2d102f076fb67fcf12d67bf240a16470ee056ff40bceb98b24b87115/detection
+
+103.99.61.34:8080
+103.99.61.34:9000
+103.99.61.44:8080
+103.99.61.44:9000
+studyoom.s3.ap-east-1.amazonaws.com
+
+# Reference: https://www.virustotal.com/gui/file/947aeb41c19a25c367e7d88068b723cfc7fcaf120801f04cbdff63841cd26db2/detection
+
+143.92.57.11:6666
+143.92.57.11:8888
+
+# Reference: https://x.com/banthisguy9349/status/1849708170152738954
+# Reference: https://www.virustotal.com/gui/file/632e6199140ee179289ff6d111faf3c125766a1b1cf639bc43d51ed90a447dff/detection
+# Reference: https://www.virustotal.com/gui/file/f33d748ad7a187d872bf951d53d97fb8d90ff87e3fc4933ce507d924178b0f14/detection
+# Reference: https://www.virustotal.com/gui/file/b1355beeb02e014559a2731e916a91a99aa191198c3fc3fd30423d7f66da1292/detection
+# Reference: https://www.virustotal.com/gui/file/09ab9061f203b3d1029ab20cb7a9f5a3f0e5ab6a109bd8cc3998d02b48a65488/detection
+# Reference: https://www.virustotal.com/gui/file/5d2351aa7fafc82d91dedcc0d24a6d986754259e0eb3c12007727ac2bf9039dd/detection
+
+http://129.226.124.159
+http://8.212.100.194
+http://8.212.102.178
+http://8.217.62.104
+47.76.181.141:6666
+8.212.100.194:8888
+8.212.102.178:8888
+8.217.62.104:6666
+8.217.62.104:8888
+tomet.oss-cn-hongkong.aliyuncs.com
+/POOTdigitSix.bin
+
+# Reference: https://x.com/banthisguy9349/status/1849713448118112472
+# Reference: https://www.virustotal.com/gui/file/633799295dcd582349f04fb89719fb8435761a72728d6db1631bc5759f714f26/detection
+
+http://154.215.0.84
+http://154.91.227.103
+http://154.91.227.55
+http://8.212.100.188
+http://8.212.101.123
+http://8.212.101.154
+http://8.212.101.250
+http://8.212.102.221
+154.215.0.84:8888
+
+# Reference: https://x.com/malwrhunterteam/status/1849709843973570611
+# Reference: https://www.virustotal.com/gui/file/e4174ecdc5ede0aa77b3a01a09d49016217635a76f2fd16d8d92a3133553b3cc/detection
+# Reference: https://www.virustotal.com/gui/file/9b357cfc3a6cd767bf5a825ab5cbb6e9eddc88da4e0a5327ebf1f2b7598089c9/detection
+# Reference: https://www.virustotal.com/gui/file/7bc86c41ab8373ed4ec87c1cb8e2827be79efd40441758e1f24270cb09900c98/detection
+
+27.124.41.230:1812
+27.124.41.230:7021
+
+# Reference: https://www.virustotal.com/gui/file/4fd7bb106bd917c73e2f9fd635ffcc2dd05a81c6eddb57731563ed7de298910b/detection
+
+45.195.148.107:6666
+45.195.148.107:8888
+
+# Reference: https://www.virustotal.com/gui/file/74d262ee10cf2c888452610eef0cf51f375ba6c0d027a12329f6ea82e9bc8729/detection
+
+45.195.148.107:8081
+45.195.148.107:9000
+
+# Reference: https://x.com/malwrhunterteam/status/1858575654507458894
+# Reference: https://app.validin.com/detail?find=47.243.70.196&type=ip4&ref_id=b3cf12562d5#tab=resolutions
+# Reference: https://www.virustotal.com/gui/file/b577a0453c59492a0f8d801fb639d675dc5f9ce9313548d73d78544f0a0932f0/detection
+
+43.199.128.223:14992
+43.199.128.223:14993
+anjklvj.work
+bhprkbne.work
+bjdjlgj.work
+geiohn.work
+gheipb.work
+hw5egh.work
+rttwvah.work
+twjshnt.work
+vhilerh.work
+vhiobrea.work
+voierahn.work
+
+# Reference: https://x.com/malwrhunterteam/status/1859195687180665245
+# Reference: https://www.virustotal.com/gui/file/ce30256d432d3eff45de3e8d5f25ae8f3f4ee3d152247c28fdaf7902e5b26219/detection
+
+103.127.83.55:8080
+103.127.83.55:9000
+ttest.dalaozijid.com
+
+# Reference: https://x.com/malwrhunterteam/status/1859223106818060613
+# Reference: https://www.virustotal.com/gui/file/c91598f31099d5157ef641d2cfce647ad6e7de1b766e537c38df4258553da7c5/detection
+
+110.42.36.11:18083
+110.42.36.11:18084
+110.42.36.11:18852
+
+# Reference: https://www.virustotal.com/gui/file/3d45daf62956e67b7d3598c74ce7ba9b68b522d9f807fd1e43bf4bf2d402ad73/detection
+# Reference: https://www.virustotal.com/gui/file/290757d91ac167eacc9b2960faadfe710de80ab41a35690f80274ff5340af8e6/detection
+# Reference: https://www.virustotal.com/gui/file/f150013e875e46b25c101a03525293261ff33d9421edbb0f7120674926dc9804/detection
+
+110.42.36.11:18859
+110.42.36.11:18861
+110.42.36.11:18879
+
+# Reference: https://x.com/malwrhunterteam/status/1861022923923894709
+# Reference: https://www.virustotal.com/gui/file/a1eb610f5e8e7ace99090f6b84a63881bee52e3830b19a29562f5dfd26130769/detection
+
+206.238.43.118:63569
+
+# Reference: https://www.virustotal.com/gui/file/57a6e4486b347f122fa0e936384b18ef25cf734f45e6d63e544841df66712a3b/detection
+
+206.238.43.118:443
+nantong3.net
+
+# Reference: https://x.com/malwrhunterteam/status/1858852139969175910
+# Reference: https://www.virustotal.com/gui/file/ae6d88ea99e530f778ee6088862b50dfb6e8bb45857211e9105428c57c2a7b4a/detection
+# Reference: https://www.virustotal.com/gui/file/94ff4679dd5aec7874354c14132701ecdfbbb558c6011e4952d13bf843255529/detection
+# Reference: https://www.virustotal.com/gui/file/7bff2404c2816c4e1576d449820f01e3f46e7c972beb1843e3b8da2e065f8dc3/detection
+
+1.32.253.70:8080
+1.32.253.70:9000
+27.124.42.235:8080
+27.124.42.235:9000
+cheapen.top
+chsdpen.top
+
+# Reference: https://x.com/malwrhunterteam/status/1861024611388752290
+# Reference: https://www.virustotal.com/gui/file/6a08abbf6bb0d13ee0154a32f7b297cbe9e4a94357bb674bf37981d9783ac241/detection
+# Reference: https://www.virustotal.com/gui/file/c16a51c41470c78398d35747da3b84676fb88094ce1ac176b95af10f406d74a5/detection
+
+47.242.185.214:5555
+
+# Reference: https://x.com/malwrhunterteam/status/1862768629080539646
+# Reference: https://www.virustotal.com/gui/file/70fc75bcebc681b6c32c608717eea3fdc9b2dd22a618b652b7960624b389dc66/detection
+
+http://27.124.12.160
+103.7.30.61:8000
+103.7.30.83:8000
+ied-tqos.wegamex.com.hk
+tqos.wegamex.com.hk
+
+# Generic
+
+/11/msedge_elf.dll
+/11/msedge_ie.exe
+/msedge_elf.dll
+/msedge_ie.exe

@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: spock stealer
+
+# Reference: https://twitter.com/suyog41/status/1760259055879119236
+# Reference: https://www.virustotal.com/gui/file/89300678df750de360222d0cefbebb4291f30c5aec86c2cdaab32b0f09891e94/detection
+
+azlmut.ru
+mail.azlmut.ru

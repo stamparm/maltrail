@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://assets.sentinelone.com/sentinellabs-apt/modified-elephant-apt
+# Reference: https://otx.alienvault.com/pulse/62053151ca89868dc36f41e8
+# Reference: https://www.virustotal.com/gui/file/d6583adb19a327cc2d4e5436889f1c186a552067759e97a7ffbbfe471b2b621b/detection
+# Reference: https://www.virustotal.com/gui/file/76547269ada3892693d041956e53c6794b6e110af6569d02e3303f8e51009950/detection
+
+146.148.42.217:2018
+222.212.28.30:8081
+chivalkarstone.com
+gayakwaad.com
+greenpeacesite.com
+new-agency.us
+newmms.ru
+atlaswebportal.zapto.org
+bzone.no-ip.biz
+duniaenewsportal.ddns.net
+jasonhistoryarticles.read-books.org
+johnmarcus.zapto.org
+knudandersen.zapto.org
+nepal3.msntv.org
+pahiclisting.ddns.net
+ramesh212121.zapto.org
+researchplanet.zapto.org
+socialstatistics.zapto.org
+socialstudies.zapto.org
+testingnew.no-ip.org
+vinaychutiya.no-ip.biz

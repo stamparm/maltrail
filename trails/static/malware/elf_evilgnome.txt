@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.intezer.com/blog-evilgnome-rare-malware-spying-on-linux-desktop-users/
+
+195.62.52.101:1203
+
+# Reference: https://www.virustotal.com/gui/file/a21acbe7ee77c721f1adc76e7a7799c936e74348d32b4c38f3bf6357ed7e8032/detection
+
+17.249.12.152:5223
+17.249.12.146:5223
+17.248.136.76:443
+23.219.38.51:443
+
+# Reference: https://intezer.com/blog/linux/evilgnome-rare-malware-spying-on-linux-desktop-users/
+
+195.62.52.101:3436
+85.143.219.52:3436

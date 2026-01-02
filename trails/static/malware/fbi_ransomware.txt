@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://malwaretips.com/blogs/fbi-mac-os-x-virus/
+# Reference: https://www.virustotal.com/en/domain/fbi.gov.id6575464563999456674.k8381.com/information/
+# Reference: https://www.virustotal.com/en/ip-address/216.172.55.35/information/
+
+s5664.com
+k8381.com

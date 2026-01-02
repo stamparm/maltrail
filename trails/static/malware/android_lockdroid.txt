@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2014-050610-2450-99&tabid=2
+
+police-strong-mobile.com
+mobile-policeblock.com
+police-secure-mobile.com
+police-scan-mobile.com
+police-mobile-stop.com
+police-guard-mobile.com

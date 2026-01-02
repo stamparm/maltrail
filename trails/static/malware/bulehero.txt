@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: blueroh, bulehero
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/fileless-cryptocurrency-miner-ghostminer-weaponizes-wmi-objects-kills-other-cryptocurrency-mining-payloads/
+# Reference: https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/trojan.win32.blueroh.rpb?_ga=2.3915958.786123329.1569179045-1407713373.1562787167
+# Reference: https://blog.talosintelligence.com/2019/09/panda-evolution.html
+
+bulehero.in
+hognoob.se
+
+# Reference: https://wemp.app/posts/378f9dd9-88ef-4de2-8305-11a937894b0e?utm_source=bottom-latest-posts
+
+fky.mykings2020.xyz
+xs.0x0x0x0x0.club
+qb.1c1c1c1c.best
+aj.0x0x0x0x0.best

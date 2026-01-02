@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.lookout.com/blog/hermit-spyware-discovery
+
+119-tim.info
+133-tre.info
+146-fastweb.info
+155-wind.info
+159-windtre.info
+2.228.150.86:8443
+2.229.68.182:8442
+45.148.30.122:58442
+85.159.27.61:8442
+93.39.197.234:8443
+93.57.84.78:8443
+amex-co.info
+apps.fb-techsupport.com
+business.wind-h3g.info
+cloud-apple.info
+comtencentmobileqq-6ffb5.appspot.com
+comxdjajxclient.appspot.com
+fb-techsupport.com
+fintur-a111a.appspot.com
+ho-mobile.online
+iliad.info
+kena-mobile.info
+milf.house
+mobdemo.info
+mobilepays.info
+my190.info
+poste-it.info
+project1-c094e.appspot.com
+rojavanetwork.info
+safekeyservice-972cd.appspot.com
+store-apple.info
+wind-h3g.info

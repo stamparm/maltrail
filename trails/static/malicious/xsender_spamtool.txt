@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/packet_Wire/status/1191779977198473217
+
+dmr.com.sg/ese3.php
+
+# Reference: https://twitter.com/0dayDB/status/825614694081654784
+
+95cnweb.com
+torwebpkoepvlojp.onion
+
+# Reference: https://twitter.com/makflwana/status/1293840963719192576
+
+oic-iphrc.org/assets/css/vendor.php
+xsndr.pw

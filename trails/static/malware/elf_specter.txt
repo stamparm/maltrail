@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: specter, stageclient
+
+# Reference: https://twitter.com/tolisec/status/1411019030073430016
+# Reference: https://elfdigest.com/brief/4a6f8ca85ac6e056c7b373e73a387d91e038b20774fc0bc4c2792cd0deceac43
+# Reference: https://www.virustotal.com/gui/file/029346ea387a6dbe420aa1c9defb928c6217c8303b48c631e2bb73a1650ec178/detection
+
+http://47.243.116.170
+
+# Reference: https://twitter.com/r3dbU7z/status/1449244682240856067
+
+http://138.124.183.94
+
+# Reference: https://twitter.com/r3dbU7z/status/1395767420913127436
+
+http://121.54.190.149
+
+# Reference: https://twitter.com/IntezerLabs/status/1501186216598937604
+# Reference: https://twitter.com/MhicRoibin/status/1501223481303834629
+# Reference: https://analyze.intezer.com/analyses/a615dc5e-fbae-4238-ba48-8af7cf647146
+
+194.156.99.15:443

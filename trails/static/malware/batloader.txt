@@ -1,0 +1,299 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.mandiant.com/resources/seo-poisoning-batloader-atera
+# Reference: https://www.virustotal.com/gui/file/e3d7f1af2bc790cf143827d2335b594dc3d54a0f49cb61e0b8d6a2d1f0ad27cb/detection
+# Reference: https://www.virustotal.com/gui/file/0c3b0dda9f006860a3dfa7be0adb0194a5dfd5a4a1377933e7fb3681b8aadef7/detection
+
+bartmaaz.com
+cloudfiletehnology.com
+clouds222.com
+cmdadminu.com
+commandaadmin.com
+firsone1.online
+kdsjdsadas.online
+pornofilmspremium.com
+sweepcakesoffers.com
+team-viewer.site
+websekir.com
+zoomvideo-s.com
+zoomvideo.site
+
+# Reference: https://assets.sentinelone.com/sentinellabs/SentinelLabs-Zloader
+# Reference: https://otx.alienvault.com/pulse/614056687e876ee92b3f7a1e
+
+teamviewerdownload.fastforbusinessandpersonaluserourserviceaugust.alightindarkplacesbook.com
+
+# Reference: https://tracker.viriback.com/ (# Batloader)
+# Reference: https://twitter.com/1ZRR4H/status/1575364101148114944
+
+a1a2a3b4.com
+/013x1s/index/login
+/01ex93/index/login
+/g5i0nq/index/login
+/p01kpc/index/login
+/p3dr01/index/login
+/sh1z01/index/login
+/t1mw0r/index/login
+/tyr4i1/index/login
+/013x1s/index/
+/01ex93/index/
+/g5i0nq/index/
+/p01kpc/index/
+/p3dr01/index/
+/sh1z01/index/
+/t1mw0r/index/
+/tyr4i1/index/
+
+# Reference: https://twitter.com/1ZRR4H/status/1575364113542389762
+
+anydeskos.com
+logmein-cloud.com
+teamcloudcomputing.com
+teamviewclouds.com
+zoomcloudcomputing.tech
+
+# Reference: https://twitter.com/AlbertPriego/status/1575494025875927041
+
+adueledem.online
+appszik.com
+/amzccadvadmin
+
+# Reference: https://twitter.com/r3dbU7z/status/1579235837833011201
+
+hank2004.kr
+hkmts.kr
+
+# Reference: https://twitter.com/nosecurething/status/1584674460577124352
+
+externalchecksso.com
+
+# Reference: https://twitter.com/SquiblydooBlog/status/1584927323916500993
+
+zoomyclouds.com
+
+# Reference: https://twitter.com/nosecurething/status/1585442441175482368
+
+internalchecksso.com
+
+# Reference: https://twitter.com/th3_protoCOL/status/1587823143854698497
+
+cloudanydesk.com
+cloudsintheslack.com
+cloudsteamview.com
+zoomyinclouds.com
+
+# Reference: https://twitter.com/th3_protoCOL/status/1590469424804663297
+
+photo-editor-mark.com
+
+# Reference: https://twitter.com/nosecurething/status/1593037461915303938
+# Reference: https://twitter.com/nosecurething/status/1593037467858644992
+
+24xpixeladvertising.com
+
+# Reference: https://twitter.com/mojoesec/status/1593351287835222016
+
+t1pixel.com
+t1pixelsite.com
+
+# Reference: https://twitter.com/1ZRR4H/status/1596563151956619265
+
+clodtechnology.com
+
+# Reference: https://twitter.com/ian_kenefick/status/1596604099524726786
+
+grammarlycheck2.com
+
+# Reference: https://twitter.com/ViriBack/status/1597693963649323008
+
+installationupgrade6.com
+/0ssdt1/index/login
+
+# Reference: https://twitter.com/nosecurething/status/1598394820665524224
+
+installationsoftware1.com
+
+# Reference: https://twitter.com/mojoesec/status/1598415404036128769
+
+updatecloudservice1.com
+
+# Reference: https://twitter.com/AdamTheAnalyst/status/1599798656886247424
+
+installationsoftware2.com
+installationupgrade20.com
+slackoffercloud.com
+teamoffercloud.com
+
+# Reference: https://twitter.com/mojoesec/status/1599854170692935680
+
+anydeskinvestingo.com
+updateclientssoftware.com
+zoominvestingoffer.com
+
+# Reference: https://twitter.com/1ZRR4H/status/1600002894207803394
+
+anydeskofferblackfriday.com
+logmeinofferblackfriday.com
+zoomofferblackfriday.com
+
+# Reference: https://twitter.com/nosecurething/status/1603560949511774208
+
+ads-check.com
+
+# Reference: https://www.trendmicro.com/en_us/research/23/a/batloader-malware-abuses-legitimate-tools-uses-obfuscated-javasc.html
+# Reference: https://otx.alienvault.com/pulse/63c9447eb94ba08faec4307d
+
+105105105015.com
+internalcheckssso.com
+slackcloudservices.com
+
+# Reference: https://twitter.com/ian_kenefick/status/1616929484879368192
+
+statisticpixels.com
+
+# Reference: https://gist.githubusercontent.com/Jquinn147/4f6b6a90f47de6e39504e8605f397330/raw/38d7ae1c4f09b76ad2d9c98b8efde30a2962fe88/BatLoaderCampaign_02062023
+# Reference: https://gist.githubusercontent.com/Jquinn147/185c42d34b9cb4188cfb5ed9b61bb6a9/raw/90c1f63993907971c888a469c2b3f632640ac2cf/BatLoaderCampaign_02132023
+# Reference: https://www.virustotal.com/gui/ip-address/80.66.65.6/relations
+# Reference: https://www.virustotal.com/gui/ip-address/80.66.78.30/relations
+
+abodbepdf.us
+aboddepdf.us
+aboddepdff.us
+lidrueowfice.us
+qlmpq.us
+msvtcvw.us
+
+# Reference: https://www.virustotal.com/gui/ip-address/87.251.84.69/relations
+
+allasccosussa.us
+allasccoussa.us
+allascoosussa.us
+allascooussa.us
+allascosussoa.us
+allascoussaa.us
+allascoussao.us
+allascoussoa.us
+fiftylrres.us
+fiftylsrre.us
+fiftytrres.us
+fiftytsrre.us
+flilq.us
+flilqq.us
+flliq.us
+flliqq.us
+fllqq.us
+moumtelnasi1cs.us
+seccerfmba.us
+secerfmba.us
+secserfmba.us
+sumcaosltcreedistunlion.us
+sumcaosltcreedistunllon.us
+sumcaosltcreedistunlon.us
+symchrany1bamk.us
+symchrany1bomk.us
+symchranyibamk.us
+symchranyibomk.us
+symchranylbamk.us
+symchranylbomk.us
+symchrony1bamk.us
+symchronyibamk.us
+symchronyibomk.us
+symchronylbamk.us
+symchronylbomk.us
+umlandonk.us
+unlamdonk.us
+unlandomk.us
+unlandomk1.us
+
+# Reference: https://www.virustotal.com/gui/file/3fadd10e2da88875b3ce1acaef51dcf71d3f2e9f996b1799ccd1b8763985bfe7/detection
+
+185.33.234.172:3131
+
+# Reference: https://twitter.com/1ZRR4H/status/1625378803600982019
+# Reference: https://www.virustotal.com/gui/ip-address/194.58.103.110/relations
+
+pixelarmada.su
+
+# Reference: https://thehackernews.com/2023/03/batloader-malware-uses-google-ads-to.html
+
+shvarcnegerhistory.com
+
+# Reference: https://www.esentire.com/blog/batloader-continues-to-abuse-google-search-ads-to-deliver-vidar-stealer-and-ursnif
+# Reference: https://otx.alienvault.com/pulse/64120540266ef796a2e11277
+
+adobe-a.com
+adobe-e.com
+adobe-l.com
+adolbe.website
+anydesk-o.com
+anydesk-r.com
+basecamp-a.com
+bitwarden-t.com
+chatgpt-t.com
+freecad-l.com
+gimp-t.com
+isoridkf.ru
+java-a.com
+java-r.com
+java-s.com
+microso-t.com
+openoffice-a.com
+quickbooks-q.com
+spotify-uss.com
+tableau-r.com
+uelcoskdi.ru
+visualstudio-t.com
+zoomvideor.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-03-30-v10281/420
+# Reference: https://www.zscaler.com/blogs/security-research/dbatloader-actively-distributing-malwares-targeting-european-businesses
+# Reference: https://otx.alienvault.com/pulse/6424b4bcee16e4a82d1d1d90
+
+b-yy.xyz
+silverline.com.sg
+thesquirrelgame.net
+
+# Reference: https://twitter.com/petrovic082/status/1694355529118748687
+# Reference: https://www.virustotal.com/gui/file/0e373b59636efdc1bcf2d68b9f873c5ff8979c5e9373d838cd199913e7b78f3e/detection
+
+zeltitmp.net
+c.zeltitmp.net
+
+# Reference: https://www.trendmicro.com/en_us/research/23/h/batloader-campaigns-use-pyarmor-pro-for-evasion.html
+# Reference: https://otx.alienvault.com/pulse/64d13db4c73971185ff3c8ec
+
+countingstatistic.com
+
+# Reference: https://www.malwarebytes.com/blog/threat-intelligence/2023/09/ongoing-webex-malvertising-drops-batloader
+# Reference: https://otx.alienvault.com/pulse/6504b1daa3ab2929aab9745a
+
+monoo3at.com
+updatecorporatenetworks.ru
+webexadvertisingoffer.com
+
+# Reference: https://twitter.com/noexceptcpp/status/1766178040923517027
+
+adevanced-lp-scaner.net
+adavanced-lp-scaner.net
+
+# Reference: https://x.com/ian_kenefick/status/1805326940997656966
+# Reference: https://www.virustotal.com/gui/ip-address/95.163.230.104/relations
+
+new-but-cool.com
+
+# Reference: https://x.com/raghav127001/status/1809766501236289741
+# Reference: https://www.virustotal.com/gui/file/22a4bdcaad8e99d84a93e808c1bd70906b54658644de42929c661a4df0936bc0/detection
+
+statistics-gatherer.pro
+youranydesk.com
+
+# Reference: https://x.com/1ZRR4H/status/1580677569548283904
+# Reference: https://app.validin.com/detail?find=37.140.192.70&type=ip4&ref_id=07b13a2e064#tab=resolutions
+
+adobee.tech
+anydesko.tech
+cloudtechnology.tech
+evernotes.tech
+fidelitcompu.tech
+slackss.tech

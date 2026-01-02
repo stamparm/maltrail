@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/abuse_ch/status/1994070489929502862
+# Reference: https://threatfox.abuse.ch/browse/tag/GrokPy/ (# 2025-11-27)
+# Reference: https://tria.ge/251125-ehjadagl3s/behavioral1
+# Reference: https://tria.ge/251116-waq4pawjbt/behavioral1
+
+46.62.205.38:8008
+46.62.224.205:8008
+46.62.225.51:8008

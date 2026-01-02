@@ -1,0 +1,46 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=TrojanDownloader:Win32/Dofoil.S
+
+bm1.net.ua
+redsfs.net.ua
+sasv.ru
+
+# Reference: https://www.securityhome.eu/malware/malware.php?mal_id=14804325245aa208e0351f57.37458999
+
+0d09d0d2.dlaperylt.info
+288e5e75.dlaperylt.info
+8adddc90.dlaperylt.info
+8d411406.dlaperylt.info
+a182eaa1.dlaperylt.info
+
+# Reference: https://blog.talosintelligence.com/2019/03/threat-roundup-0308-0315.html
+
+pagefinder52.uz
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2014/2014-07-15-dofoil-downloader-update-adds-xor-rc4-based-encryption/dofoil-downloader-update-adds-xor-rc4-based-encryption.csv
+
+zoneserveryu[0-9a-z]{0,}\.com
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan:Win32/Modimer.A&threatId=-2147241017
+
+goshan.bit
+goshan.online
+media-get.bit
+medla-get.com
+
+# Reference: https://blog.talosintelligence.com/2021/04/threat-roundup-0326-0402.html (# Win.Malware.Dofoil-9847246-1)
+# Reference: https://www.virustotal.com/gui/file/908b4f825454eb447c7f247a45f00f61556491ad88b3c005ed744f23f56131a4/detection
+
+bunikabatedoba13.top
+bvnotike.667.top
+dfbkmoeiruoiumoeio.pro
+ekrjhgkjjhvhkkdfgd.pro
+erwwbasmhtm.com
+fbnurqhsbun.com
+jokimutinke.net
+makron.bit
+nerdasss33.top
+opiutunuza11.net
+ujnuyteeej.top

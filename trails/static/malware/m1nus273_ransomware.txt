@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cybersquad
+
+# Reference: https://x.com/fbgwls245/status/1996372557382238479
+# Reference: https://x.com/fbgwls245/status/1996483472387645535
+# Reference: https://www.virustotal.com/gui/file/6d2cdece38aec375dbfa5181f7064efcd70d1b982f1ce7ebf8a450a3e979c894/detection
+# Reference: https://www.virustotal.com/gui/file/ebc2d8ae5149342a36c26855f4f05fa0bf669d00571f27f6e1c5a6acf6687365/detection
+
+cyberzzprsabpqyr5z7ikyrem6plvl4zv73c4n6zez7eycvmug46ciid.onion

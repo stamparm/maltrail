@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/James_inthe_box/status/1206978223591940096
+# Reference: https://app.any.run/tasks/054c73ce-b0c3-4f55-be84-db6d757c3868/
+
+softfare.zzz.com.ua
+
+# Reference: http://tracker.viriback.com/dump.php (# 2020-02-23, Evrial)
+
+http://51.83.200.164
+
+# Generic
+
+/stealer/login.php

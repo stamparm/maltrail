@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/petrovic082/status/1351830697686818827
+# Reference: https://app.any.run/tasks/8e76217e-26a9-4f61-ac10-8e91e4821c0a/
+
+http://185.239.242.50
+tm2zz4ai5twd3wed.onion.pet
+wj3b2wtj7u2bzup75tzhnso56bin6bnvsxcbwbfcuvzpc4vcixbywlid.onion.pet
+
+# Generic
+
+/fhttpb/get.php

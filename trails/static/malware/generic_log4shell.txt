@@ -1,0 +1,489 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: rogue ldap servers detection and generic/unclassified log4shell/log4j cases.
+
+# Reference: https://twitter.com/tolisec/status/1472410098471477253
+
+179.43.175.101:1389
+
+# Reference: https://twitter.com/tolisec/status/1473294518380343296
+
+185.246.87.50:1389
+
+# Reference: https://twitter.com/tolisec/status/1474111181623373842
+
+121.140.99.236:1389
+
+# Reference: https://twitter.com/Abjuri5t/status/1473507956301914118
+
+5.101.118.127:1389
+
+# Reference: https://twitter.com/BushidoToken/status/1472341076916723720
+
+45.83.193.150:1389
+
+# Reference: https://twitter.com/vcofrecisternas/status/1472090847843737603
+
+31.131.16.127:1389
+
+# Reference: https://twitter.com/0xrb/status/1473599097646948352
+
+23.94.7.237:2333
+8.214.77.64:8089
+81.68.128.31:8081
+http://34.152.14.220
+http://45.76.191.147
+http://45.95.53.183
+http://51.178.86.242
+
+# Reference: https://twitter.com/douglasmun/status/1473661827707924484
+
+68.183.44.220:443
+
+# Reference: https://twitter.com/1ZRR4H/status/1473548854020689921
+
+144.202.34.169:1389
+
+# Reference: https://twitter.com/1ZRR4H/status/1473405358462930944
+
+167.99.115.242:1389
+
+# Reference: https://twitter.com/1ZRR4H/status/1473427337358282765
+
+188.166.57.35:1389
+
+# Reference: https://twitter.com/_larry0/status/1470362325463015428
+
+81.30.157.43:1389
+
+# Reference: https://twitter.com/ankit_anubhav/status/1471020763587117058
+
+159.223.106.56:1224
+159.223.106.56:1420
+
+# Reference: https://twitter.com/1ZRR4H/status/1470175445308129280
+
+45.83.193.150:1389
+
+# Reference: https://twitter.com/zom3y3/status/1469508032887414784
+
+45.130.229.168:1389
+
+# Reference: https://twitter.com/Gi7w0rm/status/1473759238937788419
+
+135.148.130.60:1389
+
+# Reference: https://twitter.com/tolisec/status/1472963158742556674
+
+135.148.132.224:1389
+
+# Reference: https://twitter.com/VessOnSecurity/status/1470712257193680897
+
+45.146.164.160:1389
+
+# Reference: https://twitter.com/deHaller/status/1470374073595269123
+
+2.56.59.123:1389
+
+# Reference: https://twitter.com/r3dbU7z/status/1470380472312205315
+
+194.163.133.36:1389
+
+# Reference: https://twitter.com/bad_packets/status/1470291496532332545
+
+67.205.191.102:1389
+
+# Reference: https://twitter.com/smii_mondher/status/1469945271031316485
+# Reference: https://twitter.com/bad_packets/status/1469859064809025538
+# Reference: https://twitter.com/bad_packets/status/1469958646431838210
+
+163.172.157.143:1389
+185.250.148.157:1389
+
+# Reference: https://twitter.com/Cystrat_GmbH/status/1469296353276801029
+# Reference: https://twitter.com/1ZRR4H/status/1469333475476094986
+# Reference: https://twitter.com/eromang/status/1469362650534625282
+# Reference: https://twitter.com/alphasoc/status/1469463599844192256
+# Reference: https://twitter.com/craiu/status/1469994278986424327
+# Reference: https://pastebin.com/raw/R8WDSNtE
+# Reference: https://github.com/eromang/researches/tree/main/CVE-2021-44228
+
+45.155.205.233:1389
+
+# Reference: https://twitter.com/bad_packets/status/1470559074760544256
+
+128.90.61.199:10012
+
+# Reference: https://twitter.com/bad_packets/status/1470469130788610048
+
+139.162.20.98:1389
+
+# Reference: https://twitter.com/bad_packets/status/1470527086011949061
+
+139.59.175.247:1389
+
+# Reference: https://twitter.com/r3dbU7z/status/1470380472312205315
+
+79.172.214.11:1389
+
+# Reference: https://twitter.com/bad_packets/status/1470914982405545986
+
+167.99.32.139:1389
+
+# Reference: https://twitter.com/bad_packets/status/1471017611643158528
+
+78.31.71.248:1389
+
+# Reference: https://twitter.com/bad_packets/status/1471375127824588802
+
+159.223.5.30:1389
+159.223.5.30:443
+
+# Reference: https://twitter.com/bad_packets/status/1471602248513835008
+
+5.104.126.146:49165
+
+# Reference: https://twitter.com/bad_packets/status/1471957286935429120
+
+185.202.113.81:13908
+
+# Reference: https://twitter.com/bad_packets/status/1472054015441522688
+
+160.153.245.122:1234
+
+# Reference: https://twitter.com/bad_packets/status/1472703713760346113
+
+106.13.183.6:1343
+
+# Reference: https://twitter.com/bad_packets/status/1473008568299257859
+
+103.195.6.140:1389
+longwang-sword.com
+
+# Reference: https://twitter.com/tolisec/status/1473632289334693901
+
+142.93.172.227:1389
+
+# Reference: https://twitter.com/0xrb/status/1473529525044535300
+
+182.16.44.234:1389
+
+# Reference: https://twitter.com/tolisec/status/1473515063030034433
+
+192.46.216.224:1389
+
+# Reference: https://twitter.com/chris_dag/status/1473018266071314434
+
+80.82.78.39:50206
+86.57.246.76:44424
+86.57.246.76:44546
+
+# Reference: https://twitter.com/bmnave/status/1472215307754393608
+
+192.241.208.136:51764
+60.31.180.149:43274
+60.31.180.149:43418
+
+# Reference: https://twitter.com/ankit_anubhav/status/1471079526658560003
+# Reference: https://threatfox.abuse.ch/ioc/275542/
+
+62.182.158.156:1389
+
+# Reference: https://threatfox.abuse.ch/browse/tag/log4j/
+
+103.104.73.155:1389
+103.195.6.140:1389
+121.140.99.236:1389
+121.170.193.209:1389
+135.148.130.60:1389
+135.148.132.224:1389
+135.148.143.217:1389
+139.162.20.98:1389
+139.180.189.50:1389
+139.59.175.247:1389
+142.44.203.85:1389
+142.93.172.227:1389
+144.202.34.169:1389
+159.223.5.30:1389
+163.172.157.143:1389
+167.172.44.255:1389
+167.99.115.242:1389
+167.99.32.139:1389
+178.79.157.186:1389
+179.43.175.101:1389
+182.131.31.122:1389
+182.16.44.234:1389
+185.224.139.151:1389
+185.246.87.50:1389
+185.250.148.157:1389
+188.166.57.35:1389
+192.46.216.224:1389
+194.163.133.36:1389
+3.85.59.114:1389
+31.131.16.127:1389
+45.130.229.168:1389
+45.146.164.160:1389
+45.155.205.233:1389
+45.83.193.150:1389
+5.101.118.127:1389
+5.255.97.172:1389
+51.79.74.227:1389
+62.182.158.156:1389
+66.23.227.195:1389
+67.205.191.102:1389
+78.31.71.248:1389
+79.172.214.11:1389
+81.30.157.43:1389
+91.200.103.249:1389
+139.59.175.247:1099
+160.153.245.122:1234
+185.202.113.81:13908
+185.244.158.212:9080
+195.54.160.149:5874
+195.54.160.149:9999
+2.57.121.36:1402
+2.57.121.36:8000
+
+# Reference: https://twitter.com/ankit_anubhav/status/1470737474544549888
+
+34.125.76.237:1389
+
+# Reference: https://twitter.com/recalculator/status/1474504572676849664
+
+http://162.55.90.26
+
+# Reference: https://twitter.com/1ZRR4H/status/1476644296258469895
+# Reference: https://reputation.noc.org/jndi-attack-logs/
+
+107.181.187.184:83
+158.69.204.95:1389
+162.241.127.99:1389
+172.105.34.103:1389
+185.254.196.236:1389
+210.18.138.230:1389
+37.59.145.117:1389
+92.63.197.53:1389
+
+# Reference: https://twitter.com/bad_packets/status/1477056560585056258
+
+2.58.149.206:1389
+
+# Reference: https://twitter.com/abuse_ch/status/1481702702878969860
+# Reference: https://threatfox.abuse.ch/ioc/294748/
+
+198.98.53.25:1389
+
+# Reference: https://twitter.com/bad_packets/status/1479542624792956930
+
+51.79.240.74:1389
+
+# Reference: https://twitter.com/bad_packets/status/1481704400519192582
+
+194.40.243.24:1534
+
+# Reference: https://twitter.com/mojoesec/status/1482094563074490373
+
+193.32.23.62:1389
+
+# Reference: https://www.paloaltonetworks.com/blog/security-operations/hunting-for-log4j-cve-2021-44228-log4shell-exploit-activity/
+# Reference: https://www.virustotal.com/gui/ip-address/45.137.21.9/detection
+
+45.137.21.9:1389
+
+# Reference: https://blog.netlab.360.com/public-cloud-threat-intelligence-202112/
+# Reference: https://otx.alienvault.com/pulse/61ea977759cc28216fa93688
+
+136.144.41.116:1389
+212.193.30.176:1389
+
+# Reference: https://gist.github.com/nathanqthai/01808c569903f41a52e7e7b575caa890
+
+181.214.39.2:1389
+/callback/https-port-443-and-http-callback-scheme
+
+# Reference: https://twitter.com/bad_packets/status/1485767416021803015
+# Reference: https://twitter.com/blubbfiction/status/1486607471439486977
+
+45.12.32.14:1389
+45.12.32.14:8080
+
+# Reference: https://twitter.com/Max_Mal_/status/1486364882840784897
+
+142.44.251.77:4445
+190.144.115.54:4545
+66.42.36.178:8853
+
+# Reference: https://twitter.com/VessOnSecurity/status/1489648199530860545
+# Reference: https://twitter.com/ankit_anubhav/status/1490574137370103808
+
+185.8.172.132:1389
+185.8.172.132:8080
+
+# Reference: https://twitter.com/th3_protoCOL/status/1492959950498193408
+
+198.100.159.92:12312
+
+# Reference: https://twitter.com/ankit_anubhav/status/1499738963979894789
+
+115.28.134.231:1389
+
+# Reference: https://blog.netlab.360.com/b1txor20-use-of-dns-tunneling_en/
+
+179.60.150.23:1389
+
+# Reference: https://twitter.com/1ZRR4H/status/1504653649833865257
+
+135.125.146.221:1389
+
+# Reference: https://twitter.com/tolisec/status/1507854421618839564
+
+178.20.40.227:1389
+
+# Reference: https://www.mandiant.com/resources/mobileiron-log4shell-exploitation
+# Reference: https://otx.alienvault.com/pulse/6244606893ddbc9a6a5bbdeb
+
+107.181.187.184:1389
+107.181.187.184:389
+154.204.58.135:1389
+154.204.58.145:1389
+162.33.178.149:1389
+182.239.92.31:1389
+187.109.15.2:9126
+198.13.40.130:1389
+54.237.46.129:1389
+
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/21/l/patch-now-apache-log4j-vulnerability-called-log4shell-being-actively-exploited/IOCs-PatchNow-Log4Shell-Vulnerability.txt
+# Reference: https://www.trendmicro.com/en_us/research/21/l/patch-now-apache-log4j-vulnerability-called-log4shell-being-acti.html
+# Reference: https://otx.alienvault.com/pulse/61b886db3f57da33ac504548
+
+80.71.158.12:5557
+abrahackbugs.xyz
+cuminside.club
+m3.wtf
+pwn.af
+rce.ee
+x41.me
+015ed9119662.bingsearchlib.com
+029e7c6c.probe001.log4j.leakix.net
+0384eb5a.probe001.log4j.leakix.net
+32fce0c1f193.bingsearchlib.com
+3be6466b6a20.bingsearchlib.com
+4568-3409-8076-3389.service.exfil.site
+6c8d7dd40593.bingsearchlib.com
+7faf976567f5.bingsearchlib.com
+e86eafcf9294.bingsearchlib.com
+jjug8i.xaliyun.com
+lnc7vvhztmjdfm221sdp76xnze5atz.burpcollaborator.net
+vyvdsvh.x.i.yunzhanghu.co
+
+# Reference: https://www.cisa.gov/uscert/ncas/alerts/aa22-174a
+# Reference: https://otx.alienvault.com/pulse/62b5767285717d7d3a45b2b8
+
+http://104.155.149.103
+http://109.248.150.13
+http://192.95.20.8
+http://92.222.241.76
+104.155.149.103:1389
+104.223.34.198:1389
+109.248.150.13:1389
+192.95.20.8:1389
+92.222.241.76:1389
+
+# Reference: https://twitter.com/tosscoinwitcher/status/1551770783357120512
+
+http://143.244.44.182
+http://192.40.57.234
+
+# Reference: https://twitter.com/cyberplural/status/1554829009950687235
+# Reference: https://twitter.com/tosscoinwitcher/status/1557443326873219072
+
+168.138.128.171:1389
+
+# Reference: https://twitter.com/sicehice/status/1649239970492698624
+
+129.151.84.124:1389
+95.214.55.244:1389
+
+# Reference: https://twitter.com/sicehice/status/1663954926228103168
+
+198.98.61.5:1389
+
+# Reference: https://twitter.com/seguridadyredes/status/1699337760014782688
+
+205.185.115.217:47324
+
+# Reference: https://twitter.com/sicehice/status/1730700354877018469
+
+174.138.82.190:1389
+
+# Reference: https://twitter.com/sicehice/status/1740862006213882116
+
+45.95.147.236:2411
+
+# Reference: https://twitter.com/sicehice/status/1740870802088788379
+
+http://45.76.216.78
+45.76.216.78:8000
+45.76.216.78:8888
+/JNDI-Exploit-Kit-1.0-SNAPSHOT-all.jar
+/JNDI-Injection-Exploit-1.0-SNAPSHOT-all.jar
+/JNDIExploit-1.2-SNAPSHOT.jar
+/JNDIExploit.v1.2.zip
+
+# Reference: https://twitter.com/banthisguy9349/status/1756606597667709276
+
+/JNDIExploit-1.3-SNAPSHOT.jar
+/JNDIExploit-1.4-SNAPSHOT.jar
+
+# Reference: https://twitter.com/sicehice/status/1767906992578826661
+
+95.214.27.7:5763
+95.214.27.8:5763
+95.214.53.99:5763
+
+# Reference: https://twitter.com/banthisguy9349/status/1768321344997826699
+
+82.156.174.51:1111
+
+# Reference: https://twitter.com/banthisguy9349/status/1769768063224688840
+
+103.39.225.134:8000
+45.97.18.56:8000
+
+# Reference: https://twitter.com/BlinkzSec/status/1775106845692121178
+# Reference: https://urlhaus.abuse.ch/url/2786812/
+
+139.99.171.1:3306
+
+# Reference: https://x.com/banthisguy9349/status/1799502018836308197
+
+http://165.22.2.186
+http://40.76.9.118
+35.208.99.65:8000
+37.200.118.171:8111
+39.98.208.61:60000
+44.215.231.151:8000
+47.97.18.56:8000
+89.248.170.94:8888
+/jndi_injection_exploit.py
+/jndi_marsharlsec.py
+
+# Reference: https://x.com/sicehice/status/1801686576717574483
+
+178.215.224.166:3306
+95.214.55.144:3306
+
+# Reference: https://x.com/banthisguy9349/status/1875599493967835437
+
+/JNDI-Injection-Exploit-Plus-2.5-SNAPSHOT-all.jar
+
+# Generic
+
+/log4j-shell-poc/
+/Basic/Command/Base64/
+/GroovyBypass/Command/
+/TomcatBypass/Command/
+/TomcatBypass/Dnslog/
+/TomcatBypass/ReverseShell/
+/WebsphereBypass/Dnslog/

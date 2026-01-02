@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: storm-2077, leslieloader
+
+# Reference: https://www.recordedfuture.com/research/rednovember-targets-government-defense-and-technology-organizations
+
+aeifile.offiec.us.kg
+citrix.offiec.us.kg
+cna.offiec.us.kg
+download.offiec.us.kg
+gp.offiec.us.kg
+login.offiec.us.kg
+test.offiec.us.kg
+vpn.offiec.us.kg
+vpn1.offiec.us.kg

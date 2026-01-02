@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/0x6rss/status/1709161889517986204
+# Reference: https://fofa.info/result?qbase64=dGl0bGU9ImFydGVtaXMgcmF0Ig%3D%3D
+
+http://45.11.97.102
+
+# Reference: https://twitter.com/thehappydinoa/status/1710715408590754034
+# Reference: https://search.censys.io/search?resource=hosts&sort=RELEVANCE&per_page=25&virtual_hosts=EXCLUDE&q=services.http.response.html_title%3A+%22artemis+rat%22
+
+http://45.13.227.141
+45.13.227.141:8080
+
+# Reference: https://threatfox.abuse.ch/browse/tag/Artemis%20Rat/
+
+http://134.209.44.173
+45.13.227.141:1450
+
+# Reference: https://www.virustotal.com/gui/file/01806718027eedd14d532f9c10657b9f9db5f7425cdf7dea267a5182e9a9f588/detection
+
+artemis-rat.com
+/artemis-rat.com
+
+# Reference: https://www.virustotal.com/gui/file/132c5382f9e82d1e56422095cf795c8edd4a735462fb19977b01d9ceea859d91/detection
+
+dollarman101.hopto.org
+
+# Reference: https://www.virustotal.com/gui/file/febeee17b021f90e16065538d31a869257713e56cd7f2fe472c1e0226b8f50cd/detection
+
+heygirlisheeverythingyouwantedinaman.com
+/heygirlisheeverythingyouwantedinaman.com

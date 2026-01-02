@@ -1,0 +1,25 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Cheval
+
+# Reference: https://www.f-secure.com/v-descs/detroie.shtml
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Detroie-A/detailed-analysis.aspx
+# Reference: https://www.virustotal.com/gui/file/5fd78b8bce6fee182434718dabc2b29cddd8d004314ad9d8ad473dfd54976dea/detection
+
+irc.grolier.net
+sil.polytechnique.fr
+
+# Reference: https://www.virustotal.com/gui/file/6bd8a4411d5ec7416d91b0dcdf964e209605066af355d00f3832cfaef3aa94fc/detection
+
+irc.grolier.net
+irc.webbernet.net
+
+# Reference: https://www.virustotal.com/gui/file/d035fa968827afcb39a4814545802548689813664f27f9fa87abf8455b768cdb/detection
+
+irc.stealth.net
+
+# Generic
+
+170.178.184.37:6667
+34.98.99.30:6667

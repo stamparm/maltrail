@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: IG backdoor
+
+# Reference: https://x.com/malwrhunterteam/status/1815987582435467722
+# Reference: https://www.virustotal.com/gui/file/17f48db2399786deb9eaaee9c0c6b33a8d27da3892b454137f939dcb541e8608/detection
+
+bmV2ZXIgZ29ubmEgZ212ZSB5b3UgdXAgbmV2ZXIgZ29ubmEgnGV0IHlv.onion

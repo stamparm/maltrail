@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: fujinama, simbot
+
+# Reference: https://reaqta.com/2021/01/fujinama-analysis-leonardo-spa/
+# Reference: https://twitter.com/JAMESWT_MHT/status/1357331987971866624
+# Reference: https://bazaar.abuse.ch/sample/748d991969a8a7d4da78abc9ec407a9e045ce2e97394350dc4b528565eca02b9/
+# Reference: https://bazaar.abuse.ch/sample/3c4444c8339f2b4c04931a379daf9d041854b168e45f949515f90b124821d626/
+# Reference: https://bazaar.abuse.ch/sample/00092c4212f31387983e7e4b03d4f8362e58a43861d8073e71d20e95addeb8a2/
+
+fujinama.altervista.org
+xhdyeggeeefeew.000webhostapp.com
+
+# Generic
+
+/XdffCcxuiusSSxvbZz.php

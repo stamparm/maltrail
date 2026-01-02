@@ -1,0 +1,471 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: starslord
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/sload-and-ramnit-pairing-sustained-campaigns-against-uk-and-italy
+
+maleass.eu
+
+# Reference: https://twitter.com/VK_Intel/status/1021453551975817217
+
+wjcqsstycdujc.eu
+
+# Reference: https://twitter.com/reecdeep/status/1136581953770205185
+
+casasmocambique.com
+
+# Reference: https://twitter.com/reecdeep/status/1138006570934185987
+
+consciousrevolutionist.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1167351884367237120
+
+/angola/mabutu.php
+
+# Reference: https://twitter.com/reecdeep/status/1172122826251415552
+
+cvrwe.eu
+ijve.eu
+rdtber.eu
+uilomiku.eu
+
+# Reference: https://twitter.com/reecdeep/status/1185090113929388032
+
+bohuffsite.com
+
+# Reference: https://twitter.com/reecdeep/status/1186179780468719617
+
+howeconsultingsf.com
+nvroe.eu
+rtexo.eu
+
+# Reference: https://app.any.run/tasks/b6f6bfe1-c483-46c5-8abc-899c1e08f5d5/
+# Reference: https://www.virustotal.com/gui/file/148d74e453e49bc21169b7cca683e5764d0f02941b705aaa147977ffd1501376/detection
+
+dempoloka.com
+
+# Reference: https://twitter.com/reecdeep/status/1192094807470030848
+
+avs.bohuffsite.com
+bohuffsite.com
+
+# Reference: https://twitter.com/reecdeep/status/1216640918067056640
+
+clubdeajedrezmatamoros.com
+
+# Reference: https://twitter.com/reecdeep/status/1216659090941915137
+
+hnerert2.eu
+nweryh2.eu
+
+# Reference: https://twitter.com/reecdeep/status/1221703060256325633
+# Reference: https://twitter.com/reecdeep/status/1221708126824562689
+# Reference: https://twitter.com/CertPa/status/1221774114446368774
+# Reference: https://www.virustotal.com/gui/ip-address/185.197.74.169/relations
+
+cramelcorp.com
+delight-plus.com
+hnerert.eu
+hnerert1.eu
+hnerert3.eu
+nweryh.eu
+oilkjhg.eu
+turthgr.eu
+tuyukj.eu
+uybwer.eu
+uyikjtn2.eu
+
+# Reference: https://www.proofpoint.com/us/threat-insight/post/sload-and-ramnit-pairing-sustained-campaigns-against-uk-and-italy
+
+cflfuppn.cn
+ellapod.eu
+xityeksmwi.eu
+
+# Reference: https://twitter.com/reecdeep/status/1252531768462319617
+
+nephemp.com/neplod/02581650393.jpg
+joplock.eu
+zarwrite.eu
+
+# Reference: https://twitter.com/guelfoweb/status/1252552464651468801
+# Reference: https://twitter.com/malwrhunterteam/status/1253347810537353217
+
+zoomovers.com/momo/
+woodlandislamiccenter.com/disop/
+
+# Reference: https://twitter.com/VirITeXplorer/status/1259752786599829504
+
+ptankers.com
+bilkas.eu
+tarfros.eu
+illionback.eu
+zapforyou.eu
+
+# Reference: https://twitter.com/reecdeep/status/1277921837146652673
+
+hnmrtew.eu
+nerfvbg.eu
+
+# Reference: https://twitter.com/reecdeep/status/1282637448699416577
+# Reference: https://twitter.com/rootella_/status/1282570904539738112
+
+lwyhef.eu
+mzgotech.com
+ponmer.eu
+
+# Reference: https://www.virustotal.com/gui/file/3e9720f20d45daddeffbdff3a6543d0e12a75f323b5172c30bb2b7b16c277319/detection
+# Note: ```/.well-known/pki-validation/w.php``` belongs to ```lokibot.txt``` trail
+
+/.well-known/pki-validation/2c.jpg
+
+# Reference: https://twitter.com/reecdeep/status/1305399383911997441
+
+cvbyti.eu
+uykjhfgn.eu
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1305480728684232704
+# Reference: https://www.virustotal.com/gui/file/147e1d26153de7bd5033968d64104bb9df597d1913f237f4f5b172f06414b775/detection
+
+alkwti.com
+designologyng.com
+devopotamus.com
+idrivehrcenter.com
+innerearthartistry.com
+sapphireloading.com
+unequipoganador.com
+weavehairstyle.com
+
+# Reference: https://www.virustotal.com/gui/domain/geundik.com/relations
+# Reference: https://www.virustotal.com/gui/file/6cc54a52311cd07394327c4e1b4f6aee3797665200f215abfaf4607b71829757/detection
+
+geundik.com
+
+# Reference: https://twitter.com/VirITeXplorer/status/1348551960941776896
+# Reference: https://twitter.com/JAMESWT_MHT/status/1348569630449790978
+# Reference: https://www.virustotal.com/gui/ip-address/185.156.172.108/relations
+# Reference: https://www.virustotal.com/gui/file/cac189a5012b3ca0c2b420d5dcbadd0b20d377514baf4450219e37e19363e2ae/detection
+# Reference: https://www.virustotal.com/gui/file/d61754005944686cef24924802bd7c192ee11f3e222f3f2b4a321a2cebc61dc6/detection
+# Reference: https://www.virustotal.com/gui/file/f4e443285e418182fe8f11f755957ca096db495c94a1946bca1d69f0e29e8de1/detection
+# Reference: https://www.virustotal.com/gui/file/d1e8b81e6f2874db743397c4fe0346a886b8539c4e0bb9a67a1ec4e2866fd678/detection
+# Reference: https://www.virustotal.com/gui/file/d5ff868de414488362507dfc8a20f3df47114da6c5518ac0be9bd216bee01e59/detection
+
+antivirucidal.com
+belfetproduction.com
+cxminute.com
+ladiesincode.com
+letonguesc.com
+univirtek.com
+ryunrth1.eu
+
+# Reference: https://twitter.com/VirITeXplorer/status/1412000658698477568
+
+opoietj.eu
+sertyty.eu
+
+# Reference: https://www.virustotal.com/gui/file/7f0195a75477d51b4f28d8509cbda22c2611d75e877276859498b074b773c322/detection
+
+chinghsiang.com
+
+# Reference: https://www.virustotal.com/gui/file/9655ea42cd676422eca02ae2c81c9caa7f1d7667d7c6e37d47733be16bda0045/detection
+
+floridaprotiles.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/146.70.35.206/relations
+
+compucema.com
+jrsawesomebuilds.com
+laserunlimitedindia.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.80.53.202/relations
+
+bthfdr.eu
+bthfdr1.eu
+dgrtj.eu
+erthgyrteh.eu
+fgjusatik.eu
+gjyke.eu
+gyoin.eu
+hjrdsyj.eu
+hjui.eu
+kuyikryf.eu
+kuyikryf1.eu
+rebnow1.eu
+reybve.eu
+rtyht.eu
+ryunrth.eu
+tytrgv.eu
+tytrgv1.eu
+
+# Reference: https://www.virustotal.com/gui/file/b23d4059edb249e79913e27a7e166017d4a50bb6f1220ef175830826d9b484a4/detection
+
+http://195.123.241.180
+/kiytrscuvbuytnkudjvt/
+
+# Reference: https://www.virustotal.com/gui/file/81404cb0efe62dd91dbf7259d34fa1577cd2d74c353a4cc1a9b7eede24720592/detection
+
+tuktuk24.pw
+
+# Reference: https://twitter.com/reecdeep/status/1490667104705650688
+# Reference: https://www.virustotal.com/gui/ip-address/185.117.91.147/relations
+
+hgjui.eu
+hkjt.eu
+
+# Reference: https://twitter.com/reecdeep/status/1506170018437992453
+# Reference: https://www.virustotal.com/gui/ip-address/185.117.91.152/relations
+
+nmhholiut2.eu
+pluner.eu
+trehge1.eu
+yjtyhm2.eu
+
+# Reference: https://twitter.com/reecdeep/status/1513468470041661442
+
+tyhretj.pw
+tutyjk.eu
+
+# Reference: https://cert-agid.gov.it/wp-content/uploads/2022/06/sLoad_09-06-2022.json_.txt
+
+bertfhop.eu
+bertfhop1.eu
+bertfhop10.eu
+bertfhop11.eu
+bertfhop12.eu
+bertfhop13.eu
+bertfhop14.eu
+bertfhop15.eu
+bertfhop16.eu
+bertfhop17.eu
+bertfhop18.eu
+bertfhop19.eu
+bertfhop2.eu
+bertfhop20.eu
+bertfhop3.eu
+bertfhop4.eu
+bertfhop5.eu
+bertfhop6.eu
+bertfhop7.eu
+bertfhop8.eu
+bertfhop9.eu
+
+# Reference: https://cert-agid.gov.it/wp-content/uploads/2022/06/sLoad_30-06-2022.json_.txt
+
+caretui.eu
+hgrtjutyik.eu
+
+# Reference: https://tria.ge/201130-hvly2vhsjs/behavioral1
+
+estebankott.com
+
+# Reference: https://tria.ge/201123-tcqt2tttye/behavioral1
+
+fhivelifestyle.online
+
+# Reference: https://tria.ge/201123-m56x24578n/behavioral1
+
+owensii.com
+
+# Reference: https://cert-agid.gov.it/wp-content/uploads/2022/08/sLoad_01-08-2022.json_.txt
+
+fdhtyi.eu
+fredcoi.eu
+
+# Reference: https://urlhaus.abuse.ch/browse/tag/sLoad (# 2024-11-30)
+
+academianv.com
+acculogic.info
+agaux.com
+analyzare.com
+aqprxcard.com
+aquaponicsforsale.com
+areariservata.401krecommendations.com
+areariservata.bradleytrade.com
+areariservata.thedeadlysea.com
+areariservata.thepinyinist.com
+arkgaterp.com
+azienda.401krecommendations.com
+azienda.bangladeshinvestbankbd.com
+azienda.battlereadymoms.com
+azienda.fancygypsies.com
+azienda.realityreining.com
+azienda.suaritimcihazi.com
+azienda.vincenzoerrante.com
+azurewood.com
+bahaicleveland.org
+bearriverhealth.org
+beccarice.com
+benjaminward.com
+benniepeters.com
+bigskymikis.net
+blushkennesaw.com
+bondagebot.com
+botelho.info
+bowrehair.org
+briantobia.com
+bureaucratica.org
+butchscorpion.com
+buyahomeusda.com
+buyrigrap.com
+cambusflooring.com
+capitaleventworks.com
+carmenmcraediscography.com
+catchusoncritter.com
+cavintageclothing.com
+cdprf.com
+centrecoeur.com
+cfgorrie.com
+chicagosnapshot.org
+chronicscore.com
+cloudbytegames.com
+cltspine.org
+clydesitalianice.biz
+codeandcopywriterllc.com
+commercialrealestatect.com
+concordnetworking.com
+crossfitting.com
+dannybudasoff.com
+delaneymichaelson.com
+deneboutdoors.com
+desiretoinspirehomedecor.com
+devaughan.org
+dhcboston.com
+differencebetween.org
+discountlightingfixtures.us
+dreamacinc.com
+dwahomework.biz
+ealianis.org
+earlyonsetalzheimerdisease.org
+eatwithus.org
+elmundosurdo.com
+elyalconsult.com
+entrepreneurwarstories.com
+erlmanac.org
+facelook.cannastuffers.com
+fakedepth.com
+fatturaelettronica.bangladeshinvestbankbd.com
+femmesdecaledonie.com
+fencebuildersusa.com
+frenock.us
+friendsofgoldbutte.com
+genevievepayne.com
+gflett.org
+globalthermonuclearwar.info
+goodtime.ro
+goodwife.com
+grandwyatt.com
+greenoakshill.org
+hangoutspr.com
+harbourdigitalmedia.org
+helpmewithmywebsite.org
+hiphopheals.org
+hoagtechhydroponics.com
+idnot.com
+iloveyoulordpr.com
+image.focustry.com
+image.steampunkvegan.com
+image.woodrockestate.com
+imperioiptv.com
+intalert.com
+israelcrowdfunding.org
+iwanttodrawapicforyou.com
+javierocasio.info
+johnmccance.com
+karahlee.com
+kellymariehairartistry.com
+kennylamphotography.com
+lakemeadchurch.com
+letterpressbusinesscards.com
+levitatenaija.com
+licensedpracticalnurse.org
+linderosinmobiliaria.com
+linkedinprofilepictures.com
+longaevo.org
+maikiddee.com
+marthayfabrizio.com
+mbacolleges.org
+midwesthyperbaric.org
+mikeys-house.org
+militiacheerleader.org
+millcreekboatclub.com
+mistikmarket.com
+mj-smallbusinesstraining.com
+movingimagesmultimedia.com
+mulmurfeed.com
+multicultural.org
+mygarageguys.com
+mynutritionlabel.org
+myriamherman.com
+naykki.com
+ndjambo.com
+netredi.com
+node.duneoscillator.com
+nowyouknowent.com
+occupationspace.com
+onesmoothfinish.com
+pacbest.org
+pacificrimbonsai.info
+pamcharles.com
+pawsitivelypembrokes.info
+penfairgolf.com
+perfectshotlacrosse.com
+phlpride.com
+picturesmith.tv
+pinterestinginformation.com
+plascosales.biz
+plumeriaapartments.com
+pocketwifitaiwan.com
+prettylittlepills.com
+programmableweb.biz
+puppyloveapparel.com
+pw3r.org
+quantifi.org
+rayhickeyjr.com
+reasgt.me
+remortgagecalculator.info
+robersonproducts.com
+roseisspecial.com
+ruralhomebusinesslifestyle.com
+rxanatomy.com
+sarital.com
+savvina.com
+schulich.org
+seanichol.com
+selfservice.gaffneynow.com
+serotest.com
+sharonhouseconsulting.com
+slique.info
+smpink.com
+softcanyon.com
+songmeadow.com
+startupideas.biz
+stitchiness.com
+supporto.laostouroperators.com
+supporto.portlandhearthandbarbecue.com
+sweetassboat.com
+swimmingpoolsphoenix.com
+tahoefiredancers.com
+tapmunk.com
+teamsalah.com
+techtimesnow.com
+terrorgiggles.com
+thebearknight.com
+thedailycoco.co
+thelloydster.com
+thorsark.org
+topairbnbproperties.com
+topsemarang.com
+truceordeuce.com
+uk10.info
+uppervalleyrainbowconnection.com
+uyikjtn.eu
+vfce.org
+voteforeddie.com
+waybackwhenbycynthia.com
+wetfit.info
+whatevermart.com
+wikicartoons.com
+win1more.com
+womenatdefcon.com
+xoptutorials.com
+zettaizero.com

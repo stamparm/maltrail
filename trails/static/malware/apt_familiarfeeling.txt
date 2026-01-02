@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://citizenlab.ca/2018/08/familiar-feeling-a-malware-campaign-targeting-the-tibetan-diaspora-resurfaces/
+
+comemail.email
+comemails.email
+commail.co
+daynew.today
+daynews.today
+tibetfrum.info
+tibethouse.info
+tibetnews.info
+tibetnews.today
+/qqqzqa
+
+# Reference: https://citizenlab.ca/2018/01/spying-on-a-budget-inside-a-phishing-operation-with-targets-in-the-tibetan-community/
+
+t1bet.net
+tibet-office.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1532611343882276864
+# Reference: https://www.virustotal.com/gui/file/5217c2a1802b0b0fe5592f9437cdfd21f87da1b6ebdc917679ed084e40096bfd/detection
+
+45.77.45.222:110
+tibetyouthcongress.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/140.82.13.183/relations
+
+tibetfreedom.xyz

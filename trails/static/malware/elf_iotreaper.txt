@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://blog.netlab.360.com/iot_reaper-a-few-updates-en/
+
+hi8520.com
+hl852.com
+ha859.com
+
+# Reference: https://blog.f-secure.com/rickrolled-by-none-other-than-iotreaper/
+
+weruuoqweiur.com
+
+# Generic
+
+/rx/hx.php?mac=

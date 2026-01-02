@@ -1,0 +1,132 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt15, Ke3chang, Mirage, Vixen Panda, Royal APT, Playful Dragon
+
+# Reference: https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/march/apt15-is-alive-and-strong-an-analysis-of-royalcli-and-royaldns/
+# Reference: https://twitter.com/VK_Intel/status/976977927072985088
+
+memozilla.org
+news.memozilla.org
+video.memozilla.org
+run.linodepower.com
+singa.linodepower.com
+log.autocount.org
+andspurs.com
+micakiz.wikaba.org
+cavanic9.net
+ridingduck.com
+zipcodeterm.com
+dnsapp.info
+
+# Reference: https://www.intezer.com/miragefox-apt15-resurfaces-with-new-tools-based-on-old-ones/
+
+buy.healthcare-internet.com
+
+# Reference: https://www.welivesecurity.com/2019/07/18/okrum-ke3chang-targets-diplomatic-missions/
+# Reference: https://otx.alienvault.com/pulse/5d3040c20c143e436cc113d8
+
+compatsec.com
+inicializacion.com
+menorustru.com
+buy.babytoy-online.com
+center.nmsvillage.com
+chart.healthcare-internet.com
+control.mimepanel.org
+cv.livehams.com
+daily.huntereim.com
+dream.zepotac.com
+dsmanfacture.privatedns.org
+dyname.europemis.com
+finance.globaleducat.com
+forcan.hausblow.com
+grek.freetaxbar.com
+info.audioexp.com
+item.amazonout.com
+items.babytoy-online.com
+items.burgermap.org
+login.allionhealth.com
+misiones.soportesisco.com
+newflow.babytoy-online.com
+press.premlist.com
+promise.miniaturizate.org
+rain.nmsvillage.com
+store.ufmsecret.org
+support.slovakmaps.com
+translate.europemis.com
+upcv.inciohali.com
+view.beleimprensa.org
+wind.deltimesweb.com
+www1.sanpaulostat.com
+
+# Reference: https://twitter.com/MeltX0R/status/1174069208709312512
+# Reference: https://www.virustotal.com/gui/file/b5db7cfe22de56d292c83ea9ffa25f28d1e126d16b14cb3734b7396dcf5a6e0c/detection
+
+halimatoudi.com
+
+# Reference: https://twitter.com/MeltX0R/status/1174442212412809216
+# Reference: https://app.any.run/tasks/8d777de7-d51d-4c97-8e91-d0e54461fc2b/
+# Reference: Reference: https://pastebin.com/qdDymcuy
+
+tick.ondemand-sport.com
+
+# Reference: https://twitter.com/in_threat/status/735472063247421440
+
+goback.strangled.net
+
+# Reference: https://www.virustotal.com/gui/domain/edit.centrozhlan.com/relations
+# Reference: https://www.virustotal.com/gui/file/689f121c4a7309644c37141742abed0f111b6fa60632c54002a5ce898af36397/community
+
+centrozhlan.com
+
+# Reference: https://www.intezer.com/blog/research/the-evolution-of-apt15s-codebase-2020/
+# Reference: https://otx.alienvault.com/pulse/5ec7f55daebc94b5857d69f1
+
+thehuguardian.com
+menu.thehuguardian.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1616138902938746882
+# Reference: https://www.virustotal.com/gui/file/29f2616dc26a02216d8e17a52cc6938fd130c2feffa6e08143432ed0941fdde7/detection
+# Reference: https://www.virustotal.com/gui/file/100bb87b7dc3455b2aaef93753a44d3b149b1f68b0c21a9607da45b16412a9ba/detection
+
+http://172.104.143.75
+172.104.143.75:443
+172.104.143.75:8000
+
+# Reference: https://twitter.com/malwrhunterteam/status/1616438178055094275
+# Reference: https://www.virustotal.com/gui/file/64ef2b23808484c9310408f7b530af6b71b5101a1e757cd6f6f70052858b35bc/detection
+
+106.75.99.101:8989
+
+# Reference: https://twitter.com/malwrhunterteam/status/1616438178055094275
+# Reference: https://www.virustotal.com/gui/file/45bcc4da58aacc018a36eb8a0b3125dcae84b3a2313513153614f3a6a55b0f7b/detection
+
+123.60.31.114:7005
+
+# Reference: https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/flea-backdoor-microsoft-graph-apt15
+# Reference: https://otx.alienvault.com/pulse/6492f2af01c58203dd0bcd3b
+
+beltsymd.org
+cyclophilit.com
+cyprus-villas.org
+perusmartcity.com
+verisims.com
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2024-03-25-Timeline-for-misake-by-Playful-Taurus.txt
+# Reference: https://www.virustotal.com/gui/file/bfb44ed70b5096b9884245af952b979241811e49ec96d1463bd9384c360e484e/detection
+
+adobeonline.net
+update.adobeonline.net
+updateadobeappscom.adobeonline.net
+
+# Generic trails (From Reference: https://pastebin.com/qdDymcuy)
+
+/wikipedia.aspx?content=
+/feeyo.aspx?who=
+/airliners.aspx?para=
+/playlist.aspx?yf=
+/pprune.aspx?yf=
+/dutchops.aspx?yf=
+/iTunes.aspx?e1=
+/paidai.aspx?e1=
+/shopmall.aspx?e1=

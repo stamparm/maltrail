@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/MasafumiNegishi/status/1157148299989671939
+
+185.244.25.181:8361
+
+# Reference: https://twitter.com/bad_packets/status/1156812334024671232
+
+185.244.25.181:131
+
+# Reference: https://twitter.com/bad_packets/status/1157156923302563841
+
+185.244.25.181:121
+
+# Generic trails
+
+/NENAVIST2

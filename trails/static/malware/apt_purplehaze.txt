@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: goreshell
+
+# Reference: https://x.com/milenkowski/status/1932038909455684056
+# Reference: https://www.sentinelone.com/labs/follow-the-smoke-china-nexus-threat-actors-hammer-at-the-doors-of-top-tier-targets/
+
+45.13.199.209:443
+ccna.organiccrap.com
+cloud.trendav.co
+downloads.trendav.vip
+epp.navy.ddns.info
+mail.ccna.organiccrap.com
+mail.secmailbox.us
+navy.ddns.info
+secmailbox.us
+sentinelxdr.us
+tatacom.duckdns.org
+trendav.vip

@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.dodgethissecurity.com/2019/02/28/reverse-engineering-an-unknown-rat-lets-call-it-skidrat-1-0/
+# Reference: https://app.any.run/tasks/67cb5e89-fe45-4e8c-99aa-f4ba5204acc7/
+
+http://18.218.2.135

@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://lavasoft.com/mylavasoft/malware-descriptions/blog/fraudtoolwin32fakerean
+# Reference: http://www.mcafee.com/threat-intelligence/malware/default.aspx?id=947394
+
+updateonlinedatabase.com
+secure.artbill3dpayus.com
+onlineintersec.com
+sysprotection.com

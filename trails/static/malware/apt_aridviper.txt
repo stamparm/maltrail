@@ -1,0 +1,242 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: arid gopher, arid viper, spyc23
+
+# Reference: https://twitter.com/ClearskySec/status/965985346222723072
+
+katesacker.club
+
+# Reference: https://twitter.com/cyberintproject/status/950930433595924480
+
+officeappslive.site
+
+# Reference: https://twitter.com/ClearskySec/status/946364079630897152
+
+accountforuser.website
+
+# Reference: https://twitter.com/eyalsela/status/883243599705645056
+
+213.184.123.144:8080
+/sami
+
+# Reference: https://twitter.com/eyalsela/status/927211526406266881
+
+rviedofree.com
+/dad5/
+
+# Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (2017-11-14: Arid Viper and VIRTUALNOTE)
+
+storgemydata.website
+
+# Reference: https://unit42.paloaltonetworks.com/pymicropsia/
+
+baldwin-gonzalez.live
+benyallen.club
+chad-jessie.info
+escanor.live
+jaime-martinez.info
+judystevenson.info
+krasil-anthony.icu
+nicoledotson.icu
+robert-keegan.life
+samwinchester.club
+tatsumifoughtogre.club
+/zoailloaze/sfuxmiibif/hortense1
+/zoailloaze/sfuxmiibif/qprbudls
+/zoailloaze/sfuxmiibif/
+/sfuxmiibif/
+/zoailloaze/
+
+# Reference: https://twitter.com/k3yp0d/status/1468294182829760519
+# Reference: https://www.virustotal.com/gui/file/375340a79168cd4ccf7846db469ab1eb17f7824076b7032ff7780f80a0e7ecca/detection
+
+tierrastein.live
+
+# Reference: http://blog.talosintelligence.com/2022/02/arid-viper-targets-palestine.html
+
+cooperron.me
+deangelomcnay.news
+earlahenry.com
+/qWIlIdKf2buIH0k/GbrHoIfRqtE69hH/bu5EmpJE7DUfzZD
+/qWIlIdKf2buIH0k/GbrHoIfRqtE69hH/ZCgbo9EVhYMA8PX
+/qWIlIdKf2buIH0k/GbrHoIfRqtE69hH/
+/Ct2azbEP57LtWgmK/lWaPwemAJ3LPFmDH/
+/hx3FByTR5o3zNZYD/sYkaiHz0Mse13C79dy1I/
+/X2EYSWlzSZgSUME210Zv/YPPV6kFl2PwwF0TEVHMy/
+/um2NxySaF4L5mSYE/KY1hNeVvrE1XCrKP/
+/Ct2azbEP57LtWgmK/
+/lWaPwemAJ3LPFmDH/
+/X2EYSWlzSZgSUME210Zv/
+/YPPV6kFl2PwwF0TEVHMy/
+/hx3FByTR5o3zNZYD/
+/sYkaiHz0Mse13C79dy1I/
+/um2NxySaF4L5mSYE/
+/KY1hNeVvrE1XCrKP/
+/bu5EmpJE7DUfzZD
+/GbrHoIfRqtE69hH/
+/qWIlIdKf2buIH0k/
+/ZCgbo9EVhYMA8PX
+
+# Reference: https://www.deepinstinct.com/blog/arid-gopher-the-newest-micropsia-malware-variant
+
+grace-fraser.site
+mozelllittel.com
+pam-beesly.site
+
+# Reference: https://twitter.com/h2jazi/status/1532388531141808129
+# Reference: https://www.virustotal.com/gui/file/80cff71a7f13a2e83b948ed218ab6ffd27f309680cf96c3c2e0e67b8dc857bdb/detection
+# Reference: https://www.virustotal.com/gui/file/f75314cafb6f523492451b7e3543538b0629cf3d6ba8c53ce689a9c639469ae8/detection
+
+sknzy-mysl.vip
+
+# Reference: https://twitter.com/ShadowChasing1/status/1537698377714253825
+# Reference: https://www.virustotal.com/gui/file/8994ecf78913be242d1246637c34341bc381ede2c22bf2f585a4c241a5ef7b49/detection
+
+angela-bishop.com
+/yMdp2RPagaQcZYtr/kRD5K9t35c78cjLV/
+/kRD5K9t35c78cjLV/
+/yMdp2RPagaQcZYtr/
+
+# Reference: https://twitter.com/Jup1a/status/1579751269828562945
+# Reference: https://www.virustotal.com/gui/file/247bebcb221ba87b9198aa8f4102b4239e63bc2bf4bb97554c96a586b8c66007/detection
+
+zakaria-chotzen.info
+/A2FwXHQqrQ2hvDc/kRyMLhAIuQ/oznLJOjxRn/
+/A2FwXHQqrQ2hvDc/QgaYCarsQS/LaVfcCBwHi/
+/A2FwXHQqrQ2hvDc/kRyMLhAIuQ/
+/A2FwXHQqrQ2hvDc/QgaYCarsQS/
+/A2FwXHQqrQ2hvDc/
+/kRyMLhAIuQ/
+/LaVfcCBwHi/
+/oznLJOjxRn/
+/QgaYCarsQS/
+
+# Reference: https://twitter.com/RedDrip7/status/1592040235340541953
+# Reference: https://www.virustotal.com/gui/file/36037040711231986f7509a2aa2af74b33022defac4669fb0eb14beba7caff39/detection
+
+swsan-lina-soso.info
+/A2FwXHQqrQ2hvDc/QgaYCarsQS/LaVfcCBwHi/
+/A2FwXHQqrQ2hvDc/QgaYCarsQS/
+/QgaYCarsQS/LaVfcCBwHi/
+/A2FwXHQqrQ2hvDc/
+/LaVfcCBwHi/
+/QgaYCarsQS/
+
+# Reference: https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/mantis-palestinian-attacks
+
+http://5.182.39.44
+chloe-boreman.com
+criston-cole.com
+jumpstartmail.com
+paydayloansnew.com
+picture-world.info
+rnacgroup.com
+salimafia.net
+seomoi.net
+soft-utils.com
+/AJLUK9BI48/
+/AJLUK9BI48/0L6W3CSBMC
+/DWL1RucGSj/
+/DWL1RucGSj/4wwA7S8jQv
+/IURTIER3BNV4ER/
+/IURTIER3BNV4ER/AJLUK9BI48/0L6W3CSBMC
+/IURTIER3BNV4ER/DWL1RucGSj/4wwA7S8jQv
+/cmsnvbyawttf/
+/esuzmwmrtajj/
+/esuzmwmrtajj/cmsnvbyawttf/mkxnhqwdywbu
+/mkxnhqwdywbu
+
+# Reference: https://twitter.com/k3yp0d/status/1704053585036615861
+# Reference: https://www.virustotal.com/gui/ip-address/45.144.29.251/relations
+# Reference: https://www.virustotal.com/gui/file/c1c5c4153fea7871e735cabaffaf64722235a374b890017ffbe2074ac0b11fe1/detection
+
+delooyp.com
+/ymdfckhiqjerxsww/lwbheruavqogbr/
+/cdkpwwchvjjy/
+/gmsvmzxrrrlt/
+/ihxjkoflibjv/
+/lahmrxjlpvvn/
+/lwbheruavqogbr/
+/ymdfckhiqjerxsww/
+
+# Reference: https://twitter.com/k3yp0d/status/1704818412864594156
+# Reference: https://www.virustotal.com/gui/file/fa98139b94cc56890af27e6dd02deb4da64b930e801492a966e0f13103808e2f/detection
+
+5.181.23.41:8000
+5.181.23.41:8888
+porthopeminorhockey.net
+/ddtkdnjhaqvujgv/cvmfiojusjku/
+/cvmfiojusjku/
+/ddtkdnjhaqvujgv/
+/jqfhpgbwhx/
+/myucfibwza/
+/uohmgcvzhl/
+
+# Reference: https://twitter.com/k3yp0d/status/1708357733471195192
+# Reference: https://www.virustotal.com/gui/file/af87a91c71b3cca1184b4b1250cacec041430264d0f8ac56bde3a6b1173e84a2/detection
+
+http://91.199.147.84
+91.199.147.84:8080
+91.199.147.84:8888
+91.219.150.123:42530
+izocraft.com
+/ittkkcoehbpgsxvol/txizybbupgqwa/ajgwpwtgwz/
+/ittkkcoehbpgsxvol/txizybbupgqwa/
+/txizybbupgqwa/ajgwpwtgwz/
+/ajgwpwtgwz/
+/ittkkcoehbpgsxvol/
+/txizybbupgqwa/
+
+# Reference: https://blog.talosintelligence.com/arid-viper-mobile-spyware/
+
+haroldramsey.icu
+luis-dubuque.in
+lightroom-61eb2.firebaseio.com
+skippedtestinapp.firebaseio.com
+
+# Reference: https://threatfox.abuse.ch/browse/tag/AridViper/
+
+acs-group.net
+anime-con.net
+cricket-live.net
+dslam.net
+gmesc.com
+gsstar.net
+im-inter.net
+it-franch-result.info
+jasondixon.net
+leaf-japan.net
+london-sport.ne
+lrxzklwmzxe.com
+sports-et-loisirs.net
+tophatauc.com
+
+# Reference: https://www.sentinelone.com/labs/arid-viper-apts-nest-of-spyc23-malware-continues-to-target-android-devices/ (# spyc23)
+
+jolia-16e7b.appspot.com
+rashonal.appspot.com
+yellwo-473d0.appspot.com
+
+# Reference: https://www.welivesecurity.com/en/eset-research/arid-viper-poisons-android-apps-with-aridspy/
+
+almoshell.website
+alwaysgoodidea.com
+analyticsandroid.com
+crashstoreplayer.website
+dabliardogame.com
+elsilvercloud.com
+gameservicesplay.com
+godeutalk.com
+labeepuzz.com
+nortirchats.com
+orientflags.com
+palcivilreg.com
+pariberychat.com
+renatchat.com
+ultraversion.com
+proj-2bedf.firebaseio.com
+proj-54ca0.firebaseio.com
+proj-95dae.firebaseio.com
+proj3-1e67a.firebaseio.com
+project44-5ebbd.firebaseio.com

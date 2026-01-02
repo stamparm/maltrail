@@ -1,0 +1,374 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: raindrop, solorigate, sunburst, supernova, teardrop, stellarparticle, dark halo, goldfinder, goldmax, NOBELIUM, sibot, sunshuttle, SilverFish, BlueBravo
+
+# Reference: https://www.fireeye.com/blog/threat-research/2020/12/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor.html
+# Reference: https://blog.talosintelligence.com/2020/12/solarwinds-supplychain-coverage.html
+# Reference: https://www.volexity.com/blog/2020/12/14/dark-halo-leverages-solarwinds-compromise-to-breach-organizations/
+# Reference: https://unit42.paloaltonetworks.com/fireeye-solarstorm-sunburst/
+# Reference: https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/sunburst-supply-chain-attack-solarwinds
+# Reference: https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/solarwinds-raindrop-malware
+# Reference: https://twitter.com/_CPResearch_/status/1339952318717063168
+# Reference: https://otx.alienvault.com/pulse/5fd6df943558e0b56eaf3da8
+# Reference: https://otx.alienvault.com/pulse/5fdce61ef056eff2ce0a90de
+# Reference: https://otx.alienvault.com/pulse/6007149a5ff246c7c18229c1
+
+avsvmcloud.com
+bigtopweb.com
+databasegalore.com
+deftsecurity.com
+digitalcollege.org
+ervsystem.com
+freescanonline.com
+globalnetworkissues.com
+highdatabase.com
+incomeupdate.com
+infinitysoftwares.com
+kubecloud.com
+lcomputers.com
+panhardware.com
+seobundlekit.com
+solartrackingsystem.net
+thedoccloud.com
+virtualdataserver.com
+virtualwebdata.com
+webcodez.com
+websitetheme.com
+zupertech.com
+appsync-api.eu-west-1.avsvmcloud.com
+appsync-api.us-east-1.avsvmcloud.com
+appsync-api.us-east-2.avsvmcloud.com
+appsync-api.us-west-2.avsvmcloud.com
+6a57jk2ba1d9keg15cbg.appsync-api.eu-west-1.avsvmcloud.com
+7sbvaemscs0mc925tb99.appsync-api.us-west-2.avsvmcloud.com
+gq1h856599gqh538acqn.appsync-api.us-west-2.avsvmcloud.com
+ihvpgv9psvq02ffo77et.appsync-api.us-east-2.avsvmcloud.com
+k5kcubuassl3alrf7gm3.appsync-api.eu-west-1.avsvmcloud.com
+mhdosoksaccf9sni9icp.appsync-api.eu-west-1.avsvmcloud.com
+
+# Reference: https://www.microsoft.com/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/
+# Reference: https://otx.alienvault.com/pulse/60088b53da5e673bc2825ce8
+
+aimsecurity.net
+datazr.com
+financialmarket.org
+gallerycenter.org
+mobilnweb.com
+olapdatabase.com
+swipeservice.com
+techiefly.com
+
+# Reference: https://news.sophos.com/en-us/2021/02/03/mtr-casebook-uncovering-a-backdoor-implant-in-a-solarwinds-orion-server/
+# Reference: https://otx.alienvault.com/pulse/601da173ed7d3e7e31c67c3d/
+# Reference: https://www.virustotal.com/gui/file/a25fc5af86296dcd5bb41668443a36947bccd17a1687f9b118675f1503b3e376/detection
+# Reference: https://www.virustotal.com/gui/file/f39dc0dfd43477d65c1380a7cff89296ad72bfa7fc3afcfd8e294f195632030e/detection
+
+216.243.39.167:8090
+98.225.248.37:8090
+
+# Reference: https://www.fireeye.com/blog/threat-research/2021/03/sunshuttle-second-stage-backdoor-targeting-us-based-entity.html
+# Reference: https://www.microsoft.com/security/blog/2021/03/04/goldmax-goldfinder-sibot-analyzing-nobelium-malware/
+# Reference: https://www.virustotal.com/gui/file/b9a2c986b6ad1eb4cfb0303baede906936fe96396f3cf490b0984a4798d741d8/detection
+# Reference: https://twitter.com/cyb3rops/status/1367794498965766144
+
+185.225.69.69:443
+onetechcompany.com
+reyweb.com/assets/index.php
+srfnetwork.org
+
+# Reference: https://twitter.com/ShadowChasing1/status/1368831762114093059
+# Reference: https://www.virustotal.com/gui/file/2375da7528de541b7e60eae80ab14bb88e39f30b798869b26ad67c6cc46af765/detection
+
+example.com/assets/index.php
+
+# Reference: https://github.com/blackorbird/APT_REPORT/blob/master/SunBurst/SilverFish_Solarwinds.pdf
+
+179.43.141.188:81
+179.43.141.188:82
+179.43.141.188:83
+185.189.151.182:443
+185.189.151.182:443
+91.219.239.43:143
+91.219.239.54:81
+91.219.239.54:82
+
+adsprofitnetwork.com
+d3ser9acyt7cdp.cloudfront.net
+secureconnectiongroup.com
+securesearchnow.com
+twimg-us.azureedge.net
+coloradospringsroofing.info
+lamarfish.com
+robotvice.com
+roofingspecialists.info
+signup-now.com
+
+
+# Traffic Distribution Servers
+
+champions.gdtc.org
+flowers.netplusplans.com
+flowers.thegardnerco.com
+pointers.ecostratas.com
+popcorn.net-zerodesign.com
+test.news.pocketstay.com
+
+# Javascript Injection Points
+
+jenkins.findfwd.com
+test.directfwd.com
+securesearchnow.com
+alertmeter.info
+/sk-jspark_init.php
+
+# C&C Proxies
+
+40ort.750.credit
+adagio.betterworldshopping.com
+admirer.onehourcfo.com
+backup.awarfaregaming.com
+bmlor.750.credit
+builder.visionarybusiness.net
+combat.strategyforgood.com
+context.septemberyears.org
+daddy.stlouisdemoday.com
+defender5.coachwithak.com
+fanta.swofficefurniture.com
+freespace.givingprofits.net
+gallery.wineadam.com
+group3.pulsedesigngroup.us
+inferno.bigpurposebigimpact.com
+inspirer.cartsandmowers.com
+joke.webproduct.info
+joomla.lifepath.site
+lion.vipjoyeria.com
+method.nonprofitsustainability.com
+phpmyadmin.xsunx.com
+pixelapn2.adsprofitnetwork.com
+pixelapn.adsprofitnetwork.com
+plkiu.daniyalmedicaltech.com
+printing.laminatesandthings.com
+promo9.promossupply.com
+prompt.powerofpartnerships.net
+q.promossupply.com
+rock.core-thought.com
+snuff.mybabyrose.com
+standart.sdtranspo.com
+time.suehyatt.com
+zombie.susan-hyatt.com
+
+# Reference: https://twitter.com/c3rb3ru5d3d53c/status/1383113919405903873
+# Reference: https://www.virustotal.com/gui/file/4e8f24fb50a08c12636f3d50c94772f355d5229e58110cccb3b4835cb2371aec/detection
+
+megatoolkit.com
+
+# Reference: https://twitter.com/kyleehmke/status/1341107219673341954
+# Reference: https://twitter.com/kyleehmke/status/1351617582340694025
+# Reference: https://twitter.com/blackorbird/status/1385433029938614274
+# Reference: https://community.riskiq.com/article/9a515637/description
+
+1cloudserver.com
+actualityworld.com
+aimsecurity.net
+apexwebtech.com
+appsprovider.com
+armrvrholo.com
+assetdata.net
+autonetonline.com
+bigdataanalysts.com
+bigtopweb.com
+computerrepublic.com
+databasegalore.com
+datatidy.com
+datazr.com
+deftsecurity.com
+diamondglobalnetwork.com
+digitalcollege.org
+digitalphotohub.com
+domainingdirectory.com
+ebbcloud.com
+ebookstorelive.com
+ervsystem.com
+eyetechltd.com
+financialmarket.org
+fqtel.com
+freescanonline.com
+gallerycenter.org
+gdbcloud.com
+globalnetworkissues.com
+globalsection.org
+globesoftwares.com
+gnadptech.com
+graphicscodex.net
+highdatabase.com
+incomeupdate.com
+infinitysoftwares.com
+ioxmesh.com
+ipadsreview.org
+kubecloud.com
+lcomputers.com
+limoservicecompany.com
+mappsglobal.com
+megatoolkit.com
+microtransito.com
+mobilnweb.com
+nikeoutletinc.org
+olapdatabase.com
+onetechcompany.com
+panhardware.com
+productpitfalls.com
+reyweb.com
+rollver.com
+ryaxtech.com
+securitysystemnews.com
+sense4baby.fr
+seobundlekit.com
+softwarelaunches.com
+softweblinks.com
+solartrackingsystem.net
+srfnetwork.org
+storagewithoutborders.com
+swipeservice.com
+techforefront.com
+techiefly.com
+thedoccloud.com
+topwebservers.com
+virtualdataserver.com
+virtualwebdata.com
+vmdisk.com
+webcodez.com
+webpp.com
+websitesline.com
+websitetheme.com
+xrlinks.com
+zupertech.com
+
+# Reference: https://twitter.com/MalwareRE/status/1399407960368025609
+# Reference: https://www.microsoft.com/security/blog/2021/05/28/breaking-down-nobeliums-latest-early-stage-toolset/
+# Reference: https://raw.githubusercontent.com/microsoft/mstic/master/Indicators/May21-NOBELIUM/May21NOBELIUMIoCs.csv
+
+cityloss.com
+cross-checking.com
+dailydews.com
+doggroomingnews.com
+emergencystreet.com
+enpport.com
+giftbox4u.com
+hanproud.com
+holescontracting.com
+newsplacec.com
+newstepsco.com
+pcmsar.net
+stockmarketon.com
+stsnews.com
+tacomanewspaper.com
+theadminforum.com
+trendignews.com
+74d6b7b2.app.giftbox4u.com
+cdnappservice.firebaseio.com
+content.pcmsar.net
+dataplane.theyardservice.com
+email.theyardservice.com
+eventbrite-com-default-rtdb.firebaseio.com
+humanitarian-forum-default-rtdb.firebaseio.com
+security-updater-default-rtdb.firebaseio.com
+smtp2.theyardservice.com
+supportcdn-default-rtdb.firebaseio.com
+usaid.theyardservice.com
+
+# Reference: https://www.mandiant.com/resources/russian-targeting-gov-business
+
+http://23.106.123.15
+nordicmademedia.com
+stonecrestnews.com
+theandersonco.com/wp_info.php
+tomasubiera.com/wp_getcontent.php
+
+# Reference: https://twitter.com/s1ckb017/status/1468160915883315204
+# Reference: https://www.telsy.com/nobelium-again-or-ecrime-operation/
+
+camogit.com
+kaceloj.com
+kirute.com
+muyipep.com
+pahohu.com
+vuvalog.com
+
+# Reference: https://www.sekoia.io/en/nobeliums-envyscout-infection-chain-goes-in-the-registry-targeting-embassies/
+
+bfilmnews.com
+crochetnews.com
+dom-news.com
+galatinonews.com
+midcitylanews.com
+muslimnewsdaily.com
+pharaosjournal.com
+readnewshot.com
+theanalyticsnews.com
+
+# Reference: https://www.crowdstrike.com/blog/observations-from-the-stellarparticle-campaign/ (# GoldMax)
+
+vm-srv-1.gel.ulaval.ca
+
+# Reference: https://twitter.com/h2jazi/status/1506439550968676360
+# Reference: https://www.virustotal.com/gui/file/34e7482d689429745dd3866caf5ddd5de52a179db7068f6b545ff51542abb76c/detection
+# Reference: https://www.virustotal.com/gui/file/e5de12f16af0b174537bbdf779b34a7c66287591323c2ec86845cecdd9d57f53/detection
+# Reference: https://www.virustotal.com/gui/file/e8da0c4416f4353aad4620b5a83ff84d6d8b9b8a748fdbe96d8a4d02a4a1a03c/detection
+
+ernesttheskoolie.com
+theskoolieblog.com
+
+# Reference: https://securelist.com/darkhalo-after-solarwinds-the-tomiris-connection/104311/
+# Reference: https://otx.alienvault.com/pulse/61558f3021612e32de83311f
+
+http://185.193.126.172
+http://51.195.68.217
+softhouse.store
+update.softhouse.store
+
+# Reference: https://www.menlosecurity.com/blog/ta551-targeted-malicious-campaign-breakdown/
+# Reference: https://otx.alienvault.com/pulse/62bdd4f0a8d82702782ea614
+
+bacionera.top
+nopogew.com
+sobolpand.top
+
+# Reference: https://twitter.com/RedDrip7/status/1545245625662418945
+# Reference: https://twitter.com/JAMESWT_MHT/status/1545303433959411714
+
+agencijazaregistraciju.rs/i.html
+agencijazaregistraciju.rs/t.php
+
+# Reference: https://go.recordedfuture.com/hubfs/reports/cta-2023-0127.pdf (# GraphicalNeutrino)
+# Reference: https://otx.alienvault.com/pulse/63d95dd289e5b68a19e9c791
+
+totalmassasje.no/schedule.php
+
+# Reference: https://twitter.com/BushidoToken/status/1633459935697838081
+# Reference: https://www.shodan.io/host/5.75.159.186
+
+http://5.75.159.186
+5.75.159.186:22
+5.75.159.186:3306
+5.75.159.186:3389
+5.75.159.186:443
+5.75.159.186:5800
+5.75.159.186:5900
+
+# Reference: https://twitter.com/malwrhunterteam/status/1677023534294487049
+# Reference: https://twitter.com/h2jazi/status/1677027834890469376
+# Reference: https://www.virustotal.com/gui/file/966e070a52de1c51976f6ea1fc48ec77f6b89f4bf5e5007650755e9cd0d73281/detection
+# Reference: https://www.virustotal.com/gui/file/4875a9c4af3044db281c5dc02e5386c77f331e3b92e5ae79ff9961d8cd1f7c4f/detection
+# Reference: https://www.virustotal.com/gui/file/af1922c665e9be6b29a5e3d0d3ac5916ae1fc74ac2fe9931e5273f3c4043f395/detection
+# Reference: https://www.virustotal.com/gui/file/7fc9e830756e23aa4b050f4ceaeb2a83cd71cfc0145392a0bc03037af373066b/detection
+
+kefas.id
+
+# Scripts
+
+/46tt83y6.ps1
+/buildus9_3.ps1
+/build_eu.ps1
+/p0fd798.ps1
+/pwrvw.ps1

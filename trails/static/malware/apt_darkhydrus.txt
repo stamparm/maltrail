@@ -1,0 +1,91 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://researchcenter.paloaltonetworks.com/2018/07/unit42-new-threat-actor-group-darkhydrus-targets-middle-east-government/
+# Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (DarkHydrus 2017 activity)
+
+0ffice.com
+0ffiice.com
+0utl00k.net
+0utlook.bid
+0utlook.accountant
+allexa.net
+anyconnect.stream
+bigip.stream
+citriix.net
+cisc0.net
+fortiweb.download
+# hotmai1.com  # Note: https://check-mail.org/domain/hotmai1.com/
+kaspersky.host
+kaspersky.science
+maccaffe.com
+microtik.stream
+micrrosoft.net
+microsoftlab.ir
+msdncss.com
+msdnscripts.com
+owa365.bid
+symanteclive.download
+windowsdefender.win
+
+# Reference: https://unit42.paloaltonetworks.com/darkhydrus-delivers-new-trojan-that-can-use-google-drive-for-c2-communications/
+# Reference: https://docs.google.com/document/d/1oYX3uN6KxIX_StzTH0s0yFNNoHDnV8VgmVqU5WoeErc (DarkHydrus 2017 activity)
+
+# C2s
+0ffice365.agency
+0ffice365.life
+0ffice365.services
+0nedrive.agency
+akadns.services
+akamaiedge.live
+akamaized.live
+akdns.live
+cloudfronts.services
+corewindows.agency
+edgekey.live
+gogle.co
+microsoftonline.agency
+onedrive.agency
+sharepoint.agency
+skydrive.agency
+skydrive.services
+trafficmanager.live
+
+# Name servers
+ns102.kaspersky.host
+ns103.kaspersky.host
+ns1.microsoftlab.ir
+ns2.microsoftlab.ir
+tvs1.trafficmanager.live
+tvs2.trafficmanager.live
+tbs1.microsoftonline.services
+tbs2.microsoftonline.services
+brit.ns.cloudfronts.services
+dns.cloudfronts.services
+ns2.akadns.services
+britns.akadns.services
+britns.akadns.live
+ns2.akadns.live
+
+# Related domains
+akamai.agency
+akamaiedge.services
+asimov-win-microsoft.services
+azureedge.today
+data-microsoft.services
+iecvlist-microsoft.live
+nsatc.agency
+onecs-live.services
+phicdn.world
+t-msedge.world
+
+# Reference: https://www.virustotal.com/gui/ip-address/108.177.235.92/relations
+
+microsoftonline.host
+microsoftonline.services
+
+# Reference: https://www.virustotal.com/gui/file/f81a5f0f97eb9782e425f1fde19a40f5f4c2516df6ed8e40baad68b1a9bd0a53/detection
+# Reference: https://www.virustotal.com/gui/file/270ec2945fb976823e46d6fbb346fac46f585145ff05538846ab6cefc17064c8/detection
+
+asisdns.space
+asismdnu.asisdns.space

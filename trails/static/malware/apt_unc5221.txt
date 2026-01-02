@@ -1,0 +1,103 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: uta0178
+
+# Reference: https://www.volexity.com/blog/2024/01/10/active-exploitation-of-two-zero-day-vulnerabilities-in-ivanti-connect-secure-vpn/
+# Reference: https://www.mandiant.com/resources/blog/suspected-apt-targets-ivanti-zero-day
+
+http://173.220.106.166
+http://173.53.43.7
+http://206.189.208.156
+http://47.207.9.89
+http://50.213.208.89
+http://50.215.39.49
+http://50.243.177.161
+http://64.24.179.210
+http://71.127.149.194
+http://73.128.178.221
+http://75.145.224.109
+http://75.145.243.85
+http://98.160.48.170
+gpoaccess.com
+symantke.com
+webb-institute.com
+
+# Reference: https://www.mandiant.com/resources/blog/suspected-apt-targets-ivanti-zero-day (# LIGHTWIRE, WIREFIRE)
+# Reference: https://github.com/Gi7w0rm/MalwareConfigLists/blob/main/Ivanti_Connect_Secure_backdoors.txt
+# Reference: https://www.virustotal.com/gui/file/bebf615de9018e36e2acca7dfa3ff17e5c921c1e5c0f438dc7ba1247f2b1b246/detection
+
+http://152.32.128.64
+http://159.65.130.146
+http://35.201.216.249
+http://89.23.107.155
+http://91.92.254.14
+146.0.228.66:1080
+146.0.228.66:8111
+66.42.68.120:443
+8.137.112.245:8001
+api.d-n-s.name
+areekaweb.com/js/chat.php
+catcher.requestcatcher.com
+cpanel.netbar.org/assets/js/xml.php
+dcgems.net/plugins/authentication/auth.php
+duorhytm.fun
+ehangmun.com/board/selectbox/xml.php
+entraide-internationale.fr/IMG/xml.php
+miltonhouse.nl/assets/js/xml.php
+safe.rocks
+secure-cama.com
+
+# Reference: https://twitter.com/felixaime/status/1749454051601776979
+
+psecure.pro
+telemetry.psecure.pro
+
+# Reference: https://twitter.com/JusticeRage/status/1749466349309501570
+
+http://154.223.17.218
+45.227.255.213:30303
+clickcom.click
+line-api.com
+
+# Reference: https://github.com/SEKOIA-IO/Community/blob/main/IOCs/CVE-2023-46805_CVE-2024-21887/Ivanti_iocs_20240124.csv
+# Reference: https://www.virustotal.com/gui/file/1662268ef5e797a480c963d8899d70112aa186f28780311ca5aabac0e54c074b/detection
+# Reference: https://www.virustotal.com/gui/file/6a24558987bbdb6dafc81948abeb9115ec686385594bb0a51fa1cbe4a5f9a98e/detection
+
+81.2.216.78:29742
+/dG7n47d7Gz/lib
+/T7cNxSSK4d/lib
+/dG7n47d7Gz/upd.sh
+/T7cNxSSK4d/upd.sh
+/dG7n47d7Gz/
+/T7cNxSSK4d/
+
+# Reference: https://www.mandiant.com/resources/blog/investigating-ivanti-zero-day-exploitation
+
+clicko.click
+
+# Reference: https://www.volexity.com/blog/2024/01/18/ivanti-connect-secure-vpn-exploitation-new-observations/
+# Reference: https://otx.alienvault.com/pulse/65aa779d249935925e76fe93
+# Reference: https://github.com/volexity/threat-intel/blob/main/2024/2024-01-18%20Ivanti%20Connect%20Secure%20pt3/indicators/iocs.csv
+
+abode-dashboard-media.s3.ap-south-1.amazonaws.com
+archivevalley-media.s3.amazonaws.com
+blooming.s3.amazonaws.com
+shapefiles.fews.net.s3.amazonaws.com
+
+# Reference: https://cloud.google.com/blog/topics/threat-intelligence/investigating-ivanti-zero-day-exploitation/
+# Reference: https://github.com/HarfangLab/iocs/blob/main/iv_lastauthserverused_js/20240122_lastauthserverused_js.txt
+
+nssa.gov.mm/temp/get.php
+/lastauthserverused.js
+
+# Reference: https://x.com/WhichbufferArda/status/1925210805793955889
+# Reference: https://blog.eclecticiq.com/china-nexus-threat-actor-actively-exploiting-ivanti-endpoint-manager-mobile-cve-2025-4428-vulnerability
+
+abbeglasses.s3.amazonaws.com
+fconnect.s3.amazonaws.com
+openrbf.s3.amazonaws.com
+the-mentor.s3.amazonaws.com
+tkshopqd.s3.amazonaws.com
+tnegadge.s3.amazonaws.com
+trkbucket.s3.amazonaws.com

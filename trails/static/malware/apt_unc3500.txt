@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.mandiant.com/resources/mobileiron-log4shell-exploitation
+# Reference: https://otx.alienvault.com/pulse/6244606893ddbc9a6a5bbdeb
+
+http://203.160.86.2
+http://35.189.145.119
+34.92.40.189:33221
+34.92.40.189:443
+45.76.98.184:33221
+45.76.98.184:443
+45.76.98.184:53
+vpn599147072.softether.net

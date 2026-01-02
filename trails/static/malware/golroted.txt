@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~Golroted-S/detailed-analysis.aspx
+
+cpanel088.unihost.com
+
+# Reference: https://www.virustotal.com/gui/file/b3b1e1121654cbad17559c93237b7cd2070b1fffe0e0f034cb7d62b350dbcab8/detection
+
+lum.chickenkiller.com
+
+# Reference: https://www.virustotal.com/gui/file/e33e36a150d203c783c838ab9de003b02df2a707cc361a51e38335e1bb71de4f/detection
+# Reference: https://www.virustotal.com/gui/file/a6d096c071e7c691dbaaf2c48b440cb8f04d4a50a4daa32897e48298b0a71e37/detection
+# Reference: https://www.virustotal.com/gui/file/49520bf59b6163bf2e99444caff0819af436c937fa766c51a16e06b1fcace29a/detection
+# Reference: https://www.virustotal.com/gui/file/ce774ad96a61eea51ffce3ce32a5d2dce896503e50cdf9c27fa9dc1d5bfd8d24/detection
+# Reference: https://www.virustotal.com/gui/file/03e7ddef55508f35275fc25e283bf0499805b0bdf3cf1f63a1cf92b8e638665a/detection
+
+185.4.29.178:2100
+192.169.69.25:9100
+193.105.134.78:2100
+businessdb1.duckdns.org
+businessdb2.duckdns.org
+businessdb3.duckdns.org
+businessdb4.duckdns.org
+businessdb5.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/ip-address/185.4.29.178/relations
+
+farah72.warzonedns.com
+gilb001.duckdns.org
+newrubby.duckdns.org
+papam.ddns.net
+rubby01.ddns.net

@@ -1,0 +1,51 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/sekoia_io/status/1894377524286595239
+# Reference: https://blog.sekoia.io/polaredge-unveiling-an-uncovered-iot-botnet/
+
+aipricadd.top
+asustordownload.com
+centrequ.cc
+durianlink.cc
+firebasesafer.top
+gardensc.cc
+headached.cc
+hitchil.cc
+icecreand.cc
+landim.cc
+largeroofs.top
+logchim.cc
+longlog.cc
+nternetd.cc
+siotherlentsearsitech.shop
+suiteiol.cc
+
+# Reference: https://blog.xlab.qianxin.com/smoking-gun-uncovered-rpx-relay-at-polaredges-core-exposed/
+
+111.119.223.196:51715
+111.119.223.196:51716
+111.119.223.196:61123
+129.226.216.242:55555
+159.138.90.5:55555
+43.128.226.160:55555
+47.236.230.216:55555
+47.236.38.206:55555
+47.237.26.232:55555
+47.237.70.132:55555
+47.76.214.52:55555
+47.79.7.193:55555
+8.153.163.19:55555
+8.153.205.139:55555
+8.153.207.128:55555
+8.159.129.39:55555
+8.159.130.12:55555
+8.159.135.220:55555
+8.159.136.155:55555
+8.159.139.71:55555
+8.211.172.183:55555
+8.216.14.9:55555
+8.219.214.27:55555
+82.118.22.155:45675
+beastdositadvtofm.site
+missionim.cc

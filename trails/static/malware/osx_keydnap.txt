@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2016-070706-5326-99&tabid=2
+
+g5wcesdfjzne7255.onion.to
+
+# Reference: https://github.com/eset/malware-ioc/tree/master/keydnap
+
+g5wcesdfjzne7255.onion.to
+r2elajikcosf7zee.onion.to

@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/abuse_ch/status/1141702499889553409
+
+/520.pac
+
+# Reference: https://www.virustotal.com/gui/file/cd8ebfce412939043e83241b5d40ee14c118852ab1156b2a1764a46108543c2a/detection
+
+heelchoise.xyz
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1565690849756909570
+# Reference: https://www.virustotal.com/gui/file/6193304a72e888bddb836d0ad94e3a526ab00c45196cf57994e873997483e506/detection
+
+http://35.236.159.79
+/win.pac0
+
+# Reference: https://twitter.com/luc4m/status/1639690470807810048
+
+http://34.80.59.91

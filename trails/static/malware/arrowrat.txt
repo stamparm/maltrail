@@ -1,0 +1,68 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: qatarcrat
+
+# Reference: https://www.joesandbox.com/analysis/569659/0/html
+
+51.254.27.112:1337
+
+# Reference: https://www.virustotal.com/gui/file/a008373926d8cbfe911875a26f9041005fc82996a1c567958552ce382a9f265e/detection
+
+193.56.29.242:4444
+
+# Reference: https://tria.ge/221010-t3ng6acef4/behavioral1
+
+64.44.167.136:5788
+pdra.duckdns.org
+
+# Reference: https://tria.ge/221117-kq1ghsaa7v/behavioral2
+
+arhvn.duckdns.org
+
+# Reference: https://twitter.com/ScumBots/status/1632523598496772098
+# Reference: https://www.virustotal.com/gui/file/e37964ebdb10d9e06d3aa47b5ca1500571e13f582d50add487110c7abb26a76c/detection
+
+46.246.84.12:1338
+antgobec.duckdns.org
+
+# Reference: https://twitter.com/ScumBots/status/1632525111466008576
+# Reference: https://www.virustotal.com/gui/file/59a734c5ae920f5791ace8728981fffe7c9f9270fe26c27c9482dde038dd398c/detection
+
+46.246.84.14:2425
+pandora2425.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/file/53fb07f9d952373285abe1044aabe2507ffa492031aa57ceadbdb6fc4d9ae71f/detection
+
+176.97.70.164:2288
+
+# Reference: https://www.virustotal.com/gui/file/9f46555944110c0b982e05620a58e6a3828fa6ad8e8dd8f55894e25150207a5e/detection
+
+191.101.130.52:1338
+febbit3.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/63ab8bad7e72c1c4044743b0de2efd791a4f9bf12e85b2bd973b7309d50eafc8/detection
+
+147.185.221.16:12129
+instruments-george.gl.at.ply.gg
+instruments-user.gl.at.ply.gg
+
+# Reference: https://www.virustotal.com/gui/file/41940020b7778a380f4d0907d4a95a8afe2108b3df3f7f73d7847d069ff29dcc/detection
+
+103.156.90.165:4046
+
+# Reference: https://x.com/JAMESWT_WT/status/1927698129949688207
+# Reference: https://www.virustotal.com/gui/file/e61e2ad639c8156f8e10ba5d91b7c364091163d15fca4ef15d71e3d56411ea5b/detection
+# Reference: https://www.virustotal.com/gui/file/ef02e74bba01920f041806b4704a143ee145f5631523ac5f508aa0a8037b4edb/detection
+# Reference: https://www.virustotal.com/gui/file/c5e4d7550b177cdd007847ff76f40e3c6009ee8e922b13058a2aea96c0e27d76/detection
+# Reference: https://www.virustotal.com/gui/file/ab463ed0e5c2b1f8fe82b545825042c5a5df363d907ef6f9c0c378ca4548ac76/detection
+# Reference: https://www.virustotal.com/gui/file/465e92ef5dc308cbd8ed79d503e0a7702eddd1e298662bc8695caf6ba383750a/detection
+
+147.124.223.218:3116
+qatar.uhdengine.com
+
+# Reference: https://x.com/smica83/status/1933291156961411210
+# Reference: https://www.virustotal.com/gui/file/21994949d4df4bdbe5834379c2f7f023c8fa20eb1bdd7a5756f651fe2ff91ae7/detection
+
+87.117.2.29:1337
+psedrfjygyugyufyt.duckdns.org

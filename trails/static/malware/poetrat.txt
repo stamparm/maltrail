@@ -1,0 +1,43 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ShadowChasing1/status/1250716952881803264 (target at The Republic of Azerbaijan)
+# Reference: https://blog.talosintelligence.com/2020/04/poetrat-covid-19-lures.html
+
+gov-az.herokuapp.com
+govaz.herokuapp.com
+dellgenius.hopto.org
+
+# Reference: https://twitter.com/0xthreatintel/status/1310319895708495872
+# Reference: https://www.virustotal.com/gui/file/64aeffe15aece5ae22e99d9fd55657788e71c1c52ceb08e3b16b8475b8655059/detection
+
+slimip.accesscam.org
+
+# Reference: https://twitter.com/Arkbird_SOLG/status/1312859415188508672
+# Reference: http://defence.az/en/news/145411
+# Reference: https://app.any.run/tasks/cd3f4071-3991-42fc-8195-d9bdd5d7bec4/
+# Reference: https://www.virustotal.com/gui/file/dc565146cd4ecfb45873e44aa1ea1bac8cfa8fb086140154b429ba7274cda9a2/detection
+
+111.90.149.218:111
+111.90.149.218:443
+
+# Reference: https://twitter.com/ShadowChasing1/status/1314847032155074562
+# Reference: https://www.virustotal.com/gui/file/c6ca47944f09ddbb6ac4ce96fdfb2818c7db7aca589ee202e9c33dd005eb0cf2/detection
+
+volt220.kozow.com
+
+# Reference: https://twitter.com/doc_guard/status/1745440937579524518
+# Reference: https://www.virustotal.com/gui/file/ee02e5051243512ec5a1839afc6b304b55fb7f14ad43ae84d53eb315c9674103/detection
+
+learndash.825testsites.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/203.234.238.140/relations
+# Reference: https://www.virustotal.com/gui/file/c4c71ad59b09f47d5d8c1f1ba54a358d1793706f00651867fb171e8f4d2912b4/detection
+# Reference: https://www.virustotal.com/gui/file/0655376adc2c6e596c46c040e00dd21fac7423b0d30d3310535efd3d3a15c278/detection
+
+kttelecom.duckdns.org
+lgtelecom.duckdns.org
+pub-fd29cd63fb8c4b7fb0c7d3fa893212b9.r2.dev
+sktelecom.duckdns.org
+sktelecom.netlify.app
+ubiquitous-cucurucho-343e97.netlify.app

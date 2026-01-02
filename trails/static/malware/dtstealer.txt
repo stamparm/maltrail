@@ -1,0 +1,31 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+
+# Reference: https://twitter.com/James_inthe_box/status/1281706762165350400
+# Reference: https://twitter.com/3xp0rtblog/status/1281841635240943616
+# Reference: https://gist.github.com/silence-is-best/a64b6f1c78ca5307d00d766c36b3d2e3
+# Reference: https://app.any.run/tasks/2447d93b-9598-482b-bbbd-d939662782bc/
+# Reference: https://app.any.run/tasks/c8e51fa2-e216-4258-a043-a81d1eb3406a/
+
+a69a69.beget.tech
+z96774t7.beget.tech
+real-ed14.myjino.ru
+lodergord.com
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1288430666619682816
+# Reference: https://app.any.run/tasks/d752a400-d30f-434e-8cfb-342c0932c73f/
+# Reference: https://www.virustotal.com/gui/file/763c5aeb1868bb20aa945c83994b25cd01c0c28986b0e56f4a28556fe240fda2/detection
+
+a0458390.xsph.ru
+
+# Reference: https://twitter.com/James_inthe_box/status/1478498195441274884
+# Reference: https://app.any.run/tasks/e301ab42-155a-4e93-b805-fe0b0066407a/
+
+stih.nl
+
+# Reference: https://blog.talosintelligence.com/2022/03/threat-roundup-0311-0318.html (# Win.Packed.Razy-9941501-0)
+
+stealer.loc
+f0506397.xsph.ru
+stealer.stih.nl

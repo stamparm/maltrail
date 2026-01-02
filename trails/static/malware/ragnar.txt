@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ragnarlocker
+
+# Reference: https://www.hackplayers.com/2021/02/sitios-cibercriminales-deepweb.html
+
+p6o7m73ujalhgkiv.onion
+
+# Reference: https://github.com/thetanz/ransomwatch/blob/main/docs/INDEX.md
+
+rgleak7op734elep.onion
+rgleaktxuey67yrgspmhvtnrqtgogur35lwdrup4d3igtbm3pupc4lyd.onion
+rgleaktxuey67yrqspmhvtnrqtgogur35lwdrup4d3igtbm3pupc4lyd.onion
+sushlnty2j7qdzy64qnvyb6ajkwg7resd3p6agc2widnawodtcedgjid.onion
+wobpitin77vdsdiswr43duntv6eqw4rvphedutpaxycjdie6gg3binad.onion
+
+# Reference: https://twitter.com/petikvx/status/1746238792070033538
+# Reference: https://www.virustotal.com/gui/file/6faf182270f54ef274bd712869f92a9e6c6e3fed6d4299ea79f8bfcad0ecc95b/detection
+
+mykgoj7uvqtgl367.onion
+
+# Reference: https://www.sygnia.co/blog/threat-actor-spotlight-ragnarlocker-ransomware/
+
+http://179.60.150.74
+179.60.150.74:443
+179.60.150.74:5650
+179.60.150.74:5655
+
+# Reference: https://x.com/RakeshKrish12/status/1888862217438744839
+# Reference: https://www.virustotal.com/gui/file/26dedb55050f1e87e920352f205a2865ed8a8cc42ed0b0ae436b413c59bf8a7a/detection
+
+http://121.148.236.5
+121.148.236.5:9222

@@ -1,0 +1,346 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: C3RB3R ransomware
+
+# Reference: https://ransomwaretracker.abuse.ch/tracker/cerber/
+
+i01001.dgn.vn
+chromebewfk.top
+chromefastl.top
+chromehakc.top
+cleverdotl.top
+ddiopoola.top
+dealkolld.top
+dokjasura.top
+fkauueeepla.top
+flowerxpo.top
+foolalexas.top
+googlefoad.top
+newsectorbs.top
+watherfka.top
+weekendlk.top
+zutzt67dcxr6mxcn.onion.to
+
+# Reference: https://isc.sans.edu/diary/Sage%2B2.0%2BRansomware/21959
+
+cocalolo.top
+truepokemonant.top
+
+# Reference: https://twitter.com/0bfusCat/status/1194975382795145218
+
+besenok.biz
+
+# Reference: https://blog.talosintelligence.com/2019/11/threat-roundup-1115-1122.html (# Win.Ransomware.Cerber-7395321-0)
+
+ahrkvtgc.com
+aynycxbgodmwi.com
+fhvkufnnrlyfvx.com
+gcijrxipe.com
+hd63ueor8473y.com
+ogltynjmtfiu.com
+qegdtnvuanlyid.com
+rlkeqcsygmmglv.com
+shebkucvrunporc.com
+uahvwkjphhklqigod.com
+wdwefwefwwfewdefewfwefw.onion
+wglxvkpybhnxhfv.com
+
+# Reference: https://blog.talosintelligence.com/2020/02/threat-roundup-0131-0207.html (# Win.Ransomware.Cerber-7571364-0)
+
+blasters.biz
+
+# Reference: https://blog.talosintelligence.com/2020/02/threat-roundup-0207-0214.html (# Win.Ransomware.Cerber-7582361-0)
+
+bocfgojek.click
+cdwguymjxnyot.pl
+cojkhmdxrwvxwxa.pw
+dxpmkdipp.info
+hkwyfnevdievebgjx.xyz
+hldsfuh.info
+iconhrdqmeueg.su
+ligumssfsrtfpy.xyz
+mmteenijjjuyoqju.info
+mwddgguaa5rj7b54.onion
+othcijmuhwb.pl
+pqhwfeeivtkxi.click
+qgilcuym.org
+qoaouhgwfy.biz
+rqtcmltkurtev.pw
+veiqvqirdhmyis.org
+ydgsjrjqotlffitfg.org
+
+# Reference: https://github.com/StrangerealIntel/malware-notes/blob/master/Ransomware/_ransom_notes.md
+
+decrypttozxybarc.onion
+
+# Reference: https://app.any.run/tasks/7bebb866-3963-4843-9226-6cfc79c4c3bf/
+
+ffoqr3ug7m726zou.onion.to
+
+# Reference: https://blog.talosintelligence.com/2020/02/threat-roundup-0221-0228.html (# Doc.Malware.Valyria-7595017-0)
+
+dosehoop.top
+folueaport.top
+footarepu.top
+vvorootad.top
+zofelaseo.top
+
+# Reference: https://www.ey.com/Publication/vwLUAssets/ey-wannacry-ransomware-attack/$File/ey-wannacry-ransomware-attack.pdf
+
+mbfce24rgn65bx3g.jktew0.com
+mbfce24rgn65bx3g.lfsjkad.net
+mbfce24rgn65bx3g.yio3lvx.com
+7gie6ffnkrjykggd.2kzm0f.com
+mbfce24rgn65bx3g.2kzm0f.com
+7gie6ffnkrjykggd.jktew0.com
+7gie6ffnkrjykggd.jpo2z1.net
+mbfce24rgn65bx3g.6t4u2p.net
+mbfce24rgn65bx3g.jpo2z1.net
+
+# Reference: https://ransomwaretracker.abuse.ch/tracker/sage/  (as seen on 2017-10-31)
+
+mbfce24rgn65bx3g.kye1ap.net
+mbfce24rgn65bx3g.l3by4d.com
+mbfce24rgn65bx3g.17b3o.net
+mbfce24rgn65bx3g.2igu316.com
+mbfce24rgn65bx3g.je9mlz.com
+mbfce24rgn65bx3g.eho23d.net
+mbfce24rgn65bx3g.hp8ewo.net
+mbfce24rgn65bx3g.0ny42p.com
+mbfce24rgn65bx3g.is0hvt1.com
+
+# Reference: https://blog.talosintelligence.com/2019/06/threat-roundup-0614-0621.html (# Win.Ransomware.Sage-6995951-1)
+
+mbfce24rgn65bx3g.we0sgd.com
+mbfce24rgn65bx3g.y8lkjg5.net
+
+# Reference: http://id-ransomware.blogspot.com/2017/01/sage-2-ransomware.html (Russian)
+
+mbfce24rgn65bx3g.op7su2.com
+mbfce24rgn65bx3g.rzunt3u2.com
+7gie6ffnkrjykggd.rzunt3u2.com
+7gie6ffnkrjykggd.er29sl.in
+7gie6ffnkrjykggd.onion
+z5dq36kjy5swjtmr.hp8ewo.net
+z5dq36kjy5swjtmr.0ny42p.com
+
+# Reference: https://isc.sans.edu/diary/Sage%2B2.0%2BRansomware/21959
+
+mbfce24rgn65bx3g.er29sl.in
+
+# Reference: https://blog.talosintelligence.com/2020/04/threat-roundup-0403-0410.html (# Win.Ransomware.Razy-7646351-0)
+
+mbfce24rgn65bx3g.we0sgd.com
+mbfce24rgn65bx3g.y8lkjg5.net
+
+# Reference: https://twitter.com/pancak3lullz/status/1251227273950310400
+
+31.184.192.3:6892
+
+# Reference: https://app.any.run/tasks/a87d495b-2fb6-4130-a40d-f5b74610b8c2/
+
+93.107.12.1:6893
+
+# Reference: https://www.virustotal.com/gui/file/24db37158a6190d7fece714b37628e58bde229a0e89340c5999064ae9ccae7a4/detection
+# Reference: https://www.virustotal.com/gui/domain/blasters.biz/relations
+
+blasters.biz
+abupkgiwale.blasters.biz
+adymoxewupx.blasters.biz
+afeqov.blasters.biz
+afizepd.blasters.biz
+agisypanyr.blasters.biz
+agywyxedak.blasters.biz
+ajeryguw.blasters.biz
+apeholy.blasters.biz
+apodizasor.blasters.biz
+aqycun.blasters.biz
+awacgmutub.blasters.biz
+azlwitav.blasters.biz
+emowebehyva.blasters.biz
+esuxum.blasters.biz
+ezaw.blasters.biz
+ibyj.blasters.biz
+icoxezsv.blasters.biz
+icyxobofoq.blasters.biz
+idytysu.blasters.biz
+ikecodebina.blasters.biz
+ikukyr.blasters.biz
+isulagynu.blasters.biz
+itydumyme.blasters.biz
+kheg.blasters.biz
+ngijyceloku.blasters.biz
+oczkubo.blasters.biz
+oduzudmwe.blasters.biz
+ohibe.blasters.biz
+udtfegafu.blasters.biz
+ugawupelyw.blasters.biz
+upalaft.blasters.biz
+urumom.blasters.biz
+utecipop.blasters.biz
+uvud.blasters.biz
+uwanakygoz.blasters.biz
+yhyfu.blasters.biz
+ynytyg.blasters.biz
+yvizag.blasters.biz
+zwudijupofy.blasters.biz
+
+# Reference: https://app.any.run/tasks/84bf30fb-b9f4-4241-8960-08434d5cddb9/
+
+93.107.12.0:6893
+
+# Reference: https://blog.talosintelligence.com/2021/03/threat-roundup-0226-0305.html (# Win.Packed.Razy-9835522-0)
+# Reference: https://www.virustotal.com/gui/file/03cd3bbb28b53c4f9b7bed0858cb1457c274634d35159be0ec5818ea9231cfbe/detection
+
+alihoryty.klontrek.org
+amsdoryr.klontrek.org
+anikimogy.klontrek.org
+apimumiluwe.klontrek.org
+azazyvozo.klontrek.org
+eqjcyn.klontrek.org
+esergsicuqi.klontrek.org
+esev.klontrek.org
+fkisew.klontrek.org
+gnoqovijds.klontrek.org
+icupyno.klontrek.org
+ikig.klontrek.org
+inad.klontrek.org
+jbyge.klontrek.org
+jgihasov.klontrek.org
+kpicyles.klontrek.org
+ofyc.klontrek.org
+udyhytu.klontrek.org
+ulghyji.klontrek.org
+uvenemico.klontrek.org
+ybuny.klontrek.org
+yhytabykoje.klontrek.org
+ypybo.klontrek.org
+ypyhelynac.klontrek.org
+
+# Reference: https://www.virustotal.com/gui/file/854ca8ecec3aeb5510711199490218f25fe2c4a8bb4f47b52ba461209409eccf/detection
+
+http://146.0.72.89
+
+# Reference: https://twitter.com/ni_fi_70/status/751024533038129152
+# Reference: https://virustotal.com/gui/ip-address/104.232.34.194/relations
+# Reference: https://virustotal.com/gui/ip-address/198.143.2.211/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.1.75.145/relations
+
+1topfllrt.top
+abortppier.top
+acotooptih.top
+adiidiam.top
+aeropoer.top
+alertonly4dogs.info
+comfortoflop.info
+cvoolierb.top
+doc4tolllcp.top
+doormusicjobs.info
+e2otoopcpr.top
+engellifeonly.top
+five5lesson.top
+foornoprty.top
+fortunetoppop.top
+fppennto.top
+hootholoj.top
+jeoptyrvv.top
+johnxxxipor.top
+qoee3cool.top
+qorpolootn.info
+rokklerte.top
+six6night.top
+
+# Reference: https://www.virustotal.com/gui/file/7b16c17b4f5165cf693773a3234de90f6bad0712f39752be9d96986afc062e8b/detection
+
+domptorang.com
+ranesken.com
+
+# Reference: https://blog.talosintelligence.com/2021/09/threat-roundup-0917-0924.html (# Win.Dropper.Cerber-9893855-0)
+
+1j9r76.top
+1bxzyr.top
+
+# Reference: https://blog.talosintelligence.com/2021/10/threat-roundup-0924-1001.html (# Win.Ransomware.Cerber-9896367-0)
+
+urasnev.top
+
+# Reference: https://blog.talosintelligence.com/2021/11/threat-roundup-1029-1105.html (# Win.Dropper.Cerber-9905750-0)
+# Reference: https://www.virustotal.com/gui/file/1b354b27bda25e81dd737fdf4d705268b25df2390d00bf67927981c6180dac92/detection
+
+dfkecvowerfwd.pro
+giga.today
+promo.giga.today
+zz.dfkecvowerfwd.pro
+
+# Reference: https://www.virustotal.com/gui/ip-address/109.230.199.106/relations
+# Reference: https://www.virustotal.com/gui/file/ffb9dacb26b4e9513b9af4b3dbfdef6558820c5ea8ab6840a02734cffdedddcb/detection
+
+1bwh8a.top
+1bwh8a.top
+p27dokhpz2n7nvgr.1bwh8a.top
+pe2cku7pebkpgeko.1bwh8a.top
+
+# Reference: http://blog.talosintelligence.com/2022/02/threat-roundup-0128-0204.html (# Win.Ransomware.Cerber-9937930-0)
+
+1k1dxt.top
+p27dokhpz2n7nvgr.1k1dxt.top
+
+# Reference: http://blog.talosintelligence.com/2022/04/threat-roundup-0415-0422.html (# Win.Ransomware.Cerber-9944814-0)
+# Reference: https://www.virustotal.com/gui/file/40450adcf207c12625495eff517acbc99f9f742900ceabee3cc0fb464ed3e95f/detection
+
+acvqxi.com
+aotcye.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1534894376513576962
+# Reference: https://www.virustotal.com/gui/file/46998fe7f03cf9f870d95b6585324bbde64fe0a673382ef571662ca2f40499bb/detection
+
+http://167.99.57.116
+http://46.101.193.140
+/qnetd
+/qnetdd
+
+# Reference: https://blog.cyble.com/2022/06/17/cerber2021-ransomware-back-in-action
+# Reference: https://otx.alienvault.com/pulse/62ac750575a97d9806cc9aad
+
+pigetrzlperjreyr3fbytm27bljaq4eungv3gdq2tohnoyfrqu4bx5qd.onion
+
+# Reference: https://blog.talosintelligence.com/threat-roundup-for-september-16-to-september-23/ (# Win.Ransomware.Cerber-9970426-0)
+
+cerberhhyed5frqa.1k1dxt.top
+xxxxxxxxxxxxxxxx.1k1dxt.top
+
+# Reference: https://blog.talosintelligence.com/threat-roundup-0210-0217/ (# Win.Ransomware.Cerber-9987352-0)
+
+hjhqmbxyinislkkt.1j9r76.top
+
+# Reference: https://twitter.com/TheDFIRReport/status/1721576960675954959
+
+http://193.187.172.73
+
+# Reference: https://threatfox.abuse.ch/browse/malware/win.cerber/
+
+http://193.176.179.41
+
+# Reference: https://www.sentinelone.com/blog/c3rb3r-ransomware-ongoing-exploitation-of-cve-2023-22518-targets-unpatched-confluence-servers/
+# Reference: https://otx.alienvault.com/pulse/6553d6c3fa5d3605c9b4313e
+
+j3qxmk6g5sk3zw62i2yhjnwmhm55rfz47fdyfkhaithlpelfjdokdxad.onion
+
+# Reference: https://twitter.com/malwrhunterteam/status/1724864736737493370
+# Reference: https://www.virustotal.com/gui/file/d509e99359c9f9c95396881b7fae2165b233643cbf15630596e989869f369c04/detection
+
+http://193.43.72.11
+http://45.145.6.112
+/agttdtcbi64
+/agttdtcki64
+/agttdtxti64
+/bapss.6x
+
+# Reference: https://twitter.com/banthisguy9349/status/1787533162668532059
+
+103.207.68.229:6699
+
+# Generic trails
+
+\b(27lelchgcvs2wpm7|4kqd3hmqgptupi3p|52uo5k3t73ypjije|7gie6ffnkrjykggd|ahuqfrqk54v3vnzj|avsxrcoq2q5fgrw2|cerberhhyed5frqa|ffoqr3ug7m726zou|fnmi62725zfti2vy|ftoxmpdipwobp4qy|hjhqmbxyinislkkt|lfdachijzuwx4bc4|mbfce24rgn65bx3g|oqwygprskqv65j72|p27dokhpz2n7nvgr|pe2cku7pebkpgeko|pmenboeqhyrpvomq|qfjhpgbefuhenjp7|unocl45trpuoefft|vyohacxzoue32vvk|wjtqjleommc4z46i|xpcx6erilkjced3j|xrhwryizf5mui7a5|xxxxxxxxxxxxxxxx|z5dq36kjy5swjtmr|onedsblobprd[a-z0-9]{1,})\.[a-z0-9.]+

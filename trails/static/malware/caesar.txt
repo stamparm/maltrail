@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: caesar ransomware
+
+# Reference: https://x.com/siri_urz/status/1810652235946140081
+# Reference: https://www.virustotal.com/gui/file/98819bf6b69f9e68c05b981e5fd5c3d1a2b562c1c453a3859c3cbeaef9156fad/detection
+# Reference: https://www.virustotal.com/gui/file/f1b7c9eb0c3b87bea51e390fe39d52599225d17aed4b7f46862ea72ea6520c7c/detection
+
+maranzano.widhy-space.my.id

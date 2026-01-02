@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: 8base ransomware
+
+# Reference: https://x.com/RakeshKrish12/status/1843195597970649583
+
+basemmnnqwxevlymli5bs36o5ynti55xojzvn246spahniugwkff2pad.onion
+xfycpauc22t5jsmfjcaz2oydrrrfy75zuk6chr32664bsscq4fgyaaqd.onion
+
+# Reference: https://x.com/banthisguy9349/status/1844979555502551123
+
+http://92.118.36.204

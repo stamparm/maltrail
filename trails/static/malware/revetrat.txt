@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2017-032416-1407-99&tabid=2
+
+maars21.ddns.net
+winddns.hopto.org
+kareemshadow.ddns.net
+ssfthgjgj67.ddns.net
+test212.dynu.net
+updatewireless.onthewifi.com
+nidal456.myftp.biz
+access.access.ly
+
+# Reference: https://www.virustotal.com/gui/file/dea3beba1b384bf0ff832c055100b430f81683d7efaec1cb3519c862666674a3/detection
+
+141.255.154.74:1604
+mrmark.duckdns.org
+
+# Reference: https://www.virustotal.com/gui/ip-address/141.255.156.219/relations
+# Reference: https://www.virustotal.com/gui/file/18f5687b8dd1f4bb5c691ca82bfb7accc36c7a34ef04ed6dffc7cc1263333bbd/detection
+
+141.255.151.177:1111
+141.255.156.219:1111
+7chich2020.ddns.net
+almakb.ddns.net
+baby11.ddns.net
+download1.sytes.net
+estelionato100.duckdns.org
+etntevuet.hopto.org
+muaway01.duckdns.org
+myanas999.hopto.org
+servicewindows.no-ip.org
+smokinghackersjidk.ddns.net

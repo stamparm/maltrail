@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: laret, pinar
+
+# Reference: https://www.welivesecurity.com/en/eset-research/bladedfeline-whispering-dark/
+
+178.209.51.61:1234
+178.209.51.61:22
+178.209.51.61:8000
+185.76.78.177:1234
+185.76.78.177:22
+185.76.78.177:8000

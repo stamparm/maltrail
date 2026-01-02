@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: planet stealer
+
+# Reference: https://twitter.com/suyog41/status/1764552818156068886
+# Reference: https://www.virustotal.com/gui/file/e846d3cfad85b09f8fdb0460fff53cfda1176f4e9e420bf60ed88d39b1ef93db/detection
+# Reference: https://www.virustotal.com/gui/file/c90d23214088641431d2a93b6e3dfa26e6f5149bc8028449b7ce2f8edb2a6dd3/detection
+# Reference: https://www.virustotal.com/gui/file/beb1e444d4a7e27ca6cb5fe55e9eaa3ecf880c044755d72f7724e7fea8371cd5/detection
+# Reference: https://www.virustotal.com/gui/file/7e33dd313ed09a15c81af55ee0997031caa3da8fba8c31c3859bc95e52559ff3/detection
+
+http://193.178.170.30
+hzp02itt0a.com

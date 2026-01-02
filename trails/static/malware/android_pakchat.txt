@@ -1,0 +1,31 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://news.sophos.com/en-us/2021/01/12/new-android-spyware-targets-users-in-pakistan/
+# Reference: https://github.com/sophoslabs/IoCs/blob/master/Android-pakchat.csv
+# Reference: https://otx.alienvault.com/pulse/5ffdfdb8bdb5515f9e8001a1
+
+172.241.27.67:8887
+kv33.zapto.org
+pakchat.online
+pmdu.info
+tplinsurance.xyz
+
+# Generic
+
+/Chat_view/api/device_info.php
+/Chat_view/api/dex/class.dex
+/Chat_view/api/file_manager.php
+/Chat_view/api/json/call_log.php
+/Chat_view/api/json/contact.php
+/Chat_view/api/json/log_data.php
+/Chat_view/api/json/message.php
+/Chat_view/api/location.php
+/insurance/products/device_info.php
+/insurance/products/dex/class_tpl.dex
+/insurance/products/file_manager.php
+/insurance/products/json/call_log.php
+/insurance/products/json/contact.php
+/insurance/products/json/log_data.php
+/insurance/products/json/message.php
+/insurance/products/location.php

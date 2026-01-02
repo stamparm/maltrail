@@ -1,0 +1,44 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cinoshi, water kappa
+
+# Reference: https://documents.trendmicro.com/assets/pdf/Tech%20Brief_Operation%20Overtrap%20Targets%20Japanese%20Online%20Banking%20Users.pdf
+# Reference: https://otx.alienvault.com/pulse/5e68f7e638d16c09fa844701
+
+bank-japanposst.jp
+bank-japanpost.com
+bank-japanpostjp.com
+bank-japanpostpo.jp
+japanp0st.jp
+jp-bamk.jp
+jp-bank-japanossts.jp
+safetb-amazon.jp
+safety-amazon.jp
+security-amazon.jp
+ts3cardd.com
+
+# Reference: https://www.trendmicro.com/en_us/research/21/h/cinobi-banking-trojan-targets-users-of-cryptocurrency-exchanges-.html (# water kappa)
+# Reference: https://www.trendmicro.com/content/dam/trendmicro/global/en/research/21/h/cinobi-banking-trojan-targets-users-of-cryptocurrency-exchanges-with-new-malvertising-campaign/IOCs-Cinobi%20Banking%20Trojan%20Targets%20Cryptocurrency%20Exchange%20Users%20via%20Malvertising.txt
+
+chirigame.com
+getkiplayer.com
+magicalgirlonlive.com
+supapureigemu.com
+5lmt6t4kaymuwvm5.onion
+a7q5adiilsjkujxk.onion
+
+# Reference: https://twitter.com/suyog41/status/1633807752127475713
+# Reference: https://blog.cyble.com/2023/03/23/cinoshi-project-and-the-dark-side-of-free-maas/
+# Reference: https://otx.alienvault.com/pulse/641c60a087b3de3ce0514c99
+# Reference: https://www.virustotal.com/gui/file/25e4a522edaed7b5a38ef23b6c893caa0ad4343ddf61f69f720325522f5a69e4/detection
+
+evisyn.lol
+tryno.ru
+anaida.evisyn.lol
+
+# Reference: https://twitter.com/g0njxa/status/1658478542953545729
+# Reference: https://tria.ge/230516-n6weaaaf65/behavioral2
+
+central-cee-doja.ru
+cinoshi.sbs

@@ -1,0 +1,179 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: AmexTroll, BRATA
+
+# Reference: https://securelist.com/basbanke-trend-setting-brazilian-banking-trojan/90365/
+
+dodothebest.esy.es
+zalthome.esy.es
+servcobranca.in
+ibercob.com.br
+rootcenter.com.br
+royhols.com
+autopecasecreta.com.br
+investcerto.site
+bancobrasil.mobi
+citiapp.mobi
+ltau.mobi
+moduloempresa.com
+noisquevoa.mobi
+pagseguro.mobi
+aplicativo-sms.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1267853279217823748
+
+googleplaybr.ga
+
+# Reference: https://twitter.com/malwrhunterteam/status/1280212682378010624
+
+googlepla.ddns.net
+
+# Reference: https://twitter.com/malwrhunterteam/status/1282763645211086850
+# Reference: https://twitter.com/malwrhunterteam/status/1282763820935655425
+
+googleplay-app.sytes.net
+playstories.cf
+
+# Reference: https://twitter.com/malwrhunterteam/status/1326902976871542784
+# Reference: https://twitter.com/bl4ckh0l3z/status/1326929791686242305
+# Reference: https://www.virustotal.com/gui/ip-address/184.164.70.25/relations
+# Reference: https://www.virustotal.com/gui/file/6ff9689025c204b4cf400c3eef7be8759cdad52206dcb5245a5e504c4fd0b11d/detection
+
+api-dnsapp.xyz
+kosnane-fata.xyz
+mellat-app.com
+mellat-hamrahe.com
+
+# Reference: https://twitter.com/malwrhunterteam/status/1416344403879337985
+# Reference: https://www.virustotal.com/gui/file/68888c31c2e30b003d08f001548ac321985975bb64e48de368310cf4c4df9df4/detection
+
+101.99.94.142:2001
+198.187.28.71:2001
+
+# Reference: https://twitter.com/malwrhunterteam/status/1416364560567701507
+# Reference: https://www.virustotal.com/gui/file/d774779a1e53d5c1012ec855cd6567d6e9f779299ddf0d07e96dde6c0679f4df/detection
+
+37.120.198.220:2001
+add-sicurezza-web.com
+
+# Reference: https://twitter.com/AgidCert/status/1471449056316727300
+# Reference: https://cert-agid.gov.it/wp-content/uploads/2021/12/brata_10-12-2021.json_.txt
+# Reference: https://www.virustotal.com/gui/file/091ea4ac7d30ade8b5c1247cc5f796eca3058fa4851b1e58cd3fdec73cbf85c9/detection
+# Reference: https://www.virustotal.com/gui/file/1e1628023731559c4ea1af2323ed7d226df57722eb808260ce2f0fbee465cd15/detection
+# Reference: https://www.virustotal.com/gui/file/d2c618b20de00dcce8449167b0a3a8d01eae81b9e6d7b8787e8076ca3986c8af/detection
+# Reference: https://www.virustotal.com/gui/file/850505058becc7b669898819c234fb0e7f29ab27fc7b105e95998ba5693862e1/detection
+
+http://51.38.113.144
+51.38.113.144:5656
+51.38.113.144:5757
+51.83.134.212:17178
+51.83.134.212:5451
+51.83.134.212:5454
+51.83.134.212:5656
+51.83.134.212:5757
+scarica-antivirus-2021.com
+scarica-ora-antivirus.com
+verifica-online-procedura-dati.com
+antivirus.verifica-online-procedura-dati.com
+
+# Reference: https://cert-agid.gov.it/news/brata-malware-per-dispositivi-android-spacciato-per-antispam/
+
+111.90.149.241:2001
+
+# Reference: https://www.virustotal.com/gui/file/1e7b821c38c00039ca57f49a63b3eb87a5c863846813f135a75e1c82bd587c05/detection
+
+80.211.68.187:2001
+
+# Reference: https://www.virustotal.com/gui/file/648a5a705bbe88e52569b3774a689a82f53962e8827b143189639d48727bd159/detection
+
+212.192.241.103:2001
+
+# Reference: https://www.cleafy.com/cleafy-labs/how-brata-is-monitoring-your-bank-account
+
+http://5.39.217.241
+
+# Reference: https://www.virustotal.com/gui/file/f071251bbd87db412c0b56e20d8334a47b88d5e4b3ceef2e101288f771bd9292/detection
+
+103.127.126.78:2001
+
+# Reference: https://twitter.com/malwrhunterteam/status/1517565018153312262
+# Reference: https://www.virustotal.com/gui/file/7227dbd5399e34ffa6b61f9f3f8d7dec8703b3baae7712c21b427ee8d7db63f0/detection
+
+http://51.68.147.107
+51.83.251.214:6868
+51.83.251.214:6969
+
+# Reference: https://twitter.com/malwrhunterteam/status/1520359613048176642
+# Reference: https://www.virustotal.com/gui/file/c3ffd5292ec345607950e2896a83dc1ae336d1d7f311b94e14e636ecce82d473/detection
+# Reference: https://www.virustotal.com/gui/file/fb4cedb33a2c5a8447e90a0b3c153b0c440680211428bd82c9ccbaffa85a7ac0/detection
+# Reference: https://www.virustotal.com/gui/file/cf82f08d389ec2929b4058267324792632880babb9d7db62f20761dcdd69fcf8/detection
+
+http://146.70.78.47
+http://51.83.225.224
+http://51.83.251.214
+51.83.251.214:5151
+51.83.251.214:5959
+/gvcrfRK.zip
+
+# Reference: https://twitter.com/malwrhunterteam/status/1522859631118278656
+# Reference: https://www.virustotal.com/gui/file/6308b6f9830f701d12d408477d97e91076071201fcf4ade255de77f597da8e09/detection
+
+51.83.251.214:9977
+51.83.251.214:9988
+
+# Reference: https://www.virustotal.com/gui/file/9bf89b33609973d48c7d09d5774c39bfcefd3922202db0d872f12b3ffdb28529/detection
+
+51.83.251.214:18888
+51.83.251.214:19999
+
+# Reference: https://www.virustotal.com/gui/file/2d15bc6c736c5422f3673d94c8f9d3d28ac1512eae6f459cd768842103266937/detection
+
+51.83.251.214:58990
+
+# Reference: https://twitter.com/malwrhunterteam/status/1541880379434569728
+# Reference: https://twitter.com/midnight_comms/status/1542133724669652994
+# Reference: https://www.virustotal.com/gui/file/9ab23c9ccfce76875f77528155f7612936dbdd16cadf7653f90d7f0fe2145f28/detection
+
+http://45.141.239.141
+
+# Reference: https://twitter.com/ThreatFabric/status/1547544658934464512
+# Reference: https://www.virustotal.com/gui/file/b66260ad4d147efd54e5e52955b2a251e0c13c4e3a01e1ba1c24745181073988/detection
+
+http://84.32.188.85
+84.32.188.85:2001
+
+# Reference: https://tria.ge/220728-tztj1ahhel/behavioral3
+
+101.99.95.56:2001
+
+# Reference: https://tria.ge/220728-tz6jkahhfn/behavioral2
+
+101.99.93.6:2001
+
+# Reference: https://tria.ge/220728-tzx77ahhep/behavioral3
+
+111.90.149.120:2001
+
+# Reference: https://www.virustotal.com/gui/file/bc2857c7c2a6072f84a47ec809213093cba05e4998b2068f70d10490adf60cd1/detection
+
+147.185.221.180:11332
+
+# Reference: https://twitter.com/malwrhunterteam/status/1679598979019882497
+# Reference: https://www.virustotal.com/gui/file/b2f1472b8920ba1770519381c07046a5b79c9a907bc377562ccf4575c66b6ca9/detection
+
+200.98.128.182:2779
+playstore-br.com
+
+# Generic
+
+/hakon
+/hakonhandler
+
+# APK
+
+/IDSecurity.apk
+/itauseguranca.apk
+/PJ-ID.apk
+/Protetor-Servicos-Empresariais.apk
+/SicurezzaDispositivo.apk

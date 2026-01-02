@@ -1,0 +1,100 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Trojan:Win32/Kovter.C#tab=2
+
+cnc2-bt02.biz
+cnc3-dm1.biz
+energizer2012.org
+wista-opencup.org
+turboman-open.org
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan:Win32/Kovter.E#tab=2
+
+a13-cadet.org
+a13-shop.biz
+g-nookle.net
+seventh-glow.info
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan:Win32/Kovter.B#tab=2
+
+fz5qiter.biz
+qx5xyngo.org
+cnc2-bt01.biz
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan:Win32/Kovter.A#tab=2
+
+coners.biz
+saroma.tk
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan:Win32/Kovter.C#tab=2
+
+cnc2-bt02.biz
+cnc3-dm1.biz
+energizer2012.org
+wista-opencup.org
+turboman-open.org
+
+# Reference: https://blog.talosintelligence.com/2018/09/threat-roundup-0831-0907.html (Win.Dropper.Kovter-6669952-0 section)
+
+http://100.246.196.247
+http://106.243.136.116
+http://130.197.216.217
+http://178.137.207.147
+http://179.8.135.228
+http://20.143.75.211
+http://211.129.1.101
+http://23.175.186.69
+http://27.108.150.40
+http://64.94.71.76
+http://68.143.202.61
+http://89.150.126.91
+http://99.223.4.221
+
+# Reference: https://blog.talosintelligence.com/2018/09/threat-roundup-0914-0921.html (Win.Dropper.Kovter-6689163-0)
+
+find-dentalimplants.com
+
+# Reference: https://blog.talosintelligence.com/2019/03/threat-roundup-0308-0315.html
+
+a15-smo.biz
+
+# Reference: https://twitter.com/stvemillertime/status/1142630407474733056
+# Reference: https://twitter.com/VK_Intel/status/1143333295360532481
+
+o.pre23sence.club
+r.pre23sence.club
+140.82.32.167:5518
+140.82.32.167:9919
+
+# Reference: https://app.any.run/tasks/0dd8ef73-88c1-48b1-bc50-10a716b90107/
+
+u372051m9r.ha002.t.justns.ru
+
+# Reference: https://app.any.run/tasks/53c89446-7ea3-411b-8f73-75dbc530ffde/
+
+154.219.156.224:80
+104.136.214.20:443
+63.199.80.165:443
+192.247.142.151:443
+76.227.72.241:443
+20.117.151.152:443
+219.2.8.25:443
+
+# Reference: https://blog.talosintelligence.com/2020/03/threat-roundup-0228-0306.html (# Win.Malware.Kovter-7601670-0)
+
+qdrtjvht.cn
+
+# Reference: https://www.virustotal.com/gui/file/5e44d1e0f0428c4fe65c1cbe4ad2cf2ba57325251220e4ebe86529cc6e19f01a/detection
+
+sectempus.biz
+zipwog.ru
+
+# Reference: https://www.virustotal.com/gui/file/0f713c00ee6724aef894a54b9faa66b8418da7992f231c69d40f93ba782c8585/detection
+
+http://192.186.8.82
+38.217.155.220:8080
+
+# Reference: https://www.virustotal.com/gui/file/bbee1212064aa5b3214af0ad95b7dd0cdf9846fae1fa5de27bb632f32ab34a2f/detection
+
+http://185.117.72.90

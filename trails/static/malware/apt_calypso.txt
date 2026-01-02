@@ -1,0 +1,60 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.ptsecurity.com/ww-en/analytics/calypso-apt-2019/
+# Reference: https://www.virustotal.com/gui/ip-address/46.105.227.110/relations
+# Reference: https://www.virustotal.com/gui/file/a32b3e0f9b0daaaea6ddda9875f463ff100a28005eb66a03c0308a1820787fce/detection
+# Reference: https://www.virustotal.com/gui/file/aea4d3d01ab9a564ca12af0d1a8b5eecb381a409b30b3ac8fee13f85f8e8db24/detection
+
+http://23.227.207.137
+http://36.44.74.47
+http://45.63.114.127
+http://45.63.96.120
+http://46.166.129.241
+103.224.82.47:321
+103.224.82.47:445
+46.105.227.110:7003
+dealsgle.com
+etheraval.com
+streleases.com
+sultris.com
+teldcomtv.com
+krgod.qqm8.com
+r01.etheraval.com
+tc.streleases.com
+tv.teldcomtv.com
+
+# Reference: https://twitter.com/TI_ESC/status/1264843775232421888
+# Reference: https://www.ptsecurity.com/upload/corporate/ww-en/analytics/calypso-apt-2019-eng.pdf
+
+usergetacss.com
+uv.usergetacss.com
+
+# Reference: https://www.recordedfuture.com/chinese-group-calypso-exploiting-microsoft-exchange/
+# Reference: https://otx.alienvault.com/pulse/60638f7aff63f9956797e899
+
+aztecoo.com
+draconess.com
+membrig.com
+prowesoo.com
+rawfuns.com
+rosyfund.com
+sultris.com
+waxgon.com
+yolkish.com
+
+# Reference: https://st.drweb.com/static/new-www/news/2022/march/telecom_research_en.pdf
+# Reference: https://otx.alienvault.com/pulse/6267dbe17cdc91a784b256d6
+
+globnewsline.com
+surfanny.com
+sultris.com
+youtubemail.club
+wordmoss.com
+blog.globnewsline.com
+clark.l8t.net
+mail.globnewsline.com
+mail.sultris.com
+pop3.wordmoss.com
+webmail.surfanny.com
+zmail.wordmoss.com

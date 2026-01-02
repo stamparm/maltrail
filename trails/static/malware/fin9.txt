@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ItsReallyNick/status/1166889941844074496
+# Reference: https://krebsonsecurity.com/wp-content/uploads/2019/04/wiproiocs.txt
+# Reference: https://krebsonsecurity.com/2019/04/wipro-intruders-targeted-other-major-it-firms/
+
+xsecuremail.com
+winpro365.com
+microsoftonline-secure-login.com
+secure-message.online
+encrypt-email.online
+secured-mail.online
+internal-message.app
+encrypted-message.cloud
+tashabsolutions.xyz

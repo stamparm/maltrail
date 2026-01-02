@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/cybercriminals-target-graphic-designers-with-gpu-miners/
+# Reference: https://otx.alienvault.com/pulse/64fa2102785064eab8350cee
+# Reference: https://github.com/Cisco-Talos/IOCs/blob/main/2023/09/cybercriminals-target-graphic-designers-with-gpu-miners.txt
+# Reference: https://www.virustotal.com/gui/file/9113b447722ccfcc7b6d6811c3a4f9434c6537697d0bc1cb16966bf8bfbb47c1/detection
+# Reference: https://www.virustotal.com/gui/file/399da8173122e0b2c2dbb1e2133ceaa67635ce28344fb42d5a954b0affe5e4e2/detection
+# Reference: https://www.virustotal.com/gui/file/1a742e1a5ccd898ac2da3af54c7af3a84e0c3f288eb42310a6b2fb4015452aaa/detection
+
+http://51.178.39.184
+104.244.76.183:3434
+107.189.1.78:9999
+79.134.225.124:5454
+educu.xyz
+sysnod.duckdns.org

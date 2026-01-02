@@ -1,0 +1,85 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: phemedrone stealer, bore tcp tunnel
+
+# Reference: https://twitter.com/ViriBack/status/1678182393956499460
+# Reference: https://www.virustotal.com/gui/file/bdb1f5e7f3dbd67ee70cb66f20ac7f7902ce07989a9a22432f99fd8124da5c3e/detection
+
+f0839732.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/130e00c8aa8154d60c17c2b4c0b8bf535c8dbc15ffce8b49d316778a9a2f3be2/detection
+
+a0838144.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/eb1c2284db5dd717f9ab690f2080ce880f83506f792b79c22ae452d6edc4587f/detection
+
+fobloxx.000webhostapp.com
+
+# Reference: https://www.virustotal.com/gui/file/eb099092feb2d4281d4ff403b0d2a8e8b219adc6796b80c07ee45312a0d1e066/detection
+
+f0782961.xsph.ru
+
+# Reference: https://www.virustotal.com/gui/file/c9227413f759cbb2e4cd79a668ab3c6778039f0a6cf27e17d3881cb17f1b5853/detection
+
+whiteloader.fun
+
+# Reference: https://twitter.com/gothburz/status/1746583755039347071
+# Reference: https://documents.trendmicro.com/images/TEx/20240111-cve-2023%E2%80%9336025-phemedrone-iocs8L7B0q0.txt
+
+http://51.79.185.145
+
+# Reference: https://x.com/karol_paciorek/status/1803028724671000850
+
+http://91.246.41.86
+dmnode4.space
+evr9.dmnode4.space
+
+# Reference: https://x.com/raghav127001/status/1843206329378500861
+
+http://141.8.192.58
+dl07.ru
+
+# Reference: https://x.com/banthisguy9349/status/1853072417196769604
+# Reference: https://www.virustotal.com/gui/ip-address/5.252.155.5/detection
+
+http://5.252.155.5
+
+# Reference: https://x.com/DaveLikesMalwre/status/1853118948709191951
+
+tme-grams.top
+
+# Reference: https://x.com/ShanHolo/status/1855554022683378060
+
+pastesnip.org/test/
+
+# Reference: https://x.com/DaveLikesMalwre/status/1856867578070929693
+
+mailerdom.ru
+
+# Reference: https://app.validin.com/detail?find=Login%20-%20Phemedrone&type=raw#tab=host_pairs (# 2025-05-26)
+
+lolzshop.space
+official-protonvpn.com
+zelen.space
+mail.zelen.space
+panel1.netsons.org
+
+# Reference: https://www.virustotal.com/gui/file/05284c447115c2a0329b95c7a7373905f95fed15a31c13ca102b902b47308350/detection
+
+83.168.110.143:9000
+bingadseddgeofferapiprod-fsdbcvh7c6g2hsaf.z01.azurefd.net
+
+# Reference: https://x.com/1ZRR4H/status/1933245219748581862
+# Reference: https://www.virustotal.com/gui/file/29c5fe838dbcf78b8e6c77c60cd8a2e6c19515b6cd986e11d3b3e4af5fe61c73/detection
+# Reference: https://www.virustotal.com/gui/file/b1edc65392305bb7062c86930baae32ead04731e9dbd806ab6a5c382e9e52e3f/detection
+
+http://45.145.7.134
+216.74.123.49:3389
+216.74.123.49:50643
+216.74.123.49:7835
+216.74.123.49:8000
+
+# Generic
+
+/meff/gate.php

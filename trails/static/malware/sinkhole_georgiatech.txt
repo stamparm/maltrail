@@ -1,0 +1,34 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.reddit.com/r/AskNetsec/comments/3onw2c/looking_for_ips_from_snortsuricata_sinkholes/
+
+50.57.148.87
+
+# Reference: https://www.zoomeye.org/search?q=ip:143.215.130.42
+
+143.215.130.42
+
+# Reference: curl -vv
+
+143.215.15.2
+
+# Reference: curl -vv
+
+143.215.130.46
+
+# Reference: https://censys.io/ipv4?q=8ea980a43f642626e10cae611d0ae91aecbe0876f74b1657ef041764a0ca1e3d
+
+143.215.130.46
+143.215.130.36
+143.215.15.24
+143.215.15.27
+143.215.15.26
+143.215.15.31
+143.215.15.2
+143.215.15.28
+143.215.130.42
+143.215.15.25
+143.215.15.29
+143.215.15.23
+143.215.15.30

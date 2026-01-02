@@ -1,0 +1,59 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://zimperium.com/blog/fantasy-hub-another-russian-based-rat-as-m-a-a-s
+# Reference: https://github.com/Zimperium/IOC/blob/master/2025-11-FantasyHUB/hosts.csv
+
+bjsffsj.sbs
+fantasy-hub.online
+fantasy-hub.ru
+goolgepalay.com
+play-google-store.ru
+play-market-com.online
+telegramunlock.ru
+tikitok-goolges.sbs
+tikitok-playgoolge.sbs
+tikpremplaymarktuzb.sbs
+tiktokgplya.sbs
+tiktoki-goolge.sbs
+unlockk.play-google-store.ru
+wildberries.play-market-com.online
+
+# Reference: https://app.validin.com/detail?find=Fantasy%20Hub&type=raw&ref_id=9e02d850e0b#tab=host_pairs (# 2025-11-07)
+
+3698779-uf30760.tw1.su
+canyoudownload.xyz
+fadore.xyz
+fantacyhub.com
+fantasyhub.world
+finance-internal-parse.work
+fishytv2.xyz
+fishytv3.xyz
+fishytv9.xyz
+ghadeer.ru
+inaldev.xyz
+nedyvai.icu
+opopdj.sbs
+palyaymarcettiktok.sbs
+play-google.help
+play-market-com.ru
+t1ktok-pem.sbs
+tikitokpaly.sbs
+tiktokiplaymarcet.sbs
+troymichaelscott.com
+tukitok-palaymarcet.sbs
+
+# Reference: https://app.validin.com/detail?find=7839ea901988d67424aec9f210f6d6b8&type=hash&ref_id=32e6d086929#tab=host_pairs (# 2025-11-07)
+
+gloge-tikitoks.sbs
+googelpalay.sbs
+goolge-tikitoki.sbs
+host-195-10-205-44.tsscom.ru
+tikitokoki-prem18.sbs
+tikitoks-goolge.sbs
+tikstokgolge.sbs
+tikt0k-premium.sbs
+tikt0kpleymarkt-prem.sbs
+tiktok-goolgeplau.sbs
+tiktokgoolge.sbs
+tiktokpalay.sbs

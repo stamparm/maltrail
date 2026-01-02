@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: magalenha
+
+# Reference: https://www.sentinelone.com/labs/operation-magalenha-long-running-campaign-pursues-portuguese-credentials-and-pii/
+
+http://128.199.228.142
+http://128.199.68.249
+http://157.245.44.246
+http://176.57.221.92
+http://178.128.174.182
+http://193.218.204.207
+http://2.59.41.206
+http://213.226.124.48
+http://45.95.234.10
+http://85.193.80.19
+http://85.193.83.224
+http://85.193.95.154
+http://85.217.170.140
+http://87.249.44.177
+http://89.223.68.22
+http://92.255.76.181
+http://92.53.107.216
+http://94.156.35.182
+http://94.228.121.36
+81.200.152.38:9000

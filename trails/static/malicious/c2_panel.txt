@@ -1,0 +1,1149 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://viriback.com/30-days-later-97-panels/
+# Reference: https://twitter.com/SevenLayerJedi/status/979030953275293702
+
+/adin/admin.php
+/ajjuu/admin.php
+/alti/admin.php
+/alti/gate.php
+/aman/admin.php
+/aman/gate.php
+/bass/admin.php
+/bes/admin.php
+/bes/gate.php
+/bfayz/admin.php
+/buch-A3/admin.php
+/carik/admin.php
+/centr/admin.php
+/dazzl/admin.php
+/dokuz/admin.php
+/dokuz/gate.php
+/dort/admin.php
+/dort/gate.php
+/effic/admin.php
+/etops/admin.php
+/grand/admin.php
+/grind/admin.php
+/hoste/admin.php
+/hyper/admin.php
+/juzz/admin.php
+/klinsnip/admin.php
+/lunke/admin.php
+/nonib/admin.php
+/office1/admin.php
+/on/admin.php
+/on/gate.php
+/preut/admin.php
+/roks2/admin.php
+/rolex/admin.php
+/ruder/admin.php
+/sekiz/admin.php
+/sekiz/gate.php
+/sop/admin.php
+/sop/gate.php
+/surup/admin.php
+/total/admin.php
+/twst/admin.php
+/user/admin.php
+/vingl/admin.php
+/yedi/admin.php
+/yedi/gate.php
+
+# Generic trail, based on https://pastebin.com/p0vBRBTE
+# Reference: https://twitter.com/James_inthe_box/status/1102945901025226752
+
+/panelnew/admin.php
+/panelnew/gate.php
+
+# Reference: https://twitter.com/VK_Intel/status/1018656000948260864
+
+/panel/client.php
+
+# Reference: https://twitter.com/dvk01uk/status/1092685964743503872
+
+/pamss/gate.php
+
+# Reference: https://twitter.com/benkow_/status/1088009157733683200
+
+/zs/chi/cp.php
+
+# Reference: https://twitter.com/casual_malware/status/1107441450415992832
+
+/WebPanel/api.php
+
+# Reference: https://twitter.com/benkow_/status/1090564148184924160
+
+/p4234anel/admin.php
+
+# Reference: https://twitter.com/malwrhunterteam/status/1114160025021423616
+
+/panel/admin.php
+/panel/gate.php
+
+# Reference: https://twitter.com/makflwana/status/1115953092090941440
+
+/ba2/admin.php
+
+# Reference: https://twitter.com/JayTHL/status/1119686304202207232
+
+/NetSky/login.php
+/auth/NetCloud/login.php
+
+# Reference: https://research.checkpoint.com/finteam-trojanized-teamviewer-against-government-targets/
+
+/newcpanel_gate/gate.php
+
+# Reference: https://twitter.com/ViriBack/status/1122527363772887044
+
+/megumin/panel/
+
+# Reference: https://twitter.com/dave_daves/status/1129401061696036864
+
+/Mpanel_V1.0.1
+
+# Reference: https://twitter.com/webtobesocial/status/778654938276720642
+
+/FuckYouMother/panel/
+
+# Reference: https://twitter.com/P3pperP0tts/status/1152538885974634496
+
+/34-wp-mailing.php
+
+# Reference: https://twitter.com/ViriBack/status/1155093166841892864
+
+/panels_encoded/login.php
+
+# Reference: https://twitter.com/tkanalyst/status/1166855006596681730
+
+/loader/login.php
+
+# Reference: https://twitter.com/ViriBack/status/1183030287485329410
+
+/panel/auth.php
+/panel/login.php
+/panel2/admin.php
+/panel2/auth.php
+/panel2/login.php
+/Panel17/admin.php
+/Panel17/auth.php
+/Panel17/login.php
+
+# Reference: https://twitter.com/pancak3lullz/status/1022845906041929728
+
+/newsite/panelnew/
+
+# Reference: https://twitter.com/darienhuss/status/1192736459167588353 (# Cyber Agent)
+# Reference: https://www.virustotal.com/gui/file/04d70bb249206a006f83db39bbe49ff6e520ea329e5fbb9c758d426b1c8dec30/detection
+# Reference: http://benkow.cc/wp_prezo.pdf
+
+/android_panel/
+
+# Reference: https://twitter.com/0xCARNAGE/status/1199700157127892992
+
+/webpanel/inc/
+
+# Reference: https://github.com/silence-is-best/c2db#agenttesla
+
+/zin/WebPanel/
+
+# Reference: https://twitter.com/gorimpthon/status/1242842075202109440
+
+/webpanel1/
+
+# Reference: https://www.virustotal.com/gui/file/e394e53e53cd9047d6cff184ac333ef7698a34b777ae3aac82c2c669ef661dfe/detection
+
+/webpanel/getcommands.php
+/webpanel/getsettings.php
+/webpanel/report.php
+
+# Reference: https://www.virustotal.com/gui/domain/rdssh.xyz/relations
+# Reference: https://twitter.com/500mk500/status/1247815865816489985
+
+rdssh.xyz
+
+# Reference: https://twitter.com/malwrhunterteam/status/1255907032944775171
+
+/inc/server/gate.php
+
+# Reference: https://twitter.com/bad_packets/status/1255983398775975937
+
+http://213.128.93.199
+
+# Reference: https://www.virustotal.com/gui/domain/rabok.io/relations
+
+/webpanel/abj/
+/webpanel/coach/
+
+# Reference: https://twitter.com/W3B_B3ND3R/status/1237694235748577280
+# Reference: https://www.virustotal.com/gui/ip-address/27.254.33.56/relations
+
+/admin_panel/inj/
+
+# Reference: https://twitter.com/James_inthe_box/status/1258099799066243072
+
+/js/webpanel/
+
+# Reference: https://twitter.com/JAMESWT_MHT/status/1270997007180730368
+# Reference: https://twitter.com/James_inthe_box/status/1273983069435789316
+# Reference: https://app.any.run/tasks/4dede486-355d-4e84-874c-d9318532db23/
+
+/webpanel/0/inc/
+/webpanel/1/inc/
+/webpanel/2/inc/
+/webpanel/3/inc/
+/webpanel/4/inc/
+/webpanel/5/inc/
+/webpanel/6/inc/
+/webpanel/7/inc/
+/webpanel/8/inc/
+/webpanel/9/inc/
+
+# Reference: https://pastebin.com/XdZhSj7j
+
+/covid_tmp/login.php
+/covid/login.php
+/covid2/login.php
+
+# Reference: https://twitter.com/0bfusCat/status/1250825370854711301
+
+/covid_tmp/gate.php
+/covid/gate.php
+/covid2/gate.php
+
+# Reference: https://twitter.com/ViriBack/status/1295874240298786818
+
+/admin_panel_x/
+
+# Reference: https://twitter.com/ViriBack/status/1299807425457983488
+
+kitesgcc.com/stater/login.php
+
+# Reference: https://www.virustotal.com/gui/file/e6adf77159291010642dd230f3b63af20a9779ba68617b9e093ce1f4eccd8edd/detection
+
+/rat/login.php
+
+# Reference: https://twitter.com/ViriBack/status/1329581239775490051
+
+/asnbot/login.php
+
+# Reference: https://twitter.com/JCyberSec_/status/1331918362901884930
+
+/newbot/login.php
+
+# Reference: https://twitter.com/InQuest/status/1333557936321388544
+
+http://82.146.41.245
+
+# Reference: https://github.com/stamparm/maltrail/commit/733a4d2029755ad71c84caf07fc8dfb0e8332e60
+
+irmihan.ir
+
+# Reference: https://www.virustotal.com/gui/file/cd7820a08e7c82332ad4af643dd5fd76ddf7477792bea55f371969297655a7a9/detection
+# Reference: https://www.virustotal.com/gui/file/594941be0746d39a1acea9bbce3709c0f02d734afff52e5d68a62186c2022e7b/detection
+
+/tCustom/cpanel/
+
+# Reference: https://www.virustotal.com/gui/file/052bd14bbab4e77bd52086a405b30e8bfa210e6820549cb69217333e32184a28/detection
+# Reference: https://github.com/stamparm/maltrail/pull/14532/commits/02c159f496f7d40b1f1ecdb0af46a917a5d6b60d
+
+/ajax/panel.htm
+
+# Reference: https://www.virustotal.com/gui/ip-address/89.38.97.71/relations
+
+crmbelgin.com
+
+# Reference: https://twitter.com/reecdeep/status/1362774727736111104
+
+http://172.105.70.225
+
+# Reference: https://twitter.com/D3LabIT/status/1362778009103699975
+
+mobileokey-in.com
+
+# Reference: https://twitter.com/wwp96/status/1364290090839797763
+# Reference: https://app.any.run/tasks/d7d282b9-d6c9-4633-9172-569f44582a84/
+
+/Pnl/tasks.php
+
+# Reference: https://twitter.com/wwp96/status/1374085642309804039
+# Reference: https://app.any.run/tasks/8f3c8422-e6ea-4738-9e47-c1e7b910e91d/
+
+/niggab-x/panel/
+
+# Reference: https://github.com/hardenedlinux/hardenedlinux-zeek-script/blob/master/scripts/frameworks/intel/OSINT/CYBERCRiME-03-03-19.txt
+# Reference: https://www.virustotal.com/gui/file/a49f23aac652d63d1529338a12b3ba424d0b4eab637af8ffa7d9e557fb441a37/detection
+
+/KJdjhUhf84Nfhewfndg/admin.php
+/mfbjhth8g4sfmssfgeq/admin.php
+
+# Reference: https://twitter.com/500mk500/status/1390787243984445440
+
+reportyuwt4sbackv97qarke3.com
+trackpressure.website
+
+# Reference: https://twitter.com/petrovic082/status/1391398513272135682
+# Reference: https://twitter.com/petrovic082/status/1391715478716964864
+
+vmi212260.contaboserver.net
+vscode.workingfeedback.cloud
+
+# Reference: http://tracker.viriback.com/dump.php
+
+/~zadmin/
+
+# Reference: https://twitter.com/midnight_comms/status/1466961003573358603
+# Reference: https://www.virustotal.com/gui/file/b6ddcf0051137bd6bf010c04e99685dd607d902a3a82b36e256fd9ea6888e3ba/detection
+
+/panel.php?uploadsms=
+/php.php?uploadsms=
+
+# Reference: https://www.virustotal.com/gui/file/23b976c88240a3eda64a7e10f0159776d101bb4ddcabe66f88b5c5b855e50112/detection
+
+/Xpanel/srcc.php
+
+# Reference: https://twitter.com/ViriBack/status/1475566467810840580
+# Reference: https://www.virustotal.com/gui/file/d09b04c79e6e8fbffc7075871c7b03f2ef102cd0d0b294d31ea595ff06830bb6/detection
+
+/yaya/login.php
+
+# Reference: https://www.virustotal.com/gui/file/3a08351b37e4130b4161d54b05b50019b8c383190212fb4c960d9b17d771dbba/detection
+
+/bot.php?action=cmd&hwid=
+/bot.php?action=register&username=
+/bot.php?action=submitLogs&hwid=
+
+# Reference: https://www.virustotal.com/gui/file/a18975ecf620ad2c45b10cd7ac0288840482ff7bdf53d1ed516fa29302f0273f/detection
+
+/Rat/panel.php
+
+# Reference: https://www.virustotal.com/gui/file/b7d67e5f5c814139ddadf9c4868d0122ed2e76908ce1cf77730c995b581e0b56/detection
+
+/bot.php?phone=
+
+# Reference: https://www.virustotal.com/gui/file/682ac025fdbe76d9be760bae1034222434278a9c55fa1f39ce4b6055864151ac/detection
+
+/Panel4hac
+
+# Reference: https://twitter.com/midnight_comms/status/1483513891745419270
+
+/Trol/panel.php
+
+# Reference: https://twitter.com/benkow_/status/1486700404482134021
+# Reference: https://www.virustotal.com/gui/file/aafe3a4b60177935eafabd5453ed701b5dbed32ad735c6fb4dbec2645402a022/detection
+# Reference: https://www.virustotal.com/gui/file/5e18850b6929d4c3613ec166482910ad4aff5d49e3e21f858c613f940044773c/detection
+# Reference: https://www.virustotal.com/gui/file/098eeec339b99a05020195154d8927afb3d16ed530aace7e33515032788ca02e/detection
+
+/panel/status.php
+
+# Reference: https://blog.cyble.com/2022/03/10/aberebot-returns-as-escobar/
+
+/uploadCall.php?botid=
+/uploadInbox.php?botid=
+/uploadKeylogs.php?botid=
+/uploadLog.php?botid=
+/uploadVNC.php?botid=
+
+# Reference: https://twitter.com/midnight_comms/status/1532707067756019713
+
+/b07ggxsk/
+/b07ggxsk/config/items/panelv2
+
+# Reference: https://twitter.com/ViriBack/status/1540328577425612802
+# Reference: https://app.any.run/tasks/b9fee773-bad0-49f5-ae92-eba86d2194d4/
+
+/panel/gate.php
+
+# Reference: https://twitter.com/ViriBack/status/1602050280832524289
+
+/Server_Panel/private/admin.php
+/Server_Panel/public/admin.php
+/Server_Panel/private/api.php
+/Server_Panel/public/api.php
+/Server_Panel/private/auth.php
+/Server_Panel/public/auth.php
+/Server_Panel/private/gate.php
+/Server_Panel/public/gate.php
+/Server_Panel/private/index.php
+/Server_Panel/public/index.php
+/Server_Panel/private/login.php
+/Server_Panel/public/login.php
+/Server_Panel/private/panel.php
+/Server_Panel/public/panel.php
+/Server_Panel/private/
+/Server_Panel/public/
+
+# Reference: https://twitter.com/malwrhunterteam/status/1603105037399605250
+# Reference: https://www.virustotal.com/gui/file/76d4de84e32bc7f40a131f51e1fc56213b05391cb3a809330a4296c224f9cc22/detection
+
+/admin/?botid=
+/api/?botid=
+/auth/?botid=
+/cmd/?botid=
+/login/?botid=
+/panel/?botid=
+
+# Reference: https://malware.news/t/inside-view-of-brazzzersff-infrastructure/62431
+
+http://45.10.219.9
+
+# Reference: https://twitter.com/Gi7w0rm/status/1645502108748353536
+# Reference: https://twitter.com/Gi7w0rm/status/1645502289648525336
+
+http://116.203.199.173
+http://152.89.247.169
+http://168.100.11.94
+http://168.100.8.44
+http://64.52.80.23
+http://78.153.130.61
+http://83.220.171.204
+
+# Reference: https://twitter.com/luc4m/status/1655886075640913922
+# Reference: https://twitter.com/luc4m/status/1655914813669756928
+# Reference: https://twitter.com/0xToxin/status/1655911913312735234
+
+http://194.180.49.56
+http://194.180.49.59
+http://194.180.49.70
+http://194.180.49.71
+http://194.180.49.75
+http://194.180.49.78
+http://194.180.49.8
+http://194.180.49.80
+http://195.133.40.215
+http://45.12.253.106
+http://45.12.253.107
+http://45.12.253.11
+http://45.12.253.115
+http://67.43.238.170
+http://67.43.238.171
+http://67.43.238.172
+http://67.43.238.173
+http://67.43.238.174
+http://87.121.221.21
+http://87.121.221.23
+http://87.121.221.26
+http://87.121.221.57
+http://87.121.221.61
+http://87.121.221.62
+http://87.121.221.63
+http://95.214.24.145
+http://95.214.24.93
+http://95.214.24.96
+http://95.214.24.99
+http://95.214.27.33
+http://95.214.27.74
+http://95.214.27.78
+http://95.214.27.86
+http://95.214.27.89
+activala-hora.icu
+clicahora.cyou
+compila-il-modulo.icu
+compilar-documeto.cyou
+complete-el-formulario.cyou
+complila-il-modulo.icu
+confirmacion.icu
+el-formulario.icu
+entra-para-confirmar.cyou
+formulario-acceso.xyz
+modulo.cyou
+popso.cyou
+popsondrio.cyou
+rellenar-el-formulario.cyou
+scrigno.cyou
+se-adhiere-a-la-nueva-legislacion.cyou
+
+# Reference: https://www.virustotal.com/gui/file/4b33a49ae0540f43c8357709841be70541d2cf162755e7649604b13740c5bad9/detection
+
+/webpanel/gate.php?hwid=
+/webpanel/keylogs.php?hwid=
+/webpanel/logs.php?hwid=
+/webpanel/screen.php?hwid=
+/webpanel/task.php?hwid=
+/webpanel/gate.php
+/webpanel/keylogs.php
+
+# Reference: https://twitter.com/banthisguy9349/status/1734195831438278993
+
+f0867029.xsph.ru
+
+# Reference: https://twitter.com/banthisguy9349/status/1734195431511392303
+
+f0880739.xsph.ru
+
+# Reference: https://twitter.com/banthisguy9349/status/1736708917357367725
+
+http://102.50.247.129
+http://103.30.126.101
+http://130.162.178.229
+http://140.238.173.180
+http://172.111.239.90
+http://176.119.35.43
+http://18.191.246.30
+http://45.120.177.17
+http://54.38.193.134
+http://62.109.5.118
+http://8.218.155.228
+http://8.218.175.2
+http://82.147.85.194
+http://82.147.85.242
+177.124.72.24:11180
+82.66.185.138:4443
+
+# Reference: https://twitter.com/banthisguy9349/status/1742604060224532556
+
+http://188.64.13.26
+
+# Reference: https://twitter.com/banthisguy9349/status/1742607200676122931
+
+http://101.99.95.144
+http://159.100.9.207
+http://185.156.172.64
+http://185.84.140.32
+http://194.36.190.238
+http://216.158.225.153
+http://31.13.195.10
+http://45.11.182.116
+http://45.141.37.139
+http://45.155.250.54
+http://45.8.159.34
+http://5.230.40.118
+http://5.230.46.135
+http://5.230.68.152
+http://5.230.68.85
+http://77.73.69.251
+http://77.73.69.80
+http://77.73.69.95
+http://77.73.70.10
+http://77.73.70.71
+http://91.197.1.37
+http://91.92.248.26
+http://94.242.53.101
+http://94.242.53.26
+
+# Reference: https://twitter.com/banthisguy9349/status/1743174945868271882
+
+http://101.99.94.198
+http://104.194.156.51
+http://172.86.66.26
+http://172.86.70.150
+http://176.32.33.106
+http://185.183.98.152
+http://188.116.22.246
+http://45.147.231.124
+http://45.153.240.82
+http://46.29.162.103
+http://5.230.72.46
+http://62.72.32.30
+http://62.72.33.127
+http://62.72.33.132
+http://79.133.51.114
+http://91.206.178.198
+http://91.245.253.58
+http://94.242.53.233
+http://94.242.53.249
+http://95.156.227.5
+
+# Reference: https://twitter.com/banthisguy9349/status/1744329655711051818
+
+viperchecker.com
+
+# Reference: https://twitter.com/banthisguy9349/status/1746133287930638731
+
+http://103.26.10.169
+http://5.230.47.179
+http://85.204.116.155
+http://89.117.109.8
+http://94.156.66.145
+http://94.156.66.147
+
+# Reference: https://twitter.com/banthisguy9349/status/1744265910192414956
+
+http://101.99.93.13
+
+# Reference: https://twitter.com/banthisguy9349/status/1744280343056724303
+
+http://45.134.174.87
+
+# Reference: https://twitter.com/banthisguy9349/status/1743979109523378564
+
+http://62.72.32.30
+http://91.206.178.198
+/login/K8qMNp8As9Kd/eoTmpMOcObe/
+/K8qMNp8As9Kd/eoTmpMOcObe/
+/K8qMNp8As9Kd/
+/eoTmpMOcObe/
+
+# Reference: https://twitter.com/banthisguy9349/status/1750072439973752865
+
+/DE-Panel/adm.php
+/DE-Panel2/adm.php
+
+# Reference: https://www.virustotal.com/gui/domain/feja111.de/relations
+
+panel.feja111.de
+
+# Reference: https://twitter.com/banthisguy9349/status/1755961908350288062
+
+http://104.244.75.151
+http://162.0.239.39
+http://162.254.33.129
+http://209.141.59.15
+http://37.72.168.252
+http://87.236.146.164
+
+# Reference: https://twitter.com/banthisguy9349/status/1756676398683427149
+
+http://95.179.247.93
+/shahan.txt
+
+# Reference: https://twitter.com/banthisguy9349/status/1757464973867917424
+# Reference: https://pastebin.com/R6v4TUX1
+
+http://185.216.70.152
+http://185.216.70.171
+http://185.216.70.188
+http://185.216.70.97
+http://93.123.39.127
+http://93.123.39.56
+http://93.123.39.69
+
+# Reference: https://twitter.com/banthisguy9349/status/1753834585878626713
+
+http://45.82.120.100
+45.82.120.100:443
+
+# Reference: https://twitter.com/banthisguy9349/status/1762443510639120677
+
+http://93.123.85.210
+
+# Reference: https://urlscan.io/search/#filename:%22unam_lib.js%22
+
+http://107.182.129.184
+http://147.45.45.0
+http://147.45.45.131
+http://173.208.240.131
+http://185.14.30.218
+http://185.181.209.98
+http://185.219.80.47
+http://185.223.77.82
+http://193.105.135.135
+http://20.163.210.231
+http://212.193.11.40
+http://23.167.232.186
+http://23.26.247.122
+http://45.67.230.182
+http://47.87.145.154
+http://52jfg.xyz
+http://62.233.46.77
+http://77.91.78.143
+http://8.217.116.17
+http://82.147.85.178
+http://87.254.9.5
+http://91.122.100.172
+http://94.156.8.46
+http://95.214.24.45
+163.5.64.33:8080
+212.64.217.73:8686
+a0724218.xsph.ru
+a0918224.xsph.ru
+ahv-id-14636.vps.awcloud.nl
+batwing-output.000webhostapp.com
+blablacar-es-transaction.xyz
+ch2auth.space
+charitty.getenjoyment.net
+check123ready.online
+cloud.onedrive.cam
+cloud.onedrive.com.se
+cryptolegion.duckdns.org
+dire.bio
+dsgarescoin.site
+dyvmemsion.xyz
+earn.onlinesero.com
+ecmerckmr.ru
+ellava66.beget.tech
+etobaza.ru
+exchanger.gg
+f0917561.xsph.ru
+freeman.wtf
+guncelmetin2hile.com
+great-blog.xyz
+hectaroxcumson.great-blog.xyz
+hub.myartsonline.com
+huntaway-vapors.000webhostapp.com
+hypixel-claim.com
+ilyaklu.space
+intenerate.xyz
+ipulpoughkeepsie.com
+kmsupdateservice.com.br
+kokosik.space
+kolyagdx.beget.tech
+livinglearning.info
+mail.statsinfos.com
+mine-panel.space
+mine.profivk.site
+minerpanel.xyz
+miningpanel.sclad.solutions
+mnemonicheskiphrase.site
+modules.su
+mylife11111.cfd
+mypanel.getenjoyment.net
+mypanelka.xyz
+natural-born-disk.000webhostapp.com
+niggas.icu
+onedrive.cam
+online.badbull.pro
+opop.mobi
+oxx980.fvds.ru
+panel.52jfg.xyz
+panel.niggas.icu
+panel.occt.pro
+panel25423645.site
+panelxmr.5v.pl
+patellate-removal.000webhostapp.com
+ppanel.freaktorrentz.xyz
+rename.zip
+rrrikaco.beget.tech
+satoshisbeck.org
+scarxmr.cloud
+secureservicehelp.ddns.net
+seroooooxeen.chickenkiller.com
+serverupdates48.ga
+shadowlegion.duckdns.org
+sirphantom.xyz
+skartproduction.com
+slkpanel3458647.site
+smileystockshop.com
+softwareupdate.online
+statsinfos.com
+stranbild.xyz
+systemupdate98.tk
+tectumio.xyz
+test.ellava66.beget.tech
+thedropboxapp.com
+thekievbay.com
+trnrgame.fun
+trustabletechsupport.com
+tygh.space
+ulenka.xyz
+user10.lopatadropmoneyforyoueveryday.ru
+user7.lopatadropmoneyforyoueveryday.ru
+user9.lopatadropmoneyforyoueveryday.ru
+web-panel.online
+windomainsysupdate.xyz
+x3qc.com
+xmr-av.c1.biz
+xmr3.c1.biz
+yandexsupport.ddns.net
+zaza-miner.systems
+zopatolst9.temp.swtest.ru
+
+# Reference: https://www.virustotal.com/gui/ip-address/141.98.7.226/relations
+
+bbx.llc
+
+# Reference: https://twitter.com/DonPasci/status/1773472087316861380
+
+http://116.203.188.167
+http://131.221.33.178
+http://149.56.1.117
+http://149.56.12.233
+http://167.86.127.172
+http://172.111.48.76
+http://18.139.20.165
+http://181.215.46.146
+http://192.99.35.149
+http://206.83.151.7
+http://207.148.83.88
+http://212.87.214.32
+http://45.77.205.78
+http://49.12.34.122
+http://51.254.220.130
+http://65.109.232.16
+http://95.217.215.100
+nodepanel.uol.ovh
+
+# Reference: https://www.virustotal.com/gui/file/4170a728a436b2755e0751f8392309a0149996b5d48a27c04127a738b8c12cd2/detection
+
+/Server_Panel/public/commands.php
+
+# Reference: https://twitter.com/banthisguy9349/status/1782716186935095743
+
+http://91.92.244.15
+
+# Reference: https://twitter.com/banthisguy9349/status/1786078682336915883
+# Reference: https://pastebin.com/A8zCtymA
+
+exsacheck.net.tr
+ezik.world
+ixcode.com.tr
+mbwall.com
+mernis.co
+nulled.easymixtr.com
+polnet.store
+primecheck.xyz
+realfowy.com
+prime.math.thedavidglass.com
+
+# Reference: https://twitter.com/banthisguy9349/status/1787500060017631733
+
+http://106.54.200.213
+http://107.175.202.158
+http://116.204.132.131
+http://16.171.137.228
+http://185.112.147.62
+http://185.125.50.17
+http://31.27.151.203
+http://45.9.150.125
+http://51.195.211.231
+http://95.216.253.55
+103.106.189.49:8888
+104759689316.com
+112.78.3.100:7000
+172-104-103-158.ip.linodeusercontent.com
+65.21.146.254.sslip.io
+66.78.40.230.kyun.network
+70.225.125.34.bc.googleusercontent.com
+82.66.185.138:37393
+82.66.185.138:45713
+akunet.host
+aquaop.top
+badtrippaap.store
+blablaminions.online
+blablg.site.transip.me
+cf-protected-l7.com
+device-679f12e8-5521-4674-9797-cc5c04ee4213.remotewd.com
+dontdoxme.space
+dvr.getenjoyment.net
+jk005.xyz
+jk006.xyz
+jk013.xyz
+klanox.ru
+koldiv.ru
+koldiv.ru-F
+lavender-leopard-40929.zap.cloud
+linkerfunyfile.store
+lozak.site
+mail.52jfg.xyz
+mainnet-rpc.rupayx.com
+monerominer.ddns.net
+mrzopr.com
+muiairdrop.com
+netmatic.gr
+ns3109813.ip-54-36-127.eu
+panelyapiinsaat.net
+sec-1-min.usevm.xyz
+sh4945832.c.had.su
+static.254.146.21.65.clients.your-server.de
+static.55.253.216.95.clients.your-server.de
+striperouter.supelle.co
+vps-zap998573-1.zap-srv.com
+zepwk111.uk
+
+# Reference: https://twitter.com/Makesmewanna1/status/1787508657275470156
+
+http://185.112.147.62
+/db/unamewebpanel.db
+/unamewebpanel.db
+
+# Reference: https://x.com/WhichbufferArda/status/1803025904416747928
+# Reference: https://blog.eclecticiq.com/onnx-store-targeting-financial-institution
+
+http://5.181.156.247
+5.181.156.247:443
+
+# Reference: https://x.com/ViriBack/status/1799920236566909112
+
+http://5.42.65.140
+5.42.65.140:443
+
+# Reference: https://x.com/RacWatchin8872/status/1816061547564675214
+
+http://103.26.139.51
+103.26.139.51:443
+admin.sgp.argus-corp.com.br
+
+# Reference: https://x.com/banthisguy9349/status/1819274221161201950
+
+http://68.183.92.154
+68.183.92.154:443
+68.183.92.154:3000
+
+# Reference: https://www.virustotal.com/gui/file/72982e83206930e2da3f4887ef09520fbf6937f9475f34620c6a78843c640a65/detection
+
+/Panel//check_panel.php
+
+# Reference: https://x.com/banthisguy9349/status/1826986945035022557
+# Reference: https://search.censys.io/search?q=services.http.response.html_title%3D%22University+of+Oxford%22&resource=hosts
+
+147.45.79.168:3000
+87.251.64.112:3000
+
+# Reference: https://blog.sucuri.net/2024/08/wordpress-websites-used-to-distribute-clearfake-trojan-malware.html
+
+http://176.59.196.133
+176.59.196.133:443
+
+# Reference: https://search.censys.io/search?q=services.http.response.body_hashes%3D%22sha256%3Ac13fc87d664041f3eb130a63251f4dcf9ad2c4676adb83b16504bfd5ae712fae%22&resource=hosts
+
+161.97.117.117:3000
+38.242.128.92:3000
+75.119.134.111:4000
+
+# Reference: https://x.com/banthisguy9349/status/1840097237172457681
+# Reference: https://www.virustotal.com/gui/file/2efd27df3c5458e8c43d6936739fb7a8d2eda10a6fe41d38c6e31703bb384052/detection
+
+http://91.92.244.246
+
+# Reference: https://x.com/s1dhy/status/1844474870274588987
+# Reference: https://www.virustotal.com/gui/file/767a3bec97ac36f5a64eac55bfd9b14ec440ea6fee4c63bc6bfafab7438d8d39/detection
+
+http://149.248.77.215
+mgkr.shop
+portalnfe.digital
+magiker.portalnfe.digital
+magiker.mgkr.shop
+
+# Reference: https://x.com/idclickthat/status/1875784371996914069
+
+http://144.126.237.89
+http://154.216.19.179
+http://185.196.9.120
+http://45.61.159.101
+http://66.78.40.145
+http://94.103.125.100
+154.216.19.179:3000
+185.193.125.121:3000
+185.193.125.220:3000
+185.193.125.226:3000
+
+# Reference: https://www.virustotal.com/gui/file/19a610efdf9693350e5b9eea2959b328c74dda894c87ee55955a3a1a4967c0fb/detection
+
+/never/lookinto/it/panel/uploads/
+
+# Reference: https://x.com/ViriBack/status/1930348698388611192
+
+http://85.234.100.245
+
+# Reference: https://x.com/skocherhan/status/1940320477228278051
+
+/webpanel/panel/admin.php
+/webpanel/panel/auth.php
+/webpanel/panel/index.php
+/webpanel/panel/login.php
+/webpanel/panel/gate.php
+/webpanel/panel/page.php
+/webpanel/panel/panel.php
+
+# Reference: https://x.com/hanzohattori91/status/1942267932223979960
+
+http://179.43.176.38
+
+# Reference: https://x.com/Fact_Finder03/status/1945390504939835790
+# Reference: https://app.validin.com/detail?find=FiercePhish%20%26raquo%3B%20Login&type=raw&ref_id=7e8f2ef48cf#tab=host_pairs (# 2025-07-16)
+
+http://130.61.123.235
+http://167.99.63.100
+http://172.179.232.129
+http://20.120.241.142
+http://20.83.253.202
+http://208.113.133.120
+http://35.234.172.162
+http://51.210.151.63
+http://54.175.184.74
+
+# Reference: https://www.virustotal.com/gui/file/1265745ab3319faea343b0eebb9f90cf73b916199bc013359053e28f47365dfb/detection
+
+/pico/Panel/gate.php
+
+# Reference: https://x.com/banthisguy9349/status/1982456332436246721
+
+109.107.168.72:8888
+141.255.161.122:8888
+178.16.54.144:8888
+179.43.167.210:8888
+179.43.190.98:8888
+185.208.158.190:8888
+185.208.158.78:8888
+193.24.123.97:8888
+195.3.221.137:8888
+195.3.221.166:8888
+196.251.86.254:8888
+45.141.84.229:8888
+65.108.141.82:8888
+65.108.233.15:8888
+66.90.86.58:8888
+88.210.63.164:8888
+91.219.239.144:8888
+91.219.239.165:8888
+91.92.241.27:8888
+92.118.112.33:8888
+
+# Reference: https://x.com/L0Psec/status/1991910497663562045
+# LOCATION-HOST/IP=/login?origin_page=/
+
+http://43.156.244.245
+http://54.92.96.88
+crystalnut.xyz
+app.mexc.work
+/login?origin_page=/
+
+# Reference: https://x.com/malwrhunterteam/status/1996262074637263176
+# Reference: https://app.validin.com/detail?find=Login%20-%20Control%20Center&type=raw&ref_id=adec5ae6379#tab=host_pairs (# 2025-12-03)
+
+http://151.243.109.125
+65.21.51.253:8080
+tracethem.xyz
+trackthem.xyz
+
+# Reference: https://x.com/Fact_Finder03/status/2005946833768489036
+
+http://64.188.79.45
+64.188.79.45:443
+voxpanel.vu
+
+# Generic
+
+/admin_123/auth.php
+/admin_123/index.php
+/admin_123/gate.php
+/admin_123/login.php
+/admin_123/page.php
+/administrator/he1p/
+/bhadmin.php
+/bhadminb.php
+/bot/adminpanel/
+/bot/adminpanel/admin.php
+/bot/adminpanel/api.php
+/bot/adminpanel/auth.php
+/bot/adminpanel/gate.php
+/bot/adminpanel/index.php
+/bot/adminpanel/login.php
+/bot/adminpanel/page.php
+/bot/adminpanel/panel.php
+/Bot/Panels/Hunter/panel.php
+/Bot/Panels/DarkDemon/panel.php
+/botnet/admin.php
+/botnet/api.php
+/botnet/auth.php
+/botnet/gate.php
+/botnet/index.php
+/botnet/login.php
+/botnet/page.php
+/botnet/panel.php
+/botpanel/
+/bot/Panel/
+/botzz/admin.php
+/botzz/api.php
+/botzz/auth.php
+/botzz/blista.php
+/botzz/gate.php
+/botzz/index.php
+/botzz/login.php
+/botzz/page.php
+/botzz/panel.php
+/C24_Panel/
+/cgi%20bin/Panel/
+/Formgrab%20Access%20Panel/
+/FuckYouMother/panel/
+/DarkDemon/panel.php
+/Hunter/panel.php
+/jujubiadmin/
+/logz/auth.php
+/logz/login.php
+/nd081112/panel.php
+/Server_Panel/private/
+/Server_Panel/public/
+/panel/?admin
+/panel/?auth
+/panel/?callbak
+/panel/?gate
+/panel/?index
+/panel/?login
+/panel/admin/admin.php
+/panel/admin/auth.php
+/panel/admin/callback.php
+/panel/admin/gate.php
+/panel/admin/index.php
+/panel/admin/login.php
+/panel/admin/panel.php
+/panel/server/gate
+/panel/upload/admin.php
+/panel/upload/auth.php
+/panel/upload/callback.php
+/panel/upload/gate.php
+/panel/upload/index.php
+/panel/upload/login.php
+/panel/upload/panel.php
+/Panel/panel/admin.php
+/Panel1/panel/admin.php
+/Panel2/panel/admin.php
+/Panel3/panel/admin.php
+/Panel4/panel/admin.php
+/Panel5/panel/admin.php
+/Panel6/panel/admin.php
+/Panel7/panel/admin.php
+/Panel8/panel/admin.php
+/Panel9/panel/admin.php
+/Panel10/panel/admin.php
+/Panel/bot.php
+/Panel/callback.php
+/panel/gate.php
+/Panel/index.php
+/Panel/page.php
+/panel2/gate.php
+/panel3_info/index.php
+/panel123/admin.php
+/panel123/api.php
+/panel123/auth.php
+/panel123/gate.php
+/panel123/index.php
+/panel123/login.php
+/panel123/page.php
+/panel2/cp.php
+/panel3/file.php
+/panel3/gate.php
+/panel632541/admin.php
+/panelphp/admin.php
+/panelphp/auth.php
+/panelphp/callback.php
+/panelphp/gate.php
+/panelphp/index.php
+/panelphp/login.php
+/Panel/Hunter/panel.php
+/Panel/DarkDemon/panel.php
+/Panels/Hunter/panel.php
+/Panels/DarkDemon/panel.php
+/PanelSoft/admin.php
+/PanelSoft/api.php
+/PanelSoft/auth.php
+/PanelSoft/gate.php
+/PanelSoft/index.php
+/PanelSoft/login.php
+/PanelSoft/page.php
+/PanelSoft/panel.php
+/paneltwotwo/
+/panl/admin.php
+/panl/auth.php
+/panl/callback.php
+/panl/gate.php
+/panl/index.php
+/panl/login.php
+/pnl/auth.php
+/pnl/login.php
+/_panelpriv/
+/Panel/Web-Panel/
+/PIRATERIJ/adm.php
+/PowerPanel/
+/slim/panel/
+/TEPUUR/adm.php
+/uadmin/adm.php
+/uadmin/gate.php
+/Web%20Panel/upload/
+/webpanel/auth.php
+/webpanel/api.php
+/webpanel/login.php
+/webpanel1/auth.php
+/webpanel1/api.php
+/webpanel1/login.php

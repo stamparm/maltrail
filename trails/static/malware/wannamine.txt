@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.threatbook.cn/nodev4/vb4/article?threatInfoID=802
+# Reference: https://www.maltiverse.com/search;query=blacklist.description:%22Downloader.WannaMine%22;page=1;sort=query_score
+# Reference: https://securelist.com/a-mining-multitool/86950/
+
+windowsdefenderhost.com
+srentrap.com
+7h4uk.com
+
+# Reference: https://www.cybereason.com/blog/wannamine-cryptominer-eternalblue-wannacry
+# Reference: https://twitter.com/DissectMalware/status/986845420109402113/photo/2
+
+118.184.48.95:8080
+104.148.42.153:8080
+107.179.67.243:8080
+172.247.116.8:8080
+172.247.116.87:8080
+45.199.154.141:8080
+
+# Reference: https://www.accenture.com/_acnmedia/pdf-46/accenture-threat-analysis-monero-wannamine.pdf
+
+93.174.93.73:8080
+195.22.127.157:8080
+151.80.144.253:8080
+158.69.133.17:8080
+107.179.67.243:8080
+118.184.48.95:8080

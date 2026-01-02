@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: neuron stealer
+
+# Reference: https://x.com/solostalking/status/1950115852361007446
+
+http://206.81.7.57
+206.81.7.57:443
+dash.stealer.io

@@ -1,0 +1,56 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: limar, stration, warezov
+
+# Reference: https://www.f-secure.com/v-descs/warezov_w.shtml
+
+yuhadefunjinsa.com
+
+# Reference: https://www.secureworks.com/research/storm-worm
+
+adesuikintandefunhandesun.com
+esunhuitionkdefunhsadwa.com
+huirefunkionmdesa.com
+krovalidajop.com
+shionkertunhedanse.com
+traferreg.com
+
+# Reference: https://www.virusbulletin.com/virusbulletin/2007/01/real-motive-behind-stration/
+
+shionkertunhedanse.com
+vedasetionkderun.com
+
+# Reference: https://www.virustotal.com/gui/file/57b53f6f87b7fa93caf0f34da45dcc525ac4cb1f1c03aa7e4af43db39070396e/detection
+
+cedesunjerinkas.com
+
+# Reference: https://www.secureworks.com/research/warezov
+
+asedrunkionyunhasde.com
+cadesfinjeriokas.com
+checkthisservice.com
+discount-pharmacy-online-e.com
+fandesjinkderunha.com
+grand-sale-4.com
+hertionkadesinpoion.com
+kykbonsa.com
+localhost-2.com
+madesunjinkdieonrunhasde.com
+pazmogutionsa.com
+rasetikuinyunhderunsa.com
+sadefunkionyunhderuns.com
+vedasetionkderun.com
+yuhadefunjinsa.com
+
+# Reference: https://www.virustotal.com/gui/file/5d6ae98ae540507f758287d80f4379e529b912e00a629968a5a86807fd39d7b7/detection
+
+vertionkdaseliplim.com
+
+# Reference: https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Worm:Win32/Stration.DJ@mm
+
+gadesunheranwui.com
+
+# Generic
+
+/chr/wtb/lt.exe

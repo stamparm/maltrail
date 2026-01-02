@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.intezer.com/blog/malware-analysis/new-backdoor-sysjoker/
+
+bookitlab.tech
+winaudio-tools.com
+graphic-updater.com
+office360-update.com
+url-mini.com
+github.url-mini.com
+
+# Reference: https://research.checkpoint.com/2023/israel-hamas-war-spotlight-shaking-the-rust-off-sysjoker/
+# Reference: https://otx.alienvault.com/pulse/6564bb8418af8424b8befa1b
+
+audiosound-visual.com
+filestorage-short.org
+sharing-u-file.com

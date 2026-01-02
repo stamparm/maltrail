@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.malwarekillers.com/synolocker-ransomware-removal/
+
+cypherxffttr7hho.onion
+cypherxffttr7hho.onion.gq
+cypherxffttr7hho.onion.lt
+cypherxffttr7hho.onion.cab
+cypherxffttr7hho.onion.city
+cypherxffttr7hho.onion.direct
+cypherxffttr7hho.onion.link
+cypherxffttr7hho.onion.nu
+cypherxffttr7hho.tor2web.fi
+cypherxffttr7hho.tor2web.blutmagie.de
+cypherxffttr7hho.tor2web.org
+cypherxffttr7hho.tor2web.ru
+cypherxffttr7hho.tor-gateways.de

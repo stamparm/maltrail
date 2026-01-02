@@ -1,0 +1,97 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/5177600ec3b00b1fa78bd21ef22d224ae3d82f29347f4caff5e7233bf3ef58e8/detection
+
+94.73.36.254:4110
+94.73.36.254:41100
+94.73.36.254:4112
+jaskirat.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/02e8b233fece6fe50ae52ea7b8de963acc168c114a09a8422d56820cf5dd2bf9/detection
+
+94.73.33.36:4110
+94.73.33.36:41100
+94.73.33.36:4112
+besoo.no-ip.biz
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=e456a1f7245f9fb5a84e0a3628647641
+
+magux.no-ip.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=406d18e4a9ef071c829d10961a1d596e
+
+hawsmuz.no-ip.info
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=0516090546d6e06d47eb22e39b12b255
+
+aasrhuhu.no-ip.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=ecf31f18b7fdba21ca2f687c0fd4de61
+
+dany31.no-ip.biz
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=01dea78053f587717490b05a558e08dd
+
+trojanoliver.no-ip.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=0516090546d6e06d47eb22e39b12b255
+
+aasrhuhu.no-ip.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=08a88cb282c3d4b2d97ef8f498c6191b
+# Reference: https://www.threatcrowd.org/malware.php?md5=36a017e165ebc471a443989f0a0afd6d
+# Reference: https://www.threatcrowd.org/malware.php?md5=ba5a87757ba8e29c2f213b5ad628e770
+# Reference: https://www.threatcrowd.org/malware.php?md5=fdba7824d1bb5440c7e205c6c311561f
+# Reference: https://www.threatcrowd.org/malware.php?md5=ba5a87757ba8e29c2f213b5ad628e770
+# Reference: https://www.virustotal.com/gui/file/7d7e6b39d05c2d150dfc42c07a580711c6d66a8a17810fe2086f90ff9eed40f8/detection
+
+you.no-ip.com
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=406d18e4a9ef071c829d10961a1d596e
+
+hawsmuz.no-ip.info
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=7c4004cd537544c3fadcf8c1a9dac7d5
+
+orpit.no-ip.biz
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=84b31a9fa9ece9a1f2d502198c5728f8
+
+lrm.no-ip.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=bf0b45ed7a436b23afd292dc344bca39
+
+lass99.dyndns.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=e456a1f7245f9fb5a84e0a3628647641
+
+magux.no-ip.org
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=ecf31f18b7fdba21ca2f687c0fd4de61
+
+dany31.no-ip.biz
+
+# Reference: https://www.threatcrowd.org/malware.php?md5=e41247a98e7c1268bb3e02b370720a50
+
+jhfjasdfkad.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/446f205884d5193049fe61a1dcf40c3dea22b9c9868c086436c27d9656406070/detection
+
+86.125.102.191:5111
+
+# Reference: https://www.virustotal.com/gui/file/f88bf8810b22807c6c3137c2cd48763a9c8ff272f3e6bcab9efdf033ec53c4ab/detection
+
+/prorat.cgi?bilgisayaradi=
+
+# Reference: https://www.virustotal.com/gui/file/940e7377a7db04956312ad47f745cf5d74143e601fc7aa4bc708f249ba2b756f/detection
+
+yahpro.no-ip.info
+
+# Reference: https://www.virustotal.com/gui/file/4438a9880c74ae08156c290d2109ded528f012ab1034a689ef7c7349906dc36c/detection
+
+hanswurst99.no-ip.biz
+
+# Reference: https://www.virustotal.com/gui/file/ea1915de27805e5cddf9e7d2fbde2e3a39beec9b8918e87b2538b7d5d6242ead/detection
+
+01101100.hopto.org

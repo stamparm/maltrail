@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://news.drweb.com/show/?i=13135
+
+valve-ms.ru
+
+# Reference: https://github.com/DoctorWebLtd/malware-iocs/tree/master/Trojan.Belonard
+
+csgoogle.ru
+etmpyuuo.csgoogle.ru
+jgutdnqn.csgoogle.ru
+hl.csgoogle.ru
+half-life.su
+play.half-life.su
+bmeadaut.valve-ms.ru
+fuztxhus.valve-ms.ru
+ixtzhunk.valve-ms.ru
+oihcyenw.valve-ms.ru
+suysfvtm.valve-ms.ru
+wcnclfbi.valve-ms.ru
+reborn.valve-ms.ru
+valve.ms
+csfsblue.ru
+okxxdigs.csfsblue.ru
+smuwccfn.ru
+etpfnniu.ru
+zpnkqkgv.ru
+mwprnvlu.ru
+xfxjuwru.xyz
+bekauyrk.xfxjuwru.xyz
+snsrsfay.xfxjuwru.xyz

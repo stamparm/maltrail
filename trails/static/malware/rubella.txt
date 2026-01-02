@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: dryad, rubella
+
+# Reference: https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/mcafee-atr-aids-police-in-arrest-of-the-rubella-and-dryad-office-macro-builder-suspect
+
+tailoredtaboo.com

@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: 411 stealer, 4.11 stealer, zerotrace
+
+# Reference: https://x.com/solostalking/status/1922663734587089362
+
+193.124.117.178:8080
+
+# Reference: https://x.com/solostalking/status/1934848675425198537 (# zerotrace)
+
+178.255.126.210:8080
+180.232.37.102:8080
+193.124.117.178:8080
+78.70.235.238:8080
+79.133.57.62:8080
+87.120.84.200:8080
+
+# Reference: https://app.validin.com/detail?find=Stealer%204.11%20-%20Login&type=raw&ref_id=e1cfa7afe35#tab=host_pairs (# 2025-07-14)
+
+http://62.60.149.108
+
+# Reference: https://x.com/Xanderuxsf5/status/1962845344754020690
+# Reference: https://app.validin.com/detail?find=ZeroTrace%20Panel%20-%20Login&type=raw&ref_id=9ae3c149315#tab=host_pairs (# 2025-09-03)
+
+185.174.135.177:8080
+181.214.147.4:8080

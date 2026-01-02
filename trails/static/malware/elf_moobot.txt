@@ -1,0 +1,64 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: matryosh
+
+# Reference: https://blog.netlab.360.com/ddos-botnet-moobot-en/
+# Reference: https://otx.alienvault.com/pulse/5f0747e6fe38bde8e69938ef
+
+abcdefg.elrooted.com
+audi.n1gger.com
+botnetisharam.com
+cykablyat.raiseyourdongers.pw
+dbkjbueuvmf5hh7z.onion
+frsaxhta.elrooted.com
+gcc.cyberium.cc
+nd3rwzslqhxibkl7.onion
+nlocalhost.wordtheminer.com
+park.cyberium.cc
+park.elrooted.com
+proxy.2u0apcm6ylhdy7s.com
+rr442myy7yz4.osrq.xyz
+sisuugde7gzpef2d.onion
+tbpsboy.com
+typicalniggerdayatthecoolaidparty.n1gger.com
+wor.wordtheminer.com
+zrqq.xyz
+
+# Reference: https://blog.netlab.360.com/moobot-0day-unixcctv-dvr-en/
+# Reference: https://otx.alienvault.com/pulse/5fbbe7f0b6a4e5520dbbd867
+
+c.uglykr.xyz
+kreb.xyz
+djq6cvwigo7l7q62.onion
+dl3ochoifo77lsak.onion
+krjn77m6demafp77.onion
+mvo4y3vr7xuxhwcf.onion
+nhez3ihtwxwthjkm.onion
+ol6zbnlduigehodu.onion
+stmptmmm27tco3oh.onion
+tto6kqp6nsto5din.onion
+uajl7qmdquxaramd.onion
+wsvo6jwd3spsb4us.onion
+
+# Reference: https://blog.netlab.360.com/matryosh-botnet-is-spreading-en/
+# Reference: https://otx.alienvault.com/pulse/6019aed47be6b81aca013a80/
+
+http://199.19.226.25
+4qhemgahbjg4j6pt.onion
+hiddenservice.xyz
+/nXejnFjen/
+
+# Reference: https://twitter.com/r3dbU7z/status/1446357966890938376
+
+cocknet.xyz
+
+# Reference: https://unit42.paloaltonetworks.com/moobot-d-link-devices/
+
+komaru.today
+vpn.komaru.today
+irc.komaru.today
+
+# Reference: https://twitter.com/fuyinglab/status/1628590664882749440
+
+15.204.5.85:10275

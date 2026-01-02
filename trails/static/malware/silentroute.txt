@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Fake-NetExtender
+
+# Reference: https://www.sonicwall.com/blog/threat-actors-modify-and-re-create-commercial-software-to-steal-users-information
+# Reference: https://www.virustotal.com/gui/file/d883c067f060e0f9643667d83ff7bc55a218151df600b18991b50a4ead513364/detection
+# Reference: https://www.virustotal.com/gui/file/71110e641b60022f23f17ca6ded64d985579e2774d72bcff3fdbb3412cb91efd/detection
+# Reference: https://www.virustotal.com/gui/file/e30793412d9aaa49ffe0dbaaf834b6ef6600541abea418b274290447ca2e168b/detection
+
+132.196.198.163:8080

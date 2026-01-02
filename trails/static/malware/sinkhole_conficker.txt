@@ -1,0 +1,24 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.zoomeye.org/search?q=ip:221.8.69.25
+
+221.8.69.25
+
+# Reference: https://who.is/nameserver/ns.conficker-sinkhole.org/
+
+conficker-sinkhole.org
+38.102.150.29
+
+# Reference: https://who.is/nameserver/ns.conficker-sinkhole.net/
+
+conficker-sinkhole.net
+38.229.70.125
+
+# Reference: https://who.is/nameserver/ns.conficker-sinkhole.com/
+
+conficker-sinkhole.com
+136.161.101.53
+
+# Sinkhole By CNCERT/CC
+157.122.62.194

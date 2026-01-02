@@ -1,0 +1,88 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: asuka stealer, observer stealer
+
+# Reference: https://twitter.com/GroupIB_TI/status/1662098952852852737
+
+5.42.64.41:1234
+77.73.134.51:1234
+
+# Reference: https://twitter.com/0xrb/status/1665592247881203713
+
+91.215.85.38:1234
+
+# Reference: https://twitter.com/Jane_0sint/status/1666019485583659008
+# Reference: https://app.any.run/tasks/5728c30e-00c1-4f87-9522-ff8b9e08fa32/
+
+5.42.64.41:1337
+
+# Reference: https://twitter.com/0xrb/status/1669273033285197825
+
+179.43.155.205:81
+
+# Reference: https://twitter.com/g0njxa/status/1672208795680882688
+# Reference: https://twitter.com/Jane_0sint/status/1673575414290350080
+# Reference: https://app.any.run/tasks/8e7b5441-9ed1-4c65-8f0c-a76d3a1627fe/
+# Reference: https://app.any.run/tasks/b366feb6-0b12-4ab7-a1d6-785f50a2b5fe/
+
+91.103.252.16:2425
+
+# Reference: https://twitter.com/0xrb/status/1674665596322209793
+
+91.103.252.16:2424
+
+# Reference: https://twitter.com/ViriBack/status/1751711679979696598
+# Reference: https://twitter.com/malpulse/status/1773881748771713139
+# Reference: https://any.run/cybersecurity-blog/asukastealer-malware-analysis/
+# Reference: https://app.any.run/tasks/7a36fb55-3738-4f40-b760-b443689c9edd/
+# Reference: https://www.virustotal.com/gui/file/5b2b8a4d5b8375a3ac2ce68b93cdbfdc8fd13d1cf4ea1a6a61bd784aa495dbfb/detection
+# Reference: https://www.virustotal.com/gui/file/bb17d47f10fefcee4c883f93f2989e753b969298dd70262ae00696dd482dc9b4/detection
+
+5.42.66.25:3000
+100tb.net
+12pintsandacurry.com
+2022.datarings.org
+2022.dmitrymazepin.org
+963rockradio.com
+ah-properties.net
+aiuchi.net
+astramortgages.net
+beartloveart.com
+blythwood-plant.com
+cartelsclothing.com
+celebrationgenerator.com
+comparecarparts.net
+dataring.org
+datarings.org
+daveholmesmanagement.com
+davidpeterinteriors.com
+davidqian.net
+designgeneralstore.com
+diyshopper.com
+dmazepin.org
+dmitrymazepin.org
+domfarfora.org
+draperdrill.com
+dumpthedebt.com
+dxrxcloud.com
+eastlothianpropertymanagement.com
+elenapyltsova.org
+extns.com
+freemsk.org
+ganjawars.org
+gem-academy.org
+gordeeva.org
+miopart.com
+reginacrowley.com
+simplyavailable.com
+temptraffsolutions.com
+trattles.com
+ultralowsulphurgas.net
+virtualinternetltd.net
+whukkers.net
+
+# Reference: https://x.com/karol_paciorek/status/1810985066023080006
+# Reference: https://www.virustotal.com/gui/ip-address/77.105.133.33/relations
+
+http://77.105.133.33

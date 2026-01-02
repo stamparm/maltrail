@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: JavaDispCash
+
+# Reference: https://twitter.com/VK_Intel/status/1144500267594874881
+
+150.100.246.18:60000

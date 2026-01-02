@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://news.drweb.com/show/?lng=en&i=13388&c=14
+# Reference: https://github.com/DoctorWebLtd/malware-iocs/blob/master/Fakesoft/README.adoc
+
+android-power.space
+clipoffice.xyz
+dns-master.club
+invoicesoftware360.xyz
+juster.icu
+munsys.icu
+nord-vpn.club
+normpost.club
+sync-time.info

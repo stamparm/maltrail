@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/GrujaRS/status/1230046231507951617
+# Reference: https://www.virustotal.com/gui/file/baba76d578be903c9d78e3d6417636ba6a8069cafe9ccccdfce2bc19b43fc299/detection
+
+192.30.89.67:11344
+
+# Reference: https://app.any.run/tasks/4138ad1f-3c8a-4a3e-9dee-57a43b507b76/
+# Reference: https://otx.alienvault.com/pulse/5e7cc3a5d31b791052aded60
+# Reference: https://www.virustotal.com/gui/domain/tempinfo.96.lt/detection
+
+tempinfo.96.lt
+
+# Reference: https://app.any.run/tasks/abb6e139-c6ff-4874-bfe1-fd1ef446fd3a/
+
+who.16mb.com
+/ea2/createkeys.php
+/ea2/savekey.php
+
+# Reference: https://otx.alienvault.com/pulse/5e7cc3a5d31b791052aded60
+
+/wras/createkeys.php
+/wras/savekey.php
+/wras/RANSOM20.jpg
+
+# Generic
+
+/createkeys.php

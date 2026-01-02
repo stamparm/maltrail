@@ -1,0 +1,117 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/advanced-threat-research/IOCs/blob/master/2016/2016-06-21-javascript-php-joint-exercise-delivers-nemucod-ransomware/javascript-php-joint-exercise-delivers-nemucod-ransomware.csv
+
+bellefremee.com
+
+# Reference: https://twitter.com/pancak3lullz/status/748879837859688448
+
+topoeval.ro
+
+# Reference: https://twitter.com/securiteoff/status/742088527312236544
+
+giuliaefabio.it
+
+# Reference: https://www.virustotal.com/gui/file/1a45e111384fb1ada0ca96ad7ab929c1c71a139956cde3a4e8b23e76b63ed524/detection
+
+yogialoha.com
+
+# Reference: https://app.any.run/tasks/eba218a5-1923-447d-b55f-f0aecf294ebf/
+
+tasaheel.me
+
+# Reference: https://www.virustotal.com/gui/file/8380f7a31e267ecc3213ca3c022bb90747b02360f93849080cc1cfb42211ae57/detection
+
+/sdgLKJvgh
+
+# Reference: https://www.virustotal.com/gui/file/6a6ca529585713ce410ca14f23af877a74ecf825826b65ee6278d831f4ae773a/detection
+
+/yr387n3
+
+# Reference: https://unit42.paloaltonetworks.com/script-based-malware/
+# Reference: https://www.virustotal.com/gui/file/751d161ed4afd822925c0373395f014578f166467d20a4b1adfdb27fd0a83c36/detection
+
+193.0.179.129:65233
+79.124.49.230:888
+seemee.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/964c62047ebc4108fa715763dfa3bdf2680a83cf3b500af63e312aab6f4906bd/detection
+
+intensegoal.com
+supremediet.xyz
+virtuapoint.com
+weitz-law.com
+yiyangart.com
+
+# Reference: https://twitter.com/sS55752750/status/1339681672267239430
+# Reference: https://twitter.com/sS55752750/status/1339708190146093056
+# Reference: https://www.virustotal.com/gui/file/0a91f39384a5895052d9068986cfca521414fd38216e06804ec9d18e181b70d0/detection
+
+laoshunfa1688.com
+laoshunfafa.com
+shounaheiming1688.com
+woyaolao168.com
+
+# Reference: https://www.virustotal.com/gui/domain/tzabanga.com/relations
+
+tzabanga.com
+
+# Reference: https://twitter.com/Racco42/status/1392945464304148484
+# Reference: https://app.any.run/tasks/ac2498fc-270b-42b5-993f-909120aba06b/
+# Reference: https://www.virustotal.com/gui/file/f161d79a1e01de947516dedce7e822e66f982c36914a8cd55998b093dea2bbe2/detection
+
+greenwidow.top
+
+# Reference: https://www.virustotal.com/gui/file/4e15a2a9520d30abdc99e1c8205ec9d403caed239b66b524ff1e8ffdf63a5e0d/detection
+
+185.130.104.157:443
+
+# Reference: https://www.virustotal.com/gui/file/bdf31404c58fdcb1133c236bdfea8b9918dc9626170097f4600e57e91d780ce3/detection
+
+185.130.104.167:443
+
+# Reference: https://www.virustotal.com/gui/file/a4b7e62aa6fdf9581a61f70c275d41f2d552d8136814e2eab61ca711f485bf35/detection
+
+185.130.104.236:443
+
+# Reference: https://www.virustotal.com/gui/file/aeab81403966b90dae58526712d4d2ba18a10374c604857cc3ce5a013f29c4d6/detection
+
+lady-idol.6te.net
+
+# Reference: https://www.virustotal.com/gui/file/921ab11978687f7b8120f0753f7d500d95512316834f71082a028b08c838109a/detection
+
+http://54.212.206.189
+
+# Reference: https://www.virustotal.com/gui/file/700d3e818e00b097a2955a44f79ac2f60a0a1c9e9c5c2c64434f0e8a44d00dc4/detection
+
+http://3.112.173.17
+
+# Reference: https://www.virustotal.com/gui/file/4de488a1fdffc0fa9e755137bd359a9ad5fc5eb57c518681f00f60881d775e0d/detection
+
+http://3.26.185.34
+
+# Reference: https://www.virustotal.com/gui/file/5c0aea53f043b8ba95bda9f1a740a87e42401c131fa3147bda304df8ec51ebed/detection
+
+http://13.125.140.3
+
+# Reference: https://www.virustotal.com/gui/file/787f7d7c6892a346224e0c9bf378aa14ff807027df8b25955e1b2abe26f6c02f/detection
+
+http://20.7.14.99
+
+# Reference: https://www.virustotal.com/gui/file/a99508a91168ebebb3779c8a69fbbc8c51cc019ba794b1e5f4c2d7a4c5b0777a/detection
+
+http://95.179.186.167
+http://95.179.201.171
+/Writer.php?deploy=cmd
+
+# Reference: https://twitter.com/ScumBots/status/1651277550847508481
+# Reference: https://www.virustotal.com/gui/file/150337ca2b2ab4e9db3860b804024c74ecfc1124e888df6af0b3321f6c3bd3fc/detection
+
+193.161.193.99:55058
+zzhare123-48680.portmap.host
+
+# Generic
+
+/loader/loader2/www/cmd.php
+/loader/loader2/www/loader.php

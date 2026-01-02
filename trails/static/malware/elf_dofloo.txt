@@ -1,0 +1,135 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/bad_packets/status/1118612997620895744
+# Reference: https://twitter.com/bad_packets/status/1116054197789544448
+# Reference: https://www.virustotal.com/gui/file/16d7ca4e46d7f1ed7600f62164bae51e748efb64f7d49670514b58d4c84bddd6/detection
+
+/timo.vm
+/timo1.vm
+/timo2.vm
+/timo3.vm
+
+# Reference: https://otx.alienvault.com/pulse/5cc3284bddf8a06c649d6336
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/aesddos-botnet-malware-exploits-cve-2019-3396-to-perform-remote-code-execution-ddos-attacks-and-cryptocurrency-mining/
+
+23.224.59.34:48080
+
+# Reference: https://www.symantec.com/security-center/writeup/2015-070812-0012-99
+
+61.160.213.49:48080
+183.60.149.199:48080
+
+# Reference: https://twitter.com/P3pperP0tts/status/1148511098724933632
+# Reference: https://www.hybrid-analysis.com/sample/c9d3ffab53ba686df1de7142f4bdb1f8115e1119b354a7c34434d02ef87751e7/
+# Reference: https://www.virustotal.com/gui/file/c9d3ffab53ba686df1de7142f4bdb1f8115e1119b354a7c34434d02ef87751e7/detection
+
+pptvv.3322.org
+
+# Reference: https://www.kernelmode.info/forum/viewtopic.php?t=3483&start=30
+# Reference: https://blog.0day.jp/2015/07/linuxaesddosarm.html
+
+a1203.f3322.org
+a.lq4444.com
+yxs.f3322.org
+104984629.f3322.org
+1.93.11.200:80
+1.93.19.203:6969
+1.93.19.203:7878
+104.194.25.172:36114
+104.194.25.172:48080
+104.194.25.180:36114
+104.194.25.180:48080
+115.231.219.147:48080
+116.255.162.80:37943
+116.255.162.80:48080
+119.147.145.213:8019
+119.147.145.215:4134
+119.147.145.215:48080
+121.41.74.174:8000
+123.249.29.244:11024
+124.173.118.167:4134
+180.97.215.111:8080
+183.60.149.208:48080
+183.60.202.224:991
+210.92.18.118:2342
+210.92.18.118:7523
+218.244.148.150:37963
+222.186.34.123:1285
+222.186.34.152:23650
+222.186.34.152:48080
+222.186.34.152:8998
+222.186.34.220:2016
+222.211.86.205:38283
+222.211.86.205:48080
+38.72.114.63:28052
+58.221.60.138:50000
+59.56.110.233:48080
+59.56.110.233:8081
+61.139.5.22:63692
+61.160.213.58:1302
+61.160.213.58:1774
+61.160.213.58:1799
+61.160.213.58:2120
+61.160.213.58:2180
+61.160.213.58:2523
+61.160.213.58:3388
+61.160.213.58:3623
+61.160.213.58:4182
+61.160.213.58:4889
+61.160.213.58:4985
+61.160.213.58:9999
+
+# Reference: https://twitter.com/bad_packets/status/1231465511914897408
+
+122.114.57.92:8888
+
+# Reference: https://www.virustotal.com/gui/file/d98be2d50924f341d57a02ebcd2a9742bdf8662190def32742ceefd1c2c00c99/detection
+
+119.10.151.120:48080
+
+# Reference: https://threatfox.abuse.ch/browse/tag/log4j/
+
+49.0.248.230:2017
+
+# Reference: https://blog.netlab.360.com/public-cloud-threat-intelligence-202203/
+# Reference: https://otx.alienvault.com/pulse/625e6af73b7b0982c6920d17
+
+http://51.81.133.90
+14.1.98.226:8880
+/ff.elf
+/NWWW.6
+/qweasd
+
+# Reference: https://www.virustotal.com/gui/file/e6d98f12ad2177571076e261e2bedce0f1dc9685f3fbb42bbafe386a784c1501/detection
+# Reference: https://www.virustotal.com/gui/file/e6f2b4f3dd706a54c02c950a0a5ecc271e9d4f24c077be9b655df1161e10b902/detection
+
+103.126.100.13:10210
+
+# Reference: https://www.virustotal.com/gui/file/36f0142655c009d76d9e5217812c63dd0674613343338f6263d1aece31a1241b/detection
+
+45.195.69.113:48080
+
+# Reference: https://www.virustotal.com/gui/file/73833904cbb2a6f92f906813fe56262fc6f72eef6b0fa091c9f9ad4a86e1379b/detection
+
+45.195.69.113:19666
+
+# Reference: https://www.virustotal.com/gui/file/a9f1ebe6ab744b44540974147f35b32cabbaf195dd51ea36ada22ac50544cc7a/detection
+
+45.195.69.113:10211
+
+# Reference: https://www.virustotal.com/gui/file/a8e66c717b7b0423e1f181c394636bba18a41df758dcd95c5b1d3b1618d8eedc/detection
+
+103.139.0.32:2016
+43.139.138.38:2017
+aaa.tfddos.net
+
+# Reference: https://www.virustotal.com/gui/file/d76fee247dd64a53ff0dd5cdaceeb37ae98b25b6e428e625288352fa2f6e95e9/detection
+
+43.139.138.38:2023
+
+# Reference: https://x.com/BlinkzSec/status/1987974860358774807
+# Reference: https://www.virustotal.com/gui/file/4cd5e3348c27f5208238bf8d992d979a88992e822376e118949b69cf1ba08581/detection
+
+http://45.192.99.218
+45.192.99.218:48080

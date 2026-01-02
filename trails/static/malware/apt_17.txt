@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt17, apt-c-17, blackcoffee, deputy dog
+
+# Reference: https://www.fireeye.com/blog/threat-research/2015/05/hiding_in_plain_sigh.html
+# Reference: https://github.com/fireeye/iocs/blob/master/APT17/7b9e87c5-b619-4a13-b862-0145614d359a.ioc
+
+news.jusched.net
+translate.wordraference.com
+
+# Reference: https://x.com/VirITeXplorer/status/1811743669579370989
+# Reference: https://www.tgsoft.it/news/news_archivio.asp?id=1557&lang=eng
+# Reference: https://www.virustotal.com/gui/file/28808164363d221ceb9cc48f7d9dbff8ba3fc5c562f5bea9fa3176df5dd7a41e/detection
+# Reference: https://www.virustotal.com/gui/file/caeca1933efcd9ff28ac81663a304ee17bbcb8091d3f9450a62c291fec973af5/detection
+# Reference: https://www.virustotal.com/gui/file/de19e0163af15585c305f845b90262aee3c2bdf037f9fc733d3f1b379d00edd0/detection
+
+equitaligaiustizia.it
+themicrosoftnow.com
+meeting.equitaligaiustizia.it

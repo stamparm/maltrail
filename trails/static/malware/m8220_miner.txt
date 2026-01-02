@@ -1,0 +1,35 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.netlab.360.com/ten-families-of-malicious-samples-are-spreading-using-the-log4j2-vulnerability-now/
+# Reference: https://www.virustotal.com/gui/file/ccf21c0979ce985ce980287b5956396a5e5eb831f18e3bb1e2791e15adc7910d/detection
+# Reference: https://www.virustotal.com/gui/file/c0a3f7f19057f02d1c7f0ee24849ff8b3dde26347e9dbd3f589c649ce037fe1d/detection
+# Reference: https://www.virustotal.com/gui/domain/apacheorg.xyz/relations
+
+192.210.200.66:1234
+198.46.202.146:8899
+205.185.113.59:1234
+apacheorg.top
+apacheorg.xyz
+agent.apacheorg.top
+w.apacheorg.top
+agent.apacheorg.xyz
+w.apacheorg.xyz
+
+# Reference: https://blog.netlab.360.com/public-cloud-threat-intelligence-202112/
+# Reference: https://otx.alienvault.com/pulse/61ea977759cc28216fa93688
+
+http://107.172.214.23
+http://192.210.200.66
+107.172.214.23:88
+107.172.214.23:8899
+192.210.200.66:88
+192.210.200.66:8899
+
+# Reference: https://www.cronup.com/explotacion-masiva-de-fortinet-fortinac-cve-2022-39952-rce-no-autenticado-en-progreso/
+
+192.210.200.66:8088
+
+# Reference: https://www.virustotal.com/gui/file/028519991014b6bd6aa9f22924aeeec84cfbc32d1c19cabeca7a29e5f99a54d7/detection
+
+107.172.214.23:1234

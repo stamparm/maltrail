@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/malwrhunterteam/status/1837458772794470726
+# Reference: https://www.virustotal.com/gui/file/aa9110bfa61f59cc4476201bbc7c2db52c4e7fceff855021387d658a69929537/detection
+
+107.172.214.214:1433
+buymobileawardsusa.xyz
+download.buymobileawardsusa.xyz

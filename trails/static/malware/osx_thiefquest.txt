@@ -1,0 +1,24 @@
+  
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: EvilQuest, ThiefQuest
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/updates-on-thiefquest-the-quickly-evolving-macos-malware/
+# Reference: https://otx.alienvault.com/pulse/5f15c3febd3a04ce5d10cc75
+
+andrewka6.pythonanywhere.com
+lemareste.pythonanywhere.com
+
+# Reference: https://www.virustotal.com/gui/file/7fb5cfb855e6cf49552cb041a204f3a567df14e772ff2914b4bdb720400b8ac6/detection
+
+167.71.237.219:8000
+
+# Reference: https://twitter.com/c1truz_/status/1277890179257303040
+
+167.71.237.219:1701
+
+# Reference: https://www.microsoft.com/en-us/security/blog/2023/01/05/unraveling-the-techniques-of-mac-ransomware/
+# Reference: https://www.virustotal.com/gui/file/bcdb0ca7c51e9de4cf6c5c346fd28a4ed28e692319177c8a94c86dc676ee8e48/detection
+
+159.65.147.28:8000

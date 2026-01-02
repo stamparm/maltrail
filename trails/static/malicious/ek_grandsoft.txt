@@ -1,0 +1,63 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/07/exploit-kits-summer-2019-review/
+# Reference: https://otx.alienvault.com/pulse/5d40766ecabf3f345b3811db
+
+pas.oxide.pimmar.fun
+pimmar.fun
+
+# Reference: https://twitter.com/nao_sec/status/1170284036809355264
+# Reference: https://app.any.run/tasks/d3226768-0b3f-496b-bff8-f9cdb519cf73/
+
+promodiscounter-tokyo.host
+
+# Reference: https://twitter.com/EKFiddle/status/1001128825135161344
+
+lobelqq.xyz
+project-x-adminko-test.tk
+
+# Reference: https://twitter.com/Mesiagh/status/1105919599244075008
+# Reference: https://pastebin.com/cSR0HbCz
+
+browne.space
+gynza.space
+kamalas.space
+klamo.space
+lilibyash.space
+matrixpai.space
+monster4free.info
+muchahco.space
+naiahars.space
+pahua.space
+patonagsh2.space
+stodas.space
+surintra.space
+taushvillia.space
+traaisndinofk.space
+
+# Reference: https://twitter.com/baberpervez2/status/1069277871267401728
+
+besttradeincoin.info
+
+# Reference: https://twitter.com/Zerophage1337/status/1007645365133246464
+
+purchasing-zelongtimeut.xyz
+
+# Reference: https://twitter.com/tkanalyst/status/1173121485889667073
+
+globamerkuiy.site
+teppan-hirama.site
+
+# Reference: https://twitter.com/nao_sec/status/1199297246979735552
+
+mariko-apt.site
+
+# Reference: https://twitter.com/nao_sec/status/1201128853055213571
+
+sasa-ofus.space
+
+# Reference: https://twitter.com/nao_sec/status/1216385095277219841
+# Reference: https://app.any.run/tasks/8844703d-676b-415f-bf9c-83e7f507336a/
+
+365bakery-tokyo24.site

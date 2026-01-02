@@ -1,0 +1,148 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cs_installer, choziosiloader
+
+# Reference: https://twitter.com/th3_protoCOL/status/1480621526764322817
+# Reference: https://github.com/xephora/Threat-Remediation-Scripts/tree/main/Threat-Track/CS_INSTALLER
+# Reference: https://www.virustotal.com/gui/file/ded20df574b843aaa3c8e977c2040e1498ae17c12924a19868df5b12dee6dfdd/detection
+# Reference: https://www.virustotal.com/gui/file/5f57a4495b9ab853b9d2ab7d960734645ebe5765e8df3b778d08f86119e1695c/detection
+# Reference: https://www.virustotal.com/gui/file/187e08fca3ea9edd8340aaf335bd809a9de7a10b2ac14651ba292f478b56d180/detection
+# Reference: https://www.virustotal.com/gui/file/1dbe5c2feca1706fafc6f767cc16427a2237ab05d95f94b84c287421ec97c224/detection
+# Reference: https://www.virustotal.com/gui/file/5c07178b0c44ae71310571b78dde5bbc7dc8ff4675c20d44d5b386dfb4725558/detection
+
+brokenna.work
+ktyouexpec.xyz
+learnataloukt.xyz
+withyourret.xyz
+yflexibilituky.co
+
+# Reference: https://unit42.paloaltonetworks.com/chromeloader-malware/
+
+ableawid.com
+adiingsinsp.xyz
+airplanegoobly.com
+ajorinryeso.xyz
+baganmalan.com
+balljoobly.com
+balokyalokd.com
+betasymbolic.com
+blesasmetot.com
+boogilooki.com
+bookimooki.com
+carfunusme.com
+carmoobly.com
+chairtookli.com
+chookiebooki.com
+choopinookie.com
+ckgrounda.com
+computermookili.com
+dubifunme.com
+dudesurfbeachfun.com
+eandworldw.com
+etobepartou.com
+etterismype.co
+exkcellent.com
+funbeachdude.com
+idwhitdoe.work
+ithconsukultin.com
+ketobepar.com
+kfareputfeabl.com
+kooblniplay.com
+koooblycar.com
+krestinaful.com
+letfunhapeme.com
+lookiroobi.com
+lookitoogi.com
+madorjabl.com
+malanbagam.com
+mokkilooki.com
+mployeesihigh.xyz
+muendakere.xyz
+myeducatio.com
+nakasulba.com
+ndinterper.com
+ndworldwi.com
+ngwitheaam.xyz
+nookiespooti.com
+oempafnyfi.com
+playkooblni.com
+ptonnervent.xyz
+rockslootni.com
+rooblimyooki.com
+rsonalrecom.co
+saveifmad.com
+sforourcompa.com
+siwoulukdli.com
+siwoulukdlik.com
+slootni.com
+sonalskills.com
+tabletoobly.com
+tcaukthw.com
+tobedirectuke.com
+tobepartou.com
+tooblycars.com
+toogimoogi.com
+toukfarep.com
+uiremukent.com
+ukmlasttyye.xyz
+ukrawinrusyes.com
+ukseseem.xyz
+utfeablea.com
+voobmijump.com
+xoomitsleep.com
+yalfnbagan.com
+yalokmalos2.com
+yeconnected.com
+yescoolservmate.com
+yooblygoobnku.com
+yourretyeq.com
+
+# Reference: https://twitter.com/embee_research/status/1549261913552330753
+
+ymenthejuiasq.xyz
+
+# Reference: https://threatresearch.ext.hp.com/shampoo-a-new-chromeloader-campaign/
+# Reference: https://otx.alienvault.com/pulse/649081740301076f96dfbce0
+
+alfelixstownrus.com
+andhthrewdo.xyz
+cesprincipledecli.com
+cityonatall.com
+disguishedbriting.com
+dmiredindee.com
+dogsfanext.com
+dprivatedqualizebr.com
+dthestatueof.com
+ebruisiaculturerp.com
+edeisasbeautif.com
+edrubyglowe.com
+entxviewsinterf.com
+ghtsustachedstimaar.com
+gingleagainedame.com
+herofherlittl.com
+ighabovethe.com
+ildedalloverw.com
+mysitesext.com
+ndalargere.com
+oftheappyri.com
+oldforeyes.com
+olumnstoo.com
+raconianstarvard.com
+rincelewasgi.com
+rwiththinlea.com
+sapphiresan.com
+sverymuchad.com
+swordhiltewa.com
+ticalsdebaticalfelixs.com
+tropicalhorizonext.com
+vesoffinegold.com
+wedonhissw.com
+wobrightsa.com
+worldtimesext.com
+yeshehadtwo.com
+
+# Reference: https://x.com/SquiblydooBlog/status/1915363126356434985
+# Reference: https://www.virustotal.com/gui/file/2371dc3dd963d9596161ea73c3e2160cb7112eabd7784beeef529ab648e8dc42/detection
+
+djloiq2ki6v9p.cloudfront.net

@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://research.checkpoint.com/2023/tunnel-warfare-exposing-dns-tunneling-campaigns-using-generative-models-coinloader-case-study/
+# Reference: https://otx.alienvault.com/pulse/64e8688ae20e56da413ac148
+
+candatamsna.info
+candatamsnb.info
+candatamsnc.info
+candatamsnd.info
+candatamsnsdn.info
+mapdatamsna.info
+mapdatamsnb.info
+mapdatamsnc.info
+mapdatamsnd.info
+mapdatamsnsdn.info
+rqmetrixa.info
+rqmetrixb.info
+rqmetrixc.info
+rqmetrixd.info
+rqmetrixsdn.info
+
+# Reference: https://twitter.com/tiresearch1/status/1695018686258794615
+
+ucmetrixa.info
+ucmetrixb.info
+ucmetrixc.info
+ucmetrixd.info
+ucmetrixsdn.info
+
+# Generic
+
+/jrjjjnjjjnnjjjejjnejnntnnnrj.html

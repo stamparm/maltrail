@@ -1,0 +1,71 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.trendmicro.com/en_us/research/22/d/new-apt-group-earth-berberoka-targets-gambling-websites-with-old.html
+# Reference: https://documents.trendmicro.com/assets/txt/earth-berberoka-domains-2.txt
+# Reference: https://g-soft.info/security/2196/earth-berberoka-apt-iocs/
+# Reference: https://otx.alienvault.com/pulse/62714f1a00e250a297938915
+# Reference: https://www.virustotal.com/gui/file/401d0b1f1a94df6a70818ef2bad80d139bb258c0e7746612066599aa43456dad/detection
+# Reference: https://www.virustotal.com/gui/file/2c403e390f59b2c2bfafde476dc18000b0ad1bbc8ac9ee0670662c48ba5b748f/detection
+
+167.179.95.191:81
+45.76.199.119:83
+adobe-flash.wiki
+adobe.name
+fuckbc.com
+github.wiki
+googie.com.ph
+googie.ph
+ivi66.net
+mircrosoftscoulds.com
+rootkit.tools
+shopingchina.net
+wy886066.com
+1.googie.ph
+12371829hkdanm.fbi.am
+1qw6etagydbn2peifj8hf.fbi.am
+2.googie.ph
+3.googie.ph
+agph.ivi66.net
+bos.github.wiki
+caonimade.11i.me
+d.github.wiki
+darknet.rootkit.tools
+darwin.github.wiki
+download.mircrosoftscoulds.com
+dust.github.wiki
+exmail.googie.com.ph
+fbi.fuckbc.com
+flash.wy886066.com
+fuckeryoumm.nmb.bet
+fuckyou.fbi.am
+gb.googie.ph
+helloword.11i.me
+helloword.daj8.me
+hk.whoamis.info
+hkdust.github.wiki
+huaidan.fbi.am
+linux.daj8.me
+linux.daji8.me
+linux.shopingchina.net
+linux.wy01.com
+linux.wy01.vip
+linux1.shopingchina.net
+linux2.shopingchina.net
+list.whoamis.info
+localhost.11i.me
+mmimdown.oss-cn-hongkong.aliyuncs.com
+rc.dajuw.com
+steam.dajuw.com
+test.mircrosoftscoulds.com
+tools.daji8.me
+update.adobe.wiki
+win.googie.ph
+wmgnews.daji8.me
+wps.daj8.me
+wpsup.daj8.me
+yabo.googie.ph
+
+# Reference: https://x.com/DaveLikesMalwre/status/1840103584672960692
+
+103.43.18.71:88

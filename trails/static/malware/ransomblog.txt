@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ransomware blog
+
+# Reference: https://github.com/marktsec/Ransomware_Official_Domains#ransomware-blog
+
+z6wkgghtoawog5noty5nxulmmt2zs7c3yvwr22v4czbffdoly2kl4uad.onion
+
+# Reference: https://www.thedfirspot.com/general-8-1
+
+z6d3726b7xunis4tvbzzve6rbuxzt4urqiv6trfakjnwbigknw3hfaid.onion
+z6wkgghzdliugvwinrp46m7i4xpmovjyygoitpicx7x2iqtihn7noxid.onion

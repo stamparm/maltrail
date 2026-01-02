@@ -1,0 +1,62 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: matchboil, matchwok, dragstare, UAC-0099
+# CERT-UA: UAC-0099
+
+# Reference: https://www.fortinet.com/blog/threat-research/norddragonscan-quiet-data-harvester-on-windows
+# Reference: https://www.virustotal.com/gui/file/7b2b757e09fa36f817568787f9eae8ca732dd372853bf13ea50649dbb62f0c5b/detection
+# Reference: https://www.virustotal.com/gui/file/9d1f587b1bd2cce1a14a1423a77eb746d126e1982a0a794f6b870a2d7178bd2c/detection
+# Reference: https://www.virustotal.com/gui/file/39c68962a6b0963b56085a0f1a2af25c7974a167b650cf99eb1acd433ecb772b/detection
+# Reference: https://www.virustotal.com/gui/file/fbffe681c61f9bba4c7abcb6e8fe09ef4d28166a10bfeb73281f874d84f69b3d/detection
+# Reference: https://www.virustotal.com/gui/file/f8403e30dd495561dc0674a3b1aedaea5d6839808428069d98e30e19bd6dc045/detection
+# Reference: https://www.virustotal.com/gui/file/f4f6beea11f21a053d27d719dab711a482ba0e2e42d160cefdbdad7a958b93d0/detection
+
+kpuszkiev.com
+secfileshare.com
+
+# Reference: https://cert.gov.ua/article/6284949 (# matchboil, matchwok, dragstare, UAC-0099)
+
+airarticlegenerate.com
+authorization.rutech.tech
+egyptanimals.com
+geostat.lat
+rutech.tech
+startdeeplearning.com
+uztickets.com
+
+# Reference: https://x.com/k3yp0d/status/1849923939599892743
+# Reference: https://x.com/TLP_R3D/status/1874047456993857714
+# Reference: https://x.com/TLP_R3D/status/1874053858705477854
+# Reference: https://x.com/TLP_R3D/status/1874061693879542228
+# Reference: https://cert.gov.ua/article/4818341 (Ukrainian, UAC-0099)
+# Reference: https://cert.gov.ua/article/6281681 (Ukrainian, UAC-0099)
+# Reference: https://www.virustotal.com/gui/ip-address/160.119.251.83/relations
+# Reference: https://www.virustotal.com/gui/ip-address/85.239.52.118/relations
+# Reference: https://app.validin.com/detail?type=ip&find=172.86.85.34#tab=resolutions
+# Reference: https://app.validin.com/detail?find=217.12.210.57&type=ip4&ref_id=44557497656#tab=resolutions
+# Reference: https://search.censys.io/hosts/172.86.117.53
+# Reference: https://search.censys.io/hosts/45.61.158.204
+# Reference: https://www.virustotal.com/gui/file/ea5fb8ad709478d5b92057c5810e764fbd8204075999923041c2e531782ecfba/detection
+# Reference: https://www.virustotal.com/gui/file/cd6159681a89ab30d99894b08ff8a8ccca774fb3ca3ef2702757e2eb74758868/detection
+# Reference: https://www.virustotal.com/gui/file/6963508789e3b7c4b51c35b28bebbf7848be1d19d71a4fe449a57829f51b65e2/detection
+
+http://156.38.245.115
+104.194.133.225:8080
+156.38.245.115:38104
+172.86.109.200:8080
+172.86.117.53:8080
+179.48.251.182:47253
+217.12.218.107:25928
+217.12.218.107:30139
+45.148.121.6:32341
+45.61.158.204:8080
+awsupdatesoft.com
+blogview.shop
+captcha-challenge.com
+firefox-app-update.com
+life-captcha.com
+newyorktlimes.life
+onlinefileview.shop
+webappapiservice.life
+win-app-security.com

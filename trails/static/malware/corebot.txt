@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.symantec.com/security_response/writeup.jsp?docid=2015-090807-3306-99&tabid=2
+
+vincenzo-sorelli.com
+
+# Reference: https://twitter.com/James_inthe_box/status/914111090425917440
+# Reference: https://pastebin.com/7mFkwdkR
+
+37.220.31.120:443
+89.223.26.215:443
+89.223.29.34:443
+checkbox.bit

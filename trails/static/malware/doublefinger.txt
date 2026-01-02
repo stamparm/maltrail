@@ -1,0 +1,33 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: greetingghoul
+
+# Reference: https://securelist.com/doublefinger-loader-delivering-greetingghoul-cryptocurrency-stealer/109982/
+# Reference: https://www.virustotal.com/gui/ip-address/176.124.193.104/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.178.2.168/relations
+# Reference: https://www.virustotal.com/gui/ip-address/5.34.178.21/relations
+# Reference: https://www.virustotal.com/gui/file/61924bda94a4126dcb04e4ab481c3193a3de8eb589dcb20e739c8fde2bf7b006/detection
+
+cryptohedgefund.us
+shftcrypto.ch
+shifcrypto.ch
+shiffcrypto.ch
+shifftcrypto.ch
+shiftcrrypto.ch
+shiftcrypto.app
+shiftcrypto.blog
+shiftcrypto.cc
+shiftcrypto.co.uk
+shiftcrypto.email
+shiftcrypto.sh
+shiftcrypto.site
+shiftcrypto.software
+shiftcrypto.store
+shiftcrypto.to
+shiftcryptos.ch
+shiiftcrypto.ch
+
+# Reference: https://www.virustotal.com/gui/file/0a72b4486ef3e6d3893ad3169cfbf6556550899e1dbc92afae264fa45cfb7ce8/detection
+
+ukrainenumber1.world

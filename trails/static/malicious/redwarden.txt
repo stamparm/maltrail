@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/mgeeky/RedWarden
+# Reference: https://threatfox.abuse.ch/browse/tag/RedWarden/
+
+16.62.149.189:443
+176.124.32.23:443
+62.204.41.197:443

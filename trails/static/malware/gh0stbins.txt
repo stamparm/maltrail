@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://any.run/cybersecurity-blog/gh0stbins-chinese-rat-malware-analysis/
+# Reference: https://app.any.run/tasks/3b14ef62-5d21-48bb-a5e4-5b3fed402fb7/
+# Reference: https://www.virustotal.com/gui/file/4d057d0ef49ffa0ac60363dc02b1272843d5494dfba6fa3e912890d56ddf3c63/detection
+# Reference: https://www.virustotal.com/gui/file/e6f411aaff246e72314f35362bced53c8c757c281ae43b868d51d4bd4a89e37b/detection
+# Reference: https://www.virustotal.com/gui/file/76c350c3c6e2950c6c02ea3e29e51e5d44c3e310319e4f6d3a43a7abee5122a0/detection
+# Reference: https://www.virustotal.com/gui/file/e30f79b6522dfb072a0a21b5d43b31508176e5faf52886b86c29c26cb85daccb/detection
+# Reference: https://www.virustotal.com/gui/file/d4e74caee6923beef8df0b7cbbe27e54263ca532f8fb840bc1e71615bf8cb59e/detection
+# Reference: https://www.virustotal.com/gui/file/d7c632ee3fc0df295eede516a86d3b48aee01679e6dd58889763e073945d96a6/detection
+# Reference: https://www.virustotal.com/gui/file/71e7dd04a8ff7797140b7cf9d24b0da94b12482d72948ed175bde33c4a40b82c/detection
+# Reference: https://www.virustotal.com/gui/file/d4e74caee6923beef8df0b7cbbe27e54263ca532f8fb840bc1e71615bf8cb59e/detection
+# Reference: https://www.virustotal.com/gui/file/74d63f658c7d76570d226e2f5535ebe18b33fa1696653ce520810c14511b0266/detection
+
+http://118.107.7.166
+http://118.107.43.56
+http://49.235.129.40
+http://91.208.236.70
+111.173.119.30:5000
+111.173.119.30:6000
+193.134.208.217:1000
+193.134.208.217:2000
+193.134.208.217:6000
+49.235.129.40:10086
+91.208.236.70:5000
+91.208.236.70:6000
+bfyj875q.04001.top
+dow.ning168.com
+v8chwbjz.n.04001.top

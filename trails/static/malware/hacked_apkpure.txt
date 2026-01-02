@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/Securelist/status/1380621816792809474
+# Reference: https://securelist.com/apkpure-android-app-store-infected/101845/
+
+wcf.seven1029.com
+foodin.site/UploadFiles/20210406052812.apk

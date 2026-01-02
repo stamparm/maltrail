@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securelist.com/stripedfly-perennially-flying-under-the-radar/110903/
+# Reference: https://www.virustotal.com/gui/file/1822ed885bbcc231f8d3c486d0fc8e940b26a54d48aab2a23650634b7170bdfe/detection
+# Reference: https://www.virustotal.com/gui/file/f78a01fc06dcdcce70311f868c3760bce09acc3b7d583ea807638c668bd354f7/detection
+# Reference: https://www.virustotal.com/gui/file/25f8167d32827a2893217e184ebc4f8763ecb1fbf4924da5184540c9f48be9ee/detection
+# Reference: https://www.virustotal.com/gui/file/910ef8c609e176afa3de4e922d21a0818e0d48686a84d78532fd28684d5f460a/detection
+
+http://45.9.148.21
+http://45.9.148.36
+37.252.185.182:8080
+45.9.148.132:8080
+5.255.86.125:8080
+ajiumbl2p2mjzx3l.onion
+ghtyqipha6mcwxiz.onion
+gpiekd65jgshwp2p53igifv43aug2adacdebmuuri34hduvijr5pfjad.onion

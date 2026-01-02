@@ -1,0 +1,172 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.fireeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html
+
+boeing.servehttp.com
+alsalam.ddns.net
+ngaaksa.ddns.net
+ngaaksa.sytes.net
+vinnellarabia.myftp.org
+managehelpdesk.com
+microsoftupdated.com
+osupd.com
+mywinnetwork.ddns.net
+chromup.com
+securityupdated.com
+googlmail.net
+microsoftupdated.net
+syn.broadcaster.rocks
+googlmail.net
+
+# Reference: https://twitter.com/ClearskySec/status/1059532789572386817
+# Reference: https://twitter.com/ClearskySec/status/1059532946045050883
+
+aramcojobs.ddns.net
+dyn-corp.ddns.net
+dyncorp.ddns.net
+mynetwork.ddns.net
+mynetwork2.ddns.net
+ngaaksa.ga
+sabic-co.ddns.net
+saharapcc.ddns.net
+sipchem.ddns.net
+/aramco/
+
+# Reference: https://twitter.com/ClearskySec/status/1142749950998171648
+# Reference: https://app.any.run/tasks/c761d00f-4897-4c9e-8468-9172fcce21d7/
+
+backupaccount.net
+becomestateman.com
+inboxsync.org
+whiteelection.com
+
+# Reference: https://go.recordedfuture.com/hubfs/reports/cta-2019-0626.pdf
+# Reference: https://otx.alienvault.com/pulse/5d13cf4759eec0125b9d8ffa
+
+microsoftupdated.com
+mynetwork.cf
+securityupdated.com
+service-avant.com
+svcexplores.com
+update-sec.com
+backupnet.ddns.net
+bistbotsproxies.ddns.net
+fucksaudi.ddns.net
+googlechromehost.ddns.net
+hellocookies.ddns.net
+hyperservice.ddns.net
+mynetwork.ddns.net
+mypsh.ddns.net
+mywinnetwork.ddns.net
+n3tc4t.hopto.com
+newhost.hopto.org
+njrat12.ddns.net
+remote-server.ddns.net
+remserver.ddns.net
+servhost.hopto.org
+srvhost.servehttp.com
+teamnj.ddns.net
+trojan1117.hopto.org
+windowsx.sytes.net
+wwwgooglecom.sytes.net
+xtreme.hopto.org
+younesadams.ddns.net
+za158155.ddns.net
+
+# Reference: https://hyas.com/news/hunting-apt33-campaign-infrastructure/
+# Reference: https://otx.alienvault.com/pulse/5d85272acd389e89e743368c
+
+admindirector.com
+backupaccount.net
+businessscards.com
+cardchsk.com
+cardkuys.com
+ceoadminoffice.com
+customermgmt.net
+diplomatsign.com
+groupchiefexecutive.com
+inboxsync.org
+mailsarchive.com
+managementdirector.com
+moreonlineshopping.com
+officemngt.com
+phpencryptssl.com
+service-search.info
+tokensetting.com
+truelogon.com
+urlmanage.com
+whiteelection.com
+
+# Reference: https://twitter.com/CTI_Marc/status/1194573048625729536
+# Reference: https://otx.alienvault.com/pulse/5dcc25f17c401b08b33d3d84
+
+azure-dnszones.com
+global-careers.org
+lovememories.org
+times-sync.com
+
+# Reference: https://blog.trendmicro.com/trendlabs-security-intelligence/more-than-a-dozen-obfuscated-apt33-botnets-used-for-extreme-narrow-targeting/
+# Reference: https://otx.alienvault.com/pulse/5dcd22740cea7974f1e9927b
+
+qualitweb.com
+service-eset.com
+service-essential.com
+service-explorer.com
+service-norton.com
+simsoshop.com
+suncocity.com
+update-symantec.com
+zandelshop.com
+zeverco.com
+
+# Reference: https://twitter.com/Sam1rSQS/status/1206552916959662080
+
+188.166.55.116:56444
+backupaccount.net
+
+# Reference: https://blog.telsy.com/meeting-powerband-the-apt33-net-powerton-variant/
+# Reference: https://otx.alienvault.com/pulse/5e4430d06ed4c78cf4aa7872
+
+azure-dnszones.com
+dailystudy.org
+eventmonitoring.org
+gefurrinn.com
+global-careers.org
+imap-outlook.com
+lovememories.org
+powersafety.org
+smtpauths.com
+smtpsync.com
+theworldjob.org
+times-sync.com
+world-careers.org
+
+# Reference: https://twitter.com/ShadowChasing1/status/1275042060207132672
+# Reference: https://www.virustotal.com/gui/file/e7b992f95b3908579d026f22c237ad5ff7663c9886b520f15cc3e27ef90dcbb1/detection
+
+availsqaapi.premieredigital.net
+
+# Reference: https://twitter.com/kyleehmke/status/1293498254009815040
+
+relaxingsports.com
+
+# Reference: https://twitter.com/kyleehmke/status/1304444869809758210
+# Reference: https://twitter.com/kyleehmke/status/1304444870979919872
+
+akadnsplugin.com
+ocsp-support.com
+service-houston.com
+support-newyork.com
+
+# Reference: https://twitter.com/MsftSecIntel/status/1737895710169628824
+# Reference: https://twitter.com/MsftSecIntel/status/1737895717870440609
+# Reference: https://thehackernews.com/2023/12/microsoft-warns-of-new-falsefont.html
+# Reference: https://unit42.paloaltonetworks.com/curious-serpens-falsefont-backdoor/
+
+digitalcodecrafters.com
+
+# Reference: https://twitter.com/banthisguy9349/status/1759984117003719061
+# Reference: https://shadowdragon.io/blog/additional-insights-into-iranian-cyber-espionage-apt33-2/
+
+http://34.101.157.124

@@ -1,0 +1,51 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/TLP_R3D/status/1924448817144799735
+# Reference: https://urlscan.io/search/#hash%3A832cf7ba6aec863c8d6607ea6eb93840ae3a88c50bf6eb4656c5400c469451ee
+# Reference: https://labs.withsecure.com/publications/keepass-trojanised-in-advanced-malware-campaign
+# Reference: https://labs.withsecure.com/content/dam/labs/docs/W_Intel_Research_KeePass_Trojanised_Malware_Campaign.pdf
+# Reference: https://www.virustotal.com/gui/file/fa3eca4d53a1b7c4cfcd14f642ed5f8a8a864f56a8a47acbf5cf11a6c5d2afa2/detection
+# Reference: https://www.virustotal.com/gui/file/5b48bbf2364f78812ea411ef41fb8b693a3965df13596b303e12f69908784d03/detection
+# Reference: https://www.virustotal.com/gui/file/2dd75a7f9948d794e95539b9a9ccc6a1488fb64dbe099fea401a13f98166d6ae/detection
+
+1ba8d063-0.b-cdn.net
+aicmas.com
+alldataservice.com
+animatedwebworks.com
+arch-online.com
+burleson-appliance.net
+cadcamlabs.ru
+concord-appliance.com
+desoto-appliance.net
+dexscreener-com.aenys.com
+howupbusiness.com
+insightsforconsultancy.com
+keebass.com
+keegass.com
+keepass-download.com
+keepass-download.grmspace.com
+keepass-download.insightsforconsultancy.com
+keepass-info.aenys.com
+keepass.me
+keepassx.com
+keeppass-download.com
+keeppaswrd.com
+keespass.biz
+larcausk.site
+lvshilc.com
+nestlingspace.com
+phantom-wallet-com.aenys.com
+precizeabrilliant.com
+protek-tech.com
+prythera.com
+pump-fun-official.aenys.com
+pump-fun.aenys.com
+resvat.co
+resvat.com
+salliemae-com-login.aenys.com
+smakotin.com
+takuripo.com
+winscp-net-download.aenys.com
+woodforest-login.aenys.com
+zowhy.com

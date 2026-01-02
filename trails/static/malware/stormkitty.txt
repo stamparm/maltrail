@@ -1,0 +1,43 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ViriBack/status/1571840814766080002
+# Reference: https://twitter.com/ViriBack/status/1571846881239773185
+# Reference: https://tria.ge/220919-pk33nsgeh4/behavioral1
+
+bkp.myftp.org
+construtoramarti5.hospedagemdesites.ws
+flashplayer.servepics.com
+
+# Reference: https://twitter.com/ilbaroni_/status/1593325194382393350
+# Reference: https://www.joesandbox.com/analysis/1115568
+
+cuteducklings.ru
+ilovetheducks.ru
+smallduck.ru
+
+# Reference: https://twitter.com/abuse_ch/status/1593484465812168705
+
+lovableduck.ru
+quackquack.ru
+
+# Reference: https://twitter.com/ULTRAFRAUD/status/1660327398024290307
+# Reference: https://tria.ge/230521-tt757sdh5x
+
+http://85.217.144.10
+85.217.144.10:9990
+
+# Reference: https://x.com/suyog41/status/1833477265901903873
+# Reference: https://www.virustotal.com/gui/file/77a52e4ae19762156df88783f4e1cdfafbc91ac50faa089783be0be065ac49e0/detection
+
+45.137.20.45:1337
+
+# Reference: https://x.com/skocherhan/status/1890356053260333472
+# Reference: https://www.virustotal.com/gui/file/28b86dc538d2c594c53628a1d5821980129dc6bd992593c27cc860f32bcc7a43/detection
+
+103.172.113.141:8017
+mamisportlive.it/blog/1.exe
+
+# Generic
+
+/compras/gate.php

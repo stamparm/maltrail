@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/006e1cac9e6bef15906dfdcea6d2d809bbd2a5d790ea9a999024251c1f218985/detection
+
+/lokirat/bot.php
+/lokirat/bot.php?id=

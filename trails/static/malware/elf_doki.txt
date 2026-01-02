@@ -1,0 +1,17 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.intezer.com/container-security/watch-your-containers-doki-infecting-docker-servers-in-the-cloud/
+# Reference: https://www.virustotal.com/gui/file/4aadb47706f0fe1734ee514e79c93eed65e1a0a9f61b63f3e7b6367bd9a3e63b/detection
+
+6d77335c4f23.ddns.net
+
+# Reference: https://www.virustotal.com/gui/file/519d2edfff2163f745d60110f002c3bc05870f9b955da78c44ba7c47fa809e26/detection (PE-variant)
+# Reference: https://www.virustotal.com/gui/file/a2a0f656bb8e5fb2d0fe3f1c472b29c9d222b4241ee4e950f4257d4dd3890612/detection (PE-variant)
+# Reference: https://www.virustotal.com/gui/file/2e3043817e787c2b8b9c0e5e3e51e090eca426c8f8738fc2c357658360726f8d/detection (PE-variant)
+# Reference: https://www.virustotal.com/gui/file/89f5007943f8f9aed5c413447b617e274a4b9c317009aaec01699a3e51b235c1/detection (PE-variant)
+# Reference: https://www.virustotal.com/gui/file/a38216166e363d752f37bdf0419d2e2694279beab8df66d40f56c679563e7a4f/detection (PE-variant)
+# Reference: https://www.virustotal.com/gui/file/2ca79a8f91c242cb90f211bdd89d8c70ace81a0cc5b4a38e0f8f473fdc195358/detection (PE-variant)
+
+185.173.26.156:6660
+c541f5d439a359.ddns.net

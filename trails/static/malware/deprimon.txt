@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2019/11/21/deprimon-default-print-monitor-malicious-downloader/
+# Reference: https://otx.alienvault.com/pulse/5dd6b3d499e1665c94772ded
+
+almawaddrial.com
+alwatantrade.com
+babmaftuh.com
+elehenishing.com
+mdeastserv.com
+shayalyawm.com
+teknikgorus.com
+wnupdnew.com
+img.dealscienters.net

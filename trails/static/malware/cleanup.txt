@@ -1,0 +1,47 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cleanup loader
+
+# Reference: https://twitter.com/AnFam17/status/1757932257765945478
+# Reference: https://www.virustotal.com/gui/ip-address/91.240.118.215/relations
+# Reference: https://www.virustotal.com/gui/file/d599c99968765eddfed0f9c8a3e6d1f4531eb2bbaadfbab6d0cf3bdbad0c8b3c/detection
+# Reference: https://www.virustotal.com/gui/file/ee93b7ef5509884b9451ea08347f2444d0a51fed2b98307f55f3ce6890a621dd/detection
+# Reference: https://www.virustotal.com/gui/file/dc50491b564dd8464d6be3b5605e0b55016acb8341b6b21ced5858baecc22f65/detection
+# Reference: https://www.virustotal.com/gui/file/2e59e6658929eeb14b785535a40659fc8526d93f58db594a919ac4afd1986125/detection
+# Reference: https://www.virustotal.com/gui/file/525672992b286885ba20a60b7a415979cba79fcdf7a0dcdd17ff29a04842d8a9/detection
+# Reference: https://www.virustotal.com/gui/file/c095497d1144ceca4cbbbeda19952322aa001e61318d6eecd4e97002f3cfc9aa/detection
+
+basiconlineincome.com
+connectivity-check.linkpc.net
+michael-page-uk-s04.com
+time-check-broker.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-10-09-v10717/2039
+
+aut0deskk.com
+autosdesk.net
+auttodessk.com
+backuppingplanseasy.com
+buydotclearlynet.com
+crystal-maker.com
+crystalmaker.pro
+docsfromthewest.com
+firscountryours.eu
+gang-force.com
+heartwithinadream.com
+itisthebestforyou.eu
+lakeshorehomebuilders.com
+metalforthecoredream.com
+microsoftt-teams-download.com
+microsoftt-teams.com
+microssoft-teams.com
+micrsoft-teams-download.com
+nnlcrosaftteams-download.pro
+ns-client.net
+pixalate.us
+prodfindfeatures.com
+utka.xyz
+webex-up.com
+whereverhomebe.com
+zoom-video.org

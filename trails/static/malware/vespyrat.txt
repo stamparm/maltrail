@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: exodus stealer
+
+# Reference: https://twitter.com/suyog41/status/1713835084800020482
+# Reference: https://www.virustotal.com/gui/file/3e603a300bab74dc4063bfdd505f5dfd1942efdae72c753451d6d6df3112bbd3/detection
+# Reference: https://www.virustotal.com/gui/file/6d3a058ebf48b3cdecc0135f0177076090c2e5a4fdd1952a6bd4badaf9b66676/detection
+
+fuck-lgbtq.com
+vespyprojects.com

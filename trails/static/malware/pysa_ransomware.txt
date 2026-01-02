@@ -1,0 +1,89 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ChaChi, MirrorBlast
+
+# Reference: https://www.documentcloud.org/documents/20514564-pysa-ransomware-bc
+# Reference: https://www.bleepingcomputer.com/news/security/fbi-warns-of-escalating-pysa-ransomware-attacks-on-education-orgs/
+
+na47pldl5eoqxt42.onion
+pysa2bitc5ldeyfak4seeruqymqs4sj5wt5qkcq7aoyg4h2acqieywad.onion
+
+# Reference: https://blogs.blackberry.com/en/2021/06/pysa-loves-chachi-a-new-golang-rat
+# Reference: https://unit42.paloaltonetworks.com/gasket-and-magicsocks-tools-install-mespinoza-ransomware/
+# Reference: https://otx.alienvault.com/pulse/60d344aae66268d9b2a55c3a
+# Reference: https://otx.alienvault.com/pulse/60f01d8cfe51e550951c8023
+
+http://89.44.9.229
+192.64.119.107:1337
+accounting-consult.xyz
+bancocchile.com
+blitz.best
+blitzz.best
+ccenter.tech
+creatordampfe.xyz
+cvar99.xyz
+dowax.xyz
+english-breakfast.xyz
+englishdialoge.xyz
+englishdict.xyz
+evildomain.xyz
+firefox-search.xyz
+ntservicepack.com
+productoccup.tech
+pump-online.xyz
+reportservicefuture.website
+sbvjhs.club
+sbvjhs.xyz
+serchtext.xyz
+spm.best
+starhouse.xyz
+statistics-update.xyz
+transnet.wiki
+visual-translator.xyz
+wiki-text.xyz
+login.bancocchile.com
+
+# Reference: https://www.hackplayers.com/2021/02/sitios-cibercriminales-deepweb.html
+
+wqmfzni2nvbbpk25.onion
+
+# Reference: https://www.virustotal.com/gui/file/64b9b5874820ca26344c919b518d6c0599a991aaf1943a519da98d294bebf01f/detection
+
+http://185.183.96.147
+http://37.221.113.66
+185.183.96.147:25
+185.183.96.147:7895
+37.221.113.66:25
+37.221.113.66:7895
+
+# Reference: https://twitter.com/StopMalvertisin/status/1445881814149525511
+# Reference: https://www.virustotal.com/gui/file/ed7709cbbad9e164a45235be5270d6fb3492010ea945728a7d58f65f63434e58/detection
+
+http://192.36.27.92
+
+# Reference: https://twitter.com/Cyjax_Ltd/status/1446060667455393795
+# Reference: https://www.virustotal.com/gui/file/e87595fde2ead6bf842d86b3170c09d4c7b462ca23afcd3484b9bafb46c35338/detection
+# Reference: https://www.virustotal.com/gui/file/1c3b8a671c18cf25c71b21ad47f827c3037291f122bbcb148fae416973b636f1/detection
+
+http://155.138.205.35
+http://185.202.93.201
+http://185.225.19.156
+fidufagios.com
+/mlp.php?data=
+
+# Reference: https://twitter.com/dms1899/status/1446111049233551369
+# Reference: https://tria.ge/211007-q566haceb3/behavioral1
+
+http://5.188.108.40
+feristoaul.com
+
+# Reference: https://twitter.com/ffforward/status/1446106208897798146
+# Reference: https://tria.ge/211007-qp4enscffl/behavioral1
+
+http://185.176.220.198
+http://185.225.19.246
+
+# Reference: https://www.virustotal.com/gui/file/7073c55a5532d90c738993c14b6f983d1fb75030799e40249086f739c07c4ddc/detection
+
+http://194.180.174.6

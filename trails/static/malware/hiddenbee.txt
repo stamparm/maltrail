@@ -1,0 +1,54 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Note: interconnected with purplefox cases
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/05/hidden-bee-lets-go-down-the-rabbit-hole/
+# Reference: https://www.virustotal.com/gui/file/fd9edb6d9ac9674e797e51b3767e45a2eb23343c2ce88e64ef20d26f641064af/behavior/VirusTotal%20Cuckoofork
+
+favcom.space
+onetouchauthentication.club
+118.41.45.124:9000
+23.244.62.50:1108
+23.244.62.50:443
+
+# Reference: https://twitter.com/adrian__luca/status/1151393084380459009
+# Reference: https://app.any.run/tasks/61147c70-2def-4d72-aa32-4b1e45da1180/
+
+38.75.137.9:9088
+
+# Reference: https://blog.malwarebytes.com/threat-analysis/2019/08/the-hidden-bee-infection-chain-part-1-the-stegano-pack/
+
+howtocom.site
+
+# Reference: https://app.any.run/tasks/f6e34b80-b1eb-4941-8ca6-7332ac0b07dd/ (# MALWARE [PTsecurity] Encrypted Hidden Bee binary payload)
+# Reference: https://pastebin.com/vszQZqa1
+# Reference: http://vxcube.com/recent-threats-ioc/5cf5fa4da39bb53e55a5e9b4/detail
+
+167.88.61.165:1108
+167.88.61.169:13782
+fastssl.xyz
+gotocom.xyz
+topvipsr.xyz
+lookupdns.club
+onetouchauthentication.club
+twotouchauthentication.online
+favcom.space
+
+# Reference: https://www.virustotal.com/gui/file/72711675c477df6dee71b56c8d626c6784d154183c4548171c8b9d3d22bc0a50/detection
+
+219.240.100.211:9000
+38.75.136.21:13782
+38.75.136.245:1108
+topvipdg.me
+
+# Reference: https://www.virustotal.com/gui/file/02f73b8ba952204c1053c062490a7c0b97c3d8405be00c4c5024cfdbe9b52bcb/detection
+
+167.88.61.206:13782
+208.91.109.238:1108
+210.92.43.201:9000
+
+# Reference: https://www.virustotal.com/gui/domain/bestip.tech/relations
+# Reference: https://www.virustotal.com/gui/file/1809faa725bf3b17362c7977323221149b5511bc1e6b382b75f01564df089e63/detection
+
+bestip.tech

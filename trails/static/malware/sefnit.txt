@@ -1,0 +1,37 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/Entry.aspx?Name=Trojan:Win32/Sefnit.BW#tab=2
+# Reference: http://www.microsoft.com/security/portal/threat/encyclopedia/Entry.aspx?Name=Win32/Sefnit#tab=2
+
+albfznc.su
+assetsstatistic.com
+dmzhor.com
+full-statistic.com
+fullstatistic.com
+gonjk.su
+gxedw.net
+jameslipon.no-ip.biz
+kimberlybroher.no-ip.biz
+metfsy.org
+olivasonny.no-ip.biz
+patricevaillancourt.sytes.net
+pubzat.com
+ralwze.net
+reserve-statistic.com
+reservestatistic.net
+securitystatistic.com
+service-stat.com
+service-statistic.com
+service-update.net
+srvupd.com
+srvupd.net
+stockstatistic.com
+storestatistic.com
+svcupd.net
+timothymahoney.ddns.me.uk
+updservice.net
+updsrv.net
+updsvc.com
+updsvc.net
+xapjy.org

@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: telemetry stealer
+
+# Reference: https://x.com/naumovax/status/1872258987187687927
+# Reference: https://tria.ge/241221-bqjz4aymh1
+# Reference: https://app.any.run/tasks/21661d76-8b06-455c-b17f-4f838128452d
+# Reference: https://www.virustotal.com/gui/file/1a2165fba2047a7545ac98fecf886f494f780b39cfa3713f6fc329f7898f7f1e/detection
+
+telemetry.top

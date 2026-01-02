@@ -1,0 +1,160 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2018/10/18/new-linux-chachaddos-malware-distributed-servers-vestacp-installed/
+# Reference: https://news.sophos.com/en-us/2018/10/22/chalubo-botnet-wants-to-ddos-from-your-server-or-iot-device/
+
+103.51.13.52:8852
+193.201.224.202:8852
+193.201.224.238:8852
+193.201.224.239:8852
+10afdmasaxsssaqrk.com
+7mfsdfasdmkgmrk.com
+8masaxsssaqrk.com
+9fdmasaxsssaqrk.com
+efbthmoiuykmkjkjgt.com
+hackucdt.com
+linwudi.f3322.net
+lkjhgfdsatryuio.com
+marchdom4.com
+mnbvcxzzz12.com
+poiuytyuiopkjfnf.com
+q111333.top
+rfjejnfjnefje.com
+sq520.f3322.net
+uctkone.com
+zxcvbmnnfjjfwq.com
+
+# Reference: https://twitter.com/zom3y3/status/1201354714480144384
+
+http://103.27.185.139
+
+# Reference: https://www.virustotal.com/gui/file/983b7d21fd6b6d21aff2e3100bed3f738ec50a31d2219afdd7dacc5670bfe017/detection
+
+193.201.224.84:8080
+lakusdvroa.com
+
+# Reference: https://twitter.com/zom3y3/status/1229258375189262336
+# Reference: https://www.virustotal.com/gui/ip-address/103.82.143.51/relations
+# Reference: https://twitter.com/Dinosn/status/1243929863410667520
+# Reference: https://blog.netlab.360.com/two-zero-days-are-targeting-draytek-broadband-cpe-devices-en/
+
+103.82.143.51:58172
+103.82.143.51:58443
+dojustok.com
+justokdo.com
+okjustdo.com
+/vig/tcpst1
+/vig/mailsend.sh1
+/LSOCAISJDANSB.php
+/uploLSkciajUS.php
+
+# Reference: https://twitter.com/0xrb/status/1229351611757056001
+
+156.255.121.102:8080
+46.21.147.113:58126
+dtd5686.com
+
+# Reference: https://twitter.com/r3dbU7z/status/1387721609390305283
+# Reference: https://twitter.com/r3dbU7z/status/1387751419260903426
+# Reference: https://news.sophos.com/en-us/2018/10/22/chalubo-botnet-wants-to-ddos-from-your-server-or-iot-device/
+
+117.21.191.108:8694
+192.186.15.175:8080
+
+# Reference: https://www.virustotal.com/gui/file/0c7c6926e854aac4dc4821be07f826157b576d0a217d74d5675d7b32eb78b50e/detection
+
+91.211.88.225:8080
+nihiosuxnmo.com
+
+# Reference: https://www.virustotal.com/gui/file/a8a2c2f82d542b0e05848d102e2f04239982b48ba7522a83dfc8b1308d7a8c12/detection
+
+91.211.88.6:8080
+sainnguatc.com
+/ASUHALUMNABTC/arm
+/ASUHALUMNABTC/res.dat
+/ASUHALUMNABTC/
+
+# Generic trails
+
+/ASDFRE/
+/ASDFREM/
+/CATLSIDWU
+/DAAADF/
+/GHJFFGND/
+/JHKDSAG/
+/RTEGF/
+/RTEGFN01/
+/YTRFDA/
+/ASDFRE.dat
+/GHJFFGND.dat
+/JHKDSAG.dat
+/RTEGFN01.dat
+/YTRFDA.dat
+/test/res.dat
+/libsdes
+/1207Rape
+/233Rape
+/creator-arc
+/creator-arcle-hs38
+/creator-arm
+/creator-arm4
+/creator-arm4l
+/creator-arm4t
+/creator-arm4tl
+/creator-arm4tll
+/creator-arm5
+/creator-arm5l
+/creator-arm5n
+/creator-arm6
+/creator-arm64
+/creator-arm6l
+/creator-arm7
+/creator-arm7l
+/creator-arm8
+/creator-armv4
+/creator-armv4l
+/creator-armv5l
+/creator-armv6
+/creator-armv61
+/creator-armv6l
+/creator-armv7l
+/creator-dbg
+/creator-exploit
+/creator-i4
+/creator-i486
+/creator-i586
+/creator-i6
+/creator-i686
+/creator-kill
+/creator-m68
+/creator-m68k
+/creator-mips
+/creator-mips64
+/creator-mipseb
+/creator-mipsel
+/creator-mpsl
+/creator-pcc
+/creator-powerpc
+/creator-powerpc-440fp
+/creator-powerppc
+/creator-ppc
+/creator-pp-c
+/creator-ppc2
+/creator-ppc440
+/creator-ppc440fp
+/creator-root
+/creator-root32
+/creator-sh
+/creator-sh4
+/creator-sparc
+/creator-spc
+/creator-ssh4
+/creator-x32
+/creator-x32_64
+/creator-x64
+/creator-x86
+/creator-x86_32
+/creator-x86_64
+/creator0923
+/creator30036

@@ -1,0 +1,40 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: http://id-ransomware.blogspot.com/2017/01/sage-2-ransomware.html (Russian)
+
+fortycooola.top
+newfoodas.top
+smoeroota.top
+
+# Reference: https://twitter.com/drProct0r/status/830532905336180736
+
+meyaau.com
+
+# Reference: https://www.fortinet.com/blog/threat-research/evasive-sage-2-2-ransomware-variant-targets-more-countries.html
+
+indiasoujapa.info
+johnmoplan.top
+mondayyesha.info
+sutranjdf.info
+xxxkeyoplw.top
+z5dq36kjy5swjtmr.onion
+
+# Reference: https://twitter.com/peterkruse/status/870562376881508352
+
+bidsintro.trade
+gmailtrade.space
+information4all.loan
+ololoexport.bid
+ololoinfo.win
+xblinformation.loan
+xblinformation.trade
+ztsinfo.xyz
+
+# Reference: https://twitter.com/c0d3inj3cT/status/920726596998148096
+
+folxdogerm.info
+
+# Reference: https://www.virustotal.com/gui/file/2f61817ea3d056758d46fc44316aec2d1fbd48dcb66eb7d66ddf53e0e6adafaf/detection
+
+http://185.25.50.5

@@ -1,0 +1,31 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: apt12, apt-c-12, bluemushroom, ixeshe, dyncalc, dnscalc
+
+# Reference: https://www.fireeye.com/blog/threat-research/2014/09/darwins-favorite-apt-group-2.html
+# Reference: https://github.com/fireeye/iocs/tree/master/APT12
+# Reference: https://www.virustotal.com/gui/ip-address/141.108.2.157/relations
+
+http://141.108.2.157
+icc.ignorelist.com
+video.csmcpr.com
+
+# Reference: https://twitter.com/ccxsaber/status/1189017890927726593
+# Reference: https://www.virustotal.com/gui/file/a70d914bf690898d0737692735e99cea29741bb90360ba26e5c9cad9c59506b2/detection
+
+http://139.59.101.236
+http://139.59.110.217
+http://139.59.226.29
+
+# Reference: https://bitofhex.com/2020/02/10/sapphire-mushroom-lnk-files/
+# Reference: https://otx.alienvault.com/pulse/5e447f6666b942ff1568cf2a
+
+178.128.110.214:8080
+http://128.199.73.43
+http://139.59.226.29
+http://139.59.230.181
+http://159.65.127.93
+http://159.65.74.97
+http://188.226.144.42
+http://59.73.16.165

@@ -1,0 +1,155 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/malwrhunterteam/status/1851230030455599554
+# Reference: https://x.com/9823f_/status/1854278456550261235
+# Reference: https://x.com/P4nd3m1cb0y/status/1856767649557950697
+# Reference: https://app.validin.com/detail?find=GHOSTSPY&type=raw&ref_id=24736d2652c#tab=host_pairs
+# Reference: https://www.virustotal.com/gui/file/e9f2f6e47e071ed2a0df5c75e787b2512ba8a601e55c91ab49ea837fd7a0fc85/detection
+
+http://191.96.78.250
+http://37.60.233.14
+191.96.78.250:443
+37.60.233.14:3000
+37.60.233.14:4200
+37.60.233.14:443
+app-aeat.com
+gstpainel.fun
+gstpanel.co
+gsttrust.org
+kbulot.com.br
+mt2gm.org
+storeappweb.com
+pulsera.tibiaguildtools.com
+server.kbulot.com.br
+stealth.gstpainel.fun
+vmi2121811.contaboserver.net
+
+# Reference: https://x.com/9823f_/status/1851604584889795055
+
+techdroidspy.com
+socket.techdroidspy.com
+
+# Reference: https://x.com/9823f_/status/1853761761372967097
+# Reference: https://www.virustotal.com/gui/file/d2c0db8e806e15339f4d81458eb058000d135458395978d53457261fb98c3267/detection
+# Reference: https://www.virustotal.com/gui/file/c70f155c09a91b2ee8706780ef59177e1b8e607da8b12d9d4a9fbf56668a44db/detection
+
+200.9.155.115:7212
+200-9-155-115.tynahost.com
+
+# Reference: https://x.com/9823f_/status/1854480880313434381
+# Reference: https://github.com/NoThrowForwardIt/PhishLabBR/blob/main/phishing_samples/decolar-ghostRAT
+
+123viagens.site
+123voos.site
+adecollar.com
+agorafriday.com
+black-decor.com
+black-nas-ferias.com
+blackfridaydecole2023.com
+blackvoos.com
+blackvoosdecol4ar.com
+clube-decolar.com
+comprepassagenshoje.com
+cupom-decollar.com
+declar-megapromocao.com
+decolabr.com
+decolar-air.com
+decolar-blackfriday.com
+decolar-clube.com.br
+decolar-flights.com
+decolar-fly.com
+decolar-fridayofertas.com
+decolar-on.com
+decolar-passagems.com
+decolar-pay.com
+decolar-pedidos.com
+decolar-semanaturismo.com
+decolar-travels.com
+decolar-trips.com
+decolar-turismo.com
+decolar-turismos.com
+decolar-voe-barato.com
+decolar.dev
+decolar.group
+decolar.how
+decolar.life
+decolar.ofertas.ws
+decolar.space
+decolar2024.com
+decolarapp.com
+decolarblack.com
+decolarbr.net
+decolarbr.store
+decolarcomseguranca.com
+decolard.com
+decolardescontos.com
+decolarjan2024.com
+decolarpassagems.com
+decolarr-bilheste.com
+decolarr.com
+decolarr.dev
+decolars-viagens.com
+decolarstor.com
+decolaviagem.com
+decole-agora.com
+decole-conosco.com
+decoleconosco.com
+decollarpassagem.com
+decollarrr.com
+decolllar.com
+decollr.com
+decollrr.com
+decolr-blackfriday.com
+decolvoosrapido.info
+destino-deco-lar.com
+destinos-decollar.com
+décolar.com
+ip-149-56-81.net
+ip-192-99-27.net
+ip223.ip-192-99-27.net
+ip29.ip-149-56-81.net
+janeiroreserveaereas.com
+loja.decolars-viagens.com
+m.decolarblack.com
+minhasviajenssempreaqui.com
+novembro-black2023.com
+ofertas-decolar.com
+ofertas.decolars-viagens.com
+ofertas.ws
+ofertasdecolaronline.com
+ofertasdodiadecolar.com
+pacotesdecolar.brazilsouth.cloudapp.azure.com
+passagemaereasnapromocao.com.br
+passagens-economicas123.com
+passagens123-economicas.com
+passagensbaratasonline.com
+passagenscompleta.com
+promoferias23.com
+promosdecor.com
+reservejaneiro24aereas.com
+sac-decola.com
+seu-destino.com
+site-decola.com
+site-decolar.com
+sportbetonline.shop
+turismo.decolars-viagens.com
+turismoviagemdecolar.com
+viagememjaneiro24.com
+viagenssdecolar.com
+viajar-e-um-barato-decolar.com
+voedecolar.com
+voos.decolars-viagens.com
+vooscoleaqui.com
+voosdec4lar.com
+web.decolarblack.com
+xn--dcolar-bva.com
+
+# Reference: https://x.com/alberto__segura/status/1909565747921105064
+# Reference: https://www.virustotal.com/gui/file/1d7a71796d221b2f92d2f65f779cc3726e5ca005fe442b4aaa8b766e61811a39/detection
+
+xpmoduloseguro.pages.dev
+
+# Reference: https://x.com/P4nd3m1cb0y/status/1954877056036089953
+
+admin.pegasus-tech.org

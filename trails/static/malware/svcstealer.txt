@@ -1,0 +1,60 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: diamotrix, powerloader
+
+# Reference: https://x.com/ViriBack/status/1892003884253557069
+# Reference: https://x.com/ViriBack/status/1892004446923632886
+# Reference: https://app.any.run/tasks/9a3ecb79-69f5-4fe9-a7ef-ec5535471bcb
+# Reference: https://www.virustotal.com/gui/file/5400f3387d683cd31ed39f493893da4107b65be55163573bd219c749802afe69/detection
+# Reference: https://www.virustotal.com/gui/file/06bef5b61ad007fb027300ed10a02ff9884a082570cde9434829093cfd3b4907/detection
+# Reference: https://www.virustotal.com/gui/file/1f7b9d1e0f24e7f8c93b3dadad78881c2f9ad8544d57d72cd4f8d918422dc2e9/detection
+
+http://176.113.115.149
+http://185.81.68.156
+diamotrix.online
+
+# Reference: https://www.virustotal.com/gui/file/01f303cb85989ef20126e3f30e8d1509ab498c1950ecddd1a9e0f6d7f04183ac/detection
+
+http://185.39.17.158
+diamotrix.world
+
+# Reference: https://x.com/ViriBack/status/1930699241133093003
+
+diamotrix.club
+
+# Reference: https://x.com/naumovax/status/1932001327455797326
+# Reference: https://app.any.run/tasks/f99aab90-43bc-4a29-86ec-31dafce1f23e
+# Reference: https://tria.ge/250604-e7e91sdq8t/behavioral1
+
+62.60.226.191:27015
+
+# Reference: https://x.com/cyberexplorer0/status/1932146057955180761
+
+http://194.38.21.76
+/h94f7qwun.php
+
+# Reference: https://www.virustotal.com/gui/file/ee58e65ad8314b7e708d4440623caf03a5c70d33c29e58b1d5cb0a52b625fc3d/detection
+
+http://185.156.72.89
+185.156.72.89:27015
+
+# Reference: https://www.virustotal.com/gui/file/2dc9193e01e0b5386a56678c3384d2f68c2e246bdd23501671242428ea231d3d/detection
+
+http://176.46.157.64
+176.46.157.64:27015
+/nzcwzue/pqrfxn.php
+/nzcwzue/
+/pqrfxn.php
+
+# Reference: https://www.virustotal.com/gui/file/13bdd724d62c42ea1cc551b06b94626dfbcd07c30830363d3d0ec212feea4860/detection
+
+http://77.90.153.62
+77.90.153.62:27015
+
+# Generic
+
+/diamo/gate.php
+/diamo/post.php
+/svcstealer/get.php
+/VzCAHn.php

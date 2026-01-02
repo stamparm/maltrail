@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: Adobe Worm Faker
+
+# Reference: https://www.cybereason.com/blog/adobe-worm-faker-uses-lolbins-and-dynamic-techniques-to-deliver-customized-payloads
+
+hlem.myq-see.com
+oahm.duckdns.org
+simone.linkpc.net
+105.98.9.222:186
+41.105.50.134:186

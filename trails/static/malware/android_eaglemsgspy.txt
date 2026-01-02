@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.lookout.com/threat-intelligence/article/eaglemsgspy-chinese-android-surveillanceware
+
+tzsafe.com
+tzsafe.tk
+zrtsafe.com
+bug.tzsafe.com
+eagle.demo.tzsafe.com
+eagle.tzsafe.com
+eagle.tzsafe.tk
+eagle.zrtsafe.com
+efence.demo.tzsafe.com
+es.ngrok.tzsafe.com
+git.tzsafe.com
+i.tzsafe.com
+kong.tzsafe.com
+ngrok.tzsafe.com
+qzapp.tzsafe.com
+reapp.tzsafe.tk
+xkong.tzsafe.com

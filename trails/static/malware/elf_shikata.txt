@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: shicata, shikata ga nai, sgn
+
+# Reference: https://x.com/malwrhunterteam/status/1985402754945196449
+# Reference: https://cloud.google.com/blog/topics/threat-intelligence/shikata-ga-nai-encoder-still-going-strong
+# Reference: https://www.juniper.net/us/en/threatlabs/ips-signatures/detail.SHELLCODE:WIN:SHIKATAGANAI-80C.html
+# Reference: https://www.virustotal.com/gui/file/476e98b381df9aef0738f7c9556232929b5b8e0a8ae15799fcdb557f2464327c/detection
+# Reference: https://www.virustotal.com/gui/file/8d9a462aa8aaf0c8601f523153a23b3a745f8fe98b304c68267249d78b362c23/detection
+
+146.190.17.7:50105
+146.190.17.7:53839
+
+# Reference: https://x.com/malwrhunterteam/status/1999911103342506186
+# Reference: https://www.virustotal.com/gui/file/ec5acf333cb67fb7028d1485885098318554119b7acfe4a4ad30e121f58d7058/detection
+# Reference: https://www.virustotal.com/gui/file/0f7151fcf846948d901942ff567e91091026597319052fa0ffd88c17541f3bf6/detection
+# Reference: https://www.virustotal.com/gui/file/3618ae2eb5c712bd3d420808a3edd39023b39de5f486c71f74032b009041067c/detection
+
+195.239.174.11:4444
+195.239.174.11:5559

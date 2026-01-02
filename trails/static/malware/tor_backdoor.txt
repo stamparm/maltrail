@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.welivesecurity.com/2019/10/18/fleecing-onion-trojanized-tor-browser/
+# Reference: https://otx.alienvault.com/pulse/5da98e23a5dda4962725a2fa
+
+onion4fh3ko2ncex.onion
+torproect.org
+tor-browser.org

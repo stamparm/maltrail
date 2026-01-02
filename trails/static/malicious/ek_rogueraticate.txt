@@ -1,0 +1,39 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-16-v10395/866/1
+
+analytics-google-x91.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-18-v10398/878
+
+cheetahsnv.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-24-v10402/896
+
+polyfieldgallery.com
+seosuccesslab.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-28-v10404/902
+
+martinreamask.com
+seyishalom.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-09-18-v10419/957
+
+import19ksnx9ajsn.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-23-v10446/1060
+
+neurotonix–buy.us
+rentfrejob.com
+zxcdota2huysasi.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-10-31-v10454/1086
+
+alsmgjk-igusj.com
+updateadobeflash.com
+
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-11-06-v10458/1095
+
+izikatka0010.com
