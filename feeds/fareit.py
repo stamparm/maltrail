@@ -7,6 +7,7 @@ See the file 'LICENSE' for copying permission
 
 import re
 
+from core.common import fetch_headers
 from core.common import retrieve_content
 
 __url__ = "https://cybercrime-tracker.net/ccpmgate.php"
@@ -16,15 +17,20 @@ __reference__ = "cybercrime-tracker.net"
 
 def fetch():
     retval = {}
-    content = retrieve_content(__url__)
+    headers = fetch_headers(__url__)
 
-    if __check__ in content:
-        for line in content.split('\n'):
-            line = line.strip()
-            if not line or line.startswith('#'):
-                continue
-            if '://' in line:
-                line = re.search(r"://(.*)", line).group(1)
-            retval[line] = (__info__, __reference__)
+    location = headers.get("Location", "")
+    match = re.search(r"\?(__r=[\w.]+)", location)
+    if match:
+        content = retrieve_content(__url__, headers={"Cookie": match.group(1)})
+
+        if __check__ in content:
+            for line in content.split('\n'):
+                line = line.strip()
+                if not line or line.startswith('#'):
+                    continue
+                if '://' in line:
+                    line = re.search(r"://(.*)", line).group(1)
+                retval[line] = (__info__, __reference__)
 
     return retval
