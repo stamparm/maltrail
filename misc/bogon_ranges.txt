@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+0.0.0.0/8
+10.0.0.0/8
+100.64.0.0/10
+127.0.0.0/8
+169.254.0.0/16
+172.16.0.0/12
+192.0.0.0/24
+192.0.2.0/24
+192.168.0.0/16
+198.18.0.0/15
+198.51.100.0/24
+203.0.113.0/24
+224.0.0.0/3
+
+# Reference: https://twitter.com/bad_packets/status/1036706786009481216
+
+# 223.130.8.0/24
+# 223.130.9.0/24
+# 223.130.10.0/24
+# 223.130.11.0/24

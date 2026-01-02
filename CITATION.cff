@@ -1,0 +1,19 @@
+# YAML 1.2
+---
+cff-version: "1.1.0"
+message: "If you use this software, please cite it using these metadata."
+doi: 10.23721/100/1503924
+title: "Maltrail - Malicious traffic detection system"
+authors: 
+  -
+    family-names: Stampar
+    given-names: Miroslav
+    orcid: "https://orcid.org/0000-0002-2662-5469"
+  -
+    family-names: Kasimov
+    given-names: Mikhail
+abstract: "Maltrail is a malicious traffic detection system, utilizing publicly available (black)lists containing malicious and/or generally suspicious trails, along with static trails compiled from various AV reports and custom user defined lists"
+date-released: 2014-12-04
+repository-code: "https://github.com/stamparm/maltrail"
+license: MIT
+...

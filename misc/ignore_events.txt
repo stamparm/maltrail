@@ -1,0 +1,11 @@
+# Syntax:
+#
+# src_ip;src_port;dst_ip;dst_port
+#
+# (Note: '*' means any)
+#
+# Ignore all events from source ip 192.168.0.3
+# 192.168.0.3;*;*;*
+#
+# Ignore all events to SSH port 22
+# *;*;*;22

@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# Reference: http://jeffreysambells.com/2010/10/22/a-git-pre-commit-hook-to-update-androidmanifest-xml-versioncode
+
+if find . -type f -iname "*.js" | xargs grep "debugger;";
+then
+    echo "JS debugger detected"
+    exit 1;
+fi
+
+if find . -type f -iname "*.js" | grep -v thirdparty | xargs grep "console.log";
+then
+    echo "console.log detected"
+    exit 1;
+fi
+
+if find . -type f -iname "*.py" | xargs grep "pdb.set_trace";
+then
+    echo "Python pdb detected"
+    exit 1;
+fi
+
+if find . -type f -iname "maltrail.conf" | xargs grep "SHOW_DEBUG true";
+then
+    echo "SHOW_DEBUG true detected"
+    exit 1;
+fi
+
+if find . -type f -iname "maltrail.conf" | xargs grep "USE_FEED_UPDATES false";
+then
+    echo "USE_FEED_UPDATES false detected"
+    exit 1;
+fi
+
+declare -x SCRIPTPATH="${0}"
+
+SETTINGS="../core/settings.py"
+FULLPATH=${SCRIPTPATH%/*}/$SETTINGS
+
+if [ -f $FULLPATH ]
+then
+    LINE=$(grep -o ${FULLPATH} -e 'VERSION = "[0-9.]*"');
+    declare -a LINE;
+    INCREMENTED=$(python -c "import re, sys; version = re.search('\"([0-9.]*)\"', sys.argv[1]).group(1); _ = version.split('.'); _.append(0) if len(_) < 3 else _; _[-1] = str(int(_[-1]) + 1); print sys.argv[1].replace(version, '.'.join(_))" "$LINE")
+    if [ -n "$INCREMENTED" ]
+    then
+        sed "s/${LINE}/${INCREMENTED}/" $FULLPATH > $FULLPATH.tmp && mv $FULLPATH.tmp $FULLPATH
+        echo "Updated ${INCREMENTED} in ${FULLPATH}";
+    else
+        echo "Something went wrong in VERSION increment"
+        exit 1
+    fi
+    git add $FULLPATH
+fi;
+
+README="../README.md"
+FULLPATH=${SCRIPTPATH%/*}/$README
+
+if [ -f $FULLPATH ]
+then
+    sed -i "s/malware_families\-[0-9]*/malware_families\-`ls -1 ${SCRIPTPATH%/*}/../trails/static/malware/*.txt | grep -v sinkhole | wc -l`/g" $FULLPATH
+    sed -i "s/malware_sinkholes-[0-9]*/malware_sinkholes\-`cat ${SCRIPTPATH%/*}/../trails/static/malware/sinkhole_*.txt | grep -Eo '^[0-9.]+' | wc -l`/g" $FULLPATH
+    git add $FULLPATH
+fi;
