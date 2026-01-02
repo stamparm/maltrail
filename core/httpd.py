@@ -186,7 +186,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src * blob:; script-src 'self' 'unsafe-eval' https://stat.ripe.net; frame-src *; object-src 'none'; block-all-mixed-content;")
 
                         if os.path.basename(path) == "index.html":
-                            content = re.sub(b'\s*<script[^>]+src="js/demo.js"></script>', b'', content)
+                            content = re.sub(b'\\s*<script[^>]+src="js/demo\\.js"></script>', b'', content)
 
                         if extension not in (".htm", ".html"):
                             self.send_header(HTTP_HEADER.EXPIRES, "Sun, 17-Jan-2038 19:14:07 GMT")        # Reference: http://blog.httpwatch.com/2007/12/10/two-simple-rules-for-http-caching/
