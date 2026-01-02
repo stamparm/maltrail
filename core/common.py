@@ -71,6 +71,23 @@ def retrieve_content(url, data=None, headers=None):
 
     return retval
 
+def fetch_headers(url, timeout=10):
+    class _NoRedirect(_urllib.request.HTTPRedirectHandler):
+        def redirect_request(self, req, fp, code, msg, headers, newurl):
+            return None  # prevents following; urllib raises HTTPError for 3xx
+
+    _NO_REDIRECT_OPENER = _urllib.request.build_opener(_NoRedirect())
+
+    req = _urllib.request.Request(url, headers={"User-Agent": USER_AGENT}, method="HEAD")
+
+    try:
+        with _NO_REDIRECT_OPENER.open(req, timeout=timeout) as resp:
+            return dict(resp.headers.items())
+    except _urllib.error.HTTPError as e:
+        if e.code in (301, 302, 303, 307, 308):
+            return dict(e.headers.items())
+        raise
+
 def ipcat_lookup(address):
     if not address:
         return None

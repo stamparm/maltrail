@@ -7,7 +7,7 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "http://45.13.214.41/blacklist.txt"
+__url__ = "https://www.sekuripy.hr/blacklist.txt"
 __check__ = "ipnoise"
 __info__ = "known attacker"
 __reference__ = "sekuripy.hr"
