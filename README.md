@@ -1,6 +1,6 @@
 ![Maltrail](https://i.imgur.com/3xjInOD.png)
 
-[![Python 2.6|2.7|3.x](https://img.shields.io/badge/python-2.6|2.7|3.x-yellow.svg)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-red.svg)](https://github.com/stamparm/maltrail#license) [![Malware families](https://img.shields.io/badge/malware_families-1494-orange.svg)](https://github.com/stamparm/maltrail/tree/master/trails/static/malware) [![Malware sinkholes](https://img.shields.io/badge/malware_sinkholes-1354-green.svg)](https://github.com/stamparm/maltrail/tree/master/trails/static/malware) [![Twitter](https://img.shields.io/badge/twitter-@maltrail-blue.svg)](https://twitter.com/maltrail)
+[![Python 2.6|2.7|3.x](https://img.shields.io/badge/python-2.6|2.7|3.x-yellow.svg)](https://www.python.org/) [![License](https://img.shields.io/badge/license-MIT-red.svg)](https://github.com/stamparm/maltrail#license) [![Malware families](https://img.shields.io/badge/malware_families-1494-orange.svg)](https://github.com/stamparm/maltrail/tree/master/trails/static/malware) [![Malware sinkholes](https://img.shields.io/badge/malware_sinkholes-1354-green.svg)](https://github.com/stamparm/maltrail/tree/master/trails/static/malware) [![X](https://img.shields.io/badge/X-%40maltrail-black.svg)](https://x.com/maltrail)
 
 ## Content
 
@@ -39,7 +39,7 @@
 
 ## Introduction
 
-**Maltrail** is a malicious traffic detection system, utilizing publicly available (black)lists containing malicious and/or generally suspicious trails, along with static trails compiled from various AV reports and custom user defined lists, where trail can be anything from domain name (e.g. `zvpprsensinaix.com` for [Banjori](http://www.johannesbader.ch/2015/02/the-dga-of-banjori/) malware), URL (e.g. `hXXp://109.162.38.120/harsh02.exe` for known malicious [executable](https://www.virustotal.com/en/file/61f56f71b0b04b36d3ef0c14bbbc0df431290d93592d5dd6e3fffcc583ec1e12/analysis/)), IP address (e.g. `185.130.5.231` for known attacker) or HTTP User-Agent header value (e.g. `sqlmap` for automatic SQL injection and database takeover tool). Also, it uses (optional) advanced heuristic mechanisms that can help in discovery of unknown threats (e.g. new malware).
+**Maltrail** is a malicious traffic detection system, utilizing publicly available (black)lists containing malicious and/or generally suspicious trails, along with static trails compiled from various AV reports and custom user defined lists, where a trail can be anything from a domain name (e.g. `zvpprsensinaix.com` for [Banjori](https://bin.re/blog/the-dga-of-banjori/) malware), URL (e.g. `hXXp://109.162.38.120/harsh02.exe` for known malicious [executable](https://www.virustotal.com/en/file/61f56f71b0b04b36d3ef0c14bbbc0df431290d93592d5dd6e3fffcc583ec1e12/analysis/)), IP address (e.g. `185.130.5.231` for known attacker) or HTTP User-Agent header value (e.g. `sqlmap` for automatic SQL injection and database takeover tool). Also, it uses (optional) advanced heuristic mechanisms that can help in the discovery of unknown threats (e.g. new malware).
 
 ![Reporting tool](https://i.imgur.com/Sd9eqoa.png)
 
@@ -126,9 +126,9 @@ Fully functional demo pages with collected real-life threats can be found [here]
 
 ## Requirements
 
-To run Maltrail properly, [Python](http://www.python.org/download/) **2.6**, **2.7** or **3.x** is required on \*nix/BSD system, together with installed [pcapy-ng](https://pypi.org/project/pcapy-ng/) package.
+To run Maltrail properly, [Python](https://www.python.org/download/) **2.6**, **2.7** or **3.x** is required on \*nix/BSD system, together with installed [pcapy-ng](https://pypi.org/project/pcapy-ng/) package.
 
-**NOTE:** Use of ```pcapy``` lib instead of ```pcapy-ng``` can lead to incorrect work of Maltrail, especially on **Python 3.x** environments. [Examples](https://github.com/stamparm/maltrail/issues?q=label%3Apcapy-ng-related+is%3Aclosed).
+**NOTE:** Please use ```pcapy-ng```. The older ```pcapy``` library is deprecated and causes issues in Python 3 environments. [Examples](https://github.com/stamparm/maltrail/issues?q=label%3Apcapy-ng-related+is%3Aclosed).
 
 - **Sensor** component requires at least 1GB of RAM to run in single-process mode or more if run in multiprocessing mode, depending on the value used for option `CAPTURE_BUFFER`. Additionally, **Sensor** component (in the general case) requires administrative/root privileges.
 
@@ -185,7 +185,7 @@ Start the container with `docker run`:
 ```sh
 # Build image
 # Start the server
-docker run -d --name maltrail --restart=unless-stopped --port 8338:8338/tcp --port 8337:8337/udp -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro ghcr.io/stamparm/maltrail:latest
+docker run -d --name maltrail --restart=unless-stopped -p 8338:8338/tcp -p 8337:8337/udp -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro ghcr.io/stamparm/maltrail:latest
 # Update the image regularly
 docker stop maltrail
 docker pull ghcr.io/stamparm/maltrail:latest
@@ -350,7 +350,7 @@ When moving mouse over `src_ip` and `dst_ip` table entries, information tooltip 
 
 ![On mouse over IP](https://i.imgur.com/BgKchAX.png)
 
-Event details (e.g. `src_port`, `dst_port`, `proto`, etc.) that differ inside same threat entry are condensed in form of a bubble icon (i.e. ![Ellipsis](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/ellipsis.png)). This is performed to get an usable reporting interface with as less rows as possible. Moving mouse over such icon will result in a display of an information tooltip with all items held (e.g. all port numbers being scanned by `attacker`):
+Event details (e.g. `src_port`, `dst_port`, `proto`, etc.) that differ inside same threat entry are condensed in form of a bubble icon (i.e. ![Ellipsis](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/ellipsis.png)). This is performed to maintain a usable reporting interface with as few rows as possible. Moving mouse over such icon will result in a display of an information tooltip with all items held (e.g. all port numbers being scanned by `attacker`):
 
 ![On mouse over bubble](https://i.imgur.com/BfYT2u7.png)
 
@@ -358,7 +358,7 @@ Clicking on one such icon will open a new dialog containing all stored items (No
 
 ![Ctrl-C dialog](https://i.imgur.com/9pgMpiR.png)
 
-When hovering mouse pointer over the threat's trail for couple of seconds it will result in a frame consisted of results using the trail as a search term performed against ~~[Search Encrypt](https://www.searchencrypt.com/)~~ [searX](https://searx.nixnet.services/) search engine. In lots of cases, this provides basic information about the threat itself, eliminating the need for user to do the manual search for it. In upper right corner of the opened frame window there are two extra buttons. By clicking the first one (i.e. ![New tab icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/newtab.png)), the resulting frame will be opened inside the new browser's tab (or window), while by clicking the second one (i.e. ![Close icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/close.png)) will immediately close the frame (Note: the same action is achieved by moving the mouse pointer outside the frame borders):
+When hovering mouse pointer over the threat's trail for couple of seconds it will result in a frame consisted of results using the trail as a search term performed against [searX](https://searx.nixnet.services/) search engine. In lots of cases, this provides basic information about the threat itself, eliminating the need for user to do the manual search for it. In upper right corner of the opened frame window there are two extra buttons. By clicking the first one (i.e. ![New tab icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/newtab.png)), the resulting frame will be opened inside the new browser's tab (or window), while by clicking the second one (i.e. ![Close icon](https://raw.githubusercontent.com/stamparm/maltrail/master/html/images/close.png)) will immediately close the frame (Note: the same action is achieved by moving the mouse pointer outside the frame borders):
 
 ![On mouse over trail](https://i.imgur.com/ZxnHn1N.png)
 
@@ -651,7 +651,7 @@ This software is provided under a MIT License. See the accompanying [LICENSE](ht
 * [OPNSense Gateway Plugin](https://github.com/opnsense/plugins/pull/1257)
 * [D4 Project](https://www.d4-project.org/2019/09/25/maltrail-integration.html)
 * [BlackArch Linux](https://github.com/BlackArch/blackarch/blob/master/packages/maltrail/PKGBUILD)
-* [Validin LLC](https://twitter.com/ValidinLLC/status/1719666086390517762)
+* [Validin LLC](https://x.com/ValidinLLC/status/1719666086390517762)
 * [Maltrail Add-on for Splunk](https://splunkbase.splunk.com/app/7211)
 * [Maltrail decoder and rules for Wazuh](https://github.com/MikhailKasimov/maltrail-wazuh-decoder-and-rules)
 * [GScan](https://github.com/grayddq/GScan) <sup>1</sup>
