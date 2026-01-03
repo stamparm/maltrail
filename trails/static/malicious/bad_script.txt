@@ -9157,6 +9157,13 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /hailzampone.ps1
 /landformbrowsing.ps1
 
+# Reference: https://x.com/BlinkzSec/status/2006510161280553155
+
+/citrix-exploit/
+/CVE-2020-0796-RCE-POC/
+/CVE-2023-3519/
+/CVE-2025-24813-Scanner/
+
 # Generic
 
 /5c0ca79.php
