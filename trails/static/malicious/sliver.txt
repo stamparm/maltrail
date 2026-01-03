@@ -7810,6 +7810,10 @@ milauth-mygovin.serveftp.com
 
 51.210.96.217:8888
 
+# Reference: https://www.virustotal.com/gui/file/485a464b2c2bdcf617c7793222301140d47b2a929bb2e2efdaf455333de769dc/detection
+
+http://47.237.15.69
+
 # Generic
 
 /.sliver-client/
