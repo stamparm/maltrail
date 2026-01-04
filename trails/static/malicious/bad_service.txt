@@ -4343,3 +4343,8 @@ powerstresser.pro
 
 opensmart.site
 stressing-world.online
+
+# Reference: https://x.com/banthisguy9349/status/2007701400189567036
+# Reference: https://infosecwriteups.com/analyzing-a-remcos-rat-infection-5c9b6bfd7139
+
+breakingsecurity.net
