@@ -45762,6 +45762,22 @@ booking.web-partner-app.com
 
 gao.or.kr/vendor/jquery/img.png
 
+# Reference: https://x.com/JAMESWT_WT/status/2007726229089333737
+# Reference: https://www.virustotal.com/gui/ip-address/64.188.112.52/relations
+
+account-pulseudpate.com
+accountbook-reservation.com
+accountpulse-autorisation591826.com
+accvlusrchck.com
+admin-extranet-information.com
+admin-extranet-mail.com
+amyarostai.com
+monawyisa.com
+pulseaccounts-autorisate572621.com
+uniquedestinatlons.com
+updtbkg.com
+willyprosty.com
+
 # Generic
 
 /a3A7qLVn/
