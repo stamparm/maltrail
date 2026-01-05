@@ -3410,6 +3410,10 @@ evam-web-sdk.s3.dualstack.eu-central-1.amazonaws.com
 82.156.188.211:8888
 ss.cybiz.ggff.net
 
+# Reference: https://x.com/threatquery/status/2007195203002671325
+
+57.158.26.42:8888
+
 # Generic
 
 /supershell/login
