@@ -25,11 +25,16 @@ def read_block(buffer, i):
     offset = i * BLOCK_LENGTH % config.CAPTURE_BUFFER
 
     while True:
-        if buffer[offset] == BLOCK_MARKER.END:
+        marker = buffer[offset]
+        if marker == BLOCK_MARKER.END:
             return None
 
-        while buffer[offset] == BLOCK_MARKER.WRITE:
+        while marker == BLOCK_MARKER.WRITE:
             time.sleep(SHORT_SENSOR_SLEEP_TIME)
+            marker = buffer[offset]
+
+        if marker == BLOCK_MARKER.END:
+            return None
 
         buffer[offset] = BLOCK_MARKER.READ
         buffer.seek(offset + 1)
@@ -61,20 +66,18 @@ def worker(buffer, n, offset, mod, process_packet):
 
     def update_timer():
         global _timer
-
-        if (time.time() - os.stat(config.TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD:
-            _ = None
-            while True:
-                _ = load_trails(True)
-                if _:
-                    trails.clear()
-                    trails.update(_)
-                    break
-                else:
+        try:
+            if (time.time() - os.stat(config.TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD:
+                while True:
+                    _ = load_trails(True)
+                    if _:
+                        trails.clear()
+                        trails.update(_)
+                        break
                     time.sleep(LOAD_TRAILS_RETRY_SLEEP_TIME)
-
-        _timer = threading.Timer(config.UPDATE_PERIOD, update_timer)
-        _timer.start()
+        finally:
+            _timer = threading.Timer(config.UPDATE_PERIOD, update_timer)
+            _timer.start()
 
     update_timer()
 
