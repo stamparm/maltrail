@@ -597,7 +597,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                         if config.USE_HEURISTICS:
                             match = re.search(r"\b(CF-Connecting-IP|True-Client-IP|X-Forwarded-For):\s*([0-9.]+)".encode(), packet, re.I)
                             if match:
-                                src_ip = "%s,%s" % (src_ip, match.group(1))
+                                forwarded_ip = get_text(match.group(2))
+                                src_ip = "%s,%s" % (src_ip, forwarded_ip)
 
                             for char in SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS:
                                 replacement = SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS[char]
@@ -752,7 +753,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                     _ = offset + 5
                                     try:
                                         while _ < len(dns_data):
-                                            if ord(dns_data[_:_ + 1]) & 0xc0 != 0 and dns_data[_ + 2] == "\00" and dns_data[_ + 3] == "\x01":  # Type A
+                                            if (ord(dns_data[_:_ + 1]) & 0xc0 != 0) and dns_data[_ + 2:_ + 4] == b"\x00\x01":  # Type A
                                                 break
                                             else:
                                                 _ += 12 + struct.unpack("!H", dns_data[_ + 10: _ + 12])[0]
@@ -957,7 +958,12 @@ def init():
 
                 found = False
                 for name, function in inspect.getmembers(module, inspect.isfunction):
-                    if name == "plugin" and not set(inspect.getargspec(function).args) & set(("event_tuple', 'packet")):
+                    try:
+                        args = inspect.getfullargspec(function).args
+                    except AttributeError:
+                        args = inspect.getargspec(function).args
+
+                    if name == "plugin" and set(("event_tuple", "packet")).issubset(set(args)):
                         found = True
                         config.plugin_functions.append(function)
                         function.__name__ = module.__name__
@@ -1037,11 +1043,7 @@ def init():
             p = subprocess.Popen("schedtool -n -2 -M 2 -p 10 -a 0x%02x %d" % (affinity, os.getpid()), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             _, stderr = p.communicate()
             if "not found" in stderr:
-                msg, _ = "[?] please install 'schedtool' for better CPU scheduling", platform.linux_distribution()[0].lower()
-                for distro, install in {("fedora", "centos"): "sudo yum install schedtool", ("debian", "ubuntu"): "sudo apt-get install schedtool"}.items():
-                    if _ in distro:
-                        msg += " (e.g. '%s')" % install
-                        break
+                msg = "[?] please install 'schedtool' for better CPU scheduling"
                 print(msg)
         except:
             pass
