@@ -37363,6 +37363,7 @@ paypalhelp.app
 paypaymentsonline.com
 pbid-de.com
 pdfadobefilecenter.net
+pending-new-requirement.com
 pending-token-review.com
 phantom-recovery.com
 phonebypaid.com
@@ -37516,6 +37517,7 @@ safedocumentview.com
 safedocumentviewer.com
 safefidelity.im
 safekeeply.com
+safekeeplysearch.com
 sahifanetuponlinde.com
 sairausvakuutus.com
 sakkointrum.com
@@ -37806,6 +37808,7 @@ vpnprivacyz.com
 vr-sicherheit.live
 vulbsl-v.com
 vzwpinchange.com
+w-connect.sbs
 waliuhiinm.com
 wallet-create.com
 walletconnect-virusscanner.com
