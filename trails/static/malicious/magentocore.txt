@@ -16536,6 +16536,10 @@ supluyers.com
 tryanalitics.com
 jquery.googlemanageranalytic.com
 
+# Reference: https://x.com/sdcyberresearch/status/2008553327550726534
+
+peachseo.com
+
 # Generic
 
 /assets/lfg.js
