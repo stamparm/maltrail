@@ -1667,7 +1667,7 @@ function initDetails() {
                         if (_.length > 40) {
                             _ = _.substring(0, 40) + "<br>" + _.substring(40);
                         }
-                        var msg = "<p><b>" + _ + "</b></p>";
+                        var msg = "<p><b>" + escapeHtml(_) + "</b></p>";
                         ui.tooltip.find(".ui-tooltip-content").html(msg + "please wait...");
 
                         $.ajax("https://stat.ripe.net/data/whois/data.json?resource=" + ip, { dataType:"jsonp", ip: ip, msg: msg })
