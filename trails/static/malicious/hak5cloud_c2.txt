@@ -1890,6 +1890,7 @@ c2.danclark.net
 c2.dualzit.nl
 c2.entonytocco.com
 c2.fallingworks.com
+c2.fishtastik.com
 c2.gatewaycsb.co
 c2.hackbox.se
 c2.homelabs.pro
@@ -1945,6 +1946,7 @@ cloud-c2.poneycorp.fr
 cloud.condetradingcorp.net
 cloud.hypyke.com
 cloud.mikebosland.com
+cloud2.haystacks.it
 cloud2.mikebosland.com
 cloudc2.airme.org
 cloudc2.bellinghammakerspace.org
