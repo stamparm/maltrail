@@ -45912,6 +45912,12 @@ reviewgeuytotherrrom.com
 ultrajetbooking.shop
 vipjetbookingalliance.shop
 
+# Reference: https://x.com/JAMESWT_WT/status/2008967551360123209
+# Reference: https://www.malware-traffic-analysis.net/2026/01/06/index.html
+
+http://193.111.208.238
+lpiaretes.com
+
 # Generic
 
 /a3A7qLVn/
