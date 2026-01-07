@@ -533,3 +533,9 @@ ukhorizons.com
 # Reference: https://www.virustotal.com/gui/ip-address/206.71.149.57/relations
 
 abqsales.com
+
+# Reference: https://x.com/JAMESWT_WT/status/2008967551360123209
+# Reference: https://www.malware-traffic-analysis.net/2026/01/06/index.html
+
+dinozozo.com
+pippyheydguide.com
