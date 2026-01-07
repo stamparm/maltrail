@@ -5574,6 +5574,11 @@ service.update-msoftware.com
 dwnld.cc
 lmsoft.dev
 
+# Reference: https://x.com/malwrhunterteam/status/2008881348170465724
+# Reference: https://www.virustotal.com/gui/file/c2b4214f65aaf845bb7ec37c7fe83270d5774ec3b1eafb47cc4b9f793be8c35f/detection
+
+185.254.99.229:443
+
 # Generic
 
 /Havoc/payload/
