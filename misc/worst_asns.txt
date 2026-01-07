@@ -4376,6 +4376,8 @@
 # AS51396
 # Reference: https://ipinfo.io/AS51396
 
+45.153.34.0/24,pfcloud
+45.156.87.0/24,pfcloud
 84.54.51.0/24,pfcloud
 
 # AS51381
