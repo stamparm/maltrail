@@ -1372,3 +1372,11 @@ pingserv.pro
 
 45.145.41.205:8041
 winservec.net
+
+# Reference: https://x.com/malwrhunterteam/status/2009187375797383276
+# Reference: https://www.virustotal.com/gui/file/42c2d0d705fd81a20812353e1f780313ceb53c1805fb0b186f2ca517badd367e/detection
+
+147.124.214.220:8041
+zyabozadpap.top
+app.zyabozadpap.top
+relays.zyabozadpap.top
