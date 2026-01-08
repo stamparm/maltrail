@@ -1,0 +1,18 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: rushdrop, driveswitch, silentraid, bulbature, chronosrat
+
+# Reference: https://blog.talosintelligence.com/uat-7290/
+# Reference: https://www.virustotal.com/gui/ip-address/172.235.15.141/relations
+# Reference: https://www.virustotal.com/gui/file/723c1e59accbb781856a8407f1e64f36038e324d3f0bdb606d35c359ade08200/detection
+# Reference: https://www.virustotal.com/gui/file/59568d0e2da98bad46f0e3165bcf8adadbf724d617ccebcfdaeafbb097b81596/detection
+# Reference: https://www.virustotal.com/gui/file/961ac6942c41c959be471bd7eea6e708f3222a8a607b51d59063d5c58c54a38d/detection
+# Reference: https://www.virustotal.com/gui/file/c30fe320fc301a50b8834fb842d95db273944a6f57af55c864fb3f59640f4cc0/detection
+# Reference: https://www.virustotal.com/gui/file/af8b646f827dcac52203df7f0bbef7d12897800ee152bc7366dcd33f7546242a/detection
+
+accopsdc.vpndns.net
+airtel.vpndns.net
+rvnl.dnsget.org
+rvnl.vpndns.net
+sbc-asterisk.tftpd.net
