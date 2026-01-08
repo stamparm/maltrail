@@ -4722,3 +4722,7 @@ zanoled.su
 zataclub.ru
 zukkoshop.ru
 zunostore.market
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/8686
+
+bumm.live
