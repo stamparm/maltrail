@@ -37064,6 +37064,7 @@ initiacess.com
 inloggen-bitvavo.com
 inquiry-add-reader.com
 inquiry-info-review.com
+inquiry-pending-check.com
 inservicesapproveupdateat00access.sbs
 internal-taxreview.com.de
 intruminkasso.com
@@ -37132,6 +37133,7 @@ ledger-webdiagnostic.com
 ledger-webdiagnostics.com
 ledger.diagnosticcheckdevice.com
 ledger.wirelessdiagnoser.com
+ledgerantivirus-scan.com
 ledgerapp.net
 ledgerassistonline.com
 ledgercheck.support
@@ -37198,6 +37200,7 @@ letsmake4aii.info
 lexguard-rechtsanwalte.com
 lightchainai.io
 linesant-live.com
+live-domain.com
 live-numbupdate.com
 livelloyd-check.com
 livraison-decolis.com
@@ -37519,6 +37522,7 @@ recent-removal-review.com
 recordfilings-ausupport.com
 recoverledgerdesk.com
 rectifyfidelity.xyz
+regionsverificationus.com
 register-mobile-auth.com
 register-primary-device.com
 registermydevice.me
