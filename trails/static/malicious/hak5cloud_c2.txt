@@ -1863,6 +1863,7 @@ http://72.23.229.75
 accomassist.redherringdigital.com.au
 adogstail.redherringdigital.com.au
 agnstools.com
+albanynetwork.net
 aos-security.com
 asuna-c2.glfyinfra.net
 autoconfig.marketstallco.com.au
@@ -1893,6 +1894,7 @@ c2.fallingworks.com
 c2.fishtastik.com
 c2.gatewaycsb.co
 c2.hackbox.se
+c2.haxdoggy.io
 c2.homelabs.pro
 c2.huntergulley.com
 c2.insecurity.be
