@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: clearwater ransomware
+
+# Reference: https://x.com/PaduckLee/status/2009479398622454191
+# Reference: https://www.virustotal.com/gui/file/7116b9e0dd107e20cf0169bdd5580a7d5ff0cae1bbdda77d1be92c66c4367901/detection
+
+b6rgpykvtyqah4q5tii25ouevr5g3u2s7pqc24jdlyhrfms3itljtkqd.onion
