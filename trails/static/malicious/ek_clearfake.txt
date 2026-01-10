@@ -37068,6 +37068,7 @@ inquiry-pending-check.com
 inservicesapproveupdateat00access.sbs
 internal-taxreview.com.de
 intruminkasso.com
+investment-performance.com
 investschwab.help
 iseteenindused.com
 it13-gmbh.com
@@ -37117,6 +37118,7 @@ lcs-pr0c3dure.icu
 ledger-accessrecovery.com
 ledger-connections.com
 ledger-deutschland.com
+ledger-devicesecurity.com
 ledger-firmwareupdate.com
 ledger-hardwarerecovery.com
 ledger-hardwaresolution.com
@@ -37541,6 +37543,7 @@ relay-expresse.com
 relay-point.com
 relay-points.com
 remove-latest-update.com
+renew-pending-update.com
 renew-primary-auth.com
 renew-primary-system.com
 renew-secure-auth.com
@@ -37629,6 +37632,7 @@ secure-new-device.com
 secure-pleologin.io
 secure-synovus.com
 secure-zionsbank.com
+secure08-web02-ledger.com
 secure5-verlfypnc.com
 secureaccountcentre.com
 secureauth-au.online
@@ -37737,6 +37741,7 @@ tangemcenter.com
 tangemconnect.com
 tangemhub.com
 taxonlinehmrc.com
+temmanager.com
 terviseandmed.com
 tervisekassainfo.com
 tervisetoend.com
