@@ -46753,6 +46753,31 @@ zoomative.com
 document-pdf.online
 msg-booking.com
 
+# Reference: https://x.com/JAMESWT_WT/status/2009903018834268288
+# Reference: https://app.any.run/tasks/c2386fbf-43b8-4f8f-a746-d5d127b72a67
+# BANNER_0_HASH-HOST=9128c36783dbf35e316ce209de3e29a8
+
+auth-reserveid2626.com
+booking.extranet-id-19413.com
+booking.extranet-id-611152.com
+booking.extranet-id-618293.com
+booking.extranet-id-655152.com
+booking.extranet-id-73251.com
+booking.illust159.com
+booking.reserve-extra-id583018.com
+booking.reserve-extra-id625832.com
+extranet-id-19413.com
+extranet-id-611152.com
+extranet-id-618293.com
+extranet-id-655152.com
+extranet-id-73251.com
+flashsksk.com
+illust159.com
+partner-panel-id853920.com
+reserve-extra-id583018.com
+reserve-extra-id625832.com
+reverseconfirm-id675904.com
+
 # Generic
 
 /a3A7qLVn/
