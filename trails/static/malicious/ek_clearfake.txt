@@ -46774,6 +46774,8 @@ booking.extranet-id-73251.com
 booking.illust159.com
 booking.reserve-extra-id583018.com
 booking.reserve-extra-id625832.com
+booking.reserve-extra-id677108.com
+booking.reserve-extra-id93234.com
 extranet-id-19413.com
 extranet-id-22413.com
 extranet-id-566413.com
@@ -46787,6 +46789,8 @@ illust159.com
 partner-panel-id853920.com
 reserve-extra-id583018.com
 reserve-extra-id625832.com
+reserve-extra-id677108.com
+reserve-extra-id93234.com
 reverseconfirm-id675904.com
 
 # Generic
