@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ltx stealer
+
+# Reference: https://x.com/solostalking/status/2009661039424758056
+
+69.164.242.27:3000
+eqp.lol
