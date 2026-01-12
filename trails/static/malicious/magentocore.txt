@@ -16548,6 +16548,11 @@ jquery.googlemanageranalytic.com
 
 peachseo.com
 
+# Reference: https://x.com/sdcyberresearch/status/2010694446652809581
+
+cdn-typekit.com
+i.cdn-typekit.com
+
 # Generic
 
 /assets/lfg.js
