@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: grandmonty ransomware
+
+# Reference: https://x.com/RakeshKrish12/status/2010619002427764908
+
+194.110.247.233:8005
