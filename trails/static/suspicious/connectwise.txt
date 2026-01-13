@@ -1380,3 +1380,8 @@ winservec.net
 zyabozadpap.top
 app.zyabozadpap.top
 relays.zyabozadpap.top
+
+# Reference: https://x.com/smica83/status/2011057349897916426
+# Reference: https://tria.ge/260113-py79jsf15e/behavioral1
+
+194.26.192.95:8041
