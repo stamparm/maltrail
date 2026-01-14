@@ -16553,6 +16553,33 @@ peachseo.com
 cdn-typekit.com
 i.cdn-typekit.com
 
+# Reference: https://www.silentpush.com/blog/magecart/
+# ETAG-HOST=W/"67bd5f3d-264"
+
+cdn-cookie.com
+cdn-gstatic.com
+detail-best.com
+hacptcha.com
+ipifly.com
+newasest.com
+omappepi.com
+lasorie.com
+ftp.cdn-cookie.com
+ftp.cdn-gstatic.com
+ftp.detail-best.com
+ftp.google-manager.com
+ftp.hacptcha.com
+ftp.ipifly.com
+ftp.newasest.com
+ftp.omappepi.com
+mail.cdn-cookie.com
+mail.cdn-gstatic.com
+mail.detail-best.com
+mail.hacptcha.com
+mail.ipifly.com
+mail.newasest.com
+mail.omappepi.com
+
 # Generic
 
 /assets/lfg.js
