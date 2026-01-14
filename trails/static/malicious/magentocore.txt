@@ -16580,6 +16580,11 @@ mail.ipifly.com
 mail.newasest.com
 mail.omappepi.com
 
+# Reference: https://x.com/sdcyberresearch/status/2011404135757651976
+
+fastlistcss.icu
+gooliststyle.icu
+
 # Generic
 
 /assets/lfg.js
