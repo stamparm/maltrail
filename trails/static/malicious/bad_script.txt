@@ -9164,6 +9164,11 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /CVE-2023-3519/
 /CVE-2025-24813-Scanner/
 
+# Reference: https://www.silentpush.com/blog/magecart/
+
+/1-197056a9.js
+/cplnfwtlrkb.js
+
 # Generic
 
 /5c0ca79.php
