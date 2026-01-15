@@ -16585,6 +16585,13 @@ mail.omappepi.com
 fastlistcss.icu
 gooliststyle.icu
 
+# Reference: https://sansec.io/research/keylogger-major-us-bank-employees
+
+artrabol.com
+js-csp.com
+js-tag.com
+jslibrary.net
+
 # Generic
 
 /assets/lfg.js
