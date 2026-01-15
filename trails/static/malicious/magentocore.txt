@@ -16588,6 +16588,8 @@ gooliststyle.icu
 # Reference: https://sansec.io/research/keylogger-major-us-bank-employees
 
 artrabol.com
+domain-csp.com
+js-analyzer.com
 js-csp.com
 js-tag.com
 jslibrary.net
