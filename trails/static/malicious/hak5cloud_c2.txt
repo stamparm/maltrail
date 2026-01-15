@@ -1093,6 +1093,7 @@ c2.saltsec.at
 c2.sec.craigasimon.com
 c2.shadowtester.uk
 c2.sr2soc.com
+c2.stormlabs.cloud
 c2.syn0cta.ch
 c2.sys-security.de
 c2.teamprime.dev
