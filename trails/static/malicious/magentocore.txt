@@ -16594,6 +16594,10 @@ js-csp.com
 js-tag.com
 jslibrary.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/91.212.166.10/relations
+
+jsconstant.com
+
 # Generic
 
 /assets/lfg.js
