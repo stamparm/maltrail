@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: slipx
+
+# Reference: https://x.com/suyog41/status/2011701406017995203
+# Reference: https://www.virustotal.com/gui/file/0d1499137dbc3aa259f55ad84414b1ffed2e1466d0483610feb5e1559a0f8d16/detection
+
+webstealer.pages.dev
