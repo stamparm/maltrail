@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/abuse_ch/status/2012243861347741901
+# Reference: https://x.com/Merlax_/status/2012269880418910485
+
+http://83.229.17.124
+92.246.128.19:8055
+007consultoriafinanceira.net
+diamonds.wbdiamonds.com
+oole.uufogame.com
+painelghost.com
+wbdiamonds.com
