@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: datakeeper ransomware
+
+# Reference: https://x.com/fbgwls245/status/2011588314290335861
+
+dc4nwiijwiffwztwzj5fngmcoppedrxg4jqj2tq67ontbini6qmlguid.onion
