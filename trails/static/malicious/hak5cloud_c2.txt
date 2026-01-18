@@ -988,6 +988,7 @@ acc3ss.cc
 accesscloudc2.com
 agent355.culpersec.com
 alpha.sempervespallc.com
+api.phantomai.app
 argentcybersolutions.com
 atk.areax.io
 authsmtp.safe-netsurfing.com
