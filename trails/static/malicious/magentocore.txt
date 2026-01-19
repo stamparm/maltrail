@@ -16601,12 +16601,18 @@ jslibrary.net
 jsconstant.com
 
 # Reference: https://x.com/sdcyberresearch/status/2013205078119682419
+# BANNER_0_HASH-HOST=a1fbc2a3c8c5c0279b9ced011b8c2c9e
+# BANNER_0_HASH-HOST=78f37cab92545793474f9f800c98f87e
+# BANNER_0_HASH-HOST=ec53943d3cf13f05fc3451158505d463
 
+admistr.com
+admistr.info
 adsbridge.fun
 adsbridge.site
 adsbridge.space
 clickgator.info
 clickopath.info
+crmclicks.com
 
 # Generic
 
