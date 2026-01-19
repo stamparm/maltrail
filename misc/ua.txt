@@ -2651,6 +2651,13 @@ nfjjlx
 
 vabundanceVOI
 
+# Reference: https://x.com/RedDrip7/status/2013145924730863672
+# Reference: https://x.com/RedDrip7/status/2013146014660571412
+# Reference: https://www.virustotal.com/gui/file/1946315d645d9a8c5114759b350ec4f85dba5f9ee4a63d74437d7a068bff7752/detection
+# Reference: https://www.virustotal.com/gui/file/13c1a063409ad73e068604e4a5a605915d96d3c8e87e466bb49c6f41033d5909/detection
+
+SecureNet/1.2
+
 # Misc
 
 information_schema
