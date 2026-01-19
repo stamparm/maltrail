@@ -16600,6 +16600,14 @@ jslibrary.net
 
 jsconstant.com
 
+# Reference: https://x.com/sdcyberresearch/status/2013205078119682419
+
+adsbridge.fun
+adsbridge.site
+adsbridge.space
+clickgator.info
+clickopath.info
+
 # Generic
 
 /assets/lfg.js
