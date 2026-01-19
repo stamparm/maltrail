@@ -4726,3 +4726,18 @@ zunostore.market
 # Reference: https://github.com/hagezi/dns-blocklists/issues/8686
 
 bumm.live
+
+# Reference: https://x.com/DarkWebInformer/status/2012201049147204022
+
+http://213.177.179.183
+213.177.179.183:22
+213.177.179.183:443
+213.177.179.183:8080
+213.177.179.183:8888
+213.177.179.183:9999
+lkill3r.ru
+starkiller.su
+starkiller.observer
+admin.starkiller.observer
+panel.starkiller.su
+pay.starkiller.su
