@@ -2658,6 +2658,12 @@ vabundanceVOI
 
 SecureNet/1.2
 
+# Reference: https://bi.zone/expertise/blog/rainbow-hyena-snova-atakuet-novyy-bekdor-i-smena-taktik/
+
+MicrosoftAppStore/2001.0
+YandexCloud/1.0
+YandexUpdate/1.0
+
 # Misc
 
 information_schema
