@@ -1003,6 +1003,11 @@ http://64.188.79.45
 64.188.79.45:443
 voxpanel.vu
 
+# Reference: https://x.com/malwrhunterteam/status/2013730951038198128
+
+194.41.112.253:4000
+194.41.112.253:8080
+
 # Generic
 
 /admin_123/auth.php
