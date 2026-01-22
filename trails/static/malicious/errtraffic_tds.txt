@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://censys.com/blog/errtraffic-inside-glitchfix-attack-panel
+
+144.31.14.196:443
+146.103.101.220:443
+188.113.132.109:443
+31.13.208.13:443
+45.8.93.242:443
+64.188.66.221:443
+89.110.75.193:443
+1.ooocyber.cfd
+2.ooocyber.cfd
+3.ooocyber.cfd
+cdn-css-framework.cfd
+cdn-js-connection.cfd
+cpass.verf-secu4u.art
+cyberweb65.ru
+js-framework.cfd
+ooocyber.cfd
+security-ssa-gov.com
+update211.security-ssa-gov.com
+verf-secu4u.art
+winiks.com
+zalupan.kozow.com
