@@ -9149,11 +9149,15 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /oxygensmoke.ps1
 
 # Reference: https://x.com/smica83/status/2002494238450384923
+# Reference: https://x.com/smica83/status/2014369093323735329
+# Reference: https://www.virustotal.com/gui/file/0af619a225830fa2c5b47fcb53b6efa296b08349db1a28bdd489428bb2c9e87c/detection
 # Reference: https://www.virustotal.com/gui/file/274407caf5f51c9f2d39d593b3de75aaf09953df1fd67fe1d6503a4cb2c996c0/detection
 # Reference: https://www.virustotal.com/gui/file/bc1fa32164ea48f4b0a0bf0f614887b9bd642ca1c5c783f6c1bc1e4425617766/detection
 
+/gr4jja/bumpypraised.ps1
 /kraja/hailzampone.ps1
 /kraja/landformbrowsing.ps1
+/bumpypraised.ps1
 /hailzampone.ps1
 /landformbrowsing.ps1
 
