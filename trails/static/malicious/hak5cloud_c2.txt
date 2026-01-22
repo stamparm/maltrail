@@ -1737,6 +1737,7 @@ c2.torn-lotus.com
 cnc.pdxits.com
 erichubbard.net
 ge0.works
+status.haxdoggy.io
 vmi1341970.contaboserver.net
 
 # Reference: https://github.com/drb-ra/C2IntelFeeds/blob/master/feeds/unverified/IPPortC2s-90day.csv (# 2025-01-20)
