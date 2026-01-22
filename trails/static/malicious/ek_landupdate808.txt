@@ -543,3 +543,7 @@ pippyheydguide.com
 # Reference: https://www.virustotal.com/gui/ip-address/64.52.80.151/relations
 
 oconneln.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.61.139.16/relations
+
+deeesik.com
