@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: sirkeira stealer
+
+# Reference: https://x.com/suyog41/status/2014222720238801069
+# Reference: https://x.com/ShadowOpCode/status/2014654974760812688
+# Reference: https://www.virustotal.com/gui/file/6b8adb3486ba8345507f380546edbe73902f81bdf39d542e1a3bb3d2bd3df7e9/detection
+
+/project/77872549/uploads/8741628e38315c11a7d7cf8d791f8cca/
+/vihtoriadev/SirkeiraStealer/tree/main
+/vihtoriadev/SirkeiraStealer/
