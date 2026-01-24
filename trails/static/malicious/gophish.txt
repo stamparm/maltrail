@@ -6891,3 +6891,13 @@ http://93.127.172.222
 98.89.173.65:443
 98.91.214.147:443
 servlcenow.com
+
+# Reference: https://x.com/nahamike01/status/2014878768155000839
+# Reference: https://www.virustotal.com/gui/ip-address/185.214.74.27/relations
+
+evilghostpannel.cloud
+ymamcreator.online
+ymamsubscription.ru
+subs.ymamsubscription.ru
+y.ymamcreator.online
+ymam.ymamsubscription.ru
