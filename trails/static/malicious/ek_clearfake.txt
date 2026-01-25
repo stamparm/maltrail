@@ -36997,6 +36997,7 @@ fideltytextservice.world
 fideltytextsupport.world
 fideltytheftprevention.sbs
 fideltyverificationhelp.sbs
+final-step-activate.com
 finalise-final-stage.com
 finalise-update-steps.com
 finish-update-step.com
@@ -37057,6 +37058,7 @@ hrconnectfilesent.org
 hsbc-businesssupport.com
 hsbc.securekeymt.com
 hsbcassist.com
+hsbcbusinesscustomer.com
 hsbcbusinesssupport.com
 hsbcnet-support.com
 hsjsn.com
@@ -37522,6 +37524,7 @@ primary-device-authentication.com
 primary-device-confirm.com
 primary-device-connect.com
 primary-device-enabled.com
+primary-device-enroll.com
 primary-device-enrollment.com
 primary-device-reg.com
 primary-device-registration.com
@@ -37596,6 +37599,7 @@ relay-expresse.com
 relay-point.com
 relay-points.com
 remove-latest-update.com
+renew-business-acc.com
 renew-pending-update.com
 renew-primary-auth.com
 renew-primary-system.com
@@ -37722,6 +37726,7 @@ servenfewport.sbs
 servepluxllc.com
 servhercentport.sbs
 serviceaustralia.digital
+serviceinfo.center
 servicesclaim00ato.digital
 servpaortart.info
 servpartregio.info
