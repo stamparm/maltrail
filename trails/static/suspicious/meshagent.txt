@@ -225,6 +225,10 @@ kwazindernuren.com
 152.67.84.123:443
 152.67.84.123:8080
 
+# Reference: https://bi-zone.medium.com/adversaries-exploit-cve-2025-55182-to-attack-russian-companies-1b4e98ca5804
+
+156.67.221.96:443
+
 # Generic
 
 /Meshcleaner.exe
