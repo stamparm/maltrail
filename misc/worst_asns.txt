@@ -5894,3 +5894,10 @@
 46.23.109.0/24,ipconnect
 5.178.0.0/24,ipconnect
 85.203.26.0/24,ipconnect
+
+# AS 212835
+# Reference: https://x.com/BushidoToken/status/2015537376764772513
+# Reference: https://ipinfo.io/AS212835
+
+130.49.215.0/24
+87.251.67.0/24
