@@ -41359,6 +41359,7 @@ hotel-reviwers.com
 hotelmngt.com
 lastminreviwers.com
 manage-guest.com
+mgmnt-host-portal.com
 mngt-hotel.com
 mngthotel.com
 mngtsystem.com
