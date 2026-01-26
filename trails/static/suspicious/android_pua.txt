@@ -1083,3 +1083,7 @@ chigoe.demaldefaces.top
 # Reference: https://www.virustotal.com/gui/file/074fc4cd105dd1f1dfed3a22d4e38d3db19f1243917d959440bb91fd079b7b64/detection
 
 unknownlove.qzz.io
+
+# Reference: https://www.virustotal.com/gui/file/0d9d0fe064dc7df593dd0c88c2c930624c87540e497f7a3ac8b45ccf2a6392e4/detection
+
+phuclocphat.xyz
