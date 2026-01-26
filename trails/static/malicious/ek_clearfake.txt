@@ -47251,6 +47251,42 @@ liangtk168.top
 pulse-accsreq150126.com
 q165.liangtk168.top
 
+# Reference: https://app.validin.com/detail?find=90fcd27f7c8e0930fd478a7af452d775&type=hash&ref_id=15f23c08ec6#tab=host_pairs (# 2026-01-26)
+
+dipuruman.ooguy.com
+endeuteam.com
+frostshiledr.com
+fuckingirlz.com
+icupordeo.com
+inclimit.com
+jipshod.com
+jobmins.com
+kindstki.com
+kolbennetsa.us
+lightspreme.com
+lipsklips.com
+lopajs.store
+midpils.com
+mindsetgrowth.shop
+newimpossibamm.com
+oipolfield.com
+paikailai.com
+piershoot.com
+pipjohnj.com
+portyimmortal.com
+positivelike.com
+possiblcix.com
+possibleresc.com
+qilsao.us
+quicktests.ru
+regh.duckdns.org
+shellnescarlett.com
+silver-bars.com
+solnoirif.com
+sonovarius.com
+tibetosi.com
+veraetime.info
+
 # Generic
 
 /a3A7qLVn/
