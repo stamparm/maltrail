@@ -1087,3 +1087,7 @@ unknownlove.qzz.io
 # Reference: https://www.virustotal.com/gui/file/0d9d0fe064dc7df593dd0c88c2c930624c87540e497f7a3ac8b45ccf2a6392e4/detection
 
 phuclocphat.xyz
+
+# Reference: https://www.virustotal.com/gui/file/02c8db575fe9b8600ddb633ed44d4d2130c7ea2bb92501f858a386c4b843cb5b/detection
+
+http://184.82.135.71
