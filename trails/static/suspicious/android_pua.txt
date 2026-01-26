@@ -1091,3 +1091,7 @@ phuclocphat.xyz
 # Reference: https://www.virustotal.com/gui/file/02c8db575fe9b8600ddb633ed44d4d2130c7ea2bb92501f858a386c4b843cb5b/detection
 
 http://184.82.135.71
+
+# Reference: https://www.virustotal.com/gui/file/07ab396c76ed84ad75e92ede2c52c929e3cafb112e7cf150888c909e09967bb8/detection
+
+121.8.233.43:6012
