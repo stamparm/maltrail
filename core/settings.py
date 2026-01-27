@@ -461,10 +461,13 @@ def read_worst_asn():
                 if not line or line.startswith('#'):
                     continue
                 else:
+                    match = re.search(r"([\d.]+)/(\d+),(.+)", line)
+                    if not match:
+                        continue
                     key = line.split('.')[0]
                     if key not in WORST_ASNS:
                         WORST_ASNS[key] = []
-                    prefix, mask, name = re.search(r"([\d.]+)/(\d+),(.+)", line).groups()
+                    prefix, mask, name = match.groups()
                     WORST_ASNS[key].append((addr_to_int(prefix), make_mask(int(mask)), name))
 
 def read_cdn_ranges():
