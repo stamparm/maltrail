@@ -36593,6 +36593,7 @@ autenticaviaverde.com
 autentiseringdhl.com
 authenticate-device-verification.com
 authenticate-information.com
+authenticate-protect.com
 authenticate-support.com
 authenticate-web-app.com
 authentication-device-verification.com
@@ -36752,6 +36753,7 @@ claimservices-centre.com.de
 claimssa-onlineatolodge.com
 client-02ld-everwlsecu.help
 client-02ld-nat0nlinenati0nall.help
+client.notice1.help
 clientauth-t3ellernetpfc3u.help
 clientetotta-regis.com
 cloudfiles-secure-ua-g00v.com
@@ -37348,6 +37350,7 @@ mufgdxo.com
 musk-dogdrop.com
 mxrapddl.com
 my-liveloyd.com
+my-lowes.help
 myaccountpulser.com
 myamendnow.com
 myato-statementsreview.com
@@ -37425,6 +37428,7 @@ nl293850291823574383925854.com
 nordaltservice.com
 noreplybutdotherightfullogin.top
 normativa-aml-binance.com
+notice1.help
 noticefromteam1.help
 noticefromteam10ldnati0nal.xyz
 noticefromteam3.cfd
