@@ -5899,5 +5899,5 @@
 # Reference: https://x.com/BushidoToken/status/2015537376764772513
 # Reference: https://ipinfo.io/AS212835
 
-130.49.215.0/24
-87.251.67.0/24
+130.49.215.0/24,shesternin
+87.251.67.0/24,shesternin
