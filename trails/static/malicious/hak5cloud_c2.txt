@@ -1177,6 +1177,7 @@ finallyhandled.com
 fix1.nask.waw.pl
 fortifiedsolutionstech.com
 fun.marian-schneider.de
+ghs.foep.net
 grid.mikemyers.me
 h1.mindseyeit.com
 h5.gstreet.duckdns.org
@@ -1203,8 +1204,8 @@ ip49.ip-151-80-57.eu
 iposel.cz
 irt-tx.com
 island-tech.bitwars.org
-it.wolfpackmobileauto.repair
 ismybizsecure.com
+it.wolfpackmobileauto.repair
 jane.sdi.icu
 jens-koller.de
 khipu.kicks-ass.net
@@ -1273,6 +1274,7 @@ srv595234.hstgr.cloud
 stats.navisec.io
 stayclassyomg.de
 suaris.cloud
+tak.associates
 telesystemc2.chillepod.com
 terms-of-agreement.com
 test.leofontaine.cloud
