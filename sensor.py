@@ -17,7 +17,6 @@ import math
 import mmap
 import optparse
 import os
-import platform
 import re
 import socket
 import subprocess
@@ -295,21 +294,28 @@ def _process_packet(packet, sec, usec, ip_offset):
                 _locks.connect_sec.release()
 
             if sec > connect_sec:
-                for key in _connect_src_dst:
-                    _src_ip, _dst = key.split('~')
-                    if not _dst.isdigit() and len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
-                        if not check_whitelisted(_src_ip):
-                            _dst_ip = _dst
-                            for _ in _connect_src_details[key]:
-                                log_event((sec, usec, _src_ip, _[2], _dst_ip, _[3], PROTO.TCP, TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"), packet)
-                    elif len(_connect_src_dst[key]) > INFECTION_SCANNING_THRESHOLD:
-                        _dst_port = _dst
-                        _dst_ip = [_[-1] for _ in _connect_src_details[key]]
-                        _src_port = [_[-2] for _ in _connect_src_details[key]]
+                if getattr(_locks, "heuristics", None):
+                    _locks.heuristics.acquire()
 
-                        if len(_dst_ip) == len(set(_dst_ip)):
-                            if _src_ip.startswith(_get_local_prefix()):
-                                log_event((sec, usec, _src_ip, _src_port[0], _dst_ip[0], _dst_port, PROTO.TCP, TRAIL.PORT, _dst_port, "potential infection", "(heuristic)"), packet)
+                try:
+                    for key in _connect_src_dst:
+                        _src_ip, _dst = key.split('~')
+                        if not _dst.isdigit() and len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
+                            if not check_whitelisted(_src_ip):
+                                _dst_ip = _dst
+                                for _ in _connect_src_details[key]:
+                                    log_event((sec, usec, _src_ip, _[2], _dst_ip, _[3], PROTO.TCP, TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"), packet)
+                        elif len(_connect_src_dst[key]) > INFECTION_SCANNING_THRESHOLD:
+                            _dst_port = _dst
+                            _dst_ip = [_[-1] for _ in _connect_src_details[key]]
+                            _src_port = [_[-2] for _ in _connect_src_details[key]]
+
+                            if len(_dst_ip) == len(set(_dst_ip)):
+                                if _src_ip.startswith(_get_local_prefix()):
+                                    log_event((sec, usec, _src_ip, _src_port[0], _dst_ip[0], _dst_port, PROTO.TCP, TRAIL.PORT, _dst_port, "potential infection", "(heuristic)"), packet)
+                finally:
+                    if getattr(_locks, "heuristics", None):
+                        _locks.heuristics.release()
 
                 _connect_src_dst.clear()
                 _connect_src_details.clear()
@@ -383,20 +389,28 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                 if config.USE_HEURISTICS:
                     if dst_ip != localhost_ip:
-                        key = "%s~%s" % (src_ip, dst_ip)
-                        if key not in _connect_src_dst:
-                            _connect_src_dst[key] = set()
-                            _connect_src_details[key] = set()
-                        _connect_src_dst[key].add(dst_port)
-                        _connect_src_details[key].add((sec, usec, src_port, dst_port))
+                        if getattr(_locks, "heuristics", None):
+                            _locks.heuristics.acquire()
 
-                        if dst_port in POTENTIAL_INFECTION_PORTS:
-                            key = "%s~%s" % (src_ip, dst_port)
+                        try:
+                            key = "%s~%s" % (src_ip, dst_ip)
                             if key not in _connect_src_dst:
                                 _connect_src_dst[key] = set()
                                 _connect_src_details[key] = set()
-                            _connect_src_dst[key].add(dst_ip)
-                            _connect_src_details[key].add((sec, usec, src_port, dst_ip))
+                            _connect_src_dst[key].add(dst_port)
+                            _connect_src_details[key].add((sec, usec, src_port, dst_port))
+
+                            if dst_port in POTENTIAL_INFECTION_PORTS:
+                                key = "%s~%s" % (src_ip, dst_port)
+                                if key not in _connect_src_dst:
+                                    _connect_src_dst[key] = set()
+                                    _connect_src_details[key] = set()
+                                _connect_src_dst[key].add(dst_ip)
+                                _connect_src_details[key].add((sec, usec, src_port, dst_ip))
+                        finally:
+                            if getattr(_locks, "heuristics", None):
+                                _locks.heuristics.release()
+
             else:
                 tcph_length = doff_reserved >> 4
                 h_size = iph_length + (tcph_length << 2)
@@ -752,11 +766,32 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 if ord(dns_data[3:4]) == 0x80:  # recursion available, no error
                                     _ = offset + 5
                                     try:
+
+
                                         while _ < len(dns_data):
-                                            if (ord(dns_data[_:_ + 1]) & 0xc0 != 0) and dns_data[_ + 2:_ + 4] == b"\x00\x01":  # Type A
+                                            ptr = _
+                                            while ptr < len(dns_data):
+                                                lbl_len = ord(dns_data[ptr:ptr+1])
+                                                if lbl_len & 0xc0: # Compressed pointer
+                                                    ptr += 2
+                                                    break
+                                                if lbl_len == 0: # End of labels
+                                                    ptr += 1
+                                                    break
+                                                ptr += lbl_len + 1
+
+                                            # check if we have enough data for Type(2)+Class(2)+TTL(4)+RdLen(2) = 10 bytes
+                                            if ptr + 10 > len(dns_data):
+                                                break
+
+                                            # check for Type A (0x0001)
+                                            if dns_data[ptr:ptr+2] == b"\x00\x01":
+                                                # found the record, _ is pointing to start of Name.
                                                 break
                                             else:
-                                                _ += 12 + struct.unpack("!H", dns_data[_ + 10: _ + 12])[0]
+                                                # skip this record
+                                                rd_len = struct.unpack("!H", dns_data[ptr + 8: ptr + 10])[0]
+                                                _ = ptr + 10 + rd_len
 
                                         _ = dns_data[_ + 12:_ + 16]
                                         if _:
@@ -1195,6 +1230,7 @@ def monitor():
                 if _multiprocessing:
                     _locks.count = threading.Lock()
                 _locks.connect_sec = threading.Lock()
+                _locks.heuristics = threading.Lock()
 
             for _cap in _caps:
                 threading.Thread(target=_, args=(_cap,)).start()
