@@ -83,3 +83,10 @@ http://89.163.145.141
 
 8.130.36.245:749
 8.148.23.202:2632
+
+# Reference: https://hunt.io/blog/exposed-byob-c2-infrastructure-multi-stage-malware-deployment
+
+38.255.43.60:8080
+38.255.43.60:8081
+38.255.43.60:8082
+38.255.43.60:8083
