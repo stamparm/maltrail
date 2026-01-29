@@ -551,3 +551,7 @@ deeesik.com
 # Reference: https://www.virustotal.com/gui/ip-address/64.52.80.75/relations
 
 trebblay.com
+
+# Reference: https://www.virustotal.com/gui/file/fe0e91d1e975a2aee1abd95befa4224960d2d904ad53bf5a4fa30724f9d250ed/detection
+
+banengids.com
