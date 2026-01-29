@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: greenblood ransomware, gr33nblood ransomware, tgbg ransomware
+
+# Reference: https://x.com/PaduckLee/status/2016767066003689913
+# Reference: https://www.virustotal.com/gui/file/12bba7161d07efcb1b14d30054901ac9ffe5202972437b0c47c88d71e45c7176/detection
+
+scbrksw5fgjtujc2ah42roo6bij2unr2tggfcynpbql5a7yp3s22taid.onion
