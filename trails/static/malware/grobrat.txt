@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/Fact_Finder03/status/2017589661557002646
+# Reference: https://www.virustotal.com/gui/file/7d3d9932ad874d7b29f96169a92e373efd1179b0a08955a9e4145d980a59c28b/detection
+# Reference: https://www.virustotal.com/gui/file/3d16b6d1876881daf105c025f0bd32ddcd538b841d7ae55e933f2766370841b7/detection
+
+108.165.164.57:3000
+108.165.164.57:8765
+77.221.148.113:3000
+biovilo.sbs
+grobrat.ru
+xrat.lol
+users-action-lol.xrat.lol
+websocketlink.grobrat.ru
+websocketclientlink.grobrat.ru
