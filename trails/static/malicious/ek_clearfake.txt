@@ -1,7 +1,7 @@
 # Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
-# Aliases: clickfix, crashfix, filefix, jackfix, storm-1865, unc5142
+# Aliases: clickfix, iclickfix, crashfix, filefix, jackfix, storm-1865, unc5142
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-28-v10404/902
 
@@ -47629,6 +47629,32 @@ solnoirif.com
 sonovarius.com
 tibetosi.com
 veraetime.info
+
+# Reference: https://blog.sekoia.io/meet-iclickfix-a-widespread-wordpress-targeting-framework-using-the-clickfix-tactic/
+
+aasdtvcvchcvhhhhh.com
+aksdaitkatktk.com
+alsokdalsdkals.com
+appasdmdamsdmasd.com
+asdaotasktjastmnt.com
+dasdalksdkmasdas.com
+dasktiitititit.com
+dhdjisksnsbhssu.com
+foflfalflafl.com
+fsdotiototakkaakkal.com
+fsdtiototoitweot.com
+ikfsdfksldkflsktoq.com
+ititoiaitoaitoiakkaka.com
+kalkgmbzfghq.com
+kdfmmikfkafjikmfikfjhm.com
+kdkdaosdkalkdkdakd.com
+ksaitkktkatfl.com
+ldasldalsd.com
+ototaikfffkf.com
+skldfjgsldkmfgsdfg.com
+tripallmaljok.com
+xxclglglglklgkxlc.com
+zmzkdodudhdbdu.com
 
 # Generic
 
