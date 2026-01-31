@@ -4741,3 +4741,8 @@ starkiller.observer
 admin.starkiller.observer
 panel.starkiller.su
 pay.starkiller.su
+
+# Reference: https://app.validin.com/detail?type=raw&find=ValeraCrypts+-+Crypter#tab=host_pairs (# 2026-02-01)
+
+185.132.53.17:3000
+185.132.53.205:3000
