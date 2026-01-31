@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://zimperium.com/blog/the-rise-of-arsink-rat
+# Reference: https://www.virustotal.com/gui/file/5032729a626d580e9627f9a070973a65252cc4e061adddd9032f60066eabd3d1/detection
+
+apkfromhelltoyouforthis.web.app
