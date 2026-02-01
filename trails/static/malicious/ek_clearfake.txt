@@ -18278,6 +18278,7 @@ update-info926.com
 # Reference: https://x.com/Merlax_/status/1960048599678493033
 # Reference: https://app.validin.com/detail?find=e2dc601220652f6a14d65047731d419d&type=hash&ref_id=a5ecbe5429f#tab=host_pairs (# 2025-08-25)
 # Reference: https://app.validin.com/detail?find=7229fb742242db43d708ae9e9205581d9289c3b9&type=hash#tab=host_pairs (# 2025-08-26)
+# BANNER_0_HASH-HOST=3f85310e2920aa19ab9e44370279ed6a
 # BANNER_0_HASH-HOST=e315d6ad1e2c4d68dcc7fe74f7af3755
 # BANNER_0_HASH-HOST=ea4d1265d1cffb4b1ee4919cf8118d8b
 # BANNER_0_HASH-HOST=7121c4806441ea5c4cec43943ded3948
@@ -20508,6 +20509,7 @@ accountpulseupdate.com
 acid-wrench.ru
 acidwrench.ru
 aclz-9.ru
+acoldnunc.ru
 acorn.wtok-2.ru
 acornhollow.ru
 acp.mi7x.ru
@@ -20846,6 +20848,7 @@ arch.mistybr1dge.ru
 arch.safebr1dge.ru
 ardor.sunb1aze.ru
 are.k8li.ru
+arentvaunce.ru
 argent.s1lvergate.ru
 argonbucht.ru
 aria.me2nin8harp.ru
@@ -20970,6 +20973,7 @@ av.x8q0h.ru
 ava1ankva5na.qpon
 avg6wjm4.joggedyankedtetrao.ru
 avian2.st0nebird.ru
+aviewester.ru
 avowerarx.ru
 aw.614lo.ru
 aw.g6i2.ru
@@ -21553,6 +21557,7 @@ black.rjuq-3.ru
 black0wl.ru
 black5wan.ru
 blackhead.ru
+blackrope.ru
 blatt.stormgrat.ru
 blb.m1stypath.ru
 blend4.rockbyte.ru
@@ -21660,6 +21665,7 @@ bold.kira5l2nd.ru
 boldf0nt.ru
 bolt.storml1nk.ru
 bolt9a.fastspark.ru
+bonjourboost.run
 bonusquelle.qpon
 book.1a2e6.ru
 book.8y7o4.ru
@@ -21838,6 +21844,7 @@ brightsage.ru
 brightsilk.ru
 brightst0ne.ru
 brightstep.ru
+brightstride.run
 brightv1be.ru
 brightvoyage.ru
 brightw0lf.ru
@@ -22461,6 +22468,7 @@ ch2ntro1ley.ru
 ch2pernev0d.ru
 ch2rmsan1nst.ru
 ch2rredm0urn.ru
+chafelrb.ru
 chafeocelot.org
 chain7.2-wafij-3-ue.ru
 chair.5-juzeb-0-io.ru
@@ -23557,6 +23565,7 @@ di5r.ru
 dia1ecgoo5e.ru
 dia1re5pect.ru
 diab4uette.ru
+diablblunk.ru
 dibrax.luz7it5tretch.ru
 dibzow.howi2unbe1.ru
 dic5atw1ther.ru
@@ -23979,6 +23988,7 @@ easy57.1-byhih-05-ey.ru
 eatery.7-doxok-46-eu.ru
 eayxz.dia1re5pect.ru
 eb.hire5t1ck.ru
+ebbingbeseek.ru
 ebhm.shadowm1st.ru
 ebkkh.hire5t1ck.ru
 ebn.goxuxuy4.ru
@@ -24250,6 +24260,7 @@ era.mzas7.ru
 erasesrepage.ru
 ern.qu0rkline.ru
 erq.vuzojiu9.ru
+errsfugus.ru
 ers.logyvai.ru
 erspnnas.5purbu7y.ru
 ervy2cgl.deepc0ve.ru
@@ -24478,6 +24489,7 @@ fall9n.5tardr0pper.ru
 fallow.ant1sepgue7.ru
 falx.ve1vetc0ves.ru
 faneg.icu
+fanshaped.ru
 fapigya6.ru
 faqyhi.ru
 faqyw.icu
@@ -24589,6 +24601,7 @@ fi8vr6q1.rabattkiste.qpon
 fi9yr.ru
 fiare7.mintfiare.ru
 fiber.5-juzeb-0-io.ru
+fibrinwissed.ru
 ficht4.sprucewinkel.ru
 fid1.ru
 fidec.icu
@@ -25558,6 +25571,7 @@ glitchpact.ru
 gloam.r1verdusk.ru
 gloam5.shad0wmint.ru
 gloam7.duskfield.ru
+gloatlouch.ru
 globevis.org
 gloss.his5isappe2r.ru
 glow.b1tcascade.ru
@@ -25637,6 +25651,7 @@ gold.windsh1ne.ru
 gold7y.g0ldfish.ru
 golden-branch.ru
 goldenbranch.ru
+goldiccereus.ru
 goldmist.ru
 goldtalon.ru
 golpev.ha1fmakin8.ru
@@ -25703,6 +25718,7 @@ grau5.stormfiare.ru
 grau5e.nebeltal.ru
 gravel-whisk.ru
 gravelwhisk.ru
+grawnupmast.ru
 gre2tre7ue.ru
 greet09.5-ninet-1-ou.ru
 greet4.0-we-fid-707-i.ru
@@ -26710,7 +26726,9 @@ ik.yjor.ru
 ikx.1r55.ru
 ikzct.sp1nterpad.ru
 il3j.i5ch3mref.ru
+ilealkiver.ru
 ilf4a.c1earway.ru
+illipelucama.ru
 image.duzhk2s1ob.ru
 imm-yi.ru
 immigrant5p.ru
@@ -28722,6 +28740,7 @@ mirs0l.gyneco1st0p.ru
 mirthcap.ru
 mirxet.bramblezip.ru
 mirxup.ann0uneterna1.ru
+missvisor.ru
 mist.1ittleriver.ru
 mist.5lau8htwater.ru
 mist.5t0p.ru
@@ -29349,6 +29368,7 @@ nf.1yjp.ru
 nf.hpap-6.ru
 nf0g.shad0wmist.ru
 nfml0shm.udmu7tsw2rp.ru
+nft-zama.org
 ng.03e3x.ru
 ng.akmei5mh0t.ru
 ng.e-dx.ru
@@ -31154,6 +31174,7 @@ quick.par2ch0ld.ru
 quick.silenth1ll.ru
 quick5and.ru
 quickf0x.ru
+quietengine.run
 quietwhite.ru
 quill-fret.ru
 quill.wildspark.ru
@@ -31397,6 +31418,7 @@ rapid.brightridge.ru
 rapidmint.ru
 rapidst0ne.ru
 rapidstone.ru
+rapidvoyage.run
 rat.la9q.ru
 rat.vudujiu33.ru
 rat.wtes4.ru
@@ -32071,6 +32093,7 @@ scrape-airport.perkyshut.com
 scrape.gravel-whisk.ru
 scree.rapidstone.ru
 script.con5epr0phet.ru
+scutalppr.ru
 sd.77-6.ru
 sd.mjef.ru
 sd.nyfk.ru
@@ -33136,6 +33159,7 @@ swa.silversummit.ru
 sway.g1zmobrain.ru
 swift.rapidstone.ru
 swiftgasse.ru
+swiftlaunch.run
 swirl.gravel-whisk.ru
 switch.ventrill.ru
 swm5.dr1ftpanda.ru
