@@ -2664,6 +2664,10 @@ MicrosoftAppStore/2001.0
 YandexCloud/1.0
 YandexUpdate/1.0
 
+# Reference: https://www.fortinet.com/blog/threat-research/unveiling-the-weaponized-web-shell-encystphp
+
+SecurityScanner/1.0
+
 # Misc
 
 information_schema
