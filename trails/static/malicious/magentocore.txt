@@ -16637,6 +16637,12 @@ cloudflare-static11.com
 
 goog-in.icu
 
+# Reference: https://www.virustotal.com/gui/ip-address/193.163.7.197/relations
+
+cdn-cookies.com
+cdncomplete.com
+cdncookie.com
+
 # Generic
 
 /assets/lfg.js
