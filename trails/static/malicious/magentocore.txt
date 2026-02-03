@@ -16622,6 +16622,21 @@ clickgator.info
 clickopath.info
 crmclicks.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/94.159.113.60/relations
+
+cloudflare-static4.com
+cloudflare-static4.net
+cloudflare-static7.com
+cloudflare-static7.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.158.127.153/relations
+
+cloudflare-static11.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/172.67.185.101/relations
+
+goog-in.icu
+
 # Generic
 
 /assets/lfg.js
