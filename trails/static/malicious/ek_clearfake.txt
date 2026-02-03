@@ -47894,9 +47894,13 @@ zmzkdodudhdbdu.com
 information-page53663578.com
 
 # Reference: https://blackpointcyber.com/blog/novel-fake-captcha-chain-delivering-amatera-stealer/
+# BANNER_0_HASH-HOST=773b1bace739647b93ae1901e1707d04
 
 fainerkern.ru
+norrypisa.ru
+varenikgrief.ru
 sec-t2.fainerkern.ru
+shop.varenikgrief.ru
 svc-int-api-identity-token-issuer-v2-mn.in.net
 
 # Generic
