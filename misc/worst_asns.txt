@@ -6000,3 +6000,10 @@
 198.251.89.0/24,frantech
 198.251.90.0/24,frantech
 209.141.38.0/24,frantech
+
+# AS 216234
+# Reference: https://www.proofpoint.com/us/blog/threat-insight/cant-stop-wont-stop-ta584-innovates-initial-access
+# Reference: https://ipinfo.io/AS216234
+
+109.120.144.0/24,server-21-as
+94.159.113.0/24,server-21-as
