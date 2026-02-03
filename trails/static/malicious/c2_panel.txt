@@ -1008,6 +1008,13 @@ voxpanel.vu
 194.41.112.253:4000
 194.41.112.253:8080
 
+# Reference: https://x.com/Fact_Finder03/status/2016729826758185325
+# TITLE-HOST=C2 Panel
+
+jelvora.com
+plurfestivalgalaxy.com
+soteixeira.com.br
+
 # Generic
 
 /admin_123/auth.php
