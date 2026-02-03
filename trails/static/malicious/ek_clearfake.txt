@@ -47893,6 +47893,12 @@ zmzkdodudhdbdu.com
 
 information-page53663578.com
 
+# Reference: https://blackpointcyber.com/blog/novel-fake-captcha-chain-delivering-amatera-stealer/
+
+fainerkern.ru
+sec-t2.fainerkern.ru
+svc-int-api-identity-token-issuer-v2-mn.in.net
+
 # Generic
 
 /a3A7qLVn/
