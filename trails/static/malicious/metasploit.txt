@@ -6359,3 +6359,7 @@ is25.in
 # Reference: https://x.com/threatquery/status/2007919985956372855
 
 184.72.192.43:28535
+
+# Reference: https://www.virustotal.com/gui/file/3d2d584b359cdc62a41f7d167f17ec039098962a5abb5123b6ccb43c4d40c609/detection
+
+45.156.87.105:1337
