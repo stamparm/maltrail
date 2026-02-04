@@ -9299,6 +9299,14 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /zimbra_attack.sh
 /zimbra_final_attack.sh
 
+# Reference: https://x.com/smica83/status/2019105662270406852
+# Reference: https://www.virustotal.com/gui/file/25db9e8f7fa51bd00434cd0ed5ada9981d0fadc4147b56719c45206ea2568c2a/detection
+
+/smersh/huggerhealth.ps1
+/smersh/puzzledsymbol.ps1
+/huggerhealth.ps1
+/puzzledsymbol.ps1
+
 # Generic
 
 /5c0ca79.php
