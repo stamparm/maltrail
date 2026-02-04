@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/ShadowOpCode/status/2018969028291674317
+# Reference: https://github.com/ShadowOpCode/DesckVB-RAT/tree/main
+# Reference: https://www.virustotal.com/gui/file/220e11c678bcba151545ce19398e08b8802103bfbbc11696f3301ea8fa38190c/detection
+# Reference: https://www.virustotal.com/gui/file/69cd4c0c1723be8d2061f683518310a2d1b99b62186d9aa433449bb256a0f423/detection
+# Reference: https://www.virustotal.com/gui/file/220e11c678bcba151545ce19398e08b8802103bfbbc11696f3301ea8fa38190c/detection
+# Reference: https://www.virustotal.com/gui/file/88d767f02f51bc8baee5546ab7e021dcfab747556c13ac3ff976f8ec3ddcbef5/detection
+# Reference: https://www.virustotal.com/gui/file/9d9cfe5b31a3b0204e3c65d440d8355e33f7c056b087ec6aba3093ae1a099ac0/detection
+# Reference: https://www.virustotal.com/gui/file/affb29980bc9564f1b03fe977e9ca5c7adf254656d639632c4d14e34aa4fdff6/detection
+
+192.109.200.88:7535
+andrefelipedonascime1768785037020.1552093.meusitehostgator.com.br
+manikandan83.mysynology.net
