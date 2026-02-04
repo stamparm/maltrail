@@ -734,6 +734,23 @@ viesexuelle.com
 # Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-02-03-IOCs-from-KongTuke-ClickFix-activity.txt
 
 aacobson.com
+bechtellr.com
+csmultimedia.com
 emierich.com
+frttsch.com
+fsglobe.com
+jaskolkki.com
+jenmartini.com
+leprixnet.com
+metavrze.com
 morasota.top
+reberts.com
+remaxbemidji.com
+scrroeder.com
+solfson.com
+tannypro.com
+wilknnson.com
+winrler.com
+wwexp.com
+zealmovies.com
 payload.bruemald.top
