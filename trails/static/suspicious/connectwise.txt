@@ -1385,3 +1385,8 @@ relays.zyabozadpap.top
 # Reference: https://tria.ge/260113-py79jsf15e/behavioral1
 
 194.26.192.95:8041
+
+# Reference: https://x.com/tobersotski/status/2018969415740702898
+# Reference: https://www.virustotal.com/gui/file/cdac29148a73b91a08f8844014e3ef4efca0575030d8396beb53d63bbb3c0879/detection
+
+instance-luj3ua-relay.screenconnect.com
