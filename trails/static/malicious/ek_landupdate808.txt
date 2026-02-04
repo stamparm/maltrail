@@ -730,3 +730,10 @@ mckeczie.com
 pfanaerstill.com
 rorkery.com
 viesexuelle.com
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-02-03-IOCs-from-KongTuke-ClickFix-activity.txt
+
+aacobson.com
+emierich.com
+morasota.top
+payload.bruemald.top
