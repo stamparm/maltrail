@@ -16643,6 +16643,10 @@ cdn-cookies.com
 cdncomplete.com
 cdncookie.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.196.9.152/relations
+
+googlestgmanager.xyz
+
 # Generic
 
 /assets/lfg.js
