@@ -16644,8 +16644,17 @@ cdncomplete.com
 cdncookie.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/185.196.9.152/relations
+# BANNER_0_HASH-HOST=c58634db9b1afe46014c1be6ae110004
+# CERT_FINGERPRINT_SHA256-HOST=8d12a609e619bc1ce9fe9335a5d1dbda217a12d4f996b1d7da09ad04701a7368
 
+deynicaminiz.site
+filedocumentonline.com
+ftm-lottery.net
+goodleestat.online
 googlestgmanager.xyz
+skillsworks.top
+socket-io.ws
+wijetmedio.site
 
 # Generic
 
