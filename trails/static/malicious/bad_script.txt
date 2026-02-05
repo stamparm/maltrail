@@ -9307,6 +9307,12 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /huggerhealth.ps1
 /puzzledsymbol.ps1
 
+# Reference: https://x.com/smica83/status/2019371013012877631
+# Reference: https://www.virustotal.com/gui/file/279144a2a073b654093ff45c991ed72e746a868a93993be661ba5c712a97a2a9/detection
+
+/Dossto4ka/ambiguoustog.ps1
+/ambiguoustog.ps1
+
 # Generic
 
 /5c0ca79.php
