@@ -819,3 +819,7 @@ yorkci.com
 # Reference: https://www.virustotal.com/gui/file/87bc0498506de1b30ce5152749a34cbdf4b55f739ba34a0e204e0a51c92ea140/detection
 
 softbylinux.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/193.149.176.105/relations
+
+weibast.com
