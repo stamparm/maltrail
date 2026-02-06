@@ -37135,6 +37135,7 @@ autenticaviaverde.com
 autentiseringdhl.com
 authenticate-device-verification.com
 authenticate-information.com
+authenticate-layer.com
 authenticate-protect.com
 authenticate-support.com
 authenticate-web-app.com
@@ -37209,6 +37210,7 @@ bofatexthelp.sbs
 bol-check.com
 bolb-live.com
 booking.hotelhubcontrol.com
+booking.reservalionschecks.com
 borger-domstolene.com
 borger.kreditstop.com
 borgerbrev.com
@@ -37557,6 +37559,7 @@ fideltyverificationhelp.sbs
 final-step-activate.com
 finalise-final-stage.com
 finalise-update-steps.com
+finance-ausconnect.sbs
 finish-update-step.com
 finvestment.support
 firmware-update-ledger.com
@@ -38180,6 +38183,7 @@ renew-pending-update.com
 renew-primary-auth.com
 renew-primary-system.com
 renew-secure-auth.com
+reservalionschecks.com
 reservixerupdater.info
 reservpaortart.info
 resolve-upgrade-inquiry.com
@@ -38459,6 +38463,7 @@ update-activity-lock.com
 update-anpost.com
 update-change-contact.com
 update-change-operative.com
+update-dash.com
 update-device-helpdesk.com
 update-new-device.com
 update-no.com
