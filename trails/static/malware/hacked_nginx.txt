@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://securitylabs.datadoghq.com/articles/web-traffic-hijacking-nginx-configuration-malicious/
+
+http://158.94.210.227
+158.94.210.227:8080
+hashbank8.com
+ide.hashbank8.com
+th.cogicpt.org
+xzz.pier46.com
