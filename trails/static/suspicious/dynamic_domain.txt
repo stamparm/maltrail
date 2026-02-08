@@ -3836,3 +3836,7 @@ fpr.net
 # Reference: https://www.virustotal.com/gui/domain/abrdns.com/relations
 
 abrdns.com
+
+# Reference: https://www.virustotal.com/gui/domain/loophole.site/relations
+
+loophole.site
