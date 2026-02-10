@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: reynolds ransomware
+
+# Reference: https://x.com/PaduckLee/status/2021150372283265322
+# Reference: https://www.virustotal.com/gui/file/6bd8a0291b268d32422139387864f15924e1db05dbef8cc75a6677f8263fa11d/detection
+
+bs2tlg32pfjwmclm22cyngqmoo24cdlhfxzbruwrdaxumisfeory32qd.onion
