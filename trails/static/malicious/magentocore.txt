@@ -16632,6 +16632,10 @@ cloudflare-static7.net
 # Reference: https://www.virustotal.com/gui/ip-address/45.158.127.153/relations
 
 cloudflare-static11.com
+cloudflare-static12.com
+cloudflare-static12.net
+cloudflare-static14.com
+cloudflare-static14.net
 
 # Reference: https://www.virustotal.com/gui/ip-address/172.67.185.101/relations
 
