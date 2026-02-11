@@ -1404,3 +1404,8 @@ server-ovh30020015-relay.screenconnect.com
 diversifiedfireprotection.top
 admin.diversifiedfireprotection.top
 relay.diversifiedfireprotection.top
+
+# Reference: https://www.virustotal.com/gui/file/717d463e6582187bf381b01aae50ea06d528e6299025014934d14c24ce1057dd/detection
+
+193.233.202.224:8880
+boriserton27.anondns.net
