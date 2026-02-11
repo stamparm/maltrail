@@ -1396,3 +1396,11 @@ instance-luj3ua-relay.screenconnect.com
 
 instance-s065e3-relay.screenconnect.com
 server-ovh30020015-relay.screenconnect.com
+
+# Reference: https://x.com/tobersotski/status/2021503494973444558
+# Reference: https://www.virustotal.com/gui/file/5a00ba097f8fe4c6b583f0aed574a2ef62bf6bcddab0224c006ed017a8f7af9e/detection
+
+173.249.197.147:8041
+diversifiedfireprotection.top
+admin.diversifiedfireprotection.top
+relay.diversifiedfireprotection.top
