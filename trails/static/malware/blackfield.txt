@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: blackfield ransomware
+
+# Reference: https://x.com/PaduckLee/status/2021484339272483317
+# Reference: https://www.virustotal.com/gui/file/a767f169ddce13a14649f7fa532bbf47476d533966c081a0f0a910c70e06014c/detection
+
+xcou7t6a4qlecsr7ipmxlwsseghxbebqltnxwaurxx3bbsbts7ljacqd.onion
