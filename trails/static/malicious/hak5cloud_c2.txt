@@ -2405,5 +2405,6 @@ http://82.25.91.109
 96.246.38.83:8080
 98.81.248.192:8080
 c2.madasp.com
+c2.smeit.com
 darkgrim.io
 martynspurgeon.myqnapcloud.com
