@@ -3840,3 +3840,7 @@ abrdns.com
 # Reference: https://www.virustotal.com/gui/domain/loophole.site/relations
 
 loophole.site
+
+# Reference: https://www.virustotal.com/gui/domain/cloud-ip.cc/relations
+
+cloud-ip.cc
