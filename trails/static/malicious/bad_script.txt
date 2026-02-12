@@ -9313,6 +9313,11 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /Dossto4ka/ambiguoustog.ps1
 /ambiguoustog.ps1
 
+# Reference: https://www.virustotal.com/gui/file/f9b963235b954c521096256a10d8e8dce0092c9ca054e78dce3cac63756d0976/detection
+
+/RdstgcDe/upwawsfrg.php
+/upwawsfrg.php
+
 # Generic
 
 /5c0ca79.php
