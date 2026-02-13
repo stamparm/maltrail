@@ -1015,6 +1015,12 @@ jelvora.com
 plurfestivalgalaxy.com
 soteixeira.com.br
 
+# Reference: https://app.validin.com/detail?find=Parser%20Web%20Panel&type=raw&ref_id=669b1e63717#tab=host_responses (# 2026-02-13)
+
+176.113.115.77:8080
+178.22.24.175:8080
+77.90.185.209:8080
+
 # Generic
 
 /admin_123/auth.php
