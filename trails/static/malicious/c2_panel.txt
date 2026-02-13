@@ -1021,10 +1021,6 @@ soteixeira.com.br
 178.22.24.175:8080
 77.90.185.209:8080
 
-# Reference: https://x.com/malwrhunterteam/status/2022269628349599888
-
-mood-followed-wanted-operate.trycloudflare.com
-
 # Generic
 
 /admin_123/auth.php
