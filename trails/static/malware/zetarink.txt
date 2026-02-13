@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: zetarink ransomware
+
+# Reference: https://x.com/fbgwls245/status/2022243126627455249
+# Reference: https://www.virustotal.com/gui/file/904cee06bbc6093213e8653b120b2b72701bac7e8dbfbdd69bfb3aed9b6a7298/detection
+
+5cxxlyurwn2usx5qwtlny7o3r5a5nb46lznelb56w2xuo7x35nbmulyd.onion
