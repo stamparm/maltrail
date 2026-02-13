@@ -5308,8 +5308,10 @@ http://216.126.237.61
 # Reference: https://www.virustotal.com/gui/file/abab62d82379b2352694a21aefa8b49da17c2df83b7138b6f192cac3e3be4521/detection
 
 http://54.149.109.58
+195.10.205.227:8000
 54.149.109.58:443
 54.149.56.62:8181
+54.191.12.217:8181
 3.121.234.29.sslip.io
 admin.velot.site
 alexwilsonresearch.link
