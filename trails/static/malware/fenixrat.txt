@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/Merlax_/status/2022426806570062307
+# CLASS_0_HASH-HOST=e930c83bc62f0c4fae6693ddde5edd00
+# TITLE-HOST=FENIX Admin - Login
+
+acosoluction.com.ua
+doydoo.site
+fenix.my
