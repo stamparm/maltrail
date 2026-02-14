@@ -37299,6 +37299,7 @@ authenticate-support.com
 authenticate-web-app.com
 authentication-device-verification.com
 authentification-cert-lu.com
+authgovaccesspoint.sbs
 authsecure08-userverify001.com.de
 authsecure08-websecure008ad.space
 authsecure08.com
@@ -38456,6 +38457,7 @@ securedocumentauth.com
 securegrantauservice.net
 securehsbcnet.com
 secureledgerassist.com
+securemyau-entry.cfd
 securemyledgerdevice-913.com
 secureresetlink4519id6183.com
 securewellsfargous909.sbs
@@ -38658,6 +38660,7 @@ user-token-rpd.com
 userhelp-panel08-coinbase.us
 userhelpbov.com
 userportal.help
+users-klarna.com
 usilocate.info
 v3binance.com
 validar-santander.com
