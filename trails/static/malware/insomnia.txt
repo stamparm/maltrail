@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: insomnia ransomware
+
+# Reference: https://www.ransomware.live/group/insomnia
+
+i62huw7ve22rpyw6lnq3kmfump2dmsg4xpveec3ere73njwatrz74gad.onion
