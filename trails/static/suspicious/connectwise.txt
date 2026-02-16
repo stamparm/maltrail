@@ -1416,3 +1416,9 @@ boriserton27.anondns.net
 45.92.1.138:8041
 readmenownow838.info
 relay.readmenownow838.info
+
+# Reference: https://www.huntress.com/blog/clickfix-matanbuchus-astarionrat-analysis
+# Reference: https://www.virustotal.com/gui/file/2159046f92c18c4eaecad6ffd3c9ff5bb196deef33034086465aa96cf3574956/detection
+
+91.92.241.218:8041
+support.ourgreeky.com
