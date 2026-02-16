@@ -9324,6 +9324,11 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /.tzfuckua/tz.hta
 /.tzfuckua/
 
+# Reference: https://x.com/marius_benthin/status/2023380271584698522
+# Reference: https://www.virustotal.com/gui/file/83e131a2761d6f3a5636cf329182242a927a618174dd440989dc9286be4edeac/detection
+
+/FvXnR/msinit
+
 # Generic
 
 /5c0ca79.php
