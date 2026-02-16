@@ -6363,3 +6363,15 @@ is25.in
 # Reference: https://www.virustotal.com/gui/file/3d2d584b359cdc62a41f7d167f17ec039098962a5abb5123b6ccb43c4d40c609/detection
 
 45.156.87.105:1337
+
+# Reference: https://x.com/skocherhan/status/2023387583313592322
+# Reference: https://www.virustotal.com/gui/file/01be4ebf2abf9101f91e017e377cecceeb182c64d349bad20389676bd5b82e1f/detection
+# Reference: https://www.virustotal.com/gui/file/61a426daa20f1f7ba2752b95d19c1c84990bb4f6454625a3e84a70a4a16b7c5d/detection
+# Reference: https://www.virustotal.com/gui/file/779601a9f8100d4fa26eb4ea7a469ffe67e815124f881a81feeb4872d2cab182/detection
+# Reference: https://www.virustotal.com/gui/file/e8bbc737347ca5665be8fa6223be0ab1226591f20d4156fbf0b836a24c239e38/detection
+
+191.96.92.87:7777
+45.141.26.201:3718
+82.26.104.122:3718
+82.26.104.122:3778
+parad0x.hopto.org
