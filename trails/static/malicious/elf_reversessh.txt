@@ -1192,3 +1192,8 @@ http://104.129.28.201
 # Reference: https://www.wiz.io/blog/wiz-research-gogs-cve-2025-8110-rce-exploit
 
 119.91.42.53:3232
+
+# Reference: https://x.com/marius_benthin/status/2023380271584698522
+# Reference: https://www.virustotal.com/gui/file/83e131a2761d6f3a5636cf329182242a927a618174dd440989dc9286be4edeac/detection
+
+x-ya.ru
