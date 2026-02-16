@@ -15732,11 +15732,18 @@ webjs-cms.online
 
 # Reference: https://app.validin.com/detail?find=185.196.11.100&type=ip4&ref_id=23ca33e4924#tab=resolutions (# 2025-05-01)
 # Reference: https://app.validin.com/detail?find=a427293b9f24f4147c5e52ba63638401&type=hash&ref_id=23ca33e4924#tab=host_pairs (# 2025-05-01)
+# CERT_FINGERPRINT_SHA256-HOST=480b7ae6795713255b94245086cf17e1a5b5340ff5d4eddc3c8e7b7e050e6d8f
+# CERT_FINGERPRINT_SHA256-HOST=97b0019005ee14927525495d3649872fb489cdd0820e6971b6ab08df3eb6716c
 
 accueildisclosure.com
 communityhelper.store
+googletgmanager.net
+monitoringrealip.cc
 optionhoraire.com
 showroomadmin.wiki
+westminster-royal.info
+magento.monitoringrealip.cc
+shop.monitoringrealip.cc
 
 # Reference: https://app.validin.com/detail?type=ip&find=45.88.3.0%2F24#tab=resolutions (# 2025-04-11)
 
