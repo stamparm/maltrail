@@ -48124,6 +48124,11 @@ sec-t2.fainerkern.ru
 shop.varenikgrief.ru
 svc-int-api-identity-token-issuer-v2-mn.in.net
 
+# Reference: https://x.com/MsftSecIntel/status/2022456612120629742
+
+http://84.21.189.20
+84.21.189.20:443
+
 # Generic
 
 /a3A7qLVn/
