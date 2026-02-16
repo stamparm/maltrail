@@ -1409,3 +1409,10 @@ relay.diversifiedfireprotection.top
 
 193.233.202.224:8880
 boriserton27.anondns.net
+
+# Reference: https://x.com/skocherhan/status/2023195504637816972
+# Reference: https://www.virustotal.com/gui/file/c157fd3dbde76de88d6e94223f387ed4cd9414bdcd8166d2107b7054a38d9231/detection
+
+45.92.1.138:8041
+readmenownow838.info
+relay.readmenownow838.info
