@@ -48129,6 +48129,10 @@ svc-int-api-identity-token-issuer-v2-mn.in.net
 http://84.21.189.20
 84.21.189.20:443
 
+# Reference: https://www.huntress.com/blog/clickfix-matanbuchus-astarionrat-analysis
+
+binclloudapp.com
+
 # Generic
 
 /a3A7qLVn/
