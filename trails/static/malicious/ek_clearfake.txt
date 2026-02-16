@@ -48130,8 +48130,27 @@ http://84.21.189.20
 84.21.189.20:443
 
 # Reference: https://www.huntress.com/blog/clickfix-matanbuchus-astarionrat-analysis
+# BANNER_0_HASH-HOST=4f41655b3621ecf4b384b707a6e646c0
 
+api.intentverif.com
+apiclofront.com
+approvethis.info
 binclloudapp.com
+cdn-imgure.com
+cdntokencf.com
+cloudieverfy.com
+cloudsefront.com
+cloudsinverf.com
+intentcpadi.com
+intentverif.com
+ourgreeky.com
+resource-clio-app.com
+securappcf.com
+solidclouaps.com
+validatecfns.com
+validercfcnd.com
+vrfiedcfcdn.com
+vrfyidcloudes.com
 
 # Generic
 
