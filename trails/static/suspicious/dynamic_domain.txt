@@ -3844,3 +3844,7 @@ loophole.site
 # Reference: https://www.virustotal.com/gui/domain/cloud-ip.cc/relations
 
 cloud-ip.cc
+
+# Reference: https://www.virustotal.com/gui/domain/noip.biz/relations
+
+noip.biz
