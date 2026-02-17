@@ -6007,3 +6007,10 @@
 
 109.120.144.0/24,server-21-as
 94.159.113.0/24,server-21-as
+
+# AS 42397
+# Reference: https://ipinfo.io/AS42397
+
+185.232.65.0/24,bunea-high-volume-network
+193.29.13.0/24,bunea-high-volume-network
+193.29.15.0/24,bunea-high-volume-network
