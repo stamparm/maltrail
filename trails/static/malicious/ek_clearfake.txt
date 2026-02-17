@@ -48158,6 +48158,12 @@ validercfcnd.com
 vrfiedcfcdn.com
 vrfyidcloudes.com
 
+# Reference: https://github.com/hagezi/dns-blocklists/issues/9169
+
+digiseccloud.com
+lampungethnica.com
+wulingyuanparkzone.com
+
 # Generic
 
 /a3A7qLVn/
