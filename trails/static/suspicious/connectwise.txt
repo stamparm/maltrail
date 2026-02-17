@@ -1428,3 +1428,7 @@ support.ourgreeky.com
 91.208.197.94:8041
 wlzhelp.top
 fmt2as.ddns.net
+
+# Reference: https://www.virustotal.com/gui/domain/dickvu.xyz/relations
+
+dickvu.xyz
