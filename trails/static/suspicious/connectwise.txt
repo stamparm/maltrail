@@ -1422,3 +1422,9 @@ relay.readmenownow838.info
 
 91.92.241.218:8041
 support.ourgreeky.com
+
+# Reference: https://www.virustotal.com/gui/file/100a503d37c16f6f538bc4b636bbe28d3a690d4a1aa899fcbe6aed1020a952d6/detection
+
+91.208.197.94:8041
+wlzhelp.top
+fmt2as.ddns.net
