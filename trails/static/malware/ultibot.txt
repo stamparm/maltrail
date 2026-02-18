@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/Fact_Finder03/status/2024042598373994955
+# TITLE-HOST/IP=Ultimate Botnet
+
+173.212.225.159:3000
