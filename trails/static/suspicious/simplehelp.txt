@@ -2056,3 +2056,7 @@ zoom.lakon.online
 zoomconnets.info
 zpzx.ooguy.com
 zscs.toopac.xyz
+
+# Reference: https://x.com/wbmmfq/status/2023897621342105898
+
+http://185.135.86.185
