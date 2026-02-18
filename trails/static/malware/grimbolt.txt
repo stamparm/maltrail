@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: brickstorm, grimbolt, unc6201
+
+# Reference: https://x.com/BushidoToken/status/2023872255630209236
+# Reference: https://x.com/BushidoToken/status/2023872266275352646
+# Reference: https://cloud.google.com/blog/topics/threat-intelligence/unc6201-exploiting-dell-recoverpoint-zero-day
+
+http://104.156.239.98
+http://140.82.18.134
+http://149.248.11.71
+http://155.138.225.148
+http://45.32.122.93
+http://45.32.123.183
+http://45.63.98.51
+http://66.42.111.219
+http://95.179.238.141
+104.156.239.98.sslip.io
+140.82.18.134.sslip.io
+149.248.11.71.sslip.io
+155.138.225.148.sslip.io
+45.32.122.93.sslip.io
+45.32.123.183.sslip.io
+45.63.98.51.sslip.io
+66.42.111.219.sslip.io
+95.179.238.141.sslip.io
