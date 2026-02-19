@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.linkedin.com/posts/any-run_moonrise-anyrun-anyrun-activity-7429889782744338432-m2TU
+# Reference: https://app.any.run/tasks/d3e5e733-3b0d-4cf7-a7a8-ea1553cd16b9/
+# Reference: https://www.virustotal.com/gui/file/082fdd964976afa6f9c5d8239f74990b24df3dfa0c95329c6e9f75d33681b9f4/detection
+# Reference: https://www.virustotal.com/gui/file/7609c7ab10f9ecc08824db6e3c3fa5cbdd0dff2555276e216abe9eebfb80f59b/detection
+# Reference: https://www.virustotal.com/gui/file/8a422b8c4c6f9a183848f8d3d95ace69abb870549b593c080946eaed9e5457ad/detection
+# Reference: https://www.virustotal.com/gui/file/8d7c1bbdb6a8bf074db7fc1185ffd59af0faffb08e0eb46a373c948147787268/detection
+# Reference: https://www.virustotal.com/gui/file/c7fd265b23b2255729eed688a211f8c3bd2192834c00e4959d1f17a0b697cd5e/detection
+
+193.23.199.88:8765
