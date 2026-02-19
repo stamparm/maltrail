@@ -18450,6 +18450,7 @@ update-info926.com
 # CLASS_0_HASH-HOST=b6a350ef78eeabb86edbed06aad7b93e
 # HEADER_HASH-HOST=e4e083a118adbb676141
 
+http://145.249.115.191
 0-pal-summit.ru
 0-rohyp-5-yu.ru
 0-we-fid-707-i.ru
