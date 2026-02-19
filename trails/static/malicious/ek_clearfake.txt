@@ -38120,6 +38120,7 @@ account-activatie.com
 account-help-desk.com
 account-helpdesk.com
 account.parlnershub.com
+account.parlnershubc.com
 accounthelp-net.com
 accountpartnerproperty.com
 aceservcescen.online
@@ -38610,6 +38611,7 @@ evite-exclusivegaladinner.com
 evri-parcel-redelivery.com
 evri-reschedule-delivery.com
 evri.livetracking-online.com
+exoduspay.cfd
 exodusportal.com
 extension-certificat-lu.com
 exxcelll.com
@@ -38997,6 +38999,7 @@ metaprobussiness.com
 metrobank-business.com
 metrobank-commercial.com
 metrobanksupport.com
+meverintu.cc
 mgvrecordsau.com
 miccroexcell.xyz
 microsoft-offices.com
@@ -39182,6 +39185,7 @@ pakets-deutsch.com
 panelka.shop
 parkingbypay.com
 parlnershub.com
+parlnershubc.com
 patchservices.org
 paypalhelp.app
 paypaymentsonline.com
@@ -39231,6 +39235,7 @@ primary-device-approved.com
 primary-device-authentication.com
 primary-device-confirm.com
 primary-device-connect.com
+primary-device-default.com
 primary-device-enabled.com
 primary-device-enroll.com
 primary-device-enrollment.com
@@ -39676,6 +39681,8 @@ vm-user-support.com
 vmrolk27567.com
 voicemailnotificationportaladminsxjfjd.com
 voicemessagerecordings.com
+volksbank-tan.com
+volskbank-tan.com
 voltooi-schuld.com
 vopafone-update.com
 vpnalphaz.com
