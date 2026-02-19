@@ -7816,6 +7816,10 @@ milauth-mygovin.serveftp.com
 http://47.237.15.69
 47.237.15.69:3389
 
+# Reference: https://x.com/skocherhan/status/2024491313509409001
+
+64.111.93.170:31337
+
 # Generic
 
 /.sliver-client/
