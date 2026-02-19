@@ -7824,6 +7824,10 @@ http://47.237.15.69
 
 212.11.64.115:31337
 
+# Reference: https://x.com/skocherhan/status/2024487893071204530
+
+170.187.144.43:31337
+
 # Generic
 
 /.sliver-client/
