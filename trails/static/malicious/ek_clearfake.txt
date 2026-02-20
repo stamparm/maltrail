@@ -49130,7 +49130,13 @@ vrfyidcloudes.com
 
 # Reference: https://github.com/hagezi/dns-blocklists/issues/9169
 
+000practicetree.com
+clouddefenderai.com
+defencecloudai.com
+defencecloudly.com
+defensecorex.com
 digiseccloud.com
+digitalseccloud.com
 lampungethnica.com
 metricaltic.com
 shieldcloudare.com
