@@ -7840,6 +7840,10 @@ http://47.237.15.69
 
 94.242.52.115:13337
 
+# Reference: https://x.com/skocherhan/status/2024492483653116104
+
+51.79.87.100:13337
+
 # Generic
 
 /.sliver-client/
