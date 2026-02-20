@@ -16672,6 +16672,11 @@ wijetmedio.site
 rocketplugin.com
 api.rocketplugin.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/146.19.213.254/relations
+
+braintreeapi.shop
+braintreeapi.top
+
 # Generic
 
 /assets/lfg.js
