@@ -24,3 +24,14 @@ update211.security-ssa-gov.com
 verf-secu4u.art
 winiks.com
 zalupan.kozow.com
+
+# Reference: https://x.com/solostalking/status/2024722607787135064
+# Reference: https://urlscan.io/result/019c7aa1-d355-71e1-99a6-5c1891b4a019/
+# TITLE-HOST/IP=ErrTraffic v2 — Вход
+
+http://157.173.104.20
+lanahmadsen.phd
+portal-ssa-gov.es
+cpass.portal-ssa-gov.es
+site.counsellingpsychologist.pro
+site.lanahmadsen.phd
