@@ -1,0 +1,43 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: marssnake
+
+# Reference: https://ptsecurity.com/research/pt-esc-threat-intelligence/poisonous-mars-or-how-lucidoor-knocks-on-the-doors-of-the-cis/
+# BANNER_0_HASH-HOST=db031cd941bcd61ba525e069e062578b
+
+81.70.28.71:5555
+81.70.28.71:8089
+93.157.106.75:2000
+5.181.1.153:2000
+cdhgwnjjcw.xyz
+gdakdbysw.xyz
+reapquote.xyz
+accounts-hk.cnd.reapquote.xyz
+accounts-sg.cnd.reapquote.xyz
+accounts-youtube.cnd.reapquote.xyz
+accounts.cnd.reapquote.xyz
+android.clients.cnd.reapquote.xyz
+apis.cnd.reapquote.xyz
+button.gdakdbysw.xyz
+clients.cnd.reapquote.xyz
+cloud.ginkgo.reapquote.xyz
+cloud.nayatel.server.reapquote.xyz
+cloud.ntc.server.reapquote.xyz
+cnd.reapquote.xyz
+encrypted-tbn0-gstatic.cnd.reapquote.xyz
+gds.cnd.reapquote.xyz
+ginkgo.reapquote.xyz
+mail.ru.cdhgwnjjcw.xyz
+myaccount.cnd.reapquote.xyz
+nayatel.server.reapquote.xyz
+ntc.server.reapquote.xyz
+ogs.cnd.reapquote.xyz
+play.cnd.reapquote.xyz
+safebrowsing.cnd.reapquote.xyz
+sb-ssl.cnd.reapquote.xyz
+server.reapquote.xyz
+ssl-gstatic.cnd.reapquote.xyz
+www-gstatic.cnd.reapquote.xyz
+www-youtube.cnd.reapquote.xyz
+zimbra.server.reapquote.xyz
