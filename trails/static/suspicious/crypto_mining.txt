@@ -1499,3 +1499,9 @@ friendspool.club
 # Reference: https://www.virustotal.com/gui/file/a8ae600d922f800e997019b60fe446a5a4d7b126981791963616bb0e3fa470b5/detection
 
 51.38.65.123:10343
+
+# Reference: https://x.com/skocherhan/status/2025285426290786489
+# Reference: https://www.virustotal.com/gui/file/837924fc4ddc07b5010cd9e452930139e8139cc72df26e7c77471e47fca99149/detection
+
+162.19.224.121:10300
+163.172.154.142:10300
