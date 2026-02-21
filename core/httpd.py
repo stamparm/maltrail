@@ -463,9 +463,64 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             return PING_RESPONSE
 
+        def __is_fail2ban_allowed(self):
+            allowlist = getattr(config, "FAIL2BAN_ALLOWLIST", None)
+            if not allowlist:
+                return False  # secure by default
+
+            # allowlist can be multi-line AttribDict list or string
+            if isinstance(allowlist, (list, tuple, set)):
+                items = []
+                for entry in allowlist:
+                    items.extend([_.strip() for _ in re.split(r"[,\s;]+", str(entry)) if _.strip()])
+            else:
+                items = [_.strip() for _ in re.split(r"[,\s;]+", str(allowlist)) if _.strip()]
+
+            if not items:
+                return False
+
+            ip = self.client_address[0]
+
+            # IPv6? deny (low-hustle choice; avoids false-allow)
+            if ':' in ip and '.' not in ip:
+                return False
+
+            try:
+                ip_int = addr_to_int(ip)
+            except:
+                return False
+
+            for item in items:
+                if not item:
+                    continue
+
+                # exact IPv4
+                if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", item):
+                    if ip == item:
+                        return True
+                    continue
+
+                # IPv4 CIDR
+                m = re.match(r"\A(\d+\.\d+\.\d+\.\d+)/(\d+)\Z", item)
+                if m:
+                    prefix, bits = m.group(1), int(m.group(2))
+                    if 0 <= bits <= 32:
+                        try:
+                            if ip_int & make_mask(bits) == addr_to_int(prefix) & make_mask(bits):
+                                return True
+                        except:
+                            pass
+
+            return False
+
         def _fail2ban(self, params):
             global _fail2ban_cache
             global _fail2ban_key
+
+            if not self.__is_fail2ban_allowed():
+                self.send_response(_http_client.NOT_FOUND)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
 
             self.send_response(_http_client.OK)
             self.send_header(HTTP_HEADER.CONNECTION, "close")
