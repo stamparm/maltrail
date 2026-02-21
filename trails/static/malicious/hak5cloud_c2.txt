@@ -2406,6 +2406,7 @@ http://82.25.91.109
 98.81.248.192:8080
 0019f2909bd99dea15c7cecc4316326f.bdocr.cz
 172-105-74-94.ip.linodeusercontent.com
+br01.brgovt.net
 c2.madasp.com
 c2.smeit.com
 c2.th4ntis.com
