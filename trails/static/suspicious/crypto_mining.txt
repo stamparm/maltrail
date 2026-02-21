@@ -1509,3 +1509,9 @@ friendspool.club
 # Reference: https://www.virustotal.com/gui/file/9f507ff3786be35b00d355ff460460bb1f11399b5e8e12ddda5fdb9af64a561b/detection
 
 51.79.157.201:5442
+
+# Reference: https://www.virustotal.com/gui/file/a04ea88865d9fbab4b49f1e59bab9e12e73162e469ba4c1e66c4013d64122647/detection
+
+51.178.73.238:9118
+luckypool.io
+fr-tarirx.luckypool.io
