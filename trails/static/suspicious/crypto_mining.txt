@@ -1505,3 +1505,7 @@ friendspool.club
 
 162.19.224.121:10300
 163.172.154.142:10300
+
+# Reference: https://www.virustotal.com/gui/file/9f507ff3786be35b00d355ff460460bb1f11399b5e8e12ddda5fdb9af64a561b/detection
+
+51.79.157.201:5442
