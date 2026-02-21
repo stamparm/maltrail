@@ -14,9 +14,29 @@
 
 
 
-- Version 0.87 -> 0.88 (Upcoming release)
+- Version 1.1 -> 1.2 (Upcoming release)
+
+[+] FAIL2BAN_ALLOWLIST is implemented (Issue #19386)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
+
+- Version 1.0 -> 1.1 (01 Feb 2026)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+
+- Version 0.88 -> 1.0 (01 Jan 2026)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+[=] Major version is updated
+[=] Project historical data trimmed, ~ 420Gb freed
+
+
+- Version 0.87 -> 0.88 (01 Dec 2025)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 
