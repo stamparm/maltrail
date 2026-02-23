@@ -51,5 +51,6 @@ bore.pub
 # Reference: https://www.virustotal.com/gui/ip-address/78.29.43.89/relations
 # TITLE-HOST/IP=xTunnel - аналог ngrok
 
+try-this.ru
 tunnel4.com
 xtunnel.ru
