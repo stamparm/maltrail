@@ -47,3 +47,9 @@ stage-ngrok.com
 # Reference: https://github.com/ekzhang/bore
 
 bore.pub
+
+# Reference: https://www.virustotal.com/gui/ip-address/78.29.43.89/relations
+# TITLE-HOST/IP=xTunnel - аналог ngrok
+
+tunnel4.com
+xtunnel.ru
