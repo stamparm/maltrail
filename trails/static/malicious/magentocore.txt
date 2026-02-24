@@ -16682,6 +16682,17 @@ braintreeapi.top
 chatliveplus.com
 eventchatsupport.com
 livechatlite.com
+liverespond.online
+apicheck.chatliveplus.com
+blog.chatliveplus.com
+chat.eventchatsupport.com
+calendar.livechatlite.com
+mail.chatliveplus.com
+online.eventchatsupport.com
+portal.livechatlite.com
+status.livechatlite.com
+system.eventchatsupport.com
+webdisk.chatliveplus.com
 
 # Generic
 
