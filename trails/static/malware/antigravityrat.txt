@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/ip-address/31.57.77.35/relations
+# TITLEHOST/IP=⚡ ANTIGRAVITY RAT Console
+
+31.57.77.35:5000
+31.57.77.35:8080
