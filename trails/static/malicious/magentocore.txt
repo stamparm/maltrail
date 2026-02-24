@@ -16678,10 +16678,12 @@ braintreeapi.shop
 braintreeapi.top
 
 # Reference: https://x.com/sdcyberresearch/status/2026266049755164860
+# Reference: https://www.virustotal.com/gui/ip-address/38.180.80.50/relations
 
 chatliveapp.com
 chatliveplus.com
 eventchatsupport.com
+javascripttestlibrary.com
 livechathub.org
 livechatlite.com
 liverespond.online
