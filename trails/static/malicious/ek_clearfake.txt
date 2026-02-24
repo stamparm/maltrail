@@ -17204,10 +17204,12 @@ booking.extranethelpid612.com
 
 # Reference: https://app.validin.com/detail?find=%2Fvalidate-nohuman.php%3Fredirect%3D%2F&type=raw#tab=host_pairs (# 2025-07-14)
 
+account.booklngg.com
 appointmentservicegatewayato0support.digital
 areaviaverde.com
 assistance-robinhood.com
 auth-primary-device.com
+booklngg.com
 businesslogin-online.com
 changenows.io
 charleschwabmanagement.sbs
@@ -17233,6 +17235,7 @@ ledgerdiagnostics-scan.com
 ledgerlivesupport.center
 ledgerlivesupportdesk.com
 mobilehelpmt.com
+nightlywallet.app
 nt-uk.com
 onlineencryptedmessages.cfd
 onlinemessages893.cfd
@@ -19626,6 +19629,7 @@ http://145.249.115.191
 595-1.ru
 596y.bul1upd2ted.ru
 59gwy.ic0n1ctrove.ru
+59xgjeq2.hexalink.digital
 5a.frost-indigo.ru
 5a0.ember-cross.ru
 5adm.windsh1ne.ru
@@ -21765,6 +21769,7 @@ berry5.cioudberryx.ru
 berry9shipment.coupons
 beryl6.silberquarz4.ru
 berylhammer.ru
+best.deals.my.id
 best.gytogii12.ru
 best.jibiw8aa5.ru
 bestdeal.deals.my.id
@@ -22200,6 +22205,7 @@ branch.nightl1ne.ru
 brand.7-nenop-38-oy.ru
 brand8.emberklamm.ru
 brandnames.deals.my.id
+brandnew.deals.my.id
 brandung.wolkenkueste.ru
 brassgipfel.ru
 brassufer.ru
@@ -22408,6 +22414,7 @@ buvmix.dropga7net5.ru
 buvusio6.ru
 buwyvo.ru
 buxok2uu6.ru
+buycheap.deals.my.id
 buyer.xiqek-40-ye-8.ru
 buzqer.v-1-nexettle.ru
 bv.f0z1n.ru
@@ -22967,6 +22974,7 @@ chattytolet.digital
 che6u7therm.ru
 che7nt2rp.ru
 cheap8.0-rohyp-5-yu.ru
+cheapest.deals.my.id
 cheb0t5agit.ru
 chebuk.ru
 check.2-wafij-3-ue.ru
@@ -24046,6 +24054,7 @@ dealblitz.qpon
 dealfinder.coupons
 dealharbor.coupons
 dealharbor2.coupons
+deals.my.id
 dealzauber.qpon
 deane4y5not.ru
 dear.kuryc7yy1.ru
@@ -27147,6 +27156,7 @@ hex-wander.ru
 hex.twirlpane.ru
 hexa.hexapulse.ru
 hexagon73.dealharbor2.coupons
+hexalink.digital
 hexapulse.ru
 hexoluy6.ru
 hexqiv.dev0urspon8y.ru
