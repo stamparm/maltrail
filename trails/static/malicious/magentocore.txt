@@ -16677,6 +16677,12 @@ api.rocketplugin.com
 braintreeapi.shop
 braintreeapi.top
 
+# Reference: https://x.com/sdcyberresearch/status/2026266049755164860
+
+chatliveplus.com
+eventchatsupport.com
+livechatlite.com
+
 # Generic
 
 /assets/lfg.js
