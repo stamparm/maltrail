@@ -9345,6 +9345,16 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /tactilelivestock.ps1
 /kkraag/
 
+# Reference: https://x.com/smica83/status/2026756509057614283
+# Reference: https://www.virustotal.com/gui/file/d2ca7d6de6f442d32226ae80271829e9ec78994b5d38f0fc5f382c4659ed29bc/detection
+
+/u5kv/barbarousoldie.ps1
+/u5kv/beanfamiliarity.ps1
+/u5kv/lackadaisicalgold.ps1
+/barbarousoldie.ps1
+/beanfamiliarity.ps1
+/lackadaisicalgold.ps1
+
 # Generic
 
 /5c0ca79.php
