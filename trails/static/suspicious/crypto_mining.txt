@@ -1519,3 +1519,11 @@ fr-tarirx.luckypool.io
 # Reference: https://www.virustotal.com/gui/file/a10431e4f4bd7db38916b4199ec5edc89aee72b67e866410d5e96622c476e355/detection
 
 66.23.199.44:20128
+
+# Reference: https://www.virustotal.com/gui/file/4eea38595ce1f45dbff61bea15df390595647718d8039376afe53f384c59ce75/detection
+
+66.23.199.44:10128
+
+# Reference: https://www.virustotal.com/gui/file/5ca095e6f4b2f9724374ce849c2f12360178eabbe5b419096d851972ba5fd415/detection
+
+45.155.102.89:10128
