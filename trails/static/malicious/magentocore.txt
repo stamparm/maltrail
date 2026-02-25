@@ -16698,6 +16698,12 @@ status.livechatlite.com
 system.eventchatsupport.com
 webdisk.chatliveplus.com
 
+# Reference: https://www.linkedin.com/posts/sansec_all-your-cheese-are-belong-to-us-we-just-activity-7432081690745024512-4qFA
+
+api-middle-connect.com
+cdn.api-middle-connect.com
+cloud.api-middle-connect.com
+
 # Generic
 
 /assets/lfg.js
