@@ -2668,6 +2668,12 @@ YandexUpdate/1.0
 
 SecurityScanner/1.0
 
+# Reference: https://x.com/malwrhunterteam/status/2026625918223978705
+# Reference: https://x.com/smica83/status/2026630531392160251
+# Reference: https://tria.ge/260225-pazmhaby3b/behavioral1
+
+^winupdate$
+
 # Misc
 
 information_schema
