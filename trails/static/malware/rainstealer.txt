@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: acrstealer, storm-2477, aurastealer
+
+# Reference: https://x.com/solostalking/status/2026679620205162782
+# Reference: https://www.virustotal.com/gui/file/7af516017624880c1d270aed862b123be4bf13603fbcc3f6127d629c0834f147/detection
+
+193.164.4.78:777
