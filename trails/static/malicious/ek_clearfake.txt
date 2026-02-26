@@ -50146,6 +50146,22 @@ metricaltic.com
 shieldcloudare.com
 wulingyuanparkzone.com
 
+# Reference: https://x.com/5mukx/status/2026736447181423012
+# Reference: https://www.virustotal.com/gui/ip-address/146.103.111.173/relations
+# Reference: https://www.virustotal.com/gui/file/9fc4e22dfe8ce306d723b0c31eca64c6498f55ae50ea322619ee62b5a0c19b4c/detection
+
+bestluxurycarsg.com
+gotrekus.com
+jiplerster.com
+kolsvtivity.com
+lespberates.com
+luxurycarshere.com
+luxuryestatev.com
+polverpes.com
+ppchasc.com
+privatejetp.com
+vkipsvetops.com
+
 # Generic
 
 /a3A7qLVn/
