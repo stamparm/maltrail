@@ -2060,3 +2060,12 @@ zscs.toopac.xyz
 # Reference: https://x.com/wbmmfq/status/2023897621342105898
 
 http://185.135.86.185
+
+# Reference: https://x.com/smica83/status/2026968951360483669
+# Reference: https://www.virustotal.com/gui/file/66ccd9377706a3dfcbdff8f0f2c945e062a489dd5b7bc13cfa94ed663a9dc4a5/detection
+
+203.188.171.142:443
+203.188.171.88:443
+healthcare-shore.com
+ddd.healthcare-shore.com
+online.healthcare-shore.com
