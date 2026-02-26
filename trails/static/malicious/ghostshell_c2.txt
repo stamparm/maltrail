@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/whoamix302/status/2019556908127150128
+
+167.86.74.28:8888
+179.43.176.109:8888
+ghostshellrat.net
+server.ghostshellrat.net
