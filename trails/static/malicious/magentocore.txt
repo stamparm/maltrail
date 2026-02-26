@@ -16705,10 +16705,15 @@ cdn.api-middle-connect.com
 cloud.api-middle-connect.com
 
 # Reference: https://x.com/sdcyberresearch/status/2026985724935889148
+# Reference: https://www.virustotal.com/gui/ip-address/192.236.209.185/relations
 
+api-woocommerce.com
 cdnjs-cloud.com
+cdnjs-cloudflare.com
 leads-zdassets.com
 path-bootstrapcdn.com
+widget-trustpilot.com
+widget-zopim.com
 
 # Generic
 
