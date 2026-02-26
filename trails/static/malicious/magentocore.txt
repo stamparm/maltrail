@@ -16704,6 +16704,12 @@ api-middle-connect.com
 cdn.api-middle-connect.com
 cloud.api-middle-connect.com
 
+# Reference: https://x.com/sdcyberresearch/status/2026985724935889148
+
+cdnjs-cloud.com
+leads-zdassets.com
+path-bootstrapcdn.com
+
 # Generic
 
 /assets/lfg.js
