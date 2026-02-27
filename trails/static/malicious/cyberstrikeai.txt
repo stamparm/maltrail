@@ -6,6 +6,7 @@
 # Reference: https://cyberandramen.net/2026/02/21/llms-in-the-kill-chain-inside-a-custom-mcp-targeting-fortigate-devices-across-continents/
 # Reference: https://aws.amazon.com/ru/blogs/security/ai-augmented-threat-actor-accesses-fortigate-devices-at-scale/
 
+101.43.106.66:8080
 103.164.81.110:8080
 106.52.47.65:8080
 115.120.233.95:8080
@@ -34,5 +35,6 @@
 60.204.227.64:8080
 62.234.61.215:8080
 62.234.61.215:8088
+81.70.144.252:8080
 drb420.ru
 cyberstrike.drb420.ru
