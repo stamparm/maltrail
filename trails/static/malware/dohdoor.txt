@@ -1,0 +1,29 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: uat-10027
+
+# Reference: https://blog.talosintelligence.com/new-dohdoor-malware-campaign/
+# Reference: https://github.com/Cisco-Talos/IOCs/blob/main/2026/02/new-dohdoor-malware-campaign.txt
+# Reference: https://www.virustotal.com/gui/file/54e18978c6405f56cd59ba55a62291436639f21cf325ae509f0599b15e8f7f53/detection
+# Reference: https://www.virustotal.com/gui/file/0bb130b1fafb17705d31fe5dd25e7b2d62176578609d75cc57911ef5582ef17a/detection
+# Reference: https://www.virustotal.com/gui/file/54545fa3a2d8da6746021812ebaa9d26f33bba4f63c6f7f35caa6fa4ee8c0e6a/detection
+# Reference: https://www.virustotal.com/gui/file/8e97c677aec905152f8a92fed50bb84ef2e8985d5c29330c5a05a4a2afcbd4a5/detection
+# Reference: https://www.virustotal.com/gui/file/800faaf15d5f42f2ab2c1d2b6b65c8a9e4def6dc10f6ce4e269dcf23f4e8dae2/detection
+# Reference: https://www.virustotal.com/gui/file/b1bd8f7d4488977cca03954a57f5c8ad7bfd4609bcc3bae92326830fcbd3232c/detection
+# Reference: https://www.virustotal.com/gui/file/2ce3e75997f89b98dd280d164a5f21f7565f4de26eed61243badde04b480700e/detection
+
+deepinspectionsystem.online
+mswinsoftupdload.design
+pnuisckmhwagzvdyjrlbeft.software
+cjitdrpwnna.mswinsoftupdload.design
+ezqrvkfgejwctdnc.pnuisckmhwagzvdyjrlbeft.software
+gitkzxd.pnuisckmhwagzvdyjrlbeft.software
+gppiwogwndiakkdu.pnuisckmhwagzvdyjrlbeft.software
+lbandugzcfg.deepinspectionsystem.online
+llalwpijnjskclwy.pnuisckmhwagzvdyjrlbeft.software
+lsypdqgxredfpx.mswinsoftupdload.design
+qhtckzbxtkdvyr.mswinsoftupdload.design
+sdxsiol.pnuisckmhwagzvdyjrlbeft.software
+txjiqslrrig.mswinsoftupdload.design
+yhdjtylnsmwvuu.deepinspectionsystem.online
