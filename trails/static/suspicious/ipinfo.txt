@@ -445,3 +445,10 @@ reallyfreegeoip.org
 # Reference: https://www.virustotal.com/gui/file/5a9dc51122f46633e130716d169dd0c9a00ea5c47a90bf0636e9101183b34185/detection
 
 http://118.184.169.48/dyndns/getip
+
+# Reference: https://www.virustotal.com/gui/ip-address/95.85.252.196/relations
+# Reference: https://app.any.run/tasks/ea77b391-69ef-4c61-9a32-2a9d3ca2af08
+
+ip.wtf
+v4.ip.wtf
+v6.ip.wtf
