@@ -18543,6 +18543,8 @@ update-info926.com
 # HEADER_HASH-HOST=e4e083a118adbb676141
 
 http://145.249.115.191
+http://77.90.185.24
+77.90.185.24:443
 0-pal-summit.ru
 0-rohyp-5-yu.ru
 0-we-fid-707-i.ru
@@ -19061,6 +19063,7 @@ http://145.249.115.191
 2aopzocs.ar7aydia1ect.ru
 2av9bxno.sn1pglacier.ru
 2avp8.s0ckthorn.ru
+2azr2jei.coreforge.digital
 2b3.di5r.ru
 2b32noaw.impercepm0no8.ru
 2b3n1.j1nxbuckle.ru
@@ -19319,6 +19322,8 @@ http://145.249.115.191
 3o9.b-3-aconz.ru
 3oi.wtok2.ru
 3oil.wolkenmeer.ru
+3on37fyf.quantumridge.digital
+3pf82esd.globalframe.digital
 3q6.ithc-4.ru
 3qdt.m1stypath.ru
 3r.bid-5.ru
@@ -19532,9 +19537,11 @@ http://145.249.115.191
 4s.g4eyhhar1eq.ru
 4sa.info
 4shn.t1decrystai.ru
+4sontfzx.quantumloop.digital
 4sv.cl0udmark.ru
 4t.wugh.ru
 4t2.inc1inedn0n.ru
+4tj2wnp5.smartcanvas.digital
 4u.ozxg-5.ru
 4u29.manual1sa1yz.ru
 4uw50lrg.5purbu7y.ru
@@ -19796,6 +19803,7 @@ http://145.249.115.191
 5vt.lo2p.ru
 5vyg.copperlattice.ru
 5w.g-lim.ru
+5w2x7glx.pixelpeak.digital
 5weuo.ta11y.ru
 5wf.yw9a.ru
 5wnc.rockstorm.ru
@@ -20269,6 +20277,7 @@ http://145.249.115.191
 8427.49o103159.ru
 8427.bl8205.ru
 8427.u069653.ru
+842yoa9r.quantumloop.digital
 8451203.31e854642.ru
 8451203.y438414.ru
 8451203.zm6392.ru
@@ -20485,6 +20494,7 @@ http://145.249.115.191
 95f.ru6q.ru
 95o8yn83.stoneweir.digital
 95tbm.ru
+95zxw7vw.opticprime.digital
 96.j8ro.ru
 964.30u241207.ru
 964.8d9691.ru
@@ -20539,6 +20549,7 @@ http://145.249.115.191
 9gh.bb3y5.ru
 9gu.wildr0sehub.ru
 9gzt.c0ffee8rind.ru
+9gztfgi4.synthgrid.digital
 9h54jr6k.get2b0ut.ru
 9hb.p8ri.ru
 9hctu.nightwharf.ru
@@ -20579,6 +20590,7 @@ http://145.249.115.191
 9q.55-0p.ru
 9q.raincr5st.ru
 9q0r8r20.m0ri5ompump.ru
+9qzzbixt.crystalforge.digital
 9r1ca.izn5ty1ize.ru
 9r5b.b1asfi7ty.ru
 9r6r.deep5ky.ru
@@ -23577,6 +23589,7 @@ coldwind.in.net
 coldwind.silentpeak.coupons
 coletuo46.ru
 colonyorder.murasubordin.ru
+com.pixelpeak.digital
 comet.enter483pro.coupons
 comethoehle.ru
 cometlinde.ru
@@ -23650,6 +23663,7 @@ core.s0apthorn.ru
 core.storml1ght.ru
 core5.tweakmire.ru
 core9.luc7y5nub.ru
+coreforge.digital
 coreformula.inherentrecip.ru
 coreintegratednode.implementnega.in.net
 corenumber.arithmethair.in.net
@@ -23803,6 +23817,7 @@ cs2bs.lake5p1rit.ru
 cs4.starforged.ru
 csju5.prariehafen.ru
 cso.burydyu0.ru
+csyx0ohs.coreforge.digital
 ct.jorx.ru
 ctf.nibsnap.ru
 ctfi.sl0bozh5treak.ru
@@ -24083,6 +24098,7 @@ datap1xel.ru
 datapulse.fluxnode.in.net
 datash1ft.ru
 datashade.ru
+dataspark.digital
 datastream.cloudtrace.coupons
 datastream.in.net
 daty.cloudr1ver.ru
@@ -26155,6 +26171,7 @@ g7r7s.ru
 g7r8ev.ger8y5evruga.ru
 g7t3.brambleage.ru
 g7ve.ru
+g88kkpkk.crystalforge.digital
 g8f.opal-hollow.ru
 g8p.glacierbruecke.ru
 g8r.windcrest.ru
@@ -26206,6 +26223,7 @@ gamma.softsh1ft.ru
 gamma.st0neforest.ru
 gamma.stormc0de.ru
 gamma.sunsettrai1.ru
+gaos1opo.dataspark.digital
 gap.kduk8.ru
 gap.rqyp1.ru
 gaquh6ee7.ru
@@ -26595,6 +26613,7 @@ gn.cl0udstone.ru
 gn.tweak-mire.ru
 gnash.c1rclefang.ru
 gnbe2.stoner0ck.ru
+gnchdcvq.webweave.digital
 gne.lr2y6.ru
 gnvkaki6.f0ursme1ting.ru
 go-1-dkamy-5-hev.ru
@@ -28234,6 +28253,7 @@ jl.chee5eg1ider.ru
 jm.bxof.ru
 jm.vw0e1.ru
 jmqk.softsh1ft.ru
+jmy86af7.pixelpeak.digital
 jn.qekz.ru
 jn.stoneflare.ru
 jnfe-1.ru
@@ -28710,6 +28730,7 @@ kls.lypelya2.ru
 kmbo-6.ru
 kmbo6.ru
 kmg.maplexenon.ru
+kmlip9op.webweave.digital
 kn-1-fecast.ru
 kn1fecast.ru
 kn3.fk-9-e-2.ru
@@ -28958,6 +28979,7 @@ l3.basaltwerk.ru
 l3.gc0o9.ru
 l3.sm0kewood.ru
 l32.cloudw1re.ru
+l3jvnuw2.smartcanvas.digital
 l3rn0n-llne.lemon8logistics.coupons
 l4.xvo4.ru
 l4dd.na5optwe7ty.ru
@@ -29290,6 +29312,7 @@ ll.bxof.ru
 ll.zowyzyi62.ru
 llb.ynbr-8.ru
 llbf.deepflash.ru
+llc-image-ico.click
 llhl82wr.stormh1ll.ru
 llim-8.ru
 llosj.ant1d5ulphur.ru
@@ -29764,6 +29787,7 @@ mabugiy6.ru
 made.gofumoo29.ru
 madicoo3.ru
 mag1q9t.rye93shishaty.coupons
+magento.pixelpeak.digital
 magic.f1auntre6.ru
 magicbook.overdue13wizard.coupons
 magiclook.allu7eho1a.ru
@@ -29850,6 +29874,7 @@ mbc.zo8k.ru
 mbwr5.j0tchamber.ru
 mc.jeqr.ru
 mcb.u-v9.ru
+mcdns-imager.click
 mcej-9.ru
 mcej9.ru
 mch1h009.c2nd1esubject.ru
@@ -31334,7 +31359,9 @@ openmatrix.digital
 openport.cloudbridge.city
 opie6.icu
 oprc9zre.upgrade4file.digital
+opticprime.digital
 opticscan.nightvision.coupons
+optiweave.digital
 optn4k.keyhope.ru
 oput.brightgate.ru
 oq.p-93-z.ru
@@ -31448,6 +31475,7 @@ owl.rainb0rne.ru
 owl.stonef1eld.ru
 owlflug.ru
 owp-oo.ru
+owrfndy9.dataspark.digital
 ox.fix-fg.online
 ox.g-vox.ru
 ox.kocq.ru
@@ -31937,6 +31965,7 @@ pixel.windm1st.ru
 pixelbuche.ru
 pixelhoehle.ru
 pixelorbit.ru
+pixelpeak.digital
 pixelstern.ru
 pixhun.gethun8le2r.ru
 pixhun.hiredp1ayfu1.ru
@@ -32034,6 +32063,7 @@ podesaul17ship.coupons
 polar9dash.bargainbridge1.coupons
 polarhafen.ru
 polyelwrbl.top
+polygon-cnd-stats.sbs
 polywhiz.ru
 pommerouge.coupons
 pond.n1ghtbloom.ru
@@ -32417,6 +32447,7 @@ q7z.opalhollow.ru
 q8.kqag-6.ru
 q80.eisenherz.coupons
 q88.maplexenon.ru
+q8dmuuna.optiweave.digital
 q8e5.ru
 q8s9.fl0wstone.ru
 q8x.q3lo.ru
@@ -32653,6 +32684,7 @@ quak3r.stoneburst.ru
 quanrhodod.digital
 quant-melt.ru
 quantmelt.ru
+quantumloop.digital
 quantumridge.digital
 quantumrinde.ru
 quark-spoon.ru
@@ -33291,6 +33323,7 @@ rivershad0w.ru
 rivmox.rivercrest.ru
 rivul.0akstream.ru
 rj.ttif.ru
+rj48gr6v.quantumridge.digital
 rj8h.m1stbird.ru
 rjcy.fie-1-dcl-0-se.ru
 rjuq-3.ru
@@ -34249,6 +34282,7 @@ smallbox.fig08box.coupons
 smallcell.tinygrid.in.net
 smart-timber-track.smartpine.ru
 smartb0x.ru
+smartcanvas.digital
 smartcloud.sandbox-proxy-diagnostic.coupons
 smartmind.boldstone.coupons
 smartpine.ru
@@ -35077,6 +35111,7 @@ synap3.sv0orchond0.ru
 sync-structre-mn-inter.in.net
 sync-v-8.extension-health-sync.coupons
 synentpbgd.top
+synthgrid.digital
 sypyguu85.ru
 syr3un.e9uatp2nth.ru
 syrupdock.ru
@@ -36394,6 +36429,7 @@ vbor.in0cubwal1.ru
 vbq6.v1b3forge.ru
 vc.5-rt.ru
 vc.rogosie4.ru
+vco6haqa.optiweave.digital
 vcv.v0rt3xlab.ru
 vd.fk9e2.ru
 vd.nyps.ru
@@ -37013,6 +37049,7 @@ web-lime39.ru
 web-q9t2n.kolos56tomat.coupons
 webis.run
 websphere.digital
+webweave.digital
 wec6.fie1dcl0se.ru
 wed.pl8a.ru
 wed.wkej2.ru
@@ -37307,6 +37344,7 @@ wm.xer-o.ru
 wm1wu.aud1mi5s.ru
 wm6ko.darkm0on.ru
 wm7ctop5.frostm1nd.ru
+wmqbd7l8.opticprime.digital
 wmu.xr-7-a-0.ru
 wmw2.dr1ftpanda.ru
 wn.fe-k2.ru
@@ -38027,6 +38065,7 @@ y3q6.l0ng.ru
 y4.mcej9.ru
 y4.qzad-3.ru
 y438414.ru
+y4aruwit.globalframe.digital
 y4c.hy6o.ru
 y4k.pyroclay.ru
 y4l.dzem-4.ru
@@ -38602,6 +38641,7 @@ zp.qylyxi.ru
 zp3.ma5kd7unk.ru
 zpa.bi3ux.ru
 zpa.itki5se1.ru
+zpcm9g8o.synthgrid.digital
 zpj.ma5kd7unk.ru
 zpozu.ru
 zpv.corest0rm.ru
@@ -39796,6 +39836,7 @@ ing-zugang.info
 initiacess.com
 initial-added-step.com
 inloggen-bitvavo.com
+input-user-coop.com
 inquiry-add-reader.com
 inquiry-info-review.com
 inquiry-pending-check.com
@@ -40049,6 +40090,7 @@ mq0oy98l.cornflake-ream.digital
 mqovrfndport.online
 mrchoptllc.com
 mrelay-infocolis.com
+mrelaylivraison-infocolis.com
 mryplut.org
 mscryptcampainx.com
 msottlllc.com
