@@ -39288,6 +39288,7 @@ authenticate-protect.com
 authenticate-support.com
 authenticate-web-app.com
 authentication-device-verification.com
+authentication-kraken.com
 authentification-cert-lu.com
 authgovaccesspoint.sbs
 authsecure08-userverify001.com.de
@@ -39824,6 +39825,7 @@ infinitonlineaccess.com
 info-cryptowallet.com
 info-secure2fa.com
 info-sim.com
+infocolis-mrelaylivraison.com
 infoqovservces.com
 inforeaktivalas.com
 information-change-request.com
@@ -39836,6 +39838,7 @@ ing-zugang.info
 initiacess.com
 initial-added-step.com
 inloggen-bitvavo.com
+inpmysinlog-serv.cfd
 input-user-coop.com
 inquiry-add-reader.com
 inquiry-info-review.com
@@ -40039,6 +40042,7 @@ manageyourhardware.com
 manorolkvmi.com
 marchepublicma.com
 mbcpapp.com
+mcfluidsystem-bhavsar.com
 melanierosalinda.com
 merchntcenter.com
 mercurytubdex.com
@@ -40166,6 +40170,7 @@ new-device-authentication.com
 new-device-verification.com
 new-improve-add.com
 new-lodgm3ntp0licy.info
+new-nsandi-review.com
 new-primary-lock.com
 new-recent-review.com
 new-required-check.com
@@ -40247,9 +40252,11 @@ parkingbypay.com
 parlnershub.com
 parlnershubc.com
 patchservices.org
+pathausreview.com
 paypalhelp.app
 paypaymentsonline.com
 paythroughphone.com
+pb-101augvservice.net
 pbid-de.com
 pc-scan.help
 pdfadobefilecenter.net
@@ -40335,6 +40342,7 @@ quicbksmerchaantintui.com
 quickbooks-intutit.com
 quickboooks.net
 quickrealfewtips.com
+quicktippsies.com
 quiibusx.com
 qunatrax.com
 qusckipol.com
@@ -40345,6 +40353,7 @@ rbconhold6.com
 rbsecure13.com
 rbsecure4.com
 re-delivery1.com
+re-new-coptive.com
 re-register-user.com
 reader-inquiry-review.com
 reader-update-here.com
@@ -40413,6 +40422,7 @@ ri-4a7828gb.com
 ringgo.support
 ritmojazz.com
 rocxgroups.com
+romleyqbtouchinghe.com
 royalmail-gb.com
 run-devicediagnostics.com
 ruxicod.icu
@@ -40686,6 +40696,7 @@ urgent-bericht.org
 usatreas-taxservices.de.com
 user-review-id.com
 user-token-rpd.com
+user08web-accessau8th.com
 userhelp-panel08-coinbase.us
 userhelpbov.com
 userportal.help
@@ -40713,6 +40724,7 @@ verify-me-ai.com
 verify-nfcu.org
 verify-walletledger.com
 verify-wallettrezor.com
+verifyidmetaxationsportal.com
 verifyitpro.com
 verifymy-2fa.com
 verifypncsupportcenter.com
@@ -40762,6 +40774,7 @@ websec8-internalpage08.cfd
 websecure-cnavigant07a-userauth03.com
 websterbanking.help
 webtrezorapp-diagnose.io
+webuser0-accessinternal08.com
 weeksroll.net
 wellsfargolive.help
 wellsfargosecure-verification.com
