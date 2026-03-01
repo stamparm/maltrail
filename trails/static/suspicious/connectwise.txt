@@ -1432,3 +1432,9 @@ fmt2as.ddns.net
 # Reference: https://www.virustotal.com/gui/domain/dickvu.xyz/relations
 
 dickvu.xyz
+
+# Reference: https://x.com/Malwarehunterr/status/2028196140634792375
+# Reference: https://malwr-analysis.com/2026/03/02/yoroi-wallet-phishing-abuses-goto-resolve-and-screenconnect-for-device-takeover/
+# Reference: https://www.virustotal.com/gui/file/1b09cde4bcc2b973e6341e074d0beb7f25d3c4ce45dffa108653f54a969e4f61/detection
+
+instance-p1b26i-relay.screenconnect.com
