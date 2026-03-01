@@ -5187,6 +5187,17 @@ cpanel.thekooljack.com
 smashingboss.com
 email.smashingboss.com
 
+# Reference: https://x.com/Malware_Brandon/status/2027923211627757909
+# Reference: https://www.virustotal.com/gui/file/83431fb48ce5e14a505bb3c106086967219038526cd14871b5ab7346aa51ce22/detection
+# Reference: https://www.virustotal.com/gui/file/ce566cbf1dd9da662c5119f89ef2e3073eb04a606784ae64a672b463519d9557/detection
+
+webmail.drainbusters1.com
+
+# Reference: https://x.com/Malware_Brandon/status/2027923211627757909
+# Reference: https://www.virustotal.com/gui/file/abcfdbdae84faa41990fe442f71ed45fa15243018f1a100c591ab64ad1bbad4a/detection
+
+cpanel.sbkollel.org
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
