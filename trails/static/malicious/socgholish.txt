@@ -5198,6 +5198,24 @@ webmail.drainbusters1.com
 
 cpanel.sbkollel.org
 
+# Reference: https://x.com/Malware_Brandon/status/2027923213586440567
+# Reference: https://www.virustotal.com/gui/file/af177e5a19240c4ba4df2bc8342f0c2f163da7d74bb7559e9ac3be0295fa3e44/detection
+
+booking.fijivacations.com
+pa-portal.benningtonspringsmhp.com
+zoom.immigrationeval.com
+
+# Reference: https://x.com/Malware_Brandon/status/2027923213586440567
+# Reference: https://www.virustotal.com/gui/file/e63b1551d0ca50555a1cdf1601c4e28552814a6705dfedf0e375c8aafb46e6f6/detection
+
+cloud.grovecityhousepainting.com
+
+# Reference: https://x.com/Malware_Brandon/status/2027923215276810716
+# Reference: https://www.virustotal.com/gui/file/407741644f276d9053036797344c491483d7a2bb906242cfcb1b6258f4d96c03/detection
+
+support.grovecityelectrician.com
+webdisk.housecleaninggrovecityohio.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
