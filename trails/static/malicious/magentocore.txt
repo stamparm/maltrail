@@ -16724,6 +16724,10 @@ zip-check.online
 
 woostaticcdn.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/2.59.218.161/relations
+
+seotagmanager.com
+
 # Generic
 
 /assets/lfg.js
