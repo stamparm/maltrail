@@ -3236,15 +3236,20 @@ newflave.rf.gd
 2019.secure-service.pro
 2020.secure-service.pro
 acconthelpdesk.com
+account-calendly.com
+account-captcha-desk.com
 account-help.info
 account-helpdesk.icu
 account-helpdesk.info
 account-helpdesk.top
 account-helps-desk.com
 account-updatepulse.com
+accountmime.com
 accountpulse.help
+accounts-help-center.com
 ad.secure-service.pro
 admin-activitycheck.com
+admin-helpdesk.com
 admin.boikng.com
 airbnb.support-25.ru
 airbnb.support-26.ru
@@ -3364,6 +3369,7 @@ lighting-shop.secure-service.pro
 lovehun.shop
 madebymin.com
 madebymin.nl
+mail.account-help.info
 marketing-travel-booking.com
 mbi.dev.ke
 milanuncios-pay.secure-service.pro
@@ -3373,6 +3379,8 @@ mulia77menang.space
 mybooking.today
 nodedeploy.vnmeirelles.dev
 nosebook.nl
+ns1.account-help.info
+ns2.account-help.info
 olxbg.secure-service.pro
 olxpl.secure-service.pro
 olxro.secure-service.pro
@@ -3390,6 +3398,7 @@ promote-booking.com
 pulse-help-desk.com
 qatarliving-pay.secure-service.pro
 qatarliving-payment.secure-service.pro
+redirpagesbkng.top
 reducaodetaxa.info
 request-booking-accepted.com
 request-confirm-booking.com
@@ -3403,6 +3412,7 @@ sbazarsk.secure-service.pro
 secure-service.pro
 selfnet.nl
 shieldme-pros.net
+sign-in-op-token.com
 skyhustler.com
 staging.secure-service.pro
 star-bookings.net
@@ -3419,6 +3429,7 @@ thca.eu
 thebellagiolasvegas.com
 themandalaybay.com
 thepulseactivity.com
+thestayreserve.com
 travel-booking.it.com
 travellingwell.zwaait.nl
 treinhobbyclub.nl
