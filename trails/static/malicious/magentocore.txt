@@ -16720,6 +16720,10 @@ widget-zopim.com
 cdn-cloudauth.net
 zip-check.online
 
+# Reference: https://www.virustotal.com/gui/ip-address/158.94.208.223/relations
+
+woostaticcdn.com
+
 # Generic
 
 /assets/lfg.js
