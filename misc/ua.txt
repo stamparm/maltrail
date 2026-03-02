@@ -1339,6 +1339,7 @@ Welcome
 # Reference: https://doc.emergingthreats.net/bin/view/Main/2025241
 
 Embarcadero URI Client/1.0
+Embarcadero
 
 # Reference: https://twitter.com/bryceabdo/status/1250420225008259072
 
