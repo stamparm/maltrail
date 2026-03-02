@@ -6718,6 +6718,7 @@ imageresizefix.com
 imagifytext.com
 internetmemoryservice.com
 staticdelivery.net
+staticimagedelivery.com
 vectorimagefabric.com
 vectorizegraphic.com
 api.staticdelivery.net
