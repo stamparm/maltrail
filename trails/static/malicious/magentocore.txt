@@ -16715,6 +16715,11 @@ path-bootstrapcdn.com
 widget-trustpilot.com
 widget-zopim.com
 
+# Reference: https://x.com/sdcyberresearch/status/2028457016478281931
+
+cdn-cloudauth.net
+zip-check.online
+
 # Generic
 
 /assets/lfg.js
