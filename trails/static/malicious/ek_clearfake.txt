@@ -50343,6 +50343,40 @@ ppchasc.com
 privatejetp.com
 vkipsvetops.com
 
+# Reference: https://x.com/JAMESWT_WT/status/2028928988282843320
+# Reference: https://www.virustotal.com/gui/ip-address/185.104.248.178/relations
+# Reference: https://app.any.run/tasks/42fdbcf7-8eeb-4e53-99f2-9172ee2b4687
+
+account-extraconfanq.help
+account-extraconftax.com
+account.reservationhubcn.com
+accountpulsecentre.help
+accountpulsecentres.help
+accountpulseconfirmeq.com
+accountpulseconfirms.com
+accountspulsecen.help
+accountspulsecenter.help
+accountspulsecentre.help
+bcckinq.com
+bccklng.com
+bismutboks.com
+bkqscmsio.com
+bkqscmsq.com
+bkqscmsq.help
+extranethelpguest.com
+flc2fmw.com
+hailmeinc.com
+gosiwyqmconfisean.com
+invesquitigatiq.com
+reservationhubcn.com
+sign-intoken29512.com
+skquwtslsoy.com
+account.bcckinq.com
+account.bccklng.com
+paypai.sign-intoken29512.com
+/booking.com_files/vp32ssdaq.html
+/vp32ssdaq.html
+
 # Generic
 
 /a3A7qLVn/
