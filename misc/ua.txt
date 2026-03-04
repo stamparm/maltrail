@@ -2675,6 +2675,12 @@ SecurityScanner/1.0
 
 ^winupdate$
 
+# Reference: https://x.com/suyog41/status/2029181206739468337
+# Reference: https://www.virustotal.com/gui/file/98cd9e5c0b8e8692e7070e8b572fca87b694f5a13ac642c601ccb98ff72d3b85/detection
+
+Infinilate/1.0
+Infinilate
+
 # Misc
 
 information_schema
