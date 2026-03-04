@@ -2417,6 +2417,7 @@ darkgrim.io
 m0bux.com
 syndikatet.net
 martynspurgeon.myqnapcloud.com
+untitledc2test.deeeh.com
 zbzb.ypsecurity.fr
 
 # Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2026-02-28)
