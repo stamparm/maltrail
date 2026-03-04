@@ -50384,6 +50384,14 @@ paypai.sign-intoken29512.com
 /booking.com_files/vp32ssdaq.html
 /vp32ssdaq.html
 
+# Reference: https://x.com/unmaskparasites/status/2028579855428997288
+# Reference: https://x.com/unmaskparasites/status/2028603791118094444
+
+turnstile-verification.workers.dev
+web-db.workers.dev
+check.web-db.workers.dev
+cloudflare.turnstile-verification.workers.dev
+
 # Generic
 
 /a3A7qLVn/
