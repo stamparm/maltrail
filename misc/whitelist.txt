@@ -4119,3 +4119,7 @@ ptt.cc
 # Reference: https://github.com/hagezi/dns-blocklists/issues/7021
 
 transfer.zip
+
+# Reference: https://github.com/stamparm/maltrail/issues/19529
+
+openclaw.ai
