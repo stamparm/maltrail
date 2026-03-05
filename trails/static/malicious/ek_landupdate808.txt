@@ -914,3 +914,7 @@ x1cdic.com
 xcitetv.com
 ydt-solution.com
 zephyrsoft.store
+
+# Reference: https://www.virustotal.com/gui/file/3c6d3249ddb5f27880beb19a5f5f8203a2d1f754077e8066303c169abb5211a6/detection
+
+cam4fr.com
