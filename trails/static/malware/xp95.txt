@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: xp95 ransomware
+
+# Reference: https://x.com/fbgwls245/status/2029481144304152756
+
+37lfmtakhknzx5t6k57ieijkiqrc4c3kpimfvrmafva25ut2tknvw3yd.onion
