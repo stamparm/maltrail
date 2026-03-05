@@ -1,0 +1,12 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://socket.dev/blog/malicious-packagist-packages-disguised-as-laravel-utilities
+# Reference: https://www.virustotal.com/gui/file/a493ce9509c5180e997a04cab2006a48202afbb8edfa15149a4521067191ead7/detection
+
+173.230.142.118:2096
+helper.leuleu.net
+
+# Generic
+
+/nhattuanbl
