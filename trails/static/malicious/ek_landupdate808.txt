@@ -915,6 +915,14 @@ xcitetv.com
 ydt-solution.com
 zephyrsoft.store
 
+# Reference: https://www.virustotal.com/gui/ip-address/178.130.47.124/relations
 # Reference: https://www.virustotal.com/gui/file/3c6d3249ddb5f27880beb19a5f5f8203a2d1f754077e8066303c169abb5211a6/detection
+# Reference: https://www.virustotal.com/gui/file/59a980662efb5fb1004ce927d14a9e385bd4dbc1fe097d8622f3c1d250432a80/detection
+# Reference: https://www.virustotal.com/gui/file/d48751071047dc0340a834ba37d14cda93887707c925b105d9dd755659806f26/detection
 
+achandograca.com
 cam4fr.com
+cesuss.com
+medipeads.com
+rnccusa.com
+stgbran.com
