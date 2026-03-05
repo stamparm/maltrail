@@ -3,8 +3,10 @@
 
 # Reference: https://x.com/blackorbird/status/2025586527993274498
 # Reference: https://x.com/blackorbird/status/2025588291073171714
+# Reference: https://x.com/BushidoToken/status/2028521486844088336
 # Reference: https://cyberandramen.net/2026/02/21/llms-in-the-kill-chain-inside-a-custom-mcp-targeting-fortigate-devices-across-continents/
 # Reference: https://aws.amazon.com/ru/blogs/security/ai-augmented-threat-actor-accesses-fortigate-devices-at-scale/
+# Reference: https://www.team-cymru.com/post/tracking-cyberstrikeai-usage
 
 1.12.77.84:8080
 1.15.133.105:8080
