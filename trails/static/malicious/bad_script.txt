@@ -9358,6 +9358,12 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /beanfamiliarity.ps1
 /lackadaisicalgold.ps1
 
+# Reference: https://x.com/smica83/status/2029992617144934578
+# Reference: https://www.virustotal.com/gui/file/6371f599f652fe2126886c487718173008a14bf830d1a1f707201cfcc2e7f552/detection
+
+/gorshmed/banvitro.ps1
+/banvitro.ps1
+
 # Generic
 
 /5c0ca79.php
