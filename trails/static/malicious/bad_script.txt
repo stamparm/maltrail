@@ -9364,6 +9364,13 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /gorshmed/banvitro.ps1
 /banvitro.ps1
 
+# Reference: https://x.com/smica83/status/2029993722880913484
+# Reference: https://www.virustotal.com/gui/file/14cfadb8c0154dc1174b0b9af74765f769fad524d17eb2ec494ce02c9a221c8d/detection
+
+/sp11rt4m/puppetsafeguard.ps1
+/puppetsafeguard.ps1
+/sp11rt4m/
+
 # Generic
 
 /5c0ca79.php
