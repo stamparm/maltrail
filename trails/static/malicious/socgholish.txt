@@ -5216,6 +5216,28 @@ cloud.grovecityhousepainting.com
 support.grovecityelectrician.com
 webdisk.housecleaninggrovecityohio.com
 
+# Reference: https://github.com/MalwareBrandon/MB_Tactical_Intel/blob/main/SocGholish-Stage2-and-Stage3-Infrastructure.txt
+
+b2b.genethairsalon.com
+booking.skylinecarwashfm.com
+brands.khaitara.com
+delivery.fitswowllc.com
+devel.asurans.com
+editions.seattlemysterylovers.com
+envisionfonddulac.biz
+events.douxny.com
+getmanyme.com
+git.zionministry.org
+joinnow.diasporamedia.net
+parish.menberetsebaotholytrinityeotc.org
+samples.addisgraphix.com
+shop.steadycompanion.com
+split2econd.com
+storehouse.beautysupplysalonllc.com
+updates.highendmark.com
+vps.denissalazar.com
+webmail.mentalpainandtrauma.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
