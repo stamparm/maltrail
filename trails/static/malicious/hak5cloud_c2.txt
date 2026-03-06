@@ -2406,6 +2406,7 @@ http://82.25.91.109
 98.81.248.192:8080
 0019f2909bd99dea15c7cecc4316326f.bdocr.cz
 172-105-74-94.ip.linodeusercontent.com
+api.mbpartnersfinance.com
 br01.brgovt.net
 c2.madasp.com
 c2.smeit.com
@@ -2414,13 +2415,15 @@ cac.mitel.cz
 cc2.sstcorporate.dev
 companyn454.buzzwithbrands.com
 darkgrim.io
-drive-sharepoint.com
 download.drive-sharepoint.com
+drive-sharepoint.com
 entreprise.maprimevelo.fr
 m0bux.com
-syndikatet.net
 martynspurgeon.myqnapcloud.com
+red.linology.tech
+syndikatet.net
 untitledc2test.deeeh.com
+vacationrental-directory.com
 zbzb.ypsecurity.fr
 
 # Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2026-02-28)
