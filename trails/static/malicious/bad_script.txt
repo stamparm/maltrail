@@ -9371,6 +9371,10 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /puppetsafeguard.ps1
 /sp11rt4m/
 
+# Reference: https://x.com/BlinkzSec/status/2030109037803556972
+
+/inject_tracking.ps1
+
 # Generic
 
 /5c0ca79.php
