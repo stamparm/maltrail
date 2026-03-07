@@ -1438,3 +1438,8 @@ dickvu.xyz
 # Reference: https://www.virustotal.com/gui/file/1b09cde4bcc2b973e6341e074d0beb7f25d3c4ce45dffa108653f54a969e4f61/detection
 
 instance-p1b26i-relay.screenconnect.com
+
+# Reference: https://www.virustotal.com/gui/file/856dd7550652ca0843d0314adceabbb9a15336485f6519deb51c8bb5fa89a551/detection
+
+176.65.132.10:8041
+domainfordummies.xyz
