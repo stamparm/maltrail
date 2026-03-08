@@ -1,0 +1,26 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://cyberthint.io/case-study-karstorat-malware-analysis/
+# Reference: https://www.virustotal.com/gui/file/90f2b095eb3b4dd8b484cc50a3501601891d242e715cdc88bc1def44ef891fd5/detection
+# Reference: https://www.virustotal.com/gui/file/07131e3fcb9e65c1e4d2e756efdb9f263fd90080d3ff83fbcca1f31a4890ebdb/detection
+# Reference: https://www.virustotal.com/gui/file/50e8f85878234db719b27099ed389426f0c25e78bcce9814226c3b3d55ec99fa/detection
+# Reference: https://www.virustotal.com/gui/file/65229ef9d09e4cbfae326d41c517576cc2143c259fd764f259f3925fc8917c8b/detection
+# Reference: https://www.virustotal.com/gui/file/ae5bbb7cb9cc6da0947f65add264d421f90bd3ea04bc85035f23b615cb7be56e/detection
+
+212.227.65.132:10980
+212.227.65.132:12200
+212.227.65.132:13614
+212.227.65.132:15144
+212.227.65.132:2022
+212.227.65.132:3071
+212.227.65.132:3072
+212.227.65.132:8080
+212.227.65.132:9113
+212.227.65.132:9200
+212.227.65.132:9509
+ip212-227-65-132.pbiaas.com
+pylex.xyz
+melo.pylex.xyz
+thor.pylex.xyz
+wintr.pylex.xyz
