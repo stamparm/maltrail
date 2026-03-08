@@ -2069,3 +2069,7 @@ http://185.135.86.185
 healthcare-shore.com
 ddd.healthcare-shore.com
 online.healthcare-shore.com
+
+# Reference: https://www.virustotal.com/gui/file/442663b95111367fba650401c6da93f2fbbc78565c1f0f666346ede5f893c050/detection
+
+aaa-amc.top
