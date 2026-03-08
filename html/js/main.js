@@ -27,8 +27,8 @@ var TRAIL_TYPES = {};
 
 var CONTEXT_MENU_ROW = null;
 var SPARKLINE_WIDTH = 100;
-var CHART_WIDTH = screen.width - 200;
-var CHART_HEIGHT = screen.height - 340;
+var CHART_WIDTH = (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) - 200;
+var CHART_HEIGHT = (window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight) - 340;
 var PIE_FONT_SIZE = 10;
 var MAX_SOURCES_ITEMS = 30;
 var FLOOD_TRAIL_THRESHOLD = 50;
