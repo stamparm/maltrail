@@ -2408,6 +2408,7 @@ http://82.25.91.109
 172-105-74-94.ip.linodeusercontent.com
 api.mbpartnersfinance.com
 br01.brgovt.net
+c2.leyes.tech
 c2.madasp.com
 c2.smeit.com
 c2.th4ntis.com
