@@ -6187,3 +6187,10 @@
 216.126.236.0/24,routerhosting
 216.126.237.0/24,routerhosting
 216.126.239.0/24,routerhosting
+
+# AS 211590
+# Reference: https://x.com/BreakGlassIntel/status/2031008764728393947
+# Reference: https://ipinfo.io/AS211590
+
+170.39.217.0/24,bucklog
+185.177.72.0/24,bucklog
