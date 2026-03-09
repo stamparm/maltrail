@@ -229,6 +229,11 @@ kwazindernuren.com
 
 156.67.221.96:443
 
+# Reference: https://x.com/g0njxa/status/2031034087801012435
+# Reference: https://www.virustotal.com/gui/file/dbfe1f915f40122a336cd5d0de802a6f3ec0204ab75321934a06dafbc1964446/detection
+
+103.65.230.86:443
+
 # Generic
 
 /Meshcleaner.exe
