@@ -5238,6 +5238,12 @@ updates.highendmark.com
 vps.denissalazar.com
 webmail.mentalpainandtrauma.com
 
+# Reference: https://x.com/Malware_Brandon/status/2031461915654791646
+# Reference: https://www.virustotal.com/gui/file/2e8db4ef69cdb634e22819c92a2046cd2660c96eeeb484856584b2f0c48aea9d/detection
+
+content-website-analytics.com
+api-app.uppercrafteroom.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
