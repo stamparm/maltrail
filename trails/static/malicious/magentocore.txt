@@ -16735,7 +16735,7 @@ woocommerce.ink
 # Reference: https://x.com/sdcyberresearch/status/2031383113314574389
 # Reference: https://www.virustotal.com/gui/ip-address/195.123.210.32/relations
 
-dn-jsapi.net
+cdn-jsapi.net
 cndjsvar.com
 trackpixs.com
 
