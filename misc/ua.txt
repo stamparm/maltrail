@@ -2687,6 +2687,11 @@ Infinilate
 2020stfbox/1.0
 2020stfbox
 
+# Reference: https://x.com/suyog41/status/2031232015652237815
+# Reference: https://www.virustotal.com/gui/file/7d09d90d62933d39fed10886140559fea3bfc5720375d6053245da24c9d713e9/detection
+
+Resoker
+
 # Misc
 
 information_schema
