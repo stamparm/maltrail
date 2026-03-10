@@ -50622,6 +50622,18 @@ web-db.workers.dev
 check.web-db.workers.dev
 cloudflare.turnstile-verification.workers.dev
 
+# Reference: https://x.com/JAMESWT_WT/status/2031443935311040542
+# Reference: https://x.com/skocherhan/status/2031450444912836936
+# Reference: https://app.any.run/tasks/178cadcd-ed2d-4cc0-ae04-0d662dfddb73
+
+controlpanelcentre.help
+guestreservationpullse.help
+op-token-hotel-guest.help
+pulseaccountcentre.help
+resercontrolpaneltax.com
+reservationpuilse.help
+wiosyrondaty.com
+
 # Generic
 
 /a3A7qLVn/
