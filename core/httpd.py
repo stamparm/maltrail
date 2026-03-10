@@ -595,7 +595,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             ]
                             rules.append(regexp)
                         blacklist.append(rules)
-                except e:
+                except Exception:
                     content = "invalid rule in option BLACKLIST%s" % bl_name
                 else:
                     if key == _blacklist_key:
