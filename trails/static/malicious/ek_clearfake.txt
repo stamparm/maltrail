@@ -50707,13 +50707,57 @@ cloudflare.turnstile-verification.workers.dev
 # Reference: https://x.com/JAMESWT_WT/status/2031443935311040542
 # Reference: https://x.com/skocherhan/status/2031450444912836936
 # Reference: https://app.any.run/tasks/178cadcd-ed2d-4cc0-ae04-0d662dfddb73
+# BODY_SHA1-HOST=c431f51578a5a1b835816eaeaec0a8cc913a6c17
 
+adventurous-chemistry.online
+api.oneproduct.site
+api.oneproduct.store
+blaze-of-glory.online
+cash-ride-express.click
 controlpanelcentre.help
+create-nurture-zone.xyz
+dev4223677.twinflameenergydaily.com
+diamond-dream-cove.sbs
+diamond-spin-grove.online
+diamondblaze.site
+diamondfireplay.online
+fresh-vibe-hub.sbs
 guestreservationpullse.help
+helping-hand-web.icu
+hotcashwave.icu
+ideal-flirtation.site
+instant-luck-zone.online
+jackpot-joy.click
+js-storage.com
+luckyphoenix.icu
+master-thrill-cove.online
+masterthrill.fun
+michiganc.icu
+michligan-gov.cfd
+michligan-gov.sbs
+mighty-king-treasure.click
+oneproduct.site
+oneproduct.store
 op-token-hotel-guest.help
+pro-hero-grove.online
 pulseaccountcentre.help
 resercontrolpaneltax.com
 reservationpuilse.help
+royal-spin-cove.online
+royalblisshub.fun
+snappieriptv.online
+spark-of-romance.top
+super-epic-play.site
+super-lucky-world.site
+super-wild-zone.click
+thrive-and-win.top
+thunder-joy-club.click
+thunder-joy-spot.top
+turboluck.click
+vd.zyxs.app
+wild-thunder-ride.online
+wildthrillworld.online
+wildwinclub.click
 wiosyrondaty.com
 
 # Reference: https://threatfox.abuse.ch/browse/tag/ClearFake/ (# 2026-03-11)
