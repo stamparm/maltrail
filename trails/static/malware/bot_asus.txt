@@ -1,0 +1,27 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: kadnap
+
+# Reference: https://blog.lumen.com/silence-of-the-hops-the-kadnap-botnet/
+# Reference: https://github.com/blacklotuslabs/IOCs/blob/main/KadNap_IOCs.txt
+# Reference: https://www.virustotal.com/gui/file/8364f2de94c1a515225842514ff54f924611622513d90aabf9be4608abf7f487/detection
+# Reference: https://www.virustotal.com/gui/file/0b3dbb951de7a216dd5032d783ba7d0a5ecda2bf872643c3a4ddd1667fb38ffe/detection
+
+http://212.104.141.140
+154.7.253.12:17715
+154.7.253.12:26273
+212.104.141.88:13107
+23.227.203.221:31812
+45.135.180.177:47366
+45.135.180.38:47366
+79.141.161.152:31812
+79.141.163.155:31812
+85.158.111.100:22623
+89.46.38.74:26273
+91.193.19.226:35773
+91.193.19.51:31812
+
+# Generic
+
+/00100001r1
