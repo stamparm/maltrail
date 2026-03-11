@@ -1443,3 +1443,8 @@ instance-p1b26i-relay.screenconnect.com
 
 176.65.132.10:8041
 domainfordummies.xyz
+
+# Reference: https://www.sonicwall.com/blog/pdf-borne-living-off-the-land-attacks-with-rmm-abuse
+# Reference: https://www.virustotal.com/gui/file/b5730d73d8b3ba207b938ff343c6c8a6a9b7ad7ec374b378c96a6f5b2a69a8dc/detection
+
+38.240.59.97:8041
