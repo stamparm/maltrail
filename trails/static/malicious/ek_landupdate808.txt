@@ -927,3 +927,9 @@ medipeads.com
 oriana84.com
 rnccusa.com
 stgbran.com
+
+# Reference: https://www.trendmicro.com/en_us/research/26/c/kongtuke-clickfix-abuse-of-compromised-wordpress-sites.html
+
+ainttby.com
+ctpsih.com
+foodgefy.com
