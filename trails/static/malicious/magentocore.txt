@@ -16676,6 +16676,7 @@ api.rocketplugin.com
 
 braintreeapi.shop
 braintreeapi.top
+detroitaxle.shop
 
 # Reference: https://x.com/sdcyberresearch/status/2026266049755164860
 # Reference: https://www.virustotal.com/gui/ip-address/38.180.80.50/relations
