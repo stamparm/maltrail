@@ -929,6 +929,18 @@ rnccusa.com
 stgbran.com
 
 # Reference: https://www.trendmicro.com/en_us/research/26/c/kongtuke-clickfix-abuse-of-compromised-wordpress-sites.html
+# BODY_SHA1-HOST=4cb2c207d5a9bb582aa3ddd06786d1afa0d8bada
 
 ainttby.com
+bacntioqx.site
+batdunya.com
+buchwald.ovh
+ewar4pres.com
 foodgefy.com
+gaietnaov.site
+getexp.xyz
+hartmann-digital.berlin
+hartmann-digital.gmbh
+nicorica.com
+rugapi.shop
+wuliaox.com
