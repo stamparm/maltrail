@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/solostalking/status/2031403162486321265
+# TITLE-HOST=EVIL stealer // access_terminal
+
+80.78.19.96:3000
+evilmirror.net
