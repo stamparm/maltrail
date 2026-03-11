@@ -8536,6 +8536,25 @@ http://51.118.64.13
 96.44.169.165:31337
 98.93.206.93:443
 
+# Reference: https://x.com/skocherhan/status/2031460008794194399
+
+107.189.25.81:31337
+144.172.101.78:31337
+144.172.102.223:31337
+colis-relay.myvnc.com
+digitalstrategyinnovationhub.sbs
+g14.smart-control.cc
+gestion-relay.com
+intelligent-feistel.107-189-25-81.plesk.page
+mondial-colis.myvnc.com
+post-service.myvnc.com
+redi-relay.myvnc.com
+redirect-post.myvnc.com
+redirection-relay.myvnc.com
+relay-management.myvnc.com
+relay-management.sytes.net
+smart-control.cc
+
 # Generic
 
 /.sliver-client/
