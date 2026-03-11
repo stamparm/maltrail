@@ -5244,6 +5244,11 @@ webmail.mentalpainandtrauma.com
 content-website-analytics.com
 api-app.uppercrafteroom.com
 
+# Reference: https://x.com/Malware_Brandon/status/2031824302606041598
+# Reference: https://www.virustotal.com/gui/file/868d20d622548cd61c03befcc74d962927983cf242e74978700d8258da3a97f9/detection
+
+snap.promantree.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
