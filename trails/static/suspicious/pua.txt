@@ -3400,3 +3400,7 @@ mvploader.net
 
 searchnowexpert.com
 yfdnzfa.com
+
+# Reference: https://www.virustotal.com/gui/file/006b45c6583e8d2f5239fd5a6ab8f6d4491d22f0eb7e83aa47cb8f7a8dcea89a/detection
+
+mnogolik002.xyz
