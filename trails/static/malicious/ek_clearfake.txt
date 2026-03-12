@@ -51975,6 +51975,26 @@ zhivachkapro.com
 dsennbuappec.zhivachkapro.com
 qzfzxaizaliw.zhivachkapro.com
 
+# Reference: https://x.com/blackorbird/status/2031996220361875770
+# Reference: https://github.com/rapid7/Rapid7-Labs/blob/main/IOCs/ClickFix_DoubleDonut_Campaign_IOCs.txt
+
+alianzeg.shop
+captiort.shop
+captioz.shop
+getalia.org
+getalib.org
+gieable.shop
+goarnsds.shop
+gorscts.shop
+goveanrs.org
+govearali.org
+greecpt.shop
+ligovera.shop
+namsioc.shop
+namzcp.org
+newtdsone.shop
+ztdaliweb.shop
+
 # Generic
 
 /a3A7qLVn/
