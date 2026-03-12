@@ -4746,3 +4746,13 @@ pay.starkiller.su
 
 185.132.53.17:3000
 185.132.53.205:3000
+
+# Reference: https://x.com/1ZRR4H/status/2031134299185987599
+# Reference: https://www.virustotal.com/gui/file/dabed87b9eef8d557f55c573583d7807f31510b6bcce9f615d4b554510950d00/detection
+
+nicotine.sh
+umbra.by
+umbra.st
+umbraforums.net
+assets.umbra.st
+/L4663r666h05t
