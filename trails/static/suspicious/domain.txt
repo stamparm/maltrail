@@ -5606,3 +5606,8 @@ mexc.work
 # Reference: https://www.virustotal.com/gui/ip-address/54.92.96.88/relations
 
 blc-p.co
+
+# Reference: https://www.virustotal.com/gui/ip-address/157.230.161.221/relations
+# Note: Got a private report on attempt of website compromisation by using this domain. Due to https://urlscan.io/result/019ce148-0465-76b4-9b44-d8701eadaba3/ domain is free for sale and has no content.
+
+golem.com
