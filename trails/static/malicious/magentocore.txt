@@ -12653,10 +12653,20 @@ cdn.svetmob.click
 
 # Reference: https://blog.sucuri.net/2024/08/prestashop-gtag-websocket-skimmer.html
 # Reference: https://www.virustotal.com/gui/ip-address/176.113.115.198/relations
+# Reference: https://www.virustotal.com/gui/file/5b15dde0557c4c53c7d827c56992304514b4371cebd391741445415866e4b413/detection
+# Reference: https://www.virustotal.com/gui/file/e4e65d0fb1587e4361b60cb08cfea9cc9a979f7c10c59417a08980ff11d4b917/detection
+# BANNER_0_HASH-HOST=f80e49c1ca5331c09295eba7b534e7d4
 
 iconstaff.top
+jslibrariescdn.com
+webanalytics-cdn.cfd
 cd.iconstaff.top
 cdn.iconstaff.top
+east.jslibrariescdn.com
+north.jslibrariescdn.com
+north-east.jslibrariescdn.com
+south.jslibrariescdn.com
+west.jslibrariescdn.com
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-23-v10673/1914
 
