@@ -9375,6 +9375,12 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 
 /inject_tracking.ps1
 
+# Reference: https://x.com/smica83/status/2032038115250979244
+# Reference: https://www.virustotal.com/gui/file/ec7f0d5da376591878b9bcd908e06e7d0e90176ecd99e41577167e29e47d40e4/detection
+
+/kakrarg/sneakerassembly.ps1
+/sneakerassembly.ps1
+
 # Generic
 
 /5c0ca79.php
