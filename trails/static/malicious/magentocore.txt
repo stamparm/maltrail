@@ -16744,6 +16744,13 @@ cdn-jsapi.net
 cndjsvar.com
 trackpixs.com
 
+# Reference: https://sansec.io/research/sessionreaper
+
+sagecrafft.com
+worcksbot.com
+tecnokauf.ru/accesson20.html
+/gsfa1faewf.txt
+
 # Generic
 
 /assets/lfg.js
