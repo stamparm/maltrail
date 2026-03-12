@@ -51966,6 +51966,15 @@ zrvkmhps.bestlog.in.net
 zx8895.navignord.in.net
 zztzqouw.redflat.in.net
 
+# Reference: https://x.com/blackorbird/status/2032101653470724117
+# Reference: https://www.threatdown.com/blog/castlerat-cyber-attack-is-the-first-to-abuse-deno-javascript-runtime-to-evade-enterprise-security/
+# Reference: https://www.virustotal.com/gui/file/1fd01d13d9ef5463bd7ca0e6f72df806fa684d0bf49ba927aa5432f7a7ad4f02/detection
+# Reference: https://www.virustotal.com/gui/file/2a00705cfd3c15cf8913e9eb4e23968efd06f1feceaef9987d26c5518887d043/detection
+
+zhivachkapro.com
+dsennbuappec.zhivachkapro.com
+qzfzxaizaliw.zhivachkapro.com
+
 # Generic
 
 /a3A7qLVn/
