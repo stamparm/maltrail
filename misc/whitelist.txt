@@ -4123,3 +4123,7 @@ transfer.zip
 # Reference: https://github.com/stamparm/maltrail/issues/19529
 
 openclaw.ai
+
+# Reference: https://github.com/stamparm/maltrail/issues/19532
+
+direct.quickconnect.to
