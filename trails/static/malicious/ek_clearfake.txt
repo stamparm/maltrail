@@ -39704,6 +39704,7 @@ authsecure08.com
 authsecure08a-verify08info.xyz
 authuser08-verifyinfo7sec.com
 authweb08-pagesec8.sbs
+authweb09q-internal.com.de
 authygvquery.sbs
 auzscentreservlce.com
 aybtour1.com
@@ -40266,6 +40267,7 @@ inquiry-add-reader.com
 inquiry-info-review.com
 inquiry-pending-check.com
 inservicesapproveupdateat00access.sbs
+intcurrentcenterz.com
 internal-taxreview.com.de
 intruminkasso.com
 intuitder.com
@@ -40881,11 +40883,13 @@ sans-new.com
 santander-painel.com
 santander-revisar.com
 santander-validar.com
+santanderchat.live
 santanderlink-santanderbank.com
 santanderrevisao.com
 santanderwebpt.com
 santandesecure.com
 santanreview.com
+santcorporate.live
 santreviewed.com
 santsreviewed.com
 sbbakuda.com
