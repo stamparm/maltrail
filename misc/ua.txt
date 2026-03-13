@@ -2692,6 +2692,11 @@ Infinilate
 
 Resoker
 
+# Reference: https://any.run/cybersecurity-blog/microstealer-technical-analysis/
+
+MicroStealer/1.0
+MicroStealer
+
 # Misc
 
 information_schema
