@@ -948,5 +948,31 @@ rugapi.shop
 wuliaox.com
 
 # Reference: https://malasada.tech/landupdate808-backend-c2-analysis/
+# BODY_SHA1-HOST=496404c9fbe584547567013d1a30a3c53807d4b0
 
+45-61-136-219.cprapid.com
+absrire.com
+armstroog.com
+biteraord.com
 brazilc.com
+carofh2o.com
+cdoventures.com
+cummnngs.com
+cwcstudios.com
+eafincas.com
+gridironguides.store
+heapbanter.com
+jbdakn.com
+kickerkingdom.store
+kickoffcity.store
+kilbacl.com
+laceyanns.com
+lelnnon.com
+mitccell.com
+pixods.com
+runningrebellion.store
+sackstatue.store
+scrirnvever.com
+stefanchik.com
+threadsease.store
+touchdowntrust.store
