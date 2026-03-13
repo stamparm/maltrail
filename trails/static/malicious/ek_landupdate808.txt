@@ -946,3 +946,7 @@ hartmann-digital.gmbh
 nicorica.com
 rugapi.shop
 wuliaox.com
+
+# Reference: https://malasada.tech/landupdate808-backend-c2-analysis/
+
+brazilc.com
