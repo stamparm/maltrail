@@ -9381,6 +9381,10 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /kakrarg/sneakerassembly.ps1
 /sneakerassembly.ps1
 
+# Reference: https://www.virustotal.com/gui/file/6ba8cad8cbd71ddcbf2708fa838f566985a8976d680886d89da949b0c29141d6/detection
+
+/payload?userid=
+
 # Generic
 
 /5c0ca79.php
