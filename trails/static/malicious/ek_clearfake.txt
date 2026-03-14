@@ -52003,6 +52003,7 @@ ztdaliweb.shop
 happyglamper.ro
 verification.qpon
 
+# Reference: https://x.com/JAMESWT_WT/status/2032716685744939207
 # Reference: https://x.com/JAMESWT_WT/status/2032725310072873379
 # Reference: https://pastebin.com/raw/7hyhN77e
 
@@ -52017,7 +52018,9 @@ blockstreet.zone
 chantecaille.digital
 cherrysolana.digital
 corvuscoin.digital
+daiteobeziyanamtelok.lol
 deepworm.bet
+distortedcoin.lat
 distortedcoin.run
 dustcoin.digital
 exponentialmc.world
@@ -52053,6 +52056,7 @@ stormrae.digital
 stormrae.run
 stormrae.world
 studs.world
+temucoin.lat
 theradynamics.digital
 tuckersfarm.network
 usoil.life
