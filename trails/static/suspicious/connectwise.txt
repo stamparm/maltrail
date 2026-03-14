@@ -1452,4 +1452,6 @@ domainfordummies.xyz
 # Reference: https://x.com/smica83/status/2032918625179287956
 # Reference: https://www.virustotal.com/gui/file/302a9f9af9eda01fa968e300725a84252cb06c75f2066cd843222b64751a6956/detection
 
+66.118.237.171:443
 66.118.237.171:8041
+specmoxdoodwir.top
