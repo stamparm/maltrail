@@ -39920,6 +39920,7 @@ confirm-anime.com
 confirm-device-login.com
 confirm-primary-mobile.com
 confirmed-primary-device.com
+confirmyourtaxstatusportal.com
 connect-viaverde.com
 connect407etr.com
 connectdevdapp.com.de
@@ -39938,6 +39939,7 @@ coptiv-update-here.com
 coptivbk-token-inquiry.com
 cornflake-ream.digital
 corporatefirsthorizon.com
+corporateverifyportal.com
 correos-mexico.app
 cowcryptoexchange.com
 cowcryptotrading.com
@@ -39945,6 +39947,7 @@ cowswapcrypto.com
 cowtokenexchange.com
 coxzt.com
 cp-input-tvp.com
+cpt-input-bk.com
 credltkarma.app
 cross-checkfidelity.xyz
 crypto.88819191919.com
@@ -41175,6 +41178,7 @@ verify-me-ai.com
 verify-nfcu.org
 verify-walletledger.com
 verify-wallettrezor.com
+verifyapplefcu.org
 verifyidmetaxationsportal.com
 verifyitpro.com
 verifymy-2fa.com
