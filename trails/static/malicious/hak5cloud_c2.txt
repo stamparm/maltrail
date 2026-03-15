@@ -2412,6 +2412,7 @@ br01.brgovt.net
 c2.leyes.tech
 c2.madasp.com
 c2.smeit.com
+c2.socops.net
 c2.th4ntis.com
 c2gess.bryangess.com
 cac.mitel.cz
