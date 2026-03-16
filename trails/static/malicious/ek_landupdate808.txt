@@ -976,3 +976,7 @@ scrirnvever.com
 stefanchik.com
 threadsease.store
 touchdowntrust.store
+
+# Reference: https://isc.sans.edu/diary/32796
+
+cpajoliette.com
