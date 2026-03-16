@@ -1700,6 +1700,7 @@ surethinks.com
 prajsm.com
 
 # Reference: https://isc.sans.edu/diary/32796
+# BANNER_0_HASH-HOST=a2be567a859e9554026419486e489c54
 # FAVICON_HASH-HOST=e3a46f20be728d46dac88ec757345713
 # TITLE-HOST=Wanderlust Journeys
 
@@ -2063,6 +2064,7 @@ flikappint.com
 flosinjs.com
 foresposition.com
 forsticv.com
+forward-servers.duckdns.org
 founderaven.com
 foxrituax.com
 fraupoll.com
@@ -2153,6 +2155,8 @@ ssuliulspacls.top
 stoneandjon.com
 stonehandlop.com
 stromaejs.world
+sub-view.duckdns.org
+temporary-update.duckdns.org
 tiapolif.com
 tiremview.com
 toomuch2fun.com
@@ -2179,6 +2183,7 @@ webapp-js.digital
 westrehub.top
 wexrepiret.top
 workspace-redirect.duckdns.org
+workspace-teams.duckdns.org
 xeljson.com
 xretryx.top
 yepork.com
