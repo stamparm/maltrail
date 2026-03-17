@@ -53312,10 +53312,12 @@ yieldvelo.org
 
 auth-in-extranet.com
 confirmation-id63926.com
+sign-in-extranet.com
 sign-in-extranets.com
 signs-in-extranet.com
 web-booking-extranet.com
 web-booking-pulse.com
+web-booking-pulser.com
 web-extranet-login.com
 
 # Generic
