@@ -53308,6 +53308,16 @@ xinfinasset.com
 yaqua.network
 yieldvelo.org
 
+# Reference: https://x.com/JAMESWT_WT/status/2033808913670316070
+
+auth-in-extranet.com
+confirmation-id63926.com
+sign-in-extranets.com
+signs-in-extranet.com
+web-booking-extranet.com
+web-booking-pulse.com
+web-extranet-login.com
+
 # Generic
 
 /a3A7qLVn/
