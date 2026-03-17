@@ -16771,6 +16771,10 @@ worcksbot.com
 tecnokauf.ru/accesson20.html
 /gsfa1faewf.txt
 
+# Reference: https://www.virustotal.com/gui/ip-address/94.159.113.173/relations
+
+cpdomain.info
+
 # Generic
 
 /assets/lfg.js
