@@ -2697,6 +2697,10 @@ Resoker
 MicroStealer/1.0
 MicroStealer
 
+# Reference: https://intel.breakglass.tech/post/kortex-stealer-defeats-chrome-s-app-bound-encryption-what-defenders-need-to-know-now
+
+wininet/1.0
+
 # Misc
 
 information_schema
