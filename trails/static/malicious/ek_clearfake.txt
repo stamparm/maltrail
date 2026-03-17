@@ -53338,6 +53338,12 @@ zncbhxse.com
 
 cloudflare--captcha2.global.ssl.fastly.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.100.157.250/relations
+
+detaflow.digital
+notiondot.digital
+ui.detaflow.digital
+
 # Generic
 
 /a3A7qLVn/
