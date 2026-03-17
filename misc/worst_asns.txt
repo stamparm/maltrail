@@ -6288,3 +6288,30 @@
 95.215.204.0/24,podaon
 95.215.206.0/24,podaon
 95.215.207.0/24,podaon
+
+# AS 205775
+# Reference: https://ipinfo.io/AS205775
+# Reference: https://intel.breakglass.tech/post/kortex-stealer-defeats-chrome-s-app-bound-encryption-what-defenders-need-to-know-now
+
+138.226.236.0/24,neoncorenetworks
+138.226.237.0/24,neoncorenetworks
+147.45.45.0/24,neoncorenetworks
+178.236.252.0/24,neoncorenetworks
+185.100.157.0/24,neoncorenetworks
+185.102.115.0/24,neoncorenetworks
+185.177.239.0/24,neoncorenetworks
+193.221.200.0/23,neoncorenetworks
+193.221.200.0/24,neoncorenetworks
+193.233.112.0/23,neoncorenetworks
+195.10.205.0/24,neoncorenetworks
+45.150.34.0/24,neoncorenetworks
+5.252.153.0/24,neoncorenetworks
+77.91.65.0/24,neoncorenetworks
+77.91.96.0/23,neoncorenetworks
+77.91.96.0/24,neoncorenetworks
+77.91.97.0/24,neoncorenetworks
+83.217.208.0/24,neoncorenetworks
+83.217.209.0/24,neoncorenetworks
+91.214.78.0/24,neoncorenetworks
+94.141.122.0/24,neoncorenetworks
+95.85.238.0/24,neoncorenetworks
