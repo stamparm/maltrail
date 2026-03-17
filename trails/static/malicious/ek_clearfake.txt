@@ -53334,6 +53334,10 @@ web-booking-pulser.com
 web-extranet-login.com
 zncbhxse.com
 
+# Reference: https://x.com/JAMESWT_WT/status/2033866714299904124
+
+cloudflare--captcha2.global.ssl.fastly.net
+
 # Generic
 
 /a3A7qLVn/
