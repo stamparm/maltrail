@@ -9385,6 +9385,12 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 
 /payload?userid=
 
+# Reference: https://x.com/smica83/status/2033901928229278070
+# Reference: https://www.virustotal.com/gui/file/19908832f56b96678064ce686c8982e4c46c9a3ef4b489b114843087eec97daa/detection
+
+/mirmLAT/departuredishwasher.ps1
+/departuredishwasher.ps1
+
 # Generic
 
 /5c0ca79.php
