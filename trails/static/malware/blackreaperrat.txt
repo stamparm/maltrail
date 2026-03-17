@@ -1,0 +1,20 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: forbidden hyena
+
+# Reference: https://bi.zone/eng/expertise/blog/forbidden-hyena-atakuet-s-novym-troyanom-udalennogo-dostupa-blackreaperrat/
+# Reference: https://www.virustotal.com/gui/file/05a3028bc4f10ff3387b486c171178f7d5a4864de59f6693d2dcbdae035820d1/detection
+
+http://193.106.191.190
+http://193.124.22.8
+http://193.233.48.74
+http://193.233.48.98
+193.233.48.98:4458
+2.59.163.169:443
+dada-tuda.ru
+confluence.dada-tuda.ru
+big-tree.ru/.ss/s.php
+/.ss/s.php
+/.w/wrgdfregrtgawreg.vbs
+/wrgdfregrtgawreg.vbs
