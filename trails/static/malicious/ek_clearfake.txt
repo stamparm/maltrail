@@ -53310,15 +53310,29 @@ yieldvelo.org
 
 # Reference: https://x.com/JAMESWT_WT/status/2033808913670316070
 
+2fa-authentifications.com
+account-verify-pulse.com
+alpha-moontropica.com
+aml-check.support
 auth-in-extranet.com
+bestbalitour.com
+confirmation-id619473.com
 confirmation-id63926.com
+extranetsingin.com
+freetronenergy.shop
+history-transfer.com
+hotelreward.top
 sign-in-extranet.com
 sign-in-extranets.com
 signs-in-extranet.com
+sing-in-op-token.com
+transcheck.click
+trustcompliance.net
 web-booking-extranet.com
 web-booking-pulse.com
 web-booking-pulser.com
 web-extranet-login.com
+zncbhxse.com
 
 # Generic
 
