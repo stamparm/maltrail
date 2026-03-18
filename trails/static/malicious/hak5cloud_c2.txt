@@ -2426,6 +2426,7 @@ enceladus.thornton.info
 entreprise.maprimevelo.fr
 followtheflan.com
 hunt.sabalillc.com
+jpfgov.com
 m0bux.com
 maprimevelo.fr
 martynspurgeon.myqnapcloud.com
@@ -2433,6 +2434,7 @@ network45-238-142-host-234.inethn.net
 nhwis.com
 nhwis.tech
 nsfhw.tech
+pineapplec2.infinity8labs.com
 red.linology.tech
 shadowblade.space
 syndikatet.net
