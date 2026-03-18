@@ -9391,6 +9391,13 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /mirmLAT/departuredishwasher.ps1
 /departuredishwasher.ps1
 
+# Reference: https://x.com/smica83/status/2034374314657542395
+# Reference: https://www.virustotal.com/gui/file/16b8310d44a5a0c96539cca1eb04396020337e7a6f9b97ebc5ee12739b87f13a/detection
+
+/k4sss4/clothchap.ps1
+/k4sss4/
+/clothchap.ps1
+
 # Generic
 
 /5c0ca79.php
