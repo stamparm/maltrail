@@ -4488,3 +4488,7 @@ zzblive.top
 
 212.11.64.72:8041
 pinpadat.com
+
+# Reference: https://www.virustotal.com/gui/file/b65be064cde38d54a3ac0f2240c372d242e110f4d8ad96f1b1728c21cc413d01/detection
+
+americareit.com
