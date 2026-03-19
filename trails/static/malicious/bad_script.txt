@@ -9401,8 +9401,11 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 # Reference: https://github.com/hagezi/dns-blocklists/issues/9448
 
 /mbx/dJe73b4F2/Lb3D42fYi.php
+/mbx/dJe73b4F2/dE2h1bs5.php
+/mbx/dJe73b4F2/
 /dJe73b4F2/Lb3D42fYi.php
 /dJe73b4F2/
+/dE2h1bs5.php
 /Lb3D42fYi.php
 
 # Generic
