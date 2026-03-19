@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: liushen ransomware
+
+# Reference: https://x.com/suyog41/status/2034498528924536927
+# Reference: https://www.virustotal.com/gui/file/70e6b03474eef49b86b7b70efe1e2ae8e69ec4227b10ef7f74f72bc98f1d0312/detection
+
+# liushenxxxx.onion
