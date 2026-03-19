@@ -4482,3 +4482,9 @@ zxp561skreen.top
 zxzypanel.top
 zythcare.top
 zzblive.top
+
+# Reference: https://x.com/SquiblydooBlog/status/2034382758143787377
+# Reference: https://www.virustotal.com/gui/file/d4f085a345cd8a3f662711ea7f8f72084bb7367085912028b7f4acc4e30f3d9e/detection
+
+212.11.64.72:8041
+pinpadat.com
