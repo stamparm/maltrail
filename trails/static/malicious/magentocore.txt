@@ -16775,6 +16775,12 @@ tecnokauf.ru/accesson20.html
 
 cpdomain.info
 
+# Reference: https://x.com/sdcyberresearch/status/2034661252673274097
+
+/storage/users/bolshie-xyu.js
+/users/bolshie-xyu.js
+/bolshie-xyu.js
+
 # Generic
 
 /assets/lfg.js
