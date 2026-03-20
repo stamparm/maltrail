@@ -5611,3 +5611,7 @@ blc-p.co
 # Note: Got a private report on attempt of website compromisation by using this domain. Due to https://urlscan.io/result/019ce148-0465-76b4-9b44-d8701eadaba3/ domain is free for sale and has no content.
 
 golem.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/103.224.182.210/relations
+
+servegame.co
