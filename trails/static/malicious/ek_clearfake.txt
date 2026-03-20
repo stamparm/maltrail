@@ -53367,6 +53367,11 @@ detaflow.digital
 notiondot.digital
 ui.detaflow.digital
 
+# Reference: https://www.virustotal.com/gui/ip-address/37.77.150.152/relations
+
+sing-in-token-op.com
+web-extranet-sign-in.com
+
 # Generic
 
 /a3A7qLVn/
