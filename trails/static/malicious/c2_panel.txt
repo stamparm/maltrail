@@ -1080,6 +1080,13 @@ voxpanel.vu
 178.22.24.175:8080
 77.90.185.209:8080
 
+# Reference: https://x.com/smica83/status/2035099325290738036
+# Reference: https://www.virustotal.com/gui/file/54583d4a66ec539c991e5b46013f7e38f4a0fef9afe1cb2f53fcffebe1f8b2da/detection
+# Reference: https://www.virustotal.com/gui/file/5ab7b4677f8c02d57436dc1710e269c547ae54e8e753c6d5fbdfc07804602b8d/detection
+# CERT_DOMAIN-HOST/IP=c2server
+
+184.174.97.23:8081
+
 # Generic
 
 /admin_123/auth.php
