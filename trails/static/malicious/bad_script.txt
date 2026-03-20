@@ -9408,6 +9408,10 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /dE2h1bs5.php
 /Lb3D42fYi.php
 
+# Reference: https://x.com/SansLimit3/status/2034575676355780910
+
+/react2shell.py
+
 # Generic
 
 /5c0ca79.php
