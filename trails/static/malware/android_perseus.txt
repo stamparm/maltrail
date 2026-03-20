@@ -1,0 +1,32 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.threatfabric.com/blogs/perseus-dto-malware-that-takes-notes
+# Reference: https://www.virustotal.com/gui/file/2524e9d5ed1e55332fe2d1cc0e7ad4e2656ad5ca624199e6f619325979b3529a/detection
+# BANNER_0_HASH-HOST=31b5fab31ccd88ba17fe63911f9c085c
+# BANNER_0_HASH-HOST=a20dacf1409cae7aaad000afc8438a36
+# BANNER_0_HASH-HOST=d34a59ff758ce50c192398266f3739c4
+# BODY_SHA1-HOST=73aee7d8b86b34feb2b10faecc99dd160d6073a0
+
+bolsanslarkanka.com
+digital-reel-studio.app
+md5.fit
+rally.vin
+tasdaitaly.nl
+ycomtz.cc
+zcorw.xyz
+api.bolsanslarkanka.com
+api.rally.vin
+api.tasdaitaly.nl
+assets.md5.fit
+ex.yunv.org
+flow.zcorw.xyz
+jjn8n.digital-reel-studio.app
+jjportainer.digital-reel-studio.app
+panel.bolsanslarkanka.com
+r.md5.fit
+rstapi.bolsanslarkanka.com
+static.cskh.top
+static.ycomtz.cc
+ws.bolsanslarkanka.com
+ws.tasdaitaly.nl
