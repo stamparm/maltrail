@@ -53727,6 +53727,12 @@ ui.detaflow.digital
 sing-in-token-op.com
 web-extranet-sign-in.com
 
+# Reference: https://x.com/JAMESWT_WT/status/2035264938940252190
+
+extranetpulseboard.help
+id-582746556281932341.com
+thairefaruq.com
+
 # Generic
 
 /a3A7qLVn/
