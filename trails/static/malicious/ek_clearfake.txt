@@ -53729,9 +53729,17 @@ web-extranet-sign-in.com
 
 # Reference: https://x.com/JAMESWT_WT/status/2035264938940252190
 
+accountpulsecontrolhubscentre.help
+bollymybea.com
+extranet-board.com
 extranetpulseboard.help
 id-582746556281932341.com
+p4kv.ru
+pulseaccountcontrolcentre.help
+pulsecontolcentreguest.help
+reservationpuilsean.help
 thairefaruq.com
+yuwibkqnaq.com
 
 # Generic
 
