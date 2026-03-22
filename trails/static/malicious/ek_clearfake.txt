@@ -24728,7 +24728,7 @@ data8-ip-71-repository-repository56.in.net
 data8.po-1-ba-8-esett.ru
 databaseintegrity.in.net
 databeat.fluxnode.in.net
-datacenternode.info.
+datacenternode.info
 datacenterstream.in.net
 datacentricnode.in.net
 dataintegritynet.in.net
@@ -27677,7 +27677,6 @@ goldpit.in.net
 goldrock.coupons
 goldstar.coupons
 goldsys.digital
-goldsys.digital.
 goldtalon.ru
 goldtrace.goldwind.in.net
 goldtrail.in.net
@@ -32262,7 +32261,7 @@ networkdatamanager.lubginany.in.net
 networkobserver.in.net
 networkoptimizer.in.net
 networkresourcebuffer.in.net
-networksecurity.info.
+networksecurity.info
 neumechawl.ru
 neur0l5uptn.ru
 neuralagen.sleepbut.in.net
@@ -32743,7 +32742,6 @@ oakensiegel.ru
 oakfather.dubniakpops.ru
 oakford.ru
 oaknet.digital
-oaknet.digital.
 oakshaven.in.net
 oaktrail.in.net
 oaq.t0ppleseed.ru
@@ -37182,7 +37180,6 @@ sunagree.cfd
 sunb1aze.ru
 sunb2zealou5.ru
 sunbit.digital
-sunbit.digital.
 suncrest.in.net
 suncrest0n.ru
 sundel.fl0rinf2t.ru
@@ -37340,7 +37337,7 @@ systemintegration.in.net
 systemintegritynode.in.net
 systeminterface.in.net
 systemresource.in.net
-systemstatus.info.
+systemstatus.info
 syvuk.press
 syxevao7.ru
 sz.maplexenon.ru
@@ -37673,7 +37670,7 @@ te9d.adm1tdebu8.ru
 tea.bkud4.ru
 tea.n4ke.ru
 teb.rilefoo8.ru
-technicalsupport.info.
+technicalsupport.info
 technicalsupportbox.aircraftmodel.in.net
 tectoniview.in.net
 ted9q6r.favour128influen.coupons
@@ -39766,7 +39763,6 @@ windc0ve.ru
 windcrest.in.net
 windcrest.ru
 winddev.digital
-winddev.digital.
 winde.moonf1eld.ru
 windf0x.ru
 windf1eld.ru
