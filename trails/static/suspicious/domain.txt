@@ -5615,3 +5615,7 @@ golem.com
 # Reference: https://www.virustotal.com/gui/ip-address/103.224.182.210/relations
 
 servegame.co
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/9474#issuecomment-4105979155
+
+.hl.cn
