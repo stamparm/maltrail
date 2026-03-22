@@ -5618,4 +5618,4 @@ servegame.co
 
 # Reference: https://github.com/hagezi/dns-blocklists/issues/9474#issuecomment-4105979155
 
-.hl.cn
+hl.cn
