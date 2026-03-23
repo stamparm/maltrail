@@ -4492,3 +4492,19 @@ pinpadat.com
 # Reference: https://www.virustotal.com/gui/file/b65be064cde38d54a3ac0f2240c372d242e110f4d8ad96f1b1728c21cc413d01/detection
 
 americareit.com
+
+# Reference: https://www.elastic.co/security-labs/silentconnect-delivers-screenconnect
+# Reference: https://www.virustotal.com/gui/file/c3d4361939d3f6cf2fe798fef68d4713141c48dce7dd29d3838a5d0c66aa29c7/detection
+
+bumptobabeco.top
+instance-lh1907-relay.screenconnect.com
+
+# Reference: https://www.virustotal.com/gui/file/1c1196120f229b3ef4270b73c7eef789da9a084397daea26995266de50eec197/detection
+
+86.38.225.59:5500
+ustvonline.zapto.org
+
+# Reference: https://www.virustotal.com/gui/file/033535e287681341c7d8604377b8476a8b598511af27b4138083cafc32f58c0c/detection
+
+86.38.225.59:8041
+dremmanueldental.shop
