@@ -312,6 +312,8 @@ BLACKLIST_IN
 ```
 The way to build ipset blacklist is the same (see above) except that URLs will be `/blacklist/in` and `/blacklist/out` in our example.
 
+Option `FAIL2BAN_ALLOWLIST` allows to define networks, access to `/fail2ban` endpoint would be granted. If unset/empty, access to `/fail2ban` endpoint will be denied.
+
 Same as for **Sensor**, when running the **Server** (e.g. `python server.py`) for the first time and/or after a longer period of non-running, if option `USE_SERVER_UPDATE_TRAILS` is set to `true`, it will automatically update the trails from trail definitions (Note: stored inside the `trails` directory). Its basic function is to store the log entries inside the logging directory (i.e. option `LOG_DIR` inside the `maltrail.conf` file's section `[All]`) and provide the web reporting interface for presenting those same entries to the end-user (Note: there is no need to install the 3rd party web server packages like Apache):
 
 ![Server run](https://i.imgur.com/GHdGPw7.png)
