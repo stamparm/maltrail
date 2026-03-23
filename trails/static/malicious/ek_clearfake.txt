@@ -54426,12 +54426,14 @@ qzfzxaizaliw.zhivachkapro.com
 
 # Reference: https://x.com/blackorbird/status/2031996220361875770
 # Reference: https://github.com/rapid7/Rapid7-Labs/blob/main/IOCs/ClickFix_DoubleDonut_Campaign_IOCs.txt
+# BANNER_0_HASH-HOST=b3c58997accef310c4619135262c0f3d
 
 alianzeg.shop
 captiort.shop
 captioz.shop
 getalia.org
 getalib.org
+getfix.win
 gieable.shop
 goarnsds.shop
 gorscts.shop
