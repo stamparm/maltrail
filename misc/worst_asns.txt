@@ -6315,3 +6315,13 @@
 91.214.78.0/24,neoncorenetworks
 94.141.122.0/24,neoncorenetworks
 95.85.238.0/24,neoncorenetworks
+
+# AS 205759
+# Reference: https://ipinfo.io/AS205759
+
+36.255.97.0/24,ghostynetworks
+43.228.157.0/24,ghostynetworks
+46.151.182.0/24,ghostynetworks
+64.89.160.0/24,ghostynetworks
+64.89.161.0/24,ghostynetworks
+83.142.209.0/24,ghostynetworks
