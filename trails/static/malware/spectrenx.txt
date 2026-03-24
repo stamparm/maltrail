@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: spectrenx stealer, spectrenx rat
+
+# Reference: https://x.com/solostalking/status/2036477214607163510
+
+http://178.128.121.64
+178.128.121.64:3000
+178.128.121.64:7000
+spectrenx.vip
