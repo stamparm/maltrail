@@ -2440,6 +2440,7 @@ shadowblade.space
 syndikatet.net
 untitledc2test.deeeh.com
 vacationrental-directory.com
+wxcdc.movaci.net
 zbzb.ypsecurity.fr
 
 # Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2026-02-28)
