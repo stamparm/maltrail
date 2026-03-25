@@ -4761,3 +4761,21 @@ assets.umbra.st
 
 threatmarket.ru
 hi6bo2aihmuzkaj6gi6sigmut5bcwvguqpma3hwxsjfbqsccnchmybid.onion
+
+# Reference: https://www.virustotal.com/gui/ip-address/89.125.152.220/relations
+
+1a.jokerstash.me
+carder007.ws
+carder007a.carder007.ws
+carder007ba.carder007.ws
+carder007s.carder007.ws
+cvvshop.hk
+dc-09cd3891394a.carder007.ws
+flowiseai-demo.carder007.ws
+j-stash.cc
+j-stash.org
+joker-stash.org
+jokerstash.me
+rescator.mn
+tc.carder007.ws
+uniccbazar.cc
