@@ -55350,6 +55350,13 @@ oxfordmobilexray.com
 reservacontrolpaneltax.com
 wultorymusi.com
 
+# Reference: https://github.com/ChainK1ll/Daily_Intel/blob/main/ClickFix
+
+dopoboulogne.com
+excel-piscines.com
+landbankseeds.com
+up2you37.fr
+
 # Generic
 
 /a3A7qLVn/
