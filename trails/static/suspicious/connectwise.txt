@@ -4508,3 +4508,8 @@ ustvonline.zapto.org
 
 86.38.225.59:8041
 dremmanueldental.shop
+
+# Reference: https://www.virustotal.com/gui/file/133a4b315d283a9e2e8b428ac9d4aef3f818dd340456ab511b7cb7d7d707c0aa/detection
+
+176.96.137.225:8041
+manageserver.xyz
