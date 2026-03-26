@@ -11,7 +11,18 @@ from core.compat import xrange
 
 def addr_to_int(value):
     _ = value.split('.')
-    return (int(_[0]) << 24) + (int(_[1]) << 16) + (int(_[2]) << 8) + int(_[3])
+    if len(_) != 4:
+        raise ValueError("invalid IPv4 address '%s'" % value)
+
+    try:
+        _ = [int(__) for __ in _]
+    except ValueError:
+        raise ValueError("invalid IPv4 address '%s'" % value)
+
+    if any(__ < 0 or __ > 255 for __ in _):
+        raise ValueError("invalid IPv4 address '%s'" % value)
+
+    return (_[0] << 24) + (_[1] << 16) + (_[2] << 8) + _[3]
 
 def int_to_addr(value):
     return '.'.join(str(value >> n & 0xff) for n in (24, 16, 8, 0))
