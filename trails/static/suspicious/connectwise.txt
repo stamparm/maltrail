@@ -4513,3 +4513,7 @@ dremmanueldental.shop
 
 176.96.137.225:8041
 manageserver.xyz
+
+# Reference: https://www.virustotal.com/gui/file/5f85e5741c2acbdf28622b3ae538c0fbe9014b20232313cda1d9fa6fc83566e5/detection
+
+154.16.171.90:8041
