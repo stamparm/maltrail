@@ -55515,6 +55515,10 @@ xquizit.aurovine.com
 zeellow.com
 ziellow.com
 
+# Reference: https://x.com/malwrhunterteam/status/2037163798390243549
+
+update-check.com
+
 # Generic
 
 /a3A7qLVn/
