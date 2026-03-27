@@ -8961,5 +8961,17 @@ zymeratech.site
 zyrelief.shop
 
 # Reference: https://www.infoblox.com/blog/threat-intelligence/no-reach-no-risk-the-keitaro-abuse-in-modern-cybercrime-distribution/
+# ETAG-HOST="8011f0f4a5d3db1:0"
 
+247holzveredler.com
+dev-admin.blazeapps.co.za
+doctordelsnooker.com
+feathersandwhiskers.com
+holzveredler.com
 holzveredler247.com
+notizielombarde.com
+notizievicine.com
+radarandaluz.com
+saltwireecho.com
+spike-blue.com
+stedetsstemning.com
