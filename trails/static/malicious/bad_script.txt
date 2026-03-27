@@ -9434,6 +9434,16 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /basketpast.hta
 /slippersuppity.hta
 
+# Reference: https://x.com/smica83/status/2037493544059830380
+# Reference: https://www.virustotal.com/gui/file/7689fe3be975ad8d33e0b81b540990d858209e215cd0faccd8ffa82102dd5bd0/detection
+
+/Dohovirr/libraryobjection.hta
+/Dohovirr/malletlord.hta
+/Dohovirr/wisdomassistance.hta
+/libraryobjection.hta
+/malletlord.hta
+/wisdomassistance.hta
+
 # Generic
 
 /5c0ca79.php
