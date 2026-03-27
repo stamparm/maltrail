@@ -9449,6 +9449,11 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /8pPkEV7JLg-ahX0hhA/index.html
 /8pPkEV7JLg-ahX0hhA/
 
+# Reference: https://x.com/ShadowOpCode/status/2037534360371368108
+
+/zFr74mwA-Y5xOEL8/index.html
+/zFr74mwA-Y5xOEL8/
+
 # Reference: https://x.com/1ZRR4H/status/2037591212987724247
 
 /bot_loader.py
