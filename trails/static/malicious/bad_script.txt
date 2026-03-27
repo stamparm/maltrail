@@ -9457,6 +9457,7 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /interactive_cnc.py
 /interactive_cnc_v2.py
 /synology_exploit.py
+/telnet_pwn_2026.py
 /test_cnc.py
 /xor_brute.py
 
