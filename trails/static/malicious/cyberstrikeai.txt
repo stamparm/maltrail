@@ -133,6 +133,7 @@
 89.19.209.40:8080
 94.154.35.41:8080
 95.131.214.254:8080
+bossjyt.us.ci
 cometsa.top
 drb420.ru
 mangoworks.win
@@ -143,4 +144,6 @@ cyberstrike.infra.makekod.ru
 cyberstrike.mangoworks.win
 cyberstrike.teledocmedical.ai
 cyberstrike.teledocserver.com
+scan.bossjyt.us.ci
 tool.maolou.cn
+xss.bossjyt.us.ci
