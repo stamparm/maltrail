@@ -9416,6 +9416,14 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 
 /ffffffffffffiouooiuiuoeoiufoiuiou.html
 
+# Reference: https://x.com/smica83/status/2037466834656477265
+# Reference: https://www.virustotal.com/gui/file/4647707f5c01c2e8135d2bf95860422144d29fa36d83543a34a283b44a27e1b7/detection
+
+/lekci/acknowledgmentreasoning.hta
+/lekci/goataccent.hta
+/acknowledgmentreasoning.hta
+/goataccent.hta
+
 # Generic
 
 /5c0ca79.php
