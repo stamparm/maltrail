@@ -9444,6 +9444,11 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /malletlord.hta
 /wisdomassistance.hta
 
+# Reference: https://x.com/ShadowOpCode/status/2037543482730901965
+
+/8pPkEV7JLg-ahX0hhA/index.html
+/8pPkEV7JLg-ahX0hhA/
+
 # Generic
 
 /5c0ca79.php
