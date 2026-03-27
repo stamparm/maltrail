@@ -9449,6 +9449,17 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /8pPkEV7JLg-ahX0hhA/index.html
 /8pPkEV7JLg-ahX0hhA/
 
+# Reference: https://x.com/1ZRR4H/status/2037591212987724247
+
+/bot_loader.py
+/cve_exploit_mass.py
+/cve_scanner.py
+/interactive_cnc.py
+/interactive_cnc_v2.py
+/synology_exploit.py
+/test_cnc.py
+/xor_brute.py
+
 # Generic
 
 /5c0ca79.php
