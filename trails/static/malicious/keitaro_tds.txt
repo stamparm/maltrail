@@ -8959,3 +8959,7 @@ zovege.store
 zolvenor.kherson.ua
 zymeratech.site
 zyrelief.shop
+
+# Reference: https://www.infoblox.com/blog/threat-intelligence/no-reach-no-risk-the-keitaro-abuse-in-modern-cybercrime-distribution/
+
+holzveredler247.com
