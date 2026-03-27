@@ -3848,3 +3848,7 @@ cloud-ip.cc
 # Reference: https://www.virustotal.com/gui/domain/noip.biz/relations
 
 noip.biz
+
+# Reference: https://www.virustotal.com/gui/domain/dpdns.org/relations
+
+dpdns.org
