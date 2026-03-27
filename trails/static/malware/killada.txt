@@ -1,0 +1,13 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: killada ransomware
+
+# Reference: https://x.com/fbgwls245/status/2037571845663383956
+
+killada5556ahpb4cwmatv5qpzku2qmdlwawshtykpq37cvfva7zjhid.onion
+killada7qgdpvzpezjxaa64b47bz47hzbn6oql5aa4lppzzwymnukqqd.onion
+killadaayyuzdshwskrnsvh5owzuwa4yj7gs2vbhkcjpfslrplfgwwqd.onion
+killadahaynpqrkppe2m2tgindbruaeiefzr7pm3cp47tzohhhnogwad.onion
+killadax36r6bbb3md67ekcfv5yasdlnoaklyag66ot4tefa32ywgnyd.onion
+killadaxczzw3wnuaxkygib67lk2qkgnki4gyjqoo76vh53egitoyaqd.onion
