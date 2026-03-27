@@ -42218,9 +42218,11 @@ australiaqovnotice.site
 autenticacaopt.com
 autenticaviaverde.com
 autentiseringdhl.com
+auth-device.com
 auth08-websec8-h9.com
 auth08-websec8-w10.center
 auth09-internalreview2.digital
+auth09-websecure88-e8.com
 authcurlassess.net
 authenticate-device-verification.com
 authenticate-information.com
@@ -42351,6 +42353,8 @@ caseid-81637438-cb.com
 castlemaniahero.com
 cb-wallet-verify.com
 cconstructionco.com
+cdn146-crashreport.coupons
+cdn693-extensioncheck.coupons
 celinasdttry.com
 cellmsa.com
 center-auassistance.online
@@ -42424,6 +42428,7 @@ coiis-mondiaireiay.info
 coimbased.com
 coin-futures.net
 coinbase-48383.com
+coinbase-wallet-recovery.com
 coinbase.secure-9125.com
 coincoverinsurance.com
 coincoverprotection.com
@@ -43058,6 +43063,7 @@ minhavodafone.com
 minsikkerhet.com
 minutoolaud.com
 miorosiliy.com
+mnsm.us.com
 mobaik.com
 mobile-registration-dashboard.com
 mobile-verification-dashboard.com
@@ -43306,6 +43312,7 @@ primary-device-approved.com
 primary-device-authentication.com
 primary-device-confirm.com
 primary-device-connect.com
+primary-device-correct.com
 primary-device-default.com
 primary-device-enabled.com
 primary-device-enroll.com
@@ -43349,6 +43356,7 @@ quickbooks-hub.com
 quickbooks-intutit.com
 quickboooks.net
 quickfilespro.com
+quickline-books.com
 quickrealfewtips.com
 quicktippsies.com
 quiibusx.com
@@ -43816,6 +43824,7 @@ west-information-pac-au.com
 wfdeactivation.com
 widibaltalia.com
 wirelessdiagnoser.com
+wise-verify.com
 wmcb08-internalsecurity02auth.com
 woniu167.xyz
 woofi.services
