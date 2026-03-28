@@ -11,6 +11,9 @@ import sys
 
 sys.dont_write_bytecode = True
 
+import collections
+import csv
+import glob
 import optparse
 import os
 import platform
@@ -38,6 +41,114 @@ from core.update import update_ipcat
 from core.update import update_trails
 from thirdparty import six
 
+_past_events_cache = {}
+_past_events_cache_lock = threading.Lock()
+
+
+def _normalize_event_signature(row):
+    if isinstance(row, dict):
+        trail = row.get("trail") or row.get("event") or ""
+        event_type = row.get("type") or ""
+        src = row.get("src_ip") or row.get("src") or ""
+        dst = row.get("dst_ip") or row.get("dst") or ""
+        proto = row.get("proto") or ""
+        sport = row.get("src_port") or row.get("sport") or ""
+        dport = row.get("dst_port") or row.get("dport") or ""
+        return "%s|%s|%s|%s|%s|%s|%s" % (trail, event_type, src, dst, proto, sport, dport)
+
+    if not isinstance(row, (list, tuple)):
+        return None
+
+    if len(row) >= 9:
+        src = row[2] if len(row) > 2 else ""
+        sport = row[3] if len(row) > 3 else ""
+        dst = row[4] if len(row) > 4 else ""
+        dport = row[5] if len(row) > 5 else ""
+        proto = row[6] if len(row) > 6 else ""
+        event_type = row[7] if len(row) > 7 else ""
+        trail = row[8] if len(row) > 8 else ""
+        return "%s|%s|%s|%s|%s|%s|%s" % (trail, event_type, src, dst, proto, sport, dport)
+
+    return None
+
+
+def _extract_signature_from_log_line(line):
+    try:
+        row = next(csv.reader([line]))
+    except Exception:
+        row = [_.strip() for _ in line.split(',')]
+
+    if not row:
+        return None
+
+    signature = _normalize_event_signature(row)
+    if signature:
+        return signature
+
+    if len(row) > 1:
+        signature = _normalize_event_signature(row[1:])
+        if signature:
+            return signature
+
+    return None
+
+
+def _build_past_counter(cutoff_date):
+    log_dir = getattr(config, "LOG_DIR", None)
+    if not log_dir or not os.path.isdir(log_dir):
+        return collections.Counter(), tuple()
+
+    filenames = []
+    for filename in glob.glob(os.path.join(log_dir, "*.log")):
+        basename = os.path.basename(filename)
+        day = basename.split('.')[0][:10]
+        if len(day) == 10 and day < cutoff_date:
+            filenames.append(filename)
+
+    filenames = tuple(sorted(filenames))
+    counter = collections.Counter()
+
+    for filename in filenames:
+        try:
+            with open(filename, "rb") as f:
+                for line in f:
+                    if six.PY3:
+                        line = line.decode("utf8", "replace")
+                    line = line.strip()
+                    if not line:
+                        continue
+                    signature = _extract_signature_from_log_line(line)
+                    if signature:
+                        counter[signature] += 1
+        except (IOError, OSError):
+            continue
+
+    return counter, filenames
+
+
+def _get_past_count(cutoff_date, row):
+    if not cutoff_date:
+        return 0
+
+    signature = _normalize_event_signature(row)
+    if not signature:
+        return 0
+
+    with _past_events_cache_lock:
+        cached = _past_events_cache.get(cutoff_date)
+        if cached is None:
+            counter, filenames = _build_past_counter(cutoff_date)
+            cached = {"counter": counter, "filenames": filenames}
+            _past_events_cache[cutoff_date] = cached
+        else:
+            counter, filenames = _build_past_counter(cutoff_date)
+            if filenames != cached.get("filenames"):
+                cached = {"counter": counter, "filenames": filenames}
+                _past_events_cache[cutoff_date] = cached
+
+        return int(cached["counter"].get(signature, 0))
+
+
 def main():
     print("%s (server) #v%s {%s}\n" % (NAME, VERSION, HOMEPAGE))
 
@@ -58,6 +169,8 @@ def main():
 
     if options.debug:
         config.SHOW_DEBUG = True
+
+    config.PAST_EVENT_COUNT = _get_past_count
 
     if six.PY2 and config.USE_SSL:
         try:
@@ -113,7 +226,12 @@ def main():
         if config.USE_SERVER_UPDATE_TRAILS:
             update_timer()
 
-        start_httpd(address=config.HTTP_ADDRESS, port=config.HTTP_PORT, pem=config.SSL_PEM if config.USE_SSL else None, join=True)
+        kwargs = {"address": config.HTTP_ADDRESS, "port": config.HTTP_PORT, "pem": config.SSL_PEM if config.USE_SSL else None, "join": True}
+        code = getattr(start_httpd, "__code__", getattr(start_httpd, "func_code", None))
+        if code and "past_count_resolver" in code.co_varnames:
+            kwargs["past_count_resolver"] = _get_past_count
+
+        start_httpd(**kwargs)
     except KeyboardInterrupt:
         print("\r[x] stopping (Ctrl-C pressed)")
 
