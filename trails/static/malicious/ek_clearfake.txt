@@ -56670,6 +56670,13 @@ ziellow.com
 
 update-check.com
 
+# Reference: https://x.com/brkalbyrk7/status/2037630047024980291
+
+securegrab.icu
+3m.securegrab.icu
+aj5i.securegrab.icu
+api.securegrab.icu
+
 # Generic
 
 /a3A7qLVn/
