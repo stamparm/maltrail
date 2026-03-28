@@ -1,3 +1,5 @@
+
+
 # Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
@@ -23420,6 +23422,7 @@ cdn-z7-edge.optico-voda.in.net
 cdn.extremepornvideos.com
 cdn.mintvoucher.coupons
 cdn.semifinal-matching.coupons
+cdn012-browsertrace.in.net
 cdn063-logicnet.in.net
 cdn093-coreflux.in.net
 cdn142-dumpreport.coupons
@@ -23431,6 +23434,7 @@ cdn175-errorupload.coupons
 cdn176-errorupload.coupons
 cdn186-errorupload.coupons
 cdn187-crashreport.coupons
+cdn188-addoncheck.in.net
 cdn189-crashanalytics.qpon
 cdn19-crashreport.com
 cdn199-reportnode.coupons
@@ -23572,6 +23576,7 @@ cdn721-reportcenter.coupons
 cdn735-crashtrack.coupons
 cdn749-crashmonitor.coupons
 cdn749-debugtrace.coupons
+cdn756-bugtracker.in.net
 cdn777-rock.online
 cdn781-neostack.in.net
 cdn8-browser-telemetry.net
