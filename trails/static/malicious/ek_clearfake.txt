@@ -23551,6 +23551,8 @@ cdn495-errorcenter.com
 cdn503-crashmonitor.coupons
 cdn508-crashdata.coupons
 cdn512-browserlogs.coupons
+cdn517-netflux.in.net
+cdn560-netcore.in.net
 cdn592-browserhelp.coupons
 cdn597-crashdata.coupons
 cdn604-failreport.coupons
@@ -23571,11 +23573,13 @@ cdn735-crashtrack.coupons
 cdn749-crashmonitor.coupons
 cdn749-debugtrace.coupons
 cdn777-rock.online
+cdn781-neostack.in.net
 cdn8-browser-telemetry.net
 cdn835-debugreport.coupons
 cdn876-crashtrack.coupons
 cdn877-bytegrid.in.net
 cdn881-logsender.coupons
+cdn890-hypergrid.in.net
 cdn915-loguploader.coupons
 cdn945-crashtrack.coupons
 cdn952-corebyte.in.net
@@ -23884,6 +23888,7 @@ chp.gyj-0.ru
 chri5t1anget.ru
 chromadatacenter.in.net
 chromaprocessing.in.net
+chromeflack.in.net
 chromepepsi.digital
 chronosyncmanager.swallowtime.in.net
 chrysalisbuffer.in.net
@@ -27849,6 +27854,7 @@ gad.fa0n.ru
 gadgetgrab.coupons
 gadowooing.in.net
 gag.khoc9.ru
+galacticpulsehub.in.net
 gale.g1zmobrain.ru
 gale.m00nweaver.ru
 gale2.rock-bay.ru
