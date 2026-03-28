@@ -18885,8 +18885,6 @@ http://77.90.185.24
 120984.99y401874.ru
 120984.r46eu.ru
 122jtw.zenithpatron.in.net
-124.181.6/server
-124.67.152/server
 124vm6or.scrollnft.in.net
 12if.pejy1.ru
 13-yz.ru
@@ -18913,7 +18911,6 @@ http://77.90.185.24
 15.to1j.ru
 1502u.frost-echo.in.net
 1533o.checkingsum.in.net
-156.72.112/server
 15cazygd.rainfail.ru
 15eitnbq.mistysh1eld.ru
 15w9bglk.pu7eer0d.ru
@@ -18932,10 +18929,6 @@ http://77.90.185.24
 17.1z57.ru
 17.jeqr.ru
 171f42aj.5kylight.ru
-172.55.103/server
-172.55.13/server
-172.55.161/server
-172.55.237/server
 17gx.cl0udfall.ru
 17m.5x7u.ru
 18.f0rce.ru
@@ -19134,9 +19127,6 @@ http://77.90.185.24
 21.hb0-e.ru
 21.stormcairn.ru
 21.su4n.ru
-212.111.89.17
-214.74.57/server
-214.74.8/server
 219.93i197934.ru
 219.rv6324.ru
 219.u521483.ru
@@ -19148,7 +19138,6 @@ http://77.90.185.24
 2215.c70ye.ru
 22754.ant1er5noos.ru
 22k.g7ve.ru
-23.108.12/server
 23.heronturm.ru
 233sum.yardcloud.in.net
 2350.velorune.in.net
@@ -20537,7 +20526,6 @@ http://77.90.185.24
 86ds.bracket-loam.ru
 86w.ldef-4.ru
 87-so.ru
-87.31.179/server
 8786.ru
 879.lo9q.ru
 87kd.fl0wstone.ru
