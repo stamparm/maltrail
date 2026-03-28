@@ -9466,6 +9466,15 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /test_cnc.py
 /xor_brute.py
 
+# Reference: https://x.com/smica83/status/2037909401973960881
+
+/uvrvk/damerehabilitate.hta
+/uvrvk/inversequickest.hta
+/uvrvk/labeldisconnection.hta
+/damerehabilitate.hta
+/inversequickest.hta
+/labeldisconnection.hta
+
 # Generic
 
 /5c0ca79.php
