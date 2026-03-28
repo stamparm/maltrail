@@ -44063,6 +44063,7 @@ ledger-securehelp.com
 ledger-security-ledger.com
 ledger-webdiagnostic.com
 ledger-webdiagnostics.com
+ledger.devicerecover.live
 ledger.diagnosticcheckdevice.com
 ledger.technicals.group
 ledger.wirelessdiagnoser.com
