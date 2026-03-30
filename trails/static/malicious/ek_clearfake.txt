@@ -56817,8 +56817,22 @@ sign-in-property.com
 # Reference: https://app.any.run/tasks/d74ffe00-ede6-4980-8cad-d20ee8cdeafe
 # Reference: https://www.virustotal.com/gui/file/a6cde37cfd8b9621536ba6a9ced64f248978f0793b1a4fe7929cc3e535738d3e/detection
 # Reference: https://www.virustotal.com/gui/file/fc88b233b5723886758932d74fffd3e58b528b6dfe328c16bec581ecdd452fa8/detection
+# BANNER_0_HASH-HOST=88ebaa8bb37e1ece2b469e621b38da0c
 
+adm-console-apps.com
+afvesa.com
+afvesag.com
+bkng-extranres.com
+bkngtabcontrlpage.com
+bkns-extrnst.com
 bookdash-extranetmgmt.com
+booklng-customparther.com
+books-verifying.com
+chasckslook-hotelother.com
+controlextrantpagebook.com
+extranatbooks.com
+extranetdmbok.com
+resasconafirm-lohotelinfo.com
 admln.bookdash-extranetmgmt.com
 
 # Generic
