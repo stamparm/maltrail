@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.cyfirma.com/research/crysome-rat-an-advanced-persistent-net-remote-access-trojan/
+# Reference: https://www.virustotal.com/gui/file/f30f32937999abe4fa6e90234773e0528a4b2bd1d6de5323d59ac96cdb58f25d/detection
+# Reference: https://www.virustotal.com/gui/file/fa896cc8ce13c69f6306eff2a8698998b48b422784053df6bb078c17fe3f04c3/detection
+
+crysome.net
