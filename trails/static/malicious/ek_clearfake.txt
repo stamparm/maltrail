@@ -56808,6 +56808,11 @@ securegrab.icu
 aj5i.securegrab.icu
 api.securegrab.icu
 
+# Reference: https://x.com/JAMESWT_WT/status/2038493345794625886
+# Reference: https://app.any.run/tasks/4f57659f-bf16-4a82-affd-650181e760bf
+
+sign-in-property.com
+
 # Generic
 
 /a3A7qLVn/
