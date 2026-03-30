@@ -56834,6 +56834,7 @@ extranatbooks.com
 extranetdmbok.com
 resasconafirm-lohotelinfo.com
 admln.bookdash-extranetmgmt.com
+admln.extranetbk-portal.com
 
 # Generic
 
