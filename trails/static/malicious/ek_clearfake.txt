@@ -1729,7 +1729,6 @@ design-x.xyz
 disable-data-collect-ai.pages.dev
 discover-travel-agency.pro
 ert67-o9.pages.dev
-f003.backblazeb2.com
 fresh-orange-juice.pages.dev
 gdfg-23rwe.pages.dev
 ghost-name.pages.dev
@@ -1760,6 +1759,7 @@ yob.yrwebsdf.shop
 you-insk-bad.pages.dev
 yrwebsdf.shop
 yunqof.shop
+f003.backblazeb2.com/file/skippp/
 
 # Reference: https://x.com/cloudsek/status/1904799207195894250
 # Reference: https://x.com/salmanvsf/status/1905644338052464796
