@@ -1049,6 +1049,11 @@ toolboxhk.node.edmc.cn
 # Reference: https://www.virustotal.com/gui/file/12a8b0903c176cb6478b4f0bfcf8a621025c37faf83941125c803ccc3e0913e6/detection
 # Reference: https://www.virustotal.com/gui/file/4b467906789b3abaeeaab4483efc9a8b6b6dda044520fdd07526e71cb160b614/detection
 # Reference: https://www.virustotal.com/gui/file/abac8cd80711555a39d73e5aeab4919af37de95d057038778b737071dc35bb88/detection
+# CLASS_0_HASH-HOST/IP=bd38e692387682b663645d7cf738a27e
+# FAVICON_HASH-HOST/IP=e6c869f2a2dfbb66791e16b4e1ae9938
 
 45.153.34.120:4444
 kitty-guard.buzz
+kittycom.doxxing.online
+kittycom.online
+zale.wtf
