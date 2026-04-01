@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/hiphoponelove_/status/2039277524857835939
+# Reference: https://www.virustotal.com/gui/file/c094ddb56940510a7e9b5d00ea2fade0c734f7049f7362853ed87f1314c77e89/detection
+
+krybitxdpxohsmjooeb3gbgpmdddreh6mnflzac6bnezz74b7yje67yd.onion
