@@ -13159,6 +13159,7 @@ tagscart.shop
 tagsmanager.shop
 tagspot.store
 terap.app
+turbostat.shop
 ultrabit.shop
 ultrabyte.shop
 ultracart.shop
