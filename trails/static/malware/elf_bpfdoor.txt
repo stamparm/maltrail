@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.rapid7.com/blog/post/new-whitepaper-stealthy-bpfdoor-variants-are-a-needle-that-looks-like-hay/
+# Reference: https://www.virustotal.com/gui/file/195b98211d1ce968669a0740ca08d0ddcf03a2df03a47e2e70550f6c002b49e8/detection
+# Reference: https://www.virustotal.com/gui/file/9ee77ed38e5bc69f841bdaba7c5e6c3bf30fd9ae94cd2e69f39834e9cec76e82/detection
+
+ntpd.casacam.net
+ntpupdate.ddnsgeek.com
+ntpupdate.ygto.com
+ntpussl.instanthq.com
