@@ -1108,6 +1108,18 @@ voxpanel.vu
 45.154.98.13:8443
 45.154.98.13:8880
 
+# Reference: https://app.validin.com/detail?find=C2%20Panel%20-%20Login&type=raw&ref_id=c1fd16b4b44#tab=host_pairs (# 2026-04-02)
+
+http://204.12.199.79
+172.86.111.19:8443
+64.188.82.35:3000
+777project.xyz
+dbvis.pro
+upfps.click
+tuc2.duckdns.org
+admin.777project.xyz
+upload.777project.xyz
+
 # Generic
 
 /admin_123/auth.php
