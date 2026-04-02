@@ -2409,6 +2409,7 @@ http://82.25.91.109
 api.mbpartnersfinance.com
 arcphish.com
 br01.brgovt.net
+c2.desuper.ipv64.net
 c2.leyes.tech
 c2.madasp.com
 c2.smeit.com
