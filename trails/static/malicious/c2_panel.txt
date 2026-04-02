@@ -1103,6 +1103,11 @@ voxpanel.vu
 192.253.248.174:5555
 192.253.248.175:5555
 
+# Reference: https://x.com/Fact_Finder03/status/2039577552944345412
+
+45.154.98.13:8443
+45.154.98.13:8880
+
 # Generic
 
 /admin_123/auth.php
