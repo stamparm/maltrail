@@ -9480,6 +9480,24 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 
 /453dbc45ac5b8fd9.js
 
+# Reference: https://x.com/1ZRR4H/status/2039587805450420534
+
+/cve-2024-11613.py
+/cve-2025-2005.py
+/cve-2025-3776.py
+/cve-2026-3459.py
+/cve_2026_4257.py
+/cve_2026_4257_batch.py
+/deep_exploit.py
+/exploit.sh
+/exploit2.py
+/exploited.txt
+/jndiexploit.zip
+/logback-exploit.xml
+/manual_exploit.py
+/phase2_exploit.py
+/rebind_exploit.html.bak
+
 # Generic
 
 /5c0ca79.php
