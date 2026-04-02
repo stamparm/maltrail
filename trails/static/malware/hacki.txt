@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/Fact_Finder03/status/2039576268350644342
+# Reference: https://urlscan.io/result/019d4cf7-ff51-74fa-b97d-88d5d6fe443f/
+# TITLE-HOST/IP=HACKI C2 - Command & Control
+
+http://152.53.154.171
+152.53.154.171:3000
+152.53.154.171:3443
+152.53.154.171:443
