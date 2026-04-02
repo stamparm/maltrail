@@ -6449,5 +6449,4 @@ http://49.213.132.153
 # Reference: https://www.virustotal.com/gui/file/cb574adcec44a9b051269d23bd4567b876253c068c3b30835ff38aec85d49d55/detection
 
 http://79.137.206.33
-166.70.207.2:9101
 79.137.206.33:4666
