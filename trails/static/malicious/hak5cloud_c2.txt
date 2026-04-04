@@ -2430,18 +2430,21 @@ download.drive-sharepoint.com
 drive-sharepoint.com
 enceladus.thornton.info
 entreprise.maprimevelo.fr
+ezii.org
 followtheflan.com
 hunt.sabalillc.com
 johnjenkins.servebeer.com
 jpfgov.com
 lab2222.com
 m0bux.com
+mail.ezii.org
 maprimevelo.fr
 martynspurgeon.myqnapcloud.com
 network45-238-142-host-234.inethn.net
 nhwis.com
 nhwis.tech
 nsfhw.tech
+onspott.com
 pac2.duckdns.org
 pineapplec2.infinity8labs.com
 red.linology.tech
@@ -2451,7 +2454,9 @@ syndikatet.net
 thebeastdev.dk
 untitledc2test.deeeh.com
 vacationrental-directory.com
+w4.onspott.com
 wxcdc.movaci.net
+xploiterz.com
 zbzb.ypsecurity.fr
 
 # Reference: https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/refs/heads/master/feeds/unverified/IPPortC2s-90day.csv (# 2026-02-28)
