@@ -3852,3 +3852,7 @@ noip.biz
 # Reference: https://www.virustotal.com/gui/domain/dpdns.org/relations
 
 dpdns.org
+
+# Reference: https://www.virustotal.com/gui/domain/garmanage.com/relations
+
+garmanage.com
