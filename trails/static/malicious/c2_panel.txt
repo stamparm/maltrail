@@ -1120,6 +1120,10 @@ tuc2.duckdns.org
 admin.777project.xyz
 upload.777project.xyz
 
+# Reference: https://x.com/malwrhunterteam/status/2040139882165678390
+
+103.241.66.238:1337
+
 # Generic
 
 /admin_123/auth.php
