@@ -58147,7 +58147,10 @@ sign-in-property.com
 # BANNER_0_HASH-HOST=63287070c990047430510d407ee4a2b5
 
 adm-console-apps.com
+admlin.booklng-infsnow.com
+admlin.booklnsg-webviews.com
 admln.bkextra-netdash.com
+admln.bkportal-extranetmgmt.com
 admln.bookdash-extranetmgmt.com
 admln.extranetbk-portal.com
 afvesa.com
@@ -58156,10 +58159,13 @@ bkextra-netdash.com
 bkng-extranres.com
 bkngtabcontrlpage.com
 bkns-extrnst.com
+bkportal-extranetmgmt.com
 boklng-revlew.com
 bokng-parthner.com
 bookdash-extranetmgmt.com
 booklng-customparther.com
+booklng-infsnow.com
+booklnsg-webviews.com
 books-verifying.com
 chasckslook-hotelother.com
 control-hosts-app.com
