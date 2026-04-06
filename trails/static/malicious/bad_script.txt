@@ -9506,6 +9506,12 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 
 d33f51dyacx7bd.cloudfront.net
 
+# Reference: https://www.virustotal.com/gui/file/006b176eefdce14666b80c77cf3efb08068e34b0f7d858a7d7355990ec9a5b9f/detection
+
+effectivegatecpm.com
+d2te4mctjc5fpu.cloudfront.net
+drvdb9rcebidk.cloudfront.net
+
 # Generic
 
 /5c0ca79.php
