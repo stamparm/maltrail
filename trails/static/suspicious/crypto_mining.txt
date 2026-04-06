@@ -1527,3 +1527,9 @@ fr-tarirx.luckypool.io
 # Reference: https://www.virustotal.com/gui/file/5ca095e6f4b2f9724374ce849c2f12360178eabbe5b419096d851972ba5fd415/detection
 
 45.155.102.89:10128
+
+# Reference: https://x.com/suyog41/status/2041080264571703774
+# Reference: https://www.virustotal.com/gui/file/9ac6ebf25bb3d1becf6b7bf08bc53fc6f8e331ec9d7a882656fe54e4998595cf/detection
+
+104.243.43.115:9000
+107.167.83.34:9000
