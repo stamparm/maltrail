@@ -45844,6 +45844,7 @@ panelka.shop
 parkingbypay.com
 parlnershub.com
 parlnershubc.com
+particulares-netbanco.net
 patchservices.org
 pathausreview.com
 paypalhelp.app
@@ -45852,6 +45853,7 @@ paythroughphone.com
 pb-101augvservice.net
 pbid-de.com
 pc-scan.help
+pc-schutz.info
 pdfadobefilecenter.net
 pending-new-requirement.com
 pending-token-review.com
@@ -45979,6 +45981,7 @@ regionsverificationus.com
 register-mobile-auth.com
 register-primary-device.com
 registermydevice.me
+regulamentos-gov.com
 regulatewick.com
 relai-express.com
 relai-suivis.com
