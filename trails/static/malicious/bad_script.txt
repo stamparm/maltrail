@@ -9498,6 +9498,10 @@ d3sf0irfhr5o320gc8s0di1mkfokc8i7a.oast.me
 /phase2_exploit.py
 /rebind_exploit.html.bak
 
+# Refereence: https://www.virustotal.com/gui/file/154193e63ac4a577d609d0b8ef99417d8c2fd6c62bf307d6a733f29c295322b5/detection
+
+/b36377d8827a83fe.js
+
 # Generic
 
 /5c0ca79.php
