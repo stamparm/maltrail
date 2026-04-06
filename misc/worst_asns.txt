@@ -6325,3 +6325,19 @@
 64.89.160.0/24,ghostynetworks
 64.89.161.0/24,ghostynetworks
 83.142.209.0/24,ghostynetworks
+
+# AS 200823
+# Reference: https://ipinfo.io/AS200823
+
+103.227.84.0/24,mhost-as
+109.107.168.0/24,mhost-as
+178.17.62.0/24,mhost-as
+194.33.61.0/24,mhost-as
+213.176.79.0/24,mhost-as
+45.12.62.0/24,mhost-as
+45.131.214.0/24,mhost-as
+45.151.106.0/24,mhost-as
+5.252.155.0/24,mhost-as
+95.85.236.0/24,mhost-as
+95.85.237.0/24,mhost-as
+95.85.239.0/24,mhost-as
