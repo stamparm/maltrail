@@ -16796,6 +16796,12 @@ cpdomain.info
 
 lanhd6549tdhse.top
 
+# Reference: https://x.com/sdcyberresearch/status/2041467751928131592
+
+http://213.177.179.8
+213.177.179.8:22
+213.177.179.8:443
+
 # Generic
 
 /assets/lfg.js
