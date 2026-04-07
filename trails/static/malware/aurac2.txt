@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/whoamix302/status/2041107798575181983
+# TITLE-HOST/IP=AURA C2 — Login
+
+http://193.181.214.66
+193.181.214.66:5000
