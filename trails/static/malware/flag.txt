@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: flag stealer
+
+# Reference: https://x.com/Fact_Finder03/status/2041413960940085524
+# TITLE-HOST/IP=Flag Stealer
+
+http://45.138.16.202
+flagbrother.uk
