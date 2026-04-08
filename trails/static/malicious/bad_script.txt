@@ -9539,6 +9539,10 @@ drvdb9rcebidk.cloudfront.net
 /gluedig.hta
 /horrorreamer.hta
 
+# Reference: https://x.com/BreakGlassIntel/status/2041931593699488183
+
+/b1dcae2d1df7766a915a43b9fd9f00f8d791e04c.php
+
 # Generic
 
 /5c0ca79.php
