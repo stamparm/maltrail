@@ -58947,6 +58947,17 @@ superbet288.com
 surosystem.net
 syrocast.com
 
+# Reference: https://x.com/JAMESWT_WT/status/2041800369307545780
+# BANNER_0_HASH-HOST=f45dd450e033cdf33c46de162bc4b3a5
+# CLASS_0_HASH-HOST=ee0bd4ecb759c7eb2e0967df5a4ca9b6
+
+adminreservation.com
+eporezna.digital
+extranet-inbox.com
+manageyourgifts70.net
+secure-extranet.com
+sing-in-admin.com
+
 # Generic
 
 /a3A7qLVn/
