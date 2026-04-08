@@ -6341,3 +6341,11 @@
 95.85.236.0/24,mhost-as
 95.85.237.0/24,mhost-as
 95.85.239.0/24,mhost-as
+
+# AS 209274
+# Reference: https://ipinfo.io/AS209274
+
+163.5.102.0/24,kraken-network-isp
+169.40.135.0/24,kraken-network-isp
+217.60.199.0/24,kraken-network-isp
+80.71.224.0/24,kraken-network-isp
