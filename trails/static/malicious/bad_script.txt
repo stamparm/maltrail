@@ -9530,9 +9530,14 @@ drvdb9rcebidk.cloudfront.net
 
 # Reference: https://x.com/smica83/status/2041798500216603002
 # Reference: https://www.virustotal.com/gui/file/6bf08a076e1698fe4ea8686d7b17570ac1c1d550eb05efa6b732a3d941d55161/detection
+# Reference: https://www.virustotal.com/gui/file/9a53a81bc2b8ce77beb387c24718a751ab3e7b3e4ef986eeed42d44894b0e83c/detection
 
 /gs321RR/horrorreamer.hta
+/oD1Zv/gluedig.hta
 /gs321RR/
+/oD1Zv/
+/gluedig.hta
+/horrorreamer.hta
 
 # Generic
 
