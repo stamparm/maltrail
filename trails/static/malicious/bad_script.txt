@@ -9522,10 +9522,17 @@ drvdb9rcebidk.cloudfront.net
 /SSzch/mineralgoddess.hta
 /SSzch/operatingdescribe.hta
 /SSzch/roosterscare.hta
+/SSzch/
 /devilishsalty.hta
 /mineralgoddess.hta
 /operatingdescribe.hta
 /roosterscare.hta
+
+# Reference: https://x.com/smica83/status/2041798500216603002
+# Reference: https://www.virustotal.com/gui/file/6bf08a076e1698fe4ea8686d7b17570ac1c1d550eb05efa6b732a3d941d55161/detection
+
+/gs321RR/horrorreamer.hta
+/gs321RR/
 
 # Generic
 
