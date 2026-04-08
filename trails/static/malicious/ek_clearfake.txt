@@ -58958,8 +58958,23 @@ sing-in-admin.com
 
 # Reference: https://x.com/BreakGlassIntel/status/2041931593699488183
 # Reference: https://www.virustotal.com/gui/ip-address/177.136.230.88/relations
+# CLASS_0_HASH-HOST=ca6df218f66c369f652b0c98397205be
 
+amparobcxp348.com
+amparochavedeacesso.com
+apitabtecnologbcerr.online
+autoatendimentobcb.com
+canalexclusivobc.com
 canalmodup.com
+consultaprotocolo.online
+freehostingtrust.com
+futebolfashion.com
+protocolovirtual.org
+reparo237.online
+serprobc.com
+veriqueauditoria.org
+xdoty.xyz
+xpie348.online
 
 # Generic
 
