@@ -1,0 +1,23 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/whoamix302/status/2041988310718148990
+# Reference: https://www.virustotal.com/gui/file/8392231fe058d5fc9f201d2ca57e92a56cbc9348da253ed6ff6eb22863b61c8d/detection
+# TITLE-HOST/IP=Femboyᵐˢᶜ
+# TITLE-HOST/IP=Home — DBin
+
+144.31.165.210:8888
+144.31.165.219:8888
+193.58.122.24:666
+193.58.122.24:8888
+0x-team.sbs
+femboychik.shop
+fgltl.ru
+mscteam.live
+d1.0x-team.sbs
+femboy.mscteam.live
+hb.mscteam.live
+lab.0x-team.sbs
+mergen.fgltl.ru
+srv-de-ffm-24.0x-team.sbs
+code.srv-de-ffm-24.0x-team.sbs
