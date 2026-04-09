@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/whoamix302/status/2041989408052932778
+# Reference: https://www.virustotal.com/gui/file/00ce7fc45c34db6ff44729747ede6b98181cd58d21afdde026b7c6242e5a5c41/detection
+# Reference: https://www.virustotal.com/gui/file/7143db3df2c9ec44dd58a59db506bab3c43f89886076531e6da33f3d8f39ac98/detection
+# Reference: https://www.virustotal.com/gui/file/a0d025c33f7700b0045806001ab7e2bd79081e4343f8eaf9137fcf84826d202f/detection
+# Reference: https://www.virustotal.com/gui/file/b4301e56438cf5f8b9db2f3fa1c7e45f5e82d272dd9d16d7ad2bdabb1dee2dc7/detection
+
+91.208.197.241:1337
