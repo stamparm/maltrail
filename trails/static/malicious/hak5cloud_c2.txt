@@ -2419,6 +2419,7 @@ c2.gue-tech.org
 c2.jacobriggs.io
 c2.leyes.tech
 c2.madasp.com
+c2.poseidonops.com
 c2.shemaria.tech
 c2.smeit.com
 c2.socops.net
