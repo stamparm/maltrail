@@ -4662,3 +4662,7 @@ zcmpro.top
 ziy8-fd4.top
 zscrewssa.top
 zynthara.top
+
+# Reference: https://www.virustotal.com/gui/file/8b1ccf257b2891f5423220867479c2fc6b3e221dc407a887ddf30269da8e6967/detection
+
+45.88.186.147:443
