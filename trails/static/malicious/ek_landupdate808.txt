@@ -980,3 +980,7 @@ touchdowntrust.store
 # Reference: https://isc.sans.edu/diary/32796
 
 cpajoliette.com
+
+# Reference: https://x.com/dansl0w_/status/2042594466544968176
+
+windlrr.com
