@@ -1,0 +1,7 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/whoamix302/status/2042495957875769489
+
+137.184.240.126:9000
+137.184.76.141:9000
