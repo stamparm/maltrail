@@ -6349,3 +6349,10 @@
 169.40.135.0/24,kraken-network-isp
 217.60.199.0/24,kraken-network-isp
 80.71.224.0/24,kraken-network-isp
+
+# AS 215531
+# Reference: https://ipinfo.io/AS215531
+# Reference: https://x.com/BreakGlassIntel/status/2042706461776654406
+
+31.58.245.0/24,komuta-asn
+77.83.37.0/24,komuta-asn
