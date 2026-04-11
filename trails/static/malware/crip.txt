@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: crip stealer
+
+# Reference: https://x.com/smica83/status/2043038864223154241
+# Reference: https://tria.ge/260411-xesnrahz5z/behavioral1
+# Reference: https://www.virustotal.com/gui/file/4be0aa46d7fc6deab04f210881e4f9ce9914fd3ca407f7f2f6782b6ee0e628fe/detection
+
+45.90.98.215:5173
