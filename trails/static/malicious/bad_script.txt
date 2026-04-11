@@ -9543,6 +9543,11 @@ drvdb9rcebidk.cloudfront.net
 
 /b1dcae2d1df7766a915a43b9fd9f00f8d791e04c.php
 
+# Reference: https://x.com/BushidoToken/status/2043064650565099712
+
+/sso_hijack.html
+/sso_hijack_2.html
+
 # Generic
 
 /5c0ca79.php
