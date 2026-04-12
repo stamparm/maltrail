@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/fbgwls245/status/2042826525817683982
+# Reference: https://x.com/fbgwls245/status/2043290989486592294
+
+6t5g73fbzdjuhvvovuvuhc4mdgefrwn75szssx4ftqzxyuacdij47pad.onion
+ejzl7cjxmkx7lzhiqwidmrwtfjv45pkczbc4fnyaut3t7gll3yaiq5id.onion
