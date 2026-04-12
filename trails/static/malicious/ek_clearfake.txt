@@ -60475,6 +60475,12 @@ veriqueauditoria.org
 xdoty.xyz
 xpie348.online
 
+# BANNER_0_HASH-HOST=b12ae1509b23c479985ef49a832e0db8
+
+captcha-web.cc
+web-captcha.cc
+web-captcha.co
+
 # Generic
 
 /a3A7qLVn/
