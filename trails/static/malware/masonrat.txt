@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: freemasonry
+
+# Reference: https://x.com/JustWantToQ1/status/2043244511095071222
+
+185.91.127.173:8888
+freemasonry.dev
+ceph03.rzhst.link
