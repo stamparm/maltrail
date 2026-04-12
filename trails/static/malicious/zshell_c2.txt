@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/JustWantToQ1/status/2043243738646945935
+
+38.127.8.151:8084
+38.207.181.130:8084
+38.207.181.131:8084
+38.207.181.132:8084
+38.207.181.133:8084
+38.207.181.134:8084
