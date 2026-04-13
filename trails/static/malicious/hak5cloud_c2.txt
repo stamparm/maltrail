@@ -2412,6 +2412,7 @@ api.mbpartnersfinance.com
 arcphish.com
 autoconfig.thotera.com
 autodiscover.thotera.com
+backend.padmi.net
 br01.brgovt.net
 c2.bluec2ops.com
 c2.desuper.ipv64.net
@@ -2446,6 +2447,8 @@ jpfgov.com
 lab2222.com
 m0bux.com
 mail.ezii.org
+mail.loaagouda.com
+mail.thotera.com
 maprimevelo.fr
 martynspurgeon.myqnapcloud.com
 network45-238-142-host-234.inethn.net
@@ -2465,6 +2468,7 @@ v8.thotera.com
 vacationrental-directory.com
 vmi1580852.contaboserver.net
 w4.onspott.com
+webdisk.thotera.com
 whm.thotera.com
 wxcdc.movaci.net
 xploiterz.com
