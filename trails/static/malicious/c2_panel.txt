@@ -1133,6 +1133,13 @@ upload.777project.xyz
 
 103.241.66.238:1337
 
+# Reference: https://x.com/JustWantToQ1/status/2043797085573542136
+
+147.45.156.34:8443
+188.225.75.47:8443
+85.92.108.71:8443
+ghostrelay.xyz
+
 # Generic
 
 /admin_123/auth.php
