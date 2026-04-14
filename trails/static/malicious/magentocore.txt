@@ -16806,6 +16806,26 @@ http://213.177.179.8
 213.177.179.8:22
 213.177.179.8:443
 
+# Reference: https://x.com/sdcyberresearch/status/2044063219401056507
+
+backlinksindexer.com
+chkdb.net
+cloudflare.ru.com
+foxistog.com
+kirpi.info
+marcketdns.com
+nestisage.com
+niinjapost.com
+salesezen.com
+sallexy.com
+sallexyhub.com
+sistemaesy.com
+skaycraft.com
+styloriaworks.com
+synickspot.com
+trendislabs.com
+wp4.pw
+
 # Generic
 
 /assets/lfg.js
