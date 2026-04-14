@@ -1140,6 +1140,12 @@ upload.777project.xyz
 85.92.108.71:8443
 ghostrelay.xyz
 
+# Reference: https://app.validin.com/detail?find=Pide%20pista&type=raw&ref_id=801164f0151#tab=host_responses (# 2026-04-14)
+
+34.175.89.188:5000
+pidepista.duckdns.org
+cloud.pidepista.duckdns.org
+
 # Generic
 
 /admin_123/auth.php
