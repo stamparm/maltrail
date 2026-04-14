@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/malwrhunterteam/status/2043768375109697772
+# Reference: https://urlscan.io/result/019d8c4d-569f-7462-a591-563ff8921013/
+# TITLE-HOST/IP=TRITON — Login
+
+188.137.255.66:5173
