@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: morsworm
+
+# Reference: https://x.com/suyog41/status/2044305430277697957
+# Reference: https://www.virustotal.com/gui/file/a8ea9f15269135edcee3f219b7d6666c537746a9dc79e464e6d8b19b1ec6022c/detection
+
+your-c2.com
