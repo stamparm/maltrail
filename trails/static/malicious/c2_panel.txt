@@ -1154,6 +1154,11 @@ cloud.pidepista.duckdns.org
 http://141.147.45.169
 141.147.45.169:443
 
+# Reference: https://x.com/smica83/status/2044135255955710208
+# TITLE-HOST/IP=Hideout - Login
+
+45.138.16.64:8443
+
 # Generic
 
 /admin_123/auth.php
