@@ -1149,6 +1149,11 @@ ghostrelay.xyz
 pidepista.duckdns.org
 cloud.pidepista.duckdns.org
 
+# Reference: https://x.com/Fact_Finder03/status/2044297770341937339
+
+http://141.147.45.169
+141.147.45.169:443
+
 # Generic
 
 /admin_123/auth.php
