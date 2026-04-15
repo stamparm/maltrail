@@ -4779,3 +4779,7 @@ jokerstash.me
 rescator.mn
 tc.carder007.ws
 uniccbazar.cc
+
+# Reference: https://www.virustotal.com/gui/ip-address/72.61.216.73/relations
+
+phantomstresser.xyz
