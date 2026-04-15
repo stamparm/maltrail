@@ -1159,6 +1159,11 @@ http://141.147.45.169
 
 45.138.16.64:8443
 
+# Reference: https://x.com/Fact_Finder03/status/2044480624761745866
+# TITLE-HOST/IP=C2 — Login
+
+157.230.46.114:8080
+
 # Generic
 
 /admin_123/auth.php
