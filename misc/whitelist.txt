@@ -4131,3 +4131,7 @@ direct.quickconnect.to
 # Reference: https://github.com/stamparm/maltrail/issues/19533
 
 ip2c.net
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/9785
+
+universalminecrafttool.com
