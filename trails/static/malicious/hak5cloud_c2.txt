@@ -2409,6 +2409,7 @@ http://82.25.91.109
 a.loaagouda.com
 admin.thotera.com
 api.mbpartnersfinance.com
+api.padmi.net
 arcphish.com
 autoconfig.thotera.com
 autodiscover.thotera.com
@@ -2416,6 +2417,7 @@ backend.padmi.net
 br01.brgovt.net
 c2.bluec2ops.com
 c2.desuper.ipv64.net
+c2.gaechter.dev
 c2.gue-tech.com
 c2.gue-tech.org
 c2.jacobriggs.io
@@ -2433,6 +2435,7 @@ cloudc2.exchagetech.ca
 companyn454.buzzwithbrands.com
 cpanel.thotera.com
 cpcalendars.thotera.com
+cpcontacts.thotera.com
 darkgrim.io
 denpi.org
 download.drive-sharepoint.com
