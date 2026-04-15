@@ -1,0 +1,15 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/Fact_Finder03/status/2044293562721075686
+
+http://188.214.144.18
+188.214.144.18:8080
+45.154.98.217:5000
+mon-espace-colis.com
+relaisdelacommanderie.com
+saxudou.pro
+
+# Generic
+
+/curse_sbot
