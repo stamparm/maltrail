@@ -60712,6 +60712,16 @@ captcha-web.cc
 web-captcha.cc
 web-captcha.co
 
+# Reference: https://x.com/blackbigswan/status/2044403038392098847
+
+supportly.au
+ap7.supportly.au
+clients.supportly.au
+gy4q.supportly.au
+s74u.supportly.au
+supportly.au
+vag.supportly.au
+
 # Generic
 
 /a3A7qLVn/
