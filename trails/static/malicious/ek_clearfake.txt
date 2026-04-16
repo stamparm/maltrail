@@ -60722,6 +60722,11 @@ s74u.supportly.au
 supportly.au
 vag.supportly.au
 
+# Reference: https://x.com/JAMESWT_WT/status/2044673481460101369
+
+account-extranet-signin.com
+jameeeswt.com
+
 # Generic
 
 /a3A7qLVn/
