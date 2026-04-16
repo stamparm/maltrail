@@ -1,0 +1,30 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-04-13-LORIKAZZ-ANDROID-IOT.txt
+# Reference: https://www.virustotal.com/gui/file/fa72d7d9cd67de1f1312a8c200e04ce70fa5a7220b15d194526d45eeee0452c5/detection
+# Reference: https://www.virustotal.com/gui/file/a40a1655c9ca864e2254e4db3624a91d6818db159195911e0a94ca652694b63d/detection
+# Reference: https://www.virustotal.com/gui/file/4f288e33f1864326160f56e7cc8ff3c19a6f12a4526a90333e3332861ceb5f6b/detection
+# Reference: https://www.virustotal.com/gui/file/bad329aa83a44a3cad010b15ee1b03ac8479dfd1b29318f7c4c804e29b57aaa3/detection
+# Reference: https://www.virustotal.com/gui/file/f9830820262a2061c667713280ba6fa273eafb151cbf05a2fe5c52c15e477101/detection
+
+185.244.104.206:1000
+185.244.104.206:1133
+185.244.104.206:1177
+185.244.104.206:1224
+185.244.104.206:1244
+185.244.104.206:1245
+185.244.104.206:1883
+185.244.104.206:1911
+185.244.104.206:1912
+185.244.104.206:3000
+185.244.104.206:8080
+185.244.104.206:8082
+195.154.103.239:25569
+195.154.103.239:6969
+46.33.11.154:1337
+46.33.11.154:25565
+46.33.11.154:25569
+46.33.11.154:6969
+mjsneyhl7gaik3dckdy3ss2vyfr6jfh4eteheu2i4bznt7sbh5zokiyd.onion
+rwbxbmflwm7andgmxeo3my7mqqs6najhou7o6f7xnxjsiuirzcnab4yd.onion
