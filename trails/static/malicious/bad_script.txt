@@ -9548,6 +9548,16 @@ drvdb9rcebidk.cloudfront.net
 /sso_hijack.html
 /sso_hijack_2.html
 
+# Reference: https://x.com/smica83/status/2043767357328212281
+# Reference: https://www.virustotal.com/gui/file/8c9bd82cd489bb95827d3653ae3cfa3ab9879a35e16ef47855265c333198d09f/detection
+
+/lekc0904/industriouselderly.hta
+/lekc0904/vintagedemur.hta
+/lekc0904/zippydazzling.hta
+/industriouselderly.hta
+/vintagedemur.hta
+/zippydazzling.hta
+
 # Generic
 
 /5c0ca79.php
