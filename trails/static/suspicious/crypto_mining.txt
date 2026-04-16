@@ -1533,3 +1533,9 @@ fr-tarirx.luckypool.io
 
 104.243.43.115:9000
 107.167.83.34:9000
+
+# Reference: https://www.virustotal.com/gui/file/ff7e7873cda8136321bf727bae79fdc330728064b07a3beadc594fe1e239366f/detection
+
+141.95.72.59:3333
+141.95.72.60:3333
+141.95.72.61:3333
