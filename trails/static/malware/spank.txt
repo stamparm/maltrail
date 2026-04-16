@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: spankloader, spankrat
+
+# Reference: https://x.com/anyrun_app/status/2044770438157418858
+# Reference: https://app.any.run/tasks/56306614-e569-4ace-a9ce-b27c3b983618/
+# Reference: https://www.virustotal.com/gui/file/01a439dddc6f0949e053d31caedc8bb99c7e462d895b5bbf48f8e73fedacf408/detection
+
+45.131.214.132:9000
+
+# Generic
+
+/download/RmmAgentCore.exe
