@@ -6630,6 +6630,10 @@ spelldeterrent.com
 
 107.189.29.12:60001
 
+# Reference: https://www.virustotal.com/gui/domain/profitablecpmratenetwork.com/detection
+
+profitablecpmratenetwork.com
+
 # Reference: https://www.virustotal.com/gui/domain/profitablecpmrate.com/detection
 
 profitablecpmrate.com
