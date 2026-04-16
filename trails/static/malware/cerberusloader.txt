@@ -1,0 +1,11 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/file/ff7e7873cda8136321bf727bae79fdc330728064b07a3beadc594fe1e239366f/detection
+# TITLE-HOST/IP=CERBERUS - Loader
+
+http://213.176.79.236
+http://46.151.182.102
+http://83.142.209.174
+handelsstrategie.info
+loader.dojiner.at
