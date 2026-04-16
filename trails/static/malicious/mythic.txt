@@ -5641,3 +5641,8 @@ http://3.21.178.110
 95.216.107.48:7443
 95.216.107.62:7443
 98.85.71.175:443
+
+# Reference: https://x.com/smica83/status/2044735454759502253
+# Reference: https://www.virustotal.com/gui/file/8e02b5ba983587779b3aeeaa2d50d9b2a965c578ec0a1242c58af34322d97e9f/detection
+
+http://137.184.76.171
