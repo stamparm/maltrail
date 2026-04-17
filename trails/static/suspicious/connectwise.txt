@@ -4666,3 +4666,7 @@ zynthara.top
 # Reference: https://www.virustotal.com/gui/file/8b1ccf257b2891f5423220867479c2fc6b3e221dc407a887ddf30269da8e6967/detection
 
 45.88.186.147:443
+
+# Reference: https://www.virustotal.com/gui/file/5d37c15512685f518e28b8f1094b112e8f3cff619d6f0b6ef74d87f79466fa33/detection
+
+91.92.241.160:8041
