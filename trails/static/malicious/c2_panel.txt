@@ -1169,6 +1169,12 @@ http://141.147.45.169
 
 osdoooodkk231.cfd
 
+# Reference: https://x.com/Fact_Finder03/status/2045012821881278820
+# Reference: https://urlscan.io/result/019d9aa0-cb14-70fd-a6d7-7d67a6a14d5d/
+
+45.61.157.149:8080
+staybud.dpdns.org
+
 # Generic
 
 /admin_123/auth.php
