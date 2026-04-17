@@ -4669,4 +4669,5 @@ zynthara.top
 
 # Reference: https://www.virustotal.com/gui/file/5d37c15512685f518e28b8f1094b112e8f3cff619d6f0b6ef74d87f79466fa33/detection
 
+91.92.241.160:443
 91.92.241.160:8041
