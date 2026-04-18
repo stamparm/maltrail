@@ -146,6 +146,7 @@
 49.232.211.223:8080
 5.129.235.73:8080
 51.195.25.206:8080
+52.184.73.188:8080
 52.78.242.188:8080
 60.204.227.64:8080
 60.204.237.142:8080
@@ -178,6 +179,7 @@ cyberstrike.infra.makekod.ru
 cyberstrike.mangoworks.win
 cyberstrike.teledocmedical.ai
 cyberstrike.teledocserver.com
+cyberstrike.x247.tech
 scan.bossjyt.us.ci
 tool.maolou.cn
 xss.bossjyt.us.ci
