@@ -6834,3 +6834,12 @@ assets.fraudlabspro.net
 cdn.fraudlabspro.net
 sec.fraudlabspro.net
 security.fraudlabspro.net
+
+# Reference: https://x.com/JustWantToQ1/status/2044568080735498573
+# Reference: https://x.com/BreakGlassIntel/status/2045290715987472437
+# Reference: https://intel.breakglass.tech/post/netscan-wpmagic-caas-xssnew-unmasked
+
+86.109.75.167:443
+86.109.75.167:8080
+netscan.info
+wpmagic.net
