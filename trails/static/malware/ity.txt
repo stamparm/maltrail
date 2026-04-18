@@ -1,0 +1,9 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: ity stealer
+
+# Reference: https://x.com/Fact_Finder03/status/2045579083267068122
+# HTML Title=Login - ity Stealer Panel
+
+185.211.100.50:5000
