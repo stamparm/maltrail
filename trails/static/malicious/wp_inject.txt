@@ -6821,6 +6821,7 @@ cms-manager.net
 eightiesvintagestyle.com
 fivesecondoutfit.com
 fourseasonwardrobe.com
+fraudlabspro.net
 nineyarddress.com
 onestyleshop.com
 sevensizesclothing.com
@@ -6829,3 +6830,7 @@ threehoodiesbrand.com
 twotrousersstore.com
 wpengine-cdn.com
 zerowastefashion.net
+assets.fraudlabspro.net
+cdn.fraudlabspro.net
+sec.fraudlabspro.net
+security.fraudlabspro.net
