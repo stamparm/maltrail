@@ -60934,6 +60934,29 @@ vag.supportly.au
 account-extranet-signin.com
 jameeeswt.com
 
+# Reference: https://x.com/JAMESWT_WT/status/2045455439983255735
+# Reference: https://app.any.run/tasks/f0001ec1-d72c-4227-95ac-83d5772e8762
+# CLASS_0_HASH-HOST=b1e753f512881d23aefb1bc6171d491b
+
+666.9777779.xyz
+9777779.xyz
+api.insureongo.org
+api.tonglutong.cn
+bkngextranetreservcontrolpanel.com
+cnpaintequipment.com
+extranetpaneltax.com
+fragmentzal.store
+generatoreindustriale.it
+hi-juju.com
+insureongo.net
+insureongo.org
+p12buy.top
+pw.p12buy.top
+reservationcontrolpanelbkng.com
+shipuhojohotel.com
+spzhucheng.com
+tonglutong.cn
+
 # Generic
 
 /a3A7qLVn/
