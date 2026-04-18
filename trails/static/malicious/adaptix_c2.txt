@@ -1508,7 +1508,10 @@ http://46.19.66.166
 94.103.1.161:443
 19.einstellen.bz
 207-148-122-131.cprapid.com
+3.145.75.17.sslip.io
 91-215-85-151.cprapid.com
+app.kingby.shop
+app.kingby.xyz
 app.rustture.cc
 app.webinfos.top
 bootstrap.jqu3ry.cfd
@@ -1519,6 +1522,8 @@ hyper.es
 kittycom.xyz
 klaviyo-logs-campaigns.com
 qnxzzwihawagrarx.globalgforce.com
+relaveinvest.com
+static.dnl.gr
 toolboxhk.node.edmc.cn
 
 # Reference: https://x.com/malwrhunterteam/status/2038886735568838849
