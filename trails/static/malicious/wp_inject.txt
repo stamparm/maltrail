@@ -6843,3 +6843,9 @@ security.fraudlabspro.net
 86.109.75.167:8080
 netscan.info
 wpmagic.net
+
+# Reference: https://x.com/unmaskparasites/status/2036905912552874158
+
+first-node.rocks
+api.first-node.rocks
+check.first-node.rocks
