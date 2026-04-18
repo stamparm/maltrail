@@ -2413,6 +2413,7 @@ api.padmi.net
 arcphish.com
 autoconfig.thotera.com
 autodiscover.thotera.com
+b4.dirc.us
 backend.padmi.net
 br01.brgovt.net
 c2.bluec2ops.com
@@ -2466,8 +2467,10 @@ pineapplec2.infinity8labs.com
 red.linology.tech
 shadowblade.space
 sino99xx.duckdns.org
+sitea.srv64.de
 syndikatet.net
 thebeastdev.dk
+thotera.com
 untitledc2test.deeeh.com
 v8.thotera.com
 vacationrental-directory.com
