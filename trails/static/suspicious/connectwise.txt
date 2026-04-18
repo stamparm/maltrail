@@ -4671,3 +4671,9 @@ zynthara.top
 
 91.92.241.160:443
 91.92.241.160:8041
+
+# Reference: https://www.virustotal.com/gui/file/f58e657fa369db331431d073c2301bb46168e746a7e32391754515d59458d971/detection
+
+195.177.94.44:443
+195.177.94.44:8041
+vgvg241.ddns.net
