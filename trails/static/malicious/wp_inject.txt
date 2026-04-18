@@ -6814,8 +6814,10 @@ denough.sundard.shop
 /wp-admin/js/mr_skk/
 
 # Reference: https://x.com/unmaskparasites/status/2045229462921343473
+# BANNER_0_HASH-HOST=a7f06614f807c9e83072da9bfcb37d1c
 # HEADER_HASH-HOST=e4e0287b9b7088491c28
 
+cms-manager.net
 eightiesvintagestyle.com
 fivesecondoutfit.com
 fourseasonwardrobe.com
@@ -6825,4 +6827,5 @@ sevensizesclothing.com
 sixpocketjeans.com
 threehoodiesbrand.com
 twotrousersstore.com
+wpengine-cdn.com
 zerowastefashion.net
