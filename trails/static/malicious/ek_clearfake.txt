@@ -62035,6 +62035,35 @@ shipuhojohotel.com
 spzhucheng.com
 tonglutong.cn
 
+# Reference: https://app.validin.com/detail?find=6d59444cd332a2a4d2cdf1aa59e9beb3&type=hash&ref_id=4c89468b18f#tab=host_pairs (# 2026-04-19)
+
+apartment-booking.forum
+booking-guest4947-reservation.com
+booking-info17929.com
+booking-payment.com
+booking.reserve-id6897.com
+booking.updatenovember-id6375.com
+booking.verifs-pendings534567.com
+bookmybeat.com
+bookvrn.com
+card-guest-booking.com
+cardcheck018-booking.com
+checkguest031-booking.com
+checkguest211-booking.com
+checkguest224711-booking.com
+checkguest281-booking.com
+checkguest865431-booking.com
+fastcheck66-booking.com
+fastcheck77-booking.com
+hodelrcheck144-booking.com
+holderverify-booking.com
+updatebookdetails.com
+verifypage57-booking.com
+w8.hodelrcheck144-booking.com
+wrbook-my.com
+y2.checkguest224711-booking.com
+yc.checkguest865431-booking.com
+
 # Generic
 
 /a3A7qLVn/
