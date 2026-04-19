@@ -61909,6 +61909,7 @@ sign-in-property.com
 
 adm-console-apps.com
 admlin.booklng-infsnow.com
+admlin.booklng-resrvinfsnow.com
 admlin.booklnsg-webviews.com
 admln.bkextra-netdash.com
 admln.bkportal-extranetmgmt.com
@@ -61926,6 +61927,7 @@ bokng-parthner.com
 bookdash-extranetmgmt.com
 booklng-customparther.com
 booklng-infsnow.com
+booklng-resrvinfsnow.com
 booklnsg-webviews.com
 books-verifying.com
 chasckslook-hotelother.com
