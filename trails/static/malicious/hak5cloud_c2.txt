@@ -2428,6 +2428,7 @@ c2.poseidonops.com
 c2.shemaria.tech
 c2.smeit.com
 c2.socops.net
+c2.tenguprotect.com
 c2.th4ntis.com
 c2gess.bryangess.com
 cac.mitel.cz
@@ -2445,6 +2446,7 @@ enceladus.thornton.info
 entreprise.maprimevelo.fr
 ezii.org
 followtheflan.com
+gordon8000.online
 hilly6000.online
 hunt.sabalillc.com
 johnjenkins.servebeer.com
@@ -2462,6 +2464,7 @@ nhwis.com
 nhwis.tech
 nsfhw.tech
 onspott.com
+ow.padmi.net
 pac2.duckdns.org
 pineapplec2.infinity8labs.com
 red.linology.tech
