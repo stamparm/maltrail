@@ -47900,6 +47900,8 @@ zzto.gyro-desk.ru
 zzx2x3.quant-splashes.in.net
 /1q3.google?t=
 /xyz.google?t=
+/05fe317c-0981-4de2-bc8a-930d369db441/ck-3d80df5d12cdfe6450a782fc87bf66b444.google
+/ck-3d80df5d12cdfe6450a782fc87bf66b444.google
 
 # Reference: https://www.virustotal.com/gui/file/337d8eaca7f3fbb8694dbb907568888e44e53ef83e25ffa2dd3ea676cf8cf0d3/detection
 # Reference: https://app.validin.com/detail?find=6309e746ff138ae2777ff522718a74bc&type=hash&ref_id=fc8024cd47e#tab=host_pairs (# 2025-08-26)
