@@ -61911,6 +61911,9 @@ adm-console-apps.com
 admlin.booklng-infsnow.com
 admlin.booklng-resrvinfsnow.com
 admlin.booklnsg-webviews.com
+admlin.extrannts-viewi.com
+admlin.secrud-booklng.com
+admlin.securd-booklng.com
 admln.bkextra-netdash.com
 admln.bkportal-extranetmgmt.com
 admln.bookdash-extranetmgmt.com
@@ -61936,7 +61939,10 @@ controlextrantpagebook.com
 controls-page-app.com
 extranatbooks.com
 extranetdmbok.com
+extrannts-viewi.com
 resasconafirm-lohotelinfo.com
+secrud-booklng.com
+securd-booklng.com
 
 # Reference: https://x.com/JAMESWT_WT/status/2039017597555937298
 
