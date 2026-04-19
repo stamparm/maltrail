@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/JustWantToQ1/status/2045791677479055782
+# TITLE-HOST/IP=MICROMMATTA • Control Interface
+
+64.188.79.89:8082
+95.85.245.250:8080
