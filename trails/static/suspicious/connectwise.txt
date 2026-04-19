@@ -4677,3 +4677,8 @@ zynthara.top
 195.177.94.44:443
 195.177.94.44:8041
 vgvg241.ddns.net
+
+# Reference: https://x.com/smica83/status/2045635906502000751
+# Reference: https://www.virustotal.com/gui/file/e696be9abe6b2b9a656f33e7aed8092f73f94ae439f680305e5dcc0fb430f4b3/detection
+
+instance-jtyhkb-relay.screenconnect.com
