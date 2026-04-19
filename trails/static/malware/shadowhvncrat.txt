@@ -1,0 +1,22 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/JustWantToQ1/status/2045794749752262950
+# TITLE-HOST/IP=Shadow HVNC
+# TITLE-HOST/IP=Shadow Checker v1.3
+
+http://191.101.130.68
+http://198.13.159.226
+http://198.46.243.99
+http://212.162.150.121
+http://62.60.226.253
+198.13.159.226:7777
+8x.sweep-google.run
+brad-gifts.live
+el.google-sweep.today
+google-sweep.today
+kamharidas.duckdns.org
+magicals.click
+nipponinvest.online
+sweep-google.life
+sweep-google.run
