@@ -6850,3 +6850,8 @@ wpmagic.net
 first-node.rocks
 api.first-node.rocks
 check.first-node.rocks
+
+# Reference: https://www.virustotal.com/gui/file/8c94b15da07794ca8ab86f694f0d7bd8ce6400cbb9f02ee632b700e074584d6e/detection
+# Reference: https://gist.github.com/danslo/870dc7ec698f121e8fbf304d13e300c9
+
+fontscanvas.com
