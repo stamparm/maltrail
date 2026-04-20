@@ -4783,3 +4783,9 @@ uniccbazar.cc
 # Reference: https://www.virustotal.com/gui/ip-address/72.61.216.73/relations
 
 phantomstresser.xyz
+
+# Reference: https://ctrlaltintel.com/research/FudCrypt-analysis-1/
+
+http://179.43.176.99
+http://179.43.176.100
+fudcrypt.net
