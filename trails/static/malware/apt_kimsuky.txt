@@ -22961,6 +22961,8 @@ xn--userinfo-mr3d.ninlineid46s.dynv6.net
 
 # Reference: https://x.com/skocherhan/status/2045963626901897341
 
+alstnskkal.duckdns.org
+com-verified.dynv6.net
 iec11px.dynv6.net
 iec12px.dynv6.net
 iec26px.dynv6.net
@@ -22975,15 +22977,23 @@ nos35ips.dynv6.net
 nos36ips.dynv6.net
 nos37ips.dynv6.net
 ns17ios.dynv6.net
+ntdepo.dns.army
+ntspiu.dynv6.net
 ntxcopesd.dns.army
+pinc.toh.info
+account.com-verified.dynv6.net
+login.account.com-verified.dynv6.net
 n-cloud.nos37ips.dynv6.net
 n-store.iec28px.dynv6.net
 n-store.ns17ios.dynv6.net
+navs.en.ntspiu.dynv6.net
 nid-user.iec12px.dynv6.net
 nid-user.mts18op.dynv6.net
 nid-user.nos37ips.dynv6.net
 nid.en.ntxcopesd.dns.army
+nidlogins.cn.ntdepo.dns.army
 nuser-login.isc8px.dns.army
+outlook.pinc.toh.info
 
 # APK
 
