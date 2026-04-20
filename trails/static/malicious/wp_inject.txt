@@ -6863,3 +6863,7 @@ anyexists.com
 # Reference: https://www.virustotal.com/gui/file/4eb550063b3316d21b076f38e25f2ac0a015a54759507f08481179c6c289601f/detection
 
 3lichat.us
+
+# Reference: https://www.virustotal.com/gui/ip-address/217.196.54.129/relations
+
+cdnpixelnetworks.com
