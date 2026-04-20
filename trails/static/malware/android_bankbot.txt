@@ -1,7 +1,7 @@
 # Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
-# Aliases: pixrevolution
+# Aliases: pixrevolution, miningdropper
 
 # Reference: https://info.phishlabs.com/blog/new-variant-bankbot-banking-trojan-aubis
 
@@ -8585,3 +8585,83 @@ wh1523323.ispot.cc
 
 poseydon.sbs
 panel.poseydon.sbs
+
+# Reference: https://cyble.com/blog/miningdropper-global-modular-android-malware/
+# CLASS_0_HASH-HOST=8adba32274f4f5fa586b4524abeb2995
+
+81service.in
+cancelcardprotection.online
+cancelcpp.online
+cardcpp.online
+cardhelp.live
+cardpolicy.in
+careici.in
+careici.online
+careidf.in
+deactivatepolicy.cc
+deactivatepolicy.online
+dkfootwearstore.shop
+downloadhdfcapp.pythonanywhere.com
+getchaiian.short.gy
+hamzaansari1612-ux.github.io
+hdmanage.online
+icarecpp.in
+icicicardplan.online
+icicimanagecards.online
+iciciplans.online
+icicipolicy.online
+icimanage.online
+icmanage.in
+icppcare.in
+icppuser.online
+icuser.online
+icusercare.in
+idcare.in
+idservice.in
+imanagec.online
+indcare.in
+indicare.in
+indimanage.in
+indmanage.in
+indmanage.online
+indonline.in
+inducare.online
+isetcpp.in
+iusercpp.in
+managecare.online
+managecarecpp.online
+managecpp.com
+managecpp.in
+manageici.com
+manageiciciplans.online
+manageind.online
+managemyici.online
+managepolicy.online
+manageprotections.com
+managesb.in
+manageservices.store
+mc2cpp.in
+mycardhelp.online
+mycppplane.in
+myicservice.in
+myservicescard.in
+myservicesinfo.online
+ns1.inducare.online
+ns1.managecare.online
+ns1.managecpp.com
+ns1.manageici.com
+ns2.inducare.online
+ns2.managecare.online
+ns2.managecpp.com
+ns2.manageici.com
+protectcc.in
+protectcc.online
+protectcpp.in
+protectcpp.online
+protectici.online
+protectioncpp.online
+serviceic.in
+serviceici.in
+serviceshelp.online
+yesmobile.in
+yessmanage.in
