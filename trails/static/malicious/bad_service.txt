@@ -4785,7 +4785,16 @@ uniccbazar.cc
 phantomstresser.xyz
 
 # Reference: https://ctrlaltintel.com/research/FudCrypt-analysis-1/
+# Reference: https://www.virustotal.com/gui/file/5a1e94519501f9783ecd8a10e59dde0fd975b948d7e5c96013a5eee36ff35091/detection
 
 http://179.43.176.99
 http://179.43.176.100
+admin334577joagj13.com
 fudcrypt.net
+mstelemetrycloud.com
+skywingsdigital.com
+smart-tech-dashboard.com
+api.mstelemetrycloud.com
+app.mstelemetrycloud.com
+dl.admin334577joagj13.com
+domainmanager.skywingsdigital.com
