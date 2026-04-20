@@ -2685,8 +2685,11 @@ macosxappstore.com
 # Reference: https://app.validin.com/detail?find=b000eb20900b3b90e462&type=hash#tab=host_pairs (# 2025-07-29)
 # Reference: https://www.virustotal.com/gui/file/794a4ebc76664b95d79f969514a3517acc8c4a7a6cbeba52e3c480fd0a5a489c/detection
 # Reference: https://www.virustotal.com/gui/file/816bf9ef902251e7de73d57c4bf19a4de00311414a3e317472074ef05ab3d565/detection
-# FAVICON_HASH-HOST=9108dde25ad958b27f6a97d644775dee
 # Reference: https://urlscan.io/search/#hash%3Aab77cc4e64e6830f333071b3bd0cff2fe583f15b3549ecc00428c14ec4094778
+# Reference: https://urlscan.io/result/019dac0c-ca12-76ee-bf8b-eaf0cbb512ca/
+# Reference: https://urlscan.io/result/019dac0b-a041-724b-aa72-dd842f8b2d8e/
+# BODY_SHA1-HOST/IP=f60574b8de992d8ce5b7e6394fb68d35d1faeb70
+# FAVICON_HASH-HOST=9108dde25ad958b27f6a97d644775dee
 
 http://172.94.9.250
 http://185.93.89.62
@@ -2701,6 +2704,8 @@ http://50.201.34.202
 http://62.60.131.230
 http://62.60.131.249
 http://62.60.131.250
+http://86.54.25.202
+http://86.54.25.204
 217.119.139.117:2000
 charge0x.at
 littlekitty.at
