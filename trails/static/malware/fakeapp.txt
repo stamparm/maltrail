@@ -44955,3 +44955,13 @@ video-live-calling.com
 videocall.googlemeet00.com
 videocalling.googlemeet00.com
 web.today25.com
+
+# Reference: https://x.com/smica83/status/2046210005414609152
+# Reference: https://www.virustotal.com/gui/file/ffcfcd69f0685f530367342d2787e14d0f93e14da496a1f5149becc507427cff/detection
+# Reference: https://www.virustotal.com/gui/file/31fc7b31a6fd41f64d01790ebdff5be33d52e662407fb47a177299184c30c30d/detection
+
+http://65.21.233.184
+65.21.233.184:5173
+strat-ga.vercel.app
+stratlabs.vercel.app
+ujbdqeblrphwvgzz.public.blob.vercel-storage.com
