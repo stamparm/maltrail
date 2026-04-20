@@ -82,6 +82,13 @@
 
 /georgeginx/
 /georgeginx/config/
+/georgeginx/database/
 /georgeginx/elite-panel/
+/georgeginx/log/
+/georgeginx/media/
+/georgeginx/parser/
 /georgeginx/phishlets/
+/georgeginx/static/
+/georgeginx/templates/
+/georgeginx/to%20install.txt
 /georgeginx/web-panel/
