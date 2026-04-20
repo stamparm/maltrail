@@ -6220,6 +6220,7 @@ hostpdf.co
 infura-api.com
 io-walletconnect.com
 melstroy.by
+monkey-ads.digital
 nextcdnjs.com
 newsoutlets.net
 nftfastapi.com
