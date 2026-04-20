@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://blog.talosintelligence.com/powmix-botnet-targets-czech-workforce/
+# Reference: https://github.com/Cisco-Talos/IOCs/blob/main/2026/04/powmix-botnet-targets-czech-workforce.txt
+
+crmassets-351-0ac3da22f804.herokuapp.com
+crmassets-4a69a8e2b3ee.herokuapp.com
+erpapp-901-53f1ea72f036.herokuapp.com
+erpsync-120-f41cdcf813e4.herokuapp.com
