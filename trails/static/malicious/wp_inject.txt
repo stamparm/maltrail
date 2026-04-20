@@ -6867,3 +6867,7 @@ anyexists.com
 # Reference: https://www.virustotal.com/gui/ip-address/217.196.54.129/relations
 
 cdnpixelnetworks.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/18.167.19.159/relations
+
+bootcdn.pro
