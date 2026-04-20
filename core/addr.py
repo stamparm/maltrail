@@ -41,7 +41,8 @@ def expand_range(value):
     if match:
         prefix, mask = match.groups()
         mask = int(mask)
-        assert(mask <= 32)
+        if mask > 32:
+            return retval
 
         start_int = addr_to_int(prefix) & make_mask(mask)
         end_int = start_int | ((1 << 32 - mask) - 1)
