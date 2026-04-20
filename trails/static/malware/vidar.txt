@@ -13385,6 +13385,11 @@ pir.blogdospesados.com.br
 tth.blogdospesados.com.br
 xre.blogdospesados.com.br
 
+# Reference: https://www.virustotal.com/gui/file/5f6c3626cc21fd65ba9533bd8b4c4747c185056ff82f250daa2c6f401112e62b/detection
+
+http://136.243.203.102
+136.243.203.102:443
+
 # Generic
 
 /dlmtk.php
