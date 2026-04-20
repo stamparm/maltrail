@@ -4682,3 +4682,9 @@ vgvg241.ddns.net
 # Reference: https://www.virustotal.com/gui/file/e696be9abe6b2b9a656f33e7aed8092f73f94ae439f680305e5dcc0fb430f4b3/detection
 
 instance-jtyhkb-relay.screenconnect.com
+
+# Reference: https://www.virustotal.com/gui/file/5a1e94519501f9783ecd8a10e59dde0fd975b948d7e5c96013a5eee36ff35091/detection
+
+179.43.176.32:8041
+vendor-portal.net
+rmm.vendor-portal.net
