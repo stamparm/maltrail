@@ -6855,3 +6855,7 @@ check.first-node.rocks
 # Reference: https://gist.github.com/danslo/870dc7ec698f121e8fbf304d13e300c9
 
 fontscanvas.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/15.197.172.60/relations
+
+anyexists.com
