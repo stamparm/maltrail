@@ -2701,6 +2701,11 @@ MicroStealer
 
 wininet/1.0
 
+# Reference: https://x.com/suyog41/status/2046121143292293330
+
+LedgerChecker/1.0
+LedgerChecker
+
 # Misc
 
 information_schema
