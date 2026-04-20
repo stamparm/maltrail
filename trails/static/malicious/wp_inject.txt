@@ -6871,3 +6871,8 @@ cdnpixelnetworks.com
 # Reference: https://www.virustotal.com/gui/ip-address/18.167.19.159/relations
 
 bootcdn.pro
+
+# Reference: https://www.virustotal.com/gui/ip-address/217.160.0.139/relations
+
+tracking-pilot.com
+app.tracking-pilot.com
