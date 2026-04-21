@@ -62308,6 +62308,7 @@ fqtw.learnzonekey.monster
 fuqh.learnzonekey.monster
 gbsq.learnzonekey.monster
 ghg2.learnzonekey.monster
+gjqd.livespacezone.monster
 grfa.learnzonekey.monster
 h2jq.learnzonekey.monster
 h4ej.learnzonekey.monster
@@ -62328,6 +62329,7 @@ kxkm.learnzonekey.monster
 lubg.learnzonekey.monster
 m4wy.learnzonekey.monster
 mk1r.learnzonekey.monster
+mmu6.livespacezone.monster
 n1.learnzonekey.monster
 n3qy.learnzonekey.monster
 nltn.learnzonekey.monster
@@ -62384,6 +62386,12 @@ zd0v.learnzonekey.monster
 zg7b.learnzonekey.monster
 zgoz.learnzonekey.monster
 zplq.learnzonekey.monster
+
+# Reference: https://x.com/muha2xmad/status/2046553593394721207
+
+portstringpge.space
+loadingminimalverifv1.pages.dev
+7d4ba1ae.loadingminimalverifv1.pages.dev
 
 # Generic
 
