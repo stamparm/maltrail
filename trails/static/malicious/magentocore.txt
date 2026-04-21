@@ -16681,7 +16681,13 @@ cloudflare-static14.net
 
 # Reference: https://www.virustotal.com/gui/ip-address/45.158.127.27/relations
 
+cloudflare-static17.com
 cloudflare-static17.net
+
+# Reference: https://www.virustotal.com/gui/ip-address/45.158.127.70/relations
+
+cloudflare-static1.com
+cloudflare-static9.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/172.67.185.101/relations
 
