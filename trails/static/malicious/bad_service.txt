@@ -4798,3 +4798,12 @@ api.mstelemetrycloud.com
 app.mstelemetrycloud.com
 dl.admin334577joagj13.com
 domainmanager.skywingsdigital.com
+
+# Reference: https://x.com/Fact_Finder03/status/2046505417698918721
+
+161.97.99.232:8081
+179.43.176.111:3000
+179.43.176.116:3000
+marvinkuth.de
+git.marvinkuth.de
+mc.marvinkuth.de
