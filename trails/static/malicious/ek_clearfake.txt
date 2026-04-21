@@ -62393,6 +62393,15 @@ portstringpge.space
 loadingminimalverifv1.pages.dev
 7d4ba1ae.loadingminimalverifv1.pages.dev
 
+# Reference: https://x.com/JAMESWT_WT/status/2046597473284620754
+# Reference: https://app.any.run/tasks/33c4acae-d906-482e-b581-e138528b52a5
+
+controlpanelbkngreservationcheck.help
+erzurumyoresel.com
+gskqf.com
+hotel-equatorial.com
+qdfljwx.com
+
 # Generic
 
 /a3A7qLVn/
