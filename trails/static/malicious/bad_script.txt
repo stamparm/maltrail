@@ -9565,6 +9565,13 @@ drvdb9rcebidk.cloudfront.net
 /szCHhhhhhhh/
 /foragefantastic.ps1
 
+# Reference: https://intel.breakglass.tech/post/needle-crimeware-platform-twizt-phorpiex-wallet-drainer-960m-credentials
+
+/assets/index-2sO1rQxW.css
+/assets/index-ChPBnyA0.js
+/index-2sO1rQxW.css
+/index-ChPBnyA0.js
+
 # Generic
 
 /5c0ca79.php
