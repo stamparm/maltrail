@@ -9558,6 +9558,13 @@ drvdb9rcebidk.cloudfront.net
 /vintagedemur.hta
 /zippydazzling.hta
 
+# Reference: https://x.com/smica83/status/2046542314240147473
+# Reference: https://www.virustotal.com/gui/file/22374d7c9634ab4e35c6860ad77c7137fb3553004a86a50ee120b665ee81f1b2/detection
+
+/szCHhhhhhhh/foragefantastic.ps1
+/szCHhhhhhhh/
+/foragefantastic.ps1
+
 # Generic
 
 /5c0ca79.php
