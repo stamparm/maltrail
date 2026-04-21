@@ -9572,6 +9572,10 @@ drvdb9rcebidk.cloudfront.net
 /index-2sO1rQxW.css
 /index-ChPBnyA0.js
 
+# Reference: https://x.com/JAMESWT_WT/status/2046608181007122909
+
+/swbtdq.ps1
+
 # Generic
 
 /5c0ca79.php
