@@ -11402,6 +11402,8 @@ statefiarm.com
 static1-jquery.com
 static11-jquery.com
 static12-jquery.com
+static17-jquery.com
+static18-jquery.com
 static2-jquery.com
 static3-jquery.com
 static4-jquery.com
