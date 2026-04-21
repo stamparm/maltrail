@@ -16323,9 +16323,12 @@ getejs.com
 getnjs.com
 getvjs.com
 i-statics.com
+istatics.com
 itstatics.com
 jgetjs.com
 jstatics.com
+lstatics.com
+nstatics.com
 ostatics.com
 pstatics.com
 qstatics.com
@@ -16337,6 +16340,7 @@ utilanalytics.com
 wstatics.com
 youtuber-dashboardwme.pro
 ystatics.com
+zstatics.com
 accounts.youtuber-dashboardwme.pro
 api.sstatics.com
 
