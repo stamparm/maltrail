@@ -6379,3 +6379,12 @@
 85.11.167.0/24,colocatel-inc
 93.152.219.0/24,colocatel-inc
 94.26.105.0/24,colocatel-inc
+
+# AS 210006
+# Reference: https://ipinfo.io/AS210006
+
+178.20.210.0/24,askz
+45.87.249.0/24,askz
+86.54.25.0/24,askz
+91.227.114.0/24,askz
+91.92.21.0/24,askz
