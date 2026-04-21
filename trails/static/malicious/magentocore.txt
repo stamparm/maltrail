@@ -11419,6 +11419,8 @@ wp-stats.info
 apple.com-ticket.info
 cdn.jquery.host
 controls.wpenginepowered.com
+ey.static17-jquery.com
+ez.static18-jquery.com
 ns1.cloudflare-js5.com
 ns2.cloudflare-js5.com
 ns1.static11-jquery.com
