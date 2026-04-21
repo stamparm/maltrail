@@ -21753,6 +21753,7 @@ viruswarning0202usw8wkmq.z13.web.core.windows.net
 # CLASS_0_HASH-HOST/IP=114513035201150be1d514ae14214c6c
 
 http://104.131.109.192
+http://104.131.109.222
 http://104.131.30.62
 http://104.131.84.205
 http://104.131.99.58
@@ -21784,9 +21785,10 @@ http://146.190.75.50
 http://147.182.185.30
 http://147.182.186.14
 http://150.171.109.214
+http://150.171.109.230
+http://157.230.183.219
 http://157.230.48.129
 http://157.230.93.183
-http://157.230.183.219
 http://157.245.81.106
 http://157.245.95.232
 http://161.35.139.109
@@ -21847,8 +21849,8 @@ http://68.183.142.111
 http://69.164.192.172
 http://69.164.192.82
 http://72.14.187.189
-http://96.126.120.70
 http://96.126.117.177
+http://96.126.120.70
 adfafnsafaklfnsanfjadnflda.pages.dev
 blockedbydefenderdfafdf.pages.dev
 blockedwindows.pages.dev
