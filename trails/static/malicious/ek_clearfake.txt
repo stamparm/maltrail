@@ -61689,10 +61689,36 @@ detaflow.digital
 notiondot.digital
 ui.detaflow.digital
 
+# Reference: https://x.com/ShadowOpCode/status/2046927710484566298
 # Reference: https://www.virustotal.com/gui/ip-address/37.77.150.152/relations
+# Reference: https://www.virustotal.com/gui/ip-address/77.91.97.196/relations
+# Reference: https://app.any.run/tasks/3dca8cf3-86ad-4429-a5b5-9812fd534d53
+# Reference: https://www.virustotal.com/gui/file/5c11f39ef919cbe095b447f2663461dde5bd36b34a14538327e5589efa04803d/detection
 
+abskfla.com
+admin.booking.com-captcha-verification.info
+admin.booking.com-complete-captcha.info
+admin.booking.com-h.info
+booking.com-captcha-verification.info
+booking.com-h.info
+check-bkg.com
+com-captcha-verification.info
+com-complete-captcha.info
+com-h.info
+confirmation-id1134.com
+confirmation-id7262.com
+double-authorization-extranet.com
+double-authorization-pulse.com
+extranet-sign-in.co
+lkgkdsjd.com
+reportguest.com
+sign-in-pulse.com
+sign-in-pulses.com
 sing-in-token-op.com
+sing-token-op.com
+verificationbot-pulse.com
 web-extranet-sign-in.com
+web-extranet-token.com
 
 # Reference: https://x.com/JAMESWT_WT/status/2035264938940252190
 
