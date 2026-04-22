@@ -1561,3 +1561,9 @@ zale.wtf
 
 2.26.116.156:8080
 2.27.123.243:8080
+
+# Reference: https://www.zscaler.com/blogs/security-research/tropic-trooper-pivots-adaptixc2-and-custom-beacon-listener
+# Reference: https://www.virustotal.com/gui/file/47c7ce0e3816647b23bb180725c7233e505f61c35e7776d47fd448009e887857/detection
+# Reference: https://www.virustotal.com/gui/file/79d855390e81c87f8579162d016b58b97d91253ea2e872aa3607ec87cf299dc3/detection
+
+http://158.247.193.100
