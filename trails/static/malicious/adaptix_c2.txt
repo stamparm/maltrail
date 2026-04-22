@@ -1533,6 +1533,7 @@ static.dnl.gr
 toolboxhk.node.edmc.cn
 trustpaycardflow.click
 trustwpaycards.click
+unifi.environmentsk.co.uk
 
 # Reference: https://x.com/malwrhunterteam/status/2038886735568838849
 # Reference: https://www.virustotal.com/gui/file/12a8b0903c176cb6478b4f0bfcf8a621025c37faf83941125c803ccc3e0913e6/detection
