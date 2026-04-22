@@ -1546,3 +1546,8 @@ kitty-guard.buzz
 kittycom.doxxing.online
 kittycom.online
 zale.wtf
+
+# Reference: https://www.virustotal.com/gui/file/261a8983d690ee71c37ea2433b59d3070665f9f156e33ed07be9b8baaf32eeb2/detection
+
+2.26.116.156:8080
+2.27.123.243:8080
