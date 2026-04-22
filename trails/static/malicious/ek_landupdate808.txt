@@ -1000,3 +1000,10 @@ stromao.com
 weissnat.org
 windlrr.com
 zgsjyxzx.com
+
+# Reference: https://ctrlaltintel.com/research/KongTuke-ClickFix/
+
+http://107.158.128.79
+107.158.128.79:443
+echaefer.com
+sceuppe.com
