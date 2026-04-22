@@ -8659,6 +8659,10 @@ smart-control.cc
 95.179.249.144:31337
 96.9.124.190:31337
 
+# Reference: https://x.com/BlinkzSec/status/2046850646859542800
+
+83.142.209.13:8080
+
 # Generic
 
 /.sliver-client/
