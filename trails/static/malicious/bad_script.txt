@@ -9576,6 +9576,12 @@ drvdb9rcebidk.cloudfront.net
 
 /swbtdq.ps1
 
+# Reference: https://x.com/smica83/status/2047240990591680806
+# Reference: https://www.virustotal.com/gui/file/2011979e934b0e2b9ded9a03240605db298077e1eceb8591b8be27485ce1378a/detection
+
+/u44cch/stealthfairy.ps1
+/stealthfairy.ps1
+
 # Generic
 
 /5c0ca79.php
