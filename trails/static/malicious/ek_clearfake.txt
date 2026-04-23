@@ -62556,7 +62556,9 @@ qdfljwx.com
 
 # Reference: https://x.com/pcrisk/status/2047219293197103521
 # Reference: https://www.virustotal.com/gui/ip-address/144.31.236.66/relations
+# CERT_FINGERPRINT_SHA256-HOST=d9c8995f1d524db9f3ba78627c5f0673d0c9c16b5ca1bd5cc8ecb9671305ead9
 
+http://144.31.236.66
 script-dev.buzz
 script-dev.digital
 script-dev.xyz
