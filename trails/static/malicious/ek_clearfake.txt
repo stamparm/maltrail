@@ -62563,6 +62563,10 @@ script-dev.buzz
 script-dev.digital
 script-dev.xyz
 
+# Reference: https://x.com/JAMESWT_WT/status/2047198562300133381
+
+auth-booking.vercel.app
+
 # Generic
 
 /a3A7qLVn/
