@@ -985,8 +985,10 @@ cpajoliette.com
 # Reference: https://sansec.io/research/clickfix-clipboard-hijacker
 # Reference: https://www.virustotal.com/gui/file/b7fd23b85789d805ffee405e1a934dea60dfed2dc45e019c404d1e73e9b86b14/detection
 
+bradtkr.com
 cwrtwright.com
 dground.org
+dialectum.com
 heethcote.com
 jnlysj.com
 leusceke.com
@@ -995,9 +997,14 @@ meharsons.com
 mermiston.com
 mueleer.com
 nitzschi.com
+nonrueden.com
+northcombe.org
+oakington.org
 oeannon.com
 omnivectis.com
+quorumix.com
 raventhorp.org
+saxonfield.org
 stromao.com
 weissnat.org
 windlrr.com
