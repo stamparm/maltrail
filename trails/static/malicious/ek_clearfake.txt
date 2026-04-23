@@ -62554,6 +62554,13 @@ gskqf.com
 hotel-equatorial.com
 qdfljwx.com
 
+# Reference: https://x.com/pcrisk/status/2047219293197103521
+# Reference: https://www.virustotal.com/gui/ip-address/144.31.236.66/relations
+
+script-dev.buzz
+script-dev.digital
+script-dev.xyz
+
 # Generic
 
 /a3A7qLVn/
