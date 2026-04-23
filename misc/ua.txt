@@ -2706,6 +2706,11 @@ wininet/1.0
 LedgerChecker/1.0
 LedgerChecker
 
+# Reference: https://x.com/suyog41/status/2046908608945000918
+# Reference: https://www.virustotal.com/gui/file/c08f8d4bbf007456a72eda00fc417f16fad72660b7c7a4d277a9172f112ab8f7/detection
+
+Nexus/3.0
+
 # Misc
 
 information_schema
