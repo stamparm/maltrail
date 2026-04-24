@@ -1180,6 +1180,10 @@ staybud.dpdns.org
 
 http://77.92.36.10
 
+# Reference: https://x.com/Fact_Finder03/status/2047637425799971210
+
+http://154.12.253.0
+
 # Generic
 
 /admin_123/auth.php
