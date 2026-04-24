@@ -1021,3 +1021,12 @@ http://107.158.128.79
 107.158.128.79:443
 echaefer.com
 sceuppe.com
+
+# Reference: https://www.malware-traffic-analysis.net/2026/04/23/index.html
+
+http://104.225.129.155
+http://104.36.229.108
+89.110.110.119:443
+ibharcan.com
+nexaflowlab.top
+solidpathcore.com
