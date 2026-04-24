@@ -1523,6 +1523,7 @@ archive.sytes.net
 biocraft.us
 bootstrap.jqu3ry.cfd
 c.anzemet.us
+dan.pancaketoken.com
 database.publicvm.com
 docker.kubegroup.co
 dzens.com
@@ -1534,6 +1535,7 @@ google-dns.sytes.net
 hyper.es
 kittycom.xyz
 klaviyo-logs-campaigns.com
+pancrypto.cyou
 pdffileexchange.duckdns.org
 qnxzzwihawagrarx.globalgforce.com
 relaveinvest.com
@@ -1541,6 +1543,8 @@ skdragons.com
 static.dnl.gr
 toolboxhk.node.edmc.cn
 trustpaycardflow.click
+trustpaycards.click
+trustpaycardspot.click
 trustwpaycards.click
 unifi.environmentsk.co.uk
 zoom.serveirc.com
