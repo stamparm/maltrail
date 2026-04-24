@@ -2421,6 +2421,7 @@ c2.desuper.ipv64.net
 c2.gaechter.dev
 c2.gue-tech.com
 c2.gue-tech.org
+c2.hexius.net
 c2.jacobriggs.io
 c2.leyes.tech
 c2.madasp.com
@@ -2477,6 +2478,7 @@ thotera.com
 untitledc2test.deeeh.com
 v8.thotera.com
 vacationrental-directory.com
+vectrion.de
 vmi1580852.contaboserver.net
 w4.onspott.com
 webdisk.thotera.com
