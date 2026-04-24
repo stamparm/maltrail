@@ -62567,6 +62567,17 @@ script-dev.xyz
 
 auth-booking.vercel.app
 
+# Reference: https://x.com/JAMESWT_WT/status/2047664093541048542
+# Reference: https://app.any.run/tasks/897bfb14-d9e3-494c-8cc4-d5fad1d32167
+
+ascend-stationery.com
+halfm.iq
+halfmillion-iq.com
+lzstonefair.com
+plus-financial.co
+m.ascend-stationery.com
+m.lzstonefair.com
+
 # Generic
 
 /a3A7qLVn/
