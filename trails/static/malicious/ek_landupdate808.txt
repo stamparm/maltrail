@@ -1027,6 +1027,10 @@ sceuppe.com
 http://104.225.129.155
 http://104.36.229.108
 89.110.110.119:443
+clearforgehub.com
+clearforgelab.top
+datanex.top
+gettrustedhub.top
 ibharcan.com
 nexaflowlab.top
 solidpathcore.com
