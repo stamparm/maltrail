@@ -9582,6 +9582,14 @@ drvdb9rcebidk.cloudfront.net
 /u44cch/stealthfairy.ps1
 /stealthfairy.ps1
 
+# Reference: https://x.com/SansLimit3/status/2047642058765074632
+# Reference: https://www.virustotal.com/gui/file/871ceb0b6b187e66caad5e55e787040460b5b9f865ae8765fa741a0c741ffbb7/detection
+
+/belgorod_cli.py
+/belgorod_listener.py
+/chrome_hijack.ps1
+/edge_hijack.vbs
+
 # Generic
 
 /5c0ca79.php
