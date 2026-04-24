@@ -1176,6 +1176,10 @@ osdoooodkk231.cfd
 45.61.157.149:8080
 staybud.dpdns.org
 
+# Reference: https://x.com/Fact_Finder03/status/2047621822917603616
+
+http://77.92.36.10
+
 # Generic
 
 /admin_123/auth.php
