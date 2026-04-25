@@ -6388,3 +6388,9 @@
 86.54.25.0/24,askz
 91.227.114.0/24,askz
 91.92.21.0/24,askz
+
+# AS 214472
+# Reference: https://ipinfo.io/AS214472
+# Reference: https://x.com/banthisguy9349/status/2047908100385231203
+
+176.65.139.0/24,stormindustries
