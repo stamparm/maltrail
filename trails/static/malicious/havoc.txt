@@ -5906,6 +5906,11 @@ http://82.23.146.156
 98.87.167.138:8443
 98.93.238.205:443
 
+# Reference: https://www.virustotal.com/gui/file/b80134338e02f43987dd8a9ccd3861228d9fc981da831c8db6818e586d0aca88/detection
+# Reference: https://www.virustotal.com/gui/file/c3b7cdea21750da13392d468b4359dfe06ae55ec640c9e0275d7b99f9025b73c/detection
+
+communicationdiscoveryservice.site
+
 # Generic
 
 /Havoc/payload/
