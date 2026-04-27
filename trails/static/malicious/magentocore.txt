@@ -16845,6 +16845,10 @@ synickspot.com
 trendislabs.com
 wp4.pw
 
+# Reference: https://x.com/sdcyberresearch/status/2048743626314817648
+
+ginsongtech.net
+
 # Generic
 
 /assets/lfg.js
