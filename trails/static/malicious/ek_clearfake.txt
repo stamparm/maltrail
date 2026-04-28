@@ -27239,6 +27239,7 @@ dexhul.che6u7therm.ru
 dexis-serv.in.net
 dexishostpath.garden
 dexisnetflow.garden
+dexispointnexus.garden
 dexlotion.ru
 dexon-node.in.net
 dexon-tech.in.net
@@ -40341,6 +40342,7 @@ qiv9moren.in.net
 qivk8o.bed0kur5noop.ru
 qivon-store.in.net
 qivor-web.in.net
+qivornodeunit.garden
 qivorpaknode.garden
 qivsan.be2vesati5t.ru
 qj6bkgrv.n1ghtcre5t.ru
