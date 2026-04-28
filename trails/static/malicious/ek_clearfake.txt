@@ -18621,6 +18621,7 @@ update-info926.com
 
 http://145.249.115.191
 http://77.90.185.24
+77.90.185.24:443
 0-pal-summit.ru
 0-rohyp-5-yu.ru
 0-we-fid-707-i.ru
