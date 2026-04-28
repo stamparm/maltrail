@@ -4690,3 +4690,9 @@ instance-jtyhkb-relay.screenconnect.com
 remotesupporthelp.net
 vendor-portal.net
 rmm.vendor-portal.net
+
+# Reference: https://x.com/suyog41/status/2049003157532115232
+# Reference: https://www.virustotal.com/gui/file/8f91252d4ac62ce03680f9d945b453cc95934c5b5878c0022fc5e9f3e72530b2/detection
+
+mysaltwaterhome.screenconnect.com
+server-ovh30010055-web.screenconnect.com
