@@ -6394,3 +6394,20 @@
 # Reference: https://x.com/banthisguy9349/status/2047908100385231203
 
 176.65.139.0/24,stormindustries
+
+# AS 215828
+# Reference: https://ipinfo.io/AS215828
+# Reference: https://x.com/spamhaus/status/2049416024101900661
+
+198.195.254.0/24,tmw-global-networks
+77.90.25.0/24,tmw-global-networks
+94.249.138.0/24,tmw-global-networks
+
+# AS2702
+# Reference: https://ipinfo.io/AS2702
+# Reference: https://x.com/spamhaus/status/2049416024101900661
+
+198.193.12.0/24,interserve
+198.193.32.0/20,interserve
+198.195.144.0/24,interserve
+198.196.199.0/24,interserve
