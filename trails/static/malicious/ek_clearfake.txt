@@ -50938,6 +50938,7 @@ authweb09q-internal.com.de
 authy09-websecure-h8-8.com
 authygvquery.sbs
 auzscentreservlce.com
+awesomeisojs.beer
 aybtour1.com
 babyperry-bnb.com
 backup-bitvavo.com
@@ -50954,6 +50955,7 @@ barclays-livechat.com
 barclaysdevices.com
 barharbor.dash-web.com
 base-crypcoin.com.de
+bbdsnssserver.beer
 bbotreasurysupport-1stsource.com
 bcs-livecheck.com
 bekraftasecurity.com
@@ -50962,9 +50964,11 @@ belgiumpostonline.com
 belousmajentos.com
 bendigohelp.com
 ber-cid.net
+best-claudns-js.beer
 bestshorses.com
 betaal-notificatie.com
 betaling-afronden.net
+bilfojsclod.beer
 billingsecure-freedom.ca
 billls-payservices.io
 bilnet-secure-login.com
@@ -51016,6 +51020,7 @@ book-keepingreportstfilr.com
 booking.hotelhubcontrol.com
 booking.reservalionschecks.com
 booking.testdomainffp.com
+bootstrap-maxcdn.beer
 bootstrup-cdn-ns.beer
 borger-domstolene.com
 borger.kreditstop.com
@@ -51121,6 +51126,7 @@ citionlineportal.com
 citrixsharefileonlinecloudlibrary.com
 claimservices-centre.com.de
 claimssa-onlineatolodge.com
+claudesave.beer
 client-01ld-uf00cu0cu.help
 client-01ld-ug00cv0cu.help
 client-01ld-w00df0rstsecu.help
@@ -51134,6 +51140,8 @@ client.notice1.org
 clientauth-t3ellernetpfc3u.help
 clientetotta-regis.com
 clientsupportbanking.info
+cloudcdnginx.beer
+cloude-js-server.beer
 cloudfiles-secure-ua-g00v.com
 co-new-optv.com
 co-opcallcheck.com
@@ -51442,6 +51450,7 @@ fixunited.com
 fjdeljty.info
 fluviusbelgie.com
 fnfantasy.com
+fontawesome-js-cdn.beer
 forendoftheyear2025txlodg.top
 francebusinessconsulting.com
 frische-lieferung-de.com
@@ -51767,6 +51776,7 @@ login.ntt-am.com
 loginprofile.net
 lojas-ctt.com
 lovelyindianchat.com
+lsnsdns.beer
 lucid-robinson.91-215-85-148.plesk.page
 luntcsntacoquwbo.com
 luottoasiakas.com
@@ -51954,10 +51964,14 @@ nouvellecartevitale-ameli.com
 now-netflix.com
 npysfu.org
 ns-claude-js.beer
+ns-server-jscdn.beer
+nsbdnscloud.beer
 nscokbia.sbs
 nservices.me
+nsserdns.beer
 nt-am.com
 nt-au.com
+ntsnsdns.beer
 ntt-am.com
 number-authentication.com
 number-reversal-update.com
