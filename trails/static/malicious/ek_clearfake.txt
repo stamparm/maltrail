@@ -1,7 +1,7 @@
 # Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
-# Aliases: clickfix, iclickfix, crashfix, filefix, jackfix, storm-1865, unc5142
+# Aliases: backgroundfix, clickfix, iclickfix, crashfix, filefix, jackfix, storm-1865, unc5142
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2023-08-28-v10404/902
 
@@ -67222,6 +67222,23 @@ yu.bestwestern-id-yv57hvs.com
 zenithotelverifstay.com
 zsfilrtk.2polloslocos.com
 zw.cg2-item.click
+
+# Reference: https://x.com/RussianPanda9xx/status/2049842468674326541
+# Reference: https://www.huntress.com/blog/clickfix-castleloader-backgroundfix
+
+ai-scan.digital
+background-off.com
+background-ready.online
+background-remove.online
+backgroundformat.online
+bg-go.online
+bg-ready.online
+bg-removerok.online
+bg-transparency.online
+mail.background-off.com
+mail.background-remove.online
+mail.bg-go.online
+mail.bg-transparency.online
 
 # Generic
 
