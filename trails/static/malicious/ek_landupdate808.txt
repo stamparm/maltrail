@@ -1037,3 +1037,8 @@ gettrustedhub.top
 ibharcan.com
 nexaflowlab.top
 solidpathcore.com
+
+# Reference: https://www.virustotal.com/gui/file/4bc2ff0f172b1814187a75ad70d5843e4078594c84a6a9c96e2d9b767bff38af/detection
+# Reference: https://www.virustotal.com/gui/file/4c52a84ceeafc3181102aee5acdf1acb115c356c2cbc0344e3fa2c772c46c5d1/detection
+
+4llowme2night.com
