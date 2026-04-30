@@ -60354,7 +60354,7 @@ redir-pagesbk.com
 redirspagebkg.com
 sunwadsupport.sbs
 
-# Reference: https://pilot.validin.com/detail?type=raw&find=Checking+if+you+are+human#tab=host_pairs (# 2025-12-27)
+# Reference: https://app.validin.com/detail?type=raw&find=Checking+if+you+are+human#tab=host_pairs (# 2025-12-27)
 
 180deg.net
 3150.info
