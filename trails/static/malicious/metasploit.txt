@@ -6450,3 +6450,7 @@ http://49.213.132.153
 
 http://79.137.206.33
 79.137.206.33:4666
+
+# Reference: https://www.virustotal.com/gui/file/59561fc5c8e7c38f4c193c6fd01e4af2679063fc9bfaa483e61108c402ced1c2/detection
+
+176.65.139.68:666
