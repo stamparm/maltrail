@@ -4807,3 +4807,15 @@ domainmanager.skywingsdigital.com
 marvinkuth.de
 git.marvinkuth.de
 mc.marvinkuth.de
+
+# Reference: https://habr.com/ru/articles/1027896/
+
+carder.market
+ddosforum.online
+ddosnow.com
+hardstresser.org
+mao-stress.su
+ratelimit.su
+stress.ba
+thedarkvr.su
+volchmova.ru
