@@ -8666,9 +8666,15 @@ smart-control.cc
 # Reference: https://ctrlaltintel.com/research/Qilin/
 # Reference: https://www.virustotal.com/gui/ip-address/194.59.30.9/detection
 # Reference: https://www.virustotal.com/gui/ip-address/79.110.49.146/detection
+# Reference: https://www.virustotal.com/gui/file/0d6ec06d1445e11e817a8749198e9a5a31e5a04bec63d3629b7637e7cbe1d839/detection
 
 194.59.30.9:8000
+31.57.147.229:443
 79.110.49.146:8000
+/client_31.57.147.229.cfg
+/hariadm_185.208.158.147.cfg
+/vcenter_31.57.38.155.cfg
+/y_23.27.140.108.cfg
 
 # Generic
 
