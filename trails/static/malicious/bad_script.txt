@@ -9595,6 +9595,10 @@ drvdb9rcebidk.cloudfront.net
 /B2_Bomber.ps1
 /McAfeeeee.bat
 
+# Reference: https://x.com/ctrlaltintel/status/2050143909209317439
+
+/sub_shell.py
+
 # Generic
 
 /5c0ca79.php
