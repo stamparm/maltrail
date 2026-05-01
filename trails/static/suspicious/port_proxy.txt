@@ -54,3 +54,9 @@ bore.pub
 try-this.ru
 tunnel4.com
 xtunnel.ru
+
+# Reference: https://x.com/aaqeel87/status/2050129781610439051
+# Reference: https://tria.ge/260430-xn996agz4x/behavioral1
+# TITLE-HOST=Port Buddy - Expose Localhost to the Internet | Ngrok Alternative
+
+portbuddy.dev
