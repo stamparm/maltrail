@@ -4820,6 +4820,7 @@ ddosforum.ru
 ddosnow.com
 dosninja.net
 freestresser.org
+gun45mm3.beget.tech
 hardstresser.org
 img.roscenzura.biz
 ipstresse.in
@@ -4829,6 +4830,7 @@ quezbooter.ru
 ratelimit.su
 roscenzura.biz
 roscenzura.org
+rp.gun45mm3.beget.tech
 ru.ddosforum.online
 stress.ba
 stresse.su
