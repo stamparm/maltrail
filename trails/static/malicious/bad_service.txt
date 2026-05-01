@@ -4817,5 +4817,6 @@ hardstresser.org
 mao-stress.su
 ratelimit.su
 stress.ba
+stresser.ba
 thedarkvr.su
 volchmova.ru
