@@ -8663,6 +8663,10 @@ smart-control.cc
 
 83.142.209.13:8080
 
+# Reference: https://www.virustotal.com/gui/ip-address/194.59.30.9/detection
+
+194.59.30.9:8000
+
 # Generic
 
 /.sliver-client/
