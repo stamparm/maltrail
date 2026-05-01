@@ -4832,6 +4832,7 @@ ddos.directory
 ddos.taxi
 ddosforhi.su
 ddosforhire.ba
+ddosforum.com
 ddosforum.online
 ddosforum.ru
 ddosnow.com
