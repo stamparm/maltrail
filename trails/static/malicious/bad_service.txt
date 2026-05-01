@@ -4811,6 +4811,7 @@ mc.marvinkuth.de
 # Reference: https://habr.com/ru/articles/1027896/
 
 34509.su
+admin.roscenzura.ru
 anonstress.com
 api-ipstresser.su
 api.stress.ba
@@ -4863,8 +4864,10 @@ ratelimit.su
 roscenzura.biz
 roscenzura.com
 roscenzura.org
+roscenzura.ru
 rp.gun45mm3.beget.tech
 ru.ddosforum.online
+ru.roscenzura.com
 stress.ba
 stresse.su
 stresser-mirrors.com
