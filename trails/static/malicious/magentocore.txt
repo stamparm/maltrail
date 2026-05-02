@@ -16868,6 +16868,7 @@ hexaqon-analytics.com
 jonnienesimy.online
 js-agentnewrelic.com
 lgstd.ws
+logstorage.net
 mango-apple.in
 mxlclinfo.com
 nexorxwa.com
@@ -16881,6 +16882,7 @@ reports-cdn.com
 restratmed.com
 siteanallizations.com
 sitesocket.store
+socket.logstorage.net
 south-cdn.com
 stat-hs.com
 store-content.net
