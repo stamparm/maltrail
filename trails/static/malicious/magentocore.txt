@@ -16849,31 +16849,45 @@ wp4.pw
 
 ginsongtech.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.143.203.225/relations
 # Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-05-01-WebSocket-Backdoor-Campaign-Injecting-Credit-Card-Skimmers.txt
 
+analyzehost.com
 api-statics.com
 astryxrix.com
 beuatyplussalon.com
 bootstrapcda.com
+cdn-hs.com
+cdn-stats.com
+cnd-analytics.com
+comapi-statics.com
 deliastamaels.com
+east-report.com
 fontspace.us
 hexaqon-analytics.com
 jonnienesimy.online
 js-agentnewrelic.com
 lgstd.ws
+mango-apple.in
 mxlclinfo.com
 nexorxwa.com
+north-cdn.com
 onelitteday.com
 ppheaimondon.store
 prosoucediesel.com
 qetbootstrap.com
 redfromscalamandre.info
+reports-cdn.com
 restratmed.com
 siteanallizations.com
 sitesocket.store
+south-cdn.com
+stat-hs.com
 store-content.net
 usps-trackin.us
 west-report.com
+west-report.comapi-statics.com
+wizeconnect.io
 
 # Generic
 
