@@ -53834,21 +53834,6 @@ zoom-civicready.com
 mricsvalidcentraldocumentzone.ru
 phebeschool.org
 
-# Reference: https://www.virustotal.com/gui/ip-address/45.143.203.225/relations
-
-analyzehost.com
-cdn-hs.com
-cdn-stats.com
-cnd-analytics.com
-east-report.com
-mango-apple.in
-north-cdn.com
-reports-cdn.com
-south-cdn.com
-stat-hs.com
-west-report.com
-wizeconnect.io
-
 # Reference: https://www.virustotal.com/gui/ip-address/91.215.85.148/relations
 
 4-72-seguimiento.com.co
