@@ -16849,6 +16849,32 @@ wp4.pw
 
 ginsongtech.net
 
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-05-01-WebSocket-Backdoor-Campaign-Injecting-Credit-Card-Skimmers.txt
+
+api-statics.com
+astryxrix.com
+beuatyplussalon.com
+bootstrapcda.com
+deliastamaels.com
+fontspace.us
+hexaqon-analytics.com
+jonnienesimy.online
+js-agentnewrelic.com
+lgstd.ws
+mxlclinfo.com
+nexorxwa.com
+onelitteday.com
+ppheaimondon.store
+prosoucediesel.com
+qetbootstrap.com
+redfromscalamandre.info
+restratmed.com
+siteanallizations.com
+sitesocket.store
+store-content.net
+usps-trackin.us
+west-report.com
+
 # Generic
 
 /assets/lfg.js
