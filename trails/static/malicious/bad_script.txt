@@ -9606,6 +9606,15 @@ drvdb9rcebidk.cloudfront.net
 
 /serverPOST.py
 
+# Reference: https://www.virustotal.com/gui/file/01586d4e2572909873585d09ed226fdf65dc7f20560454e0331aba7940822e40/detection
+
+/init/arrogantcrane.ps1
+/init/beadscreamer.ps1
+/init/papavirginal.ps1
+/arrogantcrane.ps1
+/beadscreamer.ps1
+/papavirginal.ps1
+
 # Generic
 
 /5c0ca79.php
