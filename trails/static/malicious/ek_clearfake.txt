@@ -64688,6 +64688,7 @@ y2.checkguest224711-booking.com
 yc.checkguest865431-booking.com
 
 # Reference: https://x.com/muha2xmad/status/2046167389776019704
+# Reference: https://x.com/Malwarehunterr/status/2050996014426054919
 # Reference: https://www.virustotal.com/gui/file/9bf76a94a6c433ec056f54a635ef9f37aa5ea619c4d91a2875f8e22c70a46014/detection
 # Reference: https://www.virustotal.com/gui/file/069a6681e08dbbc2ad30b5294d82d07a425af5f432d81278058cc5ab0a4a1750/detection
 # Reference: https://www.virustotal.com/gui/file/ecdf8e500103f1ac5daa01f3bed32e52a4eba77aad941f19273525e103aca549/detection
@@ -64719,10 +64720,12 @@ bestzonelivepage.com
 bestzonereadpage.com
 bestzrealpage.monster
 bestzrealpagehub.monster
+bigddeaf.monster
 bluexsmyfilesfambee.com
 brightzonemilemilr.monster
 centiperiffboxmilr.monster
 chattertoolbrightjam.com
+cuntdown.co.nz
 datavineinnocastsave.com
 datazoomaltblerzooyo.com
 deylytekspaceici.monster
@@ -64739,7 +64742,9 @@ geziofastboxjetfox.monster
 gold-cazino-7k.monster
 goodlistgoodshotschatterspot.monster
 honeymoonsavers.monster
+hwea.trueappstackview.click
 icigabstertagopia.monster
+iconnectall.monster
 ilivewp.com
 inopportunefable.com
 instabeatleepesaveo.cloud
@@ -64802,6 +64807,7 @@ livetabintelfastbox.monster
 livezonebestz.monster
 marvelouslooks.monster
 megustacoaching.monster
+mhaskins.top
 nextzonelivebest.com
 nextzoneliveclub.com
 nextzonelivepage.com
@@ -64823,6 +64829,7 @@ powergoodlistbuzzlistgoodshots.monster
 powericitekspace.monster
 powerzoofibitseteicero.monster
 pullzone.icu
+purplefeetwines.monster
 ratingyammjambo.monster
 realagideltopictube.monster
 realbestzclub.monster
@@ -64846,12 +64853,17 @@ spaceclubzone.monster
 spacekeyreal.monster
 spacezonepage.monster
 tanudevcatrealspot.monster
+tastevolume.monster
+trueappstackview.click
 truefareinnoify.monster
 trueflipdriveagidel.monster
 trustpull.icu
 truvagentibrowsepulse.com
+unused.world
+unusedworld.pages.dev
 vaidyanat.monster
 verifiedpipe.icu
+vhyip.monster
 waytaplivepad.monster
 wikidootagvinesoft.com
 wikilooblogtuneapp.com
