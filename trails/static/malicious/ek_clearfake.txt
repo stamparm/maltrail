@@ -52328,6 +52328,7 @@ bnzhelp.app
 boa-protect.com
 boalivesupport.info
 bodderpice.sbs
+boekhoudingcrypto.com
 bofa-liveassist.com
 bofa-livesupport.com
 bofatexthelp.sbs
@@ -52441,6 +52442,7 @@ cibc-activate.com
 cintrauntre.online
 citi-liveportal.com
 citionlineportal.com
+citisecureportal.com
 citrixsharefileonlinecloudlibrary.com
 claimservices-centre.com.de
 claimssa-onlineatolodge.com
@@ -52452,6 +52454,7 @@ client-02ld-everwlsecu.help
 client-02ld-llberty3cu.help
 client-02ld-nat0nlinenati0nall.help
 client-02ld-rb3cu.help
+client-0552d-uf00cu0cu.help
 client-ufcu-slte.help
 client.notice1.help
 client.notice1.org
@@ -52690,6 +52693,7 @@ extension-certificat-lu.com
 extranetpanepartner.com
 exxcelll.com
 ezrug.org
+fdic-client-protection.org
 fdicclaimadministration.org
 fedex-lnformation.com
 fidelitycomm.makeup
@@ -53042,6 +53046,7 @@ ledgerscreening.com
 ledgersecure-device.com
 ledgersecuredesk.com
 ledgersecuritycheck.com
+ledgersecurityhelp.com
 ledgersrestore.com
 ledgerstatuscheck.com
 ledgersupportcheck.com
@@ -53194,6 +53199,7 @@ myaustraliaservonline.site
 myauthservicepb.com
 mycentralnotice.online
 mycentreservices.com
+mycitisecurity.com
 myclaimsmyclaims.online
 mycmverif.com
 mydataonlnemygov.sbs
@@ -53441,6 +53447,7 @@ primary-online-device.com
 primarydevice-helpdesk.com
 private-norde.com
 project-droprfktcoin.com
+protectionseedbinance.com
 provisaus.com
 proyectosinyecteul.com
 prpopular-er.com
@@ -53860,6 +53867,7 @@ updating.help
 urgent-bericht.org
 usatreas-taxservices.de.com
 user-insurancepolicy.com
+user-portalsecureweb.com
 user-review-id.com
 user-token-rpd.com
 user08web-accessau8th.com
@@ -53867,7 +53875,6 @@ user09-verifypage8-w4.com
 userhelp-panel08-coinbase.us
 userhelpbov.com
 userportal.help
-user-portalsecureweb.com
 users-klarna.com
 userside08-verin0fo45.com
 usilocate.info
@@ -53985,6 +53992,7 @@ zoomcommlive.com
 zoomieletter.com
 zoominvitation.net
 zoomlive.pro
+zooommmet.com
 zugang-sperren.com
 zygnali.com
 
