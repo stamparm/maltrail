@@ -1,0 +1,21 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: nexus listener, uat-10608
+
+# Reference: https://blog.talosintelligence.com/uat-10608-inside-a-large-scale-automated-credential-harvesting-operation-targeting-web-applications/
+# Reference: https://github.com/Cisco-Talos/IOCs/blob/main/2026/04/uat-10608.txt
+
+144.172.102.88:8080
+144.172.112.136:8080
+144.172.117.112:8080
+172.86.127.128:8080
+
+# Reference: https://x.com/malwrhunterteam/status/2051403187282685981
+# TITLE-HOST/IP=NEXUS - Login
+# TITLE-HOST/IP=NEXUS Listener v3
+
+144.172.116.48:8080
+178.128.41.3:8080
+216.126.225.20:8080
+77.237.237.74:8080
