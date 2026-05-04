@@ -25289,7 +25289,6 @@ centralgist.sbs
 centralizedduct.in.net
 centralmetric.in.net
 cer3djvm.latticepatronage.digital
-ceramiccraftsmanhub.int.in
 ceramicskick.digital
 ceraunavolta.shop
 cerbe7usout.in.net
@@ -26491,7 +26490,6 @@ contour-api.topographictrace.in.net
 contour.paw85silhouette.coupons
 control-matrix-transit-hub.in.net
 control-orchestration-plane.in.net
-control2lecture.store
 controlpeople.in.net
 conv-line.faint-gather.surf
 conv35-ring.zenithpatron.in.net
