@@ -12,6 +12,7 @@
 172.86.127.128:8080
 
 # Reference: https://x.com/malwrhunterteam/status/2051403187282685981
+# Reference: https://www.virustotal.com/gui/file/dd1ca7204ed2cd24358faf596b6b594518cb4e8c272fb702115d21be56d181df/detection
 # TITLE-HOST/IP=NEXUS - Login
 # TITLE-HOST/IP=NEXUS Listener v3
 
