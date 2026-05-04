@@ -53924,6 +53924,7 @@ serapresenstat.online
 serapresentat.info
 sercenabport.sbs
 sercvcentport.sbs
+serv34port.com
 servanperst.sbs
 servcasterport.sbs
 servcentralport.sbs
@@ -54084,6 +54085,7 @@ trezorofficial.com
 trezoronlineassist.com
 trezoronlinecheck.com
 trezorsecure.io
+trezorsecurity.io
 trezorsuiteapp.io
 trezorsuiteappweb.io
 trezorsuitediagnostic.com
