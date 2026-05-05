@@ -1191,6 +1191,17 @@ http://154.12.253.0
 
 172.245.67.199:3000
 
+# Reference: https://x.com/JustWantToQ1/status/2051384176297861588
+# PATH-HOST/IP=c2_management.php
+
+http://82.165.77.72
+apps.simon-ehrenstein.de
+cartigo.de
+gagohood.duckdns.org
+simon-ehrenstein.de
+xxksdlasmc2c3.duckdns.org
+/c2_management.php
+
 # Generic
 
 /admin_123/auth.php
