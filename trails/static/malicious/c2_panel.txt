@@ -1206,6 +1206,10 @@ xxksdlasmc2c3.duckdns.org
 
 192.210.241.158:9999
 
+# Reference: https://x.com/JustWantToQ1/status/2051388990201233464
+
+120.25.122.37:8080
+
 # Generic
 
 /admin_123/auth.php
