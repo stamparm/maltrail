@@ -1187,6 +1187,10 @@ http://77.92.36.10
 
 http://154.12.253.0
 
+# Reference: https://x.com/JustWantToQ1/status/2051382923513786835
+
+172.245.67.199:3000
+
 # Generic
 
 /admin_123/auth.php
