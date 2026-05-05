@@ -70982,7 +70982,9 @@ zw.cg2-item.click
 
 # Reference: https://x.com/RussianPanda9xx/status/2049842468674326541
 # Reference: https://www.huntress.com/blog/clickfix-castleloader-backgroundfix
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-05-05-Finger-Protocol-LOLBin-C2-ClickFix-Campaign.txt
 
+ai-detect.online
 ai-scan.digital
 background-off.com
 background-ready.online
@@ -70992,6 +70994,11 @@ bg-go.online
 bg-ready.online
 bg-removerok.online
 bg-transparency.online
+linked-on.com
+pdf-work.online
+pdfworker.online
+pqrnews.com
+finger.linked-on.com
 mail.background-off.com
 mail.background-remove.online
 mail.bg-go.online
