@@ -1215,6 +1215,24 @@ xxksdlasmc2c3.duckdns.org
 
 81.71.155.121:8888
 
+# Reference: https://x.com/Fact_Finder03/status/2051727878669337047
+# TITLE-HOST/IP=C2 Control Panel
+
+http://111.88.247.144
+http://193.149.187.105
+http://194.33.61.113
+http://47.236.95.106
+http://89.124.83.228
+3.38.179.253:5000
+3.85.84.182:5000
+31.97.197.94:5000
+45.61.149.210:5173
+77.91.65.87:8080
+83.217.208.170:8080
+c2.nexaa.io
+ru.pixelvpn.lol
+subru.pixelvpn.lol
+
 # Generic
 
 /admin_123/auth.php
