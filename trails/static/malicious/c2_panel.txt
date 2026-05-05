@@ -1202,6 +1202,10 @@ simon-ehrenstein.de
 xxksdlasmc2c3.duckdns.org
 /c2_management.php
 
+# Reference: https://x.com/JustWantToQ1/status/2051384421589176702
+
+192.210.241.158:9999
+
 # Generic
 
 /admin_123/auth.php
