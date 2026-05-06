@@ -1233,6 +1233,18 @@ c2.nexaa.io
 ru.pixelvpn.lol
 subru.pixelvpn.lol
 
+# Reference: https://x.com/Fact_Finder03/status/2051972490973323296
+
+176.169.229.134:5000
+
+# Reference: https://x.com/Fact_Finder03/status/2051973245960585274
+
+146.19.125.23:3000
+176.120.22.131:9000
+18.195.217.90:3000
+62.164.177.225:3000
+91.238.50.178:3000
+
 # Generic
 
 /admin_123/auth.php
