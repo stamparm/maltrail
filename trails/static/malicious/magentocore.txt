@@ -17001,8 +17001,10 @@ west-report.comapi-statics.com
 wizeconnect.io
 
 # Reference: https://x.com/sdcyberresearch/status/2052011244211556479
+# Reference: https://www.virustotal.com/gui/ip-address/86.106.143.168/relations
 
 cindt.org
+tcind.org
 
 # Generic
 
