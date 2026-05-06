@@ -28318,7 +28318,6 @@ digimatrix.digital
 digisphere.in.net
 digit37.2-pukeg-36-oy.ru
 digital-verify-pro.in.net
-digital.
 digitalcloudnet.surf
 digitalcloudsys.lat
 digitalfoundry.in.net
@@ -34706,17 +34705,14 @@ info-orbit.digisphere.in.net
 info-point.infovector.in.net
 info-summit.datacrest.in.net
 info-svc.literallukom.in.net
-info.
 info.jeml.ru
 info4-vault.cesura-wate7y.in.net
 infocircuit.in.net
-infodynamics.in
 infodynamics.in.net
 infonodeunit.tula8data.surf
 inform2tunleaven.in.net
 infosafe.in.net
 infosec.toxyl.nl
-infovector.in
 infovector.in.net
 infra-api-cloud-mesh.in.net
 infra-cloud-api-core.in.net
@@ -42535,7 +42531,6 @@ privateflame.checkstor.in.net
 prli-1.ru
 prli1.ru
 pro-standard.work
-pro.
 pro7center.coupons
 probos7raise.coupons
 proc-256.mivon-hub.in.net
