@@ -17000,6 +17000,10 @@ west-report.com
 west-report.comapi-statics.com
 wizeconnect.io
 
+# Reference: https://x.com/sdcyberresearch/status/2052011244211556479
+
+cindt.org
+
 # Generic
 
 /assets/lfg.js
