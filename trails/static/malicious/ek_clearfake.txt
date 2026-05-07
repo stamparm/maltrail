@@ -27710,6 +27710,7 @@ dataplate.piittablet.in.net
 datapulse.fluxnode.in.net
 datarea.dropaway.in.net
 datarunkey.lat
+datasafe.digital
 datash1ft.ru
 datashade.ru
 dataspark.digital
@@ -37707,6 +37708,7 @@ lunavera.garden
 lunavilla.in.net
 lunch-break5.vym7lixar.in.net
 lune4vax.bet
+lune4vax.digital
 lunopen.hisslytori.in.net
 lupinbrew.in.net
 lupuj.icu
@@ -47203,6 +47205,7 @@ sora8lin.lat
 soreb.run
 sori7xen.surf
 sori9thal.bet
+sori9thal.digital
 sorix.icu
 sorix2el.surf
 sorix7el.lat
@@ -48108,6 +48111,7 @@ strat.skytrac5.ru
 stratagraphic.in.net
 stratagrid.in.net
 strategicdatasink.globalstimul.in.net
+stratussync.digital
 stravexi.in.net
 stre-v9.aquastream.in.net
 stre06.aquastream.in.net
