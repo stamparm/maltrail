@@ -9732,6 +9732,7 @@ drvdb9rcebidk.cloudfront.net
 /testgate.php
 /verification-card.php
 /1drvme/
+/payload.dat
 /payload/openAttach/
 /payload/openAttache/
 /payload/openAttachment/
