@@ -9619,6 +9619,19 @@ drvdb9rcebidk.cloudfront.net
 
 /vpn_payload.ps1
 
+# Reference: https://x.com/smica83/status/2052336400792510619
+# Reference: https://www.virustotal.com/gui/file/4a0edbbe5490182f27e930552cfda973f77c581bb6be1467d0087682e2d6e2f1/detection
+
+/S7yhd67/adhesivewipe.ps1
+/S7yhd67/buggypassage.ps1
+/S7yhd67/madlybibliography.ps1
+/S7yhd67/sleepforebear.ps1
+/adhesivewipe.ps1
+/buggypassage.ps1
+/madlybibliography.ps1
+/sleepforebear.ps1
+/S7yhd67/
+
 # Generic
 
 /5c0ca79.php
