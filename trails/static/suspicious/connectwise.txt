@@ -4696,3 +4696,7 @@ rmm.vendor-portal.net
 
 mysaltwaterhome.screenconnect.com
 server-ovh30010055-web.screenconnect.com
+
+# Reference: https://x.com/patialavii/status/2052279310577471810
+
+184.174.20.186:8040
