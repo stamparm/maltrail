@@ -5646,3 +5646,8 @@ http://3.21.178.110
 # Reference: https://www.virustotal.com/gui/file/8e02b5ba983587779b3aeeaa2d50d9b2a965c578ec0a1242c58af34322d97e9f/detection
 
 http://137.184.76.171
+
+# Reference: https://x.com/Fact_Finder03/status/2052745893695414565
+
+80.211.196.157:7443
+healthy.zubhium.com
