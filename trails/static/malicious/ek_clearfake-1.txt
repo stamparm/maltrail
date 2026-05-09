@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: backgroundfix, clickfix, iclickfix, crashfix, filefix, jackfix, storm-1865, unc5142
+# Note: Continuation of /malicious/ek_clearfake.txt
+
+# Reference: https://www.virustotal.com/gui/ip-address/178.16.52.101/relations
+
+nfsclaudecdn.beer
+ssjscrybootstrup.beer
