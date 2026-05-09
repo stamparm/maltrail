@@ -1247,6 +1247,10 @@ subru.pixelvpn.lol
 62.164.177.225:3000
 91.238.50.178:3000
 
+# Reference: https://x.com/JustWantToQ1/status/2053103238052778311
+
+http://83.172.169.14
+
 # Generic
 
 /admin_123/auth.php
