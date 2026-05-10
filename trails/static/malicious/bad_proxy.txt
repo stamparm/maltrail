@@ -48,3 +48,7 @@ broxy.one
 
 144.172.112.32:16443
 metallurgify.com
+
+# Reference: https://x.com/Fact_Finder03/status/2053423935656775950
+
+178.105.102.230:8888
