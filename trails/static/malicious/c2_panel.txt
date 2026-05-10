@@ -1256,6 +1256,10 @@ http://83.172.169.14
 http://154.83.149.205
 154.83.149.205:8081
 
+# Reference: https://x.com/Fact_Finder03/status/2053394653836427316
+
+31.3.218.73:3000
+
 # Generic
 
 /admin_123/auth.php
