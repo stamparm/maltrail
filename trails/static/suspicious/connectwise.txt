@@ -4700,3 +4700,9 @@ server-ovh30010055-web.screenconnect.com
 # Reference: https://x.com/patialavii/status/2052279310577471810
 
 184.174.20.186:8040
+
+# Reference: https://www.huntress.com/blog/tiflux-rmm-install
+# Reference: https://www.virustotal.com/gui/file/0b95524e5b00688f7f5efe56a74b93985feb2152d9336d44ca7a8dd9ca25d2d5/detection
+
+84.54.33.192:8040
+84.54.33.192:8041
