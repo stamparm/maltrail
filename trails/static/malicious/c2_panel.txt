@@ -1266,6 +1266,11 @@ http://104.200.67.47
 http://83.217.212.151
 v3001994.hosted-by-vdsina.ru
 
+# Reference: https://x.com/Fact_Finder03/status/2053723171787035043
+
+104.168.81.172:9090
+107.172.132.231:8080
+
 # Generic
 
 /admin_123/auth.php
