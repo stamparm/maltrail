@@ -4706,3 +4706,9 @@ server-ovh30010055-web.screenconnect.com
 
 84.54.33.192:8040
 84.54.33.192:8041
+
+# Reference: https://x.com/skocherhan/status/2053539599935263161
+# Reference: https://www.virustotal.com/gui/file/1ba8e1069cfb2ad7f201e0f8344c555f8597a76d73d101826e5174e3528c2402/detection
+
+51.89.242.33:8041
+magicsession.pro
