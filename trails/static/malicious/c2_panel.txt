@@ -1260,6 +1260,12 @@ http://154.83.149.205
 
 31.3.218.73:3000
 
+# Reference: https://x.com/Fact_Finder03/status/2053738879728099652
+
+http://104.200.67.47
+http://83.217.212.151
+v3001994.hosted-by-vdsina.ru
+
 # Generic
 
 /admin_123/auth.php
