@@ -8676,6 +8676,10 @@ smart-control.cc
 /vcenter_31.57.38.155.cfg
 /y_23.27.140.108.cfg
 
+# Reference: https://x.com/SansLimit3/status/2053906675430568281
+
+142.171.160.137:8888
+
 # Generic
 
 /.sliver-client/
