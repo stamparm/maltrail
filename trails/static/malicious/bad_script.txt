@@ -9722,6 +9722,7 @@ drvdb9rcebidk.cloudfront.net
 /Invoke-Phant0m.ps1
 /jqwery.js
 /online-dating-verification-card.php
+/payload.php
 /postgreexploit.py
 /ravufgate.php
 /screenshot_gate.php
