@@ -691,6 +691,10 @@ zirviss9.codeflux.lat
 # Reference: https://www.virustotal.com/gui/ip-address/95.85.246.143/relations
 # BODY_SHA1-HOST=f9ac506c31eddc949b6ea7eabedaf61c4e725e0a
 
+http://195.10.205.130
+http://95.85.246.143
+195.10.205.130:443
+95.85.246.143:443
 booking-static-assets.com
 captcha-property-pulse.com
 chalengermode.com
