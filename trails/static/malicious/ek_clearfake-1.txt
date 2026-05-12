@@ -687,7 +687,26 @@ zirviss9.codeflux.lat
 
 # Reference: https://x.com/JAMESWT_WT/status/2054093972004311110
 # Reference: https://app.any.run/tasks/6ac92cbb-88fa-4c21-b881-8614271938ec
+# Reference: https://www.virustotal.com/gui/ip-address/195.10.205.130/relations
+# Reference: https://www.virustotal.com/gui/ip-address/95.85.246.143/relations
+# BODY_SHA1-HOST=f9ac506c31eddc949b6ea7eabedaf61c4e725e0a
 
 booking-static-assets.com
+captcha-property-pulse.com
+chalengermode.com
+chellengermode.net
+events-property-pulse.com
+extranet-owner-check.com
+extranet-property-check.com
+girlshub.one
+hjsdkf.com
 img-pulse-cache.com
+myetisalatplans.sbs
 portail-device.info
+property-advanced-manager.com
+property-check-captcha.com
+review-your-property.com
+sdfkaqsf.com
+secure-extranet-captcha.sdfkaqsf.com
+transneft25.ll.tsscom.ru
+useinvitcode.click
