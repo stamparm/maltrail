@@ -684,3 +684,10 @@ zipark.pixelmesh.pics
 ziparkview.datalinkcenter.pics
 ziparkview.webstackengine.pics
 zirviss9.codeflux.lat
+
+# Reference: https://x.com/JAMESWT_WT/status/2054093972004311110
+# Reference: https://app.any.run/tasks/6ac92cbb-88fa-4c21-b881-8614271938ec
+
+booking-static-assets.com
+img-pulse-cache.com
+portail-device.info
