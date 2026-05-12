@@ -9635,6 +9635,8 @@ drvdb9rcebidk.cloudfront.net
 # Reference: https://x.com/smica83/status/2054156317858693553
 # Reference: https://tria.ge/260512-m6zk9sfw9r/behavioral1
 
+/c2_server.py
+/c2_server.py.bak
 /ofuscador.py
 
 # Generic
