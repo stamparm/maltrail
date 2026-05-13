@@ -1271,6 +1271,12 @@ v3001994.hosted-by-vdsina.ru
 104.168.81.172:9090
 107.172.132.231:8080
 
+# Reference: https://x.com/Fact_Finder03/status/2054479449056596078
+
+http://78.17.41.10
+78.17.41.10:8443
+gr0ssvpn.fun
+
 # Generic
 
 /admin_123/auth.php
