@@ -2434,6 +2434,7 @@ c2.tenguprotect.com
 c2.th4ntis.com
 c2gess.bryangess.com
 cac.mitel.cz
+cc.lmb-asp.com
 cc2.sstcorporate.dev
 cloudc2.exchagetech.ca
 companyn454.buzzwithbrands.com
@@ -2460,6 +2461,7 @@ m0bux.com
 mail.ezii.org
 mail.loaagouda.com
 mail.thotera.com
+manage.rnarkgraf-bau.de
 maprimevelo.fr
 martynspurgeon.myqnapcloud.com
 network45-238-142-host-234.inethn.net
