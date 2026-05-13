@@ -1065,3 +1065,12 @@ y04uw.fortlockercash.top
 y6iui.fortlockercash.top
 z3dl1.fortlockercash.top
 zllxdqsita.fortlockercash.top
+
+# Reference: https://x.com/JAMESWT_WT/status/2054452806208106938
+# TITLE-HOST/IP=Главная • Worldcraft
+
+http://193.233.165.54
+http://77.91.97.125
+captcha-extranet-manage.com
+worldcraft.fun
+/BookingVerifedCasBot
