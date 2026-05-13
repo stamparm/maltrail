@@ -9639,6 +9639,13 @@ drvdb9rcebidk.cloudfront.net
 /c2_server.py.bak
 /ofuscador.py
 
+# Reference: https://x.com/smica83/status/2054519199704236491
+
+/edezcnzt.py
+/lrrxbtts.py
+/rkzoocnj.py
+/vxfgbziz.py
+
 # Generic
 
 /5c0ca79.php
