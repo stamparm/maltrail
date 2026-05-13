@@ -1074,3 +1074,13 @@ http://77.91.97.125
 captcha-extranet-manage.com
 worldcraft.fun
 /BookingVerifedCasBot
+
+# Reference: https://x.com/volrant136/status/2054595480751948254
+
+bookingmassanger.com
+extranet-partner-hub.com
+fromfarmtofridge.com
+manage-extranet.com
+secure-extranet-login.com
+secure-property-signin.com
+web-extranet-signin.com
