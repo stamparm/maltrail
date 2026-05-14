@@ -9660,6 +9660,16 @@ drvdb9rcebidk.cloudfront.net
 /magazinesalute.ps1
 /valuefinicky.ps1
 
+# Reference: https://x.com/smica83/status/2054883653524545644
+# Reference: https://www.virustotal.com/gui/file/ac28e78d726c18a088400f18e7e37b240dcae84712a2e3cf4bb04cee1cf64635/detection
+
+/ucc4/combinerise.ps1
+/ucc4/shipparsimonious.ps1
+/ucc4/standpointreplication.ps1
+/combinerise.ps1
+/shipparsimonious.ps1
+/standpointreplication.ps1
+
 # Generic
 
 /5c0ca79.php
