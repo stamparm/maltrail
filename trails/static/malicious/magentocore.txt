@@ -17019,9 +17019,11 @@ tcind.org
 4p.cdn-connect.com
 5j.auth-securi.com
 5k.request-cdn.com
+5q.reports-cdn.com
 5r.auth-securi.net
 5t.connect-wss.com
 5t.wss-connect.com
+5v.east-report.com
 6g.protect-wss.com
 6i.llvechatinc.com
 7o.analityc-cdn.com
@@ -17084,6 +17086,7 @@ prittlr.com
 protect-socket.com
 protect-wss.com
 pruwer.lol
+q2.cdn-hs.com
 request-cdn.com
 request-ws.net
 royalbank-myapp.com
@@ -17106,6 +17109,7 @@ td-online-authorization.com
 theclassiccompetitloncompany.com
 tnr-svit.com
 to.cdn-wss.com
+tt.stat-hs.com
 tttest.analytics-stats.com
 tuttinga.lol
 v5.maurlen.com
