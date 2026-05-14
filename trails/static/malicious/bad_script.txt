@@ -9646,6 +9646,10 @@ drvdb9rcebidk.cloudfront.net
 /rkzoocnj.py
 /vxfgbziz.py
 
+# Reference: https://www.virustotal.com/gui/file/21a889a0ba781caf9d9323bb8eb4738744d049f22b63062a35c3c9449aa0faa9/detection
+
+/pdfbolts.hta
+
 # Generic
 
 /5c0ca79.php
