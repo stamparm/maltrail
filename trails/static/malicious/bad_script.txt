@@ -9650,6 +9650,16 @@ drvdb9rcebidk.cloudfront.net
 
 /pdfbolts.hta
 
+# Reference: https://x.com/smica83/status/2054853804529439013
+# Reference: https://www.virustotal.com/gui/file/9914815d55b02d96e0f6f987822a05c52aefc988459868978f01edcaecda2c41/detection
+
+/uch4uu/forageoptimisation.ps1
+/uch4uu/magazinesalute.ps1
+/uch4uu/valuefinicky.ps1
+/forageoptimisation.ps1
+/magazinesalute.ps1
+/valuefinicky.ps1
+
 # Generic
 
 /5c0ca79.php
