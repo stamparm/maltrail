@@ -1268,3 +1268,11 @@ tribez.net
 ts1gororo.com
 videoteaching.us
 web-extranet-signin.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/172.67.192.151/relations
+# BANNER_0_HASH-HOST=300c49481d51cce170c5bd442185f316
+
+9sxgrev.pro
+acvgste.club
+axj0tw9.lol
+jnoaxfwe.info
