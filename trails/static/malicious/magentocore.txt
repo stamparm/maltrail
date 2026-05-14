@@ -17006,6 +17006,12 @@ wizeconnect.io
 cindt.org
 tcind.org
 
+# Reference: https://x.com/sansecio/status/2055020890467787123
+# Reference: https://sansec.io/research/funnelkit-woocommerce-vulnerability-exploited
+
+analytics-reports.com
+protect-wss.com
+
 # Generic
 
 /assets/lfg.js
