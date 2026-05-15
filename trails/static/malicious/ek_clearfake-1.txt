@@ -1537,3 +1537,44 @@ ostatniaposlugarumia.pl
 # Reference: https://app.any.run/tasks/114a6784-0371-4ca6-a73f-8f059f289cf6
 
 propertypanelreservations.com
+
+# Reference: https://app.validin.com/detail?find=reCAPTCHA%20Verification&type=raw&ref_id=30e44e1d167#tab=host_pairs (# 2026-05-15)
+
+224.ip-51-83-72.eu
+86-106-102-101.cprapid.com
+9u.tnlservicebd.com
+biholdinfx.net
+bit-spire.com
+captchas.killianherzer.com
+cpcalendars.86-106-102-101.cprapid.com
+dgtchain.com
+fnxgatewayelite.com
+j6.prolifepakistan.org
+login.skrn.dk
+lp-1-1768679420754.pages.dev
+lp-3-1768858540028.pages.dev
+lp-3-1768878054868.pages.dev
+lp-3-1768921240853.pages.dev
+lp-3-1768926937158.pages.dev
+lp-3-1768935663465.pages.dev
+lp-3-1768959352700.pages.dev
+lp-3-1768975255956.pages.dev
+lp-3-1768986053306.pages.dev
+lp-4-1768757769872.pages.dev
+lp-4-1768758904696.pages.dev
+lp-4-1768844683580.pages.dev
+lp-4-1768995302387.pages.dev
+lp-4-1769004003458.pages.dev
+lp-4-1769013307769.pages.dev
+lp-4-1769126448838.pages.dev
+lp-7-1769061648966.pages.dev
+lp-7-1769065893970.pages.dev
+lp-7-1769110555700.pages.dev
+lp-7-1769119260192.pages.dev
+mail.bit-spire.com
+mail.dgtchain.com
+mylp-c4u.pages.dev
+qwerty.badrulmunir.com
+recaptcha.boit.cloud
+vararemod.com
+y6.nacostpi.com
