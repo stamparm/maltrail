@@ -9670,6 +9670,10 @@ drvdb9rcebidk.cloudfront.net
 /shipparsimonious.ps1
 /standpointreplication.ps1
 
+# Reference: https://x.com/BlinkzSec/status/2055582748878987580
+
+/dos.py
+
 # Generic
 
 /5c0ca79.php
