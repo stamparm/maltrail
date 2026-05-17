@@ -5619,3 +5619,9 @@ servegame.co
 # Reference: https://github.com/hagezi/dns-blocklists/issues/9474#issuecomment-4105979155
 
 hl.cn
+
+# Reference: https://x.com/MosheTov/status/2055763192064725428
+# Reference: https://x.com/TekDefense/status/2055818318209020115
+# Reference: https://www.virustotal.com/gui/domain/lhr.life/relations
+
+lhr.life
