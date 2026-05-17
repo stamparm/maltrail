@@ -17012,6 +17012,7 @@ tcind.org
 048ko5rmy3whfibz.socketws.com
 0hqvp9l947t29m2f.socketws.com
 0x2qqpbdm7ta8gb5.socketws.com
+10.folklorea.lol
 1l9bmwyjuk68phld.socketws.com
 20.socket-cdn.com
 222zue470yapzihx.socketws.com
@@ -17240,6 +17241,10 @@ qnosxwgjrxorwd1p.socketws.com
 qnyn6x2ariec5z9u.socketws.com
 qwjzboi7a2i5lncq.socketws.com
 r8srnt3flhfprtll.socketws.com
+refreshwp.net
+refreshwpws.com
+refreshws.com
+refreshwss.com
 request-cdn.com
 request-ws.net
 rk2vlfqrgkx2qr3l.socketws.com
@@ -17336,6 +17341,7 @@ wordpress-ws.com
 wordpressws.com
 wp-socket.com
 wpws.org
+wpwsconnect.com
 wr9z4pzimryq38ee.socketws.com
 ws-request.com
 ws-socket.com
@@ -17343,6 +17349,7 @@ ws-sucuri.com
 wsrequest.com
 wss-analytics.com
 wss-cdn.com
+wss-cdn.org
 wss-connect.com
 wss-connect.org
 wss-request.net
