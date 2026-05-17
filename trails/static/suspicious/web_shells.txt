@@ -1167,3 +1167,15 @@ podathon.org/shell/
 /m0s.aspx
 /m0s.php
 /m0s.phto
+
+# Reference: https://oasis-security.io/blog/malaysian-government-with-undisclosed-c2-infrastructure
+
+/shell21.py
+/shell21_deploy.php
+/shell21_gl.php
+/shell21_gl.py
+/shell21_gl2.php
+/shell21_images.php
+/shell21_lfi.php
+/shell21_lfi2.php
+/shell21_lficheck.php
