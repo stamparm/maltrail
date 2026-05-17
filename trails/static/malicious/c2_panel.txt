@@ -1277,6 +1277,11 @@ http://78.17.41.10
 78.17.41.10:8443
 gr0ssvpn.fun
 
+# Reference: https://x.com/Fact_Finder03/status/2055860085273035195
+
+http://45.86.86.8
+8d088cbf74a10f72.blahaj.cam
+
 # Generic
 
 /admin_123/auth.php
