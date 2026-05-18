@@ -17340,6 +17340,7 @@ wordpress-socket.com
 wordpress-ws.com
 wordpressws.com
 wp-socket.com
+wpswss.com
 wpws.org
 wpwsconnect.com
 wr9z4pzimryq38ee.socketws.com
