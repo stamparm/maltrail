@@ -1578,3 +1578,15 @@ qwerty.badrulmunir.com
 recaptcha.boit.cloud
 vararemod.com
 y6.nacostpi.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/144.31.236.66/relations
+
+alprimedoors.com
+download-file.today
+static-file.digital
+staticcloudflare.pro
+updatefile-cf.digital
+updatefile-cf.top
+updatefilescf.digital
+updatefilescf.top
+updatesecurity.pro
