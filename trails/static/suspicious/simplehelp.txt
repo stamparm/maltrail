@@ -2073,3 +2073,10 @@ online.healthcare-shore.com
 # Reference: https://www.virustotal.com/gui/file/442663b95111367fba650401c6da93f2fbbc78565c1f0f666346ede5f893c050/detection
 
 aaa-amc.top
+
+# Reference: https://x.com/skocherhan/status/2056107616980316580
+# Reference: https://www.virustotal.com/gui/file/3e02ba06ca0ea0191a8fc04f6fff2451459603491200901d15acbce6808ace8d/detection
+
+83.136.211.149:443
+83.136.211.149:5177
+xena.xubi.org
