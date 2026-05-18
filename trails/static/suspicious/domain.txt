@@ -5625,3 +5625,8 @@ hl.cn
 # Reference: https://www.virustotal.com/gui/domain/lhr.life/relations
 
 lhr.life
+
+# Reference: https://x.com/skocherhan/status/2056107616980316580
+# Reference: https://www.virustotal.com/gui/file/3e02ba06ca0ea0191a8fc04f6fff2451459603491200901d15acbce6808ace8d/detection
+
+xubi.org
