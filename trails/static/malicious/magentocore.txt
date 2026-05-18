@@ -16614,11 +16614,13 @@ cdn-typekit.com
 i.cdn-typekit.com
 
 # Reference: https://www.silentpush.com/blog/magecart/
+# Reference: https://www.virustotal.com/gui/ip-address/37.120.151.100/relations
 # ETAG-HOST=W/"67bd5f3d-264"
 
 cdn-cookie.com
 cdn-gstatic.com
 detail-best.com
+doubleciick.net
 fbpx.xyz
 gstatic-cdn.com
 hacptcha.com
