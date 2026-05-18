@@ -16619,6 +16619,8 @@ i.cdn-typekit.com
 cdn-cookie.com
 cdn-gstatic.com
 detail-best.com
+fbpx.xyz
+gstatic-cdn.com
 hacptcha.com
 ipifly.com
 newasest.com
