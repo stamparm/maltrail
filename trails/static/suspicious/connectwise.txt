@@ -5047,3 +5047,10 @@ yourrwelcomese.de
 yrxfendsnys.de
 zhamiee4view.de
 zoomxupdatez.de
+
+# Reference: https://x.com/smica83/status/2056462500871246165
+# Reference: https://www.virustotal.com/gui/file/29d4a55234815d466892052847d58e9d7eb9edc6bfc5c197bd978da2c1605be9/detection
+
+207.189.30.8:8041
+eyesonly.top
+relay.eyesonly.top
