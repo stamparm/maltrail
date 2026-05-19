@@ -1604,3 +1604,14 @@ zale.wtf
 # Reference: https://www.virustotal.com/gui/file/79d855390e81c87f8579162d016b58b97d91253ea2e872aa3607ec87cf299dc3/detection
 
 http://158.247.193.100
+
+# Reference: https://x.com/L0Psec/status/2056475986095436087
+# Reference: https://www.virustotal.com/gui/file/fba131f8e7ae3dcae98ed499d2bc09a40b4ebfab43695579d2e339771558c4c1/detection
+# Reference: https://www.virustotal.com/gui/file/ea084d070188838a107a8c52bbef0b04eb78aec4f6b26719c993f50206bf958b/detection
+# Reference: https://www.virustotal.com/gui/file/afe15045abdbd4a64f7d865e39d4ee0d3e9deb4d68261652a3aeb74529fc7f08/detection
+# Reference: https://www.virustotal.com/gui/file/782b65f1c8c9e670f4b837481bcb2218be4a847633beb9129174a7912ff7b59b/detection
+
+43.133.164.200:443
+43.133.164.200:4444
+43.133.164.200:8083
+43.133.164.200:8443
