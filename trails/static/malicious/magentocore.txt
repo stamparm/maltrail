@@ -16615,20 +16615,56 @@ i.cdn-typekit.com
 
 # Reference: https://www.silentpush.com/blog/magecart/
 # Reference: https://www.virustotal.com/gui/ip-address/37.120.151.100/relations
+# BANNER_0_HASH-HOST=ff02211d9fdbbfca111971149b440060
 # ETAG-HOST=W/"67bd5f3d-264"
+# HEADER_HASH-HOST=e5e17f5ccbbdb2cafc2c
 
+affirman.com
+arvelito.com
+blogtitop.com
 cdn-cookie.com
+cdn-flare.com
 cdn-gstatic.com
+cdnflarex.com
+cytrixor.com
 detail-best.com
+dislen.com
 doubleciick.net
+fancourier.cyou
+fancourier.vip
 fbpx.xyz
+fimasi.com
+flytexis.com
+greedysuns.com
 gstatic-cdn.com
 hacptcha.com
+heatmapsapi.com
+infostat.info
 ipifly.com
+jivo-code.com
+lasorie.com
+linistat.info
+livestats.info
+metrix-cdn.com
 newasest.com
 omappepi.com
-lasorie.com
+rnogento.com
+rovaxilo.com
+sgravatar.org
+sitvex.com
+softogo.net
+splnt.com
+sprifix.com
+staging-femi9.com
+sunsdesk.com
+trasysit.com
+tristplse.com
+ultradevforge.com
 verametrix.com
+vermexis.com
+xanryl.com
+4b.fancourier.vip
+7g.fancourier.cyou
 ftp.cdn-cookie.com
 ftp.cdn-gstatic.com
 ftp.detail-best.com
