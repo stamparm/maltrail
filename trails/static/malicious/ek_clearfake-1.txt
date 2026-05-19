@@ -1590,3 +1590,16 @@ updatefile-cf.top
 updatefilescf.digital
 updatefilescf.top
 updatesecurity.pro
+
+# Reference: https://x.com/masaomi346/status/2055141053787947456
+# Reference: https://urlscan.io/result/019e29d8-6e6e-728f-8682-fc419b36ce35/
+
+ghosttracebuildhaze.monster
+4ge0.ghosttracebuildhaze.monster
+76.ghosttracebuildhaze.monster
+dl1u.ghosttracebuildhaze.monster
+k3z8.ghosttracebuildhaze.monster
+ndp5.ghosttracebuildhaze.monster
+p2gc.ghosttracebuildhaze.monster
+swfd.ghosttracebuildhaze.monster
+vhhg.ghosttracebuildhaze.monster
