@@ -1641,6 +1641,7 @@ api.waytaplivepad.monster
 api.wikiyoquitrirealapp.cloud
 businessjumpkey.monster
 clickpunch.icu
+clicksavelaunch.click
 clicktrust.icu
 codeflowstackhub.click
 codeflowstackhub.monster
