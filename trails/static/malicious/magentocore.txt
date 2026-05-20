@@ -12540,28 +12540,35 @@ pixelforgts.com
 techglitc.com
 
 # Reference: https://x.com/sdcyberresearch/status/1817910238520959453
+# BODY_SHA1-HOST=ad1d1c5b757b190e173ee07cfa62544005a47f1a
 
 abbiecrm.com
 adsprep.online
+b2banalytics.org
 b2blinkstorage.com
 b2bsolution24.com
 cartflowcrm.com
 cartfreedom.com
 cartualcrm.com
+certanalytics.com
 clarkcrm.com
 click-analytics.net
+commerce-flow.net
 corkscrm.com
 crmbargs.com
 crmcom.org
 crmcrown.com
 crmdaps.com
 crmfant.site
+crmflow24.com
+crmflow365.com
 crmgibs.com
 crmkrafft.com
 crmprew.com
 crmprove.com
 crmrebss.com
 datasconn.com
+ecomm365.net
 fastbcrm.com
 octalcrm.com
 quickcartcloud.com
@@ -13242,9 +13249,13 @@ rextension.net
 app.rextension.net
 
 # Reference: https://x.com/sdcyberresearch/status/1835661136877715670
+# BANNER_0_HASH-HOST=942cf6744fad62ca44f5cb0b34ce6114
 
 ads-analysis.net
+fastcdnjs.net
 jsdelive.com
+arendje.jsdelive.com
+shop.jsdelive.com
 sw.jsdelive.com
 
 # Reference: https://www.virustotal.com/gui/ip-address/45.88.3.11/relations
@@ -17447,6 +17458,8 @@ zx.socket-ws.com
 zx.ws-socket.com
 zxf9y8ths8b2dqng.socketws.com
 zyxlhad17y45za6f.socketws.com
+
+# Reference: https://x.com/sdcyberresearch/status/2056323429779886349
 
 # Generic
 
