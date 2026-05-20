@@ -13254,6 +13254,7 @@ app.rextension.net
 ads-analysis.net
 fastcdnjs.net
 jsdelive.com
+11.fastcdnjs.net
 arendje.jsdelive.com
 shop.jsdelive.com
 sw.jsdelive.com
@@ -17460,6 +17461,9 @@ zxf9y8ths8b2dqng.socketws.com
 zyxlhad17y45za6f.socketws.com
 
 # Reference: https://x.com/sdcyberresearch/status/2056323429779886349
+
+jartrack.com
+xr.jartrack.com
 
 # Generic
 
