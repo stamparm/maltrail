@@ -5651,3 +5651,8 @@ http://137.184.76.171
 
 80.211.196.157:7443
 healthy.zubhium.com
+
+# Reference: https://x.com/malwrhunterteam/status/2057044039728324798
+# Reference: https://www.virustotal.com/gui/file/daced91764437bd79a5e4fb1ce568f4657b78fc11fb20e22d19c22f4eb7095bf/detection
+
+teenvogue.icu
