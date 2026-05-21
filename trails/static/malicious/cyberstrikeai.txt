@@ -273,4 +273,5 @@ mangoworks.win
 maolou.cn
 scan.bossjyt.us.ci
 tool.maolou.cn
+tradehug.com
 xss.bossjyt.us.ci
