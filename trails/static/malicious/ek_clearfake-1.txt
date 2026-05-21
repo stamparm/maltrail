@@ -1676,11 +1676,13 @@ p2gc.ghosttracebuildhaze.monster
 primetool.icu
 purelogicstackbox.monster
 q.instamixsnapbridgeapp.com
+quickloadbinpack.monster
 quietrustunknownbin.click
 quietrustunknownbin.monster
 retrievepatchgo.monster
 rkf7.quietrustunknownbin.click
 silentkeyunseenstack.monster
+silentmirrorcodefog.monster
 smartcoretestbench.click
 softifybitmixfile.monster
 swfd.ghosttracebuildhaze.monster
