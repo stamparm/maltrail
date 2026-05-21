@@ -1700,3 +1700,10 @@ xt.deepshadesoftfog.monster
 yq.datazoomaltblerzooyo.com
 z1.eamiatambeefileupload.com
 zoomloungepodbytefile.monster
+
+# Reference: https://blog.xlab.qianxin.com/ghost-cms-mass-compromised-via-cve-2026-26980-now-fueling-clickfix-attacks/
+
+clo4shara.xyz
+cloud-verification.com
+com-apps.cc
+jalwat.com
