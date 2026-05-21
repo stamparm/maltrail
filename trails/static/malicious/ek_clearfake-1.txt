@@ -1703,14 +1703,19 @@ zoomloungepodbytefile.monster
 
 # Reference: https://blog.xlab.qianxin.com/ghost-cms-mass-compromised-via-cve-2026-26980-now-fueling-clickfix-attacks/
 # BODY_SHA1-HOST=c453cddd1395ee5ddcda656dc86fe86470fa269b
+# TITLE-HOST=Secure Check
 
+http://193.233.91.88
 777-casino.top
 afd-esign.info
+aktradings.site
 armadalogistics.info
 bbi-esign.com
 blnance.xyz
 capitalbridgelogistics.us
 carrierbrokeragreement.us
+carrierbrokeragreements.us
+chiroweb.online
 clo4shara.xyz
 clodf-cap.com
 cloud-verification.com
@@ -1721,18 +1726,23 @@ degoriro-platform.com
 dhs-gov.info
 dlsnat.com
 dlsnat.net
+drovoseko-json.ru
 dvbs-vlkeerz-online.com
 efssecurityllc.us
 esign-prestigelogistics.com
 expectedgroup.us
+financialaiinsight.info
 flrstrade.org
 guest-request656234567.com
 highway-setup.info
 iberkantive-borkers.com
+ipcloakxyz.xyz
 iphonetop.top
 jalwat.com
 landstar-esign.info
 liobec.net
+mail.secureprofilecheck.co.za
+microsoftlogin-com.reismedrecss.workers.dev
 ndamirlanparhanov.shop
 next-360.org
 online-investrebcvesting.com
@@ -1742,18 +1752,27 @@ onlinemarketmugs.com
 pdffilesignup.com
 pdffilesignup.pro
 peomesand.com
+platecrumbs.com
 platform-ceneteraldisahtch.com
 platform-disatchsluper.com
 platform-rebonfood.com
 platformq-login.com
 platfrom-strettcape.com
 pornehubs.com
+pornohub.cyou
 pornohub.xin
 publlc.org
+pw.cloud-verification.com
 rbcbk.online
+reismedrecss.workers.dev
 rewardme.icu
+s0.jalwat.com
 samtrade-secure-document.com
+securecheck.info
+secureprofilecheck.co.za
+secureprofilecheck.co.za.ultrainvestment.co.za
 site-ilgg.com
+stats.cloud-verification.com
 stubhubme.com
 thangllong.com
 thanglong.online
@@ -1764,8 +1783,9 @@ unca.cc
 uncaxss.online
 wealthslmple.net
 welathplatform-login.com
+wg.cypress.work
 www-centraldispatch.com
+www-noname.dev
 www-ticketmaster.com
 yourstubhub.com
-pw.cloud-verification.com
-stats.cloud-verification.com
+ytpremium.club
