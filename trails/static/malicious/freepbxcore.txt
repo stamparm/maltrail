@@ -1,0 +1,16 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Aliases: cve-2025-57819, cve-2025-64328, encystphp, inj3ctor3s, jomangy, jomangyrunner
+
+# Reference: https://www.fortinet.com/blog/threat-research/unveiling-the-weaponized-web-shell-encystphp
+# Reference: https://cyble.com/blog/jomangy-inj3ctor3s-self-healing-freepbx-toll-fraud-campaign/
+# Reference: https://isc.sans.edu/diary/32892
+# Reference: https://www.virustotal.com/gui/file/71d94479d58c32d5618ca1e2329d8fa62f930e0612eb108ba3298441c6ba0302/detection
+
+http://187.108.1.130
+http://45.234.176.202
+http://45.95.147.178
+187.108.1.130:22
+razatelefonia.pro
+crm.razatelefonia.pro
