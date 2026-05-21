@@ -1639,6 +1639,7 @@ api.trustpull.icu
 api.unleashapp.icu
 api.waytaplivepad.monster
 api.wikiyoquitrirealapp.cloud
+b8.opaqueshellsoftsmoke.monster
 businessjumpkey.monster
 clickpunch.icu
 clicksavelaunch.click
@@ -1667,6 +1668,7 @@ ndp5.ghosttracebuildhaze.monster
 nodeziplinkgo.click
 nodeziplinkgo.monster
 obtainrunkeep.click
+opaqueshellsoftsmoke.monster
 p2gc.ghosttracebuildhaze.monster
 primetool.icu
 purelogicstackbox.monster
