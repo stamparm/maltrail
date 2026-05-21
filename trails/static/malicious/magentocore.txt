@@ -17424,8 +17424,10 @@ wpws.org
 wpwsconnect.com
 wr9z4pzimryq38ee.socketws.com
 ws-request.com
+ws-request.org
 ws-socket.com
 ws-sucuri.com
+wsconnectwp.com
 wsrequest.com
 wss-analytics.com
 wss-cdn.com
