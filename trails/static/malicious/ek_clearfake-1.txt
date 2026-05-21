@@ -1647,6 +1647,7 @@ clicktrust.icu
 codeflowstackhub.click
 codeflowstackhub.monster
 datacoremeshkit.monster
+deepshadesoftfog.monster
 devnetsyncpro.click
 devnetsyncpro.monster
 devtagsoftzabatri.cloud
@@ -1659,11 +1660,13 @@ freshdrop.icu
 ghosttracebuildhaze.monster
 gigaversecentiliumai.cloud
 grabtrust.icu
+hiddenloopshadowcode.monster
 k3z8.ghosttracebuildhaze.monster
 l.instawaregoodtagsfree.com
 livekeypagespace.monster
 loadcrate.icu
 mn.zonelivepage.monster
+mutelogiccipherrain.monster
 ndp5.ghosttracebuildhaze.monster
 nodeziplinkgo.click
 nodeziplinkgo.monster
@@ -1674,8 +1677,10 @@ primetool.icu
 purelogicstackbox.monster
 q.instamixsnapbridgeapp.com
 quietrustunknownbin.click
+quietrustunknownbin.monster
 retrievepatchgo.monster
 rkf7.quietrustunknownbin.click
+silentkeyunseenstack.monster
 smartcoretestbench.click
 softifybitmixfile.monster
 swfd.ghosttracebuildhaze.monster
@@ -1685,6 +1690,7 @@ vc.ratingyammjambo.monster
 veilproxydarkbloom.monster
 vhhg.ghosttracebuildhaze.monster
 wayfeedfivelyticfile.monster
+whispercorenotrace.monster
 xd.rhyvuvooziolinktype.com
 xj.datavineinnocastsave.com
 xs.digitalwarechatworks.com
