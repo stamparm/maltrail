@@ -9680,6 +9680,13 @@ drvdb9rcebidk.cloudfront.net
 /fhgeoyhh.py
 /ifccclbc.py
 
+# Reference: https://x.com/smica83/status/2057410338656514556
+# Reference: https://www.virustotal.com/gui/file/1667fc6f28dc820c19c37fb2afe7258be6ff4628249c26ce18b09fd4af5840cc/detection
+
+/l3kt0p17/accessiblefiling.ps1
+/accessiblefiling.ps1
+/l3kt0p17/
+
 # Generic
 
 /5c0ca79.php
