@@ -2523,3 +2523,16 @@ www-noname.dev
 www-ticketmaster.com
 yourstubhub.com
 ytpremium.club
+
+# Reference: https://app.validin.com/detail?find=%2Fvalidate-nohuman.php%3Fredirect%3D%2F&type=raw#tab=host_pairs (# 2026-06-22)
+
+cilent-biz01d-gu0vc0cu.help
+insurance-fbi-portal.com
+netjoygames.com
+smsmeblue.xyz
+onlinetermspayde.com
+portal-bzst-de.com
+ptsb-checks.com
+tsfmoney.net
+portalbzst.com
+amberwisp.com
