@@ -7,7 +7,10 @@
 # Reference: https://cyble.com/blog/jomangy-inj3ctor3s-self-healing-freepbx-toll-fraud-campaign/
 # Reference: https://isc.sans.edu/diary/32892
 # Reference: https://www.virustotal.com/gui/file/71d94479d58c32d5618ca1e2329d8fa62f930e0612eb108ba3298441c6ba0302/detection
+# Reference: https://www.virustotal.com/gui/file/0be0db20716d40b923948b49ba52a4c7f0e60457e7cf220bd1285b9777da330b/detection
+# BANNER_0_HASH-IP=2885d187a129b72fecca8aa33291990e
 
+http://160.119.69.4
 http://187.108.1.130
 http://45.234.176.202
 http://45.95.147.178
