@@ -130,6 +130,7 @@ active-instance-registry-support-index.wiki
 additionsmonokurlibertine.courses
 adi8hesplayer.pics
 adulter-bassist.courses
+advanced-infrastructure.study
 advanced-it-infrastructure.courses
 after-diacritic.digital
 aghw.pixelnode.lat
@@ -265,6 +266,7 @@ bloom7-hinge.setqueueat.lat
 bloomdistributioncenter.garden
 bloommanagementengine.garden
 bloommonitoringengine.garden
+bloomworkflowengine.garden
 bnurpjjy.meadowprocessingframework.garden
 boblegvlist.christmas
 bonsai-shaping-method.garden
