@@ -5054,3 +5054,8 @@ zoomxupdatez.de
 207.189.30.8:8041
 eyesonly.top
 relay.eyesonly.top
+
+# Reference: https://x.com/aaqeel87/status/2057834771841982489
+
+147.124.195.83:443
+settupro.top
