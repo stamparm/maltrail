@@ -6,8 +6,29 @@
 
 # Reference: https://www.virustotal.com/gui/ip-address/178.16.52.101/relations
 
-nfsclaudecdn.beer
-ssjscrybootstrup.beer
+anlytic-js-cloud.beer
+bcncdncl-ns.beer
+bkscndclou.beer
+bootstrup-cdnmaper.beer
+chekbrow.beer
+darndcs-js.beer
+ldnscreatejs.beer
+lsikjsns.beer
+mistraljs.beer
+ns1cdnclaude.beer
+nsserv-bootstru.beer
+sane-cdn-js.beer
+slndcdnclaud.beer
+slngftr.beer
+smetana-js.beer
+smtnscerver.beer
+sns-clauder-cdn.beer
+sr-hostes-js.beer
+ssns-cdn-ns.beer
+testerlau.lat
+travel-js-ns.beer
+viscdnclaud.beer
+visual-ns-portal.beer
 
 # Reference: https://x.com/Merlax_/status/1960048599678493033
 # Reference: https://app.validin.com/detail?find=e2dc601220652f6a14d65047731d419d&type=hash&ref_id=a5ecbe5429f#tab=host_pairs (# 2025-08-25)
@@ -129,6 +150,7 @@ active-011d-uf00cu0cu.help
 active-instance-registry-support-index.wiki
 additionsmonokurlibertine.courses
 adi8hesplayer.pics
+adtraffic.monster
 adulter-bassist.courses
 advanced-infrastructure.study
 advanced-it-infrastructure.courses
@@ -325,6 +347,7 @@ c2rdcpuv.runtime-sphere.digital
 c533d8a0-2c69-47ed-b173-0234c17c3989.codepit-rized-denengine.garden
 c5ylbfsw.packet-vector.digital
 c6e051x9.khudrukrantingmanic.digital
+cache-orbit.christmas
 cache.flushgot.pics
 cafe-club-oracle-card.wiki
 call.openapiservicehub.pics
@@ -345,6 +368,7 @@ champag-mannered.digital
 channe-grid.wetshardauth.lat
 chequecholeric.digital
 cherish-cultscreencard.wiki
+chickencutlet-hacks.christmas
 chickencutlethacks.fit
 chip.intelcar.pics
 chronicle-archive-keeper.garden
@@ -359,6 +383,7 @@ clamshellkarakulchaalumina.digital
 cleanlay-fet-telemetry-vault.garden
 cleverstreamvastamber.sbs
 cloud-atlas.digital
+cloud-compass.digital
 cloud-forge.digital
 cloud-infrastructure-management-platform.wiki
 cloud-infrastructure.garden
@@ -599,6 +624,7 @@ domregutil.systemcoreunit.pics
 donutinsulinphilosophy.courses
 down-playing-folder-seven-ue.courses
 downplaying-sevenleague.digital
+dudadelira.monster
 dynamicregi.great-insue.pics
 dynmark0on.kernelgrid.ink
 dynmarkal.codeflux.lat
@@ -645,6 +671,7 @@ evergreentimberland.garden
 exhaustoverwint.digital
 exotic-flora-cultivation.garden
 expert-trading-academy.courses
+exportearth.monster
 extnet.openapiservicedata.pics
 extnetprox.datalinkservice.pics
 extnetprox.devharbor.pics
@@ -726,6 +753,7 @@ folder-management-core.garden
 forcrash-classnet.christmas
 forefern.pixelnode.lat
 forgotten-civilization-myth.garden
+formkey.asia
 framevector.ink
 frcdk4gw.deepseahydrothermalvent.digital
 frost-marketplace.christmas
@@ -817,6 +845,7 @@ greenhouseworkflowcenter.garden
 greenhouseworkflowengine.garden
 greenhouseworkflowhub.garden
 greyhounds1uidor.digital
+grovalstandard.monster
 growthdistributionengine.garden
 gxyuad.userssawtone.lat
 h04c.kernelwave.lat
@@ -835,6 +864,7 @@ herbal-extract-processing.garden
 hidden-valoryx.digital
 hold-holdskopetztakenaback.courses
 holistic-detective-agency.garden
+holisticdetective.christmas
 holographic-projection-grid.garden
 holographicprojectiongrid.digital
 honestshape.wetshardauth.lat
@@ -946,6 +976,7 @@ jobadm.framevector.ink
 jobadm.pixelmesh.pics
 jobadmmgrs.datalinkcenter.pics
 jobadmmgrs.webstackengine.pics
+jogosdecarrobr.monster
 jomn9u8k.cyber-relay.digital
 joy-distribution.christmas
 jpfwdwpz.champag-mannered.digital
@@ -965,10 +996,13 @@ kadush-sideburnsushan.courses
 kaiarjsn.meadowprocessingframework.garden
 kakhetiniansking-murder.courses
 kampoxks.bloommanagementengine.garden
+karenheil.monster
 kelven7or.mongofixcore.lat
 kernel-control-engine.christmas
+kernel-frontier.digital
 kernel-lattice.digital
 kernel-patch-update-release-history.wiki
+kernel-vector.digital
 kernel-vertex.buzz
 kernel-vertex.digital
 kernelgrid.ink
@@ -984,10 +1018,12 @@ klhadsd.adi8hesplayer.pics
 knowledgpin.courses
 krc5t7kn.ripples-shark.digital
 krkgfgdt.runtime-atlas.digital
+kyjpwnw.monster
 kzwvrleb.irrigation-monitoring-system.garden
 l6lv36qw.estradaannivers.digital
 l7jn1e9j.unseen-zorenka.digital
 l9ba13f6.sniffingviableoffice.digital
+labdjang.asia
 labshift-winmail-get.christmas
 landscapesculpting.garden
 lanhoppath.infrapointbase.pics
@@ -1034,6 +1070,7 @@ logic-buffer-skills.courses
 logic-pulse.digital
 logic-sphere.digital
 logic-vault.digital
+logic-vertex.digital
 logic.systemlogicops.pics
 logicbufferskills.christmas
 logicbufferskills.study
@@ -1211,6 +1248,7 @@ node-matrix.digital
 node-pulse.digital
 node.fielddie.pics
 node.globalnodeviewset.pics
+nodefabric.christmas
 nodesystemcore.pics
 northglyp.devmatrix.lat
 not1fie-mesh.mixzipcore64.lat
@@ -1324,6 +1362,7 @@ petalresourcehub.garden
 petalresourceplatform.garden
 petalworkflowengine.garden
 phase-shift-bridge-driver.garden
+phase-shiftbridge.christmas
 pi.open-system-infra-logic-base.wiki
 pigtweet-kitdiff-it.christmas
 pipelin6-crest.qu2ntitative-tenero.pics
@@ -1362,6 +1401,7 @@ proxy-horizon.digital
 proxy-hub.christmas
 proxy-lattice.digital
 proxy-matrix-kernel-on.courses
+proxy-nexus.digital
 proxy-stream.christmas
 proxy.cloudproxyserv.pics
 proxymesh.christmas
@@ -1432,6 +1472,7 @@ remake-tractorbuilding.courses
 remote-sensor-proxy-tunnel-config.wiki
 renaissance-fresco-restoration.garden
 renaissancefrescorestoration.digital
+reposboy.asia
 repository-processing-core.christmas
 reset-tlshop-pror-uha.courses
 rest.openapiservicehub.pics
@@ -1456,6 +1497,8 @@ runtime-control.christmas
 runtime-core-fabric-get.garden
 runtime-fed-rated-cluster-lab.courses
 runtime-forge.digital
+runtime-matrix.digital
+runtime-meridian.digital
 runtime-nexus.buzz
 runtime-nexus.digital
 runtime-observability-core.courses
@@ -1541,6 +1584,7 @@ sol-tideen.kernelgrid.ink
 solnex3et.cybernode.ink
 solspireex3.queuedimsys.lat
 space-debris-trajectory.garden
+spamgym.asia
 sqkilyae.meadowprocessingframework.garden
 srcgetproc.datalinkservice.pics
 srcgetproc.devharbor.pics
@@ -1630,6 +1674,7 @@ syslink.cloudflowops.co
 syslinkmanager.fit
 system-analytics-pro-guide.courses
 system-core-set.co
+system-orbit.digital
 system-stack-node-data-reference.wiki
 systemcorelinkx.pics
 systemcoreunit.pics
@@ -1770,6 +1815,7 @@ virtual-gate-way.garden
 virtual-gateway-node.wiki
 virtual-mash-control-plane.courses
 virtual-packet-gateway.wiki
+virtual-packet-grid.christmas
 virtual-pipeline-ten-it.courses
 virtual-routing-gateway.wiki
 virtual-session-broker.wiki
@@ -1888,6 +1934,7 @@ xs7xp7j0.unseen-zorenka.digital
 xty75g4b.encryption5hadow.digital
 xyv1jupy.container-vector.digital
 ybhyrjaj.asynchronouswateringmesh.garden
+yinava.monster
 yjs4ih2y.telemetry-vault.digital
 ymv70dbd.monotheism-sled.digital
 ysuz4thn.bellow-norushka-pianissimo.digital
