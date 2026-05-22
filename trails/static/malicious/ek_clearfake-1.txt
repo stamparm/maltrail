@@ -149,6 +149,7 @@ analytical-traffic-audit-record-file.wiki
 anchorfreigh.setqueueat.lat
 ancient-colosseum-engineering.garden
 ancient-parchment-archive.garden
+ancientparchmentarchive.christmas
 ancientparchmentarchive.study
 ancientshadow.kernelwave.lat
 angelpatter.wiki
@@ -233,6 +234,7 @@ beacontweezersbinge.wiki
 beartrend.logicstack.ink
 beat-however.courses
 bedzvnbo.ecosystemresourceplatform.garden
+begvideo-ridwiki-init.christmas
 bel1tower.digital
 bellow-norushka-pianissimo.digital
 bibliosmirk.digital
@@ -305,6 +307,7 @@ bushrosvalni.courses
 byte-forge.digital
 byte-horizon-get-hash.courses
 byte-lattice.digital
+byte-network-hub.christmas
 byte-stream-encryption-standard-base.wiki
 byte-vault.christmas
 byteforge.surf
@@ -340,6 +343,8 @@ chickencutlethacks.fit
 chip.intelcar.pics
 chronicle-archive-keeper.garden
 chronicle5-diachiha.digital
+chroniclearchivekeeper.christmas
+chroniclearchivekeeper.study
 cilent-01d-gu0vc0cu.help
 civicvehicl.scriptmesh.ink
 cjjt9vzq.icewounded.digital
@@ -368,6 +373,7 @@ cloudorchestrationhub.courses
 cloudprocmgr.pics
 cloudproxyserv.digital
 cloudproxyserv.pics
+cloudruntime.christmas
 cloudruntime.courses
 cloudstack.pics
 cloudstacklogic.pics
@@ -409,6 +415,7 @@ contactdisrupwhite.wiki
 contain-ondo-zed-work-flow.courses
 container-beacon.digital
 container-folder-gized-greenhub.garden
+container-mesh.christmas
 container-vector.digital
 containerfabric.wiki
 containerized-growth-engine.garden
@@ -467,6 +474,7 @@ cryptowave.ink
 culling-posture-on-folder.courses
 culling-posture-schnitzel.digital
 curio-garde.logicbyte.lat
+cyber-defensepro.christmas
 cyber-defensepro.study
 cyber-harbor.digital
 cyber-lattice.digital
@@ -664,6 +672,7 @@ federatedplantsystem.garden
 federatedstoragelab.courses
 federatedsyncframework.courses
 femalesauerkraut.courses
+fewicevalue.christmas
 fgbojhem.meadowprocessingframework.garden
 fielddie.pics
 fikvjna5.telemetry-orbit.digital
@@ -732,6 +741,7 @@ gardenworkflowcenter.garden
 gardenworkflowengine.garden
 gardenworkflowhub.garden
 gardenworkflowplatform.garden
+gatereefred.sbs
 gentletide.setqueueat.lat
 geo-illurne.cloudvector.ink
 geostationary-orbit-altitude.garden
@@ -930,6 +940,7 @@ jobadm.pixelmesh.pics
 jobadmmgrs.datalinkcenter.pics
 jobadmmgrs.webstackengine.pics
 jomn9u8k.cyber-relay.digital
+joy-distribution.christmas
 jpfwdwpz.champag-mannered.digital
 jq7mk5ac.logic-pulse.digital
 jqxpmmgb.meadow-observability-core.garden
@@ -948,6 +959,7 @@ kaiarjsn.meadowprocessingframework.garden
 kakhetiniansking-murder.courses
 kampoxks.bloommanagementengine.garden
 kelven7or.mongofixcore.lat
+kernel-control-engine.christmas
 kernel-lattice.digital
 kernel-patch-update-release-history.wiki
 kernel-vertex.digital
@@ -975,6 +987,7 @@ lanhoppath.openapiservicex.pics
 lanhoppathsys.infrasettopview.pics
 laptoplink.wiki
 lasagna-baking-secrets.garden
+lasagna-bakingpro.christmas
 lasagnabakingsecrets.study
 layer-get-win-tron.wiki
 layer-obs-usget-tron.wiki
@@ -992,6 +1005,7 @@ light-copying5ingle.digital
 limous-nitout.digital
 linger-tricking-interrogation-turkology.courses
 linguistic-puzzle-solver.garden
+linguisticpuzzlesolver.christmas
 linguisticpuzzlesolver.study
 link.cloudproxyserv.pics
 link.fastlinkprovider.pics
@@ -1013,6 +1027,8 @@ logic-pulse.digital
 logic-sphere.digital
 logic-vault.digital
 logic.systemlogicops.pics
+logicbufferskills.christmas
+logicbufferskills.study
 logicbyte.lat
 logicframe.pics
 logicstack.ink
@@ -1146,6 +1162,7 @@ n9gkcwto.byte-forge.digital
 nablivechathelp.com
 narr-isl.bytegrid.lat
 natureoasisdesign.garden
+neon-cyberpunk.christmas
 neoncyberpunkcity.garden
 neoncyberpunkcity.study
 net-ops-flow-master.co
@@ -1224,6 +1241,7 @@ optirni-cast.scriptmesh.ink
 optwebnode.infraworkspace.pics
 optwebnode.softnetworkset.pics
 orbital-docking-module.garden
+orbital-mechanics.christmas
 orbital-velocity.fit
 orbitaldockingmodule.digital
 orbitalmechanicsguide.study
@@ -1235,6 +1253,7 @@ osbasesyst.cloudstackproc.pics
 osbasesyst.nodesystemcore.pics
 out.flushgot.pics
 outbabel.surf
+overbookdelightedthong.study
 overviewgermicide.surf
 ownsubittickt.live
 ox18mx54.hor1inka-lonely.digital
@@ -1244,7 +1263,9 @@ oyrmhd1i.vexa2-flow.life
 p0ssosc3.crispychickencutlets.digital
 p4l3fctz.bitter-salty.digital
 p9015zuh.unp2idvalk.digital
+packet-cascade.buzz
 packet-cascade.digital
+packet-distribution-core.christmas
 packet-horizon.digital
 packet-lattice.digital
 packet-relay-engine.courses
@@ -1254,6 +1275,7 @@ packet-routing-lab.courses
 packet-vector.digital
 packetdistributionmesh.wiki
 packetlattice.courses
+packetmesh.christmas
 packetmeshrelay.wiki
 packetrelay.wiki
 pal3t0-gate.stormgrid-media.life
@@ -1297,6 +1319,7 @@ pi.open-system-infra-logic-base.wiki
 pigtweet-kitdiff-it.christmas
 pipelin6-crest.qu2ntitative-tenero.pics
 pipelinegrim.cyberframe.lat
+pixelart-canvas.christmas
 pixelartcanvas.garden
 pixelartcanvas.study
 pixelmesh.pics
@@ -1330,7 +1353,9 @@ proxy-horizon.digital
 proxy-hub.christmas
 proxy-lattice.digital
 proxy-matrix-kernel-on.courses
+proxy-stream.christmas
 proxy.cloudproxyserv.pics
+proxymesh.christmas
 proxys.infrasettopview.pics
 proxyservmgr.netlogicstack.co
 proxysserv.infrapointbase.pics
@@ -1358,6 +1383,7 @@ quailpacifist.digital
 quantum-entanglement-crypt.garden
 quantum-forge-nat.courses
 quantumhorizon.digital
+quantumvelocitylabs.christmas
 quantumvelocitylabs.garden
 quantumvelocitylabs.study
 quart-rantman.wiki
@@ -1424,6 +1450,7 @@ runtime-nexus.buzz
 runtime-nexus.digital
 runtime-observability-core.courses
 runtime-observability-hub.courses
+runtime-processing-node.christmas
 runtime-sphere.digital
 runtimecontrol.wiki
 runtimeexecutionlayer.wiki
@@ -1476,6 +1503,7 @@ signal-forge.digital
 signal-harbor.digital
 signal-late-it-folder.courses
 signal-processing-core.christmas
+signal-routing-framework.christmas
 signal-vault.digital
 silent-kaventra.digital
 silent-monolith-theory.garden
@@ -1489,6 +1517,7 @@ skyvpnnodehub.systemforge.ink
 slashbob-distrib-plat-form.garden
 smare-decidewater-loving.courses
 smart-green-growth-system.garden
+smartworkflowmanagement.christmas
 smartworkflowmanagement.courses
 smtp.mailban.pics
 smuggler-beluga-notion.courses
@@ -1530,6 +1559,7 @@ sslkeybase.webcfgmanager.pics
 sslkeybasepoint.cloudstack.pics
 sslkeybasepoint.cloudstacklogic.pics
 sslkeybasepoint.cryptowave.ink
+stack-control-plane.christmas
 stack-core-node-date-hash.wiki
 stack-flow.christmas
 stack-forge.digital
@@ -1547,6 +1577,7 @@ steampunkaeronautics.garden
 steel-evar-yes-valence.digital
 steel-glok-yes-valence.courses
 stormgrid-media.life
+strangeworld.me
 stratographic-core-drill.garden
 stratospheric-weather-balloon.garden
 stratosphericweatherballoon.digital
@@ -1566,6 +1597,7 @@ submerged-continental-shelf.garden
 suboceanic-trench-sonar.garden
 subterranean-bunker-outpost.garden
 subterranean-mineral-map.garden
+subterranean-mineral.christmas
 subterraneanmineralmap.study
 sue-intentioned.digital
 supplyflash.wiki
@@ -1637,6 +1669,7 @@ telemetry-stream-hub.wiki
 telemetry-vault.digital
 telemetrycore.courses
 telemetrygardenmesh.garden
+telemetrymesh.christmas
 telemetrysync.courses
 tertsiyavocalsunseenfile.wiki
 test.argsleg.pics
@@ -1663,6 +1696,7 @@ topsvcutil.technodesupply.pics
 torrentlabel.devmatrix.lat
 trace-route-diagnostic-signal-map.wiki
 tracke-signal.cryptostack.lat
+trading-academyexpert.christmas
 trading-academyexpert.study
 traminve.cloudvector.ink
 tre75.cryptostack.lat
@@ -1719,6 +1753,7 @@ view.globalnodeviewset.pics
 vintage-blueprint-vault.garden
 vintage-telemetry-receiver.garden
 vintage-vinyl-restoration.garden
+vintagevinylrestoration.christmas
 virtual-compute-engine-template-doc.wiki
 virtual-gate-way.garden
 virtual-gateway-node.wiki
