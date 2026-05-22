@@ -1002,6 +1002,7 @@ kernel-control-engine.christmas
 kernel-frontier.digital
 kernel-lattice.digital
 kernel-patch-update-release-history.wiki
+kernel-vault.christmas
 kernel-vector.digital
 kernel-vertex.buzz
 kernel-vertex.digital
@@ -1125,6 +1126,7 @@ master-voivo-system-shop-slink.wiki
 masteringdigital-arch.courses
 me4stn67.network-forge.digital
 meadow-observability-core.garden
+meadow-observability-platform.garden
 meadow-processing-core.garden
 meadow-processing-engine.garden
 meadowanalyticsengine.garden
@@ -1576,6 +1578,7 @@ smtp.mailban.pics
 smuggler-beluga-notion.courses
 sniffingviableoffice.digital
 snooze-wontdrama.wiki
+snow-orbit.christmas
 snubentail.digital
 sockssit-glss-neural-atlas.garden
 softnetworkset.pics
