@@ -2418,8 +2418,10 @@ b4.dirc.us
 backend.padmi.net
 br01.brgovt.net
 c2.bluec2ops.com
+c2.cuteops.fr
 c2.desuper.ipv64.net
 c2.gaechter.dev
+c2.gr3ybox.com
 c2.gue-tech.com
 c2.gue-tech.org
 c2.hexius.net
@@ -2432,6 +2434,7 @@ c2.smeit.com
 c2.socops.net
 c2.tenguprotect.com
 c2.th4ntis.com
+c2.xcontent.red
 c2gess.bryangess.com
 cac.mitel.cz
 cc.lmb-asp.com
@@ -2449,6 +2452,7 @@ enceladus.thornton.info
 entreprise.maprimevelo.fr
 ezii.org
 followtheflan.com
+ftp.cuteops.fr
 gordon8000.online
 hack.calerobinson.com
 hilly6000.online
@@ -2471,9 +2475,11 @@ nsfhw.tech
 onspott.com
 ow.padmi.net
 pac2.duckdns.org
+pihole.cuteops.fr
 pineapplec2.infinity8labs.com
 red.linology.tech
 sandbox.pcg-tech.net
+sarudy.ovh
 shadowblade.space
 sino99xx.duckdns.org
 sitea.srv64.de
