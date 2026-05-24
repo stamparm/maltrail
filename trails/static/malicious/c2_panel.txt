@@ -1287,6 +1287,11 @@ gr0ssvpn.fun
 http://45.86.86.8
 8d088cbf74a10f72.blahaj.cam
 
+# Reference: https://x.com/Fact_Finder03/status/2058448994146357595
+
+79.137.194.213:8000
+79.137.194.213:8080
+
 # Generic
 
 /admin_123/auth.php
