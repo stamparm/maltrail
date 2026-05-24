@@ -1292,6 +1292,12 @@ http://45.86.86.8
 79.137.194.213:8000
 79.137.194.213:8080
 
+# Reference: https://x.com/Fact_Finder03/status/2058447193095516616
+# TITLE-IP=Sign in — C2 Platform
+
+5.78.129.163:443
+5.78.24.71:443
+
 # Generic
 
 /admin_123/auth.php
