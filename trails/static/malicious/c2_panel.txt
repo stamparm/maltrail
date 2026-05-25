@@ -1306,6 +1306,14 @@ http://45.86.86.8
 
 179.43.186.239:8443
 
+# Reference: https://x.com/Fact_Finder03/status/2058785313393360975
+# TITLE-HOS/IP=Helios C2 - Login
+
+178.105.197.117:8080
+62.97.160.112:8080
+84.215.61.54:8080
+helios.fancybear.xyz
+
 # Generic
 
 /admin_123/auth.php
