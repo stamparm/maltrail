@@ -17188,6 +17188,7 @@ connect-cdn.com
 connect-socket.net
 connect-ws.com
 connect-wss.com
+connect-wss.org
 connectwss.com
 content.wpws.org
 cpanel.houseofcards.store
