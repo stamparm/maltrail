@@ -1298,6 +1298,10 @@ http://45.86.86.8
 5.78.129.163:443
 5.78.24.71:443
 
+# Reference: https://x.com/Fact_Finder03/status/2058791170764157064
+
+94.125.103.45:8080
+
 # Generic
 
 /admin_123/auth.php
