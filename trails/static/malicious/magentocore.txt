@@ -16928,6 +16928,7 @@ ginsongtech.net
 # Reference: https://www.virustotal.com/gui/ip-address/45.143.203.225/relations
 # Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-05-01-WebSocket-Backdoor-Campaign-Injecting-Credit-Card-Skimmers.txt
 
+analityc-cdn.org
 analyzehost.com
 api-statics.com
 astryxrix.com
