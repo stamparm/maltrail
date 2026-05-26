@@ -17363,12 +17363,13 @@ site4.robert.wpws.org
 site4.stoil.wpws.org
 socket-analytic.com
 socket-analytic.net
-socket-analytics.net
 socket-analytics.com
+socket-analytics.net
 socket-analytics.org
 socket-cdn.com
 socket-connect.com
 socket-protect.com
+socket-protect.net
 socket-wordpress.com
 socket-wordpress.net
 socket-wp.com
@@ -17429,6 +17430,7 @@ wpws.org
 wpwsconnect.com
 wr9z4pzimryq38ee.socketws.com
 ws-request.com
+ws-request.net
 ws-request.org
 ws-socket.com
 ws-sucuri.com
@@ -17438,6 +17440,7 @@ wss-analytics.com
 wss-cdn.com
 wss-cdn.org
 wss-connect.com
+wss-connect.net
 wss-connect.org
 wss-request.net
 wss-request.org
