@@ -16928,7 +16928,6 @@ ginsongtech.net
 # Reference: https://www.virustotal.com/gui/ip-address/45.143.203.225/relations
 # Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-05-01-WebSocket-Backdoor-Campaign-Injecting-Credit-Card-Skimmers.txt
 
-analityc-cdn.org
 analyzehost.com
 api-statics.com
 astryxrix.com
@@ -17143,6 +17142,7 @@ alot7ikzeshaqj1h.socketws.com
 amgnumrore7jqzt3.socketws.com
 analityc-cdn.com
 analityc-cdn.net
+analityc-cdn.org
 analitycs-cdn.com
 analytic-assess.com
 analytics-reports.com
@@ -17363,6 +17363,7 @@ site4.robert.wpws.org
 site4.stoil.wpws.org
 socket-analytic.com
 socket-analytic.net
+socket-analytics.net
 socket-analytics.com
 socket-analytics.org
 socket-cdn.com
