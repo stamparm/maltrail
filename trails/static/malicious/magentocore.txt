@@ -17096,6 +17096,7 @@ tcind.org
 24ar2nzlgeg7ufin.socketws.com
 28.wsrequest.com
 2fabmoenroll.com
+2m.connect-ws.com
 34.socket-wss.com
 34.wss-socket.com
 3h.ws-request.com
@@ -17106,6 +17107,7 @@ tcind.org
 4kig1jzcnhehhxwp.socketws.com
 4ldxsom2gm5tglwo.socketws.com
 4p.cdn-connect.com
+4p.connect-cdn.com
 4ughxnc2onuqrrwg.socketws.com
 5amsoqv6gpq2lw3z.socketws.com
 5hxii6okhmu4uqfa.socketws.com
@@ -17122,6 +17124,7 @@ tcind.org
 6g.protect-wss.com
 6i.llvechatinc.com
 6kkktwemwbpjck09.socketws.com
+6w.wss-request.net
 7dqvkhdlowkyjlst.socketws.com
 7hcgngfr79ajbmfc.socketws.com
 7hegau9bapc9iq7i.socketws.com
@@ -17136,6 +17139,7 @@ tcind.org
 9e5b43cb6413.houseofcards.store
 9e82guspnk95vvpa.socketws.com
 9i.campdevanolg.lol
+9p.wordpress-ws.com
 a1lejvyi3eyez9bh.socketws.com
 abgnvwbvphfvknxk.socketws.com
 ajshmjnl3lxqyc6s.socketws.com
@@ -17158,6 +17162,7 @@ atobpra623mbcpt3.socketws.com
 auth-securi.com
 auth-securi.net
 autodiscover.houseofcards.store
+av.analitycs-cdn.com
 az485vphjjiqh4tk.socketws.com
 b1.cache-reports.com
 b39iynh055wc5gky.socketws.com
@@ -17166,6 +17171,7 @@ bgwyj89hm50tbfdi.socketws.com
 bmq39mnz8g9ccl20.socketws.com
 bot.cdnlivechatinc.com
 bs.wwwauthorlze.net
+bsonfiber.net
 bxodtfpxgh1qahri.socketws.com
 bz.analytics-wss.com
 bz.wss-analytics.com
@@ -17203,6 +17209,8 @@ d1aatmugdhvraghg.socketws.com
 daniel.wpws.org
 dc-fc62d81ad6cd.houseofcards.store
 ddltls9bzc3wlisk.socketws.com
+device-d9b8614f-ad99-4176-9da5-ff5e9ece1b29.remotewd.com
+dispatchstep.com
 dog6mesanhsg9mdt.socketws.com
 duvc1mfl2csc2saa.socketws.com
 e0kab48eaxb8tm62.socketws.com
@@ -17237,7 +17245,9 @@ gud9gqeuzzndenvb.socketws.com
 gw3svttc12klyuwy.socketws.com
 gxcgdkfxff8phqw3.socketws.com
 h2xhsbub2nu1apbt.socketws.com
+h4.socket-analytic.com
 hbicqskt1blhnttu.socketws.com
+hc.socket-analytic.net
 hldnbrmwfojfkyc1.socketws.com
 hns1jtakkjxmrkhf.socketws.com
 houseofcards.store
@@ -17247,6 +17257,7 @@ hv5hoioymbcd1s5z.socketws.com
 ic1tkwlpvzgexjf9.socketws.com
 idobatdwjrsdmezx.socketws.com
 ivbqptkikd7dldvy.socketws.com
+ivstress.com
 ixtyl65i2melc47y.socketws.com
 jatttynpoui7373u.socketws.com
 jjh0esil2zz3ck15.socketws.com
@@ -17261,6 +17272,7 @@ koukhmy6imywpkgd.socketws.com
 kt.sucuri-analytics.com
 kulkgkauvitxlmql.socketws.com
 l3epvdrcb3ssofs3.socketws.com
+l8.socket-wordpress.com
 learndash.generic.wpws.org
 lg.socket-wordpress.net
 lkbcfizop7asc5bv.socketws.com
@@ -17268,10 +17280,12 @@ llve-chatinc.com
 llvechatinc.com
 lqqvlwmkcs4srsu0.socketws.com
 lucian.wpws.org
+lx.theclassiccompetitloncompany.com
 m0v2akaqmrciia4j.socketws.com
 mail.houseofcards.store
 marketing.wpws.org
 maurlen.com
+mbdylib.net
 mbu2w6ecjukiac5o.socketws.com
 mhac1spq8lfq3tzu.socketws.com
 mhdkj85lpk2jl0ni.socketws.com
@@ -17286,6 +17300,7 @@ myxfr00m8zuvz05x.socketws.com
 n0dnmtgxgfyuhtbh.socketws.com
 n85c2a0c7e8xvwch.socketws.com
 nausr4nbykyp4rv1.socketws.com
+nb.wpws.org
 nicholai.wpws.org
 nm6ljocyvgggc4rk.socketws.com
 nmwt6seysnjnnkvp.socketws.com
@@ -17309,8 +17324,10 @@ pruwer.lol
 psfnvet09qwbsneg.socketws.com
 q2.cdn-hs.com
 q5spmbgdthazwn4p.socketws.com
+q9.wsswp.com
 q9cg3fqdlrm4sao1.socketws.com
 q9kfagk4mqtbqdl6.socketws.com
+qc.wssws.com
 qf9lqidiqd1ahths.socketws.com
 qg5klqoaqcag9tje.socketws.com
 qh.wsswp.net
@@ -17319,12 +17336,14 @@ qk4cdx6e346wmqtj.socketws.com
 qnbrupf2m3afm1g6.socketws.com
 qnosxwgjrxorwd1p.socketws.com
 qnyn6x2ariec5z9u.socketws.com
+quotaswc.com
 qwjzboi7a2i5lncq.socketws.com
 r8srnt3flhfprtll.socketws.com
 refreshwp.net
 refreshwpws.com
 refreshws.com
 refreshwss.com
+reloadacid.com
 request-cdn.com
 request-ws.net
 rk2vlfqrgkx2qr3l.socketws.com
@@ -17391,6 +17410,7 @@ tgwgxvjxsu8fjqty.socketws.com
 theclassiccompetitloncompany.com
 thwx41uphfw8ikiy.socketws.com
 tjtwabjnvhcbohdz.socketws.com
+tk.wswpws.com
 tllfn3n16jsgtowt.socketws.com
 tlxcfpvrzwauadqo.socketws.com
 tnili1tyq9wplj7m.socketws.com
@@ -17403,6 +17423,8 @@ tppnn5ecxqojnj2s.socketws.com
 tt.stat-hs.com
 tttest.analytics-stats.com
 tuttinga.lol
+tx.cdn-wss.org
+tx.wss-cdn.org
 urvgwmsld4lbzdec.socketws.com
 us4w2yybthtoaxhg.socketws.com
 uv7ys3bbtuuum66e.socketws.com
@@ -17411,9 +17433,11 @@ vc8wzmzfwzfybmeh.socketws.com
 ventalloc.lol
 vmraconjbygqxcnj.socketws.com
 vnulfvjynlwxxnp4.socketws.com
+void-region.com
 vp7rmlm8mgrtxmvi.socketws.com
 vqiwcxqyh9gd7t90.socketws.com
 vx3lnaqka6j7gsg9.socketws.com
+vy.crosswp.com
 w1.crossws.com
 w5ofg3rp7vxdd8i6.socketws.com
 wa.zohowss.com
@@ -17459,10 +17483,12 @@ xwrnzv7crknbtykd.socketws.com
 xwrux69g0bzrxftu.socketws.com
 yiibsjqqxthfjcv9.socketws.com
 yjva9lekljjjscj9.socketws.com
+yl.socketwp.com
 ylhyv0rlhkzkiah1.socketws.com
 ymfk0iivhfhjdxvu.socketws.com
 ynufzn5kq4vmu5jw.socketws.com
 yo.exiverse.lol
+yo.socketws.com
 yqy57onbofll4g4h.socketws.com
 yt.tuttinga.lol
 yw.wssocket.net
@@ -17473,6 +17499,7 @@ zoho-wss.com
 zohowss.com
 ztomakxj1uyv88za.socketws.com
 zu.socket-wp.com
+zu.wp-socket.com
 zx.socket-ws.com
 zx.ws-socket.com
 zxf9y8ths8b2dqng.socketws.com
