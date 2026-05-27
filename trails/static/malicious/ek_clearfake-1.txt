@@ -3154,3 +3154,9 @@ wolfxotdemo.com
 # Reference: https://app.any.run/tasks/ca2e99cd-6247-4633-9cd8-f64b4928ed9c
 
 security-check-guest.com
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/10316
+
+fregherwqewr5.top
+otyuyre3.top
+rhtwyu34.top
