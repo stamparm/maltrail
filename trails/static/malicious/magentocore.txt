@@ -17390,6 +17390,7 @@ socket-cdn.com
 socket-connect.com
 socket-protect.com
 socket-protect.net
+socket-protect.org
 socket-wordpress.com
 socket-wordpress.net
 socket-wp.com
