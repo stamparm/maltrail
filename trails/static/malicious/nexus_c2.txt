@@ -5,6 +5,8 @@
 
 # Reference: https://blog.talosintelligence.com/uat-10608-inside-a-large-scale-automated-credential-harvesting-operation-targeting-web-applications/
 # Reference: https://github.com/Cisco-Talos/IOCs/blob/main/2026/04/uat-10608.txt
+# Reference: https://x.com/ReversingLabs/status/2059311116354793849
+# Reference: https://www.reversinglabs.com/blog/hunting-megalodon-fossils
 
 144.172.102.88:8080
 144.172.112.136:8080
