@@ -17513,6 +17513,16 @@ zyxlhad17y45za6f.socketws.com
 jartrack.com
 xr.jartrack.com
 
+# Reference: https://x.com/sdcyberresearch/status/2059613050659827852
+
+http://178.16.53.219
+http://38.87.117.12
+http://45.158.127.28
+178.16.53.219:443
+38.87.117.12:443
+45.158.127.28:443
+hilo-cdn.app
+
 # Generic
 
 /assets/lfg.js
