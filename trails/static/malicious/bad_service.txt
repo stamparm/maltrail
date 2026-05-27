@@ -5065,3 +5065,8 @@ mnaxv2amcoysm63cdjtjmfown65muwicvle4n3cxjxp6azsyphe4k5ad.onion
 91.214.78.52:3000
 91.214.78.68:3000
 91.214.78.71:3000
+
+# Reference: https://x.com/Fact_Finder03/status/2059520666798555253
+
+http://85.192.30.66
+stealer.in
