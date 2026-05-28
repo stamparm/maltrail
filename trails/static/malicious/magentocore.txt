@@ -17471,6 +17471,7 @@ ws-socket.com
 ws-sucuri.com
 wsconnectwp.com
 wsrequest.com
+wsrequest.org
 wss-analytics.com
 wss-auth.com
 wss-auth.net
