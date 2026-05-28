@@ -17161,8 +17161,12 @@ anoysgntig2watg2.socketws.com
 apiv1.socketws.com
 aresywlub2eng73c.socketws.com
 atobpra623mbcpt3.socketws.com
+auth-cdn.org
 auth-securi.com
 auth-securi.net
+auth-wss.com
+auth-wss.net
+auth-wss.org
 autodiscover.houseofcards.store
 av.analitycs-cdn.com
 az485vphjjiqh4tk.socketws.com
@@ -17467,6 +17471,9 @@ ws-sucuri.com
 wsconnectwp.com
 wsrequest.com
 wss-analytics.com
+wss-auth.com
+wss-auth.net
+wss-auth.org
 wss-cdn.com
 wss-cdn.org
 wss-connect.com
@@ -17476,6 +17483,7 @@ wss-request.net
 wss-request.org
 wss-socket.com
 wssocket.net
+wssrequest.org
 wsswp.com
 wsswp.net
 wssws.com
