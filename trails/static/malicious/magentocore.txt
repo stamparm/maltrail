@@ -13140,6 +13140,7 @@ kcjosef.fun
 keytag.rest
 kfcd.site
 koloco.name
+ledon.pics
 lipo.wtf
 livedirect.my
 lonefrst.today
@@ -13211,6 +13212,7 @@ yesyes.rest
 ynotme.bar
 zalzas.cc
 zend.quest
+zendlock.shop
 zerotag.cc
 zivert.top
 
