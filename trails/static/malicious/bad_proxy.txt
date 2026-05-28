@@ -52,3 +52,7 @@ metallurgify.com
 # Reference: https://x.com/Fact_Finder03/status/2053423935656775950
 
 178.105.102.230:8888
+
+# Reference: https://reliaquest.com/blog/threat-spotlight-clickfix-evolves-with-pysoxy-proxying/
+
+167.99.158.97:443
