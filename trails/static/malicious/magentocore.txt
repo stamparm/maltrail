@@ -17199,6 +17199,7 @@ cibcalertmobiles.com
 cibcregister2fa.com
 cij3a5kmqzbgw8qy.socketws.com
 clrevpxrugyalcuu.socketws.com
+connect-auth.net
 connect-cdn.com
 connect-socket.net
 connect-ws.com
