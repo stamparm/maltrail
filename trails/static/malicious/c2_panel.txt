@@ -1325,6 +1325,10 @@ helios.fancybear.xyz
 194.87.24.4:8081
 194.87.24.4:9000
 
+# Reference: https://x.com/Fact_Finder03/status/2059900480319561918
+
+146.19.213.198:8443
+
 # Generic
 
 /admin_123/auth.php
