@@ -9687,6 +9687,11 @@ drvdb9rcebidk.cloudfront.net
 /accessiblefiling.ps1
 /l3kt0p17/
 
+# Reference: https://x.com/TekDefense/status/2060075053769720156
+# Reference: https://sandyclaw.permiso.io/shared/dcpgKUGkdIoQB6ofXHOWNsoe51Koohh0GDXkU0xD9Dg#network-activity
+
+/x.php?cmd=get_payload
+
 # Generic
 
 /5c0ca79.php
