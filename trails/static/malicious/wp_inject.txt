@@ -6880,10 +6880,11 @@ app.tracking-pilot.com
 # Reference: https://x.com/riper81/status/2060164428876951828
 
 u-short.net
+urshort.com
 urshort.live
-ushort.com
 ushort.company
 ushort.dev
 ushort.info
 ushort.observer
+ushort.org
 ushort.today
