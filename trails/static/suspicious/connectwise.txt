@@ -5059,3 +5059,7 @@ relay.eyesonly.top
 
 147.124.195.83:443
 settupro.top
+
+# Reference: https://www.virustotal.com/gui/file/d6ad8571c92c9d095df41cb830943d5bf3eb0d88c37ce27fa54a16816249467d/detection
+
+108.62.161.53:8041
