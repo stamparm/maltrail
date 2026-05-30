@@ -1520,6 +1520,7 @@ app.kingby.shop
 app.kingby.xyz
 app.rustture.cc
 app.webinfos.top
+applicationdev.eastus2.cloudapp.azure.com
 arbgpt.icu
 arbgptx.digital
 arbgptx.sbs
