@@ -6876,3 +6876,14 @@ bootcdn.pro
 
 tracking-pilot.com
 app.tracking-pilot.com
+
+# Reference: https://x.com/riper81/status/2060164428876951828
+
+u-short.net
+urshort.live
+ushort.com
+ushort.company
+ushort.dev
+ushort.info
+ushort.observer
+ushort.today
