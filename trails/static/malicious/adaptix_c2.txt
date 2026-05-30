@@ -1604,6 +1604,7 @@ update.firmwaresync.com.tr
 updateflash-client.xyz
 vpn734653413.softether.net
 vpn880365101.softether.net
+vps.b-advsoft.com
 zoom.serveirc.com
 
 # Reference: https://x.com/malwrhunterteam/status/2038886735568838849
