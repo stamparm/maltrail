@@ -6882,6 +6882,7 @@ app.tracking-pilot.com
 u-short.net
 urshort.com
 urshort.live
+ushort.com
 ushort.company
 ushort.dev
 ushort.info
