@@ -4275,7 +4275,10 @@ botnet.rip
 
 # Reference: https://x.com/cyberfeeddigest/status/1983818743990952031
 
+ratshop.icu
+ratshop.live
 ratshop.pro
+ratshop.shop
 
 # Reference: https://x.com/Fact_Finder03/status/1984150772528116187
 
