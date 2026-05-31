@@ -47,6 +47,8 @@ sns-clauder-cdn.beer
 sr-hostes-js.beer
 ssjscrybootstrup.beer
 ssns-cdn-ns.beer
+tescdnlast.beer
+testapi34726.sbs
 testerlau.lat
 travel-js-ns.beer
 viscdnclaud.beer
