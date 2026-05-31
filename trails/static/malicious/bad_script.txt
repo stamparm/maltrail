@@ -9701,6 +9701,10 @@ drvdb9rcebidk.cloudfront.net
 /talkingaffect.ps1
 /l4kc27/
 
+# Reference: https://blog.xlab.qianxin.com/ghost-cms-mass-compromised-via-cve-2026-26980-now-fueling-clickfix-attacks/
+
+/11z77u3.php
+
 # Generic
 
 /5c0ca79.php
