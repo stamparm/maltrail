@@ -9692,6 +9692,15 @@ drvdb9rcebidk.cloudfront.net
 
 /x.php?cmd=get_payload
 
+# Reference: https://x.com/smica83/status/2060267657090265516
+# Reference: https://www.virustotal.com/gui/file/6f6656d811bb431becff1eb75da158b45af5655ae4c0b74a3ea64ea3d258fc02/detection
+
+/l4kc27/shakedowndeveloping.ps1
+/l4kc27/talkingaffect.ps1
+/shakedowndeveloping.ps1
+/talkingaffect.ps1
+/l4kc27/
+
 # Generic
 
 /5c0ca79.php
