@@ -3094,6 +3094,7 @@ captcha-property-pulse.com
 chalengermode.com
 chellengermode.net
 events-property-pulse.com
+events-pulsepanel.com
 extranet-owner-check.com
 extranet-property-check.com
 girlshub.one
@@ -3102,15 +3103,19 @@ img-pulse-cache.com
 myetisalatplans.sbs
 panelcaptchaview.com
 panelviewcaptcha.com
+pidpisannagov.com
 portail-device.info
 property-advanced-manager.com
 property-check-captcha.com
 propertypanelmessages.com
+pulsepanelcaptcha.com
 review-your-property.com
 sdfkaqsf.com
 secure-extranet-captcha.sdfkaqsf.com
 transneft25.ll.tsscom.ru
 useinvitcode.click
+viewpulsepanel.com
+web-id-solution.com
 
 # Reference: https://x.com/muha2xmad/status/2046167389776019704
 
