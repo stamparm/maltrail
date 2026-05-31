@@ -9705,6 +9705,15 @@ drvdb9rcebidk.cloudfront.net
 
 /11z77u3.php
 
+# Reference: https://x.com/smica83/status/2060798916229021966
+# Reference: https://www.virustotal.com/gui/file/af822da731e3278ad50e89e7ee43fa1267594a2a902114a1cfe67aa74caa9553/detection
+
+/hmszch/electricityjog.ps1
+/hmszch/mortiseconflict.ps1
+/electricityjog.ps1
+/mortiseconflict.ps1
+/hmszch/
+
 # Generic
 
 /5c0ca79.php
