@@ -2248,6 +2248,7 @@ emeraldsignalhub.top
 fluxy-core.top
 frozenharborlab.top
 frozenorbit.top
+frozenquartz.top
 hiddenframezone.top
 hiddenplanetlab.top
 hr-leonardo.com
@@ -2282,6 +2283,7 @@ steadylogiczone.top
 systemsverifiedshop.click
 thunderplanethub.top
 tiresto.top
+tfnport.online
 treidoveir.top
 trofeyincs.top
 truecorehub.top
