@@ -2711,6 +2711,10 @@ LedgerChecker
 
 Nexus/3.0
 
+# Reference: https://x.com/sicehice/status/2056469115951300705
+
+libredtail-http
+
 # Misc
 
 information_schema
