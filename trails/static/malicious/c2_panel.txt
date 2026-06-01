@@ -1330,6 +1330,10 @@ helios.fancybear.xyz
 
 146.19.213.198:8443
 
+# Reference: https://x.com/Fact_Finder03/status/2061410494146334937
+
+http://212.8.251.148
+
 # Generic
 
 /admin_123/auth.php
