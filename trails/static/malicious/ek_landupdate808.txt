@@ -1053,17 +1053,57 @@ echaefer.com
 sceuppe.com
 
 # Reference: https://www.malware-traffic-analysis.net/2026/04/23/index.html
+# BANNER_0_HASH-HOST=3bcabf70ef8592aac76a6ca89eb91107
 
 http://104.225.129.155
 http://104.36.229.108
 89.110.110.119:443
+35613analytics.com
+87.35613analytics.com
+advancedpatternlab.com
+astralharborworks.com
+avexorlab.com
+blazinglighthousehub.com
+blazingtunnelworks.com
+brightvoyagerstudio.com
+centralbeaconstudio.com
 clearforgehub.com
 clearforgelab.top
 datanex.top
+dementiond.com
+despo-cresp.com
+dynamiclanternsystem.com
+elevatedstreamworks.com
+finansecolapse.com
+frescotrem.com
+frozenlanternworks.com
+futurebuildsystem.com
+getprismledger.com
 gettrustedhub.top
 ibharcan.com
+junecollections.com
+kaventur.com
+midnightcompassengine.com
+mqqeravi.com
 nexaflowlab.top
+nexahubpro.com
+nivraxod.com
+northernbridgeworks.com
+openvectorstudio.com
+polnexas.com
+radiantcompassengine.com
+rapidcorelab.com
+silver-lattice.com
+solidnexio.com
 solidpathcore.com
+truenexor.com
+trysilverstrandhub.com
+unifiedmotionworks.com
+unifiedquarrysystem.com
+usepixelharvest.com
+velvetcompassstudio.com
+vexnali.com
+zexxario.com
 
 # Reference: https://www.virustotal.com/gui/file/4bc2ff0f172b1814187a75ad70d5843e4078594c84a6a9c96e2d9b767bff38af/detection
 # Reference: https://www.virustotal.com/gui/file/4c52a84ceeafc3181102aee5acdf1acb115c356c2cbc0344e3fa2c772c46c5d1/detection
