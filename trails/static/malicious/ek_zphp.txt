@@ -2216,6 +2216,7 @@ zorpelix.top
 zqpdofuynuha.top
 
 # Reference: https://isc.sans.edu/diary/33034
+# BODY_SHA1-HOST=c06768826d06adfea5f86c63fcb01c21c8d67e0f
 
 activebridgehub.top
 alpharidge.top
@@ -2232,6 +2233,7 @@ frozenharborlab.top
 frozenorbit.top
 hiddenframezone.top
 hiddenplanetlab.top
+industrolabs.com
 lucidanchor.top
 lucidgardenhub.top
 n0vatrix.top
@@ -2239,6 +2241,7 @@ openrelayzone.top
 primegridhub.top
 rapidlogiclab.top
 redsiout.top
+redspectrum.top
 silentcanvaslab.top
 steadylogiczone.top
 thunderplanethub.top
