@@ -2215,6 +2215,18 @@ yepork.com
 zorpelix.top
 zqpdofuynuha.top
 
+# Reference: https://isc.sans.edu/diary/33034
+
+activebridgehub.top
+alpharidge.top
+byte-shard.top
+frozenorbit.top
+hiddenplanetlab.top
+rapidlogiclab.top
+redsiout.top
+vividanchorlab.top
+zixxalor.top
+
 # Generic
 
 /cache/ewmrgqnaww.php
