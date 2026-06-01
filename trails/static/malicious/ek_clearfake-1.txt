@@ -4106,3 +4106,9 @@ wild-ride-master.click
 wild-thunder-zone.site
 wild-vibe-hub.icu
 wonderful-bonds.click
+
+# Reference: https://isc.sans.edu/diary/33034
+
+http://178.156.165.82
+http://178.156.173.194
+silverharvestnetwork.com
