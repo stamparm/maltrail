@@ -2226,13 +2226,16 @@ api.wigetticks.com
 api.wizzleticks.com
 avexor.top
 bemqorli.top
+bluecompass.top
 blueharborlab.top
+boldlayer.top
 breitonghoul.top
 brightdeltazone.top
 brightrelayzone.top
 byte-shard.top
 calmvector.top
 clearengine.top
+clearforge.top
 cloudquarry.top
 coppermatrix.top
 crypta-wave.top
@@ -2259,6 +2262,8 @@ nexvoid.top
 ns1.verittiv.com
 ns2.verittiv.com
 openrelayzone.top
+orbitgarden.top
+posertret.top
 primegridhub.top
 qedge.top
 quickuiw.com
@@ -2272,10 +2277,12 @@ rosaermita.org
 sharpfield.top
 silentcanvaslab.top
 silentquarry.top
+smoothcompass.top
 steadylogiczone.top
 systemsverifiedshop.click
 thunderplanethub.top
 tiresto.top
+treidoveir.top
 truecorehub.top
 trustedget.com
 velnexhub.top
@@ -2286,11 +2293,13 @@ vorqeni.top
 vymora.top
 wigetticks.com
 wizzleticks.com
+xartelvu.top
 xoera.top
 z3nbyte.top
 zarrvilo.top
 zellvaro.top
 zentav.top
+zentavlab.top
 zixxalor.top
 
 # Generic
