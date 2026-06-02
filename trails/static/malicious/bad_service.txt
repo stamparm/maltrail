@@ -5085,3 +5085,10 @@ stealer.in
 
 http://91.208.197.118
 x0st.app
+
+# Reference: https://www.virustotal.com/gui/ip-address/208.115.230.194/relations
+
+208.115.230.194:5173
+208.115.230.194:8081
+208.115.230.194:8082
+208.115.230.194:8083
