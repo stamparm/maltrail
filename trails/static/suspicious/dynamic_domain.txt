@@ -3860,3 +3860,7 @@ garmanage.com
 # Reference: https://urlscan.io/result/019e65a1-dda3-758d-a73b-c271f06b7964/
 
 ip-dynamic.org
+
+# Reference: https://urlscan.io/result/019e8775-e654-735c-b730-e6f4e64ea3a0/
+
+remotewire.net
