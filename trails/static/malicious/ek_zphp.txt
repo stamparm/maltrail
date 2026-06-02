@@ -2242,6 +2242,7 @@ clearengine.top
 clearforge.top
 cloudquarry.top
 coppermatrix.top
+coppervoyager.top
 crypta-wave.top
 crystalaxishub.top
 crystalrocketlab.top
