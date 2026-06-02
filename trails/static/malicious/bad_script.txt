@@ -9714,6 +9714,11 @@ drvdb9rcebidk.cloudfront.net
 /mortiseconflict.ps1
 /hmszch/
 
+# Reference: https://x.com/stop_spammerz/status/2061818674256793868
+# Reference: https://tria.ge/260602-rm76hsfv3t/behavioral1
+
+/loader.hta
+
 # Generic
 
 /5c0ca79.php
