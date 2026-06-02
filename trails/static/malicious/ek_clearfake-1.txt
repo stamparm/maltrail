@@ -4204,3 +4204,8 @@ wonderful-bonds.click
 http://178.156.165.82
 http://178.156.173.194
 silverharvestnetwork.com
+
+# Reference: https://www.silentpush.com/blog/drivesurge/
+# Reference: https://www.virustotal.com/gui/file/18af97e74b4461e938ff17bda0a0cbc68780bbca6d1de74b37c80c2afcdc55bb/detection
+
+banerpanel.live
