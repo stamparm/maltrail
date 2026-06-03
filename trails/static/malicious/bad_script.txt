@@ -9719,6 +9719,10 @@ drvdb9rcebidk.cloudfront.net
 
 /loader.hta
 
+# Reference: https://x.com/malwrhunterteam/status/2062241642627694690
+
+/payloads.json
+
 # Generic
 
 /5c0ca79.php
