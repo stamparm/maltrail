@@ -2715,6 +2715,11 @@ Nexus/3.0
 
 libredtail-http
 
+# Reference: https://x.com/Jane_0sint/status/1981683010769649862
+# Reference: https://app.any.run/tasks/35303779-eb0c-4926-bd2d-9a5777ce6df3
+
+\bureq\/3.0.10\b
+
 # Misc
 
 information_schema
