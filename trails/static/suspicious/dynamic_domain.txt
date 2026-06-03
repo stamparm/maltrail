@@ -3864,3 +3864,7 @@ ip-dynamic.org
 # Reference: https://urlscan.io/result/019e8775-e654-735c-b730-e6f4e64ea3a0/
 
 remotewire.net
+
+# Reference: https://urlscan.io/result/019e8c72-eaae-771d-88eb-df58d0ab6221/
+
+dynu.org
