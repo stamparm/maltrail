@@ -17160,6 +17160,7 @@ analytics-socket.com
 analytics-stats.com
 analytics-wss.com
 anoysgntig2watg2.socketws.com
+apigodaddy.net
 apiv1.socketws.com
 aresywlub2eng73c.socketws.com
 atobpra623mbcpt3.socketws.com
@@ -17190,6 +17191,7 @@ campdevanolg.lol
 carust.net
 cdn-connect.com
 cdn-reports.com
+cdn-request.com
 cdn-securities.com
 cdn-wss.com
 cdn-wss.net
@@ -17204,6 +17206,7 @@ cij3a5kmqzbgw8qy.socketws.com
 clrevpxrugyalcuu.socketws.com
 connect-auth.net
 connect-cdn.com
+connect-socket.com
 connect-socket.net
 connect-ws.com
 connect-wss.com
@@ -17359,6 +17362,7 @@ refreshwss.com
 refreshwss.net
 reloadacid.com
 request-cdn.com
+request-ws.com
 request-ws.net
 rk2vlfqrgkx2qr3l.socketws.com
 robert.wpws.org
@@ -17473,9 +17477,11 @@ ws-request.com
 ws-request.net
 ws-request.org
 ws-socket.com
+ws-socket.net
 ws-sucuri.com
 wsconnectwp.com
 wsrequest.com
+wsrequest.net
 wsrequest.org
 wss-analytics.com
 wss-auth.com
