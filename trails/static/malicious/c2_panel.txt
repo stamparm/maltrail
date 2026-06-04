@@ -1347,6 +1347,17 @@ http://209.99.186.176
 209.99.186.176:443
 r734yn7cnm7h7xmxuhjfshesiuaow21.dad
 
+# Reference: https://x.com/Fact_Finder03/status/2062409260991181104
+
+http://192.151.146.82
+109.238.92.154:8080
+192.151.146.82:443
+45.8.150.50:8080
+89.47.51.187:8080
+cc.forensic.cafe
+relay.mtrdrgzcid.com
+st.cc.forensic.cafe
+
 # Generic
 
 /admin_123/auth.php
