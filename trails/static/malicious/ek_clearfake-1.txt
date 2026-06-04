@@ -494,6 +494,7 @@ brandbuilder.hu
 brass-jairan-life-saving.courses
 brayx.akonyvelod.hu
 brhwmjkk.frost-engine.christmas
+brightcanvas.digital
 brightestprocexchange.wiki
 brljc.yanisrea.hu
 brssolar.hu
@@ -564,6 +565,7 @@ carving-paral.digital
 casual-trail.mixzipcore64.lat
 causingwagesgutter.study
 cavbp.zaszlorudbolt.hu
+cdn-1415.brightcanvas.digital
 cdn.cloudproxyserv.pics
 cdn.textits.pics
 cdpus.vikstore.hu
@@ -4213,3 +4215,7 @@ banerpanel.live
 # Reference: https://research.checkpoint.com/2026/impersonation-click-hijacking-and-tds-inside-a-malware-distribution-ecosystem/
 
 processing-in-progress-x4.t3.storage.dev
+
+# Generic
+
+/fo0suc2ki2.rtf
