@@ -17555,6 +17555,13 @@ http://45.158.127.28
 45.158.127.28:443
 hilo-cdn.app
 
+# Reference: https://x.com/sdcyberresearch/status/2062506697227219008
+
+http://85.17.55.137
+85.17.55.137:443
+clickcdn01.net
+npm.clickcdn01.net
+
 # Generic
 
 /assets/lfg.js
