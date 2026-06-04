@@ -5911,6 +5911,13 @@ http://82.23.146.156
 
 communicationdiscoveryservice.site
 
+# Reference: https://x.com/smica83/status/2062268812452311181
+# Reference: https://www.virustotal.com/gui/file/c16a77c4f335e8593d0af48bd904fac7a9251d069c71d734030c54490558755e/detection
+# Reference: https://www.virustotal.com/gui/file/1b6d33f70fbcee3db0ea04ed4147c1e919e8b975fb3612e609ba9dd5612ffc53/detection
+
+114.55.167.52:443
+114.55.167.52:8080
+
 # Generic
 
 /Havoc/payload/
