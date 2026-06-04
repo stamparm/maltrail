@@ -1341,6 +1341,12 @@ http://212.8.251.148
 64.90.12.202:5000
 adminfishc2.ggrtechnology.com
 
+# Reference: https://x.com/Fact_Finder03/status/2062406492699935023
+
+http://209.99.186.176
+209.99.186.176:443
+r734yn7cnm7h7xmxuhjfshesiuaow21.dad
+
 # Generic
 
 /admin_123/auth.php
