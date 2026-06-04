@@ -6458,3 +6458,7 @@ http://79.137.206.33
 # Reference: https://www.virustotal.com/gui/file/07a3f2e780ab150b6c97383d54fa7b66f037c846552a7ee6cc6543d679a1e75d/detection
 
 d8b498f1781bc2.lhr.life
+
+# Reference: https://www.virustotal.com/gui/file/4544f28033736973f413e26b8b818264668ec7a8dc31559eec33edaa26bbe40b/detection
+
+143.198.183.46:443
