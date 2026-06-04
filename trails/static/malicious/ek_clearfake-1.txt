@@ -4209,3 +4209,7 @@ silverharvestnetwork.com
 # Reference: https://www.virustotal.com/gui/file/18af97e74b4461e938ff17bda0a0cbc68780bbca6d1de74b37c80c2afcdc55bb/detection
 
 banerpanel.live
+
+# Reference: https://research.checkpoint.com/2026/impersonation-click-hijacking-and-tds-inside-a-malware-distribution-ecosystem/
+
+processing-in-progress-x4.t3.storage.dev
