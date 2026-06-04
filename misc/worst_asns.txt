@@ -6519,3 +6519,16 @@
 95.215.204.0/24,podaon
 95.215.206.0/24,podaon
 95.215.207.0/24,podaon
+
+# AS 202226
+# Reference: https://ipinfo.io/AS202226
+
+144.31.236.0/24,greatflower
+150.241.81.0/24,greatflower
+193.202.84.0/24,greatflower
+2.26.74.0/24,greatflower
+2.26.75.0/24,greatflower
+2.27.5.0/24,greatflower
+31.76.118.0/24,greatflower
+31.76.87.0/24,greatflower
+31.76.93.0/24,greatflower
