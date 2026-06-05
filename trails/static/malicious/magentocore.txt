@@ -17476,6 +17476,7 @@ wp-socket.com
 wpcdnws.com
 wpcdnwsswp.com
 wpconnectws.com
+wpcol.com
 wpswss.com
 wpws.org
 wpwsconnect.com
