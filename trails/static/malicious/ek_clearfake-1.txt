@@ -4223,9 +4223,22 @@ processing-in-progress-x4.t3.storage.dev
 95.179.240.32:9999
 aromi-fr.com
 aromi-fr.shop
+babygiftset.shop
+basketball-media.site
 colafunfacts.net
 convmasters.com
+dailychoicehub.site
+deals-line.online
 lirunex.tech
+littlebabybox.shop
+productitems.store
+promo-offer.online
+promo-offer.site
+promosale.store
+shop-line.online
+tinybundlebox.shop
+ultimate-promo.store
+ultimate-sale.store
 
 # Generic
 
