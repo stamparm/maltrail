@@ -4216,6 +4216,17 @@ banerpanel.live
 
 processing-in-progress-x4.t3.storage.dev
 
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-06-05-%20Evasive-ClickFix-Injection-Delivers-RAT.txt
+
+104.207.131.216:16443
+188.166.20.222:8000
+95.179.240.32:9999
+aromi-fr.com
+aromi-fr.shop
+colafunfacts.net
+convmasters.com
+lirunex.tech
+
 # Generic
 
 /fo0suc2ki2.rtf
