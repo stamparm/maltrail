@@ -5063,3 +5063,8 @@ settupro.top
 # Reference: https://www.virustotal.com/gui/file/d6ad8571c92c9d095df41cb830943d5bf3eb0d88c37ce27fa54a16816249467d/detection
 
 108.62.161.53:8041
+
+# Reference: https://x.com/Malwarehunterr/status/2062647581021495477
+# Reference: https://www.virustotal.com/gui/file/a64401d0ac2612c2dca478cf191f115f5ee27cca3eb7425c840e8bc50f82071d/detection
+
+instance-s6g21w-relay.screenconnect.com
