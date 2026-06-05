@@ -4217,6 +4217,7 @@ banerpanel.live
 processing-in-progress-x4.t3.storage.dev
 
 # Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-06-05-%20Evasive-ClickFix-Injection-Delivers-RAT.txt
+# BODY_SHA1-HOST=8b323f710dc06d9e9e933ab2a6631451f6476dc2
 
 104.207.131.216:16443
 188.166.20.222:8000
@@ -4225,10 +4226,12 @@ aromi-fr.com
 aromi-fr.shop
 babygiftset.shop
 basketball-media.site
+bunonuwetaj.com
 colafunfacts.net
 convmasters.com
 dailychoicehub.site
 deals-line.online
+dewaxajejex.com
 lirunex.tech
 littlebabybox.shop
 productitems.store
@@ -4239,6 +4242,7 @@ shop-line.online
 tinybundlebox.shop
 ultimate-promo.store
 ultimate-sale.store
+xaworivijo.com
 
 # Generic
 
