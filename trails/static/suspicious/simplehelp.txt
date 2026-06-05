@@ -2080,3 +2080,8 @@ aaa-amc.top
 83.136.211.149:443
 83.136.211.149:5177
 xena.xubi.org
+
+# Reference: https://x.com/Malwarehunterr/status/2062651134960193974
+# Reference: https://www.virustotal.com/gui/file/90b902fb92b1d8f38e455d8de4169764a68f6185bcd61b7c92c34ee9a2754fde/detection
+
+185.215.167.211:8008
