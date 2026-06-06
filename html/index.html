@@ -9,12 +9,13 @@
         <link rel="stylesheet" type="text/css" href="css/thirdparty.min.css">
         <link rel="stylesheet" type="text/css" href="css/main.css?id=222">
         <link rel="stylesheet" type="text/css" href="css/media.css">
+        <link rel="stylesheet" type="text/css" href="css/hope-ui.css">
         <script type="text/javascript" src="js/errorhandler.js"></script>
         <script type="text/javascript" src="js/thirdparty.min.js"></script>
         <script type="text/javascript" src="js/papaparse.min.js"></script>
     </head>
-    <body>
-        <div id="header_container" class="header noselect">
+    <body class="hope-ui" data-theme="light">
+        <div id="header_container" class="header noselect hope-topbar">
             <div id="logo_container">
                 <span id="logo"><!LOGO!></span>
             </div>
@@ -31,11 +32,15 @@
                 <li class="header-li"><a class="header-a" href="https://github.com/stamparm/maltrail/issues/" id="issues_link" target="_blank">Issues</a></li>
                 <li class="header-li link-splitter hidden" id="login_splitter">|</li>
                 <li class="header-li"><a class="header-a hidden" id="login_link">Log In</a></li>
-                <li class="header-li"></li>
+                <li class="header-li link-splitter">|</li>
+                <li class="header-li">
+                    <label class="header-a" for="theme_switch">Theme</label>
+                    <input id="theme_switch" type="checkbox">
+                </li>
             </ul>
         </div>
 
-        <div id="heatmap_container" class="container hidden" style="text-align: center">
+        <div id="heatmap_container" class="container hidden hope-card hope-filter-card" style="text-align: center">
             <div>
                 <button id="heatmap-previous" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" type="button" role="button">
                     <span class="ui-icon ui-icon-carat-1-w"></span>
@@ -50,7 +55,9 @@
             </div>
         </div>
 
-        <div id="main_container" class="container hidden">
+        <div id="hope_details_panel" class="container hidden hope-card hope-details-panel"></div>
+
+        <div id="main_container" class="container hidden hope-card hope-events-card">
             <div id="status_container" style="width: 100%; text-align: center">
                 <div>
                     <ul style="list-style: outside none none; overflow: hidden; font-family: sans-serif; padding: 0px; display: inline-block; white-space: nowrap">
