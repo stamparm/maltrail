@@ -14,8 +14,27 @@ from thirdparty import six
 
 __url__ = "(static)"
 
+_non_domains = set()
+
+def _is_domain(value):
+    if not value or '.' not in value or len(value) > 255:
+        return False
+
+    labels = value.split('.')
+    if re.search(r"\A\d+\Z", labels[-1]):
+        return False
+
+    for label in labels:
+        if not label or len(label) > 63 or label[0] == '-' or label[-1] == '-':
+            return False
+        if not re.search(r"\A[a-zA-Z0-9-]+\Z", label):
+            return False
+
+    return True
+
 def fetch():
     retval = {}
+    _non_domains.clear()
 
     directories = [os.path.dirname(__file__)] + glob.glob(os.path.join(os.path.dirname(__file__), "*"))
     directories = sorted(directories, key=lambda _: -1 if any(__ in _ for __ in ("suspicious", "malicious")) else int("custom" in _))
@@ -50,7 +69,11 @@ def fetch():
                     elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", value):
                         retval[value] = (__info__, __reference__)
                     else:
-                        retval[value.strip('.')] = (__info__, __reference__)
+                        value = value.strip('.')
+                        if _is_domain(value):
+                            retval[value] = (__info__, __reference__)
+                        elif value:
+                            _non_domains.add(value)
 
         filenames = glob.glob(os.path.join(directory, "*.txt"))
         filenames = sorted(filenames, key=lambda _: "history" in _)
@@ -81,6 +104,10 @@ def fetch():
                     elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", line):
                         retval[line] = (__info__, __reference__)
                     else:
-                        retval[line.strip('.')] = (__info__, __reference__)
+                        line = line.strip('.')
+                        if _is_domain(line):
+                            retval[line] = (__info__, __reference__)
+                        elif line:
+                            _non_domains.add(line)
 
     return retval
