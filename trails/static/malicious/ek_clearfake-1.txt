@@ -5300,6 +5300,53 @@ ultimate-promo.store
 ultimate-sale.store
 xaworivijo.com
 
+# Reference: https://x.com/Malwarehunterr/status/2063269215751258173
+
+bormixa.cfd
+cormixa.cfd
+dormixa.cfd
+dovrila.cfd
+drenixo.cfd
+drixano.cfd
+fovrila.cfd
+frenixo.cfd
+govrila.cfd
+grenixo.cfd
+hovrila.cfd
+hrenixo.cfd
+hrixano.cfd
+jovrila.cfd
+jrenixo.cfd
+kovrila.cfd
+krenixo.cfd
+lovrila.cfd
+lrixano.cfd
+mrenixo.cfd
+mrixano.cfd
+novrila.cfd
+nrenixo.cfd
+prenixo.cfd
+prixano.cfd
+qelviro.cfd
+qrenixo.cfd
+rovrila.cfd
+rrenixo.cfd
+rrixano.cfd
+sovrila.cfd
+srenixo.cfd
+srixano.cfd
+tovrila.cfd
+trenixo.cfd
+trixano.cfd
+vovrila.cfd
+vrenixo.cfd
+vrixano.cfd
+wrenixo.cfd
+xrenixo.cfd
+yrenixo.cfd
+yrixano.cfd
+zrenixo.cfd
+
 # Generic
 
 /fo0suc2ki2.rtf
