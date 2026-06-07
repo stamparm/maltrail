@@ -60,3 +60,7 @@ xtunnel.ru
 # TITLE-HOST=Port Buddy - Expose Localhost to the Internet | Ngrok Alternative
 
 portbuddy.dev
+
+# Generic
+
+/ngrok-installer.dll
