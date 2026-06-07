@@ -9777,6 +9777,8 @@ drvdb9rcebidk.cloudfront.net
 /out-1347051899.hta
 /out-849945592.hta
 /7328-dating-verification-card.php
+/c2.py
+/c2server.py
 /canadiane-compte.php
 /captainsmok3r.php
 /ccgate.php
