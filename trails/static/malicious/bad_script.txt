@@ -9840,3 +9840,4 @@ drvdb9rcebidk.cloudfront.net
 /payload/remote/
 /modified_ploader.cpp
 /ploader.cpp
+/wl-exploit.xml
