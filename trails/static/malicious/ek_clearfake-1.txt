@@ -7659,6 +7659,11 @@ zyphor.vu
 zyver.cfd
 zyvexa.vu
 
+# Reference: https://x.com/rifteyy/status/2063272669806542871
+
+http://46.226.166.203
+smartcheck214.world
+
 # Generic
 
 /fo0suc2ki2.rtf
