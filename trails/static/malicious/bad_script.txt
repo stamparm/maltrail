@@ -9824,8 +9824,11 @@ drvdb9rcebidk.cloudfront.net
 /online-dating-verification-card.php
 /payload.php
 /postgreexploit.py
+/rat.py
+/rat.spec
 /ravufgate.php
 /screenshot_gate.php
+/serverc2.py
 /shell.hta
 /shell2.php
 /shellcode_test.txt
