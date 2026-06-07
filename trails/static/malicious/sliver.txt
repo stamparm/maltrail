@@ -8687,6 +8687,11 @@ binance-bnb.com
 bonus-distribution.com
 curtainbeatdisturbance.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/45.225.135.54/detection
+
+45.225.135.54:443
+45.225.135.54:6000
+
 # Generic
 
 /.sliver-client/
