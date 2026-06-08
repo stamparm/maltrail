@@ -5068,3 +5068,9 @@ settupro.top
 # Reference: https://www.virustotal.com/gui/file/a64401d0ac2612c2dca478cf191f115f5ee27cca3eb7425c840e8bc50f82071d/detection
 
 instance-s6g21w-relay.screenconnect.com
+
+# Reference: https://x.com/malwrhunterteam/status/2063925444559118435
+# Reference: https://www.virustotal.com/gui/file/60f104030a7e6fc47d5ce7c286c5172e9f835a09b5a560350ac71d0c25f8c187/detection
+
+84.54.33.250:8041
+bbytati25iy2.anondns.net
