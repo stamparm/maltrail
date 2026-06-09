@@ -6470,3 +6470,8 @@ d8b498f1781bc2.lhr.life
 # Reference: https://reliaquest.com/blog/threat-spotlight-reliaquests-agentic-ai-uncovers-new-china-linked-cluster-op-512
 
 43.160.202.246:8053
+
+# Reference: https://thedfirreport.com/2026/02/23/apache-activemq-exploit-leads-to-lockbit-ransomware/
+
+166.62.100.62:2460
+166.62.100.52:24685
