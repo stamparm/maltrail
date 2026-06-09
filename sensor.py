@@ -1067,20 +1067,74 @@ def init():
         _init_multiprocessing()
 
     if not IS_WIN and not config.DISABLE_CPU_AFFINITY:
+        msg = "[?] please install 'schedtool' for better CPU scheduling"
+
         try:
+            affinity = 1
+
             try:
-                mod = int(subprocess.check_output("grep -c ^processor /proc/cpuinfo", stderr=subprocess.STDOUT, shell=True).strip())
-                used = subprocess.check_output("for pid in $(ps aux | grep python | grep sensor.py | grep -E -o 'root[ ]*[0-9]*' | tr -d '[:alpha:] '); do schedtool $pid; done | grep -E -o 'AFFINITY .*' | cut -d ' ' -f 2 | grep -v 0xf", stderr=subprocess.STDOUT, shell=True).strip().split('\n')
-                max_used = max(int(_, 16) for _ in used)
-                affinity = max(1, (max_used << 1) % 2 ** mod)
-            except:
+                with open("/proc/cpuinfo", "r") as f:
+                    mod = sum(1 for line in f if line.startswith("processor"))
+
+                if mod < 1:
+                    mod = 1
+
+                output = subprocess.check_output(["ps", "aux"], stderr=subprocess.STDOUT)
+                if not isinstance(output, str):
+                    output = output.decode("utf-8", "ignore")
+
+                pids = []
+                for line in output.splitlines():
+                    parts = line.split(None, 10)
+                    if len(parts) > 1 and parts[0] == "root" and "python" in line and "sensor.py" in line:
+                        try:
+                            pids.append(int(parts[1]))
+                        except ValueError:
+                            pass
+
+                used = []
+                for pid in pids:
+                    try:
+                        output = subprocess.check_output(["schedtool", str(pid)], stderr=subprocess.STDOUT)
+                        if not isinstance(output, str):
+                            output = output.decode("utf-8", "ignore")
+
+                        index = output.find("AFFINITY")
+                        if index >= 0:
+                            parts = output[index:].split()
+                            if len(parts) > 1 and parts[1] != "0xf":
+                                used.append(parts[1])
+                    except (OSError, subprocess.CalledProcessError, ValueError):
+                        pass
+
+                if used:
+                    max_used = max(int(_, 16) for _ in used)
+                    affinity = max(1, (max_used << 1) % 2 ** mod)
+            except (IOError, OSError, subprocess.CalledProcessError, ValueError):
                 affinity = 1
-            p = subprocess.Popen("schedtool -n -2 -M 2 -p 10 -a 0x%02x %d" % (affinity, os.getpid()), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            _, stderr = p.communicate()
-            if "not found" in stderr:
-                msg = "[?] please install 'schedtool' for better CPU scheduling"
+
+            try:
+                p = subprocess.Popen(
+                    [
+                        "schedtool",
+                        "-n", "-2",
+                        "-M", "2",
+                        "-p", "10",
+                        "-a", "0x%02x" % affinity,
+                        str(os.getpid())
+                    ],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE
+                )
+                _, stderr = p.communicate()
+                if not isinstance(stderr, str):
+                    stderr = stderr.decode("utf-8", "ignore")
+
+                if "not found" in stderr:
+                    print(msg)
+            except OSError:
                 print(msg)
-        except:
+        except Exception:
             pass
 
 def _init_multiprocessing():
