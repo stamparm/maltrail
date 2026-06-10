@@ -185,6 +185,7 @@
 38.55.254.52:8080
 38.60.134.6:8080
 38.65.94.242:8080
+38.76.169.176:8080
 38.76.198.132:8080
 39.100.71.227:8080
 43.130.44.204:8080
@@ -217,6 +218,7 @@
 45.8.30.146:8080
 45.8.30.149:8080
 45.87.43.78:8080
+46.101.23.113:8080
 46.183.27.158:8080
 46.37.123.101:8080
 47.101.186.156:8080
@@ -271,6 +273,7 @@ cs.fortvector.vip
 csai.hkinfosecurity.com
 cyber.11818.vip
 cyber.bossjyt.us.ci
+cyber.zeroa.dev
 cyberstrike.drb420.ru
 cyberstrike.infra.makekod.ru
 cyberstrike.mangoworks.win
