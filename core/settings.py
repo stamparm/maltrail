@@ -46,6 +46,8 @@ TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
 HTTP_DEFAULT_PORT = 8338
 HTTP_TIME_FORMAT = "%a, %d %b %Y %H:%M:%S GMT"  # Reference: http://stackoverflow.com/a/225106
 CEF_FORMAT = "{syslog_time} {host} CEF:0|{device_vendor}|{device_product}|{device_version}|{signature_id}|{name}|{severity}|{extension}"
+DEFAULT_LOCAL_LOG_FORMAT = "default"
+VALID_LOCAL_LOG_FORMATS = ("default", "cef")
 SESSION_COOKIE_NAME = "%s_sessid" % NAME.lower()
 SESSION_COOKIE_FLAG_SAMESITE = True
 SNAP_LEN = 2000
@@ -510,6 +512,13 @@ def check_deprecated():
         sys.argv = [(_ if _ != "-i" else "-r") for _ in sys.argv]
 
 if __name__ != "__main__":
+    if not config.get("LOCAL_LOG_FORMAT"):
+        config.LOCAL_LOG_FORMAT = DEFAULT_LOCAL_LOG_FORMAT
+    else:
+        config.LOCAL_LOG_FORMAT = config.LOCAL_LOG_FORMAT.lower()
+        if config.LOCAL_LOG_FORMAT not in VALID_LOCAL_LOG_FORMATS:
+            raise Exception("invalid configuration value for 'LOCAL_LOG_FORMAT' ('%s')" % config.LOCAL_LOG_FORMAT)
+
     init_output()
     read_whitelist()
     read_ignorelist()
