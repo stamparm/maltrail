@@ -5074,3 +5074,9 @@ instance-s6g21w-relay.screenconnect.com
 
 84.54.33.250:8041
 bbytati25iy2.anondns.net
+
+# Reference: https://x.com/smica83/status/2064668946775650676
+# Reference: https://tria.ge/260610-nx8cgsa14r/behavioral1
+
+173.249.202.61:8041
+greentotalsecurity.com
