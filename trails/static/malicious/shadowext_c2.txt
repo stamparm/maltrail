@@ -1,0 +1,14 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://x.com/Fact_Finder03/status/2064978075104997570
+# TITLE-HOST/IP=ShadowExt C2 - Login
+
+149.104.87.94:8080
+149.104.87.94:9443
+38.60.224.210:8080
+38.60.224.210:9443
+imbyter.com
+blog.imbyter.com
+color.imbyter.com
+public.mexc.co.com
