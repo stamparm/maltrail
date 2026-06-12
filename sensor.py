@@ -1214,6 +1214,15 @@ def monitor():
         if ip_offset is None:
             return
 
+        # NOTE: pcapy.open_live() caps packets at SNAP_LEN, but pcapy.open_offline() (used in offline mode) applies no
+        # snaplen, so a pcap recorded with e.g. `tcpdump -s 0` can yield packets larger than SNAP_LEN. In multiprocessing
+        # mode such a packet would overflow its fixed-size slot in the shared capture buffer (BLOCK_LENGTH), corrupting
+        # adjacent slots (resulting in a hung/early-exiting worker) or raising in struct.pack ("=H" caps at 65535). Truncating
+        # to SNAP_LEN here matches what live capture already enforces at capture time (the parser only inspects headers and a
+        # limited amount of payload, so it already operates on SNAP_LEN-truncated packets in production).
+        if len(packet) > SNAP_LEN:
+            packet = packet[:SNAP_LEN]
+
         try:
             if six.PY3:  # https://github.com/helpsystems/pcapy/issues/37#issuecomment-530795813
                 sec, usec = [int(_) for _ in ("%.6f" % time.time()).split('.')]
