@@ -78,11 +78,15 @@ def fetch_headers(url, timeout=10):
 
     _NO_REDIRECT_OPENER = _urllib.request.build_opener(_NoRedirect())
 
-    req = _urllib.request.Request(url, headers={"User-Agent": USER_AGENT}, method="HEAD")
+    req = _urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    req.get_method = lambda: "HEAD"  # NOTE: portable way to force HEAD; Request(method=...) is Python 3.3+ only
 
     try:
-        with _NO_REDIRECT_OPENER.open(req, timeout=timeout) as resp:
+        resp = _NO_REDIRECT_OPENER.open(req, timeout=timeout)  # NOTE: urllib responses are not context managers on Python 2
+        try:
             return dict(resp.headers.items())
+        finally:
+            resp.close()
     except _urllib.error.HTTPError as e:
         if e.code in (301, 302, 303, 307, 308):
             return dict(e.headers.items())
