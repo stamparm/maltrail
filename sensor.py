@@ -29,6 +29,7 @@ import warnings
 from core.addr import inet_ntoa6
 from core.addr import addr_port
 from core.attribdict import AttribDict
+from core.common import build_trails_regex
 from core.common import check_connection
 from core.common import check_sudo
 from core.common import check_whitelisted
@@ -925,21 +926,7 @@ def init():
             _ = load_trails()
             trails.update(_)
 
-        _regex = ""
-        for trail in trails:
-            if "static" in trails[trail][1]:
-                if re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I):
-                    try:
-                        re.compile(trail)
-                    except re.error:
-                        pass
-                    else:
-                        if re.escape(trail) != trail:
-                            index = _regex.count("(?P<g")
-                            if index < 100:  # Reference: https://stackoverflow.com/questions/478458/python-regular-expressions-with-more-than-100-groups
-                                _regex += "|(?P<g%s>%s)" % (index, trail)
-
-        trails._regex = _regex.strip('|')
+        build_trails_regex(trails)
 
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
         thread.daemon = True

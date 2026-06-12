@@ -259,6 +259,32 @@ def check_whitelisted(trail):
 
     return False
 
+def build_trails_regex(trails):
+    """
+    (Re)builds the named-group alternation regex (TrailsDict._regex) of wildcard/regex static trails used by the
+    sensor's packet matching fallback. Must run on every (re)load - including worker process trail reloads -
+    otherwise wildcard/regex trail detection is silently lost after the first reload (TrailsDict.update() copies
+    over the empty _regex of a freshly loaded TrailsDict).
+    """
+
+    regex = ""
+
+    for trail in trails:
+        if "static" in trails[trail][1]:
+            if re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I):
+                try:
+                    re.compile(trail)
+                except re.error:
+                    continue
+                if re.escape(trail) != trail:
+                    index = regex.count("(?P<g")
+                    if index < 100:  # Reference: https://stackoverflow.com/questions/478458/python-regular-expressions-with-more-than-100-groups
+                        regex += "|(?P<g%s>%s)" % (index, trail)
+
+    trails._regex = regex.strip('|')
+
+    return trails
+
 def load_trails(quiet=False):
     if not quiet:
         print("[i] loading trails...")
@@ -277,6 +303,8 @@ def load_trails(quiet=False):
 
         except Exception as ex:
             sys.exit("[!] something went wrong during trails file read '%s' ('%s')" % (config.TRAILS_FILE, ex))
+
+    build_trails_regex(retval)
 
     if not quiet:
         _ = len(retval)
