@@ -9730,6 +9730,11 @@ drvdb9rcebidk.cloudfront.net
 /exploit1.class
 /exploit1.java
 
+# Reference: https://x.com/JFrogSecurity/status/2065062834870886489
+# Reference: https://research.jfrog.com/post/solana-fakefix/
+
+/v026a4a141fd9e7d2dd.js
+
 # Generic
 
 /5c0ca79.php
