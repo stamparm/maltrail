@@ -55,9 +55,11 @@ def retrieve_content(url, data=None, headers=None):
         if encoding:
             if encoding.lower() == "deflate":
                 data = io.BytesIO(zlib.decompress(retval, -15))
+                retval = data.read()
             elif encoding.lower() == "gzip":
                 data = gzip.GzipFile("", "rb", 9, io.BytesIO(retval))
-            retval = data.read()
+                retval = data.read()
+            # NOTE: any other Content-Encoding (e.g. "identity") leaves retval as the raw response body
     except Exception as ex:
         retval = ex.read() if hasattr(ex, "read") else (get_ex_message(ex) or "")
 
