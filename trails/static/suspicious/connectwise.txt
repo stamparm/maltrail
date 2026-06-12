@@ -5080,3 +5080,8 @@ bbytati25iy2.anondns.net
 
 173.249.202.61:8041
 greentotalsecurity.com
+
+# Reference: https://www.virustotal.com/gui/file/26f43421f16e6e48503ad609cc701bc999b3adb308fd41c6f233c0ecaa1decb8/detection
+
+http://185.215.246.188
+185.215.246.188:8041
