@@ -67,6 +67,17 @@ def _fopen(filepath, mode="rb", opener=open):
         _chown(filepath)
     return retval
 
+def _atomic_replace(src, dst):
+    # NOTE: rename within the same directory is atomic on POSIX, so concurrent readers (sensor worker reloads,
+    # the httpd '/trails' endpoint, downstream UPDATE_SERVER sensors) always see either the old or the new
+    # complete file - never a half-written truncation.
+    if hasattr(os, "replace"):
+        os.replace(src, dst)  # Python 3.3+: atomic, overwrites existing destination on both POSIX and Windows
+    else:
+        if IS_WIN and os.path.exists(dst):
+            os.remove(dst)  # Windows os.rename() cannot overwrite an existing file (only reachable on Python 2)
+        os.rename(src, dst)
+
 def update_trails(force=False, offline=False):
     """
     Update trails from feeds
@@ -90,8 +101,10 @@ def update_trails(force=False, offline=False):
         if not content or content.count(',') < 2:
             print("[x] unable to retrieve data from '%s'" % config.UPDATE_SERVER)
         else:
-            with _fopen(config.TRAILS_FILE, "w+b" if six.PY2 else "w+", open if six.PY2 else codecs.open) as f:
+            tmp_trails_file = "%s.new" % config.TRAILS_FILE
+            with _fopen(tmp_trails_file, "w+b" if six.PY2 else "w+", open if six.PY2 else codecs.open) as f:
                 f.write(content)
+            _atomic_replace(tmp_trails_file, config.TRAILS_FILE)
             trails = load_trails()
 
     else:
@@ -318,17 +331,27 @@ def update_trails(force=False, offline=False):
                     except UnicodeError:
                         del trails[key]
 
+            tmp_trails_file = "%s.new" % config.TRAILS_FILE
             try:
                 if trails:
-                    with _fopen(config.TRAILS_FILE, "w+b" if six.PY2 else "w+", open if six.PY2 else codecs.open) as f:
+                    with _fopen(tmp_trails_file, "w+b" if six.PY2 else "w+", open if six.PY2 else codecs.open) as f:
                         writer = csv.writer(f, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
                         for trail in trails:
                             row = (trail, trails[trail][0], trails[trail][1])
                             writer.writerow(row)
 
+                    _atomic_replace(tmp_trails_file, config.TRAILS_FILE)
                     success = True
             except Exception as ex:
                 print("[x] something went wrong during trails file write '%s' ('%s')" % (config.TRAILS_FILE, ex))
+            finally:
+                # NOTE: a write that failed mid-way leaves a partial temp file behind; the original TRAILS_FILE is
+                # left untouched (and keeps its old mtime, so the next update cycle retries instead of being suppressed)
+                try:
+                    if os.path.exists(tmp_trails_file):
+                        os.remove(tmp_trails_file)
+                except Exception:
+                    pass
 
             print("[i] update finished%s" % (40 * " "))
 
