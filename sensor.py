@@ -934,7 +934,7 @@ def detect_icmpv6_exfiltration(packet, ip_data, dst_ip, ip_offset):
         
         if (time.time() - _icmp6_exfiltration_baseline_startup_time) > config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_WINDOW:
             if config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE and _icmp6_exfiltration_baseline == 0:
-                if (empty(_last_icmp6_destinations)):
+                if (len(_last_icmp6_destinations) == 0):
                     return False
                 print("[i] using auto detect baseline")
                 for destination in _last_icmp6_destinations:
@@ -971,8 +971,6 @@ def detect_icmpv6_large_package_size(packet, ip_data, dst_ip, iph_length):
             return True
         if _icmp6_large_payload_size_treshold != 0 and len(packet[iph_length:len(packet) + 1]) > _icmp6_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
             return True
-        if iph_length > _icmp6_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
-            return True
         
     return False
 
@@ -991,7 +989,7 @@ def detect_icmpv4_exfiltration(packet, ip_data, dst_ip, ip_offset):
         
         if (time.time() - _icmp4_exfiltration_baseline_startup_time) > config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_WINDOW:
             if config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE and _icmp4_exfiltration_baseline == 0:
-                if (empty(_last_icmp4_destinations)):
+                if (len(_last_icmp4_destinations) == 0):
                     return False
                 print("[i] using auto detect baseline")
                 for destination in _last_icmp4_destinations:
@@ -1027,8 +1025,6 @@ def detect_icmpv4_large_package_size(packet, ip_data, dst_ip, iph_length):
         if config.ICMP_LARGE_PACKAGE_ABSOLUTE_THRESHOLD < len(packet[iph_length:len(packet) + 1]):
             return True
         if _icmp4_large_payload_size_treshold != 0 and len(packet[iph_length:len(packet) + 1]) > _icmp4_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
-            return True
-        if len(packet[iph_length:len(packet) + 1]) > _icmp4_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
             return True
         
     return False
