@@ -897,16 +897,17 @@ def _process_packet(packet, sec, usec, ip_offset):
                                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, result, "(heuristic)"), packet)
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
-            if protocol == socket.IPPROTO_ICMP:
-                if detect_icmpv4_exfiltration(packet, ip_data, dst_ip, ip_offset) and ord(ip_data[iph_length:iph_length + 1]) == 0x08:
-                    log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv4 exfiltration (suspicious)", "(heuristic)"), packet)
-                if detect_icmpv4_large_package_size(packet, ip_data, dst_ip, iph_length) and ord(ip_data[iph_length:iph_length + 1]) == 0x08:
-                    log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv4 large package size (suspicious)", "(heuristic)"), packet)
-            elif protocol == socket.IPPROTO_ICMPV6:
-                if detect_icmpv6_exfiltration(packet, ip_data, dst_ip, ip_offset) and ord(ip_data[iph_length:iph_length + 1]) == 0x80:
-                    log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv6 exfiltration (suspicious)", "(heuristic)"), packet)
-                if detect_icmpv6_large_package_size(packet, ip_data, dst_ip, iph_length) and ord(ip_data[iph_length:iph_length + 1]) == 0x80:
-                    log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv6 large package size (suspicious)", "(heuristic)"), packet)
+            if config.USE_HEURISTICS:
+                if protocol == socket.IPPROTO_ICMP:
+                    if detect_icmpv4_exfiltration(packet, ip_data, dst_ip, ip_offset) and ord(ip_data[iph_length:iph_length + 1]) == 0x08:
+                        log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv4 exfiltration (suspicious)", "(heuristic)"), packet)
+                    if detect_icmpv4_large_package_size(packet, ip_data, dst_ip, iph_length) and ord(ip_data[iph_length:iph_length + 1]) == 0x08:
+                        log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv4 large package size (suspicious)", "(heuristic)"), packet)
+                elif protocol == socket.IPPROTO_ICMPV6:
+                    if detect_icmpv6_exfiltration(packet, ip_data, dst_ip, ip_offset) and ord(ip_data[iph_length:iph_length + 1]) == 0x80:
+                        log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv6 exfiltration (suspicious)", "(heuristic)"), packet)
+                    if detect_icmpv6_large_package_size(packet, ip_data, dst_ip, iph_length) and ord(ip_data[iph_length:iph_length + 1]) == 0x80:
+                        log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv6 large package size (suspicious)", "(heuristic)"), packet)
 
             if dst_ip in trails:
                 log_event((sec, usec, src_ip, '-', dst_ip, '-', IPPROTO_LUT[protocol], TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]), packet)
