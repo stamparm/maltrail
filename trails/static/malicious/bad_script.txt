@@ -9735,6 +9735,13 @@ drvdb9rcebidk.cloudfront.net
 
 /v026a4a141fd9e7d2dd.js
 
+# Reference: https://x.com/smica83/status/2065734861873205474
+# Reference: https://www.virustotal.com/gui/file/f4ce325551dff223ea27cee8fbaad5b63b1d62057786050169761d8fdd2f4e14/detection
+
+/sprf_r11gr/foalproposal.ps1
+/sprf_r11gr/
+/foalproposal.ps1
+
 # Generic
 
 /5c0ca79.php
