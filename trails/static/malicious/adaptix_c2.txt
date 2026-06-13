@@ -1588,6 +1588,7 @@ sprnetapi.us
 sso.global-muangthai.com
 static.880578.site
 static.dnl.gr
+t-internal.sk
 tattobla.ru
 tattoblack.ru
 tattoma.ru
@@ -1612,6 +1613,7 @@ velonixsuf.com
 vpn734653413.softether.net
 vpn880365101.softether.net
 vps.b-advsoft.com
+web.wpscdm.top
 xldr004.online
 zoom.serveirc.com
 

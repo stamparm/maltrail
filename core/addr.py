@@ -24,8 +24,8 @@ def compress_ipv6(address):
     if zeros:
         address = address.replace(sorted(zeros, key=lambda _: len(_))[-1], ":", 1)
         address = re.sub(r"(\A|:)0+(\w)", r"\g<1>\g<2>", address)
-        if address == ":1":
-            address = "::1"
+        if address.startswith(':') and not address.startswith('::'):
+            address = ":%s" % address  # NOTE: a zero-run at the start collapses to a single leading ':' (e.g. ':1', ':1234:...'); prefix it to form a valid '::...' (also covers loopback ':1' -> '::1')
     return address
 
 # Note: socket.inet_ntop not available everywhere (Reference: https://docs.python.org/2/library/socket.html#socket.inet_ntop)

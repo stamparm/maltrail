@@ -1008,6 +1008,7 @@ eellner.lol
 ethervane.com
 exoosito.com
 fontanf.lol
+francoife.lol
 fundivox.com
 gautter.lol
 gccsinc.com
@@ -1130,3 +1131,8 @@ zexxario.com
 # Reference: https://www.virustotal.com/gui/file/4c52a84ceeafc3181102aee5acdf1acb115c356c2cbc0344e3fa2c772c46c5d1/detection
 
 4llowme2night.com
+
+# Reference: # Reference: https://www.linkedin.com/pulse/clickfix-campaign-analysis-metateam1337x-afk-daniel-b-8h2ie/
+
+wxqdcakvuv.com
+vsactivens.sbs

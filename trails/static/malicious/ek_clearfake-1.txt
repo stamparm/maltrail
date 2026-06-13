@@ -7693,6 +7693,10 @@ zyvexa.vu
 http://46.226.166.203
 smartcheck214.world
 
+# Reference: https://www.virustotal.com/gui/ip-address/184.174.96.105/relations
+
+bswinpay.com
+
 # Generic
 
 /fo0suc2ki2.rtf

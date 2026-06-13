@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.virustotal.com/gui/ip-address/41.216.188.11/relations
+# TITLE-HOST/IP=MEDUSA C2 Framework
+
+41.216.188.11:5000
+86.54.42.212:5000

@@ -7073,7 +7073,6 @@ advant-ify.com
 af-depot.com
 aisa-grupo.com
 ajaccio-tourisme.com
-akashicrecords-academy.com
 albrecht-hartmann.com
 albret-tourisme.com
 alla-media.com
@@ -7392,7 +7391,6 @@ booking.advant-ify.com
 booking.af-depot.com
 booking.aisa-grupo.com
 booking.ajaccio-tourisme.com
-booking.akashicrecords-academy.com
 booking.albrecht-hartmann.com
 booking.albret-tourisme.com
 booking.alla-media.com

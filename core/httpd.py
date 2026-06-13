@@ -626,6 +626,62 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 content = "configuration option BLACKLIST%s not set" % bl_name
             return content
 
+        def _build_netfilters(self, session):
+            addresses, netmasks, regex = set(), [], ""
+
+            for netfilter in session.netfilters or []:
+                if not netfilter:
+                    continue
+                if '/' in netfilter:
+                    netmasks.append(netfilter)
+                elif re.search(r"\A[\d.]+\Z", netfilter):
+                    addresses.add(netfilter)
+                elif "\\." in netfilter:
+                    regex = r"\b(%s)\b" % netfilter
+                else:
+                    print("[!] invalid network filter '%s'" % netfilter)
+                    return None
+
+            return addresses, netmasks, regex
+
+        def _filter_events(self, handle, session, addresses, netmasks, regex):
+            for line in handle:
+                display = session.netfilters is None
+                ip = None
+                line = line.decode(UNICODE_ENCODING, "ignore")
+
+                if regex:
+                    match = re.search(regex, line)
+                    if match:
+                        ip = match.group(1)
+                        display = True
+
+                if not display and (addresses or netmasks):
+                    for match in re.finditer(r"\b(\d+\.\d+\.\d+\.\d+)\b", line):
+                        if not display:
+                            ip = match.group(1)
+                        else:
+                            break
+
+                        if ip in addresses:
+                            display = True
+                            break
+                        elif netmasks:
+                            for _ in netmasks:
+                                prefix, mask = _.split('/')
+                                if addr_to_int(ip) & make_mask(int(mask)) == addr_to_int(prefix):
+                                    addresses.add(ip)
+                                    display = True
+                                    break
+
+                if session.mask_custom and "(custom)" in line:
+                    line = re.sub(r'("[^"]+"|[^ ]+) \(custom\)', "- (custom)", line)
+
+                if display:
+                    if ip is not None and (",%s" % ip in line or "%s," % ip in line):
+                        line = re.sub(r" ([\d.,]+,)?%s(,[\d.,]+)? " % re.escape(ip), " %s " % ip, line)
+                    yield line
+
         def _events(self, params):
             session = self.get_session()
 
@@ -699,58 +755,16 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             self.send_header(HTTP_HEADER.CONNECTION, "close")
                             self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
-                            buffer, addresses, netmasks, regex = io.StringIO(), set(), [], ""
-                            for netfilter in session.netfilters or []:
-                                if not netfilter:
-                                    continue
-                                if '/' in netfilter:
-                                    netmasks.append(netfilter)
-                                elif re.search(r"\A[\d.]+\Z", netfilter):
-                                    addresses.add(netfilter)
-                                elif "\\." in netfilter:
-                                    regex = r"\b(%s)\b" % netfilter
-                                else:
-                                    print("[!] invalid network filter '%s'" % netfilter)
-                                    return
+                            _ = self._build_netfilters(session)
+                            if _ is None:
+                                return content
+                            addresses, netmasks, regex = _
 
-                            for line in session.range_handle:
-                                display = session.netfilters is None
-                                ip = None
-                                line = line.decode(UNICODE_ENCODING, "ignore")
-
-                                if regex:
-                                    match = re.search(regex, line)
-                                    if match:
-                                        ip = match.group(1)
-                                        display = True
-
-                                if not display and (addresses or netmasks):
-                                    for match in re.finditer(r"\b(\d+\.\d+\.\d+\.\d+)\b", line):
-                                        if not display:
-                                            ip = match.group(1)
-                                        else:
-                                            break
-
-                                        if ip in addresses:
-                                            display = True
-                                            break
-                                        elif netmasks:
-                                            for _ in netmasks:
-                                                prefix, mask = _.split('/')
-                                                if addr_to_int(ip) & make_mask(int(mask)) == addr_to_int(prefix):
-                                                    addresses.add(ip)
-                                                    display = True
-                                                    break
-
-                                if session.mask_custom and "(custom)" in line:
-                                    line = re.sub(r'("[^"]+"|[^ ]+) \(custom\)', "- (custom)", line)
-
-                                if display:
-                                    if ",%s" % ip in line or "%s," % ip in line:
-                                        line = re.sub(r" ([\d.,]+,)?%s(,[\d.,]+)? " % re.escape(ip), " %s " % ip, line)
-                                    buffer.write(line)
-                                    if buffer.tell() >= max_size:
-                                        break
+                            buffer = io.StringIO()
+                            for line in self._filter_events(session.range_handle, session, addresses, netmasks, regex):
+                                buffer.write(line)
+                                if buffer.tell() >= max_size:
+                                    break
 
                             content = buffer.getvalue()
                             end = start + len(content) - 1
@@ -766,13 +780,23 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
                     self.end_headers()
 
-                    with range_handle as f:
-                        while True:
-                            data = f.read(io.DEFAULT_BUFFER_SIZE)
-                            if not data:
-                                break
-                            else:
-                                self.wfile.write(data)
+                    if session.netfilters is None and not session.mask_custom:
+                        with range_handle as f:
+                            while True:
+                                data = f.read(io.DEFAULT_BUFFER_SIZE)
+                                if not data:
+                                    break
+                                else:
+                                    self.wfile.write(data)
+                    else:
+                        # NOTE: per-user netfilter restriction and mask_custom redaction must be enforced here too;
+                        # otherwise a restricted user could retrieve the full unfiltered log by omitting (or malforming) the Range header
+                        _ = self._build_netfilters(session)
+                        with range_handle as f:
+                            if _ is not None:
+                                addresses, netmasks, regex = _
+                                for line in self._filter_events(f, session, addresses, netmasks, regex):
+                                    self.wfile.write(line.encode(UNICODE_ENCODING))
 
             else:
                 self.send_response(_http_client.OK)  # instead of _http_client.NO_CONTENT (compatibility reasons)

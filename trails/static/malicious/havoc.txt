@@ -5918,6 +5918,12 @@ communicationdiscoveryservice.site
 114.55.167.52:443
 114.55.167.52:8080
 
+# Reference: https://www.acronis.com/en/tru/posts/behind-khmer-shadow-targeted-espionage-against-cambodian-government-entities/
+# Reference: https://www.virustotal.com/gui/file/b3e853eee14fb7948c6907888ee07139085ba9af4231c30e97ff6236b86ca024/detection
+
+linkednewsapi.top
+sharingfile.cloud
+
 # Generic
 
 /Havoc/payload/

@@ -55,9 +55,11 @@ def retrieve_content(url, data=None, headers=None):
         if encoding:
             if encoding.lower() == "deflate":
                 data = io.BytesIO(zlib.decompress(retval, -15))
+                retval = data.read()
             elif encoding.lower() == "gzip":
                 data = gzip.GzipFile("", "rb", 9, io.BytesIO(retval))
-            retval = data.read()
+                retval = data.read()
+            # NOTE: any other Content-Encoding (e.g. "identity") leaves retval as the raw response body
     except Exception as ex:
         retval = ex.read() if hasattr(ex, "read") else (get_ex_message(ex) or "")
 
@@ -78,11 +80,15 @@ def fetch_headers(url, timeout=10):
 
     _NO_REDIRECT_OPENER = _urllib.request.build_opener(_NoRedirect())
 
-    req = _urllib.request.Request(url, headers={"User-Agent": USER_AGENT}, method="HEAD")
+    req = _urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    req.get_method = lambda: "HEAD"  # NOTE: portable way to force HEAD; Request(method=...) is Python 3.3+ only
 
     try:
-        with _NO_REDIRECT_OPENER.open(req, timeout=timeout) as resp:
+        resp = _NO_REDIRECT_OPENER.open(req, timeout=timeout)  # NOTE: urllib responses are not context managers on Python 2
+        try:
             return dict(resp.headers.items())
+        finally:
+            resp.close()
     except _urllib.error.HTTPError as e:
         if e.code in (301, 302, 303, 307, 308):
             return dict(e.headers.items())
@@ -255,6 +261,32 @@ def check_whitelisted(trail):
 
     return False
 
+def build_trails_regex(trails):
+    """
+    (Re)builds the named-group alternation regex (TrailsDict._regex) of wildcard/regex static trails used by the
+    sensor's packet matching fallback. Must run on every (re)load - including worker process trail reloads -
+    otherwise wildcard/regex trail detection is silently lost after the first reload (TrailsDict.update() copies
+    over the empty _regex of a freshly loaded TrailsDict).
+    """
+
+    regex = ""
+
+    for trail in trails:
+        if "static" in trails[trail][1]:
+            if re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I):
+                try:
+                    re.compile(trail)
+                except re.error:
+                    continue
+                if re.escape(trail) != trail:
+                    index = regex.count("(?P<g")
+                    if index < 100:  # Reference: https://stackoverflow.com/questions/478458/python-regular-expressions-with-more-than-100-groups
+                        regex += "|(?P<g%s>%s)" % (index, trail)
+
+    trails._regex = regex.strip('|')
+
+    return trails
+
 def load_trails(quiet=False):
     if not quiet:
         print("[i] loading trails...")
@@ -273,6 +305,8 @@ def load_trails(quiet=False):
 
         except Exception as ex:
             sys.exit("[!] something went wrong during trails file read '%s' ('%s')" % (config.TRAILS_FILE, ex))
+
+    build_trails_regex(retval)
 
     if not quiet:
         _ = len(retval)

@@ -73,7 +73,7 @@ class CACHE_TYPE:
     PATH = 2
     POST_DATA = 3
     DOMAIN_WHITELISTED = 4
-    LOCAL_PREFIX = 4
+    LOCAL_PREFIX = 5
 
 class COLOR:
     BLUE = "\033[34m"
