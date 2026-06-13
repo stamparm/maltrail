@@ -5085,3 +5085,7 @@ greentotalsecurity.com
 
 http://185.215.246.188
 185.215.246.188:8041
+
+# Reference: https://github.com/hagezi/dns-blocklists/issues/10491
+
+instance-rfb0l5-relay.screenconnect.com
