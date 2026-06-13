@@ -1266,7 +1266,7 @@ def init():
                     print(msg)
             except OSError:
                 print(msg)
-        except:
+        except Exception:
             pass
 
 def _init_multiprocessing():
@@ -1499,7 +1499,7 @@ def main():
         if isinstance(getattr(options, option), (six.string_types, bool)) and not option.startswith('_'):
             config[option] = getattr(options, option)
 
-    if True:
+    if options.debug:
         config.console = True
         config.PROCESS_COUNT = 1
         config.SHOW_DEBUG = True
