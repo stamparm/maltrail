@@ -8,6 +8,7 @@ See the file 'LICENSE' for copying permission
 from __future__ import print_function  # Requires: Python >= 2.6
 
 import sys
+from typing import Any
 
 sys.dont_write_bytecode = True
 
@@ -105,6 +106,26 @@ from thirdparty.six.moves import urllib as _urllib
 
 warnings.filterwarnings(action="ignore", category=DeprecationWarning)       # NOTE: https://github.com/helpsystems/pcapy/pull/67/files
 
+class IcmpDestination:
+    def __eq__ (self, other):
+        return self.destination == other.destination
+
+    def __hash__(self):
+        return hash((self.destination))
+    
+    def __init__(self, destination: str, count: int, package_size: int, first_seen: int, last_seen: int):
+        self.destination = destination
+        self.first_seen = first_seen
+        self.count = count
+        self.package_size = package_size
+        self.last_seen = last_seen
+
+    def getaveragetrafic(self):
+        return self.count/config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_WINDOW
+    
+    def getaveragepackage_size(self):
+        return self.package_size/self.count
+
 _buffer = None
 _caps = []
 _connect_sec = 0
@@ -127,6 +148,18 @@ _done_lock = threading.Lock()
 _subdomains = {}
 _subdomains_sec = None
 _dns_exhausted_domains = set()
+_last_icmp4_destinations = list[IcmpDestination]()
+_startup_time = time.time()
+_icmp4_exfiltration_baseline = 0
+_icmp4_exfiltration_baseline_startup_time = time.time()
+_icmp4_large_payload_size_treshold = 0
+_icmp4_large_package_size_startup_time = time.time()
+
+_last_icmp6_destinations = list[IcmpDestination]()
+_icmp6_exfiltration_baseline = 0
+_icmp6_exfiltration_baseline_startup_time = time.time()
+_icmp6_large_payload_size_treshold = 0
+_icmp6_large_package_size_startup_time = time.time()
 
 class _set(set):
     pass
@@ -865,11 +898,15 @@ def _process_packet(packet, sec, usec, ip_offset):
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if protocol == socket.IPPROTO_ICMP:
-                if ord(ip_data[iph_length:iph_length + 1]) != 0x08:  # Non-echo request
-                    return
+                if detect_icmpv4_exfiltration(packet, ip_data, dst_ip, ip_offset) and ord(ip_data[iph_length:iph_length + 1]) == 0x08:
+                    log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv4 exfiltration (suspicious)", "(heuristic)"), packet)
+                if detect_icmpv4_large_package_size(packet, ip_data, dst_ip, iph_length) and ord(ip_data[iph_length:iph_length + 1]) == 0x08:
+                    log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv4 large package size (suspicious)", "(heuristic)"), packet)
             elif protocol == socket.IPPROTO_ICMPV6:
-                if ord(ip_data[iph_length:iph_length + 1]) != 0x80:  # Non-echo request
-                    return
+                if detect_icmpv6_exfiltration(packet, ip_data, dst_ip, ip_offset) and ord(ip_data[iph_length:iph_length + 1]) == 0x80:
+                    log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv6 exfiltration (suspicious)", "(heuristic)"), packet)
+                if detect_icmpv6_large_package_size(packet, ip_data, dst_ip, iph_length) and ord(ip_data[iph_length:iph_length + 1]) == 0x80:
+                    log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv6 large package size (suspicious)", "(heuristic)"), packet)
 
             if dst_ip in trails:
                 log_event((sec, usec, src_ip, '-', dst_ip, '-', IPPROTO_LUT[protocol], TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]), packet)
@@ -882,6 +919,119 @@ def _process_packet(packet, sec, usec, ip_offset):
     except Exception:
         if config.SHOW_DEBUG:
             traceback.print_exc()
+
+def detect_icmpv6_exfiltration(packet, ip_data, dst_ip, ip_offset):
+    global _icmp6_exfiltration_baseline
+    global _icmp6_exfiltration_baseline_startup_time
+    global _last_icmp6_destinations
+
+    icmp_destination = IcmpDestination(dst_ip, 1, len(packet[ip_offset:len(packet) + 1]), time.time(), time.time())
+
+    if (icmp_destination in _last_icmp6_destinations):
+        _last_icmp6_destinations[_last_icmp6_destinations.index(icmp_destination)].count += 1
+        _last_icmp6_destinations[_last_icmp6_destinations.index(icmp_destination)].package_size += len(ip_data)
+        _last_icmp6_destinations[_last_icmp6_destinations.index(icmp_destination)].last_seen = time.time()
+        
+        if (time.time() - _icmp6_exfiltration_baseline_startup_time) > config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_WINDOW:
+            if config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE and _icmp6_exfiltration_baseline == 0:
+                if (empty(_last_icmp6_destinations)):
+                    return False
+                print("[i] using auto detect baseline")
+                for destination in _last_icmp6_destinations:
+                    _icmp6_exfiltration_baseline += destination.getaveragetrafic()
+                _icmp6_exfiltration_baseline /= len(_last_icmp6_destinations)
+                print("[i] ICMPv6 exfiltration baseline: %s" % _icmp6_exfiltration_baseline)
+            
+            if _last_icmp6_destinations[_last_icmp6_destinations.index(icmp_destination)].getaveragetrafic() > _icmp6_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
+                return True
+        else:
+            if _last_icmp6_destinations[_last_icmp6_destinations.index(icmp_destination)].getaveragetrafic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
+                return True
+
+    else:
+        _last_icmp6_destinations.append(icmp_destination)
+    
+    return False
+
+def detect_icmpv6_large_package_size(packet, ip_data, dst_ip, iph_length):
+    global _icmp6_large_payload_size_treshold
+    global _icmp6_large_package_size_startup_time
+    global _icmp6_exfiltration_baseline_startup_time
+
+    if config.ICMP_AUTO_DETECT_LARGE_PACKAGE_SIZE:
+        if (time.time() - _icmp6_large_package_size_startup_time) > config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_WINDOW and _icmp6_large_payload_size_treshold == 0:
+            packets = 0
+            for destination in _last_icmp6_destinations:
+                _icmp6_large_payload_size_treshold += destination.getaveragepackage_size()
+                packets += destination.count
+            _icmp6_large_payload_size_treshold /= packets
+            print("[i] ICMPv6 large payload size threshold: %s" % _icmp6_large_payload_size_treshold)
+        
+        if config.ICMP_LARGE_PACKAGE_ABSOLUTE_THRESHOLD < len(packet[iph_length:len(packet) + 1]):
+            return True
+        if _icmp6_large_payload_size_treshold != 0 and len(packet[iph_length:len(packet) + 1]) > _icmp6_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
+            return True
+        if iph_length > _icmp6_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
+            return True
+        
+    return False
+
+
+def detect_icmpv4_exfiltration(packet, ip_data, dst_ip, ip_offset):
+    global _icmp4_exfiltration_baseline
+    global _icmp4_exfiltration_baseline_startup_time
+    global _last_icmp4_destinations
+
+    icmp_destination = IcmpDestination(dst_ip, 1, len(packet[ip_offset:len(packet) + 1]), time.time(), time.time())
+
+    if (icmp_destination in _last_icmp4_destinations):
+        _last_icmp4_destinations[_last_icmp4_destinations.index(icmp_destination)].count += 1
+        _last_icmp4_destinations[_last_icmp4_destinations.index(icmp_destination)].package_size += len(ip_data)
+        _last_icmp4_destinations[_last_icmp4_destinations.index(icmp_destination)].last_seen = time.time()
+        
+        if (time.time() - _icmp4_exfiltration_baseline_startup_time) > config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_WINDOW:
+            if config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE and _icmp4_exfiltration_baseline == 0:
+                if (empty(_last_icmp4_destinations)):
+                    return False
+                print("[i] using auto detect baseline")
+                for destination in _last_icmp4_destinations:
+                    _icmp4_exfiltration_baseline += destination.getaveragetrafic()
+                _icmp4_exfiltration_baseline /= len(_last_icmp4_destinations)
+                print("[i] ICMPv4 exfiltration baseline: %s" % _icmp4_exfiltration_baseline)
+            
+            if _last_icmp4_destinations[_last_icmp4_destinations.index(icmp_destination)].getaveragetrafic() > _icmp4_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
+                return True
+        else:
+            if _last_icmp4_destinations[_last_icmp4_destinations.index(icmp_destination)].getaveragetrafic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
+                return True
+
+    else:
+        _last_icmp4_destinations.append(icmp_destination)
+    
+    return False
+
+def detect_icmpv4_large_package_size(packet, ip_data, dst_ip, iph_length):
+    global _icmp4_large_payload_size_treshold
+    global _icmp4_large_package_size_startup_time
+    global _icmp4_exfiltration_baseline_startup_time
+
+    if config.ICMP_AUTO_DETECT_LARGE_PACKAGE_SIZE:
+        if (time.time() - _icmp4_large_package_size_startup_time) > config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_WINDOW and _icmp4_large_payload_size_treshold == 0:
+            packets = 0
+            for destination in _last_icmp4_destinations:
+                _icmp4_large_payload_size_treshold += destination.getaveragepackage_size()
+                packets += destination.count
+            _icmp4_large_payload_size_treshold /= packets
+            print("[i] ICMPv4 large payload size threshold: %s" % _icmp4_large_payload_size_treshold)
+        
+        if config.ICMP_LARGE_PACKAGE_ABSOLUTE_THRESHOLD < len(packet[iph_length:len(packet) + 1]):
+            return True
+        if _icmp4_large_payload_size_treshold != 0 and len(packet[iph_length:len(packet) + 1]) > _icmp4_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
+            return True
+        if len(packet[iph_length:len(packet) + 1]) > _icmp4_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
+            return True
+        
+    return False
 
 def init():
     """
@@ -1067,74 +1217,20 @@ def init():
         _init_multiprocessing()
 
     if not IS_WIN and not config.DISABLE_CPU_AFFINITY:
-        msg = "[?] please install 'schedtool' for better CPU scheduling"
-
         try:
-            affinity = 1
-
             try:
-                with open("/proc/cpuinfo", "r") as f:
-                    mod = sum(1 for line in f if line.startswith("processor"))
-
-                if mod < 1:
-                    mod = 1
-
-                output = subprocess.check_output(["ps", "aux"], stderr=subprocess.STDOUT)
-                if not isinstance(output, str):
-                    output = output.decode("utf-8", "ignore")
-
-                pids = []
-                for line in output.splitlines():
-                    parts = line.split(None, 10)
-                    if len(parts) > 1 and parts[0] == "root" and "python" in line and "sensor.py" in line:
-                        try:
-                            pids.append(int(parts[1]))
-                        except ValueError:
-                            pass
-
-                used = []
-                for pid in pids:
-                    try:
-                        output = subprocess.check_output(["schedtool", str(pid)], stderr=subprocess.STDOUT)
-                        if not isinstance(output, str):
-                            output = output.decode("utf-8", "ignore")
-
-                        index = output.find("AFFINITY")
-                        if index >= 0:
-                            parts = output[index:].split()
-                            if len(parts) > 1 and parts[1] != "0xf":
-                                used.append(parts[1])
-                    except (OSError, subprocess.CalledProcessError, ValueError):
-                        pass
-
-                if used:
-                    max_used = max(int(_, 16) for _ in used)
-                    affinity = max(1, (max_used << 1) % 2 ** mod)
-            except (IOError, OSError, subprocess.CalledProcessError, ValueError):
+                mod = int(subprocess.check_output("grep -c ^processor /proc/cpuinfo", stderr=subprocess.STDOUT, shell=True).strip())
+                used = subprocess.check_output("for pid in $(ps aux | grep python | grep sensor.py | grep -E -o 'root[ ]*[0-9]*' | tr -d '[:alpha:] '); do schedtool $pid; done | grep -E -o 'AFFINITY .*' | cut -d ' ' -f 2 | grep -v 0xf", stderr=subprocess.STDOUT, shell=True).strip().split('\n')
+                max_used = max(int(_, 16) for _ in used)
+                affinity = max(1, (max_used << 1) % 2 ** mod)
+            except:
                 affinity = 1
-
-            try:
-                p = subprocess.Popen(
-                    [
-                        "schedtool",
-                        "-n", "-2",
-                        "-M", "2",
-                        "-p", "10",
-                        "-a", "0x%02x" % affinity,
-                        str(os.getpid())
-                    ],
-                    stdout=subprocess.PIPE,
-                    stderr=subprocess.PIPE
-                )
-                _, stderr = p.communicate()
-                if not isinstance(stderr, str):
-                    stderr = stderr.decode("utf-8", "ignore")
-
-                if "not found" in stderr:
-                    print(msg)
-            except OSError:
+            p = subprocess.Popen("schedtool -n -2 -M 2 -p 10 -a 0x%02x %d" % (affinity, os.getpid()), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            _, stderr = p.communicate()
+            if "not found" in stderr:
+                msg = "[?] please install 'schedtool' for better CPU scheduling"
                 print(msg)
-        except Exception:
+        except:
             pass
 
 def _init_multiprocessing():
@@ -1177,7 +1273,8 @@ def monitor():
     """
     Sniffs/monitors given capturing interface
     """
-
+    global _startup_time;
+    _startup_time = time.time();
     print("[^] running...")
 
     def packet_handler(datalink, header, packet):
@@ -1357,7 +1454,7 @@ def main():
         if isinstance(getattr(options, option), (six.string_types, bool)) and not option.startswith('_'):
             config[option] = getattr(options, option)
 
-    if options.debug:
+    if True:
         config.console = True
         config.PROCESS_COUNT = 1
         config.SHOW_DEBUG = True

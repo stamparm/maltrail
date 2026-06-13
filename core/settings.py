@@ -141,6 +141,13 @@ WHITELIST = set()
 WHITELIST_RANGES = set()
 IGNORE_EVENTS = set()
 STATIC_IPCAT_LOOKUPS = {"shadowserver.org": ("184.105.139.66-184.105.139.126", "184.105.247.194-184.105.247.254", "74.82.47.1-74.82.47.63", "216.218.206.66-216.218.206.126"), "labs.rapid7.com": ("71.6.216.32-71.6.216.63",), "shodan.io": ("66.240.192.138", "66.240.236.119", "71.6.135.131", "71.6.165.200", "71.6.167.142", "82.221.105.6", "82.221.105.7", "85.25.43.94", "85.25.103.50", "93.120.27.62", "104.131.0.69", "104.236.198.48", "162.159.244.38", "188.138.9.50", "198.20.69.74", "198.20.69.98", "198.20.70.114", "198.20.87.98", "198.20.99.130", "208.180.20.97", "209.126.110.38"), "eecs.umich.edu": ("141.212.121.0-141.212.121.255", "141.212.122.0-141.212.122.255"), "netsec.colostate.edu": ("129.82.138.12", "129.82.138.31", "129.82.138.32", "129.82.138.33", "129.82.138.34", "129.82.138.44"), "ant.isi.edu": ("128.9.168.98", "203.178.148.18", "203.178.148.19"), "eecs.berkeley.edu": ("169.229.3.89", "169.229.3.90", "169.229.3.91", "169.229.3.92", "169.229.3.93", "169.229.3.94"), "openresolverproject.org": ("204.42.253.2", "204.42.254.5"), "opensnmpproject.org": ("204.42.253.130",), "openntpproject.org": ("204.42.253.131",), "openssdpproject.org": ("204.42.253.132",), "projectblindferret.com": ("107.150.52.82-107.150.52.86",), "kudelskisecurity.com": ("185.35.62.0-185.35.62.255",), "riskiq.com": ("64.125.239.0-64.125.239.255",), "comsys.rwth-aachen.de": ("137.226.113.0-137.226.113.63",), "sba-research.org": ("98.189.26.18",)}
+ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD = 10 # packets per second
+ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE = True # Automatically detect the baseline for exfiltration detection
+ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_WINDOW = 60 # TimeFrame for auto-detecting the baseline trafic per destination in seconds
+ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE = 1 # Tolerance for the baseline for exfiltration detection with auto detection
+ICMP_AUTO_DETECT_LARGE_PACKAGE_SIZE = True # Enables automatic detection of unusualy large package sizes for the network
+ICMP_LARGE_PACKAGE_SIZE_TOLERANCE = 100 # The tolerance for deviations in package size
+ICMP_LARGE_PACKAGE_ABSOLUTE_THRESHOLD = 100 # The absolute threshold for large package size detection 
 
 # Reference: https://gist.github.com/ryanwitt/588678
 DLT_OFFSETS = {0: 4, 1: 14, 6: 22, 7: 6, 8: 16, 9: 4, 10: 21, 117: 48, 18: 4, 12 if sys.platform.find('openbsd') != -1 else 108: 4, 14 if sys.platform.find('openbsd') != -1 else 12: 0, 113: 16}
