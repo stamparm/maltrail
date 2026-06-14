@@ -6889,3 +6889,12 @@ ushort.info
 ushort.observer
 ushort.org
 ushort.today
+
+# Reference: https://sansec.io/research/optinmonster-supply-chain-attack
+# Reference: https://www.virustotal.com/gui/ip-address/84.201.6.54/relations
+# Reference: https://www.virustotal.com/gui/file/8a896d928e8c0f01d707c60f62bbbcc669c6698c9fe239c7d06a6c7d0c8adf86/detection
+
+downloads-wordpress.org
+tidio.cc
+code.tidio.cc
+lp.tidio.cc
