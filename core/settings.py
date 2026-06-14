@@ -148,6 +148,7 @@ ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE = 1 # Tolerance for the 
 ICMP_AUTO_DETECT_LARGE_PACKAGE_SIZE = True # Enables automatic detection of unusualy large package sizes for the network
 ICMP_LARGE_PACKAGE_SIZE_TOLERANCE = 100 # The tolerance for deviations in package size
 ICMP_LARGE_PACKAGE_ABSOLUTE_THRESHOLD = 100 # The absolute threshold for large package size detection 
+ICMP_DESTINATION_HISTORY_MAX_SIZE = 4096 # The max number of destinations stored 
 
 # Reference: https://gist.github.com/ryanwitt/588678
 DLT_OFFSETS = {0: 4, 1: 14, 6: 22, 7: 6, 8: 16, 9: 4, 10: 21, 117: 48, 18: 4, 12 if sys.platform.find('openbsd') != -1 else 108: 4, 14 if sys.platform.find('openbsd') != -1 else 12: 0, 113: 16}

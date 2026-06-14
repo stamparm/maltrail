@@ -6,6 +6,7 @@ See the file 'LICENSE' for copying permission
 """
 
 from __future__ import print_function  # Requires: Python >= 2.6
+from collections import deque
 
 import sys
 from typing import Any
@@ -149,14 +150,16 @@ _done_lock = threading.Lock()
 _subdomains = {}
 _subdomains_sec = None
 _dns_exhausted_domains = set()
-_last_icmp4_destinations = list[IcmpDestination]()
+_last_icmp4_destinations = {}
+_last_icmp4_order = deque()
 _startup_time = time.time()
 _icmp4_exfiltration_baseline = 0
 _icmp4_exfiltration_baseline_startup_time = time.time()
 _icmp4_large_payload_size_treshold = 0
 _icmp4_large_package_size_startup_time = time.time()
 
-_last_icmp6_destinations = list[IcmpDestination]()
+_last_icmp6_destinations = {}
+_last_icmp6_order = deque()
 _icmp6_exfiltration_baseline = 0
 _icmp6_exfiltration_baseline_startup_time = time.time()
 _icmp6_large_payload_size_treshold = 0
@@ -926,33 +929,46 @@ def detect_icmpv6_exfiltration(packet, iph_length, dst_ip, ip_offset):
     global _icmp6_exfiltration_baseline
     global _icmp6_exfiltration_baseline_startup_time
     global _last_icmp6_destinations
+    global _last_icmp6_order
 
-    icmp_destination = IcmpDestination(dst_ip, 1, len(packet[ip_offset:len(packet) + 1]), time.time(), time.time())
+    if dst_ip in _last_icmp6_destinations:
+        destination = _last_icmp6_destinations[dst_ip]
 
-    if (icmp_destination in _last_icmp6_destinations):
-        _last_icmp6_destinations[_last_icmp6_destinations.index(icmp_destination)].count += 1
-        _last_icmp6_destinations[_last_icmp6_destinations.index(icmp_destination)].package_size_accumulator += len(packet[iph_length+4:len(packet) + 1])
-        _last_icmp6_destinations[_last_icmp6_destinations.index(icmp_destination)].last_seen = time.time()
+        destination.count += 1
+        destination.package_size_accumulator += len(packet[iph_length+8:len(packet) + 1])
+        destination.last_seen = time.time()
+
+        # Move last destination IP to the end of the line
+        _last_icmp6_order.remove(dst_ip)
+        _last_icmp6_order.append(dst_ip)
         
         if (time.time() - _icmp6_exfiltration_baseline_startup_time) > config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_WINDOW:
             if config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE and _icmp6_exfiltration_baseline == 0:
-                if (len(_last_icmp6_destinations) == 0):
+                if (len(_last_icmp6_destinations.values()) == 0):
                     return False
                 print("[i] using auto detect baseline")
-                for destination in _last_icmp6_destinations:
-                    _icmp6_exfiltration_baseline += destination.getaveragetrafic()
-                _icmp6_exfiltration_baseline /= len(_last_icmp6_destinations)
+                for dest in _last_icmp6_destinations.values():
+                    _icmp6_exfiltration_baseline += dest.getaveragetrafic()
+                _icmp6_exfiltration_baseline /= len(_last_icmp6_destinations.values())
                 print("[i] ICMPv6 exfiltration baseline: %s" % _icmp6_exfiltration_baseline)
             
-            if _last_icmp6_destinations[_last_icmp6_destinations.index(icmp_destination)].getaveragetrafic() > _icmp6_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
+            if destination.getaveragetrafic() > _icmp6_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
                 return True
         else:
-            if _last_icmp6_destinations[_last_icmp6_destinations.index(icmp_destination)].getaveragetrafic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
+            if destination.getaveragetrafic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
                 return True
 
     else:
-        _last_icmp6_destinations.append(icmp_destination)
-    
+        icmp_destination = IcmpDestination(dst_ip, 1, len(packet[ip_offset:len(packet) + 1]), time.time(), time.time())
+        _last_icmp6_destinations[dst_ip] = icmp_destination
+        _last_icmp6_order.append(dst_ip)
+
+        if len(_last_icmp6_destinations) > config.ICMP_DESTINATION_HISTORY_MAX_SIZE:
+            oldest_ip = _last_icmp6_order.popleft()
+
+            if oldest_ip in _last_icmp6_destinations:
+                del _last_icmp6_destinations[oldest_ip]
+
     return False
 
 def detect_icmpv6_large_package_size(packet, ip_data, dst_ip, iph_length):
@@ -963,7 +979,7 @@ def detect_icmpv6_large_package_size(packet, ip_data, dst_ip, iph_length):
     if config.ICMP_AUTO_DETECT_LARGE_PACKAGE_SIZE:
         if (time.time() - _icmp6_large_package_size_startup_time) > config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_WINDOW and _icmp6_large_payload_size_treshold == 0:
             packets = 0
-            for destination in _last_icmp6_destinations:
+            for destination in _last_icmp6_destinations.values():
                 _icmp6_large_payload_size_treshold += destination.getaveragepackage_size()
                 packets += destination.count
             _icmp6_large_payload_size_treshold /= packets
@@ -980,32 +996,47 @@ def detect_icmpv4_exfiltration(packet, iph_length, dst_ip, ip_offset):
     global _icmp4_exfiltration_baseline
     global _icmp4_exfiltration_baseline_startup_time
     global _last_icmp4_destinations
+    global _last_icmp4_order
 
     icmp_destination = IcmpDestination(dst_ip, 1, len(packet[ip_offset:len(packet) + 1]), time.time(), time.time())
 
-    if (icmp_destination in _last_icmp4_destinations):
-        _last_icmp4_destinations[_last_icmp4_destinations.index(icmp_destination)].count += 1
-        _last_icmp4_destinations[_last_icmp4_destinations.index(icmp_destination)].package_size_accumulator += len(packet[iph_length+8:len(packet) + 1])
-        _last_icmp4_destinations[_last_icmp4_destinations.index(icmp_destination)].last_seen = time.time()
+    if dst_ip in _last_icmp4_destinations:
+        destination = _last_icmp4_destinations[dst_ip]
+        
+        destination.count += 1
+        destination.package_size_accumulator += len(packet[iph_length+8:len(packet) + 1])
+        destination.last_seen = time.time()
+
+        # Move last destination IP to the end of the line
+        _last_icmp4_order.remove(dst_ip)
+        _last_icmp4_order.append(dst_ip)
         
         if (time.time() - _icmp4_exfiltration_baseline_startup_time) > config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_WINDOW:
             if config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE and _icmp4_exfiltration_baseline == 0:
-                if (len(_last_icmp4_destinations) == 0):
+                if (len(_last_icmp4_destinations.values()) == 0):
                     return False
                 print("[i] using auto detect baseline")
-                for destination in _last_icmp4_destinations:
-                    _icmp4_exfiltration_baseline += destination.getaveragetrafic()
-                _icmp4_exfiltration_baseline /= len(_last_icmp4_destinations)
+                for dest in _last_icmp4_destinations.values():
+                    _icmp4_exfiltration_baseline += dest.getaveragetrafic()
+                _icmp4_exfiltration_baseline /= len(_last_icmp4_destinations.values())
                 print("[i] ICMPv4 exfiltration baseline: %s" % _icmp4_exfiltration_baseline)
             
-            if _last_icmp4_destinations[_last_icmp4_destinations.index(icmp_destination)].getaveragetrafic() > _icmp4_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
+            if destination.getaveragetrafic() > _icmp4_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
                 return True
         else:
-            if _last_icmp4_destinations[_last_icmp4_destinations.index(icmp_destination)].getaveragetrafic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
+            if destination.getaveragetrafic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
                 return True
 
     else:
-        _last_icmp4_destinations.append(icmp_destination)
+        icmp_destination = IcmpDestination(dst_ip, 1, len(packet[ip_offset:len(packet) + 1]), time.time(), time.time())
+        _last_icmp4_destinations[dst_ip] = icmp_destination
+        _last_icmp4_order.append(dst_ip)
+
+        if len(_last_icmp4_destinations.values()) > config.ICMP_DESTINATION_HISTORY_MAX_SIZE:
+            oldest_ip = _last_icmp4_order.popleft()
+
+            if oldest_ip in _last_icmp4_destinations:
+                del _last_icmp4_destinations[oldest_ip]
     
     return False
 
@@ -1017,7 +1048,7 @@ def detect_icmpv4_large_package_size(packet, ip_data, dst_ip, iph_length):
     if config.ICMP_AUTO_DETECT_LARGE_PACKAGE_SIZE:
         if (time.time() - _icmp4_large_package_size_startup_time) > config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_WINDOW and _icmp4_large_payload_size_treshold == 0:
             packets = 0
-            for destination in _last_icmp4_destinations:
+            for destination in _last_icmp4_destinations.values():
                 _icmp4_large_payload_size_treshold += destination.package_size_accumulator
                 packets += destination.count
             _icmp4_large_payload_size_treshold /= packets
