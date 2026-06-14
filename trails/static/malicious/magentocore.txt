@@ -17570,6 +17570,8 @@ npm.clickcdn01.net
 cdnstats.top
 livechatinc.host
 cdn.livechatinc.host
+ns1.cdnstats.top
+ns2.cdnstats.top
 
 # Generic
 
