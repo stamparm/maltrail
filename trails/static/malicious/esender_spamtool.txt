@@ -1,0 +1,8 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://urlscan.io/result/019eccd8-a618-77a8-b29e-4e273485dbc3/
+# TITLE-HOST/IP=📧 Email Sender Bot
+
+107.23.82.119:3000
+13.60.86.226:3000
