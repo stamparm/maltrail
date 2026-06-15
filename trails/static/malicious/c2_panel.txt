@@ -1365,6 +1365,13 @@ cc.forensic.cafe
 relay.mtrdrgzcid.com
 st.cc.forensic.cafe
 
+# Reference: https://urlscan.io/result/019eccd1-624c-70bb-b09c-c1a0113cdaea/
+# TITLE-HOST=SStar — Engagement console
+
+194.11.226.41:3000
+otter-stack.com
+api.otter-stack.com
+
 # Generic
 
 /admin_123/auth.php
