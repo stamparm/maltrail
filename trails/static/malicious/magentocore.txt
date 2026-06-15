@@ -16341,6 +16341,7 @@ cc-analytis.com
 getejs.com
 getnjs.com
 getvjs.com
+grxapi.com
 i-statics.com
 istatics.com
 itstatics.com
@@ -16648,6 +16649,7 @@ cdn-flare.com
 cdn-gstatic.com
 cdn-vault.com
 cdnflarex.com
+coldmevrix.com
 csgou.vip
 cytovine.com
 cytrixor.com
@@ -16695,6 +16697,8 @@ sprifix.com
 staging-femi9.com
 statqx.com
 sunsdesk.com
+swiftnovar.com
+syncroval.com
 synthrova.com
 trasysit.com
 tristplse.com
