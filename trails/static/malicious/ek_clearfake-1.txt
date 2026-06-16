@@ -7697,6 +7697,12 @@ smartcheck214.world
 
 bswinpay.com
 
+# Reference: https://www.huntress.com/blog/potemkin-loader-rmmproject-clickfix-attack
+
+distritovagas.com
+cl.distritovagas.com
+sonra.eutialyson.com
+
 # Generic
 
 /fo0suc2ki2.rtf
