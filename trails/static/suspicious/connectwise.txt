@@ -5089,3 +5089,9 @@ http://185.215.246.188
 # Reference: https://github.com/hagezi/dns-blocklists/issues/10491
 
 instance-rfb0l5-relay.screenconnect.com
+
+# Reference: https://x.com/Malwarehunterr/status/2066862838275301537
+# Reference: https://www.virustotal.com/gui/file/5172c183e2a809439aeea23980e8168dbff4c23fd603d7e217821413a6da81e8/detection
+
+91.219.239.197:8041
+mintu.filcb.com
