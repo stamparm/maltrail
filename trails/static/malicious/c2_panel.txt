@@ -1372,6 +1372,10 @@ st.cc.forensic.cafe
 otter-stack.com
 api.otter-stack.com
 
+# Reference: https://x.com/Fact_Finder03/status/2066761141737697504
+
+157.173.203.13:3000
+
 # Generic
 
 /admin_123/auth.php
