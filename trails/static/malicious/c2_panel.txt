@@ -1378,7 +1378,13 @@ api.otter-stack.com
 
 # Reference: https://urlscan.io/result/019ecfd2-8d44-717b-ba68-7443d52b3565/
 
+http://185.130.45.201
+185.130.45.201:443
 greenhouseclub.org
+
+# Reference: https://urlscan.io/result/019ecfd3-f947-75bd-b0e4-6589084f9476/
+
+ftoaxz.easypanel.host
 
 # Generic
 
