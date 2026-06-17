@@ -145,6 +145,9 @@ ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD = 10 # packets per sec
 ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE = True # Automatically detect the baseline for exfiltration detection
 ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_WINDOW = 60 # TimeFrame for auto-detecting the baseline trafic per destination in seconds
 ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE = 1 # Tolerance for the baseline for exfiltration detection with auto detection
+ICMP_SRC_DEST_PAIR_EXFILTRATION_DETECTION_TOLERANCE = 5 # Tolerance for the exfiltration detection by src/dst ips pair
+ICMP_DUPLICATE_PACKET_TIME_THRESHOLD = 0.00001 # The minimum time between two packets from the same source IP to be considered a duplicate detection in seconds
+
 ICMP_AUTO_DETECT_LARGE_PACKAGE_SIZE = True # Enables automatic detection of unusualy large package sizes for the network
 ICMP_LARGE_PACKAGE_SIZE_TOLERANCE = 100 # The tolerance for deviations in package size
 ICMP_LARGE_PACKAGE_ABSOLUTE_THRESHOLD = 100 # The absolute threshold for large package size detection 
