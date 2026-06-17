@@ -883,32 +883,34 @@ def _process_packet(packet, sec, usec, ip_offset):
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if config.USE_HEURISTICS:
                 if protocol == socket.IPPROTO_ICMP:
+                    treatable_packet = is_icmpv4_packet(packet, iph_length)
                     treat_icmp4_packet(packet, iph_length, dst_ip, ip_offset, src_ip)
                     
                     exfiltration, destination = detect_icmpv4_exfiltration_by_destination(dst_ip)
-                    if exfiltration and ord(ip_data[iph_length:iph_length + 1]) == 0x08:
+                    if exfiltration and treatable_packet:
                         log_event((sec, usec, destination.get_largest_src_ip(), '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv4 exfiltration by anomalous traffic to destination (suspicious)", "(heuristic)"), packet)
                     
                     exfiltration, src_ip = detect_icmpv4_exfiltration_by_src_dst_ips(src_ip, dst_ip)
-                    if exfiltration and ord(ip_data[iph_length:iph_length + 1]) == 0x08:
+                    if exfiltration and treatable_packet:
                         log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv4 exfiltration by src/dst ips pair (suspicious)", "(heuristic)"), packet)
                     
-                    if detect_icmpv4_large_package_size(packet, ip_data, dst_ip, iph_length) and ord(ip_data[iph_length:iph_length + 1]) == 0x08:
+                    if detect_icmpv4_large_package_size(packet, ip_data, dst_ip, iph_length) and treatable_packet:
                         log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv4 large package size (suspicious)", "(heuristic)"), packet)
         
                 elif protocol == socket.IPPROTO_ICMPV6:
+                    treatable_packet = is_icmpv6_packet(packet, iph_length)
                     treat_icmp6_packet(packet, iph_length, dst_ip, ip_offset, src_ip)
                     
                     exfiltration, destination = detect_icmpv6_exfiltration_by_destination(dst_ip)
-                    if exfiltration and ord(ip_data[iph_length:iph_length + 1]) == 0x80:
+                    if exfiltration and treatable_packet:
                         log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv6 exfiltration by anomalous traffic to destination (suspicious)", "(heuristic)"), packet)
                     
                     exfiltration, src_ip = detect_icmpv6_exfiltration_by_src_dst_ips(src_ip, dst_ip)
-                    if exfiltration and ord(ip_data[iph_length:iph_length + 1]) == 0x80:
+                    if exfiltration and treatable_packet:
                         log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv6 exfiltration by src/dst ips pair (suspicious)", "(heuristic)"), packet)
                     
 
-                    if detect_icmpv6_large_package_size(packet, ip_data, dst_ip, iph_length) and ord(ip_data[iph_length:iph_length + 1]) == 0x80:
+                    if detect_icmpv6_large_package_size(packet, ip_data, dst_ip, iph_length) and treatable_packet:
                         log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv6 large package size (suspicious)", "(heuristic)"), packet)
 
             if dst_ip in trails:
@@ -922,6 +924,12 @@ def _process_packet(packet, sec, usec, ip_offset):
     except Exception:
         if config.SHOW_DEBUG:
             traceback.print_exc()
+
+def is_icmpv6_packet(packet, iph_length):
+    return ord(packet[iph_length:iph_length + 1]) == 0x80 or ord(packet[iph_length:iph_length + 1]) == 0x81
+
+def is_icmpv4_packet(packet, iph_length):
+    return ord(packet[iph_length:iph_length + 1]) == 0x08 or ord(packet[iph_length:iph_length + 1]) == 0x00
 
 def treat_icmp6_packet(packet, iph_length, dst_ip, ip_offset, src_ip):
     global _icmp6_exfiltration_baseline
