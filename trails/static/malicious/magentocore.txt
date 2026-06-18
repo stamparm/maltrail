@@ -17580,6 +17580,10 @@ cdn.livechatinc.host
 ns1.cdnstats.top
 ns2.cdnstats.top
 
+# Reference: https://x.com/sdcyberresearch/status/2067186219037946342
+
+shadowburninside.top
+
 # Generic
 
 /assets/lfg.js
