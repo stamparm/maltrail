@@ -17640,6 +17640,7 @@ stylewowcafwe.com
 
 # Reference: https://threatfox.abuse.ch/browse/malware/js.magecart/ (# 2026-06-18)
 
+ajax.googleaips.net
 batppp26.top
 batppp556.top
 batppp91.top
@@ -17652,6 +17653,7 @@ bootstrapscdn.com
 caffeine-commander-22.xyz
 cdn.bootstrapcdn.co
 cdn.bootstrapcdns.com
+cdn.googleaips.net
 cdnjs.bootstrapscdn.com
 cdnjs.cloudflire.com
 cdnjs.cloudflire.net
