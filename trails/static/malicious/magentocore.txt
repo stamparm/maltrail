@@ -16071,6 +16071,7 @@ mago.kof.one
 # Reference: https://www.virustotal.com/gui/ip-address/104.21.65.136/relations
 
 anl.is
+blz.is
 eqp.is
 snf.is
 
@@ -17637,7 +17638,49 @@ styleussles.com
 stylewify.com
 stylewowcafwe.com
 
+# Reference: https://threatfox.abuse.ch/browse/malware/js.magecart/ (# 2026-06-18)
 
+batppp26.top
+batppp556.top
+batppp91.top
+blueoceanbreeze.org
+bootstrapccdn.com
+bootstrapscdn.com
+cdnjs.bootstrapscdn.com
+cdnjs.cloudflire.com
+cdnjs.cloudflire.net
+cloudflire.com
+cloudflire.net
+code-jquery.com
+code-jquery.net
+contentprotectiongate.com
+dysimasyd.shop
+fundsf.com
+hidoslsk.shop
+hivuwnd.shop
+indaspands.shop
+kihdsmas.shop
+kimsjafw.shop
+longpih.shop
+loveuina.shop
+minkadsus.shop
+newpay115.top
+onepay114.top
+onepay138.top
+onepay146.top
+onepay178.top
+onepay1951.top
+onepay212.top
+onepay234.top
+onepay58.top
+pixellowersoon.top
+safespacesouthwest.com
+smartpeoplework.info
+streetfleshroyalgaming.top
+styleconnectorr.com
+sunnydaycoffees.net
+tiejdnsadbhs.shop
+yumigdjsna.shop
 
 # Generic
 
