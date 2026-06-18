@@ -17703,6 +17703,18 @@ taco-sorcerer-19.xyz
 tiejdnsadbhs.shop
 yumigdjsna.shop
 
+# Reference: https://www.virustotal.com/gui/ip-address/91.215.152.33/relations
+
+brahmcircuits.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/103.224.212.100/relations
+
+dailydosedelights.com
+
+# Reference: https://www.virustotal.com/gui/ip-address/104.26.4.199/relations
+
+madiatop1sys.com
+
 # Generic
 
 /assets/lfg.js
