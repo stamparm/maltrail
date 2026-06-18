@@ -6898,3 +6898,9 @@ downloads-wordpress.org
 tidio.cc
 code.tidio.cc
 lp.tidio.cc
+
+# Reference: https://www.virustotal.com/gui/ip-address/104.21.15.128/relations
+
+wordpres.bid
+cdn.wordpres.bid
+font.wordpres.bid
