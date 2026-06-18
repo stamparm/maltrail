@@ -17582,6 +17582,10 @@ ns2.cdnstats.top
 
 # Reference: https://x.com/sdcyberresearch/status/2067186219037946342
 
+brokenvelvetdream.top
+crimsonnightsky.top
+electricvoidfire.top
+frozenwildheart.top
 shadowburninside.top
 
 # Generic
