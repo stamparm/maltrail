@@ -17580,8 +17580,8 @@ cdn.livechatinc.host
 ns1.cdnstats.top
 ns2.cdnstats.top
 
-# Reference: https://x.com/sdcyberresearch/status/2067186219037946342\
-№ КуаукутсуЖ https://x.com/sdcyberresearch/status/2067255031271752003
+# Reference: https://x.com/sdcyberresearch/status/2067186219037946342
+# Reference: https://x.com/sdcyberresearch/status/2067255031271752003
 
 brokenvelvetdream.top
 crimsonnightsky.top
@@ -17591,24 +17591,53 @@ frozenwildheart.top
 frozenwildherat.top
 shadowburninside.top
 shadowmatrixpls.top
+styleanimal.com
+stylebackrooooms.com
+stylebonus.com
+styleboosted.com
+stylecanoonon.com
+stylecaving.com
+stylecholera.com
+styleconnectorr.com
+styledespair.com
+styledontcryyy.com
+styledupstep.com
 styleember.com
+styleferry.com
 stylegamagee.com
 stylegamingg.com
 stylehailens.com
+stylehelloman.com
+stylehersi.com
+stylehipp.com
 stylehotrod.com
+styleinfinity.top
+stylejingle.com
+stylejunglee.com
 stylekanions.com
+stylekay.com
 styleleftt.com
+stylenemesiis.com
 styleouresen.com
+styleoutsperee.com
 styleoutspin.com
+stylepenalty.com
 styleranked.com
+stylerazorr.com
 stylerightnoww.com
 stylerunningg.com
+styleshort.com
 stylestyk.com
 styleteleport.com
 styletimeset.com
+styletray.com
 styletropik.com
+styletumor.com
 styleussles.com
 stylewify.com
+stylewowcafwe.com
+
+
 
 # Generic
 
