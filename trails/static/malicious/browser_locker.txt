@@ -21891,3 +21891,10 @@ windowsblockededed.pages.dev
 windowslocked.pages.dev
 wiskckla1-dabxefgsaae3c7fd.z02.azurefd.net
 zxhvchgxz6wetew.pages.dev
+
+# Reference: https://www.virustotal.com/gui/ip-address/13.248.213.45/relations
+
+ghiesposst.site
+thoslderos.shop
+mail.ghiesposst.site
+mail.thoslderos.shop
