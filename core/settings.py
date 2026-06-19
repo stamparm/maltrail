@@ -276,6 +276,10 @@ def read_config(config_file):
                 value = _
 
             if any(name.startswith(_) for _ in ("USE_", "SET_", "CHECK_", "ENABLE_", "SHOW_", "DISABLE_")):
+                if value and value.lower() not in ("0", "1", "false", "true"):
+                    # NOTE: surface non-boolean switch values (e.g. 'USE_SSL yes') instead of silently treating them as
+                    # false - a silent USE_SSL=off is exactly the kind of misconfig that goes unnoticed
+                    print("[!] configuration switch '%s' expects a boolean (0/1/true/false), got '%s' (treated as false)" % (name, value))
                 value = value.lower() in ("1", "true")
             elif value.isdigit():
                 value = int(value)
@@ -290,8 +294,10 @@ def read_config(config_file):
 
             config[name] = value
 
-    except (IOError, OSError):
-        pass
+    except (IOError, OSError) as ex:
+        # NOTE: the only I/O here is the file read above; surface it clearly instead of silently proceeding with a
+        # half/empty config (which would otherwise fail later with a misleading "missing mandatory option")
+        sys.exit("[!] unable to read configuration file '%s' (%s)" % (config_file, ex))
 
     for option in ("MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIR"):
         if option not in config:
