@@ -257,7 +257,7 @@ def update_trails(force=False, offline=False):
                         trails[_key] = trails[key]
                         del trails[key]
                         key = _key
-                except:
+                except Exception:
                     pass
 
                 if not key or re.search(r"(?i)\A\.?[a-z]+\Z", key) and not any(_ in trails[key][1] for _ in ("custom", "static")):

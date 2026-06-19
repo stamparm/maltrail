@@ -125,7 +125,7 @@ def ipcat_lookup(address):
                     cursor.execute("SELECT name FROM ranges WHERE start_int <= ? AND end_int >= ?", (_, _))
                     _ = cursor.fetchone()
                     retval = str(_[0]) if _ else retval
-                except:
+                except Exception:
                     raise ValueError("[x] invalid IP address '%s'" % address)
 
                 _ipcat_cache[address] = retval
@@ -313,7 +313,7 @@ def load_trails(quiet=False):
         _ = len(retval)
         try:
             _ = '{0:,}'.format(_)
-        except:
+        except Exception:
             pass
         print("[i] %s trails loaded" % _)
 
@@ -325,7 +325,7 @@ def get_text(value):
     if six.PY2:
         try:
             retval = str(retval)
-        except:
+        except Exception:
             pass
     else:
         if isinstance(value, six.binary_type):

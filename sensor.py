@@ -1001,7 +1001,7 @@ def init():
 
         try:
             devices = pcapy.findalldevs()
-        except:
+        except Exception:
             devices = []
 
         if (config.MONITOR_INTERFACE or "").lower() == "any":
@@ -1047,7 +1047,7 @@ def init():
         for _cap in _caps:
             try:
                 _cap.setfilter(config.CAPTURE_FILTER)
-            except:
+            except Exception:
                 pass
 
     if _multiprocessing:
@@ -1144,7 +1144,7 @@ def _init_multiprocessing():
             _buffer.seek(0)
         except KeyboardInterrupt:
             raise
-        except:
+        except Exception:
             sys.exit("[!] unable to allocate network capture buffer. Please adjust value of 'CAPTURE_BUFFER'")
 
         _n = _multiprocessing.Value('L', lock=False)
