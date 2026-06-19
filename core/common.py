@@ -50,7 +50,11 @@ def retrieve_content(url, data=None, headers=None):
     """
 
     try:
-        req = _urllib.request.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in xrange(len(url))), data, headers or {"User-agent": USER_AGENT, "Accept-encoding": "gzip, deflate"})
+        # NOTE: percent-encode spaces only in the query string (chars after the first '?'); if there's no '?', encode them all.
+        # (Was an O(n^2) char-by-char comprehension that recomputed url.find('?') for every character.)
+        _ = url.find('?')
+        url = url.replace(' ', "%20") if _ == -1 else url[:_ + 1] + url[_ + 1:].replace(' ', "%20")
+        req = _urllib.request.Request(url, data, headers or {"User-agent": USER_AGENT, "Accept-encoding": "gzip, deflate"})
         resp = _urllib.request.urlopen(req, timeout=TIMEOUT)
         retval = resp.read()
         encoding = resp.headers.get("Content-Encoding")
@@ -69,6 +73,11 @@ def retrieve_content(url, data=None, headers=None):
 
         if url.startswith("https://") and isinstance(retval, str) and "handshake failure" in retval:
             return retrieve_content(url.replace("https://", "http://"), data, headers)
+
+        # NOTE: on failure return EMPTY, never the error body/message. Feeds gate parsing on a `__check__` substring and a
+        # few have no guard at all - returning an HTTP error page / WAF block / timeout string here let that text get parsed
+        # into bogus "trails" (feed poisoning). Empty content makes feeds yield nothing and update_trails report the failure.
+        retval = b""
 
     retval = retval or b""
 
