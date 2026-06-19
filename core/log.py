@@ -17,6 +17,8 @@ import threading
 import time
 import traceback
 
+from core.addr import parse_host_port
+from core.addr import resolve_address
 from core.common import check_whitelisted
 from core.common import check_sudo
 from core.compat import xrange
@@ -150,6 +152,17 @@ def flush_condensed_events(single=False):
         if single:
             break
 
+def _endpoint_address(value):
+    """
+    Returns (socket family, sockaddr) for a remote-logging endpoint, IPv4/IPv6-safe.
+    IPv4 addresses / hostnames keep the (host, port) form (sendto resolves them); IPv6 literals are resolved up-front.
+    """
+
+    host, port = parse_host_port(value)
+    if ':' in host:
+        return socket.AF_INET6, resolve_address(host, port)
+    return socket.AF_INET, (host, port)
+
 def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False):
     global _condensing_thread
 
@@ -197,19 +210,8 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     os.write(handle, event.encode(UNICODE_ENCODING))
 
                 if config.LOG_SERVER:
-                    if config.LOG_SERVER.count(':') > 1:
-                        remote_host, remote_port = config.LOG_SERVER.replace('[', '').replace(']', '').rsplit(':', 1)
-
-                        # Reference: https://github.com/squeaky-pl/zenchmarks/blob/master/vendor/twisted/internet/tcp.py
-                        _AI_NUMERICSERV = getattr(socket, "AI_NUMERICSERV", 0)
-                        _NUMERIC_ONLY = socket.AI_NUMERICHOST | _AI_NUMERICSERV
-
-                        _address = socket.getaddrinfo(remote_host, int(remote_port) if str(remote_port or "").isdigit() else 0, 0, 0, 0, _NUMERIC_ONLY)[0][4]
-                    else:
-                        remote_host, remote_port = config.LOG_SERVER.split(':')
-                        _address = (remote_host, int(remote_port))
-
-                    s = socket.socket(socket.AF_INET if len(_address) == 2 else socket.AF_INET6, socket.SOCK_DGRAM)
+                    _family, _address = _endpoint_address(config.LOG_SERVER)
+                    s = socket.socket(_family, socket.SOCK_DGRAM)
                     try:
                         s.sendto(("%s %s" % (sec, event)).encode(UNICODE_ENCODING), _address)
                     finally:
@@ -229,19 +231,19 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     if config.SYSLOG_SERVER:
                         extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, trail, reference)
                         _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.localtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=time.strftime("%Y-%m-%d", time.localtime(os.path.getctime(config.TRAILS_FILE))), name=info, severity={"low": 0, "medium": 1, "high": 2}.get(severity), extension=extension)
-                        remote_host, remote_port = config.SYSLOG_SERVER.split(':')
-                        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+                        _family, _address = _endpoint_address(config.SYSLOG_SERVER)
+                        s = socket.socket(_family, socket.SOCK_DGRAM)
                         try:
-                            s.sendto(_.encode(UNICODE_ENCODING), (remote_host, int(remote_port)))
+                            s.sendto(_.encode(UNICODE_ENCODING), _address)
                         finally:
                             s.close()
 
                     if config.LOGSTASH_SERVER:
                         _ = OrderedDict((("timestamp", sec), ("sensor", HOSTNAME), ("severity", severity), ("src_ip", src_ip), ("src_port", src_port), ("dst_ip", dst_ip), ("dst_port", dst_port), ("proto", proto), ("type", trail_type), ("trail", trail), ("info", info), ("reference", reference)))
-                        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-                        remote_host, remote_port = config.LOGSTASH_SERVER.split(':')
+                        _family, _address = _endpoint_address(config.LOGSTASH_SERVER)
+                        s = socket.socket(_family, socket.SOCK_DGRAM)
                         try:
-                            s.sendto(json.dumps(_).encode(UNICODE_ENCODING), (remote_host, int(remote_port)))
+                            s.sendto(json.dumps(_).encode(UNICODE_ENCODING), _address)
                         finally:
                             s.close()
 
@@ -307,12 +309,7 @@ def start_logd(address=None, port=None, join=False):
         address = address.strip("[]")
 
         _socketserver.UDPServer.address_family = socket.AF_INET6
-
-        # Reference: https://github.com/squeaky-pl/zenchmarks/blob/master/vendor/twisted/internet/tcp.py
-        _AI_NUMERICSERV = getattr(socket, "AI_NUMERICSERV", 0)
-        _NUMERIC_ONLY = socket.AI_NUMERICHOST | _AI_NUMERICSERV
-
-        _address = socket.getaddrinfo(address, int(port) if str(port or "").isdigit() else 0, 0, 0, 0, _NUMERIC_ONLY)[0][4]
+        _address = resolve_address(address, port)
     else:
         _address = (address or '', int(port) if str(port or "").isdigit() else 0)
 

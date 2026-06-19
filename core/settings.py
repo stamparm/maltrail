@@ -375,40 +375,33 @@ def read_config(config_file):
     if int(os.environ.get("MALTRAIL_DREI", 0)) > 0:
         config.SHOW_DEBUG = True
 
+def _iter_file_lines(filepath):
+    """
+    Yields stripped, non-blank, non-comment lines from a file (a no-op if the file is missing).
+    Factors out the open/strip/skip-blank-or-comment boilerplate shared by the misc/*.txt loaders below.
+    """
+
+    if filepath and os.path.isfile(filepath):
+        with open(filepath, "r") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    yield line
+
 def read_whitelist():
     WHITELIST.clear()
     WHITELIST_RANGES.clear()
 
-    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "whitelist.txt"))
-    if os.path.isfile(_):
-        with open(_, "r") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                elif re.search(r"\A\d+\.\d+\.\d+\.\d+/\d+\Z", line):
-                    try:
-                        prefix, mask = line.split('/')
-                        WHITELIST_RANGES.add((addr_to_int(prefix), make_mask(int(mask))))
-                    except (IndexError, ValueError):
-                        WHITELIST.add(line)
-                else:
+    for _ in (os.path.abspath(os.path.join(ROOT_DIR, "misc", "whitelist.txt")), config.USER_WHITELIST):
+        for line in _iter_file_lines(_):
+            if re.search(r"\A\d+\.\d+\.\d+\.\d+/\d+\Z", line):
+                try:
+                    prefix, mask = line.split('/')
+                    WHITELIST_RANGES.add((addr_to_int(prefix), make_mask(int(mask))))
+                except (IndexError, ValueError):
                     WHITELIST.add(line)
-
-    if config.USER_WHITELIST and os.path.isfile(config.USER_WHITELIST):
-        with open(config.USER_WHITELIST, "r") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                elif re.search(r"\A\d+\.\d+\.\d+\.\d+/\d+\Z", line):
-                    try:
-                        prefix, mask = line.split('/')
-                        WHITELIST_RANGES.add((addr_to_int(prefix), make_mask(int(mask))))
-                    except (IndexError, ValueError):
-                        WHITELIST.add(line)
-                else:
-                    WHITELIST.add(line)
+            else:
+                WHITELIST.add(line)
 
 # add rules to ignore event list from passed file
 def add_ignorelist(filepath):
@@ -439,72 +432,49 @@ def read_ua():
     items = []
 
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "ua.txt"))
-    if os.path.isfile(_):
-        with open(_, "r") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                elif " (compatible" in line:
-                    line = re.escape(line)
-                else:
-                    try:
-                        re.compile(line)
-                    except Exception:
-                        line = re.escape(line)
+    for line in _iter_file_lines(_):
+        if " (compatible" in line:
+            line = re.escape(line)
+        else:
+            try:
+                re.compile(line)
+            except Exception:
+                line = re.escape(line)
 
-                items.append(line)
+        items.append(line)
 
     if items:
         SUSPICIOUS_UA_REGEX = "(?i)%s" % '|'.join(items)
 
 def read_worst_asn():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "worst_asns.txt"))
-    if os.path.isfile(_):
-        with open(_, "r") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                else:
-                    match = re.search(r"([\d.]+)/(\d+),(.+)", line)
-                    if not match:
-                        continue
-                    key = line.split('.')[0]
-                    if key not in WORST_ASNS:
-                        WORST_ASNS[key] = []
-                    prefix, mask, name = match.groups()
-                    WORST_ASNS[key].append((addr_to_int(prefix), make_mask(int(mask)), name))
+    for line in _iter_file_lines(_):
+        match = re.search(r"([\d.]+)/(\d+),(.+)", line)
+        if not match:
+            continue
+        key = line.split('.')[0]
+        if key not in WORST_ASNS:
+            WORST_ASNS[key] = []
+        prefix, mask, name = match.groups()
+        WORST_ASNS[key].append((addr_to_int(prefix), make_mask(int(mask)), name))
 
 def read_cdn_ranges():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "cdn_ranges.txt"))
-    if os.path.isfile(_):
-        with open(_, "r") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                else:
-                    key = line.split('.')[0]
-                    if key not in CDN_RANGES:
-                        CDN_RANGES[key] = []
-                    prefix, mask = line.split('/')
-                    CDN_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
+    for line in _iter_file_lines(_):
+        key = line.split('.')[0]
+        if key not in CDN_RANGES:
+            CDN_RANGES[key] = []
+        prefix, mask = line.split('/')
+        CDN_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
 
 def read_bogon_ranges():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "bogon_ranges.txt"))
-    if os.path.isfile(_):
-        with open(_, "r") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                else:
-                    key = line.split('.')[0]
-                    if key not in BOGON_RANGES:
-                        BOGON_RANGES[key] = []
-                    prefix, mask = line.split('/')
-                    BOGON_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
+    for line in _iter_file_lines(_):
+        key = line.split('.')[0]
+        if key not in BOGON_RANGES:
+            BOGON_RANGES[key] = []
+        prefix, mask = line.split('/')
+        BOGON_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
 
 def check_deprecated():
     if "--no-updates" in sys.argv:

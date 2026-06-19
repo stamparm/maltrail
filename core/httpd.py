@@ -25,6 +25,7 @@ import traceback
 from core.addr import addr_to_int
 from core.addr import int_to_addr
 from core.addr import make_mask
+from core.addr import resolve_address
 from core.attribdict import AttribDict
 from core.common import get_regex
 from core.common import ipcat_lookup
@@ -988,12 +989,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         address = address.strip("[]")
 
         _BaseHTTPServer.HTTPServer.address_family = socket.AF_INET6
-
-        # Reference: https://github.com/squeaky-pl/zenchmarks/blob/master/vendor/twisted/internet/tcp.py
-        _AI_NUMERICSERV = getattr(socket, "AI_NUMERICSERV", 0)
-        _NUMERIC_ONLY = socket.AI_NUMERICHOST | _AI_NUMERICSERV
-
-        _address = socket.getaddrinfo(address, int(port) if str(port or "").isdigit() else 0, 0, 0, 0, _NUMERIC_ONLY)[0][4]
+        _address = resolve_address(address, port)
     else:
         _address = (address or '', int(port) if str(port or "").isdigit() else 0)
 
