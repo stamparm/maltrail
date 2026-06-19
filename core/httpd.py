@@ -80,6 +80,34 @@ _statics_cache = None  # NOTE: (5-min-bucket, latest-static-trail-date); avoids 
 MAX_POST_SIZE = 10 * 1024 * 1024  # NOTE: cap request body (real Maltrail POSTs are tiny); rejects absurd Content-Length up-front to bound memory
 REQUEST_TIMEOUT = 60  # NOTE: per-socket-operation timeout; frees worker threads stuck on stalled/slowloris connections (active, progressing clients are unaffected)
 
+_sessions_lock = threading.Lock()  # NOTE: SESSIONS is mutated from worker threads (ThreadingMixIn)
+_sessions_reaped = [0]             # last-reap timestamp (list holder to avoid a global statement)
+SESSION_REAP_PERIOD = 60
+
+def _reap_sessions():
+    """
+    Drops expired sessions (and closes any file handle they pinned). Time-gated so it sweeps at most once a minute
+    regardless of request rate. Without this, sessions that are created and never revisited live forever - a slow
+    memory leak that also leaks a file descriptor per session that opened an event-log range handle.
+    """
+
+    now = time.time()
+    if now - _sessions_reaped[0] < SESSION_REAP_PERIOD:
+        return
+    _sessions_reaped[0] = now
+
+    with _sessions_lock:
+        for _ in list(SESSIONS.keys()):
+            session = SESSIONS.get(_)
+            if session is not None and session.expiration <= now:
+                handle = getattr(session, "range_handle", None)
+                if handle is not None:
+                    try:
+                        handle.close()
+                    except Exception:
+                        pass
+                SESSIONS.pop(_, None)
+
 
 class _ConcatenatedFiles(io.RawIOBase):
     """
@@ -327,17 +355,20 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             retval = None
             cookie = self.headers.get(HTTP_HEADER.COOKIE)
 
+            _reap_sessions()
+
             if cookie:
                 match = re.search(r"%s\s*=\s*([^;]+)" % SESSION_COOKIE_NAME, cookie)
                 if match:
                     session = match.group(1)
-                    if session in SESSIONS:
-                        if SESSIONS[session].client_ip != self.client_address[0]:
+                    _ = SESSIONS.get(session)  # fetch once: a concurrent reap/delete must not turn check-then-fetch into a KeyError
+                    if _ is not None:
+                        if _.client_ip != self.client_address[0]:
                             pass
-                        elif SESSIONS[session].expiration > time.time():
-                            retval = SESSIONS[session]
+                        elif _.expiration > time.time():
+                            retval = _
                         else:
-                            del SESSIONS[session]
+                            SESSIONS.pop(session, None)
 
             if retval is None and not config.USERS:
                 retval = AttribDict({"username": "?"})
@@ -351,8 +382,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 match = re.search(r"%s=(.+)" % SESSION_COOKIE_NAME, cookie)
                 if match:
                     session = match.group(1)
-                    if session in SESSIONS:
-                        del SESSIONS[session]
+                    SESSIONS.pop(session, None)
 
         def version_string(self):
             return "%s/%s" % (NAME, self._version())
