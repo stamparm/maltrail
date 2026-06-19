@@ -160,7 +160,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     path = "%s.html" % path
 
                 if any((config.IP_ALIASES,)) and self.path.split('?')[0] == "/js/main.js":
-                    content = open(path, 'r').read()
+                    with open(path, 'r') as f:
+                        content = f.read()
                     content = re.sub(r"\bvar IP_ALIASES =.+", "var IP_ALIASES = {%s};" % ", ".join('"%s": "%s"' % (_.split(':', 1)[0].strip(), _.split(':', 1)[-1].strip()) for _ in config.IP_ALIASES), content)
 
                 if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and (extension not in DISABLED_CONTENT_EXTENSIONS or os.path.split(path)[-1] in CONTENT_EXTENSIONS_EXCLUSIONS):
@@ -175,7 +176,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             skip = True
 
                     if not skip:
-                        content = content or open(path, "rb").read()
+                        if not content:
+                            with open(path, "rb") as f:
+                                content = f.read()
                         last_modified = time.strftime(HTTP_TIME_FORMAT, mtime)
                         self.send_response(_http_client.OK)
                         self.send_header(HTTP_HEADER.CONNECTION, "close")
@@ -232,8 +235,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 pass
 
         def do_POST(self):
-            length = self.headers.get(HTTP_HEADER.CONTENT_LENGTH)
-            data = self.rfile.read(int(length)).decode(UNICODE_ENCODING)
+            try:
+                length = int(self.headers.get(HTTP_HEADER.CONTENT_LENGTH) or 0)
+            except (TypeError, ValueError):
+                length = 0
+            data = self.rfile.read(length).decode(UNICODE_ENCODING) if length > 0 else ""
             data = _urllib.parse.unquote_plus(data)
             self.data = data
             self.do_GET()
@@ -291,18 +297,22 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             version = VERSION
 
             try:
-                for line in open(os.path.join(os.path.dirname(__file__), "settings.py"), 'r'):
-                    match = re.search(r'VERSION = "([^"]*)', line)
-                    if match:
-                        version = match.group(1)
-                        break
+                with open(os.path.join(os.path.dirname(__file__), "settings.py"), 'r') as f:
+                    for line in f:
+                        match = re.search(r'VERSION = "([^"]*)', line)
+                        if match:
+                            version = match.group(1)
+                            break
             except:
                 pass
 
             return version
 
         def _statics(self):
-            latest = max(glob.glob(os.path.join(os.path.dirname(__file__), "..", "trails", "static", "malware", "*.txt")), key=os.path.getmtime)
+            files = glob.glob(os.path.join(os.path.dirname(__file__), "..", "trails", "static", "malware", "*.txt"))
+            if not files:
+                return ""
+            latest = max(files, key=os.path.getmtime)
             return "/%s" % datetime.datetime.fromtimestamp(os.path.getmtime(latest)).strftime(DATE_FORMAT)
 
         def _logo(self):
@@ -391,7 +401,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     if addresses:
                         netfilters.add(get_regex(addresses))
 
-                SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilters": netfilters, "mask_custom": config.ENABLE_MASK_CUSTOM and uid >= 1000, "expiration": expiration, "client_ip": self.client_address[0]})
+                SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilters": netfilters, "mask_custom": bool(config.ENABLE_MASK_CUSTOM and uid is not None and uid >= 1000), "expiration": expiration, "client_ip": self.client_address[0]})
             else:
                 time.sleep(UNAUTHORIZED_SLEEP_TIME)
                 self.send_response(_http_client.UNAUTHORIZED)
@@ -454,7 +464,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header(HTTP_HEADER.CONNECTION, "close")
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
-            return open(config.TRAILS_FILE, "rb").read()
+            with open(config.TRAILS_FILE, "rb") as f:
+                return f.read()
 
         def _ping(self, params):
             self.send_response(_http_client.OK)
@@ -541,9 +552,12 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         result = set()
                         _ = os.path.join(config.LOG_DIR, "%s.log" % datetime.datetime.now().strftime("%Y-%m-%d"))
                         if os.path.isfile(_):
-                            for line in open(_, "r"):
-                                if re.search(config.FAIL2BAN_REGEX, line, re.I):
-                                    result.add(line.split()[3])
+                            with open(_, "r") as f:
+                                for line in f:
+                                    if re.search(config.FAIL2BAN_REGEX, line, re.I):
+                                        parts = line.split()
+                                        if len(parts) > 3:
+                                            result.add(parts[3])
 
                         content = "\n".join(result)
 
