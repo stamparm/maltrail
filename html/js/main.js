@@ -55,6 +55,9 @@ var PORT_NAMES = { 1: "tcpmux", 2: "nbp", 4: "echo", 6: "zip", 7: "echo", 9: "di
 var SEARCH_TIP_TIMER = 0;
 var DRAW_SPARKLINES_TIMER = 0;
 var PAPAPARSE_COMPLETE_TIMER = 0;
+var _CHUNK_COUNT = 0;
+var _PARSER = null;
+var _QUERY_GENERATION = 0;
 var REPORT_URL = "http://23.254.203.53/report.php"  // NOTE: Right click / Report false positive
 var SEARCH_TIP_URL = "https://www.vincentde.com/search?q=${query}"
 
@@ -521,6 +524,16 @@ function resetView() {
 function init(url, from, to) {
     var csv = "";
 
+    // NOTE: bump the generation and abort any in-flight parse so a re-query (e.g. clicking another calendar date mid-load)
+    // can't have a stale worker keep writing into the freshly-reset globals below (data corruption / double counting)
+    _QUERY_GENERATION += 1;
+    var generation = _QUERY_GENERATION;
+
+    if (_PARSER !== null) {
+        try { _PARSER.abort(); } catch (e) { }
+        _PARSER = null;
+    }
+
     document.title = "Maltrail (loading...)";
     $("body").loader("show");
     $("#main_container").toggleClass("hidden", true);
@@ -541,6 +554,7 @@ function init(url, from, to) {
     _DATASET.length = 0;
     _TOTAL_EVENTS = 0;
     _CHUNK_COUNT = 0;
+    HIDDEN_THREAT_COUNT = 0;
 
     for (var severity in SEVERITY)
         _SEVERITY_COUNT[SEVERITY[severity]] = 0;
@@ -577,7 +591,13 @@ function init(url, from, to) {
         //newline: '\n',
         worker: !DEMO,
         skipEmptyLines: true,
-        chunk: function(results) {
+        chunk: function(results, parser) {
+            if (generation !== _QUERY_GENERATION) {
+                try { parser.abort(); } catch (e) { }
+                return;
+            }
+            _PARSER = parser;
+
             var title = document.title.replace(/\s?\.\s?/g, '.');
             var parts = title.split('.');
             var total = results.data.length;
@@ -769,6 +789,9 @@ function init(url, from, to) {
             }
         },
         complete: function() {
+            if (generation !== _QUERY_GENERATION)
+                return;
+            _PARSER = null;
             clearTimeout(PAPAPARSE_COMPLETE_TIMER);
             PAPAPARSE_COMPLETE_TIMER = setTimeout(function() {
                 var hidden_threats = $.jStorage.get(STORAGE_KEY_HIDDEN_THREATS, {});
@@ -1725,13 +1748,16 @@ function initDetails() {
                 if (!DEMO && !isLocalAddress(ip)) {
                     if (!(ip in CHECK_IP)) {
                         CHECK_IP[ip] = null;
-                        $.ajax("/check_ip?address=" + ip, { dataType: "jsonp", ip: ip, cell: cell })
+                        $.ajax("/check_ip?address=" + ip, { dataType: "jsonp", ip: ip, cell: cell, timeout: 60000 })
                         .done(function(json) {
                             var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'></span>" : "<span class='ipcat hidden'></span>").html(json.ipcat);
                             CHECK_IP[this.ip] = json;
                             this.cell.append(span_ip);
                             if (json.worst_asns === "true")
                                 this.cell.append($("<span class='worst_asns' title='malicious ASN'></span>").tooltip());
+                        })
+                        .fail(function() {
+                            CHECK_IP[this.ip] = { ipcat: "", worst_asns: "false" };  // NOTE: terminal value so pending-cell pollers/redraws stop retrying after a failed/blocked lookup
                         });
                     }
                     else if (CHECK_IP[ip] !== null) {
@@ -1789,7 +1815,7 @@ function initDetails() {
                 if (!isLocalAddress(ip)) {
                     if (!(ip in IP_COUNTRY)) {
                         IP_COUNTRY[ip] = null;
-                        $.ajax("https://stat.ripe.net/data/geoloc/data.json?resource=" + ip, { dataType:"jsonp", ip: ip, html: html, cell: cell })
+                        $.ajax("https://stat.ripe.net/data/geoloc/data.json?resource=" + ip, { dataType:"jsonp", ip: ip, html: html, cell: cell, timeout: 60000 })
                         .done(function(json) {
                             var span_ip = $("<span title=''/>").html(this.html + " ");
                             var country = null;
@@ -1816,6 +1842,9 @@ function initDetails() {
 
                             span_ip.tooltip(options);
                             this.cell.html("").append(span_ip).append($(img).tooltip());
+                        })
+                        .fail(function() {
+                            IP_COUNTRY[this.ip] = "unknown";  // NOTE: terminal value so pending-cell pollers/redraws stop retrying after a failed/blocked lookup
                         });
                     }
                     else if (IP_COUNTRY[ip] !== null) {
