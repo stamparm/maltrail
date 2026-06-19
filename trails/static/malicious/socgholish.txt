@@ -5252,7 +5252,9 @@ snap.promantree.com
 # Reference: https://www.infoblox.com/blog/threat-intelligence/hot-take-operation-endgame-vs-socgholish/
 
 app-front.anmaradigital.com
+dashboard.premiermarketingus.com
 platform.exathomeswebuyarizona.com
+user.exathomessellmyhomeflorida.com
 
 # Generic
 
