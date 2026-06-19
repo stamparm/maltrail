@@ -119,6 +119,7 @@ _multiprocessing = None
 _n = None
 _result_cache = LRUDict(MAX_CACHE_ENTRIES)
 _local_cache = LRUDict(MAX_CACHE_ENTRIES)
+_valid_dns_name_regex = re.compile(VALID_DNS_NAME_REGEX)  # NOTE: precompiled (used per DNS query); ~2x vs re.search(string, ...)
 _last_syn = None
 _last_logged_syn = None
 _last_udp = None
@@ -198,7 +199,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
         return
 
     result = False
-    if re.search(VALID_DNS_NAME_REGEX, query) is not None and not _check_domain_whitelisted(query):
+    if _valid_dns_name_regex.search(query) is not None and not _check_domain_whitelisted(query):
         parts = query.split('.')
 
         if query.endswith(".ip-adress.com"):  # Reference: https://www.virustotal.com/gui/domain/ip-adress.com/relations
@@ -270,7 +271,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
         _result_cache[(CACHE_TYPE.DOMAIN, query)] = False
 
 def _get_local_prefix():
-    _sources = set(_.split('~')[0] for _ in list(_connect_src_dst.keys()))  # NOTE: list() snapshots keys atomically; bare .keys() iteration can raise "dictionary changed size" when another capture thread mutates _connect_src_dst (multi-interface mode)
+    _sources = set(_[0] for _ in list(_connect_src_dst.keys()))  # NOTE: tuple keys (src, dst); list() snapshots atomically to avoid "dictionary changed size" when another capture thread mutates _connect_src_dst (multi-interface mode)
     _candidates = [re.sub(r"\d+\.\d+\Z", "", _) for _ in _sources]
     _ = sorted(((_candidates.count(_), _) for _ in set(_candidates)), reverse=True)
     result = _[0][1] if _ else ""
@@ -311,8 +312,8 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                 try:
                     for key in _connect_src_dst:
-                        _src_ip, _dst = key.split('~')
-                        if not _dst.isdigit() and len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
+                        _src_ip, _dst = key
+                        if not isinstance(_dst, int) and len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:  # str _dst => per-IP key (port scan); int _dst => per-port key (infection)
                             if not check_whitelisted(_src_ip):
                                 _dst_ip = _dst
                                 for _ in _connect_src_details[key]:
@@ -334,7 +335,7 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                 for key in _path_src_dst:
                     if len(_path_src_dst[key]) > WEB_SCANNING_THRESHOLD:
-                        _src_ip, _dst_ip = key.split('~')
+                        _src_ip, _dst_ip = key
                         _sec, _usec, _src_port, _dst_port, _path = _path_src_dst_details[key].pop()
                         log_event((_sec, _usec, _src_ip, _src_port, _dst_ip, _dst_port, PROTO.TCP, TRAIL.PATH, "*", "potential web scanning", "(heuristic)"), packet)
 
@@ -405,7 +406,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             _locks.heuristics.acquire()
 
                         try:
-                            key = "%s~%s" % (src_ip, dst_ip)
+                            key = (src_ip, dst_ip)  # NOTE: tuple key (was "src~dst" string); avoids per-SYN format + later split('~') and is IPv6-safe
                             if key not in _connect_src_dst:
                                 _connect_src_dst[key] = set()
                                 _connect_src_details[key] = set()
@@ -413,7 +414,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             _connect_src_details[key].add((sec, usec, src_port, dst_port))
 
                             if dst_port in POTENTIAL_INFECTION_PORTS:
-                                key = "%s~%s" % (src_ip, dst_port)
+                                key = (src_ip, dst_port)
                                 if key not in _connect_src_dst:
                                     _connect_src_dst[key] = set()
                                     _connect_src_details[key] = set()
@@ -426,7 +427,10 @@ def _process_packet(packet, sec, usec, ip_offset):
             else:
                 tcph_length = doff_reserved >> 4
                 h_size = iph_length + (tcph_length << 2)
-                tcp_data = get_text(ip_data[h_size:])
+                tcp_payload = ip_data[h_size:]
+                # NOTE: the whole block below only acts on HTTP (response starting with "HTTP/" or request containing " HTTP/"),
+                # so skip the (costly) full-payload decode for non-HTTP TCP (e.g. the bulk of line-rate traffic: TLS/443)
+                tcp_data = get_text(tcp_payload) if b"HTTP/" in tcp_payload else ""
 
                 if tcp_data.startswith("HTTP/"):
                     match = re.search(GENERIC_SINKHOLE_REGEX, tcp_data[:2000])
@@ -494,7 +498,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                     if config.USE_HEURISTICS and path.startswith('/'):
                         _path = path.split('/')[1]
 
-                        key = "%s~%s" % (src_ip, dst_ip)
+                        key = (src_ip, dst_ip)
                         if key not in _path_src_dst:
                             _path_src_dst[key] = set()
                         _path_src_dst[key].add(_path)
@@ -719,11 +723,10 @@ def _process_packet(packet, sec, usec, ip_offset):
                             offset += length + 1
 
                         query = query.lower()
+                        parts = query.split('.')  # NOTE: computed once (was split twice per DNS query: guard + below)
 
-                        if not query or re.search(VALID_DNS_NAME_REGEX, query) is None or any(_ in query for _ in (".intranet.",)) or query.split('.')[-1] in IGNORE_DNS_QUERY_SUFFIXES:
+                        if not query or _valid_dns_name_regex.search(query) is None or any(_ in query for _ in (".intranet.",)) or parts[-1] in IGNORE_DNS_QUERY_SUFFIXES:
                             return
-
-                        parts = query.split('.')
 
                         if ord(dns_data[2:3]) & 0xfa == 0x00:  # standard query (both recursive and non-recursive)
                             type_, class_ = struct.unpack("!HH", dns_data[offset + 1:offset + 5])
