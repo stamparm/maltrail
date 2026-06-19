@@ -943,6 +943,7 @@ def init():
             trails.adopt(load_trails())
 
         build_trails_regex(trails)
+        trails.finalize()   # compact the resident set to the hash-array form (read-only hot path); drops key strings
 
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
         thread.daemon = True
