@@ -1724,10 +1724,9 @@ function initDetails() {
             $('[title]', nRow).tooltip();
 
             $.each([DATATABLES_COLUMNS.TRAIL], function(index, value) {
-                var cell = $('td:eq(' + value + ')', nRow);
-
-                if (cell === null)
+                if (!nRow.cells[value])  // NOTE: native cell access avoids a Sizzle ':eq' full-scan on every row, every redraw
                     return false;
+                var cell = $(nRow.cells[value]);
 
                 var html = cell.html();
 
@@ -1790,10 +1789,9 @@ function initDetails() {
             });
 
             $.each([DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP], function(index, value) {
-                var cell = $('td:eq(' + value + ')', nRow);
-
-                if (cell === null)
+                if (!nRow.cells[value])  // NOTE: native cell access avoids a Sizzle ':eq' full-scan on every row, every redraw
                     return false;
+                var cell = $(nRow.cells[value]);
 
                 var html = cell.html();
 
@@ -1912,7 +1910,7 @@ function initDetails() {
                 }
             }, 2000, $(this), event);
 
-            $(cell).on("mouseleave", function(mouseenter) {
+            $(cell).one("mouseleave", function() {  // NOTE: .one() so the handler auto-removes instead of accumulating one per mouseenter
                 clearTimeout(SEARCH_TIP_TIMER);
             });
         }
