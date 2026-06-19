@@ -19,6 +19,7 @@ from core.addr import expand_range
 from core.addr import make_mask
 from core.attribdict import AttribDict
 from core.colorized import init_output
+from core.datatype import LRUDict
 from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
@@ -59,7 +60,8 @@ NO_BLOCK = -1
 END_BLOCK = -2
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 HTML_DIR = os.path.join(ROOT_DIR, "html")
-DISPOSED_NONCES = set()
+MAX_DISPOSED_NONCES = 10000
+DISPOSED_NONCES = LRUDict(MAX_DISPOSED_NONCES)  # NOTE: bounded to prevent unbounded growth from (unauthenticated) /login nonce spam
 PING_RESPONSE = "pong"
 MAX_NOFILE = 65000
 CAPTURE_TIMEOUT = 100  # ms
