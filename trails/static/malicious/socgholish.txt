@@ -5249,6 +5249,11 @@ api-app.uppercrafteroom.com
 
 snap.promantree.com
 
+# Reference: https://www.infoblox.com/blog/threat-intelligence/hot-take-operation-endgame-vs-socgholish/
+
+app-front.anmaradigital.com
+platform.exathomeswebuyarizona.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
