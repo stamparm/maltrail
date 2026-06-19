@@ -6547,3 +6547,12 @@
 
 193.8.187.0/24,stolitomson-as
 194.113.39.0/24,stolitomson-as
+
+# AS 208962
+# Reference: https://ipinfo.io/AS208962
+# Reference: https://www.cloudsek.com/blog/inside-the-fortibleed-open-directory-a-technical-analysis-of-what-the-attacker-left-behind
+
+154.51.15.0/24,nextremum
+193.239.177.0/24,nextremum
+38.117.87.0/24,nextremum
+38.127.214.0/23,nextremum
