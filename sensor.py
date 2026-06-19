@@ -892,9 +892,13 @@ def _process_packet(packet, sec, usec, ip_offset):
                 log_event((sec, usec, src_ip, '-', dst_ip, '-', IPPROTO_LUT[protocol], TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet)
 
     except struct.error:
-        pass
+        pass  # truncated/garbage packet headers are expected and high-volume
 
     except Exception:
+        # NOTE: never let a packet-processing bug fail SILENTLY - an IDS that quietly stops detecting a whole traffic
+        # class looks perfectly healthy while it's blind. Surface it (single=True dedups identical tracebacks, so a
+        # recurring bug can't flood the error log) instead of only printing under SHOW_DEBUG.
+        log_error("unhandled exception in _process_packet:\n%s" % traceback.format_exc(), single=True)
         if config.SHOW_DEBUG:
             traceback.print_exc()
 

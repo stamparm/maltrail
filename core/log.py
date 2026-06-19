@@ -152,16 +152,26 @@ def flush_condensed_events(single=False):
         if single:
             break
 
+_endpoint_cache = {}
+
 def _endpoint_address(value):
     """
     Returns (socket family, sockaddr) for a remote-logging endpoint, IPv4/IPv6-safe.
     IPv4 addresses / hostnames keep the (host, port) form (sendto resolves them); IPv6 literals are resolved up-front.
+
+    NOTE: memoized per endpoint string - log_event runs this for every event, and the IPv6 branch calls getaddrinfo
+    (a potentially blocking DNS round-trip). Endpoints are stable config values, so resolve once instead of per event.
     """
 
-    host, port = parse_host_port(value)
-    if ':' in host:
-        return socket.AF_INET6, resolve_address(host, port)
-    return socket.AF_INET, (host, port)
+    retval = _endpoint_cache.get(value)
+    if retval is None:
+        host, port = parse_host_port(value)
+        if ':' in host:
+            retval = (socket.AF_INET6, resolve_address(host, port))
+        else:
+            retval = (socket.AF_INET, (host, port))
+        _endpoint_cache[value] = retval
+    return retval
 
 def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False):
     global _condensing_thread
