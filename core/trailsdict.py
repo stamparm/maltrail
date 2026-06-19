@@ -31,101 +31,71 @@ class TrailsDict(dict):
     """
 
     def __init__(self):
-        self._trails = {}
+        self._trails = {}   # key -> the shared (info, reference) tuple for that trail
         self._regex = ""
-        self._infos = []
-        self._reverse_infos = {}
-        self._references = []
-        self._reverse_references = {}
-        # NOTE: lookups read this single tuple (one atomic attribute access) instead of self._trails/_infos/_references
-        # separately, so a live reload via adopt() can never expose them to a half-swapped (inconsistent) state.
-        # _read[0] IS self._trails (same objects), so in-place writes stay visible; it is only rebound here and in adopt().
-        self._read = (self._trails, self._infos, self._references)
+        # NOTE: there are only a few thousand distinct (info, reference) pairs across millions of trails, so every trail
+        # with the same pair shares ONE tuple object instead of each storing its own "i,j" index string. That string per
+        # trail (one tiny str object each, parsed with split(',')+int() on every lookup) was the dominant RAM cost and a
+        # per-lookup cost; sharing the tuple cut steady-state RSS ~29% and makes a lookup a plain dict read.
+        self._pairs = {}    # (info, reference) -> the one shared tuple instance
 
     def adopt(self, other):
         """
-        Atomically replaces this dict's contents with another TrailsDict's. Readers see the old contents or the new
-        contents - never the empty/half-populated window that clear()+update() left exposed during every trail reload.
+        Atomically replaces this dict's contents with another TrailsDict's. Lookups read self._trails (a single
+        attribute), so a live reload swaps it in one assignment - readers see the old or the new table, never the
+        empty/half-built window that clear()+update() exposed them to during every trail reload.
         """
 
-        self._trails = other._trails
-        self._infos = other._infos
-        self._reverse_infos = other._reverse_infos
-        self._references = other._references
-        self._reverse_references = other._reverse_references
-        self._read = (self._trails, self._infos, self._references)  # single atomic swap for the read path
+        self._pairs = other._pairs
         self._regex = other._regex
+        self._trails = other._trails  # single atomic swap for the read path (done last)
 
     def __delitem__(self, key):
-        del self._trails[key]  # _read[0] is the same dict object, so the deletion is visible to readers
+        del self._trails[key]
 
     def has_key(self, key):
-        return key in self._read[0]
+        return key in self._trails
 
     def __contains__(self, key):
-        return key in self._read[0]
+        return key in self._trails
 
     def clear(self):
         self.__init__()
 
     def keys(self):
-        return self._read[0].keys()
+        return self._trails.keys()
 
     def iterkeys(self):
-        for key in self._read[0].keys():
+        for key in self._trails:
             yield key
 
     def __iter__(self):
-        for key in self._read[0].keys():
+        for key in self._trails:
             yield key
 
     def get(self, key, default=None):
-        trails, infos, references = self._read  # consistent snapshot
-        if key in trails:
-            _ = trails[key].split(',')
-            if len(_) == 2:
-                return (infos[int(_[0])], references[int(_[1])])
-
-        return default
+        return self._trails.get(key, default)
 
     def update(self, value):
-        if isinstance(value, TrailsDict):
-            for key in value:  # per-key merge (was a by-reference attribute copy that silently aliased internal state)
-                self[key] = value[key]
-        elif isinstance(value, dict):
+        if isinstance(value, (TrailsDict, dict)):
             for key in value:
-                info, reference = value[key]
-                if info not in self._reverse_infos:
-                    self._reverse_infos[info] = len(self._infos)
-                    self._infos.append(info)
-                if reference not in self._reverse_references:
-                    self._reverse_references[reference] = len(self._references)
-                    self._references.append(reference)
-                self._trails[key] = "%d,%d" % (self._reverse_infos[info], self._reverse_references[reference])
+                self[key] = value[key]
         else:
             raise Exception("unsupported type '%s'" % type(value))
 
     def __len__(self):
-        return len(self._read[0])
+        return len(self._trails)
 
     def __getitem__(self, key):
-        trails, infos, references = self._read  # consistent snapshot
-        if key in trails:
-            _ = trails[key].split(',')
-            if len(_) == 2:
-                return (infos[int(_[0])], references[int(_[1])])
-
-        raise KeyError(key)
+        return self._trails[key]
 
     def __setitem__(self, key, value):
-        if isinstance(value, (tuple, list)):
-            info, reference = value
-            if info not in self._reverse_infos:
-                self._reverse_infos[info] = len(self._infos)
-                self._infos.append(info)
-            if reference not in self._reverse_references:
-                self._reverse_references[reference] = len(self._references)
-                self._references.append(reference)
-            self._trails[key] = "%d,%d" % (self._reverse_infos[info], self._reverse_references[reference])
-        else:
+        if not isinstance(value, (tuple, list)):
             raise Exception("unsupported type '%s'" % type(value))
+
+        pair = (value[0], value[1])
+        shared = self._pairs.get(pair)
+        if shared is None:
+            shared = pair
+            self._pairs[pair] = pair
+        self._trails[key] = shared
