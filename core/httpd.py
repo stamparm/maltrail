@@ -823,6 +823,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     match = re.search(r"bytes=(\d+)-(\d+)", self.headers[HTTP_HEADER.RANGE])
                     if match:
                         start, end = int(match.group(1)), int(match.group(2))
+                        if end < start or start > total:  # NOTE: reject inverted/out-of-bounds ranges; otherwise a negative size makes read(-n) return the whole file
+                            self.send_response(_http_client.REQUESTED_RANGE_NOT_SATISFIABLE)
+                            self.send_header(HTTP_HEADER.CONNECTION, "close")
+                            self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes */%d" % total)
+                            return content
                         max_size = end - start + 1
                         end = min(total - 1, end)
                         size = end - start + 1
