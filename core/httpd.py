@@ -74,6 +74,10 @@ _fail2ban_key = None
 _blacklist_cache = None
 _blacklist_key = None
 _version_cache = None
+_counts_cache = {}  # NOTE: per daily-log event count keyed by filepath -> (mtime, size, count); past-day logs are immutable so they're read once, not on every poll
+_statics_cache = None  # NOTE: (5-min-bucket, latest-static-trail-date); avoids re-globbing the static malware dir on every page render
+MAX_POST_SIZE = 10 * 1024 * 1024  # NOTE: cap request body (real Maltrail POSTs are tiny); rejects absurd Content-Length up-front to bound memory
+REQUEST_TIMEOUT = 60  # NOTE: per-socket-operation timeout; frees worker threads stuck on stalled/slowloris connections (active, progressing clients are unaffected)
 
 
 class _ConcatenatedFiles(io.RawIOBase):
@@ -191,6 +195,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 pass
 
     class ReqHandler(_BaseHTTPServer.BaseHTTPRequestHandler):
+        timeout = REQUEST_TIMEOUT  # NOTE: StreamRequestHandler applies this as a socket timeout -> stalled connections drop instead of pinning a thread forever
+
         def do_GET(self):
             path, query = self.path.split('?', 1) if '?' in self.path else (self.path, "")
             params = {}
@@ -306,6 +312,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 length = int(self.headers.get(HTTP_HEADER.CONTENT_LENGTH) or 0)
             except (TypeError, ValueError):
                 length = 0
+            if length > MAX_POST_SIZE:  # NOTE: reject oversized bodies before buffering them
+                self.send_response(_http_client.REQUEST_ENTITY_TOO_LARGE)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                self.end_headers()
+                return
             data = self.rfile.read(length).decode(UNICODE_ENCODING) if length > 0 else ""
             data = _urllib.parse.unquote_plus(data)
             self.data = data
@@ -381,11 +392,18 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             return _version_cache
 
         def _statics(self):
+            global _statics_cache
+            key = int(time.time()) // 300  # NOTE: static trails change ~daily (on update); a 5-min TTL avoids globbing+stat-ing hundreds of files on every page render
+            if _statics_cache is not None and _statics_cache[0] == key:
+                return _statics_cache[1]
+
             files = glob.glob(os.path.join(os.path.dirname(__file__), "..", "trails", "static", "malware", "*.txt"))
             if not files:
                 return ""
             latest = max(files, key=os.path.getmtime)
-            return "/%s" % datetime.datetime.fromtimestamp(os.path.getmtime(latest)).strftime(DATE_FORMAT)
+            content = "/%s" % datetime.datetime.fromtimestamp(os.path.getmtime(latest)).strftime(DATE_FORMAT)
+            _statics_cache = (key, content)
+            return content
 
         def _logo(self):
             if config.HEADER_LOGO:
@@ -942,13 +960,20 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     if min_ <= current <= max_:
                         timestamp = int(time.mktime(current.timetuple()))
                         size = os.path.getsize(filepath)
-                        with open(filepath, "rb") as f:
-                            content = f.read(io.DEFAULT_BUFFER_SIZE)
-                            if size >= io.DEFAULT_BUFFER_SIZE:
-                                total = 1.0 * (1 + content.count(b'\n')) * size / io.DEFAULT_BUFFER_SIZE
-                                counts[timestamp] = int(round(total / 100.0) * 100)
-                            else:
-                                counts[timestamp] = content.count(b'\n')
+                        mtime = os.path.getmtime(filepath)
+                        cached = _counts_cache.get(filepath)
+                        if cached and cached[0] == mtime and cached[1] == size:  # immutable (past-day) log -> reuse, skip the open+read
+                            counts[timestamp] = cached[2]
+                        else:
+                            with open(filepath, "rb") as f:
+                                content = f.read(io.DEFAULT_BUFFER_SIZE)
+                                if size >= io.DEFAULT_BUFFER_SIZE:
+                                    total = 1.0 * (1 + content.count(b'\n')) * size / io.DEFAULT_BUFFER_SIZE
+                                    count = int(round(total / 100.0) * 100)
+                                else:
+                                    count = content.count(b'\n')
+                            counts[timestamp] = count
+                            _counts_cache[filepath] = (mtime, size, count)
 
             return json.dumps(counts)
 
