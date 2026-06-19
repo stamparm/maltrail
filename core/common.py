@@ -51,6 +51,7 @@ def retrieve_content(url, data=None, headers=None):
         resp = _urllib.request.urlopen(req, timeout=TIMEOUT)
         retval = resp.read()
         encoding = resp.headers.get("Content-Encoding")
+        resp.close()
 
         if encoding:
             if encoding.lower() == "deflate":

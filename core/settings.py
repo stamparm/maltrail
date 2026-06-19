@@ -162,7 +162,8 @@ def _get_total_physmem():
             output = subprocess.check_output(['wmic', 'computersystem', 'get', 'TotalPhysicalMemory'], universal_newlines=True)
             retval = int(output.strip().splitlines()[-1].strip())
         else:
-            retval = 1024 * int(re.search(r"(?i)MemTotal:\s+(\d+)\skB", open("/proc/meminfo").read()).group(1))
+            with open("/proc/meminfo") as f:
+                retval = 1024 * int(re.search(r"(?i)MemTotal:\s+(\d+)\skB", f.read()).group(1))
     except:
         pass
 
@@ -175,7 +176,8 @@ def _get_total_physmem():
 
     if not retval:
         try:
-            retval = int(re.search(r"real mem(ory)?\s*=\s*(\d+) ", open("/var/run/dmesg.boot").read()).group(2))
+            with open("/var/run/dmesg.boot") as f:
+                retval = int(re.search(r"real mem(ory)?\s*=\s*(\d+) ", f.read()).group(2))
         except:
             pass
 
@@ -227,7 +229,8 @@ def read_config(config_file):
 
     try:
         array = None
-        content = open(config_file, "r").read()
+        with open(config_file, "r") as f:
+            content = f.read()
 
         for line in content.split("\n"):
             line = line.strip('\r')
