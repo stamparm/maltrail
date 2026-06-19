@@ -298,6 +298,9 @@ def build_trails_regex(trails):
     over the empty _regex of a freshly loaded TrailsDict).
     """
 
+    if trails._frozen is not None:      # keys are gone; _regex was already built before finalize()
+        return trails
+
     regex = ""
 
     for trail in trails:
@@ -316,7 +319,7 @@ def build_trails_regex(trails):
 
     return trails
 
-def load_trails(quiet=False):
+def load_trails(quiet=False, freeze=False):
     if not quiet:
         print("[i] loading trails...")
 
@@ -336,6 +339,9 @@ def load_trails(quiet=False):
             sys.exit("[!] something went wrong during trails file read '%s' ('%s')" % (config.TRAILS_FILE, ex))
 
     build_trails_regex(retval)
+
+    if freeze:
+        retval.finalize()   # compact to the read-only hash-array form (drops key strings); see TrailsDict.finalize()
 
     if not quiet:
         _ = len(retval)

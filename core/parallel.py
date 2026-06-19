@@ -69,7 +69,7 @@ def worker(buffer, n, offset, mod, process_packet):
         try:
             if (time.time() - os.stat(config.TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD:
                 while True:
-                    _ = load_trails(True)
+                    _ = load_trails(True, freeze=True)
                     if _:
                         trails.adopt(_)  # atomic swap (was clear()+update(), which raced the worker's hot-path lookups)
                         break
