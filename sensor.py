@@ -938,11 +938,9 @@ def init():
             update_ipcat()
 
         if _:
-            trails.clear()
-            trails.update(_)
+            trails.adopt(_)  # atomic swap (was clear()+update(), which exposed the hot path to an empty/half-built table)
         elif not trails:
-            _ = load_trails()
-            trails.update(_)
+            trails.adopt(load_trails())
 
         build_trails_regex(trails)
 
