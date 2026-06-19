@@ -55,10 +55,11 @@ def expand_range(value):
     elif '-' in value:
         start, end = value.split('-')
         start_int, end_int = addr_to_int(start), addr_to_int(end)
-        current = start_int
-        while start_int <= current <= end_int:
-            retval.append(int_to_addr(current))
-            current += 1
+        if 0 <= end_int - start_int <= 65536:
+            current = start_int
+            while start_int <= current <= end_int:
+                retval.append(int_to_addr(current))
+                current += 1
 
     else:
         retval.append(value)

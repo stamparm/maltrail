@@ -76,6 +76,72 @@ _blacklist_key = None
 _version_cache = None
 
 
+class _ConcatenatedFiles(io.RawIOBase):
+    """
+    Read-only seekable view over the concatenation of several files.
+
+    Used to serve multi-day event logs without loading them (potentially many GBs) into memory at once.
+    Wrap in io.BufferedReader for efficient read()/readline()/iteration.
+    """
+
+    def __init__(self, paths):
+        io.RawIOBase.__init__(self)
+        self._paths = list(paths)
+        self._sizes = [os.path.getsize(_) for _ in self._paths]
+        self._total = sum(self._sizes)
+        self._pos = 0
+        self._index = -1
+        self._handle = None
+
+    def readable(self):
+        return True
+
+    def seekable(self):
+        return True
+
+    def seek(self, offset, whence=io.SEEK_SET):
+        if whence == io.SEEK_SET:
+            self._pos = offset
+        elif whence == io.SEEK_CUR:
+            self._pos += offset
+        elif whence == io.SEEK_END:
+            self._pos = self._total + offset
+        return self._pos
+
+    def tell(self):
+        return self._pos
+
+    def readinto(self, b):
+        if self._pos >= self._total:
+            return 0
+
+        pos, index = self._pos, 0
+        while index < len(self._sizes) and pos >= self._sizes[index]:
+            pos -= self._sizes[index]
+            index += 1
+
+        if index >= len(self._paths):
+            return 0
+
+        if index != self._index:
+            if self._handle is not None:
+                self._handle.close()
+            self._handle = open(self._paths[index], "rb")
+            self._index = index
+
+        self._handle.seek(pos)
+        chunk = self._handle.read(min(len(b), self._sizes[index] - pos))
+        b[:len(chunk)] = chunk
+        self._pos += len(chunk)
+        return len(chunk)
+
+    def close(self):
+        if self._handle is not None:
+            self._handle.close()
+            self._handle = None
+        io.RawIOBase.close(self)
+
+
 def start_httpd(address=None, port=None, join=False, pem=None):
     """
     Starts HTTP server
@@ -341,7 +407,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             if params.get("username") and params.get("hash") and params.get("nonce"):
                 if params.get("nonce") not in DISPOSED_NONCES:
-                    DISPOSED_NONCES.add(params.get("nonce"))
+                    DISPOSED_NONCES[params.get("nonce")] = True
                     for entry in (config.USERS or []):
                         entry = re.sub(r"\s", "", entry)
                         username, stored_hash, uid, netfilter = entry.split(':')
@@ -728,20 +794,18 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     print("[!] invalid date format in request")
                     log_exists = False
             else:
-                logs_data = ""
                 date_interval = dates.split("_", 1)
                 try:
                     start_date = datetime.datetime.strptime(date_interval[0], "%Y-%m-%d").date()
                     end_date = datetime.datetime.strptime(date_interval[1], "%Y-%m-%d").date()
+                    paths = []
                     for i in xrange(int((end_date - start_date).days) + 1):
                         date = start_date + datetime.timedelta(i)
                         event_log_path = os.path.join(config.LOG_DIR, "%s.log" % date.strftime("%Y-%m-%d"))
                         if os.path.exists(event_log_path):
-                            log_handle = open(event_log_path, "rb")
-                            logs_data += log_handle.read()
-                            log_handle.close()
+                            paths.append(event_log_path)
 
-                    range_handle = io.BytesIO(logs_data)
+                    range_handle = io.BufferedReader(_ConcatenatedFiles(paths))
                     log_exists = True
                 except ValueError:
                     print("[!] invalid date format in request")
@@ -762,6 +826,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                         if start == 0 or not session.range_handle:
                             session.range_handle = range_handle
+                        elif range_handle is not session.range_handle:
+                            range_handle.close()
 
                         if session.netfilters is None and not session.mask_custom:
                             session.range_handle.seek(start)
