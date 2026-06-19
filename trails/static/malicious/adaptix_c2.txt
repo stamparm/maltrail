@@ -1666,3 +1666,10 @@ http://158.247.193.100
 43.133.164.200:4444
 43.133.164.200:8083
 43.133.164.200:8443
+
+# Reference: https://x.com/smica83/status/2067553406303052240
+# Reference: https://www.virustotal.com/gui/file/d01af3cb30106d2003c96787fa3172d6f2f1ddf9a25376ec7a3dc48d77c1dcdb/detection
+
+93.113.25.227:8080
+analytis.co
+internal-services.analytis.co
