@@ -31,7 +31,7 @@ class LRUDict(object):
         try:
             value = self.cache.pop(key)
             self.cache[key] = value
-        except:
+        except Exception:
             value = None
 
         return value

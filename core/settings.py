@@ -164,28 +164,28 @@ def _get_total_physmem():
         else:
             with open("/proc/meminfo") as f:
                 retval = 1024 * int(re.search(r"(?i)MemTotal:\s+(\d+)\skB", f.read()).group(1))
-    except:
+    except Exception:
         pass
 
     if not retval:
         try:
             import psutil
             retval = psutil.virtual_memory().total
-        except:
+        except Exception:
             pass
 
     if not retval:
         try:
             with open("/var/run/dmesg.boot") as f:
                 retval = int(re.search(r"real mem(ory)?\s*=\s*(\d+) ", f.read()).group(2))
-        except:
+        except Exception:
             pass
 
     if not retval:
         try:
             output = subprocess.check_output(['sysctl', '-n', 'hw.memsize'], universal_newlines=True, stderr=subprocess.PIPE)
             retval = int(output.strip())
-        except:
+        except Exception:
             pass
 
     if not retval:
@@ -193,26 +193,26 @@ def _get_total_physmem():
             # Fallback to original sysctl regex method for other BSD systems
             output = subprocess.check_output("sysctl hw", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)
             retval = int(re.search(r"hw\.(physmem|memsize):\s*(\d+)", output).group(2))
-        except:
+        except Exception:
             pass
 
     if not retval:
         try:
             retval = 1024 * int(re.search(r"\s+(\d+) K total memory", subprocess.check_output("vmstat -s", shell=True, stderr=subprocess.STDOUT)).group(1))
-        except:
+        except Exception:
             pass
 
     if not retval:
         try:
             retval = int(re.search(r"Mem:\s+(\d+)", subprocess.check_output("free -b", shell=True, stderr=subprocess.STDOUT)).group(1))
-        except:
+        except Exception:
             pass
 
     if not retval:
         if IS_LINUX:
             try:
                 retval = 1024 * int(re.search(r"KiB Mem:\s*\x1b[^\s]+\s*(\d+)", subprocess.check_output("top -n 1", shell=True, stderr=subprocess.STDOUT)).group(1))
-            except:
+            except Exception:
                 pass
 
     return retval
@@ -447,7 +447,7 @@ def read_ua():
                 else:
                     try:
                         re.compile(line)
-                    except:
+                    except Exception:
                         line = re.escape(line)
 
                 items.append(line)

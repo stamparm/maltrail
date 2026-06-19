@@ -276,7 +276,7 @@ def start_logd(address=None, port=None, join=False):
                     os.write(handle, event)
                 finally:
                     os.close(handle)
-            except:
+            except Exception:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
 

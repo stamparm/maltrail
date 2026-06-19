@@ -66,13 +66,14 @@ except ImportError:
 try:
     import resource
     resource.setrlimit(resource.RLIMIT_NOFILE, (MAX_NOFILE, MAX_NOFILE))
-except:
+except Exception:
     pass
 
 _fail2ban_cache = None
 _fail2ban_key = None
 _blacklist_cache = None
 _blacklist_key = None
+_version_cache = None
 
 
 def start_httpd(address=None, port=None, join=False, pem=None):
@@ -88,7 +89,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         def finish_request(self, *args, **kwargs):
             try:
                 _BaseHTTPServer.HTTPServer.finish_request(self, *args, **kwargs)
-            except:
+            except Exception:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
 
@@ -120,7 +121,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         def shutdown_request(self, request):
             try:
                 request.shutdown()
-            except:
+            except Exception:
                 pass
 
     class ReqHandler(_BaseHTTPServer.BaseHTTPRequestHandler):
@@ -231,7 +232,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     self.wfile.write(content)
 
                 self.wfile.flush()
-            except:
+            except Exception:
                 pass
 
         def do_POST(self):
@@ -289,24 +290,29 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         def finish(self):
             try:
                 _BaseHTTPServer.BaseHTTPRequestHandler.finish(self)
-            except:
+            except Exception:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
 
         def _version(self):
-            version = VERSION
+            global _version_cache
 
-            try:
-                with open(os.path.join(os.path.dirname(__file__), "settings.py"), 'r') as f:
-                    for line in f:
-                        match = re.search(r'VERSION = "([^"]*)', line)
-                        if match:
-                            version = match.group(1)
-                            break
-            except:
-                pass
+            if _version_cache is None:
+                version = VERSION
 
-            return version
+                try:
+                    with open(os.path.join(os.path.dirname(__file__), "settings.py"), 'r') as f:
+                        for line in f:
+                            match = re.search(r'VERSION = "([^"]*)', line)
+                            if match:
+                                version = match.group(1)
+                                break
+                except Exception:
+                    pass
+
+                _version_cache = version
+
+            return _version_cache
 
         def _statics(self):
             files = glob.glob(os.path.join(os.path.dirname(__file__), "..", "trails", "static", "malware", "*.txt"))
@@ -350,7 +356,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 if params.get("hash") == hashlib.sha256((stored_hash.strip() + params.get("nonce")).encode(UNICODE_ENCODING)).hexdigest():
                                     valid = True
                                     break
-                            except:
+                            except Exception:
                                 if config.SHOW_DEBUG:
                                     traceback.print_exc()
 
@@ -455,7 +461,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     _ = (ipcat_lookup(params.get("address")) or "").lower().split(' ')
                     result_ipcat = _[1] if _[0] == 'the' else _[0]
                 return ("%s" if not params.get("callback") else "%s(%%s)" % params.get("callback")) % json.dumps({"ipcat": result_ipcat, "worst_asns": str(result_worst is not None).lower()})
-            except:
+            except Exception:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
 
@@ -498,7 +504,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             try:
                 ip_int = addr_to_int(ip)
-            except:
+            except Exception:
                 return False
 
             for item in items:
@@ -519,7 +525,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         try:
                             if ip_int & make_mask(bits) == addr_to_int(prefix) & make_mask(bits):
                                 return True
-                        except:
+                        except Exception:
                             pass
 
             return False
@@ -855,7 +861,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     continue
                 try:
                     current = datetime.datetime.strptime(os.path.splitext(filename)[0], DATE_FORMAT)
-                except:
+                except Exception:
                     if config.SHOW_DEBUG:
                         traceback.print_exc()
                 else:
