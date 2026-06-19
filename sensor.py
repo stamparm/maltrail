@@ -259,7 +259,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
         _result_cache[(CACHE_TYPE.DOMAIN, query)] = False
 
 def _get_local_prefix():
-    _sources = set(_.split('~')[0] for _ in _connect_src_dst.keys())
+    _sources = set(_.split('~')[0] for _ in list(_connect_src_dst.keys()))  # NOTE: list() snapshots keys atomically; bare .keys() iteration can raise "dictionary changed size" when another capture thread mutates _connect_src_dst (multi-interface mode)
     _candidates = [re.sub(r"\d+\.\d+\Z", "", _) for _ in _sources]
     _ = sorted(((_candidates.count(_), _) for _ in set(_candidates)), reverse=True)
     result = _[0][1] if _ else ""
@@ -729,11 +729,11 @@ def _process_packet(packet, sec, usec, ip_offset):
                                         _dns_exhausted_domains.clear()
                                         _subdomains_sec = sec
 
-                                    subdomains = _subdomains.get(domain)
-
-                                    if not subdomains:
+                                    if domain not in _subdomains:  # NOTE: membership test, not truthiness; an existing-but-empty set (just cleared at the 60s boundary) must keep its window _start, else the exhaustion window keeps resetting and detection is evaded
                                         subdomains = _subdomains[domain] = _set()
                                         subdomains._start = sec
+                                    else:
+                                        subdomains = _subdomains[domain]
 
                                     if not re.search(r"\A\d+\-\d+\-\d+\-\d+\Z", parts[0]):
                                         if sec - subdomains._start > 60:
