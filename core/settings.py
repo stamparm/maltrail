@@ -76,6 +76,7 @@ DISABLED_CONTENT_EXTENSIONS = (".py", ".pyc", ".md", ".txt", ".bak", ".conf", ".
 CONTENT_EXTENSIONS_EXCLUSIONS = ("robots.txt",)
 CONDENSE_ON_INFO_KEYWORDS = ("attacker", "reputation", "scanner", "user agent", "tor exit", "port scanning", "potential infection")
 CONDENSED_EVENTS_FLUSH_PERIOD = 10
+MAX_CONDENSED_EVENTS = 1000  # NOTE: per (src_ip, trail) cap so a flood of condensable events can't grow the buffer without bound between flushes
 LOW_PRIORITY_INFO_KEYWORDS = ("reputation", "attacker", "spammer", "abuser", "malicious", "dnspod", "nicru", "crawler", "compromised", "bad history")
 HIGH_PRIORITY_INFO_KEYWORDS = ("mass scanner", "ipinfo")
 HIGH_PRIORITY_REFERENCES = ("(static)", "(custom)")

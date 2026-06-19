@@ -20,6 +20,7 @@ import zlib
 from core.addr import addr_to_int
 from core.addr import int_to_addr
 from core.compat import xrange
+from core.datatype import LRUDict
 from core.settings import config
 from core.settings import BOGON_IPS
 from core.settings import BOGON_RANGES
@@ -27,6 +28,7 @@ from core.settings import CHECK_CONNECTION_URL
 from core.settings import CDN_RANGES
 from core.settings import IPCAT_SQLITE_FILE
 from core.settings import IS_WIN
+from core.settings import MAX_CACHE_ENTRIES
 from core.settings import MAX_HELP_OPTION_LENGTH
 from core.settings import STATIC_IPCAT_LOOKUPS
 from core.settings import TIMEOUT
@@ -39,7 +41,8 @@ from core.trailsdict import TrailsDict
 from thirdparty import six
 from thirdparty.six.moves import urllib as _urllib
 
-_ipcat_cache = {}
+_ipcat_cache = {}  # NOTE: holds the (bounded, config-sized) static IPCAT seed
+_ipcat_dynamic_cache = LRUDict(MAX_CACHE_ENTRIES)  # NOTE: bounds per-IP SQLite lookups so they can't grow without bound on a busy server
 
 def retrieve_content(url, data=None, headers=None):
     """
@@ -114,6 +117,8 @@ def ipcat_lookup(address):
 
     if address in _ipcat_cache:
         retval = _ipcat_cache[address]
+    elif address in _ipcat_dynamic_cache:
+        retval = _ipcat_dynamic_cache[address]
     else:
         retval = ""
 
@@ -128,7 +133,7 @@ def ipcat_lookup(address):
                 except Exception:
                     raise ValueError("[x] invalid IP address '%s'" % address)
 
-                _ipcat_cache[address] = retval
+                _ipcat_dynamic_cache[address] = retval
 
     return retval
 
