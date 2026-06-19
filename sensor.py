@@ -1239,6 +1239,9 @@ def monitor():
 
             datalink = _cap.datalink()
 
+            _stats_iter = 0
+            _stats_last = time.time()
+
 
 #
 # NOTE: currently an issue with pcapy-png and loop()
@@ -1271,6 +1274,21 @@ def monitor():
 
                 if not success:
                     time.sleep(REGULAR_SENSOR_SLEEP_TIME)
+
+                # NOTE: periodic capture-drop visibility for live interfaces. Output goes to stdout via print() (operational
+                # channel) - deliberately NOT log_event(), so it never pollutes the event log/feed. Counter-gated so the hot
+                # path pays only a cheap increment per packet (no per-packet clock call), and fully sealed so a stats() quirk
+                # can never disrupt capture. ps_drop is the kernel/libpcap ring shedding under load (drop-old by design).
+                _stats_iter += 1
+                if _stats_iter >= 1000000:
+                    _stats_iter = 0
+                    if not config.pcap_file and time.time() - _stats_last >= 3600:
+                        _stats_last = time.time()
+                        try:
+                            recv, drop, ifdrop = _cap.stats()
+                            print("[i] capture stats (cumulative): received=%d dropped=%d ifdropped=%d" % (recv, drop, ifdrop))
+                        except Exception:
+                            pass
 
         if config.profile and len(_caps) == 1:
             print("[=] will store profiling results to '%s'..." % config.profile)
