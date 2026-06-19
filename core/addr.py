@@ -6,6 +6,7 @@ See the file 'LICENSE' for copying permission
 """
 
 import re
+import socket
 
 from core.compat import xrange
 
@@ -135,3 +136,42 @@ def addr_port(addr, port):
         retval = "%s:%s" % (addr, port)
 
     return retval
+
+def parse_host_port(value):
+    """
+    Splits a 'host:port' endpoint into (host, port), where port is an int (or None if absent).
+    Handles IPv6 literals - bracketed ('[::1]:514') or bare with a trailing port ('fe80::1:514').
+
+    >>> parse_host_port("1.2.3.4:8080")
+    ('1.2.3.4', 8080)
+    >>> parse_host_port("[fe80::1]:514")
+    ('fe80::1', 514)
+    >>> parse_host_port("example.com:53")
+    ('example.com', 53)
+    >>> parse_host_port("example.com")
+    ('example.com', None)
+    """
+
+    value = (value or "").strip()
+
+    if value.startswith('[') and ']' in value:    # bracketed IPv6: [host] or [host]:port
+        host, _, rest = value[1:].partition(']')
+        port = rest[1:] if rest.startswith(':') else ""
+    elif value.count(':') == 1:                    # host:port (IPv4 / hostname)
+        host, _, port = value.partition(':')
+    elif value.count(':') > 1:                     # bare IPv6 with a trailing :port
+        host, _, port = value.rpartition(':')
+    else:                                          # host only, no port
+        host, port = value, ""
+
+    return host, (int(port) if port.isdigit() else None)
+
+def resolve_address(host, port):
+    """
+    Resolves (host, port) into a numeric sockaddr tuple suitable for sendto()/bind(), IPv4/IPv6-safe
+    (numeric only - no DNS). Returns a 2-tuple for IPv4, a 4-tuple for IPv6.
+    """
+
+    _AI_NUMERICSERV = getattr(socket, "AI_NUMERICSERV", 0)
+    flags = socket.AI_NUMERICHOST | _AI_NUMERICSERV
+    return socket.getaddrinfo(host, int(port) if str(port or "").isdigit() else 0, 0, 0, 0, flags)[0][4]
