@@ -71,8 +71,7 @@ def worker(buffer, n, offset, mod, process_packet):
                 while True:
                     _ = load_trails(True)
                     if _:
-                        trails.clear()
-                        trails.update(_)
+                        trails.adopt(_)  # atomic swap (was clear()+update(), which raced the worker's hot-path lookups)
                         break
                     time.sleep(LOAD_TRAILS_RETRY_SLEEP_TIME)
         finally:

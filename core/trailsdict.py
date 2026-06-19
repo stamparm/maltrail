@@ -5,8 +5,6 @@ Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrai
 See the file 'LICENSE' for copying permission
 """
 
-import re
-
 class TrailsDict(dict):
     """
     Memory-efficient store for threat trails that interns the (info, reference) pairs
@@ -39,47 +37,61 @@ class TrailsDict(dict):
         self._reverse_infos = {}
         self._references = []
         self._reverse_references = {}
+        # NOTE: lookups read this single tuple (one atomic attribute access) instead of self._trails/_infos/_references
+        # separately, so a live reload via adopt() can never expose them to a half-swapped (inconsistent) state.
+        # _read[0] IS self._trails (same objects), so in-place writes stay visible; it is only rebound here and in adopt().
+        self._read = (self._trails, self._infos, self._references)
+
+    def adopt(self, other):
+        """
+        Atomically replaces this dict's contents with another TrailsDict's. Readers see the old contents or the new
+        contents - never the empty/half-populated window that clear()+update() left exposed during every trail reload.
+        """
+
+        self._trails = other._trails
+        self._infos = other._infos
+        self._reverse_infos = other._reverse_infos
+        self._references = other._references
+        self._reverse_references = other._reverse_references
+        self._read = (self._trails, self._infos, self._references)  # single atomic swap for the read path
+        self._regex = other._regex
 
     def __delitem__(self, key):
-        del self._trails[key]
+        del self._trails[key]  # _read[0] is the same dict object, so the deletion is visible to readers
 
     def has_key(self, key):
-        return key in self._trails
+        return key in self._read[0]
 
     def __contains__(self, key):
-        return key in self._trails
+        return key in self._read[0]
 
     def clear(self):
         self.__init__()
 
     def keys(self):
-        return self._trails.keys()
+        return self._read[0].keys()
 
     def iterkeys(self):
-        for key in self._trails.keys():
+        for key in self._read[0].keys():
             yield key
 
     def __iter__(self):
-        for key in self._trails.keys():
+        for key in self._read[0].keys():
             yield key
 
     def get(self, key, default=None):
-        if key in self._trails:
-            _ = self._trails[key].split(',')
+        trails, infos, references = self._read  # consistent snapshot
+        if key in trails:
+            _ = trails[key].split(',')
             if len(_) == 2:
-                return (self._infos[int(_[0])], self._references[int(_[1])])
+                return (infos[int(_[0])], references[int(_[1])])
 
         return default
 
     def update(self, value):
         if isinstance(value, TrailsDict):
-            if not self._trails:
-                for attr in dir(self):
-                    if re.search(r"\A_[a-z]", attr):
-                        setattr(self, attr, getattr(value, attr))
-            else:
-                for key in value:
-                    self[key] = value[key]
+            for key in value:  # per-key merge (was a by-reference attribute copy that silently aliased internal state)
+                self[key] = value[key]
         elif isinstance(value, dict):
             for key in value:
                 info, reference = value[key]
@@ -94,13 +106,14 @@ class TrailsDict(dict):
             raise Exception("unsupported type '%s'" % type(value))
 
     def __len__(self):
-        return len(self._trails)
+        return len(self._read[0])
 
     def __getitem__(self, key):
-        if key in self._trails:
-            _ = self._trails[key].split(',')
+        trails, infos, references = self._read  # consistent snapshot
+        if key in trails:
+            _ = trails[key].split(',')
             if len(_) == 2:
-                return (self._infos[int(_[0])], self._references[int(_[1])])
+                return (infos[int(_[0])], references[int(_[1])])
 
         raise KeyError(key)
 
