@@ -690,19 +690,22 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         result = set()
                         _ = os.path.join(config.LOG_DIR, "%s.log" % datetime.datetime.now().strftime("%Y-%m-%d"))
                         if os.path.isfile(_):
-                            for line in open(_, "r"):
-                                line = line.split(' ', 10)
-                                for bl in blacklist:
-                                    failed = False
-                                    for f, n, r in bl:
-                                        if not (
-                                            (r.search(line[f]) is not None) ^ n
-                                                ):
-                                            failed = True
+                            with open(_, "r") as f_log:
+                                for line in f_log:
+                                    line = line.split(' ', 10)
+                                    if len(line) < 11:
+                                        continue
+                                    for bl in blacklist:
+                                        failed = False
+                                        for f, n, r in bl:
+                                            if not (
+                                                (r.search(line[f]) is not None) ^ n
+                                                    ):
+                                                failed = True
+                                                break
+                                        if not failed:
+                                            result.add(line[3])
                                             break
-                                    if not failed:
-                                        result.add(line[3])
-                                        break
 
                         content = "\n".join(result)
 
