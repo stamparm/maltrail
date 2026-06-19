@@ -16660,6 +16660,7 @@ detail-best.com
 devadmin.csgou.vip
 dislen.com
 doubleciick.net
+dravektex.com
 duskpollen.com
 event-trk.com
 fancourier.cyou
@@ -16671,6 +16672,7 @@ fnstatick.com
 gaevnt.com
 goaff-pro.net
 greedysuns.com
+grymvael.com
 gstatic-cdn.com
 hacptcha.com
 heatmapsapi.com
@@ -16685,10 +16687,15 @@ livestats.info
 malinabet.click
 metrix-cdn.com
 newasest.com
+nolvrixa.com
 omappepi.com
 plothranex.com
 quarvixin.com
 reqred.com
+riot-ex.net
+riotplat.cloud
+riotplat.info
+riotplat.shop
 rnogento.com
 rovaxilo.com
 sandvortex.com
@@ -16711,7 +16718,9 @@ verametrix.com
 vermexis.com
 wavekernel.com
 xanryl.com
+zorthumel.com
 xolvramiq.com
+1z.riotplat.shop
 4b.fancourier.vip
 7g.fancourier.cyou
 api.kupui.biz
@@ -16730,6 +16739,7 @@ mail.hacptcha.com
 mail.ipifly.com
 mail.newasest.com
 mail.omappepi.com
+u5.riot-ex.net
 
 # Reference: https://x.com/sdcyberresearch/status/2011404135757651976
 
