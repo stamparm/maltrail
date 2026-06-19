@@ -203,6 +203,20 @@ def extract_zip(filename, path=None):
     _.extractall(path)
 
 def get_regex(items):
+    r"""
+    Builds a single compact regular expression matching any of the given items (via a
+    character trie, collapsing common prefixes and contiguous character ranges)
+
+    >>> get_regex(["cat", "car"])
+    'ca(?:r|t)'
+    >>> get_regex(["ab", "ac", "ad"])
+    'a(?:b|c|d)'
+    >>> get_regex([str(_) for _ in range(10)])
+    '(?:\\d)'
+    >>> get_regex(["1.2.3.4"])
+    '1\\.2\\.3\\.4'
+    """
+
     head = {}
 
     for item in sorted(items):
@@ -325,6 +339,15 @@ def load_trails(quiet=False):
     return retval
 
 def get_text(value):
+    """
+    Returns the textual (unicode) representation of the given value
+
+    >>> get_text("abc")
+    'abc'
+    >>> get_text(b"abc")
+    'abc'
+    """
+
     retval = value
 
     if six.PY2:
@@ -339,6 +362,15 @@ def get_text(value):
     return retval
 
 def get_ex_message(ex):
+    """
+    Returns the human-readable message carried by an exception
+
+    >>> get_ex_message(Exception("boom"))
+    'boom'
+    >>> get_ex_message(ValueError("bad value"))
+    'bad value'
+    """
+
     retval = None
 
     if getattr(ex, "message", None):
@@ -357,6 +389,21 @@ def get_ex_message(ex):
     return retval
 
 def is_local(address):
+    """
+    Checks if the given IPv4 address belongs to a local/private range
+
+    >>> is_local("127.0.0.1")
+    True
+    >>> is_local("10.0.0.5")
+    True
+    >>> is_local("192.168.1.1")
+    True
+    >>> is_local("8.8.8.8")
+    False
+    >>> is_local(None)
+    False
+    """
+
     return re.search(r"\A(127|10|172\.[13][0-9]|192\.168)\.", address or "") is not None
 
 def patch_parser(parser):
