@@ -9742,6 +9742,11 @@ drvdb9rcebidk.cloudfront.net
 /sprf_r11gr/
 /foalproposal.ps1
 
+# Reference: https://x.com/tdatwja/status/2067471602279932205
+# Reference: https://www.virustotal.com/gui/file/f37f4c5796330bdf008cd7849c9411e9542989ee6be30903a8c5631f736b6bfd/detection
+
+/stubob.ps1
+
 # Generic
 
 /5c0ca79.php
