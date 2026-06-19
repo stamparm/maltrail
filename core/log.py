@@ -92,6 +92,23 @@ def get_error_log_handle(flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
     return _thread_data.error_log_handle
 
 def safe_value(value):
+    r"""
+    Renders a single event-log field safely (CSV-style quoting/escaping; newlines flattened to spaces)
+
+    >>> safe_value("hello")
+    'hello'
+    >>> safe_value("")
+    '-'
+    >>> safe_value(None)
+    '-'
+    >>> safe_value("a b")
+    '"a b"'
+    >>> safe_value('a"b')
+    '"a""b"'
+    >>> safe_value("line\nbreak")
+    'line break'
+    """
+
     retval = str(value or '-')
     if any(_ in retval for _ in (' ', '"')):
         retval = "\"%s\"" % retval.replace('"', '""')

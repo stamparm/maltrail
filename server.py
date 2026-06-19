@@ -47,10 +47,20 @@ def main():
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
     parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
+    parser.add_option("--smoke-test", dest="smoke_test", action="store_true", help=optparse.SUPPRESS_HELP)
+    parser.add_option("--detect-test", dest="detect_test", action="store_true", help=optparse.SUPPRESS_HELP)
 
     patch_parser(parser)
 
     options, _ = parser.parse_args()
+
+    if options.smoke_test:
+        from core.testing import smoke_test
+        raise SystemExit(0 if smoke_test() else 1)
+
+    if options.detect_test:
+        from core.testing import detect_test
+        raise SystemExit(0 if detect_test() else 1)
 
     print("[*] starting @ %s\n" % time.strftime("%X /%Y-%m-%d/"))
 

@@ -156,6 +156,17 @@ except ImportError:
         sys.exit(msg)
 
 def _check_domain_member(query, domains):
+    """
+    Checks whether the query (or any of its parent domains) is contained in the given set of domains
+
+    >>> _check_domain_member("www.evil.com", set(["evil.com"]))
+    True
+    >>> _check_domain_member("a.b.example.com", set(["example.com"]))
+    True
+    >>> _check_domain_member("good.com", set(["evil.com"]))
+    False
+    """
+
     parts = query.lower().split('.')
 
     for i in xrange(0, len(parts)):
@@ -1358,10 +1369,20 @@ def main():
     parser.add_option("--offline", dest="offline", action="store_true", help="disable (online) trail updates")
     parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
     parser.add_option("--profile", dest="profile", help=optparse.SUPPRESS_HELP)
+    parser.add_option("--smoke-test", dest="smoke_test", action="store_true", help=optparse.SUPPRESS_HELP)
+    parser.add_option("--detect-test", dest="detect_test", action="store_true", help=optparse.SUPPRESS_HELP)
 
     patch_parser(parser)
 
     options, _ = parser.parse_args()
+
+    if options.smoke_test:
+        from core.testing import smoke_test
+        raise SystemExit(0 if smoke_test() else 1)
+
+    if options.detect_test:
+        from core.testing import detect_test
+        raise SystemExit(0 if detect_test() else 1)
 
     print("[*] starting @ %s\n" % time.strftime("%X /%Y-%m-%d/"))
 

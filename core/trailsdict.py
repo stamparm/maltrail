@@ -8,6 +8,30 @@ See the file 'LICENSE' for copying permission
 import re
 
 class TrailsDict(dict):
+    """
+    Memory-efficient store for threat trails that interns the (info, reference) pairs
+    instead of storing them per trail
+
+    >>> trails = TrailsDict()
+    >>> trails["1.2.3.4"] = ("malware", "(static)")
+    >>> "1.2.3.4" in trails
+    True
+    >>> trails["1.2.3.4"]
+    ('malware', '(static)')
+    >>> trails.get("missing.example") is None
+    True
+    >>> len(trails)
+    1
+    >>> trails.update({"evil.example": ("phishing", "(custom)")})
+    >>> sorted(trails.keys())
+    ['1.2.3.4', 'evil.example']
+    >>> del trails["1.2.3.4"]
+    >>> "1.2.3.4" in trails
+    False
+    >>> len(trails)
+    1
+    """
+
     def __init__(self):
         self._trails = {}
         self._regex = ""
