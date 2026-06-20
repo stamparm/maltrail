@@ -68,13 +68,16 @@ def worker(buffer, n, offset, mod, process_packet):
 
     bin_path = common.trails_bin_path()
 
-    def _bin_mtime():
+    def _bin_sig():
+        # (inode, mtime, size): an atomic rename always changes the inode, so this detects a rebuild even if the
+        # mtime did not advance (coarse-granularity filesystems, or two rebuilds within the same second)
         try:
-            return os.stat(bin_path).st_mtime
+            st = os.stat(bin_path)
+            return (st.st_ino, st.st_mtime, st.st_size)
         except OSError:
             return None
 
-    last_bin_mtime = [_bin_mtime()]  # the shared bin this worker inherited (mmap'd) from the parent
+    last_bin_sig = [_bin_sig()]  # the shared bin this worker inherited (mmap'd) from the parent
 
     def update_timer():
         global _timer
@@ -82,12 +85,12 @@ def worker(buffer, n, offset, mod, process_packet):
             if common.USE_MMAP_TRAILS:
                 # workers NEVER (re)build the trail set - the parent process owns that (and its build peak). A worker
                 # only re-mmap()s the shared bin when the parent has rebuilt it, so its trail RAM stays a shared copy.
-                mtime = _bin_mtime()
-                if mtime is not None and mtime != last_bin_mtime[0]:
+                sig = _bin_sig()
+                if sig is not None and sig != last_bin_sig[0]:
                     fresh = TrailsDict()
                     fresh.open_mmap(bin_path)
                     trails.adopt(fresh)  # atomic swap to the new shared mapping
-                    last_bin_mtime[0] = mtime
+                    last_bin_sig[0] = sig
             elif (time.time() - os.stat(config.TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD:
                 while True:
                     _ = load_trails(True, freeze=True)

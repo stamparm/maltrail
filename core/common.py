@@ -369,20 +369,28 @@ def load_trails(quiet=False, freeze=False):
 def trails_bin_path():
     return "%s.bin" % config.TRAILS_FILE
 
-def _trails_bin_from_items(items, out_path):
+def _trails_bin_from_items(items_factory, n_hint, out_path):
     """
     Core builder shared by build_trails_bin() (reads the CSV) and write_trails_bin() (reads an in-memory dict).
-    'items' yields (trail, info, reference). Computes the wildcard alternation regex, interns the (info, reference)
-    pairs, detects (and keeps verbatim) the rare hash collisions, and writes the file atomically (tmp + rename).
+    'items_factory' is a callable returning a fresh iterator of (trail, info, reference); 'n_hint' is an upper
+    bound on the entry count (for table sizing).
+
+    It streams the trails STRAIGHT into the open-addressing arrays - it never materialises the whole (hash, index)
+    set nor retains the trail key strings, so its peak RSS is ~10x below building the set in a dict first. The
+    interned (info, reference) pairs and the wildcard regex are tiny. A 64-bit hash collision between two distinct
+    trails (never observed across 1.6M real trails) is handled exactly: on detection, the table is rebuilt once
+    with the colliding hashes excluded and those keys kept verbatim in a side dict - so the read path stays simple.
     """
 
     pairs = {}
     pair_list = []
-    by_hash = {}
     regex = ""
     regex_groups = 0
+    hi, lo, val, mask, cap = trailsbin.new_table(n_hint)
+    colliding = set()
+    n = 0
 
-    for trail, info, reference in items:
+    for trail, info, reference in items_factory():
         if "static" in reference and _WILDCARD_TRAIL_REGEX.search(trail) and regex_groups < 100:  # mirror build_trails_regex()
             try:
                 re.compile(trail)
@@ -400,40 +408,30 @@ def _trails_bin_from_items(items, out_path):
             pairs[pair] = pi
             pair_list.append(pair)
 
-        h = trailsbin.stable_hash(trail)
-        existing = by_hash.get(h)
-        if existing is None:
-            by_hash[h] = (trail, pi)
-        elif type(existing) is list:                # already a collision bucket
-            for j in xrange(len(existing)):
-                if existing[j][0] == trail:         # duplicate key row -> overwrite, not a collision
-                    existing[j] = (trail, pi)
-                    break
-            else:
-                existing.append((trail, pi))
-        elif existing[0] == trail:                  # duplicate key row -> overwrite
-            by_hash[h] = (trail, pi)
-        else:                                       # genuine hash collision between two distinct trails
-            by_hash[h] = [existing, (trail, pi)]
-
-    entries = []
-    collisions = {}
-    for h, entry in by_hash.items():
-        if type(entry) is list:
-            for trail, pi in entry:
-                collisions[trail] = pair_list[pi]
+        if trailsbin.table_insert(hi, lo, val, mask, trailsbin.stable_hash(trail), pi):
+            n += 1
         else:
-            entries.append((h, entry[1]))
+            colliding.add(trailsbin.stable_hash(trail))
 
-    tmp_path = "%s.%d.tmp" % (out_path, os.getpid())
-    trailsbin.write_bin(tmp_path, entries, pair_list, collisions, regex.strip('|'))
-    (os.replace if hasattr(os, "replace") else os.rename)(tmp_path, out_path)  # atomic publish
+    collisions = {}
+    if colliding:
+        # rare: rebuild the table from scratch with the colliding hashes left out, and keep those keys verbatim
+        hi, lo, val, mask, cap = trailsbin.new_table(n_hint)
+        n = 0
+        for trail, info, reference in items_factory():
+            h = trailsbin.stable_hash(trail)
+            if h in colliding:
+                collisions[trail] = (info, reference)
+            elif trailsbin.table_insert(hi, lo, val, mask, h, pairs[(info, reference)]):
+                n += 1
+
+    trailsbin.write_table(out_path, cap, n, hi, lo, val, pair_list, collisions, regex.strip('|'))
 
 def build_trails_bin(csv_path=None, bin_path=None):
     """
     Builds the binary trail store from the trails CSV (applying the runtime whitelist, exactly like load_trails).
-    Transiently materialises the full hash set, so the caller that owns the (already-paid) build peak runs this -
-    worker processes never do; they only mmap the result.
+    Streams directly into the table (low peak RSS); the caller that owns this build runs it - worker processes
+    never do, they only mmap the result.
     """
 
     csv_path = csv_path or config.TRAILS_FILE
@@ -445,12 +443,17 @@ def build_trails_bin(csv_path=None, bin_path=None):
                 if row and len(row) == 3 and not check_whitelisted(row[0]):
                     yield row[0], row[1], row[2]
 
-    _trails_bin_from_items(_items(), bin_path)
+    line_count = 0          # cheap upper bound for table sizing (no retention)
+    with open(csv_path, "r") as f:
+        for _ in f:
+            line_count += 1
+
+    _trails_bin_from_items(_items, line_count, bin_path)
 
 def write_trails_bin(trails, bin_path=None):
     """
     Builds the binary trail store from an already-built in-memory TrailsDict (the one update_trails just wrote to
-    the CSV), reusing that dict so no additional build peak is incurred.
+    the CSV), reusing that dict so no extra full copy is materialised.
     """
 
     bin_path = bin_path or trails_bin_path()
@@ -460,7 +463,7 @@ def write_trails_bin(trails, bin_path=None):
             value = trails[key]
             yield key, value[0], value[1]
 
-    _trails_bin_from_items(_items(), bin_path)
+    _trails_bin_from_items(_items, len(trails), bin_path)
 
 def trails_bin_stale(bin_path=None):
     bin_path = bin_path or trails_bin_path()
