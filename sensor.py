@@ -1032,10 +1032,10 @@ def detect_icmpv6_large_package_size(packet, ip_data, dst_ip, iph_length):
             _icmp6_large_payload_size_treshold /= packets
             print("[i] ICMPv6 large payload size threshold: %s" % _icmp6_large_payload_size_treshold)
         
-        if _icmp6_large_payload_size_treshold != 0 and len(packet[iph_length+4:len(packet) + 1]) > _icmp6_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
+        if _icmp6_large_payload_size_treshold != 0 and len(packet[iph_length+8:len(packet) + 1]) > _icmp6_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
             return True
 
-    if config.ICMP_LARGE_PACKAGE_ABSOLUTE_THRESHOLD < len(packet[iph_length+4:len(packet) + 1]):
+    if config.ICMP_LARGE_PACKAGE_ABSOLUTE_THRESHOLD < len(packet[iph_length+8:len(packet) + 1]):
         return True
     return False
 
