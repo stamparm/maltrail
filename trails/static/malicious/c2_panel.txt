@@ -1386,6 +1386,10 @@ cm.zvdc.xyz
 
 70.39.198.181:3000
 
+# Reference: https://x.com/Fact_Finder03/status/2068308057550102931
+
+23.95.31.58:7443
+
 # Generic
 
 /admin_123/auth.php
