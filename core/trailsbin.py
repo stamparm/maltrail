@@ -18,17 +18,14 @@ See the file 'LICENSE' for copying permission
 # kept verbatim in a small side dict), so a collision can never cause a wrong match.
 
 import hashlib
+import json
 import mmap
 import os
 import struct
 import sys
+import tempfile
 
 from array import array
-
-try:
-    import cPickle as pickle
-except ImportError:
-    import pickle
 
 try:
     _TEXT_TYPE = unicode            # Python 2
@@ -37,10 +34,18 @@ except NameError:
 
 _PY2 = sys.version_info[0] == 2
 
-_MAGIC = b"MTRAILB2"               # 8 bytes; bump the trailing digit on any format change
+_MAGIC = b"MTRAILB3"               # 8 bytes; bump the trailing digit on any format change
 _HEADER = struct.Struct("<8sQQQ") # magic, cap (slot count, power of two), n (occupied entries), blob_len
 _HEADER_SIZE = _HEADER.size
 _EMPTY = 0xFFFFFFFF                # value-slot sentinel for an empty bucket (pair indices are always far smaller)
+
+assert array("I").itemsize == 4   # the binary format hardcodes 4-byte slots (true on every platform Maltrail runs on)
+
+def _native_str(value):
+    # json.loads yields unicode on Python 2; the rest of the sensor handles trail info/reference as native str there
+    if _PY2 and isinstance(value, _TEXT_TYPE):
+        return value.encode("utf-8")
+    return value
 
 def stable_hash(key):
     """
@@ -62,46 +67,89 @@ def stable_hash(key):
 
     return struct.unpack("<Q", hashlib.md5(data).digest()[:8])[0]
 
-def write_bin(path, entries, pair_list, collisions, regex):
+def new_table(n_hint):
     """
-    Writes the binary trail file as an open-addressing (linear-probing) hash table. 'entries' is an iterable of
-    (hash64, pair_index) for every non-colliding trail. 'pair_list' maps a pair_index to its (info, reference)
-    tuple. 'collisions' maps the few keys whose hash collided to their (info, reference) tuple. 'regex' is the
-    wildcard alternation string.
-
-    The table is sized to a power-of-two capacity at load factor < 0.5, so a lookup is ~1-2 slot probes (vs the ~21
-    of a bisect over a sorted array) - which matters most on Python 2, whose ctypes-array indexing is slow.
+    Allocates an empty open-addressing table sized to a power-of-two capacity at load factor < 0.5 (so lookups are
+    ~1-2 probes and there is always a free slot). 'n_hint' is an upper bound on the number of entries. Returns
+    (hi, lo, val, mask, cap). The table is filled by streaming table_insert() calls - no intermediate list of all
+    entries (nor any retained key strings) is built, which keeps the builder's peak RSS an order of magnitude
+    below materialising the whole set first.
     """
-
-    entries = list(entries)
-    n = len(entries)
 
     cap = 1
-    while cap < n * 2:              # power of two, load factor < 0.5 (fast &mask, short probe chains)
+    while cap < n_hint * 2:         # power of two, load factor < 0.5 (fast &mask, short probe chains)
         cap <<= 1
-    mask = cap - 1
-
     hi = array('I', b"\x00\x00\x00\x00" * cap)       # zero-filled (b"\x00"*N is portable; bytes(N) differs on Py2)
     lo = array('I', b"\x00\x00\x00\x00" * cap)
     val = array('I', b"\xff\xff\xff\xff" * cap)      # every slot initially _EMPTY
-    for h, pi in entries:
-        slot = h & mask
-        while val[slot] != _EMPTY:                   # linear probe to the next free slot
-            slot = (slot + 1) & mask
-        hi[slot] = (h >> 32) & 0xFFFFFFFF
-        lo[slot] = h & 0xFFFFFFFF
-        val[slot] = pi
+    return hi, lo, val, cap - 1, cap
 
-    blob = pickle.dumps((pair_list, collisions, regex), 2)
+def table_insert(hi, lo, val, mask, h, pidx):
+    """
+    Inserts (h -> pidx) into the table. Returns True on success, or False WITHOUT inserting if the same 64-bit hash
+    is already present - i.e. a genuine collision between two distinct trails (the CSV has unique keys, so a repeat
+    hash is never a duplicate row). The caller handles the (astronomically rare) collision exactly, out of band.
+    """
+
+    target_hi = (h >> 32) & 0xFFFFFFFF
+    target_lo = h & 0xFFFFFFFF
+    slot = h & mask
+    while val[slot] != _EMPTY:
+        if hi[slot] == target_hi and lo[slot] == target_lo:
+            return False
+        slot = (slot + 1) & mask
+    hi[slot] = target_hi
+    lo[slot] = target_lo
+    val[slot] = pidx
+    return True
+
+def write_table(path, cap, n, hi, lo, val, pair_list, collisions, regex):
+    """
+    Atomically writes a filled table to 'path'. 'pair_list' maps a pair_index to its (info, reference) tuple;
+    'collisions' maps the few keys whose hash collided to their (info, reference) tuple; 'regex' is the wildcard
+    alternation string.
+    """
+
+    assert len(pair_list) < _EMPTY, "too many distinct (info, reference) pairs for a uint32 value slot"
+
+    # NOTE: the blob is JSON, not pickle - this file is read back by the (root) sensor, and pickle.loads on a file
+    # an attacker might tamper with would be an arbitrary-code-execution sink. JSON of plain strings cannot execute.
+    blob = json.dumps([pair_list, collisions, regex]).encode("utf-8")
 
     to_bytes = (lambda a: a.tobytes()) if hasattr(hi, "tobytes") else (lambda a: a.tostring())  # tobytes: Py3.2+, tostring: Py2 (removed in Py3.9)
 
-    with open(path, "wb") as f:
-        f.write(_HEADER.pack(_MAGIC, cap, n, len(blob)))
-        f.write(to_bytes(hi))
-        f.write(to_bytes(lo))
-        f.write(to_bytes(val))
-        f.write(blob)
+    # write to a randomly-named, O_EXCL, 0600 temp file in the same dir, then atomically rename over the target -
+    # mkstemp defeats symlink / predictable-name races a world-writable trails dir would otherwise expose
+    directory = os.path.dirname(path) or "."
+    fd, tmp_path = tempfile.mkstemp(prefix=".trailsbin-", dir=directory)
+    try:
+        with os.fdopen(fd, "wb") as f:
+            f.write(_HEADER.pack(_MAGIC, cap, n, len(blob)))
+            f.write(to_bytes(hi))
+            f.write(to_bytes(lo))
+            f.write(to_bytes(val))
+            f.write(blob)
+        (os.replace if hasattr(os, "replace") else os.rename)(tmp_path, path)  # atomic publish
+    except Exception:
+        try:
+            os.remove(tmp_path)
+        except OSError:
+            pass
+        raise
+
+def write_bin(path, entries, pair_list, collisions, regex):
+    """
+    Convenience builder from a materialised (hash64, pair_index) iterable. Used by tests; the sensor's real builder
+    (core.common) streams via new_table()/table_insert()/write_table() so it never materialises 'entries'.
+    """
+
+    entries = list(entries)
+    hi, lo, val, mask, cap = new_table(len(entries))
+    n = 0
+    for h, pidx in entries:
+        if table_insert(hi, lo, val, mask, h, pidx):
+            n += 1
+    write_table(path, cap, n, hi, lo, val, pair_list, collisions, regex)
 
 def _u32_view(buf, offset, n):
     """
@@ -150,7 +198,11 @@ def open_bin(path):
     hi = _u32_view(mm, off, cap); off += 4 * cap
     lo = _u32_view(mm, off, cap); off += 4 * cap
     val = _u32_view(mm, off, cap); off += 4 * cap
-    pair_list, collisions, regex = pickle.loads(mm[off:off + blob_len])
+
+    raw_pairs, raw_collisions, regex = json.loads(mm[off:off + blob_len].decode("utf-8"))
+    pair_list = [(_native_str(p[0]), _native_str(p[1])) for p in raw_pairs]   # JSON lists -> the (info, reference) tuples the rest of the code expects
+    collisions = dict((_native_str(k), (_native_str(v[0]), _native_str(v[1]))) for k, v in raw_collisions.items())
+    regex = _native_str(regex)
 
     return {"mmap": mm, "hi": hi, "lo": lo, "val": val, "mask": cap - 1,
             "pair_list": pair_list, "collisions": collisions, "regex": regex, "length": n + len(collisions)}
