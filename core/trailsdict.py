@@ -127,13 +127,18 @@ class TrailsDict(dict):
                     pair_list.append(pair)
                 clean.append((h, pi))
 
+        # NOTE: a 64-bit hash needs 8-byte storage, but array typecode 'q' does not exist on Python 2 (and 'l' is only
+        # 4 bytes on some platforms). So each hash is split into two 32-bit halves kept in separate array('I') arrays
+        # (portable on Python 2 and 3); sorted by the full hash, a bisect on the high half + a tiny scan of the (almost
+        # always single-element) equal-high-half run locates the low half.
         clean.sort()
-        hashes = array('q', [h for h, pi in clean])
-        values = array('H' if len(pair_list) <= 0xFFFF else 'i', [pi for h, pi in clean])
+        hi = array('I', [(h >> 32) for h, pi in clean])
+        lo = array('I', [(h & 0xFFFFFFFF) for h, pi in clean])
+        values = array('H' if len(pair_list) <= 0xFFFF else 'I', [pi for h, pi in clean])
         length = len(self._trails)
 
         # single attribute swapped in last: the read path reads self._frozen once, so it sees a fully consistent snapshot
-        self._frozen = (hashes, values, pair_list, collisions, length)
+        self._frozen = (hi, lo, values, pair_list, collisions, length)
         self._trails = None
         self._pairs = None
 
@@ -160,12 +165,18 @@ class TrailsDict(dict):
         if frozen is None:
             return key in self._trails
 
-        hashes, values, pair_list, collisions, length = frozen
+        hi, lo, values, pair_list, collisions, length = frozen
         if collisions and key in collisions:
             return True
         h = _key_hash(key)
-        i = bisect_left(hashes, h)
-        return i < len(hashes) and hashes[i] == h
+        target_hi, target_lo = h >> 32, h & 0xFFFFFFFF
+        i = bisect_left(hi, target_hi)
+        n = len(hi)
+        while i < n and hi[i] == target_hi:
+            if lo[i] == target_lo:
+                return True
+            i += 1
+        return False
 
     def has_key(self, key):
         return self.__contains__(key)
@@ -175,13 +186,17 @@ class TrailsDict(dict):
         if frozen is None:
             return self._trails[key]
 
-        hashes, values, pair_list, collisions, length = frozen
+        hi, lo, values, pair_list, collisions, length = frozen
         if collisions and key in collisions:
             return collisions[key]
         h = _key_hash(key)
-        i = bisect_left(hashes, h)
-        if i < len(hashes) and hashes[i] == h:
-            return pair_list[values[i]]
+        target_hi, target_lo = h >> 32, h & 0xFFFFFFFF
+        i = bisect_left(hi, target_hi)
+        n = len(hi)
+        while i < n and hi[i] == target_hi:
+            if lo[i] == target_lo:
+                return pair_list[values[i]]
+            i += 1
         raise KeyError(key)
 
     def get(self, key, default=None):
@@ -189,18 +204,22 @@ class TrailsDict(dict):
         if frozen is None:
             return self._trails.get(key, default)
 
-        hashes, values, pair_list, collisions, length = frozen
+        hi, lo, values, pair_list, collisions, length = frozen
         if collisions and key in collisions:
             return collisions[key]
         h = _key_hash(key)
-        i = bisect_left(hashes, h)
-        if i < len(hashes) and hashes[i] == h:
-            return pair_list[values[i]]
+        target_hi, target_lo = h >> 32, h & 0xFFFFFFFF
+        i = bisect_left(hi, target_hi)
+        n = len(hi)
+        while i < n and hi[i] == target_hi:
+            if lo[i] == target_lo:
+                return pair_list[values[i]]
+            i += 1
         return default
 
     def __len__(self):
         frozen = self._frozen
-        return frozen[4] if frozen is not None else len(self._trails)
+        return frozen[5] if frozen is not None else len(self._trails)
 
     def clear(self):
         self.__init__()
