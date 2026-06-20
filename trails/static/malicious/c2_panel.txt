@@ -1382,6 +1382,10 @@ api.otter-stack.com
 
 cm.zvdc.xyz
 
+# Reference: https://x.com/Fact_Finder03/status/2068356668791075048
+
+70.39.198.181:3000
+
 # Generic
 
 /admin_123/auth.php
