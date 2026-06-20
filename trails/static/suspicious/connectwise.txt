@@ -5095,3 +5095,9 @@ instance-rfb0l5-relay.screenconnect.com
 
 91.219.239.197:8041
 mintu.filcb.com
+
+# Reference: https://x.com/smica83/status/2068434724817604619
+# Reference: https://www.virustotal.com/gui/file/8b35c4a0f4a8690f2c911eef49ebe37a36cd5d2d67f9693dbc2b6e2e2338d8f1/detection
+# Reference: https://www.virustotal.com/gui/file/4c6c3fb40ded613933d00a87000b065649322eec736018493bc607ce72c76017/detection
+
+216.250.249.97:8041
