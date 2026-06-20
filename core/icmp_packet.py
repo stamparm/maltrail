@@ -63,11 +63,8 @@ class IcmpDestination:
     def get_src_ips_as_string(self):
         return ", ".join(self.src_ips.keys())
 
-    def getaveragetrafic(self):
+    def get_average_trafic(self):
         if self.period_accumulator == 0.0:
             return 0
 
         return 1/(self.period_accumulator / self.call_periods_count)
-    
-    def getaveragepackage_size(self):
-        return self.package_size_accumulator/self.count
