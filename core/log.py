@@ -173,6 +173,47 @@ def _endpoint_address(value):
         _endpoint_cache[value] = retval
     return retval
 
+_socket_cache = {}                  # family -> a reused UDP socket (one datagram socket serves any destination of that family)
+_signature_id_cache = [None, 0.0]   # (cached CEF signature_id, time computed); refreshed lazily, not stat-ed per event
+
+def _send_datagram(endpoint, data):
+    """
+    Sends a UDP datagram to a remote-logging endpoint, reusing a per-family socket instead of creating and closing
+    one for every event. On a send error the cached socket is dropped and recreated once (e.g. a transient fd issue).
+    """
+
+    family, address = _endpoint_address(endpoint)
+    sock = _socket_cache.get(family)
+    if sock is None:
+        sock = _socket_cache[family] = socket.socket(family, socket.SOCK_DGRAM)
+    try:
+        sock.sendto(data, address)
+    except socket.error:
+        try:
+            sock.close()
+        except Exception:
+            pass
+        try:
+            sock = _socket_cache[family] = socket.socket(family, socket.SOCK_DGRAM)
+            sock.sendto(data, address)
+        except socket.error:
+            pass
+
+def _trails_signature_id():
+    """
+    The CEF signature_id is the trails-file date - it changes at most daily (or when trails are rebuilt), so cache
+    it and refresh ~every 5 min instead of stat-ing TRAILS_FILE (os.path.getctime) on every single event.
+    """
+
+    now = time.time()
+    if _signature_id_cache[0] is None or now - _signature_id_cache[1] >= 300:
+        try:
+            _signature_id_cache[0] = time.strftime("%Y-%m-%d", time.localtime(os.path.getctime(config.TRAILS_FILE)))
+        except OSError:
+            _signature_id_cache[0] = time.strftime("%Y-%m-%d")
+        _signature_id_cache[1] = now
+    return _signature_id_cache[0]
+
 def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False):
     global _condensing_thread
 
@@ -220,12 +261,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     os.write(handle, event.encode(UNICODE_ENCODING))
 
                 if config.LOG_SERVER:
-                    _family, _address = _endpoint_address(config.LOG_SERVER)
-                    s = socket.socket(_family, socket.SOCK_DGRAM)
-                    try:
-                        s.sendto(("%s %s" % (sec, event)).encode(UNICODE_ENCODING), _address)
-                    finally:
-                        s.close()
+                    _send_datagram(config.LOG_SERVER, ("%s %s" % (sec, event)).encode(UNICODE_ENCODING))
 
                 if config.SYSLOG_SERVER or config.LOGSTASH_SERVER:
                     severity = "medium"
@@ -240,22 +276,12 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
 
                     if config.SYSLOG_SERVER:
                         extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, trail, reference)
-                        _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.localtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=time.strftime("%Y-%m-%d", time.localtime(os.path.getctime(config.TRAILS_FILE))), name=info, severity={"low": 0, "medium": 1, "high": 2}.get(severity), extension=extension)
-                        _family, _address = _endpoint_address(config.SYSLOG_SERVER)
-                        s = socket.socket(_family, socket.SOCK_DGRAM)
-                        try:
-                            s.sendto(_.encode(UNICODE_ENCODING), _address)
-                        finally:
-                            s.close()
+                        _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.localtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=_trails_signature_id(), name=info, severity={"low": 0, "medium": 1, "high": 2}.get(severity), extension=extension)
+                        _send_datagram(config.SYSLOG_SERVER, _.encode(UNICODE_ENCODING))
 
                     if config.LOGSTASH_SERVER:
                         _ = OrderedDict((("timestamp", sec), ("sensor", HOSTNAME), ("severity", severity), ("src_ip", src_ip), ("src_port", src_port), ("dst_ip", dst_ip), ("dst_port", dst_port), ("proto", proto), ("type", trail_type), ("trail", trail), ("info", info), ("reference", reference)))
-                        _family, _address = _endpoint_address(config.LOGSTASH_SERVER)
-                        s = socket.socket(_family, socket.SOCK_DGRAM)
-                        try:
-                            s.sendto(json.dumps(_).encode(UNICODE_ENCODING), _address)
-                        finally:
-                            s.close()
+                        _send_datagram(config.LOGSTASH_SERVER, json.dumps(_).encode(UNICODE_ENCODING))
 
                 if (config.DISABLE_LOCAL_LOG_STORAGE and not any((config.LOG_SERVER, config.SYSLOG_SERVER))) or config.console:
                     sys.stderr.write(event)
