@@ -1390,6 +1390,10 @@ cm.zvdc.xyz
 
 23.95.31.58:7443
 
+# Reference: https://urlscan.io/result/019ee606-d311-708d-980c-b8189256a3d8/
+
+gooseclan.xyz
+
 # Generic
 
 /admin_123/auth.php
