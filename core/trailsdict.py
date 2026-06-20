@@ -10,6 +10,10 @@ import sys
 from array import array
 from bisect import bisect_left
 
+from core import trailsbin
+
+_MISSING = object()                  # sentinel distinguishing "absent" from a stored None
+
 try:
     _TEXT_TYPE = unicode             # Python 2
 except NameError:
@@ -87,6 +91,7 @@ class TrailsDict(dict):
         self._pairs = {}            # (info, reference) -> the one shared tuple instance (build mode only)
         self._regex = ""
         self._frozen = None         # set by finalize() to (hashes, values, pair_list, collisions, length); None => build mode
+        self._mmap = None           # set by open_mmap() to trailsbin handles; when set, lookups read the shared memory-mapped file
 
     def finalize(self):
         """
@@ -142,6 +147,20 @@ class TrailsDict(dict):
         self._trails = None
         self._pairs = None
 
+    def open_mmap(self, bin_path):
+        """
+        Switches this dict to read from the shared, memory-mapped binary trail file at 'bin_path' (built by
+        core.common). Lookups then read directly from the mapping - which the kernel shares across every worker
+        process - so no per-process heap copy of the trails is held. Raises on a bad/foreign/truncated file.
+        """
+
+        handles = trailsbin.open_bin(bin_path)
+        self._regex = handles["regex"]
+        self._trails = None
+        self._pairs = None
+        self._frozen = None
+        self._mmap = handles        # discriminator assigned LAST (the read path checks self._mmap first)
+
     def adopt(self, other):
         """
         Atomically replaces this dict's contents with another TrailsDict's. The read path reads either self._trails
@@ -149,18 +168,31 @@ class TrailsDict(dict):
         - readers see the old or the new table, never the empty/half-built window that clear()+update() exposed.
         """
 
-        # The read path branches on self._frozen, so that discriminator is assigned LAST and the alternate-mode
-        # field is left in place (the old contents are unreferenced afterwards and GC'd) - a concurrent worker
-        # reader therefore sees a fully consistent old-or-new snapshot through the frozen<->build transition too.
+        # The read path checks self._mmap first, then self._frozen, then self._trails. The active-mode discriminator
+        # is assigned LAST (and the new backing data set before it), so a concurrent worker reader always sees a fully
+        # consistent old-or-new snapshot through any mode transition - including the mmap<->mmap reload swap.
         self._regex = other._regex
-        if other._frozen is not None:
-            self._frozen = other._frozen        # single atomic swap for the read path (done last)
+        if other._mmap is not None:
+            self._frozen = None
+            self._trails = None
+            self._pairs = None
+            self._mmap = other._mmap            # discriminator last
+        elif other._frozen is not None:
+            self._frozen = other._frozen        # new backing first
+            self._trails = None
+            self._pairs = None
+            self._mmap = None                   # discriminator last (readers leave the mmap path here)
         else:
             self._pairs = other._pairs
             self._trails = other._trails
-            self._frozen = None                 # single atomic swap for the read path (done last)
+            self._frozen = None
+            self._mmap = None                   # discriminator last
 
     def __contains__(self, key):
+        mm = self._mmap
+        if mm is not None:
+            return trailsbin.lookup(mm, key, _MISSING) is not _MISSING
+
         frozen = self._frozen
         if frozen is None:
             return key in self._trails
@@ -182,6 +214,13 @@ class TrailsDict(dict):
         return self.__contains__(key)
 
     def __getitem__(self, key):
+        mm = self._mmap
+        if mm is not None:
+            value = trailsbin.lookup(mm, key, _MISSING)
+            if value is _MISSING:
+                raise KeyError(key)
+            return value
+
         frozen = self._frozen
         if frozen is None:
             return self._trails[key]
@@ -200,6 +239,10 @@ class TrailsDict(dict):
         raise KeyError(key)
 
     def get(self, key, default=None):
+        mm = self._mmap
+        if mm is not None:
+            return trailsbin.lookup(mm, key, default)
+
         frozen = self._frozen
         if frozen is None:
             return self._trails.get(key, default)
@@ -218,6 +261,9 @@ class TrailsDict(dict):
         return default
 
     def __len__(self):
+        mm = self._mmap
+        if mm is not None:
+            return mm["length"]
         frozen = self._frozen
         return frozen[5] if frozen is not None else len(self._trails)
 
@@ -225,7 +271,7 @@ class TrailsDict(dict):
         self.__init__()
 
     def __setitem__(self, key, value):
-        if self._frozen is not None:
+        if self._frozen is not None or self._mmap is not None:
             raise Exception("cannot modify a finalized TrailsDict")
         if not isinstance(value, (tuple, list)):
             raise Exception("unsupported type '%s'" % type(value))
@@ -238,12 +284,12 @@ class TrailsDict(dict):
         self._trails[key] = shared
 
     def __delitem__(self, key):
-        if self._frozen is not None:
+        if self._frozen is not None or self._mmap is not None:
             raise Exception("cannot modify a finalized TrailsDict")
         del self._trails[key]
 
     def update(self, value):
-        if self._frozen is not None:
+        if self._frozen is not None or self._mmap is not None:
             raise Exception("cannot modify a finalized TrailsDict")
         if isinstance(value, (TrailsDict, dict)):
             for key in value:
@@ -252,18 +298,18 @@ class TrailsDict(dict):
             raise Exception("unsupported type '%s'" % type(value))
 
     def keys(self):
-        if self._frozen is not None:
+        if self._frozen is not None or self._mmap is not None:
             raise Exception("cannot iterate a finalized TrailsDict (keys are not retained)")
         return self._trails.keys()
 
     def iterkeys(self):
-        if self._frozen is not None:
+        if self._frozen is not None or self._mmap is not None:
             raise Exception("cannot iterate a finalized TrailsDict (keys are not retained)")
         for key in self._trails:
             yield key
 
     def __iter__(self):
-        if self._frozen is not None:
+        if self._frozen is not None or self._mmap is not None:
             raise Exception("cannot iterate a finalized TrailsDict (keys are not retained)")
         for key in self._trails:
             yield key

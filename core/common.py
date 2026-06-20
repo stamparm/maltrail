@@ -17,6 +17,7 @@ import sys
 import zipfile
 import zlib
 
+from core import trailsbin
 from core.addr import addr_to_int
 from core.addr import int_to_addr
 from core.compat import xrange
@@ -43,6 +44,18 @@ from thirdparty.six.moves import urllib as _urllib
 
 _ipcat_cache = {}  # NOTE: holds the (bounded, config-sized) static IPCAT seed
 _ipcat_dynamic_cache = LRUDict(MAX_CACHE_ENTRIES)  # NOTE: bounds per-IP SQLite lookups so they can't grow without bound on a busy server
+
+try:
+    import fcntl
+except ImportError:
+    fcntl = None
+
+# The shared, memory-mapped trail store (one physical copy across all worker processes instead of one heap copy
+# each) is used where the platform supports it: POSIX with flock + an OS that shares mmap'd file pages. On Windows
+# (where the sensor runs single-process anyway) the in-heap finalize() path is used instead.
+USE_MMAP_TRAILS = bool(fcntl) and not IS_WIN
+
+_WILDCARD_TRAIL_REGEX = re.compile(r"[\].][*+]|\[[a-z0-9_.\-]+\]", re.I)
 
 def retrieve_content(url, data=None, headers=None):
     """
@@ -350,6 +363,160 @@ def load_trails(quiet=False, freeze=False):
         except Exception:
             pass
         print("[i] %s trails loaded" % _)
+
+    return retval
+
+def trails_bin_path():
+    return "%s.bin" % config.TRAILS_FILE
+
+def _trails_bin_from_items(items, out_path):
+    """
+    Core builder shared by build_trails_bin() (reads the CSV) and write_trails_bin() (reads an in-memory dict).
+    'items' yields (trail, info, reference). Computes the wildcard alternation regex, interns the (info, reference)
+    pairs, detects (and keeps verbatim) the rare hash collisions, and writes the file atomically (tmp + rename).
+    """
+
+    pairs = {}
+    pair_list = []
+    by_hash = {}
+    regex = ""
+    regex_groups = 0
+
+    for trail, info, reference in items:
+        if "static" in reference and _WILDCARD_TRAIL_REGEX.search(trail) and regex_groups < 100:  # mirror build_trails_regex()
+            try:
+                re.compile(trail)
+            except re.error:
+                pass
+            else:
+                if re.escape(trail) != trail:
+                    regex += "|(?P<g%s>%s)" % (regex_groups, trail)
+                    regex_groups += 1
+
+        pair = (info, reference)
+        pi = pairs.get(pair)
+        if pi is None:
+            pi = len(pair_list)
+            pairs[pair] = pi
+            pair_list.append(pair)
+
+        h = trailsbin.stable_hash(trail)
+        existing = by_hash.get(h)
+        if existing is None:
+            by_hash[h] = (trail, pi)
+        elif type(existing) is list:                # already a collision bucket
+            for j in xrange(len(existing)):
+                if existing[j][0] == trail:         # duplicate key row -> overwrite, not a collision
+                    existing[j] = (trail, pi)
+                    break
+            else:
+                existing.append((trail, pi))
+        elif existing[0] == trail:                  # duplicate key row -> overwrite
+            by_hash[h] = (trail, pi)
+        else:                                       # genuine hash collision between two distinct trails
+            by_hash[h] = [existing, (trail, pi)]
+
+    entries = []
+    collisions = {}
+    for h, entry in by_hash.items():
+        if type(entry) is list:
+            for trail, pi in entry:
+                collisions[trail] = pair_list[pi]
+        else:
+            entries.append((h, entry[1]))
+
+    tmp_path = "%s.%d.tmp" % (out_path, os.getpid())
+    trailsbin.write_bin(tmp_path, entries, pair_list, collisions, regex.strip('|'))
+    (os.replace if hasattr(os, "replace") else os.rename)(tmp_path, out_path)  # atomic publish
+
+def build_trails_bin(csv_path=None, bin_path=None):
+    """
+    Builds the binary trail store from the trails CSV (applying the runtime whitelist, exactly like load_trails).
+    Transiently materialises the full hash set, so the caller that owns the (already-paid) build peak runs this -
+    worker processes never do; they only mmap the result.
+    """
+
+    csv_path = csv_path or config.TRAILS_FILE
+    bin_path = bin_path or trails_bin_path()
+
+    def _items():
+        with open(csv_path, "r") as f:
+            for row in csv.reader(f, delimiter=',', quotechar='\"'):
+                if row and len(row) == 3 and not check_whitelisted(row[0]):
+                    yield row[0], row[1], row[2]
+
+    _trails_bin_from_items(_items(), bin_path)
+
+def write_trails_bin(trails, bin_path=None):
+    """
+    Builds the binary trail store from an already-built in-memory TrailsDict (the one update_trails just wrote to
+    the CSV), reusing that dict so no additional build peak is incurred.
+    """
+
+    bin_path = bin_path or trails_bin_path()
+
+    def _items():
+        for key in trails:
+            value = trails[key]
+            yield key, value[0], value[1]
+
+    _trails_bin_from_items(_items(), bin_path)
+
+def trails_bin_stale(bin_path=None):
+    bin_path = bin_path or trails_bin_path()
+    if not os.path.isfile(config.TRAILS_FILE):
+        return False
+    if not os.path.isfile(bin_path):
+        return True
+    try:
+        return os.stat(bin_path).st_mtime < os.stat(config.TRAILS_FILE).st_mtime
+    except OSError:
+        return True
+
+def load_trails_mmap(quiet=False):
+    """
+    Returns a TrailsDict backed by the shared, memory-mapped binary store. If the bin is missing or older than the
+    CSV it is (re)built from the CSV first - under an flock so that, of all the processes that may call this at
+    once, exactly one builds and the rest wait then mmap the finished file.
+    """
+
+    bin_path = trails_bin_path()
+    retval = TrailsDict()
+
+    if not os.path.isfile(config.TRAILS_FILE):
+        retval.finalize()       # no trails file yet -> empty (in-heap) frozen store
+        return retval
+
+    def _rebuild_locked(force=False):
+        lock_handle = open("%s.lock" % bin_path, "w")
+        try:
+            fcntl.flock(lock_handle, fcntl.LOCK_EX)
+            if force or trails_bin_stale(bin_path):     # re-check now that we hold the lock
+                build_trails_bin(config.TRAILS_FILE, bin_path)
+        finally:
+            try:
+                fcntl.flock(lock_handle, fcntl.LOCK_UN)
+            except Exception:
+                pass
+            lock_handle.close()
+
+    if trails_bin_stale(bin_path):
+        _rebuild_locked()
+
+    try:
+        retval.open_mmap(bin_path)
+    except Exception:
+        # corrupt / truncated / foreign-format (e.g. an older magic after an upgrade) bin -> rebuild and retry once
+        _rebuild_locked(force=True)
+        retval.open_mmap(bin_path)
+
+    if not quiet:
+        _ = len(retval)
+        try:
+            _ = '{0:,}'.format(_)
+        except Exception:
+            pass
+        print("[i] %s trails loaded (shared)" % _)
 
     return retval
 

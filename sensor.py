@@ -37,7 +37,9 @@ from core.common import get_ex_message
 from core.common import get_text
 from core.common import is_local
 from core.common import load_trails
+from core.common import load_trails_mmap
 from core.common import patch_parser
+from core.common import USE_MMAP_TRAILS
 from core.compat import xrange
 from core.datatype import LRUDict
 from core.enums import BLOCK_MARKER
@@ -937,13 +939,19 @@ def init():
             _ = update_trails()
             update_ipcat()
 
-        if _:
-            trails.adopt(_)  # atomic swap (was clear()+update(), which exposed the hot path to an empty/half-built table)
-        elif not trails:
-            trails.adopt(load_trails())
+        if USE_MMAP_TRAILS:
+            # the trail set (just refreshed into the CSV by update_trails) is built once into a shared, memory-mapped
+            # binary store; this process maps it and every worker process forked afterwards shares that one mapping
+            # instead of carrying its own ~150 MB heap copy
+            trails.adopt(load_trails_mmap(quiet=True))
+        else:
+            if _:
+                trails.adopt(_)  # atomic swap (was clear()+update(), which exposed the hot path to an empty/half-built table)
+            elif not trails:
+                trails.adopt(load_trails())
 
-        build_trails_regex(trails)
-        trails.finalize()   # compact the resident set to the hash-array form (read-only hot path); drops key strings
+            build_trails_regex(trails)
+            trails.finalize()   # compact the resident set to the hash-array form (read-only hot path); drops key strings
 
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
         thread.daemon = True
