@@ -9747,6 +9747,11 @@ drvdb9rcebidk.cloudfront.net
 
 /stubob.ps1
 
+# Reference: https://x.com/smica83/status/2068418921208717778
+# Reference: https://www.virustotal.com/gui/file/beddec31fe761f01b486e806533213eb98af5420cd9d8b5aa8d9787aea1203d8/detection
+
+/chunk-822080f9.hta
+
 # Generic
 
 /5c0ca79.php
