@@ -989,7 +989,7 @@ def detect_icmpv6_exfiltration_by_multiple_sources_to_destination(dst_ip):
             count += 1
         if destination.get_src_ip_average_traffic(src_ip) > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
             count += 1
-    if count > 1:
+    if count > 2:
         return True
     return False
 
@@ -1069,7 +1069,7 @@ def treat_icmp4_packet(packet, icmp_offset, dst_ip, ip_offset, src_ip):
                     print("[i] ICMPv4 exfiltration baseline: %s" % _icmp4_exfiltration_baseline)
 
     else:
-        icmp_destination = IcmpDestination(dst_ip, len(packet[ip_offset:len(packet) + 1]), time.time(), time.time())
+        icmp_destination = IcmpDestination(dst_ip, len(packet[icmp_offset:len(packet) + 1]), time.time(), time.time())
         icmp_destination.add_src_ip(src_ip)
         _last_icmp4_destinations[dst_ip] = icmp_destination
         _last_icmp4_order.append(dst_ip)
@@ -1090,7 +1090,7 @@ def detect_icmpv4_exfiltration_by_multiple_sources_to_destination(dst_ip):
             count += 1
         if destination.get_src_ip_average_traffic(src_ip) > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
             count += 1
-    if count > 1:
+    if count > 2:
         return True
     return False   
 
