@@ -63,7 +63,7 @@ class IcmpDestination:
     def get_src_ips_as_string(self):
         return ", ".join(self.src_ips.keys())
 
-    def get_average_trafic(self):
+    def get_average_traffic(self):
         if self.period_accumulator == 0.0:
             return 0
 

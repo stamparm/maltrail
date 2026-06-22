@@ -961,7 +961,7 @@ def treat_icmp6_packet(packet, icmp_offset, dst_ip, ip_offset, src_ip):
                     return False
                 sumOfCalls = 0
                 for dest in _last_icmp6_destinations.values():
-                    _icmp6_exfiltration_baseline += dest.getaveragetrafic()*dest.count
+                    _icmp6_exfiltration_baseline += dest.get_average_traffic()*dest.count
                     sumOfCalls += dest.count
                 _icmp6_exfiltration_baseline /= sumOfCalls
                 if _icmp6_exfiltration_baseline != 0:
@@ -997,9 +997,9 @@ def detect_icmpv6_exfiltration_by_destination(dst_ip):
     global _last_icmp6_destinations
     destination = _last_icmp6_destinations[dst_ip]
 
-    if destination.getaveragetrafic() > _icmp6_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
+    if destination.get_average_traffic() > _icmp6_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
         return True, destination
-    if destination.getaveragetrafic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
+    if destination.get_average_traffic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
         return True, destination
 
     return False, None
@@ -1062,7 +1062,7 @@ def treat_icmp4_packet(packet, icmp_offset, dst_ip, ip_offset, src_ip):
                     return
                 sumOfCalls = 0
                 for dest in _last_icmp4_destinations.values():
-                    _icmp4_exfiltration_baseline += dest.getaveragetrafic()*dest.count
+                    _icmp4_exfiltration_baseline += dest.get_average_traffic()*dest.count
                     sumOfCalls += dest.count
                 _icmp4_exfiltration_baseline /= sumOfCalls
                 if _icmp4_exfiltration_baseline != 0:
@@ -1098,9 +1098,9 @@ def detect_icmpv4_exfiltration_by_destination(dst_ip):
     global _last_icmp4_destinations
     destination = _last_icmp4_destinations[dst_ip]
 
-    if destination.getaveragetrafic() > _icmp4_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
+    if destination.get_average_traffic() > _icmp4_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
         return True, destination
-    if destination.getaveragetrafic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
+    if destination.get_average_traffic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
         return True, destination
     return False, None
 
