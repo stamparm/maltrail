@@ -882,10 +882,11 @@ def _process_packet(packet, sec, usec, ip_offset):
 
         elif protocol in IPPROTO_LUT:  # non-TCP/UDP (e.g. ICMP)
             if config.USE_HEURISTICS:
+                icmp_offset = ip_offset + iph_length
                 if protocol == socket.IPPROTO_ICMP:
-                    treatable_packet = is_icmpv4_packet(packet, iph_length)
-                    treat_icmp4_packet(packet, iph_length, dst_ip, src_ip)
-                    
+                    treatable_packet = is_icmpv4_packet(packet, icmp_offset)
+                    treat_icmp4_packet(packet, icmp_offset, dst_ip, ip_offset, src_ip)
+
                     exfiltration, destination = detect_icmpv4_exfiltration_by_destination(dst_ip)
                     if exfiltration and treatable_packet:
                         log_event((sec, usec, destination.get_largest_src_ip(), '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv4 exfiltration by anomalous traffic to destination (suspicious)", "(heuristic)"), packet)
@@ -902,8 +903,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                         log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv4 large package size (suspicious)", "(heuristic)"), packet)
         
                 elif protocol == socket.IPPROTO_ICMPV6:
-                    treatable_packet = is_icmpv6_packet(packet, iph_length)
-                    treat_icmp6_packet(packet, iph_length, dst_ip, src_ip)
+                    treatable_packet = is_icmpv6_packet(packet, icmp_offset)
+                    treat_icmp6_packet(packet, icmp_offset, dst_ip, ip_offset, src_ip)
                     
                     exfiltration, destination = detect_icmpv6_exfiltration_by_destination(dst_ip)
                     if exfiltration and treatable_packet:
@@ -916,7 +917,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                     if detect_icmpv6_exfiltration_by_multiple_sources_to_destination(dst_ip) and treatable_packet:
                         log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv6 exfiltration by multiple sources to destination (suspicious)", "(heuristic)"), packet)
                     
-                    if detect_icmpv6_large_package_size(packet, ip_data, dst_ip, iph_length) and treatable_packet:
+                    if detect_icmpv6_large_package_size(packet, ip_data, dst_ip, icmp_offset) and treatable_packet:
                         log_event((sec, usec, src_ip, '-', dst_ip, '-', PROTO.ICMP, TRAIL.ICMP, '-', "ICMPv6 large package size (suspicious)", "(heuristic)"), packet)
 
             if dst_ip in trails:
@@ -937,7 +938,7 @@ def is_icmpv6_packet(packet, iph_length):
 def is_icmpv4_packet(packet, iph_length):
     return ord(packet[iph_length:iph_length + 1]) == 0x08 or ord(packet[iph_length:iph_length + 1]) == 0x00
 
-def treat_icmp6_packet(packet, iph_length, dst_ip, src_ip):
+def treat_icmp6_packet(packet, icmp_offset, dst_ip, ip_offset, src_ip):
     global _icmp6_exfiltration_baseline
     global _icmp6_exfiltration_baseline_startup_time
     global _last_icmp6_destinations
@@ -946,7 +947,7 @@ def treat_icmp6_packet(packet, iph_length, dst_ip, src_ip):
     if dst_ip in _last_icmp6_destinations:
         destination = _last_icmp6_destinations[dst_ip]
 
-        destination.package_size_accumulator += len(packet[iph_length+8:len(packet) + 1])
+        destination.package_size_accumulator += len(packet[icmp_offset+8:len(packet) + 1])
         destination.add_src_ip(src_ip)
         destination.update_last_seen(time.time())
 
@@ -960,14 +961,14 @@ def treat_icmp6_packet(packet, iph_length, dst_ip, src_ip):
                     return False
                 sumOfCalls = 0
                 for dest in _last_icmp6_destinations.values():
-                    _icmp6_exfiltration_baseline += dest.get_average_trafic()*dest.count
+                    _icmp6_exfiltration_baseline += dest.getaveragetrafic()*dest.count
                     sumOfCalls += dest.count
                 _icmp6_exfiltration_baseline /= sumOfCalls
                 if _icmp6_exfiltration_baseline != 0:
                     print("[i] ICMPv6 exfiltration baseline: %s" % _icmp6_exfiltration_baseline)
             
     else:
-        icmp_destination = IcmpDestination(dst_ip, len(packet[iph_length+8:len(packet) + 1]), time.time(), time.time())
+        icmp_destination = IcmpDestination(dst_ip, len(packet[icmp_offset:len(packet) + 1]), time.time(), time.time())
         icmp_destination.add_src_ip(src_ip)
         _last_icmp6_destinations[dst_ip] = icmp_destination
         _last_icmp6_order.append(dst_ip)
@@ -996,9 +997,9 @@ def detect_icmpv6_exfiltration_by_destination(dst_ip):
     global _last_icmp6_destinations
     destination = _last_icmp6_destinations[dst_ip]
 
-    if destination.get_average_trafic() > _icmp6_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
+    if destination.getaveragetrafic() > _icmp6_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
         return True, destination
-    if destination.get_average_trafic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
+    if destination.getaveragetrafic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
         return True, destination
 
     return False, None
@@ -1015,7 +1016,7 @@ def detect_icmpv6_exfiltration_by_src_dst_ips(src_ip, dst_ip):
         return True, src_ip
     return False, None
 
-def detect_icmpv6_large_package_size(packet, ip_data, dst_ip, iph_length):
+def detect_icmpv6_large_package_size(packet, ip_data, dst_ip, icmp_offset):
     global _icmp6_large_payload_size_treshold
     global _icmp6_large_package_size_startup_time
     global _icmp6_exfiltration_baseline_startup_time
@@ -1032,14 +1033,14 @@ def detect_icmpv6_large_package_size(packet, ip_data, dst_ip, iph_length):
             _icmp6_large_payload_size_treshold /= packets
             print("[i] ICMPv6 large payload size threshold: %s" % _icmp6_large_payload_size_treshold)
         
-        if _icmp6_large_payload_size_treshold != 0 and len(packet[iph_length+8:len(packet) + 1]) > _icmp6_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
+        if _icmp6_large_payload_size_treshold != 0 and len(packet[icmp_offset+4:len(packet) + 1]) > _icmp6_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
             return True
 
-    if config.ICMP_LARGE_PACKAGE_ABSOLUTE_THRESHOLD < len(packet[iph_length+8:len(packet) + 1]):
+    if config.ICMP_LARGE_PACKAGE_ABSOLUTE_THRESHOLD < len(packet[icmp_offset+4:len(packet) + 1]):
         return True
     return False
 
-def treat_icmp4_packet(packet, iph_length, dst_ip, src_ip):
+def treat_icmp4_packet(packet, icmp_offset, dst_ip, ip_offset, src_ip):
     global _icmp4_exfiltration_baseline
     global _icmp4_exfiltration_baseline_startup_time
     global _last_icmp4_destinations
@@ -1047,7 +1048,7 @@ def treat_icmp4_packet(packet, iph_length, dst_ip, src_ip):
 
     if dst_ip in _last_icmp4_destinations:
         destination = _last_icmp4_destinations[dst_ip]
-        destination.package_size_accumulator += len(packet[iph_length+8:len(packet) + 1])
+        destination.package_size_accumulator += len(packet[icmp_offset+8:len(packet) + 1])
         destination.add_src_ip(src_ip)
         destination.update_last_seen(time.time())
 
@@ -1061,14 +1062,14 @@ def treat_icmp4_packet(packet, iph_length, dst_ip, src_ip):
                     return
                 sumOfCalls = 0
                 for dest in _last_icmp4_destinations.values():
-                    _icmp4_exfiltration_baseline += dest.get_average_trafic()*dest.count
+                    _icmp4_exfiltration_baseline += dest.getaveragetrafic()*dest.count
                     sumOfCalls += dest.count
                 _icmp4_exfiltration_baseline /= sumOfCalls
                 if _icmp4_exfiltration_baseline != 0:
                     print("[i] ICMPv4 exfiltration baseline: %s" % _icmp4_exfiltration_baseline)
 
     else:
-        icmp_destination = IcmpDestination(dst_ip, len(packet[iph_length+8:len(packet) + 1]), time.time(), time.time())
+        icmp_destination = IcmpDestination(dst_ip, len(packet[ip_offset:len(packet) + 1]), time.time(), time.time())
         icmp_destination.add_src_ip(src_ip)
         _last_icmp4_destinations[dst_ip] = icmp_destination
         _last_icmp4_order.append(dst_ip)
@@ -1097,9 +1098,9 @@ def detect_icmpv4_exfiltration_by_destination(dst_ip):
     global _last_icmp4_destinations
     destination = _last_icmp4_destinations[dst_ip]
 
-    if destination.get_average_trafic() > _icmp4_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
+    if destination.getaveragetrafic() > _icmp4_exfiltration_baseline + config.ICMP_DESTINATION_TRAFFIC_AUTO_DETECT_BASELINE_TOLERANCE:
         return True, destination
-    if destination.get_average_trafic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
+    if destination.getaveragetrafic() > config.ICMP_DESTINATION_AVERAGE_EXFILTRATION_DETECTION_THRESHOLD:
         return True, destination
     return False, None
 
@@ -1115,7 +1116,7 @@ def detect_icmpv4_exfiltration_by_src_dst_ips(src_ip, dst_ip):
         return True, src_ip
     return False, None
 
-def detect_icmpv4_large_package_size(packet, ip_data, dst_ip, iph_length):
+def detect_icmpv4_large_package_size(packet, ip_data, dst_ip, icmp_offset):
     global _icmp4_large_payload_size_treshold
     global _icmp4_large_package_size_startup_time
     global _icmp4_exfiltration_baseline_startup_time
@@ -1132,10 +1133,10 @@ def detect_icmpv4_large_package_size(packet, ip_data, dst_ip, iph_length):
             _icmp4_large_payload_size_treshold /= packets
             print("[i] ICMPv4 large payload size threshold: %s" % _icmp4_large_payload_size_treshold)
         
-        if _icmp4_large_payload_size_treshold != 0 and len(packet[iph_length+8:len(packet) + 1]) > _icmp4_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
+        if _icmp4_large_payload_size_treshold != 0 and len(packet[icmp_offset+8:len(packet) + 1]) > _icmp4_large_payload_size_treshold + config.ICMP_LARGE_PACKAGE_SIZE_TOLERANCE:
             return True
 
-    if config.ICMP_LARGE_PACKAGE_ABSOLUTE_THRESHOLD < len(packet[iph_length+8:len(packet) + 1]):
+    if config.ICMP_LARGE_PACKAGE_ABSOLUTE_THRESHOLD < len(packet[icmp_offset+8:len(packet) + 1]):
         return True
     return False
 
