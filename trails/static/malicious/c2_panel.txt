@@ -1396,6 +1396,10 @@ cm.zvdc.xyz
 
 gooseclan.xyz
 
+# Reference: https://x.com/Fact_Finder03/status/2068980812578750710
+
+202.141.236.42:8081
+
 # Generic
 
 /admin_123/auth.php
