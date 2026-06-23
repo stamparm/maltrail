@@ -1316,8 +1316,10 @@ http://45.86.86.8
 94.125.103.45:8080
 
 # Reference: https://x.com/Fact_Finder03/status/2058800481980514384
+# Reference: https://x.com/Fact_Finder03/status/2069361392428437840
 
 179.43.186.239:8443
+31.7.58.226:8443
 
 # Reference: https://x.com/Fact_Finder03/status/2058785313393360975
 # TITLE-HOS/IP=Helios C2 - Login
