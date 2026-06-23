@@ -5101,3 +5101,7 @@ mintu.filcb.com
 # Reference: https://www.virustotal.com/gui/file/4c6c3fb40ded613933d00a87000b065649322eec736018493bc607ce72c76017/detection
 
 216.250.249.97:8041
+
+# Reference: https://www.virustotal.com/gui/file/becbfc36ee69db74b00a62dddd39e967e8434da292b07169c3c99648928dc14e/detection
+
+172.86.107.46:8041
