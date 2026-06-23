@@ -16,9 +16,11 @@ bootstrup-framework-js.beer
 cdn-verification-cloud.boats
 chekbrow.beer
 clainasns.beer
+claudverification-id.beer
 claufancdn.beer
 clhfgcomacdn.beer
 code-verification-js.beer
+code.verification-claude-cdn.beer
 codecerification.beer
 darndcs-js.beer
 ethercdnns.beer
@@ -29,6 +31,7 @@ gppcdnns.beer
 hasmeverdcdn.beer
 hftplcnsns.beer
 hpscdn.beer
+idverification-code.beer
 istounscnnd.beer
 ladydosug.live
 ladydosug.love
@@ -68,6 +71,7 @@ testerlau.lat
 thewellformedwoman.com
 travel-js-ns.beer
 trunnsns.beer
+verification-claude-cdn.beer
 verification-code-js.beer
 viscdnclaud.beer
 visual-ns-portal.beer
