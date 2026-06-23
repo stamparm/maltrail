@@ -8869,6 +8869,11 @@ zxokl.mabaninazaridelavar.xyz
 zyiirlrr.tarikhravannovin.shop
 zyuhgbux.hugugtejarat4.xyz
 
+# Reference: https://github.com/hagezi/dns-blocklists/issues/10616
+
+followfromapps.icu
+three.followfromapps.icu
+
 # Generic
 
 /fo0suc2ki2.rtf
