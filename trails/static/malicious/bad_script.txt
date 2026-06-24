@@ -9752,6 +9752,19 @@ drvdb9rcebidk.cloudfront.net
 
 /chunk-822080f9.hta
 
+# Reference: https://x.com/smica83/status/2069749380156907885
+# Reference: https://www.virustotal.com/gui/file/00090d5557921e9e107ab4d90f8b713226c0552005dd5477a1edf731e37dd6e6/detection
+# Reference: https://www.virustotal.com/gui/file/624a6e50ebd192d4ee557b819a95a9e383a8b8fd427572f9c4fa3dcc84d60f89/detection
+# Reference: https://www.virustotal.com/gui/file/62979b2b5cecea10ec97677db8d336fa372361c7c95181894ea96348e8aa186e/detection
+# Reference: https://www.virustotal.com/gui/file/89a47403777adcc9c826410ae10a2ffcf15372d6dd5689355b7cc6377b870401/detection
+# Reference: https://www.virustotal.com/gui/file/e7bd1b412b263180b544184bb68cdae4a771719ab981eb3d1a3b16351ba3293e/detection
+
+/v1sl4g488/aspiringpayoff.ps1
+/v1sl4g488/heartwoodtension.ps1
+/aspiringpayoff.ps1
+/heartwoodtension.ps1
+/v1sl4g488/
+
 # Generic
 
 /5c0ca79.php
