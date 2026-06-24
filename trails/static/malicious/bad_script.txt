@@ -9775,6 +9775,18 @@ drvdb9rcebidk.cloudfront.net
 /szch45/shoutnewspaper.ps1
 /shoutnewspaper.ps1
 
+# Reference: https://x.com/smica83/status/2069393150846677175
+# Reference: https://www.virustotal.com/gui/file/1921b0dc8b556ac47d7d6986df949d06611f9ae2b2a8697db03af495772931b2/detection
+# Reference: https://www.virustotal.com/gui/file/4bde0e63d4cd3a71bf8ee280aeaef7602eb7aa4211b272cf0d065d2d7e2b9c5a/detection
+# Reference: https://www.virustotal.com/gui/file/664de29ea5c9a8d0621585711a98319f6add935feaa2a1bc7351e91d7c016369/detection
+# Reference: https://www.virustotal.com/gui/file/d5dcf9d0fc7ff901044526593853df77ce3390f1a01e73069b14b20ebc1f927f/detection
+# Reference: https://www.virustotal.com/gui/file/ea185132dc1298972338e9668cdda9962b99333e7463b7fd2d910f7cd0b9e96a/detection
+
+/kr4gg/franticsum.ps1
+/kr4gg/sushisubsequent.ps1
+/franticsum.ps1
+/sushisubsequent.ps1
+
 # Generic
 
 /5c0ca79.php
