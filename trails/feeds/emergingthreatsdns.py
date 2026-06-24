@@ -19,10 +19,16 @@ def fetch():
     retval = {}
     content = retrieve_content(__url__)
 
+    def _unhex(match):
+        try:
+            return binascii.unhexlify(match.group(1).replace(" ", "")).decode()
+        except Exception:
+            return ""
+
     if __check__ in content:
         for match in re.finditer(r'(?i)(CnC DNS Query|C2 Domain|CnC Domain)[^\n]+(dns.query|tls.sni); content:"([^"]+)', content):
             candidate = match.group(3).lower().strip('.').split("//")[-1]
-            candidate = re.sub(r"\|([^|]+)\|", lambda match: binascii.unhexlify(match.group(1).replace(" ", "")).decode(), candidate)
+            candidate = re.sub(r"\|([^|]+)\|", _unhex, candidate)
             if '.' in candidate:
                 retval[candidate] = (__info__, __reference__)
 

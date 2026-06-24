@@ -7,7 +7,7 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/bitcoin_nodes_1d.ipset"
+__url__ = "https://iplists.firehol.org/files/bitcoin_nodes_1d.ipset"
 __check__ = "bitcoin_nodes_1d"
 __info__ = "bad reputation (bitcoin node)"
 __reference__ = "bitnodes.io"

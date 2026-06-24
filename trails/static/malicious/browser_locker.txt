@@ -21849,6 +21849,7 @@ http://45.33.5.231
 http://45.55.185.155
 http://45.55.76.193
 http://45.55.84.224
+http://45.79.0.138
 http://50.116.17.103
 http://50.116.28.218
 http://50.116.30.13
@@ -21890,3 +21891,10 @@ windowsblockededed.pages.dev
 windowslocked.pages.dev
 wiskckla1-dabxefgsaae3c7fd.z02.azurefd.net
 zxhvchgxz6wetew.pages.dev
+
+# Reference: https://www.virustotal.com/gui/ip-address/13.248.213.45/relations
+
+ghiesposst.site
+thoslderos.shop
+mail.ghiesposst.site
+mail.thoslderos.shop

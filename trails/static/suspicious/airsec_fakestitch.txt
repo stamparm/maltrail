@@ -1,0 +1,10 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://www.air.security/blog-posts/the-story-of-skills
+# Reference: https://thehackernews.com/2026/06/fake-ai-agent-skill-passed-security.html
+# Reference: https://www.virustotal.com/gui/file/b24faf7d8ab81c1f3410f944849e5028daa8e1e1b8aa6d525d314ec4bad89270/detection
+# BANNER_0_HASH-HOST=381ec8f62a0dd9dda2683af71157503a
+
+google-stitch.com
+stitch-design.ai

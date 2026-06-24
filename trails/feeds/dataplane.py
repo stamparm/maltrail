@@ -21,6 +21,8 @@ def fetch():
                 line = line.strip()
                 if not line or line.startswith('#') or '.' not in line or '|' not in line:
                     continue
-                retval[line.split('|')[2].strip()] = (__info__, __reference__)
+                parts = line.split('|')
+                if len(parts) > 2:
+                    retval[parts[2].strip()] = (__info__, __reference__)
 
     return retval

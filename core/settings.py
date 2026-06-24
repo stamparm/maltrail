@@ -19,6 +19,7 @@ from core.addr import expand_range
 from core.addr import make_mask
 from core.attribdict import AttribDict
 from core.colorized import init_output
+from core.datatype import LRUDict
 from core.trailsdict import TrailsDict
 from thirdparty.six.moves import urllib as _urllib
 
@@ -59,7 +60,8 @@ NO_BLOCK = -1
 END_BLOCK = -2
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 HTML_DIR = os.path.join(ROOT_DIR, "html")
-DISPOSED_NONCES = set()
+MAX_DISPOSED_NONCES = 10000
+DISPOSED_NONCES = LRUDict(MAX_DISPOSED_NONCES)  # NOTE: bounded to prevent unbounded growth from (unauthenticated) /login nonce spam
 PING_RESPONSE = "pong"
 MAX_NOFILE = 65000
 CAPTURE_TIMEOUT = 100  # ms
@@ -74,6 +76,7 @@ DISABLED_CONTENT_EXTENSIONS = (".py", ".pyc", ".md", ".txt", ".bak", ".conf", ".
 CONTENT_EXTENSIONS_EXCLUSIONS = ("robots.txt",)
 CONDENSE_ON_INFO_KEYWORDS = ("attacker", "reputation", "scanner", "user agent", "tor exit", "port scanning", "potential infection")
 CONDENSED_EVENTS_FLUSH_PERIOD = 10
+MAX_CONDENSED_EVENTS = 1000  # NOTE: per (src_ip, trail) cap so a flood of condensable events can't grow the buffer without bound between flushes
 LOW_PRIORITY_INFO_KEYWORDS = ("reputation", "attacker", "spammer", "abuser", "malicious", "dnspod", "nicru", "crawler", "compromised", "bad history")
 HIGH_PRIORITY_INFO_KEYWORDS = ("mass scanner", "ipinfo")
 HIGH_PRIORITY_REFERENCES = ("(static)", "(custom)")
@@ -173,28 +176,30 @@ def _get_total_physmem():
             output = subprocess.check_output(['wmic', 'computersystem', 'get', 'TotalPhysicalMemory'], universal_newlines=True)
             retval = int(output.strip().splitlines()[-1].strip())
         else:
-            retval = 1024 * int(re.search(r"(?i)MemTotal:\s+(\d+)\skB", open("/proc/meminfo").read()).group(1))
-    except:
+            with open("/proc/meminfo") as f:
+                retval = 1024 * int(re.search(r"(?i)MemTotal:\s+(\d+)\skB", f.read()).group(1))
+    except Exception:
         pass
 
     if not retval:
         try:
             import psutil
             retval = psutil.virtual_memory().total
-        except:
+        except Exception:
             pass
 
     if not retval:
         try:
-            retval = int(re.search(r"real mem(ory)?\s*=\s*(\d+) ", open("/var/run/dmesg.boot").read()).group(2))
-        except:
+            with open("/var/run/dmesg.boot") as f:
+                retval = int(re.search(r"real mem(ory)?\s*=\s*(\d+) ", f.read()).group(2))
+        except Exception:
             pass
 
     if not retval:
         try:
             output = subprocess.check_output(['sysctl', '-n', 'hw.memsize'], universal_newlines=True, stderr=subprocess.PIPE)
             retval = int(output.strip())
-        except:
+        except Exception:
             pass
 
     if not retval:
@@ -202,26 +207,26 @@ def _get_total_physmem():
             # Fallback to original sysctl regex method for other BSD systems
             output = subprocess.check_output("sysctl hw", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)
             retval = int(re.search(r"hw\.(physmem|memsize):\s*(\d+)", output).group(2))
-        except:
+        except Exception:
             pass
 
     if not retval:
         try:
             retval = 1024 * int(re.search(r"\s+(\d+) K total memory", subprocess.check_output("vmstat -s", shell=True, stderr=subprocess.STDOUT)).group(1))
-        except:
+        except Exception:
             pass
 
     if not retval:
         try:
             retval = int(re.search(r"Mem:\s+(\d+)", subprocess.check_output("free -b", shell=True, stderr=subprocess.STDOUT)).group(1))
-        except:
+        except Exception:
             pass
 
     if not retval:
         if IS_LINUX:
             try:
                 retval = 1024 * int(re.search(r"KiB Mem:\s*\x1b[^\s]+\s*(\d+)", subprocess.check_output("top -n 1", shell=True, stderr=subprocess.STDOUT)).group(1))
-            except:
+            except Exception:
                 pass
 
     return retval
@@ -238,7 +243,8 @@ def read_config(config_file):
 
     try:
         array = None
-        content = open(config_file, "r").read()
+        with open(config_file, "r") as f:
+            content = f.read()
 
         for line in content.split("\n"):
             line = line.strip('\r')
@@ -281,6 +287,10 @@ def read_config(config_file):
                 value = _
 
             if any(name.startswith(_) for _ in ("USE_", "SET_", "CHECK_", "ENABLE_", "SHOW_", "DISABLE_")):
+                if value and value.lower() not in ("0", "1", "false", "true"):
+                    # NOTE: surface non-boolean switch values (e.g. 'USE_SSL yes') instead of silently treating them as
+                    # false - a silent USE_SSL=off is exactly the kind of misconfig that goes unnoticed
+                    print("[!] configuration switch '%s' expects a boolean (0/1/true/false), got '%s' (treated as false)" % (name, value))
                 value = value.lower() in ("1", "true")
             elif value.isdigit():
                 value = int(value)
@@ -295,8 +305,10 @@ def read_config(config_file):
 
             config[name] = value
 
-    except (IOError, OSError):
-        pass
+    except (IOError, OSError) as ex:
+        # NOTE: the only I/O here is the file read above; surface it clearly instead of silently proceeding with a
+        # half/empty config (which would otherwise fail later with a misleading "missing mandatory option")
+        sys.exit("[!] unable to read configuration file '%s' (%s)" % (config_file, ex))
 
     for option in ("MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIR"):
         if option not in config:
@@ -380,40 +392,33 @@ def read_config(config_file):
     if int(os.environ.get("MALTRAIL_DREI", 0)) > 0:
         config.SHOW_DEBUG = True
 
+def _iter_file_lines(filepath):
+    """
+    Yields stripped, non-blank, non-comment lines from a file (a no-op if the file is missing).
+    Factors out the open/strip/skip-blank-or-comment boilerplate shared by the misc/*.txt loaders below.
+    """
+
+    if filepath and os.path.isfile(filepath):
+        with open(filepath, "r") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#'):
+                    yield line
+
 def read_whitelist():
     WHITELIST.clear()
     WHITELIST_RANGES.clear()
 
-    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "whitelist.txt"))
-    if os.path.isfile(_):
-        with open(_, "r") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                elif re.search(r"\A\d+\.\d+\.\d+\.\d+/\d+\Z", line):
-                    try:
-                        prefix, mask = line.split('/')
-                        WHITELIST_RANGES.add((addr_to_int(prefix), make_mask(int(mask))))
-                    except (IndexError, ValueError):
-                        WHITELIST.add(line)
-                else:
+    for _ in (os.path.abspath(os.path.join(ROOT_DIR, "misc", "whitelist.txt")), config.USER_WHITELIST):
+        for line in _iter_file_lines(_):
+            if re.search(r"\A\d+\.\d+\.\d+\.\d+/\d+\Z", line):
+                try:
+                    prefix, mask = line.split('/')
+                    WHITELIST_RANGES.add((addr_to_int(prefix), make_mask(int(mask))))
+                except (IndexError, ValueError):
                     WHITELIST.add(line)
-
-    if config.USER_WHITELIST and os.path.isfile(config.USER_WHITELIST):
-        with open(config.USER_WHITELIST, "r") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                elif re.search(r"\A\d+\.\d+\.\d+\.\d+/\d+\Z", line):
-                    try:
-                        prefix, mask = line.split('/')
-                        WHITELIST_RANGES.add((addr_to_int(prefix), make_mask(int(mask))))
-                    except (IndexError, ValueError):
-                        WHITELIST.add(line)
-                else:
-                    WHITELIST.add(line)
+            else:
+                WHITELIST.add(line)
 
 # add rules to ignore event list from passed file
 def add_ignorelist(filepath):
@@ -444,72 +449,49 @@ def read_ua():
     items = []
 
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "ua.txt"))
-    if os.path.isfile(_):
-        with open(_, "r") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                elif " (compatible" in line:
-                    line = re.escape(line)
-                else:
-                    try:
-                        re.compile(line)
-                    except:
-                        line = re.escape(line)
+    for line in _iter_file_lines(_):
+        if " (compatible" in line:
+            line = re.escape(line)
+        else:
+            try:
+                re.compile(line)
+            except Exception:
+                line = re.escape(line)
 
-                items.append(line)
+        items.append(line)
 
     if items:
         SUSPICIOUS_UA_REGEX = "(?i)%s" % '|'.join(items)
 
 def read_worst_asn():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "worst_asns.txt"))
-    if os.path.isfile(_):
-        with open(_, "r") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                else:
-                    match = re.search(r"([\d.]+)/(\d+),(.+)", line)
-                    if not match:
-                        continue
-                    key = line.split('.')[0]
-                    if key not in WORST_ASNS:
-                        WORST_ASNS[key] = []
-                    prefix, mask, name = match.groups()
-                    WORST_ASNS[key].append((addr_to_int(prefix), make_mask(int(mask)), name))
+    for line in _iter_file_lines(_):
+        match = re.search(r"([\d.]+)/(\d+),(.+)", line)
+        if not match:
+            continue
+        key = line.split('.')[0]
+        if key not in WORST_ASNS:
+            WORST_ASNS[key] = []
+        prefix, mask, name = match.groups()
+        WORST_ASNS[key].append((addr_to_int(prefix), make_mask(int(mask)), name))
 
 def read_cdn_ranges():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "cdn_ranges.txt"))
-    if os.path.isfile(_):
-        with open(_, "r") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                else:
-                    key = line.split('.')[0]
-                    if key not in CDN_RANGES:
-                        CDN_RANGES[key] = []
-                    prefix, mask = line.split('/')
-                    CDN_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
+    for line in _iter_file_lines(_):
+        key = line.split('.')[0]
+        if key not in CDN_RANGES:
+            CDN_RANGES[key] = []
+        prefix, mask = line.split('/')
+        CDN_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
 
 def read_bogon_ranges():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "bogon_ranges.txt"))
-    if os.path.isfile(_):
-        with open(_, "r") as f:
-            for line in f:
-                line = line.strip()
-                if not line or line.startswith('#'):
-                    continue
-                else:
-                    key = line.split('.')[0]
-                    if key not in BOGON_RANGES:
-                        BOGON_RANGES[key] = []
-                    prefix, mask = line.split('/')
-                    BOGON_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
+    for line in _iter_file_lines(_):
+        key = line.split('.')[0]
+        if key not in BOGON_RANGES:
+            BOGON_RANGES[key] = []
+        prefix, mask = line.split('/')
+        BOGON_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
 
 def check_deprecated():
     if "--no-updates" in sys.argv:

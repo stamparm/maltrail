@@ -6524,11 +6524,39 @@
 # Reference: https://ipinfo.io/AS202226
 
 144.31.236.0/24,greatflower
+144.31.40.0/24,greatflower
 150.241.81.0/24,greatflower
 193.202.84.0/24,greatflower
 2.26.74.0/24,greatflower
 2.26.75.0/24,greatflower
 2.27.5.0/24,greatflower
 31.76.118.0/24,greatflower
+31.76.32.0/24,greatflower
 31.76.87.0/24,greatflower
 31.76.93.0/24,greatflower
+31.77.189.0/24,greatflower
+31.77.228.0/24,greatflower
+
+# AS 211486
+# Reference: https://ipinfo.io/AS211486
+# Reference: https://www.cloudsek.com/blog/inside-the-fortibleed-open-directory-a-technical-analysis-of-what-the-attacker-left-behind
+
+77.91.71.0/24,aaa-as
+85.11.187.0/24,aaa-as
+93.152.208.0/24,aaa-as
+
+# AS 206378
+# Reference: https://ipinfo.io/AS206378
+# Reference: https://www.cloudsek.com/blog/inside-the-fortibleed-open-directory-a-technical-analysis-of-what-the-attacker-left-behind
+
+193.8.187.0/24,stolitomson-as
+194.113.39.0/24,stolitomson-as
+
+# AS 208962
+# Reference: https://ipinfo.io/AS208962
+# Reference: https://www.cloudsek.com/blog/inside-the-fortibleed-open-directory-a-technical-analysis-of-what-the-attacker-left-behind
+
+154.51.15.0/24,nextremum
+193.239.177.0/24,nextremum
+38.117.87.0/24,nextremum
+38.127.214.0/23,nextremum

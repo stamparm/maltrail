@@ -1512,13 +1512,20 @@ http://46.19.66.166
 38-54-108-229.nip.io
 38.54.108.229.sslip.io
 3w.gdclp.com
+80.78.18.106.nip.io
 880578.site
 91-215-85-151.cprapid.com
 adaptix.canadaeast.cloudapp.azure.com
 adaptix.netputo.top
 altioracorp.cloud
+amillionebooks.com
+api.aibifb.com
+api.elbrus.wtf
+api.maxflow.llc
+api.wpscdm.top
 app.kingby.shop
 app.kingby.xyz
+app.maxflow.llc
 app.rustture.cc
 app.webinfos.top
 applicationdev.eastus2.cloudapp.azure.com
@@ -1532,14 +1539,17 @@ bestatto.ru
 biocraft.us
 blacktatto.ru
 blatatto.ru
+boltz.mistic.xyz
 bootstrap.jqu3ry.cfd
 c.anzemet.us
 ccdtetsgky.accounts.google.omassent8entryroutineapprovesubscribeuseafixmech.xyz
+cdn.netupdate.link
 chatatto.ru
 complty.fit
 dan.pancaketoken.com
 dapingceng7788.com
 database.publicvm.com
+dirtyexo.com
 disk-share.com
 docker.kubegroup.co
 dzens.com
@@ -1553,6 +1563,7 @@ gatuso.duckdns.org
 google-dns.sytes.net
 headscale.uk.kathigites.com
 hk.32069.com
+huayuzhuangxiu.com
 hyeyeong.com
 hyper.es
 innagine.com
@@ -1561,17 +1572,25 @@ klaviyo-logs-campaigns.com
 krypt.zip
 krypton.taileb042a.ts.net
 kuaifan.xyz
+lcvulture.com
 logsasset.com
 matatto.ru
+maxflow.llc
+moonshot.angor.io
 mxcloud.cloud
 my.gmv-he.com
+myadmin.keysoft.no
 mzxseexczs.omassent8entryroutineapprovesubscribeuseafixmech.xyz
 n8n.timesaverai.pl
 noctivella.com
+node-inferno.gagahxzz-well.my.id
+node-infernostore.gagahxzz-well.my.id
 ns1.astahin.com
 ns1.xldr005.online
+ns1.xldr007.online
 ns2.astahin.com
 ns2.xldr005.online
+ns2.xldr007.online
 nsc64.90.19-209.newsouth.net
 omassent8entryroutineapprovesubscribeuseafixmech.xyz
 omeul.com
@@ -1579,11 +1598,15 @@ pancaketoken.com
 pancrypto.cyou
 pankebab.com
 pdffileexchange.duckdns.org
+platform.nomad-capital.co.uk
 play.gmail.omassent8entryroutineapprovesubscribeuseafixmech.xyz
 pleasant.help
 qnxzzwihawagrarx.globalgforce.com
 relaveinvest.com
+rofikokakifapimo.online
 skdragons.com
+skynet1.ydns.eu
+sports2026.strangled.net
 sprnetapi.us
 sso.global-muangthai.com
 static.880578.site
@@ -1598,26 +1621,32 @@ tattop.ru
 tattosic.ru
 tattova.ru
 tattozona.ru
+telemetry-ingest.online
 toolboxhk.node.edmc.cn
 transfersunion.com
 trustpaycardflow.click
 trustpaycards.click
 trustpaycardspot.click
 trustwpaycards.click
+u118.nextprivate.cloud
 uat.shilingi.one
 unifi.environmentsk.co.uk
 update.f1ashupdate.online
 update.firmwaresync.com.tr
+update.javashell.com
 updateflash-client.xyz
 velonixsuf.com
 vpn734653413.softether.net
 vpn880365101.softether.net
 vps.b-advsoft.com
+web.365official.sbs
 web.wpscdm.top
 xldr004.online
+xldr008.online
 zoom.serveirc.com
 
 # Reference: https://x.com/malwrhunterteam/status/2038886735568838849
+# Reference: https://www.joesandbox.com/joereverser/analysis/download/636e7243-a9e1-4494-ab16-d2999b2b153d
 # Reference: https://www.virustotal.com/gui/file/12a8b0903c176cb6478b4f0bfcf8a621025c37faf83941125c803ccc3e0913e6/detection
 # Reference: https://www.virustotal.com/gui/file/4b467906789b3abaeeaab4483efc9a8b6b6dda044520fdd07526e71cb160b614/detection
 # Reference: https://www.virustotal.com/gui/file/abac8cd80711555a39d73e5aeab4919af37de95d057038778b737071dc35bb88/detection
@@ -1651,3 +1680,10 @@ http://158.247.193.100
 43.133.164.200:4444
 43.133.164.200:8083
 43.133.164.200:8443
+
+# Reference: https://x.com/smica83/status/2067553406303052240
+# Reference: https://www.virustotal.com/gui/file/d01af3cb30106d2003c96787fa3172d6f2f1ddf9a25376ec7a3dc48d77c1dcdb/detection
+
+93.113.25.227:8080
+analytis.co
+internal-services.analytis.co

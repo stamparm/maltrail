@@ -10,6 +10,7 @@ import struct
 import threading
 import time
 
+from core import common
 from core.common import load_trails
 from core.enums import BLOCK_MARKER
 from core.settings import BLOCK_LENGTH
@@ -18,6 +19,7 @@ from core.settings import LOAD_TRAILS_RETRY_SLEEP_TIME
 from core.settings import REGULAR_SENSOR_SLEEP_TIME
 from core.settings import SHORT_SENSOR_SLEEP_TIME
 from core.settings import trails
+from core.trailsdict import TrailsDict
 
 _timer = None
 
@@ -64,17 +66,40 @@ def worker(buffer, n, offset, mod, process_packet):
     Worker process used in multiprocessing mode
     """
 
+    bin_path = common.trails_bin_path()
+
+    def _bin_sig():
+        # (inode, mtime, size): an atomic rename always changes the inode, so this detects a rebuild even if the
+        # mtime did not advance (coarse-granularity filesystems, or two rebuilds within the same second)
+        try:
+            st = os.stat(bin_path)
+            return (st.st_ino, st.st_mtime, st.st_size)
+        except OSError:
+            return None
+
+    last_bin_sig = [_bin_sig()]  # the shared bin this worker inherited (mmap'd) from the parent
+
     def update_timer():
         global _timer
         try:
-            if (time.time() - os.stat(config.TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD:
+            if common.USE_MMAP_TRAILS:
+                # workers NEVER (re)build the trail set - the parent process owns that (and its build peak). A worker
+                # only re-mmap()s the shared bin when the parent has rebuilt it, so its trail RAM stays a shared copy.
+                sig = _bin_sig()
+                if sig is not None and sig != last_bin_sig[0]:
+                    fresh = TrailsDict()
+                    fresh.open_mmap(bin_path)
+                    trails.adopt(fresh)  # atomic swap to the new shared mapping
+                    last_bin_sig[0] = sig
+            elif (time.time() - os.stat(config.TRAILS_FILE).st_mtime) >= config.UPDATE_PERIOD:
                 while True:
-                    _ = load_trails(True)
+                    _ = load_trails(True, freeze=True)
                     if _:
-                        trails.clear()
-                        trails.update(_)
+                        trails.adopt(_)  # atomic swap (was clear()+update(), which raced the worker's hot-path lookups)
                         break
                     time.sleep(LOAD_TRAILS_RETRY_SLEEP_TIME)
+        except Exception:
+            pass  # never let a reload failure kill the worker's timer / stop processing
         finally:
             _timer = threading.Timer(config.UPDATE_PERIOD, update_timer)
             _timer.start()

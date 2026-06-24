@@ -54,6 +54,25 @@ try:
 except (ImportError, AttributeError):
     pass
 
+# NOTE: post-processing walks every trail (millions), so these per-key regexes are precompiled once instead of
+# being recompiled/cache-looked-up via re.search(<string>, ...) on each iteration
+_ALPHA_ONLY_REGEX = re.compile(r"(?i)\A\.?[a-z]+\Z")
+_IPV4_REGEX = re.compile(r"\A\d+\.\d+\.\d+\.\d+\Z")
+_IPV4_PREFIX_REGEX = re.compile(r"\A(\d+\.\d+\.\d+\.\d+)\b")
+_CUSTOM_STATIC_REGEX = re.compile(r"\b(custom|static)\b")
+
+try:
+    u"".isascii
+    def _is_ascii(value):
+        return value.isascii()
+except AttributeError:
+    def _is_ascii(value):                       # Python < 3.7 (and Python 2) fallback
+        try:
+            value.encode("ascii")
+            return True
+        except Exception:
+            return False
+
 def _chown(filepath):
     if not IS_WIN and os.path.exists(filepath):
         try:
@@ -238,41 +257,53 @@ def update_trails(force=False, offline=False):
 
             print("[i] post-processing trails (this might take a while)...")
 
+            disabled_info_regex = re.compile(config.DISABLED_TRAILS_INFO_REGEX) if config.DISABLED_TRAILS_INFO_REGEX else None
+            ip_minimum_feeds = config.get("IP_MINIMUM_FEEDS", 3)
+
             # basic cleanup
             for key in list(trails.keys()):
                 if key not in trails:
                     continue
 
-                if config.DISABLED_TRAILS_INFO_REGEX:
-                    if re.search(config.DISABLED_TRAILS_INFO_REGEX, trails[key][0]):
+                if disabled_info_regex is not None:
+                    if disabled_info_regex.search(trails[key][0]):
                         del trails[key]
                         continue
 
-                try:
-                    _key = key.decode(UNICODE_ENCODING) if isinstance(key, bytes) else key
-                    _key = _key.encode("idna")
-                    if six.PY3:
-                        _key = _key.decode(UNICODE_ENCODING)
-                    if _key != key:  # for domains with non-ASCII letters (e.g. phishing)
+                if _is_ascii(key):
+                    # NAMEPREP (the only effect of idna on an already-ASCII name) just lowercases it, so skip the
+                    # ~20x slower idna codec for the ~all-ASCII majority; non-ASCII names (e.g. IDN phishing) still go through idna
+                    _key = key.lower()
+                    if _key != key:
                         trails[_key] = trails[key]
                         del trails[key]
                         key = _key
-                except:
-                    pass
+                else:
+                    try:
+                        _key = key.decode(UNICODE_ENCODING) if isinstance(key, bytes) else key
+                        _key = _key.encode("idna")
+                        if six.PY3:
+                            _key = _key.decode(UNICODE_ENCODING)
+                        if _key != key:  # for domains with non-ASCII letters (e.g. phishing)
+                            trails[_key] = trails[key]
+                            del trails[key]
+                            key = _key
+                    except Exception:
+                        pass
 
-                if not key or re.search(r"(?i)\A\.?[a-z]+\Z", key) and not any(_ in trails[key][1] for _ in ("custom", "static")):
+                if not key or _ALPHA_ONLY_REGEX.search(key) and not any(_ in trails[key][1] for _ in ("custom", "static")):
                     del trails[key]
                     continue
 
-                if re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", key):
+                if _IPV4_REGEX.search(key):
                     if any(_ in trails[key][0] for _ in ("parking site", "sinkhole")) and key in duplicates:    # Note: delete (e.g.) junk custom trails if static trail is a sinkhole
                         del duplicates[key]
 
                     if trails[key][0] == "malware":
                         trails[key] = ("potential malware site", trails[key][1])
 
-                    if config.get("IP_MINIMUM_FEEDS", 3) > 1:
-                        if (key not in duplicates or len(duplicates[key]) < config.get("IP_MINIMUM_FEEDS", 3)) and re.search(r"\b(custom|static)\b", trails[key][1]) is None:
+                    if ip_minimum_feeds > 1:
+                        if (key not in duplicates or len(duplicates[key]) < ip_minimum_feeds) and _CUSTOM_STATIC_REGEX.search(trails[key][1]) is None:
                             del trails[key]
                             continue
 
@@ -318,7 +349,7 @@ def update_trails(force=False, offline=False):
             read_whitelist()
 
             for key in list(trails.keys()):
-                match = re.search(r"\A(\d+\.\d+\.\d+\.\d+)\b", key)
+                match = _IPV4_PREFIX_REGEX.search(key)
                 if check_whitelisted(key) or any(key.startswith(_) for _ in BAD_TRAIL_PREFIXES):
                     del trails[key]
                 elif match and (bogon_ip(match.group(1)) or cdn_ip(match.group(1))) and not any(_ in trails[key][0] for _ in ("parking", "sinkhole")):
@@ -374,7 +405,11 @@ def update_ipcat(force=False):
 
         try:
             with open(IPCAT_CSV_FILE, "w+b") as f:
-                f.write(_urllib.request.urlopen(IPCAT_URL).read())
+                resp = _urllib.request.urlopen(IPCAT_URL)
+                try:
+                    f.write(resp.read())
+                finally:
+                    resp.close()
         except Exception as ex:
             print("[x] something went wrong during retrieval of '%s' ('%s')" % (IPCAT_URL, ex))
 

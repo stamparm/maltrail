@@ -17,9 +17,11 @@ import sys
 import zipfile
 import zlib
 
+from core import trailsbin
 from core.addr import addr_to_int
 from core.addr import int_to_addr
 from core.compat import xrange
+from core.datatype import LRUDict
 from core.settings import config
 from core.settings import BOGON_IPS
 from core.settings import BOGON_RANGES
@@ -27,6 +29,7 @@ from core.settings import CHECK_CONNECTION_URL
 from core.settings import CDN_RANGES
 from core.settings import IPCAT_SQLITE_FILE
 from core.settings import IS_WIN
+from core.settings import MAX_CACHE_ENTRIES
 from core.settings import MAX_HELP_OPTION_LENGTH
 from core.settings import STATIC_IPCAT_LOOKUPS
 from core.settings import TIMEOUT
@@ -39,7 +42,20 @@ from core.trailsdict import TrailsDict
 from thirdparty import six
 from thirdparty.six.moves import urllib as _urllib
 
-_ipcat_cache = {}
+_ipcat_cache = {}  # NOTE: holds the (bounded, config-sized) static IPCAT seed
+_ipcat_dynamic_cache = LRUDict(MAX_CACHE_ENTRIES)  # NOTE: bounds per-IP SQLite lookups so they can't grow without bound on a busy server
+
+try:
+    import fcntl
+except ImportError:
+    fcntl = None
+
+# The shared, memory-mapped trail store (one physical copy across all worker processes instead of one heap copy
+# each) is used where the platform supports it: POSIX with flock + an OS that shares mmap'd file pages. On Windows
+# (where the sensor runs single-process anyway) the in-heap finalize() path is used instead.
+USE_MMAP_TRAILS = bool(fcntl) and not IS_WIN
+
+_WILDCARD_TRAIL_REGEX = re.compile(r"[\].][*+]|\[[a-z0-9_.\-]+\]", re.I)
 
 def retrieve_content(url, data=None, headers=None):
     """
@@ -47,10 +63,15 @@ def retrieve_content(url, data=None, headers=None):
     """
 
     try:
-        req = _urllib.request.Request("".join(url[i].replace(' ', "%20") if i > url.find('?') else url[i] for i in xrange(len(url))), data, headers or {"User-agent": USER_AGENT, "Accept-encoding": "gzip, deflate"})
+        # NOTE: percent-encode spaces only in the query string (chars after the first '?'); if there's no '?', encode them all.
+        # (Was an O(n^2) char-by-char comprehension that recomputed url.find('?') for every character.)
+        _ = url.find('?')
+        url = url.replace(' ', "%20") if _ == -1 else url[:_ + 1] + url[_ + 1:].replace(' ', "%20")
+        req = _urllib.request.Request(url, data, headers or {"User-agent": USER_AGENT, "Accept-encoding": "gzip, deflate"})
         resp = _urllib.request.urlopen(req, timeout=TIMEOUT)
         retval = resp.read()
         encoding = resp.headers.get("Content-Encoding")
+        resp.close()
 
         if encoding:
             if encoding.lower() == "deflate":
@@ -65,6 +86,11 @@ def retrieve_content(url, data=None, headers=None):
 
         if url.startswith("https://") and isinstance(retval, str) and "handshake failure" in retval:
             return retrieve_content(url.replace("https://", "http://"), data, headers)
+
+        # NOTE: on failure return EMPTY, never the error body/message. Feeds gate parsing on a `__check__` substring and a
+        # few have no guard at all - returning an HTTP error page / WAF block / timeout string here let that text get parsed
+        # into bogus "trails" (feed poisoning). Empty content makes feeds yield nothing and update_trails report the failure.
+        retval = b""
 
     retval = retval or b""
 
@@ -113,6 +139,8 @@ def ipcat_lookup(address):
 
     if address in _ipcat_cache:
         retval = _ipcat_cache[address]
+    elif address in _ipcat_dynamic_cache:
+        retval = _ipcat_dynamic_cache[address]
     else:
         retval = ""
 
@@ -124,10 +152,10 @@ def ipcat_lookup(address):
                     cursor.execute("SELECT name FROM ranges WHERE start_int <= ? AND end_int >= ?", (_, _))
                     _ = cursor.fetchone()
                     retval = str(_[0]) if _ else retval
-                except:
+                except Exception:
                     raise ValueError("[x] invalid IP address '%s'" % address)
 
-                _ipcat_cache[address] = retval
+                _ipcat_dynamic_cache[address] = retval
 
     return retval
 
@@ -197,6 +225,20 @@ def extract_zip(filename, path=None):
     _.extractall(path)
 
 def get_regex(items):
+    r"""
+    Builds a single compact regular expression matching any of the given items (via a
+    character trie, collapsing common prefixes and contiguous character ranges)
+
+    >>> get_regex(["cat", "car"])
+    'ca(?:r|t)'
+    >>> get_regex(["ab", "ac", "ad"])
+    'a(?:b|c|d)'
+    >>> get_regex([str(_) for _ in range(10)])
+    '(?:\\d)'
+    >>> get_regex(["1.2.3.4"])
+    '1\\.2\\.3\\.4'
+    """
+
     head = {}
 
     for item in sorted(items):
@@ -269,6 +311,9 @@ def build_trails_regex(trails):
     over the empty _regex of a freshly loaded TrailsDict).
     """
 
+    if trails._frozen is not None:      # keys are gone; _regex was already built before finalize()
+        return trails
+
     regex = ""
 
     for trail in trails:
@@ -287,7 +332,7 @@ def build_trails_regex(trails):
 
     return trails
 
-def load_trails(quiet=False):
+def load_trails(quiet=False, freeze=False):
     if not quiet:
         print("[i] loading trails...")
 
@@ -308,23 +353,192 @@ def load_trails(quiet=False):
 
     build_trails_regex(retval)
 
+    if freeze:
+        retval.finalize()   # compact to the read-only hash-array form (drops key strings); see TrailsDict.finalize()
+
     if not quiet:
         _ = len(retval)
         try:
             _ = '{0:,}'.format(_)
-        except:
+        except Exception:
             pass
         print("[i] %s trails loaded" % _)
 
     return retval
 
+def trails_bin_path():
+    return "%s.bin" % config.TRAILS_FILE
+
+def _trails_bin_from_items(items_factory, n_hint, out_path):
+    """
+    Core builder shared by build_trails_bin() (reads the CSV) and write_trails_bin() (reads an in-memory dict).
+    'items_factory' is a callable returning a fresh iterator of (trail, info, reference); 'n_hint' is an upper
+    bound on the entry count (for table sizing).
+
+    It streams the trails STRAIGHT into the open-addressing arrays - it never materialises the whole (hash, index)
+    set nor retains the trail key strings, so its peak RSS is ~10x below building the set in a dict first. The
+    interned (info, reference) pairs and the wildcard regex are tiny. A 64-bit hash collision between two distinct
+    trails (never observed across 1.6M real trails) is handled exactly: on detection, the table is rebuilt once
+    with the colliding hashes excluded and those keys kept verbatim in a side dict - so the read path stays simple.
+    """
+
+    pairs = {}
+    pair_list = []
+    regex = ""
+    regex_groups = 0
+    hi, lo, val, mask, cap = trailsbin.new_table(n_hint)
+    colliding = set()
+    n = 0
+
+    for trail, info, reference in items_factory():
+        if "static" in reference and _WILDCARD_TRAIL_REGEX.search(trail) and regex_groups < 100:  # mirror build_trails_regex()
+            try:
+                re.compile(trail)
+            except re.error:
+                pass
+            else:
+                if re.escape(trail) != trail:
+                    regex += "|(?P<g%s>%s)" % (regex_groups, trail)
+                    regex_groups += 1
+
+        pair = (info, reference)
+        pi = pairs.get(pair)
+        if pi is None:
+            pi = len(pair_list)
+            pairs[pair] = pi
+            pair_list.append(pair)
+
+        if trailsbin.table_insert(hi, lo, val, mask, trailsbin.stable_hash(trail), pi):
+            n += 1
+        else:
+            colliding.add(trailsbin.stable_hash(trail))
+
+    collisions = {}
+    if colliding:
+        # rare: rebuild the table from scratch with the colliding hashes left out, and keep those keys verbatim
+        hi, lo, val, mask, cap = trailsbin.new_table(n_hint)
+        n = 0
+        for trail, info, reference in items_factory():
+            h = trailsbin.stable_hash(trail)
+            if h in colliding:
+                collisions[trail] = (info, reference)
+            elif trailsbin.table_insert(hi, lo, val, mask, h, pairs[(info, reference)]):
+                n += 1
+
+    trailsbin.write_table(out_path, cap, n, hi, lo, val, pair_list, collisions, regex.strip('|'))
+
+def build_trails_bin(csv_path=None, bin_path=None):
+    """
+    Builds the binary trail store from the trails CSV (applying the runtime whitelist, exactly like load_trails).
+    Streams directly into the table (low peak RSS); the caller that owns this build runs it - worker processes
+    never do, they only mmap the result.
+    """
+
+    csv_path = csv_path or config.TRAILS_FILE
+    bin_path = bin_path or trails_bin_path()
+
+    def _items():
+        with open(csv_path, "r") as f:
+            for row in csv.reader(f, delimiter=',', quotechar='\"'):
+                if row and len(row) == 3 and not check_whitelisted(row[0]):
+                    yield row[0], row[1], row[2]
+
+    line_count = 0          # cheap upper bound for table sizing (no retention)
+    with open(csv_path, "r") as f:
+        for _ in f:
+            line_count += 1
+
+    _trails_bin_from_items(_items, line_count, bin_path)
+
+def write_trails_bin(trails, bin_path=None):
+    """
+    Builds the binary trail store from an already-built in-memory TrailsDict (the one update_trails just wrote to
+    the CSV), reusing that dict so no extra full copy is materialised.
+    """
+
+    bin_path = bin_path or trails_bin_path()
+
+    def _items():
+        for key in trails:
+            value = trails[key]
+            yield key, value[0], value[1]
+
+    _trails_bin_from_items(_items, len(trails), bin_path)
+
+def trails_bin_stale(bin_path=None):
+    bin_path = bin_path or trails_bin_path()
+    if not os.path.isfile(config.TRAILS_FILE):
+        return False
+    if not os.path.isfile(bin_path):
+        return True
+    try:
+        return os.stat(bin_path).st_mtime < os.stat(config.TRAILS_FILE).st_mtime
+    except OSError:
+        return True
+
+def load_trails_mmap(quiet=False):
+    """
+    Returns a TrailsDict backed by the shared, memory-mapped binary store. If the bin is missing or older than the
+    CSV it is (re)built from the CSV first - under an flock so that, of all the processes that may call this at
+    once, exactly one builds and the rest wait then mmap the finished file.
+    """
+
+    bin_path = trails_bin_path()
+    retval = TrailsDict()
+
+    if not os.path.isfile(config.TRAILS_FILE):
+        retval.finalize()       # no trails file yet -> empty (in-heap) frozen store
+        return retval
+
+    def _rebuild_locked(force=False):
+        lock_handle = open("%s.lock" % bin_path, "w")
+        try:
+            fcntl.flock(lock_handle, fcntl.LOCK_EX)
+            if force or trails_bin_stale(bin_path):     # re-check now that we hold the lock
+                build_trails_bin(config.TRAILS_FILE, bin_path)
+        finally:
+            try:
+                fcntl.flock(lock_handle, fcntl.LOCK_UN)
+            except Exception:
+                pass
+            lock_handle.close()
+
+    if trails_bin_stale(bin_path):
+        _rebuild_locked()
+
+    try:
+        retval.open_mmap(bin_path)
+    except Exception:
+        # corrupt / truncated / foreign-format (e.g. an older magic after an upgrade) bin -> rebuild and retry once
+        _rebuild_locked(force=True)
+        retval.open_mmap(bin_path)
+
+    if not quiet:
+        _ = len(retval)
+        try:
+            _ = '{0:,}'.format(_)
+        except Exception:
+            pass
+        print("[i] %s trails loaded (shared)" % _)
+
+    return retval
+
 def get_text(value):
+    """
+    Returns the textual (unicode) representation of the given value
+
+    >>> get_text("abc")
+    'abc'
+    >>> get_text(b"abc")
+    'abc'
+    """
+
     retval = value
 
     if six.PY2:
         try:
             retval = str(retval)
-        except:
+        except Exception:
             pass
     else:
         if isinstance(value, six.binary_type):
@@ -333,6 +547,15 @@ def get_text(value):
     return retval
 
 def get_ex_message(ex):
+    """
+    Returns the human-readable message carried by an exception
+
+    >>> get_ex_message(Exception("boom"))
+    'boom'
+    >>> get_ex_message(ValueError("bad value"))
+    'bad value'
+    """
+
     retval = None
 
     if getattr(ex, "message", None):
@@ -351,6 +574,21 @@ def get_ex_message(ex):
     return retval
 
 def is_local(address):
+    """
+    Checks if the given IPv4 address belongs to a local/private range
+
+    >>> is_local("127.0.0.1")
+    True
+    >>> is_local("10.0.0.5")
+    True
+    >>> is_local("192.168.1.1")
+    True
+    >>> is_local("8.8.8.8")
+    False
+    >>> is_local(None)
+    False
+    """
+
     return re.search(r"\A(127|10|172\.[13][0-9]|192\.168)\.", address or "") is not None
 
 def patch_parser(parser):

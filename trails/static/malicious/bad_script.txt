@@ -9735,6 +9735,58 @@ drvdb9rcebidk.cloudfront.net
 
 /v026a4a141fd9e7d2dd.js
 
+# Reference: https://x.com/smica83/status/2065734861873205474
+# Reference: https://www.virustotal.com/gui/file/f4ce325551dff223ea27cee8fbaad5b63b1d62057786050169761d8fdd2f4e14/detection
+
+/sprf_r11gr/foalproposal.ps1
+/sprf_r11gr/
+/foalproposal.ps1
+
+# Reference: https://x.com/tdatwja/status/2067471602279932205
+# Reference: https://www.virustotal.com/gui/file/f37f4c5796330bdf008cd7849c9411e9542989ee6be30903a8c5631f736b6bfd/detection
+
+/stubob.ps1
+
+# Reference: https://x.com/smica83/status/2068418921208717778
+# Reference: https://www.virustotal.com/gui/file/beddec31fe761f01b486e806533213eb98af5420cd9d8b5aa8d9787aea1203d8/detection
+
+/chunk-822080f9.hta
+
+# Reference: https://x.com/smica83/status/2069749380156907885
+# Reference: https://www.virustotal.com/gui/file/00090d5557921e9e107ab4d90f8b713226c0552005dd5477a1edf731e37dd6e6/detection
+# Reference: https://www.virustotal.com/gui/file/624a6e50ebd192d4ee557b819a95a9e383a8b8fd427572f9c4fa3dcc84d60f89/detection
+# Reference: https://www.virustotal.com/gui/file/62979b2b5cecea10ec97677db8d336fa372361c7c95181894ea96348e8aa186e/detection
+# Reference: https://www.virustotal.com/gui/file/89a47403777adcc9c826410ae10a2ffcf15372d6dd5689355b7cc6377b870401/detection
+# Reference: https://www.virustotal.com/gui/file/e7bd1b412b263180b544184bb68cdae4a771719ab981eb3d1a3b16351ba3293e/detection
+
+/v1sl4g488/aspiringpayoff.ps1
+/v1sl4g488/heartwoodtension.ps1
+/aspiringpayoff.ps1
+/heartwoodtension.ps1
+/v1sl4g488/
+
+# Reference: https://x.com/smica83/status/2069740719477063963
+# Reference: https://www.virustotal.com/gui/file/1d28db0090d743010c5d42dd3a867ef5f8409c71d175fadc70c834a883ad4dae/detection
+# Reference: https://www.virustotal.com/gui/file/a8d0a03543db29d279175c9679eba574dcb7a17e306195a68ab1d033ee2be01c/detection
+# Reference: https://www.virustotal.com/gui/file/b6680985b2d45693469a5f0c674b03c54d7cce9539fba623a824c368379b1c47/detection
+# Reference: https://www.virustotal.com/gui/file/bb40c9d8c217516a92a18a1bdb080a5af92cfafe81f6751dea665e3e78cb4851/detection
+# Reference: https://www.virustotal.com/gui/file/fe38e54bedee074825eb3fcbe4824ed203876692a424e0c183e0006b31d1b7a8/detection
+
+/szch45/shoutnewspaper.ps1
+/shoutnewspaper.ps1
+
+# Reference: https://x.com/smica83/status/2069393150846677175
+# Reference: https://www.virustotal.com/gui/file/1921b0dc8b556ac47d7d6986df949d06611f9ae2b2a8697db03af495772931b2/detection
+# Reference: https://www.virustotal.com/gui/file/4bde0e63d4cd3a71bf8ee280aeaef7602eb7aa4211b272cf0d065d2d7e2b9c5a/detection
+# Reference: https://www.virustotal.com/gui/file/664de29ea5c9a8d0621585711a98319f6add935feaa2a1bc7351e91d7c016369/detection
+# Reference: https://www.virustotal.com/gui/file/d5dcf9d0fc7ff901044526593853df77ce3390f1a01e73069b14b20ebc1f927f/detection
+# Reference: https://www.virustotal.com/gui/file/ea185132dc1298972338e9668cdda9962b99333e7463b7fd2d910f7cd0b9e96a/detection
+
+/kr4gg/franticsum.ps1
+/kr4gg/sushisubsequent.ps1
+/franticsum.ps1
+/sushisubsequent.ps1
+
 # Generic
 
 /5c0ca79.php

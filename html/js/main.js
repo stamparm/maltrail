@@ -55,6 +55,9 @@ var PORT_NAMES = { 1: "tcpmux", 2: "nbp", 4: "echo", 6: "zip", 7: "echo", 9: "di
 var SEARCH_TIP_TIMER = 0;
 var DRAW_SPARKLINES_TIMER = 0;
 var PAPAPARSE_COMPLETE_TIMER = 0;
+var _CHUNK_COUNT = 0;
+var _PARSER = null;
+var _QUERY_GENERATION = 0;
 var REPORT_URL = "http://23.254.203.53/report.php"  // NOTE: Right click / Report false positive
 var SEARCH_TIP_URL = "https://www.vincentde.com/search?q=${query}"
 
@@ -106,11 +109,16 @@ window.onkeyup = function(event) {
     CTRL_CLICK_PRESSED = false;
 };
 
-+// Handle window resize to adjust table
+// Handle window resize (debounced: resize fires continuously during a drag, so coalesce the work)
+var _RESIZE_TIMER = 0;
 $(window).resize(function() {
-    if (typeof $.fn.dataTable !== 'undefined') {
-        $('#details').DataTable().columns.adjust();
-    }
+    clearTimeout(_RESIZE_TIMER);
+    _RESIZE_TIMER = setTimeout(function() {
+        if ($.fn.DataTable && $.fn.DataTable.isDataTable('#details'))   // only adjust once the table is actually initialized
+            $('#details').DataTable().columns.adjust();
+        if ($("#login_dialog").hasClass("ui-dialog-content"))           // only reposition an existing dialog (else jQuery UI throws)
+            $("#login_dialog").dialog("option", "position", {my: "center", at: "center", of: window});
+    }, 150);
 });
 
 // Retrieve (and parse) log data
@@ -258,10 +266,6 @@ function initDialogs() {
         });
     });
 }
-
-$(window).resize(function() {
-    $("#login_dialog").dialog("option", "position", {my: "center", at: "center", of: window});
-});
 
 function checkAuthentication() {
     $.ajax({
@@ -521,6 +525,16 @@ function resetView() {
 function init(url, from, to) {
     var csv = "";
 
+    // NOTE: bump the generation and abort any in-flight parse so a re-query (e.g. clicking another calendar date mid-load)
+    // can't have a stale worker keep writing into the freshly-reset globals below (data corruption / double counting)
+    _QUERY_GENERATION += 1;
+    var generation = _QUERY_GENERATION;
+
+    if (_PARSER !== null) {
+        try { _PARSER.abort(); } catch (e) { }
+        _PARSER = null;
+    }
+
     document.title = "Maltrail (loading...)";
     $("body").loader("show");
     $("#main_container").toggleClass("hidden", true);
@@ -541,6 +555,7 @@ function init(url, from, to) {
     _DATASET.length = 0;
     _TOTAL_EVENTS = 0;
     _CHUNK_COUNT = 0;
+    HIDDEN_THREAT_COUNT = 0;
 
     for (var severity in SEVERITY)
         _SEVERITY_COUNT[SEVERITY[severity]] = 0;
@@ -577,7 +592,13 @@ function init(url, from, to) {
         //newline: '\n',
         worker: !DEMO,
         skipEmptyLines: true,
-        chunk: function(results) {
+        chunk: function(results, parser) {
+            if (generation !== _QUERY_GENERATION) {
+                try { parser.abort(); } catch (e) { }
+                return;
+            }
+            _PARSER = parser;
+
             var title = document.title.replace(/\s?\.\s?/g, '.');
             var parts = title.split('.');
             var total = results.data.length;
@@ -769,9 +790,33 @@ function init(url, from, to) {
             }
         },
         complete: function() {
+            if (generation !== _QUERY_GENERATION)
+                return;
+            _PARSER = null;
             clearTimeout(PAPAPARSE_COMPLETE_TIMER);
             PAPAPARSE_COMPLETE_TIMER = setTimeout(function() {
                 var hidden_threats = $.jStorage.get(STORAGE_KEY_HIDDEN_THREATS, {});
+
+                // NOTE: the hour window (min/max), the _HOURS gap-fill and the sorted hour order are identical for every
+                // threat, so compute them ONCE here instead of re-scanning + re-sorting _HOURS inside the per-threat loop
+                // below (was O(threats * hours * log hours) and froze the tab on multi-day/high-volume datasets)
+                var _min = null, _max = null;
+                for (var hour in _HOURS) {
+                    if (_min === null) _min = hour; else _min = Math.min(_min, hour);
+                    if (_max === null) _max = hour; else _max = Math.max(_max, hour);
+                }
+                if ((_min !== null) && (_max !== null)) {
+                    var _ms = 60 * 60 * 1000;
+                    _min = dayStart(_min * _ms) / _ms;
+                    _max = dayEnd(_max * _ms) / _ms;
+                    for (var hour = _min; hour <= _max; hour++)
+                        if (!(hour in _HOURS))
+                            _HOURS[hour] = {};
+                }
+                var _SORTED_HOURS = [];
+                for (var hour in _HOURS)
+                    _SORTED_HOURS.push(hour >>> 0);
+                _SORTED_HOURS.sort(function(a, b) { return a < b ? -1 : (a > b ? 1 : 0); });
 
                 // threat sensor first_time last_time count src_ip src_port dst_ip dst_port proto type trail info reference tags
                 for (var threat_text in _THREATS) {
@@ -834,51 +879,13 @@ function init(url, from, to) {
                         }
                     }
 
-                    var min_ = null;
-                    var max_ = null;
-                    var _ = [];
-
-                    for (var hour in _HOURS) {
-                        if (min_ === null)
-                            min_ = hour;
-                        else
-                            min_ = Math.min(min_, hour);
-
-                        if (max_ === null)
-                            max_ = hour;
-                        else
-                            max_ = Math.max(max_, hour);
-                    }
-
-                    if ((min_ !== null) && (max_ !== null)) {
-                        var ms = 60 * 60 * 1000;
-                        min_ = dayStart(min_ * ms) / ms;
-                        max_ = dayEnd(max_ * ms) / ms;
-
-                        for (var hour = min_; hour <= max_; hour++) {
-                            if (!(hour in _HOURS))
-                                _HOURS[hour] = {};
-                        }
-                    }
-
-                    for (var hour in _HOURS)
-                        _.push([hour >>> 0, _HOURS[hour][threat_text]]);
-
-                    _.sort(function(a, b) {
-                        a = a[0];
-                        b = b[0];
-
-                        return a < b ? -1 : (a > b ? 1 : 0);
-                    });
-
                     for (var i = 0; i < 24; i++)
                         sparkline_data.push(0);
 
-                    var total_days = Math.round(_.length / 24);
-                    for (var i = 0; i < _.length; i++) {
-                        sparkline_data[Math.floor(i / total_days)] += (_[i][1] | 0);
-                        //_MAX_SPARKLINE_PER_HOUR = Math.max(_MAX_SPARKLINE_PER_HOUR, _[i][1] | 0);
-                    }
+                    // NOTE: hour window/order precomputed once above (_SORTED_HOURS); just walk it in order per threat
+                    var total_days = Math.round(_SORTED_HOURS.length / 24);
+                    for (var i = 0; i < _SORTED_HOURS.length; i++)
+                        sparkline_data[Math.floor(i / total_days)] += (_HOURS[_SORTED_HOURS[i]][threat_text] | 0);
 
                     if (data[LOG_COLUMNS.REFERENCE].contains("(custom)"))
                         severity = SEVERITY.HIGH;
@@ -1216,7 +1223,8 @@ function appendFilter(filter, event, istag) {
         clearTimeout(SEARCH_TIP_TIMER);
         $(".ui-tooltip").remove();
         $(".custom-menu").hide();
-        $('#details_filter label input').get(0).scrollLeft = $('#details_filter label input').get(0).scrollWidth;
+        var _fi = document.querySelector('#details_filter label input');  // single lookup + null-guard (was queried twice, threw if absent)
+        if (_fi) _fi.scrollLeft = _fi.scrollWidth;
         //$('#details_filter label input').get(0).focus();
     }
     catch(err) {
@@ -1627,9 +1635,8 @@ function initDetails() {
             clearTimeout(DRAW_SPARKLINES_TIMER);
             $(".sparkline:contains(',')").sparkline('html', { type: 'bar', barWidth: 2, barColor: SPARKLINE_COLOR, disableInteraction: false, tooltipClassname: "sparkline-tooltip" }); //, chartRangeMin: 0, chartRangeMax: _MAX_SPARKLINE_PER_HOUR });
 
-            $(".tag-input").keyup(function(event) {
-                tagInputKeyUp(event);
-            }).blur(function(event) {
+            // NOTE: namespaced off+on so these handlers don't accumulate (fnDrawCallback runs on every draw -> was binding a fresh keyup/blur per draw)
+            $(".tag-input").off("keyup.tag blur.tag").on("keyup.tag blur.tag", function(event) {
                 tagInputKeyUp(event);
             });
 
@@ -1701,10 +1708,9 @@ function initDetails() {
             $('[title]', nRow).tooltip();
 
             $.each([DATATABLES_COLUMNS.TRAIL], function(index, value) {
-                var cell = $('td:eq(' + value + ')', nRow);
-
-                if (cell === null)
+                if (!nRow.cells[value])  // NOTE: native cell access avoids a Sizzle ':eq' full-scan on every row, every redraw
                     return false;
+                var cell = $(nRow.cells[value]);
 
                 var html = cell.html();
 
@@ -1725,13 +1731,16 @@ function initDetails() {
                 if (!DEMO && !isLocalAddress(ip)) {
                     if (!(ip in CHECK_IP)) {
                         CHECK_IP[ip] = null;
-                        $.ajax("/check_ip?address=" + ip, { dataType: "jsonp", ip: ip, cell: cell })
+                        $.ajax("/check_ip?address=" + ip, { dataType: "jsonp", ip: ip, cell: cell, timeout: 60000 })
                         .done(function(json) {
                             var span_ip = $(json.ipcat.length > 0 ? "<span class='ipcat'></span>" : "<span class='ipcat hidden'></span>").html(json.ipcat);
                             CHECK_IP[this.ip] = json;
                             this.cell.append(span_ip);
                             if (json.worst_asns === "true")
                                 this.cell.append($("<span class='worst_asns' title='malicious ASN'></span>").tooltip());
+                        })
+                        .fail(function() {
+                            CHECK_IP[this.ip] = { ipcat: "", worst_asns: "false" };  // NOTE: terminal value so pending-cell pollers/redraws stop retrying after a failed/blocked lookup
                         });
                     }
                     else if (CHECK_IP[ip] !== null) {
@@ -1764,10 +1773,9 @@ function initDetails() {
             });
 
             $.each([DATATABLES_COLUMNS.SRC_IP, DATATABLES_COLUMNS.DST_IP], function(index, value) {
-                var cell = $('td:eq(' + value + ')', nRow);
-
-                if (cell === null)
+                if (!nRow.cells[value])  // NOTE: native cell access avoids a Sizzle ':eq' full-scan on every row, every redraw
                     return false;
+                var cell = $(nRow.cells[value]);
 
                 var html = cell.html();
 
@@ -1789,7 +1797,7 @@ function initDetails() {
                 if (!isLocalAddress(ip)) {
                     if (!(ip in IP_COUNTRY)) {
                         IP_COUNTRY[ip] = null;
-                        $.ajax("https://stat.ripe.net/data/geoloc/data.json?resource=" + ip, { dataType:"jsonp", ip: ip, html: html, cell: cell })
+                        $.ajax("https://stat.ripe.net/data/geoloc/data.json?resource=" + ip, { dataType:"jsonp", ip: ip, html: html, cell: cell, timeout: 60000 })
                         .done(function(json) {
                             var span_ip = $("<span title=''/>").html(this.html + " ");
                             var country = null;
@@ -1816,6 +1824,9 @@ function initDetails() {
 
                             span_ip.tooltip(options);
                             this.cell.html("").append(span_ip).append($(img).tooltip());
+                        })
+                        .fail(function() {
+                            IP_COUNTRY[this.ip] = "unknown";  // NOTE: terminal value so pending-cell pollers/redraws stop retrying after a failed/blocked lookup
                         });
                     }
                     else if (IP_COUNTRY[ip] !== null) {
@@ -1883,7 +1894,7 @@ function initDetails() {
                 }
             }, 2000, $(this), event);
 
-            $(cell).on("mouseleave", function(mouseenter) {
+            $(cell).one("mouseleave", function() {  // NOTE: .one() so the handler auto-removes instead of accumulating one per mouseenter
                 clearTimeout(SEARCH_TIP_TIMER);
             });
         }
@@ -2447,7 +2458,7 @@ function drawInfo(type) {
             maxValue = Math.max(_TOP_SOURCES[i][1], maxValue);
 
             for (var key in TRAIL_TYPES)
-                datasets[key].data.push(_SOURCE_EVENTS[_TOP_SOURCES[i][0]][key]);
+                datasets[key].data.push(_SOURCE_EVENTS[_TOP_SOURCES[i][0]][key] | 0);  // | 0: types discovered after this source was first seen aren't back-filled -> undefined -> NaN in chart
         }
 
         _ = [];
@@ -2883,7 +2894,7 @@ function initVisual() {
         }
         else {
             for (var key in TRAIL_TYPES)
-                other_events[key] += _SOURCE_EVENTS[sorted[i][0]][key];
+                other_events[key] += _SOURCE_EVENTS[sorted[i][0]][key] | 0;  // | 0: avoid NaN when a type wasn't present when this source was first seen
             other += sorted[i][1];
         }
     }

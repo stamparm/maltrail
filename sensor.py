@@ -39,7 +39,9 @@ from core.common import get_ex_message
 from core.common import get_text
 from core.common import is_local
 from core.common import load_trails
+from core.common import load_trails_mmap
 from core.common import patch_parser
+from core.common import USE_MMAP_TRAILS
 from core.compat import xrange
 from core.datatype import LRUDict
 from core.enums import BLOCK_MARKER
@@ -122,6 +124,7 @@ _multiprocessing = None
 _n = None
 _result_cache = LRUDict(MAX_CACHE_ENTRIES)
 _local_cache = LRUDict(MAX_CACHE_ENTRIES)
+_valid_dns_name_regex = re.compile(VALID_DNS_NAME_REGEX)  # NOTE: precompiled (used per DNS query); ~2x vs re.search(string, ...)
 _last_syn = None
 _last_logged_syn = None
 _last_udp = None
@@ -172,6 +175,17 @@ except ImportError:
         sys.exit(msg)
 
 def _check_domain_member(query, domains):
+    """
+    Checks whether the query (or any of its parent domains) is contained in the given set of domains
+
+    >>> _check_domain_member("www.evil.com", set(["evil.com"]))
+    True
+    >>> _check_domain_member("a.b.example.com", set(["example.com"]))
+    True
+    >>> _check_domain_member("good.com", set(["evil.com"]))
+    False
+    """
+
     parts = query.lower().split('.')
 
     for i in xrange(0, len(parts)):
@@ -203,7 +217,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
         return
 
     result = False
-    if re.search(VALID_DNS_NAME_REGEX, query) is not None and not _check_domain_whitelisted(query):
+    if _valid_dns_name_regex.search(query) is not None and not _check_domain_whitelisted(query):
         parts = query.split('.')
 
         if query.endswith(".ip-adress.com"):  # Reference: https://www.virustotal.com/gui/domain/ip-adress.com/relations
@@ -275,7 +289,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
         _result_cache[(CACHE_TYPE.DOMAIN, query)] = False
 
 def _get_local_prefix():
-    _sources = set(_.split('~')[0] for _ in _connect_src_dst.keys())
+    _sources = set(_[0] for _ in list(_connect_src_dst.keys()))  # NOTE: tuple keys (src, dst); list() snapshots atomically to avoid "dictionary changed size" when another capture thread mutates _connect_src_dst (multi-interface mode)
     _candidates = [re.sub(r"\d+\.\d+\Z", "", _) for _ in _sources]
     _ = sorted(((_candidates.count(_), _) for _ in set(_candidates)), reverse=True)
     result = _[0][1] if _ else ""
@@ -316,8 +330,8 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                 try:
                     for key in _connect_src_dst:
-                        _src_ip, _dst = key.split('~')
-                        if not _dst.isdigit() and len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:
+                        _src_ip, _dst = key
+                        if not isinstance(_dst, int) and len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:  # str _dst => per-IP key (port scan); int _dst => per-port key (infection)
                             if not check_whitelisted(_src_ip):
                                 _dst_ip = _dst
                                 for _ in _connect_src_details[key]:
@@ -339,7 +353,7 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                 for key in _path_src_dst:
                     if len(_path_src_dst[key]) > WEB_SCANNING_THRESHOLD:
-                        _src_ip, _dst_ip = key.split('~')
+                        _src_ip, _dst_ip = key
                         _sec, _usec, _src_port, _dst_port, _path = _path_src_dst_details[key].pop()
                         log_event((_sec, _usec, _src_ip, _src_port, _dst_ip, _dst_port, PROTO.TCP, TRAIL.PATH, "*", "potential web scanning", "(heuristic)"), packet)
 
@@ -410,7 +424,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             _locks.heuristics.acquire()
 
                         try:
-                            key = "%s~%s" % (src_ip, dst_ip)
+                            key = (src_ip, dst_ip)  # NOTE: tuple key (was "src~dst" string); avoids per-SYN format + later split('~') and is IPv6-safe
                             if key not in _connect_src_dst:
                                 _connect_src_dst[key] = set()
                                 _connect_src_details[key] = set()
@@ -418,7 +432,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                             _connect_src_details[key].add((sec, usec, src_port, dst_port))
 
                             if dst_port in POTENTIAL_INFECTION_PORTS:
-                                key = "%s~%s" % (src_ip, dst_port)
+                                key = (src_ip, dst_port)
                                 if key not in _connect_src_dst:
                                     _connect_src_dst[key] = set()
                                     _connect_src_details[key] = set()
@@ -431,7 +445,10 @@ def _process_packet(packet, sec, usec, ip_offset):
             else:
                 tcph_length = doff_reserved >> 4
                 h_size = iph_length + (tcph_length << 2)
-                tcp_data = get_text(ip_data[h_size:])
+                tcp_payload = ip_data[h_size:]
+                # NOTE: the whole block below only acts on HTTP (response starting with "HTTP/" or request containing " HTTP/"),
+                # so skip the (costly) full-payload decode for non-HTTP TCP (e.g. the bulk of line-rate traffic: TLS/443)
+                tcp_data = get_text(tcp_payload) if b"HTTP/" in tcp_payload else ""
 
                 if tcp_data.startswith("HTTP/"):
                     match = re.search(GENERIC_SINKHOLE_REGEX, tcp_data[:2000])
@@ -499,7 +516,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                     if config.USE_HEURISTICS and path.startswith('/'):
                         _path = path.split('/')[1]
 
-                        key = "%s~%s" % (src_ip, dst_ip)
+                        key = (src_ip, dst_ip)
                         if key not in _path_src_dst:
                             _path_src_dst[key] = set()
                         _path_src_dst[key].add(_path)
@@ -724,11 +741,10 @@ def _process_packet(packet, sec, usec, ip_offset):
                             offset += length + 1
 
                         query = query.lower()
+                        parts = query.split('.')  # NOTE: computed once (was split twice per DNS query: guard + below)
 
-                        if not query or re.search(VALID_DNS_NAME_REGEX, query) is None or any(_ in query for _ in (".intranet.",)) or query.split('.')[-1] in IGNORE_DNS_QUERY_SUFFIXES:
+                        if not query or _valid_dns_name_regex.search(query) is None or any(_ in query for _ in (".intranet.",)) or parts[-1] in IGNORE_DNS_QUERY_SUFFIXES:
                             return
-
-                        parts = query.split('.')
 
                         if ord(dns_data[2:3]) & 0xfa == 0x00:  # standard query (both recursive and non-recursive)
                             type_, class_ = struct.unpack("!HH", dns_data[offset + 1:offset + 5])
@@ -745,11 +761,11 @@ def _process_packet(packet, sec, usec, ip_offset):
                                         _dns_exhausted_domains.clear()
                                         _subdomains_sec = sec
 
-                                    subdomains = _subdomains.get(domain)
-
-                                    if not subdomains:
+                                    if domain not in _subdomains:  # NOTE: membership test, not truthiness; an existing-but-empty set (just cleared at the 60s boundary) must keep its window _start, else the exhaustion window keeps resetting and detection is evaded
                                         subdomains = _subdomains[domain] = _set()
                                         subdomains._start = sec
+                                    else:
+                                        subdomains = _subdomains[domain]
 
                                     if not re.search(r"\A\d+\-\d+\-\d+\-\d+\Z", parts[0]):
                                         if sec - subdomains._start > 60:
@@ -926,9 +942,13 @@ def _process_packet(packet, sec, usec, ip_offset):
                 log_event((sec, usec, src_ip, '-', dst_ip, '-', IPPROTO_LUT[protocol], TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet)
 
     except struct.error:
-        pass
+        pass  # truncated/garbage packet headers are expected and high-volume
 
     except Exception:
+        # NOTE: never let a packet-processing bug fail SILENTLY - an IDS that quietly stops detecting a whole traffic
+        # class looks perfectly healthy while it's blind. Surface it (single=True dedups identical tracebacks, so a
+        # recurring bug can't flood the error log) instead of only printing under SHOW_DEBUG.
+        log_error("unhandled exception in _process_packet:\n%s" % traceback.format_exc(), single=True)
         if config.SHOW_DEBUG:
             traceback.print_exc()
 
@@ -1175,14 +1195,19 @@ def init():
             _ = update_trails()
             update_ipcat()
 
-        if _:
-            trails.clear()
-            trails.update(_)
-        elif not trails:
-            _ = load_trails()
-            trails.update(_)
+        if USE_MMAP_TRAILS:
+            # the trail set (just refreshed into the CSV by update_trails) is built once into a shared, memory-mapped
+            # binary store; this process maps it and every worker process forked afterwards shares that one mapping
+            # instead of carrying its own ~150 MB heap copy
+            trails.adopt(load_trails_mmap(quiet=True))
+        else:
+            if _:
+                trails.adopt(_)  # atomic swap (was clear()+update(), which exposed the hot path to an empty/half-built table)
+            elif not trails:
+                trails.adopt(load_trails())
 
-        build_trails_regex(trails)
+            build_trails_regex(trails)
+            trails.finalize()   # compact the resident set to the hash-array form (read-only hot path); drops key strings
 
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
         thread.daemon = True
@@ -1257,7 +1282,7 @@ def init():
 
         try:
             devices = pcapy.findalldevs()
-        except:
+        except Exception:
             devices = []
 
         if (config.MONITOR_INTERFACE or "").lower() == "any":
@@ -1303,7 +1328,7 @@ def init():
         for _cap in _caps:
             try:
                 _cap.setfilter(config.CAPTURE_FILTER)
-            except:
+            except Exception:
                 pass
 
     if _multiprocessing:
@@ -1400,7 +1425,7 @@ def _init_multiprocessing():
             _buffer.seek(0)
         except KeyboardInterrupt:
             raise
-        except:
+        except Exception:
             sys.exit("[!] unable to allocate network capture buffer. Please adjust value of 'CAPTURE_BUFFER'")
 
         _n = _multiprocessing.Value('L', lock=False)
@@ -1494,6 +1519,9 @@ def monitor():
 
             datalink = _cap.datalink()
 
+            _stats_iter = 0
+            _stats_last = time.time()
+
 
 #
 # NOTE: currently an issue with pcapy-png and loop()
@@ -1526,6 +1554,21 @@ def monitor():
 
                 if not success:
                     time.sleep(REGULAR_SENSOR_SLEEP_TIME)
+
+                # NOTE: periodic capture-drop visibility for live interfaces. Output goes to stdout via print() (operational
+                # channel) - deliberately NOT log_event(), so it never pollutes the event log/feed. Counter-gated so the hot
+                # path pays only a cheap increment per packet (no per-packet clock call), and fully sealed so a stats() quirk
+                # can never disrupt capture. ps_drop is the kernel/libpcap ring shedding under load (drop-old by design).
+                _stats_iter += 1
+                if _stats_iter >= 1000000:
+                    _stats_iter = 0
+                    if not config.pcap_file and time.time() - _stats_last >= 3600:
+                        _stats_last = time.time()
+                        try:
+                            recv, drop, ifdrop = _cap.stats()
+                            print("[i] capture stats (cumulative): received=%d dropped=%d ifdropped=%d" % (recv, drop, ifdrop))
+                        except Exception:
+                            pass
 
         if config.profile and len(_caps) == 1:
             print("[=] will store profiling results to '%s'..." % config.profile)
@@ -1595,10 +1638,20 @@ def main():
     parser.add_option("--offline", dest="offline", action="store_true", help="disable (online) trail updates")
     parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
     parser.add_option("--profile", dest="profile", help=optparse.SUPPRESS_HELP)
+    parser.add_option("--smoke-test", dest="smoke_test", action="store_true", help=optparse.SUPPRESS_HELP)
+    parser.add_option("--detect-test", dest="detect_test", action="store_true", help=optparse.SUPPRESS_HELP)
 
     patch_parser(parser)
 
     options, _ = parser.parse_args()
+
+    if options.smoke_test:
+        from core.testing import smoke_test
+        raise SystemExit(0 if smoke_test() else 1)
+
+    if options.detect_test:
+        from core.testing import detect_test
+        raise SystemExit(0 if detect_test() else 1)
 
     print("[*] starting @ %s\n" % time.strftime("%X /%Y-%m-%d/"))
 

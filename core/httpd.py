@@ -25,6 +25,7 @@ import traceback
 from core.addr import addr_to_int
 from core.addr import int_to_addr
 from core.addr import make_mask
+from core.addr import resolve_address
 from core.attribdict import AttribDict
 from core.common import get_regex
 from core.common import ipcat_lookup
@@ -66,13 +67,112 @@ except ImportError:
 try:
     import resource
     resource.setrlimit(resource.RLIMIT_NOFILE, (MAX_NOFILE, MAX_NOFILE))
-except:
+except Exception:
     pass
 
 _fail2ban_cache = None
 _fail2ban_key = None
 _blacklist_cache = None
 _blacklist_key = None
+_version_cache = None
+_counts_cache = {}  # NOTE: per daily-log event count keyed by filepath -> (mtime, size, count); past-day logs are immutable so they're read once, not on every poll
+_statics_cache = None  # NOTE: (5-min-bucket, latest-static-trail-date); avoids re-globbing the static malware dir on every page render
+MAX_POST_SIZE = 10 * 1024 * 1024  # NOTE: cap request body (real Maltrail POSTs are tiny); rejects absurd Content-Length up-front to bound memory
+REQUEST_TIMEOUT = 60  # NOTE: per-socket-operation timeout; frees worker threads stuck on stalled/slowloris connections (active, progressing clients are unaffected)
+
+_sessions_lock = threading.Lock()  # NOTE: SESSIONS is mutated from worker threads (ThreadingMixIn)
+_sessions_reaped = [0]             # last-reap timestamp (list holder to avoid a global statement)
+SESSION_REAP_PERIOD = 60
+
+def _reap_sessions():
+    """
+    Drops expired sessions (and closes any file handle they pinned). Time-gated so it sweeps at most once a minute
+    regardless of request rate. Without this, sessions that are created and never revisited live forever - a slow
+    memory leak that also leaks a file descriptor per session that opened an event-log range handle.
+    """
+
+    now = time.time()
+    if now - _sessions_reaped[0] < SESSION_REAP_PERIOD:
+        return
+    _sessions_reaped[0] = now
+
+    with _sessions_lock:
+        for _ in list(SESSIONS.keys()):
+            session = SESSIONS.get(_)
+            if session is not None and session.expiration <= now:
+                handle = getattr(session, "range_handle", None)
+                if handle is not None:
+                    try:
+                        handle.close()
+                    except Exception:
+                        pass
+                SESSIONS.pop(_, None)
+
+
+class _ConcatenatedFiles(io.RawIOBase):
+    """
+    Read-only seekable view over the concatenation of several files.
+
+    Used to serve multi-day event logs without loading them (potentially many GBs) into memory at once.
+    Wrap in io.BufferedReader for efficient read()/readline()/iteration.
+    """
+
+    def __init__(self, paths):
+        io.RawIOBase.__init__(self)
+        self._paths = list(paths)
+        self._sizes = [os.path.getsize(_) for _ in self._paths]
+        self._total = sum(self._sizes)
+        self._pos = 0
+        self._index = -1
+        self._handle = None
+
+    def readable(self):
+        return True
+
+    def seekable(self):
+        return True
+
+    def seek(self, offset, whence=io.SEEK_SET):
+        if whence == io.SEEK_SET:
+            self._pos = offset
+        elif whence == io.SEEK_CUR:
+            self._pos += offset
+        elif whence == io.SEEK_END:
+            self._pos = self._total + offset
+        return self._pos
+
+    def tell(self):
+        return self._pos
+
+    def readinto(self, b):
+        if self._pos >= self._total:
+            return 0
+
+        pos, index = self._pos, 0
+        while index < len(self._sizes) and pos >= self._sizes[index]:
+            pos -= self._sizes[index]
+            index += 1
+
+        if index >= len(self._paths):
+            return 0
+
+        if index != self._index:
+            if self._handle is not None:
+                self._handle.close()
+            self._handle = open(self._paths[index], "rb")
+            self._index = index
+
+        self._handle.seek(pos)
+        chunk = self._handle.read(min(len(b), self._sizes[index] - pos))
+        b[:len(chunk)] = chunk
+        self._pos += len(chunk)
+        return len(chunk)
+
+    def close(self):
+        if self._handle is not None:
+            self._handle.close()
+            self._handle = None
+        io.RawIOBase.close(self)
 
 
 def start_httpd(address=None, port=None, join=False, pem=None):
@@ -88,7 +188,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         def finish_request(self, *args, **kwargs):
             try:
                 _BaseHTTPServer.HTTPServer.finish_request(self, *args, **kwargs)
-            except:
+            except Exception:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
 
@@ -120,10 +220,12 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         def shutdown_request(self, request):
             try:
                 request.shutdown()
-            except:
+            except Exception:
                 pass
 
     class ReqHandler(_BaseHTTPServer.BaseHTTPRequestHandler):
+        timeout = REQUEST_TIMEOUT  # NOTE: StreamRequestHandler applies this as a socket timeout -> stalled connections drop instead of pinning a thread forever
+
         def do_GET(self):
             path, query = self.path.split('?', 1) if '?' in self.path else (self.path, "")
             params = {}
@@ -160,7 +262,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     path = "%s.html" % path
 
                 if any((config.IP_ALIASES,)) and self.path.split('?')[0] == "/js/main.js":
-                    content = open(path, 'r').read()
+                    with open(path, 'r') as f:
+                        content = f.read()
                     content = re.sub(r"\bvar IP_ALIASES =.+", "var IP_ALIASES = {%s};" % ", ".join('"%s": "%s"' % (_.split(':', 1)[0].strip(), _.split(':', 1)[-1].strip()) for _ in config.IP_ALIASES), content)
 
                 if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and (extension not in DISABLED_CONTENT_EXTENSIONS or os.path.split(path)[-1] in CONTENT_EXTENSIONS_EXCLUSIONS):
@@ -175,7 +278,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             skip = True
 
                     if not skip:
-                        content = content or open(path, "rb").read()
+                        if not content:
+                            with open(path, "rb") as f:
+                                content = f.read()
                         last_modified = time.strftime(HTTP_TIME_FORMAT, mtime)
                         self.send_response(_http_client.OK)
                         self.send_header(HTTP_HEADER.CONNECTION, "close")
@@ -228,12 +333,20 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     self.wfile.write(content)
 
                 self.wfile.flush()
-            except:
+            except Exception:
                 pass
 
         def do_POST(self):
-            length = self.headers.get(HTTP_HEADER.CONTENT_LENGTH)
-            data = self.rfile.read(int(length)).decode(UNICODE_ENCODING)
+            try:
+                length = int(self.headers.get(HTTP_HEADER.CONTENT_LENGTH) or 0)
+            except (TypeError, ValueError):
+                length = 0
+            if length > MAX_POST_SIZE:  # NOTE: reject oversized bodies before buffering them
+                self.send_response(_http_client.REQUEST_ENTITY_TOO_LARGE)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                self.end_headers()
+                return
+            data = self.rfile.read(length).decode(UNICODE_ENCODING) if length > 0 else ""
             data = _urllib.parse.unquote_plus(data)
             self.data = data
             self.do_GET()
@@ -242,17 +355,20 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             retval = None
             cookie = self.headers.get(HTTP_HEADER.COOKIE)
 
+            _reap_sessions()
+
             if cookie:
                 match = re.search(r"%s\s*=\s*([^;]+)" % SESSION_COOKIE_NAME, cookie)
                 if match:
                     session = match.group(1)
-                    if session in SESSIONS:
-                        if SESSIONS[session].client_ip != self.client_address[0]:
+                    _ = SESSIONS.get(session)  # fetch once: a concurrent reap/delete must not turn check-then-fetch into a KeyError
+                    if _ is not None:
+                        if _.client_ip != self.client_address[0]:
                             pass
-                        elif SESSIONS[session].expiration > time.time():
-                            retval = SESSIONS[session]
+                        elif _.expiration > time.time():
+                            retval = _
                         else:
-                            del SESSIONS[session]
+                            SESSIONS.pop(session, None)
 
             if retval is None and not config.USERS:
                 retval = AttribDict({"username": "?"})
@@ -266,8 +382,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 match = re.search(r"%s=(.+)" % SESSION_COOKIE_NAME, cookie)
                 if match:
                     session = match.group(1)
-                    if session in SESSIONS:
-                        del SESSIONS[session]
+                    SESSIONS.pop(session, None)
 
         def version_string(self):
             return "%s/%s" % (NAME, self._version())
@@ -283,27 +398,43 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         def finish(self):
             try:
                 _BaseHTTPServer.BaseHTTPRequestHandler.finish(self)
-            except:
+            except Exception:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
 
         def _version(self):
-            version = VERSION
+            global _version_cache
 
-            try:
-                for line in open(os.path.join(os.path.dirname(__file__), "settings.py"), 'r'):
-                    match = re.search(r'VERSION = "([^"]*)', line)
-                    if match:
-                        version = match.group(1)
-                        break
-            except:
-                pass
+            if _version_cache is None:
+                version = VERSION
 
-            return version
+                try:
+                    with open(os.path.join(os.path.dirname(__file__), "settings.py"), 'r') as f:
+                        for line in f:
+                            match = re.search(r'VERSION = "([^"]*)', line)
+                            if match:
+                                version = match.group(1)
+                                break
+                except Exception:
+                    pass
+
+                _version_cache = version
+
+            return _version_cache
 
         def _statics(self):
-            latest = max(glob.glob(os.path.join(os.path.dirname(__file__), "..", "trails", "static", "malware", "*.txt")), key=os.path.getmtime)
-            return "/%s" % datetime.datetime.fromtimestamp(os.path.getmtime(latest)).strftime(DATE_FORMAT)
+            global _statics_cache
+            key = int(time.time()) // 300  # NOTE: static trails change ~daily (on update); a 5-min TTL avoids globbing+stat-ing hundreds of files on every page render
+            if _statics_cache is not None and _statics_cache[0] == key:
+                return _statics_cache[1]
+
+            files = glob.glob(os.path.join(os.path.dirname(__file__), "..", "trails", "static", "malware", "*.txt"))
+            if not files:
+                return ""
+            latest = max(files, key=os.path.getmtime)
+            content = "/%s" % datetime.datetime.fromtimestamp(os.path.getmtime(latest)).strftime(DATE_FORMAT)
+            _statics_cache = (key, content)
+            return content
 
         def _logo(self):
             if config.HEADER_LOGO:
@@ -325,7 +456,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             if params.get("username") and params.get("hash") and params.get("nonce"):
                 if params.get("nonce") not in DISPOSED_NONCES:
-                    DISPOSED_NONCES.add(params.get("nonce"))
+                    DISPOSED_NONCES[params.get("nonce")] = True
                     for entry in (config.USERS or []):
                         entry = re.sub(r"\s", "", entry)
                         username, stored_hash, uid, netfilter = entry.split(':')
@@ -340,7 +471,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 if params.get("hash") == hashlib.sha256((stored_hash.strip() + params.get("nonce")).encode(UNICODE_ENCODING)).hexdigest():
                                     valid = True
                                     break
-                            except:
+                            except Exception:
                                 if config.SHOW_DEBUG:
                                     traceback.print_exc()
 
@@ -391,7 +522,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     if addresses:
                         netfilters.add(get_regex(addresses))
 
-                SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilters": netfilters, "mask_custom": config.ENABLE_MASK_CUSTOM and uid >= 1000, "expiration": expiration, "client_ip": self.client_address[0]})
+                SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilters": netfilters, "mask_custom": bool(config.ENABLE_MASK_CUSTOM and uid is not None and uid >= 1000), "expiration": expiration, "client_ip": self.client_address[0]})
             else:
                 time.sleep(UNAUTHORIZED_SLEEP_TIME)
                 self.send_response(_http_client.UNAUTHORIZED)
@@ -445,7 +576,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     _ = (ipcat_lookup(params.get("address")) or "").lower().split(' ')
                     result_ipcat = _[1] if _[0] == 'the' else _[0]
                 return ("%s" if not params.get("callback") else "%s(%%s)" % params.get("callback")) % json.dumps({"ipcat": result_ipcat, "worst_asns": str(result_worst is not None).lower()})
-            except:
+            except Exception:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
 
@@ -454,7 +585,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header(HTTP_HEADER.CONNECTION, "close")
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
-            return open(config.TRAILS_FILE, "rb").read()
+            with open(config.TRAILS_FILE, "rb") as f:
+                return f.read()
 
         def _ping(self, params):
             self.send_response(_http_client.OK)
@@ -487,7 +619,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             try:
                 ip_int = addr_to_int(ip)
-            except:
+            except Exception:
                 return False
 
             for item in items:
@@ -508,7 +640,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         try:
                             if ip_int & make_mask(bits) == addr_to_int(prefix) & make_mask(bits):
                                 return True
-                        except:
+                        except Exception:
                             pass
 
             return False
@@ -541,9 +673,12 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         result = set()
                         _ = os.path.join(config.LOG_DIR, "%s.log" % datetime.datetime.now().strftime("%Y-%m-%d"))
                         if os.path.isfile(_):
-                            for line in open(_, "r"):
-                                if re.search(config.FAIL2BAN_REGEX, line, re.I):
-                                    result.add(line.split()[3])
+                            with open(_, "r") as f:
+                                for line in f:
+                                    if re.search(config.FAIL2BAN_REGEX, line, re.I):
+                                        parts = line.split()
+                                        if len(parts) > 3:
+                                            result.add(parts[3])
 
                         content = "\n".join(result)
 
@@ -604,19 +739,22 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         result = set()
                         _ = os.path.join(config.LOG_DIR, "%s.log" % datetime.datetime.now().strftime("%Y-%m-%d"))
                         if os.path.isfile(_):
-                            for line in open(_, "r"):
-                                line = line.split(' ', 10)
-                                for bl in blacklist:
-                                    failed = False
-                                    for f, n, r in bl:
-                                        if not (
-                                            (r.search(line[f]) is not None) ^ n
-                                                ):
-                                            failed = True
+                            with open(_, "r") as f_log:
+                                for line in f_log:
+                                    line = line.split(' ', 10)
+                                    if len(line) < 11:
+                                        continue
+                                    for bl in blacklist:
+                                        failed = False
+                                        for f, n, r in bl:
+                                            if not (
+                                                (r.search(line[f]) is not None) ^ n
+                                                    ):
+                                                failed = True
+                                                break
+                                        if not failed:
+                                            result.add(line[3])
                                             break
-                                    if not failed:
-                                        result.add(line[3])
-                                        break
 
                         content = "\n".join(result)
 
@@ -708,20 +846,18 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     print("[!] invalid date format in request")
                     log_exists = False
             else:
-                logs_data = ""
                 date_interval = dates.split("_", 1)
                 try:
                     start_date = datetime.datetime.strptime(date_interval[0], "%Y-%m-%d").date()
                     end_date = datetime.datetime.strptime(date_interval[1], "%Y-%m-%d").date()
+                    paths = []
                     for i in xrange(int((end_date - start_date).days) + 1):
                         date = start_date + datetime.timedelta(i)
                         event_log_path = os.path.join(config.LOG_DIR, "%s.log" % date.strftime("%Y-%m-%d"))
                         if os.path.exists(event_log_path):
-                            log_handle = open(event_log_path, "rb")
-                            logs_data += log_handle.read()
-                            log_handle.close()
+                            paths.append(event_log_path)
 
-                    range_handle = io.BytesIO(logs_data)
+                    range_handle = io.BufferedReader(_ConcatenatedFiles(paths))
                     log_exists = True
                 except ValueError:
                     print("[!] invalid date format in request")
@@ -736,12 +872,19 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     match = re.search(r"bytes=(\d+)-(\d+)", self.headers[HTTP_HEADER.RANGE])
                     if match:
                         start, end = int(match.group(1)), int(match.group(2))
+                        if end < start or start > total:  # NOTE: reject inverted/out-of-bounds ranges; otherwise a negative size makes read(-n) return the whole file
+                            self.send_response(_http_client.REQUESTED_RANGE_NOT_SATISFIABLE)
+                            self.send_header(HTTP_HEADER.CONNECTION, "close")
+                            self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes */%d" % total)
+                            return content
                         max_size = end - start + 1
                         end = min(total - 1, end)
                         size = end - start + 1
 
                         if start == 0 or not session.range_handle:
                             session.range_handle = range_handle
+                        elif range_handle is not session.range_handle:
+                            range_handle.close()
 
                         if session.netfilters is None and not session.mask_custom:
                             session.range_handle.seek(start)
@@ -841,20 +984,27 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     continue
                 try:
                     current = datetime.datetime.strptime(os.path.splitext(filename)[0], DATE_FORMAT)
-                except:
+                except Exception:
                     if config.SHOW_DEBUG:
                         traceback.print_exc()
                 else:
                     if min_ <= current <= max_:
                         timestamp = int(time.mktime(current.timetuple()))
                         size = os.path.getsize(filepath)
-                        with open(filepath, "rb") as f:
-                            content = f.read(io.DEFAULT_BUFFER_SIZE)
-                            if size >= io.DEFAULT_BUFFER_SIZE:
-                                total = 1.0 * (1 + content.count(b'\n')) * size / io.DEFAULT_BUFFER_SIZE
-                                counts[timestamp] = int(round(total / 100.0) * 100)
-                            else:
-                                counts[timestamp] = content.count(b'\n')
+                        mtime = os.path.getmtime(filepath)
+                        cached = _counts_cache.get(filepath)
+                        if cached and cached[0] == mtime and cached[1] == size:  # immutable (past-day) log -> reuse, skip the open+read
+                            counts[timestamp] = cached[2]
+                        else:
+                            with open(filepath, "rb") as f:
+                                content = f.read(io.DEFAULT_BUFFER_SIZE)
+                                if size >= io.DEFAULT_BUFFER_SIZE:
+                                    total = 1.0 * (1 + content.count(b'\n')) * size / io.DEFAULT_BUFFER_SIZE
+                                    count = int(round(total / 100.0) * 100)
+                                else:
+                                    count = content.count(b'\n')
+                            counts[timestamp] = count
+                            _counts_cache[filepath] = (mtime, size, count)
 
             return json.dumps(counts)
 
@@ -869,12 +1019,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         address = address.strip("[]")
 
         _BaseHTTPServer.HTTPServer.address_family = socket.AF_INET6
-
-        # Reference: https://github.com/squeaky-pl/zenchmarks/blob/master/vendor/twisted/internet/tcp.py
-        _AI_NUMERICSERV = getattr(socket, "AI_NUMERICSERV", 0)
-        _NUMERIC_ONLY = socket.AI_NUMERICHOST | _AI_NUMERICSERV
-
-        _address = socket.getaddrinfo(address, int(port) if str(port or "").isdigit() else 0, 0, 0, 0, _NUMERIC_ONLY)[0][4]
+        _address = resolve_address(address, port)
     else:
         _address = (address or '', int(port) if str(port or "").isdigit() else 0)
 
