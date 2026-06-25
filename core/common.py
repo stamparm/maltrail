@@ -292,7 +292,10 @@ def check_whitelisted(trail):
     if trail in WHITELIST:
         return True
 
-    if trail and trail[0].isdigit():
+    # Only range-match a BARE IPv4 trail. addr_to_int() reads just the first 4 dotted parts, so the old
+    # `trail[0].isdigit()` guard let a domain like "10.0.0.1.evil.com" be range-matched as 10.0.0.1 -> a
+    # whitelist bypass / detection-evasion vector (register <whitelisted-ip-prefix>.attacker.com to be ignored).
+    if trail and re.match(r"\A(?:\d{1,3}\.){3}\d{1,3}\Z", trail):
         try:
             _ = addr_to_int(trail)
             for prefix, mask in WHITELIST_RANGES:
@@ -587,9 +590,19 @@ def is_local(address):
     False
     >>> is_local(None)
     False
+    >>> is_local("172.20.5.5")
+    True
+    >>> is_local("172.31.255.255")
+    True
+    >>> is_local("172.15.0.1")
+    False
+    >>> is_local("172.32.0.1")
+    False
     """
 
-    return re.search(r"\A(127|10|172\.[13][0-9]|192\.168)\.", address or "") is not None
+    # 172.16.0.0/12 -> second octet 16-31. (The old [13][0-9] matched 10-19,30-39: it flagged 172.20-29 public
+    # and 172.10-15/172.32-39 local.)
+    return re.search(r"\A(127|10|172\.(1[6-9]|2[0-9]|3[01])|192\.168)\.", address or "") is not None
 
 def patch_parser(parser):
     # Dirty hack to display longer options without breaking into two lines

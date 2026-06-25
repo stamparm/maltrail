@@ -86,6 +86,10 @@ def expand_range(value):
     []
     >>> expand_range("evil.com")
     ['evil.com']
+    >>> expand_range("my-host.com")
+    ['my-host.com']
+    >>> expand_range("10.0.0.1-10.0.0.2-10.0.0.3")
+    ['10.0.0.1-10.0.0.2-10.0.0.3']
     """
 
     retval = []
@@ -107,13 +111,19 @@ def expand_range(value):
                 address += 1
 
     elif '-' in value:
-        start, end = value.split('-')
-        start_int, end_int = addr_to_int(start), addr_to_int(end)
-        if 0 <= end_int - start_int <= 65536:
-            current = start_int
-            while start_int <= current <= end_int:
-                retval.append(int_to_addr(current))
-                current += 1
+        # Only a clean two-endpoint IPv4 range expands. Anything else with a '-' (a hostname like
+        # "my-host.com", a malformed multi-dash value) is kept as a literal instead of crashing
+        # addr_to_int()/the tuple-unpack - which previously aborted config (IP_ALIASES) parsing entirely.
+        parts = [_.strip() for _ in value.split('-')]
+        if len(parts) == 2 and all(re.match(r"\A\d+\.\d+\.\d+\.\d+\Z", _) for _ in parts):
+            start_int, end_int = addr_to_int(parts[0]), addr_to_int(parts[1])
+            if 0 <= end_int - start_int <= 65536:
+                current = start_int
+                while start_int <= current <= end_int:
+                    retval.append(int_to_addr(current))
+                    current += 1
+        else:
+            retval.append(value)
 
     else:
         retval.append(value)

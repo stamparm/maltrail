@@ -108,13 +108,13 @@ def safe_value(value):
     >>> safe_value('a"b')
     '"a""b"'
     >>> safe_value("line\nbreak")
-    'line break'
+    '"line break"'
     """
 
     retval = str(value or '-')
+    retval = re.sub(r"[\x0a\x0d]", " ", retval)   # flatten CR/LF FIRST: doing it after the quote check let a newline-only value emit an unquoted space -> the field split into two on re-parse (column corruption / log injection)
     if any(_ in retval for _ in (' ', '"')):
         retval = "\"%s\"" % retval.replace('"', '""')
-    retval = re.sub(r"[\x0a\x0d]", " ", retval)
     return retval
 
 def flush_condensed_events(single=False):

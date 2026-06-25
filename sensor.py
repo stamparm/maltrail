@@ -28,6 +28,7 @@ import warnings
 
 from core.addr import inet_ntoa6
 from core.addr import addr_port
+from core.addr import parse_host_port
 from core.attribdict import AttribDict
 from core.common import build_trails_regex
 from core.common import check_connection
@@ -335,10 +336,11 @@ def _process_packet(packet, sec, usec, ip_offset):
                 _connect_src_dst.clear()
                 _connect_src_details.clear()
 
-                for key in _path_src_dst:
-                    if len(_path_src_dst[key]) > WEB_SCANNING_THRESHOLD:
+                for key in list(_path_src_dst):   # snapshot keys: _path_src_dst is written lock-free by other capture threads, so a bare `for key in _path_src_dst` races into "dictionary changed size during iteration" in multi-interface mode (mirrors the list() snapshot at line 277). On that throw the analysis aborted and _path_src_dst was never cleared -> missed web-scan detection + unbounded growth.
+                    details = _path_src_dst_details.get(key)
+                    if len(_path_src_dst[key]) > WEB_SCANNING_THRESHOLD and details:   # `details` may briefly be missing/empty (its entry is created a few statements after _path_src_dst's, lock-free) -> guard the .pop()
                         _src_ip, _dst_ip = key
-                        _sec, _usec, _src_port, _dst_port, _path = _path_src_dst_details[key].pop()
+                        _sec, _usec, _src_port, _dst_port, _path = details.pop()
                         log_event((_sec, _usec, _src_ip, _src_port, _dst_ip, _dst_port, PROTO.TCP, TRAIL.PATH, "*", "potential web scanning", "(heuristic)"), packet)
 
                 _path_src_dst.clear()
@@ -442,9 +444,11 @@ def _process_packet(packet, sec, usec, ip_offset):
                     else:
                         index = tcp_data.find("<title>")
                         if index >= 0:
-                            title = tcp_data[index + len("<title>"):tcp_data.find("</title>", index)]
-                            if re.search(r"domain name has been seized by|Domain Seized|Domain Seizure", title):
-                                log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, title, "seized domain (suspicious)", "(heuristic)"), packet)
+                            end = tcp_data.find("</title>", index)   # only extract when the closing tag is in the captured bytes; otherwise find()==-1 -> tcp_data[start:-1] grabs ~the whole response body as a bogus multi-KB trail (the Content-Type/Host parses below already guard this way)
+                            if end >= 0:
+                                title = tcp_data[index + len("<title>"):end]
+                                if re.search(r"domain name has been seized by|Domain Seized|Domain Seizure", title):
+                                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.HTTP, title, "seized domain (suspicious)", "(heuristic)"), packet)
 
                     content_type = None
                     first_index = tcp_data.find("\r\nContent-Type:")
@@ -757,7 +761,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                             subdomains.clear()
                                         elif len(subdomains) < DNS_EXHAUSTION_THRESHOLD:
                                             subdomains.add('.'.join(parts[:-2]))
-                                        else:
+                                        elif domain not in _dns_exhausted_domains:   # alert ONCE per domain per window; otherwise EVERY subdomain query past the threshold re-logs -> a self-inflicted log flood during the very attack this detects (the set was populated at 767 but never checked here)
                                             trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
                                             if re.search(r"bl\b", trail) is None:                                               # generic check for DNSBLs
                                                 if not any(_ in subdomains for _ in LOCAL_SUBDOMAIN_LOOKUPS):                   # generic check for local DNS resolutions
@@ -765,6 +769,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                                                     _dns_exhausted_domains.add(domain)
 
                                             return
+                                        else:
+                                            return   # already alerted this domain this window -> suppress repeat logs
 
                             # Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
                             if type_ not in (12, 28) and class_ == 1:  # Type not in (PTR, AAAA), Class IN
@@ -810,8 +816,8 @@ def _process_packet(packet, sec, usec, ip_offset):
                                                 rd_len = struct.unpack("!H", dns_data[ptr + 8: ptr + 10])[0]
                                                 _ = ptr + 10 + rd_len
 
-                                        _ = dns_data[_ + 12:_ + 16]
-                                        if _:
+                                        _ = dns_data[ptr + 10:ptr + 14]   # A RDATA = name-end(ptr) + type(2)+class(2)+ttl(4)+rdlen(2); was `_+12`, which only held when the answer name was a 2-byte compression pointer and mis-read uncompressed answer names (-> missed sinkhole/parking detection / evasion)
+                                        if len(_) == 4:
                                             answer = socket.inet_ntoa(_)
                                             if answer in trails and not _check_domain_whitelisted(query):
                                                 _ = trails[answer]
@@ -1055,10 +1061,13 @@ def init():
     if config.LOG_SERVER and ':' not in config.LOG_SERVER:
         sys.exit("[!] invalid configuration value for 'LOG_SERVER' ('%s')" % config.LOG_SERVER)
 
-    if config.SYSLOG_SERVER and not len(config.SYSLOG_SERVER.split(':')) == 2:
+    # NOTE: validate via parse_host_port (requires a numeric port) instead of `len(split(':')) == 2` - the latter
+    # rejected every IPv6 literal (e.g. '[2001:db8::1]:514' has many colons) even though the send path
+    # (_endpoint_address -> parse_host_port) handles IPv6 fine; this matches LOG_SERVER accepting IPv6
+    if config.SYSLOG_SERVER and parse_host_port(config.SYSLOG_SERVER)[1] is None:
         sys.exit("[!] invalid configuration value for 'SYSLOG_SERVER' ('%s')" % config.SYSLOG_SERVER)
 
-    if config.LOGSTASH_SERVER and not len(config.LOGSTASH_SERVER.split(':')) == 2:
+    if config.LOGSTASH_SERVER and parse_host_port(config.LOGSTASH_SERVER)[1] is None:
         sys.exit("[!] invalid configuration value for 'LOGSTASH_SERVER' ('%s')" % config.LOGSTASH_SERVER)
 
     if config.REMOTE_SEVERITY_REGEX:
@@ -1072,8 +1081,10 @@ def init():
         for _cap in _caps:
             try:
                 _cap.setfilter(config.CAPTURE_FILTER)
-            except Exception:
-                pass
+            except Exception as ex:
+                # surface a bad/unsupported BPF filter instead of swallowing it: a silent failure leaves the sensor
+                # capturing EVERYTHING with the admin none the wiser that their filter (capture scope) was never applied
+                print("[!] unable to set capture filter '%s' ('%s')" % (config.CAPTURE_FILTER, ex))
 
     if _multiprocessing:
         _init_multiprocessing()
