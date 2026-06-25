@@ -5924,6 +5924,12 @@ communicationdiscoveryservice.site
 linkednewsapi.top
 sharingfile.cloud
 
+# Reference: https://x.com/Yusufcancakiir/status/2069400323622408648
+# Reference: https://www.virustotal.com/gui/file/285494f29eb9224b550bb7249f5685557307d8000c6799f0022196c8be3c8746/detection
+
+147.182.255.152:8443
+147.182.255.152:9997
+
 # Generic
 
 /Havoc/payload/
