@@ -201,20 +201,20 @@ def _get_total_physmem():
 
     if not retval:
         try:
-            retval = 1024 * int(re.search(r"\s+(\d+) K total memory", subprocess.check_output("vmstat -s", shell=True, stderr=subprocess.STDOUT)).group(1))
+            retval = 1024 * int(re.search(r"\s+(\d+) K total memory", subprocess.check_output("vmstat -s", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)).group(1))
         except Exception:
             pass
 
     if not retval:
         try:
-            retval = int(re.search(r"Mem:\s+(\d+)", subprocess.check_output("free -b", shell=True, stderr=subprocess.STDOUT)).group(1))
+            retval = int(re.search(r"Mem:\s+(\d+)", subprocess.check_output("free -b", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)).group(1))
         except Exception:
             pass
 
     if not retval:
         if IS_LINUX:
             try:
-                retval = 1024 * int(re.search(r"KiB Mem:\s*\x1b[^\s]+\s*(\d+)", subprocess.check_output("top -n 1", shell=True, stderr=subprocess.STDOUT)).group(1))
+                retval = 1024 * int(re.search(r"KiB Mem:\s*\x1b[^\s]+\s*(\d+)", subprocess.check_output("top -n 1", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)).group(1))
             except Exception:
                 pass
 
@@ -339,6 +339,11 @@ def read_config(config_file):
 
     if config.UDP_ADDRESS is None and config.UDP_PORT is not None:
         sys.exit("[!] usage of configuration value 'UDP_PORT' requires also usage of 'UDP_ADDRESS'")
+
+    if config.UDP_PORT is not None and not str(config.UDP_PORT).isdigit():
+        # validate like HTTP_PORT below; otherwise a non-numeric typo (e.g. 'UDP_PORT 514a') stays a str and later
+        # crashes with a cryptic "'<=' not supported between 'str' and 'int'" at server.py's `config.UDP_PORT <= 1024`
+        sys.exit("[!] invalid configuration value for 'UDP_PORT' ('%s')" % config.UDP_PORT)
 
     if not str(config.HTTP_PORT or "").isdigit() and not IS_SENSOR:
         sys.exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % ("" if config.HTTP_PORT is None else config.HTTP_PORT))

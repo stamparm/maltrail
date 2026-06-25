@@ -237,11 +237,12 @@ def lookup(handles, key, default=None):
     lo = handles["lo"]
     val = handles["val"]
     mask = handles["mask"]
+    pl = handles["pair_list"]
     slot = h & mask
     while True:
         v = val[slot]
         if v == _EMPTY:
             return default
         if hi[slot] == target_hi and lo[slot] == target_lo:
-            return handles["pair_list"][v]
+            return pl[v] if v < len(pl) else default   # bounds-check: a corrupted/truncated/tampered bin must miss, not IndexError-crash the sensor on every lookup
         slot = (slot + 1) & mask

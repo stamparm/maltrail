@@ -181,6 +181,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
     """
 
     class ThreadingServer(_socketserver.ThreadingMixIn, _BaseHTTPServer.HTTPServer):
+        daemon_threads = True  # long-lived SSE (/live) streams must not block server shutdown
         def server_bind(self):
             self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             _BaseHTTPServer.HTTPServer.server_bind(self)
@@ -249,7 +250,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             extension = os.path.splitext(path)[-1].lower()
 
             splitpath = path.split('/', 1)
-            if hasattr(self, "_%s" % splitpath[0]):
+            # dispatch ONLY to the designated URL endpoints. The old `hasattr(self, "_<seg>")` also matched internal /
+            # display helpers (_version, _logo, _assetver, _tzoffset, _statics, _format, _build_netfilters, _filter_events)
+            # whose signature is NOT (self, params), so e.g. "GET /version" -> self._version(params) -> uncaught TypeError
+            # (request crash) reachable by any client. Endpoints are an explicit allowlist, not "any _-prefixed method".
+            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts"):
                 if len(splitpath) > 1:
                     params["subpath"] = splitpath[1]
                 content = getattr(self, "_%s" % splitpath[0])(params)
@@ -264,15 +269,28 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 if any((config.IP_ALIASES,)) and self.path.split('?')[0] == "/js/main.js":
                     with open(path, 'r') as f:
                         content = f.read()
-                    content = re.sub(r"\bvar IP_ALIASES =.+", "var IP_ALIASES = {%s};" % ", ".join('"%s": "%s"' % (_.split(':', 1)[0].strip(), _.split(':', 1)[-1].strip()) for _ in config.IP_ALIASES), content)
+                    # Build the JS object via json.dumps so alias keys/values are properly escaped: a stray '"' used to
+                    # produce invalid JS (-> main.js SyntaxError -> dead frontend), and a '\' was interpreted as a regex
+                    # backreference in the replacement string (-> re.error -> the main.js request crashed). The lambda
+                    # replacement keeps re.sub from re-interpreting backslashes in the (now JSON-escaped) value.
+                    _aliases = {}
+                    for _ in config.IP_ALIASES:
+                        _parts = _.split(':', 1)
+                        _aliases[_parts[0].strip()] = _parts[-1].strip()
+                    _replacement = "var IP_ALIASES = %s;" % json.dumps(_aliases)
+                    content = re.sub(r"\bvar IP_ALIASES =.+", lambda _m: _replacement, content)
 
                 if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and (extension not in DISABLED_CONTENT_EXTENSIONS or os.path.split(path)[-1] in CONTENT_EXTENSIONS_EXCLUSIONS):
                     mtime = time.gmtime(os.path.getmtime(path))
                     if_modified_since = self.headers.get(HTTP_HEADER.IF_MODIFIED_SINCE)
 
                     if if_modified_since and extension not in (".htm", ".html"):
-                        if_modified_since = [_ for _ in if_modified_since.split(';') if _.upper().endswith("GMT")][0]
-                        if time.mktime(mtime) <= time.mktime(time.strptime(if_modified_since, HTTP_TIME_FORMAT)):
+                        try:
+                            if_modified_since = [_ for _ in if_modified_since.split(';') if _.upper().endswith("GMT")][0]
+                            not_modified = time.mktime(mtime) <= time.mktime(time.strptime(if_modified_since, HTTP_TIME_FORMAT))
+                        except (IndexError, ValueError, OverflowError):
+                            not_modified = False   # malformed/non-standard If-Modified-Since (client-controlled header) -> serve full content instead of crashing the whole request with an uncaught IndexError/ValueError
+                        if not_modified:
                             self.send_response(_http_client.NOT_MODIFIED)
                             self.send_header(HTTP_HEADER.CONNECTION, "close")
                             skip = True
@@ -302,7 +320,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 else:
                     self.send_response(_http_client.NOT_FOUND)
                     self.send_header(HTTP_HEADER.CONNECTION, "close")
-                    content = '<!DOCTYPE html><html lang="en"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL %s was not found on this server.</p></body></html>' % self.path.split('?')[0]
+                    # HTML-escape the reflected request path: unescaped it allowed (a) reflected HTML injection and
+                    # (b) a "<!name!>" path to survive into the token-substitution loop below and invoke an internal
+                    # self._<name>() handler -> e.g. "/<!login!>" calls _login() with no args -> uncaught TypeError
+                    _safe_path = self.path.split('?')[0].replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+                    content = '<!DOCTYPE html><html lang="en"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL %s was not found on this server.</p></body></html>' % _safe_path
 
             if content is not None:
                 if isinstance(content, six.text_type):
@@ -310,6 +332,12 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                 for match in re.finditer(b"<\\!(\\w+)\\!>", content):
                     name = match.group(1).decode(UNICODE_ENCODING)
+                    # only substitute the known no-arg DISPLAY tokens. Without this allowlist the loop would
+                    # getattr(self, "_<name>") for ANY token, so a "<!login!>"/"<!events!>"-style token reaching
+                    # `content` (a reflected path, an injected IP_ALIASES value, ...) would invoke a request handler
+                    # that needs `params` -> uncaught TypeError. Tokens are a fixed template vocabulary, not a method dispatch.
+                    if name.lower() not in ("version", "logo", "assetver", "tzoffset", "statics"):
+                        continue
                     _ = getattr(self, "_%s" % name.lower(), None)
                     if _:
                         content = self._format(content, **{name: _()})
@@ -346,7 +374,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
                 self.end_headers()
                 return
-            data = self.rfile.read(length).decode(UNICODE_ENCODING) if length > 0 else ""
+            data = self.rfile.read(length).decode(UNICODE_ENCODING, "replace") if length > 0 else ""   # tolerate invalid UTF-8 in a (pre-auth, client-controlled) POST body instead of raising an uncaught UnicodeDecodeError out of do_POST; matches the defensive decoding used elsewhere
             data = _urllib.parse.unquote_plus(data)
             self.data = data
             self.do_GET()
@@ -379,7 +407,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             cookie = self.headers.get(HTTP_HEADER.COOKIE)
 
             if cookie:
-                match = re.search(r"%s=(.+)" % SESSION_COOKIE_NAME, cookie)
+                match = re.search(r"%s\s*=\s*([^;]+)" % SESSION_COOKIE_NAME, cookie)   # stop at ';' like get_session; the old greedy "(.+)" swallowed trailing cookies ("sessid=abc; theme=dark") -> wrong id -> logout never invalidated the server-side session
                 if match:
                     session = match.group(1)
                     SESSIONS.pop(session, None)
@@ -444,6 +472,31 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             return retval
 
+        def _assetver(self):
+            # cache-busting token = newest mtime of the cacheable assets, so updated JS/CSS land immediately
+            # (index.html is served no-cache, so a changed token forces the browser to refetch the new files)
+            try:
+                latest = 0
+                for rel in ("js/main.js", "css/main.css"):
+                    p = os.path.join(HTML_DIR, rel)
+                    if os.path.isfile(p):
+                        latest = max(latest, int(os.path.getmtime(p)))
+                return str(latest or int(time.time()))
+            except Exception:
+                return self._version()
+
+        def _tzoffset(self):
+            # minutes EAST of UTC for the server's local time. Maltrail writes log timestamps in sensor-local time,
+            # so the frontend uses this to render correct "x ago" / spans regardless of the viewer's timezone.
+            try:
+                if time.daylight and time.localtime().tm_isdst > 0:
+                    offset_seconds = -time.altzone
+                else:
+                    offset_seconds = -time.timezone
+                return str(offset_seconds // 60)
+            except Exception:
+                return "0"
+
         def _format(self, content, **params):
             if content:
                 for key, value in params.items():
@@ -499,22 +552,33 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     for item in set(re.split(r"[;,]", netfilter)):
                         item = item.strip()
                         if '/' in item:
-                            _ = item.split('/')[-1]
-                            if _.isdigit() and int(_) >= 16:
-                                lower = addr_to_int(item.split('/')[0])
-                                mask = make_mask(int(_))
-                                upper = lower | (0xffffffff ^ mask)
-                                while lower <= upper:
-                                    addresses.add(int_to_addr(lower))
-                                    lower += 1
-                            else:
-                                netmasks.add(item)
+                            # only accept a well-formed IPv4 CIDR (dotted-quad prefix + mask 0..32). Otherwise skip it:
+                            # a mask > 32 made make_mask() do `1 << (32-bits)` -> ValueError (negative shift), and an
+                            # IPv6/garbage prefix made addr_to_int() raise -> both crashed the login request uncaught.
+                            # (Skipping also keeps such junk out of `netmasks`, where _filter_events would re-crash on it.)
+                            prefix, _, bits = item.partition('/')
+                            prefix = prefix.strip()
+                            if bits.isdigit() and int(bits) <= 32 and re.match(r"\A\d+\.\d+\.\d+\.\d+\Z", prefix):
+                                if int(bits) >= 16:
+                                    lower = addr_to_int(prefix)
+                                    mask = make_mask(int(bits))
+                                    upper = lower | (0xffffffff ^ mask)
+                                    while lower <= upper:
+                                        addresses.add(int_to_addr(lower))
+                                        lower += 1
+                                else:
+                                    netmasks.add(item)
                         elif '-' in item:
-                            _ = item.split('-')
-                            lower, upper = addr_to_int(_[0]), addr_to_int(_[1])
-                            while lower <= upper:
-                                addresses.add(int_to_addr(lower))
-                                lower += 1
+                            # require exactly two IPv4 endpoints + a bounded span (mirrors the /16 cap on the CIDR
+                            # branch above); a malformed (multi-dash / non-IP) or oversized range is skipped, never
+                            # crashed on the tuple-unpack nor expanded into a multi-million-address set (OOM/hang)
+                            _ = [x.strip() for x in item.split('-')]
+                            if len(_) == 2 and all(re.match(r"\A\d+\.\d+\.\d+\.\d+\Z", x) for x in _):
+                                lower, upper = addr_to_int(_[0]), addr_to_int(_[1])
+                                if 0 <= upper - lower <= 65536:
+                                    while lower <= upper:
+                                        addresses.add(int_to_addr(lower))
+                                        lower += 1
                         elif re.search(r"\d+\.\d+\.\d+\.\d+", item):
                             addresses.add(item)
 
@@ -882,6 +946,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         size = end - start + 1
 
                         if start == 0 or not session.range_handle:
+                            if session.range_handle and session.range_handle is not range_handle:
+                                try: session.range_handle.close()   # close the previously-held handle before adopting a new one (fresh start=0 / refresh / day-switch); otherwise that fd leaks on every reload -> eventual "too many open files"
+                                except Exception: pass
                             session.range_handle = range_handle
                         elif range_handle is not session.range_handle:
                             range_handle.close()
@@ -948,6 +1015,79 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes 0-0/0")
 
             return content
+
+        def _live(self, params):
+            # Server-Sent Events: push appended log lines in near real time so the UI updates instantly
+            # (no 15s poll). EventSource is same-origin -> allowed by CSP connect-src 'self'. Threaded server
+            # (ThreadingMixIn) so a held-open stream doesn't block other requests. Restricted/filtered sessions
+            # get 204 and the client falls back to Range polling. Each event carries id=<byte offset> so a
+            # reconnect (Last-Event-ID) resumes exactly, with no duplicate or skipped lines.
+            session = self.get_session()
+            if session is None:
+                self.send_response(_http_client.UNAUTHORIZED)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+            if session.netfilters is not None or session.mask_custom:
+                self.send_response(_http_client.NO_CONTENT)  # per-user redaction can't be byte-streamed -> client polls
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+            try:
+                date = datetime.datetime.strptime(params.get("date", ""), "%Y-%m-%d").strftime("%Y-%m-%d")
+            except ValueError:
+                self.send_response(_http_client.BAD_REQUEST)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+            event_log_path = os.path.join(config.LOG_DIR, "%s.log" % date)
+
+            pos = None
+            leid = self.headers.get("Last-Event-ID")
+            if leid and leid.isdigit():
+                pos = int(leid)
+            elif params.get("pos") and ("%s" % params.get("pos")).isdigit():
+                pos = int(params.get("pos"))
+
+            self.send_response(_http_client.OK)
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/event-stream")
+            self.send_header(HTTP_HEADER.CACHE_CONTROL, "no-cache")
+            self.send_header("X-Accel-Buffering", "no")  # disable proxy (nginx) response buffering
+            self.end_headers()
+
+            def _w(s):
+                self.wfile.write(s.encode(UNICODE_ENCODING) if isinstance(s, str) else s)
+
+            try:
+                cur = os.path.getsize(event_log_path) if os.path.exists(event_log_path) else 0
+                if pos is None or pos > cur:
+                    pos = cur  # default: tail only NEW lines (never replay the whole file); also recover if file shrank
+                _w(": connected\n\n"); self.wfile.flush()
+                idle = 0
+                while True:
+                    size = os.path.getsize(event_log_path) if os.path.exists(event_log_path) else 0
+                    if size < pos:        # log rotated / truncated -> resync from start
+                        pos = 0
+                    if size > pos:
+                        with open(event_log_path, "rb") as f:
+                            f.seek(pos)
+                            data = f.read(size - pos)
+                        nl = data.rfind(b"\n")
+                        if nl >= 0:
+                            off = pos
+                            for line in data[:nl + 1].split(b"\n"):
+                                off += len(line) + 1
+                                if line.strip():
+                                    _w("id: %d\ndata: %s\n\n" % (off, line.decode(UNICODE_ENCODING, "replace")))
+                            pos += nl + 1   # leave any partial trailing line to be re-read next pass
+                            self.wfile.flush()
+                            idle = 0
+                            continue
+                    idle += 1
+                    if idle >= 25:          # ~ every 25 * 0.6s = 15s: heartbeat keeps the conn alive + surfaces disconnects
+                        _w(": ping\n\n"); self.wfile.flush(); idle = 0
+                    time.sleep(0.6)
+            except Exception:
+                pass  # client disconnected (write failed) or transient I/O -> end the stream; EventSource will reconnect
+            return None
 
         def _counts(self, params):
             counts = {}

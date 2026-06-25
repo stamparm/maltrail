@@ -308,6 +308,30 @@ class TrailsDict(dict):
         for key in self._trails:
             yield key
 
+    # NOTE: items()/values() are NOT inherited from dict here - the dict base is always empty (all data lives in
+    # self._trails), so the inherited versions would silently return nothing. Route them to _trails, matching keys().
+    def items(self):
+        if self._frozen is not None or self._mmap is not None:
+            raise Exception("cannot iterate a finalized TrailsDict (keys are not retained)")
+        return self._trails.items()
+
+    def values(self):
+        if self._frozen is not None or self._mmap is not None:
+            raise Exception("cannot iterate a finalized TrailsDict (keys are not retained)")
+        return self._trails.values()
+
+    def iteritems(self):   # Python 2 parity (mirrors iterkeys)
+        if self._frozen is not None or self._mmap is not None:
+            raise Exception("cannot iterate a finalized TrailsDict (keys are not retained)")
+        for key in self._trails:
+            yield key, self._trails[key]
+
+    def itervalues(self):
+        if self._frozen is not None or self._mmap is not None:
+            raise Exception("cannot iterate a finalized TrailsDict (keys are not retained)")
+        for key in self._trails:
+            yield self._trails[key]
+
     def __iter__(self):
         if self._frozen is not None or self._mmap is not None:
             raise Exception("cannot iterate a finalized TrailsDict (keys are not retained)")
