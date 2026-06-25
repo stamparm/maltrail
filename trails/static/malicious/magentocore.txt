@@ -17732,6 +17732,49 @@ dailydosedelights.com
 
 madiatop1sys.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/185.242.245.84/relations
+# CLASS_0_HASH-HOST=353c6211fe3cc367d4f787471762b237
+# TITLE-HOST/IP=CookieLaw Plugin – Simple GDPR & Cookie Consent
+
+analyticsgtag.cloud
+analyticshotjar.info
+analyticstag.cloud
+babkinvnuk.shop
+bincdnbucket.com
+cdnanalytics.wiki
+cdnganalytics.cloud
+cdnganalytics.com
+cihanmobilya.com
+domaln.it.com
+fbpixelcdn.com
+gcdnstat.com
+gcdnstatic.com
+gcdntag.com
+gcdntag.top
+gcloudstatic.co
+googletaganalytics.pro
+gstaticbucket.com
+gstatictag.info
+gtaganalytics.com
+gtagbucket.com
+halthtracker.com
+hotjaranalytics.shop
+jephyr.it.com
+myltimosgerentex.it.com
+pennsylvaniasuretybonds.com
+pettipseu.com
+premiumlearnhub.it.com
+rilvex.it.com
+roadsideassistancesanjose.com
+rrydomexzylvando.it.com
+shilayllianande.shop
+solarexclusivity.com
+staticganalytics.info
+staticgtag.info
+sumerkifunclub.digital
+uilintoshirandro.it.com
+unpgk.com
+
 # Generic
 
 /assets/lfg.js
