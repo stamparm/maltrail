@@ -1687,3 +1687,9 @@ http://158.247.193.100
 93.113.25.227:8080
 analytis.co
 internal-services.analytis.co
+
+# Reference: https://x.com/smica83/status/2070059462136627526
+# Reference: https://www.virustotal.com/gui/file/9e070ea8c8eca0af2975e9c4fc7282a06e71cdd49347b064605d862206593af2/detection
+
+day023.com
+hashingmancera.site
