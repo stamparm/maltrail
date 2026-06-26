@@ -2720,6 +2720,13 @@ libredtail-http
 
 \bureq\/3.0.10\b
 
+# Reference: https://x.com/naumovax/status/2070512434352112038
+# Reference: https://www.securonix.com/blog/taxtrident-indian-fax-lures/
+# Reference: https://tria.ge/260406-pekzxafx8p/behavioral1
+
+DesktopCentral
+DesktopCentral Agent
+
 # Misc
 
 information_schema
