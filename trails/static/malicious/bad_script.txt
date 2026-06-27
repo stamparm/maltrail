@@ -9797,6 +9797,17 @@ drvdb9rcebidk.cloudfront.net
 /payload.js
 /payload.url
 
+# Reference: https://blog.synapticsystems.de/uac-0184-tooling-evolution-onedrive-sideload-to-remcos/
+
+/szch45/collectivisationgown.ps1
+/szch45/hintprefix.ps1
+/szch45/ritecommunion.ps1
+/szch45/shoutnewspaper.ps1
+/collectivisationgown.ps1
+/hintprefix.ps1
+/ritecommunion.ps1
+/shoutnewspaper.ps1
+
 # Generic
 
 /5c0ca79.php
