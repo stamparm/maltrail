@@ -9808,6 +9808,11 @@ drvdb9rcebidk.cloudfront.net
 /ritecommunion.ps1
 /shoutnewspaper.ps1
 
+# Reference: https://x.com/Yusufcancakiir/status/2071169895882957018
+
+/static/bot_agent.py
+/bot_agent.py
+
 # Generic
 
 /5c0ca79.php
