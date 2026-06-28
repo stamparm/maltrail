@@ -1412,6 +1412,11 @@ http://208.109.189.170
 208.109.189.170:443
 170.189.109.208.host.secureserver.net
 
+# Reference: https://x.com/Fact_Finder03/status/2071185590578520407
+
+193.26.115.79:8080
+91.92.40.212:8080
+
 # Generic
 
 /admin_123/auth.php
