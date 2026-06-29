@@ -1429,6 +1429,10 @@ devices.t7774.cc
 phase2admin.myroof.co.za
 rat.myroof.co.za
 
+# Reference: https://x.com/Fact_Finder03/status/2071547793626587476
+
+89.125.146.28:8080
+
 # Generic
 
 /admin_123/auth.php
