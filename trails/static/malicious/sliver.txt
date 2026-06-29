@@ -8692,6 +8692,10 @@ curtainbeatdisturbance.com
 45.225.135.54:443
 45.225.135.54:6000
 
+# Reference: https://x.com/etugenio/status/2071573757143953713
+
+109.107.140.235:8888
+
 # Generic
 
 /.sliver-client/
