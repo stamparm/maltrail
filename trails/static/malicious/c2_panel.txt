@@ -1433,6 +1433,10 @@ rat.myroof.co.za
 
 89.125.146.28:8080
 
+# Reference: https://x.com/Fact_Finder03/status/2071564839936242109
+
+163.245.195.26:8081
+
 # Generic
 
 /admin_123/auth.php
