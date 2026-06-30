@@ -1437,6 +1437,12 @@ rat.myroof.co.za
 
 163.245.195.26:8081
 
+# Reference: https://x.com/stop_spammerz/status/2071959303754293316
+
+188.137.231.56:443
+center123.xyz
+aaa.center123.xyz
+
 # Generic
 
 /admin_123/auth.php
