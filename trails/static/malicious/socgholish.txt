@@ -5256,6 +5256,12 @@ dashboard.premiermarketingus.com
 platform.exathomeswebuyarizona.com
 user.exathomessellmyhomeflorida.com
 
+# Reference: https://x.com/Malware_Brandon/status/2071663022938976369
+
+letsgoautomotive.com
+js-pre.letsgoautomotive.com
+php-panel.letsgoautomotive.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
