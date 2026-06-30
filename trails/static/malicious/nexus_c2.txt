@@ -24,3 +24,10 @@
 216.126.225.20:8080
 45.61.134.158:8080
 77.237.237.74:8080
+
+# Reference: https://x.com/Fact_Finder03/status/2071996231635910985
+# TITLE-HOST=Nexus Command Center · iOS Chain Lab
+# TITLE-HOST=Nexus · iOS Chain Delivery
+
+195.246.230.196:8080
+195.246.230.196:9000
