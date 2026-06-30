@@ -1443,6 +1443,13 @@ rat.myroof.co.za
 center123.xyz
 aaa.center123.xyz
 
+# Reference: https://x.com/Fact_Finder03/status/2072014804487684532
+
+http://178.104.43.86
+178.104.43.86:3000
+178.104.43.86:443
+borauth.online
+
 # Generic
 
 /admin_123/auth.php
