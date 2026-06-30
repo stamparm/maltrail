@@ -9813,6 +9813,10 @@ drvdb9rcebidk.cloudfront.net
 /static/bot_agent.py
 /bot_agent.py
 
+# Reference: https://www.virustotal.com/gui/file/452abd6b6b64f4c3ec1892015365c9d7973f694e545239f148916590cdc21d19/detection
+
+/api/bot/commands?bot_id=
+
 # Generic
 
 /5c0ca79.php
