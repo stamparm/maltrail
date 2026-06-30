@@ -8696,6 +8696,10 @@ curtainbeatdisturbance.com
 
 109.107.140.235:8888
 
+# Reference: https://x.com/Yusufcancakiir/status/2071883839920607285
+
+213.136.80.73:8443
+
 # Generic
 
 /.sliver-client/
