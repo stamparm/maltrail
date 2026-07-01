@@ -2727,6 +2727,14 @@ libredtail-http
 DesktopCentral
 DesktopCentral Agent
 
+# Reference: https://www.acronis.com/en/tru/posts/mustang-panda-targets-indias-government-and-energy-sectors/
+
+IPFetcher/1.0
+Zoho Client/1.0
+Zoho API Client/1.0
+Zoho API C-Client/1.0
+Zoho-C-Uploader/2.0
+
 # Misc
 
 information_schema
