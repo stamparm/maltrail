@@ -1450,6 +1450,11 @@ http://178.104.43.86
 178.104.43.86:443
 borauth.online
 
+# Reference: https://x.com/Fact_Finder03/status/2072197946763026869
+
+zero.heritagenb.net
+zero.otsuk.eu
+
 # Generic
 
 /admin_123/auth.php
