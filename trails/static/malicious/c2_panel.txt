@@ -1451,9 +1451,15 @@ http://178.104.43.86
 borauth.online
 
 # Reference: https://x.com/Fact_Finder03/status/2072197946763026869
+# Reference: https://x.com/skocherhan/status/2072225843762307388
 
+vaultchain.click
 zero.heritagenb.net
 zero.otsuk.eu
+
+# Reference: https://x.com/skocherhan/status/2072229414775968246
+
+http://103.122.247.36
 
 # Generic
 
