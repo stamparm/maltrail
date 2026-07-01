@@ -2,6 +2,7 @@
 # See the file 'LICENSE' for copying permission
 
 # Reference: https://x.com/JustWantToQ1/status/2043243738646945935
+# TITLE-HOST/IP=Zshell C2 Framework
 
 38.127.8.151:8084
 38.207.181.130:8084
@@ -9,3 +10,4 @@
 38.207.181.132:8084
 38.207.181.133:8084
 38.207.181.134:8084
+86.38.247.175:8084
