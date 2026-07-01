@@ -1461,6 +1461,13 @@ zero.otsuk.eu
 
 http://103.122.247.36
 
+# Reference: https://www.virustotal.com/gui/ip-address/86.38.247.175/relations
+#TITLE-HOST/IP=CTFGodzillaWeb - Shell Manager
+
+86.38.247.175:3000
+86.38.247.175:8080
+86.38.247.175:8089
+
 # Generic
 
 /admin_123/auth.php
