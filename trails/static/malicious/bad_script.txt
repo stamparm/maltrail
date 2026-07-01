@@ -9831,6 +9831,10 @@ drvdb9rcebidk.cloudfront.net
 /angeldogsled.ps1
 /philanthropyephyra.ps1
 
+# Reference: https://x.com/skocherhan/status/2072035775386914825
+
+/cloud_billing_v6zNEW2-2clk-secenv.html
+
 # Generic
 
 /5c0ca79.php
