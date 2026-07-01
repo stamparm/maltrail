@@ -1,0 +1,8 @@
+#!/command/with-contenv bash
+set -e
+
+echo 'starting maltrail webserver..'
+
+cd ${VENV}
+python server.py
+

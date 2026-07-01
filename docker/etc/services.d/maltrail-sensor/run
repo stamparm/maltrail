@@ -1,0 +1,7 @@
+#!/command/with-contenv bash
+set -e
+
+echo "starting maltrail sensor.."
+
+cd ${VENV}
+python sensor.py
