@@ -9823,6 +9823,14 @@ drvdb9rcebidk.cloudfront.net
 /bin/working_payload.cs
 /working_payload.cs
 
+# Reference: https://x.com/smica83/status/2072020659421712516
+# Reference: https://www.virustotal.com/gui/file/a1dbae0dd3e1d72f649be1c8a999274a22127ed27165018af1d96b7d6eda9baa/detection
+
+/krr4g/angeldogsled.ps1
+/krr4g/philanthropyephyra.ps1
+/angeldogsled.ps1
+/philanthropyephyra.ps1
+
 # Generic
 
 /5c0ca79.php
