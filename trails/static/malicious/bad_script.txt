@@ -9835,6 +9835,10 @@ drvdb9rcebidk.cloudfront.net
 
 /cloud_billing_v6zNEW2-2clk-secenv.html
 
+# Reference: https://app.validin.com/detail?find=popka.js&type=dom&ref_id=29d1ae006f8#tab=host_pairs (# 2026-07-03)
+
+/popka.js
+
 # Generic
 
 /5c0ca79.php
