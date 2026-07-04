@@ -244,6 +244,7 @@ _done_count = 0
 _done_lock = threading.Lock()
 _subdomains = {}
 _subdomains_sec = None
+_no_such_name_hour = None   # last hour-bucket for which NO_SUCH_NAME_COUNTERS was pruned (bounds the per-worker dict)
 _dns_exhausted_domains = set()
 
 class _set(set):
@@ -410,6 +411,7 @@ def _process_packet(packet, sec, usec, ip_offset):
     global _last_udp
     global _last_logged_udp
     global _subdomains_sec
+    global _no_such_name_hour
     global _scan_window_start
 
     try:
@@ -546,7 +548,9 @@ def _process_packet(packet, sec, usec, ip_offset):
                         if trail not in trails:
                             trail = dst_ip
                         if not any(_ in trails[trail][0] for _ in ("attacker",)) and not ("parking site" in trails[trail][0] and dst_port not in (80, 443)):
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.IPORT, trail, trails[trail][0], trails[trail][1]), packet)
+                            # IPORT iff the matched key is the addr_port form (not the bare IP). The old
+                            # `':' not in trail` check mis-typed EVERY IPv6 IP-trail as IPORT (v6 addrs contain ':').
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IPORT if trail != dst_ip else TRAIL.IP, trail, trails[trail][0], trails[trail][1]), packet)
 
                 elif (src_ip in trails or addr_port(src_ip, src_port) in trails) and dst_ip != localhost_ip:
                     _ = _last_logged_syn
@@ -556,7 +560,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                         if trail not in trails:
                             trail = src_ip
                         if not any(_ in trails[trail][0] for _ in ("malware",)):
-                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP if ':' not in trail else TRAIL.IPORT, trail, trails[trail][0], trails[trail][1]), packet)
+                            log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IPORT if trail != src_ip else TRAIL.IP, trail, trails[trail][0], trails[trail][1]), packet)
 
                 if config.USE_HEURISTICS:
                     if dst_ip != localhost_ip:
@@ -953,7 +957,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                 if ord(dns_data[3:4]) == 0x80:  # recursion available, no error
                                     _ = offset + 5
                                     try:
-
+                                        ptr = _   # NOTE: define ptr up-front - a response with an empty/truncated answer section (offset+5 >= len) skips the loop below, and the later dns_data[ptr+10:...] read would raise UnboundLocalError (NOT caught by the IndexError handler -> surfaces as an "unhandled exception")
 
                                         while _ < len(dns_data):
                                             ptr = _
@@ -1001,6 +1005,15 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                                         if not (len(parts) > 4 and all(_.isdigit() and int(_) < 256 for _ in parts[:4])):  # generic check for DNSBL IP lookups
                                             if not is_local(dst_ip):  # prevent FPs caused by local queries
+                                                # prune stale (previous-hour) entries once per hour: keys are hour-bucketed but were never
+                                                # dropped when unseen in a later hour, so DGA/scan traffic (many unique NXDOMAINs) grew the
+                                                # per-worker dict without bound (slow OOM on long-running sensors)
+                                                _cur_hour = sec // 3600
+                                                if _no_such_name_hour != _cur_hour:
+                                                    _no_such_name_hour = _cur_hour
+                                                    for _stale in [_k for _k in NO_SUCH_NAME_COUNTERS if NO_SUCH_NAME_COUNTERS[_k][0] != _cur_hour]:
+                                                        del NO_SUCH_NAME_COUNTERS[_stale]
+
                                                 for _ in filter(None, (query, "*.%s" % '.'.join(parts[-2:]) if query.count('.') > 1 else None)):
                                                     if _ not in NO_SUCH_NAME_COUNTERS or NO_SUCH_NAME_COUNTERS[_][0] != sec // 3600:
                                                         NO_SUCH_NAME_COUNTERS[_] = [sec // 3600, 1, set()]

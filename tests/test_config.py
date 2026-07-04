@@ -126,6 +126,42 @@ class TestNewKeysTolerateGarbage(unittest.TestCase):
         self.assertEqual(s._fanout_count(), 0)
 
 
+class TestValueCoercion(unittest.TestCase):
+    """read_config value coercion: boolean switches (USE_/CHECK_/ENABLE_/...) -> real bool, digits -> int,
+    absent keys -> None. Non-boolean switch values coerce to False (the silent-misconfig class the warning
+    at settings.py guards)."""
+
+    def _load(self, extra):
+        path = _write(_BASE, extra=extra)
+        _so, _se = sys.stdout, sys.stderr
+        dn = open(os.devnull, "w"); sys.stdout = sys.stderr = dn
+        try:
+            read_config(path)
+        finally:
+            sys.stdout, sys.stderr = _so, _se; dn.close(); os.unlink(path)
+
+    def test_boolean_true(self):
+        self._load("USE_HEURISTICS true\n")
+        self.assertIs(config.USE_HEURISTICS, True)
+
+    def test_boolean_false(self):
+        self._load("USE_HEURISTICS false\n")
+        self.assertIs(config.USE_HEURISTICS, False)
+
+    def test_nonboolean_switch_coerced_false(self):
+        self._load("USE_HEURISTICS yes\n")               # not 0/1/true/false -> treated as False (+ warning)
+        self.assertIs(config.USE_HEURISTICS, False)
+
+    def test_numeric_is_int(self):
+        self._load("")                                    # UPDATE_PERIOD comes from _BASE ("86400")
+        self.assertEqual(config.UPDATE_PERIOD, 86400)
+        self.assertIsInstance(config.UPDATE_PERIOD, int)
+
+    def test_absent_key_is_none(self):
+        self._load("")
+        self.assertIsNone(config.SOME_KEY_THAT_DOES_NOT_EXIST)
+
+
 class TestLogFormatParseContract(unittest.TestCase):
     """The sensor writes events with core.log.safe_value (CSV-style quoting), and the dashboard parses
     them with Papa.parse(delimiter=' '). Python's csv reader has the SAME quote semantics as Papa, so

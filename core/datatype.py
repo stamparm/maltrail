@@ -36,8 +36,11 @@ class LRUDict(object):
 
         return value
 
-    def get(self, key):
-        return self.__getitem__(key)
+    def get(self, key, default=None):
+        # dict-compatible: a caller may pass a default. Single-arg behavior is unchanged (returns
+        # None for a missing key). Prevents a TypeError footgun if code ever does cache.get(k, x).
+        value = self.__getitem__(key)
+        return default if value is None else value
 
     def __setitem__(self, key, value):
         try:

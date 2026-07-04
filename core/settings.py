@@ -304,7 +304,9 @@ def read_config(config_file):
             sys.exit("[!] missing mandatory option '%s' in configuration file '%s'" % (option, config_file))
 
     for entry in (config.USERS or []):
-        if len(entry.split(':')) != 4:
+        # maxsplit=3: the netfilter (4th field) may legitimately contain ':' (e.g. an IPv6 "::" = "all"); a plain
+        # split(':') would count >4 parts for such a valid entry and abort startup (must match the login parser).
+        if len(entry.split(':', 3)) != 4:
             sys.exit("[!] invalid USERS entry '%s'" % entry)
         if re.search(r"\$\d+\$", entry):
             sys.exit("[!] invalid USERS entry '%s'\n[?] (hint: please update PBKDF2 hashes to SHA256 in your configuration file)" % entry)
@@ -408,7 +410,11 @@ def read_whitelist():
             if re.search(r"\A\d+\.\d+\.\d+\.\d+/\d+\Z", line):
                 try:
                     prefix, mask = line.split('/')
-                    WHITELIST_RANGES.add((addr_to_int(prefix), make_mask(int(mask))))
+                    _mask = make_mask(int(mask))
+                    # mask the prefix: check_whitelisted compares `ip & mask == prefix`, so a non-network-aligned
+                    # CIDR (e.g. 10.0.5.0/16, as operators often write) would otherwise never match its own subnet
+                    # -> whitelisted traffic still alerts (false positives)
+                    WHITELIST_RANGES.add((addr_to_int(prefix) & _mask, _mask))
                 except (IndexError, ValueError):
                     WHITELIST.add(line)
             else:
@@ -467,7 +473,8 @@ def read_worst_asn():
         if key not in WORST_ASNS:
             WORST_ASNS[key] = []
         prefix, mask, name = match.groups()
-        WORST_ASNS[key].append((addr_to_int(prefix), make_mask(int(mask)), name))
+        _mask = make_mask(int(mask))   # mask the prefix so a non-aligned CIDR still matches (check compares ip & mask == prefix; no-op for already-aligned entries)
+        WORST_ASNS[key].append((addr_to_int(prefix) & _mask, _mask, name))
 
 def read_cdn_ranges():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "cdn_ranges.txt"))
@@ -476,7 +483,8 @@ def read_cdn_ranges():
         if key not in CDN_RANGES:
             CDN_RANGES[key] = []
         prefix, mask = line.split('/')
-        CDN_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
+        _mask = make_mask(int(mask))   # mask the prefix (see read_worst_asn)
+        CDN_RANGES[key].append((addr_to_int(prefix) & _mask, _mask))
 
 def read_bogon_ranges():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "bogon_ranges.txt"))
@@ -485,7 +493,8 @@ def read_bogon_ranges():
         if key not in BOGON_RANGES:
             BOGON_RANGES[key] = []
         prefix, mask = line.split('/')
-        BOGON_RANGES[key].append((addr_to_int(prefix), make_mask(int(mask))))
+        _mask = make_mask(int(mask))   # mask the prefix (see read_worst_asn)
+        BOGON_RANGES[key].append((addr_to_int(prefix) & _mask, _mask))
 
 def check_deprecated():
     if "--no-updates" in sys.argv:

@@ -96,6 +96,21 @@ class TestCheckDomain(_SensorTestBase):
         self.assertEqual(len(self.events), 1)
         self.assertEqual(self._trail_of(self.events[0]), "(www).evil.com")
 
+    def test_onion_via_tor2web(self):
+        # a .onion reached through a tor2web-style gateway (badsite.onion.to): the known onion trail
+        # must still fire, with the gateway suffix bracketed off.
+        self.trails["badsite.onion"] = ("malware (dummy)", "ref")
+        sensor._check_domain("badsite.onion.to", 1, 0, "10.0.0.1", 5555, "8.8.8.8", 53, PROTO.UDP)
+        self.assertEqual(len(self.events), 1, self.events)
+        self.assertEqual(self._trail_of(self.events[0]), "badsite.onion(.to)")
+
+    def test_ip_adress_com_relation(self):
+        # <name>.ip-adress.com lookups map back to the <name> trail (VT relation), formatted <name>(.ip-adress.com).
+        self.trails["evil"] = ("malware (dummy)", "ref")
+        sensor._check_domain("evil.ip-adress.com", 1, 0, "10.0.0.1", 5555, "8.8.8.8", 53, PROTO.UDP)
+        self.assertEqual(len(self.events), 1, self.events)
+        self.assertEqual(self._trail_of(self.events[0]), "evil(.ip-adress.com)")
+
     def test_whitelisted_suppressed(self):
         self.trails["evil.com"] = ("malware (dummy)", "ref")
         sensor.WHITELIST = set(["evil.com"])
@@ -156,6 +171,59 @@ class TestProcessPacket(_SensorTestBase):
         sensor._process_packet(pkt, 1, 0, 0)
         self.assertEqual(self.events, [])
 
+    def test_malformed_dns_no_crash_no_blind(self):
+        # Truncated/garbage DNS on port 53 must be dropped as an EXPECTED struct.error (silent), never
+        # reach the generic "unhandled exception" handler (which would mean the DNS path can crash and
+        # a malformed-packet flood could blind the sensor). A real air-gapped failure mode.
+        self.trails["evil.com"] = ("malware (dummy)", "ref")
+        errors = []
+        orig = sensor.log_error
+        sensor.log_error = lambda *a, **k: errors.append(a)
+        try:
+            payloads = [
+                struct.pack("!HHHHHH", 0x1234, 0x0100, 1, 0, 0, 0),                       # header claims 1 question, no body
+                struct.pack("!HHHHHH", 0x1234, 0x0100, 1, 0, 0, 0) + b"\x04evil\x03com",  # QNAME truncated (no null, no QTYPE/QCLASS)
+                struct.pack("!HHHHHH", 0x1234, 0x0100, 1, 0, 0, 0) + b"\x3f" + b"A" * 5,  # label length (63) overruns the buffer
+                b"\x00\x01\x02",                                                          # shorter than a DNS header
+            ]
+            for p in payloads:
+                pkt = G.ipv4(17, "10.0.0.5", "8.8.8.8", G.udp(40000, 53, p))
+                sensor._process_packet(pkt, 1, 0, 0)                                      # must not raise
+        finally:
+            sensor.log_error = orig
+        self.assertEqual(errors, [], "malformed DNS must NOT hit the unhandled-exception handler")
+        self.assertEqual([e for e in self.events if self._type_of(e) == TRAIL.DNS], [], "no DNS event from garbage")
+
+    def test_dns_response_empty_answer_section_no_crash(self):
+        # A DNS RESPONSE (recursion-available/no-error) whose answer section is absent/truncated used to
+        # hit an UnboundLocalError ('ptr') in the answer walk -- NOT caught by the inner IndexError
+        # handler, so it surfaced as an "unhandled exception". Must be handled cleanly (no error log).
+        errors = []
+        orig = sensor.log_error
+        sensor.log_error = lambda *a, **k: errors.append(a)
+        try:
+            sensor.config.USE_HEURISTICS = True
+            hdr = struct.pack("!HHHHHH", 0x1234, 0x8080, 1, 1, 0, 0)     # response, an=1 claimed but absent
+            q = b"\x04evil\x03com\x00" + struct.pack("!HH", 1, 1)
+            pkt = G.ipv4(17, "8.8.8.8", "10.0.0.5", G.udp(53, 40000, hdr + q))   # src port 53 -> response
+            sensor._process_packet(pkt, 1, 0, 0)                          # must not raise / log unhandled
+        finally:
+            sensor.log_error = orig
+        self.assertEqual(errors, [], "empty-answer DNS response must not hit the unhandled-exception handler")
+
+    def test_ipv4_with_options_header_length(self):
+        # IPv4 header with options (IHL=6 -> 24-byte header). iph_length must be derived from IHL, else
+        # the TCP header is read at the wrong offset and the SYN/bad-IP detection silently breaks.
+        import socket as _s
+        self.trails["66.66.66.66"] = ("badnet (dummy)", "ref")
+        src, dst = _s.inet_aton("10.0.0.5"), _s.inet_aton("66.66.66.66")
+        ip = struct.pack("!BBHHHBBH4s4s", 0x46, 0, 0, 0, 0, 64, 6, 0, src, dst) + b"\x00\x00\x00\x00"  # IHL=6 + 4 option bytes
+        tcp = struct.pack("!HHLLBBHHH", 50000, 443, 0, 0, 0, 0x02, 0, 0, 0)                            # SYN
+        sensor._process_packet(ip + tcp, 1, 0, 0)
+        ip_ev = [e for e in self.events if self._type_of(e) == TRAIL.IP]
+        self.assertEqual(len(ip_ev), 1, self.events)
+        self.assertEqual(self._trail_of(ip_ev[0]), "66.66.66.66")
+
     def test_non_ip_offset_no_crash(self):
         # A misaligned offset (e.g. from the DLT heuristic) lands on a non-IP byte -> version 0.
         # Must drop cleanly, not KeyError on LOCALHOST_IP[ip_version] (which the outer handler
@@ -170,6 +238,141 @@ class TestProcessPacket(_SensorTestBase):
             sensor.log_error = orig
         self.assertEqual(errors, [])
         self.assertEqual(self.events, [])
+
+
+class TestHTTPDetection(_SensorTestBase):
+    """HTTP request parsing / Host-based detection (a core detection path, previously untested).
+    A plaintext HTTP request on port 80 is parsed for its request line + Host header."""
+    REQ = b"GET /x HTTP/1.1\r\nHost: evil.com\r\n\r\n"
+
+    def _http_pkt(self, payload, dst="66.66.66.66", sport=50000):
+        return G.ipv4(6, "10.0.0.5", dst, G.tcp(sport, 80, 0x18, payload))   # PSH+ACK + HTTP payload
+
+    def test_http_host_matches_bad_domain(self):
+        # Host: evil.com where evil.com is a trail -> DNS-type detection on the Host value
+        self.trails["evil.com"] = ("malware (dummy)", "ref")
+        sensor._process_packet(self._http_pkt(self.REQ), 1, 0, 0)
+        dns = [e for e in self.events if self._type_of(e) == TRAIL.DNS]
+        self.assertTrue(any(self._trail_of(e) == "evil.com" for e in dns), self.events)
+
+    def test_http_to_bad_dst_ip_annotates_host(self):
+        # dst_ip is a bad IP trail and the request carries a Host -> IP event annotated with the host
+        self.trails["66.66.66.66"] = ("badnet (dummy)", "ref")
+        sensor._process_packet(self._http_pkt(self.REQ), 1, 0, 0)
+        ip_ev = [e for e in self.events if self._type_of(e) == TRAIL.IP]
+        self.assertEqual(len(ip_ev), 1, self.events)
+        self.assertEqual(self._trail_of(ip_ev[0]), "66.66.66.66 (evil.com)")
+
+    def test_http_missing_host_header_heuristic(self):
+        # CHECK_MISSING_HOST: a request with no Host header is flagged (potential FP source, opt-in)
+        sensor.config.USE_HEURISTICS = True
+        sensor.config.CHECK_MISSING_HOST = True
+        try:
+            req = b"GET /admin.php HTTP/1.1\r\nAccept: */*\r\n\r\n"
+            sensor._process_packet(self._http_pkt(req, sport=50001), 1, 0, 0)
+        finally:
+            sensor.config.CHECK_MISSING_HOST = False
+        http = [e for e in self.events if self._type_of(e) == TRAIL.HTTP]
+        self.assertTrue(any("missing host" in e[9] for e in http), self.events)
+        self.assertTrue(any(self._trail_of(e) == "66.66.66.66/admin.php" for e in http), self.events)
+
+    def test_http_clean_host_silent(self):
+        # a clean Host to a clean dst produces no event
+        self.trails["evil.com"] = ("malware (dummy)", "ref")
+        req = b"GET / HTTP/1.1\r\nHost: good.example\r\n\r\n"
+        sensor._process_packet(self._http_pkt(req, dst="1.1.1.1", sport=50002), 1, 0, 0)
+        self.assertEqual(self.events, [])
+
+
+class TestDNSExhaustion(_SensorTestBase):
+    """DNS-exhaustion heuristic: many DISTINCT subdomains of one domain within the window -> one alert
+    (potential DNS-based data exfil / tunneling). Threshold lowered here to keep the test small."""
+
+    def setUp(self):
+        _SensorTestBase.setUp(self)
+        sensor.config.USE_HEURISTICS = True
+        sensor._subdomains = {}
+        sensor._subdomains_sec = None
+        sensor._dns_exhausted_domains = set()
+        self._orig_thr = sensor.DNS_EXHAUSTION_THRESHOLD
+        sensor.DNS_EXHAUSTION_THRESHOLD = 3
+
+    def tearDown(self):
+        sensor.DNS_EXHAUSTION_THRESHOLD = self._orig_thr
+        _SensorTestBase.tearDown(self)
+
+    def _q(self, name, sec):
+        pkt = G.ipv4(17, "10.0.0.5", "8.8.8.8", G.udp(40000, 53, _dns_query(name)))
+        sensor._process_packet(pkt, sec, 0, 0)
+
+    def test_exhaustion_fires_once_over_threshold(self):
+        labels = ["alpha", "bravo", "charlie", "delta", "echo"]
+        for i, lbl in enumerate(labels):
+            self._q("%s.evil.com" % lbl, 100 + i)          # distinct subdomains, within the 60s window
+        exh = [e for e in self.events if "dns exhaustion" in e[9]]
+        self.assertEqual(len(exh), 1, "exactly one exhaustion alert past threshold (not one per query): %s" % self.events)
+
+    def test_no_exhaustion_below_threshold(self):
+        for i, lbl in enumerate(["one", "two"]):            # below threshold (3)
+            self._q("%s.evil.com" % lbl, 100 + i)
+        self.assertEqual([e for e in self.events if "dns exhaustion" in e[9]], [])
+
+
+class TestICMPDetection(_SensorTestBase):
+    """ICMP detection: only echo REQUESTS (type 0x08) to/from a bad IP are logged (proto ICMP)."""
+
+    def test_icmp_echo_to_bad_ip(self):
+        self.trails["66.66.66.66"] = ("badnet (dummy)", "ref")
+        icmp = b"\x08\x00" + b"\x00" * 6                      # echo request
+        sensor._process_packet(G.ipv4(1, "10.0.0.5", "66.66.66.66", icmp), 1, 0, 0)
+        ev = [e for e in self.events if self._type_of(e) == TRAIL.IP]
+        self.assertEqual(len(ev), 1, self.events)
+        self.assertEqual(ev[0][6], PROTO.ICMP)
+        self.assertEqual(self._trail_of(ev[0]), "66.66.66.66")
+
+    def test_icmp_echo_reply_ignored(self):
+        # a non-echo-request (e.g. echo reply, type 0x00) to a bad IP must NOT be logged
+        self.trails["66.66.66.66"] = ("badnet (dummy)", "ref")
+        icmp = b"\x00\x00" + b"\x00" * 6                      # echo reply
+        sensor._process_packet(G.ipv4(1, "10.0.0.5", "66.66.66.66", icmp), 1, 0, 0)
+        self.assertEqual(self.events, [])
+
+    def test_icmp_clean_ip_silent(self):
+        icmp = b"\x08\x00" + b"\x00" * 6
+        sensor._process_packet(G.ipv4(1, "10.0.0.5", "1.1.1.1", icmp), 1, 0, 0)
+        self.assertEqual(self.events, [])
+
+
+class TestNXDomainCounterBounded(_SensorTestBase):
+    """NO_SUCH_NAME_COUNTERS (NXDOMAIN/DGA heuristic) is hour-bucketed but was never pruned, so under DGA
+    traffic (many unique failed domains) it grew without bound -> slow OOM on long-running sensors. Stale
+    (previous-hour) entries must be dropped when a new-hour NXDOMAIN arrives."""
+
+    def _nxdomain(self, name):
+        hdr = struct.pack("!HHHHHH", 0x1234, 0x8083, 1, 0, 0, 0)   # DNS response, "no such name" (0x83)
+        q = b""
+        for lbl in name.split('.'):
+            q += struct.pack("!B", len(lbl)) + lbl.encode()
+        q += b"\x00" + struct.pack("!HH", 1, 1)
+        # response: resolver -> NON-local client (203.0.113.5) so the counter path runs
+        return G.ipv4(17, "8.8.8.8", "203.0.113.5", G.udp(53, 40000, hdr + q))
+
+    def setUp(self):
+        _SensorTestBase.setUp(self)
+        sensor.config.USE_HEURISTICS = True
+        sensor.NO_SUCH_NAME_COUNTERS.clear()
+        sensor._no_such_name_hour = None
+        sensor._dns_exhausted_domains = set()
+
+    def test_stale_hour_entries_pruned(self):
+        H1 = 3600
+        for i in range(5):
+            sensor._process_packet(self._nxdomain("dga%d.com" % i), H1 + i, 0, 0)   # distinct sec (same hour)
+        self.assertEqual(len(sensor.NO_SUCH_NAME_COUNTERS), 5, sensor.NO_SUCH_NAME_COUNTERS)
+        # a new-hour NXDOMAIN must prune ALL of the previous hour's entries
+        sensor._process_packet(self._nxdomain("fresh.com"), 7200, 0, 0)
+        keys = sorted(sensor.NO_SUCH_NAME_COUNTERS.keys())
+        self.assertEqual(keys, ["fresh.com"], "previous-hour entries must be pruned (bounded memory)")
 
 
 class TestWebScanHeuristicFP(_SensorTestBase):
@@ -398,6 +601,41 @@ class TestScanTrackMemoryBound(unittest.TestCase):
         for i in range(self.sensor._SCAN_MAX_KEYS + 5000):
             self.sensor._scan_track(store2, details2, ("k", i), 80, (0, 0, 80, 80))
         self.assertLessEqual(len(store2), self.sensor._SCAN_MAX_KEYS)
+
+
+class TestIPv6AndFragment(_SensorTestBase):
+    """Detection on IPv6 traffic and correct handling of IPv4 fragments (must not crash / must skip
+    non-first fragments, which lack transport headers)."""
+
+    def test_ipv6_syn_to_bad_ip(self):
+        self.trails["dead::beef"] = ("badnet (dummy)", "ref")
+        pkt = G.ipv6(6, "dead::1", "dead::beef", G.tcp(50000, 443, 0x02, b""))   # IPv6 SYN
+        sensor._process_packet(pkt, 1, 0, 0)
+        ev = [e for e in self.events if self._type_of(e) == TRAIL.IP]
+        self.assertEqual(len(ev), 1, self.events)
+        self.assertEqual(self._trail_of(ev[0]), "dead::beef")
+
+    def test_ipv6_dns_to_bad_domain(self):
+        self.trails["evil.com"] = ("malware (dummy)", "ref")
+        dns = _dns_query("evil.com")
+        pkt = G.ipv6(17, "dead::1", "dead::2", G.udp(40000, 53, dns))
+        sensor._process_packet(pkt, 1, 0, 0)
+        self.assertTrue(any(self._type_of(e) == TRAIL.DNS and self._trail_of(e) == "evil.com" for e in self.events), self.events)
+
+    def test_fragment_skipped_no_crash(self):
+        # a non-first IPv4 fragment has a nonzero fragment offset and NO transport header -> must be
+        # skipped cleanly (parsing its "ports" would read garbage). Set the frag-offset field.
+        self.trails["66.66.66.66"] = ("badnet (dummy)", "ref")
+        pkt = bytearray(G.ipv4(6, "10.0.0.5", "66.66.66.66", G.tcp(50000, 443, 0x02, b"")))
+        pkt[6:8] = struct.pack("!H", 0x0001)   # fragment_offset = 1 (non-first fragment)
+        errors = []
+        orig = sensor.log_error; sensor.log_error = lambda *a, **k: errors.append(a)
+        try:
+            sensor._process_packet(bytes(pkt), 1, 0, 0)
+        finally:
+            sensor.log_error = orig
+        self.assertEqual(self.events, [], "non-first fragment must not produce detections")
+        self.assertEqual(errors, [], "fragment handling must not raise/log an error")
 
 
 class TestDLTLearner(unittest.TestCase):
