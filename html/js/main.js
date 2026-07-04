@@ -1429,14 +1429,25 @@
   // capped JSONP: a dense page can want hundreds of distinct IPs; firing every lookup at once is a request storm
   // against stat.ripe.net and bloats <head> with hundreds of live <script> nodes. Queue + run RIPE_MAX at a time.
   var _ripeQ = [], _ripeActive = 0, RIPE_MAX = 6;
-  function ripeJSONP(query, cb) { _ripeQ.push([query, cb]); _ripePump(); }
-  function _ripePump() { while (_ripeActive < RIPE_MAX && _ripeQ.length) { var it = _ripeQ.shift(); _ripeActive++; _ripeRun(it[0], it[1]); } }
+  // Air-gap circuit breaker: RIPEstat is unreachable on an isolated network, where failures are NOT
+  // cached (only successful country codes are) -> every reload would re-storm stat.ripe.net with a
+  // <script> per IP, each capable of hanging to the timeout (console spam + delayed/absent flags).
+  // After a few consecutive failures we conclude "no internet" and stop trying for the session; a
+  // single success resets it. Fully client-side -> zero config, auto-adapts online vs air-gapped.
+  var _ripeFails = 0, _ripeDead = false, RIPE_FAIL_LIMIT = 3;
+  function ripeJSONP(query, cb) { if (_ripeDead) { try { cb(null); } catch (e) {} return; } _ripeQ.push([query, cb]); _ripePump(); }
+  function _ripePump() { while (!_ripeDead && _ripeActive < RIPE_MAX && _ripeQ.length) { var it = _ripeQ.shift(); _ripeActive++; _ripeRun(it[0], it[1]); } }
   function _ripeRun(query, cb) {
     var name = "__ripe_cb_" + (++_ripeSeq), s = document.createElement("script"), done = false, to;
     function cleanup() { clearTimeout(to); try { delete window[name]; } catch (e) { window[name] = undefined; } if (s.parentNode) s.parentNode.removeChild(s); _ripeActive--; _ripePump(); }
-    window[name] = function (data) { done = true; try { cb(data); } catch (e) {} cleanup(); };
-    s.onerror = function () { if (!done) { done = true; try { cb(null); } catch (e) {} cleanup(); } };
-    to = setTimeout(function () { if (!done) { done = true; try { cb(null); } catch (e) {} cleanup(); } }, 15000);   // a hung lookup must not stall the queue
+    function fail() {
+      if (done) return; done = true;
+      if (++_ripeFails >= RIPE_FAIL_LIMIT) { _ripeDead = true; _ripeQ.length = 0; }   // give up for this session (air-gapped)
+      try { cb(null); } catch (e) {} cleanup();
+    }
+    window[name] = function (data) { done = true; _ripeFails = 0; try { cb(data); } catch (e) {} cleanup(); };   // success -> reset the breaker
+    s.onerror = fail;
+    to = setTimeout(fail, 8000);   // a hung lookup must not stall the queue (shorter: air-gapped should fail fast)
     s.src = "https://stat.ripe.net/data/" + query + (query.indexOf("?") < 0 ? "?" : "&") + "callback=" + name;
     (document.head || document.documentElement).appendChild(s);
   }
