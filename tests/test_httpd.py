@@ -139,6 +139,26 @@ class TestHttpd(unittest.TestCase):
         self.assertIn(st_r, (200, 206))
         self.assertLessEqual(len(part), len(full))       # a byte range returns a subset, no crash
 
+    def test_incremental_range_delta(self):
+        # the live view fetches ONLY appended bytes via Range: bytes=<prev_len>-<max>. The server's
+        # byte offsets must match the file exactly, or live shows duplicate/missing events.
+        ck = self._login()
+        _, _, full = _http(self.port, "GET", "/events?date=%s" % self.date, cookie=ck)
+        prev = len(full)
+        from core.log import safe_value
+        newline = " ".join(safe_value(f) for f in ("%s 11:11:11.000000" % self.date, "sensor-c",
+                  "10.0.0.7", "9999", "1.2.3.4", "80", "TCP", "PATH", "*", "potential web scanning", "(heuristic)")) + "\n"
+        logfile = os.path.join(self.tmp, "logs", self.date + ".log")
+        with open(logfile, "a") as f:
+            f.write(newline)
+        st, _, delta = _http(self.port, "GET", "/events?date=%s" % self.date, cookie=ck,
+                             headers={"Range": "bytes=%d-2147483647" % prev})
+        self.assertIn(st, (206, 200))
+        self.assertIn(b"sensor-c", delta)                # the appended event is in the delta
+        self.assertNotIn(b"sensor-a", delta)             # old events are NOT re-sent (no duplication)
+        if st == 206:
+            self.assertEqual(delta, newline.encode(), "Range delta must be exactly the appended bytes")
+
     def test_malformed_inputs_no_5xx(self):
         ck = self._login()
         cases = [
