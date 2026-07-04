@@ -243,12 +243,12 @@
         t = { key: ttext, kind: kind, sensor: sensor, src: src, sport: sport, dst: dst, dport: dport, proto: proto,
               type: type, trail: trail, info: info, ref: ref, count: 0, first: time, last: time,
               hours: new Array(24).fill(0), sev: severityOf(info, ref),
-              srcS: newSet(), sportS: newSet(), dstS: newSet(), dportS: newSet(), protoS: newSet(), events: [] };
+              srcS: newSet(), sportS: newSet(), dstS: newSet(), dportS: newSet(), protoS: newSet(), sensorS: newSet(), events: [] };
         threats.set(ttext, t); order.push(t);
       }
       t.count++; t.hours[hr]++;
       // a threat compacts many events: collect the distinct values seen per column
-      accum(t.srcS, src); accum(t.sportS, sport); accum(t.dstS, dst); accum(t.dportS, dport); accum(t.protoS, proto);
+      accum(t.srcS, src); accum(t.sportS, sport); accum(t.dstS, dst); accum(t.dportS, dport); accum(t.protoS, proto); accum(t.sensorS, sensor);
       if (evStored < MAX_STORED_EVENTS && t.events.length < 500) { t.events.push(row); evStored++; }   // bounded total raw rows (drawer)
       if (time < t.first) t.first = time;
       if (time > t.last) t.last = time;
@@ -266,7 +266,7 @@
   }
   function threatHay(th) {
     return (th.uidc + " " + setList(th.srcS).join(" ") + " " + setList(th.dstS).join(" ") + " " +
-            setList(th.sportS).join(" ") + " " + setList(th.dportS).join(" ") + " " + setList(th.protoS).join(" ") + " " +
+            setList(th.sportS).join(" ") + " " + setList(th.dportS).join(" ") + " " + setList(th.protoS).join(" ") + " " + setList(th.sensorS).join(" ") + " " +
             th.type + " " + th.trail + " " + th.info + " " + th.ref + " " + sevName(th.sev)).toLowerCase();
   }
   // Incremental merge: fold ONLY the newly-appended rows into an existing aggregate, in O(new rows).
@@ -305,12 +305,12 @@
         t = { key: ttext, kind: kind, sensor: sensor, src: src, sport: sport, dst: dst, dport: dport, proto: proto,
               type: type, trail: trail, info: info, ref: ref, count: 0, first: time, last: time,
               hours: new Array(24).fill(0), sev: severityOf(info, ref),
-              srcS: newSet(), sportS: newSet(), dstS: newSet(), dportS: newSet(), protoS: newSet(), events: [] };
+              srcS: newSet(), sportS: newSet(), dstS: newSet(), dportS: newSet(), protoS: newSet(), sensorS: newSet(), events: [] };
         t.uidc = threatUID(ttext, kind);
         threats.set(ttext, t); order.push(t); agg.sevCount[t.sev]++;
       }
       t.count++; t.hours[hr]++; agg.sevHours[t.sev][hr]++;
-      accum(t.srcS, src); accum(t.sportS, sport); accum(t.dstS, dst); accum(t.dportS, dport); accum(t.protoS, proto);
+      accum(t.srcS, src); accum(t.sportS, sport); accum(t.dstS, dst); accum(t.dportS, dport); accum(t.protoS, proto); accum(t.sensorS, sensor);
       if ((agg._evN || 0) < MAX_STORED_EVENTS && t.events.length < 500) { t.events.push(row); agg._evN = (agg._evN || 0) + 1; }
       if (time < t.first) t.first = time;
       if (time > t.last) t.last = time;
@@ -542,9 +542,9 @@
   function csvCell(v) { v = "" + (v == null ? "" : v); if (/^[=+\-@\t\r]/.test(v)) v = "'" + v; /* neutralize spreadsheet formula injection (=cmd…, @SUM…) from attacker-controlled trail/info/tag fields opened in Excel/Sheets */ return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
   function buildCSV() {
     var rows = viewList();
-    var out = ["severity,uid,events,first_seen,last_seen,sources,destinations,ports,protocols,type,trail,info,reference,tags"];
+    var out = ["severity,uid,events,first_seen,last_seen,sensors,sources,destinations,ports,protocols,type,trail,info,reference,tags"];
     rows.forEach(function (t) {
-      out.push([sevName(t.sev), t.uidc, t.count, t.first, t.last, setList(t.srcS).join("|"), setList(t.dstS).join("|"),
+      out.push([sevName(t.sev), t.uidc, t.count, t.first, t.last, setList(t.sensorS).join("|"), setList(t.srcS).join("|"), setList(t.dstS).join("|"),
         setList(t.dportS).join("|"), setList(t.protoS).join("|"), t.type, t.trail, t.info, t.ref, (state.tags[t.uidc] || "")].map(csvCell).join(","));
     });
     return out.join("\n");
@@ -552,7 +552,7 @@
   function buildJSON() {
     return JSON.stringify(viewList().map(function (t) {
       return { severity: sevName(t.sev), uid: t.uidc, events: t.count, first_seen: t.first, last_seen: t.last,
-        sources: setList(t.srcS), destinations: setList(t.dstS), ports: setList(t.dportS), protocols: setList(t.protoS),
+        sensors: setList(t.sensorS), sources: setList(t.srcS), destinations: setList(t.dstS), ports: setList(t.dportS), protocols: setList(t.protoS),
         type: t.type, trail: t.trail, info: t.info, reference: t.ref, tags: tagsOf(t.uidc) };
     }), null, 2);
   }
@@ -793,7 +793,7 @@
     }
     var evShown = Math.min(200, ev.length);
     var evRows = ev.slice(0, 200).map(function (r) {
-      return '<tr><td class="mono">' + esc(hms(r[0])) + '</td><td class="mono">' + esc(r[2]) + ':' + esc(r[3]) + '</td><td class="mono">' + esc(r[4]) + ':' + esc(r[5]) + '</td><td>' + esc(r[6]) + '</td><td class="dwr-evtrail">' + esc(r[8]) + '</td></tr>';
+      return '<tr><td class="mono">' + esc(hms(r[0])) + '</td><td class="mono">' + esc(r[1]) + '</td><td class="mono">' + esc(r[2]) + ':' + esc(r[3]) + '</td><td class="mono">' + esc(r[4]) + ':' + esc(r[5]) + '</td><td>' + esc(r[6]) + '</td><td class="dwr-evtrail">' + esc(r[8]) + '</td></tr>';
     }).join("");
     var tcol = TYPE_COLORS[t.type] || "#8A97AD";
     d.innerHTML =
@@ -814,7 +814,7 @@
         '<div class="dwr-sec"><h4>sources \u00b7 ' + srcs.length + '</h4><div class="dchips">' + ipChips(srcs) + '</div></div>' +
         '<div class="dwr-sec"><h4>destinations \u00b7 ' + dsts.length + '</h4><div class="dchips">' + ipChips(dsts) + '</div></div>' +
         '<div class="dwr-sec"><h4>ports \u00b7 ' + ports.length + '</h4><div class="dchips">' + portChips(ports) + '</div></div>' +
-        '<div class="dwr-sec"><h4>raw events \u00b7 ' + ev.length + (ev.length >= 500 ? "+" : "") + (evShown < ev.length ? " (showing " + evShown + ")" : "") + '</h4><div class="dwr-events"><table><thead><tr><th>time</th><th>source</th><th>dest</th><th>proto</th><th>trail</th></tr></thead><tbody>' + evRows + '</tbody></table></div></div>' +
+        '<div class="dwr-sec"><h4>raw events \u00b7 ' + ev.length + (ev.length >= 500 ? "+" : "") + (evShown < ev.length ? " (showing " + evShown + ")" : "") + '</h4><div class="dwr-events"><table><thead><tr><th>time</th><th>sensor</th><th>source</th><th>dest</th><th>proto</th><th>trail</th></tr></thead><tbody>' + evRows + '</tbody></table></div></div>' +
       '</div>';
     d.querySelector("#dwr_close").onclick = closeDrawer;
     // clickable header chips: filter the table by this severity / threat-id / type, then close the drawer
@@ -993,7 +993,7 @@
       case "tag": return tagsOf(t.uidc).map(_lc);
       case "note": return [_lc(getNote(t.uidc))];
       case "uid": return [_lc(t.uidc)];
-      case "sensor": return [_lc(t.sensor)];
+      case "sensor": return setList(t.sensorS).map(_lc);
       case "class": var m = ("" + t.info).match(/\(([^)]+)\)\s*$/); return [m ? m[1].toLowerCase().trim() : ""];   // the malware/suspicious/heuristic/... class in the info field
       default: return null;
     }
@@ -1160,7 +1160,7 @@
     var n = list.length, frag = document.createDocumentFragment();
     if (!n) {
       var active = state.filters.length || state.input.trim();
-      tb.innerHTML = '<tr><td colspan="10" class="emptystate">' +
+      tb.innerHTML = '<tr><td colspan="11" class="emptystate">' +
         (active ? 'No threats match the current filter. <a href="#" data-clear="1">clear filters</a>'
                 : 'No threats for this day. ✓') + '</td></tr>';
       var cl = tb.querySelector("[data-clear]");
@@ -1201,7 +1201,8 @@
             return (ic ? '<span class="cls cls-' + ic + '" data-tip="' + ic + '" aria-label="' + ic + '">' + CLASS_ICON[ic] + '</span>' : '') +
                    '<span class="clip" data-tip="' + esc(t.info) + '">' + esc(desc) + '</span>'; })() + '</td>' +
         '<td class="mono muted" data-l="first seen" data-tip="first ' + hms(t.first) + ' → last ' + hms(t.last) +
-          '  ·  span ' + durationStr(t.first, t.last) + '  ·  ' + t.count + ' events"><span class="reltime" data-ts="' + esc(t.first) + '">' + esc(relAge(t.first) || hms(t.first)) + '</span></td>';
+          '  ·  span ' + durationStr(t.first, t.last) + '  ·  ' + t.count + ' events"><span class="reltime" data-ts="' + esc(t.first) + '">' + esc(relAge(t.first) || hms(t.first)) + '</span></td>' +
+        '<td class="mono muted" data-l="sensor">' + sensorCellSet(t.sensorS) + '</td>';
       frag.appendChild(tr);
     }
     tb.appendChild(frag);
@@ -1361,6 +1362,7 @@
     return '<span class="ell" role="button" tabindex="0" aria-label="copy ' + n + (n === 1 ? ' value' : ' values') + '" data-tip="' + esc(title) + '" data-copy="' + esc(copy) + '">…</span>';
   }
   function ipCellSet(s) { var l = setList(s); return !l.length ? "" : l.length === 1 ? ipSpan(l[0]) : ellSpan(l); }
+  function sensorCellSet(s) { var l = setList(s); return !l.length ? "" : l.length === 1 ? '<span class="mono sensor" data-f="sensor:' + esc(l[0]) + '" title="filter: sensor ' + esc(l[0]) + '">' + esc(l[0]) + '</span>' : ellSpan(l); }
   function portCellSet(s) {
     var l = setList(s); if (!l.length) return "";
     if (l.length === 1) {
@@ -1806,7 +1808,7 @@
   }
   function setStatus(msg) {
     var tb = document.getElementById("rows");
-    if (tb) tb.innerHTML = '<tr><td colspan="10" style="padding:48px;text-align:center;color:var(--muted);font-family:var(--mono)">' + esc(msg) + '</td></tr>';
+    if (tb) tb.innerHTML = '<tr><td colspan="11" style="padding:48px;text-align:center;color:var(--muted);font-family:var(--mono)">' + esc(msg) + '</td></tr>';
   }
   // Connectivity → enables/disables Live + the day calendar. A DEMO build (demo.js present → opened via file://
   // or hosted statically) has NO backend at all, so Live can never stream and the day calendar can never load
