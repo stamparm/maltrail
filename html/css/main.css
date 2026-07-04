@@ -201,6 +201,11 @@ tbody tr:hover .tagadd{opacity:.85}
   color:var(--text);border-radius:4px;padding:1px 5px;width:84px;outline:none}
 @media (max-width:680px){ .tagadd{opacity:.85} }
 thead th{user-select:none}
+/* canvases (chart minis/big) and inline SVGs (logo/icons) hold no selectable text; without this, dragging a
+   text selection across them makes the browser paint a stray selection box over each element (issue #19561) */
+canvas,svg{user-select:none;-webkit-user-select:none}
+::selection{background:var(--accent-dim)}
+::-moz-selection{background:var(--accent-dim)}
 thead th:hover{color:var(--text)}
 thead th.sort-asc::after{content:" ▲";color:var(--accent);font-size:8px;vertical-align:1px}
 thead th.sort-desc::after{content:" ▼";color:var(--accent);font-size:8px;vertical-align:1px}
@@ -217,6 +222,16 @@ table.compact thead th{padding:6px 12px}
 .chart-hit{position:absolute;background:transparent;border:none;padding:0;cursor:pointer;border-radius:5px;transition:background .1s}
 .chart-hit:hover,.chart-hit:focus-visible{background:var(--accent-dim);outline:1px solid var(--accent);outline-offset:0}
 #chart_area canvas{display:block;max-width:100%}
+.donut-tip{position:absolute;z-index:5;pointer-events:none;display:none;line-height:1.35;padding:6px 9px;border-radius:7px;font-family:var(--mono);font-size:12px;white-space:nowrap;background:var(--surface);border:1px solid var(--line-solid);box-shadow:0 6px 22px -8px rgba(0,0,0,.55);transform:translate(0,-2px)}
+.donut-tip b{display:block;color:var(--text);font-weight:600}
+.donut-tip span{color:var(--muted)}
+/* ingress/egress hint on port cells: inline SVG arrows (→ egress, ← ingress, ↔ lateral), tinted by direction.
+   inline-flex + vertical-align:middle centers the SVG exactly on the port text in every browser. */
+.port-dir{margin-left:8px;display:inline-flex;align-items:center;vertical-align:middle;cursor:default;color:var(--muted)}
+.port-dir svg{display:block}
+.pd-out{color:var(--accent)}
+.pd-in{color:var(--sev-med)}      /* inbound — stands out */
+.pd-lat{color:var(--faint)}
 
 /* --- login modal --- */
 /* no backdrop-filter: blurring a full-page layer forces an expensive re-render on every keystroke -> laggy typing */
@@ -432,7 +447,8 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 @media (prefers-reduced-motion:reduce){ .brand .mark .sweep{animation:none} }
 
 /* ===== right-click context menu (triage) ===== */
-.ctxmenu{position:fixed;display:none;z-index:9994;min-width:212px;background:var(--surface);
+.ctxmenu{position:fixed;display:none;z-index:9994;min-width:212px;max-width:min(94vw,380px);
+  max-height:calc(100vh - 72px);overflow:auto;background:var(--surface);
   border:1px solid var(--line-solid);border-radius:10px;padding:5px;font-family:var(--mono);font-size:12px;
   box-shadow:0 20px 54px -20px #000, 0 0 0 1px var(--accent-dim)}
 .ctxmenu .ctxitem{display:block;width:100%;text-align:left;background:none;border:none;color:var(--text);
@@ -457,7 +473,7 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 #rows tr{cursor:pointer}
 .drawer-scrim{position:fixed;inset:0;background:rgba(6,12,22,.55);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:opacity .2s;z-index:9990}
 .drawer-scrim.open{opacity:1;visibility:visible}
-.drawer{position:fixed;top:0;right:0;height:100vh;width:466px;max-width:92vw;background:var(--surface);
+.drawer{position:fixed;top:0;right:0;height:100vh;height:100dvh;width:466px;max-width:92vw;background:var(--surface);
   border-left:1px solid var(--line-solid);box-shadow:-30px 0 70px -34px #000;z-index:9991;
   transform:translateX(102%);transition:transform .24s cubic-bezier(.22,.61,.36,1);display:flex;flex-direction:column;overflow:hidden}
 .drawer.open{transform:none}
@@ -504,6 +520,8 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 .toolbar .ghost-btn.xport:hover{color:var(--accent);border-color:var(--accent)}
 .mute-btn{padding:5px 9px;display:inline-flex;align-items:center;justify-content:center}
 .mute-btn svg{display:block}
+/* consistent with the live button: GREEN when beeps are ON (active), plain/dimmed when muted (off) */
+.toolbar .ghost-btn.mute-btn[aria-pressed="false"]{color:#34D399;border-color:#34D399;box-shadow:0 0 12px -4px #34D399}
 .mute-btn[aria-pressed="true"]{color:var(--muted)}   /* dimmed when beeps are muted */
 /* saved views menu rows */
 .ctxview{display:flex;align-items:center}
@@ -540,9 +558,9 @@ body.light .newpill::before{background:#059669}
 .search-clear{background:none;border:none;color:var(--faint);cursor:pointer;font-size:11px;padding:0 2px;line-height:1;border-radius:4px}
 .search-clear:hover{color:var(--text)}
 .qhelp-h{font-weight:600;color:var(--muted);border-bottom:1px solid var(--line-solid);margin-bottom:3px;padding-bottom:5px}
-.ctxmenu .ctxitem.qhelp-i{display:flex;justify-content:space-between;gap:18px;align-items:baseline}
-.qhelp-i .qk{color:var(--accent);font-family:var(--mono)}
-.qhelp-i .qd{color:var(--faint);font-size:10.5px;white-space:nowrap}
+.ctxmenu .ctxitem.qhelp-i{display:flex;justify-content:space-between;gap:14px;align-items:baseline;min-width:0}
+.qhelp-i .qk{color:var(--accent);font-family:var(--mono);flex:0 1 auto;white-space:nowrap}
+.qhelp-i .qd{color:var(--faint);font-size:10.5px;flex:0 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* ===== triage status (badges + drawer buttons + ctx items) ===== */
 .trbadge{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.4px;border-radius:4px;padding:1px 5px;border:1px solid;white-space:nowrap}

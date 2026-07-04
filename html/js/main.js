@@ -354,6 +354,13 @@
     for (var i = 0; i < els.length; i++) { var ts = els[i].getAttribute('data-ts'), a = relAge(ts); els[i].textContent = a || hms(ts); }
   }
 
+  // severity mini bar: width of each segment is PROPORTIONAL to its count, and a ZERO count draws NO segment
+  // (the old `count || 1` fallback drew a full-flex bar for 0 -> e.g. 2hi/1md/0lo wrongly showed a "low" segment).
+  function sevPillrow(sev) {
+    var cols = ["var(--sev-high)", "var(--sev-med)", "var(--sev-low)"], out = "";
+    for (var i = 0; i < 3; i++) if (sev[i] > 0) out += '<i style="background:' + cols[i] + ';flex:' + sev[i] + '"></i>';
+    return '<div class="sev-pillrow">' + (out || '<i style="background:var(--line-solid);flex:1"></i>') + "</div>";   // all-zero -> one muted bar (not empty)
+  }
   function renderStats(d) {
     var domSev = d.sevCount[3] >= d.sevCount[2] && d.sevCount[3] >= d.sevCount[1] ? "high"
                : d.sevCount[2] >= d.sevCount[1] ? "medium" : "low";
@@ -383,13 +390,38 @@
       el.onclick = function () { showChart(s.lbl); };
       el.innerHTML = '<span class="tick"></span><div class="lbl">' + s.lbl + '</div><div class="num">' + s.num +
         '</div><div class="sub">' + s.sub + '</div>' +
-        (s.sev ? '<div class="sev-pillrow"><i style="background:var(--sev-high);flex:' + (s.sev[0] || 1) +
-            '"></i><i style="background:var(--sev-med);flex:' + (s.sev[1] || 1) +
-            '"></i><i style="background:var(--sev-low);flex:' + (s.sev[2] || 1) + '"></i></div>'
-          : '<canvas></canvas>');
+        (s.sev ? sevPillrow(s.sev) : '<canvas></canvas>');
       sc.appendChild(el);
       var cv = el.querySelector("canvas"); if (cv) { if (s.donut) miniDonut(cv, s.donut); else if (s.lines) sparkLines(cv, s.lines); else if (s.multi) sparkMulti(cv, s.data); else spark(cv, s.data, s.color); }
     });
+  }
+
+  // Rebuild the dashboard aggregate from a FILTERED threat list so the 5 cards + open chart report only what's
+  // shown, not the whole day. Threats / Severity / Events / Trails are exact (rebuilt from each threat's stored
+  // per-hour counts + trail). Sources are approximate: per-src event counts aren't kept per threat (srcS is a
+  // capped distinct set), so events attribute to each threat's PRIMARY src; the distinct-source COUNT uses the union.
+  function buildViewAgg(list) {
+    var srcCounts = new Map(), trailCounts = new Map(), typeHours = {}, typeCounts = {},
+        hours = new Array(24).fill(0), sevCount = { 1: 0, 2: 0, 3: 0 }, srcDistinct = new Set(), events = 0;
+    for (var i = 0; i < list.length; i++) {
+      var t = list[i], th = t.hours;
+      events += t.count; sevCount[t.sev] = (sevCount[t.sev] || 0) + 1;
+      for (var h = 0; h < 24; h++) hours[h] += th[h];
+      typeCounts[t.type] = (typeCounts[t.type] || 0) + t.count;
+      var tph = typeHours[t.type] || (typeHours[t.type] = new Array(24).fill(0));
+      for (var h2 = 0; h2 < 24; h2++) tph[h2] += th[h2];
+      var nt = normTrail(t.trail); trailCounts.set(nt, (trailCounts.get(nt) || 0) + t.count);
+      srcCounts.set(t.src, (srcCounts.get(t.src) || 0) + t.count);
+      if (t.srcS && t.srcS.vals) t.srcS.vals.forEach(function (x) { srcDistinct.add(x); });
+    }
+    return { threats: list, events: events, hours: hours, srcCounts: srcCounts, sources: srcDistinct.size || srcCounts.size,
+             trailCounts: trailCounts, trailsN: trailCounts.size, typeHours: typeHours, typeCounts: typeCounts, sevCount: sevCount, _view: true };
+  }
+  // signature of the active filter inputs — used to re-render the cards/chart only when the filtered SET changes
+  function statsFilterSig() {
+    return (state.input || "") + "" + (state.sev == null ? "" : state.sev) + "" +
+           (state.filters || []).join("") + "" + (state.showHidden ? "1" : "0") + "" +
+           wlCount() + "" + Object.keys(state.hidden || {}).length;
   }
 
   // ---- canvas charts (no D3 / Chart.js) ----
@@ -418,6 +450,80 @@
     var lx = cx + R + 26, ly = 18, hits = [];
     slices.slice(0, 11).forEach(function (s, i) { ctx.fillStyle = s.c || PALETTE[i % PALETTE.length]; ctx.fillRect(lx, ly - 7, 10, 10); ctx.fillStyle = tc.text; ctx.font = "12px ui-monospace,monospace"; ctx.textAlign = "left"; ctx.textBaseline = "middle"; var k = s.k.length > 24 ? s.k.slice(0, 23) + "…" : s.k, disp = k + "   " + s.v; ctx.fillText(disp, lx + 16, ly); if (s.token) hits.push({ x: lx - 4, y: ly - 11, w: 20 + ctx.measureText(disp).width, h: 16, token: s.token, label: s.k }); ly += 19; });   // include the trailing "other" slice (was cut at 9); hit fits the text
     return hits;
+  }
+  // Interactive donut: same look as drawDonut, but slices pop out + enlarge (with a soft glow) on hover,
+  // a tooltip shows label · count · %, and slices are click-to-filter. Returns the legend hits (unchanged
+  // contract) so showChart's overlay-button code keeps working. Respects prefers-reduced-motion (snaps).
+  function drawInteractiveDonut(cv, slices, centerNum, centerLabel) {
+    var reduce = false; try { reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) { }
+    var total = slices.reduce(function (s, x) { return s + x.v; }, 0) || 1;
+    var a = -Math.PI / 2;   // slice ANGLES are fixed; hover only changes each slice's radius/offset (s._t: 0→1 eased)
+    slices.forEach(function (s) { var ang = s.v / total * Math.PI * 2; s._a0 = a; s._a1 = a + ang; s._mid = a + ang / 2; s._t = 0; a = s._a1; });
+    var hovered = -1, legendHits = [], raf = 0, tipEl = null;
+    // reserve 16px so the hover pop/grow/glow (below) can't spill outside the canvas and get clipped
+    function geo() { var h = cv._h; var R = h / 2 - 16; return { cx: h / 2 + 6, cy: h / 2, R: R, r: R * 0.6 }; }
+
+    function paint() {
+      var tc = themeColors(), ctx = cctx(cv), G = geo();
+      slices.forEach(function (s, i) {
+        var t = s._t, full = (s._a1 - s._a0) >= Math.PI * 2 - 0.001;   // a single (full-circle) slice must NOT pop — it would shift the whole disc off-center and clip
+        var pop = full ? 0 : t * 7, oR = G.R + (full ? t * 2 : t * 5),
+            ox = G.cx + Math.cos(s._mid) * pop, oy = G.cy + Math.sin(s._mid) * pop;
+        ctx.beginPath(); ctx.moveTo(ox, oy); ctx.arc(ox, oy, oR, s._a0, s._a1); ctx.closePath();
+        ctx.fillStyle = s.c || PALETTE[i % PALETTE.length];
+        if (t > 0.01) { ctx.save(); ctx.shadowColor = ctx.fillStyle; ctx.shadowBlur = 12 * t; ctx.fill(); ctx.restore(); } else ctx.fill();
+      });
+      ctx.beginPath(); ctx.arc(G.cx, G.cy, G.r, 0, Math.PI * 2); ctx.fillStyle = tc.surface; ctx.fill();
+      // center ALWAYS shows the card's distinct metric (e.g. "498 threats") — never the hovered slice's event
+      // count, which is what confused people (hover said "47", filtering to that 1 threat then said "1"). The
+      // per-slice event count + share lives in the hover tooltip, clearly labelled, instead.
+      ctx.fillStyle = tc.text; ctx.font = "600 22px ui-monospace,monospace"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(fmtN(centerNum != null ? centerNum : total), G.cx, G.cy - 6);
+      ctx.fillStyle = tc.muted; ctx.font = "10px system-ui"; ctx.fillText(centerLabel || "total", G.cx, G.cy + 12);
+      var lx = G.cx + G.R + 26, ly = 18, hits = [];
+      slices.slice(0, 11).forEach(function (s, i) {
+        ctx.fillStyle = s.c || PALETTE[i % PALETTE.length]; ctx.fillRect(lx, ly - 7, 10, 10);
+        ctx.fillStyle = tc.text; ctx.font = (i === hovered ? "600 " : "") + "12px ui-monospace,monospace"; ctx.textAlign = "left"; ctx.textBaseline = "middle";
+        var k = s.k.length > 24 ? s.k.slice(0, 23) + "…" : s.k, disp = k + "   " + s.v;
+        ctx.fillText(disp, lx + 16, ly);
+        if (s.token) hits.push({ x: lx - 4, y: ly - 11, w: 20 + ctx.measureText(disp).width, h: 16, token: s.token, label: s.k });
+        ly += 19;
+      });
+      legendHits = hits;
+    }
+    function tick() {
+      raf = 0; var moving = false;
+      slices.forEach(function (s, i) {
+        var tgt = i === hovered ? 1 : 0;
+        if (reduce) { s._t = tgt; } else if (Math.abs(tgt - s._t) < 0.01) { s._t = tgt; } else { s._t += (tgt - s._t) * 0.28; moving = true; }
+      });
+      paint();
+      if (moving && document.body.contains(cv)) raf = requestAnimationFrame(tick);
+    }
+    function kick() { if (!raf) raf = requestAnimationFrame(tick); }
+    function sliceAt(mx, my) {
+      var G = geo(), dx = mx - G.cx, dy = my - G.cy, dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < G.r * 0.85 || dist > G.R + 18) return -1;
+      var ang = Math.atan2(dy, dx); while (ang < -Math.PI / 2) ang += Math.PI * 2;
+      for (var i = 0; i < slices.length; i++) if (ang >= slices[i]._a0 && ang < slices[i]._a1) return i;
+      return -1;
+    }
+    function tip(i, mx, my) {
+      var host = cv.parentNode; if (!host) return;
+      if (!tipEl) { tipEl = document.createElement("div"); tipEl.className = "donut-tip"; host.appendChild(tipEl); }
+      var s = slices[i], pct = Math.round(s.v / total * 100);
+      tipEl.innerHTML = "<b>" + esc(s.k) + "</b><span>" + fmtN(s.v) + " event" + (s.v === 1 ? "" : "s") + " · " + pct + "%</span>";
+      tipEl.style.display = "block"; tipEl.style.left = (mx + 14) + "px"; tipEl.style.top = (my + 14) + "px";
+    }
+    cv.onmousemove = function (e) {
+      var p = evXY(cv, e), mx = p[0], my = p[1], i = sliceAt(mx, my);
+      cv.style.cursor = (i >= 0 && slices[i].token) ? "pointer" : "default";
+      if (i >= 0) tip(i, mx, my); else if (tipEl) tipEl.style.display = "none";
+      if (i !== hovered) { hovered = i; kick(); }
+    };
+    cv.onmouseleave = function () { if (tipEl) tipEl.style.display = "none"; if (hovered !== -1) { hovered = -1; cv.style.cursor = "default"; kick(); } };
+    cv.onclick = function () { if (hovered >= 0 && slices[hovered].token) { hideChart(); addFilter(slices[hovered].token); } };
+    paint();   // initial static frame (also populates legendHits)
+    return legendHits;
   }
   function drawLines(cv, series) {
     var tc = themeColors();
@@ -477,8 +583,88 @@
     });
     return hits;
   }
+  // ---- shared interactive-chart helpers (used by the donut/bars/split hover) ----
+  function prefersReduced() { try { return window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) { return false; } }
+  // Mouse position in the canvas's LOGICAL coordinate space (0.._w × 0.._h). Uses getBoundingClientRect ratios,
+  // not e.offsetX/offsetY — the latter is wrong under the accessibility CSS `zoom`, so the hit-test would light
+  // up the wrong slice/bar at any zoom ≠ 1. The ratio is measured in one consistent space, so zoom cancels out.
+  function evXY(cv, e) { var r = cv.getBoundingClientRect(); return [(e.clientX - r.left) / (r.width || 1) * cv._w, (e.clientY - r.top) / (r.height || 1) * cv._h]; }
+  function chartTip(cv, html, mx, my) {
+    var host = cv.parentNode; if (!host) return;
+    var el = host.querySelector(".donut-tip"); if (!el) { el = document.createElement("div"); el.className = "donut-tip"; host.appendChild(el); }
+    if (html == null) { el.style.display = "none"; return; }
+    el.innerHTML = html; el.style.display = "block"; el.style.left = (mx + 14) + "px"; el.style.top = (my + 14) + "px";
+  }
+  // Sources bars: hovered bar brightens + widens + glows (others dim), tooltip shows count · %, whole column
+  // is click-to-filter. Handles all interaction on the canvas -> returns [] so showChart lays no blocking overlay.
+  function drawInteractiveBars(cv, items) {
+    var reduce = prefersReduced(), hovered = -1, raf = 0, total = items.reduce(function (s, x) { return s + x[1]; }, 0) || 1;
+    items.forEach(function (it) { it._t = 0; });
+    function paint() {
+      var tc = themeColors(), ctx = cctx(cv), w = cv._w, h = cv._h, pad = 30, gh = h - pad * 2 - 18,
+          n = items.length || 1, gap = (w - pad * 2) / n, bw = gap * 0.6, max = 1;
+      items.forEach(function (it) { if (it[1] > max) max = it[1]; });
+      for (var g = 0; g <= 4; g++) { var yy = pad + gh - gh * g / 4; ctx.strokeStyle = tc.line; ctx.beginPath(); ctx.moveTo(pad, yy); ctx.lineTo(w - pad, yy); ctx.stroke(); }
+      items.forEach(function (it, i) {
+        var t = it._t, bh = gh * it[1] / max, gw = bw + t * 6, x = pad + gap * i + (gap - gw) / 2, y = pad + gh - bh, col = PALETTE[i % PALETTE.length];
+        ctx.globalAlpha = (hovered < 0 || i === hovered) ? 1 : 0.4; ctx.fillStyle = col;
+        if (t > 0.01) { ctx.save(); ctx.shadowColor = col; ctx.shadowBlur = 16 * t; ctx.fillRect(x, y, gw, bh); ctx.restore(); } else ctx.fillRect(x, y, gw, bh);
+        ctx.globalAlpha = 1;
+        ctx.save(); ctx.translate(x + gw / 2, pad + gh + 6); ctx.rotate(Math.PI / 5); ctx.fillStyle = i === hovered ? tc.text : tc.muted; ctx.font = "9px ui-monospace,monospace"; ctx.textAlign = "left"; ctx.fillText(it[0].length > 18 ? it[0].slice(0, 17) + "…" : it[0], 0, 0); ctx.restore();
+      });
+    }
+    function tick() { raf = 0; var moving = false; items.forEach(function (it, i) { var tgt = i === hovered ? 1 : 0; if (reduce) it._t = tgt; else if (Math.abs(tgt - it._t) < 0.01) it._t = tgt; else { it._t += (tgt - it._t) * 0.3; moving = true; } }); paint(); if (moving && document.body.contains(cv)) raf = requestAnimationFrame(tick); }
+    function kick() { if (!raf) raf = requestAnimationFrame(tick); }
+    function barAt(mx, my) { var w = cv._w, pad = 30, n = items.length || 1, gap = (w - pad * 2) / n; if (mx < pad || mx > w - pad || my < pad) return -1; var i = Math.floor((mx - pad) / gap); return (i >= 0 && i < items.length) ? i : -1; }
+    cv.onmousemove = function (e) {
+      var p = evXY(cv, e), mx = p[0], my = p[1], i = barAt(mx, my); cv.style.cursor = i >= 0 ? "pointer" : "default";
+      if (i >= 0) { var it = items[i]; chartTip(cv, "<b>" + esc(it[0]) + "</b><span>" + fmtN(it[1]) + " event" + (it[1] === 1 ? "" : "s") + " · " + Math.round(it[1] / total * 100) + "%</span>", mx, my); } else chartTip(cv, null);
+      if (i !== hovered) { hovered = i; kick(); }
+    };
+    cv.onmouseleave = function () { chartTip(cv, null); if (hovered !== -1) { hovered = -1; cv.style.cursor = "default"; kick(); } };
+    cv.onclick = function () { if (hovered >= 0) { hideChart(); addFilter("src:" + items[hovered][0]); } };
+    paint(); return [];
+  }
+  // Severity split bar: hovered segment brightens + expands + glows (others dim), tooltip shows count · %,
+  // click-to-filter. The bottom legend stays as overlay hits (keyboard-clickable; it doesn't overlap the bar).
+  function drawInteractiveSplit(cv, segs) {
+    var reduce = prefersReduced(), hovered = -1, raf = 0, hits = [], total = segs.reduce(function (s, x) { return s + x.v; }, 0) || 1;
+    segs.forEach(function (s) { s._t = 0; s._x = 0; s._w = 0; });
+    function geom() { var w = cv._w, h = cv._h, pad = 44; return { w: w, h: h, pad: pad, bw: w - pad * 2, by: h / 2 - 40, bh: 34 }; }
+    function paint() {
+      var tc = themeColors(), ctx = cctx(cv), G = geom();
+      ctx.fillStyle = tc.muted; ctx.font = "12px ui-monospace,monospace"; ctx.textAlign = "left"; ctx.textBaseline = "alphabetic"; ctx.fillText(total + " threats", G.pad, G.by - 12);
+      var x = G.pad;
+      segs.forEach(function (s, i) {
+        var sw = G.bw * s.v / total, t = s._t, exp = t * 7;
+        if (sw > 0) { ctx.globalAlpha = (hovered < 0 || i === hovered) ? 1 : 0.4; ctx.fillStyle = s.c;
+          if (t > 0.01) { ctx.save(); ctx.shadowColor = s.c; ctx.shadowBlur = 18 * t; ctx.fillRect(x, G.by - exp, sw, G.bh + exp * 2); ctx.restore(); } else ctx.fillRect(x, G.by, sw, G.bh);
+          ctx.globalAlpha = 1; }
+        s._x = x; s._w = sw; x += sw;
+      });
+      var ly = G.by + G.bh + 34, slot = G.bw / segs.length; hits = [];
+      segs.forEach(function (s, i) {
+        var lx = G.pad + slot * i, pct = Math.round(s.v / total * 100);
+        ctx.fillStyle = s.c; ctx.fillRect(lx, ly - 10, 12, 12);
+        ctx.fillStyle = tc.text; ctx.font = (i === hovered ? "600 " : "") + "13px ui-monospace,monospace"; ctx.textAlign = "left"; ctx.textBaseline = "middle"; ctx.fillText(s.k, lx + 18, ly - 4);
+        var sub = s.v + " · " + pct + "%"; ctx.fillStyle = tc.muted; ctx.font = "11px ui-monospace,monospace"; ctx.fillText(sub, lx + 18, ly + 10);
+        if (s.token) hits.push({ x: lx - 4, y: ly - 18, w: 24 + Math.max(ctx.measureText(s.k).width, ctx.measureText(sub).width), h: 36, token: s.token, label: s.k });
+      });
+    }
+    function tick() { raf = 0; var moving = false; segs.forEach(function (s, i) { var tgt = i === hovered ? 1 : 0; if (reduce) s._t = tgt; else if (Math.abs(tgt - s._t) < 0.01) s._t = tgt; else { s._t += (tgt - s._t) * 0.3; moving = true; } }); paint(); if (moving && document.body.contains(cv)) raf = requestAnimationFrame(tick); }
+    function kick() { if (!raf) raf = requestAnimationFrame(tick); }
+    function segAt(mx, my) { var G = geom(); if (my < G.by - 12 || my > G.by + G.bh + 12) return -1; for (var i = 0; i < segs.length; i++) if (segs[i]._w > 0 && mx >= segs[i]._x && mx < segs[i]._x + segs[i]._w) return i; return -1; }
+    cv.onmousemove = function (e) {
+      var p = evXY(cv, e), mx = p[0], my = p[1], i = segAt(mx, my); cv.style.cursor = (i >= 0 && segs[i].token) ? "pointer" : "default";
+      if (i >= 0) { var s = segs[i]; chartTip(cv, "<b>" + esc(s.k) + "</b><span>" + fmtN(s.v) + " threat" + (s.v === 1 ? "" : "s") + " · " + Math.round(s.v / total * 100) + "%</span>", mx, my); } else chartTip(cv, null);
+      if (i !== hovered) { hovered = i; kick(); }
+    };
+    cv.onmouseleave = function () { chartTip(cv, null); if (hovered !== -1) { hovered = -1; cv.style.cursor = "default"; kick(); } };
+    cv.onclick = function () { if (hovered >= 0 && segs[hovered].token) { hideChart(); addFilter(segs[hovered].token); } };
+    paint(); return hits;
+  }
   function showChart(type) {
-    var area = document.getElementById("chart_area"), d = state.agg; if (!area || !d) return;
+    var area = document.getElementById("chart_area"), d = state.viewAgg || state.agg; if (!area || !d) return;   // follow the filtered set
     if (state.chart === type) { hideChart(); return; }
     state.chart = type; state._openChart = type; syncHash();   // keep the URL's chart= in sync (bookmarkable)
     document.querySelectorAll(".card").forEach(function (c) { c.classList.toggle("active", c.dataset.chart === type); });
@@ -486,10 +672,10 @@
     area.querySelector(".chart-x").onclick = hideChart;
     var cv = document.getElementById("bigchart"); cv._w = Math.min(980, (area.clientWidth || 940) - 34); cv._h = 250;
     var hits = [];
-    if (type === "Severity") hits = drawSplitBar(cv, [{ k: "high", v: d.sevCount[3], c: "#F43F5E", token: "sev:high" }, { k: "medium", v: d.sevCount[2], c: "#F59E0B", token: "sev:medium" }, { k: "low", v: d.sevCount[1], c: "#64748B", token: "sev:low" }]);
-    else if (type === "Trails") { var tn = topN(d.trailCounts, 9), sl = tn.items.map(function (x) { return { k: x[0], v: x[1], token: "trail:" + x[0] }; }); if (tn.other) sl.push({ k: "other", v: tn.other, c: otherColor() }); hits = drawDonut(cv, sl, d.trailsN, "trails"); }
-    else if (type === "Threats") { var ts = state.all.slice().sort(function (a, b) { return b.count - a.count; }), sl = ts.slice(0, 9).map(function (t) { return { k: t.uidc, v: t.count, c: uidColor(t.uidc), token: "uid:" + t.uidc }; }); var oth = ts.slice(9).reduce(function (s, t) { return s + t.count; }, 0); if (oth) sl.push({ k: "other", v: oth, c: otherColor() }); hits = drawDonut(cv, sl, d.threats.length, "threats"); }   // include "other" so the big donut matches the mini (like Trails)
-    else if (type === "Sources") hits = drawBars(cv, topN(d.srcCounts, 14).items);
+    if (type === "Severity") hits = drawInteractiveSplit(cv, [{ k: "high", v: d.sevCount[3], c: "#F43F5E", token: "sev:high" }, { k: "medium", v: d.sevCount[2], c: "#F59E0B", token: "sev:medium" }, { k: "low", v: d.sevCount[1], c: "#64748B", token: "sev:low" }]);
+    else if (type === "Trails") { var tn = topN(d.trailCounts, 9), sl = tn.items.map(function (x) { return { k: x[0], v: x[1], token: "trail:" + x[0] }; }); if (tn.other) sl.push({ k: "other", v: tn.other, c: otherColor() }); hits = drawInteractiveDonut(cv, sl, d.trailsN, "trails"); }
+    else if (type === "Threats") { var ts = (d.threats || state.all).slice().sort(function (a, b) { return b.count - a.count; }), sl = ts.slice(0, 9).map(function (t) { return { k: t.uidc, v: t.count, c: uidColor(t.uidc), token: "uid:" + t.uidc }; }); var oth = ts.slice(9).reduce(function (s, t) { return s + t.count; }, 0); if (oth) sl.push({ k: "other", v: oth, c: otherColor() }); hits = drawInteractiveDonut(cv, sl, d.threats.length, "threats"); }   // include "other" so the big donut matches the mini (like Trails)
+    else if (type === "Sources") hits = drawInteractiveBars(cv, topN(d.srcCounts, 14).items);
     else { var types = Object.keys(d.typeHours).sort(function (a, b) { return d.typeCounts[b] - d.typeCounts[a]; }).slice(0, 5); hits = drawLines(cv, types.map(function (t, i) { return { name: t, data: d.typeHours[t], c: TYPE_COLORS[t] || PALETTE[i], token: "type:" + t }; })); }
     // overlay transparent clickable buttons on the painted legend (canvas text isn't clickable) -> apply that filter
     var ov = area.querySelector(".chart-cv");
@@ -734,7 +920,10 @@
     });
     m.style.display = "block"; m.setAttribute("aria-hidden", "false");
     var r = btn.getBoundingClientRect(), mw = m.offsetWidth || 230;
-    m.style.left = Math.max(6, Math.min(r.left, window.innerWidth - mw - 8)) + "px"; m.style.top = (r.bottom + 5) + "px";
+    m.style.left = Math.max(6, Math.min(r.left, window.innerWidth - mw - 8)) + "px";
+    var _top = r.bottom + 5, _mh = m.offsetHeight;   // if the (capped) panel would run off the bottom, lift it up so it stays fully visible
+    if (_top + _mh > window.innerHeight - 8) _top = Math.max(8, window.innerHeight - _mh - 8);
+    m.style.top = _top + "px";
   }
 
 
@@ -985,7 +1174,7 @@
     switch (f) {
       case "src": return setList(t.srcS).map(_lc);
       case "dst": return setList(t.dstS).map(_lc);
-      case "port": return setList(t.dportS);
+      case "port": return setList(displayPortSet(t));
       case "proto": return setList(t.protoS).map(_lc);
       case "type": return [_lc(t.type)];
       case "trail": return [_lc(t.trail)];
@@ -1028,7 +1217,7 @@
       var f = tok.slice(0, ci), v = tok.slice(ci + 1); if (!v) return true;
       if (f === "sev") return v.split(",").some(function (p) { var m = { high: 3, hi: 3, "3": 3, med: 2, medium: 2, "2": 2, low: 1, lo: 1, "1": 1 }; return m[p] === t.sev; });
       if (f === "status") return v.split(",").some(function (p) { var st = state.triage[t.uidc] || "new"; if (p === "false-positive" || p === "false-pos") p = "fp"; if (p === "untriaged" || p === "open") p = "new"; return st === p; });
-      if (f === "port" || f === "count" || f === "events") { var nums = f === "port" ? setList(t.dportS).map(Number) : [t.count]; return v.split(",").some(function (p) { return _cmpNum(p, nums); }); }
+      if (f === "port" || f === "count" || f === "events") { var nums = f === "port" ? setList(displayPortSet(t)).map(Number) : [t.count]; return v.split(",").some(function (p) { return _cmpNum(p, nums); }); }
       var vals = _fieldVals(f, t);
       if (vals !== null) {
         if (quoted) return vals.some(function (x) { return x.indexOf(v) >= 0; });               // literal quoted phrase
@@ -1183,6 +1372,7 @@
       var tr = document.createElement("tr"); tr.className = cls; tr.dataset.ri = i;
       tr.innerHTML =
         '<td class="sev" data-l="severity"><span class="sev-bar"></span><span class="sev-tag" data-f="sev:' + sevName(t.sev) + '" title="filter: ' + sevName(t.sev) + ' severity">' + sevName(t.sev) + '</span></td>' +
+        '<td class="mono muted" data-l="sensor">' + sensorCellSet(t.sensorS) + '</td>' +
         '<td data-l="threat"><div class="threatline"><span class="uid ' + ltClass(hslText(hue, 0.60, 0.48)) + '" data-f="uid:' + t.uidc + '" title="filter: this threat id" style="background:hsl(' + hue + ',60%,48%);color:' + hslText(hue, 0.60, 0.48) + '">' + t.uidc + '</span>' +
           (trg ? '<span class="trbadge tr-' + trg + '">' + TRIAGE_LABEL[trg] + '</span>' : '') +
           (getNote(t.uidc) ? '<span class="noteind" title="has a note">\u270E</span>' : '') +
@@ -1190,10 +1380,10 @@
           '<button class="rowhide" data-hide="' + t.uidc + '" title="' + (isH ? "restore threat" : "hide threat") +
           '" aria-label="' + (isH ? "restore threat" : "hide threat") + '">' + (isH ? "↺" : "✕") + '</button>' +
           '<button class="tagadd" data-tag="' + t.uidc + '" title="add tag">+tag</button></div></td>' +
-        '<td data-l="activity"><span class="count">' + t.count + '×</span></td>' +
+        '<td data-l="events"><span class="count">' + t.count + '×</span></td>' +
         '<td data-l="source">' + ipCellSet(t.srcS) + '</td>' +
         '<td data-l="destination">' + ipCellSet(t.dstS) + '</td>' +
-        '<td class="mono" data-l="port">' + portCellSet(t.dportS) + '</td>' +
+        '<td class="mono" data-l="port">' + portCellSet(displayPortSet(t)) + portDirHint(t) + '</td>' +
         '<td data-l="type"><span class="type lt-w" data-f="type:' + esc(t.type) + '" title="filter: type ' + esc(t.type) + '" style="background:' + tc + ';color:#fff">' + esc(t.type) + '</span></td>' +
         '<td data-l="trail"><span class="trail" data-tip="' + esc(ftrail) + '">' + trailCellHtml(ftrailPH, ftrail) + '</span></td>' +
         '<td class="mono muted" data-l="info">' +
@@ -1201,8 +1391,7 @@
             return (ic ? '<span class="cls cls-' + ic + '" data-tip="' + ic + '" aria-label="' + ic + '">' + CLASS_ICON[ic] + '</span>' : '') +
                    '<span class="clip" data-tip="' + esc(t.info) + '">' + esc(desc) + '</span>'; })() + '</td>' +
         '<td class="mono muted" data-l="first seen" data-tip="first ' + hms(t.first) + ' → last ' + hms(t.last) +
-          '  ·  span ' + durationStr(t.first, t.last) + '  ·  ' + t.count + ' events"><span class="reltime" data-ts="' + esc(t.first) + '">' + esc(relAge(t.first) || hms(t.first)) + '</span></td>' +
-        '<td class="mono muted" data-l="sensor">' + sensorCellSet(t.sensorS) + '</td>';
+          '  ·  span ' + durationStr(t.first, t.last) + '  ·  ' + t.count + ' events"><span class="reltime" data-ts="' + esc(t.first) + '">' + esc(relAge(t.first) || hms(t.first)) + '</span></td>';
       frag.appendChild(tr);
     }
     tb.appendChild(frag);
@@ -1261,6 +1450,16 @@
     renderChips(); renderSevFilter(); renderNewPill();
     var _sc = document.getElementById("search_clear"); if (_sc) _sc.style.display = state.input ? "" : "none";
     var list = viewList();
+    // Cards + open chart follow the FILTERED set (filters only ever remove, so list < all == filtered). Rebuild the
+    // aggregate from the filtered threats; skip the redraw when the filter set is unchanged (pagination / sort).
+    var _filtered = list.length !== state.all.length;
+    state.viewAgg = _filtered ? buildViewAgg(list) : state.agg;
+    var _ssig = _filtered ? ("f" + statsFilterSig()) : ("all:" + (state.agg ? state.agg.threats.length : 0));
+    if (_ssig !== state._statsSig) {
+      state._statsSig = _ssig;
+      if (state.viewAgg) renderStats(state.viewAgg);
+      if (state.chart) { var _oc = state.chart; state.chart = null; showChart(_oc); }   // redraw the open chart on the new set
+    }
     var total = list.length, size = state.limit;
     var pages = Math.max(1, Math.ceil(total / size));
     if (state.page >= pages) state.page = pages - 1;
@@ -1363,6 +1562,51 @@
   }
   function ipCellSet(s) { var l = setList(s); return !l.length ? "" : l.length === 1 ? ipSpan(l[0]) : ellSpan(l); }
   function sensorCellSet(s) { var l = setList(s); return !l.length ? "" : l.length === 1 ? '<span class="mono sensor" data-f="sensor:' + esc(l[0]) + '" title="filter: sensor ' + esc(l[0]) + '">' + esc(l[0]) + '</span>' : ellSpan(l); }
+  // Which port to SHOW/FILTER for a threat + the direction the FLAGGED traffic flowed relative to it. The chosen
+  // port is the SERVICE (triggering) side; the arrow is then FACTUAL — it just reports whether that port is the
+  // dst of the logged packet (traffic went INTO it: a request/attack → "in", arrow ←) or the src (traffic came
+  // OUT of it: a response → "out", arrow →). Service side is decided, in order of soundness:
+  //   1) an IP:port trail names the exact triggering port + endpoint -> compare its IP to src/dst (any port size)
+  //   2) a recognised well-known service port (53/80/443/8080/…) -> that side is the service
+  //   3) fallback: the lower port number is the service (ephemeral ports are high)
+  // Examples: SQL-inj request to 200:8080 -> "8080 ←"; sinkhole DNS *reply* from :53 -> "53 →"; malware-domain
+  // DNS *query* to :53 -> "53 ←"; connection to C2 bad:54321 (IPORT trail) -> "54321 ←".
+  var WELLKNOWN = { "20": 1, "21": 1, "22": 1, "23": 1, "25": 1, "53": 1, "67": 1, "68": 1, "69": 1, "80": 1, "110": 1, "123": 1, "135": 1, "137": 1, "138": 1, "139": 1, "143": 1, "161": 1, "162": 1, "389": 1, "443": 1, "445": 1, "465": 1, "514": 1, "587": 1, "636": 1, "993": 1, "995": 1, "1080": 1, "1433": 1, "1521": 1, "3128": 1, "3306": 1, "3389": 1, "5060": 1, "5432": 1, "5900": 1, "6379": 1, "6667": 1, "8000": 1, "8080": 1, "8118": 1, "8443": 1, "8888": 1, "9200": 1, "27017": 1 };
+  var EPHEMERAL_MIN = 32768;   // OS-assigned client ports live here (Linux 32768-60999, IANA 49152+); a service port is below it
+  function portInfo(t) {
+    var sp = parseInt(t.sport, 10), dp = parseInt(t.dport, 10), haveS = sp > 0, haveD = dp > 0;
+    if (!(haveS && haveD)) return { set: haveS ? t.sportS : t.dportS, dir: "" };   // one side portless (ICMP etc.)
+    var IN = { set: t.dportS, dir: "in" }, OUT = { set: t.sportS, dir: "out" };
+    // 1) IP:port trail names the exact triggering port + endpoint -> compare its IP to src/dst (exact, any port size)
+    var m = ("" + t.trail).match(/^\[?(.*?)\]?:(\d+)$/);
+    if (m) { if (m[1] === t.dst) return IN; if (m[1] === t.src) return OUT; }
+    // 1b) a bare-IP trail equal to the destination = we connected TO that bad host -> traffic INTO its port
+    //     (fixes a bad dst on a high, non-well-known port that the heuristics below can't disambiguate). Bad-SOURCE
+    //     bare-IP trails are left to the heuristics, which correctly pick our (destination) service port.
+    if (t.trail === t.dst) return IN;
+    // 2) a privileged (<1024) or registered well-known port on exactly one side is the service
+    var sSvc = sp < 1024 || WELLKNOWN[t.sport], dSvc = dp < 1024 || WELLKNOWN[t.dport];
+    if (dSvc && !sSvc) return IN;
+    if (sSvc && !dSvc) return OUT;
+    // 3) ephemeral rule: the side that is NOT a high (ephemeral) port is the service — catches services on
+    //    non-well-known mid-range ports (e.g. 8081) vs a real client ephemeral, without a lookup table
+    var sEph = sp >= EPHEMERAL_MIN, dEph = dp >= EPHEMERAL_MIN;
+    if (dEph && !sEph) return OUT;   // dst is ephemeral -> src is the service (traffic came OUT of it)
+    if (sEph && !dEph) return IN;    // src is ephemeral -> dst is the service (traffic went INTO it)
+    // 4) last resort (both/neither look like a service): lower port = service
+    return dp <= sp ? IN : OUT;
+  }
+  function displayPortSet(t) { return portInfo(t).set; }
+  function portDir(t) { return portInfo(t).dir; }
+  // inline SVG arrows (not Unicode glyphs, whose vertical position is font-dependent — Firefox rendered → / ← below
+  // the text's middle). An SVG is centered by construction, so vertical-align:middle aligns it on the port text in
+  // every browser. ← = the traffic INTO this port was flagged; → = the traffic OUT of this port was flagged.
+  function _arrowSVG(paths) { return '<svg class="dir-arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + paths + '</svg>'; }
+  var PORT_DIR = {
+    out: [_arrowSVG('<line x1="4" y1="12" x2="18.5" y2="12"/><polyline points="13 6.5 19 12 13 17.5"/>'), "the traffic OUT of this port was flagged (e.g. a malicious response/reply)"],
+    "in": [_arrowSVG('<line x1="20" y1="12" x2="5.5" y2="12"/><polyline points="11 6.5 5 12 11 17.5"/>'), "the traffic INTO this port was flagged (e.g. a malicious request/attack)"]
+  };
+  function portDirHint(t) { var d = portDir(t); return d ? '<span class="port-dir pd-' + d + '" title="' + PORT_DIR[d][1] + '">' + PORT_DIR[d][0] + '</span>' : ""; }
   function portCellSet(s) {
     var l = setList(s); if (!l.length) return "";
     if (l.length === 1) {
@@ -1563,7 +1807,7 @@
     try { localStorage.setItem("mt_theme", t); } catch (e) { }
     applyTheme(t);
     // canvases bake in theme colors at draw time -> redraw the stat minis + any open chart so they match the new theme
-    if (state.agg) { renderStats(state.agg); var oc = state.chart; if (oc) { state.chart = null; showChart(oc); } }
+    if (state.agg) { renderStats(state.viewAgg || state.agg); var oc = state.chart; if (oc) { state.chart = null; showChart(oc); } }
   }
   // ---- text size (accessibility): zoom the whole UI in discrete steps, persisted ----
   var FZ_STEPS = [0.9, 1, 1.1, 1.25, 1.4];
@@ -1806,7 +2050,7 @@
       var newHigh = newOnes.filter(function (t) { return t.sev === 3; });
       if (state.live && newHigh.length) alertNew(newHigh);
     }
-    renderStats(d); refresh();
+    state._statsSig = null; refresh();   // refresh() owns stats rendering now (full or filtered); null forces a redraw on new data
     state.newUids = {};   // flash is one-time; the 'N new' pill (newCount) persists until cleared
     if (!state._intro) {   // one orchestrated reveal on first paint; removed so later renders/refreshes don't replay
       state._intro = true;
