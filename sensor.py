@@ -57,6 +57,7 @@ from core.parallel import write_block
 from core.settings import config
 from core.settings import CAPTURE_TIMEOUT
 from core.settings import CHECK_CONNECTION_MAX_RETRIES
+from core import fastfilter
 from core.settings import CONFIG_FILE
 from core.settings import CONSONANTS
 from core.settings import DLT_OFFSETS
@@ -112,10 +113,122 @@ warnings.filterwarnings(action="ignore", category=DeprecationWarning)       # NO
 _buffer = None
 _caps = []
 _connect_sec = 0
+
+
+def _fanout_count():
+    """Number of PACKET_FANOUT capture sockets to open per live interface (CAPTURE_FANOUT).
+    Lets the kernel flow-hash one interface's traffic across N capture threads instead of one,
+    scaling capture past a single thread. <=1 / unset / 'false' = off; 'true'/'auto' = CPU count.
+    Linux + a pcapy-ng that exposes set_fanout only; otherwise it falls back to a single socket."""
+    val = getattr(config, "CAPTURE_FANOUT", None)
+    if val is None or val == "":
+        return 0
+    try:
+        n = int(val)
+    except (TypeError, ValueError):
+        n = _cpu_count() if str(val).strip().lower() in ("true", "auto", "yes", "on") else 0
+    return n if n > 1 else 0
+
+
+def _cpu_count():
+    """Logical CPU count, Py2 + Py3 safe (os.cpu_count is Py3.4+)."""
+    try:
+        return os.cpu_count() or 1
+    except AttributeError:
+        try:
+            import multiprocessing
+            return multiprocessing.cpu_count()
+        except Exception:
+            return 1
+
+
+def _src_hash(packet, ip_offset):
+    """Deterministic hash of a packet's source IP (v4 or v6), for source-affinity worker routing.
+    Same source -> same value (so its whole flow/scan lands on one worker); a polynomial roll gives
+    an even spread across sources for load balance. Returns a non-negative int (0 if not IP)."""
+    try:
+        ver = bytearray(packet[ip_offset:ip_offset + 1])[0] >> 4
+    except IndexError:
+        return 0
+    if ver == 4:
+        src = packet[ip_offset + 12:ip_offset + 16]
+    elif ver == 6:
+        src = packet[ip_offset + 8:ip_offset + 24]
+    else:
+        return 0
+    h = 0
+    for b in bytearray(src):
+        h = (h * 131 + b) & 0xffffffff
+    return h
+
+
+def _cfg_bool(value):
+    """True iff a config value is an affirmative switch. Robust whether read_config gave us a real
+    bool (USE_/CHECK_/... prefixes) or a raw string (e.g. FAST_ADMIT_ADAPTIVE, which has no boolean
+    prefix) -- bool('false') is True, so a plain bool() cast would wrongly enable a 'false' switch."""
+    if isinstance(value, bool):
+        return value
+    return str(value).strip().lower() in ("1", "true", "yes", "on")
+
+
+_HEURISTIC_NAMES = ("port_scanning", "udp_scanning", "infection", "web_scanning", "dns_exhaustion", "long_domain")
+_disabled_heuristics_cache = [None]
+
+def _heuristic_enabled(name):
+    """Whether a named (low-value/noisy) heuristic should emit events. Lets an operator mute the
+    annoying ones (e.g. `DISABLED_HEURISTICS port_scanning, dns_exhaustion`) without turning off
+    USE_HEURISTICS wholesale. Unset => all enabled (no behavior change). Names: %s.""" % ", ".join(_HEURISTIC_NAMES)
+    cached = _disabled_heuristics_cache[0]
+    if cached is None:
+        raw = getattr(config, "DISABLED_HEURISTICS", None) or ""
+        if not isinstance(raw, str):
+            raw = ",".join(raw)                         # tolerate a list from read_config
+        cached = frozenset(_.strip().lower() for _ in re.split(r"[,\s]+", raw) if _.strip())
+        _disabled_heuristics_cache[0] = cached
+    return name not in cached
+
+
+# Sliding-window scan detection: instead of clearing the accumulators every ~1s (which let any
+# sub-threshold-rate scan evade), keep state for _scan_window() seconds and alert once per key per
+# window. Memory is bounded by a per-key item cap and a total-key cap (so a 60k-port scan or a busy
+# network can't balloon the dicts).
+_SCAN_TRACK_PER_KEY = 1024     # plenty above any threshold; once hit, the scan is already detected
+_SCAN_MAX_KEYS = 50000         # cap distinct (src,dst) pairs tracked at once
+_STEALTH_FLAGS = frozenset((0x00, 0x01, 0x29))   # NULL / bare-FIN / XMAS scans (nmap -sN/-sF/-sX)
+
+def _scan_window():
+    """Sliding-window length in seconds for the scan heuristics (default 30). Longer = catches
+    slower scans but retains more state; bounded to a sane range."""
+    try:
+        return max(1, min(3600, int(getattr(config, "SCAN_WINDOW", 30) or 30)))
+    except (TypeError, ValueError):
+        return 30
+
+def _scan_track(store, details, key, item, detail):
+    """Add item/detail to a sliding-window scan accumulator with BOUNDED memory: cap the number of
+    distinct keys (_SCAN_MAX_KEYS) and items-per-key (_SCAN_TRACK_PER_KEY). Once a key is over its
+    threshold the scan is already detected, so refusing further growth loses no detection while
+    keeping RAM bounded even on a busy network or against a 65k-port sweep."""
+    s = store.get(key)
+    if s is None:
+        if len(store) >= _SCAN_MAX_KEYS:
+            return                                  # at capacity -> don't start new keys
+        s = store[key] = set()
+        details[key] = set()
+    if len(s) < _SCAN_TRACK_PER_KEY:
+        s.add(item)
+        details[key].add(detail)
+
 _connect_src_dst = {}
 _connect_src_details = {}
 _path_src_dst = {}
 _path_src_dst_details = {}
+_udp_scan = {}                 # (src,dst_ip) -> set of UDP dst ports (UDP scan detection)
+_udp_scan_details = {}
+_scan_window_start = 0
+_scan_alerted = set()          # keys that already alerted this window (avoids per-second re-log flood)
+_path_alerted = set()
+_udp_alerted = set()
 _count = 0
 _locks = AttribDict()
 _multiprocessing = None
@@ -228,7 +341,7 @@ def _check_domain(query, sec, usec, src_ip, src_port, dst_ip, dst_port, proto, p
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, proto, TRAIL.DNS, trail, trails[domain][0], trails[domain][1]), packet)
                             break
 
-        if not result and config.USE_HEURISTICS:
+        if not result and config.USE_HEURISTICS and _heuristic_enabled("long_domain"):
             if len(parts[0]) > SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD and '-' not in parts[0]:
                 trail = None
 
@@ -297,6 +410,7 @@ def _process_packet(packet, sec, usec, ip_offset):
     global _last_udp
     global _last_logged_udp
     global _subdomains_sec
+    global _scan_window_start
 
     try:
         if config.USE_HEURISTICS:
@@ -315,40 +429,78 @@ def _process_packet(packet, sec, usec, ip_offset):
 
                 try:
                     for key in _connect_src_dst:
+                        if key in _scan_alerted:                 # already alerted this window -> no per-second re-log
+                            continue
                         _src_ip, _dst = key
                         if not isinstance(_dst, int) and len(_connect_src_dst[key]) > PORT_SCANNING_THRESHOLD:  # str _dst => per-IP key (port scan); int _dst => per-port key (infection)
-                            if not check_whitelisted(_src_ip):
-                                _dst_ip = _dst
-                                for _ in _connect_src_details[key]:
-                                    log_event((sec, usec, _src_ip, _[2], _dst_ip, _[3], PROTO.TCP, TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"), packet)
+                            _dst_ip = _dst
+                            # port-scan is the noisiest, lowest-value heuristic, BUT it is NOT locality-
+                            # suppressed: the battle-test lab showed a both-local guard silently kills
+                            # internal->internal lateral recon (a real TP). So it stays whitelist-gated
+                            # and mutable via DISABLED_HEURISTICS (the right lever for noise-averse ops).
+                            if not check_whitelisted(_src_ip) and _heuristic_enabled("port_scanning"):
+                                # log ONCE per (scanner, target) per window. The old `for _ in details`
+                                # emitted one event PER probed port -> a 1000-port scan = 1000 lines.
+                                _ = next(iter(_connect_src_details[key]))
+                                log_event((sec, usec, _src_ip, _[2], _dst_ip, _[3], PROTO.TCP, TRAIL.IP, _src_ip, "potential port scanning", "(heuristic)"), packet)
+                                _scan_alerted.add(key)
                         elif len(_connect_src_dst[key]) > INFECTION_SCANNING_THRESHOLD:
+                            # _connect_src_dst[key] is already a SET of distinct dst IPs, so exceeding the
+                            # threshold == "this local host hit >N distinct hosts on one infection port".
                             _dst_port = _dst
-                            _dst_ip = [_[-1] for _ in _connect_src_details[key]]
-                            _src_port = [_[-2] for _ in _connect_src_details[key]]
-
-                            if len(_dst_ip) == len(set(_dst_ip)):
-                                if _src_ip.startswith(_get_local_prefix()):
-                                    log_event((sec, usec, _src_ip, _src_port[0], _dst_ip[0], _dst_port, PROTO.TCP, TRAIL.PORT, _dst_port, "potential infection", "(heuristic)"), packet)
+                            if _src_ip.startswith(_get_local_prefix()) and _heuristic_enabled("infection"):
+                                _ = next(iter(_connect_src_details[key]))
+                                log_event((sec, usec, _src_ip, _[-2], _[-1], _dst_port, PROTO.TCP, TRAIL.PORT, _dst_port, "potential infection", "(heuristic)"), packet)
+                                _scan_alerted.add(key)
                 finally:
                     if getattr(_locks, "heuristics", None):
                         _locks.heuristics.release()
 
-                _connect_src_dst.clear()
-                _connect_src_details.clear()
-
                 for key in list(_path_src_dst):   # snapshot keys: _path_src_dst is written lock-free by other capture threads, so a bare `for key in _path_src_dst` races into "dictionary changed size during iteration" in multi-interface mode (mirrors the list() snapshot at line 277). On that throw the analysis aborted and _path_src_dst was never cleared -> missed web-scan detection + unbounded growth.
+                    if key in _path_alerted:
+                        continue
                     details = _path_src_dst_details.get(key)
                     if len(_path_src_dst[key]) > WEB_SCANNING_THRESHOLD and details:   # `details` may briefly be missing/empty (its entry is created a few statements after _path_src_dst's, lock-free) -> guard the .pop()
                         _src_ip, _dst_ip = key
-                        _sec, _usec, _src_port, _dst_port, _path = details.pop()
-                        log_event((_sec, _usec, _src_ip, _src_port, _dst_ip, _dst_port, PROTO.TCP, TRAIL.PATH, "*", "potential web scanning", "(heuristic)"), packet)
+                        # FP guard (this heuristic alone had NONE, unlike port-scan's whitelist check
+                        # and infection's local-source check): skip whitelisted sources, and skip
+                        # internal<->internal traffic. Reverse proxies, service meshes, health checks
+                        # and docker/k8s networks routinely hit many distinct paths on an internal
+                        # host -> that is not web scanning. External<->internal scans are still flagged.
+                        if not check_whitelisted(_src_ip) and not (is_local(_src_ip) and is_local(_dst_ip)) and _heuristic_enabled("web_scanning"):
+                            _sec, _usec, _src_port, _dst_port, _path = details.pop()
+                            log_event((_sec, _usec, _src_ip, _src_port, _dst_ip, _dst_port, PROTO.TCP, TRAIL.PATH, "*", "potential web scanning", "(heuristic)"), packet)
+                            _path_alerted.add(key)
 
-                _path_src_dst.clear()
-                _path_src_dst_details.clear()
+                for key in list(_udp_scan):                  # UDP scan (nmap -sU): many UDP dst ports, one host
+                    if key in _udp_alerted:
+                        continue
+                    details = _udp_scan_details.get(key)
+                    if len(_udp_scan[key]) > PORT_SCANNING_THRESHOLD and details:
+                        _src_ip, _dst_ip = key
+                        if not check_whitelisted(_src_ip) and _heuristic_enabled("udp_scanning"):
+                            _ = next(iter(details))
+                            log_event((sec, usec, _src_ip, _[2], _dst_ip, _[3], PROTO.UDP, TRAIL.IP, _src_ip, "potential udp scanning", "(heuristic)"), packet)
+                            _udp_alerted.add(key)
+
+                # SLIDING WINDOW: clear only at the window boundary (not every second), so a scan spread
+                # over up to _scan_window() seconds still accumulates -> slow scans no longer slip under
+                # the old ~1s clear. Between boundaries state is kept and each key alerts at most once
+                # (via _scan_alerted / _path_alerted / _udp_alerted), so there is no per-second re-log flood.
+                if sec - _scan_window_start >= _scan_window():
+                    _connect_src_dst.clear()
+                    _connect_src_details.clear()
+                    _scan_alerted.clear()
+                    _path_src_dst.clear()
+                    _path_src_dst_details.clear()
+                    _udp_scan.clear()
+                    _udp_scan_details.clear()
+                    _udp_alerted.clear()
+                    _path_alerted.clear()
+                    _scan_window_start = sec
 
         ip_data = packet[ip_offset:]
         ip_version = ord(ip_data[0:1]) >> 4
-        localhost_ip = LOCALHOST_IP[ip_version]
 
         if ip_version == 0x04:  # IPv4
             ip_header = struct.unpack("!BBHHHBBH4s4s", ip_data[:20])
@@ -367,7 +519,9 @@ def _process_packet(packet, sec, usec, ip_offset):
             src_ip = inet_ntoa6(ip_header[6])
             dst_ip = inet_ntoa6(ip_header[7])
         else:
-            return
+            return   # not IPv4/IPv6 (e.g. a misaligned offset from the DLT heuristic) -> drop before the LOCALHOST_IP lookup below would KeyError
+
+        localhost_ip = LOCALHOST_IP[ip_version]
 
         if protocol == socket.IPPROTO_TCP:  # TCP
             src_port, dst_port, _, _, doff_reserved, flags = struct.unpack("!HHLLBB", ip_data[iph_length:iph_length + 14])
@@ -410,23 +564,28 @@ def _process_packet(packet, sec, usec, ip_offset):
                             _locks.heuristics.acquire()
 
                         try:
-                            key = (src_ip, dst_ip)  # NOTE: tuple key (was "src~dst" string); avoids per-SYN format + later split('~') and is IPv6-safe
-                            if key not in _connect_src_dst:
-                                _connect_src_dst[key] = set()
-                                _connect_src_details[key] = set()
-                            _connect_src_dst[key].add(dst_port)
-                            _connect_src_details[key].add((sec, usec, src_port, dst_port))
-
+                            # tuple keys (IPv6-safe); bounded sliding-window accumulators (see _scan_track)
+                            _scan_track(_connect_src_dst, _connect_src_details, (src_ip, dst_ip), dst_port, (sec, usec, src_port, dst_port))
                             if dst_port in POTENTIAL_INFECTION_PORTS:
-                                key = (src_ip, dst_port)
-                                if key not in _connect_src_dst:
-                                    _connect_src_dst[key] = set()
-                                    _connect_src_details[key] = set()
-                                _connect_src_dst[key].add(dst_ip)
-                                _connect_src_details[key].add((sec, usec, src_port, dst_ip))
+                                _scan_track(_connect_src_dst, _connect_src_details, (src_ip, dst_port), dst_ip, (sec, usec, src_port, dst_ip))
                         finally:
                             if getattr(_locks, "heuristics", None):
                                 _locks.heuristics.release()
+
+            elif config.USE_HEURISTICS and flags in _STEALTH_FLAGS and dst_ip != localhost_ip and _heuristic_enabled("port_scanning"):
+                # Stealth scan coverage: NULL (0x00), bare-FIN (0x01) and XMAS (FIN|PSH|URG=0x29) are
+                # flag combos no legitimate TCP stack sends (a real FIN carries ACK), so they are scan
+                # probes -- nmap -sN / -sF / -sX. Feed them into the SAME port-scan accumulator the SYN
+                # path uses, so these (previously invisible -- only flags==2 was counted) scans are
+                # caught too. ACK/Maimon scans are deliberately NOT included: a bare ACK is normal mid-
+                # connection traffic, so counting it would be a false-positive cannon.
+                if getattr(_locks, "heuristics", None):
+                    _locks.heuristics.acquire()
+                try:
+                    _scan_track(_connect_src_dst, _connect_src_details, (src_ip, dst_ip), dst_port, (sec, usec, src_port, dst_port))
+                finally:
+                    if getattr(_locks, "heuristics", None):
+                        _locks.heuristics.release()
 
             else:
                 tcph_length = doff_reserved >> 4
@@ -503,15 +662,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                     url = None
                     if config.USE_HEURISTICS and path.startswith('/'):
                         _path = path.split('/')[1]
-
-                        key = (src_ip, dst_ip)
-                        if key not in _path_src_dst:
-                            _path_src_dst[key] = set()
-                        _path_src_dst[key].add(_path)
-
-                        if key not in _path_src_dst_details:
-                            _path_src_dst_details[key] = set()
-                        _path_src_dst_details[key].add((sec, usec, src_port, dst_port, path))
+                        _scan_track(_path_src_dst, _path_src_dst_details, (src_ip, dst_ip), _path, (sec, usec, src_port, dst_port, path))
 
                     elif config.USE_HEURISTICS and dst_port == 80 and path.startswith("http://") and any(_ in path for _ in SUSPICIOUS_PROXY_PROBE_PRE_CONDITION) and not _check_domain_whitelisted(path.split('/')[2]):
                         trail = re.sub(r"(http://[^/]+/)(.+)", r"\g<1>(\g<2>)", path)
@@ -710,6 +861,19 @@ def _process_packet(packet, sec, usec, ip_offset):
                         if not any(_ in trails[trail][0] for _ in ("malware",)):
                             log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.IP, trail, trails[trail][0], trails[trail][1]), packet)
 
+                # UDP scan coverage (nmap -sU): one src hitting many distinct UDP ports on one host.
+                # The TCP scan heuristics never saw this. Benign UDP rarely fans many ports at one
+                # host (a client uses ~1 port per service; QUIC/DNS/mDNS are single-port), so distinct
+                # UDP dst-port count is a reasonable signal. Sliding-window + bounded like the rest.
+                if config.USE_HEURISTICS and dst_ip != localhost_ip:
+                    if getattr(_locks, "heuristics", None):
+                        _locks.heuristics.acquire()
+                    try:
+                        _scan_track(_udp_scan, _udp_scan_details, (src_ip, dst_ip), dst_port, (sec, usec, src_port, dst_port))
+                    finally:
+                        if getattr(_locks, "heuristics", None):
+                            _locks.heuristics.release()
+
             else:
                 dns_data = ip_data[iph_length + 8:]
 
@@ -764,7 +928,7 @@ def _process_packet(packet, sec, usec, ip_offset):
                                         elif domain not in _dns_exhausted_domains:   # alert ONCE per domain per window; otherwise EVERY subdomain query past the threshold re-logs -> a self-inflicted log flood during the very attack this detects (the set was populated at 767 but never checked here)
                                             trail = "(%s).%s" % ('.'.join(parts[:-2]), '.'.join(parts[-2:]))
                                             if re.search(r"bl\b", trail) is None:                                               # generic check for DNSBLs
-                                                if not any(_ in subdomains for _ in LOCAL_SUBDOMAIN_LOOKUPS):                   # generic check for local DNS resolutions
+                                                if not any(_ in subdomains for _ in LOCAL_SUBDOMAIN_LOOKUPS) and _heuristic_enabled("dns_exhaustion"):   # generic check for local DNS resolutions
                                                     log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.UDP, TRAIL.DNS, trail, "potential dns exhaustion (suspicious)", "(heuristic)"), packet)
                                                     _dns_exhausted_domains.add(domain)
 
@@ -1042,14 +1206,46 @@ def init():
             else:
                 print("[?] in case of any problems with packet capture on virtual interface 'any', please put all monitoring interfaces to promiscuous mode manually (e.g. 'sudo ifconfig eth0 promisc')")
 
-        for interface in interfaces:
+        fanout_n = 0 if IS_WIN else _fanout_count()
+
+        for interface_idx, interface in enumerate(interfaces):
             if interface.lower() != "any" and devices and re.sub(r"(?i)\Anetmap:", "", interface) not in devices:
                 hint = "[?] available interfaces: '%s'" % ",".join(devices)
                 sys.exit("[!] interface '%s' not found\n%s" % (interface, hint))
 
             print("[i] opening interface '%s'" % interface)
             try:
-                _caps.append(pcapy.open_live(interface, SNAP_LEN, True, CAPTURE_TIMEOUT))
+                if fanout_n:
+                    # PACKET_FANOUT: open N sockets on this interface, all joined to one kernel
+                    # fanout group (unique per interface + per process), so the kernel flow-hashes
+                    # the interface's traffic across N capture threads. Each flow stays on a single
+                    # socket (HASH), so no packet is captured twice. Falls back to one socket if the
+                    # installed pcapy/kernel lacks PACKET_FANOUT (opening N plain sockets would
+                    # otherwise DUPLICATE every packet across them).
+                    group = (os.getpid() + interface_idx) & 0xffff
+                    joined, fanout_err = [], None
+                    for _ in xrange(fanout_n):
+                        _cap = pcapy.open_live(interface, SNAP_LEN, True, CAPTURE_TIMEOUT)
+                        try:
+                            _cap.set_fanout(group, getattr(pcapy, "PACKET_FANOUT_HASH", 0))
+                        except Exception as ex:
+                            fanout_err = ex
+                            try: _cap.close()
+                            except Exception: pass
+                            break
+                        joined.append(_cap)
+                    if joined:
+                        print("[i] CAPTURE_FANOUT active: %d kernel-balanced capture socket(s) on '%s' (PACKET_FANOUT group %d)" % (len(joined), interface, group))
+                        _caps.extend(joined)
+                    else:
+                        # visible on the operational console (NOT just the error log) - a requested
+                        # knob that silently no-ops is exactly the misconfig the operator must see.
+                        print("[!] CAPTURE_FANOUT requested but PACKET_FANOUT is unavailable (%s); using a SINGLE capture socket on '%s' (need Linux + pcapy-ng >= 2.0 with set_fanout)" % (fanout_err, interface))
+                        log_error("CAPTURE_FANOUT is set but PACKET_FANOUT is unavailable (%s); "
+                                  "using a single capture socket on '%s'" % (fanout_err, interface), single=True)
+                        _caps.append(pcapy.open_live(interface, SNAP_LEN, True, CAPTURE_TIMEOUT))
+                else:
+                    _caps.append(pcapy.open_live(interface, SNAP_LEN, True, CAPTURE_TIMEOUT))
             except (socket.error, pcapy.PcapError):
                 if "permitted" in str(sys.exc_info()[1]):
                     sys.exit("[!] permission problem occurred ('%s')" % sys.exc_info()[1])
@@ -1196,6 +1392,45 @@ def _init_multiprocessing():
         else:
             print("[i] created %d more processes (out of total %d)" % (config.PROCESS_COUNT - 1, config.PROCESS_COUNT))
 
+_ioc_set_cache = None
+
+def _get_ioc_set():
+    """Packed IPv4 IOC set (all IPv4 / IPv4:port trail keys) for the in-C prefilter, built once.
+    Best-effort: if the trails store can't be enumerated, returns b'' (IP-trail packets then rely
+    on the normal admit classes / are shed as low-priority noise under load)."""
+    global _ioc_set_cache
+    if _ioc_set_cache is None:
+        try:
+            _ioc_set_cache = fastfilter.ioc_set_from_trails(trails)
+        except Exception:
+            _ioc_set_cache = b""
+    return _ioc_set_cache
+
+_dlt_learn = {}
+
+def _guess_dlt_ip_offset(datalink, packet):
+    """For a datalink that is NOT in DLT_OFFSETS, infer where the IP header begins by heuristic
+    (instead of dropping every packet). Learned + cached per datalink, locked once two packets
+    agree on the same offset; uses the provisional guess in the meantime, so nothing is dropped
+    while learning. Returns the offset or None."""
+    cached = _dlt_learn.get(datalink)
+    if isinstance(cached, int):
+        return cached
+    if cached is False:
+        return None
+    off = fastfilter.guess_ip_offset(packet)
+    if off is None:
+        return None
+    if _dlt_learn.get(("p", datalink)) == off:          # two packets agree -> lock it in
+        _dlt_learn[datalink] = off
+        try:
+            print("[i] datalink %d missing from offset table; inferred IP offset %d by heuristic" % (datalink, off))
+        except Exception:
+            pass
+        return off
+    _dlt_learn[("p", datalink)] = off                    # provisional; still usable this packet
+    return off
+
 def monitor():
     """
     Sniffs/monitors given capturing interface
@@ -1207,32 +1442,35 @@ def monitor():
         global _count
 
         ip_offset = None
-        try:
-            dlt_offset = DLT_OFFSETS[datalink]
-        except KeyError:
-            log_error("Received unexpected datalink (%d)" % datalink, single=True)
-            return
+        dlt_offset = DLT_OFFSETS.get(datalink)
 
-        try:
-            if datalink == pcapy.DLT_RAW:
-                ip_offset = dlt_offset
-
-            elif datalink == pcapy.DLT_PPP:
-                if packet[2:4] in (b"\x00\x21", b"\x00\x57"):  # (IPv4, IPv6)
+        if dlt_offset is None:
+            # Datalink not in the table: instead of dropping every packet, infer the IP-header
+            # offset heuristically (and remember it for this datalink). Still surface it once per
+            # datalink (the classic path used to log_error here) so an unsupported link is visible.
+            log_error("Received unexpected datalink (%d); attempting IP-offset heuristic" % datalink, single=True)
+            ip_offset = _guess_dlt_ip_offset(datalink, packet)
+        else:
+            try:
+                if datalink == pcapy.DLT_RAW:
                     ip_offset = dlt_offset
 
-            elif datalink == pcapy.DLT_NULL:
-                if packet[0:4] in (b"\x02\x00\x00\x00", b"\x23\x00\x00\x00"):  # (IPv4, IPv6)
-                    ip_offset = dlt_offset
+                elif datalink == pcapy.DLT_PPP:
+                    if packet[2:4] in (b"\x00\x21", b"\x00\x57"):  # (IPv4, IPv6)
+                        ip_offset = dlt_offset
 
-            elif dlt_offset >= 2:
-                if packet[dlt_offset - 2:dlt_offset] == b"\x81\x00":  # VLAN
-                    dlt_offset += 4
-                if packet[dlt_offset - 2:dlt_offset] in (b"\x08\x00", b"\x86\xdd"):  # (IPv4, IPv6)
-                    ip_offset = dlt_offset
+                elif datalink == pcapy.DLT_NULL:
+                    if packet[0:4] in (b"\x02\x00\x00\x00", b"\x23\x00\x00\x00"):  # (IPv4, IPv6)
+                        ip_offset = dlt_offset
 
-        except IndexError:
-            pass
+                elif dlt_offset >= 2:
+                    if packet[dlt_offset - 2:dlt_offset] == b"\x81\x00":  # VLAN
+                        dlt_offset += 4
+                    if packet[dlt_offset - 2:dlt_offset] in (b"\x08\x00", b"\x86\xdd"):  # (IPv4, IPv6)
+                        ip_offset = dlt_offset
+
+            except IndexError:
+                pass
 
         if ip_offset is None:
             return
@@ -1258,6 +1496,19 @@ def monitor():
                 if _locks.count:
                     _locks.count.acquire()
 
+                # Optional source-affinity (USE_CAPTURE_AFFINITY): pin all packets of a source IP to
+                # one worker so cross-packet heuristic state (port/web/infection scan, DNS exhaustion)
+                # is COMPLETE on that worker instead of fragmented across the round-robin pool -- which
+                # otherwise needs a scan ~PROCESS_COUNT x larger to trip and emits one duplicate event
+                # per worker. Routing is done by padding the ring to the target worker's lane with
+                # empty (skipped) blocks, so the worker/ring code is unchanged. Off by default.
+                if config.USE_CAPTURE_AFFINITY and config.PROCESS_COUNT > 2:
+                    mod = config.PROCESS_COUNT - 1
+                    target = _src_hash(packet, ip_offset) % mod
+                    while _count % mod != target:
+                        write_block(_buffer, _count, b"")          # filler; consumed and ignored (len < 12) by worker _count%mod
+                        _n.value = _count = _count + 1
+
                 write_block(_buffer, _count, block)
                 _n.value = _count = _count + 1
 
@@ -1269,6 +1520,78 @@ def monitor():
         except socket.timeout:
             pass
 
+    def _run_fast_prefilter(_cap, datalink):
+        # In-C prefilter (pcapy-ng loop_filtered): classify + admit in C, dropping provably-inert
+        # noise; only DNS/DPI/IOC/HEAD/SYN packets cross into Python, where they go through the
+        # unchanged packet_handler (offset/VLAN/write_block/_process_packet). The IOC set keeps
+        # known-bad-IP packets (any protocol) even when they'd otherwise be shed as bulk noise.
+        global _done_count
+
+        ioc = _get_ioc_set()
+        l2_offset = DLT_OFFSETS[datalink]
+        flow_cutoff = int(getattr(config, "FAST_FLOW_CUTOFF", 4) or 0)   # >0 => capture TLS/QUIC handshake heads
+        # Severity-aware admission: 0=normal .. 3=overload. DNS + IOC always admitted (never go
+        # blind on DNS / known-bad IPs); higher levels shed SYN, then HEAD, then DPI under load.
+        # FAST_ADMIT_ADAPTIVE auto-tunes the level from the live capture drop-rate (live only).
+        adaptive = _cfg_bool(getattr(config, "FAST_ADMIT_ADAPTIVE", False)) and not config.pcap_file
+        admit_level = 0 if adaptive else int(getattr(config, "FAST_ADMIT_LEVEL", 0) or 0)
+        admit_mask = fastfilter.admit_mask_for_load(admit_level)
+        _prev_stats = [None]   # (recv, drop) for the adaptive controller
+
+        def fast_cb(header, packet, cls):
+            # Additive: on a TLS/QUIC handshake head, extract the SNI and run it through the
+            # normal domain check -> surfaces malicious domains on ENCRYPTED traffic that the
+            # classic path can't see. The packet still goes through packet_handler for its
+            # usual IP/heuristic processing.
+            try:
+                if cls == fastfilter.CLS_HEAD:
+                    info = fastfilter.head_sni(packet, l2_offset)
+                    if info:
+                        sni, src_ip, src_port, dst_ip, dst_port, ipproto = info
+                        if six.PY3:
+                            sec, usec = [int(_) for _ in ("%.6f" % time.time()).split('.')]
+                        else:
+                            sec, usec = header.getts()
+                        _check_domain(sni, sec, usec, src_ip, src_port, dst_ip, dst_port,
+                                      PROTO.TCP if ipproto == 6 else PROTO.UDP, packet)
+            except Exception:
+                pass   # sniffer-safe: one malformed handshake never aborts the C loop (and so the
+                       # only error that can escape loop_filtered is a genuine signature mismatch)
+            packet_handler(datalink, header, packet)
+            return None
+
+        # Adaptive mode processes in bounded chunks so the admit level can be re-evaluated from
+        # the drop-rate between chunks; otherwise one unbounded loop (offline EOF / live forever).
+        chunk = 100000 if adaptive else -1
+
+        while True:
+            try:
+                _cap.loop_filtered(chunk, fast_cb, admit_mask, ioc, flow_cutoff, None, None, 53, l2_offset, fastfilter.PROFILE)
+            except (pcapy.PcapError, socket.timeout):
+                pass
+            except SystemError as ex:
+                if "PY_SSIZE_T_CLEAN" in str(ex):
+                    sys.exit("[!] seems that you are not using pcapy-ng (https://pypi.org/project/pcapy-ng/)")
+                raise
+
+            if config.pcap_file:                  # offline: EOF reached -> mark done and stop
+                with _done_lock:
+                    _done_count += 1
+                return
+
+            if adaptive:                          # re-tune the admit level from the capture drop-rate
+                try:
+                    recv, drop, _ = _cap.stats()
+                    prev = _prev_stats[0]
+                    if prev is not None:
+                        admit_level = fastfilter.next_admit_level(admit_level, recv - prev[0], drop - prev[1])
+                        admit_mask = fastfilter.admit_mask_for_load(admit_level)
+                    _prev_stats[0] = (recv, drop)
+                except Exception:
+                    pass
+            else:
+                time.sleep(REGULAR_SENSOR_SLEEP_TIME)  # live: re-enter capture (e.g. after a transient error)
+
     try:
         def _(_cap):
             global _done_count
@@ -1277,6 +1600,27 @@ def monitor():
 
             _stats_iter = 0
             _stats_last = time.time()
+
+            # Fast in-C prefilter path (opt-in via USE_FAST_PREFILTER, requires pcapy-ng built with
+            # loop_filtered). Falls through to the classic next() loop below when off or unsupported,
+            # but says WHY so a turned-on flag that can't take effect isn't silently ignored.
+            if getattr(config, "USE_FAST_PREFILTER", False):
+                if not fastfilter.has_fast_prefilter(_cap):
+                    log_error("USE_FAST_PREFILTER is set but the installed pcapy has no loop_filtered "
+                              "(needs pcapy-ng with the fast prefilter, https://pypi.org/project/pcapy-ng/); "
+                              "using the classic capture path", single=True)
+                elif datalink not in DLT_OFFSETS:
+                    log_error("USE_FAST_PREFILTER: datalink %d not in offset table; using the classic "
+                              "capture path" % datalink, single=True)
+                else:
+                    try:
+                        _run_fast_prefilter(_cap, datalink)
+                        return
+                    except (TypeError, AttributeError) as ex:
+                        # loop_filtered exists but its signature isn't the profile-aware form this
+                        # build expects (older pcapy-ng) -> fall back instead of killing capture.
+                        log_error("USE_FAST_PREFILTER: incompatible loop_filtered (%s); the installed "
+                                  "pcapy-ng is too old, using the classic capture path" % ex, single=True)
 
 
 #
@@ -1325,6 +1669,19 @@ def monitor():
                             print("[i] capture stats (cumulative): received=%d dropped=%d ifdropped=%d" % (recv, drop, ifdrop))
                         except Exception:
                             pass
+
+        # One-time capture-topology summary on the operational console, so a turned-on fast-path
+        # knob that silently no-ops (e.g. installed pcapy lacks the feature) is visible -- not
+        # something the operator only discovers by reading source or measuring throughput.
+        if not config.pcap_file and _caps:
+            if getattr(config, "USE_FAST_PREFILTER", False):
+                if fastfilter.has_fast_prefilter(_caps[0]):
+                    _lvl = int(getattr(config, "FAST_ADMIT_LEVEL", 0) or 0)
+                    _ad = _cfg_bool(getattr(config, "FAST_ADMIT_ADAPTIVE", False))
+                    print("[i] fast prefilter ACTIVE: pcapy-ng loop_filtered (noise dropped in C; SNI surfaced on TLS/QUIC); admit level %d%s" % (_lvl, ", adaptive" if _ad else ""))
+                else:
+                    print("[!] USE_FAST_PREFILTER requested but the installed pcapy has no loop_filtered; using the CLASSIC capture path (install pcapy-ng >= 2.0)")
+            print("[i] capture topology: %d capture socket(s) -> %d worker process(es)" % (len(_caps), config.PROCESS_COUNT))
 
         if config.profile and len(_caps) == 1:
             print("[=] will store profiling results to '%s'..." % config.profile)
