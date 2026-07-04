@@ -42,5 +42,25 @@ class TestAddr(unittest.TestCase):
                          ["192.168.1.0", "192.168.1.1", "192.168.1.2", "192.168.1.3"])
 
 
+class TestAddrEdges(unittest.TestCase):
+    def test_parse_host_port_ipv6_bracketed(self):
+        self.assertEqual(parse_host_port("[dead::beef]:53"), ("dead::beef", 53))
+
+    def test_parse_host_port_no_port(self):
+        self.assertEqual(parse_host_port("1.2.3.4"), ("1.2.3.4", None))
+
+    def test_addr_port_ipv6_brackets(self):
+        self.assertEqual(addr_port("dead::beef", 53), "[dead::beef]:53")
+
+    def test_expand_range_single_and_cidr(self):
+        self.assertEqual(list(expand_range("1.2.3.4")), ["1.2.3.4"])           # non-range -> passthrough
+        self.assertEqual(list(expand_range("192.168.1.0/30")),
+                         ["192.168.1.0", "192.168.1.1", "192.168.1.2", "192.168.1.3"])
+
+    def test_make_mask_edges(self):
+        self.assertEqual(make_mask(0), 0)
+        self.assertEqual(make_mask(32), 0xFFFFFFFF)
+
+
 if __name__ == "__main__":
     unittest.main()

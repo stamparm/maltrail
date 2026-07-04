@@ -214,6 +214,15 @@ def _trails_signature_id():
         _signature_id_cache[1] = now
     return _signature_id_cache[0]
 
+def _cef_escape(value, extension=False):
+    # CEF (ArcSight) escaping: '\' and '|' in the header fields (e.g. name); '\' and '=' in extension VALUES.
+    # newlines terminate a syslog record, so they must never appear inside a field. Output is byte-identical
+    # when the value has no special chars, so well-behaved trails are unaffected; a trail/info with '='/'|'
+    # (e.g. a URL trail "host/?a=b") would otherwise emit a malformed CEF line the SIEM mis-parses.
+    retval = str(value).replace("\\", "\\\\")
+    retval = retval.replace("=", "\\=") if extension else retval.replace("|", "\\|")
+    return retval.replace("\r", " ").replace("\n", " ")
+
 def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False):
     global _condensing_thread
 
@@ -269,14 +278,15 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     if config.REMOTE_SEVERITY_REGEX:
                         match = re.search(config.REMOTE_SEVERITY_REGEX, info)
                         if match:
+                            groups = match.groupdict()   # NOTE: groupdict().get() (not match.group(name)) - a custom REMOTE_SEVERITY_REGEX that omits a low/medium/high group would otherwise raise IndexError ("no such group") per event, escaping log_event's handler and breaking syslog forwarding
                             for _ in ("low", "medium", "high"):
-                                if match.group(_):
+                                if groups.get(_):
                                     severity = _
                                     break
 
                     if config.SYSLOG_SERVER:
-                        extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, trail, reference)
-                        _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.localtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=_trails_signature_id(), name=info, severity={"low": 0, "medium": 1, "high": 2}.get(severity), extension=extension)
+                        extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, _cef_escape(trail, True), _cef_escape(reference, True))
+                        _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.localtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=_trails_signature_id(), name=_cef_escape(info), severity={"low": 0, "medium": 1, "high": 2}.get(severity), extension=extension)
                         _send_datagram(config.SYSLOG_SERVER, _.encode(UNICODE_ENCODING))
 
                     if config.LOGSTASH_SERVER:

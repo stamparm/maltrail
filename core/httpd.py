@@ -512,7 +512,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     DISPOSED_NONCES[params.get("nonce")] = True
                     for entry in (config.USERS or []):
                         entry = re.sub(r"\s", "", entry)
-                        username, stored_hash, uid, netfilter = entry.split(':')
+                        # maxsplit=3: the netfilter (last field) may itself contain ':' (e.g. an IPv6 "::" = "all"), which
+                        # a plain split(':') would over-split into >4 parts -> ValueError that crashes EVERY login. Skip a
+                        # genuinely malformed line (wrong field count) rather than letting one bad USERS entry lock everyone out.
+                        parts = entry.split(':', 3)
+                        if len(parts) != 4:
+                            continue
+                        username, stored_hash, uid, netfilter = parts
 
                         try:
                             uid = int(uid)
@@ -560,8 +566,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             prefix = prefix.strip()
                             if bits.isdigit() and int(bits) <= 32 and re.match(r"\A\d+\.\d+\.\d+\.\d+\Z", prefix):
                                 if int(bits) >= 16:
-                                    lower = addr_to_int(prefix)
                                     mask = make_mask(int(bits))
+                                    lower = addr_to_int(prefix) & mask   # mask the prefix: a non-aligned CIDR (e.g. 10.0.5.0/16) must expand from the network base (10.0.0.0), else the low part of the subnet is silently excluded
                                     upper = lower | (0xffffffff ^ mask)
                                     while lower <= upper:
                                         addresses.add(int_to_addr(lower))
@@ -639,7 +645,14 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 else:
                     _ = (ipcat_lookup(params.get("address")) or "").lower().split(' ')
                     result_ipcat = _[1] if _[0] == 'the' else _[0]
-                return ("%s" if not params.get("callback") else "%s(%%s)" % params.get("callback")) % json.dumps({"ipcat": result_ipcat, "worst_asns": str(result_worst is not None).lower()})
+                payload = json.dumps({"ipcat": result_ipcat, "worst_asns": str(result_worst is not None).lower()})
+                # NOTE: only wrap in a JSONP callback if it is a bare JS identifier. The callback is reflected into a
+                # script-executable body, so an unvalidated value (e.g. "alert(1)//") is a JSONP-XSS vector. The current
+                # frontend uses fetch() (no callback), so nothing legitimate needs an arbitrary callback here.
+                callback = params.get("callback")
+                if callback and re.match(r"\A[\w.$]{1,64}\Z", callback):
+                    return "%s(%s)" % (callback, payload)
+                return payload
             except Exception:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
@@ -649,8 +662,14 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header(HTTP_HEADER.CONNECTION, "close")
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
-            with open(config.TRAILS_FILE, "rb") as f:
-                return f.read()
+            # NOTE: TRAILS_FILE may not exist yet (fresh server with USE_SERVER_UPDATE_TRAILS off, or a first
+            # update that produced no trails). A bare open() would raise -> 500 + traceback, and a sensor pulling
+            # from UPDATE_SERVER would fail. Return an empty body instead; the sensor then keeps its current trails.
+            if os.path.isfile(config.TRAILS_FILE):
+                with open(config.TRAILS_FILE, "rb") as f:
+                    return f.read()
+
+            return b""
 
         def _ping(self, params):
             self.send_response(_http_client.OK)
@@ -766,7 +785,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 bl_name = "_%s" % params['subpath'].split('/')[0].upper()
 
             content = ""
-            key = int(time.time()) >> 3
+            key = (bl_name, int(time.time()) >> 3)  # NOTE: bl_name MUST be part of the key - the single global cache is shared across every /blacklist/<subpath>, so keying on time alone returns one blacklist's results for another within the TTL
 
             if "BLACKLIST%s" % bl_name in config:
                 try:
@@ -871,7 +890,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         elif netmasks:
                             for _ in netmasks:
                                 prefix, mask = _.split('/')
-                                if addr_to_int(ip) & make_mask(int(mask)) == addr_to_int(prefix):
+                                # NOTE: mask BOTH sides - a non-network-aligned CIDR (e.g. 10.0.5.0/16, as operators often write) would otherwise never match its own subnet, silently hiding events the analyst is entitled to (consistent with the fail2ban allowlist matching)
+                                if addr_to_int(ip) & make_mask(int(mask)) == addr_to_int(prefix) & make_mask(int(mask)):
                                     addresses.add(ip)
                                     display = True
                                     break
