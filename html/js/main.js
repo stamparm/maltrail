@@ -1934,9 +1934,13 @@
             if (seq !== state._loadSeq) { try { reader.cancel(); } catch (e) { } return; }
             if (res.done) {
               buf += dec.decode();
-              var nr = parseRows(buf); if (nr.length) { agg = mergeRows(agg, nr); seen += nr.length; }
               state.streaming = false;
-              state._liveBytes = bytes; state._liveDate = date;   // exact byte total = baseline for Range-delta live
+              // maltrail always terminates event lines with "\n", so a non-empty `buf` here is an
+              // INCOMPLETE final line (EOF caught mid-append). Do NOT parse it and do NOT count it in
+              // the live baseline: otherwise _liveBytes jumps past a half-written line and its
+              // completion is never re-read on the next tick (a silently lost/corrupted live event).
+              var tail = 0; try { tail = new TextEncoder().encode(buf).length; } catch (e) { tail = buf.length; }
+              state._liveBytes = bytes - tail; state._liveDate = date;   // baseline = end of last COMPLETE line
               render(agg || aggregateRows([]));
               return;
             }
@@ -1984,11 +1988,15 @@
         if (r.status !== 206) { if (!r.ok) setStatus("live update failed (HTTP " + r.status + ")"); return; }
         return r.arrayBuffer().then(function (ab) {                                    // raw bytes => exact offset accounting
           if (seq !== state._loadSeq) return;
-          var added = ab.byteLength;
-          if (added > 0) {
-            var rows = window.Papa.parse(new TextDecoder().decode(ab), { delimiter: " ", skipEmptyLines: true }).data;
-            state._liveBytes = start + added; state._liveDate = date;
-            render(mergeRows(state.agg, rows));                                        // O(new rows) merge — no full re-parse/re-aggregate
+          if (ab.byteLength > 0) {
+            var u8 = new Uint8Array(ab), nl = -1, i;
+            for (i = u8.length - 1; i >= 0; i--) { if (u8[i] === 10) { nl = i; break; } }   // last '\n' in the raw delta
+            if (nl >= 0) {                                                              // consume ONLY complete lines
+              var rows = window.Papa.parse(new TextDecoder().decode(ab.slice(0, nl + 1)), { delimiter: " ", skipEmptyLines: true }).data;
+              state._liveBytes = start + nl + 1; state._liveDate = date;                // advance past complete lines only; a partial tail is re-fetched next tick (no dropped/split event)
+              render(mergeRows(state.agg, rows));                                        // O(new rows) merge — no full re-parse/re-aggregate
+            }
+            // else: only a partial line appended so far => consume nothing, retry from `start` next tick
           }
           // empty delta => nothing changed; leave the table untouched (never overwrite it with a status line)
         });
