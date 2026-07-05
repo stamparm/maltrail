@@ -483,7 +483,7 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 .dwr-head .spacer{flex:1}
 .dwr-close{background:none;border:1px solid var(--line-solid);color:var(--muted);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:13px}
 .dwr-close:hover{color:var(--text);border-color:var(--accent)}
-.dwr-body{padding:16px;overflow:auto;flex:1;font-size:12.5px}
+.dwr-body{padding:16px;overflow:auto;flex:1;min-height:0;font-size:12.5px}   /* min-height:0 is REQUIRED: without it a flex child keeps min-height:auto (=content height), so it overflows the drawer instead of scrolling — the last rows get clipped with no scrollbar (issue #19558) */
 .dwr-trail{font-family:var(--mono);font-size:14px;color:var(--text);word-break:break-all;margin-bottom:4px}
 .dwr-info{color:var(--muted);font-family:var(--mono);font-size:12px;margin-bottom:13px}
 .dwr-ref{color:var(--faint)}
