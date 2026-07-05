@@ -148,6 +148,26 @@
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
   function ipKey(s) { return ((s || "").match(/\d+/g) || []).map(function (n) { return ("00" + n).slice(-3); }).join("."); }
 
+  // Dense inline 24h activity sparkline for a table row — a string of <rect> bars (one per hour of the day)
+  // as an SVG, so it drops straight into the row HTML with no per-row canvas. Empty hours draw nothing; the
+  // busiest hour is drawn full-height. ~50×13px so it fits the events cell without widening the row height.
+  function rowSpark(hours) {
+    if (!hours) return "";
+    var max = 1, i, total = 0;
+    for (i = 0; i < 24; i++) { if (hours[i] > max) max = hours[i]; total += hours[i]; }
+    if (!total) return "";
+    var bw = 1.6, gap = 0.5, H = 13, W = 24 * (bw + gap), bars = "", peakH = 0, peakHr = 0;
+    for (i = 0; i < 24; i++) {
+      if (hours[i] > peakH) { peakH = hours[i]; peakHr = i; }
+      var x = (i * (bw + gap)).toFixed(2);
+      if (hours[i] <= 0) { bars += '<rect class="z" x="' + x + '" y="' + (H - 1.2).toFixed(1) + '" width="' + bw + '" height="1.2"/>'; continue; }   // empty hour: baseline dot so the full 0-24h axis always shows
+      var bh = Math.max(2, hours[i] / max * (H - 1)), y = (H - bh).toFixed(2);
+      bars += '<rect x="' + x + '" y="' + y + '" width="' + bw + '" height="' + bh.toFixed(2) + '"' + (hours[i] === max ? ' class="pk"' : '') + '/>';
+    }
+    var hh = (peakHr < 10 ? "0" : "") + peakHr;
+    return '<svg class="rowspark" viewBox="0 0 ' + W.toFixed(1) + ' ' + H + '" width="' + Math.round(W) + '" height="' + H + '" aria-hidden="true"><title>24h activity — peak ' + peakH + '/h at ' + hh + ':00</title>' + bars + '</svg>';
+  }
+
   function spark(cv, data, color) {
     var dpr = window.devicePixelRatio || 1, w = 64, h = 22;
     cv.width = w * dpr; cv.height = h * dpr; cv.style.width = w + "px"; cv.style.height = h + "px";
@@ -1349,7 +1369,7 @@
     var n = list.length, frag = document.createDocumentFragment();
     if (!n) {
       var active = state.filters.length || state.input.trim();
-      tb.innerHTML = '<tr><td colspan="11" class="emptystate">' +
+      tb.innerHTML = '<tr><td colspan="12" class="emptystate">' +
         (active ? 'No threats match the current filter. <a href="#" data-clear="1">clear filters</a>'
                 : 'No threats for this day. ✓') + '</td></tr>';
       var cl = tb.querySelector("[data-clear]");
@@ -1381,6 +1401,7 @@
           '" aria-label="' + (isH ? "restore threat" : "hide threat") + '">' + (isH ? "↺" : "✕") + '</button>' +
           '<button class="tagadd" data-tag="' + t.uidc + '" title="add tag">+tag</button></div></td>' +
         '<td data-l="events"><span class="count">' + t.count + '×</span></td>' +
+        '<td class="sparkcol" data-l="sparkline">' + rowSpark(t.hours) + '</td>' +
         '<td data-l="source">' + ipCellSet(t.srcS) + '</td>' +
         '<td data-l="destination">' + ipCellSet(t.dstS) + '</td>' +
         '<td class="mono" data-l="port">' + portCellSet(displayPortSet(t)) + portDirHint(t) + '</td>' +
@@ -2063,7 +2084,7 @@
   }
   function setStatus(msg) {
     var tb = document.getElementById("rows");
-    if (tb) tb.innerHTML = '<tr><td colspan="11" style="padding:48px;text-align:center;color:var(--muted);font-family:var(--mono)">' + esc(msg) + '</td></tr>';
+    if (tb) tb.innerHTML = '<tr><td colspan="12" style="padding:48px;text-align:center;color:var(--muted);font-family:var(--mono)">' + esc(msg) + '</td></tr>';
   }
   // Connectivity → enables/disables Live + the day calendar. A DEMO build (demo.js present → opened via file://
   // or hosted statically) has NO backend at all, so Live can never stream and the day calendar can never load
