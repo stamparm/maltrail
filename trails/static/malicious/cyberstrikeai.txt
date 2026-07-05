@@ -364,6 +364,7 @@ test7.sbtx.me
 tool.maolou.cn
 tradehug.com
 useapi.cloud
+vs1.tech
 wap.40531.com
 xss.bossjyt.us.ci
 yangyangdeyi.sbs
