@@ -10,25 +10,28 @@
 </head>
 <body data-tz="<!TZOFFSET!>">
 <header>
+  <button class="hamburger" id="nav_menu" title="menu" aria-label="menu" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
   <div class="brand"><span class="brandlogo" aria-label="Maltrail"><!LOGO!></span><small>// network threat monitor</small></div>
   <div class="period-nav">
     <button class="navbtn" id="prev_day" title="previous day" aria-label="previous day">‹</button>
-    <span class="dot"></span>
-    <input type="date" id="date_input" class="date-input" aria-label="select day">
+    <span class="dateface" id="dateface" title="pick a day">
+      <span class="df-top" id="df_top"></span>
+      <span class="df-bot" id="df_bot"></span>
+      <input type="date" id="date_input" aria-label="select day">
+    </span>
     <button class="navbtn" id="next_day" title="next day" aria-label="next day">›</button>
   </div>
-  <div class="spacer"></div>
   <div class="search">⌕ <input id="filter" placeholder="search…  type:dns,http  port:443,>1024  src:10.0.0.0/8  count:>=100  trail:*.ru  sev:high  -exclude  (space = AND)" autocomplete="off"><button class="search-clear" id="search_clear" title="clear search" aria-label="clear search" style="display:none">✕</button><button class="qhelp-btn" id="qhelp" title="search syntax help" aria-label="search syntax help">?</button></div>
-  <div class="textsize" role="group" aria-label="text size">
-    <button class="ghost-btn icon" id="fz_dec" title="decrease text size" aria-label="decrease text size">A−</button>
-    <button class="ghost-btn icon" id="fz_inc" title="increase text size" aria-label="increase text size">A+</button>
+  <div class="spacer"></div>
+  <span class="vsep" aria-hidden="true"></span>
+  <div class="viewtools" role="group" aria-label="appearance">
+    <div class="textsize">
+      <button class="ghost-btn icon" id="fz_dec" title="decrease text size" aria-label="decrease text size">A−</button>
+      <button class="ghost-btn icon" id="fz_inc" title="increase text size" aria-label="increase text size">A+</button>
+    </div>
+    <button class="ghost-btn icon" id="theme_toggle" title="toggle light / dark" aria-label="toggle light or dark theme">☾</button>
+    <button class="ghost-btn icon dash-toggle" id="stats_toggle" aria-controls="stats" aria-pressed="true" title="hide dashboard cards" aria-label="hide dashboard cards"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></button>
   </div>
-  <button class="ghost-btn icon dash-toggle" id="stats_toggle" aria-controls="stats" aria-pressed="true" title="hide dashboard cards" aria-label="hide dashboard cards"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></button>
-  <span class="hbar-sep" aria-hidden="true"></span>
-  <a class="ghost-btn icon extlink" href="https://github.com/stamparm/maltrail#readme" target="_blank" rel="noopener noreferrer" title="documentation" aria-label="documentation"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg></a>
-  <a class="ghost-btn icon extlink" href="https://github.com/stamparm/maltrail/issues" target="_blank" rel="noopener noreferrer" title="report an issue" aria-label="report an issue"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 4.24 4.24"/><path d="m14.86 14.86 4.24 4.24"/><path d="m14.86 9.14 4.24-4.24"/><path d="m4.9 19.1 4.24-4.24"/><circle cx="12" cy="12" r="4"/></svg></a>
-  <a class="ghost-btn icon extlink" href="https://github.com/stamparm/maltrail" target="_blank" rel="noopener noreferrer" title="source on GitHub" aria-label="source on GitHub"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.3-1.8-1.3-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.3-3.2-.2-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
-  <button class="ghost-btn icon" id="theme_toggle" title="toggle light / dark" aria-label="toggle light or dark theme">☾</button>
   <button class="ghost-btn" id="login_link">Log in</button>
 </header>
 
@@ -44,21 +47,22 @@
     <span id="newpill" class="newpill" style="display:none" role="status"></span>
     <div class="spacer"></div>
     <div class="seg" id="seg-size"><button data-size="25" class="on">25</button><button data-size="50">50</button><button data-size="100">100</button></div>
-    <div class="seg" id="seg-density"><button data-density="comfortable" class="on">comfortable</button><button data-density="compact">compact</button></div>
     <button class="ghost-btn xport live" id="live_btn" title="live auto-refresh + alerts on new high-severity" aria-label="toggle live auto-refresh" aria-pressed="false">● live</button>
     <button class="ghost-btn xport mute-btn" id="mute_btn" title="mute new-threat beeps" aria-label="mute new-threat beeps" aria-pressed="false"></button>
     <button class="ghost-btn xport" id="views_btn" title="saved views / presets" aria-label="saved views">★ views</button>
     <button class="ghost-btn xport" id="export_btn" title="export current view (CSV / JSON / IOCs)" aria-label="export current view">↓ export</button>
   </div>
 
+  <div class="grid-frame">
   <div class="grid-wrap">
     <table id="grid">
       <thead><tr>
-        <th data-key="sev">severity</th><th data-key="sensor">sensor</th><th data-key="uid">threat</th><th data-key="count">events</th><th class="sparkcol">sparkline</th><th data-key="src">source</th><th data-key="dst">destination</th>
-        <th data-key="dport">port</th><th data-key="type">type</th><th data-key="trail">trail</th><th data-key="info">info</th><th data-key="first">first seen</th>
+        <th data-key="uid">threat</th><th data-key="sensor">sensor</th><th data-key="count">events</th><th data-key="sev">severity</th><th class="sparkcol">sparkline</th><th data-key="src">source</th><th data-key="dst">destination</th>
+        <th data-key="dport">port</th><th data-key="type">type</th><th data-key="trail">trail</th><th data-key="info">info</th><th data-key="first">first seen</th><th class="tagcol">tags</th>
       </tr></thead>
       <tbody id="rows"></tbody>
     </table>
+  </div>
   </div>
   <div id="pager" class="pager" role="navigation" aria-label="threat pages"></div>
 </main>

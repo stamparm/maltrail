@@ -931,7 +931,7 @@
     var m = document.getElementById("ctxmenu"); if (!m) return; m.innerHTML = "";
     var h = document.createElement("div"); h.className = "ctxnote qhelp-h"; h.textContent = "Search syntax \u00b7 space = AND \u00b7 click to try"; m.appendChild(h);
     [["sev:high", "high severity"], ["type:dns,http", "type (OR-list)"], ["port:443,8080", "port list"], ["port:1000-2000", "port range"], ["port:>1024", "port compare"],
-     ["count:>=100", "noisy threats"], ["src:10.0.0.0/8", "source subnet (CIDR)"], ["dst:8.8.8.8", "destination"], ["trail:*.ru", "trail wildcard"], ["sensor:r2d2", "by sensor"], ["class:malware", "threat class"], ["tag:apt", "your tag"],
+     ["count:>=100", "noisy threats"], ["src:10.0.0.0/8", "source subnet (CIDR)"], ["dst:8.8.8.8", "destination"], ["dir:out", "flagged reply (→ out)"], ["dir:in", "flagged request (← in)"], ["trail:*.ru", "trail wildcard"], ["sensor:r2d2", "by sensor"], ["class:malware", "threat class"], ["tag:apt", "your tag"],
      ["type:dns sev:high", "both (AND)"], ["sev:high,med OR type:http", "OR / lists"], ["NOT type:dns", "negate (or -)"], ["(sev:high OR sev:med) type:http", "group ( )"], ['info:"cobalt strike"', "quoted phrase"]].forEach(function (e) {
       var b = document.createElement("button"); b.type = "button"; b.className = "ctxitem qhelp-i";
       b.innerHTML = '<span class="qk">' + e[0] + '</span><span class="qd">' + e[1] + '</span>';
@@ -944,6 +944,27 @@
     var _top = r.bottom + 5, _mh = m.offsetHeight;   // if the (capped) panel would run off the bottom, lift it up so it stays fully visible
     if (_top + _mh > window.innerHeight - 8) _top = Math.max(8, window.innerHeight - _mh - 8);
     m.style.top = _top + "px";
+  }
+  // far-left hamburger menu: the project links (docs/issues/github) that used to clutter the top bar. Inline SVGs
+  // (no external assets — air-gap safe) matching the icons they replaced.
+  function _strokeIcon(p) { return '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + p + '</svg>'; }
+  var NAV_LINKS = [
+    ["https://github.com/stamparm/maltrail#readme", _strokeIcon('<path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/>'), "Documentation"],
+    ["https://github.com/stamparm/maltrail/issues", _strokeIcon('<circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 4.24 4.24"/><path d="m14.86 14.86 4.24 4.24"/><path d="m14.86 9.14 4.24-4.24"/><path d="m4.9 19.1 4.24-4.24"/><circle cx="12" cy="12" r="4"/>'), "Report an issue"],
+    ["https://github.com/stamparm/maltrail", '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.3-1.8-1.3-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.3-3.2-.2-.3-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.2 2.9.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>', "Source on GitHub"]
+  ];
+  function openNavMenu(btn) {
+    var m = document.getElementById("ctxmenu"); if (!m) return; m.innerHTML = "";
+    NAV_LINKS.forEach(function (e) {
+      var a = document.createElement("a"); a.className = "ctxitem navitem";
+      a.href = e[0]; a.target = "_blank"; a.rel = "noopener noreferrer";
+      a.innerHTML = e[1] + '<span class="navlabel">' + e[2] + '</span>';
+      m.appendChild(a);
+    });
+    m.style.display = "block"; m.setAttribute("aria-hidden", "false"); btn.setAttribute("aria-expanded", "true");
+    var r = btn.getBoundingClientRect(), mw = m.offsetWidth || 212;
+    m.style.left = Math.max(6, Math.min(r.left, window.innerWidth - mw - 8)) + "px";
+    m.style.top = (r.bottom + 5) + "px";
   }
 
 
@@ -962,7 +983,7 @@
     m.style.top = (r.bottom + 4) + "px";
   }
 
-  function closeCtx() { var m = document.getElementById("ctxmenu"); if (m) { m.style.display = "none"; m.setAttribute("aria-hidden", "true"); m.innerHTML = ""; } }
+  function closeCtx() { var m = document.getElementById("ctxmenu"); if (m) { m.style.display = "none"; m.setAttribute("aria-hidden", "true"); m.innerHTML = ""; } var hb = document.getElementById("nav_menu"); if (hb) hb.setAttribute("aria-expanded", "false"); }
   function closeDrawer() {
     var d = document.getElementById("drawer"), sc = document.getElementById("drawer_scrim");
     var wasOpen = d && d.classList.contains("open");
@@ -1018,6 +1039,7 @@
         '<div class="dwr-time">first ' + hms(t.first) + ' \u2192 last ' + hms(t.last) + ' \u00b7 span ' + durationStr(t.first, t.last) + '</div>' +
         '<div class="dwr-status">' + ['investigating', 'resolved', 'fp'].map(function (k) { return '<button data-st="' + k + '" class="trbtn tr-' + k + (trg === k ? ' on' : '') + '">' + TRIAGE_LABEL[k] + '</button>'; }).join('') + '</div>' +
         '<div class="dwr-actions"><button data-a="wls">whitelist src</button><button data-a="wlt">whitelist trail</button><button data-a="hide">' + (state.hidden[t.uidc] ? "unhide" : "hide") + '</button><button data-a="vt" class="ext">\u2197 VT</button><button data-a="abuse" class="ext">\u2197 AbuseIPDB</button><button data-a="shodan" class="ext">\u2197 Shodan</button><button data-a="copy">copy</button><button data-a="ioc">copy IOCs</button></div>' +
+        '<div class="dwr-local" role="note">⚠ status, whitelist, hide, tags &amp; notes are saved in <b>this browser only</b> — not shared with the sensor or other users</div>' +
         '<div class="dwr-sec"><h4>note</h4><textarea class="dwr-note" id="dwr_note" aria-label="case note for this threat" placeholder="add a case note\u2026">' + esc(getNote(t.uidc)) + '</textarea></div>' +
         '<div class="dwr-sec dwr-related"><h4>related</h4>' + '<button class="relbtn" data-rel="src"><b>' + relSrc + '</b> other threats from this source</button>' + '<button class="relbtn" data-rel="trail"><b>' + relTrail + '</b> other threats on this trail</button></div>' +
         '<div class="dwr-sec"><h4>sources \u00b7 ' + srcs.length + '</h4><div class="dchips">' + ipChips(srcs) + '</div></div>' +
@@ -1103,7 +1125,9 @@
     Object.keys(state.wl.src).forEach(function (ip) { rows += '<div class="wlrow"><span class="wltag">src</span><span class="wlval">' + esc(ip) + '</span><button class="wlrm" data-k="src" data-v="' + esc(ip) + '">remove</button></div>'; });
     Object.keys(state.wl.trail).forEach(function (tr) { rows += '<div class="wlrow"><span class="wltag">trail</span><span class="wlval">' + esc(tr) + '</span><button class="wlrm" data-k="trail" data-v="' + esc(tr) + '">remove</button></div>'; });
     if (!rows) rows = '<div class="wlempty">No whitelist rules yet. Right-click a threat to add one.</div>';
-    o.innerHTML = '<div class="modal"><div class="modal-h">Whitelist rules</div><div class="wllist">' + rows + '</div>' +
+    o.innerHTML = '<div class="modal"><div class="modal-h">Whitelist rules</div>' +
+      '<div class="localwarn" role="note">⚠ <b>This browser only.</b> These rules just hide matching threats in <i>your</i> view — they are <b>not</b> sent to sensors and the sensor keeps detecting &amp; logging them. To suppress at the source, add them to the sensor whitelist (<code>misc/whitelist.txt</code> or <code>USER_WHITELIST</code>) instead.</div>' +
+      '<div class="wllist">' + rows + '</div>' +
       '<div class="modal-actions"><button class="btn-ghost" id="wl_close">Close</button><button class="btn-primary" id="wl_clear">Clear all</button></div></div>';
     document.body.appendChild(o);
     o.onclick = function (e) { if (e.target === o) o.remove(); };
@@ -1169,7 +1193,7 @@
     } catch (e) { /* ignore malformed/absent legacy storage */ }
   }
 
-  var state = { all: [], agg: null, chart: null, _openChart: "", filters: [], input: "", sev: null, sortKey: "first", sortDir: -1, limit: 25, page: 0, density: "comfortable", hidden: loadHidden(), showHidden: false, tags: loadTags(), streaming: false, _loadSeq: 0, selIdx: -1, _pageRows: [] };
+  var state = { all: [], agg: null, chart: null, _openChart: "", filters: [], input: "", sev: null, sortKey: "sev", sortDir: -1, limit: 25, page: 0, hidden: loadHidden(), showHidden: false, tags: loadTags(), streaming: false, _loadSeq: 0, selIdx: -1, _pageRows: [] };
   state.wl = loadWL(); state.triage = loadTriage(); state.notes = loadNotes(); state.aliases = loadAliases();
   state.live = false; state.knownUids = {}; state.newUids = {}; state.newCount = 0; state._seenInit = false; state._liveTimer = null; state._ac = null;
   state._liveBytes = null; state._liveDate = null;   // incremental-live baseline: byte offset + date (aggregate itself carries _byKey for merging)
@@ -1183,7 +1207,7 @@
     return t._hay + " " + (state.tags[t.uidc] || "").toLowerCase();
   }
 
-  // ===== query syntax: field-scoped tokens (src: dst: port: proto: type: trail: info: tag: uid: sev:) + * wildcards =====
+  // ===== query syntax: field-scoped tokens (src: dst: port: proto: type: trail: info: tag: uid: sev: dir: status:) + * wildcards =====
   function _lc(x) { return ("" + x).toLowerCase(); }
   // memoized: _fieldMatch is called per-threat, so a wildcard term (trail:*.ru) would otherwise recompile this
   // regex once PER ROW per keystroke (120k× at the threat cap). The pattern is identical across the whole pass.
@@ -1236,6 +1260,7 @@
     if (ci > 0) {
       var f = tok.slice(0, ci), v = tok.slice(ci + 1); if (!v) return true;
       if (f === "sev") return v.split(",").some(function (p) { var m = { high: 3, hi: 3, "3": 3, med: 2, medium: 2, "2": 2, low: 1, lo: 1, "1": 1 }; return m[p] === t.sev; });
+      if (f === "dir") { var d = portDir(t); if (!d) return false; return v.split(",").some(function (p) { var m = { out: "out", outbound: "out", egress: "out", resp: "out", response: "out", reply: "out", "in": "in", inbound: "in", ingress: "in", req: "in", request: "in" }; return m[p] === d; }); }   // flagged-traffic direction of the port cell (→ out / ← in)
       if (f === "status") return v.split(",").some(function (p) { var st = state.triage[t.uidc] || "new"; if (p === "false-positive" || p === "false-pos") p = "fp"; if (p === "untriaged" || p === "open") p = "new"; return st === p; });
       if (f === "port" || f === "count" || f === "events") { var nums = f === "port" ? setList(displayPortSet(t)).map(Number) : [t.count]; return v.split(",").some(function (p) { return _cmpNum(p, nums); }); }
       var vals = _fieldVals(f, t);
@@ -1324,7 +1349,8 @@
     var k = state.sortKey, dir = state.sortDir;
     list.sort(function (a, b) {
       var c;
-      if (k === "sev" || k === "count") c = a[k] - b[k];
+      if (k === "sev") c = riskOf(a) - riskOf(b);                // "severity" column = risk-ranked (severity-dominant, then compromise signal / volume within a band)
+      else if (k === "count") c = a.count - b.count;
       else if (k === "dport") c = (parseInt(a.dport, 10) || 0) - (parseInt(b.dport, 10) || 0);
       else if (k === "src" || k === "dst") { var ak = ipKey(a[k]), bk = ipKey(b[k]); c = ak < bk ? -1 : ak > bk ? 1 : 0; }
       else { var av = (a[k] || "") + "", bv = (b[k] || "") + ""; c = av < bv ? -1 : av > bv ? 1 : 0; }
@@ -1369,7 +1395,7 @@
     var n = list.length, frag = document.createDocumentFragment();
     if (!n) {
       var active = state.filters.length || state.input.trim();
-      tb.innerHTML = '<tr><td colspan="12" class="emptystate">' +
+      tb.innerHTML = '<tr><td colspan="13" class="emptystate">' +
         (active ? 'No threats match the current filter. <a href="#" data-clear="1">clear filters</a>'
                 : 'No threats for this day. ✓') + '</td></tr>';
       var cl = tb.querySelector("[data-clear]");
@@ -1391,16 +1417,15 @@
       if (allTags.length > 2) tagHtml += '<span class="tagmore" title="' + esc(allTags.join(", ")) + '">+' + (allTags.length - 2) + '</span>';
       var tr = document.createElement("tr"); tr.className = cls; tr.dataset.ri = i;
       tr.innerHTML =
-        '<td class="sev" data-l="severity"><span class="sev-bar"></span><span class="sev-tag" data-f="sev:' + sevName(t.sev) + '" title="filter: ' + sevName(t.sev) + ' severity">' + sevName(t.sev) + '</span></td>' +
-        '<td class="mono muted" data-l="sensor">' + sensorCellSet(t.sensorS) + '</td>' +
         '<td data-l="threat"><div class="threatline"><span class="uid ' + ltClass(hslText(hue, 0.60, 0.48)) + '" data-f="uid:' + t.uidc + '" title="filter: this threat id" style="background:hsl(' + hue + ',60%,48%);color:' + hslText(hue, 0.60, 0.48) + '">' + t.uidc + '</span>' +
           (trg ? '<span class="trbadge tr-' + trg + '">' + TRIAGE_LABEL[trg] + '</span>' : '') +
           (getNote(t.uidc) ? '<span class="noteind" title="has a note">\u270E</span>' : '') +
-          (tagHtml ? '<span class="tags">' + tagHtml + '</span>' : '') +   // inline so tagged rows stay single-height + aligned
           '<button class="rowhide" data-hide="' + t.uidc + '" title="' + (isH ? "restore threat" : "hide threat") +
           '" aria-label="' + (isH ? "restore threat" : "hide threat") + '">' + (isH ? "↺" : "✕") + '</button>' +
-          '<button class="tagadd" data-tag="' + t.uidc + '" title="add tag">+tag</button></div></td>' +
+          '</div></td>' +
+        '<td class="mono muted" data-l="sensor">' + sensorCellSet(t.sensorS) + '</td>' +
         '<td data-l="events"><span class="count">' + t.count + '×</span></td>' +
+        '<td class="sev" data-l="severity"><span class="sev-bar"></span><span class="sev-tag" data-f="sev:' + sevName(t.sev) + '" title="filter: ' + sevName(t.sev) + ' severity">' + sevName(t.sev) + '</span></td>' +
         '<td class="sparkcol" data-l="sparkline">' + rowSpark(t.hours) + '</td>' +
         '<td data-l="source">' + ipCellSet(t.srcS) + '</td>' +
         '<td data-l="destination">' + ipCellSet(t.dstS) + '</td>' +
@@ -1412,7 +1437,9 @@
             return (ic ? '<span class="cls cls-' + ic + '" data-tip="' + ic + '" aria-label="' + ic + '">' + CLASS_ICON[ic] + '</span>' : '') +
                    '<span class="clip" data-tip="' + esc(t.info) + '">' + esc(desc) + '</span>'; })() + '</td>' +
         '<td class="mono muted" data-l="first seen" data-tip="first ' + hms(t.first) + ' → last ' + hms(t.last) +
-          '  ·  span ' + durationStr(t.first, t.last) + '  ·  ' + t.count + ' events"><span class="reltime" data-ts="' + esc(t.first) + '">' + esc(relAge(t.first) || hms(t.first)) + '</span></td>';
+          '  ·  span ' + durationStr(t.first, t.last) + '  ·  ' + t.count + ' events"><span class="reltime" data-ts="' + esc(t.first) + '">' + esc(relAge(t.first) || hms(t.first)) + '</span></td>' +
+        '<td class="tagcol" data-l="tags"><div class="tagcell">' + tagHtml +
+          '<button class="tagadd" data-tag="' + t.uidc + '" title="add tag">+tag</button></div></td>';
       frag.appendChild(tr);
     }
     tb.appendChild(frag);
@@ -1619,6 +1646,19 @@
   }
   function displayPortSet(t) { return portInfo(t).set; }
   function portDir(t) { return portInfo(t).dir; }
+  // Risk score for the DEFAULT ("severity" column) ordering. Severity dominates (a band each 1000 wide) so a high
+  // never sorts below a medium; WITHIN a band, active-compromise language lifts a quiet threat above loud ambient
+  // noise (a scanner hammering a port shouldn't bury one C2 beacon). Volume is a log-scaled, capped tiebreak only.
+  var RISK_HOT = /\b(c2|cnc|cobalt|beacon|trojan|ransom|sinkhole|dga|malware|infect(?:ed|ion)?|exfil|backdoor|rat|apt|stealer|botnet|loader|dropper|phish)\b/;
+  var RISK_NOISE = /\b(scan|scanner|reputation|attacker|crawler|bruteforce|brute[-\s]?force|mass|spam|probe|honeypot)\b/;
+  function riskOf(t) {
+    var s = (t.sev || 1) * 1000;
+    var hay = (("" + (t.type || "")) + " " + (t.info || "") + " " + (t.trail || "")).toLowerCase();
+    if (RISK_HOT.test(hay)) s += 400;
+    if (RISK_NOISE.test(hay)) s -= 250;
+    s += Math.min(90, Math.log(1 + (t.count || 1)) * 15);
+    return s;
+  }
   // inline SVG arrows (not Unicode glyphs, whose vertical position is font-dependent — Firefox rendered → / ← below
   // the text's middle). An SVG is centered by construction, so vertical-align:middle aligns it on the port text in
   // every browser. ← = the traffic INTO this port was flagged; → = the traffic OUT of this port was flagged.
@@ -1627,7 +1667,7 @@
     out: [_arrowSVG('<line x1="4" y1="12" x2="18.5" y2="12"/><polyline points="13 6.5 19 12 13 17.5"/>'), "the traffic OUT of this port was flagged (e.g. a malicious response/reply)"],
     "in": [_arrowSVG('<line x1="20" y1="12" x2="5.5" y2="12"/><polyline points="11 6.5 5 12 11 17.5"/>'), "the traffic INTO this port was flagged (e.g. a malicious request/attack)"]
   };
-  function portDirHint(t) { var d = portDir(t); return d ? '<span class="port-dir pd-' + d + '" title="' + PORT_DIR[d][1] + '">' + PORT_DIR[d][0] + '</span>' : ""; }
+  function portDirHint(t) { var d = portDir(t); return d ? '<span class="port-dir pd-' + d + '" data-f="dir:' + d + '" title="' + PORT_DIR[d][1] + ' — click to filter ' + d + '">' + PORT_DIR[d][0] + '</span>' : ""; }
   function portCellSet(s) {
     var l = setList(s); if (!l.length) return "";
     if (l.length === 1) {
@@ -1895,6 +1935,7 @@
     var _lv = document.getElementById('live_btn'); if (_lv) _lv.onclick = function (e) { e.stopPropagation(); setLive(!state.live); };
     var _mt = document.getElementById('mute_btn'); if (_mt) _mt.onclick = function (e) { e.stopPropagation(); setMuted(!getMuted()); };
     var _qh = document.getElementById('qhelp'); if (_qh) _qh.onclick = function (e) { e.stopPropagation(); openQueryHelp(_qh); };
+    var _nm = document.getElementById('nav_menu'); if (_nm) _nm.onclick = function (e) { e.stopPropagation(); if (_nm.getAttribute('aria-expanded') === 'true') closeCtx(); else openNavMenu(_nm); };
     var tt = document.getElementById("theme_toggle");
     if (tt) tt.onclick = function () { setTheme(getTheme() === "light" ? "dark" : "light"); };
     var _fzd = document.getElementById("fz_dec"); if (_fzd) _fzd.onclick = function () { setScale(getScaleIdx() - 1); };
@@ -1926,15 +1967,11 @@
     if (ss) ss.querySelectorAll("button").forEach(function (b) {
       b.onclick = function () { state.limit = +b.dataset.size; state.page = 0; ss.querySelectorAll("button").forEach(function (x) { x.classList.remove("on"); }); b.classList.add("on"); savePrefs(); refresh(); };
     });
-    var sd = document.getElementById("seg-density");
-    if (sd) sd.querySelectorAll("button").forEach(function (b) {
-      b.onclick = function () {
-        state.density = b.dataset.density;
-        document.getElementById("grid").classList.toggle("compact", state.density === "compact");
-        sd.querySelectorAll("button").forEach(function (x) { x.classList.remove("on"); }); b.classList.add("on"); savePrefs(); refresh();
-      };
-    });
-    var di = document.getElementById("date_input"); if (di) di.onchange = function () { navigate(di.value); };
+    var di = document.getElementById("date_input");
+    if (di) {
+      di.onchange = function () { renderDateFace(); navigate(di.value); };
+      di.onclick = function () { if (di.showPicker) { try { di.showPicker(); } catch (e) {} } };   // click the readout -> open the OS day picker (arrow keys still nudge natively)
+    }
     var pv = document.getElementById("prev_day"); if (pv) pv.onclick = function () { shiftDay(-1); };
     var nx = document.getElementById("next_day"); if (nx) nx.onclick = function () { shiftDay(1); };
     // keyboard nav (ignored while typing in a field):
@@ -2010,7 +2047,7 @@
     if (state.filters.length) p.push('filter=' + encodeURIComponent(state.filters.join(',')));
     if (state.input.trim()) p.push('q=' + encodeURIComponent(state.input.trim()));
     if (state.sev != null) p.push('sev=' + state.sev);
-    if (state.sortKey !== 'first') p.push('sort=' + encodeURIComponent(state.sortKey));
+    if (state.sortKey !== 'sev') p.push('sort=' + encodeURIComponent(state.sortKey));
     if (state.sortDir > 0) p.push('dir=asc');
     if (state.limit !== 25) p.push('limit=' + state.limit);
     if (state.page > 0) p.push('page=' + (state.page + 1));
@@ -2041,7 +2078,15 @@
   function pad2(n) { return (n < 10 ? "0" : "") + n; }
   function todayStr() { var d = new Date(); return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
   function currentDate() { var d = document.getElementById("date_input"); return d && d.value ? d.value : todayStr(); }
-  function setDate(s) { var d = document.getElementById("date_input"); if (d) d.value = s; }
+  var MON_ABBR = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+  // keep the condensed two-row readout (MON DD / YYYY) in sync with the hidden native date input
+  function renderDateFace() {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(currentDate()); if (!m) return;
+    var top = document.getElementById("df_top"), bot = document.getElementById("df_bot");
+    if (top) top.textContent = MON_ABBR[(+m[2] - 1) % 12] + " " + m[3];
+    if (bot) bot.textContent = m[1];
+  }
+  function setDate(s) { var d = document.getElementById("date_input"); if (d) d.value = s; renderDateFace(); }
   // The demo's fixed 2024-01-11 timestamps are rebased to TODAY so the calendar and the "x ago" column agree
   // (otherwise the picker shows 2024 while rows claim "5m ago"). Single-day data; date appears only in the leading ts.
   var _demoCSVc;
@@ -2268,17 +2313,14 @@
       })
       .catch(function () { setConnected(false); /* transient live poll failure: keep showing current data, try again next tick */ });
   }
-  // persist view preferences (page size + density) across reloads
-  function savePrefs() { lsSet('mt_prefs', { limit: state.limit, density: state.density }); }
+  // persist view preferences (page size) across reloads
+  function savePrefs() { lsSet('mt_prefs', { limit: state.limit }); }
   function loadPrefs() {
     var p = lsGet('mt_prefs', null); if (!p || typeof p !== 'object') return;
     if ([25, 50, 100].indexOf(p.limit) >= 0) state.limit = p.limit;
-    if (p.density === 'compact' || p.density === 'comfortable') state.density = p.density;
   }
   function applyPrefsUI() {
     var ss = document.getElementById('seg-size'); if (ss) ss.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', +b.dataset.size === state.limit); });
-    var sd = document.getElementById('seg-density'); if (sd) sd.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', b.dataset.density === state.density); });
-    var g = document.getElementById('grid'); if (g) g.classList.toggle('compact', state.density === 'compact');
   }
   function boot() {
     // <!LOGO!> is server-substituted to the maltrail logo (or config.HEADER_LOGO). When unsubstituted
