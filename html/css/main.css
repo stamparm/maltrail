@@ -117,6 +117,14 @@
   .lt-d{text-shadow:-1px -1px 0 rgba(255,255,255,.35),1px -1px 0 rgba(255,255,255,.35),-1px 1px 0 rgba(255,255,255,.35),1px 1px 0 rgba(255,255,255,.35)}
   .count{background:#0b111c;border-color:var(--line-solid);color:var(--accent);text-shadow:none;font-weight:600}
   body.light .count{background:#eef3f9}
+  /* dedicated 24h-activity sparkline column (narrow) */
+  .sparkcol{width:1%;white-space:nowrap}
+  .rowspark{display:block;flex:none}
+  .rowspark rect{fill:var(--sev-high);fill-opacity:.7}   /* red 24h activity bars — distinct from the cyan count */
+  .rowspark .pk{fill-opacity:1}                          /* busiest hour: full red */
+  .rowspark .z{fill:var(--muted);fill-opacity:.3}        /* empty-hour baseline dot (dim) — shows the full 0-24h axis */
+  tbody tr:hover .rowspark rect{fill-opacity:.9}
+  tbody tr:hover .rowspark .z{fill-opacity:.3}
   .sev{position:relative}
   .sev-bar{display:inline-block;width:3px;height:26px;border-radius:2px;vertical-align:middle;margin-right:10px}
   .sev-tag{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:lowercase;font-weight:700}  /* lowercase to match the high/med/low filter pills — no shouting */
@@ -325,6 +333,9 @@ header::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;
 
 /* ===== light theme (toggle in header; persisted) — light forensic console ===== */
 .ghost-btn.icon{padding:7px 9px;font-size:14px;line-height:1}
+.extlink{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}   /* header help/source icon links */
+.extlink svg{display:block}
+.hbar-sep{width:1px;align-self:stretch;margin:6px 4px;background:var(--line-solid);flex:none}   /* subtle divider before the icon-link group */
 .textsize{display:inline-flex;gap:4px;align-items:stretch}
 .textsize .ghost-btn{font-family:var(--mono);font-weight:700;line-height:1;display:inline-flex;align-items:center;justify-content:center;min-width:30px}
 #fz_dec{font-size:10px}   /* small A */
