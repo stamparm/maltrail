@@ -45,7 +45,8 @@
   .period .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
   header .spacer{flex:1}
   .search{display:flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid var(--line-solid);
-    border-radius:8px;background:#0b111c;min-width:240px;color:var(--muted)}
+    border-radius:8px;background:#0b111c;min-width:240px;color:var(--muted);
+    flex:12 1 auto;max-width:560px}   /* prominent, grows left-to-right, but capped (weighted above the trailing spacer) so it's a comfortable field — not a mile-wide bar — with a breathing gap before the view controls */
   .search input{background:none;border:none;outline:none;color:var(--text);font-family:var(--mono);font-size:12px;width:100%}
   .search input::placeholder{color:var(--faint);opacity:1}   /* opacity:1 — Firefox dims placeholders by default */
   /* themed scrollbars (OS default is a bright bar on the midnight panels) */
@@ -95,9 +96,9 @@
   /* NOT sticky: a position:sticky thead inside the x-scroll .grid-wrap re-scopes to that container and overlaps rows */
   thead th{background:var(--surface-2);text-align:left;
     font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:600;
-    padding:10px 12px;border-bottom:1px solid var(--line-solid);white-space:nowrap}
+    padding:6px 12px;border-bottom:1px solid var(--line-solid);white-space:nowrap}
   thead th:first-child{border-top-left-radius:var(--r)} thead th:last-child{border-top-right-radius:var(--r)}
-  tbody td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:middle;white-space:nowrap}
+  tbody td{padding:4px 12px;border-bottom:1px solid var(--line);vertical-align:middle;white-space:nowrap}
   tbody tr{transition:background .1s}
   tbody tr:hover{background:#1a2334}
   .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
@@ -155,7 +156,7 @@
     .stats{grid-template-columns:repeat(2,1fr)}
     /* keep search usable on tablet/mobile: wrap it to its own full-width row instead of hiding it */
     header{flex-wrap:wrap;gap:10px}
-    .search{order:5;flex-basis:100%}
+    .search{order:5;flex-basis:100%;max-width:none}   /* full-width own row on tablet/mobile — drop the desktop cap */
     .brand small{display:none}
     /* mini sparkline drops into flow on narrow cards so it never overlaps the subtitle */
     .card canvas{position:static;display:block;margin-top:9px}
@@ -163,7 +164,6 @@
   @media (max-width:680px){
     header{flex-wrap:wrap;gap:8px}
     .period-nav{order:3;flex-basis:100%;justify-content:center}
-    .date-input{flex:1;max-width:200px}
     thead{display:none}
     table,tbody,tr,td{display:block;width:100%}
     tbody tr{border:1px solid var(--line-solid);border-radius:10px;margin-bottom:10px;padding:6px 4px;background:var(--surface)}
@@ -182,8 +182,8 @@
 .hiddeninfo a{color:var(--muted);text-decoration:none;border-bottom:1px dotted var(--faint)}
 .hiddeninfo a:hover{color:var(--accent);border-bottom-color:var(--accent)}
 /* per-row hide / restore — revealed on row hover */
-.rowhide{margin-left:8px;border:none;background:none;color:var(--faint);cursor:pointer;font-size:12px;line-height:1;
-  padding:2px 5px;border-radius:5px;opacity:0;transition:opacity .12s,color .12s,background .12s;vertical-align:middle}
+.rowhide{margin-left:8px;border:none;background:none;color:var(--faint);cursor:pointer;font-size:11px;line-height:1;
+  padding:1px 3px;border-radius:5px;opacity:0;transition:opacity .12s,color .12s,background .12s;vertical-align:middle}
 tbody tr:hover .rowhide{opacity:1}
 .rowhide:hover{color:var(--sev-high);background:rgba(244,63,94,.12)}
 tbody tr.ishidden{opacity:.42}
@@ -191,7 +191,7 @@ tbody tr.ishidden .rowhide{opacity:1;color:var(--accent)}
 tbody tr.ishidden .rowhide:hover{color:var(--accent);background:rgba(56,189,248,.12)}
 @media (max-width:680px){ .rowhide{opacity:1} }
 /* per-threat tags */
-.threatline{display:flex;align-items:center;gap:6px;flex-wrap:nowrap}   /* never wrap to a 2nd line -> tagged rows stay single-height + the uid stays vertically aligned with the rest of the row */
+.threatline{display:flex;align-items:center;gap:4px;flex-wrap:nowrap}   /* never wrap to a 2nd line -> tagged rows stay single-height + the uid stays vertically aligned with the rest of the row */
 .threatline .rowhide{margin-left:0}
 .tags{display:inline-flex;gap:4px;align-items:center;flex-wrap:nowrap;overflow:hidden}
 .tagmore{font-family:var(--mono);font-size:9.5px;color:var(--muted);border:1px solid var(--line-solid);
@@ -208,6 +208,22 @@ tbody tr:hover .tagadd{opacity:.85}
 .taginput{font-family:var(--mono);font-size:10px;background:var(--surface);border:1px solid var(--accent);
   color:var(--text);border-radius:4px;padding:1px 5px;width:84px;outline:none}
 @media (max-width:680px){ .tagadd{opacity:.85} }
+/* dedicated tags column at the end (old-maltrail style): tags + the "+tag" adder live here, not crammed after the threat id */
+.tagcol{width:1%}
+/* tags stay on ONE line and the cell grows to fit them; many tags widen the table, which surfaces the grid's own
+   visible bottom scrollbar (.grid-wrap overflow-x) — no wrapping into fat double rows, no hidden per-cell scrollbar */
+.tagcell{display:flex;gap:4px;align-items:center;flex-wrap:nowrap;min-width:46px}   /* always leave room for the +tag adder to appear on hover (even with zero tags) */
+/* shrink every fixed-width column to its content (cells are already nowrap); only trail + info stay auto and absorb
+   the table's leftover width, so the threat id / sensor / counts don't get padded with dead whitespace */
+th[data-key="uid"],td[data-l="threat"],
+th[data-key="sensor"],td[data-l="sensor"],
+th[data-key="count"],td[data-l="events"],
+th[data-key="sev"],td[data-l="severity"],
+th[data-key="src"],td[data-l="source"],
+th[data-key="dst"],td[data-l="destination"],
+th[data-key="dport"],td[data-l="port"],
+th[data-key="type"],td[data-l="type"],
+th[data-key="first"],td[data-l="first seen"]{width:1%;white-space:nowrap}
 thead th{user-select:none}
 /* canvases (chart minis/big) and inline SVGs (logo/icons) hold no selectable text; without this, dragging a
    text selection across them makes the browser paint a stray selection box over each element (issue #19561) */
@@ -217,8 +233,6 @@ canvas,svg{user-select:none;-webkit-user-select:none}
 thead th:hover{color:var(--text)}
 thead th.sort-asc::after{content:" ▲";color:var(--accent);font-size:8px;vertical-align:1px}
 thead th.sort-desc::after{content:" ▼";color:var(--accent);font-size:8px;vertical-align:1px}
-table.compact tbody td{padding:4px 12px}
-table.compact thead th{padding:6px 12px}
 .uid,.type,.sev-tag,.count{cursor:default}
 
 /* --- chart panel --- */
@@ -270,13 +284,20 @@ kbd{font-family:var(--mono);font-size:11px;color:var(--text);background:var(--in
 
 /* --- date navigation --- */
 .period-nav{display:flex;align-items:center;gap:6px}
-.period-nav .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);margin:0 2px}
 .navbtn{background:var(--surface);border:1px solid var(--line-solid);color:var(--muted);width:28px;height:30px;border-radius:8px;cursor:pointer;font-size:17px;line-height:1;display:grid;place-items:center;padding:0}
 .navbtn:hover:not(:disabled){color:var(--text);border-color:var(--accent)}
 .navbtn:disabled{opacity:.4;cursor:default}
-.date-input{background:var(--surface);border:1px solid var(--line-solid);border-radius:8px;color:var(--text);font-family:var(--mono);font-size:12px;padding:6px 10px;outline:none}
-.date-input:focus{border-color:var(--accent)}
-.date-input:disabled{opacity:.7}
+/* condensed two-row date readout (day/month over year, digital-clock style); the native date input is
+   overlaid transparently so a click still opens the OS picker and arrow-key nudging keeps working */
+.dateface{position:relative;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
+  min-width:58px;height:32px;padding:2px 10px;border:1px solid var(--line-solid);border-radius:8px;
+  background:var(--surface);font-family:var(--mono);line-height:1;cursor:pointer;user-select:none;overflow:hidden}
+.dateface:hover,.dateface:focus-within{border-color:var(--accent)}
+.df-top{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--text);font-variant-numeric:tabular-nums}
+.df-bot{font-size:9px;letter-spacing:2.5px;color:var(--accent);margin-top:2px;font-variant-numeric:tabular-nums}
+.dateface input[type=date]{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;
+  opacity:0;cursor:pointer;color:transparent;background:transparent}
+.dateface input[type=date]:disabled{cursor:default}
 
 /* ===== accessibility + load motion (t17 polish) ===== */
 /* visible keyboard focus — a crisp accent ring, only for keyboard nav (not mouse clicks) */
@@ -333,10 +354,18 @@ header::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;
 
 /* ===== light theme (toggle in header; persisted) — light forensic console ===== */
 .ghost-btn.icon{padding:7px 9px;font-size:14px;line-height:1}
-.extlink{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}   /* header help/source icon links */
-.extlink svg{display:block}
-.hbar-sep{width:1px;align-self:stretch;margin:6px 4px;background:var(--line-solid);flex:none}   /* subtle divider before the icon-link group */
+/* far-left hamburger: opens the project-links menu (docs/issues/github) */
+.hamburger{background:transparent;border:1px solid var(--line-solid);border-radius:8px;color:var(--muted);
+  padding:6px 8px;cursor:pointer;display:inline-flex;align-items:center;line-height:1}
+.hamburger:hover,.hamburger[aria-expanded="true"]{color:var(--text);border-color:var(--accent)}
+.hamburger svg{display:block}
+/* labeled link rows inside the hamburger menu (reuses .ctxitem for padding/hover) */
+.ctxmenu a.navitem{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--text)}
+.navitem svg{flex:none;color:var(--muted)}
+.navitem:hover svg,.navitem:focus-visible svg{color:var(--accent)}
+.vsep{width:1px;height:20px;flex:none;align-self:center;margin:0 4px;background:var(--line-solid)}   /* hairline divider between header control groups */
 .textsize{display:inline-flex;gap:4px;align-items:stretch}
+.viewtools{display:inline-flex;gap:4px;align-items:center}   /* appearance cluster: A-/A+ text-size + theme + dashboard toggle, condensed as one unit */
 .textsize .ghost-btn{font-family:var(--mono);font-weight:700;line-height:1;display:inline-flex;align-items:center;justify-content:center;min-width:30px}
 #fz_dec{font-size:10px}   /* small A */
 #fz_inc{font-size:16px}   /* big A — the size difference is the affordance (industry standard) */
@@ -410,9 +439,13 @@ body.light{
     radial-gradient(1200px 620px at 82% -12%, #dbe7fb 0%, transparent 60%),
     var(--ground);
 }
-/* HUD corner brackets on the primary data surfaces */
-.grid-wrap,.chart-panel{position:relative}
-.grid-wrap::before,.chart-panel::before{
+/* HUD corner brackets on the primary data surfaces. NOTE: they live on .grid-frame (a non-scrolling
+   wrapper), NOT on .grid-wrap — an absolutely-positioned overlay inside the overflow-x:auto .grid-wrap
+   anchors to the scrollable content box, so the right-side brackets drift into the table when a too-wide
+   table is scrolled right. The frame keeps them pinned to the visible edges. */
+.grid-frame{border-radius:var(--r)}
+.grid-frame,.chart-panel{position:relative}
+.grid-frame::before,.chart-panel::before{
   content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;opacity:.5;
   --c:var(--accent); --l:18px; --t:2px;
   background:
@@ -435,7 +468,7 @@ body.light{
 @media (prefers-reduced-motion:reduce){ .period .dot,.worstasn{animation:none} }
 
 /* brighter HUD corners + panel glow */
-.grid-wrap::before,.chart-panel::before{opacity:.6; --l:20px}
+.grid-frame::before,.chart-panel::before{opacity:.6; --l:20px}
 .grid-wrap{box-shadow:0 18px 50px -34px #000, 0 0 0 1px var(--line-solid), inset 0 0 60px -50px var(--accent)}
 .chart-panel{box-shadow:0 0 40px -28px var(--accent)}
 /* one-time "system online" boot scan sweep */
@@ -479,6 +512,13 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 .wlrm{background:none;border:1px solid var(--line-solid);color:var(--muted);border-radius:6px;padding:3px 9px;cursor:pointer;font-size:11px;font-family:var(--mono)}
 .wlrm:hover{color:var(--sev-high);border-color:var(--sev-high)}
 .wlempty{color:var(--muted);font-family:var(--mono);font-size:12px;padding:16px 4px}
+/* "lives in this browser only" warnings on client-side-only state (whitelist / triage / tags / notes) */
+.localwarn{font-size:12px;line-height:1.5;color:var(--text);background:rgba(245,158,11,.10);
+  border:1px solid rgba(245,158,11,.35);border-left:3px solid var(--sev-med);border-radius:6px;padding:9px 11px;margin:2px 0 12px}
+.localwarn code{font-family:var(--mono);font-size:11px;background:var(--line);padding:1px 4px;border-radius:3px}
+.dwr-local{font-size:11px;line-height:1.45;color:var(--muted);background:rgba(245,158,11,.08);
+  border-left:2px solid var(--sev-med);border-radius:4px;padding:6px 9px;margin:2px 0 10px}
+.dwr-local b{color:var(--sev-med)}
 
 /* ===== threat detail drawer ===== */
 #rows tr{cursor:pointer}
