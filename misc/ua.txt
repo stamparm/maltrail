@@ -2735,6 +2735,12 @@ Zoho API Client/1.0
 Zoho API C-Client/1.0
 Zoho-C-Uploader/2.0
 
+# Reference: https://x.com/suyog41/status/2074073952834797705
+# Reference: https://www.virustotal.com/gui/file/96641a5aa86298e0ce45e9af809f7975945fa24c6f57c8ef75dda1c7f0f3ae69/detection
+
+ZQuickSteal
+ZQuickSteal/1.0
+
 # Misc
 
 information_schema
