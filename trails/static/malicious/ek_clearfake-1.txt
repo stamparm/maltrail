@@ -11506,6 +11506,12 @@ wild-thunder-zone.online
 wild-wish-zone.click
 win-max-hub.top
 
+# Reference: https://x.com/Malwarehunterr/status/2074421663807262811
+
+hashtopoils.org
+docs.hashtopoils.org
+verify.hashtopoils.org
+
 # Generic
 
 /fo0suc2ki2.rtf
