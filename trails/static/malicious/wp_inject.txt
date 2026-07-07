@@ -6904,3 +6904,11 @@ lp.tidio.cc
 wordpres.bid
 cdn.wordpres.bid
 font.wordpres.bid
+
+# Reference: https://x.com/sdcyberresearch/status/2074080137105031511
+
+admiration-noble.sbs
+fg-analytics.biz
+grant-member.pro
+great-fade.sbs
+mg-analytics.sbs
