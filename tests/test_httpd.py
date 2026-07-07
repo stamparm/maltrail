@@ -284,6 +284,19 @@ class TestHttpd(unittest.TestCase):
         obj = _json.loads(body.decode("utf-8"))            # per-day event density for the calendar heat: {"YYYY-MM-DD": count}
         self.assertIsInstance(obj, dict)
 
+    def test_geo_returns_json(self):
+        # per-country attack-origin density for the world map: trail IPs geolocated, domains/private -> unmapped
+        import json as _json
+        ck = self._login()
+        st, _, body = _http(self.port, "GET", "/geo?date=%s" % self.date, cookie=ck)
+        self.assertEqual(st, 200)
+        obj = _json.loads(body.decode("utf-8"))
+        self.assertIsInstance(obj.get("counts"), dict)
+        self.assertIn("mapped", obj)
+        self.assertIn("unmapped", obj)
+        # the synthetic log has public-IP trails (geolocatable) and an 'evil.com' domain trail (unmapped)
+        self.assertGreaterEqual(obj["unmapped"], 1)
+
     def test_ping_healthcheck(self):
         # unauthenticated liveness probe used by monitoring/LB health checks
         st, _, body = _http(self.port, "GET", "/ping")

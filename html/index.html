@@ -31,7 +31,8 @@
       <button class="ghost-btn icon" id="fz_inc" title="increase text size" aria-label="increase text size">A+</button>
     </div>
     <button class="ghost-btn icon" id="theme_toggle" title="toggle light / dark" aria-label="toggle light or dark theme">☾</button>
-    <button class="ghost-btn icon dash-toggle" id="stats_toggle" aria-controls="stats" aria-pressed="true" title="hide dashboard cards" aria-label="hide dashboard cards"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg></button>
+    <button class="ghost-btn icon dash-toggle" id="view_toggle" aria-controls="stats worldmap" title="show attack map" aria-label="show attack map"><svg class="ic-dash" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg><svg class="ic-map" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9z"/></svg></button>
+    <button class="ghost-btn icon dash-toggle" id="collapse_toggle" aria-controls="stats worldmap" aria-expanded="true" title="hide panel" aria-label="hide panel"><svg class="ic-chev" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
   </div>
   <button class="ghost-btn" id="login_link">Log in</button>
 </header>
@@ -40,6 +41,8 @@
   <section class="stats" id="stats"></section>
 
   <div id="chart_area"></div>
+
+  <section class="worldmap" id="worldmap" aria-label="attack origins map" hidden></section>
 
   <div class="toolbar">
     <span id="sevfilter" class="sevfilter"></span>
@@ -75,6 +78,7 @@
 
 <script src="js/demo.js"></script>
 <script src="js/thirdparty.min.js"></script>
+<script src="js/worldmap.js"></script>
 <script src="js/main.js?v=<!ASSETVER!>"></script>
 
 </body>
