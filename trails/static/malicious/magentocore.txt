@@ -17775,6 +17775,26 @@ sumerkifunclub.digital
 uilintoshirandro.it.com
 unpgk.com
 
+# Reference: https://x.com/sdcyberresearch/status/2074485060590354466
+# BANNER_0_HASH-HOST=521b0f37284f0171b265a1bb27469db2
+# BANNER_0_HASH-HOST=f4c44c602a1dd0ac3050ee208a70ed8f
+# BODY_SHA1-HOST=2de13afa040cd2d2346a8b5b283d864e2958773b
+
+basesecurily.com
+cyberjscore.com
+digicpromotion.com
+fontsbasecdn.com
+productinform.com
+pswordmonster.com
+webjoindev.com
+mail.basesecurily.com
+mail.cyberjscore.com
+mail.digicpromotion.com
+mail.fontsbasecdn.com
+mail.productinform.com
+mail.pswordmonster.com
+mail.webjoindev.com
+
 # Generic
 
 /assets/lfg.js
