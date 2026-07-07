@@ -62,7 +62,12 @@
 
   /* ---------- stat cards ---------- */
   .dash-toggle svg{display:block}
-  .dash-toggle[aria-pressed="false"]{opacity:.5}   /* dashboard hidden -> the toggle reads as "off" */
+  .dash-toggle[aria-pressed="false"]{opacity:.5}   /* both panels hidden -> the toggle reads as "off" */
+  /* view toggle flips dashboard <-> map (JS shows the icon of the view you'll switch TO); the collapse chevron
+     hides/shows the whole block and flips to point down when collapsed */
+  #view_toggle .ic-map{display:none}
+  #collapse_toggle .ic-chev{transition:transform .15s}
+  #collapse_toggle[aria-expanded="false"] .ic-chev{transform:rotate(180deg)}
   body.cards-collapsed .stats,body.cards-collapsed #chart_area{display:none}   /* user hid the dashboard cards + any open drill-down */
   .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
   .card{position:relative;background:var(--surface);border:1px solid var(--line-solid);border-radius:var(--r);
@@ -343,6 +348,31 @@ body.light{--ch0:#eaeef3;--ch1:#ffffb2;--ch2:#fecc5c;--ch3:#fd8d3c;--ch4:#f03b20
   border-top:1px solid var(--line);font-size:9px;letter-spacing:.4px;color:var(--faint)}
 .dp-legend{display:flex;align-items:center;gap:5px}
 .dp-legend i{display:block;border-radius:50%;background:var(--accent)}
+
+/* ===== attack-origin world map (#worldmap): occupies the dashboard's block, hip/hop via the globe toggle ===== */
+/* land/ocean/graticule are themed; the attack dots use a fixed warm heat ramp (set inline in JS) so "more = redder"
+   reads the same in both themes. Geo data comes from /geo (trail IPs only -> honest mapped/unmapped). */
+:root{--wm-ocean1:#182236;--wm-ocean2:#0d121c;--wm-land:#243040;--wm-lbd:#3c4a66;--wm-grat:#22304a}
+body.light{--wm-ocean1:#eaf2fc;--wm-ocean2:#d3e3f5;--wm-land:#ffffff;--wm-lbd:#9fb6d6;--wm-grat:#bcd0ea}
+.worldmap{display:flex;gap:16px;margin-bottom:18px}
+.worldmap[hidden]{display:none}   /* MUST beat .worldmap's display:flex, or the map never hides (a bare [hidden] loses to the class) */
+.wm-map{flex:1;position:relative;background:radial-gradient(120% 95% at 50% 22%,var(--wm-ocean1),var(--wm-ocean2));
+  border:1px solid var(--line-solid);border-radius:var(--r);padding:8px 12px 4px;overflow:hidden;min-width:0}
+.wm-map svg{width:100%;height:auto;display:block}
+.wm-map .grat path{stroke:var(--wm-grat);stroke-width:.5;opacity:.5;fill:none}
+.wm-map .land path{fill:var(--wm-land);stroke:var(--wm-lbd);stroke-width:.6;stroke-linejoin:round}
+.wm-hd{position:absolute;top:12px;left:16px;font-size:12px;font-weight:700;color:var(--text);pointer-events:none}
+.wm-hd small{color:var(--muted);font-weight:400;margin-left:6px}
+.wm-leg{position:absolute;bottom:12px;left:16px;display:flex;align-items:center;gap:7px;color:var(--faint);font-size:10px;pointer-events:none}
+.wm-leg i{display:inline-block;border-radius:50%;background:#f0431f}
+.wm-side{width:212px;background:var(--surface);border:1px solid var(--line-solid);border-radius:var(--r);padding:14px 15px}
+.wm-side h4{margin:0 0 12px;font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);font-weight:600}
+.wm-row{display:flex;align-items:center;gap:9px;margin:9px 0;font:12px var(--mono)}
+.wm-cc{width:26px;color:var(--text)}
+.wm-bar{height:8px;border-radius:3px;min-width:6px}
+.wm-vn{margin-left:auto;color:var(--muted);font-size:11px}
+.wm-empty{color:var(--faint);font-size:11px;padding:8px 2px}
+@media (max-width:720px){.worldmap{flex-direction:column}.wm-side{width:auto}}
 
 /* ===== accessibility + load motion (t17 polish) ===== */
 /* visible keyboard focus — a crisp accent ring, only for keyboard nav (not mouse clicks) */

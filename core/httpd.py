@@ -32,6 +32,7 @@ from core.common import ipcat_lookup
 from core.common import worst_asns
 from core.compat import xrange
 from core.enums import HTTP_HEADER
+from core.geo import ip_to_country
 from core.settings import config
 from core.settings import CONTENT_EXTENSIONS_EXCLUSIONS
 from core.settings import DATE_FORMAT
@@ -76,6 +77,7 @@ _blacklist_cache = None
 _blacklist_key = None
 _version_cache = None
 _counts_cache = {}  # NOTE: per daily-log event count keyed by filepath -> (mtime, size, count); past-day logs are immutable so they're read once, not on every poll
+_geo_cache = {}  # NOTE: per daily-log country aggregation keyed by filepath -> (mtime, size, result); same immutability trick as _counts_cache
 _statics_cache = None  # NOTE: (5-min-bucket, latest-static-trail-date); avoids re-globbing the static malware dir on every page render
 MAX_POST_SIZE = 10 * 1024 * 1024  # NOTE: cap request body (real Maltrail POSTs are tiny); rejects absurd Content-Length up-front to bound memory
 REQUEST_TIMEOUT = 60  # NOTE: per-socket-operation timeout; frees worker threads stuck on stalled/slowloris connections (active, progressing clients are unaffected)
@@ -287,7 +289,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # display helpers (_version, _logo, _assetver, _tzoffset, _statics, _format, _build_netfilters, _filter_events)
             # whose signature is NOT (self, params), so e.g. "GET /version" -> self._version(params) -> uncaught TypeError
             # (request crash) reachable by any client. Endpoints are an explicit allowlist, not "any _-prefixed method".
-            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts"):
+            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo"):
                 if len(splitpath) > 1:
                     params["subpath"] = splitpath[1]
                 content = getattr(self, "_%s" % splitpath[0])(params)
@@ -1194,6 +1196,60 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             _counts_cache[filepath] = (mtime, size, count)
 
             return json.dumps(counts)
+
+        def _geo(self, params):
+            # Per-country event density for one day's log, for the world map. We geolocate the TRAIL (the matched
+            # IOC, field index 8) and only when it's a public IPv4 - so the malicious IP is placed, never the local
+            # host or a benign resolver, and domain/URL/IPv6 trails are honestly counted as "unmapped" rather than
+            # faked onto the map. Result is cached per immutable past-day log, like _counts.
+            session = self.get_session()
+
+            if session is None:
+                self.send_response(_http_client.UNAUTHORIZED)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
+            self.send_response(_http_client.OK)
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
+
+            match = re.search(r"\d{4}-\d{2}-\d{2}", params.get("date", ""))
+            if not match:
+                return json.dumps({"counts": {}, "mapped": 0, "unmapped": 0})
+
+            filepath = os.path.join(config.LOG_DIR, "%s.log" % match.group(0))
+            if not os.path.exists(filepath):
+                return json.dumps({"counts": {}, "mapped": 0, "unmapped": 0})
+
+            size = os.path.getsize(filepath)
+            mtime = os.path.getmtime(filepath)
+            cached = _geo_cache.get(filepath)
+            if cached and cached[0] == mtime and cached[1] == size:
+                return json.dumps(cached[2])
+
+            counts, mapped, unmapped = {}, 0, 0
+            try:
+                with open(filepath, "rb") as f:
+                    for line in f:  # streamed; a busy day's log can be 100s of MB
+                        cut = line.find(b'" ')  # end of the quoted leading timestamp
+                        if cut < 0:
+                            continue
+                        parts = line[cut + 2:].split(b' ')  # sensor,src,sport,dst,dport,proto,type,TRAIL,...
+                        if len(parts) <= 7:
+                            continue
+                        cc = ip_to_country(parts[7].decode("latin-1"))
+                        if cc:
+                            counts[cc] = counts.get(cc, 0) + 1
+                            mapped += 1
+                        else:
+                            unmapped += 1
+            except Exception:
+                if config.SHOW_DEBUG:
+                    traceback.print_exc()
+
+            result = {"counts": counts, "mapped": mapped, "unmapped": unmapped}
+            _geo_cache[filepath] = (mtime, size, result)
+            return json.dumps(result)
 
     class SSLReqHandler(ReqHandler):
         def setup(self):

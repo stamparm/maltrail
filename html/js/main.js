@@ -1875,14 +1875,85 @@
   function getScaleIdx() { var v = parseInt((function () { try { return localStorage.getItem("mt_scale"); } catch (e) { return null; } })(), 10); return (v >= 0 && v < FZ_STEPS.length) ? v : 1; }
   function applyScale(idx) { document.documentElement.style.zoom = FZ_STEPS[idx]; }
   function setScale(idx) { idx = Math.max(0, Math.min(FZ_STEPS.length - 1, idx)); try { localStorage.setItem("mt_scale", idx); } catch (e) { } applyScale(idx); }
-  // ---- collapse the dashboard stat cards (+ any open drill-down chart) for users who find them distracting; persisted ----
-  function getCardsHidden() { try { return localStorage.getItem("mt_cards") === "1"; } catch (e) { return false; } }
-  function applyCardsHidden(h) {
-    document.body.classList.toggle("cards-collapsed", h);
-    var b = document.getElementById("stats_toggle");
-    if (b) { b.setAttribute("aria-pressed", h ? "false" : "true"); var lbl = (h ? "show" : "hide") + " dashboard cards"; b.title = lbl; b.setAttribute("aria-label", lbl); }   // pressed = dashboard shown; dimmed when off
+  // ONE block above the table holds either the dashboard (cards + drill-down charts) OR the attack map. Two separate,
+  // one-click intents: the VIEW toggle flips dashboard <-> map (mutually exclusive, always one of them), and the
+  // COLLAPSE chevron hides/shows the whole block (full-height table when hidden). Persisted: mt_panel + mt_collapsed.
+  function getView() { try { return localStorage.getItem("mt_panel") === "map" ? "map" : "dash"; } catch (e) { return "dash"; } }
+  function getCollapsed() {
+    try {
+      var c = localStorage.getItem("mt_collapsed");
+      if (c === "0" || c === "1") return c === "1";
+      return localStorage.getItem("mt_cards") === "1";   // migrate the old "hide dashboard" flag
+    } catch (e) { return false; }
   }
-  function setCardsHidden(h) { try { localStorage.setItem("mt_cards", h ? "1" : "0"); } catch (e) { } applyCardsHidden(h); }
+  function applyView() {
+    var view = getView(), collapsed = getCollapsed();
+    var dashShown = !collapsed && view === "dash", mapShown = !collapsed && view === "map";
+    document.body.classList.toggle("cards-collapsed", !dashShown);   // hides .stats + #chart_area unless the dashboard is the shown view
+    var wm = document.getElementById("worldmap"); if (wm) wm.hidden = !mapShown;   // .worldmap[hidden] actually hides it
+    var vt = document.getElementById("view_toggle");
+    if (vt) {
+      var icD = vt.querySelector(".ic-dash"), icM = vt.querySelector(".ic-map"), toMap = (view !== "map");   // icon = the view you'll switch TO
+      if (icD) icD.style.display = toMap ? "none" : "block";
+      if (icM) icM.style.display = toMap ? "block" : "none";
+      vt.title = toMap ? "show attack map" : "show dashboard"; vt.setAttribute("aria-label", vt.title);
+    }
+    var ct = document.getElementById("collapse_toggle");
+    if (ct) { ct.setAttribute("aria-expanded", collapsed ? "false" : "true"); ct.title = collapsed ? "show panel" : "hide panel"; ct.setAttribute("aria-label", ct.title); }
+    if (mapShown) renderWorldMap();
+  }
+  function setView(v) { try { localStorage.setItem("mt_panel", v); } catch (e) { } }
+  function setCollapsed(c) { try { localStorage.setItem("mt_collapsed", c ? "1" : "0"); } catch (e) { } }
+  function toggleView() { setView(getView() === "map" ? "dash" : "map"); setCollapsed(false); applyView(); }   // switching view always shows it
+  function toggleCollapsed() { setCollapsed(!getCollapsed()); applyView(); }
+
+  // ---- attack-origin world map (fed by /geo: trail IPs only, so mapped/unmapped is honest) ----
+  var WM_BASE = ["#ffd24c", "#ffab2e", "#fd7a1e", "#f0431f", "#d1102e"];   // 5-step warm heat, few -> many (theme-independent, like the calendar)
+  function wmBucket(n) { return !n ? 0 : n < 50 ? 1 : n < 500 ? 2 : n < 5000 ? 3 : n < 50000 ? 4 : 5; }
+  function wmColor(n) { return WM_BASE[Math.max(0, wmBucket(n) - 1)]; }
+  var _wmBuilt = false, _wmReqDate = null;
+  function buildWmShell() {
+    var host = document.getElementById("worldmap"); if (!host || _wmBuilt) return;
+    host.innerHTML =
+      '<div class="wm-map"><div class="wm-hd">Attack origins <small class="wm-sub"></small></div>' + (window.WORLD_SVG || "") +
+      '<div class="wm-leg"><span>events</span><i style="width:5px;height:5px"></i><i style="width:9px;height:9px"></i><i style="width:14px;height:14px"></i></div></div>' +
+      '<div class="wm-side"><h4>Top source countries</h4><div class="wm-list"></div></div>';
+    var svg = host.querySelector("#wm");
+    if (svg) svg.insertAdjacentHTML("afterbegin", '<defs><filter id="wmglow" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3.2"/></filter></defs>');
+    _wmBuilt = true;
+  }
+  function paintWm(data) {
+    var host = document.getElementById("worldmap"); if (!host) return;
+    var svg = host.querySelector("#wm"), C = window.WORLD_CENT || {}, counts = (data && data.counts) || {};
+    var items = Object.keys(counts).filter(function (cc) { return C[cc]; }).map(function (cc) { return [cc, counts[cc]]; });
+    items.sort(function (a, b) { return a[1] - b[1]; });   // small first so the big/hot dots paint on top
+    if (svg) {
+      var halos = "", cores = "";
+      items.forEach(function (it) {
+        var xy = C[it[0]], b = wmBucket(it[1]), r = 3 + b * 2, col = WM_BASE[Math.max(0, b - 1)];
+        halos += '<circle cx="' + xy[0] + '" cy="' + xy[1] + '" r="' + (r * 1.8).toFixed(1) + '" fill="' + col + '"/>';
+        cores += '<circle cx="' + xy[0] + '" cy="' + xy[1] + '" r="' + r + '" fill="' + col + '" stroke="#fff" stroke-opacity=".4" stroke-width=".6"><title>' + esc(it[0]) + ': ≈ ' + fmtN(it[1]) + ' events</title></circle>';
+      });
+      var olds = svg.querySelectorAll(".wm-dotlayer"); for (var i = 0; i < olds.length; i++) olds[i].parentNode.removeChild(olds[i]);
+      svg.insertAdjacentHTML("beforeend", '<g class="wm-dotlayer" filter="url(#wmglow)" opacity=".5">' + halos + '</g><g class="wm-dotlayer">' + cores + '</g>');
+    }
+    var top = items.slice().sort(function (a, b) { return b[1] - a[1]; }).slice(0, 8), max = top.length ? top[0][1] : 1;
+    var list = host.querySelector(".wm-list");
+    if (list) list.innerHTML = top.length
+      ? top.map(function (it) { return '<div class="wm-row"><span class="wm-cc">' + esc(it[0]) + '</span><span class="wm-bar" style="width:' + (10 + Math.round(86 * it[1] / max)) + '%;background:' + wmColor(it[1]) + '"></span><span class="wm-vn">' + fmtN(it[1]) + '</span></div>'; }).join("")
+      : '<div class="wm-empty">No geolocatable sources for this day.</div>';
+    var sub = host.querySelector(".wm-sub");
+    if (sub) sub.textContent = "· " + fmtN((data && data.mapped) || 0) + " mapped · " + fmtN((data && data.unmapped) || 0) + " local/unmapped";
+  }
+  function renderWorldMap() {
+    buildWmShell();
+    var date = currentDate(); _wmReqDate = date;
+    if (DEMO) { paintWm({ counts: {}, mapped: 0, unmapped: 0 }); return; }   // static build has no server
+    fetch("/geo?date=" + encodeURIComponent(date), { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (o) { if (_wmReqDate === date) paintWm(o || { counts: {}, mapped: 0, unmapped: 0 }); })
+      .catch(function () { if (_wmReqDate === date) paintWm({ counts: {}, mapped: 0, unmapped: 0 }); });
+  }
   // ---- mute the live new-threat beep (persisted) ----
   var _VOL_ON = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>';
   var _VOL_OFF = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>';
@@ -1941,7 +2012,8 @@
     if (tt) tt.onclick = function () { setTheme(getTheme() === "light" ? "dark" : "light"); };
     var _fzd = document.getElementById("fz_dec"); if (_fzd) _fzd.onclick = function () { setScale(getScaleIdx() - 1); };
     var _fzi = document.getElementById("fz_inc"); if (_fzi) _fzi.onclick = function () { setScale(getScaleIdx() + 1); };
-    var _stg = document.getElementById("stats_toggle"); if (_stg) _stg.onclick = function () { setCardsHidden(!getCardsHidden()); };
+    var _vt = document.getElementById("view_toggle"); if (_vt) _vt.onclick = toggleView;        // flip dashboard <-> attack map
+    var _ct = document.getElementById("collapse_toggle"); if (_ct) _ct.onclick = toggleCollapsed;  // hide/show the whole block
     var f = document.getElementById("filter");
     if (f) {
       f.oninput = function () { state.input = f.value; state.page = 0; refresh(); };
@@ -2202,6 +2274,7 @@
   var _demoCSVc;
   function demoCSV() { return _demoCSVc || (_demoCSVc = ("" + window.getDemoCSV()).replace(/"2024-01-11 /g, '"' + todayStr() + ' ')); }
   function navigate(date) {
+    if (getView() === "map" && !getCollapsed()) renderWorldMap();   // keep the attack map on the viewed day
     if (DEMO) { render(aggregate(demoCSV())); return; }
     if (state.live) { stopLive(); }   // tear down the stream for the old day
     loadEvents(date);
@@ -2436,7 +2509,7 @@
     // <!LOGO!> is server-substituted to the maltrail logo (or config.HEADER_LOGO). When unsubstituted
     // (demo / file:// / artifact — no server), the token becomes a bogus comment -> inject the default logo.
     var _bl = document.querySelector(".brandlogo"); if (_bl && !_bl.querySelector("img")) _bl.innerHTML = '<img src="images/mlogo.png" alt="" style="width:24px">altrail';
-    loadPrefs(); applyTheme(getTheme()); applyScale(getScaleIdx()); applyCardsHidden(getCardsHidden()); applyMuted(getMuted()); migrateLegacy(); parseHash(); wire(); applyPrefsUI();
+    loadPrefs(); applyTheme(getTheme()); applyScale(getScaleIdx()); applyView(); applyMuted(getMuted()); migrateLegacy(); parseHash(); wire(); applyPrefsUI();
     setInterval(refreshRelTimes, 30000);   // keep "Xm ago" labels current between renders
     window.addEventListener("online", applyConn); window.addEventListener("offline", applyConn);
     applyConn();   // initial: an offline-opened page starts with Live + calendar disabled
