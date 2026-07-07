@@ -287,8 +287,9 @@ kbd{font-family:var(--mono);font-size:11px;color:var(--text);background:var(--in
 .navbtn{background:var(--surface);border:1px solid var(--line-solid);color:var(--muted);width:28px;height:30px;border-radius:8px;cursor:pointer;font-size:17px;line-height:1;display:grid;place-items:center;padding:0}
 .navbtn:hover:not(:disabled){color:var(--text);border-color:var(--accent)}
 .navbtn:disabled{opacity:.4;cursor:default}
-/* condensed two-row date readout (day/month over year, digital-clock style); the native date input is
-   overlaid transparently so a click still opens the OS picker and arrow-key nudging keeps working */
+/* condensed two-row date readout (day/month over year, digital-clock style); a transparent native date input
+   is overlaid to keep arrow-key nudging, but a click opens our own themed calendar (.datepop) instead of the
+   OS picker — so no native white-box / "Clear" chrome, and we can paint per-day event density */
 .dateface{position:relative;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
   min-width:58px;height:32px;padding:2px 10px;border:1px solid var(--line-solid);border-radius:8px;
   background:var(--surface);font-family:var(--mono);line-height:1;cursor:pointer;user-select:none;overflow:hidden}
@@ -303,6 +304,45 @@ body.light .dateface input[type=date]{color-scheme:light}
 /* the picker indicator is already under opacity:0, but kill it outright so no native chrome can paint */
 .dateface input[type=date]::-webkit-calendar-picker-indicator{opacity:0;display:none}
 .dateface input[type=date]:disabled{cursor:default}
+
+/* ===== day picker (.datepop): a cal-heatmap–style event-density grid, rendered natively (no d3) ===== */
+/* the last few months as a GitHub-contributions grid of day-squares, colored by /counts (approx events per day).
+   warm YlOrRd "heat" buckets (--ch1 pale yellow -> --ch5 dark red), like cal-heatmap: more events = hotter/redder
+   (semantically = worse, matching severity red). --ch0 is the empty/quiet cell (neutral, per theme). */
+:root{--ch0:#232a38;--ch1:#ffffb2;--ch2:#fecc5c;--ch3:#fd8d3c;--ch4:#f03b20;--ch5:#bd0026}
+body.light{--ch0:#eaeef3;--ch1:#ffffb2;--ch2:#fecc5c;--ch3:#fd8d3c;--ch4:#f03b20;--ch5:#bd0026}
+.datepop{position:fixed;z-index:60;padding:12px 14px 10px;border:1px solid var(--line-solid);border-radius:12px;
+  background:var(--surface);box-shadow:0 12px 34px rgba(0,0,0,.42);font-family:var(--sans);color:var(--text);
+  -webkit-user-select:none;user-select:none;transform-origin:top left;animation:dpIn .16s ease-out}
+@keyframes dpIn{from{opacity:0;transform:translateY(-6px) scale(.98)}to{opacity:1;transform:none}}
+.datepop[hidden]{display:none}
+.dp-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.dp-title{font-size:12px;font-weight:700;letter-spacing:.4px;flex:1;text-align:center}
+.dp-nav{width:24px;height:24px;border:1px solid var(--line-solid);border-radius:7px;background:var(--surface-2);
+  color:var(--muted);font-size:14px;line-height:1;cursor:pointer}
+.dp-nav:hover:not(:disabled){color:var(--text);border-color:var(--accent)}
+.dp-nav:disabled{opacity:.35;cursor:default}
+.ch-months{display:flex;gap:16px;align-items:flex-start}
+.ch-month{display:flex;flex-direction:column;align-items:center;gap:7px}
+/* 7 weekday rows, week columns fill left-to-right (Monday-start); leading .ch-pad cells align the 1st */
+.ch-grid{display:grid;grid-template-rows:repeat(7,12px);grid-auto-flow:column;grid-auto-columns:12px;gap:3px}
+.ch-d{width:12px;height:12px;border-radius:2px;background:var(--ch0);cursor:pointer;transition:transform .08s}
+.ch-d.ch-pad,.ch-d.ch-fut{background:transparent;cursor:default}
+.ch-d:not(.ch-pad):not(.ch-fut):hover{transform:scale(1.28);outline:1px solid var(--text);outline-offset:-1px}
+.ch-mlabel{font-size:10px;color:var(--muted);letter-spacing:.3px}
+.ch-q0{background:var(--ch0)} .ch-q1{background:var(--ch1)} .ch-q2{background:var(--ch2)}
+.ch-q3{background:var(--ch3)} .ch-q4{background:var(--ch4)} .ch-q5{background:var(--ch5)}
+/* ONLY the active (selected) day gets a marker — a bold --text outline. today is left unmarked on purpose: two
+   similar rings just confused the eye. cal-heatmap-style neutral outline, no fill change, no blue/green. */
+.ch-sel{box-shadow:inset 0 0 0 2px var(--text)}
+.dp-foot{display:flex;align-items:center;justify-content:flex-end;gap:6px;margin-top:11px;padding-top:9px;
+  border-top:1px solid var(--line);font-size:9px;letter-spacing:.4px;color:var(--faint)}
+.ch-legend{display:flex;align-items:center;gap:3px}
+.ch-legend i{display:block;width:11px;height:11px;border-radius:2px}
+.dp-foot{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:10px;padding-top:9px;
+  border-top:1px solid var(--line);font-size:9px;letter-spacing:.4px;color:var(--faint)}
+.dp-legend{display:flex;align-items:center;gap:5px}
+.dp-legend i{display:block;border-radius:50%;background:var(--accent)}
 
 /* ===== accessibility + load motion (t17 polish) ===== */
 /* visible keyboard focus — a crisp accent ring, only for keyboard nav (not mouse clicks) */

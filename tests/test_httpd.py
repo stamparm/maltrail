@@ -281,7 +281,7 @@ class TestHttpd(unittest.TestCase):
         ck = self._login()
         st, _, body = _http(self.port, "GET", "/counts", cookie=ck)
         self.assertEqual(st, 200)
-        obj = _json.loads(body.decode("utf-8"))            # sparkline data: {timestamp: count}
+        obj = _json.loads(body.decode("utf-8"))            # per-day event density for the calendar heat: {"YYYY-MM-DD": count}
         self.assertIsInstance(obj, dict)
 
     def test_ping_healthcheck(self):
