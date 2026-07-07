@@ -9839,6 +9839,12 @@ drvdb9rcebidk.cloudfront.net
 
 /popka.js
 
+# Reference: https://x.com/Yusufcancakiir/status/2074528334650691967
+
+/deploy_beacon.py
+/deploy_min_cs.py
+/drop_and_run_cs.py
+
 # Generic
 
 /5c0ca79.php
