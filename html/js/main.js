@@ -1899,9 +1899,10 @@
       var t = (state._pageRows || [])[+tr.dataset.ri]; if (!t) return;
       e.preventDefault(); openCtx(t, e.clientX, e.clientY);
     });
-    document.addEventListener('click', function () { closeCtx(); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeCtx(); closeDrawer(); } });
-    window.addEventListener('scroll', function () { closeCtx(); }, true);
+    document.addEventListener('click', function () { closeCtx(); closeDatePicker(); });   // datepop stops propagation on internal clicks, so this only fires for outside clicks
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeCtx(); closeDrawer(); closeDatePicker(); } });
+    window.addEventListener('scroll', function () { closeCtx(); closeDatePicker(); }, true);
+    window.addEventListener('resize', function () { if (state._dpOpen) positionDatePop(); });
     if (_rows) _rows.addEventListener('click', function (e) {
       if (e.target.closest && e.target.closest('button, a, input, .ell, [data-f], [data-untag], .tx, .rowhide, .tagadd')) return;
       var tr = e.target.closest ? e.target.closest('tr') : null; if (!tr || tr.dataset.ri == null) return;
@@ -1969,8 +1970,18 @@
     });
     var di = document.getElementById("date_input");
     if (di) {
-      di.onchange = function () { renderDateFace(); navigate(di.value); };
-      di.onclick = function () { if (di.showPicker) { try { di.showPicker(); } catch (e) {} } };   // click the readout -> open the OS day picker (arrow keys still nudge natively)
+      di.onchange = function () {
+        // arrow-key nudging on the focused input still fires this; guard against an empty value just in case
+        if (!di.value) { di.value = di.dataset.day || todayStr(); renderDateFace(); return; }
+        di.dataset.day = di.value; renderDateFace(); navigate(di.value);
+      };
+      // click the readout -> our own themed calendar (not the OS popup, which renders a white box + a "Clear" on
+      // some browsers). preventDefault + stopPropagation so the field doesn't open the native picker and the
+      // outside-click closer doesn't immediately dismiss ours. Arrow keys still nudge the day natively.
+      di.onclick = function (e) { e.preventDefault(); e.stopPropagation(); openDatePicker(); };
+      di.onkeydown = function (e) {
+        if (e.key === "Enter" || e.key === " " || (e.altKey && e.key === "ArrowDown")) { e.preventDefault(); openDatePicker(); }
+      };
     }
     var pv = document.getElementById("prev_day"); if (pv) pv.onclick = function () { shiftDay(-1); };
     var nx = document.getElementById("next_day"); if (nx) nx.onclick = function () { shiftDay(1); };
@@ -2086,7 +2097,106 @@
     if (top) top.textContent = MON_ABBR[(+m[2] - 1) % 12] + " " + m[3];
     if (bot) bot.textContent = m[1];
   }
-  function setDate(s) { var d = document.getElementById("date_input"); if (d) d.value = s; renderDateFace(); }
+  function setDate(s) { var d = document.getElementById("date_input"); if (d) { d.value = s; d.dataset.day = s; } renderDateFace(); }
+
+  // ---- day picker: a cal-heatmap–style event-density grid (GitHub-contributions look), rendered natively (no d3) ----
+  // Shows the last few months as a grid of day-squares colored by that day's event volume (from /counts): an empty
+  // day is a flat cell, a flooded day a bright one, so you see WHERE the noise was and click straight to it. Also
+  // replaces the native OS date popup (white box + confusing "Clear" on some browsers).
+  var MON_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  var _counts = {};          // "YYYY-MM-DD" -> approx events that day
+  var _countsSpans = {};     // "from..to" -> true, so each visible span is fetched at most once
+  var HM_MONTHS = 4;         // months shown side by side
+  function fmtYMD(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
+  function heatBucket(n) { return !n ? 0 : n < 500 ? 1 : n < 1000 ? 2 : n < 5000 ? 3 : n < 10000 ? 4 : 5; }   // cal-heatmap-style thresholds
+  function fetchCounts(fromStr, toStr) {
+    if (DEMO) return;                                  // static build has no server
+    var key = fromStr + ".." + toStr; if (_countsSpans[key]) return; _countsSpans[key] = true;
+    fetch("/counts?from=" + fromStr + "&to=" + toStr, { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (o) { if (!o) return; for (var k in o) _counts[k] = o[k]; if (state._dpOpen) buildHeatmap(); })   // repaint once densities arrive
+      .catch(function () { _countsSpans[key] = false; });   // let a transient failure retry on next open
+  }
+  function ensureDatePop() {
+    var pop = document.getElementById("datepop"); if (pop) return pop;
+    pop = document.createElement("div");
+    pop.id = "datepop"; pop.className = "datepop"; pop.hidden = true;
+    pop.setAttribute("role", "dialog"); pop.setAttribute("aria-label", "pick a day");
+    var leg = ""; for (var q = 0; q <= 5; q++) leg += '<i class="ch-q' + q + '"></i>';
+    pop.innerHTML =
+      '<div class="dp-head"><button class="dp-nav" type="button" data-d="-1" aria-label="earlier months">‹</button>' +
+      '<span class="dp-title"></span>' +
+      '<button class="dp-nav" type="button" data-d="1" aria-label="later months">›</button></div>' +
+      '<div class="ch-months"></div>' +
+      '<div class="dp-foot"><span>fewer</span><span class="ch-legend">' + leg + '</span><span>more events</span></div>';
+    document.body.appendChild(pop);
+    pop.addEventListener("click", function (e) { e.stopPropagation(); });   // internal clicks never reach the outside-close handler
+    pop.querySelectorAll(".dp-nav").forEach(function (b) { b.onclick = function () { shiftMonths(+b.dataset.d); }; });
+    pop.addEventListener("keydown", function (e) { if (e.key === "Escape") { closeDatePicker(); var a = document.getElementById("date_input"); if (a) a.focus(); } });
+    return pop;
+  }
+  function monthGrid(y, m, todayS, sel) {   // one month: 7 weekday rows × week columns of day-squares (Monday-start)
+    var wrap = document.createElement("div"); wrap.className = "ch-month";
+    var grid = document.createElement("div"); grid.className = "ch-grid";
+    var lead = (new Date(y, m, 1).getDay() + 6) % 7, i;   // blank cells before the 1st so weekdays line up in rows
+    for (i = 0; i < lead; i++) { var pad = document.createElement("span"); pad.className = "ch-d ch-pad"; grid.appendChild(pad); }
+    var days = new Date(y, m + 1, 0).getDate();
+    for (i = 1; i <= days; i++) {
+      var ds = fmtYMD(new Date(y, m, i)), future = ds > todayS, n = future ? 0 : (_counts[ds] || 0);
+      var c = document.createElement("span");
+      c.className = "ch-d ch-q" + heatBucket(n) + (future ? " ch-fut" : "") + (ds === sel ? " ch-sel" : "");
+      c.dataset.date = ds;
+      c.title = MON_SHORT[m] + " " + i + " " + y + (future ? "" : " · " + (n ? (n >= 100 ? "≈ " : "") + fmtN(n) + " events" : "no events"));
+      if (!future) c.onclick = function () { pickDay(this.dataset.date); };
+      grid.appendChild(c);
+    }
+    wrap.appendChild(grid);
+    var lab = document.createElement("div"); lab.className = "ch-mlabel"; lab.textContent = MON_SHORT[m] + " '" + ("" + y).slice(2);
+    wrap.appendChild(lab);
+    return wrap;
+  }
+  function buildHeatmap() {
+    var pop = ensureDatePop();
+    var t = new Date(); t.setHours(0, 0, 0, 0);
+    var todayS = fmtYMD(t), sel = currentDate();
+    var months = [], yy = state._dpY, mm = state._dpM, k;   // window ENDS at (_dpY,_dpM); walk HM_MONTHS back
+    for (k = 0; k < HM_MONTHS; k++) { months.unshift([yy, mm]); mm--; if (mm < 0) { mm = 11; yy--; } }
+    var a = months[0], b = months[HM_MONTHS - 1];
+    pop.querySelector(".dp-title").textContent = MON_SHORT[a[1]] + " – " + MON_SHORT[b[1]] + " " + b[0];
+    pop.querySelector('.dp-nav[data-d="1"]').disabled = (state._dpY > t.getFullYear()) || (state._dpY === t.getFullYear() && state._dpM >= t.getMonth());   // window can't end past this month
+    fetchCounts(fmtYMD(new Date(a[0], a[1], 1)), fmtYMD(new Date(b[0], b[1] + 1, 0)));   // one request spans all visible months
+    var host = pop.querySelector(".ch-months"); host.innerHTML = "";
+    months.forEach(function (ym) { host.appendChild(monthGrid(ym[0], ym[1], todayS, sel)); });
+  }
+  function positionDatePop() {
+    var pop = document.getElementById("datepop"), anchor = document.getElementById("dateface"); if (!pop || !anchor) return;
+    var r = anchor.getBoundingClientRect(), pw = pop.offsetWidth || 420, ph = pop.offsetHeight || 200;
+    pop.style.left = Math.max(8, Math.min(r.left, window.innerWidth - pw - 8)) + "px";
+    var top = r.bottom + 6; if (top + ph > window.innerHeight - 8) top = Math.max(8, r.top - ph - 6);   // flip above if it would overflow the viewport
+    pop.style.top = top + "px";
+  }
+  function openDatePicker() {
+    var di = document.getElementById("date_input"); if (di && di.disabled && !DEMO) return;   // offline -> navigation unavailable
+    closeCtx();
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(currentDate()), now = new Date(), t = new Date();
+    state._dpOpen = true;
+    state._dpY = m ? +m[1] : now.getFullYear();
+    state._dpM = m ? (+m[2] - 1) : now.getMonth();   // 0-based; window ends at the selected day's month
+    if (state._dpY > t.getFullYear() || (state._dpY === t.getFullYear() && state._dpM > t.getMonth())) { state._dpY = t.getFullYear(); state._dpM = t.getMonth(); }
+    buildHeatmap();
+    var pop = document.getElementById("datepop"); pop.hidden = false; positionDatePop();
+  }
+  function closeDatePicker() { var pop = document.getElementById("datepop"); if (pop && !pop.hidden) { pop.hidden = true; state._dpOpen = false; } }
+  function shiftMonths(delta) {
+    var t = new Date(), y = state._dpY, m = state._dpM + delta;
+    while (m < 0) { m += 12; y--; } while (m > 11) { m -= 12; y++; }
+    if (y > t.getFullYear() || (y === t.getFullYear() && m > t.getMonth())) return;   // window can't end past the current month
+    state._dpY = y; state._dpM = m; buildHeatmap(); positionDatePop();
+  }
+  function pickDay(ds) {
+    var di = document.getElementById("date_input"); if (di && di.disabled && !DEMO) return;
+    setDate(ds); closeDatePicker(); navigate(ds); if (di) di.focus();
+  }
   // The demo's fixed 2024-01-11 timestamps are rebased to TODAY so the calendar and the "x ago" column agree
   // (otherwise the picker shows 2024 while rows claim "5m ago"). Single-day data; date appears only in the leading ts.
   var _demoCSVc;

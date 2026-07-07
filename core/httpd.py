@@ -175,6 +175,39 @@ class _ConcatenatedFiles(io.RawIOBase):
         io.RawIOBase.close(self)
 
 
+COUNTS_PROBE_SIZE = 32 * 1024  # bytes read per sampling point when estimating a large log's event count
+COUNTS_PROBES = 8              # number of evenly-spaced sampling points
+
+def estimate_event_count(filepath, size):
+    """
+    Approximate the number of events (= lines) in a daily log WITHOUT reading it whole - a busy day's log can be
+    100s of MB. Small logs are counted exactly. Large logs are sampled at COUNTS_PROBES points spread evenly across
+    the file; the file size is divided by the mean line length derived from the samples.
+
+    Event-line length is not uniform (trail/info/reference field widths vary, and the log's composition drifts over
+    the day), so the previous head-only sample was biased - and that bias got multiplied by ~(size / sample). Spacing
+    the probes evenly by BYTE offset makes sampled_lines/sampled_bytes an unbiased estimator of the whole file's
+    lines-per-byte regardless of that drift; more probes just lower the variance. Reads stay O(1) - at most
+    COUNTS_PROBES * COUNTS_PROBE_SIZE regardless of file size. Rounded to the nearest 100 so repeated polls of a
+    growing current-day log don't jitter.
+    """
+
+    if size <= COUNTS_PROBES * COUNTS_PROBE_SIZE:
+        with open(filepath, "rb") as f:
+            return f.read().count(b'\n')
+
+    sampled_bytes, sampled_lines = 0, 0
+    step = (size - COUNTS_PROBE_SIZE) / float(COUNTS_PROBES - 1)  # first probe at 0, last ending at EOF
+    with open(filepath, "rb") as f:
+        for i in range(COUNTS_PROBES):
+            f.seek(int(i * step))
+            chunk = f.read(COUNTS_PROBE_SIZE)
+            sampled_bytes += len(chunk)
+            sampled_lines += chunk.count(b'\n')
+
+    mean_line = 1.0 * sampled_bytes / max(1, sampled_lines)  # max(1,..) guards the degenerate no-newline case
+    return int(round(size / mean_line / 100.0) * 100)
+
 def start_httpd(address=None, port=None, join=False, pem=None):
     """
     Starts HTTP server
@@ -1149,21 +1182,15 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         traceback.print_exc()
                 else:
                     if min_ <= current <= max_:
-                        timestamp = int(time.mktime(current.timetuple()))
+                        daystr = os.path.splitext(filename)[0]  # key by the log's date ("YYYY-MM-DD"); the client maps it directly, no timezone/DST math
                         size = os.path.getsize(filepath)
                         mtime = os.path.getmtime(filepath)
                         cached = _counts_cache.get(filepath)
                         if cached and cached[0] == mtime and cached[1] == size:  # immutable (past-day) log -> reuse, skip the open+read
-                            counts[timestamp] = cached[2]
+                            counts[daystr] = cached[2]
                         else:
-                            with open(filepath, "rb") as f:
-                                content = f.read(io.DEFAULT_BUFFER_SIZE)
-                                if size >= io.DEFAULT_BUFFER_SIZE:
-                                    total = 1.0 * (1 + content.count(b'\n')) * size / io.DEFAULT_BUFFER_SIZE
-                                    count = int(round(total / 100.0) * 100)
-                                else:
-                                    count = content.count(b'\n')
-                            counts[timestamp] = count
+                            count = estimate_event_count(filepath, size)
+                            counts[daystr] = count
                             _counts_cache[filepath] = (mtime, size, count)
 
             return json.dumps(counts)
