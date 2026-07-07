@@ -296,7 +296,12 @@ kbd{font-family:var(--mono);font-size:11px;color:var(--text);background:var(--in
 .df-top{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--text);font-variant-numeric:tabular-nums}
 .df-bot{font-size:9px;letter-spacing:2.5px;color:var(--accent);margin-top:2px;font-variant-numeric:tabular-nums}
 .dateface input[type=date]{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:0;border:0;
-  opacity:0;cursor:pointer;color:transparent;background:transparent}
+  opacity:0;cursor:pointer;color:transparent;background:transparent;color-scheme:dark}
+/* color-scheme on :root doesn't reliably reach the native date control on some browsers (Windows) -> the
+   field/picker paints light = a white box with the transparent value text -> set it on the input itself */
+body.light .dateface input[type=date]{color-scheme:light}
+/* the picker indicator is already under opacity:0, but kill it outright so no native chrome can paint */
+.dateface input[type=date]::-webkit-calendar-picker-indicator{opacity:0;display:none}
 .dateface input[type=date]:disabled{cursor:default}
 
 /* ===== accessibility + load motion (t17 polish) ===== */
