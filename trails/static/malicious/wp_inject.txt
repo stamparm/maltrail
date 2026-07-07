@@ -6906,9 +6906,40 @@ cdn.wordpres.bid
 font.wordpres.bid
 
 # Reference: https://x.com/sdcyberresearch/status/2074080137105031511
+# BANNER_0_HASH-HOST=069076ebe5d5a382a4c48ec1cb208431
+# BANNER_0_HASH-HOST=c7b2af61f964a5173e3eb5763b32a3b3
 
+a1-analytics.sbs
+a2-analytics.xyz
 admiration-noble.sbs
+agent-server.us-west-2b-1-prod.getbaton.ai
+api.everlyme.com
+api.pdfix.es
+b2-analytics.xyz
+b3-analytics.top
+boring-analytics.sbs
+cosic.in.rs
+d3-analytics.top
+delic.dev
+e2-analytics.xyz
 fg-analytics.biz
+flow.dev.digitalgenius.com
+frequent-apple.sbs
 grant-member.pro
 great-fade.sbs
+h1-analytics.com
+loyaltypass.solventia.io
+m1-analytics.sbs
+m1-analytics.top
+markusio.org
+mechanical-orange.top
 mg-analytics.sbs
+mw.dev.digitalgenius.com
+mw.qa.digitalgenius.com
+mythical-k281.lol
+pace-draft.sbs
+rebel-pause.xyz
+rg-telemetry.sbs
+royrealls.com
+test.delic.rs
+th-updates.sbs
