@@ -1981,12 +1981,12 @@
       .then(function (o) { if (_wmReqDate === date) paintWm(o || { counts: {}, mapped: 0, unmapped: 0 }); })
       .catch(function () { if (_wmReqDate === date) paintWm({ counts: {}, mapped: 0, unmapped: 0 }); });
   }
-  // Keep the map current on live/new data like the dashboard does — but THROTTLED: the map is a /geo round-trip that
-  // re-scans the (growing) day log, whereas the dashboard merges deltas client-side. No-op unless the map is shown.
+  // Keep the map current on live/new data like the dashboard does. /geo is incremental server-side (only new bytes
+  // scanned), so a light 2s throttle gives a near-real-time feel without a fetch per SSE batch. No-op unless shown.
   var _wmLast = 0, _wmTimer = null;
   function scheduleMapRefresh() {
     if (getView() !== "map" || getCollapsed()) return;
-    var wait = 8000, now = +new Date(), since = now - _wmLast;
+    var wait = 2000, now = +new Date(), since = now - _wmLast;
     if (since >= wait) { _wmLast = now; renderWorldMap(); }
     else if (!_wmTimer) _wmTimer = setTimeout(function () { _wmTimer = null; _wmLast = +new Date(); renderWorldMap(); }, wait - since);
   }

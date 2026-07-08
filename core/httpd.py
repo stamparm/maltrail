@@ -77,7 +77,8 @@ _blacklist_cache = None
 _blacklist_key = None
 _version_cache = None
 _counts_cache = {}  # NOTE: per daily-log event count keyed by filepath -> (mtime, size, count); past-day logs are immutable so they're read once, not on every poll
-_geo_cache = {}  # NOTE: per daily-log country aggregation keyed by filepath -> (mtime, size, result); same immutability trick as _counts_cache
+_geo_cache = {}  # NOTE: per daily-log country aggregation keyed by filepath -> running {mtime,size,offset,counts,mapped,unmapped}; grows INCREMENTALLY (only new bytes are scanned) so a live/growing current-day log stays cheap
+_geo_lock = threading.Lock()  # NOTE: the incremental read-modify-write must be serialized (concurrent /geo for the same day would otherwise double-count)
 _statics_cache = None  # NOTE: (5-min-bucket, latest-static-trail-date); avoids re-globbing the static malware dir on every page render
 MAX_POST_SIZE = 10 * 1024 * 1024  # NOTE: cap request body (real Maltrail POSTs are tiny); rejects absurd Content-Length up-front to bound memory
 REQUEST_TIMEOUT = 60  # NOTE: per-socket-operation timeout; frees worker threads stuck on stalled/slowloris connections (active, progressing clients are unaffected)
@@ -1229,33 +1230,50 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             filepath = os.path.join(config.LOG_DIR, "%s.log" % match.group(0)) if match else None
 
             if filepath and os.path.exists(filepath):
-                size = os.path.getsize(filepath)
-                mtime = os.path.getmtime(filepath)
-                cached = _geo_cache.get(filepath)
-                if cached and cached[0] == mtime and cached[1] == size:
-                    result = cached[2]
-                else:
-                    counts, mapped, unmapped = {}, 0, 0
-                    try:
-                        with open(filepath, "rb") as f:
-                            for line in f:  # streamed; a busy day's log can be 100s of MB
-                                cut = line.find(b'" ')  # end of the quoted leading timestamp
-                                if cut < 0:
-                                    continue
-                                parts = line[cut + 2:].split(b' ')  # sensor,src,sport,dst,dport,proto,type,TRAIL,...
-                                if len(parts) <= 7:
-                                    continue
-                                cc = ip_to_country(parts[7].decode("latin-1"))
-                                if cc:
-                                    counts[cc] = counts.get(cc, 0) + 1
-                                    mapped += 1
-                                else:
-                                    unmapped += 1
-                    except Exception:
-                        if config.SHOW_DEBUG:
-                            traceback.print_exc()
+                with _geo_lock:
+                    size = os.path.getsize(filepath)
+                    mtime = os.path.getmtime(filepath)
+                    c = _geo_cache.get(filepath)
+                    if c and c["size"] == size and c["mtime"] == mtime:
+                        counts, mapped, unmapped = c["counts"], c["mapped"], c["unmapped"]  # unchanged -> reuse
+                    else:
+                        if c and size > c["size"]:                                          # grew (append) -> scan only new bytes
+                            counts, mapped, unmapped, start = dict(c["counts"]), c["mapped"], c["unmapped"], c["offset"]
+                        else:                                                               # new / rotated / shrank -> full scan
+                            counts, mapped, unmapped, start = {}, 0, 0, 0
+                        offset = start
+                        try:
+                            with open(filepath, "rb") as f:
+                                f.seek(start)
+                                pending = b""
+                                while True:
+                                    buf = f.read(1024 * 1024)   # 1 MB chunks -> bounded memory even on a huge full scan
+                                    if not buf:
+                                        break
+                                    pending += buf
+                                    nl = pending.rfind(b"\n")
+                                    if nl < 0:
+                                        continue
+                                    chunk, pending = pending[:nl + 1], pending[nl + 1:]     # only COMPLETE lines; keep a partial tail for next time
+                                    offset += len(chunk)
+                                    for line in chunk.split(b"\n"):
+                                        cut = line.find(b'" ')  # end of the quoted leading timestamp
+                                        if cut < 0:
+                                            continue
+                                        parts = line[cut + 2:].split(b' ')  # sensor,src,sport,dst,dport,proto,type,TRAIL,...
+                                        if len(parts) <= 7:
+                                            continue
+                                        cc = ip_to_country(parts[7].decode("latin-1"))
+                                        if cc:
+                                            counts[cc] = counts.get(cc, 0) + 1
+                                            mapped += 1
+                                        else:
+                                            unmapped += 1
+                        except Exception:
+                            if config.SHOW_DEBUG:
+                                traceback.print_exc()
+                        _geo_cache[filepath] = {"mtime": mtime, "size": size, "offset": offset, "counts": counts, "mapped": mapped, "unmapped": unmapped}
                     result = {"counts": counts, "mapped": mapped, "unmapped": unmapped}
-                    _geo_cache[filepath] = (mtime, size, result)
 
             out = dict(result)
             out["home"] = _geo_home()  # config, not part of the per-day cache: cheap and may change on reload
