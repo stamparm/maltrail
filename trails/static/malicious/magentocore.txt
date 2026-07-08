@@ -584,6 +584,7 @@ riverside-sharingfiles.sbs
 wechat-sharingfiles.cfd
 wechat-sharingfiles.sbs
 wechat-sharingfilez.cyou
+ws-hotjar.org
 zendesk-chart.com
 zoom-sharingfiles.cfd
 zoom-sharingfiles.sbs
