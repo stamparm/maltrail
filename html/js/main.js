@@ -1928,14 +1928,23 @@
     var items = Object.keys(counts).filter(function (cc) { return C[cc]; }).map(function (cc) { return [cc, counts[cc]]; });
     items.sort(function (a, b) { return a[1] - b[1]; });   // small first so the big/hot dots paint on top
     if (svg) {
-      var halos = "", cores = "";
+      var halos = "", cores = "", arcs = "", home = "";
       items.forEach(function (it) {
         var xy = C[it[0]], b = wmBucket(it[1]), r = 3 + b * 2, col = WM_BASE[Math.max(0, b - 1)];
         halos += '<circle cx="' + xy[0] + '" cy="' + xy[1] + '" r="' + (r * 1.8).toFixed(1) + '" fill="' + col + '"/>';
         cores += '<circle cx="' + xy[0] + '" cy="' + xy[1] + '" r="' + r + '" fill="' + col + '" stroke="#fff" stroke-opacity=".4" stroke-width=".6"><title>' + esc(it[0]) + ': ≈ ' + fmtN(it[1]) + ' events</title></circle>';
       });
+      var hm = data && data.home;   // arcs + home only when HOME_LAT/LON is configured (air-gap can't auto-locate)
+      if (hm && window.WORLD_LL2XY) {
+        var hp = window.WORLD_LL2XY(hm.lon, hm.lat), hx = +hp[0].toFixed(1), hy = +hp[1].toFixed(1);
+        items.forEach(function (it) {
+          var xy = C[it[0]], mx = ((xy[0] + hx) / 2).toFixed(1), my = ((xy[1] + hy) / 2 - Math.hypot(hx - xy[0], hy - xy[1]) * 0.32).toFixed(1);
+          arcs += '<path class="wm-arc" d="M' + xy[0] + ' ' + xy[1] + ' Q' + mx + ' ' + my + ' ' + hx + ' ' + hy + '" stroke-width="1" stroke-opacity=".5" stroke-linecap="round" stroke-dasharray="2 8"><animate attributeName="stroke-dashoffset" values="30;0" dur="1.4s" repeatCount="indefinite"/></path>';
+        });
+        home = '<g><circle cx="' + hx + '" cy="' + hy + '" r="4" fill="none" stroke="#34d399" stroke-width="1.4"><animate attributeName="r" values="4;13" dur="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values=".8;0" dur="2.2s" repeatCount="indefinite"/></circle><circle cx="' + hx + '" cy="' + hy + '" r="3.4" fill="#eafff5" stroke="#34d399" stroke-width="1.3"><title>Your network</title></circle></g>';
+      }
       var olds = svg.querySelectorAll(".wm-dotlayer"); for (var i = 0; i < olds.length; i++) olds[i].parentNode.removeChild(olds[i]);
-      svg.insertAdjacentHTML("beforeend", '<g class="wm-dotlayer" filter="url(#wmglow)" opacity=".5">' + halos + '</g><g class="wm-dotlayer">' + cores + '</g>');
+      svg.insertAdjacentHTML("beforeend", '<g class="wm-dotlayer">' + arcs + '</g><g class="wm-dotlayer" filter="url(#wmglow)" opacity=".5">' + halos + '</g><g class="wm-dotlayer">' + cores + home + '</g>');
     }
     var top = items.slice().sort(function (a, b) { return b[1] - a[1]; }).slice(0, 8), max = top.length ? top[0][1] : 1;
     var list = host.querySelector(".wm-list");
