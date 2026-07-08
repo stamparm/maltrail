@@ -1981,6 +1981,15 @@
       .then(function (o) { if (_wmReqDate === date) paintWm(o || { counts: {}, mapped: 0, unmapped: 0 }); })
       .catch(function () { if (_wmReqDate === date) paintWm({ counts: {}, mapped: 0, unmapped: 0 }); });
   }
+  // Keep the map current on live/new data like the dashboard does — but THROTTLED: the map is a /geo round-trip that
+  // re-scans the (growing) day log, whereas the dashboard merges deltas client-side. No-op unless the map is shown.
+  var _wmLast = 0, _wmTimer = null;
+  function scheduleMapRefresh() {
+    if (getView() !== "map" || getCollapsed()) return;
+    var wait = 8000, now = +new Date(), since = now - _wmLast;
+    if (since >= wait) { _wmLast = now; renderWorldMap(); }
+    else if (!_wmTimer) _wmTimer = setTimeout(function () { _wmTimer = null; _wmLast = +new Date(); renderWorldMap(); }, wait - since);
+  }
   // ---- mute the live new-threat beep (persisted) ----
   var _VOL_ON = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M19 5a9 9 0 0 1 0 14"/></svg>';
   var _VOL_OFF = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4z"/><line x1="22" y1="9" x2="16" y2="15"/><line x1="16" y1="9" x2="22" y2="15"/></svg>';
@@ -2339,6 +2348,7 @@
       setTimeout(function () { if (st) st.classList.remove("intro"); if (gw) gw.classList.remove("intro"); }, 1000);
     }
     if (state._openChart) showChart(state._openChart);
+    scheduleMapRefresh();   // attack map follows live/new data too (throttled; no-op unless the map view is open)
     window.__MT = d;
   }
   function setStatus(msg) {
