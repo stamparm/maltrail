@@ -210,6 +210,17 @@ def estimate_event_count(filepath, size):
     mean_line = 1.0 * sampled_bytes / max(1, sampled_lines)  # max(1,..) guards the degenerate no-newline case
     return int(round(size / mean_line / 100.0) * 100)
 
+def _geo_home():
+    """Optional HOME_LAT/HOME_LON from config as {"lat","lon"} for the attack map's arcs, or None (air-gap can't auto-locate)."""
+
+    try:
+        lat, lon = config.get("HOME_LAT"), config.get("HOME_LON")
+        if lat not in (None, "") and lon not in (None, ""):
+            return {"lat": float(lat), "lon": float(lon)}
+    except Exception:
+        pass
+    return None
+
 def start_httpd(address=None, port=None, join=False, pem=None):
     """
     Starts HTTP server
@@ -1213,43 +1224,42 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header(HTTP_HEADER.CONNECTION, "close")
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
 
+            result = {"counts": {}, "mapped": 0, "unmapped": 0}
             match = re.search(r"\d{4}-\d{2}-\d{2}", params.get("date", ""))
-            if not match:
-                return json.dumps({"counts": {}, "mapped": 0, "unmapped": 0})
+            filepath = os.path.join(config.LOG_DIR, "%s.log" % match.group(0)) if match else None
 
-            filepath = os.path.join(config.LOG_DIR, "%s.log" % match.group(0))
-            if not os.path.exists(filepath):
-                return json.dumps({"counts": {}, "mapped": 0, "unmapped": 0})
+            if filepath and os.path.exists(filepath):
+                size = os.path.getsize(filepath)
+                mtime = os.path.getmtime(filepath)
+                cached = _geo_cache.get(filepath)
+                if cached and cached[0] == mtime and cached[1] == size:
+                    result = cached[2]
+                else:
+                    counts, mapped, unmapped = {}, 0, 0
+                    try:
+                        with open(filepath, "rb") as f:
+                            for line in f:  # streamed; a busy day's log can be 100s of MB
+                                cut = line.find(b'" ')  # end of the quoted leading timestamp
+                                if cut < 0:
+                                    continue
+                                parts = line[cut + 2:].split(b' ')  # sensor,src,sport,dst,dport,proto,type,TRAIL,...
+                                if len(parts) <= 7:
+                                    continue
+                                cc = ip_to_country(parts[7].decode("latin-1"))
+                                if cc:
+                                    counts[cc] = counts.get(cc, 0) + 1
+                                    mapped += 1
+                                else:
+                                    unmapped += 1
+                    except Exception:
+                        if config.SHOW_DEBUG:
+                            traceback.print_exc()
+                    result = {"counts": counts, "mapped": mapped, "unmapped": unmapped}
+                    _geo_cache[filepath] = (mtime, size, result)
 
-            size = os.path.getsize(filepath)
-            mtime = os.path.getmtime(filepath)
-            cached = _geo_cache.get(filepath)
-            if cached and cached[0] == mtime and cached[1] == size:
-                return json.dumps(cached[2])
-
-            counts, mapped, unmapped = {}, 0, 0
-            try:
-                with open(filepath, "rb") as f:
-                    for line in f:  # streamed; a busy day's log can be 100s of MB
-                        cut = line.find(b'" ')  # end of the quoted leading timestamp
-                        if cut < 0:
-                            continue
-                        parts = line[cut + 2:].split(b' ')  # sensor,src,sport,dst,dport,proto,type,TRAIL,...
-                        if len(parts) <= 7:
-                            continue
-                        cc = ip_to_country(parts[7].decode("latin-1"))
-                        if cc:
-                            counts[cc] = counts.get(cc, 0) + 1
-                            mapped += 1
-                        else:
-                            unmapped += 1
-            except Exception:
-                if config.SHOW_DEBUG:
-                    traceback.print_exc()
-
-            result = {"counts": counts, "mapped": mapped, "unmapped": unmapped}
-            _geo_cache[filepath] = (mtime, size, result)
-            return json.dumps(result)
+            out = dict(result)
+            out["home"] = _geo_home()  # config, not part of the per-day cache: cheap and may change on reload
+            return json.dumps(out)
 
     class SSLReqHandler(ReqHandler):
         def setup(self):

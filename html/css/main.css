@@ -352,8 +352,8 @@ body.light{--ch0:#eaeef3;--ch1:#ffffb2;--ch2:#fecc5c;--ch3:#fd8d3c;--ch4:#f03b20
 /* ===== attack-origin world map (#worldmap): occupies the dashboard's block, hip/hop via the globe toggle ===== */
 /* land/ocean/graticule are themed; the attack dots use a fixed warm heat ramp (set inline in JS) so "more = redder"
    reads the same in both themes. Geo data comes from /geo (trail IPs only -> honest mapped/unmapped). */
-:root{--wm-ocean1:#182236;--wm-ocean2:#0d121c;--wm-land:#243040;--wm-lbd:#3c4a66;--wm-grat:#22304a}
-body.light{--wm-ocean1:#eaf2fc;--wm-ocean2:#d3e3f5;--wm-land:#ffffff;--wm-lbd:#9fb6d6;--wm-grat:#bcd0ea}
+:root{--wm-ocean1:#182236;--wm-ocean2:#0d121c;--wm-land:#243040;--wm-lbd:#3c4a66;--wm-grat:#22304a;--wm-arc:#ff8a3d}
+body.light{--wm-ocean1:#eaf2fc;--wm-ocean2:#d3e3f5;--wm-land:#ffffff;--wm-lbd:#9fb6d6;--wm-grat:#bcd0ea;--wm-arc:#e0561e}
 .worldmap{display:flex;gap:16px;margin-bottom:18px}
 .worldmap[hidden]{display:none}   /* MUST beat .worldmap's display:flex, or the map never hides (a bare [hidden] loses to the class) */
 .wm-map{flex:1;position:relative;background:radial-gradient(120% 95% at 50% 22%,var(--wm-ocean1),var(--wm-ocean2));
@@ -361,6 +361,7 @@ body.light{--wm-ocean1:#eaf2fc;--wm-ocean2:#d3e3f5;--wm-land:#ffffff;--wm-lbd:#9
 .wm-map svg{width:100%;height:auto;display:block}
 .wm-map .grat path{stroke:var(--wm-grat);stroke-width:.5;opacity:.5;fill:none}
 .wm-map .land path{fill:var(--wm-land);stroke:var(--wm-lbd);stroke-width:.6;stroke-linejoin:round}
+.wm-map .wm-arc{fill:none;stroke:var(--wm-arc)}   /* source->home attack arcs (only when HOME_LAT/LON set) */
 .wm-hd{position:absolute;top:12px;left:16px;font-size:12px;font-weight:700;color:var(--text);pointer-events:none}
 .wm-hd small{color:var(--muted);font-weight:400;margin-left:6px}
 .wm-leg{position:absolute;bottom:12px;left:16px;display:flex;align-items:center;gap:7px;color:var(--faint);font-size:10px;pointer-events:none}
