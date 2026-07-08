@@ -562,12 +562,32 @@ magento-security.org
 cdn-shopify.com
 
 # Reference: https://blog.sucuri.net/2019/11/skimmers-for-both-magento-and-wordpress.html
+# CERT_FINGERPRINT_SHA256-HOST=9bf073ea70df5f8267268d89881175b0aeb5bbedb9ed46e5296088103d98062b
+# CERT_FINGERPRINT_SHA256-HOST=bfbe5848a7c0001a2f13110af3d94db884593a47554c9cb8fca702435780810b
 
+docsend-sharingfiles.cyou
+editron-ai.com
+fluxvpn-sharingfiles.cyou
+google-sharingfiles.cfd
+google-sharingfiles.cyou
+google-sharingfiles.sbs
 gooqleadvstat.com
 gooqlemgrteg.com
 jquerystatic.com
 jquerystatistics.org
+line-sharingfiles.cfd
+line-sharingfiles.sbs
+line-sharingfileu.cyou
+microsoft-teams-sharing.icu
+noto-sharingfiles.cyou
+riverside-sharingfiles.sbs
+wechat-sharingfiles.cfd
+wechat-sharingfiles.sbs
+wechat-sharingfilez.cyou
 zendesk-chart.com
+zoom-sharingfiles.cfd
+zoom-sharingfiles.sbs
+zoom-sharingfilez.cyou
 
 # Reference: https://twitter.com/xuy1202/status/1195361991805681664
 
