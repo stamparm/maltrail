@@ -691,7 +691,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 else:
                     _ = (ipcat_lookup(params.get("address")) or "").lower().split(' ')
                     result_ipcat = _[1] if _[0] == 'the' else _[0]
-                payload = json.dumps({"ipcat": result_ipcat, "worst_asns": str(result_worst is not None).lower()})
+                payload = json.dumps({"ipcat": result_ipcat, "worst_asns": str(result_worst is not None).lower(), "country": ip_to_country(params.get("address")) or ""})  # country from the local RIR table (works air-gapped)
                 # NOTE: only wrap in a JSONP callback if it is a bare JS identifier. The callback is reflected into a
                 # script-executable body, so an unvalidated value (e.g. "alert(1)//") is a JSONP-XSS vector. The current
                 # frontend uses fetch() (no callback), so nothing legitimate needs an arbitrary callback here.

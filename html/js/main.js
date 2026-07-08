@@ -1700,7 +1700,13 @@
       ipInfo[ip] = "pending";
       fetch("/check_ip?address=" + encodeURIComponent(ip), { credentials: "same-origin" })
         .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (j) { ipInfo[ip] = j ? { cat: (j.ipcat || ""), worst: j.worst_asns === "true" } : { cat: "", worst: false }; applyIPInfo(ip); refreshTipFor(ip); })
+        .then(function (j) {
+          ipInfo[ip] = j ? { cat: (j.ipcat || ""), worst: j.worst_asns === "true" } : { cat: "", worst: false };
+          // offline GeoIP fallback: if RIPE hasn't supplied a country (air-gapped -> its JSONP is dead), use the
+          // country from our local RIR table so the flag still shows. Same-origin /check_ip works air-gapped.
+          if (j && j.country && !(ripe[ip] && ripe[ip].cc)) { ripe[ip] = ripe[ip] || { t: +new Date() }; ripe[ip].cc = j.country.toLowerCase(); applyRipe(ip); }
+          applyIPInfo(ip); refreshTipFor(ip);
+        })
         .catch(function () { ipInfo[ip] = { cat: "", worst: false }; });
     });
   }
@@ -1954,10 +1960,22 @@
     var sub = host.querySelector(".wm-sub");
     if (sub) sub.textContent = "· " + fmtN((data && data.mapped) || 0) + " mapped · " + fmtN((data && data.unmapped) || 0) + " local/unmapped";
   }
+  function demoCC(ip) { return DEMO_CC[(murmur3(ip, 99) >>> 0) % DEMO_CC.length].toUpperCase(); }   // same fabrication as the table flags -> map matches
+  function demoGeo() {
+    // build the showcase map from the demo events, geolocated with the SAME fabrication as the flags, so the map's
+    // countries line up with the table's flags. a demo "home" is set so the arcs are visible in the public demo.
+    var counts = {}, mapped = 0, unmapped = 0, d = state.agg;
+    if (d && d.threats) for (var i = 0; i < d.threats.length; i++) {
+      var t = d.threats[i], ss = setList(t.srcS), cc = "";
+      for (var k = 0; k < ss.length; k++) { if (isPubIP(ss[k])) { cc = demoCC(ss[k]); break; } }
+      if (cc) { counts[cc] = (counts[cc] || 0) + t.count; mapped += t.count; } else { unmapped += t.count; }
+    }
+    return { counts: counts, mapped: mapped, unmapped: unmapped, home: { lat: 45.815, lon: 15.9819 } };
+  }
   function renderWorldMap() {
     buildWmShell();
     var date = currentDate(); _wmReqDate = date;
-    if (DEMO) { paintWm({ counts: {}, mapped: 0, unmapped: 0 }); return; }   // static build has no server
+    if (DEMO) { paintWm(demoGeo()); return; }   // static build has no server -> fabricate from the demo events
     fetch("/geo?date=" + encodeURIComponent(date), { credentials: "same-origin" })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (o) { if (_wmReqDate === date) paintWm(o || { counts: {}, mapped: 0, unmapped: 0 }); })
@@ -2191,7 +2209,11 @@
   function fmtYMD(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
   function heatBucket(n) { return !n ? 0 : n < 500 ? 1 : n < 1000 ? 2 : n < 5000 ? 3 : n < 10000 ? 4 : 5; }   // cal-heatmap-style thresholds
   function fetchCounts(fromStr, toStr) {
-    if (DEMO) return;                                  // static build has no server
+    if (DEMO) {   // no server -> fabricate deterministic per-day density across the visible span (some quiet days)
+      var d = new Date(fromStr + "T00:00:00"), end = new Date(toStr + "T00:00:00");
+      while (d <= end) { var ds = fmtYMD(d); if (!(ds in _counts)) { var hh = murmur3(ds, 7) >>> 0; _counts[ds] = (hh % 6 === 0) ? 0 : Math.floor(Math.pow(10, (hh % 1000) / 1000 * 4.3)); } d.setDate(d.getDate() + 1); }
+      return;
+    }
     var key = fromStr + ".." + toStr; if (_countsSpans[key]) return; _countsSpans[key] = true;
     fetch("/counts?from=" + fromStr + "&to=" + toStr, { credentials: "same-origin" })
       .then(function (r) { return r.ok ? r.json() : null; })
@@ -2528,6 +2550,7 @@
       document.title = "Maltrail (demo)";
       setDate(todayStr());   // controls stay live so the calendar/paging are demonstrably interactive
       render(aggregate(demoCSV()));
+      if (getView() === "map" && !getCollapsed()) renderWorldMap();   // demo loaded straight into map view: state.agg is ready now
     } else {
       setDate(todayStr());
       checkAuth();

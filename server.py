@@ -34,6 +34,7 @@ from core.settings import HOMEPAGE
 from core.settings import IS_WIN
 from core.settings import NAME
 from core.settings import VERSION
+from core.update import update_geo
 from core.update import update_ipcat
 from core.update import update_trails
 from thirdparty import six
@@ -107,6 +108,7 @@ def main():
         else:
             _ = update_trails()
             update_ipcat()
+            update_geo()
 
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
         thread.daemon = True
