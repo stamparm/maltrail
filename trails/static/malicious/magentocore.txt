@@ -566,6 +566,7 @@ cdn-shopify.com
 gooqleadvstat.com
 gooqlemgrteg.com
 jquerystatic.com
+jquerystatistics.org
 zendesk-chart.com
 
 # Reference: https://twitter.com/xuy1202/status/1195361991805681664
