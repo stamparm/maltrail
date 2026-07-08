@@ -5105,3 +5105,9 @@ mintu.filcb.com
 # Reference: https://www.virustotal.com/gui/file/becbfc36ee69db74b00a62dddd39e967e8434da292b07169c3c99648928dc14e/detection
 
 172.86.107.46:8041
+
+# Reference: https://x.com/suyog41/status/2074843393482440962
+# Reference: https://www.virustotal.com/gui/file/10bfd8cfe8fbc2f83abeeb8805edc5a74b130c598b458ece75b438b3913cdb5c/detection
+
+136.0.82.38:8040
+136.0.82.38:8041
