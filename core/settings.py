@@ -67,6 +67,21 @@ MAX_NOFILE = 65000
 CAPTURE_TIMEOUT = 100  # ms
 MAX_HELP_OPTION_LENGTH = 18
 CONFIG_FILE = os.path.join(ROOT_DIR, "maltrail.conf")
+
+# Attack-map geolocation: IPv4 -> ISO country, built from public-domain RIR delegation stats. A snapshot ships in
+# data/ (first-run / air-gap seed); when online it's rebuilt into USERS_DIR on the update cycle (like ipcat). geo.py
+# prefers the runtime copy and falls back to the bundled one. Country allocations drift slowly -> a long refresh cadence.
+FRESH_GEO_DELTA_DAYS = 30
+GEO_IP2CC_BUNDLED_FILE = os.path.join(ROOT_DIR, "data", "ip2cc.csv.gz")
+GEO_IP2CC_FILE = os.path.join(USERS_DIR, "ip2cc.csv.gz")
+GEO_IP2CC6_FILE = os.path.join(USERS_DIR, "ip2cc6.csv.gz")  # IPv6 table: runtime-only (large; built on the online update)
+RIR_DELEGATED_URLS = (
+    "https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest",
+    "https://ftp.ripe.net/pub/stats/ripencc/delegated-ripencc-extended-latest",
+    "https://ftp.apnic.net/pub/stats/apnic/delegated-apnic-extended-latest",
+    "https://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-latest",
+    "https://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-extended-latest",
+)
 SYSTEM_LOG_DIR = "/var/log" if not IS_WIN else "C:\\Windows\\Logs"
 DEFAULT_EVENT_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IROTH
 DEFAULT_ERROR_LOG_PERMISSIONS = stat.S_IREAD | stat.S_IWRITE | stat.S_IRGRP | stat.S_IWGRP | stat.S_IROTH | stat.S_IWOTH

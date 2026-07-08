@@ -9,9 +9,11 @@ from __future__ import print_function
 import codecs
 import csv
 import glob
+import gzip
 import inspect
 import os
 import re
+import socket
 import sqlite3
 import sys
 import time
@@ -33,6 +35,10 @@ from core.settings import read_config
 from core.settings import read_whitelist
 from core.settings import BAD_TRAIL_PREFIXES
 from core.settings import FRESH_IPCAT_DELTA_DAYS
+from core.settings import FRESH_GEO_DELTA_DAYS
+from core.settings import GEO_IP2CC_FILE
+from core.settings import GEO_IP2CC6_FILE
+from core.settings import RIR_DELEGATED_URLS
 from core.settings import LOW_PRIORITY_INFO_KEYWORDS
 from core.settings import HIGH_PRIORITY_INFO_KEYWORDS
 from core.settings import HIGH_PRIORITY_REFERENCES
@@ -438,6 +444,101 @@ def update_ipcat(force=False):
     _chown(IPCAT_CSV_FILE)
     _chown(IPCAT_SQLITE_FILE)
 
+def _ip6_to_int(text):
+    value = 0
+    for byte in bytearray(socket.inet_pton(socket.AF_INET6, text)):
+        value = (value << 8) | byte
+    return value
+
+def _geo_rows(records):
+    """records = list of (start_int, end_int, CC) -> sorted rows of (start_int, CC) with empty-CC gap sentinels."""
+
+    records.sort()
+    merged = []  # collapse adjacent same-country ranges
+    for start, end, cc in records:
+        if merged and merged[-1][2] == cc and start <= merged[-1][1] + 1:
+            merged[-1][1] = max(merged[-1][1], end)
+        else:
+            merged.append([start, end, cc])
+
+    rows, prev = [], -1
+    for start, end, cc in merged:
+        if prev < start - 1:  # gap -> unallocated -> resolves to None on lookup
+            rows.append((prev + 1 if prev >= 0 else 0, ""))
+        rows.append((start, cc)); prev = end
+    rows.append((prev + 1, ""))
+    return rows
+
+def _write_geo(path, rows):
+    tmp = path + ".tmp"
+    with gzip.open(tmp, "wb") as f:
+        f.write(("\n".join("%d,%s" % (s, cc) for s, cc in rows)).encode("latin-1"))
+    try:
+        os.replace(tmp, path)  # atomic (py3.3+)
+    except AttributeError:
+        if os.path.exists(path):
+            os.remove(path)
+        os.rename(tmp, path)
+    _chown(path)
+
+def update_geo(force=False):
+    """
+    Refresh the attack-map's IP -> country tables from the public-domain RIR delegation stats into USERS_DIR (the bundled
+    data/ IPv4 snapshot remains the air-gap/first-run seed; IPv6 is runtime-only). Same shape as update_ipcat:
+    staleness-gated, best-effort (a failed fetch leaves the previous tables in place), atomic writes. Country allocations
+    move slowly, hence the long FRESH_GEO_DELTA_DAYS cadence.
+    """
+
+    try:
+        if not os.path.isdir(USERS_DIR):
+            os.makedirs(USERS_DIR, 0o755)
+    except Exception as ex:
+        sys.exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
+
+    _chown(USERS_DIR)
+
+    if not (force or not os.path.isfile(GEO_IP2CC_FILE) or (time.time() - os.stat(GEO_IP2CC_FILE).st_mtime) >= FRESH_GEO_DELTA_DAYS * 24 * 3600):
+        _chown(GEO_IP2CC_FILE)
+        return
+
+    print("[i] updating geolocation (IP->country) database...")
+
+    v4, v6 = [], []
+    try:
+        for url in RIR_DELEGATED_URLS:
+            content = retrieve_content(url)
+            if not content:
+                raise Exception("empty response from '%s'" % url)
+            if isinstance(content, bytes):
+                content = content.decode("latin-1", "ignore")
+            for line in content.splitlines():
+                parts = line.split('|')
+                if len(parts) < 7 or parts[2] not in ("ipv4", "ipv6") or parts[6] not in ("allocated", "assigned"):
+                    continue
+                cc = parts[1]
+                if len(cc) != 2 or not cc.isalpha():
+                    continue
+                try:
+                    if parts[2] == "ipv4":
+                        start = addr_to_int(parts[3]); v4.append((start, start + int(parts[4]) - 1, cc.upper()))
+                    else:  # ipv6: parts[4] is the prefix length
+                        start = _ip6_to_int(parts[3]); v6.append((start, start + (1 << (128 - int(parts[4]))) - 1, cc.upper()))
+                except Exception:
+                    continue
+    except Exception as ex:
+        print("[x] something went wrong during retrieval of RIR delegation stats ('%s')" % ex)
+        return
+
+    try:
+        _write_geo(GEO_IP2CC_FILE, _geo_rows(v4))
+        if v6:
+            _write_geo(GEO_IP2CC6_FILE, _geo_rows(v6))
+    except Exception as ex:
+        print("[x] something went wrong during geolocation database update ('%s')" % ex)
+        return
+
+    print("[i] ...%d IPv4 + %d IPv6 country ranges" % (len(v4), len(v6)))
+
 def main():
     if "-c" in sys.argv:
         read_config(sys.argv[sys.argv.index("-c") + 1])
@@ -447,6 +548,7 @@ def main():
         update_trails(force=True, offline=offline)
         if not offline:
             update_ipcat()
+            update_geo()
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
     else:
