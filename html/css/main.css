@@ -271,6 +271,28 @@ body.light .modal-overlay{background:rgba(120,140,170,.45)}
 .modal input:focus{border-color:var(--accent)}
 .modal-err{color:var(--sev-high);font-size:12px;min-height:16px;margin-top:8px;font-family:var(--mono)}
 .modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
+/* retro-hunt modal: IOC input + per-day timeline + sample matches */
+.hunt-modal{width:600px}
+.hunt-modal .modal-h small{color:var(--muted);font-weight:400;font-size:11px;margin-left:8px;font-family:var(--sans)}
+.hunt-in{display:flex;gap:8px}
+.hunt-in input{flex:1;background:var(--input-bg);border:1px solid var(--line-solid);border-radius:8px;padding:9px 11px;color:var(--text);font-family:var(--mono);font-size:13px;outline:none}
+.hunt-in input:focus{border-color:var(--accent)}
+.hunt-results{margin-top:14px;max-height:52vh;overflow:auto}
+.hunt-sum{font-size:11px;color:var(--muted);font-family:var(--mono);margin-bottom:8px}
+.hunt-trunc{color:var(--sev-med);border:1px solid var(--sev-med);border-radius:6px;padding:5px 8px;font-size:11px;margin-bottom:10px}
+.hunt-empty{color:var(--faint);font-size:12px;padding:10px 2px}
+.hunt-timeline{display:flex;flex-direction:column;gap:3px;margin-bottom:12px}
+.hunt-day{display:flex;align-items:center;gap:8px;background:transparent;border:0;width:100%;cursor:pointer;
+  padding:3px 6px;border-radius:6px;font-family:var(--mono);color:var(--text);text-align:left}
+.hunt-day:hover{background:var(--surface-2)}
+.hunt-day .hd-date{flex:0 0 88px;font-size:11px;color:var(--muted)}
+.hunt-day .hd-track{flex:1 1 auto;min-width:0;display:flex;align-items:center}
+.hunt-day .hd-bar{height:9px;border-radius:3px;background:var(--accent);min-width:4px}
+.hunt-day .hd-n{flex:0 0 auto;font-size:11px;color:var(--text);font-variant-numeric:tabular-nums}
+.hunt-samples{border-top:1px solid var(--line);padding-top:8px}
+.hunt-samp{display:flex;gap:8px;padding:2px 0;font-family:var(--mono);font-size:10.5px}
+.hunt-samp .hs-date{color:var(--faint);flex:0 0 auto}
+.hunt-samp .hs-line{color:var(--muted);min-width:0;white-space:pre-wrap;word-break:break-all}
 .btn-ghost{background:transparent;border:1px solid var(--line-solid);color:var(--muted);padding:8px 14px;border-radius:8px;cursor:pointer;font-size:12px}
 .btn-ghost:hover{color:var(--text)}
 .btn-primary{background:linear-gradient(135deg,var(--accent),#6366F1);border:none;color:#0b1220;font-weight:700;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:12px}

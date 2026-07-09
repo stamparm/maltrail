@@ -2043,6 +2043,7 @@
     var _lv = document.getElementById('live_btn'); if (_lv) _lv.onclick = function (e) { e.stopPropagation(); setLive(!state.live); };
     var _mt = document.getElementById('mute_btn'); if (_mt) _mt.onclick = function (e) { e.stopPropagation(); setMuted(!getMuted()); };
     var _qh = document.getElementById('qhelp'); if (_qh) _qh.onclick = function (e) { e.stopPropagation(); openQueryHelp(_qh); };
+    var _hb = document.getElementById('hunt_btn'); if (_hb) _hb.onclick = function (e) { e.stopPropagation(); openHunt(); };
     var _nm = document.getElementById('nav_menu'); if (_nm) _nm.onclick = function (e) { e.stopPropagation(); if (_nm.getAttribute('aria-expanded') === 'true') closeCtx(); else openNavMenu(_nm); };
     var tt = document.getElementById("theme_toggle");
     if (tt) tt.onclick = function () { setTheme(getTheme() === "light" ? "dark" : "light"); };
@@ -2159,6 +2160,68 @@
     var btn = o.querySelector("#kbd_close"); btn.focus();
     btn.onclick = close;
     o.onkeydown = function (e) { if (e.key === "Escape") { e.preventDefault(); close(); } };
+  }
+  // ---- retro-hunt: sweep ALL historical daily logs for an IOC (server /hunt, bounded + scope-filtered) ----
+  function openHunt() {
+    if (document.getElementById("hunt_overlay")) return;
+    var pre = ((document.getElementById("filter") || {}).value || "").trim();
+    var o = document.createElement("div"); o.id = "hunt_overlay"; o.className = "modal-overlay";
+    o.innerHTML = '<div class="modal hunt-modal" role="dialog" aria-label="retro-hunt" aria-modal="true">' +
+      '<div class="modal-h">Retro-hunt <small>search the entire log history for an IOC</small></div>' +
+      '<div class="hunt-in"><input id="hunt_q" placeholder="domain, IP, or CIDR — e.g. evil.com · 1.2.3.4 · 5.6.0.0/16" autocomplete="off" spellcheck="false"><button class="btn-primary" id="hunt_go">Hunt</button></div>' +
+      '<div class="modal-err" id="hunt_err"></div><div class="hunt-results" id="hunt_results"></div></div>';
+    document.body.appendChild(o);
+    var ret = document.activeElement;
+    function close() { o.remove(); if (ret && ret.focus) { try { ret.focus(); } catch (e) {} } }
+    o.onclick = function (e) { if (e.target === o) close(); };
+    o.onkeydown = function (e) { if (e.key === "Escape") { e.preventDefault(); close(); } };
+    var inp = o.querySelector("#hunt_q"); inp.value = pre; inp.focus(); inp.select();
+    o.querySelector("#hunt_go").onclick = function () { runHunt(o); };
+    inp.onkeydown = function (e) { if (e.key === "Enter") { e.preventDefault(); runHunt(o); } };
+    if (pre) runHunt(o);   // a search is already active -> hunt it immediately
+  }
+  function runHunt(o) {
+    var q = (o.querySelector("#hunt_q").value || "").trim();
+    var err = o.querySelector("#hunt_err"), res = o.querySelector("#hunt_results");
+    err.textContent = "";
+    if (DEMO) { err.textContent = "retro-hunt needs a running server (unavailable in the static demo)."; res.innerHTML = ""; return; }
+    if (q.length < 3) { err.textContent = "enter at least 3 characters."; res.innerHTML = ""; return; }
+    res.innerHTML = '<div class="hunt-empty">hunting…</div>';
+    fetch("/hunt?q=" + encodeURIComponent(q), { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) { err.textContent = "hunt failed."; res.innerHTML = ""; return; }
+        if (d.error) { err.textContent = d.error; res.innerHTML = ""; return; }
+        paintHunt(o, q, d);
+      })
+      .catch(function () { err.textContent = "hunt failed (network)."; res.innerHTML = ""; });
+  }
+  function paintHunt(o, q, d) {
+    var res = o.querySelector("#hunt_results"), counts = d.counts || {};
+    var days = Object.keys(counts).sort().reverse(), total = 0, max = 1;
+    days.forEach(function (k) { total += counts[k]; if (counts[k] > max) max = counts[k]; });
+    if (!days.length) { res.innerHTML = '<div class="hunt-empty">No hits for &ldquo;' + esc(q) + '&rdquo; in ' + (d.scanned || 0) + ' day(s) of history.</div>'; return; }
+    var html = '<div class="hunt-sum">' + fmtN(total) + ' hit(s) across ' + days.length + ' day(s) &middot; scanned ' + (d.scanned || 0) + ' day(s)</div>';
+    if (d.truncated) html += '<div class="hunt-trunc">⚠ partial results — a scan limit was hit. Narrow the IOC or add &from=/&to= for the full picture.</div>';
+    html += '<div class="hunt-timeline">' + days.map(function (k) {
+      return '<button class="hunt-day" data-d="' + esc(k) + '"><span class="hd-date">' + esc(k) + '</span><span class="hd-track"><span class="hd-bar" style="width:' + (6 + Math.round(94 * counts[k] / max)) + '%"></span></span><span class="hd-n">' + fmtN(counts[k]) + '</span></button>';
+    }).join("") + '</div>';
+    if (d.samples && d.samples.length) {
+      html += '<div class="hunt-samples">' + d.samples.map(function (s) {
+        return '<div class="hunt-samp"><span class="hs-date">' + esc(s.date) + '</span><span class="hs-line" title="' + esc(s.line) + '">' + esc(s.line) + '</span></div>';
+      }).join("") + (d.capped_samples ? '<div class="hunt-empty">…sample list capped at the server limit</div>' : "") + '</div>';
+    }
+    res.innerHTML = html;
+    res.querySelectorAll(".hunt-day").forEach(function (b) { b.onclick = function () { huntGoto(o, b.getAttribute("data-d"), q); }; });
+  }
+  function huntGoto(o, date, q) {
+    o.remove();
+    state.filters = []; state.sev = null; state.page = 0;
+    // land on the day, filtered to the IOC. a bare IP/domain works as free-text; a CIDR must use the search's CIDR
+    // operators (src:/dst: support it, plain text doesn't) so the day view actually filters to the hunted netblock.
+    state.input = /\//.test(q) ? ("src:" + q + " OR dst:" + q) : q;
+    var f = document.getElementById("filter"); if (f) f.value = state.input;
+    setDate(date); navigate(date);
   }
   // reflect the current view in the URL (shareable/bookmarkable; replaceState => no history spam, no hashchange listener => no loops)
   function syncHash() {

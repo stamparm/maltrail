@@ -75,6 +75,13 @@ FRESH_GEO_DELTA_DAYS = 30
 GEO_IP2CC_BUNDLED_FILE = os.path.join(ROOT_DIR, "data", "ip2cc.csv.gz")
 GEO_IP2CC_FILE = os.path.join(USERS_DIR, "ip2cc.csv.gz")
 GEO_IP2CC6_FILE = os.path.join(USERS_DIR, "ip2cc6.csv.gz")  # IPv6 table: runtime-only (large; built on the online update)
+# Retro-hunt (/hunt): historical IOC sweep across daily logs. Hard bounds so a broad query can't self-DoS the server -
+# scan is streamed + newest-first, stops at whichever limit hits first and reports truncated=true.
+HUNT_MAX_DAYS = 365          # never scan more than this many (most-recent) daily logs
+HUNT_TIME_BUDGET = 10.0      # seconds of wall-clock scanning before returning partial results
+HUNT_MAX_SAMPLES = 200       # cap on returned sample matches, all rendered by the UI (per-day counts are always complete for scanned days)
+HUNT_MIN_QUERY = 3           # reject shorter queries (a 1-2 char substring would match ~everything)
+
 RIR_DELEGATED_URLS = (
     "https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest",
     "https://ftp.ripe.net/pub/stats/ripencc/delegated-ripencc-extended-latest",
