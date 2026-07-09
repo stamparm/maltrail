@@ -280,6 +280,10 @@ body.light .modal-overlay{background:rgba(120,140,170,.45)}
 .hunt-results{margin-top:14px;max-height:52vh;overflow:auto}
 .hunt-sum{font-size:11px;color:var(--muted);font-family:var(--mono);margin-bottom:8px}
 .hunt-trunc{color:var(--sev-med);border:1px solid var(--sev-med);border-radius:6px;padding:5px 8px;font-size:11px;margin-bottom:10px}
+.hunt-meta{margin-top:12px;padding-top:9px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10.5px;color:var(--faint)}
+.hunt-meta .hm-tag{text-transform:uppercase;font-size:9px;letter-spacing:.04em;color:var(--muted);margin-right:8px}
+.hunt-meta.is-new .hm-tag{color:var(--accent);font-weight:700}
+.hunt-meta b{color:var(--muted);font-weight:600}
 .hunt-empty{color:var(--faint);font-size:12px;padding:10px 2px}
 .hunt-timeline{display:flex;flex-direction:column;gap:3px;margin-bottom:12px}
 .hunt-day{display:flex;align-items:center;gap:8px;background:transparent;border:0;width:100%;cursor:pointer;
@@ -642,6 +646,11 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 .dwr-stats span{font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:var(--faint)}
 .dwr-spark{display:block;margin:2px 0 2px}
 .dwr-time{color:var(--faint);font-family:var(--mono);font-size:11px;margin-bottom:13px}
+.dwr-netfirst{color:var(--muted);font-family:var(--mono);font-size:11px;margin:-8px 0 13px}
+.dwr-netfirst:empty{display:none}
+.dwr-netfirst.is-new{color:var(--accent)}
+.dwr-netfirst .nf-new{background:var(--accent);color:#fff;border-radius:4px;padding:0 5px;font-size:9px;font-weight:700;margin-left:4px}
+.dwr-netfirst .nf-bad,.hunt-firstseen .nf-bad{color:var(--sev-high);font-weight:700}
 .dwr-actions{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
 .dwr-actions button{background:var(--ground);border:1px solid var(--line-solid);color:var(--muted);border-radius:7px;padding:5px 9px;cursor:pointer;font-family:var(--mono);font-size:11px}
 .dwr-actions button:hover{color:var(--text);border-color:var(--accent)}

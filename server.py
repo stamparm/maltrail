@@ -23,6 +23,7 @@ from core.common import check_sudo
 from core.common import get_ex_message
 from core.common import patch_parser
 from core.httpd import start_httpd
+from core import meta
 from core.log import create_log_directory
 from core.log import log_error
 from core.log import start_logd
@@ -32,6 +33,7 @@ from core.settings import CHECK_CONNECTION_MAX_RETRIES
 from core.settings import CONFIG_FILE
 from core.settings import HOMEPAGE
 from core.settings import IS_WIN
+from core.settings import META_DB_FILENAME
 from core.settings import NAME
 from core.settings import VERSION
 from core.update import update_geo
@@ -120,6 +122,9 @@ def main():
 
         create_log_directory()
         start_logd(address=config.UDP_ADDRESS, port=config.UDP_PORT, join=False)
+
+    # configure the condensed observable store for read-side /meta lookups + prune (the sensor writes it)
+    meta.configure(os.path.join(config.LOG_DIR, META_DB_FILENAME), enabled=False)
 
     try:
         if config.USE_SERVER_UPDATE_TRAILS:

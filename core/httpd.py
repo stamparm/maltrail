@@ -33,6 +33,7 @@ from core.common import worst_asns
 from core.compat import xrange
 from core.enums import HTTP_HEADER
 from core.geo import ip_to_country
+from core import meta
 from core.settings import config
 from core.settings import CONTENT_EXTENSIONS_EXCLUSIONS
 from core.settings import DATE_FORMAT
@@ -305,7 +306,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # display helpers (_version, _logo, _assetver, _tzoffset, _statics, _format, _build_netfilters, _filter_events)
             # whose signature is NOT (self, params), so e.g. "GET /version" -> self._version(params) -> uncaught TypeError
             # (request crash) reachable by any client. Endpoints are an explicit allowlist, not "any _-prefixed method".
-            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt"):
+            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt", "meta"):
                 if len(splitpath) > 1:
                     params["subpath"] = splitpath[1]
                 content = getattr(self, "_%s" % splitpath[0])(params)
@@ -702,6 +703,47 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 # frontend uses fetch() (no callback), so nothing legitimate needs an arbitrary callback here.
                 callback = params.get("callback")
                 if callback and re.match(r"\A[\w.$]{1,64}\Z", callback):
+                    return "%s(%s)" % (callback, payload)
+                return payload
+            except Exception:
+                if config.SHOW_DEBUG:
+                    traceback.print_exc()
+
+        def _meta(self, params):
+            # Condensed observable store lookup: "have I ever seen this domain/ip, since when, how often".
+            # O(1) PK lookup against meta.sqlite. Returns the aggregate row, or {} if never observed.
+            session = self.get_session()
+
+            if session is None:
+                self.send_response(_http_client.UNAUTHORIZED)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
+            self.send_response(_http_client.OK)
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
+
+            try:
+                observable = (params.get("observable") or "").strip()
+                row = meta.lookup(observable) if observable else None
+                if row and row.get("kind") == "ip":
+                    # automatic enrichment: same category/reputation/country the /check_ip tooltip uses (air-gap safe).
+                    # wrapped so an enrichment hiccup never breaks the first-seen/count payload.
+                    try:
+                        worst = worst_asns(observable)
+                        if worst:
+                            cat = worst
+                        else:
+                            _ = (ipcat_lookup(observable) or "").lower().split(' ')
+                            cat = _[1] if _[0] == 'the' else _[0]
+                        row["category"] = cat or ""
+                        row["reputation"] = "bad" if worst else ""
+                        row["country"] = ip_to_country(observable) or ""
+                    except Exception:
+                        pass
+                payload = json.dumps(row if row else {})
+                callback = params.get("callback")
+                if callback and re.match(r"\A[\w.$]{1,64}\Z", callback):   # same JSONP-XSS guard as _check_ip
                     return "%s(%s)" % (callback, payload)
                 return payload
             except Exception:

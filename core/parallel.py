@@ -11,6 +11,7 @@ import threading
 import time
 
 from core import common
+from core import meta
 from core.common import load_trails
 from core.enums import BLOCK_MARKER
 from core.settings import BLOCK_LENGTH
@@ -130,6 +131,8 @@ def worker(buffer, n, offset, mod, process_packet):
 
         except KeyboardInterrupt:
             break
+
+    meta.flush()   # persist this worker's condensed-observable tail on exit (no-op if disabled/empty)
 
     if _timer:
         _timer.cancel()
