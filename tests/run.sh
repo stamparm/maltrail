@@ -10,7 +10,7 @@ HERE=$(cd "$(dirname "$0")" && pwd)
 MEM_KB=1200000          # ~1.2 GB address-space cap per interpreter
 TIMEOUT=300             # seconds per test file
 
-TESTS="test_addr test_common test_datatype test_ignore test_config test_trailsdict test_fastfilter test_quic_sni test_tls_intel test_sensor test_fanout test_httpd test_log_condense test_logd test_meta test_doctests test_enums test_parallel"
+TESTS="test_addr test_common test_datatype test_ignore test_config test_trailsdict test_fastfilter test_quic_sni test_tls_intel test_sensor test_fanout test_httpd test_log_condense test_logd test_meta test_geo test_doctests test_enums test_parallel"
 
 if [ "$#" -gt 0 ]; then
     PYS="$*"
