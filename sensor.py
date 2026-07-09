@@ -52,12 +52,15 @@ from core.log import flush_condensed_events
 from core.log import get_error_log_handle
 from core.log import log_error
 from core.log import log_event
+from core import meta
 from core.parallel import worker
 from core.parallel import write_block
 from core.settings import config
 from core.settings import CAPTURE_TIMEOUT
 from core.settings import CHECK_CONNECTION_MAX_RETRIES
 from core import fastfilter
+from core.settings import CONDENSED_FLUSH_PERIOD
+from core.settings import CONDENSED_MAX_WINDOW_KEYS
 from core.settings import CONFIG_FILE
 from core.settings import CONSONANTS
 from core.settings import DLT_OFFSETS
@@ -72,6 +75,8 @@ from core.settings import IS_WIN
 from core.settings import LOCALHOST_IP
 from core.settings import LOCAL_SUBDOMAIN_LOOKUPS
 from core.settings import MAX_CACHE_ENTRIES
+from core.settings import META_DB_FILENAME
+from core.settings import META_MAX_ROWS
 from core.settings import MMAP_ZFILL_CHUNK_LENGTH
 from core.settings import NAME
 from core.settings import NO_SUCH_NAME_COUNTERS
@@ -246,6 +251,7 @@ _subdomains = {}
 _subdomains_sec = None
 _no_such_name_hour = None   # last hour-bucket for which NO_SUCH_NAME_COUNTERS was pruned (bounds the per-worker dict)
 _dns_exhausted_domains = set()
+_META = False   # condensed observable store on? (config.USE_CONDENSED_STORAGE; set in init(), read on the hot path)
 
 class _set(set):
     pass
@@ -524,6 +530,9 @@ def _process_packet(packet, sec, usec, ip_offset):
             return   # not IPv4/IPv6 (e.g. a misaligned offset from the DLT heuristic) -> drop before the LOCALHOST_IP lookup below would KeyError
 
         localhost_ip = LOCALHOST_IP[ip_version]
+
+        if _META:   # condensed store: record both endpoints of every connection (DNS names added below)
+            meta.observe_conn(src_ip, dst_ip, ip_version == 0x06, sec)
 
         if protocol == socket.IPPROTO_TCP:  # TCP
             src_port, dst_port, _, _, doff_reserved, flags = struct.unpack("!HHLLBB", ip_data[iph_length:iph_length + 14])
@@ -902,6 +911,9 @@ def _process_packet(packet, sec, usec, ip_offset):
                         if not query or _valid_dns_name_regex.search(query) is None or any(_ in query for _ in (".intranet.",)) or parts[-1] in IGNORE_DNS_QUERY_SUFFIXES:
                             return
 
+                        if _META:   # condensed store: record the queried domain name as an observable
+                            meta.observe_dns(query, sec)
+
                         if ord(dns_data[2:3]) & 0xfa == 0x00:  # standard query (both recursive and non-recursive)
                             type_, class_ = struct.unpack("!HH", dns_data[offset + 1:offset + 5])
 
@@ -1093,6 +1105,7 @@ def init():
     """
 
     global _multiprocessing
+    global _META
 
     try:
         import multiprocessing
@@ -1136,12 +1149,24 @@ def init():
             build_trails_regex(trails)
             trails.finalize()   # compact the resident set to the hash-array form (read-only hot path); drops key strings
 
+        if _META:   # smart, budget-triggered eviction of the condensed observable store we own (no-op if under budget)
+            try:
+                meta.prune(META_MAX_ROWS)
+            except Exception:
+                pass
+
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
         thread.daemon = True
         thread.start()
 
     create_log_directory()
     get_error_log_handle()
+
+    _META = bool(config.USE_CONDENSED_STORAGE)
+    if _META:
+        _meta_db = os.path.join(config.LOG_DIR, META_DB_FILENAME)
+        meta.configure(_meta_db, enabled=True, max_window_keys=CONDENSED_MAX_WINDOW_KEYS, flush_period=CONDENSED_FLUSH_PERIOD)
+        print("[i] using '%s' for condensed observable storage" % _meta_db)
 
     msg = "[i] using '%s' for trail storage" % config.TRAILS_FILE
     if os.path.isfile(config.TRAILS_FILE):
@@ -1736,6 +1761,8 @@ def monitor():
 
         if config.pcap_file:
             flush_condensed_events(True)
+
+        meta.flush()   # persist this process's condensed-observable tail (no-op if disabled/empty)
 
 def main():
     for i in xrange(1, len(sys.argv)):

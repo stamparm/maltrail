@@ -82,6 +82,15 @@ HUNT_TIME_BUDGET = 10.0      # seconds of wall-clock scanning before returning p
 HUNT_MAX_SAMPLES = 200       # cap on returned sample matches, all rendered by the UI (per-day counts are always complete for scanned days)
 HUNT_MIN_QUERY = 3           # reject shorter queries (a 1-2 char substring would match ~everything)
 
+# Condensed observable store (LOG_DIR/meta.sqlite): one cumulative aggregate row per observable
+# (domain/ip) with first_seen/last_seen/count -> novelty + retro-hunt of newly-known IOCs against
+# pre-detection traffic, WITHOUT storing raw traffic. See core/meta.py. The master switch
+# USE_CONDENSED_STORAGE is a maltrail.conf boolean (default on; a 2x10G operator can turn it off).
+META_DB_FILENAME = "meta.sqlite"
+CONDENSED_FLUSH_PERIOD = 60          # seconds between batched flushes of a worker's aggregate into SQLite
+CONDENSED_MAX_WINDOW_KEYS = 200000   # per-flush-window distinct-observable cap (RAM guard vs a DGA burst)
+META_MAX_ROWS = 2000000              # smart score-prune triggers above this row budget (~64 MB at 32 B/row)
+
 RIR_DELEGATED_URLS = (
     "https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest",
     "https://ftp.ripe.net/pub/stats/ripencc/delegated-ripencc-extended-latest",
@@ -351,6 +360,9 @@ def read_config(config_file):
             read_ignorelist()
 
     config.PROCESS_COUNT = int(config.PROCESS_COUNT or CPU_CORES)
+
+    if config.USE_CONDENSED_STORAGE is None:   # default on (absent switch -> None -> would be falsy)
+        config.USE_CONDENSED_STORAGE = True
 
     if config.USE_MULTIPROCESSING:
         print("[x] configuration switch 'USE_MULTIPROCESSING' is deprecated. Please use 'PROCESS_COUNT' instead")

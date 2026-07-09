@@ -75,6 +75,14 @@ class TestHttpd(unittest.TestCase):
         trails = os.path.join(cls.tmp, "trails.csv")
         with open(trails, "w") as f:
             f.write("evil.com,dummy,(static)\n")
+        # seed a condensed observable store so /meta has something to look up (the server reads LOG_DIR/meta.sqlite)
+        from core import meta as _meta
+        _meta.configure(os.path.join(logdir, "meta.sqlite"), enabled=True, flush_period=99999)
+        _meta._agg = {}
+        _meta.observe_conn("10.0.0.5", "8.8.8.8", False, 1700000000)
+        _meta.observe_dns("evil.com", 1700000000)
+        _meta.flush()
+        _meta.configure(None, enabled=False); _meta._agg = {}   # reset the test process's module state
         cls.port = _free_port()
         cfg = os.path.join(cls.tmp, "srv.conf")
         with open(cfg, "w") as f:
@@ -316,6 +324,28 @@ class TestHttpd(unittest.TestCase):
         st, _, body = _http(self.port, "GET", "/hunt?q=extonly", cookie=ck2)
         obj = _json.loads(body.decode("utf-8"))
         self.assertEqual(obj["counts"], {}, "analyst must not hunt outside their netfilter scope")
+
+    def test_meta_lookup(self):
+        # condensed observable store: "have I ever seen this domain/ip, since when, how often" (O(1) PK lookup)
+        import json as _json
+        # requires auth
+        st, _, _ = _http(self.port, "GET", "/meta?observable=8.8.8.8")
+        self.assertEqual(st, 401, "/meta must require a session")
+        ck = self._login()
+        # a seeded IP observable -> full aggregate row
+        st, _, body = _http(self.port, "GET", "/meta?observable=8.8.8.8", cookie=ck)
+        self.assertEqual(st, 200)
+        obj = _json.loads(body.decode("utf-8"))
+        self.assertEqual(obj.get("kind"), "ip")
+        self.assertEqual(obj.get("scope"), "remote")
+        self.assertGreaterEqual(obj.get("count", 0), 1)
+        self.assertEqual(obj.get("first_seen"), 1700000000)
+        # a seeded domain observable
+        _, _, body = _http(self.port, "GET", "/meta?observable=evil.com", cookie=ck)
+        self.assertEqual(_json.loads(body.decode("utf-8")).get("kind"), "dns")
+        # never-seen observable -> empty object
+        _, _, body = _http(self.port, "GET", "/meta?observable=neverseen.invalid", cookie=ck)
+        self.assertEqual(_json.loads(body.decode("utf-8")), {})
 
     def test_ping_healthcheck(self):
         # unauthenticated liveness probe used by monitoring/LB health checks

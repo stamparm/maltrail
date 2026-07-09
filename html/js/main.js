@@ -1037,6 +1037,7 @@
         '<div class="dwr-stats"><div><b>' + t.count + '</b><span>events</span></div><div><b>' + srcs.length + '</b><span>sources</span></div><div><b>' + dsts.length + '</b><span>dest</span></div><div><b>' + ports.length + '</b><span>ports</span></div></div>' +
         '<canvas class="dwr-spark"></canvas>' +
         '<div class="dwr-time">first ' + hms(t.first) + ' \u2192 last ' + hms(t.last) + ' \u00b7 span ' + durationStr(t.first, t.last) + '</div>' +
+        '<div class="dwr-netfirst" id="dwr_netfirst"></div>' +
         '<div class="dwr-status">' + ['investigating', 'resolved', 'fp'].map(function (k) { return '<button data-st="' + k + '" class="trbtn tr-' + k + (trg === k ? ' on' : '') + '">' + TRIAGE_LABEL[k] + '</button>'; }).join('') + '</div>' +
         '<div class="dwr-actions"><button data-a="wls">whitelist src</button><button data-a="wlt">whitelist trail</button><button data-a="hide">' + (state.hidden[t.uidc] ? "unhide" : "hide") + '</button><button data-a="vt" class="ext">\u2197 VT</button><button data-a="abuse" class="ext">\u2197 AbuseIPDB</button><button data-a="shodan" class="ext">\u2197 Shodan</button><button data-a="copy">copy</button><button data-a="ioc">copy IOCs</button></div>' +
         '<div class="dwr-local" role="note">⚠ status, whitelist, hide, tags &amp; notes are saved in <b>this browser only</b> — not shared with the sensor or other users</div>' +
@@ -1048,6 +1049,7 @@
         '<div class="dwr-sec"><h4>raw events \u00b7 ' + ev.length + (ev.length >= 500 ? "+" : "") + (evShown < ev.length ? " (showing " + evShown + ")" : "") + '</h4><div class="dwr-events"><table><thead><tr><th>time</th><th>sensor</th><th>source</th><th>dest</th><th>proto</th><th>trail</th></tr></thead><tbody>' + evRows + '</tbody></table></div></div>' +
       '</div>';
     d.querySelector("#dwr_close").onclick = closeDrawer;
+    _drawerFirstSeen(d, _nt);   // "network memory" line from meta.sqlite (first-seen / observation count)
     // clickable header chips: filter the table by this severity / threat-id / type, then close the drawer
     d.querySelectorAll(".dwr-head .dwr-f").forEach(function (el) {
       el.style.cursor = "pointer";
@@ -2196,11 +2198,65 @@
       })
       .catch(function () { err.textContent = "hunt failed (network)."; res.innerHTML = ""; });
   }
+  function _huntObservable(q) {
+    // a single domain / IP is a valid /meta key; search operators / wildcards / CIDR / grouping are not
+    if (/[\s()*]/.test(q) || q.indexOf("/") >= 0) return null;
+    if (/^\d{1,3}(\.\d{1,3}){3}$/.test(q)) return q;                       // ipv4
+    if (q.indexOf(":") >= 0 && /^[0-9a-f:]+$/i.test(q)) return q;          // ipv6
+    if (/^(?=.{1,253}$)([a-z0-9_-]+\.)+[a-z0-9-]{2,}$/i.test(q)) return q; // domain
+    return null;
+  }
+  function _agoTxt(d) { return d <= 0 ? "today" : (d === 1 ? "yesterday" : d + " days ago"); }
+  function _metaEnrich(m) {   // optional auto-enrichment fields from /meta (IP observables): country / category / bad-ASN
+    var s = "";
+    if (m.country) s += " &middot; " + esc(m.country);
+    if (m.category) s += " &middot; " + esc(m.category);
+    if (m.reputation === "bad") s += ' <span class="nf-bad">⚠ bad ASN</span>';
+    return s;
+  }
+  function _drawerFirstSeen(d, obs) {
+    // "network memory" for the threat's trail: when it was first seen anywhere on the wire + how often (meta.sqlite)
+    if (DEMO) return;
+    var key = _huntObservable(obs); if (!key) return;
+    var el = d.querySelector("#dwr_netfirst"); if (!el) return;
+    fetch("/meta?observable=" + encodeURIComponent(key), { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (m) {
+        if (!m || !m.first_seen || !d.classList.contains("open")) return;
+        var now = Date.now() / 1000, ageD = Math.max(0, Math.floor((now - m.first_seen) / 86400));
+        var isNew = ageD === 0;
+        el.className = "dwr-netfirst" + (isNew ? " is-new" : "");
+        el.innerHTML = "network memory: first seen <b>" + _agoTxt(ageD) + "</b> · " + fmtN(m.count) + " observation(s)" + _metaEnrich(m) + (isNew ? ' <span class="nf-new">NEW</span>' : "");
+      }).catch(function () {});
+  }
+  function _huntFirstSeen(o, q) {
+    // novelty / first-contact banner from the condensed observable store (meta.sqlite): answers "have I EVER
+    // seen this, since when, how often" — including traffic that was never an event (so it can show even with 0 hits)
+    if (DEMO) return;
+    var obs = _huntObservable(q); if (!obs) return;
+    fetch("/meta?observable=" + encodeURIComponent(obs), { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (m) {
+        if (!m || !m.first_seen) return;
+        var res = o.querySelector("#hunt_results"); if (!res) return;
+        var now = Date.now() / 1000;
+        var ageD = Math.max(0, Math.floor((now - m.first_seen) / 86400));
+        var lastD = Math.max(0, Math.floor((now - m.last_seen) / 86400));
+        var isNew = ageD === 0;
+        if (res.querySelector(".hunt-meta")) return;   // already appended for this render
+        var div = document.createElement("div");
+        div.className = "hunt-meta" + (isNew ? " is-new" : "");
+        div.innerHTML = '<span class="hm-tag">' + (isNew ? "new to network" : "traffic memory") + '</span>' +
+          "first seen <b>" + _agoTxt(ageD) + "</b> · last seen " + _agoTxt(lastD) +
+          " · " + fmtN(m.count) + " obs" + (m.scope ? " · " + esc(m.scope) : "") + _metaEnrich(m);
+        res.appendChild(div);
+      }).catch(function () {});
+  }
   function paintHunt(o, q, d) {
     var res = o.querySelector("#hunt_results"), counts = d.counts || {};
     var days = Object.keys(counts).sort().reverse(), total = 0, max = 1;
     days.forEach(function (k) { total += counts[k]; if (counts[k] > max) max = counts[k]; });
-    if (!days.length) { res.innerHTML = '<div class="hunt-empty">No hits for &ldquo;' + esc(q) + '&rdquo; in ' + (d.scanned || 0) + ' day(s) of history.</div>'; return; }
+    if (!days.length) { res.innerHTML = '<div class="hunt-empty">No hits for &ldquo;' + esc(q) + '&rdquo; in ' + (d.scanned || 0) + ' day(s) of history.</div>'; _huntFirstSeen(o, q); return; }
     var html = '<div class="hunt-sum">' + fmtN(total) + ' hit(s) across ' + days.length + ' day(s) &middot; scanned ' + (d.scanned || 0) + ' day(s)</div>';
     if (d.truncated) html += '<div class="hunt-trunc">⚠ partial results — a scan limit was hit. Narrow the IOC or add &from=/&to= for the full picture.</div>';
     html += '<div class="hunt-timeline">' + days.map(function (k) {
@@ -2213,6 +2269,7 @@
     }
     res.innerHTML = html;
     res.querySelectorAll(".hunt-day").forEach(function (b) { b.onclick = function () { huntGoto(o, b.getAttribute("data-d"), q); }; });
+    _huntFirstSeen(o, q);   // auxiliary meta row, appended below the detection results
   }
   function huntGoto(o, date, q) {
     o.remove();
