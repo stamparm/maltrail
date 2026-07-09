@@ -41,6 +41,7 @@ from core.settings import DATE_FORMAT
 from core.settings import DISABLED_CONTENT_EXTENSIONS
 from core.settings import DISPOSED_NONCES
 from core.settings import HTML_DIR
+from core.settings import ROOT_DIR
 from core.settings import HUNT_MAX_DAYS
 from core.settings import HUNT_TIME_BUDGET
 from core.settings import HUNT_MAX_SAMPLES
@@ -85,6 +86,55 @@ _version_cache = None
 _counts_cache = {}  # NOTE: per daily-log event count keyed by filepath -> (mtime, size, count); past-day logs are immutable so they're read once, not on every poll
 _geo_cache = {}  # NOTE: per daily-log country aggregation keyed by filepath -> running {mtime,size,offset,counts,mapped,unmapped}; grows INCREMENTALLY (only new bytes are scanned) so a live/growing current-day log stays cheap
 _geo_lock = threading.Lock()  # NOTE: the incremental read-modify-write must be serialized (concurrent /geo for the same day would otherwise double-count)
+_reference_cache = {}  # trail -> (reference, source_relpath): on-demand static-trails scan result; bounded
+_REFERENCE_CACHE_MAX = 8192
+_REFERENCE_TIME_BUDGET = 2.0
+_STATIC_TRAILS_DIR = os.path.join(ROOT_DIR, "trails", "static")
+
+def _lookup_trail_reference(trail):
+    """On demand, find which static-trails pile a trail sits in and return that pile's '# Reference:' header
+    (the real source citation, e.g. an abuse.ch URL) plus the file. No index / no stored bytes: the static
+    trail files ship with the code, so they're scanned only when an analyst actually asks - result cached.
+    The reference is per-PILE (a '# Reference:' line then its trails), so we locate the trail's line and take
+    the nearest preceding header. Bounded by a time budget so a miss can't stall the request."""
+    cached = _reference_cache.get(trail)
+    if cached is not None:
+        return cached
+    result = ("", "")
+    try:
+        trail_b = trail if isinstance(trail, bytes) else trail.encode("latin-1", "replace")
+        needle = re.compile(b"(?m)^" + re.escape(trail_b) + b"(?:[/\\s#]|$)")   # the trail as a whole line / host, not a substring
+        deadline = time.time() + _REFERENCE_TIME_BUDGET
+        found = False
+        for root, _dirs, files in os.walk(_STATIC_TRAILS_DIR):   # os.walk: py2/py3-safe (glob recursive is py3-only)
+            if found or time.time() > deadline:
+                break
+            for name in files:
+                if not (name.endswith(".txt") or name.endswith(".csv")):
+                    continue
+                try:
+                    with open(os.path.join(root, name), "rb") as f:
+                        data = f.read()
+                except (OSError, IOError):
+                    continue
+                m = needle.search(data)
+                if m:
+                    ref = ""
+                    rp = data.rfind(b"\n# Reference:", 0, m.start())   # nearest pile header above the match
+                    if rp >= 0:
+                        end = data.find(b"\n", rp + 1)
+                        parts = data[rp + 1:end if end >= 0 else len(data)].split(b":", 1)
+                        if len(parts) == 2:
+                            ref = parts[1].strip().decode("latin-1", "replace")
+                    result = (ref, os.path.relpath(os.path.join(root, name), ROOT_DIR).replace(os.sep, "/"))
+                    found = True
+                    break
+    except Exception:
+        if config.SHOW_DEBUG:
+            traceback.print_exc()
+    if len(_reference_cache) < _REFERENCE_CACHE_MAX:
+        _reference_cache[trail] = result
+    return result
 _statics_cache = None  # NOTE: (5-min-bucket, latest-static-trail-date); avoids re-globbing the static malware dir on every page render
 MAX_POST_SIZE = 10 * 1024 * 1024  # NOTE: cap request body (real Maltrail POSTs are tiny); rejects absurd Content-Length up-front to bound memory
 REQUEST_TIMEOUT = 60  # NOTE: per-socket-operation timeout; frees worker threads stuck on stalled/slowloris connections (active, progressing clients are unaffected)
@@ -307,7 +357,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # display helpers (_version, _logo, _assetver, _tzoffset, _statics, _format, _build_netfilters, _filter_events)
             # whose signature is NOT (self, params), so e.g. "GET /version" -> self._version(params) -> uncaught TypeError
             # (request crash) reachable by any client. Endpoints are an explicit allowlist, not "any _-prefixed method".
-            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt", "meta"):
+            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt", "meta", "reference"):
                 if len(splitpath) > 1:
                     params["subpath"] = splitpath[1]
                 content = getattr(self, "_%s" % splitpath[0])(params)
@@ -745,6 +795,35 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 payload = json.dumps(row if row else {})
                 callback = params.get("callback")
                 if callback and re.match(r"\A[\w.$]{1,64}\Z", callback):   # same JSONP-XSS guard as _check_ip
+                    return "%s(%s)" % (callback, payload)
+                return payload
+            except Exception:
+                if config.SHOW_DEBUG:
+                    traceback.print_exc()
+
+        def _reference(self, params):
+            # On-demand source citation for a trail: the '# Reference:' header of the static-trails pile it
+            # belongs to (e.g. the abuse.ch/feed URL that flagged it). Scanned from the shipped trail files
+            # only when asked, so nothing is stored per-trail and it works whether or not a sensor is co-located.
+            session = self.get_session()
+
+            if session is None:
+                self.send_response(_http_client.UNAUTHORIZED)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
+            self.send_response(_http_client.OK)
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
+
+            try:
+                trail = (params.get("trail") or "").strip()
+                if not trail or len(trail) > 256:
+                    return json.dumps({})
+                ref, src = _lookup_trail_reference(trail)
+                payload = json.dumps({"reference": ref, "source": src})
+                callback = params.get("callback")
+                if callback and re.match(r"\A[\w.$]{1,64}\Z", callback):   # same JSONP-XSS guard as _check_ip/_meta
                     return "%s(%s)" % (callback, payload)
                 return payload
             except Exception:
