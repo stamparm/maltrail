@@ -744,6 +744,19 @@
       : kind === "urlscan" ? "https://urlscan.io/search/#" + encodeURIComponent(val) : null;
     if (u) window.open(u, "_blank", "noopener");
   }
+  // The external/malicious IP to hand to VT/AbuseIPDB/Shodan — NOT the local source (looking up a LAN address is
+  // pointless). Mirrors the server's event_country direction logic: 1) an IP carried by the trail itself (bare IP
+  // or an IP-based URL) IS the IOC; 2) else a public destination (outbound C2/download); 3) else a public source
+  // (inbound attacker). null when the threat has no public IP at all (internal-only) -> callers hide the buttons.
+  function threatExtIP(t) {
+    if (!t) return null;
+    var m = /^(\d{1,3}(?:\.\d{1,3}){3})(?:[:/]|$)/.exec(normTrail(t.trail) || "");
+    if (m && isPubIP(m[1])) return m[1];
+    var i, d = t.dstS ? setList(t.dstS) : [], s = t.srcS ? setList(t.srcS) : [];
+    for (i = 0; i < d.length; i++) if (isPubIP(d[i])) return d[i];
+    for (i = 0; i < s.length; i++) if (isPubIP(s[i])) return s[i];
+    return null;
+  }
   // ===== Export: current filtered view -> CSV / JSON / defanged IOCs (client-side download) =====
   function csvCell(v) { v = "" + (v == null ? "" : v); if (/^[=+\-@\t\r]/.test(v)) v = "'" + v; /* neutralize spreadsheet formula injection (=cmd…, @SUM…) from attacker-controlled trail/info/tag fields opened in Excel/Sheets */ return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
   function buildCSV() {
@@ -1051,9 +1064,15 @@
     d.querySelector('[data-a="wls"]').onclick = function () { whitelistSrc(t.src); closeDrawer(); };
     d.querySelector('[data-a="wlt"]').onclick = function () { whitelistTrail(t.trail); closeDrawer(); };
     d.querySelector('[data-a="hide"]').onclick = function () { toggleHide(t.uidc); closeDrawer(); };
-    d.querySelector('[data-a="vt"]').onclick = function () { openLookup("vt-ip", t.src); };
-    d.querySelector('[data-a="abuse"]').onclick = function () { openLookup("abuse", t.src); };
-    d.querySelector('[data-a="shodan"]').onclick = function () { openLookup("shodan", t.src); };
+    var _ext = threatExtIP(t);   // reputation lookups target the external malicious IP, not the LAN source
+    var _vtb = d.querySelector('[data-a="vt"]'), _abb = d.querySelector('[data-a="abuse"]'), _shb = d.querySelector('[data-a="shodan"]');
+    if (_ext) {
+      _vtb.onclick = function () { openLookup("vt-ip", _ext); }; _vtb.title = "VirusTotal · " + _ext;
+      _abb.onclick = function () { openLookup("abuse", _ext); }; _abb.title = "AbuseIPDB · " + _ext;
+      _shb.onclick = function () { openLookup("shodan", _ext); }; _shb.title = "Shodan · " + _ext;
+    } else {   // internal-only threat: no public IP worth checking (a LAN address on VT is meaningless)
+      _vtb.style.display = _abb.style.display = _shb.style.display = "none";
+    }
     d.querySelector('[data-a="copy"]').onclick = function () { copyText([t.uidc, t.src, setList(t.dstS).join("|"), t.type, t.trail, t.info].join("  "), null); };
     d.querySelector('[data-a="ioc"]').onclick = function () { var b = charTrim(charTrim(("" + t.trail).replace(/\([^)]*\)/g, "").replace(/\\\(/g, "").replace(/\\\)/g, ""), " "), "."); var arr = []; if (b) arr.push(b); setList(t.dstS).forEach(function (ip) { if (/^\d{1,3}(\.\d{1,3}){3}$/.test(ip)) arr.push(ip); }); copyText(arr.map(defang).join("\n"), null); };
     d.querySelectorAll('[data-st]').forEach(function (b) { b.onclick = function () { var k = b.getAttribute('data-st'); setTriage(t.uidc, state.triage[t.uidc] === k ? null : k); closeDrawer(); }; });
@@ -1090,12 +1109,17 @@
       ["Filter → only this trail", function () { addFilter("trail:" + nt); }, ""],
       "sep",
       ["✎ Alias source  " + src, function () { openAlias(src); }, ""],
-      ["Copy row", function () { copyText([t.uidc, src, setList(t.dstS).join("|"), setList(t.dportS).join("|"), t.type, t.trail, t.info].join("  "), null); }, ""],
-      "sep",
-      ["↗ VirusTotal · source", function () { openLookup("vt-ip", src); }, "ext"],
-      ["↗ AbuseIPDB · source", function () { openLookup("abuse", src); }, "ext"],
-      ["↗ Shodan · source", function () { openLookup("shodan", src); }, "ext"]
+      ["Copy row", function () { copyText([t.uidc, src, setList(t.dstS).join("|"), setList(t.dportS).join("|"), t.type, t.trail, t.info].join("  "), null); }, ""]
     ];
+    // reputation lookups target the external malicious IP (trail-IP / public dst / public src), labelled with the
+    // actual IP so it's unambiguous — never a pointless LAN-source lookup. Omitted for internal-only threats.
+    var _ext = threatExtIP(t);
+    if (_ext) {
+      items.push("sep");
+      items.push(["↗ VirusTotal · " + _ext, function () { openLookup("vt-ip", _ext); }, "ext"]);
+      items.push(["↗ AbuseIPDB · " + _ext, function () { openLookup("abuse", _ext); }, "ext"]);
+      items.push(["↗ Shodan · " + _ext, function () { openLookup("shodan", _ext); }, "ext"]);
+    }
     if (domish) {
       items.push(["↗ VirusTotal · trail", function () { openLookup("vt-dom", domish); }, "ext"]);
       items.push(["↗ urlscan · trail", function () { openLookup("urlscan", domish); }, "ext"]);
