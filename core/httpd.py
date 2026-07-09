@@ -33,6 +33,7 @@ from core.common import worst_asns
 from core.compat import xrange
 from core.enums import HTTP_HEADER
 from core.geo import ip_to_country
+from core.geo import event_country
 from core import meta
 from core.settings import config
 from core.settings import CONTENT_EXTENSIONS_EXCLUSIONS
@@ -1256,10 +1257,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             return json.dumps(counts)
 
         def _geo(self, params):
-            # Per-country event density for one day's log, for the world map. We geolocate the TRAIL (the matched
-            # IOC, field index 8) and only when it's a public IPv4 - so the malicious IP is placed, never the local
-            # host or a benign resolver, and domain/URL/IPv6 trails are honestly counted as "unmapped" rather than
-            # faked onto the map. Result is cached per immutable past-day log, like _counts.
+            # Per-country event density for one day's log, for the world map. Which IP to place depends on the trail
+            # type (IP vs domain-URL vs inbound-scan heuristic vs DNS), so the per-event decision lives in
+            # core.geo.event_country() - it places the external malicious endpoint and honestly leaves DNS /
+            # internal-only events unmapped. Result is cached per immutable past-day log, like _counts.
             session = self.get_session()
 
             if session is None:
@@ -1309,7 +1310,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                         parts = line[cut + 2:].split(b' ')  # sensor,src,sport,dst,dport,proto,type,TRAIL,...
                                         if len(parts) <= 7:
                                             continue
-                                        cc = ip_to_country(parts[7].decode("latin-1"))
+                                        # place the external malicious endpoint per trail type (see core.geo.event_country)
+                                        cc = event_country(parts[6].decode("latin-1"), parts[1].decode("latin-1"), parts[3].decode("latin-1"), parts[7].decode("latin-1"))
                                         if cc:
                                             counts[cc] = counts.get(cc, 0) + 1
                                             mapped += 1

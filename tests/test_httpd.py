@@ -72,6 +72,8 @@ class TestHttpd(unittest.TestCase):
             f.write(line("%s 10:00:02.000000" % cls.date, "sensor-a", "203.0.113.9", "5555", "198.51.100.5", "443", "TCP", "IP", "198.51.100.5", "extonly (dummy)", "(static)") + "\n")
             # custom-trail event from an in-range host -> restricted analyst sees the event but the (custom) name masked
             f.write(line("%s 10:00:03.000000" % cls.date, "sensor-a", "10.0.0.8", "6666", "5.5.5.5", "80", "TCP", "IP", "5.5.5.5", "supersecretname (custom)", "(custom)") + "\n")
+            # IP-based URL trail: trail string isn't a bare IP ("1.1.1.1/..."), but its host geolocates (AU) -> map it
+            f.write(line("%s 10:00:04.000000" % cls.date, "sensor-a", "10.0.0.9", "7777", "1.1.1.1", "80", "TCP", "URL", "1.1.1.1/malware.exe", "1312 (dummy)", "(static)") + "\n")
         trails = os.path.join(cls.tmp, "trails.csv")
         with open(trails, "w") as f:
             f.write("evil.com,dummy,(static)\n")
@@ -304,6 +306,9 @@ class TestHttpd(unittest.TestCase):
         self.assertIn("unmapped", obj)
         # the synthetic log has public-IP trails (geolocatable) and an 'evil.com' domain trail (unmapped)
         self.assertGreaterEqual(obj["unmapped"], 1)
+        # IP-based URL trail ("1.1.1.1/malware.exe" -> AU) must geolocate its host, not fall to unmapped
+        self.assertIn("AU", obj["counts"], "IP-based URL trail must be placed on the map by its host IP")
+        self.assertEqual(obj["mapped"], sum(obj["counts"].values()))
 
     def test_hunt_retro_search(self):
         # retro-hunt: historical IOC sweep across daily logs -> per-day counts + capped samples, bounded + scoped
