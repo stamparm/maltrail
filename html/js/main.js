@@ -852,8 +852,7 @@
       row.appendChild(ap); row.appendChild(del); m.appendChild(row);
     });
     m.style.display = "block"; m.setAttribute("aria-hidden", "false");
-    var r = btn.getBoundingClientRect(), mw = m.offsetWidth || 220;
-    m.style.left = Math.max(6, Math.min(r.left, window.innerWidth - mw - 8)) + "px"; m.style.top = (r.bottom + 4) + "px";
+    _placeBelow(m, btn, 4);
   }
   // ===== Live mode: auto-refresh + new-threat detection + opt-in alerts =====
   var LIVE_MS = 5000;   // poll fallback cadence (only when SSE push is unavailable; merge is cheap so this is fine)
@@ -939,11 +938,7 @@
       m.appendChild(b);
     });
     m.style.display = "block"; m.setAttribute("aria-hidden", "false");
-    var r = btn.getBoundingClientRect(), mw = m.offsetWidth || 230;
-    m.style.left = Math.max(6, Math.min(r.left, window.innerWidth - mw - 8)) + "px";
-    var _top = r.bottom + 5, _mh = m.offsetHeight;   // if the (capped) panel would run off the bottom, lift it up so it stays fully visible
-    if (_top + _mh > window.innerHeight - 8) _top = Math.max(8, window.innerHeight - _mh - 8);
-    m.style.top = _top + "px";
+    _placeBelow(m, btn, 5);
   }
   // far-left hamburger menu: the project links (docs/issues/github) that used to clutter the top bar. Inline SVGs
   // (no external assets — air-gap safe) matching the icons they replaced.
@@ -962,9 +957,7 @@
       m.appendChild(a);
     });
     m.style.display = "block"; m.setAttribute("aria-hidden", "false"); btn.setAttribute("aria-expanded", "true");
-    var r = btn.getBoundingClientRect(), mw = m.offsetWidth || 212;
-    m.style.left = Math.max(6, Math.min(r.left, window.innerWidth - mw - 8)) + "px";
-    m.style.top = (r.bottom + 5) + "px";
+    _placeBelow(m, btn, 5);
   }
 
 
@@ -978,9 +971,7 @@
       b.onclick = function (e) { e.stopPropagation(); closeCtx(); exportAs(it[1]); }; m.appendChild(b);
     });
     m.style.display = "block"; m.setAttribute("aria-hidden", "false");
-    var r = btn.getBoundingClientRect(), mw = m.offsetWidth || 200;
-    m.style.left = Math.max(6, Math.min(r.left, window.innerWidth - mw - 8)) + "px";
-    m.style.top = (r.bottom + 4) + "px";
+    _placeBelow(m, btn, 4);
   }
 
   function closeCtx() { var m = document.getElementById("ctxmenu"); if (m) { m.style.display = "none"; m.setAttribute("aria-hidden", "true"); m.innerHTML = ""; } var hb = document.getElementById("nav_menu"); if (hb) hb.setAttribute("aria-expanded", "false"); }
@@ -1115,9 +1106,13 @@
       m.appendChild(b);
     });
     m.style.display = "block"; m.setAttribute("aria-hidden", "false");
-    var mw = m.offsetWidth || 230, mh = m.offsetHeight || 320;
-    m.style.left = Math.max(6, Math.min(x, window.innerWidth - mw - 8)) + "px";
-    m.style.top = Math.max(6, Math.min(y, window.innerHeight - mh - 8)) + "px";
+    // zoom-safe placement (same as the hover tip): the A-/A+ CSS zoom on <html> would otherwise drift this
+    // menu away from the cursor. Place at the cursor, then keep it inside the viewport via its measured rect.
+    var vw = window.innerWidth, vh = window.innerHeight, put = _fixedPlacer(m);
+    put(x, y);
+    var f = m.getBoundingClientRect();
+    if (f.right > vw - 6) put(Math.max(6, vw - 6 - f.width), y);
+    f = m.getBoundingClientRect(); if (f.bottom > vh - 6) put(f.left, Math.max(6, vh - 6 - f.height));
   }
   function showWLManage() {
     closeCtx();
@@ -1814,12 +1809,42 @@
   var _tipEl, _tipIP = null;
   function tipEl() { if (!_tipEl) { _tipEl = document.createElement("div"); _tipEl.className = "hovertip"; _tipEl.style.display = "none"; document.body.appendChild(_tipEl); } return _tipEl; }
   function hideTip() { if (_tipEl) _tipEl.style.display = "none"; _tipIP = null; }
-  function placeTip(x, y) {
-    var t = tipEl(), w = t.offsetWidth, h = t.offsetHeight, vw = window.innerWidth, vh = window.innerHeight;
-    var left = x + 14, top = y + 16;
-    if (left + w > vw - 8) left = x - w - 14; if (left < 6) left = 6;
-    if (top + h > vh - 8) top = y - h - 16; if (top < 6) top = 6;
-    t.style.left = left + "px"; t.style.top = top + "px";
+  function ctxIsOpen() { var m = document.getElementById("ctxmenu"); return !!(m && m.style.display === "block"); }
+  // Anchor the tip to the hovered CELL. The accessibility A-/A+ control sets CSS `zoom` on <html>, and how that
+  // zoom maps a fixed element's style left/top to painted pixels (vs what getBoundingClientRect reports) differs
+  // across engines -> the tip used to drift far off at any zoom != 1. So don't assume: MEASURE the style->paint
+  // mapping with two probes (paint = a + style*s, where s is effectively the zoom), then solve for the style that
+  // lands the tip at the cell. Engine-agnostic, correct at any zoom.
+  // Position a body-appended popup so its top-left PAINTS at visual (vx,vy). The accessibility A-/A+ control
+  // sets CSS `zoom` on <html>; how that offsets a fixed/absolute element vs what getBoundingClientRect reports
+  // differs across engines, so we MEASURE the style->paint mapping (paint = a + style*s) and invert it rather
+  // than assume. Returns put() for re-placement (viewport clamping against the element's measured rect).
+  function _fixedPlacer(el) {
+    el.style.left = "0px"; el.style.top = "0px";
+    var a = el.getBoundingClientRect();
+    el.style.left = "200px"; el.style.top = "200px";
+    var b = el.getBoundingClientRect();
+    var sx = (b.left - a.left) / 200 || 1, sy = (b.top - a.top) / 200 || 1;
+    return function (vx, vy) { el.style.left = Math.round((vx - a.left) / sx) + "px"; el.style.top = Math.round((vy - a.top) / sy) + "px"; };
+  }
+  // drop a body-appended menu below a button (left-aligned), zoom-safe, kept inside the viewport
+  function _placeBelow(m, btn, gap) {
+    var r = btn.getBoundingClientRect(), vw = window.innerWidth, vh = window.innerHeight, put = _fixedPlacer(m);
+    gap = gap || 4;
+    put(r.left, r.bottom + gap);
+    var f = m.getBoundingClientRect();
+    if (f.right > vw - 6) put(Math.max(6, vw - 6 - f.width), r.bottom + gap);
+    f = m.getBoundingClientRect(); if (f.bottom > vh - 6) put(f.left, Math.max(6, r.top - gap - f.height));   // lift above the button
+  }
+  function placeTipAt(el) {
+    if (!el) return;
+    var t = tipEl(), cr = el.getBoundingClientRect(), vw = window.innerWidth, vh = window.innerHeight;
+    var put = _fixedPlacer(t);
+    put(cr.left, cr.bottom + 6);                             // desired: just below the cell, left-aligned
+    var f = t.getBoundingClientRect();                       // clamp against the tip's MEASURED rect (all visual coords)
+    if (f.right > vw - 6) put(Math.max(6, vw - 6 - f.width), cr.bottom + 6);
+    f = t.getBoundingClientRect(); if (f.left < 6) put(6, cr.bottom + 6);
+    f = t.getBoundingClientRect(); if (f.bottom > vh - 6) put(f.left, Math.max(6, cr.top - 6 - f.height));   // flip above the cell
   }
   function ipTipHTML(ip) {
     var rec = ripe[ip], ci = ipInfo[ip], a = IP_ALIASES[ip], pub = isPubIP(ip), L = [];
@@ -2006,7 +2031,7 @@
     if (_rows) _rows.addEventListener('contextmenu', function (e) {
       var tr = e.target.closest ? e.target.closest('tr') : null; if (!tr || tr.dataset.ri == null) return;
       var t = (state._pageRows || [])[+tr.dataset.ri]; if (!t) return;
-      e.preventDefault(); openCtx(t, e.clientX, e.clientY);
+      e.preventDefault(); hideTip(); openCtx(t, e.clientX, e.clientY);
     });
     document.addEventListener('click', function () { closeCtx(); closeDatePicker(); });   // datepop stops propagation on internal clicks, so this only fires for outside clicks
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeCtx(); closeDrawer(); closeDatePicker(); } });
@@ -2023,16 +2048,17 @@
       // .ip wins over an ancestor [data-tip] so nested content shows the richer IP card, never a doubled native hint.
       var hoverSel = '.ip[data-ip], [data-tip]';
       _rows.addEventListener('mouseover', function (e) {
-        if (!e.target.closest) return;
+        if (!e.target.closest || ctxIsOpen()) return;   // don't stack a tooltip under an open right-click menu
         var ipc = e.target.closest('.ip[data-ip]'), tc = e.target.closest('[data-tip]');
         var t = tipEl();
-        if (ipc && (!tc || ipc.contains(tc))) { var ip = ipc.getAttribute('data-ip'); _tipIP = ip; if (isPubIP(ip)) { ripeGeo(ip); ripeAsn(ip); } t.innerHTML = ipTipHTML(ip); }
-        else if (tc) { _tipIP = null; t.innerHTML = ellTipHTML(tc.getAttribute('data-tip')); }
+        var anchor = null;
+        if (ipc && (!tc || ipc.contains(tc))) { var ip = ipc.getAttribute('data-ip'); _tipIP = ip; if (isPubIP(ip)) { ripeGeo(ip); ripeAsn(ip); } t.innerHTML = ipTipHTML(ip); anchor = ipc; }
+        else if (tc) { _tipIP = null; t.innerHTML = ellTipHTML(tc.getAttribute('data-tip')); anchor = tc; }
         else return;
-        t.style.display = 'block'; placeTip(e.clientX, e.clientY);
+        t.style.display = 'block'; placeTipAt(anchor);
       });
-      _rows.addEventListener('mousemove', function (e) {
-        if (_tipEl && _tipEl.style.display !== 'none' && e.target.closest && e.target.closest(hoverSel)) placeTip(e.clientX, e.clientY);
+      _rows.addEventListener('mousemove', function () {
+        if (ctxIsOpen()) hideTip();   // tip is cell-anchored, so no per-move repositioning; just clear it under an open menu
       });
       _rows.addEventListener('mouseout', function (e) {
         var to = e.relatedTarget;
@@ -2402,10 +2428,7 @@
   }
   function positionDatePop() {
     var pop = document.getElementById("datepop"), anchor = document.getElementById("dateface"); if (!pop || !anchor) return;
-    var r = anchor.getBoundingClientRect(), pw = pop.offsetWidth || 420, ph = pop.offsetHeight || 200;
-    pop.style.left = Math.max(8, Math.min(r.left, window.innerWidth - pw - 8)) + "px";
-    var top = r.bottom + 6; if (top + ph > window.innerHeight - 8) top = Math.max(8, r.top - ph - 6);   // flip above if it would overflow the viewport
-    pop.style.top = top + "px";
+    _placeBelow(pop, anchor, 6);   // zoom-safe (A-/A+ CSS zoom on <html>), flips above / clamps to viewport as needed
   }
   function openDatePicker() {
     var di = document.getElementById("date_input"); if (di && di.disabled && !DEMO) return;   // offline -> navigation unavailable
