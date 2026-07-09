@@ -58,7 +58,7 @@
     color:var(--muted);font-family:var(--sans);font-size:12px;cursor:pointer}
   .ghost-btn:hover{color:var(--text);border-color:var(--accent)}
 
-  main{padding:20px;max-width:1500px;margin:0 auto}
+  main{padding:14px 16px;max-width:none;margin:0}   /* full-width like classic maltrail: narrow fixed gutters, not centered with fat side margins */
 
   /* ---------- stat cards ---------- */
   .dash-toggle svg{display:block}
