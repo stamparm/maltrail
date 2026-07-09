@@ -297,6 +297,26 @@ class TestHttpd(unittest.TestCase):
         # the synthetic log has public-IP trails (geolocatable) and an 'evil.com' domain trail (unmapped)
         self.assertGreaterEqual(obj["unmapped"], 1)
 
+    def test_hunt_retro_search(self):
+        # retro-hunt: historical IOC sweep across daily logs -> per-day counts + capped samples, bounded + scoped
+        import json as _json
+        ck = self._login()
+        st, _, body = _http(self.port, "GET", "/hunt?q=evil.com", cookie=ck)
+        self.assertEqual(st, 200)
+        obj = _json.loads(body.decode("utf-8"))
+        self.assertIn("counts", obj)
+        self.assertIn("samples", obj)
+        self.assertIn("truncated", obj)
+        self.assertIn(self.date, obj["counts"])          # 'evil.com' is in today's synthetic log
+        # too-short queries are rejected (a 1-2 char substring would match ~everything -> self-DoS)
+        st, _, body = _http(self.port, "GET", "/hunt?q=x", cookie=ck)
+        self.assertIn("error", _json.loads(body.decode("utf-8")))
+        # a restricted analyst (netmask 10.0.0.0/8) must not see the external-only event
+        ck2 = self._login("analyst")
+        st, _, body = _http(self.port, "GET", "/hunt?q=extonly", cookie=ck2)
+        obj = _json.loads(body.decode("utf-8"))
+        self.assertEqual(obj["counts"], {}, "analyst must not hunt outside their netfilter scope")
+
     def test_ping_healthcheck(self):
         # unauthenticated liveness probe used by monitoring/LB health checks
         st, _, body = _http(self.port, "GET", "/ping")

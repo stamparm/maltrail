@@ -39,6 +39,10 @@ from core.settings import DATE_FORMAT
 from core.settings import DISABLED_CONTENT_EXTENSIONS
 from core.settings import DISPOSED_NONCES
 from core.settings import HTML_DIR
+from core.settings import HUNT_MAX_DAYS
+from core.settings import HUNT_TIME_BUDGET
+from core.settings import HUNT_MAX_SAMPLES
+from core.settings import HUNT_MIN_QUERY
 from core.settings import HTTP_TIME_FORMAT
 from core.settings import IS_WIN
 from core.settings import MAX_NOFILE
@@ -301,7 +305,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # display helpers (_version, _logo, _assetver, _tzoffset, _statics, _format, _build_netfilters, _filter_events)
             # whose signature is NOT (self, params), so e.g. "GET /version" -> self._version(params) -> uncaught TypeError
             # (request crash) reachable by any client. Endpoints are an explicit allowlist, not "any _-prefixed method".
-            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo"):
+            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt"):
                 if len(splitpath) > 1:
                     params["subpath"] = splitpath[1]
                 content = getattr(self, "_%s" % splitpath[0])(params)
@@ -1278,6 +1282,96 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             out = dict(result)
             out["home"] = _geo_home()  # config, not part of the per-day cache: cheap and may change on reload
             return json.dumps(out)
+
+        def _hunt(self, params):
+            # Retro-hunt: sweep historical daily logs for an IOC and return per-day hit counts + capped sample lines.
+            # HARD-bounded so a broad query can't self-DoS: newest-first, streamed, and it stops at whichever of
+            # {HUNT_MAX_DAYS, HUNT_TIME_BUDGET, HUNT_MAX_SAMPLES} trips first (reporting truncated=true). Scope is
+            # enforced per session by reusing _filter_events, identical to /events (a restricted analyst only ever
+            # hunts within their own netmasks). Matching is IOC-shaped only (IP/CIDR or literal substring) - no
+            # user-supplied regex, so there's no ReDoS surface.
+            session = self.get_session()
+
+            if session is None:
+                self.send_response(_http_client.UNAUTHORIZED)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
+            self.send_response(_http_client.OK)
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
+
+            query = (params.get("q") or "").strip()
+            if len(query) < HUNT_MIN_QUERY:
+                return json.dumps({"error": "query too short (min %d chars)" % HUNT_MIN_QUERY, "counts": {}, "samples": [], "truncated": False, "scanned": 0})
+
+            q_lower = query.lower()
+            q_prefix = q_mask = None   # IP/CIDR fast-path (integer match); otherwise literal substring
+            ipm = re.match(r"\A(\d+\.\d+\.\d+\.\d+)(?:/(\d{1,2}))?\Z", query)
+            if ipm:
+                try:
+                    q_mask = make_mask(int(ipm.group(2)) if ipm.group(2) else 32)
+                    q_prefix = addr_to_int(ipm.group(1)) & q_mask
+                except Exception:
+                    q_prefix = q_mask = None
+
+            def _bound(name):
+                mm = re.search(r"\d{4}-\d{2}-\d{2}", params.get(name, ""))
+                return mm.group(0) if mm else None
+            lo, hi = _bound("from"), _bound("to")
+
+            files = []
+            for filepath in glob.glob(os.path.join(config.LOG_DIR, "*.log")):
+                base = os.path.basename(filepath)
+                if not re.search(r"\A\d{4}-\d{2}-\d{2}\.log\Z", base):
+                    continue
+                daystr = base[:-4]
+                if (lo and daystr < lo) or (hi and daystr > hi):
+                    continue
+                files.append((daystr, filepath))
+            files.sort(reverse=True)          # newest-first: most relevant, and the cap keeps recent history
+            files = files[:HUNT_MAX_DAYS]
+
+            addresses, netmasks, regex = self._build_netfilters(session)
+            counts, samples, truncated = {}, [], False
+            deadline = time.time() + HUNT_TIME_BUDGET
+
+            for daystr, filepath in files:
+                if time.time() > deadline:
+                    truncated = True
+                    break
+                hits, seen = 0, 0
+                try:
+                    with open(filepath, "rb") as f:
+                        for line in self._filter_events(f, session, addresses, netmasks, regex):  # scope-enforced, same as /events
+                            seen += 1
+                            if (seen & 0x3FFF) == 0 and time.time() > deadline:   # periodic budget check inside a huge day
+                                truncated = True
+                                break
+                            hit = False
+                            if q_prefix is not None:
+                                for im in re.finditer(r"\b(\d+\.\d+\.\d+\.\d+)\b", line):
+                                    try:
+                                        if addr_to_int(im.group(1)) & q_mask == q_prefix:
+                                            hit = True
+                                            break
+                                    except Exception:
+                                        pass
+                            elif q_lower in line.lower():
+                                hit = True
+                            if hit:
+                                hits += 1
+                                if len(samples) < HUNT_MAX_SAMPLES:
+                                    samples.append({"date": daystr, "line": line.strip()[:500]})
+                except Exception:
+                    if config.SHOW_DEBUG:
+                        traceback.print_exc()
+                if hits:
+                    counts[daystr] = hits
+                if truncated:
+                    break
+
+            return json.dumps({"counts": counts, "samples": samples, "truncated": truncated, "scanned": len(files), "capped_samples": len(samples) >= HUNT_MAX_SAMPLES})
 
     class SSLReqHandler(ReqHandler):
         def setup(self):
