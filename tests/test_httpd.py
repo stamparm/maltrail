@@ -352,6 +352,18 @@ class TestHttpd(unittest.TestCase):
         _, _, body = _http(self.port, "GET", "/meta?observable=neverseen.invalid", cookie=ck)
         self.assertEqual(_json.loads(body.decode("utf-8")), {})
 
+    def test_reference_endpoint(self):
+        # on-demand trail source citation: requires auth; unknown trail -> empty (valid JSON) not an error
+        import json as _json
+        st, _, _ = _http(self.port, "GET", "/reference?trail=x")
+        self.assertEqual(st, 401, "/reference must require a session")
+        ck = self._login()
+        st, _, body = _http(self.port, "GET", "/reference?trail=no-such-trail-xyz.invalid", cookie=ck)
+        self.assertEqual(st, 200)
+        obj = _json.loads(body.decode("utf-8"))
+        self.assertIsInstance(obj, dict)
+        self.assertEqual(obj.get("reference", ""), "")
+
     def test_ping_healthcheck(self):
         # unauthenticated liveness probe used by monitoring/LB health checks
         st, _, body = _http(self.port, "GET", "/ping")

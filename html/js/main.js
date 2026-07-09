@@ -1029,6 +1029,7 @@
         '<canvas class="dwr-spark"></canvas>' +
         '<div class="dwr-time">first ' + hms(t.first) + ' \u2192 last ' + hms(t.last) + ' \u00b7 span ' + durationStr(t.first, t.last) + '</div>' +
         '<div class="dwr-netfirst" id="dwr_netfirst"></div>' +
+        '<div class="dwr-source" id="dwr_source"></div>' +
         '<div class="dwr-status">' + ['investigating', 'resolved', 'fp'].map(function (k) { return '<button data-st="' + k + '" class="trbtn tr-' + k + (trg === k ? ' on' : '') + '">' + TRIAGE_LABEL[k] + '</button>'; }).join('') + '</div>' +
         '<div class="dwr-actions"><button data-a="wls">whitelist src</button><button data-a="wlt">whitelist trail</button><button data-a="hide">' + (state.hidden[t.uidc] ? "unhide" : "hide") + '</button><button data-a="vt" class="ext">\u2197 VT</button><button data-a="abuse" class="ext">\u2197 AbuseIPDB</button><button data-a="shodan" class="ext">\u2197 Shodan</button><button data-a="copy">copy</button><button data-a="ioc">copy IOCs</button></div>' +
         '<div class="dwr-local" role="note">⚠ status, whitelist, hide, tags &amp; notes are saved in <b>this browser only</b> — not shared with the sensor or other users</div>' +
@@ -1041,6 +1042,7 @@
       '</div>';
     d.querySelector("#dwr_close").onclick = closeDrawer;
     _drawerFirstSeen(d, _nt);   // "network memory" line from meta.sqlite (first-seen / observation count)
+    _drawerSource(d, _nt);      // on-demand source citation (the trail's static-pile '# Reference:')
     // clickable header chips: filter the table by this severity / threat-id / type, then close the drawer
     d.querySelectorAll(".dwr-head .dwr-f").forEach(function (el) {
       el.style.cursor = "pointer";
@@ -2253,6 +2255,21 @@
         var isNew = ageD === 0;
         el.className = "dwr-netfirst" + (isNew ? " is-new" : "");
         el.innerHTML = "network memory: first seen <b>" + _agoTxt(ageD) + "</b> · " + fmtN(m.count) + " observation(s)" + _metaEnrich(m) + (isNew ? ' <span class="nf-new">NEW</span>' : "");
+      }).catch(function () {});
+  }
+  function _drawerSource(d, trail) {
+    // on-demand source citation: the '# Reference:' of the static-trails pile this trail came from (scanned server-side)
+    if (DEMO || !trail) return;
+    var el = d.querySelector("#dwr_source"); if (!el) return;
+    fetch("/reference?trail=" + encodeURIComponent(trail), { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (m) {
+        if (!m || (!m.reference && !m.source) || !d.classList.contains("open")) return;
+        var ref = m.reference || "", body;
+        if (/^https?:\/\//i.test(ref)) body = '<a href="' + esc(ref) + '" target="_blank" rel="noopener noreferrer">' + esc(ref) + "</a>";
+        else if (ref) body = esc(ref);
+        else body = '<span class="tt-dim">' + esc(m.source) + "</span>";
+        el.innerHTML = "source: " + body + (m.source && ref ? ' <span class="ds-file">' + esc(m.source) + "</span>" : "");
       }).catch(function () {});
   }
   function _huntFirstSeen(o, q) {

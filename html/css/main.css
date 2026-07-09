@@ -651,6 +651,11 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 .dwr-netfirst.is-new{color:var(--accent)}
 .dwr-netfirst .nf-new{background:var(--accent);color:#fff;border-radius:4px;padding:0 5px;font-size:9px;font-weight:700;margin-left:4px}
 .dwr-netfirst .nf-bad,.hunt-firstseen .nf-bad{color:var(--sev-high);font-weight:700}
+.dwr-source{color:var(--muted);font-family:var(--mono);font-size:11px;margin:-6px 0 13px;word-break:break-all}
+.dwr-source:empty{display:none}
+.dwr-source a{color:var(--accent);text-decoration:none}
+.dwr-source a:hover{text-decoration:underline}
+.dwr-source .ds-file{color:var(--faint);margin-left:6px}
 .dwr-actions{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
 .dwr-actions button{background:var(--ground);border:1px solid var(--line-solid);color:var(--muted);border-radius:7px;padding:5px 9px;cursor:pointer;font-family:var(--mono);font-size:11px}
 .dwr-actions button:hover{color:var(--text);border-color:var(--accent)}
