@@ -87,7 +87,7 @@
   }
 
   // legacy Maltrail type colors (PREFERRED_TRAIL_COLORS + Google palette for the rest): blue DNS, red IP, etc.
-  var TYPE_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900", UA: "#990099", HTTP: "#109618", TCP: "#0099c6", UDP: "#dd4477" };
+  var TYPE_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900", UA: "#990099", HTTP: "#109618", TCP: "#0099c6", UDP: "#dd4477", PORT: "#0f9b8e", IPORT: "#8d6e63", PATH: "#5c6bc0" };
   // Severity — ported EXACTLY from the legacy Maltrail UI (main.js) so evaluations match what users expect.
   // Order matters; default is MEDIUM. (Earlier v2 wrongly added ipinfo/scanning/crawler/onion/tor to a LOW
   // list that never existed, forcing e.g. "ipinfo (suspicious)" to LOW — it must be MEDIUM.)
@@ -123,6 +123,64 @@
   function isPrivIP(ip) { return /^\d{1,3}(\.\d{1,3}){3}$/.test(ip) && !isPubIP(ip); }   // valid IPv4 in a private/reserved range
   var sevName = function (s) { return s === 3 ? "high" : s === 2 ? "medium" : "low"; };
   var sevClass = function (s) { return s === 3 ? "h" : s === 2 ? "m" : "l"; };
+  // ---- inline Lucide glyphs (offline/CSP-safe, currentColor) for type / severity / ATT&CK tactic / drawer headers ----
+  function _lu(p, sz) { return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="' + sz + '" height="' + sz + '" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + p + "</svg>"; }
+  var TYPE_ICON_P = {
+    DNS: '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>',
+    IP: '<rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/>',
+    URL: '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>',
+    HTTP: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>',
+    UA: '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+    PORT: '<path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/>',
+    PATH: '<circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/>'
+  };
+  TYPE_ICON_P.IPORT = '<rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6.01 18H6"/><path d="M10.01 18H10"/><path d="M15 10v4"/><path d="M17.84 7.17a4 4 0 0 0-5.66 0"/><path d="M20.66 4.34a8 8 0 0 0-11.31 0"/>';   // router (IP:port endpoint), distinct from PORT's plug
+  TYPE_ICON_P.TCP = TYPE_ICON_P.UDP = '<path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/>';
+  function typeIcon(t) { var p = TYPE_ICON_P[t]; return p ? '<span class="ticon">' + _lu(p, 12) + "</span>" : ""; }
+  var SEV_ICON_P = {
+    3: '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/>',   // triangle-alert
+    2: '<circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/>',                                                       // circle-alert
+    1: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>'                                                        // info
+  };
+  function sevIcon(s) { return '<span class="sicon">' + _lu(SEV_ICON_P[s] || SEV_ICON_P[1], 11) + "</span>"; }
+  var TACTIC_ICON_P = {
+    "Command & Control": '<path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/>',
+    "Reconnaissance": '<circle cx="12" cy="12" r="10"/><line x1="22" x2="18" y1="12" y2="12"/><line x1="6" x2="2" y1="12" y2="12"/><line x1="12" x2="12" y1="6" y2="2"/><line x1="12" x2="12" y1="22" y2="18"/>',
+    "Impact": '<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>',
+    "Initial Access": '<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/>',
+    "Persistence": '<path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><circle cx="12" cy="5" r="3"/>',
+    "Credential Access": '<path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4"/><path d="m21 2-9.6 9.6"/><circle cx="7.5" cy="15.5" r="5.5"/>'
+  };
+  function tacticIcon(name) { var p = TACTIC_ICON_P[name]; return p ? _lu(p, 11) + " " : ""; }
+  var HDR_ICON = {
+    note: '<path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4Z"/>',
+    related: '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.41" x2="8.59" y1="6.51" y2="10.49"/>',
+    sources: '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
+    destinations: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+    ports: TYPE_ICON_P.PORT,
+    events: '<line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/>'
+  };
+  function hdrIcon(k) { return '<span class="h4icon">' + _lu(HDR_ICON[k], 13) + "</span>"; }
+  // trail ORIGIN (from the event's reference field) - restores the at-a-glance "static list vs heuristic vs feed
+  // vs custom" cue in the table. static=curated list (database), heuristic=behavioural (activity/pulse),
+  // feed=external subscription (rss), custom=operator-defined (wrench). Colour-coded + titled, small & muted.
+  var ORIGIN = {
+    heuristic: { t: "heuristic (behavioural detection)", p: '<path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/>' },
+    custom: { t: "custom (your own trail)", p: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>' },
+    static: { t: "static (bundled trail list)", p: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>' },
+    feed: { t: "feed (external subscription)", p: '<path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/>' }
+  };
+  function originClass(ref) {
+    var r = ("" + (ref || "")).toLowerCase();
+    if (r.indexOf("heuristic") >= 0) return "heuristic";
+    if (r.indexOf("custom") >= 0) return "custom";
+    if (r.indexOf("static") >= 0) return "static";
+    return r ? "feed" : null;   // any other reference value == a feed's own citation
+  }
+  function originGlyph(ref) {
+    var c = originClass(ref); if (!c) return "";
+    return '<span class="origin origin-' + c + '" title="source: ' + ORIGIN[c].t + '">' + _lu(ORIGIN[c].p, 12) + "</span>";
+  }
   var sevColor = function (s) { return s === 3 ? "#F43F5E" : s === 2 ? "#F59E0B" : "#64748B"; };
 
   // contrast-aware label text for FILLED chips: pick whichever of white/near-black has the better WCAG contrast
@@ -792,7 +850,7 @@
   function attackChipsHTML(info) {   // drawer chips linking to the technique page on attack.mitre.org (on-demand)
     var a = attackTechniques(info); if (!a.length) return "";
     return '<div class="dwr-attack" title="MITRE ATT&CK techniques inferred from this detection">' + a.map(function (x) {
-      return '<a class="atk-chip" href="https://attack.mitre.org/techniques/' + x.id.replace(".", "/") + '/" target="_blank" rel="noopener noreferrer" title="' + esc(x.tactic) + '">' + esc(x.id) + " · " + esc(x.name) + "</a>";
+      return '<a class="atk-chip" href="https://attack.mitre.org/techniques/' + x.id.replace(".", "/") + '/" target="_blank" rel="noopener noreferrer" title="' + esc(x.tactic) + '">' + tacticIcon(x.tactic) + esc(x.id) + " · " + esc(x.name) + "</a>";
     }).join("") + "</div>";
   }
   // ===== Export: current filtered view -> CSV / JSON / defanged IOCs (client-side download) =====
@@ -1085,12 +1143,12 @@
         '<div class="dwr-status">' + ['investigating', 'resolved', 'fp'].map(function (k) { return '<button data-st="' + k + '" class="trbtn tr-' + k + (trg === k ? ' on' : '') + '">' + TRIAGE_LABEL[k] + '</button>'; }).join('') + '</div>' +
         '<div class="dwr-actions"><button data-a="wls">whitelist src</button><button data-a="wlt">whitelist trail</button><button data-a="hide">' + (state.hidden[t.uidc] ? "unhide" : "hide") + '</button><button data-a="vt" class="ext">\u2197 VT</button><button data-a="abuse" class="ext">\u2197 AbuseIPDB</button><button data-a="shodan" class="ext">\u2197 Shodan</button><button data-a="copy">copy</button><button data-a="ioc">copy IOCs</button></div>' +
         '<div class="dwr-local" role="note">⚠ status, whitelist, hide, tags &amp; notes are saved in <b>this browser only</b> — not shared with the sensor or other users</div>' +
-        '<div class="dwr-sec"><h4>note</h4><textarea class="dwr-note" id="dwr_note" aria-label="case note for this threat" placeholder="add a case note\u2026">' + esc(getNote(t.uidc)) + '</textarea></div>' +
-        '<div class="dwr-sec dwr-related"><h4>related</h4>' + '<button class="relbtn" data-rel="src"><b>' + relSrc + '</b> other threats from this source</button>' + '<button class="relbtn" data-rel="trail"><b>' + relTrail + '</b> other threats on this trail</button></div>' +
-        '<div class="dwr-sec"><h4>sources \u00b7 ' + srcs.length + '</h4><div class="dchips">' + ipChips(srcs) + '</div></div>' +
-        '<div class="dwr-sec"><h4>destinations \u00b7 ' + dsts.length + '</h4><div class="dchips">' + ipChips(dsts) + '</div></div>' +
-        '<div class="dwr-sec"><h4>ports \u00b7 ' + ports.length + '</h4><div class="dchips">' + portChips(ports) + '</div></div>' +
-        '<div class="dwr-sec"><h4>raw events \u00b7 ' + ev.length + (ev.length >= 500 ? "+" : "") + (evShown < ev.length ? " (showing " + evShown + ")" : "") + '</h4><div class="dwr-events"><table><thead><tr><th>time</th><th>sensor</th><th>source</th><th>dest</th><th>proto</th><th>trail</th></tr></thead><tbody>' + evRows + '</tbody></table></div></div>' +
+        '<div class="dwr-sec"><h4>' + hdrIcon("note") + 'note</h4><textarea class="dwr-note" id="dwr_note" aria-label="case note for this threat" placeholder="add a case note\u2026">' + esc(getNote(t.uidc)) + '</textarea></div>' +
+        '<div class="dwr-sec dwr-related"><h4>' + hdrIcon("related") + 'related</h4>' + '<button class="relbtn" data-rel="src"><b>' + relSrc + '</b> other threats from this source</button>' + '<button class="relbtn" data-rel="trail"><b>' + relTrail + '</b> other threats on this trail</button></div>' +
+        '<div class="dwr-sec"><h4>' + hdrIcon("sources") + 'sources \u00b7 ' + srcs.length + '</h4><div class="dchips">' + ipChips(srcs) + '</div></div>' +
+        '<div class="dwr-sec"><h4>' + hdrIcon("destinations") + 'destinations \u00b7 ' + dsts.length + '</h4><div class="dchips">' + ipChips(dsts) + '</div></div>' +
+        '<div class="dwr-sec"><h4>' + hdrIcon("ports") + 'ports \u00b7 ' + ports.length + '</h4><div class="dchips">' + portChips(ports) + '</div></div>' +
+        '<div class="dwr-sec"><h4>' + hdrIcon("events") + 'raw events \u00b7 ' + ev.length + (ev.length >= 500 ? "+" : "") + (evShown < ev.length ? " (showing " + evShown + ")" : "") + '</h4><div class="dwr-events"><table><thead><tr><th>time</th><th>sensor</th><th>source</th><th>dest</th><th>proto</th><th>trail</th></tr></thead><tbody>' + evRows + '</tbody></table></div></div>' +
       '</div>';
     d.querySelector("#dwr_close").onclick = closeDrawer;
     _drawerFirstSeen(d, _nt);   // "network memory" line from meta.sqlite (first-seen / observation count)
@@ -1493,7 +1551,7 @@
         '<td data-l="destination">' + ipCellSet(t.dstS) + '</td>' +
         '<td class="mono" data-l="port">' + portCellSet(displayPortSet(t)) + portDirHint(t) + '</td>' +
         '<td data-l="type"><span class="type lt-w" data-f="type:' + esc(t.type) + '" title="filter: type ' + esc(t.type) + '" style="background:' + tc + ';color:#fff">' + esc(t.type) + '</span></td>' +
-        '<td data-l="trail"><span class="trail" data-tip="' + esc(ftrail) + '">' + trailCellHtml(ftrailPH, ftrail) + '</span></td>' +
+        '<td data-l="trail">' + originGlyph(t.ref) + '<span class="trail" data-tip="' + esc(ftrail) + '">' + trailCellHtml(ftrailPH, ftrail) + '</span></td>' +
         '<td class="mono muted" data-l="info">' +
           (function () { var ic = classOf(t.info), desc = ic ? ("" + t.info).replace(/\s*\([^)]*\)\s*$/, "") : t.info;
             return (ic ? '<span class="cls cls-' + ic + '" data-tip="' + ic + '" aria-label="' + ic + '">' + CLASS_ICON[ic] + '</span>' : '') +

@@ -659,6 +659,19 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 .dwr-attack{display:flex;flex-wrap:wrap;gap:6px;margin:-4px 0 13px}
 .atk-chip{font-family:var(--mono);font-size:10px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line-solid);border-radius:5px;padding:2px 7px;text-decoration:none;white-space:nowrap}
 .atk-chip:hover{border-color:var(--accent);color:var(--text)}
+/* inline glyphs: type/severity pills, ATT&CK chips, drawer section headers (all currentColor, aligned) */
+.type .ticon,.sev-tag .sicon{margin-right:4px}
+.type .ticon svg,.sev-tag .sicon svg,.atk-chip svg{vertical-align:-2px}
+.atk-chip svg{margin-right:3px}
+.dwr-sec h4 .h4icon{color:var(--faint);margin-right:6px}
+.dwr-sec h4 .h4icon svg{vertical-align:-2px}
+/* trail origin marker: distinct muted hue per source class (static / heuristic / feed / custom) */
+.origin{margin-right:6px}
+.origin svg{vertical-align:-2px}
+.origin-static{color:#6b8fb5}
+.origin-heuristic{color:#d9a441}
+.origin-feed{color:#4bb3b3}
+.origin-custom{color:#8f7bd0}
 .dwr-actions{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
 .dwr-actions button{background:var(--ground);border:1px solid var(--line-solid);color:var(--muted);border-radius:7px;padding:5px 9px;cursor:pointer;font-family:var(--mono);font-size:11px}
 .dwr-actions button:hover{color:var(--text);border-color:var(--accent)}
