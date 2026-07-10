@@ -392,9 +392,11 @@ body.light{--wm-ocean1:#eaf2fc;--wm-ocean2:#d3e3f5;--wm-land:#ffffff;--wm-lbd:#9
 .wm-hd small{color:var(--muted);font-weight:400;margin-left:6px}
 .wm-leg{position:absolute;bottom:12px;left:16px;display:flex;align-items:center;gap:7px;color:var(--faint);font-size:10px;pointer-events:none}
 .wm-leg i{display:inline-block;border-radius:50%;background:#f0431f}
-.wm-side{width:212px;background:var(--surface);border:1px solid var(--line-solid);border-radius:var(--r);padding:14px 15px}
+.wm-side{width:212px;background:var(--surface);border:1px solid var(--line-solid);border-radius:var(--r);padding:14px 15px;display:flex;flex-direction:column}
 .wm-side h4{margin:0 0 12px;font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);font-weight:600}
+.wm-list{flex:1 1 auto;min-height:0;overflow-y:auto}   /* lists all mapped countries; scrolls within the panel (map height) when they overflow */
 .wm-row{display:flex;align-items:center;gap:9px;margin:9px 0;font:12px var(--mono)}
+.wm-row:first-child{margin-top:0}
 .wm-cc{width:26px;color:var(--text)}
 .wm-bar{height:8px;border-radius:3px;min-width:6px}
 .wm-vn{margin-left:auto;color:var(--muted);font-size:11px}
