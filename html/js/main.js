@@ -2073,7 +2073,7 @@
     host.innerHTML =
       '<div class="wm-map"><div class="wm-hd">Attack origins <small class="wm-sub"></small></div>' + (window.WORLD_SVG || "") +
       '<div class="wm-leg"><span>events</span><i style="width:5px;height:5px"></i><i style="width:9px;height:9px"></i><i style="width:14px;height:14px"></i></div></div>' +
-      '<div class="wm-side"><h4>Top source countries</h4><div class="wm-list"></div></div>';
+      '<div class="wm-side"><h4>Threat countries</h4><div class="wm-list"></div></div>';
     var svg = host.querySelector("#wm");
     if (svg) svg.insertAdjacentHTML("afterbegin", '<defs><filter id="wmglow" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="3.2"/></filter></defs>');
     _wmBuilt = true;
@@ -2102,7 +2102,8 @@
       var olds = svg.querySelectorAll(".wm-dotlayer"); for (var i = 0; i < olds.length; i++) olds[i].parentNode.removeChild(olds[i]);
       svg.insertAdjacentHTML("beforeend", '<g class="wm-dotlayer">' + arcs + '</g><g class="wm-dotlayer" filter="url(#wmglow)" opacity=".5">' + halos + '</g><g class="wm-dotlayer">' + cores + home + '</g>');
     }
-    var top = items.slice().sort(function (a, b) { return b[1] - a[1]; }).slice(0, 8), max = top.length ? top[0][1] : 1;
+    // list every country that's on the map (sorted desc), not an arbitrary top-8 — the panel scrolls if they overflow
+    var top = items.slice().sort(function (a, b) { return b[1] - a[1]; }).slice(0, 100), max = top.length ? top[0][1] : 1;
     var list = host.querySelector(".wm-list");
     if (list) list.innerHTML = top.length
       ? top.map(function (it) { return '<div class="wm-row"><span class="wm-cc">' + esc(it[0]) + '</span><span class="wm-bar" style="width:' + (10 + Math.round(86 * it[1] / max)) + '%;background:' + wmColor(it[1]) + '"></span><span class="wm-vn">' + fmtN(it[1]) + '</span></div>'; }).join("")
