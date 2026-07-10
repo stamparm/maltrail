@@ -757,6 +757,44 @@
     for (i = 0; i < s.length; i++) if (isPubIP(s[i])) return s[i];
     return null;
   }
+  // MITRE ATT&CK - CONSERVATIVE, NETWORK-OBSERVABLE mapping only, matched against a threat's `info`. A threat with
+  // no clear behavioural signal gets NO tag: we never fabricate host-side techniques (cred access, priv-esc,
+  // persistence, execution) from a network IOC hit - that's the lazy mapping a senior analyst rightly dismisses.
+  var ATTACK_MAP = [
+    [/\bscan(ning|ner)?\b|mass.?scanner/, "T1595", "Active Scanning", "Reconnaissance"],
+    [/sinkhol|seiz(ed|ure)|cobalt|\bc2\b|_c2\b|c2_|beacon|\bsliver\b|\bhavoc\b|\bmythic\b|meterpreter|metasploit|\bempire\b|poshc2|covenant|brute.?ratel/, "T1071", "Application Layer Protocol", "Command & Control"],
+    [/dns.?tunnel/, "T1071.004", "Application Layer Protocol: DNS", "Command & Control"],
+    [/\bdga\b|dns exhaustion|no such domain/, "T1568.002", "Domain Generation Algorithms", "Command & Control"],
+    [/dynamic.?domain|dynamic.?dns|fast.?flux|blockchain.?dns/, "T1568", "Dynamic Resolution", "Command & Control"],
+    [/\b(tor|onion|i2p)\b/, "T1090.003", "Multi-hop Proxy", "Command & Control"],
+    [/proxy/, "T1090", "Proxy", "Command & Control"],
+    [/ingress|download/, "T1105", "Ingress Tool Transfer", "Command & Control"],
+    [/meshagent|simplehelp|connectwise|nezha|wiseremote|anydesk|teamviewer|screenconnect|rustdesk|\batera\b|splashtop|kaseya|remote.?utilities/, "T1219", "Remote Access Software", "Command & Control"],
+    [/ransomware|ransom\b/, "T1486", "Data Encrypted for Impact", "Impact"],
+    [/crypto.?min|coin.?min|\bminer\b|cryptojack/, "T1496", "Resource Hijacking", "Impact"],
+    [/\bddos\b|denial of service/, "T1498", "Network Denial of Service", "Impact"],
+    [/phish/, "T1566", "Phishing", "Initial Access"],
+    [/web.?shell/, "T1505.003", "Web Shell", "Persistence"],
+    [/brute.?force|bruteforce/, "T1110", "Brute Force", "Credential Access"]
+  ];
+  var _atkCache = {}, _atkCacheN = 0;
+  function attackTechniques(info) {   // -> [{id,name,tactic}], deduped; memoized (info repeats heavily)
+    if (!info) return [];
+    var hit = _atkCache[info]; if (hit) return hit;
+    if (_atkCacheN > 100000) { _atkCache = {}; _atkCacheN = 0; }
+    var s = ("" + info).toLowerCase(), out = [], seen = {};
+    for (var i = 0; i < ATTACK_MAP.length; i++) {
+      var e = ATTACK_MAP[i];
+      if (!seen[e[1]] && e[0].test(s)) { seen[e[1]] = 1; out.push({ id: e[1], name: e[2], tactic: e[3] }); }
+    }
+    _atkCache[info] = out; _atkCacheN++; return out;
+  }
+  function attackChipsHTML(info) {   // drawer chips linking to the technique page on attack.mitre.org (on-demand)
+    var a = attackTechniques(info); if (!a.length) return "";
+    return '<div class="dwr-attack" title="MITRE ATT&CK techniques inferred from this detection">' + a.map(function (x) {
+      return '<a class="atk-chip" href="https://attack.mitre.org/techniques/' + x.id.replace(".", "/") + '/" target="_blank" rel="noopener noreferrer" title="' + esc(x.tactic) + '">' + esc(x.id) + " · " + esc(x.name) + "</a>";
+    }).join("") + "</div>";
+  }
   // ===== Export: current filtered view -> CSV / JSON / defanged IOCs (client-side download) =====
   function csvCell(v) { v = "" + (v == null ? "" : v); if (/^[=+\-@\t\r]/.test(v)) v = "'" + v; /* neutralize spreadsheet formula injection (=cmd…, @SUM…) from attacker-controlled trail/info/tag fields opened in Excel/Sheets */ return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
   function buildCSV() {
@@ -1038,6 +1076,7 @@
       '<div class="dwr-body">' +
         '<div class="dwr-trail" title="' + esc(t.trail) + '">' + esc(t.trail) + '</div>' +
         '<div class="dwr-info">' + esc(t.info) + (t.ref ? '  <span class="dwr-ref">' + esc(t.ref) + '</span>' : '') + '</div>' +
+        attackChipsHTML(t.info) +
         '<div class="dwr-stats"><div><b>' + t.count + '</b><span>events</span></div><div><b>' + srcs.length + '</b><span>sources</span></div><div><b>' + dsts.length + '</b><span>dest</span></div><div><b>' + ports.length + '</b><span>ports</span></div></div>' +
         '<canvas class="dwr-spark"></canvas>' +
         '<div class="dwr-time">first ' + hms(t.first) + ' \u2192 last ' + hms(t.last) + ' \u00b7 span ' + durationStr(t.first, t.last) + '</div>' +
@@ -2289,11 +2328,20 @@
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (m) {
         if (!m || (!m.reference && !m.source) || !d.classList.contains("open")) return;
-        var ref = m.reference || "", body;
-        if (/^https?:\/\//i.test(ref)) body = '<a href="' + esc(ref) + '" target="_blank" rel="noopener noreferrer">' + esc(ref) + "</a>";
-        else if (ref) body = esc(ref);
-        else body = '<span class="tt-dim">' + esc(m.source) + "</span>";
-        el.innerHTML = "source: " + body + (m.source && ref ? ' <span class="ds-file">' + esc(m.source) + "</span>" : "");
+        var ref = m.reference || "";
+        // which maltrail list it came from (prettified filename) - kept for the tooltip, not shouted inline
+        var list = (m.source || "").split("/").pop().replace(/\.[^.]+$/, "").replace(/_/g, " ");
+        var tip = (ref ? ref : "") + (ref && m.source ? "  ·  " : "") + (m.source || "");
+        var body;
+        if (/^https?:\/\//i.test(ref)) {                       // URL citation -> show just the authority host + ↗
+          var host = ref.replace(/^https?:\/\//i, "").split("/")[0].replace(/^www\./, "");
+          body = '<a href="' + esc(ref) + '" target="_blank" rel="noopener noreferrer" title="' + esc(tip) + '">' + esc(host || ref) + " ↗</a>";
+        } else if (ref) {                                      // non-URL note (dork/fingerprint/etc.) -> short text, full in tooltip
+          body = '<span title="' + esc(tip) + '">' + esc(ref.length > 52 ? ref.slice(0, 51) + "…" : ref) + "</span>";
+        } else {                                               // no reference header -> just name the list
+          body = '<span class="tt-dim" title="' + esc(m.source) + '">' + esc(list) + "</span>";
+        }
+        el.innerHTML = "source: " + body;
       }).catch(function () {});
   }
   function _huntFirstSeen(o, q) {

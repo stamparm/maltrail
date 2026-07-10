@@ -656,6 +656,9 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 .dwr-source a{color:var(--accent);text-decoration:none}
 .dwr-source a:hover{text-decoration:underline}
 .dwr-source .ds-file{color:var(--faint);margin-left:6px}
+.dwr-attack{display:flex;flex-wrap:wrap;gap:6px;margin:-4px 0 13px}
+.atk-chip{font-family:var(--mono);font-size:10px;color:var(--muted);background:var(--surface-2);border:1px solid var(--line-solid);border-radius:5px;padding:2px 7px;text-decoration:none;white-space:nowrap}
+.atk-chip:hover{border-color:var(--accent);color:var(--text)}
 .dwr-actions{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
 .dwr-actions button{background:var(--ground);border:1px solid var(--line-solid);color:var(--muted);border-radius:7px;padding:5px 9px;cursor:pointer;font-family:var(--mono);font-size:11px}
 .dwr-actions button:hover{color:var(--text);border-color:var(--accent)}
