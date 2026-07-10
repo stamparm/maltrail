@@ -102,8 +102,12 @@ def _lookup_trail_reference(trail):
         return cached
     result = ("", "")
     try:
-        trail_b = trail if isinstance(trail, bytes) else trail.encode("latin-1", "replace")
-        needle = re.compile(b"(?m)^" + re.escape(trail_b) + b"(?:[/\\s#]|$)")   # the trail as a whole line / host, not a substring
+        # the event/stored trail is a NORMALISED form of the file line (the loader strips the scheme and a leading
+        # dot, and adds/trims a trailing slash), so match the core tolerantly: optional http(s):// prefix, optional
+        # leading dot, optional trailing slash - still anchored at a line boundary so it's not a loose substring.
+        core = trail.rstrip("/")
+        core_b = core if isinstance(core, bytes) else core.encode("latin-1", "replace")
+        needle = re.compile(b"(?m)^(?:https?://)?\\.?" + re.escape(core_b) + b"(?:[/\\s#]|$)")
         deadline = time.time() + _REFERENCE_TIME_BUDGET
         found = False
         for root, _dirs, files in os.walk(_STATIC_TRAILS_DIR):   # os.walk: py2/py3-safe (glob recursive is py3-only)
