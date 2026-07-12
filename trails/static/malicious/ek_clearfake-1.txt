@@ -7,6 +7,12 @@
 # Reference: https://www.virustotal.com/gui/ip-address/178.16.52.101/relations
 
 anlytic-js-cloud.beer
+auth-code-check.info
+authorization-cdn-press-enter.info
+authorization-code.beer
+authorization-code.info
+authorization-id-code.info
+authorization-press-enter.info
 bcncdncl-ns.beer
 bhfgtrns-js.beer
 biyaconserver.beer
@@ -31,6 +37,7 @@ gppcdnns.beer
 hasmeverdcdn.beer
 hftplcnsns.beer
 hpscdn.beer
+idverification-cdn.info
 idverification-code.beer
 istounscnnd.beer
 ladydosug.live
@@ -73,6 +80,7 @@ travel-js-ns.beer
 trunnsns.beer
 verification-claude-cdn.beer
 verification-code-js.beer
+verificationscodes.beer
 viscdnclaud.beer
 visual-ns-portal.beer
 xdavnode.pro
