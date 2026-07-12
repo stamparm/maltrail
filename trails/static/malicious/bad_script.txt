@@ -9845,6 +9845,11 @@ drvdb9rcebidk.cloudfront.net
 /deploy_min_cs.py
 /drop_and_run_cs.py
 
+# Reference: https://x.com/smica83/status/2076220123195625785
+# Reference: https://tria.ge/260712-j76jesew5p/behavioral1
+
+/ZA2A_DONE.ps1
+
 # Generic
 
 /5c0ca79.php
