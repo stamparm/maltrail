@@ -234,6 +234,10 @@ kwazindernuren.com
 
 103.65.230.86:443
 
+# Reference: https://x.com/Malwarehunterr/status/2076718805074759889
+
+208.73.204.157:8086
+
 # Generic
 
 /Meshcleaner.exe
