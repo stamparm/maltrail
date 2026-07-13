@@ -4135,3 +4135,15 @@ ip2c.net
 # Reference: https://github.com/hagezi/dns-blocklists/issues/9785
 
 universalminecrafttool.com
+
+# Reference: https://github.com/stamparm/maltrail/issues/19579
+
+cognito-identity.amazonaws.com
+
+# Reference: https://github.com/stamparm/maltrail/issues/19578
+
+africa.com
+
+# Reference: https://github.com/stamparm/maltrail/issues/19573
+
+squarespace.com
