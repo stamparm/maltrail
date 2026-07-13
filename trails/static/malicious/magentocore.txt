@@ -14973,6 +14973,7 @@ morvex.fit
 myrrhol.lat
 najatech.sbs
 nazbin.online
+nazbin.xyz
 nerion.sbs
 neriva.site
 neuralx.sbs
