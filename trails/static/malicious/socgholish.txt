@@ -5690,6 +5690,10 @@ xo.cloudgdimportaciones.com
 your-daily-girl.com
 zb.3spdpages.com
 
+# Reference: https://sitecheck.sucuri.net/results/spadeanalytica.com
+
+spadeanalytica.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
