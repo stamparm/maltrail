@@ -18011,6 +18011,13 @@ pixellayers.top
 pixelnosterdam.top
 pixelnoversman.top
 
+# Reference: https://x.com/sdcyberresearch/status/2076671820095205409
+
+brandiser.net
+trandiqs.com
+consent.trandiqs.com
+metrics.brandiser.net
+
 # Generic
 
 /assets/lfg.js
