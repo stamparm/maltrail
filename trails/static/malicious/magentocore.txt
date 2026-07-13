@@ -17998,6 +17998,19 @@ mail.productinform.com
 mail.pswordmonster.com
 mail.webjoindev.com
 
+# Reference: https://www.virustotal.com/gui/file/2f0271d76a61809ee18c1faf7acf842efecba141b2fa116ee8501423a3ea937d/detection
+# BANNER_0_HASH-HOST=928d39b81eaf15e19e9eedac4eb905d9
+# BANNER_0_HASH-HOST=6ade33d86c810c5cf83ad0f9fa7fa280
+# BANNER_0_HASH-HOST=573106cbaa4a574e9ae9b5164ce20583
+# BANNER_0_HASH-HOST=8826bee92603eb47e898904bc004ae28
+
+meriksseeouther.top
+merikssnoiwer.top
+merikssnowers.top
+pixellayers.top
+pixelnosterdam.top
+pixelnoversman.top
+
 # Generic
 
 /assets/lfg.js
