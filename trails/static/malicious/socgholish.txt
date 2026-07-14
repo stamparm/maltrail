@@ -5694,6 +5694,10 @@ zb.3spdpages.com
 
 spadeanalytica.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/216.128.141.205/relations
+
+fb-api.raydianpainting.com
+
 # Generic
 
 /Chrome.Quick.Update.ver.101.65.65282.js
