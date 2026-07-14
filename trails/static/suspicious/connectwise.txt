@@ -5111,3 +5111,10 @@ mintu.filcb.com
 
 136.0.82.38:8040
 136.0.82.38:8041
+
+# Reference: https://x.com/smica83/status/2076627785930400064
+# Reference: https://www.virustotal.com/gui/file/6eb36447883376c1cc14129e77d8bebec87a1ac31ea069442ba76949797da3e1/detection
+
+136.0.213.113:443
+136.0.213.113:8081
+nexrogcapital.xyz
