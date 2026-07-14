@@ -5155,3 +5155,23 @@ http://68.183.20.229
 # Reference: https://x.com/BlinkzSec/status/2075885768619233551
 
 http://45.135.193.114
+
+# Reference: https://x.com/BlinkzSec/status/2076969084298699217
+# TITLE-HOST/IP=LulzStresser | Layer7 panel
+
+http://202.10.37.64
+151.240.0.183:3000
+151.240.0.183:443
+178.83.180.183:3000
+178.83.180.183:443
+178.83.181.183:3000
+178.83.181.183:443
+198.211.96.176:3000
+202.10.37.64:3000
+202-10-37-64.cprapid.com
+companynawala.com
+hls.kanna.my.id
+lulzsyndicate.com
+panel.lulzsyndicate.com
+panelguardnawala.com
+pskiller.site
