@@ -5151,3 +5151,7 @@ x0st.app
 # Reference: https://x.com/BlinkzSec/status/2076959532111020306
 
 http://68.183.20.229
+
+# Reference: https://x.com/BlinkzSec/status/2075885768619233551
+
+http://45.135.193.114
