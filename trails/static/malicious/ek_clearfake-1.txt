@@ -8,6 +8,7 @@
 
 anlytic-js-cloud.beer
 auth-code-check.info
+auth-code-verif.beer
 authorization-cdn-press-enter.info
 authorization-code.beer
 authorization-code.info
