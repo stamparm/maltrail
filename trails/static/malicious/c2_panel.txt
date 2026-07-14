@@ -1470,6 +1470,11 @@ http://103.122.247.36
 86.38.247.175:8080
 86.38.247.175:8089
 
+# Reference: https://x.com/BlinkzSec/status/2076961916774175142
+# TITLE-HOST/IP=C2-GPT
+
+207.154.237.47:8443
+
 # Generic
 
 /admin_123/auth.php
