@@ -18018,6 +18018,15 @@ trandiqs.com
 consent.trandiqs.com
 metrics.brandiser.net
 
+# Reference: https://www.virustotal.com/gui/ip-address/136.0.141.42/relations
+
+averon.sbs
+iu4ad.store
+pyw2v.store
+qikhq.store
+ri67g.store
+v2d0h.store
+
 # Generic
 
 /assets/lfg.js
