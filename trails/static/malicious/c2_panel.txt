@@ -1475,6 +1475,10 @@ http://103.122.247.36
 
 207.154.237.47:8443
 
+# Reference: https://x.com/BlinkzSec/status/2076962605868929235
+
+206.189.84.116:8080
+
 # Generic
 
 /admin_123/auth.php
