@@ -12838,6 +12838,29 @@ zuckermannphotography.com
 
 waysmakeyourlifebetter.com
 
+# Reference: https://www.virustotal.com/gui/ip-address/176.124.198.132/relations
+
+analyticape.icu
+datavoyage.icu
+flowchartix.icu
+infogauge.icu
+metricspan.icu
+pageglance.icu
+site-builder.icu
+trackstream.icu
+webprobe.icu
+websift.icu
+mail.analyticape.icu
+mail.datavoyage.icu
+mail.flowchartix.icu
+mail.infogauge.icu
+mail.metricspan.icu
+mail.pageglance.icu
+mail.site-builder.icu
+mail.trackstream.icu
+mail.webprobe.icu
+mail.websift.icu
+
 # Generic
 
 /fo0suc2ki2.rtf
