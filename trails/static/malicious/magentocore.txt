@@ -18033,6 +18033,10 @@ qikhq.store
 ri67g.store
 v2d0h.store
 
+# Reference: https://x.com/sdcyberresearch/status/2069369647275671619
+
+cloud-stat.co
+
 # Generic
 
 /assets/lfg.js
