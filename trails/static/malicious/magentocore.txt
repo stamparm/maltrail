@@ -17802,6 +17802,8 @@ ns2.cdnstats.top
 
 # Reference: https://x.com/sdcyberresearch/status/2067186219037946342
 # Reference: https://x.com/sdcyberresearch/status/2067255031271752003
+# Reference: https://x.com/sdcyberresearch/status/2077372646585471271
+# BANNER_0_HASH-HOST=cd7be40625f97601692ae0f33b5c0960
 
 brokenvelvetdream.top
 crimsonnightsky.top
@@ -17838,10 +17840,13 @@ stylekanions.com
 stylekay.com
 styleleftt.com
 stylenemesiis.com
+styleohmans.com
 styleouresen.com
+styleoutscan.com
 styleoutsperee.com
 styleoutspin.com
 stylepenalty.com
+stylepoulinse.com
 styleranked.com
 stylerazorr.com
 stylerightnoww.com
@@ -17856,6 +17861,7 @@ styletumor.com
 styleussles.com
 stylewify.com
 stylewowcafwe.com
+stylewowow.com
 
 # Reference: https://threatfox.abuse.ch/browse/malware/js.magecart/ (# 2026-06-18)
 
