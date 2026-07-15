@@ -1345,11 +1345,44 @@ zaheirx.shop
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-10-v10875/2506
 # Reference: https://app.validin.com/detail?type=hash&find=e3a46f20be728d46dac88ec757345713#tab=host_pairs
 
+ambercompanion.top
+ambergallery.top
+bronzehorizon.top
+bronzewhisper.top
+cedarfrontier.top
+cobaltmeadow.top
+cobaltorchard.top
+copperhorizon.top
+coralfrontier.top
+coralregistry.top
+coralwayfinder.top
+crystalmarket.top
 gmartph.shop
-raneemjin.info
+hazelcanvas.top
+hazelcompass.top
+ivoryharvest.top
+ivorysummit.top
+jadecrossroads.top
+jadepassagehub.top
+jadeworkshop.top
 linksoflondonsale.top
+marblebeacon.top
+marblecourier.top
+marblehaven.top
+moonlitprovince.top
+openmeadowlab.top
+pearljunction.top
+raneemjin.info
+saffronjunction.top
+silvercourier.top
+silvertrailhub.top
+stoneharvest.top
 todocalefactores.top
+topazharbor.top
+velvetcrossing.top
 viloriterso.icu
+willowregistry.top
+willowsummit.top
 fosvsr.ooguy.com
 projectphp.duckdns.org
 
