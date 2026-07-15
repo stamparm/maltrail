@@ -12861,6 +12861,12 @@ mail.trackstream.icu
 mail.webprobe.icu
 mail.websift.icu
 
+# Reference: https://x.com/Malwarehunterr/status/2077468988783899024
+# FAVICON_HASH-HOST=81a860da4fa2e8995dd7fd9f6ae4fcbf
+
+meet-webconnect.com
+z00m-meeting-webconnect.com
+
 # Generic
 
 /fo0suc2ki2.rtf
