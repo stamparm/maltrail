@@ -1,6 +1,8 @@
 # Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
+# Aliases: devilginx
+
 # Reference: https://twitter.com/MichalKoczwara/status/1601324821614194688
 
 165.22.30.136:3000
@@ -815,6 +817,36 @@ yoopuipui.com
 # Reference: https://x.com/MichalKoczwara/status/2042286743374774533
 
 securedrnicrosoftconnect.com
+
+# Reference: https://x.com/stop_spammerz/status/2077422659558617142
+# CERT_FINGERPRINT_SHA256-HOST/IP=9bcd6161c13d5e61a41799f8a03af6664af69328dc2bc4a140c265466ab70eab
+# TITLE-HOST/IP=Devilginx | Dashboard
+
+185.212.128.139:9000
+185.212.128.176:9000
+185.212.128.215:9000
+185.212.128.231:9000
+185.212.128.24:9000
+185.212.128.80:9000
+185.212.128.81:9000
+185.212.129.117:9000
+185.212.129.185:9000
+185.212.129.221:9000
+185.212.131.27:9000
+185.212.131.28:9000
+195.242.118.161:9000
+185-212-128-155.cprapid.com
+4workntt.click
+bankofamericaedd.dynamic-dns.net
+bankofamericaedd.itsaol.com
+bofaeddprepaid.dynamic-dns.net
+bofaeddvisa.dynamic-dns.net
+bofavisaprepaid.ddns.info
+dashcam2.link
+dashcam3.com
+secure-chasebullsjitshsit.dynamic-dns.net
+visaprepaidprocessing.ns01.us
+visaprepaidprocessing.otzo.com
 
 # Generic
 
