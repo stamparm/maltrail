@@ -18034,7 +18034,10 @@ ri67g.store
 v2d0h.store
 
 # Reference: https://x.com/sdcyberresearch/status/2069369647275671619
+# BANNER_0_HASH-HOST=d35e6f35a33225a8c63d27de0f45356c
+# BANNER_0_HASH-HOST=701cbae950432c88a8b48aa308217df7
 
+cloud-js.co
 cloud-stat.co
 
 # Generic
