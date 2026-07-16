@@ -9864,6 +9864,14 @@ drvdb9rcebidk.cloudfront.net
 /szch1307/wisdomcompliance.ps1
 /wisdomcompliance.ps1
 
+# Reference: https://x.com/smica83/status/2077758504085885192
+# Reference: https://www.virustotal.com/gui/file/4918677f8c77dbbe93d77225a871467ef6f5b0fff11e558460725370e228252b/detection
+
+/kr44gg/patrollerdrama.ps1
+/kr44gg/sockuniversity.ps1
+/patrollerdrama.ps1
+/sockuniversity.ps1
+
 # Generic
 
 /5c0ca79.php
