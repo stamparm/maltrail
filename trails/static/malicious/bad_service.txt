@@ -638,37 +638,61 @@ ddosforhi.re
 
 # Reference: https://twitter.com/banthisguy9349/status/1760315271280001502
 
+admin.deepstresser.su
+api.deepstresser.su
+blacksidestress.ru
 blaststress.ru
 blaze-api.cc
+bot.deepstresser.su
+bot.satellitestress.st
+candystress.st
+controller.deepstresser.su
 crazystresser.net
 darkvr.io
 ddos.sc
 ddossttresser.com
+deepstresser.su
 demonicstresser.xyz
+diamstress.ru
+diamwall.deepstresser.su
 digitalstress.net
 dragonstresser.net
 getstress.us
+goliathstress.net
+goliathstress.tr
 hatter.cloud
 hexstresser.org
+hi.satellitestress.st
+internal.deepstresser.su
 inverse.best
 inverse.sh
+ipstress.st
+ipstresser.gg
 ipstresser.me
 ipstresser.pro
 ipstresser.sx
 joker.sh
 liquidsec.space
+lkxstresse.ru
+lkxstresser.net
 mao-stress.tech
 metastresser.io
 neostress.net
 panel.ddos.sc
+panel.deepstresser.su
 quickdown.pro
+redstresser.io
 redstresser.net
 ripstresser.top
+satellitestress.st
 securityhide.net
 silentstress.cc
 starkstresser.net
+status.satellitestress.st
 stressed.su
+stresser.ltd
 stresser.media
+stresser.pw
 stresser.st
 stresser.su
 stresser.tech
@@ -676,8 +700,10 @@ stresser.website
 stresser.zone
 stresserhub.org
 stresslab.cc
+stressr.ru
 susstresser.xyz
 thunderstresser.su
+tools.digitalstress.net
 undisclosed.is
 urgstresser.com
 vacstresser.org
@@ -685,7 +711,6 @@ wrldsecurity.net
 xstress.top
 zdstresser.net
 zeusstress.fun
-tools.digitalstress.net
 
 # Reference: https://twitter.com/Gi7w0rm/status/1756645565222273200
 # Reference: https://krebsonsecurity.com/2022/12/six-charged-in-mass-takedown-of-ddos-for-hire-sites/
