@@ -8700,6 +8700,10 @@ curtainbeatdisturbance.com
 
 213.136.80.73:8443
 
+# Reference: https://www.virustotal.com/gui/file/0fbb7e350b210c55e46868756174eefc17fceb12fbc1a93366eaede37681eb09/detection
+
+47.116.115.7:14422
+
 # Generic
 
 /.sliver-client/
