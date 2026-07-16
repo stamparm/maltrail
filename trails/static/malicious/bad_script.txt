@@ -9858,6 +9858,12 @@ drvdb9rcebidk.cloudfront.net
 /commercelogic.ps1
 /decisiontired.ps1
 
+# Reference: https://x.com/smica83/status/2077759418976919891
+# Reference: https://www.virustotal.com/gui/file/b0bb24ef186899d151218036cf4f9f62de9a2a881f9e0fce576c428995f14a58/detection
+
+/szch1307/wisdomcompliance.ps1
+/wisdomcompliance.ps1
+
 # Generic
 
 /5c0ca79.php
