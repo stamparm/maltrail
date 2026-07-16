@@ -8704,6 +8704,10 @@ curtainbeatdisturbance.com
 
 47.116.115.7:14422
 
+# Reference: https://www.virustotal.com/gui/file/0aca9bca61b49d422a2dfc736dc5d74734418c6a6d1152ffc9b899112501bfcd/detection
+
+47.116.115.7:9911
+
 # Generic
 
 /.sliver-client/
