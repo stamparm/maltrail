@@ -18043,6 +18043,11 @@ cloud-js.co
 cloud-stat.co
 min-js.co
 
+# Reference: https://x.com/Yusufcancakiir/status/2078101888935883194
+
+121.199.28.20:8899
+62.72.29.89:8080
+
 # Generic
 
 /assets/lfg.js
