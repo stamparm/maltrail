@@ -1344,6 +1344,7 @@ zaheirx.shop
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-10-v10875/2506
 # Reference: https://app.validin.com/detail?type=hash&find=e3a46f20be728d46dac88ec757345713#tab=host_pairs
+# Reference: https://www.virustotal.com/gui/ip-address/178.156.241.213/relations
 
 ambercompanion.top
 ambergallery.top
@@ -1359,27 +1360,35 @@ coralwayfinder.top
 crystalmarket.top
 gmartph.shop
 hazelcanvas.top
+hazelcitadel.top
 hazelcompass.top
 ivoryharvest.top
 ivorysummit.top
 jadecrossroads.top
 jadepassagehub.top
 jadeworkshop.top
+lanternmosaicworks.com
 linksoflondonsale.top
+magnoliacatalogworks.com
 marblebeacon.top
 marblecourier.top
 marblehaven.top
 moonlitprovince.top
+moonstoneanchorworks.com
+oakenscriptorium.com
 openmeadowlab.top
 pearljunction.top
+quietsummitworks.com
 raneemjin.info
 saffronjunction.top
 silvercourier.top
+silverlandscape.top
 silvertrailhub.top
 stoneharvest.top
 todocalefactores.top
 topazharbor.top
 velvetcrossing.top
+velvetmeridian.top
 viloriterso.icu
 willowregistry.top
 willowsummit.top
