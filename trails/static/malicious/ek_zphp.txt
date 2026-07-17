@@ -1345,12 +1345,21 @@ zaheirx.shop
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-10-v10875/2506
 # Reference: https://app.validin.com/detail?type=hash&find=e3a46f20be728d46dac88ec757345713#tab=host_pairs
 # Reference: https://www.virustotal.com/gui/ip-address/178.156.241.213/relations
+# BANNER_0_HASH-HOST=3bcabf70ef8592aac76a6ca89eb91107
 
 ambercompanion.top
 ambergallery.top
+ashfieldchronicle.com
+ashgroveexchange.com
+atlasandtimber.com
 bronzehorizon.top
 bronzewhisper.top
+cedarbrookfactory.com
 cedarfrontier.top
+cedarharvestjournal.com
+cedarhorizonstudio.com
+cedarlanternnetwork.com
+clevermeadowfactory.com
 cobaltmeadow.top
 cobaltorchard.top
 copperhorizon.top
@@ -1358,6 +1367,11 @@ coralfrontier.top
 coralregistry.top
 coralwayfinder.top
 crystalmarket.top
+driftwoodsignalworks.com
+dynamicquartzstudio.com
+elevatedvoyagerworks.com
+embermillcollective.com
+endlesscanvasstudio.com
 gmartph.shop
 hazelcanvas.top
 hazelcitadel.top
@@ -1367,29 +1381,43 @@ ivorysummit.top
 jadecrossroads.top
 jadepassagehub.top
 jadeworkshop.top
+juniperatlasengine.com
 lanternmosaicworks.com
 linksoflondonsale.top
 magnoliacatalogworks.com
+mapleobservatorynetwork.com
 marblebeacon.top
 marblecourier.top
 marblehaven.top
+meadowcodex.com
+modernanchorengine.com
 moonlitprovince.top
 moonstoneanchorworks.com
+northernframeengine.com
+northwindassembly.com
+oakandconstellation.com
 oakenscriptorium.com
+opalcaravanengine.com
 openmeadowlab.top
 pearljunction.top
+quietlanternhouse.com
 quietsummitworks.com
 raneemjin.info
 saffronjunction.top
 silvercourier.top
 silverlandscape.top
+silvermaplechronicle.com
 silvertrailhub.top
+skylinemerchantstudio.com
 stoneharvest.top
+thistlechronicleworks.com
 todocalefactores.top
 topazharbor.top
 velvetcrossing.top
 velvetmeridian.top
 viloriterso.icu
+walnutatlasfactory.com
+westbrookexchange.com
 willowregistry.top
 willowsummit.top
 fosvsr.ooguy.com
