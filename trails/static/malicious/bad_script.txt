@@ -9872,6 +9872,16 @@ drvdb9rcebidk.cloudfront.net
 /patrollerdrama.ps1
 /sockuniversity.ps1
 
+# Reference: https://x.com/smica83/status/2077497947143770261
+# Reference: https://www.virustotal.com/gui/file/1d01f60c355546557e038ded43fb27f0bfc6559bba9abedcb96a08556e311d2a/detection
+
+/MayData/compareexpectancy.ps1
+/MayData/coursehope.ps1
+/MayData/diggingroad.ps1
+/compareexpectancy.ps1
+/coursehope.ps1
+/diggingroad.ps1
+
 # Generic
 
 /5c0ca79.php
