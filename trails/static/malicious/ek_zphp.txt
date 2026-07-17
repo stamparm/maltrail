@@ -1345,8 +1345,11 @@ zaheirx.shop
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-10-v10875/2506
 # Reference: https://app.validin.com/detail?type=hash&find=e3a46f20be728d46dac88ec757345713#tab=host_pairs
 # Reference: https://www.virustotal.com/gui/ip-address/178.156.241.213/relations
+# BANNER_0_HASH-HOST=353e5507e979c5f3a5b0dbf09d0fcb6c
 # BANNER_0_HASH-HOST=3bcabf70ef8592aac76a6ca89eb91107
+# HEADER_HASH-HOST=d400ac6968bef7b11870
 
+alabastermarket.top
 alabastervoyage.top
 ambercompanion.top
 ambergallery.top
@@ -1370,6 +1373,7 @@ coralfrontier.top
 coralmanor.top
 coralregistry.top
 coralwayfinder.top
+crimsonmarket.top
 crimsonterrace.top
 crystalforgeway.top
 crystalmarket.top
@@ -1377,6 +1381,7 @@ driftwoodsignalworks.com
 dynamicquartzstudio.com
 edarfrontier.top
 elevatedvoyagerworks.com
+emberhorizon.top
 emberlighthouse.top
 embermillcollective.com
 endlesscanvasstudio.com
@@ -1397,6 +1402,7 @@ lanternmosaicworks.com
 linenregistry.top
 linenvoyage.top
 linksoflondonsale.top
+lucidgrovelab.top
 magnoliacatalogworks.com
 mapleobservatorynetwork.com
 marblebeacon.top
@@ -1418,6 +1424,7 @@ prismharbor.top
 quietlanternhouse.com
 quietsummitworks.com
 raneemjin.info
+saffronecho.top
 saffronjunction.top
 secondscarlet.top
 selcukpeker.com
@@ -1431,12 +1438,14 @@ stoneharvest.top
 thistlechronicleworks.com
 todocalefactores.top
 topazharbor.top
+tv.watchprism.app
 vcdggsfw.top
 velvetcrossing.top
 velvetmeridian.top
 viloriterso.icu
 vividtunnellab.top
 walnutatlasfactory.com
+watchprism.app
 westbrookexchange.com
 willowregistry.top
 willowsummit.top
