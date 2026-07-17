@@ -986,17 +986,22 @@ cpajoliette.com
 # Reference: https://sansec.io/research/clickfix-clipboard-hijacker
 # Reference: https://www.virustotal.com/gui/file/b7fd23b85789d805ffee405e1a934dea60dfed2dc45e019c404d1e73e9b86b14/detection
 
+abernaahy.sbs
 abernaehy.lol
+ackeamann.xyz
 ackerkann.lol
 actade-nacimiento-blog.com
 almontm.xyz
+azevedo.lol
 barsows.com
 bartach.xyz
 bernardi.lol
 bitista.icu
 blbnchard.lol
+bogisibh.xyz
 bradtkr.com
 bruneau.lol
+carreiro.lol
 chauvet.club
 chauviu.lol
 cldflarecdn.com
@@ -1013,13 +1018,16 @@ estevss.icu
 ethervane.com
 exoosito.com
 fontanf.lol
+fraitas.lol
 francoife.lol
 fundivox.com
 gautter.lol
 gccsinc.com
 gerrirsen.icu
+gileert.xyz
 glnason.lol
 heethcote.com
+henreques.lol
 henriqueq.xyz
 htrmiston.org
 jnlysj.com
@@ -1028,6 +1036,8 @@ kerluku.lol
 kovkcek.com
 kurluke.lol
 leannnn.lol
+leconto.lol
+ledesla.cfd
 leusceke.com
 lislason.lol
 lolfler.lol
@@ -1035,6 +1045,7 @@ loureiru.lol
 luthel.com
 marqueq.lol
 marqurrdt.net
+medeano.lol
 meharsons.com
 mermiston.com
 moielli.xyz
@@ -1061,6 +1072,7 @@ reindardt.lol
 request.wales
 riihard.lol
 riihard.top
+riviere.sbs
 robests.lol
 roterts.lol
 rueckec.lol
@@ -1068,11 +1080,15 @@ saewart.lol
 sasndfsdfghjasd.run
 satserfield.com
 saxonfield.org
+schester.beer
 schluter.lol
+schuctz.click
 ssntana.com
+streith.beer
 stromao.com
 thibahlt.lol
 titchell.lol
+uolguin.cfd
 vandenheuvll.lol
 vanderaeijden.lol
 vilialobos.lol
