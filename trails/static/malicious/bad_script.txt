@@ -9882,6 +9882,27 @@ drvdb9rcebidk.cloudfront.net
 /coursehope.ps1
 /diggingroad.ps1
 
+# Reference: https://x.com/Yusufcancakiir/status/2078101888935883194
+
+/bypass_server.py
+/bot_fixed.py
+/bot_fixed.py.bak
+/bruteforce.sh
+/flood.log
+/flood.py
+/flood2.py
+/metasploit101.pdf
+/metasploit101.txt
+/ms-activity-finder.py
+/ms-browser-probe-v2.py
+/ms-browser-probe.py
+/otp-bypass-research.json
+/otp-bypass-research.md
+/the100_hack.user.js
+/the100_hack.user.txt
+/the100_v2.user.js
+/wg0-master.conf
+
 # Generic
 
 /5c0ca79.php
