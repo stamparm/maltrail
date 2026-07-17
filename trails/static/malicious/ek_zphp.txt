@@ -1366,8 +1366,10 @@ cobaltmeadow.top
 cobaltorchard.top
 copperhorizon.top
 coralfrontier.top
+coralmanor.top
 coralregistry.top
 coralwayfinder.top
+crimsonterrace.top
 crystalforgeway.top
 crystalmarket.top
 driftwoodsignalworks.com
@@ -1382,6 +1384,8 @@ granitequill.top
 hazelcanvas.top
 hazelcitadel.top
 hazelcompass.top
+ivorycompass.top
+ivorycourtyard.top
 ivoryharvest.top
 ivorysummit.top
 jadecrossroads.top
@@ -1417,6 +1421,7 @@ saffronjunction.top
 secondscarlet.top
 selcukpeker.com
 silvercourier.top
+silverfolio.top
 silverlandscape.top
 silvermaplechronicle.com
 silvertrailhub.top
