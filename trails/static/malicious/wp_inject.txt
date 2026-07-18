@@ -6943,3 +6943,10 @@ rg-telemetry.sbs
 royrealls.com
 test.delic.rs
 th-updates.sbs
+
+# Reference: https://www.virustotal.com/gui/ip-address/89.36.231.205/relations
+
+cdnabucket.com
+cdnbucket.click
+35.cdnabucket.com
+5z.cdnbucket.click
