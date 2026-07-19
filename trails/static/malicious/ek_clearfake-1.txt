@@ -9,9 +9,11 @@
 anlytic-js-cloud.beer
 auth-code-check.info
 auth-code-verif.beer
+auth-id-browser.info
 authorization-cdn-press-enter.info
 authorization-code.beer
 authorization-code.info
+authorization-id-browser.info
 authorization-id-code.info
 authorization-press-enter.info
 bcncdncl-ns.beer
