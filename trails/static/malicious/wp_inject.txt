@@ -6950,3 +6950,7 @@ cdnabucket.com
 cdnbucket.click
 35.cdnabucket.com
 5z.cdnbucket.click
+
+# Reference: https://www.virustotal.com/gui/file/0447800254784aeec9f3cc7fac2a9aa3325cc745783eb090b7454271e65e91a2/detection
+
+niko-ngx-schema.com
