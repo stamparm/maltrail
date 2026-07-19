@@ -6952,5 +6952,13 @@ cdnbucket.click
 5z.cdnbucket.click
 
 # Reference: https://www.virustotal.com/gui/file/0447800254784aeec9f3cc7fac2a9aa3325cc745783eb090b7454271e65e91a2/detection
+# TITLE-HOST=Giriş - HackLink Panel - Profesyonel SEO Çözümleri
+# TITLE-HOST=Giriş Yap - NikoApp Premium Hacklink Panel
 
 niko-ngx-schema.com
+papihayatimizisikti.store
+rank-math.com
+yoast-schema.com
+app.papihayatimizisikti.store
+app.rank-math.com
+app.yoast-schema.com
