@@ -16847,7 +16847,11 @@ i.cdn-typekit.com
 # HEADER_HASH-HOST=e5e15ed4888ff804d4d7
 # HEADER_HASH-HOST=e5e17f5ccbbdb2cafc2c
 
+1z.riotplat.shop
+4b.fancourier.vip
+7g.fancourier.cyou
 affirman.com
+api.kupui.biz
 arvelito.com
 biokorq.com
 biolynq.com
@@ -16864,6 +16868,7 @@ cytovine.com
 cytrixor.com
 detail-best.com
 devadmin.csgou.vip
+dex.tradingskill.cc
 dexivolt.com
 dislen.com
 doubleciick.net
@@ -16877,7 +16882,16 @@ fbpx.xyz
 fimasi.com
 flytexis.com
 fnstatick.com
+ftp.cdn-cookie.com
+ftp.cdn-gstatic.com
+ftp.detail-best.com
+ftp.google-manager.com
+ftp.hacptcha.com
+ftp.ipifly.com
+ftp.newasest.com
+ftp.omappepi.com
 gaevnt.com
+globalvexor.com
 goaff-pro.net
 greedysuns.com
 grymvael.com
@@ -16894,15 +16908,24 @@ lasorie.com
 linistat.info
 livestats.info
 lunexi.art
+mail.cdn-cookie.com
+mail.cdn-gstatic.com
+mail.detail-best.com
+mail.hacptcha.com
+mail.ipifly.com
+mail.newasest.com
+mail.omappepi.com
 malinabet.click
 metrix-cdn.com
 newasest.com
 nolvrixa.com
 omappepi.com
+pc.riot-ex.cc
 plothranex.com
 qarfylon.com
 quarvixin.com
 reqred.com
+riot-ex.cc
 riot-ex.net
 riot-plat.com
 riot-plat.net
@@ -16928,36 +16951,20 @@ sunsdesk.com
 swiftnovar.com
 syncroval.com
 synthrova.com
+tradingskill.cc
 trasysit.com
 tristplse.com
+u5.riot-ex.net
 ultradevforge.com
 uynstatic.com
 verametrix.com
 vermexis.com
+vireon.lol
 wavekernel.com
 xanryl.com
 xolvramiq.com
+zoltar.sbs
 zorthumel.com
-1z.riotplat.shop
-4b.fancourier.vip
-7g.fancourier.cyou
-api.kupui.biz
-ftp.cdn-cookie.com
-ftp.cdn-gstatic.com
-ftp.detail-best.com
-ftp.google-manager.com
-ftp.hacptcha.com
-ftp.ipifly.com
-ftp.newasest.com
-ftp.omappepi.com
-mail.cdn-cookie.com
-mail.cdn-gstatic.com
-mail.detail-best.com
-mail.hacptcha.com
-mail.ipifly.com
-mail.newasest.com
-mail.omappepi.com
-u5.riot-ex.net
 
 # Reference: https://x.com/sdcyberresearch/status/2011404135757651976
 
