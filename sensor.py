@@ -1213,10 +1213,7 @@ def init():
 
                 found = False
                 for name, function in inspect.getmembers(module, inspect.isfunction):
-                    try:
-                        args = inspect.getfullargspec(function).args
-                    except AttributeError:
-                        args = inspect.getargspec(function).args
+                    args = function.__code__.co_varnames[:function.__code__.co_argcount]
 
                     if name == "plugin" and set(("event_tuple", "packet")).issubset(set(args)):
                         found = True
