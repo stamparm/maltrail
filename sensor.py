@@ -1216,7 +1216,7 @@ def init():
                     try:
                         args = inspect.getfullargspec(function).args
                     except AttributeError:
-                        args = inspect.getargspec(function).args
+                        args = inspect.getfullargspec(function).args
 
                     if name == "plugin" and set(("event_tuple", "packet")).issubset(set(args)):
                         found = True
