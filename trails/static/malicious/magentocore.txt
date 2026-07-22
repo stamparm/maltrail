@@ -18077,6 +18077,7 @@ ns.dinkfoundry.com
 relay.cdn-statmetrics.com
 relay.dinkfoundry.com
 seopxl-performance-authority-engine.shop
+testing.faketools.click
 
 # Generic
 
