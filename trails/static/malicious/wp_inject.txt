@@ -6962,3 +6962,20 @@ yoast-schema.com
 app.papihayatimizisikti.store
 app.rank-math.com
 app.yoast-schema.com
+
+# Reference: https://www.derp.ca/research/ta2726-wordpress-malware-launchpads/
+# CERT_FINGERPRINT_SHA256-HOST=1d8ad21c58dfea6068da437d9c7dd76ccc1feade3efe7b0bced0864b40e4d4e9
+# CERT_FINGERPRINT_SHA256-HOST=2b1a6a2f95be61dc49b0db4fab8a0927002d91c2efb3b6b3d542b2d2284205db
+
+coldformat.info
+datadock.info
+olddenver.xyz
+skillboxultra.live
+stack2vision.com
+translatebonus.net
+wafsearch.wiki
+/wp-content/plugins/uniserviceist-multiinfrastructure/assets/analyze.js
+/wp-content/plugins/uniserviceist-multiinfrastructure/miniclouder-smartserverless.php
+/wp-content/plugins/framework-triappment/assets/hfpb6931.js
+/wp-json/platformist-quadendpointer-sxadtr/v1/s6qgn
+/platformist-quadendpointer-sxadtr/v1/s6qgn
