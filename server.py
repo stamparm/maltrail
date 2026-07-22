@@ -11,7 +11,7 @@ import sys
 
 sys.dont_write_bytecode = True
 
-import optparse
+import argparse
 import os
 import platform
 import threading
@@ -47,15 +47,15 @@ def main():
     if "--version" in sys.argv:
         raise SystemExit
 
-    parser = optparse.OptionParser(version=VERSION)
-    parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
-    parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
-    parser.add_option("--smoke-test", dest="smoke_test", action="store_true", help=optparse.SUPPRESS_HELP)
-    parser.add_option("--detect-test", dest="detect_test", action="store_true", help=optparse.SUPPRESS_HELP)
+    parser = argparse.ArgumentParser(description="Maltrail server")
+    parser.add_argument("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
+    parser.add_argument("--debug", dest="debug", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--smoke-test", dest="smoke_test", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--detect-test", dest="detect_test", action="store_true", help=argparse.SUPPRESS)
 
     patch_parser(parser)
 
-    options, _ = parser.parse_args()
+    options = parser.parse_args()
 
     if options.smoke_test:
         from core.testing import smoke_test

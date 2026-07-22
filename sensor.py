@@ -15,7 +15,7 @@ import cProfile
 import inspect
 import math
 import mmap
-import optparse
+import argparse
 import os
 import re
 import socket
@@ -1213,10 +1213,7 @@ def init():
 
                 found = False
                 for name, function in inspect.getmembers(module, inspect.isfunction):
-                    try:
-                        args = inspect.getfullargspec(function).args
-                    except AttributeError:
-                        args = inspect.getargspec(function).args
+                    args = function.__code__.co_varnames[:function.__code__.co_argcount]
 
                     if name == "plugin" and set(("event_tuple", "packet")).issubset(set(args)):
                         found = True
@@ -1782,21 +1779,21 @@ def main():
     if "--version" in sys.argv:
         raise SystemExit
 
-    parser = optparse.OptionParser(version=VERSION)
-    parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
-    parser.add_option("-r", dest="pcap_file", help="pcap file for offline analysis")
-    parser.add_option("-p", dest="plugins", help="plugin(s) to be used per event")
-    parser.add_option("-q", "--quiet", dest="quiet", action="store_true", help="turn off regular output")
-    parser.add_option("--console", dest="console", action="store_true", help="print events to console")
-    parser.add_option("--offline", dest="offline", action="store_true", help="disable (online) trail updates")
-    parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
-    parser.add_option("--profile", dest="profile", help=optparse.SUPPRESS_HELP)
-    parser.add_option("--smoke-test", dest="smoke_test", action="store_true", help=optparse.SUPPRESS_HELP)
-    parser.add_option("--detect-test", dest="detect_test", action="store_true", help=optparse.SUPPRESS_HELP)
+    parser = argparse.ArgumentParser(description="Maltrail sensor")
+    parser.add_argument("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
+    parser.add_argument("-r", dest="pcap_file", help="pcap file for offline analysis")
+    parser.add_argument("-p", dest="plugins", help="plugin(s) to be used per event")
+    parser.add_argument("-q", "--quiet", dest="quiet", action="store_true", help="turn off regular output")
+    parser.add_argument("--console", dest="console", action="store_true", help="print events to console")
+    parser.add_argument("--offline", dest="offline", action="store_true", help="disable (online) trail updates")
+    parser.add_argument("--debug", dest="debug", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--profile", dest="profile", help=argparse.SUPPRESS)
+    parser.add_argument("--smoke-test", dest="smoke_test", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--detect-test", dest="detect_test", action="store_true", help=argparse.SUPPRESS)
 
     patch_parser(parser)
 
-    options, _ = parser.parse_args()
+    options = parser.parse_args()
 
     if options.smoke_test:
         from core.testing import smoke_test
