@@ -18062,6 +18062,20 @@ min-js.co
 121.199.28.20:8899
 62.72.29.89:8080
 
+# Reference: https://x.com/sdcyberresearch/status/2079927203144286603
+
+api.cloudservicecon.com
+cdn-statmetrics.com
+cdn.infolservice.com
+clone.mini-sheets.pro
+cloudservicecon.com
+dinkfoundry.com
+infolservice.com
+mini-sheets.pro
+relay.cdn-statmetrics.com
+relay.dinkfoundry.com
+seopxl-performance-authority-engine.shop
+
 # Generic
 
 /assets/lfg.js
