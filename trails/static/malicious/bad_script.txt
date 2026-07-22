@@ -9903,6 +9903,13 @@ drvdb9rcebidk.cloudfront.net
 /the100_v2.user.js
 /wg0-master.conf
 
+# Reference: https://x.com/smica83/status/2079987428769821047
+# Reference: https://www.virustotal.com/gui/file/4750c67455431d01ac505041e0e439c73afe57bd955ac323a51c96439fb4a748/detection
+
+/wiss1g4/footATM.ps1
+/wiss1g4/
+/footATM.ps1
+
 # Generic
 
 /5c0ca79.php
