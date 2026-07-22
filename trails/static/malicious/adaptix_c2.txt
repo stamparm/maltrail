@@ -1525,6 +1525,8 @@ api.aibifb.com
 api.elbrus.wtf
 api.maxflow.llc
 api.nerohsync.com
+api.notdns.com
+api.panmiaoda.com
 api.wpscdm.top
 app.kingby.shop
 app.kingby.xyz
@@ -1543,11 +1545,13 @@ bestatto.ru
 biocraft.us
 blacktatto.ru
 blatatto.ru
+blog.lizastore.cyou
 boltz.mistic.xyz
 boltzapi.mistic.xyz
 bootstrap.jqu3ry.cfd
 c.anzemet.us
 c2.alux.cc
+caseid-yahoo.com
 ccdtetsgky.accounts.google.omassent8entryroutineapprovesubscribeuseafixmech.xyz
 cdn.netupdate.link
 chatatto.ru
@@ -1559,6 +1563,7 @@ dan.pancaketoken.com
 dapingceng7788.com
 database.publicvm.com
 deepseek-v4.cloud
+dh-30panel.com
 dirtyexo.com
 disk-share.com
 docker.kubegroup.co
@@ -1579,11 +1584,13 @@ hyeyeong.com
 hyper.es
 ii.magic-bot.ru
 infernostore.gagahxzz-well.my.id
+infraquantumbytecore.space
 innagine.com
 ip224.ip-15-235-3.net
 keyallconcesio.opendoor.it
 kittycom.xyz
 klaviyo-logs-campaigns.com
+klnbrands.com
 krypt.zip
 krypton.taileb042a.ts.net
 kuaifan.xyz
@@ -1599,6 +1606,7 @@ my.gmv-he.com
 myadmin.keysoft.no
 mzxseexczs.omassent8entryroutineapprovesubscribeuseafixmech.xyz
 n8n.timesaverai.pl
+nerohsync.com
 noctivella.com
 node-inferno.gagahxzz-well.my.id
 node-infernostore.gagahxzz-well.my.id
@@ -1613,6 +1621,7 @@ omassent8entryroutineapprovesubscribeuseafixmech.xyz
 omeul.com
 pancaketoken.com
 pancrypto.cyou
+panel.frewaymayday.xyz
 pankebab.com
 pdffileexchange.duckdns.org
 platform.nomad-capital.co.uk
@@ -1633,8 +1642,10 @@ sprnetapi.us
 sso.global-muangthai.com
 static.880578.site
 static.dnl.gr
+static.fixcloud.online
 sub.frewaymayday.xyz
 t-internal.sk
+tanzerin.com
 tattobla.ru
 tattoblack.ru
 tattoma.ru
@@ -1662,12 +1673,14 @@ updateflash-client.xyz
 velonixsuf.com
 vpn734653413.softether.net
 vpn880365101.softether.net
+vpndirect.pro
 vps.b-advsoft.com
 web.365official.sbs
 web.wpscdm.top
 windowsupdate.one
 xldr004.online
 xldr008.online
+yg.tanzerin.com
 zoom.serveirc.com
 
 # Reference: https://x.com/malwrhunterteam/status/2038886735568838849
