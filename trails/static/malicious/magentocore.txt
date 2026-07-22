@@ -18072,6 +18072,7 @@ clone.mini-sheets.pro
 cloudservicecon.com
 dinkfoundry.com
 infolservice.com
+machine.faketools.click
 mini-sheets.pro
 ns.dinkfoundry.com
 relay.cdn-statmetrics.com
