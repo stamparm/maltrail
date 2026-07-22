@@ -5263,6 +5263,7 @@ js-pre.letsgoautomotive.com
 php-panel.letsgoautomotive.com
 
 # Reference: https://threatfox.abuse.ch/browse/tag/SocGholish/ (# 2026-07-05)
+# Reference: https://www.derp.ca/research/ta2726-wordpress-malware-launchpads/
 
 action.prtaxheaven.com
 adspixle.com
@@ -5302,6 +5303,7 @@ app2.symphoniabags.com
 appbnc-connexion.online
 archive.orlandoluxuryproperties.com
 archives.kathmandutribune.com
+as.uioplerixtem.com
 assets.studermfg.com
 assistant.praiselimollc.com
 asyncawaitzone.com
@@ -5309,6 +5311,7 @@ audit.fsia.net
 auto-update.tx-wealth.com
 aws.uae-wealth.com
 axiosapiexample.com
+b8.tuipoekolqrx.com
 backoffice.ptbaconsulting.com
 benefits.cheapguys.com
 billing.keywordmatters.com
@@ -5470,6 +5473,7 @@ pets.thevoicefordogs.org
 phpmyadmin.westinsinsurance.com
 picture.jeaniescottmedia.com
 picture.ourfaithunfiltered.com
+pimparolix.com
 platform.isystemservices.com
 plesk.cheriwildes.com
 plesk.puertoricolsla.com
@@ -5525,6 +5529,8 @@ support.eztechnj.com
 support.kingwoodcomputercenter.com
 support.prtaxheaven.com
 thelist2win.com
+tuipoekolqrx.com
+uioplerixtem.com
 update.tompsettsportslaw.com
 us-west.israel-finance.com
 vueapiinsights.com
