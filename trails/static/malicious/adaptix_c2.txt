@@ -1524,6 +1524,7 @@ amillionebooks.com
 api.aibifb.com
 api.elbrus.wtf
 api.maxflow.llc
+api.nerohsync.com
 api.wpscdm.top
 app.kingby.shop
 app.kingby.xyz
@@ -1535,6 +1536,7 @@ arbgpt.icu
 arbgptx.digital
 arbgptx.sbs
 archive.sytes.net
+artandsphere.com
 asryaga.online
 awamiservices.com
 bestatto.ru
@@ -1551,6 +1553,7 @@ cdn.netupdate.link
 chatatto.ru
 cloudfacer.com
 complty.fit
+connected-mvp.com
 corpsrvs.com
 dan.pancaketoken.com
 dapingceng7788.com
@@ -1574,6 +1577,7 @@ hk.32069.com
 huayuzhuangxiu.com
 hyeyeong.com
 hyper.es
+ii.magic-bot.ru
 infernostore.gagahxzz-well.my.id
 innagine.com
 ip224.ip-15-235-3.net
@@ -1587,6 +1591,7 @@ lcvulture.com
 logsasset.com
 matatto.ru
 maxflow.llc
+meet.initiumtearoom.site
 moonshot.angor.io
 moonshot.mistic.xyz
 mxcloud.cloud
@@ -1628,6 +1633,7 @@ sprnetapi.us
 sso.global-muangthai.com
 static.880578.site
 static.dnl.gr
+sub.frewaymayday.xyz
 t-internal.sk
 tattobla.ru
 tattoblack.ru
