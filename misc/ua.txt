@@ -2741,6 +2741,12 @@ Zoho-C-Uploader/2.0
 ZQuickSteal
 ZQuickSteal/1.0
 
+# Reference: https://x.com/malwrhunterteam/status/2079869512615071810
+# Reference: https://tria.ge/260722-l5b8xay1hv/behavioral2
+# Reference: https://www.virustotal.com/gui/file/5fff61dff1fe18f59ebabe729c5ff9c42de64911248fb424815755fc7e76d5a1/detection
+
+DEADBEEF
+
 # Misc
 
 information_schema
