@@ -3,7 +3,7 @@
 
 # Generic detection for compromised WordPress CMS
 
-# Aliases: balada, baladainjector
+# Aliases: balada, baladainjector, wp-shellstorm
 
 # Reference: https://twitter.com/unmaskparasites/status/1355301566933213185
 
@@ -6991,6 +6991,16 @@ v9g6.my
 /wp2shell_poc.egg-info/
 /wp2shell.py
 /wp2shell_stager.sh
+
+# Reference: https://ctrlaltintel.com/research/Wordpress/
+# Reference: https://socradar.io/blog/wp-shellstorm-expose-1-4m-wordpress-sites/
+
+137.175.93.126:8080
+137.175.93.126:8082
+137.175.93.126:8083
+137.175.93.126:8888
+xxooonline.eu.cc
+xs.xxooonline.eu.cc
 
 # Generic
 
