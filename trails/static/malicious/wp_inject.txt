@@ -6981,7 +6981,13 @@ wafsearch.wiki
 /platformist-quadendpointer-sxadtr/v1/s6qgn
 
 # Reference: https://x.com/1ZRR4H/status/2080296920136782121
+# Reference: https://blog.offensive-intel.com/cross-platform-rat-deployment-via-wp2shell/
 
+202.61.136.40:1883
+202.61.136.40:8080
+202.61.136.40:8081
+202.61.136.40:8443
+v9g6.my
 /wp2shell_poc.egg-info/
 /wp2shell.py
 /wp2shell_stager.sh
