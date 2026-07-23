@@ -1488,6 +1488,11 @@ http://103.122.247.36
 
 66.175.238.130:5000
 
+# Reference: https://socket.dev/blog/github-actions-abuse-powers-cpanel-and-whm-exploitation
+# TITLE-HOST=ShellPanel C2
+
+43.228.157.68:8888
+
 # Generic
 
 /admin_123/auth.php
