@@ -1349,6 +1349,7 @@ zaheirx.shop
 # BANNER_0_HASH-HOST=3bcabf70ef8592aac76a6ca89eb91107
 # HEADER_HASH-HOST=d400ac6968bef7b11870
 
+alabastercompass.top
 alabastermarket.top
 alabastervoyage.top
 ambercompanion.top
@@ -1356,6 +1357,7 @@ ambergallery.top
 ashfieldchronicle.com
 ashgroveexchange.com
 atlasandtimber.com
+aurorapavilion.top
 bronzehorizon.top
 bronzewhisper.top
 cedarbrookfactory.com
@@ -1369,6 +1371,7 @@ cobaltjunction.top
 cobaltmeadow.top
 cobaltorchard.top
 copperhorizon.top
+copperlandmark.top
 coralfrontier.top
 coralmanor.top
 coralregistry.top
@@ -1386,6 +1389,7 @@ emberlighthouse.top
 embermillcollective.com
 endlesscanvasstudio.com
 gmartph.shop
+granitehearth.top
 granitequill.top
 hazelcanvas.top
 hazelcitadel.top
@@ -1437,6 +1441,7 @@ silvertrailhub.top
 skylinemerchantstudio.com
 stoneharvest.top
 thistlechronicleworks.com
+thistleobservatory.top
 todocalefactores.top
 topazharbor.top
 tv.watchprism.app
