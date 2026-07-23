@@ -9910,6 +9910,13 @@ drvdb9rcebidk.cloudfront.net
 /wiss1g4/
 /footATM.ps1
 
+# Reference: https://x.com/1ZRR4H/status/2080296920136782121
+# Reference: https://blog.offensive-intel.com/cross-platform-rat-deployment-via-wp2shell/
+
+/beacon?cfg=
+/beacon?cmd=
+/beacon?host=
+
 # Generic
 
 /5c0ca79.php
