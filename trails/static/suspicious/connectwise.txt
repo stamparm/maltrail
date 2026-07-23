@@ -5123,3 +5123,9 @@ nexrogcapital.xyz
 # Reference: https://www.virustotal.com/gui/file/6b60214a0b1ef062d98869960edf73a22fd9dd6f20623270f400dda061399e25/detection
 
 37.1.213.250:8041
+
+# Reference: https://x.com/smica83/status/2080262473765081105
+# Reference: https://www.virustotal.com/gui/file/565461bae08cfa9eaa861faeadc7d146afa42e9a1eea65e8fc56cd233c5819a0/detection
+
+80.76.49.90:8040
+80.76.49.90:8041
