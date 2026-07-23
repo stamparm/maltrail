@@ -9917,6 +9917,13 @@ drvdb9rcebidk.cloudfront.net
 /beacon?cmd=
 /beacon?host=
 
+# Reference: https://ctrlaltintel.com/research/Wordpress/
+# Reference: https://socradar.io/blog/wp-shellstorm-expose-1-4m-wordpress-sites/
+
+/cve-2025-34085.py
+/cve-2026-6433.py
+/cve6433.log
+
 # Generic
 
 /5c0ca79.php
