@@ -13067,10 +13067,14 @@ meet-webconnect.com
 z00m-meeting-webconnect.com
 
 # Reference: https://x.com/Malwarehunterr/status/2080276380986872284
+# Reference: https://x.com/KirkDerpca/status/2080285882645385516
+# Reference: https://urlscan.io/search/#hash%3A15bbb30e7164ed0f194406275eec25a6488a90591dcacc890b2341b0499ce604
 # CLASS_0_HASH-HOST=2fc4fa4031beaf36b2ee1c1747158dae
 
 guardbot916251.icu
 safeguard829102.icu
+axiom-protocol.pages.dev
+binance.roxe.us.cc
 
 # Generic
 
