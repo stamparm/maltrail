@@ -6991,3 +6991,7 @@ v9g6.my
 /wp2shell_poc.egg-info/
 /wp2shell.py
 /wp2shell_stager.sh
+
+# Generic
+
+/wp-imcludes/
