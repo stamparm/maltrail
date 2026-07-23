@@ -1179,3 +1179,11 @@ podathon.org/shell/
 /shell21_lfi.php
 /shell21_lfi2.php
 /shell21_lficheck.php
+
+# Reference: https://ctrlaltintel.com/research/Wordpress/
+
+/loader_shell.php
+/new_shell.php
+/new_shell_bypass.php
+/new_shell_short.php
+/shell-deploy.zip
