@@ -6979,3 +6979,9 @@ wafsearch.wiki
 /wp-content/plugins/framework-triappment/assets/hfpb6931.js
 /wp-json/platformist-quadendpointer-sxadtr/v1/s6qgn
 /platformist-quadendpointer-sxadtr/v1/s6qgn
+
+# Reference: https://x.com/1ZRR4H/status/2080296920136782121
+
+/wp2shell_poc.egg-info/
+/wp2shell.py
+/wp2shell_stager.sh
