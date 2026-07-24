@@ -1777,3 +1777,10 @@ update-trellix.com
 vertextrust-advisor.com
 vertextrust-advisors.com
 vertextrustadvisors.com
+
+# Reference: https://x.com/malwrhunterteam/status/2080626563977011542
+# Reference: https://www.virustotal.com/gui/file/3a5dc19f8c518a46f92d6d475e96c87fb1130352eae36530e0e721515deb7ba6/detection
+# Reference: https://www.virustotal.com/gui/file/73df809d1e115d580f56a7b788f9edc528c031c4ccb2e276fead8051d09ec8d8/detection
+
+vapeauroz.com
+mail.vapeauroz.com
