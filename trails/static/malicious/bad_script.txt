@@ -9924,6 +9924,13 @@ drvdb9rcebidk.cloudfront.net
 /cve-2026-6433.py
 /cve6433.log
 
+# Reference: https://x.com/smica83/status/2080381006398238995
+# Reference: https://www.virustotal.com/gui/file/8a50ed3d9d9e90c971100e211b7f5c8c7128ccbf9164cf3bd1beed8a49da6ab6/detection
+
+/krr4g4/knittingdonation.ps1
+/krr4g4/
+/knittingdonation.ps1
+
 # Generic
 
 /5c0ca79.php
