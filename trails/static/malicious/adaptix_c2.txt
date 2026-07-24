@@ -1,7 +1,7 @@
 # Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
-# Aliases: duperunner, dupehike
+# Aliases: duperunner, dupehike, jadeprox, tribackloader
 
 # Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2025-05-20-IOCs-for-AdaptixC2-activity.txt
 # Reference: https://app.validin.com/detail?find=7c6372580a9e78e8caff7ba50ef859aa&type=hash&ref_id=9f05271ed4b#tab=host_pairs (# 2025-05-22)
@@ -1761,3 +1761,16 @@ http://74.48.66.73
 iot.981666.xyz
 root.981666.xyz
 zapier-logos.s3.amazonaws.com
+
+# Reference: https://www.group-ib.com/blog/jadeprox-china-nexus-triback-loader/
+
+8.217.190.58:443
+43.106.71.28:8000
+claude-pro.com
+dlrz-web.oss-cn-beijing.aliyuncs.com
+gouvvbo.top
+license.claude-pro.com
+update-crowdstrike.com
+update-sentinelone.com
+update-trellix.com
+vertextrust-advisors.com
