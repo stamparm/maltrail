@@ -1763,6 +1763,7 @@ root.981666.xyz
 zapier-logos.s3.amazonaws.com
 
 # Reference: https://www.group-ib.com/blog/jadeprox-china-nexus-triback-loader/
+# CLASS_0_HASH-HOST=a0c3bd0fc97e5550240b48a18952afd8
 
 8.217.190.58:443
 43.106.71.28:8000
@@ -1773,4 +1774,6 @@ license.claude-pro.com
 update-crowdstrike.com
 update-sentinelone.com
 update-trellix.com
+vertextrust-advisor.com
 vertextrust-advisors.com
+vertextrustadvisors.com
