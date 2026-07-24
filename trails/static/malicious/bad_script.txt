@@ -9936,6 +9936,12 @@ drvdb9rcebidk.cloudfront.net
 
 /ac333353431ba6a5.ps1
 
+# Reference: https://x.com/smica83/status/2080258605907874020
+# Reference: https://tria.ge/260723-nw4mxaaj9z/behavioral1
+
+/shell/secured_stub.ps1
+/secured_stub.ps1
+
 # Generic
 
 /5c0ca79.php
