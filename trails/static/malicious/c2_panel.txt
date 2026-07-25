@@ -1497,6 +1497,10 @@ http://103.122.247.36
 
 209.46.126.251:3000
 
+# Reference: https://x.com/Malwarehunterr/status/2081058230927765763
+
+46.246.99.135:9443
+
 # Generic
 
 /admin_123/auth.php
