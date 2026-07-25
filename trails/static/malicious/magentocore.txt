@@ -565,6 +565,7 @@ cdn-shopify.com
 # CERT_FINGERPRINT_SHA256-HOST=9bf073ea70df5f8267268d89881175b0aeb5bbedb9ed46e5296088103d98062b
 # CERT_FINGERPRINT_SHA256-HOST=bfbe5848a7c0001a2f13110af3d94db884593a47554c9cb8fca702435780810b
 
+cdn-contactplugin.com
 docsend-sharingfiles.cyou
 editron-ai.com
 fluxvpn-sharingfiles.cyou
@@ -573,18 +574,23 @@ google-sharingfiles.cyou
 google-sharingfiles.sbs
 gooqleadvstat.com
 gooqlemgrteg.com
+grafanametrics.com
 jquerystatic.com
 jquerystatistics.org
+kubeapiservice-cdn.com
 line-sharingfiles.cfd
 line-sharingfiles.sbs
 line-sharingfileu.cyou
 microsoft-teams-sharing.icu
 noto-sharingfiles.cyou
+process-management-system.com
 riverside-sharingfiles.sbs
 wechat-sharingfiles.cfd
 wechat-sharingfiles.sbs
 wechat-sharingfilez.cyou
+wpgrafana-metrics.com
 ws-hotjar.org
+zabbix-cdn.com
 zendesk-chart.com
 zoom-sharingfiles.cfd
 zoom-sharingfiles.sbs
