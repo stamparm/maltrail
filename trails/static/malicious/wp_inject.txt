@@ -6710,24 +6710,6 @@ sikopersimoasho.ml
 
 45.61.136.85:5555
 
-# Reference: https://www.wordfence.com/blog/2025/06/a-deep-dive-into-a-modular-malware-family/
-
-api-service-188910982.website
-blastergallery.com
-chaolingtech.com
-contentsdeliverystat.com
-deliveryrange.pro
-emojiselect.info
-graphiccloudcontent.com
-imageresizefix.com
-imagifytext.com
-internetmemoryservice.com
-staticdelivery.net
-staticimagedelivery.com
-vectorimagefabric.com
-vectorizegraphic.com
-api.staticdelivery.net
-
 # Reference: https://cert.orange.pl/aktualnosci/zainfekuj-sie-sam-kampania-clickfix/
 
 /wp-assets-optimizer.html
