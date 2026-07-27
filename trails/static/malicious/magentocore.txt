@@ -18091,22 +18091,36 @@ relay.dinkfoundry.com
 seopxl-performance-authority-engine.shop
 testing.faketools.click
 
+# Reference: https://x.com/sdcyberresearch/status/2081732917819060553
 # Reference: https://www.wordfence.com/blog/2025/06/a-deep-dive-into-a-modular-malware-family/
 
+abc24techsolutions.com
+allyonopremiumapp.com
 api-service-188910982.website
 blastergallery.com
+cdnimagebird.com
+cdnimagerequests.com
 chaolingtech.com
 contentsdeliverystat.com
 deliveryrange.pro
 emojiselect.info
 graphiccloudcontent.com
+identibadge.com
 imageresizefix.com
 imagifytext.com
+infocentersecurity.com
+inpixiostat.com
 internetmemoryservice.com
+remoteimagedelivery.com
+rnsgrp.com
+securityprovider.org
+senceguardpro.com
 staticdelivery.net
 staticimagedelivery.com
+triviaknows.com
 vectorimagefabric.com
 vectorizegraphic.com
+woocomgateway.com
 api.staticdelivery.net
 
 # Generic
