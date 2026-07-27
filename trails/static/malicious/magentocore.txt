@@ -18091,6 +18091,24 @@ relay.dinkfoundry.com
 seopxl-performance-authority-engine.shop
 testing.faketools.click
 
+# Reference: https://www.wordfence.com/blog/2025/06/a-deep-dive-into-a-modular-malware-family/
+
+api-service-188910982.website
+blastergallery.com
+chaolingtech.com
+contentsdeliverystat.com
+deliveryrange.pro
+emojiselect.info
+graphiccloudcontent.com
+imageresizefix.com
+imagifytext.com
+internetmemoryservice.com
+staticdelivery.net
+staticimagedelivery.com
+vectorimagefabric.com
+vectorizegraphic.com
+api.staticdelivery.net
+
 # Generic
 
 /assets/lfg.js
