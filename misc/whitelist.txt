@@ -576,6 +576,9 @@ emlfiles4.com
 
 defensacentral.com
 
+# false positive (#19580)
+reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
+
 # found as false positive on bambenekconsulting.com
 
 parkingcrew.net
