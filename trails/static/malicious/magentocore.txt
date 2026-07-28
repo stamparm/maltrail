@@ -18123,6 +18123,11 @@ vectorizegraphic.com
 woocomgateway.com
 api.staticdelivery.net
 
+# Reference: https://x.com/sdcyberresearch/status/2082043384588317115
+
+woocompay.com
+wpguarding.com
+
 # Generic
 
 /assets/lfg.js
