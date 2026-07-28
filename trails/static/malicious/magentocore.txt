@@ -13902,6 +13902,7 @@ artifyau.com
 brandiffy.com
 brandmynxt.com
 brandoraup.com
+brotula.online
 canevaslab.com
 chartmyiq.com
 chartproset.com
@@ -13930,8 +13931,10 @@ fittjamatmarknad.se
 geniushubplus.com
 graphlycool.com
 graphwebpad.com
+greidoner.space
 happystrend.com
 inisightvision.com
+laborados.site
 letcc.tk
 letzz.cf
 luckydealls.com
@@ -13955,6 +13958,7 @@ qwickdns.com
 salesflowe.com
 salesuplab.com
 saveanon.com
+savoyanga.store
 sellarcs.com
 sellbeamshop.com
 sellnestonline.com
@@ -13986,6 +13990,8 @@ visualldata.com
 vizualispro.com
 wisedesignls.com
 worksgethub.com
+wpinfo.cc
+zenulya.shop
 cpanel.fittjamatmarknad.se
 denizens-nonfrigidity.initrdns.web-hosting.com
 webdisk.fittjamatmarknad.se
@@ -16871,9 +16877,11 @@ cdn-gstatic.com
 cdn-vault.com
 cdnflarex.com
 coldmevrix.com
+crunoade.com
 csgou.vip
 cytovine.com
 cytrixor.com
+daxsenix.com
 detail-best.com
 devadmin.csgou.vip
 dex.tradingskill.cc
@@ -16898,6 +16906,7 @@ ftp.hacptcha.com
 ftp.ipifly.com
 ftp.newasest.com
 ftp.omappepi.com
+fynminix.com
 gaevnt.com
 globalvexor.com
 goaff-pro.net
@@ -16946,6 +16955,7 @@ riotplat.info
 riotplat.shop
 riotplat.top
 riotplat.xyz
+rivbyte.com
 rnogento.com
 rovaxilo.com
 sandvortex.com
@@ -16972,10 +16982,12 @@ verametrix.com
 vermexis.com
 vireon.lol
 wavekernel.com
+wobmi.com
 xanryl.com
 xolvramiq.com
 zoltar.sbs
 zorthumel.com
+zyfopulse.com
 
 # Reference: https://x.com/sdcyberresearch/status/2011404135757651976
 
