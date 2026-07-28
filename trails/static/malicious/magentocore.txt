@@ -18124,8 +18124,22 @@ woocomgateway.com
 api.staticdelivery.net
 
 # Reference: https://x.com/sdcyberresearch/status/2082043384588317115
+# BANNER_0_HASH-HOST=84016932c343181b621642221bca5780
 
+analyticsweb.pro
+apistatics.com
+fonts-statics.com
+google-analytics.shop
+jsdelivrcdn.co
+smrtpayments.com
+snow-cdn.cc
+staticsapi.com
+woo-gateway.com
+woocome.shop
 woocompay.com
+wordpress-woo.com
+wp-ping.com
+wpblack.com
 wpguarding.com
 
 # Generic
