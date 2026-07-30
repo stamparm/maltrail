@@ -8708,6 +8708,17 @@ curtainbeatdisturbance.com
 
 47.116.115.7:9911
 
+# Reference: https://x.com/Yusufcancakiir/status/2082511060566004203
+
+186.244.227.25:4444
+186.244.227.25:7777
+186.244.227.25:8443
+186.244.227.25:8888
+186.244.227.25:9000
+186.244.227.25:9998
+ccccccaaaaa.okwinapp.vip
+thtttttttt.lidiasdeli.com
+
 # Generic
 
 /.sliver-client/
