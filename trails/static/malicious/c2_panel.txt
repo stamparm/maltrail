@@ -1511,6 +1511,11 @@ http://103.122.247.36
 phantom.fudisa.com
 servsoc.org
 
+# Reference: https://x.com/Fact_Finder03/status/2082782903671595048
+# Reference: https://www.virustotal.com/gui/file/390c896dd5f9d0a1708751d453d1b60bf2459b017bf829d3f1f3507933fef309/detection
+
+45.61.163.8:5000
+
 # Generic
 
 /admin_123/auth.php
