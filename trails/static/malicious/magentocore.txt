@@ -18097,12 +18097,15 @@ cloudservicecon.com
 dinkfoundry.com
 faketools.click
 infolservice.com
+liveassistent.online
 machine.faketools.click
 mini-sheets.pro
 ns.dinkfoundry.com
+ns1.liveassistent.online
 relay.cdn-statmetrics.com
 relay.dinkfoundry.com
 seopxl-performance-authority-engine.shop
+softperfect.me.uk
 testing.faketools.click
 
 # Reference: https://x.com/sdcyberresearch/status/2081732917819060553
