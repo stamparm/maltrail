@@ -18090,6 +18090,7 @@ min-js.co
 # CLASS_0_HASH-HOST=9b884f3005e80c46b2e4f5fccb1fbba3
 
 api.cloudservicecon.com
+bn.softperfect.me.uk
 cdn-statmetrics.com
 cdn.infolservice.com
 clone.mini-sheets.pro
