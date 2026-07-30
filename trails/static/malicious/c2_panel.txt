@@ -1520,6 +1520,24 @@ servsoc.org
 
 103.90.162.213:5000
 
+# Reference: https://www.virustotal.com/gui/ip-address/165.232.85.175/relations
+
+165.232.85.175:8080
+
+# Reference: https://www.virustotal.com/gui/ip-address/35.222.110.36/relations
+
+35.222.110.36:5000
+
+# Reference: https://www.virustotal.com/gui/ip-address/47.129.224.246/relations
+
+http://47.129.224.246
+47.129.224.246:4000
+47.129.224.246:5000
+
+# Reference: https://www.virustotal.com/gui/ip-address/92.5.123.121/relations
+
+92.5.123.121:8000
+
 # Generic
 
 /admin_123/auth.php
