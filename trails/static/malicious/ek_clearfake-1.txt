@@ -33,6 +33,7 @@ code-verification-js.beer
 code.verification-claude-cdn.beer
 codecerification.beer
 darndcs-js.beer
+enter-code-cdn.info
 ethercdnns.beer
 framework-css-styles-js.beer
 framework-jsoncdn.beer
