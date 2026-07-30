@@ -12705,8 +12705,13 @@ cdn.svetmob.click
 # Reference: https://www.virustotal.com/gui/file/5b15dde0557c4c53c7d827c56992304514b4371cebd391741445415866e4b413/detection
 # Reference: https://www.virustotal.com/gui/file/e4e65d0fb1587e4361b60cb08cfea9cc9a979f7c10c59417a08980ff11d4b917/detection
 # BANNER_0_HASH-HOST=f80e49c1ca5331c09295eba7b534e7d4
+# BANNER_0_HASH-HOST=fcbb23be9e0207633370aad3c893847c
 # HEADER_HASH-HOST=e5e25deb2cd12fda24f9
 
+cdnjscookies.top
+faxnamegl.top
+gagichls.top
+gigacgetski.top
 govpoll.icu
 iconstaff.top
 jslibrariescdn.com
@@ -12716,11 +12721,14 @@ webanalytics-cdn.cyou
 webanalytics-cdn.icu
 webanalytics-cdn.sbs
 cd.iconstaff.top
+cdn.cdnjscookies.top
 cdn.iconstaff.top
 east.jslibrariescdn.com
-north.jslibrariescdn.com
 north-east.jslibrariescdn.com
+north.jslibrariescdn.com
 south.jslibrariescdn.com
+test.cdnjscookies.top
+test.gagichls.top
 west.jslibrariescdn.com
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2024-08-23-v10673/1914
