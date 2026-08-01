@@ -1538,6 +1538,13 @@ http://47.129.224.246
 
 92.5.123.121:8000
 
+# Reference: https://x.com/ElementalX2/status/2083580100067700935
+# Reference: https://www.virustotal.com/gui/file/0cb92cc7ac4232dea2d769dd6e132f5198c82f2ac6271a1dc6df12e7644ca9cc/detection
+
+91.197.98.188:3000
+91.197.98.188:5000
+91.197.98.188:5555
+
 # Generic
 
 /admin_123/auth.php
