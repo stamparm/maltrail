@@ -2751,6 +2751,12 @@ ZQuickSteal/1.0
 
 DEADBEEF
 
+# Reference: https://x.com/cr3ghost/status/2083175856613040411
+# Reference: https://0xsec.gitbook.io/0xsec/malware-analysis/sakdriver-reversing-a-kernel-driver-rootkit
+
+SakDriver
+SakDriver/1.0
+
 # Misc
 
 information_schema
