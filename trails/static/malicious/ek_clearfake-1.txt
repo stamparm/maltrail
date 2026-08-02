@@ -13212,6 +13212,10 @@ zainbeauty-sa.com
 zensostudio.com
 zfederal.com
 
+# Reference: https://x.com/skocherhan/status/2083712810819657854
+
+programmersecurity.com
+
 # Generic
 
 /fo0suc2ki2.rtf
