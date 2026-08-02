@@ -8719,6 +8719,13 @@ curtainbeatdisturbance.com
 ccccccaaaaa.okwinapp.vip
 thtttttttt.lidiasdeli.com
 
+# Reference: https://x.com/Yusufcancakiir/status/2083983566405595560
+
+43.157.204.73:8888
+43.157.204.73:8889
+ashveil.org
+c2.ashveil.org
+
 # Generic
 
 /.sliver-client/
@@ -8737,3 +8744,10 @@ thtttttttt.lidiasdeli.com
 /nc-ngrok-sliver-cron.sh
 /sliver-cron.sh
 /ssh-sliver-cron.sh
+/sliver-backup/
+/sliver_backup.sh
+/sliver_full_backup.sh
+/sliver_backup.log
+/sliver_cron.log
+/sliver_full_backup.log
+/sliver_full_cron.log
