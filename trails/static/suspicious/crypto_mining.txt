@@ -1588,3 +1588,9 @@ fr-tarirx.luckypool.io
 65.181.14.121:19335
 node.btx.tools
 x109.node.btx.tools
+
+# Reference: https://www.virustotal.com/gui/file/00c854e09c22bdc694d06705755c339fc91060024681a43dbbd89f997d363c80/detection
+
+88.156.30.96:20736
+88.156.30.96:2137
+pool.novoline.top
