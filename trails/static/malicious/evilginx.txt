@@ -848,6 +848,24 @@ secure-chasebullsjitshsit.dynamic-dns.net
 visaprepaidprocessing.ns01.us
 visaprepaidprocessing.otzo.com
 
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-07-14-Malicious-files-and-infrastructure-from-npm-PyPI-Supply-Chain-packages.txt
+# TITLE-HOST/IP=Evilginx | Login
+
+148.230.93.72:4000
+162.35.174.220:4000
+164.92.104.155:4000
+165.22.202.213:4000
+172.235.144.71:4000
+195.250.25.214:4000
+198.58.109.141:4000
+217.60.195.151:3000
+43.201.183.135:9000
+45.9.148.93:4000
+5.181.188.230:3000
+66.29.131.145:4000
+66.29.131.145:5000
+supportive.fit
+
 # Generic
 
 /evilginx-linux-amd64.tar.gz
