@@ -1594,3 +1594,4 @@ x109.node.btx.tools
 88.156.30.96:20736
 88.156.30.96:2137
 pool.novoline.top
+xmr.novoline.top
