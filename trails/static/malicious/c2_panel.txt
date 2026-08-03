@@ -1550,6 +1550,11 @@ http://47.129.224.246
 91.197.98.188:5000
 91.197.98.188:5555
 
+# Reference: https://app.validin.com/detail?find=Farm%20Panel%20%E2%80%94%20Login&type=raw&ref_id=90b48838cf8#tab=host_pairs
+
+172.236.33.134:7777
+67.219.107.181:7777
+
 # Generic
 
 /admin_123/auth.php
