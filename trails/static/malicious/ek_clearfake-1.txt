@@ -5075,6 +5075,7 @@ ytpremium.club
 
 # Reference: https://app.validin.com/detail?find=%2Fvalidate-nohuman.php%3Fredirect%3D%2F&type=raw#tab=host_pairs (# 2026-06-22)
 
+http://37.77.150.182
 http://91.215.85.239
 0xacidtrip.com
 1uthid-1fgnow-slte.help
@@ -5095,6 +5096,7 @@ admln.mgmnt-consoletab.com
 admln.mgmntconsole-page.com
 afreshcarez.com
 aiyouxi-home-zh.com
+almarodri.com
 amberwisp.com
 antaires.one
 antivirus-2026.com
@@ -5104,6 +5106,7 @@ assess-primary-device.com
 assurance-wireless.help
 au-workforce.com
 auser-insurance-panel.com
+authbridgehub.net
 authprotocol.net
 authservicepath.com
 ayaymandem.com
@@ -5149,6 +5152,7 @@ captchaviewresult.com
 centeronlineservices-check.sbs
 centralsupportt.com
 centre-onlineservices.sbs
+chinasconstructions.com
 choarecolivehelp.com
 ci-update.com
 cibc-digital-business-verify.com
@@ -5161,6 +5165,7 @@ client-3usnapfebtnow-sllte.help
 client82932.com
 coinbase.com.v3244.com
 colorize.club
+commercialonline-tcbk.com
 completsou.com
 credential-online.com
 crypto.com.v3238.com
@@ -5224,6 +5229,7 @@ gustes-extans.com
 hali-panel.com
 hali-secure.com
 hawnbookk.com
+hbuurt.online
 hightrick.info
 home-extrablick.com
 hotdoc-notification.com
@@ -5245,6 +5251,7 @@ insurance-fbi-portal.com
 insurance-ouserpanel.com
 inttuia.com
 intuierr.com
+investecbankinghelp.com
 investechelpdesk.com
 invictusroofing.us
 invoice-booklng.com
@@ -5274,6 +5281,7 @@ mgmntextranets.com
 mgmnts-pubhouse.com
 mgnf-houseceep.com
 micribotv.com
+mijnbelastingportaal.com
 mijnveiligeomgevlng.cfd
 minerailqboserrvin.com
 minutnpress.com
@@ -5307,6 +5315,7 @@ ouser-insurance-panel.com
 ovareild.com
 panel-fbisecure.com
 panel-stage.com
+parknationalbank-olbanking.com
 pattaya-business-supplement.com
 payment-resolution.me
 pcschutz2026.com
@@ -5348,6 +5357,7 @@ sec-login-lloyd.com
 secure-insurance2.com
 secureauthbridge.com
 securelogin-freedommobiie.com
+secureportal-chase.com
 securewingsauth.com
 serviecopmad.cfd
 shareonlrhoi-fil.sbs
@@ -5369,6 +5379,7 @@ standardbanksafelogon.com
 standardiomlivechat.com
 stop-ledger-attack.com
 suivi-gestion-prime.com
+superreviewauth.xyz
 supply.academy
 support-lf.com
 support-nabliveportal.com
@@ -5378,6 +5389,7 @@ swdkobul.lora-banks.com
 swiftcareqbo.com
 test.pickafoo.com
 thunder-joy-club.site
+tohrv.hrruea.de
 tooneandco.com
 treasuryconnect-myhuntington.com
 triustt.com
@@ -5389,6 +5401,7 @@ ukvirginmoneysupportdesk.com
 ultrafunplay.com
 updatereview.ltsmeoperations-id.com
 uprampdwn.com
+us-infobanking.com
 user-insurance-policy.com
 usquickrecom.com
 valdzios-vartai.info
@@ -5403,8 +5416,11 @@ whitelist-registration.com
 whitelist-registrations.com
 winneralam.com
 wolfxotdemo.com
+workingfrallauportl.sbs
+wrkingfrallaupotal.cfd
 y9bzw01l.pattaya-business-supplement.com
 yangelas.com
+ytunink.com
 zcbmsfhjlwryip.com
 
 # Reference: https://x.com/JAMESWT_WT/status/2059517877951103080
