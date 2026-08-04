@@ -47,6 +47,7 @@ darndcs-js.beer
 enter-code-cdn.info
 enter-press-cdn.info
 enter-press-code.info
+enter-pverif-code.info
 ethercdnns.beer
 felicitatgs.cc
 framework-css-styles-js.beer
