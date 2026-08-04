@@ -9942,6 +9942,11 @@ drvdb9rcebidk.cloudfront.net
 /shell/secured_stub.ps1
 /secured_stub.ps1
 
+# Reference: https://www.virustotal.com/gui/file/d90e686ddc1d288e29c1bceb68ffedccb3285f83be7eef4f50c45144f025a12d/detection
+
+/6f87fd0b14836e9d.js
+/6f87fd0b14836e9d.ps1
+
 # Generic
 
 /5c0ca79.php
