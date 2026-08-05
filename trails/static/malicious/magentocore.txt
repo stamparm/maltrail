@@ -18178,6 +18178,43 @@ wp-ping.com
 wpblack.com
 wpguarding.com
 
+# Reference: https://x.com/teamcymru_S2/status/2084624038060564632
+# Reference: https://www.virustotal.com/gui/ip-address/188.127.246.71/relations
+
+aptrinsicresearch.com
+trustarc.io
+consent.trustarc.io
+on.aptrinsicresearch.com
+
+# Reference: https://x.com/teamcymru_S2/status/2084624038060564632
+# Reference: https://www.virustotal.com/gui/ip-address/188.127.246.73/relations
+
+safelabdetect.com
+bo.safelabdetect.com
+cdn.safelabdetect.com
+
+# Reference: https://x.com/teamcymru_S2/status/2084624038060564632
+# Reference: https://www.virustotal.com/gui/ip-address/188.127.246.74/relations
+
+custstoredetect.com
+app.custstoredetect.com
+customer.custstoredetect.com
+jm.custstoredetect.com
+
+# Reference: https://x.com/teamcymru_S2/status/2084624038060564632
+# Reference: https://www.virustotal.com/gui/ip-address/188.127.246.75/relations
+
+netxopia.io
+app.netxopia.io
+vi.netxopia.io
+
+# Reference: https://x.com/teamcymru_S2/status/2084624038060564632
+# Reference: https://www.virustotal.com/gui/ip-address/188.127.246.76/relations
+
+getimgix.io
+js.getimgix.io
+v8.getimgix.io
+
 # Generic
 
 /assets/lfg.js
