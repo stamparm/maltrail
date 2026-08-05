@@ -17871,6 +17871,7 @@ ns2.cdnstats.top
 ashenfrontier.com
 ashenravenfort.top
 ashenshadowfort.top
+avonlogic.top
 blackthornkeep.top
 bleakhaven.com
 bloodboundcitadel.top
@@ -17891,6 +17892,7 @@ juiceporn.com
 mistwalkerforge.top
 newbestporn.com
 nightstalkerwatch.top
+norvatek.top
 shadowburninside.top
 shadowmatrixpls.top
 shadowrunevail.top
@@ -17952,7 +17954,10 @@ stylewowcafwe.com
 stylewowow.com
 voidhunterkeep.top
 voidravenbastion.com
+voidravencitadel.com
 voidravenfortress.com
+voidravenkeep.com
+voidravenwatch.com
 warmcoffeetime.top
 
 # Reference: https://threatfox.abuse.ch/browse/malware/js.magecart/ (# 2026-06-18)
