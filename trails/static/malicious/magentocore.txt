@@ -17865,16 +17865,34 @@ ns2.cdnstats.top
 # Reference: https://x.com/sdcyberresearch/status/2067186219037946342
 # Reference: https://x.com/sdcyberresearch/status/2067255031271752003
 # Reference: https://x.com/sdcyberresearch/status/2077372646585471271
+# Reference: https://x.com/sdcyberresearch/status/2084986785180921944
 # BANNER_0_HASH-HOST=cd7be40625f97601692ae0f33b5c0960
 
+ashenfrontier.com
+ashenravenfort.top
+ashenshadowfort.top
+blackthornkeep.top
+bleakhaven.com
+bloodboundcitadel.top
+bloodthornkeep.top
 brokenvelvetdream.top
 crimsonnightsky.top
+darkflamewatch.top
+duskreaverhold.top
+duskreaverwatch.com
 electricvoidfire.top
+electricvoidsig.top
 frozennebularhy.top
 frozenwildheart.top
 frozenwildherat.top
+ironwolfcrest.top
+mistwalkerforge.top
+nightstalkerwatch.top
 shadowburninside.top
 shadowmatrixpls.top
+shadowrunevail.top
+stormfangridge.top
+stormravenwatch.top
 styleanimal.com
 stylebackrooooms.com
 stylebonus.com
@@ -17924,6 +17942,10 @@ styleussles.com
 stylewify.com
 stylewowcafwe.com
 stylewowow.com
+voidhunterkeep.top
+voidravenbastion.com
+voidravenfortress.com
+warmcoffeetime.top
 
 # Reference: https://threatfox.abuse.ch/browse/malware/js.magecart/ (# 2026-06-18)
 
