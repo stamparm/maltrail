@@ -18308,6 +18308,23 @@ vividracing.net
 ws.creativeslab.net
 wss.creativeslab.net
 
+# Reference: https://x.com/teamcymru_S2/status/2084624038060564632
+# Reference: https://www.virustotal.com/gui/ip-address/151.243.113.73/relations
+
+ads-statistic.com
+hireaigide.com
+site-statistics.com
+
+# Reference: https://x.com/teamcymru_S2/status/2084624038060564632
+# Reference: https://www.virustotal.com/gui/ip-address/151.243.113.104/relations
+
+pixelroutine.me
+
+# Reference: https://www.virustotal.com/gui/ip-address/77.91.100.18/relations
+# BANNER_0_HASH-HOST=7fe3b0cbbd64d6f985c4d001a6065e91
+
+pixel-cdn.net
+
 # Generic
 
 /assets/lfg.js
