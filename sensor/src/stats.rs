@@ -167,6 +167,21 @@ pub fn render(registry: &Registry, uptime_seconds: f64) -> String {
         t.events_summarized
     );
 
+    // Evidence storage. The sensor never deletes an event log, so this is a real operating
+    // limit: when it reaches zero, appends fail and DETECTIONS ARE LOST while the sensor still
+    // looks alive. Alert on it with plenty of headroom — it is the cheapest possible warning of
+    // the most expensive kind of failure. 0/absent when local storage is off (LOG_SERVER only).
+    if let Some(dir) = registry.log_dir.as_deref() {
+        if let Some(free) = crate::output::free_bytes(dir) {
+            metric!(
+                "maltrail_log_dir_free_bytes",
+                "gauge",
+                "Bytes available to the sensor on the filesystem holding LOG_DIR. Reaching zero \
+                 means detections are being LOST; Maltrail never deletes event logs to reclaim it.",
+                free
+            );
+        }
+    }
     metric!(
         "maltrail_state_saturations_total",
         "counter",

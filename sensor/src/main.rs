@@ -446,7 +446,11 @@ fn run() -> i32 {
 
     install_signal_handlers();
 
-    let registry = Arc::new(Registry::new(worker_count));
+    let registry = Arc::new(
+        Registry::new(worker_count)
+            // Free space only means something when this sensor is the one writing the evidence.
+            .with_log_dir(if cfg.disable_local_log_storage { None } else { Some(cfg.log_dir.clone()) }),
+    );
     registry.trail_count.store(trail_count, Ordering::Relaxed);
     registry.trail_generation.store(store.generation(), Ordering::Relaxed);
 

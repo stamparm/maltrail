@@ -612,6 +612,28 @@ struct ErrorLog {
 static ERROR_LOG: OnceLock<Mutex<ErrorLog>> = OnceLock::new();
 
 /// `core/log.py:get_error_log_handle()` — must run before workers start.
+/// Free bytes available to an unprivileged process on the filesystem holding `path`.
+///
+/// Maltrail is an IDS: its event logs are evidence, and the sensor deliberately never deletes
+/// them. That makes a full disk a real operating condition rather than a hypothetical, and a
+/// full disk is the worst kind of sensor failure — appends start failing, detections are lost,
+/// and the only outward sign is that alerts stopped, which looks exactly like a quiet network.
+///
+/// So the free space is measured and exported, and the operator is expected to alert on it
+/// LONG before it matters. `f_bavail`, not `f_bfree`: the root-reserved blocks are not available
+/// to the `maltrail` user the shipped unit runs as.
+pub fn free_bytes(path: &Path) -> Option<u64> {
+    let c_path = std::ffi::CString::new(path.as_os_str().as_encoded_bytes()).ok()?;
+    // SAFETY: `c_path` is a valid NUL-terminated string and `st` is a correctly sized,
+    // zero-initialised statvfs that the call fills in.
+    let mut st: libc::statvfs = unsafe { std::mem::zeroed() };
+    if unsafe { libc::statvfs(c_path.as_ptr(), &mut st) } != 0 {
+        return None;
+    }
+    // f_frsize is the fragment size the block counts are expressed in.
+    (st.f_frsize as u64).checked_mul(st.f_bavail as u64)
+}
+
 pub fn init_error_log(log_dir: &Path, show_debug: bool) {
     let path = log_dir.join("error.log");
     if !path.exists() {
