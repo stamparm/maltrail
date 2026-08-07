@@ -1246,7 +1246,7 @@
     Object.keys(state.wl.trail).forEach(function (tr) { rows += '<div class="wlrow"><span class="wltag">trail</span><span class="wlval">' + esc(tr) + '</span><button class="wlrm" data-k="trail" data-v="' + esc(tr) + '">remove</button></div>'; });
     if (!rows) rows = '<div class="wlempty">No whitelist rules yet. Right-click a threat to add one.</div>';
     o.innerHTML = '<div class="modal"><div class="modal-h">Whitelist rules</div>' +
-      '<div class="localwarn" role="note">⚠ <b>This browser only.</b> These rules just hide matching threats in <i>your</i> view — they are <b>not</b> sent to sensors and the sensor keeps detecting &amp; logging them. To suppress at the source, add them to the sensor whitelist (<code>misc/whitelist.txt</code> or <code>USER_WHITELIST</code>) instead.</div>' +
+      '<div class="localwarn" role="note">⚠ <b>This browser only.</b> These rules just hide matching threats in <i>your</i> view — they are <b>not</b> sent to sensors and the sensor keeps detecting &amp; logging them. To suppress at the source, add them to the sensor whitelist (<code>data/whitelist.txt</code> or <code>USER_WHITELIST</code>) instead.</div>' +
       '<div class="wllist">' + rows + '</div>' +
       '<div class="modal-actions"><button class="btn-ghost" id="wl_close">Close</button><button class="btn-primary" id="wl_clear">Clear all</button></div></div>';
     document.body.appendChild(o);

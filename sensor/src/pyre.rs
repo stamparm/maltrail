@@ -2,7 +2,7 @@
 //!
 //! Two jobs:
 //!  1. `escape()` reproduces `re.escape()` (CPython >= 3.7 semantics) so that the
-//!     `misc/ua.txt` loader builds the *same* `SUSPICIOUS_UA_REGEX` alternation as
+//!     `data/ua.txt` loader builds the *same* `SUSPICIOUS_UA_REGEX` alternation as
 //!     `core/settings.py:read_ua()`.
 //!  2. `translate()` rewrites the handful of Python-only constructs that appear in
 //!     Maltrail's patterns into `regex`-crate syntax. Only `\Z` (Python: end of
@@ -155,7 +155,7 @@ pub fn compile(pattern: &str) -> regex::Regex {
 
 /// In Python, escaping any ASCII punctuation yields that literal character (only unknown
 /// *alphanumeric* escapes are errors). The `regex` crate is stricter and rejects a few of
-/// them (`\>` for instance, which appears in `misc/ua.txt`). Rewriting every punctuation
+/// them (`\>` for instance, which appears in `data/ua.txt`). Rewriting every punctuation
 /// escape as an explicit `\x{..}` codepoint is always literal and always accepted.
 fn hex_escape_punctuation(pattern: &str) -> String {
     let b = pattern.as_bytes();
@@ -238,7 +238,7 @@ fn has_late_global_flags(pattern: &str) -> bool {
 
 fn builder(pattern: &str) -> regex::RegexBuilder {
     let mut b = regex::RegexBuilder::new(pattern);
-    // The user-agent alternation from misc/ua.txt has ~1300 branches and exceeds the
+    // The user-agent alternation from data/ua.txt has ~1300 branches and exceeds the
     // crate's default 10 MB program-size limit.
     b.size_limit(256 << 20).dfa_size_limit(64 << 20);
     b
@@ -340,7 +340,7 @@ mod tests {
 
     #[test]
     fn python_rejects_late_global_flags() {
-        // the one misc/ua.txt line CPython refuses to compile
+        // the one data/ua.txt line CPython refuses to compile
         assert!(has_late_global_flags(r"(?i)a|(?i)b"));
         assert!(build(r"(?i)a|(?i)b").is_err());
         // a leading flag group is fine, and scoped flags are fine anywhere
@@ -353,7 +353,7 @@ mod tests {
 
     #[test]
     fn punctuation_escapes_the_crate_dislikes_still_compile() {
-        // from misc/ua.txt: Python treats \> as a literal '>'
+        // from data/ua.txt: Python treats \> as a literal '>'
         let re = build(r"<script src=[^\>]*>").unwrap();
         assert!(re.is_match("<script src=x>"));
     }

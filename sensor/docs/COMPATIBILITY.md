@@ -70,7 +70,7 @@ Every detection `sensor.py` can produce is ported, with the same trail text:
 | `host/` trails | |
 | HTTP heuristics | sql injection, xml/php/ldap/xss/xxe/ssti injection, data leakage (with the `is_local` guard), config-file access, remote code execution, directory traversal, web scan, dns changer, direct-download extensions, suspicious path regexes, missing Host, proxy probe, IoT-malware direct-IP download |
 | HTTP response heuristics | sinkhole banner, seized-domain `<title>` (only with a closing tag), suspicious content types |
-| User-agent heuristic | `misc/ua.txt` alternation, `WHITELIST_UA_REGEX`, the exact bracketing/escaping of the emitted trail |
+| User-agent heuristic | `data/ua.txt` alternation, `WHITELIST_UA_REGEX`, the exact bracketing/escaping of the emitted trail |
 | Forwarded-for | `CF-Connecting-IP` / `True-Client-IP` / `X-Forwarded-For` appended to `src_ip` |
 | Port scanning | SYN plus the NULL/FIN/XMAS stealth flags, sliding window, once per (scanner, target) per window, whitelist-gated, ACK deliberately not counted |
 | UDP scanning | |

@@ -15,16 +15,16 @@ pub use crate::settings_gen::*;
 
 use crate::pyre;
 
-/// `core/settings.py:ROOT_DIR` equivalent: the Maltrail checkout that owns `misc/`.
+/// `core/settings.py:ROOT_DIR` equivalent: the Maltrail checkout that owns `data/`.
 pub fn resolve_root(config_file: &Path) -> PathBuf {
     if let Ok(env) = std::env::var("MALTRAIL_ROOT") {
         if !env.is_empty() {
             return PathBuf::from(env);
         }
     }
-    // maltrail.conf lives at the repository root next to misc/, html/, core/.
+    // maltrail.conf lives at the repository root next to data/, html/, core/.
     if let Some(dir) = config_file.parent() {
-        if dir.join("misc").is_dir() {
+        if dir.join("data").is_dir() {
             return dir.to_path_buf();
         }
     }
@@ -32,7 +32,7 @@ pub fn resolve_root(config_file: &Path) -> PathBuf {
     if let Ok(exe) = std::env::current_exe() {
         let mut cur = exe.parent().map(|p| p.to_path_buf());
         while let Some(dir) = cur {
-            if dir.join("misc").is_dir() && dir.join("maltrail.conf").is_file() {
+            if dir.join("data").is_dir() && dir.join("maltrail.conf").is_file() {
                 return dir;
             }
             cur = dir.parent().map(|p| p.to_path_buf());
@@ -50,11 +50,11 @@ pub fn iter_file_lines(path: &Path) -> Vec<String> {
     text.lines().map(|l| l.trim().to_string()).filter(|l| !l.is_empty() && !l.starts_with('#')).collect()
 }
 
-/// `core/settings.py:read_ua()` — rebuild SUSPICIOUS_UA_REGEX from `misc/ua.txt` so an
+/// `core/settings.py:read_ua()` — rebuild SUSPICIOUS_UA_REGEX from `data/ua.txt` so an
 /// operator editing that file affects the Rust sensor exactly as it affects the Python
 /// one. Falls back to the generated snapshot when the file is unavailable.
 pub fn build_suspicious_ua_regex(root: &Path) -> String {
-    let lines = iter_file_lines(&root.join("misc").join("ua.txt"));
+    let lines = iter_file_lines(&root.join("data").join("ua.txt"));
     if lines.is_empty() {
         return SUSPICIOUS_UA_REGEX.to_string();
     }
@@ -284,7 +284,7 @@ mod tests {
     #[test]
     fn all_internal_regexes_compile() {
         let s = Statics::build(root());
-        assert!(s.suspicious_ua.is_some(), "misc/ua.txt must compile as one alternation");
+        assert!(s.suspicious_ua.is_some(), "data/ua.txt must compile as one alternation");
         assert_eq!(s.suspicious_http_request.len(), SUSPICIOUS_HTTP_REQUEST_REGEXES.len());
         assert!(!s.suspicious_http_path.is_empty());
     }
@@ -292,7 +292,7 @@ mod tests {
     #[test]
     fn ua_regex_matches_python_snapshot() {
         // Proves read_ua()'s decision procedure (verbatim vs re.escape) reaches the same
-        // result in Rust as in CPython for every line of misc/ua.txt.
+        // result in Rust as in CPython for every line of data/ua.txt.
         let built = build_suspicious_ua_regex(&root());
         assert_eq!(built, SUSPICIOUS_UA_REGEX);
     }

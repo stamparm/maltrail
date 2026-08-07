@@ -15,6 +15,10 @@ sensor/out.txt
 sensor/*.callgrind
 callgrind.out.*
 
-# Local tooling for the CSS/JS build in misc/update_css_js (not part of the project source)
+# Local tooling for the CSS/JS build (not part of the project source)
 node_modules/
 package-lock.json
+
+# Local scratch space: source data dumps, one-off scripts, the CSS/JS build.
+# Nothing here is part of the project.
+misc/
