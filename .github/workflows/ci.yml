@@ -131,6 +131,14 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: bash tests/run.sh python3
 
+      # Python held to a comparable bar to the sensor's clippy -D warnings. Bug-catching rules
+      # only, and it passes clean — see ruff.toml for why the cosmetic ones are off.
+      - name: Lint
+        if: matrix.python == '3.12'
+        run: |
+          pip install ruff
+          ruff check .
+
   # The sensor and the server report their version independently. They have already drifted
   # once. This keeps them equal on every commit; equality with the git TAG is a release-time
   # check, not a development-time one, because master legitimately runs ahead of the last tag.
@@ -156,5 +164,8 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - uses: taiki-e/install-action@v2
         with:
-          tool: cargo-audit
+          tool: cargo-audit,cargo-deny
       - run: cargo audit --file sensor/Cargo.lock
+      # audit answers "is anything known-vulnerable today". deny answers the questions that
+      # decide whether that stays true: licence compatibility, source registry, tree drift.
+      - run: cargo deny --manifest-path sensor/Cargo.toml check

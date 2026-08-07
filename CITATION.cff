@@ -1,9 +1,11 @@
 # YAML 1.2
 ---
-cff-version: "1.1.0"
+cff-version: 1.2.0
 message: "If you use this software, please cite it using these metadata."
 doi: 10.23721/100/1503924
 title: "Maltrail - Malicious traffic detection system"
+version: "3.0"
+type: software
 authors: 
   -
     family-names: Stampar

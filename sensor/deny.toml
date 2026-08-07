@@ -1,0 +1,36 @@
+# cargo-deny: the checks `cargo audit` does not do.
+#
+# `cargo audit` answers "is a dependency known-vulnerable today". This answers the questions that
+# decide whether that stays true: is the dependency tree drifting, is a licence incompatible with
+# MIT redistribution, is a crate coming from somewhere other than crates.io.
+#
+#     cargo deny --manifest-path sensor/Cargo.toml check
+
+[advisories]
+# Advisories are gated by `cargo audit` in ci.yml; keeping them here too means one place to add
+# a reviewed exception if a transitive dependency ever needs one.
+yanked = "deny"
+
+[licenses]
+# Maltrail is MIT. Anything the sensor links must be redistributable under those terms. A crate
+# whose licence is not on this list fails the check rather than being waved through.
+allow = [
+    "MIT",
+    "Apache-2.0",
+    "Apache-2.0 WITH LLVM-exception",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC",
+]
+confidence-threshold = 0.9
+
+[bans]
+# A second copy of a crate is not automatically wrong, but it is worth seeing: it means two
+# dependencies disagree about a version, which is how a tree quietly doubles in size.
+multiple-versions = "warn"
+wildcards = "deny"
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
+allow-registry = [ "https://github.com/rust-lang/crates.io-index" ]
