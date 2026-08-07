@@ -12,14 +12,34 @@ fn repo_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).parent().unwrap().to_path_buf()
 }
 
+/// A private SNAPSHOT of the operator's `~/.maltrail/trails.csv`.
+///
+/// These tests read the file more than once — build the store from it, then walk its rows to
+/// check each is findable. A running sensor refreshes that same file and installs the new one
+/// with `rename()`, so the two reads can legitimately land on different generations, and the
+/// test then reports rows "missing" that are simply from the newer file. Observed exactly that:
+/// a green suite, a red one moments later, and nothing wrong with the loader.
+///
+/// Copy once, use the copy for every read. The copy is per-process and cleaned up on drop.
 fn real_trails_file() -> Option<PathBuf> {
-    let home = std::env::var("HOME").ok()?;
-    let path = PathBuf::from(home).join(".maltrail").join("trails.csv");
-    if path.is_file() {
-        Some(path)
-    } else {
-        None
-    }
+    use std::sync::OnceLock;
+    static SNAPSHOT: OnceLock<Option<PathBuf>> = OnceLock::new();
+    SNAPSHOT
+        .get_or_init(|| {
+            let home = std::env::var("HOME").ok()?;
+            let live = PathBuf::from(home).join(".maltrail").join("trails.csv");
+            if !live.is_file() {
+                return None;
+            }
+            let dir = std::env::temp_dir().join(format!("mt-trails-snapshot-{}", std::process::id()));
+            std::fs::create_dir_all(&dir).ok()?;
+            let snapshot = dir.join("trails.csv");
+            // A rename under us during the copy still yields ONE self-consistent generation:
+            // the open file handle keeps reading the inode it started with.
+            std::fs::copy(&live, &snapshot).ok()?;
+            Some(snapshot)
+        })
+        .clone()
 }
 
 fn temp_csv(name: &str, content: &str) -> PathBuf {
