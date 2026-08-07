@@ -136,11 +136,26 @@ pub fn run(cfg: &Config) -> i32 {
 
     // --- trails ----------------------------------------------------------------------
     if !cfg.trails_file.exists() {
-        r.line(
-            Level::Fail,
-            "trails",
-            &format!("'{}' does not exist — the sensor would detect NOTHING", cfg.trails_file.display()),
-        );
+        // A missing trails file is only fatal if nothing will ever create it. On a fresh install
+        // the sensor builds it at startup, and failing the preflight here would deadlock the
+        // shipped systemd unit: ExecStartPre=-T would reject the very state that ExecStart fixes.
+        if cfg.disable_trail_updates {
+            r.line(
+                Level::Fail,
+                "trails",
+                &format!(
+                    "'{}' does not exist and 'DISABLE_TRAIL_UPDATES' is set, so nothing will \
+                     create it — the sensor would detect NOTHING",
+                    cfg.trails_file.display()
+                ),
+            );
+        } else {
+            r.line(
+                Level::Warn,
+                "trails",
+                &format!("'{}' does not exist yet; it is built on first start", cfg.trails_file.display()),
+            );
+        }
     } else {
         let options = LoadOptions { repair_truncated_trails: cfg.repair_truncated_trails };
         match crate::trails::load_with(&cfg.trails_file, &whitelist, options) {
