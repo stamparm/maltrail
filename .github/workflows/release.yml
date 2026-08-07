@@ -1,0 +1,153 @@
+# Tag -> release. The gate runs FIRST; nothing is published unless it passes.
+#
+# The previous workflow built and pushed :latest on every tag without running a single test, so a
+# broken commit could become the image everyone pulls. Ordering here is deliberate: verify, then
+# build artifacts, then publish. A release that cannot be tested is not a release.
+#
+# It also ships prebuilt binaries. Requiring a Rust toolchain on every sensor host is the single
+# biggest adoption barrier for a tool whose whole point is being easy to deploy widely.
+
+name: Release
+
+on:
+  push:
+    tags: [ '*' ]
+
+permissions:
+  contents: write        # create the release and upload artifacts
+  packages: write        # push to ghcr.io
+  id-token: write        # provenance attestation
+  attestations: write
+
+jobs:
+
+  # Nothing below runs if this fails.
+  gate:
+    name: full gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install libpcap
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libpcap-dev
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r old/requirements.txt
+      - run: bash sensor/tools/check.sh
+      - run: bash tests/run.sh python3
+      # The one check that only matters at release time: the tree's version must equal the tag.
+      - name: Version matches the tag
+        run: python3 sensor/tools/check_version.py --tag "${GITHUB_REF_NAME}"
+
+  binaries:
+    name: binary (${{ matrix.target }})
+    needs: gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: x86_64-unknown-linux-gnu
+            packages: libpcap-dev
+          - target: aarch64-unknown-linux-gnu
+            packages: libpcap-dev:arm64 gcc-aarch64-linux-gnu
+    steps:
+      - uses: actions/checkout@v4
+
+      # Not a static build: the sensor links libpcap, and a genuinely static one means musl plus
+      # a static libpcap, which is a separate packaging project. These are ordinary glibc builds
+      # against the distribution's libpcap — install libpcap0.8 and they run.
+      - name: Install cross toolchain
+        run: |
+          if [ "${{ matrix.target }}" = "aarch64-unknown-linux-gnu" ]; then
+            sudo dpkg --add-architecture arm64
+            sudo sed -i 's|^deb |deb [arch=amd64] |' /etc/apt/sources.list.d/*.list 2>/dev/null || true
+            sudo tee /etc/apt/sources.list.d/arm64.list >/dev/null <<'EOF'
+          deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports noble main universe
+          deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports noble-updates main universe
+          EOF
+          fi
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ${{ matrix.packages }}
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - name: Build
+        env:
+          CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER: aarch64-linux-gnu-gcc
+          PKG_CONFIG_ALLOW_CROSS: '1'
+        run: cargo build --release --locked --manifest-path sensor/Cargo.toml --target ${{ matrix.target }}
+
+      - name: Package with a checksum
+        run: |
+          name="maltrail-sensor-${GITHUB_REF_NAME}-${{ matrix.target }}"
+          mkdir -p "dist/$name"
+          cp "sensor/target/${{ matrix.target }}/release/maltrail-sensor" "dist/$name/"
+          cp LICENSE README.md "dist/$name/"
+          tar -C dist -czf "dist/$name.tar.gz" "$name"
+          ( cd dist && sha256sum "$name.tar.gz" > "$name.tar.gz.sha256" )
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.target }}
+          path: dist/*.tar.gz*
+
+  publish:
+    name: publish release and image
+    needs: [ gate, binaries ]
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+
+      - name: GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true
+
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # Multi-arch: sensors run on appliances and ARM boxes as often as on x86 servers.
+      - name: Build and push
+        id: push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/Dockerfile
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/maltrail:${{ github.ref_name }}
+            ghcr.io/${{ github.repository_owner }}/maltrail:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      # Lets anyone verify the image was built from this repository at this tag, by this
+      # workflow, rather than pushed by hand:
+      #   gh attestation verify oci://ghcr.io/<owner>/maltrail:<tag> --repo <owner>/maltrail
+      - name: Attest provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-name: ghcr.io/${{ github.repository_owner }}/maltrail
+          subject-digest: ${{ steps.push.outputs.digest }}
+          push-to-registry: true
