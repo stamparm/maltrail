@@ -27,13 +27,6 @@ import tempfile
 
 from array import array
 
-try:
-    _TEXT_TYPE = unicode            # Python 2
-except NameError:
-    _TEXT_TYPE = str                # Python 3
-
-_PY2 = sys.version_info[0] == 2
-
 _MAGIC = b"MTRAILB3"               # 8 bytes; bump the trailing digit on any format change
 _HEADER = struct.Struct("<8sQQQ") # magic, cap (slot count, power of two), n (occupied entries), blob_len
 _HEADER_SIZE = _HEADER.size
@@ -42,15 +35,13 @@ _EMPTY = 0xFFFFFFFF                # value-slot sentinel for an empty bucket (pa
 assert array("I").itemsize == 4   # the binary format hardcodes 4-byte slots (true on every platform Maltrail runs on)
 
 def _native_str(value):
-    # json.loads yields unicode on Python 2; the rest of the sensor handles trail info/reference as native str there
-    if _PY2 and isinstance(value, _TEXT_TYPE):
-        return value.encode("utf-8")
+    # `json.loads` already yields str on Python 3.
     return value
 
 def stable_hash(key):
     """
     Cross-process-stable 64-bit hash of a trail key (md5 prefix). The key is normalised to UTF-8 bytes first so the
-    str/unicode/bytes forms of the same trail hash identically across Python 2/3 (e.g. IDN domains).
+    str and bytes forms of the same trail hash identically (e.g. IDN domains).
 
     >>> stable_hash("1.2.3.4") == stable_hash(b"1.2.3.4")
     True
@@ -60,7 +51,7 @@ def stable_hash(key):
 
     if isinstance(key, bytes):
         data = key
-    elif isinstance(key, _TEXT_TYPE):
+    elif isinstance(key, str):
         data = key.encode("utf-8", "replace")
     else:
         data = str(key).encode("utf-8", "replace")
@@ -155,13 +146,9 @@ def _u32_view(buf, offset, n):
     """
     Returns a zero-copy, read-only view of a contiguous little-endian uint32 region of an mmap, indexable like a
     list so bisect() and direct indexing work over it WITHOUT any per-element wrapper overhead (the hot path). On
-    Python 3 a casted memoryview is returned; on Python 2 (no memoryview.cast) a ctypes array overlaid on the
-    buffer. Either way nothing is copied out of the shared mapping.
+    A casted memoryview is returned; nothing is copied out of the shared mapping.
     """
 
-    if _PY2:
-        import ctypes
-        return (ctypes.c_uint32 * n).from_buffer(buf, offset)   # buf must be writable (ACCESS_COPY); pages stay shared (COW) while only read
     return memoryview(buf)[offset:offset + 4 * n].cast("I")
 
 def open_bin(path):
@@ -173,10 +160,7 @@ def open_bin(path):
 
     f = open(path, "rb")
     try:
-        # Python 2 needs a writable (ACCESS_COPY / MAP_PRIVATE) mapping for the ctypes overlay; the pages remain
-        # shared with the page cache via copy-on-write as long as nothing writes to them (we never do).
-        access = mmap.ACCESS_COPY if _PY2 else mmap.ACCESS_READ
-        mm = mmap.mmap(f.fileno(), 0, access=access)
+        mm = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)
     finally:
         f.close()
 

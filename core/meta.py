@@ -44,10 +44,7 @@ _SCOPE_NAME = {0: "", SCOPE_LOCAL: "local", SCOPE_REMOTE: "remote"}
 _JUNK_IPS = frozenset(("0.0.0.0", "255.255.255.255", "::"))
 _V4_RE = re.compile(r"\A\d{1,3}(?:\.\d{1,3}){3}\Z")
 
-try:
-    _TEXT_TYPES = (str, unicode)   # py2: TEXT comes back as unicode/str; py3: str
-except NameError:
-    _TEXT_TYPES = (str,)
+_TEXT_TYPES = (str,)
 
 _WITHOUT_ROWID = " WITHOUT ROWID" if sqlite3.sqlite_version_info >= (3, 8, 2) else ""
 
@@ -145,10 +142,10 @@ def _pack(flags, value):
 
 
 def _unpack(key):
-    """storage key -> printable observable. TEXT == domain; BLOB (bytes/bytearray/memoryview/py2 buffer) == IP."""
+    """storage key -> printable observable. TEXT == domain; BLOB (bytes/bytearray/memoryview) == IP."""
     if isinstance(key, _TEXT_TYPES):
         return key
-    b = bytes(key)                 # memoryview (py3) / buffer (py2) / bytearray -> bytes
+    b = bytes(key)                 # memoryview / bytearray -> bytes
     try:
         if len(b) == 4:
             return socket.inet_ntoa(b)

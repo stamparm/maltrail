@@ -24,7 +24,7 @@ import cProfile
 import inspect
 import math
 import mmap
-import optparse
+import argparse
 import os
 import re
 import socket
@@ -1738,20 +1738,21 @@ def main():
     if "--version" in sys.argv:
         raise SystemExit
 
-    parser = optparse.OptionParser(version=VERSION)
-    parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
-    parser.add_option("-r", dest="pcap_file", help="pcap file for offline analysis")
-    parser.add_option("-q", "--quiet", dest="quiet", action="store_true", help="turn off regular output")
-    parser.add_option("--console", dest="console", action="store_true", help="print events to console")
-    parser.add_option("--offline", dest="offline", action="store_true", help="disable (online) trail updates")
-    parser.add_option("--debug", dest="debug", action="store_true", help=optparse.SUPPRESS_HELP)
-    parser.add_option("--profile", dest="profile", help=optparse.SUPPRESS_HELP)
-    parser.add_option("--smoke-test", dest="smoke_test", action="store_true", help=optparse.SUPPRESS_HELP)
-    parser.add_option("--detect-test", dest="detect_test", action="store_true", help=optparse.SUPPRESS_HELP)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--version", action="version", version=VERSION)
+    parser.add_argument("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
+    parser.add_argument("-r", dest="pcap_file", help="pcap file for offline analysis")
+    parser.add_argument("-q", "--quiet", dest="quiet", action="store_true", help="turn off regular output")
+    parser.add_argument("--console", dest="console", action="store_true", help="print events to console")
+    parser.add_argument("--offline", dest="offline", action="store_true", help="disable (online) trail updates")
+    parser.add_argument("--debug", dest="debug", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--profile", dest="profile", help=argparse.SUPPRESS)
+    parser.add_argument("--smoke-test", dest="smoke_test", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--detect-test", dest="detect_test", action="store_true", help=argparse.SUPPRESS)
 
     patch_parser(parser)
 
-    options, _ = parser.parse_args()
+    options = parser.parse_args()
 
     if options.smoke_test:
         from core.testing import smoke_test
@@ -1819,5 +1820,16 @@ if __name__ == "__main__":
     finally:
         if not any(_ in sys.argv for _ in ("--version", "-h", "--help")):
             print("\n[*] ending @ %s" % time.strftime("%X /%Y-%m-%d/"))
+
+        # os._exit() skips interpreter cleanup, which includes flushing stdout/stderr. When
+        # stdout is not a terminal it is block-buffered, so without this every line printed
+        # during the run is silently discarded (`server.py --version | cat` printed nothing).
+        # _exit() itself is deliberate: a worker parked in a blocking read can hold the stdio
+        # lock, and a normal exit() would block forever trying to flush it.
+        try:
+            sys.stdout.flush()
+            sys.stderr.flush()
+        except Exception:
+            pass
 
         os._exit(code)
