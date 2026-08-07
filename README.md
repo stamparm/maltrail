@@ -271,9 +271,10 @@ it is considered bad, and `reference` is where the trail came from: `(static)`, 
   narrowed the heuristics. Exact trail matching is unaffected by that, by design.
 * **`systemctl reload`** (`SIGHUP`) reloads trails without a restart. Trails refreshed by anything
   else are picked up within a second, with an atomic swap — no restart, no dropped packets.
-* **One known gap** versus the old sensor: the condensed observable store (`USE_CONDENSED_STORAGE`,
-  `meta.sqlite`) is not written, so the server's `/meta` novelty view stays empty. It is not part of
-  detection. Every deliberate difference is listed in
+* **The condensed observable store** (`USE_CONDENSED_STORAGE`, `meta.sqlite`) that feeds the
+  server's `/meta` novelty and retro-hunt views is written in the same format the old sensor
+  produces, and the two are compared row for row by the parity harness. Every deliberate
+  difference between the sensors is listed in
   [`sensor/docs/COMPATIBILITY.md`](sensor/docs/COMPATIBILITY.md).
 
 ### Event retention

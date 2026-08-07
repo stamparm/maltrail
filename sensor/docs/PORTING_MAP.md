@@ -73,7 +73,7 @@ the Rust module that reproduces it.
 | Logstash JSON (`OrderedDict` field order) | `src/output.rs::logstash_line()` |
 | `core/ignore.py:ignore_event()` (rules + `IGNORE_EVENTS_REGEX` vs `repr(event_tuple)`) | `src/ignore.rs` (includes a Python-`repr`-compatible tuple renderer) |
 | `core/log.py:log_error()` (`single=` dedup) | `src/output.rs::log_error()` |
-| `core/meta.py` condensed observable store (`USE_CONDENSED_STORAGE`) | *not ported* (see COMPATIBILITY.md) |
+| `core/meta.py` condensed observable store (`USE_CONDENSED_STORAGE`) | `src/meta.rs` |
 
 ## Tests
 

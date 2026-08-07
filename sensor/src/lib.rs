@@ -12,6 +12,7 @@ pub mod fasthash;
 pub mod heuristics;
 pub mod ignore;
 pub mod lru;
+pub mod meta;
 pub mod metrics;
 pub mod output;
 pub mod packet;

@@ -14,6 +14,7 @@ use crate::heuristics::dns_exhaustion::DnsExhaustion;
 use crate::heuristics::nxdomain::NxCounters;
 use crate::heuristics::scan::ScanState;
 use crate::lru::LruMap;
+use crate::meta::MetaStore;
 use crate::metrics::WorkerMetrics;
 use crate::output::EventSink;
 use crate::packet::dlt::DltLearner;
@@ -73,6 +74,11 @@ pub struct WorkerState {
     pub scan: ScanState,
     pub dns_exhaustion: DnsExhaustion,
     pub nxdomain: NxCounters,
+
+    /// `LOG_DIR/meta.sqlite` — the condensed observable store (`core/meta.py`). Per worker and
+    /// unsynchronised, like the Python sensor's per-process aggregate; drained on the worker's
+    /// housekeeping tick. Disabled unless `USE_CONDENSED_STORAGE` is on.
+    pub meta: MetaStore,
 }
 
 impl WorkerState {
@@ -87,6 +93,7 @@ impl WorkerState {
         // The domain caches are the ones that thrash (a DGA flood queries a fresh name every
         // packet); the rest keep Python's size because they are keyed by far less diverse values.
         let domain_cap = cfg.domain_cache_entries;
+        let meta = MetaStore::for_config(&cfg);
         WorkerState {
             id,
             cfg,
@@ -115,6 +122,7 @@ impl WorkerState {
             scan: ScanState::default(),
             dns_exhaustion: DnsExhaustion::default(),
             nxdomain: NxCounters::default(),
+            meta,
         }
     }
 
