@@ -141,6 +141,22 @@ pub fn run(cfg: &Config) -> i32 {
                 "workers",
                 &format!("{workers} (PACKET_FANOUT required; verify with tools/fanout_check.py as root)"),
             );
+            // Fanout hashes by flow; the scan heuristics count by source, and a scan is many
+            // flows. Measured on the corpus (tests/multi_worker_parity.rs): 91% of heuristic
+            // alerts survive at 2 workers, 86% at 4, 65% at 8. Trail detection is per packet and
+            // stateless, so it is identical at any worker count — the same test asserts it.
+            let scan_heuristics =
+                ["port_scanning", "udp_scanning", "infection", "web_scanning"].iter().any(|h| cfg.heuristic_enabled(h));
+            if cfg.use_heuristics && scan_heuristics {
+                r.line(
+                    Level::Warn,
+                    "scan fidelity",
+                    &format!(
+                        "{workers} workers dilute per-source scan evidence (~65% of alerts survive at 8); \
+                         'CAPTURE_WORKERS 1' for full fidelity — trail detection is unaffected"
+                    ),
+                );
+            }
         } else {
             r.line(Level::Warn, "workers", "1 — no fanout; one core will carry the whole link");
         }
