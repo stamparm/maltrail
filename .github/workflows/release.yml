@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Install libpcap
         run: |
           sudo apt-get update
@@ -35,7 +35,7 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt, clippy
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
       - run: pip install -r old/requirements.txt
@@ -59,7 +59,7 @@ jobs:
           - target: aarch64-unknown-linux-gnu
             packages: libpcap-dev:arm64 gcc-aarch64-linux-gnu
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # Not a static build: the sensor links libpcap, and a genuinely static one means musl plus
       # a static libpcap, which is a separate packaging project. These are ordinary glibc builds
@@ -96,7 +96,7 @@ jobs:
           tar -C dist -czf "dist/$name.tar.gz" "$name"
           ( cd dist && sha256sum "$name.tar.gz" > "$name.tar.gz.sha256" )
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.target }}
           path: dist/*.tar.gz*
@@ -107,21 +107,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v8
         with:
           path: dist
           merge-multiple: true
 
       - name: GitHub release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: dist/*
           generate_release_notes: true
 
-      - uses: docker/setup-qemu-action@v3
-      - uses: docker/setup-buildx-action@v3
-      - uses: docker/login-action@v3
+      - uses: docker/setup-qemu-action@v4
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/login-action@v4
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
@@ -130,7 +130,7 @@ jobs:
       # Multi-arch: sensors run on appliances and ARM boxes as often as on x86 servers.
       - name: Build and push
         id: push
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: docker/Dockerfile
@@ -146,7 +146,7 @@ jobs:
       # workflow, rather than pushed by hand:
       #   gh attestation verify oci://ghcr.io/<owner>/maltrail:<tag> --repo <owner>/maltrail
       - name: Attest provenance
-        uses: actions/attest-build-provenance@v2
+        uses: actions/attest-build-provenance@v3
         with:
           subject-name: ghcr.io/${{ github.repository_owner }}/maltrail
           subject-digest: ${{ steps.push.outputs.digest }}
