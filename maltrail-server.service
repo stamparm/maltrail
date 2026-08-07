@@ -7,10 +7,62 @@ Before=maltrail-sensor.service
 After=network-online.target
 
 [Service]
-User=root
-WorkingDirectory=/opt/maltrail/
+Type=exec
+
+# The server does NOT need root: HTTP_PORT (8338) and the sensor intake port (8337/udp) are
+# both unprivileged. It runs as the same user as the sensor so both can reach LOG_DIR.
+#
+#     useradd --system --no-create-home --shell /usr/sbin/nologin maltrail
+#
+# StateDirectory/LogsDirectory create and chown the rest:
+#   /var/lib/maltrail   the trail set, which the server refreshes too (core/update.py)
+#   /var/log/maltrail   the event logs (LOG_DIR) and meta.sqlite
+DynamicUser=no
+User=maltrail
+Group=maltrail
+StateDirectory=maltrail
+StateDirectoryMode=0750
+LogsDirectory=maltrail
+LogsDirectoryMode=0750
+# Event logs name internal addresses, domains and URLs. World-readable is the wrong default.
+UMask=0027
+
+NoNewPrivileges=yes
+CapabilityBoundingSet=
+
+WorkingDirectory=/opt/maltrail
+# `maltrail` has no home, and ProtectHome=yes hides one anyway, so the default
+# ~/.maltrail/trails.csv is unusable here. Keep the trail set in StateDirectory.
+Environment=HOME=/var/lib/maltrail
+Environment=PYTHONUNBUFFERED=1
+
 ExecStart=/usr/bin/python3 server.py
+
+Restart=on-failure
+RestartSec=5
 KillMode=mixed
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+# Hardening. None of this restricts what the server legitimately does (listen on HTTP_PORT and
+# the UDP intake port, read trails, read and append LOG_DIR).
+# To bind a port below 1024 (e.g. HTTP_PORT 443), add:
+#   AmbientCapabilities=CAP_NET_BIND_SERVICE
+#   CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictNamespaces=yes
+RestrictRealtime=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+# ProtectSystem=strict makes the filesystem read-only; StateDirectory= and LogsDirectory= are
+# writable automatically, so nothing else needs naming here.
 
 [Install]
 WantedBy=multi-user.target
