@@ -122,6 +122,10 @@ Method, per-protocol breakdown, instruction counts and the profiler output are i
 
 Linux, `libpcap`, Rust 1.74+ for the sensor, Python 3.7+ for the server.
 
+Prebuilt sensor binaries for `x86_64` and `aarch64` are attached to every
+[release](https://github.com/stamparm/maltrail/releases) with a SHA-256 checksum, so a Rust
+toolchain is only needed to build from source. To build it anyway:
+
 ```bash
 git clone --depth 1 https://github.com/stamparm/maltrail.git
 cd maltrail
