@@ -8,25 +8,43 @@ Wants=maltrail-server.service
 After=network-online.target maltrail-server.service
 
 [Service]
+Type=exec
+
 # The sensor does NOT need root. Packet capture needs CAP_NET_RAW; promiscuous mode and
 # PACKET_FANOUT need CAP_NET_ADMIN. Granting exactly those two and running as an unprivileged
 # user means a parser bug in a packet-facing process cannot become root on the host.
 #
-# `maltrail` must be able to write LOG_DIR and TRAILS_FILE:
 #     useradd --system --no-create-home --shell /usr/sbin/nologin maltrail
-#     install -d -o maltrail -g maltrail /var/log/maltrail
-#     install -d -o maltrail -g maltrail /etc/maltrail        # if TRAILS_FILE lives there
+#
+# StateDirectory/LogsDirectory create and chown the rest, so there is nothing else to set up:
+#   /var/lib/maltrail   the trail set  (point TRAILS_FILE here)
+#   /var/log/maltrail   the event logs (LOG_DIR)
+DynamicUser=no
 User=maltrail
 Group=maltrail
+StateDirectory=maltrail
+StateDirectoryMode=0750
+LogsDirectory=maltrail
+LogsDirectoryMode=0750
+# Event logs name internal addresses, domains and URLs. World-readable is the wrong default.
+UMask=0027
+
 AmbientCapabilities=CAP_NET_RAW CAP_NET_ADMIN
 CapabilityBoundingSet=CAP_NET_RAW CAP_NET_ADMIN
 NoNewPrivileges=yes
 
-WorkingDirectory=/opt/maltrail/
-# Fail fast and loudly on a broken deployment instead of starting a sensor that cannot detect:
-# validates the config, trails, whitelist, log directory, BPF filter and capabilities.
+WorkingDirectory=/opt/maltrail
+# `maltrail` has no home, and ProtectHome=yes hides one anyway, so the default
+# ~/.maltrail/trails.csv is unusable here. Keep the trail set in StateDirectory.
+Environment=HOME=/var/lib/maltrail
+
+# Fail fast on a broken deployment instead of starting a sensor that cannot detect: validates the
+# configuration, trails, whitelist, log directory, capture filter and capabilities. A trails file
+# that does not exist yet is a warning, not a failure — ExecStart builds it on first start.
 ExecStartPre=/opt/maltrail/sensor/target/release/maltrail-sensor -T
 ExecStart=/opt/maltrail/sensor/target/release/maltrail-sensor
+ExecReload=/bin/kill -HUP $MAINPID
+
 Restart=on-failure
 RestartSec=5
 # SIGTERM is handled: workers stop within CAPTURE_TIMEOUT, condensed events are flushed and
@@ -49,12 +67,8 @@ RestrictRealtime=yes
 LockPersonality=yes
 MemoryDenyWriteExecute=yes
 RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_PACKET
-# ProtectSystem=strict makes the filesystem read-only; name what must stay writable.
-ReadWritePaths=/var/log/maltrail
-# Trail updating rewrites TRAILS_FILE (default ~/.maltrail/trails.csv for the running user) and
-# runs Maltrail's own Python updater. Add its directory here, or set DISABLE_TRAIL_UPDATES true
-# and let the Maltrail server refresh the file instead.
-# ReadWritePaths=/etc/maltrail
+# ProtectSystem=strict makes the filesystem read-only; StateDirectory= and LogsDirectory= are
+# writable automatically, so nothing else needs naming here.
 
 [Install]
 WantedBy=multi-user.target
