@@ -262,28 +262,73 @@ be **alerted on** rather than discovered in a log line printed once an hour:
 
 ```
 maltrail_up 1
-maltrail_build_info{version="2.2"} 1
+maltrail_workers_alive 1
+maltrail_workers_total 1
+maltrail_build_info{version="3.0"} 1
+maltrail_uptime_seconds 3600
 maltrail_packets_received_total 184203941
 maltrail_capture_dropped_total 0
 maltrail_capture_ifdropped_total 0
 maltrail_events_total 1284
+maltrail_events_written_total 1103
+maltrail_local_log_errors_total 0
 maltrail_events_throttled_total 9915
+maltrail_log_dir_free_bytes 157066420224
+maltrail_state_saturations_total 0
 maltrail_trails 1505265
 maltrail_trail_generation 4
+maltrail_trail_reloads_rejected_total 0
 maltrail_packet_path_nanoseconds 552
 maltrail_worker_packets_total{worker="0"} 23018112
+maltrail_worker_alive{worker="0"} 1
+maltrail_worker_last_heartbeat_seconds{worker="0"} 1786118842
 ```
 
-The two worth an alert are `maltrail_capture_dropped_total` and `maltrail_capture_ifdropped_total`:
-a non-zero rate means the sensor is **missing detections**, and nothing else in its output makes
-that visible in time to act on. `maltrail_trail_generation` not advancing means trails have stopped
-being refreshed. The per-worker counter exposes an unbalanced fanout hash, which the total hides.
+Alert on these five. Every one of them means *this sensor is not detecting what you think it is*:
+
+| condition | what has happened |
+| --- | --- |
+| `maltrail_up == 0` | no capture worker is alive — this host is **not being monitored** |
+| `rate(maltrail_capture_dropped_total) > 0` | the capture ring is dropping packets: **missed detections**, and nothing else in the sensor's output makes that visible in time to act |
+| `rate(maltrail_local_log_errors_total) > 0` | detections were produced and then **lost** on the way to disk |
+| `maltrail_trail_generation` not advancing | trails have stopped being refreshed |
+| `maltrail_log_dir_free_bytes` low | evidence storage is filling; Maltrail never deletes event logs to reclaim it (see §9) |
+
+`maltrail_state_saturations_total` is worth watching too: non-zero means a state-exhaustion flood
+has narrowed the heuristics. Exact trail matching is unaffected by design, so this is a
+degradation, not an outage. `maltrail_worker_alive{worker="N"}` and
+`maltrail_worker_last_heartbeat_seconds` separate one dead worker (a partial blind spot, since
+each owns a slice of the fanout) from a wedged one that still claims to be alive. The per-worker
+packet counter exposes an unbalanced fanout hash, which the total hides.
 
 It costs nothing on the packet path — a scrape reads the same per-worker atomic slots the metrics
 line reads. It is opt-in, binds where you tell it to (use a loopback address; metrics reveal traffic
 volumes and detection counts), and a failure to bind is reported but never fatal to detection.
 
-## 9. Signals
+## 9. Event retention and disk space
+
+**Maltrail never deletes event evidence.** There is no retention setting that expires event logs,
+and that is deliberate: they are the records an investigation goes back to, and a sensor that
+quietly discards them is worst exactly when it matters most.
+
+That makes free space something to operate rather than ignore:
+
+* **Ship the durable copy off-box.** `LOG_SERVER` (or `SYSLOG_SERVER` / `LOGSTASH_SERVER`) makes
+  the server or the SIEM the system of record and the sensor's local file a buffer. That is the
+  retention strategy; a local disk is not one.
+* **Alert on `maltrail_log_dir_free_bytes`** with real headroom, and watch
+  `maltrail_local_log_errors_total` — non-zero means detections were produced and then lost.
+  `-T` reports free space too, warns below 10 GB and fails below 1 GB.
+* **Archive on your own schedule.** Compressing or moving old daily logs is fine and is the
+  operator's call. Note the reporting interface serves historical logs as plain seekable files
+  (byte offsets, Range requests, sampled counting), so compressing them **in place** removes
+  those days from the UI. Archive them elsewhere instead.
+
+If policy *requires* deletion — event logs contain IP addresses and domains, which are personal
+data in some jurisdictions — that is an explicit operator decision, made with your own tooling,
+rather than a sensor default that destroys evidence quietly.
+
+## 10. Signals
 
 | signal | effect |
 | --- | --- |
@@ -298,7 +343,7 @@ Externally refreshed trails are also picked up without any signal: the reload th
 `TRAILS_FILE`'s mtime once a second (it is a single `stat()`), builds a fresh immutable store and
 swaps it in atomically. Counted in the metrics line as `reloads=ok/failed` and `generation=`.
 
-## 10. Trail updates
+## 11. Trail updates
 
 The sensor refreshes `TRAILS_FILE` itself, exactly like `sensor.py` does: once before the
 first load, then every `UPDATE_PERIOD`. It does this by running Maltrail's **own** updater —
@@ -330,7 +375,7 @@ without a restart (mtime poll bounded by `UPDATE_PERIOD`, at most once a minute)
 immutable trail store is built and swapped in atomically, counted in the metrics line
 (`reloads=ok/failed`, `generation=`).
 
-## 11. Running as a service
+## 12. Running as a service
 
 `maltrail-sensor.service` is provided:
 
@@ -365,7 +410,7 @@ journalctl -u maltrail-sensor-rust -f
 SIGTERM is handled: workers stop within `CAPTURE_TIMEOUT`, condensed events are flushed, final
 metrics are printed and capture handles are released.
 
-## 12. Migration plan
+## 13. Migration plan
 
 1. **Build and replay.** Run both sensors over the same pcaps and compare:
 
@@ -386,7 +431,7 @@ metrics are printed and capture handles are released.
 
 4. **Scale up.** Set `CAPTURE_WORKERS`/`CAPTURE_FANOUT` and re-run `fanout_check.py`.
 
-## 13. Troubleshooting
+## 14. Troubleshooting
 
 | symptom | cause / fix |
 | --- | --- |

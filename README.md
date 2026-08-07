@@ -252,15 +252,46 @@ it is considered bad, and `reference` is where the trail came from: `(static)`, 
 
 * **`-T`** validates a configuration and exits. Usable as a deployment gate; the systemd unit runs
   it as `ExecStartPre`.
-* **`STATS_ADDRESS`** exposes Prometheus metrics. Alert on `maltrail_capture_dropped_total` — a
-  non-zero rate means the sensor is **missing detections** — and on `maltrail_trail_generation`
-  failing to advance, which means trails have stopped refreshing.
+* **`STATS_ADDRESS`** exposes Prometheus metrics. The four worth alerting on, all of which mean
+  *this sensor is not detecting what you think it is*:
+
+  | metric | what it means |
+  | --- | --- |
+  | `maltrail_up == 0` | no capture worker is alive — this host is **not monitored** |
+  | `rate(maltrail_capture_dropped_total)` | the ring is dropping packets — **missed detections** |
+  | `rate(maltrail_local_log_errors_total)` | detections were produced and then **lost** |
+  | `maltrail_trail_generation` not advancing | trails have stopped refreshing |
+
+  Also useful: `maltrail_log_dir_free_bytes` (see below) and
+  `maltrail_state_saturations_total`, which is non-zero when a state-exhaustion flood has
+  narrowed the heuristics. Exact trail matching is unaffected by that, by design.
 * **`systemctl reload`** (`SIGHUP`) reloads trails without a restart. Trails refreshed by anything
   else are picked up within a second, with an atomic swap — no restart, no dropped packets.
 * **One known gap** versus the old sensor: the condensed observable store (`USE_CONDENSED_STORAGE`,
   `meta.sqlite`) is not written, so the server's `/meta` novelty view stays empty. It is not part of
   detection. Every deliberate difference is listed in
   [`sensor/docs/COMPATIBILITY.md`](sensor/docs/COMPATIBILITY.md).
+
+### Event retention
+
+**Maltrail never deletes event evidence.** There is no retention setting that expires your logs,
+and that is deliberate: these are the records you go back to after an incident, and a tool that
+quietly discards them is worse than useless during the one week you need them.
+
+That makes free space something you operate rather than ignore:
+
+* **Ship the durable copy off-box.** `LOG_SERVER` (or `SYSLOG_SERVER` / `LOGSTASH_SERVER`) makes
+  the server or your SIEM the system of record, and the sensor's local file a buffer. This is the
+  retention strategy; local disk is not one.
+* **Alert on `maltrail_log_dir_free_bytes`** with real headroom. `-T` reports it too, and warns
+  below 10 GB. When it reaches zero the sensor cannot append and detections are lost.
+* **Archiving is yours to decide.** Compress or move old daily logs on your own schedule if you
+  need the space. Note that the reporting UI serves historical logs as plain seekable files, so
+  compressing them in place removes those days from the interface — archive them elsewhere.
+
+If your policy *requires* deletion (event logs contain IP addresses and domains, which are
+personal data in some jurisdictions), that is an explicit operator decision — make it with your
+own tooling, deliberately, rather than having a sensor default do it quietly.
 
 ---
 

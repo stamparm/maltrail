@@ -65,6 +65,30 @@ pub fn run(cfg: &Config) -> i32 {
         r.line(Level::Fail, "log directory", &format!("'{}' is NOT writable", cfg.log_dir.display()));
     }
 
+    // Event logs are evidence and are never deleted by the sensor, so free space is a real
+    // operating limit and not a footnote. A full disk loses detections while the process still
+    // looks healthy — the most expensive failure with the cheapest possible warning.
+    if !cfg.disable_local_log_storage && cfg.log_dir.is_dir() {
+        match crate::output::free_bytes(&cfg.log_dir) {
+            Some(free) => {
+                const GB: u64 = 1024 * 1024 * 1024;
+                let human = format!("{:.1} GB free on '{}'", free as f64 / GB as f64, cfg.log_dir.display());
+                if free < GB {
+                    r.line(Level::Fail, "log storage", &format!("{human} — detections will be LOST shortly"));
+                } else if free < 10 * GB {
+                    r.line(
+                        Level::Warn,
+                        "log storage",
+                        &format!("{human} — Maltrail never deletes evidence; ship to LOG_SERVER or archive off-box"),
+                    );
+                } else {
+                    r.line(Level::Ok, "log storage", &human);
+                }
+            }
+            None => r.line(Level::Warn, "log storage", "free space could not be determined"),
+        }
+    }
+
     // --- capture filter --------------------------------------------------------------
     // Compiled against a dead handle, so a bad filter is caught here instead of at capture time
     // where the sensor would exit (or, worse, match nothing).

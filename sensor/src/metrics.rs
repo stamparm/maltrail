@@ -185,6 +185,9 @@ pub struct Registry {
     /// Reloads that PARSED cleanly but were refused for losing too much of the trail set.
     /// Distinct from `reloads_failed`: nothing errored, the data was simply not credible.
     pub reloads_rejected: AtomicU64,
+    /// Where events are written, so the metrics endpoint can report the free space there.
+    /// `None` when local log storage is disabled (the sensor ships everything off-box).
+    pub log_dir: Option<std::path::PathBuf>,
 }
 
 impl Registry {
@@ -196,7 +199,14 @@ impl Registry {
             reloads_ok: AtomicU64::new(0),
             reloads_failed: AtomicU64::new(0),
             reloads_rejected: AtomicU64::new(0),
+            log_dir: None,
         }
+    }
+
+    /// Point the free-space gauge at the directory events are actually written to.
+    pub fn with_log_dir(mut self, log_dir: Option<std::path::PathBuf>) -> Registry {
+        self.log_dir = log_dir;
+        self
     }
 
     pub fn total(&self) -> WorkerMetrics {
