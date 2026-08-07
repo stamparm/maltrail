@@ -6984,6 +6984,53 @@ v9g6.my
 xxooonline.eu.cc
 xs.xxooonline.eu.cc
 
+# Reference: https://x.com/craiu/status/2085753478039662997
+# BANNER_0_HASH-HOST=0ed2ce319b71bb02ac4c577ea673faad
+# BANNER_0_HASH-HOST=aef1df53203ccaa3360fff4f99fedbd2
+
+abc968391.com
+addition-back.pro
+agent.getbaton.ai
+antechoil.space
+api.better-openclaw.com
+api.better-openclaw.dev
+apps.antechoil.space
+apps.cafe-management.site
+apps.fenikofinanse.site
+bacon-rumors.xyz
+belleone.ai
+better-openclaw.com
+better-openclaw.dev
+block-uh.api.aguativaconnection.com.br
+carpet-sail.com
+chief-ignite.pro
+claude-triage-staging.vocus.cc
+docs.junlim.org
+e92jeda.cfd
+fashion-chicken.com
+flow.eu.digitalgenius.com
+flow.qa.digitalgenius.com
+flow.us.digitalgenius.com
+football-attraction.pro
+gateway-ecs-fargate.kortix.com
+geoip-jm.com
+ggroovek.org
+golem.pointfive.co
+hair-result.xyz
+headscale-ui.belleone.ai
+join.wullup.com
+mw.eu.digitalgenius.com
+mw.us.digitalgenius.com
+picstat-server.eidoloncorp.com
+r9-lotus-poc-x8a7dq41-webhook.1moby.tech
+relaxation-seed.xyz
+siege-close.com
+siteproxy.yusialone.top
+soup-tone.pro
+yusialone.top
+/x9i32md/w1/la02
+/x9i32md/
+
 # Generic
 
 /wp-imcludes/
