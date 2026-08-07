@@ -27,7 +27,7 @@ libc = "0.2"
 # backtracking; `fancy-regex` only for operator-supplied patterns that may use
 # lookaround (the shipped REMOTE_SEVERITY_REGEX uses `(?! ...)`).
 regex = "1"
-fancy-regex = "0.16"
+fancy-regex = "0.19"
 # Multi-substring scans on the HTTP hot path (keyword pre-conditions, whitelists).
 aho-corasick = "1"
 # Byte scanning in the HTTP/DNS parsers.
