@@ -82,7 +82,6 @@ class TestRemoteSeverity(unittest.TestCase):
         c.DISABLE_LOCAL_LOG_STORAGE = True
         c.console = False
         c.PROCESS_COUNT = 1
-        c.plugin_functions = None
         c.IGNORE_EVENTS_REGEX = None
         c.WHITELIST = set()
         # reset per-thread log throttling so each event is emitted

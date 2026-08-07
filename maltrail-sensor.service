@@ -1,16 +1,60 @@
 [Unit]
 Description=Maltrail. Sensor of malicious traffic detection system
 Documentation=https://github.com/stamparm/maltrail#readme
-Documentation=https://github.com/stamparm/maltrail/wiki
+Documentation=file:/opt/maltrail/sensor/docs/INSTALL.md
+# Replaces the Python sensor, which remains available as maltrail-sensor-old.service.
 Requires=network.target
 Wants=maltrail-server.service
 After=network-online.target maltrail-server.service
 
 [Service]
-User=root
+# The sensor does NOT need root. Packet capture needs CAP_NET_RAW; promiscuous mode and
+# PACKET_FANOUT need CAP_NET_ADMIN. Granting exactly those two and running as an unprivileged
+# user means a parser bug in a packet-facing process cannot become root on the host.
+#
+# `maltrail` must be able to write LOG_DIR and TRAILS_FILE:
+#     useradd --system --no-create-home --shell /usr/sbin/nologin maltrail
+#     install -d -o maltrail -g maltrail /var/log/maltrail
+#     install -d -o maltrail -g maltrail /etc/maltrail        # if TRAILS_FILE lives there
+User=maltrail
+Group=maltrail
+AmbientCapabilities=CAP_NET_RAW CAP_NET_ADMIN
+CapabilityBoundingSet=CAP_NET_RAW CAP_NET_ADMIN
+NoNewPrivileges=yes
+
 WorkingDirectory=/opt/maltrail/
-ExecStart=/usr/bin/python3 sensor.py
+# Fail fast and loudly on a broken deployment instead of starting a sensor that cannot detect:
+# validates the config, trails, whitelist, log directory, BPF filter and capabilities.
+ExecStartPre=/opt/maltrail/sensor/target/release/maltrail-sensor -T
+ExecStart=/opt/maltrail/sensor/target/release/maltrail-sensor
+Restart=on-failure
+RestartSec=5
+# SIGTERM is handled: workers stop within CAPTURE_TIMEOUT, condensed events are flushed and
+# the final metrics line is printed before exit.
 KillMode=mixed
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+# Hardening. None of this restricts what the sensor legitimately does (capture, read trails,
+# append to LOG_DIR, send UDP to LOG_SERVER / SYSLOG_SERVER / LOGSTASH_SERVER).
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictNamespaces=yes
+RestrictRealtime=yes
+LockPersonality=yes
+MemoryDenyWriteExecute=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_PACKET
+# ProtectSystem=strict makes the filesystem read-only; name what must stay writable.
+ReadWritePaths=/var/log/maltrail
+# Trail updating rewrites TRAILS_FILE (default ~/.maltrail/trails.csv for the running user) and
+# runs Maltrail's own Python updater. Add its directory here, or set DISABLE_TRAIL_UPDATES true
+# and let the Maltrail server refresh the file instead.
+# ReadWritePaths=/etc/maltrail
 
 [Install]
 WantedBy=multi-user.target

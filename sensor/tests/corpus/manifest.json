@@ -1,0 +1,442 @@
+[
+  {
+    "expect": [],
+    "linktype": 1,
+    "name": "clean_tcp",
+    "needs_pcap_timestamps": false,
+    "notes": "ordinary TCP handshakes to a clean IP",
+    "packets": 40,
+    "pcap": "clean_tcp.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "66.66.66.66",
+      "malware (test)"
+    ],
+    "linktype": 1,
+    "name": "duplicate_syn",
+    "needs_pcap_timestamps": false,
+    "notes": "identical SYNs in one second must collapse",
+    "packets": 8,
+    "pcap": "duplicate_syn.pcap",
+    "timestamp_sensitive": true
+  },
+  {
+    "expect": [
+      "66.66.66.66",
+      "6.6.6.6:8443",
+      "198.51.100.66"
+    ],
+    "linktype": 1,
+    "name": "ip_trails",
+    "needs_pcap_timestamps": false,
+    "notes": "IP and IP:port trails, inbound and outbound",
+    "packets": 3,
+    "pcap": "ip_trails.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "potential port scanning"
+    ],
+    "linktype": 1,
+    "name": "port_scan",
+    "needs_pcap_timestamps": true,
+    "notes": "20 ports over 20s: only the sliding window catches this",
+    "packets": 21,
+    "pcap": "port_scan.pcap",
+    "timestamp_sensitive": true
+  },
+  {
+    "expect": [
+      "potential port scanning"
+    ],
+    "linktype": 1,
+    "name": "stealth_scan_null",
+    "needs_pcap_timestamps": true,
+    "notes": "nmap -sN",
+    "packets": 21,
+    "pcap": "stealth_scan_null.pcap",
+    "timestamp_sensitive": true
+  },
+  {
+    "expect": [
+      "potential port scanning"
+    ],
+    "linktype": 1,
+    "name": "stealth_scan_fin",
+    "needs_pcap_timestamps": true,
+    "notes": "nmap -sF",
+    "packets": 21,
+    "pcap": "stealth_scan_fin.pcap",
+    "timestamp_sensitive": true
+  },
+  {
+    "expect": [
+      "potential port scanning"
+    ],
+    "linktype": 1,
+    "name": "stealth_scan_xmas",
+    "needs_pcap_timestamps": true,
+    "notes": "nmap -sX",
+    "packets": 21,
+    "pcap": "stealth_scan_xmas.pcap",
+    "timestamp_sensitive": true
+  },
+  {
+    "expect": [],
+    "linktype": 1,
+    "name": "ack_sweep_no_fp",
+    "needs_pcap_timestamps": false,
+    "notes": "bare ACKs are normal traffic",
+    "packets": 21,
+    "pcap": "ack_sweep_no_fp.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "potential udp scanning"
+    ],
+    "linktype": 1,
+    "name": "udp_scan",
+    "needs_pcap_timestamps": true,
+    "notes": "nmap -sU",
+    "packets": 21,
+    "pcap": "udp_scan.pcap",
+    "timestamp_sensitive": true
+  },
+  {
+    "expect": [
+      "potential infection"
+    ],
+    "linktype": 1,
+    "name": "infection_scan",
+    "needs_pcap_timestamps": true,
+    "notes": "40 distinct hosts on an infection port",
+    "packets": 41,
+    "pcap": "infection_scan.pcap",
+    "timestamp_sensitive": true
+  },
+  {
+    "expect": [
+      "potential web scanning"
+    ],
+    "linktype": 1,
+    "name": "web_scan",
+    "needs_pcap_timestamps": true,
+    "notes": "path sweep from an external source",
+    "packets": 15,
+    "pcap": "web_scan.pcap",
+    "timestamp_sensitive": true
+  },
+  {
+    "expect": [
+      "evil-test-domain.com",
+      "(www).evil-parent.com",
+      "badsite.onion(.to)",
+      "evilname(.ip-adress.com)",
+      "dga1234.wildcard-test.com"
+    ],
+    "linktype": 1,
+    "name": "dns_queries",
+    "needs_pcap_timestamps": false,
+    "notes": "exact / parent / onion / ip-adress.com / wildcard-regex domain trails",
+    "packets": 6,
+    "pcap": "dns_queries.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "198.51.100.53",
+      "whatever.com"
+    ],
+    "linktype": 1,
+    "name": "dns_resolver_trail",
+    "needs_pcap_timestamps": false,
+    "notes": "AAAA/PTR queries are excluded from the IP-trail check",
+    "packets": 3,
+    "pcap": "dns_resolver_trail.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "sinkholed by testsink",
+      "parked site"
+    ],
+    "linktype": 1,
+    "name": "dns_responses",
+    "needs_pcap_timestamps": false,
+    "notes": "A-record answer walk over compressed and uncompressed names",
+    "packets": 2,
+    "pcap": "dns_responses.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [],
+    "linktype": 1,
+    "name": "dns_malformed",
+    "needs_pcap_timestamps": false,
+    "notes": "truncated / hostile DNS",
+    "packets": 7,
+    "pcap": "dns_malformed.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "excessive no such domain"
+    ],
+    "linktype": 1,
+    "name": "dns_nxdomain_flood",
+    "needs_pcap_timestamps": false,
+    "notes": "hour-bucketed NXDOMAIN counters",
+    "packets": 25,
+    "pcap": "dns_nxdomain_flood.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "no such domain (suspicious)"
+    ],
+    "linktype": 1,
+    "name": "dns_dga_labels",
+    "needs_pcap_timestamps": false,
+    "notes": "entropy/consonant DGA heuristics",
+    "packets": 2,
+    "pcap": "dns_dga_labels.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [],
+    "linktype": 1,
+    "name": "dns_exhaustion",
+    "needs_pcap_timestamps": false,
+    "notes": "below the 1000-subdomain threshold: must stay silent",
+    "packets": 40,
+    "pcap": "dns_exhaustion.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "malicious-login.php",
+      "203.0.113.44",
+      "hostcheck.example",
+      "evil-url.example"
+    ],
+    "linktype": 1,
+    "name": "http_trails",
+    "needs_pcap_timestamps": false,
+    "notes": "URL-path trail, host-annotated IP trail, host+path trail",
+    "packets": 3,
+    "pcap": "http_trails.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "potential sql injection",
+      "potential directory traversal",
+      "potential remote code execution",
+      "potential xss injection",
+      "potential iot-malware download",
+      "potential proxy probe",
+      "direct .exe download",
+      "user agent (suspicious)"
+    ],
+    "linktype": 1,
+    "name": "http_heuristics",
+    "needs_pcap_timestamps": false,
+    "notes": "the suspicious-request regex battery",
+    "packets": 9,
+    "pcap": "http_heuristics.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "sinkhole response",
+      "content type (suspicious)",
+      "seized domain"
+    ],
+    "linktype": 1,
+    "name": "http_responses",
+    "needs_pcap_timestamps": false,
+    "notes": "response-side heuristics",
+    "packets": 3,
+    "pcap": "http_responses.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [],
+    "linktype": 1,
+    "name": "truncated",
+    "needs_pcap_timestamps": false,
+    "notes": "must never crash and must stay quiet",
+    "packets": 10,
+    "pcap": "truncated.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "66.66.66.66",
+      "evil-test-domain.com"
+    ],
+    "linktype": 1,
+    "name": "vlan",
+    "needs_pcap_timestamps": false,
+    "notes": "single 802.1Q tag is followed; QinQ is dropped by both",
+    "packets": 3,
+    "pcap": "vlan.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "66.66.66.66"
+    ],
+    "linktype": 1,
+    "name": "fragments",
+    "needs_pcap_timestamps": false,
+    "notes": "first fragment is processed, later fragments are skipped",
+    "packets": 3,
+    "pcap": "fragments.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "dead::beef",
+      "evil-test-domain.com"
+    ],
+    "linktype": 1,
+    "name": "ipv6",
+    "needs_pcap_timestamps": false,
+    "notes": "IPv6 SYN, DNS and ICMPv6 echo",
+    "packets": 3,
+    "pcap": "ipv6.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "66.66.66.66",
+      "ICMP"
+    ],
+    "linktype": 1,
+    "name": "icmp",
+    "needs_pcap_timestamps": false,
+    "notes": "only echo requests count",
+    "packets": 2,
+    "pcap": "icmp.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "evil-test-domain.com"
+    ],
+    "linktype": 1,
+    "name": "repeated_detections",
+    "needs_pcap_timestamps": false,
+    "notes": "same trail repeatedly: the throttle window must collapse it",
+    "packets": 30,
+    "pcap": "repeated_detections.pcap",
+    "timestamp_sensitive": true
+  },
+  {
+    "expect": [
+      "evil-test-domain.com"
+    ],
+    "linktype": 1,
+    "name": "cache_expiry",
+    "needs_pcap_timestamps": false,
+    "notes": "hour-crossing timestamps exercise the hourly resets",
+    "packets": 10,
+    "pcap": "cache_expiry.pcap",
+    "timestamp_sensitive": true
+  },
+  {
+    "expect": [
+      "tls-evil.example"
+    ],
+    "linktype": 1,
+    "name": "tls_sni",
+    "needs_pcap_timestamps": false,
+    "notes": "TLS ClientHello SNI (needs USE_FAST_PREFILTER; the harness enables it)",
+    "packets": 2,
+    "pcap": "tls_sni.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "quic-evil.example"
+    ],
+    "linktype": 1,
+    "name": "quic_sni",
+    "needs_pcap_timestamps": false,
+    "notes": "QUIC Initial SNI (needs USE_FAST_PREFILTER; the harness enables it)",
+    "packets": 1,
+    "pcap": "quic_sni.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "66.66.66.66"
+    ],
+    "linktype": 12,
+    "name": "dlt_raw",
+    "needs_pcap_timestamps": false,
+    "notes": "DLT_RAW (no link header)",
+    "packets": 1,
+    "pcap": "dlt_raw.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "66.66.66.66"
+    ],
+    "linktype": 113,
+    "name": "dlt_sll",
+    "needs_pcap_timestamps": false,
+    "notes": "DLT_LINUX_SLL ('any' interface)",
+    "packets": 1,
+    "pcap": "dlt_sll.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "66.66.66.66"
+    ],
+    "linktype": 1,
+    "name": "ipv4_options",
+    "needs_pcap_timestamps": false,
+    "notes": "IHL=6 must shift the transport offset",
+    "packets": 1,
+    "pcap": "ipv4_options.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [],
+    "linktype": 1,
+    "name": "whitelisted",
+    "needs_pcap_timestamps": false,
+    "notes": "whitelist and ignore-suffix handling",
+    "packets": 2,
+    "pcap": "whitelisted.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [],
+    "linktype": 1,
+    "name": "dns_ignored_suffixes",
+    "needs_pcap_timestamps": false,
+    "notes": "IGNORE_DNS_QUERY_SUFFIXES / '.intranet.' guards",
+    "packets": 4,
+    "pcap": "dns_ignored_suffixes.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [],
+    "linktype": 1,
+    "name": "mixed_soup",
+    "needs_pcap_timestamps": false,
+    "notes": "interleaved traffic from many cases",
+    "packets": 47,
+    "pcap": "mixed_soup.pcap",
+    "timestamp_sensitive": false
+  }
+]

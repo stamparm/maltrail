@@ -23,7 +23,7 @@ from core.settings import ROOT_DIR
 SKIP_DIRS = ("thirdparty", "__pycache__", ".git", ".github", "docker", "html", "misc")
 
 # packages whose modules carry doctests / pure logic worth importing and exercising
-DOCTEST_PACKAGES = ("core", "plugins")
+DOCTEST_PACKAGES = ("core",)
 
 # root-level scripts also swept for doctests (require the project's sole dependency, pcapy-ng)
 DOCTEST_SCRIPTS = ("sensor", "server")
@@ -51,7 +51,7 @@ def _doctest_modules():
 def smoke_test():
     """
     Runs basic smoke testing of the program: compiles every source file (syntax check on the
-    running interpreter) and runs the doctests embedded in the core/plugin modules
+    running interpreter) and runs the doctests embedded in the core modules
     """
 
     retval = True
@@ -292,7 +292,7 @@ def detect_test():
                 "",
             )))
 
-        cmd = [sys.executable, os.path.join(ROOT_DIR, "sensor.py"), "-r", pcap_file, "-c", config_file, "--offline"]
+        cmd = [sys.executable, os.path.join(ROOT_DIR, "old", "sensor.py"), "-r", pcap_file, "-c", config_file, "--offline"]
         process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         output = process.communicate()[0]
 

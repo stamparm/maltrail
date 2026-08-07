@@ -19,6 +19,8 @@ import struct
 import multiprocessing
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# the old (Python) sensor now lives in old/
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "old"))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _pcapgen as G
 
@@ -49,7 +51,6 @@ def measure(n_workers, scan_ports, buffer_mb=32, affinity=False):
     config.USE_HEURISTICS = True
     config.PROCESS_COUNT = n_workers + 1          # parent + N workers (sensor's own convention)
     config.CAPTURE_BUFFER = buffer_mb * 1024 * 1024
-    config.plugin_functions = None
     config.UPDATE_PERIOD = 10 ** 9                # never let the worker's reload timer fire
     sensor.WHITELIST = set()
     sensor._result_cache = {}

@@ -7,6 +7,16 @@ See the file 'LICENSE' for copying permission
 
 from __future__ import print_function  # Requires: Python >= 2.6
 
+# This is the OLD (Python) sensor. It is retained as the reference implementation and as the
+# differential oracle the Rust sensor's parity harness replays against — see sensor/. It is
+# not the sensor Maltrail ships; `maltrail-sensor.service` runs the Rust one.
+#
+# It lives in old/ but imports `core.*` from the repository root, so it works from any directory.
+import os as _os
+import sys as _sys
+_sys.path.insert(0, _os.path.abspath(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..")))
+
+
 import sys
 
 sys.dont_write_bytecode = True
@@ -536,12 +546,6 @@ def _process_packet(packet, sec, usec, ip_offset):
 
         if protocol == socket.IPPROTO_TCP:  # TCP
             src_port, dst_port, _, _, doff_reserved, flags = struct.unpack("!HHLLBB", ip_data[iph_length:iph_length + 14])
-
-            if flags != 2 and config.plugin_functions:
-                if dst_ip in trails:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, dst_ip, trails[dst_ip][0], trails[dst_ip][1]), packet, skip_write=True)
-                elif src_ip in trails and dst_ip != localhost_ip:
-                    log_event((sec, usec, src_ip, src_port, dst_ip, dst_port, PROTO.TCP, TRAIL.IP, src_ip, trails[src_ip][0], trails[src_ip][1]), packet, skip_write=True)
 
             if flags == 2:  # SYN set (only)
                 _ = _last_syn
@@ -1180,49 +1184,6 @@ def init():
     if not config.DISABLE_CHECK_SUDO and check_sudo() is False:
         sys.exit("[!] please run '%s' with root privileges" % __file__)
 
-    if config.plugins:
-        config.plugin_functions = []
-        for plugin in re.split(r"[,;]", config.plugins):
-            plugin = plugin.strip()
-            found = False
-
-            for _ in (plugin, os.path.join("plugins", plugin), os.path.join("plugins", "%s.py" % plugin)):
-                if os.path.isfile(_):
-                    plugin = _
-                    found = True
-                    break
-
-            if not found:
-                sys.exit("[!] plugin script '%s' not found" % plugin)
-            else:
-                dirname, filename = os.path.split(plugin)
-                dirname = os.path.abspath(dirname)
-                if not os.path.exists(os.path.join(dirname, '__init__.py')):
-                    sys.exit("[!] empty file '__init__.py' required inside directory '%s'" % dirname)
-
-                if not filename.endswith(".py"):
-                    sys.exit("[!] plugin script '%s' should have an extension '.py'" % filename)
-
-                if dirname not in sys.path:
-                    sys.path.insert(0, dirname)
-
-                try:
-                    module = __import__(filename[:-3])
-                except (ImportError, SyntaxError) as msg:
-                    sys.exit("[!] unable to import plugin script '%s' (%s)" % (filename, msg))
-
-                found = False
-                for name, function in inspect.getmembers(module, inspect.isfunction):
-                    args = function.__code__.co_varnames[:function.__code__.co_argcount]
-
-                    if name == "plugin" and set(("event_tuple", "packet")).issubset(set(args)):
-                        found = True
-                        config.plugin_functions.append(function)
-                        function.__name__ = module.__name__
-
-                if not found:
-                    sys.exit("[!] missing function 'plugin(event_tuple, packet)' in plugin script '%s'" % filename)
-
     if config.pcap_file:
         for _ in config.pcap_file.split(','):
             _caps.append(pcapy.open_offline(_))
@@ -1774,7 +1735,7 @@ def main():
                 else:
                     break
 
-    print("%s (sensor) #v%s {%s}\n" % (NAME, VERSION, HOMEPAGE))
+    print("%s (old sensor) #v%s {%s}\n" % (NAME, VERSION, HOMEPAGE))
 
     if "--version" in sys.argv:
         raise SystemExit
@@ -1782,7 +1743,6 @@ def main():
     parser = optparse.OptionParser(version=VERSION)
     parser.add_option("-c", dest="config_file", default=CONFIG_FILE, help="configuration file (default: '%s')" % os.path.split(CONFIG_FILE)[-1])
     parser.add_option("-r", dest="pcap_file", help="pcap file for offline analysis")
-    parser.add_option("-p", dest="plugins", help="plugin(s) to be used per event")
     parser.add_option("-q", "--quiet", dest="quiet", action="store_true", help="turn off regular output")
     parser.add_option("--console", dest="console", action="store_true", help="print events to console")
     parser.add_option("--offline", dest="offline", action="store_true", help="disable (online) trail updates")
