@@ -11,6 +11,22 @@ use crate::addr::Ip;
 pub const HEURISTIC_NAMES: [&str; 6] =
     ["port_scanning", "udp_scanning", "infection", "web_scanning", "dns_exhaustion", "long_domain"];
 
+/// Hard cap on the number of distinct keys any one heuristic accumulator may hold.
+///
+/// Every one of these structures is keyed by something an ATTACKER chooses — a queried domain,
+/// a source/destination pair — so "it resets every hour" is a time bound, not a memory bound: a
+/// fast link gives an adversary an hour to insert as many keys as it can send packets.
+///
+/// The policy at the cap is to REFUSE THE NEW KEY, never to evict an existing one. Eviction
+/// under flood would let an attacker push their own earlier evidence out of the window, which
+/// is a detection-evasion primitive; refusal means the sensor keeps what it already saw and
+/// merely stops learning new *heuristic* subjects. Exact trail matching is completely
+/// unaffected — it does not consult these maps — so a saturated sensor still detects every
+/// known-bad indicator. That is the degraded mode: heuristics narrow, IOC coverage does not.
+///
+/// Matches `scan::SCAN_MAX_KEYS`, which has always enforced exactly this.
+pub const HEURISTIC_MAX_KEYS: usize = scan::SCAN_MAX_KEYS;
+
 /// `sensor.py:_get_local_prefix()` — the most common `A.B.` prefix among the source
 /// addresses currently tracked by the scan accumulators.
 ///

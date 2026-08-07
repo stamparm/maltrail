@@ -293,6 +293,10 @@ fn publish(slot: &MetricsSlot, st: &mut WorkerState) {
     let (throttled, summarized, _tracked) = st.sink.throttle_stats();
     st.metrics.events_throttled = throttled;
     st.metrics.events_summarized = summarized;
+    // Every bounded map that refused a new key, in one number: an operator should not have to
+    // know which structure saturated to know the sensor is degraded.
+    st.metrics.state_saturations =
+        st.nxdomain.saturations() + st.dns_exhaustion.saturations() + st.sink.condense_saturations;
     slot.publish(&st.metrics);
 }
 

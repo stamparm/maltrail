@@ -167,6 +167,14 @@ pub fn render(registry: &Registry, uptime_seconds: f64) -> String {
         t.events_summarized
     );
 
+    metric!(
+        "maltrail_state_saturations_total",
+        "counter",
+        "Times a bounded state map refused a new key at its cap. Non-zero means heuristics are \
+         narrowed (exact trail matching is unaffected); a sustained rate means the sensor is \
+         under a state-exhaustion flood.",
+        t.state_saturations
+    );
     metric!("maltrail_trail_lookups_total", "counter", "Trail-store lookups performed.", t.trail_lookups);
     metric!("maltrail_cache_hits_total", "counter", "Result-cache hits.", t.cache_hits);
     metric!("maltrail_cache_misses_total", "counter", "Result-cache misses.", t.cache_misses);

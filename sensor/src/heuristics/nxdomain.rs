@@ -14,6 +14,9 @@ struct Counter {
 #[derive(Default)]
 pub struct NxCounters {
     counters: StrMap<String, Counter>,
+    /// New keys refused because `HEURISTIC_MAX_KEYS` was reached. Non-zero means this
+    /// heuristic is running degraded and an operator should know.
+    saturations: u64,
     /// `_no_such_name_hour` — the last hour bucket that was pruned.
     pruned_hour: Option<u64>,
 }
@@ -70,10 +73,22 @@ impl NxCounters {
                 Some(alert)
             }
             _ => {
+                // Bounded: the hourly prune is a TIME bound, not a memory one, and every key
+                // here is a domain the sender chose. Refuse new subjects at the cap rather than
+                // evicting tracked ones — see `heuristics::HEURISTIC_MAX_KEYS`.
+                if self.counters.len() >= super::HEURISTIC_MAX_KEYS {
+                    self.saturations += 1;
+                    return None;
+                }
                 self.counters.insert(key.to_string(), Counter { hour, count: 1, names: StrSet::default() });
                 None
             }
         }
+    }
+
+    /// New keys refused at the cap since start.
+    pub fn saturations(&self) -> u64 {
+        self.saturations
     }
 
     pub fn len(&self) -> usize {
