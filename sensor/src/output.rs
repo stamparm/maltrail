@@ -72,6 +72,8 @@ pub struct EventSink {
     pub events_ignored: u64,
     pub events_throttled: u64,
     pub events_condensed: u64,
+    /// Condense groups refused at `MAX_CONDENSED_KEYS`; those events were written unaggregated.
+    pub condense_saturations: u64,
 }
 
 /// Total events emitted across all workers (metrics only; never read on the hot path).
@@ -97,6 +99,7 @@ impl EventSink {
             events_ignored: 0,
             events_throttled: 0,
             events_condensed: 0,
+            condense_saturations: 0,
         }
     }
 
@@ -133,12 +136,24 @@ impl EventSink {
 
         if !skip_condensing && self.cfg.condense_on_info(&event.info) {
             let key = (event.src_ip.clone(), event.trail.as_plain());
-            let bucket = self.condensed.entry(key).or_default();
-            if bucket.len() < settings::MAX_CONDENSED_EVENTS {
-                bucket.push(event.clone());
+            // Each BUCKET was capped, but the number of KEYS was not: the map only shrinks on
+            // the flush period, so between flushes an attacker choosing source addresses and
+            // trails could add keys without limit, each costing two Strings plus a Vec.
+            //
+            // At the cap, fall through to the normal throttled write instead of condensing.
+            // Dropping the event is not an option — this is a detection — and evicting an
+            // existing bucket would discard already-collected evidence. The event still gets
+            // written; it simply is not aggregated with its siblings.
+            if self.condensed.len() >= settings::MAX_CONDENSED_KEYS && !self.condensed.contains_key(&key) {
+                self.condense_saturations += 1;
+            } else {
+                let bucket = self.condensed.entry(key).or_default();
+                if bucket.len() < settings::MAX_CONDENSED_EVENTS {
+                    bucket.push(event.clone());
+                }
+                self.events_condensed += 1;
+                return;
             }
-            self.events_condensed += 1;
-            return;
         }
 
         // Event-log throttling. See `crate::throttle`: a small burst is written verbatim, the
@@ -388,6 +403,11 @@ impl EventSink {
     }
 
     /// Events held back by the throttle, and summary lines emitted for them.
+    /// Distinct condense groups currently buffered (bounded by `MAX_CONDENSED_KEYS`).
+    pub fn condensed_len(&self) -> usize {
+        self.condensed.len()
+    }
+
     pub fn throttle_stats(&self) -> (u64, u64, usize) {
         (self.throttle.suppressed, self.throttle.summaries, self.throttle.tracked_keys())
     }

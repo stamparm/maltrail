@@ -13,6 +13,16 @@ use regex::Regex;
 
 pub use crate::settings_gen::*;
 
+/// Hard cap on the number of distinct `(src_ip, trail)` groups the condense buffer may hold
+/// between flushes.
+///
+/// Not a `core/settings.py` constant: Python bounds each GROUP (`MAX_CONDENSED_EVENTS`) but
+/// never the number of groups, and the map only shrinks on the flush period. Both halves of
+/// the key are attacker-influenced, so that is unbounded growth on a busy link. At the cap the
+/// event is written through the normal throttled path rather than aggregated — an event is a
+/// detection and must never be dropped to save memory.
+pub const MAX_CONDENSED_KEYS: usize = 50_000;
+
 use crate::pyre;
 
 /// `core/settings.py:ROOT_DIR` equivalent: the Maltrail checkout that owns `data/`.

@@ -18,6 +18,8 @@ pub struct DnsExhaustion {
     hour_marker: Option<u64>,
     /// `_dns_exhausted_domains`
     exhausted: StrSet<Box<str>>,
+    /// New domains refused because `HEURISTIC_MAX_KEYS` was reached.
+    saturations: u64,
 }
 
 /// What the caller should do after recording a subdomain, mirroring the Python control
@@ -42,6 +44,20 @@ impl DnsExhaustion {
         }
     }
 
+    /// New domains refused at the cap since start.
+    pub fn saturations(&self) -> u64 {
+        self.saturations
+    }
+
+    /// Distinct parent domains currently tracked.
+    pub fn len(&self) -> usize {
+        self.domains.len()
+    }
+
+    pub fn is_empty(&self) -> bool {
+        self.domains.is_empty()
+    }
+
     pub fn is_exhausted(&self, domain: &str) -> bool {
         self.exhausted.contains(domain)
     }
@@ -54,6 +70,13 @@ impl DnsExhaustion {
         let window = match self.domains.get_mut(domain) {
             Some(w) => w,
             None => {
+                // Bounded: the hourly reset is a TIME bound, and the parent domain is chosen by
+                // whoever sends the query. Refuse new domains at the cap instead of evicting
+                // tracked ones, so a flood cannot push an in-progress window out of memory.
+                if self.domains.len() >= super::HEURISTIC_MAX_KEYS {
+                    self.saturations += 1;
+                    return Outcome::Continue;
+                }
                 self.domains.insert(domain.into(), Window { start: sec, subdomains: StrSet::default() });
                 self.domains.get_mut(domain).expect("just inserted")
             }
