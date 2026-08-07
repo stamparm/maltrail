@@ -254,6 +254,27 @@ both matter:
 This is the clearest next optimization: give the sensor an mmap-able binary trail store
 (§7.1).
 
+**Re-measured after the §4c optimization rounds**, same harness, same command, same box, trail
+set now 83.3 MB / 1,505,265 rows:
+
+| | wall (s) | packets/s | peak RSS | startup (s) | ns/packet | steady packets/s |
+| --- | --- | --- | --- | --- | --- | --- |
+| `sensor.py` | 7.32 | 40,987 | 64 MB | 0.28 (warm) | 23,448 | 42,648 |
+| sensor | 2.49 | 120,246 | 132 MB | 2.24 | **865** | **1,156,423** |
+| **ratio** | 2.9x | 2.9x | 2.06x more | — | **27.1x faster** | **27.1x** |
+
+Both sensors produced 0 events on this corpus (equal), so the ratio is like-for-like work.
+
+The steady-state ratio moved from 13.8x to 27.1x for two independent reasons, and it is worth
+being precise about which is which: the sensor's own per-packet cost fell 1,209 -> 865 ns (-28%,
+the §4c work, reproducible), while `sensor.py` on this box measured 16,689 -> 23,448 ns/packet
+(+40%) on a larger trail set and a machine under different load. **Only the first is an
+improvement we made.** Quote 13.8x as the conservative floor and 27x as the current measurement;
+the honest statement is "14-27x per packet, depending on run and hardware".
+
+Startup regressed (1.18 -> 2.24 s) purely because the CSV grew; it is parsed on every start, which
+is exactly what §7.1 fixes.
+
 ### 4b. Rust, staged (`cargo bench --bench hotpath`)
 
 Categories are kept separate so a microbenchmark can never be quoted as sensor throughput.
