@@ -162,7 +162,13 @@ pub fn run(cfg: &Config) -> i32 {
             Err(e) => r.line(Level::Fail, "trails", &format!("'{}' unreadable ({e})", cfg.trails_file.display())),
             Ok((db, stats)) => {
                 if stats.loaded == 0 {
-                    r.line(Level::Fail, "trails", "loaded 0 trails");
+                    // Must agree with the startup check in main(), or `ExecStartPre=-T` blocks a
+                    // sensor that the operator has deliberately configured to run trail-less.
+                    if cfg.allow_empty_trails {
+                        r.line(Level::Warn, "trails", "loaded 0 trails, allowed by 'ALLOW_EMPTY_TRAILS'");
+                    } else {
+                        r.line(Level::Fail, "trails", "loaded 0 trails — this sensor would detect nothing");
+                    }
                 } else {
                     r.line(
                         Level::Ok,

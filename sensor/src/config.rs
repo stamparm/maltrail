@@ -135,6 +135,15 @@ pub struct Config {
     /// `build_trails_regex()` does. ON by default (it recovers real trails that Maltrail's own
     /// trail generation mangles); set false for byte-exact wildcard parity with `sensor.py`.
     pub repair_truncated_trails: bool,
+    /// New: start even when the trail set is empty. OFF by default — a sensor with zero trails
+    /// starts cleanly, reports itself healthy and detects nothing, which is the worst failure an
+    /// IDS has. Turn on only where an empty set is genuinely expected (heuristics-only sensors,
+    /// or a first boot whose trails arrive out of band).
+    pub allow_empty_trails: bool,
+    /// New: smallest fraction of the current trail count a RELOAD may produce and still be
+    /// accepted (0.5 = "reject anything that loses more than half the trails"). Guards against a
+    /// truncated or half-written trails.csv silently replacing a good store. 0 disables the check.
+    pub trail_reload_min_ratio: f64,
     /// New: event-log throttling. See `crate::throttle` — the shipped default replaces
     /// `core/log.py`'s `sec // PROCESS_COUNT` bucket with burst-then-summarize.
     pub event_throttle_mode: crate::throttle::ThrottleMode,
@@ -702,6 +711,15 @@ impl Config {
             use_condensed_storage: get_bool_opt(&raw, "USE_CONDENSED_STORAGE").unwrap_or(true),
             disable_trail_updates: get_bool(&raw, "DISABLE_TRAIL_UPDATES"),
             repair_truncated_trails: get_bool_opt(&raw, "REPAIR_TRUNCATED_TRAILS").unwrap_or(true),
+            // cfg_bool, NOT get_bool: only names starting with USE_/SET_/CHECK_/ENABLE_/SHOW_/
+            // DISABLE_ are coerced to Value::Bool by the parser (core/settings.py's convention),
+            // so `get_bool` on any other name silently reads false however it is written.
+            allow_empty_trails: cfg_bool(raw.get("ALLOW_EMPTY_TRAILS")),
+            trail_reload_min_ratio: get_str(&raw, "TRAIL_RELOAD_MIN_RATIO")
+                .parse::<f64>()
+                .ok()
+                .filter(|v| (0.0..=1.0).contains(v))
+                .unwrap_or(0.5),
             event_throttle_mode,
             event_throttle_window: get_u64(&raw, "EVENT_THROTTLE_WINDOW").unwrap_or(60),
             event_throttle_burst: get_u64(&raw, "EVENT_THROTTLE_BURST").unwrap_or(3).min(u32::MAX as u64) as u32,
