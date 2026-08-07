@@ -5,30 +5,19 @@ Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrai
 See the file 'LICENSE' for copying permission
 """
 
-import sys
-
-from thirdparty import six
 
 class _(type):
     def __getattr__(self, attr):
         return attr
 
-@six.add_metaclass(_)
-class TRAIL(object):
+class TRAIL(object, metaclass=_):
     pass
 
-if sys.version_info >= (3, 0):
-    class BLOCK_MARKER:
-        NOP = 0x00
-        READ = 0x01
-        WRITE = 0x02
-        END = 0xff
-else:
-    class BLOCK_MARKER:
-        NOP = b'\x00'
-        READ = b'\x01'
-        WRITE = b'\x02'
-        END = b'\xff'
+class BLOCK_MARKER:
+    NOP = 0x00
+    READ = 0x01
+    WRITE = 0x02
+    END = 0xff
 
 class PROTO:
     TCP = "TCP"

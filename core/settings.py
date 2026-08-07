@@ -4,7 +4,6 @@
 Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
-from __future__ import print_function
 
 import os
 import re
@@ -21,7 +20,11 @@ from core.attribdict import AttribDict
 from core.colorized import init_output
 from core.datatype import LRUDict
 from core.trailsdict import TrailsDict
-from thirdparty.six.moves import urllib as _urllib
+import urllib.error
+import urllib.parse
+import urllib.request
+import urllib.response
+import urllib as _urllib
 
 NAME = "Maltrail"
 VERSION = "3.0"

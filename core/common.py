@@ -5,7 +5,6 @@ Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrai
 See the file 'LICENSE' for copying permission
 """
 
-from __future__ import print_function
 
 import csv
 import gzip
@@ -39,8 +38,11 @@ from core.settings import WHITELIST
 from core.settings import WHITELIST_RANGES
 from core.settings import WORST_ASNS
 from core.trailsdict import TrailsDict
-from thirdparty import six
-from thirdparty.six.moves import urllib as _urllib
+import urllib.error
+import urllib.parse
+import urllib.request
+import urllib.response
+import urllib as _urllib
 
 _ipcat_cache = {}  # NOTE: holds the (bounded, config-sized) static IPCAT seed
 _ipcat_dynamic_cache = LRUDict(MAX_CACHE_ENTRIES)  # NOTE: bounds per-IP SQLite lookups so they can't grow without bound on a busy server
@@ -94,7 +96,7 @@ def retrieve_content(url, data=None, headers=None):
 
     retval = retval or b""
 
-    if six.PY3 and isinstance(retval, bytes):
+    if isinstance(retval, bytes):
         retval = retval.decode(UNICODE_ENCODING, errors="replace")
 
     return retval
@@ -258,7 +260,7 @@ def get_regex(items):
                 items = []
                 previous = None
                 start = None
-                for _ in sorted(current) + [six.unichr(65535)]:
+                for _ in sorted(current) + [chr(65535)]:
                     if previous is not None:
                         if ord(_) == ord(previous) + 1:
                             pass
@@ -538,14 +540,8 @@ def get_text(value):
 
     retval = value
 
-    if six.PY2:
-        try:
-            retval = str(retval)
-        except Exception:
-            pass
-    else:
-        if isinstance(value, six.binary_type):
-            retval = value.decode(UNICODE_ENCODING, errors="replace")
+    if isinstance(value, bytes):
+        retval = value.decode(UNICODE_ENCODING, errors="replace")
 
     return retval
 
@@ -567,7 +563,7 @@ def get_ex_message(ex):
         retval = ex.msg
     elif getattr(ex, "args", None):
         for candidate in ex.args[::-1]:
-            if isinstance(candidate, six.string_types):
+            if isinstance(candidate, str):
                 retval = candidate
                 break
 

@@ -1,47 +1,62 @@
-FROM python:3
+# Maltrail — server and sensor in one image.
+#
+# Build from the REPOSITORY ROOT (the build context must contain the whole tree):
+#
+#     docker build -f docker/Dockerfile -t maltrail .
+#
+# or just use docker/docker-compose.yml, which sets the context correctly.
 
-# Workdir and metadata
-WORKDIR /opt/maltrail
+# ---------------------------------------------------------------------------------------
+# Stage 1: build the sensor
+# ---------------------------------------------------------------------------------------
+FROM rust:1-slim-bookworm AS sensor-build
 
-# Environment variables
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONWARNINGS=ignore \
-    DEBIAN_FRONTEND=noninteractive
-
-# Install system dependencies, update apt packages, clear apt cache
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends libpcap-dev cron tini && \
+    apt-get install -y --no-install-recommends libpcap-dev pkg-config && \
     rm -rf /var/lib/apt/lists/*
 
-# Copy requirements.txt separately to leverage Docker cache
-COPY ../requirements.txt ./
+WORKDIR /build
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Manifests first, so a source-only change does not re-download and rebuild every dependency.
+COPY sensor/Cargo.toml sensor/Cargo.lock ./sensor/
+RUN mkdir -p sensor/src && echo 'fn main() {}' > sensor/src/main.rs && \
+    echo '' > sensor/src/lib.rs && \
+    cargo build --release --manifest-path sensor/Cargo.toml 2>/dev/null || true
 
-# Copy project
-COPY . .
+COPY sensor/ ./sensor/
+# The build script generates nothing, but `touch` defeats the stale-fingerprint cache above.
+RUN touch sensor/src/main.rs sensor/src/lib.rs && \
+    cargo build --release --manifest-path sensor/Cargo.toml && \
+    strip sensor/target/release/maltrail-sensor
 
-# Copy the start script and make it executable
-COPY docker/start.sh /opt/maltrail/start.sh
-RUN chmod +x /opt/maltrail/start.sh
+# ---------------------------------------------------------------------------------------
+# Stage 2: runtime
+# ---------------------------------------------------------------------------------------
+FROM python:3.12-slim-bookworm
 
-# Re-route log output from a file to stdout, also create log file for cron
-RUN ln -sf /dev/stdout /var/log/maltrail.log && \
-    ln -sf /dev/stdout /var/log/cron.log
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONWARNINGS=ignore \
+    PYTHONDONTWRITEBYTECODE=1 \
+    DEBIAN_FRONTEND=noninteractive
 
-# Initial update of trails
-RUN python /opt/maltrail/core/update.py
+# libpcap runtime only (not -dev: nothing compiles here), and tini so signals reach the process.
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends libpcap0.8 tini && \
+    rm -rf /var/lib/apt/lists/*
 
-# Update trails daily
-RUN echo '0 1 * * * /opt/maltrail/core/update.py >> /var/log/cron.log 2>&1' | crontab
+WORKDIR /opt/maltrail
 
-# Expose server ports
-EXPOSE 8337/udp
+COPY . /opt/maltrail/
+COPY --from=sensor-build /build/sensor/target/release/maltrail-sensor /usr/local/bin/maltrail-sensor
+
+# Trails are NOT baked into the image. Downloading them at build time produces a large image
+# full of indicators that are stale the moment it is published; both the server and the sensor
+# refresh them at startup and every UPDATE_PERIOD into the volume below.
+VOLUME ["/var/log/maltrail", "/var/lib/maltrail"]
+
+# Server: 8338/tcp reporting UI, 8337/udp event intake from remote sensors.
 EXPOSE 8338/tcp
+EXPOSE 8337/udp
 
-# Set tini as entrypoint to handle cron and maltrail process
 ENTRYPOINT ["/usr/bin/tini", "--"]
-
-# Execute start.sh to start cron and maltrail
-CMD ["/opt/maltrail/start.sh"]
+CMD ["python3", "server.py"]

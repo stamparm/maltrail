@@ -32,13 +32,9 @@ def _is_hostname(s):
     return bool(s) and bool(_HOST_RE.match(s))
 
 
-PY2 = sys.version_info[0] == 2
-if PY2:
-    def _b(x):            # iterate bytes as ints
-        return bytearray(x)
-else:
-    def _b(x):
-        return x
+def _b(x):
+    # Python 3 already iterates bytes as ints.
+    return x
 
 # ---------------------------------------------------------------------------
 # AES-128 block cipher (pure Python fallback) -- encrypt_block only (CTR + ECB use it)

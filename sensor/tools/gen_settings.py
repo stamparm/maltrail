@@ -12,7 +12,6 @@ core/settings.py and the Rust sensor picks the change up.
 Deterministic: Python sets are emitted sorted, tuples/lists keep their order (which is
 load-bearing for the "first regex wins" scans).
 """
-from __future__ import print_function
 
 import os
 import sys

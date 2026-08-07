@@ -12,7 +12,6 @@ import re
 from core.settings import config
 from core.settings import ROOT_DIR
 from core.settings import UNICODE_ENCODING
-from thirdparty import six
 
 __url__ = "(custom)"
 __reference__ = "(custom)"
@@ -29,8 +28,7 @@ def fetch():
         __info__ = os.path.splitext(os.path.basename(filename))[0].replace('_', " ")
         with open(filename, "rb") as f:
             for line in f:
-                if six.PY3:
-                    line = line.decode(UNICODE_ENCODING)
+                line = line.decode(UNICODE_ENCODING)
                 line = line.strip()
                 if not line or line.startswith('#'):
                     continue

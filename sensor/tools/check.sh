@@ -11,6 +11,14 @@ set -e
 ROOT=$(cd "$(dirname "$0")/../.." && pwd)
 cd "$ROOT"
 
+echo "== generated files are in sync with core/settings.py =="
+# BEFORE regenerating, not after: this gate exists to catch a constant that was changed in
+# core/settings.py without regenerating, and regenerating first would silently repair the drift
+# instead of reporting it. The Python sensor reads those constants at runtime while the Rust one
+# compiles them in, so a mismatch makes the two sensors disagree in a way the parity harness
+# structurally cannot see (it compares two sensors that are each internally consistent).
+cargo test --manifest-path sensor/Cargo.toml --release --test generated
+
 echo "== regenerate the Python-derived constants and vectors =="
 python3 sensor/tools/gen_settings.py
 python3 sensor/tools/gen_vectors.py

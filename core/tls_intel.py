@@ -28,13 +28,9 @@ except Exception:
     except Exception:                                        # pragma: no cover
         quic_sni = None
 
-PY2 = sys.version_info[0] == 2
-if PY2:
-    def _ints(x):
-        return bytearray(x)
-else:
-    def _ints(x):
-        return x
+def _ints(x):
+    # Python 3 already iterates bytes as ints.
+    return x
 
 
 import re as _re

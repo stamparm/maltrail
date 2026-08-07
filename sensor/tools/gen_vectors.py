@@ -11,7 +11,6 @@ expectation. Re-run after touching the relevant Python code:
 Format: one record per line, tab-separated fields, with `\\t`, `\\n`, `\\r` and `\\\\`
 backslash-escaped so a value can contain any of them.
 """
-from __future__ import print_function
 
 import math
 import os
@@ -28,7 +27,11 @@ sys.path.insert(0, ROOT)
 from core import settings as S          # noqa: E402
 from core.addr import addr_port, compress_ipv6, inet_ntoa6, parse_host_port  # noqa: E402
 from core.log import safe_value, _cef_escape  # noqa: E402
-from thirdparty.six.moves import urllib as _urllib  # noqa: E402
+import urllib.error
+import urllib.parse
+import urllib.request
+import urllib.response
+import urllib as _urllib  # noqa: E402
 
 
 def enc(value):

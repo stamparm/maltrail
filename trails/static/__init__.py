@@ -10,7 +10,6 @@ import os
 import re
 
 from core.settings import UNICODE_ENCODING
-from thirdparty import six
 
 __url__ = "(static)"
 
@@ -32,8 +31,7 @@ def fetch():
             __reference__ = "%s (static)" % os.path.splitext(os.path.basename(filename))[0]
             with open(filename, "rb") as f:
                 for line in f:
-                    if six.PY3:
-                        line = line.decode(UNICODE_ENCODING)
+                    line = line.decode(UNICODE_ENCODING)
                     line = line.strip()
                     if not line or line.startswith('#'):
                         continue
@@ -63,8 +61,7 @@ def fetch():
 
             with open(filename, "rb") as f:
                 for line in f:
-                    if six.PY3:
-                        line = line.decode(UNICODE_ENCODING)
+                    line = line.decode(UNICODE_ENCODING)
                     line = line.strip()
                     if not line or line.startswith('#'):
                         continue

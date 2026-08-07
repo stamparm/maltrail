@@ -5,7 +5,6 @@ Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrai
 See the file 'LICENSE' for copying permission
 """
 
-from __future__ import print_function  # Requires: Python >= 2.6
 
 # This is the OLD (Python) sensor. It is retained as the reference implementation and as the
 # differential oracle the Rust sensor's parity harness replays against — see sensor/. It is
@@ -120,8 +119,11 @@ from core.settings import WHITELIST_HTTP_REQUEST_PATHS
 from core.settings import WHITELIST_UA_REGEX
 from core.update import update_ipcat
 from core.update import update_trails
-from thirdparty import six
-from thirdparty.six.moves import urllib as _urllib
+import urllib.error
+import urllib.parse
+import urllib.request
+import urllib.response
+import urllib as _urllib
 
 warnings.filterwarnings(action="ignore", category=DeprecationWarning)       # NOTE: https://github.com/helpsystems/pcapy/pull/67/files
 
@@ -285,7 +287,7 @@ except ImportError:
     if IS_WIN:
         sys.exit("[!] please install 'WinPcap' (e.g. 'http://www.winpcap.org/install/') and Pcapy (e.g. 'https://breakingcode.wordpress.com/?s=pcapy')")
     else:
-        msg = "[!] please install 'pcapy or pcapy-ng' (e.g. 'sudo pip%s install pcapy-ng')" % ('3' if six.PY3 else '2')
+        msg = "[!] please install 'pcapy or pcapy-ng' (e.g. 'sudo pip%s install pcapy-ng')" % ('3' if True else '2')
 
         sys.exit(msg)
 
@@ -1481,10 +1483,9 @@ def monitor():
             packet = packet[:SNAP_LEN]
 
         try:
-            if six.PY3:  # https://github.com/helpsystems/pcapy/issues/37#issuecomment-530795813
-                sec, usec = [int(_) for _ in ("%.6f" % time.time()).split('.')]
-            else:
-                sec, usec = header.getts()
+            # NOTE: pcapy-ng returns unusable header timestamps on Python 3, so the wall clock
+            # is substituted. https://github.com/helpsystems/pcapy/issues/37#issuecomment-530795813
+            sec, usec = [int(_) for _ in ("%.6f" % time.time()).split('.')]
 
             if _multiprocessing:
                 block = struct.pack("=III", sec, usec, ip_offset) + packet
@@ -1544,10 +1545,7 @@ def monitor():
                     info = fastfilter.head_sni(packet, l2_offset)
                     if info:
                         sni, src_ip, src_port, dst_ip, dst_port, ipproto = info
-                        if six.PY3:
-                            sec, usec = [int(_) for _ in ("%.6f" % time.time()).split('.')]
-                        else:
-                            sec, usec = header.getts()
+                        sec, usec = [int(_) for _ in ("%.6f" % time.time()).split('.')]
                         _check_domain(sni, sec, usec, src_ip, src_port, dst_ip, dst_port,
                                       PROTO.TCP if ipproto == 6 else PROTO.UDP, packet)
             except Exception:
@@ -1622,7 +1620,7 @@ def monitor():
 #
 # NOTE: currently an issue with pcapy-png and loop()
 #
-#            if six.PY3 and not config.pcap_file:  # https://github.com/helpsystems/pcapy/issues/37#issuecomment-530795813
+#            if True and not config.pcap_file:  # https://github.com/helpsystems/pcapy/issues/37#issuecomment-530795813
 #                def _loop_handler(header, packet):
 #                    packet_handler(datalink, header, packet)
 #
@@ -1768,7 +1766,7 @@ def main():
     read_config(options.config_file)
 
     for option in dir(options):
-        if isinstance(getattr(options, option), (six.string_types, bool)) and not option.startswith('_'):
+        if isinstance(getattr(options, option), (str, bool)) and not option.startswith('_'):
             config[option] = getattr(options, option)
 
     if options.debug:
@@ -1805,7 +1803,7 @@ if __name__ == "__main__":
     try:
         main()
     except SystemExit as ex:
-        if isinstance(get_ex_message(ex), six.string_types) and get_ex_message(ex).strip('0'):
+        if isinstance(get_ex_message(ex), str) and get_ex_message(ex).strip('0'):
             print(get_ex_message(ex))
             code = 1
     except IOError:

@@ -31,7 +31,6 @@ changes the event COUNT by one on a case with repeated identical detections. Tha
 nondeterminism in the COMPARISON, not in either sensor: a real regression reproduces on every
 run, a clock artefact does not. Use `--repeat N` to tell them apart.
 """
-from __future__ import print_function
 
 import argparse
 import collections

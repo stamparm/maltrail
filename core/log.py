@@ -4,7 +4,6 @@
 Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
-from __future__ import print_function
 
 import datetime
 import json
@@ -36,8 +35,8 @@ from core.settings import TIME_FORMAT
 from core.settings import UNICODE_ENCODING
 from core.settings import VERSION
 from core.ignore import ignore_event
-from thirdparty.odict import OrderedDict
-from thirdparty.six.moves import socketserver as _socketserver
+from collections import OrderedDict
+import socketserver as _socketserver
 
 _condensed_events = {}
 _condensing_thread = None
