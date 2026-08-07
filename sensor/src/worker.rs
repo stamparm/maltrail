@@ -32,9 +32,47 @@ pub struct WorkerContext {
     pub shutdown: Arc<AtomicBool>,
 }
 
+/// Why a worker left its capture loop.
+///
+/// Both variants are *expected* endings. Anything else is a `WorkerError`, and the distinction
+/// is the whole point: `main` must be able to tell "this worker finished its pcap" from "this
+/// worker's interface went away", because the second one means the host has stopped being
+/// monitored and the process must not exit 0.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum WorkerExit {
+    /// Shutdown was requested (signal, or another worker failing) and the loop obeyed.
+    Shutdown,
+    /// Offline replay reached the end of its pcap file(s).
+    OfflineEof,
+}
+
+/// Why a worker stopped when it should not have.
+#[derive(Debug, Clone)]
+pub enum WorkerError {
+    /// The capture handle failed persistently. Carries the last error text for the operator.
+    Capture(String),
+    /// The worker thread unwound. Filled in by `main` from the join result, not returned here.
+    Panic,
+}
+
+impl std::fmt::Display for WorkerError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            WorkerError::Capture(e) => write!(f, "capture failed: {e}"),
+            WorkerError::Panic => write!(f, "worker thread panicked"),
+        }
+    }
+}
+
+/// How many consecutive capture errors, with no packet in between, before a live worker gives
+/// up. A single error is often transient (an interface flap, a buffer hiccup); an unbroken run
+/// of them is not, and the previous code looped on it forever, logging every time and capturing
+/// nothing — a detection outage that looked like a quiet network.
+const LIVE_CAPTURE_ERROR_LIMIT: u32 = 64;
+
 /// Drive one capture handle to completion. Returns when the handle reaches EOF (offline) or
-/// shutdown is requested (live).
-pub fn run(mut handle: Handle, ctx: WorkerContext) {
+/// shutdown is requested (live); errors when capture fails persistently.
+pub fn run(mut handle: Handle, ctx: WorkerContext) -> Result<WorkerExit, WorkerError> {
     let offline = handle.is_offline();
     let datalink = handle.datalink();
     let snaplen = ctx.cfg.capture_snaplen;
@@ -59,6 +97,12 @@ pub fn run(mut handle: Handle, ctx: WorkerContext) {
     const TIMING_SAMPLE_STRIDE: u32 = 64;
     let mut timing_countdown: u32 = 1;
 
+    // How this loop ended, decided inside it and reported to `main` on the way out.
+    let mut outcome: Result<WorkerExit, WorkerError> = Ok(WorkerExit::Shutdown);
+    let mut consecutive_errors: u32 = 0;
+
+    ctx.slot.mark_alive();
+
     loop {
         if ctx.shutdown.load(Ordering::Relaxed) {
             break;
@@ -72,6 +116,9 @@ pub fn run(mut handle: Handle, ctx: WorkerContext) {
                 Ok(Some(captured)) => {
                     st.metrics.packets_received += 1;
                     drained += 1;
+                    // Progress: the run of errors is broken, so the limit only ever counts an
+                    // UNINTERRUPTED failure streak rather than accumulating over a long uptime.
+                    consecutive_errors = 0;
 
                     // pcapy.open_live() caps packets at SNAP_LEN but open_offline() does not, so
                     // a pcap recorded with `-s 0` can exceed it. Truncating here matches what
@@ -127,6 +174,7 @@ pub fn run(mut handle: Handle, ctx: WorkerContext) {
                 // offline: end of file. live: nothing available right now.
                 Ok(None) => {
                     if offline {
+                        outcome = Ok(WorkerExit::OfflineEof);
                         fatal = true;
                     }
                     break;
@@ -134,7 +182,20 @@ pub fn run(mut handle: Handle, ctx: WorkerContext) {
                 Err(e) => {
                     crate::output::log_error(&format!("capture error on worker {} ({e})", ctx.id), true);
                     if offline {
+                        // A truncated or corrupt pcap ends the replay; it is not a live outage.
+                        outcome = Ok(WorkerExit::OfflineEof);
                         fatal = true;
+                    } else {
+                        // Live: tolerate a transient hiccup, but never spin here forever. An
+                        // unbroken run of errors means the interface is gone, and a sensor that
+                        // cannot capture must say so rather than quietly logging in a loop.
+                        consecutive_errors += 1;
+                        if consecutive_errors >= LIVE_CAPTURE_ERROR_LIMIT {
+                            outcome = Err(WorkerError::Capture(format!(
+                                "{consecutive_errors} consecutive capture errors, last: {e}"
+                            )));
+                            fatal = true;
+                        }
                     }
                     break;
                 }
@@ -174,6 +235,7 @@ pub fn run(mut handle: Handle, ctx: WorkerContext) {
                 st.metrics.capture_dropped = dropped as u64;
                 st.metrics.capture_ifdropped = ifdropped as u64;
             }
+            ctx.slot.heartbeat();
             publish(&ctx.slot, &mut st);
         }
     }
@@ -188,6 +250,10 @@ pub fn run(mut handle: Handle, ctx: WorkerContext) {
         st.metrics.capture_ifdropped = ifdropped as u64;
     }
     publish(&ctx.slot, &mut st);
+    // Marked dead AFTER the final publish, so a scrape landing in this window still sees the
+    // worker's last counters rather than a half-torn-down slot.
+    ctx.slot.mark_dead();
+    outcome
 }
 
 fn publish(slot: &MetricsSlot, st: &mut WorkerState) {
