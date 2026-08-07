@@ -1,10 +1,34 @@
-*.py text eol=lf
-*.txt text eol=lf
-*.csv text eol=lf
-*.js text eol=lf
-*.ccs text eol=lf
-*.css text eol=lf
-*.html text eol=lf
-*.conf text eol=lf
-*.md text eol=lf
-*.pem text eol=lf
+# Normalise line endings so a Windows checkout cannot silently change a trail file or a
+# generated Rust constant, which would show up as a spurious diff or a failed freshness test.
+* text=auto eol=lf
+
+*.py    text eol=lf
+*.rs    text eol=lf
+*.toml  text eol=lf
+*.sh    text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.txt   text eol=lf
+*.csv   text eol=lf
+*.js    text eol=lf
+*.css   text eol=lf
+*.html  text eol=lf
+*.md    text eol=lf
+*.conf  text eol=lf
+*.service text eol=lf
+
+# Binary: never touch these.
+*.pcap  binary
+*.pcapng binary
+*.png   binary
+*.gif   binary
+*.ico   binary
+*.gz    binary
+*.zip   binary
+*.xcf   binary
+
+# The corpus and the generated vectors are inputs to byte-exact comparisons; a diff of them is
+# noise in review.
+sensor/tests/corpus/**    linguist-generated=true
+sensor/tests/vectors/**   linguist-generated=true
+sensor/src/settings_gen.rs linguist-generated=true

@@ -1,0 +1,44 @@
+# Static analysis for the languages CI cannot otherwise reason about.
+#
+# The Rust sensor is covered by clippy at `-D warnings` in ci.yml. The server is Python and the
+# reporting interface is hand-written JavaScript — both parse user-controlled input from the
+# network (event lines, query parameters, log files) and neither had any static analysis beyond
+# bandit's pattern matching.
+#
+# Trail data cannot affect any of this, so indicator commits do not trigger it; see ci.yml.
+
+name: CodeQL
+
+on:
+  push:
+    branches: [ "master" ]
+    paths: [ '**.py', '**.js', '.github/workflows/codeql.yml' ]
+  pull_request:
+    branches: [ "master" ]
+    paths: [ '**.py', '**.js', '.github/workflows/codeql.yml' ]
+  schedule:
+    # Weekly, so a newly published query finds old code without waiting for someone to touch it.
+    - cron: '23 4 * * 1'
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  analyze:
+    name: analyze (${{ matrix.language }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ python, javascript ]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          queries: security-and-quality
+      - uses: github/codeql-action/analyze@v3
+        with:
+          category: /language:${{ matrix.language }}

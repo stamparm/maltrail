@@ -1,0 +1,32 @@
+# Dependency updates, batched so they are reviewable rather than a stream of noise.
+#
+# The sensor has nine direct dependencies and the project has no Python ones at all, so this is a
+# small surface — which is exactly why keeping it current is cheap and there is no excuse for
+# drifting. `cargo audit` in ci.yml catches a vulnerable dependency the moment it is published;
+# this is the routine half.
+
+version: 2
+updates:
+  - package-ecosystem: cargo
+    directory: /sensor
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      # One PR for the routine bumps: nine crates producing nine PRs a week trains people to
+      # ignore them, which is worse than not having the updates at all.
+      cargo-minor-and-patch:
+        update-types: [ minor, patch ]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: [ "*" ]
+
+  - package-ecosystem: docker
+    directory: /docker
+    schedule:
+      interval: weekly

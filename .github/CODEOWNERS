@@ -1,0 +1,14 @@
+# Default owner for everything.
+*                       @stamparm
+
+# Trail data is the project's most frequent contribution and does not need the same review as
+# code: an indicator is verifiable on its own terms, and CI does not even run for it.
+# Listed explicitly so the distinction is deliberate rather than accidental.
+/trails/                @stamparm
+
+# The packet path, the release machinery and the security policy are where a mistake is silent
+# and expensive. Called out so they are never mistaken for routine.
+/sensor/src/            @stamparm
+/core/                  @stamparm
+/.github/workflows/     @stamparm
+/SECURITY.md            @stamparm
