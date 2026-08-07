@@ -107,7 +107,7 @@ all currently produce silent misbehaviour. `-T` should enforce typed bounds and 
 **Exit criterion:** multi-worker parity runs clean, and a shadow deployment shows no Python-only
 detections over a sustained period on real traffic.
 
-### 2.1 Source affinity, or accept the dilution loudly **[R1][R2]**
+### 2.1 Source affinity, or accept the dilution loudly **[R1][R2]** — STOPGAP DONE
 
 `PACKET_FANOUT_HASH` splits by flow; the scan heuristics count per **source**, and a scan is many
 flows. With N workers a threshold needs roughly N times more probes. The docs now say this honestly
@@ -124,18 +124,46 @@ Options, in preference order:
 
 Do (3) now as a stopgap, (1) before default cutover.
 
-### 2.2 Multi-worker parity coverage **[R2]**
+**Done:** the sensor warns at startup, and `-T` warns, when workers > 1 with scan heuristics
+enabled. The dilution is no longer a qualitative claim — `tests/multi_worker_parity.rs` measures
+it on the corpus: of the heuristic alerts one worker raises, **91% survive at 2 workers, 86% at
+4, 65% at 8**. Option (1), `PACKET_FANOUT_EBPF` with a source-only hash, is still the real fix.
+
+### 2.2 Multi-worker parity coverage **[R2]** — DONE
 
 The 36-case corpus is single-worker deterministic. Add a **set-comparison** mode: replay the corpus
 with N workers and compare event *sets* against the 1-worker run. This is the only thing that can
 catch dilution regressions.
 
-* Plus a privileged live test: inject the same scan through 1 and N workers, require equivalent
-  alerts.
+**Done** in `tests/multi_worker_parity.rs`: the whole corpus is replayed with packets routed by
+5-tuple flow hash across 1, 2, 4 and 8 workers, and event *sets* are compared.
 
-### 2.3 Shadow deployment
+* **Exact trail detections are identical at every worker count**, in both directions — fanout
+  never loses an IOC detection and never invents one. This is the invariant that matters, and it
+  holds because trail matching is a stateless per-packet decision.
+* Heuristic alerts are measured rather than asserted equal (dilution is inherent), with one
+  assertion that does hold: fanout may lose a heuristic alert, never invent one.
 
-Both sensors, same traffic, same trails, ≥7 days on a real gateway. Compare nightly:
+Still open: a privileged live test injecting the same scan through 1 and N real fanout sockets.
+
+### 2.3 Shadow deployment — TOOLING READY, NEEDS A REAL GATEWAY
+
+Both sensors, same traffic, same trails, ≥7 days on a real gateway. Compare nightly with
+`sensor/tools/shadow_diff.py`, which answers the one question that decides the cutover — *are
+there detections the old sensor makes that the new one does not?* — and exits non-zero when
+there are, so it can run from cron:
+
+```bash
+# run both sensors against the same interface, writing to separate LOG_DIRs, then nightly:
+python3 sensor/tools/shadow_diff.py --new /var/log/maltrail --old /var/log/maltrail-old --days 7
+```
+
+Detections are compared as SETS of `(src_ip, dst_ip, type, trail, info)`. Ports and timestamps
+are excluded deliberately: the same beacon reappears on a new ephemeral port every time, and the
+two throttles are different mechanisms, so line COUNTS legitimately differ. New-sensor-only
+detections are reported but are not a failure — the Rust sensor genuinely detects more.
+
+Compare nightly:
 
 * normalized event sets (target: **zero** Python-only detections),
 * `capture_drops` / `if_drops` on both,
