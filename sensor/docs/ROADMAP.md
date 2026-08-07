@@ -23,9 +23,9 @@ Done and verified, so the plan does not re-litigate it:
 | Operational surface | `-T` config test, capability-based privileges (no root), hardened systemd unit, SIGHUP reload, Prometheus endpoint, 1 s trail-refresh pickup |
 | Upstream bugs found and fixed | 9, including silently-stale trails and a self-stopping sensor |
 
-**Not yet true:** `meta.sqlite` is not written, multi-worker behaviour has never been
-parity-tested, and Gate 1.5 (bounded state everywhere) and 1.6 (config range validation in `-T`)
-are open. CI now runs the whole gate on every push and pull request.
+**Not yet true:** `meta.sqlite` is not written and multi-worker behaviour has never been
+parity-tested (Gate 2). Gate 1 is complete: CI runs the whole gate on every push and pull
+request, and every item below has a regression test in the suite.
 
 ---
 
@@ -83,7 +83,7 @@ capture set expects.
   when nothing will ever create it.
 * **Test:** container smoke test — install unit, `systemctl start`, assert active and detecting.
 
-### 1.5 Bounded state, everywhere **[R1]**
+### 1.5 Bounded state, everywhere **[R1]** — DONE
 
 "Bounded" is claimed but not universally true: DNS-exhaustion, NXDOMAIN and condensed-output maps
 can grow within their windows. Every network-influenced structure needs a hard cap, a documented
@@ -92,7 +92,7 @@ eviction policy, a saturation metric, and a degraded mode that still performs ex
 * **Test:** flood each structure past its cap; assert memory plateaus and exact IOC detection is
   unaffected.
 
-### 1.6 Config range validation in `-T` **[R1]**
+### 1.6 Config range validation in `-T` **[R1]** — DONE
 
 Zero snaplen, zero throttle window, zero caps, absurd worker counts, and integer narrowing on cast
 all currently produce silent misbehaviour. `-T` should enforce typed bounds and print the
