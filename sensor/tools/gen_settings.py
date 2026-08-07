@@ -79,7 +79,7 @@ def emit_pairs(name, pairs, comment=None):
 
 
 def main(out_path=None):
-    S.read_ua()  # builds SUSPICIOUS_UA_REGEX from misc/ua.txt
+    S.read_ua()  # builds SUSPICIOUS_UA_REGEX from data/ua.txt
 
     import socket
     ipproto = sorted(((getattr(socket, _), _.replace("IPPROTO_", "")) for _ in dir(socket) if _.startswith("IPPROTO_")))
@@ -157,7 +157,7 @@ def main(out_path=None):
                    list(S.SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS.items()),
                    "(char, percent-encoding) applied to path/post_data before logging"),
         "",
-        "/// SUSPICIOUS_UA_REGEX, built by core/settings.py:read_ua() from misc/ua.txt",
+        "/// SUSPICIOUS_UA_REGEX, built by core/settings.py:read_ua() from data/ua.txt",
         "/// (each line kept verbatim if it compiles as a regex, else re.escape()d; lines",
         "/// containing \" (compatible\" are always escaped).",
         "pub const SUSPICIOUS_UA_REGEX: &str = %s;" % rust_str(S.SUSPICIOUS_UA_REGEX),

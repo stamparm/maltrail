@@ -9,6 +9,9 @@ sensor/fuzz/target
 sensor/fuzz/corpus
 sensor/fuzz/artifacts
 
+# Local scratch space, not part of the project (and often tens of MB of source dumps)
+misc
+
 **/__pycache__
 **/*.py[cod]
 *.egg-info

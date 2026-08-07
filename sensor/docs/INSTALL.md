@@ -221,7 +221,7 @@ anything — it does not run a trail update and does not create the log director
 [o] trails: 1505265 loaded (0 malformed row(s)), ipv4=144758 ipv4:port=253517 ipv6=2014 wildcard=29
 [!] trails age: 195.0 day(s) old, older than UPDATE_PERIOD
 [o] trail updates: updater and interpreter present
-[o] user-agent patterns: loaded from misc/ua.txt
+[o] user-agent patterns: loaded from data/ua.txt
 [o] heuristics: on (disabled: none)
 ```
 

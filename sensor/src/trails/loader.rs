@@ -225,7 +225,7 @@ mod tests {
         let (db, stats) = load_trails(&path, &wl, LoadOptions::default()).unwrap();
 
         assert_eq!(stats.malformed, 1, "the 2-column row must be skipped");
-        assert!(stats.whitelisted >= 1, "127.0.0.1 is in misc/whitelist.txt");
+        assert!(stats.whitelisted >= 1, "127.0.0.1 is in data/whitelist.txt");
         assert_eq!(db.len(), stats.loaded);
 
         assert_eq!(db.get("evil.com").map(|v| v.info), Some("malware (test)"));

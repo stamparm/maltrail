@@ -29,10 +29,10 @@ pub struct Whitelist {
 }
 
 impl Whitelist {
-    /// `read_whitelist()`: `misc/whitelist.txt` then the optional `USER_WHITELIST`.
+    /// `read_whitelist()`: `data/whitelist.txt` then the optional `USER_WHITELIST`.
     pub fn load(root: &Path, user_whitelist: Option<&Path>) -> Whitelist {
         let mut wl = Whitelist::default();
-        let mut files = vec![root.join("misc").join("whitelist.txt")];
+        let mut files = vec![root.join("data").join("whitelist.txt")];
         if let Some(p) = user_whitelist {
             files.push(p.to_path_buf());
         }
@@ -259,7 +259,7 @@ mod tests {
     #[test]
     fn shipped_whitelist_loads() {
         let wl = Whitelist::load(&root(), None);
-        assert!(wl.len() > 1000, "misc/whitelist.txt should be sizeable, got {}", wl.len());
+        assert!(wl.len() > 1000, "data/whitelist.txt should be sizeable, got {}", wl.len());
         assert!(wl.check_whitelisted("localhost"));
         assert!(wl.check_whitelisted("127.0.0.1"));
         assert!(wl.check_whitelisted_ip(Ip::V4(0x7f00_0001)));

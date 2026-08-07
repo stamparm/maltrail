@@ -125,7 +125,7 @@ pub fn run(cfg: &Config) -> i32 {
     // --- whitelist -------------------------------------------------------------------
     let whitelist = Whitelist::load(&cfg.root, cfg.user_whitelist.as_deref());
     if whitelist.is_empty() {
-        r.line(Level::Warn, "whitelist", "empty — misc/whitelist.txt missing or unreadable?");
+        r.line(Level::Warn, "whitelist", "empty — data/whitelist.txt missing or unreadable?");
     } else {
         r.line(
             Level::Ok,
@@ -218,9 +218,9 @@ pub fn run(cfg: &Config) -> i32 {
     // `-T` runs before the sensor's normal startup, so the compiled patterns are built here.
     let statics = crate::settings::init(cfg.root.clone());
     if statics.suspicious_ua.is_some() {
-        r.line(Level::Ok, "user-agent patterns", "loaded from misc/ua.txt");
+        r.line(Level::Ok, "user-agent patterns", "loaded from data/ua.txt");
     } else {
-        r.line(Level::Warn, "user-agent patterns", "unavailable — misc/ua.txt missing?");
+        r.line(Level::Warn, "user-agent patterns", "unavailable — data/ua.txt missing?");
     }
     r.line(
         Level::Ok,

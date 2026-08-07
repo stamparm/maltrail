@@ -18,8 +18,9 @@ import tempfile
 
 from core.settings import ROOT_DIR
 
-# directories that hold third-party / non-source files and must not be touched by the smoke test
-SKIP_DIRS = ("thirdparty", "__pycache__", ".git", ".github", "docker", "html", "misc")
+# directories that hold data / non-source files and must not be touched by the smoke test
+# ("misc" is no longer in the repository, but operators keep local scratch scripts there)
+SKIP_DIRS = ("__pycache__", ".git", ".github", "docker", "html", "misc")
 
 # packages whose modules carry doctests / pure logic worth importing and exercising
 DOCTEST_PACKAGES = ("core",)

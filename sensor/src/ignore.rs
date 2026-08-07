@@ -16,7 +16,7 @@ impl IgnoreRules {
     /// `core/settings.py:read_ignorelist()` + `IGNORE_EVENTS_REGEX` compilation.
     pub fn load(root: &Path, user_ignorelist: Option<&Path>, events_regex: &str) -> IgnoreRules {
         let mut out = IgnoreRules::default();
-        let mut files = vec![root.join("misc").join("ignore_events.txt")];
+        let mut files = vec![root.join("data").join("ignore_events.txt")];
         if let Some(p) = user_ignorelist {
             files.push(p.to_path_buf());
         }

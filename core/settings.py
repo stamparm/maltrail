@@ -428,7 +428,7 @@ def read_config(config_file):
 def _iter_file_lines(filepath):
     """
     Yields stripped, non-blank, non-comment lines from a file (a no-op if the file is missing).
-    Factors out the open/strip/skip-blank-or-comment boilerplate shared by the misc/*.txt loaders below.
+    Factors out the open/strip/skip-blank-or-comment boilerplate shared by the data/*.txt loaders below.
     """
 
     if filepath and os.path.isfile(filepath):
@@ -442,7 +442,7 @@ def read_whitelist():
     WHITELIST.clear()
     WHITELIST_RANGES.clear()
 
-    for _ in (os.path.abspath(os.path.join(ROOT_DIR, "misc", "whitelist.txt")), config.USER_WHITELIST):
+    for _ in (os.path.abspath(os.path.join(ROOT_DIR, "data", "whitelist.txt")), config.USER_WHITELIST):
         for line in _iter_file_lines(_):
             if re.search(r"\A\d+\.\d+\.\d+\.\d+/\d+\Z", line):
                 try:
@@ -473,7 +473,7 @@ def add_ignorelist(filepath):
 def read_ignorelist():
     IGNORE_EVENTS.clear()
 
-    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "ignore_events.txt"))
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "data", "ignore_events.txt"))
     add_ignorelist(_)
 
     if config.USER_IGNORELIST and os.path.isfile(config.USER_IGNORELIST):
@@ -485,7 +485,7 @@ def read_ua():
     SUSPICIOUS_UA_REGEX = ""
     items = []
 
-    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "ua.txt"))
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "data", "ua.txt"))
     for line in _iter_file_lines(_):
         if " (compatible" in line:
             line = re.escape(line)
@@ -501,7 +501,7 @@ def read_ua():
         SUSPICIOUS_UA_REGEX = "(?i)%s" % '|'.join(items)
 
 def read_worst_asn():
-    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "worst_asns.txt"))
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "data", "worst_asns.txt"))
     for line in _iter_file_lines(_):
         match = re.search(r"([\d.]+)/(\d+),(.+)", line)
         if not match:
@@ -514,7 +514,7 @@ def read_worst_asn():
         WORST_ASNS[key].append((addr_to_int(prefix) & _mask, _mask, name))
 
 def read_cdn_ranges():
-    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "cdn_ranges.txt"))
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "data", "cdn_ranges.txt"))
     for line in _iter_file_lines(_):
         key = line.split('.')[0]
         if key not in CDN_RANGES:
@@ -524,7 +524,7 @@ def read_cdn_ranges():
         CDN_RANGES[key].append((addr_to_int(prefix) & _mask, _mask))
 
 def read_bogon_ranges():
-    _ = os.path.abspath(os.path.join(ROOT_DIR, "misc", "bogon_ranges.txt"))
+    _ = os.path.abspath(os.path.join(ROOT_DIR, "data", "bogon_ranges.txt"))
     for line in _iter_file_lines(_):
         key = line.split('.')[0]
         if key not in BOGON_RANGES:

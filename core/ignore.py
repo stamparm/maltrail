@@ -5,7 +5,7 @@ Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrai
 See the file 'LICENSE' for copying permission
 """
 
-# simple ignore rule mechanism configured by file 'misc/ignore_event.txt' and/or user defined `USER_IGNORELIST`
+# simple ignore rule mechanism configured by file 'data/ignore_events.txt' and/or user defined `USER_IGNORELIST`
 
 import re
 
