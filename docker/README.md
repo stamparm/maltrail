@@ -62,3 +62,21 @@ docker compose -f docker/docker-compose.yml run --rm sensor maltrail-sensor -T
 
 `-T` validates the configuration, trails, whitelist, log directory, capture filter and privileges,
 then exits non-zero if the sensor would not work.
+
+## Security posture
+
+The image runs as the unprivileged user `maltrail` (uid 10001), matching the systemd units.
+Neither process needs root: the sensor gets `CAP_NET_RAW` and `CAP_NET_ADMIN` through `cap_add`
+rather than by being root, and the server binds only unprivileged ports. The compose file is
+**not** `privileged`.
+
+`HEALTHCHECK` runs `maltrail-sensor -T`, so an unhealthy container is one that has genuinely lost
+the ability to detect — bad configuration, unreadable trails, an unwritable log directory — rather
+than one whose PID 1 merely still exists. `start-period` covers the first trail build.
+
+Published images are multi-arch (`linux/amd64`, `linux/arm64`) and carry a build-provenance
+attestation, so you can confirm one was built by the release workflow from this repository:
+
+```bash
+gh attestation verify oci://ghcr.io/stamparm/maltrail:3.0 --repo stamparm/maltrail
+```
