@@ -183,13 +183,23 @@ fn clean_traffic_produces_no_events() {
     assert!(h.events().is_empty(), "{:?}", h.events());
 }
 
+/// The error log is process-global by design (`output::ERROR_LOG` is a `OnceLock`, mirroring
+/// `core/log.py`'s single error log), so the FIRST harness in a test binary owns the file every
+/// later harness also writes to. Any test that asserts "nothing was logged" therefore has to
+/// exclude the tests that log on purpose — otherwise it passes or fails on thread scheduling.
+static ERROR_LOG_EXCLUSIVE: std::sync::Mutex<()> = std::sync::Mutex::new(());
+
 #[test]
 fn truncated_corpus_case_is_silent_and_error_free() {
+    let _exclusive = ERROR_LOG_EXCLUSIVE.lock().unwrap_or_else(|e| e.into_inner());
     let mut h = harness_for_corpus(vec![]);
     let pcap = corpus_dir().join("truncated.pcap");
     if !pcap.is_file() {
         return;
     }
+    // Start from a known-empty log: an earlier test in this binary may already have written to
+    // whichever file won the OnceLock.
+    let _ = std::fs::write(h.log_dir().join("error.log"), "");
     h.replay(&pcap, false);
     assert!(h.events().is_empty(), "{:?}", h.events());
     assert!(h.errors().is_empty(), "{:?}", h.errors());
@@ -229,6 +239,9 @@ fn multiple_pcaps_in_one_worker_share_state() {
 
 #[test]
 fn unknown_datalink_falls_back_to_the_offset_heuristic() {
+    // This one logs on purpose ("unexpected datalink"), into the shared process-global error
+    // log — so it must not overlap the test that asserts the log is empty.
+    let _exclusive = ERROR_LOG_EXCLUSIVE.lock().unwrap_or_else(|e| e.into_inner());
     // Write a pcap with an exotic linktype and confirm the learner still finds the IP header.
     let dir = std::env::temp_dir().join("mt-replay-dlt");
     std::fs::create_dir_all(&dir).unwrap();
