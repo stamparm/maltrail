@@ -24,6 +24,7 @@ else
 fi
 
 rc=0
+skipped=""
 for py in $PYS; do
     echo "============================================================"
     echo "== $($py --version 2>&1)"
@@ -55,6 +56,13 @@ PYEOF
         if printf '%s' "$out" | grep -qE '^OK( \(skipped=[0-9]+\))?$'; then
             ran=$(printf '%s' "$out" | grep -oE 'Ran [0-9]+ tests' | head -1)
             echo "PASS ($ran)"
+        elif printf '%s' "$out" | grep -qE "No module named 'pcapy'|please install 'pcapy"; then
+            # These exercise the OLD (Python) sensor, which needs pcapy-ng. It is not a
+            # dependency of the current sensor or of the server, so a contributor without
+            # libpcap headers must not see a wall of tracebacks. CI installs it, so this
+            # SKIP never masks a regression there — see .github/workflows/ci.yml.
+            echo "SKIP (needs pcapy-ng: pip install -r old/requirements.txt)"
+            skipped="$skipped $t"
         else
             echo "FAIL"
             printf '%s\n' "$out" | tail -20
@@ -62,6 +70,12 @@ PYEOF
         fi
     done
 done
+
+if [ -n "$skipped" ]; then
+    echo
+    echo "[!] SKIPPED (pcapy-ng not installed):$skipped"
+    echo "[?] these cover the old Python sensor in old/; install with: pip install -r old/requirements.txt"
+fi
 
 # Frontend guard: a syntax typo in the dashboard JS ships silently and breaks the WHOLE UI (no Python
 # test can catch it). If a JS engine is available, syntax-check the hand-written frontend files. Skips
