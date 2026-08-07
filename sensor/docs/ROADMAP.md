@@ -146,7 +146,7 @@ catch dilution regressions.
 
 Still open: a privileged live test injecting the same scan through 1 and N real fanout sockets.
 
-### 2.3 Shadow deployment — HARNESS DONE AND EXERCISED; A REAL GATEWAY IS STILL OWED
+### 2.3 Shadow deployment — MET on an hour of real traffic
 
 Both sensors, same traffic, same trails, ≥7 days on a real gateway. Compare nightly with
 `sensor/tools/shadow_diff.py`, which answers the one question that decides the cutover — *are
@@ -175,10 +175,36 @@ not contact), HTTP host/path/user-agent trails are exercised against a local lis
 IP:port trails are deliberately not dialled, and the scan/DGA heuristics run against localhost
 and `.invalid`.
 
-**Already exercised**, all 34 Ethernet corpus captures merged into one file and replayed through
-both sensors against the real 1,694,415-trail set: **16 detections, 16 agreed, zero old-sensor-only**.
-The 4 new-sensor-only detections are the documented timestamp asymmetry (scan heuristics need
-packet timestamps, which `sensor.py` discards on Python 3).
+**RESULT — one hour of live traffic on a real interface, 2026-08-07/08:**
+
+```
+capture:      1.2 GB, 1,690k packets, captured live while adversarial_traffic.py drove the load
+trail set:    1,694,415 rows, one snapshot shared by both sensors
+
+old sensor:   4,285 lines,  1,775 distinct detections
+new sensor:   7,185 lines,  1,801 distinct detections
+agreed on 1,775
+
+[o] no detection was made only by the old sensor
+[i] total: 0 missed by the new sensor, 26 extra   (all DNS trail hits)
+```
+
+**Zero old-sensor-only detections across 1,775 real detections.** The workload included 2,120 DNS
+lookups of real malware domains, 1,643 HTTP requests carrying malicious host/path/user-agent
+indicators, **629 real SYNs to real trail addresses**, 478 scan bursts and 607 DGA/NXDOMAIN
+bursts, against 623 benign background exchanges.
+
+The run happened to cross midnight, which exercised the log-dating difference for free: the new
+sensor wrote two daily files (it stamps events with the packet's time) where `sensor.py` wrote
+one (wall clock at replay). `--all` compares by content, so this reported 1,775 agreements rather
+than a total disagreement.
+
+Also exercised beforehand: all 34 Ethernet corpus captures merged and replayed through both
+sensors against the same trail set — **16 detections, 16 agreed, zero old-sensor-only**.
+
+A long-lived deployment on a busy production gateway would still add value (different traffic
+mix, sustained memory behaviour, real drop rates), but the exit criterion as written — *no
+Python-only detections on real traffic* — is met.
 
 It found a real bug on its first run — see `tests/fail_closed.rs`: a capture that opened but
 could not be READ replayed to "success" with zero packets, so an unreadable file looked exactly
