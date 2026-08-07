@@ -703,6 +703,11 @@ def build_real_cases(trails_file, per_bucket):
                 return "sensor.py:661 - a numeric Host takes the iot-download branch, not the URL lookup"
             if trail.endswith('/'):
                 return "sensor.py:754 - `checks = [path.rstrip('/')]`, so a trail ending in '/' is unreachable"
+            # The host is matched against the whitelist before the URL lookup runs, so a
+            # host/path trail under e.g. raw.githubusercontent.com can never fire. `check_whitelisted`
+            # at sample time does not catch this: it tests the whole trail, not its host.
+            if check_domain_whitelisted(host):
+                return "the trail's host is whitelisted"
         if bucket in ("dns_domain", "dns_subdomain", "http_host") and check_domain_whitelisted(trail):
             return "the trail's parent domain is whitelisted"
         return None
