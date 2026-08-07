@@ -14,9 +14,12 @@ name: Bandit
 on:
   push:
     branches: [ "master" ]
+    # Trail data is not Python; see the note in ci.yml about not taxing indicator commits.
+    paths: [ '**.py', '.github/workflows/bandit.yml' ]
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ "master" ]
+    paths: [ '**.py', '.github/workflows/bandit.yml' ]
   schedule:
     - cron: '19 6 * * 4'
 
