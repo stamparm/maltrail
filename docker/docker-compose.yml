@@ -1,26 +1,52 @@
+# Maltrail — server + sensor.
+#
+#     docker compose -f docker/docker-compose.yml up -d
+#
+# The build context is the repository root (`..`), not this directory: the Dockerfile needs the
+# whole tree to build the sensor and to copy the server.
+
 services:
 
-  # sensor:
-  #   container_name: maltrail-sensor
-  #   build: .
-  #   command: sensor.py
-  #   restart: unless-stopped
-  #   network_mode: host
-  #   privileged: true
-  #   volumes:
-  #     - "/etc/localtime:/etc/localtime:ro"
-  #     - "/etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro"
-  #     - "/var/log/maltrail:/var/log/maltrail"
-    
   server:
     container_name: maltrail-server
-    build: .
-    command: server.py
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: maltrail:latest
+    command: ["python3", "server.py"]
     restart: unless-stopped
     ports:
-      - "8338:8338/tcp"
-      - "8337:8337/udp"
+      - "8338:8338/tcp"     # reporting interface
+      - "8337:8337/udp"     # event intake from remote sensors
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
-      - "/etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro"
-      - "/var/log/maltrail:/var/log/maltrail"
+      - "./maltrail.conf:/opt/maltrail/maltrail.conf:ro"
+      - "maltrail-logs:/var/log/maltrail"
+      - "maltrail-state:/var/lib/maltrail"
+
+  sensor:
+    container_name: maltrail-sensor
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: maltrail:latest
+    command: ["maltrail-sensor"]
+    restart: unless-stopped
+    depends_on:
+      - server
+    # Capturing needs the host's network namespace: inside the default bridge the sensor would
+    # only ever see container traffic.
+    network_mode: host
+    # NOT privileged. Packet capture needs exactly these two capabilities.
+    cap_add:
+      - NET_RAW        # open the AF_PACKET socket
+      - NET_ADMIN      # promiscuous mode and PACKET_FANOUT
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
+      - "./maltrail.conf:/opt/maltrail/maltrail.conf:ro"
+      - "maltrail-logs:/var/log/maltrail"
+      - "maltrail-state:/var/lib/maltrail"
+
+volumes:
+  maltrail-logs:
+  maltrail-state:

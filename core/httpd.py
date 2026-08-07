@@ -4,7 +4,6 @@
 Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 """
-from __future__ import print_function
 
 import datetime
 import glob
@@ -59,11 +58,14 @@ from core.settings import SESSIONS
 from core.settings import UNAUTHORIZED_SLEEP_TIME
 from core.settings import UNICODE_ENCODING
 from core.settings import VERSION
-from thirdparty import six
-from thirdparty.six.moves import BaseHTTPServer as _BaseHTTPServer
-from thirdparty.six.moves import http_client as _http_client
-from thirdparty.six.moves import socketserver as _socketserver
-from thirdparty.six.moves import urllib as _urllib
+import http.server as _BaseHTTPServer
+import http.client as _http_client
+import socketserver as _socketserver
+import urllib.error
+import urllib.parse
+import urllib.request
+import urllib.response
+import urllib as _urllib
 
 try:
     # Reference: https://bugs.python.org/issue7980
@@ -302,28 +304,14 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
     class SSLThreadingServer(ThreadingServer):
         def __init__(self, server_address, pem, HandlerClass):
-            if six.PY2:
-                import OpenSSL  # pyopenssl
+            import ssl
 
-                ThreadingServer.__init__(self, server_address, HandlerClass)
-                for method in ("TLSv1_2_METHOD", "TLSv1_1_METHOD", "TLSv1_METHOD", "TLS_METHOD", "SSLv23_METHOD", "SSLv2_METHOD"):
-                    if hasattr(OpenSSL.SSL, method):
-                        ctx = OpenSSL.SSL.Context(getattr(OpenSSL.SSL, method))
-                        break
-                ctx.use_privatekey_file(pem)
-                ctx.use_certificate_file(pem)
-                self.socket = OpenSSL.SSL.Connection(ctx, socket.socket(self.address_family, self.socket_type))
-                self.server_bind()
-                self.server_activate()
-            else:
-                import ssl
-
-                ThreadingServer.__init__(self, server_address, ReqHandler)
-                ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
-                ctx.load_cert_chain(pem, pem)
-                self.socket = ctx.wrap_socket(socket.socket(self.address_family, self.socket_type), server_side=True)
-                self.server_bind()
-                self.server_activate()
+            ThreadingServer.__init__(self, server_address, ReqHandler)
+            ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
+            ctx.load_cert_chain(pem, pem)
+            self.socket = ctx.wrap_socket(socket.socket(self.address_family, self.socket_type), server_side=True)
+            self.server_bind()
+            self.server_activate()
 
         def shutdown_request(self, request):
             try:
@@ -434,7 +422,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     content = '<!DOCTYPE html><html lang="en"><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL %s was not found on this server.</p></body></html>' % _safe_path
 
             if content is not None:
-                if isinstance(content, six.text_type):
+                if isinstance(content, str):
                     content = content.encode(UNICODE_ENCODING)
 
                 for match in re.finditer(b"<\\!(\\w+)\\!>", content):
@@ -451,7 +439,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                 if "gzip" in self.headers.get(HTTP_HEADER.ACCEPT_ENCODING, ""):
                     self.send_header(HTTP_HEADER.CONTENT_ENCODING, "gzip")
-                    _ = six.BytesIO()
+                    _ = io.BytesIO()
                     compress = gzip.GzipFile("", "w+b", 9, _)
                     compress._stream = _
                     compress.write(content)

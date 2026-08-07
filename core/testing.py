@@ -5,7 +5,6 @@ Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrai
 See the file 'LICENSE' for copying permission
 """
 
-from __future__ import print_function
 
 import doctest
 import os

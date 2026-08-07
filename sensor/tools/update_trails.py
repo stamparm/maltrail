@@ -16,7 +16,6 @@ connectivity, and `ipcat` is refreshed too.
 
 Exit status: 0 on success, 1 on failure (the sensor keeps running with whatever trails it has).
 """
-from __future__ import print_function
 
 import argparse
 import os

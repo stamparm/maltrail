@@ -21,7 +21,6 @@ Output (UTF-8, LF):
 Rows are emitted in CSV order, duplicates included, because the order decides which value wins
 and which wildcard trail gets which group.
 """
-from __future__ import print_function
 
 import argparse
 import csv

@@ -1,1 +1,9 @@
-pcapy-ng
+# Maltrail server: standard library only — nothing to install.
+#
+# The sensor is Rust (see sensor/); build it with `cargo build --release`.
+#
+# The OLD Python sensor in old/ still needs pcapy-ng. It is kept as the reference
+# implementation and as the differential oracle the sensor's parity harness replays
+# against, so install this only if you intend to run or test against it:
+#
+#     pip install -r old/requirements.txt

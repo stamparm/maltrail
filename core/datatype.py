@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from thirdparty.odict import OrderedDict
+from collections import OrderedDict
 
 # Reference: https://www.kunxi.org/2014/05/lru-cache-in-python
 class LRUDict(object):

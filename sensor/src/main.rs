@@ -151,6 +151,14 @@ fn main() {
 }
 
 fn run() -> i32 {
+    // Rust ignores SIGPIPE, so writing to a closed pipe raises EPIPE and the default panic
+    // handler prints a backtrace — `maltrail-sensor --version | head -1` would panic instead of
+    // exiting quietly. Restore the Unix default: die silently when the reader goes away.
+    // SAFETY: setting a signal disposition to SIG_DFL has no preconditions.
+    unsafe {
+        libc::signal(libc::SIGPIPE, libc::SIG_DFL);
+    }
+
     // Decide colouring first: core/colorized.py installs its stream wrapper at import time,
     // before anything is printed.
     colorized::init(None);

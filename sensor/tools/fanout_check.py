@@ -20,7 +20,6 @@ does not depend on how many copies of a packet the loopback driver happens to pr
 On a real interface, supply your own traffic instead of the built-in loopback generator with
 `--no-generate` and drive load from elsewhere.
 """
-from __future__ import print_function
 
 import argparse
 import os

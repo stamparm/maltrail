@@ -14,7 +14,6 @@ Measured per sensor: wall clock, user+system CPU time, peak RSS and packets/seco
 line rate implied by the generated packet-size mix. Event counts from both runs are printed so
 a throughput number can never be read without its correctness context.
 """
-from __future__ import print_function
 
 import argparse
 import os

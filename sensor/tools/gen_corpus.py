@@ -11,7 +11,6 @@ the harness can assert both
 
     python3 sensor/tools/gen_corpus.py [--out DIR]
 """
-from __future__ import print_function
 
 import argparse
 import json

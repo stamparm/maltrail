@@ -5,7 +5,6 @@ Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrai
 See the file 'LICENSE' for copying permission
 """
 
-from __future__ import print_function  # Requires: Python >= 2.6
 
 import sys
 
@@ -39,7 +38,6 @@ from core.settings import VERSION
 from core.update import update_geo
 from core.update import update_ipcat
 from core.update import update_trails
-from thirdparty import six
 
 def main():
     print("%s (server) #v%s {%s}\n" % (NAME, VERSION, HOMEPAGE))
@@ -72,23 +70,10 @@ def main():
     if options.debug:
         config.SHOW_DEBUG = True
 
-    if six.PY2 and config.USE_SSL:
-        try:
-            __import__("OpenSSL")
-        except ImportError:
-            if IS_WIN:
-                sys.exit("[!] please install 'pyopenssl' (e.g. 'pip install pyopenssl')")
-            else:
-                msg = "[!] please install 'pyopenssl'"
-
-                for distros, install in {("fedora", "centos"): "sudo yum install pyOpenSSL", ("debian", "ubuntu"): "sudo apt-get install python-openssl"}.items():
-                    for distro in distros:
-                        if distro in (platform.uname()[3] or "").lower():
-                            msg += " (e.g. '%s')" % install
-                            break
-
-                sys.exit(msg)
-
+    # NOTE: this validation used to live inside an `if six.PY2 and config.USE_SSL:` block, so on
+    # Python 3 it never ran and a missing/invalid SSL_PEM only failed later, inside the server
+    # thread. It is a plain USE_SSL check now.
+    if config.USE_SSL:
         if not config.SSL_PEM or not os.path.isfile(config.SSL_PEM):
             hint = "openssl req -new -x509 -keyout %s -out %s -days 365 -nodes -subj '/O=%s CA/C=EU'" % (config.SSL_PEM or "server.pem", config.SSL_PEM or "server.pem", NAME)
             sys.exit("[!] invalid configuration value for 'SSL_PEM' ('%s')\n[?] (hint: \"%s\")" % (config.SSL_PEM, hint))
@@ -140,7 +125,7 @@ if __name__ == "__main__":
     try:
         main()
     except SystemExit as ex:
-        if isinstance(get_ex_message(ex), six.string_types) and get_ex_message(ex).strip('0'):
+        if isinstance(get_ex_message(ex), str) and get_ex_message(ex).strip('0'):
             print(get_ex_message(ex))
             code = 1
     except IOError:

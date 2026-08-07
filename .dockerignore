@@ -1,0 +1,18 @@
+# Without this, `COPY . .` drags the Rust build tree (gigabytes) and the whole git history
+# into the image and invalidates the layer cache on every rebuild.
+.git
+.gitignore
+.codegraph
+
+sensor/target
+sensor/fuzz/target
+sensor/fuzz/corpus
+sensor/fuzz/artifacts
+
+**/__pycache__
+**/*.py[cod]
+*.egg-info
+
+docker/README.md
+*.md
+!README.md
