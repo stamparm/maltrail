@@ -30,9 +30,9 @@ In order to maintain consistency and readability throughout the code, we ask tha
 * Avoid tabbing, use four blank spaces instead.
 * Before you put time into a non-trivial patch, it is worth discussing it privately by [email](mailto:maltrail.dev@gmail.com).
 * Do not change style on numerous files in one single pull request, we can [discuss](mailto:maltrail.dev@gmail.com) about those before doing any major restyling, but be sure that personal preferences not having a strong support in [PEP 8](http://www.python.org/dev/peps/pep-0008/) will likely to be rejected.
+* The sensor is Rust: `bash sensor/tools/check.sh` must pass (formatting, lints, tests in both profiles, and byte-identical event parity against the old Python sensor in `old/`).
 * Make changes on less than five files per single pull request - there is rarely a good reason to have more than five files changed on one pull request, as this dramatically increases the review time required to land (commit) any of those pull requests.
 * Style that is too different from main branch will be ''adapted'' by the developers side.
-* Do not touch anything inside `thirdparty/` folder.
 
 ## Maltrail trails contribution
 
