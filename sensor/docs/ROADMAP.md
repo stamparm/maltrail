@@ -146,7 +146,7 @@ catch dilution regressions.
 
 Still open: a privileged live test injecting the same scan through 1 and N real fanout sockets.
 
-### 2.3 Shadow deployment — TOOLING READY, NEEDS A REAL GATEWAY
+### 2.3 Shadow deployment — HARNESS DONE AND EXERCISED; A REAL GATEWAY IS STILL OWED
 
 Both sensors, same traffic, same trails, ≥7 days on a real gateway. Compare nightly with
 `sensor/tools/shadow_diff.py`, which answers the one question that decides the cutover — *are
@@ -154,9 +154,35 @@ there detections the old sensor makes that the new one does not?* — and exits 
 there are, so it can run from cron:
 
 ```bash
-# run both sensors against the same interface, writing to separate LOG_DIRs, then nightly:
+# One command: capture live traffic while driving an adversarial workload, replay that ONE
+# capture through BOTH sensors, and diff. Capture needs CAP_NET_RAW; everything else does not.
+bash sensor/tools/shadow_run.sh --seconds 600
+
+# Re-analyse a capture taken earlier — no privileges, no traffic, same comparison:
+bash sensor/tools/shadow_run.sh --pcap /path/to/traffic.pcap
+
+# A live pair of sensors instead, compared nightly from cron:
 python3 sensor/tools/shadow_diff.py --new /var/log/maltrail --old /var/log/maltrail-old --days 7
 ```
+
+Replaying one capture through both beats running both live: two AF_PACKET sockets see slightly
+different packets and drop differently, so a difference could be the network rather than the
+sensor. One capture gives both byte-identical input, and the pcap is kept as evidence.
+
+`adversarial_traffic.py` drives the workload from indicators sampled out of the operator's real
+`trails.csv`. It never connects to malicious infrastructure: DNS trails are resolved (a lookup,
+not contact), HTTP host/path/user-agent trails are exercised against a local listener, IP and
+IP:port trails are deliberately not dialled, and the scan/DGA heuristics run against localhost
+and `.invalid`.
+
+**Already exercised**, all 34 Ethernet corpus captures merged into one file and replayed through
+both sensors against the real 1,694,415-trail set: **16 detections, 16 agreed, zero old-sensor-only**.
+The 4 new-sensor-only detections are the documented timestamp asymmetry (scan heuristics need
+packet timestamps, which `sensor.py` discards on Python 3).
+
+It found a real bug on its first run — see `tests/fail_closed.rs`: a capture that opened but
+could not be READ replayed to "success" with zero packets, so an unreadable file looked exactly
+like a clean one.
 
 Detections are compared as SETS of `(src_ip, dst_ip, type, trail, info)`. Ports and timestamps
 are excluded deliberately: the same beacon reappears on a new ephemeral port every time, and the
