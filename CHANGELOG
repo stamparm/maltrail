@@ -14,7 +14,98 @@
 
 
 
-- Version 1.2 -> 1.3 (Upcoming release)
+- Version 2.2 -> 3.0 (Upcoming release)
+
+[+] The sensor is rewritten in Rust and becomes the sensor: 'sensor/', built with
+    'cargo build --release'
+[+] Sensor '-T' preflight validates configuration, trails, whitelist, log directory,
+    capture filter and capabilities, and exits non-zero, so a broken deployment can be
+    caught before it runs blind
+[+] Prometheus metrics endpoint for the sensor ('STATS_ADDRESS'), exposing dropped
+    packets, trail generation, per-worker counters and build info
+[+] Trail reloads are atomic and happen without a restart, on SIGHUP or within a second
+    of the trail file changing
+[+] Event throttling is reworked into three selectable modes: burst-then-summarize
+    (default), byte-exact legacy, and off
+[+] Differential parity harness: a generated fixture corpus plus one sampled from the
+    operator's real trails.csv, replayed through both sensors, requiring byte-identical
+    events ('sensor/tools/parity.py')
+[+] 'sensor/tools/check.sh' runs the whole gate: formatting, lints, tests in both debug
+    and release profiles, and both parity corpora
+[+] systemd units run both the sensor and the server as an unprivileged user, with
+    systemd-managed state/log directories, a read-only filesystem, and exactly
+    CAP_NET_RAW + CAP_NET_ADMIN for the sensor
+[-] Python 2 support is dropped; Python 3.7+ is required and 'thirdparty/' is removed
+[-] Plugin support is removed from both sensors, along with 'plugins/'
+[-] The sample SSL PEM is no longer shipped: a private key in a public repository is a
+    private key everybody already has (see the 'openssl' hint in maltrail.conf)
+[-] 'requirements.txt' is removed: the server is standard library only, and the old
+    sensor's pcapy-ng dependency now lives in 'old/requirements.txt'
+[=] The previous Python sensor moves to 'old/', kept as the reference implementation and
+    as the oracle the parity harness replays against
+[=] Runtime data files (whitelist, ua, worst_asns, cdn_ranges, bogon_ranges,
+    ignore_events) move from 'misc/' to 'data/'; 'misc/' is no longer in the repository
+[=] Sensor throughput: 865 ns/packet against 23,448 ns/packet for the old sensor on the
+    same capture and the same trail set, and one worker per core rather than a single
+    capture process feeding a shared-memory ring
+[!] The sensor now refreshes trails on its own timer, as sensor.py always did; without it
+    a long-running sensor detected against whatever trails.csv it started with
+[!] Docker images build and run again, unprivileged, with the sensor enabled
+[!] '--version' and other short-lived invocations no longer lose their output to
+    os._exit() skipping stdio flushing
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 2.1 -> 2.2 (01 Aug 2026)
+
+[+] Retro hunt over collected observables
+[+] Searchable metadata collection ('USE_CONDENSED_STORAGE', 'meta.sqlite')
+[+] Geomap in the reporting interface, and the heatmap returns in place of the calendar
+[+] Events expand to show the source trail file they came from
+[+] Fast in-C prefilter and heuristics engine: sliding-window/stealth/UDP scan detection,
+    capture fanout and CPU affinity, per-heuristic muting (new capture paths opt-in)
+[+] The sensor column returns to the table, detail drawer, filter and export, for
+    multi-sensor deployments
+[!] RIPE geo lookups get an air-gap circuit breaker, so an offline server no longer
+    storms retries and spams the console
+[!] Bug fixes (Issues #19558, #19559, #19561, #19562, #19564, #19565, #19581)
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 1.5 -> 2.1 (01 Jul 2026)
+
+[+] New reporting interface
+[+] '--smoke-test' and '--detect-test' self-checks
+[+] Server caches '_counts'/'_statics', caps POST size and applies a request timeout
+[=] Drastic reduction in trail RAM usage
+[=] Dashboard is faster and more robust: 'complete()' rework, debounced resize, fixed
+    handler leak, no more NaN charts
+[!] Trail regexes were silently cleared during reloads
+[!] Trail files were written and read non-atomically
+[!] Logging concurrency and memory fixes
+[!] CACHE_TYPE enum fix
+[!] Offline PCAPs with oversized packets no longer break the sensor
+[!] '/events' is served correctly when the client sends no Range header
+[-] Defunct/obsolete feed removed
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 1.4 -> 1.5 (01 Jun 2026)
+
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 1.3 -> 1.4 (01 May 2026)
+
+[!] CIDR mask validation no longer relies on 'assert', which is stripped under optimized
+    Python ('python -O')
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
+- Version 1.2 -> 1.3 (01 Apr 2026)
+
+[!] Charts size themselves from the browser window rather than the monitor
+[=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
 - Version 1.1 -> 1.2 (01 Mar 2026)
