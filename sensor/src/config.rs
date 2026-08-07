@@ -144,6 +144,9 @@ pub struct Config {
     /// accepted (0.5 = "reject anything that loses more than half the trails"). Guards against a
     /// truncated or half-written trails.csv silently replacing a good store. 0 disables the check.
     pub trail_reload_min_ratio: f64,
+    /// Human-readable record of every out-of-range option that was forced into bounds at load.
+    /// Reported by `-T`; empty on a sane configuration.
+    pub clamps: Vec<String>,
     /// New: event-log throttling. See `crate::throttle` — the shipped default replaces
     /// `core/log.py`'s `sec // PROCESS_COUNT` bucket with burst-then-summarize.
     pub event_throttle_mode: crate::throttle::ThrottleMode,
@@ -674,7 +677,7 @@ impl Config {
             }
         };
 
-        Ok(Config {
+        let mut cfg = Config {
             config_file: config_file.to_path_buf(),
             root: root.clone(),
 
@@ -723,7 +726,8 @@ impl Config {
             event_throttle_mode,
             event_throttle_window: get_u64(&raw, "EVENT_THROTTLE_WINDOW").unwrap_or(60),
             event_throttle_burst: get_u64(&raw, "EVENT_THROTTLE_BURST").unwrap_or(3).min(u32::MAX as u64) as u32,
-            event_throttle_max_keys: get_u64(&raw, "EVENT_THROTTLE_MAX_KEYS").unwrap_or(50_000) as usize,
+            event_throttle_max_keys: get_u64(&raw, "EVENT_THROTTLE_MAX_KEYS").unwrap_or(50_000).min(usize::MAX as u64)
+                as usize,
             domain_cache_entries: get_u64(&raw, "DOMAIN_CACHE_ENTRIES")
                 .unwrap_or(settings::MAX_CACHE_ENTRIES as u64)
                 .max(64) as usize,
@@ -734,8 +738,15 @@ impl Config {
 
             capture_workers,
             capture_buffer_size,
-            capture_snaplen: get_u64(&raw, "CAPTURE_SNAPLEN").unwrap_or(settings::SNAP_LEN as u64) as usize,
-            capture_timeout_ms: get_u64(&raw, "CAPTURE_TIMEOUT").unwrap_or(settings::CAPTURE_TIMEOUT_MS as u64) as i32,
+            // SATURATING, not `as`: a wrapping cast turns an absurd value into a plausible one
+            // (and can make a timeout negative, i.e. "block forever"), which then looks like a
+            // deliberate setting instead of a typo. clamp_ranges() reports whatever survives.
+            capture_snaplen: get_u64(&raw, "CAPTURE_SNAPLEN")
+                .unwrap_or(settings::SNAP_LEN as u64)
+                .min(usize::MAX as u64) as usize,
+            capture_timeout_ms: get_u64(&raw, "CAPTURE_TIMEOUT")
+                .unwrap_or(settings::CAPTURE_TIMEOUT_MS as u64)
+                .min(i32::MAX as u64) as i32,
             capture_immediate: cfg_bool(raw.get("CAPTURE_IMMEDIATE")),
             capture_fanout_mode,
             capture_fanout_defrag: cfg_bool(raw.get("CAPTURE_FANOUT_DEFRAG")),
@@ -745,7 +756,55 @@ impl Config {
             metrics_interval: get_u64(&raw, "METRICS_INTERVAL").unwrap_or(3600),
 
             raw,
-        })
+            clamps: Vec::new(),
+        };
+        cfg.clamp_ranges();
+        Ok(cfg)
+    }
+
+    /// Force every numeric option into a range the sensor can actually operate in, recording
+    /// what was changed so `-T` can show the operator the EFFECTIVE configuration.
+    ///
+    /// These were silent before, and each one is a way to run a sensor that looks configured and
+    /// detects nothing: a zero snaplen truncates every packet to nothing; a CAPTURE_TIMEOUT that
+    /// does not fit in the C `int` libpcap takes narrows — possibly to a negative value, which
+    /// means "block forever" — so shutdown never gets noticed; a zero throttle window or key cap
+    /// disables the very bounding it exists for.
+    ///
+    /// Clamping rather than rejecting is deliberate: a sensor that refuses to start over a
+    /// mistyped tunable protects nothing. It runs, at a sane value, and says so loudly.
+    fn clamp_ranges(&mut self) {
+        macro_rules! clamp {
+            ($field:expr, $name:literal, $lo:expr, $hi:expr) => {{
+                let original = $field;
+                let bounded = original.clamp($lo, $hi);
+                if bounded != original {
+                    self.clamps
+                        .push(format!("{} {} is out of range ({}..={}), using {}", $name, original, $lo, $hi, bounded));
+                    $field = bounded;
+                }
+            }};
+        }
+
+        // Below the smallest Ethernet+IP+TCP header there is nothing left to parse; above
+        // 262144 libpcap itself starts refusing.
+        clamp!(self.capture_snaplen, "CAPTURE_SNAPLEN", 68usize, 262_144usize);
+        // libpcap takes a C int; the poll() leash must stay positive and bounded, or shutdown
+        // is only noticed when a packet happens to arrive.
+        clamp!(self.capture_timeout_ms, "CAPTURE_TIMEOUT", 1i32, 60_000i32);
+        // One worker minimum; the ceiling is well past any real core count and exists only to
+        // stop a typo from trying to spawn millions of threads.
+        clamp!(self.capture_workers, "PROCESS_COUNT/CAPTURE_WORKERS", 1u32, 1024u32);
+        clamp!(self.event_throttle_window, "EVENT_THROTTLE_WINDOW", 1u64, 86_400u64);
+        clamp!(self.event_throttle_burst, "EVENT_THROTTLE_BURST", 1u32, 1_000_000u32);
+        clamp!(self.event_throttle_max_keys, "EVENT_THROTTLE_MAX_KEYS", 1usize, 10_000_000usize);
+        clamp!(self.domain_cache_entries, "DOMAIN_CACHE_ENTRIES", 64usize, 10_000_000usize);
+    }
+
+    /// Estimated resident cost of the capture rings, which `CAPTURE_BUFFER` sizes PER WORKER —
+    /// the number an operator actually needs before setting it on a 32-core box.
+    pub fn estimated_capture_memory_bytes(&self) -> u64 {
+        self.capture_buffer.saturating_mul(u64::from(self.capture_workers.max(1)))
     }
 
     pub fn is_offline_replay(&self) -> bool {
