@@ -43,7 +43,7 @@ hmac = "0.12"
 # pinned here rather than inherited from whatever the host distribution ships. It also keeps
 # the prebuilt release tarballs at exactly one runtime .so - libpcap - which is the whole
 # point of shipping them. `functions` registers meta_score() for the prune query.
-rusqlite = { version = "0.31", features = ["bundled", "functions"] }
+rusqlite = { version = "0.40", features = ["bundled", "functions"] }
 
 [profile.release]
 opt-level = 3
