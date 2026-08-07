@@ -1,0 +1,4 @@
+# Matches the line budget the sources were written to; keeps `cargo fmt` a no-op review tool
+# rather than a reflow of every file.
+max_width = 120
+use_small_heuristics = "Max"

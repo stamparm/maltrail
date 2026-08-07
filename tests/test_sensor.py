@@ -12,6 +12,8 @@ import struct
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# the old (Python) sensor now lives in old/
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "old"))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _pcapgen as G
 
@@ -44,9 +46,8 @@ class _SensorTestBase(unittest.TestCase):
         sensor.trails = self.trails
         sensor.WHITELIST = set()
         sensor._result_cache = {}
-        # deterministic: no heuristics, no plugin pre-pass, host-domain check on
+        # deterministic: no heuristics, host-domain check on
         sensor.config.USE_HEURISTICS = False
-        sensor.config.plugin_functions = None
         sensor.config.CHECK_HOST_DOMAINS = True
         sensor.config.DISABLED_HEURISTICS = ""       # all heuristics enabled by default
         sensor._disabled_heuristics_cache[0] = None  # force re-read of DISABLED_HEURISTICS per test

@@ -24,6 +24,8 @@ import sys
 import argparse
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# the old (Python) sensor now lives in old/
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "old"))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _pcapgen as G
 import sensor
@@ -108,7 +110,6 @@ def build(scenario, size, rate, duration, src_local, dst_local):
 
 def _reset(detections):
     sensor.config.USE_HEURISTICS = True
-    sensor.config.plugin_functions = None
     sensor.config.CHECK_HOST_DOMAINS = False
     sensor.WHITELIST = set()
     sensor._result_cache = {}

@@ -31,7 +31,7 @@ for py in $PYS; do
 import sys, os, glob, py_compile
 root = sys.argv[1]; bad = 0
 files = glob.glob(os.path.join(root, "core", "*.py")) + \
-        [os.path.join(root, f) for f in ("sensor.py", "server.py") if os.path.isfile(os.path.join(root, f))]
+        [os.path.join(root, f) for f in ("old/sensor.py", "server.py") if os.path.isfile(os.path.join(root, f))]
 for f in files:
     try:
         py_compile.compile(f, doraise=True)

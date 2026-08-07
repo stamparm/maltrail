@@ -297,13 +297,6 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     sys.stderr.write(event)
                     sys.stderr.flush()
 
-            if config.plugin_functions:
-                for _ in config.plugin_functions:
-                    try:
-                        _(event_tuple, packet)
-                    except Exception:
-                        if config.SHOW_DEBUG:
-                            traceback.print_exc()
     except (OSError, IOError):
         if config.SHOW_DEBUG:
             traceback.print_exc()

@@ -1,0 +1,52 @@
+[package]
+name = "maltrail-sensor"
+version = "2.2.0"
+edition = "2021"
+rust-version = "1.74"
+description = "Rust packet-processing sensor for Maltrail (drop-in replacement for sensor.py)"
+license = "MIT"
+repository = "https://github.com/stamparm/maltrail"
+publish = false
+
+[[bin]]
+name = "maltrail-sensor"
+path = "src/main.rs"
+
+[[bench]]
+name = "hotpath"
+harness = false
+
+[dependencies]
+# libpcap bindings: portable capture, mature BPF handling, offline pcap support,
+# TPACKET_V3 mmap ring on Linux.
+pcap = "2"
+# Linux socket options (PACKET_FANOUT), localtime_r for byte-identical local
+# timestamps, geteuid, chmod.
+libc = "0.2"
+# Trail/heuristic regexes. `regex` for everything Python's `re` expresses without
+# backtracking; `fancy-regex` only for operator-supplied patterns that may use
+# lookaround (the shipped REMOTE_SEVERITY_REGEX uses `(?! ...)`).
+regex = "1"
+fancy-regex = "0.16"
+# Multi-substring scans on the HTTP hot path (keyword pre-conditions, whitelists).
+aho-corasick = "1"
+# Byte scanning in the HTTP/DNS parsers.
+memchr = "2"
+# QUIC Initial header/payload unprotection (AES-128 ECB block + CTR, HKDF-SHA256).
+# Mirrors core/quic_sni.py exactly; no AEAD verification (passive sensor).
+aes = "0.8"
+sha2 = "0.10"
+hmac = "0.12"
+
+[profile.release]
+opt-level = 3
+debug = 1
+# NOTE: unwinding is deliberately kept (not panic="abort"): src/worker.rs wraps each
+# packet in catch_unwind, mirroring sensor.py's blanket `except Exception` around
+# _process_packet, so a parser bug can never take the sensor down mid-capture.
+
+# Enabled only after correctness was established (see docs/REPORT.md).
+[profile.release-lto]
+inherits = "release"
+lto = "fat"
+codegen-units = 1

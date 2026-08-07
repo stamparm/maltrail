@@ -2,3 +2,15 @@
 *~
 Pipfile*
 docker-compose.override.yml
+
+# CodeGraph index (local code-intelligence cache, not project source)
+.codegraph/
+
+# Rust sensor build output and local profiling artifacts
+sensor/target/
+sensor/fuzz/target/
+sensor/fuzz/corpus/
+sensor/fuzz/artifacts/
+sensor/out.txt
+sensor/*.callgrind
+callgrind.out.*
