@@ -730,6 +730,13 @@ fn run() -> i32 {
     }
 }
 
+/// The heuristics whose evidence is counted PER SOURCE, and which fanout therefore dilutes.
+/// `long_domain` and `dns_exhaustion` are per name/domain, so they are unaffected by which
+/// worker a packet lands on.
+fn scan_heuristics_enabled(cfg: &Config) -> bool {
+    ["port_scanning", "udp_scanning", "infection", "web_scanning"].iter().any(|h| cfg.heuristic_enabled(h))
+}
+
 #[allow(clippy::too_many_arguments)]
 fn print_diagnostics(
     cfg: &Config,
@@ -778,6 +785,21 @@ fn print_diagnostics(
         );
     }
     cprintln!("[i] workers: {} (datalink {})", handles.len(), handles[0].0.datalink());
+    // PACKET_FANOUT_HASH splits traffic by FLOW; the scan heuristics count by SOURCE, and a scan
+    // is many flows. So each worker sees a fraction of one scanner's probes and a threshold needs
+    // roughly N times more of them. Measured on the corpus (tests/multi_worker_parity.rs): 91% of
+    // heuristic alerts survive at 2 workers, 86% at 4, 65% at 8. Exact trail matching is per
+    // packet and stateless, so IOC detection is unaffected at any worker count — the same test
+    // asserts that. An operator who cares more about scan fidelity than throughput wants
+    // CAPTURE_WORKERS 1.
+    if handles.len() > 1 && cfg.use_heuristics && scan_heuristics_enabled(cfg) {
+        cprintln!(
+            "[!] {} workers + scan heuristics: fanout hashes by flow but scans are counted per \
+             source, so thresholds trip later (~65% of alerts survive at 8 workers). Set \
+             'CAPTURE_WORKERS 1' for undiluted scan fidelity; trail detection is unaffected.",
+            handles.len()
+        );
+    }
     cprintln!("[i] trails: {trail_summary}");
     if repaired_regexes > 0 {
         // Feeds ship patterns truncated in transit; the intact alternatives are kept and the
