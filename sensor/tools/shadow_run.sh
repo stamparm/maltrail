@@ -126,7 +126,12 @@ CHECK_HOST_DOMAINS true
 USE_CONDENSED_STORAGE false
 SENSOR_NAME shadow
 SCAN_WINDOW 30
-EVENT_THROTTLE_MODE off
+# LEGACY, not off: 'off' is a Rust-only mode, and sensor.py always applies core/log.py's
+# throttle. Running the new sensor unthrottled made it look like it detected 20 things the old
+# one missed, when the truth was that sensor.py's throttle had suppressed every occurrence of
+# them. Same throttle on both sides, exactly as tools/parity.py does, or the comparison flatters
+# whichever sensor writes more lines.
+EVENT_THROTTLE_MODE legacy
 LOG_DIR $1
 TRAILS_FILE $OUT/trails.csv
 EOF

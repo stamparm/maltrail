@@ -11,15 +11,18 @@ nobody hand-wrote.
     python3 sensor/tools/adversarial_traffic.py --seconds 600
     python3 sensor/tools/adversarial_traffic.py --seconds 60 --no-dns   # fully local
 
-SAFETY. This never opens a connection to known-malicious infrastructure:
+OUTBOUND CONTACT. By default this exercises IP and IP:port trails for real: a TCP connect with a
+short timeout, which puts a SYN on the wire and nothing else. No payload is ever sent, so this is
+what any port scanner does to a host that is almost certainly long dead. Authorised deliberately
+by the operator — it is their network and their sensor. `--safe` restores the conservative mode:
 
-  * DNS trails are exercised by RESOLVING the name. That is a lookup, not contact, and it is the
-    single most common Maltrail detection. Suppress with --no-dns.
-  * HTTP host / URL / path / user-agent trails are exercised against a LOCAL listener started by
-    this script. Maltrail reads those from the request bytes, so detection is identical to the
-    real thing with no packet leaving the host.
-  * IP and IP:port trails are NOT dialled. SYNing real C2 from an operator's network is not a
-    test, it is an outbound connection to malware infrastructure.
+  * DNS trails are exercised by RESOLVING the name. A lookup, not contact, and the single most
+    common Maltrail detection. Suppress with --no-dns.
+  * HTTP host / URL / path / user-agent trails go to a LOCAL listener started by this script.
+    Maltrail reads those from the request bytes, so detection is identical with no packet leaving
+    the host — worth keeping local even in the permissive mode, since the payloads are exploit
+    strings and sending those anywhere real would be an actual attack.
+  * IP and IP:port trails are dialled unless --safe is given.
   * Scan / DGA / NXDOMAIN heuristics run against localhost and the reserved .invalid TLD.
 
 Run it while capturing (see shadow_run.sh); the sensors are compared on the capture afterwards.
@@ -41,8 +44,18 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 WANT_KINDS = ("dns_domain", "http_host", "url_path", "host_path", "user_agent")
 
 
+def _is_ipv4(text):
+    parts = text.split('.')
+    if len(parts) != 4:
+        return False
+    for part in parts:
+        if not part.isdigit() or not 0 <= int(part) <= 255:
+            return False
+    return True
+
+
 def classify(trail):
-    """Which exercise, if any, a trail row can drive safely."""
+    """Which exercise, if any, a trail row can drive."""
     if '/' in trail:
         head = trail.split('/')[0]
         if head and not head[0].isdigit() and '.' in head:
@@ -50,8 +63,13 @@ def classify(trail):
         if trail.startswith('/'):
             return "url_path"
         return None
-    if ':' in trail or trail.replace('.', '').isdigit():
-        return None                      # IP / IP:port — deliberately not dialled
+    if ':' in trail:
+        addr, _, port = trail.rpartition(':')
+        if _is_ipv4(addr) and port.isdigit() and 0 < int(port) < 65536:
+            return "ipv4_port"
+        return None                      # IPv6, or something else entirely
+    if _is_ipv4(trail):
+        return "ipv4"
     if '.' in trail and ' ' not in trail:
         return "dns_domain"
     return None
@@ -59,7 +77,7 @@ def classify(trail):
 
 def sample_trails(path, per_kind, rng):
     """Reservoir-sample real trails of each usable kind, one streaming pass."""
-    picked = dict((k, []) for k in ("dns_domain", "host_path", "url_path"))
+    picked = dict((k, []) for k in ("dns_domain", "host_path", "url_path", "ipv4", "ipv4_port"))
     seen = dict((k, 0) for k in picked)
     if not os.path.isfile(path):
         return picked
@@ -152,6 +170,10 @@ def main():
     parser.add_argument("--per-kind", type=int, default=400, help="trails sampled per kind")
     parser.add_argument("--seed", type=int, default=1337, help="deterministic trail selection")
     parser.add_argument("--no-dns", action="store_true", help="skip all real DNS resolution")
+    parser.add_argument("--safe", action="store_true",
+                        help="do not dial IP / IP:port trails (SYN only, no payload, otherwise)")
+    parser.add_argument("--connect-timeout", type=float, default=0.25,
+                        help="how long to wait on an outbound SYN (default 0.25s; these hosts are mostly dead)")
     parser.add_argument("--quiet", action="store_true")
     args = parser.parse_args()
 
@@ -165,6 +187,11 @@ def main():
     if not any(trails.values()):
         say("[!] no usable trails found — is trails.csv present?")
 
+    if not args.safe:
+        say("[i] IP/IP:port trails WILL be dialled: one SYN each, %.2fs timeout, no payload" % args.connect_timeout)
+    else:
+        say("[i] --safe: no outbound connections to trail addresses")
+
     server = start_local_http()
     port = server.server_address[1]
     say("[i] local HTTP listener on 127.0.0.1:%d (malicious hosts/paths/UAs go here, never outbound)" % port)
@@ -175,7 +202,7 @@ def main():
         "sqlmap/1.7", "Mozilla/5.0 zgrab/0.x", "masscan/1.3", "python-requests/2.31",
         "curl/7.88.1", "Wget/1.21", "CobaltStrike", "() { :;}; /bin/bash",
     ]
-    stats = dict(dns=0, http=0, scan=0, dga=0, benign=0)
+    stats = dict(dns=0, http=0, scan=0, dga=0, benign=0, ipdial=0)
     deadline = time.time() + args.seconds
     tick = 0
 
@@ -203,8 +230,19 @@ def main():
             http_request(port, host, path, ua)
             stats["http"] += 1
 
+        # --- real IP / IP:port trails: one SYN, no payload --------------------------------
+        elif roll < 0.72 and not args.safe and (trails["ipv4"] or trails["ipv4_port"]):
+            if trails["ipv4_port"] and rng.random() < 0.5:
+                addr, _, port = rng.choice(trails["ipv4_port"]).rpartition(':')
+                tcp_connect(addr, int(port), args.connect_timeout)
+            elif trails["ipv4"]:
+                # Ports Maltrail's default CAPTURE_FILTER actually watches.
+                tcp_connect(rng.choice(trails["ipv4"]), rng.choice([80, 443, 8080, 8000, 3128]),
+                            args.connect_timeout)
+            stats["ipdial"] += 1
+
         # --- scanning heuristics: many ports, one source, against localhost ---------------
-        elif roll < 0.76:
+        elif roll < 0.80:
             base = rng.randrange(1, 60000)
             for i in range(rng.randrange(12, 30)):
                 tcp_connect("127.0.0.1", (base + i * rng.randrange(1, 7)) % 65535 or 1)
@@ -213,7 +251,7 @@ def main():
             stats["scan"] += 1
 
         # --- DGA / NXDOMAIN bursts, in the reserved .invalid TLD --------------------------
-        elif roll < 0.88:
+        elif roll < 0.90:
             if not args.no_dns:
                 for _ in range(rng.randrange(4, 12)):
                     resolve("%s.%s.invalid" % (random_label(rng, rng.randrange(8, 24)), random_label(rng, 6)), 0.4)
