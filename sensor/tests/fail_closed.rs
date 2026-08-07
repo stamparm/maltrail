@@ -177,3 +177,96 @@ fn a_collapsing_reload_is_rejected_not_published() {
     registry.trail_count.store(0, Ordering::Relaxed);
     assert!(!decide(1, 0.5), "the initial load has no predecessor to shrink from");
 }
+
+/// A capture that OPENS but cannot be read must not replay to "success" with zero packets.
+///
+/// Found by the shadow harness (`tools/shadow_run.sh`) on a `mergecap` output: libpcap refuses a
+/// pcapng whose interfaces have different link types. The header parsed, so the file opened
+/// fine; the first read failed; the sensor logged the error to error.log and exited 0 having
+/// read nothing. An analyst would take that as "no detections in this capture" when the truth is
+/// "this capture was never parsed" — the offline twin of the silent blind spot Gate 1.1 fixed.
+///
+/// The fixtures are hand-built rather than produced with mergecap/editcap, so the test needs no
+/// tools beyond cargo.
+#[test]
+fn a_capture_that_opens_but_cannot_be_read_is_not_a_successful_replay() {
+    if !have_binary() {
+        return;
+    }
+    let fixture = Fixture::new("unreadable", "1.2.3.4,malware,(static)\n", "");
+
+    // (a) a valid pcap global header followed by garbage: opens, first read fails.
+    let mut junk: Vec<u8> = Vec::new();
+    junk.extend_from_slice(&0xa1b2c3d4u32.to_le_bytes()); // magic
+    junk.extend_from_slice(&2u16.to_le_bytes()); // version major
+    junk.extend_from_slice(&4u16.to_le_bytes()); // version minor
+    junk.extend_from_slice(&0i32.to_le_bytes()); // thiszone
+    junk.extend_from_slice(&0u32.to_le_bytes()); // sigfigs
+    junk.extend_from_slice(&65535u32.to_le_bytes()); // snaplen
+    junk.extend_from_slice(&1u32.to_le_bytes()); // DLT_EN10MB
+    junk.extend_from_slice(&[0xff; 13]); // a truncated, unparseable record
+
+    // (b) a pcapng whose two interfaces declare different link types, which libpcap rejects.
+    fn block(kind: u32, body: &[u8]) -> Vec<u8> {
+        let total = (12 + body.len()) as u32;
+        let mut out = Vec::with_capacity(total as usize);
+        out.extend_from_slice(&kind.to_le_bytes());
+        out.extend_from_slice(&total.to_le_bytes());
+        out.extend_from_slice(body);
+        out.extend_from_slice(&total.to_le_bytes());
+        out
+    }
+    let mut shb_body = Vec::new();
+    shb_body.extend_from_slice(&0x1A2B3C4Du32.to_le_bytes());
+    shb_body.extend_from_slice(&1u16.to_le_bytes());
+    shb_body.extend_from_slice(&0u16.to_le_bytes());
+    shb_body.extend_from_slice(&(-1i64).to_le_bytes());
+    let idb = |linktype: u16| {
+        let mut b = Vec::new();
+        b.extend_from_slice(&linktype.to_le_bytes());
+        b.extend_from_slice(&0u16.to_le_bytes());
+        b.extend_from_slice(&65535u32.to_le_bytes());
+        block(1, &b)
+    };
+    let packet = vec![0u8; 34];
+    let mut epb_body = Vec::new();
+    epb_body.extend_from_slice(&1u32.to_le_bytes()); // interface 1 — the RAW one
+    epb_body.extend_from_slice(&0u32.to_le_bytes());
+    epb_body.extend_from_slice(&0u32.to_le_bytes());
+    epb_body.extend_from_slice(&(packet.len() as u32).to_le_bytes());
+    epb_body.extend_from_slice(&(packet.len() as u32).to_le_bytes());
+    epb_body.extend_from_slice(&packet);
+
+    let mut pcapng = block(0x0A0D_0D0A, &shb_body);
+    pcapng.extend_from_slice(&idb(1)); // Ethernet
+    pcapng.extend_from_slice(&idb(101)); // RAW — a different type, which libpcap refuses
+    pcapng.extend_from_slice(&block(6, &epb_body));
+
+    for (name, bytes) in [("header-then-junk.pcap", junk), ("multi-linktype.pcapng", pcapng)] {
+        let path = fixture.dir.join(name);
+        std::fs::write(&path, &bytes).unwrap();
+        let (code, output) = fixture.invoke(&["-r", path.to_str().unwrap(), "-q"]);
+        assert_eq!(code, 1, "{name}: an unreadable capture must not report success\n{output}");
+        assert!(
+            output.contains("replay did NOT complete") || output.contains("capture failed"),
+            "{name}: the operator must be told the capture was not parsed:\n{output}"
+        );
+    }
+}
+
+/// The other side of it: a capture that IS readable but genuinely contains nothing detectable
+/// still succeeds. "No detections" and "no packets" must stay distinguishable.
+#[test]
+fn a_readable_capture_with_no_detections_still_succeeds() {
+    if !have_binary() {
+        return;
+    }
+    let clean = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("tests").join("corpus").join("clean_tcp.pcap");
+    if !clean.is_file() {
+        eprintln!("[skip] clean_tcp.pcap not present");
+        return;
+    }
+    let fixture = Fixture::new("clean", "203.0.113.77,placeholder,(static)\n", "");
+    let (code, output) = fixture.invoke(&["-r", clean.to_str().unwrap(), "-q"]);
+    assert_eq!(code, 0, "clean traffic is a successful replay, not a failure\n{output}");
+}

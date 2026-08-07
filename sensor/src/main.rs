@@ -694,11 +694,15 @@ fn run() -> i32 {
         for failure in &failures {
             ceprintln!("[!] {failure}");
         }
-        ceprintln!(
-            "[!] {} of {} capture worker(s) failed — this host was NOT being monitored",
-            failures.len(),
-            registry.slots.len()
-        );
+        if cfg.is_offline_replay() {
+            ceprintln!("[!] the replay did NOT complete — these results are not a clean analysis of the capture");
+        } else {
+            ceprintln!(
+                "[!] {} of {} capture worker(s) failed — this host was NOT being monitored",
+                failures.len(),
+                registry.slots.len()
+            );
+        }
     }
 
     let elapsed = started.elapsed();

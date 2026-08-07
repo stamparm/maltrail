@@ -212,8 +212,24 @@ pub fn run_all(handles: Vec<Handle>, ctx: WorkerContext) -> Result<WorkerExit, W
                 Err(e) => {
                     crate::output::log_error(&format!("capture error on worker {} ({e})", ctx.id), true);
                     if offline {
-                        // A truncated or corrupt pcap ends the replay; it is not a live outage.
-                        outcome = Ok(WorkerExit::OfflineEof);
+                        // A capture error is NOT a clean end of file. If it happened before a
+                        // single packet was read, the capture could not be read at all, and
+                        // reporting a successful replay of zero packets is the offline version
+                        // of the silent blind spot Gate 1.1 fixed: the analyst sees "no
+                        // detections" when the truth is "your file was never parsed".
+                        //
+                        // Found by the shadow harness on a `mergecap` output — libpcap refuses a
+                        // pcapng whose interfaces have different link types, and the sensor
+                        // replayed it to "success" with received=0.
+                        //
+                        // After packets HAVE been read this is a truncated tail: the events found
+                        // so far are real and worth keeping, so the run still succeeds and the
+                        // error stands in the log.
+                        if st.metrics.packets_received == 0 {
+                            outcome = Err(WorkerError::Capture(format!("{e} (no packets could be read)")));
+                        } else {
+                            outcome = Ok(WorkerExit::OfflineEof);
+                        }
                         fatal = true;
                     } else {
                         // Live: tolerate a transient hiccup, but never spin here forever. An
