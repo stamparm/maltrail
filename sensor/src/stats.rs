@@ -80,7 +80,18 @@ pub fn render(registry: &Registry, uptime_seconds: f64) -> String {
         }};
     }
 
-    metric!("maltrail_up", "gauge", "1 when the sensor is running.", 1);
+    // `maltrail_up` means "this sensor is capturing", NOT "this process answered you". It used
+    // to be the constant 1, which made it true even when every capture worker had died — the
+    // one condition an operator most needs it to be false for. Alert on this.
+    let alive = registry.workers_alive();
+    metric!(
+        "maltrail_up",
+        "gauge",
+        "1 while at least one capture worker is running; 0 means this host is NOT being monitored.",
+        u8::from(alive > 0)
+    );
+    metric!("maltrail_workers_alive", "gauge", "Capture workers currently in their capture loop.", alive);
+    metric!("maltrail_workers_total", "gauge", "Capture workers this sensor started.", registry.slots.len());
     // Version as a LABEL, which is the Prometheus convention for build info (the value is always
     // 1); emitting it as a comment line after the value would not survive relabelling.
     out.push_str("# HELP maltrail_build_info Sensor build information; the version is a label.\n");
@@ -185,6 +196,13 @@ pub fn render(registry: &Registry, uptime_seconds: f64) -> String {
         "Failed trail reloads.",
         registry.reloads_failed.load(Ordering::Relaxed)
     );
+    metric!(
+        "maltrail_trail_reloads_rejected_total",
+        "counter",
+        "Trail reloads that parsed but were refused for losing too much of the set; \
+         the previous trails are still in use.",
+        registry.reloads_rejected.load(Ordering::Relaxed)
+    );
 
     let ns = if t.processing_samples > 0 { t.processing_nanos as f64 / t.processing_samples as f64 } else { 0.0 };
     metric!(
@@ -203,6 +221,21 @@ pub fn render(registry: &Registry, uptime_seconds: f64) -> String {
             "maltrail_worker_packets_total{{worker=\"{i}\"}} {}\n",
             slot.snapshot().packets_processed
         ));
+    }
+    // Which worker died, not just how many. With PACKET_FANOUT each worker owns a slice of the
+    // traffic, so one dead worker is a partial blind spot rather than a total outage.
+    out.push_str("# HELP maltrail_worker_alive 1 while this worker is in its capture loop.\n");
+    out.push_str("# TYPE maltrail_worker_alive gauge\n");
+    for (i, slot) in registry.slots.iter().enumerate() {
+        out.push_str(&format!("maltrail_worker_alive{{worker=\"{i}\"}} {}\n", u8::from(slot.is_alive())));
+    }
+    // A worker can hold `alive` and still be wedged inside libpcap. Staleness here is the only
+    // external signal for that, so it is exported as an absolute timestamp and left for the
+    // scraper to subtract (`time() - maltrail_worker_last_heartbeat_seconds > 60`).
+    out.push_str("# HELP maltrail_worker_last_heartbeat_seconds Unix time of this worker's last housekeeping tick.\n");
+    out.push_str("# TYPE maltrail_worker_last_heartbeat_seconds gauge\n");
+    for (i, slot) in registry.slots.iter().enumerate() {
+        out.push_str(&format!("maltrail_worker_last_heartbeat_seconds{{worker=\"{i}\"}} {}\n", slot.last_heartbeat()));
     }
     out
 }

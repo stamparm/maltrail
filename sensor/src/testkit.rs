@@ -282,6 +282,72 @@ impl Drop for Harness {
     }
 }
 
+/// A `WorkerContext` wired to `registry.slots[id]`, for tests that need to drive the real
+/// `worker::run` rather than the packet path alone — worker lifecycle, exit classification and
+/// the liveness metrics all live in `run`, not in `process_packet`.
+///
+/// The temporary directory is deliberately leaked (tests are short-lived and the OS reclaims
+/// `TMPDIR`); a `Drop` guard would have to outlive the returned context.
+pub fn worker_context(registry: &Arc<crate::metrics::Registry>, id: usize) -> crate::worker::WorkerContext {
+    let counter = COUNTER.fetch_add(1, Ordering::Relaxed);
+    let dir = std::env::temp_dir().join(format!("maltrail-worker-{}-{}", std::process::id(), counter));
+    let log_dir = dir.join("logs");
+    std::fs::create_dir_all(&log_dir).expect("create worker log dir");
+    let trails_file = dir.join("trails.csv");
+    std::fs::write(&trails_file, "").expect("write trails");
+
+    let config_file = dir.join("worker.conf");
+    std::fs::write(
+        &config_file,
+        format!(
+            "MONITOR_INTERFACE any\n\
+             CAPTURE_BUFFER 1MB\n\
+             PROCESS_COUNT 1\n\
+             UPDATE_PERIOD 999999999\n\
+             DISABLE_CHECK_SUDO true\n\
+             USE_CONDENSED_STORAGE false\n\
+             USE_HEURISTICS false\n\
+             SENSOR_NAME harness\n\
+             LOG_DIR {}\n\
+             TRAILS_FILE {}\n",
+            log_dir.display(),
+            trails_file.display()
+        ),
+    )
+    .expect("write worker config");
+
+    let root = repo_root();
+    let mut cfg = Config::load(&config_file).expect("worker config must load");
+    cfg.root = root.clone();
+    settings::init(root);
+    crate::output::init_error_log(&log_dir, false);
+
+    crate::worker::WorkerContext {
+        id,
+        cfg: Arc::new(cfg),
+        whitelist: Arc::new(Whitelist::default()),
+        store: Arc::new(TrailStore::new(build_db(&[]))),
+        output: Arc::new(OutputConfig {
+            sensor_name: "harness".to_string(),
+            log_dir,
+            trails_file,
+            disable_local_log_storage: false,
+            console: false,
+            log_server: None,
+            syslog_server: None,
+            logstash_server: None,
+            severity_regex: None,
+            throttle: crate::throttle::ThrottleConfig::default(),
+            hostname: "harness".to_string(),
+            ignore: IgnoreRules::default(),
+            whitelist: Arc::new(Whitelist::default()),
+            show_debug: false,
+        }),
+        slot: registry.slots[id].clone(),
+        shutdown: Arc::new(std::sync::atomic::AtomicBool::new(false)),
+    }
+}
+
 pub fn build_db(trails: &[(&str, &str, &str)]) -> TrailDb {
     let mut builder = TrailDbBuilder::new(trails.len().max(1), 512);
     let mut regex = crate::trails::regexset::TrailRegexBuilder::default();

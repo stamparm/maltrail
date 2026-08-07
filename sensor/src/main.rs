@@ -278,6 +278,18 @@ fn run() -> i32 {
             return 1;
         }
     };
+    // Fail closed. A sensor holding zero trails starts cleanly, answers its metrics endpoint,
+    // reports itself healthy — and detects nothing. That is strictly worse than not starting,
+    // because nobody investigates a sensor that looks fine. Heuristics alone are not a
+    // substitute: they find behaviour, not the known-bad indicators that are the whole point.
+    if db.is_empty() && !cfg.allow_empty_trails {
+        ceprintln!("[!] the trail set is EMPTY ('{}'), so this sensor would detect nothing", cfg.trails_file.display());
+        if stats.whitelisted > 0 {
+            ceprintln!("[?] {} row(s) were dropped by the whitelist; is it too broad?", stats.whitelisted);
+        }
+        ceprintln!("[?] check the trail update ran, or set 'ALLOW_EMPTY_TRAILS true' if this is deliberate");
+        return 1;
+    }
     if !args.quiet {
         cprintln!("[i] {} trails loaded", thousands(stats.loaded as u64));
     }
@@ -478,11 +490,34 @@ fn run() -> i32 {
                     last_mtime = mtime;
                     match trails::load_with(&cfg_reload.trails_file, &wl_reload, load_options(&cfg_reload)) {
                         Ok((db, stats)) => {
-                            reg_reload.trail_count.store(db.len() as u64, Ordering::Relaxed);
-                            store_reload.publish(db);
-                            reg_reload.trail_generation.store(store_reload.generation(), Ordering::Relaxed);
-                            reg_reload.reloads_ok.fetch_add(1, Ordering::Relaxed);
-                            cprintln!("[i] reloaded {} trails", thousands(stats.loaded as u64));
+                            // A reload that loses most of the trail set is far more likely to be a
+                            // half-written or truncated file than a real change, and publishing it
+                            // would blind the sensor without any error ever occurring. Keep the
+                            // last known-good store: detection continues on slightly stale trails,
+                            // which beats continuing on almost none.
+                            let current = reg_reload.trail_count.load(Ordering::Relaxed);
+                            let incoming = db.len() as u64;
+                            let floor = (current as f64 * cfg_reload.trail_reload_min_ratio) as u64;
+                            if cfg_reload.trail_reload_min_ratio > 0.0 && current > 0 && incoming < floor {
+                                reg_reload.reloads_rejected.fetch_add(1, Ordering::Relaxed);
+                                output::log_error(
+                                    &format!(
+                                        "trail reload REJECTED: {} trails would replace {} (below the \
+                                         {:.0}% floor); keeping the current set. If this drop is real, \
+                                         restart the sensor or lower 'TRAIL_RELOAD_MIN_RATIO'",
+                                        thousands(incoming),
+                                        thousands(current),
+                                        cfg_reload.trail_reload_min_ratio * 100.0
+                                    ),
+                                    true,
+                                );
+                            } else {
+                                reg_reload.trail_count.store(incoming, Ordering::Relaxed);
+                                store_reload.publish(db);
+                                reg_reload.trail_generation.store(store_reload.generation(), Ordering::Relaxed);
+                                reg_reload.reloads_ok.fetch_add(1, Ordering::Relaxed);
+                                cprintln!("[i] reloaded {} trails", thousands(stats.loaded as u64));
+                            }
                         }
                         Err(e) => {
                             reg_reload.reloads_failed.fetch_add(1, Ordering::Relaxed);
@@ -578,14 +613,34 @@ fn run() -> i32 {
     // started the deadline here, which made a healthy live sensor "stop" after 10 seconds.)
     // Once shutdown IS requested, the wait is bounded so a wedged capture handle cannot stop
     // the process from exiting and printing its final metrics.
-    let mut pending: Vec<Option<std::thread::JoinHandle<()>>> = threads.into_iter().map(Some).collect();
+    // Join results are INSPECTED, not discarded. A capture worker that dies while the sensor is
+    // supposed to be monitoring is a detection outage: the process must exit non-zero so
+    // `Restart=on-failure` fires, instead of exiting 0 and leaving the host unmonitored with a
+    // green systemd unit.
+    type WorkerResult = Result<worker::WorkerExit, worker::WorkerError>;
+    let mut pending: Vec<Option<std::thread::JoinHandle<WorkerResult>>> = threads.into_iter().map(Some).collect();
+    let mut failures: Vec<String> = Vec::new();
     let mut grace_deadline: Option<Instant> = None;
     let mut stuck = 0usize;
     loop {
-        for slot in pending.iter_mut() {
+        for (id, slot) in pending.iter_mut().enumerate() {
             if let Some(handle) = slot.take() {
                 if handle.is_finished() {
-                    let _ = handle.join();
+                    let shutting_down = shutdown.load(Ordering::Relaxed) || SHUTDOWN.load(Ordering::Relaxed);
+                    match handle.join() {
+                        // The thread unwound past the per-packet catch_unwind.
+                        Err(_) => failures.push(format!("worker {id}: {}", worker::WorkerError::Panic)),
+                        Ok(Err(e)) => failures.push(format!("worker {id}: {e}")),
+                        Ok(Ok(worker::WorkerExit::OfflineEof)) => {}
+                        Ok(Ok(worker::WorkerExit::Shutdown)) => {
+                            // A live worker leaving its loop when nobody asked it to means the
+                            // capture ended on its own. There is no benign reading of that.
+                            if !cfg.is_offline_replay() && !shutting_down {
+                                failures.push(format!("worker {id}: capture stopped unexpectedly"));
+                                shutdown.store(true, Ordering::Relaxed);
+                            }
+                        }
+                    }
                 } else {
                     *slot = Some(handle);
                 }
@@ -612,6 +667,20 @@ fn run() -> i32 {
     }
     shutdown.store(true, Ordering::Relaxed);
 
+    // A worker that failed while the sensor was meant to be capturing is a monitoring outage.
+    // Say so on stderr (journald) and exit non-zero, which is what makes `Restart=on-failure`
+    // meaningful; exiting 0 here would leave the unit green and the network unwatched.
+    if !failures.is_empty() {
+        for failure in &failures {
+            ceprintln!("[!] {failure}");
+        }
+        ceprintln!(
+            "[!] {} of {} capture worker(s) failed — this host was NOT being monitored",
+            failures.len(),
+            registry.slots.len()
+        );
+    }
+
     let elapsed = started.elapsed();
     if !args.quiet {
         cprintln!("\r[i] cleaning up...");
@@ -634,7 +703,11 @@ fn run() -> i32 {
         }
         cprintln!("\n[*] ending @ {}", now_clock());
     }
-    0
+    if failures.is_empty() {
+        0
+    } else {
+        1
+    }
 }
 
 #[allow(clippy::too_many_arguments)]

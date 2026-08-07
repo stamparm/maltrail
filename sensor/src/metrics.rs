@@ -4,7 +4,7 @@
 //! A worker publishes a snapshot into a shared slot every aggregation tick; the reporter
 //! thread sums those slots.
 
-use std::sync::atomic::{AtomicU64, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
 use std::sync::Arc;
 
 #[derive(Default, Clone, Copy, Debug)]
@@ -60,8 +60,16 @@ impl WorkerMetrics {
 }
 
 /// The published, atomically readable form of `WorkerMetrics`.
+///
+/// `alive`/`last_heartbeat_unix` are lifecycle, not counters: they are what turns "the process
+/// is up" into "the process is still capturing". A worker that has died stops updating its
+/// heartbeat, and `maltrail_up` goes to 0 even though the HTTP thread is happily answering.
 #[derive(Default)]
 pub struct MetricsSlot {
+    /// false until the worker starts its capture loop, and again once it has left it
+    pub alive: AtomicBool,
+    /// wall-clock seconds at the worker's last housekeeping tick (0 = never ran)
+    pub last_heartbeat_unix: AtomicU64,
     pub packets_received: AtomicU64,
     pub packets_processed: AtomicU64,
     pub packets_ignored: AtomicU64,
@@ -85,6 +93,32 @@ pub struct MetricsSlot {
 }
 
 impl MetricsSlot {
+    /// Called by the worker as it enters its capture loop.
+    pub fn mark_alive(&self) {
+        self.alive.store(true, Ordering::Relaxed);
+        self.heartbeat();
+    }
+
+    /// Called by the worker as it leaves its capture loop, for ANY reason.
+    pub fn mark_dead(&self) {
+        self.alive.store(false, Ordering::Relaxed);
+    }
+
+    /// Refreshed on the housekeeping tick. A stalled worker keeps `alive` but stops advancing
+    /// this, which is the only way to distinguish "wedged" from "idle interface" externally.
+    pub fn heartbeat(&self) {
+        let now = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).map(|d| d.as_secs()).unwrap_or(0);
+        self.last_heartbeat_unix.store(now, Ordering::Relaxed);
+    }
+
+    pub fn is_alive(&self) -> bool {
+        self.alive.load(Ordering::Relaxed)
+    }
+
+    pub fn last_heartbeat(&self) -> u64 {
+        self.last_heartbeat_unix.load(Ordering::Relaxed)
+    }
+
     pub fn publish(&self, m: &WorkerMetrics) {
         self.packets_received.store(m.packets_received, Ordering::Relaxed);
         self.packets_processed.store(m.packets_processed, Ordering::Relaxed);
@@ -141,6 +175,9 @@ pub struct Registry {
     pub trail_count: AtomicU64,
     pub reloads_ok: AtomicU64,
     pub reloads_failed: AtomicU64,
+    /// Reloads that PARSED cleanly but were refused for losing too much of the trail set.
+    /// Distinct from `reloads_failed`: nothing errored, the data was simply not credible.
+    pub reloads_rejected: AtomicU64,
 }
 
 impl Registry {
@@ -151,6 +188,7 @@ impl Registry {
             trail_count: AtomicU64::new(0),
             reloads_ok: AtomicU64::new(0),
             reloads_failed: AtomicU64::new(0),
+            reloads_rejected: AtomicU64::new(0),
         }
     }
 
@@ -161,6 +199,15 @@ impl Registry {
             out.add(&s);
         }
         out
+    }
+
+    /// How many capture workers are still in their loop.
+    ///
+    /// This is the sensor's real health signal. `maltrail_up` used to be the constant 1, which
+    /// only ever proved the metrics thread was scheduled — a sensor whose every worker had died
+    /// reported itself perfectly healthy while monitoring nothing.
+    pub fn workers_alive(&self) -> usize {
+        self.slots.iter().filter(|slot| slot.is_alive()).count()
     }
 
     /// One-line operational summary, printed on the `METRICS_INTERVAL` tick and at exit.
