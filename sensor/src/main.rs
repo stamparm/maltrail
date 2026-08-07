@@ -395,6 +395,10 @@ fn run() -> i32 {
         }
     }
 
+    // How many WORKERS will run, which is not the number of handles: an offline replay drives
+    // every `-r` file through one worker so their detection state accumulates (see run_all).
+    let worker_count = if cfg.is_offline_replay() { 1 } else { handles.len() };
+
     if handles.is_empty() {
         ceprintln!("[!] no capture source");
         return 1;
@@ -420,7 +424,7 @@ fn run() -> i32 {
             window: cfg.event_throttle_window,
             burst: cfg.event_throttle_burst,
             max_keys: cfg.event_throttle_max_keys,
-            legacy_divisor: handles.len().max(1) as u32,
+            legacy_divisor: worker_count.max(1) as u32,
         },
         hostname: maltrail_sensor::config::hostname(),
         ignore,
@@ -442,7 +446,7 @@ fn run() -> i32 {
 
     install_signal_handlers();
 
-    let registry = Arc::new(Registry::new(handles.len()));
+    let registry = Arc::new(Registry::new(worker_count));
     registry.trail_count.store(trail_count, Ordering::Relaxed);
     registry.trail_generation.store(store.generation(), Ordering::Relaxed);
 
@@ -573,8 +577,20 @@ fn run() -> i32 {
         cprintln!("[^] running...");
     }
     let started = Instant::now();
-    let mut threads = Vec::with_capacity(handles.len());
-    for (id, (handle, _source, _group)) in handles.into_iter().enumerate() {
+    // Offline replay is ONE worker over every file, in order. Giving each `-r` file its own
+    // worker also gave it its own detection state, so evidence split across a capture set never
+    // accumulated and the result depended on how the threads interleaved. A replay has to be
+    // deterministic and has to behave like the single stream the analyst captured.
+    //
+    // Live capture keeps one worker per handle — that is exactly what PACKET_FANOUT parallelises.
+    let mut worker_handles: Vec<Vec<Handle>> = if cfg.is_offline_replay() {
+        vec![handles.into_iter().map(|(h, _, _)| h).collect()]
+    } else {
+        handles.into_iter().map(|(h, _, _)| vec![h]).collect()
+    };
+
+    let mut threads = Vec::with_capacity(worker_handles.len());
+    for (id, group) in worker_handles.drain(..).enumerate() {
         let ctx = WorkerContext {
             id,
             cfg: cfg.clone(),
@@ -587,7 +603,7 @@ fn run() -> i32 {
         threads.push(
             std::thread::Builder::new()
                 .name(format!("capture-{id}"))
-                .spawn(move || worker::run(handle, ctx))
+                .spawn(move || worker::run_all(group, ctx))
                 .expect("spawn capture worker"),
         );
     }

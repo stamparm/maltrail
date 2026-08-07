@@ -23,8 +23,9 @@ Done and verified, so the plan does not re-litigate it:
 | Operational surface | `-T` config test, capability-based privileges (no root), hardened systemd unit, SIGHUP reload, Prometheus endpoint, 1 s trail-refresh pickup |
 | Upstream bugs found and fixed | 9, including silently-stale trails and a self-stopping sensor |
 
-**Not yet true:** the tree is uncommitted, there is no CI, a dead worker can exit 0, `meta.sqlite`
-is not written, and multi-worker behaviour has never been parity-tested.
+**Not yet true:** `meta.sqlite` is not written, multi-worker behaviour has never been
+parity-tested, and Gate 1.5 (bounded state everywhere) and 1.6 (config range validation in `-T`)
+are open. CI now runs the whole gate on every push and pull request.
 
 ---
 
@@ -35,7 +36,7 @@ is not written, and multi-worker behaviour has never been parity-tested.
 **Exit criterion:** every item's regression test is in the suite and green in both profiles, and
 `tools/check.sh` passes.
 
-### 1.1 Worker death must be fatal **[R1]**
+### 1.1 Worker death must be fatal **[R1]** — DONE
 
 `worker::run` returns `()`; `main` discards the join results. A capture worker can die and the
 process still exits **0**, so `Restart=on-failure` never fires and the host silently stops being
@@ -48,7 +49,7 @@ monitored.
   answering", which is close to meaningless as a health signal.
 * **Test:** kill a worker's capture handle mid-run; assert non-zero exit and `maltrail_up 0`.
 
-### 1.2 Empty trail set must fail closed **[R1]**
+### 1.2 Empty trail set must fail closed **[R1]** — DONE
 
 If the trail load or update fails, the sensor starts with zero trails, looks healthy, and detects
 nothing. Fail startup unless `ALLOW_EMPTY_TRAILS true`. On *reload*, keep the last known-good store
@@ -57,7 +58,7 @@ and refuse an implausible drop (e.g. >50% fewer trails) — publish `maltrail_tr
 * **Test:** start with an empty CSV → non-zero exit; reload a truncated CSV → old store retained,
   counter incremented, detections continue.
 
-### 1.3 Multi-pcap semantics contradict the test **[R1]**
+### 1.3 Multi-pcap semantics contradict the test **[R1]** — DONE
 
 The binary gives each `-r` file its own worker *and its own state*; `tests/replay.rs` asserts they
 share state and only exercises the harness. One of the two is wrong.
@@ -68,7 +69,7 @@ capture set expects.
 
 * **Test:** black-box, two pcaps, neither individually reaching a scan threshold, combined does.
 
-### 1.4 systemd first start is a deadlock **[R1]**
+### 1.4 systemd first start is a deadlock **[R1]** — DONE (except installing the binary outside target/)
 
 `User=maltrail` (no home) + `ProtectHome=yes` + a `$HOME`-derived default `TRAILS_FILE` +
 `ExecStartPre=-T` that rejects a missing trails file, and the updater that would create it runs

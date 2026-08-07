@@ -72,9 +72,28 @@ const LIVE_CAPTURE_ERROR_LIMIT: u32 = 64;
 
 /// Drive one capture handle to completion. Returns when the handle reaches EOF (offline) or
 /// shutdown is requested (live); errors when capture fails persistently.
-pub fn run(mut handle: Handle, ctx: WorkerContext) -> Result<WorkerExit, WorkerError> {
+pub fn run(handle: Handle, ctx: WorkerContext) -> Result<WorkerExit, WorkerError> {
+    run_all(vec![handle], ctx)
+}
+
+/// Drive several capture handles through ONE worker state, in order.
+///
+/// This is what `-r a.pcap,b.pcap` must do. Giving each file its own worker also gave it its own
+/// `WorkerState`, so evidence split across files never accumulated: two captures that between
+/// them cross a scan threshold would each stay under it and nothing would fire. An analyst
+/// replaying a capture set expects one stream, and expects it to be deterministic — which a set
+/// of racing per-file workers is not.
+///
+/// Live capture still uses one handle per worker; that is what `PACKET_FANOUT` parallelises.
+pub fn run_all(handles: Vec<Handle>, ctx: WorkerContext) -> Result<WorkerExit, WorkerError> {
+    let mut remaining = handles.into_iter();
+    let Some(mut handle) = remaining.next() else {
+        return Ok(WorkerExit::OfflineEof);
+    };
     let offline = handle.is_offline();
-    let datalink = handle.datalink();
+    // Re-read per file: a capture set can mix link types (an `any`-interface capture next to an
+    // Ethernet one), and resolving the second file with the first file's DLT would misparse it.
+    let mut datalink = handle.datalink();
     let snaplen = ctx.cfg.capture_snaplen;
     let use_wallclock = offline && ctx.cfg.offline_timestamps == TimestampSource::Wallclock;
 
@@ -87,7 +106,7 @@ pub fn run(mut handle: Handle, ctx: WorkerContext) -> Result<WorkerExit, WorkerE
     // Live handles are non-blocking (see capture::Handle::open_live), so an idle interface is
     // waited on with poll() here instead of inside libpcap. That keeps the shutdown check on a
     // bounded leash - at most `capture_timeout_ms` - without a busy spin.
-    let poll_fd = handle.selectable_fd();
+    let mut poll_fd = handle.selectable_fd();
     let poll_timeout = ctx.cfg.capture_timeout_ms.max(1);
     // Housekeeping runs after this many packets OR after this long, whichever comes first, so a
     // quiet interface still publishes fresh metrics instead of waiting for 1024 packets.
@@ -174,8 +193,19 @@ pub fn run(mut handle: Handle, ctx: WorkerContext) -> Result<WorkerExit, WorkerE
                 // offline: end of file. live: nothing available right now.
                 Ok(None) => {
                     if offline {
-                        outcome = Ok(WorkerExit::OfflineEof);
-                        fatal = true;
+                        // Carry the SAME state into the next file rather than ending here.
+                        match remaining.next() {
+                            Some(next) => {
+                                handle = next;
+                                datalink = handle.datalink();
+                                poll_fd = handle.selectable_fd();
+                                continue;
+                            }
+                            None => {
+                                outcome = Ok(WorkerExit::OfflineEof);
+                                fatal = true;
+                            }
+                        }
                     }
                     break;
                 }
