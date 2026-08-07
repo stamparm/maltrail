@@ -329,7 +329,8 @@ pub fn run(cfg: &Config) -> i32 {
     }
 
     if cfg.use_condensed_storage {
-        r.line(Level::Warn, "USE_CONDENSED_STORAGE", "on, but this sensor does not write meta.sqlite");
+        let path = crate::meta::meta_db_path(&cfg.log_dir);
+        r.line(Level::Ok, "USE_CONDENSED_STORAGE", &format!("on, writing '{}'", path.display()));
     }
 
     cprintln!("");

@@ -4,9 +4,8 @@ The Maltrail sensor: packet capture and trail detection, in Rust. Same `maltrail
 `trails.csv`, same event format — so the Maltrail server and web interface need no changes.
 
 This is the sensor to deploy. `sensor.py` remains in the repository as the **old sensor**: the
-reference implementation, the differential-test oracle this suite replays against, and the way to
-get the one feature implemented only there (the `meta.sqlite` condensed observable store).
-Nothing about it was removed.
+reference implementation and the differential-test oracle this suite replays against. Nothing
+about it was removed.
 
 **Road to becoming Maltrail's default sensor: [`docs/ROADMAP.md`](docs/ROADMAP.md)** — gated, with
 verifiable exit criteria and the open blockers stated plainly.

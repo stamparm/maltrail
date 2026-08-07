@@ -567,8 +567,9 @@ measured on the target hardware with `tools/fanout_check.py` plus the sensor's o
    that the port is ~20x faster per packet than `sensor.py` and still leaves a large multiple on
    the table.
 2. **Plugins were removed from Maltrail entirely** (both sensors, and the `plugins/` directory).
-3. **The condensed observable store (`meta.sqlite`) is not written**; the sensor warns when
-   `USE_CONDENSED_STORAGE` is on. It feeds the server's `/meta` view, not detection.
+3. ~~**The condensed observable store (`meta.sqlite`) is not written.**~~ Written since the
+   ROADMAP Gate 4.1 work: `src/meta.rs`, verified identical to `core/meta.py`'s output on all 36
+   corpus cases by `tools/parity.py`.
 4. **Trail updating runs Maltrail's own Python updater** (`tools/update_trails.py` →
    `core.update.update_trails()`), so the host needs `python3`. That is deliberate: a second
    implementation of feed handling would drift out of sync with the first, and the failure mode of
@@ -631,7 +632,7 @@ buffer, which by construction ends at a boundary). That is the right shape and i
 
 ### Open, and agreed
 
-* **`meta.sqlite` (`USE_CONDENSED_STORAGE`)** — both reviewers rank this the top remaining feature gap, above plugins, because the default config has it on and the server's condensed views go dark. The sensor warns at startup and in `-T`; the writer is not implemented.
+* **`meta.sqlite` (`USE_CONDENSED_STORAGE`)** — both reviewers ranked this the top remaining feature gap, above plugins, because the default config has it on and the server's condensed views go dark. **Resolved** (ROADMAP 4.1): `src/meta.rs` writes the store, and `tools/parity.py` now diffs the two sensors' databases row for row alongside their event logs.
 * **Worker-death exit status** — a worker that dies leaves the process able to exit 0, so `Restart=on-failure` will not restart it. Workers should return a typed result and live-capture loss should be a non-zero exit.
 * **Multi-`-r` semantics** — the binary gives each pcap its own worker and state; `tests/replay.rs` describes shared state and exercises the harness, not the binary. One of the two has to change.
 * **systemd first-start bootstrap** — `ProtectHome=yes` plus a `$HOME`-derived default `TRAILS_FILE` plus `ExecStartPre=-T` requiring trails is a deadlock on a fresh install. Needs `StateDirectory=` and an explicit `/var/lib/maltrail` trail path.

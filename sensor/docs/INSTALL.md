@@ -443,6 +443,6 @@ metrics are printed and capture handles are released.
 | `[i] repaired N wildcard trail pattern(s) truncated in the feed` | informational: those trails were cut off in transit and were salvaged (the intact alternatives are kept, the dangling fragment dropped). `sensor.py` drops such trails entirely, so this is a detection gain |
 | `[!] N wildcard trail pattern(s) are unusable and NOT matched` | those patterns could not be salvaged at all; CPython rejects them too, so `sensor.py` ignores them as well |
 | No colour in `--console` output | colour is emitted only when stdout is a TTY (as in `sensor.py`), and `NO_COLOR` disables it |
-| `USE_CONDENSED_STORAGE is on, but the sensor does not write meta.sqlite` | expected; see `docs/COMPATIBILITY.md`. Set it to `false` to silence, or run `sensor.py` if you use the server's `/meta` view |
+| `condensed observable store: flush of N rows failed` | the sensor could not write `LOG_DIR/meta.sqlite`; check the directory's permissions and free space. Detection and event logging are unaffected — only the server's `/meta` view loses that window. `maltrail_meta_flush_errors_total` counts these |
 | `plugins ('-p') … are not supported` | run `sensor.py`, or consume events from `LOG_SERVER`/`LOGSTASH_SERVER` |
 | High `capture_drops` in the metrics line | raise `CAPTURE_BUFFER_SIZE`, add `CAPTURE_WORKERS`, or tighten `CAPTURE_FILTER` |

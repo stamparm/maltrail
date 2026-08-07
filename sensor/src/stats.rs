@@ -190,6 +190,19 @@ pub fn render(registry: &Registry, uptime_seconds: f64) -> String {
          under a state-exhaustion flood.",
         t.state_saturations
     );
+    metric!(
+        "maltrail_meta_observables_total",
+        "counter",
+        "Observables merged into the condensed store (LOG_DIR/meta.sqlite).",
+        t.meta_flushed
+    );
+    metric!(
+        "maltrail_meta_flush_errors_total",
+        "counter",
+        "Condensed-store flushes that failed. Each one loses that worker's window of \
+         observables; detection and event logging are unaffected.",
+        t.meta_flush_errors
+    );
     metric!("maltrail_trail_lookups_total", "counter", "Trail-store lookups performed.", t.trail_lookups);
     metric!("maltrail_cache_hits_total", "counter", "Result-cache hits.", t.cache_hits);
     metric!("maltrail_cache_misses_total", "counter", "Result-cache misses.", t.cache_misses);

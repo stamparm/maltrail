@@ -27,9 +27,12 @@
     of the trail file changing
 [+] Event throttling is reworked into three selectable modes: burst-then-summarize
     (default), byte-exact legacy, and off
+[+] The sensor writes the condensed observable store ('USE_CONDENSED_STORAGE',
+    'meta.sqlite') that feeds the server's novelty and retro-hunt views, in the same
+    format core/meta.py produces and the server reads
 [+] Differential parity harness: a generated fixture corpus plus one sampled from the
     operator's real trails.csv, replayed through both sensors, requiring byte-identical
-    events ('sensor/tools/parity.py')
+    events and an identical condensed observable store ('sensor/tools/parity.py')
 [+] 'sensor/tools/check.sh' runs the whole gate: formatting, lints, tests in both debug
     and release profiles, and both parity corpora
 [+] systemd units run both the sensor and the server as an unprivileged user, with

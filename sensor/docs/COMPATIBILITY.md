@@ -25,6 +25,33 @@ Current parity result on the shipped 36-case corpus: **36/36 cases, 0 event diff
 * Verified: `src/config.rs` tests, including one that loads the repository's real
   `maltrail.conf`.
 
+### Condensed observable store
+
+`USE_CONDENSED_STORAGE` writes `LOG_DIR/meta.sqlite` — one cumulative row per observable
+(domain or address) with `first_seen`/`last_seen`/`count`, which is what the server's `/meta`
+novelty and retro-hunt views read. `src/meta.rs` is a port of `core/meta.py`, and the file it
+produces is byte-compatible with the one `sensor.py` produces:
+
+* the same schema (`WITHOUT ROWID`, `PRIMARY KEY(observable)`, `meta_info.schema_version = 1`);
+* the same key encoding — addresses as 4/16-byte BLOBs, domains as TEXT — which is what makes
+  `core/meta.py:lookup()` find a row at all;
+* the same `INSERT OR IGNORE` + `MIN`/`MAX`/`count +` merge, so several workers can drain into
+  one file and a window flushed out of order still widens the interval correctly;
+* rollback journal rather than WAL, and mode `0644`, so a non-root server can read a store the
+  sensor wrote as root;
+* the same junk filter (`0.0.0.0`, `255.255.255.255`, `::`, multicast), scope tagging, per-window
+  key cap (`CONDENSED_MAX_WINDOW_KEYS`) and score-based `prune()` to `META_MAX_ROWS`.
+
+The one structural difference is where the work happens: Python drains its aggregate from a
+background thread per worker *process*, while each Rust worker drains its own on the
+housekeeping tick it already runs — no extra thread, and nothing shared between workers.
+
+* Verified: `tests/meta.rs` (schema, storage class, merge, junk filter, prune, failure
+  handling) and `tools/parity.py`, which now replays every corpus case through both sensors with
+  the store enabled and diffs the two databases row for row. `first_seen`/`last_seen` are
+  excluded from that diff for the same reason the event timestamp field is — `sensor.py` stamps
+  packets with `time.time()` on Python 3, so the two sensors are reading two different clocks.
+
 ### Trails
 
 Trail **updating** works exactly as in `sensor.py:init():update_timer()`: `TRAILS_FILE` is
@@ -160,7 +187,6 @@ Every detection `sensor.py` can produce is ported, with the same trail text:
 
 | Feature | Status | Guidance |
 | --- | --- | --- |
-| **Condensed observable store (`USE_CONDENSED_STORAGE`, `core/meta.py`, `meta.sqlite`)** | Not written. The sensor prints a warning at startup when the switch is on. | Feeds the server's `/meta` novelty/retro-hunt view only; it is not part of detection. Run `sensor.py` if you rely on it. |
 | **`USE_FAST_PREFILTER` admission control** (`FAST_ADMIT_LEVEL`, `FAST_ADMIT_ADAPTIVE`) | Not implemented; the switch only enables SNI extraction. | The prefilter exists to keep packets out of Python. Native parsing makes load-shedding unnecessary; if a link still saturates, add capture workers. |
 | **`core/trailsbin.py` mmap trail store** | Not needed. | One shared `Arc<TrailDb>` serves every worker thread; there are no worker processes to share a file mapping with. |
 | **Windows / WinPcap** | Not supported. | The sensor is Linux-first (fanout is Linux-only); the code is otherwise POSIX and would need a build/test pass for other platforms. |

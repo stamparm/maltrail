@@ -36,5 +36,7 @@ python3 sensor/tools/parity.py                 # the automated version of exactl
 
 ## What only this sensor still does
 
-* Writes the condensed observable store (`meta.sqlite`, `USE_CONDENSED_STORAGE`). The Rust sensor
-  warns at startup when that option is on. See `sensor/docs/ROADMAP.md` §4.1.
+Nothing, as of 3.0: the condensed observable store (`meta.sqlite`, `USE_CONDENSED_STORAGE`) was
+the last feature only this sensor wrote, and the Rust sensor now writes it in the same format
+(`sensor/docs/ROADMAP.md` §4.1). This sensor remains the reference implementation and the oracle
+`sensor/tools/parity.py` replays against, which is reason enough to keep it.

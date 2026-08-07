@@ -485,6 +485,9 @@ fn run() -> i32 {
                     if Instant::now() >= next_update {
                         next_update = Instant::now() + update_period;
                         refresh_trails(&cfg_reload, cfg_reload.quiet, false);
+                        // Same cycle `sensor.py:update_timer()` prunes on. Off the packet path
+                        // and a no-op under budget, so it costs a COUNT(*) per period.
+                        prune_condensed_store(&cfg_reload);
                     }
                     // SIGHUP forces a reload even when the mtime is unchanged.
                     let forced = RELOAD_REQUESTED.swap(false, Ordering::Relaxed);
@@ -885,9 +888,34 @@ fn print_diagnostics(
     cprintln!("[i] event sinks: {}", if sinks.is_empty() { "none".to_string() } else { sinks.join(", ") });
     if cfg.use_condensed_storage {
         cprintln!(
-            "[!] USE_CONDENSED_STORAGE is on, but the Rust sensor does not write \
-             meta.sqlite (see docs/COMPATIBILITY.md); run sensor.py if you need it"
+            "[i] using '{}' for condensed observable storage",
+            maltrail_sensor::meta::meta_db_path(&cfg.log_dir).display()
         );
+    }
+}
+
+/// Budget-triggered eviction of the condensed observable store (`sensor.py:update_timer()`).
+///
+/// Never fatal and never noisy on success: this is an auxiliary index, and an operator does not
+/// need a line per hour saying nothing was over budget. A failure IS reported, because a store
+/// that cannot be pruned will grow without bound.
+fn prune_condensed_store(cfg: &Config) {
+    if !cfg.use_condensed_storage {
+        return;
+    }
+    let path = maltrail_sensor::meta::meta_db_path(&cfg.log_dir);
+    match maltrail_sensor::meta::prune(&path, maltrail_sensor::settings::META_MAX_ROWS) {
+        Ok(0) => {}
+        Ok(deleted) => {
+            if !cfg.quiet {
+                cprintln!(
+                    "[i] condensed observable store: pruned {deleted} lowest-value rows to the \
+                     {} row budget",
+                    maltrail_sensor::settings::META_MAX_ROWS
+                );
+            }
+        }
+        Err(e) => output::log_error(&format!("condensed observable store: prune failed ({e})"), true),
     }
 }
 

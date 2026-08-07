@@ -23,9 +23,10 @@ Done and verified, so the plan does not re-litigate it:
 | Operational surface | `-T` config test, capability-based privileges (no root), hardened systemd unit, SIGHUP reload, Prometheus endpoint, 1 s trail-refresh pickup |
 | Upstream bugs found and fixed | 9, including silently-stale trails and a self-stopping sensor |
 
-**Not yet true:** `meta.sqlite` is not written and multi-worker behaviour has never been
-parity-tested (Gate 2). Gate 1 is complete: CI runs the whole gate on every push and pull
-request, and every item below has a regression test in the suite.
+**Status:** Gates 1-4 are complete. CI runs the whole gate on every push and pull request, every
+item below has a regression test in the suite, and `meta.sqlite` — the last feature gap — is
+written and differentially parity-tested against `core/meta.py`. What remains is Gate 5, the
+cutover itself.
 
 ---
 
@@ -257,17 +258,31 @@ A GitHub workflow running:
 
 ## Gate 4 — Feature parity for cutover
 
-### 4.1 `meta.sqlite` **[R1][R2]** — the one real feature gap
+### 4.1 `meta.sqlite` **[R1][R2]** — DONE
 
-`USE_CONDENSED_STORAGE` defaults **true**. A host that swaps sensors keeps its config, and the
-server's condensed-observable and retro-hunt views go dark. The sensor warns at startup and in `-T`,
-which is correct but not sufficient if this becomes the default sensor.
+`USE_CONDENSED_STORAGE` defaults **true**, so a host that swapped sensors kept its config and
+silently lost the server's condensed-observable and retro-hunt views. The sensor warned about it,
+which was honest but still a feature regression for anyone on the default config — the deciding
+item for whether cutover is "drop-in".
 
-Implement as a **bounded, batched writer on its own thread** — SQLite must never touch a capture
-worker. Same schema the server already reads.
+`src/meta.rs` now writes the store. The aggregate is per worker and drains on the housekeeping
+tick the worker already runs, rather than on a thread of its own: the plan called for a separate
+thread to keep SQLite off the capture path, but the tick is already off it (it runs between packet
+batches, at most once a second) and a thread would have needed a lock on the very map the packet
+path bumps. The packet path does one hash bump per endpoint, keyed by the native address, with no
+text rendered until a key is first inserted.
 
-**This is the deciding item for whether cutover is "drop-in".** Without it, cutover is a feature
-regression for anyone using the default config.
+**Evidence.** `tools/parity.py` replays all 36 corpus cases through both sensors with the store
+enabled and diffs the resulting databases row for row: **identical in every case** — same
+observables, same key encoding, same flags, same counts. `tests/meta.rs` covers the schema, the
+BLOB/TEXT storage class (a mis-keyed store writes and reads back perfectly and matches nothing),
+the out-of-order merge, the junk filter, `prune()` against the same 20-established-vs-200-DGA
+fixture `tests/test_meta.py` uses, and a failing flush.
+
+Bounds, unchanged from Python: `CONDENSED_MAX_WINDOW_KEYS` per window (refusals counted into
+`maltrail_state_saturations_total`), `META_MAX_ROWS` on disk via score-based pruning on the
+trail-update cycle. A flush that fails drops its window rather than growing a backlog, and is
+reported through `maltrail_meta_flush_errors_total`.
 
 ### 4.2 Plugins — explicitly not supported
 
@@ -311,13 +326,9 @@ it replaces, and correctness gates outrank optimisation. These are queued behind
 
 ---
 
-## Three decisions only you can make
+## The one decision only you can make
 
-1. **Commit strategy.** Branch name and granularity for ~15k lines. Everything in Gate 3 is blocked
-   on this.
-2. **Is `meta.sqlite` a cutover gate, or may the default sensor ship without it?** If the former, it
-   moves ahead of Gate 2.
-3. **Default worker count.** Throughput (`PROCESS_COUNT` workers, diluted scan heuristics — matching
+1. **Default worker count.** Throughput (`PROCESS_COUNT` workers, diluted scan heuristics — matching
    the old sensor's default behaviour) or fidelity (`CAPTURE_WORKERS 1`, single-core capture). The
    honest answer may be "throughput, until source-affine fanout lands".
 
@@ -329,7 +340,7 @@ it replaces, and correctness gates outrank optimisation. These are queued behind
 now      1.1 worker death   1.2 fail closed   1.3 multi-pcap   1.4 systemd   [Gate 1]
          3.1 commit  ->  3.2 CI                                              [unblocks everything]
 next     1.5 bounded state  1.6 -T ranges     2.2 multi-worker parity
-then     4.1 meta.sqlite    2.1 source affinity
+then     2.1 source affinity
 finally  2.3 shadow deployment (>= 7 days)  ->  cutover
 ```
 

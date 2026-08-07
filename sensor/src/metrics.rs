@@ -29,6 +29,9 @@ pub struct WorkerMetrics {
     /// Times a bounded state map refused a NEW key because it was at its cap. Non-zero means
     /// the sensor is running with narrowed heuristics — exact trail matching is unaffected.
     pub state_saturations: u64,
+    /// Observables merged into `meta.sqlite`, and flushes that failed. See src/meta.rs.
+    pub meta_flushed: u64,
+    pub meta_flush_errors: u64,
     pub capture_received: u64,
     pub capture_dropped: u64,
     pub capture_ifdropped: u64,
@@ -55,6 +58,8 @@ impl WorkerMetrics {
         self.cache_misses += other.cache_misses;
         self.panics_recovered += other.panics_recovered;
         self.state_saturations += other.state_saturations;
+        self.meta_flushed += other.meta_flushed;
+        self.meta_flush_errors += other.meta_flush_errors;
         self.capture_received += other.capture_received;
         self.capture_dropped += other.capture_dropped;
         self.capture_ifdropped += other.capture_ifdropped;
@@ -90,6 +95,8 @@ pub struct MetricsSlot {
     pub cache_misses: AtomicU64,
     pub panics_recovered: AtomicU64,
     pub state_saturations: AtomicU64,
+    pub meta_flushed: AtomicU64,
+    pub meta_flush_errors: AtomicU64,
     pub capture_received: AtomicU64,
     pub capture_dropped: AtomicU64,
     pub capture_ifdropped: AtomicU64,
@@ -141,6 +148,8 @@ impl MetricsSlot {
         self.cache_misses.store(m.cache_misses, Ordering::Relaxed);
         self.panics_recovered.store(m.panics_recovered, Ordering::Relaxed);
         self.state_saturations.store(m.state_saturations, Ordering::Relaxed);
+        self.meta_flushed.store(m.meta_flushed, Ordering::Relaxed);
+        self.meta_flush_errors.store(m.meta_flush_errors, Ordering::Relaxed);
         self.capture_received.store(m.capture_received, Ordering::Relaxed);
         self.capture_dropped.store(m.capture_dropped, Ordering::Relaxed);
         self.capture_ifdropped.store(m.capture_ifdropped, Ordering::Relaxed);
@@ -166,6 +175,8 @@ impl MetricsSlot {
             cache_misses: self.cache_misses.load(Ordering::Relaxed),
             panics_recovered: self.panics_recovered.load(Ordering::Relaxed),
             state_saturations: self.state_saturations.load(Ordering::Relaxed),
+            meta_flushed: self.meta_flushed.load(Ordering::Relaxed),
+            meta_flush_errors: self.meta_flush_errors.load(Ordering::Relaxed),
             capture_received: self.capture_received.load(Ordering::Relaxed),
             capture_dropped: self.capture_dropped.load(Ordering::Relaxed),
             capture_ifdropped: self.capture_ifdropped.load(Ordering::Relaxed),

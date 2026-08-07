@@ -38,6 +38,7 @@ import json
 import os
 import re
 import shutil
+import sqlite3
 import subprocess
 import sys
 import tempfile
@@ -55,7 +56,7 @@ DISABLE_CHECK_SUDO true
 USE_HEURISTICS %(use_heuristics)s
 CHECK_MISSING_HOST %(check_missing_host)s
 CHECK_HOST_DOMAINS %(check_host_domains)s
-USE_CONDENSED_STORAGE false
+USE_CONDENSED_STORAGE %(use_condensed_storage)s
 SENSOR_NAME parity
 SCAN_WINDOW 30
 # The Rust sensor's default event throttle is a redesign (burst-then-summarize, see
@@ -154,7 +155,7 @@ def read_errors(log_dir):
         return [_.rstrip("\n") for _ in f if _.strip()]
 
 
-def write_config(path, log_dir, trails_file, case_config):
+def write_config(path, log_dir, trails_file, case_config, condensed):
     with open(path, "w") as f:
         f.write(CONFIG_TEMPLATE % {
             "log_dir": log_dir,
@@ -162,8 +163,68 @@ def write_config(path, log_dir, trails_file, case_config):
             "use_heuristics": case_config.get("use_heuristics", "true"),
             "check_missing_host": case_config.get("check_missing_host", "true"),
             "check_host_domains": case_config.get("check_host_domains", "true"),
+            "use_condensed_storage": "true" if condensed else "false",
             "extra": case_config.get("extra", ""),
         })
+
+
+def read_meta(log_dir):
+    """The condensed observable store as a comparable dict, or None if the sensor wrote none.
+
+    Read with core/meta.py's OWN unpacking, not with a private copy: that is what makes this a
+    parity check of the file rather than of two readers that happen to agree. `_unpack` also
+    decides IP-vs-domain purely from the storage class, so a domain accidentally written as a
+    BLOB (or an address as TEXT) shows up here as a difference instead of passing silently.
+    """
+    path = os.path.join(log_dir, "meta.sqlite")
+    if not os.path.isfile(path):
+        return None
+    if ROOT not in sys.path:
+        sys.path.insert(0, ROOT)
+    from core import meta as meta_module
+
+    con = sqlite3.connect(path)
+    try:
+        rows = con.execute("SELECT observable, flags, first_seen, last_seen, count FROM observables").fetchall()
+    except sqlite3.Error:
+        return None
+    finally:
+        con.close()
+    out = {}
+    for key, flags, first, last, count in rows:
+        # first_seen/last_seen are dropped for the SAME reason the event timestamp field is (see
+        # the module header): sensor.py stamps every packet with time.time() on Python 3, so the
+        # two sensors are stamping two different wall clocks and can never agree on the value.
+        # What is left - the key, its encoding, its flags and its count - is everything the
+        # observation itself asserts. The MIN/MAX merge those two columns exist for is covered by
+        # tests/test_meta.py and sensor/tests/meta.rs, which each drive one store directly.
+        #
+        # The ordering invariant is still checkable here, and is:
+        out[meta_module._unpack(key)] = (flags, count, first <= last)
+    return out
+
+
+def compare_meta(python_meta, rust_meta):
+    """Differences between the two stores, as a sorted list of human-readable lines."""
+    if python_meta is None and rust_meta is None:
+        return []
+    if python_meta is None or rust_meta is None:
+        return ["one sensor wrote no store at all (python=%s rust=%s)"
+                % ("none" if python_meta is None else len(python_meta),
+                   "none" if rust_meta is None else len(rust_meta))]
+    diffs = []
+    for key in sorted(set(python_meta) - set(rust_meta)):
+        diffs.append("- only python: %s flags=%d count=%d" % ((key,) + python_meta[key][:2]))
+    for key in sorted(set(rust_meta) - set(python_meta)):
+        diffs.append("+ only rust:   %s flags=%d count=%d" % ((key,) + rust_meta[key][:2]))
+    for key in sorted(set(python_meta) & set(rust_meta)):
+        if python_meta[key][:2] != rust_meta[key][:2]:
+            diffs.append("~ %s python=(flags=%d count=%d) rust=(flags=%d count=%d)"
+                         % ((key,) + python_meta[key][:2] + rust_meta[key][:2]))
+    for name, store in (("python", python_meta), ("rust", rust_meta)):
+        for key in sorted(_ for _ in store if not store[_][2]):
+            diffs.append("! %s wrote %s with first_seen > last_seen" % (name, key))
+    return diffs
 
 
 def run_sensor(cmd, cwd, timeout):
@@ -206,6 +267,10 @@ def main():
                              "clean; distinguishes a real regression (fails every time) from the "
                              "wall-clock artefact documented above (fails occasionally)")
     parser.add_argument("--keep", action="store_true", help="keep the temporary run directories")
+    parser.add_argument("--no-meta", dest="meta", action="store_false", default=True,
+                        help="skip the LOG_DIR/meta.sqlite comparison (it is on by default: the "
+                             "condensed observable store is written from the same packet path as "
+                             "the events, so it belongs in the same differential check)")
     parser.add_argument("--python", default=sys.executable)
     parser.add_argument(
         "--timestamps",
@@ -262,8 +327,8 @@ def main():
 
             py_conf = os.path.join(workdir, "python.conf")
             rs_conf = os.path.join(workdir, "rust.conf")
-            write_config(py_conf, py_log, py_trails, case_config)
-            write_config(rs_conf, rs_log, rs_trails, case_config)
+            write_config(py_conf, py_log, py_trails, case_config, options.meta)
+            write_config(rs_conf, rs_log, rs_trails, case_config, options.meta)
 
             py_out, py_err = run_sensor(
                 [options.python, os.path.join(ROOT, "old", "sensor.py"), "-r", pcap, "-c", py_conf, "--offline"],
@@ -276,6 +341,11 @@ def main():
             rust_events = read_events(rs_log)
             missing, extra = compare(python_events, rust_events)
             rust_errors = [_ for _ in read_errors(rs_log) if "panic" in _.lower()]
+            # The condensed observable store (LOG_DIR/meta.sqlite) is compared row for row when
+            # enabled. It is written from the same packet path as the events but is a completely
+            # separate artifact - an event diff cannot see a store that is empty, mis-keyed, or
+            # double-counted, all of which would only surface in the server's /meta view.
+            meta_diffs = compare_meta(read_meta(py_log), read_meta(rs_log)) if options.meta else []
 
             # A counting heuristic can only fire when the sensor's clock advances, which
             # needs the pcap record timestamps. In wall-clock (strict parity) mode both
@@ -303,6 +373,8 @@ def main():
                     status = "RUST-EXTRA"
                 else:
                     status = "DIFF"
+            elif meta_diffs:
+                status = "META"
             elif assert_coverage and expected_missing_rust:
                 status = "NO-DETECT"
 
@@ -320,6 +392,7 @@ def main():
                 "expect_missing_python": expected_missing,
                 "expect_missing_rust": expected_missing_rust,
                 "panics": rust_errors,
+                "meta_diffs": meta_diffs,
                 "py_out": py_out,
                 "rs_out": rs_out,
                 "py_err": py_err,
@@ -328,7 +401,7 @@ def main():
             })
 
             marker = {"OK": "  ok  ", "DIFF": " DIFF ", "PANIC": " PANIC", "RUN-FAIL": " FAIL ",
-                      "NO-DETECT": " MISS ", "RUST-EXTRA": " RUST+"}[status]
+                      "NO-DETECT": " MISS ", "RUST-EXTRA": " RUST+", "META": " META "}[status]
             print("[%s] %-24s python=%-3d rust=%-3d %s" % (marker, name, len(python_events), len(rust_events),
                                                            entry["notes"]))
             if options.verbose or status not in ("OK", "RUST-EXTRA"):
@@ -338,6 +411,8 @@ def main():
                     print("        + only rust   (x%d): %s" % (count, line))
                 for item in expected_missing_rust:
                     print("        ! rust did not detect expected %r" % item)
+                for line in meta_diffs:
+                    print("        meta.sqlite %s" % line)
                 for item in expected_missing:
                     print("        ~ python did not detect expected %r (corpus expectation may be python-limited)"
                           % item)
@@ -356,6 +431,10 @@ def main():
     counts = collections.Counter(_["status"] for _ in results)
     print("[i] cases: %d (%s)" % (len(results), ", ".join("%s=%d" % kv for kv in sorted(counts.items()))))
     print("[i] event lines only in python: %d, only in rust: %d" % (total_missing, total_extra))
+    if options.meta:
+        meta_rows = sum(len(_["meta_diffs"]) for _ in results)
+        print("[i] condensed observable store: %s" %
+              ("identical in every case" if not meta_rows else "%d differing row(s)" % meta_rows))
     ok = all(_["status"] in ("OK", "RUST-EXTRA") for _ in results)
     if counts.get("RUST-EXTRA"):
         print("[i] %d timestamp-sensitive case(s) where the Rust sensor detected MORE than"

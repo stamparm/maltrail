@@ -308,6 +308,11 @@ pub fn process_packet(st: &mut WorkerState, packet_bytes: &[u8], sec: u64, usec:
 
     st.metrics.packets_processed += 1;
 
+    // Condensed store: both endpoints of every connection, before any protocol dispatch.
+    // Same position as `sensor.py`'s `meta.observe_conn()` call — after the IP header is parsed
+    // and fragments have been dropped, so it sees exactly the packets Python's does.
+    st.meta.observe_conn(header.src, header.dst, sec);
+
     // TLS/QUIC handshake-head SNI -> _check_domain, the one detection the pcapy-ng fast
     // prefilter adds (core/fastfilter.py:head_sni). Gated on the same switches.
     if st.cfg.use_fast_prefilter && st.cfg.fast_flow_cutoff > 0 {
@@ -1306,6 +1311,11 @@ fn dns_packet(
     {
         return;
     }
+
+    // Condensed store: the queried name, recorded after the same validity/ignore filter Python
+    // applies and before the standard-query check, so a response-only capture still contributes.
+    st.meta.observe_dns(&query, sec);
+
     let label_count = dots.label_count();
     // The whitelist verdict for the FULL query name, computed once for this packet. `query` is
     // already lower-case and contains no ':' (a DNS name that did would fail

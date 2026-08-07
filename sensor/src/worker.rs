@@ -276,6 +276,11 @@ pub fn run_all(handles: Vec<Handle>, ctx: WorkerContext) -> Result<WorkerExit, W
             // window has closed" means for a live sensor.
             let flush_clock = if offline { st.last_sec } else { now_parts().0 };
             st.sink.flush_throttled(flush_clock);
+            // The condensed store drains on wall clock in BOTH modes, unlike the throttle above.
+            // Its period is a write-rate budget (how often this worker is allowed to touch
+            // SQLite), not a property of the traffic, and pacing it off the packet clock would
+            // make a fast replay of a week-long capture issue a flush per simulated minute.
+            st.meta.maybe_flush(now_parts().0);
             if let Some((received, dropped, ifdropped)) = handle.stats() {
                 st.metrics.capture_received = received as u64;
                 st.metrics.capture_dropped = dropped as u64;
@@ -290,6 +295,9 @@ pub fn run_all(handles: Vec<Handle>, ctx: WorkerContext) -> Result<WorkerExit, W
     // lose them (sensor.py does the same at the end of an offline run).
     st.sink.flush_condensed();
     st.sink.flush_throttled_all();
+    // `sensor.py` does the same on its way out: without this, an offline replay shorter than one
+    // flush period would write nothing at all to the store.
+    st.meta.flush();
     if let Some((received, dropped, ifdropped)) = handle.stats() {
         st.metrics.capture_received = received as u64;
         st.metrics.capture_dropped = dropped as u64;
@@ -311,8 +319,12 @@ fn publish(slot: &MetricsSlot, st: &mut WorkerState) {
     st.metrics.events_summarized = summarized;
     // Every bounded map that refused a new key, in one number: an operator should not have to
     // know which structure saturated to know the sensor is degraded.
-    st.metrics.state_saturations =
-        st.nxdomain.saturations() + st.dns_exhaustion.saturations() + st.sink.condense_saturations;
+    st.metrics.state_saturations = st.nxdomain.saturations()
+        + st.dns_exhaustion.saturations()
+        + st.sink.condense_saturations
+        + st.meta.saturations;
+    st.metrics.meta_flushed = st.meta.flushed;
+    st.metrics.meta_flush_errors = st.meta.flush_errors;
     slot.publish(&st.metrics);
 }
 
