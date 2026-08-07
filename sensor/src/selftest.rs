@@ -122,6 +122,35 @@ pub fn run(cfg: &Config) -> i32 {
         }
     }
 
+    // --- numeric ranges, and what the sensor will ACTUALLY use -----------------------
+    // Every one of these used to be accepted silently: a zero snaplen truncates every packet to
+    // nothing, a CAPTURE_TIMEOUT that overflows the C int libpcap wants can end up negative
+    // ("block forever"), and a zero throttle window disables the bounding it exists for. The
+    // sensor clamps them at load; -T is where the operator finds out that it did.
+    for clamp in &cfg.clamps {
+        r.line(Level::Warn, "config range", clamp);
+    }
+    // CAPTURE_BUFFER is per worker, which is the surprise on a many-core box.
+    let ring = cfg.estimated_capture_memory_bytes();
+    r.line(
+        Level::Ok,
+        "effective config",
+        &format!(
+            "snaplen={} B, capture timeout={} ms, workers={}, capture ring≈{:.0} MB total ({:.0} MB × {}), \
+             throttle={:?} window={}s burst={} max_keys={}",
+            cfg.capture_snaplen,
+            cfg.capture_timeout_ms,
+            cfg.capture_workers,
+            ring as f64 / (1024.0 * 1024.0),
+            cfg.capture_buffer as f64 / (1024.0 * 1024.0),
+            cfg.capture_workers,
+            cfg.event_throttle_mode,
+            cfg.event_throttle_window,
+            cfg.event_throttle_burst,
+            cfg.event_throttle_max_keys
+        ),
+    );
+
     // --- whitelist -------------------------------------------------------------------
     let whitelist = Whitelist::load(&cfg.root, cfg.user_whitelist.as_deref());
     if whitelist.is_empty() {
