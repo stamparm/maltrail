@@ -1,9 +1,13 @@
 #!/bin/sh
-# RAM-safe unit-test runner for Maltrail (Py2 + Py3).
+# RAM-safe unit-test runner for Maltrail.
 #
 # Each test file is run in its own interpreter under a hard address-space cap (ulimit -v) and a
-# wall-clock timeout: Python 2 + the optional `cryptography` accel can balloon RSS and OOM the host,
-# so NEVER run these uncapped. Usage: tests/run.sh [python2|python3 ...]   (default: both if present)
+# wall-clock timeout: the optional `cryptography` accel can balloon RSS and OOM the host, so NEVER
+# run these uncapped. Usage: tests/run.sh [python3 ...]   (default: python3)
+#
+# Python 2 is no longer supported: the vendored `six`/`odict` shims and every PY2 branch were
+# removed in 3.0, and the current sensor is Rust. Running the suite under python2 would only
+# report syntax errors for Python 3 code.
 
 set -u
 HERE=$(cd "$(dirname "$0")" && pwd)
@@ -16,7 +20,7 @@ if [ "$#" -gt 0 ]; then
     PYS="$*"
 else
     PYS=""
-    for p in python2 python3; do command -v "$p" >/dev/null 2>&1 && PYS="$PYS $p"; done
+    for p in python3; do command -v "$p" >/dev/null 2>&1 && PYS="$PYS $p"; done
 fi
 
 rc=0

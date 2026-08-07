@@ -14,11 +14,6 @@ from core import trailsbin
 
 _MISSING = object()                  # sentinel distinguishing "absent" from a stored None
 
-try:
-    _TEXT_TYPE = unicode             # Python 2
-except NameError:
-    _TEXT_TYPE = str                 # Python 3
-
 _HASH_MASK = (1 << 63) - 1          # keep hashes non-negative so they pack into a signed 'q' array
 
 def _key_hash(key):
@@ -26,12 +21,12 @@ def _key_hash(key):
     Process-stable 64-bit hash of a trail key. The store is always built and queried inside the same process
     (each sensor/worker process loads its own copy), so the builtin (per-process randomized) hash() is consistent
     between build time and lookup time. The key is normalised to UTF-8 bytes first so the str/unicode/bytes forms
-    of the same trail hash identically across Python 2/3 (e.g. IDN domains).
+    of the same trail hash identically (e.g. IDN domains).
     """
 
     if isinstance(key, bytes):
         data = key
-    elif isinstance(key, _TEXT_TYPE):
+    elif isinstance(key, str):
         data = key.encode("utf-8", "replace")
     else:
         data = str(key).encode("utf-8", "replace")

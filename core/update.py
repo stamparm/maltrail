@@ -69,17 +69,8 @@ _IPV4_REGEX = re.compile(r"\A\d+\.\d+\.\d+\.\d+\Z")
 _IPV4_PREFIX_REGEX = re.compile(r"\A(\d+\.\d+\.\d+\.\d+)\b")
 _CUSTOM_STATIC_REGEX = re.compile(r"\b(custom|static)\b")
 
-try:
-    u"".isascii
-    def _is_ascii(value):
-        return value.isascii()
-except AttributeError:
-    def _is_ascii(value):                       # Python < 3.7 (and Python 2) fallback
-        try:
-            value.encode("ascii")
-            return True
-        except Exception:
-            return False
+def _is_ascii(value):
+    return value.isascii()                      # str.isascii(): Python 3.7+
 
 def _chown(filepath):
     if not IS_WIN and os.path.exists(filepath):
@@ -98,12 +89,7 @@ def _atomic_replace(src, dst):
     # NOTE: rename within the same directory is atomic on POSIX, so concurrent readers (sensor worker reloads,
     # the httpd '/trails' endpoint, downstream UPDATE_SERVER sensors) always see either the old or the new
     # complete file - never a half-written truncation.
-    if hasattr(os, "replace"):
-        os.replace(src, dst)  # Python 3.3+: atomic, overwrites existing destination on both POSIX and Windows
-    else:
-        if IS_WIN and os.path.exists(dst):
-            os.remove(dst)  # Windows os.rename() cannot overwrite an existing file (only reachable on Python 2)
-        os.rename(src, dst)
+    os.replace(src, dst)  # atomic, and overwrites an existing destination on both POSIX and Windows
 
 def update_trails(force=False, offline=False):
     """

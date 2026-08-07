@@ -363,8 +363,8 @@ def _extract_cert_names(der):
 
 
 def _ints_idx(data, i):
-    # helper so PY2/PY3 indexing returns an int
-    return i if not PY2 else i
+    # Indexing bytes yields an int on Python 3; kept as a named helper for the call sites.
+    return i
 
 
 def _add_name(names, raw):

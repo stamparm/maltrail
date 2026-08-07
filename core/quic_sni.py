@@ -15,7 +15,7 @@ that a flow-cutoff actually delivers.
 Public, non-secret QUIC Initial keys are derived from the client's Destination
 Connection ID (RFC 9001).  HKDF runs on stdlib hashlib/hmac.
 
-Compatible with Python 2.7 and 3.x (Maltrail constraint: single source, stdlib only).
+Standard library only (Maltrail constraint: single source, no dependencies).
 """
 import hashlib
 import hmac

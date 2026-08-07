@@ -14,3 +14,7 @@ sensor/fuzz/artifacts/
 sensor/out.txt
 sensor/*.callgrind
 callgrind.out.*
+
+# Local tooling for the CSS/JS build in misc/update_css_js (not part of the project source)
+node_modules/
+package-lock.json
