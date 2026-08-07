@@ -35,7 +35,7 @@ memchr = "2"
 # QUIC Initial header/payload unprotection (AES-128 ECB block + CTR, HKDF-SHA256).
 # Mirrors core/quic_sni.py exactly; no AEAD verification (passive sensor).
 aes = "0.8"
-sha2 = "0.10"
+sha2 = "0.11"
 hmac = "0.12"
 # The condensed observable store (LOG_DIR/meta.sqlite, src/meta.rs). `bundled` on purpose:
 # the file's exact shape is a compatibility contract with core/meta.py and core/httpd.py
