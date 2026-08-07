@@ -1,0 +1,128 @@
+# The gate. Every job here is the same thing a developer runs locally, so a green tick means
+# `sensor/tools/check.sh` and `tests/run.sh` were actually executed — not approximated.
+#
+# Nothing in this repository is allowed to depend on someone remembering to run the tests.
+
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+
+  # The full Rust gate: generated-file freshness, fmt, clippy -D warnings, the suite in BOTH
+  # debug (overflow checks on) and release (what ships), then differential parity against the
+  # old Python sensor. The real-trails parity step self-skips when no trails.csv is present,
+  # which is the case on a runner.
+  sensor:
+    name: sensor gate (check.sh)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install libpcap
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libpcap-dev
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # parity.py replays the corpus through old/sensor.py as the differential oracle.
+      - name: Install the old sensor's capture bindings
+        run: pip install -r old/requirements.txt
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: sensor
+
+      - run: bash sensor/tools/check.sh
+
+  # The declared MSRV is a promise to operators on older distributions. Compile it, or it is
+  # just a number in Cargo.toml. Deliberately NOT a rust-toolchain.toml: pinning that file would
+  # make the repository's default toolchain the minimum one for every contributor.
+  msrv:
+    name: MSRV (Rust ${{ matrix.rust }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      matrix:
+        rust: [ "1.74" ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install libpcap
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libpcap-dev
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: ${{ matrix.rust }}
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: sensor
+          key: msrv-${{ matrix.rust }}
+      - name: Verify the crate builds on its declared minimum
+        run: cargo check --manifest-path sensor/Cargo.toml --all-targets
+
+  # README promises Python 3.7+, so 3.7 is tested rather than assumed. setup-python no longer
+  # ships 3.7 for ubuntu-24.04, hence the pinned older runner for that entry only.
+  server:
+    name: server tests (Python ${{ matrix.python }})
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - python: '3.7'
+            runner: ubuntu-22.04
+          - python: '3.12'
+            runner: ubuntu-latest
+          - python: '3.13'
+            runner: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: bash tests/run.sh python3
+
+  # The sensor and the server report their version independently. They have already drifted
+  # once. This keeps them equal on every commit; equality with the git TAG is a release-time
+  # check, not a development-time one, because master legitimately runs ahead of the last tag.
+  version:
+    name: version consistency
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 sensor/tools/check_version.py
+
+  # Rust dependency advisories. Informational on a schedule elsewhere; here it gates the diff
+  # that introduces a vulnerable dependency.
+  audit:
+    name: cargo audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: rustsec/audit-check@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
