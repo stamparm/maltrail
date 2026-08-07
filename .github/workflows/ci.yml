@@ -5,11 +5,28 @@
 
 name: CI
 
+# Trail data is pushed many times a day and cannot affect the sensor's behaviour — it is the
+# input, not the program. Running a ten-minute Rust gate on every indicator commit would make CI
+# a tax on the project's most common and most valuable contribution, and a queue nobody waits
+# for is a queue nobody trusts. Code, configuration, packaging and the runtime data files under
+# data/ all still gate normally.
 on:
   push:
     branches: [ "master" ]
+    paths-ignore:
+      - 'trails/**'
+      - '**.md'
+      - 'CHANGELOG'
+      - 'LICENSE'
+      - 'CITATION.cff'
   pull_request:
     branches: [ "master" ]
+    paths-ignore:
+      - 'trails/**'
+      - '**.md'
+      - 'CHANGELOG'
+      - 'LICENSE'
+      - 'CITATION.cff'
 
 permissions:
   contents: read
@@ -54,6 +71,13 @@ jobs:
 
       - run: bash sensor/tools/check.sh
 
+      # This job is the one place pcapy-ng is installed, so it is the one place the old-sensor
+      # tests (test_config, test_fastfilter, test_sensor, test_fanout) actually execute. The
+      # `server` matrix below runs the same suite without pcapy-ng and reports those four as
+      # SKIP — deliberately, since neither the server nor the current sensor needs it.
+      - name: Python suite, including the old-sensor tests
+        run: bash tests/run.sh python3
+
   # The declared MSRV is a promise to operators on older distributions. Compile it, or it is
   # just a number in Cargo.toml. Deliberately NOT a rust-toolchain.toml: pinning that file would
   # make the repository's default toolchain the minimum one for every contributor.
@@ -82,6 +106,10 @@ jobs:
 
   # README promises Python 3.7+, so 3.7 is tested rather than assumed. setup-python no longer
   # ships 3.7 for ubuntu-24.04, hence the pinned older runner for that entry only.
+  #
+  # No pcapy-ng here on purpose: the server is standard library only, and that is exactly what
+  # this matrix is proving. The four old-sensor test files report SKIP with a reason; the
+  # `sensor` job above runs them for real.
   server:
     name: server tests (Python ${{ matrix.python }})
     runs-on: ${{ matrix.runner }}
@@ -114,8 +142,11 @@ jobs:
       - uses: actions/checkout@v4
       - run: python3 sensor/tools/check_version.py
 
-  # Rust dependency advisories. Informational on a schedule elsewhere; here it gates the diff
-  # that introduces a vulnerable dependency.
+  # Rust dependency advisories. Gates the diff that introduces a vulnerable dependency.
+  #
+  # NOT rustsec/audit-check: that action only looks for ./Cargo.lock at the repository root, and
+  # this project's lockfile lives in sensor/. Installing the tool and pointing it at the real
+  # path is both explicit and one less thing that breaks when the layout moves.
   audit:
     name: cargo audit
     runs-on: ubuntu-latest
@@ -123,6 +154,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
-      - uses: rustsec/audit-check@v2
+      - uses: taiki-e/install-action@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          tool: cargo-audit
+      - run: cargo audit --file sensor/Cargo.lock
