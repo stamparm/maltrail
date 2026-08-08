@@ -608,22 +608,34 @@ impl Config {
         let scan_window = get_u64(&raw, "SCAN_WINDOW").unwrap_or(30).clamp(1, 3600);
 
         let capture_fanout = fanout_count(raw.get("CAPTURE_FANOUT"));
-        // One Rust worker == one Python worker process, so the default worker count is
-        // PROCESS_COUNT. This is not cosmetic: `core/log.py`'s throttle keeps state PER WORKER
-        // ("2 events per (src,trail) per `sec // PROCESS_COUNT` bucket"), so a sensor running
-        // fewer workers than PROCESS_COUNT writes proportionally fewer lines for the same
-        // traffic. Defaulting to CAPTURE_FANOUT (unset in the shipped maltrail.conf) meant ONE
-        // worker against sensor.py's sixteen, and therefore ~1/16 of the log lines for a
-        // repeated detection - the same events, throttled 16x harder.
-        // sensor.py runs PROCESS_COUNT processes in total (one captures, PROCESS_COUNT-1 process
-        // packets); a Rust worker does both, so PROCESS_COUNT workers is the closest equivalent.
+        // ONE worker by default, deliberately, and NOT derived from PROCESS_COUNT.
+        //
+        // This used to default to `max(CAPTURE_FANOUT, PROCESS_COUNT)`, i.e. 16 with the shipped
+        // maltrail.conf, on the reasoning that one Rust worker == one Python worker process. That
+        // reasoning was about log VOLUME: `core/log.py`'s throttle keeps state per worker, so
+        // running fewer workers than PROCESS_COUNT wrote proportionally fewer lines for the same
+        // traffic. It only ever applied to `EVENT_THROTTLE_MODE legacy`; the default `summarize`
+        // mode aggregates suppressed events instead of discarding them, so nothing goes missing.
+        //
+        // What the old default cost is measured, not assumed. `PACKET_FANOUT_HASH` distributes by
+        // FLOW while the scan heuristics count by SOURCE, so a scan is split across workers and
+        // each one sees a fraction of it: `tests/multi_worker_parity.rs` finds 91% of the
+        // one-worker heuristic alerts surviving at 2 workers, 86% at 4 and 65% at 8. The shipped
+        // 16 was past the end of that curve, so every stock install ran degraded heuristics to buy
+        // throughput it almost certainly did not need - one worker costs ~865 ns/packet, roughly
+        // 1.1M packets/s.
+        //
+        // Exact trail detection is IDENTICAL at every worker count (same test, asserted in both
+        // directions), so this trades nothing for IOC matching. Operators who really do saturate a
+        // link set CAPTURE_WORKERS explicitly and take the documented dilution knowingly.
         let capture_workers = match get_u64(&raw, "CAPTURE_WORKERS") {
             Some(n) if n > 0 => n as u32,
             _ => match get_str(&raw, "CAPTURE_WORKERS").trim().to_ascii_lowercase().as_str() {
                 "auto" | "true" | "yes" | "on" => cpu_count(),
                 // CAPTURE_FANOUT counts capture SOCKETS in sensor.py; here a worker owns its
-                // socket, so the two knobs collapse into one and the larger wins.
-                _ => capture_fanout.max(process_count).max(1),
+                // socket, so the two knobs collapse into one. An operator who set CAPTURE_FANOUT
+                // asked for fanout explicitly and still gets it; PROCESS_COUNT does not opt in.
+                _ => capture_fanout.max(1),
             },
         };
 
@@ -913,6 +925,32 @@ SENSOR_NAME box   # trailing comment
         assert!(!cfg.remote_severity_regex.is_empty());
         assert_eq!(cfg.sensor_name, hostname());
         assert!(cfg.use_condensed_storage);
+        // The shipped config says PROCESS_COUNT 16 and does NOT set CAPTURE_WORKERS. One worker
+        // is the answer: deriving the default from PROCESS_COUNT silently ran every stock install
+        // with scan heuristics diluted across 16 flow-hashed sockets to buy throughput a single
+        // worker already has. Asserted here so it cannot drift back unnoticed.
+        assert_eq!(cfg.capture_workers, 1, "the shipped config must default to a single worker");
+    }
+
+    #[test]
+    fn worker_count_is_opt_in() {
+        let dir = std::env::temp_dir().join("mt-cfg-workers");
+        let _ = std::fs::create_dir_all(&dir);
+        let base = "MONITOR_INTERFACE any\nCAPTURE_BUFFER 1MB\nLOG_DIR /tmp\nUPDATE_PERIOD 86400\n";
+
+        let write = |name: &str, extra: &str| {
+            let path = dir.join(name);
+            std::fs::write(&path, format!("{base}{extra}")).unwrap();
+            Config::load(&path).expect("config must load")
+        };
+
+        // PROCESS_COUNT alone must NOT fan out: it is sensor.py's worker-process count, and
+        // honouring it here degraded the scan heuristics of anyone who never touched the setting.
+        assert_eq!(write("pc.conf", "PROCESS_COUNT 16\n").capture_workers, 1);
+        // Both explicit knobs still work, and still win.
+        assert_eq!(write("cw.conf", "CAPTURE_WORKERS 4\n").capture_workers, 4);
+        assert_eq!(write("cf.conf", "CAPTURE_FANOUT 8\n").capture_workers, 8);
+        assert!(write("auto.conf", "CAPTURE_WORKERS auto\n").capture_workers >= 1);
     }
 
     #[test]

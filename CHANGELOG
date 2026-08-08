@@ -27,6 +27,12 @@
     of the trail file changing
 [+] Event throttling is reworked into three selectable modes: burst-then-summarize
     (default), byte-exact legacy, and off
+[=] The sensor captures with ONE worker by default and no longer derives its worker
+    count from 'PROCESS_COUNT'. The kernel flow-hashes capture while the scan
+    heuristics count per source, so the previous default of 16 ran every install with
+    diluted heuristics to buy throughput a single worker already has; scaling out is
+    now an explicit 'CAPTURE_FANOUT'/'CAPTURE_WORKERS' opt-in. Exact trail detection is
+    identical at any worker count
 [+] The sensor writes the condensed observable store ('USE_CONDENSED_STORAGE',
     'meta.sqlite') that feeds the server's novelty and retro-hunt views, in the same
     format core/meta.py produces and the server reads

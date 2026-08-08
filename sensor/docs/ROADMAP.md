@@ -23,10 +23,10 @@ Done and verified, so the plan does not re-litigate it:
 | Operational surface | `-T` config test, capability-based privileges (no root), hardened systemd unit, SIGHUP reload, Prometheus endpoint, 1 s trail-refresh pickup |
 | Upstream bugs found and fixed | 9, including silently-stale trails and a self-stopping sensor |
 
-**Status:** Gates 1-4 are complete. CI runs the whole gate on every push and pull request, every
-item below has a regression test in the suite, and `meta.sqlite` — the last feature gap — is
-written and differentially parity-tested against `core/meta.py`. What remains is Gate 5, the
-cutover itself.
+**Status:** every gate below is complete. CI runs the whole gate on every push and pull request,
+every item has a regression test in the suite, `meta.sqlite` — the last feature gap — is written
+and differentially parity-tested against `core/meta.py`, and the default worker count is settled
+at one. What remains is a release: tag an RC to exercise the release pipeline, then 3.0.
 
 ---
 
@@ -108,7 +108,7 @@ all currently produce silent misbehaviour. `-T` should enforce typed bounds and 
 **Exit criterion:** multi-worker parity runs clean, and a shadow deployment shows no Python-only
 detections over a sustained period on real traffic.
 
-### 2.1 Source affinity, or accept the dilution loudly **[R1][R2]** — STOPGAP DONE
+### 2.1 Source affinity, or accept the dilution loudly **[R1][R2]** — RESOLVED BY DEFAULTING TO ONE WORKER
 
 `PACKET_FANOUT_HASH` splits by flow; the scan heuristics count per **source**, and a scan is many
 flows. With N workers a threshold needs roughly N times more probes. The docs now say this honestly
@@ -120,15 +120,20 @@ Options, in preference order:
    the source address. This is the real fix and it keeps multi-core throughput.
 2. **Sharded heuristic aggregation** — packet processing stays flow-affine, scan evidence is routed
    to a per-source shard. More invasive; also the right shape if TCP reassembly ever arrives.
-3. **Ship as-is with `CAPTURE_WORKERS 1` documented for heuristic fidelity** (done) and a startup
-   warning when workers > 1 *and* scan heuristics are enabled.
+3. **Default to `CAPTURE_WORKERS 1`**, with a startup warning when an operator opts into more
+   *and* scan heuristics are enabled.
 
-Do (3) now as a stopgap, (1) before default cutover.
+**Done — (3), as the default rather than as a stopgap.** The dilution stopped being a qualitative
+claim once `tests/multi_worker_parity.rs` measured it on the corpus: of the heuristic alerts one
+worker raises, **91% survive at 2 workers, 86% at 4, 65% at 8**. The old default derived
+`CAPTURE_WORKERS` from `PROCESS_COUNT`, so the shipped config ran **16** — past the end of that
+curve — and every stock install paid for throughput it did not need. `CAPTURE_WORKERS` is now 1
+unless `CAPTURE_FANOUT`/`CAPTURE_WORKERS` is set explicitly, and the sensor and `-T` still warn
+when it is.
 
-**Done:** the sensor warns at startup, and `-T` warns, when workers > 1 with scan heuristics
-enabled. The dilution is no longer a qualitative claim — `tests/multi_worker_parity.rs` measures
-it on the corpus: of the heuristic alerts one worker raises, **91% survive at 2 workers, 86% at
-4, 65% at 8**. Option (1), `PACKET_FANOUT_EBPF` with a source-only hash, is still the real fix.
+That makes option (1), `PACKET_FANOUT_EBPF` with a source-only hash, an **optimisation for
+operators who scale out** rather than a prerequisite: it would let them keep undiluted heuristics
+at N workers. Worth doing, no longer blocking.
 
 ### 2.2 Multi-worker parity coverage **[R2]** — DONE
 
@@ -284,22 +289,25 @@ Bounds, unchanged from Python: `CONDENSED_MAX_WINDOW_KEYS` per window (refusals 
 trail-update cycle. A flush that fails drops its window rather than growing a backlog, and is
 reported through `maltrail_meta_flush_errors_total`.
 
-### 4.2 Plugins — explicitly not supported
+### 4.2 Plugins — DONE (removed)
 
-`-p` takes Python callables. Out of scope for 1.0; documented, and the sensor refuses clearly rather
-than ignoring the flag. Operators who need plugins keep the old sensor.
+`-p` took Python callables. Plugins were removed from Maltrail entirely in 3.0 — both sensors and
+the `plugins/` directory — so there is nothing to port. Consume events from
+`LOG_SERVER`/`LOGSTASH_SERVER` instead.
 
 ---
 
-## Gate 5 — Cutover
+## Gate 5 — Cutover — DONE
 
-1. Default `maltrail-sensor.service` → this sensor **(done)**; `maltrail-sensor-old.service` retained.
-2. Naming: "sensor" / "old sensor" throughout **(done)**.
-3. Migration guide with the rollback step (`systemctl start maltrail-sensor-old`), a documented
-   config-compatibility statement, and the one feature that requires the old sensor.
-4. Keep the old sensor as the **differential oracle** indefinitely — the parity harness is only
-   possible while it exists. It should never be deleted, only demoted.
-5. Deprecation policy: announce, one release of overlap, then default-off but still shipped.
+1. Default `maltrail-sensor.service` → this sensor **(done)**.
+2. `sensor.py` stays in `old/` purely as the **differential oracle** and reference implementation:
+   `tools/parity.py` only exists while it does, so it should never be deleted. It is not a
+   supported fallback and carries no deprecation schedule — this is a rewrite, not a migration
+   programme, and nobody is owed an overlap release.
+3. `docs/INSTALL.md` §13 covers verifying a deployment: replay a corpus, shadow live traffic,
+   scale out only if the drop counter says to.
+
+There is nothing further to schedule here.
 
 ---
 
@@ -326,11 +334,16 @@ it replaces, and correctness gates outrank optimisation. These are queued behind
 
 ---
 
-## The one decision only you can make
+## Decisions made
 
-1. **Default worker count.** Throughput (`PROCESS_COUNT` workers, diluted scan heuristics — matching
-   the old sensor's default behaviour) or fidelity (`CAPTURE_WORKERS 1`, single-core capture). The
-   honest answer may be "throughput, until source-affine fanout lands".
+1. **Default worker count: ONE.** `CAPTURE_WORKERS` no longer derives from `PROCESS_COUNT`, so the
+   shipped `maltrail.conf` (`PROCESS_COUNT 16`) now runs a single capture worker. The old default
+   spent scan-heuristic sensitivity — of the alerts one worker raises, 91% survive at 2 sockets,
+   86% at 4, 65% at 8 — to buy throughput that a single worker already has at ~865 ns/packet
+   (~1.1M packets/s). Exact trail detection is identical at every worker count, so nothing is
+   traded away for IOC matching. `CAPTURE_FANOUT`/`CAPTURE_WORKERS` still scale out for anyone who
+   measures a real drop rate, which also demotes source-affine fanout (§2.1) from a fix to an
+   optimisation. Locked by `config::tests::worker_count_is_opt_in`.
 
 ---
 

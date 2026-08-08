@@ -797,13 +797,14 @@ fn print_diagnostics(
     // roughly N times more of them. Measured on the corpus (tests/multi_worker_parity.rs): 91% of
     // heuristic alerts survive at 2 workers, 86% at 4, 65% at 8. Exact trail matching is per
     // packet and stateless, so IOC detection is unaffected at any worker count — the same test
-    // asserts that. An operator who cares more about scan fidelity than throughput wants
-    // CAPTURE_WORKERS 1.
+    // asserts that. This only fires when an operator has opted into fanout: the default is one
+    // worker precisely so that nobody pays this cost without asking for it.
     if handles.len() > 1 && cfg.use_heuristics && scan_heuristics_enabled(cfg) {
         cprintln!(
             "[!] {} workers + scan heuristics: fanout hashes by flow but scans are counted per \
-             source, so thresholds trip later (~65% of alerts survive at 8 workers). Set \
-             'CAPTURE_WORKERS 1' for undiluted scan fidelity; trail detection is unaffected.",
+             source, so thresholds trip later (~65% of alerts survive at 8 workers). Unset \
+             'CAPTURE_FANOUT'/'CAPTURE_WORKERS' for undiluted scan fidelity; trail detection is \
+             unaffected.",
             handles.len()
         );
     }

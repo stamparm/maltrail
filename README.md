@@ -107,7 +107,13 @@ python3 sensor/tools/bench_compare.py --packets 300000 --trails ~/.maltrail/trai
 ```
 
 Memory does not grow with cores: the 1.5M-trail store is **68.5 MB**, built in 1.2 s and shared
-immutably by every worker. The old sensor forked a process per worker.
+immutably by every worker.
+
+**One capture worker by default**, which is ~1.1M packets/s and enough for almost any sensor host.
+Extra workers are an explicit opt-in (`CAPTURE_FANOUT`), because the kernel flow-hashes capture
+while the scan heuristics count per source: of the heuristic alerts one worker raises, 91% survive
+at 2 sockets, 86% at 4, 65% at 8. Exact trail detection is identical at every worker count. Scale
+out when `maltrail_capture_dropped_total` says to, not before.
 
 <sub>AMD Ryzen 7 PRO 4750U (8 physical cores), heuristics on, real trail set, fastest of three runs.
 The ratio has ranged 14–27× across runs and hardware; the per-packet costs above are the ones that

@@ -158,7 +158,17 @@ pub fn run(cfg: &Config) -> i32 {
                 );
             }
         } else {
-            r.line(Level::Warn, "workers", "1 — no fanout; one core will carry the whole link");
+            // One worker is the DEFAULT and the right answer for almost every host, so this is
+            // not a warning. It used to be, back when the default was derived from PROCESS_COUNT
+            // and a single worker meant somebody had opted out of throughput; now it means the
+            // scan heuristics see every packet from a source, which is the more valuable
+            // property. ~865 ns/packet is roughly 1.1M packets/s on one core.
+            r.line(
+                Level::Ok,
+                "workers",
+                "1 — undiluted per-source heuristics; raise 'CAPTURE_FANOUT' only if \
+                 'maltrail_capture_dropped_total' climbs",
+            );
         }
     }
 

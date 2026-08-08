@@ -75,7 +75,9 @@ fn an_overflowing_capture_timeout_never_becomes_negative() {
 
 #[test]
 fn an_absurd_worker_count_is_bounded() {
-    let cfg = load("workers", "PROCESS_COUNT 999999");
+    // CAPTURE_WORKERS, not PROCESS_COUNT: the worker count is no longer derived from the latter
+    // (see config.rs), so an absurd value has to be asked for explicitly to be worth clamping.
+    let cfg = load("workers", "CAPTURE_WORKERS 999999");
     assert!(cfg.capture_workers <= 1024, "got {}", cfg.capture_workers);
     assert!(cfg.capture_workers >= 1);
     assert!(cfg.clamps.iter().any(|c| c.contains("CAPTURE_WORKERS")), "{:?}", cfg.clamps);
@@ -90,12 +92,13 @@ fn zero_throttle_settings_cannot_disable_the_bound() {
     assert_eq!(cfg.clamps.len(), 3, "all three must be reported: {:?}", cfg.clamps);
 }
 
-/// `CAPTURE_BUFFER` sizes the ring PER WORKER, which is the surprise on a many-core box: the
-/// shipped default of 10% of RAM with one worker per core asks for more memory than the machine
-/// has. `-T` prints this total so it is discovered before deployment, not during.
+/// `CAPTURE_BUFFER` sizes the ring PER WORKER, which is the surprise when scaling out: 10% of RAM
+/// with one worker per core asks for more memory than the machine has. `-T` prints this total so
+/// it is discovered before deployment, not during. (The default of one worker makes this a
+/// scale-out concern rather than a stock-config one.)
 #[test]
 fn capture_ring_memory_is_reported_per_worker() {
-    let cfg = load("ring", "PROCESS_COUNT 8\nCAPTURE_BUFFER 100MB");
+    let cfg = load("ring", "CAPTURE_WORKERS 8\nCAPTURE_BUFFER 100MB");
     assert_eq!(
         cfg.estimated_capture_memory_bytes(),
         cfg.capture_buffer * 8,
