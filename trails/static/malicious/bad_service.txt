@@ -4339,6 +4339,7 @@ cactusstress.st
 crownstresser.st
 enzostress.st
 goliathstress.st
+goofystress.net
 goofystress.st
 goofystresse.st
 gostress.st
@@ -4347,6 +4348,7 @@ influxstress.st
 ipstresser.st
 kimstress.st
 krebstresser.st
+lucidc2.eu
 maxstress.st
 rebirthstress.st
 returnstress.st
