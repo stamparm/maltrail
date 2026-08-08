@@ -75,23 +75,44 @@ jobs:
             # 24.04 moved those sources to deb822 (/etc/apt/sources.list.d/*.sources); the old
             # one-line .list format may not exist at all. Handle both, and do not silently do
             # nothing if a future runner changes format again - if neither is found, stop.
+            # A source that ALREADY states its architectures is left alone - it has made its own
+            # decision and is presumed to mean it (the runner's microsoft-prod.list ships
+            # `[arch=amd64,arm64,armhf signed-by=...]`, and blindly prepending a second option
+            # block there produced "Malformed entry ... (URI parse)" and killed apt outright).
+            # Only sources that say nothing get pinned, since those are the ones that would
+            # otherwise be asked for arm64 indexes they do not carry.
             touched=0
             for f in /etc/apt/sources.list /etc/apt/sources.list.d/*.list; do
               [ -f "$f" ] || continue
-              sudo sed -i 's|^deb |deb [arch=amd64] |' "$f"
+              sudo awk '
+                /^deb(-src)?[[:space:]]/ {
+                  if ($0 ~ /^deb(-src)?[[:space:]]+\[/) {
+                    if ($0 !~ /arch=/) sub(/\[/, "[arch=amd64 ")   # options, but no arch
+                  } else {
+                    sub(/^deb(-src)?[[:space:]]+/, "& ")           # keep the verb, then...
+                    sub(/[[:space:]]+ /, " [arch=amd64] ")         # ...insert the option block
+                  }
+                }
+                { print }
+              ' "$f" > /tmp/apt-pin.$$ && sudo cp /tmp/apt-pin.$$ "$f" && rm -f /tmp/apt-pin.$$
               touched=1
             done
             for f in /etc/apt/sources.list.d/*.sources; do
               [ -f "$f" ] || continue
-              # One deb822 file holds SEVERAL stanzas (noble, -updates, -backports, -security),
-              # so the key has to go into each of them. Appending a single line to the file only
-              # reaches the last stanza and leaves the rest asking archive.ubuntu.com for arm64.
-              # Each stanza begins with `Types:`, so insert after every one, dropping any
-              # existing key first so this stays idempotent.
-              sudo sed -i -e '/^Architectures:/d' -e '/^Types:/a Architectures: amd64' "$f"
+              # One deb822 file holds SEVERAL stanzas (noble, -updates, -backports, -security)
+              # separated by blank lines, so the key has to go into each of them: appending a
+              # single line to the file reaches only the last stanza and leaves the rest asking
+              # archive.ubuntu.com for arm64. RS="" splits on those blank lines.
+              sudo awk 'BEGIN { RS = ""; ORS = "\n\n" }
+                { if ($0 !~ /(^|\n)Architectures:/) sub(/(^|\n)Types:[^\n]*/, "&\nArchitectures: amd64"); print }
+              ' "$f" > /tmp/apt-pin.$$ && sudo cp /tmp/apt-pin.$$ "$f" && rm -f /tmp/apt-pin.$$
               touched=1
             done
             [ "$touched" = 1 ] || { echo "::error::no apt sources found to pin to amd64"; exit 1; }
+
+            # Prove the rewrite left apt able to parse its own configuration before going further,
+            # so a bad edit fails HERE with the offending file named rather than 40 lines later.
+            apt-get indextargets >/dev/null 2>&1 || { echo "::error::apt sources are unparseable after pinning"; grep -rn . /etc/apt/sources.list /etc/apt/sources.list.d/ 2>/dev/null; exit 1; }
 
             codename="$(. /etc/os-release && echo "$VERSION_CODENAME")"
             sudo tee /etc/apt/sources.list.d/arm64-ports.sources >/dev/null <<EOF
