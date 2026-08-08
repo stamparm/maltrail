@@ -14,7 +14,7 @@
 
 
 
-- Version 2.2 -> 3.0 (Upcoming release)
+- Version 2.2 -> 3.0 (08 Aug 2026)
 
 [+] The sensor is rewritten in Rust and becomes the sensor: 'sensor/', built with
     'cargo build --release'
