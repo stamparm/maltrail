@@ -66,13 +66,43 @@ jobs:
       # against the distribution's libpcap — install libpcap0.8 and they run.
       - name: Install cross toolchain
         run: |
+          set -eu
           if [ "${{ matrix.target }}" = "aarch64-unknown-linux-gnu" ]; then
-            sudo dpkg --add-architecture arm64
-            sudo sed -i 's|^deb |deb [arch=amd64] |' /etc/apt/sources.list.d/*.list 2>/dev/null || true
-            sudo tee /etc/apt/sources.list.d/arm64.list >/dev/null <<'EOF'
-          deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports noble main universe
-          deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports noble-updates main universe
+            # Ubuntu's amd64 mirrors do not carry arm64; the ports mirror does. So the existing
+            # sources must be pinned to amd64 BEFORE arm64 is enabled, or `apt-get update` starts
+            # asking archive.ubuntu.com for arm64 indexes and fails the job.
+            #
+            # 24.04 moved those sources to deb822 (/etc/apt/sources.list.d/*.sources); the old
+            # one-line .list format may not exist at all. Handle both, and do not silently do
+            # nothing if a future runner changes format again - if neither is found, stop.
+            touched=0
+            for f in /etc/apt/sources.list /etc/apt/sources.list.d/*.list; do
+              [ -f "$f" ] || continue
+              sudo sed -i 's|^deb |deb [arch=amd64] |' "$f"
+              touched=1
+            done
+            for f in /etc/apt/sources.list.d/*.sources; do
+              [ -f "$f" ] || continue
+              # One deb822 file holds SEVERAL stanzas (noble, -updates, -backports, -security),
+              # so the key has to go into each of them. Appending a single line to the file only
+              # reaches the last stanza and leaves the rest asking archive.ubuntu.com for arm64.
+              # Each stanza begins with `Types:`, so insert after every one, dropping any
+              # existing key first so this stays idempotent.
+              sudo sed -i -e '/^Architectures:/d' -e '/^Types:/a Architectures: amd64' "$f"
+              touched=1
+            done
+            [ "$touched" = 1 ] || { echo "::error::no apt sources found to pin to amd64"; exit 1; }
+
+            codename="$(. /etc/os-release && echo "$VERSION_CODENAME")"
+            sudo tee /etc/apt/sources.list.d/arm64-ports.sources >/dev/null <<EOF
+          Types: deb
+          URIs: http://ports.ubuntu.com/ubuntu-ports
+          Suites: ${codename} ${codename}-updates ${codename}-security
+          Components: main universe
+          Architectures: arm64
+          Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
           EOF
+            sudo dpkg --add-architecture arm64
           fi
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends ${{ matrix.packages }}
@@ -113,11 +143,35 @@ jobs:
           path: dist
           merge-multiple: true
 
+      # A pre-release tag (v3.0-rc1) must NOT become what `docker pull maltrail` gives people,
+      # and must not show up as the current release on the repository front page. Deciding this
+      # from the tag name keeps it automatic: there is no "remember to untick latest" step to
+      # forget at 2am, which is exactly when release tags get pushed.
+      - name: Classify the tag
+        id: tag
+        env:
+          OWNER: ${{ github.repository_owner }}
+        run: |
+          image="ghcr.io/$(printf '%s' "$OWNER" | tr '[:upper:]' '[:lower:]')/maltrail"
+          {
+            echo "tags<<TAGS_EOF"
+            echo "${image}:${GITHUB_REF_NAME}"
+            if printf '%s' "$GITHUB_REF_NAME" | grep -Eiq -- '-(rc|alpha|beta|pre)'; then
+              echo "TAGS_EOF"
+              echo "prerelease=true"
+            else
+              echo "${image}:latest"
+              echo "TAGS_EOF"
+              echo "prerelease=false"
+            fi
+          } >> "$GITHUB_OUTPUT"
+
       - name: GitHub release
         uses: softprops/action-gh-release@v3
         with:
           files: dist/*
           generate_release_notes: true
+          prerelease: ${{ steps.tag.outputs.prerelease == 'true' }}
 
       - uses: docker/setup-qemu-action@v4
       - uses: docker/setup-buildx-action@v4
@@ -136,9 +190,8 @@ jobs:
           file: docker/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: |
-            ghcr.io/${{ github.repository_owner }}/maltrail:${{ github.ref_name }}
-            ghcr.io/${{ github.repository_owner }}/maltrail:latest
+          # ':latest' only for a real release — see "Classify the tag" above.
+          tags: ${{ steps.tag.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
 

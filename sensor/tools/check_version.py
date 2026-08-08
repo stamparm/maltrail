@@ -55,7 +55,13 @@ def cargo_version():
 
 
 def series(version):
-    """'3.0.1' and '3.0' both reduce to (3, 0) - Maltrail versions two components, Cargo three."""
+    """'3.0.1' and '3.0' both reduce to (3, 0) - Maltrail versions two components, Cargo three.
+
+    A SemVer pre-release / build suffix is stripped first, so 'v3.0-rc1' and '3.0.0+deb' are the
+    3.0 series like anything else. Release candidates are the whole point of having a release
+    pipeline that can be rehearsed, and refusing to name one would have made that impossible.
+    """
+    version = re.split(r"[-+]", version, 1)[0]
     parts = version.split('.')
     if len(parts) < 2:
         raise SystemExit("[!] version %r is not 'major.minor[.patch]'" % version)
