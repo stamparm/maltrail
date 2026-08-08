@@ -1,14 +1,16 @@
 # `old/` — the previous, Python sensor
 
 `sensor.py` was Maltrail's sensor until the Rust sensor in [`../sensor/`](../sensor/)
-replaced it. It is **not deleted, and should not be** — it has three jobs left:
+replaced it. It is kept for the test suite's sake, not as a product — it has two jobs left:
 
 1. **The differential oracle.** The sensor's parity harness replays a corpus through *both* sensors
    and requires byte-identical events. That test only exists while this file does. It is the reason
    the port can claim parity rather than assert it.
 2. **The reference implementation.** Every Rust module names the Python function it was ported from.
    When a detection's exact behaviour is in question, this is the answer.
-3. **A fallback.** It still works. `maltrail-sensor-old.service` runs it.
+
+It is unmaintained: it still runs, and `maltrail-sensor-old.service` still starts it, but new work
+goes to the Rust sensor and nothing here is promised to keep working.
 
 ## Running it
 
@@ -38,5 +40,4 @@ python3 sensor/tools/parity.py                 # the automated version of exactl
 
 Nothing, as of 3.0: the condensed observable store (`meta.sqlite`, `USE_CONDENSED_STORAGE`) was
 the last feature only this sensor wrote, and the Rust sensor now writes it in the same format
-(`sensor/docs/ROADMAP.md` §4.1). This sensor remains the reference implementation and the oracle
-`sensor/tools/parity.py` replays against, which is reason enough to keep it.
+(`sensor/docs/ROADMAP.md` §4.1).

@@ -402,34 +402,37 @@ WantedBy=multi-user.target
 ```bash
 sudo cp maltrail-sensor.service /etc/systemd/system/
 sudo systemctl daemon-reload
-sudo systemctl disable --now maltrail-sensor     # stop the Python sensor, if enabled
-sudo systemctl enable --now maltrail-sensor-rust
-journalctl -u maltrail-sensor-rust -f
+sudo systemctl enable --now maltrail-sensor
+journalctl -u maltrail-sensor -f
 ```
 
 SIGTERM is handled: workers stop within `CAPTURE_TIMEOUT`, condensed events are flushed, final
 metrics are printed and capture handles are released.
 
-## 13. Migration plan
+## 13. Verifying a deployment
 
-1. **Build and replay.** Run both sensors over the same pcaps and compare:
+Nothing here is required to run the sensor; it is how to convince yourself before you rely on it.
+
+1. **Replay a corpus.** Detection is checked against a generated fixture corpus and against one
+   sampled from your own `trails.csv`:
 
    ```bash
    python3 sensor/tools/gen_corpus.py
    cargo build --release --manifest-path sensor/Cargo.toml
-   python3 sensor/tools/parity.py                     # strict, byte-comparable
-   python3 sensor/tools/parity.py --timestamps pcap    # shows what real timestamps unlock
+   sh sensor/tools/check.sh
    ```
 
-2. **Shadow on live traffic.** Run the sensor with its own `LOG_DIR` (and, if you forward,
-   its own `SENSOR_NAME`) alongside the Python sensor on the same interface for a few days, then
-   diff the daily logs. Two sensors on one interface do not interfere: each opens its own
-   capture socket, and separate fanout groups keep them independent.
+2. **Shadow your own traffic.** Capture live traffic while an adversarial workload runs, then
+   replay that one capture and diff the results:
 
-3. **Cut over.** Disable `maltrail-sensor`, enable `maltrail-sensor-rust`, keep the Python
-   sensor installed as the fallback.
+   ```bash
+   bash sensor/tools/shadow_run.sh --seconds 600
+   ```
 
-4. **Scale up.** Set `CAPTURE_WORKERS`/`CAPTURE_FANOUT` and re-run `fanout_check.py`.
+3. **Scale out only if you need to.** One worker handles roughly 1.1M packets/s. If
+   `maltrail_capture_dropped_total` is climbing, set `CAPTURE_FANOUT` and re-run
+   `fanout_check.py` — and read §3 of `docs/COMPATIBILITY.md` first, because extra capture
+   sockets cost scan-heuristic sensitivity.
 
 ## 14. Troubleshooting
 
@@ -444,5 +447,4 @@ metrics are printed and capture handles are released.
 | `[!] N wildcard trail pattern(s) are unusable and NOT matched` | those patterns could not be salvaged at all; CPython rejects them too, so `sensor.py` ignores them as well |
 | No colour in `--console` output | colour is emitted only when stdout is a TTY (as in `sensor.py`), and `NO_COLOR` disables it |
 | `condensed observable store: flush of N rows failed` | the sensor could not write `LOG_DIR/meta.sqlite`; check the directory's permissions and free space. Detection and event logging are unaffected — only the server's `/meta` view loses that window. `maltrail_meta_flush_errors_total` counts these |
-| `plugins ('-p') … are not supported` | run `sensor.py`, or consume events from `LOG_SERVER`/`LOGSTASH_SERVER` |
 | High `capture_drops` in the metrics line | raise `CAPTURE_BUFFER_SIZE`, add `CAPTURE_WORKERS`, or tighten `CAPTURE_FILTER` |

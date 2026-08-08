@@ -2,7 +2,8 @@
 Description=Maltrail. Sensor of malicious traffic detection system
 Documentation=https://github.com/stamparm/maltrail#readme
 Documentation=file:/opt/maltrail/sensor/docs/INSTALL.md
-# Replaces the Python sensor, which remains available as maltrail-sensor-old.service.
+# Replaces the Python sensor. old/maltrail-sensor-old.service still starts that one if needed,
+# but it is a test fixture rather than a supported alternative - see old/README.md.
 Requires=network.target
 Wants=maltrail-server.service
 After=network-online.target maltrail-server.service
