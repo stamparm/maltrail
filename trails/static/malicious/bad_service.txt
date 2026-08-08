@@ -4332,6 +4332,7 @@ breachstars.hn
 breachstars.st
 bstars.st
 
+# Reference: https://x.com/BlinkzSec/status/2086102699855003727
 # Reference: https://app.validin.com/detail?find=StanCo%20and%20Istanco&type=raw&ref_id=8ac3ae7827c#tab=rdap (# 2025-11-12)
 
 cactusstress.st
@@ -4339,15 +4340,19 @@ crownstresser.st
 enzostress.st
 goliathstress.st
 goofystress.st
+goofystresse.st
 gostress.st
 hypnostress.st
 influxstress.st
 ipstresser.st
+kimstress.st
 krebstresser.st
+maxstress.st
 rebirthstress.st
 returnstress.st
 satellitestresser.st
 silencestresser.st
+status.kimstress.st
 stresscat.st
 uniquestress.st
 uniquestresser.st
