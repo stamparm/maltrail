@@ -6560,3 +6560,9 @@
 193.239.177.0/24,nextremum
 38.117.87.0/24,nextremum
 38.127.214.0/23,nextremum
+
+# AS 219502
+# Reference: https://ipinfo.io/AS219502
+
+176.65.139.0/24,stormcloud-as
+94.154.43.0/24,stormcloud-as
