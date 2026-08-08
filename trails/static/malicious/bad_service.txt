@@ -5231,3 +5231,13 @@ lulzsyndicate.com
 panel.lulzsyndicate.com
 panelguardnawala.com
 pskiller.site
+
+# Reference: https://x.com/BlinkzSec/status/2086133708071776577
+
+http://204.76.203.30
+204.76.203.30.ptr.pfcloud.network
+breach.st
+goliath-mirrors.net
+goliathstress.cc
+hardload.su
+stresser.click
