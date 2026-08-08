@@ -419,6 +419,7 @@
 185.203.39.100:8080
 185.203.39.103:8080
 185.203.39.99:8080
+185.242.3.106:8080
 185.244.104.209:8080
 186.241.84.95:8080
 187.124.171.203:8080
@@ -452,6 +453,7 @@
 198.23.232.6:8080
 2.27.7.195:8080
 2.58.56.150:8080
+20.210.232.112:8080
 202.160.76.181:8080
 202.160.76.236:8080
 202.79.160.198:8080
@@ -649,6 +651,7 @@ cs.fortvector.vip
 csai.hkinfosecurity.com
 csai.tarxf.com
 cyber.11818.vip
+cyber.baidu.ooo
 cyber.bossjyt.us.ci
 cyber.miloce.cn
 cyber.wxyang.one
@@ -687,6 +690,8 @@ mail.hlr.ac.cn
 mangoworks.win
 maolou.cn
 maxoria.cyou
+ns1.notifysupp.pro
+ns2.notifysupp.pro
 orvata.cyou
 scan.bossjyt.us.ci
 security.ccocc.cyou
