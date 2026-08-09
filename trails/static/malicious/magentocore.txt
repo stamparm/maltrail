@@ -16933,6 +16933,7 @@ ftp.newasest.com
 ftp.omappepi.com
 fynminix.com
 gaevnt.com
+game.luckshow.co
 globalvexor.com
 goaff-pro.net
 greedysuns.com
@@ -16949,6 +16950,7 @@ kupui.biz
 lasorie.com
 linistat.info
 livestats.info
+luckshow.co
 lunexi.art
 mail.cdn-cookie.com
 mail.cdn-gstatic.com
