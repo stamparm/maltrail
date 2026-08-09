@@ -5241,3 +5241,8 @@ goliath-mirrors.net
 goliathstress.cc
 hardload.su
 stresser.click
+
+# TITLE-HOST/IP=SMTP Sender Pro
+
+185.163.204.144:5000
+185.163.204.246:5000
