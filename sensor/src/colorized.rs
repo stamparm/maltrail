@@ -36,6 +36,9 @@ const BG_YELLOW: &str = "\x1b[43m";
 const BG_GREEN: &str = "\x1b[42m";
 const BG_CYAN: &str = "\x1b[46m";
 const BG_DARK_GRAY: &str = "\x1b[100m";
+/// 256-colour olive. The eight basic backgrounds are all taken, and reusing one would make a
+/// certificate hit look like a URL or an IP at a glance. Matches the reporting UI's CERT chip.
+const BG_OLIVE: &str = "\x1b[48;5;100m";
 
 /// `_log_colors` — the marker character inside `[x]`.
 fn log_color(marker: char) -> Option<&'static str> {
@@ -62,6 +65,7 @@ fn type_color(trail_type: &str) -> &'static str {
         "HTTP" => BG_GREEN,
         "PATH" => BG_CYAN,
         "PORT" => BG_DARK_GRAY,
+        "CERT" => BG_OLIVE,
         _ => WHITE,
     }
 }

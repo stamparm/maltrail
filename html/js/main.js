@@ -87,7 +87,7 @@
   }
 
   // legacy Maltrail type colors (PREFERRED_TRAIL_COLORS + Google palette for the rest): blue DNS, red IP, etc.
-  var TYPE_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900", UA: "#990099", HTTP: "#109618", TCP: "#0099c6", UDP: "#dd4477", PORT: "#0f9b8e", IPORT: "#8d6e63", PATH: "#5c6bc0" };
+  var TYPE_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900", UA: "#990099", HTTP: "#109618", TCP: "#0099c6", UDP: "#dd4477", PORT: "#0f9b8e", IPORT: "#8d6e63", PATH: "#5c6bc0", CERT: "#827717" };   /* olive: furthest in Lab from all of the above (dE 42), 4.56:1 under the chip's white text, and reads against both the dark and light surface */
   // Severity — ported EXACTLY from the legacy Maltrail UI (main.js) so evaluations match what users expect.
   // Order matters; default is MEDIUM. (Earlier v2 wrongly added ipinfo/scanning/crawler/onion/tor to a LOW
   // list that never existed, forcing e.g. "ipinfo (suspicious)" to LOW — it must be MEDIUM.)
@@ -135,6 +135,7 @@
     PATH: '<circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/>'
   };
   TYPE_ICON_P.IPORT = '<rect width="20" height="8" x="2" y="14" rx="2"/><path d="M6.01 18H6"/><path d="M10.01 18H10"/><path d="M15 10v4"/><path d="M17.84 7.17a4 4 0 0 0-5.66 0"/><path d="M20.66 4.34a8 8 0 0 0-11.31 0"/>';   // router (IP:port endpoint), distinct from PORT's plug
+  TYPE_ICON_P.CERT = '<path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/><circle cx="12" cy="8" r="6"/>';   // award/seal: a TLS server certificate, unlike any other glyph here
   TYPE_ICON_P.TCP = TYPE_ICON_P.UDP = '<path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/>';
   function typeIcon(t) { var p = TYPE_ICON_P[t]; return p ? '<span class="ticon">' + _lu(p, 12) + "</span>" : ""; }
   var SEV_ICON_P = {
