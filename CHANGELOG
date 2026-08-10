@@ -14,6 +14,28 @@
 
 
 
+- Version 3.0 -> 3.0.1 (10 Aug 2026)
+
+[!] The sensor now verifies that the Python driving the trail updater is 3.7+
+    (core/update.py needs 'str.isascii()'), and prefers a newer 'python3.N' on
+    PATH over an older default 'python3'. On distributions whose python3 is 3.6
+    (openSUSE Leap 15, SLE 15) the trail set silently failed to build, leaving a
+    sensor that detected NOTHING while '-T' reported the interpreter as present
+    and the configuration test as passed
+[!] '-T' fails, rather than passing with warnings, when the trail updater cannot
+    run at all
+[=] '-T' prints the command that fixes an unwritable or missing LOG_DIR, and
+    names the interpreter and version it found
+[=] 'sensor/tools/check.sh' checks for cargo/rustfmt/clippy/python3 before doing
+    any work, names the package that provides each, and states that none of them
+    are needed to build or run the sensor
+[=] Documented prerequisites that were previously assumed: 'setcap'
+    (libcap2-bin / libcap / libcap-progs), Python 3.7+, and that a distribution's
+    packaged Rust 1.74 is sufficient, so 'rustup' should not be installed
+    alongside it
+[!] Fixed the quick-start command that created LOG_DIR: '-g "$USER"' assumed a
+    group named after the user, which does not exist on every distribution
+
 - Version 2.2 -> 3.0 (08 Aug 2026)
 
 [+] The sensor is rewritten in Rust and becomes the sensor: 'sensor/', built with
