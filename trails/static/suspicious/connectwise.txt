@@ -5129,3 +5129,10 @@ nexrogcapital.xyz
 
 80.76.49.90:8040
 80.76.49.90:8041
+
+# Reference: https://x.com/skocherhan/status/2086556385488388418
+# Reference: https://www.virustotal.com/gui/file/3b8a7cc700fea2ff432c0bd4db907187d4b5f5e4f6096ab21a7c71d926c87921/detection
+
+137.175.30.36:8041
+glostingsolutions.shop
+support.glostingsolutions.shop
