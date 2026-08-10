@@ -12,7 +12,11 @@ Type=exec
 # The server does NOT need root: HTTP_PORT (8338) and the sensor intake port (8337/udp) are
 # both unprivileged. It runs as the same user as the sensor so both can reach LOG_DIR.
 #
-#     useradd --system --no-create-home --shell /usr/sbin/nologin maltrail
+#     groupadd --system maltrail
+#     useradd --system --gid maltrail --no-create-home --shell /usr/sbin/nologin maltrail
+#
+# The groupadd is not optional: Group=maltrail below needs it to exist, and `useradd` only
+# creates a matching group on distributions that default to per-user groups.
 #
 # StateDirectory/LogsDirectory create and chown the rest:
 #   /var/lib/maltrail   the trail set, which the server refreshes too (core/update.py)
