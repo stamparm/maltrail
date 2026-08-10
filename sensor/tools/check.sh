@@ -38,6 +38,16 @@ if [ -n "$missing" ]; then
     exit 1
 fi
 
+# The differential parity step replays every corpus case through old/sensor.py, which needs its
+# capture bindings. Without them that sensor exits 1 having detected nothing, and the comparison
+# blames this one for every detection it correctly made.
+if ! python3 -c 'import pcapy' >/dev/null 2>&1; then
+    echo "[!] the parity oracle (old/sensor.py) needs its capture bindings:"
+    echo "[?]     pip install -r old/requirements.txt"
+    echo "[i] parity compares AGAINST sensor.py, so the gate cannot verify anything without it."
+    exit 1
+fi
+
 echo "== generated files are in sync with core/settings.py =="
 # BEFORE regenerating, not after: this gate exists to catch a constant that was changed in
 # core/settings.py without regenerating, and regenerating first would silently repair the drift
