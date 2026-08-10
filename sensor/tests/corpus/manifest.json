@@ -402,6 +402,18 @@
       "66.66.66.66"
     ],
     "linktype": 1,
+    "name": "pppoe",
+    "needs_pcap_timestamps": false,
+    "notes": "PPPoE session encapsulation (a mirrored DSL/fibre uplink)",
+    "packets": 3,
+    "pcap": "pppoe.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "66.66.66.66"
+    ],
+    "linktype": 1,
     "name": "ipv4_options",
     "needs_pcap_timestamps": false,
     "notes": "IHL=6 must shift the transport offset",
