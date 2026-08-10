@@ -1466,6 +1466,12 @@ def monitor():
                         dlt_offset += 4
                     if packet[dlt_offset - 2:dlt_offset] in (b"\x08\x00", b"\x86\xdd"):  # (IPv4, IPv6)
                         ip_offset = dlt_offset
+                    elif packet[dlt_offset - 2:dlt_offset] == b"\x88\x64":  # PPPoE session (RFC 2516)
+                        # 6-byte PPPoE header + 2-byte PPP protocol field, then IP. A SPAN port
+                        # mirroring a DSL/fibre uplink carries this and nothing else, so dropping
+                        # it means detecting only the capture host's own traffic (issue #19297).
+                        if packet[dlt_offset + 6:dlt_offset + 8] in (b"\x00\x21", b"\x00\x57"):  # (IPv4, IPv6)
+                            ip_offset = dlt_offset + 8
 
             except IndexError:
                 pass

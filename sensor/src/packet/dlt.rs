@@ -39,6 +39,20 @@ pub fn ip_offset(datalink: i32, packet: &[u8], base: usize) -> Option<usize> {
         if ethertype == [0x08, 0x00] || ethertype == [0x86, 0xdd] {
             return Some(offset);
         }
+        // PPPoE session (RFC 2516): a 6-byte PPPoE header, then the 2-byte PPP protocol field,
+        // then IP. Common on any link fed by a DSL/fibre CPE, and on a SPAN port mirroring one it
+        // is *all* the interesting traffic - a sensor that drops it sees only whatever the capture
+        // host itself originates, which is precisely the symptom in issue #19297.
+        //
+        // Note this needs handling here rather than by `guess()`: the heuristic only runs for an
+        // UNKNOWN datalink, and a mirrored Ethernet port is DLT_EN10MB, so the frame was simply
+        // dropped with no fallback.
+        if ethertype == [0x88, 0x64] {
+            let ppp = packet.get(offset + 6..offset + 8)?;
+            if ppp == [0x00, 0x21] || ppp == [0x00, 0x57] {
+                return Some(offset + 8);
+            }
+        }
     }
     None
 }
@@ -140,7 +154,7 @@ impl DltLearner {
 }
 
 #[cfg(test)]
-mod tests {
+pub(crate) mod tests {
     use super::*;
 
     fn eth(ethertype: u16) -> Vec<u8> {
@@ -149,7 +163,22 @@ mod tests {
         v
     }
 
-    fn min_ipv4() -> Vec<u8> {
+    /// Ethernet -> PPPoE session -> PPP -> payload, as a DSL/fibre uplink carries it.
+    pub(crate) fn pppoe(ppp_proto: u16, payload: &[u8], vlan: bool) -> Vec<u8> {
+        let mut v = vec![0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66];
+        if vlan {
+            v.extend_from_slice(&[0x81, 0x00, 0x00, 0x64]);
+        }
+        v.extend_from_slice(&0x8864u16.to_be_bytes());
+        // ver/type, code (0 = session data), session id, payload length
+        v.extend_from_slice(&[0x11, 0x00, 0xf5, 0xd7]);
+        v.extend_from_slice(&((payload.len() + 2) as u16).to_be_bytes());
+        v.extend_from_slice(&ppp_proto.to_be_bytes());
+        v.extend_from_slice(payload);
+        v
+    }
+
+    pub(crate) fn min_ipv4() -> Vec<u8> {
         let mut v = vec![0x45, 0, 0, 20, 0x12, 0x34, 0, 0, 64, 17, 0, 0];
         v.extend_from_slice(&[10, 0, 0, 5]);
         v.extend_from_slice(&[8, 8, 8, 8]);
@@ -247,5 +276,62 @@ mod tests {
     fn learner_returns_none_for_non_ip() {
         let mut learner = DltLearner::default();
         assert_eq!(learner.guess(8888, &[0u8; 60]), None);
+    }
+}
+
+#[cfg(test)]
+mod pppoe_tests {
+    use super::tests::{min_ipv4, pppoe};
+    use super::*;
+
+    /// A SPAN port mirroring a DSL/fibre uplink carries PPPoE and nothing else. Dropping it meant
+    /// the sensor detected only traffic the capture host itself originated (issue #19297).
+    #[test]
+    fn ipv4_inside_pppoe_is_found() {
+        let frame = pppoe(0x0021, &min_ipv4(), false);
+        assert_eq!(ip_offset(DLT_EN10MB, &frame, 14), Some(22));
+        assert_eq!(frame[22] >> 4, 4, "the offset must land on the IP version nibble");
+    }
+
+    #[test]
+    fn ipv6_inside_pppoe_is_found() {
+        let mut v6 = vec![0x60, 0, 0, 0, 0, 0, 58, 64];
+        v6.extend_from_slice(&[0u8; 32]);
+        let frame = pppoe(0x0057, &v6, false);
+        assert_eq!(ip_offset(DLT_EN10MB, &frame, 14), Some(22));
+        assert_eq!(frame[22] >> 4, 6);
+    }
+
+    #[test]
+    fn a_vlan_tag_in_front_of_pppoe_is_skipped_too() {
+        let frame = pppoe(0x0021, &min_ipv4(), true);
+        assert_eq!(ip_offset(DLT_EN10MB, &frame, 14), Some(26));
+        assert_eq!(frame[26] >> 4, 4);
+    }
+
+    #[test]
+    fn non_ip_ppp_payloads_are_ignored() {
+        // LCP (0xc021), CHAP (0xc223), IPCP (0x8021): control traffic, no IP header behind it.
+        for proto in [0xc021u16, 0xc223, 0x8021] {
+            let frame = pppoe(proto, &min_ipv4(), false);
+            assert_eq!(ip_offset(DLT_EN10MB, &frame, 14), None, "PPP proto {proto:#06x}");
+        }
+    }
+
+    #[test]
+    fn pppoe_discovery_is_not_treated_as_data() {
+        // 0x8863 is PADI/PADO/PADR/PADS - session setup, never IP.
+        let mut frame = pppoe(0x0021, &min_ipv4(), false);
+        frame[12] = 0x88;
+        frame[13] = 0x63;
+        assert_eq!(ip_offset(DLT_EN10MB, &frame, 14), None);
+    }
+
+    #[test]
+    fn a_truncated_pppoe_header_does_not_panic() {
+        let full = pppoe(0x0021, &min_ipv4(), false);
+        for cut in 0..full.len() {
+            let _ = ip_offset(DLT_EN10MB, &full[..cut], 14);
+        }
     }
 }

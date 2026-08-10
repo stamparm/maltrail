@@ -37,6 +37,17 @@ def eth(payload, ethertype=0x0800, vlan=None):
     return out + payload
 
 
+def pppoe(payload, ppp_proto=0x0021, vlan=None):
+    """Ethernet -> PPPoE session (RFC 2516) -> PPP -> payload.
+
+    What a SPAN port mirroring a DSL/fibre uplink actually carries. Both sensors used to drop it:
+    ethertype 0x8864 matched neither the IPv4 nor the IPv6 check, and the IP-offset heuristic only
+    runs for an UNKNOWN datalink, so a mirrored Ethernet port had no fallback (issue #19297).
+    """
+    body = struct.pack("!BBHH", 0x11, 0x00, 0xf5d7, len(payload) + 2) + struct.pack("!H", ppp_proto) + payload
+    return eth(body, ethertype=0x8864, vlan=vlan)
+
+
 def sll(payload, ethertype=0x0800):
     return struct.pack("!HHH", 0, 1, 6) + b"\x11\x22\x33\x44\x55\x66\x00\x00" + struct.pack("!H", ethertype) + payload
 
@@ -522,6 +533,16 @@ def build_cases():
     cases.append(("dlt_raw", DLT_RAW, packets, ["66.66.66.66"], "DLT_RAW (no link header)"))
     packets = [(BASE_SEC, sll(ipv4(ATTACKER, "66.66.66.66", 6, tcp(50501, 443, 0x02))))]
     cases.append(("dlt_sll", DLT_LINUX_SLL, packets, ["66.66.66.66"], "DLT_LINUX_SLL ('any' interface)"))
+
+    # 29b. PPPoE-encapsulated IP, plain and behind a VLAN tag
+    packets = [
+        (BASE_SEC, pppoe(ipv4(ATTACKER, "66.66.66.66", 6, tcp(50502, 443, 0x02)))),
+        (BASE_SEC + 1, pppoe(ipv4(ATTACKER, "66.66.66.66", 6, tcp(50503, 443, 0x02)), vlan=100)),
+        # PPP control traffic carries no IP and must stay silent rather than being misparsed.
+        (BASE_SEC + 2, pppoe(ipv4(ATTACKER, "6.6.6.6", 6, tcp(50504, 443, 0x02)), ppp_proto=0xc021)),
+    ]
+    cases.append(("pppoe", DLT_EN10MB, packets, ["66.66.66.66"],
+                  "PPPoE session encapsulation (a mirrored DSL/fibre uplink)"))
 
     # 30. IPv4 options (IHL > 5)
     packets = [(BASE_SEC, frame(ipv4(ATTACKER, "66.66.66.66", 6, tcp(50600, 443, 0x02), ihl=6)))]
