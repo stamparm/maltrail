@@ -15,7 +15,11 @@ Type=exec
 # PACKET_FANOUT need CAP_NET_ADMIN. Granting exactly those two and running as an unprivileged
 # user means a parser bug in a packet-facing process cannot become root on the host.
 #
-#     useradd --system --no-create-home --shell /usr/sbin/nologin maltrail
+#     groupadd --system maltrail
+#     useradd --system --gid maltrail --no-create-home --shell /usr/sbin/nologin maltrail
+#
+# The groupadd is not optional: Group=maltrail below needs it to exist, and `useradd` only
+# creates a matching group on distributions that default to per-user groups.
 #
 # StateDirectory/LogsDirectory create and chown the rest, so there is nothing else to set up:
 #   /var/lib/maltrail   the trail set  (point TRAILS_FILE here)

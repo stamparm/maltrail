@@ -58,11 +58,31 @@ pub fn run(cfg: &Config) -> i32 {
     if cfg.disable_local_log_storage {
         r.line(Level::Ok, "log storage", "disabled ('DISABLE_LOCAL_LOG_STORAGE')");
     } else if !cfg.log_dir.is_dir() {
-        r.line(Level::Fail, "log directory", &format!("'{}' does not exist", cfg.log_dir.display()));
+        r.line(
+            Level::Fail,
+            "log directory",
+            &format!("'{}' does not exist{}", cfg.log_dir.display(), log_dir_hint(&cfg.log_dir)),
+        );
     } else if writable(&cfg.log_dir) {
         r.line(Level::Ok, "log directory", &format!("'{}' is writable", cfg.log_dir.display()));
     } else {
-        r.line(Level::Fail, "log directory", &format!("'{}' is NOT writable", cfg.log_dir.display()));
+        // Naming the problem is not the same as being useful about it. This check exists to be
+        // read by somebody installing the sensor for the first time, and "NOT writable" left
+        // them to work out on their own that the fix is an ownership change and what the
+        // incantation for it is. `install -d` also repairs an existing directory's owner and
+        // mode, so one line covers both this branch and the missing-directory one above.
+        r.line(
+            Level::Fail,
+            "log directory",
+            &format!(
+                "'{}' is NOT writable as uid {}{}",
+                cfg.log_dir.display(),
+                // SAFETY: geteuid() reads the calling process's own credentials; it cannot fail
+                // and touches no memory the caller owns.
+                unsafe { libc::geteuid() },
+                log_dir_hint(&cfg.log_dir)
+            ),
+        );
     }
 
     // Event logs are evidence and are never deleted by the sensor, so free space is a real
@@ -365,6 +385,17 @@ fn truncate(value: &str, max: usize) -> String {
         return value.to_string();
     }
     format!("{}...", &value[..max])
+}
+
+/// The exact command that gives the current user a usable `LOG_DIR`.
+///
+/// Deliberately emitted as shell to copy rather than as resolved names: `$USER` and `id -gn` are
+/// correct on every distribution, whereas printing the two names invites the reader to assume the
+/// group is always named after the user. It is not — that assumption is what shipped a broken
+/// `install -d -o "$USER" -g "$USER"` in the README, which fails outright on distributions that
+/// put everyone in a shared `users` group.
+fn log_dir_hint(dir: &Path) -> String {
+    format!("\n      fix: sudo install -d -o \"$USER\" -g \"$(id -gn)\" -m 750 '{}'", dir.display())
 }
 
 /// Can we actually create a file here? `access(W_OK)` lies under some mount options, and this is

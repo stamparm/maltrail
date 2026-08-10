@@ -143,7 +143,8 @@ cd sensor && cargo build --release && cd ..
 sudo setcap cap_net_raw,cap_net_admin=eip sensor/target/release/maltrail-sensor
 
 # 3. give it somewhere to write events (LOG_DIR, /var/log/maltrail by default)
-sudo install -d -o "$USER" -g "$USER" -m 750 /var/log/maltrail
+#    ('id -gn', not "$USER": not every distribution gives each user their own group)
+sudo install -d -o "$USER" -g "$(id -gn)" -m 750 /var/log/maltrail
 
 # 4. check the deployment before trusting it — exits non-zero if anything is wrong
 sensor/target/release/maltrail-sensor -T
