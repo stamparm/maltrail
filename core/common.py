@@ -43,6 +43,7 @@ import urllib.parse
 import urllib.request
 import urllib.response
 import urllib as _urllib
+import http.cookiejar as _cookiejar
 
 _ipcat_cache = {}  # NOTE: holds the (bounded, config-sized) static IPCAT seed
 _ipcat_dynamic_cache = LRUDict(MAX_CACHE_ENTRIES)  # NOTE: bounds per-IP SQLite lookups so they can't grow without bound on a busy server
@@ -64,13 +65,21 @@ def retrieve_content(url, data=None, headers=None):
     Retrieves page content from given URL
     """
 
+    # Cookies, kept for the duration of this one call. urlopen() has no cookie support, so a site
+    # that answers the first request with "307 + Set-Cookie -> same URL with a token" is
+    # unreachable: the redirect is followed WITHOUT the cookie, the challenge is re-issued, and
+    # urllib gives up with HTTPError 307. That is not a dead feed and not user-agent blocking -
+    # cybercrime-tracker.net does exactly this, which is why its three feeds returned nothing
+    # while the same links opened fine in a browser (issue #19545). A fresh jar per call keeps
+    # this a transport detail: nothing is carried between feeds or between updates.
     try:
         # NOTE: percent-encode spaces only in the query string (chars after the first '?'); if there's no '?', encode them all.
         # (Was an O(n^2) char-by-char comprehension that recomputed url.find('?') for every character.)
         _ = url.find('?')
         url = url.replace(' ', "%20") if _ == -1 else url[:_ + 1] + url[_ + 1:].replace(' ', "%20")
         req = _urllib.request.Request(url, data, headers or {"User-agent": USER_AGENT, "Accept-encoding": "gzip, deflate"})
-        resp = _urllib.request.urlopen(req, timeout=TIMEOUT)
+        opener = _urllib.request.build_opener(_urllib.request.HTTPCookieProcessor(_cookiejar.CookieJar()))
+        resp = opener.open(req, timeout=TIMEOUT)
         retval = resp.read()
         encoding = resp.headers.get("Content-Encoding")
         resp.close()
