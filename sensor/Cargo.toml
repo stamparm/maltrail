@@ -36,6 +36,10 @@ memchr = "2"
 # Mirrors core/quic_sni.py exactly; no AEAD verification (passive sensor).
 aes = "0.8"
 sha2 = "0.10"
+# TLS server-certificate fingerprints. SHA-1 is not a security choice here - it is the
+# identifier abuse.ch SSLBL and every other certificate feed publishes, so it is the only
+# digest that can match them. It is never used to authenticate anything.
+sha1 = "0.10"
 hmac = "0.12"
 # The condensed observable store (LOG_DIR/meta.sqlite, src/meta.rs). `bundled` on purpose:
 # the file's exact shape is a compatibility contract with core/meta.py and core/httpd.py
@@ -44,6 +48,10 @@ hmac = "0.12"
 # the prebuilt release tarballs at exactly one runtime .so - libpcap - which is the whole
 # point of shipping them. `functions` registers meta_score() for the prune query.
 rusqlite = { version = "0.31", features = ["bundled", "functions"] }
+
+[dev-dependencies]
+# the certificate tests compute the same fingerprint the sensor does
+sha1 = "0.10"
 
 [profile.release]
 opt-level = 3

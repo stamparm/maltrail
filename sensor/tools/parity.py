@@ -57,6 +57,9 @@ USE_HEURISTICS %(use_heuristics)s
 CHECK_MISSING_HOST %(check_missing_host)s
 CHECK_HOST_DOMAINS %(check_host_domains)s
 USE_CONDENSED_STORAGE %(use_condensed_storage)s
+# TLS certificate matching is new in the Rust sensor (sensor.py extracts certificates for
+# reporting but never matches them), so it is off here: parity compares what BOTH sensors do.
+CHECK_TLS_CERTIFICATES false
 SENSOR_NAME parity
 SCAN_WINDOW 30
 # The Rust sensor's default event throttle is a redesign (burst-then-summarize, see
