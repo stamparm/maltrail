@@ -5,6 +5,7 @@ actual HTTP contract the dashboard relies on: challenge-response login, /events 
 /counts, /check_ip, and malformed/edge inputs -- asserting the server answers correctly and never
 5xx/crashes. Raw-socket HTTP client -> no urllib py2/py3 differences. Skips cleanly if the server
 can't bind (e.g. sandbox)."""
+import json
 import os
 import sys
 import time
@@ -77,6 +78,15 @@ class TestHttpd(unittest.TestCase):
         trails = os.path.join(cls.tmp, "trails.csv")
         with open(trails, "w") as f:
             f.write("evil.com,dummy,(static)\n")
+            f.write("1.2.3.4,badip (dummy),(static)\n")
+            f.write("badhost.example/gate.php,badurl (dummy),(static)\n")
+        # /check reads through the memory-mapped store, which the sensor normally builds; build it
+        # here so the endpoint has something to map. Both paths are passed explicitly: this test
+        # process has no configured TRAILS_FILE, and a silently skipped build would make the
+        # /check assertions pass vacuously against an absent store.
+        from core import common as _common
+        _common.build_trails_bin(trails, trails + ".bin")
+        assert os.path.isfile(trails + ".bin"), "the trail store must exist for the /check tests"
         # seed a condensed observable store so /meta has something to look up (the server reads LOG_DIR/meta.sqlite)
         from core import meta as _meta
         _meta.configure(os.path.join(logdir, "meta.sqlite"), enabled=True, flush_period=99999)
@@ -146,6 +156,53 @@ class TestHttpd(unittest.TestCase):
         for ep in ("/events?date=%s" % self.date, "/counts", "/check_ip?address=8.8.8.8"):
             st, _, _ = _http(self.port, "GET", ep)
             self.assertEqual(st, 401, "%s must require auth" % ep)
+
+    def test_check_finds_a_listed_trail(self):
+        st, _, body = _http(self.port, "GET", "/check?q=evil.com")
+        self.assertEqual(st, 200)
+        data = json.loads(body.decode())
+        self.assertTrue(data["found"], data)
+        self.assertEqual(data["trail"], "evil.com")
+        self.assertEqual(data["reference"], "(static)")
+
+    def test_check_walks_parent_domains(self):
+        # a subdomain of a listed domain is a hit, and reports WHICH key matched - the same
+        # parent walk _check_domain_member() does, so the answer matches what the sensor would do
+        st, _, body = _http(self.port, "GET", "/check?q=www.deep.evil.com")
+        data = json.loads(body.decode())
+        self.assertTrue(data["found"], data)
+        self.assertEqual(data["trail"], "evil.com")
+
+    def test_check_normalises_a_url(self):
+        st, _, body = _http(self.port, "GET", "/check?q=http%3A%2F%2Fbadhost.example%2Fgate.php")
+        data = json.loads(body.decode())
+        self.assertTrue(data["found"], data)
+        self.assertEqual(data["trail"], "badhost.example/gate.php")
+
+    def test_check_handles_an_ip(self):
+        st, _, body = _http(self.port, "GET", "/check?q=1.2.3.4")
+        self.assertTrue(json.loads(body.decode())["found"])
+
+    def test_check_misses_are_not_errors(self):
+        st, _, body = _http(self.port, "GET", "/check?q=definitely-not-listed.example")
+        self.assertEqual(st, 200)
+        data = json.loads(body.decode())
+        self.assertFalse(data["found"])
+        self.assertNotIn("error", data)
+
+    def test_check_rejects_missing_and_oversized_queries(self):
+        for q in ("", "a" * 300):
+            st, _, body = _http(self.port, "GET", "/check?q=%s" % q)
+            self.assertEqual(st, 200, "must answer, not 500")
+            data = json.loads(body.decode())
+            self.assertFalse(data["found"])
+            self.assertIn("error", data)
+
+    def test_check_never_500s_on_hostile_input(self):
+        for q in ("%3Cscript%3E", "..%2F..%2Fetc%2Fpasswd", "%00", "*", "%25", "a%20b"):
+            st, _, body = _http(self.port, "GET", "/check?q=%s" % q)
+            self.assertEqual(st, 200, "q=%r produced %s" % (q, st))
+            json.loads(body.decode())          # must still be valid JSON
 
     def test_login_and_events(self):
         ck = self._login()

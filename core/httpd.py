@@ -26,7 +26,9 @@ from core.addr import int_to_addr
 from core.addr import make_mask
 from core.addr import resolve_address
 from core.attribdict import AttribDict
+from core import trailsbin
 from core.common import get_regex
+from core.common import trails_bin_path
 from core.common import ipcat_lookup
 from core.common import worst_asns
 from core.compat import xrange
@@ -82,6 +84,49 @@ except Exception:
 
 _fail2ban_cache = None
 _fail2ban_key = None
+# Memory-mapped trail store for /check, opened once and re-opened when trails.csv.bin changes.
+# ACCESS_READ, so the table stays a shared mapping rather than becoming a heap copy in the server:
+# the point of answering single-key lookups here is that it costs no memory to do so.
+_trails_bin = None
+_trails_bin_stamp = None
+_trails_bin_lock = threading.Lock()
+
+def _trails_bin_handles():
+    """Read handles for the memory-mapped trail store, or None when there is no usable one.
+
+    Re-opened when the file changes, so a trail update is picked up without restarting the server.
+    A missing or half-written .bin is not an error worth failing a request over - the sensor
+    rebuilds it on its own timer - so the caller gets None and reports the store as unavailable.
+    """
+    global _trails_bin, _trails_bin_stamp
+
+    path = trails_bin_path()
+    try:
+        stamp = os.stat(path)
+        stamp = (stamp.st_mtime, stamp.st_size)
+    except OSError:
+        return None
+
+    if _trails_bin is not None and _trails_bin_stamp == stamp:
+        return _trails_bin
+
+    with _trails_bin_lock:
+        if _trails_bin is not None and _trails_bin_stamp == stamp:
+            return _trails_bin
+        try:
+            handles = trailsbin.open_bin(path)
+        except Exception:
+            return None
+        previous = _trails_bin
+        _trails_bin, _trails_bin_stamp = handles, stamp
+        if previous is not None:
+            try:
+                previous["mmap"].close()
+            except Exception:
+                pass
+        return _trails_bin
+
+
 _blacklist_cache = None
 _blacklist_key = None
 _version_cache = None
@@ -349,7 +394,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # display helpers (_version, _logo, _assetver, _tzoffset, _statics, _format, _build_netfilters, _filter_events)
             # whose signature is NOT (self, params), so e.g. "GET /version" -> self._version(params) -> uncaught TypeError
             # (request crash) reachable by any client. Endpoints are an explicit allowlist, not "any _-prefixed method".
-            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt", "meta", "reference"):
+            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "check", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt", "meta", "reference"):
                 if len(splitpath) > 1:
                     params["subpath"] = splitpath[1]
                 content = getattr(self, "_%s" % splitpath[0])(params)
@@ -835,6 +880,70 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     return f.read()
 
             return b""
+
+        def _check(self, params):
+            """Is one observable in the trail set? GET /check?q=<domain|ip|url>
+
+            Requested for years (issue #17742) so that other tooling can ask Maltrail about a
+            single indicator instead of downloading and grepping the whole set.
+
+            Unauthenticated, deliberately and consistently: /trails already serves the ENTIRE
+            trail set to anyone who asks - that is how a sensor pulls from UPDATE_SERVER - so a
+            single-key lookup discloses strictly less than what is already public on the same
+            port. (Contrast /blacklist, which is gated because it reads the EVENT LOG and reveals
+            which of your own hosts were flagged. Trail data is the input; event data is the
+            finding.)
+
+            Reads through the memory-mapped trail store, so the answer costs no heap: the table
+            is the same shared mapping the sensor uses, not a copy loaded into this process.
+            """
+            self.send_response(_http_client.OK)
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
+
+            query = (params.get("q") or params.get("query") or "").strip().lower()
+
+            # Bounded, and no wildcard characters: this is an exact-key lookup, not a search.
+            if not query or len(query) > 256:
+                return json.dumps({"query": query[:256], "found": False, "error": "missing or oversized 'q'"})
+
+            try:
+                handles = _trails_bin_handles()
+            except Exception:
+                if config.SHOW_DEBUG:
+                    traceback.print_exc()
+                handles = None
+
+            if handles is None:
+                return json.dumps({"query": query, "found": False, "error": "trail store unavailable"})
+
+            # A URL is checked as host/path and then as the bare host, which is how the sensor
+            # matches URL trails; a domain additionally matches when any PARENT domain is listed,
+            # the same walk _check_domain_member() does, so a subdomain of a listed domain is
+            # reported rather than missed.
+            candidates = []
+            probe = re.sub(r"\A[a-z]{2,10}://", "", query).rstrip('/')
+            if probe:
+                candidates.append(probe)
+            host = probe.split('/')[0]
+            if host and host != probe:
+                candidates.append(host)
+            if host and '.' in host and not re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", host):
+                parts = host.split('.')
+                for i in xrange(1, len(parts) - 1):
+                    candidates.append('.'.join(parts[i:]))
+
+            seen = set()
+            for candidate in candidates:
+                if candidate in seen:
+                    continue
+                seen.add(candidate)
+                result = trailsbin.lookup(handles, candidate)
+                if result:
+                    return json.dumps({"query": query, "found": True, "trail": candidate,
+                                       "info": result[0], "reference": result[1]})
+
+            return json.dumps({"query": query, "found": False})
 
         def _ping(self, params):
             self.send_response(_http_client.OK)
