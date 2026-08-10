@@ -19,6 +19,32 @@ wire.
 
 ---
 
+## Content
+
+- [Why Maltrail](#why-maltrail)
+- [Architecture](#architecture)
+- [Performance](#performance)
+- [Quick start](#quick-start)
+  - [As a service](#as-a-service)
+  - [Docker](#docker)
+- [Configuration](#configuration)
+- [Trails](#trails)
+- [Events](#events)
+- [Operating it](#operating-it)
+  - [Event retention](#event-retention)
+- [Documentation](#documentation)
+- [Contributing](#contributing)
+- [Licence](#licence)
+- [Sponsors](#sponsors)
+- [Developers](#developers)
+- [Presentations](#presentations)
+- [Publications](#publications)
+- [Blacklist](#blacklist)
+- [Thank you](#thank-you)
+- [Third-party integrations](#third-party-integrations)
+
+---
+
 ## Why Maltrail
 
 Most network detection tools ask you to describe *behaviour*. Maltrail asks a simpler question that
@@ -340,3 +366,67 @@ Python side is `bash tests/run.sh`.
 ## Licence
 
 MIT. See [`LICENSE`](LICENSE).
+
+---
+
+## Sponsors
+
+* [Sansec](https://sansec.io/) (2024-2025)
+* [Sansec](https://sansec.io/) (2020-2021)
+
+## Developers
+
+* Miroslav Stampar ([@stamparm](https://github.com/stamparm))
+* Mikhail Kasimov ([@MikhailKasimov](https://github.com/MikhailKasimov))
+
+## Presentations
+
+* 47th TF-CSIRT Meeting, Prague (Czech Republic), 2016 ([slides](https://www.terena.org/activities/tf-csirt/meeting47/M.Stampar-Maltrail.pdf))
+
+## Publications
+
+* Detect attacks on your network with Maltrail, Linux Magazine, 2022 ([Annotation](https://www.linux-magazine.com/Issues/2022/258/Maltrail))
+* Best Cyber Threat Intelligence Feeds ([SilentPush Review, 2022](https://www.silentpush.com/blog/best-cyber-threat-intelligence-feeds))
+* Research on Network Malicious Traffic Detection System Based on Maltrail ([Nanotechnology Perceptions, ISSN 1660-6795, 2024](https://nano-ntp.com/index.php/nano/article/view/1915/1497))
+
+## Blacklist
+
+* Maltrail's daily updated blacklist of malware-related domains can be found [here](https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt). It is based on trails found at [trails/static/malware](trails/static/malware) and can be safely used for DNS traffic blocking purposes.
+
+## Thank you
+
+* Thomas Kristner
+* Eduardo Arcusa Les
+* James Lay
+* Ladislav Baco (@laciKE)
+* John Kristoff (@jtkdpu)
+* Michael M&uuml;nz (@mimugmail)
+* David Brush
+* @Godwottery
+* Chris Wild (@briskets)
+* Keith Irwin (@ki9us)
+* Simon Szustkowski (@simonszu)
+
+## Third-party integrations
+
+* [FreeBSD Port](https://www.freshports.org/security/maltrail)
+* [OPNSense Gateway Plugin](https://github.com/opnsense/plugins/pull/1257)
+* [D4 Project](https://www.d4-project.org/2019/09/25/maltrail-integration.html)
+* [BlackArch Linux](https://github.com/BlackArch/blackarch/blob/master/packages/maltrail/PKGBUILD)
+* [Validin LLC](https://x.com/ValidinLLC/status/1719666086390517762)
+* [Maltrail Add-on for Splunk](https://splunkbase.splunk.com/app/7211)
+* [Maltrail decoder and rules for Wazuh](https://github.com/MikhailKasimov/maltrail-wazuh-decoder-and-rules)
+* [GScan](https://github.com/grayddq/GScan) <sup>1</sup>
+* [MalwareWorld](https://www.malwareworld.com/) <sup>1</sup>
+* [oisd | domain blocklist](https://oisd.nl/?p=inc) <sup>1</sup>
+* [NextDNS](https://github.com/nextdns/metadata/blob/e0c9c7e908f5d10823b517ad230df214a7251b13/security/threat-intelligence-feeds.json) <sup>1</sup>
+* [NoTracking](https://github.com/notracking/hosts-blocklists/blob/master/SOURCES.md) <sup>1</sup>
+* [OWASP Mobile Audit](https://github.com/mpast/mobileAudit#environment-variables) <sup>1</sup>
+* [Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF/commit/12b07370674238fa4281fc7989b34decc2e08876) <sup>1</sup>
+* [pfBlockerNG-devel](https://github.com/pfsense/FreeBSD-ports/blob/devel/net/pfSense-pkg-pfBlockerNG-devel/files/usr/local/www/pfblockerng/pfblockerng_feeds.json) <sup>1</sup>
+* [Sansec eComscan](https://sansec.io/kb/about-ecomscan/ecomscan-license)<sup>1</sup>
+* [Palo Alto Networks Cortex XSOAR](https://xsoar.pan.dev/docs/reference/integrations/github-maltrail-feed)<sup>2</sup>
+
+<sup>1</sup> Using (only) trails
+
+<sup>2</sup> Connector to trails (only)
