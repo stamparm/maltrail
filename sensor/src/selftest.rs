@@ -312,10 +312,33 @@ pub fn run(cfg: &Config) -> i32 {
         let script = crate::trailupdate::updater_script(&cfg.root);
         if !script.is_file() {
             r.line(Level::Fail, "trail updates", &format!("missing '{}'", script.display()));
-        } else if crate::trailupdate::python_interpreter().is_none() {
-            r.line(Level::Fail, "trail updates", "no python3 on PATH (set MALTRAIL_PYTHON)");
         } else {
-            r.line(Level::Ok, "trail updates", "updater and interpreter present");
+            // Reporting "interpreter present" without checking WHICH interpreter is how a host
+            // whose python3 is 3.6 passed `-T` and then built an empty trail set — a sensor that
+            // says it is fine and detects nothing. The version is the whole point of the check.
+            let (min_major, min_minor) = crate::trailupdate::MIN_PYTHON;
+            match crate::trailupdate::python_probe() {
+                None => r.line(Level::Fail, "trail updates", "no python3 on PATH (set MALTRAIL_PYTHON)"),
+                Some(python) if python.is_supported() => r.line(
+                    Level::Ok,
+                    "trail updates",
+                    &format!("updater present, {} is Python {}", python.command, python.version_string()),
+                ),
+                Some(python) => r.line(
+                    Level::Fail,
+                    "trail updates",
+                    &format!(
+                        "'{}' is Python {}, but the updater needs {}.{}+ — the trail set cannot be \
+                         built, so this sensor would detect NOTHING\n      \
+                         fix: install a newer Python (openSUSE/SLES: 'sudo zypper install python311') \
+                         and point the sensor at it with MALTRAIL_PYTHON=/usr/bin/python3.11",
+                        python.command,
+                        python.version_string(),
+                        min_major,
+                        min_minor
+                    ),
+                ),
+            }
         }
     }
 

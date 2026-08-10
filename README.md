@@ -152,7 +152,9 @@ Method, per-protocol breakdown, instruction counts and the profiler output are i
 
 ## Quick start
 
-Linux, `libpcap`, Rust 1.74+ for the sensor, Python 3.7+ for the server.
+Linux, `libpcap`, Rust 1.74+ for the sensor, and **Python 3.7+** — the sensor uses it to build
+`trails.csv`, so on 3.6 (openSUSE Leap 15 / SLE 15) the trail set stays empty and nothing is
+detected. `setcap` comes from `libcap2-bin` / `libcap` / `libcap-progs`. `-T` checks both.
 
 Prebuilt sensor binaries for `x86_64` and `aarch64` are attached to every
 [release](https://github.com/stamparm/maltrail/releases) with a SHA-256 checksum, so a Rust

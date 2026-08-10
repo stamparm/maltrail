@@ -23,27 +23,96 @@ pub fn updater_script(root: &Path) -> PathBuf {
     root.join("sensor").join("tools").join("update_trails.py")
 }
 
-/// The interpreter to drive it with. `MALTRAIL_PYTHON` overrides.
-pub fn python_interpreter() -> Option<String> {
+/// The oldest Python the updater runs on. `core/update.py` uses `str.isascii()`, which arrived
+/// in 3.7, and the server is tested on 3.7 in CI — so this is the project's real floor, not a
+/// guess.
+pub const MIN_PYTHON: (u32, u32) = (3, 7);
+
+/// What a candidate interpreter turned out to be.
+pub struct PythonProbe {
+    pub command: String,
+    /// `None` when the command could not be run or its version could not be parsed.
+    pub version: Option<(u32, u32, u32)>,
+}
+
+impl PythonProbe {
+    pub fn is_supported(&self) -> bool {
+        matches!(self.version, Some((major, minor, _)) if (major, minor) >= MIN_PYTHON)
+    }
+
+    pub fn version_string(&self) -> String {
+        match self.version {
+            Some((a, b, c)) => format!("{a}.{b}.{c}"),
+            None => "unknown".to_string(),
+        }
+    }
+}
+
+/// Ask one interpreter what it is. Cheap: `-c` neither reads config nor touches the network.
+fn probe(command: &str) -> Option<PythonProbe> {
+    let out =
+        Command::new(command).args(["-c", "import sys; print('%d.%d.%d' % sys.version_info[:3])"]).output().ok()?;
+    if !out.status.success() {
+        return None;
+    }
+    let text = String::from_utf8_lossy(&out.stdout);
+    let mut parts = text.trim().split('.').map(|p| p.parse::<u32>());
+    let version = match (parts.next(), parts.next(), parts.next()) {
+        (Some(Ok(a)), Some(Ok(b)), Some(Ok(c))) => Some((a, b, c)),
+        _ => None,
+    };
+    Some(PythonProbe { command: command.to_string(), version })
+}
+
+/// The interpreter to drive the updater with. `MALTRAIL_PYTHON` overrides everything.
+///
+/// Returns the first candidate that is actually **new enough**, and falls back to the newest
+/// unsuitable one it found so the caller can say what is wrong instead of "no python3".
+///
+/// Version-checking here is not pedantry. `python3` is 3.6 on openSUSE Leap 15 / SLE 15, which
+/// are ordinary sensor hosts. Probing only that `python3 -V` *runs* passed there, `-T` reported
+/// "updater and interpreter present", and the update then died inside `core/update.py` with
+/// `'str' object has no attribute 'isascii'` — leaving a sensor with an empty trail set, which
+/// detects nothing. Preferring a versioned `python3.N` off PATH fixes that host outright,
+/// because a usable interpreter is usually installed alongside the old default.
+pub fn python_probe() -> Option<PythonProbe> {
     if let Ok(value) = std::env::var("MALTRAIL_PYTHON") {
         if !value.is_empty() {
-            return Some(value);
+            // An explicit choice is honoured verbatim, right or wrong; reporting its version is
+            // still useful when it turns out to be the wrong one.
+            return Some(probe(&value).unwrap_or(PythonProbe { command: value, version: None }));
         }
     }
-    for candidate in ["python3", "python"] {
-        // A cheap probe; `-V` neither reads config nor touches the network.
-        if Command::new(candidate)
-            .arg("-V")
-            .stdout(std::process::Stdio::null())
-            .stderr(std::process::Stdio::null())
-            .status()
-            .map(|s| s.success())
-            .unwrap_or(false)
-        {
-            return Some(candidate.to_string());
+    // Newest first, then the unversioned names. A box whose `python3` is too old very often has
+    // a newer `python3.11` sitting next to it.
+    const CANDIDATES: &[&str] = &[
+        "python3.14",
+        "python3.13",
+        "python3.12",
+        "python3.11",
+        "python3.10",
+        "python3.9",
+        "python3.8",
+        "python3.7",
+        "python3",
+        "python",
+    ];
+    let mut fallback: Option<PythonProbe> = None;
+    for candidate in CANDIDATES {
+        let Some(found) = probe(candidate) else { continue };
+        if found.is_supported() {
+            return Some(found);
+        }
+        if fallback.as_ref().map_or(true, |best| found.version > best.version) {
+            fallback = Some(found);
         }
     }
-    None
+    fallback
+}
+
+/// The interpreter to drive it with, or `None` when there is no usable one.
+pub fn python_interpreter() -> Option<String> {
+    python_probe().filter(|p| p.is_supported()).map(|p| p.command)
 }
 
 #[derive(Debug, PartialEq, Eq)]
@@ -67,8 +136,20 @@ pub fn run(cfg: &Config) -> Outcome {
     if !script.is_file() {
         return Outcome::Unavailable(format!("missing '{}'", script.display()));
     }
-    let Some(python) = python_interpreter() else {
-        return Outcome::Unavailable("no python3 interpreter on PATH (set MALTRAIL_PYTHON)".to_string());
+    // Say WHICH interpreter is unusable and why. A bare "no python3 on PATH" is wrong and
+    // misleading on a host that has one but too old to run the updater; that host gets an empty
+    // trail set, and the only clue used to be an AttributeError from deep inside core/update.py.
+    let python = match python_probe() {
+        Some(found) if found.is_supported() => found.command,
+        Some(found) => {
+            let (major, minor) = MIN_PYTHON;
+            return Outcome::Unavailable(format!(
+                "'{}' is Python {}, but the updater needs {major}.{minor}+ (set MALTRAIL_PYTHON to a newer one)",
+                found.command,
+                found.version_string()
+            ));
+        }
+        None => return Outcome::Unavailable("no python3 interpreter on PATH (set MALTRAIL_PYTHON)".to_string()),
     };
 
     let mut command = Command::new(&python);
@@ -116,6 +197,36 @@ mod tests {
         // The Rust sensor lives in the Maltrail repository, so python3 is a reasonable
         // expectation; if it is missing the sensor warns loudly rather than silently skipping.
         assert!(python_interpreter().is_some(), "no python3 found; trail updates would be unavailable");
+    }
+
+    #[test]
+    fn the_discovered_interpreter_is_new_enough_to_run_the_updater() {
+        // `core/update.py` calls `str.isascii()`, so an older interpreter builds NO trails and
+        // the sensor detects nothing. Probing that `python3 -V` merely runs is not enough: on
+        // openSUSE Leap 15 / SLE 15 that succeeds and is 3.6.
+        let python = python_probe().expect("some python must be discoverable");
+        assert!(
+            python.is_supported(),
+            "discovered {} (Python {}), below the {:?} floor",
+            python.command,
+            python.version_string(),
+            MIN_PYTHON
+        );
+        let (major, minor, _) = python.version.expect("a supported probe has a version");
+        assert!((major, minor) >= MIN_PYTHON);
+    }
+
+    #[test]
+    fn version_support_is_decided_by_the_floor_not_by_running() {
+        let probe = |v: Option<(u32, u32, u32)>| PythonProbe { command: "python3".into(), version: v };
+        assert!(!probe(Some((3, 6, 15))).is_supported(), "3.6 lacks str.isascii()");
+        assert!(!probe(Some((2, 7, 18))).is_supported());
+        assert!(probe(Some((3, 7, 0))).is_supported(), "3.7 is the documented floor");
+        assert!(probe(Some((3, 12, 3))).is_supported());
+        // An interpreter we could not identify is not assumed to be fine.
+        assert!(!probe(None).is_supported());
+        assert_eq!(probe(None).version_string(), "unknown");
+        assert_eq!(probe(Some((3, 11, 9))).version_string(), "3.11.9");
     }
 
     #[test]

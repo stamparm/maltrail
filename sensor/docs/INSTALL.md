@@ -9,15 +9,31 @@ can run them side by side against the same traffic while you build confidence.
 
 * Linux (x86-64 or aarch64). `PACKET_FANOUT` is Linux-only; everything else is POSIX.
 * `libpcap` headers and library.
-* A Rust stable toolchain (1.74 or newer).
+* A Rust toolchain, **1.74 or newer** — the MSRV is deliberately old so distribution packages
+  qualify. openSUSE Leap 15 / SLE 15 ship exactly 1.74, which is enough; `rustup` is not needed
+  and installing it there *conflicts* with the packaged `rust`/`cargo`.
+* `setcap`, to let the sensor capture without running as root.
+* **Python 3.7 or newer** on `PATH`. The sensor shells out to Maltrail's own updater to build
+  `trails.csv`, and that needs 3.7+ (`str.isascii()`). This is the one to check on older
+  enterprise distributions: openSUSE Leap 15 / SLE 15 default `python3` to **3.6**, where the
+  trail set cannot be built and the sensor therefore detects nothing. `-T` reports the version it
+  found, and the sensor prefers a newer `python3.N` on `PATH` automatically.
 
 ```bash
 # Debian / Ubuntu
-sudo apt-get install libpcap-dev build-essential
+sudo apt-get install libpcap-dev build-essential libcap2-bin
 # RHEL / Fedora
-sudo dnf install libpcap-devel gcc
-# Rust, if not present
+sudo dnf install libpcap-devel gcc libcap
+# openSUSE / SLES  (rust 1.74 and python3 are usually already installed)
+sudo zypper install libpcap-devel gcc libcap-progs rust cargo python311
+# Rust, only if your distribution has none
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+If `python3 --version` is older than 3.7, install a newer one and point the sensor at it:
+
+```bash
+export MALTRAIL_PYTHON=/usr/bin/python3.11
 ```
 
 ## 2. Build
@@ -446,6 +462,10 @@ Nothing here is required to run the sensor; it is how to convince yourself befor
 | `[i] repaired N wildcard trail pattern(s) truncated in the feed` | informational: those trails were cut off in transit and were salvaged (the intact alternatives are kept, the dangling fragment dropped). `sensor.py` drops such trails entirely, so this is a detection gain |
 | `[!] N wildcard trail pattern(s) are unusable and NOT matched` | those patterns could not be salvaged at all; CPython rejects them too, so `sensor.py` ignores them as well |
 | No colour in `--console` output | colour is emitted only when stdout is a TTY (as in `sensor.py`), and `NO_COLOR` disables it |
+| `trail update failed ('str' object has no attribute 'isascii')` | `python3` is older than 3.7 (openSUSE Leap 15 / SLE 15 default to 3.6). Install a newer one and set `MALTRAIL_PYTHON=/usr/bin/python3.11`. Without it the trail set is empty and the sensor detects nothing; `-T` now reports the interpreter version rather than just its presence |
+| `setcap: command not found` | install `libcap2-bin` (Debian/Ubuntu), `libcap` (RHEL/Fedora) or `libcap-progs` (openSUSE/SLES) |
+| `rustup ... conflicts with 'rust+rustc'` on openSUSE/SLES | do not install `rustup`; the packaged `rust` 1.74 already meets the MSRV. `rustup` is only needed for the developer gate (`check.sh`), which wants `rustfmt` and `clippy` |
+| `check.sh: rustfmt: command not found` | that gate is for contributors, not for running the sensor. `rustup component add rustfmt clippy`, or skip it — `cargo build --release` is all a deployment needs |
 | `log directory: '...' is NOT writable` / `does not exist` | run the `sudo install -d ...` line `-T` prints. Note it uses `$(id -gn)` for the group: not every distribution gives each user a group named after them (openSUSE puts everyone in `users`), so `-g "$USER"` fails there with `install: invalid group` |
 | `install: invalid group 'maltrail'` when setting up the systemd units | `useradd` only creates a matching group on distributions that default to per-user groups. Run `groupadd --system maltrail` first, then `useradd --system --gid maltrail ...` — both lines are in the unit file's header comment |
 | `condensed observable store: flush of N rows failed` | the sensor could not write `LOG_DIR/meta.sqlite`; check the directory's permissions and free space. Detection and event logging are unaffected — only the server's `/meta` view loses that window. `maltrail_meta_flush_errors_total` counts these |

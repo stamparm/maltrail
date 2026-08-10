@@ -11,6 +11,26 @@ set -e
 ROOT=$(cd "$(dirname "$0")/../.." && pwd)
 cd "$ROOT"
 
+# Check the toolchain BEFORE doing five minutes of work that ends in `rustfmt: command not
+# found`. A distribution Rust package often splits these out (openSUSE puts rustfmt in `rustup`
+# or `cargo1.NN`), so "I installed Rust" does not mean these exist — and the bare shell error
+# names the command without saying it is optional, which package provides it, or that the
+# thousands of lines of passing output above it are unaffected.
+missing=""
+for tool in cargo rustfmt python3; do
+    command -v "$tool" >/dev/null 2>&1 || missing="$missing $tool"
+done
+# clippy is a cargo subcommand rather than a binary on PATH.
+cargo clippy --version >/dev/null 2>&1 || missing="$missing cargo-clippy"
+if [ -n "$missing" ]; then
+    echo "[!] this gate needs:$missing"
+    echo "[?] with rustup:   rustup component add rustfmt clippy"
+    echo "[?] openSUSE/SLES: sudo zypper install rustup && rustup default stable"
+    echo "[?] Debian/Ubuntu: sudo apt-get install rustfmt cargo clippy python3"
+    echo "[i] none of this is needed to BUILD or RUN the sensor — 'cargo build --release' is enough."
+    exit 1
+fi
+
 echo "== generated files are in sync with core/settings.py =="
 # BEFORE regenerating, not after: this gate exists to catch a constant that was changed in
 # core/settings.py without regenerating, and regenerating first would silently repair the drift
