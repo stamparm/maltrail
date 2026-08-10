@@ -228,6 +228,14 @@ def compare_meta(python_meta, rust_meta):
 
 
 def run_sensor(cmd, cwd, timeout):
+    """Run one sensor. Returns (output, error) where error is None only on a clean exit.
+
+    The exit status used to be discarded, and that turned a sensor which never ran into a parity
+    FAILURE blaming the other one. Without pcapy-ng, `old/sensor.py` prints what to install and
+    exits 1; the harness recorded zero events for it and reported 53 detections as "only rust",
+    i.e. it accused the implementation under test of inventing them. An oracle that did not run
+    is not evidence of anything.
+    """
     process = subprocess.Popen(cmd, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     try:
         output = process.communicate(timeout=timeout)[0]
@@ -235,7 +243,25 @@ def run_sensor(cmd, cwd, timeout):
         process.kill()
         output = process.communicate()[0]
         return output.decode("utf8", "replace"), "timeout"
-    return output.decode("utf8", "replace"), None
+    text = output.decode("utf8", "replace")
+    if process.returncode != 0:
+        return text, "exit status %d" % process.returncode
+    return text, None
+
+
+def oracle_is_runnable(python):
+    """Can old/sensor.py actually replay a pcap? Returns None if yes, else why not.
+
+    Checked ONCE up front. Discovering it 36 times, as 36 identical bogus diffs, buries the one
+    line that matters ("please install 'pcapy or pcapy-ng'") under a screen of noise.
+    """
+    probe = subprocess.Popen(
+        [python, "-c", "import sys\ntry:\n import pcapy\nexcept ImportError as ex:\n sys.exit(str(ex) or 'pcapy missing')\n"],
+        cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    out = probe.communicate()[0].decode("utf8", "replace").strip()
+    if probe.returncode != 0:
+        return out or "pcapy/pcapy-ng is not importable"
+    return None
 
 
 def rust_binary(profile):
@@ -291,6 +317,15 @@ def main():
     binary = rust_binary(options.profile)
     if binary is None:
         sys.exit("[!] sensor binary not found; run: cargo build --release --manifest-path sensor/Cargo.toml")
+
+    # The whole harness is a comparison against sensor.py. If sensor.py cannot run, there is
+    # nothing to compare against and every case would "fail" for the wrong reason.
+    unrunnable = oracle_is_runnable(options.python)
+    if unrunnable:
+        sys.exit("[!] the reference sensor (old/sensor.py) cannot run: %s\n"
+                 "[?] install its capture bindings:  pip install -r old/requirements.txt\n"
+                 "[i] the parity harness compares AGAINST sensor.py, so it cannot run without it."
+                 % unrunnable)
 
     trails_file = os.path.join(options.corpus, "trails.csv")
     if not os.path.isfile(trails_file):
