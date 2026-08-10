@@ -124,6 +124,9 @@ trail set** and the same configuration, one worker each:
 | sensor (Rust) | 272 ns | 3,682,638 | Ryzen 9 5900X |
 | old sensor (Python) | 10,070 ns | 99,305 | same box |
 | | **37× faster** | | |
+| sensor (Rust) | 800 ns | 1,250,631 | Raspberry Pi 5 |
+| old sensor (Python) | 16,701 ns | 59,876 | same box |
+| | **21× faster** | | |
 
 Reproduce it yourself — the harness is committed, and it prints both sensors' event counts so a
 throughput number can never be quoted without its correctness context:
@@ -139,21 +142,23 @@ different questions:
   1.5M-row trail set costs the Rust sensor ~1.1-1.5 s, and 300,000 packets take under a second.
   That ratio comes out around **3×**, and it is not the packet path.
 * **steady state** — startup measured separately with a 1-packet replay and subtracted. This is
-  the per-packet cost, and it is the **30-37×** above.
+  the per-packet cost, and it is the **21-37×** above.
 
 Trail loading is the one place the old sensor still wins: it mmaps a prebuilt `trails.csv.bin`
-sidecar, so its *warm* start is faster than building the store from CSV. That cost is paid once
-per process; the packet path is paid 300,000 times.
+sidecar, so its *warm* start is faster than building the store from CSV — 1.25 s against 2.24 s on
+the Pi. That cost is paid once per process; the packet path is paid 300,000 times.
 
 Both numbers move with hardware, so measure your own — and note the harness reports `events=0` for
 both sensors on this mix, because it is deliberately benign traffic. Detections add event-logging
 cost on top.
 
-Memory does not grow with cores: the 1.5M-trail store is **68.5 MB**, built in 1.2 s and shared
-immutably by every worker.
+Memory does not grow with cores: the 1.5M-trail store is **68.5 MB**, shared immutably by every
+worker. Building it is the startup cost above — 1.2 s on a laptop CPU, 2.2 s on a Raspberry Pi 5 —
+and it is paid once per process, not per worker.
 
-**One capture worker by default** — 1.8M packets/s on an eight-core laptop CPU and 3.7M on a
-Ryzen 9 5900X, which is enough for almost any sensor host.
+**One capture worker by default** — 1.25M packets/s on a Raspberry Pi 5, 1.8M on an eight-core
+laptop CPU, 3.7M on a Ryzen 9 5900X. Even the Pi clears gigabit on one core, which is enough for
+almost any sensor host.
 Extra workers are an explicit opt-in (`CAPTURE_FANOUT`), because the kernel flow-hashes capture
 while the scan heuristics count per source: of the heuristic alerts one worker raises, 91% survive
 at 2 sockets, 86% at 4, 65% at 8. Exact trail detection is identical at every worker count. Scale
