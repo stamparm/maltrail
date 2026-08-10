@@ -266,6 +266,11 @@ set now 83.3 MB / 1,505,265 rows:
 Both sensors produced 0 events on this corpus (equal), so the ratio is like-for-like work.
 
 The steady-state ratio moved from 13.8x to 27.1x for two independent reasons, and it is worth
+Reproduced later on other hardware with the same harness (`--slope` is now the default, so the
+steady-state row is always printed): 550 ns/packet vs 16,656 for `sensor.py` on this same laptop
+CPU with a newer trail set (30x), and 272 ns vs 10,070 on a Ryzen 9 5900X (37x). The 865 ns below
+is therefore the pessimistic end of the range, not the typical one.
+
 being precise about which is which: the sensor's own per-packet cost fell 1,209 -> 865 ns (-28%,
 the §4c work, reproducible), while `sensor.py` on this box measured 16,689 -> 23,448 ns/packet
 (+40%) on a larger trail set and a machine under different load. **Only the first is an

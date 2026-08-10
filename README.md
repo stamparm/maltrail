@@ -113,17 +113,17 @@ Workers share nothing mutable, so that cost is what each additional core buys yo
 **One core saturates 10 GbE.** Scaling is near-linear to four workers and then tapers on an
 eight-physical-core box, because the rest is SMT — hardware, not lock contention.
 
-Against the old Python sensor, replaying the **same 300,000-packet capture** with the **same
-1,505,265 trails** and the same configuration, one worker each — startup excluded, so this is
-steady-state packet cost. Both figures here are whole-process (pcap read and dispatch included),
-which is why the sensor's number is higher than the 552 ns packet path measured in isolation
-above:
+Against the old Python sensor, replaying the **same 300,000-packet capture** with the **same real
+trail set** and the same configuration, one worker each:
 
-| | per packet | packets/s |
-| --- | ---: | ---: |
-| sensor (Rust) | 865 ns | 1,156,423 |
-| old sensor (Python) | 23,448 ns | 42,648 |
-| | **27× faster** | |
+| | per packet | packets/s | |
+| --- | ---: | ---: | --- |
+| sensor (Rust) | 550 ns | 1,817,980 | Ryzen 7 PRO 4750U |
+| old sensor (Python) | 16,656 ns | 60,037 | same box |
+| | **30× faster** | | |
+| sensor (Rust) | 272 ns | 3,682,638 | Ryzen 9 5900X |
+| old sensor (Python) | 10,070 ns | 99,305 | same box |
+| | **37× faster** | | |
 
 Reproduce it yourself — the harness is committed, and it prints both sensors' event counts so a
 throughput number can never be quoted without its correctness context:
@@ -132,10 +132,28 @@ throughput number can never be quoted without its correctness context:
 python3 sensor/tools/bench_compare.py --packets 300000 --trails ~/.maltrail/trails.csv --repeat 3
 ```
 
+**Read the second table it prints, not the first.** It reports two things, and they answer
+different questions:
+
+* **whole process** — includes startup, which on a short replay *is* the measurement: loading a
+  1.5M-row trail set costs the Rust sensor ~1.1-1.5 s, and 300,000 packets take under a second.
+  That ratio comes out around **3×**, and it is not the packet path.
+* **steady state** — startup measured separately with a 1-packet replay and subtracted. This is
+  the per-packet cost, and it is the **30-37×** above.
+
+Trail loading is the one place the old sensor still wins: it mmaps a prebuilt `trails.csv.bin`
+sidecar, so its *warm* start is faster than building the store from CSV. That cost is paid once
+per process; the packet path is paid 300,000 times.
+
+Both numbers move with hardware, so measure your own — and note the harness reports `events=0` for
+both sensors on this mix, because it is deliberately benign traffic. Detections add event-logging
+cost on top.
+
 Memory does not grow with cores: the 1.5M-trail store is **68.5 MB**, built in 1.2 s and shared
 immutably by every worker.
 
-**One capture worker by default**, which is ~1.1M packets/s and enough for almost any sensor host.
+**One capture worker by default** — 1.8M packets/s on an eight-core laptop CPU and 3.7M on a
+Ryzen 9 5900X, which is enough for almost any sensor host.
 Extra workers are an explicit opt-in (`CAPTURE_FANOUT`), because the kernel flow-hashes capture
 while the scan heuristics count per source: of the heuristic alerts one worker raises, 91% survive
 at 2 sockets, 86% at 4, 65% at 8. Exact trail detection is identical at every worker count. Scale

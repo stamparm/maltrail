@@ -445,7 +445,8 @@ Nothing here is required to run the sensor; it is how to convince yourself befor
    bash sensor/tools/shadow_run.sh --seconds 600
    ```
 
-3. **Scale out only if you need to.** One worker handles roughly 1.1M packets/s. If
+3. **Scale out only if you need to.** One worker handles 1.8M packets/s on an eight-core laptop
+   CPU and 3.7M on a Ryzen 9 5900X (steady-state, `tools/bench_compare.py`). If
    `maltrail_capture_dropped_total` is climbing, set `CAPTURE_FANOUT` and re-run
    `fanout_check.py` — and read §3 of `docs/COMPATIBILITY.md` first, because extra capture
    sockets cost scan-heuristic sensitivity.
