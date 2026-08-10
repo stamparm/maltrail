@@ -476,5 +476,81 @@ class TestReapSessions(unittest.TestCase):
         H.SESSIONS.clear()
 
 
+
+class TestBlacklistAccessControl(unittest.TestCase):
+    """/blacklist returns the source IPs of flagged events, so it must not answer just anyone.
+
+    It is pulled by firewall automation rather than by the UI, so the control is the same
+    allowlist /fail2ban uses (an authenticated session also passes). This server sets NO
+    allowlist of either kind, so an unauthenticated caller must be refused -- and refused with
+    404, like the sibling endpoint, rather than advertising that the endpoint exists.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.mkdtemp()
+        logdir = os.path.join(cls.tmp, "logs")
+        os.makedirs(logdir)
+        cls.date = time.strftime("%Y-%m-%d")
+        with open(os.path.join(logdir, "%s.log" % cls.date), "w") as f:
+            f.write('"%s 09:14:22.117034" gw 10.13.13.2 57809 1.1.1.1 53 UDP DNS evil.com "asyncrat (malware)" (static)\n' % cls.date)
+        trails = os.path.join(cls.tmp, "trails.csv")
+        with open(trails, "w") as f:
+            f.write("evil.com,asyncrat (malware),(static)\n")
+
+        cls.port = _free_port()
+        cfg = os.path.join(cls.tmp, "srv.conf")
+        with open(cfg, "w") as f:
+            f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\n" % cls.port)
+            f.write("USERS\n    admin:%s:0:\n" % STORED)
+            # deliberately NO FAIL2BAN_ALLOWLIST and NO BLACKLIST_ALLOWLIST
+            f.write("BLACKLIST\n    type ~ DNS\n")
+            f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+            f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME test\nDISABLE_CHECK_SUDO true\n" % (logdir, trails))
+        cls.proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        for _ in range(60):
+            if cls.proc.poll() is not None:
+                break
+            try:
+                socket.create_connection(("127.0.0.1", cls.port), timeout=0.5).close()
+                break
+            except Exception:
+                time.sleep(0.25)
+
+    @classmethod
+    def tearDownClass(cls):
+        if cls.proc and cls.proc.poll() is None:
+            cls.proc.terminate()
+            try:
+                cls.proc.wait(timeout=5)
+            except Exception:
+                cls.proc.kill()
+
+    def test_unauthenticated_pull_is_refused(self):
+        st, _, body = _http(self.port, "GET", "/blacklist")
+        self.assertEqual(st, 404, "/blacklist must be closed with no allowlist configured")
+        self.assertNotIn(b"10.13.13.2", body, "the flagged source IP must not be disclosed")
+
+    def test_subpaths_are_refused_too(self):
+        st, _, body = _http(self.port, "GET", "/blacklist/foo")
+        self.assertEqual(st, 404)
+        self.assertNotIn(b"10.13.13.2", body)
+
+    def test_an_authenticated_operator_still_gets_it(self):
+        import binascii
+        nonce = binascii.hexlify(os.urandom(16)).decode()
+        h = hashlib.sha256((STORED + nonce).encode()).hexdigest()
+        st, head, _ = _http(self.port, "POST", "/login", body="username=admin&nonce=%s&hash=%s" % (nonce, h))
+        self.assertEqual(st, 200, "login should succeed")
+        m = [l for l in head.split("\r\n") if l.lower().startswith("set-cookie:")]
+        self.assertTrue(m, "login must set a session cookie")
+        cookie = m[0].split(":", 1)[1].split(";", 1)[0].strip()
+        st, _, body = _http(self.port, "GET", "/blacklist", cookie=cookie)
+        self.assertEqual(st, 200, "an authenticated operator must still be able to pull it")
+        self.assertIn(b"10.13.13.2", body, "the blacklist content itself is unchanged")
+
+
 if __name__ == "__main__":
     unittest.main()
+
