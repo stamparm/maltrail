@@ -158,6 +158,8 @@ def update_trails(force=False, offline=False):
             if config.DISABLED_FEEDS:
                 filenames = [filename for filename in filenames if os.path.splitext(os.path.split(filename)[-1])[0] not in re.split(r"[^\w]+", config.DISABLED_FEEDS)]
 
+            empty_feeds = []
+
             for i in xrange(len(filenames)):
                 filename = filenames[i]
 
@@ -189,8 +191,17 @@ def update_trails(force=False, offline=False):
                                     duplicates[item[0]].add(item[1][1])
                                 if not (item[0] in trails and (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) or trails[item[0]][1] in HIGH_PRIORITY_REFERENCES)) or (item[1][1] in HIGH_PRIORITY_REFERENCES and "history" not in item[1][0]) or any(_ in item[1][0] for _ in HIGH_PRIORITY_INFO_KEYWORDS):
                                     trails[item[0]] = item[1]
-                            if not results and not any(_ in url for _ in ("abuse.ch", "cobaltstrike")):
-                                print("[x] something went wrong during remote data retrieval ('%s')" % url)
+                            # A feed that yields nothing is reported, whatever the host. This used
+                            # to skip abuse.ch and cobaltstrike URLs, presumably because a tracker
+                            # with no live C2s legitimately returns an empty list - but the
+                            # exemption also silenced feeds whose service had been RETIRED, and six
+                            # of them (Palevo Tracker, Ransomware Tracker x3, ZeuS Tracker x2) sat
+                            # in the tree fetching dead hosts for years with nothing ever saying so.
+                            # Being told about a feed that is briefly empty is much cheaper than not
+                            # being told about one that is permanently dead.
+                            if not results:
+                                empty_feeds.append(url)
+                                print("[!] no indicators from '%s' (empty response, or the feed's format changed)" % url)
                         except Exception as ex:
                             print("[x] something went wrong during processing of feed file '%s' ('%s')" % (filename, ex))
 
@@ -199,6 +210,13 @@ def update_trails(force=False, offline=False):
                     del module
                 except Exception:
                     pass
+
+            # One list at the end, because a per-feed line scrolls past in a run this long. A feed
+            # that is empty on every update is dead and should be removed, not tolerated.
+            if empty_feeds:
+                print("[!] %d feed(s) produced no indicators this run:" % len(empty_feeds))
+                for url in empty_feeds:
+                    print("[!]     %s" % url)
 
             # custom trails from remote location
             if config.CUSTOM_TRAILS_URL:
