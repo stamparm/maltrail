@@ -113,6 +113,7 @@ class BACKGROUND:
     RESET = "\033[0m"
     LIGHT_YELLOW = "\033[103m"
     LIGHT_BLUE = "\033[104m"
+    OLIVE = "\033[48;5;100m"   # 256-colour; the 8-colour backgrounds are all spoken for
     LIGHT_CYAN = "\033[106m"
     BLACK = "\033[40m"
     GREEN = "\033[42m"

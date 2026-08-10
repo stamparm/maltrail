@@ -207,8 +207,19 @@ Only for the comparison tooling (`sensor/tools/parity.py`, `sensor/tools/bench_c
 replays traffic through the old Python sensor as its reference — **not** needed to build or run the
 sensor itself:
 
+`pcapy-ng` is a C extension, so it is **built** at install time and needs the Python headers and
+`libpcap-dev` — a missing `Python.h` is the usual failure here:
+
 ```bash
-sudo apt-get install python3-pip    # dnf install python3-pip / zypper install python311-pip
+# Debian / Ubuntu / Raspberry Pi OS
+sudo apt-get install python3-pip python3-dev libpcap-dev
+# RHEL / Fedora
+sudo dnf install python3-pip python3-devel libpcap-devel
+# openSUSE / SLES
+sudo zypper install python311-pip python311-devel libpcap-devel
+# FreeBSD
+sudo pkg install py311-pip python311 libpcap
+
 pip install -r old/requirements.txt
 ```
 
