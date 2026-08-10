@@ -50,6 +50,7 @@ def fetch():
 
             # The family name carries the dual-use warning by itself: an analyst reading
             # "connectwise c2 certificate" knows why it might be a legitimate estate.
-            retval[fingerprint] = ("%s c2 certificate (suspicious)" % family, __reference__)
+            # "cert", not "certificate": this string is a column in the reporting table.
+            retval[fingerprint] = ("%s c2 cert (suspicious)" % family, __reference__)
 
     return retval
