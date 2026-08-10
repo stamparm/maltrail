@@ -50,7 +50,7 @@ fn feed_server_flight(h: &mut Harness, der: &[u8], src: &str, dst: &str) {
 fn a_listed_certificate_is_detected_by_its_fingerprint() {
     let der = c2_certificate();
     let digest = sha1_hex(&der);
-    let mut h = harness_with(&[(digest.as_str(), "asyncrat c2 certificate (suspicious)", "(sslbl)")]);
+    let mut h = harness_with(&[(digest.as_str(), "asyncrat c2 cert (suspicious)", "(sslbl)")]);
 
     feed_server_flight(&mut h, &der, "203.0.113.7", "10.0.0.5");
     h.flush();
@@ -60,7 +60,7 @@ fn a_listed_certificate_is_detected_by_its_fingerprint() {
     let event = &events[0];
     assert_eq!(event.trail_type, "CERT");
     assert_eq!(event.trail, digest);
-    assert!(event.info.contains("c2 certificate"), "{}", event.info);
+    assert!(event.info.contains("c2 cert"), "{}", event.info);
     assert_eq!(event.reference, "(sslbl)");
     // The server is the source of its own certificate, so the event points at the C2.
     assert_eq!(event.src_ip, "203.0.113.7");
@@ -93,7 +93,7 @@ fn the_switch_turns_it_off() {
     let digest = sha1_hex(&der);
     let mut options = HarnessOptions::quiet();
     options.extra.push("CHECK_TLS_CERTIFICATES false".to_string());
-    let mut h = Harness::with_options(&[(digest.as_str(), "c2 certificate (suspicious)", "(sslbl)")], options);
+    let mut h = Harness::with_options(&[(digest.as_str(), "c2 cert (suspicious)", "(sslbl)")], options);
 
     feed_server_flight(&mut h, &der, "203.0.113.7", "10.0.0.5");
     h.flush();
@@ -106,7 +106,7 @@ fn a_certificate_split_across_segments_is_not_half_matched() {
     // than a fingerprint of the fragment, which would match nothing and look like a clean run.
     let der = c2_certificate();
     let digest = sha1_hex(&der);
-    let mut h = harness_with(&[(digest.as_str(), "c2 certificate (suspicious)", "(sslbl)")]);
+    let mut h = harness_with(&[(digest.as_str(), "c2 cert (suspicious)", "(sslbl)")]);
 
     let flight = server_flight(&der);
     let half = &flight[..flight.len() / 2];
