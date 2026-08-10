@@ -170,13 +170,32 @@ Method, per-protocol breakdown, instruction counts and the profiler output are i
 
 ## Quick start
 
-Linux, `libpcap`, Rust 1.74+ for the sensor, and **Python 3.7+** — the sensor uses it to build
-`trails.csv`, so on 3.6 (openSUSE Leap 15 / SLE 15) the trail set stays empty and nothing is
-detected. `setcap` comes from `libcap2-bin` / `libcap` / `libcap-progs`. `-T` checks both.
+Install the prerequisites first — **all of them**, or the build fails at the link step with
+`cannot find -lpcap`:
+
+```bash
+# Debian / Ubuntu / Raspberry Pi OS
+sudo apt-get install cargo libpcap-dev libcap2-bin python3
+# RHEL / Fedora
+sudo dnf install cargo libpcap-devel libcap python3
+# openSUSE / SLES     (do NOT add rustup; the packaged rust 1.74 already qualifies)
+sudo zypper install cargo rust libpcap-devel libcap-progs python311
+```
+
+* `cargo` + `rust` **1.74 or newer** — building the sensor. Distribution packages qualify; the MSRV
+  is kept old on purpose.
+* `libpcap-dev` / `libpcap-devel` — the **headers**, not just the runtime library. The runtime
+  `libpcap0.8` alone is what produces `cannot find -lpcap`.
+* `libcap2-bin` / `libcap` / `libcap-progs` — provides `setcap`, so the sensor captures without
+  running as root.
+* **Python 3.7+** — the sensor uses it to build `trails.csv`. On 3.6 (openSUSE Leap 15 / SLE 15)
+  the trail set stays empty and nothing is detected.
+
+`-T` checks every one of these and tells you which is missing.
 
 Prebuilt sensor binaries for `x86_64` and `aarch64` are attached to every
-[release](https://github.com/stamparm/maltrail/releases) with a SHA-256 checksum, so a Rust
-toolchain is only needed to build from source. To build it anyway:
+[release](https://github.com/stamparm/maltrail/releases) with a SHA-256 checksum — those need only
+`libpcap0.8` at runtime and no toolchain at all. To build from source instead:
 
 ```bash
 git clone --depth 1 https://github.com/stamparm/maltrail.git
