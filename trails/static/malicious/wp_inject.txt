@@ -7034,3 +7034,4 @@ yusialone.top
 # Generic
 
 /wp-imcludes/
+/wp_comment_spammer.py
