@@ -354,9 +354,27 @@ One line per detection, whitespace-separated, CSV-quoted where needed:
 "<time>" <sensor> <src_ip> <src_port> <dst_ip> <dst_port> <proto> <type> <trail> "<info>" <reference>
 ```
 
-`type` is what matched — `DNS`, `IP`, `IPORT`, `URL`, `PATH`, `HTTP`, `UA`, `PORT` — `info` is why
-it is considered bad, and `reference` is where the trail came from: `(static)`, a feed name, or
-`(heuristic)`.
+`type` is what matched — `DNS`, `IP`, `IPORT`, `URL`, `PATH`, `HTTP`, `UA`, `PORT`, `CERT` —
+`info` is why it is considered bad, and `reference` is where the trail came from: `(static)`, a
+feed name, or `(heuristic)`.
+
+### Checking a single indicator
+
+```bash
+curl 'http://127.0.0.1:8338/check?q=www.sub.evil.example'
+{"query": "www.sub.evil.example", "found": true, "trail": "evil.example",
+ "info": "asyncrat (malware)", "reference": "(static)"}
+```
+
+Answers whether one domain, IP or URL is in the trail set, and which key matched — a subdomain of
+a listed domain reports the parent, and a URL is tried as `host/path` then as the bare host. Reads
+through the memory-mapped trail store, so it costs the server no memory, and picks up trail
+updates without a restart.
+
+It is unauthenticated, like `/trails` beside it: that endpoint already serves the entire trail set
+to anyone (it is how a sensor pulls from `UPDATE_SERVER`), so a single-key lookup discloses
+strictly less than what is already public on the same port. Event data is a different matter and
+stays gated.
 
 ---
 
