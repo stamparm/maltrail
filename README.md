@@ -121,16 +121,18 @@ trail set** and the same configuration, one worker each:
 
 | processor | ns/packet | packets/s | Gbit/s | old sensor, ns/packet | faster |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| AMD Ryzen 9 5900X | 272 | 3,682,638 | 25.5 | 10,070 | **37×** |
-| AMD Ryzen 7 PRO 4750U | 550 | 1,817,980 | 12.6 | 16,656 | **30×** |
-| Broadcom BCM2712 (Raspberry Pi 5) | 800 | 1,250,631 | 8.7 | 16,701 | **21×** |
+| Ryzen 9 5900X | 272 | 3,682,638 | 25.5 | 10,070 | **37×** |
+| Ryzen 7 PRO 4750U | 550 | 1,817,980 | 12.6 | 16,656 | **30×** |
+| RPi 5 | 800 | 1,250,631 | 8.7 | 16,701 | **21×** |
+| EPYC 7402, 2 vCPU | 1,647 | 607,303 | 4.2 | 23,439 | **14×** |
 
-`sensor.py` costs 16.7 µs/packet on both the BCM2712 and the Ryzen 7 PRO 4750U: it is
-interpreter-bound, so it barely responds to the processor, while this sensor tracks it closely
-(272 → 550 → 800 ns). That is why the multiple *shrinks* on slower hardware rather than growing.
+The multiple *shrinks* on slower hardware rather than growing, because this sensor is the more
+hardware-sensitive of the two: across those four machines its cost spans 6.1× (272 → 1,647 ns)
+while `sensor.py` spans only 2.3× (10.1 → 23.4 µs). Interpreted work is dominated by interpreter
+overhead that no processor removes, so the faster the machine, the larger the gap.
 
-The isolated mixed-traffic figure above (552 ns) and this replay figure (550 ns) are the same
-measurement taken two ways, which is the intended cross-check.
+The isolated mixed-traffic figure above (552 ns) and the Ryzen 7 PRO 4750U replay figure (550 ns)
+are the same measurement taken two ways, which is the intended cross-check.
 
 Reproduce it yourself — the harness is committed, and it prints both sensors' event counts so a
 throughput number can never be quoted without its correctness context:
@@ -146,30 +148,30 @@ different questions:
   1.5M-row trail set costs the Rust sensor ~1.1-1.5 s, and 300,000 packets take under a second.
   That ratio comes out around **3×**, and it is not the packet path.
 * **steady state** — startup measured separately with a 1-packet replay and subtracted. This is
-  the per-packet cost, and it is the **21-37×** above.
+  the per-packet cost, and it is the **14-37×** above.
 
 Trail loading is the one place the old sensor still wins: it mmaps a prebuilt `trails.csv.bin`
 sidecar, so its *warm* start is faster than building the store from CSV — 1.25 s against 2.24 s on
-the Pi. That cost is paid once per process; the packet path is paid 300,000 times.
+an RPi 5. That cost is paid once per process; the packet path is paid 300,000 times.
 
 Both numbers move with hardware, so measure your own — and note the harness reports `events=0` for
 both sensors on this mix, because it is deliberately benign traffic. Detections add event-logging
 cost on top.
 
 Memory does not grow with cores: the 1.5M-trail store is **68.5 MB**, shared immutably by every
-worker. Building it is the startup cost above — 1.2 s on the Ryzen 7 PRO 4750U, 2.2 s on the
-Raspberry Pi 5 — and it is paid once per process, not per worker.
+worker. Building it is the startup cost above — 1.2 s on the Ryzen 7 PRO 4750U, 2.2 s on an
+RPi 5 — and it is paid once per process, not per worker.
 
-**One capture worker by default.** Its packet path handles 8.7 Gbit/s of this mix on a Raspberry
-Pi 5 and 25.5 Gbit/s on a Ryzen 9 5900X — in both cases more than the host's network interface can
-deliver, which is why one worker is the default rather than a compromise.
+**One capture worker by default.** Its packet path handles 4.2 Gbit/s of this mix on a 2-vCPU VM,
+8.7 Gbit/s on an RPi 5 and 25.5 Gbit/s on a Ryzen 9 5900X — in every case more than the host's
+network interface can deliver, which is why one worker is the default rather than a compromise.
 Extra workers are an explicit opt-in (`CAPTURE_FANOUT`), because the kernel flow-hashes capture
 while the scan heuristics count per source: of the heuristic alerts one worker raises, 91% survive
 at 2 sockets, 86% at 4, 65% at 8. Exact trail detection is identical at every worker count. Scale
 out when `maltrail_capture_dropped_total` says to, not before.
 
 <sub>All figures: heuristics enabled, the real 1.5M-row trail set, one capture worker, fastest of
-three runs. The steady-state ratio has ranged 21–37× across the processors above; the per-packet
+three runs. The steady-state ratio has ranged 14–37× across the processors above; the per-packet
 costs are what bound how much traffic one worker can absorb. Method, per-protocol breakdown,
 instruction counts and the profiler output are in
 [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md).</sub>
@@ -200,6 +202,15 @@ sudo zypper install cargo rust libpcap-devel libcap-progs python311
   the trail set stays empty and nothing is detected.
 
 `-T` checks every one of these and tells you which is missing.
+
+Only for the comparison tooling (`sensor/tools/parity.py`, `sensor/tools/bench_compare.py`), which
+replays traffic through the old Python sensor as its reference — **not** needed to build or run the
+sensor itself:
+
+```bash
+sudo apt-get install python3-pip    # dnf install python3-pip / zypper install python311-pip
+pip install -r old/requirements.txt
+```
 
 Prebuilt sensor binaries for `x86_64` and `aarch64` are attached to every
 [release](https://github.com/stamparm/maltrail/releases) with a SHA-256 checksum — those need only
