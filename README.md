@@ -116,17 +116,15 @@ eight-physical-core box, because the rest is SMT — hardware, not lock contenti
 Against the old Python sensor, replaying the **same 300,000-packet capture** with the **same real
 trail set** and the same configuration, one worker each:
 
-| | per packet | packets/s | |
-| --- | ---: | ---: | --- |
-| sensor (Rust) | 550 ns | 1,817,980 | Ryzen 7 PRO 4750U |
-| old sensor (Python) | 16,656 ns | 60,037 | same box |
-| | **30× faster** | | |
-| sensor (Rust) | 272 ns | 3,682,638 | Ryzen 9 5900X |
-| old sensor (Python) | 10,070 ns | 99,305 | same box |
-| | **37× faster** | | |
-| sensor (Rust) | 800 ns | 1,250,631 | Raspberry Pi 5 |
-| old sensor (Python) | 16,701 ns | 59,876 | same box |
-| | **21× faster** | | |
+| box | sensor (Rust) | old sensor (Python) | faster |
+| --- | ---: | ---: | ---: |
+| Ryzen 9 5900X | 272 ns/pkt · 3,682,638 pkt/s | 10,070 ns/pkt · 99,305 pkt/s | **37×** |
+| Ryzen 7 PRO 4750U | 550 ns/pkt · 1,817,980 pkt/s | 16,656 ns/pkt · 60,037 pkt/s | **30×** |
+| Raspberry Pi 5 | 800 ns/pkt · 1,250,631 pkt/s | 16,701 ns/pkt · 59,876 pkt/s | **21×** |
+
+`sensor.py` costs ~16.7 µs/packet on both the Pi and the laptop — it is interpreter-bound, so it
+barely responds to hardware, while this sensor tracks the CPU (272 → 550 → 800 ns). That is why the
+multiple *shrinks* on slower hardware rather than growing.
 
 Reproduce it yourself — the harness is committed, and it prints both sensors' event counts so a
 throughput number can never be quoted without its correctness context:
