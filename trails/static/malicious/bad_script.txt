@@ -9951,6 +9951,31 @@ drvdb9rcebidk.cloudfront.net
 
 /rat.ps1
 
+# Reference: https://x.com/Yusufcancakiir/status/2086828204921090513
+
+/ai_poison_payload.py
+/behavior_engine.py
+/botnet_acquisition_targets.json
+/botnet_node_hunter.py
+/clickbank_scraper.py
+/clickbank_vector_scan.py
+/cpa_fraud_engine.py
+/exploit_elastic_gamma.py
+/exploit_mysql_beta.py
+/exploit_mysql_ssh_deploy.py
+/exploit_tomcat_alpha.py
+/infect_swarm.py
+/masscan_acquisition.py
+/masscan_output.json
+/payload.tar.gz
+/pequod_zombie
+/pequod_zombie.pub
+/redis_injector.py
+/telegram_drop.py
+/webrtc_payload.js
+/zombie_dialer.py
+/zombie_proxy.py
+
 # Generic
 
 /5c0ca79.php
