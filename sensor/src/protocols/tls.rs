@@ -252,3 +252,132 @@ mod tests {
         assert_eq!(parse_sni_extension(&lst, true), None);
     }
 }
+
+/// The leaf (first) certificate of a TLS **server** flight, as raw DER.
+///
+/// `core/tls_intel.py` parses this on the reporting side for CN/SAN; the sensor needs the bytes
+/// themselves, because the indicator published by threat feeds is the certificate's SHA-1
+/// fingerprint (abuse.ch SSLBL and friends list exactly that).
+///
+/// # What this can and cannot see
+///
+/// TLS 1.3 encrypts the Certificate message, so this only ever fires on 1.2 and below. That is
+/// not the limitation it sounds like for this purpose: the negotiated version is capped by what
+/// the *client* offers, and the implants these fingerprints identify — .NET RATs, old Java team
+/// servers, hand-rolled stacks — offer 1.2. Self-signed single-certificate flights, which is
+/// what a C2 typically presents, also fit inside one TCP segment, so they survive the sensor's
+/// lack of stream reassembly. A chained CA-issued certificate usually will not, and is missed.
+///
+/// Walks the record layer because ServerHello and Certificate are separate handshake messages
+/// that share a flight and are frequently coalesced into one record or split across several.
+/// Every read is bounds-checked; malformed input yields `None`, never a panic.
+pub fn server_certificate_der(data: &[u8]) -> Option<&[u8]> {
+    let mut r = Reader::new(data);
+    // Reassemble nothing: scan the handshake messages that are present in THIS buffer.
+    while r.left() >= 5 {
+        if *r.b.get(r.p)? != 0x16 {
+            return None; // not (or no longer) a handshake record
+        }
+        r.take(3)?; // content type + legacy version
+        let rec_len = r.u16()? as usize;
+        let body = r.take(rec_len.min(r.left()))?;
+
+        let mut h = Reader::new(body);
+        while h.left() >= 4 {
+            let msg_type = h.u8()?;
+            let msg_len = h.u24()? as usize;
+            // A message may be truncated by the snaplen or by segmentation; take what is here.
+            let msg = h.take(msg_len.min(h.left()))?;
+            if msg_type != 0x0b {
+                continue; // 11 == Certificate
+            }
+            let mut c = Reader::new(msg);
+            let list_len = c.u24()? as usize;
+            let list = c.take(list_len.min(c.left()))?;
+            let mut l = Reader::new(list);
+            let cert_len = l.u24()? as usize;
+            // Only a complete leaf certificate can be fingerprinted: hashing a truncated one
+            // produces a digest that matches nothing, which would look like "no detection"
+            // rather than "could not see it".
+            if cert_len == 0 || cert_len > l.left() {
+                return None;
+            }
+            return l.take(cert_len);
+        }
+    }
+    None
+}
+
+#[cfg(test)]
+mod cert_tests {
+    use super::*;
+
+    /// Wrap a DER blob in Certificate -> handshake -> record, as a server would send it.
+    fn flight(der: &[u8], with_server_hello: bool) -> Vec<u8> {
+        let mut hs = Vec::new();
+        if with_server_hello {
+            // A minimal ServerHello ahead of it, since that is the real coalesced shape.
+            let sh_body = vec![0u8; 38];
+            hs.push(0x02);
+            hs.extend_from_slice(&[0, 0, sh_body.len() as u8]);
+            hs.extend_from_slice(&sh_body);
+        }
+        let mut certmsg = Vec::new();
+        let entry_len = der.len();
+        let list_len = entry_len + 3;
+        certmsg.extend_from_slice(&[(list_len >> 16) as u8, (list_len >> 8) as u8, list_len as u8]);
+        certmsg.extend_from_slice(&[(entry_len >> 16) as u8, (entry_len >> 8) as u8, entry_len as u8]);
+        certmsg.extend_from_slice(der);
+        hs.push(0x0b);
+        hs.extend_from_slice(&[(certmsg.len() >> 16) as u8, (certmsg.len() >> 8) as u8, certmsg.len() as u8]);
+        hs.extend_from_slice(&certmsg);
+
+        let mut out = vec![0x16, 0x03, 0x03, (hs.len() >> 8) as u8, hs.len() as u8];
+        out.extend_from_slice(&hs);
+        out
+    }
+
+    #[test]
+    fn extracts_the_leaf_certificate() {
+        let der: Vec<u8> = (0..200u32).map(|i| i as u8).collect();
+        assert_eq!(server_certificate_der(&flight(&der, false)), Some(&der[..]));
+    }
+
+    #[test]
+    fn skips_the_server_hello_in_the_same_flight() {
+        let der: Vec<u8> = (0..300u32).map(|i| (i % 251) as u8).collect();
+        assert_eq!(server_certificate_der(&flight(&der, true)), Some(&der[..]));
+    }
+
+    #[test]
+    fn a_client_hello_is_not_a_certificate() {
+        assert_eq!(server_certificate_der(&build_client_hello("example.com", true)), None);
+    }
+
+    #[test]
+    fn a_truncated_certificate_is_refused_rather_than_half_hashed() {
+        let der: Vec<u8> = (0..400u32).map(|i| i as u8).collect();
+        let full = flight(&der, false);
+        for cut in [8, 20, 60, 120, full.len() - 1] {
+            assert_eq!(server_certificate_der(&full[..cut]), None, "cut at {cut}");
+        }
+    }
+
+    #[test]
+    fn never_panics_on_arbitrary_input() {
+        let mut state = 0x1234_5678u32;
+        for _ in 0..20_000 {
+            let mut buf = Vec::new();
+            state = state.wrapping_mul(1_103_515_245).wrapping_add(12_345);
+            let n = (state >> 16) as usize % 300;
+            for _ in 0..n {
+                state = state.wrapping_mul(1_103_515_245).wrapping_add(12_345);
+                buf.push((state >> 16) as u8);
+            }
+            if !buf.is_empty() {
+                buf[0] = 0x16; // steer most of it into the parser proper
+            }
+            let _ = server_certificate_der(&buf);
+        }
+    }
+}

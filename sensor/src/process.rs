@@ -315,7 +315,9 @@ pub fn process_packet(st: &mut WorkerState, packet_bytes: &[u8], sec: u64, usec:
 
     // TLS/QUIC handshake-head SNI -> _check_domain, the one detection the pcapy-ng fast
     // prefilter adds (core/fastfilter.py:head_sni). Gated on the same switches.
-    if st.cfg.use_fast_prefilter && st.cfg.fast_flow_cutoff > 0 {
+    // Two independent features share the TLS handshake record, so either one is reason enough
+    // to look at it: SNI extraction (the prefilter's contribution) and certificate matching.
+    if (st.cfg.use_fast_prefilter && st.cfg.fast_flow_cutoff > 0) || st.cfg.check_tls_certificates {
         handshake_sni(st, ip_data, &header, sec, usec);
     }
 
@@ -344,11 +346,22 @@ fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader
             if payload.first() != Some(&0x16) {
                 return;
             }
-            let Some(sni) = crate::protocols::tls::client_hello_sni(payload) else { return };
             let ep = Endpoints { src: header.src, src_port: tcph.src_port, dst: header.dst, dst_port: tcph.dst_port };
-            check_domain(st, &sni, sec, usec, ep, PROTO::TCP);
+            // The same record type carries both directions: a ClientHello gives a domain, the
+            // server's flight gives a certificate. A packet is one or the other, so the cheaper
+            // ClientHello parse runs first and short-circuits.
+            if st.cfg.use_fast_prefilter && st.cfg.fast_flow_cutoff > 0 {
+                if let Some(sni) = crate::protocols::tls::client_hello_sni(payload) {
+                    check_domain(st, &sni, sec, usec, ep, PROTO::TCP);
+                    return;
+                }
+            }
+            if st.cfg.check_tls_certificates {
+                check_server_certificate(st, payload, sec, usec, ep);
+            }
         }
-        17 => {
+        // QUIC carries no cleartext certificate, so this arm stays the prefilter's alone.
+        17 if st.cfg.use_fast_prefilter && st.cfg.fast_flow_cutoff > 0 => {
             let Some(udph) = packet::parse_udp(ip_data, header.header_len) else { return };
             let payload = packet::udp_payload(ip_data, header.header_len);
             if payload.first().map(|b| b & 0x80 == 0).unwrap_or(true) {
@@ -360,6 +373,41 @@ fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader
         }
         _ => {}
     }
+}
+
+/// Match a TLS server certificate against the trail set by its SHA-1 fingerprint.
+///
+/// Certificate fingerprints are what threat feeds publish for C2 servers (abuse.ch SSLBL lists
+/// ~10,000 of them, still growing), and they are the one indicator that survives when a C2 moves
+/// address and domain: re-keying costs the operator more than re-registering.
+///
+/// The fingerprint is looked up in the ordinary trail store, so it inherits updating,
+/// whitelisting and atomic reloads with no separate machinery — a 40-character hex string is
+/// just another exact-match key.
+fn check_server_certificate(st: &mut WorkerState, payload: &[u8], sec: u64, usec: u32, ep: Endpoints) {
+    let Some(der) = crate::protocols::tls::server_certificate_der(payload) else { return };
+    let digest = sha1_hex(der);
+    st.metrics.trail_lookups += 1;
+    let Some(hit) = st.trails.db().get(&digest).map(|v| (v.info.to_string(), v.reference.to_string())) else {
+        return;
+    };
+    let (info, reference) = hit;
+    emit_ep(st, sec, usec, ep, PROTO::TCP, TRAIL::CERT, Field::Text(digest), &info, &reference);
+}
+
+/// Lower-case hex SHA-1, the form certificate feeds publish and therefore the form the trail
+/// keys are in.
+fn sha1_hex(data: &[u8]) -> String {
+    use sha1::{Digest, Sha1};
+    let mut hasher = Sha1::new();
+    hasher.update(data);
+    let out = hasher.finalize();
+    let mut hex = String::with_capacity(40);
+    for byte in out {
+        hex.push(char::from_digit((byte >> 4) as u32, 16).unwrap_or('0'));
+        hex.push(char::from_digit((byte & 0xf) as u32, 16).unwrap_or('0'));
+    }
+    hex
 }
 
 /// The per-second heuristics sweep at the top of `_process_packet`.

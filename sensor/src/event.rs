@@ -13,6 +13,8 @@ pub mod trail_type {
     pub const UA: &str = "UA";
     pub const PATH: &str = "PATH";
     pub const PORT: &str = "PORT";
+    /// TLS server-certificate SHA-1 fingerprint. New in this sensor; see docs/COMPATIBILITY.md.
+    pub const CERT: &str = "CERT";
 }
 
 /// `core/enums.py:PROTO`

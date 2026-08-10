@@ -127,6 +127,10 @@ pub struct Config {
     pub user_whitelist: Option<PathBuf>,
     pub user_ignorelist: Option<PathBuf>,
     pub use_condensed_storage: bool,
+    /// Match TLS server certificates against the trail set by SHA-1 fingerprint. New in this
+    /// sensor (`sensor.py` extracts certificates for reporting but never matches them), so
+    /// `tools/parity.py` turns it off to keep the differential comparison honest.
+    pub check_tls_certificates: bool,
     /// New: opt out of the startup/periodic trail refresh (for hosts where trails.csv is managed
     /// externally, e.g. pushed by the Maltrail server). Default OFF, i.e. the sensor refreshes
     /// trails exactly like sensor.py does.
@@ -724,6 +728,8 @@ impl Config {
             user_ignorelist,
             // absent switch defaults to on, exactly like read_config()
             use_condensed_storage: get_bool_opt(&raw, "USE_CONDENSED_STORAGE").unwrap_or(true),
+            // CHECK_ prefix, so read_config() already coerces it to a bool; default on.
+            check_tls_certificates: get_bool_opt(&raw, "CHECK_TLS_CERTIFICATES").unwrap_or(true),
             disable_trail_updates: get_bool(&raw, "DISABLE_TRAIL_UPDATES"),
             repair_truncated_trails: get_bool_opt(&raw, "REPAIR_TRUNCATED_TRAILS").unwrap_or(true),
             // cfg_bool, NOT get_bool: only names starting with USE_/SET_/CHECK_/ENABLE_/SHOW_/
