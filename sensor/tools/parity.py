@@ -260,7 +260,7 @@ def oracle_is_runnable(python):
         cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     out = probe.communicate()[0].decode("utf8", "replace").strip()
     if probe.returncode != 0:
-        return out or "pcapy/pcapy-ng is not importable"
+        return (out.strip().splitlines() or ["pcapy/pcapy-ng is not importable"])[-1].strip()
     return None
 
 
