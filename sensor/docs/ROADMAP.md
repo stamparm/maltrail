@@ -339,8 +339,9 @@ it replaces, and correctness gates outrank optimisation. These are queued behind
 1. **Default worker count: ONE.** `CAPTURE_WORKERS` no longer derives from `PROCESS_COUNT`, so the
    shipped `maltrail.conf` (`PROCESS_COUNT 16`) now runs a single capture worker. The old default
    spent scan-heuristic sensitivity — of the alerts one worker raises, 91% survive at 2 sockets,
-   86% at 4, 65% at 8 — to buy throughput that a single worker already has at ~865 ns/packet
-   (~1.1M packets/s). Exact trail detection is identical at every worker count, so nothing is
+   86% at 4, 65% at 8 — to buy throughput that a single worker already has: 550 ns/packet
+   (1.8M packets/s) on the reference laptop CPU, 272 ns (3.7M) on a Ryzen 9 5900X. Exact trail
+   detection is identical at every worker count, so nothing is
    traded away for IOC matching. `CAPTURE_FANOUT`/`CAPTURE_WORKERS` still scale out for anyone who
    measures a real drop rate, which also demotes source-affine fanout (§2.1) from a fix to an
    optimisation. Locked by `config::tests::worker_count_is_opt_in`.

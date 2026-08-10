@@ -141,9 +141,13 @@ def main():
                              "scheduler and page-cache noise, which otherwise makes the "
                              "startup/steady-state split unstable)")
     parser.add_argument("--skip-python", action="store_true", help="only benchmark the Rust sensor")
-    parser.add_argument("--slope", action="store_true",
-                        help="also replay 2x the packets to separate startup cost (trail loading) "
-                             "from the steady-state per-packet cost")
+    # ON BY DEFAULT. The headline claim about this sensor is its per-packet cost, and the raw
+    # wall-clock ratio does not measure that: on a 300k-packet replay with a real 1.5M-row trail
+    # set, most of the wall clock on BOTH sensors is trail loading. Reporting only the ratio made
+    # the documented command contradict the documented number — 3x instead of 28x — which reads
+    # as either a lie or a regression. Neither was true; they measured different things.
+    parser.add_argument("--no-startup-split", dest="slope", action="store_false", default=True,
+                        help="skip the startup measurement and report only whole-process wall clock")
     options = parser.parse_args()
 
     binary = os.path.join(ROOT, "sensor", "target", options.profile, "maltrail-sensor")
@@ -198,6 +202,7 @@ def main():
             })
 
         print("")
+        print("[i] whole process, INCLUDING startup (trail loading dominates a short replay):")
         print("%-8s %10s %10s %12s %14s %10s %10s" % ("sensor", "wall(s)", "cpu(s)", "packets/s", "Gbit/s(mix)", "peak RSS", "events"))
         print("-" * 82)
         for row in rows:
@@ -231,6 +236,7 @@ def main():
                 row["steady_pps"] = (options.packets / work) if work > 0 else 0.0
 
             print("")
+            print("[i] steady state, startup EXCLUDED — this is the per-packet cost:")
             print("%-8s %14s %14s %16s" % ("sensor", "startup(s)", "ns/packet", "steady packets/s"))
             print("-" * 56)
             for row in rows:
@@ -241,9 +247,11 @@ def main():
             if len(rows) == 2 and rows[0]["steady_pps"] > 0 and rows[1]["steady_pps"] > 0:
                 print("[i] steady-state speedup (startup excluded): %.1fx"
                       % (rows[1]["steady_pps"] / rows[0]["steady_pps"]))
-            print("[i] NOTE: startup is dominated by trail loading. sensor.py's FIRST run also")
-            print("[i]       builds its mmap trail store (trails.csv.bin), so a cold first start")
-            print("[i]       is markedly slower than the warm figure reported here.")
+            print("[i] NOTE: startup is dominated by trail loading, and it is the one place the")
+            print("[i]       old sensor wins - it mmaps a prebuilt trails.csv.bin sidecar. So on a")
+            print("[i]       SHORT replay the wall-clock ratio above understates the packet path")
+            print("[i]       badly; the steady-state row is the number to quote. sensor.py's FIRST")
+            print("[i]       run also builds that sidecar, so a cold start is slower still.")
 
         if len(rows) == 2:
             py, rs = rows[0], rows[1]
