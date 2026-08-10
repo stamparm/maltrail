@@ -86,8 +86,9 @@ existing SIEM it also emits CEF over syslog (`SYSLOG_SERVER`) and Logstash JSON
 
 ## Performance
 
-The sensor is Rust, one thread per capture worker, sharing a single immutable trail store. Cost per
-packet, by traffic type:
+The sensor is Rust, one thread per capture worker, sharing a single immutable trail store.
+
+Packet path in isolation (`sensor/benches/hotpath.rs`, AMD Ryzen 7 PRO 4750U), by traffic type:
 
 | traffic | per packet |
 | --- | ---: |
@@ -99,8 +100,8 @@ packet, by traffic type:
 | HTTP request (169 B) | 602 ns |
 | DNS query, every name unique (DGA flood) | 1,102 ns |
 
-Workers share nothing mutable, so that cost is what each additional core buys you. Replaying the
-866-byte mix:
+Workers share nothing mutable, so that cost is what each additional core buys you. Offline replay
+of the 866-byte mix on the same processor, by worker count:
 
 | workers | packets/s | Gbit/s | vs 1 worker |
 | ---: | ---: | ---: | ---: |
@@ -110,21 +111,26 @@ Workers share nothing mutable, so that cost is what each additional core buys yo
 | 8 | 8,552,231 | 59.25 | 5.07× |
 | 16 | 10,165,773 | 70.43 | 6.02× |
 
-**One core saturates 10 GbE.** Scaling is near-linear to four workers and then tapers on an
-eight-physical-core box, because the rest is SMT — hardware, not lock contention.
+**One core saturates 10 GbE** on this mix. Scaling is near-linear to four workers and then tapers,
+because beyond that this processor's eight physical cores are exhausted and the rest is SMT —
+hardware, not lock contention. These are software-path figures: a live NIC adds driver and ring
+costs, so measure your own hardware and watch `maltrail_capture_dropped_total`.
 
 Against the old Python sensor, replaying the **same 300,000-packet capture** with the **same real
 trail set** and the same configuration, one worker each:
 
-| box | sensor (Rust) | old sensor (Python) | faster |
-| --- | ---: | ---: | ---: |
-| Ryzen 9 5900X | 272 ns/pkt · 3,682,638 pkt/s | 10,070 ns/pkt · 99,305 pkt/s | **37×** |
-| Ryzen 7 PRO 4750U | 550 ns/pkt · 1,817,980 pkt/s | 16,656 ns/pkt · 60,037 pkt/s | **30×** |
-| Raspberry Pi 5 | 800 ns/pkt · 1,250,631 pkt/s | 16,701 ns/pkt · 59,876 pkt/s | **21×** |
+| processor | ns/packet | packets/s | Gbit/s | old sensor, ns/packet | faster |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| AMD Ryzen 9 5900X | 272 | 3,682,638 | 25.5 | 10,070 | **37×** |
+| AMD Ryzen 7 PRO 4750U | 550 | 1,817,980 | 12.6 | 16,656 | **30×** |
+| Broadcom BCM2712 (Raspberry Pi 5) | 800 | 1,250,631 | 8.7 | 16,701 | **21×** |
 
-`sensor.py` costs ~16.7 µs/packet on both the Pi and the laptop — it is interpreter-bound, so it
-barely responds to hardware, while this sensor tracks the CPU (272 → 550 → 800 ns). That is why the
-multiple *shrinks* on slower hardware rather than growing.
+`sensor.py` costs 16.7 µs/packet on both the BCM2712 and the Ryzen 7 PRO 4750U: it is
+interpreter-bound, so it barely responds to the processor, while this sensor tracks it closely
+(272 → 550 → 800 ns). That is why the multiple *shrinks* on slower hardware rather than growing.
+
+The isolated mixed-traffic figure above (552 ns) and this replay figure (550 ns) are the same
+measurement taken two ways, which is the intended cross-check.
 
 Reproduce it yourself — the harness is committed, and it prints both sensors' event counts so a
 throughput number can never be quoted without its correctness context:
@@ -151,22 +157,21 @@ both sensors on this mix, because it is deliberately benign traffic. Detections 
 cost on top.
 
 Memory does not grow with cores: the 1.5M-trail store is **68.5 MB**, shared immutably by every
-worker. Building it is the startup cost above — 1.2 s on a laptop CPU, 2.2 s on a Raspberry Pi 5 —
-and it is paid once per process, not per worker.
+worker. Building it is the startup cost above — 1.2 s on the Ryzen 7 PRO 4750U, 2.2 s on the
+Raspberry Pi 5 — and it is paid once per process, not per worker.
 
-**One capture worker by default** — 1.25M packets/s on a Raspberry Pi 5, 1.8M on an eight-core
-laptop CPU, 3.7M on a Ryzen 9 5900X. Even the Pi clears gigabit on one core, which is enough for
-almost any sensor host.
+**One capture worker by default.** Its packet path handles 8.7 Gbit/s of this mix on a Raspberry
+Pi 5 and 25.5 Gbit/s on a Ryzen 9 5900X — in both cases more than the host's network interface can
+deliver, which is why one worker is the default rather than a compromise.
 Extra workers are an explicit opt-in (`CAPTURE_FANOUT`), because the kernel flow-hashes capture
 while the scan heuristics count per source: of the heuristic alerts one worker raises, 91% survive
 at 2 sockets, 86% at 4, 65% at 8. Exact trail detection is identical at every worker count. Scale
 out when `maltrail_capture_dropped_total` says to, not before.
 
-<sub>AMD Ryzen 7 PRO 4750U (8 physical cores), heuristics on, real trail set, fastest of three runs.
-The ratio has ranged 14–27× across runs and hardware; the per-packet costs above are the ones that
-bound how much traffic a worker can absorb. **These are software-path figures** — a live NIC adds
-driver and ring costs, so measure your own hardware and watch `maltrail_capture_dropped_total`.
-Method, per-protocol breakdown, instruction counts and the profiler output are in
+<sub>All figures: heuristics enabled, the real 1.5M-row trail set, one capture worker, fastest of
+three runs. The steady-state ratio has ranged 21–37× across the processors above; the per-packet
+costs are what bound how much traffic one worker can absorb. Method, per-protocol breakdown,
+instruction counts and the profiler output are in
 [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md).</sub>
 
 ---
@@ -234,13 +239,17 @@ directory, capture filter and privileges, and tells you exactly what is missing:
 
 ```
 [o] log directory: '/var/log/maltrail' is writable
-[o] capture privileges: CAP_NET_RAW present
+[o] log storage: 199.0 GB free on '/var/log/maltrail'
 [o] capture filter: udp or icmp or (tcp and (tcp[tcpflags] == tcp-syn or port 80 or port...
+[o] capture privileges: CAP_NET_RAW present
 [o] interface: any
-[o] workers: 16 (PACKET_FANOUT required; verify with tools/fanout_check.py as root)
+[o] workers: 1 - undiluted per-source heuristics; raise 'CAPTURE_FANOUT' only if
+    'maltrail_capture_dropped_total' climbs
 [o] whitelist: 3440 entries, 18 CIDR range(s)
 [o] trails: 1505265 loaded (0 malformed row(s)), ipv4=144758 ipv4:port=253517 ipv6=2014 wildcard=29
+[o] trail updates: updater present, python3 is Python 3.12.3
 [o] heuristics: on (disabled: none)
+[o] USE_CONDENSED_STORAGE: on, writing '/var/log/maltrail/meta.sqlite'
 [i] configuration test PASSED
 ```
 
@@ -250,7 +259,8 @@ nothing; `-T` names both.
 ### As a service
 
 ```bash
-sudo useradd --system --no-create-home --shell /usr/sbin/nologin maltrail
+sudo groupadd --system maltrail
+sudo useradd --system --gid maltrail --no-create-home --shell /usr/sbin/nologin maltrail
 sudo rsync -a --exclude .git . /opt/maltrail/
 sudo cp /opt/maltrail/maltrail-{server,sensor}.service /etc/systemd/system/
 sudo systemctl daemon-reload
@@ -285,7 +295,8 @@ worth knowing:
 | --- | --- |
 | `MONITOR_INTERFACE` | interface(s) to capture on, or `any` |
 | `CAPTURE_FILTER` | BPF filter; the default keeps bulk line-rate traffic out of userspace |
-| `PROCESS_COUNT` | capture workers — one per core is a reasonable default |
+| `PROCESS_COUNT` | worker processes for the **old** sensor. This sensor does not derive its worker count from it — see `CAPTURE_FANOUT` |
+| `CAPTURE_FANOUT` | extra capture sockets (default: one worker). Costs scan-heuristic sensitivity; see [Performance](#performance) |
 | `LOG_DIR` | where events are written (`/var/log/maltrail`) |
 | `TRAILS_FILE` | where the built trail set lives (`~/.maltrail/trails.csv`; `/var/lib/maltrail` under the units) |
 | `LOG_SERVER` | ship events to a remote server instead of, or as well as, logging locally |
