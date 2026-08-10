@@ -843,8 +843,17 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             return PING_RESPONSE
 
-        def __is_fail2ban_allowed(self):
-            allowlist = getattr(config, "FAIL2BAN_ALLOWLIST", None)
+        def __is_allowlisted(self, *options):
+            """Is the caller's IP in the first configured allowlist among `options`?
+
+            Deny when none of them is set: these endpoints hand out source IPs from the event log,
+            so an unset allowlist has to mean "nobody", not "everybody".
+            """
+            allowlist = None
+            for option in options:
+                allowlist = getattr(config, option, None)
+                if allowlist:
+                    break
             if not allowlist:
                 return False  # secure by default
 
@@ -897,7 +906,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             global _fail2ban_cache
             global _fail2ban_key
 
-            if not self.__is_fail2ban_allowed():
+            if not self.__is_allowlisted("FAIL2BAN_ALLOWLIST"):
                 self.send_response(_http_client.NOT_FOUND)
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
                 return None
@@ -940,6 +949,26 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         def _blacklist(self, params):
             global _blacklist_cache
             global _blacklist_key
+
+            # Access control. This returns the SOURCE IPs of logged events matching the operator's
+            # BLACKLIST rules - the same class of data /fail2ban returns, and that every other
+            # log-reading endpoint (/events, /counts, /hunt, /meta, /geo) gates behind a session.
+            # It was the one endpoint with neither control, which was an oversight rather than a
+            # decision: an unauthenticated caller could learn which internal hosts had been flagged.
+            #
+            # Gated like /fail2ban rather than by session alone, because nothing in the reporting
+            # UI calls this - it exists to be pulled by firewall automation, which has no session
+            # to present. An authenticated operator is still allowed through, so a logged-in admin
+            # can fetch it from anywhere; with USERS unset, get_session() returns the anonymous
+            # session and behaviour is unchanged for deployments that run without authentication.
+            #
+            # BLACKLIST_ALLOWLIST falls back to FAIL2BAN_ALLOWLIST so that existing installs, whose
+            # shipped configuration already allowlists loopback and the RFC1918 ranges, keep working
+            # without a configuration change. 404, not 401, to match the sibling endpoint.
+            if self.get_session() is None and not self.__is_allowlisted("BLACKLIST_ALLOWLIST", "FAIL2BAN_ALLOWLIST"):
+                self.send_response(_http_client.NOT_FOUND)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
 
             self.send_response(_http_client.OK)
             self.send_header(HTTP_HEADER.CONNECTION, "close")
