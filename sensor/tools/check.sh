@@ -20,6 +20,13 @@ missing=""
 for tool in cargo rustfmt python3; do
     command -v "$tool" >/dev/null 2>&1 || missing="$missing $tool"
 done
+# 3.7+, for the same reason the sensor checks it: core/ uses str.isascii(), and a generator run
+# on an older interpreter can emit a subtly wrong settings_gen.rs rather than failing.
+if command -v python3 >/dev/null 2>&1 && ! python3 -c 'import sys; sys.exit(0 if sys.version_info[:2] >= (3, 7) else 1)'; then
+    echo "[!] python3 is $(python3 -c 'import sys; print("%d.%d.%d" % sys.version_info[:3])'), but 3.7+ is required"
+    echo "[?] install a newer Python and re-run with it first on PATH"
+    exit 1
+fi
 # clippy is a cargo subcommand rather than a binary on PATH.
 cargo clippy --version >/dev/null 2>&1 || missing="$missing cargo-clippy"
 if [ -n "$missing" ]; then
