@@ -117,7 +117,24 @@ def run(cmd, cwd):
             after.ru_utime - before.ru_utime,
             after.ru_stime - before.ru_stime,
             peak[0],
-            output.decode("utf8", "replace"))
+            output.decode("utf8", "replace"),
+            process.returncode)
+
+
+def _indent(text, prefix="      "):
+    return "\n".join(prefix + line for line in (text or "").strip().splitlines())
+
+
+def oracle_is_runnable(python):
+    """Can old/sensor.py replay a pcap at all? Returns None if yes, else why not."""
+    probe = subprocess.Popen(
+        [python, "-c", "import pcapy"], cwd=ROOT,
+        stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    out = probe.communicate()[0].decode("utf8", "replace").strip()
+    if probe.returncode == 0:
+        return None
+    # The last traceback line is the diagnosis; the frames above it are noise here.
+    return (out.strip().splitlines() or ["pcapy/pcapy-ng is not importable"])[-1].strip()
 
 
 def count_events(log_dir):
@@ -154,7 +171,29 @@ def main():
     if not os.path.isfile(binary):
         sys.exit("[!] build first: cargo build --release --manifest-path sensor/Cargo.toml")
     if not os.path.isfile(options.trails):
-        sys.exit("[!] trails file not found: %s (run tools/gen_corpus.py)" % options.trails)
+        default_corpus = os.path.join(ROOT, "sensor", "tests", "corpus", "trails.csv")
+        if os.path.abspath(options.trails) == os.path.abspath(default_corpus):
+            sys.exit("[!] trails file not found: %s\n"
+                     "[?] build the fixture corpus:  python3 sensor/tools/gen_corpus.py"
+                     % options.trails)
+        # Telling someone to run gen_corpus.py here is a dead end: it writes the FIXTURE corpus
+        # under sensor/tests/corpus/ and can never create the path they asked for, so the same
+        # error comes straight back. It did, repeatedly, to somebody benchmarking a Pi.
+        sys.exit("[!] trails file not found: %s\n"
+                 "[?] that is the operator's real trail set; build it with either\n"
+                 "      python3 sensor/tools/update_trails.py -c maltrail.conf\n"
+                 "    or by starting the sensor once (it builds the trail set on first run).\n"
+                 "[?] to benchmark against the bundled fixture set instead, drop --trails and run\n"
+                 "      python3 sensor/tools/gen_corpus.py"
+                 % options.trails)
+
+    if not options.skip_python:
+        unrunnable = oracle_is_runnable(options.python)
+        if unrunnable:
+            sys.exit("[!] the python sensor (old/sensor.py) cannot run: %s\n"
+                     "[?] install its capture bindings:  pip install -r old/requirements.txt\n"
+                     "[?] or benchmark only this sensor:  --skip-python"
+                     % unrunnable)
 
     workdir = tempfile.mkdtemp(prefix="maltrail-bench-")
     try:
@@ -191,9 +230,17 @@ def main():
                     shutil.rmtree(log_dir, ignore_errors=True)
                     os.makedirs(log_dir)
                 measured = run(cmd, ROOT)
+                if measured[5] != 0:
+                    # A sensor that exited non-zero processed nothing, and timing it produces
+                    # numbers that are not merely wrong but absurd - a 0.24 s "run" of 300,000
+                    # packets came out as 1 ns/packet and 1,053,845,226 packets/s, and the
+                    # comparison duly reported the Rust sensor as 10x SLOWER. Refuse to report.
+                    sys.exit("[!] the %s sensor exited with status %d without doing the work:\n%s\n"
+                             "[i] no benchmark is possible until that is fixed."
+                             % (label, measured[5], _indent(measured[4])))
                 if best is None or measured[0] < best[0]:
                     best = measured
-            wall, user, system, rss, output = best
+            wall, user, system, rss, output, _rc = best
             events = count_events(log_dir)
             pps = len(packets) / wall if wall > 0 else 0
             rows.append({
@@ -233,20 +280,29 @@ def main():
                 startup = min(run(cmd, ROOT)[0] for _ in range(max(1, options.repeat)))
                 row["startup"] = startup
                 work = row["wall"] - startup
-                row["steady_pps"] = (options.packets / work) if work > 0 else 0.0
+                # If startup accounts for essentially the whole run there is no steady state left
+                # to measure, and dividing by the remainder invents a number. Say so instead.
+                row["steady_pps"] = (options.packets / work) if work > 0.05 else 0.0
 
             print("")
             print("[i] steady state, startup EXCLUDED — this is the per-packet cost:")
             print("%-8s %14s %14s %16s" % ("sensor", "startup(s)", "ns/packet", "steady packets/s"))
             print("-" * 56)
             for row in rows:
+                if not row["steady_pps"]:
+                    print("%-8s %14.2f %14s %16s"
+                          % (row["label"], row["startup"], "unmeasurable", "startup ~= whole run"))
+                    continue
                 print("%-8s %14.2f %14.0f %16s"
                       % (row["label"], row["startup"],
-                         1e9 / row["steady_pps"] if row["steady_pps"] else 0,
+                         1e9 / row["steady_pps"],
                          "{:,.0f}".format(row["steady_pps"])))
             if len(rows) == 2 and rows[0]["steady_pps"] > 0 and rows[1]["steady_pps"] > 0:
                 print("[i] steady-state speedup (startup excluded): %.1fx"
                       % (rows[1]["steady_pps"] / rows[0]["steady_pps"]))
+            elif len(rows) == 2:
+                print("[!] steady state could not be separated for at least one sensor: the run was")
+                print("[!] too short relative to its startup. Raise --packets (try 1000000).")
             print("[i] NOTE: startup is dominated by trail loading, and it is the one place the")
             print("[i]       old sensor wins - it mmaps a prebuilt trails.csv.bin sidecar. So on a")
             print("[i]       SHORT replay the wall-clock ratio above understates the packet path")
