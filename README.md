@@ -381,7 +381,7 @@ MIT. See [`LICENSE`](LICENSE).
 
 ## Presentations
 
-* 47th TF-CSIRT Meeting, Prague (Czech Republic), 2016 ([slides](https://www.terena.org/activities/tf-csirt/meeting47/M.Stampar-Maltrail.pdf))
+* 47th TF-CSIRT Meeting, Prague (Czech Republic), 2016 ([slides](https://web.archive.org/web/20161109135211/https://www.terena.org/activities/tf-csirt/meeting47/M.Stampar-Maltrail.pdf))
 
 ## Publications
 
