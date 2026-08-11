@@ -14,7 +14,7 @@
 
 
 
-- Version 3.1 -> 3.1.1 (unreleased)
+- Version 3.1 -> 3.1.1 (11 Aug 2026)
 
 [+] 'install.sh': one command sets up a working deployment - dependencies,
     a shallow clone, the prebuilt sensor, an unprivileged user, log and
