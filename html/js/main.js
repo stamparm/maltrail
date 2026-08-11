@@ -160,6 +160,7 @@
     destinations: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
     ports: TYPE_ICON_P.PORT,
     protocols: '<rect width="8" height="6" x="2" y="4" rx="1"/><rect width="8" height="6" x="14" y="14" rx="1"/><path d="M6 10v3a1 1 0 0 0 1 1h11"/>',
+    tags: '<path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r="1.5"/>',
     events: '<line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/>'
   };
   function hdrIcon(k) { return '<span class="h4icon">' + _lu(HDR_ICON[k], 13) + "</span>"; }
@@ -1152,6 +1153,8 @@
         '<div class="dwr-status">' + ['investigating', 'resolved', 'fp'].map(function (k) { return '<button data-st="' + k + '" class="trbtn tr-' + k + (trg === k ? ' on' : '') + '">' + TRIAGE_LABEL[k] + '</button>'; }).join('') + '</div>' +
         '<div class="dwr-actions"><button data-a="wls">whitelist src</button><button data-a="wlt">whitelist trail</button><button data-a="hide">' + (state.hidden[t.uidc] ? "unhide" : "hide") + '</button><button data-a="vt" class="ext">\u2197 VT</button><button data-a="abuse" class="ext">\u2197 AbuseIPDB</button><button data-a="shodan" class="ext">\u2197 Shodan</button><button data-a="copy">copy</button><button data-a="ioc">copy IOCs</button></div>' +
         '<div class="dwr-local" role="note">⚠ status, whitelist, hide, tags &amp; notes are saved in <b>this browser only</b> — not shared with the sensor or other users</div>' +
+        '<div class="dwr-sec"><h4>' + hdrIcon("tags") + '<span id="dwr_tags_h">tags</span></h4><div class="dchips" id="dwr_tags"></div>' +
+          '<input class="taginput dwr-taginput" id="dwr_tagadd" maxlength="24" aria-label="add a tag to this threat" placeholder="add a tag\u2026"></div>' +
         '<div class="dwr-sec"><h4>' + hdrIcon("note") + 'note</h4><textarea class="dwr-note" id="dwr_note" aria-label="case note for this threat" placeholder="add a case note\u2026">' + esc(getNote(t.uidc)) + '</textarea></div>' +
         '<div class="dwr-sec dwr-related"><h4>' + hdrIcon("related") + 'related</h4>' + '<button class="relbtn" data-rel="src"><b>' + relSrc + '</b> other threats from this source</button>' + '<button class="relbtn" data-rel="trail"><b>' + relTrail + '</b> other threats on this trail</button></div>' +
         '<div class="dwr-sec"><h4>' + hdrIcon("sources") + 'sources \u00b7 ' + srcs.length + '</h4><div class="dchips">' + ipChips(srcs) + '</div></div>' +
@@ -1185,6 +1188,13 @@
     d.querySelector('[data-a="ioc"]').onclick = function () { var b = charTrim(charTrim(("" + t.trail).replace(/\([^)]*\)/g, "").replace(/\\\(/g, "").replace(/\\\)/g, ""), " "), "."); var arr = []; if (b) arr.push(b); setList(t.dstS).forEach(function (ip) { if (/^\d{1,3}(\.\d{1,3}){3}$/.test(ip)) arr.push(ip); }); copyText(arr.map(defang).join("\n"), null); };
     d.querySelectorAll('[data-st]').forEach(function (b) { b.onclick = function () { var k = b.getAttribute('data-st'); setTriage(t.uidc, state.triage[t.uidc] === k ? null : k); closeDrawer(); }; });
     var _na = d.querySelector('#dwr_note'); if (_na) _na.onblur = function () { setNote(t.uidc, _na.value); };
+    drawerTags(d, t);
+    var _ta = d.querySelector('#dwr_tagadd');
+    if (_ta) _ta.onkeydown = function (e) {
+      if (e.key !== "Enter") return;
+      e.preventDefault();
+      if (_ta.value.trim()) { addTag(t.uidc, _ta.value); _ta.value = ""; drawerTags(d, t); _ta.focus(); }
+    };
     var _rs = d.querySelector('[data-rel="src"]'); if (_rs) _rs.onclick = function () { closeDrawer(); state.filters = ['src:' + ('' + t.src).toLowerCase()]; state.input = ''; state.sev = null; state.page = 0; var f = document.getElementById('filter'); if (f) f.value = ''; refresh(); };
     var _rt = d.querySelector('[data-rel="trail"]'); if (_rt) _rt.onclick = function () { closeDrawer(); state.filters = ['trail:' + _nt.toLowerCase()]; state.input = ''; state.sev = null; state.page = 0; var f = document.getElementById('filter'); if (f) f.value = ''; refresh(); };
     var cv = d.querySelector(".dwr-spark"); if (cv) drawDwrSpark(cv, t.hours, sevColor(t.sev));
@@ -1545,7 +1555,7 @@
         return '<span class="tag" data-f="tag:' + esc(tg) + '">' + esc(tg) +
           '<span class="tx" data-untag="' + t.uidc + '|' + esc(tg) + '" title="remove tag">×</span></span>';
       }).join("");
-      if (allTags.length > 2) tagHtml += '<span class="tagmore" title="' + esc(allTags.join(", ")) + '">+' + (allTags.length - 2) + '</span>';
+      if (allTags.length > 2) tagHtml += '<span class="tagmore" title="' + esc(allTags.join(", ")) + '\u2003open the detail panel to edit all of them">+' + (allTags.length - 2) + '</span>';
       var tr = document.createElement("tr"); tr.className = cls; tr.dataset.ri = i;
       tr.innerHTML =
         '<td data-l="threat"><div class="threatline"><span class="uid ' + ltClass(hslText(hue, 0.60, 0.48)) + '" data-f="uid:' + t.uidc + '" title="filter: this threat id" style="background:hsl(' + hue + ',60%,48%);color:' + hslText(hue, 0.60, 0.48) + '">' + t.uidc + '</span>' +
@@ -1605,6 +1615,22 @@
       if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(txt).catch(execCopy); return; }
     } catch (e) { }
     execCopy();
+  }
+  // The row shows at most two tags and collapses the rest into "+N", so a threat with four tags had
+  // two that could not be removed from anywhere in the UI (#19568). The detail panel edits the
+  // whole set.
+  function drawerTags(d, t) {
+    var box = d.querySelector("#dwr_tags"); if (!box) return;
+    var tags = tagsOf(t.uidc);
+    var h4 = d.querySelector("#dwr_tags_h"); if (h4) h4.textContent = "tags \u00b7 " + tags.length;
+    box.innerHTML = tags.length
+      ? tags.map(function (tg) {
+          return '<span class="tag">' + esc(tg) + '<span class="tx" data-rm="' + esc(tg) + '" role="button" tabindex="0" title="remove tag">\u00d7</span></span>';
+        }).join("")
+      : '<span class="dwr-none">none</span>';
+    box.querySelectorAll("[data-rm]").forEach(function (el) {
+      el.onclick = function () { removeTag(t.uidc, el.getAttribute("data-rm")); drawerTags(d, t); };
+    });
   }
   function openTagInput(btn) {
     var uid = btn.getAttribute("data-tag");

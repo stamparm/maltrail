@@ -84,6 +84,13 @@ class TestDrawerFields(unittest.TestCase):
         self.assertTrue(drawer, "could not find openDrawer() in main.js")
         self.drawer = drawer.group(0)
 
+    def test_the_whole_tag_set_is_editable_here(self):
+        # The row shows two tags and hides the rest behind "+N", so this is the only place a third
+        # tag can be removed (#19568).
+        self.assertIn('id="dwr_tags"', self.drawer, "the detail panel lost its tag section")
+        self.assertIn('id="dwr_tagadd"', self.drawer, "the detail panel lost its tag input")
+        self.assertIn("data-rm=", self.js, "drawer tags are no longer removable")
+
     def test_sections_cover_the_event_tuple(self):
         for section in ("sources", "destinations", "destination ports", "source ports", "protocols", "raw events"):
             self.assertIn(section + " \\u00b7 ", self.drawer,
