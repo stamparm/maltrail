@@ -53,12 +53,12 @@ pass=0; fail=0; failed=""; findings=""
 ok()  { printf '    \033[32mok\033[0m       %s\n' "$1"; pass=$((pass + 1)); }
 bad() { printf '    \033[31mFAIL\033[0m     %s%s\n' "$1" "${2:+  ($2)}"; fail=$((fail + 1)); failed="$failed $3/$1"; }
 
-run_env() {
-    local env=$1 image out marks
+# One container, judging nothing: the output is only captured, so all five environments can be in
+# flight at once. They share nothing, and running them one after another was pure waiting.
+install_in() {
+    local env=$1 image
     image=$(image_for "$env")
-    [ -n "$image" ] || { printf '    unknown environment: %s\n' "$env"; fail=$((fail + 1)); return; }
-
-    printf '\n\033[1;36m== %s (%s)\033[0m\n' "$env" "$image"
+    [ -n "$image" ] || { echo "unknown environment: $env"; return 1; }
 
     # A CI checkout is a detached HEAD, where --abbrev-ref says "HEAD" and no such branch exists.
     local ref; ref=$(git symbolic-ref --short -q HEAD || git rev-parse HEAD)
@@ -70,9 +70,13 @@ run_env() {
         args+=(--sensor-bin /sensor-under-test)
     fi
 
-    out=$(docker run --rm "${mounts[@]}" "$image" \
-              sh /src/tests/install/assert.sh "${args[@]}" 2>&1)
+    docker run --rm "${mounts[@]}" "$image" sh /src/tests/install/assert.sh "${args[@]}" 2>&1
+}
 
+judge() {
+    local env=$1 out marks
+    out=$(cat "$WORK/$env.out" 2>/dev/null)
+    printf '\n\033[1;36m== %s (%s)\033[0m\n' "$env" "$(image_for "$env")"
     marks=$(printf '%s\n' "$out" | sed -n 's/^A //p')
     got() { printf '%s\n' "$marks" | grep -qx "$1"; }
 
@@ -118,12 +122,23 @@ run_env() {
 
 [ -n "$SENSOR_BIN" ] || printf '\033[1;33m[!]\033[0m no built sensor at %s - sensor checks skipped\n' "sensor/target/release"
 
-for env in ${*:-$ENVIRONMENTS}; do
-    run_env "$env"
+WORK=$(mktemp -d)
+trap 'rm -rf "$WORK"' EXIT
+targets=${*:-$ENVIRONMENTS}
+start=$(date +%s)
+
+printf 'installing in parallel: %s\n' "$targets"
+for env in $targets; do
+    install_in "$env" > "$WORK/$env.out" 2>&1 &
+done
+wait
+
+for env in $targets; do
+    judge "$env"
 done
 
 printf '\n=============================================\n'
-printf 'install.sh: %d passed, %d failed\n' "$pass" "$fail"
+printf 'install.sh: %d passed, %d failed, %d seconds\n' "$pass" "$fail" "$(( $(date +%s) - start ))"
 [ -n "$failed" ] && printf 'failed:%s\n' "$failed"
 if [ -n "$findings" ]; then
     printf '\nfindings (real, but not install.sh bugs):\n'

@@ -108,7 +108,9 @@ grep -q '# operator marker' "$CONF" && echo "A conf-preserved"
 # 6. run from inside a checkout (what someone who already cloned will type): it must adopt THAT
 #    tree, clone nothing, and leave the working tree - including untracked custom trails and edited
 #    tracked files - exactly as it found it.
-cp -a /src /home/checkout 2>/dev/null
+# A shallow clone, NOT `cp -a /src`: the mounted repository carries sensor/target, which is 14 GB
+# of build artifacts, and copying that once per environment was the entire runtime of this suite.
+git clone --depth 1 --quiet file:///src /home/checkout
 cd /home/checkout || exit 1
 echo '# operator edit' >> maltrail.conf
 mkdir -p trails/custom && echo 'evil.test,"mine","(custom)"' > trails/custom/mine.txt
