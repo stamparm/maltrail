@@ -136,10 +136,44 @@ _version_cache = None
 _counts_cache = {}  # NOTE: per daily-log event count keyed by filepath -> (mtime, size, count); past-day logs are immutable so they're read once, not on every poll
 _geo_cache = {}  # NOTE: per daily-log country aggregation keyed by filepath -> running {mtime,size,offset,counts,mapped,unmapped}; grows INCREMENTALLY (only new bytes are scanned) so a live/growing current-day log stays cheap
 _geo_lock = threading.Lock()  # NOTE: the incremental read-modify-write must be serialized (concurrent /geo for the same day would otherwise double-count)
+CUSTOM_TRAIL_MARKER = b",(custom)"  # the reference column of a trails-file row sourced from trails/custom
+_public_trails_cache = None  # the trails file with every custom row removed, for the last _public_trails_key
+_public_trails_key = None    # (mtime, size) of the trails file the cached copy was derived from
 _reference_cache = {}  # trail -> (reference, source_relpath): on-demand static-trails scan result; bounded
 _REFERENCE_CACHE_MAX = 8192
 _REFERENCE_TIME_BUDGET = 2.0
 _STATIC_TRAILS_DIR = os.path.join(ROOT_DIR, "trails", "static")
+
+def _public_trails(content, key):
+    """`content` with every trails-file row that came from trails/custom removed.
+
+    Row-wise on bytes rather than through csv: the file is millions of rows and this runs on a
+    polled endpoint. The reference column is written unquoted by update_trails() (csv.writer with
+    QUOTE_MINIMAL, and "(custom)" contains no delimiter or quote), so a custom row is exactly one
+    that ends with ",(custom)" - and the caller already checked that at least one exists before
+    paying for the split.
+
+    Cached on `key`, the (mtime, size) of the very handle `content` was read from - NOT a fresh
+    stat() here. update_trails() swaps the file atomically underneath a reader, so stat-ing again
+    could pair the OLD bytes with the NEW file's key and pin a stale trail set in the cache until
+    the update after next.
+    """
+
+    global _public_trails_cache
+    global _public_trails_key
+
+    if key is not None and _public_trails_key == key and _public_trails_cache is not None:
+        return _public_trails_cache
+
+    # splitlines(True) keeps each row's terminator, so the rows that survive are byte-identical to
+    # the ones the sensor would have parsed from the file itself.
+    retval = b"".join(line for line in content.splitlines(True) if not line.rstrip(b"\r\n").endswith(CUSTOM_TRAIL_MARKER))
+
+    if key is not None:
+        _public_trails_cache = retval
+        _public_trails_key = key
+
+    return retval
 
 def _lookup_trail_reference(trail):
     """On demand, find which static-trails pile a trail sits in and return that pile's '# Reference:' header
@@ -957,6 +991,20 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
                 return None
 
+            # Per-user network scope, and the one endpoint where it cannot be applied: the
+            # observables table is (observable, flags, first_seen, last_seen, count) with no
+            # network dimension at all, so there is nothing to filter on. An answer here is
+            # necessarily about the WHOLE estate - "something, somewhere, talked to this, N times
+            # since T" - which is exactly what a restricted analyst is not entitled to.
+            #
+            # Refused rather than answered with {}: an empty body would read as "never observed",
+            # which is a different and worse thing to tell an analyst than "not yours to ask".
+            # Unrestricted users (and every deployment without USERS) are unaffected.
+            if getattr(session, "netfilters", None) is not None:
+                self.send_response(_http_client.FORBIDDEN)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
             self.send_response(_http_client.OK)
             self.send_header(HTTP_HEADER.CONNECTION, "close")
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
@@ -1018,6 +1066,25 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     traceback.print_exc()
 
         def _trails(self, params):
+            """The whole trail set, as CSV. This is how a sensor pulls from UPDATE_SERVER.
+
+            Custom trails are stripped for anyone who is not entitled to see them. update_trails()
+            merges trails/custom into the SAME file as the public sources (core/update.py), so
+            serving the file verbatim handed every caller the operator's private indicators -
+            internal hostnames, internal addresses, an ongoing investigation's IOCs - while
+            /check and /events go to real trouble to mask exactly those. It was the one place the
+            masking was simply absent.
+
+            Entitlement is the rule /check already uses, so there is one definition of "may see
+            custom trails" rather than two: a session that is not mask_custom. With USERS unset
+            get_session() returns the anonymous session, so an unauthenticated deployment - which
+            is the usual UPDATE_SERVER setup - still gets the complete set and nothing changes
+            for it.
+            """
+
+            session = self.get_session()
+            reveal_custom = session is not None and not getattr(session, "mask_custom", False)
+
             self.send_response(_http_client.OK)
             self.send_header(HTTP_HEADER.CONNECTION, "close")
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
@@ -1025,11 +1092,21 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # NOTE: TRAILS_FILE may not exist yet (fresh server with USE_SERVER_UPDATE_TRAILS off, or a first
             # update that produced no trails). A bare open() would raise -> 500 + traceback, and a sensor pulling
             # from UPDATE_SERVER would fail. Return an empty body instead; the sensor then keeps its current trails.
-            if os.path.isfile(config.TRAILS_FILE):
-                with open(config.TRAILS_FILE, "rb") as f:
-                    return f.read()
+            if not os.path.isfile(config.TRAILS_FILE):
+                return b""
 
-            return b""
+            with open(config.TRAILS_FILE, "rb") as f:
+                content = f.read()
+                try:    # from THIS handle, so the cache key always describes the bytes just read
+                    _ = os.fstat(f.fileno())
+                    key = (_.st_mtime, _.st_size)
+                except OSError:
+                    key = None
+
+            if reveal_custom or CUSTOM_TRAIL_MARKER not in content:
+                return content
+
+            return _public_trails(content, key)
 
         def _check(self, params):
             """Is one observable in the trail set? GET /check?q=<domain|ip|url>
@@ -1242,10 +1319,23 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # BLACKLIST_ALLOWLIST falls back to FAIL2BAN_ALLOWLIST so that existing installs, whose
             # shipped configuration already allowlists loopback and the RFC1918 ranges, keep working
             # without a configuration change. 404, not 401, to match the sibling endpoint.
-            if self.get_session() is None and not self.__is_allowlisted("BLACKLIST_ALLOWLIST", "FAIL2BAN_ALLOWLIST"):
+            session = self.get_session()
+
+            if session is None and not self.__is_allowlisted("BLACKLIST_ALLOWLIST", "FAIL2BAN_ALLOWLIST"):
                 self.send_response(_http_client.NOT_FOUND)
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
                 return None
+
+            # Per-user network scope. The rules select events; the response is the SOURCE address
+            # of each - so a restricted analyst was handed flagged hosts from networks they cannot
+            # see in /events. An allowlisted, unauthenticated puller (firewall automation) has no
+            # session and therefore no scope: unchanged, it still gets everything.
+            scope = self._scope(session)
+            if scope is None:   # malformed netfilters -> fail closed
+                self.send_response(_http_client.INTERNAL_SERVER_ERROR)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+            restricted, addresses, netmasks, regex = scope
 
             self.send_response(_http_client.OK)
             self.send_header(HTTP_HEADER.CONNECTION, "close")
@@ -1257,7 +1347,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             content = ""
             cleared = _cleared_sources()   # before the key: see the note in _fail2ban
-            key = (bl_name, int(time.time()) >> 3, _cleared_cache[0])  # NOTE: bl_name MUST be part of the key - the single global cache is shared across every /blacklist/<subpath>, so keying on time alone returns one blacklist's results for another within the TTL
+            key = (bl_name, int(time.time()) >> 3, _cleared_cache[0], self._scope_key(session))  # NOTE: bl_name MUST be part of the key - the single global cache is shared across every /blacklist/<subpath>, so keying on time alone returns one blacklist's results for another within the TTL. The scope key is here for the same reason: one shared cache, results that differ per user.
 
             if "BLACKLIST%s" % bl_name in config:
                 try:
@@ -1301,6 +1391,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                         continue
                                     if _event_precedes_clear(raw, line[3], cleared):
                                         continue
+                                    if restricted and not self._line_in_scope(raw, addresses, netmasks, regex)[0]:
+                                        continue
                                     for bl in blacklist:
                                         failed = False
                                         for f, n, r in bl:
@@ -1339,36 +1431,87 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             return addresses, netmasks, regex
 
+        def _line_in_scope(self, line, addresses, netmasks, regex):
+            """(visible, matched_ip) for one raw event line under a session's netfilters.
+
+            The single definition of "is this event inside the analyst's networks". It used to
+            live inline in _filter_events, which meant /events and /hunt enforced the scope and
+            /counts, /geo, /blacklist and /meta - all of which read the same logs - did not. A
+            restricted analyst could read the global picture out of the endpoints that had no
+            copy of this logic. One definition, called from all of them.
+
+            `addresses` is mutated as a memo, exactly as before: an address proven to be inside a
+            netmask is remembered so the next line costs a set lookup instead of the CIDR walk.
+            """
+
+            display = False
+            ip = None
+
+            if regex:
+                match = re.search(regex, line)
+                if match:
+                    ip = match.group(1)
+                    display = True
+
+            if not display and (addresses or netmasks):
+                for match in re.finditer(r"\b(\d+\.\d+\.\d+\.\d+)\b", line):
+                    if not display:
+                        ip = match.group(1)
+                    else:
+                        break
+
+                    if ip in addresses:
+                        display = True
+                        break
+                    elif netmasks:
+                        for _ in netmasks:
+                            prefix, mask = _.split('/')
+                            # NOTE: mask BOTH sides - a non-network-aligned CIDR (e.g. 10.0.5.0/16, as operators often write) would otherwise never match its own subnet, silently hiding events the analyst is entitled to (consistent with the fail2ban allowlist matching)
+                            if addr_to_int(ip) & make_mask(int(mask)) == addr_to_int(prefix) & make_mask(int(mask)):
+                                addresses.add(ip)
+                                display = True
+                                break
+
+            return display, ip
+
+        def _scope(self, session):
+            """(restricted, addresses, netmasks, regex) for `session`.
+
+            `restricted` is False for a session that may see everything, which is the fast path
+            every unrestricted deployment takes. Returns None if the netfilters are malformed -
+            callers must FAIL CLOSED on that, never fall through to unfiltered data.
+            """
+
+            if session is None or getattr(session, "netfilters", None) is None:
+                return False, set(), [], ""
+
+            built = self._build_netfilters(session)
+            if built is None:
+                return None
+
+            addresses, netmasks, regex = built
+            return True, addresses, netmasks, regex
+
+        def _scope_key(self, session):
+            """Cache-key component identifying a session's scope.
+
+            Any cache holding scope-filtered results MUST include this. The caches here are
+            module-global and shared across users, so keying an unrestricted analyst's result and
+            then serving it to a restricted one is the same disclosure by another route - which is
+            precisely how the first attempt at this fix would have failed.
+            """
+
+            netfilters = getattr(session, "netfilters", None) if session is not None else None
+            return None if netfilters is None else frozenset(netfilters)
+
         def _filter_events(self, handle, session, addresses, netmasks, regex):
             for line in handle:
-                display = session.netfilters is None
-                ip = None
                 line = line.decode(UNICODE_ENCODING, "ignore")
 
-                if regex:
-                    match = re.search(regex, line)
-                    if match:
-                        ip = match.group(1)
-                        display = True
-
-                if not display and (addresses or netmasks):
-                    for match in re.finditer(r"\b(\d+\.\d+\.\d+\.\d+)\b", line):
-                        if not display:
-                            ip = match.group(1)
-                        else:
-                            break
-
-                        if ip in addresses:
-                            display = True
-                            break
-                        elif netmasks:
-                            for _ in netmasks:
-                                prefix, mask = _.split('/')
-                                # NOTE: mask BOTH sides - a non-network-aligned CIDR (e.g. 10.0.5.0/16, as operators often write) would otherwise never match its own subnet, silently hiding events the analyst is entitled to (consistent with the fail2ban allowlist matching)
-                                if addr_to_int(ip) & make_mask(int(mask)) == addr_to_int(prefix) & make_mask(int(mask)):
-                                    addresses.add(ip)
-                                    display = True
-                                    break
+                if session.netfilters is None:
+                    display, ip = True, None
+                else:
+                    display, ip = self._line_in_scope(line, addresses, netmasks, regex)
 
                 if session.mask_custom and "(custom)" in line:
                     line = re.sub(r'("[^"]+"|[^ ]+) \(custom\)', "- (custom)", line)
@@ -1593,6 +1736,18 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
                 return None
 
+            # Per-user network scope. /events has always honoured it; this endpoint reported the
+            # GLOBAL daily totals to every authenticated user, so a analyst restricted to one
+            # network could read the size of the whole estate's activity off the chart. Same logs,
+            # same session, so the same rule applies here.
+            scope = self._scope(session)
+            if scope is None:   # malformed netfilters -> fail closed, never fall back to global counts
+                self.send_response(_http_client.INTERNAL_SERVER_ERROR)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+            restricted, addresses, netmasks, regex = scope
+            scope_key = self._scope_key(session)
+
             self.send_response(_http_client.OK)
             self.send_header(HTTP_HEADER.CONNECTION, "close")
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
@@ -1626,13 +1781,31 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         daystr = os.path.splitext(filename)[0]  # key by the log's date ("YYYY-MM-DD"); the client maps it directly, no timezone/DST math
                         size = os.path.getsize(filepath)
                         mtime = os.path.getmtime(filepath)
-                        cached = _counts_cache.get(filepath)
+                        # NOTE: scope_key is part of the cache key. This cache is a module global
+                        # shared by every request, so keying it on the filepath alone would let an
+                        # unrestricted user's total be served to a restricted one (and vice versa)
+                        # - reintroducing the very disclosure through the cache.
+                        cache_key = (filepath, scope_key)
+                        cached = _counts_cache.get(cache_key)
                         if cached and cached[0] == mtime and cached[1] == size:  # immutable (past-day) log -> reuse, skip the open+read
                             counts[daystr] = cached[2]
                         else:
-                            count = estimate_event_count(filepath, size)
+                            if restricted:
+                                # No estimating here: the estimate extrapolates from a sample of
+                                # the file, and a scoped count has to be of the lines the analyst
+                                # may actually see. Exact, and cached like the rest.
+                                count = 0
+                                try:
+                                    with open(filepath, "rb") as f_log:
+                                        for raw in f_log:
+                                            if self._line_in_scope(raw.decode(UNICODE_ENCODING, "ignore"), addresses, netmasks, regex)[0]:
+                                                count += 1
+                                except (OSError, IOError):
+                                    count = 0
+                            else:
+                                count = estimate_event_count(filepath, size)
                             counts[daystr] = count
-                            _counts_cache[filepath] = (mtime, size, count)
+                            _counts_cache[cache_key] = (mtime, size, count)
 
             return json.dumps(counts)
 
@@ -1648,6 +1821,17 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
                 return None
 
+            # Per-user network scope, as in /events and /counts. Without it the map showed a
+            # restricted analyst every country the WHOLE estate talked to - a coarse picture, but
+            # still the global one, and derived from log lines they may not read.
+            scope = self._scope(session)
+            if scope is None:   # malformed netfilters -> fail closed
+                self.send_response(_http_client.INTERNAL_SERVER_ERROR)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+            restricted, addresses, netmasks, regex = scope
+            scope_key = self._scope_key(session)
+
             self.send_response(_http_client.OK)
             self.send_header(HTTP_HEADER.CONNECTION, "close")
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
@@ -1660,7 +1844,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 with _geo_lock:
                     size = os.path.getsize(filepath)
                     mtime = os.path.getmtime(filepath)
-                    c = _geo_cache.get(filepath)
+                    cache_key = (filepath, scope_key)   # NOTE: shared global cache - see the note in _counts
+                    c = _geo_cache.get(cache_key)
                     if c and c["size"] == size and c["mtime"] == mtime:
                         counts, mapped, unmapped = c["counts"], c["mapped"], c["unmapped"]  # unchanged -> reuse
                     else:
@@ -1690,6 +1875,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                         parts = line[cut + 2:].split(b' ')  # sensor,src,sport,dst,dport,proto,type,TRAIL,...
                                         if len(parts) <= 7:
                                             continue
+                                        if restricted and not self._line_in_scope(line.decode(UNICODE_ENCODING, "ignore"), addresses, netmasks, regex)[0]:
+                                            continue
                                         # place the external malicious endpoint per trail type (see core.geo.event_country)
                                         cc = event_country(parts[6].decode("latin-1"), parts[1].decode("latin-1"), parts[3].decode("latin-1"), parts[7].decode("latin-1"))
                                         if cc:
@@ -1700,7 +1887,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         except Exception:
                             if config.SHOW_DEBUG:
                                 traceback.print_exc()
-                        _geo_cache[filepath] = {"mtime": mtime, "size": size, "offset": offset, "counts": counts, "mapped": mapped, "unmapped": unmapped}
+                        _geo_cache[cache_key] = {"mtime": mtime, "size": size, "offset": offset, "counts": counts, "mapped": mapped, "unmapped": unmapped}
                     result = {"counts": counts, "mapped": mapped, "unmapped": unmapped}
 
             out = dict(result)

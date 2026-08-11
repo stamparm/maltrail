@@ -12,7 +12,7 @@ use std::os::unix::fs::{OpenOptionsExt, PermissionsExt};
 use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::{Arc, Mutex, OnceLock};
-use std::time::{Instant, SystemTime, UNIX_EPOCH};
+use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 
 use crate::addr::parse_host_port;
 use crate::event::{local_date_string, local_time_string, syslog_time_string, Event, Field};
@@ -59,7 +59,11 @@ pub struct EventSink {
     condensed: HashMap<(String, String), Vec<Event>>,
     throttle: crate::throttle::Throttle,
     last_condense_flush: Instant,
-    endpoints: HashMap<String, Option<SocketAddr>>,
+    /// Resolved remote-logging endpoints. Only SUCCESSFUL resolutions are cached here; a failure
+    /// records a retry deadline in `endpoint_retry` instead, so a transient DNS outage cannot
+    /// silence the sink for the lifetime of the process.
+    endpoints: HashMap<String, SocketAddr>,
+    endpoint_retry: HashMap<String, Instant>,
     sock4: Option<UdpSocket>,
     sock6: Option<UdpSocket>,
     signature_id: Option<(String, Instant)>,
@@ -71,6 +75,10 @@ pub struct EventSink {
     pub events_written: u64,
     /// Local event-log open/write failures. Non-zero means detections were produced and LOST.
     pub log_write_errors: u64,
+    /// Remote-sink (LOG_SERVER / SYSLOG_SERVER / LOGSTASH_SERVER) delivery failures: an endpoint
+    /// that would not resolve, a socket that would not bind, or a datagram that would not send.
+    /// With DISABLE_LOCAL_LOG_STORAGE these are detections LOST, and nothing else reports them.
+    pub remote_log_errors: u64,
     pub events_ignored: u64,
     pub events_throttled: u64,
     pub events_condensed: u64,
@@ -92,12 +100,14 @@ impl EventSink {
             throttle,
             last_condense_flush: Instant::now(),
             endpoints: HashMap::new(),
+            endpoint_retry: HashMap::new(),
             sock4: None,
             sock6: None,
             signature_id: None,
             events: 0,
             events_written: 0,
             log_write_errors: 0,
+            remote_log_errors: 0,
             events_ignored: 0,
             events_throttled: 0,
             events_condensed: 0,
@@ -330,38 +340,79 @@ impl EventSink {
         )
     }
 
-    fn send_datagram(&mut self, endpoint: &str, data: &[u8]) {
-        let resolved = match self.endpoints.get(endpoint) {
-            Some(v) => *v,
-            None => {
-                let v = resolve_endpoint(endpoint);
-                if v.is_none() {
-                    log_error(&format!("unable to resolve remote logging endpoint '{endpoint}'"), true);
-                }
-                self.endpoints.insert(endpoint.to_string(), v);
-                v
+    /// How long a failed endpoint resolution is remembered before it is tried again.
+    ///
+    /// Not zero: `resolve_endpoint` calls getaddrinfo, which blocks, and retrying it per event
+    /// would put a DNS round-trip on the detection path. Not infinite either, which is what
+    /// caching the failure used to mean.
+    const ENDPOINT_RETRY_INTERVAL: Duration = Duration::from_secs(30);
+
+    /// Address for `endpoint`, resolving it if it is not already known good.
+    ///
+    /// Python never had this problem: `_endpoint_address` keeps a hostname as `(host, port)` and
+    /// lets `sendto` resolve it on every send, so a DNS blip costs one event. The Rust port
+    /// resolved up front and cached the `None`, so the FIRST event during a DNS outage disabled
+    /// the endpoint until the process restarted - and with DISABLE_LOCAL_LOG_STORAGE that is
+    /// every subsequent detection, silently.
+    fn endpoint_addr(&mut self, endpoint: &str) -> Option<SocketAddr> {
+        if let Some(addr) = self.endpoints.get(endpoint) {
+            return Some(*addr);
+        }
+        let now = Instant::now();
+        if let Some(deadline) = self.endpoint_retry.get(endpoint) {
+            if now < *deadline {
+                return None;
             }
+        }
+        match resolve_endpoint(endpoint) {
+            Some(addr) => {
+                self.endpoints.insert(endpoint.to_string(), addr);
+                self.endpoint_retry.remove(endpoint);
+                Some(addr)
+            }
+            None => {
+                log_error(&format!("unable to resolve remote logging endpoint '{endpoint}'"), true);
+                self.endpoint_retry.insert(endpoint.to_string(), now + Self::ENDPOINT_RETRY_INTERVAL);
+                None
+            }
+        }
+    }
+
+    fn send_datagram(&mut self, endpoint: &str, data: &[u8]) {
+        let Some(addr) = self.endpoint_addr(endpoint) else {
+            self.remote_log_errors += 1;
+            return;
         };
-        let Some(addr) = resolved else { return };
 
         let is_v6 = addr.is_ipv6();
+        let bind: &str = if is_v6 { "[::]:0" } else { "0.0.0.0:0" };
         let sock = if is_v6 { &mut self.sock6 } else { &mut self.sock4 };
         if sock.is_none() {
-            let bind: &str = if is_v6 { "[::]:0" } else { "0.0.0.0:0" };
             *sock = UdpSocket::bind(bind).ok();
         }
-        let Some(s) = sock.as_ref() else { return };
+        let Some(s) = sock.as_ref() else {
+            // A socket that will not bind used to be swallowed by `.ok()` and an early return.
+            log_error(&format!("unable to open a remote logging socket for '{endpoint}'"), true);
+            self.remote_log_errors += 1;
+            return;
+        };
         if s.send_to(data, addr).is_err() {
             // Drop and recreate the socket once, exactly like `_send_datagram`.
-            let bind: &str = if is_v6 { "[::]:0" } else { "0.0.0.0:0" };
             let fresh = UdpSocket::bind(bind).ok();
-            if let Some(f) = &fresh {
-                let _ = f.send_to(data, addr);
-            }
+            let retried = match &fresh {
+                Some(f) => f.send_to(data, addr).is_ok(),
+                None => false,
+            };
             if is_v6 {
                 self.sock6 = fresh;
             } else {
                 self.sock4 = fresh;
+            }
+            if !retried {
+                // The second failure used to be discarded outright, so a remote-only deployment
+                // could lose every event while `events_written` kept climbing.
+                log_error(&format!("unable to send to remote logging endpoint '{endpoint}'"), true);
+                self.remote_log_errors += 1;
             }
         }
     }

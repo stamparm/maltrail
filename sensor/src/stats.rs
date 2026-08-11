@@ -149,6 +149,12 @@ pub fn render(registry: &Registry, uptime_seconds: f64) -> String {
         t.events_written
     );
     metric!(
+        "maltrail_remote_log_errors_total",
+        "counter",
+        "Remote-sink (LOG_SERVER/SYSLOG_SERVER/LOGSTASH_SERVER) delivery failures: unresolvable endpoint, unbindable socket, or failed send. With DISABLE_LOCAL_LOG_STORAGE these are detections LOST.",
+        t.remote_log_errors
+    );
+    metric!(
         "maltrail_local_log_errors_total",
         "counter",
         "Event-log open/write failures. Non-zero means detections were produced and LOST; alert on any rate.",

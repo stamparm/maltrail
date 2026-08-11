@@ -300,6 +300,7 @@ maltrail_capture_ifdropped_total 0
 maltrail_events_total 1284
 maltrail_events_written_total 1103
 maltrail_local_log_errors_total 0
+maltrail_remote_log_errors_total 0
 maltrail_events_throttled_total 9915
 maltrail_log_dir_free_bytes 157066420224
 maltrail_state_saturations_total 0
@@ -312,13 +313,14 @@ maltrail_worker_alive{worker="0"} 1
 maltrail_worker_last_heartbeat_seconds{worker="0"} 1786118842
 ```
 
-Alert on these five. Every one of them means *this sensor is not detecting what you think it is*:
+Alert on these six. Every one of them means *this sensor is not detecting what you think it is*:
 
 | condition | what has happened |
 | --- | --- |
 | `maltrail_up == 0` | no capture worker is alive — this host is **not being monitored** |
 | `rate(maltrail_capture_dropped_total) > 0` | the capture ring is dropping packets: **missed detections**, and nothing else in the sensor's output makes that visible in time to act |
 | `rate(maltrail_local_log_errors_total) > 0` | detections were produced and then **lost** on the way to disk |
+| `rate(maltrail_remote_log_errors_total) > 0` | detections could not be delivered to `LOG_SERVER` / `SYSLOG_SERVER` / `LOGSTASH_SERVER`. With `DISABLE_LOCAL_LOG_STORAGE` there is no second copy, so these are **lost** — and `maltrail_events_written_total` keeps rising regardless, because it counts attempts |
 | `maltrail_trail_generation` not advancing | trails have stopped being refreshed |
 | `maltrail_log_dir_free_bytes` low | evidence storage is filling; Maltrail never deletes event logs to reclaim it (see §9) |
 

@@ -156,8 +156,11 @@ sh install.sh --dry-run          # Print commands without applying them
 sh install.sh --uninstall        # Remove the managed installation; keep logs and state
 ```
 
-The dashboard is available at <http://127.0.0.1:8338> after installation. The default credentials
-are `admin` / `changeme!`; change `USERS` in `/etc/maltrail.conf` before exposing the server.
+The dashboard is available at <http://127.0.0.1:8338> after installation. Note that the shipped
+`HTTP_ADDRESS` is `0.0.0.0`, so it is reachable on **every** interface, not only loopback — and
+the default credentials are `admin` / `changeme!`. Change `USERS`, and set `HTTP_ADDRESS` to
+`127.0.0.1` (or put the server behind a reverse proxy with TLS), before the host is on an
+untrusted network.
 
 The initial trail build can take several minutes. The sensor does not detect trail matches until a
 valid trail set is available. The systemd unit runs the sensor's `-T` validation before startup so
@@ -353,6 +356,7 @@ When `STATS_ADDRESS` is configured, monitor at least these Prometheus metrics:
 | `maltrail_up == 0` | No capture worker is running |
 | Increasing `maltrail_capture_dropped_total` | The capture ring is dropping packets |
 | Increasing `maltrail_local_log_errors_total` | Events were produced but could not be written locally |
+| Increasing `maltrail_remote_log_errors_total` | Events could not be delivered to a remote sink; with `DISABLE_LOCAL_LOG_STORAGE` they are lost |
 | `maltrail_trail_generation` not advancing | The active trail set is not being refreshed |
 | `maltrail_log_dir_free_bytes` | Remaining capacity for local event storage |
 | Increasing `maltrail_state_saturations_total` | A heuristic state limit was reached |

@@ -83,6 +83,20 @@ class TestLogd(unittest.TestCase):
         self.assertIn(b"5.5.5.5", data, "naive-format (prefixless) event must also be stored")
         self.assertIn(b"sensorY", data)
 
+    def test_embedded_newline_cannot_forge_extra_records(self):
+        # This listener is unauthenticated by protocol design - a sensor just sends a datagram. The
+        # handler wrote the payload to the day log byte for byte, so anyone able to reach the port
+        # could put '\n' in the middle of one datagram and append arbitrary extra "events": evidence
+        # tampering in an IDS, and the forged lines are indistinguishable to /events and /fail2ban.
+        # One datagram is one record; interior newlines are collapsed, not honoured.
+        real = '"%s" sensorFORGE 10.0.0.11 1111 7.7.7.7 80 TCP IP 7.7.7.7 "real (f)" (ref)' % LOCALTIME
+        forged = '"%s" sensorFORGE 10.0.0.12 2222 8.8.4.4 80 TCP IP 8.8.4.4 "forged (f)" (ref)' % LOCALTIME
+        self._send(("%d %s\n%s\n" % (SEC, real, forged)).encode("utf-8"))
+        data = self._wait_for(b"sensorFORGE")
+        self.assertIn(b"sensorFORGE", data, "positive control: the datagram was accepted and stored")
+        self.assertEqual(len([_ for _ in data.splitlines() if b"sensorFORGE" in _]), 1,
+                         "one datagram must produce exactly one log record, not two")
+
     def test_garbage_datagram_ignored(self):
         # malformed input must not crash the server thread (later valid events must still be stored)
         self._send(b"\xff\xfe not a valid event at all")

@@ -47,6 +47,10 @@ pub struct WorkerState {
     pub last_syn: Option<FlowStamp>,
     pub last_logged_syn: Option<FlowStamp>,
     pub last_udp: Option<FlowStamp>,
+    /// Payload hash of the packet `last_udp` describes. The 5-tuple alone cannot tell two
+    /// different datagrams of one socket apart, and suppressing the second silently drops a
+    /// DNS query that was never parsed - see `payload_digest` in process.rs.
+    pub last_udp_payload: u64,
     pub last_logged_udp: Option<FlowStamp>,
 
     // --- caches (core/datatype.py:LRUDict, capacity MAX_CACHE_ENTRIES) ---
@@ -106,6 +110,7 @@ impl WorkerState {
             last_syn: None,
             last_logged_syn: None,
             last_udp: None,
+            last_udp_payload: 0,
             last_logged_udp: None,
             // Second-sighting admission: see `LruMap::insert_if_seen_before`. These two are the
             // caches a DGA flood hammers with names it never repeats, where the insert cost the
