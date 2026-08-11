@@ -371,10 +371,14 @@ a listed domain reports the parent, and a URL is tried as `host/path` then as th
 through the memory-mapped trail store, so it costs the server no memory, and picks up trail
 updates without a restart.
 
-It is unauthenticated, like `/trails` beside it: that endpoint already serves the entire trail set
-to anyone (it is how a sensor pulls from `UPDATE_SERVER`), so a single-key lookup discloses
-strictly less than what is already public on the same port. Event data is a different matter and
-stays gated.
+It is unauthenticated for the **public** trail set, like `/trails` beside it: that endpoint
+already serves static and feed trails to anyone (it is how a sensor pulls from `UPDATE_SERVER`),
+so a single-key lookup over them discloses strictly less than what is already on the same port.
+
+**Custom trails need a session.** They are your own indicators rather than public data, and
+`ENABLE_MASK_CUSTOM` already hides their names from non-admin users — so `/check` reports a
+custom-only match as a miss to anyone who is not allowed to see it. Event data stays gated
+entirely.
 
 ---
 

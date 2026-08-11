@@ -80,6 +80,7 @@ class TestHttpd(unittest.TestCase):
             f.write("evil.com,dummy,(static)\n")
             f.write("1.2.3.4,badip (dummy),(static)\n")
             f.write("badhost.example/gate.php,badurl (dummy),(static)\n")
+            f.write("internal-secret.corp,supersecretname (custom),(custom)\n")
         # /check reads through the memory-mapped store, which the sensor normally builds; build it
         # here so the endpoint has something to map. Both paths are passed explicitly: this test
         # process has no configured TRAILS_FILE, and a silently skipped build would make the
@@ -181,6 +182,38 @@ class TestHttpd(unittest.TestCase):
 
     def test_check_handles_an_ip(self):
         st, _, body = _http(self.port, "GET", "/check?q=1.2.3.4")
+        self.assertTrue(json.loads(body.decode())["found"])
+
+    def test_check_does_not_disclose_custom_trails_unauthenticated(self):
+        # ENABLE_MASK_CUSTOM redacts custom trail names even from logged-in non-admin users, so an
+        # unauthenticated caller must not be able to confirm that one of the operator's OWN
+        # indicators exists. Reported as a miss: masking the name would still answer the question.
+        st, _, body = _http(self.port, "GET", "/check?q=internal-secret.corp")
+        self.assertEqual(st, 200)
+        data = json.loads(body.decode())
+        self.assertFalse(data["found"], data)
+        self.assertNotIn("supersecretname", body.decode())
+        self.assertNotIn("custom", body.decode())
+
+    def test_check_reveals_custom_trails_to_an_admin(self):
+        cookie = self._login()
+        st, _, body = _http(self.port, "GET", "/check?q=internal-secret.corp", cookie=cookie)
+        data = json.loads(body.decode())
+        self.assertTrue(data["found"], data)
+        self.assertEqual(data["reference"], "(custom)")
+        self.assertIn("supersecretname", data["info"])
+
+    def test_check_hides_custom_trails_from_a_masked_analyst(self):
+        # analyst has uid 1000, so mask_custom is on for that session - same rule as /events
+        cookie = self._login(username="analyst")
+        st, _, body = _http(self.port, "GET", "/check?q=internal-secret.corp", cookie=cookie)
+        data = json.loads(body.decode())
+        self.assertFalse(data["found"], data)
+        self.assertNotIn("supersecretname", body.decode())
+
+    def test_check_still_answers_for_public_trails(self):
+        # the restriction is scoped to custom trails; static/feed data stays answerable
+        st, _, body = _http(self.port, "GET", "/check?q=evil.com")
         self.assertTrue(json.loads(body.decode())["found"])
 
     def test_check_misses_are_not_errors(self):
