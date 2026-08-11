@@ -5,6 +5,17 @@ the differential-test oracle and the fallback. Both read the same `maltrail.conf
 `trails.csv` and write the same event format, so you can switch back and forth freely — and you
 can run them side by side against the same traffic while you build confidence.
 
+If you just want a working deployment rather than a build, `install.sh` does everything in this
+document — dependencies, the prebuilt binary, the user, the directories, `setcap`, the systemd
+units — in one command:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/stamparm/maltrail/master/install.sh | sudo sh
+```
+
+The rest of this page is for building from source, and for the configuration and diagnostics that
+apply either way.
+
 ## 1. Prerequisites
 
 * Linux (x86-64 or aarch64). `PACKET_FANOUT` is Linux-only; everything else is POSIX.
