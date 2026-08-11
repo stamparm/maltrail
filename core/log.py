@@ -151,6 +151,38 @@ def flush_condensed_events(single=False):
         if single:
             break
 
+_endpoints_cache = {}
+
+def _endpoints(value):
+    """
+    Splits a remote-logging option into its endpoints, so one option can name several targets:
+
+        SYSLOG_SERVER 192.168.1.15:514, 192.168.1.16:514
+
+    Requested for redundant SIEM/collector targets (issue #15164). Separating inside the existing
+    option rather than adding SYSLOG_SERVER_1, _2, ... keeps every configuration that names a
+    single endpoint working unchanged, and matches how the other list-valued options in
+    maltrail.conf (e.g. FAIL2BAN_ALLOWLIST) are already written.
+
+    Memoized: log_event calls this per event, and the split is pure string work over a value that
+    never changes.
+
+    >>> _endpoints("1.2.3.4:514")
+    ['1.2.3.4:514']
+    >>> _endpoints("1.2.3.4:514, 5.6.7.8:514")
+    ['1.2.3.4:514', '5.6.7.8:514']
+    >>> _endpoints("[::1]:514 1.2.3.4:514")
+    ['[::1]:514', '1.2.3.4:514']
+    >>> _endpoints("")
+    []
+    """
+
+    retval = _endpoints_cache.get(value)
+    if retval is None:
+        retval = [_ for _ in re.split(r"[,;\s]+", value or "") if _]
+        _endpoints_cache[value] = retval
+    return retval
+
 _endpoint_cache = {}
 
 def _endpoint_address(value):
@@ -286,11 +318,15 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     if config.SYSLOG_SERVER:
                         extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, _cef_escape(trail, True), _cef_escape(reference, True))
                         _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.localtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=_trails_signature_id(), name=_cef_escape(info), severity={"low": 0, "medium": 1, "high": 2}.get(severity), extension=extension)
-                        _send_datagram(config.SYSLOG_SERVER, _.encode(UNICODE_ENCODING))
+                        _ = _.encode(UNICODE_ENCODING)
+                        for endpoint in _endpoints(config.SYSLOG_SERVER):
+                            _send_datagram(endpoint, _)
 
                     if config.LOGSTASH_SERVER:
                         _ = OrderedDict((("timestamp", sec), ("sensor", HOSTNAME), ("severity", severity), ("src_ip", src_ip), ("src_port", src_port), ("dst_ip", dst_ip), ("dst_port", dst_port), ("proto", proto), ("type", trail_type), ("trail", trail), ("info", info), ("reference", reference)))
-                        _send_datagram(config.LOGSTASH_SERVER, json.dumps(_).encode(UNICODE_ENCODING))
+                        _ = json.dumps(_).encode(UNICODE_ENCODING)
+                        for endpoint in _endpoints(config.LOGSTASH_SERVER):
+                            _send_datagram(endpoint, _)
 
                 if (config.DISABLE_LOCAL_LOG_STORAGE and not any((config.LOG_SERVER, config.SYSLOG_SERVER))) or config.console:
                     sys.stderr.write(event)

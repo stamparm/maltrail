@@ -500,6 +500,12 @@ pub fn fanout_count(value: Option<&Value>) -> u32 {
     }
 }
 
+/// The endpoints named by a remote-logging option: one, or several separated by commas,
+/// semicolons or whitespace. `core/log.py:_endpoints()` splits the same way.
+pub fn split_endpoints(value: &str) -> Vec<&str> {
+    value.split([',', ';', ' ', '\t', '\n', '\r']).map(str::trim).filter(|s| !s.is_empty()).collect()
+}
+
 /// `sensor.py:_cfg_bool()` — for switches without a boolean-implying prefix.
 pub fn cfg_bool(value: Option<&Value>) -> bool {
     match value {
@@ -542,13 +548,21 @@ impl Config {
         if !log_server.is_empty() && !log_server.contains(':') {
             bail!("invalid configuration value for 'LOG_SERVER' ('{log_server}')");
         }
+        // Either option may name SEVERAL endpoints, so a sensor can feed redundant SIEM
+        // collectors (issue #15164). Every one of them is validated: a typo in the second target
+        // is exactly as fatal as one in the first, and silently forwarding to one of two
+        // configured collectors is the kind of half-working that goes unnoticed for months.
         let syslog_server = get_str(&raw, "SYSLOG_SERVER");
-        if !syslog_server.is_empty() && parse_host_port(&syslog_server).1.is_none() {
-            bail!("invalid configuration value for 'SYSLOG_SERVER' ('{syslog_server}')");
+        for endpoint in split_endpoints(&syslog_server) {
+            if parse_host_port(endpoint).1.is_none() {
+                bail!("invalid configuration value for 'SYSLOG_SERVER' ('{endpoint}')");
+            }
         }
         let logstash_server = get_str(&raw, "LOGSTASH_SERVER");
-        if !logstash_server.is_empty() && parse_host_port(&logstash_server).1.is_none() {
-            bail!("invalid configuration value for 'LOGSTASH_SERVER' ('{logstash_server}')");
+        for endpoint in split_endpoints(&logstash_server) {
+            if parse_host_port(endpoint).1.is_none() {
+                bail!("invalid configuration value for 'LOGSTASH_SERVER' ('{endpoint}')");
+            }
         }
         let remote_severity_regex = get_str(&raw, "REMOTE_SEVERITY_REGEX");
         if !remote_severity_regex.is_empty() && crate::pyre::build_fancy(&remote_severity_regex).is_err() {
@@ -936,6 +950,35 @@ SENSOR_NAME box   # trailing comment
         // with scan heuristics diluted across 16 flow-hashed sockets to buy throughput a single
         // worker already has. Asserted here so it cannot drift back unnoticed.
         assert_eq!(cfg.capture_workers, 1, "the shipped config must default to a single worker");
+    }
+
+    #[test]
+    fn several_remote_logging_endpoints_are_accepted_and_all_validated() {
+        let dir = std::env::temp_dir().join("mt-cfg-endpoints");
+        let _ = std::fs::create_dir_all(&dir);
+        let base = "MONITOR_INTERFACE any\nCAPTURE_BUFFER 1MB\nLOG_DIR /tmp\nUPDATE_PERIOD 86400\n";
+        let write = |name: &str, extra: &str| {
+            let path = dir.join(name);
+            std::fs::write(&path, format!("{base}{extra}")).unwrap();
+            Config::load(&path)
+        };
+
+        // one option, several collectors: comma, semicolon and whitespace all separate
+        let cfg = write("multi.conf", "SYSLOG_SERVER 1.2.3.4:514, 5.6.7.8:514\n").expect("must load");
+        assert_eq!(split_endpoints(&cfg.syslog_server), vec!["1.2.3.4:514", "5.6.7.8:514"]);
+        let cfg = write("mixed.conf", "LOGSTASH_SERVER 1.2.3.4:5000;5.6.7.8:5000 9.9.9.9:5000\n").expect("must load");
+        assert_eq!(split_endpoints(&cfg.logstash_server), vec!["1.2.3.4:5000", "5.6.7.8:5000", "9.9.9.9:5000"]);
+
+        // a single endpoint keeps behaving exactly as before
+        let cfg = write("one.conf", "SYSLOG_SERVER 1.2.3.4:514\n").expect("must load");
+        assert_eq!(split_endpoints(&cfg.syslog_server), vec!["1.2.3.4:514"]);
+        assert!(split_endpoints("").is_empty());
+
+        // EVERY endpoint is validated: a typo in the second is as fatal as one in the first,
+        // because forwarding to one of two configured collectors is silent half-failure.
+        assert!(write("bad2.conf", "SYSLOG_SERVER 1.2.3.4:514, nonsense\n").is_err());
+        assert!(write("bad1.conf", "SYSLOG_SERVER nonsense, 1.2.3.4:514\n").is_err());
+        assert!(write("badls.conf", "LOGSTASH_SERVER 1.2.3.4:5000, 5.6.7.8\n").is_err());
     }
 
     #[test]

@@ -148,8 +148,8 @@ impl Harness {
             disable_local_log_storage: false,
             console: false,
             log_server: None,
-            syslog_server: None,
-            logstash_server: None,
+            syslog_server: Vec::new(),
+            logstash_server: Vec::new(),
             severity_regex: None,
             // The harness pins LEGACY throttling: its expectations are Python-derived, so the
             // event COUNTS have to be sensor.py's. `divisor: 1` = one worker, PROCESS_COUNT 1.
@@ -334,8 +334,8 @@ pub fn worker_context(registry: &Arc<crate::metrics::Registry>, id: usize) -> cr
             disable_local_log_storage: false,
             console: false,
             log_server: None,
-            syslog_server: None,
-            logstash_server: None,
+            syslog_server: Vec::new(),
+            logstash_server: Vec::new(),
             severity_regex: None,
             throttle: crate::throttle::ThrottleConfig::default(),
             hostname: "harness".to_string(),
