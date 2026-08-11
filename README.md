@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-red.svg)](#licence)
 [![Sensor](https://img.shields.io/badge/sensor-Rust%201.74%2B-orange.svg)](sensor/)
-[![Server](https://img.shields.io/badge/server-Python%203.7%2B-blue.svg)](server.py)
+[![Server](https://img.shields.io/badge/server-Python%203.6%2B-blue.svg)](server.py)
 [![Trails](https://img.shields.io/badge/trails-%3E1.5M-brightgreen.svg)](#trails)
 [![X](https://img.shields.io/badge/X-%40maltrail-black.svg)](https://x.com/maltrail)
 
@@ -198,8 +198,9 @@ sudo zypper install cargo rust libpcap-devel libcap-progs python311
   `libpcap0.8` alone is what produces `cannot find -lpcap`.
 * `libcap2-bin` / `libcap` / `libcap-progs` — provides `setcap`, so the sensor captures without
   running as root.
-* **Python 3.7+** — the sensor uses it to build `trails.csv`. On 3.6 (openSUSE Leap 15 / SLE 15)
-  the trail set stays empty and nothing is detected.
+* **Python 3.6+** — the server runs on it, and the sensor uses it to build `trails.csv`. That is
+  the stock `python3` of RHEL 8, CentOS 7, openSUSE Leap 15 / SLE 15 and Amazon Linux 2. CI runs
+  the whole test suite and a full offline trail build on 3.6.15, 3.7, 3.12 and 3.13.
 
 `-T` checks every one of these and tells you which is missing.
 

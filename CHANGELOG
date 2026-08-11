@@ -16,6 +16,14 @@
 
 - Version 3.1 -> 3.1.1 (unreleased)
 
+[!] Python 3.6 works again. The whole 3.7 floor came down to ONE call -
+    'str.isascii()' in core/update.py - which made the trail update die on
+    every distribution whose stock 'python3' is 3.6 (RHEL 8, CentOS 7,
+    openSUSE Leap 15 / SLE 15, Amazon Linux 2), leaving an empty trail set
+    and a sensor that detected nothing. There is a 3.6 path now, the whole
+    server suite and a full offline trail build run on 3.6.15 in CI, and the
+    sensor's interpreter floor follows
+
 [!] The Docker image adapts to the storage it is given instead of demanding uid
     10001 own it: 'docker/entrypoint.sh' picks the uid that can write the log
     and state directories (bind-mount owner, 'PUID'/'PGID', or the image's own

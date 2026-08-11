@@ -13,11 +13,12 @@ can run them side by side against the same traffic while you build confidence.
   qualify. openSUSE Leap 15 / SLE 15 ship exactly 1.74, which is enough; `rustup` is not needed
   and installing it there *conflicts* with the packaged `rust`/`cargo`.
 * `setcap`, to let the sensor capture without running as root.
-* **Python 3.7 or newer** on `PATH`. The sensor shells out to Maltrail's own updater to build
-  `trails.csv`, and that needs 3.7+ (`str.isascii()`). This is the one to check on older
-  enterprise distributions: openSUSE Leap 15 / SLE 15 default `python3` to **3.6**, where the
-  trail set cannot be built and the sensor therefore detects nothing. `-T` reports the version it
-  found, and the sensor prefers a newer `python3.N` on `PATH` automatically.
+* **Python 3.6 or newer** on `PATH`. The sensor shells out to Maltrail's own updater to build
+  `trails.csv`. 3.6 is the stock `python3` of RHEL 8, CentOS 7, openSUSE Leap 15 / SLE 15 and
+  Amazon Linux 2, and it is tested in CI (whole suite plus a full offline trail build), so those
+  hosts need nothing extra. Below 3.6 the trail set cannot be built and the sensor therefore
+  detects nothing: `-T` reports the version it found, and the sensor prefers a newer `python3.N`
+  on `PATH` automatically.
 
 ```bash
 # Debian / Ubuntu
@@ -25,12 +26,12 @@ sudo apt-get install libpcap-dev build-essential libcap2-bin
 # RHEL / Fedora
 sudo dnf install libpcap-devel gcc libcap
 # openSUSE / SLES  (rust 1.74 and python3 are usually already installed)
-sudo zypper install libpcap-devel gcc libcap-progs rust cargo python311
+sudo zypper install libpcap-devel gcc libcap-progs rust cargo
 # Rust, only if your distribution has none
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-If `python3 --version` is older than 3.7, install a newer one and point the sensor at it:
+If `python3 --version` is older than 3.6, install a newer one and point the sensor at it:
 
 ```bash
 export MALTRAIL_PYTHON=/usr/bin/python3.11
@@ -463,7 +464,7 @@ Nothing here is required to run the sensor; it is how to convince yourself befor
 | `[i] repaired N wildcard trail pattern(s) truncated in the feed` | informational: those trails were cut off in transit and were salvaged (the intact alternatives are kept, the dangling fragment dropped). `sensor.py` drops such trails entirely, so this is a detection gain |
 | `[!] N wildcard trail pattern(s) are unusable and NOT matched` | those patterns could not be salvaged at all; CPython rejects them too, so `sensor.py` ignores them as well |
 | No colour in `--console` output | colour is emitted only when stdout is a TTY (as in `sensor.py`), and `NO_COLOR` disables it |
-| `trail update failed ('str' object has no attribute 'isascii')` | `python3` is older than 3.7 (openSUSE Leap 15 / SLE 15 default to 3.6). Install a newer one and set `MALTRAIL_PYTHON=/usr/bin/python3.11`. Without it the trail set is empty and the sensor detects nothing; `-T` now reports the interpreter version rather than just its presence |
+| `trail update failed ('str' object has no attribute 'isascii')` | A Maltrail older than 3.1.1 on Python 3.6 (RHEL 8, CentOS 7, openSUSE Leap 15 / SLE 15, Amazon Linux 2). Fixed - `core/update.py` no longer needs 3.7 - so update Maltrail, or set `MALTRAIL_PYTHON` to a 3.7+ interpreter if you cannot. Without either the trail set is empty and the sensor detects nothing; `-T` reports the interpreter version rather than just its presence |
 | `setcap: command not found` | install `libcap2-bin` (Debian/Ubuntu), `libcap` (RHEL/Fedora) or `libcap-progs` (openSUSE/SLES) |
 | `rustup ... conflicts with 'rust+rustc'` on openSUSE/SLES | do not install `rustup`; the packaged `rust` 1.74 already meets the MSRV. `rustup` is only needed for the developer gate (`check.sh`), which wants `rustfmt` and `clippy` |
 | `check.sh: rustfmt: command not found` | that gate is for contributors, not for running the sensor. `rustup component add rustfmt clippy`, or skip it — `cargo build --release` is all a deployment needs |
