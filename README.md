@@ -1,568 +1,486 @@
 ![Maltrail](https://i.imgur.com/3xjInOD.png)
 
-[![License](https://img.shields.io/badge/license-MIT-red.svg)](#licence)
+[![License](https://img.shields.io/badge/license-MIT-red.svg)](#license)
 [![Sensor](https://img.shields.io/badge/sensor-Rust%201.74%2B-orange.svg)](sensor/)
 [![Server](https://img.shields.io/badge/server-Python%203.6%2B-blue.svg)](server.py)
 [![Trails](https://img.shields.io/badge/trails-%3E1.5M-brightgreen.svg)](#trails)
 [![X](https://img.shields.io/badge/X-%40maltrail-black.svg)](https://x.com/maltrail)
 
-**Malicious traffic detection system.** Maltrail watches your network for contact with things that
-are known to be bad — and tells you, in one line, what was seen and why it is considered bad.
+# Maltrail
 
-```
+Maltrail is a network traffic detection system that identifies communication with known malicious
+infrastructure and reports selected traffic anomalies. It matches domains, URLs, IP addresses,
+`IP:port` pairs, and User-Agent values observed on the network against a set of indicators called
+_trails_.
+
+A detection is recorded as a single event containing the source, destination, protocol, matched
+trail, classification, and trail source:
+
+```text
 "2026-08-07 09:14:22.117034" gw 10.13.13.2 57809 1.1.1.1 53 UDP DNS malware.bakewithdavid.com "asyncrat (malware)" (static)
 ```
 
-No rule language, no tuning ritual, no ML. A **trail** is a domain, URL, IP address, `IP:port` or
-User-Agent known to belong to something malicious, and Maltrail tells you when one appears on the
-wire.
+Maltrail is designed for indicator-based network monitoring. Its heuristic detections supplement
+trail matching, but it is not a replacement for endpoint telemetry or a general-purpose intrusion
+prevention system.
 
----
+## Features
 
-## Content
+- A full trail build combining more than 3,000 bundled static files, 42 public-feed integrations,
+  and optional operator-supplied trails.
+- A multithreaded Rust sensor using libpcap, with optional Linux `PACKET_FANOUT` capture workers.
+- A Python server providing the reporting interface, event intake, and HTTP API.
+- Plain-text custom trails and whitelists that can be reviewed and version-controlled.
+- Heuristics for scanning, DNS exhaustion, DGA-like lookups, suspicious downloads, proxy probes,
+  suspicious User-Agent values, and related network activity.
+- Local event logging, remote Maltrail logging, CEF over syslog, and Logstash JSON output.
+- Deployment validation with `maltrail-sensor -T` and optional Prometheus metrics.
 
-- [Why Maltrail](#why-maltrail)
+## Contents
+
 - [Architecture](#architecture)
 - [Performance](#performance)
-- [Quick start](#quick-start)
-  - [Installing from source](#installing-from-source)
-  - [As a service](#as-a-service)
+- [Installation](#installation)
+  - [Installer](#installer)
+  - [Building from source](#building-from-source)
+  - [Systemd](#systemd)
   - [Docker](#docker)
 - [Configuration](#configuration)
 - [Trails](#trails)
-- [Events](#events)
-- [Operating it](#operating-it)
+- [Events and API](#events-and-api)
+- [Operations](#operations)
+  - [Monitoring](#monitoring)
   - [Event retention](#event-retention)
 - [Documentation](#documentation)
 - [Contributing](#contributing)
-- [Licence](#licence)
-- [Sponsors](#sponsors)
-- [Developers](#developers)
-- [Presentations](#presentations)
-- [Publications](#publications)
-- [Blacklist](#blacklist)
-- [Thank you](#thank-you)
-- [Third-party integrations](#third-party-integrations)
-
----
-
-## Why Maltrail
-
-Most network detection tools ask you to describe *behaviour*. Maltrail asks a simpler question that
-answers most real incidents: **is this host talking to something we already know is bad?**
-
-* **More than 1.5 million trails**, from more than 3,000 curated static lists plus 46 public feeds,
-  refreshed daily and growing. Heavily weighted toward **malware** — C2 domains, droppers,
-  stealers, APT infrastructure — because that is what shows up in a real compromise.
-* **Trails are plain text.** One indicator per line, in a file you can read, grep and send a pull
-  request against. That is why coverage stays current, and why you can always answer "why did this
-  fire?".
-* **Fast enough to stop thinking about it.** A single core handles a 10 GbE link on a realistic
-  traffic mix; see [Performance](#performance).
-* **Heuristics on top**, not instead — each one named in the event, never a bare score: port, UDP
-  and web scanning, DNS exhaustion, DGA-shaped lookups (entropy and consonant thresholds, excessive
-  NXDOMAIN), sinkholed, seized and parked domains, long domains, direct-IP and IoT-malware
-  downloads, suspicious user agents and proxy probes.
-
----
+- [Project](#project)
+  - [License](#license)
+  - [Maintainers](#maintainers)
+  - [Sponsors](#sponsors)
+  - [Presentations and publications](#presentations-and-publications)
+  - [Derived blacklist](#derived-blacklist)
+  - [Third-party integrations](#third-party-integrations)
+  - [Acknowledgements](#acknowledgements)
 
 ## Architecture
 
-Two independent processes. Run them on one box or many.
+Maltrail consists of two independent processes that may run on the same host or on separate hosts:
 
-```
+```text
    ┌──────────┐   events (UDP or file)   ┌──────────┐
    │  sensor  │ ───────────────────────► │  server  │ ◄── browser
    └──────────┘                          └──────────┘
     Rust                                  Python
     libpcap + PACKET_FANOUT               reporting UI + API
-    trail matching, heuristics
+    trail matching + heuristics
 ```
 
-A sensor can log locally (`LOG_DIR`), ship to a remote server (`LOG_SERVER`), or both. For an
-existing SIEM it also emits CEF over syslog (`SYSLOG_SERVER`) and Logstash JSON
+The sensor captures traffic, performs trail matching and heuristic analysis, and produces events.
+It can write events locally (`LOG_DIR`), send them to a remote Maltrail server (`LOG_SERVER`), or do
+both. It can also emit CEF over syslog (`SYSLOG_SERVER`) and JSON to Logstash
 (`LOGSTASH_SERVER`).
 
----
+The server receives and stores remote events, serves locally available event logs, and provides the
+web interface and API.
 
 ## Performance
 
-The sensor is Rust, one thread per capture worker, sharing a single immutable trail store.
+Performance depends on processor, traffic composition, trail-set size, capture driver, and network
+interface. The figures below measure the sensor's packet-processing path in isolation; they are not
+end-to-end live-capture measurements.
 
-Packet path in isolation (`sensor/benches/hotpath.rs`, AMD Ryzen 7 PRO 4750U), by traffic type:
+Representative measurements on an AMD Ryzen 7 PRO 4750U with heuristics enabled and a 1.5
+million-row trail set:
 
-| traffic | per packet |
+| Traffic | Time per packet |
 | --- | ---: |
-| ICMP echo (58 B) | 101 ns |
-| TCP SYN (70 B) | 302 ns |
-| bulk TLS (1,473 B) | 402 ns |
-| DNS query, warm cache (93 B) | 452 ns |
-| mixed traffic (866 B average) | 552 ns |
-| HTTP request (169 B) | 602 ns |
-| DNS query, every name unique (DGA flood) | 1,102 ns |
+| ICMP echo, 58 bytes | 101 ns |
+| TCP SYN, 70 bytes | 302 ns |
+| Bulk TLS, 1,473 bytes | 402 ns |
+| DNS query with a warm cache, 93 bytes | 452 ns |
+| Mixed traffic, 866-byte average | 552 ns |
+| HTTP request, 169 bytes | 602 ns |
+| DNS query with a unique name, 93 bytes | 1,102 ns |
 
-Workers share nothing mutable, so that cost is what each additional core buys you. Offline replay
-of the 866-byte mix on the same processor, by worker count:
+Offline comparison runs using the same generated capture, configuration, and trail set measured a
+14–37× lower steady-state per-packet cost than the retired Python sensor across the tested systems.
+The comparison tool reports whole-process time separately because trail loading dominates short
+replays. It also prints event counts; functional parity is tested independently by the parity
+corpus.
 
-| workers | packets/s | Gbit/s | vs 1 worker |
-| ---: | ---: | ---: | ---: |
-| 1 | 1,687,991 | 11.69 | 1.00× |
-| 2 | 3,209,627 | 22.24 | 1.90× |
-| 4 | 5,379,436 | 37.27 | 3.19× |
-| 8 | 8,552,231 | 59.25 | 5.07× |
-| 16 | 10,165,773 | 70.43 | 6.02× |
-
-**One core saturates 10 GbE** on this mix. Scaling is near-linear to four workers and then tapers,
-because beyond that this processor's eight physical cores are exhausted and the rest is SMT —
-hardware, not lock contention. These are software-path figures: a live NIC adds driver and ring
-costs, so measure your own hardware and watch `maltrail_capture_dropped_total`.
-
-Against the old Python sensor, replaying the **same 300,000-packet capture** with the **same real
-trail set** and the same configuration, one worker each:
-
-| processor | ns/packet | packets/s | Gbit/s | old sensor, ns/packet | faster |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Ryzen 9 5900X | 272 | 3,682,638 | 25.5 | 10,070 | **37×** |
-| Ryzen 7 PRO 4750U | 550 | 1,817,980 | 12.6 | 16,656 | **30×** |
-| RPi 5 | 800 | 1,250,631 | 8.7 | 16,701 | **21×** |
-| EPYC 7402, 2 vCPU | 1,647 | 607,303 | 4.2 | 23,439 | **14×** |
-
-The multiple *shrinks* on slower hardware rather than growing, because this sensor is the more
-hardware-sensitive of the two: across those four machines its cost spans 6.1× (272 → 1,647 ns)
-while `sensor.py` spans only 2.3× (10.1 → 23.4 µs). Interpreted work is dominated by interpreter
-overhead that no processor removes, so the faster the machine, the larger the gap.
-
-The isolated mixed-traffic figure above (552 ns) and the Ryzen 7 PRO 4750U replay figure (550 ns)
-are the same measurement taken two ways, which is the intended cross-check.
-
-Reproduce it yourself — the harness is committed, and it prints both sensors' event counts so a
-throughput number can never be quoted without its correctness context:
+Run the comparison on the target system with:
 
 ```bash
-python3 sensor/tools/bench_compare.py --packets 300000 --trails ~/.maltrail/trails.csv --repeat 3
+python3 sensor/tools/bench_compare.py --packets 300000 \
+  --trails ~/.maltrail/trails.csv --repeat 3
 ```
 
-**Read the second table it prints, not the first.** It reports two things, and they answer
-different questions:
+One capture worker is used by default. Additional workers can increase capture capacity, but Linux
+flow hashing divides per-source state between workers and therefore reduces the sensitivity of some
+scan heuristics. In the documented test, 91% of single-worker heuristic alerts remained with two
+workers, 86% with four, and 65% with eight. Exact trail matching was unchanged. Increase
+`CAPTURE_FANOUT` only when capture-drop metrics show that it is necessary.
 
-* **whole process** — includes startup, which on a short replay *is* the measurement: loading a
-  1.5M-row trail set costs the Rust sensor ~1.1-1.5 s, and 300,000 packets take under a second.
-  That ratio comes out around **3×**, and it is not the packet path.
-* **steady state** — startup measured separately with a 1-packet replay and subtracted. This is
-  the per-packet cost, and it is the **14-37×** above.
+Benchmark methodology, hardware results, profiler output, memory measurements, and live fanout
+checks are documented in [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md).
 
-Trail loading is the one place the old sensor still wins: it mmaps a prebuilt `trails.csv.bin`
-sidecar, so its *warm* start is faster than building the store from CSV — 1.25 s against 2.24 s on
-an RPi 5. That cost is paid once per process; the packet path is paid 300,000 times.
+## Installation
 
-Both numbers move with hardware, so measure your own — and note the harness reports `events=0` for
-both sensors on this mix, because it is deliberately benign traffic. Detections add event-logging
-cost on top.
+### Installer
 
-Memory does not grow with cores: the 1.5M-trail store is **68.5 MB**, shared immutably by every
-worker. Building it is the startup cost above — 1.2 s on the Ryzen 7 PRO 4750U, 2.2 s on an
-RPi 5 — and it is paid once per process, not per worker.
-
-**One capture worker by default.** Its packet path handles 4.2 Gbit/s of this mix on a 2-vCPU VM,
-8.7 Gbit/s on an RPi 5 and 25.5 Gbit/s on a Ryzen 9 5900X — in every case more than the host's
-network interface can deliver, which is why one worker is the default rather than a compromise.
-Extra workers are an explicit opt-in (`CAPTURE_FANOUT`), because the kernel flow-hashes capture
-while the scan heuristics count per source: of the heuristic alerts one worker raises, 91% survive
-at 2 sockets, 86% at 4, 65% at 8. Exact trail detection is identical at every worker count. Scale
-out when `maltrail_capture_dropped_total` says to, not before.
-
-<sub>All figures: heuristics enabled, the real 1.5M-row trail set, one capture worker, fastest of
-three runs. The steady-state ratio has ranged 14–37× across the processors above; the per-packet
-costs are what bound how much traffic one worker can absorb. Method, per-protocol breakdown,
-instruction counts and the profiler output are in
-[`sensor/docs/REPORT.md`](sensor/docs/REPORT.md).</sub>
-
----
-
-## Quick start
+The installer supports Debian, Ubuntu, Raspberry Pi OS, RHEL, Fedora, and openSUSE:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/stamparm/maltrail/master/install.sh | sudo sh
 ```
 
-That is the whole thing on Debian, Ubuntu, Raspberry Pi OS, RHEL, Fedora and openSUSE. It installs
-the dependencies, makes a shallow clone in `/opt/maltrail`, downloads the prebuilt sensor for this
-architecture and verifies its SHA-256, creates an unprivileged `maltrail` user, the log and state
-directories and `/etc/maltrail.conf`, installs the systemd units, and grants the sensor
-`CAP_NET_RAW`/`CAP_NET_ADMIN` so it captures without root, and starts both services. Re-running it
-is the upgrade path.
+It installs dependencies, creates a managed checkout under `/opt/maltrail`, verifies the checksum
+of the prebuilt sensor, creates an unprivileged `maltrail` account, installs systemd units, prepares
+the log and state directories, and starts the sensor and server. Re-running the installer upgrades
+the managed checkout.
 
-The dashboard is then on <http://127.0.0.1:8338>, default login `admin` / `changeme!` — change it
-in `/etc/maltrail.conf` (`USERS`). The first trail build takes a few minutes, and nothing is
-detected until it finishes. The sensor unit runs `-T` as `ExecStartPre`, so a deployment that
-cannot work fails at `systemctl start` rather than running blind.
+Review the script before running it with elevated privileges. From an existing checkout, the dry
+run shows the commands without changing the system:
 
 ```bash
-sh install.sh --role sensor      # sensor only, when the server lives elsewhere
-sh install.sh --ref 3.1.1        # pin to a release tag instead of master
-sh install.sh --no-service       # install, do not touch systemd
-sh install.sh --dry-run          # print every command, change nothing
-sh install.sh --uninstall        # remove it again (logs and state are kept)
+sh install.sh --dry-run
 ```
 
-Run inside a checkout you already have, it installs **that** tree in place and never touches its
-git state; `--prefix` asks for a separate managed copy. `--uninstall` only removes a tree the
-installer created. Configuration lives in `/etc/maltrail.conf` precisely so an upgrade cannot eat
-it. Every commit exercises the installer in ubuntu, debian, fedora, opensuse and alpine containers,
-starting the server and asking it for `/ping`. On Alpine there is no prebuilt sensor — the
-installer says so and points at building from source, below.
+Common installer options:
 
-### Installing from source
+```bash
+sh install.sh --role sensor      # Install only the sensor
+sh install.sh --ref 3.1.1        # Install a release tag instead of master
+sh install.sh --no-service       # Install without changing systemd
+sh install.sh --dry-run          # Print commands without applying them
+sh install.sh --uninstall        # Remove the managed installation; keep logs and state
+```
 
-Install the prerequisites first — **all of them**, or the build fails at the link step with
-`cannot find -lpcap`:
+The dashboard is available at <http://127.0.0.1:8338> after installation. The default credentials
+are `admin` / `changeme!`; change `USERS` in `/etc/maltrail.conf` before exposing the server.
+
+The initial trail build can take several minutes. The sensor does not detect trail matches until a
+valid trail set is available. The systemd unit runs the sensor's `-T` validation before startup so
+that missing privileges, an unwritable log directory, or an invalid trail set causes startup to
+fail visibly.
+
+The installer test harness covers Ubuntu, Debian, Fedora, openSUSE, and Alpine containers. Alpine
+uses musl and does not use the prebuilt glibc sensor binary; build the sensor from source there.
+
+### Building from source
+
+The sensor requires Rust 1.74 or newer, libpcap development headers, and the system's capability
+tools. The server and trail updater require Python 3.6 or newer.
+
+Install the distribution packages:
 
 ```bash
 # Debian / Ubuntu / Raspberry Pi OS
 sudo apt-get install cargo libpcap-dev libcap2-bin python3
+
 # RHEL / Fedora
 sudo dnf install cargo libpcap-devel libcap python3
-# openSUSE / SLES     (do NOT add rustup; the packaged rust 1.74 already qualifies)
+
+# openSUSE / SLES
 sudo zypper install cargo rust libpcap-devel libcap-progs python311
 ```
 
-* `cargo` + `rust` **1.74 or newer** — building the sensor. Distribution packages qualify; the MSRV
-  is kept old on purpose.
-* `libpcap-dev` / `libpcap-devel` — the **headers**, not just the runtime library. The runtime
-  `libpcap0.8` alone is what produces `cannot find -lpcap`.
-* `libcap2-bin` / `libcap` / `libcap-progs` — provides `setcap`, so the sensor captures without
-  running as root.
-* **Python 3.6+** — the server runs on it, and the sensor uses it to build `trails.csv`. That is
-  the stock `python3` of RHEL 8, CentOS 7, openSUSE Leap 15 / SLE 15 and Amazon Linux 2. CI runs
-  the whole test suite and a full offline trail build on 3.6.15, 3.7, 3.12 and 3.13.
-
-`-T` checks every one of these and tells you which is missing.
-
-Only for the comparison tooling (`sensor/tools/parity.py`, `sensor/tools/bench_compare.py`), which
-replays traffic through the old Python sensor as its reference — **not** needed to build or run the
-sensor itself:
-
-`pcapy-ng` is a C extension, so it is **built** at install time and needs the Python headers and
-`libpcap-dev` — a missing `Python.h` is the usual failure here:
-
-```bash
-# Debian / Ubuntu / Raspberry Pi OS
-sudo apt-get install python3-pip python3-dev libpcap-dev
-# RHEL / Fedora
-sudo dnf install python3-pip python3-devel libpcap-devel
-# openSUSE / SLES
-sudo zypper install python311-pip python311-devel libpcap-devel
-# FreeBSD
-sudo pkg install py311-pip python311 libpcap
-
-pip install -r old/requirements.txt
-```
-
-Prebuilt sensor binaries for `x86_64` and `aarch64` are attached to every
-[release](https://github.com/stamparm/maltrail/releases) with a SHA-256 checksum — those need only
-libpcap at runtime and no toolchain at all. They are built against **glibc 2.28**, so they run on
-RHEL 8+, Debian 10+, Ubuntu 18.04+ and openSUSE Leap 15.x; the release refuses to publish a binary
-that needs anything newer. On musl (Alpine) build from source instead:
+Then build and validate the sensor:
 
 ```bash
 git clone --depth 1 https://github.com/stamparm/maltrail.git
 cd maltrail
 
-# 1. build the sensor
-cd sensor && cargo build --release && cd ..
+cargo build --release --manifest-path sensor/Cargo.toml
 
-# 2. let it capture without running as root
-sudo setcap cap_net_raw,cap_net_admin=eip sensor/target/release/maltrail-sensor
+sudo setcap cap_net_raw,cap_net_admin=eip \
+  sensor/target/release/maltrail-sensor
 
-# 3. give it somewhere to write events (LOG_DIR, /var/log/maltrail by default)
-#    ('id -gn', not "$USER": not every distribution gives each user their own group)
 sudo install -d -o "$USER" -g "$(id -gn)" -m 750 /var/log/maltrail
 
-# 4. check the deployment before trusting it — exits non-zero if anything is wrong
 sensor/target/release/maltrail-sensor -T
-
-# 5. run it (first start builds the trail set; takes a minute)
 sensor/target/release/maltrail-sensor
 ```
 
-In another terminal, or on another machine:
+Start the server in another terminal or on another host:
 
 ```bash
 python3 server.py
 ```
 
-Then open <http://127.0.0.1:8338> and log in with the credentials in `maltrail.conf` (`USERS`).
+Prebuilt `x86_64` and `aarch64` sensor binaries are attached to current releases with SHA-256
+checksums. They target glibc 2.28 and require libpcap at runtime. On musl-based systems such as
+Alpine Linux, build from source.
 
-`-T` is the shortcut for "will this work?" — it validates the configuration, trails, whitelist, log
-directory, capture filter and privileges, and tells you exactly what is missing:
+The retired Python sensor is used only by comparison and parity tools. Those tools additionally
+require `pcapy-ng` and the Python development headers described in
+[`sensor/docs/INSTALL.md`](sensor/docs/INSTALL.md).
 
-```
-[o] log directory: '/var/log/maltrail' is writable
-[o] log storage: 199.0 GB free on '/var/log/maltrail'
-[o] capture filter: udp or icmp or (tcp and (tcp[tcpflags] == tcp-syn or port 80 or port...
-[o] capture privileges: CAP_NET_RAW present
-[o] interface: any
-[o] workers: 1 - undiluted per-source heuristics; raise 'CAPTURE_FANOUT' only if
-    'maltrail_capture_dropped_total' climbs
-[o] whitelist: 3440 entries, 18 CIDR range(s)
-[o] trails: 1505265 loaded (0 malformed row(s)), ipv4=144758 ipv4:port=253517 ipv6=2014 wildcard=29
-[o] trail updates: updater present, python3 is Python 3.12.3
-[o] heuristics: on (disabled: none)
-[o] USE_CONDENSED_STORAGE: on, writing '/var/log/maltrail/meta.sqlite'
-[i] configuration test PASSED
-```
+### Systemd
 
-Skipping step 2 or 3 is the single most common way to end up with a sensor that starts and detects
-nothing; `-T` names both.
+The supplied `maltrail-server.service` and `maltrail-sensor.service` units run both processes as the
+unprivileged `maltrail` user. Systemd creates `/var/log/maltrail` and `/var/lib/maltrail`, restricts
+filesystem access, and grants the sensor `CAP_NET_RAW` and `CAP_NET_ADMIN`.
 
-### As a service
+The installer configures these units automatically. For an existing source installation, follow
+the manual service procedure in [`sensor/docs/INSTALL.md`](sensor/docs/INSTALL.md).
 
-`install.sh` does all of this for you; here it is by hand, for a tree you already have:
+Check service state and logs with:
 
 ```bash
-sudo groupadd --system maltrail
-sudo useradd --system --gid maltrail --no-create-home --shell /usr/sbin/nologin maltrail
-sudo rsync -a --exclude .git . /opt/maltrail/
-sudo cp /opt/maltrail/maltrail-{server,sensor}.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable --now maltrail-server maltrail-sensor
+systemctl status maltrail-sensor maltrail-server
+journalctl -u maltrail-sensor -f
 ```
 
-That is the whole installation — no directories to create, no `setcap`. The units create and own
-`/var/log/maltrail` (events) and `/var/lib/maltrail` (the trail set) via systemd's
-`LogsDirectory=`/`StateDirectory=`, run both processes as the unprivileged `maltrail` user with a
-read-only filesystem, and give the sensor exactly `CAP_NET_RAW` and `CAP_NET_ADMIN` — nothing else,
-and no root anywhere. The sensor runs `-T` as `ExecStartPre`, so a broken deployment fails at
-`systemctl start` instead of running blind.
-
-Check it: `systemctl status maltrail-sensor` and `journalctl -u maltrail-sensor -f`.
-
 ### Docker
+
+Start the supplied Compose deployment with:
 
 ```bash
 docker compose -f docker/docker-compose.yml up -d
 ```
 
-See [`docker/README.md`](docker/README.md).
-
----
+Container configuration, storage, privileges, and health checks are documented in
+[`docker/README.md`](docker/README.md).
 
 ## Configuration
 
-Everything lives in **`maltrail.conf`**, split into `[Sensor]` and `[Server]`. The options most
-worth knowing:
+Maltrail reads `maltrail.conf`, which contains separate `[Sensor]` and `[Server]` settings. The
+installer places the managed configuration at `/etc/maltrail.conf`.
 
-| option | what it does |
+Frequently used sensor options include:
+
+| Option | Purpose |
 | --- | --- |
-| `MONITOR_INTERFACE` | interface(s) to capture on, or `any` |
-| `CAPTURE_FILTER` | BPF filter; the default keeps bulk line-rate traffic out of userspace |
-| `PROCESS_COUNT` | worker processes for the **old** sensor. This sensor does not derive its worker count from it — see `CAPTURE_FANOUT` |
-| `CAPTURE_FANOUT` | extra capture sockets (default: one worker). Costs scan-heuristic sensitivity; see [Performance](#performance) |
-| `LOG_DIR` | where events are written (`/var/log/maltrail`) |
-| `TRAILS_FILE` | where the built trail set lives (`~/.maltrail/trails.csv`; `/var/lib/maltrail` under the units) |
-| `LOG_SERVER` | ship events to a remote server instead of, or as well as, logging locally |
-| `STATS_ADDRESS` | expose Prometheus metrics (sensor; off unless set) |
-| `UPDATE_PERIOD` | how often trails are refreshed |
-| `USER_WHITELIST` | your own never-alert list |
-| `CUSTOM_TRAILS_DIR` | your own trails, alongside the shipped ones |
+| `MONITOR_INTERFACE` | Capture interface or interfaces; `any` selects all supported interfaces |
+| `CAPTURE_FILTER` | BPF capture filter |
+| `CAPTURE_FANOUT` | Number of Linux capture sockets; defaults to one |
+| `LOG_DIR` | Local event-log directory |
+| `TRAILS_FILE` | Generated trail database |
+| `LOG_SERVER` | Remote Maltrail event server |
+| `SYSLOG_SERVER` | CEF syslog destination or destinations |
+| `LOGSTASH_SERVER` | Logstash JSON destination or destinations |
+| `STATS_ADDRESS` | Prometheus metrics listener; disabled unless configured |
+| `UPDATE_PERIOD` | Trail refresh interval |
+| `USER_WHITELIST` | Operator-managed indicators that should not alert |
+| `CUSTOM_TRAILS_DIR` | Operator-managed trail directory |
 
----
+`PROCESS_COUNT` applies to the retired Python sensor. Configure the Rust sensor's capture workers
+with `CAPTURE_FANOUT` instead.
+
+Run the deployment check after changing configuration:
+
+```bash
+sensor/target/release/maltrail-sensor -T
+```
+
+The check validates configuration, trails, whitelist entries, capture filter, privileges, log
+storage, update support, and worker settings. A successful check includes positive trail and
+whitelist counts rather than only confirming that files exist.
 
 ## Trails
 
+Trails are stored as plain-text indicators:
+
+```text
+trails/static/malware/       malware-related static trails
+trails/static/malicious/     malicious infrastructure
+trails/static/suspicious/    suspicious infrastructure and behavior
+trails/feeds/*.py            public feed integrations
 ```
-trails/static/malware/asyncrat.txt      # one indicator per line
-trails/static/malicious/…
-trails/static/suspicious/…
-trails/feeds/*.py                       # public feeds, pulled on update
-```
 
-Adding an indicator is adding a line to a text file. Adding a feed is a small Python module. Both
-are ordinary pull requests, and that low friction is why the set stays useful.
+Add local indicators under `CUSTOM_TRAILS_DIR`. Add indicators that should never generate alerts
+to `USER_WHITELIST`. Keeping custom data outside the managed checkout prevents upgrades from
+overwriting it.
 
-Your own indicators go in `CUSTOM_TRAILS_DIR`; anything you never want to hear about goes in
-`USER_WHITELIST`.
+The updater rebuilds `TRAILS_FILE` from enabled feeds, bundled static trails, and custom trails. A
+new file is published atomically only after a successful build. Empty or failed feeds are reported
+so that a running deployment does not silently depend on stale or retired sources.
 
----
+Trail contributions should include the indicator, classification, and a verifiable source. See
+[Contributing](#contributing) before submitting a pull request.
 
-## Events
+## Events and API
 
-One line per detection, whitespace-separated, CSV-quoted where needed:
+Maltrail records one whitespace-separated event per detection, using CSV quoting where a value
+contains spaces:
 
-```
+```text
 "<time>" <sensor> <src_ip> <src_port> <dst_ip> <dst_port> <proto> <type> <trail> "<info>" <reference>
 ```
 
-`type` is what matched — `DNS`, `IP`, `IPORT`, `URL`, `PATH`, `HTTP`, `UA`, `PORT`, `CERT` —
-`info` is why it is considered bad, and `reference` is where the trail came from: `(static)`, a
-feed name, or `(heuristic)`.
+The `type` field identifies what matched, including `DNS`, `IP`, `IPORT`, `URL`, `PATH`, `HTTP`,
+`UA`, `PORT`, and `CERT`. The `info` field contains the trail classification, and `reference`
+identifies the static list, feed, custom source, or heuristic that produced it.
 
-### Checking a single indicator
+### Indicator lookup
+
+Use `/check` to query one domain, IP address, or URL:
 
 ```bash
 curl 'http://127.0.0.1:8338/check?q=www.sub.evil.example'
-{"query": "www.sub.evil.example", "found": true, "trail": "evil.example",
- "info": "asyncrat (malware)", "reference": "(static)"}
 ```
 
-Answers whether one domain, IP or URL is in the trail set, and which key matched — a subdomain of
-a listed domain reports the parent, and a URL is tried as `host/path` then as the bare host. Reads
-through the memory-mapped trail store, so it costs the server no memory, and picks up trail
-updates without a restart.
+```json
+{
+  "query": "www.sub.evil.example",
+  "found": true,
+  "trail": "evil.example",
+  "info": "asyncrat (malware)",
+  "reference": "(static)"
+}
+```
 
-It is unauthenticated for the **public** trail set, like `/trails` beside it: that endpoint
-already serves static and feed trails to anyone (it is how a sensor pulls from `UPDATE_SERVER`),
-so a single-key lookup over them discloses strictly less than what is already on the same port.
+A subdomain lookup can match its listed parent. URL lookups check `host/path` before checking the
+host alone. The server reads the memory-mapped trail database and observes trail updates without a
+restart.
 
-**Custom trails need a session.** They are your own indicators rather than public data, and
-`ENABLE_MASK_CUSTOM` already hides their names from non-admin users — so `/check` reports a
-custom-only match as a miss to anyone who is not allowed to see it. Event data stays gated
-entirely.
+Public static and feed trails are available without authentication, consistent with the `/trails`
+endpoint used by remote sensors. Custom trails require an authorized session; an unauthorized
+custom-only lookup is reported as a miss. Event data remains authenticated.
 
----
+## Operations
 
-## Operating it
+### Monitoring
 
-* **`-T`** validates a configuration and exits. Usable as a deployment gate; the systemd unit runs
-  it as `ExecStartPre`.
-* **`STATS_ADDRESS`** exposes Prometheus metrics. The four worth alerting on, all of which mean
-  *this sensor is not detecting what you think it is*:
+Use `maltrail-sensor -T` as a deployment and configuration gate. The supplied systemd unit runs it
+as `ExecStartPre`.
 
-  | metric | what it means |
-  | --- | --- |
-  | `maltrail_up == 0` | no capture worker is alive — this host is **not monitored** |
-  | `rate(maltrail_capture_dropped_total)` | the ring is dropping packets — **missed detections** |
-  | `rate(maltrail_local_log_errors_total)` | detections were produced and then **lost** |
-  | `maltrail_trail_generation` not advancing | trails have stopped refreshing |
+When `STATS_ADDRESS` is configured, monitor at least these Prometheus metrics:
 
-  Also useful: `maltrail_log_dir_free_bytes` (see below) and
-  `maltrail_state_saturations_total`, which is non-zero when a state-exhaustion flood has
-  narrowed the heuristics. Exact trail matching is unaffected by that, by design.
-* **`systemctl reload`** (`SIGHUP`) reloads trails without a restart. Trails refreshed by anything
-  else are picked up within a second, with an atomic swap — no restart, no dropped packets.
-* **The condensed observable store** (`USE_CONDENSED_STORAGE`, `meta.sqlite`) that feeds the
-  server's `/meta` novelty and retro-hunt views is written in the same format the old sensor
-  produces, and the two are compared row for row by the parity harness. Every deliberate
-  difference between the sensors is listed in
-  [`sensor/docs/COMPATIBILITY.md`](sensor/docs/COMPATIBILITY.md).
+| Metric | Operational meaning |
+| --- | --- |
+| `maltrail_up == 0` | No capture worker is running |
+| Increasing `maltrail_capture_dropped_total` | The capture ring is dropping packets |
+| Increasing `maltrail_local_log_errors_total` | Events were produced but could not be written locally |
+| `maltrail_trail_generation` not advancing | The active trail set is not being refreshed |
+| `maltrail_log_dir_free_bytes` | Remaining capacity for local event storage |
+| Increasing `maltrail_state_saturations_total` | A heuristic state limit was reached |
+
+State saturation affects the corresponding heuristic; exact trail matching remains active.
+
+Send `SIGHUP` or use `systemctl reload maltrail-sensor` to request a trail reload. Trail files
+updated by another process are detected automatically and published to workers without restarting
+the sensor.
+
+The condensed observable store (`USE_CONDENSED_STORAGE`, `meta.sqlite`) supports the server's
+novelty and retro-hunt views. Compatibility with the retired sensor is documented in
+[`sensor/docs/COMPATIBILITY.md`](sensor/docs/COMPATIBILITY.md).
 
 ### Event retention
 
-**Maltrail never deletes event evidence.** There is no retention setting that expires your logs,
-and that is deliberate: these are the records you go back to after an incident, and a tool that
-quietly discards them is worse than useless during the one week you need them.
+Maltrail does not rotate or delete event logs. Operators are responsible for defining retention,
+archival, and deletion according to storage requirements and organizational policy.
 
-That makes free space something you operate rather than ignore:
+Recommended practices:
 
-* **Ship the durable copy off-box.** `LOG_SERVER` (or `SYSLOG_SERVER` / `LOGSTASH_SERVER`) makes
-  the server or your SIEM the system of record, and the sensor's local file a buffer. This is the
-  retention strategy; local disk is not one.
-* **Alert on `maltrail_log_dir_free_bytes`** with real headroom. `-T` reports it too, and warns
-  below 10 GB. When it reaches zero the sensor cannot append and detections are lost.
-* **Archiving is yours to decide.** Compress or move old daily logs on your own schedule if you
-  need the space. Note that the reporting UI serves historical logs as plain seekable files, so
-  compressing them in place removes those days from the interface — archive them elsewhere.
+- Send the durable event copy to a remote Maltrail server or SIEM with `LOG_SERVER`,
+  `SYSLOG_SERVER`, or `LOGSTASH_SERVER`.
+- Alert on `maltrail_log_dir_free_bytes` with enough headroom for the expected event rate.
+- Rotate, archive, or remove local daily logs using external tooling.
+- Keep files needed by the reporting interface uncompressed in `LOG_DIR`; archive compressed files
+  elsewhere.
 
-If your policy *requires* deletion (event logs contain IP addresses and domains, which are
-personal data in some jurisdictions), that is an explicit operator decision — make it with your
-own tooling, deliberately, rather than having a sensor default do it quietly.
-
----
+When the log filesystem is full, the sensor cannot append events. Event logs may also contain IP
+addresses and domains that are regulated as personal data in some jurisdictions; retention policy
+should account for the applicable requirements.
 
 ## Documentation
 
-| | |
+| Document | Contents |
 | --- | --- |
-| [`sensor/docs/INSTALL.md`](sensor/docs/INSTALL.md) | installation, privileges, configuration, troubleshooting |
-| [`sensor/docs/ARCHITECTURE.md`](sensor/docs/ARCHITECTURE.md) | how the sensor works internally |
-| [`sensor/docs/COMPATIBILITY.md`](sensor/docs/COMPATIBILITY.md) | every deliberate difference from the old sensor |
-| [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md) | measurements, profiles and test results |
-| [`sensor/docs/ROADMAP.md`](sensor/docs/ROADMAP.md) | what is still open |
-| [`old/README.md`](old/README.md) | the previous Python sensor, kept as reference and test oracle |
-
----
+| [`sensor/docs/INSTALL.md`](sensor/docs/INSTALL.md) | Installation, privileges, configuration, and troubleshooting |
+| [`sensor/docs/ARCHITECTURE.md`](sensor/docs/ARCHITECTURE.md) | Sensor internals and data flow |
+| [`sensor/docs/COMPATIBILITY.md`](sensor/docs/COMPATIBILITY.md) | Deliberate differences from the retired Python sensor |
+| [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md) | Measurements, profiles, and test results |
+| [`sensor/docs/ROADMAP.md`](sensor/docs/ROADMAP.md) | Open sensor work |
+| [`old/README.md`](old/README.md) | Retired Python sensor, retained as a parity oracle |
 
 ## Contributing
 
-Trails are the most valuable contribution: a line in the right file, with a source. Feeds, bug
-reports and sensor work are equally welcome.
+Trail additions, feed maintenance, bug reports, documentation, and sensor improvements are welcome.
+Trail submissions should include a reliable source and should use the narrowest appropriate
+classification.
 
-The sensor's full gate is one command:
+Run the relevant checks before submitting code. The complete sensor gate is:
 
 ```bash
 bash sensor/tools/check.sh
 ```
 
-It runs formatting, lints, the test suite in **both** debug and release profiles, and replays a
-corpus through both the current sensor and the old Python one, requiring byte-identical events. The
-Python side is `bash tests/run.sh`.
+It runs formatting, Clippy with warnings denied, debug and release tests, and parity replay against
+the retired Python sensor. Run the Python server suite with:
 
----
+```bash
+bash tests/run.sh python3
+```
 
-## Licence
+## Project
 
-MIT. See [`LICENSE`](LICENSE).
+### License
 
----
+Maltrail is distributed under the MIT License. See [`LICENSE`](LICENSE).
 
-## Sponsors
+### Maintainers
 
-* [Sansec](https://sansec.io/) (2024-2025)
-* [Sansec](https://sansec.io/) (2020-2021)
+- Miroslav Stampar ([@stamparm](https://github.com/stamparm))
+- Mikhail Kasimov ([@MikhailKasimov](https://github.com/MikhailKasimov))
 
-## Developers
+### Sponsors
 
-* Miroslav Stampar ([@stamparm](https://github.com/stamparm))
-* Mikhail Kasimov ([@MikhailKasimov](https://github.com/MikhailKasimov))
+- [Sansec](https://sansec.io/) (2024–2025)
+- [Sansec](https://sansec.io/) (2020–2021)
 
-## Presentations
+### Presentations and publications
 
-* 47th TF-CSIRT Meeting, Prague (Czech Republic), 2016 ([slides](https://web.archive.org/web/20161109135211/https://www.terena.org/activities/tf-csirt/meeting47/M.Stampar-Maltrail.pdf))
+- 47th TF-CSIRT Meeting, Prague, 2016
+  ([slides](https://web.archive.org/web/20161109135211/https://www.terena.org/activities/tf-csirt/meeting47/M.Stampar-Maltrail.pdf))
+- _Detect attacks on your network with Maltrail_, Linux Magazine, 2022
+  ([article](https://www.linux-magazine.com/Issues/2022/258/Maltrail))
+- _Best Cyber Threat Intelligence Feeds_, Silent Push, 2022
+  ([review](https://www.silentpush.com/blog/best-cyber-threat-intelligence-feeds))
+- _Research on Network Malicious Traffic Detection System Based on Maltrail_, Nanotechnology
+  Perceptions, 2024
+  ([paper](https://nano-ntp.com/index.php/nano/article/view/1915/1497))
 
-## Publications
+### Derived blacklist
 
-* Detect attacks on your network with Maltrail, Linux Magazine, 2022 ([Annotation](https://www.linux-magazine.com/Issues/2022/258/Maltrail))
-* Best Cyber Threat Intelligence Feeds ([SilentPush Review, 2022](https://www.silentpush.com/blog/best-cyber-threat-intelligence-feeds))
-* Research on Network Malicious Traffic Detection System Based on Maltrail ([Nanotechnology Perceptions, ISSN 1660-6795, 2024](https://nano-ntp.com/index.php/nano/article/view/1915/1497))
+A domain-only list derived from `trails/static/malware` is published at
+[`maltrail-malware-domains.txt`](https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt).
+It can be used as an input to DNS filtering systems, but operators should review and test it before
+enabling blocking. Threat-intelligence lists can contain false positives or indicators that are not
+appropriate for every environment.
 
-## Blacklist
+### Third-party integrations
 
-* Maltrail's daily updated blacklist of malware-related domains can be found [here](https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt). It is based on trails found at [trails/static/malware](trails/static/malware) and can be safely used for DNS traffic blocking purposes.
+- [FreeBSD Port](https://www.freshports.org/security/maltrail)
+- [OPNsense Gateway Plugin](https://github.com/opnsense/plugins/pull/1257)
+- [D4 Project](https://www.d4-project.org/2019/09/25/maltrail-integration.html)
+- [BlackArch Linux](https://github.com/BlackArch/blackarch/blob/master/packages/maltrail/PKGBUILD)
+- [Validin](https://x.com/ValidinLLC/status/1719666086390517762)
+- [Maltrail Add-on for Splunk](https://splunkbase.splunk.com/app/7211)
+- [Maltrail decoder and rules for Wazuh](https://github.com/MikhailKasimov/maltrail-wazuh-decoder-and-rules)
+- [GScan](https://github.com/grayddq/GScan) (trails only)
+- [MalwareWorld](https://www.malwareworld.com/) (trails only)
+- [oisd domain blocklist](https://oisd.nl/?p=inc) (trails only)
+- [NextDNS](https://github.com/nextdns/metadata/blob/e0c9c7e908f5d10823b517ad230df214a7251b13/security/threat-intelligence-feeds.json) (trails only)
+- [NoTracking](https://github.com/notracking/hosts-blocklists/blob/master/SOURCES.md) (trails only)
+- [OWASP Mobile Audit](https://github.com/mpast/mobileAudit#environment-variables) (trails only)
+- [Mobile Security Framework MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF/commit/12b07370674238fa4281fc7989b34decc2e08876) (trails only)
+- [pfBlockerNG-devel](https://github.com/pfsense/FreeBSD-ports/blob/devel/net/pfSense-pkg-pfBlockerNG-devel/files/usr/local/www/pfblockerng/pfblockerng_feeds.json) (trails only)
+- [Sansec eComscan](https://sansec.io/kb/about-ecomscan/ecomscan-license) (trails only)
+- [Palo Alto Networks Cortex XSOAR](https://xsoar.pan.dev/docs/reference/integrations/github-maltrail-feed) (trail connector)
 
-## Thank you
+### Acknowledgements
 
-* Thomas Kristner
-* Eduardo Arcusa Les
-* James Lay
-* Ladislav Baco (@laciKE)
-* John Kristoff (@jtkdpu)
-* Michael M&uuml;nz (@mimugmail)
-* David Brush
-* @Godwottery
-* Chris Wild (@briskets)
-* Keith Irwin (@ki9us)
-* Simon Szustkowski (@simonszu)
-
-## Third-party integrations
-
-* [FreeBSD Port](https://www.freshports.org/security/maltrail)
-* [OPNSense Gateway Plugin](https://github.com/opnsense/plugins/pull/1257)
-* [D4 Project](https://www.d4-project.org/2019/09/25/maltrail-integration.html)
-* [BlackArch Linux](https://github.com/BlackArch/blackarch/blob/master/packages/maltrail/PKGBUILD)
-* [Validin LLC](https://x.com/ValidinLLC/status/1719666086390517762)
-* [Maltrail Add-on for Splunk](https://splunkbase.splunk.com/app/7211)
-* [Maltrail decoder and rules for Wazuh](https://github.com/MikhailKasimov/maltrail-wazuh-decoder-and-rules)
-* [GScan](https://github.com/grayddq/GScan) <sup>1</sup>
-* [MalwareWorld](https://www.malwareworld.com/) <sup>1</sup>
-* [oisd | domain blocklist](https://oisd.nl/?p=inc) <sup>1</sup>
-* [NextDNS](https://github.com/nextdns/metadata/blob/e0c9c7e908f5d10823b517ad230df214a7251b13/security/threat-intelligence-feeds.json) <sup>1</sup>
-* [NoTracking](https://github.com/notracking/hosts-blocklists/blob/master/SOURCES.md) <sup>1</sup>
-* [OWASP Mobile Audit](https://github.com/mpast/mobileAudit#environment-variables) <sup>1</sup>
-* [Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF/commit/12b07370674238fa4281fc7989b34decc2e08876) <sup>1</sup>
-* [pfBlockerNG-devel](https://github.com/pfsense/FreeBSD-ports/blob/devel/net/pfSense-pkg-pfBlockerNG-devel/files/usr/local/www/pfblockerng/pfblockerng_feeds.json) <sup>1</sup>
-* [Sansec eComscan](https://sansec.io/kb/about-ecomscan/ecomscan-license)<sup>1</sup>
-* [Palo Alto Networks Cortex XSOAR](https://xsoar.pan.dev/docs/reference/integrations/github-maltrail-feed)<sup>2</sup>
-
-<sup>1</sup> Using (only) trails
-
-<sup>2</sup> Connector to trails (only)
+- Thomas Kristner
+- Eduardo Arcusa Les
+- James Lay
+- Ladislav Baco (@laciKE)
+- John Kristoff (@jtkdpu)
+- Michael M&uuml;nz (@mimugmail)
+- David Brush
+- @Godwottery
+- Chris Wild (@briskets)
+- Keith Irwin (@ki9us)
+- Simon Szustkowski (@simonszu)
