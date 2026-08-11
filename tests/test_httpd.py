@@ -641,6 +641,98 @@ class TestBlacklistAccessControl(unittest.TestCase):
         self.assertIn(b"10.13.13.2", body, "the blacklist content itself is unchanged")
 
 
+class TestClearedSources(unittest.TestCase):
+    """A remediated host can be taken off the derived lists without being whitelisted forever.
+
+    /blacklist and /fail2ban are derived from the current day's events, so a host flagged once
+    stays listed until midnight and the only escape was USER_WHITELIST - which also suppresses
+    every FUTURE detection for it (issue #19053). Clearing is time-bounded instead.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.mkdtemp(prefix="mt_cleared_")
+        cls.logdir = os.path.join(cls.tmp, "logs"); os.makedirs(cls.logdir)
+        cls.date = time.strftime("%Y-%m-%d")
+        cls.log = os.path.join(cls.logdir, cls.date + ".log")
+        with open(cls.log, "w") as f:
+            f.write(cls._event("09:00:00", "10.13.13.37"))
+            f.write(cls._event("09:05:00", "10.13.13.99"))
+        trails = os.path.join(cls.tmp, "trails.csv")
+        with open(trails, "w") as f:
+            f.write("evil.com,dummy,(static)\n")
+
+        cls.port = _free_port()
+        cfg = os.path.join(cls.tmp, "srv.conf")
+        with open(cfg, "w") as f:
+            f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\n" % cls.port)
+            f.write("FAIL2BAN_ALLOWLIST 127.0.0.1\nFAIL2BAN_REGEX malware\n")
+            f.write("BLACKLIST\n    src_ip ~ ^10\\.\n")
+            f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+            f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME gw\nDISABLE_CHECK_SUDO true\n" % (cls.logdir, trails))
+        cls.proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        for _ in range(60):
+            if cls.proc.poll() is not None:
+                break
+            try:
+                socket.create_connection(("127.0.0.1", cls.port), timeout=0.5).close(); break
+            except Exception:
+                time.sleep(0.25)
+
+    @staticmethod
+    def _event(when, src):
+        return '"%s %s.000000" gw %s 4421 8.8.8.8 53 UDP DNS evil.com "malware (dummy)" (static)\n' % (
+            time.strftime("%Y-%m-%d"), when, src)
+
+    @classmethod
+    def tearDownClass(cls):
+        if cls.proc and cls.proc.poll() is None:
+            cls.proc.terminate()
+            try:
+                cls.proc.wait(timeout=5)
+            except Exception:
+                cls.proc.kill()
+
+    def setUp(self):
+        # Each test owns the log and the cleared list: one of them APPENDS an event, and these
+        # run in alphabetical order, so without this the append leaks into its neighbours and
+        # they fail for a reason that has nothing to do with what they assert.
+        with open(self.log, "w") as f:
+            f.write(self._event("09:00:00", "10.13.13.37"))
+            f.write(self._event("09:05:00", "10.13.13.99"))
+        self._clear("")
+        time.sleep(9)      # both endpoints cache for 8s; start each test from a cold cache
+
+    def _listed(self, endpoint):
+        _, _, body = _http(self.port, "GET", endpoint)
+        return sorted(x for x in body.decode().split("\n") if x.strip())
+
+    def _clear(self, text):
+        with open(os.path.join(self.logdir, "cleared.txt"), "w") as f:
+            f.write(text)
+
+    def test_clearing_removes_only_that_host_and_only_the_earlier_events(self):
+        self.assertEqual(self._listed("/blacklist"), ["10.13.13.37", "10.13.13.99"])
+
+        self._clear("10.13.13.37 %s 09:30:00\n" % self.date)
+        self.assertEqual(self._listed("/blacklist"), ["10.13.13.99"], "the cleared host must drop off")
+        self.assertEqual(self._listed("/fail2ban"), ["10.13.13.99"], "and off /fail2ban too")
+
+    def test_a_later_event_puts_a_cleared_host_straight_back(self):
+        # The whole point: clearing is not a whitelist. A NEW detection must re-list the host.
+        self._clear("10.13.13.37 %s 09:30:00\n" % self.date)
+        self.assertNotIn("10.13.13.37", self._listed("/blacklist"))
+        with open(self.log, "a") as f:
+            f.write(self._event("23:59:00", "10.13.13.37"))
+        time.sleep(9)                                     # the endpoints have always cached for 8s
+        self.assertIn("10.13.13.37", self._listed("/blacklist"), "a later event must re-list it")
+
+    def test_a_malformed_entry_does_not_clear_anything(self):
+        self._clear("not-an-ip\n@@@\n")
+        self.assertEqual(self._listed("/blacklist"), ["10.13.13.37", "10.13.13.99"])
+
+
 class TestAuthEventForwarding(unittest.TestCase):
     """Login attempts must reach a remote collector, and must not be forgeable.
 
