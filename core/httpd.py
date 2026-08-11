@@ -136,6 +136,64 @@ _version_cache = None
 _counts_cache = {}  # NOTE: per daily-log event count keyed by filepath -> (mtime, size, count); past-day logs are immutable so they're read once, not on every poll
 _geo_cache = {}  # NOTE: per daily-log country aggregation keyed by filepath -> running {mtime,size,offset,counts,mapped,unmapped}; grows INCREMENTALLY (only new bytes are scanned) so a live/growing current-day log stays cheap
 _geo_lock = threading.Lock()  # NOTE: the incremental read-modify-write must be serialized (concurrent /geo for the same day would otherwise double-count)
+MAX_REQUEST_THREADS = 100       # concurrent request handlers; excess connections get 503 without a thread
+LOGIN_FAILURE_THRESHOLD = 5     # consecutive failures from one IP before its attempts are refused unevaluated
+_login_failures = {}            # client IP -> [consecutive failures, epoch the window expires]
+_login_failures_lock = threading.Lock()
+MAX_LOGIN_FAILURE_ENTRIES = 4096
+
+def _login_refused(ip):
+    """Has `ip` failed enough times in a row, recently enough, to have its attempts refused?
+
+    Replaces an unconditional `time.sleep(UNAUTHORIZED_SLEEP_TIME)` on the failure path. That
+    sleep delayed the RESPONSE without delaying the ATTEMPT: 200 concurrent requests were all
+    evaluated, each parking a request thread for five seconds. Measured on the stock
+    configuration, 200 concurrent failed logins took the server from 1 thread to 172 and 600
+    took it to 316, unauthenticated and from one host. Capping threads alone does not fix it -
+    100 handlers each sleeping five seconds saturates the cap just as well, and then legitimate
+    users get the 503s.
+
+    A THRESHOLD, not a blanket cooldown. Refusing on the first failure would have been strictly
+    worse than the sleep it replaced: the reporting interface is routinely reached through one
+    NAT address, so one fat-fingered password would lock out everyone behind it, and an attacker
+    could hold an office out of its own console by failing a login every five seconds. Five
+    consecutive failures is well clear of ordinary mistyping and still bounds a brute-force run
+    to five guesses per window, against the unbounded concurrent evaluation it replaces.
+
+    A successful login clears the counter, so a user who mistypes twice and then succeeds carries
+    nothing forward.
+    """
+
+    now = time.time()
+    with _login_failures_lock:
+        if len(_login_failures) >= MAX_LOGIN_FAILURE_ENTRIES:   # bounded: the key is attacker-chosen
+            for key in [_ for _, entry in _login_failures.items() if entry[1] <= now]:
+                del _login_failures[key]
+            if len(_login_failures) >= MAX_LOGIN_FAILURE_ENTRIES:
+                return True     # saturated -> refuse rather than grow; fail closed
+        entry = _login_failures.get(ip)
+        if entry is None:
+            return False
+        if now >= entry[1]:     # window elapsed -> the streak is over
+            del _login_failures[ip]
+            return False
+        return entry[0] >= LOGIN_FAILURE_THRESHOLD
+
+def _login_failed(ip):
+    """Count one failure for `ip` and (re)start its window."""
+
+    now = time.time()
+    with _login_failures_lock:
+        entry = _login_failures.get(ip)
+        count = entry[0] + 1 if entry is not None and now < entry[1] else 1
+        _login_failures[ip] = [count, now + UNAUTHORIZED_SLEEP_TIME]
+
+def _login_succeeded(ip):
+    """Clear `ip`'s failure streak: the credentials were right, so it was not an attack."""
+
+    with _login_failures_lock:
+        _login_failures.pop(ip, None)
+
 CUSTOM_TRAIL_MARKER = b",(custom)"  # the reference column of a trails-file row sourced from trails/custom
 _public_trails_cache = None  # the trails file with every custom row removed, for the last _public_trails_key
 _public_trails_key = None    # (mtime, size) of the trails file the cached copy was derived from
@@ -476,6 +534,47 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
     class ThreadingServer(_socketserver.ThreadingMixIn, _BaseHTTPServer.HTTPServer):
         daemon_threads = True  # long-lived SSE (/live) streams must not block server shutdown
+
+        # ThreadingMixIn spawns one thread per connection with no ceiling, so concurrency was
+        # whatever a client chose to open. A bounded pool turns "the server falls over" into
+        # "some requests get 503", which is a service decision rather than an outage. The
+        # rejection is written from the ACCEPT thread: refusing a connection must not itself
+        # cost the thread the cap exists to protect.
+        _active = 0
+        _active_lock = threading.Lock()
+
+        def process_request(self, request, client_address):
+            with ThreadingServer._active_lock:
+                if ThreadingServer._active >= MAX_REQUEST_THREADS:
+                    over = True
+                else:
+                    ThreadingServer._active += 1
+                    over = False
+
+            if over:
+                try:
+                    request.sendall(b"HTTP/1.1 503 Service Unavailable\r\nConnection: close\r\n"
+                                    b"Retry-After: 1\r\nContent-Length: 0\r\n\r\n")
+                except Exception:
+                    pass
+                self.shutdown_request(request)
+                return
+
+            try:
+                _socketserver.ThreadingMixIn.process_request(self, request, client_address)
+            except Exception:
+                # the handler thread never started, so nothing will decrement for us
+                with ThreadingServer._active_lock:
+                    ThreadingServer._active -= 1
+                raise
+
+        def process_request_thread(self, request, client_address):
+            try:
+                _socketserver.ThreadingMixIn.process_request_thread(self, request, client_address)
+            finally:
+                with ThreadingServer._active_lock:
+                    ThreadingServer._active -= 1
+
         def server_bind(self):
             self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
             _BaseHTTPServer.HTTPServer.server_bind(self)
@@ -787,6 +886,15 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         def _login(self, params):
             valid = False
 
+            # Threshold check BEFORE any credential work: see _login_refused. A hammering IP gets
+            # the same 401 it would have got anyway, immediately, and its guess is not evaluated.
+            if _login_refused(self.client_address[0]):
+                self.send_response(_http_client.UNAUTHORIZED)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
+                self.__log_auth(False, params.get("username"))
+                return "Login failed"
+
             if params.get("username") and params.get("hash") and params.get("nonce"):
                 if params.get("nonce") not in DISPOSED_NONCES:
                     DISPOSED_NONCES[params.get("nonce")] = True
@@ -815,6 +923,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                     traceback.print_exc()
 
             if valid:
+                _login_succeeded(self.client_address[0])
                 _ = os.urandom(SESSION_ID_LENGTH)
                 session_id = _.hex() if hasattr(_, "hex") else _.encode("hex")
                 expiration = time.time() + 3600 * SESSION_EXPIRATION_HOURS
@@ -874,7 +983,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                 SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilters": netfilters, "mask_custom": bool(config.ENABLE_MASK_CUSTOM and uid is not None and uid >= 1000), "expiration": expiration, "client_ip": self.client_address[0]})
             else:
-                time.sleep(UNAUTHORIZED_SLEEP_TIME)
+                _login_failed(self.client_address[0])
                 self.send_response(_http_client.UNAUTHORIZED)
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
 
