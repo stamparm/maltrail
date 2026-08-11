@@ -227,6 +227,7 @@ th[data-key="sev"],td[data-l="severity"],
 th[data-key="src"],td[data-l="source"],
 th[data-key="dst"],td[data-l="destination"],
 th[data-key="dport"],td[data-l="port"],
+th[data-key="proto"],td[data-l="proto"],
 th[data-key="type"],td[data-l="type"],
 th[data-key="first"],td[data-l="first seen"]{width:1%;white-space:nowrap}
 thead th{user-select:none}
