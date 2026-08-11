@@ -25,6 +25,7 @@ wire.
 - [Architecture](#architecture)
 - [Performance](#performance)
 - [Quick start](#quick-start)
+  - [Installing from source](#installing-from-source)
   - [As a service](#as-a-service)
   - [Docker](#docker)
 - [Configuration](#configuration)
@@ -180,6 +181,39 @@ instruction counts and the profiler output are in
 
 ## Quick start
 
+```bash
+curl -fsSL https://raw.githubusercontent.com/stamparm/maltrail/master/install.sh | sudo sh
+```
+
+That is the whole thing on Debian, Ubuntu, Raspberry Pi OS, RHEL, Fedora and openSUSE. It installs
+the dependencies, makes a shallow clone in `/opt/maltrail`, downloads the prebuilt sensor for this
+architecture and verifies its SHA-256, creates an unprivileged `maltrail` user, the log and state
+directories and `/etc/maltrail.conf`, installs the systemd units, and grants the sensor
+`CAP_NET_RAW`/`CAP_NET_ADMIN` so it captures without root, and starts both services. Re-running it
+is the upgrade path.
+
+The dashboard is then on <http://127.0.0.1:8338>, default login `admin` / `changeme!` — change it
+in `/etc/maltrail.conf` (`USERS`). The first trail build takes a few minutes, and nothing is
+detected until it finishes. The sensor unit runs `-T` as `ExecStartPre`, so a deployment that
+cannot work fails at `systemctl start` rather than running blind.
+
+```bash
+sh install.sh --role sensor      # sensor only, when the server lives elsewhere
+sh install.sh --ref 3.1.1        # pin to a release tag instead of master
+sh install.sh --no-service       # install, do not touch systemd
+sh install.sh --dry-run          # print every command, change nothing
+sh install.sh --uninstall        # remove it again (logs and state are kept)
+```
+
+Run inside a checkout you already have, it installs **that** tree in place and never touches its
+git state; `--prefix` asks for a separate managed copy. `--uninstall` only removes a tree the
+installer created. Configuration lives in `/etc/maltrail.conf` precisely so an upgrade cannot eat
+it. Every commit exercises the installer in ubuntu, debian, fedora, opensuse and alpine containers,
+starting the server and asking it for `/ping`. On Alpine there is no prebuilt sensor — the
+installer says so and points at building from source, below.
+
+### Installing from source
+
 Install the prerequisites first — **all of them**, or the build fails at the link step with
 `cannot find -lpcap`:
 
@@ -228,7 +262,7 @@ Prebuilt sensor binaries for `x86_64` and `aarch64` are attached to every
 [release](https://github.com/stamparm/maltrail/releases) with a SHA-256 checksum — those need only
 libpcap at runtime and no toolchain at all. They are built against **glibc 2.28**, so they run on
 RHEL 8+, Debian 10+, Ubuntu 18.04+ and openSUSE Leap 15.x; the release refuses to publish a binary
-that needs anything newer. On musl (Alpine) build from source instead. To build from source instead:
+that needs anything newer. On musl (Alpine) build from source instead:
 
 ```bash
 git clone --depth 1 https://github.com/stamparm/maltrail.git
@@ -282,6 +316,8 @@ Skipping step 2 or 3 is the single most common way to end up with a sensor that 
 nothing; `-T` names both.
 
 ### As a service
+
+`install.sh` does all of this for you; here it is by hand, for a tree you already have:
 
 ```bash
 sudo groupadd --system maltrail
