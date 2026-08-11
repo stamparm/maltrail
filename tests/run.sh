@@ -14,7 +14,20 @@ HERE=$(cd "$(dirname "$0")" && pwd)
 MEM_KB=1200000          # ~1.2 GB address-space cap per interpreter
 TIMEOUT=300             # seconds per test file
 
-TESTS="test_addr test_common test_datatype test_ignore test_config test_trailsdict test_fastfilter test_quic_sni test_tls_intel test_sensor test_fanout test_httpd test_log_condense test_logd test_meta test_geo test_reference test_doctests test_enums test_parallel test_options"
+TESTS="test_addr test_common test_datatype test_ignore test_config test_trailsdict test_fastfilter test_quic_sni test_tls_intel test_sensor test_fanout test_httpd test_log_condense test_logd test_meta test_geo test_reference test_doctests test_enums test_parallel test_options test_frontend"
+
+# A test file that is not in TESTS is not run by this script or by CI, and nothing else would ever
+# say so - it just sits there passing locally and covering nothing. Fail instead.
+missing=""
+for f in "$HERE"/test_*.py; do
+    [ -f "$f" ] || continue
+    name=$(basename "$f" .py)
+    case " $TESTS " in *" $name "*) ;; *) missing="$missing $name" ;; esac
+done
+if [ -n "$missing" ]; then
+    echo "[!] test file(s) not listed in TESTS (tests/run.sh):$missing"
+    exit 1
+fi
 
 if [ "$#" -gt 0 ]; then
     PYS="$*"
