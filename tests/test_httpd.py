@@ -19,7 +19,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, REPO)   # so `from core.log import safe_value` resolves (we also shell out to server.py)
 PW = "changeme!"
 STORED = hashlib.sha256(PW.encode()).hexdigest()   # what the config stores (sha256 of password)
-from core.httpd import LOGIN_FAILURE_THRESHOLD     # the brute-force refusal threshold under test
+from core.httpd import LOGIN_FAILURE_THRESHOLD, MAX_LIVE_STREAMS   # brute-force threshold and SSE budget under test
 from core.settings import UNAUTHORIZED_SLEEP_TIME  # the width of its window
 
 
@@ -540,6 +540,34 @@ class TestHttpd(unittest.TestCase):
         time.sleep(UNAUTHORIZED_SLEEP_TIME + 0.5)
         st, _, _ = _http(self.port, "POST", "/login", body=self._login_body("admin"))
         self.assertEqual(st, 200, "the window must expire and let a legitimate user back in")
+
+    def test_live_streams_cannot_starve_ordinary_requests(self):
+        # A /live stream holds its request thread for the lifetime of the tab. Counted against the
+        # general thread cap it starves everything else: 120 open dashboards saturated all 100
+        # slots and every ordinary request got a 503 - a cheaper denial of service than the cap was
+        # added to prevent, needing nothing but a browser. Streams get their own smaller budget,
+        # and a refused one is answered 204, which the frontend already falls back to polling on.
+        ck = self._login("admin")
+        held, refused = [], 0
+        try:
+            for _ in range(MAX_LIVE_STREAMS + 5):
+                s = socket.create_connection(("127.0.0.1", self.port), timeout=5)
+                s.sendall(("GET /live?date=%s HTTP/1.1\r\nHost: 127.0.0.1\r\nCookie: %s\r\n\r\n"
+                           % (self.date, ck)).encode())
+                head = s.recv(64)
+                if b" 204 " in head:
+                    refused += 1
+                    s.close()
+                else:
+                    held.append(s)
+            self.assertGreaterEqual(refused, 1, "streams past the budget must be refused, not accepted")
+            self.assertLessEqual(len(held), MAX_LIVE_STREAMS, "the stream budget must be enforced")
+            st, _, _ = _http(self.port, "GET", "/")
+            self.assertEqual(st, 200, "ordinary requests must survive a wall of open SSE streams")
+        finally:
+            for s in held:
+                try: s.close()
+                except Exception: pass
 
     def test_counts_are_scoped_to_the_session_networks(self):
         # /events has always honoured netfilters; /counts reported the GLOBAL daily totals to every
