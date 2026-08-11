@@ -90,11 +90,12 @@ def problems(root):
                         found.append((path, number, key, "not punycode; the wire form is %s" % puny))
                     except Exception:
                         found.append((path, number, key, "not ASCII and not encodable as punycode"))
-                elif '_' in key:
-                    # The regex applies to the QUERY, not to the trail key, so this is the only
-                    # ASCII case that matters: a query carrying '_' never reaches the lookup.
-                    # Anything else - a bare TLD, a short label - is reachable via the parent walk.
-                    found.append((path, number, key, "underscore: the query is rejected before lookup"))
+                elif key.rsplit('.', 1)[-1].count('_'):
+                    # VALID_DNS_NAME_REGEX accepts '_' in every label but the last, so only an
+                    # underscore in the TLD position is still unreachable. (It used to reject the
+                    # character outright, which stranded 134 trails - dynamic-DNS hosts and the
+                    # like - because the QUERY was refused before the lookup ever happened.)
+                    found.append((path, number, key, "underscore in the last label: no such TLD, unreachable"))
     return found
 
 
