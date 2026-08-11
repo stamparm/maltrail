@@ -332,6 +332,84 @@ def _geo_home():
         pass
     return None
 
+_cleared_cache = (None, {})
+
+def _cleared_sources():
+    """IPs an operator has marked as remediated, and the moment they were marked.
+
+    `LOG_DIR/cleared.txt`, one entry per line:
+
+        10.13.13.37                       # cleared as of this file's last modification
+        10.13.13.99 2026-08-11 09:30:00   # cleared as of an explicit moment
+
+    Both /blacklist and /fail2ban are derived from the CURRENT DAY's events, so a host that was
+    flagged once stays on the list until midnight. Until now the only way off it was
+    USER_WHITELIST, which is permanent - it also suppresses every FUTURE detection for that host,
+    which is the opposite of what someone who has just cleaned a machine wants (issue #19053).
+
+    Clearing is time-bounded instead: events BEFORE the mark are ignored, and any event after it
+    puts the host straight back on the list. Remediate, clear, and the host is still watched.
+
+    Cached on the file's (mtime, size), so an edit takes effect on the next request.
+    """
+    global _cleared_cache
+
+    path = os.path.join(config.LOG_DIR, "cleared.txt")
+    try:
+        stat = os.stat(path)
+        stamp = (stat.st_mtime, stat.st_size)
+    except OSError:
+        _cleared_cache = (None, {})
+        return {}
+
+    if _cleared_cache[0] == stamp:
+        return _cleared_cache[1]
+
+    retval = {}
+    try:
+        with open(path) as f:
+            for line in f:
+                line = re.sub(r"\s*#.*", "", line).strip()
+                if not line:
+                    continue
+                parts = line.split(None, 1)
+                ip = parts[0]
+                when = stat.st_mtime
+                if len(parts) > 1:
+                    try:
+                        when = time.mktime(time.strptime(parts[1].strip()[:19], "%Y-%m-%d %H:%M:%S"))
+                    except ValueError:
+                        pass                 # unparseable stamp -> fall back to the file's mtime
+                retval[ip] = when
+    except (OSError, IOError):
+        return {}
+
+    _cleared_cache = (stamp, retval)
+    return retval
+
+
+def _event_precedes_clear(line, ip, cleared):
+    """Should this event line be ignored because `ip` was cleared after it happened?
+
+    The timestamp is only parsed for an IP that is actually in the cleared map, which is empty on
+    virtually every deployment - so this costs nothing on the common path.
+
+    >>> _event_precedes_clear('"2026-08-11 09:00:00.0" s 10.0.0.5 1 2.2.2.2 2 TCP IP x y z', "10.0.0.5", {})
+    False
+    """
+
+    when = cleared.get(ip)
+    if when is None:
+        return False
+    match = re.match(r'\A"([^"]{19})', line)
+    if not match:
+        return False
+    try:
+        return time.mktime(time.strptime(match.group(1), "%Y-%m-%d %H:%M:%S")) <= when
+    except ValueError:
+        return False
+
+
 def _sanitize_auth_field(value):
     """Make a client-supplied value safe to put in a log line.
 
@@ -1111,7 +1189,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
             content = ""
-            key = int(time.time()) >> 3
+            # Load the cleared list FIRST: it is part of the cache key, so reading the key before
+            # refreshing it would serve the stale answer for up to 8 seconds after an edit - which
+            # looks exactly like the feature not working.
+            cleared = _cleared_sources()
+            key = (int(time.time()) >> 3, _cleared_cache[0])
 
             if config.FAIL2BAN_REGEX:
                 try:
@@ -1129,7 +1211,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 for line in f:
                                     if re.search(config.FAIL2BAN_REGEX, line, re.I):
                                         parts = line.split()
-                                        if len(parts) > 3:
+                                        if len(parts) > 3 and not _event_precedes_clear(line, parts[3], cleared):
                                             result.add(parts[3])
 
                         content = "\n".join(result)
@@ -1174,7 +1256,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 bl_name = "_%s" % params['subpath'].split('/')[0].upper()
 
             content = ""
-            key = (bl_name, int(time.time()) >> 3)  # NOTE: bl_name MUST be part of the key - the single global cache is shared across every /blacklist/<subpath>, so keying on time alone returns one blacklist's results for another within the TTL
+            cleared = _cleared_sources()   # before the key: see the note in _fail2ban
+            key = (bl_name, int(time.time()) >> 3, _cleared_cache[0])  # NOTE: bl_name MUST be part of the key - the single global cache is shared across every /blacklist/<subpath>, so keying on time alone returns one blacklist's results for another within the TTL
 
             if "BLACKLIST%s" % bl_name in config:
                 try:
@@ -1212,9 +1295,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         _ = os.path.join(config.LOG_DIR, "%s.log" % datetime.datetime.now().strftime("%Y-%m-%d"))
                         if os.path.isfile(_):
                             with open(_, "r") as f_log:
-                                for line in f_log:
-                                    line = line.split(' ', 10)
+                                for raw in f_log:
+                                    line = raw.split(' ', 10)
                                     if len(line) < 11:
+                                        continue
+                                    if _event_precedes_clear(raw, line[3], cleared):
                                         continue
                                     for bl in blacklist:
                                         failed = False
