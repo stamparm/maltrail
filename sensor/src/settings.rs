@@ -178,7 +178,7 @@ pub fn init(root: PathBuf) -> &'static Statics {
 }
 
 /// Panics if `init()` has not run; every caller is downstream of `main()`.
-/// `VALID_DNS_NAME_REGEX` (`\A[a-zA-Z0-9.-]*\.[a-zA-Z0-9-]+\Z`), hand-coded.
+/// `VALID_DNS_NAME_REGEX` (`\A[a-zA-Z0-9._-]*\.[a-zA-Z0-9-]+\Z`), hand-coded.
 ///
 /// Every DNS question runs this. A compiled regex costs ~100 ns on a short name; the pattern is
 /// two character classes and an anchor, so a byte loop does it in single-digit nanoseconds.
@@ -199,8 +199,11 @@ pub fn is_valid_dns_name(name: &str) -> bool {
     if i == b.len() || i == 0 || b[i - 1] != b'.' {
         return false; // no trailing label, or no dot before it
     }
-    // `[a-zA-Z0-9.-]*` for everything before that dot
-    b[..i - 1].iter().all(|c| c.is_ascii_alphanumeric() || *c == b'.' || *c == b'-')
+    // `[a-zA-Z0-9._-]*` for everything before that dot. The underscore is deliberate: it is legal
+    // in a queried name (SRV, _dmarc, DKIM selectors) and common among dynamic-DNS hosts, and
+    // without it 134 static trails could never match - the query was rejected before lookup.
+    // It stays out of the trailing label above, where no real TLD has one.
+    b[..i - 1].iter().all(|c| c.is_ascii_alphanumeric() || *c == b'.' || *c == b'-' || *c == b'_')
 }
 
 /// `\A\d+\-\d+\-\d+\-\d+\Z`, hand-coded — the dashed-quad first label check.
@@ -420,6 +423,10 @@ mod tests {
         assert!(s.valid_dns_name.is_match("evil.com"));
         assert!(s.valid_dns_name.is_match("a.b.example.com"));
         assert!(!s.valid_dns_name.is_match("nodot"));
-        assert!(!s.valid_dns_name.is_match("bad_underscore.com"));
+        // The underscore is accepted in every label but the last: legal in a queried name, and
+        // 134 static trails were unreachable while it was refused outright.
+        assert!(s.valid_dns_name.is_match("under_score.com"));
+        assert!(s.valid_dns_name.is_match("_dmarc.example.com"));
+        assert!(!s.valid_dns_name.is_match("evil.tld_x"));
     }
 }

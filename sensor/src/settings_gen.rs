@@ -30,7 +30,7 @@ pub const CONDENSED_FLUSH_PERIOD: u64 = 60;
 pub const CONDENSED_MAX_WINDOW_KEYS: usize = 200000;
 pub const META_MAX_ROWS: usize = 2000000;
 pub const CONSONANTS: &str = "bcdfghjklmnpqrstvwxyz";
-pub const VALID_DNS_NAME_REGEX: &str = r#"\A[a-zA-Z0-9.-]*\.[a-zA-Z0-9-]+\Z"#;
+pub const VALID_DNS_NAME_REGEX: &str = r#"\A[a-zA-Z0-9._-]*\.[a-zA-Z0-9-]+\Z"#;
 pub const SUSPICIOUS_DIRECT_IP_URL_REGEX: &str = r#"\A[\w./-]*/[\w.]*\b(aarch|amd64\b|arm(\b|v?\d)|arcle-(750d|hs38)|exploit|m68k?\b|m[i1]ps\w{0,4}\b|mpsl\w?\b|pcc|powerp{1,2}c|pp-?c|riscv\w{0,3}\b|root|s390\w?\b|x86|x32|x64|i\d{1,2}\b|i386|i486|i586|i686|sparc|sh\b|wtf|yarn|zte)\Z"#;
 pub const GENERIC_SINKHOLE_REGEX: &str = r#"(?im)^(X-Sinkhole|Server): (malware-?)?sinkhole|\bSinkholed? by |^(X-Sinkholed?(-Domain)?|X-Zinkhole|X-Sinkhole):| a malware sinkhole|\bSinkhole( Project)?</title>|This is a sinkhole|bots party hard|computers connecting to this sinkhole| Sinkhole by |^Set-Cookie: snkz=|^Server: Apache [0-9.]+/SinkSoft|^Location:[^\n]+\.sinkdns\.org:80"#;
 pub const WHITELIST_UA_REGEX: &str = r#"AntiVir\-NGUpd|TMSPS|AVGSETUP|SDDS|Sophos|Symantec|internal dummy connection|Microsoft\-CryptoAPI"#;

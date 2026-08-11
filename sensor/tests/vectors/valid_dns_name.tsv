@@ -3,7 +3,7 @@
 evil.com	1
 a.b.example.com	1
 nodot	0
-bad_underscore.com	0
+bad_underscore.com	1
 -x.com	1
 x-.com	1
 1.2.3.4	1

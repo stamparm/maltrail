@@ -201,6 +201,26 @@ fn udp_non_dns_to_bad_ip() {
 }
 
 #[test]
+fn a_query_with_an_underscore_reaches_the_lookup() {
+    // VALID_DNS_NAME_REGEX rejected '_' outright, so the query was thrown away BEFORE the trail
+    // lookup. 134 static trails - dynamic-DNS hosts, mostly - could therefore never fire, however
+    // exactly they matched. The underscore is legal in a queried name (SRV, _dmarc, DKIM) and
+    // sensor/tools/check_trails.py reported the strandings.
+    let mut h = trails(&[("dheeraj_gaurav.mooo.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40000, 53, &dns("dheeraj_gaurav.mooo.com"))), 1);
+    assert_eq!(h.trails(), vec!["dheeraj_gaurav.mooo.com"], "an underscore name must reach the lookup");
+}
+
+#[test]
+fn an_underscore_in_the_last_label_is_still_rejected() {
+    // The positive control for the widening: the trailing label is a TLD and no real one has an
+    // underscore, so it stays out of the last position.
+    let mut h = trails(&[("evil.tld_x", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40000, 53, &dns("evil.tld_x"))), 1);
+    assert!(h.events().is_empty(), "an underscore in the TLD position must still be rejected");
+}
+
+#[test]
 fn udp_non_dns_to_malware_ip_is_reported() {
     // Deliberate divergence from old/sensor.py:880 (listed in tools/parity.py), which collapsed the dst-side and src-side
     // matches into one `trail` and then applied the src-side "malware" suppression to both -
