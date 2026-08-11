@@ -226,7 +226,9 @@ pip install -r old/requirements.txt
 
 Prebuilt sensor binaries for `x86_64` and `aarch64` are attached to every
 [release](https://github.com/stamparm/maltrail/releases) with a SHA-256 checksum — those need only
-`libpcap0.8` at runtime and no toolchain at all. To build from source instead:
+libpcap at runtime and no toolchain at all. They are built against **glibc 2.28**, so they run on
+RHEL 8+, Debian 10+, Ubuntu 18.04+ and openSUSE Leap 15.x; the release refuses to publish a binary
+that needs anything newer. On musl (Alpine) build from source instead. To build from source instead:
 
 ```bash
 git clone --depth 1 https://github.com/stamparm/maltrail.git

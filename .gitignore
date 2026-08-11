@@ -22,3 +22,5 @@ package-lock.json
 # Local scratch space: source data dumps, one-off scripts, the CSS/JS build.
 # Nothing here is part of the project.
 misc/
+.cargo-home/
+.rustup-home/

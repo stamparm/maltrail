@@ -48,101 +48,75 @@ jobs:
   binaries:
     name: binary (${{ matrix.target }})
     needs: gate
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 60
     strategy:
       fail-fast: false
       matrix:
         include:
           - target: x86_64-unknown-linux-gnu
-            packages: libpcap-dev
+            runner: ubuntu-latest
           - target: aarch64-unknown-linux-gnu
-            packages: libpcap-dev:arm64 gcc-aarch64-linux-gnu
+            # A native arm64 runner, not QEMU and not a cross-compiler: the point of the build
+            # container below is the C library it links against, and cross-compiling into an old
+            # sysroot is a much worse way to get there.
+            runner: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v7
 
-      # Not a static build: the sensor links libpcap, and a genuinely static one means musl plus
-      # a static libpcap, which is a separate packaging project. These are ordinary glibc builds
-      # against the distribution's libpcap — install libpcap0.8 and they run.
-      - name: Install cross toolchain
+      # Built INSIDE AlmaLinux 8, whose glibc is 2.28, because a binary cannot run on a system
+      # whose glibc is older than the one it was built against. Built on the runner itself
+      # (ubuntu-24.04, glibc 2.39) these binaries did not start on Debian 12, openSUSE Leap 15.6,
+      # RHEL 8 or RHEL 9:
+      #
+      #     /lib64/libc.so.6: version `GLIBC_2.39' not found (required by maltrail-sensor)
+      #
+      # ...which is most of the enterprise Linux estate, and the failure is at exec, so there is no
+      # partial functionality to notice. 2.28 covers RHEL 8+, Debian 10+, Ubuntu 18.04+ and Leap
+      # 15.x. `docker run` rather than `container:` so the checkout happens on the host, where git
+      # exists.
+      #
+      # Still not a static build: it links libpcap dynamically. AlmaLinux names that libpcap.so.1
+      # and Debian/Ubuntu name the same ABI libpcap.so.0.8, so install.sh links whichever name is
+      # missing - see link_libpcap_soname() there, tested on five distributions.
+      - name: Build against glibc 2.28
         run: |
           set -eu
-          if [ "${{ matrix.target }}" = "aarch64-unknown-linux-gnu" ]; then
-            # Ubuntu's amd64 mirrors do not carry arm64; the ports mirror does. So the existing
-            # sources must be pinned to amd64 BEFORE arm64 is enabled, or `apt-get update` starts
-            # asking archive.ubuntu.com for arm64 indexes and fails the job.
-            #
-            # 24.04 moved those sources to deb822 (/etc/apt/sources.list.d/*.sources); the old
-            # one-line .list format may not exist at all. Handle both, and do not silently do
-            # nothing if a future runner changes format again - if neither is found, stop.
-            # A source that ALREADY states its architectures is left alone - it has made its own
-            # decision and is presumed to mean it (the runner's microsoft-prod.list ships
-            # `[arch=amd64,arm64,armhf signed-by=...]`, and blindly prepending a second option
-            # block there produced "Malformed entry ... (URI parse)" and killed apt outright).
-            # Only sources that say nothing get pinned, since those are the ones that would
-            # otherwise be asked for arm64 indexes they do not carry.
-            touched=0
-            for f in /etc/apt/sources.list /etc/apt/sources.list.d/*.list; do
-              [ -f "$f" ] || continue
-              sudo awk '
-                /^deb(-src)?[[:space:]]/ {
-                  if ($0 ~ /^deb(-src)?[[:space:]]+\[/) {
-                    if ($0 !~ /arch=/) sub(/\[/, "[arch=amd64 ")   # options, but no arch
-                  } else {
-                    sub(/^deb(-src)?[[:space:]]+/, "& ")           # keep the verb, then...
-                    sub(/[[:space:]]+ /, " [arch=amd64] ")         # ...insert the option block
-                  }
-                }
-                { print }
-              ' "$f" > /tmp/apt-pin.$$ && sudo cp /tmp/apt-pin.$$ "$f" && rm -f /tmp/apt-pin.$$
-              touched=1
-            done
-            for f in /etc/apt/sources.list.d/*.sources; do
-              [ -f "$f" ] || continue
-              # One deb822 file holds SEVERAL stanzas (noble, -updates, -backports, -security)
-              # separated by blank lines, so the key has to go into each of them: appending a
-              # single line to the file reaches only the last stanza and leaves the rest asking
-              # archive.ubuntu.com for arm64. RS="" splits on those blank lines.
-              sudo awk 'BEGIN { RS = ""; ORS = "\n\n" }
-                { if ($0 !~ /(^|\n)Architectures:/) sub(/(^|\n)Types:[^\n]*/, "&\nArchitectures: amd64"); print }
-              ' "$f" > /tmp/apt-pin.$$ && sudo cp /tmp/apt-pin.$$ "$f" && rm -f /tmp/apt-pin.$$
-              touched=1
-            done
-            [ "$touched" = 1 ] || { echo "::error::no apt sources found to pin to amd64"; exit 1; }
+          docker run --rm -v "$PWD:/src" -w /src almalinux:8 sh -eu -c '
+            dnf -y -q install dnf-plugins-core >/dev/null
+            # libpcap-devel lives in PowerTools (AlmaLinux 8) / CRB (9+), which ship disabled.
+            dnf config-manager --set-enabled powertools >/dev/null 2>&1 ||
+              dnf config-manager --set-enabled crb >/dev/null 2>&1
+            dnf -y -q install gcc libpcap-devel make >/dev/null
+            export CARGO_HOME=/src/.cargo-home RUSTUP_HOME=/src/.rustup-home
+            export PATH=$CARGO_HOME/bin:$PATH
+            curl -sSf https://sh.rustup.rs -o /tmp/rustup.sh
+            sh /tmp/rustup.sh -y --default-toolchain stable --profile minimal --no-modify-path >/dev/null
+            rustc -V
+            cargo build --release --locked --manifest-path sensor/Cargo.toml
+            strip sensor/target/release/maltrail-sensor
+          '
+          sudo chown -R "$(id -u):$(id -g)" sensor/target .cargo-home .rustup-home
 
-            # Prove the rewrite left apt able to parse its own configuration before going further,
-            # so a bad edit fails HERE with the offending file named rather than 40 lines later.
-            apt-get indextargets >/dev/null 2>&1 || { echo "::error::apt sources are unparseable after pinning"; grep -rn . /etc/apt/sources.list /etc/apt/sources.list.d/ 2>/dev/null; exit 1; }
-
-            codename="$(. /etc/os-release && echo "$VERSION_CODENAME")"
-            sudo tee /etc/apt/sources.list.d/arm64-ports.sources >/dev/null <<EOF
-          Types: deb
-          URIs: http://ports.ubuntu.com/ubuntu-ports
-          Suites: ${codename} ${codename}-updates ${codename}-security
-          Components: main universe
-          Architectures: arm64
-          Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
-          EOF
-            sudo dpkg --add-architecture arm64
-          fi
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends ${{ matrix.packages }}
-
-      - uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: ${{ matrix.target }}
-
-      - name: Build
-        env:
-          CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER: aarch64-linux-gnu-gcc
-          PKG_CONFIG_ALLOW_CROSS: '1'
-        run: cargo build --release --locked --manifest-path sensor/Cargo.toml --target ${{ matrix.target }}
+      # A guard, not a formality: this is the one property that cannot be checked by running the
+      # binary on the build machine, and getting it wrong ships something that will not exec.
+      - name: Refuse to publish a binary that needs a newer glibc
+        run: |
+          set -eu
+          bin=sensor/target/release/maltrail-sensor
+          highest=$(objdump -T "$bin" | sed -n 's/.*GLIBC_\([0-9.]*\).*/\1/p' | sort -V -u | tail -1)
+          echo "highest glibc symbol required: $highest"
+          printf '%s\n' "$highest" | grep -Eq '^2\.(1[0-9]|2[0-8])$|^2\.[0-9]$' || {
+            echo "::error::built against glibc $highest; the baseline is 2.28 (RHEL 8 / Debian 10 / Leap 15)"
+            exit 1
+          }
+          objdump -p "$bin" | grep NEEDED
 
       - name: Package with a checksum
         run: |
           name="maltrail-sensor-${GITHUB_REF_NAME}-${{ matrix.target }}"
           mkdir -p "dist/$name"
-          cp "sensor/target/${{ matrix.target }}/release/maltrail-sensor" "dist/$name/"
+          cp sensor/target/release/maltrail-sensor "dist/$name/"
           cp LICENSE README.md "dist/$name/"
           tar -C dist -czf "dist/$name.tar.gz" "$name"
           ( cd dist && sha256sum "$name.tar.gz" > "$name.tar.gz.sha256" )
