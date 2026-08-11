@@ -187,6 +187,24 @@ jobs:
       - uses: actions/checkout@v7
       - run: bash docker/tests/entrypoint_test.sh
 
+  # install.sh, run in five real distributions. Package names, a user that was not created, a unit
+  # pointing at a binary that is not there, a libpcap named differently - every one of those is a
+  # support thread, and none of them is visible from reading the script. The server is started and
+  # asked for /ping in each environment, so "installed" means "runs".
+  installer:
+    name: install.sh (5 distributions)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0        # the harness serves the clone from this checkout over file://
+      - name: Build the sensor so the sensor path is covered too
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq libpcap-dev
+          cargo build --release --locked --manifest-path sensor/Cargo.toml
+      - run: bash tests/install/run.sh
+
   # Rust dependency advisories. Gates the diff that introduces a vulnerable dependency.
   #
   # NOT rustsec/audit-check: that action only looks for ./Cargo.lock at the repository root, and
