@@ -608,13 +608,31 @@
     paint();   // initial static frame (also populates legendHits)
     return legendHits;
   }
+  // Y axis for whole-number counts. Two bugs came out of not having this: the line chart labelled five
+  // gridlines with `Math.round(max * g / 4)`, so a peak of 2 produced "0 1 1 2 2" - two pairs of
+  // identical numbers on different lines (#19570) - and the bar charts drew the gridlines with no
+  // labels at all, leaving a chart you cannot read a value off (#19571).
+  //
+  // Returns the tick values, ascending, from 0. The last one is the top of the scale, so it is also
+  // what the bars/lines are scaled against - a tick above the data is what keeps the tallest bar off
+  // the ceiling. The step is a whole number from the 1/2/5×10^k progression, which is why no two
+  // labels can round to the same text: events are counted, never halved.
+  function axisTicks(max) {
+    max = Math.max(1, Math.ceil(max));
+    var pow = Math.max(1, Math.pow(10, Math.floor(Math.log(max / 4) / Math.LN10))), step = 10 * pow, out = [];
+    [1, 2, 5, 10].some(function (m) { if (Math.ceil(max / (m * pow)) <= 5) { step = m * pow; return true; } return false; });
+    for (var v = 0; v <= max; v += step) out.push(v);
+    if (out[out.length - 1] < max) out.push(out.length * step);
+    return out;
+  }
   function drawLines(cv, series) {
     var tc = themeColors();
-    var w = cv._w, h = cv._h, ctx = cctx(cv), pad = 30, gw = w - pad * 2 - 96, gh = h - pad * 2, max = 1;
+    var w = cv._w, h = cv._h, ctx = cctx(cv), pad = 30, gw = w - pad * 2 - 96, gh = h - pad * 2, peak = 1;
     var lastIdx = 0;   // last hour that actually has data — the line ends here "in the air" (no flat-zero tail)
-    series.forEach(function (s) { s.data.forEach(function (v, i) { if (v > max) max = v; if (v > 0) lastIdx = Math.max(lastIdx, i); }); });
+    series.forEach(function (s) { s.data.forEach(function (v, i) { if (v > peak) peak = v; if (v > 0) lastIdx = Math.max(lastIdx, i); }); });
+    var ticks = axisTicks(peak), max = ticks[ticks.length - 1];
     ctx.fillStyle = tc.faint; ctx.font = "10px ui-monospace,monospace"; ctx.textBaseline = "middle";
-    for (var g = 0; g <= 4; g++) { var yy = pad + gh - gh * g / 4; ctx.strokeStyle = tc.line; ctx.beginPath(); ctx.moveTo(pad, yy); ctx.lineTo(pad + gw, yy); ctx.stroke(); ctx.textAlign = "right"; ctx.fillText(Math.round(max * g / 4), pad - 6, yy); }
+    ticks.forEach(function (v) { var yy = pad + gh - gh * v / max; ctx.strokeStyle = tc.line; ctx.beginPath(); ctx.moveTo(pad, yy); ctx.lineTo(pad + gw, yy); ctx.stroke(); ctx.textAlign = "right"; ctx.fillStyle = tc.faint; ctx.fillText(fmtN(v), pad - 6, yy); });
     var lastX = pad + gw * lastIdx / 23;
     if (lastIdx < 23) { ctx.strokeStyle = tc.line; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(lastX, pad); ctx.lineTo(lastX, pad + gh); ctx.stroke(); ctx.setLineDash([]); }  // "data ends here" marker
     series.forEach(function (s, si) {
@@ -630,9 +648,11 @@
   }
   function drawBars(cv, items) {
     var tc = themeColors();
-    var w = cv._w, h = cv._h, ctx = cctx(cv), pad = 30, gh = h - pad * 2 - 18, n = items.length || 1, gap = (w - pad * 2) / n, bw = gap * 0.6, max = 1;
-    items.forEach(function (it) { if (it[1] > max) max = it[1]; });
-    for (var g = 0; g <= 4; g++) { var yy = pad + gh - gh * g / 4; ctx.strokeStyle = tc.line; ctx.beginPath(); ctx.moveTo(pad, yy); ctx.lineTo(w - pad, yy); ctx.stroke(); }
+    var w = cv._w, h = cv._h, ctx = cctx(cv), pad = 30, gh = h - pad * 2 - 18, n = items.length || 1, gap = (w - pad * 2) / n, bw = gap * 0.6, peak = 1;
+    items.forEach(function (it) { if (it[1] > peak) peak = it[1]; });
+    var ticks = axisTicks(peak), max = ticks[ticks.length - 1];
+    ctx.font = "10px ui-monospace,monospace"; ctx.textBaseline = "middle"; ctx.textAlign = "right";
+    ticks.forEach(function (v) { var yy = pad + gh - gh * v / max; ctx.strokeStyle = tc.line; ctx.beginPath(); ctx.moveTo(pad, yy); ctx.lineTo(w - pad, yy); ctx.stroke(); ctx.fillStyle = tc.faint; ctx.fillText(fmtN(v), pad - 6, yy); });
     var hits = [];
     items.forEach(function (it, i) { var bh = gh * it[1] / max, x = pad + gap * i + (gap - bw) / 2, y = pad + gh - bh; ctx.fillStyle = PALETTE[i % PALETTE.length]; ctx.fillRect(x, y, bw, bh); ctx.save(); ctx.translate(x + bw / 2, pad + gh + 6); ctx.rotate(Math.PI / 5); ctx.fillStyle = tc.muted; ctx.font = "9px ui-monospace,monospace"; ctx.textAlign = "left"; ctx.fillText(it[0].length > 18 ? it[0].slice(0, 17) + "…" : it[0], 0, 0); ctx.restore(); hits.push({ x: pad + gap * i, y: pad, w: gap, h: gh + 18, token: "src:" + it[0], label: it[0] }); });
     return hits;
@@ -685,9 +705,11 @@
     items.forEach(function (it) { it._t = 0; });
     function paint() {
       var tc = themeColors(), ctx = cctx(cv), w = cv._w, h = cv._h, pad = 30, gh = h - pad * 2 - 18,
-          n = items.length || 1, gap = (w - pad * 2) / n, bw = gap * 0.6, max = 1;
-      items.forEach(function (it) { if (it[1] > max) max = it[1]; });
-      for (var g = 0; g <= 4; g++) { var yy = pad + gh - gh * g / 4; ctx.strokeStyle = tc.line; ctx.beginPath(); ctx.moveTo(pad, yy); ctx.lineTo(w - pad, yy); ctx.stroke(); }
+          n = items.length || 1, gap = (w - pad * 2) / n, bw = gap * 0.6, peak = 1;
+      items.forEach(function (it) { if (it[1] > peak) peak = it[1]; });
+      var ticks = axisTicks(peak), max = ticks[ticks.length - 1];
+      ctx.font = "10px ui-monospace,monospace"; ctx.textBaseline = "middle"; ctx.textAlign = "right";
+      ticks.forEach(function (v) { var yy = pad + gh - gh * v / max; ctx.strokeStyle = tc.line; ctx.beginPath(); ctx.moveTo(pad, yy); ctx.lineTo(w - pad, yy); ctx.stroke(); ctx.fillStyle = tc.faint; ctx.fillText(fmtN(v), pad - 6, yy); });
       items.forEach(function (it, i) {
         var t = it._t, bh = gh * it[1] / max, gw = bw + t * 6, x = pad + gap * i + (gap - gw) / 2, y = pad + gh - bh, col = PALETTE[i % PALETTE.length];
         ctx.globalAlpha = (hovered < 0 || i === hovered) ? 1 : 0.4; ctx.fillStyle = col;
