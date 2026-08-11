@@ -596,10 +596,12 @@ fn run() -> i32 {
     // deterministic and has to behave like the single stream the analyst captured.
     //
     // Live capture keeps one worker per handle — that is exactly what PACKET_FANOUT parallelises.
-    let mut worker_handles: Vec<Vec<Handle>> = if cfg.is_offline_replay() {
-        vec![handles.into_iter().map(|(h, _, _)| h).collect()]
+    // Offline: one worker over every file, each labelled so it can be reported on individually.
+    // Live: one worker per handle, and no label - there is no file to attribute anything to.
+    let mut worker_handles: Vec<Vec<(Handle, String)>> = if cfg.is_offline_replay() {
+        vec![handles.into_iter().map(|(h, label, _)| (h, label)).collect()]
     } else {
-        handles.into_iter().map(|(h, _, _)| vec![h]).collect()
+        handles.into_iter().map(|(h, _, _)| vec![(h, String::new())]).collect()
     };
 
     let mut threads = Vec::with_capacity(worker_handles.len());

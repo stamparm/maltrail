@@ -73,7 +73,7 @@ const LIVE_CAPTURE_ERROR_LIMIT: u32 = 64;
 /// Drive one capture handle to completion. Returns when the handle reaches EOF (offline) or
 /// shutdown is requested (live); errors when capture fails persistently.
 pub fn run(handle: Handle, ctx: WorkerContext) -> Result<WorkerExit, WorkerError> {
-    run_all(vec![handle], ctx)
+    run_all(vec![(handle, String::new())], ctx)
 }
 
 /// Drive several capture handles through ONE worker state, in order.
@@ -85,11 +85,17 @@ pub fn run(handle: Handle, ctx: WorkerContext) -> Result<WorkerExit, WorkerError
 /// of racing per-file workers is not.
 ///
 /// Live capture still uses one handle per worker; that is what `PACKET_FANOUT` parallelises.
-pub fn run_all(handles: Vec<Handle>, ctx: WorkerContext) -> Result<WorkerExit, WorkerError> {
+pub fn run_all(handles: Vec<(Handle, String)>, ctx: WorkerContext) -> Result<WorkerExit, WorkerError> {
     let mut remaining = handles.into_iter();
-    let Some(mut handle) = remaining.next() else {
+    let Some((mut handle, mut label)) = remaining.next() else {
         return Ok(WorkerExit::OfflineEof);
     };
+    // Per-file accounting for offline replay. Replaying several captures produced one set of
+    // totals with nothing saying which file they came from, so a run over a directory could not
+    // be read at all (issue #19078).
+    let mut file_started = Instant::now();
+    let mut file_packets = 0u64;
+    let mut file_events = 0u64;
     let offline = handle.is_offline();
     // Re-read per file: a capture set can mix link types (an `any`-interface capture next to an
     // Ethernet one), and resolving the second file with the first file's DLT would misparse it.
@@ -134,6 +140,7 @@ pub fn run_all(handles: Vec<Handle>, ctx: WorkerContext) -> Result<WorkerExit, W
             match handle.next_packet() {
                 Ok(Some(captured)) => {
                     st.metrics.packets_received += 1;
+                    file_packets += 1;
                     drained += 1;
                     // Progress: the run of errors is broken, so the limit only ever counts an
                     // UNINTERRUPTED failure streak rather than accumulating over a long uptime.
@@ -195,8 +202,13 @@ pub fn run_all(handles: Vec<Handle>, ctx: WorkerContext) -> Result<WorkerExit, W
                     if offline {
                         // Carry the SAME state into the next file rather than ending here.
                         match remaining.next() {
-                            Some(next) => {
+                            Some((next, next_label)) => {
+                                report_file(&ctx, &label, file_packets, st.sink.events - file_events, file_started);
                                 handle = next;
+                                label = next_label;
+                                file_started = Instant::now();
+                                file_packets = 0;
+                                file_events = st.sink.events;
                                 datalink = handle.datalink();
                                 poll_fd = handle.selectable_fd();
                                 continue;
@@ -294,6 +306,9 @@ pub fn run_all(handles: Vec<Handle>, ctx: WorkerContext) -> Result<WorkerExit, W
     // Flush the tail: condensed events are only emitted on a flush, so skipping this would
     // lose them (sensor.py does the same at the end of an offline run).
     st.sink.flush_condensed();
+    if offline {
+        report_file(&ctx, &label, file_packets, st.sink.events - file_events, file_started);
+    }
     st.sink.flush_throttled_all();
     // `sensor.py` does the same on its way out: without this, an offline replay shorter than one
     // flush period would write nothing at all to the store.
@@ -308,6 +323,41 @@ pub fn run_all(handles: Vec<Handle>, ctx: WorkerContext) -> Result<WorkerExit, W
     // worker's last counters rather than a half-torn-down slot.
     ctx.slot.mark_dead();
     outcome
+}
+
+/// One line per replayed capture: what was read from it, what it produced, and how long it took.
+///
+/// Printed as each file finishes rather than collected for the end, so a long replay shows
+/// progress and a file that stalls is identifiable while it is still running.
+fn report_file(ctx: &WorkerContext, label: &str, packets: u64, events: u64, started: Instant) {
+    if label.is_empty() || ctx.cfg.quiet {
+        return;
+    }
+    let elapsed = started.elapsed();
+    let size = std::fs::metadata(label).map(|m| m.len()).unwrap_or(0);
+    crate::cprintln!(
+        "[i] {}: {} ({} packet(s), {} event(s)) in {:.3}s",
+        label,
+        human_bytes(size),
+        packets,
+        events,
+        elapsed.as_secs_f64()
+    );
+}
+
+/// Size in the same style the rest of the sensor prints byte counts.
+fn human_bytes(bytes: u64) -> String {
+    const KB: f64 = 1024.0;
+    let b = bytes as f64;
+    if b >= KB * KB * KB {
+        format!("{:.1} GB", b / (KB * KB * KB))
+    } else if b >= KB * KB {
+        format!("{:.1} MB", b / (KB * KB))
+    } else if b >= KB {
+        format!("{:.1} kB", b / KB)
+    } else {
+        format!("{bytes} B")
+    }
 }
 
 fn publish(slot: &MetricsSlot, st: &mut WorkerState) {

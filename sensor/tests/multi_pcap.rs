@@ -108,6 +108,20 @@ impl Fixture {
         Fixture { dir }
     }
 
+    /// Replay the given files in one invocation; return the sensor's own stdout.
+    fn replay_output(&self, files: &[PathBuf]) -> String {
+        let list = files.iter().map(|p| p.to_str().unwrap()).collect::<Vec<_>>().join(",");
+        let out = Command::new(binary())
+            .arg("-c")
+            .arg(self.dir.join("maltrail.conf"))
+            .arg("-r")
+            .arg(&list)
+            .output()
+            .expect("run maltrail-sensor");
+        assert!(out.status.success(), "replay failed: {}", String::from_utf8_lossy(&out.stderr));
+        String::from_utf8_lossy(&out.stdout).to_string()
+    }
+
     /// Replay the given files in one invocation; return the event lines produced.
     fn replay(&self, files: &[PathBuf]) -> Vec<String> {
         let list = files.iter().map(|p| p.to_str().unwrap()).collect::<Vec<_>>().join(",");
@@ -195,4 +209,66 @@ fn a_replay_of_the_same_files_is_deterministic() {
         lines.into_iter().filter_map(|l| l.split_once("\" ").map(|(_, rest)| rest.to_string())).collect()
     };
     assert_eq!(strip(first), strip(second), "the same capture set must replay identically");
+}
+
+/// Replaying several captures used to produce one set of totals with nothing saying which file
+/// they came from, so a run over a directory could not be attributed at all (issue #19078).
+#[test]
+fn each_replayed_file_is_reported_separately() {
+    if !binary().is_file() {
+        eprintln!("[skip] {} not built", binary().display());
+        return;
+    }
+    let fx = Fixture::new("perfile");
+    let a = fx.dir.join("first.pcap");
+    let b = fx.dir.join("second.pcap");
+    write_pcap(&a, &[(1_700_000_000, syn(1000))]);
+    write_pcap(&b, &[(1_700_000_001, syn(1001)), (1_700_000_002, syn(1002))]);
+
+    let out = fx.replay_output(&[a.clone(), b.clone()]);
+
+    for (path, packets) in [(&a, 1), (&b, 2)] {
+        let name = path.to_str().unwrap();
+        let line = out
+            .lines()
+            .find(|l| l.contains(name) && l.contains("packet(s)"))
+            .unwrap_or_else(|| panic!("no per-file line for {name} in:\n{out}"));
+        assert!(line.contains(&format!("{packets} packet(s)")), "wrong packet count: {line}");
+        // the size is the point of the report: an analyst wants to know what was actually read
+        assert!(line.contains(" B (") || line.contains("kB ("), "no size in: {line}");
+        assert!(line.contains("s)") && line.contains(" in "), "no elapsed time in: {line}");
+    }
+
+    // The per-file counts must add up to the run total, or they are worse than no report.
+    let total: u64 = out
+        .lines()
+        .find(|l| l.contains("processed ") && l.contains("packet(s) in"))
+        .and_then(|l| l.split("processed ").nth(1))
+        .and_then(|l| l.split(' ').next())
+        .and_then(|n| n.parse().ok())
+        .expect("summary line");
+    assert_eq!(total, 3, "per-file counts must reconcile with the total: {out}");
+}
+
+/// `-q` means no operational output; the per-file report is operational output.
+#[test]
+fn the_per_file_report_respects_quiet() {
+    if !binary().is_file() {
+        eprintln!("[skip] {} not built", binary().display());
+        return;
+    }
+    let fx = Fixture::new("perfilequiet");
+    let a = fx.dir.join("quiet.pcap");
+    write_pcap(&a, &[(1_700_000_000, syn(1000))]);
+    let list = a.to_str().unwrap().to_string();
+    let out = Command::new(binary())
+        .arg("-c")
+        .arg(fx.dir.join("maltrail.conf"))
+        .arg("-r")
+        .arg(&list)
+        .arg("-q")
+        .output()
+        .expect("run maltrail-sensor");
+    let text = String::from_utf8_lossy(&out.stdout);
+    assert!(!text.contains("packet(s))"), "quiet run printed a per-file report:\n{text}");
 }
