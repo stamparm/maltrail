@@ -1,6 +1,7 @@
 [
   {
     "expect": [],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "clean_tcp",
     "needs_pcap_timestamps": false,
@@ -14,6 +15,7 @@
       "66.66.66.66",
       "malware (test)"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "duplicate_syn",
     "needs_pcap_timestamps": false,
@@ -28,6 +30,7 @@
       "6.6.6.6:8443",
       "198.51.100.66"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "ip_trails",
     "needs_pcap_timestamps": false,
@@ -40,6 +43,7 @@
     "expect": [
       "potential port scanning"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "port_scan",
     "needs_pcap_timestamps": true,
@@ -52,6 +56,7 @@
     "expect": [
       "potential port scanning"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "stealth_scan_null",
     "needs_pcap_timestamps": true,
@@ -64,6 +69,7 @@
     "expect": [
       "potential port scanning"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "stealth_scan_fin",
     "needs_pcap_timestamps": true,
@@ -76,6 +82,7 @@
     "expect": [
       "potential port scanning"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "stealth_scan_xmas",
     "needs_pcap_timestamps": true,
@@ -86,6 +93,7 @@
   },
   {
     "expect": [],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "ack_sweep_no_fp",
     "needs_pcap_timestamps": false,
@@ -98,6 +106,7 @@
     "expect": [
       "potential udp scanning"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "udp_scan",
     "needs_pcap_timestamps": true,
@@ -110,6 +119,7 @@
     "expect": [
       "potential infection"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "infection_scan",
     "needs_pcap_timestamps": true,
@@ -122,6 +132,7 @@
     "expect": [
       "potential web scanning"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "web_scan",
     "needs_pcap_timestamps": true,
@@ -138,6 +149,7 @@
       "evilname(.ip-adress.com)",
       "dga1234.wildcard-test.com"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "dns_queries",
     "needs_pcap_timestamps": false,
@@ -151,6 +163,7 @@
       "198.51.100.53",
       "whatever.com"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "dns_resolver_trail",
     "needs_pcap_timestamps": false,
@@ -164,6 +177,7 @@
       "sinkholed by testsink",
       "parked site"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "dns_responses",
     "needs_pcap_timestamps": false,
@@ -174,6 +188,7 @@
   },
   {
     "expect": [],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "dns_malformed",
     "needs_pcap_timestamps": false,
@@ -186,6 +201,7 @@
     "expect": [
       "excessive no such domain"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "dns_nxdomain_flood",
     "needs_pcap_timestamps": false,
@@ -198,6 +214,7 @@
     "expect": [
       "no such domain (suspicious)"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "dns_dga_labels",
     "needs_pcap_timestamps": false,
@@ -208,6 +225,7 @@
   },
   {
     "expect": [],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "dns_exhaustion",
     "needs_pcap_timestamps": false,
@@ -223,6 +241,7 @@
       "hostcheck.example",
       "evil-url.example"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "http_trails",
     "needs_pcap_timestamps": false,
@@ -242,6 +261,7 @@
       "direct .exe download",
       "user agent (suspicious)"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "http_heuristics",
     "needs_pcap_timestamps": false,
@@ -256,6 +276,7 @@
       "content type (suspicious)",
       "seized domain"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "http_responses",
     "needs_pcap_timestamps": false,
@@ -266,6 +287,7 @@
   },
   {
     "expect": [],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "truncated",
     "needs_pcap_timestamps": false,
@@ -279,6 +301,7 @@
       "66.66.66.66",
       "evil-test-domain.com"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "vlan",
     "needs_pcap_timestamps": false,
@@ -291,6 +314,7 @@
     "expect": [
       "66.66.66.66"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "fragments",
     "needs_pcap_timestamps": false,
@@ -304,6 +328,7 @@
       "dead::beef",
       "evil-test-domain.com"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "ipv6",
     "needs_pcap_timestamps": false,
@@ -317,6 +342,7 @@
       "66.66.66.66",
       "ICMP"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "icmp",
     "needs_pcap_timestamps": false,
@@ -329,6 +355,7 @@
     "expect": [
       "evil-test-domain.com"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "repeated_detections",
     "needs_pcap_timestamps": false,
@@ -341,6 +368,7 @@
     "expect": [
       "evil-test-domain.com"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "cache_expiry",
     "needs_pcap_timestamps": false,
@@ -353,6 +381,7 @@
     "expect": [
       "tls-evil.example"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "tls_sni",
     "needs_pcap_timestamps": false,
@@ -365,6 +394,7 @@
     "expect": [
       "quic-evil.example"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "quic_sni",
     "needs_pcap_timestamps": false,
@@ -377,6 +407,7 @@
     "expect": [
       "66.66.66.66"
     ],
+    "expect_rust_only": [],
     "linktype": 12,
     "name": "dlt_raw",
     "needs_pcap_timestamps": false,
@@ -389,6 +420,7 @@
     "expect": [
       "66.66.66.66"
     ],
+    "expect_rust_only": [],
     "linktype": 113,
     "name": "dlt_sll",
     "needs_pcap_timestamps": false,
@@ -401,6 +433,7 @@
     "expect": [
       "66.66.66.66"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "pppoe",
     "needs_pcap_timestamps": false,
@@ -413,6 +446,7 @@
     "expect": [
       "66.66.66.66"
     ],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "ipv4_options",
     "needs_pcap_timestamps": false,
@@ -423,6 +457,7 @@
   },
   {
     "expect": [],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "whitelisted",
     "needs_pcap_timestamps": false,
@@ -433,6 +468,7 @@
   },
   {
     "expect": [],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "dns_ignored_suffixes",
     "needs_pcap_timestamps": false,
@@ -442,7 +478,38 @@
     "timestamp_sensitive": false
   },
   {
+    "expect": [
+      "66.66.66.66"
+    ],
+    "expect_rust_only": [
+      "66.66.66.66"
+    ],
+    "linktype": 1,
+    "name": "udp_malware_dst",
+    "needs_pcap_timestamps": false,
+    "notes": "non-DNS UDP to a malware-labelled destination (deliberate divergence)",
+    "packets": 1,
+    "pcap": "udp_malware_dst.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "evil-test-domain.com"
+    ],
+    "expect_rust_only": [
+      "evil-test-domain.com"
+    ],
+    "linktype": 1,
+    "name": "dns_same_socket_burst",
+    "needs_pcap_timestamps": false,
+    "notes": "distinct DNS queries sharing a socket in one second (deliberate divergence)",
+    "packets": 2,
+    "pcap": "dns_same_socket_burst.pcap",
+    "timestamp_sensitive": false
+  },
+  {
     "expect": [],
+    "expect_rust_only": [],
     "linktype": 1,
     "name": "mixed_soup",
     "needs_pcap_timestamps": false,
