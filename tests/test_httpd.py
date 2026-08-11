@@ -641,6 +641,87 @@ class TestBlacklistAccessControl(unittest.TestCase):
         self.assertIn(b"10.13.13.2", body, "the blacklist content itself is unchanged")
 
 
+class TestAuthEventForwarding(unittest.TestCase):
+    """Login attempts must reach a remote collector, and must not be forgeable.
+
+    Brute force against the reporting interface is the one attack on Maltrail that Maltrail
+    could not see from outside the box (issue #19080).
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.mkdtemp(prefix="mt_auth_")
+        logdir = os.path.join(cls.tmp, "logs"); os.makedirs(logdir)
+        trails = os.path.join(cls.tmp, "trails.csv")
+        with open(trails, "w") as f:
+            f.write("evil.com,dummy,(static)\n")
+
+        cls.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        cls.sock.bind(("127.0.0.1", 0))
+        cls.sock.settimeout(15)
+        collector = cls.sock.getsockname()[1]
+
+        cls.port = _free_port()
+        cfg = os.path.join(cls.tmp, "srv.conf")
+        with open(cfg, "w") as f:
+            f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\n" % cls.port)
+            f.write("USERS\n    admin:%s:0:\n" % STORED)
+            f.write("SYSLOG_SERVER 127.0.0.1:%d\n" % collector)
+            f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+            f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME test\nDISABLE_CHECK_SUDO true\n" % (logdir, trails))
+        cls.proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        for _ in range(60):
+            if cls.proc.poll() is not None:
+                break
+            try:
+                socket.create_connection(("127.0.0.1", cls.port), timeout=0.5).close()
+                break
+            except Exception:
+                time.sleep(0.25)
+
+    @classmethod
+    def tearDownClass(cls):
+        if cls.proc and cls.proc.poll() is None:
+            cls.proc.terminate()
+            try:
+                cls.proc.wait(timeout=5)
+            except Exception:
+                cls.proc.kill()
+        try:
+            cls.sock.close()
+        except Exception:
+            pass
+
+    def _attempt(self, username, good):
+        import binascii
+        nonce = binascii.hexlify(os.urandom(16)).decode()
+        secret = STORED if good else "0" * 64
+        h = hashlib.sha256((secret + nonce).encode()).hexdigest()
+        _http(self.port, "POST", "/login", body="username=%s&nonce=%s&hash=%s" % (username, nonce, h))
+        return self.sock.recv(65535).decode("utf8", "replace")
+
+    def test_a_failed_login_is_forwarded(self):
+        record = self._attempt("admin", False)
+        self.assertIn("CEF:0|Maltrail|server", record)
+        self.assertIn("login failure", record)
+        self.assertIn("duser=admin", record)
+        self.assertIn("src=127.0.0.1", record)
+
+    def test_a_successful_login_is_forwarded_and_distinguishable(self):
+        record = self._attempt("admin", True)
+        self.assertIn("login success", record)
+        self.assertNotIn("login failure", record)
+
+    def test_a_username_cannot_forge_a_log_line(self):
+        # An embedded newline would let an attacker append a convincing "Accepted password for
+        # root" to the audit trail meant to catch them.
+        record = self._attempt("evil%0AAccepted+password+for+root", False)
+        self.assertNotIn("\n", record.strip(), "the record must stay a single line")
+        self.assertIn("login failure", record)
+        self.assertNotIn("Accepted password", record.split("duser=")[0])
+
+
 if __name__ == "__main__":
     unittest.main()
 

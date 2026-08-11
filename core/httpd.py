@@ -26,6 +26,7 @@ from core.addr import int_to_addr
 from core.addr import make_mask
 from core.addr import resolve_address
 from core.attribdict import AttribDict
+from core import log as _log
 from core import trailsbin
 from core.common import get_regex
 from core.common import trails_bin_path
@@ -58,6 +59,8 @@ from core.settings import SESSION_EXPIRATION_HOURS
 from core.settings import SESSION_ID_LENGTH
 from core.settings import SESSIONS
 from core.settings import UNAUTHORIZED_SLEEP_TIME
+from core.settings import CEF_FORMAT
+from core.settings import HOSTNAME
 from core.settings import UNICODE_ENCODING
 from core.settings import VERSION
 import http.server as _BaseHTTPServer
@@ -328,6 +331,31 @@ def _geo_home():
     except Exception:
         pass
     return None
+
+def _sanitize_auth_field(value):
+    """Make a client-supplied value safe to put in a log line.
+
+    The username on a failed login is whatever the attacker POSTed. Written verbatim into a
+    syslog record it is a log-injection vector: an embedded newline lets them append a line of
+    their choosing - including a convincing "Accepted password for admin from ..." - to the very
+    audit trail meant to catch them. Control characters are replaced rather than dropped so the
+    attempt is still visible, and the length is bounded so one request cannot flood the log.
+
+    >>> _sanitize_auth_field("admin" + chr(10) + "Accepted password for root")
+    'admin?Accepted password for root'
+    >>> _sanitize_auth_field(None)
+    '-'
+    >>> _sanitize_auth_field("")
+    '-'
+    >>> len(_sanitize_auth_field("A" * 500))
+    64
+    """
+
+    if not value:
+        return '-'
+    value = "".join(c if ' ' <= c < '\x7f' else '?' for c in str(value))
+    return value[:64] or '-'
+
 
 def start_httpd(address=None, port=None, join=False, pem=None):
     """
@@ -741,14 +769,58 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
             content = "Login %s" % ("success" if valid else "failed")
 
+            self.__log_auth(valid, params.get("username"))
+
+            return content
+
+        def __log_auth(self, valid, username):
+            """Record a login attempt locally and, if configured, at a remote collector.
+
+            Brute force against the reporting interface is the one attack on Maltrail that
+            Maltrail could not see. Locally this was already written in sshd's shape
+            ("Accepted/Failed password for <user> from <ip> port <port>"), which journald and
+            rsyslog pick up and fail2ban can parse; it is now also forwarded to SYSLOG_SERVER
+            and LOGSTASH_SERVER so a SIEM sees it without shell access to the box (issue #19080).
+
+            The local write no longer forks. It used to run `logger` through
+            subprocess.check_output on EVERY attempt and wait for it - one process spawn per
+            login, on the exact code path an attacker hammers. The stdlib syslog module writes
+            to the same auth facility through a socket with no child process at all.
+            """
+            username = _sanitize_auth_field(username)
+            ip, port = self.client_address[0], self.client_address[1]
+            outcome = "Accepted" if valid else "Failed"
+            message = "%s password for %s from %s port %s" % (outcome, username, ip, port)
+
             if not IS_WIN:
                 try:
-                    subprocess.check_output(["logger", "-p", "auth.info", "-t", "%s[%d]" % (NAME.lower(), os.getpid()), "%s password for %s from %s port %s" % ("Accepted" if valid else "Failed", params.get("username"), self.client_address[0], self.client_address[1])], stderr=subprocess.STDOUT, shell=False)
+                    import syslog
+                    syslog.openlog("%s[%d]" % (NAME.lower(), os.getpid()), 0, syslog.LOG_AUTH)
+                    syslog.syslog(syslog.LOG_INFO, message)
                 except Exception:
                     if config.SHOW_DEBUG:
                         traceback.print_exc()
 
-            return content
+            try:
+                if getattr(config, "SYSLOG_SERVER", None):
+                    extension = "src=%s spt=%s duser=%s outcome=%s" % (ip, port, _log._cef_escape(username, True), outcome.lower())
+                    payload = CEF_FORMAT.format(
+                        syslog_time=time.strftime("%b %d %H:%M:%S", time.localtime()), host=HOSTNAME,
+                        device_vendor=NAME, device_product="server", device_version=VERSION,
+                        signature_id="auth", name=_log._cef_escape("login %s" % ("success" if valid else "failure")),
+                        severity=1 if valid else 2, extension=extension).encode(UNICODE_ENCODING)
+                    for endpoint in _log._endpoints(config.SYSLOG_SERVER):
+                        _log._send_datagram(endpoint, payload)
+
+                if getattr(config, "LOGSTASH_SERVER", None):
+                    payload = json.dumps({"timestamp": int(time.time()), "sensor": HOSTNAME, "type": "auth",
+                                          "outcome": "success" if valid else "failure", "username": username,
+                                          "src_ip": ip, "src_port": port}).encode(UNICODE_ENCODING)
+                    for endpoint in _log._endpoints(config.LOGSTASH_SERVER):
+                        _log._send_datagram(endpoint, payload)
+            except Exception:
+                if config.SHOW_DEBUG:
+                    traceback.print_exc()
 
         def _logout(self, params):
             self.delete_session()
