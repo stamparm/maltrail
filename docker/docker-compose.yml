@@ -3,7 +3,10 @@
 #     docker compose -f docker/docker-compose.yml up -d
 #
 # The build context is the repository root (`..`), not this directory: the Dockerfile needs the
-# whole tree to build the sensor and to copy the server.
+# whole tree to build the sensor and to copy the server. Bind-mount sources are `../` for the
+# same reason - compose resolves them against THIS file's directory, not the shell's, so `./`
+# meant `docker/maltrail.conf`, which does not exist. Docker then created it as a directory and
+# refused to mount a directory over a file, and `docker compose up` failed outright.
 
 services:
 
@@ -20,7 +23,7 @@ services:
       - "8337:8337/udp"     # event intake from remote sensors
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
-      - "./maltrail.conf:/opt/maltrail/maltrail.conf:ro"
+      - "../maltrail.conf:/opt/maltrail/maltrail.conf:ro"
       - "maltrail-logs:/var/log/maltrail"
       - "maltrail-state:/var/lib/maltrail"
 
@@ -37,8 +40,13 @@ services:
     # preflight instead: `-T` validates configuration, trails, whitelist, log directory, capture
     # filter and capabilities, so unhealthy here means "has stopped being able to detect" rather
     # than "PID 1 still exists".
+    #
+    # It goes through the entrypoint so that `-T` runs as the same unprivileged uid the sensor
+    # itself was dropped to. Called directly, a HEALTHCHECK does NOT pass through ENTRYPOINT, so
+    # it would run as root - and root can write any log directory, which is exactly the failure
+    # this check exists to catch.
     healthcheck:
-      test: ["CMD", "maltrail-sensor", "-T"]
+      test: ["CMD", "/usr/local/bin/maltrail-entrypoint", "maltrail-sensor", "-T"]
       interval: 60s
       timeout: 30s
       start_period: 180s
@@ -54,7 +62,7 @@ services:
       - NET_ADMIN      # promiscuous mode and PACKET_FANOUT
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
-      - "./maltrail.conf:/opt/maltrail/maltrail.conf:ro"
+      - "../maltrail.conf:/opt/maltrail/maltrail.conf:ro"
       - "maltrail-logs:/var/log/maltrail"
       - "maltrail-state:/var/lib/maltrail"
 

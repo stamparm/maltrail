@@ -14,6 +14,27 @@
 
 
 
+- Version 3.1 -> 3.1.1 (unreleased)
+
+[!] The Docker image adapts to the storage it is given instead of demanding uid
+    10001 own it: 'docker/entrypoint.sh' picks the uid that can write the log
+    and state directories (bind-mount owner, 'PUID'/'PGID', or the image's own
+    user), then drops privileges before starting anything (#19596)
+[!] 'cap_add: NET_RAW' had no effect on the sensor container: Docker grants a
+    capability in the bounding set and leaves the ambient set empty for a
+    non-root 'USER', so the capture socket failed with EPERM no matter what the
+    compose file said. The entrypoint raises the ambient capabilities, and only
+    for the sensor
+[!] The sensor never updated its trails when started without an absolute '-c'
+    path - a relative configuration file resolved the repository root to '',
+    and chdir('') failed as 'unable to run python3.12: No such file or
+    directory'. That is every Docker and tarball install: the sensor ran on
+    with an empty trail set and detected nothing
+[!] 'docker compose -f docker/docker-compose.yml up' failed outright: compose
+    resolves relative bind-mount paths against the compose file's directory, so
+    './maltrail.conf' meant 'docker/maltrail.conf', which does not exist
+
+
 - Version 3.0.1 -> 3.1 (11 Aug 2026)
 
 [+] The sensor matches TLS server certificates against the trail set by their
