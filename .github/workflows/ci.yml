@@ -104,8 +104,30 @@ jobs:
       - name: Verify the crate builds on its declared minimum
         run: cargo check --manifest-path sensor/Cargo.toml --all-targets
 
-  # README promises Python 3.7+, so 3.7 is tested rather than assumed. setup-python no longer
-  # ships 3.7 for ubuntu-24.04, hence the pinned older runner for that entry only.
+  # The oldest interpreter Maltrail claims to run on, tested on the interpreter itself rather than
+  # asserted in a README. One 3.7-only method call (str.isascii) once made the updater die on every
+  # RHEL 8 / CentOS 7 / Leap 15 / Amazon Linux 2 box - empty trail set, sensor detecting nothing,
+  # no error that said so. Its own job because GitHub retired the runners that could install 3.6,
+  # so this runs in the official 3.6 image.
+  floor:
+    name: server tests (Python 3.6, the floor)
+    runs-on: ubuntu-latest
+    container: python:3.6-slim
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - run: bash tests/run.sh python3
+
+      # The suite proves the modules import and behave; this proves what actually broke on old
+      # interpreters - that a trail set can be BUILT at all. Offline on purpose: it drives
+      # core/update.py over the whole static pile without touching a third-party feed from CI.
+      - name: Build a trail set
+        run: |
+          python3 sensor/tools/update_trails.py --offline -c maltrail.conf 2>&1 | grep -v '^\[?\] progress' | tail -4
+          test -s "$HOME/.maltrail/trails.csv"
+          echo "trails built: $(wc -l < "$HOME/.maltrail/trails.csv") lines"
+
+  # setup-python no longer ships 3.7 for ubuntu-24.04, hence the pinned older runner for that entry.
   #
   # No pcapy-ng here on purpose: the server is standard library only, and that is exactly what
   # this matrix is proving. The four old-sensor test files report SKIP with a reason; the

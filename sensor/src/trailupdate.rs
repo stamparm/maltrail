@@ -23,10 +23,13 @@ pub fn updater_script(root: &Path) -> PathBuf {
     root.join("sensor").join("tools").join("update_trails.py")
 }
 
-/// The oldest Python the updater runs on. `core/update.py` uses `str.isascii()`, which arrived
-/// in 3.7, and the server is tested on 3.7 in CI — so this is the project's real floor, not a
-/// guess.
-pub const MIN_PYTHON: (u32, u32) = (3, 7);
+/// The oldest Python the updater runs on, tested in CI rather than asserted.
+///
+/// This used to be 3.7 for exactly one reason - `core/update.py` called `str.isascii()` - which
+/// wrote off every distribution whose default `python3` is 3.6: RHEL 8, CentOS 7, openSUSE Leap 15
+/// / SLE 15, Amazon Linux 2. `_is_ascii()` now has a 3.6 path, so the floor is 3.6, and the whole
+/// server test suite plus a full offline trail build run on 3.6.15 in CI.
+pub const MIN_PYTHON: (u32, u32) = (3, 6);
 
 /// What a candidate interpreter turned out to be.
 pub struct PythonProbe {
@@ -69,12 +72,12 @@ fn probe(command: &str) -> Option<PythonProbe> {
 /// Returns the first candidate that is actually **new enough**, and falls back to the newest
 /// unsuitable one it found so the caller can say what is wrong instead of "no python3".
 ///
-/// Version-checking here is not pedantry. `python3` is 3.6 on openSUSE Leap 15 / SLE 15, which
-/// are ordinary sensor hosts. Probing only that `python3 -V` *runs* passed there, `-T` reported
-/// "updater and interpreter present", and the update then died inside `core/update.py` with
-/// `'str' object has no attribute 'isascii'` — leaving a sensor with an empty trail set, which
-/// detects nothing. Preferring a versioned `python3.N` off PATH fixes that host outright,
-/// because a usable interpreter is usually installed alongside the old default.
+/// Version-checking here is not pedantry, even now that the floor is 3.6: a host whose `python3`
+/// is 3.5 or 2.7 (or a `python3` shim that is not Python at all) would otherwise pass a
+/// "does it run" probe, report "updater and interpreter present" from `-T`, and then fail inside
+/// `core/update.py` - leaving a sensor with an empty trail set, which detects nothing. Preferring
+/// a versioned `python3.N` off PATH fixes such a host outright, because a usable interpreter is
+/// usually installed alongside the unusable default.
 pub fn python_probe() -> Option<PythonProbe> {
     if let Ok(value) = std::env::var("MALTRAIL_PYTHON") {
         if !value.is_empty() {
@@ -94,6 +97,7 @@ pub fn python_probe() -> Option<PythonProbe> {
         "python3.9",
         "python3.8",
         "python3.7",
+        "python3.6",
         "python3",
         "python",
     ];
@@ -206,9 +210,8 @@ mod tests {
 
     #[test]
     fn the_discovered_interpreter_is_new_enough_to_run_the_updater() {
-        // `core/update.py` calls `str.isascii()`, so an older interpreter builds NO trails and
-        // the sensor detects nothing. Probing that `python3 -V` merely runs is not enough: on
-        // openSUSE Leap 15 / SLE 15 that succeeds and is 3.6.
+        // An interpreter below the floor builds NO trails and the sensor detects nothing, so
+        // probing that `python3 -V` merely runs is not enough - it has to be identified.
         let python = python_probe().expect("some python must be discoverable");
         assert!(
             python.is_supported(),
@@ -224,9 +227,12 @@ mod tests {
     #[test]
     fn version_support_is_decided_by_the_floor_not_by_running() {
         let probe = |v: Option<(u32, u32, u32)>| PythonProbe { command: "python3".into(), version: v };
-        assert!(!probe(Some((3, 6, 15))).is_supported(), "3.6 lacks str.isascii()");
+        // 3.6 is the floor: RHEL 8 / CentOS 7 / Leap 15 / Amazon Linux 2 ship it as `python3`,
+        // and core/update.py runs there (tests/run.sh + a full offline trail build, in CI).
+        assert!(probe(Some((3, 6, 15))).is_supported(), "3.6 is the documented floor");
+        assert!(!probe(Some((3, 5, 10))).is_supported(), "3.5 is below the floor");
         assert!(!probe(Some((2, 7, 18))).is_supported());
-        assert!(probe(Some((3, 7, 0))).is_supported(), "3.7 is the documented floor");
+        assert!(probe(Some((3, 7, 0))).is_supported());
         assert!(probe(Some((3, 12, 3))).is_supported());
         // An interpreter we could not identify is not assumed to be fine.
         assert!(!probe(None).is_supported());

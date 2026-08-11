@@ -69,8 +69,22 @@ _IPV4_REGEX = re.compile(r"\A\d+\.\d+\.\d+\.\d+\Z")
 _IPV4_PREFIX_REGEX = re.compile(r"\A(\d+\.\d+\.\d+\.\d+)\b")
 _CUSTOM_STATIC_REGEX = re.compile(r"\b(custom|static)\b")
 
-def _is_ascii(value):
-    return value.isascii()                      # str.isascii(): Python 3.7+
+# str.isascii() is 3.7+, and this ONE call was the whole reason the project claimed a 3.7 floor -
+# which wrote off RHEL 8, CentOS 7, openSUSE Leap 15 / SLE 15 and Amazon Linux 2, whose default
+# `python3` is 3.6. It did not degrade gracefully either: the updater died with "'str' object has
+# no attribute 'isascii'", so the trail set stayed empty and the sensor detected nothing (#19596's
+# neighbour, and the reason sensor/src/trailupdate.rs went looking for a versioned interpreter).
+#
+# 3.7+ keeps the C method; 3.6 gets a precompiled regex. Both answer identically, including for the
+# empty string (True) and for lone surrogates (False).
+_NON_ASCII_REGEX = re.compile(r"[^\x00-\x7f]")
+
+if hasattr(str, "isascii"):
+    def _is_ascii(value):
+        return value.isascii()
+else:
+    def _is_ascii(value):                       # the 3.6 path; equivalence is asserted in tests/test_update.py
+        return _NON_ASCII_REGEX.search(value) is None
 
 def _chown(filepath):
     if not IS_WIN and os.path.exists(filepath):
