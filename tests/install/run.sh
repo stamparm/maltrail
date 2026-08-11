@@ -80,6 +80,9 @@ run_env() {
     local expected=(tree conf user logdir logdir-writable conf-managed-block
                     unit-server unit-server-conf server-ping
                     rerun-ok conf-preserved tree-after-rerun
+                    inplace-adopted inplace-kept-edit inplace-kept-custom-trail
+                    inplace-cloned-nothing inplace-uninstall-kept-tree
+                    dirty-tree-refused dirty-tree-edit-kept force-upgraded force-kept-custom-trail
                     uninstall-ran uninstall-removed-tree uninstall-removed-units
                     uninstall-kept-conf uninstall-kept-logs)
     if expects_sensor "$env" && [ -n "$SENSOR_BIN" ]; then

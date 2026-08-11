@@ -13,6 +13,10 @@
 #     sh install.sh --no-service           # install, do not touch systemd
 #     sh install.sh --dry-run              # print every command, change nothing
 #     sh install.sh --uninstall            # remove it again (logs and state are kept)
+#     sh install.sh --force                # upgrade even if the tree has local changes
+#
+# Run from inside a checkout you already have, it installs THAT tree in place and never touches its
+# git state; --prefix asks for a separate managed copy instead.
 #
 # git rather than a release tarball on purpose: the trail lists live IN the repository, so a clone
 # brings current detection content with the code, and an upgrade is a fetch. `--depth 1` leaves the
@@ -34,6 +38,10 @@ STATE_DIR=${MALTRAIL_STATE_DIR:-/var/lib/maltrail}
 RUN_USER=${MALTRAIL_USER:-maltrail}
 UNIT_DIR=${MALTRAIL_UNIT_DIR:-/etc/systemd/system}
 UNIT_DIR_SET=0
+PREFIX_SET=0
+REPO_SET=0
+FORCE=0
+IN_PLACE=0
 SERVICE=1
 DRY=0
 UNINSTALL=0
@@ -76,7 +84,7 @@ run_quiet() {
 }
 
 usage() {
-    sed -n '3,17p' "$0" | sed 's/^# \{0,1\}//'
+    sed -n '3,22p' "$0" | sed 's/^# \{0,1\}//'
     exit 0
 }
 
@@ -88,14 +96,15 @@ parse_args() {
             --ref|--version) REF=$2; shift 2 ;;
             --ref=*)       REF=${1#*=}; shift ;;
             --version=*)   REF=${1#*=}; shift ;;
-            --prefix)      PREFIX=$2; shift 2 ;;
-            --prefix=*)    PREFIX=${1#*=}; shift ;;
+            --prefix)      PREFIX=$2; PREFIX_SET=1; shift 2 ;;
+            --prefix=*)    PREFIX=${1#*=}; PREFIX_SET=1; shift ;;
             --conf)        CONF=$2; shift 2 ;;
             --conf=*)      CONF=${1#*=}; shift ;;
             --sensor-bin)  SENSOR_BIN=$2; shift 2 ;;
             --sensor-bin=*) SENSOR_BIN=${1#*=}; shift ;;
-            --repo)        REPO=$2; shift 2 ;;
-            --repo=*)      REPO=${1#*=}; shift ;;
+            --repo)        REPO=$2; REPO_SET=1; shift 2 ;;
+            --repo=*)      REPO=${1#*=}; REPO_SET=1; shift ;;
+            --force)       FORCE=1; shift ;;
             --unit-dir)    UNIT_DIR=$2; UNIT_DIR_SET=1; shift 2 ;;
             --unit-dir=*)  UNIT_DIR=${1#*=}; UNIT_DIR_SET=1; shift ;;
             --no-service)  SERVICE=0; shift ;;
@@ -109,6 +118,23 @@ parse_args() {
         server|sensor|both) ;;
         *) die "--role must be server, sensor or both (got '$ROLE')" ;;
     esac
+}
+
+# Someone who has already cloned the repository will type `sudo sh install.sh` in it, because that
+# is what a file called install.sh invites. Cloning a SECOND copy into /opt/maltrail behind their
+# back would be confusing; touching their git state would be worse. So when this script is a file
+# inside a Maltrail checkout, that checkout IS the installation - nothing is cloned, fetched or
+# reset. Passing --repo or --prefix asks for the clone explicitly and turns this off.
+#
+# `curl | sh` never matches: $0 is "sh" or "-" there, not a readable file.
+detect_in_place() {
+    [ "$PREFIX_SET" = 0 ] || return 0
+    [ "$REPO_SET" = 0 ] || return 0
+    [ -n "${0:-}" ] && [ -f "$0" ] || return 0
+    _dir=$(CDPATH= cd -- "$(dirname -- "$0")" 2>/dev/null && pwd) || return 0
+    [ -d "$_dir/.git" ] && [ -f "$_dir/server.py" ] && [ -d "$_dir/core" ] || return 0
+    IN_PLACE=1
+    PREFIX=$_dir
 }
 
 need_root() {
@@ -183,15 +209,30 @@ detect_python() {
 # source
 # ---------------------------------------------------------------------------------------------
 clone_or_update() {
+    if [ "$IN_PLACE" = 1 ]; then
+        say "installing from this checkout: $PREFIX"
+        info "not cloning, fetching or resetting anything - it is your working tree"
+        info "(pass --prefix to install a separate copy instead)"
+        return 0
+    fi
     if [ -d "$PREFIX/.git" ]; then
         say "updating $PREFIX (ref: $REF)"
+        # A dirty tree is not ours to throw away. trails/custom/*.txt - an operator's OWN
+        # indicators - are untracked, so `git clean -fd` would delete them, and local edits to
+        # tracked files would go under `reset --hard`. Upgrade only what is clean, and say what was
+        # skipped; --force is the way to say "yes, discard it".
+        if [ "$FORCE" = 0 ] && [ -n "$(git -C "$PREFIX" status --porcelain --untracked-files=no 2>/dev/null)" ]; then
+            warn "$PREFIX has local changes, so it was NOT updated:"
+            git -C "$PREFIX" status --short --untracked-files=no 2>/dev/null | sed 's/^/        /' >&2
+            warn "commit or move them, or re-run with --force to discard them."
+            return 0
+        fi
         run git -C "$PREFIX" remote set-url origin "$REPO"
         run git -C "$PREFIX" fetch --depth 1 --quiet origin "$REF"
-        # reset, not merge: this directory is ours, and a half-applied merge is worse than a
-        # replaced tree. Operator configuration lives in $CONF precisely so this cannot eat it.
+        # reset, not merge: a half-applied merge is worse than a replaced tree, and operator
+        # configuration lives in $CONF precisely so this cannot reach it.
         run git -C "$PREFIX" checkout --quiet --detach FETCH_HEAD
         run git -C "$PREFIX" reset --hard --quiet FETCH_HEAD
-        run git -C "$PREFIX" clean -qfd
     else
         say "cloning $REPO (ref: $REF, shallow)"
         run mkdir -p "$(dirname "$PREFIX")"
@@ -484,7 +525,15 @@ do_uninstall() {
         run rm -f "$UNIT_DIR/maltrail-server.service" "$UNIT_DIR/maltrail-sensor.service"
     fi
     run rm -f /usr/local/bin/maltrail-sensor
-    run rm -rf "$PREFIX"
+    # Never delete a tree this script did not create. A checkout it merely adopted, or any
+    # directory an operator pointed it at, is not ours to remove - that would take their work with
+    # it. The record of what WAS created lives outside the tree, so it cannot dirty their git.
+    if [ -f "$STATE_DIR/installed-prefix" ] && [ "$(cat "$STATE_DIR/installed-prefix")" = "$PREFIX" ]; then
+        run rm -rf "$PREFIX"
+        run rm -f "$STATE_DIR/installed-prefix"
+    elif [ -d "$PREFIX" ]; then
+        warn "$PREFIX was not created by this installer, so it was left alone"
+    fi
     # Evidence and configuration are deliberately kept: this is an IDS, and an uninstall that
     # deletes the event log destroys the only record of what it saw.
     say "done"
@@ -497,7 +546,8 @@ summary() {
     roles=$1
     printf '\n'
     say "Maltrail installed"
-    info "tree     $PREFIX  ($(cd "$PREFIX" 2>/dev/null && git rev-parse --short HEAD 2>/dev/null || echo "$REF"))"
+    info "tree     $PREFIX  ($(cd "$PREFIX" 2>/dev/null && git rev-parse --short HEAD 2>/dev/null || echo "$REF")$([ "$IN_PLACE" = 1 ] && printf ', your checkout, left as it is'))"
+
     info "config   $CONF"
     info "events   $LOG_DIR"
     info "trails   $STATE_DIR/trails.csv"
@@ -522,7 +572,18 @@ summary() {
 main() {
     parse_args "$@"
     need_root
-    [ "$UNINSTALL" = 1 ] && { do_uninstall; return 0; }
+    if [ "$UNINSTALL" = 1 ]; then
+        # What to remove is what was INSTALLED, which is recorded outside the tree - not whatever
+        # checkout this script happens to be sitting in. Running `sh install.sh --uninstall` from a
+        # clone otherwise aimed the uninstall at the clone.
+        if [ "$PREFIX_SET" = 0 ] && [ -s "$STATE_DIR/installed-prefix" ]; then
+            PREFIX=$(cat "$STATE_DIR/installed-prefix")
+            info "installed at $PREFIX (recorded in $STATE_DIR/installed-prefix)"
+        fi
+        do_uninstall
+        return 0
+    fi
+    detect_in_place
 
     case $ROLE in
         both)   roles="server sensor" ;;
@@ -537,8 +598,18 @@ main() {
     ensure_user
     ensure_dirs
     install_conf
+    [ "$IN_PLACE" = 1 ] || [ "$DRY" = 1 ] || printf '%s\n' "$PREFIX" > "$STATE_DIR/installed-prefix"
     case $roles in *sensor*) install_sensor_binary || true ;; esac
-    run chown -R "$RUN_USER":"$RUN_USER" "$PREFIX" 2>/dev/null || true
+    if [ "$IN_PLACE" = 1 ]; then
+        # Taking ownership of a developer's checkout would stop them editing their own files. The
+        # processes only need to READ it, so check that instead of changing it.
+        if [ "$DRY" = 0 ] && ! su -s /bin/sh "$RUN_USER" -c "test -r '$PREFIX/server.py'" 2>/dev/null; then
+            warn "$RUN_USER cannot read $PREFIX (a home directory is often 0700)."
+            warn "either loosen the path, or install a separate copy: sh install.sh --prefix /opt/maltrail"
+        fi
+    else
+        run chown -R "$RUN_USER":"$RUN_USER" "$PREFIX" 2>/dev/null || true
+    fi
 
     if [ "$UNIT_DIR_SET" = 1 ] || have systemctl || [ -d "$UNIT_DIR" ]; then
         run mkdir -p "$UNIT_DIR"

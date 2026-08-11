@@ -105,7 +105,38 @@ fi
 grep -q '# operator marker' "$CONF" && echo "A conf-preserved"
 [ -f "$PREFIX/server.py" ] && echo "A tree-after-rerun"
 
-# 6. uninstall: gone, but the evidence and the configuration are not
+# 6. run from inside a checkout (what someone who already cloned will type): it must adopt THAT
+#    tree, clone nothing, and leave the working tree - including untracked custom trails and edited
+#    tracked files - exactly as it found it.
+cp -a /src /home/checkout 2>/dev/null
+cd /home/checkout || exit 1
+echo '# operator edit' >> maltrail.conf
+mkdir -p trails/custom && echo 'evil.test,"mine","(custom)"' > trails/custom/mine.txt
+sh ./install.sh --no-service --unit-dir "$UNITS" --role server >/tmp/inplace.log 2>&1
+grep -q 'installing from this checkout' /tmp/inplace.log && echo "A inplace-adopted"
+grep -q '# operator edit' maltrail.conf && echo "A inplace-kept-edit"
+[ -f trails/custom/mine.txt ] && echo "A inplace-kept-custom-trail"
+# /opt/maltrail already exists from step 1, so the meaningful check is that this run did not
+# clone: it must have used the checkout it was started from.
+grep -qE 'cloning [a-z]+://' /tmp/inplace.log || echo "A inplace-cloned-nothing"
+# ...and its --uninstall must not delete the developer's tree
+sh ./install.sh --uninstall --unit-dir "$UNITS" >/tmp/inplace-un.log 2>&1
+[ -f /home/checkout/server.py ] && echo "A inplace-uninstall-kept-tree"
+cd / || exit 1
+
+# 7. clone mode: an existing managed tree with local changes must NOT be reset silently
+sh /src/install.sh "$@" >/dev/null 2>&1
+echo '# operator edit' >> "$PREFIX/maltrail.conf"
+echo 'evil.test,"mine","(custom)"' > "$PREFIX/trails/custom/mine.txt"
+sh /src/install.sh "$@" >/tmp/dirty.log 2>&1
+grep -q 'NOT updated' /tmp/dirty.log && echo "A dirty-tree-refused"
+grep -q '# operator edit' "$PREFIX/maltrail.conf" && echo "A dirty-tree-edit-kept"
+# with --force it upgrades, but an UNTRACKED custom trail is still not deleted (no `git clean`)
+sh /src/install.sh "$@" --force >/tmp/force.log 2>&1
+grep -q 'updating' /tmp/force.log && echo "A force-upgraded"
+[ -f "$PREFIX/trails/custom/mine.txt" ] && echo "A force-kept-custom-trail"
+
+# 8. uninstall: gone, but the evidence and the configuration are not
 if sh /src/install.sh --uninstall --unit-dir "$UNITS" >/tmp/uninstall.log 2>&1; then
     echo "A uninstall-ran"
 else
