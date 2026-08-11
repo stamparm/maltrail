@@ -19,6 +19,8 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, REPO)   # so `from core.log import safe_value` resolves (we also shell out to server.py)
 PW = "changeme!"
 STORED = hashlib.sha256(PW.encode()).hexdigest()   # what the config stores (sha256 of password)
+from core.httpd import LOGIN_FAILURE_THRESHOLD     # the brute-force refusal threshold under test
+from core.settings import UNAUTHORIZED_SLEEP_TIME  # the width of its window
 
 
 def _free_port():
@@ -138,10 +140,13 @@ class TestHttpd(unittest.TestCase):
         if getattr(type(self), "_skip", None):
             self.skipTest(self._skip)
 
-    def _login(self, username="admin"):
+    def _login_body(self, username="admin"):
         import binascii; nonce = binascii.hexlify(os.urandom(16)).decode()
         h = hashlib.sha256((STORED + nonce).encode()).hexdigest()   # both test users share the same stored hash
-        st, head, _ = _http(self.port, "POST", "/login", body="username=%s&nonce=%s&hash=%s" % (username, nonce, h))
+        return "username=%s&nonce=%s&hash=%s" % (username, nonce, h)
+
+    def _login(self, username="admin"):
+        st, head, _ = _http(self.port, "POST", "/login", body=self._login_body(username))
         self.assertEqual(st, 200, "login should succeed")
         m = [l for l in head.split("\r\n") if l.lower().startswith("set-cookie:")]
         self.assertTrue(m, "login must set a session cookie")
@@ -494,6 +499,47 @@ class TestHttpd(unittest.TestCase):
         _, _, analyst = _http(self.port, "GET", "/trails", cookie=self._login("analyst"))
         self.assertNotIn(b"internal-secret.corp", analyst, "a mask_custom session must not receive custom trails")
         self.assertIn(b"evil.com", analyst, "positive control: the public trails are still served")
+
+    def _failed_login(self, username="admin"):
+        import binascii
+        nonce = binascii.hexlify(os.urandom(16)).decode()
+        h = hashlib.sha256(("0" * 64 + nonce).encode()).hexdigest()
+        return _http(self.port, "POST", "/login", body="username=%s&nonce=%s&hash=%s" % (username, nonce, h))
+
+    def test_failed_login_returns_promptly(self):
+        # The failure path used to time.sleep(UNAUTHORIZED_SLEEP_TIME) while holding a request
+        # thread, so the anti-brute-force measure was also the cheapest way to exhaust the server:
+        # 200 concurrent failed logins took it from 1 thread to 172. The delay is gone; the cost
+        # to an attacker is now a refusal threshold that holds no thread at all.
+        t0 = time.time()
+        st, _, _ = self._failed_login()
+        elapsed = time.time() - t0
+        self.assertEqual(st, 401)
+        self.assertLess(elapsed, 2.0, "a failed login must not park a request thread (was 5s)")
+
+    def test_one_mistyped_password_does_not_lock_out_the_address(self):
+        # The reporting interface is routinely reached through a single NAT address. Refusing on
+        # the FIRST failure - the obvious way to remove the sleep - would mean one fat-fingered
+        # password locks out everyone behind it, and an attacker could hold an office out of its
+        # own console by failing a login every few seconds. That is a worse bug than the one being
+        # fixed, so the refusal is a consecutive-failure threshold and this is its guard.
+        self._failed_login()
+        st, head, _ = _http(self.port, "POST", "/login", body=self._login_body("admin"))
+        self.assertEqual(st, 200, "a correct password right after one mistype must still work")
+        self.assertIn("sessid", head, "and must still establish a session")
+
+    def test_repeated_failures_are_refused_without_evaluation(self):
+        # Past the threshold the attempt is refused before the credentials are looked at, which is
+        # what bounds a brute-force run. Proven by submitting the CORRECT password and being
+        # refused anyway - if it were still being evaluated, this would succeed.
+        for _ in range(LOGIN_FAILURE_THRESHOLD + 1):
+            self._failed_login()
+        st, _, _ = _http(self.port, "POST", "/login", body=self._login_body("admin"))
+        self.assertEqual(st, 401, "past the threshold even a valid password must not be evaluated")
+        # ... and the streak expires, so the lockout is not permanent
+        time.sleep(UNAUTHORIZED_SLEEP_TIME + 0.5)
+        st, _, _ = _http(self.port, "POST", "/login", body=self._login_body("admin"))
+        self.assertEqual(st, 200, "the window must expire and let a legitimate user back in")
 
     def test_counts_are_scoped_to_the_session_networks(self):
         # /events has always honoured netfilters; /counts reported the GLOBAL daily totals to every
