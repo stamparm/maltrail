@@ -43,8 +43,11 @@ image_for() {
 # expected to say so plainly and still install the server, rather than pretend.
 expects_sensor() { [ "$1" != "alpine" ]; }
 
-SENSOR_BIN=sensor/target/release/maltrail-sensor
+# MALTRAIL_TEST_SENSOR points this at any binary - a locally built one, or a release artefact you
+# want to check runs on all five distributions before publishing it.
+SENSOR_BIN=${MALTRAIL_TEST_SENSOR:-sensor/target/release/maltrail-sensor}
 [ -x "$SENSOR_BIN" ] || SENSOR_BIN=""
+case $SENSOR_BIN in /*) SENSOR_MOUNT=$SENSOR_BIN ;; ?*) SENSOR_MOUNT=$REPO_ROOT/$SENSOR_BIN ;; *) SENSOR_MOUNT="" ;; esac
 
 pass=0; fail=0; failed=""; findings=""
 ok()  { printf '    \033[32mok\033[0m       %s\n' "$1"; pass=$((pass + 1)); }
@@ -61,9 +64,13 @@ run_env() {
     local ref; ref=$(git symbolic-ref --short -q HEAD || git rev-parse HEAD)
     local args=(--repo file:///src --ref "$ref"
                 --no-service --unit-dir /run/maltrail-units)
-    [ -n "$SENSOR_BIN" ] && args+=(--sensor-bin "/src/$SENSOR_BIN")
+    local mounts=(-v "$REPO_ROOT:/src:ro")
+    if [ -n "$SENSOR_BIN" ]; then
+        mounts+=(-v "$SENSOR_MOUNT:/sensor-under-test:ro")
+        args+=(--sensor-bin /sensor-under-test)
+    fi
 
-    out=$(docker run --rm -v "$REPO_ROOT:/src:ro" "$image" \
+    out=$(docker run --rm "${mounts[@]}" "$image" \
               sh /src/tests/install/assert.sh "${args[@]}" 2>&1)
 
     marks=$(printf '%s\n' "$out" | sed -n 's/^A //p')

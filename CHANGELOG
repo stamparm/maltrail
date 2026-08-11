@@ -16,6 +16,20 @@
 
 - Version 3.1 -> 3.1.1 (unreleased)
 
+[+] 'install.sh': one command sets up a working deployment - dependencies,
+    a shallow clone, the prebuilt sensor, an unprivileged user, log and
+    state directories, '/etc/maltrail.conf', systemd units and setcap.
+    Re-running it upgrades. Run from inside a checkout you already have, it
+    installs THAT tree and never touches its git state. Exercised in
+    ubuntu, debian, fedora, opensuse and alpine containers on every commit,
+    where the server is started and asked for '/ping'
+[!] Release binaries are built against glibc 2.28 (in an AlmaLinux 8
+    container) instead of the runner's 2.39, so they actually start on
+    RHEL 8+, Debian 10+, Ubuntu 18.04+ and Leap 15.x. Before this they
+    failed at exec with "GLIBC_2.39 not found" on most enterprise
+    distributions. The release now refuses to publish a binary needing
+    anything newer
+
 [!] Python 3.6 works again. The whole 3.7 floor came down to ONE call -
     'str.isascii()' in core/update.py - which made the trail update die on
     every distribution whose stock 'python3' is 3.6 (RHEL 8, CentOS 7,
