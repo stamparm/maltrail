@@ -231,6 +231,16 @@ TIMESTAMP_SENSITIVE_CASES = TIMING_WINDOW_CASES | frozenset((
     "duplicate_syn", "repeated_detections", "cache_expiry",
 ))
 
+# Deliberate divergences from old/sensor.py: case name -> the event substrings the RUST sensor is
+# expected to produce and sensor.py is expected NOT to. parity.py treats exactly these as an
+# expected surplus - and FAILS the case if the surplus is absent, so a silent revert of either fix
+# breaks the harness instead of quietly restoring "parity" with a detection hole.
+# See parity.py's DELIBERATE DIVERGENCES section for what each one is and why.
+DIVERGENCE_CASES = {
+    "udp_malware_dst": ["66.66.66.66"],
+    "dns_same_socket_burst": ["evil-test-domain.com"],
+}
+
 ATTACKER = "10.0.0.66"
 EXTERNAL = "203.0.113.9"
 VICTIM = "198.51.100.7"
@@ -566,7 +576,30 @@ def build_cases():
     cases.append(("dns_ignored_suffixes", DLT_EN10MB, packets, [],
                   "IGNORE_DNS_QUERY_SUFFIXES / '.intranet.' guards"))
 
-    # 33. mixed traffic soup (everything at once, interleaved)
+    # 33. UDP to a malware-labelled DESTINATION. sensor.py looks the destination up, falls back to
+    #     the source, then applies ONE `"malware" not in info` test to whichever matched - so this
+    #     datagram, to a known C2 address, produces nothing at all. Its own TCP path does not do
+    #     that (it suppresses "attacker" on the destination side and "malware" only on the source
+    #     side), and the Rust sensor now follows the TCP rule here too. Expected Rust-only event.
+    packets = [
+        (BASE_SEC, frame(ipv4(ATTACKER, "66.66.66.66", 17, udp(50900, 4444, b"\x00" * 16)))),
+    ]
+    cases.append(("udp_malware_dst", DLT_EN10MB, packets, ["66.66.66.66"],
+                  "non-DNS UDP to a malware-labelled destination (deliberate divergence)"))
+
+    # 34. Two DIFFERENT DNS queries back-to-back on one socket in one second. sensor.py's burst
+    #     filter compares (second, 5-tuple) and runs BEFORE the DNS parser, so the second datagram
+    #     is never examined - a stub resolver walking its `search` list does exactly this. The Rust
+    #     sensor mixes a payload hash into the comparison, so the repeat is still skipped and a
+    #     different query is not. Expected Rust-only event.
+    packets = [
+        (BASE_SEC, frame(ipv4(ATTACKER, "8.8.8.8", 17, udp(50901, 53, dns_query("clean-first.com"))))),
+        (BASE_SEC, frame(ipv4(ATTACKER, "8.8.8.8", 17, udp(50901, 53, dns_query("evil-test-domain.com"))))),
+    ]
+    cases.append(("dns_same_socket_burst", DLT_EN10MB, packets, ["evil-test-domain.com"],
+                  "distinct DNS queries sharing a socket in one second (deliberate divergence)"))
+
+    # 35. mixed traffic soup (everything at once, interleaved)
     soup = []
     for i, (_name, _lt, pkts, _exp, _notes) in enumerate(cases[:12]):
         for ts, raw in pkts[:4]:
@@ -826,6 +859,7 @@ def main():
             "linktype": linktype,
             "packets": len(packets),
             "expect": expected,
+            "expect_rust_only": DIVERGENCE_CASES.get(name, []),
             "needs_pcap_timestamps": name in TIMING_WINDOW_CASES,
             "timestamp_sensitive": name in TIMESTAMP_SENSITIVE_CASES,
             "notes": notes,

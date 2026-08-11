@@ -36,12 +36,17 @@ demonstrably wrong the Rust sensor is correct instead, and a Rust-side SURPLUS o
 expected rather than a regression. Both are covered by named tests in `tests/detection.rs`, so
 neither can silently revert. Do not "fix" them by restoring the Python behaviour.
 
-Note that the corpus as it stands triggers NEITHER of them - it has no UDP flow to a
-malware-labelled destination and no two distinct DNS queries back-to-back on one socket in one
-second, so this harness currently reports a clean parity run and would not have found either bug.
-That is the honest state of the corpus, not evidence that the divergences are inactive. Adding
-those cases to `gen_corpus.py` would make this harness fail by design; it would need the expected
-surplus encoded per case first.
+Each is pinned by a corpus case (`udp_malware_dst`, `dns_same_socket_burst`) whose manifest entry
+carries `expect_rust_only`. The check runs both ways:
+
+  * a Rust-only event matching the pattern is an expected surplus, reported DIVRG, not a failure;
+  * the ABSENCE of that surplus fails the case as REVRT.
+
+The second direction is the point. Before these cases existed the corpus contained no UDP flow to
+a malware-labelled destination and no two distinct DNS queries back-to-back on one socket, so this
+harness reported a clean run against both the buggy and the fixed sensor - it could not have found
+either bug, and neither could the 385-test sensor suite. Tolerating a divergence is easy; refusing
+to let it disappear is what stops someone "restoring parity" by putting the detection hole back.
 
   1. UDP to a malware-listed DESTINATION (sensor.py:880 vs process.rs `udp`). Python looked up
      the destination, fell back to the source, then applied one `"malware" not in info` test to
@@ -424,22 +429,48 @@ def main():
             expected_missing_rust = [_ for _ in entry["expect"]
                                      if not any(_ in line for line in rust_events)]
 
+            # Deliberate divergences (see the section at the top). `expect_rust_only` names the
+            # events this case exists to prove the Rust sensor produces and sensor.py does not.
+            # Two assertions, and the second is the one that matters: the surplus must be there.
+            # A harness that only tolerates the divergence would go quiet the moment someone
+            # "restored parity" by reintroducing the detection hole - which is exactly how these
+            # two bugs survived a full port in the first place.
+            expect_rust_only = entry.get("expect_rust_only", [])
+            divergence_missing = [_ for _ in expect_rust_only
+                                  if not any(_ in line for _count, line in extra)]
+            unexplained_extra = [(count, line) for count, line in extra
+                                 if not any(_ in line for _ in expect_rust_only)]
+
+            # The observable store diverges for the same reason the events do: the Rust sensor
+            # parsed a packet sensor.py skipped, so it recorded the observable too. Drop only the
+            # rust-only rows the divergence explains - every other kind of meta difference (a
+            # python-only row, a count mismatch, a broken first_seen/last_seen ordering) must
+            # still fail, or a DIVERGE case would become a blind spot for the store.
+            if expect_rust_only:
+                meta_diffs = [_ for _ in meta_diffs
+                              if not (_.startswith("+ only rust:")
+                                      and any(pattern in _ for pattern in expect_rust_only))]
+
             status = "OK"
             if py_err or rs_err:
                 status = "RUN-FAIL"
             elif rust_errors:
                 status = "PANIC"
+            elif expect_rust_only and divergence_missing:
+                status = "NO-DIVERGE"
+            elif meta_diffs:
+                status = "META"
             elif missing or extra:
                 # In pcap-timestamp mode the Rust sensor legitimately detects the timing
                 # heuristics the Python sensor cannot reach offline; that is reported as an
                 # expected surplus rather than a parity failure.
                 timestamp_sensitive = entry.get("timestamp_sensitive", False)
-                if timestamp_sensitive and options.timestamps == "pcap" and not missing:
+                if expect_rust_only and not missing and not unexplained_extra:
+                    status = "DIVERGE"
+                elif timestamp_sensitive and options.timestamps == "pcap" and not missing:
                     status = "RUST-EXTRA"
                 else:
                     status = "DIFF"
-            elif meta_diffs:
-                status = "META"
             elif assert_coverage and expected_missing_rust:
                 status = "NO-DETECT"
 
@@ -456,6 +487,7 @@ def main():
                 "extra": extra,
                 "expect_missing_python": expected_missing,
                 "expect_missing_rust": expected_missing_rust,
+                "divergence_missing": divergence_missing,
                 "panics": rust_errors,
                 "meta_diffs": meta_diffs,
                 "py_out": py_out,
@@ -466,16 +498,20 @@ def main():
             })
 
             marker = {"OK": "  ok  ", "DIFF": " DIFF ", "PANIC": " PANIC", "RUN-FAIL": " FAIL ",
-                      "NO-DETECT": " MISS ", "RUST-EXTRA": " RUST+", "META": " META "}[status]
+                      "NO-DETECT": " MISS ", "RUST-EXTRA": " RUST+", "META": " META ",
+                      "DIVERGE": " DIVRG", "NO-DIVERGE": " REVRT"}[status]
             print("[%s] %-24s python=%-3d rust=%-3d %s" % (marker, name, len(python_events), len(rust_events),
                                                            entry["notes"]))
-            if options.verbose or status not in ("OK", "RUST-EXTRA"):
+            if options.verbose or status not in ("OK", "RUST-EXTRA", "DIVERGE"):
                 for count, line in missing:
                     print("        - only python (x%d): %s" % (count, line))
                 for count, line in extra:
                     print("        + only rust   (x%d): %s" % (count, line))
                 for item in expected_missing_rust:
                     print("        ! rust did not detect expected %r" % item)
+                for item in divergence_missing:
+                    print("        ! rust did NOT produce the expected divergence %r - the fix has "
+                          "been reverted, or sensor.py now detects it too" % item)
                 for line in meta_diffs:
                     print("        meta.sqlite %s" % line)
                 for item in expected_missing:
@@ -500,7 +536,12 @@ def main():
         meta_rows = sum(len(_["meta_diffs"]) for _ in results)
         print("[i] condensed observable store: %s" %
               ("identical in every case" if not meta_rows else "%d differing row(s)" % meta_rows))
-    ok = all(_["status"] in ("OK", "RUST-EXTRA") for _ in results)
+    ok = all(_["status"] in ("OK", "RUST-EXTRA", "DIVERGE") for _ in results)
+    if counts.get("DIVERGE"):
+        print("[i] %d case(s) where the Rust sensor DELIBERATELY diverges from sensor.py and the"
+              % counts["DIVERGE"])
+        print("    expected surplus was present. See DELIBERATE DIVERGENCES at the top of this")
+        print("    file. A REVRT line instead means the surplus is gone: a detection hole is back.")
     if counts.get("RUST-EXTRA"):
         print("[i] %d timestamp-sensitive case(s) where the Rust sensor detected MORE than"
               % counts["RUST-EXTRA"])
