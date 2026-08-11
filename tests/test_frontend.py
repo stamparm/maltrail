@@ -75,6 +75,62 @@ class TestGridColumns(unittest.TestCase):
             self.assertIn(key, fields, "column data-key=%r is not a field of a threat" % key)
 
 
+class TestChartAxis(unittest.TestCase):
+    """The y axis of a count chart: integer steps, no repeated label, and it must be drawn at all.
+
+    The line chart labelled five fixed gridlines with round(max * g / 4), so a peak of 2 came out as
+    "0 1 1 2 2" (#19570), and both bar charts drew the gridlines with no labels whatsoever (#19571).
+    """
+
+    def setUp(self):
+        self.js = _read(MAIN_JS)
+
+    def test_every_count_chart_labels_its_gridlines(self):
+        for fn in ("drawLines", "drawBars", "drawInteractiveBars"):
+            body = re.search(r"function %s\(.*?\n  \}\n" % fn, self.js, re.S)
+            self.assertTrue(body, "could not find %s() in main.js" % fn)
+            self.assertIn("axisTicks(", body.group(0),
+                          "%s() no longer derives its y axis from axisTicks()" % fn)
+            self.assertIn("fillText(fmtN(v)", body.group(0),
+                          "%s() draws gridlines without labelling them" % fn)
+            # the rounded-quarters axis, which labelled different gridlines with the same number
+            self.assertNotIn("Math.round(max", body.group(0),
+                             "%s() is rounding a fraction of the peak into a label again" % fn)
+
+    def test_axis_ticks_are_whole_and_distinct(self):
+        # Run the real function, not a paraphrase of it: pull its source out of main.js and evaluate.
+        node = None
+        for candidate in ("node", "nodejs"):
+            if any(os.access(os.path.join(d, candidate), os.X_OK)
+                   for d in os.environ.get("PATH", "").split(os.pathsep) if d):
+                node = candidate
+                break
+        if not node:
+            raise unittest.SkipTest("needs node to evaluate axisTicks()")
+        fn = re.search(r"function axisTicks\(max\) \{.*?\n  \}", self.js, re.S)
+        self.assertTrue(fn, "could not find axisTicks() in main.js")
+        script = fn.group(0) + """
+var peaks = [0,1,2,3,4,5,6,7,8,9,10,11,13,17,23,43,99,100,101,250,999,1000,4321,99999,1234567];
+peaks.forEach(function (p) {
+  var t = axisTicks(p), labels = t.map(String);
+  function die(why) { console.log("FAIL peak=" + p + " ticks=" + t.join(",") + " " + why); }
+  if (t.length < 2) die("fewer than two gridlines");
+  if (t[0] !== 0) die("does not start at zero");
+  if (labels.length !== labels.filter(function (v, i) { return labels.indexOf(v) === i; }).length) die("repeated label");
+  t.forEach(function (v, i) {
+    if (v !== Math.round(v)) die("fractional tick");
+    if (i && v <= t[i - 1]) die("not ascending");
+  });
+  if (t[t.length - 1] < p) die("top of scale below the peak");
+  if (t.length > 7) die("too many gridlines");
+});
+console.log("OK");
+"""
+        import subprocess
+        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        self.assertEqual("OK", out.strip(), out.strip())
+
+
 class TestDrawerFields(unittest.TestCase):
     """Every field of an event line should be reachable in the detail panel (#19569)."""
 
