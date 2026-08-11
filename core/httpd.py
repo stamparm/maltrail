@@ -887,12 +887,20 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             Requested for years (issue #17742) so that other tooling can ask Maltrail about a
             single indicator instead of downloading and grepping the whole set.
 
-            Unauthenticated, deliberately and consistently: /trails already serves the ENTIRE
-            trail set to anyone who asks - that is how a sensor pulls from UPDATE_SERVER - so a
-            single-key lookup discloses strictly less than what is already public on the same
-            port. (Contrast /blacklist, which is gated because it reads the EVENT LOG and reveals
-            which of your own hosts were flagged. Trail data is the input; event data is the
-            finding.)
+            Unauthenticated for the PUBLIC trail set only. /trails already serves that to anyone
+            who asks - it is how a sensor pulls from UPDATE_SERVER - so a single-key lookup over
+            static and feed trails discloses strictly less than what is already on the same port.
+            (Contrast /blacklist, gated because it reads the EVENT LOG and reveals which of your
+            own hosts were flagged. Trail data is the input; event data is the finding.)
+
+            CUSTOM trails are the exception and require a session that is allowed to see them.
+            They are the operator's own indicators, not public data, and the server already
+            treats their names as sensitive: ENABLE_MASK_CUSTOM (default on) redacts them from
+            authenticated non-admin users in /events. An unauthenticated endpoint that answered
+            "yes, that internal hostname is in your private list" would bypass a control this
+            server deliberately applies to logged-in analysts - so it does not answer, and a
+            custom-only match is reported exactly as a miss rather than as a masked hit, since
+            confirming membership IS the disclosure here.
 
             Reads through the memory-mapped trail store, so the answer costs no heap: the table
             is the same shared mapping the sensor uses, not a copy loaded into this process.
@@ -933,6 +941,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 for i in xrange(1, len(parts) - 1):
                     candidates.append('.'.join(parts[i:]))
 
+            # Admins and, when no USERS are configured, everyone; the same rule /events applies.
+            session = self.get_session()
+            reveal_custom = session is not None and not getattr(session, "mask_custom", False)
+
             seen = set()
             for candidate in candidates:
                 if candidate in seen:
@@ -940,6 +952,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 seen.add(candidate)
                 result = trailsbin.lookup(handles, candidate)
                 if result:
+                    if "(custom)" in (result[1] or "") and not reveal_custom:
+                        continue
                     return json.dumps({"query": query, "found": True, "trail": candidate,
                                        "info": result[0], "reference": result[1]})
 
