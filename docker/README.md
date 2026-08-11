@@ -35,12 +35,54 @@ Two named volumes hold state that must survive a rebuild:
 Point `TRAILS_FILE` at `/var/lib/maltrail/trails.csv` so the trail set is not rebuilt on every
 container start.
 
+### Bind mounts and the unprivileged user
+
+Both processes run as **uid/gid 10001**, not root. Named volumes (the default above) are fine:
+Docker initialises a new named volume from the image, ownership included, so the directories are
+already writable.
+
+A **bind mount is not** — it keeps the host directory's ownership, which replaces the one the
+image prepared. A directory owned by your login user leaves the container unable to create the
+day's log file, and because `server.py` only opens that file when the first event arrives, the
+container starts, serves the UI, and silently fails to persist anything.
+
+Pick one:
+
+```bash
+# 1. give the host directory to the container's user (simplest)
+sudo chown 10001:10001 ./logs
+
+# 2. or build the image to run as the user that already owns it
+docker build --build-arg MALTRAIL_UID=$(id -u) --build-arg MALTRAIL_GID=$(id -g) \
+             -f docker/Dockerfile -t maltrail:latest .
+
+# 3. or use a named volume and read events out with `docker cp` / a sidecar
+```
+
+`maltrail-sensor -T` reports this directly — `log directory: '...' is NOT writable as uid 10001`
+— so run it against a new deployment before trusting it.
+
 ## Trails are not baked into the image
 
 Earlier versions ran the updater at build time and a cron job inside the container. Neither is done
 now: baking ~2 million indicators into an image makes it large and stale the moment it is published,
 and cron inside a container is a second process to supervise for no benefit. Both the server and the
 sensor refresh trails themselves at startup and every `UPDATE_PERIOD`.
+
+## Server only, receiving from remote sensors
+
+```bash
+docker run -d --name maltrail-server \
+  -p 8338:8338/tcp -p 8337:8337/udp \
+  -v /etc/maltrail.conf:/opt/maltrail/maltrail.conf:ro \
+  -v maltrail-logs:/var/log/maltrail \
+  -v maltrail-state:/var/lib/maltrail \
+  maltrail:latest
+```
+
+That is the image's default command, so nothing needs overriding — and no capabilities: a server
+captures nothing, so it needs neither `NET_RAW` nor `NET_ADMIN`. The built-in healthcheck asks the
+server's own `/ping`, so it passes without them.
 
 ## Sensor only, against an existing server
 

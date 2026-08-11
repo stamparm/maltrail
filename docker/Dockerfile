@@ -61,8 +61,12 @@ EXPOSE 8337/udp
 #
 # HOME is set because the default TRAILS_FILE is ~/.maltrail/trails.csv, and this user has no
 # home outside the state volume.
-RUN groupadd --system --gid 10001 maltrail && \
-    useradd --system --uid 10001 --gid 10001 --no-create-home --shell /usr/sbin/nologin maltrail && \
+# Overridable so a bind-mounted log directory owned by an existing host user can be matched
+# instead of chown'd:  docker build --build-arg MALTRAIL_UID=1000 --build-arg MALTRAIL_GID=1000
+ARG MALTRAIL_UID=10001
+ARG MALTRAIL_GID=10001
+RUN groupadd --system --gid ${MALTRAIL_GID} maltrail && \
+    useradd --system --uid ${MALTRAIL_UID} --gid ${MALTRAIL_GID} --no-create-home --shell /usr/sbin/nologin maltrail && \
     mkdir -p /var/log/maltrail /var/lib/maltrail && \
     chown -R maltrail:maltrail /var/log/maltrail /var/lib/maltrail
 ENV HOME=/var/lib/maltrail
@@ -79,13 +83,19 @@ VOLUME ["/var/log/maltrail", "/var/lib/maltrail"]
 
 USER maltrail
 
-# Liveness that means something. `-T` validates the configuration, trails, whitelist, log
-# directory and capture filter and exits non-zero if the deployment would not work — so an
-# unhealthy container is one that has actually stopped being able to detect, rather than one
-# whose PID 1 happens to still exist. start-period covers the first trail build, which takes
-# a minute or so on a cold volume.
+# Liveness for the process this image actually starts. CMD below is `server.py`, so the default
+# healthcheck asks the SERVER whether it is serving: /ping is unauthenticated and answers "pong".
+#
+# It used to run `maltrail-sensor -T`, which is the wrong question to ask a server container:
+# unless the configuration happens to set DISABLE_CHECK_SUDO, `-T` fails on a missing CAP_NET_RAW
+# that a server neither has nor needs, so a working server-only deployment reported itself
+# unhealthy (issue #19596, measured: exit 1 on that check alone). A healthcheck that cannot pass
+# in a correct configuration is worse than none — it trains people to ignore health.
+#
+# A sensor container overrides this; see docker-compose.yml, which sets `-T` for that service.
+# start-period covers the first trail build, which takes a minute or so on a cold volume.
 HEALTHCHECK --interval=60s --timeout=30s --start-period=180s --retries=3 \
-    CMD ["maltrail-sensor", "-T"]
+    CMD ["python3", "-c", "import os,sys,urllib.request; port=os.environ.get('MALTRAIL_HTTP_PORT','8338'); sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:%s/ping' % port, timeout=10).read().strip() == b'pong' else 1)"]
 
 ENTRYPOINT ["/usr/bin/tini", "--"]
 CMD ["python3", "server.py"]

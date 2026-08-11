@@ -32,6 +32,17 @@ services:
     image: maltrail:latest
     command: ["maltrail-sensor"]
     restart: unless-stopped
+    # The image's default healthcheck asks the SERVER whether it is serving, because the image's
+    # default command is server.py. This service runs a sensor, so it gets the sensor's own
+    # preflight instead: `-T` validates configuration, trails, whitelist, log directory, capture
+    # filter and capabilities, so unhealthy here means "has stopped being able to detect" rather
+    # than "PID 1 still exists".
+    healthcheck:
+      test: ["CMD", "maltrail-sensor", "-T"]
+      interval: 60s
+      timeout: 30s
+      start_period: 180s
+      retries: 3
     depends_on:
       - server
     # Capturing needs the host's network namespace: inside the default bridge the sensor would
