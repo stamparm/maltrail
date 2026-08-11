@@ -6,6 +6,10 @@ docker-compose.override.yml
 # CodeGraph index (local code-intelligence cache, not project source)
 .codegraph/
 
+# Local agent instructions and handover notes
+AGENTS.md
+HANDOVER.md
+
 # Rust sensor build output and local profiling artifacts
 sensor/target/
 sensor/fuzz/target/
