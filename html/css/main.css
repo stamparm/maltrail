@@ -682,6 +682,9 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 .dwr-sec{margin-bottom:15px}
 .dwr-sec h4{margin:0 0 7px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:600}
 .dchips{display:flex;flex-wrap:wrap;gap:5px;max-height:168px;overflow:auto}
+/* the drawer's tag editor: the row's .tag/.tx chips at their natural size, plus a full-width adder */
+.dwr-taginput{width:100%;margin-top:7px;padding:4px 8px;box-sizing:border-box}
+#dwr_tags{margin-bottom:2px}
 .dchip{font-family:var(--mono);font-size:11px;background:var(--ground);border:1px solid var(--line-solid);border-radius:5px;padding:2px 7px;color:#cdd9ea}
 .dwr-none{color:var(--faint);font-family:var(--mono);font-size:11px}
 .dwr-events{max-height:300px;overflow:auto;border:1px solid var(--line-solid);border-radius:8px}
