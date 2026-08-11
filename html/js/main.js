@@ -159,6 +159,7 @@
     sources: '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
     destinations: '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
     ports: TYPE_ICON_P.PORT,
+    protocols: '<rect width="8" height="6" x="2" y="4" rx="1"/><rect width="8" height="6" x="14" y="14" rx="1"/><path d="M6 10v3a1 1 0 0 0 1 1h11"/>',
     events: '<line x1="8" x2="21" y1="6" y2="6"/><line x1="8" x2="21" y1="12" y2="12"/><line x1="8" x2="21" y1="18" y2="18"/><line x1="3" x2="3.01" y1="6" y2="6"/><line x1="3" x2="3.01" y1="12" y2="12"/><line x1="3" x2="3.01" y1="18" y2="18"/>'
   };
   function hdrIcon(k) { return '<span class="h4icon">' + _lu(HDR_ICON[k], 13) + "</span>"; }
@@ -204,6 +205,8 @@
   function otherColor() { return document.body.classList.contains("light") ? "#aeb9c7" : "#3a4a63"; }   // "other" donut slice — softer slate in light (dark gray clashed on white)
   function hourOf(t) { var h = +("" + t).substr(11, 2); return h >= 0 && h < 24 ? h : 0; }   // "YYYY-MM-DD HH:.." -> HH (substr, no regex; per-event hot path)
   function hms(t) { var m = /(\d{2}):(\d{2}):(\d{2})/.exec(t); return m ? m[0] : t; }
+  // "ip:port", or just the address when the protocol has no ports (ICMP logs an empty port field)
+  function hostPort(ip, port) { return esc(ip) + (port === "" || port == null ? "" : ":" + esc(port)); }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
   function ipKey(s) { return ((s || "").match(/\d+/g) || []).map(function (n) { return ("00" + n).slice(-3); }).join("."); }
 
@@ -1103,9 +1106,14 @@
     var d = document.getElementById("drawer"), sc = document.getElementById("drawer_scrim"); if (!d || !t) return;
     var hue = (murmur3(t.uidc, 7) >>> 0) % 360, trg = state.triage[t.uidc];
     var srcs = setList(t.srcS), dsts = setList(t.dstS), ports = setList(t.dportS), ev = t.events || [];
+    var sports = setList(t.sportS), protos = setList(t.protoS);
     var _nt = normTrail(t.trail), relSrc = 0, relTrail = 0;
     for (var ri2 = 0; ri2 < state.all.length; ri2++) { var x = state.all[ri2]; if (x === t) continue; if (x.src === t.src || (x.srcS && x.srcS.vals.has(t.src))) relSrc++; if (normTrail(x.trail) === _nt) relTrail++; }
     function chips(arr) { return arr.length ? arr.map(function (v) { return '<span class="dchip">' + esc(v) + '</span>'; }).join("") : '<span class="dwr-none">none</span>'; }
+    function protoChips(arr) {
+      if (!arr.length) return '<span class="dwr-none">none</span>';
+      return arr.map(function (v) { return '<span class="dchip dwr-f" data-f="proto:' + esc(v) + '" title="filter: proto ' + esc(v) + '">' + esc(v) + '</span>'; }).join("");
+    }
     // source/dest IPs: data-ip so they get the same RIPE flag + country/ASN tooltip as the table cells
     function ipChips(arr) {
       if (!arr.length) return '<span class="dwr-none">none</span>';
@@ -1124,7 +1132,7 @@
     }
     var evShown = Math.min(200, ev.length);
     var evRows = ev.slice(0, 200).map(function (r) {
-      return '<tr><td class="mono">' + esc(hms(r[0])) + '</td><td class="mono">' + esc(r[1]) + '</td><td class="mono">' + esc(r[2]) + ':' + esc(r[3]) + '</td><td class="mono">' + esc(r[4]) + ':' + esc(r[5]) + '</td><td>' + esc(r[6]) + '</td><td class="dwr-evtrail">' + esc(r[8]) + '</td></tr>';
+      return '<tr><td class="mono">' + esc(hms(r[0])) + '</td><td class="mono">' + esc(r[1]) + '</td><td class="mono">' + hostPort(r[2], r[3]) + '</td><td class="mono">' + hostPort(r[4], r[5]) + '</td><td>' + esc(r[6]) + '</td><td class="dwr-evtrail">' + esc(r[8]) + '</td></tr>';
     }).join("");
     var tcol = TYPE_COLORS[t.type] || "#8A97AD";
     d.innerHTML =
@@ -1148,14 +1156,16 @@
         '<div class="dwr-sec dwr-related"><h4>' + hdrIcon("related") + 'related</h4>' + '<button class="relbtn" data-rel="src"><b>' + relSrc + '</b> other threats from this source</button>' + '<button class="relbtn" data-rel="trail"><b>' + relTrail + '</b> other threats on this trail</button></div>' +
         '<div class="dwr-sec"><h4>' + hdrIcon("sources") + 'sources \u00b7 ' + srcs.length + '</h4><div class="dchips">' + ipChips(srcs) + '</div></div>' +
         '<div class="dwr-sec"><h4>' + hdrIcon("destinations") + 'destinations \u00b7 ' + dsts.length + '</h4><div class="dchips">' + ipChips(dsts) + '</div></div>' +
-        '<div class="dwr-sec"><h4>' + hdrIcon("ports") + 'ports \u00b7 ' + ports.length + '</h4><div class="dchips">' + portChips(ports) + '</div></div>' +
+        '<div class="dwr-sec"><h4>' + hdrIcon("ports") + 'destination ports \u00b7 ' + ports.length + '</h4><div class="dchips">' + portChips(ports) + '</div></div>' +
+        '<div class="dwr-sec"><h4>' + hdrIcon("ports") + 'source ports \u00b7 ' + sports.length + '</h4><div class="dchips">' + portChips(sports) + '</div></div>' +
+        '<div class="dwr-sec"><h4>' + hdrIcon("protocols") + 'protocols \u00b7 ' + protos.length + '</h4><div class="dchips">' + protoChips(protos) + '</div></div>' +
         '<div class="dwr-sec"><h4>' + hdrIcon("events") + 'raw events \u00b7 ' + ev.length + (ev.length >= 500 ? "+" : "") + (evShown < ev.length ? " (showing " + evShown + ")" : "") + '</h4><div class="dwr-events"><table><thead><tr><th>time</th><th>sensor</th><th>source</th><th>dest</th><th>proto</th><th>trail</th></tr></thead><tbody>' + evRows + '</tbody></table></div></div>' +
       '</div>';
     d.querySelector("#dwr_close").onclick = closeDrawer;
     _drawerFirstSeen(d, _nt);   // "network memory" line from meta.sqlite (first-seen / observation count)
     _drawerSource(d, _nt);      // on-demand source citation (the trail's static-pile '# Reference:')
     // clickable header chips: filter the table by this severity / threat-id / type, then close the drawer
-    d.querySelectorAll(".dwr-head .dwr-f").forEach(function (el) {
+    d.querySelectorAll(".dwr-f").forEach(function (el) {
       el.style.cursor = "pointer";
       el.onclick = function () { var tok = el.getAttribute("data-f"); closeDrawer(); addFilter(tok); };
     });
@@ -1516,7 +1526,7 @@
     var n = list.length, frag = document.createDocumentFragment();
     if (!n) {
       var active = state.filters.length || state.input.trim();
-      tb.innerHTML = '<tr><td colspan="13" class="emptystate">' +
+      tb.innerHTML = '<tr><td colspan="14" class="emptystate">' +
         (active ? 'No threats match the current filter. <a href="#" data-clear="1">clear filters</a>'
                 : 'No threats for this day. ✓') + '</td></tr>';
       var cl = tb.querySelector("[data-clear]");
@@ -1550,7 +1560,8 @@
         '<td class="sparkcol" data-l="sparkline">' + rowSpark(t.hours) + '</td>' +
         '<td data-l="source">' + ipCellSet(t.srcS) + '</td>' +
         '<td data-l="destination">' + ipCellSet(t.dstS) + '</td>' +
-        '<td class="mono" data-l="port">' + portCellSet(displayPortSet(t)) + portDirHint(t) + '</td>' +
+        '<td class="mono" data-l="port"' + portCellTip(t) + '>' + portCellSet(displayPortSet(t)) + portDirHint(t) + '</td>' +
+        '<td class="mono muted" data-l="proto">' + protoCellSet(t.protoS) + '</td>' +
         '<td data-l="type"><span class="type lt-w" data-f="type:' + esc(t.type) + '" title="filter: type ' + esc(t.type) + '" style="background:' + tc + ';color:#fff">' + esc(t.type) + '</span></td>' +
         '<td data-l="trail">' + originGlyph(t.ref) + '<span class="trail" data-tip="' + esc(ftrail) + '">' + trailCellHtml(ftrailPH, ftrail) + '</span></td>' +
         '<td class="mono muted" data-l="info">' +
@@ -1789,6 +1800,23 @@
     "in": [_arrowSVG('<line x1="20" y1="12" x2="5.5" y2="12"/><polyline points="11 6.5 5 12 11 17.5"/>'), "the traffic INTO this port was flagged (e.g. a malicious request/attack)"]
   };
   function portDirHint(t) { var d = portDir(t); return d ? '<span class="port-dir pd-' + d + '" data-f="dir:' + d + '" title="' + PORT_DIR[d][1] + ' — click to filter ' + d + '">' + PORT_DIR[d][0] + '</span>' : ""; }
+  // The port column shows the SERVICE side (see portInfo); the other side and the protocol are the
+  // rest of the 5-tuple and were reachable nowhere in the UI (#19569). The protocol is a column of
+  // its own below; the ports of both directions live in this cell's tooltip, where they cost no
+  // width - a threat's source ports are usually just a pile of ephemeral numbers.
+  function portCellTip(t) {
+    var sp = setList(t.sportS), dp = setList(t.dportS);
+    if (!sp.length && !dp.length) return "";
+    var lines = [];
+    if (sp.length) lines.push("source port" + (sp.length > 1 ? "s" : "") + ": " + sp.join(", "));
+    if (dp.length) lines.push("destination port" + (dp.length > 1 ? "s" : "") + ": " + dp.join(", "));
+    return ' data-tip="' + esc(lines.join("\n")) + '"';
+  }
+  function protoCellSet(s) {
+    var l = setList(s); if (!l.length) return "";
+    if (l.length === 1) return '<span class="mono proto" data-f="proto:' + esc(l[0]) + '" title="filter: proto ' + esc(l[0]) + '">' + esc(l[0]) + '</span>';
+    return ellSpan(l);
+  }
   function portCellSet(s) {
     var l = setList(s); if (!l.length) return "";
     if (l.length === 1) {
