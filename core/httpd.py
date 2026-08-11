@@ -137,6 +137,35 @@ _counts_cache = {}  # NOTE: per daily-log event count keyed by filepath -> (mtim
 _geo_cache = {}  # NOTE: per daily-log country aggregation keyed by filepath -> running {mtime,size,offset,counts,mapped,unmapped}; grows INCREMENTALLY (only new bytes are scanned) so a live/growing current-day log stays cheap
 _geo_lock = threading.Lock()  # NOTE: the incremental read-modify-write must be serialized (concurrent /geo for the same day would otherwise double-count)
 MAX_REQUEST_THREADS = 100       # concurrent request handlers; excess connections get 503 without a thread
+MAX_LIVE_STREAMS = 30           # of those, how many may be held open by /live at once
+_live_streams = [0]
+_live_streams_lock = threading.Lock()
+
+def _live_slot():
+    """Claim one of the /live budget, or return False.
+
+    A /live stream is held open for as long as the tab is, so it occupies a request thread
+    indefinitely - and the thread cap counts it like any other handler. Without a separate,
+    smaller budget the streams simply eat the pool: 120 open dashboards saturated all 100 slots
+    and every ordinary request got a 503. That is a cheaper denial of service than the one the
+    cap was added to prevent, and it needs nothing but a browser.
+
+    Capping streams below the thread cap keeps at least MAX_REQUEST_THREADS - MAX_LIVE_STREAMS
+    handlers available for ordinary traffic. A refused stream is answered 204, which the frontend
+    already treats as "no SSE here" and falls back to Range polling (see openSSE in main.js), so
+    the dashboard stays live either way - just at poll latency.
+    """
+
+    with _live_streams_lock:
+        if _live_streams[0] >= MAX_LIVE_STREAMS:
+            return False
+        _live_streams[0] += 1
+        return True
+
+def _live_release():
+    with _live_streams_lock:
+        _live_streams[0] = max(0, _live_streams[0] - 1)
+
 LOGIN_FAILURE_THRESHOLD = 5     # consecutive failures from one IP before its attempts are refused unevaluated
 _login_failures = {}            # client IP -> [consecutive failures, epoch the window expires]
 _login_failures_lock = threading.Lock()
@@ -1785,6 +1814,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 return None
             event_log_path = os.path.join(config.LOG_DIR, "%s.log" % date)
 
+            # Budget check before the response line: a refused stream must look exactly like the
+            # restricted-session case above, which the client already handles.
+            if not _live_slot():
+                self.send_response(_http_client.NO_CONTENT)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
             pos = None
             leid = self.headers.get("Last-Event-ID")
             if leid and leid.isdigit():
@@ -1833,6 +1869,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     time.sleep(0.6)
             except Exception:
                 pass  # client disconnected (write failed) or transient I/O -> end the stream; EventSource will reconnect
+            finally:
+                _live_release()
             return None
 
         def _counts(self, params):
