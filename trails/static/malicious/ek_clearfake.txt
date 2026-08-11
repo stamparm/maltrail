@@ -26367,7 +26367,7 @@ clampe7outback.lat
 clang-outrag.digital
 clap9t.stormling.ru
 clart.tron6val4ky.ru
-clartã©.tron6val4ky.ru
+xn--clart-gha91b.tron6val4ky.ru    # was: clartã©.tron6val4ky.ru
 claryn.cloudrift.ru
 clas5prosys.bet
 clasp8.spongeclaw.ru

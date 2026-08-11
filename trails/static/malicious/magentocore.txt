@@ -211,7 +211,7 @@ magesource.su
 
 # Reference: https://twitter.com/AffableKraut/status/1154641710653300737
 
-googlepíng.com
+xn--googlepng-m5a.com    # was: googlepíng.com
 xn--googlepng-m5a.com
 
 # Reference: https://blog.sucuri.net/2019/07/fake-google-domains-used-in-evasive-magento-skimmer.html
@@ -219,7 +219,7 @@ xn--googlepng-m5a.com
 
 invoiceservice.info
 lnfo.cc
-google-analytîcs.com
+xn--google-analytcs-xpb.com    # was: google-analytîcs.com
 xn--google-analytcs-xpb.com
 google.ssl.lnfo.cc
 
@@ -16795,11 +16795,11 @@ livechatorg.com
 onlinechatmatrix.online
 onlinechatmatrix.store
 onlinechatmatrix.xyz
-onlinechatmatrix․xyz
+onlinechatmatrix.xyz    # was: onlinechatmatrix․xyz
 onlinesupportmatrix.org
 onlinesupportmatrix.support
 onlinesupportmatrix.xyz
-onlinesupportmatrix․support
+onlinesupportmatrix.support    # was: onlinesupportmatrix․support
 requiresys.icu
 rshardware.online
 supportstreamonline.com

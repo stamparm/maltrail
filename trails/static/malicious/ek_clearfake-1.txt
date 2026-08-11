@@ -637,7 +637,7 @@ baxus.net
 bay-loyal.cloudmesh.lat
 bazipoop.com
 bbautokozmetika.hu
-bbautókozmetika.hu
+xn--bbautkozmetika-pob.hu    # was: bbautókozmetika.hu
 bbglobalbau.hu
 bbysf.sm188login.cyou
 bcbjicn.kreativkiteljesedes.hu
@@ -2271,7 +2271,7 @@ kernel-vertex.digital
 kernelgrid.ink
 kernelshift.pics
 kernelwave.lat
-keró.hu
+xn--ker-ina.hu    # was: keró.hu
 kevwo.akonyvelod.hu
 key.rowlocks.pics
 kferlw.itsmarthungary.hu

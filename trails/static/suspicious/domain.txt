@@ -799,7 +799,7 @@ downloaden24.de
 dr.ag
 dreht-auf.de
 dvd.lc
-dë.com
+xn--d-fga.com    # was: dë.com
 e.gp
 ec.gp
 eg.gp
