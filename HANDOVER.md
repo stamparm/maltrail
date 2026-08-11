@@ -1,13 +1,18 @@
 # Handover
 
-State of play as of **2026-08-11**, master at `37c455c4`. Read `AGENTS.md` first — it has the
+State of play as of **2026-08-11**, master at `170c40d9`. Read `AGENTS.md` first — it has the
 working conventions and the traps. This file is what is *in flight* and what was *decided*.
 
 ## Where things stand
 
-**3.1 is released** (binaries + `ghcr.io/stamparm/maltrail:3.1` + `:latest`, provenance attested).
-Master carries an **unreleased 3.1.1** worth of fixes — see the top of `CHANGELOG`. Open issues:
-**79**, down from 97.
+**3.1.1 is released** (`52b2872e`, tag `3.1.1`): binaries for x86_64 and aarch64,
+`ghcr.io/stamparm/maltrail:3.1.1` + `:latest`, provenance attested, gate green. The published
+x86_64 binary was checked after the fact rather than trusted: checksum matches, highest glibc
+symbol required is **2.28**, `--version` says `#v3.1.1`. That was the point of the release — the
+3.1 artefacts needed 2.39 and did not exec on RHEL 8/9, Debian 12 or Leap 15.6, and `install.sh`
+downloads the latest release. Open issues: **79**, down from 97.
+
+Master has no unreleased changes beyond documentation.
 
 Everything below is on master, green in CI (`sensor`, `msrv`, `floor`, `server` ×3, `version`,
 `docker`, `installer`, `audit`).
@@ -26,16 +31,18 @@ Everything below is on master, green in CI (`sensor`, `msrv`, `floor`, `server` 
 
 ## Next, in the order I would do it
 
-1. **Tag 3.1.1.** The installer currently downloads 3.1 binaries, which are the glibc-2.39 ones that
-   do not start on half the enterprise distributions. Everything needed for the tag is on master;
-   the release workflow now builds against 2.28 and refuses anything newer. **Verify the published
-   artefact before announcing:** `MALTRAIL_TEST_SENSOR=<downloaded binary> bash tests/install/run.sh`.
-2. **README: advertise the one-liner.** Deliberately not done yet — pointing people at
-   `curl … | sh` while it fetches binaries that cannot run would be worse than not having it.
-   Do it immediately after step 1.
-3. **The trails split** (agreed in principle, not started). See below.
-4. `#19595` — wiki page for the config options. Left open on purpose: the wiki is a separate repo,
+1. **The trails split** (agreed in principle, not started). See below. The gate is the licence
+   audit, not code.
+2. `#19595` — wiki page for the config options. Left open on purpose: the wiki is a separate repo,
    so it is a deliverable, not a code change.
+3. Whatever the 3.1.1 release surfaces. It is the first version whose binaries start on the
+   enterprise distributions *and* the first the README tells people to install with one command,
+   so the installer is about to meet many more environments than the five in the harness.
+
+**Done, 11 Aug 2026** (was 1 and 2 here): 3.1.1 tagged and published, and the README quick start
+now leads with `curl … | sudo sh` (`170c40d9`), with build-from-source moved under its own heading
+and the same pointer added to `sensor/docs/INSTALL.md`. Advertising the one-liner was deliberately
+held until the tag existed, because before it the installer fetched binaries that could not exec.
 
 ## Decisions already made (do not relitigate without a reason)
 
@@ -103,3 +110,10 @@ publish well.
 * Do not moralise about how security reports are handled.
 * Do not waste the maintainer's time: run the gates your change touches, not all of them; iterate on
   one environment, not five. If something is going to take 20 minutes, say so before starting it.
+* **Never sit and poll.** No `gh run watch`, no `sleep` loops waiting on CI, no re-running locally
+  what CI already ran on that commit. Start the slow thing, do the next piece of work, and if only
+  background verification is left, say it is still running and stop. Waiting is not progress — a
+  release turn was burned on exactly this. `tests/install/run.sh` across all five distributions
+  takes 20+ minutes on a cold cache (openSUSE is the slow one) and the `installer` CI job already
+  covers it; the useful local check on a published binary is checksum + `objdump -T | grep GLIBC`
+  + `--version`, which takes seconds.
