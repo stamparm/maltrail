@@ -199,10 +199,27 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0        # the harness serves the clone from this checkout over file://
-      - name: Build the sensor so the sensor path is covered too
+      # Built the way the RELEASE builds it - inside AlmaLinux 8 (glibc 2.28) - so the sensor
+      # assertions run on Debian 12 and Leap 15.6 too. Built with the runner's own toolchain
+      # (glibc 2.39) the binary cannot exec there, those checks skip, and the fact that published
+      # binaries do not start on most enterprise distributions stays invisible until someone
+      # downloads one. This makes it a per-commit property instead of a release-time hope.
+      - name: Build the sensor against the release's glibc baseline
         run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq libpcap-dev
-          cargo build --release --locked --manifest-path sensor/Cargo.toml
+          docker run --rm -v "$PWD:/src" -w /src almalinux:8 sh -eu -c '
+            dnf -y -q install dnf-plugins-core >/dev/null
+            dnf config-manager --set-enabled powertools >/dev/null 2>&1 ||
+              dnf config-manager --set-enabled crb >/dev/null 2>&1
+            dnf -y -q install gcc libpcap-devel make >/dev/null
+            export CARGO_HOME=/src/.cargo-home RUSTUP_HOME=/src/.rustup-home
+            export PATH=$CARGO_HOME/bin:$PATH
+            curl -sSf https://sh.rustup.rs -o /tmp/rustup.sh
+            sh /tmp/rustup.sh -y --default-toolchain stable --profile minimal --no-modify-path >/dev/null
+            cargo build --release --locked --manifest-path sensor/Cargo.toml
+            strip sensor/target/release/maltrail-sensor
+          '
+          sudo chown -R "$(id -u):$(id -g)" sensor/target .cargo-home .rustup-home
+          echo "highest glibc symbol: $(objdump -T sensor/target/release/maltrail-sensor | sed -n 's/.*GLIBC_\([0-9.]*\).*/\1/p' | sort -V -u | tail -1)"
       - run: bash tests/install/run.sh
 
   # Rust dependency advisories. Gates the diff that introduces a vulnerable dependency.
