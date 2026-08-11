@@ -14,6 +14,48 @@
 
 
 
+- Version 3.0.1 -> 3.1 (11 Aug 2026)
+
+[+] The sensor matches TLS server certificates against the trail set by their
+    SHA-1 fingerprint ('CHECK_TLS_CERTIFICATES', new 'CERT' trail type), fed by
+    the new 'sslblcert' feed (~10,400 C2 certificates from abuse.ch SSLBL). A
+    certificate outlives the address and domain in front of it, so it keeps
+    matching after those rotate. Rated 'suspicious' rather than malware
+[+] New '/check?q=<domain|ip|url>' server endpoint: answers whether one
+    indicator is in the trail set and which key matched, reading through the
+    memory-mapped trail store so it costs no memory. Custom trails require a
+    session, since 'ENABLE_MASK_CUSTOM' already treats their names as private
+[+] 'SYSLOG_SERVER' and 'LOGSTASH_SERVER' may each name several collectors,
+    separated by commas, for redundant SIEM targets
+[+] New 'torprojectnodes' feed: all running Tor relays from the Tor Project's
+    own Onionoo API, not only exit nodes - a client connects to a guard relay
+    and never to an exit, so outbound Tor use was previously invisible
+[!] Both sensors now parse PPPoE-encapsulated IP. Traffic mirrored from a
+    DSL/fibre uplink is PPPoE end to end, so a SPAN port carrying it was
+    detected as nothing at all while the capture host's own traffic was fine
+[!] 'retrieve_content' keeps cookies across a redirect, which restores three
+    cybercrime-tracker feeds (~39,000 indicators) that a cookie-and-redirect
+    challenge had silently reduced to zero
+[!] Removed six feeds whose services were retired years ago (Palevo Tracker,
+    Ransomware Tracker x3, ZeuS Tracker x2), and repointed 'feodotrackerip' at
+    the CSV that abuse.ch still fills. A feed that yields nothing is now
+    reported; that warning used to be suppressed for abuse.ch URLs, which is
+    why all seven rotted unnoticed
+[!] '/blacklist' is gated like '/fail2ban' ('BLACKLIST_ALLOWLIST', falling back
+    to 'FAIL2BAN_ALLOWLIST'); an authenticated session also passes. It reads the
+    event log and returned the flagged source IPs to anyone
+[!] The Docker image health-checks the process it actually runs. Its default
+    command is the server, but the healthcheck ran the sensor's preflight, so a
+    server-only container reported itself unhealthy while serving correctly
+[=] Docker: 'MALTRAIL_UID'/'MALTRAIL_GID' build args, and documentation for
+    bind-mounted log directories, which keep the host's ownership and leave the
+    unprivileged container unable to write the daily log
+[=] 'sensor/tools/check.sh', 'parity.py' and 'bench_compare.py' report why they
+    cannot run instead of failing obscurely: missing toolchain or capture
+    bindings, an interpreter older than 3.7, and a benchmark whose reference
+    sensor never started
+[=] Multiple updates and optimizations for regular static trails and the whitelist
+
 - Version 3.0 -> 3.0.1 (10 Aug 2026)
 
 [!] The sensor now verifies that the Python driving the trail updater is 3.7+
