@@ -474,7 +474,81 @@ class TestHttpd(unittest.TestCase):
         # sensors pull the trail set from the server via /trails (UPDATE_SERVER). No auth (automation).
         st, _, body = _http(self.port, "GET", "/trails")
         self.assertEqual(st, 200)
-        self.assertIn(b"evil.com", body, "the server's trails file must be served verbatim")
+        self.assertIn(b"evil.com", body, "the public trail set must be served to an unauthenticated sensor")
+
+    def test_trails_endpoint_does_not_leak_custom_trails(self):
+        # update_trails() merges trails/custom into the SAME file as the public feeds, and /trails
+        # used to return that file verbatim to anyone who could reach the port - handing out the
+        # operator's private indicators (internal hostnames, an investigation's IOCs) that /check
+        # and /events go to real trouble to mask.
+        st, _, anon = _http(self.port, "GET", "/trails")
+        self.assertEqual(st, 200)
+        self.assertNotIn(b"internal-secret.corp", anon, "/trails must not disclose custom trails to an unauthenticated caller")
+        self.assertIn(b"evil.com", anon, "positive control: the public trails are still served")
+
+        # an admin is entitled to them, so a sensor pulling with a session still gets the full set
+        _, _, admin = _http(self.port, "GET", "/trails", cookie=self._login("admin"))
+        self.assertIn(b"internal-secret.corp", admin, "an admin session must still receive custom trails")
+
+        # ... and a mask_custom user (uid >= 1000) is not, exactly as /check treats them
+        _, _, analyst = _http(self.port, "GET", "/trails", cookie=self._login("analyst"))
+        self.assertNotIn(b"internal-secret.corp", analyst, "a mask_custom session must not receive custom trails")
+        self.assertIn(b"evil.com", analyst, "positive control: the public trails are still served")
+
+    def test_counts_are_scoped_to_the_session_networks(self):
+        # /events has always honoured netfilters; /counts reported the GLOBAL daily totals to every
+        # authenticated user, so a restricted analyst could read the whole estate's volume off the
+        # calendar heat map. Five events are seeded, one of which has no 10.x address.
+        import json as _json
+        _, _, admin = _http(self.port, "GET", "/counts", cookie=self._login("admin"))
+        _, _, analyst = _http(self.port, "GET", "/counts", cookie=self._login("analyst"))
+        admin_counts = _json.loads(admin.decode("utf-8"))
+        analyst_counts = _json.loads(analyst.decode("utf-8"))
+        self.assertEqual(admin_counts.get(self.date), 5, "positive control: admin sees every event")
+        self.assertEqual(analyst_counts.get(self.date), 4, "the external-only event is outside 10.0.0.0/8")
+
+    def test_counts_cache_is_keyed_by_scope(self):
+        # The count cache is a module global shared by every request. Keyed on the log path alone,
+        # whichever user asked first would have their total served to the other - the same
+        # disclosure through the cache instead of the endpoint. Ask in both orders.
+        import json as _json
+        _, _, a1 = _http(self.port, "GET", "/counts", cookie=self._login("analyst"))
+        _, _, b1 = _http(self.port, "GET", "/counts", cookie=self._login("admin"))
+        _, _, a2 = _http(self.port, "GET", "/counts", cookie=self._login("analyst"))
+        self.assertEqual(_json.loads(a1.decode("utf-8")).get(self.date), 4)
+        self.assertEqual(_json.loads(b1.decode("utf-8")).get(self.date), 5)
+        self.assertEqual(_json.loads(a2.decode("utf-8")).get(self.date), 4, "the admin request must not have poisoned the analyst's entry")
+
+    def test_blacklist_is_scoped_to_the_session_networks(self):
+        # BLACKLIST_FOO selects the IP-type events, whose sources are 10.0.0.6, 10.0.0.8 and the
+        # out-of-scope 203.0.113.9. The response is a list of flagged SOURCE addresses, so an
+        # unscoped answer tells a restricted analyst which hosts outside their networks were hit.
+        _, _, admin = _http(self.port, "GET", "/blacklist/foo", cookie=self._login("admin"))
+        _, _, analyst = _http(self.port, "GET", "/blacklist/foo", cookie=self._login("analyst"))
+        self.assertIn(b"203.0.113.9", admin, "positive control: an unrestricted session still sees it")
+        self.assertNotIn(b"203.0.113.9", analyst, "/blacklist must not return sources outside the analyst's networks")
+        self.assertIn(b"10.0.0.6", analyst, "positive control: in-scope sources are still returned")
+
+    def test_geo_is_scoped_to_the_session_networks(self):
+        # The map is built from the same log lines. Unscoped, it drew a restricted analyst the
+        # whole estate's picture - coarser than /events, but still derived from events they may
+        # not read. The external-only event's destination (198.51.100.5) is the one that differs.
+        import json as _json
+        _, _, admin = _http(self.port, "GET", "/geo?date=%s" % self.date, cookie=self._login("admin"))
+        _, _, analyst = _http(self.port, "GET", "/geo?date=%s" % self.date, cookie=self._login("analyst"))
+        a = _json.loads(admin.decode("utf-8"))
+        b = _json.loads(analyst.decode("utf-8"))
+        self.assertGreater(a["mapped"] + a["unmapped"], b["mapped"] + b["unmapped"],
+                           "a restricted analyst must be placed on fewer events than an admin")
+
+    def test_meta_refused_for_scoped_sessions(self):
+        # The observables table is (observable, flags, first_seen, last_seen, count): no network
+        # dimension, so an answer is necessarily about the whole estate and cannot be filtered.
+        # Refused rather than answered with {}, which would read as "never observed".
+        st, _, _ = _http(self.port, "GET", "/meta?observable=8.8.8.8", cookie=self._login("analyst"))
+        self.assertEqual(st, 403, "/meta must not answer a network-restricted session")
+        st, _, _ = _http(self.port, "GET", "/meta?observable=8.8.8.8", cookie=self._login("admin"))
+        self.assertEqual(st, 200, "positive control: an unrestricted session is still answered")
 
     def test_no_traceback_in_server_log(self):
         # give the server a moment to flush, then check it never logged an unhandled traceback

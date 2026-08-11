@@ -366,8 +366,16 @@ def start_logd(address=None, port=None, join=False):
                     sec = int(time.mktime(event_date.timetuple()))
                     event = data
 
-                if not event.endswith(b'\n'):
-                    event = b"%s\n" % event
+                # One datagram is one record. A sensor never sends an embedded newline, so the
+                # only way to get one here is a forged datagram - and this listener is
+                # unauthenticated by protocol design, so anyone who can reach the port could
+                # append arbitrary extra "events" to the log by putting '\n' in the middle of
+                # one. That is evidence tampering in an IDS: the log is what an operator
+                # reasons from and what /events, /counts and /fail2ban parse.
+                #
+                # Collapse the interior newlines rather than dropping the datagram, so a
+                # malformed-but-honest sender still gets its event recorded, on one line.
+                event = event.rstrip(b'\r\n').replace(b'\r', b' ').replace(b'\n', b' ') + b'\n'
 
                 handle = get_event_log_handle(int(sec), reuse=False)
                 try:

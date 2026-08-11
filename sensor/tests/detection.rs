@@ -201,6 +201,62 @@ fn udp_non_dns_to_bad_ip() {
 }
 
 #[test]
+fn udp_non_dns_to_malware_ip_is_reported() {
+    // Deliberate divergence from old/sensor.py:880 (listed in tools/parity.py), which collapsed the dst-side and src-side
+    // matches into one `trail` and then applied the src-side "malware" suppression to both -
+    // so a datagram TO a known C2 address produced nothing at all. The TCP path never did this:
+    // it suppresses "attacker" on the dst side and "malware" only on the src side.
+    let mut h = trails(&[("66.66.66.66", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&ipv4(17, "10.0.0.5", "66.66.66.66", &udp(40000, 4444, &[0u8; 8])), 1);
+    let events = h.events();
+    assert_eq!(events.len(), 1, "UDP to a malware-listed destination must be reported: {events:?}");
+    assert_eq!(events[0].trail, "66.66.66.66");
+    assert_eq!(events[0].proto, "UDP");
+}
+
+#[test]
+fn udp_non_dns_from_malware_ip_stays_suppressed() {
+    // The positive control for the test above: the src-side "malware" rule is the one that was
+    // intended, and it still holds. Backscatter from a listed host is not a detection.
+    let mut h = trails(&[("66.66.66.66", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&ipv4(17, "66.66.66.66", "10.0.0.5", &udp(4444, 40000, &[0u8; 8])), 1);
+    assert!(h.events().is_empty(), "UDP FROM a malware-listed source stays suppressed");
+}
+
+#[test]
+fn udp_non_dns_to_attacker_ip_is_suppressed() {
+    // The dst-side rule the TCP path uses, now applied here too.
+    let mut h = trails(&[("66.66.66.66", "attacker (dummy)", "ref")]);
+    h.feed_ip(&ipv4(17, "10.0.0.5", "66.66.66.66", &udp(40000, 4444, &[0u8; 8])), 1);
+    assert!(h.events().is_empty(), "UDP to an attacker-listed destination stays suppressed");
+}
+
+#[test]
+fn distinct_dns_queries_on_one_socket_are_both_examined() {
+    // Deliberate divergence from old/sensor.py:863 (listed in tools/parity.py). The burst filter compared only
+    // (second, 5-tuple) and ran BEFORE the DNS parser, so a clean query immediately followed by
+    // a malicious one on the same resolver socket in the same second was never parsed at all.
+    // A stub resolver walking its `search` list does exactly this.
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40000, 53, &dns("good.example"))), 1);
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40000, 53, &dns("evil.com"))), 1);
+    let events = h.events();
+    assert_eq!(events.len(), 1, "the second query on a reused socket must still be examined: {events:?}");
+    assert_eq!(events[0].trail, "evil.com");
+}
+
+#[test]
+fn identical_dns_datagrams_still_collapse() {
+    // The positive control for the test above: burst suppression is still doing its job. A
+    // byte-for-byte repeat (a retransmit) is skipped, which is all the filter was ever for.
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+    let packet = ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40000, 53, &dns("evil.com")));
+    h.feed_ip(&packet, 1);
+    h.feed_ip(&packet, 1);
+    assert_eq!(h.events().len(), 1, "identical datagrams in one second must still collapse");
+}
+
+#[test]
 fn icmp_echo_request_only() {
     let mut h = trails(&[("66.66.66.66", "badnet (dummy)", "ref")]);
     let echo = [0x08u8, 0x00, 0, 0, 0, 0, 0, 0];

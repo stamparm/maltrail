@@ -1177,6 +1177,20 @@ fn classify_user_agent(st: &WorkerState, user_agent: &str) -> Option<String> {
     Some(rendered.join(&esc(matched)))
 }
 
+/// FNV-1a over a UDP payload, used only to tell two datagrams of one burst apart.
+///
+/// A collision costs one skipped packet in a burst, never a false event, so a 64-bit
+/// non-cryptographic hash is the right tool - and it runs on every UDP packet, so it has to stay
+/// a single pass with no allocation.
+fn payload_digest(payload: &[u8]) -> u64 {
+    let mut hash: u64 = 0xcbf2_9ce4_8422_2325;
+    for b in payload {
+        hash ^= *b as u64;
+        hash = hash.wrapping_mul(0x0000_0100_0000_01b3);
+    }
+    hash
+}
+
 fn udp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packet::IpHeader, sec: u64, usec: u32) {
     let Some(udph) = packet::parse_udp(ip_data, header.header_len) else {
         st.metrics.packets_truncated += 1;
@@ -1185,21 +1199,49 @@ fn udp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packe
     let ep = Endpoints { src: header.src, src_port: udph.src_port, dst: header.dst, dst_port: udph.dst_port };
 
     let stamp = FlowStamp { sec, src: ep.src, src_port: ep.src_port, dst: ep.dst, dst_port: ep.dst_port };
+
+    // Burst suppression. Python (old/sensor.py:863) compared the 5-tuple plus the second and
+    // nothing else, so two DIFFERENT datagrams sent back-to-back on one socket in one second
+    // collapsed to one - and because the check runs before dns_packet(), the second was never
+    // parsed at all. A stub resolver walking its `search` list, a retry, or a forwarder
+    // multiplexing two clients upstream all reuse the socket, so the dropped datagram carries a
+    // different name than the one that was examined: silent detection loss, not deduplication.
+    //
+    // Mixing the payload into the comparison keeps the intent (a genuinely repeated datagram is
+    // still skipped, byte for byte) and removes the collision. Deliberate divergence from the
+    // oracle; see tests/detection.rs and the divergence list in tools/parity.py.
+    let digest = payload_digest(packet::udp_payload(ip_data, header.header_len));
     let previous = st.last_udp.replace(stamp);
-    if previous == Some(stamp) {
+    let previous_digest = std::mem::replace(&mut st.last_udp_payload, digest);
+    if previous == Some(stamp) && previous_digest == digest {
         return; // skip bursts
     }
 
     if ep.src_port != 53 && ep.dst_port != 53 {
         st.metrics.trail_lookups += 1;
-        let hit =
-            st.trails.db().get_ip(ep.dst).map(|v| (ep.dst, v.info.to_string(), v.reference.to_string())).or_else(
-                || st.trails.db().get_ip(ep.src).map(|v| (ep.src, v.info.to_string(), v.reference.to_string())),
-            );
 
-        if let Some((trail_ip, info, reference)) = hit {
+        // Which side matched decides which listings are suppressed, exactly as the TCP path
+        // does: a datagram TO a listed host is the detection worth having, so only "attacker"
+        // listings (noise we provoked) are dropped there, while a datagram FROM a listed host is
+        // usually backscatter and drops "malware".
+        //
+        // Python (old/sensor.py:880) collapsed both sides into one `trail` and then applied the
+        // src-side "malware" rule to whichever had matched - so every UDP flow *to* a known
+        // malware/C2 address was discarded, which is the single most valuable thing this branch
+        // can see. Deliberate divergence from the oracle; see tests/detection.rs and the
+        // divergence list in tools/parity.py.
+        let hit = st
+            .trails
+            .db()
+            .get_ip(ep.dst)
+            .map(|v| (ep.dst, v.info.to_string(), v.reference.to_string(), "attacker"))
+            .or_else(|| {
+                st.trails.db().get_ip(ep.src).map(|v| (ep.src, v.info.to_string(), v.reference.to_string(), "malware"))
+            });
+
+        if let Some((trail_ip, info, reference, suppressed)) = hit {
             let previous_logged = st.last_logged_udp.replace(stamp);
-            if previous_logged != Some(stamp) && !info.contains("malware") {
+            if previous_logged != Some(stamp) && !info.contains(suppressed) {
                 let trail = trail_ip.render().as_str().to_string();
                 emit_ep(st, sec, usec, ep, PROTO::UDP, TRAIL::IP, Field::Text(trail), &info, &reference);
             }

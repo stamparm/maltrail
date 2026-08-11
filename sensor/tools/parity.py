@@ -30,6 +30,33 @@ events per `sec // PROCESS_COUNT` bucket, so whether a run happens to straddle a
 changes the event COUNT by one on a case with repeated identical detections. That is
 nondeterminism in the COMPARISON, not in either sensor: a real regression reproduces on every
 run, a clock artefact does not. Use `--repeat N` to tell them apart.
+
+DELIBERATE DIVERGENCES. `old/sensor.py` is a retired oracle, not a specification. Where it is
+demonstrably wrong the Rust sensor is correct instead, and a Rust-side SURPLUS on these two is
+expected rather than a regression. Both are covered by named tests in `tests/detection.rs`, so
+neither can silently revert. Do not "fix" them by restoring the Python behaviour.
+
+Note that the corpus as it stands triggers NEITHER of them - it has no UDP flow to a
+malware-labelled destination and no two distinct DNS queries back-to-back on one socket in one
+second, so this harness currently reports a clean parity run and would not have found either bug.
+That is the honest state of the corpus, not evidence that the divergences are inactive. Adding
+those cases to `gen_corpus.py` would make this harness fail by design; it would need the expected
+surplus encoded per case first.
+
+  1. UDP to a malware-listed DESTINATION (sensor.py:880 vs process.rs `udp`). Python looked up
+     the destination, fell back to the source, then applied one `"malware" not in info` test to
+     whichever had matched - so every datagram *to* a known C2 address was discarded. Its own
+     TCP path does not do this (sensor.py:565/577): it suppresses "attacker" on the destination
+     side and "malware" only on the source side. The Rust sensor now applies the TCP rule to UDP
+     as well. Python emits nothing here; Rust emits the detection.
+
+  2. Distinct DNS queries sharing a socket (sensor.py:863 vs process.rs `udp`). Python's burst
+     filter compared `(second, src, sport, dst, dport)` and ran BEFORE the DNS parser, so a
+     second datagram sent back-to-back on one resolver socket in the same second was never
+     parsed - a stub resolver walking its `search` list, a retry, or a forwarder multiplexing
+     two clients all hit this. Rust mixes a payload hash into the comparison, so a byte-for-byte
+     repeat is still skipped and a different query is not. Python misses the second name; Rust
+     reports it.
 """
 
 import argparse

@@ -19,6 +19,8 @@ pub struct WorkerMetrics {
     pub events_written: u64,
     /// Local event-log open/write failures: non-zero means detections were produced and LOST.
     pub log_write_errors: u64,
+    /// Remote-sink delivery failures: with DISABLE_LOCAL_LOG_STORAGE these are detections LOST.
+    pub remote_log_errors: u64,
     /// events the throttle held back, and the aggregated summary lines emitted for them
     pub events_throttled: u64,
     pub events_summarized: u64,
@@ -51,6 +53,7 @@ impl WorkerMetrics {
         self.events += other.events;
         self.events_written += other.events_written;
         self.log_write_errors += other.log_write_errors;
+        self.remote_log_errors += other.remote_log_errors;
         self.events_throttled += other.events_throttled;
         self.events_summarized += other.events_summarized;
         self.trail_lookups += other.trail_lookups;
@@ -88,6 +91,7 @@ pub struct MetricsSlot {
     pub events: AtomicU64,
     pub events_written: AtomicU64,
     pub log_write_errors: AtomicU64,
+    pub remote_log_errors: AtomicU64,
     pub events_throttled: AtomicU64,
     pub events_summarized: AtomicU64,
     pub trail_lookups: AtomicU64,
@@ -141,6 +145,7 @@ impl MetricsSlot {
         self.events.store(m.events, Ordering::Relaxed);
         self.events_written.store(m.events_written, Ordering::Relaxed);
         self.log_write_errors.store(m.log_write_errors, Ordering::Relaxed);
+        self.remote_log_errors.store(m.remote_log_errors, Ordering::Relaxed);
         self.events_throttled.store(m.events_throttled, Ordering::Relaxed);
         self.events_summarized.store(m.events_summarized, Ordering::Relaxed);
         self.trail_lookups.store(m.trail_lookups, Ordering::Relaxed);
@@ -168,6 +173,7 @@ impl MetricsSlot {
             events: self.events.load(Ordering::Relaxed),
             events_written: self.events_written.load(Ordering::Relaxed),
             log_write_errors: self.log_write_errors.load(Ordering::Relaxed),
+            remote_log_errors: self.remote_log_errors.load(Ordering::Relaxed),
             events_throttled: self.events_throttled.load(Ordering::Relaxed),
             events_summarized: self.events_summarized.load(Ordering::Relaxed),
             trail_lookups: self.trail_lookups.load(Ordering::Relaxed),
