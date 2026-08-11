@@ -153,7 +153,12 @@ pub fn run(cfg: &Config) -> Outcome {
     };
 
     let mut command = Command::new(&python);
-    command.current_dir(&cfg.root).arg(&script).arg("-c").arg(&cfg.config_file);
+    // Only chdir somewhere that exists. `chdir("")` fails with ENOENT and Rust reports it as if
+    // the interpreter were missing, which sent me looking for a Python that was there all along.
+    if cfg.root.is_dir() {
+        command.current_dir(&cfg.root);
+    }
+    command.arg(&script).arg("-c").arg(&cfg.config_file);
     if cfg.offline {
         command.arg("--offline");
     }

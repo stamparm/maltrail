@@ -37,30 +37,37 @@ container start.
 
 ### Bind mounts and the unprivileged user
 
-Both processes run as **uid/gid 10001**, not root. Named volumes (the default above) are fine:
-Docker initialises a new named volume from the image, ownership included, so the directories are
-already writable.
+Both processes run as **uid/gid 10001** by default, not root — but a bind mount keeps the *host*
+directory's ownership, which replaces whatever the image prepared. So `-v ./logs:/var/log/maltrail`
+with `./logs` owned by your login user used to leave the container unable to create the day's log
+file, and because the log file is only opened when the first event arrives, the container started,
+served its UI, and persisted nothing.
 
-A **bind mount is not** — it keeps the host directory's ownership, which replaces the one the
-image prepared. A directory owned by your login user leaves the container unable to create the
-day's log file, and because `server.py` only opens that file when the first event arrives, the
-container starts, serves the UI, and silently fails to persist anything.
+Nothing needs doing about that now. `docker/entrypoint.sh` runs as root for a few milliseconds,
+works out which uid can write the log and state directories, and drops to it before the sensor or
+the server starts:
 
-Pick one:
+| what it finds | what it does |
+| --- | --- |
+| a named volume, or nothing mounted | runs as 10001, the image's own user |
+| a bind mount owned by uid 1000 | **runs as 1000** — your files stay yours |
+| a bind mount owned by `root:1000`, group-writable | keeps uid 10001, takes gid 1000 |
+| a root-owned bind mount | takes ownership of that one directory, runs as 10001 |
+| `PUID` / `PGID` set | uses exactly those, whatever the directory says |
+| `--user` given, directory not writable | refuses to start and says which directory and why |
 
-```bash
-# 1. give the host directory to the container's user (simplest)
-sudo chown 10001:10001 ./logs
+So `docker run -v $PWD/logs:/var/log/maltrail ...` works with no `chown` on the host, and the
+events it writes belong to you rather than to a system uid you have to `sudo` past to read.
 
-# 2. or build the image to run as the user that already owns it
-docker build --build-arg MALTRAIL_UID=$(id -u) --build-arg MALTRAIL_GID=$(id -g) \
-             -f docker/Dockerfile -t maltrail:latest .
+Two consequences worth knowing:
 
-# 3. or use a named volume and read events out with `docker cp` / a sidecar
-```
+* the image has no `USER`, so **`docker exec` lands you as root**. Use `docker exec -u maltrail`
+  (or `-u 1000`) if you want a shell as the user the processes actually run as.
+* `--user` disables the adaptation entirely — with no root there is nothing to adapt with. The
+  container then checks the directories and fails loudly rather than starting half-working.
 
-`maltrail-sensor -T` reports this directly — `log directory: '...' is NOT writable as uid 10001`
-— so run it against a new deployment before trusting it.
+`docker/tests/entrypoint_test.sh` asserts every row of that table against a real daemon, and runs
+in CI.
 
 ## Trails are not baked into the image
 
@@ -107,14 +114,27 @@ then exits non-zero if the sensor would not work.
 
 ## Security posture
 
-The image runs as the unprivileged user `maltrail` (uid 10001), matching the systemd units.
-Neither process needs root: the sensor gets `CAP_NET_RAW` and `CAP_NET_ADMIN` through `cap_add`
-rather than by being root, and the server binds only unprivileged ports. The compose file is
-**not** `privileged`.
+Both processes run as the unprivileged user `maltrail` (uid 10001 by default), matching the
+systemd units. Neither needs root: the sensor gets `CAP_NET_RAW` and `CAP_NET_ADMIN`, and the
+server binds only unprivileged ports. The compose file is **not** `privileged`.
 
-`HEALTHCHECK` runs `maltrail-sensor -T`, so an unhealthy container is one that has genuinely lost
-the ability to detect — bad configuration, unreadable trails, an unwritable log directory — rather
-than one whose PID 1 merely still exists. `start-period` covers the first trail build.
+Only `docker/entrypoint.sh` runs as uid 0, and only until it has decided which uid to use; it
+`exec`s the real command through `setpriv`, so there is no root process left in the container.
+That is also what makes `cap_add` work at all: Docker puts a requested capability in the
+*bounding* set and leaves the *ambient* set empty, and an ambient capability can only be raised by
+a process that starts as root. With `USER maltrail` baked into the image, `--cap-add NET_RAW` gave
+the sensor `CapEff: 0000000000000000` and its capture socket failed with `EPERM`. It now gets
+`CapEff: 0000000000003000` as uid 10001 — and only the sensor does; the server keeps none.
+
+The image's own `HEALTHCHECK` asks the **server** whether it is serving, because the image's
+default command is `server.py`: it fetches `/ping` and expects `pong`. The compose file's sensor
+service overrides it with `maltrail-sensor -T`, so an unhealthy sensor is one that has genuinely
+lost the ability to detect — bad configuration, unreadable trails, an unwritable log directory —
+rather than one whose PID 1 merely still exists. `start-period` covers the first trail build.
+
+A `HEALTHCHECK` does not go through `ENTRYPOINT`, so that override invokes the entrypoint
+explicitly; otherwise `-T` would run as root, and root can write any log directory, which is one
+of the things the check exists to catch.
 
 Published images are multi-arch (`linux/amd64`, `linux/arm64`) and carry a build-provenance
 attestation, so you can confirm one was built by the release workflow from this repository:

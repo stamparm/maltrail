@@ -150,6 +150,21 @@ jobs:
       - uses: actions/checkout@v7
       - run: python3 sensor/tools/check_version.py
 
+  # The Docker image's promise is that it works with the storage the operator hands it. Three
+  # separate ways it did not - an unwritable bind mount, `cap_add` that granted nothing to a
+  # non-root USER, and a compose file whose relative bind-mount paths did not resolve - all
+  # shipped, because "it builds and the container starts" was the only thing being checked.
+  # This runs against a real daemon and takes about a minute: it builds a small harness image
+  # around docker/entrypoint.sh rather than the release image, so the answer arrives while the
+  # change is still in front of you.
+  docker:
+    name: docker entrypoint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - run: bash docker/tests/entrypoint_test.sh
+
   # Rust dependency advisories. Gates the diff that introduces a vulnerable dependency.
   #
   # NOT rustsec/audit-check: that action only looks for ./Cargo.lock at the repository root, and

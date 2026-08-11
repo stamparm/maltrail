@@ -1014,6 +1014,8 @@ fn default_config_file() -> PathBuf {
             cur = dir.parent().map(|p| p.to_path_buf());
         }
     }
+    // Relative on purpose only as a last resort: settings::resolve_root makes it absolute, and
+    // the message printed at startup shows which file was actually used.
     PathBuf::from("maltrail.conf")
 }
 

@@ -29,13 +29,13 @@ use crate::pyre;
 pub fn resolve_root(config_file: &Path) -> PathBuf {
     if let Ok(env) = std::env::var("MALTRAIL_ROOT") {
         if !env.is_empty() {
-            return PathBuf::from(env);
+            return absolute(PathBuf::from(env));
         }
     }
     // maltrail.conf lives at the repository root next to data/, html/, core/.
     if let Some(dir) = config_file.parent() {
         if dir.join("data").is_dir() {
-            return dir.to_path_buf();
+            return absolute(dir.to_path_buf());
         }
     }
     // Fall back to walking up from the executable (sensor/target/<profile>/bin).
@@ -49,6 +49,34 @@ pub fn resolve_root(config_file: &Path) -> PathBuf {
         }
     }
     std::env::current_dir().unwrap_or_else(|_| PathBuf::from("."))
+}
+
+/// Absolute form of `path`, without requiring it to exist (`std::path::absolute` is 1.79, the
+/// MSRV here is 1.74).
+///
+/// `resolve_root` MUST return an absolute directory. `-c maltrail.conf` (a relative name, which
+/// is also the built-in default) has `""` for a parent, and an empty root is not merely untidy:
+/// `trailupdate::run` passes it to `Command::current_dir`, and `chdir("")` fails with ENOENT, so
+/// the trail update died with "unable to run python3.12: No such file or directory" — an error
+/// about the interpreter, which was present and fine. The sensor then ran on with an empty trail
+/// set, detecting nothing.
+///
+/// Measured in the Docker image, where the binary lives in /usr/local/bin so the walk up from the
+/// executable finds no repository and the relative default is what remains. A tarball install
+/// that puts the binary on PATH lands in exactly the same place; the systemd unit does not,
+/// because /opt/maltrail/sensor/target/release/maltrail-sensor finds ../../../maltrail.conf and
+/// that path is absolute.
+fn absolute(path: PathBuf) -> PathBuf {
+    if path.as_os_str().is_empty() {
+        return std::env::current_dir().unwrap_or_else(|_| PathBuf::from("."));
+    }
+    if path.is_absolute() {
+        return path;
+    }
+    match std::env::current_dir() {
+        Ok(cwd) => cwd.join(path),
+        Err(_) => path,
+    }
 }
 
 /// Iterate stripped, non-blank, non-comment lines (`core/settings.py:_iter_file_lines`).
@@ -289,6 +317,26 @@ mod tests {
 
     fn root() -> PathBuf {
         PathBuf::from(env!("CARGO_MANIFEST_DIR")).parent().unwrap().to_path_buf()
+    }
+
+    #[test]
+    fn the_repository_root_is_always_absolute() {
+        // `-c maltrail.conf` used to yield "" here, and an empty root made the trail update fail
+        // with ENOENT from chdir("") - reported as a missing Python interpreter. See absolute().
+        for candidate in ["maltrail.conf", "conf/maltrail.conf", "./maltrail.conf"] {
+            let resolved = resolve_root(Path::new(candidate));
+            assert!(resolved.is_absolute(), "resolve_root({candidate:?}) -> {resolved:?}");
+            assert!(resolved.is_dir(), "resolve_root({candidate:?}) -> {resolved:?} is not a directory");
+        }
+        assert!(resolve_root(&root().join("maltrail.conf")).is_absolute());
+    }
+
+    #[test]
+    fn absolute_paths_survive_and_relative_ones_are_anchored() {
+        let cwd = std::env::current_dir().unwrap();
+        assert_eq!(absolute(PathBuf::new()), cwd);
+        assert_eq!(absolute(PathBuf::from("maltrail.conf")), cwd.join("maltrail.conf"));
+        assert_eq!(absolute(PathBuf::from("/opt/maltrail")), PathBuf::from("/opt/maltrail"));
     }
 
     #[test]

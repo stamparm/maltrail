@@ -53,16 +53,19 @@ COPY --from=sensor-build /build/sensor/target/release/maltrail-sensor /usr/local
 EXPOSE 8338/tcp
 EXPOSE 8337/udp
 
-# Run unprivileged, matching the systemd units. The container needed no root even before this:
-# the sensor wants CAP_NET_RAW/CAP_NET_ADMIN (granted by cap_add, not by being root) and the
-# server binds only unprivileged ports. A packet parser running as uid 0 is a needless
-# escalation path, and "it is only a container" is not an argument — user namespaces are off by
-# default in most deployments, so root here is root on the host if anything escapes.
+# Run unprivileged, matching the systemd units. Neither process needs root: the sensor wants
+# CAP_NET_RAW/CAP_NET_ADMIN (granted by cap_add, not by being root) and the server binds only
+# unprivileged ports. A packet parser running as uid 0 is a needless escalation path, and "it is
+# only a container" is not an argument — user namespaces are off by default in most deployments,
+# so root here is root on the host if anything escapes.
+#
+# The uid is only the DEFAULT: docker/entrypoint.sh runs as root just long enough to work out
+# which uid can write the log and state directories, and drops to it before exec'ing anything.
+# That is what makes a bind mount owned by an ordinary host user work without `sudo chown` on the
+# host first (issue #19596). Setting it at build time is still honoured and still supported.
 #
 # HOME is set because the default TRAILS_FILE is ~/.maltrail/trails.csv, and this user has no
 # home outside the state volume.
-# Overridable so a bind-mounted log directory owned by an existing host user can be matched
-# instead of chown'd:  docker build --build-arg MALTRAIL_UID=1000 --build-arg MALTRAIL_GID=1000
 ARG MALTRAIL_UID=10001
 ARG MALTRAIL_GID=10001
 RUN groupadd --system --gid ${MALTRAIL_GID} maltrail && \
@@ -81,7 +84,12 @@ ENV HOME=/var/lib/maltrail
 # startup and every UPDATE_PERIOD into the state volume.
 VOLUME ["/var/log/maltrail", "/var/lib/maltrail"]
 
-USER maltrail
+# No `USER maltrail` here on purpose. The entrypoint below is what drops privileges, because a
+# uid fixed at build time cannot be reconciled with a bind mount whose ownership only exists at
+# `docker run` time. `--user` is still respected: with one set, the entrypoint has no root to
+# adapt with, so it verifies the directories are writable and fails loudly if they are not.
+COPY docker/entrypoint.sh /usr/local/bin/maltrail-entrypoint
+RUN chmod 0755 /usr/local/bin/maltrail-entrypoint
 
 # Liveness for the process this image actually starts. CMD below is `server.py`, so the default
 # healthcheck asks the SERVER whether it is serving: /ping is unauthenticated and answers "pong".
@@ -97,5 +105,5 @@ USER maltrail
 HEALTHCHECK --interval=60s --timeout=30s --start-period=180s --retries=3 \
     CMD ["python3", "-c", "import os,sys,urllib.request; port=os.environ.get('MALTRAIL_HTTP_PORT','8338'); sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:%s/ping' % port, timeout=10).read().strip() == b'pong' else 1)"]
 
-ENTRYPOINT ["/usr/bin/tini", "--"]
+ENTRYPOINT ["/usr/bin/tini", "--", "/usr/local/bin/maltrail-entrypoint"]
 CMD ["python3", "server.py"]
