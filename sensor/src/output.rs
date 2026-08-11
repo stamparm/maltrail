@@ -28,8 +28,10 @@ pub struct OutputConfig {
     pub disable_local_log_storage: bool,
     pub console: bool,
     pub log_server: Option<String>,
-    pub syslog_server: Option<String>,
-    pub logstash_server: Option<String>,
+    /// Every endpoint named by `SYSLOG_SERVER` / `LOGSTASH_SERVER`. One option may name several,
+    /// so a sensor can feed redundant collectors; empty means the sink is off.
+    pub syslog_server: Vec<String>,
+    pub logstash_server: Vec<String>,
     pub severity_regex: Option<fancy_regex::Regex>,
     /// Event-log throttling (see `crate::throttle` for why this is a redesign rather than a
     /// port). `legacy_divisor` is set from the ACTUAL worker count, since sensor.py's
@@ -44,7 +46,7 @@ pub struct OutputConfig {
 impl OutputConfig {
     /// `core/log.py:log_event()` console fallback condition.
     fn console_output(&self) -> bool {
-        (self.disable_local_log_storage && self.log_server.is_none() && self.syslog_server.is_none()) || self.console
+        (self.disable_local_log_storage && self.log_server.is_none() && self.syslog_server.is_empty()) || self.console
     }
 }
 
@@ -185,15 +187,20 @@ impl EventSink {
             self.send_datagram(&endpoint, payload.as_bytes());
         }
 
-        if self.cfg.syslog_server.is_some() || self.cfg.logstash_server.is_some() {
+        if !self.cfg.syslog_server.is_empty() || !self.cfg.logstash_server.is_empty() {
             let severity = self.severity_for(&event.info);
-            if let Some(endpoint) = self.cfg.syslog_server.clone() {
+            // Rendered once and sent to each collector, rather than re-rendered per endpoint.
+            if !self.cfg.syslog_server.is_empty() {
                 let payload = self.cef_line(event, severity);
-                self.send_datagram(&endpoint, payload.as_bytes());
+                for endpoint in self.cfg.syslog_server.clone() {
+                    self.send_datagram(&endpoint, payload.as_bytes());
+                }
             }
-            if let Some(endpoint) = self.cfg.logstash_server.clone() {
+            if !self.cfg.logstash_server.is_empty() {
                 let payload = logstash_line(event, severity, &self.cfg.hostname);
-                self.send_datagram(&endpoint, payload.as_bytes());
+                for endpoint in self.cfg.logstash_server.clone() {
+                    self.send_datagram(&endpoint, payload.as_bytes());
+                }
             }
         }
 

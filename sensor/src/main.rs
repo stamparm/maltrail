@@ -416,8 +416,14 @@ fn run() -> i32 {
         disable_local_log_storage: cfg.disable_local_log_storage,
         console: cfg.console,
         log_server: non_empty(&cfg.log_server),
-        syslog_server: non_empty(&cfg.syslog_server),
-        logstash_server: non_empty(&cfg.logstash_server),
+        syslog_server: maltrail_sensor::config::split_endpoints(&cfg.syslog_server)
+            .iter()
+            .map(|s| s.to_string())
+            .collect(),
+        logstash_server: maltrail_sensor::config::split_endpoints(&cfg.logstash_server)
+            .iter()
+            .map(|s| s.to_string())
+            .collect(),
         severity_regex,
         throttle: maltrail_sensor::throttle::ThrottleConfig {
             mode: cfg.event_throttle_mode,
