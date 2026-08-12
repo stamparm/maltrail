@@ -14,6 +14,7 @@ import json
 import mimetypes
 import os
 import re
+import select
 import socket
 import subprocess
 import sys
@@ -138,6 +139,25 @@ _geo_cache = {}  # NOTE: per daily-log country aggregation keyed by filepath -> 
 _geo_lock = threading.Lock()  # NOTE: the incremental read-modify-write must be serialized (concurrent /geo for the same day would otherwise double-count)
 MAX_REQUEST_THREADS = 100       # concurrent request handlers; excess connections get 503 without a thread
 MAX_LIVE_STREAMS = 30           # of those, how many may be held open by /live at once
+
+def _limit(value, default):
+    """Coerce a configured concurrency limit, falling back to `default`.
+
+    Both defaults suit one operator on one dashboard. A large console wants more streams, and a
+    small appliance wants fewer threads than 100 x 1 MB of stack; neither should have to patch
+    the source. Anything unparsable or <= 0 falls back to the compiled-in default rather than
+    disabling the limit, because "0" here would mean "refuse every request".
+
+    Takes the value, not the option name: tests/test_options.py finds configuration reads by
+    scanning for the literal attribute access, so a lookup through a variable would be invisible
+    to it and the option could drift out of maltrail.conf unnoticed.
+    """
+
+    try:
+        value = int(value)
+    except (TypeError, ValueError):
+        return default
+    return value if value > 0 else default
 _live_streams = [0]
 _live_streams_lock = threading.Lock()
 
@@ -157,7 +177,7 @@ def _live_slot():
     """
 
     with _live_streams_lock:
-        if _live_streams[0] >= MAX_LIVE_STREAMS:
+        if _live_streams[0] >= _limit(getattr(config, "MAX_LIVE_STREAMS", None), MAX_LIVE_STREAMS):
             return False
         _live_streams[0] += 1
         return True
@@ -561,6 +581,17 @@ def start_httpd(address=None, port=None, join=False, pem=None):
     Starts HTTP server
     """
 
+    # Thread stacks are RESERVED address space, and glibc's default is 8 MB - so a cap of
+    # MAX_REQUEST_THREADS handlers quietly authorises ~800 MB of it. Bounding the thread count
+    # without bounding the per-thread reservation leaves the dimension that containers and
+    # `ulimit -v` actually enforce unbounded; the suite's own 1.2 GB cap caught this.
+    # An HTTP handler here parses a request, reads a file and writes a response - it does not
+    # recurse - so 1 MB is ample and brings the same 100 threads under ~100 MB.
+    try:
+        threading.stack_size(1024 * 1024)
+    except (ValueError, RuntimeError):
+        pass    # platform refused the size; the default is merely wasteful, not wrong
+
     class ThreadingServer(_socketserver.ThreadingMixIn, _BaseHTTPServer.HTTPServer):
         daemon_threads = True  # long-lived SSE (/live) streams must not block server shutdown
 
@@ -574,7 +605,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
         def process_request(self, request, client_address):
             with ThreadingServer._active_lock:
-                if ThreadingServer._active >= MAX_REQUEST_THREADS:
+                if ThreadingServer._active >= _limit(getattr(config, "MAX_REQUEST_THREADS", None), MAX_REQUEST_THREADS):
                     over = True
                 else:
                     ThreadingServer._active += 1
@@ -1863,6 +1894,16 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             self.wfile.flush()
                             idle = 0
                             continue
+                    # Notice a closed tab NOW rather than at the next write. Without this the
+                    # handler sits in sleep() until the 15s heartbeat fails, and its stream slot
+                    # stays claimed that whole time - with a small MAX_LIVE_STREAMS that is the
+                    # difference between a budget and a queue. A closed peer reads as EOF.
+                    try:
+                        if select.select([self.connection], [], [], 0)[0]:
+                            if not self.connection.recv(1, socket.MSG_PEEK):
+                                break
+                    except Exception:
+                        pass    # e.g. an SSL socket that will not peek; the heartbeat still catches it
                     idle += 1
                     if idle >= 25:          # ~ every 25 * 0.6s = 15s: heartbeat keeps the conn alive + surfaces disconnects
                         _w(": ping\n\n"); self.wfile.flush(); idle = 0
@@ -2092,19 +2133,29 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             addresses, netmasks, regex = self._build_netfilters(session)
             counts, samples, truncated = {}, [], False
-            deadline = time.time() + HUNT_TIME_BUDGET
+            # Config may raise or lower the budget: the default suits local SSD, and a deployment
+            # whose event logs live on network storage reasonably wants longer before a hunt
+            # starts returning partial answers.
+            try:
+                budget = float(config.HUNT_TIME_BUDGET)
+            except (TypeError, ValueError):
+                budget = HUNT_TIME_BUDGET
+            deadline = time.time() + (budget if budget > 0 else HUNT_TIME_BUDGET)
 
+            scanned = 0        # days scanned TO COMPLETION, which is what a per-day count can be trusted for
+            partial = None     # the one day the budget cut short, if any
             for daystr, filepath in files:
                 if time.time() > deadline:
                     truncated = True
                     break
-                hits, seen = 0, 0
+                hits, seen, cut_short = 0, 0, False
                 try:
                     with open(filepath, "rb") as f:
                         for line in self._filter_events(f, session, addresses, netmasks, regex):  # scope-enforced, same as /events
                             seen += 1
                             if (seen & 0x3FFF) == 0 and time.time() > deadline:   # periodic budget check inside a huge day
                                 truncated = True
+                                cut_short = True
                                 break
                             hit = False
                             if q_prefix is not None:
@@ -2124,12 +2175,30 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 except Exception:
                     if config.SHOW_DEBUG:
                         traceback.print_exc()
-                if hits:
+                # A day the budget cut short has a count that is NOT the day's total, and nothing
+                # in the response used to say so: `counts` reported it exactly like a finished
+                # day. Measured on three 40k-line days with a small budget, the middle day came
+                # back as 16383 hits against a true 40000 - a 59% undercount an analyst would
+                # read straight off the chart as that day's answer. `truncated` was set, but it
+                # said only "something was cut", not which day was short.
+                #
+                # Undercounting a retro-hunt is the wrong direction to be wrong in, so the
+                # partial day is reported separately instead of being passed off as complete.
+                if cut_short:
+                    partial = {"date": daystr, "hits": hits, "note": "budget expired mid-file; not a complete count"}
+                elif hits:
                     counts[daystr] = hits
+                    scanned += 1
+                else:
+                    scanned += 1
                 if truncated:
                     break
 
-            return json.dumps({"counts": counts, "samples": samples, "truncated": truncated, "scanned": len(files), "capped_samples": len(samples) >= HUNT_MAX_SAMPLES})
+            # `scanned` used to be len(files) - the number of logs SELECTED, not the number read.
+            # On the run above it said 3 when one day was never opened at all.
+            return json.dumps({"counts": counts, "samples": samples, "truncated": truncated,
+                               "scanned": scanned, "selected": len(files), "partial": partial,
+                               "capped_samples": len(samples) >= HUNT_MAX_SAMPLES})
 
     class SSLReqHandler(ReqHandler):
         def setup(self):

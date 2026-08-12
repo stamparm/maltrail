@@ -2507,9 +2507,23 @@
     var res = o.querySelector("#hunt_results"), counts = d.counts || {};
     var days = Object.keys(counts).sort().reverse(), total = 0, max = 1;
     days.forEach(function (k) { total += counts[k]; if (counts[k] > max) max = counts[k]; });
-    if (!days.length) { res.innerHTML = '<div class="hunt-empty">No hits for &ldquo;' + esc(q) + '&rdquo; in ' + (d.scanned || 0) + ' day(s) of history.</div>'; _huntFirstSeen(o, q); return; }
-    var html = '<div class="hunt-sum">' + fmtN(total) + ' hit(s) across ' + days.length + ' day(s) &middot; scanned ' + (d.scanned || 0) + ' day(s)</div>';
+    // d.partial is the one day the server's time budget cut short. Its count is NOT that day's
+    // total, so it is deliberately kept out of d.counts (and therefore out of the timeline and the
+    // sum) and called out on its own - an undercount shown as a normal bar is the one thing a
+    // retro-hunt must not do.
+    var partial = d.partial && d.partial.date ? d.partial : null;
+    var partialHtml = partial
+      ? '<div class="hunt-trunc">⚠ ' + esc(partial.date) + ' was only scanned in part before the time budget ran out — at least '
+        + fmtN(partial.hits) + ' hit(s) there, but that is not the day\'s total. Re-run with &from=' + esc(partial.date) + ' for a complete count.</div>'
+      : "";
+    if (!days.length) {
+      res.innerHTML = partialHtml + '<div class="hunt-empty">No hits for &ldquo;' + esc(q) + '&rdquo; in ' + (d.scanned || 0) + ' fully scanned day(s) of history.</div>';
+      _huntFirstSeen(o, q); return;
+    }
+    var html = '<div class="hunt-sum">' + fmtN(total) + ' hit(s) across ' + days.length + ' day(s) &middot; scanned ' + (d.scanned || 0)
+             + (d.selected && d.selected > d.scanned ? ' of ' + fmtN(d.selected) : '') + ' day(s)</div>';
     if (d.truncated) html += '<div class="hunt-trunc">⚠ partial results — a scan limit was hit. Narrow the IOC or add &from=/&to= for the full picture.</div>';
+    html += partialHtml;
     html += '<div class="hunt-timeline">' + days.map(function (k) {
       return '<button class="hunt-day" data-d="' + esc(k) + '"><span class="hd-date">' + esc(k) + '</span><span class="hd-track"><span class="hd-bar" style="width:' + (6 + Math.round(94 * counts[k] / max)) + '%"></span></span><span class="hd-n">' + fmtN(counts[k]) + '</span></button>';
     }).join("") + '</div>';
