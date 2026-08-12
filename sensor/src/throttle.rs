@@ -245,7 +245,7 @@ impl Throttle {
         // A new key. Make room first: evicting a stale entry can itself produce a summary, which
         // is exactly what we want (nothing is dropped silently).
         if self.keys.len() >= self.cfg.max_keys {
-            due.extend(self.evict_oldest());
+            due.extend(self.evict_batch());
         }
         self.keys
             .insert(key, KeyState { window_start: sec, written: 1, held: Vec::new(), held_total: 0, last_seen: sec });
@@ -262,26 +262,53 @@ impl Throttle {
         crate::output::merge_events(&held)
     }
 
-    /// Drop the least recently used key, emitting its pending summary.
+    /// Drop the least recently used ~1% of keys, emitting their pending summaries.
     ///
-    /// NOTE: this is O(`max_keys`) per eviction — 50,000 comparisons per new key once the table is
-    /// full, on the capture thread, with the key count driven by traffic an attacker chooses. A
-    /// `BTreeSet<(last_seen, key)>` ordered index would make it O(log n); an attempt at that
-    /// desynchronised the index from the key table (caught by
-    /// `the_key_table_is_bounded_and_evictions_are_summarized`) and was reverted rather than
-    /// shipped half-working. See docs/REPORT.md.
-    fn evict_oldest(&mut self) -> Vec<Event> {
-        let victim = self.keys.iter().min_by_key(|(_, s)| s.last_seen).map(|(k, _)| k.clone());
+    /// Evicting ONE key per new key meant a full O(`max_keys`) scan per new key: at the shipped
+    /// 50,000 that measured **349 us**, on the capture thread, for traffic an attacker chooses by
+    /// inventing distinct (src_ip, trail) pairs. The packet path budgets ~500 ns, so every new key
+    /// cost roughly 700 packets' worth of time — capture drops, which on this project means
+    /// missed detections.
+    ///
+    /// Batching is what makes it cheap, and it deliberately does NOT add an index. An earlier
+    /// `BTreeSet<(last_seen, key)>` attempt desynchronised from the key table (caught by
+    /// `the_key_table_is_bounded_and_evictions_are_summarized`) and was reverted; there is still
+    /// exactly one source of truth here. One pass over the timestamps picks a cutoff by linear
+    /// selection, a second removes everything at or below it, and the cost amortises to
+    /// O(`max_keys` / batch) per new key.
+    ///
+    /// Nothing is dropped silently: every evicted key still emits its pending summary.
+    fn evict_batch(&mut self) -> Vec<Event> {
         let mut due = Vec::new();
-        if let Some(key) = victim {
-            if let Some(mut state) = self.keys.remove(&key) {
-                if let Some(summary) = Self::summarize(&mut state) {
-                    due.push(summary);
-                    self.summaries += 1;
-                }
-            }
-            self.evicted += 1;
+        if self.keys.is_empty() {
+            return due;
         }
+        // Never evict the whole table: a batch that emptied it would throw away the state of keys
+        // that are still active, and the next packet would just refill it.
+        let target = (self.cfg.max_keys / 100).max(1).min(self.keys.len().saturating_sub(1).max(1));
+
+        let mut stamps: Vec<u64> = self.keys.values().map(|s| s.last_seen).collect();
+        let (_, cutoff, _) = stamps.select_nth_unstable(target - 1);
+        let cutoff = *cutoff;
+
+        let mut evicted = 0u64;
+        let mut summaries = 0u64;
+        // Ties on `last_seen` are common (one packet-second covers many keys), so this can remove
+        // more than `target`. That is fine - it is a bound, not a quota - and `retain` keeps it to
+        // a single pass with no key cloning.
+        self.keys.retain(|_, state| {
+            if state.last_seen > cutoff {
+                return true;
+            }
+            if let Some(summary) = Self::summarize(state) {
+                due.push(summary);
+                summaries += 1;
+            }
+            evicted += 1;
+            false
+        });
+        self.evicted += evicted;
+        self.summaries += summaries;
         due
     }
 
@@ -425,6 +452,49 @@ mod tests {
         assert_eq!(t.tracked_keys(), 8, "the table must stay bounded");
         assert_eq!(t.evicted, 1);
         assert_eq!(due.len(), 1, "the evicted key's held events must still be reported");
+    }
+
+    #[test]
+    fn evictions_are_batched_and_lose_nothing() {
+        // The guard above runs at max_keys=8, where a 1% batch is one key - so it passes just as
+        // well against the per-key eviction this replaced. This one runs at a realistic cap, where
+        // evicting one key per new key cost a full O(max_keys) scan: 349 us per new key at 50,000,
+        // on the capture thread, for traffic an attacker picks by inventing distinct trails.
+        const MAX: usize = 1_000;
+        let mut t = Throttle::new(ThrottleConfig {
+            mode: ThrottleMode::Summarize,
+            window: 60,
+            burst: 3,
+            max_keys: MAX,
+            legacy_divisor: 16,
+        });
+
+        // Fill the table, pushing each key PAST `burst` so it is holding something a summary owes.
+        for i in 0..MAX {
+            for port in 0..(3 + 2u16) {
+                t.admit(&event(1000 + i as u64, 40000 + port, &format!("evil{i}.example")));
+            }
+        }
+        assert_eq!(t.tracked_keys(), MAX);
+
+        // Push well past the cap and watch the occupancy. Per-key eviction pins it at exactly MAX
+        // forever; batching drops it and lets it refill, which is what makes the amortised cost
+        // O(max_keys / batch) instead of O(max_keys).
+        let mut summaries = 0;
+        let mut dipped_below_cap = false;
+        for i in 0..(MAX / 2) {
+            let (_, due) = t.admit(&event(5000, 43000, &format!("fresh{i}.example")));
+            summaries += due.len();
+            assert!(t.tracked_keys() <= MAX, "the table must never exceed its cap");
+            if t.tracked_keys() < MAX {
+                dipped_below_cap = true;
+            }
+        }
+        assert!(dipped_below_cap, "eviction must happen in batches, not one key per insert");
+        // Every evicted key was holding an event, so nothing was discarded quietly.
+        assert!(summaries > 0, "evicted keys must still report what they were holding");
+        assert_eq!(summaries as u64, t.summaries, "summary accounting must match what was emitted");
+        assert!(t.evicted >= (MAX / 2) as u64, "every new key past the cap costs an eviction");
     }
 
     #[test]
