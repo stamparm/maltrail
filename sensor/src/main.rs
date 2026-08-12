@@ -258,10 +258,8 @@ fn run() -> i32 {
     // Overlap them. `settings::init()` is a `OnceLock`, so the join below is what publishes it,
     // and every consumer of `statics()` runs after that point.
     let statics_root = cfg.root.clone();
-    let statics_build = std::thread::Builder::new()
-        .name("statics".into())
-        .spawn(move || settings::init(statics_root))
-        .ok();
+    let statics_build =
+        std::thread::Builder::new().name("statics".into()).spawn(move || settings::init(statics_root)).ok();
 
     let whitelist = Arc::new(Whitelist::load(&cfg.root, cfg.user_whitelist.as_deref()));
     let ignore = IgnoreRules::load(&cfg.root, cfg.user_ignorelist.as_deref(), &cfg.ignore_events_regex);

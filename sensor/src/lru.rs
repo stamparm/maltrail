@@ -122,6 +122,37 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
         }
     }
 
+    /// `insert_if_seen_before()` without allocating the key first.
+    ///
+    /// The doorkeeper turns a first sighting away, and for the traffic it exists for — a DGA
+    /// flood, a scan, any stream of names that never repeats — that IS the common case. Taking
+    /// the key by value made the caller allocate the `String` the doorkeeper was about to
+    /// discard: on the DNS path, one heap allocation per query, twice (the clean-domain cache
+    /// and the whitelist-verdict cache), for nothing.
+    pub fn insert_if_seen_before_borrowed<Q>(&mut self, key: &Q, value: V)
+    where
+        K: Borrow<Q>,
+        Q: Hash + Eq + ?Sized + ToOwned<Owned = K>,
+    {
+        if self.doorkeeper.is_empty() {
+            self.insert(key.to_owned(), value);
+            return;
+        }
+        // `Hash for String` delegates to `str`, so this is the same fingerprint the owned
+        // version computes — a key promoted by one is promoted by the other.
+        let h = {
+            use std::hash::BuildHasher;
+            crate::fasthash::SeededBuildHasher::default().hash_one(key)
+        };
+        let slot = (h as usize) & (self.doorkeeper.len() - 1);
+        let fingerprint = (h >> 16) | 1;
+        if self.doorkeeper[slot] == fingerprint {
+            self.insert(key.to_owned(), value);
+        } else {
+            self.doorkeeper[slot] = fingerprint;
+        }
+    }
+
     pub fn insert(&mut self, key: K, value: V) {
         if let Some(&idx) = self.index.get(&key) {
             self.nodes[idx as usize].value = value;

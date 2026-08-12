@@ -112,7 +112,7 @@ const MAX_PARSE_THREADS: usize = 8;
 /// How far ahead of the insert the drain warms the string table. Roughly the number of
 /// outstanding cache misses the core can keep in flight, which is what decides whether the
 /// serial pass runs at memory bandwidth or at memory latency.
-const PREFETCH_DISTANCE: usize = 16;
+const PREFETCH_DISTANCE: usize = 8;
 
 /// One surviving CSV row, still borrowing the batch buffer.
 ///
@@ -133,7 +133,9 @@ struct Row<'a> {
 struct Shard<'a> {
     rows: Vec<Row<'a>>,
     pairs: Vec<(Cow<'a, str>, Cow<'a, str>)>,
-    /// hash of `info\0reference` -> candidate indices into `pairs` (verified on hit)
+    /// hash of `info`+`reference` -> candidate indices into `pairs` (verified on hit). Keyed by
+    /// hash rather than by the pair itself so a lookup does not have to own the two strings
+    /// first: the real file has ~3,100 distinct pairs across 1.6 M rows.
     pair_index: HashMap<u64, Vec<u32>>,
     /// trails that might belong in the wildcard alternation, in CSV order. The real decision
     /// (and the global 100-group cap) stays with `TrailRegexBuilder` in the serial drain; this
@@ -143,9 +145,11 @@ struct Shard<'a> {
 }
 
 impl<'a> Shard<'a> {
-    fn new() -> Shard<'a> {
+    /// `expected_rows` sizes `rows` in one go. Letting it grow from empty meant ~11 reallocations
+    /// and copies of a buffer on its way to a megabyte, per slice, per batch.
+    fn with_capacity(expected_rows: usize) -> Shard<'a> {
         Shard {
-            rows: Vec::new(),
+            rows: Vec::with_capacity(expected_rows),
             pairs: Vec::new(),
             pair_index: HashMap::new(),
             wildcards: Vec::new(),
@@ -154,9 +158,12 @@ impl<'a> Shard<'a> {
     }
 
     fn intern(&mut self, info: Cow<'a, str>, reference: Cow<'a, str>) -> u32 {
-        let h = super::table::hash_bytes(info.as_bytes()) ^ super::table::hash_bytes(reference.as_bytes()).rotate_left(17);
+        let h =
+            super::table::hash_bytes(info.as_bytes()) ^ super::table::hash_bytes(reference.as_bytes()).rotate_left(17);
         let bucket = self.pair_index.entry(h).or_default();
         for &idx in bucket.iter() {
+            // The hash narrows it down; the strings decide. A 64-bit collision between two real
+            // (info, reference) pairs would otherwise mis-label every trail from one of them.
             let (i, r) = &self.pairs[idx as usize];
             if i.as_ref() == info.as_ref() && r.as_ref() == reference.as_ref() {
                 return idx;
@@ -175,7 +182,7 @@ impl<'a> Shard<'a> {
 /// path only when a `"` is present, and a third field containing a comma is malformed.
 fn parse_row<'a>(raw: &'a [u8], fields: &mut Vec<String>) -> Option<(Cow<'a, str>, Cow<'a, str>, Cow<'a, str>)> {
     let line = String::from_utf8_lossy(raw);
-    if raw.contains(&b'"') {
+    if memchr::memchr(b'"', raw).is_some() {
         if split_csv_record(&line, fields) != 3 {
             return None;
         }
@@ -343,7 +350,10 @@ pub fn load_trails(path: &Path, whitelist: &Whitelist, options: LoadOptions) -> 
         {
             let region = &buf[..end];
             let bounds = split_lines(region, threads);
-            let mut shards: Vec<Shard> = (0..bounds.len()).map(|_| Shard::new()).collect();
+            // 48 bytes is the average real-world record length; over-shooting a little is
+            // cheaper than the realloc chain under-shooting causes.
+            let per_slice_rows = region.len() / bounds.len().max(1) / 40 + 64;
+            let mut shards: Vec<Shard> = (0..bounds.len()).map(|_| Shard::with_capacity(per_slice_rows)).collect();
             if shards.len() == 1 {
                 parse_slice(region, whitelist, &mut shards[0]);
             } else {
