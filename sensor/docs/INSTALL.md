@@ -302,6 +302,7 @@ maltrail_events_written_total 1103
 maltrail_local_log_errors_total 0
 maltrail_remote_log_errors_total 0
 maltrail_events_throttled_total 9915
+maltrail_throttle_evictions_total 0
 maltrail_log_dir_free_bytes 157066420224
 maltrail_state_saturations_total 0
 maltrail_trails 1505265

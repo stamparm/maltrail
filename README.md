@@ -360,6 +360,7 @@ When `STATS_ADDRESS` is configured, monitor at least these Prometheus metrics:
 | `maltrail_trail_generation` not advancing | The active trail set is not being refreshed |
 | `maltrail_log_dir_free_bytes` | Remaining capacity for local event storage |
 | Increasing `maltrail_state_saturations_total` | A heuristic state limit was reached |
+| Increasing `maltrail_throttle_evictions_total` | The event-throttle table is at its cap, so events are aggregated earlier than configured |
 
 State saturation affects the corresponding heuristic; exact trail matching remains active.
 
