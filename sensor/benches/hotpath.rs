@@ -283,6 +283,22 @@ fn main() {
         }));
     }
 
+    // The same filter on a FULL-SIZED datagram. The burst digest is the one part of this path
+    // whose cost could scale with the packet, and the small DNS case above cannot show that:
+    // hashing the whole payload instead of a bounded prefix measured 1141 ns on 1200 bytes,
+    // roughly four times the entire mixed-traffic packet path, while looking free at 43 bytes.
+    // QUIC put full-MTU UDP on ordinary networks, so this is the shape that matters.
+    {
+        let mut h = Harness::with_options(&trail_fixture, HarnessOptions::heuristics());
+        let payload: Vec<u8> = (0..1200).map(|i| (i % 251) as u8).collect();
+        let jumbo = eth(&ipv4(17, "10.0.0.5", "203.0.113.9", &udp(40000, 443, &payload)), 0x0800, None);
+        let bytes = jumbo.len() as u64;
+        results.push(bench("udp burst suppression (1200B payload)", "packet path", bytes, || {
+            h.feed(&jumbo, 1_700_000_000, 0, 14);
+            1
+        }));
+    }
+
     // Warm cache: a small set of distinct 5-tuples over the SAME domain, so the burst filter
     // does not fire but the domain result cache always hits. Two-label names are used on
     // purpose: a deeper name would also drive the DNS-exhaustion accumulator, and once that
