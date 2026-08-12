@@ -74,6 +74,48 @@ class TestOptionCoverage(unittest.TestCase):
         missing = sorted((read_by_python() | read_by_sensor()) - documented() - DEPRECATED)
         self.assertEqual(missing, [], "read by the code but absent from maltrail.conf: %s" % ", ".join(missing))
 
+    def test_documented_defaults_match_the_sensor(self):
+        """A commented "#OPTION value" line in maltrail.conf states that option's DEFAULT.
+
+        That is the file's convention throughout (#USE_FAST_PREFILTER true, #USE_CONDENSED_STORAGE
+        true, ...), and an operator reads it to learn what the sensor does when they change
+        nothing. CHECK_TLS_CERTIFICATES was documented as `false` while the code defaulted to
+        `true`, so the file said certificate matching was off when every deployment had it on -
+        including its capture and processing cost.
+
+        Only the options whose default is a literal in sensor/src/config.rs are compared; anything
+        computed, or documented as an example rather than a default (URLs, paths), is skipped
+        rather than guessed at.
+        """
+
+        conf = open(os.path.join(REPO, "maltrail.conf")).read()
+        rs = open(os.path.join(REPO, "sensor", "src", "config.rs")).read()
+
+        documented_defaults = {}
+        for m in re.finditer(r"^#(%s)\s+(\S+)\s*$" % OPTION, conf, re.M):
+            documented_defaults.setdefault(m.group(1), m.group(2))
+
+        mismatches, compared = [], 0
+        for option, documented in sorted(documented_defaults.items()):
+            for pattern in (r'get_u64\(&raw,\s*"%s"\)\.unwrap_or\((\d[\d_]*)\)' % option,
+                            r'get_bool_opt\(&raw,\s*"%s"\)\.unwrap_or\((true|false)\)' % option,
+                            r'get_f64\(&raw,\s*"%s"\)\.unwrap_or\(([\d.]+)\)' % option):
+                match = re.search(pattern, rs)
+                if not match:
+                    continue
+                compared += 1
+                code = match.group(1).replace("_", "")
+                if documented.rstrip('.').replace("_", "").lower() != code.lower():
+                    mismatches.append("%s: maltrail.conf says %s, config.rs defaults to %s"
+                                      % (option, documented, match.group(1)))
+                break
+
+        # Nine options currently have a literal default on both sides. The floor is here so that a
+        # rename in config.rs cannot turn this test into one that silently compares nothing.
+        self.assertGreaterEqual(compared, 9, "the default-comparison found fewer options than "
+                                             "expected - the config.rs patterns have probably drifted")
+        self.assertEqual(mismatches, [], "documented default disagrees with the code: %s" % "; ".join(mismatches))
+
     def test_every_option_in_maltrail_conf_is_read_somewhere(self):
         # The other direction: an option nobody reads is a setting that silently does nothing.
         unused = sorted(documented() - read_by_python() - read_by_sensor() - DYNAMIC)
