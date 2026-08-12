@@ -252,7 +252,17 @@ fn run() -> i32 {
     }
     output::init_error_log(&cfg.log_dir, cfg.show_debug);
 
-    let statics = settings::init(cfg.root.clone());
+    // Compiling the heuristic regexes and building the Aho-Corasick automata costs ~75 ms and
+    // depends on nothing but the repository root, while the two things that follow — forking the
+    // Python updater and loading 90 MB of trails — spend most of a second not using this core.
+    // Overlap them. `settings::init()` is a `OnceLock`, so the join below is what publishes it,
+    // and every consumer of `statics()` runs after that point.
+    let statics_root = cfg.root.clone();
+    let statics_build = std::thread::Builder::new()
+        .name("statics".into())
+        .spawn(move || settings::init(statics_root))
+        .ok();
+
     let whitelist = Arc::new(Whitelist::load(&cfg.root, cfg.user_whitelist.as_deref()));
     let ignore = IgnoreRules::load(&cfg.root, cfg.user_ignorelist.as_deref(), &cfg.ignore_events_regex);
 
@@ -293,6 +303,14 @@ fn run() -> i32 {
     if !args.quiet {
         cprintln!("[i] {} trails loaded", thousands(stats.loaded as u64));
     }
+
+    let statics = match statics_build {
+        // Everything in `Statics::build()` either succeeds or `expect()`s, so a failed join means
+        // the thread never started rather than that the work is unavailable — do it here instead.
+        Some(handle) => handle.join().unwrap_or_else(|_| settings::init(cfg.root.clone())),
+        None => settings::init(cfg.root.clone()),
+    };
+
     let trail_summary = format!(
         "ipv4={} ipv4:port={} ipv6={} wildcard-regex={} whitelisted={} malformed={} memory={:.1} MB",
         thousands(db.ip4_count() as u64),
