@@ -541,6 +541,40 @@ class TestHttpd(unittest.TestCase):
         st, _, _ = _http(self.port, "POST", "/login", body=self._login_body("admin"))
         self.assertEqual(st, 200, "the window must expire and let a legitimate user back in")
 
+    def test_events_supports_open_ended_and_suffix_ranges(self):
+        # The Range parser was `bytes=(\d+)-(\d+)`, so an end was mandatory. `bytes=N-` - the
+        # natural way to tail a growing log, and what any non-browser client writes - matched
+        # nothing, fell through, and got 200 with the WHOLE FILE. A client polling a large day log
+        # re-downloaded all of it every time and could not tell its range had been ignored;
+        # html/js/main.js only worked because it sends a huge explicit end as a documented
+        # workaround. RFC 7233 has three forms and all three now work.
+        ck = self._login("admin")
+        _, _, whole = _http(self.port, "GET", "/events?date=%s" % self.date, cookie=ck)
+        total = len(whole)
+        self.assertGreater(total, 20, "fixture log must be non-trivial")
+
+        st, head, body = _http(self.port, "GET", "/events?date=%s" % self.date, cookie=ck,
+                               headers={"Range": "bytes=%d-" % (total - 10)})
+        self.assertEqual(st, 206, "an open-ended range must be honoured, not answered with 200+everything")
+        self.assertEqual(body, whole[-10:])
+        self.assertIn("bytes %d-%d/%d" % (total - 10, total - 1, total), head)
+
+        st, _, body = _http(self.port, "GET", "/events?date=%s" % self.date, cookie=ck,
+                            headers={"Range": "bytes=-10"})
+        self.assertEqual(st, 206, "a suffix range must be honoured")
+        self.assertEqual(body, whole[-10:])
+
+        # explicit span still behaves exactly as before
+        st, _, body = _http(self.port, "GET", "/events?date=%s" % self.date, cookie=ck,
+                            headers={"Range": "bytes=0-9"})
+        self.assertEqual(st, 206)
+        self.assertEqual(body, whole[:10])
+
+        # a start at or past EOF is unsatisfiable, not a silent full-file 200
+        st, _, body = _http(self.port, "GET", "/events?date=%s" % self.date, cookie=ck,
+                            headers={"Range": "bytes=999999999-"})
+        self.assertEqual(st, 416, "an out-of-range start must not return the whole file")
+
     def test_hunt_does_not_report_a_partial_day_as_complete(self):
         # When the time budget expired inside a day, that day's running total was written into
         # `counts` exactly like a finished day's. Measured on three 40k-line days with a small
