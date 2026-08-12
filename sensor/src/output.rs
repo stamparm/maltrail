@@ -466,8 +466,8 @@ impl EventSink {
         self.condensed.len()
     }
 
-    pub fn throttle_stats(&self) -> (u64, u64, usize) {
-        (self.throttle.suppressed, self.throttle.summaries, self.throttle.tracked_keys())
+    pub fn throttle_stats(&self) -> (u64, u64, usize, u64) {
+        (self.throttle.suppressed, self.throttle.summaries, self.throttle.tracked_keys(), self.throttle.evicted)
     }
 }
 

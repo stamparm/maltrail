@@ -24,6 +24,9 @@ pub struct WorkerMetrics {
     /// events the throttle held back, and the aggregated summary lines emitted for them
     pub events_throttled: u64,
     pub events_summarized: u64,
+    /// Throttle keys dropped at `max_keys`. Distinct from `events_summarized`, which counts every
+    /// summary including the ordinary end-of-window ones.
+    pub throttle_evictions: u64,
     pub trail_lookups: u64,
     pub cache_hits: u64,
     pub cache_misses: u64,
@@ -56,6 +59,7 @@ impl WorkerMetrics {
         self.remote_log_errors += other.remote_log_errors;
         self.events_throttled += other.events_throttled;
         self.events_summarized += other.events_summarized;
+        self.throttle_evictions += other.throttle_evictions;
         self.trail_lookups += other.trail_lookups;
         self.cache_hits += other.cache_hits;
         self.cache_misses += other.cache_misses;
@@ -94,6 +98,7 @@ pub struct MetricsSlot {
     pub remote_log_errors: AtomicU64,
     pub events_throttled: AtomicU64,
     pub events_summarized: AtomicU64,
+    pub throttle_evictions: AtomicU64,
     pub trail_lookups: AtomicU64,
     pub cache_hits: AtomicU64,
     pub cache_misses: AtomicU64,
@@ -148,6 +153,7 @@ impl MetricsSlot {
         self.remote_log_errors.store(m.remote_log_errors, Ordering::Relaxed);
         self.events_throttled.store(m.events_throttled, Ordering::Relaxed);
         self.events_summarized.store(m.events_summarized, Ordering::Relaxed);
+        self.throttle_evictions.store(m.throttle_evictions, Ordering::Relaxed);
         self.trail_lookups.store(m.trail_lookups, Ordering::Relaxed);
         self.cache_hits.store(m.cache_hits, Ordering::Relaxed);
         self.cache_misses.store(m.cache_misses, Ordering::Relaxed);
@@ -176,6 +182,7 @@ impl MetricsSlot {
             remote_log_errors: self.remote_log_errors.load(Ordering::Relaxed),
             events_throttled: self.events_throttled.load(Ordering::Relaxed),
             events_summarized: self.events_summarized.load(Ordering::Relaxed),
+            throttle_evictions: self.throttle_evictions.load(Ordering::Relaxed),
             trail_lookups: self.trail_lookups.load(Ordering::Relaxed),
             cache_hits: self.cache_hits.load(Ordering::Relaxed),
             cache_misses: self.cache_misses.load(Ordering::Relaxed),
