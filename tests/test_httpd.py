@@ -541,6 +541,19 @@ class TestHttpd(unittest.TestCase):
         st, _, _ = _http(self.port, "POST", "/login", body=self._login_body("admin"))
         self.assertEqual(st, 200, "the window must expire and let a legitimate user back in")
 
+    def test_csp_does_not_allow_eval(self):
+        # script-src carried 'unsafe-eval', which re-permits the whole class of injection CSP is
+        # there to stop - and nothing served needs it: no eval(), no Function("..."), no
+        # string-bodied setTimeout in main.js, worldmap.js, demo.js or the PapaParse bundle
+        # (tests/test_frontend.py asserts that side). Verified by loading the dashboard through
+        # this server in headless chromium under the tightened header: it renders with no CSP
+        # violation logged.
+        _, head, _ = _http(self.port, "GET", "/")
+        csp = [l for l in head.split("\r\n") if l.lower().startswith("content-security-policy:")]
+        self.assertTrue(csp, "the dashboard must be served with a CSP")
+        self.assertNotIn("unsafe-eval", csp[0], "script-src must not re-permit eval")
+        self.assertIn("default-src 'self'", csp[0], "positive control: the policy is still the real one")
+
     def test_index_never_serves_the_demo_script(self):
         """main.js turns DEMO on from the mere presence of demo.js.
 
