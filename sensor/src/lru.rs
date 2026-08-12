@@ -267,6 +267,43 @@ mod tests {
     }
 
     #[test]
+    fn the_doorkeeper_admits_on_the_second_sighting() {
+        let mut m: LruMap<String, u32> = LruMap::new(64).with_admission_filter(64);
+        m.insert_if_seen_before("once.example".to_string(), 1);
+        assert!(!m.contains("once.example"), "a first sighting must not be admitted");
+        m.insert_if_seen_before("once.example".to_string(), 1);
+        assert!(m.contains("once.example"), "a second sighting must be");
+    }
+
+    #[test]
+    fn the_borrowed_doorkeeper_promotes_on_the_same_sighting_as_the_owned_one() {
+        // The two forms must agree, not merely both work: they share one fingerprint table, and
+        // `check_domain_whitelisted` and the clean-domain cache would otherwise promote a name at
+        // different times depending on which call site saw it.
+        let keys: Vec<String> = (0..200).map(|i| format!("name-{i}.example")).collect();
+
+        let mut owned: LruMap<String, u32> = LruMap::new(64).with_admission_filter(64);
+        let mut borrowed: LruMap<String, u32> = LruMap::new(64).with_admission_filter(64);
+        // Two rounds, so both the reject-and-remember and the admit path are exercised.
+        for _ in 0..2 {
+            for k in &keys {
+                owned.insert_if_seen_before(k.clone(), 1);
+                borrowed.insert_if_seen_before_borrowed(k.as_str(), 1);
+                assert_eq!(owned.contains(k.as_str()), borrowed.contains(k.as_str()), "{k} diverged");
+            }
+        }
+        assert_eq!(owned.len(), borrowed.len());
+        assert!(!owned.is_empty(), "the second round must have admitted something");
+
+        // And mixing them is the same as using either alone.
+        let mut mixed: LruMap<String, u32> = LruMap::new(64).with_admission_filter(64);
+        mixed.insert_if_seen_before(keys[0].clone(), 1);
+        assert!(!mixed.contains(keys[0].as_str()));
+        mixed.insert_if_seen_before_borrowed(keys[0].as_str(), 1);
+        assert!(mixed.contains(keys[0].as_str()), "the borrowed form must see the owned form's fingerprint");
+    }
+
+    #[test]
     fn overwrite_keeps_len() {
         let mut m: LruMap<u32, u32> = LruMap::new(4);
         m.insert(1, 1);
