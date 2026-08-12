@@ -186,7 +186,13 @@ fn parse_row<'a>(raw: &'a [u8], fields: &mut Vec<String>) -> Option<(Cow<'a, str
         if split_csv_record(&line, fields) != 3 {
             return None;
         }
-        return Some((Cow::Owned(fields[0].clone()), Cow::Owned(fields[1].clone()), Cow::Owned(fields[2].clone())));
+        // Taken, not cloned: `split_csv_record` clears `fields` before it writes, so leaving
+        // empty `String`s behind costs the next row nothing.
+        return Some((
+            Cow::Owned(std::mem::take(&mut fields[0])),
+            Cow::Owned(std::mem::take(&mut fields[1])),
+            Cow::Owned(std::mem::take(&mut fields[2])),
+        ));
     }
     match line {
         // The overwhelmingly common case: valid UTF-8, unquoted — three slices of the batch
@@ -318,7 +324,10 @@ pub fn load_trails(path: &Path, whitelist: &Whitelist, options: LoadOptions) -> 
         std::thread::available_parallelism().map(|n| n.get()).unwrap_or(1).clamp(1, MAX_PARSE_THREADS)
     };
 
-    let mut buf: Vec<u8> = vec![0u8; BATCH_BYTES];
+    // Never bigger than the file. A sensor whose trail set is one small custom list should not
+    // pay 8 MB of buffer for it — and it would pay it again on every reload.
+    let batch_bytes = (file_len + 1).clamp(64 * 1024, BATCH_BYTES);
+    let mut buf: Vec<u8> = vec![0u8; batch_bytes];
     let mut filled = 0usize;
     let mut eof = false;
     let mut local_to_global: Vec<u32> = Vec::new();
@@ -468,5 +477,182 @@ mod tests {
         assert!(db.get_ip_port(ip, 80).is_none());
         let v6 = Ip::V6(parse_ipv6("dead::beef").unwrap());
         assert_eq!(db.get_ip(v6).map(|v| v.info), Some("badnet6"));
+    }
+
+    #[test]
+    fn line_boundaries_survive_the_batch_and_slice_cuts() {
+        // `split_lines` is the one place a record can be torn in half. Every piece must start at
+        // the beginning of a line and end just past a '\n'.
+        let region = b"aaa\nbb\nc\ndddd\ne\n";
+        for parts in 1..=8 {
+            let bounds = split_lines(region, parts);
+            assert_eq!(bounds.first().map(|b| b.0), Some(0), "parts={parts}");
+            assert_eq!(bounds.last().map(|b| b.1), Some(region.len()), "parts={parts}");
+            for (i, &(a, b)) in bounds.iter().enumerate() {
+                assert!(a < b, "empty piece at {i}, parts={parts}");
+                assert_eq!(region[b - 1], b'\n', "piece {i} does not end on a line, parts={parts}");
+                if i > 0 {
+                    assert_eq!(bounds[i - 1].1, a, "gap or overlap before piece {i}, parts={parts}");
+                }
+            }
+            // Reassembling the pieces must give the region back, byte for byte.
+            let rejoined: Vec<u8> = bounds.iter().flat_map(|&(a, b)| region[a..b].to_vec()).collect();
+            assert_eq!(rejoined, region, "parts={parts}");
+        }
+        // A region of one line cannot be split, however many parts are asked for.
+        assert_eq!(split_lines(b"only one line\n", 8), vec![(0, 14)]);
+    }
+
+    /// The awkward records, in the order a load must resolve them.
+    const AWKWARD: &str = "dup.example,first info,(static)\n\
+         1.2.3.4,badnet,(static)\n\
+         \"has,comma.example\",\"info, with comma\",(static)\n\
+         blank-follows.example,ok,(static)\n\
+         \n\
+         crlf.example,ok,(static)\r\n\
+         1.2.3.4:8443,c2,(static)\n\
+         dead::beef,badnet6,(static)\n\
+         [dead::beef]:53,c26,(static)\n\
+         evil.*\\.example,wildcard,(static)\n\
+         two,fields\n\
+         four,fields,here,too\n\
+         dup.example,LAST info wins,(static)\n";
+
+    /// Load the same records through the serial path and the parallel one and compare.
+    ///
+    /// The parallel loader only engages above `PARALLEL_MIN_BYTES`, so the two are reached by
+    /// padding: the small file loads on one thread in one batch, the padded one crosses several
+    /// 8 MB batches with eight slices each. The awkward records are re-emitted throughout the
+    /// padding, so they land at slice cuts and batch cuts rather than only at the start.
+    #[test]
+    fn a_parallel_load_builds_the_same_store_as_a_serial_one() {
+        let dir = std::env::temp_dir().join("mt-trail-parallel-test");
+        std::fs::create_dir_all(&dir).unwrap();
+
+        let small = dir.join("small.csv");
+        std::fs::write(&small, AWKWARD).unwrap();
+
+        // Comfortably over two batches. The padding keys are distinct so they cannot affect how
+        // the awkward ones resolve.
+        let big = dir.join("big.csv");
+        let mut text = String::with_capacity(20 << 20);
+        let mut pad = 0usize;
+        while text.len() < (BATCH_BYTES * 2) + (BATCH_BYTES / 3) {
+            for _ in 0..500 {
+                text.push_str(&format!("pad-{pad}.example,padding,(static)\n"));
+                pad += 1;
+            }
+            text.push_str(AWKWARD);
+        }
+        std::fs::write(&big, &text).unwrap();
+        assert!(std::fs::metadata(&small).unwrap().len() < PARALLEL_MIN_BYTES as u64, "small must load serially");
+        assert!(std::fs::metadata(&big).unwrap().len() > (BATCH_BYTES * 2) as u64, "big must cross batches");
+
+        let root = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR")).parent().unwrap().to_path_buf();
+        let wl = Whitelist::load(&root, None);
+        let (serial, sstats) = load_trails(&small, &wl, LoadOptions::default()).unwrap();
+        let (parallel, pstats) = load_trails(&big, &wl, LoadOptions::default()).unwrap();
+
+        // Every awkward record resolves identically on both paths.
+        use crate::addr::{addr_to_int, parse_ipv6, Ip};
+        for key in [
+            "dup.example",
+            "1.2.3.4",
+            "has,comma.example",
+            "blank-follows.example",
+            "crlf.example",
+            "1.2.3.4:8443",
+            "dead::beef",
+            "[dead::beef]:53",
+            "evil.*\\.example",
+        ] {
+            let (a, b) = (serial.get(key), parallel.get(key));
+            assert_eq!(a.map(|v| (v.info, v.reference)), b.map(|v| (v.info, v.reference)), "{key:?} differs");
+            assert!(a.is_some(), "{key:?} was not loaded at all");
+        }
+        // Last row wins, on both paths — this is what forces the drain to stay in file order.
+        assert_eq!(serial.get("dup.example").map(|v| v.info), Some("LAST info wins"));
+        assert_eq!(parallel.get("dup.example").map(|v| v.info), Some("LAST info wins"));
+        // ...and the quoted record is still split like Python's csv module.
+        assert_eq!(parallel.get("has,comma.example").map(|v| v.info), Some("info, with comma"));
+
+        let v4 = Ip::V4(addr_to_int("1.2.3.4").unwrap());
+        let v6 = Ip::V6(parse_ipv6("dead::beef").unwrap());
+        for db in [&serial, &parallel] {
+            assert_eq!(db.get_ip(v4).map(|v| v.info), Some("badnet"));
+            assert_eq!(db.get_ip_port(v4, 8443).map(|v| v.info), Some("c2"));
+            assert_eq!(db.get_ip(v6).map(|v| v.info), Some("badnet6"));
+            assert_eq!(db.get_ip_port(v6, 53).map(|v| v.info), Some("c26"));
+            assert!(db.get_ip_port(v4, 80).is_none());
+        }
+
+        // The wildcard alternation is positional, so both paths must produce the same patterns in
+        // the same order — the parallel one collects candidates per slice and replays them.
+        assert_eq!(serial.regex().patterns(), &["evil.*\\.example"]);
+        assert_eq!(parallel.regex().patterns()[0], "evil.*\\.example");
+
+        // Statistics: 12 non-blank rows per copy, 2 of them malformed, 11 distinct keys.
+        assert_eq!(sstats.rows, 12, "the blank line is not a row");
+        assert_eq!(sstats.malformed, 2, "2-field and 4-field rows are both malformed");
+        assert_eq!(sstats.loaded, 10);
+        assert_eq!(serial.len(), 9, "dup.example is one key, written twice");
+
+        let copies = text.matches("dup.example,first info").count();
+        assert_eq!(pstats.rows, 12 * copies + pad, "every padded copy must be seen exactly once");
+        assert_eq!(pstats.malformed, 2 * copies);
+        assert_eq!(pstats.loaded, 10 * copies + pad);
+        assert_eq!(parallel.len(), 9 + pad);
+
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn a_record_longer_than_the_batch_buffer_still_loads() {
+        // The batch buffer grows when a single line fills it, which is the one path in the reader
+        // that can loop. A trails file with a pathologically long row must load, not hang.
+        let dir = std::env::temp_dir().join("mt-trail-longline-test");
+        std::fs::create_dir_all(&dir).unwrap();
+        let path = dir.join("trails.csv");
+        let long_key = "a".repeat(BATCH_BYTES + 4096);
+        std::fs::write(&path, format!("{long_key},huge,(static)\nafter.example,ok,(static)\n")).unwrap();
+
+        let (db, stats) = load_trails(&path, &Whitelist::default(), LoadOptions::default()).unwrap();
+        assert_eq!(stats.rows, 2);
+        assert_eq!(stats.loaded, 2);
+        assert_eq!(db.get(&long_key).map(|v| v.info), Some("huge"));
+        assert_eq!(db.get("after.example").map(|v| v.info), Some("ok"), "the row after the long one is not lost");
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn a_file_with_no_trailing_newline_keeps_its_last_row() {
+        let dir = std::env::temp_dir().join("mt-trail-notrailing-test");
+        std::fs::create_dir_all(&dir).unwrap();
+        let path = dir.join("trails.csv");
+        std::fs::write(&path, "one.example,a,(static)\nlast.example,b,(static)").unwrap();
+        let (db, stats) = load_trails(&path, &Whitelist::default(), LoadOptions::default()).unwrap();
+        assert_eq!(stats.rows, 2);
+        assert_eq!(db.get("last.example").map(|v| v.info), Some("b"));
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
+    #[test]
+    fn invalid_utf8_is_replaced_the_way_python_reads_it() {
+        // Python reads trails.csv with errors="replace", so a bad byte becomes U+FFFD and the row
+        // still loads under that key. The parallel loader has to own such a row rather than
+        // borrow it, which is the one place its two paths differ.
+        let dir = std::env::temp_dir().join("mt-trail-utf8-test");
+        std::fs::create_dir_all(&dir).unwrap();
+        let path = dir.join("trails.csv");
+        let mut bytes = b"bad".to_vec();
+        bytes.push(0xff);
+        bytes.extend_from_slice(b".example,mangled,(static)\ngood.example,ok,(static)\n");
+        std::fs::write(&path, &bytes).unwrap();
+
+        let (db, stats) = load_trails(&path, &Whitelist::default(), LoadOptions::default()).unwrap();
+        assert_eq!(stats.loaded, 2);
+        assert_eq!(db.get("bad\u{fffd}.example").map(|v| v.info), Some("mangled"));
+        assert_eq!(db.get("good.example").map(|v| v.info), Some("ok"));
+        let _ = std::fs::remove_dir_all(&dir);
     }
 }

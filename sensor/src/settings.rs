@@ -294,10 +294,17 @@ impl Statics {
             param_value: pyre::compile(r"(\w+=)[^&=]+"),
             proxy_probe_path: pyre::compile(r"(http://[^/]+/)(.+)"),
             proxy_probe_host: pyre::compile(r"(http://)([^/(]+)"),
+            // `unicode(false)` is what makes the Aho-Corasick pre-condition below EXACT rather
+            // than merely usually right. `old/sensor.py:804` compiles this as a BYTES pattern
+            // with `re.I`, and in Python that folds ASCII only; the crate's default folds
+            // Unicode, so `(?i)k` here also matched U+212A KELVIN SIGN and `\b`/`\s` were
+            // Unicode classes. That accepted a header Python's `re` would not, and it would have
+            // slipped past an ASCII pre-filter. ASCII on both sides now agrees with the oracle.
             forwarded_for: regex::bytes::RegexBuilder::new(
                 r"\b(CF-Connecting-IP|True-Client-IP|X-Forwarded-For):\s*([0-9.]+)",
             )
             .case_insensitive(true)
+            .unicode(false)
             .build()
             .expect("forwarded-for regex"),
             forwarded_for_pre_condition: ac_nocase(&["CF-Connecting-IP:", "True-Client-IP:", "X-Forwarded-For:"]),
