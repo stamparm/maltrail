@@ -5,7 +5,13 @@
 # is enabled here is the set that catches BUGS: undefined names, unused imports and variables,
 # mutable default arguments, bare excepts that swallow control flow, comparison mistakes.
 
-target-version = "py37"   # the floor the README promises and CI tests
+# NOT the project's floor. Maltrail supports Python 3.6 (README, and the CI `floor` job runs the
+# whole suite in python:3.6-slim), but py37 is the OLDEST target ruff accepts - it rejects "py36"
+# outright. So this is ruff's minimum, not ours, and it does not widen what is linted: none of the
+# rules selected below are version-gated. The 3.6 floor is enforced by actually running on 3.6,
+# which is what caught the str.isascii() call that emptied the trail set on RHEL 8 / CentOS 7 /
+# Leap 15 / Amazon Linux 2.
+target-version = "py37"
 line-length = 130
 
 exclude = [
