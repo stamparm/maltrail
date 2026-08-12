@@ -120,3 +120,34 @@ fn capture_ring_report_ignores_capture_buffer() {
     assert_eq!(cfg.estimated_capture_memory_bytes(), 8 * 1024 * 1024,
                "-T must report the ring libpcap gets, not the option that does not reach it");
 }
+
+/// The ring must never be the 16 MB it used to default to, whatever the config says.
+///
+/// A dropped packet is never seen by any detection logic, so this is the one setting whose being
+/// wrong cannot be compensated for anywhere else - and sensor/docs/INSTALL.md was already telling
+/// people to run 64-256 MB while the code shipped 16.
+#[test]
+fn capture_ring_defaults_are_sane_for_a_real_link() {
+    // Nothing said: the documented floor for throughput, not the old 16 MB.
+    let cfg = load("ring_default", "");
+    assert_eq!(cfg.capture_buffer_size, maltrail_sensor::config::DEFAULT_CAPTURE_RING);
+    assert!(cfg.capture_buffer_size >= 64 * 1024 * 1024);
+
+    // CAPTURE_BUFFER is mandatory and everybody sets it; reading it as the ring is what
+    // maltrail.conf has always claimed. Small values still get the sane floor.
+    let cfg = load("ring_small_buffer", "CAPTURE_BUFFER 32MB");
+    assert_eq!(cfg.capture_buffer_size, maltrail_sensor::config::DEFAULT_CAPTURE_RING);
+
+    // ...but an INFERRED ring is capped, because CAPTURE_BUFFER ships as `10%` of physical memory
+    // and that is gigabytes of locked kernel memory PER WORKER.
+    let cfg = load("ring_huge_buffer", "CAPTURE_BUFFER 8GB");
+    assert_eq!(cfg.capture_buffer_size, maltrail_sensor::config::MAX_INFERRED_CAPTURE_RING);
+
+    // An EXPLICIT value is an instruction rather than an inference, so it goes higher.
+    let cfg = load("ring_explicit", "CAPTURE_BUFFER 32MB\nCAPTURE_BUFFER_SIZE 512MB");
+    assert_eq!(cfg.capture_buffer_size, 512 * 1024 * 1024);
+
+    // Absurd either way is clamped, and reported rather than silently applied.
+    let cfg = load("ring_absurd", "CAPTURE_BUFFER 32MB\nCAPTURE_BUFFER_SIZE 8GB");
+    assert_eq!(cfg.capture_buffer_size, maltrail_sensor::config::MAX_CAPTURE_RING);
+}
