@@ -165,26 +165,32 @@ impl TrailDbBuilder {
     /// text Maltrail would render for that address, which keeps the native lookups
     /// equivalent to Python's string comparison.
     pub fn insert(&mut self, trail: &str, pair: u32) {
-        if !self.strings.contains(trail) {
+        let hash = table::hash_bytes(trail.as_bytes());
+        self.insert_prepared(trail, hash, pair, NativeKey::of(trail));
+    }
+
+    /// `insert()` with the two things that can be derived from the key text alone already
+    /// derived. The trail loader does both on its parse threads; what is left here is only the
+    /// table writes, which are what the serial pass is actually for.
+    pub fn insert_prepared(&mut self, trail: &str, hash: u64, pair: u32, native: NativeKey) {
+        if self.strings.insert_hashed(trail, hash, pair) {
             self.len += 1;
         }
-        self.strings.insert(trail, pair);
+        match native {
+            NativeKey::None => {}
+            NativeKey::Ip(Ip::V4(v)) => self.ip4.insert(v, pair),
+            NativeKey::Ip(Ip::V6(v)) => self.ip6.insert(v, pair),
+            NativeKey::IpPort(Ip::V4(v), port) => self.ip4_port.insert(ip4_port_key(v, port), pair),
+            NativeKey::IpPort(Ip::V6(v), port) => {
+                self.ip6_port.insert((v, port), pair);
+            }
+        }
+    }
 
-        if let Some(ip) = crate::addr::parse_canonical_ip(trail) {
-            match ip {
-                Ip::V4(v) => self.ip4.insert(v, pair),
-                Ip::V6(v) => self.ip6.insert(v, pair),
-            }
-            return;
-        }
-        if let Some((ip, port)) = parse_canonical_addr_port(trail) {
-            match ip {
-                Ip::V4(v) => self.ip4_port.insert(ip4_port_key(v, port), pair),
-                Ip::V6(v) => {
-                    self.ip6_port.insert((v, port), pair);
-                }
-            }
-        }
+    /// Warm the string table for a key whose hash is already known (see `StrTable::prefetch`).
+    #[inline]
+    pub fn prefetch(&self, hash: u64) {
+        self.strings.prefetch(hash);
     }
 
     pub fn finish(self, regex: TrailRegex) -> TrailDb {
@@ -224,6 +230,29 @@ fn parse_canonical_addr_port(trail: &str) -> Option<(Ip, u16)> {
         return None;
     }
     Some((ip, port))
+}
+
+/// The native (integer) mirror a trail key qualifies for, if any.
+///
+/// Derived from the key text alone, so it can be computed anywhere — which is the point: the
+/// loader computes it on its parse threads rather than inside the serial insert pass.
+#[derive(Clone, Copy)]
+pub enum NativeKey {
+    None,
+    Ip(Ip),
+    IpPort(Ip, u16),
+}
+
+impl NativeKey {
+    pub fn of(trail: &str) -> NativeKey {
+        if let Some(ip) = crate::addr::parse_canonical_ip(trail) {
+            return NativeKey::Ip(ip);
+        }
+        if let Some((ip, port)) = parse_canonical_addr_port(trail) {
+            return NativeKey::IpPort(ip, port);
+        }
+        NativeKey::None
+    }
 }
 
 /// Publishes an immutable `TrailDb` to the workers.
