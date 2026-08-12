@@ -182,7 +182,7 @@ All have conservative defaults; none are required.
 | option | default | meaning |
 | --- | --- | --- |
 | `CAPTURE_WORKERS` | `PROCESS_COUNT` (or `CAPTURE_FANOUT`, whichever is larger) | capture sockets/threads per interface (`auto` = CPU count). One worker = one `sensor.py` worker process. **Set to 1 if scan detection matters more than throughput** — see below |
-| `CAPTURE_BUFFER_SIZE` | `16MB` | libpcap ring size per socket (accepts `kB`/`MB`/`GB`/`%`) |
+| `CAPTURE_BUFFER_SIZE` | `64MB`, or `CAPTURE_BUFFER` capped at `256MB` | libpcap ring size per socket (accepts `kB`/`MB`/`GB`/`%`); explicit values allowed up to `1GB` |
 | `CAPTURE_SNAPLEN` | 2000 (`SNAP_LEN`) | bytes captured per packet |
 | `CAPTURE_TIMEOUT` | 100 | capture/poll timeout in ms; also bounds shutdown latency |
 | `CAPTURE_IMMEDIATE` | false | deliver packets as they arrive (lower latency, worse throughput) |
@@ -485,4 +485,4 @@ Nothing here is required to run the sensor; it is how to convince yourself befor
 | `log directory: '...' is NOT writable` / `does not exist` | run the `sudo install -d ...` line `-T` prints. Note it uses `$(id -gn)` for the group: not every distribution gives each user a group named after them (openSUSE puts everyone in `users`), so `-g "$USER"` fails there with `install: invalid group` |
 | `install: invalid group 'maltrail'` when setting up the systemd units | `useradd` only creates a matching group on distributions that default to per-user groups. Run `groupadd --system maltrail` first, then `useradd --system --gid maltrail ...` — both lines are in the unit file's header comment |
 | `condensed observable store: flush of N rows failed` | the sensor could not write `LOG_DIR/meta.sqlite`; check the directory's permissions and free space. Detection and event logging are unaffected — only the server's `/meta` view loses that window. `maltrail_meta_flush_errors_total` counts these |
-| High `capture_drops` in the metrics line | raise `CAPTURE_BUFFER_SIZE` — **not** `CAPTURE_BUFFER`, which the Rust sensor requires but does not use for the ring — add `CAPTURE_WORKERS`, or tighten `CAPTURE_FILTER` |
+| High `capture_drops` in the metrics line | raise `CAPTURE_BUFFER_SIZE`, add `CAPTURE_WORKERS`, or tighten `CAPTURE_FILTER`. If the drops coincide with a detection storm rather than raw volume, the throttle is the cost — see `maltrail_throttle_evictions_total` |

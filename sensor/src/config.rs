@@ -33,6 +33,32 @@ impl Value {
 /// a whole number of ring blocks and operators compare the logged value with Python's.
 pub const BLOCK_LENGTH: u64 = 1 + 2 + 4 + 4 + 4 + settings::SNAP_LEN as u64;
 
+/// Default libpcap ring per capture socket.
+///
+/// 64 MB, the low end of what sensor/docs/INSTALL.md has always recommended for throughput, and
+/// roughly half a second of a saturated gigabit link. The previous 16 MB default contradicted that
+/// guidance and is far too small for the links Maltrail is pointed at: measured at ~250k small
+/// packets/s it dropped over 90% of offered traffic, taking 63% of injected detections with it.
+pub const DEFAULT_CAPTURE_RING: u64 = 64 * 1024 * 1024;
+
+/// Floor for the ring. Below this a gigabit link drops on any ordinary burst, and the setting is
+/// not worth having if it can be turned into a self-inflicted blind spot by a typo.
+pub const MIN_CAPTURE_RING: u64 = 4 * 1024 * 1024;
+
+/// Ceiling for an EXPLICIT `CAPTURE_BUFFER_SIZE`. High, because an operator naming this option is
+/// telling us about their link, not guessing - a 40 Gbit tap with one worker can justify it.
+pub const MAX_CAPTURE_RING: u64 = 1024 * 1024 * 1024;
+
+/// Ceiling when the ring is INFERRED from `CAPTURE_BUFFER` rather than asked for.
+///
+/// `CAPTURE_BUFFER` ships as `10%` of physical memory and meant something else entirely on the
+/// Python sensor (a userspace ring shared between processes). Reading it as a libpcap ring is a
+/// reasonable inference - it is what maltrail.conf has always claimed - but it is still an
+/// inference, so it gets the conservative end of the range docs/INSTALL.md recommends. On a 64 GB
+/// host that is 256 MB per worker instead of 6.4 GB of locked kernel memory times the worker
+/// count. An operator who genuinely wants more says CAPTURE_BUFFER_SIZE and gets it.
+pub const MAX_INFERRED_CAPTURE_RING: u64 = 256 * 1024 * 1024;
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum FanoutMode {
     Hash,
@@ -670,14 +696,31 @@ impl Config {
             }
         };
 
+        // The libpcap ring, and the single thing standing between a traffic burst and a missed
+        // detection. A dropped packet is never seen by any of the detection logic, so this is the
+        // one setting whose being wrong cannot be compensated for anywhere else.
+        //
+        // It used to default to 16 MB regardless of what the operator asked for, while
+        // `CAPTURE_BUFFER` - which IS mandatory, ships as `10%`, and is what everybody sets when
+        // they want a bigger buffer - never reached libpcap at all. sensor/docs/INSTALL.md already
+        // told people to run 64-256 MB. Measured on loopback at ~250k small packets/s, a 16 MB
+        // ring dropped over 90% of the offered traffic and 63% of injected detections went with
+        // it, so this was not theoretical.
+        //
+        // Now: CAPTURE_BUFFER_SIZE if given, else CAPTURE_BUFFER (which is what maltrail.conf has
+        // always claimed), else DEFAULT_CAPTURE_RING. Clamped either way - `CAPTURE_BUFFER 10%`
+        // is 6.4 GB on a 64 GB host, and that much LOCKED kernel memory per worker is its own
+        // outage. The clamp is reported, not silent.
         let capture_buffer_size = {
             let v = get_str(&raw, "CAPTURE_BUFFER_SIZE");
-            if v.is_empty() {
-                16 * 1024 * 1024
-            } else {
+            if !v.is_empty() {
                 parse_byte_size(&v).map_err(|e| {
                     ConfigError(format!("invalid configuration value for 'CAPTURE_BUFFER_SIZE' ('{v}'): {e}"))
                 })?
+            } else if capture_buffer > 0 {
+                capture_buffer.min(MAX_INFERRED_CAPTURE_RING).max(DEFAULT_CAPTURE_RING)
+            } else {
+                DEFAULT_CAPTURE_RING
             }
         };
 
@@ -831,6 +874,10 @@ impl Config {
         clamp!(self.event_throttle_burst, "EVENT_THROTTLE_BURST", 1u32, 1_000_000u32);
         clamp!(self.event_throttle_max_keys, "EVENT_THROTTLE_MAX_KEYS", 1usize, 10_000_000usize);
         clamp!(self.domain_cache_entries, "DOMAIN_CACHE_ENTRIES", 64usize, 10_000_000usize);
+        // The ring is kernel memory, locked, PER WORKER. The floor is where a gigabit link starts
+        // dropping under any real burst; the ceiling is where more ring stops buying latency
+        // headroom and starts being an outage of its own on a many-worker host.
+        clamp!(self.capture_buffer_size, "CAPTURE_BUFFER_SIZE", MIN_CAPTURE_RING, MAX_CAPTURE_RING);
     }
 
     /// Estimated resident cost of the capture rings — the number an operator actually needs
