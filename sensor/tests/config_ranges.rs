@@ -117,8 +117,11 @@ fn capture_ring_memory_is_reported_per_worker() {
 #[test]
 fn capture_ring_report_ignores_capture_buffer() {
     let cfg = load("ring_mismatch", "CAPTURE_BUFFER 512MB\nCAPTURE_BUFFER_SIZE 8MB");
-    assert_eq!(cfg.estimated_capture_memory_bytes(), 8 * 1024 * 1024,
-               "-T must report the ring libpcap gets, not the option that does not reach it");
+    assert_eq!(
+        cfg.estimated_capture_memory_bytes(),
+        8 * 1024 * 1024,
+        "-T must report the ring libpcap gets, not the option that does not reach it"
+    );
 }
 
 /// The ring must never be the 16 MB it used to default to, whatever the config says.
