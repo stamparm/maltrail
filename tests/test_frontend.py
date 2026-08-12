@@ -153,5 +153,35 @@ class TestDrawerFields(unittest.TestCase):
                           "the detail panel no longer has a %r section" % section)
 
 
+
+class TestNoEvalInServedScripts(unittest.TestCase):
+    """The CSP's script-src does not allow 'unsafe-eval', so nothing served may need it.
+
+    Dropping that keyword only holds while the frontend stays free of dynamic code evaluation.
+    If someone adds an eval() the page breaks under the shipped policy, and the tempting fix is to
+    widen the policy again - quietly giving back the injection protection it exists for. This
+    fails first, and names the file.
+    """
+
+    PATTERNS = (
+        r"\beval\s*\(",
+        r"\bnew\s+Function\s*\(",
+        r"\bset(?:Timeout|Interval)\s*\(\s*[\'\"]",
+    )
+
+    def test_no_dynamic_code_evaluation(self):
+        offenders = []
+        js_dir = os.path.join(REPO, "html", "js")
+        for name in sorted(os.listdir(js_dir)):
+            if not name.endswith(".js"):
+                continue
+            with open(os.path.join(js_dir, name), encoding="utf-8", errors="replace") as f:
+                body = f.read()
+            for pattern in self.PATTERNS:
+                if re.search(pattern, body):
+                    offenders.append("%s matches %s" % (name, pattern))
+        self.assertEqual(offenders, [], "a served script uses dynamic code evaluation, which the "
+                                        "shipped CSP forbids: %s" % "; ".join(offenders))
+
 if __name__ == "__main__":
     unittest.main()
