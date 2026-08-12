@@ -212,7 +212,7 @@ pub fn run(cfg: &Config) -> i32 {
             cfg.capture_timeout_ms,
             cfg.capture_workers,
             ring as f64 / (1024.0 * 1024.0),
-            cfg.capture_buffer as f64 / (1024.0 * 1024.0),
+            cfg.capture_buffer_size as f64 / (1024.0 * 1024.0),
             cfg.capture_workers,
             cfg.event_throttle_mode,
             cfg.event_throttle_window,
