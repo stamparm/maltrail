@@ -51,8 +51,31 @@ impl PythonProbe {
     }
 }
 
+/// Is this command actually there to be run?
+///
+/// A `Command::new()` that ends in ENOENT still costs a fork and an exec, and the candidate list
+/// below is eleven names long: on a host whose only interpreter is `python3` — RHEL 8, CentOS 7,
+/// Leap 15, Amazon Linux 2, i.e. exactly the ones the 3.6 floor exists for — probing used to fork
+/// nine doomed processes on every sensor start and every update cycle before reaching it. A stat
+/// per PATH entry answers the same question for nothing.
+///
+/// Unknowable ("no PATH in the environment") means yes: the fork is the fallback, never the
+/// silent skip.
+fn on_path(command: &str) -> bool {
+    if command.contains('/') {
+        return Path::new(command).is_file();
+    }
+    match std::env::var_os("PATH") {
+        Some(path) => std::env::split_paths(&path).any(|dir| dir.join(command).is_file()),
+        None => true,
+    }
+}
+
 /// Ask one interpreter what it is. Cheap: `-c` neither reads config nor touches the network.
 fn probe(command: &str) -> Option<PythonProbe> {
+    if !on_path(command) {
+        return None;
+    }
     let out =
         Command::new(command).args(["-c", "import sys; print('%d.%d.%d' % sys.version_info[:3])"]).output().ok()?;
     if !out.status.success() {
