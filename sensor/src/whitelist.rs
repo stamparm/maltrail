@@ -78,7 +78,10 @@ impl Whitelist {
 
     /// `core/common.py:check_whitelisted()` for arbitrary trail text.
     pub fn check_whitelisted(&self, trail: &str) -> bool {
-        if self.exact.contains(trail) {
+        // Through the prefilter, not `exact` directly: the trail loader calls this once per
+        // CSV row (1.6 M of them) and virtually every call misses, so paying SipHash over
+        // the whole file is most of what this check costs.
+        if self.contains_exact(trail) {
             return true;
         }
         // Only a BARE dotted quad is range-matched (guards against "10.0.0.1.evil.com").

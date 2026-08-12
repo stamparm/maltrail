@@ -78,6 +78,19 @@ impl NegativeFilter {
         self.bits[b >> 6] |= 1u64 << (b & 63);
     }
 
+    /// Pull this hash's two words into cache without using them, so a later `insert()` on the
+    /// same hash finds them there. Volatile reads rather than an intrinsic: `_mm_prefetch` is
+    /// x86-only and there is no stable portable prefetch, and a load whose result is discarded
+    /// is not something the out-of-order engine waits on either.
+    #[inline]
+    pub fn prefetch(&self, h: u64) {
+        let (a, b) = self.positions(h);
+        unsafe {
+            std::ptr::read_volatile(self.bits.as_ptr().add(a >> 6));
+            std::ptr::read_volatile(self.bits.as_ptr().add(b >> 6));
+        }
+    }
+
     /// `false` = definitely absent. `true` = possibly present, check the table.
     #[inline]
     pub fn maybe_contains(&self, h: u64) -> bool {
@@ -148,12 +161,25 @@ impl StrTable {
 
     /// Insert (or overwrite, matching `dict[key] = value`). Grows when the load factor
     /// would exceed ~0.85, so a bad size hint degrades performance but never correctness.
-    pub fn insert(&mut self, key: &str, val: u32) {
+    ///
+    /// Returns `true` when the key was not already present. Callers that need to know
+    /// (the loader counts distinct trails) must use this rather than a preceding
+    /// `contains()`: at 1.6 M rows the slots array is ~67 MB, so every probe is a cache
+    /// miss and asking twice doubles the cost of building the table.
+    pub fn insert(&mut self, key: &str, val: u32) -> bool {
+        self.insert_hashed(key, hash_bytes(key.as_bytes()), val)
+    }
+
+    /// `insert()` with the key's hash supplied. The trail loader hashes on its parse threads,
+    /// which takes the hashing off the one serial pass that builds the table.
+    ///
+    /// `h` MUST be `hash_bytes(key.as_bytes())`; anything else corrupts the table.
+    pub fn insert_hashed(&mut self, key: &str, h: u64, val: u32) -> bool {
         debug_assert!(val != EMPTY);
+        debug_assert_eq!(h, hash_bytes(key.as_bytes()));
         if (self.len + 1) * 100 > self.slots.len() * 85 {
             self.grow();
         }
-        let h = hash_bytes(key.as_bytes());
         self.filter.insert(h);
         let tag = (h >> 32) as u32;
         let mut i = (h as usize) & self.mask;
@@ -164,11 +190,11 @@ impl StrTable {
                 self.arena.extend_from_slice(key.as_bytes());
                 self.slots[i] = StrSlot { tag, off, len: key.len() as u32, val };
                 self.len += 1;
-                return;
+                return true;
             }
             if slot.tag == tag && self.slot_key(slot) == key.as_bytes() {
                 self.slots[i].val = val;
-                return;
+                return false;
             }
             i = (i + 1) & self.mask;
         }
@@ -206,6 +232,16 @@ impl StrTable {
     #[inline]
     pub fn contains(&self, key: &str) -> bool {
         self.get(key).is_some()
+    }
+
+    /// Warm the cache lines a future `insert_hashed(_, h, _)` will touch. The slots array is
+    /// ~67 MB at real trail counts, so every probe is a DRAM round trip; issuing them a few
+    /// rows ahead of the insert that needs them is most of what makes the serial pass keep up.
+    #[inline]
+    pub fn prefetch(&self, h: u64) {
+        let i = (h as usize) & self.mask;
+        unsafe { std::ptr::read_volatile(self.slots.as_ptr().add(i)) };
+        self.filter.prefetch(h);
     }
 
     fn grow(&mut self) {
