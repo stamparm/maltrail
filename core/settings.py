@@ -81,8 +81,8 @@ GEO_IP2CC6_FILE = os.path.join(USERS_DIR, "ip2cc6.csv.gz")  # IPv6 table: runtim
 # Retro-hunt (/hunt): historical IOC sweep across daily logs. Hard bounds so a broad query can't self-DoS the server -
 # scan is streamed + newest-first, stops at whichever limit hits first and reports truncated=true.
 HUNT_MAX_DAYS = 365          # never scan more than this many (most-recent) daily logs
-HUNT_TIME_BUDGET = 10.0      # seconds of wall-clock scanning before returning partial results
-HUNT_MAX_SAMPLES = 200       # cap on returned sample matches, all rendered by the UI (per-day counts are always complete for scanned days)
+HUNT_TIME_BUDGET = 10.0      # seconds of wall-clock scanning before returning partial results (override per-deployment with HUNT_TIME_BUDGET in the config; slow storage may want more)
+HUNT_MAX_SAMPLES = 200       # cap on returned sample matches, all rendered by the UI (a day the budget cut short is reported in "partial", NOT in "counts" - see _hunt)
 HUNT_MIN_QUERY = 3           # reject shorter queries (a 1-2 char substring would match ~everything)
 
 # Condensed observable store (LOG_DIR/meta.sqlite): one cumulative aggregate row per observable

@@ -19,7 +19,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, REPO)   # so `from core.log import safe_value` resolves (we also shell out to server.py)
 PW = "changeme!"
 STORED = hashlib.sha256(PW.encode()).hexdigest()   # what the config stores (sha256 of password)
-from core.httpd import LOGIN_FAILURE_THRESHOLD, MAX_LIVE_STREAMS   # brute-force threshold and SSE budget under test
+from core.httpd import LOGIN_FAILURE_THRESHOLD     # the brute-force refusal threshold under test
 from core.settings import UNAUTHORIZED_SLEEP_TIME  # the width of its window
 
 
@@ -541,33 +541,122 @@ class TestHttpd(unittest.TestCase):
         st, _, _ = _http(self.port, "POST", "/login", body=self._login_body("admin"))
         self.assertEqual(st, 200, "the window must expire and let a legitimate user back in")
 
+    def test_hunt_does_not_report_a_partial_day_as_complete(self):
+        # When the time budget expired inside a day, that day's running total was written into
+        # `counts` exactly like a finished day's. Measured on three 40k-line days with a small
+        # budget, the middle day came back as 16383 against a true 40000 - an undercount an
+        # analyst reads straight off the timeline as that day's answer. `truncated` was set, but
+        # it said only "something was cut", never which day. Undercounting a retro-hunt is the
+        # wrong direction to be wrong in.
+        #
+        # A second server with a deliberately tiny HUNT_TIME_BUDGET, so the cut is forced rather
+        # than raced: the shared fixture's budget is the real one.
+        import json as _json
+        tmp = tempfile.mkdtemp(prefix="mt_hunt_")
+        try:
+            logdir = os.path.join(tmp, "logs"); os.makedirs(logdir)
+            per, days = 20000, ["2026-07-01", "2026-07-02", "2026-07-03"]
+            for day in days:
+                with open(os.path.join(logdir, "%s.log" % day), "w") as f:
+                    for _ in range(per):
+                        f.write('"%s 10:00:00.000000" s 10.0.0.5 4421 8.8.8.8 53 UDP DNS '
+                                'huntme.example "malware (dummy)" (static)\n' % day)
+            trails = os.path.join(tmp, "t.csv")
+            with open(trails, "w") as f:
+                f.write("huntme.example,x (dummy),(static)\n")
+            port = _free_port()
+            cfg = os.path.join(tmp, "srv.conf")
+            with open(cfg, "w") as f:
+                f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\nHUNT_TIME_BUDGET 0.02\n" % port)
+                f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+                f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME t\nDISABLE_CHECK_SUDO true\n"
+                        % (logdir, trails))
+            proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            try:
+                for _ in range(60):
+                    try:
+                        socket.create_connection(("127.0.0.1", port), timeout=0.5).close(); break
+                    except OSError: time.sleep(0.25)
+                st, _, body = _http(port, "GET", "/hunt?q=huntme.example", timeout=60)
+                self.assertEqual(st, 200)
+                o = _json.loads(body.decode("utf-8"))
+                self.assertTrue(o["truncated"], "a 0.02s budget over 60k lines must truncate")
+                # every day left in `counts` was read to the end, so its number is the real one
+                for day, hits in o["counts"].items():
+                    self.assertEqual(hits, per, "%s is in counts, so it must be a COMPLETE count" % day)
+                # and the day that was cut short is reported, separately and explicitly
+                if o.get("partial"):
+                    self.assertNotIn(o["partial"]["date"], o["counts"],
+                                     "a partially scanned day must not appear as a complete one")
+                    self.assertLess(o["partial"]["hits"], per, "a partial count is by definition short")
+                self.assertLessEqual(o["scanned"], o["selected"])
+                self.assertLess(o["scanned"], len(days), "scanned must count days READ, not days selected")
+            finally:
+                proc.terminate(); proc.wait(timeout=5)
+        finally:
+            import shutil; shutil.rmtree(tmp, ignore_errors=True)
+
     def test_live_streams_cannot_starve_ordinary_requests(self):
         # A /live stream holds its request thread for the lifetime of the tab. Counted against the
-        # general thread cap it starves everything else: 120 open dashboards saturated all 100
-        # slots and every ordinary request got a 503 - a cheaper denial of service than the cap was
-        # added to prevent, needing nothing but a browser. Streams get their own smaller budget,
-        # and a refused one is answered 204, which the frontend already falls back to polling on.
-        ck = self._login("admin")
-        held, refused = [], 0
+        # general thread cap it starves everything else: 120 open dashboards took all 100 slots and
+        # every ordinary request got a 503 - a cheaper denial of service than the cap was added to
+        # prevent, needing nothing but a browser. Streams get a smaller budget of their own, and a
+        # refused one is answered 204, which the frontend already falls back to polling on.
+        #
+        # Its own server with MAX_LIVE_STREAMS 3, so the assertion needs five held sockets rather
+        # than thirty-five. The first version of this test held 35 and passed standalone but blew
+        # through tests/run.sh's 1.2 GB address-space cap, taking the whole shared-server class
+        # down with it - a test heavy enough to break the runner is a test that does not run.
+        tmp = tempfile.mkdtemp(prefix="mt_sse_")
         try:
-            for _ in range(MAX_LIVE_STREAMS + 5):
-                s = socket.create_connection(("127.0.0.1", self.port), timeout=5)
-                s.sendall(("GET /live?date=%s HTTP/1.1\r\nHost: 127.0.0.1\r\nCookie: %s\r\n\r\n"
-                           % (self.date, ck)).encode())
-                head = s.recv(64)
-                if b" 204 " in head:
-                    refused += 1
-                    s.close()
-                else:
-                    held.append(s)
-            self.assertGreaterEqual(refused, 1, "streams past the budget must be refused, not accepted")
-            self.assertLessEqual(len(held), MAX_LIVE_STREAMS, "the stream budget must be enforced")
-            st, _, _ = _http(self.port, "GET", "/")
-            self.assertEqual(st, 200, "ordinary requests must survive a wall of open SSE streams")
+            logdir = os.path.join(tmp, "logs"); os.makedirs(logdir)
+            day = "2026-07-01"
+            with open(os.path.join(logdir, "%s.log" % day), "w") as f:
+                f.write('"%s 10:00:00.000000" s 10.0.0.5 1 8.8.8.8 53 UDP DNS x.example "m (d)" (static)\n' % day)
+            trails = os.path.join(tmp, "t.csv")
+            with open(trails, "w") as f:
+                f.write("x.example,m (dummy),(static)\n")
+            port = _free_port()
+            cfg = os.path.join(tmp, "srv.conf")
+            with open(cfg, "w") as f:
+                f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\nMAX_LIVE_STREAMS 3\n" % port)
+                f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+                f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME t\nDISABLE_CHECK_SUDO true\n"
+                        % (logdir, trails))
+            proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            held, refused = [], 0
+            try:
+                for _ in range(60):
+                    try:
+                        socket.create_connection(("127.0.0.1", port), timeout=0.5).close(); break
+                    except OSError: time.sleep(0.25)
+                for _ in range(5):
+                    s = socket.create_connection(("127.0.0.1", port), timeout=5)
+                    s.sendall(("GET /live?date=%s HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n" % day).encode())
+                    if b" 204 " in s.recv(64):
+                        refused += 1; s.close()
+                    else:
+                        held.append(s)
+                self.assertEqual(len(held), 3, "the stream budget must be enforced exactly")
+                self.assertEqual(refused, 2, "streams past the budget must be refused, not accepted")
+                st, _, _ = _http(port, "GET", "/")
+                self.assertEqual(st, 200, "ordinary requests must survive a wall of open SSE streams")
+                # a closed stream returns its slot, so the budget is a ceiling and not a one-way latch
+                held.pop().close()
+                time.sleep(1.5)
+                s = socket.create_connection(("127.0.0.1", port), timeout=5)
+                s.sendall(("GET /live?date=%s HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n" % day).encode())
+                self.assertNotIn(b" 204 ", s.recv(64), "a released slot must be reusable")
+                s.close()
+            finally:
+                for s in held:
+                    try: s.close()
+                    except Exception: pass
+                proc.terminate(); proc.wait(timeout=5)
         finally:
-            for s in held:
-                try: s.close()
-                except Exception: pass
+            import shutil; shutil.rmtree(tmp, ignore_errors=True)
 
     def test_counts_are_scoped_to_the_session_networks(self):
         # /events has always honoured netfilters; /counts reported the GLOBAL daily totals to every
