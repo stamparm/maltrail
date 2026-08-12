@@ -33,7 +33,8 @@ pub const CONSONANTS: &str = "bcdfghjklmnpqrstvwxyz";
 pub const VALID_DNS_NAME_REGEX: &str = r#"\A[a-zA-Z0-9._-]*\.[a-zA-Z0-9-]+\Z"#;
 pub const SUSPICIOUS_DIRECT_IP_URL_REGEX: &str = r#"\A[\w./-]*/[\w.]*\b(aarch|amd64\b|arm(\b|v?\d)|arcle-(750d|hs38)|exploit|m68k?\b|m[i1]ps\w{0,4}\b|mpsl\w?\b|pcc|powerp{1,2}c|pp-?c|riscv\w{0,3}\b|root|s390\w?\b|x86|x32|x64|i\d{1,2}\b|i386|i486|i586|i686|sparc|sh\b|wtf|yarn|zte)\Z"#;
 pub const GENERIC_SINKHOLE_REGEX: &str = r#"(?im)^(X-Sinkhole|Server): (malware-?)?sinkhole|\bSinkholed? by |^(X-Sinkholed?(-Domain)?|X-Zinkhole|X-Sinkhole):| a malware sinkhole|\bSinkhole( Project)?</title>|This is a sinkhole|bots party hard|computers connecting to this sinkhole| Sinkhole by |^Set-Cookie: snkz=|^Server: Apache [0-9.]+/SinkSoft|^Location:[^\n]+\.sinkdns\.org:80"#;
-pub const WHITELIST_UA_REGEX: &str = r#"AntiVir\-NGUpd|TMSPS|AVGSETUP|SDDS|Sophos|Symantec|internal dummy connection|Microsoft\-CryptoAPI"#;
+pub const WHITELIST_UA_REGEX: &str =
+    r#"AntiVir\-NGUpd|TMSPS|AVGSETUP|SDDS|Sophos|Symantec|internal dummy connection|Microsoft\-CryptoAPI"#;
 
 /// POTENTIAL_INFECTION_PORTS
 pub const POTENTIAL_INFECTION_PORTS: &[u16] = &[135, 139, 445, 1433, 3389, 6379, 6892, 6893, 6901];
@@ -76,52 +77,16 @@ pub const SUSPICIOUS_CONTENT_TYPES: &[&str] = &[
 ];
 
 pub const SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS: &[&str] = &[
-    ".apk",
-    ".bin",
-    ".chm",
-    ".class",
-    ".dll",
-    ".egg",
-    ".exe",
-    ".hta",
-    ".hwp",
-    ".lnk",
-    ".msi",
-    ".pif",
-    ".ps1",
-    ".pyz",
-    ".scr",
-    ".sct",
-    ".vsto",
-    ".wbk",
-    ".xpi",
+    ".apk", ".bin", ".chm", ".class", ".dll", ".egg", ".exe", ".hta", ".hwp", ".lnk", ".msi", ".pif", ".ps1", ".pyz",
+    ".scr", ".sct", ".vsto", ".wbk", ".xpi",
 ];
 
-pub const WHITELIST_DIRECT_DOWNLOAD_KEYWORDS: &[&str] = &[
-    "cgi",
-    "/scripts/",
-    "/_vti_bin/",
-    "/bin/",
-    "/pub/softpaq/",
-    "/bios/",
-    "/pc-axis/",
-];
+pub const WHITELIST_DIRECT_DOWNLOAD_KEYWORDS: &[&str] =
+    &["cgi", "/scripts/", "/_vti_bin/", "/bin/", "/pub/softpaq/", "/bios/", "/pc-axis/"];
 
-pub const SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION: &[&str] = &[
-    "?",
-    "..",
-    ".ht",
-    "=",
-    " ",
-    "'",
-];
+pub const SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION: &[&str] = &["?", "..", ".ht", "=", " ", "'"];
 
-pub const SUSPICIOUS_PROXY_PROBE_PRE_CONDITION: &[&str] = &[
-    "probe",
-    "proxy",
-    "echo",
-    "check",
-];
+pub const SUSPICIOUS_PROXY_PROBE_PRE_CONDITION: &[&str] = &["probe", "proxy", "echo", "check"];
 
 pub const WHITELIST_HTTP_REQUEST_PATHS: &[&str] = &[
     "fql",
@@ -137,56 +102,62 @@ pub const WHITELIST_HTTP_REQUEST_PATHS: &[&str] = &[
     "/gwx/",
 ];
 
-pub const WHITELIST_LONG_DOMAIN_NAME_KEYWORDS: &[&str] = &[
-    "blogspot",
-];
+pub const WHITELIST_LONG_DOMAIN_NAME_KEYWORDS: &[&str] = &["blogspot"];
 
-pub const LOCAL_SUBDOMAIN_LOOKUPS: &[&str] = &[
-    "wpad",
-    "autodiscover",
-    "_ldap._tcp",
-];
+pub const LOCAL_SUBDOMAIN_LOOKUPS: &[&str] = &["wpad", "autodiscover", "_ldap._tcp"];
 
-pub const CONDENSE_ON_INFO_KEYWORDS: &[&str] = &[
-    "attacker",
-    "reputation",
-    "scanner",
-    "user agent",
-    "tor exit",
-    "port scanning",
-    "potential infection",
-];
+pub const CONDENSE_ON_INFO_KEYWORDS: &[&str] =
+    &["attacker", "reputation", "scanner", "user agent", "tor exit", "port scanning", "potential infection"];
 
 /// (description, regex) - scanned in order; the FIRST match wins
 pub const SUSPICIOUS_HTTP_REQUEST_REGEXES: &[(&str, &str)] = &[
-    ("potential sql injection", r#"information_schema|sysdatabases|sysusers|floor\(rand\(|ORDER BY \d+|\bUNION\s+(ALL\s+)?SELECT\b|\b(UPDATEXML|EXTRACTVALUE)\(|\bCASE[^\w]+WHEN.*THEN\b|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR\(|\bCOUNT\(\*\)|\b(pg_)?sleep\(|\bSELECT\b.*\bFROM\b.*\b(WHERE|GROUP|ORDER)\b|\bSELECT \w+ FROM \w+|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+|ODBC;DRIVER|\bINTO\s+(OUT|DUMP)FILE|\bDROP[^\w]+(TABLE|DATABASE)\b"#),
+    (
+        "potential sql injection",
+        r#"information_schema|sysdatabases|sysusers|floor\(rand\(|ORDER BY \d+|\bUNION\s+(ALL\s+)?SELECT\b|\b(UPDATEXML|EXTRACTVALUE)\(|\bCASE[^\w]+WHEN.*THEN\b|\bWAITFOR[^\w]+DELAY\b|\bCONVERT\(|VARCHAR\(|\bCOUNT\(\*\)|\b(pg_)?sleep\(|\bSELECT\b.*\bFROM\b.*\b(WHERE|GROUP|ORDER)\b|\bSELECT \w+ FROM \w+|\b(AND|OR|SELECT)\b.*/\*.*\*/|/\*.*\*/.*\b(AND|OR|SELECT)\b|\b(AND|OR)[^\w]+\d+['\") ]?[=><]['\"( ]?\d+|ODBC;DRIVER|\bINTO\s+(OUT|DUMP)FILE|\bDROP[^\w]+(TABLE|DATABASE)\b"#,
+    ),
     ("potential xml injection", r#"/text\(\)='"#),
     ("potential php injection", r#"<\?php|php://input"#),
     ("potential ldap injection", r#"\(\|\(\w+=\*"#),
-    ("potential xss injection", r#"<script.*?>|\balert\(|(alert|confirm|prompt)\((\d+|document\.|response\.write\(|[^\w]*XSS)|on(mouseover|error|focus|transitionend)=[^&;\n]+\("#),
+    (
+        "potential xss injection",
+        r#"<script.*?>|\balert\(|(alert|confirm|prompt)\((\d+|document\.|response\.write\(|[^\w]*XSS)|on(mouseover|error|focus|transitionend)=[^&;\n]+\("#,
+    ),
     ("potential xxe injection", r#"\[<!ENTITY"#),
     ("potential ssti injection", r#"\${[^&]+\}|\$\{\{[^&]+\}\}"#),
-    ("potential data leakage", r#"im[es]i=\d{15}|iccid=[a-zA-Z0-9]{18,22}|(mac([aA]ddress)?|sid)=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}|([a-z0-9_.+-]+@[a-z0-9-.]+\.[a-z]+\b.{0,100}){4}|(telnum|telcompany)=[a-zA-Z0-9-]+"#),
+    (
+        "potential data leakage",
+        r#"im[es]i=\d{15}|iccid=[a-zA-Z0-9]{18,22}|(mac([aA]ddress)?|sid)=([0-9a-f]{2}:){5}[0-9a-f]{2}|sim=\d{20}|([a-z0-9_.+-]+@[a-z0-9-.]+\.[a-z]+\b.{0,100}){4}|(telnum|telcompany)=[a-zA-Z0-9-]+"#,
+    ),
     ("config file access", r#"\.ht(access|passwd)|\bwp-config\.php"#),
-    ("potential remote code execution", r#"\$_(REQUEST|GET|POST)\[|xp_cmdshell|shell_exec|exec_code|shell:::\{|oscmd\(|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|tftp -|wget http|curl -O|sh /tmp/|touch /tmp/|cmd\.exe|/bin/(ba)?sh\b|/sbin/launchd\b|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|chmod +x\b|base64 -d|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file)|ms-msdt:|mhtml:ftp:|jndi:(corba|dns|http|iiop|n(d|i)s|ldap[s]?|rmi):?|base64:JHtqbmRp|ipconfig|net (config|view)|nltest|netsh (firewall|wlan)|\$\{IFS\}|getRuntime\(\)\.exec\(|\.execSync\("#),
-    ("potential directory traversal", r#"(\.{2,}[/\\]+){3,}|/etc/(group|passwd|shadow|issue|hostname|hosts|sudoers)|[/\\](boot|system|win)\.ini|[/\\]system32\b|%SYSTEMROOT%"#),
-    ("potential web scan", r#"(acunetix|injected_by)_wvs_|SomeCustomInjectedHeader|some_inexistent_file_with_long_name|testasp\.vulnweb\.com/t/fit\.txt|www\.acunetix\.tst|\.bxss\.me|thishouldnotexistandhopefullyitwillnot|OWASP%\d+ZAP|chr\(122\)\.chr\(97\)\.chr\(112\)|Vega-Inject|VEGA123|vega\.invalid|PUT-putfile|w00tw00t|muieblackcat"#),
-    ("potential dns changer", r#"\b(dhcpPriDns|dhcpSecDns|staticPriDns|staticSecDns|staticThiDns|PriDnsv6|SecDnsv6|ThiDnsv6|staticPriDnsv6|staticSecDnsv6|staticThiDnsv6|dnsipv4|dns2ipv4|dnsipv6|dns2ipv6|pppoePriDns|pppoeSecDns|wan_dns1|wan_dns2|dnsPrimary|dnsSecondary|dnsDynamic|dnsRefresh|DNS_FST|DNS_SND|dhcpPriDns|dhcpSecDns|dnsserver|dnsserver1|dnsserver2|dns_server_ip_1|dns_server_ip_2|dns_server_ip_3|dns_server_ip_4|dns1|dns2|dns3|dns4|dns1_1|dns1_2|dns1_3|dns1_4|dns2_1|dns2_2|dns2_3|dns2_4|wan_dns_x|wan_dns1_x|wan_dns2_x|wan_dns3_x|wan_dns4_x|wan_dnsenable_x|dns_status|p_DNS|a_DNS|uiViewDns1Mark|uiViewDns2Mark|uiViewDNSRelay|is_router_as_dns|Enable_DNSFollowing|domainserverip|DSEN|DNSEN|dnsmode|dns%5Bserver1%5D|dns%5Bserver2%5D)="#),
+    (
+        "potential remote code execution",
+        r#"\$_(REQUEST|GET|POST)\[|xp_cmdshell|shell_exec|exec_code|shell:::\{|oscmd\(|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|tftp -|wget http|curl -O|sh /tmp/|touch /tmp/|cmd\.exe|/bin/(ba)?sh\b|/sbin/launchd\b|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|chmod +x\b|base64 -d|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file)|ms-msdt:|mhtml:ftp:|jndi:(corba|dns|http|iiop|n(d|i)s|ldap[s]?|rmi):?|base64:JHtqbmRp|ipconfig|net (config|view)|nltest|netsh (firewall|wlan)|\$\{IFS\}|getRuntime\(\)\.exec\(|\.execSync\("#,
+    ),
+    (
+        "potential directory traversal",
+        r#"(\.{2,}[/\\]+){3,}|/etc/(group|passwd|shadow|issue|hostname|hosts|sudoers)|[/\\](boot|system|win)\.ini|[/\\]system32\b|%SYSTEMROOT%"#,
+    ),
+    (
+        "potential web scan",
+        r#"(acunetix|injected_by)_wvs_|SomeCustomInjectedHeader|some_inexistent_file_with_long_name|testasp\.vulnweb\.com/t/fit\.txt|www\.acunetix\.tst|\.bxss\.me|thishouldnotexistandhopefullyitwillnot|OWASP%\d+ZAP|chr\(122\)\.chr\(97\)\.chr\(112\)|Vega-Inject|VEGA123|vega\.invalid|PUT-putfile|w00tw00t|muieblackcat"#,
+    ),
+    (
+        "potential dns changer",
+        r#"\b(dhcpPriDns|dhcpSecDns|staticPriDns|staticSecDns|staticThiDns|PriDnsv6|SecDnsv6|ThiDnsv6|staticPriDnsv6|staticSecDnsv6|staticThiDnsv6|dnsipv4|dns2ipv4|dnsipv6|dns2ipv6|pppoePriDns|pppoeSecDns|wan_dns1|wan_dns2|dnsPrimary|dnsSecondary|dnsDynamic|dnsRefresh|DNS_FST|DNS_SND|dhcpPriDns|dhcpSecDns|dnsserver|dnsserver1|dnsserver2|dns_server_ip_1|dns_server_ip_2|dns_server_ip_3|dns_server_ip_4|dns1|dns2|dns3|dns4|dns1_1|dns1_2|dns1_3|dns1_4|dns2_1|dns2_2|dns2_3|dns2_4|wan_dns_x|wan_dns1_x|wan_dns2_x|wan_dns3_x|wan_dns4_x|wan_dnsenable_x|dns_status|p_DNS|a_DNS|uiViewDns1Mark|uiViewDns2Mark|uiViewDNSRelay|is_router_as_dns|Enable_DNSFollowing|domainserverip|DSEN|DNSEN|dnsmode|dns%5Bserver1%5D|dns%5Bserver2%5D)="#,
+    ),
 ];
 
 pub const SUSPICIOUS_HTTP_PATH_REGEXES: &[(&str, &str)] = &[
     ("non-existent page", r#"defaultwebpage\.cgi"#),
-    ("potential web scan", r#"inexistent_file_name\.inexistent|test-for-some-inexistent-file|long_inexistent_path|some-inexistent-website\.acu"#),
+    (
+        "potential web scan",
+        r#"inexistent_file_name\.inexistent|test-for-some-inexistent-file|long_inexistent_path|some-inexistent-website\.acu"#,
+    ),
 ];
 
 /// (char, percent-encoding) applied to path/post_data before logging
-pub const SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS: &[(&str, &str)] = &[
-    ("(", "%28"),
-    (" ", "%20"),
-    (")", "%29"),
-    ("\r", "%0D"),
-    ("\n", "%0A"),
-];
+pub const SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS: &[(&str, &str)] =
+    &[("(", "%28"), (" ", "%20"), (")", "%29"), ("\r", "%0D"), ("\n", "%0A")];
 
 /// SUSPICIOUS_UA_REGEX, built by core/settings.py:read_ua() from data/ua.txt
 /// (each line kept verbatim if it compiles as a regex, else re.escape()d; lines
@@ -194,7 +165,33 @@ pub const SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS: &[(&str, &str)] = &[
 pub const SUSPICIOUS_UA_REGEX: &str = r#"(?i)\(\) { :;|2search|404search|91cast|\A\w{1,2}\Z|\A[^ ]\Z|\(spkg\)|_test_|aaaabbb|absinthe|\Aaccess\b|access down|acunetix|ad-protect|\Aadlib|agavadwnl|\Aagent\Z|alawar toolbar|\Aalina v|\Aanonym|antispyware|antivermeans|antivirgear|anycleaner|apachebench|api-guide test program|\Aasd\Z|askpartner|asktoolbar|asmupdater|atomic_email_hunter|\Aatsu|attacker|auctionplusup|autodl|autohotkey|autoit|\Aav2010|\Ab register|babykrokodil|\Ababylon|backdoor|backdor|backman|bad_bot|\Abar\Z|bdsclk|bdwinrun|beacon|bgroom|binget|bitkinex|blackhat|blacksun|blahrx|bnddriveloader|bndveano4getdownldr|bot (scan|search)|bot for jce|\Abrowser\Z|bsqlbf|bugmaal|\Abuild|\Abundle\Z|\Abwl\Z|changhuatong|chilkatupload|\Achk profile|\Achrome( [\d.]+)?\Z|\Acityreview|\Acleancop|clickteam|clshttp|\Acommonname|\Aconnector v|coolstreaming|\Acount|\Acounters|\Acpush_|crazybro|crowdstrike|cs fingerprint module|\Actt\Z|customspy|cyberdog|damn small|darecover|darkness|datacha0s|\Adbcount|decebavl|deepdoupdate|\Ademo\Z|\Ademomake|dialer|\Adinstaller|dirbuster|dns extractor|doctorpro|doctorvaccine|doshowmeanad|\Adotbot|downing|\Adownload agent\Z|download master|\Adownloaded|\Adownloader\Z|\Adownloadmr|drivecleaner|drpcclean|dsmbvctfre|\bdummy\b|eeloader|egypack|\Aei\Z|emailsiphon|errn200|errornuker|\Aers\Z|\Aesb\Z|eshopee|evnuker|\Aexabot|\Aexample\Z|\Aexe2|\Aexplorer\Z|ezshop|\Aezula|facecooker|fast browser search|favupdate|fdmuiless|\Afeat\b|\Afetcher\b|fhscan|fian3manager|\Afile\b|filebulldog|filedownloader|fimap|\Afirefox( [\d.]+)?\Z|fmbvdfresct|\Afoca|folderwin|forthgoer|fs3update|fsl \d|fucking scanner|fullstuff|fwversiontestagent|gabpath|\Agator|\Agbot|general antivirus|get_site|getjob|gh20|giftz|\Aglobal\Z|go-diva|godzilla|gomtour|\Agoogle page|gsa-crawler|gtbank|guidtracker|Hakai/2.0|hardcore software|havij|\Ahelpsrvc|hoic|http_connect|http_down|http_filedown|http_get_comm|\Ahttp_query|httperf|httpfiledown|httpgetdata|httping|httrack|huai_huai|hydra|i-scan|\biamx|ibsband-|\Aie\Z|ie6 on windows xp|ie_6\.0|iedefender|iefeatsl|\Aiep\Z|ietoolbar|\Aiexplore(r)?( [\d.]+)?\Z|\Aim download|immoral|inetall|\Ainfobox|\Ainstall_|installcapital|installnotify|\Ainternet\Z|internet  explorer|internet antivirus|\Ainternetsecurity|invokead|ioinstall|isc systems irc|isecu|ismazo|istsvc|\Aisupd|\Aiwin|\Aiwonsearch|jorgee|krmak|krsystem|kuku|\ALARK|letitgo|\blibweb|lineguide|linkrunner|live enterprise suite|lmaokaazldr|\bloader|lobo lunar|\Alocus|\bloic|\Alotto|lsosss|\Alynx\Z|m a mu mu mu|machaon|\bmacrovision_dm|magic netinstaller|malwarewipe|\bmama\b|masscan|mazilla|\Ambar|mbescvdfrt|\Amc_v1|\Amdms|mdodo|\Ameinv\d|metasploit|microgaming install program|\Amicrosoft\Z|mirar_|missigua locator|morfeus|mot-mpx220|moxilla|moziea|mozila|\Amozilla ( [\d.]+)?\Z|mozillar|mozzila|mrgud|\Ams\Z|msdn surfbear|msgplus3|\Amsie( [\d.]+)?\Z|msiecrawler|\bmsndown|\bmuseon|\bmy session|myagent|\bmyie\b|mypcdoc|mysqloit|myway|\Anavhelper|nento|\bnento|neonabyupdate|nessus|\Anetcfg|netinstaller|netscafe|netsparker|nexpose|nguideup|nikto|nit_love|nmap|\Anobo|nqx315|nsauditor|nsis_inetc|\Ansisdl|nuker|nv32ts|offline explorer|oinc|onandon|openpage|openvas|\Aopera( [\d.]+)?\Z|\Aossproxy|ossproxy|our_agent|owasp|owasp_secret_browser|pangolin|\Apass\Z|pcclear|\Apcdoc|pcflashbang|\Apcsafe|pcsafe|phpcrawl|pilipinas|pinballcorp|pint_agency|pivim|pockethttp|poller|\Apopup|printf ["']|privoxy|proscan-down|proxydown|\Apsi\Z|\Apts\Z|\Apwmi|pxyscand|qdrbi starter|qiu shou gou|qqgame|\Aqvod|rangecheck/|recon-ng|rekom|releasexp|rescue/|revolt|\Arevolution|rhyno321|richcasino|rivest|rogue|rome0321|rookie|\brx bar|\Asaiv|\Asave\Z|scanalert|scrapebox|\Asearch toolbar|searchprotect|\Asearchtool|\Asecurityinternet|sefastsetup|\Asendfile|seobot|sextrackerwsi|sgrunt|\Ashell|\Ashini|\bsi25|sicklebot|sickloader|\Asidebar|\Asidesearch|simpleclient|sitelockspide|sitesnagger|sitesucker|skolovani|skw000|skypee|slayer|\bsleep\b|smaal|smart-rtp|\Asme32|smileware|snatch-system|snoopstick|sogouexplorerminisetup|sogouime|something|\Asosospider|speedrunner|sprout game|spydawn|spyheal|spylocked|sql power injector|sqlmap|sqlninja|srinstaller|srrecover|ssol netinstaller|statistican|stbhoget|steroid download|sucuri integrity monitor|suggestion|sun4u|synapse|system32|sznotifyident|tabtoolbarup|talwinhttpclient|tbonas|tcbfrvdems|tear application|teleport|\Atesla|\Atest\Z|\Atiehttp|\Atiny|\Atoolbar|tools\.ua\.random|\Atpsystem|\Atravel update|trymedia_dm_|\Atsa/|twiceler|u2clean|ubrenquatrorusdldr|\Audonkey|ultimate fixer|\Aumbra\Z|\Aunknown|\Aupdate\Z|update internet antivirus|\Aupdater\Z|\Aupdates downloader|updatesodui|\Auphttp|\Aus\Z|\Auser agent|user_check|\Avaccine|vaccinekiller|\Avb wininet|vbtagedit|vbusers|vctestclient|vertexnet|vhibot|vikiller ctrl|\Aviper|virus_kill|viruscheck|virusheat|virusprotectpro|vmozilla|vomba|vulnerable|vulture|w00tw00t|w3af|wb v\d|webcount|\Awebfile|webstripper|webvulncrawl|wep search|\Awget( \d)?\Z|whcc|\Awhitehat|widgitoolbar|winbutler|windoss|\Awindows 5.1 \(2600\)|\Awindows internet|windows updates manager|winfix master|winfixmaster|wininetget/|\Awinlogon|\Awinsoftware|wintouch|wizpop|\Awnames|worked|wpscan|wt_get_comm|\Awta_|wtinstaller|wtrecover|xehanort321|xiehongwei|xmlset_roodkcable|xsock config|xxx|\Ayandex|yhrbg|yodao|\Ayok agent|yourscreen|z00sagent|zc xml-rpc|\Azc xml-rpc|zc-bridgev|\Azcom|zealbot|zeroup|\bzmeu\b|\Azz_|JDatabaseDriverMysqli|4RR0B4R 4 X0T4 D4 TU4 M4E|Hello, World|Gemini|OSIRIS|Rift|NotRift|HaxerMen|jexboss|Hacks|Ronin|\AOof\Z|Cayosin|Cock|Blade/2.0|Hello-World|Hito|it\.promofferte|ransomware|Mozilla/4\.0\ \(compatible;\ Clever\ Internet\ Suite\)|QXQ_35|iq\.46|Geth|otlook|Nakuma|Miner|Unzip|Cakle|NoPublicity|NetSupport Gateway|NetSupport Manager|Google Chrome|Megumin|Snickers-Avtech|thricer|Owari|FA\.G\.4\.5|Mozilla/4.08 (Charon; Inferno)|MinGate|Liquor|dpost|Toata dragostea mea pentru diavola|revolt|jigpuzbcomkenhvladtwysqfxr|yudjmikcvzoqwsbflghtxpanre|mckvhaflwzbderiysoguxnqtpj|deogjvtynmcxzwfsbahirukqpl|fdmjczoeyarnuqkbgtlivsxhwp|yczfxlrenuqtwmavhojpigkdsb|dnlseufokcgvmajqzpbtrwyxih|hello|UniqUAF|Installer/23|binary_getter/1.0|KJW0rm|Finder/28|Finder/36|sENB2a36p61HSKES|Mozilla/5.3 (i686-iamsatan-mingw32)|Mozilla/5.2 (i686-w64-mingw32)|4M2yC5u1stom4U1se3r|NMS\.19|l33boLAMER|WinHTTP loader/1.0|WinHTTP Example/1.0|CertUtil URL Agent|OtherUser|Mozilla/5.0 (ENIAC; the Electronic Numerical Integrator and Computer)|Gluten Free Crawler/1.0|givmafile|parsijoo-bot|Kim Jong-un Evil Browser|underworld|system-update|test_hInternet|installer-agent|sleep 300000|MediaControl|ApacheBench|Ankit|\ALicense\Z|Testingus|Mozilla/6\.1\ \(compatible;\ MSIE\ 9\.0;\ Windows\ NT\ 5\.3;\ Trident/5\.0\)|928776C4AD04B453186FF486335CB3D2|backdoorbot|CholTBAgent|HttpBrowser/1.0|IczelionDownLoad|SJZJ|Mozilla/5.0 WinInet|Cristmas Mystery|O/9.27 (W; U; Z)|arachni|BFAC|brutus|cgichk|core-project|crimscanner|domino hunter|dotdotpwn|FHScan Core|floodgate|get-minimal|gootkit auto-rooter scanner|grendel-scan|inspath|internet ninja|jaascois|\bmetis\b|morfeus fucking scanner|n-stealth|pmafind|security scan|springenwerk|teh forest lobster|uil2pn|\bvega\b|voideye|webshag|webvulnscan|Mozilla/5.0 (Windows NT 10.0; &)|ADMIN-PC|BKRBR|USER-PC|WSHRAT|Mozilla/4\.0\ \(compatible;\ RMS\)|webmin|=Mozilla|\A123\Z|\ACompatible\Z|\Acv_v\Z|\ADigital\Z|\AESET Installer\Z|\Ahhh\Z|\Ahttps\Z|\AHTTPGET\Z|\Ai am ddos\Z|\AIm Luo\Z|\AINet\Z|\AIST\Z|\Akav\Z|\Amin\Z|\AMs\Z|\AMy Agent\Z|\AMy_App\Z|\AMz\Z|\AOur_Agent\Z|\AQQ\Z|\ATestAgent\Z|\AVersion|\AWindows XP\Z|\AWindows 7\Z|\AWindows 8\Z|\AWindows 10\Z|\AXML\Z|\Axr\Z|\AZilla\Z|\Azwt\Z|Accessing|AdiseExplorer|adlib|adsntD|aguarovex|Aldi Bot|alertup|angel|antispyprogram|aria2|Atomic_Email_Hunter|acHTTP component|auHTTP component|AutoUpgrader component|AV1|AVP2006IE|Avzhan|BigFoot|Brontok|Download App|DownloadNetFile|DownloadMR|DriveCleaner|Caesar|CFS Agent|CFS_DOWNLOAD|checkonline|chek|ChilkatUpload|ClickAdsByIE|curl53|CustomExchangeBrowser|Damien|Downloader1.2|ekeoil|ElectroSun|ErrCode|ExampleDL|FileNolja|Firef0x|Firefox\.\.\.|FOCA|Forthgoner|GeneralDownloadApplication|GetUrlSize|Google page|google/dance|hacker|Hentai|HTTP_Connect_|HTTP Downloader|HttpDownload|\bHTTPTEST|JEDI-VCL|Joseray|IAMDDOS|iamx|IE6 on Windows XP|ieagent|ieguideupdate|IEhook|IE/1.0|IEMGR|InHold|Inet_read|inetinst|Internet HTTP|ISearchTech|Ismazo|ISMYIE|keypack|KIARA|KKTone|kpangupdate|Kvadrlson|lessie|libsfml-network|Loands|LockXLS|Machaon|MadeBy|MacShield|MediaLabsSiteInstaller|miip|Microsoft WinRM|M0zilla|Mozil1a|Mozilla-web|Mozilla 1.02.45 biz|Mozilla 6.0|Mozilla/1\.0\ \(compatible;\ MSIE\ 8\.0|Mozilla/4.0 (SPGK)|Mozilla/4\.0\ \(compatible;\ MSIE\ 6\.0\)|Mozilla/4\.0\ \(compatible\ MSIE\ 7\.0\ na\ \.NET\ CLR\ 2\.0\.50727\ \.NET\ CLR\ 3\.0\.4506\.2152\ \.NET\ CLR\ 3\.5\.30729\)|Mozilla/4\.0\ \(compatible;\ MSIE\ 5\.0;\ Windows\ NT\ 2\.1;\ SV3\)|Mozilla/4.7|Mozilla/5\.0\ \(compatible,\ Viper\ 4\.0\)|Mozilla/5.0 (Windows NT 6.1; wget 3.0; rv:5.0)|Mozzila|MS Internet Explorer|ms_ie|MtGoxBackOffice|muhstik|MyAgent|MYURL|N0PE|NateFinder|nethelper|Nimo Software HTTP|node-XMLHttpRequest|NSIS_DOWNLOAD|okcpmgr|onedru|Opera/10.60 Presto/2.2.30|Opera/8.81|Opera/8.89|Opera/9.10|Opera/9.28|PcPcUpdater|Poker|Poller|PrivacyInfoUpdate|Quick Macros|ReadFileURL|RBRs|RFRudokop|RLMultySocket|runPatch|runUpdater|SAIv|sample|ScrapeBox|sections|Shaolin|sickness29a|SimpleClient|Skunkx|Snatch-System|Solar|SomeTimes|SRRemove|STORMDDOS|SUiCiDE|TBNotifier|Tsunami|\AUcheck|Ufasoft|up2dash|updater_agent|Varlok|\bVB Http|VERTEXNET|WebForm|WINDOWS_LOADS|WindSoft|WinProxy|WINS_HTTP_SEND|WINTERNET|WT-User-Agent|xSock|XXXPornToolbar|Yakuza|Yandesk|YourUserAgent|Yowai|YTDDOS|DEMONS|Mozilla/4\.0\ \(compatible;\ MSIE6\.0b;\ Windows\ NT\ 5\.1\)|N0sK0Y1OK1130Sav|Mozilla/4\.0\ \(compatible;\ HRD\ Utilities\ by\ I4FYV\)|Mozilla/4\.0\ \(compatible;\ MSIE\ 8\.0;\ Win32\)|ACwDTLiV|hots scot|joxypoxy|\Alex\Z|\Aagent\Z|HardCore|Adzq41ceq52e353512hSfj|Botnet by Danij|Tzcdrnt|Firef0x|BURAN|USRUE-VNC|Aldi Bot|Hello, poo|DMFR|51c778909b52d45286a175a24e8daf42cb6dbe43eb|Mozilla 6\.0|ouija_a.rc|ouija_a.rm|ouija_a.rm4|ouija_a.rm4l|ouija_a.rm4t|ouija_a.rm4tl|ouijaa.rm4tll|ouija_a.rmv4l|ouija_a.rm5|ouija_a.rm5n|ouija_a.rm6|ouija_a.rm64|ouija_a.rm7|ouija_d.bg|ouija_e.xploit|ouija_i.486|ouija_i.586|ouija_i.686|ouija_m.68k|ouija_m.ips|ouija_m.ips64|ouija_m.psl|ouija_m.ipsel|ouija_p.pc|ouija_p.pc2|ouija_p.pc440|ouija_p.owerppc|ouija_r.oot|ouija_r.oot32|ouija_s.h4|ouija_s.sh4|ouija_s.pc|ouija_s.parc|ouija_x.32|ouija_x.64|ouija_x.86|ouija_x.86_32|ouija_x.86_64|Christmas Mystery|Install Capital|BotLoader|KEFIR|TrickLoader|WinLoader|Xmaker|undefined|B4ckdoor|B4ckdoor-owned-you|Sa0as-owned-you|IEMoblie|KSKJJGJ|MR_ROBOT|dark_NeXus_Qbot|minerword|MSIE5.01|Qbot|\AChrome\Z|Naruto Uzumake|Mozilla/5\.0\ \(compatible;\ MSIE\ 9\.0;\ Windows\ NT\ 6\.1;\ Trident/5\.0;\ BOIE9;ENXA\)|Mozilla/5\.0\ \(compatible;\ MSIE\ 9\.0;\ Windows\ NT\ 6\.1;\ Win64;\ x64;\ Trident/5\.0;\ NP06\)|polaris|polaris botnet|vbrxmr|^[XxTtCc]{3}$|\bxtcbot\b|\bxtc bot\b|\bxtc botnet\b|botnet|Research Only|HTTPTool|94af05617f4e0479d766f422f611ad5c|msie 44|\AMicrosoft Internet Explorer\Z|WebMonitor Client|Mozilla/5\.0\ \(compatible;\ MSIE\ 7\.0;\ Windows\ NT\ 5\.1;\ InfoPath\.1\)|vkTSNOQeMcMuTaPWpQtJYbp|sv:\d; id:[a-z0-9]{8}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{12}|ItIsMe|Welcome|Embarcadero URI Client/1.0|Embarcadero|rubotUpdater|SanAntonio|PatriciaRoss|sdvntyer|\Auser_agent\Z|Lemon-Duck|Mozilla/4\.0\ \(compatible;\ MSIE\ 6\.0;\ Win32\)|\AMozilla/5.00\Z|CLCTR|MSIE 2.1|iLLSec-Avtech|\AUser-Agent User-Agent\Z|\AMTM\Z|StellaStella|\AM/1.0|Absent|WindowsNT|roodkcableoj28840ybtide|xmlset_roodkcableoj28840ybtide|DAMER|chroot-apach0day|apache 0day|GBN-VT|OpenVAS-VT|Mozilla/4\.0\ \(compatible;\ MSIE\ 7\.0;\ Windows\ NT\ 5\.1;\ InfoPath\.1\)|Steeler/3.5|COVID-19|vjw0rm|APEP/3.0|LMAO/2.0|\ADark\Z|\ASefa\Z|\Aneko\Z|Shinka|lahsdgs23523lsknvlsdegoet|\ABOT/0.1\Z|E9BC3BD76216AFA560BFB5ACAF5731A3|Mobile/7B405|Mobile/BADDA|4w160yBObknYBP|nvidafix|\AnoisreV\Z|\AotserP\Z|\AiniM\Z|\AarepO\Z|viperSoftx|\ASoftware License Checker\Z|<script src=[^\>]*>|Powerjacobb1|fasthttp|klmems|F02DAB86BCA47979D007EB507D3D1F1E|SiteBar|WinWord64|Trololo|\Auser\Z|Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40|crackim|Jarry-requests|SecureLine.Security.ESS.Update|PPPPPX|FunWebProducts|IE0006_ver1|Mozilla/5.0 (Windows NT 6.3; rv:48.0) Gecko/20100101 Firefox/48.0|SE2.XMetaSr|\Aaaaa\Z|FindMyiPhone/500|\AMy User-Agent\Z|WordPress/2.7|\AHi\Z|Firefox/40.1|ASUS2JS|\AESES\Z|MASAJS|MAGWJS|\AENGB\Z|GOOGLE-INDEXING|\Acso\Z|\AWin\Z|KrebsOnSecurity|\AAdInstall\Z|curl_cve_2017_11610|wget_cve_2017_11610|Netbounce|HelloBadPacketZ|SVUpdate|LanaiBotmarch|zerodium|zerodiumsystem|\AWHR\Z|involuntary|Moozilla|4M5yC6u4stom5U8se3r|MyCustomUser|\d?M\d?y\d?C\d?u\d?s\d?t\d?o\d?m\d?U\d?s\d?e\d?r\d?|cve_2017_11610|cve_2017_12149|cve_2017_5638|cve_2017_9841|cve_2019_0193|cve_2019_11581|cve_2019_3396|cve_2019_7238|cve_2020_14882|cve_2021_3129|Mozilla/4\.0\ \(compatible;MSIE\ 6\.0;\ Windows\ NT\ 5\.0|1081239ms736|Mozilla/5.0 Gecko/41.0 Firefox/41.0|Edg/79.0.309.68|Edg/83.0.478.64|Edg/100.0.1185.39|charris4ever|XAssTYou|MDDCJS|ENUSMSE|qToolbarButton|runscope/0.1|Microsoft Office Word 2014|REBOL|PologiyKolokol|AhrefsBot|HackSurfer|heritrix|PaintByNumber|Uirusu|EICAR|EICAR-STANDARD-ANTIVIRUS-TEST-FILE|Netlab360|WindowsPowerShell|Update v1.0|\*user\_agent\*|ipuku|Android Phone|Firefox'5.4|base64:JHtqbmRp|jndi:dns:|jndi:http:|jndi:ldap:|jndi:ldaps:|jndi:rmi:|jndi:nis|jndi:nds|jndi:corba|jndi:iiop|\(\?i\)\\\$\(\{\|%7B\)\(:\|%3A\)\{0,\}\-\\w\{0,\}\|\(\?i\)\\\$\(\{\|%7B\)\\w\{0,\}\\\$\(\{\|%7B\)\(:\|%3A\)\{0,\}\\w\{0,\}\-\?\|\(\?i\)\\\$\(\{\|%7B\)\\w\{0,\}\\\$\(\{\|%7B\)\\w\{0,\}\(:\|%3A\)\|\(\?i\)\\\$\(\{\|%7B\)\\w\{0,\}\(:\|%3A\)\|\(\?i\)7Bjndi\(:\|%3A\)\?|borchuk|nimaps|ekausif|Firefox/firefox|Gecko/geckotrail|geckoversion|\ASLCC2\Z|Mozilla/4\.0\ \(compatible;\)|MALC|SEND2|NOT SEND2|b3astmode|dogged9oxen|HTTP-Test-Program|Y29va2llcw==|MyApp|Loki/1.0|hobot|hubot|l9explore|Alpha Processor|BOTPA5BG8S|competible|phonesuite|SALLAMAILZILLA|UltimateHackerzTeam|\AMicrosoft Internet Updater\Z|Mozilla/0.xx|Mozilla/4.0 competible|dBrowser|CallGetResponse|dBrowser CallGetResponse|CobaltStrike|aimxxhwpcc|Virus|noandk|ve3xtest|Autoupdate|BoBrowser|LogEvents|VersionDwl|wb v1\.6\.4|OldAssBrowser|test-upload|mozilla_horizon|BKANAHEAFPEM|FastInvoice|bumblebee|dafom|\bTrident 18\.000\b|PureCrypter|Mozilla/9.9|svc/1.0|\brecord\b|Lingjiang|\bMANM; MANM\b|\bNP07; NP07\b|\bNP09; NP09\b|qwrqrwrqwrqwr|rqwrwqrqwrqw|mozzzzzzzzzzz|mmozzzzzzzzzz|D-M1-200309AC|D-M1-MSSP1|Frsg_stredf_o21_rutyyyrui_type|rutyyyrui|Havana/1.0|Mozilla/5.0_|TW96aWxs|Mozilla/777.0|Mozilla/5.0 Firefox/87.0|e4ECaCzC|\bUSERAGENT\b|QQDownload|Momentum|Hello, Momentum|lVali|Mozlila|Lilith|Lilith-Bot|Lilith-Bot/3.0|\bMASP\b|\bHTTP/1.1\b|FUCKUSA|\AWindows Explorer\Z|\bMAAU\b|Report Runner|\bRT/1.0\b|medusa-stealer|medusa|stealer|Example/1.0|Base/1.0|TakeMyPainBack|ZLoad|ZLoad/0.1|ZLoad-Software|Trailer/95.3.1132.33|\b20112211\b|\b23591\b|ZeroStresser|ZeroStresser Botnet|\bjosephine\b|\bsnventor\b|\binsufficient\b|::\/\.josephine\/|;;\/\.jumper\/|;;\/\.justly\/|;;\/\.insufficient\/|;;\/\.snventor\/|(;;|::)\/?\.?\w+\/?(;;|::)?|Mozilla 105\.01\.05|crazyk|hello crazyk|^mois$|\AEnAgent\Z|dvadcat|\AMozilla FireFox\Z|NimPlant|r00ts3c|r00ts3c-owned-you|^Abcd$|B1D3N|B1D3N\_RIM\_MY\_ASS|\b901785252112\b|^OK$|iMightJustPayMySelfForAFeature|AYAYAYAY1337|^None$|SmartLoader|^IOS 13\.5$|GunnaWunna|GunnaWunnaBlueTips|Zadanie|DuckTales|\Auploader\Z|condi-bbos|Mozilla/88.0|^Cat$|mfo4engo2m|Chnome|VisaoAPP|^Xmlst$|\bWindows NT 123\.9\b|c010101|GeekingToTheMoon|^Download$|GameInfo|OnionWClient|OnionWClient/1.0|SunShineMoonLight|MoonLight|SunShine|^TeslaBrowser/5.5$|Bunny|BunnyLoader|BunnyStealer|BunnyTasks|HeartBeat\_Sender|\)[\t]{3}[ ]{4}Gecko|4B4DB4B3|FireFox 17.13|Seetrol|SeetrolClient|SouthSide|inflammable|MrBidenNeverKnow|Nothing|qiQqi|YaPopalsyaNaTroyan|Microcrop|t\.me\/DeltaApi|JWrapper|JWrapperDownloader|Antarctica|h55u4u4u5uii5|muzcat|TixDll|AGCYRNRWWWFZZSWWFWDYDCVDN|SSLoad|SSLoad/1.1|QllXjxbyEvMuARVOztDiSZDNtQQb|kmdjdheyytgebfghehhenegsdfsdf|sarabi|sarabi xor|\/xevil\b|User-Agent:Mozilla|\bMALCJS\b|NIKMOK|Diamotrix|NuclearBot|Cherax-Loader|cur1-agent|AdvancedInstaller|President|PresidentPutin|Zoomer|FlappyBird|UNK_FlappyBird|\AUSPFR\Z|UNKNOWNSPFR|Keydrop.io|katz-ontop|DiabloNetTop|Microsoft Edge/1.0|OnlyScans|DataSender|Zephyr-Downloader|BQTLock|BQTLockClient|Kamasers|Kamasers C2 Client|System Updater/5.0|HijackBot|Custom C++|Custom C++ HTTP Client/1.0|MinerAlert|NanoRemote|NanoRemote/1.0|We deadass|deadass|TimeClient/1.0|work/1.0|\bUA WindowsPowerShell\b|MiraiSystem|MiraiSystem/1.0|TrashAgent|TrashAgent/1.0|NebulaStub|NebulaStub/1.0|nfjjlx|vabundanceVOI|SecureNet/1.2|MicrosoftAppStore/2001.0|YandexCloud/1.0|YandexUpdate/1.0|SecurityScanner/1.0|^winupdate$|Infinilate/1.0|Infinilate|2020stfbox/1.0|2020stfbox|Resoker|MicroStealer/1.0|MicroStealer|wininet/1.0|wininet/10.0.19044|LedgerChecker/1.0|LedgerChecker|Nexus/3.0|libredtail-http|\bureq\/3.0.10\b|DesktopCentral|DesktopCentral Agent|IPFetcher/1.0|Zoho Client/1.0|Zoho API Client/1.0|Zoho API C-Client/1.0|Zoho-C-Uploader/2.0|ZQuickSteal|ZQuickSteal/1.0|DEADBEEF|SakDriver|SakDriver/1.0|information_schema|sysdatabases|sysusers|SELECT[^\n]*FROM[^\n]*WHERE|\b(pg_)sleep\(|\bUNION\s+(ALL\s+)?SELECT\b"#;
 
 /// DLT_OFFSETS (core/settings.py, resolved for this platform)
-pub const DLT_OFFSETS: &[(i32, usize)] = &[(0, 4), (1, 14), (6, 22), (7, 6), (8, 16), (9, 4), (10, 21), (12, 0), (18, 4), (108, 4), (113, 16), (117, 48)];
+pub const DLT_OFFSETS: &[(i32, usize)] =
+    &[(0, 4), (1, 14), (6, 22), (7, 6), (8, 16), (9, 4), (10, 21), (12, 0), (18, 4), (108, 4), (113, 16), (117, 48)];
 
 /// IPPROTO_LUT (protocol number -> Maltrail protocol label)
-pub const IPPROTO_LUT: &[(u8, &str)] = &[(0, "IP"), (1, "ICMP"), (2, "IGMP"), (4, "IPIP"), (6, "TCP"), (8, "EGP"), (12, "PUP"), (17, "UDP"), (22, "IDP"), (29, "TP"), (41, "IPV6"), (43, "ROUTING"), (44, "FRAGMENT"), (46, "RSVP"), (47, "GRE"), (50, "ESP"), (51, "AH"), (58, "ICMPV6"), (59, "NONE"), (60, "DSTOPTS"), (103, "PIM"), (132, "SCTP"), (136, "UDPLITE"), (255, "RAW")];
+pub const IPPROTO_LUT: &[(u8, &str)] = &[
+    (0, "IP"),
+    (1, "ICMP"),
+    (2, "IGMP"),
+    (4, "IPIP"),
+    (6, "TCP"),
+    (8, "EGP"),
+    (12, "PUP"),
+    (17, "UDP"),
+    (22, "IDP"),
+    (29, "TP"),
+    (41, "IPV6"),
+    (43, "ROUTING"),
+    (44, "FRAGMENT"),
+    (46, "RSVP"),
+    (47, "GRE"),
+    (50, "ESP"),
+    (51, "AH"),
+    (58, "ICMPV6"),
+    (59, "NONE"),
+    (60, "DSTOPTS"),
+    (103, "PIM"),
+    (132, "SCTP"),
+    (136, "UDPLITE"),
+    (255, "RAW"),
+];

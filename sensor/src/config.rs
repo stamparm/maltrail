@@ -718,7 +718,7 @@ impl Config {
                     ConfigError(format!("invalid configuration value for 'CAPTURE_BUFFER_SIZE' ('{v}'): {e}"))
                 })?
             } else if capture_buffer > 0 {
-                capture_buffer.min(MAX_INFERRED_CAPTURE_RING).max(DEFAULT_CAPTURE_RING)
+                capture_buffer.clamp(DEFAULT_CAPTURE_RING, MAX_INFERRED_CAPTURE_RING)
             } else {
                 DEFAULT_CAPTURE_RING
             }
