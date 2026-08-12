@@ -283,6 +283,32 @@ fn main() {
         }));
     }
 
+    // The overwhelmingly common packet on a real link: established TCP data to an address that is
+    // not a trail, carrying bytes the sensor will not act on. It matches nothing and its whole job
+    // is to leave quickly. Benchmarked because the "does this look like HTTP" gate runs on every
+    // one of them, so any cost there is paid at line rate - a per-call memmem::find here was
+    // costing 26 ns/packet more than the prebuilt searcher `Statics` already held.
+    {
+        let mut h = Harness::with_options(&trail_fixture, HarnessOptions::heuristics());
+        let payload = vec![0x17u8; 1400];
+        let bulk: Vec<Vec<u8>> = (0..64u16)
+            .map(|i| {
+                eth(
+                    &ipv4(6, "10.0.0.5", &format!("93.184.216.{}", i % 250), &tcp(50000 + i, 443, 0x10, &payload)),
+                    0x0800,
+                    None,
+                )
+            })
+            .collect();
+        let bytes = bulk.iter().map(|p| p.len() as u64).sum::<u64>() / bulk.len() as u64;
+        let mut i = 0usize;
+        results.push(bench("clean TCP pass-through (1400B)", "packet path", bytes, move || {
+            h.feed(&bulk[i % bulk.len()], 1_700_000_000, 0, 14);
+            i += 1;
+            1
+        }));
+    }
+
     // The same filter on a FULL-SIZED datagram. The burst digest is the one part of this path
     // whose cost could scale with the packet, and the small DNS case above cannot show that:
     // hashing the whole payload instead of a bounded prefix measured 1141 ns on 1200 bytes,

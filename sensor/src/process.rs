@@ -518,6 +518,29 @@ fn heuristics_sweep(st: &mut WorkerState, sec: u64, usec: u32) {
     }
 }
 
+/// The needle `Statics::f_http_slash` searches for; named so the length guard cannot drift from it.
+const HTTP_SLASH: &[u8] = b"HTTP/";
+
+/// Payload size at which the SIMD searcher starts beating a plain window scan.
+///
+/// Measured on this needle: at 8 bytes the searcher costs 6.33 ns against the scan's 2.06, at 32
+/// it is 7.55 against 13.75, and from there the scan grows linearly while the searcher stays
+/// flat. The crossover sits around two dozen bytes, so short payloads - TLS alerts, keepalives,
+/// interactive traffic - take the scan and bulk data takes the searcher.
+const HTTP_SCAN_CROSSOVER: usize = 24;
+
+/// Does `payload` contain `HTTP/`? Cheap either side of `HTTP_SCAN_CROSSOVER`.
+#[inline]
+fn contains_http_marker(st: &WorkerState, payload: &[u8]) -> bool {
+    if payload.len() < HTTP_SLASH.len() {
+        return false;
+    }
+    if payload.len() < HTTP_SCAN_CROSSOVER {
+        return payload.windows(HTTP_SLASH.len()).any(|w| w == HTTP_SLASH);
+    }
+    st.statics.f_http_slash.find(payload).is_some()
+}
+
 fn tcp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packet::IpHeader, sec: u64, usec: u32) {
     let Some(tcph) = packet::parse_tcp(ip_data, header.header_len) else {
         st.metrics.packets_truncated += 1;
@@ -554,7 +577,13 @@ fn tcp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packe
     let payload = tcph.payload(ip_data, header.header_len);
     // Only HTTP is acted on below, so skip the (costly) full-payload decode for the bulk of
     // line-rate traffic (TLS/443).
-    if memchr::memmem::find(payload, b"HTTP/").is_none() {
+    //
+    // Through the PREBUILT searcher. `memmem::find(haystack, needle)` builds a `Finder` - and its
+    // rare-byte ranker - on every call, which is the same trap `http::header_value_with` was
+    // written to avoid; `Statics` had already prepared `f_http_slash` for this needle and nothing
+    // used it. This gate runs on every TCP packet carrying a payload, so it is the single most
+    // executed line in the path: measured on a 1400-byte payload, 71.1 ns -> 39.1 ns.
+    if !contains_http_marker(st, payload) {
         return;
     }
     // `from_utf8_lossy` goes through `Utf8Chunks`, which the profile showed at 4.5% of the
@@ -1187,20 +1216,38 @@ fn classify_user_agent(st: &WorkerState, user_agent: &str) -> Option<String> {
 /// characters of the queried name, which is what has to be distinguishable here.
 const DIGEST_PREFIX: usize = 64;
 
-/// FNV-1a over a UDP payload prefix plus its length, to tell two datagrams of one burst apart.
+/// A 64-bit digest of a UDP payload prefix plus its length, to tell two datagrams of one burst
+/// apart.
 ///
-/// A collision costs one skipped packet in a burst, never a false event, so a 64-bit
-/// non-cryptographic hash is the right tool - and it runs on every UDP packet, so it has to stay
-/// a single bounded pass with no allocation. The length is mixed in so two datagrams sharing a
-/// prefix but differing in size do not collide.
+/// A collision costs one skipped packet in a burst, never a false event, so a non-cryptographic
+/// mix is the right tool - and it runs on every UDP packet, so it has to stay a single bounded
+/// pass with no allocation. The length is mixed in so two datagrams sharing a prefix but differing
+/// in size do not collide.
+///
+/// Consumes the prefix in 8-byte WORDS. The obvious byte-at-a-time FNV-1a here was a chain of 64
+/// dependent multiplies, and each one has to wait for the last: 56 ns per packet, which on the
+/// clean-UDP pass-through was more than half the entire packet cost. Eight word-sized multiplies
+/// do the same job in 6.2 ns.
 fn payload_digest(payload: &[u8]) -> u64 {
-    let mut hash: u64 = 0xcbf2_9ce4_8422_2325;
-    for b in &payload[..payload.len().min(DIGEST_PREFIX)] {
-        hash ^= *b as u64;
-        hash = hash.wrapping_mul(0x0000_0100_0000_01b3);
+    const MIX: u64 = 0x9E37_79B9_7F4A_7C15;
+    let take = payload.len().min(DIGEST_PREFIX);
+    let mut hash = payload.len() as u64 ^ 0xcbf2_9ce4_8422_2325;
+    let mut i = 0;
+    while i + 8 <= take {
+        let word = u64::from_le_bytes(payload[i..i + 8].try_into().unwrap());
+        hash ^= word;
+        hash = hash.wrapping_mul(MIX);
+        hash ^= hash >> 29;
+        i += 8;
     }
-    hash ^= payload.len() as u64;
-    hash.wrapping_mul(0x0000_0100_0000_01b3)
+    if i < take {
+        // Tail shorter than a word: zero-pad rather than read past the payload.
+        let mut tail = [0u8; 8];
+        tail[..take - i].copy_from_slice(&payload[i..take]);
+        hash ^= u64::from_le_bytes(tail);
+        hash = hash.wrapping_mul(MIX);
+    }
+    hash ^ (hash >> 32)
 }
 
 fn udp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packet::IpHeader, sec: u64, usec: u32) {
