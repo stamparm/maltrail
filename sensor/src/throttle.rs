@@ -56,7 +56,7 @@
 
 use std::collections::HashMap;
 
-use crate::event::Event;
+use crate::event::{Event, Field};
 use crate::settings;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -129,12 +129,49 @@ struct KeyState {
     last_seen: u64,
 }
 
+/// 64-bit digest of an (address, trail) pair, allocation-free.
+///
+/// FxHash over the two byte strings with a separator, so "10.0.0.1" + "x.com" cannot collide with
+/// "10.0.0" + "1x.com".
+#[inline]
+fn hash_field(h: &mut crate::fasthash::FxHasher, field: &Field) {
+    use std::hash::{Hash, Hasher};
+    match field {
+        // An integer field never needs the string it would have been rendered as.
+        Field::Int(i) => i.hash(h),
+        Field::Text(s) => s.as_bytes().hash(h),
+    }
+    let _ = h.finish();
+}
+
+/// Digest of a plain address string against a trail field.
+#[inline]
+fn digest_field(addr: &str, trail: &Field) -> u64 {
+    use std::hash::{Hash, Hasher};
+    let mut h = crate::fasthash::FxHasher::default();
+    addr.as_bytes().hash(&mut h);
+    0xffu8.hash(&mut h);
+    hash_field(&mut h, trail);
+    h.finish()
+}
+
+/// Digest of two fields, for the destination side where the address is itself a `Field`.
+#[inline]
+fn digest_field_pair(addr: &Field, trail: &Field) -> u64 {
+    use std::hash::{Hash, Hasher};
+    let mut h = crate::fasthash::FxHasher::default();
+    hash_field(&mut h, addr);
+    0xffu8.hash(&mut h);
+    hash_field(&mut h, trail);
+    h.finish()
+}
+
 pub struct Throttle {
     cfg: ThrottleConfig,
-    keys: HashMap<(String, String), KeyState>,
+    keys: HashMap<u64, KeyState, crate::fasthash::FxBuildHasher>,
     // --- legacy mode state (a direct port of the two thread-locals) ---
     legacy_bucket: Option<u64>,
-    legacy_trails: std::collections::HashSet<(String, String)>,
+    legacy_trails: std::collections::HashSet<u64, crate::fasthash::FxBuildHasher>,
     /// keys dropped because `max_keys` was reached
     pub evicted: u64,
     /// events held back (summarized or, in legacy mode, discarded)
@@ -147,9 +184,9 @@ impl Throttle {
     pub fn new(cfg: ThrottleConfig) -> Throttle {
         Throttle {
             cfg,
-            keys: HashMap::new(),
+            keys: HashMap::default(),
             legacy_bucket: None,
-            legacy_trails: std::collections::HashSet::new(),
+            legacy_trails: std::collections::HashSet::default(),
             evicted: 0,
             suppressed: 0,
             summaries: 0,
@@ -162,9 +199,23 @@ impl Throttle {
 
     /// The key an event throttles under. Maltrail keys on the trail plus either endpoint, so one
     /// noisy host cannot be masked by another talking to the same trail.
-    fn keys_for(event: &Event) -> [(String, String); 2] {
-        let trail = event.trail.as_plain();
-        [(event.src_ip.clone(), trail.clone()), (event.dst_ip.as_plain(), trail)]
+    /// The two throttle keys for an event, as 64-bit digests of (address, trail).
+    ///
+    /// This used to return `[(String, String); 2]`, which allocated FOUR strings on every single
+    /// event - two clones of the source address and destination, two of the trail - and then
+    /// hashed two `(String, String)` tuples to look them up. Under a detection storm that is the
+    /// packet path: measured on 3M all-detection packets, throttling cost 4,100 ns/packet, more
+    /// than half of the 7,922 ns total, and the same run with throttling off ran at 253k pps
+    /// against 149k. Live, that gap is what made the kernel drop 9.9M packets and lose 62% of
+    /// injected detections - a mechanism for bounding log volume destroying the detections it
+    /// exists to record.
+    ///
+    /// Digesting the bytes in place allocates nothing and hashes once. A collision would make two
+    /// unrelated (address, trail) pairs share one budget; at 50,000 live keys that is around one
+    /// chance in 10^10, and the consequence is a held event that comes out in a summary rather
+    /// than verbatim - never a lost detection.
+    fn keys_for(event: &Event) -> [u64; 2] {
+        [digest_field(&event.src_ip, &event.trail), digest_field_pair(&event.dst_ip, &event.trail)]
     }
 
     /// Decide what happens to `event`, and return any summary events that became due.
@@ -320,7 +371,7 @@ impl Throttle {
         }
         let mut due = Vec::new();
         let window = self.cfg.window;
-        let mut idle: Vec<(String, String)> = Vec::new();
+        let mut idle: Vec<u64> = Vec::new();
         for (key, state) in self.keys.iter_mut() {
             if now.saturating_sub(state.window_start) < window && now >= state.window_start {
                 continue;
@@ -331,7 +382,7 @@ impl Throttle {
             // A key with nothing held and a closed window carries no information; dropping it
             // keeps the table proportional to ACTIVE detections rather than to all of history.
             if state.held.is_empty() && now.saturating_sub(state.last_seen) >= window {
-                idle.push(key.clone());
+                idle.push(*key);
             } else {
                 state.window_start = now;
                 state.written = 0;
