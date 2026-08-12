@@ -1397,6 +1397,7 @@ embermillcollective.com
 endlesscanvasstudio.com
 estuaryquartz.com
 fjordepigraph.com
+fosvsr.ooguy.com
 galaxyvestibule.top
 glentraverse.com
 gmartph.shop
@@ -1442,6 +1443,7 @@ openmeadowlab.top
 pearljunction.top
 pewtercanto.top
 prismharbor.top
+promontorytome.com
 quasarcolonnade.top
 quietlanternhouse.com
 quietsummitworks.com
@@ -1462,6 +1464,7 @@ skylinemerchantstudio.com
 slatebeacon.top
 sorrelalmanac.top
 stoneharvest.top
+tarnandvermilion.com
 thistlechronicleworks.com
 thistleobservatory.top
 todocalefactores.top
@@ -1477,7 +1480,6 @@ watchprism.app
 westbrookexchange.com
 willowregistry.top
 willowsummit.top
-fosvsr.ooguy.com
 projectphp.duckdns.org
 
 # Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2025-03-12-v10877/2511
