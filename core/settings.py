@@ -118,7 +118,13 @@ CONSONANTS = "bcdfghjklmnpqrstvwxyz"
 BAD_TRAIL_PREFIXES = ("127.", "192.168.", "localhost")
 LOCALHOST_IP = {4: "127.0.0.1", 6: "::1"}
 POTENTIAL_INFECTION_PORTS = (135, 139, 445, 1433, 3389, 6379, 6892, 6893, 6901)
-IGNORE_DNS_QUERY_SUFFIXES = set(("arpa", "local", "guest", "intranet", "int", "corp", "home", "lan", "intra", "intran", "workgroup", "localdomain", "url", "alienvault", "dev", "example", "internal", "localnet", "test"))
+# Last labels that are NOT public namespace, so a query for one is local noise rather than a lookup.
+# "dev" and "int" were removed: both are delegated, publicly-registrable TLDs. .dev has been on
+# sale since March 2019 (Google Registry, whole TLD HSTS-preloaded), and the local-development
+# convention it used to stand for moved to .test - which is RFC 6761 reserved and stays here. While
+# "dev" was on this list every query for a .dev name was discarded BEFORE the trail lookup, so the
+# 7,658 .dev trails in a current set could never match however exactly they were listed.
+IGNORE_DNS_QUERY_SUFFIXES = set(("arpa", "local", "guest", "intranet", "corp", "home", "lan", "intra", "intran", "workgroup", "localdomain", "url", "alienvault", "example", "internal", "localnet", "test"))
 VALID_DNS_NAME_REGEX = r"\A[a-zA-Z0-9._-]*\.[a-zA-Z0-9-]+\Z"  # Reference: http://stackoverflow.com/a/3523068 (underscore: legal in a queried name - SRV/_dmarc/DKIM - and used by dynamic-DNS hosts, 134 static trails were unreachable without it; still rejected in the last label, where no real TLD has one)
 SUSPICIOUS_CONTENT_TYPES = ("application/vnd.ms-htmlhelp", "application/x-bsh", "application/x-chm", "application/x-ms-shortcut", "application/x-sh", "application/x-shellscript", "application/hta", "text/x-scriptlet", "text/x-sh", "text/x-shellscript", "application/x-ms-vsto")
 SUSPICIOUS_DIRECT_DOWNLOAD_EXTENSIONS = set((".apk", ".bin", ".class", ".chm", ".dll", ".egg", ".exe", ".hta", ".hwp", ".lnk", ".msi", ".pif", ".ps1", ".pyz", ".scr", ".sct", ".vsto", ".wbk", ".xpi"))

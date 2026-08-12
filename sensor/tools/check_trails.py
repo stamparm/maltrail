@@ -37,6 +37,7 @@ import sys
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 sys.path.insert(0, ROOT)
 
+from core.settings import IGNORE_DNS_QUERY_SUFFIXES  # noqa: E402
 from core.settings import VALID_DNS_NAME_REGEX  # noqa: E402
 
 VALID_DNS = re.compile(VALID_DNS_NAME_REGEX)
@@ -90,6 +91,14 @@ def problems(root):
                         found.append((path, number, key, "not punycode; the wire form is %s" % puny))
                     except Exception:
                         found.append((path, number, key, "not ASCII and not encodable as punycode"))
+                elif key.rsplit('.', 1)[-1] in IGNORE_DNS_QUERY_SUFFIXES:
+                    # The query is dropped by the ignore-suffix filter BEFORE the lookup, so this
+                    # trail can never match. Found by a volume test: "dev" sat on that list from
+                    # when .dev meant a local development name, and kept 7,658 real trails from
+                    # ever firing after it became a registrable gTLD in 2019.
+                    found.append((path, number, key,
+                                  "last label '%s' is in IGNORE_DNS_QUERY_SUFFIXES: the query is dropped before lookup"
+                                  % key.rsplit('.', 1)[-1]))
                 elif key.rsplit('.', 1)[-1].count('_'):
                     # VALID_DNS_NAME_REGEX accepts '_' in every label but the last, so only an
                     # underscore in the TLD position is still unreachable. (It used to reject the
