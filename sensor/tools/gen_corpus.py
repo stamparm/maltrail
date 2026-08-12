@@ -739,6 +739,37 @@ def build_real_cases(trails_file, per_bucket):
     samples["dns_subdomain"] = samples["dns_domain"]
     samples["http_host"] = samples["dns_domain"]
 
+    # A host/path trail whose BARE PATH is also a trail in its own right never produces the
+    # host-qualified trail text. Both sensors build their URL candidates as
+    # `for check in checks: for prefix in ('', host)`, so `/path` is the very first probe and
+    # matches one prefix EARLIER than `host/path`; the event is real, but it is labelled
+    # `(host)/path` after the path-only row. Feeds publish both forms often enough that 19 of a
+    # 25-trail sample here were such pairs, so the gate failed on a detection that had happened.
+    #
+    # Expect the text that is actually emitted, rather than dropping these from the must-detect
+    # list: `parity.py` matches expectations as substrings, and `/path` is a substring of
+    # `(host)/path`, so this still asserts the event and keeps the bucket's coverage.
+    #
+    # A second streaming pass rather than a set of every url_path trail: this sampler is
+    # deliberately O(per_bucket) in memory over a ~90 MB file, and there are at most
+    # `per_bucket` paths to ask about. Whitelisted rows do not count — they never load, so they
+    # cannot shadow anything.
+    shadowing_paths = set()
+    wanted_paths = set('/' + t.partition('/')[2] for t, _ in samples["host_path"])
+    if wanted_paths:
+        with open(trails_file) as f:
+            for row in csv.reader(f, delimiter=',', quotechar='"'):
+                if len(row) == 3 and row[0] in wanted_paths and not check_whitelisted(row[0]):
+                    shadowing_paths.add(row[0])
+
+    def expected_text(bucket, trail):
+        """The trail text an event will actually carry, which is not always the trail itself."""
+        if bucket == "host_path":
+            bare = '/' + trail.partition('/')[2]
+            if bare in shadowing_paths:
+                return bare
+        return trail
+
     cases, sampled, dead = [], {}, {}
     client = "10.13.13.13"
 
@@ -773,7 +804,7 @@ def build_real_cases(trails_file, per_bucket):
         # event, in BOTH sensors. That is the absolute check - parity alone would happily agree
         # on detecting nothing.
         reasons = dict((t, undetectable(bucket, t, i)) for t, i in trails)
-        cases.append((name, DLT_EN10MB, packets, [t for t, _ in trails if not reasons[t]], notes))
+        cases.append((name, DLT_EN10MB, packets, [expected_text(bucket, t) for t, _ in trails if not reasons[t]], notes))
         sampled[name] = trails
         dead[name] = [{"trail": t, "reason": r} for t, r in sorted(reasons.items()) if r]
 
