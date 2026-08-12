@@ -748,7 +748,21 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src * blob:; script-src 'self' 'unsafe-eval' https://stat.ripe.net; frame-src *; object-src 'none'; block-all-mixed-content;")
 
                         if os.path.basename(path) == "index.html":
-                            content = re.sub(b'\\s*<script[^>]+src="js/demo\\.js"></script>', b'', content)
+                            # demo.js exists for the public static demo, and main.js turns DEMO on
+                            # from its mere presence (`typeof window.getDemoCSV === "function"`).
+                            # So if this strip ever misses, a real operator is served FABRICATED
+                            # events and nothing says so - the dashboard looks entirely normal.
+                            #
+                            # The old pattern required the exact shipped spelling: double quotes,
+                            # one space, no attributes. `src='js/demo.js'` or a space before the
+                            # `>` slipped straight through. Match the tag however it is written,
+                            # then CHECK, and drop the whole line if anything survived - failing
+                            # closed here costs a static demo page, failing open costs trust in
+                            # every number on the screen.
+                            content = re.sub(br'\s*<script\b[^>]*\bsrc\s*=\s*["\']?[^"\'>]*\bdemo\.js[^>]*>\s*</script\s*>',
+                                             b'', content, flags=re.I)
+                            if b"demo.js" in content:
+                                content = b"\n".join(_ for _ in content.split(b"\n") if b"demo.js" not in _)
 
                         if extension not in (".htm", ".html"):
                             self.send_header(HTTP_HEADER.EXPIRES, "Sun, 17-Jan-2038 19:14:07 GMT")        # Reference: http://blog.httpwatch.com/2007/12/10/two-simple-rules-for-http-caching/

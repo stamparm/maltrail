@@ -541,6 +541,25 @@ class TestHttpd(unittest.TestCase):
         st, _, _ = _http(self.port, "POST", "/login", body=self._login_body("admin"))
         self.assertEqual(st, 200, "the window must expire and let a legitimate user back in")
 
+    def test_index_never_serves_the_demo_script(self):
+        """main.js turns DEMO on from the mere presence of demo.js.
+
+            var DEMO = (typeof window.getDemoCSV === "function");
+
+        So if the server's strip of that script tag ever misses, a real operator is shown
+        FABRICATED events - a normal-looking dashboard full of somebody else's fake traffic, with
+        nothing on screen saying so. It is the frontend's version of "looks fine, detects
+        nothing", and nothing tested it.
+
+        The strip used to require the exact shipped spelling of the tag, so re-quoting it or
+        adding an attribute in index.html would have been enough.
+        """
+
+        st, _, body = _http(self.port, "GET", "/")
+        self.assertEqual(st, 200)
+        self.assertNotIn(b"demo.js", body, "the served dashboard must never reference demo.js")
+        self.assertIn(b"js/main.js", body, "positive control: the real script is still served")
+
     def test_events_supports_open_ended_and_suffix_ranges(self):
         # The Range parser was `bytes=(\d+)-(\d+)`, so an end was mandatory. `bytes=N-` - the
         # natural way to tail a growing log, and what any non-browser client writes - matched
