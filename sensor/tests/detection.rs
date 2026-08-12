@@ -491,6 +491,34 @@ fn http_direct_download_heuristic() {
     let events = h.events();
     assert!(events.iter().any(|e| e.info.contains("direct .exe download")), "{events:?}");
     assert_eq!(events[0].trail, "dl.example(/setup.exe)");
+    // Negative control for the test below: with no forwarded-for header the source is the
+    // packet's own address and nothing is appended.
+    assert_eq!(events[0].src_ip, "10.0.0.5");
+}
+
+#[test]
+fn http_forwarded_for_is_appended_to_the_source() {
+    // A request arriving through a CDN or reverse proxy carries the real client in a
+    // forwarded-for header, and the event has to name it or the detection points at the proxy.
+    // Any of the three header names, in any case, and the search is over the RAW packet bytes.
+    for header in ["X-Forwarded-For", "x-forwarded-for", "True-Client-IP", "CF-Connecting-IP"] {
+        let request = format!(
+            "GET /setup.exe HTTP/1.1\r\nHost: dl.example\r\n{header}: 198.51.100.9\r\n\
+             User-Agent: curl/8\r\nAccept: */*\r\n\r\n"
+        );
+        let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
+        h.feed_ip(&http_packet(request.as_bytes(), "203.0.113.17", 50000), 1);
+        let events = h.events();
+        assert!(events.iter().any(|e| e.info.contains("direct .exe download")), "{header}: {events:?}");
+        assert_eq!(events[0].src_ip, "10.0.0.5,198.51.100.9", "{header}");
+    }
+
+    // A header that merely looks similar must not be picked up.
+    let request = "GET /setup.exe HTTP/1.1\r\nHost: dl.example\r\nX-Forwarded-Host: 198.51.100.9\r\n\
+                   User-Agent: curl/8\r\nAccept: */*\r\n\r\n";
+    let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
+    h.feed_ip(&http_packet(request.as_bytes(), "203.0.113.17", 50000), 1);
+    assert_eq!(h.events()[0].src_ip, "10.0.0.5");
 }
 
 #[test]

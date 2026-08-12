@@ -270,7 +270,7 @@ fn check_domain_inner(
     }
 
     if !result {
-        st.domain_clean.insert_if_seen_before(q.to_string(), ());
+        st.domain_clean.insert_if_seen_before_borrowed(q, ());
     }
 }
 
@@ -910,9 +910,13 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
         if let Some(raw_ua) =
             http::header_value_with(tcp_data, &st.statics.f_user_agent, "\r\nUser-Agent:".len(), &st.statics.f_crlf)
         {
-            let user_agent = http::unquote(raw_ua).trim().to_string();
+            // Borrowed unless the header is percent-encoded: the cache is keyed by `str`, so a
+            // hit — which is what a repeated user agent is, and they repeat heavily — no longer
+            // has to allocate a copy of the string first just to look it up.
+            let unquoted_ua = http::unquote_cow(raw_ua);
+            let user_agent = unquoted_ua.trim();
             if !user_agent.is_empty() {
-                let cached = st.user_agent.get(&user_agent).cloned();
+                let cached = st.user_agent.get(user_agent).cloned();
                 let result = match cached {
                     Some(v) => {
                         st.metrics.cache_hits += 1;
@@ -920,8 +924,8 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
                     }
                     None => {
                         st.metrics.cache_misses += 1;
-                        let computed = classify_user_agent(st, &user_agent);
-                        st.user_agent.insert(user_agent.clone(), computed.clone());
+                        let computed = classify_user_agent(st, user_agent);
+                        st.user_agent.insert(user_agent.to_string(), computed.clone());
                         computed
                     }
                 };
@@ -998,12 +1002,16 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
         return;
     }
 
-    // Forwarded-for headers are searched in the RAW packet bytes, case-insensitively.
+    // Forwarded-for headers are searched in the RAW packet bytes, case-insensitively. The
+    // literal pre-condition comes first: asking a case-insensitive alternation for capture
+    // groups walks the whole packet, and next to no request carries one of these headers.
     let mut src_ip_field = ep.src.render().as_str().to_string();
-    if let Some(caps) = st.statics.forwarded_for.captures(packet_bytes) {
-        if let Some(m) = caps.get(2) {
-            let forwarded = String::from_utf8_lossy(m.as_bytes()).to_string();
-            src_ip_field = format!("{src_ip_field},{forwarded}");
+    if st.statics.forwarded_for_pre_condition.is_match(packet_bytes) {
+        if let Some(caps) = st.statics.forwarded_for.captures(packet_bytes) {
+            if let Some(m) = caps.get(2) {
+                let forwarded = String::from_utf8_lossy(m.as_bytes()).to_string();
+                src_ip_field = format!("{src_ip_field},{forwarded}");
+            }
         }
     }
 
@@ -1108,17 +1116,20 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
             None => Cow::Owned(format!("{host}{path}")),
         };
         let parts = http::urlparse_path_query(&url);
-        let lowered_path = encoded_path.to_lowercase();
         let filename = parts.path.rsplit('/').next().unwrap_or("");
         let (name, extension) = http::splitext(filename);
-        let trail = format!("{host}({lowered_path})");
 
+        // The lower-cased path and the trail built from it are only ever read by the two emit
+        // arms below, and neither fires on ordinary traffic — building them up front meant two
+        // allocations per HTTP request to throw away. The whitelist scan moves behind the three
+        // cheap tests for the same reason; all five are pure predicates, so the order is free.
         if st.statics.suspicious_download_extensions.contains(extension)
             && !ep.dst.is_local()
-            && !st.statics.whitelist_direct_download.is_match(&lowered_path)
             && !parts.query.contains('=')
             && name.chars().count() < 10
+            && !st.statics.whitelist_direct_download.is_match(&encoded_path.to_lowercase())
         {
+            let trail = format!("{host}({})", encoded_path.to_lowercase());
             let info = format!("direct {extension} download (suspicious)");
             emit(
                 st,
@@ -1143,6 +1154,7 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
                 }
             }
             if let Some(desc) = hit {
+                let trail = format!("{host}({})", encoded_path.to_lowercase());
                 let info = format!("{desc} (suspicious)");
                 emit(
                     st,
