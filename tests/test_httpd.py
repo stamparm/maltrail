@@ -55,6 +55,33 @@ def _http(port, method, path, cookie=None, headers=None, body=None, timeout=10):
     return status, head_t, payload
 
 
+def _stop_server(proc):
+    """Stop a server subprocess without letting cleanup itself fail the test.
+
+    A bare `proc.wait(timeout=5)` raises TimeoutExpired, and raising inside a `finally` REPLACES
+    whatever the test was actually reporting - so a slow shutdown both fails a passing test and
+    hides the real error if there was one. That is exactly how this surfaced: green on three local
+    Python versions and in python:3.6-slim, red once on a contended CI runner, with the traceback
+    pointing at cleanup rather than at anything under test.
+
+    SIGTERM first so the server exits normally, then SIGKILL if it will not, and never propagate.
+    """
+
+    if proc is None or proc.poll() is not None:
+        return
+    proc.terminate()
+    try:
+        proc.wait(timeout=15)
+        return
+    except Exception:
+        pass
+    try:
+        proc.kill()
+        proc.wait(timeout=10)
+    except Exception:
+        pass
+
+
 class TestHttpd(unittest.TestCase):
     proc = None
     port = None
@@ -130,11 +157,7 @@ class TestHttpd(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         if cls.proc and cls.proc.poll() is None:
-            cls.proc.terminate()
-            try:
-                cls.proc.wait(timeout=5)
-            except Exception:
-                cls.proc.kill()
+            _stop_server(cls.proc)
 
     def setUp(self):
         if getattr(type(self), "_skip", None):
@@ -663,7 +686,7 @@ class TestHttpd(unittest.TestCase):
                 self.assertLessEqual(o["scanned"], o["selected"])
                 self.assertLess(o["scanned"], len(days), "scanned must count days READ, not days selected")
             finally:
-                proc.terminate(); proc.wait(timeout=5)
+                _stop_server(proc)
         finally:
             import shutil; shutil.rmtree(tmp, ignore_errors=True)
 
@@ -724,7 +747,7 @@ class TestHttpd(unittest.TestCase):
                 for s in held:
                     try: s.close()
                     except Exception: pass
-                proc.terminate(); proc.wait(timeout=5)
+                _stop_server(proc)
         finally:
             import shutil; shutil.rmtree(tmp, ignore_errors=True)
 
@@ -827,11 +850,7 @@ class TestTrailsEndpointMissingFile(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         if cls.proc and cls.proc.poll() is None:
-            cls.proc.terminate()
-            try:
-                cls.proc.wait(timeout=5)
-            except Exception:
-                cls.proc.kill()
+            _stop_server(cls.proc)
 
     def test_trails_missing_returns_empty_not_500(self):
         if getattr(type(self), "_skip", None):
@@ -918,11 +937,7 @@ class TestBlacklistAccessControl(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         if cls.proc and cls.proc.poll() is None:
-            cls.proc.terminate()
-            try:
-                cls.proc.wait(timeout=5)
-            except Exception:
-                cls.proc.kill()
+            _stop_server(cls.proc)
 
     def test_unauthenticated_pull_is_refused(self):
         st, _, body = _http(self.port, "GET", "/blacklist")
@@ -995,11 +1010,7 @@ class TestClearedSources(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         if cls.proc and cls.proc.poll() is None:
-            cls.proc.terminate()
-            try:
-                cls.proc.wait(timeout=5)
-            except Exception:
-                cls.proc.kill()
+            _stop_server(cls.proc)
 
     def setUp(self):
         # Each test owns the log and the cleared list: one of them APPENDS an event, and these
@@ -1082,11 +1093,7 @@ class TestAuthEventForwarding(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         if cls.proc and cls.proc.poll() is None:
-            cls.proc.terminate()
-            try:
-                cls.proc.wait(timeout=5)
-            except Exception:
-                cls.proc.kill()
+            _stop_server(cls.proc)
         try:
             cls.sock.close()
         except Exception:
