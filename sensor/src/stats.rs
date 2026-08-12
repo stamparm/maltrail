@@ -189,6 +189,16 @@ pub fn render(registry: &Registry, uptime_seconds: f64) -> String {
         }
     }
     metric!(
+        "maltrail_throttle_evictions_total",
+        "counter",
+        "Throttle keys dropped at EVENT_THROTTLE_MAX_KEYS to make room for a new one. Their held \
+         events are still summarized, so nothing is lost - but a sustained rate means distinct \
+         (source, trail) pairs are arriving faster than the table can hold, so events are being \
+         summarized earlier than the configured window. maltrail_events_summarized_total cannot \
+         show this on its own: it counts ordinary end-of-window summaries too.",
+        t.throttle_evictions
+    );
+    metric!(
         "maltrail_state_saturations_total",
         "counter",
         "Times a bounded state map refused a new key at its cap. Non-zero means heuristics are \
