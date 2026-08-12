@@ -138,7 +138,7 @@ impl WorkerState {
         }
         let token = crate::whitelist::whitelist_domain_token(query);
         let result = self.whitelist.check_domain_member(token);
-        self.domain_whitelisted.insert_if_seen_before(query.to_string(), result);
+        self.domain_whitelisted.insert_if_seen_before_borrowed(query, result);
         result
     }
 

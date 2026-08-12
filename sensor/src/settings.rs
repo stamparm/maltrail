@@ -152,6 +152,12 @@ pub struct Statics {
     pub proxy_probe_host: Regex,
     /// bytes regex over the raw packet for forwarded-for headers
     pub forwarded_for: regex::bytes::Regex,
+    /// Literal pre-condition for the above. `forwarded_for` is a case-insensitive alternation
+    /// with no usable literal prefix, so asking it for capture groups meant a DFA walk over the
+    /// whole packet on every HTTP request — and virtually no request carries any of these
+    /// headers. Matching `"<name>:"` first is exactly implied by the regex (the colon is
+    /// contiguous in the pattern), so this can never hide a match.
+    pub forwarded_for_pre_condition: AhoCorasick,
 
     // --- multi-substring scanners ---
     pub pre_condition: AhoCorasick,
@@ -227,6 +233,12 @@ fn ac(patterns: &[&str]) -> AhoCorasick {
     AhoCorasick::new(patterns).expect("aho-corasick build")
 }
 
+/// `ac()` for patterns that have to match regardless of case, which is how HTTP header names
+/// arrive on the wire.
+fn ac_nocase(patterns: &[&str]) -> AhoCorasick {
+    aho_corasick::AhoCorasickBuilder::new().ascii_case_insensitive(true).build(patterns).expect("aho-corasick build")
+}
+
 impl Statics {
     pub fn build(root: PathBuf) -> Statics {
         let ua_src = build_suspicious_ua_regex(&root);
@@ -288,6 +300,7 @@ impl Statics {
             .case_insensitive(true)
             .build()
             .expect("forwarded-for regex"),
+            forwarded_for_pre_condition: ac_nocase(&["CF-Connecting-IP:", "True-Client-IP:", "X-Forwarded-For:"]),
 
             pre_condition: ac(SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION),
             proxy_probe_pre_condition: ac(SUSPICIOUS_PROXY_PROBE_PRE_CONDITION),
