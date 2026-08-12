@@ -27,6 +27,7 @@ import sys
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 SETTINGS = os.path.join(ROOT, "core", "settings.py")
 CARGO = os.path.join(ROOT, "sensor", "Cargo.toml")
+CITATION = os.path.join(ROOT, "CITATION.cff")
 
 
 def _read(path):
@@ -54,6 +55,20 @@ def cargo_version():
     return match.group(1)
 
 
+def citation_version():
+    """version: "3.0" from CITATION.cff.
+
+    Nothing linked this to the tree, and it drifted: the file still claimed 3.0 while the code,
+    the sensor and the published tag were all 3.1.1. That is not cosmetic - CITATION.cff exists
+    so a paper can cite a specific version, and it had been quietly citing the wrong one.
+    """
+
+    match = re.search(r"^version\s*:\s*[\"']([^\"']+)[\"']", _read(CITATION), re.M)
+    if not match:
+        raise SystemExit("[!] no version key found in %s" % CITATION)
+    return match.group(1)
+
+
 def series(version):
     """'3.0.1' and '3.0' both reduce to (3, 0) - Maltrail versions two components, Cargo three.
 
@@ -72,18 +87,25 @@ def series(version):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="check that the sensor and the server agree on the version")
+    parser = argparse.ArgumentParser(description="check that the sensor, the server and CITATION.cff agree on the version")
     parser.add_argument("--tag", help="also require both to match this release tag (e.g. '3.0' or 'v3.0')")
     args = parser.parse_args()
 
-    settings, cargo = settings_version(), cargo_version()
+    settings, cargo, citation = settings_version(), cargo_version(), citation_version()
     print("[i] core/settings.py VERSION   = %s" % settings)
     print("[i] sensor/Cargo.toml version  = %s" % cargo)
+    print("[i] CITATION.cff version       = %s" % citation)
 
     if series(settings) != series(cargo):
         print("[x] the server and the sensor would report different versions", file=sys.stderr)
         print("[?] make sensor/Cargo.toml '%s.0' or core/settings.py '%d.%d'"
               % (settings, series(cargo)[0], series(cargo)[1]), file=sys.stderr)
+        return 1
+
+    if series(citation) != series(settings):
+        print("[x] CITATION.cff cites %s while the tree is %s" % (citation, settings), file=sys.stderr)
+        print("[?] set CITATION.cff 'version' to '%s' (and date-released to that release's date)"
+              % settings, file=sys.stderr)
         return 1
 
     if args.tag:
