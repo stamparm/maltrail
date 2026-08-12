@@ -1739,9 +1739,30 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 range_handle.seek(0)
 
                 if self.headers.get(HTTP_HEADER.RANGE):
-                    match = re.search(r"bytes=(\d+)-(\d+)", self.headers[HTTP_HEADER.RANGE])
-                    if match:
-                        start, end = int(match.group(1)), int(match.group(2))
+                    # RFC 7233 byte-range forms. This used to be `bytes=(\d+)-(\d+)` only, so an
+                    # END WAS MANDATORY - and the natural way to tail a growing log, `bytes=N-`,
+                    # matched nothing, fell through, and got 200 with the WHOLE FILE. A client
+                    # polling a 100MB day log every few seconds re-downloaded all of it every
+                    # time, and had no way to tell from the status code that its range had been
+                    # ignored. html/js/main.js knew and worked around it by sending a huge
+                    # explicit end (LIVE_MAX_END); nothing else could be expected to.
+                    #
+                    #   bytes=N-M   an explicit span, as before
+                    #   bytes=N-    N to EOF
+                    #   bytes=-S    the last S bytes
+                    header = self.headers[HTTP_HEADER.RANGE]
+                    match = re.search(r"bytes=(\d*)-(\d*)", header)
+                    if match and (match.group(1) or match.group(2)):
+                        if not match.group(1):                      # suffix form: last S bytes
+                            suffix = int(match.group(2))
+                            start = max(0, total - suffix) if suffix else total
+                            end = max(0, total - 1)
+                        else:
+                            start = int(match.group(1))
+                            end = int(match.group(2)) if match.group(2) else max(0, total - 1)
+                        # A caught-up tail-follower asking `bytes=<total>-` gets 416, which is
+                        # what RFC 7233 says for a first-byte-pos at or past the length. Clients
+                        # must read that as "nothing new yet", not as an error worth reloading on.
                         if end < start or start > total:  # NOTE: reject inverted/out-of-bounds ranges; otherwise a negative size makes read(-n) return the whole file
                             self.send_response(_http_client.REQUESTED_RANGE_NOT_SATISFIABLE)
                             self.send_header(HTTP_HEADER.CONNECTION, "close")
