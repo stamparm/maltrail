@@ -92,16 +92,31 @@ fn zero_throttle_settings_cannot_disable_the_bound() {
     assert_eq!(cfg.clamps.len(), 3, "all three must be reported: {:?}", cfg.clamps);
 }
 
-/// `CAPTURE_BUFFER` sizes the ring PER WORKER, which is the surprise when scaling out: 10% of RAM
-/// with one worker per core asks for more memory than the machine has. `-T` prints this total so
-/// it is discovered before deployment, not during. (The default of one worker makes this a
-/// scale-out concern rather than a stock-config one.)
+/// The capture ring is sized PER WORKER, which is the surprise when scaling out: a large ring with
+/// one worker per core asks for more memory than the machine has. `-T` prints this total so it is
+/// discovered before deployment, not during.
+///
+/// It must be computed from `CAPTURE_BUFFER_SIZE`, the value actually handed to libpcap. It used
+/// to be computed from `CAPTURE_BUFFER`, which the Rust sensor requires but never passes to the
+/// capture: `-T` then answered "capture ring≈512 MB total" for a sensor about to run with the
+/// 16 MB default. An operator raises this setting precisely to be told the ring is big enough, so
+/// a preflight overstating it by 64x is worse than printing nothing.
 #[test]
 fn capture_ring_memory_is_reported_per_worker() {
-    let cfg = load("ring", "CAPTURE_WORKERS 8\nCAPTURE_BUFFER 100MB");
+    let cfg = load("ring", "CAPTURE_WORKERS 8\nCAPTURE_BUFFER 100MB\nCAPTURE_BUFFER_SIZE 32MB");
     assert_eq!(
         cfg.estimated_capture_memory_bytes(),
-        cfg.capture_buffer * 8,
-        "the estimate must multiply by the worker count"
+        cfg.capture_buffer_size * 8,
+        "the estimate must multiply the REAL ring by the worker count"
     );
+    assert_eq!(cfg.estimated_capture_memory_bytes(), 32 * 1024 * 1024 * 8);
+}
+
+/// The report must follow the ring even when CAPTURE_BUFFER says something entirely different -
+/// the exact shape of the bug, where the two disagreed and `-T` believed the wrong one.
+#[test]
+fn capture_ring_report_ignores_capture_buffer() {
+    let cfg = load("ring_mismatch", "CAPTURE_BUFFER 512MB\nCAPTURE_BUFFER_SIZE 8MB");
+    assert_eq!(cfg.estimated_capture_memory_bytes(), 8 * 1024 * 1024,
+               "-T must report the ring libpcap gets, not the option that does not reach it");
 }

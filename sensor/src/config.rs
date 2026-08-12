@@ -833,10 +833,16 @@ impl Config {
         clamp!(self.domain_cache_entries, "DOMAIN_CACHE_ENTRIES", 64usize, 10_000_000usize);
     }
 
-    /// Estimated resident cost of the capture rings, which `CAPTURE_BUFFER` sizes PER WORKER —
-    /// the number an operator actually needs before setting it on a 32-core box.
+    /// Estimated resident cost of the capture rings — the number an operator actually needs
+    /// before setting `CAPTURE_WORKERS` on a 32-core box.
+    ///
+    /// Sized from `CAPTURE_BUFFER_SIZE`, because that is the value handed to libpcap
+    /// (`capture::open`), NOT from `CAPTURE_BUFFER`. Reporting the latter meant `-T` answered
+    /// "capture ring≈512 MB total" for a sensor whose ring was the 16 MB default — a preflight
+    /// check confirming a buffer 64x larger than the one it was about to run with, which is
+    /// precisely the reassurance an operator raises this setting to get.
     pub fn estimated_capture_memory_bytes(&self) -> u64 {
-        self.capture_buffer.saturating_mul(u64::from(self.capture_workers.max(1)))
+        self.capture_buffer_size.saturating_mul(u64::from(self.capture_workers.max(1)))
     }
 
     pub fn is_offline_replay(&self) -> bool {
