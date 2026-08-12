@@ -745,7 +745,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         self.send_header(HTTP_HEADER.LAST_MODIFIED, last_modified)
 
                         # For CSP policy directives see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/
-                        self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src * blob:; script-src 'self' https://stat.ripe.net; frame-src *; object-src 'none'; block-all-mixed-content;")
+                        self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src * blob:; script-src 'self' https://stat.ripe.net; frame-src 'none'; object-src 'none'; block-all-mixed-content;")
 
                         if os.path.basename(path) == "index.html":
                             # demo.js exists for the public static demo, and main.js turns DEMO on

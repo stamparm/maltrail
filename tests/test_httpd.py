@@ -552,6 +552,10 @@ class TestHttpd(unittest.TestCase):
         csp = [l for l in head.split("\r\n") if l.lower().startswith("content-security-policy:")]
         self.assertTrue(csp, "the dashboard must be served with a CSP")
         self.assertNotIn("unsafe-eval", csp[0], "script-src must not re-permit eval")
+        # The dashboard embeds nothing - no <iframe>, no window.frames, in any served script - so
+        # frame-src has no legitimate use and a wildcard there only widens what an injected tag
+        # could load. img-src deliberately stays open: HEADER_LOGO documents a remote <img>.
+        self.assertIn("frame-src 'none'", csp[0], "frame-src must not be a wildcard")
         self.assertIn("default-src 'self'", csp[0], "positive control: the policy is still the real one")
 
     def test_index_never_serves_the_demo_script(self):
