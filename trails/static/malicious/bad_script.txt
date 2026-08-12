@@ -9976,6 +9976,10 @@ drvdb9rcebidk.cloudfront.net
 /zombie_dialer.py
 /zombie_proxy.py
 
+# Reference: https://x.com/Malwarehunterr/status/2087541541762158671
+
+/index-DOQs7vj3.js
+
 # Generic
 
 /5c0ca79.php
