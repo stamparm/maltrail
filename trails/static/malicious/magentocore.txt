@@ -14367,6 +14367,7 @@ statsalesup.com
 # Reference: https://app.validin.com/detail?find=19fe6b1334b2035cedcaa692ac77b550&type=hash&ref_id=f73fc343e2b#tab=host_pairs (# 2024-12-17)
 
 bbpjsuporte.pro
+cdn.golisthost.com
 cdnjsdevcss.com
 cdnjsdvcss.com
 cdnoaistatcs.icu
@@ -14380,6 +14381,7 @@ debdpkgseclib.com
 epscsp.shop
 fastcdnjs.com
 flowcss.icu
+golisthost.com
 goljsdofls.com
 goljsdofma.org
 goljsdofmain.com
