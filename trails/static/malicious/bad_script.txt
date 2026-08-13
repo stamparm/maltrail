@@ -9980,6 +9980,11 @@ drvdb9rcebidk.cloudfront.net
 
 /index-DOQs7vj3.js
 
+# Reference: https://www.joesandbox.com/joereverser/analysis/67fd0369-5743-450f-9bf2-b92271fdd141/download?type=reports&report=html
+# Reference: https://www.virustotal.com/gui/file/4cacc410b45f5099e53b9d7451b60d110aad9ab5e8311db7551b5a3ad5738965/detection
+
+/api/bot/actions?build_id=&bot_id=
+
 # Generic
 
 /5c0ca79.php
