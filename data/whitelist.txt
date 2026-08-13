@@ -4147,3 +4147,10 @@ africa.com
 # Reference: https://github.com/stamparm/maltrail/issues/19573
 
 squarespace.com
+
+# Reference: https://github.com/stamparm/maltrail/pull/19600
+
+meeting.captello.com
+demo-meeting.captello.com
+eu-meeting.captello.com
+staging-meeting.captello.com
