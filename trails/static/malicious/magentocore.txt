@@ -18380,6 +18380,14 @@ pixelroutine.me
 
 pixel-cdn.net
 
+# Reference: https://x.com/sdcyberresearch/status/2087842048053227974
+# Reference: https://deobfuscate.run/app/3d22818afee090f8
+
+95.164.123.166:3478
+95.164.123.166:3479
+[2a12:bec4:1460:50::2]:3478
+[2a12:bec4:1460:50::2]:3479
+
 # Generic
 
 /assets/lfg.js
