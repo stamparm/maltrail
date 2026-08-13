@@ -6566,3 +6566,42 @@
 
 176.65.139.0/24,stormcloud-as
 94.154.43.0/24,stormcloud-as
+
+# AS 213702
+# Reference: https://ipinfo.io/AS213702
+
+103.27.157.0/24,qwins-ltd
+132.243.212.0/24,qwins-ltd
+132.243.221.0/24,qwins-ltd
+132.243.223.0/24,qwins-ltd
+132.243.225.0/24,qwins-ltd
+132.243.231.0/24,qwins-ltd
+132.243.65.0/24,qwins-ltd
+141.98.6.0/24,qwins-ltd
+150.241.124.0/24,qwins-ltd
+150.241.93.0/24,qwins-ltd
+153.52.77.0/24,qwins-ltd
+178.17.59.0/24,qwins-ltd
+185.238.191.0/24,qwins-ltd
+194.87.24.0/24,qwins-ltd
+195.66.27.0/24,qwins-ltd
+217.9.12.0/24,qwins-ltd
+31.207.7.0/24,qwins-ltd
+31.77.138.0/24,qwins-ltd
+31.77.168.0/24,qwins-ltd
+31.77.170.0/24,qwins-ltd
+31.77.56.0/24,qwins-ltd
+31.77.57.0/24,qwins-ltd
+78.40.209.0/24,qwins-ltd
+80.253.249.0/24,qwins-ltd
+84.21.189.0/24,qwins-ltd
+85.209.129.0/24,qwins-ltd
+87.58.201.0/24,qwins-ltd
+89.125.13.0/24,qwins-ltd
+89.125.37.0/24,qwins-ltd
+89.125.43.0/24,qwins-ltd
+89.125.48.0/24,qwins-ltd
+93.123.39.0/24,qwins-ltd
+95.164.123.0/24,qwins-ltd
+95.164.53.0/24,qwins-ltd
+95.164.55.0/24,qwins-ltd
