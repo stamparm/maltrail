@@ -7836,3 +7836,9 @@ nexrogcapital.xyz
 137.175.30.36:8041
 glostingsolutions.shop
 support.glostingsolutions.shop
+
+# Reference: https://x.com/patialavii/status/2087781219899711626
+# Reference: https://www.virustotal.com/gui/file/74849f5d619e6cb8e2e43675dab80f04b789fd765d141c7c8e822113ce0d93e2/detection
+
+192.30.241.253:8041
+maguire.top
