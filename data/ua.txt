@@ -2757,6 +2757,11 @@ DEADBEEF
 SakDriver
 SakDriver/1.0
 
+# Reference: https://x.com/ElementalX2/status/2087894249652252818
+# Reference: https://www.acronis.com/en/tru/posts/patchcord-new-malware-cluster-targets-afghan-telecom-and-south-asian-critical-infrastructure/
+
+Beacon/1.0.0
+
 # Misc
 
 information_schema
