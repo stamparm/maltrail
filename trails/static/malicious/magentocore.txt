@@ -15117,6 +15117,7 @@ volnexy.bond
 vorix.xyz
 vornik.online
 vortyx.sbs
+vrykon.xyz
 vulerloq.store
 xandor.cv
 xantor.xyz
@@ -15134,6 +15135,7 @@ zerakos.bond
 zerion.click
 zerion.sbs
 zerium.casa
+zethrax.rest
 zoltarq.rest
 zorvane.online
 zypher.cfd
@@ -15161,7 +15163,9 @@ cdn.qietyts.shop
 cdn.qiqtoc.store
 cdn.qoerint.online
 cdn.teoyey.online
+cdn.vrykon.xyz
 cdn.vulerloq.store
+cdn.zethrax.rest
 
 # Reference: https://x.com/sdcyberresearch/status/1891514677319942233
 # Reference: https://www.virustotal.com/gui/ip-address/77.238.228.157/relations
