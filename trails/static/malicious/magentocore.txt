@@ -14987,6 +14987,7 @@ jyntra.sbs
 kelthor.site
 kelvoa.buzz
 klyro.lol
+klyvore.site
 kralyx.xyz
 kravn.click
 kraxis.click
@@ -15035,7 +15036,9 @@ novyra.autos
 nyphera.live
 nythera.bond
 nyxion.cfd
+nyxtron.online
 olivara.bond
+opevip.top
 orveta.sbs
 orvex.bond
 orvian.lol
@@ -15070,6 +15073,7 @@ slyzer.xyz
 solvar.site
 solvian.fit
 sordid.bond
+st.opevip.top
 strivon.site
 subdued.space
 sulven.xyz
