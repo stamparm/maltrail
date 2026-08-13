@@ -4150,6 +4150,7 @@ squarespace.com
 
 # Reference: https://github.com/stamparm/maltrail/pull/19600
 
+captello.com
 meeting.captello.com
 demo-meeting.captello.com
 eu-meeting.captello.com
