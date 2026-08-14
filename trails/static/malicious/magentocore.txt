@@ -18383,7 +18383,9 @@ pixel-cdn.net
 # Reference: https://x.com/sdcyberresearch/status/2087842048053227974
 # Reference: https://deobfuscate.run/app/3d22818afee090f8
 # Reference: https://gist.github.com/danslo/9557506aca4d7cb1078a2032a8cc689e
+# Reference: https://www.virustotal.com/gui/ip-address/208.123.119.119/relations
 
+208.123.119.119:5000
 95.164.123.166:3478
 95.164.123.166:3479
 [2a12:bec4:1460:50::2]:3478
