@@ -32,7 +32,7 @@ RUN touch sensor/src/main.rs sensor/src/lib.rs && \
 # ---------------------------------------------------------------------------------------
 # Stage 2: runtime
 # ---------------------------------------------------------------------------------------
-FROM python:3.12-slim-bookworm
+FROM python:3.14-slim-bookworm
 
 ENV PYTHONUNBUFFERED=1 \
     PYTHONWARNINGS=ignore \
