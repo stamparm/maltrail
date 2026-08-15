@@ -249,8 +249,25 @@ python3 server.py
 ```
 
 Prebuilt `x86_64` and `aarch64` sensor binaries are attached to current releases with SHA-256
-checksums. They target glibc 2.28 and require libpcap at runtime. On musl-based systems such as
-Alpine Linux, build from source.
+checksums. They link libpcap statically and target glibc 2.28, so the C library is the only thing
+they need — nothing to install, on RHEL 8+, Debian 10+, Ubuntu 18.04+ and Leap 15.x alike. On
+musl-based systems such as Alpine Linux, build from source.
+
+Binaries from **3.1.1 and earlier** did not: they linked libpcap dynamically, and asked for it by
+the name their AlmaLinux build host uses. Debian and Ubuntu ship the identical library under the
+older name `libpcap.so.0.8`, so those binaries stop before they start —
+
+```
+./maltrail-sensor: error while loading shared libraries: libpcap.so.1: cannot open shared object file
+```
+
+— on a machine that has libpcap installed. `install.sh` links the missing name for you. By hand:
+
+```bash
+# adjust the directory for your architecture: aarch64-linux-gnu, or /usr/lib64 on RPM distributions
+sudo ln -sf /usr/lib/x86_64-linux-gnu/libpcap.so.0.8 /usr/lib/x86_64-linux-gnu/libpcap.so.1
+sudo ldconfig
+```
 
 The retired Python sensor is used only by comparison and parity tools. Those tools additionally
 require `pcapy-ng` and the Python development headers described in

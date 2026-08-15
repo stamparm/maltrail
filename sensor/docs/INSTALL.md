@@ -56,7 +56,11 @@ cargo build --release
 ```
 
 The binary is `sensor/target/release/maltrail-sensor` (~4 MB, no runtime dependencies
-beyond `libpcap` and libc). For a few percent more throughput:
+beyond `libpcap` and libc). A build from source links the system libpcap dynamically, which is
+what you want here — it is the libpcap this machine will keep updated. The prebuilt binaries on
+the releases page link it statically instead, because a shared libpcap is requested by a SONAME
+the RPM and Debian families spell differently (`libpcap.so.1` against `libpcap.so.0.8`) and a
+binary cannot be built once for both. For a few percent more throughput:
 
 ```bash
 cargo build --profile release-lto   # fat LTO, one codegen unit

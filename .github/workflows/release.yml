@@ -76,31 +76,70 @@ jobs:
       # 15.x. `docker run` rather than `container:` so the checkout happens on the host, where git
       # exists.
       #
-      # Still not a static build: it links libpcap dynamically. AlmaLinux names that libpcap.so.1
-      # and Debian/Ubuntu name the same ABI libpcap.so.0.8, so install.sh links whichever name is
-      # missing - see link_libpcap_soname() there, tested on five distributions.
-      - name: Build against glibc 2.28
+      # libpcap is linked STATICALLY, and is built here from source to do it.
+      #
+      # Not an optimisation - a correctness fix. A dynamically linked libpcap is requested by
+      # SONAME, and the families disagree on what that name is: upstream, RHEL, Fedora and SUSE
+      # call it libpcap.so.1, while Debian and Ubuntu ship the identical ABI as libpcap.so.0.8.
+      # A binary built here therefore asked for a name that NO Debian or Ubuntu package provides,
+      # and died before main() with
+      #
+      #     error while loading shared libraries: libpcap.so.1: cannot open shared object file
+      #
+      # on a machine that had libpcap installed all along. install.sh absorbs that by linking the
+      # missing name, but nothing helps someone who downloads the tarball from the releases page,
+      # which is what the releases page invites. Linking it in deletes the problem instead of
+      # papering over it, and leaves libc as the only thing the tarball needs.
+      #
+      # AlmaLinux 8 ships no libpcap.a to link, so it is compiled from a pinned, checksummed
+      # upstream release. The disabled features are capture back-ends the sensor does not use
+      # (D-Bus, RDMA, nl80211 monitor mode, DAG/Septel/SNF/TurboCap, DPDK); dropping them is what
+      # keeps the archive self-contained instead of pulling libnl, libdbus and libibverbs back in
+      # as dynamic dependencies. The Linux PF_PACKET/TPACKET path the sensor actually captures
+      # with is unaffected.
+      - name: Build against glibc 2.28, with libpcap linked in
+        env:
+          LIBPCAP_VERSION: 1.10.5
+          LIBPCAP_SHA256: 37ced90a19a302a7f32e458224a00c365c117905c2cd35ac544b6880a81488f0
         run: |
           set -eu
-          docker run --rm -v "$PWD:/src" -w /src almalinux:8 sh -eu -c '
-            dnf -y -q install dnf-plugins-core >/dev/null
-            # libpcap-devel lives in PowerTools (AlmaLinux 8) / CRB (9+), which ship disabled.
-            dnf config-manager --set-enabled powertools >/dev/null 2>&1 ||
-              dnf config-manager --set-enabled crb >/dev/null 2>&1
-            dnf -y -q install gcc libpcap-devel make >/dev/null
+          docker run --rm -v "$PWD:/src" -w /src \
+            -e LIBPCAP_VERSION -e LIBPCAP_SHA256 almalinux:8 sh -eu -c '
+            dnf -y -q install gcc make flex bison >/dev/null
+
+            curl -sSfL -o /tmp/libpcap.tar.gz \
+              "https://www.tcpdump.org/release/libpcap-$LIBPCAP_VERSION.tar.gz"
+            echo "$LIBPCAP_SHA256  /tmp/libpcap.tar.gz" | sha256sum -c -
+            tar -C /tmp -xzf /tmp/libpcap.tar.gz
+            cd "/tmp/libpcap-$LIBPCAP_VERSION"
+            ./configure --prefix=/opt/libpcap --disable-shared --enable-static \
+              --disable-dbus --disable-rdma --without-libnl --without-dpdk \
+              --without-dag --without-septel --without-snf --without-turbocap >/dev/null
+            make -j"$(nproc)" >/dev/null
+            make install >/dev/null
+            cd /src
+
             export CARGO_HOME=/src/.cargo-home RUSTUP_HOME=/src/.rustup-home
             export PATH=$CARGO_HOME/bin:$PATH
             curl -sSf https://sh.rustup.rs -o /tmp/rustup.sh
             sh /tmp/rustup.sh -y --default-toolchain stable --profile minimal --no-modify-path >/dev/null
             rustc -V
+            # LIBPCAP_LIBDIR puts the static archive first on the link path; that directory holds
+            # libpcap.a and no libpcap.so, so `-lpcap` can only resolve to the archive. LIBPCAP_VER
+            # spares the pcap crate a dlopen() of a shared object that deliberately does not exist.
+            # The sensor build script probes for a system libpcap it no longer needs.
+            export LIBPCAP_LIBDIR=/opt/libpcap/lib
+            export LIBPCAP_VER=$LIBPCAP_VERSION
+            export MALTRAIL_SKIP_PCAP_CHECK=1
             cargo build --release --locked --manifest-path sensor/Cargo.toml
             strip sensor/target/release/maltrail-sensor
           '
           sudo chown -R "$(id -u):$(id -g)" sensor/target .cargo-home .rustup-home
 
-      # A guard, not a formality: this is the one property that cannot be checked by running the
-      # binary on the build machine, and getting it wrong ships something that will not exec.
-      - name: Refuse to publish a binary that needs a newer glibc
+      # Guards, not formalities: these are the two properties that cannot be checked by running
+      # the binary on the build machine, and getting either wrong ships something that will not
+      # exec on someone else's.
+      - name: Refuse to publish a binary that needs a newer glibc, or a libpcap
         run: |
           set -eu
           bin=sensor/target/release/maltrail-sensor
@@ -111,6 +150,14 @@ jobs:
             exit 1
           }
           objdump -p "$bin" | grep NEEDED
+          # A dynamic libpcap is requested by a SONAME the Debian family does not use, so this
+          # would not start there at all. It is the exact failure this build was changed to end,
+          # and it would come back silently the moment the static archive stopped being found.
+          if objdump -p "$bin" | grep -q 'NEEDED.*libpcap'; then
+            echo "::error::libpcap is linked dynamically; on Debian/Ubuntu this binary cannot start"
+            exit 1
+          fi
+          echo "libpcap is linked statically"
 
       - name: Package with a checksum
         run: |

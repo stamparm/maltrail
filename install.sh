@@ -363,6 +363,9 @@ install_sensor_binary() {
 #
 # So link the name to the file that is actually installed. This is the kind of thing an installer
 # exists to absorb; leaving it to the operator is how "curl | sh" earns its reputation.
+#
+# Binaries released after this was written link libpcap statically and never reach here; this is
+# still what makes an older release, or a binary passed with --sensor-bin, work.
 link_libpcap_soname() {
     have ldd || return 0
     [ "$DRY" = 1 ] && return 0
@@ -372,23 +375,34 @@ link_libpcap_soname() {
             libpcap.so.*) ;;
             *) warn "$1 needs '$lib', which is not installed"; continue ;;
         esac
-        real=""
-        for dir in /usr/lib64 /usr/lib /lib64 /lib /usr/lib/*; do
+        linked=0
+        # Architecture-matched directory FIRST. `/usr/lib/*` sorts alphabetically, so on a
+        # multiarch Debian or Ubuntu that also has the i386 libpcap installed it reaches
+        # i386-linux-gnu before x86_64-linux-gnu -- and a 32-bit library linked under the name a
+        # 64-bit sensor wants leaves the sensor just as dead, with a symlink now suggesting
+        # otherwise.
+        for dir in "/usr/lib/$(uname -m)-linux-gnu" /usr/lib64 /usr/lib /lib64 /lib /usr/lib/*; do
+            [ -d "$dir" ] || continue
             for candidate in "$dir"/libpcap.so.1* "$dir"/libpcap.so.0.8*; do
                 [ -e "$candidate" ] || continue
                 [ "$(basename "$candidate")" = "$lib" ] && continue    # that is the name we lack
-                real=$candidate
+                # Try it, then ASK THE LOADER. Picking by name cannot tell 32-bit from 64-bit,
+                # and this is the one question that actually matters.
+                run ln -sf "$candidate" "$dir/$lib"
+                have ldconfig && run ldconfig >/dev/null 2>&1 || true
+                if ldd "$1" 2>/dev/null | awk -v l="$lib" '$1 == l && /not found/ { bad = 1 } END { exit !bad }'; then
+                    run rm -f "$dir/$lib"
+                    have ldconfig && run ldconfig >/dev/null 2>&1 || true
+                    continue
+                fi
+                say "linked $lib -> $candidate (this distribution names libpcap differently)"
+                linked=1
                 break
             done
-            [ -n "$real" ] && break
+            [ "$linked" = 1 ] && break
         done
-        if [ -z "$real" ]; then
-            warn "the sensor needs '$lib' and no libpcap was found; install your libpcap package"
-            continue
-        fi
-        say "linking $lib -> $real (this distribution names libpcap differently)"
-        run ln -sf "$real" "$(dirname "$real")/$lib"
-        have ldconfig && run ldconfig 2>/dev/null || true
+        [ "$linked" = 1 ] ||
+            warn "the sensor needs '$lib' and no usable libpcap was found; install your libpcap package"
     done
 }
 
@@ -626,4 +640,6 @@ main() {
 }
 
 # Called on the last line so a truncated `curl | sh` cannot execute half an installer.
-main "$@"
+# MALTRAIL_INSTALL_SOURCE_ONLY lets tests/install/soname.sh load one function and exercise it
+# against a real distribution, rather than re-implementing it and testing the copy.
+[ "${MALTRAIL_INSTALL_SOURCE_ONLY:-}" = 1 ] || main "$@"
