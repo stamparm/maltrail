@@ -1,22 +1,27 @@
 # Implementation report — Maltrail sensor
 
 Scope: replace `sensor.py`'s packet-processing hot path with a Rust implementation that keeps
-existing behaviour, configuration, trail data and event format. `sensor.py` and `core/` are
-unchanged; nothing outside `sensor/` is modified except two additive files.
+existing behaviour, configuration, trail data and event format.
+
+**This section describes the state at the time of the port (v3.0, 2026-08-08) and is kept as a
+record of it.** The sensor has since become Maltrail's default and the two implementations no
+longer sit side by side: `sensor.py` moved to `old/` as the parity oracle, `core/` and `server.py`
+have taken changes of their own, and the runtime data files moved to `data/`. For the current
+layout read `docs/ARCHITECTURE.md` and the repository `README.md`.
 
 ---
 
-## 1. Changed files
+## 1. Changed files (as of v3.0)
 
-Everything new lives under `sensor/`. Outside it, exactly two additions:
+Everything new lived under `sensor/`. Outside it, exactly two additions:
 
 | file | change |
 | --- | --- |
-| `maltrail-sensor.service` | **new** — systemd unit for the sensor (the Python `maltrail-sensor.service` is untouched) |
+| `maltrail-sensor.service` | **new** — systemd unit for the sensor (the Python `maltrail-sensor.service` was untouched) |
 | `README.md` | **modified** — one short section pointing at the sensor |
 
-`sensor.py`, `core/*`, `server.py`, `html/*`, `trails/*` and the existing tests are **not**
-touched.
+`sensor.py`, `core/*`, `server.py`, `html/*`, `trails/*` and the existing tests were **not**
+touched by the port itself.
 
 ### New: `sensor/` (~15,300 lines)
 
@@ -55,7 +60,7 @@ Module-by-module mapping to the Python source: `docs/PORTING_MAP.md`.
 cargo test --release
 ```
 
-**311 tests, 0 failures — in BOTH profiles.**
+**401 tests** (222 unit + 179 integration, measured 2026-08-15), run in **BOTH profiles**.
 
 ```
 cargo test            # debug: integer-overflow checks ON
@@ -67,17 +72,32 @@ Both, not one. A release-only gate compiles out overflow checks, which is how a 
 panics on arbitrary input could not fire in the profile it was run in. `tools/check.sh` now runs
 debug first.
 
+Run them through `tools/check.sh` rather than through `cargo test` directly: it regenerates the
+Python-derived constants, vectors and corpus first, and several suites compare against those. Run
+bare against a tree whose `data/` or `core/settings.py` has moved on since the last regeneration,
+those suites report the drift as a failure — which is exactly what they are for.
+
 | suite | tests | covers |
 | --- | --- | --- |
-| unit (`--lib`) | 191 | address rendering, LRU + admission filter, config parsing, Python-regex translation, trail tables + negative prefilter, wildcard regex, CSV splitting, DLT/VLAN, IP/TCP/UDP/ICMP, DNS (incl. named offset-overflow contracts), HTTP helpers, TLS SNI, QUIC (RFC 9001 key schedule, FIPS-197 AES vectors), scan/exhaustion/NXDOMAIN accumulators, event rendering, CEF/Logstash, throttle modes, hashers, fanout argument encoding, metrics, Prometheus exposition |
-| `tests/detection.rs` | 57 | every detection class, ported case-for-case from `tests/test_sensor.py`, asserted on real log lines; plus the concurrent-first-write race and result-cache metric publication |
+| unit (`--lib`) | 222 | address rendering, LRU + admission filter, config parsing, Python-regex translation, trail tables + negative prefilter, wildcard regex, CSV splitting, DLT/VLAN, IP/TCP/UDP/ICMP, DNS (incl. named offset-overflow contracts), HTTP helpers, TLS SNI, QUIC (RFC 9001 key schedule, FIPS-197 AES vectors), scan/exhaustion/NXDOMAIN accumulators, event rendering, CEF/Logstash, throttle modes, hashers, fanout argument encoding, metrics, Prometheus exposition |
+| `tests/detection.rs` | 65 | every detection class, ported case-for-case from `tests/test_sensor.py`, asserted on real log lines; plus the concurrent-first-write race, the result-cache metric publication, and the two deliberate UDP divergences |
 | `tests/vectors.rs` | 19 | Rust output vs vectors produced by the actual Python functions |
+| `tests/meta.rs` | 12 | `meta.sqlite` schema, BLOB/TEXT storage class, out-of-order merge, junk filter, prune, failing flush |
 | `tests/trails.rs` | 10 | every trail shape, whitelist filtering, malformed rows, pair interning, and the operator's **real 1.5M-trail file** — every row findable with its own info |
-| `tests/replay.rs` | 9 | the whole corpus through the real capture handle + DLT + packet path; determinism; multi-file replay; unknown-datalink learning |
+| `tests/replay.rs` | 9 | the whole corpus through the real capture handle + DLT + packet path; determinism; unknown-datalink learning |
 | `tests/trail_update.rs` | 9 | trail refreshing (missing/stale/disabled), `-T` config test, SIGHUP survival |
+| `tests/config_ranges.rs` | 8 | `-T` numeric clamping and the effective-configuration report |
+| `tests/fail_closed.rs` | 7 | empty trail set refused, implausible reload rejected, an unreadable capture is not a successful replay |
 | `tests/fuzz_parsers.rs` | 6 | ~200k random / patterned / mutated inputs through every parser and the whole packet path |
 | `tests/capture_live.rs` | 6 | live-handle open, BPF rejection, fanout guards (privilege-adaptive) |
+| `tests/lifecycle.rs` | 5 | worker death is fatal and visible; shutdown path |
+| `tests/storage_health.rs` | 5 | evidence-storage exhaustion is reported before it loses detections |
+| `tests/tls_certificate.rs` | 5 | SHA-1 server-certificate matching, and the single-segment limitation asserted deliberately |
+| `tests/bounded_state.rs` | 4 | every network-influenced map floods to a plateau, exact matching unaffected |
+| `tests/multi_pcap.rs` | 4 | several `-r` files through one `WorkerState`, evidence accumulating across them |
 | `tests/loader_parity.rs` | 2 | the Rust loader vs `core.common.load_trails()` over the real CSV, row by row |
+| `tests/multi_worker_parity.rs` | 2 | the corpus flow-hashed across 1/2/4/8 workers: exact detections identical, heuristic dilution measured |
+| `tests/generated.rs` | 1 | `settings_gen.rs` is byte-identical to a fresh generation from `core/settings.py` |
 
 The unit total includes the console colouriser (`src/colorized.rs`), whose exact output is pinned
 against `core/colorized.py` by a generated vector.
@@ -129,8 +149,14 @@ Also clean: `cargo fmt --check`, `cargo clippy --all-targets -- -D warnings` (0 
    `sensor.py` used `PROCESS_COUNT` (16) processes. Because `core/log.py` keeps the log throttle
    **per worker**, the same 100 DNS lookups produced ~4 log lines instead of ~59 — no detection was
    lost (`events=101` in the metrics line), but the log looked wrong, which is just as bad.
-   Reported from the field. `CAPTURE_WORKERS` now defaults to `PROCESS_COUNT`, and the throttle
-   itself was redesigned (§2.14 in `docs/COMPATIBILITY.md`).
+   Reported from the field. The throttle itself was redesigned (`docs/COMPATIBILITY.md` §2,
+   difference 14), which removed the reason to match `PROCESS_COUNT` at all: the default
+   `summarize` mode aggregates suppressed events instead of discarding them, so one worker no
+   longer means fewer detections in the log. `CAPTURE_WORKERS` was briefly changed to default to
+   `PROCESS_COUNT` and then **reverted** — flow-hashed fanout dilutes the per-source scan
+   heuristics, so the shipped 16 bought throughput at a measured cost in sensitivity. It defaults
+   to `CAPTURE_FANOUT`, i.e. one worker unless an operator opts in (`docs/ROADMAP.md`,
+   "Decisions made").
 8. **Loader parity was never actually asserted against Python.** Every trail test compared the
    Rust loader with itself. `tests/loader_parity.rs` now runs `core.common.load_trails()` as an
    oracle over the real 1.5M-row CSV and compares every row's three fields, the distinct-key
@@ -166,7 +192,7 @@ issues, outside the sensor port's scope. Reported for the maintainer to decide o
    `PROCESS_COUNT 1`. If one-per-bucket was the intent, the reset branch needs to add the pair too.
 3. **The suppression window is the machine's core count.** `sec // PROCESS_COUNT` means a 16-core
    host suppresses for 16 s and a 4-core host for 4 s, and the aggregate rate scales with the worker
-   count on top of that. See `docs/COMPATIBILITY.md` §2.14 for what the sensor does instead.
+   count on top of that. See `docs/COMPATIBILITY.md` §2, difference 14, for what the sensor does instead.
 
 ---
 
@@ -265,17 +291,17 @@ set now 83.3 MB / 1,505,265 rows:
 
 Both sensors produced 0 events on this corpus (equal), so the ratio is like-for-like work.
 
-The steady-state ratio moved from 13.8x to 27.1x for two independent reasons, and it is worth
+The steady-state ratio moved from 13.8x to 27.1x for two independent reasons, and it is worth being
+precise about which is which: the sensor's own per-packet cost fell 1,209 -> 865 ns (-28%, the §4c
+work, reproducible), while `sensor.py` on this box measured 16,689 -> 23,448 ns/packet (+40%) on a
+larger trail set and a machine under different load. **Only the first is an improvement we made.**
+Quote 13.8x as the conservative floor and 27x as the current measurement; the honest statement is
+"14-27x per packet, depending on run and hardware".
+
 Reproduced later on other hardware with the same harness (`--slope` is now the default, so the
 steady-state row is always printed): 550 ns/packet vs 16,656 for `sensor.py` on this same laptop
-CPU with a newer trail set (30x), and 272 ns vs 10,070 on a Ryzen 9 5900X (37x). The 865 ns below
+CPU with a newer trail set (30x), and 272 ns vs 10,070 on a Ryzen 9 5900X (37x). The 865 ns above
 is therefore the pessimistic end of the range, not the typical one.
-
-being precise about which is which: the sensor's own per-packet cost fell 1,209 -> 865 ns (-28%,
-the §4c work, reproducible), while `sensor.py` on this box measured 16,689 -> 23,448 ns/packet
-(+40%) on a larger trail set and a machine under different load. **Only the first is an
-improvement we made.** Quote 13.8x as the conservative floor and 27x as the current measurement;
-the honest statement is "14-27x per packet, depending on run and hardware".
 
 Startup regressed (1.18 -> 2.24 s) purely because the CSV grew; it is parsed on every start, which
 is exactly what §7.1 fixes.
@@ -479,7 +505,7 @@ profile and hides everything of interest.
 Against `sensor.py`'s 16,689 ns/packet, a SYN is now ~37x faster, an HTTP request ~20x and the
 mixed replay ~26x.
 
-### 4d. Single-worker offline replay of a uniform load### 4d. Single-worker offline replay of a uniform load
+### 4d. Single-worker offline replay of a uniform load
 
 Two further data points, measured by replaying a generated pcap through the release binary
 end to end (libpcap + DLT + packet path + event output), reported by the sensor's own metrics:
@@ -566,32 +592,35 @@ measured on the target hardware with `tools/fanout_check.py` plus the sensor's o
 
 1. **Rust startup is slower than a warm `sensor.py`** (1.18 s vs 0.20 s) and uses ~25 MB more
    RSS, because Python `mmap`s a prebuilt binary trail store while Rust parses the CSV. See
-   §7.1.
-1b. **802 ns/packet is not a good absolute number**, whatever the ratio to Python is. §4c
-   decomposes it; §7.1–7.4 are the measured, ordered ways to bring it down. The honest summary is
-   that the port is ~20x faster per packet than `sensor.py` and still leaves a large multiple on
-   the table.
-2. **Plugins were removed from Maltrail entirely** (both sensors, and the `plugins/` directory).
-3. ~~**The condensed observable store (`meta.sqlite`) is not written.**~~ Written since the
+   §7.1. (Trail loading has since been parallelised, which cut startup substantially; the
+   structural point — the CSV is parsed on every start — still stands.)
+2. **The absolute per-packet cost is not a good number**, whatever the ratio to Python is. §4c
+   decomposes it and tracks it down to 552 ns on the 866-byte mix; §7.1–7.4 are the measured,
+   ordered ways to bring it down further. The honest summary is that the port is roughly 20x
+   faster per packet than `sensor.py` and still leaves a large multiple on the table. Note that
+   several figures in §6 and §7 predate the §4c rounds and quote the older 802 ns budget.
+3. **Plugins were removed from Maltrail entirely** (both sensors, and the `plugins/` directory).
+4. ~~**The condensed observable store (`meta.sqlite`) is not written.**~~ Written since the
    ROADMAP Gate 4.1 work: `src/meta.rs`, verified identical to `core/meta.py`'s output on all 36
    corpus cases by `tools/parity.py`.
-4. **Trail updating runs Maltrail's own Python updater** (`tools/update_trails.py` →
+5. **Trail updating runs Maltrail's own Python updater** (`tools/update_trails.py` →
    `core.update.update_trails()`), so the host needs `python3`. That is deliberate: a second
    implementation of feed handling would drift out of sync with the first, and the failure mode of
    drifting trail data is silent under-detection. If `python3` is unavailable the sensor keeps
    running and says so, loudly.
-5. **Linux-only for fanout**; the rest is POSIX but untested elsewhere.
-6. **`-r -` (stdin) is not supported.**
-7. **The `USE_FAST_PREFILTER` admission tiers** (`FAST_ADMIT_LEVEL`, `FAST_ADMIT_ADAPTIVE`) have
+6. **Linux-only for fanout**; the rest is POSIX but untested elsewhere.
+7. **`-r -` (stdin) is not supported.**
+8. **The `USE_FAST_PREFILTER` admission tiers** (`FAST_ADMIT_LEVEL`, `FAST_ADMIT_ADAPTIVE`) have
    no equivalent — native parsing makes shedding unnecessary. The switch still enables the one
    *detection* the prefilter adds (TLS/QUIC SNI).
-8. **Heuristic state is per worker**, exactly as it is per process in `sensor.py`. With N workers
+9. **Heuristic state is per worker**, exactly as it is per process in `sensor.py`. With N workers
    a scan spread across many targets can be split; `PACKET_FANOUT_HASH` keeps a single
-   source→target scan on one worker. Use `CAPTURE_WORKERS 1` for single-worker semantics.
-9. **`PACKET_FANOUT` was verified on `lo`**, not on a physical NIC. The kernel path is the same,
-   but a real interface also exercises the driver, the NIC's own RSS queues and the ring under
-   load. Re-run `tools/fanout_check.py --interface <nic>` on each deployment.
-10. The full difference list, including the deliberate ones, is in `docs/COMPATIBILITY.md`.
+   source→target scan on one worker. One worker is the default, so this only applies once
+   `CAPTURE_FANOUT`/`CAPTURE_WORKERS` is set.
+10. **`PACKET_FANOUT` was verified on `lo`**, not on a physical NIC. The kernel path is the same,
+    but a real interface also exercises the driver, the NIC's own RSS queues and the ring under
+    load. Re-run `tools/fanout_check.py --interface <nic>` on each deployment.
+11. The full difference list, including the deliberate ones, is in `docs/COMPATIBILITY.md`.
 
 ---
 
@@ -694,11 +723,15 @@ TPACKET ring directly (deliberately out of scope for v1, and only worth it behin
 
 ### 7.5 Then, and only then, the exotic options
 
-Only after the above are measured: a Bloom/XOR **negative prefilter** in front of the domain
-table (never as the authoritative structure — a false negative is a missed detection), an
-`AF_XDP` backend behind the existing `Handle` abstraction, or explicit SIMD. None of these is
-justified by the current profile: at 802 ns/packet and near-linear scaling to 4 workers, a
+Only after the above are measured: an `AF_XDP` backend behind the existing `Handle` abstraction, or
+explicit SIMD. Neither is justified by the current profile: with near-linear scaling to 4 workers, a
 16-thread laptop already sustains ~10 Mpps of software packet path.
+
+(A cache-resident **negative prefilter** in front of the trail store was listed here as a future
+option and has since been built — see §4c item 3 and `NegativeFilter` in `src/trails/table.rs`. It
+is a filter in front of the authoritative table, never the table itself, because a false negative
+would be a missed detection; `tests/trails.rs` walks every real trail row through `get()` on each
+run to assert that.)
 
 ### 7.6 Operational follow-ups
 
