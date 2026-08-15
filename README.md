@@ -439,6 +439,7 @@ should account for the applicable requirements.
 | [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md) | Measurements, profiles, and test results |
 | [`sensor/docs/ROADMAP.md`](sensor/docs/ROADMAP.md) | Open sensor work |
 | [`old/README.md`](old/README.md) | Retired Python sensor, retained as a parity oracle |
+| [`SekuriPy Labs`](https://www.sekuripy.hr/labs/maltrail/) | Engineering notes, benchmarks and write-ups |
 
 ## Contributing
 
