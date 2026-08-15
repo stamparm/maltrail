@@ -19,14 +19,20 @@ Done and verified, so the plan does not re-litigate it:
 | Detection parity with `sensor.py` | 36/36 fixture corpus, 8/8 real-trail corpus, **0 event differences either direction** |
 | Trail loading parity | Every row of the real 1,505,265-row CSV, field by field, vs `core.common.load_trails()` |
 | Never panics on hostile input | ~200k fuzzed inputs per run through every parser, **in debug and release** |
-| Speed | 26-55x lower per-packet cost than `sensor.py` depending on traffic; scales across cores where the old sensor's single capture process caps at ~2.6x from 8 processes |
+| Speed | 14-27x lower steady-state per-packet cost than `sensor.py`, depending on run and hardware (`docs/REPORT.md` §4b); scales across cores where the old sensor's single capture process caps at ~2.6x from 8 processes |
 | Operational surface | `-T` config test, capability-based privileges (no root), hardened systemd unit, SIGHUP reload, Prometheus endpoint, 1 s trail-refresh pickup |
 | Upstream bugs found and fixed | 9, including silently-stale trails and a self-stopping sensor |
 
-**Status:** every gate below is complete. CI runs the whole gate on every push and pull request,
-every item has a regression test in the suite, `meta.sqlite` — the last feature gap — is written
-and differentially parity-tested against `core/meta.py`, and the default worker count is settled
-at one. What remains is a release: tag an RC to exercise the release pipeline, then 3.0.
+**Status: complete, and shipped.** Every gate below is met, CI runs the whole gate on every push
+and pull request, every item has a regression test in the suite, `meta.sqlite` — the last feature
+gap — is written and differentially parity-tested against `core/meta.py`, and the default worker
+count is settled at one. The sensor became Maltrail's default in **3.0** (2026-08-08); **3.0.1**,
+**3.1** and **3.1.1** have shipped since, the last of them adding `install.sh` and prebuilt
+x86_64/aarch64 binaries.
+
+This document is kept as the record of how that was gated, and for the deferred items in
+"Deferred deliberately" below, which are still open. It is not a current work queue — for what is
+in flight, see `HANDOVER.md`.
 
 ---
 
@@ -112,7 +118,7 @@ detections over a sustained period on real traffic.
 
 `PACKET_FANOUT_HASH` splits by flow; the scan heuristics count per **source**, and a scan is many
 flows. With N workers a threshold needs roughly N times more probes. The docs now say this honestly
-(`COMPATIBILITY.md` §3), but the runtime is unchanged.
+(`COMPATIBILITY.md` §2, difference 3), but the runtime is unchanged.
 
 Options, in preference order:
 
@@ -234,30 +240,39 @@ This is the gate that actually earns "production ready". Nothing above substitut
 
 ## Gate 3 — Release engineering
 
-*Right now none of the above can be protected, because the code is not in version control.*
+*At the time this was written none of the above could be protected, because the code was not in
+version control.*
 
-**Exit criterion:** `make release-check` is one command, CI runs it on every push, and it fails on
-any regression including fixture drift.
+**Exit criterion:** the release gate is one command, CI runs it on every push, and it fails on any
+regression including fixture drift.
 
-### 3.1 Commit the tree **[R1][R2]** — *needs your decision*
+### 3.1 Commit the tree **[R1][R2]** — DONE
 
-~15k lines untracked. A `git clean -fdx` deletes the port; nothing is bisectable. Branch name and
-commit granularity are yours to choose; I will not commit unasked.
+~15k lines were untracked; a `git clean -fdx` would have deleted the port and nothing was
+bisectable. Landed as `f1fa4dc3` ("Rust sensor becomes the sensor", 2026-08-07).
 
-### 3.2 CI **[R1][R2]**
+### 3.2 CI **[R1][R2]** — DONE
 
-A GitHub workflow running:
+`.github/workflows/ci.yml` runs on every push and pull request:
 
-* exact **MSRV 1.74** (declared but never verified — only 1.76 has been proven),
-* current stable: `fmt --check`, `clippy -D warnings`, **debug and release** test runs,
-* strict parity + loader parity,
-* regenerate all fixtures then `git diff --exit-code` (catches generator drift),
-* scheduled: real-trail corpus parity, longer fuzzing, systemd container smoke test.
+* exact **MSRV 1.74** (`msrv` job),
+* current stable: `fmt --check`, `clippy -D warnings`, **debug and release** test runs, plus
+  strict parity and loader parity — all of it through `sensor/tools/check.sh`,
+* the generated-file freshness test (`tests/generated.rs`) runs **before** regeneration, so drift
+  is reported rather than silently repaired,
+* the Python server suite on the 3.6 floor and on current versions,
+* `docker`, `installer` (five distributions) and `audit` jobs.
 
-### 3.3 One-command release gate
+Trail-data commits are excluded by path filter: they are the input, not the program, and a
+ten-minute gate on every indicator commit would make CI a tax on the project's most common
+contribution.
 
-`make release-check` = build + both test profiles + parity + loader parity + real-trail parity +
-`bench_compare.py`. "Is this releasable" should be a command, not a ritual.
+### 3.3 One-command release gate — DONE, as a script rather than a Makefile
+
+`sensor/tools/check.sh` is the gate, and `.github/workflows/release.yml` runs it *first* on a tag —
+nothing is published unless it passes — followed by a version-matches-tag check, the binary builds
+and the image push. There is no `make release-check`; the shell script and the release workflow
+cover it, and a Makefile for two commands was not worth the third place to keep in step.
 
 ---
 
@@ -313,7 +328,7 @@ There is nothing further to schedule here.
 
 ## Deferred deliberately
 
-Performance work is **not** on the critical path — the port is already 26-55x faster than the thing
+Performance work is **not** on the critical path — the port is already 14-27x faster than the thing
 it replaces, and correctness gates outrank optimisation. These are queued behind Gate 3:
 
 * **Binary/mmap trail store** — the only remaining place the old sensor wins (1.18 s startup, 88 MB

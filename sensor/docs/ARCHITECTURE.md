@@ -40,16 +40,18 @@ Rust has no GIL, so the ring, the copies and the IPC all disappear: one **thread
 handle does capture *and* detection.
 
 * **Live:** `CAPTURE_WORKERS` sockets per interface, all joined to one `PACKET_FANOUT` group.
-  Each socket is read by its own thread. `CAPTURE_WORKERS` defaults to `PROCESS_COUNT` (or
-  `CAPTURE_FANOUT` if that is larger), because one Rust worker is the equivalent of one
-  `sensor.py` worker process — including for the per-worker event-log throttle. If the kernel
-  refuses the fanout group for the device, the sensor drops to a single worker with a warning; it
-  never opens N independent sockets, which would deliver every packet N times.
-* **Offline:** one worker per `-r` file, processed sequentially so a replay is deterministic.
+  Each socket is read by its own thread. `CAPTURE_WORKERS` falls back to `CAPTURE_FANOUT`, which
+  the shipped `maltrail.conf` leaves commented out — so a stock install runs **one** worker, and
+  fanout is skipped entirely. It is deliberately *not* derived from `PROCESS_COUNT`: flow-hashed
+  fanout dilutes the per-source scan heuristics, so scaling out is an explicit opt-in. If the
+  kernel refuses the fanout group for the device, the sensor drops to a single worker with a
+  warning; it never opens N independent sockets, which would deliver every packet N times.
+* **Offline:** every `-r` file is replayed through **one** `WorkerState`, sequentially, so a
+  replay is deterministic and evidence split across files accumulates.
 
-`PROCESS_COUNT` sets the default worker count (above) and, in `EVENT_THROTTLE_MODE legacy`, the
-throttle bucket width `sec // workers` that `core/log.py` uses. The default throttle mode does not
-use it — see `src/throttle.rs` and `docs/COMPATIBILITY.md` §2.14.
+`PROCESS_COUNT` does not affect the worker count. It is read for `EVENT_THROTTLE_MODE legacy`,
+where it sets the throttle bucket width `sec // PROCESS_COUNT` that `core/log.py` uses. The default
+throttle mode does not use it — see `src/throttle.rs` and `docs/COMPATIBILITY.md` §2, difference 14.
 
 ### Why fanout, and why it is a hard error
 
@@ -78,7 +80,7 @@ Caveats, both surfaced in the startup diagnostics:
 | `pyre.rs` | Python-`re` compatibility: `re.escape`, `\Z`→`\z`, literal-brace rewriting, CPython's group-syntax rules |
 | `addr.rs` | native `Ip`, Maltrail's non-RFC-5952 IPv6 rendering, `addr_port`, `parse_host_port` |
 | `smallstr.rs` | fixed-capacity stack string so the hot path renders addresses without allocating |
-| `trails/` | CSV loader (streaming), interned pair table, string table, native IP tables, wildcard-trail regex |
+| `trails/` | CSV loader (batched, parsed in parallel, inserted serially in file order), interned pair table, string table, native IP tables, wildcard-trail regex |
 | `whitelist.rs` | `WHITELIST` / `WHITELIST_RANGES`, domain-member checks |
 | `packet/` | DLT/VLAN offsets, the offset-learning heuristic, IP/TCP/UDP/ICMP headers |
 | `protocols/` | DNS, HTTP, TLS SNI, QUIC Initial SNI |
@@ -124,8 +126,11 @@ does the same: a reload thread polls the file's mtime (at most once a minute, bo
 `UPDATE_PERIOD`), rebuilds a fresh immutable `TrailDb`, and publishes it through `TrailStore`.
 Workers adopt it between packets, so one packet always sees one consistent snapshot.
 
-Trail *updating* (downloading feeds) is not part of the sensor: it stays in
-`core/update.py`, driven by the Python server or a cron job. See `docs/INSTALL.md`.
+Trail *updating* (downloading feeds) is **not reimplemented**, but the sensor does drive it: it runs
+Maltrail's own `core/update.py` through `tools/update_trails.py`, before the first load and every
+`UPDATE_PERIOD`, exactly as `sensor.py:init()` did. `DISABLE_TRAIL_UPDATES true` hands the file to
+the server or a cron job instead, and the sensor then warns when it goes stale. See
+`docs/INSTALL.md` §11.
 
 ## Failure handling
 
