@@ -221,6 +221,10 @@ jobs:
           sudo chown -R "$(id -u):$(id -g)" sensor/target .cargo-home .rustup-home
           echo "highest glibc symbol: $(objdump -T sensor/target/release/maltrail-sensor | sed -n 's/.*GLIBC_\([0-9.]*\).*/\1/p' | sort -V -u | tail -1)"
       - run: bash tests/install/run.sh
+      # The five environments above are single-architecture, so the SONAME repair always finds the
+      # only libpcap there is. This one adds a second architecture's libpcap, which is what made it
+      # pick the wrong file on a real machine.
+      - run: bash tests/install/soname.sh
 
   # Rust dependency advisories. Gates the diff that introduces a vulnerable dependency.
   #
