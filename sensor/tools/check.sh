@@ -48,21 +48,33 @@ if ! python3 -c 'import pcapy' >/dev/null 2>&1; then
     exit 1
 fi
 
-echo "== generated files are in sync with core/settings.py =="
-# BEFORE regenerating, not after: this gate exists to catch a constant that was changed in
-# core/settings.py without regenerating, and regenerating first would silently repair the drift
-# instead of reporting it. The Python sensor reads those constants at runtime while the Rust one
-# compiles them in, so a mismatch makes the two sensors disagree in a way the parity harness
-# structurally cannot see (it compares two sensors that are each internally consistent).
+echo "== generated files are in sync with core/settings.py and data/ua.txt =="
+# FIRST, and against the tree exactly as committed: this gate exists to catch a constant that moved
+# in core/settings.py (or a User-Agent pattern added to data/ua.txt, which read_ua() folds into
+# SUSPICIOUS_UA_REGEX) without src/settings_gen.rs being regenerated. The Python sensor reads those
+# constants at runtime while the Rust one compiles them in, so a mismatch makes the two sensors
+# disagree in a way the parity harness structurally cannot see (it compares two sensors that are
+# each internally consistent). Nothing above this line may write to src/settings_gen.rs.
 cargo test --manifest-path sensor/Cargo.toml --release --test generated
 
-echo "== regenerate the Python-derived constants and vectors =="
-python3 sensor/tools/gen_settings.py
+# NOTE: src/settings_gen.rs is deliberately NOT regenerated here. Its inputs - core/settings.py
+# and data/ua.txt - are both committed, so the checked-in file is reproducible from the repository
+# alone and the test above is the authority on whether it is current. Regenerating at this point
+# would REPAIR the drift the previous step exists to report, and the gate would then be passing
+# because it edited the working tree rather than because the tree was right. That is not a
+# hypothetical: a pattern added to data/ua.txt in 1278030d left settings_gen.rs stale for days
+# while this script stayed green.
+#
+# When the test above fails, regenerate explicitly - it prints these two lines itself:
+#
+#     python3 sensor/tools/gen_settings.py
+#     rustfmt --edition 2021 --config-path sensor/rustfmt.toml sensor/src/settings_gen.rs
+#
+# The vectors and the corpus are different: gen_vectors.py samples the operator's real trails.csv,
+# so its output legitimately differs between machines and cannot be a committed-state assertion.
+echo "== regenerate the Python-derived vectors and corpus =="
 python3 sensor/tools/gen_vectors.py
 python3 sensor/tools/gen_corpus.py
-# The generator emits valid but unformatted Rust (one long line per table), so format just that
-# file before the repository-wide formatting check below.
-rustfmt --edition 2021 --config-path sensor/rustfmt.toml sensor/src/settings_gen.rs
 
 echo "== formatting =="
 cargo fmt --manifest-path sensor/Cargo.toml --check
