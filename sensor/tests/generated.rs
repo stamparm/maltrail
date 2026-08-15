@@ -79,6 +79,22 @@ fn settings_gen_is_in_sync_with_core_settings_py() {
     let checked_items = constants(&checked_in);
     assert!(!fresh_items.is_empty(), "the generator produced no constants at all");
 
+    // Every `pub const` in the file must actually be compared. Without this, a parser that quietly
+    // stops recognising some declarations reduces the test to a subset and still reports success —
+    // which is precisely how a stale constant survived here. Coverage is asserted, not assumed.
+    for (label, source, items) in
+        [("src/settings_gen.rs", &checked_in, &checked_items), ("the regenerated file", &regenerated, &fresh_items)]
+    {
+        let declared = source.lines().filter(|line| line.trim_start().starts_with("pub const ")).count();
+        assert_eq!(
+            declared,
+            items.len(),
+            "{label} declares {declared} constant(s) but only {} were parsed for comparison.\n\
+             The parser in this test is skipping declarations, so the check is weaker than it looks.",
+            items.len()
+        );
+    }
+
     let mut problems = Vec::new();
     for (name, value) in &fresh_items {
         match checked_items.iter().find(|(n, _)| n == name) {
@@ -114,12 +130,32 @@ fn constants(source: &str) -> Vec<(String, String)> {
     // Statements end at `;` followed by a newline, which the generator and rustfmt both produce
     // and which cannot occur inside the string literals here (they are all single-line).
     for statement in source.split(";\n") {
-        let Some(rest) = statement.trim_start().strip_prefix("pub const ") else { continue };
+        let Some(rest) = declaration(statement) else { continue };
         let Some((name, value)) = rest.split_once('=') else { continue };
         let Some((name, _type)) = name.split_once(':') else { continue };
         out.push((name.trim().to_string(), normalise(value)));
     }
     out
+}
+
+/// The `pub const ...` declaration inside one `;\n`-delimited chunk, or `None`.
+///
+/// The declaration is NOT necessarily at the start of the chunk: everything between the previous
+/// statement's `;\n` and this one — a doc comment, an attribute, a blank line — sits in front of
+/// it. This used to be `chunk.trim_start().strip_prefix("pub const ")`, which therefore skipped
+/// every *documented* constant silently: 8 of the 47 in `settings_gen.rs`, including
+/// `SUSPICIOUS_UA_REGEX`, `DLT_OFFSETS`, `IPPROTO_LUT` and `SUSPICIOUS_HTTP_REQUEST_REGEXES`.
+/// A stale `SUSPICIOUS_UA_REGEX` (a pattern added to `data/ua.txt` and never regenerated) passed
+/// this test for exactly that reason, which is the whole failure this file exists to prevent.
+///
+/// `rfind` rather than `find`: a chunk holds at most one declaration — the one its terminating
+/// `;` closes — and taking the last match cannot pick up a mention inside a preceding comment.
+fn declaration(chunk: &str) -> Option<&str> {
+    const KEY: &str = "pub const ";
+    if let Some(rest) = chunk.trim_start().strip_prefix(KEY) {
+        return Some(rest);
+    }
+    chunk.rfind(&format!("\n{KEY}")).map(|at| &chunk[at + 1 + KEY.len()..])
 }
 
 /// Strip everything that is layout and keep everything that is meaning.
