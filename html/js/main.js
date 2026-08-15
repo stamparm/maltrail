@@ -992,8 +992,10 @@
   }
   // ===== Live mode: auto-refresh + new-threat detection + opt-in alerts =====
   var LIVE_MS = 5000;   // poll fallback cadence (only when SSE push is unavailable; merge is cheap so this is fine)
-  // server's Range regex is bytes=(\d+)-(\d+) — it needs an explicit end; this large end means "to EOF"
-  // (clamped server-side to total-1, i.e. a guaranteed newline boundary on an append-only log)
+  // Explicit end meaning "to EOF", clamped server-side to total-1 — a guaranteed newline boundary
+  // on an append-only log. The server has accepted open-ended "bytes=N-" since 888a87ec, so this
+  // is no longer a workaround; it is kept because an explicit end is also what pins the response
+  // to the length the aggregate was baselined against, and it works against older servers.
   var LIVE_MAX_END = 2147483647;
   function alertNew(list) {
     if (!getMuted()) {   // user can mute the new-threat beep (the desktop notification, if granted, still shows)

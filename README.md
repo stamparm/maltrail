@@ -39,6 +39,7 @@ prevention system.
 ## Contents
 
 - [Architecture](#architecture)
+- [Reporting interface](#reporting-interface)
 - [Performance](#performance)
 - [Installation](#installation)
   - [Installer](#installer)
@@ -82,6 +83,42 @@ both. It can also emit CEF over syslog (`SYSLOG_SERVER`) and JSON to Logstash
 
 The server receives and stores remote events, serves locally available event logs, and provides the
 web interface and API.
+
+## Reporting interface
+
+Maltrail includes a browser-based reporting interface for exploring detected
+traffic, with live updates, field-aware search, retro hunting, geographic
+views, triage, saved views and export.
+
+![Maltrail reporting interface](https://i.imgur.com/bqCErCK.png)
+
+The interface is served by `server.py` at `HTTP_ADDRESS:HTTP_PORT`. It is plain JavaScript with a
+single third-party runtime dependency (PapaParse, for CSV parsing) and no build step. One day is
+viewed at a time, selected with a date picker that doubles as an event-density grid over the
+available daily logs. Events are streamed from `/events` and aggregated in the browser into
+*threats* — one row per distinct `(source, trail)` — shown in a sortable grid with a detail panel.
+
+| Feature | Notes |
+| --- | --- |
+| Live mode | Appended events are pushed over Server-Sent Events (`/live`) and merged into the current view. Falls back to polling byte ranges of the daily log when SSE is unavailable, or for sessions the stream cannot serve. New high-severity threats can raise a desktop notification and an audible alert; both can be muted |
+| Search | Field-scoped tokens (`src:` `dst:` `port:` `proto:` `type:` `trail:` `info:` `tag:` `uid:` `sev:` `dir:` `status:`) combined with space as AND, `-` to exclude, `*` wildcards, CIDR (`src:10.0.0.0/8`), and numeric ranges and comparisons (`port:>1024`, `count:>=100`). Active filters appear as removable chips |
+| Retro hunt | Searches *all* retained daily logs for one indicator (`/hunt`), not just the day in view. Bounded by a day limit, a wall-clock budget and a sample cap; a day the budget cut short is reported separately from the completed days rather than counted as a finished total |
+| World map | Per-country event density for the selected day (`/geo`), placing the external endpoint of each event. Events that cannot be attributed to an external address are reported as unmapped rather than guessed. Set `HOME_LAT` / `HOME_LON` to draw origin arcs |
+| Triage | Per-threat status (new / investigating / resolved / false positive), free-text notes, tags, and hiding. Whitelist rules and OSINT pivots are available from the row context menu |
+| Saved views | Named filter presets |
+| Export | The current filtered view as CSV, JSON, or defanged indicators |
+| Appearance | Dark and light themes, and discrete text-size steps |
+
+Triage state, saved views, tags and appearance settings are stored in the **browser**
+(`localStorage`), not on the server: they are per-browser and per-origin, and are not shared
+between analysts.
+
+Sessions restricted with a network filter see only events from their own networks, and that
+restriction applies to the counts, map and blacklist endpoints as well as to the event list.
+
+Country and ASN enrichment for individual addresses is requested by the browser from
+`stat.ripe.net`. On a host without internet access the lookups fail once and are then suppressed;
+everything else in the interface works offline.
 
 ## Performance
 
@@ -258,6 +295,7 @@ Frequently used sensor options include:
 | `MONITOR_INTERFACE` | Capture interface or interfaces; `any` selects all supported interfaces |
 | `CAPTURE_FILTER` | BPF capture filter |
 | `CAPTURE_FANOUT` | Number of Linux capture sockets; defaults to one |
+| `CAPTURE_WORKERS` | Capture workers, one socket each; defaults to `CAPTURE_FANOUT`, so one unless either is set |
 | `LOG_DIR` | Local event-log directory |
 | `TRAILS_FILE` | Generated trail database |
 | `LOG_SERVER` | Remote Maltrail event server |
@@ -268,8 +306,9 @@ Frequently used sensor options include:
 | `USER_WHITELIST` | Operator-managed indicators that should not alert |
 | `CUSTOM_TRAILS_DIR` | Operator-managed trail directory |
 
-`PROCESS_COUNT` applies to the retired Python sensor. Configure the Rust sensor's capture workers
-with `CAPTURE_FANOUT` instead.
+`PROCESS_COUNT` applies to the retired Python sensor and to the legacy event-log throttle; it does
+**not** set the Rust sensor's worker count. Configure capture workers with `CAPTURE_FANOUT` or
+`CAPTURE_WORKERS` instead.
 
 Run the deployment check after changing configuration:
 

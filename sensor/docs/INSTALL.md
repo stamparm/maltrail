@@ -131,6 +131,9 @@ ones are `MONITOR_INTERFACE`, `CAPTURE_FILTER`, `LOG_DIR`, `TRAILS_FILE`, `SENSO
 
 ### Multi-core capture
 
+The sensor captures with **one worker by default**. Scaling out is opt-in, because extra workers
+cost scan-heuristic sensitivity (see below) to buy throughput most deployments do not need.
+
 Reuse the existing option:
 
 ```conf
@@ -181,7 +184,7 @@ All have conservative defaults; none are required.
 
 | option | default | meaning |
 | --- | --- | --- |
-| `CAPTURE_WORKERS` | `PROCESS_COUNT` (or `CAPTURE_FANOUT`, whichever is larger) | capture sockets/threads per interface (`auto` = CPU count). One worker = one `sensor.py` worker process. **Set to 1 if scan detection matters more than throughput** — see below |
+| `CAPTURE_WORKERS` | `CAPTURE_FANOUT`, i.e. **1** unless one of them is set | capture sockets/threads per interface (`auto` = CPU count). Not derived from `PROCESS_COUNT`. **Raise it only if `maltrail_capture_dropped_total` says you need to** — extra workers cost scan-heuristic sensitivity, see below |
 | `CAPTURE_BUFFER_SIZE` | `64MB`, or `CAPTURE_BUFFER` capped at `256MB` | libpcap ring size per socket (accepts `kB`/`MB`/`GB`/`%`); explicit values allowed up to `1GB` |
 | `CAPTURE_SNAPLEN` | 2000 (`SNAP_LEN`) | bytes captured per packet |
 | `CAPTURE_TIMEOUT` | 100 | capture/poll timeout in ms; also bounds shutdown latency |
@@ -274,10 +277,15 @@ and NXDOMAIN hour counters.
 This is the same behaviour as `sensor.py`'s default (its own source comments the effect), so
 migrating does not make it worse — but it is a real limitation, not something fanout solved.
 
-* Throughput matters most (a busy gateway, trail matching is the point): leave `CAPTURE_WORKERS` at
-  `PROCESS_COUNT`.
-* Scan/heuristic fidelity matters most: `CAPTURE_WORKERS 1`. Fanout is skipped entirely at one
-  worker, so per-source state is undiluted — at the cost of single-core capture.
+Measured on the corpus (`tests/multi_worker_parity.rs`): of the heuristic alerts one worker raises,
+**91% survive at 2 workers, 86% at 4, 65% at 8**. Exact trail detection is identical at every
+worker count, in both directions — fanout never loses an IOC detection and never invents one.
+
+* **Default — scan/heuristic fidelity:** `CAPTURE_WORKERS` unset, so one worker. Fanout is skipped
+  entirely, and per-source state is undiluted, at the cost of single-core capture.
+* **Throughput matters more** (a busy gateway where trail matching is the point): set
+  `CAPTURE_FANOUT` or `CAPTURE_WORKERS` explicitly, and accept the dilution above. Raise it because
+  `maltrail_capture_dropped_total` is climbing, not pre-emptively.
 
 ## 8. Metrics endpoint
 
@@ -408,34 +416,36 @@ immutable trail store is built and swapped in atomically, counted in the metrics
 
 ## 12. Running as a service
 
-`maltrail-sensor.service` is provided:
-
-```ini
-[Unit]
-Description=Maltrail. Sensor of malicious traffic detection system (Rust)
-Requires=network.target
-Wants=maltrail-server.service
-After=network-online.target maltrail-server.service
-
-[Service]
-User=root
-WorkingDirectory=/opt/maltrail/
-ExecStart=/opt/maltrail/sensor/target/release/maltrail-sensor
-Restart=on-failure
-KillMode=mixed
-KillSignal=SIGTERM
-TimeoutStopSec=30
-
-[Install]
-WantedBy=multi-user.target
-```
+`maltrail-sensor.service` is provided, and `install.sh` installs it for you. To do it by hand, read
+the unit first — its header comment carries the two commands below — and note that it runs as an
+**unprivileged `maltrail` user** with exactly `CAP_NET_RAW` and `CAP_NET_ADMIN` as ambient
+capabilities, not as root:
 
 ```bash
+# the unit's User=/Group= need this account to exist. `useradd` only creates a matching
+# group on distributions that default to per-user groups, so create it explicitly.
+sudo groupadd --system maltrail
+sudo useradd --system --gid maltrail --no-create-home --shell /usr/sbin/nologin maltrail
+
 sudo cp maltrail-sensor.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable --now maltrail-sensor
 journalctl -u maltrail-sensor -f
 ```
+
+`StateDirectory=maltrail` and `LogsDirectory=maltrail` create and chown `/var/lib/maltrail` and
+`/var/log/maltrail`, so there is nothing else to set up. Point `TRAILS_FILE` at
+`/var/lib/maltrail/trails.csv` and `LOG_DIR` at `/var/log/maltrail`: the unit sets
+`ProtectHome=yes`, so the `$HOME`-derived default `~/.maltrail/trails.csv` is not reachable.
+
+The unit runs `maltrail-sensor -T` as `ExecStartPre=`, so a deployment that could not detect
+anything fails at start instead of running blind. It also sets `UMask=0027` (event logs name
+internal addresses, domains and URLs), `ProtectSystem=strict`, `NoNewPrivileges=yes`,
+`MemoryDenyWriteExecute=yes` and a restricted address-family set.
+
+`ExecStart` points at `/opt/maltrail/sensor/target/release/maltrail-sensor`. If the sensor lives
+elsewhere — a prebuilt binary in `/usr/local/bin`, or a different checkout — edit `WorkingDirectory`,
+`ExecStartPre` and `ExecStart` to match.
 
 SIGTERM is handled: workers stop within `CAPTURE_TIMEOUT`, condensed events are flushed, final
 metrics are printed and capture handles are released.
@@ -463,7 +473,7 @@ Nothing here is required to run the sensor; it is how to convince yourself befor
 3. **Scale out only if you need to.** One worker handles 1.8M packets/s on an eight-core laptop
    CPU and 3.7M on a Ryzen 9 5900X (steady-state, `tools/bench_compare.py`). If
    `maltrail_capture_dropped_total` is climbing, set `CAPTURE_FANOUT` and re-run
-   `fanout_check.py` — and read §3 of `docs/COMPATIBILITY.md` first, because extra capture
+   `fanout_check.py` — and read `docs/COMPATIBILITY.md` §2, difference 3 first, because extra capture
    sockets cost scan-heuristic sensitivity.
 
 ## 14. Troubleshooting
