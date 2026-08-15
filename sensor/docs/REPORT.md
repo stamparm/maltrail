@@ -60,7 +60,8 @@ Module-by-module mapping to the Python source: `docs/PORTING_MAP.md`.
 cargo test --release
 ```
 
-**401 tests** (222 unit + 179 integration, measured 2026-08-15), run in **BOTH profiles**.
+**403 tests, 0 failures — in BOTH profiles** (222 lib + 2 binary + 179 integration, measured
+2026-08-15).
 
 ```
 cargo test            # debug: integer-overflow checks ON
