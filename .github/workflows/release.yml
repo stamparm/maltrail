@@ -112,7 +112,9 @@ jobs:
             echo "$LIBPCAP_SHA256  /tmp/libpcap.tar.gz" | sha256sum -c -
             tar -C /tmp -xzf /tmp/libpcap.tar.gz
             cd "/tmp/libpcap-$LIBPCAP_VERSION"
-            ./configure --prefix=/opt/libpcap --disable-shared --enable-static \
+            # No --enable-static: libpcap's configure does not know that option and warns about
+            # it. --disable-shared is what leaves libpcap.a as the only thing to link against.
+            ./configure --prefix=/opt/libpcap --disable-shared \
               --disable-dbus --disable-rdma --without-libnl --without-dpdk \
               --without-dag --without-septel --without-snf --without-turbocap >/dev/null
             make -j"$(nproc)" >/dev/null
