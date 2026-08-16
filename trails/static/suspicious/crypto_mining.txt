@@ -1922,3 +1922,7 @@ jbgj331.ssl-cdnweb.net
 luckylegendscasino.app
 sstsauvetagetechnique.com
 docs06f.snakeanimals.sbs
+
+# Reference: https://www.virustotal.com/gui/file/3b2cbd1dd7e0e78cab544fa6c5b97fa500f092e3c4fbe62adbbbbf1af79564c9/detection
+
+141.94.96.71:3333
