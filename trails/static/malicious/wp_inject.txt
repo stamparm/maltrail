@@ -7031,6 +7031,26 @@ yusialone.top
 /x9i32md/w1/la02
 /x9i32md/
 
+# Reference: https://www.virustotal.com/gui/file/4f0b605df6ffae5d7aafac9211d367f621d0d55f028e4ed35607e923926e46a3/detection
+# Reference: https://www.virustotal.com/gui/file/fbdbe7a1b29a2178d9f242e11908a06cf24eb2150302a0a811fd09db49fa2d68/detection
+# CLASS_0_HASH-HOST=a4966f11ed699c8be1f7f58ff42e3791
+
+aniyara.icu
+antitotal.cc
+converts.lol
+devbiz.lol
+immersionzone.info
+lamindhdh.sbs
+nexguard.pro
+niaoend.com
+posysfh.sbs
+rlverside.com
+stackai.co.com
+uz-opur.asia
+w2.posysfh.sbs
+wp-stationcloud.com
+wpstationcloud.com
+
 # Generic
 
 /wp-imcludes/
