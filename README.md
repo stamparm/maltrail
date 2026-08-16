@@ -187,7 +187,7 @@ Common installer options:
 
 ```bash
 sh install.sh --role sensor      # Install only the sensor
-sh install.sh --ref 3.1.1        # Install a release tag instead of master
+sh install.sh --ref 3.1.2        # Install a release tag instead of master
 sh install.sh --no-service       # Install without changing systemd
 sh install.sh --dry-run          # Print commands without applying them
 sh install.sh --uninstall        # Remove the managed installation; keep logs and state
