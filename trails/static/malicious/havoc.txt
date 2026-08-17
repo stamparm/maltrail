@@ -5930,6 +5930,14 @@ sharingfile.cloud
 147.182.255.152:8443
 147.182.255.152:9997
 
+# Reference: https://x.com/SinghSoodeep/status/2089358723995107626
+# Reference: https://www.virustotal.com/gui/file/9e33b6879915f184e121c8d2631402dd01b751531e7d2b7701a6ff51af6a4eff/detection
+
+new-turkey-tr.workers.dev
+research-department-tusas.workers.dev
+supprot.new-turkey-tr.workers.dev
+turkey.research-department-tusas.workers.dev
+
 # Generic
 
 /Havoc/payload/
