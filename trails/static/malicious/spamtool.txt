@@ -1,0 +1,102 @@
+# Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+# See the file 'LICENSE' for copying permission
+
+# Reference: https://twitter.com/ecarlesi/status/1344217410052579328
+# Reference: https://twitter.com/neonprimetime/status/1344453312301703168
+
+serverehost.com
+
+# Reference: https://twitter.com/500mk500/status/1344556067481677824
+
+auvbaiunaiuolinam.com/mailer/alexus.php
+
+# Reference: https://x.com/9823f_/status/1853411034192556058
+# Reference: https://search.censys.io/search?q=services.http.response.html_tags%3D%22%3Ctitle%3EContador%3C%2Ftitle%3E%22&resource=hosts
+# Reference: https://search.censys.io/hosts/140.99.164.82
+# Reference: https://search.censys.io/hosts/148.101.133.15
+# Reference: https://search.censys.io/hosts/167.172.181.77
+# Reference: https://search.censys.io/hosts/167.88.166.158
+
+http://167.172.181.77
+http://34.110.137.167
+34.110.137.167:443
+140.99.164.82:5000
+140.99.164.82:5050
+148.101.133.15:8080
+167.88.166.158:5000
+
+# Reference: https://urlscan.io/result/019eccd8-a618-77a8-b29e-4e273485dbc3/
+# TITLE-HOST/IP=📧 Email Sender Bot
+
+107.23.82.119:3000
+13.60.86.226:3000
+
+# Reference: https://x.com/JustWantToQ1/status/2042690486574436658
+
+144.76.57.92:5000
+23.94.199.102:6688
+23.94.199.104:6688
+
+# Reference: https://twitter.com/packet_Wire/status/1191779977198473217
+
+dmr.com.sg/ese3.php
+
+# Reference: https://twitter.com/0dayDB/status/825614694081654784
+
+95cnweb.com
+torwebpkoepvlojp.onion
+
+# Reference: https://twitter.com/makflwana/status/1293840963719192576
+
+oic-iphrc.org/assets/css/vendor.php
+xsndr.pw
+
+# Reference: https://twitter.com/PRODAFT/status/1286580568801640448
+# Reference: https://twitter.com/neonprimetime/status/1589084560675201024
+# Reference: https://twitter.com/neonprimetime/status/1589086239931527168
+# Reference: https://urlscan.io/dom/8f93bd4e-7d78-485c-97e2-ee6ec6fb411a/
+# Reference: https://neonprimetime.blogspot.com/2022/11/xtramailer-spam-service-phishing-tool.html
+
+http://62.210.72.29
+http://62.210.81.212
+http://195.154.164.184
+http://195.154.164.25
+conferencias.falcorp.net
+
+# Reference: https://urlscan.io/result/01a00f92-608e-707a-bb3d-d8e9ec6f6a5e/
+# TITLE-HOST/IP=Login - AeroMail Sender
+# TITLE-HOST/IP=Login - MailPilot
+
+electronichubb.com
+noreply-secure0notification-mrcosofts.com
+reyesernesto.com
+verifyidentityaccess.com
+websecure0notiffications.de
+account.verifyidentityaccess.com
+acrobat.electronichubb.com
+api-aa1a6aea.verifyidentityaccess.com
+beef.reyesernesto.com
+click.electronichubb.com
+csp.verifyidentityaccess.com
+dotfoods.verifyidentityaccess.com
+empowermm.verifyidentityaccess.com
+login.verifyidentityaccess.com
+mail.electronichubb.com
+o.verifyidentityaccess.com
+onedrive.electronichubb.com
+open.electronichubb.com
+outlook.verifyidentityaccess.com
+sci.verifyidentityaccess.com
+sso.verifyidentityaccess.com
+ulgroup.verifyidentityaccess.com
+vn3hg.verifyidentityaccess.com
+y6.verifyidentityaccess.com
+ywnjb.verifyidentityaccess.com
+
+# Generic
+
+/mailer/alexus.php
+/alexusmailer.php
+/XtraMailerLogin
+/xtramailer/public/index.php
+/xtramailer/vendor/
