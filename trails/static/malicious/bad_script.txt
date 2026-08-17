@@ -9985,6 +9985,10 @@ drvdb9rcebidk.cloudfront.net
 
 /api/bot/actions?build_id=&bot_id=
 
+# Reference: https://x.com/Yusufcancakiir/status/2089076764215517292
+
+/dvr_exploit.py
+
 # Generic
 
 /5c0ca79.php
