@@ -252,5 +252,119 @@ class TestUsesPublishedKey(unittest.TestCase):
         self.assertEqual(sorted(C.PUBLISHED_PEM_FINGERPRINTS.values()), ["certificate", "private key"])
 
 
+class TestRipeLookup(unittest.TestCase):
+    """The server-side half of the RIPEstat enrichment that used to be a JSONP <script> in the page.
+
+    Nothing here talks to RIPEstat: urlopen is replaced, which is also how the call counts below
+    prove the two cache behaviours - a hit costs no request, and a FAILED lookup is remembered
+    briefly too (an air-gapped server would otherwise pay a connect timeout per visible IP, per
+    page load, forever).
+    """
+
+    def setUp(self):
+        self._saved_open = C._urllib.request.urlopen
+        self._calls = []
+        C._ripe_cache.clear()
+        C.config.pop("DISABLE_RIPE_LOOKUPS", None)
+        self.addCleanup(self._restore)
+
+    def _restore(self):
+        C._urllib.request.urlopen = self._saved_open
+        C._ripe_cache.clear()
+        C.config.pop("DISABLE_RIPE_LOOKUPS", None)
+
+    def _answer(self, payload, fail=False):
+        import json
+
+        class _Resp(object):
+            def __init__(self, body):
+                self._body = body
+
+            def read(self, n=None):
+                return self._body[:n] if n else self._body
+
+            def close(self):
+                pass
+
+        calls = self._calls
+
+        def _urlopen(req, timeout=None):
+            calls.append(getattr(req, "full_url", req))
+            if fail:
+                raise IOError("no route to host")
+            return _Resp(json.dumps(payload).encode("utf8"))
+
+        C._urllib.request.urlopen = _urlopen
+
+    def test_geoloc_country_is_extracted_and_normalised(self):
+        self._answer({"data": {"located_resources": [{"locations": [{"country": "US-CA"}]}]}})
+        self.assertEqual(C.ripe_lookup("geo", "8.8.8.8"), {"cc": "us"})
+        self.assertIn("8.8.8.8", self._calls[0])
+        self.assertIn("geoloc", self._calls[0])
+
+    def test_a_country_that_is_not_a_country_code_is_dropped(self):
+        # Whatever comes back is third-party text rendered into the page as a flag; only a
+        # two-letter code can be one.
+        self._answer({"data": {"located_resources": [{"locations": [{"country": "<script>"}]}]}})
+        self.assertEqual(C.ripe_lookup("geo", "8.8.8.8"), {"cc": ""})
+
+    def test_network_info_asn(self):
+        self._answer({"data": {"asns": [15169], "prefix": "8.8.8.0/24"}})
+        self.assertEqual(C.ripe_lookup("asn", "8.8.8.8"), {"asn": "AS15169", "holder": ""})
+        self.assertIn("network-info", self._calls[0])
+
+    def test_missing_or_malformed_payload_is_a_non_answer_not_a_crash(self):
+        self._answer({"data": {}})
+        self.assertEqual(C.ripe_lookup("geo", "8.8.8.8"), {"cc": ""})
+        C._ripe_cache.clear()
+        self._answer({"nothing": "useful"})
+        self.assertEqual(C.ripe_lookup("asn", "8.8.8.8"), {"asn": "", "holder": ""})
+
+    def test_a_hit_costs_no_request(self):
+        self._answer({"data": {"located_resources": [{"locations": [{"country": "de"}]}]}})
+        self.assertEqual(C.ripe_lookup("geo", "1.2.3.4"), {"cc": "de"})
+        self.assertEqual(C.ripe_lookup("geo", "1.2.3.4"), {"cc": "de"})
+        self.assertEqual(len(self._calls), 1, "the second lookup must be served from the cache")
+
+    def test_a_failure_is_cached_too(self):
+        self._answer({}, fail=True)
+        self.assertIsNone(C.ripe_lookup("geo", "1.2.3.4"))
+        self.assertIsNone(C.ripe_lookup("geo", "1.2.3.4"))
+        self.assertEqual(len(self._calls), 1, "an unreachable RIPEstat must not be re-dialled per request")
+
+    def test_expiry_lets_a_lookup_retry(self):
+        self._answer({}, fail=True)
+        self.assertIsNone(C.ripe_lookup("geo", "1.2.3.4"))
+        key = ("geo", "1.2.3.4")
+        expires, payload = C._ripe_cache[key]
+        C._ripe_cache[key] = (0, payload)                # pretend the negative entry aged out
+        self._answer({"data": {"located_resources": [{"locations": [{"country": "fr"}]}]}})
+        self.assertEqual(C.ripe_lookup("geo", "1.2.3.4"), {"cc": "fr"})
+        self.assertGreater(expires, 0, "a negative entry must still have had an expiry")
+
+    def test_the_cache_is_bounded(self):
+        self._answer({"data": {"located_resources": [{"locations": [{"country": "nl"}]}]}})
+        saved = C.RIPE_LOOKUP_MAX_ENTRIES
+        try:
+            C.RIPE_LOOKUP_MAX_ENTRIES = 8
+            for i in range(40):
+                C.ripe_lookup("geo", "1.2.3.%d" % i)
+            self.assertLessEqual(len(C._ripe_cache), 8, "an unbounded cache is a memory leak per distinct IP")
+        finally:
+            C.RIPE_LOOKUP_MAX_ENTRIES = saved
+
+    def test_disabled_means_no_request_at_all(self):
+        self._answer({"data": {"located_resources": [{"locations": [{"country": "us"}]}]}})
+        C.config.DISABLE_RIPE_LOOKUPS = True
+        self.assertIsNone(C.ripe_lookup("geo", "8.8.8.8"))
+        self.assertEqual(self._calls, [], "DISABLE_RIPE_LOOKUPS must be a kill switch, not a fallback")
+
+    def test_an_unknown_kind_is_refused_before_any_request(self):
+        self._answer({"data": {}})
+        self.assertIsNone(C.ripe_lookup("whois", "8.8.8.8"))
+        self.assertIsNone(C.ripe_lookup("geo", ""))
+        self.assertEqual(self._calls, [], "only the two fixed RIPEstat endpoints may be reached")
+
+
 if __name__ == "__main__":
     unittest.main()

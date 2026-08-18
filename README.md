@@ -116,9 +116,11 @@ between analysts.
 Sessions restricted with a network filter see only events from their own networks, and that
 restriction applies to the counts, map and blacklist endpoints as well as to the event list.
 
-Country and ASN enrichment for individual addresses is requested by the browser from
-`stat.ripe.net`. On a host without internet access the lookups fail once and are then suppressed;
-everything else in the interface works offline.
+Country and ASN enrichment for individual addresses is looked up at `stat.ripe.net` by the
+**server**, which caches the results and serves them to the interface from its own `/ripe`
+endpoint; the browser talks to nothing but Maltrail. Set `DISABLE_RIPE_LOOKUPS` to switch the
+outbound lookups off entirely. Without them — or on a host with no internet access — flags come
+from the local RIR table instead and everything else in the interface works offline.
 
 ## Performance
 
