@@ -351,8 +351,34 @@ def log_error(msg, single=False):
             traceback.print_exc()
 
 def start_logd(address=None, port=None, join=False):
-    class ThreadingUDPServer(_socketserver.ThreadingMixIn, _socketserver.UDPServer):
-        pass
+    # ONE receive loop, not a thread per datagram.
+    #
+    # This used to be a ThreadingUDPServer, so every event from every remote sensor cost a fresh thread -
+    # and because that thread was fresh, get_event_log_handle()'s thread-local fd cache could never hit, so
+    # each event also cost an open() and a close(). Measured against the real server on loopback, paced:
+    #
+    #     500/s  0% loss     5,000/s   0% loss
+    #   1,000/s  0% loss    10,000/s  23.9% loss
+    #   2,000/s  0% loss    (unpaced 337k/s: 2.3% delivered)
+    #
+    # A sensor with DISABLE_LOCAL_LOG_STORAGE sends every event here, and a scan burst on a busy link is
+    # well past 10k/s - so the loss lands exactly when there is most to see. The handler only parses a line
+    # and appends it, which is the wrong shape for concurrency in the first place: N threads appending to one
+    # file contend on it, and the external review's "unbounded threads" note was about this constructor.
+    # Sequential receive keeps `reuse=True` viable (one long-lived thread, one cached fd, still rotated by
+    # the day-path comparison) and removes both costs.
+    class LogUDPServer(_socketserver.UDPServer):
+        def server_bind(self):
+            # The default receive buffer holds ~2k of these datagrams, so a burst overruns it while the loop
+            # is still writing. This asks for 8 MB, but the kernel CLAMPS it to net.core.rmem_max without
+            # error - which on a stock box is the 208 KB default, i.e. no change at all. So it is not where
+            # the numbers above come from; those are the thread and the open()/close(). It is here because it
+            # is one line and it does help on a host whose operator has raised rmem_max for exactly this.
+            try:
+                self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 8 * 1024 * 1024)
+            except Exception:
+                pass
+            _socketserver.UDPServer.server_bind(self)
 
     class UDPHandler(_socketserver.BaseRequestHandler):
         def handle(self):
@@ -377,11 +403,9 @@ def start_logd(address=None, port=None, join=False):
                 # malformed-but-honest sender still gets its event recorded, on one line.
                 event = event.rstrip(b'\r\n').replace(b'\r', b' ').replace(b'\n', b' ') + b'\n'
 
-                handle = get_event_log_handle(int(sec), reuse=False)
-                try:
-                    os.write(handle, event)
-                finally:
-                    os.close(handle)
+                # reuse=True: one receive loop means one thread, so the thread-local handle is a real cache
+                # instead of a miss on every datagram. It is reopened when the day's path changes.
+                os.write(get_event_log_handle(int(sec)), event)
             except Exception:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
@@ -390,12 +414,12 @@ def start_logd(address=None, port=None, join=False):
     if ':' in (address or ""):
         address = address.strip("[]")
 
-        _socketserver.UDPServer.address_family = socket.AF_INET6
+        LogUDPServer.address_family = socket.AF_INET6
         _address = resolve_address(address, port)
     else:
         _address = (address or '', int(port) if str(port or "").isdigit() else 0)
 
-    server = ThreadingUDPServer(_address, UDPHandler)
+    server = LogUDPServer(_address, UDPHandler)
 
     print("[i] running UDP server at '%s:%d'" % (server.server_address[0], server.server_address[1]))
 
