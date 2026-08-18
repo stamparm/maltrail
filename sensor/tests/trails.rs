@@ -1,6 +1,11 @@
-//! Trail-loading tests, including against the operator's real `~/.maltrail/trails.csv`
-//! when one is present (skipped with a printed note otherwise, so CI without trails still
-//! passes).
+//! Trail-loading tests, including against a real trails file (`$MALTRAIL_TRAILS`, default
+//! `~/.maltrail/trails.csv`) when one is present — skipped with a printed note otherwise, so a
+//! machine without trails still passes. The `real trail set` CI job builds one with
+//! `sensor/tools/update_trails.py --offline` so those tests are not operator-only.
+//!
+//! Anything they assert that must hold *everywhere* — above all the trail store's
+//! no-false-negative invariant — has a generated-at-scale counterpart here that needs no trails
+//! file at all: see `the_negative_filter_never_hides_a_key_at_real_scale`.
 
 use std::path::PathBuf;
 
@@ -12,7 +17,8 @@ fn repo_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).parent().unwrap().to_path_buf()
 }
 
-/// A private SNAPSHOT of the operator's `~/.maltrail/trails.csv`.
+/// A private SNAPSHOT of the operator's trails file — `$MALTRAIL_TRAILS` when set, otherwise
+/// `~/.maltrail/trails.csv` (the same knob `tools/check.sh` uses for its real-trails parity step).
 ///
 /// These tests read the file more than once — build the store from it, then walk its rows to
 /// check each is findable. A running sensor refreshes that same file and installs the new one
@@ -26,8 +32,10 @@ fn real_trails_file() -> Option<PathBuf> {
     static SNAPSHOT: OnceLock<Option<PathBuf>> = OnceLock::new();
     SNAPSHOT
         .get_or_init(|| {
-            let home = std::env::var("HOME").ok()?;
-            let live = PathBuf::from(home).join(".maltrail").join("trails.csv");
+            let live = match std::env::var("MALTRAIL_TRAILS") {
+                Ok(explicit) if !explicit.is_empty() => PathBuf::from(explicit),
+                _ => PathBuf::from(std::env::var("HOME").ok()?).join(".maltrail").join("trails.csv"),
+            };
             if !live.is_file() {
                 return None;
             }
@@ -147,7 +155,7 @@ fn pairs_are_interned_across_trails() {
 #[test]
 fn real_trails_file_loads_completely() {
     let Some(path) = real_trails_file() else {
-        println!("[skip] no ~/.maltrail/trails.csv on this machine");
+        println!("[skip] no real trails file ($MALTRAIL_TRAILS or ~/.maltrail/trails.csv) on this machine");
         return;
     };
     let wl = Whitelist::load(&repo_root(), None);
@@ -196,7 +204,7 @@ fn real_trails_file_loads_completely() {
 #[test]
 fn real_trails_lookups_agree_between_native_and_text_paths() {
     let Some(path) = real_trails_file() else {
-        println!("[skip] no ~/.maltrail/trails.csv on this machine");
+        println!("[skip] no real trails file ($MALTRAIL_TRAILS or ~/.maltrail/trails.csv) on this machine");
         return;
     };
     let wl = Whitelist::load(&repo_root(), None);
@@ -284,7 +292,7 @@ fn real_trails_every_single_row_is_findable_with_its_own_info() {
     // EVERY accepted row of the real trails.csv must be retrievable, with exactly the (info,
     // reference) that row carries. Not a sample - every row.
     let Some(path) = real_trails_file() else {
-        println!("[skip] no ~/.maltrail/trails.csv on this machine");
+        println!("[skip] no real trails file ($MALTRAIL_TRAILS or ~/.maltrail/trails.csv) on this machine");
         return;
     };
     let wl = Whitelist::load(&repo_root(), None);
@@ -375,7 +383,7 @@ fn every_real_wildcard_trail_is_either_compiled_or_reported() {
     // exactly one bucket: compiled, repaired, or reported as skipped. Nothing may vanish.
     // (Whether that classification matches CPython's is asserted in tests/loader_parity.rs.)
     let Some(path) = real_trails_file() else {
-        println!("[skip] no ~/.maltrail/trails.csv on this machine");
+        println!("[skip] no real trails file ($MALTRAIL_TRAILS or ~/.maltrail/trails.csv) on this machine");
         return;
     };
     let wl = Whitelist::load(&repo_root(), None);
@@ -436,4 +444,102 @@ fn reload_swaps_the_store_atomically() {
     assert!(view.db().contains("b.com"));
     assert!(!view.db().contains("a.com"));
     assert!(!view.refresh(), "no further reload pending");
+}
+
+/// The trail store's one probabilistic component, verified at real trail-set scale **without a
+/// trails file**.
+///
+/// `NegativeFilter` short-circuits a lookup whose key it believes absent, and a false negative
+/// there is a silently missed detection — the worst failure this codebase has. The definitive
+/// check used to be the real-trails row walk above, which self-skips wherever no operator trails
+/// file exists (every CI runner until the `real trail set` job, every contributor's first clone),
+/// so the invariant behind the filter was asserted by nothing reproducible. This is that check,
+/// generated: 1.5M keys in the shapes the loader actually produces, every one walked back.
+///
+/// Sized deliberately hostile: every table starts at a capacity ~1500x below what it ends up
+/// holding, so the string table grows ~11 times under the filter and the filter itself is left
+/// saturated far past its design load. Both are cases the estimate-based sizing in
+/// `TrailDb::with_estimate` can hit on a trail set that grew since the row estimate was made.
+#[test]
+fn the_negative_filter_never_hides_a_key_at_real_scale() {
+    use maltrail_sensor::trails::table::{IntTable, StrTable};
+    use std::fmt::Write as _;
+
+    const KEYS: u32 = 1_500_000;
+
+    // SplitMix64: a fixed seed, so a failure is reproducible and bisectable.
+    let mut state = 0x9e37_79b9_7f4a_7c15u64;
+    let mut next = move || {
+        state = state.wrapping_add(0x9e37_79b9_7f4a_7c15);
+        let mut z = state;
+        z = (z ^ (z >> 30)).wrapping_mul(0xbf58_476d_1ce4_e5b9);
+        z = (z ^ (z >> 27)).wrapping_mul(0x94d0_49bb_1331_11eb);
+        z ^ (z >> 31)
+    };
+
+    // Same generator, same order, twice: build, then verify. Keeping it a function rather than a
+    // 1.5M-entry Vec<String> keeps the test's own footprint next to nothing.
+    fn key_into(buf: &mut String, i: u32, r: u64) {
+        buf.clear();
+        match i % 4 {
+            0 => write!(buf, "host{i}.sub{}.example{}.com", r % 9973, r % 97),
+            1 => write!(buf, "{}.{}.{}.{}", (r >> 24) as u8, (r >> 16) as u8, (r >> 8) as u8, r as u8),
+            2 => write!(buf, "{}.{}.{}.{}:{}", (r >> 24) as u8, (r >> 16) as u8, (r >> 8) as u8, r as u8, r as u16 | 1),
+            _ => write!(buf, "domain{i}.example/path/{}/{}.php", r % 7919, r % 31),
+        }
+        .unwrap();
+    }
+
+    let mut randoms: Vec<u64> = Vec::with_capacity(KEYS as usize);
+    for _ in 0..KEYS {
+        randoms.push(next());
+    }
+
+    let mut strings = StrTable::with_capacity(1024, 1 << 16);
+    let mut ip4: IntTable<u32> = IntTable::with_capacity(1024);
+    let mut ip4_port: IntTable<u64> = IntTable::with_capacity(1024);
+    let mut ip6: IntTable<u128> = IntTable::with_capacity(1024);
+
+    let mut buf = String::with_capacity(96);
+    for (i, &r) in randoms.iter().enumerate() {
+        let i = i as u32;
+        key_into(&mut buf, i, r);
+        strings.insert(&buf, i + 1);
+        ip4.insert(r as u32, i + 1);
+        ip4_port.insert(r | 1, i + 1);
+        ip6.insert((r as u128) << 64 | i as u128, i + 1);
+    }
+    assert!(strings.len() > KEYS as usize / 2, "generator produced too many duplicate keys");
+
+    // The invariant: an inserted key is NEVER answered "absent". Values may legitimately differ
+    // (the generator can repeat a key, and the later insert wins), so this asserts findability,
+    // which is what the filter can break. The real-trails walk asserts the values.
+    let mut hidden = Vec::new();
+    for (i, &r) in randoms.iter().enumerate() {
+        let i = i as u32;
+        key_into(&mut buf, i, r);
+        if strings.get(&buf).is_none() && hidden.len() < 10 {
+            hidden.push(buf.clone());
+        }
+        if ip4.get(r as u32).is_none() && hidden.len() < 10 {
+            hidden.push(format!("ip4 {r:#x}"));
+        }
+        if ip4_port.get(r | 1).is_none() && hidden.len() < 10 {
+            hidden.push(format!("ip4_port {r:#x}"));
+        }
+        if ip6.get((r as u128) << 64 | i as u128).is_none() && hidden.len() < 10 {
+            hidden.push(format!("ip6 {r:#x}/{i}"));
+        }
+    }
+    assert!(hidden.is_empty(), "the negative filter hid inserted keys - missed detections: {hidden:?}");
+
+    // And the other half of being useful: absent keys must still be rejected, and none of them may
+    // resolve to an entry the table does not hold.
+    let mut invented = 0usize;
+    for i in 0..100_000u32 {
+        if strings.get(&format!("absent{i}.nowhere.invalid")).is_some() {
+            invented += 1;
+        }
+    }
+    assert_eq!(invented, 0, "the table invented entries for keys never inserted");
 }
