@@ -13,7 +13,10 @@ Deterministic: Python sets are emitted sorted, tuples/lists keep their order (wh
 load-bearing for the "first regex wins" scans).
 """
 
+import argparse
+import io
 import os
+import re
 import sys
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
@@ -183,11 +186,124 @@ def main(out_path=None):
     print("[i] wrote %s (%d bytes)" % (target, len(content)))
 
 
+def _constants(text):
+    """{name: normalised value} for every `pub const` in a settings_gen.rs.
+
+    The checked-in file is rustfmt'd and this generator's output is not, so the two are never
+    byte-equal even when they carry identical constants: rustfmt re-wraps the slices and adds a
+    trailing comma to every one it breaks across lines. Comparing NAME -> value with the formatting
+    removed asks the only question that matters, and needs no rustfmt to answer it.
+
+    Removing it means ALL whitespace outside string literals, plus a comma before a closing bracket.
+    Collapsing runs of whitespace to one space is not enough - that was the first attempt, and it
+    called a perfectly current file stale in 10 constants, which is the same "gate cries wolf on a
+    healthy tree" failure this session has now fixed twice elsewhere.
+
+    >>> a = _constants('pub const X: &[&str] = &["a", "b"];\\n')
+    >>> b = _constants('pub const X: &[&str] = &[\\n    "a",\\n    "b",\\n];\\n')
+    >>> a == b
+    True
+    >>> _constants('pub const X: &str = "a b";\\n') == _constants('pub const X: &str = "ab";\\n')
+    False
+    """
+
+    found = {}
+    for match in re.finditer(r"pub const (\w+)\s*:[^=]*=\s*(.*?);\n", text, re.S):
+        name, value = match.group(1), match.group(2)
+
+        # Split on string literals so whitespace INSIDE a literal (" " in a keyword list, "\n" in a
+        # regex) is never touched; only the layout between tokens is.
+        parts = re.split(r'(r?#*"(?:[^"\\]|\\.)*"#*)', value)
+        for i in range(0, len(parts), 2):
+            parts[i] = re.sub(r"\s+", "", parts[i]).replace(",]", "]").replace(",)", ")")
+        found[name] = "".join(parts)
+
+    return found
+
+
+def check(out_path=None):
+    """Is the checked-in settings_gen.rs current with core/settings.py + data/ua.txt? Writes nothing.
+
+    `cargo test --test generated` remains the authority in CI (it compares what the sensor actually
+    COMPILED). This is the same question answerable in a second, without a toolchain - and without the
+    trap that produced it: `--check` used to be an unrecognised argument, silently ignored, so a
+    read-only-sounding flag rewrote the working tree instead of reporting on it.
+    """
+
+    target = out_path or OUT
+    try:
+        with open(target) as f:
+            on_disk = _constants(f.read())
+    except EnvironmentError as ex:
+        print("[x] cannot read %s (%s)" % (target, ex))
+        return 1
+
+    import contextlib
+    import tempfile
+    handle, tmp = tempfile.mkstemp(suffix=".rs")
+    os.close(handle)
+    try:
+        with contextlib.redirect_stdout(io.StringIO()):   # main() announces the write; a check has not written anything
+            main(tmp)
+        with open(tmp) as f:
+            fresh = _constants(f.read())
+    finally:
+        try:
+            os.remove(tmp)
+        except OSError:
+            pass
+
+    drift = sorted(set(fresh) ^ set(on_disk)) + sorted(k for k in set(fresh) & set(on_disk) if fresh[k] != on_disk[k])
+    if not drift:
+        print("[i] %s is current (%d constants)" % (target, len(fresh)))
+        return 0
+
+    print("[!] %s is STALE: %d constant(s) differ" % (target, len(drift)))
+    for name in drift[:10]:
+        if name not in on_disk:
+            print("      %s: missing from the checked-in file" % name)
+        elif name not in fresh:
+            print("      %s: no longer generated" % name)
+        else:
+            print("      %s: %.60s... != %.60s..." % (name, on_disk[name], fresh[name]))
+    if len(drift) > 10:
+        print("      ... and %d more" % (len(drift) - 10))
+    print("[?] regenerate with:")
+    print("[?]     python3 sensor/tools/gen_settings.py")
+    print("[?]     rustfmt --edition 2021 --config-path sensor/rustfmt.toml sensor/src/settings_gen.rs")
+    return 1
+
+
+def require_supported_interpreter():
+    """Refuse to generate (or judge) on an interpreter that produces a different file.
+
+    `sensor/tools/check.sh` already requires 3.7+ before it runs this, "because a generator run on an
+    older interpreter can emit a subtly wrong settings_gen.rs rather than failing". Running the
+    generator directly bypassed that. It is not theoretical: on 3.6 this reports IPPROTO_LUT and
+    SUSPICIOUS_UA_REGEX as stale, because IPPROTO_LUT is built from `dir(socket)` and that set differs
+    between interpreter versions - and the advice a STALE verdict prints would then have you write the
+    wrong file. The server still supports 3.6; generating this Rust source does not.
+    """
+
+    if sys.version_info[:2] < (3, 7):
+        print("[!] python3 is %d.%d.%d, but generating settings_gen.rs needs 3.7+" % sys.version_info[:3])
+        print("[?] IPPROTO_LUT comes from dir(socket), which differs between versions - an older")
+        print("[?] interpreter writes a subtly different file rather than failing. Use the same")
+        print("[?] interpreter CI does (see sensor/tools/check.sh, which enforces this before it runs).")
+        return False
+
+    return True
+
+
 if __name__ == "__main__":
-    import sys as _sys
+    parser = argparse.ArgumentParser(description="Generate sensor/src/settings_gen.rs from core/settings.py.")
     # `-o PATH` writes elsewhere, so a freshness test can regenerate into a temp file and diff
     # against the checked-in one without touching the tree.
-    _out = None
-    if len(_sys.argv) >= 3 and _sys.argv[1] == "-o":
-        _out = _sys.argv[2]
-    main(_out)
+    parser.add_argument("-o", "--out", dest="out", default=None, help="write here instead of the default path")
+    parser.add_argument("--check", action="store_true", help="report whether the checked-in file is current; write nothing")
+    options = parser.parse_args()      # argparse, so an unrecognised flag is an ERROR rather than a silent write
+
+    if not require_supported_interpreter():
+        sys.exit(2)
+
+    sys.exit(check(options.out) if options.check else main(options.out) or 0)
