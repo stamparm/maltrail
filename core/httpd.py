@@ -33,6 +33,9 @@ from core.common import get_regex
 from core.common import trails_bin_path
 from core.common import ipcat_lookup
 from core.common import worst_asns
+from core.common import bogon_ip
+from core.common import is_local
+from core.common import ripe_lookup
 from core.compat import xrange
 from core.enums import HTTP_HEADER
 from core.geo import ip_to_country
@@ -693,7 +696,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # display helpers (_version, _logo, _assetver, _tzoffset, _statics, _format, _build_netfilters, _filter_events)
             # whose signature is NOT (self, params), so e.g. "GET /version" -> self._version(params) -> uncaught TypeError
             # (request crash) reachable by any client. Endpoints are an explicit allowlist, not "any _-prefixed method".
-            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "check", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt", "meta", "reference"):
+            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "check", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt", "meta", "reference", "ripe"):
                 if len(splitpath) > 1:
                     params["subpath"] = splitpath[1]
                 content = getattr(self, "_%s" % splitpath[0])(params)
@@ -745,7 +748,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         self.send_header(HTTP_HEADER.LAST_MODIFIED, last_modified)
 
                         # For CSP policy directives see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/
-                        self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src * blob:; script-src 'self' https://stat.ripe.net; frame-src 'none'; object-src 'none'; block-all-mixed-content;")
+                        # script-src is 'self' and must stay that way. It carried
+                        # https://stat.ripe.net for as long as the frontend fetched RIPEstat with a
+                        # JSONP <script> per IP; that lookup is now proxied through /ripe, so no
+                        # third-party origin is allowed to execute code in the page that renders the
+                        # operator's alerts. Widening this again to reach some API is the wrong trade
+                        # every time - proxy the API instead, like /ripe does.
+                        self.send_header(HTTP_HEADER.CONTENT_SECURITY_POLICY, "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src * blob:; script-src 'self'; frame-src 'none'; object-src 'none'; block-all-mixed-content;")
 
                         if os.path.basename(path) == "index.html":
                             # demo.js exists for the public static demo, and main.js turns DEMO on
@@ -1163,6 +1172,56 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             except Exception:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()
+
+        def _ripe(self, params):
+            # RIPEstat enrichment (country flag, ASN tooltip), proxied server-side.
+            #
+            # The frontend used to do this itself with a <script> per IP against stat.ripe.net,
+            # because RIPEstat answers JSONP and `connect-src 'self'` rules out fetch(). The cost
+            # was `script-src 'self' https://stat.ripe.net` in the shipped CSP - a third party
+            # allowed to execute code in the page that shows the operator's alerts, in exchange for
+            # a flag and a tooltip. Proxying here buys `script-src 'self'` back, and one cache for
+            # all analysts instead of one per browser profile.
+            #
+            # The IP is validated here, not in core.common: `ripe_lookup()` interpolates it into a
+            # fixed RIPEstat URL, so this method is where an SSRF would be introduced. Only a
+            # syntactically valid address is passed on, and only public ones are worth asking about.
+            session = self.get_session()
+
+            if session is None:
+                self.send_response(_http_client.UNAUTHORIZED)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
+            address = (params.get("address") or "").strip()
+            kind = (params.get("kind") or "geo").strip()
+
+            valid = kind in ("geo", "asn") and bool(address) and len(address) <= 45 and (
+                re.match(r"\A\d{1,3}(\.\d{1,3}){3}\Z", address) and addr_to_int(address) is not None
+                or re.match(r"\A[0-9A-Fa-f:]{2,45}\Z", address) and address.count(':') >= 2
+            )
+
+            if not valid or is_local(address) or bogon_ip(address):
+                self.send_response(_http_client.BAD_REQUEST)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
+            payload = ripe_lookup(kind, address)
+
+            # 204, not an empty 200: "RIPEstat could not be reached / is disabled" is exactly what
+            # the frontend's air-gap circuit breaker needs to see, and it must not be cached as an
+            # answer. The server already remembers the failure for RIPE_LOOKUP_MISS_TTL.
+            if payload is None:
+                self.send_response(_http_client.NO_CONTENT)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
+            self.send_response(_http_client.OK)
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
+            self.send_header(HTTP_HEADER.CACHE_CONTROL, "private, max-age=86400")
+
+            return json.dumps(payload)
 
         def _meta(self, params):
             # Condensed observable store lookup: "have I ever seen this domain/ip, since when, how often".

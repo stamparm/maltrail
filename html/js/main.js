@@ -1901,8 +1901,8 @@
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (j) {
           ipInfo[ip] = j ? { cat: (j.ipcat || ""), worst: j.worst_asns === "true" } : { cat: "", worst: false };
-          // offline GeoIP fallback: if RIPE hasn't supplied a country (air-gapped -> its JSONP is dead), use the
-          // country from our local RIR table so the flag still shows. Same-origin /check_ip works air-gapped.
+          // offline GeoIP fallback: if RIPE hasn't supplied a country (air-gapped -> /ripe answers 204), use the
+          // country from our local RIR table so the flag still shows. /check_ip needs no internet at all.
           if (j && j.country && !(ripe[ip] && ripe[ip].cc)) { ripe[ip] = ripe[ip] || { t: +new Date() }; ripe[ip].cc = j.country.toLowerCase(); applyRipe(ip); }
           applyIPInfo(ip); refreshTipFor(ip);
         })
@@ -1911,10 +1911,12 @@
   }
 
   // ---- RIPE geolocation + ASN enrichment: country flags + hover tooltip (like the legacy UI) ----
-  // The production CSP allows scripts from stat.ripe.net (script-src) but only same-origin fetch (connect-src 'self'),
-  // so RIPEstat is queried via JSONP <script>, NOT fetch. Air-gapped installs: the script just fails -> no flag,
-  // everything else keeps working. Results cached in localStorage for 7 days so we don't re-hit RIPE on every reload.
-  var RIPE_TTL = 7 * 864e5, _ripeSeq = 0;
+  // Queried through the server's /ripe endpoint (same-origin fetch), NOT from the browser. This used to inject a
+  // JSONP <script> per IP at stat.ripe.net, which is why the shipped CSP had to allow script-src from that origin --
+  // third-party code executing in the page that shows the alerts, for a flag and a tooltip. The server proxies and
+  // caches the lookup instead, so script-src is 'self' again. Air-gapped installs: /ripe answers 204 -> no flag,
+  // everything else keeps working. Results still cached in localStorage for 7 days, so a reload asks for nothing.
+  var RIPE_TTL = 7 * 864e5;
   var ripe = (function () {
     var o = lsGet("mt_ripe", {}); if (!o || typeof o !== "object") return {};
     var now = +new Date(), out = {};
@@ -1936,30 +1938,31 @@
     } catch (e) {}
     return cc.toUpperCase();
   }
-  // capped JSONP: a dense page can want hundreds of distinct IPs; firing every lookup at once is a request storm
-  // against stat.ripe.net and bloats <head> with hundreds of live <script> nodes. Queue + run RIPE_MAX at a time.
+  // capped queue: a dense page can want hundreds of distinct IPs, and firing every lookup at once is a request storm
+  // against our own server (which then serialises them at RIPEstat anyway). Queue + run RIPE_MAX at a time.
   var _ripeQ = [], _ripeActive = 0, RIPE_MAX = 6;
-  // Air-gap circuit breaker: RIPEstat is unreachable on an isolated network, where failures are NOT
-  // cached (only successful country codes are) -> every reload would re-storm stat.ripe.net with a
-  // <script> per IP, each capable of hanging to the timeout (console spam + delayed/absent flags).
-  // After a few consecutive failures we conclude "no internet" and stop trying for the session; a
-  // single success resets it. Fully client-side -> zero config, auto-adapts online vs air-gapped.
+  // Air-gap circuit breaker: /ripe answers 204 when the server cannot reach RIPEstat (or when the operator set
+  // DISABLE_RIPE_LOOKUPS), and failures are NOT cached client-side (only country codes are) -> without this, every
+  // reload would re-ask for every visible IP. After a few consecutive non-answers we conclude "no enrichment here"
+  // and stop asking for the session; a single success resets it. The server keeps its own short negative cache, so
+  // even the requests we do make are cheap.
   var _ripeFails = 0, _ripeDead = false, RIPE_FAIL_LIMIT = 3;
-  function ripeJSONP(query, cb) { if (_ripeDead) { try { cb(null); } catch (e) {} return; } _ripeQ.push([query, cb]); _ripePump(); }
-  function _ripePump() { while (!_ripeDead && _ripeActive < RIPE_MAX && _ripeQ.length) { var it = _ripeQ.shift(); _ripeActive++; _ripeRun(it[0], it[1]); } }
-  function _ripeRun(query, cb) {
-    var name = "__ripe_cb_" + (++_ripeSeq), s = document.createElement("script"), done = false, to;
-    function cleanup() { clearTimeout(to); try { delete window[name]; } catch (e) { window[name] = undefined; } if (s.parentNode) s.parentNode.removeChild(s); _ripeActive--; _ripePump(); }
-    function fail() {
+  function ripeQuery(kind, ip, cb) { if (_ripeDead) { try { cb(null); } catch (e) {} return; } _ripeQ.push([kind, ip, cb]); _ripePump(); }
+  function _ripePump() { while (!_ripeDead && _ripeActive < RIPE_MAX && _ripeQ.length) { var it = _ripeQ.shift(); _ripeActive++; _ripeRun(it[0], it[1], it[2]); } }
+  function _ripeRun(kind, ip, cb) {
+    var done = false;
+    function finish(data) {
       if (done) return; done = true;
-      if (++_ripeFails >= RIPE_FAIL_LIMIT) { _ripeDead = true; _ripeQ.length = 0; }   // give up for this session (air-gapped)
-      try { cb(null); } catch (e) {} cleanup();
+      if (data) _ripeFails = 0;                                                        // success -> reset the breaker
+      else if (++_ripeFails >= RIPE_FAIL_LIMIT) { _ripeDead = true; _ripeQ.length = 0; }   // give up for this session
+      try { cb(data); } catch (e) {}
+      _ripeActive--; _ripePump();
     }
-    window[name] = function (data) { done = true; _ripeFails = 0; try { cb(data); } catch (e) {} cleanup(); };   // success -> reset the breaker
-    s.onerror = fail;
-    to = setTimeout(fail, 8000);   // a hung lookup must not stall the queue (shorter: air-gapped should fail fast)
-    s.src = "https://stat.ripe.net/data/" + query + (query.indexOf("?") < 0 ? "?" : "&") + "callback=" + name;
-    (document.head || document.documentElement).appendChild(s);
+    var to = setTimeout(function () { finish(null); }, 8000);   // a hung lookup must not stall the queue
+    fetch("/ripe?kind=" + encodeURIComponent(kind) + "&address=" + encodeURIComponent(ip), { credentials: "same-origin" })
+      .then(function (r) { return (r.ok && r.status !== 204) ? r.json() : null; })      // 204 = server could not answer
+      .then(function (j) { clearTimeout(to); finish(j); })
+      .catch(function () { clearTimeout(to); finish(null); });
   }
   var DEMO_CC = ["us","de","nl","ru","cn","ir","fr","gb","ua","br","in","kr","ca","se","sg","tr","ro","vn","pl","jp"];
   var _geoInflight = {}, _asnInflight = {};
@@ -1968,8 +1971,8 @@
     var r = ripe[ip]; if (r && r.cc != null) { applyRipe(ip); return; }
     if (_geoInflight[ip]) return; _geoInflight[ip] = 1;
     if (DEMO) { var h = murmur3(ip, 99) >>> 0; ripe[ip] = ripe[ip] || { t: +new Date() }; ripe[ip].cc = DEMO_CC[h % DEMO_CC.length]; applyRipe(ip); refreshTipFor(ip); return; }
-    ripeJSONP("geoloc/data.json?resource=" + encodeURIComponent(ip), function (j) {
-      var cc = ""; try { cc = (j.data.located_resources[0].locations[0].country || "").toLowerCase().split("-")[0]; } catch (e) {}
+    ripeQuery("geo", ip, function (j) {   // /ripe does the RIPEstat call and the parsing; "" when it could not
+      var cc = ""; try { cc = (j.cc || "").toLowerCase(); } catch (e) {}
       ripe[ip] = ripe[ip] || {}; ripe[ip].cc = cc; ripe[ip].t = +new Date(); saveRipe(); applyRipe(ip); refreshTipFor(ip);
     });
   }
@@ -1978,8 +1981,8 @@
     var r = ripe[ip]; if (r && r.asn != null) return;
     if (_asnInflight[ip]) return; _asnInflight[ip] = 1;
     if (DEMO) { var h = murmur3(ip, 99) >>> 0; ripe[ip] = ripe[ip] || { t: +new Date() }; ripe[ip].asn = "AS" + (1000 + h % 64000); ripe[ip].holder = "Example Networks " + (100 + h % 900); refreshTipFor(ip); applyRipe(ip); return; }
-    ripeJSONP("network-info/data.json?resource=" + encodeURIComponent(ip), function (j) {
-      var asn = "", holder = ""; try { if (j.data.asns && j.data.asns.length) asn = "AS" + j.data.asns[0]; } catch (e) {}
+    ripeQuery("asn", ip, function (j) {
+      var asn = "", holder = ""; try { asn = j.asn || ""; holder = j.holder || ""; } catch (e) {}
       ripe[ip] = ripe[ip] || {}; ripe[ip].asn = asn; if (holder) ripe[ip].holder = holder; ripe[ip].t = +new Date(); saveRipe(); refreshTipFor(ip); applyRipe(ip);
     });
   }

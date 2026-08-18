@@ -9,10 +9,13 @@ See the file 'LICENSE' for copying permission
 import csv
 import gzip
 import io
+import json
 import os
 import re
 import sqlite3
 import sys
+import threading
+import time
 import zipfile
 import zlib
 
@@ -130,6 +133,94 @@ def fetch_headers(url, timeout=10):
         if e.code in (301, 302, 303, 307, 308):
             return dict(e.headers.items())
         raise
+
+RIPE_LOOKUP_URLS = {
+    "geo": "https://stat.ripe.net/data/geoloc/data.json?resource=%s",
+    "asn": "https://stat.ripe.net/data/network-info/data.json?resource=%s",
+}
+RIPE_LOOKUP_TIMEOUT = 5             # a dashboard request must not hang on RIPEstat; TIMEOUT (30s) is for feed downloads
+RIPE_LOOKUP_TTL = 7 * 24 * 3600     # geolocation and ASN allocation move on a scale of months
+RIPE_LOOKUP_MISS_TTL = 600          # air-gapped/blocked: remember the failure briefly instead of re-dialling per request
+RIPE_LOOKUP_MAX_ENTRIES = MAX_CACHE_ENTRIES
+
+_ripe_cache = {}                    # (kind, address) -> (expires_at, payload or None)
+_ripe_lock = threading.Lock()
+
+def ripe_lookup(kind, address):
+    """
+    Server-side RIPEstat lookup for the dashboard's country flags and ASN tooltips.
+
+    This used to be done by the browser, with a `<script>` per IP pointed at stat.ripe.net (RIPEstat
+    speaks JSONP, and `connect-src 'self'` forbids fetch()) - which is why the shipped CSP had to
+    allow `script-src ... https://stat.ripe.net`. That is third-party code executing in the page
+    that renders the operator's alerts, trusted for as long as the policy says so; the enrichment it
+    buys is two decorations. Doing the lookup here puts `script-src` back to `'self'`, replaces N
+    `<script>` nodes per page with same-origin fetches, and lets one cache serve every analyst
+    instead of one per browser profile.
+
+    `kind` is a key of `RIPE_LOOKUP_URLS`; `address` must already be validated by the caller (it is
+    interpolated into a fixed URL, so an unvalidated value is the SSRF here). Returns a payload dict,
+    or None when the lookup is unavailable - which is also cached briefly, so an air-gapped server
+    answers instantly rather than making every page wait out a connect timeout.
+
+    Set `DISABLE_RIPE_LOOKUPS true` in maltrail.conf on a server that must make no outbound
+    requests; the frontend degrades exactly as it does on a network where RIPEstat is unreachable.
+    """
+
+    if kind not in RIPE_LOOKUP_URLS or not address:
+        return None
+
+    if config.DISABLE_RIPE_LOOKUPS:
+        return None
+
+    key = (kind, address)
+    now = time.time()
+
+    with _ripe_lock:
+        if key in _ripe_cache:
+            expires, payload = _ripe_cache[key]
+            if expires > now:
+                return payload
+            del _ripe_cache[key]
+
+    payload = None
+
+    try:
+        req = _urllib.request.Request(RIPE_LOOKUP_URLS[kind] % _urllib.parse.quote(address, safe=''),
+                                      headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
+        resp = _urllib.request.urlopen(req, timeout=RIPE_LOOKUP_TIMEOUT)   # NOTE: not retrieve_content() - that one is for feeds and waits TIMEOUT (30s)
+        try:
+            body = resp.read(1 << 20)
+        finally:
+            resp.close()
+
+        data = json.loads(body.decode(UNICODE_ENCODING, errors="replace")).get("data") or {}
+
+        if kind == "geo":
+            country = ""
+            for resource in (data.get("located_resources") or []):
+                for location in (resource.get("locations") or []):
+                    country = (location.get("country") or "").split('-')[0].strip().lower()
+                    if country:
+                        break
+                if country:
+                    break
+            payload = {"cc": country if re.match(r"\A[a-z]{2}\Z", country) else ""}
+        else:
+            asns = data.get("asns") or []
+            payload = {"asn": "AS%s" % asns[0] if asns else "", "holder": ""}
+    except Exception:
+        payload = None   # NOTE: unreachable, rate-limited, HTML error page, malformed JSON - all the same non-answer
+
+    with _ripe_lock:
+        if len(_ripe_cache) >= RIPE_LOOKUP_MAX_ENTRIES:
+            # Cheapest bounded eviction: drop whatever expires first. This cache is an optimisation,
+            # so evicting a live entry costs one extra lookup, never a wrong answer.
+            for stale in sorted(_ripe_cache, key=lambda _: _ripe_cache[_][0])[:RIPE_LOOKUP_MAX_ENTRIES // 4 or 1]:
+                _ripe_cache.pop(stale, None)
+        _ripe_cache[key] = (now + (RIPE_LOOKUP_TTL if payload else RIPE_LOOKUP_MISS_TTL), payload)
+
+    return payload
 
 def ipcat_lookup(address):
     if not address:

@@ -581,6 +581,43 @@ class TestHttpd(unittest.TestCase):
         self.assertIn("frame-src 'none'", csp[0], "frame-src must not be a wildcard")
         self.assertIn("default-src 'self'", csp[0], "positive control: the policy is still the real one")
 
+    def test_csp_script_src_allows_no_third_party_origin(self):
+        # script-src carried https://stat.ripe.net for as long as the frontend fetched RIPEstat with
+        # a JSONP <script> per IP: a third party allowed to execute code in the page that renders the
+        # operator's alerts, in exchange for a country flag and an ASN tooltip. That lookup is
+        # proxied through /ripe now, so the origin came back out. If some future enrichment needs a
+        # remote API, proxy it the same way instead of widening this - which is what this asserts.
+        _, head, _ = _http(self.port, "GET", "/")
+        csp = [l for l in head.split("\r\n") if l.lower().startswith("content-security-policy:")]
+        self.assertTrue(csp, "the dashboard must be served with a CSP")
+        script_src = [d.strip() for d in csp[0].split(';') if d.strip().startswith("script-src")]
+        self.assertEqual(script_src, ["script-src 'self'"],
+                         "script-src must be exactly 'self' (proxy remote APIs, do not allow their origin)")
+
+    def test_ripe_needs_a_session(self):
+        # /ripe makes the server talk to a third party on a caller's behalf, so it is gated like
+        # every other endpoint that does work for the dashboard.
+        st, _, _ = _http(self.port, "GET", "/ripe?kind=geo&address=8.8.8.8")
+        self.assertEqual(st, 401, "/ripe must not answer without a session")
+
+    def test_ripe_refuses_anything_that_is_not_a_public_address(self):
+        # The address is interpolated into a fixed RIPEstat URL, so this validation is the SSRF
+        # boundary: nothing that is not an address may reach it, and private/bogon space is not
+        # something RIPEstat has an answer for anyway. None of these may cause an outbound request,
+        # which is also why they are safe to assert in CI.
+        cookie = self._login()
+        for probe in ("kind=geo&address=127.0.0.1",
+                      "kind=geo&address=10.0.0.5",
+                      "kind=geo&address=0.0.0.0",
+                      "kind=geo&address=evil.example.com",
+                      "kind=geo&address=8.8.8.8%20evil",
+                      "kind=geo&address=8.8.8.8/../../etc/passwd",
+                      "kind=geo&address=",
+                      "kind=nonsense&address=8.8.8.8"):
+            st, _, _ = _http(self.port, "GET", "/ripe?%s" % probe, cookie=cookie)
+            self.assertEqual(st, 400, "/ripe must refuse %r" % probe)
+        self.assertIsNone(type(self).proc.poll(), "server must stay alive")
+
     def test_index_never_serves_the_demo_script(self):
         """main.js turns DEMO on from the mere presence of demo.js.
 
@@ -866,6 +903,71 @@ class TestTrailsEndpointMissingFile(unittest.TestCase):
             self.skipTest(self._skip)
         st, _, _ = _http(self.port, "GET", "/fail2ban")
         self.assertEqual(st, 404, "/fail2ban must be closed by default (no allowlist configured)")
+
+
+class TestRipeLookupsDisabled(unittest.TestCase):
+    """`DISABLE_RIPE_LOOKUPS true` must make /ripe answer without touching the network.
+
+    Some installs are not allowed to make outbound requests at all, and before the lookup moved
+    server-side that was the browser's problem rather than the server's. The switch has to be a real
+    kill switch - 204 immediately, no connect attempt, no waiting out a timeout - and 204 is exactly
+    what the frontend's air-gap breaker reads as "no enrichment here", so the dashboard degrades to
+    the local RIR table via /check_ip instead of showing nothing.
+    """
+
+    proc = None
+    port = None
+    tmp = None
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.mkdtemp(prefix="mt_noripe_")
+        logdir = os.path.join(cls.tmp, "logs"); os.makedirs(logdir)
+        cls.port = _free_port()
+        cfg = os.path.join(cls.tmp, "srv.conf")
+        with open(cfg, "w") as f:
+            f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\n" % cls.port)
+            f.write("USERS\n    admin:%s:0:\n" % STORED)
+            f.write("DISABLE_RIPE_LOOKUPS true\n")
+            f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+            f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME test\nDISABLE_CHECK_SUDO true\n"
+                    % (logdir, os.path.join(cls.tmp, "trails.csv")))
+        cls.proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        for _ in range(60):
+            if cls.proc.poll() is not None:
+                break
+            try:
+                socket.create_connection(("127.0.0.1", cls.port), timeout=0.5).close()
+                return
+            except (OSError, socket.error):
+                time.sleep(0.25)
+        cls._skip = "server did not start (out: %s)" % (cls.proc.stdout.read()[:300] if cls.proc and cls.proc.stdout else "")
+
+    @classmethod
+    def tearDownClass(cls):
+        if cls.proc and cls.proc.poll() is None:
+            _stop_server(cls.proc)
+
+    def test_a_valid_public_address_gets_204_without_delay(self):
+        if getattr(type(self), "_skip", None):
+            self.skipTest(self._skip)
+        import binascii
+        nonce = binascii.hexlify(os.urandom(16)).decode()
+        h = hashlib.sha256((STORED + nonce).encode()).hexdigest()
+        st, head, _ = _http(self.port, "POST", "/login", body="username=admin&nonce=%s&hash=%s" % (nonce, h))
+        self.assertEqual(st, 200, "login should succeed")
+        cookie = [l for l in head.split("\r\n") if l.lower().startswith("set-cookie:")][0].split(":", 1)[1].split(";")[0].strip()
+
+        started = time.time()
+        st, _, body = _http(self.port, "GET", "/ripe?kind=geo&address=8.8.8.8", cookie=cookie)
+        elapsed = time.time() - started
+        self.assertEqual(st, 204, "with lookups disabled /ripe must answer 204")
+        self.assertEqual(body, b"")
+        # A connect attempt to RIPEstat would cost seconds (RIPE_LOOKUP_TIMEOUT is 5) even when it
+        # fails, so this is the assertion that the switch short-circuits rather than merely failing.
+        self.assertLess(elapsed, 2.0, "the switch must skip the lookup, not wait for it to fail")
+        self.assertIsNone(type(self).proc.poll(), "server must stay alive")
 
 
 class TestReapSessions(unittest.TestCase):
