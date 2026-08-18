@@ -15060,6 +15060,17 @@ verify.duwo.email
 wedevoto.com
 xn--prmp-w7a.fun
 
+# Reference: https://www.kaspersky.com/blog/steam-forum-clickfix-attack-irm-iex/56285/
+# Reference: https://www.virustotal.com/gui/ip-address/185.112.59.126/relations
+
+http://139.144.221.167
+http://185.112.59.126
+http://193.233.82.79
+hashedsolver.icu
+kurwa.cc
+msfconfig.icu
+revenue-process-rebate.com
+
 # Generic
 
 /fo0suc2ki2.rtf
