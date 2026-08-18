@@ -143,6 +143,79 @@ _geo_lock = threading.Lock()  # NOTE: the incremental read-modify-write must be 
 MAX_REQUEST_THREADS = 100       # concurrent request handlers; excess connections get 503 without a thread
 MAX_LIVE_STREAMS = 30           # of those, how many may be held open by /live at once
 
+_HUNT_IP_QUERY_REGEX = re.compile(r"\A(\d+\.\d+\.\d+\.\d+)(?:/(\d{1,2}))?\Z")
+_HUNT_LINE_IP_REGEX = re.compile(r"\b(\d+\.\d+\.\d+\.\d+)\b")
+
+
+def _hunt_ip_query(query):
+    """(prefix, mask, needle) for an IP/CIDR retro-hunt query, or (None, None, None) if it is not one.
+
+    `needle` is a NEGATIVE PREFILTER, and the reason /hunt's IP path is no longer its slowest. Matching an
+    address needs an integer compare, so the loop ran `_HUNT_LINE_IP_REGEX` plus an addr_to_int() per address
+    on EVERY line - which made an IP query 9x slower than a substring query over the same log (6.0s vs 0.65s
+    on a 100 MB day). But any line holding an address inside the queried network must literally contain the
+    dotted text of that network's whole octets, so a plain substring test can skip a line that CANNOT match.
+    It never skips one that can: that asymmetry is the same one the sensor's trail-store NegativeFilter
+    relies on, and it is why the prefilter is allowed to sit in front of the exact test rather than replace
+    it. Below /8 nothing is fixed and there is no prefilter (None), which is honest rather than fast.
+
+    >>> _hunt_ip_query("10.0.0.5")[2]
+    '10.0.0.5'
+    >>> _hunt_ip_query("203.0.113.77/24")[2]
+    '203.0.113.'
+    >>> _hunt_ip_query("172.16.99.1/12")[2]
+    '172.'
+    >>> _hunt_ip_query("61.0.0.0/6")[2] is None
+    True
+    >>> _hunt_ip_query("evil.example")
+    (None, None, None)
+    """
+
+    match = _HUNT_IP_QUERY_REGEX.match(query)
+    if not match:
+        return (None, None, None)
+
+    try:
+        bits = int(match.group(2)) if match.group(2) else 32
+        mask = make_mask(bits)
+        prefix = addr_to_int(match.group(1)) & mask
+    except Exception:
+        return (None, None, None)
+
+    needle = None
+    fixed = bits // 8
+    if fixed:
+        needle = '.'.join(int_to_addr(prefix).split('.')[:fixed]) + ('.' if fixed < 4 else "")
+
+    return (prefix, mask, needle)
+
+
+def _hunt_line_has_ip(line, prefix, mask, needle):
+    """Does this log line carry an IPv4 address inside the queried network?
+
+    The prefilter only ever short-circuits a NO. Every yes still comes from the exact integer compare, so a
+    partial-octet coincidence is rejected as it always was:
+
+    >>> prefix, mask, needle = _hunt_ip_query("10.0.0.5")
+    >>> _hunt_line_has_ip("... 10.0.0.55 4444 ...", prefix, mask, needle)
+    False
+    >>> _hunt_line_has_ip("... 10.0.0.5 4444 ...", prefix, mask, needle)
+    True
+    """
+
+    if needle is not None and needle not in line:
+        return False
+
+    for match in _HUNT_LINE_IP_REGEX.finditer(line):
+        try:
+            if addr_to_int(match.group(1)) & mask == prefix:
+                return True
+        except Exception:
+            pass
+
+    return False
+
+
 def _limit(value, default):
     """Coerce a configured concurrency limit, falling back to `default`.
 
@@ -2205,14 +2278,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 return json.dumps({"error": "query too short (min %d chars)" % HUNT_MIN_QUERY, "counts": {}, "samples": [], "truncated": False, "scanned": 0})
 
             q_lower = query.lower()
-            q_prefix = q_mask = None   # IP/CIDR fast-path (integer match); otherwise literal substring
-            ipm = re.match(r"\A(\d+\.\d+\.\d+\.\d+)(?:/(\d{1,2}))?\Z", query)
-            if ipm:
-                try:
-                    q_mask = make_mask(int(ipm.group(2)) if ipm.group(2) else 32)
-                    q_prefix = addr_to_int(ipm.group(1)) & q_mask
-                except Exception:
-                    q_prefix = q_mask = None
+            q_prefix, q_mask, q_needle = _hunt_ip_query(query)   # None,None,None for a non-IP query
 
             def _bound(name):
                 mm = re.search(r"\d{4}-\d{2}-\d{2}", params.get(name, ""))
@@ -2259,13 +2325,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 break
                             hit = False
                             if q_prefix is not None:
-                                for im in re.finditer(r"\b(\d+\.\d+\.\d+\.\d+)\b", line):
-                                    try:
-                                        if addr_to_int(im.group(1)) & q_mask == q_prefix:
-                                            hit = True
-                                            break
-                                    except Exception:
-                                        pass
+                                hit = _hunt_line_has_ip(line, q_prefix, q_mask, q_needle)
                             elif q_lower in line.lower():
                                 hit = True
                             if hit:

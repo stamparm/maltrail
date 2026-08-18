@@ -58,3 +58,29 @@ ValueError: boom
 PermissionError: [Errno 13] denied: '/x'
 '
 ---
+2026-08-18 15:43:07 
+
+[!] session abruptly terminated
+[?] (hint: "https://stackoverflow.com/a/20997655")
+2026-08-18 15:43:07 
+
+[!] unhandled exception occurred ('boom')
+[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':
+---
+'Traceback (most recent call last):
+  File "server.py", line 136, in <module>
+    main()
+ValueError: boom
+'
+---
+2026-08-18 15:43:08 
+
+[!] unhandled exception occurred ('[Errno 13] denied: '/x'')
+[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':
+---
+'Traceback (most recent call last):
+  File "server.py", line 136, in <module>
+    main()
+PermissionError: [Errno 13] denied: '/x'
+'
+---

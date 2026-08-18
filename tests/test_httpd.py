@@ -448,6 +448,75 @@ class TestHttpd(unittest.TestCase):
         obj = _json.loads(body.decode("utf-8"))
         self.assertEqual(obj["counts"], {}, "analyst must not hunt outside their netfilter scope")
 
+    def test_hunt_ip_prefilter_agrees_with_the_unfiltered_scan(self):
+        # The IP path gained a substring prefilter (10x on a 100 MB day). It is only allowed to skip a line
+        # that CANNOT match, so the property to hold is equivalence: for every query/line pair, the verdict
+        # with the prefilter must equal the verdict without it. Anything else is a silently missed hit.
+        import random
+        from core.httpd import _hunt_ip_query, _hunt_line_has_ip
+
+        random.seed(4242)
+        queries = ["10.0.0.5", "10.0.0.55", "8.8.8.8", "203.0.113.0/24", "203.0.113.128/25",
+                   "172.16.0.0/12", "10.0.0.0/8", "61.0.0.0/6", "0.0.0.0/0", "255.255.255.255"]
+        lines = [
+            '"2026-01-01 00:00:00" host 10.0.0.5 4421 8.8.8.8 53 UDP DNS evil.example "malware" (static)',
+            '"2026-01-01 00:00:01" host 10.0.0.55 4421 203.0.113.9 443 TCP IP 203.0.113.9 "malware" (static)',
+            '"2026-01-01 00:00:02" host 172.16.5.5 111 198.51.100.5 80 TCP URL 198.51.100.5/x "m" (static)',
+            '"2026-01-01 00:00:03" host 10.0.0.9 7777 1.1.1.1 80 TCP UA "curl/10.0.0.5" "m" (static)',
+            '"2026-01-01 00:00:04" host 255.255.255.255 1 0.0.0.0 1 UDP IP 0.0.0.0 "m" (static)',
+            'no addresses here at all',
+            '"2026-01-01 00:00:05" host 1203.0.113.55 1 999.999.999.999 1 UDP IP x "m" (static)',
+        ]
+        for _ in range(60):
+            octets = [random.choice([0, 1, 8, 10, 61, 172, 203, 254, 255]) for _ in range(4)]
+            lines.append('"2026-01-01 00:00:06" host %s 1 %d.%d.%d.%d 2 TCP IP y "m" (static)'
+                         % (".".join(str(_) for _ in octets), *[random.randint(0, 255) for _ in range(4)]))
+
+        checked = 0
+        for query in queries:
+            prefix, mask, needle = _hunt_ip_query(query)
+            self.assertIsNotNone(prefix, query)
+            for line in lines:
+                with_filter = _hunt_line_has_ip(line, prefix, mask, needle)
+                without = _hunt_line_has_ip(line, prefix, mask, None)   # the pre-change behaviour
+                self.assertEqual(with_filter, without, "%s vs %r" % (query, line))
+                checked += 1
+        self.assertGreater(checked, 600)                                # the loop actually ran
+
+    def test_hunt_ip_query_boundaries(self):
+        from core.httpd import _hunt_ip_query, _hunt_line_has_ip
+        # /32: an exact address, and NOT a longer one that merely starts with it
+        prefix, mask, needle = _hunt_ip_query("10.0.0.5")
+        self.assertTrue(_hunt_line_has_ip("x 10.0.0.5 y", prefix, mask, needle))
+        self.assertFalse(_hunt_line_has_ip("x 10.0.0.55 y", prefix, mask, needle))
+        self.assertFalse(_hunt_line_has_ip("x 110.0.0.5 y", prefix, mask, needle))
+        # /24: every address in the network, including the edges
+        prefix, mask, needle = _hunt_ip_query("203.0.113.0/24")
+        for ip in ("203.0.113.0", "203.0.113.1", "203.0.113.255"):
+            self.assertTrue(_hunt_line_has_ip("x %s y" % ip, prefix, mask, needle), ip)
+        self.assertFalse(_hunt_line_has_ip("x 203.0.114.1 y", prefix, mask, needle))
+        # below /8 there is no prefilter at all, and matching must still work
+        prefix, mask, needle = _hunt_ip_query("61.0.0.0/6")
+        self.assertIsNone(needle)
+        self.assertTrue(_hunt_line_has_ip("x 62.1.2.3 y", prefix, mask, needle))
+        self.assertFalse(_hunt_line_has_ip("x 128.1.2.3 y", prefix, mask, needle))
+        # a non-IP query is not an IP query
+        self.assertEqual(_hunt_ip_query("evil.example"), (None, None, None))
+        self.assertEqual(_hunt_ip_query("10.0.0.5/33"), (None, None, None))
+
+    def test_hunt_finds_an_ip_over_http(self):
+        # end to end, on the class fixture: the DNS event's dst is 8.8.8.8
+        import json as _json
+        ck = self._login()
+        st, _, body = _http(self.port, "GET", "/hunt?q=8.8.8.8", cookie=ck)
+        self.assertEqual(st, 200)
+        obj = _json.loads(body.decode("utf-8"))
+        self.assertEqual(sum(obj["counts"].values()), 1, obj)
+        st, _, body = _http(self.port, "GET", "/hunt?q=8.8.8.88", cookie=ck)
+        self.assertEqual(sum(_json.loads(body.decode("utf-8"))["counts"].values()), 0)
+        st, _, body = _http(self.port, "GET", "/hunt?q=10.0.0.0/8", cookie=ck)
+        self.assertGreater(sum(_json.loads(body.decode("utf-8"))["counts"].values()), 1)
+
     def test_meta_lookup(self):
         # condensed observable store: "have I ever seen this domain/ip, since when, how often" (O(1) PK lookup)
         import json as _json
