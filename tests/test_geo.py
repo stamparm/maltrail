@@ -104,8 +104,15 @@ class TestStorageFormat(unittest.TestCase):
     """_parse() has to read both formats: a hex-delta seed, and the absolute-decimal table an existing install
     still has in USERS_DIR until its next refresh."""
 
+    def _writer(self):
+        try:
+            from core.update import _write_geo   # core.update imports sqlite3 (ipcat); some builds lack _sqlite3
+        except ImportError as ex:
+            self.skipTest("core.update unavailable (%s)" % ex)
+        return _write_geo
+
     def test_hexdelta_round_trip_through_the_writer(self):
-        from core.update import _write_geo
+        _write_geo = self._writer()
         rows = [(0, ""), (16777216, "US"), (16777472, ""), (3232235520, "HR")]
         path = os.path.join(self.tmp, "v4.csv.gz")
         _write_geo(path, rows, family=4)
@@ -113,7 +120,7 @@ class TestStorageFormat(unittest.TestCase):
                          ([0, 16777216, 16777472, 3232235520], ["", "US", "", "HR"]))
 
     def test_hexdelta_ipv6_restores_the_low_64_bits(self):
-        from core.update import _write_geo
+        _write_geo = self._writer()
         start = 0x2001048604860000 << 64
         path = os.path.join(self.tmp, "v6.csv.gz")
         _write_geo(path, [(0, ""), (start, "US")], family=6)
