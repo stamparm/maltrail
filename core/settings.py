@@ -77,7 +77,8 @@ CONFIG_FILE = os.path.join(ROOT_DIR, "maltrail.conf")
 FRESH_GEO_DELTA_DAYS = 30
 GEO_IP2CC_BUNDLED_FILE = os.path.join(ROOT_DIR, "data", "ip2cc.csv.gz")
 GEO_IP2CC_FILE = os.path.join(USERS_DIR, "ip2cc.csv.gz")
-GEO_IP2CC6_FILE = os.path.join(USERS_DIR, "ip2cc6.csv.gz")  # IPv6 table: runtime-only (large; built on the online update)
+GEO_IP2CC6_BUNDLED_FILE = os.path.join(ROOT_DIR, "data", "ip2cc6.csv.gz")
+GEO_IP2CC6_FILE = os.path.join(USERS_DIR, "ip2cc6.csv.gz")
 # Retro-hunt (/hunt): historical IOC sweep across daily logs. Hard bounds so a broad query can't self-DoS the server -
 # scan is streamed + newest-first, stops at whichever limit hits first and reports truncated=true.
 HUNT_MAX_DAYS = 365          # never scan more than this many (most-recent) daily logs

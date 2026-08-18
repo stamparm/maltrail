@@ -29,6 +29,7 @@ from core.common import check_whitelisted
 from core.common import load_trails
 from core.common import retrieve_content
 from core.compat import xrange
+from core.geo import GEO_DELTA_MAGIC
 from core.settings import config
 from core.settings import read_config
 from core.settings import read_whitelist
@@ -488,10 +489,20 @@ def _geo_rows(records):
     rows.append((prev + 1, ""))
     return rows
 
-def _write_geo(path, rows):
+def _write_geo(path, rows, family=4):
+    """Write a geo table in the hex-delta format core/geo.py reads (see its STORAGE note)."""
+
+    shift = 64 if family == 6 else 0     # every RIR IPv6 allocation is coarser than a /64
+    lines = ["%s:%d" % (GEO_DELTA_MAGIC, family)]
+    previous = 0
+    for start, cc in rows:
+        value = start >> shift
+        lines.append("%x,%s" % (value - previous, cc))
+        previous = value
+
     tmp = path + ".tmp"
     with gzip.open(tmp, "wb") as f:
-        f.write(("\n".join("%d,%s" % (s, cc) for s, cc in rows)).encode("latin-1"))
+        f.write("\n".join(lines).encode("latin-1"))
     try:
         os.replace(tmp, path)  # atomic (py3.3+)
     except AttributeError:
@@ -549,9 +560,9 @@ def update_geo(force=False):
         return
 
     try:
-        _write_geo(GEO_IP2CC_FILE, _geo_rows(v4))
+        _write_geo(GEO_IP2CC_FILE, _geo_rows(v4), family=4)
         if v6:
-            _write_geo(GEO_IP2CC6_FILE, _geo_rows(v6))
+            _write_geo(GEO_IP2CC6_FILE, _geo_rows(v6), family=6)
     except Exception as ex:
         print("[x] something went wrong during geolocation database update ('%s')" % ex)
         return
