@@ -154,6 +154,89 @@ class TestDrawerFields(unittest.TestCase):
 
 
 
+class TestServedAssets(unittest.TestCase):
+    """Every asset the frontend asks for exists, and every file in html/ is asked for.
+
+    Both halves have already been wrong. A jQuery UI theme and nine pre-v3 icons - 27 files - sat
+    in html/images/ for seven weeks after the rewrite stopped referencing them, and the only reason
+    anyone noticed is that someone read the directory. The mirror failure is worse: a renamed or
+    deleted asset makes the live dashboard 404, and nothing in the suite would have said so
+    because no test ever compared the references against the directory.
+
+    Verifying it by hand meant serving html/ and reading an access log, which is why it happened
+    once and never again. It is plain text on both sides: read the references, read the directory.
+    """
+
+    HTML_DIR = os.path.join(REPO, "html")
+
+    # Files in html/ that nothing references, on purpose. Each entry needs a reason, and an entry
+    # without one is an orphan wearing a disguise.
+    UNREFERENCED_BY_DESIGN = {
+        "index.html": "the entry point itself; the server serves it for /",
+        "favicon.ico": "browsers request /favicon.ico whether or not the markup mentions it",
+        "robots.txt": "fetched by crawlers, and named in CONTENT_EXTENSIONS_EXCLUSIONS for exactly that",
+        "README.txt": "documents the directory; .txt is in DISABLED_CONTENT_EXTENSIONS, so it is not servable",
+        "images/logo.xcf": "editable source of mlogo.png, not a served asset",
+    }
+
+    # Where a reference to a file under html/ can legitimately come from.
+    SOURCES = (
+        "html/index.html",
+        "html/css/main.css",
+        "html/js/main.js",
+        "html/js/demo.js",
+        "html/js/worldmap.js",
+        "html/js/thirdparty.min.js",
+        "core/httpd.py",   # _logo() renders <img src="images/mlogo.png">, _assetver() stats js/main.js and css/main.css
+    )
+
+    # Only directory-prefixed paths count as references. Everything the frontend and the server
+    # actually ask for is written that way ("css/main.css", "images/mlogo.png"), and a bare
+    # "main.js" would otherwise match the several comments that name the legacy files by filename.
+    ASSET_RE = re.compile(r"""["'(]\s*/?((?:images|js|css)/[A-Za-z0-9._/-]+)""")
+
+    def _referenced(self):
+        found = {}
+        for source in self.SOURCES:
+            body = _read(os.path.join(REPO, source))
+            for ref in self.ASSET_RE.findall(body):
+                ref = ref.split("?")[0].split("#")[0].strip()
+                if not ref or ref.startswith(("http:", "https:", "//", "data:")):
+                    continue
+                found.setdefault(ref.lstrip("/"), source)
+        return found
+
+    def _shipped(self):
+        out = set()
+        for root, _, names in os.walk(self.HTML_DIR):
+            for name in names:
+                out.add(os.path.relpath(os.path.join(root, name), self.HTML_DIR).replace(os.sep, "/"))
+        return out
+
+    def test_every_referenced_asset_exists(self):
+        # The zero-404 check: a reference the dashboard makes must resolve to a file on disk.
+        missing = []
+        for ref, source in sorted(self._referenced().items()):
+            if not os.path.isfile(os.path.join(self.HTML_DIR, ref)):
+                missing.append("%s references html/%s, which does not exist" % (source, ref))
+        self.assertEqual(missing, [], "the dashboard would 404: %s" % "; ".join(missing))
+
+    def test_no_orphan_assets(self):
+        # And the mirror: a file in html/ that nothing references is dead weight being served.
+        referenced = self._referenced()
+        orphans = sorted(f for f in self._shipped()
+                         if f not in referenced and f not in self.UNREFERENCED_BY_DESIGN)
+        self.assertEqual(orphans, [],
+                         "nothing references these files under html/ - delete them, or add them to "
+                         "UNREFERENCED_BY_DESIGN with the reason they stay: %s" % ", ".join(orphans))
+
+    def test_the_allowlist_has_no_stale_entries(self):
+        # An allowlist that outlives its files is how the next 27 orphans get in unnoticed.
+        shipped = self._shipped()
+        stale = sorted(f for f in self.UNREFERENCED_BY_DESIGN if f not in shipped)
+        self.assertEqual(stale, [], "UNREFERENCED_BY_DESIGN names files that are gone: %s" % ", ".join(stale))
+
+
 class TestNoEvalInServedScripts(unittest.TestCase):
     """The CSP's script-src does not allow 'unsafe-eval', so nothing served may need it.
 
