@@ -3,6 +3,11 @@
 Pipfile*
 docker-compose.override.yml
 
+# Runtime artifact, not source: get_error_log_handle() falls back to os.curdir when LOG_DIR is
+# unset, so running server.py from a checkout writes error.log HERE. It was committed once,
+# by a `git add -A`, before this line existed.
+error.log
+
 # CodeGraph index (local code-intelligence cache, not project source)
 .codegraph/
 
