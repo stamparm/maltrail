@@ -10,6 +10,7 @@ import sys
 import time
 import socket
 import tempfile
+import threading
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -38,12 +39,17 @@ class TestLogd(unittest.TestCase):
         config.LOG_DIR = cls.tmp
         config.SHOW_DEBUG = False
         cls.port = _free_udp_port()
+        cls.threads_before = threading.active_count()
         try:
             L.start_logd(address="127.0.0.1", port=cls.port, join=False)   # daemon thread
             time.sleep(0.5)
             cls.started = True
-        except Exception as ex:
-            cls._skip = "could not start logd: %s" % ex
+        except EnvironmentError as ex:
+            # ONLY a bind/permission failure is a legitimate skip (sandbox, port in use). Any other
+            # exception is a bug in core/log.py, and skipping on it means the suite goes green on a
+            # server that cannot start - which is how a NameError in start_logd() passed as "OK
+            # (skipped=4)" while this very change was being written.
+            cls._skip = "could not bind: %s" % ex
 
     def setUp(self):
         if not type(self).started:
@@ -104,6 +110,73 @@ class TestLogd(unittest.TestCase):
         event = '"%s" sensorZ 10.0.0.7 111 9.9.9.9 53 UDP IP 9.9.9.9 "x (z)" (r)\n' % LOCALTIME
         self._send(("%d %s" % (SEC, event)).encode("utf-8"))
         self.assertIn(b"sensorZ", self._wait_for(b"sensorZ"), "server must survive garbage and keep storing")
+
+
+class TestIntakeShape(unittest.TestCase):
+    """The receiver used to be a ThreadingUDPServer, so each event cost a fresh THREAD - and because the
+    thread was fresh, get_event_log_handle()'s thread-local fd cache always missed, so each event also cost an
+    open() and a close(). Paced against the real server, that capped clean intake at 5,000 events/s (23.9%
+    loss at 10,000/s); one sequential loop with a cached handle holds 20,000/s with no loss.
+
+    Rates are not asserted here - that would be flaky on a shared runner. What is asserted is the SHAPE that
+    produced them: N datagrams must cost ONE open() of the day's log, not N. Counting the opens is the only
+    assertion that discriminates. Three that do NOT, all tried first and all passing against the OLD design:
+    a 200-datagram burst arriving intact (200 fit in the socket buffer either way), the thread count after the
+    burst (per-datagram threads are already gone by then) and the open-descriptor count (reuse=False closed
+    each one, so the answer was zero). A test that cannot fail is not a test."""
+
+    @classmethod
+    def setUpClass(cls):
+        if not TestLogd.started:                     # this class sorts BEFORE TestLogd, so start it here
+            TestLogd.setUpClass()
+
+    def setUp(self):
+        if not TestLogd.started:
+            self.skipTest(getattr(TestLogd, "_skip", "logd not started"))
+
+    def test_a_burst_costs_one_open_not_one_per_datagram(self):
+        path = os.path.join(TestLogd.tmp, DATELOG)
+        payload = b'%d "burst" h 10.0.0.1 1 2.2.2.2 2 TCP IP 2.2.2.2 "m" (s)' % SEC
+        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+        sock.sendto(payload, ("127.0.0.1", TestLogd.port))       # warm the day's handle first
+        self._wait_for_lines(path, 1)
+
+        opens = []
+        real_open = L.os.open
+
+        def counting_open(*args, **kwargs):
+            if isinstance(args[0], str) and args[0].endswith(".log"):
+                opens.append(args[0])
+            return real_open(*args, **kwargs)
+
+        before = self._count_lines(path)
+        L.os.open = counting_open
+        try:
+            for _ in range(200):
+                sock.sendto(payload, ("127.0.0.1", TestLogd.port))
+            self._wait_for_lines(path, before + 200)
+        finally:
+            L.os.open = real_open
+            sock.close()
+
+        self.assertEqual(self._count_lines(path) - before, 200, "datagrams were dropped in a 200-packet burst")
+        self.assertLessEqual(len(opens), 1,
+                             "the event-log handle is reopened per datagram (%d opens for 200 events)" % len(opens))
+
+    def _count_lines(self, path):
+        if not os.path.isfile(path):
+            return 0
+        with open(path, "rb") as f:
+            return sum(1 for _ in f)
+
+    def _wait_for_lines(self, path, target, timeout=10.0):
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if self._count_lines(path) >= target:
+                return True
+            time.sleep(0.05)
+        return False
 
 
 if __name__ == "__main__":
