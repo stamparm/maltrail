@@ -407,6 +407,18 @@ custom-only lookup is reported as a miss. Event data remains authenticated.
 Use `maltrail-sensor -T` as a deployment and configuration gate. The supplied systemd unit runs it
 as `ExecStartPre`.
 
+To confirm that detection itself works — not just that the processes start — run:
+
+```bash
+python3 server.py --detect-test
+```
+
+It replays a crafted pcap of emulated malicious traffic (trail hits on a DNS query, an IP, an
+`IP:port`, a URL path and a `Host` header, plus the SQL-injection, traversal, RCE, XSS, proxy-probe,
+sinkhole, missing-`Host` and port/web/infection-scanning heuristics) through the installed sensor
+and asserts that every expected detection fires. It needs no root, no interface and no trail set of
+its own. A healthy install prints `20/20 detection(s) fired`.
+
 When `STATS_ADDRESS` is configured, monitor at least these Prometheus metrics:
 
 | Metric | Operational meaning |

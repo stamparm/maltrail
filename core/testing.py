@@ -25,7 +25,7 @@ SKIP_DIRS = ("__pycache__", ".git", ".github", "docker", "html", "misc")
 # packages whose modules carry doctests / pure logic worth importing and exercising
 DOCTEST_PACKAGES = ("core",)
 
-# root-level scripts also swept for doctests (require the project's sole dependency, pcapy-ng)
+# root-level scripts also swept for doctests ("sensor" is retained for old checkouts; the sensor is Rust now)
 DOCTEST_SCRIPTS = ("sensor", "server")
 
 def _iter_py_files():
@@ -95,10 +95,10 @@ def smoke_test():
     return retval
 
 #
-# --detect-test: replays a crafted pcap of emulated malicious traffic through the (offline) sensor and asserts
-# that each expected detection fires. Pure-stdlib pcap crafting (no scapy); the sensor reads it via
-# pcapy.open_offline(), so no root and no live interface are needed. Trail-based detections are driven by a
-# controlled fixture trails.csv; heuristic detections need no trails.
+# --detect-test: replays a crafted pcap of emulated malicious traffic through the SHIPPED sensor (`-r file`) and
+# asserts that each expected detection fires. Pure-stdlib pcap crafting (no scapy); an offline replay needs no root
+# and no live interface. Trail-based detections are driven by a controlled fixture trails.csv; heuristic detections
+# need no trails.
 #
 
 _SRC_MAC = b"\x02\x00\x00\x00\x00\x01"
@@ -255,12 +255,43 @@ def _write_pcap(path, packets):
             f.write(struct.pack("<IIII", ts, 0, len(packet), len(packet)))
             f.write(packet)
 
+def find_sensor():
+    """
+    The shipped sensor binary, or None.
+
+    In install.sh's layout it is $PREFIX/sensor/target/release/maltrail-sensor with a symlink in
+    /usr/local/bin; in a build tree it is under sensor/target/. PATH is consulted first so an
+    operator's own build or package wins over a stale one in the tree.
+    """
+
+    for candidate in (shutil.which("maltrail-sensor"),
+                      os.path.join(ROOT_DIR, "sensor", "target", "release", "maltrail-sensor"),
+                      os.path.join(ROOT_DIR, "sensor", "target", "debug", "maltrail-sensor")):
+        if candidate and os.path.isfile(candidate) and os.access(candidate, os.X_OK):
+            return candidate
+
+    return None
+
+
 def detect_test():
     """
     Replays a crafted pcap of emulated malicious traffic through the offline sensor and verifies
-    that every expected detection fires (the core "does the sensor actually catch the bad traffic" gate)
+    that every expected detection fires (the core "does the sensor actually catch the bad traffic" gate).
+
+    This drives the SHIPPED sensor. It used to run old/sensor.py, which needs pcapy - not a
+    dependency since the sensor became Rust - so on a healthy install the check that answers "is
+    detection working?" printed "0/17 detection(s) fired ... FAILED". A gate that cries wolf on a
+    working install is worse than no gate: it is the project's own failure mode, inverted.
     """
 
+    binary = find_sensor()
+    if binary is None:
+        print("[!] detect test: no sensor binary found (looked on PATH and in sensor/target/)")
+        print("[?] (hint: \"curl -sSL https://raw.githubusercontent.com/stamparm/maltrail/master/install.sh | sudo sh\", or \"cargo build --release --manifest-path sensor/Cargo.toml\")")
+        print("[!] detect test final result: FAILED")
+        return False
+
+    print("[i] detect test: using sensor '%s'" % binary)
     packets, checks = _build_detect_traffic()
 
     tmp = tempfile.mkdtemp(prefix="maltrail-detect-")
@@ -292,7 +323,7 @@ def detect_test():
                 "",
             )))
 
-        cmd = [sys.executable, os.path.join(ROOT_DIR, "old", "sensor.py"), "-r", pcap_file, "-c", config_file, "--offline"]
+        cmd = [binary, "-r", pcap_file, "-c", config_file]
         process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         output = process.communicate()[0]
 
@@ -303,22 +334,19 @@ def detect_test():
                     events += f.read()
 
         retval = True
-        passed = skipped = 0
-        for description, expected, pcap_ts_only in checks:
-            # NOTE: offline Py3 substitutes wall-clock for pcap timestamps (pcapy-ng workaround), so timing-window
-            # heuristics (port/web/infection scanning) can't be deterministically flushed offline there; assert them
-            # only where pcap timestamps are honored (Py2 / live capture)
-            if pcap_ts_only and sys.version_info[0] != 2:
-                skipped += 1
-                continue
+        passed = 0
+        for description, expected, timing_window in checks:
+            # `timing_window` marks the three heuristics that need the pcap's own timestamps to flush their window.
+            # They used to be skipped outright: offline Py3 substituted wall-clock time (a pcapy-ng workaround), so
+            # they could only be asserted under Py2, which is gone. The Rust sensor honours pcap timestamps, so all
+            # three fire and are asserted - the field is kept because it says WHY they are the fragile ones.
             if all(_ in events for _ in expected):
                 passed += 1
             else:
                 retval = False
                 print("[x] detect test: FAILED  %s" % description)
 
-        print("[i] detect test: %d/%d detection(s) fired%s" % (passed, len(checks) - skipped,
-              (" (%d timing-window heuristic(s) skipped on Py3)" % skipped) if skipped else ""))
+        print("[i] detect test: %d/%d detection(s) fired" % (passed, len(checks)))
 
         if not retval:
             print("[!] sensor output was:\n%s" % (output.decode("utf8", "replace") if hasattr(output, "decode") else output))
