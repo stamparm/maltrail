@@ -231,6 +231,53 @@ def check_sudo():
 
     return check
 
+PUBLISHED_PEM_FINGERPRINTS = {
+    "9395629637a4fc48290286313b60ae26fb6bdcd8018db45894ab54c273d1a2c3": "private key",
+    "2905a63fd3399bda47f286dac449edf734cdbdbe51b5d7d5cf241d2f74ea58c1": "certificate",
+}   # NOTE: DER-SHA256 of the two blocks of misc/server.pem as of commit 0f876cfa^ ('git show 0f876cfa^:misc/server.pem' reproduces them)
+
+def uses_published_key(pem_path, fingerprints=None):
+    """
+    Whether an SSL_PEM file contains the key (or certificate) that Maltrail itself published.
+
+    misc/server.pem shipped inside this repository from February 2020 until commit 0f876cfa. A
+    private key in a public repository is a private key everybody has: TLS with it protects
+    nothing, and anybody can impersonate the server or decrypt a session. Deleting the file from
+    the tree does NOT undo that - the blob is still in this repository's git history, in every
+    clone, fork and mirror of it, and above all in the /etc/maltrail directories of operators who
+    copied it years ago. That last group is the only one a code change can help, so the check is
+    on the file the server is actually told to use, by content rather than by name (renaming it,
+    or generating a fresh certificate around the same key, changes nothing about who has it).
+
+    Compared as SHA-256 over the DER inside each PEM block, so whitespace, block order, extra
+    blocks and the surrounding filename are all irrelevant.
+
+    Returns True (refuse), False (fine), or None when the file cannot be read or parsed.
+    """
+
+    PUBLISHED = fingerprints if fingerprints is not None else PUBLISHED_PEM_FINGERPRINTS
+
+    try:
+        import base64
+        import hashlib
+
+        with open(pem_path, "rb") as f:
+            content = f.read().decode(UNICODE_ENCODING, errors="replace")
+
+        found = False
+
+        for match in re.finditer(r"-----BEGIN ([A-Z0-9 ]+)-----(.*?)-----END \1-----", content, re.S):
+            try:
+                der = base64.b64decode(re.sub(r"\s+", "", match.group(2)))
+            except Exception:
+                continue
+            if hashlib.sha256(der).hexdigest() in PUBLISHED:
+                found = True
+
+        return found
+    except Exception:
+        return None
+
 def extract_zip(filename, path=None):
     _ = zipfile.ZipFile(filename, 'r')
     _.extractall(path)

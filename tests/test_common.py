@@ -172,5 +172,85 @@ class TestCdnIp(unittest.TestCase):
             C.CDN_RANGES = saved
 
 
+class TestUsesPublishedKey(unittest.TestCase):
+    """The key Maltrail shipped in misc/server.pem is public, so the server must refuse it.
+
+    Deleting the file from the tree rotated nothing: the blob is still in this repository's git
+    history and in the /etc/maltrail of everyone who copied it once. Recognition is therefore by
+    content, and it has to survive the two ways an operator's copy differs from the original file -
+    a different filename, and a fresh certificate generated around the same key.
+
+    The published key is deliberately NOT a fixture here (re-committing it would undo the point).
+    The matching logic is exercised against a synthetic fingerprint set, and the shipped set is
+    checked for the two digests separately - so nothing in this file depends on git history being
+    present, which a shallow CI checkout does not guarantee.
+    """
+
+    def _pem(self, blocks, mangle=False):
+        import base64
+        import tempfile
+
+        out = []
+        for kind, der in blocks:
+            body = base64.b64encode(der).decode("ascii")
+            sep = "\r\n" if mangle else "\n"
+            wrapped = sep.join(body[i:i + 64] for i in range(0, len(body), 64))
+            out.append("-----BEGIN %s-----%s%s%s-----END %s-----%s" % (kind, sep, wrapped, sep, kind, sep))
+            if mangle:
+                out.append("\n   \n")   # stray whitespace between blocks
+        handle = tempfile.NamedTemporaryFile("w", suffix=".pem", delete=False)
+        handle.write("".join(out))
+        handle.close()
+        self.addCleanup(os.unlink, handle.name)
+        return handle.name
+
+    def _sha256(self, der):
+        import hashlib
+        return hashlib.sha256(der).hexdigest()
+
+    def test_a_pem_holding_a_known_bad_block_is_rejected(self):
+        der = b"\x30\x82pretend this is the published private key"
+        path = self._pem([("PRIVATE KEY", der), ("CERTIFICATE", b"\x30\x82some certificate")])
+        self.assertTrue(C.uses_published_key(path, {self._sha256(der): "private key"}))
+
+    def test_the_key_is_recognised_without_its_original_certificate(self):
+        # A fresh self-signed certificate around the same key is still the same public key, and an
+        # operator who renamed the file has not changed who holds it either.
+        der = b"\x30\x82pretend this is the published private key"
+        path = self._pem([("PRIVATE KEY", der), ("CERTIFICATE", b"\x30\x82a NEWLY generated cert")])
+        self.assertTrue(C.uses_published_key(path, {self._sha256(der): "private key"}))
+
+    def test_whitespace_and_block_order_do_not_matter(self):
+        der = b"\x30\x82pretend this is the published private key"
+        path = self._pem([("CERTIFICATE", b"\x30\x82unrelated"), ("PRIVATE KEY", der)], mangle=True)
+        self.assertTrue(C.uses_published_key(path, {self._sha256(der): "private key"}))
+
+    def test_an_unrelated_pem_is_accepted(self):
+        path = self._pem([("PRIVATE KEY", b"\x30\x82a key nobody published")])
+        self.assertFalse(C.uses_published_key(path))
+        self.assertFalse(C.uses_published_key(path, {"0" * 64: "private key"}))
+
+    def test_garbage_in_a_pem_block_is_not_a_crash(self):
+        import tempfile
+        handle = tempfile.NamedTemporaryFile("w", suffix=".pem", delete=False)
+        handle.write("-----BEGIN PRIVATE KEY-----\nnot base64 at all !!!\n-----END PRIVATE KEY-----\n")
+        handle.close()
+        self.addCleanup(os.unlink, handle.name)
+        self.assertFalse(C.uses_published_key(handle.name))
+
+    def test_an_unreadable_pem_is_neither_accepted_nor_rejected(self):
+        # None, not False: "could not tell" must not read as "verified fine".
+        self.assertIsNone(C.uses_published_key(os.path.join(os.sep, "nonexistent", "server.pem")))
+
+    def test_the_shipped_fingerprint_set_still_names_both_blocks(self):
+        # The whole check is these two constants; losing one silently would re-accept the key.
+        # Reproduce them with: git show 0f876cfa^:misc/server.pem
+        self.assertEqual(
+            sorted(C.PUBLISHED_PEM_FINGERPRINTS),
+            ["2905a63fd3399bda47f286dac449edf734cdbdbe51b5d7d5cf241d2f74ea58c1",
+             "9395629637a4fc48290286313b60ae26fb6bdcd8018db45894ab54c273d1a2c3"])
+        self.assertEqual(sorted(C.PUBLISHED_PEM_FINGERPRINTS.values()), ["certificate", "private key"])
+
+
 if __name__ == "__main__":
     unittest.main()

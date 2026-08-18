@@ -21,6 +21,7 @@ from core.common import check_connection
 from core.common import check_sudo
 from core.common import get_ex_message
 from core.common import patch_parser
+from core.common import uses_published_key
 from core.httpd import start_httpd
 from core import meta
 from core.log import create_log_directory
@@ -75,9 +76,16 @@ def main():
     # Python 3 it never ran and a missing/invalid SSL_PEM only failed later, inside the server
     # thread. It is a plain USE_SSL check now.
     if config.USE_SSL:
+        hint = "openssl req -new -x509 -keyout %s -out %s -days 365 -nodes -subj '/O=%s CA/C=EU'" % (config.SSL_PEM or "server.pem", config.SSL_PEM or "server.pem", NAME)
         if not config.SSL_PEM or not os.path.isfile(config.SSL_PEM):
-            hint = "openssl req -new -x509 -keyout %s -out %s -days 365 -nodes -subj '/O=%s CA/C=EU'" % (config.SSL_PEM or "server.pem", config.SSL_PEM or "server.pem", NAME)
             sys.exit("[!] invalid configuration value for 'SSL_PEM' ('%s')\n[?] (hint: \"%s\")" % (config.SSL_PEM, hint))
+
+        # The key Maltrail used to ship in misc/server.pem is public - it sat in a public
+        # repository from 2020 and is still in its git history - so TLS with it protects nothing.
+        # Anyone who copied it once keeps serving HTTPS that anybody can impersonate or decrypt,
+        # and nothing tells them: the padlock looks identical. Refuse instead of pretending.
+        if uses_published_key(config.SSL_PEM):
+            sys.exit("[!] 'SSL_PEM' ('%s') is the key %s published in misc/server.pem, which is public and provides no protection\n[?] (hint: \"%s\")" % (config.SSL_PEM, NAME, hint))
 
     def update_timer():
         retries = 0

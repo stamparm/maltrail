@@ -19,6 +19,32 @@ We aim to acknowledge a report within **3 working days** and to agree a disclosu
 you at that point. If a fix needs longer than 90 days we will say so and explain why, rather than
 letting the clock run out quietly.
 
+## The private key Maltrail used to ship (`misc/server.pem`)
+
+From February 2020 until commit `0f876cfa` this repository contained `misc/server.pem`: a
+self-signed certificate **and its private key**, in a public repository. Anyone who has ever
+cloned, forked or mirrored Maltrail has that key, and `git show 0f876cfa^:misc/server.pem` still
+prints it — deleting a file from the tip of a public branch is not key rotation and never was.
+Nothing rotates it either, because there is no single "the" key to rotate: it is one file that an
+unknown number of operators copied into `/etc/maltrail` years ago.
+
+**If your `SSL_PEM` is that file, HTTPS on your server protects nothing** — anybody can
+impersonate it or decrypt a recorded session, and the browser padlock looks exactly the same as it
+would with a good key. Check and replace it:
+
+```bash
+# does your key match the published one? (prints 9395629637a4fc48... if so)
+awk '/BEGIN PRIVATE KEY/{f=1;next} /END PRIVATE KEY/{f=0} f' /etc/maltrail/server.pem | base64 -d | sha256sum
+# replace it
+openssl req -new -x509 -keyout /etc/maltrail/server.pem -out /etc/maltrail/server.pem \
+        -days 365 -nodes -subj '/O=Maltrail CA/C=EU'
+```
+
+The server now refuses to start when `SSL_PEM` contains that key or that certificate
+(`core.common.uses_published_key`), matched by content, so a rename or a freshly issued
+certificate around the same key is caught too. Report the failure as a vulnerability if it ever
+starts anyway.
+
 ## Supported Versions
 
 "All versions" was never a policy anyone could keep. Security fixes land on the current release
