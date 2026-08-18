@@ -8,7 +8,6 @@ See the file 'LICENSE' for copying permission
 
 import doctest
 import os
-import py_compile
 import shutil
 import socket
 import struct
@@ -56,15 +55,25 @@ def smoke_test():
 
     retval = True
 
-    # 1) every source file must compile on the running Python (catches Py2/Py3 syntax breakage everywhere, incl. feeds)
+    # 1) every source file must compile on the running Python (catches Py2/Py3 syntax breakage everywhere, incl. feeds).
+    #
+    # The builtin compile(), not py_compile: py_compile WRITES the .pyc next to the source and ignores
+    # sys.dont_write_bytecode, so this needed a writable source tree. On a read-only /opt/maltrail, or on
+    # a tree where an earlier `sudo` run left a root-owned __pycache__, it raised PermissionError - and
+    # that is exactly the sort of install where an operator reaches for a smoke test. compile() answers
+    # the same question (does this parse on this interpreter) and writes nothing.
     compiled = 0
     for path in _iter_py_files():
         try:
-            py_compile.compile(path, doraise=True)
+            with open(path, "rb") as f:
+                compile(f.read(), path, "exec", dont_inherit=True)   # bytes -> the PEP 263 coding cookie is honoured
             compiled += 1
-        except py_compile.PyCompileError as ex:
+        except (SyntaxError, ValueError) as ex:
             retval = False
             print("[x] smoke test failed compiling '%s' (%s)" % (path, ex))
+        except EnvironmentError as ex:                               # unreadable file: report it, do not abort the sweep
+            retval = False
+            print("[x] smoke test could not read '%s' (%s)" % (path, ex))
     print("[i] smoke test: compiled %d source file(s)" % compiled)
 
     # 2) import the doctest-bearing modules and run their doctests
