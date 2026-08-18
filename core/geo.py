@@ -15,6 +15,7 @@ import struct
 import threading
 import time
 
+from core.addr import leading_ipv4
 from core.settings import GEO_IP2CC_BUNDLED_FILE
 from core.settings import GEO_IP2CC_FILE
 from core.settings import GEO_IP2CC6_BUNDLED_FILE
@@ -160,11 +161,6 @@ def ip_to_country(ip):
     return _lookup(_v4_path(), value)
 
 
-# leading IPv4 of a trail, up to an IP/port/path/space boundary: matches a bare IP, "IP:port", "IP/path",
-# "IP (query)". A digit-leading DOMAIN (e.g. "1.2.3.4.evil.com") is rejected by requiring that boundary.
-_LEADING_IPV4 = re.compile(r"(\d{1,3}(?:\.\d{1,3}){3})(?:[:/ ]|\Z)")
-
-
 def event_country(trail_type, src, dst, trail):
     """
     Country to plot for one event on the attack-origins map, or None when it can't be honestly placed.
@@ -186,8 +182,7 @@ def event_country(trail_type, src, dst, trail):
     benign resolver can never be mis-plotted: it is both the "is this a routable public IP" test and the lookup.
     """
     tip = trail or ""
-    m = _LEADING_IPV4.match(tip) if tip[:1].isdigit() else None
-    cc = ip_to_country(m.group(1) if m else tip)
+    cc = ip_to_country(leading_ipv4(tip) or tip)      # the boundary rule lives in core.addr, shared with the updater
     if cc:
         return cc
     if trail_type == "DNS":

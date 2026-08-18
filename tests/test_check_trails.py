@@ -116,5 +116,45 @@ class ScanTest(unittest.TestCase):
         self.assertEqual(inert, [], "inert trail(s) in trails/static: %s" % inert[:5])
 
 
+class WhitelistShadowTest(unittest.TestCase):
+    """A trail whose PARENT domain is whitelisted loads into trails.csv and is then dropped by the sensor's
+    loader, so it is present, counted and unable to match.
+
+    Found by replaying `10.53.154.104.bc.googleusercontent.com` through the release sensor against the real
+    trail set: the trail was there, the control fired, the trail did not. `googleusercontent.com` is line 103
+    of data/whitelist.txt. The updater's own check_whitelisted() does not walk parents, so nothing removed it
+    at build time and nothing reported it either."""
+
+    WL = {"cloudfront.net", "evil.example", "co.uk"}
+
+    def test_a_whitelisted_parent_shadows_the_trail(self):
+        verdict = C.classify("d1wp6m56sqw74a.cloudfront.net", self.WL)
+        self.assertEqual(verdict[0], "shadowed")
+        self.assertIn("cloudfront.net", verdict[1])
+
+    def test_the_walk_reaches_any_ancestor(self):
+        self.assertEqual(C.whitelisted_parent("a.b.c.evil.example", self.WL), "evil.example")
+        self.assertEqual(C.whitelisted_parent("x.co.uk", self.WL), "co.uk")
+
+    def test_an_exactly_listed_name_is_not_reported(self):
+        # the operator listed that exact name; only a name shadowed BY AN ANCESTOR is the surprise
+        self.assertIsNone(C.whitelisted_parent("cloudfront.net", self.WL))
+        self.assertIsNone(C.classify("cloudfront.net", self.WL))
+
+    def test_a_suffix_that_is_not_a_label_boundary_does_not_shadow(self):
+        self.assertIsNone(C.whitelisted_parent("notcloudfront.net", self.WL))
+        self.assertIsNone(C.whitelisted_parent("evil.example.org", self.WL))
+
+    def test_shadowing_does_not_fail_the_gate(self):
+        # it is a collision between two operator-visible lists, not a broken entry
+        self.assertEqual(C.classify("d1wp6m56sqw74a.cloudfront.net", self.WL)[0], "shadowed")
+        inert = [_ for _ in C.problems(os.path.join(ROOT, "trails", "static"), None) if _[3] == "inert"]
+        self.assertEqual(inert, [])
+
+    def test_no_whitelist_means_no_shadow_reports(self):
+        self.assertIsNone(C.classify("d1wp6m56sqw74a.cloudfront.net", None))
+        self.assertIsNone(C.classify("d1wp6m56sqw74a.cloudfront.net", set()))
+
+
 if __name__ == "__main__":
     unittest.main()

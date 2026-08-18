@@ -33,6 +33,13 @@ dead feed - it looks exactly like "no detections". The cases:
   * an UNDERSCORE in the last label. `_` is legal in every other label; a TLD does not have one.
   * a last label in `IGNORE_DNS_QUERY_SUFFIXES` - the query is dropped before the lookup.
 
+Reported but NOT failing the gate: a trail whose PARENT domain is whitelisted. The sensor's loader drops it
+(`whitelist::check_domain_member` walks parents), while the updater's own `check_whitelisted()` does not walk
+parents - so it survives the build, lands in trails.csv, and is discarded at load. 3,082 static entries are in
+that state, most of them specific malicious names on shared platforms (676 under cloudfront.net, 491 under
+amazonaws.com, 398 under azurewebsites.net). Which list should win is a policy call, not a typo, so this is a
+report: the point is that the number was invisible.
+
 A bare TLD like `xyz` is NOT reported. Those come from the `.xyz`-style entries in
 suspicious/domain.txt, the loader strips the leading dot, and the sensor's parent-domain walk
 reaches them - `evil.xyz` matches the trail `xyz`. Confirmed the same way.
@@ -69,6 +76,48 @@ LOOKALIKES = {
 }
 
 
+def whitelisted_parents():
+    """The whitelist, as the SENSOR applies it: a name is suppressed when it or any PARENT is listed.
+
+    `core/settings.read_whitelist()` loads data/whitelist.txt plus the configured WHITELIST, and the sensor's
+    loader drops a trail whose name has a whitelisted parent (`whitelist::check_domain_member`, the same walk
+    `TrailDb::contains_domain_member` uses). The updater's own `check_whitelisted()` does NOT walk parents, so
+    such a trail survives the build, lands in trails.csv, and is then discarded at load: present, counted,
+    and unable to match. Nothing said so before this.
+    """
+
+    try:
+        from core.settings import read_config, read_whitelist
+        import core.settings as settings
+        read_config(os.path.join(ROOT, "maltrail.conf"))
+        read_whitelist()
+        return set(settings.WHITELIST or ())
+    except Exception as ex:
+        print("[!] could not load the whitelist (%s); skipping that check" % ex)
+        return set()
+
+
+def whitelisted_parent(name, whitelist):
+    """The whitelisted ancestor that suppresses `name`, or None.
+
+    >>> whitelisted_parent("evil.cloudfront.net", {"cloudfront.net"})
+    'cloudfront.net'
+    >>> whitelisted_parent("a.b.evil.example", {"evil.example"})
+    'evil.example'
+    >>> whitelisted_parent("cloudfront.net", {"cloudfront.net"}) is None
+    True
+    >>> whitelisted_parent("notcloudfront.net", {"cloudfront.net"}) is None
+    True
+    """
+
+    parts = name.split('.')
+    for i in range(1, len(parts) - 1):           # strict ancestors only: an exactly-listed name is the operator's own call
+        candidate = '.'.join(parts[i:])
+        if candidate in whitelist:
+            return candidate
+    return None
+
+
 def entries(path):
     """The trail keys a file contributes, normalised the way trails/static/__init__.py does."""
     for number, line in enumerate(io.open(path, encoding="utf8", errors="replace"), 1):
@@ -95,11 +144,11 @@ def wire_form(key):
         return None                              # stored verbatim, and no query can carry it
 
 
-def classify(key):
+def classify(key, whitelist=None):
     """(severity, reason) for one trail key, or None when it is reachable as written.
 
-    severity is "inert" - it cannot match, ever - or "warn": it will match something, but
-    probably not what the report meant."""
+    severity is "inert" - it cannot match, ever - "shadowed": a whitelisted parent domain suppresses it, or
+    "warn": it will match something, but probably not what the report meant."""
 
     if not key or IPV4.match(key) or IPV4_PORT.match(key) or ':' in key:
         return None                              # IPv4, IPv4:port and IPv6 are not names
@@ -130,6 +179,11 @@ def classify(key):
         # registrable gTLD in 2019.
         return ("inert", "last label '%s' is in IGNORE_DNS_QUERY_SUFFIXES: the query is dropped before lookup" % last)
 
+    if whitelist:
+        parent = whitelisted_parent(wire, whitelist)
+        if parent:
+            return ("shadowed", "parent domain '%s' is whitelisted: the sensor's loader drops this trail" % parent)
+
     if lookalike:
         # idna turned it into a syntactically valid name, so it is not inert - but a dash lookalike
         # punycodes to a domain that almost certainly does not exist.
@@ -138,8 +192,8 @@ def classify(key):
     return None                                  # includes deliberate IDNs: they match their punycode
 
 
-def problems(root):
-    """[(path, line, key, severity, reason)] for every trail entry that is inert or suspect."""
+def problems(root, whitelist=None):
+    """[(path, line, key, severity, reason)] for every trail entry that is inert, shadowed or suspect."""
     found = []
     for base, _, files in os.walk(root):
         for name in sorted(files):
@@ -147,7 +201,7 @@ def problems(root):
                 continue
             path = os.path.join(base, name)
             for number, key in entries(path):
-                verdict = classify(key)
+                verdict = classify(key, whitelist)
                 if verdict:
                     found.append((path, number, key, verdict[0], verdict[1]))
     return found
@@ -158,15 +212,19 @@ def main():
     parser.add_argument("--path", default=os.path.join(ROOT, "trails", "static"))
     parser.add_argument("--quiet", action="store_true", help="exit status only")
     parser.add_argument("--strict", action="store_true", help="a warning fails too")
+    parser.add_argument("--no-whitelist", action="store_true", help="skip the whitelist-shadowing report")
     parser.add_argument("--limit", type=int, default=25, help="lines shown per category")
     options = parser.parse_args()
 
-    found = problems(options.path)
+    whitelist = None if options.no_whitelist else whitelisted_parents()
+    found = problems(options.path, whitelist)
     inert = [_ for _ in found if _[3] == "inert"]
+    shadowed = [_ for _ in found if _[3] == "shadowed"]
     warned = [_ for _ in found if _[3] == "warn"]
 
     if not options.quiet:
-        print("[i] %s: %d entry(ies) that cannot match, %d suspect" % (options.path, len(inert), len(warned)))
+        print("[i] %s: %d entry(ies) that cannot match, %d suspect, %d shadowed by the whitelist"
+              % (options.path, len(inert), len(warned), len(shadowed)))
         for label, group in (("cannot match", inert), ("suspect", warned)):
             buckets = {}
             for path, number, key, _, why in group:
@@ -177,9 +235,27 @@ def main():
                     print("      %s:%d  %s  -- %s" % (os.path.relpath(path, ROOT), number, key, why))
                 if len(items) > options.limit:
                     print("      ... and %d more" % (len(items) - options.limit))
-        if not found:
+
+        # Summarised per whitelisted parent, not per entry: these come in thousands, and the useful unit is the
+        # PARENT - each line is one platform where the whitelist and the trail set disagree about the same names.
+        if shadowed:
+            by_parent = {}
+            for path, number, key, _, why in shadowed:
+                by_parent.setdefault(why.split("'")[1], []).append((path, number, key))
+            print("\n[!] shadowed by a whitelisted parent domain (%d entries, %d parent(s))"
+                  % (len(shadowed), len(by_parent)))
+            print("      these load into trails.csv and are then dropped by the sensor's loader")
+            for parent, items in sorted(by_parent.items(), key=lambda kv: -len(kv[1]))[:options.limit]:
+                path, number, key = items[0]
+                print("      %-28s %5d  e.g. %s:%d  %s" % (parent, len(items), os.path.relpath(path, ROOT), number, key))
+            if len(by_parent) > options.limit:
+                print("      ... and %d more parent(s)" % (len(by_parent) - options.limit))
+
+        if not inert and not warned and not shadowed:
             print("[i] no unreachable trails")
 
+    # Shadowing is a COLLISION between two operator-visible lists, not a defect in the entry, so it is reported
+    # and does not fail the gate: which of the two wins is a policy call (see the note in the module docstring).
     return 1 if (inert or (options.strict and warned)) else 0
 
 
