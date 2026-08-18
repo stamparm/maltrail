@@ -10,6 +10,7 @@ The full replay needs a sensor binary and is asserted where one exists (CI's sen
 that must hold everywhere is that the check drives the SHIPPED sensor, so that regression cannot come back on a
 machine that happens to have pcapy installed."""
 
+import inspect
 import os
 import re
 import subprocess
@@ -22,14 +23,35 @@ sys.path.insert(0, ROOT)
 from core import testing as T
 
 
+def _body_without_docstring(function):
+    """The function's source with its docstring cut out, located in the SOURCE text.
+
+    Not `source.replace(function.__doc__, "")`, which is what this did first: Python **3.13** strips
+    the common leading whitespace from docstrings at compile time (gh-81283), so `__doc__` no longer
+    appears verbatim in the indented source, the replace removed nothing, and the docstring - which
+    names `old/sensor.py` deliberately - stayed in the text being asserted against. It passed on
+    3.9-3.12 and failed only on the 3.13 leg of CI. Reading the delimiters out of the source is
+    version-independent, and needs no `ast.unparse` (3.9+, and the floor here is 3.6).
+    """
+
+    source = inspect.getsource(function)
+    match = re.search(r'"""(?:.|\n)*?"""', source)
+    return source[:match.start()] + source[match.end():] if match else source
+
+
 class SensorSelectionTest(unittest.TestCase):
     def test_detect_test_does_not_drive_the_retired_python_sensor(self):
-        import inspect
-        body = inspect.getsource(T.detect_test)
-        body = body.replace(T.detect_test.__doc__ or "", "")     # the docstring says "old/sensor.py" on purpose
+        body = _body_without_docstring(T.detect_test)
         self.assertNotIn("sensor.py", body)
         self.assertIn("find_sensor()", body)
         self.assertIn("cmd = [binary", body)
+
+    def test_the_docstring_really_is_removed_before_asserting(self):
+        # Without this the test above passes for the wrong reason on one interpreter and fails on
+        # another, which is exactly what happened: see _body_without_docstring().
+        source = inspect.getsource(T.detect_test)
+        self.assertIn("old/sensor.py", source, "the docstring no longer names it; update this test")
+        self.assertNotIn("old/sensor.py", _body_without_docstring(T.detect_test))
 
     def test_find_sensor_returns_an_executable_or_none(self):
         binary = T.find_sensor()
@@ -62,6 +84,17 @@ class ReplayTest(unittest.TestCase):
     def setUp(self):
         if T.find_sensor() is None:
             self.skipTest("no sensor binary (build with: cargo build --release --manifest-path sensor/Cargo.toml)")
+
+        # Can this interpreter run server.py at all? A build of Python without _sqlite3 cannot import
+        # core.common, so the subprocess below dies before detect_test() runs and reports as "0
+        # detections" - an environment problem wearing a detection failure's clothes. Skipping on THAT
+        # is safe and does not hide a code break: compile-all, test_smoke's import sweep and
+        # test_httpd's real server would all fail loudly if server.py genuinely stopped importing.
+        probe = subprocess.Popen([sys.executable, os.path.join(ROOT, "server.py"), "--version"],
+                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        out = probe.communicate()[0].decode("utf8", "replace")
+        if probe.returncode != 0:
+            self.skipTest("this interpreter cannot run server.py: %s" % out.strip().split("\n")[-1])
 
     def test_every_crafted_detection_fires(self):
         cmd = [sys.executable, os.path.join(ROOT, "server.py"), "--detect-test"]
