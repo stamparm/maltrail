@@ -226,6 +226,13 @@ jobs:
       - uses: actions/checkout@v7
       - run: python3 sensor/tools/check_version.py
 
+      # 97% of commits here touch trails/static, and a trail written in a form the sensor never
+      # sees on the wire loads cleanly, occupies a row and matches nothing - indistinguishable
+      # from "no detections". The tool existed but ran nowhere, because it reported a live
+      # punycode trail as dead; with that false positive gone the exit status is worth gating on.
+      - name: Static trails are reachable on the wire
+        run: python3 sensor/tools/check_trails.py
+
   # The Docker image's promise is that it works with the storage the operator hands it. Three
   # separate ways it did not - an unwritable bind mount, `cap_add` that granted nothing to a
   # non-root USER, and a compose file whose relative bind-mount paths did not resolve - all
