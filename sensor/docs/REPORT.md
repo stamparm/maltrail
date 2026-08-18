@@ -273,7 +273,9 @@ both matter:
 * **`sensor.py` starts faster and uses less memory**, and that is not noise: `core/trailsbin.py`
   builds a 48 MB binary trail store once and `mmap`s it thereafter, so a warm Python start skips
   CSV parsing entirely (0.20 s) and its trail pages are file-backed. The sensor parses the
-  73 MB CSV on every start (1.18 s, 68 MB of resident tables). Python's *first* start, which
+  73 MB CSV on every start (1.18 s, 68 MB of resident tables *for that 73 MB set* — the tables run
+  ~1.4x the CSV, so this figure moves with the trail set, and a current 81 MB CSV builds 109 MB).
+  Python's *first* start, which
   builds that store, takes **7.63 s** — 6.5x slower than the sensor's every-time startup.
 * Because a short replay is dominated by startup, the end-to-end ratio (3.4x) understates the
   steady-state one (13.8x). For a long-running sensor, steady state is what matters.
@@ -296,8 +298,9 @@ The steady-state ratio moved from 13.8x to 27.1x for two independent reasons, an
 precise about which is which: the sensor's own per-packet cost fell 1,209 -> 865 ns (-28%, the §4c
 work, reproducible), while `sensor.py` on this box measured 16,689 -> 23,448 ns/packet (+40%) on a
 larger trail set and a machine under different load. **Only the first is an improvement we made.**
-Quote 13.8x as the conservative floor and 27x as the current measurement; the honest statement is
-"14-27x per packet, depending on run and hardware".
+Quote 13.8x as the conservative floor and 27x as this box's measurement; with the two further
+systems below reaching 30x and 37x, the honest statement — and the one every other document in the
+repository uses — is "14-37x per packet, depending on run and hardware".
 
 Reproduced later on other hardware with the same harness (`--slope` is now the default, so the
 steady-state row is always printed): 550 ns/packet vs 16,656 for `sensor.py` on this same laptop
@@ -345,7 +348,8 @@ Notes on reading this table:
 
 "13.8x faster than Python" and "fast" are different claims. Measured per protocol on
 **1,000,000-packet** pcaps, the real 1,505,265-trail set, one worker pinned to one core
-(`taskset -c 2`, best of three), end to end through the release binary:
+(`taskset -c 2`; see the method note under the table — the two columns were not aggregated the same
+way), end to end through the release binary:
 
 | traffic | before | after | |
 | --- | --- | --- | --- |
@@ -357,9 +361,10 @@ Notes on reading this table:
 | ICMP echo (58 B) | 101 ns | 101 ns | the floor |
 | 866-byte mixed replay (60% bulk TLS) | 802 ns | **552 ns** | 1.45x |
 
-*Method: median of eight runs each, pinned to one core. This machine is bimodal (frequency
-scaling), so a single "best of three" overstates; the "before" column was measured as min-of-three
-and is therefore, if anything, flattering to the old code.*
+*Method, per column: the **after** figures are the median of eight runs, the **before** figures the
+minimum of three — they were measured months apart and are not aggregated the same way. This
+machine is bimodal (frequency scaling), so a min-of-three overstates; the mismatch therefore
+flatters the old code, and the ratios are conservative rather than inflated.*
 
 The mixed number moves least because 60% of that pcap is bulk TLS, whose cost is the libpcap read
 of a 1,473-byte packet — and on a live sensor the shipped `CAPTURE_FILTER` never delivers those
@@ -378,12 +383,17 @@ packets in the first place. SYN, DNS and HTTP are what a live sensor actually pr
    for maps keyed by `(Ip, Ip)`. Those now use an inlined FxHash (`src/fasthash.rs`). Maps keyed
    by attacker-chosen bytes — domains, URLs, paths, User-Agents — deliberately keep SipHash.
 3. **A cache-resident negative prefilter in front of the trail store** (`NegativeFilter` in
-   `src/trails/table.rs`). The store is ~87 MB, so a miss — which is nearly every lookup — cost a
+   `src/trails/table.rs`). The store is ~1.4x the CSV it was built from (~100 MB and growing), so a
+   miss — which is nearly every lookup — cost a
    DRAM round trip. A ~16-bit-per-entry bitmap answers "definitely absent" from L2/L3. It can
    never produce a false negative (an inserted key always sets its bits; a set bit only means
    "check the table"), which is the only reason a probabilistic structure is acceptable in a
-   detection path. `tests/trails.rs` walks all 1,505,265 real rows through `get()` on every test
-   run, which is the definitive check.
+   detection path. Two tests assert it: `the_negative_filter_never_hides_a_key_at_real_scale`
+   builds a 1.5M-key store from a deterministic generator and walks every key back through
+   `get()` (no trails file needed, so it runs everywhere, CI included), and
+   `real_trails_every_single_row_is_findable_with_its_own_info` does the same walk over the real
+   trail set — which self-skips without one locally, and is why the `real trail set` CI job builds
+   one with `sensor/tools/update_trails.py --offline`.
 4. **Allocations on the DNS path.** `check_domain` lower-cased every query into a fresh `String`,
    built a `Vec` of labels, and rebuilt a `String` per parent level via `'.'.join(parts[i:])`. A
    suffix of a dotted name is already a contiguous slice of it, so the parent walk now borrows
@@ -559,8 +569,12 @@ measured on the target hardware with `tools/fanout_check.py` plus the sensor's o
 ### 4g. Memory
 
 * Real 1.5M-trail store: **68.5 MB** resident (arena + index + native address tables + interned
-  pairs), built in **1.2 s** while streaming the 73 MB CSV.
-* Whole-process peak during a 300k-packet replay: **88 MB**.
+  pairs), built in **1.2 s** while streaming the 73 MB CSV. The tables cost **~1.4x the CSV**, so
+  this is a ratio and not a constant — the same code on a current 81 MB / 1.60M-row CSV builds
+  **109 MB** (`db.memory_bytes()`, reported as `memory=` in the startup summary). Every store figure
+  elsewhere in this repository is quoted with the CSV size it came from for that reason.
+* Whole-process peak during a 300k-packet replay: **88 MB** (73 MB CSV; 132 MB on the 83.3 MB CSV
+  measured in §4a).
 * Per-worker state is bounded by construction: `SCAN_TRACK_PER_KEY` (1024) items per key,
   `SCAN_MAX_KEYS` (50,000) keys total, 1000-entry result caches, hour-bucketed NXDOMAIN counters
   pruned once per hour — all identical to `sensor.py`'s bounds.
@@ -627,7 +641,7 @@ measured on the target hardware with `tools/fanout_check.py` plus the sensor's o
 
 ## 6b. Third-party review findings
 
-Two independent reviews of the port. What they found, and what was done:
+Independent reviews of the port, in four rounds. What they found, and what was done:
 
 | # | Finding | Status |
 | --- | --- | --- |
@@ -664,6 +678,24 @@ worker's line can land inside the split. The two review findings conflict, and r
 wins. The syscall reduction is still available, but it needs a buffer that only ever flushes on
 **record boundaries** (accumulate whole lines; when the next line would overflow, write the whole
 buffer, which by construction ends at a boundary). That is the right shape and it is not yet built.
+
+### Round four
+
+Mostly documentation this time — which is its own finding: six of the ten are numbers or file paths
+in these documents contradicting the code, and a document nobody can trust is not documentation.
+
+| Finding | Status |
+| --- | --- |
+| **`misc/server.pem` is still retrievable from history** (`git show 0f876cfa^:misc/server.pem`) — deleting a private key from HEAD is not rotation. | **Correct, and the remediation was the wrong shape.** That key was public from February 2020, so nothing can un-leak it and a history rewrite would not either (every fork and mirror keeps the blob). What a code change *can* fix is the operators still serving TLS with it: `server.py` now refuses to start when `SSL_PEM` contains that key or that certificate, matched by DER digest rather than by filename, so a renamed copy or a fresh certificate around the same key is caught too (`core.common.uses_published_key`). `SECURITY.md` documents the exposure, how to check for it and how to replace it. History left alone deliberately. |
+| **`ARCHITECTURE.md` contradicted itself about probabilistic filters**: "No probabilistic filter is used anywhere" on line 119, `NegativeFilter` described on line 172. | **Fixed.** The first passage now describes the filter that exists and states the asymmetry that licenses it (a *negative* prefilter may sit in front of the authoritative table; nothing probabilistic may *be* the table). |
+| **Resident-size figures conflicted** for the same trail set — ~68 MB in two places, ~87 MB in four. | **Fixed, and both numbers were stale.** They were measured on different trail sets months apart. Re-measured: 1,603,829 rows / 81 MB CSV -> **109 MB** of tables. The store runs ~1.4x the CSV it was built from, so the docs now quote that ratio, and every absolute figure names the CSV size it came from. `db.memory_bytes()` is in the startup summary (`memory=`) for anyone who needs today's number. |
+| **The 1.5M-row walk does not run "on every test run"** — it self-skips without an operator trails file, so the trail store's no-false-negative invariant was verified by nothing reproducible. | **Fixed, both ways.** `tests/trails.rs::the_negative_filter_never_hides_a_key_at_real_scale` builds 1.5M keys in the shapes the loader produces (tables starting ~1500x under-sized, so growth and a saturated filter are both exercised) and walks every one back through `get()` — no trails file, runs everywhere, ~2.4 s release / ~5 s debug. And the real walk is no longer laptop-only: the new `real trail set` CI job builds a set with `update_trails.py --offline` and runs `--test trails --test loader_parity` against it, failing if either prints its skip note. Both tests now honour `$MALTRAIL_TRAILS`, like `check.sh` already did. |
+| **Two speedup ranges published**: 14–27x here, 14–37x in `README.md`. | **Fixed**: 14–37x everywhere (`README.md`, `ROADMAP.md`, §4a), with 13.8x named as the conservative floor and the 30x/37x measurements as the upper end. |
+| **§4c said "best of three" above the table and "median of eight" below it.** | **Fixed.** Both were true of different columns — after: median of eight, before: min of three, measured months apart — which the method note now says explicitly, along with the direction the mismatch biases (it flatters the old code). |
+| **Commit 93df6f82's message says 492 KB; the deletion is 145 KB.** | **Confirmed: 145,227 bytes across 27 files.** The message is history and is not worth a rewrite to correct; the number is recorded here instead, and nothing in the tree repeats it. |
+| **`main.js` injected a per-IP `<script>` from `stat.ripe.net`, which is why `script-src` was widened.** | **Fixed by proxying.** `/ripe` (session-gated, address-validated, 7-day cache, short timeout, `DISABLE_RIPE_LOOKUPS` kill switch) does the lookup server-side; the frontend uses same-origin `fetch()`; `script-src` is back to `'self'`, asserted by `test_csp_script_src_allows_no_third_party_origin`. One cache now serves every analyst instead of one per browser profile. |
+| **`sensor/tools/update_trails.py` was written as `tools/update_trails.py`** in `trailupdate.rs:10` and `ARCHITECTURE.md:127`, both of which are repository-root-relative. | **Fixed** in all three places (the doc comment, the `updater_script()` doc, and the architecture text). |
+| **No automated zero-404 asset check**, despite 27 orphans surviving seven weeks. | **Fixed**: `tests/test_frontend.py::TestServedAssets` reads every reference out of `index.html`, `main.css`, the served scripts and `core/httpd.py` and checks both directions — every reference resolves to a file, and every file under `html/` is referenced or carries a written reason not to be. It found `html/images/lan.gif` orphaned on the first run (the LAN badge is an inline SVG now); deleted. |
 
 ### Open, and agreed
 

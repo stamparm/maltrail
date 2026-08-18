@@ -37,7 +37,8 @@ sudo ./sensor/target/release/maltrail-sensor
   20,000 packets **distributed** 5018/5025/5047/4910 and **not duplicated** (4-worker total
   identical to the 1-worker baseline).
 * Measured offline full-sensor replay with a real 1.5M-trail set: **~13.8x lower per-packet
-  cost** than `sensor.py` (1.2 µs vs 16.7 µs), **3.4x** faster end to end for a 300k-packet run
+  cost** than `sensor.py` on the reference box (1.2 µs vs 16.7 µs) — the conservative floor of the
+  **14-37x** range across the tested systems (`docs/REPORT.md` §4a) — and **3.4x** faster end to end for a 300k-packet run
   (startup dominates a short replay). Software packet path scales to **~10 Mpps** across 16
   workers on an 8-core/16-thread laptop.
 * Where `sensor.py` still wins: **startup** (0.20 s warm vs 1.18 s) and **peak RSS** (63 vs
