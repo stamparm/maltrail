@@ -22,6 +22,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))) 
 
 from core.addr import addr_to_int
 from core.addr import int_to_addr
+from core.addr import leading_ipv4
 from core.addr import make_mask
 from core.common import bogon_ip
 from core.common import cdn_ip
@@ -67,7 +68,7 @@ except (ImportError, AttributeError):
 # being recompiled/cache-looked-up via re.search(<string>, ...) on each iteration
 _ALPHA_ONLY_REGEX = re.compile(r"(?i)\A\.?[a-z]+\Z")
 _IPV4_REGEX = re.compile(r"\A\d+\.\d+\.\d+\.\d+\Z")
-_IPV4_PREFIX_REGEX = re.compile(r"\A(\d+\.\d+\.\d+\.\d+)\b")
+
 _CUSTOM_STATIC_REGEX = re.compile(r"\b(custom|static)\b")
 
 # str.isascii() is 3.7+, and this ONE call was the whole reason the project claimed a 3.7 floor -
@@ -375,10 +376,15 @@ def update_trails(force=False, offline=False):
             read_whitelist()
 
             for key in list(trails.keys()):
-                match = _IPV4_PREFIX_REGEX.search(key)
+                # leading_ipv4(), not a `\b`-bounded prefix match: `\b` also matches the dot of a digit-leading
+                # DOMAIN, so a reverse-DNS style trail was judged by its first four labels. Two static trails
+                # (`10.53.154.104.bc.googleusercontent.com`, `224.185.60.34...`) were deleted from every build
+                # as bogons, while their neighbours with a routable leading quad survived - a detection lost to
+                # a filter meant for address trails.
+                address = leading_ipv4(key)
                 if check_whitelisted(key) or any(key.startswith(_) for _ in BAD_TRAIL_PREFIXES):
                     del trails[key]
-                elif match and (bogon_ip(match.group(1)) or cdn_ip(match.group(1))) and not any(_ in trails[key][0] for _ in ("parking", "sinkhole")):
+                elif address and (bogon_ip(address) or cdn_ip(address)) and not any(_ in trails[key][0] for _ in ("parking", "sinkhole")):
                     del trails[key]
                 else:
                     try:

@@ -21,6 +21,40 @@ def addr_to_int(value):
     _ = value.split('.')
     return (int(_[0]) << 24) + (int(_[1]) << 16) + (int(_[2]) << 8) + int(_[3])
 
+# The IPv4 a trail STARTS with, up to an IP/port/path/space boundary: a bare IP, "IP:port", "IP/path",
+# "IP (query)". Requiring that boundary is the whole point - `\b` after the fourth octet also matches the dot
+# in a digit-leading DOMAIN, so `10.53.154.104.bc.googleusercontent.com` reads as the address 10.53.154.104.
+_LEADING_IPV4_REGEX = re.compile(r"(\d{1,3}(?:\.\d{1,3}){3})(?:[:/ ]|\Z)")
+
+def leading_ipv4(value):
+    """
+    The IPv4 address a trail begins with, or None when it does not begin with one.
+
+    Shared by every caller that has to decide "is this trail an address, or a name that happens to start with
+    digits" - the geolocation decision tree and the updater's bogon/CDN filter. They asked the same question
+    with different regexes, and the updater's `\\b` boundary silently deleted reverse-DNS style trails whose
+    leading quad fell in a bogon or CDN range.
+
+    >>> leading_ipv4("1.2.3.4")
+    '1.2.3.4'
+    >>> leading_ipv4("1.2.3.4:8080")
+    '1.2.3.4'
+    >>> leading_ipv4("1.2.3.4/gate.php")
+    '1.2.3.4'
+    >>> leading_ipv4("1.2.3.4 (evil.com)")
+    '1.2.3.4'
+    >>> leading_ipv4("10.53.154.104.bc.googleusercontent.com") is None
+    True
+    >>> leading_ipv4("evil.com") is None
+    True
+    """
+
+    if not value or not value[:1].isdigit():
+        return None
+
+    match = _LEADING_IPV4_REGEX.match(value)
+    return match.group(1) if match else None
+
 def int_to_addr(value):
     """
     Converts an integer into its IPv4 address representation

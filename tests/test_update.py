@@ -20,6 +20,7 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from core.addr import leading_ipv4
 from core.update import _NON_ASCII_REGEX, _is_ascii
 
 # Both branches must agree here, character for character.
@@ -67,6 +68,48 @@ class TestIsAscii(unittest.TestCase):
             source = f.read().decode("utf8")
         self.assertIn('hasattr(str, "isascii")', source,
                       "core/update.py no longer chooses an implementation, so it is 3.7+ only again")
+
+
+class LeadingIPv4Test(unittest.TestCase):
+    """The boundary that decides "address trail" from "name that starts with digits".
+
+    The updater's bogon/CDN filter used a `\\b`-bounded prefix match, and `\\b` matches the dot in a
+    digit-leading DOMAIN too - so a reverse-DNS style trail was judged by its first four labels. Two static
+    trails were deleted from EVERY build as bogons (`10.53.154.104.bc.googleusercontent.com`,
+    `224.185.60.34.bc.googleusercontent.com`) while their neighbours with a routable leading quad survived,
+    which is why nobody noticed. The rule now lives once, in core.addr, shared with the geolocation path.
+    """
+
+    def test_address_shaped_trails_yield_their_address(self):
+        for trail, address in (("1.2.3.4", "1.2.3.4"),
+                               ("1.2.3.4:8080", "1.2.3.4"),
+                               ("1.2.3.4/gate.php", "1.2.3.4"),
+                               ("1.2.3.4 (evil.example)", "1.2.3.4"),
+                               ("10.0.0.0/8", "10.0.0.0")):
+            self.assertEqual(leading_ipv4(trail), address, trail)
+
+    def test_digit_leading_names_are_not_addresses(self):
+        for trail in ("10.53.154.104.bc.googleusercontent.com",
+                      "224.185.60.34.bc.googleusercontent.com",
+                      "1.2.3.4.evil.example",
+                      "13.249.87.125.evil.example",     # a CDN range as the leading quad
+                      "1.2.3.4-evil.example",
+                      "evil.example",
+                      "", None):
+            self.assertIsNone(leading_ipv4(trail), trail)
+
+    def test_the_two_googleusercontent_trails_would_now_survive_the_filter(self):
+        # the exact predicate from update_trails()'s post-processing, on the entries it used to drop
+        from core.common import bogon_ip, cdn_ip
+        for trail in ("10.53.154.104.bc.googleusercontent.com", "224.185.60.34.bc.googleusercontent.com"):
+            address = leading_ipv4(trail)
+            self.assertIsNone(address, trail)
+            self.assertFalse(address and (bogon_ip(address) or cdn_ip(address)))
+        # and a real address trail in the same ranges must STILL be dropped - the filter has to keep working
+        for trail in ("10.53.154.104", "224.185.60.34"):
+            address = leading_ipv4(trail)
+            self.assertIsNotNone(address, trail)
+            self.assertTrue(bogon_ip(address), trail)
 
 
 if __name__ == "__main__":
