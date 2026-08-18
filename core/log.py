@@ -304,16 +304,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     _send_datagram(config.LOG_SERVER, ("%s %s" % (sec, event)).encode(UNICODE_ENCODING))
 
                 if config.SYSLOG_SERVER or config.LOGSTASH_SERVER:
-                    severity = "medium"
-
-                    if config.REMOTE_SEVERITY_REGEX:
-                        match = re.search(config.REMOTE_SEVERITY_REGEX, info)
-                        if match:
-                            groups = match.groupdict()   # NOTE: groupdict().get() (not match.group(name)) - a custom REMOTE_SEVERITY_REGEX that omits a low/medium/high group would otherwise raise IndexError ("no such group") per event, escaping log_event's handler and breaking syslog forwarding
-                            for _ in ("low", "medium", "high"):
-                                if groups.get(_):
-                                    severity = _
-                                    break
+                    severity = severity_of(info)
 
                     if config.SYSLOG_SERVER:
                         extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, _cef_escape(trail, True), _cef_escape(reference, True))
@@ -335,6 +326,33 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
     except (OSError, IOError):
         if config.SHOW_DEBUG:
             traceback.print_exc()
+
+def severity_of(info):
+    """"low" / "medium" / "high" for an event's info field, per REMOTE_SEVERITY_REGEX.
+
+    Shared by the SYSLOG_SERVER / LOGSTASH_SERVER senders above and by core/alert.py, so an operator
+    tunes one regex and every outbound channel agrees. Unmatched is "medium": the shipped regex names
+    the extremes (malware/ransomware/adversary high, scanner/reputation/attacker low) and leaves the
+    middle - exploit kits, web skimmers - implicit.
+
+    No doctest: the answer depends on the configured REMOTE_SEVERITY_REGEX, and with none loaded
+    every info is "medium". tests/test_alert.py asserts the classification against the regex
+    maltrail.conf actually ships.
+    """
+
+    retval = "medium"
+
+    if config.REMOTE_SEVERITY_REGEX:
+        match = re.search(config.REMOTE_SEVERITY_REGEX, info or "")
+        if match:
+            groups = match.groupdict()   # NOTE: groupdict().get() (not match.group(name)) - a custom REMOTE_SEVERITY_REGEX that omits a low/medium/high group would otherwise raise IndexError ("no such group") per event, escaping log_event's handler and breaking syslog forwarding
+            for _ in ("low", "medium", "high"):
+                if groups.get(_):
+                    retval = _
+                    break
+
+    return retval
+
 
 def log_error(msg, single=False):
     if single:
