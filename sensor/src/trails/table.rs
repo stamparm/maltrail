@@ -43,7 +43,8 @@ pub fn hash_bytes(data: &[u8]) -> u64 {
 /// A negative prefilter: a compact bitmap that answers "definitely not in the table" without
 /// touching the table.
 ///
-/// The trail store is ~87 MB. A miss - which is the overwhelmingly common case, since almost no
+/// The trail store runs ~1.4x the size of the trails CSV - ~100 MB at the time of writing, and it
+/// only grows. A miss - which is the overwhelmingly common case, since almost no
 /// packet matches a trail - costs a DRAM round trip into a structure far larger than any cache.
 /// This bitmap is sized to the entry count (2 bits set per key, ~16 bits per key), so it stays in
 /// L2/L3 and a miss is answered from cache.
@@ -101,12 +102,14 @@ impl NegativeFilter {
     pub fn memory_bytes(&self) -> usize {
         self.bits.len() * 8
     }
-
-    /// Rebuild empty at a new size (used when a table grows past its estimate).
-    pub fn resized(&self, entries: usize) -> NegativeFilter {
-        NegativeFilter::new(entries)
-    }
 }
+
+// There is deliberately no `resize()`/`resized()` here. Both table types keep their filter across
+// `grow()` precisely because a rebuilt filter would start with every bit clear, and a clear bit is
+// the exact answer "absent" - so re-sizing a live filter without re-inserting every key already in
+// the table turns straight into false negatives, i.e. missed detections. An under-sized filter
+// (more keys than the estimate it was built for) only loses rejection rate, which is a performance
+// question. One of those is a bug and the other is a trade-off; this keeps only the trade-off.
 
 fn capacity_for(n: usize) -> usize {
     // Target ~0.78 load factor, rounded up to a power of two for masking.
@@ -211,7 +214,7 @@ impl StrTable {
         let bytes = key.as_bytes();
         let h = hash_bytes(bytes);
         // Answer the common case (absent) from a cache-resident bitmap instead of probing the
-        // ~87 MB store. Cannot produce a false negative; see `NegativeFilter`.
+        // ~100 MB store. Cannot produce a false negative; see `NegativeFilter`.
         if !self.filter.maybe_contains(h) {
             return None;
         }

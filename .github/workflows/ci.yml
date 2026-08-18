@@ -39,8 +39,8 @@ jobs:
 
   # The full Rust gate: generated-file freshness, fmt, clippy -D warnings, the suite in BOTH
   # debug (overflow checks on) and release (what ships), then differential parity against the
-  # old Python sensor. The real-trails parity step self-skips when no trails.csv is present,
-  # which is the case on a runner.
+  # old Python sensor. Its real-trails steps self-skip here, because a runner has no trails.csv;
+  # the `real-trails` job below builds one and runs the tests that need it.
   sensor:
     name: sensor gate (check.sh)
     runs-on: ubuntu-latest
@@ -77,6 +77,60 @@ jobs:
       # SKIP — deliberately, since neither the server nor the current sensor needs it.
       - name: Python suite, including the old-sensor tests
         run: bash tests/run.sh python3
+
+  # The tests that need a REAL trail set, with one built for them.
+  #
+  # `tests/trails.rs` and `tests/loader_parity.rs` carry the two strongest assertions in the
+  # repository — every row of the real trails.csv is findable with its own (info, reference), and
+  # every row is loaded byte-identically to `core.common.load_trails()` — and both self-skip when
+  # the machine has no trails file. On a runner that was always, so both printed `[skip]` and the
+  # gate was green without them: the no-false-negative invariant behind the trail store's negative
+  # prefilter was verified only on a developer's laptop, which is not a verification anyone else
+  # can reproduce. `--offline` builds the set from the static pile in this checkout, no feed
+  # fetched, which is exactly what the `floor` job already proves works on Python 3.6.
+  #
+  # (The generated-at-scale half of that invariant runs everywhere and needs no trail set:
+  # `the_negative_filter_never_hides_a_key_at_real_scale` in tests/trails.rs.)
+  real-trails:
+    name: real trail set
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install libpcap
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libpcap-dev
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: sensor
+
+      - name: Build a trail set from the static pile
+        run: |
+          python3 sensor/tools/update_trails.py --offline -c maltrail.conf 2>&1 | grep -v '^\[?\] progress' | tail -4
+          test -s "$HOME/.maltrail/trails.csv"
+          echo "trails built: $(wc -l < "$HOME/.maltrail/trails.csv") rows"
+
+      # --nocapture so the row counts, store size and parity numbers are in the log. A skipped
+      # test PASSES, which is the failure mode this job exists to remove, so the skip note is
+      # also grepped for: green here has to mean the walk actually ran.
+      - name: Real-trail invariants (every row findable, loader parity with Python)
+        run: |
+          set -o pipefail
+          cargo test --manifest-path sensor/Cargo.toml --release \
+            --test trails --test loader_parity -- --nocapture 2>&1 | tee /tmp/real-trails.log
+          if grep -q '\[skip\] no real trails file' /tmp/real-trails.log; then
+            echo "::error::the real-trail tests skipped despite a trail set having been built"
+            exit 1
+          fi
 
   # The declared MSRV is a promise to operators on older distributions. Compile it, or it is
   # just a number in Cargo.toml. Deliberately NOT a rust-toolchain.toml: pinning that file would

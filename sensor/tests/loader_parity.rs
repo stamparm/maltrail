@@ -23,8 +23,13 @@ fn repo_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).parent().unwrap().to_path_buf()
 }
 
+/// `$MALTRAIL_TRAILS` when set, otherwise `~/.maltrail/trails.csv` — the same knob
+/// `tools/check.sh` and `tests/trails.rs` use.
 fn real_trails_file() -> Option<PathBuf> {
-    let path = PathBuf::from(std::env::var("HOME").ok()?).join(".maltrail").join("trails.csv");
+    let path = match std::env::var("MALTRAIL_TRAILS") {
+        Ok(explicit) if !explicit.is_empty() => PathBuf::from(explicit),
+        _ => PathBuf::from(std::env::var("HOME").ok()?).join(".maltrail").join("trails.csv"),
+    };
     path.is_file().then_some(path)
 }
 
@@ -92,7 +97,7 @@ fn python_dump(trails_csv: &PathBuf) -> Option<Dump> {
 #[test]
 fn every_row_python_loads_is_loaded_identically_by_rust() {
     let Some(csv) = real_trails_file() else {
-        println!("[skip] no ~/.maltrail/trails.csv on this machine");
+        println!("[skip] no real trails file ($MALTRAIL_TRAILS or ~/.maltrail/trails.csv) on this machine");
         return;
     };
     let Some(dump) = python_dump(&csv) else {
@@ -168,7 +173,7 @@ fn repairing_mangled_patterns_only_ever_adds_wildcard_trails() {
     // Whatever it does, it must be PURELY ADDITIVE: same rows, same keys, same values, and a
     // wildcard set that is a superset of Python's. Anything else would be a regression.
     let Some(csv) = real_trails_file() else {
-        println!("[skip] no ~/.maltrail/trails.csv on this machine");
+        println!("[skip] no real trails file ($MALTRAIL_TRAILS or ~/.maltrail/trails.csv) on this machine");
         return;
     };
     let wl = Whitelist::load(&repo_root(), None);
