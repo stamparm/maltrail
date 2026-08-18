@@ -11,6 +11,7 @@ import sys
 sys.dont_write_bytecode = True
 
 import argparse
+import errno
 import os
 import platform
 import threading
@@ -137,9 +138,23 @@ if __name__ == "__main__":
         if isinstance(get_ex_message(ex), str) and get_ex_message(ex).strip('0'):
             print(get_ex_message(ex))
             code = 1
-    except IOError:
-        log_error("\n\n[!] session abruptly terminated\n[?] (hint: \"https://stackoverflow.com/a/20997655\")")
-        code = 1
+    # NOTE: this used to be a bare `except IOError`, and IOError is an alias of OSError - so EVERY OSError
+    # raised anywhere in main() was reported as "session abruptly terminated", which log_error() writes to
+    # the log file and never prints. `server.py --smoke-test` on a tree with a root-owned __pycache__ was
+    # the demonstration: PermissionError from py_compile, no output whatsoever, exit 1. A tool that fails
+    # silently sends the operator looking in the wrong place. Only a broken pipe is handled quietly, and
+    # only because there is nowhere left to print to.
+    except OSError as ex:
+        if getattr(ex, "errno", None) in (errno.EPIPE, errno.ESHUTDOWN):
+            log_error("\n\n[!] session abruptly terminated\n[?] (hint: \"https://stackoverflow.com/a/20997655\")")
+            code = 1
+        else:
+            msg = "\r[!] unhandled exception occurred ('%s')" % ex
+            msg += "\n[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
+            log_error("\n\n%s" % msg.replace("\r", ""))
+
+            print(msg)
+            code = 1
     except Exception:
         msg = "\r[!] unhandled exception occurred ('%s')" % sys.exc_info()[1]
         msg += "\n[x] please report the following details at 'https://github.com/stamparm/maltrail/issues':\n---\n'%s'\n---" % traceback.format_exc()
