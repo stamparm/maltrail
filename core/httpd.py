@@ -1201,6 +1201,12 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 or re.match(r"\A[0-9A-Fa-f:]{2,45}\Z", address) and address.count(':') >= 2
             )
 
+            # is_local()/bogon_ip() only know IPv4, and RIPEstat has nothing to say about an address
+            # that is not globally routed anyway: loopback, link-local (fe80::/10), unique-local
+            # (fc00::/7) and multicast (ff00::/8).
+            if valid and ':' in address and re.match(r"\A(::1?\Z|fe[89ab]|f[cd]|ff)", address, re.I):
+                valid = False
+
             if not valid or is_local(address) or bogon_ip(address):
                 self.send_response(_http_client.BAD_REQUEST)
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
