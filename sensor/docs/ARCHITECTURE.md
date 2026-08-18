@@ -113,11 +113,16 @@ The normal, non-alerting packet path performs:
 
 Trail lookups are the one structure worth describing: a `StrTable` is an open-addressing index
 over a single byte arena (no per-key allocation, keys compared exactly so a hash collision can
-never produce a wrong match), plus `IntTable`s for the native address forms. For a real 1.5M
-trail set this is ~68 MB resident, and lookups measure ~2 ns (IPv4) / ~19 ns (domain).
+never produce a wrong match), plus `IntTable`s for the native address forms. The tables cost
+**~1.4x the size of the CSV they were built from** — a 1.60M-row / 81 MB `trails.csv` measures
+109 MB of tables (`db.memory_bytes()`, printed as `memory=` in the startup summary) — and lookups
+measure ~2 ns (IPv4) / ~19 ns (domain). Quote the ratio rather than a byte count: the trail set
+grows continuously, so any single figure is stale within weeks.
 
-No probabilistic filter is used anywhere: a Bloom/XOR prefilter could only ever be added as a
-*negative* prefilter in front of the authoritative table, never as the table itself.
+The one probabilistic structure in the tree is `NegativeFilter` (below): a bitmap in front of each
+table that can answer "definitely absent" but never "absent" for a key that is present. That
+asymmetry is the whole licence for it — a probabilistic structure may sit in front of the
+authoritative table as a *negative* prefilter, never be the table itself.
 
 ## Reload
 
@@ -127,7 +132,7 @@ does the same: a reload thread polls the file's mtime (at most once a minute, bo
 Workers adopt it between packets, so one packet always sees one consistent snapshot.
 
 Trail *updating* (downloading feeds) is **not reimplemented**, but the sensor does drive it: it runs
-Maltrail's own `core/update.py` through `tools/update_trails.py`, before the first load and every
+Maltrail's own `core/update.py` through `sensor/tools/update_trails.py`, before the first load and every
 `UPDATE_PERIOD`, exactly as `sensor.py:init()` did. `DISABLE_TRAIL_UPDATES true` hands the file to
 the server or a cron job instead, and the sensor then warns when it goes stale. See
 `docs/INSTALL.md` §11.
@@ -169,12 +174,19 @@ deliberately keep `std`'s SipHash: a collision flood there is a real denial-of-s
 sensor, and those maps are not hot enough to justify the risk.
 
 **`NegativeFilter` (`src/trails/table.rs`) — a cache-resident miss filter.** The trail store is
-~87 MB, so a lookup miss is a DRAM round trip, and nearly every lookup misses. A ~16-bit-per-entry
-bitmap in front of each table answers "definitely absent" from L2/L3. The asymmetry is what makes
-it sound: a *clear* bit is exact (an inserted key always sets its bits), a *set* bit only means
-"check the real table". A false negative here would be a silently missed detection, so the
-invariant is asserted directly — `tests/trails.rs` walks every row of the real 1.5M-row trails
-file through `get()` on each test run.
+~100 MB and growing, so a lookup miss is a DRAM round trip, and nearly every lookup misses. A
+~16-bit-per-entry bitmap in front of each table answers "definitely absent" from L2/L3. The
+asymmetry is what makes it sound: a *clear* bit is exact (an inserted key always sets its bits), a
+*set* bit only means "check the real table". A false negative here would be a silently missed
+detection, so the invariant is asserted directly, at two scales:
+
+* `tests/trails.rs::the_negative_filter_never_hides_a_key_at_real_scale` builds a 1.5M-key store
+  from a deterministic generator and walks every key back through `get()`. No trails file needed,
+  so it runs on every test run everywhere, CI included.
+* `tests/trails.rs::real_trails_every_single_row_is_findable_with_its_own_info` does the same walk
+  over the *real* trails file (`$MALTRAIL_TRAILS`, default `~/.maltrail/trails.csv`). It self-skips
+  when there is none; the `real trail set` CI job builds one with
+  `sensor/tools/update_trails.py --offline` so it runs there rather than only on an operator's box.
 
 **Incremental scan accumulators (`src/heuristics/scan.rs`).** Keys queue themselves when they
 cross their detection threshold, and `_get_local_prefix()` counts are maintained as keys are

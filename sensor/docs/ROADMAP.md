@@ -19,7 +19,7 @@ Done and verified, so the plan does not re-litigate it:
 | Detection parity with `sensor.py` | 36/36 fixture corpus, 8/8 real-trail corpus, **0 event differences either direction** |
 | Trail loading parity | Every row of the real 1,505,265-row CSV, field by field, vs `core.common.load_trails()` |
 | Never panics on hostile input | ~200k fuzzed inputs per run through every parser, **in debug and release** |
-| Speed | 14-27x lower steady-state per-packet cost than `sensor.py`, depending on run and hardware (`docs/REPORT.md` §4b); scales across cores where the old sensor's single capture process caps at ~2.6x from 8 processes |
+| Speed | 14-37x lower steady-state per-packet cost than `sensor.py`, depending on run and hardware (`docs/REPORT.md` §4a); scales across cores where the old sensor's single capture process caps at ~2.6x from 8 processes |
 | Operational surface | `-T` config test, capability-based privileges (no root), hardened systemd unit, SIGHUP reload, Prometheus endpoint, 1 s trail-refresh pickup |
 | Upstream bugs found and fixed | 9, including silently-stale trails and a self-stopping sensor |
 
@@ -328,7 +328,7 @@ There is nothing further to schedule here.
 
 ## Deferred deliberately
 
-Performance work is **not** on the critical path — the port is already 14-27x faster than the thing
+Performance work is **not** on the critical path — the port is already 14-37x faster than the thing
 it replaces, and correctness gates outrank optimisation. These are queued behind Gate 3:
 
 * **Binary/mmap trail store** — the only remaining place the old sensor wins (1.18 s startup, 88 MB

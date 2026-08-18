@@ -7,7 +7,7 @@
 //! asyncrat domain: `511mon.kozow.com` entered `trails/static/malware/asyncrat.txt` two weeks
 //! after the file was generated, so the sensor matched only its dynamic-DNS parent.)
 //!
-//! The update itself is **not** reimplemented. `tools/update_trails.py` is a thin wrapper around
+//! The update itself is **not** reimplemented. `sensor/tools/update_trails.py` is a thin wrapper around
 //! `core.update.update_trails()`, so there is exactly one trail-update mechanism in the
 //! repository and both sensors use it. That also means feeds, `UPDATE_SERVER`,
 //! `USE_FEED_UPDATES`, `DISABLED_FEEDS`, `IP_MINIMUM_FEEDS`, `CUSTOM_TRAILS_DIR` and the rest
@@ -18,7 +18,7 @@ use std::process::Command;
 
 use crate::config::Config;
 
-/// Where `tools/update_trails.py` lives, relative to the repository root.
+/// Where `sensor/tools/update_trails.py` lives, relative to the repository root.
 pub fn updater_script(root: &Path) -> PathBuf {
     root.join("sensor").join("tools").join("update_trails.py")
 }
