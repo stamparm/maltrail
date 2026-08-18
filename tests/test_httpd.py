@@ -613,7 +613,12 @@ class TestHttpd(unittest.TestCase):
                       "kind=geo&address=8.8.8.8%20evil",
                       "kind=geo&address=8.8.8.8/../../etc/passwd",
                       "kind=geo&address=",
-                      "kind=nonsense&address=8.8.8.8"):
+                      "kind=nonsense&address=8.8.8.8",
+                      "kind=geo&address=::1",            # is_local()/bogon_ip() are IPv4-only, so
+                      "kind=geo&address=fe80::1",        # the v6 non-global ranges are checked
+                      "kind=geo&address=fd00::1",        # separately - RIPEstat has nothing to say
+                      "kind=geo&address=ff02::1"):       # about any of them either
+
             st, _, _ = _http(self.port, "GET", "/ripe?%s" % probe, cookie=cookie)
             self.assertEqual(st, 400, "/ripe must refuse %r" % probe)
         self.assertIsNone(type(self).proc.poll(), "server must stay alive")
