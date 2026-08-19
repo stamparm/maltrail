@@ -17213,10 +17213,13 @@ http://213.177.179.8
 213.177.179.8:443
 
 # Reference: https://x.com/sdcyberresearch/status/2044063219401056507
+# Reference: https://x.com/sdcyberresearch/status/2090068947299164511
 
 backlinksindexer.com
 chkdb.net
+choamthuc.com
 cloudflare.ru.com
+fontuse.com
 foxistog.com
 kirpi.info
 marcketdns.com
