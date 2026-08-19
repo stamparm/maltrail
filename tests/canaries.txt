@@ -1,0 +1,74 @@
+# Domains and addresses that must never be flagged by trails/static.
+#
+# Read by `sensor/tools/check_trails.py --canaries`, which the `trails` workflow runs on every commit
+# that touches trails/. It is the cheap half of false-positive checking: the thorough half is a
+# popularity-list intersection run outside CI (misc/alexa1m.py), which cannot see regex trails at all
+# because it compares sets. This one compiles the wildcard trails and matches them, which is how a
+# pattern like `^[a-z]{2}\-[a-z]{2,3}\.(top|club)$` gets caught before a customer finds it.
+#
+# CHOOSING A CANARY. It has to be a name the WHITELIST does not already cover, or the test cannot
+# fail: `google.com`, `1.1.1.1`, `microsoft.com`, `github.com`, `apple.com` and `facebook.com` are all
+# in data/whitelist.txt, so a trail matching them is dropped at build time and the query is refused
+# before any lookup. Those make reassuring, useless canaries. Everything below is checked for
+# whitelist coverage when the tool runs, and one that turns out to be covered is reported as such
+# rather than silently passing.
+#
+# A hit here is not automatically a bug in the trail - it is a decision to make: fix the pattern,
+# whitelist the name, or add it to the tool's --allow list with a reason.
+
+# --- DNS / infrastructure ---
+one.one.one.one
+dns.google
+resolver1.opendns.com
+dns.quad9.net
+cloudflare.com
+cloudflare-dns.com
+
+# --- large sites the whitelist does not cover ---
+wikipedia.org
+en.wikipedia.org
+reddit.com
+stackoverflow.com
+mozilla.org
+debian.org
+ubuntu.com
+archlinux.org
+kernel.org
+python.org
+pypi.org
+rust-lang.org
+crates.io
+nginx.org
+apache.org
+letsencrypt.org
+eff.org
+ietf.org
+iana.org
+w3.org
+
+# --- package / update infrastructure, where a false positive is very loud ---
+deb.debian.org
+security.ubuntu.com
+archive.ubuntu.com
+download.opensuse.org
+mirrors.fedoraproject.org
+registry.npmjs.org
+files.pythonhosted.org
+static.crates.io
+
+# --- public services people actually run into ---
+duckduckgo.com
+protonmail.com
+signal.org
+torproject.org
+gitlab.com
+bitbucket.org
+sourceforge.net
+gravatar.com
+imgur.com
+
+# --- addresses (bare-IP and IP:port trails) ---
+9.9.9.9
+149.112.112.112
+208.67.222.222
+1.0.0.1

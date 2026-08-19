@@ -7,6 +7,27 @@
     python3 sensor/tools/check_trails.py --quiet    # exit status only
     python3 sensor/tools/check_trails.py --strict   # warnings fail too
 
+And the other direction - no trail may match a name it must never match:
+
+    python3 sensor/tools/check_trails.py --canaries              # tests/canaries.txt, ~3s (what CI runs)
+
+    python3 sensor/tools/check_trails.py --path trails/static/malware --kinds regex \
+        --canaries misc/alexa_top-1m.csv.zip:500000 \
+                   misc/cisco_top-1m.csv.zip:250000 \
+                   misc/tranco_top-1m.csv.zip:50000                # ~7s, run locally
+
+The second form is why this exists: a popularity-list INTERSECTION (misc/alexa1m.py) compares sets,
+so a pattern is never equal to a domain and every regex trail is invisible to it.
+
+The `:N` caps and the `malware` path are not decoration - they are misc/alexa1m.py's own choices,
+and running without them is wrong. Those lists rank by DNS QUERY VOLUME, which a live phishing
+campaign produces in quantity, so their tails are full of real malware; alexa1m.py reads only the
+head of each, at a different depth per list because the lists differ in quality. Ignoring that
+produced 47 "findings" here of which 46 were list-tail noise (`id-bca.top` is Indonesian bank
+phishing, which is roamingmantis' actual target set - being in Tranco says nothing about it).
+
+A hit is a QUESTION, not a verdict: `--allow-trail` accepts a pattern that is broad on purpose.
+
 A trail is only useful in the form the sensor sees on the wire, and the source file is NOT that
 form: `core/update.py` runs every non-ASCII key through `key.encode("idna")` on its way into
 `trails.csv`. So the question this tool answers is about the WIRE form, not the written one.
@@ -55,6 +76,7 @@ import io
 import os
 import re
 import sys
+import zipfile
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 sys.path.insert(0, ROOT)
@@ -120,18 +142,21 @@ def whitelisted_parent(name, whitelist):
 
 def entries(path):
     """The trail keys a file contributes, normalised the way trails/static/__init__.py does."""
-    for number, line in enumerate(io.open(path, encoding="utf8", errors="replace"), 1):
-        line = line.strip()
-        if not line or line.startswith('#'):
-            continue
-        line = re.sub(r"\s*#.*", "", line)      # inline comments are stripped by the loader
-        if not line:
-            continue
-        if '://' in line:
-            line = re.search(r"://(.*)", line).group(1)
-        if '/' in line:                          # URL/path trail: the host part is what must be a name
-            line = line.split('/')[0]
-        yield number, line.strip('.')
+    # `with`, because a caller that stops early (or a generator the GC has not reached) otherwise
+    # leaves the handle open - visible as a ResourceWarning once anything iterates thousands of these.
+    with io.open(path, encoding="utf8", errors="replace") as handle:
+        for number, line in enumerate(handle, 1):
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            line = re.sub(r"\s*#.*", "", line)      # inline comments are stripped by the loader
+            if not line:
+                continue
+            if '://' in line:
+                line = re.search(r"://(.*)", line).group(1)
+            if '/' in line:                          # URL/path trail: the host part is what must be a name
+                line = line.split('/')[0]
+            yield number, line.strip('.')
 
 
 def wire_form(key):
@@ -207,16 +232,235 @@ def problems(root, whitelist=None):
     return found
 
 
+# `re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I)` - the rule
+# sensor/src/trails/regexset.rs:is_wildcard_trail() implements, and the only trails compiled as
+# patterns rather than stored as literals.
+WILDCARD = re.compile(r"[\].][*+]|\[[a-z0-9_.\-]+\]", re.I)
+
+
+def canary_source(spec):
+    """`PATH` or `PATH:N` -> (path, limit).
+
+    The limit is the point of the syntax. A popularity list is ranked, and its TAIL is full of live
+    malware - a widely distributed phishing campaign generates plenty of DNS query volume, which is
+    what these lists measure. misc/alexa1m.py therefore reads only the head of each, and the depths
+    differ by list because the lists differ in quality:
+
+        alexa 500000, cisco 250000, tranco 50000
+
+    Ignoring that was worth ~46 spurious findings out of 47 on the first run of this tool.
+
+    >>> canary_source("misc/tranco_top-1m.csv.zip:50000")
+    ('misc/tranco_top-1m.csv.zip', 50000)
+    >>> canary_source("tests/canaries.txt")
+    ('tests/canaries.txt', None)
+    """
+
+    head, _, tail = spec.rpartition(':')
+    if head and tail.isdigit():
+        return (head, int(tail))
+    return (spec, None)
+
+
+def canaries(path, limit=None):
+    """Stream the names a trail must never match.
+
+    Two shapes, because the same check serves two list sizes: a plain file (tests/canaries.txt, ~50
+    names, what CI runs) and a popularity list as shipped - `*.csv.zip` holding `rank,domain` rows,
+    which is what misc/ already has cached for the Alexa / Cisco / Tranco top-1M. Pointing this at a
+    2.4M-row zip is the thorough pass; it streams rather than building a set, because the trail
+    literals already cost ~150 MB of memory and holding both is how a laptop starts swapping.
+    """
+
+    seen = 0
+    if path.endswith(".zip"):
+        with zipfile.ZipFile(path) as archive:
+            for name in archive.namelist():
+                with archive.open(name) as raw:
+                    for line in io.TextIOWrapper(raw, encoding="utf8", errors="ignore"):
+                        line = line.strip()
+                        if not line or line.startswith('#'):
+                            continue
+                        seen += 1
+                        if limit and seen > limit:      # ranked file: stop at the requested depth
+                            return
+                        yield line.split(',')[-1].strip().lower()   # "rank,domain" or a bare domain
+        return
+
+    with io.open(path, encoding="utf8", errors="replace") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line or line.startswith('#'):
+                continue
+            seen += 1
+            if limit and seen > limit:
+                return
+            # Same normalisation as the zip branch: an UNZIPPED popularity CSV is still "rank,domain",
+            # and yielding "1,host.biz" would match nothing and look like a clean run. A canary file's
+            # bare names have no comma, so this leaves them alone.
+            yield line.split(',')[-1].strip().lower()
+
+
+def trail_index(root):
+    """({literal key: (path, line)}, [(path, line, pattern)]) for a static trail tree."""
+
+    literals, patterns = {}, []
+
+    for base, _, files in os.walk(root):
+        for name in sorted(files):
+            if not name.endswith(".txt"):
+                continue
+            path = os.path.join(base, name)
+            for number, key in entries(path):
+                if not key:
+                    continue
+                if WILDCARD.search(key):
+                    try:
+                        re.compile(key)
+                    except re.error:
+                        continue                 # unparseable patterns are the other gate's business
+                    patterns.append((path, number, key))
+                else:
+                    literals.setdefault(key.lower(), (path, number))
+
+    return literals, patterns
+
+
+def popular_matches(root, names, whitelist=None, stats=None, kinds="both"):
+    """[(path, line, key, name, kind)] for every trail that matches one of `names`.
+
+    NOT a false-positive report. Whether a hit is wrong is a judgement this cannot make: a name being
+    in a popularity list is not evidence that it is benign, because those lists rank by DNS query
+    volume and a live campaign produces plenty of it. `id-bca.top` looks exactly like the Indonesian
+    bank phishing roamingmantis targets. A hit means "a human should look at this pattern".
+
+    `kind` is "literal" or "regex". The regexes are the reason this exists: a popularity-list
+    INTERSECTION (misc/alexa1m.py) compares sets, so a pattern is never equal to a domain and every
+    regex trail is invisible to it. That is the class that reached a customer - a roamingmantis
+    pattern matching 89 top-1M domains, amazon-corp.com among them.
+
+    `names` may be a 50-line canary file or a 2.4M-row popularity list, so the regexes are compiled
+    into ONE alternation and each name is scanned once; only a name that hits is then attributed to
+    a pattern. Measured on the three cached top-1M zips: 11.5s for 2,457,622 names against 27
+    patterns, where 27 separate scans would be ~27s.
+
+    Whitelisted names are skipped: the sensor refuses a whitelisted QUERY before any lookup
+    (sensor/src/process.rs:147), so a trail matching one cannot fire and reporting it would be a
+    false positive that is itself false.
+    """
+
+    literals, patterns = trail_index(root)
+    # No re.I anywhere: the loader lowercases trails and the sensor's alternation carries no case
+    # flag, so matching is case-sensitive on both sides.
+    combined = re.compile("|".join("(?:%s)" % _[2] for _ in patterns)) if patterns else None
+    compiled = [(path, number, key, re.compile(key)) for path, number, key in patterns]
+    found = []
+
+    if stats is not None:
+        stats.setdefault("total", 0)
+        stats.setdefault("covered", 0)
+        stats.setdefault("covered_examples", [])
+        stats["patterns"] = len(patterns)
+
+    for name in names:
+        if stats is not None:
+            stats["total"] += 1
+        if whitelist and (name in whitelist or whitelisted_parent(name, whitelist)):
+            # Counted, not silently dropped: a canary the whitelist already protects cannot fail this
+            # gate, and a list made only of such names would pass no matter how broken the trails are.
+            if stats is not None:
+                stats["covered"] += 1
+                if len(stats["covered_examples"]) < 8:
+                    stats["covered_examples"].append(name)
+            continue
+        if kinds in ("both", "literal") and name in literals:
+            path, number = literals[name]
+            found.append((path, number, name, name, "literal"))
+        if kinds in ("both", "regex") and combined is not None and combined.search(name):
+            for path, number, key, pattern in compiled:
+                if pattern.search(name):
+                    found.append((path, number, key, name, "regex"))
+
+    return found
+
+
+def canary_report(options, whitelist):
+    """`--canaries`: no trail may match a name that must never be flagged."""
+
+    sources = [canary_source(_) for _ in options.canaries]
+
+    def names():
+        for path, limit in sources:
+            for name in canaries(path, limit):
+                yield name
+
+    stats = {}
+    hits = popular_matches(options.path, names(), whitelist, stats, options.kinds)
+    pairs, trails = set(options.allow), set(options.allow_trail)
+    unexpected = [_ for _ in hits if _[2] not in trails and ("%s:%s" % (_[2], _[3])) not in pairs]
+
+    if not options.quiet:
+        print("[i] %s: %d name(s), %d checked against %d pattern(s), %d already covered by the whitelist"
+              % (", ".join("%s%s" % (os.path.relpath(_[0], ROOT), ":%d" % _[1] if _[1] else "") for _ in sources), stats["total"],
+                 stats["total"] - stats["covered"], stats["patterns"], stats["covered"]))
+        # A canary the whitelist protects cannot fail this gate, so it is not silently counted as a
+        # pass: google.com, 1.1.1.1 and github.com are all in data/whitelist.txt, and a canary list
+        # made only of those would be reassuring and worthless.
+        if stats["covered"]:
+            print("[!] not exercised (whitelist covers them): %s%s"
+                  % (", ".join(stats["covered_examples"]), " ..." if stats["covered"] > 8 else ""))
+
+        # Grouped by TRAIL, not one line per hit: one loose pattern against a 1M list produces
+        # hundreds of names, and the unit of triage is the pattern - keep it, fix it, or allow it.
+        grouped = {}
+        for path, number, key, name, kind in unexpected:
+            # a set: the three popularity lists overlap heavily, and the same name arriving twice is
+            # not two findings
+            grouped.setdefault((path, number, key, kind), set()).add(name)
+        for (path, number, key, kind), matched in sorted(grouped.items(), key=lambda kv: -len(kv[1])):
+            print("\n[?] %s:%d  matches %d name(s) in the list (%s)" % (os.path.relpath(path, ROOT), number, len(matched), kind))
+            print("      %s" % key[:110])
+            print("      e.g. %s" % ", ".join(sorted(matched)[:5]))
+            if len(matched) > 5:
+                print("      ... and %d more" % (len(matched) - 5))
+
+        literal = sum(1 for _ in unexpected if _[4] == "literal")
+        if literal > 5 and options.kinds == "both":
+            print("\n[i] %d of those are LITERAL trails. A popularity list ranks by query volume, so live" % literal)
+            print("[i] malware domains legitimately appear in it - that is what misc/alexa1m.py's curated")
+            print("[?] IGNORE set absorbs. For the regex-trail question alone, add: --kinds regex")
+        if pairs or trails:
+            print("\n[i] %d hit(s) accepted via --allow / --allow-trail" % (len(hits) - len(unexpected)))
+        if not unexpected:
+            print("[i] no trail matches a canary")
+
+    return 1 if unexpected else 0
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--path", default=os.path.join(ROOT, "trails", "static"))
     parser.add_argument("--quiet", action="store_true", help="exit status only")
     parser.add_argument("--strict", action="store_true", help="a warning fails too")
     parser.add_argument("--no-whitelist", action="store_true", help="skip the whitelist-shadowing report")
+    parser.add_argument("--canaries", nargs="*", default=None, metavar="FILE",
+                        help="instead: check that no trail matches a name in FILE (default: tests/canaries.txt). "
+                             "Accepts a plain list or a popularity list as shipped (*.csv.zip), and several files")
+    parser.add_argument("--allow", action="append", default=[], metavar="TRAIL:CANARY",
+                        help="a known, accepted canary hit (repeatable)")
+    parser.add_argument("--allow-trail", action="append", default=[], metavar="TRAIL",
+                        help="accept every hit from this trail - the intentional broad ones (repeatable)")
+    parser.add_argument("--kinds", choices=("both", "regex", "literal"), default="both",
+                        help="which trails to check against the list (default: both; use 'regex' for a "
+                             "popularity list, which legitimately contains malware domains)")
     parser.add_argument("--limit", type=int, default=25, help="lines shown per category")
     options = parser.parse_args()
 
     whitelist = None if options.no_whitelist else whitelisted_parents()
+
+    if options.canaries is not None:
+        options.canaries = options.canaries or [os.path.join(ROOT, "tests", "canaries.txt")]
+        return canary_report(options, whitelist)
     found = problems(options.path, whitelist)
     inert = [_ for _ in found if _[3] == "inert"]
     shadowed = [_ for _ in found if _[3] == "shadowed"]
