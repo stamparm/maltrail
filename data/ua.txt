@@ -2762,6 +2762,12 @@ SakDriver/1.0
 
 Beacon/1.0.0
 
+# Reference: https://x.com/abuse_ch/status/2090038189347987611
+# Reference: https://threatfox.abuse.ch/browse/tag/NeedleStealer/ (# 2026-08-19)
+
+Loader-cli
+Loader-cli/v1
+
 # Misc
 
 information_schema
