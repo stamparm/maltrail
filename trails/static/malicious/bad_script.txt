@@ -9989,6 +9989,10 @@ drvdb9rcebidk.cloudfront.net
 
 /dvr_exploit.py
 
+# Reference: https://x.com/JustWantToQ1/status/2090044783066558884
+
+/svhost.js
+
 # Generic
 
 /5c0ca79.php
