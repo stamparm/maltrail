@@ -7051,6 +7051,17 @@ w2.posysfh.sbs
 wp-stationcloud.com
 wpstationcloud.com
 
+# Reference: https://x.com/Gudw4L/status/1928162415302136217
+# BANNER_0_HASH-HOST=50648794ea6ec3a40827754df19bf3af
+
+bet888.shop
+dama01.top
+dama02.top
+nicerg.com
+okkhyx.com
+okks01.top
+seo.okks01.top
+
 # Generic
 
 /wp-imcludes/
