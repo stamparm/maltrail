@@ -1576,6 +1576,15 @@ http://176.125.243.101
 91.92.43.93:8443
 95.181.213.21:8082
 
+# Reference: https://x.com/JustWantToQ1/status/2089921207894188435
+# BANNER_0_HASH-HOST=dfb02d9888935af8f15d218567f68ee6
+# TITLE-HOST=ClickHunter Stats
+
+lasasnowia.com
+lorchifdowa.com
+oner5raymond.top
+yegula.com
+
 # Generic
 
 /admin_123/auth.php
