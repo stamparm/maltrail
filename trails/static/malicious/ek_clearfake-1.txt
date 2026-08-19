@@ -1,7 +1,7 @@
 # Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
 
-# Aliases: backgroundfix, clickfix, iclickfix, crashfix, filefix, jackfix, storm-1865, unc5142
+# Aliases: backgroundfix, clickfix, iclickfix, crashfix, filefix, jackfix, storm-1865, unc5142, cocofix
 # Note: Continuation of /malicious/ek_clearfake.txt
 
 # Reference: https://www.virustotal.com/gui/ip-address/178.16.52.101/relations
@@ -15069,6 +15069,11 @@ hashedsolver.icu
 kurwa.cc
 msfconfig.icu
 revenue-process-rebate.com
+
+# Reference: https://x.com/k3yp0d/status/2089997336520859759
+# Reference: https://app.any.run/tasks/a8b0d135-1847-4173-8324-f12ff063bd86/
+
+maidsradar.com
 
 # Generic
 
