@@ -1,0 +1,60 @@
+# The trail-content gate: small on purpose.
+#
+# ci.yml deliberately ignores trails/** (`paths-ignore`), because trail content changes many times a
+# day and running the 45-minute sensor gate on each of those would burn runner time to re-prove
+# things no trail file can affect. But that left content with NO gate at all, which is how a regex
+# like `\b(au|cat|...)\-[a-z0-9]{1,4}\.(buzz|cn|co|...)$` shipped and was reported by a customer:
+# it matched 89 domains in the top 1M, amazon-corp.com and rakuten-it.com among them.
+#
+# So: the inverse trigger, and only the two checks that are about content. Together they take about
+# 12 seconds. The THOROUGH pass runs the same code against the top-1M lists and stays local, because
+# downloading three 1M-row lists per trail commit is exactly the infrastructure abuse this file
+# avoids - 18 seconds against the cached zips, and it is the one that finds a loose regex:
+#
+#     python3 sensor/tools/check_trails.py --path trails/static/malware --kinds regex \
+#         --canaries misc/alexa_top-1m.csv.zip:500000 misc/cisco_top-1m.csv.zip:250000 \
+#                    misc/tranco_top-1m.csv.zip:50000
+#
+# The :N caps are misc/alexa1m.py's, and they matter: those lists rank by query volume, so their
+# tails carry live malware and matching it is correct, not a false positive.
+name: Trails
+
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - 'trails/**'
+      - 'data/whitelist.txt'
+      - 'tests/canaries.txt'
+      - 'sensor/tools/check_trails.py'
+  pull_request:
+    branches: [ "master" ]
+    paths:
+      - 'trails/**'
+      - 'data/whitelist.txt'
+      - 'tests/canaries.txt'
+      - 'sensor/tools/check_trails.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  trails:
+    name: trail sanity
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+
+      # Entries that can never match: a non-ASCII key idna refuses, a wire form VALID_DNS_NAME_REGEX
+      # rejects, a last label in IGNORE_DNS_QUERY_SUFFIXES. Also reports (without failing) the trails
+      # a whitelisted parent domain shadows.
+      - name: Trails are reachable on the wire
+        run: python3 sensor/tools/check_trails.py
+
+      # And the other direction: no trail may match a name that must never be flagged. This is the
+      # one that sees REGEX trails - a popularity-list intersection cannot, because a pattern is
+      # never equal to a domain.
+      - name: No trail matches a canary
+        run: python3 sensor/tools/check_trails.py --canaries
