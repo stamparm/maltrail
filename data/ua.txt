@@ -2768,6 +2768,13 @@ Beacon/1.0.0
 Loader-cli
 Loader-cli/v1
 
+# Reference: https://x.com/nullbleed/status/2089137816118632550
+# Reference: https://x.com/nullbleed/status/2089140114362380439
+# Reference: https://www.virustotal.com/gui/file/346993483cff5aaa7a91dfc84e0126e103ac04be0434e50c1f3737dfa0989a42/detection
+
+SyncClient
+SyncClient/1.0
+
 # Misc
 
 information_schema
