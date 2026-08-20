@@ -9995,6 +9995,8 @@ drvdb9rcebidk.cloudfront.net
 
 # Reference: https://x.com/Yusufcancakiir/status/2090478535433490685
 
+/.cve_2026_34486/
+/cve_2026_34486/
 /amq_exploit.py
 
 # Generic
