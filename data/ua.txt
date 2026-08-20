@@ -2775,6 +2775,10 @@ Loader-cli/v1
 SyncClient
 SyncClient/1.0
 
+# Reference: https://x.com/SquiblydooBlog/status/2027346155269411046
+
+Katzilla
+
 # Misc
 
 information_schema
