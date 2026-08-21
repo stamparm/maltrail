@@ -9999,6 +9999,10 @@ drvdb9rcebidk.cloudfront.net
 /cve_2026_34486/
 /amq_exploit.py
 
+# Reference: https://x.com/JustWantToQ1/status/2090623405808648656
+
+/E18D10F2AB43.ps1
+
 # Generic
 
 /5c0ca79.php
