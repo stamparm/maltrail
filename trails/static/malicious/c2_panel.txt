@@ -1585,6 +1585,14 @@ lorchifdowa.com
 oner5raymond.top
 yegula.com
 
+# Reference: https://x.com/JustWantToQ1/status/2090700881305981052
+# TITLE-HOST/IP=撞库1 - Web控制台
+
+150.242.246.69:8083
+156.245.244.212:8083
+85.137.246.232:8083
+85.137.246.61:8083
+
 # Generic
 
 /admin_123/auth.php
