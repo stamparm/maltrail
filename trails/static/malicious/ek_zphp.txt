@@ -1382,6 +1382,7 @@ cobaltorchard.top
 cometparapet.top
 copperhorizon.top
 copperlandmark.top
+copperreliquary.info
 coralfrontier.top
 coralmanor.top
 coralregistry.top
@@ -1391,6 +1392,7 @@ crimsonterrace.top
 crystalforgeway.top
 crystalmarket.top
 cygnetrampart.top
+divinenarratives.org
 driftwoodsignalworks.com
 duneandcompass.com
 dynamicquartzstudio.com
@@ -1413,6 +1415,7 @@ hazelcanvas.top
 hazelcitadel.top
 hazelcompass.top
 heatherkiln.top
+heronloft.top
 indigocrest.top
 ironwoodrotunda.top
 ivorycompass.top
