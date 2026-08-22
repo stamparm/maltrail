@@ -2473,6 +2473,18 @@
         // which maltrail list it came from (prettified filename) - kept for the tooltip, not shouted inline
         var list = (m.source || "").split("/").pop().replace(/\.[^.]+$/, "").replace(/_/g, " ");
         var tip = (ref ? ref : "") + (ref && m.source ? "  ·  " : "") + (m.source || "");
+        // how strongly the sources agree (trails.confidence): 100 = curated/static or your own
+        // entry, 40+15/extra feed up to 4. Absent -> say nothing rather than guess.
+        var conf = "";
+        if (typeof m.confidence === "number") {
+          if (m.confidence >= 100) conf = ' · <span class="tt-dim" title="curated/static source, or one of your own trails">100% confidence</span>';
+          else {
+            var extra = Math.min(4, Math.max(0, Math.round((m.confidence - 40) / 15)));
+            conf = ' · <span class="' + (extra >= 2 ? "tt-dim" : "nf-new") + '" title="' +
+                   (extra >= 2 ? extra + " feeds beyond the first agree" : "single-source listing - verify before acting") +
+                   '">' + m.confidence + "% confidence</span>";
+          }
+        }
         var body;
         if (/^https?:\/\//i.test(ref)) {                       // URL citation -> show just the authority host + ↗
           var host = ref.replace(/^https?:\/\//i, "").split("/")[0].replace(/^www\./, "");
@@ -2482,7 +2494,7 @@
         } else {                                               // no reference header -> just name the list
           body = '<span class="tt-dim" title="' + esc(m.source) + '">' + esc(list) + "</span>";
         }
-        el.innerHTML = "source: " + body;
+        el.innerHTML = "source: " + body + conf;
       }).catch(function () {});
   }
   function _huntFirstSeen(o, q) {
