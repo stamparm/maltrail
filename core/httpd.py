@@ -1443,7 +1443,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 if not trail or len(trail) > 256:
                     return json.dumps({})
                 ref, src = _lookup_trail_reference(trail)
-                payload = json.dumps({"reference": ref, "source": src})
+                # How many independent sources agree on this indicator (trails.confidence sidecar,
+                # see /check). None when there is no opinion - the trail predates the sidecar or
+                # the sidecar was never built - and the UI then says nothing about it.
+                confidence = _confidence_lookup(trail)
+                payload = json.dumps({"reference": ref, "source": src, "confidence": confidence})
                 callback = params.get("callback")
                 if callback and re.match(r"\A[\w.$]{1,64}\Z", callback):   # same JSONP-XSS guard as _check_ip/_meta
                     return "%s(%s)" % (callback, payload)
