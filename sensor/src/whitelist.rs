@@ -107,7 +107,55 @@ impl Whitelist {
 
     /// `sensor.py:_check_domain_member()`
     pub fn check_domain_member(&self, query: &str) -> bool {
-        check_domain_member(query, |candidate| self.contains_exact(candidate))
+        self.check_domain_member_depth(query) > 0
+    }
+
+    /// Label count of the most specific whitelisted entry matching `query` or one of its
+    /// parents (0 = none). The DEPTH, not just the verdict, is what longest-match precedence
+    /// compares against a matched trail: an exact-name trail more specific than its closest
+    /// whitelisted ancestor is allowed to fire (see `process.rs`).
+    pub fn check_domain_member_depth(&self, query: &str) -> u32 {
+        match self.check_domain_member_entry(query) {
+            Some(entry) => (entry.as_bytes().iter().filter(|&&b| b == b'.').count() + 1) as u32,
+            None => 0,
+        }
+    }
+
+    /// The most specific whitelisted entry matching `query` or one of its parent domains.
+    /// Same walk as `check_domain_member`, but returns WHICH entry matched so callers can
+    /// apply longest-match precedence against a trail hit. Borrowed from `self`, which is
+    /// fixed after load.
+    pub fn check_domain_member_entry(&self, query: &str) -> Option<&str> {
+        let lowered = if query.bytes().any(|b| b.is_ascii_uppercase()) {
+            std::borrow::Cow::Owned(query.to_ascii_lowercase())
+        } else {
+            std::borrow::Cow::Borrowed(query)
+        };
+        if let Some(entry) = self.exact_entry(&lowered) {
+            return Some(entry.as_str());
+        }
+        for i in memchr::memchr_iter(b'.', lowered.as_bytes()) {
+            if let Some(entry) = self.exact_entry(&lowered[i + 1..]) {
+                return Some(entry.as_str());
+            }
+        }
+        None
+    }
+
+    /// Prefiltered lookup in `exact`, returning the stored entry.
+    #[inline]
+    fn exact_entry(&self, candidate: &str) -> Option<&String> {
+        if self.exact_filter.is_empty() {
+            return self.exact.get(candidate);
+        }
+        let h = crate::trails::table::hash_bytes(candidate.as_bytes());
+        let bits = self.exact_filter.len() * 64;
+        let a = (h as usize) & (bits - 1);
+        let b = ((h >> 32) as usize).wrapping_mul(0x9e37_79b9) & (bits - 1);
+        if (self.exact_filter[a >> 6] >> (a & 63)) & 1 == 0 || (self.exact_filter[b >> 6] >> (b & 63)) & 1 == 0 {
+            return None;
+        }
+        self.exact.get(candidate)
     }
 
     /// Prefiltered membership test for `exact`.
@@ -222,6 +270,24 @@ mod tests {
         assert!(check_domain_member("www.evil.com", |c| set.contains(c)));
         assert!(check_domain_member("a.b.example.com", |c| c == "example.com"));
         assert!(!check_domain_member("good.com", |c| set.contains(c)));
+    }
+
+    #[test]
+    fn member_depth_and_entry() {
+        let mut wl = Whitelist::default();
+        wl.insert_for_test("platform.test");
+        wl.insert_for_test("a.b.exact.test");
+        // the closest (most specific) ancestor wins, and its label count is the depth
+        assert_eq!(wl.check_domain_member_depth("host.platform.test"), 2);
+        assert_eq!(wl.check_domain_member_entry("host.platform.test"), Some("platform.test"));
+        assert_eq!(wl.check_domain_member_depth("platform.test"), 2);
+        // case-insensitive, exactly like Python's lowered walk
+        assert_eq!(wl.check_domain_member_entry("HOST.Platform.TEST"), Some("platform.test"));
+        // exact multi-label entry: depth counts ITS labels
+        assert_eq!(wl.check_domain_member_depth("x.a.b.exact.test"), 4);
+        assert_eq!(wl.check_domain_member_entry("x.a.b.exact.test"), Some("a.b.exact.test"));
+        assert_eq!(wl.check_domain_member_entry("nothing.here.test"), None);
+        assert_eq!(wl.check_domain_member_depth("nothing.here.test"), 0);
     }
 
     #[test]

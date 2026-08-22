@@ -212,6 +212,8 @@ TRAILS = (
     ("dga[0-9]+\\.wildcard-test\\.com", "malware (test)", "(static)"),
     ("tls-evil.example", "malware (test)", "(static)"),
     ("quic-evil.example", "malware (test)", "(static)"),
+    # under a whitelisted parent on purpose - see case `trail_under_whitelist_parent`
+    ("evil-test.googleusercontent.com", "malware (test)", "(static)"),
 )
 
 # Counting heuristics only fire once the sensor's clock advances past the window, so they
@@ -239,6 +241,7 @@ TIMESTAMP_SENSITIVE_CASES = TIMING_WINDOW_CASES | frozenset((
 DIVERGENCE_CASES = {
     "udp_malware_dst": ["66.66.66.66"],
     "dns_same_socket_burst": ["evil-test-domain.com"],
+    "trail_under_whitelist_parent": ["evil-test.googleusercontent.com"],
 }
 
 ATTACKER = "10.0.0.66"
@@ -598,6 +601,23 @@ def build_cases():
     ]
     cases.append(("dns_same_socket_burst", DLT_EN10MB, packets, ["evil-test-domain.com"],
                   "distinct DNS queries sharing a socket in one second (deliberate divergence)"))
+
+    # 34b. A specific static trail under a whitelisted PARENT domain. sensor.py suppresses the
+    #     whole branch whenever any ancestor is whitelisted, so an IOC somebody added under a
+    #     shared platform (`googleusercontent.com`, line 103 of data/whitelist.txt) could never
+    #     fire - 3,082 real static trails were exactly this shape. The Rust sensor applies
+    #     longest-match precedence: the exact trail beats the broader whitelist entry, while a
+    #     sibling without its own trail stays suppressed. Expected Rust-only event.
+    packets = [
+        (BASE_SEC, frame(ipv4(ATTACKER, "8.8.8.8", 17,
+                              udp(50902, 53, dns_query("evil-test.googleusercontent.com"))))),
+        (BASE_SEC + 1, frame(ipv4(ATTACKER, "8.8.8.8", 17,
+                                  udp(50903, 53, dns_query("benign.googleusercontent.com"))))),
+    ]
+    cases.append(("trail_under_whitelist_parent", DLT_EN10MB, packets,
+                  ["evil-test.googleusercontent.com"],
+                  "exact trail beats whitelisted ancestor; whitelisted sibling stays silent "
+                  "(deliberate divergence)"))
 
     # 35. mixed traffic soup (everything at once, interleaved)
     soup = []
