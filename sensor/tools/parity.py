@@ -62,6 +62,19 @@ to let it disappear is what stops someone "restoring parity" by putting the dete
      two clients all hit this. Rust mixes a payload hash into the comparison, so a byte-for-byte
      repeat is still skipped and a different query is not. Python misses the second name; Rust
      reports it.
+
+  3. Whitelist-vs-trail precedence, longest match wins (sensor.py `_check_domain` vs
+     process.rs `check_domain_inner`). Python suppresses a name whenever ANY ancestor domain is
+     whitelisted, so an exact static trail on a shared platform (`*.googleusercontent.com`,
+     `*.cloudfront.net`, ... - 3,082 real static trails) could never fire: the row was in
+     trails.csv, counted at startup, and dead at detection time. The Rust sensor compares the
+     matched trail's specificity against the closest whitelisted ancestor and lets an exact,
+     MORE SPECIFIC trail fire; a whitelisted sibling without its own trail stays suppressed, an
+     entry equal to the queried name still wins over everything (ties go to the whitelist), and
+     wildcard-regex trails plus every heuristic remain fully suppressed by any whitelisted
+     ancestor - only exact-name trail hits earn the precedence. The same policy governs the
+     HTTP host path (`process.rs`), where an ancestor-whitelisted host now yields exact trail
+     hits but never heuristic ones. Pinned by corpus case `trail_under_whitelist_parent`.
 """
 
 import argparse

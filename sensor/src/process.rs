@@ -98,7 +98,7 @@ pub fn check_domain(st: &mut WorkerState, query: &str, sec: u64, usec: u32, ep: 
     check_domain_inner(st, query, sec, usec, ep, proto, None)
 }
 
-/// `_check_domain()` with an optional PRECOMPUTED whitelist verdict.
+/// `_check_domain()` with an optional PRECOMPUTED whitelist depth (0 = not whitelisted).
 ///
 /// The DNS path used to walk the whitelist twice per query: once for the registrable domain (the
 /// last two or three labels) to gate the exhaustion heuristic, and once for the full name here.
@@ -114,7 +114,7 @@ fn check_domain_inner(
     usec: u32,
     ep: Endpoints,
     proto: &str,
-    precomputed_whitelisted: Option<bool>,
+    precomputed_whitelisted: Option<u32>,
 ) {
     // query = query.lower(); if ':' in query: query = query.split(':', 1)[0]
     //
@@ -144,17 +144,26 @@ fn check_domain_inner(
     st.metrics.cache_misses += 1;
 
     let mut result = false;
-    let whitelisted = match precomputed_whitelisted {
+    // DEPTH of the closest whitelisted ancestor (0 = none), not a bare verdict. Longest-match
+    // precedence, deliberate divergence #3 from `old/sensor.py`: an exact static trail on a
+    // MORE SPECIFIC name than its whitelisted ancestor fires anyway. A shared-platform apex in
+    // the whitelist ("cloudfront.net") is a platform decision, not a veto on the specific IOC
+    // somebody added under it — 3,082 static trails were exactly this shape and could never
+    // fire. Only exact-name trail hits get this precedence: wildcard regex trails and the
+    // heuristics below stay fully suppressed by any whitelisted ancestor, and an entry equal
+    // to the queried name still wins over everything (a tie goes to the whitelist).
+    let whitelist_depth = match precomputed_whitelisted {
         Some(v) => v,
-        None => st.check_domain_whitelisted(q),
+        None => st.check_domain_whitelist_depth(q),
     };
-    if settings::is_valid_dns_name(q) && !whitelisted {
+    let whitelisted = whitelist_depth > 0;
+    if settings::is_valid_dns_name(q) {
         let dots = Dots::of(q);
         let label_count = dots.label_count();
         let first_label = dots.label(q, 0);
 
         // Reference: https://www.virustotal.com/gui/domain/ip-adress.com/relations
-        if q.ends_with(".ip-adress.com") {
+        if !whitelisted && q.ends_with(".ip-adress.com") {
             let base = dots.prefix_upto(q, label_count.saturating_sub(2));
             if let Some(info) = st.trails.db().get(base) {
                 let (i, r) = (info.info.to_string(), info.reference.to_string());
@@ -192,8 +201,14 @@ fn check_domain_inner(
                         (is_whole || first_label == "www") && (info.contains("dynamic") || info.contains("free web"));
 
                     if !skip_ns && !skip_dynamic {
-                        result = true;
-                        emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(trail), &info, &reference);
+                        // Longest-match precedence: this (most specific) trail hit fires unless a
+                        // whitelisted ancestor is at least as specific. A losing hit means every
+                        // less specific one loses too, so the walk can stop here.
+                        let trail_labels = q.as_bytes()[start..].iter().filter(|&&b| b == b'.').count() as u32 + 1;
+                        if trail_labels > whitelist_depth {
+                            result = true;
+                            emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(trail), &info, &reference);
+                        }
                         break;
                     }
                 }
@@ -205,6 +220,7 @@ fn check_domain_inner(
         }
 
         if !result
+            && !whitelisted
             && st.cfg.use_heuristics
             && st.heuristic_enabled("long_domain")
             && first_label.chars().count() > settings::SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
@@ -235,7 +251,9 @@ fn check_domain_inner(
             }
         }
 
-        if !result && !st.trails.db().regex().is_empty() {
+        // Wildcard regex trails stay fully suppressed by any whitelisted ancestor: only an
+        // exact-name trail (the parent walk above) earns the precedence.
+        if !result && !whitelisted && !st.trails.db().regex().is_empty() {
             // The wildcard/regex static-trail fallback.
             let hit = st.trails.db().regex().find(q).map(|h| (h.start, h.end, h.candidate.to_string()));
             if let Some((start, end, candidate)) = hit {
@@ -257,7 +275,7 @@ fn check_domain_inner(
             }
         }
 
-        if !result && q.contains(".onion.") {
+        if !result && !whitelisted && q.contains(".onion.") {
             // re.sub(r"(\.onion)(\..*)", r"\1($2)", query)
             let trail = st.statics.onion_suffix.replace(q, "$1($2)").to_string();
             let base = trail.split('(').next().unwrap_or("").to_string();
@@ -946,10 +964,17 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
         }
     }
 
+    // Longest-match precedence (divergence #3, same policy as `_check_domain`): only an entry
+    // equal to the FULL host vetoes everything. A whitelisted ANCESTOR (a shared-platform
+    // apex) no longer hides exact trail hits on the more specific host — but it still
+    // suppresses every heuristic below, which would otherwise fire on benign platform traffic.
     let host_for_whitelist = host.clone();
-    if st.check_domain_whitelisted(&host_for_whitelist) {
+    let host_labels = (host.as_bytes().iter().filter(|&&b| b == b'.').count() + 1) as u32;
+    let whitelist_depth = st.check_domain_whitelist_depth(&host_for_whitelist);
+    if whitelist_depth >= host_labels {
         return;
     }
+    let heuristics_suppressed = whitelist_depth > 0;
 
     if path.contains("//") {
         path = Cow::Owned(path.replace("//", "/"));
@@ -998,7 +1023,7 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
         return;
     }
 
-    if !st.cfg.use_heuristics {
+    if !st.cfg.use_heuristics || heuristics_suppressed {
         return;
     }
 
@@ -1478,10 +1503,10 @@ fn dns_packet(
     st.meta.observe_dns(&query, sec);
 
     let label_count = dots.label_count();
-    // The whitelist verdict for the FULL query name, computed once for this packet. `query` is
+    // The whitelist DEPTH for the FULL query name, computed once for this packet. `query` is
     // already lower-case and contains no ':' (a DNS name that did would fail
     // `is_valid_dns_name`), so this is exactly what `check_domain` would compute for it.
-    let wl_query = st.check_domain_whitelisted(&query);
+    let wl_query = st.check_domain_whitelist_depth(&query);
 
     let Some(flags_high) = dns::flags_high(dns_data) else { return };
     let Some(flags_low) = dns::flags_low(dns_data) else { return };
@@ -1497,9 +1522,9 @@ fn dns_packet(
                 dots.suffix_from(&query, label_count - 2)
             };
 
-            // One walk, reused. `wl_query` covers the domain's suffixes too, so when it is false
+            // One walk, reused. `wl_query` covers the domain's suffixes too, so when it is zero
             // the domain cannot be whitelisted either and the second walk is skipped entirely.
-            let wl_domain = if wl_query { st.check_domain_whitelisted(domain) } else { false };
+            let wl_domain = if wl_query > 0 { st.check_domain_whitelisted(domain) } else { false };
             if !wl_domain {
                 st.dns_exhaustion.maybe_hourly_reset(sec);
 

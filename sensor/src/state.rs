@@ -57,7 +57,7 @@ pub struct WorkerState {
     /// `_result_cache[(CACHE_TYPE.DOMAIN, query)] = False` — known-clean domains.
     pub domain_clean: LruMap<String, ()>,
     /// `_result_cache[(CACHE_TYPE.DOMAIN_WHITELISTED, query)]`
-    pub domain_whitelisted: LruMap<String, bool>,
+    pub domain_whitelisted: LruMap<String, u32>,
     /// `_result_cache[(CACHE_TYPE.USER_AGENT, ua)]` — `None` == cached negative.
     pub user_agent: LruMap<String, Option<String>>,
     /// `_result_cache[(CACHE_TYPE.PATH, path)]` — empty == cached negative.
@@ -133,11 +133,19 @@ impl WorkerState {
 
     /// `sensor.py:_check_domain_whitelisted()` with its result cache.
     pub fn check_domain_whitelisted(&mut self, query: &str) -> bool {
+        self.check_domain_whitelist_depth(query) != 0
+    }
+
+    /// Label count of the most specific whitelisted entry matching `query` (0 = none), cached.
+    /// The depth rather than a bare verdict is what longest-match precedence needs: an
+    /// exact-name trail more specific than the whitelisted ancestor that used to suppress it
+    /// is allowed to fire (`process.rs`). For every verdict-only caller, non-zero is `true`.
+    pub fn check_domain_whitelist_depth(&mut self, query: &str) -> u32 {
         if let Some(v) = self.domain_whitelisted.get(query) {
             return *v;
         }
         let token = crate::whitelist::whitelist_domain_token(query);
-        let result = self.whitelist.check_domain_member(token);
+        let result = self.whitelist.check_domain_member_depth(token);
         self.domain_whitelisted.insert_if_seen_before_borrowed(query, result);
         result
     }

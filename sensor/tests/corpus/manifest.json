@@ -508,6 +508,21 @@
     "timestamp_sensitive": false
   },
   {
+    "expect": [
+      "evil-test.googleusercontent.com"
+    ],
+    "expect_rust_only": [
+      "evil-test.googleusercontent.com"
+    ],
+    "linktype": 1,
+    "name": "trail_under_whitelist_parent",
+    "needs_pcap_timestamps": false,
+    "notes": "exact trail beats whitelisted ancestor; whitelisted sibling stays silent (deliberate divergence)",
+    "packets": 2,
+    "pcap": "trail_under_whitelist_parent.pcap",
+    "timestamp_sensitive": false
+  },
+  {
     "expect": [],
     "expect_rust_only": [],
     "linktype": 1,

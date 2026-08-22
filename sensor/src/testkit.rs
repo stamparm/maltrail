@@ -134,8 +134,12 @@ impl Harness {
         crate::output::init_error_log(&log_dir, false);
 
         // An empty whitelist keeps fixture trails from being filtered out; the shipped
-        // whitelist is exercised separately in tests/trails.rs.
-        let whitelist = Arc::new(Whitelist::default());
+        // whitelist is exercised separately in tests/trails.rs. A test that sets USER_WHITELIST
+        // gets it honoured, so the precedence tests can pin real whitelist-vs-trail behaviour.
+        let whitelist = Arc::new(match cfg.user_whitelist.clone() {
+            Some(p) => Whitelist::load(&root, Some(&p)),
+            None => Whitelist::default(),
+        });
 
         let db = build_db(trails);
         let store = Arc::new(TrailStore::new(db));

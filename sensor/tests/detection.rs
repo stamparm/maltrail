@@ -910,3 +910,107 @@ fn concurrent_sinks_racing_the_first_write_lose_nothing() {
     assert_eq!(lines, SINKS * PER_SINK, "records lost or duplicated under a concurrent first write");
     let _ = std::fs::remove_dir_all(&dir);
 }
+
+// --- longest-match precedence: specific trail vs whitelisted ancestor (divergence #3) ---
+//
+// `old/sensor.py` suppresses a name whenever ANY ancestor domain is whitelisted, which made
+// every exact trail on a shared platform (`*.googleusercontent.com`, ...) dead on arrival -
+// 3,082 real static trails. The Rust sensor lets an exact, more-specific trail fire; see
+// tools/parity.py "DELIBERATE DIVERGENCES" #3 for the full policy.
+
+fn harness_with_user_whitelist(trails: &[(&str, &str, &str)], entries: &[&str]) -> (Harness, std::path::PathBuf) {
+    let path = std::env::temp_dir().join(format!(
+        "mt-user-whitelist-{}-{:x}",
+        std::process::id(),
+        std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().as_nanos()
+    ));
+    std::fs::write(&path, format!("{}\n", entries.join("\n"))).expect("write user whitelist");
+    let h = Harness::with_options(
+        trails,
+        HarnessOptions { extra: vec![format!("USER_WHITELIST {}", path.display())], ..HarnessOptions::quiet() },
+    );
+    (h, path)
+}
+
+#[test]
+fn trail_under_whitelisted_parent_fires() {
+    let (mut h, wl) =
+        harness_with_user_whitelist(&[("bad.platform.invalid", MALWARE.0, MALWARE.1)], &["platform.invalid"]);
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40000, 53, &dns("bad.platform.invalid"))), 1);
+    assert_eq!(h.trails(), vec!["bad.platform.invalid"]);
+    let _ = std::fs::remove_file(wl);
+}
+
+#[test]
+fn subdomain_of_trail_under_whitelisted_parent_fires() {
+    let (mut h, wl) =
+        harness_with_user_whitelist(&[("bad.platform.invalid", MALWARE.0, MALWARE.1)], &["platform.invalid"]);
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40001, 53, &dns("www.bad.platform.invalid"))), 1);
+    assert_eq!(h.trails(), vec!["(www).bad.platform.invalid"]);
+    let _ = std::fs::remove_file(wl);
+}
+
+#[test]
+fn whitelisted_sibling_without_trail_stays_silent() {
+    let (mut h, wl) =
+        harness_with_user_whitelist(&[("bad.platform.invalid", MALWARE.0, MALWARE.1)], &["platform.invalid"]);
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40002, 53, &dns("benign.platform.invalid"))), 1);
+    // the sibling matches no trail, and the whitelisted parent still keeps the heuristics off
+    assert!(h.events().is_empty());
+    let _ = std::fs::remove_file(wl);
+}
+
+#[test]
+fn whitelist_entry_equal_to_trail_still_wins() {
+    // a tie goes to the whitelist: the operator explicitly cleared this exact name
+    let (mut h, wl) = harness_with_user_whitelist(
+        &[("cleared.platform.invalid", MALWARE.0, MALWARE.1)],
+        &["cleared.platform.invalid"],
+    );
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40003, 53, &dns("cleared.platform.invalid"))), 1);
+    assert!(h.events().is_empty());
+    let _ = std::fs::remove_file(wl);
+}
+
+#[test]
+fn wildcard_trail_still_suppressed_by_whitelisted_ancestor() {
+    // only EXACT-name trail hits earn the precedence; the wildcard regexset does not
+    let (mut h, wl) =
+        harness_with_user_whitelist(&[(r"dga[0-9]+\.platform\.test", MALWARE.0, MALWARE.1)], &["platform.invalid"]);
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40004, 53, &dns("dga1234.platform.invalid"))), 1);
+    assert!(h.events().is_empty());
+    let _ = std::fs::remove_file(wl);
+}
+
+#[test]
+fn http_trail_on_whitelisted_platform_host_fires() {
+    let (mut h, wl) =
+        harness_with_user_whitelist(&[("cdn.platform.invalid/mal.php", MALWARE.0, MALWARE.1)], &["platform.invalid"]);
+    h.feed_ip(&http_packet(&http_get("/mal.php", Some("cdn.platform.invalid"), "curl/8"), "203.0.113.9", 50000), 1);
+    let events = h.events();
+    assert_eq!(events.len(), 1, "{events:?}");
+    assert!(events[0].trail.contains("cdn.platform.invalid"), "{events:?}");
+    let _ = std::fs::remove_file(wl);
+}
+
+#[test]
+fn http_heuristic_under_whitelisted_ancestor_stays_silent() {
+    // precedence never re-enables HEURISTICS on a whitelisted platform: benign software
+    // downloads from CDN hosts must not turn into "direct .exe download" noise
+    let wl = std::env::temp_dir().join(format!("mt-user-whitelist-{}-heur", std::process::id()));
+    std::fs::write(&wl, "platform.invalid\n").expect("write user whitelist");
+    let mut h = Harness::with_options(
+        &[],
+        HarnessOptions {
+            use_heuristics: true,
+            extra: vec![format!("USER_WHITELIST {}", wl.display())],
+            ..HarnessOptions::quiet()
+        },
+    );
+    h.feed_ip(
+        &http_packet(&http_get("/setup.exe", Some("storage.platform.invalid"), "curl/8"), "203.0.113.9", 50001),
+        1,
+    );
+    assert!(h.events().is_empty(), "{:?}", h.events());
+    let _ = std::fs::remove_file(wl);
+}
