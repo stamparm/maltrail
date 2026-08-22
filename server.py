@@ -55,6 +55,7 @@ def main():
     parser.add_argument("--smoke-test", dest="smoke_test", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--detect-test", dest="detect_test", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--doctor", dest="doctor", action="store_true", help="validate the deployment (log dir, trails age, USERS, TLS, ports) and exit")
+    parser.add_argument("--rebuild-index", dest="rebuild_index", action="store_true", help="(re)build the per-day event-log sidecar index (LOG_DIR/index/) and exit")
 
     patch_parser(parser)
 
@@ -78,6 +79,21 @@ def main():
     if options.doctor:
         from core.doctor import run as doctor_run
         raise SystemExit(doctor_run())
+
+    if options.rebuild_index:
+        import glob as _glob
+        import re as _re
+        from core import index as _index
+        built = 0
+        for filepath in sorted(_glob.glob(os.path.join(config.LOG_DIR, "*.log"))):
+            day = os.path.splitext(os.path.basename(filepath))[0]
+            if not _re.search(r"\A\d{4}-\d{2}-\d{2}\Z", day):
+                continue
+            ok = _index.prepare(day)
+            print("[%s] %s" % ("+" if ok else "x", filepath))
+            built += 1 if ok else 0
+        print("[i] indexed %d day(s)" % built)
+        raise SystemExit(0 if built or not _glob.glob(os.path.join(config.LOG_DIR, "*.log")) else 1)
 
     # NOTE: this validation used to live inside an `if six.PY2 and config.USE_SSL:` block, so on
     # Python 3 it never ran and a missing/invalid SSL_PEM only failed later, inside the server

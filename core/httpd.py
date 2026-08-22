@@ -30,6 +30,7 @@ from core.addr import resolve_address
 from core.attribdict import AttribDict
 from core import log as _log
 from core import trailsbin
+from core import index as _log_index
 from core.common import get_regex
 from core.common import trails_bin_path
 from core.common import ipcat_lookup
@@ -2231,7 +2232,12 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 except (OSError, IOError):
                                     count = 0
                             else:
-                                count = estimate_event_count(filepath, size)
+                                # The sidecar's COUNT(*) is exact and cheaper than the estimate's
+                                # sampled read; unlike the estimate it counts only complete
+                                # (newline-terminated) lines, which for today's actively written
+                                # log can differ by the one line currently being written.
+                                indexed = _log_index.count(daystr)
+                                count = indexed if indexed is not None else estimate_event_count(filepath, size)
                             counts[daystr] = count
                             _counts_cache[cache_key] = (mtime, size, count)
 
@@ -2375,6 +2381,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 budget = HUNT_TIME_BUDGET
             deadline = time.time() + (budget if budget > 0 else HUNT_TIME_BUDGET)
 
+            def _lines_at(f, offsets):
+                # A file-like stand-in for the linear read: yield exactly the candidate lines,
+                # so _filter_events sees ordinary '\\n'-terminated raw lines either way.
+                for off in offsets:
+                    f.seek(off)
+                    yield f.readline()
+
             scanned = 0        # days scanned TO COMPLETION, which is what a per-day count can be trusted for
             partial = None     # the one day the budget cut short, if any
             for daystr, filepath in files:
@@ -2382,23 +2395,54 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     truncated = True
                     break
                 hits, seen, cut_short = 0, 0, False
+
+                # Sidecar-index candidates (core/index.py): EXACTLY the lines whose lower-cased
+                # text contains the query - for a CIDR query, its negative prefilter - so this is
+                # a read-order change, not a semantics change: every candidate still goes through
+                # the scope/masking filter and the same matcher below. Wide masks prefilter on
+                # nothing and stay on the linear scan.
+                offsets = None
+                if _log_index.enabled():
+                    needle = q_lower if q_prefix is None else q_needle
+                    if needle and _log_index.prepare(daystr):
+                        try:
+                            offsets = list(_log_index.search(daystr, needle))
+                        except Exception:
+                            if config.SHOW_DEBUG:
+                                traceback.print_exc()
+                            offsets = None    # half-served beats wrongly-complete: fall back entirely
+
                 try:
-                    with open(filepath, "rb") as f:
-                        for line in self._filter_events(f, session, addresses, netmasks, regex):  # scope-enforced, same as /events
-                            seen += 1
-                            if (seen & 0x3FFF) == 0 and time.time() > deadline:   # periodic budget check inside a huge day
-                                truncated = True
-                                cut_short = True
-                                break
-                            hit = False
-                            if q_prefix is not None:
-                                hit = _hunt_line_has_ip(line, q_prefix, q_mask, q_needle)
-                            elif q_lower in line.lower():
-                                hit = True
-                            if hit:
-                                hits += 1
-                                if len(samples) < HUNT_MAX_SAMPLES:
-                                    samples.append({"date": daystr, "line": line.strip()[:500]})
+                    if offsets is not None:
+                        with open(filepath, "rb") as f:
+                            for line in self._filter_events(_lines_at(f, offsets), session, addresses, netmasks, regex):
+                                seen += 1
+                                if (seen & 0xFF) == 0 and time.time() > deadline:
+                                    truncated = True
+                                    cut_short = True
+                                    break
+                                hit = (_hunt_line_has_ip(line, q_prefix, q_mask, q_needle) if q_prefix is not None else q_lower in line.lower())
+                                if hit:
+                                    hits += 1
+                                    if len(samples) < HUNT_MAX_SAMPLES:
+                                        samples.append({"date": daystr, "line": line.strip()[:500]})
+                    else:
+                        with open(filepath, "rb") as f:
+                            for line in self._filter_events(f, session, addresses, netmasks, regex):  # scope-enforced, same as /events
+                                seen += 1
+                                if (seen & 0x3FFF) == 0 and time.time() > deadline:   # periodic budget check inside a huge day
+                                    truncated = True
+                                    cut_short = True
+                                    break
+                                hit = False
+                                if q_prefix is not None:
+                                    hit = _hunt_line_has_ip(line, q_prefix, q_mask, q_needle)
+                                elif q_lower in line.lower():
+                                    hit = True
+                                if hit:
+                                    hits += 1
+                                    if len(samples) < HUNT_MAX_SAMPLES:
+                                        samples.append({"date": daystr, "line": line.strip()[:500]})
                 except Exception:
                     if config.SHOW_DEBUG:
                         traceback.print_exc()

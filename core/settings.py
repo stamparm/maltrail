@@ -285,6 +285,7 @@ KNOWN_CONFIG_OPTIONS = frozenset((
     "USE_FAST_PREFILTER",
     "USE_FEED_UPDATES",
     "USE_HEURISTICS",
+    "USE_EVENT_INDEX",
     "USE_MULTIPROCESSING",
     "USE_SERVER_UPDATE_TRAILS",
     "USE_SSL",
@@ -474,6 +475,9 @@ def read_config(config_file):
 
     if config.USE_CONDENSED_STORAGE is None:   # default on (absent switch -> None -> would be falsy)
         config.USE_CONDENSED_STORAGE = True
+
+    if config.USE_EVENT_INDEX is None:         # default on (a rebuildable sidecar cache; ~1/5 of the log size)
+        config.USE_EVENT_INDEX = True
 
     if config.USE_MULTIPROCESSING:
         print("[x] configuration switch 'USE_MULTIPROCESSING' is deprecated. Please use 'PROCESS_COUNT' instead")
