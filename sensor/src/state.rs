@@ -78,6 +78,8 @@ pub struct WorkerState {
     pub scan: ScanState,
     pub dns_exhaustion: DnsExhaustion,
     pub nxdomain: NxCounters,
+    /// NEW, no sensor.py counterpart: periodic-beacon detection (heuristics/beacon.rs).
+    pub beacon: crate::heuristics::beacon::BeaconTracker,
 
     /// `LOG_DIR/meta.sqlite` — the condensed observable store (`core/meta.py`). Per worker and
     /// unsynchronised, like the Python sensor's per-process aggregate; drained on the worker's
@@ -127,6 +129,7 @@ impl WorkerState {
             scan: ScanState::default(),
             dns_exhaustion: DnsExhaustion::default(),
             nxdomain: NxCounters::default(),
+            beacon: Default::default(),
             meta,
         }
     }

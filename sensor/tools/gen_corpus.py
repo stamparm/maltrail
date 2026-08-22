@@ -222,7 +222,7 @@ TRAILS = (
 # mode BOTH sensors stay silent here; the harness asserts these with --timestamps pcap.
 TIMING_WINDOW_CASES = frozenset((
     "port_scan", "stealth_scan_null", "stealth_scan_fin", "stealth_scan_xmas",
-    "udp_scan", "infection_scan", "web_scan",
+    "udp_scan", "infection_scan", "web_scan", "tcp_periodic_beacon",
 ))
 
 # Cases whose event COUNT depends on which clock the sensor uses: burst suppression
@@ -242,6 +242,8 @@ DIVERGENCE_CASES = {
     "udp_malware_dst": ["66.66.66.66"],
     "dns_same_socket_burst": ["evil-test-domain.com"],
     "trail_under_whitelist_parent": ["evil-test.googleusercontent.com"],
+    # NEW heuristic (no sensor.py counterpart); only observable with pcap timestamps
+    "tcp_periodic_beacon": ["203.0.113.77:443"],
 }
 
 ATTACKER = "10.0.0.66"
@@ -627,6 +629,26 @@ def build_cases():
     soup.sort(key=lambda item: item[0])
     cases.append(("mixed_soup", DLT_EN10MB, soup, [], "interleaved traffic from many cases"))
 
+    # 36. periodic beaconing (NEW heuristic, no sensor.py counterpart). Nine SYNs to one
+    #     destination exactly 30 s apart cross the coefficient-of-variation bound at the eighth
+    #     gap and produce one `potential periodic beaconing` event; a same-sized control flow
+    #     with human jitter must stay silent in BOTH sensors. The verdict needs real gaps, so
+    #     this case is in TIMING_WINDOW_CASES: in wall-clock parity mode every packet lands on
+    #     the same second and neither side fires.
+    #     https://tools.ietf.org/html/rfc6761-style documentation lives in heuristics/beacon.rs.
+    beacon_pkts = [(BASE_SEC + 30 * i, frame(ipv4(ATTACKER, "203.0.113.77", 6,
+                                              tcp(51000, 443, 0x02, b"")))) for i in range(12)]
+    ctrl_gaps = [52, 71, 44, 83, 39, 66, 91, 48, 77, 55]
+    ctrl_sec = BASE_SEC + 100000
+    ctrl_pkts = []
+    for i, g in enumerate(ctrl_gaps):
+        ctrl_sec += g
+        ctrl_pkts.append((ctrl_sec + i * 0, frame(ipv4(ATTACKER, "203.0.113.78", 6,
+                                                        tcp(51001, 443, 0x02, b"")))))
+    cases.append(("tcp_periodic_beacon", DLT_EN10MB, sorted(beacon_pkts + ctrl_pkts), [],
+                  "timer-regular reconnects fire once; jittered control stays silent "
+                  "(deliberate divergence, pcap-timestamp gated)"))
+
     return cases
 
 
@@ -826,7 +848,8 @@ def build_real_cases(trails_file, per_bucket):
         reasons = dict((t, undetectable(bucket, t, i)) for t, i in trails)
         cases.append((name, DLT_EN10MB, packets, [expected_text(bucket, t) for t, _ in trails if not reasons[t]], notes))
         sampled[name] = trails
-        dead[name] = [{"trail": t, "reason": r} for t, r in sorted(reasons.items()) if r]
+        dead[name] = [{"trail": t, "reason": r, "emits_as": expected_text(bucket, t)}
+                      for t, r in sorted(reasons.items()) if r]
 
     packets = []
     for i, (trail, _) in enumerate(samples["dns_domain"]):
@@ -957,6 +980,13 @@ def main_from_trails(options, out):
             "notes": notes,
             "sampled": [{"trail": t, "info": i} for t, i in sampled.get(name, [])],
             "undetectable": dead.get(name, []),
+            # Deliberate divergence #3 (longest-match precedence): a sampled trail whose PARENT
+            # is whitelisted is exactly the shape sensor.py silences and this sensor detects,
+            # so it is pinned here rather than left as an unexplained surplus. Checked both
+            # ways by parity.py, like every expect_rust_only entry.
+            "expect_rust_only": sorted(entry["emits_as"] for entry in dead.get(name, [])
+                                       if entry["reason"] in ("the trail's parent domain is whitelisted",
+                                                              "the trail's host is whitelisted")),
         })
 
     with open(os.path.join(out, "manifest.json"), "w") as f:

@@ -32,12 +32,14 @@ nondeterminism in the COMPARISON, not in either sensor: a real regression reprod
 run, a clock artefact does not. Use `--repeat N` to tell them apart.
 
 DELIBERATE DIVERGENCES. `old/sensor.py` is a retired oracle, not a specification. Where it is
-demonstrably wrong the Rust sensor is correct instead, and a Rust-side SURPLUS on these two is
-expected rather than a regression. Both are covered by named tests in `tests/detection.rs`, so
-neither can silently revert. Do not "fix" them by restoring the Python behaviour.
+demonstrably wrong - or where the Rust sensor adds a detection the retired Python sensor never
+had - a Rust-side SURPLUS is expected rather than a regression. Each is covered by named tests
+in `tests/detection.rs`, so none can silently revert. Do not "fix" them by restoring the Python
+behaviour (or by deleting the new detection).
 
-Each is pinned by a corpus case (`udp_malware_dst`, `dns_same_socket_burst`) whose manifest entry
-carries `expect_rust_only`. The check runs both ways:
+Each is pinned by a corpus case (`udp_malware_dst`, `dns_same_socket_burst`,
+`trail_under_whitelist_parent`, `tcp_periodic_beacon`) whose manifest entry carries
+`expect_rust_only`. The check runs both ways:
 
   * a Rust-only event matching the pattern is an expected surplus, reported DIVRG, not a failure;
   * the ABSENCE of that surplus fails the case as REVRT.
@@ -75,6 +77,17 @@ to let it disappear is what stops someone "restoring parity" by putting the dete
      ancestor - only exact-name trail hits earn the precedence. The same policy governs the
      HTTP host path (`process.rs`), where an ancestor-whitelisted host now yields exact trail
      hits but never heuristic ones. Pinned by corpus case `trail_under_whitelist_parent`.
+
+  4. Periodic-beacon detection (no `sensor.py` counterpart at all; process.rs `syn` +
+     heuristics/beacon.rs). The retired Python sensor has no notion of regularity: a low-and-slow
+     C2 channel that reconnects on a timer under every volume threshold was invisible to it. The
+     Rust sensor tracks per-(src, dst, dst_port) TCP SYN inter-arrival gaps and fires once when
+     the coefficient of variation drops to a timer-like level (>= 8 gaps, CV <= 0.2, interval in
+     [5 s, 6 h]; sub-5 s retries never advance the clock; an outage longer than 6 h resets the
+     history). Every event is rated `potential periodic beaconing` - pollers ARE beacons, so this
+     is suspicious, never `malware` - and can be silenced by name with `DISABLED_HEURISTICS
+     beaconing`. Python emits nothing here; Rust emits one event. Pinned by corpus case
+     `tcp_periodic_beacon`.
 """
 
 import argparse
@@ -470,7 +483,11 @@ def main():
             elif rust_errors:
                 status = "PANIC"
             elif expect_rust_only and divergence_missing:
-                status = "NO-DIVERGE"
+                # A divergence that needs pcap record timestamps (a TIMING_WINDOW_CASES member)
+                # cannot show its surplus in wall-clock mode - every packet lands on the same
+                # second there - so the both-ways assertion is held to the same gate as
+                # coverage above instead of failing on a clock artefact.
+                status = "NO-DIVERGE" if assert_coverage else "OK"
             elif meta_diffs:
                 status = "META"
             elif missing or extra:

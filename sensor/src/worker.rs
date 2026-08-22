@@ -373,6 +373,7 @@ fn publish(slot: &MetricsSlot, st: &mut WorkerState) {
     // know which structure saturated to know the sensor is degraded.
     st.metrics.state_saturations = st.nxdomain.saturations()
         + st.dns_exhaustion.saturations()
+        + st.beacon.saturations()
         + st.sink.condense_saturations
         + st.meta.saturations;
     st.metrics.meta_flushed = st.meta.flushed;

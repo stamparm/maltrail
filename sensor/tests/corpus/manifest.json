@@ -532,5 +532,18 @@
     "packets": 47,
     "pcap": "mixed_soup.pcap",
     "timestamp_sensitive": false
+  },
+  {
+    "expect": [],
+    "expect_rust_only": [
+      "203.0.113.77:443"
+    ],
+    "linktype": 1,
+    "name": "tcp_periodic_beacon",
+    "needs_pcap_timestamps": true,
+    "notes": "timer-regular reconnects fire once; jittered control stays silent (deliberate divergence, pcap-timestamp gated)",
+    "packets": 22,
+    "pcap": "tcp_periodic_beacon.pcap",
+    "timestamp_sensitive": true
   }
 ]
