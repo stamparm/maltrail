@@ -304,13 +304,23 @@ impl Throttle {
     }
 
     /// Turn a key's held events into one aggregated event, resetting its buffer.
+    ///
+    /// `held` is capped at MAX_CONDENSED_EVENTS while `held_total` counts everything the burst
+    /// absorbed, so without the "(+N more)" suffix a long flood would summarise as if only the
+    /// cap had arrived - 5000 hits reading as 1000. The suffix keeps the line honest about the
+    /// volume while still bounding its size.
     fn summarize(state: &mut KeyState) -> Option<Event> {
         let held = std::mem::take(&mut state.held);
-        state.held_total = 0;
+        let total = std::mem::replace(&mut state.held_total, 0);
         if held.is_empty() {
             return None;
         }
-        crate::output::merge_events(&held)
+        let mut merged = crate::output::merge_events(&held)?;
+        let overflow = total.saturating_sub(held.len() as u64);
+        if overflow > 0 {
+            merged.info = format!("{} (+{} more)", merged.info, overflow);
+        }
+        Some(merged)
     }
 
     /// Drop the least recently used ~1% of keys, emitting their pending summaries.
@@ -461,6 +471,23 @@ mod tests {
         // ... and the line still has its usual shape.
         assert_eq!(due[0].trail.as_plain(), "evil.example");
         assert_eq!(due[0].info, "malware (test)");
+    }
+
+    #[test]
+    fn a_flood_past_the_held_cap_reports_its_true_volume() {
+        let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
+        // burst + the full held cap + extra: `held` stops growing at the cap but `held_total`
+        // keeps counting, so the summary must say how many hits the buffer could not carry.
+        let total = 3 + crate::settings::MAX_CONDENSED_EVENTS as u16 + 137;
+        for i in 0..total {
+            t.admit(&event(1000, 40000 + i % 10, "evil.example"));
+        }
+        let due = t.flush_due(1000 + 60);
+        assert_eq!(due.len(), 1);
+        assert_eq!(
+            due[0].info,
+            format!("malware (test) (+{} more)", total - 3 - crate::settings::MAX_CONDENSED_EVENTS as u16)
+        );
     }
 
     #[test]
