@@ -11,6 +11,7 @@ import gzip
 import hashlib
 import io
 import json
+import mmap
 import mimetypes
 import os
 import re
@@ -132,6 +133,70 @@ def _trails_bin_handles():
             except Exception:
                 pass
         return _trails_bin
+
+
+# Trail-confidence sidecar (trails.confidence, written by update_trails()), read the same way the
+# trail store is: memory-mapped and binary-searched in place, so enriching /check costs no heap
+# even with ~2M scored trails. Absence is normal (UPDATE_SERVER downloads carry no provenance)
+# and reported as None - "no opinion" - never an error.
+_confidence_mmap = None
+_confidence_stamp = None
+_confidence_lock = threading.Lock()
+
+def _confidence_lookup(key, path=None):
+    """Confidence score (int) for one trail key from the sorted TSV sidecar, or None."""
+
+    global _confidence_mmap, _confidence_stamp
+
+    path = path or ("%s.confidence" % config.TRAILS_FILE)
+    try:
+        stat = os.stat(path)
+        stamp = (stat.st_mtime, stat.st_size)
+    except OSError:
+        return None
+
+    if not key or len(key) > 256:
+        return None
+
+    with _confidence_lock:
+        try:
+            if _confidence_mmap is None or _confidence_stamp != stamp:
+                f = open(path, "rb")
+                try:
+                    if _confidence_mmap is not None:
+                        _confidence_mmap.close()
+                    _confidence_mmap = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)
+                    _confidence_stamp = stamp
+                finally:
+                    f.close()
+
+            data = _confidence_mmap
+            # Binary search over newline-aligned record boundaries; records are "key<TAB>score\n",
+            # sorted by key because write_confidence_file() sorts them.
+            lo, hi = 0, data.size()
+            while lo < hi:
+                mid = (lo + hi) // 2
+                start = data.rfind(b"\n", 0, mid) + 1
+                end = data.find(b"\n", mid)
+                if end == -1:
+                    end = data.size()
+                sep = data.find(b"\t", start, end)
+                line_key = data[start:sep if sep != -1 else end]
+                if line_key == key.encode("utf8", "replace"):
+                    value = data[sep + 1:end] if sep != -1 else b""
+                    try:
+                        return int(value)
+                    except ValueError:
+                        return None
+                if line_key < key.encode("utf8", "replace"):
+                    lo = end + 1
+                else:
+                    hi = start
+        except Exception:
+            if config.SHOW_DEBUG:
+                traceback.print_exc()
+            return None
+    return None
 
 
 _blacklist_cache = None
@@ -1502,8 +1567,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 if result:
                     if "(custom)" in (result[1] or "") and not reveal_custom:
                         continue
+                    confidence = _confidence_lookup(candidate)  # None = sidecar absent: no opinion
                     return json.dumps({"query": query, "found": True, "trail": candidate,
-                                       "info": result[0], "reference": result[1]})
+                                       "info": result[0], "reference": result[1],
+                                       "confidence": confidence})
 
             return json.dumps({"query": query, "found": False})
 

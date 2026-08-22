@@ -107,6 +107,48 @@ def _atomic_replace(src, dst):
     # complete file - never a half-written truncation.
     os.replace(src, dst)  # atomic, and overwrites an existing destination on both POSIX and Windows
 
+def confidence_score(reference, agreeing_sources):
+    """
+    0-100 confidence for one trail, from how many distinct feeds listed it.
+
+    `duplicates` in update_trails() collects the references of every feed that re-listed an
+    already-known trail, so its length is the agreement count (0 = single source). One feed
+    saying "malware" is exactly how a park page or a vendored blocklist mistake gets into
+    trails.csv; four feeds independently agreeing is not. The floor of 40 keeps every published
+    trail actionable - this is a prioritization signal, not a second verdict - and the operator's
+    own custom/static entries score full marks by definition.
+    """
+
+    if any(_ in (reference or "") for _ in ("custom", "static")):
+        return 100
+    return min(100, 40 + 15 * max(0, min(agreeing_sources, 4)))
+
+def write_confidence_file(trails, duplicates):
+    """
+    Write the sorted trail<TAB>confidence sidecar next to TRAILS_FILE.
+
+    Deliberately NOT a column in trails.csv: that file's format is a cross-version contract with
+    deployed sensors, downstream UPDATE_SERVER consumers and third-party tooling, and a missing
+    sidecar must degrade to "no opinion" rather than break a trail load.
+    """
+
+    path = "%s.confidence" % config.TRAILS_FILE
+    tmp_file = "%s.new" % path
+    try:
+        with _fopen(tmp_file, "w+", codecs.open) as f:
+            for key in sorted(trails.keys()):
+                f.write("%s\t%d\n" % (key, confidence_score(trails[key][1], len(duplicates.get(key, ())))))
+        _atomic_replace(tmp_file, path)
+        return True
+    except Exception as ex:
+        print("[x] something went wrong during confidence file write '%s' ('%s')" % (path, ex))
+        try:
+            if os.path.exists(tmp_file):
+                os.remove(tmp_file)
+        except Exception:
+            pass
+        return False
+
 def update_trails(force=False, offline=False):
     """
     Update trails from feeds
@@ -134,6 +176,13 @@ def update_trails(force=False, offline=False):
             with _fopen(tmp_trails_file, "w+", codecs.open) as f:
                 f.write(content)
             _atomic_replace(tmp_trails_file, config.TRAILS_FILE)
+            # A downloaded set carries no provenance, so any sidecar from a previous self-update
+            # describes a different trail set now; drop it rather than serve stale scores.
+            try:
+                if os.path.exists("%s.confidence" % config.TRAILS_FILE):
+                    os.remove("%s.confidence" % config.TRAILS_FILE)
+            except Exception:
+                pass
             trails = load_trails()
 
     else:
@@ -404,6 +453,7 @@ def update_trails(force=False, offline=False):
                             writer.writerow(row)
 
                     _atomic_replace(tmp_trails_file, config.TRAILS_FILE)
+                    write_confidence_file(trails, duplicates)
                     success = True
             except Exception as ex:
                 print("[x] something went wrong during trails file write '%s' ('%s')" % (config.TRAILS_FILE, ex))

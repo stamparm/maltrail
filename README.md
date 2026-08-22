@@ -388,9 +388,17 @@ curl 'http://127.0.0.1:8338/check?q=www.sub.evil.example'
   "found": true,
   "trail": "evil.example",
   "info": "asyncrat (malware)",
-  "reference": "(static)"
+  "reference": "(static)",
+  "confidence": 100
 }
 ```
+
+The `confidence` field (0-100, or `null` when unavailable) says how strongly the sources back the
+listing: 40 for a single feed, +15 per additional feed agreeing independently up to 100, and full
+marks for the operator's own custom and static entries. It is computed at trail-update time from
+feed agreement into a `trails.confidence` sidecar next to `trails.csv`; a server pulling trails
+from an `UPDATE_SERVER` has no provenance to score and reports `null`. Use it to prioritize
+triage - a single-feed listing at 40 deserves a second look before it earns a firewall rule.
 
 A subdomain lookup can match its listed parent. URL lookups check `host/path` before checking the
 host alone. The server reads the memory-mapped trail database and observes trail updates without a
