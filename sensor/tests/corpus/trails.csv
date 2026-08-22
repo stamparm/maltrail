@@ -18,4 +18,5 @@ dead::beef,malware (test),(static)
 dga[0-9]+\.wildcard-test\.com,malware (test),(static)
 tls-evil.example,malware (test),(static)
 quic-evil.example,malware (test),(static)
+1e7c622032b0cb79401b0f7be3793a1a,malware (test),abuse.ch
 evil-test.googleusercontent.com,malware (test),(static)

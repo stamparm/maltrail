@@ -15,6 +15,9 @@ pub mod trail_type {
     pub const PORT: &str = "PORT";
     /// TLS server-certificate SHA-1 fingerprint. New in this sensor; see docs/COMPATIBILITY.md.
     pub const CERT: &str = "CERT";
+    /// TLS client fingerprints (JA3 MD5, JA4). New in this sensor; see docs/COMPATIBILITY.md.
+    pub const JA3: &str = "JA3";
+    pub const JA4: &str = "JA4";
 }
 
 /// `core/enums.py:PROTO`

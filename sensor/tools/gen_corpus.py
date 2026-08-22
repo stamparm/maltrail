@@ -212,6 +212,9 @@ TRAILS = (
     ("dga[0-9]+\\.wildcard-test\\.com", "malware (test)", "(static)"),
     ("tls-evil.example", "malware (test)", "(static)"),
     ("quic-evil.example", "malware (test)", "(static)"),
+    # the JA3 (and JA4) of tls_client_hello() below - cross-checked against core/tls_intel.py;
+    # see case `tcp_malware_ja3`
+    ("1e7c622032b0cb79401b0f7be3793a1a", "malware (test)", "abuse.ch"),
     # under a whitelisted parent on purpose - see case `trail_under_whitelist_parent`
     ("evil-test.googleusercontent.com", "malware (test)", "(static)"),
 )
@@ -244,6 +247,9 @@ DIVERGENCE_CASES = {
     "trail_under_whitelist_parent": ["evil-test.googleusercontent.com"],
     # NEW heuristic (no sensor.py counterpart); only observable with pcap timestamps
     "tcp_periodic_beacon": ["203.0.113.77:443"],
+    # NEW detection (no sensor.py counterpart): the JA3 of the ClientHello below. Needs
+    # CHECK_TLS_CERTIFICATES, which parity.py enables for exactly this case.
+    "tcp_malware_ja3": ["1e7c622032b0cb79401b0f7be3793a1a"],
 }
 
 ATTACKER = "10.0.0.66"
@@ -648,6 +654,17 @@ def build_cases():
     cases.append(("tcp_periodic_beacon", DLT_EN10MB, sorted(beacon_pkts + ctrl_pkts), [],
                   "timer-regular reconnects fire once; jittered control stays silent "
                   "(deliberate divergence, pcap-timestamp gated)"))
+
+    # 37. TLS client fingerprints (NEW detection, no sensor.py counterpart). The ClientHello's
+    # JA3 is a listed trail; the same hello also carries an SNI, which is how the pre-existing
+    # tls_sni case keeps working alongside it. A bare SYN control stays silent.
+    packets = [
+        (BASE_SEC, frame(ipv4(ATTACKER, "203.0.113.35", 6, tcp(50600, 443, 0x18, tls_client_hello("ja3-evil.example"))))),
+        (BASE_SEC + 1, frame(ipv4(ATTACKER, "203.0.113.36", 6, tcp(50601, 443, 0x02)))),
+    ]
+    cases.append(("tcp_malware_ja3", DLT_EN10MB, packets, ["1e7c622032b0cb79401b0f7be3793a1a"],
+                  "ClientHello JA3 matched against the trail set (deliberate divergence; "
+                  "parity enables CHECK_TLS_CERTIFICATES for this case only)"))
 
     return cases
 

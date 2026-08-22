@@ -5,11 +5,11 @@ covered by an automated test — either a Rust test, a shared vector generated f
 code (`tools/gen_vectors.py`), or the differential replay harness (`tools/parity.py`).
 
 Last recorded parity result, on the then-36-case corpus: **36/36 cases, 0 event differences**
-(`tools/parity.py`). See `docs/REPORT.md` for that run. The corpus is now 41 cases; four of them
+(`tools/parity.py`). See `docs/REPORT.md` for that run. The corpus is now 42 cases; five of them
 (`udp_malware_dst`, `dns_same_socket_burst`, `trail_under_whitelist_parent`,
-`tcp_periodic_beacon`) pin the deliberate divergences in §2, differences 20-23, and are checked
-in **both** directions — the expected Rust-only event must be present, and its absence fails the
-case. Run `python3 sensor/tools/parity.py` for the current result.
+`tcp_periodic_beacon`, `tcp_malware_ja3`) pin the deliberate divergences in §2, differences
+20-24, and are checked in **both** directions — the expected Rust-only event must be present,
+and its absence fails the case. Run `python3 sensor/tools/parity.py` for the current result.
 
 ---
 

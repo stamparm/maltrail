@@ -40,6 +40,10 @@ sha2 = "0.10"
 # identifier abuse.ch SSLBL and every other certificate feed publishes, so it is the only
 # digest that can match them. It is never used to authenticate anything.
 sha1 = "0.10"
+# TLS client fingerprints (JA3). MD5 is not a security choice here either - it is the
+# digest the JA3 specification and every JA3 threat feed publish, so it is the only
+# digest that can match them. Same story as SHA-1 above.
+md-5 = "0.10"
 hmac = "0.12"
 # The condensed observable store (LOG_DIR/meta.sqlite, src/meta.rs). `bundled` on purpose:
 # the file's exact shape is a compatibility contract with core/meta.py and core/httpd.py
