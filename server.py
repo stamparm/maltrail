@@ -54,6 +54,7 @@ def main():
     parser.add_argument("--debug", dest="debug", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--smoke-test", dest="smoke_test", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--detect-test", dest="detect_test", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--doctor", dest="doctor", action="store_true", help="validate the deployment (log dir, trails age, USERS, TLS, ports) and exit")
 
     patch_parser(parser)
 
@@ -73,6 +74,10 @@ def main():
 
     if options.debug:
         config.SHOW_DEBUG = True
+
+    if options.doctor:
+        from core.doctor import run as doctor_run
+        raise SystemExit(doctor_run())
 
     # NOTE: this validation used to live inside an `if six.PY2 and config.USE_SSL:` block, so on
     # Python 3 it never ran and a missing/invalid SSL_PEM only failed later, inside the server

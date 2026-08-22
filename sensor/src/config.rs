@@ -314,6 +314,16 @@ macro_rules! bail {
 /// Parse the raw key/value/array structure. Mirrors `read_config()` line handling
 /// exactly, including its quirks (comment stripping before quoting, a value-less option
 /// becoming an empty array, `strip("'\"")` on values).
+/// Option names present in the parsed config that no parser recognises (`KNOWN_CONFIG_OPTIONS`
+/// covers every name read by `core/`, `server.py`, `sensor.py` and this sensor). Sorted, so the
+/// warning order is stable across runs.
+fn unknown_keys(raw: &HashMap<String, Value>) -> Vec<String> {
+    let mut out: Vec<String> =
+        raw.keys().filter(|name| !settings::KNOWN_CONFIG_OPTIONS.contains(&name.as_str())).cloned().collect();
+    out.sort();
+    out
+}
+
 pub fn parse_raw(content: &str, root: &Path) -> Result<HashMap<String, Value>, ConfigError> {
     let mut out: HashMap<String, Value> = HashMap::new();
     let mut array: Option<String> = None;
@@ -558,6 +568,17 @@ impl Config {
             if !raw.contains_key(option) {
                 bail!("missing mandatory option '{option}' in configuration file '{}'", config_file.display());
             }
+        }
+
+        for name in unknown_keys(&raw) {
+            // A typo'd name parses fine and is then ignored - the feature it was meant to
+            // configure just stays off while the file looks correct. Warn rather than fail: an
+            // older config meeting a newer sensor (or the reverse) must keep working.
+            crate::cprintln!(
+                "[!] unknown configuration option '{}' in configuration file '{}' (typo? see 'maltrail.conf' for the accepted names)",
+                name,
+                config_file.display()
+            );
         }
 
         let capture_buffer_raw = get_str(&raw, "CAPTURE_BUFFER");
@@ -1063,5 +1084,19 @@ SENSOR_NAME box   # trailing comment
         std::fs::write(&path, "MONITOR_INTERFACE any\n").unwrap();
         let err = Config::load(&path).unwrap_err();
         assert!(err.0.contains("missing mandatory option"), "{}", err.0);
+    }
+
+    #[test]
+    fn typo_options_are_flagged_and_the_shipped_file_is_clean() {
+        let content =
+            "MONITOR_INTERFACE any\nCAPTURE_BUFFER 1MB\nLOG_DIR /tmp\nUSE_CONDESND_STORAGE true\nUSERS\n admin:x\n";
+        let raw = parse_raw(content, Path::new("/")).unwrap();
+        assert_eq!(unknown_keys(&raw), vec!["USE_CONDESND_STORAGE".to_string()]);
+
+        // Every name in the shipped maltrail.conf (commented or active) must be known, or every
+        // start of the sensor would warn - which is exactly the drift this list exists to catch.
+        let conf = crate::testkit::repo_root().join("maltrail.conf");
+        let raw = parse_raw(&std::fs::read_to_string(&conf).unwrap(), &crate::settings::resolve_root(&conf)).unwrap();
+        assert!(unknown_keys(&raw).is_empty(), "shipped maltrail.conf has unknown options: {:?}", unknown_keys(&raw));
     }
 }

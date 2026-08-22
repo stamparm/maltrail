@@ -121,6 +121,21 @@ class TestOptionCoverage(unittest.TestCase):
         unused = sorted(documented() - read_by_python() - read_by_sensor() - DYNAMIC)
         self.assertEqual(unused, [], "in maltrail.conf but never read: %s" % ", ".join(unused))
 
+    def test_known_config_options_covers_both_sides(self):
+        """KNOWN_CONFIG_OPTIONS (core/settings.py) is what read_config() warns against.
+
+        Drift in either direction is user-visible: an option missing from the set makes a
+        legitimate config line warn on every startup, and a stale one hides a real typo.
+        """
+        sys.path.insert(0, REPO)
+        from core.settings import KNOWN_CONFIG_OPTIONS
+
+        undocumented = sorted(KNOWN_CONFIG_OPTIONS - documented() - read_by_python() - DEPRECATED)
+        self.assertEqual(undocumented, [], "accepted by KNOWN_CONFIG_OPTIONS but neither documented nor read: %s" % ", ".join(undocumented))
+
+        unwarned = sorted(documented() - KNOWN_CONFIG_OPTIONS)
+        self.assertEqual(unwarned, [], "documented in maltrail.conf but missing from KNOWN_CONFIG_OPTIONS: %s" % ", ".join(unwarned))
+
     def test_the_scan_actually_finds_things(self):
         # Guard against the extraction silently matching nothing and both tests passing vacuously.
         self.assertGreater(len(read_by_python()), 30)
