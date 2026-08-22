@@ -198,6 +198,98 @@ try:
 except ImportError:
     CPU_CORES = 1
 
+# Every option name the parsers accept - everything `core/`, `server.py`, the retired
+# `old/sensor.py` and the Rust sensor read from maltrail.conf, plus the array sections.
+# Anything else in the file is almost certainly a typo: a silently ignored
+# 'USE_CONDESND_STORAGE' looks configured while disabling its feature entirely.
+KNOWN_CONFIG_OPTIONS = frozenset((
+    "ALERT_FORMAT",
+    "ALERT_SEVERITY",
+    "ALERT_THROTTLE",
+    "ALERT_WEBHOOK_URL",
+    "ALLOW_EMPTY_TRAILS",
+    "BLACKLIST_ALLOWLIST",
+    "CAPTURE_BUFFER",
+    "CAPTURE_BUFFER_SIZE",
+    "CAPTURE_FANOUT",
+    "CAPTURE_FANOUT_DEFRAG",
+    "CAPTURE_FANOUT_GROUP",
+    "CAPTURE_FANOUT_MODE",
+    "CAPTURE_FILTER",
+    "CAPTURE_IMMEDIATE",
+    "CAPTURE_SNAPLEN",
+    "CAPTURE_TIMEOUT",
+    "CAPTURE_WORKERS",
+    "CHECK_HOST_DOMAINS",
+    "CHECK_MISSING_HOST",
+    "CHECK_TLS_CERTIFICATES",
+    "CUSTOM_TRAILS_DIR",
+    "CUSTOM_TRAILS_URL",
+    "DISABLED_FEEDS",
+    "DISABLED_HEURISTICS",
+    "DISABLED_TRAILS_INFO_REGEX",
+    "DISABLE_CHECK_SUDO",
+    "DISABLE_CPU_AFFINITY",
+    "DISABLE_LOCAL_LOG_STORAGE",
+    "DISABLE_RIPE_LOOKUPS",
+    "DISABLE_TRAIL_UPDATES",
+    "DOMAIN_CACHE_ENTRIES",
+    "ENABLE_MASK_CUSTOM",
+    "EVENT_THROTTLE_BURST",
+    "EVENT_THROTTLE_MAX_KEYS",
+    "EVENT_THROTTLE_MODE",
+    "EVENT_THROTTLE_WINDOW",
+    "FAIL2BAN_ALLOWLIST",
+    "FAIL2BAN_REGEX",
+    "FAST_ADMIT_ADAPTIVE",
+    "FAST_ADMIT_LEVEL",
+    "FAST_FLOW_CUTOFF",
+    "HEADER_LOGO",
+    "HOME_LAT",
+    "HOME_LON",
+    "HTTP_ADDRESS",
+    "HTTP_PORT",
+    "HUNT_TIME_BUDGET",
+    "IGNORE_EVENTS_REGEX",
+    "IP_ALIASES",
+    "IP_MINIMUM_FEEDS",
+    "LOGSTASH_SERVER",
+    "LOG_DIR",
+    "LOG_SERVER",
+    "MAX_LIVE_STREAMS",
+    "MAX_REQUEST_THREADS",
+    "METRICS_INTERVAL",
+    "MONITOR_INTERFACE",
+    "OFFLINE_TIMESTAMPS",
+    "PROCESS_COUNT",
+    "PROXY_ADDRESS",
+    "REMOTE_SEVERITY_REGEX",
+    "REPAIR_TRUNCATED_TRAILS",
+    "SCAN_WINDOW",
+    "SENSOR_NAME",
+    "SHOW_DEBUG",
+    "SSL_PEM",
+    "STATS_ADDRESS",
+    "SYSLOG_SERVER",
+    "TRAILS_FILE",
+    "TRAIL_RELOAD_MIN_RATIO",
+    "UDP_ADDRESS",
+    "UDP_PORT",
+    "UPDATE_PERIOD",
+    "UPDATE_SERVER",
+    "USERS",
+    "USER_IGNORELIST",
+    "USER_WHITELIST",
+    "USE_CAPTURE_AFFINITY",
+    "USE_CONDENSED_STORAGE",
+    "USE_FAST_PREFILTER",
+    "USE_FEED_UPDATES",
+    "USE_HEURISTICS",
+    "USE_MULTIPROCESSING",
+    "USE_SERVER_UPDATE_TRAILS",
+    "USE_SSL",
+))
+
 config = AttribDict({"TRAILS_FILE": DEFAULT_TRAILS_FILE})
 trails = TrailsDict()
 
@@ -346,6 +438,12 @@ def read_config(config_file):
     for option in ("MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIR"):
         if option not in config:
             sys.exit("[!] missing mandatory option '%s' in configuration file '%s'" % (option, config_file))
+
+    for name in sorted(_ for _ in config.keys() if _ not in KNOWN_CONFIG_OPTIONS):
+        # A typo'd name parses fine, coerces fine and is then ignored - the feature it was meant
+        # to configure just stays off while the file looks correct. Warn rather than exit: an
+        # older config meeting a newer Maltrail (or the reverse) must keep working.
+        print("[!] unknown configuration option '%s' in configuration file '%s' (typo? see 'maltrail.conf' for the accepted names)" % (name, config_file))
 
     for entry in (config.USERS or []):
         # maxsplit=3: the netfilter (4th field) may legitimately contain ':' (e.g. an IPv6 "::" = "all"); a plain
