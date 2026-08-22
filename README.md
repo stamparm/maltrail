@@ -102,7 +102,7 @@ available daily logs. Events are streamed from `/events` and aggregated in the b
 | --- | --- |
 | Live mode | Appended events are pushed over Server-Sent Events (`/live`) and merged into the current view. Falls back to polling byte ranges of the daily log when SSE is unavailable, or for sessions the stream cannot serve. New high-severity threats can raise a desktop notification and an audible alert; both can be muted |
 | Search | Field-scoped tokens (`src:` `dst:` `port:` `proto:` `type:` `trail:` `info:` `tag:` `uid:` `sev:` `dir:` `status:`) combined with space as AND, `-` to exclude, `*` wildcards, CIDR (`src:10.0.0.0/8`), and numeric ranges and comparisons (`port:>1024`, `count:>=100`). Active filters appear as removable chips |
-| Retro hunt | Searches *all* retained daily logs for one indicator (`/hunt`), not just the day in view. Bounded by a day limit, a wall-clock budget and a sample cap; a day the budget cut short is reported separately from the completed days rather than counted as a finished total |
+| Retro hunt | Searches *all* retained daily logs for one indicator (`/hunt`), not just the day in view. Bounded by a day limit, a wall-clock budget and a sample cap; a day the budget cut short is reported separately from the completed days rather than counted as a finished total. A per-day sidecar index (`LOG_DIR/index/`, `USE_EVENT_INDEX`) lets the sweep skip every non-matching line and makes `/counts` exact |
 | World map | Per-country event density for the selected day (`/geo`), placing the external endpoint of each event. Events that cannot be attributed to an external address are reported as unmapped rather than guessed. Set `HOME_LAT` / `HOME_LON` to draw origin arcs |
 | Triage | Per-threat status (new / investigating / resolved / false positive), free-text notes, tags, and hiding. Whitelist rules and OSINT pivots are available from the row context menu |
 | Saved views | Named filter presets |
@@ -450,7 +450,10 @@ updated by another process are detected automatically and published to workers w
 the sensor.
 
 The condensed observable store (`USE_CONDENSED_STORAGE`, `meta.sqlite`) supports the server's
-novelty and retro-hunt views. Compatibility with the retired sensor is documented in
+novelty and retro-hunt views. The per-day event-log sidecar index (`USE_EVENT_INDEX`,
+`LOG_DIR/index/*.sqlite`, roughly twice the log size on disk) is what makes `/counts` exact and
+`/hunt` fast; it is maintained incrementally from the logs themselves and can be rebuilt with
+`server.py --rebuild-index`. Compatibility with the retired sensor is documented in
 [`sensor/docs/COMPATIBILITY.md`](sensor/docs/COMPATIBILITY.md).
 
 ### Event retention
