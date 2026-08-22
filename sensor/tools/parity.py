@@ -38,7 +38,7 @@ in `tests/detection.rs`, so none can silently revert. Do not "fix" them by resto
 behaviour (or by deleting the new detection).
 
 Each is pinned by a corpus case (`udp_malware_dst`, `dns_same_socket_burst`,
-`trail_under_whitelist_parent`, `tcp_periodic_beacon`) whose manifest entry carries
+`trail_under_whitelist_parent`, `tcp_periodic_beacon`, `tcp_malware_ja3`) whose manifest entry carries
 `expect_rust_only`. The check runs both ways:
 
   * a Rust-only event matching the pattern is an expected surplus, reported DIVRG, not a failure;
@@ -88,6 +88,16 @@ to let it disappear is what stops someone "restoring parity" by putting the dete
      is suspicious, never `malware` - and can be silenced by name with `DISABLED_HEURISTICS
      beaconing`. Python emits nothing here; Rust emits one event. Pinned by corpus case
      `tcp_periodic_beacon`.
+
+  5. TLS client fingerprints, JA3/JA4 (no `sensor.py` counterpart; process.rs
+     `check_client_fingerprint` + protocols/tls.rs `parse_client_hello`). The retired Python
+     sensor parses a ClientHello only for its SNI; the fingerprint fields that identify the
+     CLIENT's TLS stack - the thing that survives every address/domain rotation - are dropped.
+     The Rust sensor computes JA3 and JA4 over the hello and matches them as exact trails
+     (trails/feeds/sslblja3.py publishes the JA3 half), gated by CHECK_TLS_CERTIFICATES like
+     the server-certificate match. Because that option is off in the shared fixture, parity.py
+     enables it for exactly this case (see `per_case`); Python still emits nothing, Rust emits
+     the JA3 hit. Pinned by corpus case `tcp_malware_ja3`.
 """
 
 import argparse
@@ -396,6 +406,10 @@ def main():
     per_case = {
         "tls_sni": {"extra": "USE_FAST_PREFILTER true\nFAST_FLOW_CUTOFF 4"},
         "quic_sni": {"extra": "USE_FAST_PREFILTER true\nFAST_FLOW_CUTOFF 4"},
+        # Client-fingerprint matching is Rust-only (divergence #5); the option stays off in the
+        # shared fixture and is enabled for exactly this case, so the surplus is produced AND
+        # checked both ways (a vanished surplus fails as REVRT).
+        "tcp_malware_ja3": {"extra": "CHECK_TLS_CERTIFICATES true"},
     }
 
     results = []

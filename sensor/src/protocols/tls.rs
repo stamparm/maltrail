@@ -1,11 +1,15 @@
-//! TLS ClientHello SNI extraction — the `sni` half of
+//! TLS ClientHello SNI extraction and client fingerprinting — a port of
 //! `core/tls_intel.py:parse_client_hello()`.
 //!
-//! Only the SNI is needed: `core/fastfilter.py:head_sni()` feeds it straight into
-//! `_check_domain`. JA3/JA4/certificate parsing lives on the reporting side and is not
-//! part of the sensor's detection path.
+//! The SNI feeds `core/fastfilter.py:head_sni()`'s domain check on encrypted traffic; the
+//! JA3/JA4 client fingerprints are matched against the trail set the same way certificate
+//! SHA-1s are (fingerprint feeds publish exactly these digests). Certificate parsing for the
+//! *reporting* side lives in `core/tls_intel.py`; the sensor's server-flight half is in
+//! `server_certificate_der` below.
 //!
-//! All reads are bounds-checked; a malformed or truncated handshake yields `None`.
+//! All reads are bounds-checked; a malformed or truncated handshake yields `None`, never a
+//! panic. The byte-level tolerances mirror the Python parser exactly, so both produce the
+//! same JA3/JA4 for the same captured bytes.
 
 /// Bounds-checked sequential reader (`core/tls_intel.py:_Reader`).
 struct Reader<'a> {
@@ -80,9 +84,29 @@ pub fn is_hostname(value: &str, lowercase_only: bool) -> bool {
     labels >= 2
 }
 
-/// Extract the SNI from a TLS record (`0x16 ...`) or a bare handshake message.
-/// Returns the lower-cased host name, matching `core/tls_intel.py:_parse_sni()`.
-pub fn client_hello_sni(data: &[u8]) -> Option<String> {
+/// What a ClientHello yields once parsed: the SNI (if any) plus both client fingerprints.
+pub struct ClientHello {
+    pub sni: Option<String>,
+    /// MD5 of the JA3 string - the form JA3 feeds publish (`ja3` in `core/tls_intel.py`).
+    pub ja3: String,
+    /// The JA4 client fingerprint, `t13d0605h2_..._...`.
+    pub ja4: String,
+}
+
+/// `core/tls_intel.py:_is_grease()` - the reserved "GREASE" values a real stack may sprinkle
+/// through its cipher and extension lists; fingerprints must ignore them or every
+/// GREASE-generating client would hash uniquely.
+fn is_grease(v: u16) -> bool {
+    let hb = (v >> 8) & 0xff;
+    let lb = v & 0xff;
+    hb == lb && (lb & 0x0f) == 0x0a
+}
+
+/// Parse a TLS record (`0x16 ...`) or bare handshake message into SNI + JA3 + JA4,
+/// byte-for-byte compatible with `core/tls_intel.py:_parse_client_hello()`: same tolerances
+/// for truncation (the extension region is parsed as far as the buffer reaches, the fixed
+/// fields are not), same GREASE filtering, same string forms before hashing.
+pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
     let mut r = Reader::new(data);
     if r.b.first() == Some(&0x16) {
         r.take(5)?; // optional TLS record header
@@ -90,38 +114,187 @@ pub fn client_hello_sni(data: &[u8]) -> Option<String> {
     if r.u8()? != 0x01 {
         return None; // not a ClientHello
     }
-    let _hlen = r.u24()?;
-    let _legacy_version = r.u16()?;
+    let hlen = r.u24()? as usize;
+    // Python caps the message end at what actually arrived and parses on ("tolerate
+    // truncation; parse what we have") rather than failing - so an overlong hlen is not an
+    // error here either; every read below is bounds-checked on its own.
+    let _ = hlen;
+    let legacy_version = r.u16()?;
     r.take(32)?; // random
     let sid_len = r.u8()? as usize;
     r.take(sid_len)?;
     let cs_len = r.u16()? as usize;
-    // Python advances straight to the end of the cipher list (clamped by the reader).
     let cend = r.p.checked_add(cs_len)?;
     if cend > r.b.len() {
-        return None;
+        return None; // Python's reader raises past the buffer; the whole parse fails there
+    }
+    let mut ciphers = Vec::with_capacity(cs_len / 2);
+    while r.p + 2 <= cend {
+        let c = r.u16()?;
+        if !is_grease(c) {
+            ciphers.push(c);
+        }
     }
     r.p = cend;
     let comp_len = r.u8()? as usize;
     r.take(comp_len)?;
 
+    let mut sni = None;
+    let mut alpn0: Option<Vec<u8>> = None;
+    let mut ext_types = Vec::new();
+    let mut curves = Vec::new();
+    let mut ecpf = Vec::new();
+    let mut sig_algs = Vec::new();
+    let mut sup_vers = Vec::new();
+    if r.left() >= 2 {
+        let ext_total = r.u16()? as usize;
+        let eend = (r.p + ext_total).min(r.b.len());
+        while r.p + 4 <= eend {
+            let etype = r.u16()?;
+            let elen = r.u16()? as usize;
+            if r.p + elen > r.b.len() {
+                break;
+            }
+            let body = r.take(elen)?;
+            if !is_grease(etype) {
+                ext_types.push(etype);
+            }
+            match etype {
+                0x0000 => sni = parse_sni_extension(body, true),
+                0x000a => curves = u16_list(body, true, true)?,
+                0x000b => ecpf = u8_list(body, true)?,
+                0x000d => sig_algs = u16_list(body, true, true)?,
+                0x0010 => alpn0 = alpn_first(body),
+                0x002b => sup_vers = u8len_u16_list(body, true)?,
+                _ => {}
+            }
+        }
+    }
+
+    // JA3: version,ciphers,extensions,curves,ecpf - dash-joined decimal lists.
+    let join_dec = |list: &[u16]| list.iter().map(|v| v.to_string()).collect::<Vec<_>>().join("-");
+    let ja3_str = format!(
+        "{},{},{},{},{}",
+        legacy_version,
+        join_dec(&ciphers),
+        join_dec(&ext_types),
+        join_dec(&curves),
+        join_dec(&(ecpf.iter().map(|b| *b as u16).collect::<Vec<_>>())),
+    );
+    use md5::Digest as Md5Digest;
+    let ja3 = hex_lowercase(&md5::Md5::digest(ja3_str.as_bytes()));
+
+    // JA4 (client): ja4_a _ ja4_b _ ja4_c.
+    let ver = sup_vers.iter().copied().max().unwrap_or(legacy_version);
+    let ver2 = match ver {
+        0x0304 => "13",
+        0x0303 => "12",
+        0x0302 => "11",
+        0x0301 => "10",
+        0x0300 => "s3",
+        _ => "00",
+    };
+    let sni_flag = if sni.is_some() { "d" } else { "i" };
+    let nc = ciphers.len().min(99);
+    let ne = ext_types.len().min(99);
+    // First protocol's first+last byte. Python chr()s raw bytes and then ascii-encodes the
+    // whole fingerprint, so a non-ASCII ALPN byte fails the entire Python parse ({}) - hence
+    // the all-ascii requirement here rather than a lossy substitution.
+    let alpn2 = match alpn0 {
+        Some(ref p) if !p.is_empty() && p.iter().all(|b| b.is_ascii()) => {
+            format!("{}{}", p[0] as char, p[p.len() - 1] as char)
+        }
+        Some(_) => return None, // mirrors Python's UnicodeEncodeError -> {}
+        None => "00".to_string(),
+    };
+    let ja4_a = format!("t{ver2}{sni_flag}{nc:02}{ne:02}{alpn2}");
+    let mut sorted_ciphers = ciphers.clone();
+    sorted_ciphers.sort_unstable();
+    let ja4_b_str = sorted_ciphers.iter().map(|c| format!("{c:04x}")).collect::<Vec<_>>().join(",");
+    let mut exts_for_c: Vec<u16> = ext_types.iter().copied().filter(|e| *e != 0x0000 && *e != 0x0010).collect();
+    exts_for_c.sort_unstable();
+    let ja4_c_str = format!(
+        "{}_{}",
+        exts_for_c.iter().map(|e| format!("{e:04x}")).collect::<Vec<_>>().join(","),
+        sig_algs.iter().map(|s| format!("{s:04x}")).collect::<Vec<_>>().join(","),
+    );
+    // NOTE: `md5::Digest` and `sha2::Digest` are the same `digest::Digest` trait (both crates
+    // build on digest 0.10), so the single import above serves Sha256::digest too.
+    let sha256_12 = |s: &[u8]| hex_lowercase(&sha2::Sha256::digest(s))[..12].to_string();
+    let ja4 = format!("{}_{}_{}", ja4_a, sha256_12(ja4_b_str.as_bytes()), sha256_12(ja4_c_str.as_bytes()));
+
+    Some(ClientHello { sni, ja3, ja4 })
+}
+
+/// Extract the SNI from a TLS record (`0x16 ...`) or a bare handshake message.
+/// Returns the lower-cased host name, matching `core/tls_intel.py:_parse_sni()`.
+pub fn client_hello_sni(data: &[u8]) -> Option<String> {
+    parse_client_hello(data).and_then(|ch| ch.sni)
+}
+
+fn hex_lowercase(bytes: &[u8]) -> String {
+    bytes.iter().map(|b| format!("{b:02x}")).collect()
+}
+
+/// `core/tls_intel.py:_u16_list()`
+fn u16_list(body: &[u8], skip_len2: bool, drop_grease: bool) -> Option<Vec<u16>> {
+    let mut r = Reader::new(body);
+    if skip_len2 && r.left() >= 2 {
+        r.u16();
+    }
+    let mut out = Vec::new();
+    while r.left() >= 2 {
+        let v = r.u16()?;
+        if drop_grease && is_grease(v) {
+            continue;
+        }
+        out.push(v);
+    }
+    Some(out)
+}
+
+/// `core/tls_intel.py:_u8_list()`
+fn u8_list(body: &[u8], skip_len1: bool) -> Option<Vec<u8>> {
+    let mut r = Reader::new(body);
+    if skip_len1 && r.left() >= 1 {
+        r.u8();
+    }
+    let mut out = Vec::new();
+    while r.left() >= 1 {
+        out.push(r.u8()?);
+    }
+    Some(out)
+}
+
+/// `core/tls_intel.py:_u8len_u16_list()`
+fn u8len_u16_list(body: &[u8], drop_grease: bool) -> Option<Vec<u16>> {
+    let mut r = Reader::new(body);
+    if r.left() >= 1 {
+        r.u8(); // 1-byte list length
+    }
+    let mut out = Vec::new();
+    while r.left() >= 2 {
+        let v = r.u16()?;
+        if drop_grease && is_grease(v) {
+            continue;
+        }
+        out.push(v);
+    }
+    Some(out)
+}
+
+/// `core/tls_intel.py:_parse_alpn_first()` - the first protocol name offered, raw bytes.
+fn alpn_first(body: &[u8]) -> Option<Vec<u8>> {
+    let mut r = Reader::new(body);
     if r.left() < 2 {
         return None;
     }
-    let ext_total = r.u16()? as usize;
-    let eend = (r.p + ext_total).min(r.b.len());
-    while r.p + 4 <= eend {
-        let etype = r.u16()?;
-        let elen = r.u16()? as usize;
-        if r.p + elen > r.b.len() {
-            break;
-        }
-        let body = r.take(elen)?;
-        if etype == 0x0000 {
-            return parse_sni_extension(body, true);
-        }
+    r.u16()?; // alpn list length
+    if r.left() < 1 {
+        return None;
     }
-    None
+    let plen = r.u8()? as usize;
+    Some(r.take(plen)?.to_vec())
 }
 
 /// `core/tls_intel.py:_parse_sni()` / `core/quic_sni.py`'s inline equivalent.
@@ -188,6 +361,7 @@ pub fn build_client_hello(sni: &str, with_record: bool) -> Vec<u8> {
 mod tests {
     use super::build_client_hello as client_hello;
     use super::*;
+    use vectors::FromHex;
 
     #[test]
     fn extracts_sni_with_and_without_record_header() {
@@ -250,6 +424,55 @@ mod tests {
         let mut lst = (srv.len() as u16).to_be_bytes().to_vec();
         lst.extend_from_slice(&srv);
         assert_eq!(parse_sni_extension(&lst, true), None);
+    }
+
+    /// Vectors generated by `core/tls_intel.py:parse_client_hello()` over these exact bytes -
+    /// the cross-language contract the trail matching depends on. Regenerate with:
+    ///
+    ///   python3 -c "import sys; sys.path.insert(0,'.'); \
+    ///     from core.tls_intel import parse_client_hello as p; \
+    ///     h=bytes.fromhex('<R1HEX>'); o=p(h); print(o['sni'],o['ja3'],o['ja4'])"
+    #[test]
+    fn ja3_ja4_match_the_python_reference_implementation() {
+        // hello 1: TLS 1.3-ish stack, SNI + ALPN + supported_versions, no GREASE
+        let r1 = Vec::from_hex("1603010086010000820303111111111111111111111111111111111111111111111111111111111111111100000c13011302c02bc02f009c009e0100004d000a00080006001d00170018000d000800060403080404010010000e000c02683208687474702f312e31002b000504030403030000001600140000116d61696c2e6576696c2e6578616d706c65");
+        let ch1 = parse_client_hello(&r1).expect("well-formed hello parses");
+        assert_eq!(ch1.sni.as_deref(), Some("mail.evil.example"));
+        assert_eq!(ch1.ja3, "d190f828263095de150a20b19136e314");
+        assert_eq!(ch1.ja4, "t13d0605h2_72b63408b255_beb9f91c6f80");
+
+        // hello 2: GREASE ciphers/extensions dropped from the fingerprint, EC point formats
+        // carried into JA3's last field, no SNI ('i'), no ALPN ("00"), legacy version only
+        let r2 = Vec::from_hex("16030100500100004c030322222222222222222222222222222222222222222222222222222222222222220000081a1a13013a3ac02f0100001b000b0003020001000a000600041a1a001d000d0006000408040401");
+        let ch2 = parse_client_hello(&r2).expect("well-formed hello parses");
+        assert_eq!(ch2.sni, None);
+        assert_eq!(ch2.ja3, "a20735de562085796a564839bc8368cc");
+        assert_eq!(ch2.ja4, "t12i020300_c1929292aa6b_7c9dbb57f4ec");
+
+        // and the SNI-only helper still agrees with the full parse on both
+        assert_eq!(client_hello_sni(&r1), ch1.sni);
+        assert_eq!(client_hello_sni(&r2), None);
+    }
+
+    #[test]
+    fn truncated_fingerprints_never_panic_and_may_still_parse() {
+        let full = client_hello("evil.com", true);
+        for n in 0..full.len() {
+            let _ = parse_client_hello(&full[..n]);
+        }
+    }
+}
+
+#[cfg(test)]
+/// hex literal helper so the python-generated vectors read as one token
+mod vectors {
+    pub trait FromHex {
+        fn from_hex(s: &str) -> Vec<u8>;
+    }
+    impl FromHex for Vec<u8> {
+        fn from_hex(s: &str) -> Vec<u8> {
+            (0..s.len()).step_by(2).map(|i| u8::from_str_radix(&s[i..i + 2], 16).unwrap()).collect()
+        }
     }
 }
 

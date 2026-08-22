@@ -371,8 +371,11 @@ contains spaces:
 ```
 
 The `type` field identifies what matched, including `DNS`, `IP`, `IPORT`, `URL`, `PATH`, `HTTP`,
-`UA`, `PORT`, and `CERT`. The `info` field contains the trail classification, and `reference`
-identifies the static list, feed, custom source, or heuristic that produced it.
+`UA`, `PORT`, `CERT`, `JA3`, and `JA4`. The `info` field contains the trail classification, and
+`reference` identifies the static list, feed, custom source, or heuristic that produced it. The
+`JA3`/`JA4` types fire on TLS *client* fingerprints: an implant's TLS stack survives every
+address and domain rotation, so its hello hash keeps matching after everything else has burned
+(published by the abuse.ch SSLBL JA3 feed).
 
 ### Indicator lookup
 

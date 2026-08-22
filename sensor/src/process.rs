@@ -365,14 +365,19 @@ fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader
                 return;
             }
             let ep = Endpoints { src: header.src, src_port: tcph.src_port, dst: header.dst, dst_port: tcph.dst_port };
-            // The same record type carries both directions: a ClientHello gives a domain, the
-            // server's flight gives a certificate. A packet is one or the other, so the cheaper
-            // ClientHello parse runs first and short-circuits.
-            if st.cfg.use_fast_prefilter && st.cfg.fast_flow_cutoff > 0 {
-                if let Some(sni) = crate::protocols::tls::client_hello_sni(payload) {
-                    check_domain(st, &sni, sec, usec, ep, PROTO::TCP);
-                    return;
+            // The same record type carries both directions: a ClientHello gives a domain and
+            // client fingerprints, the server's flight gives a certificate. A packet is one or
+            // the other, so the ClientHello parse discriminates them.
+            if let Some(ch) = crate::protocols::tls::parse_client_hello(payload) {
+                if st.cfg.use_fast_prefilter && st.cfg.fast_flow_cutoff > 0 {
+                    if let Some(ref sni) = ch.sni {
+                        check_domain(st, sni, sec, usec, ep, PROTO::TCP);
+                    }
                 }
+                if st.cfg.check_tls_certificates {
+                    check_client_fingerprint(st, &ch, sec, usec, ep);
+                }
+                return;
             }
             if st.cfg.check_tls_certificates {
                 check_server_certificate(st, payload, sec, usec, ep);
@@ -390,6 +395,40 @@ fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader
             check_domain(st, &sni, sec, usec, ep, PROTO::UDP);
         }
         _ => {}
+    }
+}
+
+/// Match a TLS CLIENT hello against the trail set by its JA3 / JA4 fingerprint.
+///
+/// Client fingerprints are the counterpart of `check_server_certificate`: where a certificate
+/// identifies a SERVER that survives moving, an implant's TLS stack identifies the MALWARE
+/// itself - the same binary phones home from every address it lands on with byte-identical
+/// hello fields, so the hash survives domain rotation, IP rotation and CDN fronting alike.
+/// abuse.ch SSLBL publishes JA3s of known implant clients; JA4 keys can be carried as custom
+/// or static trails for site-specific implants.
+///
+/// Both hashes come from one parse (`protocols::tls::parse_client_hello`, byte-identical to
+/// `core/tls_intel.py`), so this is two exact-match lookups on handshake packets only. Governed
+/// by CHECK_TLS_CERTIFICATES like the server-flight check: one switch answers "match TLS
+/// handshake intelligence against the trail set".
+fn check_client_fingerprint(
+    st: &mut WorkerState,
+    ch: &crate::protocols::tls::ClientHello,
+    sec: u64,
+    usec: u32,
+    ep: Endpoints,
+) {
+    // JA3 first: that is what feeds publish. A hit short-circuits the second lookup.
+    st.metrics.trail_lookups += 1;
+    if let Some(hit) = st.trails.db().get(ch.ja3.as_str()) {
+        let (info, reference) = (hit.info.to_string(), hit.reference.to_string());
+        emit_ep(st, sec, usec, ep, PROTO::TCP, TRAIL::JA3, Field::Text(ch.ja3.clone()), &info, &reference);
+        return;
+    }
+    st.metrics.trail_lookups += 1;
+    if let Some(hit) = st.trails.db().get(ch.ja4.as_str()) {
+        let (info, reference) = (hit.info.to_string(), hit.reference.to_string());
+        emit_ep(st, sec, usec, ep, PROTO::TCP, TRAIL::JA4, Field::Text(ch.ja4.clone()), &info, &reference);
     }
 }
 

@@ -545,5 +545,20 @@
     "packets": 22,
     "pcap": "tcp_periodic_beacon.pcap",
     "timestamp_sensitive": true
+  },
+  {
+    "expect": [
+      "1e7c622032b0cb79401b0f7be3793a1a"
+    ],
+    "expect_rust_only": [
+      "1e7c622032b0cb79401b0f7be3793a1a"
+    ],
+    "linktype": 1,
+    "name": "tcp_malware_ja3",
+    "needs_pcap_timestamps": false,
+    "notes": "ClientHello JA3 matched against the trail set (deliberate divergence; parity enables CHECK_TLS_CERTIFICATES for this case only)",
+    "packets": 2,
+    "pcap": "tcp_malware_ja3.pcap",
+    "timestamp_sensitive": false
   }
 ]

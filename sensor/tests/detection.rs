@@ -818,6 +818,40 @@ fn tls_sni_is_ignored_when_disabled() {
     assert!(h.events().is_empty(), "SNI extraction is opt-in: {:?}", h.events());
 }
 
+// --- TLS client fingerprints (JA3 / JA4) ----------------------------------------
+//
+// The digests below are the JA3/JA4 of `build_client_hello("evil.com")`, cross-checked against
+// `core/tls_intel.py:parse_client_hello()` (see the vector test in protocols/tls.rs).
+
+#[test]
+fn a_listed_ja3_client_fingerprint_fires() {
+    let mut h = trails(&[("1e7c622032b0cb79401b0f7be3793a1a", "malware", "abuse.ch")]);
+    let hello = maltrail_sensor::protocols::tls::build_client_hello("evil.com", true);
+    h.feed_ip(&ipv4(6, "10.0.0.5", "203.0.113.30", &tcp(50400, 443, 0x18, &hello)), 1);
+    assert_eq!(h.trails(), vec!["1e7c622032b0cb79401b0f7be3793a1a"]);
+    assert_eq!(h.events()[0].trail_type, "JA3");
+    assert_eq!(h.events()[0].info, "malware");
+}
+
+#[test]
+fn a_ja4_trail_matches_when_no_ja3_is_listed() {
+    let mut h = trails(&[("t12d010100_0f2cb44170f4_d2e2adf7177b", "potential malware site", "(custom)")]);
+    let hello = maltrail_sensor::protocols::tls::build_client_hello("evil.com", true);
+    h.feed_ip(&ipv4(6, "10.0.0.5", "203.0.113.30", &tcp(50401, 443, 0x18, &hello)), 1);
+    assert_eq!(h.trails(), vec!["t12d010100_0f2cb44170f4_d2e2adf7177b"]);
+    assert_eq!(h.events()[0].trail_type, "JA4");
+}
+
+#[test]
+fn an_unlisted_client_fingerprint_is_silent() {
+    // The same hello against a trail set that lists neither hash: no event, and the SNI of the
+    // very same hello is what carries the detection instead (or nothing does).
+    let mut h = trails(&[("unrelated.example", MALWARE.0, MALWARE.1)]);
+    let hello = maltrail_sensor::protocols::tls::build_client_hello("clean.example.org", true);
+    h.feed_ip(&ipv4(6, "10.0.0.5", "203.0.113.30", &tcp(50402, 443, 0x18, &hello)), 1);
+    assert!(h.events().is_empty(), "{:?}", h.events());
+}
+
 /// The result-cache counters must actually reach the metrics registry.
 ///
 /// They were incremented on the packet path and then hard-coded to zero in `MetricsSlot::snapshot`,
