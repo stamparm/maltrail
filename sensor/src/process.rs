@@ -529,6 +529,9 @@ fn heuristics_sweep(st: &mut WorkerState, sec: u64, usec: u32) {
         }
     }
 
+    // Hourly prune of beacon flows gone quiet; the call is a no-op except on the hour change.
+    st.beacon.maybe_prune(sec);
+
     // SLIDING WINDOW: state is cleared only at the window boundary, so a scan spread over
     // up to SCAN_WINDOW seconds still accumulates.
     if sec.saturating_sub(st.scan.window_start) >= st.cfg.scan_window {
@@ -689,6 +692,28 @@ fn syn(st: &mut WorkerState, ep: Endpoints, sec: u64, usec: u32) {
                 InfectionDetail { sec, usec, src_port: ep.src_port, dst_ip: ep.dst },
             );
         }
+    }
+
+    // NEW heuristic (no sensor.py counterpart): a timer-driven reconnect pattern to one
+    // destination - the low-and-slow C2 shape every volume heuristic is built to miss. See
+    // heuristics/beacon.rs for the statistic and its false-positive honesty.
+    if st.cfg.use_heuristics
+        && !ep.dst.is_localhost()
+        && st.heuristic_enabled("beaconing")
+        && st.beacon.observe(ep.src, ep.dst, ep.dst_port, sec)
+        && !st.whitelist.check_whitelisted_ip(ep.src)
+    {
+        emit_ep(
+            st,
+            sec,
+            usec,
+            ep,
+            PROTO::TCP,
+            TRAIL::IPORT,
+            Field::Text(ep.dst.addr_port(ep.dst_port).as_str().to_string()),
+            "potential periodic beaconing",
+            "(heuristic)",
+        );
     }
 }
 

@@ -1014,3 +1014,47 @@ fn http_heuristic_under_whitelisted_ancestor_stays_silent() {
     assert!(h.events().is_empty(), "{:?}", h.events());
     let _ = std::fs::remove_file(wl);
 }
+
+// --- periodic-beaconing heuristic (NEW, no sensor.py counterpart) -------------------
+
+#[test]
+fn a_timer_like_connection_pattern_fires_beaconing_once() {
+    let mut h = Harness::with_options(&[], HarnessOptions { use_heuristics: true, ..HarnessOptions::quiet() });
+    // nine SYNs to one destination, exactly 30 s apart: the eighth gap completes the verdict
+    for i in 0..12u64 {
+        h.feed_ip(&ipv4(6, "10.0.0.5", "93.184.216.34", &tcp(50000, 443, 0x02, b"")), 1000 + 30 * i);
+    }
+    let events = h.events();
+    assert_eq!(events.len(), 1, "one beacon event, not one per packet {events:?}");
+    assert!(events[0].trail.contains("93.184.216.34:443"), "{events:?}");
+    assert_eq!(events[0].info, "potential periodic beaconing");
+}
+
+#[test]
+fn jittered_and_local_traffic_stay_silent() {
+    let mut h = Harness::with_options(&[], HarnessOptions { use_heuristics: true, ..HarnessOptions::quiet() });
+    // human-ish jitter around a minute never crosses the CV bound
+    let gaps = [52u64, 71, 44, 83, 39, 66, 91, 48, 77, 55];
+    let mut sec = 1u64;
+    for g in gaps {
+        sec += g;
+        h.feed_ip(&ipv4(6, "10.0.0.5", "93.184.216.34", &tcp(50000, 443, 0x02, b"")), sec);
+    }
+    assert!(h.events().is_empty(), "{:?}", h.events());
+
+    // localhost destinations are excluded entirely
+    for i in 0..12u64 {
+        h.feed_ip(&ipv4(6, "10.0.0.5", "127.0.0.1", &tcp(50001, 8080, 0x02, b"")), 2000 + 30 * i);
+    }
+    assert!(h.events().is_empty(), "{:?}", h.events());
+}
+
+#[test]
+fn beaconing_off_with_heuristics_disabled() {
+    // quiet() = USE_HEURISTICS false: the default harness posture must produce nothing
+    let mut h = Harness::new(&[]);
+    for i in 0..12u64 {
+        h.feed_ip(&ipv4(6, "10.0.0.5", "93.184.216.35", &tcp(50000, 443, 0x02, b"")), 1000 + 30 * i);
+    }
+    assert!(h.events().is_empty(), "{:?}", h.events());
+}
