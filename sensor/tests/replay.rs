@@ -148,12 +148,17 @@ fn timing_heuristics_need_real_timestamps() {
     // Python 3) cannot reach the counting heuristics: this documents *why* the parity harness
     // reports those cases as a Rust surplus in --timestamps pcap mode.
     for case in read_manifest().into_iter().filter(|c| c.needs_pcap_timestamps) {
+        // Matched against the whole formatted event line, not just `info`: the reader above
+        // cannot tell "expect" from "expect_rust_only" strings apart, and a divergence pin may
+        // name a TRAIL ("203.0.113.77:443") rather than an info phrase.
         let mut h = harness_for_corpus(vec![]);
         h.replay(&case.pcap, true);
         let events = h.events();
+        let lines: Vec<String> =
+            events.iter().map(|e| format!("{} {} {} {} {}", e.src_ip, e.dst_ip, e.proto, e.trail, e.info)).collect();
         for expected in &case.expect {
             assert!(
-                !events.iter().any(|e| e.info.contains(expected.as_str())),
+                !lines.iter().any(|line| line.contains(expected.as_str())),
                 "case {}: {expected:?} must NOT fire with wall-clock timestamps",
                 case.name
             );
@@ -162,10 +167,12 @@ fn timing_heuristics_need_real_timestamps() {
         let mut h = harness_for_corpus(vec![]);
         h.replay(&case.pcap, false);
         let events = h.events();
+        let lines: Vec<String> =
+            events.iter().map(|e| format!("{} {} {} {} {}", e.src_ip, e.dst_ip, e.proto, e.trail, e.info)).collect();
         for expected in &case.expect {
             assert!(
-                events.iter().any(|e| e.info.contains(expected.as_str())),
-                "case {}: {expected:?} must fire with pcap timestamps, got {events:?}",
+                lines.iter().any(|line| line.contains(expected.as_str())),
+                "case {}: {expected:?} must fire with pcap timestamps, got {lines:?}",
                 case.name
             );
         }
