@@ -45,6 +45,39 @@ All contributions to static trails (adding new Maltrail detections, fixing false
 * [Maltrail detection nuances](https://github.com/stamparm/maltrail/wiki/Maltrail-detection-nuances) - Information about Maltrail detection nuances.
 * [Maltrail trails contribution](https://github.com/stamparm/maltrail/wiki/Maltrail-trails-contribution) - Information about Maltrail trails contribution.
 
+## Adding a feed
+
+Everything under `trails/feeds/` ends up in the trail set of every Maltrail install, so taking a new
+source is an editorial decision, not a plumbing one. "The module imports, the URL answers and the
+`__check__` string matches" is not a review - it only proves the feed is alive.
+
+What a feed pull request has to make the case for:
+
+* **A source that is known, or old enough to be judged.** A blocklist that appeared a few months ago,
+  run by people nobody can name, does not go in - whatever its labels claim, and however clean the
+  code is.
+* **A label the source has earned.** `known attacker`, `bad reputation` and similar are low severity
+  and forgiving of the odd mistake. `malicious` and `malware` assert that something is attacker
+  infrastructure, and belong to sources with a track record and a published process for handling
+  their own false positives.
+* **Corroboration, measured.** Established attacker lists agree with each other substantially - as of
+  writing, blocklist.de, greensnow and abuseipdb overlap by 29-56% of the smaller list. A list that
+  shares almost nothing with its peers is either genuinely novel or it is noise, and the pull request
+  is where that gets shown, not assumed.
+* **A read of the actual entries.** Public mining pools, Tor nodes, mixers, CDNs, public resolvers and
+  URL shorteners appear in IOC lists constantly, because malware *uses* them - an extractor that
+  works from incident write-ups cannot tell the pool from the miner. Maltrail already classes those
+  correctly (`trails/static/suspicious/crypto_mining.txt` and friends), so a feed that calls them
+  malicious is fighting our own curation.
+* **A readable `__url__`.** `core/update.py` prints it to the operator on every run. If the feed needs
+  several URLs, keep `__url__` human-readable and list them inside `fetch()` - see
+  `trails/feeds/dataplane.py`.
+* **A `__check__` that only appears in a healthy response.** It is what keeps a redirect, an error
+  page or an empty answer from silently emptying the feed.
+
+A wrong entry in a feed is not a cosmetic bug here: it is a detection this project vouches for, on
+someone else's network, with our name on it.
+
 ## Licensing
 
 By submitting code contributions to the Maltrail developers or via Git pull request, checking them into the Maltrail source code repository, it is understood (unless you specify otherwise) that you are offering the Maltrail copyright holders the unlimited, non-exclusive right to reuse, modify, and relicense the code. This is important because the inability to relicense code has caused devastating problems for other software projects. If you wish to specify special license conditions of your contributions, just say so when you send them.
