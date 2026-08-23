@@ -39,6 +39,9 @@ const BG_DARK_GRAY: &str = "\x1b[100m";
 /// 256-colour olive. The eight basic backgrounds are all taken, and reusing one would make a
 /// certificate hit look like a URL or an IP at a glance. Matches the reporting UI's CERT chip.
 const BG_OLIVE: &str = "\x1b[48;5;100m";
+/// TLS client fingerprints, next to UA's magenta: both answer "what is this client", one at the
+/// HTTP layer and one at the TLS layer.
+const BG_LIGHT_MAGENTA: &str = "\x1b[105m";
 
 /// `_log_colors` — the marker character inside `[x]`.
 fn log_color(marker: char) -> Option<&'static str> {
@@ -66,6 +69,7 @@ fn type_color(trail_type: &str) -> &'static str {
         "PATH" => BG_CYAN,
         "PORT" => BG_DARK_GRAY,
         "CERT" => BG_OLIVE,
+        "JA3" | "JA4" => BG_LIGHT_MAGENTA,
         _ => WHITE,
     }
 }
@@ -101,7 +105,7 @@ fn patterns() -> &'static Patterns {
         product: Regex::new(r"\((old sensor|rust sensor|sensor|server)\)").expect("product"),
         url: Regex::new(r"https?://[\w.:/?=]+").expect("url"),
         usage: Regex::new(r"(?s)^(.*Usage: )(.+)$").expect("usage"),
-        event_type: Regex::new(r"(TCP|UDP|ICMP|ICMPV6|IGMP|GRE|ESP|AH|SCTP) ([A-Z]+)").expect("event type"),
+        event_type: Regex::new(r"(TCP|UDP|ICMP|ICMPV6|IGMP|GRE|ESP|AH|SCTP) ([A-Z0-9]+)").expect("event type"),
         first_quoted: Regex::new(r#""([^"]+)""#).expect("first quoted"),
         info_word: Regex::new(r"\((malware|suspicious|malicious)\)").expect("info word"),
         parenthesised: Regex::new(r"\(([^)]+)\)").expect("parenthesised"),
@@ -308,6 +312,9 @@ mod tests {
             ("HTTP", BG_GREEN),
             ("PATH", BG_CYAN),
             ("PORT", BG_DARK_GRAY),
+            ("CERT", BG_OLIVE),
+            ("JA3", BG_LIGHT_MAGENTA),
+            ("JA4", BG_LIGHT_MAGENTA),
         ] {
             let line = format!("\"2026-01-01 00:00:00.000000\" s 1.2.3.4 1 5.6.7.8 2 TCP {trail_type} t i r");
             let text = colorize_always(&line);

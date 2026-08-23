@@ -87,7 +87,7 @@
   }
 
   // legacy Maltrail type colors (PREFERRED_TRAIL_COLORS + Google palette for the rest): blue DNS, red IP, etc.
-  var TYPE_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900", UA: "#990099", HTTP: "#109618", TCP: "#0099c6", UDP: "#dd4477", PORT: "#0f9b8e", IPORT: "#8d6e63", PATH: "#5c6bc0", CERT: "#827717" };   /* olive: furthest in Lab from all of the above (dE 42), 4.56:1 under the chip's white text, and reads against both the dark and light surface */
+  var TYPE_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900", UA: "#990099", HTTP: "#109618", TCP: "#0099c6", UDP: "#dd4477", PORT: "#0f9b8e", IPORT: "#8d6e63", PATH: "#5c6bc0", CERT: "#827717", JA3: "#ab47bc", JA4: "#ab47bc" };   /* the two TLS client fingerprints share a chip colour - same kind of indicator, and the label already says which */   /* olive: furthest in Lab from all of the above (dE 42), 4.56:1 under the chip's white text, and reads against both the dark and light surface */
   // Severity — the legacy Maltrail ladder (main.js), with one deliberate addition below for the sensor's
   // own heuristics. Order matters; default is MEDIUM. Feed trails keep the legacy verdict, so
   // "ipinfo (suspicious)" is still MEDIUM (an earlier v2 demoted a whole invented list of them to LOW).
