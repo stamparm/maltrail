@@ -88,9 +88,9 @@
 
   // legacy Maltrail type colors (PREFERRED_TRAIL_COLORS + Google palette for the rest): blue DNS, red IP, etc.
   var TYPE_COLORS = { DNS: "#3366cc", IP: "#dc3912", URL: "#ff9900", UA: "#990099", HTTP: "#109618", TCP: "#0099c6", UDP: "#dd4477", PORT: "#0f9b8e", IPORT: "#8d6e63", PATH: "#5c6bc0", CERT: "#827717" };   /* olive: furthest in Lab from all of the above (dE 42), 4.56:1 under the chip's white text, and reads against both the dark and light surface */
-  // Severity — ported EXACTLY from the legacy Maltrail UI (main.js) so evaluations match what users expect.
-  // Order matters; default is MEDIUM. (Earlier v2 wrongly added ipinfo/scanning/crawler/onion/tor to a LOW
-  // list that never existed, forcing e.g. "ipinfo (suspicious)" to LOW — it must be MEDIUM.)
+  // Severity — the legacy Maltrail ladder (main.js), with one deliberate addition below for the sensor's
+  // own heuristics. Order matters; default is MEDIUM. Feed trails keep the legacy verdict, so
+  // "ipinfo (suspicious)" is still MEDIUM (an earlier v2 demoted a whole invented list of them to LOW).
   var INFO_SEVERITY_KEYWORDS = [["malware", 3], ["adversary", 3], ["ransomware", 3],
     ["reputation", 1], ["attacker", 1], ["spammer", 1], ["compromised", 1], ["crawler", 1], ["scanning", 1]];
   function severityOf(info, ref) {
@@ -101,6 +101,13 @@
     if (ref.indexOf("malwaredomainlist") >= 0) return 3;
     if (info.indexOf("malware distribution") >= 0) return 2;
     if (info.indexOf("mass scanner") >= 0) return 1;
+    // A "(suspicious)" verdict the SENSOR reached on its own — long domain, beaconing, DGA/NXDOMAIN,
+    // the HTTP request signatures — is a "look here", not a hit: nothing corroborated it. Those rank
+    // below anything a feed actually listed, which is what keeps the noisy heuristics (long domain
+    // above all) out of the same bucket as a C2 domain. Silence one entirely with
+    // DISABLED_HEURISTICS / IGNORE_EVENTS_REGEX. Feed trails keep their legacy severity, and
+    // "(malware)" heuristics (sinkhole response, sinkholed by ...) are unaffected.
+    if (ref.indexOf("(heuristic)") >= 0 && /\(suspicious\)\s*$/.test(info)) return 1;
     for (var i = 0; i < INFO_SEVERITY_KEYWORDS.length; i++)
       if (info.indexOf(INFO_SEVERITY_KEYWORDS[i][0]) >= 0) return INFO_SEVERITY_KEYWORDS[i][1];
     return 2;   // default MEDIUM (legacy)

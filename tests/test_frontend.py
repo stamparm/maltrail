@@ -14,6 +14,7 @@ Adding the 'proto' column for #19569 needed exactly these three edits (header, c
 this file exists to make the fourth one impossible to forget.
 """
 
+import json
 import os
 import re
 import unittest
@@ -73,6 +74,59 @@ class TestGridColumns(unittest.TestCase):
         fields = set(re.findall(r"(\w+):", built.group(1))) | {"sev", "count", "first", "uid"}
         for key in keys:
             self.assertIn(key, fields, "column data-key=%r is not a field of a threat" % key)
+
+
+class TestSeverity(unittest.TestCase):
+    """How an event is ranked in the queue.
+
+    The sensor's own '(suspicious)' verdicts (long domain above all, and the HTTP request
+    signatures) are guesses nothing corroborated, so they rank LOW - while everything a feed
+    listed keeps the legacy Maltrail severity it has always had.
+    """
+
+    # info, ref, expected severity (3 high / 2 medium / 1 low)
+    CASES = (
+        ("long domain (suspicious)", "(heuristic)", 1),
+        ("potential periodic beaconing (suspicious)", "(heuristic)", 1),
+        ("potential sql injection (suspicious)", "(heuristic)", 1),
+        ("excessive no such domain (suspicious)", "(heuristic)", 1),
+        ("sinkhole response (malware)", "(heuristic)", 3),        # a heuristic, but a confirmed one
+        ("potential infection", "(heuristic)", 2),                # no class marker: legacy default
+        ("potential port scanning", "(heuristic)", 1),
+        ("ipinfo (suspicious)", "(static)", 2),                   # a feed said so: legacy MEDIUM
+        ("pua (suspicious)", "(static)", 2),
+        ("cobaltstrike (malware)", "(feed)", 3),
+        ("gophish (malicious)", "(feed)", 2),
+        ("mass scanner", "(static)", 1),
+        ("anything at all", "(custom)", 3),
+    )
+
+    def setUp(self):
+        self.js = _read(MAIN_JS)
+
+    def test_severity_of_real_events(self):
+        node = None
+        for candidate in ("node", "nodejs"):
+            if any(os.access(os.path.join(d, candidate), os.X_OK)
+                   for d in os.environ.get("PATH", "").split(os.pathsep) if d):
+                node = candidate
+                break
+        if not node:
+            raise unittest.SkipTest("needs node to evaluate severityOf()")
+        keywords = re.search(r"var INFO_SEVERITY_KEYWORDS = \[.*?\];", self.js, re.S)
+        fn = re.search(r"function severityOf\(info, ref\) \{.*?\n  \}", self.js, re.S)
+        self.assertTrue(keywords and fn, "could not find severityOf() in main.js")
+        script = keywords.group(0) + "\n" + fn.group(0) + """
+var cases = %s;
+cases.forEach(function (c) {
+  var got = severityOf(c[0], c[1]);
+  if (got !== c[2]) console.log("FAIL " + JSON.stringify(c) + " -> " + got);
+});
+console.log("OK");
+""" % json.dumps([list(c) for c in self.CASES])
+        import subprocess
+        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        self.assertEqual("OK", out.strip(), out.strip())
 
 
 class TestChartAxis(unittest.TestCase):
