@@ -16,7 +16,14 @@ __url__ = "(static)"
 def fetch():
     retval = {}
 
-    directories = [os.path.dirname(__file__)] + glob.glob(os.path.join(os.path.dirname(__file__), "*"))
+    # glob() hands back DIRECTORY ORDER, and both sorts below are stable, so within a group the
+    # order was whatever the filesystem happened to hold. An indicator listed in two piles is
+    # labelled by whichever file is read LAST, so that arbitrary order decided the label - and it
+    # changes when files are rewritten or the tree is re-checked out. Found by rebuilding the set
+    # before and after a commit that only edited comment lines: same 1,632,336 keys, 5,950 of them
+    # differently attributed (metamorfo vs latentbot, cobaltstrike-1 vs -2, ...). Sort by name
+    # first, so the same checkout builds the same trails.csv on every machine.
+    directories = [os.path.dirname(__file__)] + sorted(glob.glob(os.path.join(os.path.dirname(__file__), "*")))
     directories = sorted(directories, key=lambda _: -1 if any(__ in _ for __ in ("suspicious", "malicious")) else int("custom" in _))
 
     for directory in directories:
@@ -27,7 +34,7 @@ def fetch():
         if category == "static":
             category = None
 
-        for filename in glob.glob(os.path.join(directory, "*.csv")):
+        for filename in sorted(glob.glob(os.path.join(directory, "*.csv"))):
             __reference__ = "%s (static)" % os.path.splitext(os.path.basename(filename))[0]
             with open(filename, "rb") as f:
                 for line in f:
@@ -50,7 +57,7 @@ def fetch():
                     else:
                         retval[value.strip('.')] = (__info__, __reference__)
 
-        filenames = glob.glob(os.path.join(directory, "*.txt"))
+        filenames = sorted(glob.glob(os.path.join(directory, "*.txt")))
         filenames = sorted(filenames, key=lambda _: "history" in _)
 
         __reference__ = "(static)"

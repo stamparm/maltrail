@@ -112,5 +112,44 @@ class LeadingIPv4Test(unittest.TestCase):
             self.assertTrue(bogon_ip(address), trail)
 
 
+class StaticFileOrderTest(unittest.TestCase):
+    """The same checkout must build the same trail set on every machine.
+
+    An indicator listed in two piles is labelled by whichever file the loader reads LAST, and the
+    file list came straight from glob() - directory order. So the label depended on the order the
+    filesystem happened to hand back, which changes when files are rewritten or the tree is cloned
+    again. Measured on the real pile: rebuilding after a commit that touched only comment lines
+    moved 5,950 of 1,632,336 entries to a different family (metamorfo vs latentbot,
+    cobaltstrike-1 vs -2). Sorting the globs fixes the winner; this pins it."""
+
+    def _fetch_with(self, order):
+        """Run the loader with glob() forced into `order`, over two piles that share a key."""
+        import glob as _glob
+        import trails.static as S
+
+        real = _glob.glob
+
+        def fake(pattern):
+            hits = real(pattern)
+            return order(hits) if pattern.endswith("*.txt") else hits
+
+        S.glob.glob = fake
+        try:
+            return S.fetch()
+        finally:
+            S.glob.glob = real
+
+    def test_the_label_does_not_depend_on_directory_order(self):
+        static = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "trails", "static")
+        if not os.path.isdir(static):
+            self.skipTest("no trails/static")
+        forward = self._fetch_with(lambda hits: hits)
+        backward = self._fetch_with(lambda hits: list(reversed(hits)))
+        self.assertEqual(len(forward), len(backward))
+        differing = [k for k in forward if forward[k] != backward.get(k)]
+        self.assertEqual(differing[:5], [],
+                         "%d trail(s) are labelled by whatever order the filesystem returns" % len(differing))
+
+
 if __name__ == "__main__":
     unittest.main()
