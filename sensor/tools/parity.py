@@ -84,9 +84,10 @@ to let it disappear is what stops someone "restoring parity" by putting the dete
      Rust sensor tracks per-(src, dst, dst_port) TCP SYN inter-arrival gaps and fires once when
      the coefficient of variation drops to a timer-like level (>= 8 gaps, CV <= 0.2, interval in
      [5 s, 6 h]; sub-5 s retries never advance the clock; an outage longer than 6 h resets the
-     history). Every event is rated `potential periodic beaconing` - pollers ARE beacons, so this
-     is suspicious, never `malware` - and can be silenced by name with `DISABLED_HEURISTICS
-     beaconing`. Python emits nothing here; Rust emits one event. Pinned by corpus case
+     history). Every event is rated `potential periodic beaconing (suspicious)` - pollers ARE
+     beacons, so this is never `malware` - and can be silenced by name with `DISABLED_HEURISTICS
+     beaconing`, or per-destination by whitelisting the address it beacons to (the dst side is
+     checked as well as the src). Python emits nothing here; Rust emits one event. Pinned by corpus case
      `tcp_periodic_beacon`.
 
   5. TLS client fingerprints, JA3/JA4 (no `sensor.py` counterpart; process.rs

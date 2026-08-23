@@ -1061,7 +1061,31 @@ fn a_timer_like_connection_pattern_fires_beaconing_once() {
     let events = h.events();
     assert_eq!(events.len(), 1, "one beacon event, not one per packet {events:?}");
     assert!(events[0].trail.contains("93.184.216.34:443"), "{events:?}");
-    assert_eq!(events[0].info, "potential periodic beaconing");
+    assert_eq!(events[0].info, "potential periodic beaconing (suspicious)");
+}
+
+#[test]
+fn a_whitelisted_destination_stays_silent() {
+    // the tuning knob for pollers: whitelist the NTP pool / monitoring endpoint, not the victim
+    let path = std::env::temp_dir().join(format!(
+        "mt-beacon-whitelist-{}-{:x}",
+        std::process::id(),
+        std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().as_nanos()
+    ));
+    std::fs::write(&path, "93.184.216.34\n").expect("write user whitelist");
+    let mut h = Harness::with_options(
+        &[],
+        HarnessOptions {
+            use_heuristics: true,
+            extra: vec![format!("USER_WHITELIST {}", path.display())],
+            ..HarnessOptions::quiet()
+        },
+    );
+    for i in 0..12u64 {
+        h.feed_ip(&ipv4(6, "10.0.0.5", "93.184.216.34", &tcp(50000, 443, 0x02, b"")), 1000 + 30 * i);
+    }
+    assert!(h.events().is_empty(), "{:?}", h.events());
+    let _ = std::fs::remove_file(&path);
 }
 
 #[test]
