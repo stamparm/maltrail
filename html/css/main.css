@@ -93,7 +93,9 @@
   .toolbar .spacer{flex:1}
   .seg{display:flex;border:1px solid var(--line-solid);border-radius:8px;overflow:hidden}
   .seg button{background:transparent;border:none;color:var(--muted);padding:6px 11px;font-size:11.5px;cursor:pointer;font-family:var(--mono)}
-  .seg button.on{background:var(--surface-2);color:var(--text)}
+  /* the active segment has to read at a glance in BOTH themes: in light mode --surface-2 sits a
+     hair away from the surface, so the selected page size was almost invisible (#19575) */
+  .seg button.on{background:var(--accent-dim);color:var(--text);font-weight:600;box-shadow:inset 0 0 0 1px var(--accent)}
 
   /* ---------- events grid ---------- */
   .grid-wrap{background:var(--surface);border:1px solid var(--line-solid);border-radius:var(--r);overflow-x:auto}   /* too-wide table scrolls inside its border; page never scrolls horizontally */
