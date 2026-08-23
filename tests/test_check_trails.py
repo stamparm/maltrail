@@ -117,6 +117,74 @@ class ScanTest(unittest.TestCase):
         self.assertEqual(inert, [], "inert trail(s) in trails/static: %s" % inert[:5])
 
 
+class HeaderTest(unittest.TestCase):
+    """'# Reference:' / '# Aliases:' header hygiene (#19597).
+
+    core/httpd.py finds a trail's source citation with a literal `rfind(b"\\n# Reference:")`, so a
+    misspelled header is not a cosmetic problem: the lookup walks past it and the drawer shows the
+    citation of an unrelated pile above. Both directions are asserted, because a checker that
+    flags every comment line is as useless as one that flags nothing."""
+
+    BAD = [
+        ("# Referecne: https://example.invalid/a", "misspelled"),
+        ("# Refernce: https://example.invalid/a", "misspelled"),
+        ("# Referenced: https://example.invalid/a", "misspelled"),
+        ("# Alises: foo, bar", "misspelled"),
+        ("#Reference: https://example.invalid/a", "space"),
+        ("#  Reference: https://example.invalid/a", "space"),
+        ("## Reference: https://example.invalid/a", "'#'"),
+        ("# reference: https://example.invalid/a", "case"),
+        ("# Reference:: https://example.invalid/a", "colons"),
+        ("# Reference:https://example.invalid/a", "space"),
+        ("# Reference:  https://example.invalid/a", "space"),
+        ("# Reference: https://example.invalid/a ", "trailing"),
+        ("# Reference: ", "trailing"),
+    ]
+
+    GOOD = [
+        "# Reference: https://example.invalid/a",
+        "# Aliases: foo, bar",
+        "# Reference:",                      # deliberate pile break: no citation for what follows
+        "# Copyright (c) 2014-2026 Maltrail developers",
+        "# Note: this pile came from a sandbox run",
+        "# Generic trails:",
+        "# TITLE-HOST/IP=airbot admin panel",
+        "# evil.example",                    # a commented-out entry
+    ]
+
+    def test_every_malformed_header_is_caught(self):
+        for line, hint in self.BAD:
+            why = C.header_problem(line)
+            self.assertTrue(why, "not caught: %r" % line)
+            self.assertIn(hint, why, "%r reported as %r, expected something about %r" % (line, why, hint))
+
+    def test_ordinary_comments_are_left_alone(self):
+        for line in self.GOOD:
+            self.assertIsNone(C.header_problem(line), "false positive on %r" % line)
+
+    def test_line_numbers_come_back(self):
+        tmp = tempfile.mkdtemp()
+        try:
+            os.makedirs(os.path.join(tmp, "malware"))
+            with open(os.path.join(tmp, "malware", "sample.txt"), "wb") as f:
+                f.write(u"# Reference: https://example.invalid/a\n"
+                        u"good.biz\n"
+                        u"# Referecne: https://example.invalid/b\n"
+                        u"other.biz\n".encode("utf8"))
+            found = C.header_problems(tmp)
+            self.assertEqual([(_[1], "misspelled" in _[3]) for _ in found], [(3, True)])
+        finally:
+            import shutil
+            shutil.rmtree(tmp)
+
+    def test_the_real_static_pile_has_clean_headers(self):
+        static = os.path.join(ROOT, "trails", "static")
+        if not os.path.isdir(static):
+            self.skipTest("no trails/static")
+        found = C.header_problems(static)
+        self.assertEqual(found, [], "malformed header(s): %s" % [(_[0], _[1], _[3]) for _ in found[:5]])
+
+
 class WhitelistShadowTest(unittest.TestCase):
     """A trail whose PARENT domain is whitelisted loads into trails.csv and is then dropped by the sensor's
     loader, so it is present, counted and unable to match.

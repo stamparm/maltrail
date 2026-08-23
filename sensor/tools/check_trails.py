@@ -72,6 +72,7 @@ it as unreachable, which this tool used to do, was the false positive that kept 
 """
 
 import argparse
+import difflib
 import io
 import os
 import re
@@ -215,6 +216,70 @@ def classify(key, whitelist=None):
         return ("warn", "separator lookalike (%s): matches %r, which is probably not the domain in the report"
                 % (", ".join(lookalike), wire))
     return None                                  # includes deliberate IDNs: they match their punycode
+
+
+# The two header lines a trail file carries above its entries. They are not decoration: the
+# dashboard quotes the '# Reference:' above a matched trail as its source citation, and downstream
+# tooling reads both. A typo ('# Referecne:', '# Reference:https://...', a second colon) is invisible
+# in review, survives forever, and silently drops the citation - which is what #19597 is about.
+HEADER_KEYS = ("reference", "aliases")
+HEADER_CANONICAL = re.compile(r"^# (Reference|Aliases): \S")
+# A comment that OPENS with a word and a colon is a header candidate; anything else is prose.
+HEADER_CANDIDATE = re.compile(r"^(#+)(\s*)([A-Za-z][A-Za-z ]{2,20}?)\s*(:+)(.*)$")
+
+
+def header_problem(raw):
+    """Why this comment line is a malformed '# Reference:' / '# Aliases:' header, or None."""
+    match = HEADER_CANDIDATE.match(raw.rstrip('\n'))
+    if not match:
+        return None
+    hashes, lead, key, colons, value = match.groups()
+    folded = key.lower()
+    if folded not in HEADER_KEYS:
+        # Near-misses only: 'Referecne', 'Refernce', 'Alises'. Everything else is a normal comment
+        # ('# Note:', '# Generic trails:'), which this must not touch.
+        if not difflib.get_close_matches(folded, HEADER_KEYS, n=1, cutoff=0.82):
+            return None
+        return "misspelled header %r (expected 'Reference' or 'Aliases')" % key
+    line = raw.rstrip('\n')
+    if HEADER_CANONICAL.match(line) and line == line.rstrip():
+        return None
+    if hashes != '#':
+        return "one '#' starts a header, not %d" % len(hashes)
+    if lead != ' ':
+        return "exactly one space belongs between '#' and the header name"
+    if key not in ("Reference", "Aliases"):
+        return "header case: %r should be %r" % (key, key.capitalize())
+    if colons != ':':
+        return "%d colons after the header name" % len(colons)
+    if not value.strip():
+        # A bare '# Reference:' is deliberate: it breaks the pile so the entries below it are NOT
+        # attributed to the citation above (core/httpd.py takes the nearest header above a match).
+        # Only the invisible trailing space on one is worth reporting.
+        return None if not value else "trailing whitespace on an empty header"
+    if not value.startswith(' ') or value.startswith('  '):
+        return "exactly one space belongs after the colon"
+    if line != line.rstrip():
+        return "trailing whitespace"
+    return "malformed header"
+
+
+def header_problems(root):
+    """[(path, line, text, reason)] for every malformed Reference/Aliases header under `root`."""
+    found = []
+    for base, _, files in os.walk(root):
+        for name in sorted(files):
+            if not name.endswith(".txt"):
+                continue
+            path = os.path.join(base, name)
+            with io.open(path, encoding="utf8", errors="replace") as handle:
+                for number, line in enumerate(handle, 1):
+                    if not line.startswith('#'):
+                        continue
+                    why = header_problem(line)
+                    if why:
+                        found.append((path, number, line.rstrip('\n'), why))
+    return found
 
 
 def problems(root, whitelist=None):
@@ -465,10 +530,17 @@ def main():
     inert = [_ for _ in found if _[3] == "inert"]
     shadowed = [_ for _ in found if _[3] == "shadowed"]
     warned = [_ for _ in found if _[3] == "warn"]
+    headers = header_problems(options.path)
 
     if not options.quiet:
-        print("[i] %s: %d entry(ies) that cannot match, %d suspect, %d shadowed by the whitelist"
-              % (options.path, len(inert), len(warned), len(shadowed)))
+        print("[i] %s: %d entry(ies) that cannot match, %d suspect, %d shadowed by the whitelist, %d malformed header(s)"
+              % (options.path, len(inert), len(warned), len(shadowed), len(headers)))
+        if headers:
+            print("\n[!] malformed '# Reference:' / '# Aliases:' header(s) (%d)" % len(headers))
+            for path, number, line, why in headers[:options.limit]:
+                print("      %s:%d  %s\n          %s" % (os.path.relpath(path, ROOT), number, why, line[:110]))
+            if len(headers) > options.limit:
+                print("      ... and %d more" % (len(headers) - options.limit))
         for label, group in (("cannot match", inert), ("suspect", warned)):
             buckets = {}
             for path, number, key, _, why in group:
@@ -495,12 +567,12 @@ def main():
             if len(by_parent) > options.limit:
                 print("      ... and %d more parent(s)" % (len(by_parent) - options.limit))
 
-        if not inert and not warned and not shadowed:
+        if not inert and not warned and not shadowed and not headers:
             print("[i] no unreachable trails")
 
     # Shadowing is a COLLISION between two operator-visible lists, not a defect in the entry, so it is reported
     # and does not fail the gate: which of the two wins is a policy call (see the note in the module docstring).
-    return 1 if (inert or (options.strict and warned)) else 0
+    return 1 if (inert or headers or (options.strict and warned)) else 0
 
 
 if __name__ == "__main__":
