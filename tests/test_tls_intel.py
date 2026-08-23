@@ -177,6 +177,23 @@ class TestCert(unittest.TestCase):
         self.assertEqual(T.extract_cert_names(b"\x00" * 100), [])
 
 
+class TestGoldenVectors(unittest.TestCase):
+    # The same checked-in corpus the Rust port replays (sensor/tests/vectors.rs) - generated
+    # FROM this module by sensor/tools/gen_ja_vectors.py, so both implementations are held to
+    # one file. Guards against future regressions here, not just port drift.
+    VECTORS = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "sensor", "tests", "vectors", "client_hellos.tsv")
+
+    def test_corpus_reproduces(self):
+        with open(self.VECTORS) as f:
+            rows = [line.rstrip("\n").split("\t") for line in f if line and not line.startswith("#")]
+        self.assertGreaterEqual(len(rows), 200)
+        for name, hexdata, sni, ja3, ja4 in rows:
+            r = T.parse_client_hello(bytes.fromhex(hexdata))
+            self.assertEqual(r.get("sni") or "", sni, "%s: sni" % name)
+            self.assertEqual(r.get("ja3") or "", ja3, "%s: ja3" % name)
+            self.assertEqual(r.get("ja4") or "", ja4, "%s: ja4" % name)
+
+
 class TestMalformed(unittest.TestCase):
     def test_truncated_ch(self):
         full = build_ch("trunc.example.com")
