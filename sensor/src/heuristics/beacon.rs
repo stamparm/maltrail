@@ -253,4 +253,28 @@ mod tests {
         // alternating ports split the history: neither side reaches MIN_INTERVALS
         assert!(!b.observe(Ip::V4(1), Ip::V4(2), 443, 1000 + 30 * (MIN_INTERVALS + 1) as u64));
     }
+
+    #[test]
+    fn hostile_clocks_stay_bounded() {
+        let mut b = BeaconTracker::default();
+        // u64 extremes: the seed itself alerts nothing...
+        assert!(!b.observe(Ip::V4(1), Ip::V4(2), 443, u64::MAX));
+        // ...a clock jumping backwards records no gap at all...
+        assert!(!b.observe(Ip::V4(1), Ip::V4(2), 443, 0));
+        // ...and an equal or overflowing second neither wraps nor fires
+        assert!(!b.observe(Ip::V4(1), Ip::V4(2), 443, u64::MAX));
+
+        // a gap of EXACTLY MAX_INTERVAL_SECS is still a plausible timer
+        let mut exact = BeaconTracker::default();
+        let fired =
+            (0..=MIN_INTERVALS).any(|i| exact.observe(Ip::V4(3), Ip::V4(4), 443, 1000 + i as u64 * MAX_INTERVAL_SECS));
+        assert!(fired);
+
+        // a permanent sub-MIN_INTERVAL drumbeat manufactures no history to judge
+        let mut drum = BeaconTracker::default();
+        for i in 0..200u64 {
+            assert!(!drum.observe(Ip::V4(5), Ip::V4(6), 443, 1000 + i * (MIN_INTERVAL_SECS - 1)));
+        }
+        assert_eq!(drum.len(), 1);
+    }
 }
