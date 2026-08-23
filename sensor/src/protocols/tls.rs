@@ -160,11 +160,23 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
                 ext_types.push(etype);
             }
             match etype {
-                0x0000 => sni = parse_sni_extension(body, true),
+                // `_parse_sni()` takes the name bytes BEFORE looking at the entry type, and
+                // its `take()` raises past the body - a raised exception fails the WHOLE
+                // Python parse, unlike every list helper here (they loop on `left()`).
+                0x0000 => match parse_sni_extension(body, true) {
+                    Ok(parsed) => sni = parsed,
+                    Err(FatalTruncation) => return None,
+                },
                 0x000a => curves = u16_list(body, true, true)?,
                 0x000b => ecpf = u8_list(body, true)?,
                 0x000d => sig_algs = u16_list(body, true, true)?,
-                0x0010 => alpn0 = alpn_first(body),
+                // `_parse_alpn_first()` is the one helper that can RAISE past its buffer
+                // (the others loop on `left()`), and a raised exception fails the WHOLE
+                // Python parse - hence the Err arm. A short header only means "no ALPN".
+                0x0010 => match alpn_first(body) {
+                    Ok(alpn) => alpn0 = alpn,
+                    Err(FatalTruncation) => return None,
+                },
                 0x002b => sup_vers = u8len_u16_list(body, true)?,
                 _ => {}
             }
@@ -197,15 +209,13 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
     let sni_flag = if sni.is_some() { "d" } else { "i" };
     let nc = ciphers.len().min(99);
     let ne = ext_types.len().min(99);
-    // First protocol's first+last byte. Python chr()s raw bytes and then ascii-encodes the
-    // whole fingerprint, so a non-ASCII ALPN byte fails the entire Python parse ({}) - hence
-    // the all-ascii requirement here rather than a lossy substitution.
+    // First protocol's first+last byte, chr()-mapped exactly like the reference: `u8 as char`
+    // IS chr(byte) (U+0000..U+00FF), so a non-ASCII ALPN byte lands in ja4_a verbatim - which
+    // is what core/tls_intel.py produces too (chr() never raises for a byte; there is no
+    // UnicodeEncodeError on this path).
     let alpn2 = match alpn0 {
-        Some(ref p) if !p.is_empty() && p.iter().all(|b| b.is_ascii()) => {
-            format!("{}{}", p[0] as char, p[p.len() - 1] as char)
-        }
-        Some(_) => return None, // mirrors Python's UnicodeEncodeError -> {}
-        None => "00".to_string(),
+        Some(ref p) if !p.is_empty() => format!("{}{}", p[0] as char, p[p.len() - 1] as char),
+        _ => "00".to_string(), // no ALPN extension, or an empty protocol list
     };
     let ja4_a = format!("t{ver2}{sni_flag}{nc:02}{ne:02}{alpn2}");
     let mut sorted_ciphers = ciphers.clone();
@@ -283,41 +293,59 @@ fn u8len_u16_list(body: &[u8], drop_grease: bool) -> Option<Vec<u16>> {
     Some(out)
 }
 
-/// `core/tls_intel.py:_parse_alpn_first()` - the first protocol name offered, raw bytes.
-fn alpn_first(body: &[u8]) -> Option<Vec<u8>> {
-    let mut r = Reader::new(body);
-    if r.left() < 2 {
-        return None;
-    }
-    r.u16()?; // alpn list length
-    if r.left() < 1 {
-        return None;
-    }
-    let plen = r.u8()? as usize;
-    Some(r.take(plen)?.to_vec())
-}
+/// Marks the one fatal malformation these helpers can hit: declared bytes running past the
+/// extension body, which Python's `_Trunc` turns into "no fingerprint at all".
+#[derive(Debug, PartialEq, Eq)]
+pub struct FatalTruncation;
 
-/// `core/tls_intel.py:_parse_sni()` / `core/quic_sni.py`'s inline equivalent.
-pub fn parse_sni_extension(body: &[u8], lowercase: bool) -> Option<String> {
+/// `core/tls_intel.py:_parse_alpn_first()` - the first protocol name offered, raw bytes.
+///
+/// Three outcomes, because the Python helper mixes two failure styles: a cut-short fixed
+/// header makes it RETURN None ("no ALPN offered" - parsing continues), while protocol-name
+/// bytes overrunning the body make its `take()` RAISE `_Trunc` - and a raised exception
+/// fails the WHOLE parse. `Ok(None)` vs `Err(FatalTruncation)` keeps those apart.
+fn alpn_first(body: &[u8]) -> Result<Option<Vec<u8>>, FatalTruncation> {
     let mut r = Reader::new(body);
-    if r.left() < 2 {
-        return None;
-    }
-    r.u16()?; // server_name_list length
-    while r.left() >= 3 {
-        let ntype = r.u8()?;
-        let nlen = r.u16()? as usize;
-        let name = r.take(nlen)?;
-        if ntype == 0x00 {
-            let host = std::str::from_utf8(name).ok()?;
-            if !host.is_ascii() {
-                return None;
-            }
-            let host = if lowercase { host.to_ascii_lowercase() } else { host.to_string() };
-            return if is_hostname(&host, lowercase) { Some(host) } else { None };
+    if r.left() >= 2 {
+        r.p += 2; // alpn list length (bounds only - the name length below is what matters)
+        if r.left() >= 1 {
+            let plen = r.u8().unwrap() as usize;
+            return if r.left() >= plen {
+                Ok(Some(r.take(plen).unwrap().to_vec()))
+            } else {
+                Err(FatalTruncation) // `_Trunc` on the Python side: no fingerprint at all
+            };
         }
     }
-    None
+    Ok(None)
+}
+
+/// `core/tls_intel.py:_parse_sni()`. Three outcomes, like `alpn_first`: `Ok(None)` covers
+/// every survivable malformation (short list header, non-UTF8/non-ASCII/junk host, no
+/// host_name entry), while `Err(FatalTruncation)` marks the one fatal case - an entry whose
+/// declared name length overruns the extension body, where Python's `take()` raises `_Trunc`
+/// and the WHOLE ClientHello parse is discarded. (The QUIC path uses `quic.rs`'s own parser,
+/// which treats that overrun as survivable - faithfully to `core/quic_sni.py`.)
+pub fn parse_sni_extension(body: &[u8], lowercase: bool) -> Result<Option<String>, FatalTruncation> {
+    let mut r = Reader::new(body);
+    if r.left() >= 2 {
+        r.p += 2; // server_name_list length (bounds only)
+        while r.left() >= 3 {
+            // header reads cannot fail under `left() >= 3`
+            let ntype = r.u8().unwrap();
+            let nlen = r.u16().unwrap() as usize;
+            let Some(name) = r.take(nlen) else { return Err(FatalTruncation) };
+            if ntype == 0x00 {
+                let Ok(host) = std::str::from_utf8(name) else { return Ok(None) };
+                if !host.is_ascii() {
+                    return Ok(None);
+                }
+                let host = if lowercase { host.to_ascii_lowercase() } else { host.to_string() };
+                return Ok(if is_hostname(&host, lowercase) { Some(host) } else { None });
+            }
+        }
+    }
+    Ok(None)
 }
 
 /// Build a minimal TLS ClientHello carrying `sni` — mirrors
@@ -423,7 +451,7 @@ mod tests {
         srv.extend_from_slice(b"abc");
         let mut lst = (srv.len() as u16).to_be_bytes().to_vec();
         lst.extend_from_slice(&srv);
-        assert_eq!(parse_sni_extension(&lst, true), None);
+        assert_eq!(parse_sni_extension(&lst, true), Ok(None));
     }
 
     /// Vectors generated by `core/tls_intel.py:parse_client_hello()` over these exact bytes -
