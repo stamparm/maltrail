@@ -129,6 +129,88 @@ console.log("OK");
         self.assertEqual("OK", out.strip(), out.strip())
 
 
+class TestFamily(unittest.TestCase):
+    """family: pulls a campaign back together.
+
+    Feeds ship a big dump split into interlock / interlock-1 / interlock-2 - one incident under
+    three names, 13% of the trail set on a normal box. The shard suffix is 1-2 digits, so a name
+    that ends in a longer number (a CVE) has to survive intact.
+    """
+
+    CASES = (
+        ("interlock-1 (malware)", "interlock"),
+        ("interlock-2 (malware)", "interlock"),
+        ("interlock (malware)", "interlock"),
+        ("ek clearfake-1 (malicious)", "ek clearfake"),
+        ("apt gamaredon-1 (malware)", "apt gamaredon"),
+        ("cobaltstrike-2 (malware)", "cobaltstrike"),
+        ("apt unc6691-1 (malware)", "apt unc6691"),      # digits in the name itself stay
+        ("lummac2 (malware)", "lummac2"),
+        ("cve-2021-44228 (malware)", "cve-2021-44228"),  # not a shard suffix
+        ("long domain (suspicious)", "long domain"),
+        ("mass scanner", "mass scanner"),                # no class marker at all
+    )
+
+    def setUp(self):
+        self.js = _read(MAIN_JS)
+
+    def test_family_of_real_info_fields(self):
+        node = None
+        for candidate in ("node", "nodejs"):
+            if any(os.access(os.path.join(d, candidate), os.X_OK)
+                   for d in os.environ.get("PATH", "").split(os.pathsep) if d):
+                node = candidate
+                break
+        if not node:
+            raise unittest.SkipTest("needs node to evaluate familyOf()")
+        fn = re.search(r"var _famCache = .*?function familyOf\(info\) \{.*?\n  \}", self.js, re.S)
+        self.assertTrue(fn, "could not find familyOf() in main.js")
+        script = fn.group(0) + """
+var cases = %s;
+cases.forEach(function (c) {
+  var got = familyOf(c[0]);
+  if (got !== c[1]) console.log("FAIL " + JSON.stringify(c[0]) + " -> " + JSON.stringify(got));
+});
+console.log("OK");
+""" % json.dumps([list(c) for c in self.CASES])
+        import subprocess
+        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        self.assertEqual("OK", out.strip(), out.strip())
+
+    def test_family_token_filters_rows(self):
+        # the wiring, not just the helper: run the real query matcher over threat objects
+        node = None
+        for candidate in ("node", "nodejs"):
+            if any(os.access(os.path.join(d, candidate), os.X_OK)
+                   for d in os.environ.get("PATH", "").split(os.pathsep) if d):
+                node = candidate
+                break
+        if not node:
+            raise unittest.SkipTest("needs node to evaluate matchPos()")
+        # _lc ... matchPos is one contiguous block in main.js; take it whole rather than stitching
+        start, end = self.js.find("function _lc(x)"), self.js.find("function matchToken(")
+        self.assertTrue(0 < start < end, "the query-matching block moved in main.js")
+        script = """
+var state = { triage: {} };
+function setList() { return []; } function displayPortSet() { return []; }
+function tagsOf() { return []; } function getNote() { return ""; }
+function portDir() { return null; } function hay(t) { return (t.info + " " + t.trail).toLowerCase(); }
+""" + self.js[start:end] + """
+var shard1 = { info: "interlock-1 (malware)", trail: "a.example" },
+    shard2 = { info: "interlock-2 (malware)", trail: "b.example" },
+    other  = { info: "cobaltstrike-1 (malware)", trail: "c.example" };
+function want(ok, why) { if (!ok) console.log("FAIL " + why); }
+want(matchPos(shard1, "family:interlock"), "family:interlock misses interlock-1");
+want(matchPos(shard2, "family:interlock"), "family:interlock misses interlock-2");
+want(!matchPos(other, "family:interlock"), "family:interlock matches an unrelated family");
+want(!matchPos(shard2, "info:interlock-1"), "info: should still be the exact-ish field");
+console.log("OK");
+"""
+        import subprocess
+        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        self.assertEqual("OK", out.strip(), out.strip())
+
+
 class TestChartAxis(unittest.TestCase):
     """The y axis of a count chart: integer steps, no repeated label, and it must be drawn at all.
 

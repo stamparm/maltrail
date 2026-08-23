@@ -1075,7 +1075,7 @@
     var m = document.getElementById("ctxmenu"); if (!m) return; m.innerHTML = "";
     var h = document.createElement("div"); h.className = "ctxnote qhelp-h"; h.textContent = "Search syntax \u00b7 space = AND \u00b7 click to try"; m.appendChild(h);
     [["sev:high", "high severity"], ["type:dns,http", "type (OR-list)"], ["port:443,8080", "port list"], ["port:1000-2000", "port range"], ["port:>1024", "port compare"],
-     ["count:>=100", "noisy threats"], ["src:10.0.0.0/8", "source subnet (CIDR)"], ["dst:8.8.8.8", "destination"], ["dir:out", "flagged reply (→ out)"], ["dir:in", "flagged request (← in)"], ["trail:*.ru", "trail wildcard"], ["sensor:r2d2", "by sensor"], ["class:malware", "threat class"], ["tag:apt", "your tag"],
+     ["count:>=100", "noisy threats"], ["src:10.0.0.0/8", "source subnet (CIDR)"], ["dst:8.8.8.8", "destination"], ["dir:out", "flagged reply (→ out)"], ["dir:in", "flagged request (← in)"], ["trail:*.ru", "trail wildcard"], ["sensor:r2d2", "by sensor"], ["class:malware", "threat class"], ["family:interlock", "campaign, all shards"], ["tag:apt", "your tag"],
      ["type:dns sev:high", "both (AND)"], ["sev:high,med OR type:http", "OR / lists"], ["NOT type:dns", "negate (or -)"], ["(sev:high OR sev:med) type:http", "group ( )"], ['info:"cobalt strike"', "quoted phrase"]].forEach(function (e) {
       var b = document.createElement("button"); b.type = "button"; b.className = "ctxitem qhelp-i";
       b.innerHTML = '<span class="qk">' + e[0] + '</span><span class="qd">' + e[1] + '</span>';
@@ -1242,6 +1242,7 @@
     var bare = ("" + t.trail).replace(/\([^)]*\)/g, "").replace(/\\\(/g, "").replace(/\\\)/g, "").trim();
     var domish = (/^[a-z0-9._-]+\.[a-z]{2,}$/i.test(bare)) ? bare : null;   // looks like a hostname
     var ntShort = nt.length > 26 ? nt.slice(0, 25) + "…" : nt;
+    var fam = familyOf(t.info), famShort = fam.length > 26 ? fam.slice(0, 25) + "…" : fam;
     var items = [
       ["Hide this threat", function () { toggleHide(t.uidc); }, ""],
       "sep",
@@ -1255,11 +1256,15 @@
       "sep",
       ["Filter → only this source", function () { addFilter("src:" + src); }, ""],
       ["Filter → exclude this source", function () { addFilter("-src:" + src); }, ""],
-      ["Filter → only this trail", function () { addFilter("trail:" + nt); }, ""],
+      ["Filter → only this trail", function () { addFilter("trail:" + nt); }, ""]
+    ];
+    // the whole campaign, shards included - "interlock-2" alone hides two thirds of the incident
+    if (fam) items.push(["Filter → this campaign  " + famShort, function () { addFilter("family:" + fam); }, ""]);
+    items = items.concat([
       "sep",
       ["✎ Alias source  " + src, function () { openAlias(src); }, ""],
       ["Copy row", function () { copyText([t.uidc, src, setList(t.dstS).join("|"), setList(t.dportS).join("|"), t.type, t.trail, t.info].join("  "), null); }, ""]
-    ];
+    ]);
     // reputation lookups target the external malicious IP (trail-IP / public dst / public src), labelled with the
     // actual IP so it's unambiguous — never a pointless LAN-source lookup. Omitted for internal-only threats.
     var _ext = threatExtIP(t);
@@ -1379,8 +1384,24 @@
     return t._hay + " " + (state.tags[t.uidc] || "").toLowerCase();
   }
 
-  // ===== query syntax: field-scoped tokens (src: dst: port: proto: type: trail: info: tag: uid: sev: dir: status:) + * wildcards =====
+  // ===== query syntax: field-scoped tokens (src: dst: port: proto: type: trail: info: family: tag: uid: sev: dir: status:) + * wildcards =====
   function _lc(x) { return ("" + x).toLowerCase(); }
+  // The campaign behind an info field, with the class marker and the feed's shard suffix removed:
+  // "interlock-1 (malware)" -> "interlock". Big dumps arrive split into interlock / interlock-1 /
+  // interlock-2 (224k trails here, 13% of the set), which is one incident wearing three names, and
+  // nothing in the UI could pull them back together. Only a 1-2 digit suffix is a shard - a name
+  // like "cve-2021-44228" keeps its number.
+  // Memoized like normTrail: a family: term runs this per threat per keystroke, and info fields
+  // repeat across thousands of rows.
+  var _famCache = {}, _famCacheN = 0;
+  function familyOf(info) {
+    var c = _famCache[info];
+    if (c !== undefined) return c;
+    if (_famCacheN > 20000) { _famCache = {}; _famCacheN = 0; }
+    c = ("" + info).replace(/\s*\([^)]*\)\s*$/, "").replace(/-\d{1,2}$/, "").trim().toLowerCase();
+    _famCache[info] = c; _famCacheN++;
+    return c;
+  }
   // memoized: _fieldMatch is called per-threat, so a wildcard term (trail:*.ru) would otherwise recompile this
   // regex once PER ROW per keystroke (120k× at the threat cap). The pattern is identical across the whole pass.
   var _globCache = {}, _globN = 0;
@@ -1395,6 +1416,7 @@
       case "type": return [_lc(t.type)];
       case "trail": return [_lc(t.trail)];
       case "info": return [_lc(t.info)];
+      case "family": return [familyOf(t.info)];
       case "tag": return tagsOf(t.uidc).map(_lc);
       case "note": return [_lc(getNote(t.uidc))];
       case "uid": return [_lc(t.uidc)];
