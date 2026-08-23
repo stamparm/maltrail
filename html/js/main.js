@@ -526,20 +526,60 @@
     var cs = getComputedStyle(document.body), g = function (n, fb) { var v = (cs.getPropertyValue(n) || "").trim(); return v || fb; };
     return { surface: g("--surface", "#161D2B"), text: g("--text", "#E6EDF3"), muted: g("--muted", "#8A97AD"), faint: g("--faint", "#5A6678"), line: g("--line-solid", "#273145") };
   }
+  // Where the disc and its legend column sit horizontally. The pair used to be nailed to the left
+  // edge (cx = h/2 + 6), which is invisible in a narrow panel and glaring in a wide one: disc on the
+  // far left, legend beside it, half the canvas empty. Measure the widest legend row, then centre
+  // the whole block. `fs` is the legend's font size — it has to be the one the caller then draws
+  // with, or the measurement is off. Type sizes scale with the disc; see donutType().
+  function donutPlacement(ctx, cv, slices, R, fs) {
+    ctx.font = (fs || 12) + "px ui-monospace,monospace";
+    var colw = 0, n = Math.min(slices.length, 11);
+    slices.slice(0, n).forEach(function (s) {
+      var k = s.k.length > 24 ? s.k.slice(0, 23) + "…" : s.k;
+      colw = Math.max(colw, 16 + ctx.measureText(k + "   " + s.v).width);
+    });
+    colw += 26;
+    // A tall disc next to one thin column of ten rows reads as lopsided. With room, split the legend
+    // into two columns: the block gets wider and shorter, which sits better beside the circle.
+    var cols = (cv._w >= 1100 && n > 6) ? 2 : 1, rows = Math.ceil(n / cols);
+    var lw = cols * colw - 26, block = R * 2 + 26 + lw, x0 = Math.max(6, (cv._w - block) / 2);
+    return { cx: x0 + R, lx: x0 + R * 2 + 26, colw: colw, cols: cols, rows: rows };
+  }
+  // The legend column(s) beside a donut. Shared so the static and interactive donuts cannot drift.
+  function paintDonutLegend(ctx, tc, P, T, cy, slices, hovered) {
+    var n = Math.min(slices.length, 11), hits = [];
+    var top = Math.max(T.row / 2 + 4, cy - P.rows * T.row / 2 + T.row / 2);   // centred against the disc
+    slices.slice(0, n).forEach(function (s, i) {
+      var x = P.lx + Math.floor(i / P.rows) * P.colw, y = top + (i % P.rows) * T.row;
+      ctx.fillStyle = s.c || PALETTE[i % PALETTE.length]; ctx.fillRect(x, y - T.fs / 2 - 1, T.fs - 2, T.fs - 2);
+      ctx.fillStyle = tc.text; ctx.font = (i === hovered ? "600 " : "") + T.fs + "px ui-monospace,monospace";
+      ctx.textAlign = "left"; ctx.textBaseline = "middle";
+      var k = s.k.length > 24 ? s.k.slice(0, 23) + "…" : s.k, disp = k + "   " + s.v;
+      ctx.fillText(disp, x + 16, y);
+      if (s.token) hits.push({ x: x - 4, y: y - T.row / 2, w: 20 + ctx.measureText(disp).width, h: T.row - 3, token: s.token, label: s.k });
+    });
+    return hits;
+  }
+  // Type and ring thickness for a disc of radius R. A big disc drawn with the small-chart's 12px
+  // legend and 22px centre number looks like a mistake: the hole reads as empty and the legend as an
+  // afterthought. Ring also thins out as the disc grows (0.6R is chunky once R passes ~140).
+  function donutType(R) {
+    return { fs: R >= 140 ? 13 : 12, row: R >= 140 ? 22 : 19,
+             num: Math.round(Math.min(34, Math.max(22, R * 0.2))), hole: R >= 140 ? 0.66 : 0.6 };
+  }
   // centerNum/centerLabel: what the hole shows (e.g. 498 / "threats"). Slice ANGLES stay proportional to event
   // counts (s.v), but the center reflects the card's distinct metric — not the event total (which confused users).
   function drawDonut(cv, slices, centerNum, centerLabel) {
     var tc = themeColors();
-    var w = cv._w, h = cv._h, ctx = cctx(cv), cx = h / 2 + 6, cy = h / 2, R = h / 2 - 12, r = R * 0.6, a = -Math.PI / 2,
+    var w = cv._w, h = cv._h, ctx = cctx(cv), cy = h / 2, R = h / 2 - 12, T = donutType(R), r = R * T.hole, a = -Math.PI / 2,
+        P = donutPlacement(ctx, cv, slices, R, T.fs), cx = P.cx,
         total = slices.reduce(function (s, x) { return s + x.v; }, 0) || 1;
     slices.forEach(function (s, i) { var ang = s.v / total * Math.PI * 2; ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, R, a, a + ang); ctx.closePath(); ctx.fillStyle = s.c || PALETTE[i % PALETTE.length]; ctx.fill(); a += ang; });
     ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.fillStyle = tc.surface; ctx.fill();
     var centerVal = centerNum != null ? centerNum : total, centerTxt = centerLabel || "total";
-    ctx.fillStyle = tc.text; ctx.font = "600 22px ui-monospace,monospace"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(fmtN(centerVal), cx, cy - 6);
-    ctx.fillStyle = tc.muted; ctx.font = "10px system-ui"; ctx.fillText(centerTxt, cx, cy + 12);
-    var lx = cx + R + 26, ly = 18, hits = [];
-    slices.slice(0, 11).forEach(function (s, i) { ctx.fillStyle = s.c || PALETTE[i % PALETTE.length]; ctx.fillRect(lx, ly - 7, 10, 10); ctx.fillStyle = tc.text; ctx.font = "12px ui-monospace,monospace"; ctx.textAlign = "left"; ctx.textBaseline = "middle"; var k = s.k.length > 24 ? s.k.slice(0, 23) + "…" : s.k, disp = k + "   " + s.v; ctx.fillText(disp, lx + 16, ly); if (s.token) hits.push({ x: lx - 4, y: ly - 11, w: 20 + ctx.measureText(disp).width, h: 16, token: s.token, label: s.k }); ly += 19; });   // include the trailing "other" slice (was cut at 9); hit fits the text
-    return hits;
+    ctx.fillStyle = tc.text; ctx.font = "600 " + T.num + "px ui-monospace,monospace"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(fmtN(centerVal), cx, cy - T.num * 0.3);
+    ctx.fillStyle = tc.muted; ctx.font = Math.round(T.num * 0.42) + "px system-ui"; ctx.fillText(centerTxt, cx, cy + T.num * 0.5);
+    return paintDonutLegend(ctx, tc, P, T, cy, slices, -1);   // includes the trailing "other" slice (was cut at 9)
   }
   // Interactive donut: same look as drawDonut, but slices pop out + enlarge (with a soft glow) on hover,
   // a tooltip shows label · count · %, and slices are click-to-filter. Returns the legend hits (unchanged
@@ -549,12 +589,19 @@
     var total = slices.reduce(function (s, x) { return s + x.v; }, 0) || 1;
     var a = -Math.PI / 2;   // slice ANGLES are fixed; hover only changes each slice's radius/offset (s._t: 0→1 eased)
     slices.forEach(function (s) { var ang = s.v / total * Math.PI * 2; s._a0 = a; s._a1 = a + ang; s._mid = a + ang / 2; s._t = 0; a = s._a1; });
-    var hovered = -1, legendHits = [], raf = 0, tipEl = null;
-    // reserve 16px so the hover pop/grow/glow (below) can't spill outside the canvas and get clipped
-    function geo() { var h = cv._h; var R = h / 2 - 16; return { cx: h / 2 + 6, cy: h / 2, R: R, r: R * 0.6 }; }
+    var hovered = -1, legendHits = [], raf = 0, tipEl = null, place = null;
+    // reserve 16px so the hover pop/grow/glow (below) can't spill outside the canvas and get clipped.
+    // `place` is filled by the first paint (it needs a context to measure the legend); hit-testing
+    // only runs after that, and until then the old left-edge position is the honest fallback.
+    function geo() {
+      var h = cv._h, R = h / 2 - 16, T = donutType(R);
+      return { cx: place ? place.cx : h / 2 + 6, cy: h / 2, R: R, r: R * T.hole, T: T };
+    }
 
     function paint() {
-      var tc = themeColors(), ctx = cctx(cv), G = geo();
+      var tc = themeColors(), ctx = cctx(cv), R0 = cv._h / 2 - 16, T = donutType(R0);
+      place = donutPlacement(ctx, cv, slices, R0, T.fs);
+      var G = geo();
       slices.forEach(function (s, i) {
         var t = s._t, full = (s._a1 - s._a0) >= Math.PI * 2 - 0.001;   // a single (full-circle) slice must NOT pop — it would shift the whole disc off-center and clip
         var pop = full ? 0 : t * 7, oR = G.R + (full ? t * 2 : t * 5),
@@ -567,18 +614,9 @@
       // center ALWAYS shows the card's distinct metric (e.g. "498 threats") — never the hovered slice's event
       // count, which is what confused people (hover said "47", filtering to that 1 threat then said "1"). The
       // per-slice event count + share lives in the hover tooltip, clearly labelled, instead.
-      ctx.fillStyle = tc.text; ctx.font = "600 22px ui-monospace,monospace"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(fmtN(centerNum != null ? centerNum : total), G.cx, G.cy - 6);
-      ctx.fillStyle = tc.muted; ctx.font = "10px system-ui"; ctx.fillText(centerLabel || "total", G.cx, G.cy + 12);
-      var lx = G.cx + G.R + 26, ly = 18, hits = [];
-      slices.slice(0, 11).forEach(function (s, i) {
-        ctx.fillStyle = s.c || PALETTE[i % PALETTE.length]; ctx.fillRect(lx, ly - 7, 10, 10);
-        ctx.fillStyle = tc.text; ctx.font = (i === hovered ? "600 " : "") + "12px ui-monospace,monospace"; ctx.textAlign = "left"; ctx.textBaseline = "middle";
-        var k = s.k.length > 24 ? s.k.slice(0, 23) + "…" : s.k, disp = k + "   " + s.v;
-        ctx.fillText(disp, lx + 16, ly);
-        if (s.token) hits.push({ x: lx - 4, y: ly - 11, w: 20 + ctx.measureText(disp).width, h: 16, token: s.token, label: s.k });
-        ly += 19;
-      });
-      legendHits = hits;
+      ctx.fillStyle = tc.text; ctx.font = "600 " + T.num + "px ui-monospace,monospace"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.fillText(fmtN(centerNum != null ? centerNum : total), G.cx, G.cy - T.num * 0.3);
+      ctx.fillStyle = tc.muted; ctx.font = Math.round(T.num * 0.42) + "px system-ui"; ctx.fillText(centerLabel || "total", G.cx, G.cy + T.num * 0.5);
+      legendHits = paintDonutLegend(ctx, tc, place, T, G.cy, slices, hovered);
     }
     function tick() {
       raf = 0; var moving = false;
@@ -649,13 +687,15 @@
       ctx.stroke();
       var ey = pad + gh - gh * s.data[lastIdx] / max; ctx.fillStyle = col; ctx.beginPath(); ctx.arc(lastX, ey, 2.6, 0, Math.PI * 2); ctx.fill();   // endpoint dot
     });
-    ctx.fillStyle = tc.faint; ctx.textAlign = "center"; for (var hh = 0; hh < 24; hh += 4) { var x = pad + gw * hh / 23; ctx.fillText((hh < 10 ? "0" : "") + hh + "h", x, pad + gh + 12); }
+    // hour labels thin out on a narrow chart and fill in on a wide one — every 4h across 2000px reads as stretched
+    var hstep = gw >= 1200 ? 1 : gw >= 700 ? 2 : 4;
+    ctx.fillStyle = tc.faint; ctx.textAlign = "center"; for (var hh = 0; hh < 24; hh += hstep) { var x = pad + gw * hh / 23; ctx.fillText((hh < 10 ? "0" : "") + hh + "h", x, pad + gh + 12); }
     var lx = pad + gw + 18, ly = pad + 4, hits = []; series.forEach(function (s, i) { ctx.fillStyle = s.c || PALETTE[i % PALETTE.length]; ctx.fillRect(lx, ly - 5, 12, 3); ctx.fillStyle = tc.text; ctx.font = "11px ui-monospace,monospace"; ctx.textAlign = "left"; ctx.fillText(s.name, lx + 18, ly); if (s.token) hits.push({ x: lx - 4, y: ly - 9, w: 24 + ctx.measureText(s.name).width, h: 15, token: s.token, label: s.name }); ly += 18; });
     return hits;
   }
   function drawBars(cv, items) {
     var tc = themeColors();
-    var w = cv._w, h = cv._h, ctx = cctx(cv), pad = 30, gh = h - pad * 2 - 18, n = items.length || 1, gap = (w - pad * 2) / n, bw = gap * 0.6, peak = 1;
+    var w = cv._w, h = cv._h, ctx = cctx(cv), pad = 30, gh = h - pad * 2 - 18, n = items.length || 1, gap = (w - pad * 2) / n, bw = Math.min(gap * 0.6, 72), peak = 1;
     items.forEach(function (it) { if (it[1] > peak) peak = it[1]; });
     var ticks = axisTicks(peak), max = ticks[ticks.length - 1];
     ctx.font = "10px ui-monospace,monospace"; ctx.textBaseline = "middle"; ctx.textAlign = "right";
@@ -712,7 +752,7 @@
     items.forEach(function (it) { it._t = 0; });
     function paint() {
       var tc = themeColors(), ctx = cctx(cv), w = cv._w, h = cv._h, pad = 30, gh = h - pad * 2 - 18,
-          n = items.length || 1, gap = (w - pad * 2) / n, bw = gap * 0.6, peak = 1;
+          n = items.length || 1, gap = (w - pad * 2) / n, bw = Math.min(gap * 0.6, 72), peak = 1;   // cap: on a wide panel 14 bars would otherwise be billboards
       items.forEach(function (it) { if (it[1] > peak) peak = it[1]; });
       var ticks = axisTicks(peak), max = ticks[ticks.length - 1];
       ctx.font = "10px ui-monospace,monospace"; ctx.textBaseline = "middle"; ctx.textAlign = "right";
@@ -742,7 +782,9 @@
   function drawInteractiveSplit(cv, segs) {
     var reduce = prefersReduced(), hovered = -1, raf = 0, hits = [], total = segs.reduce(function (s, x) { return s + x.v; }, 0) || 1;
     segs.forEach(function (s) { s._t = 0; s._x = 0; s._w = 0; });
-    function geom() { var w = cv._w, h = cv._h, pad = 44; return { w: w, h: h, pad: pad, bw: w - pad * 2, by: h / 2 - 40, bh: 34 }; }
+    // caption sits 24px above the bar and the legend 80px below it, so by = h/2 - 28 centres the
+    // whole composition (h/2 - 40 hung it below centre, which showed as a gap under the legend)
+    function geom() { var w = cv._w, h = cv._h, pad = 44; return { w: w, h: h, pad: pad, bw: w - pad * 2, by: h / 2 - 28, bh: 34 }; }
     function paint() {
       var tc = themeColors(), ctx = cctx(cv), G = geom();
       ctx.fillStyle = tc.muted; ctx.font = "12px ui-monospace,monospace"; ctx.textAlign = "left"; ctx.textBaseline = "alphabetic"; ctx.fillText(total + " threats", G.pad, G.by - 12);
@@ -782,7 +824,18 @@
     document.querySelectorAll(".card").forEach(function (c) { c.classList.toggle("active", c.dataset.chart === type); });
     area.innerHTML = '<div class="chart-panel"><div class="chart-head"><span>' + esc(type) + ' breakdown</span><span class="chart-x">✕</span></div><div class="chart-cv"><canvas id="bigchart"></canvas></div></div>';   // esc(): `type` can come from the attacker-controlled #chart= URL fragment (parseHash) -> DOM XSS if raw
     area.querySelector(".chart-x").onclick = hideChart;
-    var cv = document.getElementById("bigchart"); cv._w = Math.min(980, (area.clientWidth || 940) - 34); cv._h = 250;
+    // Fill the panel. `main` is full-width (no centered 1500px column any more), so the old hard
+    // 980px cap left the chart marooned in the left third of a wide screen with dead space beside
+    // it. Height follows width so a 2560px monitor doesn't get a letterbox strip.
+    var cv = document.getElementById("bigchart");
+    cv._w = Math.max(320, (area.clientWidth || 940) - 34);
+    // Height per chart shape, because they want different things from it:
+    //   Severity  one horizontal bar + three labels; a tall canvas is just empty space
+    //   donuts    the disc is sized off the HEIGHT, so this is what makes the pie big enough to read
+    //   lines/bars a plot area, which reads badly if it gets too square
+    cv._h = type === "Severity" ? 190
+          : (type === "Threats" || type === "Trails") ? Math.round(Math.max(320, Math.min(400, cv._w * 0.26)))
+          : Math.round(Math.max(250, Math.min(340, cv._w * 0.22)));
     var hits = [];
     if (type === "Severity") hits = drawInteractiveSplit(cv, [{ k: "high", v: d.sevCount[3], c: "#F43F5E", token: "sev:high" }, { k: "medium", v: d.sevCount[2], c: "#F59E0B", token: "sev:medium" }, { k: "low", v: d.sevCount[1], c: "#64748B", token: "sev:low" }]);
     else if (type === "Trails") { var tn = topN(d.trailCounts, 9), sl = tn.items.map(function (x) { return { k: x[0], v: x[1], token: "trail:" + x[0] }; }); if (tn.other) sl.push({ k: "other", v: tn.other, c: otherColor() }); hits = drawInteractiveDonut(cv, sl, d.trailsN, "trails"); }
@@ -800,6 +853,18 @@
     });
   }
   function hideChart() { state.chart = null; state._openChart = ""; var a = document.getElementById("chart_area"); if (a) a.innerHTML = ""; document.querySelectorAll(".card").forEach(function (c) { c.classList.remove("active"); }); syncHash(); }
+  // The canvas is sized once, in pixels, when the chart opens - so without this a window resize (or a
+  // sidebar/zoom change) left it at the old width: too small for the panel, or overflowing it.
+  var _chartResizeT = null;
+  window.addEventListener("resize", function () {
+    if (!state.chart) return;
+    if (_chartResizeT) clearTimeout(_chartResizeT);
+    _chartResizeT = setTimeout(function () {
+      _chartResizeT = null;
+      var open = state.chart; if (!open) return;
+      state.chart = null; showChart(open);   // showChart toggles when asked for the open one, so clear it first
+    }, 120);
+  });
 
   // ---- interactive view state ----
   // ---- local persistence (hidden threats, UID-keyed; UID is byte-compatible with the legacy frontend) ----

@@ -211,6 +211,64 @@ console.log("OK");
         self.assertEqual("OK", out.strip(), out.strip())
 
 
+class TestChartLayout(unittest.TestCase):
+    """The drill-down chart has to use the panel it is given.
+
+    `main` lost its centered 1500px column, so the canvas's old hard 980px cap left the chart in the
+    left third of a wide screen with dead space beside it - and the donut, positioned off the canvas
+    HEIGHT (cx = h/2 + 6), sat against the left edge on top of that.
+    """
+
+    def setUp(self):
+        self.js = _read(MAIN_JS)
+
+    def test_canvas_is_sized_from_the_panel(self):
+        fn = re.search(r"function showChart\(type\) \{.*?\n  \}", self.js, re.S)
+        self.assertTrue(fn, "could not find showChart() in main.js")
+        self.assertIn("area.clientWidth", fn.group(0), "showChart no longer measures the panel")
+        self.assertNotIn("Math.min(980", fn.group(0), "the fixed 980px canvas cap is back")
+
+    def test_open_chart_follows_a_window_resize(self):
+        self.assertIn('window.addEventListener("resize"', self.js,
+                      "nothing re-sizes the open chart when the window changes")
+
+    def test_donut_and_legend_are_centred(self):
+        node = None
+        for candidate in ("node", "nodejs"):
+            if any(os.access(os.path.join(d, candidate), os.X_OK)
+                   for d in os.environ.get("PATH", "").split(os.pathsep) if d):
+                node = candidate
+                break
+        if not node:
+            raise unittest.SkipTest("needs node to evaluate donutPlacement()")
+        fn = re.search(r"function donutPlacement\(ctx, cv, slices, R, fs\) \{.*?\n  \}", self.js, re.S)
+        self.assertTrue(fn, "could not find donutPlacement() in main.js")
+        script = fn.group(0) + """
+var ctx = { font: "", measureText: function (s) { return { width: s.length * 7 }; } };
+var slices = [];
+for (var i = 0; i < 10; i++) slices.push({ k: "threat" + i, v: 100 - i });
+[[1900, 184], [980, 109], [420, 90]].forEach(function (c) {
+  var cv = { _w: c[0], _h: 400 }, R = c[1], p = donutPlacement(ctx, cv, slices, R);
+  var lw = p.cols * p.colw - 26, block = R * 2 + 26 + lw;
+  var left = p.cx - R, right = cv._w - (p.lx + lw);
+  if (block + 12 <= cv._w) {                      // room to centre it
+    if (Math.abs(left - right) > 1.5) console.log("FAIL w=" + c[0] + " not centred: " + left + " vs " + right);
+  } else if (Math.abs(left - 6) > 0.5) {          // too wide: pinned to the left margin, not off-canvas
+    console.log("FAIL w=" + c[0] + " not clamped to the margin (" + left + ")");
+  }
+  if (p.lx <= p.cx + R) console.log("FAIL w=" + c[0] + " legend overlaps the disc");
+  if (p.cols * p.rows < Math.min(slices.length, 11)) console.log("FAIL w=" + c[0] + " legend drops rows");
+});
+// a wide panel splits ten entries into two columns; a narrow one keeps a single column
+if (donutPlacement(ctx, { _w: 1900, _h: 400 }, slices, 184).cols !== 2) console.log("FAIL wide panel kept one legend column");
+if (donutPlacement(ctx, { _w: 900, _h: 300 }, slices, 134).cols !== 1) console.log("FAIL narrow panel split the legend");
+console.log("OK");
+"""
+        import subprocess
+        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        self.assertEqual("OK", out.strip(), out.strip())
+
+
 class TestChartAxis(unittest.TestCase):
     """The y axis of a count chart: integer steps, no repeated label, and it must be drawn at all.
 
