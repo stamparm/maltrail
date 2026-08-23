@@ -637,7 +637,7 @@ def build_cases():
 
     # 36. periodic beaconing (NEW heuristic, no sensor.py counterpart). Nine SYNs to one
     #     destination exactly 30 s apart cross the coefficient-of-variation bound at the eighth
-    #     gap and produce one `potential periodic beaconing` event; a same-sized control flow
+    #     gap and produce one `potential periodic beaconing (suspicious)` event; a same-sized control flow
     #     with human jitter must stay silent in BOTH sensors. The verdict needs real gaps, so
     #     this case is in TIMING_WINDOW_CASES: in wall-clock parity mode every packet lands on
     #     the same second and neither side fires.

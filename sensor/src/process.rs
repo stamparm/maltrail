@@ -736,11 +736,16 @@ fn syn(st: &mut WorkerState, ep: Endpoints, sec: u64, usec: u32) {
     // NEW heuristic (no sensor.py counterpart): a timer-driven reconnect pattern to one
     // destination - the low-and-slow C2 shape every volume heuristic is built to miss. See
     // heuristics/beacon.rs for the statistic and its false-positive honesty.
+    //
+    // Both ends honour the whitelist. The DESTINATION is the side worth tuning here: the
+    // source is the victim, so silencing an NTP pool or a monitoring endpoint by whitelisting
+    // the local host would blind every other detection for that host.
     if st.cfg.use_heuristics
         && !ep.dst.is_localhost()
         && st.heuristic_enabled("beaconing")
         && st.beacon.observe(ep.src, ep.dst, ep.dst_port, sec)
         && !st.whitelist.check_whitelisted_ip(ep.src)
+        && !st.whitelist.check_whitelisted_ip(ep.dst)
     {
         emit_ep(
             st,
@@ -750,7 +755,7 @@ fn syn(st: &mut WorkerState, ep: Endpoints, sec: u64, usec: u32) {
             PROTO::TCP,
             TRAIL::IPORT,
             Field::Text(ep.dst.addr_port(ep.dst_port).as_str().to_string()),
-            "potential periodic beaconing",
+            "potential periodic beaconing (suspicious)",
             "(heuristic)",
         );
     }

@@ -13,8 +13,10 @@
 //!
 //! False-positive honesty: anything built as a poller scores as a beacon, because it IS one -
 //! uptime monitors, mail clients, license checks. That is why every event is rated
-//! `potential periodic beaconing` (suspicious, `(heuristic)`), never `malware`, and why the
-//! whole heuristic can be silenced by name through `DISABLED_HEURISTICS beaconing`.
+//! `potential periodic beaconing (suspicious)` with a `(heuristic)` reference, never `malware`,
+//! and why the whole heuristic can be silenced by name through `DISABLED_HEURISTICS beaconing`.
+//! A single noisy poller is quieter to silence than that: whitelisting its ADDRESS (the
+//! destination side is checked too) or an `IGNORE_EVENTS_REGEX` on the info text both work.
 //!
 //! Cost discipline: the hot path here is one hash lookup plus O(1) arithmetic on the crossing
 //! check; the variance is only computed when a new gap is appended. State is bounded two ways -
