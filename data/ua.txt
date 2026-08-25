@@ -1824,8 +1824,11 @@ EICAR-STANDARD-ANTIVIRUS-TEST-FILE
 Netlab360
 
 # Reference: https://isc.sans.edu/diary/28044
+# Reference: https://community.emergingthreats.net/t/ruleset-update-summary-2026-08-24-v11265/3429
 
+PowerShell/7
 WindowsPowerShell
+WindowsPowerShell/5.1
 
 # Reference: https://twitter.com/malwarejar/status/1463082991908003841
 
