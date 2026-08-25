@@ -2782,6 +2782,12 @@ SyncClient/1.0
 
 Katzilla
 
+# Reference: https://x.com/suyog41/status/2092162390481899638
+# Reference: https://www.virustotal.com/gui/file/aa5d935e467e09cd9bd24a78475de16f57394084973e4716720d80b9fda1982f/detection
+
+PotatoRAT
+PotatoRAT/1.0
+
 # Misc
 
 information_schema
