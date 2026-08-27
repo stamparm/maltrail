@@ -232,7 +232,7 @@ which is how a packet-capture process should be deployed. The sensor checks for 
 it actually uses, skips the check entirely for `-r` replay, and prints the exact `setcap` line if it
 is missing. `DISABLE_CHECK_SUDO true` still skips the check.
 
-`maltrail-sensor.service` runs as an unprivileged `maltrail` user with exactly those two
+`packaging/systemd/maltrail-sensor.service` runs as an unprivileged `maltrail` user with exactly those two
 ambient capabilities, `NoNewPrivileges=yes`, and the usual systemd hardening — so a parser bug in a
 packet-facing process cannot become root on the host.
 
@@ -420,7 +420,7 @@ immutable trail store is built and swapped in atomically, counted in the metrics
 
 ## 12. Running as a service
 
-`maltrail-sensor.service` is provided, and `install.sh` installs it for you. To do it by hand, read
+`packaging/systemd/maltrail-sensor.service` is provided, and `install.sh` installs it for you. To do it by hand, read
 the unit first — its header comment carries the two commands below — and note that it runs as an
 **unprivileged `maltrail` user** with exactly `CAP_NET_RAW` and `CAP_NET_ADMIN` as ambient
 capabilities, not as root:
@@ -431,7 +431,7 @@ capabilities, not as root:
 sudo groupadd --system maltrail
 sudo useradd --system --gid maltrail --no-create-home --shell /usr/sbin/nologin maltrail
 
-sudo cp maltrail-sensor.service /etc/systemd/system/
+sudo cp packaging/systemd/maltrail-sensor.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable --now maltrail-sensor
 journalctl -u maltrail-sensor -f

@@ -557,7 +557,7 @@ have_systemd() { [ -d /run/systemd/system ] && have systemctl; }
 install_units() {
     say "installing systemd units"
     for role in $1; do
-        src="$PREFIX/maltrail-$role.service"
+        src="$PREFIX/packaging/systemd/maltrail-$role.service"
         [ -f "$src" ] || { warn "$src not found; skipping"; continue; }
         # One source of truth: the repository's unit, with the paths this installation actually
         # uses substituted in. Nothing is maintained twice.

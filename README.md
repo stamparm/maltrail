@@ -272,7 +272,7 @@ sudo ldconfig
 
 ### Systemd
 
-The supplied `maltrail-server.service` and `maltrail-sensor.service` units run both processes as the
+The supplied `packaging/systemd/` units run both processes as the
 unprivileged `maltrail` user. Systemd creates `/var/log/maltrail` and `/var/lib/maltrail`, restricts
 filesystem access, and grants the sensor `CAP_NET_RAW` and `CAP_NET_ADMIN`.
 
