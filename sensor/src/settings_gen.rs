@@ -5,7 +5,7 @@
 //! detection semantics cannot silently drift between the two sensors.
 #![allow(clippy::all)]
 
-pub const VERSION: &str = "3.1.2";
+pub const VERSION: &str = "3.2";
 pub const NAME: &str = "Maltrail";
 pub const HOMEPAGE: &str = "https://maltrail.github.io";
 pub const TIME_FORMAT: &str = "%Y-%m-%d %H:%M:%S";

@@ -465,6 +465,69 @@ ensure_dirs() {
     done
 }
 
+seed_trail_cache() {
+    # Static trails are fetched from their own repository at runtime, so a first start with no
+    # network has nothing to match on - and the release that introduces that split is exactly the
+    # one people will install offline. Seed the cache from the snapshot shipped with the release,
+    # so a deployment detects from the moment it starts rather than from its first successful
+    # update.
+    #
+    # Never fatal: a deployment with connectivity gets the current set on first update anyway, and
+    # failing an install over an optional accelerator would be the wrong trade.
+    cache="$STATE_DIR/trails.csv.static"
+
+    if [ -s "$cache" ]; then
+        info "static trail cache already present ($cache)"
+        return 0
+    fi
+    [ "$DRY" = 1 ] && { say "would seed the static trail cache"; return 0; }
+
+    version=$REF
+    case $version in
+        master|main|*[!0-9.]*) version=$(latest_tag) ;;
+    esac
+    [ -n "$version" ] || { warn "could not work out the latest release; skipping the trail bootstrap"; return 0; }
+
+    url="$RELEASES/download/$version/trails-bootstrap.csv.gz"
+    tmp=$(mktemp -d)
+    say "seeding the static trail cache from $version"
+    if ! fetch "$url" "$tmp/t.csv.gz"; then
+        rm -rf "$tmp"
+        warn "no trail bootstrap at $url; the first update will fetch the set instead"
+        return 0
+    fi
+
+    if ! gzip -dc "$tmp/t.csv.gz" > "$tmp/t.csv" 2>/dev/null; then
+        rm -rf "$tmp"
+        warn "the trail bootstrap could not be decompressed; the first update will fetch the set instead"
+        return 0
+    fi
+
+    # Detection content downloaded over the network gets its checksum verified, exactly like the
+    # sensor binary. The digest is published for the UNCOMPRESSED set.
+    # The digest is published for the trail SET, so it is named after the uncompressed file -
+    # trails-bootstrap.csv.gz -> trails-bootstrap.csv.sha256, the same convention the runtime
+    # fetch uses.
+    sha_url="${url%.gz}.sha256"
+    if fetch "$sha_url" "$tmp/t.sha256" 2>/dev/null && [ -s "$tmp/t.sha256" ] && have sha256sum; then
+        expected=$(cut -d' ' -f1 < "$tmp/t.sha256")
+        actual=$(sha256sum "$tmp/t.csv" | cut -d' ' -f1)
+        if [ "$expected" != "$actual" ]; then
+            rm -rf "$tmp"
+            warn "trail bootstrap checksum mismatch; discarding it (the first update will fetch the set)"
+            return 0
+        fi
+        info "sha256 verified"
+        run install -o "$RUN_USER" -g "$RUN_USER" -m 0640 "$tmp/t.sha256" "$cache.sha256"
+    else
+        warn "no published checksum for the trail bootstrap; not verified"
+    fi
+
+    run install -o "$RUN_USER" -g "$RUN_USER" -m 0640 "$tmp/t.csv" "$cache"
+    info "seeded $(wc -l < "$cache") trails into $cache"
+    rm -rf "$tmp"
+}
+
 install_conf() {
     if [ -f "$CONF" ]; then
         say "keeping the existing $CONF"
@@ -615,6 +678,7 @@ main() {
     install_conf
     [ "$IN_PLACE" = 1 ] || [ "$DRY" = 1 ] || printf '%s\n' "$PREFIX" > "$STATE_DIR/installed-prefix"
     case $roles in *sensor*) install_sensor_binary || true ;; esac
+    seed_trail_cache || true
     if [ "$IN_PLACE" = 1 ]; then
         # Taking ownership of a developer's checkout would stop them editing their own files. The
         # processes only need to READ it, so check that instead of changing it.

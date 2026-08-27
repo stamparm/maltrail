@@ -210,6 +210,32 @@ jobs:
             fi
           } >> "$GITHUB_OUTPUT"
 
+      # A snapshot of the trail set, shipped with the release. Static trails live in their own
+      # repository and are fetched at runtime, so without this a first start with no connectivity
+      # has nothing to match on - and this is the release that introduces that. install.sh seeds
+      # the runtime cache from it, so an air-gapped deployment detects from the moment it starts.
+      - name: Bootstrap trail set
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download --repo stamparm/trails --pattern 'trails.csv.gz' --output dist/trails-bootstrap.csv.gz
+          gh release download --repo stamparm/trails --pattern 'trails.csv.sha256' --output dist/trails-bootstrap.csv.sha256
+          rows=$(gzip -dc dist/trails-bootstrap.csv.gz | wc -l)
+          echo "[i] bootstrap: $rows trails"
+          if [ "$rows" -lt 1000000 ]; then
+            echo "::error::the bootstrap trail set looks collapsed ($rows rows) - refusing to ship it"
+            exit 1
+          fi
+          # The published digest is over the UNCOMPRESSED set; check it here rather than shipping
+          # a snapshot nobody verified.
+          have=$(gzip -dc dist/trails-bootstrap.csv.gz | sha256sum | cut -d' ' -f1)
+          want=$(cut -d' ' -f1 < dist/trails-bootstrap.csv.sha256)
+          if [ "$have" != "$want" ]; then
+            echo "::error::bootstrap digest mismatch ($have != $want)"
+            exit 1
+          fi
+          echo "[i] digest verified: $have"
+
       - name: GitHub release
         uses: softprops/action-gh-release@v3
         with:

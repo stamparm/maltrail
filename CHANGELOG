@@ -14,6 +14,68 @@
 
 
 
+- Version 3.1.1 -> 3.2 (27 Aug 2026)
+
+[+] Static trails moved to their own repository (stamparm/trails) and are now
+    distributed as one assembled, signed file instead of shipped in the source
+    tree. They were 98.7% of every blob byte in this repository's history and
+    9,169 of 9,549 commits, which made 'git log', 'blame' and 'bisect' useless
+    on the code and meant updating detection required pulling a new version of
+    the software. This repository went from 9,578 commits and a 110 MiB pack to
+    344 and 3.3 MiB. Set 'STATIC_TRAILS_URL' (shipped in maltrail.conf); pin it
+    to a dated release if you want to control when new content lands.
+
+[!] UPGRADING FROM 3.1.x: an older maltrail.conf has no 'STATIC_TRAILS_URL', and
+    without it the static trail set is not loaded at all. The updater prints a
+    banner, 'server --doctor' fails, and 'maltrail-sensor -T' fails, rather than
+    letting detection quietly shrink to heuristics and feeds. Copy the option
+    from the shipped maltrail.conf, or re-run install.sh.
+
+[+] Releases now carry a trail-set snapshot ('trails-bootstrap.csv.gz') and
+    install.sh seeds the runtime cache from it, so a first start detects
+    immediately - including with no connectivity at all.
+
+[+] The trail set is fetched gzipped, and only when it has changed: the
+    published sha256 is checked first, so a deployment updating more often than
+    the content moves transfers 65 bytes instead of 11 MB. A payload that does
+    not match its digest is refused in favour of the cache.
+
+[+] Every content commit is now gated (reachability, canaries, assembly) in the
+    content repository - the per-commit check that did not exist before.
+
+[=] 'trails/feeds' became 'feeds/'; 'trails/static' and 'trails/custom' stopped
+    pretending to be feeds. They were plugin modules only so update_trails()
+    could run one loop, which is why 'DISABLED_FEEDS static' silently disabled
+    1.6M trails. Three explicit sources through one merge rule now, same order.
+
+[=] 'CUSTOM_TRAILS_DIR' no longer defaults inside the installation directory.
+
+[+] Alert webhook: POST events at or above a severity threshold, with dedup.
+
+[+] Per-day sidecar event index: exact '/counts', '/hunt' skips non-matching
+    lines. Trail-confidence sidecar surfaced in '/check' and the trail drawer.
+
+[+] TLS client fingerprints (JA3/JA4) matched as trails; new beaconing
+    heuristic; 'server --doctor' preflight; both config parsers flag unknown
+    options.
+
+[!] An exact static trail now beats a whitelisted ancestor (longest match), so
+    3,082 trails on shared platforms that were loaded, counted and could never
+    fire now do.
+
+[!] UDP event intake was losing 24% at 10k events/s - a thread and an open() per
+    datagram. Lossless intake went from 5,000 to 20,000 events/s.
+
+[!] '/hunt' IP search was 9x slower than a substring hunt over the same log.
+
+[!] '--detect-test' told a healthy install its detection was broken;
+    '--smoke-test' printed nothing and exited 1; every IPv6 event was unmapped
+    on the attack map.
+
+[!] Refuses to start with the private key Maltrail used to ship. RIPEstat is
+    proxied through '/ripe' so script-src is 'self' again.
+
+
 - Version 3.1 -> 3.1.1 (11 Aug 2026)
 
 [+] 'install.sh': one command sets up a working deployment - dependencies,
