@@ -354,7 +354,7 @@ merges four sources into `TRAILS_FILE`, in this order:
 | Static | the assembled set from [stamparm/trails](https://github.com/stamparm/trails), fetched from `STATIC_TRAILS_URL` |
 | Engine lists | `data/mass_scanner*.txt`, shipped here because they change rarely |
 
-The ~1.6M static trails live in their own repository. Detection content changes tens of times a
+The static trails live in their own repository. Detection content changes tens of times a
 day; the engine does not, and keeping them together meant updating detection required pulling code
 and made this repository's history unusable. `STATIC_TRAILS_URL` points at the newest published
 set:
