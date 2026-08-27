@@ -38,6 +38,9 @@ class DoctorChecks(unittest.TestCase):
         cfg.SSL_PEM = None
         cfg.HTTP_ADDRESS = "127.0.0.1"
         cfg.HTTP_PORT = 0  # port 0 always binds, so the endpoint check stays out of the way
+        # A healthy deployment has somewhere to fetch static trails from. Without it the baseline
+        # is not healthy - which is the point of the check, and why it belongs in the fixture.
+        cfg.STATIC_TRAILS_URL = "https://example.invalid/trails.csv.gz"
         cfg.UDP_ADDRESS = None
         cfg.UDP_PORT = None
         cfg.USE_SERVER_UPDATE_TRAILS = False
@@ -133,6 +136,49 @@ class DoctorChecks(unittest.TestCase):
         out = io.StringIO()
         self.assertEqual(1, doctor.run(out))
         self.assertIn("1 problem(s)", out.getvalue())
+
+
+
+class StaticTrailSource(unittest.TestCase):
+    """Without a static trail source Maltrail matches heuristics and little else.
+
+    That is the whole threat-intelligence half of the product, and every symptom of losing it -
+    a server that starts, a dashboard that renders, a sensor that reports healthy - is
+    indistinguishable from a quiet network. So it is a FAILURE, and it has to stay one.
+    """
+
+    def setUp(self):
+        self.dir = tempfile.mkdtemp(prefix="mt-static-")
+        self.addCleanup(shutil.rmtree, self.dir, ignore_errors=True)
+        self._saved = dict(settings.config)
+        self.addCleanup(self._restore)
+        settings.config.TRAILS_FILE = os.path.join(self.dir, "trails.csv")
+
+    def _restore(self):
+        settings.config.clear()
+        settings.config.update(self._saved)
+
+    def test_unset_and_no_cache_is_a_failure(self):
+        settings.config.STATIC_TRAILS_URL = None
+        findings = doctor.check_static_trails()
+        self.assertEqual([level for level, _ in findings], [doctor.FAIL])
+        self.assertIn("STATIC_TRAILS_URL", findings[0][1])
+
+    def test_unset_with_a_cache_is_a_warning(self):
+        # A cache means detection still works today, but nothing will ever refresh it.
+        with open("%s.static" % settings.config.TRAILS_FILE, "w") as f:
+            f.write("evil.test,x,(static)\n")
+        settings.config.STATIC_TRAILS_URL = None
+        findings = doctor.check_static_trails()
+        self.assertEqual([level for level, _ in findings], [doctor.WARN])
+
+    def test_configured_is_silent(self):
+        settings.config.STATIC_TRAILS_URL = "https://example.invalid/trails.csv.gz"
+        self.assertEqual(doctor.check_static_trails(), [])
+
+    def test_the_check_is_registered(self):
+        # A check that exists but is not in CHECKS never runs, and the suite would still pass.
+        self.assertIn(doctor.check_static_trails, [fn for _, fn in doctor.CHECKS])
 
 
 if __name__ == "__main__":

@@ -141,8 +141,30 @@ def check_update_reachability():
     return []
 
 
+def check_static_trails():
+    """Is there a source for the static trail set at all?
+
+    Matching known-bad infrastructure is the point of Maltrail, and the static set is the large
+    majority of what it matches on. A deployment without a source for it starts, serves a
+    dashboard, reports healthy and detects a fraction of what the operator thinks it does - so this
+    is a FAILURE, not a warning.
+    """
+
+    if config.STATIC_TRAILS_URL:
+        return []
+
+    cache = "%s.static" % config.TRAILS_FILE
+    hint = "https://github.com/stamparm/trails/releases/latest/download/trails.csv.gz"
+
+    if os.path.isfile(cache):
+        return [(WARN, "'STATIC_TRAILS_URL' is not set - running on the cached static trails at '%s', which will never be refreshed\n[?] (hint: \"STATIC_TRAILS_URL %s\")" % (cache, hint))]
+
+    return [(FAIL, "'STATIC_TRAILS_URL' is not set and there is no cache - the static trail set will not be loaded and detection is a fraction of what it should be\n[?] (hint: \"STATIC_TRAILS_URL %s\")" % hint)]
+
+
 CHECKS = (
     ("log directory", check_log_dir),
+    ("static trail source", check_static_trails),
     ("trails freshness", check_trails_freshness),
     ("USERS table", check_users),
     ("TLS certificate", check_ssl_pem),

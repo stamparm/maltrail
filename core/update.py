@@ -174,6 +174,28 @@ def fetch_static_trails(offline=False):
     stamp = "%s.sha256" % cache
     content = None
 
+    if not config.STATIC_TRAILS_URL and not os.path.isfile(cache):
+        # Matching known-bad infrastructure IS Maltrail. Without a static trail source it keeps the
+        # heuristics and whatever the feeds return - a fraction of the indicators - and every
+        # symptom of that looks like a quiet network. An upgrade from before the trails split is
+        # the way to arrive here: the option simply is not in an older maltrail.conf.
+        print("")
+        print("!" * 79)
+        print("!!  NO STATIC TRAIL SOURCE CONFIGURED - MALTRAIL WILL DETECT ALMOST NOTHING")
+        print("!!")
+        print("!!  'STATIC_TRAILS_URL' is not set, so the static trail set (the large majority of")
+        print("!!  everything Maltrail matches on) will not be loaded. Heuristics and any enabled")
+        print("!!  feeds still work; matching known malicious infrastructure largely will not.")
+        print("!!")
+        print("!!  Add this to maltrail.conf:")
+        print("!!")
+        print("!!      STATIC_TRAILS_URL https://github.com/stamparm/trails/releases/latest/download/trails.csv.gz")
+        print("!!")
+        print("!!  Upgrading from before the trails split? That option is new - the static trails")
+        print("!!  moved to their own repository and are fetched instead of shipped.")
+        print("!" * 79)
+        print("")
+
     def _cached_sha():
         try:
             with open(stamp, "r") as f:

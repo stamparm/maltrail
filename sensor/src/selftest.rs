@@ -233,6 +233,28 @@ pub fn run(cfg: &Config) -> i32 {
         );
     }
 
+    // --- static trail source ---------------------------------------------------------
+    // Matching known-bad infrastructure IS Maltrail, and the static set is the large majority of
+    // what it matches on. Without a source for it the sensor starts, loads a far smaller file and
+    // reports healthy - which looks exactly like a quiet network. Upgrading from before the trails
+    // split arrives here by default: the option is simply absent from an older maltrail.conf.
+    //
+    // Only when this sensor is the one doing the updating. With DISABLE_TRAIL_UPDATES the file is
+    // built by the server or a cron job and where its content came from is not this sensor's call.
+    if !cfg.disable_trail_updates {
+        let configured =
+            cfg.raw.get("STATIC_TRAILS_URL").and_then(|v| v.as_str()).map(|v| !v.trim().is_empty()).unwrap_or(false);
+        if !configured {
+            r.line(
+                Level::Fail,
+                "static trails",
+                "'STATIC_TRAILS_URL' is not set \u{2014} the static trail set will not be fetched, so this sensor would \
+                 match only heuristics and whatever the feeds return. hint: STATIC_TRAILS_URL \
+                 https://github.com/stamparm/trails/releases/latest/download/trails.csv.gz",
+            );
+        }
+    }
+
     // --- trails ----------------------------------------------------------------------
     if !cfg.trails_file.exists() {
         // A missing trails file is only fatal if nothing will ever create it. On a fresh install
