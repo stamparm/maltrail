@@ -81,7 +81,8 @@ impl Fixture {
             .arg("--out")
             .arg(&cache)
             .status();
-        matches!(status, Ok(s) if s.success()) && std::fs::metadata(&cache).map(|m| m.len() > 1_000_000).unwrap_or(false)
+        matches!(status, Ok(s) if s.success())
+            && std::fs::metadata(&cache).map(|m| m.len() > 1_000_000).unwrap_or(false)
     }
 
     /// Replay one pcap and return the sensor's stdout+stderr.
@@ -187,7 +188,9 @@ fn static_trail_is_in_the_repository() -> bool {
     // a stale trails file failing to pick up a newly added static IOC. It now says which knob makes
     // it runnable instead of quietly reporting success.
     let Some(dir) = static_trails_dir() else {
-        println!("[skip] no static trail content found - set MALTRAIL_TRAILS_DIR to a checkout of the trails repository");
+        println!(
+            "[skip] no static trail content found - set MALTRAIL_TRAILS_DIR to a checkout of the trails repository"
+        );
         return false;
     };
     let path = dir.join("malware").join("asyncrat.txt");

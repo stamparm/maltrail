@@ -111,11 +111,23 @@ jobs:
         with:
           workspaces: sensor
 
-      - name: Build a trail set from the static pile
+      # Static trails are published as an assembled aggregate now, so `--offline` no longer
+      # produces one: it would build from the engine's own lists alone and these tests would run
+      # against ~20k rows while still reporting green. Fetch the real set, without the 43 feeds -
+      # this job is about the trail STORE at scale, not about feed availability.
+      - name: Build a trail set from the published aggregate
         run: |
-          python3 sensor/tools/update_trails.py --offline -c maltrail.conf 2>&1 | grep -v '^\[?\] progress' | tail -4
+          sed 's/^USE_FEED_UPDATES .*/USE_FEED_UPDATES false/' maltrail.conf > /tmp/ci.conf
+          python3 sensor/tools/update_trails.py -c /tmp/ci.conf 2>&1 | grep -v '^\[?\] progress' | tail -4
           test -s "$HOME/.maltrail/trails.csv"
-          echo "trails built: $(wc -l < "$HOME/.maltrail/trails.csv") rows"
+          rows=$(wc -l < "$HOME/.maltrail/trails.csv")
+          echo "trails built: $rows rows"
+          # The tests below assert "a sizeable trail set"; say so here instead of letting them
+          # fail three minutes later with a number and no explanation.
+          if [ "$rows" -lt 1000000 ]; then
+            echo "::error::only $rows trails - the aggregate was not fetched"
+            exit 1
+          fi
 
       # --nocapture so the row counts, store size and parity numbers are in the log. A skipped
       # test PASSES, which is the failure mode this job exists to remove, so the skip note is

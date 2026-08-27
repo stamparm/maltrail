@@ -129,7 +129,7 @@ cd / || exit 1
 # 7. clone mode: an existing managed tree with local changes must NOT be reset silently
 sh /src/install.sh "$@" >/dev/null 2>&1
 echo '# operator edit' >> "$PREFIX/maltrail.conf"
-echo 'evil.test,"mine","(custom)"' > "$PREFIX/trails/custom/mine.txt"
+mkdir -p "$PREFIX/trails/custom" && echo 'evil.test,"mine","(custom)"' > "$PREFIX/trails/custom/mine.txt"
 sh /src/install.sh "$@" >/tmp/dirty.log 2>&1
 grep -q 'NOT updated' /tmp/dirty.log && echo "A dirty-tree-refused"
 grep -q '# operator edit' "$PREFIX/maltrail.conf" && echo "A dirty-tree-edit-kept"
