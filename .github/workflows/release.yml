@@ -97,45 +97,53 @@ jobs:
       # keeps the archive self-contained instead of pulling libnl, libdbus and libibverbs back in
       # as dynamic dependencies. The Linux PF_PACKET/TPACKET path the sensor actually captures
       # with is unaffected.
+      # The build script goes through a QUOTED heredoc, not `sh -c '...'`. It used to be the
+      # latter, and a comment mentioning "libpcap's configure" ended the single-quoted string on
+      # its apostrophe - so the runner's own bash ran the rest, failed on ./configure, and every
+      # release since 3.1.1 died there. A heredoc passes the body verbatim, so an apostrophe in a
+      # comment cannot reach the shell that spawned it.
       - name: Build against glibc 2.28, with libpcap linked in
         env:
           LIBPCAP_VERSION: 1.10.5
           LIBPCAP_SHA256: 37ced90a19a302a7f32e458224a00c365c117905c2cd35ac544b6880a81488f0
         run: |
           set -eu
-          docker run --rm -v "$PWD:/src" -w /src \
-            -e LIBPCAP_VERSION -e LIBPCAP_SHA256 almalinux:8 sh -eu -c '
-            dnf -y -q install gcc make flex bison >/dev/null
+          cat > "$RUNNER_TEMP/build-sensor.sh" <<'SCRIPT'
+          set -eu
+          dnf -y -q install gcc make flex bison >/dev/null
 
-            curl -sSfL -o /tmp/libpcap.tar.gz \
-              "https://www.tcpdump.org/release/libpcap-$LIBPCAP_VERSION.tar.gz"
-            echo "$LIBPCAP_SHA256  /tmp/libpcap.tar.gz" | sha256sum -c -
-            tar -C /tmp -xzf /tmp/libpcap.tar.gz
-            cd "/tmp/libpcap-$LIBPCAP_VERSION"
-            # No --enable-static: libpcap's configure does not know that option and warns about
-            # it. --disable-shared is what leaves libpcap.a as the only thing to link against.
-            ./configure --prefix=/opt/libpcap --disable-shared \
-              --disable-dbus --disable-rdma --without-libnl --without-dpdk \
-              --without-dag --without-septel --without-snf --without-turbocap >/dev/null
-            make -j"$(nproc)" >/dev/null
-            make install >/dev/null
-            cd /src
+          curl -sSfL -o /tmp/libpcap.tar.gz \
+            "https://www.tcpdump.org/release/libpcap-$LIBPCAP_VERSION.tar.gz"
+          echo "$LIBPCAP_SHA256  /tmp/libpcap.tar.gz" | sha256sum -c -
+          tar -C /tmp -xzf /tmp/libpcap.tar.gz
+          cd "/tmp/libpcap-$LIBPCAP_VERSION"
+          test -x ./configure || { echo "[!] no ./configure in the libpcap tarball"; exit 1; }
+          # No --enable-static: the configure script does not know that option and warns about it.
+          # --disable-shared is what leaves libpcap.a as the only thing to link against.
+          ./configure --prefix=/opt/libpcap --disable-shared \
+            --disable-dbus --disable-rdma --without-libnl --without-dpdk \
+            --without-dag --without-septel --without-snf --without-turbocap >/dev/null
+          make -j"$(nproc)" >/dev/null
+          make install >/dev/null
+          cd /src
 
-            export CARGO_HOME=/src/.cargo-home RUSTUP_HOME=/src/.rustup-home
-            export PATH=$CARGO_HOME/bin:$PATH
-            curl -sSf https://sh.rustup.rs -o /tmp/rustup.sh
-            sh /tmp/rustup.sh -y --default-toolchain stable --profile minimal --no-modify-path >/dev/null
-            rustc -V
-            # LIBPCAP_LIBDIR puts the static archive first on the link path; that directory holds
-            # libpcap.a and no libpcap.so, so `-lpcap` can only resolve to the archive. LIBPCAP_VER
-            # spares the pcap crate a dlopen() of a shared object that deliberately does not exist.
-            # The sensor build script probes for a system libpcap it no longer needs.
-            export LIBPCAP_LIBDIR=/opt/libpcap/lib
-            export LIBPCAP_VER=$LIBPCAP_VERSION
-            export MALTRAIL_SKIP_PCAP_CHECK=1
-            cargo build --release --locked --manifest-path sensor/Cargo.toml
-            strip sensor/target/release/maltrail-sensor
-          '
+          export CARGO_HOME=/src/.cargo-home RUSTUP_HOME=/src/.rustup-home
+          export PATH=$CARGO_HOME/bin:$PATH
+          curl -sSf https://sh.rustup.rs -o /tmp/rustup.sh
+          sh /tmp/rustup.sh -y --default-toolchain stable --profile minimal --no-modify-path >/dev/null
+          rustc -V
+          # LIBPCAP_LIBDIR puts the static archive first on the link path; that directory holds
+          # libpcap.a and no libpcap.so, so `-lpcap` can only resolve to the archive. LIBPCAP_VER
+          # spares the pcap crate a dlopen() of a shared object that deliberately does not exist.
+          # The sensor build script probes for a system libpcap it no longer needs.
+          export LIBPCAP_LIBDIR=/opt/libpcap/lib
+          export LIBPCAP_VER=$LIBPCAP_VERSION
+          export MALTRAIL_SKIP_PCAP_CHECK=1
+          cargo build --release --locked --manifest-path sensor/Cargo.toml
+          strip sensor/target/release/maltrail-sensor
+          SCRIPT
+          docker run --rm -v "$PWD:/src" -v "$RUNNER_TEMP/build-sensor.sh:/build-sensor.sh:ro" \
+            -w /src -e LIBPCAP_VERSION -e LIBPCAP_SHA256 almalinux:8 sh -eu /build-sensor.sh
           sudo chown -R "$(id -u):$(id -g)" sensor/target .cargo-home .rustup-home
 
       # Guards, not formalities: these are the two properties that cannot be checked by running
