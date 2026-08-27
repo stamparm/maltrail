@@ -63,9 +63,12 @@ USE_MMAP_TRAILS = bool(fcntl) and not IS_WIN
 
 _WILDCARD_TRAIL_REGEX = re.compile(r"[\].][*+]|\[[a-z0-9_.\-]+\]", re.I)
 
-def retrieve_content(url, data=None, headers=None):
+def retrieve_content(url, data=None, headers=None, binary=False):
     """
     Retrieves page content from given URL
+
+    `binary=True` returns the raw bytes instead of decoded text, for a payload that is not text -
+    the gzipped trail aggregate. Decoding that with errors="replace" would corrupt it silently.
     """
 
     # Cookies, kept for the duration of this one call. urlopen() has no cookie support, so a site
@@ -107,6 +110,9 @@ def retrieve_content(url, data=None, headers=None):
         retval = b""
 
     retval = retval or b""
+
+    if binary:
+        return retval if isinstance(retval, bytes) else retval.encode(UNICODE_ENCODING)
 
     if isinstance(retval, bytes):
         retval = retval.decode(UNICODE_ENCODING, errors="replace")

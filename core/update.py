@@ -10,6 +10,7 @@ import csv
 import glob
 import io
 import gzip
+import hashlib
 import inspect
 import os
 import re
@@ -160,30 +161,83 @@ def fetch_static_trails(offline=False):
     of carrying 1.6M indicators in its own git history. The cache is what makes an air-gapped or
     offline run work, and what stops a failed download from quietly producing a sensor that detects
     nothing.
+
+    Two things keep this from being 78 MB per update per install. The payload is GZIPPED - GitHub
+    serves release assets as application/octet-stream with no Content-Encoding, so nothing
+    compresses it for us and 81 MB goes on the wire as 81 MB. And the published sha256 (65 bytes)
+    is checked FIRST: a deployment that updates more often than the content changes transfers those
+    65 bytes and stops. The hash is over the UNCOMPRESSED csv deliberately, so it identifies the
+    trail set rather than one particular compression of it.
     """
 
     cache = "%s.static" % config.TRAILS_FILE
+    stamp = "%s.sha256" % cache
     content = None
 
-    if not offline and config.STATIC_TRAILS_URL:
-        print(" [o] '%s'" % config.STATIC_TRAILS_URL)
-        content = retrieve_content(config.STATIC_TRAILS_URL)
-        if content and content.count(',') > 1:
-            try:
-                tmp = "%s.new" % cache
-                with _fopen(tmp, "w+", codecs.open) as f:
-                    f.write(content)
-                _atomic_replace(tmp, cache)
-            except (OSError, IOError) as ex:
-                print("[x] unable to cache the static trails ('%s')" % ex)
-        else:
-            print("[x] unable to retrieve the static trails from '%s'" % config.STATIC_TRAILS_URL)
-            content = None
+    def _cached_sha():
+        try:
+            with open(stamp, "r") as f:
+                return f.read().strip()
+        except (OSError, IOError):
+            return None
 
-    if content is None and os.path.isfile(cache):
-        print("[i] using the cached static trails ('%s')" % cache)
-        with open(cache, "rb") as f:
-            content = f.read().decode(UNICODE_ENCODING)
+    def _read_cache():
+        try:
+            with open(cache, "rb") as f:
+                return f.read().decode(UNICODE_ENCODING)
+        except (OSError, IOError):
+            return None
+
+    if not offline and config.STATIC_TRAILS_URL:
+        url = config.STATIC_TRAILS_URL
+        # The digest is published for the trail SET, so it is named after the uncompressed file:
+        # trails.csv.gz -> trails.csv.sha256. Appending .sha256 to the url as given asks for
+        # trails.csv.gz.sha256, which 404s - and a missing digest silently costs the skip, so the
+        # 11 MB gets pulled on every update even when nothing changed.
+        sha_url = "%s.sha256" % (url[:-len(".gz")] if url.endswith(".gz") else url)
+        published = (retrieve_content(sha_url) or "").strip().split(' ')[0].strip()
+        published = published if re.match(r"\A[0-9a-f]{64}\Z", published) else None
+
+        if published and published == _cached_sha() and os.path.isfile(cache):
+            print(" [o] '%s' (unchanged, %s)" % (url, published[:12]))
+            content = _read_cache()
+        else:
+            print(" [o] '%s'" % url)
+            raw = retrieve_content(url, binary=True)
+
+            if raw[:2] == b"\x1f\x8b":       # gzip magic; a plain .csv URL still works
+                try:
+                    raw = gzip.GzipFile("", "rb", 9, io.BytesIO(raw)).read()
+                except Exception as ex:
+                    print("[x] the static trails could not be decompressed ('%s')" % ex)
+                    raw = b""
+
+            digest = hashlib.sha256(raw).hexdigest() if raw else None
+
+            if published and digest and digest != published:
+                # Refuse a payload that is not the one that was published. A truncated download is
+                # the dangerous case: it parses fine and is simply missing indicators.
+                print("[x] the static trails do not match their published sha256 (%s != %s) - keeping the cache" % (digest[:12], published[:12]))
+            elif raw and raw.count(b',') > 1:
+                content = raw.decode(UNICODE_ENCODING)
+                try:
+                    tmp = "%s.new" % cache
+                    with open(tmp, "wb") as f:
+                        f.write(raw)
+                    _atomic_replace(tmp, cache)
+                    if digest:
+                        with open("%s.new" % stamp, "w") as f:
+                            f.write(digest)
+                        _atomic_replace("%s.new" % stamp, stamp)
+                except (OSError, IOError) as ex:
+                    print("[x] unable to cache the static trails ('%s')" % ex)
+            else:
+                print("[x] unable to retrieve the static trails from '%s'" % url)
+
+    if content is None:
+        content = _read_cache()
+        if content is not None:
+            print("[i] using the cached static trails ('%s')" % cache)
 
     if not content:
         # Loudly. An empty static set is 1.6M missing indicators, and every symptom of it - a
