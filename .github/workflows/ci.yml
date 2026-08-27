@@ -39,6 +39,23 @@ jobs:
   # debug (overflow checks on) and release (what ships), then differential parity against the
   # old Python sensor. Its real-trails steps self-skip here, because a runner has no trails.csv;
   # the `real-trails` job below builds one and runs the tests that need it.
+  # src/settings_gen.rs is transcribed from core/settings.py and data/ua.txt, and the Python side
+  # reads those at runtime while the sensor COMPILES them in. Let them drift and the two sensors
+  # disagree in a way the parity harness structurally cannot see, because each is internally
+  # consistent. check.sh catches it, but ~3 minutes in and behind a 45-minute job; this answers in
+  # seconds, on its own, so the person who edited a constant is told by the first thing that
+  # finishes. It has been forgotten four times.
+  generated:
+    name: generated constants
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python3 sensor/tools/gen_settings.py --check
+
   sensor:
     name: sensor gate (check.sh)
     runs-on: ubuntu-latest
