@@ -20,7 +20,7 @@ All code contributions are greatly appreciated. First off, clone the [Git reposi
 
 Our preferred method of patch submission is via a Git [pull request](https://help.github.com/articles/using-pull-requests).
 
-Many [people](https://github.com/stamparm/maltrail/graphs/contributors) have contributed in different ways to the Maltrail development. See also the Maltrail's ["Thank you" list](https://github.com/stamparm/maltrail#thank-you).
+Many [people](https://github.com/stamparm/maltrail/graphs/contributors) have contributed in different ways to the Maltrail development. See also the Maltrail's ["Thank you" list](https://github.com/stamparm/maltrail#acknowledgements).
 
 ### Guidelines
 
