@@ -391,7 +391,21 @@ _public_trails_key = None    # (mtime, size) of the trails file the cached copy 
 _reference_cache = {}  # trail -> (reference, source_relpath): on-demand static-trails scan result; bounded
 _REFERENCE_CACHE_MAX = 8192
 _REFERENCE_TIME_BUDGET = 2.0
-_STATIC_TRAILS_DIR = os.path.join(ROOT_DIR, "trails", "static")
+def _static_trails_dir():
+    """A checkout of the static-trails content repository, or None.
+
+    Static content lives in its own repository now and reaches a deployment as one assembled file,
+    so this is no longer a directory that simply exists. Operators who want per-cluster provenance
+    in the trail drawer point STATIC_TRAILS_DIR at a clone. Evaluated per call rather than at
+    import: the config is not loaded yet when this module is imported.
+    """
+
+    if config.STATIC_TRAILS_DIR:
+        path = os.path.abspath(os.path.join(ROOT_DIR, os.path.expanduser(config.STATIC_TRAILS_DIR)))
+        return path if os.path.isdir(path) else None
+
+    legacy = os.path.join(ROOT_DIR, "trails", "static")   # a pre-split checkout still works
+    return legacy if os.path.isdir(legacy) else None
 
 def _public_trails(content, key):
     """`content` with every trails-file row that came from trails/custom removed.
@@ -443,7 +457,12 @@ def _lookup_trail_reference(trail):
         needle = re.compile(b"(?m)^(?:https?://)?\\.?" + re.escape(core_b) + b"(?:[/\\s#]|$)")
         deadline = time.time() + _REFERENCE_TIME_BUDGET
         found = False
-        for root, _dirs, files in os.walk(_STATIC_TRAILS_DIR):   # os.walk: py2/py3-safe (glob recursive is py3-only)
+        static_dir = _static_trails_dir()
+        if static_dir is None:
+            # No checkout, so there is nothing to cite. Say which knob restores it rather than
+            # returning a blank citation that reads as "this trail has no source".
+            return ("", "(set 'STATIC_TRAILS_DIR' to a trails checkout for source citations)")
+        for root, _dirs, files in os.walk(static_dir):   # os.walk: py2/py3-safe (glob recursive is py3-only)
             if found or time.time() > deadline:
                 break
             for name in files:
@@ -1057,11 +1076,26 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             if _statics_cache is not None and _statics_cache[0] == key:
                 return _statics_cache[1]
 
-            files = glob.glob(os.path.join(os.path.dirname(__file__), "..", "trails", "static", "malware", "*.txt"))
-            if not files:
+            # The freshness date shown in the UI. It used to be the newest mtime under
+            # trails/static/malware/, which after the split is a directory that no longer exists -
+            # and `if not files: return ""` would have made the date quietly disappear from every
+            # page. The aggregate the deployment actually runs on is the honest source now.
+            static_dir = _static_trails_dir()
+            stamp = None
+            if static_dir is not None:
+                files = glob.glob(os.path.join(static_dir, "malware", "*.txt"))
+                if files:
+                    stamp = os.path.getmtime(max(files, key=os.path.getmtime))
+            if stamp is None:
+                for candidate in ("%s.static" % config.TRAILS_FILE, config.TRAILS_FILE):
+                    try:
+                        stamp = os.path.getmtime(candidate)
+                        break
+                    except OSError:
+                        continue
+            if stamp is None:
                 return ""
-            latest = max(files, key=os.path.getmtime)
-            content = "/%s" % datetime.datetime.fromtimestamp(os.path.getmtime(latest)).strftime(DATE_FORMAT)
+            content = "/%s" % datetime.datetime.fromtimestamp(stamp).strftime(DATE_FORMAT)
             _statics_cache = (key, content)
             return content
 

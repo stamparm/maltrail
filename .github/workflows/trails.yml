@@ -1,8 +1,10 @@
 # The trail-content gate: small on purpose.
 #
-# ci.yml deliberately ignores trails/** (`paths-ignore`), because trail content changes many times a
-# day and running the 45-minute sensor gate on each of those would burn runner time to re-prove
-# things no trail file can affect. But that left content with NO gate at all, which is how a regex
+# The bulk of the static trails moved to their own repository, which gates its own content on every
+# commit. What is left HERE is the detection content the engine still ships: data/ua.txt (folded
+# into SUSPICIOUS_UA_REGEX and compiled into the sensor), data/whitelist.txt, and the two scanner
+# lists in data/ - 19,942 trails that fire, and the noisiest class in the product. They must not
+# become the one kind of content with no gate on it, which is how a regex
 # like `\b(au|cat|...)\-[a-z0-9]{1,4}\.(buzz|cn|co|...)$` shipped and was reported by a customer:
 # it matched 89 domains in the top 1M, amazon-corp.com and rakuten-it.com among them.
 #
@@ -23,17 +25,19 @@ on:
   push:
     branches: [ "master" ]
     paths:
-      - 'trails/**'
       - 'data/whitelist.txt'
       - 'data/ua.txt'
+      - 'data/mass_scanner.txt'
+      - 'data/mass_scanner_cidr.txt'
       - 'tests/canaries.txt'
       - 'sensor/tools/check_trails.py'
   pull_request:
     branches: [ "master" ]
     paths:
-      - 'trails/**'
       - 'data/whitelist.txt'
       - 'data/ua.txt'
+      - 'data/mass_scanner.txt'
+      - 'data/mass_scanner_cidr.txt'
       - 'tests/canaries.txt'
       - 'sensor/tools/check_trails.py'
   workflow_dispatch:
@@ -52,14 +56,22 @@ jobs:
       # Entries that can never match: a non-ASCII key idna refuses, a wire form VALID_DNS_NAME_REGEX
       # rejects, a last label in IGNORE_DNS_QUERY_SUFFIXES. Also reports (without failing) the trails
       # a whitelisted parent domain shadows.
+      # The scanner lists are trails, so they get the same two checks the content repository runs.
+      # check_trails.py walks a DIRECTORY of trail files, and data/ also holds whitelists and the
+      # UA patterns, so stage just these two rather than pointing it at data/ wholesale.
+      - name: Stage the engine's own trail lists
+        run: |
+          mkdir -p /tmp/local-trails
+          cp data/mass_scanner.txt data/mass_scanner_cidr.txt /tmp/local-trails/
+
       - name: Trails are reachable on the wire
-        run: python3 sensor/tools/check_trails.py
+        run: python3 sensor/tools/check_trails.py --path /tmp/local-trails
 
       # And the other direction: no trail may match a name that must never be flagged. This is the
       # one that sees REGEX trails - a popularity-list intersection cannot, because a pattern is
       # never equal to a domain.
       - name: No trail matches a canary
-        run: python3 sensor/tools/check_trails.py --canaries
+        run: python3 sensor/tools/check_trails.py --path /tmp/local-trails --canaries
 
       # data/ua.txt is detection content too, and read_ua() folds it into SUSPICIOUS_UA_REGEX, which
       # the Rust sensor COMPILES IN via src/settings_gen.rs. Add a pattern without regenerating and

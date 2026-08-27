@@ -47,7 +47,7 @@ All contributions to static trails (adding new Maltrail detections, fixing false
 
 ## Adding a feed
 
-Everything under `trails/feeds/` ends up in the trail set of every Maltrail install, so taking a new
+Everything under `feeds/` ends up in the trail set of every Maltrail install, so taking a new
 source is an editorial decision, not a plumbing one. "The module imports, the URL answers and the
 `__check__` string matches" is not a review - it only proves the feed is alive.
 
@@ -67,11 +67,11 @@ What a feed pull request has to make the case for:
 * **A read of the actual entries.** Public mining pools, Tor nodes, mixers, CDNs, public resolvers and
   URL shorteners appear in IOC lists constantly, because malware *uses* them - an extractor that
   works from incident write-ups cannot tell the pool from the miner. Maltrail already classes those
-  correctly (`trails/static/suspicious/crypto_mining.txt` and friends), so a feed that calls them
+  correctly (`suspicious/crypto_mining.txt` in the trails repository and friends), so a feed that calls them
   malicious is fighting our own curation.
 * **A readable `__url__`.** `core/update.py` prints it to the operator on every run. If the feed needs
   several URLs, keep `__url__` human-readable and list them inside `fetch()` - see
-  `trails/feeds/dataplane.py`.
+  `feeds/dataplane.py`.
 * **A `__check__` that only appears in a healthy response.** It is what keeps a redirect, an error
   page or an empty answer from silently emptying the feed.
 

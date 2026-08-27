@@ -80,6 +80,17 @@ import sys
 import zipfile
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
+
+
+def _default_trails_path():
+    """Where to look for the static trail content, now that it is a separate repository."""
+
+    for candidate in (os.environ.get("MALTRAIL_TRAILS_DIR"),
+                      os.path.join(os.path.dirname(ROOT), "trails"),   # a sibling checkout
+                      os.path.join(ROOT, "trails", "static")):         # a pre-split tree
+        if candidate and os.path.isdir(candidate):
+            return candidate
+    return os.path.join(os.path.dirname(ROOT), "trails")
 sys.path.insert(0, ROOT)
 
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES  # noqa: E402
@@ -504,7 +515,9 @@ def canary_report(options, whitelist):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--path", default=os.path.join(ROOT, "trails", "static"))
+    # Static trail content lives in its own repository now, so there is no in-repo default that is
+    # right for everyone. MALTRAIL_TRAILS_DIR, then a sibling checkout, then the pre-split location.
+    parser.add_argument("--path", default=_default_trails_path())
     parser.add_argument("--quiet", action="store_true", help="exit status only")
     parser.add_argument("--strict", action="store_true", help="a warning fails too")
     parser.add_argument("--no-whitelist", action="store_true", help="skip the whitelist-shadowing report")

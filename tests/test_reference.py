@@ -15,8 +15,11 @@ import core.httpd as H
 class ReferenceLookupTest(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.mkdtemp()
-        self._saved = H._STATIC_TRAILS_DIR
-        H._STATIC_TRAILS_DIR = self.tmp
+        # Static content is its own repository now, so the lookup resolves its directory per call
+        # (STATIC_TRAILS_DIR, a sibling checkout, or a pre-split tree) instead of reading a module
+        # global fixed at import. Point it at the fixture the same way an operator would.
+        self._saved = H.config.STATIC_TRAILS_DIR
+        H.config.STATIC_TRAILS_DIR = self.tmp
         H._reference_cache.clear()
         os.makedirs(os.path.join(self.tmp, "malware"))
         with open(os.path.join(self.tmp, "malware", "fake.txt"), "w") as f:
@@ -27,7 +30,7 @@ class ReferenceLookupTest(unittest.TestCase):
                     "9.9.9.9\nevil.example/path\n")
 
     def tearDown(self):
-        H._STATIC_TRAILS_DIR = self._saved
+        H.config.STATIC_TRAILS_DIR = self._saved
         H._reference_cache.clear()
         shutil.rmtree(self.tmp, ignore_errors=True)
 
@@ -39,6 +42,16 @@ class ReferenceLookupTest(unittest.TestCase):
     def test_per_pile_precision(self):
         # 9.9.9.9 sits under the SECOND '# Reference:' -> must resolve to feedB, not the file's first header
         self.assertEqual(H._lookup_trail_reference("9.9.9.9")[0], "https://example.com/feedB")
+
+    def test_no_checkout_says_so(self):
+        # Without a content checkout there is nothing to cite. It must not come back as an empty
+        # citation, which renders as "this trail has no source" rather than "provenance is not
+        # configured here".
+        H.config.STATIC_TRAILS_DIR = os.path.join(self.tmp, "nonexistent")
+        H._reference_cache.clear()
+        ref, src = H._lookup_trail_reference("bad1.example")
+        self.assertEqual(ref, "")
+        self.assertIn("STATIC_TRAILS_DIR", src)
 
     def test_url_host_match(self):
         # trail is the host of "evil.example/path"

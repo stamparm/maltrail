@@ -9,7 +9,8 @@ startup and on every `UPDATE_PERIOD`, mirroring `sensor.py:init():update_timer()
 
     python3 sensor/tools/update_trails.py -c maltrail.conf [--offline]
 
-`--offline` rebuilds `TRAILS_FILE` from the bundled static/custom trails without touching the
+`--offline` rebuilds `TRAILS_FILE` from the CACHED static aggregate and the custom trails,
+without touching the
 network (exactly what `sensor.py --offline` does — note that it still *refreshes* the file).
 Without it, the feeds are pulled first, falling back to offline mode when there is no
 connectivity, and `ipcat` is refreshed too.

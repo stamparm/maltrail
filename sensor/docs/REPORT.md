@@ -138,7 +138,7 @@ Also clean: `cargo fmt --check`, `cargo clippy --all-targets -- -D warnings` (0 
    from the field, not caught by a test. `sensor.py:init()` starts an `update_timer()` that
    refreshes the trails file before the first load and every `UPDATE_PERIOD`; the sensor only
    ever *read* it. On the maintainer's host the file was four weeks old, so `511mon.kozow.com` —
-   added to `trails/static/malware/asyncrat.txt` two weeks after that snapshot — was detected only
+   added to `malware/asyncrat.txt` in the trails repository two weeks after that snapshot — was detected only
    through its dynamic-DNS parent (`(511mon).kozow.com "dynamic domain (suspicious)"` instead of
    `511mon.kozow.com "asyncrat (malware)"`). It had been *documented* as an acceptable limitation,
    which was the real mistake: a sensor silently running on stale trails looks perfectly healthy.

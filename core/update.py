@@ -8,6 +8,7 @@ See the file 'LICENSE' for copying permission
 import codecs
 import csv
 import glob
+import io
 import gzip
 import inspect
 import os
@@ -24,6 +25,8 @@ from core.addr import addr_to_int
 from core.addr import int_to_addr
 from core.addr import leading_ipv4
 from core.addr import make_mask
+from core import assemble
+from core import custom_trails
 from core.common import bogon_ip
 from core.common import cdn_ip
 from core.common import check_whitelisted
@@ -47,6 +50,7 @@ from core.settings import IPCAT_CSV_FILE
 from core.settings import IPCAT_SQLITE_FILE
 from core.settings import IPCAT_URL
 from core.settings import IS_WIN
+from core.settings import LOCAL_STATIC_TRAIL_FILES
 from core.settings import ROOT_DIR
 from core.settings import UNICODE_ENCODING
 from core.settings import USERS_DIR
@@ -149,6 +153,55 @@ def write_confidence_file(trails, duplicates):
             pass
         return False
 
+def fetch_static_trails(offline=False):
+    """The static trail aggregate: fetched from STATIC_TRAILS_URL, cached next to TRAILS_FILE.
+
+    Static content lives in its own repository now, so the engine pulls one assembled file instead
+    of carrying 1.6M indicators in its own git history. The cache is what makes an air-gapped or
+    offline run work, and what stops a failed download from quietly producing a sensor that detects
+    nothing.
+    """
+
+    cache = "%s.static" % config.TRAILS_FILE
+    content = None
+
+    if not offline and config.STATIC_TRAILS_URL:
+        print(" [o] '%s'" % config.STATIC_TRAILS_URL)
+        content = retrieve_content(config.STATIC_TRAILS_URL)
+        if content and content.count(',') > 1:
+            try:
+                tmp = "%s.new" % cache
+                with _fopen(tmp, "w+", codecs.open) as f:
+                    f.write(content)
+                _atomic_replace(tmp, cache)
+            except (OSError, IOError) as ex:
+                print("[x] unable to cache the static trails ('%s')" % ex)
+        else:
+            print("[x] unable to retrieve the static trails from '%s'" % config.STATIC_TRAILS_URL)
+            content = None
+
+    if content is None and os.path.isfile(cache):
+        print("[i] using the cached static trails ('%s')" % cache)
+        with open(cache, "rb") as f:
+            content = f.read().decode(UNICODE_ENCODING)
+
+    if not content:
+        # Loudly. An empty static set is 1.6M missing indicators, and every symptom of it - a
+        # server that starts, a dashboard that renders, a sensor that reports healthy - looks
+        # exactly like a quiet network.
+        print("[!] no static trails available: '%s' could not be retrieved and there is no cache at '%s'" % (config.STATIC_TRAILS_URL or "<STATIC_TRAILS_URL unset>", cache))
+        return {}
+
+    # csv.reader, not split(','): 24 trails contain a comma of their own (regex trails such as
+    # `[0-9]{2,3}\.ru`, URL trails such as `/44285,5327891204.dat`). This is the same dialect
+    # load_trails() uses on trails.csv.
+    retval = {}
+    for row in csv.reader(io.StringIO(content), delimiter=',', quotechar='"'):
+        if row and len(row) == 3:
+            retval[row[0]] = (row[1], row[2])
+
+    return retval
+
 def update_trails(force=False, offline=False):
     """
     Update trails from feeds
@@ -187,9 +240,14 @@ def update_trails(force=False, offline=False):
 
     else:
         trail_files = set()
-        for dirpath, dirnames, filenames in os.walk(os.path.abspath(os.path.join(ROOT_DIR, "trails"))):
+        for dirpath, dirnames, filenames in os.walk(os.path.abspath(os.path.join(ROOT_DIR, "feeds"))):
             for filename in filenames:
                 trail_files.add(os.path.abspath(os.path.join(dirpath, filename)))
+
+        for _ in LOCAL_STATIC_TRAIL_FILES:
+            _ = os.path.abspath(os.path.join(ROOT_DIR, "data", _))
+            if os.path.isfile(_):
+                trail_files.add(_)
 
         if config.CUSTOM_TRAILS_DIR:
             for dirpath, dirnames, filenames in os.walk(os.path.abspath(os.path.join(ROOT_DIR, os.path.expanduser(config.CUSTOM_TRAILS_DIR)))):
@@ -203,7 +261,7 @@ def update_trails(force=False, offline=False):
                 print("[i] checking trails...")
 
             if not offline and (force or config.USE_FEED_UPDATES):
-                _ = os.path.abspath(os.path.join(ROOT_DIR, "trails", "feeds"))
+                _ = os.path.abspath(os.path.join(ROOT_DIR, "feeds"))
                 if _ not in sys.path:
                     sys.path.append(_)
 
@@ -211,19 +269,34 @@ def update_trails(force=False, offline=False):
             else:
                 filenames = []
 
-            _ = os.path.abspath(os.path.join(ROOT_DIR, "trails"))
-            if _ not in sys.path:
-                sys.path.append(_)
-
-            filenames += [os.path.join(_, "custom")]
-            filenames += [os.path.join(_, "static")]    # Note: higher priority than previous one because of dummy user trails (FE)
-
             filenames = [_ for _ in filenames if "__init__.py" not in _]
 
+            # DISABLED_FEEDS names FEEDS. `custom` and `static` used to be appended to this same
+            # list and filtered by it, so `DISABLED_FEEDS static` silently dropped all 1.6M static
+            # trails and nothing said so. They are explicit phases below now, and unreachable from
+            # here.
             if config.DISABLED_FEEDS:
                 filenames = [filename for filename in filenames if os.path.splitext(os.path.split(filename)[-1])[0] not in re.split(r"[^\w]+", config.DISABLED_FEEDS)]
 
             empty_feeds = []
+
+            def _merge(results):
+                """Merge one source's {trail: (info, reference)} into `trails`.
+
+                ONE rule, used by feeds, custom and static alike. It used to live inside the feed
+                loop, which is why static and custom had to masquerade as feeds to reach it; where
+                a source comes from must not change which of two labels an indicator ends up with.
+                """
+
+                for item in results.items():
+                    if item[0].startswith("www.") and '/' not in item[0]:
+                        item = [item[0][len("www."):], item[1]]
+                    if item[0] in trails:
+                        if item[0] not in duplicates:
+                            duplicates[item[0]] = set((trails[item[0]][1],))
+                        duplicates[item[0]].add(item[1][1])
+                    if not (item[0] in trails and (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) or trails[item[0]][1] in HIGH_PRIORITY_REFERENCES)) or (item[1][1] in HIGH_PRIORITY_REFERENCES and "history" not in item[1][0]) or any(_ in item[1][0] for _ in HIGH_PRIORITY_INFO_KEYWORDS):
+                        trails[item[0]] = item[1]
 
             for i in xrange(len(filenames)):
                 filename = filenames[i]
@@ -247,15 +320,7 @@ def update_trails(force=False, offline=False):
 
                         try:
                             results = function()
-                            for item in results.items():
-                                if item[0].startswith("www.") and '/' not in item[0]:
-                                    item = [item[0][len("www."):], item[1]]
-                                if item[0] in trails:
-                                    if item[0] not in duplicates:
-                                        duplicates[item[0]] = set((trails[item[0]][1],))
-                                    duplicates[item[0]].add(item[1][1])
-                                if not (item[0] in trails and (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) or trails[item[0]][1] in HIGH_PRIORITY_REFERENCES)) or (item[1][1] in HIGH_PRIORITY_REFERENCES and "history" not in item[1][0]) or any(_ in item[1][0] for _ in HIGH_PRIORITY_INFO_KEYWORDS):
-                                    trails[item[0]] = item[1]
+                            _merge(results)
                             # A feed that yields nothing is reported, whatever the host. This used
                             # to skip abuse.ch and cobaltstrike URLs, presumably because a tracker
                             # with no live C2s legitimately returns an empty list - but the
@@ -282,6 +347,26 @@ def update_trails(force=False, offline=False):
                 print("[!] %d feed(s) produced no indicators this run:" % len(empty_feeds))
                 for url in empty_feeds:
                     print("[!]     %s" % url)
+
+            # Custom, then static - in THAT order, because it is the order the merge rule above
+            # was written against: `static` was the last entry appended to the feed list, and for
+            # a key listed by two sources the rule's outcome depends on which it sees first.
+            print(" [o] '(custom)'%s" % (" " * 20))
+            _merge(custom_trails.fetch())
+
+            print(" [o] '(static)'%s" % (" " * 20))
+            _merge(fetch_static_trails(offline))
+
+            # The engine's own static lists. They merge AFTER the aggregate, which is where they
+            # merged before the split - the content tree's root was read after suspicious/ and
+            # before malware/ - and that ordering is what keeps 192.64.119.0/24, listed by both
+            # mass_scanner_cidr.txt and suspicious/parking_site.txt, labelled 'mass scanner cidr'.
+            for _ in LOCAL_STATIC_TRAIL_FILES:
+                _ = os.path.abspath(os.path.join(ROOT_DIR, "data", _))
+                if os.path.isfile(_):
+                    _merge(assemble.merge_file(_, {}))
+                else:
+                    print("[!] '%s' is missing - those trails will not be loaded" % _)
 
             # custom trails from remote location
             if config.CUSTOM_TRAILS_URL:

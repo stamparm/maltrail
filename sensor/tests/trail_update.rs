@@ -63,6 +63,27 @@ impl Fixture {
         Fixture { dir, config, trails }
     }
 
+    /// Seed the static-trail cache from a content checkout.
+    ///
+    /// Static trails are their own repository now and reach a deployment as one assembled file, so
+    /// an offline run reads the cache beside TRAILS_FILE rather than a directory in this tree.
+    /// Returns false when there is no checkout to assemble from - the caller skips rather than
+    /// asserting against a trail set that was never going to be built.
+    fn seed_static_cache(&self) -> bool {
+        let Some(dir) = static_trails_dir() else { return false };
+        let cache = format!("{}.static", self.trails.display());
+        let status = Command::new("python3")
+            .current_dir(repo_root())
+            .arg("-m")
+            .arg("core.assemble")
+            .arg("--root")
+            .arg(&dir)
+            .arg("--out")
+            .arg(&cache)
+            .status();
+        matches!(status, Ok(s) if s.success()) && std::fs::metadata(&cache).map(|m| m.len() > 1_000_000).unwrap_or(false)
+    }
+
     /// Replay one pcap and return the sensor's stdout+stderr.
     fn run(&self, pcap: &Path) -> String {
         let binary = sensor_binary().expect("binary");
@@ -145,9 +166,35 @@ fn backdate(path: &Path, secs: u64) {
     assert_eq!(rc, 0, "utimes({}) failed", path.display());
 }
 
+/// Where the static trail content lives now that it is its own repository: `MALTRAIL_TRAILS_DIR`,
+/// a sibling checkout, or a pre-split tree.
+fn static_trails_dir() -> Option<std::path::PathBuf> {
+    let mut candidates: Vec<std::path::PathBuf> = Vec::new();
+    if let Ok(dir) = std::env::var("MALTRAIL_TRAILS_DIR") {
+        candidates.push(std::path::PathBuf::from(dir));
+    }
+    if let Some(parent) = repo_root().parent() {
+        candidates.push(parent.join("trails"));
+    }
+    candidates.push(repo_root().join("trails").join("static"));
+    candidates.into_iter().find(|p| p.is_dir())
+}
+
 fn static_trail_is_in_the_repository() -> bool {
-    let path = repo_root().join("trails").join("static").join("malware").join("asyncrat.txt");
-    std::fs::read_to_string(path).map(|t| t.lines().any(|l| l.trim() == STATIC_TRAIL)).unwrap_or(false)
+    // Before the split this read trails/static/malware/asyncrat.txt and `unwrap_or(false)`d, so the
+    // caller printed "[skip]" and passed. With the content in another repository that would have
+    // become a PERMANENT silent skip of the one test that pins the field miss it was written for -
+    // a stale trails file failing to pick up a newly added static IOC. It now says which knob makes
+    // it runnable instead of quietly reporting success.
+    let Some(dir) = static_trails_dir() else {
+        println!("[skip] no static trail content found - set MALTRAIL_TRAILS_DIR to a checkout of the trails repository");
+        return false;
+    };
+    let path = dir.join("malware").join("asyncrat.txt");
+    std::fs::read_to_string(&path).map(|t| t.lines().any(|l| l.trim() == STATIC_TRAIL)).unwrap_or_else(|_| {
+        println!("[skip] {} is not readable", path.display());
+        false
+    })
 }
 
 #[test]
@@ -157,6 +204,10 @@ fn a_missing_trails_file_is_built_at_startup() {
         return;
     };
     let fixture = Fixture::new("missing", "");
+    if !fixture.seed_static_cache() {
+        println!("[skip] no static trail content to assemble - set MALTRAIL_TRAILS_DIR to a checkout of the trails repository");
+        return;
+    }
     assert!(!fixture.trails.exists());
     let pcap = dns_query_pcap(&fixture.dir, "example.org");
     let output = fixture.run(&pcap);
@@ -174,11 +225,18 @@ fn a_stale_trails_file_is_refreshed_and_new_static_iocs_are_detected() {
         return;
     };
     if !static_trail_is_in_the_repository() {
-        println!("[skip] {STATIC_TRAIL} is no longer in trails/static/malware/asyncrat.txt");
+        println!("[skip] {STATIC_TRAIL} is no longer in malware/asyncrat.txt");
         return;
     }
 
     let fixture = Fixture::new("stale", "");
+    // The refresh pulls static trails from the assembled aggregate, so an offline run needs the
+    // cache seeded - otherwise the file is "refreshed" into one with no static content at all and
+    // the miss this test exists to catch would look exactly like a pass that found nothing.
+    if !fixture.seed_static_cache() {
+        println!("[skip] no static trail content to assemble - set MALTRAIL_TRAILS_DIR to a checkout of the trails repository");
+        return;
+    }
     // Reproduce the field situation: a trails file generated weeks ago that knows the dynamic-DNS
     // parent but not the newer IOC. The age matters — `core.update.update_trails()` rebuilds when
     // the file is older than UPDATE_PERIOD or older than any trail file, so a freshly written

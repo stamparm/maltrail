@@ -217,7 +217,8 @@ clone_or_update() {
     fi
     if [ -d "$PREFIX/.git" ]; then
         say "updating $PREFIX (ref: $REF)"
-        # A dirty tree is not ours to throw away. trails/custom/*.txt - an operator's OWN
+        # A dirty tree is not ours to throw away. CUSTOM_TRAILS_DIR now defaults outside the
+        # checkout, but an existing install may still have trails/custom/*.txt - an operator's OWN
         # indicators - are untracked, so `git clean -fd` would delete them, and local edits to
         # tracked files would go under `reset --hard`. Upgrade only what is clean, and say what was
         # skipped; --force is the way to say "yes, discard it".

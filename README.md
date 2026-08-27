@@ -344,10 +344,8 @@ whitelist counts rather than only confirming that files exist.
 Trails are stored as plain-text indicators:
 
 ```text
-trails/static/malware/       malware-related static trails
-trails/static/malicious/     malicious infrastructure
-trails/static/suspicious/    suspicious infrastructure and behavior
-trails/feeds/*.py            public feed integrations
+feeds/*.py                   public feed integrations
+data/mass_scanner*.txt       mass-scanner address lists
 ```
 
 Add local indicators under `CUSTOM_TRAILS_DIR`. Add indicators that should never generate alerts
@@ -535,7 +533,7 @@ Maltrail is distributed under the MIT License. See [`LICENSE`](LICENSE).
 
 ### Derived blacklist
 
-A domain-only list derived from `trails/static/malware` is published at
+A domain-only list derived from the `malware/` static trails is published at
 [`maltrail-malware-domains.txt`](https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt).
 It can be used as an input to DNS filtering systems, but operators should review and test it before
 enabling blocking. Threat-intelligence lists can contain false positives or indicators that are not

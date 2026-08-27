@@ -202,6 +202,13 @@ except ImportError:
 # `old/sensor.py` and the Rust sensor read from maltrail.conf, plus the array sections.
 # Anything else in the file is almost certainly a typo: a silently ignored
 # 'USE_CONDESND_STORAGE' looks configured while disabling its feature entirely.
+# Static trail lists that ship with the ENGINE rather than with the content repository. They are
+# curated reference data - one commit each in eight months, the same shape as worst_asns.txt - but
+# they are trails, not filters: they contribute 19,942 keys that fire. Anything that gates trail
+# content has to walk them too, or the noisiest detection class in the product is the one class
+# with no gate on it.
+LOCAL_STATIC_TRAIL_FILES = ("mass_scanner.txt", "mass_scanner_cidr.txt")
+
 KNOWN_CONFIG_OPTIONS = frozenset((
     "ALERT_FORMAT",
     "ALERT_SEVERITY",
@@ -225,6 +232,8 @@ KNOWN_CONFIG_OPTIONS = frozenset((
     "CHECK_TLS_CERTIFICATES",
     "CUSTOM_TRAILS_DIR",
     "CUSTOM_TRAILS_URL",
+    "STATIC_TRAILS_URL",
+    "STATIC_TRAILS_DIR",
     "DISABLED_FEEDS",
     "DISABLED_HEURISTICS",
     "DISABLED_TRAILS_INFO_REGEX",
