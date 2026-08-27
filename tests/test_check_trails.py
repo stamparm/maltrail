@@ -41,8 +41,11 @@ REACHABLE = [
     ("ortakoporotör.com", "a deliberate IDN: matches its punycode, xn--ortakoporotr-fjb.com"),
     ("support¬forum.org", "the apt_darkhotel entry - proven by replay to produce an event"),
     ("xyz", "a bare TLD: the parent-domain walk reaches it from evil.xyz"),
-    ("10.11.12.13", "an IPv4 trail, not a name"),
-    ("10.11.12.13:4444", "an IPv4:port trail"),
+    # Routable on purpose. These used to be 10.11.12.13, which is RFC1918 - and once classify()
+    # started judging address trails, that was correctly reported inert, because update_trails()
+    # drops bogons. The old pair asserted the blind spot, not the behaviour.
+    ("45.83.220.17", "an IPv4 trail, not a name"),
+    ("45.83.220.17:4444", "an IPv4:port trail"),
     ("2001:db8::1", "an IPv6 trail"),
     ("bad..biz", "an empty interior label: DNS cannot carry it, but an HTTP Host or SNI can"),
     ("dyn_host.dyn.biz", "'_' is legal in every label but the last"),
@@ -379,6 +382,42 @@ class RankCapTest(unittest.TestCase):
             f.write(u"1,safe.biz\n2,other.biz\n3,ai-pay.club\n")
         self.assertEqual(len(C.popular_matches(self.tmp, C.canaries(path))), 1)
         self.assertEqual(C.popular_matches(self.tmp, C.canaries(path, 2)), [])
+
+
+
+class AddressTrailsAreJudgedToo(unittest.TestCase):
+    """An address trail can be unreachable, and until this it was the one inert class nothing saw.
+
+    update_trails() deletes any trail whose leading quad is a CDN edge or a bogon, so such an entry
+    is added, reviewed, committed - and then dropped from every build. The report said "C2 at
+    104.16.155.10:8888", somebody put it in, and no deployment ever matched it. That is worse than a
+    false positive: it looks like detection. 451 entries in the content repository were in this
+    state when the check was written.
+    """
+
+    def test_cdn_edge_is_inert(self):
+        for key in ("104.16.155.10", "104.16.155.10:8888"):
+            verdict = C.classify(key, set(), "")
+            self.assertIsNotNone(verdict, key)
+            self.assertEqual(verdict[0], "inert")
+            self.assertIn("CDN edge", verdict[1])
+
+    def test_bogon_is_inert(self):
+        verdict = C.classify("10.0.0.5", set(), "")
+        self.assertIsNotNone(verdict)
+        self.assertEqual(verdict[0], "inert")
+        self.assertIn("bogon", verdict[1])
+
+    def test_a_routable_address_is_clean(self):
+        # The check has to be able to stay quiet, or it is just noise with a reason attached.
+        for key in ("45.83.220.17", "45.83.220.17:443"):
+            self.assertIsNone(C.classify(key, set(), ""), key)
+
+    def test_parking_and_sinkhole_are_exempt(self):
+        # update_trails() spares them: naming shared infrastructure is the entire point of those
+        # piles. Mirror it, or this reports deliberate entries as broken.
+        for info in ("parking site", "sinkhole"):
+            self.assertIsNone(C.classify("104.16.155.10", set(), info), info)
 
 
 if __name__ == "__main__":

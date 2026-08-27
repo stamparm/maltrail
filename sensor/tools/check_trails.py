@@ -93,8 +93,16 @@ def _default_trails_path():
     return os.path.join(os.path.dirname(ROOT), "trails")
 sys.path.insert(0, ROOT)
 
+from core.addr import leading_ipv4  # noqa: E402
+from core.common import bogon_ip, cdn_ip  # noqa: E402
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES  # noqa: E402
 from core.settings import VALID_DNS_NAME_REGEX  # noqa: E402
+from core.settings import read_bogon_ranges, read_cdn_ranges  # noqa: E402
+
+# The same tables update_trails() filters on, so this agrees with the build by construction rather
+# than by keeping a second copy of anybody's published ranges in step.
+read_cdn_ranges()
+read_bogon_ranges()
 
 VALID_DNS = re.compile(VALID_DNS_NAME_REGEX)
 IPV4 = re.compile(r"\A\d+\.\d+\.\d+\.\d+\Z")
@@ -181,14 +189,29 @@ def wire_form(key):
         return None                              # stored verbatim, and no query can carry it
 
 
-def classify(key, whitelist=None):
+def classify(key, whitelist=None, info=""):
     """(severity, reason) for one trail key, or None when it is reachable as written.
 
     severity is "inert" - it cannot match, ever - "shadowed": a whitelisted parent domain suppresses it, or
     "warn": it will match something, but probably not what the report meant."""
 
     if not key or IPV4.match(key) or IPV4_PORT.match(key) or ':' in key:
-        return None                              # IPv4, IPv4:port and IPv6 are not names
+        # Not names - but an ADDRESS trail can still be unreachable, and until this looked it was
+        # the one inert class nothing reported. update_trails() deletes any trail whose leading
+        # quad is a CDN edge or a bogon (core/update.py), so such an entry is added, reviewed,
+        # committed, and then silently dropped from every build: the report said "C2 at
+        # 104.16.155.10:8888", somebody put it in, and no deployment ever matched it. That is worse
+        # than a false positive, because it looks like detection.
+        address = leading_ipv4(key)
+        if address:
+            # update_trails() spares parking/sinkhole entries, whose whole point is to name shared
+            # infrastructure. Mirror that, or this reports them as broken when they are deliberate.
+            if not any(_ in info for _ in ("parking", "sinkhole")):
+                if cdn_ip(address):
+                    return ("inert", "%s is a CDN edge address: update_trails() drops it, so this trail never reaches a deployment" % address)
+                if bogon_ip(address):
+                    return ("inert", "%s is a bogon: update_trails() drops it, so this trail never reaches a deployment" % address)
+        return None
     if re.search(r"[*\[\]]", key):
         return None                              # wildcard trail, matched by regex instead
 
@@ -301,8 +324,11 @@ def problems(root, whitelist=None):
             if not name.endswith(".txt"):
                 continue
             path = os.path.join(base, name)
+            # The info the assembler will give these entries: the filename, underscores to spaces.
+            # Only used for the parking/sinkhole exemption below, which is keyed on it.
+            info = os.path.splitext(name)[0].replace('_', ' ')
             for number, key in entries(path):
-                verdict = classify(key, whitelist)
+                verdict = classify(key, whitelist, info)
                 if verdict:
                     found.append((path, number, key, verdict[0], verdict[1]))
     return found
