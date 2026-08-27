@@ -5,7 +5,6 @@
 # In some situations this might come in handy since less blockhole routes / firewall rules are necessary.
 
 5.63.151.0/24 # scanners.labs.rapid7.com
-13.249.87.0/24 # 13.249.87.125
 31.24.231.0/24 # scanner3.labs.rapid7.com
 35.202.2.0/24 # ltx71
 35.203.210.0/24 # cortex xpanse
@@ -158,8 +157,6 @@
 96.127.158.0/24 # 96.127.158.234
 96.127.169.0/24 # 96.127.169.2
 98.189.26.0/24 # scan.sba-research.org
-99.84.168.0/24 # 99.84.168.122
-99.84.254.0/24 # 99.84.254.24
 104.131.0.0/24 # hello.data.shodan.io
 104.131.209.0/24 # min-extra-scan-104-usny-prod.binaryedge.ninja.
 104.152.52.0/24 # internettl.org
