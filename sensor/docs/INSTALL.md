@@ -471,11 +471,12 @@ Nothing here is required to run the sensor; it is how to convince yourself befor
    replay that one capture and diff the results:
 
    ```bash
-   bash sensor/tools/shadow_run.sh --seconds 600
+   sudo python3 sensor/tools/adversarial_traffic.py --seconds 600
    ```
 
 3. **Scale out only if you need to.** One worker handles 1.8M packets/s on an eight-core laptop
-   CPU and 3.7M on a Ryzen 9 5900X (steady-state, `tools/bench_compare.py`). If
+   CPU and 3.7M on a Ryzen 9 5900X (steady-state, measured before the comparison harness was
+retired; `cargo bench --bench hotpath` is the current measurement). If
    `maltrail_capture_dropped_total` is climbing, set `CAPTURE_FANOUT` and re-run
    `fanout_check.py` — and read `docs/COMPATIBILITY.md` §2, difference 3 first, because extra capture
    sockets cost scan-heuristic sensitivity.

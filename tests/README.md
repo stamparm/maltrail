@@ -22,7 +22,6 @@ timeout. **Always run capped** — Python 2 with `cryptography` loaded can ballo
 | `test_fastfilter.py`| `core/fastfilter.py`  | IOC-set building, severity admission tiers, the adaptive controller, and the DLT-offset heuristic |
 | `test_quic_sni.py`  | `core/quic_sni.py`    | QUIC Initial decryption (RFC 9001 KAT), HKDF, SNI extraction, malformed-input safety |
 | `test_tls_intel.py` | `core/tls_intel.py`   | TLS ClientHello SNI, JA3/JA3S/JA4 fingerprints, cert names, fuzz-safety |
-| `test_sensor.py`    | `sensor.py`           | The real detection path — `_check_domain` and `_process_packet` raising DNS / IP / IP:port / UDP trails — plus the DLT-offset learner |
 
 `_pcapgen.py` is a small packet builder (Ethernet/SLL/VLAN/IPv4/IPv6/TCP/UDP) shared by the
 packet-level suites.

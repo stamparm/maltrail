@@ -199,7 +199,7 @@ except ImportError:
     CPU_CORES = 1
 
 # Every option name the parsers accept - everything `core/`, `server.py`, the retired
-# `old/sensor.py` and the Rust sensor read from maltrail.conf, plus the array sections.
+# the retired Python sensor and the Rust sensor read from maltrail.conf, plus the array sections.
 # Anything else in the file is almost certainly a typo: a silently ignored
 # 'USE_CONDESND_STORAGE' looks configured while disabling its feature entirely.
 # Static trail lists that ship with the ENGINE rather than with the content repository. They are

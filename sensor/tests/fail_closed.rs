@@ -180,7 +180,7 @@ fn a_collapsing_reload_is_rejected_not_published() {
 
 /// A capture that OPENS but cannot be read must not replay to "success" with zero packets.
 ///
-/// Found by the shadow harness (`tools/shadow_run.sh`) on a `mergecap` output: libpcap refuses a
+/// Found by the shadow harness (since retired) on a `mergecap` output: libpcap refuses a
 /// pcapng whose interfaces have different link types. The header parsed, so the file opened
 /// fine; the first read failed; the sensor logged the error to error.log and exited 0 having
 /// read nothing. An analyst would take that as "no detections in this capture" when the truth is

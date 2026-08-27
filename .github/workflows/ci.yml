@@ -76,10 +76,6 @@ jobs:
         with:
           python-version: '3.12'
 
-      # parity.py replays the corpus through old/sensor.py as the differential oracle.
-      - name: Install the old sensor's capture bindings
-        run: pip install -r old/requirements.txt
-
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: sensor

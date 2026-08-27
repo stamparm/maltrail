@@ -2,7 +2,7 @@
 """Unit tests for the built-in detection self-check (server.py --detect-test, core/testing.py).
 
 It answers the one question this project's characteristic bug makes hard: "is my install actually detecting
-anything?" It answered it wrongly. It replayed the fixture through old/sensor.py - the retired Python sensor,
+anything?" It answered it wrongly. It replayed the fixture through the retired Python sensor - the retired Python sensor,
 which imports pcapy, which has not been a dependency since the sensor became Rust - so on a healthy install it
 printed "0/17 detection(s) fired ... FAILED" and exited 1.
 
@@ -29,7 +29,7 @@ def _body_without_docstring(function):
     Not `source.replace(function.__doc__, "")`, which is what this did first: Python **3.13** strips
     the common leading whitespace from docstrings at compile time (gh-81283), so `__doc__` no longer
     appears verbatim in the indented source, the replace removed nothing, and the docstring - which
-    names `old/sensor.py` deliberately - stayed in the text being asserted against. It passed on
+    names the retired sensor deliberately - stayed in the text being asserted against. It passed on
     3.9-3.12 and failed only on the 3.13 leg of CI. Reading the delimiters out of the source is
     version-independent, and needs no `ast.unparse` (3.9+, and the floor here is 3.6).
     """
@@ -50,8 +50,11 @@ class SensorSelectionTest(unittest.TestCase):
         # Without this the test above passes for the wrong reason on one interpreter and fails on
         # another, which is exactly what happened: see _body_without_docstring().
         source = inspect.getsource(T.detect_test)
-        self.assertIn("old/sensor.py", source, "the docstring no longer names it; update this test")
-        self.assertNotIn("old/sensor.py", _body_without_docstring(T.detect_test))
+        # A phrase that appears ONLY in the docstring, so its absence from the stripped body proves
+        # the strip worked rather than proving nothing.
+        sentinel = "retired Python sensor"
+        self.assertIn(sentinel, source, "the docstring no longer says this; update the sentinel")
+        self.assertNotIn(sentinel, _body_without_docstring(T.detect_test))
 
     def test_find_sensor_returns_an_executable_or_none(self):
         binary = T.find_sensor()

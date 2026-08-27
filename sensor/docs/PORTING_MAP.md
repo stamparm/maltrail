@@ -1,5 +1,13 @@
 # Maltrail sensor — porting map
 
+
+> **Historical.** The retired Python sensor (`old/`) and the differential harness built around it
+> — `tools/parity.py`, `tools/shadow_run.sh`, `tools/shadow_diff.py`, `tools/bench_compare.py` —
+> were removed in 3.3, three releases after the cutover. Commands and results below that reference
+> them record what was measured at the time; they are not runnable now. The corpus itself survives
+> and is asserted by `tests/replay.rs`, and the deliberate divergences are listed in
+> `docs/COMPATIBILITY.md` §2.
+
 Traced against this repository (not from memory). Every row names the Python source of truth and
 the Rust module that reproduces it.
 
@@ -7,7 +15,7 @@ the Rust module that reproduces it.
 
 | Python | Rust | Notes |
 | --- | --- | --- |
-| `old/sensor.py:main()` (optparse: `-c -r -q --console --offline --debug --profile`) | `src/main.rs` | Same flags, plus `-T`. Plugins (`-p`) were removed from Maltrail entirely. |
+| `the retired Python sensor, sensor.py:main()` (optparse: `-c -r -q --console --offline --debug --profile`) | `src/main.rs` | Same flags, plus `-T`. Plugins (`-p`) were removed from Maltrail entirely. |
 | `sensor.py:init()` | `src/main.rs::init()` | Log dir, trail load, capture open, diagnostics. Trail *updating* (`core/update.py`) stays in Python. |
 | `sensor.py:monitor()` + `packet_handler` | `src/capture/mod.rs`, `src/worker.rs` | Run-to-completion worker per capture handle. |
 | `sensor.py:_init_multiprocessing()` + `core/parallel.py:worker()` (mmap ring, `PROCESS_COUNT` processes) | *dropped* — replaced by per-worker threads | No ring buffer, no packet copy, no IPC. `PROCESS_COUNT` is still read (it is part of the log-throttle bucket, `core/log.py:257`). |
@@ -79,7 +87,7 @@ the Rust module that reproduces it.
 
 | Python | Rust |
 | --- | --- |
-| `tests/test_sensor.py` | `tests/detection.rs` (same cases, same expected trails) |
+| the retired Python suite | `tests/detection.rs` (same cases, same expected trails) |
 | `tests/_pcapgen.py` | `tests/support/mod.rs` packet builders + `tools/gen_corpus.py` |
 | `core/testing.py:detect_test()` | `tools/parity.py --corpus detect` (same traffic, same expectations, run through both sensors) |
 | `tests/test_addr.py`, `test_common.py`, `test_datatype.py`, `test_ignore.py`, `test_log_condense.py`, `test_trailsdict.py`, `test_config.py` | `tests/addr.rs`, `tests/trails.rs`, `tests/lru.rs`, `tests/ignore.rs`, `tests/condense.rs`, `tests/config.rs` |

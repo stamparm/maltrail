@@ -10,8 +10,6 @@ import tempfile
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-# the old (Python) sensor now lives in old/
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "old"))
 
 from core.settings import read_config, config
 
@@ -116,16 +114,6 @@ class TestNewKeysTolerateGarbage(unittest.TestCase):
         finally:
             sys.stdout.close(); sys.stdout = _so; os.unlink(path)
         return sensor
-
-    def test_junk_scan_window_falls_back(self):
-        s = self._load(extra="SCAN_WINDOW abc\n")
-        self.assertEqual(s._scan_window(), 30)          # non-numeric -> default, no crash
-
-    def test_absent_new_keys_safe(self):
-        s = self._load()                                 # no new keys at all (ancient)
-        self.assertEqual(s._scan_window(), 30)
-        self.assertTrue(s._heuristic_enabled("port_scanning"))
-        self.assertEqual(s._fanout_count(), 0)
 
 
 class TestValueCoercion(unittest.TestCase):

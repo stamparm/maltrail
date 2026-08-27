@@ -287,10 +287,10 @@ def detect_test():
     Replays a crafted pcap of emulated malicious traffic through the offline sensor and verifies
     that every expected detection fires (the core "does the sensor actually catch the bad traffic" gate).
 
-    This drives the SHIPPED sensor. It used to run old/sensor.py, which needs pcapy - not a
-    dependency since the sensor became Rust - so on a healthy install the check that answers "is
-    detection working?" printed "0/17 detection(s) fired ... FAILED". A gate that cries wolf on a
-    working install is worse than no gate: it is the project's own failure mode, inverted.
+    This drives the SHIPPED sensor. It used to run the retired Python sensor, which needs pcapy -
+    not a dependency since the sensor became Rust - so on a healthy install the check that answers
+    "is detection working?" printed "0/17 detection(s) fired ... FAILED". A gate that cries wolf on
+    a working install is worse than no gate: it is the project's own failure mode, inverted.
     """
 
     binary = find_sensor()

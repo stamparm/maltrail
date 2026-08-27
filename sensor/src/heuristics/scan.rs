@@ -520,7 +520,7 @@ mod tests {
 
     #[test]
     fn per_key_and_total_caps() {
-        // Mirrors tests/test_sensor.py:TestScanTrackMemoryBound
+        // Mirrors the retired Python suite's TestScanTrackMemoryBound
         let mut s = ScanState::default();
         for p in 0..(SCAN_TRACK_PER_KEY * 4) {
             s.track_port(ip(1), ip(2), (p % 65536) as u16, detail());

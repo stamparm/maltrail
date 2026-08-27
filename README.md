@@ -143,15 +143,14 @@ million-row trail set:
 
 Offline comparison runs using the same generated capture, configuration, and trail set measured a
 14–37× lower steady-state per-packet cost than the retired Python sensor across the tested systems.
-The comparison tool reports whole-process time separately because trail loading dominates short
-replays. It also prints event counts; functional parity is tested independently by the parity
-corpus.
+Those figures separate whole-process time from steady state, because trail loading dominates a
+short replay. Detection itself is asserted separately, by the 42-case corpus in
+`sensor/tests/replay.rs`.
 
-Run the comparison on the target system with:
+Measure it on the target system with:
 
 ```bash
-python3 sensor/tools/bench_compare.py --packets 300000 \
-  --trails ~/.maltrail/trails.csv --repeat 3
+cargo bench --manifest-path sensor/Cargo.toml --bench hotpath
 ```
 
 One capture worker is used by default. Additional workers can increase capture capacity, but Linux
@@ -270,10 +269,6 @@ older name `libpcap.so.0.8`, so those binaries stop before they start —
 sudo ln -sf /usr/lib/x86_64-linux-gnu/libpcap.so.0.8 /usr/lib/x86_64-linux-gnu/libpcap.so.1
 sudo ldconfig
 ```
-
-The retired Python sensor is used only by comparison and parity tools. Those tools additionally
-require `pcapy-ng` and the Python development headers described in
-[`sensor/docs/INSTALL.md`](sensor/docs/INSTALL.md).
 
 ### Systemd
 
@@ -502,7 +497,6 @@ should account for the applicable requirements.
 | [`sensor/docs/COMPATIBILITY.md`](sensor/docs/COMPATIBILITY.md) | Deliberate differences from the retired Python sensor |
 | [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md) | Measurements, profiles, and test results |
 | [`sensor/docs/ROADMAP.md`](sensor/docs/ROADMAP.md) | Open sensor work |
-| [`old/README.md`](old/README.md) | Retired Python sensor, retained as a parity oracle |
 | [`SekuriPy Labs`](https://www.sekuripy.hr/labs/maltrail/) | Engineering notes, benchmarks and write-ups |
 
 ## Contributing
@@ -517,8 +511,8 @@ Run the relevant checks before submitting code. The complete sensor gate is:
 bash sensor/tools/check.sh
 ```
 
-It runs formatting, Clippy with warnings denied, debug and release tests, and parity replay against
-the retired Python sensor. Run the Python server suite with:
+It runs formatting, Clippy with warnings denied, and the debug and release test suites. Run the
+Python server suite with:
 
 ```bash
 bash tests/run.sh python3

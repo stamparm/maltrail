@@ -1,4 +1,4 @@
-//! Detection-path tests, ported case-for-case from `tests/test_sensor.py`.
+//! Detection-path tests, ported case-for-case from the retired Python suite.
 //!
 //! Each test drives the real `process_packet` / `check_domain` code through the testkit
 //! harness and asserts on the events actually written to a log file, so the assertions cover
@@ -222,7 +222,7 @@ fn an_underscore_in_the_last_label_is_still_rejected() {
 
 #[test]
 fn udp_non_dns_to_malware_ip_is_reported() {
-    // Deliberate divergence from old/sensor.py:880 (listed in tools/parity.py), which collapsed the dst-side and src-side
+    // Deliberate divergence from the retired Python sensor, sensor.py:880 (listed in docs/COMPATIBILITY.md), which collapsed the dst-side and src-side
     // matches into one `trail` and then applied the src-side "malware" suppression to both -
     // so a datagram TO a known C2 address produced nothing at all. The TCP path never did this:
     // it suppresses "attacker" on the dst side and "malware" only on the src side.
@@ -253,7 +253,7 @@ fn udp_non_dns_to_attacker_ip_is_suppressed() {
 
 #[test]
 fn distinct_dns_queries_on_one_socket_are_both_examined() {
-    // Deliberate divergence from old/sensor.py:863 (listed in tools/parity.py). The burst filter compared only
+    // Deliberate divergence from the retired Python sensor, sensor.py:863 (listed in docs/COMPATIBILITY.md). The burst filter compared only
     // (second, 5-tuple) and ran BEFORE the DNS parser, so a clean query immediately followed by
     // a malicious one on the same resolver socket in the same second was never parsed at all.
     // A stub resolver walking its `search` list does exactly this.
@@ -947,10 +947,10 @@ fn concurrent_sinks_racing_the_first_write_lose_nothing() {
 
 // --- longest-match precedence: specific trail vs whitelisted ancestor (divergence #3) ---
 //
-// `old/sensor.py` suppresses a name whenever ANY ancestor domain is whitelisted, which made
+// the retired Python sensor suppresses a name whenever ANY ancestor domain is whitelisted, which made
 // every exact trail on a shared platform (`*.googleusercontent.com`, ...) dead on arrival -
 // 3,082 real static trails. The Rust sensor lets an exact, more-specific trail fire; see
-// tools/parity.py "DELIBERATE DIVERGENCES" #3 for the full policy.
+// docs/COMPATIBILITY.md difference 22 for the full policy.
 
 fn harness_with_user_whitelist(trails: &[(&str, &str, &str)], entries: &[&str]) -> (Harness, std::path::PathBuf) {
     let path = std::env::temp_dir().join(format!(

@@ -273,7 +273,7 @@ mod tests {
 
     #[test]
     fn empty_answer_section_returns_none() {
-        // tests/test_sensor.py:test_dns_response_empty_answer_section_no_crash
+        // the retired Python suite's test_dns_response_empty_answer_section_no_crash
         let m = query_message("evil.com", 1, 1, 0x8080);
         let name_end = question(&m).unwrap().name_end;
         assert_eq!(first_a_record(&m, name_end), None);

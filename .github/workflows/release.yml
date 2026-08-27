@@ -38,7 +38,6 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - run: pip install -r old/requirements.txt
       - run: bash sensor/tools/check.sh
       - run: bash tests/run.sh python3
       # The one check that only matters at release time: the tree's version must equal the tag.

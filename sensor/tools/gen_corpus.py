@@ -236,7 +236,7 @@ TIMESTAMP_SENSITIVE_CASES = TIMING_WINDOW_CASES | frozenset((
     "duplicate_syn", "repeated_detections", "cache_expiry",
 ))
 
-# Deliberate divergences from old/sensor.py: case name -> the event substrings the RUST sensor is
+# Deliberate divergences from the retired Python sensor, sensor.py: case name -> the event substrings the RUST sensor is
 # expected to produce and sensor.py is expected NOT to. parity.py treats exactly these as an
 # expected surplus - and FAILS the case if the surplus is absent, so a silent revert of either fix
 # breaks the harness instead of quietly restoring "parity" with a detection hole.
@@ -1015,7 +1015,7 @@ def main_from_trails(options, out):
         print("[i]   %-22s %3d packet(s), %3d must-detect, %3d known-undetectable"
               % (entry["name"], entry["packets"], len(entry["expect"]), len(entry["undetectable"])))
     print("[i] wrote %d pcap(s) + manifest.json to %s (trails.csv -> the real file)" % (len(manifest), out))
-    print("[i] now run: python3 sensor/tools/parity.py --corpus %s" % out)
+    print("[i] now run: MALTRAIL_CORPUS=%s cargo test --manifest-path sensor/Cargo.toml --test replay" % out)
 
 
 if __name__ == "__main__":

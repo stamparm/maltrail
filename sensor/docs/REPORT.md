@@ -1,5 +1,13 @@
 # Implementation report — Maltrail sensor
 
+
+> **Historical.** The retired Python sensor (`old/`) and the differential harness built around it
+> — `tools/parity.py`, `tools/shadow_run.sh`, `tools/shadow_diff.py`, `tools/bench_compare.py` —
+> were removed in 3.3, three releases after the cutover. Commands and results below that reference
+> them record what was measured at the time; they are not runnable now. The corpus itself survives
+> and is asserted by `tests/replay.rs`, and the deliberate divergences are listed in
+> `docs/COMPATIBILITY.md` §2.
+
 Scope: replace `sensor.py`'s packet-processing hot path with a Rust implementation that keeps
 existing behaviour, configuration, trail data and event format.
 
@@ -47,7 +55,7 @@ Module-by-module mapping to the Python source: `docs/PORTING_MAP.md`.
 | `tools/gen_corpus.py` | builds the 36-case replay corpus + fixture trails + manifest. `--from-trails <csv>` instead samples the **real** trails.csv and synthesizes the traffic each sampled trail should trip (8 traffic shapes), so parity is proven against real feed data rather than a 30-row fixture |
 | `tools/dump_trails.py` | dumps what Python's `load_trails()` loaded (every row, plus the wildcard alternation), as the oracle for `tests/loader_parity.rs` |
 | `tools/update_trails.py` | the sensor's trail-update entry point: a thin wrapper around `core.update.update_trails()` |
-| `tools/parity.py` | runs **both** sensors over the corpus and diffs the events |
+| `docs/COMPATIBILITY.md` | runs **both** sensors over the corpus and diffs the events |
 | `tools/bench_compare.py` | Python-vs-Rust offline full-sensor benchmark |
 | `tools/fanout_check.py` | live-capture + `PACKET_FANOUT` verification (distributed, not duplicated) |
 | `tools/check.sh` | everything that must pass, in one command |
@@ -81,7 +89,7 @@ those suites report the drift as a failure — which is exactly what they are fo
 | suite | tests | covers |
 | --- | --- | --- |
 | unit (`--lib`) | 222 | address rendering, LRU + admission filter, config parsing, Python-regex translation, trail tables + negative prefilter, wildcard regex, CSV splitting, DLT/VLAN, IP/TCP/UDP/ICMP, DNS (incl. named offset-overflow contracts), HTTP helpers, TLS SNI, QUIC (RFC 9001 key schedule, FIPS-197 AES vectors), scan/exhaustion/NXDOMAIN accumulators, event rendering, CEF/Logstash, throttle modes, hashers, fanout argument encoding, metrics, Prometheus exposition |
-| `tests/detection.rs` | 65 | every detection class, ported case-for-case from `tests/test_sensor.py`, asserted on real log lines; plus the concurrent-first-write race, the result-cache metric publication, and the two deliberate UDP divergences |
+| `tests/detection.rs` | 65 | every detection class, ported case-for-case from the retired Python suite, asserted on real log lines; plus the concurrent-first-write race, the result-cache metric publication, and the two deliberate UDP divergences |
 | `tests/vectors.rs` | 19 | Rust output vs vectors produced by the actual Python functions |
 | `tests/meta.rs` | 12 | `meta.sqlite` schema, BLOB/TEXT storage class, out-of-order merge, junk filter, prune, failing flush |
 | `tests/trails.rs` | 10 | every trail shape, whitelist filtering, malformed rows, pair interning, and the operator's **real 1.5M-trail file** — every row findable with its own info |
@@ -586,7 +594,7 @@ measured on the target hardware with `tools/fanout_check.py` plus the sensor's o
 
 | requirement | status | evidence |
 | --- | --- | --- |
-| Behaviourally equivalent detections | **verified** | `tools/parity.py`: 36/36, 0 differences; 55 ported detection tests |
+| Behaviourally equivalent detections | **verified** | `docs/COMPATIBILITY.md`: 36/36, 0 differences; 55 ported detection tests |
 | Existing configuration format | **verified** | `read_config()` ported with its quirks; a test loads the repository's real `maltrail.conf` |
 | Existing trail data, no new database | **verified** | `tests/trails.rs` loads the real 1.5M-trail CSV; native and text lookups cross-checked over 200k rows |
 | Event format accepted by the Python server | **verified** | vectors generated from `core/log.py`; the parity harness compares complete log lines |
@@ -617,7 +625,7 @@ measured on the target hardware with `tools/fanout_check.py` plus the sensor's o
 3. **Plugins were removed from Maltrail entirely** (both sensors, and the `plugins/` directory).
 4. ~~**The condensed observable store (`meta.sqlite`) is not written.**~~ Written since the
    ROADMAP Gate 4.1 work: `src/meta.rs`, verified identical to `core/meta.py`'s output on all 36
-   corpus cases by `tools/parity.py`.
+   corpus cases by `docs/COMPATIBILITY.md`.
 5. **Trail updating runs Maltrail's own Python updater** (`tools/update_trails.py` →
    `core.update.update_trails()`), so the host needs `python3`. That is deliberate: a second
    implementation of feed handling would drift out of sync with the first, and the failure mode of
@@ -699,7 +707,7 @@ in these documents contradicting the code, and a document nobody can trust is no
 
 ### Open, and agreed
 
-* **`meta.sqlite` (`USE_CONDENSED_STORAGE`)** — both reviewers ranked this the top remaining feature gap, above plugins, because the default config has it on and the server's condensed views go dark. **Resolved** (ROADMAP 4.1): `src/meta.rs` writes the store, and `tools/parity.py` now diffs the two sensors' databases row for row alongside their event logs.
+* **`meta.sqlite` (`USE_CONDENSED_STORAGE`)** — both reviewers ranked this the top remaining feature gap, above plugins, because the default config has it on and the server's condensed views go dark. **Resolved** (ROADMAP 4.1): `src/meta.rs` writes the store, and `docs/COMPATIBILITY.md` now diffs the two sensors' databases row for row alongside their event logs.
 * **Worker-death exit status** — a worker that dies leaves the process able to exit 0, so `Restart=on-failure` will not restart it. Workers should return a typed result and live-capture loss should be a non-zero exit.
 * **Multi-`-r` semantics** — the binary gives each pcap its own worker and state; `tests/replay.rs` describes shared state and exercises the harness, not the binary. One of the two has to change.
 * **systemd first-start bootstrap** — `ProtectHome=yes` plus a `$HOME`-derived default `TRAILS_FILE` plus `ExecStartPre=-T` requiring trails is a deadlock on a fresh install. Needs `StateDirectory=` and an explicit `/var/lib/maltrail` trail path.

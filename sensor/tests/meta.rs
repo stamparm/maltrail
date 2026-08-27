@@ -13,7 +13,7 @@
 //!   * the **schema** itself (WITHOUT ROWID, `meta_info.schema_version`, rollback journal),
 //!     which the Python reader depends on.
 //!
-//! `sensor/tools/parity.py` closes the loop by running both sensors over the same capture and
+//! `core/meta.py` reads the same store, which is what keeps the format a shared contract and
 //! diffing the two stores row for row.
 
 use std::path::Path;

@@ -50,7 +50,7 @@ pub struct HarnessOptions {
 }
 
 impl HarnessOptions {
-    /// Matches the deterministic setup of `tests/test_sensor.py:_SensorTestBase.setUp`.
+    /// Matches the deterministic setup of `the retired Python suite's _SensorTestBase.setUp`.
     pub fn quiet() -> HarnessOptions {
         HarnessOptions { use_heuristics: false, check_host_domains: true, ..Default::default() }
     }

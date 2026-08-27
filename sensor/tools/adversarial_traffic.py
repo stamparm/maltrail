@@ -25,7 +25,7 @@ by the operator — it is their network and their sensor. `--safe` restores the 
   * IP and IP:port trails are dialled unless --safe is given.
   * Scan / DGA / NXDOMAIN heuristics run against localhost and the reserved .invalid TLD.
 
-Run it while capturing (see shadow_run.sh); the sensors are compared on the capture afterwards.
+Run it while capturing; the sensor is measured on the capture afterwards.
 """
 
 import argparse

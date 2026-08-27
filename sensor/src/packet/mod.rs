@@ -154,7 +154,7 @@ mod tests {
 
     #[test]
     fn ipv4_options_change_header_length() {
-        // IHL=6 -> 24-byte header (tests/test_sensor.py:test_ipv4_with_options_header_length)
+        // IHL=6 -> 24-byte header (the retired Python suite's test_ipv4_with_options_header_length)
         let mut p = ipv4(6, "10.0.0.5", "66.66.66.66", &[0u8; 24]);
         p[0] = 0x46;
         let h = parse_ip(&p).unwrap();

@@ -1,3 +1,0 @@
-# Only for the OLD (Python) sensor in this directory — packet capture bindings.
-# The current sensor is Rust and needs none of this.
-pcapy-ng

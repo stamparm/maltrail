@@ -145,7 +145,7 @@ fn check_domain_inner(
 
     let mut result = false;
     // DEPTH of the closest whitelisted ancestor (0 = none), not a bare verdict. Longest-match
-    // precedence, deliberate divergence #3 from `old/sensor.py`: an exact static trail on a
+    // precedence, deliberate divergence #3 from the retired Python sensor: an exact static trail on a
     // MORE SPECIFIC name than its whitelisted ancestor fires anyway. A shared-platform apex in
     // the whitelist ("cloudfront.net") is a platform decision, not a veto on the specific IOC
     // somebody added under it — 3,082 static trails were exactly this shape and could never
@@ -1365,7 +1365,7 @@ fn udp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packe
 
     let stamp = FlowStamp { sec, src: ep.src, src_port: ep.src_port, dst: ep.dst, dst_port: ep.dst_port };
 
-    // Burst suppression. Python (old/sensor.py:863) compared the 5-tuple plus the second and
+    // Burst suppression. Python (the retired Python sensor, sensor.py:863) compared the 5-tuple plus the second and
     // nothing else, so two DIFFERENT datagrams sent back-to-back on one socket in one second
     // collapsed to one - and because the check runs before dns_packet(), the second was never
     // parsed at all. A stub resolver walking its `search` list, a retry, or a forwarder
@@ -1374,7 +1374,7 @@ fn udp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packe
     //
     // Mixing the payload into the comparison keeps the intent (a genuinely repeated datagram is
     // still skipped, byte for byte) and removes the collision. Deliberate divergence from the
-    // oracle; see tests/detection.rs and the divergence list in tools/parity.py.
+    // oracle; see tests/detection.rs and the divergence list in docs/COMPATIBILITY.md.
     let digest = payload_digest(packet::udp_payload(ip_data, header.header_len));
     let previous = st.last_udp.replace(stamp);
     let previous_digest = std::mem::replace(&mut st.last_udp_payload, digest);
@@ -1390,11 +1390,11 @@ fn udp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packe
         // listings (noise we provoked) are dropped there, while a datagram FROM a listed host is
         // usually backscatter and drops "malware".
         //
-        // Python (old/sensor.py:880) collapsed both sides into one `trail` and then applied the
+        // Python (the retired Python sensor, sensor.py:880) collapsed both sides into one `trail` and then applied the
         // src-side "malware" rule to whichever had matched - so every UDP flow *to* a known
         // malware/C2 address was discarded, which is the single most valuable thing this branch
         // can see. Deliberate divergence from the oracle; see tests/detection.rs and the
-        // divergence list in tools/parity.py.
+        // divergence list in docs/COMPATIBILITY.md.
         let hit = st
             .trails
             .db()

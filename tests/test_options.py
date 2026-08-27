@@ -26,7 +26,11 @@ DYNAMIC = {"FAIL2BAN_ALLOWLIST", "BLACKLIST_ALLOWLIST", "HOME_LAT", "HOME_LON", 
 
 # Read only in order to tell the operator to stop using it, so it must NOT be advertised in the
 # configuration file.
-DEPRECATED = {"USE_MULTIPROCESSING"}
+# Accepted by read_config() so an upgrader's existing maltrail.conf does not warn, but no longer
+# documented and no longer read by anything: they configured the retired Python sensor's
+# multiprocessing pool and its in-C admission prefilter, neither of which the Rust sensor has.
+DEPRECATED = {"USE_MULTIPROCESSING", "DISABLE_CPU_AFFINITY", "FAST_ADMIT_ADAPTIVE",
+              "FAST_ADMIT_LEVEL", "USE_CAPTURE_AFFINITY"}
 
 OPTION = r"[A-Z][A-Z0-9_]{2,}"
 
@@ -49,7 +53,8 @@ def read_by_python():
     sources = []
     for base, _, files in os.walk(os.path.join(REPO, "core")):
         sources += [os.path.join(base, f) for f in files if f.endswith(".py")]
-    sources += [os.path.join(REPO, "server.py"), os.path.join(REPO, "old", "sensor.py")]
+    sources += [os.path.join(REPO, "server.py")]
+    sources += [os.path.join(base, f) for base, _, files in os.walk(os.path.join(REPO, "feeds")) for f in files if f.endswith(".py")]
     text = ""
     for path in sources:
         with open(path, errors="replace") as f:

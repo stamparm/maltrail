@@ -38,23 +38,13 @@ if [ -n "$missing" ]; then
     exit 1
 fi
 
-# The differential parity step replays every corpus case through old/sensor.py, which needs its
-# capture bindings. Without them that sensor exits 1 having detected nothing, and the comparison
-# blames this one for every detection it correctly made.
-if ! python3 -c 'import pcapy' >/dev/null 2>&1; then
-    echo "[!] the parity oracle (old/sensor.py) needs its capture bindings:"
-    echo "[?]     pip install -r old/requirements.txt"
-    echo "[i] parity compares AGAINST sensor.py, so the gate cannot verify anything without it."
-    exit 1
-fi
-
 echo "== generated files are in sync with core/settings.py and data/ua.txt =="
 # FIRST, and against the tree exactly as committed: this gate exists to catch a constant that moved
 # in core/settings.py (or a User-Agent pattern added to data/ua.txt, which read_ua() folds into
 # SUSPICIOUS_UA_REGEX) without src/settings_gen.rs being regenerated. The Python sensor reads those
 # constants at runtime while the Rust one compiles them in, so a mismatch makes the two sensors
-# disagree in a way the parity harness structurally cannot see (it compares two sensors that are
-# each internally consistent). Nothing above this line may write to src/settings_gen.rs.
+# disagree in a way no replay can see, because each is internally consistent on its own. Nothing
+# above this line may write to src/settings_gen.rs.
 cargo test --manifest-path sensor/Cargo.toml --release --test generated
 
 # NOTE: src/settings_gen.rs is deliberately NOT regenerated here. Its inputs - core/settings.py
@@ -95,24 +85,11 @@ cargo test --manifest-path sensor/Cargo.toml --release
 echo "== build the release binary =="
 cargo build --manifest-path sensor/Cargo.toml --release
 
-echo "== differential parity against sensor.py =="
-python3 sensor/tools/parity.py
-python3 sensor/tools/parity.py --timestamps pcap
-
-echo "== differential parity against sensor.py, using the REAL trail set =="
-# The fixture corpus above uses 30 hand-written trails, which cannot exercise anything that
-# depends on real trail data (a domain whose parent is also a trail, a trail that only exists in a
-# feed, a 1.5M-row store). This step samples the operator's actual trails.csv, synthesizes the
-# traffic each sampled trail should trip, and runs BOTH sensors over it. Skipped when the host has
-# no trails file yet.
-REAL_TRAILS="${MALTRAIL_TRAILS:-$HOME/.maltrail/trails.csv}"
-if [ -f "$REAL_TRAILS" ]; then
-    REAL_CORPUS="$(mktemp -d)"
-    python3 sensor/tools/gen_corpus.py --from-trails "$REAL_TRAILS" --out "$REAL_CORPUS" --per-bucket 25
-    python3 sensor/tools/parity.py --corpus "$REAL_CORPUS" --timeout 600
-    rm -rf "$REAL_CORPUS"
-else
-    echo "[skip] no '$REAL_TRAILS'; run the sensor once (or set MALTRAIL_TRAILS) to enable this step"
-fi
+# The corpus expectations are asserted by tests/replay.rs, which ran as part of `cargo test`
+# above: every case in the manifest is replayed and each declared detection must appear. That used
+# to be checked a second way, by replaying the same corpus through the retired Python sensor and
+# diffing - which is what the deleted sensor/tools/parity.py did. The port is three releases old,
+# its deliberate divergences are pinned in tests/detection.rs, and agreeing with a retired
+# implementation had stopped being evidence of anything.
 
 echo "== all checks passed =="

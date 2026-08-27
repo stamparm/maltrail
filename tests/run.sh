@@ -14,7 +14,7 @@ HERE=$(cd "$(dirname "$0")" && pwd)
 MEM_KB=1200000          # ~1.2 GB address-space cap per interpreter
 TIMEOUT=300             # seconds per test file
 
-TESTS="test_addr test_common test_datatype test_ignore test_config test_trailsdict test_fastfilter test_quic_sni test_tls_intel test_sensor test_fanout test_httpd test_log_condense test_logd test_meta test_geo test_reference test_doctests test_enums test_parallel test_options test_doctor test_confidence test_index test_adversarial test_frontend test_update test_debug_artifacts test_check_trails test_detect_test test_smoke test_alert test_colorized"
+TESTS="test_addr test_common test_datatype test_ignore test_config test_trailsdict test_fastfilter test_quic_sni test_tls_intel test_httpd test_log_condense test_logd test_meta test_geo test_reference test_doctests test_enums test_parallel test_options test_doctor test_confidence test_index test_adversarial test_frontend test_update test_debug_artifacts test_check_trails test_detect_test test_smoke test_alert test_colorized"
 
 # A test file that is not in TESTS is not run by this script or by CI, and nothing else would ever
 # say so - it just sits there passing locally and covering nothing. Fail instead.
@@ -49,7 +49,7 @@ for py in $PYS; do
 import sys, os, glob, py_compile
 root = sys.argv[1]; bad = 0
 files = glob.glob(os.path.join(root, "core", "*.py")) + \
-        [os.path.join(root, f) for f in ("old/sensor.py", "server.py") if os.path.isfile(os.path.join(root, f))]
+        [os.path.join(root, f) for f in ("server.py",) if os.path.isfile(os.path.join(root, f))]
 for f in files:
     try:
         py_compile.compile(f, doraise=True)
@@ -74,7 +74,7 @@ PYEOF
             # dependency of the current sensor or of the server, so a contributor without
             # libpcap headers must not see a wall of tracebacks. CI installs it, so this
             # SKIP never masks a regression there — see .github/workflows/ci.yml.
-            echo "SKIP (needs pcapy-ng: pip install -r old/requirements.txt)"
+            echo "SKIP (needs pcapy-ng: pip install pcapy-ng)"
             skipped="$skipped $t"
         else
             echo "FAIL"
@@ -87,7 +87,7 @@ done
 if [ -n "$skipped" ]; then
     echo
     echo "[!] SKIPPED (pcapy-ng not installed):$skipped"
-    echo "[?] these cover the old Python sensor in old/; install with: pip install -r old/requirements.txt"
+    echo "[?] these need libpcap bindings for packet construction; install with: pip install pcapy-ng"
 fi
 
 # Frontend guard: a syntax typo in the dashboard JS ships silently and breaks the WHOLE UI (no Python

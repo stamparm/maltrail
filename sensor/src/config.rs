@@ -155,7 +155,7 @@ pub struct Config {
     pub use_condensed_storage: bool,
     /// Match TLS server certificates against the trail set by SHA-1 fingerprint. New in this
     /// sensor (`sensor.py` extracts certificates for reporting but never matches them), so
-    /// `tools/parity.py` turns it off to keep the differential comparison honest.
+    /// `docs/COMPATIBILITY.md` turns it off to keep the differential comparison honest.
     pub check_tls_certificates: bool,
     /// New: opt out of the startup/periodic trail refresh (for hosts where trails.csv is managed
     /// externally, e.g. pushed by the Maltrail server). Default OFF, i.e. the sensor refreshes

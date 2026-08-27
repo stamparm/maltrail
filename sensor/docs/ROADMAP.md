@@ -1,5 +1,13 @@
 # Making this the standard Maltrail sensor
 
+
+> **Historical.** The retired Python sensor (`old/`) and the differential harness built around it
+> — `tools/parity.py`, `tools/shadow_run.sh`, `tools/shadow_diff.py`, `tools/bench_compare.py` —
+> were removed in 3.3, three releases after the cutover. Commands and results below that reference
+> them record what was measured at the time; they are not runnable now. The corpus itself survives
+> and is asserted by `tests/replay.rs`, and the deliberate divergences are listed in
+> `docs/COMPATIBILITY.md` §2.
+
 The plan to get from "strong production beta" to "the sensor Maltrail ships, enabled by default".
 
 Structured as **gates**, not a task list. Each gate has an exit criterion that is *verifiable by
@@ -292,7 +300,7 @@ batches, at most once a second) and a thread would have needed a lock on the ver
 path bumps. The packet path does one hash bump per endpoint, keyed by the native address, with no
 text rendered until a key is first inserted.
 
-**Evidence.** `tools/parity.py` replays all 36 corpus cases through both sensors with the store
+**Evidence.** `docs/COMPATIBILITY.md` replays all 36 corpus cases through both sensors with the store
 enabled and diffs the resulting databases row for row: **identical in every case** — same
 observables, same key encoding, same flags, same counts. `tests/meta.rs` covers the schema, the
 BLOB/TEXT storage class (a mis-keyed store writes and reads back perfectly and matches nothing),
@@ -316,7 +324,7 @@ the `plugins/` directory — so there is nothing to port. Consume events from
 
 1. Default `maltrail-sensor.service` → this sensor **(done)**.
 2. `sensor.py` stays in `old/` purely as the **differential oracle** and reference implementation:
-   `tools/parity.py` only exists while it does, so it should never be deleted. It is not a
+   `docs/COMPATIBILITY.md` only exists while it does, so it should never be deleted. It is not a
    supported fallback and carries no deprecation schedule — this is a rewrite, not a migration
    programme, and nobody is owed an overlap release.
 3. `docs/INSTALL.md` §13 covers verifying a deployment: replay a corpus, shadow live traffic,

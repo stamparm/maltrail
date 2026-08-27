@@ -124,7 +124,7 @@ mod tests {
 
     #[test]
     fn fires_once_over_threshold() {
-        // Mirrors tests/test_sensor.py:TestDNSExhaustion with the threshold lowered to 3.
+        // Mirrors the retired Python suite's TestDNSExhaustion with the threshold lowered to 3.
         let mut d = DnsExhaustion::default();
         let mut alerts = 0;
         for (i, label) in ["alpha", "bravo", "charlie", "delta", "echo"].iter().enumerate() {

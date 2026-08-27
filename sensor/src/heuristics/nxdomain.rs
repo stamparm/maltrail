@@ -135,7 +135,7 @@ mod tests {
 
     #[test]
     fn stale_hour_entries_are_pruned() {
-        // Mirrors tests/test_sensor.py:TestNXDomainCounterBounded
+        // Mirrors the retired Python suite's TestNXDomainCounterBounded
         let mut nx = NxCounters::default();
         const H1: u64 = 3600;
         for i in 0..5 {

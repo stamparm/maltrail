@@ -256,7 +256,7 @@ pub(crate) mod tests {
 
     #[test]
     fn learner_locks_after_two_agreeing_packets() {
-        // Mirrors tests/test_sensor.py:TestDLTLearner
+        // Mirrors the retired Python suite's TestDLTLearner
         let mut p = eth(0x0800);
         let mut ip = min_ipv4();
         ip.extend_from_slice(&[0u8; 8]); // UDP header
