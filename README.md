@@ -322,8 +322,10 @@ Frequently used sensor options include:
 | `LOGSTASH_SERVER` | Logstash JSON destination or destinations |
 | `STATS_ADDRESS` | Prometheus metrics listener; disabled unless configured |
 | `UPDATE_PERIOD` | Trail refresh interval |
+| `STATIC_TRAILS_URL` | Where the assembled static trail set is fetched from; pin it to a dated release to control when new content lands |
 | `USER_WHITELIST` | Operator-managed indicators that should not alert |
 | `CUSTOM_TRAILS_DIR` | Operator-managed trail directory |
+| `STATIC_TRAILS_DIR` | Optional checkout of the trails repository; only used to show a trail's source citation in the UI |
 
 `PROCESS_COUNT` applies to the retired Python sensor and to the legacy event-log throttle; it does
 **not** set the Rust sensor's worker count. Configure capture workers with `CAPTURE_FANOUT` or
@@ -341,23 +343,42 @@ whitelist counts rather than only confirming that files exist.
 
 ## Trails
 
-Trails are stored as plain-text indicators:
+A trail is one indicator — a domain, URL, IP address, `IP:port` pair, User-Agent, JA3/JA4
+fingerprint or certificate hash — together with what it means and where it came from. The updater
+merges four sources into `TRAILS_FILE`, in this order:
+
+| source | where it comes from |
+| --- | --- |
+| Feeds | `feeds/*.py`, fetched directly by your deployment from each publisher |
+| Custom | `CUSTOM_TRAILS_DIR` and `CUSTOM_TRAILS_URL`, your own indicators |
+| Static | the assembled set from [stamparm/trails](https://github.com/stamparm/trails), fetched from `STATIC_TRAILS_URL` |
+| Engine lists | `data/mass_scanner*.txt`, shipped here because they change rarely |
+
+The ~1.6M static trails live in their own repository. Detection content changes tens of times a
+day; the engine does not, and keeping them together meant updating detection required pulling code
+and made this repository's history unusable. `STATIC_TRAILS_URL` points at the newest published
+set:
 
 ```text
-feeds/*.py                   public feed integrations
-data/mass_scanner*.txt       mass-scanner address lists
+STATIC_TRAILS_URL https://github.com/stamparm/trails/releases/latest/download/trails.csv.gz
 ```
 
-Add local indicators under `CUSTOM_TRAILS_DIR`. Add indicators that should never generate alerts
-to `USER_WHITELIST`. Keeping custom data outside the managed checkout prevents upgrades from
-overwriting it.
+Point it at a specific `content-YYYYMMDD-HHMM` release instead to pin a version, so a bad publish
+is not immediately global. The set is cached next to `TRAILS_FILE`, which is what makes an offline
+or air-gapped rebuild work; the published `sha256` is checked before downloading, so a deployment
+that updates more often than the content changes transfers 65 bytes rather than 11 MB, and a
+payload that does not match its digest is refused in favour of the cache.
 
-The updater rebuilds `TRAILS_FILE` from enabled feeds, bundled static trails, and custom trails. A
-new file is published atomically only after a successful build. Empty or failed feeds are reported
-so that a running deployment does not silently depend on stale or retired sources.
+`update_trails()` publishes a new `TRAILS_FILE` atomically and only after a successful build. Feeds
+that return nothing are reported by name, so a deployment does not silently depend on a source that
+has quietly retired.
 
-Trail contributions should include the indicator, classification, and a verifiable source. See
-[Contributing](#contributing) before submitting a pull request.
+Add your own indicators under `CUSTOM_TRAILS_DIR`, and anything that must never raise an event to
+`USER_WHITELIST`. Keep both outside the installation directory so an upgrade cannot overwrite them.
+
+Static trail contributions go to [stamparm/trails](https://github.com/stamparm/trails); new feeds
+go here. Either way an indicator needs a classification and a source somebody can check — see
+[Contributing](#contributing).
 
 ## Events and API
 
