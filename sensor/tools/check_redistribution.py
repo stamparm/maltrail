@@ -60,6 +60,13 @@ IPV6_KEY = re.compile(r"\A([0-9A-Fa-f:]{2,45})(?:/\d+)?\Z")
 # So: reverse proxies and CDNs in full, and from AWS only the services that are a shared front
 # door. EC2, EBS, WORKSPACES and the rest are single-tenant and stay eligible for listing. GCP's
 # cloud.json is tenant compute for the same reason; goog.json is Google's own frontend and is not.
+#
+# GLOBALACCELERATOR is in the list even though an accelerator's two static IPs are DEDICATED to it
+# for its lifetime - so blocking one harms nobody else on the day it is added. Ten days after that
+# accelerator is released the addresses go back into Amazon's pool and are handed to another
+# customer, and the entry we published becomes a rule against whoever got them next. Nothing in a
+# static list expires, so "shared eventually" is the same problem as "shared now" for anybody
+# redistributing us; the 176 entries that were on these ranges have been removed for that reason.
 AWS_SHARED_SERVICES = ("CLOUDFRONT", "GLOBALACCELERATOR", "S3", "API_GATEWAY", "ROUTE53_RESOLVER")
 
 SOURCES = (
