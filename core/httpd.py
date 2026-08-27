@@ -438,6 +438,58 @@ def _public_trails(content, key):
 
     return retval
 
+_provenance_handle = None     # an opened core.provenance.Provenance, or False when unavailable
+_provenance_key = None        # (mtime, size) of the sidecar it was opened from
+_provenance_lock = threading.Lock()
+
+
+def _provenance_open():
+    """The opened provenance sidecar, or None.
+
+    Separate from the lookup so a caller can tell "this trail has no citation" from "provenance is
+    not installed here" - very different things to show an analyst asking why something fired.
+
+    Reopened when the file changes, because update_trails() replaces it whenever the content does,
+    and an mmap of the old inode would keep answering from a trail set nobody runs any more.
+    """
+
+    global _provenance_handle, _provenance_key
+
+    path = "%s.provenance" % config.TRAILS_FILE
+    try:
+        stat = os.stat(path)
+        key = (stat.st_mtime, stat.st_size)
+    except OSError:
+        return None
+
+    with _provenance_lock:
+        if _provenance_key != key:
+            if _provenance_handle:
+                _provenance_handle.close()
+            _provenance_handle, _provenance_key = False, key
+            try:
+                from core import provenance
+
+                _provenance_handle = provenance.Provenance(path)
+            except Exception:
+                # A truncated or foreign file must not take the endpoint down; the scan below and
+                # the "no provenance" message are both better answers than a 500.
+                if config.SHOW_DEBUG:
+                    traceback.print_exc()
+        return _provenance_handle or None
+
+
+def _provenance_lookup(handle, trail):
+    """(reference, source) for `trail`, or None when the sidecar does not carry it."""
+
+    try:
+        return handle.lookup(trail)
+    except Exception:
+        if config.SHOW_DEBUG:
+            traceback.print_exc()
+        return None
+
+
 def _lookup_trail_reference(trail):
     """On demand, find which static-trails pile a trail sits in and return that pile's '# Reference:' header
     (the real source citation, e.g. an abuse.ch URL) plus the file. No index / no stored bytes: the static
@@ -447,6 +499,17 @@ def _lookup_trail_reference(trail):
     cached = _reference_cache.get(trail)
     if cached is not None:
         return cached
+
+    # The sidecar first: an exact answer from a binary search, against a scan of thousands of files
+    # bounded by a time budget. It is also the only one that works at all now that static content
+    # is a separate repository - a deployment has the aggregate, not the tree it was built from.
+    handle = _provenance_open()
+    if handle is not None:
+        found = _provenance_lookup(handle, trail) or ("", "")
+        if len(_reference_cache) < _REFERENCE_CACHE_MAX:
+            _reference_cache[trail] = found
+        return found
+
     result = ("", "")
     try:
         # the event/stored trail is a NORMALISED form of the file line (the loader strips the scheme and a leading
@@ -459,9 +522,9 @@ def _lookup_trail_reference(trail):
         found = False
         static_dir = _static_trails_dir()
         if static_dir is None:
-            # No checkout, so there is nothing to cite. Say which knob restores it rather than
-            # returning a blank citation that reads as "this trail has no source".
-            return ("", "(set 'STATIC_TRAILS_DIR' to a trails checkout for source citations)")
+            # No sidecar and no checkout, so there is nothing to cite. Name what restores it rather
+            # than returning a blank citation, which reads as "this trail has no source".
+            return ("", "(no provenance sidecar; set 'STATIC_TRAILS_PROVENANCE true' or point 'STATIC_TRAILS_DIR' at a trails checkout)")
         for root, _dirs, files in os.walk(static_dir):   # os.walk: py2/py3-safe (glob recursive is py3-only)
             if found or time.time() > deadline:
                 break

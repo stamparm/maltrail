@@ -278,6 +278,67 @@ def fetch_static_trails(offline=False):
 
     return retval
 
+def fetch_provenance(offline=False):
+    """Download the provenance sidecar next to TRAILS_FILE, if it has changed.
+
+    Only the SERVER asks for this: it exists so the trail drawer can cite a detection's source, and
+    a sensor never renders anything. One host paying ~18 MB when the content changes, rather than
+    every deployed sensor paying it for a feature it does not have.
+    """
+
+    if offline or not config.STATIC_TRAILS_URL or config.STATIC_TRAILS_PROVENANCE is False:
+        return
+
+    # Published beside the aggregate: .../trails.csv.gz -> .../trails-provenance.bin.gz
+    base = config.STATIC_TRAILS_URL
+    base = base[:-len(".gz")] if base.endswith(".gz") else base
+    url = "%s-provenance.bin.gz" % base[:-len(".csv")] if base.endswith(".csv") else None
+    if not url:
+        return
+
+    path = "%s.provenance" % config.TRAILS_FILE
+    stamp = "%s.sha256" % path
+    published = (retrieve_content("%s.sha256" % url) or "").strip().split(' ')[0].strip()
+    published = published if re.match(r"\A[0-9a-f]{64}\Z", published) else None
+
+    try:
+        with open(stamp, "r") as f:
+            if published and f.read().strip() == published and os.path.isfile(path):
+                return
+    except (OSError, IOError):
+        pass
+
+    print(" [o] '%s'" % url)
+    raw = retrieve_content(url, binary=True)
+    if raw[:2] == b"\x1f\x8b":
+        try:
+            raw = gzip.GzipFile("", "rb", 9, io.BytesIO(raw)).read()
+        except Exception as ex:
+            print("[x] the provenance sidecar could not be decompressed ('%s')" % ex)
+            return
+
+    if not raw:
+        print("[x] unable to retrieve the provenance sidecar from '%s' (source citations will be unavailable)" % url)
+        return
+
+    digest = hashlib.sha256(raw).hexdigest()
+    if published and digest != published:
+        print("[x] the provenance sidecar does not match its published sha256 - discarding it")
+        return
+
+    try:
+        tmp = "%s.new" % path
+        with open(tmp, "wb") as f:
+            f.write(raw)
+        _atomic_replace(tmp, path)
+        with open("%s.new" % stamp, "w") as f:
+            f.write(digest)
+        _atomic_replace("%s.new" % stamp, stamp)
+        print("[i] provenance sidecar updated (%d bytes)" % len(raw))
+    except (OSError, IOError) as ex:
+        print("[x] unable to store the provenance sidecar ('%s')" % ex)
+
+
 def update_trails(force=False, offline=False):
     """
     Update trails from feeds

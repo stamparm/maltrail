@@ -31,7 +31,7 @@ __url__ = "(static)"
 CATEGORIES = ("malware", "malicious", "suspicious")
 
 
-def parse_static_lines(handle, info, reference, retval):
+def parse_static_lines(handle, info, reference, retval, provenance=None, source=None):
     """Merge one static trail file into `retval`.
 
     The one place static trail lines are parsed. `core/custom_trails.py` deliberately does NOT
@@ -41,10 +41,19 @@ def parse_static_lines(handle, info, reference, retval):
     separate until something proves they can be merged.
     """
 
+    pile = ""
     for line in handle:
         line = line.decode(UNICODE_ENCODING)
         line = line.strip()
-        if not line or line.startswith('#'):
+        if line.startswith('#'):
+            # '# Reference:' applies to the entries BELOW it until the next one, which is how the
+            # trail drawer cites a detection. A bare '# Reference:' with no value deliberately ends
+            # a group, so what follows is not attributed to the citation above it.
+            match = re.match(r"#\s*Reference:\s*(.*)$", line)
+            if match is not None:
+                pile = match.group(1).strip()
+            continue
+        if not line:
             continue
         line = re.sub(r"\s*#.*", "", line)
         if '://' in line:
@@ -55,27 +64,49 @@ def parse_static_lines(handle, info, reference, retval):
             if line.count('/') > 1:
                 line = line.rstrip('/')
             retval[line] = (info, reference)
+            _note(provenance, source, pile, line)
             line = line.split('/')[0]
         elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", line):
             retval[line] = (info, reference)
+            _note(provenance, source, pile, line)
         else:
             retval[line.strip('.')] = (info, reference)
+            _note(provenance, source, pile, line.strip('.'))
 
     return retval
 
 
-def merge_file(path, retval, category=None):
+def _note(provenance, source, pile, trail):
+    """Record which file and which '# Reference:' a trail came from.
+
+    Last write wins, exactly as the trail set itself resolves a key listed twice, so the citation
+    always describes the entry that actually won.
+    """
+
+    if provenance is None:
+        return
+    pairs, trails = provenance
+    key = (source, pile)
+    index = pairs.get(key)
+    if index is None:
+        index = pairs[key] = len(pairs)
+    trails[trail] = index
+
+
+def merge_file(path, retval, category=None, provenance=None, root=None):
     """Merge one `*.txt` static trail file, deriving its `info` from the filename."""
 
     info = os.path.splitext(os.path.basename(path))[0].replace('_', " ")
     if category:
         info = "%s (%s)" % (info, category)
 
+    source = os.path.relpath(path, root).replace(os.sep, '/') if root else os.path.basename(path)
+
     with open(path, "rb") as f:
-        return parse_static_lines(f, info, "(static)", retval)
+        return parse_static_lines(f, info, "(static)", retval, provenance, source)
 
 
-def fetch(root):
+def fetch(root, provenance=None):
     """Every trail the static content tree at `root` contributes, as {trail: (info, reference)}.
 
     `root` is the checkout of the content repository. Its top level holds one directory per threat
@@ -131,7 +162,7 @@ def fetch(root):
         filenames = sorted(filenames, key=lambda _: "history" in _)
 
         for filename in filenames:
-            merge_file(filename, retval, category)
+            merge_file(filename, retval, category, provenance, root)
 
     return retval
 
@@ -142,12 +173,14 @@ def main():
     parser = argparse.ArgumentParser(description="Assemble the static trail aggregate from a content-repository checkout")
     parser.add_argument("--root", required=True, help="checkout of the trails content repository")
     parser.add_argument("--out", help="write the aggregate here (default: stdout)")
+    parser.add_argument("--provenance", help="also write the provenance sidecar here")
     options = parser.parse_args()
 
     if not os.path.isdir(options.root):
         sys.exit("[!] not a directory: '%s'" % options.root)
 
-    trails = fetch(options.root)
+    provenance = ({}, {}) if options.provenance else None
+    trails = fetch(options.root, provenance)
     if not trails:
         # An empty aggregate published to every sensor is the worst possible outcome: it installs
         # cleanly, starts, serves a dashboard and detects nothing. Refuse instead.
@@ -178,6 +211,21 @@ def main():
 
     import hashlib
     print("[i] %d trails, %d bytes, sha256 %s" % (len(trails), len(payload), hashlib.sha256(payload).hexdigest()), file=sys.stderr)
+
+    if options.provenance:
+        from core import provenance as provenance_module
+
+        pairs, trail_index = provenance
+        # The pair table is written in index order, so a lookup can index straight into it.
+        table = [None] * len(pairs)
+        for (source, reference), index in pairs.items():
+            table[index] = [source, reference]
+        # Only trails that survived into the aggregate: a key listed twice is cited by the entry
+        # that actually won, and one dropped along the way is not cited at all.
+        entries = [(trail, index) for trail, index in trail_index.items() if trail in trails]
+        rows, npairs = provenance_module.build(entries, table, options.provenance)
+        print("[i] provenance: %d trails, %d distinct (file, reference) pair(s), %d bytes"
+              % (rows, npairs, os.path.getsize(options.provenance)), file=sys.stderr)
 
 
 if __name__ == "__main__":

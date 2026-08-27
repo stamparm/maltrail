@@ -40,6 +40,7 @@ from core.settings import NAME
 from core.settings import VERSION
 from core.update import update_geo
 from core.update import update_ipcat
+from core.update import fetch_provenance
 from core.update import update_trails
 
 def main():
@@ -126,6 +127,7 @@ def main():
             _ = update_trails(offline=True)
         else:
             _ = update_trails()
+            fetch_provenance()
             update_ipcat()
             update_geo()
 
