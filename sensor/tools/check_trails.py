@@ -119,6 +119,25 @@ LOOKALIKES = {
 }
 
 
+def public_suffixes():
+    """Every ICANN public suffix, from data/public_suffix_icann.txt. Empty set if the file is missing.
+
+    A trail equal to one of these does not name a host, it names a REGISTRY: the sensor's
+    parent-domain walk makes a trail on `com.cn` match every domain in China's commercial namespace.
+    That is the most expensive mistake this content can make, and the rule for catching it lived in
+    a script on one workstation rather than in CI.
+    """
+
+    path = os.path.join(ROOT, "data", "public_suffix_icann.txt")
+    try:
+        with io.open(path, encoding="utf8", errors="replace") as handle:
+            return set(_.strip().lower() for _ in handle
+                       if _.strip() and not _.startswith("#"))
+    except EnvironmentError:
+        print("[!] %s is missing; skipping the public-suffix check" % os.path.relpath(path, ROOT))
+        return set()
+
+
 def whitelisted_parents():
     """The whitelist as loaded: data/whitelist.txt plus the configured WHITELIST.
 
@@ -206,11 +225,12 @@ def wire_form(key):
         return None                              # stored verbatim, and no query can carry it
 
 
-def classify(key, whitelist=None, info="", raw=None):
+def classify(key, whitelist=None, info="", raw=None, suffixes=None):
     """(severity, reason) for one trail key, or None when it is reachable as written.
 
-    severity is "inert" - it cannot match, ever - "shadowed": a whitelisted parent domain suppresses it, or
-    "warn": it will match something, but probably not what the report meant."""
+    severity is "inert" - it cannot match, ever - "overbroad": it matches an entire registry rather than a
+    host - "shadowed": the whitelist carries the same name, or "warn": it will match something, but probably
+    not what the report meant."""
 
     if not key or IPV4.match(key) or IPV4_PORT.match(key) or ':' in key:
         # Not names - but an ADDRESS trail can still be unreachable, and until this looked it was
@@ -255,6 +275,15 @@ def classify(key, whitelist=None, info="", raw=None):
         # development name, and kept 7,658 real trails from ever firing after it became a
         # registrable gTLD in 2019.
         return ("inert", "last label '%s' is in IGNORE_DNS_QUERY_SUFFIXES: the query is dropped before lookup" % last)
+
+    if suffixes and wire in suffixes and not (raw or "").startswith("."):
+        # WRITTEN BARE. suspicious/domain.txt lists whole namespaces on purpose and marks them with a
+        # leading dot - `.tk`, `.xyz`, `.cf` - which the loader strips and which this reads as "yes,
+        # the entire namespace, deliberately". Without the dot it is an ordinary trail that nobody
+        # noticed was a registry, and it will match every name under it.
+        return ("overbroad", "'%s' is an ICANN public suffix: this matches every domain in that "
+                             "registry, not a host. Write it as '.%s' if the whole namespace is meant."
+                % (wire, wire))
 
     if whitelist and wire in whitelist:
         # LONGEST-MATCH PRECEDENCE (3.2). Only an entry equal to the FULL name vetoes a trail; a tie
@@ -354,9 +383,11 @@ def header_problems(root):
     return found
 
 
-def problems(root, whitelist=None):
-    """[(path, line, key, severity, reason)] for every trail entry that is inert, shadowed or suspect."""
+def problems(root, whitelist=None, suffixes=None):
+    """[(path, line, key, severity, reason)] for every trail entry that is inert, overbroad, shadowed or suspect."""
     found = []
+    if suffixes is None:
+        suffixes = public_suffixes()
     for base, _, files in os.walk(root):
         for name in sorted(files):
             if not name.endswith(".txt"):
@@ -366,7 +397,7 @@ def problems(root, whitelist=None):
             # Only used for the parking/sinkhole exemption below, which is keyed on it.
             info = os.path.splitext(name)[0].replace('_', ' ')
             for number, key, raw in entries(path):
-                verdict = classify(key, whitelist, info, raw)
+                verdict = classify(key, whitelist, info, raw, suffixes)
                 if verdict:
                     found.append((path, number, key, verdict[0], verdict[1]))
     return found
@@ -702,18 +733,20 @@ def main():
     inert = [_ for _ in found if _[3] == "inert"]
     shadowed = [_ for _ in found if _[3] == "shadowed"]
     warned = [_ for _ in found if _[3] == "warn"]
+    overbroad = [_ for _ in found if _[3] == "overbroad"]
     headers = header_problems(options.path)
 
     if not options.quiet:
-        print("[i] %s: %d entry(ies) that cannot match, %d suspect, %d shadowed by the whitelist, %d malformed header(s)"
-              % (options.path, len(inert), len(warned), len(shadowed), len(headers)))
+        print("[i] %s: %d entry(ies) that cannot match, %d that match a whole registry, %d suspect, "
+              "%d shadowed by the whitelist, %d malformed header(s)"
+              % (options.path, len(inert), len(overbroad), len(warned), len(shadowed), len(headers)))
         if headers:
             print("\n[!] malformed '# Reference:' / '# Aliases:' header(s) (%d)" % len(headers))
             for path, number, line, why in headers[:options.limit]:
                 print("      %s:%d  %s\n          %s" % (os.path.relpath(path, ROOT), number, why, line[:110]))
             if len(headers) > options.limit:
                 print("      ... and %d more" % (len(headers) - options.limit))
-        for label, group in (("cannot match", inert), ("suspect", warned)):
+        for label, group in (("cannot match", inert), ("matches a whole registry", overbroad), ("suspect", warned)):
             buckets = {}
             for path, number, key, _, why in group:
                 buckets.setdefault(why.split(';')[0].split(':')[0], []).append((path, number, key, why))
@@ -744,12 +777,12 @@ def main():
             if len(by_name) > options.limit:
                 print("      ... and %d more name(s)" % (len(by_name) - options.limit))
 
-        if not inert and not warned and not shadowed and not headers:
+        if not inert and not overbroad and not warned and not shadowed and not headers:
             print("[i] no unreachable trails")
 
     # Shadowing is a COLLISION between two operator-visible lists, not a defect in the entry, so it is reported
     # and does not fail the gate: which of the two wins is a policy call (see the note in the module docstring).
-    return 1 if (inert or headers or (options.strict and warned)) else 0
+    return 1 if (inert or overbroad or headers or (options.strict and warned)) else 0
 
 
 if __name__ == "__main__":

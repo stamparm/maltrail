@@ -282,6 +282,70 @@ class WhitelistShadowTest(unittest.TestCase):
         self.assertEqual(stale[:3], [], "reported as shadowed without being in the whitelist itself")
 
 
+class PublicSuffixTest(unittest.TestCase):
+    """A trail equal to a public suffix names a REGISTRY, not a host.
+
+    The sensor's parent-domain walk means a trail on `com.cn` matches every domain in China's commercial
+    namespace - a false positive against millions of sites from one line. The rule for catching it existed,
+    in a script on one workstation that read a gitignored copy of the list, so nothing in CI could apply it.
+
+    suspicious/domain.txt lists whole namespaces on purpose and writes them with a LEADING DOT (`.tk`,
+    `.xyz`). That dot is what separates "the entire namespace, deliberately" from "an ordinary trail nobody
+    noticed was a registry", and it is free to write because the loader strips it - core/assemble.py does
+    `line.strip('.')`, so `.co.cl` and `co.cl` build the identical trail."""
+
+    SUF = {"com.cn", "co.uk", "tk", "augustow.pl"}
+
+    def test_a_bare_public_suffix_is_reported(self):
+        verdict = C.classify("com.cn", None, "", "com.cn", self.SUF)
+        self.assertEqual(verdict[0], "overbroad")
+        self.assertIn("every domain in that registry", verdict[1])
+
+    def test_the_leading_dot_marks_it_deliberate(self):
+        # written as ".tk" in suspicious/domain.txt: the whole namespace, on purpose
+        self.assertIsNone(C.classify("tk", None, "", ".tk", self.SUF))
+
+    def test_a_host_under_a_suffix_is_fine(self):
+        self.assertIsNone(C.classify("evil.com.cn", None, "", "evil.com.cn", self.SUF))
+        self.assertIsNone(C.classify("shop.co.uk", None, "", "shop.co.uk", self.SUF))
+
+    def test_no_list_means_no_reports(self):
+        # the vendored file is optional; without it the check must be silent, not wrong
+        self.assertIsNone(C.classify("com.cn", None, "", "com.cn", None))
+        self.assertIsNone(C.classify("com.cn", None, "", "com.cn", set()))
+
+    def test_it_fails_the_gate(self):
+        tmp = tempfile.mkdtemp()
+        self.addCleanup(__import__("shutil").rmtree, tmp, True)
+        os.mkdir(os.path.join(tmp, "malware"))
+        with io.open(os.path.join(tmp, "malware", "x.txt"), "w", encoding="utf8") as handle:
+            handle.write(u"com.cn\nevil.example.biz\n")
+        found = C.problems(tmp, None, self.SUF)
+        self.assertEqual([(_[2], _[3]) for _ in found], [("com.cn", "overbroad")])
+
+    def test_the_shipped_list_is_icann_only_and_carries_both_idn_forms(self):
+        suffixes = C.public_suffixes()
+        self.assertGreater(len(suffixes), 6000)
+        for known in ("com.cn", "co.uk", "xyz", "augustow.pl"):
+            self.assertIn(known, suffixes, "%s should be an ICANN suffix" % known)
+        # PRIVATE-section hosting slots must NOT be here: Maltrail tracks per-user subdomains on them
+        for hosting in ("blogspot.com", "ply.gg", "duckdns.org", "s3.amazonaws.com"):
+            self.assertNotIn(hosting, suffixes, "%s is a hosting suffix, not a registry" % hosting)
+        # an IDN suffix in both spellings, because trails are stored punycoded
+        self.assertIn("xn--p1ai", suffixes)
+
+    def test_the_shipped_list_carries_a_refresh_stamp(self):
+        path = os.path.join(ROOT, "data", "public_suffix_icann.txt")
+        self.assertIsNotNone(C.refreshed_on(path), "public_suffix_icann.txt lost its '# Refreshed:' line")
+
+    def test_the_real_pile_has_none(self):
+        static = trails_root()
+        if not static:
+            self.skipTest(NO_CHECKOUT)
+        found = [_ for _ in C.problems(static, None) if _[3] == "overbroad"]
+        self.assertEqual([(_[2], _[0]) for _ in found][:5], [], "trail(s) that match a whole registry")
+
+
 class CanaryTest(unittest.TestCase):
     """`--canaries`: the other direction from the rest of this file. Not "can this trail ever match"
     but "does it match something it must never match".
