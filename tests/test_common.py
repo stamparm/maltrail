@@ -244,7 +244,7 @@ class TestUsesPublishedKey(unittest.TestCase):
 
     def test_the_shipped_fingerprint_set_still_names_both_blocks(self):
         # The whole check is these two constants; losing one silently would re-accept the key.
-        # Reproduce them with: git show 0f876cfa^:misc/server.pem
+        # Reproduce them with: git show f32c991^:misc/server.pem
         self.assertEqual(
             sorted(C.PUBLISHED_PEM_FINGERPRINTS),
             ["2905a63fd3399bda47f286dac449edf734cdbdbe51b5d7d5cf241d2f74ea58c1",

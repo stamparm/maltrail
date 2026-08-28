@@ -331,13 +331,13 @@ def check_sudo():
 PUBLISHED_PEM_FINGERPRINTS = {
     "9395629637a4fc48290286313b60ae26fb6bdcd8018db45894ab54c273d1a2c3": "private key",
     "2905a63fd3399bda47f286dac449edf734cdbdbe51b5d7d5cf241d2f74ea58c1": "certificate",
-}   # NOTE: DER-SHA256 of the two blocks of misc/server.pem as of commit 0f876cfa^ ('git show 0f876cfa^:misc/server.pem' reproduces them)
+}   # NOTE: DER-SHA256 of the two blocks of misc/server.pem as of commit f32c991^ ('git show f32c991^:misc/server.pem' reproduces them)
 
 def uses_published_key(pem_path, fingerprints=None):
     """
     Whether an SSL_PEM file contains the key (or certificate) that Maltrail itself published.
 
-    misc/server.pem shipped inside this repository from February 2020 until commit 0f876cfa. A
+    misc/server.pem shipped inside this repository from February 2020 until commit f32c991. A
     private key in a public repository is a private key everybody has: TLS with it protects
     nothing, and anybody can impersonate the server or decrypt a session. Deleting the file from
     the tree does NOT undo that - the blob is still in this repository's git history, in every

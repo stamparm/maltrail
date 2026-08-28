@@ -1,8 +1,11 @@
 //! Event emission — daily log file, `LOG_SERVER` datagrams, CEF/syslog, Logstash JSON,
 //! condensing and log throttling. A direct port of `core/log.py`.
 //!
-//! Every rendering here is asserted byte-for-byte against the Python sensor in
-//! `tests/serialization.rs`, because the existing Python server parses these lines.
+//! The Python server parses these lines, so the formats are a compatibility surface rather than an
+//! implementation detail. CEF escaping is asserted byte-for-byte against `core/log.py` by
+//! `tests/vectors.rs`, over fixtures `tools/gen_vectors.py` generates from it; the rest is covered
+//! by this module's own tests. (This used to claim every rendering was pinned in a
+//! `tests/serialization.rs` - a file that does not exist and never did.)
 
 use std::collections::HashMap;
 use std::fs::{File, OpenOptions};

@@ -21,9 +21,9 @@ letting the clock run out quietly.
 
 ## The private key Maltrail used to ship (`misc/server.pem`)
 
-From February 2020 until commit `0f876cfa` this repository contained `misc/server.pem`: a
+From February 2020 until commit `f32c991` this repository contained `misc/server.pem`: a
 self-signed certificate **and its private key**, in a public repository. Anyone who has ever
-cloned, forked or mirrored Maltrail has that key, and `git show 0f876cfa^:misc/server.pem` still
+cloned, forked or mirrored Maltrail has that key, and `git show f32c991^:misc/server.pem` still
 prints it — deleting a file from the tip of a public branch is not key rotation and never was.
 Nothing rotates it either, because there is no single "the" key to rotate: it is one file that an
 unknown number of operators copied into `/etc/maltrail` years ago.

@@ -109,6 +109,16 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      # tests/trail_update.rs needs the trail SOURCE TREE, not the assembled set: it seeds a
+      # fixture's static cache by running core.assemble over a checkout. Without one its
+      # static_trails_dir() returns None and both of its content tests - including THE regression
+      # test for the field miss, a stale trails file failing to pick up a newly added static IOC -
+      # print "[skip]" and PASS. They did exactly that on every run from the split until now.
+      - uses: actions/checkout@v7
+        with:
+          repository: stamparm/trails
+          path: trails-content
+
       - name: Install libpcap
         run: |
           sudo apt-get update
@@ -152,6 +162,23 @@ jobs:
             --test trails --test loader_parity -- --nocapture 2>&1 | tee /tmp/real-trails.log
           if grep -q '\[skip\] no real trails file' /tmp/real-trails.log; then
             echo "::error::the real-trail tests skipped despite a trail set having been built"
+            exit 1
+          fi
+
+      # The updater end to end: builds a missing trails file, refreshes a stale one, and detects an
+      # IOC that was added after that file was written. It needs the release binary, so build it.
+      - name: The updater, against the real content
+        env:
+          MALTRAIL_TRAILS_DIR: ${{ github.workspace }}/trails-content
+        run: |
+          set -o pipefail
+          cargo build --manifest-path sensor/Cargo.toml --release
+          cargo test --manifest-path sensor/Cargo.toml --release \
+            --test trail_update -- --nocapture 2>&1 | tee /tmp/trail-update.log
+          # Same reasoning as above: these tests pass when they skip, so green has to mean they ran.
+          if grep -q '\[skip\]' /tmp/trail-update.log; then
+            echo "::error::a trail_update test skipped - see the [skip] line for which knob it wanted"
+            grep '\[skip\]' /tmp/trail-update.log
             exit 1
           fi
 
@@ -246,8 +273,19 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      # fetch-depth: 0 because check_refs.py resolves cited commits, and a shallow clone has none
+      # of them. It refuses to run on a shallow checkout rather than calling every citation broken.
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - run: python3 sensor/tools/check_version.py
+
+      # git-filter-repo rewrote every SHA in this repository during the trails split, and five
+      # citations were left dangling for weeks - including SECURITY.md's instructions for checking
+      # whether you have the private key Maltrail used to ship, which answered "fatal: Not a valid
+      # object name". Cheap to check, invisible when it breaks.
+      - name: Cited commits still exist
+        run: python3 sensor/tools/check_refs.py
 
       # There WAS a "static trails are reachable on the wire" step here. After the split it had
       # nothing to scan - no trails/ in this checkout, no sibling one on the runner - so it walked

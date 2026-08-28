@@ -75,7 +75,7 @@ jobs:
 
       # data/ua.txt is detection content too, and read_ua() folds it into SUSPICIOUS_UA_REGEX, which
       # the Rust sensor COMPILES IN via src/settings_gen.rs. Add a pattern without regenerating and
-      # the two sensors disagree: 2c9cbf54 added Loader-cli / Loader-cli/v1 from a ThreatFox report
+      # the two sensors disagree: 51966d8 added Loader-cli / Loader-cli/v1 from a ThreatFox report
       # and the Rust sensor could not match either. `cargo test --test generated` is the authority
       # and catches it, but only 38s into the 45-minute sensor gate; this says so in one second, in
       # the workflow the person editing content is already watching.

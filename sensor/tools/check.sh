@@ -52,7 +52,7 @@ cargo test --manifest-path sensor/Cargo.toml --release --test generated
 # alone and the test above is the authority on whether it is current. Regenerating at this point
 # would REPAIR the drift the previous step exists to report, and the gate would then be passing
 # because it edited the working tree rather than because the tree was right. That is not a
-# hypothetical: a pattern added to data/ua.txt in 1278030d left settings_gen.rs stale for days
+# hypothetical: a pattern added to data/ua.txt in 7bf3da3 left settings_gen.rs stale for days
 # while this script stayed green.
 #
 # When the test above fails, regenerate explicitly - it prints these two lines itself:

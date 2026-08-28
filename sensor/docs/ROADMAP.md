@@ -257,7 +257,7 @@ regression including fixture drift.
 ### 3.1 Commit the tree **[R1][R2]** — DONE
 
 ~15k lines were untracked; a `git clean -fdx` would have deleted the port and nothing was
-bisectable. Landed as `f1fa4dc3` ("Rust sensor becomes the sensor", 2026-08-07).
+bisectable. Landed as `66b2307` ("Rust sensor becomes the sensor", 2026-08-07).
 
 ### 3.2 CI **[R1][R2]** — DONE
 
