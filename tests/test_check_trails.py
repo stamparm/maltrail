@@ -10,6 +10,7 @@ Both directions are asserted here, because a checker that flags nothing passes j
 one that flags everything: every INERT sample must be caught, and every REACHABLE sample must not
 be. wire_form() is pinned against the transformation core/update.py actually performs."""
 
+import datetime
 import io
 import os
 import sys
@@ -434,6 +435,103 @@ class AddressTrailsAreJudgedToo(unittest.TestCase):
         # piles. Mirror it, or this reports deliberate entries as broken.
         for info in ("parking site", "sinkhole"):
             self.assertIsNone(C.classify("104.16.155.10", set(), info), info)
+
+
+class UrlTrailsAreNotDomainTrails(unittest.TestCase):
+    """A path under a popular host is not a trail on that host.
+
+    entries() reduces `archive.org/download/x.hta` to `archive.org` because the reachability checks
+    only care whether the HOST is a resolvable name. trail_index() reused that, so the literal index
+    claimed a trail on archive.org and the top-10k canary run reported it - along with discord.com,
+    codeberg.org and unwomen.org. Ten of eighty hits, every one a correct trail."""
+
+    URL_TRAILS = [
+        "archive.org/download/hbankers-latest/HBankers_Latest.hta",
+        "https://telegra.ph/Functions-04-03",
+        "discord.com/api/webhooks/1354279778441629867/",
+        "unwomen.org/jquery-3.3.1.min.js",
+    ]
+
+    def _tree(self):
+        tmp = tempfile.mkdtemp()
+        os.mkdir(os.path.join(tmp, "malware"))
+        with io.open(os.path.join(tmp, "malware", "sample.txt"), "w", encoding="utf8") as handle:
+            handle.write(u"\n".join(self.URL_TRAILS) + u"\nevil.example\n")
+        return tmp
+
+    def test_the_host_of_a_url_trail_is_not_indexed_as_a_literal(self):
+        tmp = self._tree()
+        try:
+            literals, _ = C.trail_index(tmp)
+            for host in ("archive.org", "telegra.ph", "discord.com", "unwomen.org"):
+                self.assertNotIn(host, literals, "%s indexed as a literal trail" % host)
+            self.assertIn("evil.example", literals, "a bare domain trail must still be indexed")
+        finally:
+            import shutil
+            shutil.rmtree(tmp)
+
+    def test_a_popularity_list_does_not_match_a_url_trail(self):
+        tmp = self._tree()
+        try:
+            hits = C.popular_matches(tmp, ["archive.org", "discord.com", "evil.example"])
+            self.assertEqual([_[3] for _ in hits], ["evil.example"])
+        finally:
+            import shutil
+            shutil.rmtree(tmp)
+
+    def test_reachability_still_sees_only_the_host(self):
+        # the other caller must NOT change: classify() judges names, and a path is not one
+        tmp = self._tree()
+        try:
+            keys = [key for _, key in C.entries(os.path.join(tmp, "malware", "sample.txt"))]
+            self.assertIn("archive.org", keys)
+            self.assertIn("telegra.ph", keys)
+        finally:
+            import shutil
+            shutil.rmtree(tmp)
+
+
+class RefreshStampTest(unittest.TestCase):
+    """The vendored top-10k list says when it was last regenerated, and the tool says it out loud.
+
+    Never fatal. A stale canary list is wrong in the harmless direction - a domain that was popular
+    a year ago is still one that must never be flagged - so all staleness costs is coverage of names
+    that became popular since. This exists because the failure mode of a hand-maintained snapshot is
+    that everybody forgets it is a snapshot."""
+
+    def _stamped(self, body):
+        handle, path = tempfile.mkstemp(suffix=".txt")
+        os.close(handle)
+        with io.open(path, "w", encoding="utf8") as out:
+            out.write(body)
+        self.addCleanup(os.unlink, path)
+        return path
+
+    def test_a_fresh_stamp_is_reported_not_flagged(self):
+        today = datetime.date.today()
+        note = C.staleness(self._stamped(u"# Refreshed: %s\nexample.com\n" % today))
+        self.assertTrue(note.startswith("[i] "), note)
+        self.assertIn("0 day(s) ago", note)
+
+    def test_an_old_stamp_asks_to_be_regenerated(self):
+        old = datetime.date.today() - datetime.timedelta(days=C.STALE_DAYS + 1)
+        note = C.staleness(self._stamped(u"# Refreshed: %s\nexample.com\n" % old))
+        self.assertTrue(note.startswith("[!] "), note)
+        self.assertIn("regenerating", note)
+
+    def test_a_file_with_no_stamp_says_nothing(self):
+        # tests/canaries.txt is hand-picked rather than a snapshot, so it carries no stamp and must
+        # not be nagged about
+        self.assertIsNone(C.staleness(self._stamped(u"# hand-picked\nexample.com\n")))
+        self.assertIsNone(C.staleness(self._stamped(u"# Refreshed: not-a-date\nexample.com\n")))
+
+    def test_the_shipped_top10k_list_carries_a_stamp(self):
+        # a regeneration that drops the stamp would silently disable the reminder
+        path = os.path.join(ROOT, "tests", "canaries-top10k.txt")
+        self.assertIsNotNone(C.refreshed_on(path), "tests/canaries-top10k.txt lost its '# Refreshed:' line")
+        names = [_ for _ in C.canaries(path)]
+        self.assertEqual(len(names), 10000, "the top-10k list is no longer 10,000 names")
+        self.assertNotIn("# refreshed: 2026-08-27", names, "a comment leaked through as a canary")
 
 
 if __name__ == "__main__":

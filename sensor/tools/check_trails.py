@@ -72,6 +72,7 @@ it as unreachable, which this tool used to do, was the false positive that kept 
 """
 
 import argparse
+import datetime
 import difflib
 import io
 import os
@@ -160,8 +161,15 @@ def whitelisted_parent(name, whitelist):
     return None
 
 
-def entries(path):
-    """The trail keys a file contributes, normalised the way trails/static/__init__.py does."""
+def entries(path, host_only=True):
+    """The trail keys a file contributes, normalised the way core/assemble.py does.
+
+    `host_only` reduces a URL trail to its host, which is what the reachability checks want: only
+    the host part has to be a resolvable name. It is WRONG for the popularity/canary index, and was
+    used there - so `archive.org/download/hbankers-latest/HBankers_Latest.hta` was indexed as the
+    literal `archive.org` and reported as a trail on one of the most important sites on the web. Ten
+    of eighty top-10k hits were that artifact, every one of them a correct trail.
+    """
     # `with`, because a caller that stops early (or a generator the GC has not reached) otherwise
     # leaves the handle open - visible as a ResourceWarning once anything iterates thousands of these.
     with io.open(path, encoding="utf8", errors="replace") as handle:
@@ -172,10 +180,11 @@ def entries(path):
             line = re.sub(r"\s*#.*", "", line)      # inline comments are stripped by the loader
             if not line:
                 continue
-            if '://' in line:
-                line = re.search(r"://(.*)", line).group(1)
-            if '/' in line:                          # URL/path trail: the host part is what must be a name
-                line = line.split('/')[0]
+            if host_only:
+                if '://' in line:
+                    line = re.search(r"://(.*)", line).group(1)
+                if '/' in line:                      # URL/path trail: the host part is what must be a name
+                    line = line.split('/')[0]
             yield number, line.strip('.')
 
 
@@ -340,6 +349,45 @@ def problems(root, whitelist=None):
 WILDCARD = re.compile(r"[\].][*+]|\[[a-z0-9_.\-]+\]", re.I)
 
 
+# A vendored popularity list carries "# Refreshed: YYYY-MM-DD" in its header. Reported, never
+# fatal: a stale canary list is wrong only in the harmless direction - a domain that was in the top
+# 10k a year ago is still one that must never be flagged - so the cost of staleness is coverage of
+# names that became popular since, not a wrong answer. Measured churn on the top 10k is ~15% per
+# six months, hence a year before it starts nagging.
+#
+# It says the age out loud because the failure mode of a hand-maintained snapshot is that everyone
+# forgets it is a snapshot.
+REFRESHED = re.compile(r"^#\s*Refreshed:\s*(\d{4})-(\d{2})-(\d{2})\s*$", re.M)
+STALE_DAYS = 365
+
+
+def refreshed_on(path):
+    """The '# Refreshed:' date in a canary file's header, or None if it carries no stamp."""
+
+    try:
+        with io.open(path, encoding="utf8", errors="replace") as handle:
+            match = REFRESHED.search(handle.read(8192))
+    except EnvironmentError:
+        return None
+    if not match:
+        return None
+    try:
+        return datetime.date(*(int(_) for _ in match.groups()))
+    except ValueError:
+        return None
+
+
+def staleness(path):
+    """A one-line note on how old a vendored list is, or None when it carries no stamp."""
+
+    stamped = refreshed_on(path)
+    if stamped is None:
+        return None
+    age = (datetime.date.today() - stamped).days
+    note = "%s: refreshed %s, %d day(s) ago" % (os.path.relpath(path, ROOT), stamped, age)
+    return ("[!] %s - worth regenerating, see the header" % note) if age > STALE_DAYS else "[i] %s" % note
+
+
 def canary_source(spec):
     """`PATH` or `PATH:N` -> (path, limit).
 
@@ -413,7 +461,9 @@ def trail_index(root):
             if not name.endswith(".txt"):
                 continue
             path = os.path.join(base, name)
-            for number, key in entries(path):
+            # host_only=False: a trail is only a false positive against a popular DOMAIN if the
+            # trail IS that domain. A path under it is a different indicator entirely.
+            for number, key in entries(path, host_only=False):
                 if not key:
                     continue
                 if WILDCARD.search(key):
@@ -508,6 +558,10 @@ def canary_report(options, whitelist):
         # A canary the whitelist protects cannot fail this gate, so it is not silently counted as a
         # pass: google.com, 1.1.1.1 and github.com are all in data/whitelist.txt, and a canary list
         # made only of those would be reassuring and worthless.
+        for path, _ in sources:
+            note = staleness(path)
+            if note:
+                print(note)
         if stats["covered"]:
             print("[!] not exercised (whitelist covers them): %s%s"
                   % (", ".join(stats["covered_examples"]), " ..." if stats["covered"] > 8 else ""))
