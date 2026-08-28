@@ -55,6 +55,32 @@ def _http(port, method, path, cookie=None, headers=None, body=None, timeout=10):
     return status, head_t, payload
 
 
+def _http_from(port, method, path, source, cookie=None, timeout=10):
+    """_http, but from a chosen local address - the only way to exercise the session's IP binding."""
+    req = "%s %s HTTP/1.1\r\nHost: 127.0.0.1\r\nConnection: close\r\n" % (method, path)
+    if cookie:
+        req += "Cookie: %s\r\n" % cookie
+    req += "\r\n"
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.settimeout(timeout)
+    s.bind((source, 0))
+    try:
+        s.connect(("127.0.0.1", port))
+        s.sendall(req.encode("utf-8"))
+        data = b""
+        while True:
+            chunk = s.recv(65536)
+            if not chunk:
+                break
+            data += chunk
+    finally:
+        s.close()
+    head, _, payload = data.partition(b"\r\n\r\n")
+    head_t = head.decode("latin-1")
+    status = int(head_t.split(" ", 2)[1]) if head_t.startswith("HTTP/") else 0
+    return status, head_t, payload
+
+
 def _stop_server(proc):
     """Stop a server subprocess without letting cleanup itself fail the test.
 
@@ -174,6 +200,48 @@ class TestHttpd(unittest.TestCase):
         m = [l for l in head.split("\r\n") if l.lower().startswith("set-cookie:")]
         self.assertTrue(m, "login must set a session cookie")
         return m[0].split(":", 1)[1].split(";", 1)[0].strip()
+
+    # --- the auth surfaces PLANS G4 named as untested ---
+
+    def test_a_nonce_is_single_use(self):
+        # replay protection: the same (nonce, hash) captured off the wire must not log anybody in a
+        # second time. DISPOSED_NONCES is what enforces it, and nothing exercised it.
+        body = self._login_body()
+        st, head, _ = _http(self.port, "POST", "/login", body=body)
+        self.assertEqual(st, 200, "the first use of a nonce must succeed")
+        st2, head2, _ = _http(self.port, "POST", "/login", body=body)
+        self.assertEqual(st2, 401, "replaying a spent nonce must fail")
+        self.assertNotIn("set-cookie", head2.lower(), "a replayed login must not be handed a session")
+
+    def test_the_session_cookie_carries_its_flags(self):
+        st, head, _ = _http(self.port, "POST", "/login", body=self._login_body())
+        self.assertEqual(st, 200)
+        cookie = [l for l in head.split("\r\n") if l.lower().startswith("set-cookie:")][0]
+        self.assertIn("HttpOnly", cookie, "the session cookie must be out of reach of document.cookie")
+        self.assertIn("SameSite=strict", cookie, "SESSION_COOKIE_FLAG_SAMESITE defaults on")
+        self.assertIn("path=/", cookie)
+        # Secure is conditional on USE_SSL and this server runs plain HTTP; asserting its ABSENCE
+        # here is what keeps the flag honest - set unconditionally, the cookie would be dropped by
+        # the browser on every plain-HTTP deployment and nobody could log in at all.
+        self.assertNotIn("Secure", cookie)
+
+    def test_a_session_is_bound_to_the_address_that_created_it(self):
+        # get_session() compares the session's stored client_ip with the peer address, so a stolen
+        # cookie replayed from elsewhere is not a session. Loopback gives us a second source address
+        # to prove it with: 127.0.0.2 is a different peer to the server, same machine to us.
+        cookie = self._login()
+        st, _, _ = _http(self.port, "GET", "/counts", cookie=cookie)
+        self.assertEqual(st, 200, "the cookie must work from the address that obtained it")
+
+        try:
+            probe = socket.socket()
+            probe.bind(("127.0.0.2", 0))
+            probe.close()
+        except (OSError, socket.error) as ex:
+            self.skipTest("no second loopback address to bind (%s)" % ex)
+
+        st2, _, body2 = _http_from(self.port, "GET", "/counts", cookie=cookie, source="127.0.0.2")
+        self.assertNotEqual(st2, 200, "the same cookie must not authenticate from another address")
 
     # --- the contract ---
     def test_index_served(self):

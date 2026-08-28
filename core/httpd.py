@@ -9,6 +9,7 @@ import datetime
 import glob
 import gzip
 import hashlib
+import hmac
 import io
 import json
 import mmap
@@ -1259,7 +1260,15 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                         if username == params.get("username"):
                             try:
-                                if params.get("hash") == hashlib.sha256((stored_hash.strip() + params.get("nonce")).encode(UNICODE_ENCODING)).hexdigest():
+                                # compare_digest, not ==: Python's string comparison returns on the first
+                                # differing byte, so the time it takes leaks how much of the expected
+                                # digest a guess got right. Single-use nonces make that hard to exploit
+                                # here - each attempt is against a different digest, so an attacker cannot
+                                # measure the same secret twice - but that is a property of the protocol
+                                # around this line, not of the line, and a refactor could remove it without
+                                # anyone noticing. Constant time costs nothing.
+                                expected = hashlib.sha256((stored_hash.strip() + params.get("nonce")).encode(UNICODE_ENCODING)).hexdigest()
+                                if hmac.compare_digest(str(params.get("hash")), expected):
                                     valid = True
                                     break
                             except Exception:
