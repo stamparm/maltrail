@@ -166,7 +166,7 @@ def whitelisted_parent(name, whitelist):
 
 
 def entries(path, host_only=True):
-    """The trail keys a file contributes, normalised the way core/assemble.py does.
+    """(line number, key, raw line) for each trail a file contributes, normalised the way core/assemble.py does.
 
     `host_only` reduces a URL trail to its host, which is what the reachability checks want: only
     the host part has to be a resolvable name. It is WRONG for the popularity/canary index, and was
@@ -184,12 +184,16 @@ def entries(path, host_only=True):
             line = re.sub(r"\s*#.*", "", line)      # inline comments are stripped by the loader
             if not line:
                 continue
+            raw = line
             if host_only:
                 if '://' in line:
                     line = re.search(r"://(.*)", line).group(1)
                 if '/' in line:                      # URL/path trail: the host part is what must be a name
                     line = line.split('/')[0]
-            yield number, line.strip('.')
+            # The raw key travels with the reduced one: a whitelisted host kills a bare-domain trail and a
+            # URL trail on that host in DIFFERENT ways, and a report that names the wrong one is worse than
+            # one that says nothing.
+            yield number, line.strip('.'), raw
 
 
 def wire_form(key):
@@ -202,7 +206,7 @@ def wire_form(key):
         return None                              # stored verbatim, and no query can carry it
 
 
-def classify(key, whitelist=None, info=""):
+def classify(key, whitelist=None, info="", raw=None):
     """(severity, reason) for one trail key, or None when it is reachable as written.
 
     severity is "inert" - it cannot match, ever - "shadowed": a whitelisted parent domain suppresses it, or
@@ -270,6 +274,11 @@ def classify(key, whitelist=None, info=""):
         # wildcards above. There are 25 wildcard trails in the content and none of them sits under a
         # whitelisted parent, so parsing a regex's trailing literal to find them would be fragile
         # code for an empty set. Worth revisiting if that count stops being zero.
+        if raw is not None and raw.strip('.') != key:
+            # a URL trail: the full key is not whitelisted, so it survives the build AND the load. It dies
+            # later, when the sensor refuses to examine a request whose HOST the operator cleared.
+            return ("shadowed", "the whitelist carries this host, so the sensor never examines a request to "
+                                "it: this URL trail is loaded and can never match")
         return ("shadowed", "the whitelist carries this exact name: a tie goes to the whitelist, so the "
                             "build drops this trail before it reaches trails.csv")
 
@@ -356,8 +365,8 @@ def problems(root, whitelist=None):
             # The info the assembler will give these entries: the filename, underscores to spaces.
             # Only used for the parking/sinkhole exemption below, which is keyed on it.
             info = os.path.splitext(name)[0].replace('_', ' ')
-            for number, key in entries(path):
-                verdict = classify(key, whitelist, info)
+            for number, key, raw in entries(path):
+                verdict = classify(key, whitelist, info, raw)
                 if verdict:
                     found.append((path, number, key, verdict[0], verdict[1]))
     return found
@@ -501,7 +510,7 @@ def trail_index(root):
             path = os.path.join(base, name)
             # host_only=False: a trail is only a false positive against a popular DOMAIN if the
             # trail IS that domain. A path under it is a different indicator entirely.
-            for number, key in entries(path, host_only=False):
+            for number, key, _raw in entries(path, host_only=False):
                 if not key:
                     continue
                 if WILDCARD.search(key):
@@ -720,14 +729,18 @@ def main():
         # current content rather than the three thousand the pre-3.2 rule produced.
         if shadowed:
             by_name = {}
-            for path, number, key, _, _why in shadowed:
-                by_name.setdefault(key, []).append((path, number))
-            print("\n[!] also carried by the whitelist, so dropped at build time (%d entr(ies), %d name(s))"
+            for path, number, key, _, why in shadowed:
+                by_name.setdefault(key, []).append((path, number, "never examines" in why))
+            print("\n[!] the whitelist carries this name too, so the trail can never fire (%d entr(ies), %d name(s))"
                   % (len(shadowed), len(by_name)))
-            print("      one of the two lists is wrong about this name; which one is a policy call")
+            print("      one of the two lists is wrong about it; which one is a policy call")
             for name, places in sorted(by_name.items(), key=lambda kv: -len(kv[1]))[:options.limit]:
                 where = ", ".join("%s:%d" % (os.path.relpath(_[0], ROOT), _[1]) for _ in places[:3])
-                print("      %-40s %2d  %s%s" % (name, len(places), where, " ..." if len(places) > 3 else ""))
+                # bare-domain trails die at build time; URL trails on the same host survive the build and
+                # are vetoed when the request arrives. Different mechanisms, so say which.
+                kind = "URL trail on a cleared host" if places[0][2] else "dropped at build"
+                print("      %-30s %2d  %-27s %s%s"
+                      % (name, len(places), kind, where, " ..." if len(places) > 3 else ""))
             if len(by_name) > options.limit:
                 print("      ... and %d more name(s)" % (len(by_name) - options.limit))
 

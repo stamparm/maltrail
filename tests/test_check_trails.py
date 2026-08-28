@@ -252,6 +252,26 @@ class WhitelistShadowTest(unittest.TestCase):
         self.assertIsNone(C.classify("cloudfront.net", None))
         self.assertIsNone(C.classify("cloudfront.net", set()))
 
+    def test_a_url_trail_on_a_cleared_host_is_reported_for_the_right_reason(self):
+        # a bare-domain trail dies at BUILD time (its full key is the whitelisted name); a URL trail on
+        # that host survives the build and the load, and is vetoed when the request arrives. Both are
+        # dead, and a report naming the wrong mechanism sends the reader to the wrong file.
+        bare = C.classify("cloudfront.net", self.WL, "", "cloudfront.net")
+        url = C.classify("cloudfront.net", self.WL, "", "cloudfront.net/evil/loader.js")
+        self.assertEqual((bare[0], url[0]), ("shadowed", "shadowed"))
+        self.assertIn("build drops", bare[1])
+        self.assertIn("never examines", url[1])
+
+    def test_the_raw_key_travels_with_the_reduced_one(self):
+        tmp = tempfile.mkdtemp()
+        self.addCleanup(__import__("shutil").rmtree, tmp, True)
+        os.mkdir(os.path.join(tmp, "malware"))
+        with io.open(os.path.join(tmp, "malware", "s.txt"), "w", encoding="utf8") as handle:
+            handle.write(u"host.example.biz/a/b.js\nbare.example.biz\n")
+        got = [(key, raw) for _, key, raw in C.entries(os.path.join(tmp, "malware", "s.txt"))]
+        self.assertEqual(got, [("host.example.biz", "host.example.biz/a/b.js"),
+                               ("bare.example.biz", "bare.example.biz")])
+
     def test_the_real_pile_reports_only_exact_collisions(self):
         static = trails_root()
         if not static:
@@ -511,7 +531,7 @@ class UrlTrailsAreNotDomainTrails(unittest.TestCase):
         # the other caller must NOT change: classify() judges names, and a path is not one
         tmp = self._tree()
         try:
-            keys = [key for _, key in C.entries(os.path.join(tmp, "malware", "sample.txt"))]
+            keys = [key for _, key, _raw in C.entries(os.path.join(tmp, "malware", "sample.txt"))]
             self.assertIn("archive.org", keys)
             self.assertIn("telegra.ph", keys)
         finally:
