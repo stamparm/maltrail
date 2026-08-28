@@ -34,3 +34,4 @@ package-lock.json
 misc/
 .cargo-home/
 .rustup-home/
+refnet-run/
