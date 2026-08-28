@@ -10,7 +10,7 @@ The trails split rewrote history with git-filter-repo, which changes every SHA. 
 five citations were left pointing at commits that no longer resolve, and the worst of them was in
 SECURITY.md, telling anyone who wanted to check for the private key Maltrail used to ship to run
 
-    git show 0f876cfa^:misc/server.pem
+    git show <a-sha-that-no-longer-exists>^:misc/server.pem
 
 which had answered "fatal: Not a valid object name" for weeks. A dangling SHA in a comment is
 untidy; a dangling SHA in a security advisory is a broken instruction handed to somebody trying to
@@ -35,7 +35,10 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 SUFFIXES = (".md", ".py", ".rs", ".sh", ".yml", ".yaml", ".conf", ".toml", ".service")
-SKIP_PREFIXES = ("data/", "tests/canaries", "sensor/tests/vectors/", "thirdparty/")
+# Files whose hex means something other than a commit. tests/test_refs.py is here because it is
+# THIS tool's test: it is necessarily full of invented SHAs, and exempting each one individually
+# would mean the exemption list grows every time a case is added.
+SKIP_PREFIXES = ("data/", "tests/canaries", "tests/test_refs.py", "sensor/tests/vectors/", "thirdparty/")
 
 # Hex-shaped tokens that are not commits. Each one has to earn its place here.
 NOT_COMMITS = {
