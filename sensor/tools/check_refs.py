@@ -52,6 +52,21 @@ NOT_COMMITS = {
 TOKEN = re.compile(r"(?<![0-9a-fx_/.-])([0-9a-f]{7,12})(?![0-9a-zA-Z_/.-])")
 
 
+def have_git():
+    """Is there a usable git here at all?
+
+    The Python 3.6 job runs inside the official 3.6 image, which has no git binary. Without this
+    the tool raised FileNotFoundError and took the whole suite down; with it, "no git" is reported
+    the same way a shallow clone is - could not run, exit 2, never a pass.
+    """
+
+    try:
+        subprocess.check_output(["git", "--version"], stderr=subprocess.STDOUT)
+        return True
+    except (OSError, subprocess.CalledProcessError):
+        return False
+
+
 def tracked_files():
     out = subprocess.check_output(["git", "-C", ROOT, "ls-files"]).decode("utf8", "replace")
     for name in out.split("\n"):
@@ -98,6 +113,11 @@ def main(argv=None):
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--quiet", action="store_true", help="exit status only")
     options = parser.parse_args(argv)
+
+    if not have_git():
+        print("[!] no git available - the citations cannot be resolved here")
+        print("[!] run this where git is on PATH; CI does it in the 'version consistency' job")
+        return 2
 
     if is_shallow():
         print("[!] this is a shallow clone - every citation would look dangling")

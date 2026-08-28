@@ -21,6 +21,11 @@ sys.path.insert(0, os.path.join(ROOT, "sensor", "tools"))
 
 import check_refs as C
 
+# The Python 3.6 job runs in the official 3.6 image, which ships no git. Everything that needs to
+# resolve a commit is skipped there rather than erroring; the 'version consistency' job has git and
+# a full clone, and gates on the tool itself.
+NEEDS_GIT = unittest.skipUnless(C.have_git(), "no git on PATH (the 3.6 image has none)")
+
 
 class TokenTest(unittest.TestCase):
     def _tokens(self, line):
@@ -41,6 +46,7 @@ class TokenTest(unittest.TestCase):
         self.assertEqual(self._tokens("sha256 " + "a1b2c3d4" * 8), [])
 
 
+@NEEDS_GIT
 class ResolutionTest(unittest.TestCase):
     def test_a_real_commit_resolves(self):
         head = subprocess.check_output(["git", "-C", ROOT, "rev-parse", "--short", "HEAD"]).decode().strip()
@@ -64,6 +70,7 @@ class ResolutionTest(unittest.TestCase):
 class ExemptionTest(unittest.TestCase):
     """NOT_COMMITS is a list of lies about hex, so it has to stay honest."""
 
+    @NEEDS_GIT
     def test_every_exemption_is_still_written_somewhere(self):
         # an exemption for a token nobody writes any more will silently cover a future real one
         found = C.citations()
@@ -74,6 +81,7 @@ class ExemptionTest(unittest.TestCase):
         for token, reason in C.NOT_COMMITS.items():
             self.assertTrue(reason and len(reason) > 10, "%s has no real reason" % token)
 
+    @NEEDS_GIT
     def test_no_exemption_is_actually_a_commit(self):
         # exempting a real SHA would hide it from the gate for no reason
         for token in C.NOT_COMMITS:
@@ -95,6 +103,25 @@ class ShallowCloneTest(unittest.TestCase):
         finally:
             C.is_shallow = real
 
+    def test_no_git_at_all_also_exits_2(self):
+        # the Python 3.6 image has no git binary; before this the tool raised FileNotFoundError and
+        # took the whole suite down with it, which is a crash rather than an answer
+        real = subprocess.check_output
+
+        def no_git(cmd, *args, **kwargs):
+            if cmd and cmd[0] == "git":
+                raise OSError(2, "No such file or directory: 'git'")
+            return real(cmd, *args, **kwargs)
+
+        subprocess.check_output = no_git
+        try:
+            self.assertFalse(C.have_git())
+            self.assertEqual(C.main(["--quiet"]), 2)
+        finally:
+            subprocess.check_output = real
+        self.assertTrue(C.have_git(), "the patch leaked")
+
+    @NEEDS_GIT
     def test_a_full_clone_is_allowed_to_run(self):
         real = C.is_shallow
         C.is_shallow = lambda: False
