@@ -50,8 +50,12 @@ class ResolutionTest(unittest.TestCase):
         self.assertFalse(C.resolves("deadbeef1"))
 
     def test_the_tree_is_clean_right_now(self):
-        # the assertion that would have caught the split's damage on the day it happened
-        self.assertEqual(C.main.__name__, "main")   # imported, not executed twice
+        # The assertion that would have caught the split's damage on the day it happened. Most CI
+        # jobs check out at depth 1, where no cited commit resolves and this would fail for a
+        # reason that is not about the tree - so it defers to the 'version consistency' job, which
+        # checks out with fetch-depth: 0 and runs check_refs.py as a gate.
+        if C.is_shallow():
+            self.skipTest("shallow clone; the 'version consistency' CI job gates this on a full one")
         dangling = {t: w for t, w in C.citations().items()
                     if t not in C.NOT_COMMITS and not C.resolves(t)}
         self.assertEqual(dangling, {}, "cited commit(s) that no longer exist: %s" % sorted(dangling))
@@ -77,10 +81,27 @@ class ExemptionTest(unittest.TestCase):
 
 
 class ShallowCloneTest(unittest.TestCase):
-    def test_a_shallow_clone_is_refused_rather_than_reported_broken(self):
-        # on a shallow checkout every citation looks dangling, which would be a lie in the other
-        # direction; the tool exits 2 ("could not run") instead of 1 ("ran and found problems")
-        self.assertFalse(C.is_shallow(), "this working copy is shallow, so the suite cannot judge")
+    """On a shallow checkout every citation looks dangling, which is a lie in the other direction.
+
+    Asserted as BEHAVIOUR rather than by inspecting this working copy: the suite runs on both
+    shallow and full checkouts, and a test that only passes on one of them is not testing the tool."""
+
+    def test_a_shallow_clone_exits_2_rather_than_reporting_every_citation_broken(self):
+        real = C.is_shallow
+        C.is_shallow = lambda: True
+        try:
+            # 2 is "could not run", distinct from 1 ("ran and found problems") and 0 ("clean")
+            self.assertEqual(C.main(["--quiet"]), 2)
+        finally:
+            C.is_shallow = real
+
+    def test_a_full_clone_is_allowed_to_run(self):
+        real = C.is_shallow
+        C.is_shallow = lambda: False
+        try:
+            self.assertIn(C.main(["--quiet"]), (0, 1))
+        finally:
+            C.is_shallow = real
 
 
 if __name__ == "__main__":

@@ -91,11 +91,13 @@ def citations():
     return found
 
 
-def main():
+def main(argv=None):
+    """`argv` is explicit so a caller in a test suite does not get the runner's own arguments."""
+
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--quiet", action="store_true", help="exit status only")
-    options = parser.parse_args()
+    options = parser.parse_args(argv)
 
     if is_shallow():
         print("[!] this is a shallow clone - every citation would look dangling")
@@ -130,4 +132,4 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))
