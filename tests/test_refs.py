@@ -113,13 +113,16 @@ class ShallowCloneTest(unittest.TestCase):
                 raise OSError(2, "No such file or directory: 'git'")
             return real(cmd, *args, **kwargs)
 
+        before = C.have_git()
         subprocess.check_output = no_git
         try:
             self.assertFalse(C.have_git())
             self.assertEqual(C.main(["--quiet"]), 2)
         finally:
             subprocess.check_output = real
-        self.assertTrue(C.have_git(), "the patch leaked")
+        # the invariant is "the patch did not leak", not "git exists" - the 3.6 image has none, and
+        # asserting the environment instead of the behaviour is what made this test fail there
+        self.assertEqual(C.have_git(), before, "the patch leaked")
 
     @NEEDS_GIT
     def test_a_full_clone_is_allowed_to_run(self):
