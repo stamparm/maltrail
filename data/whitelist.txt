@@ -81,7 +81,6 @@ f-secure.com
 fap.to
 fastly.net
 fbcdn.net
-fortiddns.com
 fslcdn.net
 footprintdns.com
 footprintpredict.com
@@ -196,7 +195,6 @@ vba.com.by
 verisign.com
 verisign.net
 weborama.fr
-weebly.com
 windows.com
 windows.net
 wordpress.com
