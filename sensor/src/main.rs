@@ -71,8 +71,8 @@ Options:
   -T, --test-config     validate the configuration, trails, whitelist, log directory and
                         capture filter, then exit (0 = usable, 1 = would not work)
   --timestamps SOURCE   offline timestamp source: 'pcap' (default) or 'wallclock'
-                        ('wallclock' reproduces the Python 3 sensor's behaviour, which is
-                        what strict offline parity runs need)
+                        ('wallclock' stamps each packet with the time it is processed
+                        instead of the time it was captured)
 ";
 
 fn parse_args(argv: &[String]) -> Result<Args, String> {
@@ -381,8 +381,9 @@ fn run() -> i32 {
                         // every packet to every one of them and multiply detections.
                         ceprintln!("[!] PACKET_FANOUT unavailable on '{interface}' ({e}); falling back to 1 worker");
                         ceprintln!(
-                            "[?] a single worker also throttles the event log {workers}x harder than \
-                             sensor.py's {workers} processes do (core/log.py keeps the throttle per worker)"
+                            "[?] with EVENT_THROTTLE_MODE legacy a single worker also throttles the event \
+                             log {workers}x harder than {workers} would, because that mode keeps its bucket \
+                             per worker; the default 'summarize' mode aggregates instead and loses nothing"
                         );
                         match Handle::open_live(&cfg, interface, None) {
                             Ok((h, _info)) => {
@@ -787,7 +788,7 @@ fn print_diagnostics(
             "[i] offline timestamps: {}",
             match cfg.offline_timestamps {
                 TimestampSource::Pcap => "pcap record timestamps",
-                TimestampSource::Wallclock => "wall clock (sensor.py-on-Python-3 compatible)",
+                TimestampSource::Wallclock => "wall clock (the time each packet is processed)",
             }
         );
     } else {
@@ -886,8 +887,8 @@ fn print_diagnostics(
             cfg.event_throttle_window
         ),
         maltrail_sensor::throttle::ThrottleMode::Legacy => cprintln!(
-            "[i] event throttle: legacy (sensor.py's 'sec // {}' bucket; suppressed events are \
-             discarded, not summarized)",
+            "[i] event throttle: legacy ('sec // {}' bucket, matching core/log.py; suppressed events \
+             are discarded, not summarized)",
             handles.len().max(1)
         ),
         maltrail_sensor::throttle::ThrottleMode::Off => {
