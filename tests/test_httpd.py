@@ -6,7 +6,9 @@ actual HTTP contract the dashboard relies on: challenge-response login, /events 
 5xx/crashes. Raw-socket HTTP client -> no urllib py2/py3 differences. Skips cleanly if the server
 can't bind (e.g. sandbox)."""
 import json
+import io
 import os
+import re
 import sys
 import time
 import socket
@@ -1135,6 +1137,86 @@ class TestReapSessions(unittest.TestCase):
         self.assertEqual(closed, [True], "the expired session's pinned handle must be closed (fd leak otherwise)")
         H.SESSIONS.clear()
 
+
+
+class TestShippedFail2banContract(unittest.TestCase):
+    """The regex in maltrail.conf is a firewall-rule generator, and no test had ever read it.
+
+    /fail2ban matches FAIL2BAN_REGEX against the WHOLE log line and returns field 4, the SOURCE
+    address. For an inbound attack that is the attacker. For an OUTBOUND detection - one of our
+    hosts reaching a C2 - it is our own machine, so any alternative loose enough to hit a trail
+    NAME turns fail2ban against the network it protects.
+
+    The shipped regex used to contain the bare words `attacker`, `reputation` and `spammer`, and
+    39 trails in the published content carry one: attackerman.ddns.net, hightreputation.top,
+    spammer-apps471-info.bid. Reproduced against a live server before the fix, a single outbound
+    malware event to attackerman.ddns.net made /fail2ban return the internal host that resolved it.
+
+    Every existing test supplies `FAIL2BAN_REGEX dummy`, so none of them could see this."""
+
+    @classmethod
+    def setUpClass(cls):
+        import core.settings as settings
+        settings.read_config(os.path.join(REPO, "maltrail.conf"))
+        cls.regex = settings.config.FAIL2BAN_REGEX
+
+    def _line(self, trail, info):
+        from core.log import safe_value
+        return " ".join(safe_value(_) for _ in ("2026-08-28 10:00:00.000000", "sensor", "10.0.0.5",
+                                                "4421", "8.8.8.8", "53", "UDP", "DNS", trail, info, "(feed)"))
+
+    def _bans(self, trail, info):
+        return bool(re.search(self.regex, self._line(trail, info), re.I))
+
+    def test_the_shipped_regex_compiles(self):
+        self.assertTrue(self.regex, "FAIL2BAN_REGEX must stay set; unset makes /fail2ban answer 200 with prose")
+        re.compile(self.regex)
+
+    def test_it_bans_what_every_emitter_actually_writes(self):
+        # the sensor's heuristics, and the phrases feeds/*.py assign
+        for info in ("known attacker", "bad reputation", "bad reputation (suspicious)",
+                     "bad reputation (tor node)", "spammer", "mass scanner", "potential web scan",
+                     "potential directory traversal", "potential sql injection",
+                     "potential remote code execution", "potential iot-malware download"):
+            self.assertTrue(self._bans("1.2.3.4", info), "%r must be banned" % info)
+
+    def test_it_does_not_ban_an_outbound_detection(self):
+        # field 4 of these lines is OUR host; banning it firewalls the victim, not the attacker
+        for info in ("apt unclassified (malware)", "ransomware (malware)", "potential infection",
+                     "potential data leakage", "potential dns changer", "cobaltstrike (malware)"):
+            self.assertFalse(self._bans("1.2.3.4", info), "%r must NOT be banned" % info)
+
+    def test_a_trail_name_cannot_trigger_a_ban(self):
+        # the exact names that used to; the info on each is an outbound verdict
+        for trail in ("attackerman.ddns.net", "attacker-domain.com", "fromattacker.xyz",
+                      "hightreputation.top", "reputationb.com", "fixreputation.net",
+                      "spammer-apps471-info.bid", "hacker-spammer.no-ip.biz",
+                      "/wp_comment_spammer.py", "/simattacker.php", "/scar/attacker"):
+            self.assertFalse(self._bans(trail, "apt unclassified (malware)"),
+                             "the trail NAME %r must not put its source on the ban list" % trail)
+
+    def test_the_published_content_carries_no_name_that_would_ban(self):
+        static = os.environ.get("MALTRAIL_TRAILS_DIR") or os.path.join(os.path.dirname(REPO), "trails")
+        if not os.path.isdir(os.path.join(static, "malware")):
+            self.skipTest("no stamparm/trails checkout (gate.yml in that repository runs this content)")
+        import glob
+        rx = re.compile(self.regex, re.I)
+        offenders = []
+        for pile in ("malware", "malicious", "suspicious"):
+            for path in glob.glob(os.path.join(static, pile, "*.txt")):
+                for raw in io.open(path, encoding="utf8", errors="replace"):
+                    raw = raw.strip()
+                    if raw and not raw.startswith("#") and rx.search(raw):
+                        offenders.append((os.path.basename(path), raw))
+        self.assertEqual(offenders[:5], [], "%d published trail name(s) would put their own source on the ban list"
+                         % len(offenders))
+
+    def test_the_allowlist_still_lets_localhost_pull(self):
+        # the documented recipe is `curl -s http://127.0.0.1:8338/fail2ban`; an empty allowlist
+        # closes the endpoint entirely (secure by default), which would break every jail silently
+        import core.settings as settings
+        allow = str(settings.config.FAIL2BAN_ALLOWLIST or "")
+        self.assertIn("127.0.0.1", allow, "the shipped allowlist must keep the documented curl working")
 
 
 class TestDropSession(unittest.TestCase):
