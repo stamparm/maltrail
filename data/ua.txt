@@ -1674,7 +1674,7 @@ Netbounce
 
 HelloBadPacketZ
 
-# Reference: https://github.com/stamparm/maltrail/blob/master/trails/static/suspicious/dprk_silivaccine.txt
+# Reference: https://github.com/stamparm/trails/blob/main/suspicious/dprk_silivaccine.txt
 # Reference: https://research.checkpoint.com/2018/silivaccine-a-look-inside-north-koreas-anti-virus/
 
 SVUpdate

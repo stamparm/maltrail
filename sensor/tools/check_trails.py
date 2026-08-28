@@ -11,7 +11,7 @@ And the other direction - no trail may match a name it must never match:
 
     python3 sensor/tools/check_trails.py --canaries              # tests/canaries.txt, ~3s (what CI runs)
 
-    python3 sensor/tools/check_trails.py --path trails/static/malware --kinds regex \
+    python3 sensor/tools/check_trails.py --path ../trails/malware --kinds regex \
         --canaries misc/alexa_top-1m.csv.zip:500000 \
                    misc/cisco_top-1m.csv.zip:250000 \
                    misc/tranco_top-1m.csv.zip:50000                # ~7s, run locally

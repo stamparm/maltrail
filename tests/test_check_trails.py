@@ -1,7 +1,7 @@
 # coding: utf-8
 """Unit tests for the static-trail reachability gate (sensor/tools/check_trails.py).
 
-This is a gate on trails/static/, so its exit status has to mean something: it ran outside CI for
+This is a gate on the static trail pile, so its exit status has to mean something: it ran outside CI for
 as long as it reported a live trail as dead. `support¬forum.org` (malware/apt_darkhotel.txt) is
 stored as `xn--supportforum-tqa.org` by core/update.py's idna step, and replaying that name as a
 DNS query through the release sensor produces an event - so the "not punycode" verdict was wrong.
@@ -21,6 +21,22 @@ sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "sensor", "tools"))
 
 import check_trails as C
+
+
+def trails_root():
+    """The static-trail checkout, or None.
+
+    The content moved to stamparm/trails in 3.2, so ROOT/trails/static will never exist again and
+    a skip naming it can never stop being printed. These three assertions are OWNED by that
+    repository's gate.yml, which runs this same checker on every commit - this runs them too when
+    a checkout happens to be around, beside maltrail or wherever MALTRAIL_TRAILS_DIR points.
+    """
+
+    path = C._default_trails_path()      # MALTRAIL_TRAILS_DIR, then a sibling checkout
+    return path if os.path.isdir(os.path.join(path, "malware")) else None
+
+
+NO_CHECKOUT = "no stamparm/trails checkout (gate.yml in that repository runs this on every commit)"
 
 
 # (key, reason it can never match)
@@ -113,11 +129,11 @@ class ScanTest(unittest.TestCase):
             shutil.rmtree(tmp)
 
     def test_the_real_static_pile_has_no_inert_trails(self):
-        static = os.path.join(ROOT, "trails", "static")
-        if not os.path.isdir(static):
-            self.skipTest("no trails/static")
+        static = trails_root()
+        if not static:
+            self.skipTest(NO_CHECKOUT)
         inert = [_ for _ in C.problems(static) if _[3] == "inert"]
-        self.assertEqual(inert, [], "inert trail(s) in trails/static: %s" % inert[:5])
+        self.assertEqual(inert, [], "inert trail(s) in the static pile: %s" % inert[:5])
 
 
 class HeaderTest(unittest.TestCase):
@@ -181,9 +197,9 @@ class HeaderTest(unittest.TestCase):
             shutil.rmtree(tmp)
 
     def test_the_real_static_pile_has_clean_headers(self):
-        static = os.path.join(ROOT, "trails", "static")
-        if not os.path.isdir(static):
-            self.skipTest("no trails/static")
+        static = trails_root()
+        if not static:
+            self.skipTest(NO_CHECKOUT)
         found = C.header_problems(static)
         self.assertEqual(found, [], "malformed header(s): %s" % [(_[0], _[1], _[3]) for _ in found[:5]])
 
@@ -279,9 +295,9 @@ class CanaryTest(unittest.TestCase):
         self.assertGreater(len(exercised), 20, "the canary list is mostly whitelist-covered, so it proves little")
 
     def test_the_real_static_pile_matches_no_canary(self):
-        static = os.path.join(ROOT, "trails", "static")
-        if not os.path.isdir(static):
-            self.skipTest("no trails/static")
+        static = trails_root()
+        if not static:
+            self.skipTest(NO_CHECKOUT)
         names = list(C.canaries(os.path.join(ROOT, "tests", "canaries.txt")))
         hits = C.popular_matches(static, names, C.whitelisted_parents())
         self.assertEqual(hits, [], "trail(s) match a canary: %s" % hits[:3])

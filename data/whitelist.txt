@@ -3333,7 +3333,7 @@ utbs.ws
 ss2.us
 
 # Reference: https://itinfinity.ru/servisy/minercheck/ (Russian)
-# Note: Whitelisting for itinfinity.ru Bitrixcore (https://github.com/stamparm/maltrail/blob/master/trails/static/malicious/bitrixcore.txt) attacks scanner service
+# Note: Whitelisting for itinfinity.ru Bitrixcore (https://github.com/stamparm/trails/blob/main/malicious/bitrixcore.txt) attacks scanner service
 
 itinfinity.ru
 

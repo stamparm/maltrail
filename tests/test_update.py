@@ -122,10 +122,10 @@ class StaticFileOrderTest(unittest.TestCase):
     moved 5,950 of 1,632,336 entries to a different family (metamorfo vs latentbot,
     cobaltstrike-1 vs -2). Sorting the globs fixes the winner; this pins it."""
 
-    def _fetch_with(self, order):
-        """Run the loader with glob() forced into `order`, over two piles that share a key."""
+    def _fetch_with(self, root, order):
+        """Run the assembler with glob() forced into `order`, over two piles that share a key."""
         import glob as _glob
-        import trails.static as S
+        from core import assemble as S
 
         real = _glob.glob
 
@@ -135,16 +135,19 @@ class StaticFileOrderTest(unittest.TestCase):
 
         S.glob.glob = fake
         try:
-            return S.fetch()
+            return S.fetch(root)
         finally:
             S.glob.glob = real
 
     def test_the_label_does_not_depend_on_directory_order(self):
-        static = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "trails", "static")
-        if not os.path.isdir(static):
-            self.skipTest("no trails/static")
-        forward = self._fetch_with(lambda hits: hits)
-        backward = self._fetch_with(lambda hits: list(reversed(hits)))
+        # trails/static/__init__.py became core/assemble.py and the content became its own
+        # repository, so this needs a checkout: beside maltrail, or MALTRAIL_TRAILS_DIR.
+        static = os.environ.get("MALTRAIL_TRAILS_DIR") or os.path.join(
+            os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "trails")
+        if not os.path.isdir(os.path.join(static, "malware")):
+            self.skipTest("no stamparm/trails checkout")
+        forward = self._fetch_with(static, lambda hits: hits)
+        backward = self._fetch_with(static, lambda hits: list(reversed(hits)))
         self.assertEqual(len(forward), len(backward))
         differing = [k for k in forward if forward[k] != backward.get(k)]
         self.assertEqual(differing[:5], [],

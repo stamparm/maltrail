@@ -13,7 +13,7 @@
 # downloading three 1M-row lists per trail commit is exactly the infrastructure abuse this file
 # avoids - 18 seconds against the cached zips, and it is the one that finds a loose regex:
 #
-#     python3 sensor/tools/check_trails.py --path trails/static/malware --kinds regex \
+#     python3 sensor/tools/check_trails.py --path ../trails/malware --kinds regex \
 #         --canaries misc/alexa_top-1m.csv.zip:500000 misc/cisco_top-1m.csv.zip:250000 \
 #                    misc/tranco_top-1m.csv.zip:50000
 #

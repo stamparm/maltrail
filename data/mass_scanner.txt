@@ -8,7 +8,7 @@
 #  apt-get -qq install iptables ipset &&\
 #  ipset -q flush mass_scanners &&\
 #  ipset -q create mass_scanners hash:net &&\
-#  for ip in $(curl https://raw.githubusercontent.com/stamparm/maltrail/master/trails/static/mass_scanner.txt 2>/dev/null | grep -v "^#" | cut -d " " -f 1); do ipset add mass_scanners $ip; done &&\
+#  for ip in $(curl https://raw.githubusercontent.com/stamparm/maltrail/master/data/mass_scanner.txt 2>/dev/null | grep -v "^#" | cut -d " " -f 1); do ipset add mass_scanners $ip; done &&\
 #  iptables -I INPUT -m set --match-set mass_scanners src -j DROP
 #  iptables -nvL
 #################################################################

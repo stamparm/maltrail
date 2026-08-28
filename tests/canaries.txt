@@ -1,4 +1,4 @@
-# Domains and addresses that must never be flagged by trails/static.
+# Domains and addresses that must never be flagged by a static trail.
 #
 # Read by `sensor/tools/check_trails.py --canaries`, which the `trails` workflow runs on every commit
 # that touches trails/. It is the cheap half of false-positive checking: the thorough half is a
