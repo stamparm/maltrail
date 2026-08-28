@@ -1069,6 +1069,89 @@ class TestReapSessions(unittest.TestCase):
 
 
 
+class TestDropSession(unittest.TestCase):
+    """Every way a session leaves SESSIONS must close the event-log handle it pinned.
+
+    /events hands a session an open file - or, for a multi-day range, an io.BufferedReader over several of them.
+    The reaper closed that handle. Logout and an expired cookie did not: they popped the session and left the
+    descriptors open, so an analyst who paged through a week of logs and then logged out leaked seven of them.
+    A long-lived server with people logging in and out walks towards "too many open files", which is the same
+    failure already fixed once inside /events when a fresh start=0 replaced a held handle.
+
+    Asserted per removal path, because they are three separate call sites and fixing one proves nothing about
+    the others."""
+
+    def setUp(self):
+        # imported here, like the neighbouring session test: core.httpd is not imported at module scope
+        import core.httpd
+        from core.attribdict import AttribDict
+        self.H = core.httpd
+        self.AttribDict = AttribDict
+        self.H.SESSIONS.clear()
+        self.H._sessions_reaped[0] = 0
+
+    def tearDown(self):
+        self.H.SESSIONS.clear()
+        self.H._sessions_reaped[0] = 0
+
+    class _Handle(object):
+        """Stands in for the open daily log, or the BufferedReader over several of them."""
+
+        closed = False
+
+        def close(self):
+            self.closed = True
+
+    def _session(self, name, expiration):
+        handle = self._Handle()
+        self.H.SESSIONS[name] = self.AttribDict({"expiration": expiration, "range_handle": handle})
+        return handle
+
+    def test_logout_closes_the_handle(self):
+        handle = self._session("out", time.time() + 3600)
+        self.H._drop_session("out")
+        self.assertNotIn("out", self.H.SESSIONS)
+        self.assertTrue(handle.closed, "logout left the event-log handle open")
+
+    def test_an_expired_session_closes_the_handle(self):
+        handle = self._session("stale", time.time() - 1)
+        self.H._drop_session("stale")
+        self.assertNotIn("stale", self.H.SESSIONS)
+        self.assertTrue(handle.closed, "an expired cookie left the event-log handle open")
+
+    def test_the_reaper_still_closes_the_handle(self):
+        # the one path that always did; it now shares the code with the two that did not
+        handle = self._session("dead", time.time() - 1)
+        live = self._session("live", time.time() + 3600)
+        self.H._reap_sessions()
+        self.assertNotIn("dead", self.H.SESSIONS)
+        self.assertIn("live", self.H.SESSIONS)
+        self.assertTrue(handle.closed)
+        self.assertFalse(live.closed, "an unexpired session must keep its handle")
+
+    def test_a_session_without_a_handle_is_dropped_cleanly(self):
+        self.H.SESSIONS["bare"] = self.AttribDict({"expiration": time.time() + 3600})
+        self.assertIsNotNone(self.H._drop_session("bare"))
+        self.assertNotIn("bare", self.H.SESSIONS)
+
+    def test_dropping_an_unknown_session_is_not_an_error(self):
+        # get_session() and delete_session() both act on an attacker-supplied cookie value
+        self.assertIsNone(self.H._drop_session("never-existed"))
+
+    def test_a_handle_that_refuses_to_close_still_drops_the_session(self):
+        # a closed-file or broken-handle error must not leave the session resident, which would turn a
+        # descriptor leak into a session leak
+        class Stubborn(object):
+            closed = False
+
+            def close(self):
+                raise IOError("nope")
+
+        self.H.SESSIONS["bad"] = self.AttribDict({"expiration": time.time() + 3600, "range_handle": Stubborn()})
+        self.H._drop_session("bad")
+        self.assertNotIn("bad", self.H.SESSIONS)
+
+
 class TestBlacklistAccessControl(unittest.TestCase):
     """/blacklist returns the source IPs of flagged events, so it must not answer just anyone.
 

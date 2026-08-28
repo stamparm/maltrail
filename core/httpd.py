@@ -562,6 +562,35 @@ _sessions_lock = threading.Lock()  # NOTE: SESSIONS is mutated from worker threa
 _sessions_reaped = [0]             # last-reap timestamp (list holder to avoid a global statement)
 SESSION_REAP_PERIOD = 60
 
+def _drop_session(session_id):
+    """
+    Removes a session and closes the event-log handle it pinned. Returns the dropped session, or None.
+
+    THE ONLY WAY a session should leave SESSIONS. There are three moments it can: the reaper below, an expired
+    cookie arriving on a request, and an explicit logout - and until this existed only the reaper closed the
+    handle. /events hands a session an open file, or an io.BufferedReader over _ConcatenatedFiles for a multi-day
+    range, which is several open files. So every logout leaked one descriptor per day in the range the analyst had
+    been paging through, and a long-lived server with analysts logging in and out ran towards "too many open
+    files". That exact failure was already fixed once INSIDE /events (a fresh start=0 replacing a held handle);
+    this is the other half of it.
+
+    The close happens outside the lock: it is I/O, and nothing else may look up the session once it is popped.
+    """
+
+    with _sessions_lock:
+        session = SESSIONS.pop(session_id, None)
+
+    if session is not None:
+        handle = getattr(session, "range_handle", None)
+        if handle is not None:
+            try:
+                handle.close()
+            except Exception:
+                pass
+
+    return session
+
+
 def _reap_sessions():
     """
     Drops expired sessions (and closes any file handle they pinned). Time-gated so it sweeps at most once a minute
@@ -574,17 +603,13 @@ def _reap_sessions():
         return
     _sessions_reaped[0] = now
 
+    # Collected under the lock, dropped outside it: _drop_session takes the same lock, and closing a handle is
+    # I/O that has no business running with every other request's session lookup blocked behind it.
     with _sessions_lock:
-        for _ in list(SESSIONS.keys()):
-            session = SESSIONS.get(_)
-            if session is not None and session.expiration <= now:
-                handle = getattr(session, "range_handle", None)
-                if handle is not None:
-                    try:
-                        handle.close()
-                    except Exception:
-                        pass
-                SESSIONS.pop(_, None)
+        expired = [_ for _, session in list(SESSIONS.items()) if session is not None and session.expiration <= now]
+
+    for _ in expired:
+        _drop_session(_)
 
 
 class _ConcatenatedFiles(io.RawIOBase):
@@ -1079,7 +1104,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         elif _.expiration > time.time():
                             retval = _
                         else:
-                            SESSIONS.pop(session, None)
+                            _drop_session(session)
 
             if retval is None and not config.USERS:
                 retval = AttribDict({"username": "?"})
@@ -1093,7 +1118,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 match = re.search(r"%s\s*=\s*([^;]+)" % SESSION_COOKIE_NAME, cookie)   # stop at ';' like get_session; the old greedy "(.+)" swallowed trailing cookies ("sessid=abc; theme=dark") -> wrong id -> logout never invalidated the server-side session
                 if match:
                     session = match.group(1)
-                    SESSIONS.pop(session, None)
+                    _drop_session(session)
 
         def version_string(self):
             return "%s/%s" % (NAME, self._version())
@@ -1300,7 +1325,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     if addresses:
                         netfilters.add(get_regex(addresses))
 
-                SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilters": netfilters, "mask_custom": bool(config.ENABLE_MASK_CUSTOM and uid is not None and uid >= 1000), "expiration": expiration, "client_ip": self.client_address[0]})
+                with _sessions_lock:   # the only insert; removals go through _drop_session
+                    SESSIONS[session_id] = AttribDict({"username": username, "uid": uid, "netfilters": netfilters, "mask_custom": bool(config.ENABLE_MASK_CUSTOM and uid is not None and uid >= 1000), "expiration": expiration, "client_ip": self.client_address[0]})
             else:
                 _login_failed(self.client_address[0])
                 self.send_response(_http_client.UNAUTHORIZED)
