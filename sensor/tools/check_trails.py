@@ -120,13 +120,17 @@ LOOKALIKES = {
 
 
 def whitelisted_parents():
-    """The whitelist, as the SENSOR applies it: a name is suppressed when it or any PARENT is listed.
+    """The whitelist as loaded: data/whitelist.txt plus the configured WHITELIST.
 
-    `core/settings.read_whitelist()` loads data/whitelist.txt plus the configured WHITELIST, and the sensor's
-    loader drops a trail whose name has a whitelisted parent (`whitelist::check_domain_member`, the same walk
-    `TrailDb::contains_domain_member` uses). The updater's own `check_whitelisted()` does NOT walk parents, so
-    such a trail survives the build, lands in trails.csv, and is then discarded at load: present, counted,
-    and unable to match. Nothing said so before this.
+    What it MEANS for a trail changed in 3.2. The retired Python sensor suppressed a name whenever any
+    ancestor was whitelisted, which made every exact trail on a shared platform dead on arrival. The Rust
+    sensor applies longest-match precedence: only an entry equal to the full name vetoes a trail hit, so
+    `evil.cloudfront.net` fires even though `cloudfront.net` is whitelisted. A whitelisted ancestor still
+    suppresses HEURISTICS on that host, and still suppresses wildcard trails, neither of which is a
+    reachability question about a written trail.
+
+    Both the updater's `check_whitelisted()` and the loader's are exact-match plus IPv4 ranges - neither
+    walks parents - so nothing is dropped from the build or the load on an ancestor's account either.
     """
 
     try:
@@ -248,10 +252,26 @@ def classify(key, whitelist=None, info=""):
         # registrable gTLD in 2019.
         return ("inert", "last label '%s' is in IGNORE_DNS_QUERY_SUFFIXES: the query is dropped before lookup" % last)
 
-    if whitelist:
-        parent = whitelisted_parent(wire, whitelist)
-        if parent:
-            return ("shadowed", "parent domain '%s' is whitelisted: the sensor's loader drops this trail" % parent)
+    if whitelist and wire in whitelist:
+        # LONGEST-MATCH PRECEDENCE (3.2). Only an entry equal to the FULL name vetoes a trail; a tie
+        # goes to the whitelist, because the operator cleared this exact name on purpose. Both the
+        # updater's check_whitelisted() and the sensor loader's are exact-match too, so the trail is
+        # dropped at build time and never reaches trails.csv.
+        #
+        # This used to report a whitelisted ANCESTOR as suppressing its children, which was true of
+        # the retired Python sensor and stopped being true in 3.2 - and it said so with "the sensor's
+        # loader drops this trail", which the loader does not do. Measured against the current
+        # content that was 3,081 live trails on shared platforms (cloudfront.net, azurewebsites.net,
+        # blogspot.com) reported as dead, against 3 that really are. The Rust sensor's behaviour is
+        # pinned by sensor/tests/detection.rs::trail_under_whitelisted_parent_fires.
+        #
+        # Not covered: a WILDCARD trail under a whitelisted ancestor genuinely is still suppressed
+        # (wildcard_trail_still_suppressed_by_whitelisted_ancestor), and classify() returns early for
+        # wildcards above. There are 25 wildcard trails in the content and none of them sits under a
+        # whitelisted parent, so parsing a regex's trailing literal to find them would be fragile
+        # code for an empty set. Worth revisiting if that count stops being zero.
+        return ("shadowed", "the whitelist carries this exact name: a tie goes to the whitelist, so the "
+                            "build drops this trail before it reaches trails.csv")
 
     if lookalike:
         # idna turned it into a syntactically valid name, so it is not inert - but a dash lookalike
@@ -535,7 +555,13 @@ def popular_matches(root, names, whitelist=None, stats=None, kinds="both"):
     for name in names:
         if stats is not None:
             stats["total"] += 1
-        if whitelist and (name in whitelist or whitelisted_parent(name, whitelist)):
+        if whitelist and name in whitelist:
+            # EXACT entries only. A whitelisted ancestor does not protect its children since 3.2, so
+            # skipping `www.example.com` because `example.com` is whitelisted would hide a real false
+            # positive - an exact trail on that host fires. Measured on the top 100k: 197 canaries
+            # were being skipped for that reason, none of which we currently list. A latent hole
+            # rather than a missed finding, but the gate is meant to be the thing that notices.
+            #
             # Counted, not silently dropped: a canary the whitelist already protects cannot fail this
             # gate, and a list made only of such names would pass no matter how broken the trails are.
             if stats is not None:
@@ -689,20 +715,21 @@ def main():
                 if len(items) > options.limit:
                     print("      ... and %d more" % (len(items) - options.limit))
 
-        # Summarised per whitelisted parent, not per entry: these come in thousands, and the useful unit is the
-        # PARENT - each line is one platform where the whitelist and the trail set disagree about the same names.
+        # Listed per entry now rather than summarised per platform. Under longest-match precedence this is a
+        # name-for-name collision between two operator-visible lists, and there are eleven of them in the
+        # current content rather than the three thousand the pre-3.2 rule produced.
         if shadowed:
-            by_parent = {}
-            for path, number, key, _, why in shadowed:
-                by_parent.setdefault(why.split("'")[1], []).append((path, number, key))
-            print("\n[!] shadowed by a whitelisted parent domain (%d entries, %d parent(s))"
-                  % (len(shadowed), len(by_parent)))
-            print("      these load into trails.csv and are then dropped by the sensor's loader")
-            for parent, items in sorted(by_parent.items(), key=lambda kv: -len(kv[1]))[:options.limit]:
-                path, number, key = items[0]
-                print("      %-28s %5d  e.g. %s:%d  %s" % (parent, len(items), os.path.relpath(path, ROOT), number, key))
-            if len(by_parent) > options.limit:
-                print("      ... and %d more parent(s)" % (len(by_parent) - options.limit))
+            by_name = {}
+            for path, number, key, _, _why in shadowed:
+                by_name.setdefault(key, []).append((path, number))
+            print("\n[!] also carried by the whitelist, so dropped at build time (%d entr(ies), %d name(s))"
+                  % (len(shadowed), len(by_name)))
+            print("      one of the two lists is wrong about this name; which one is a policy call")
+            for name, places in sorted(by_name.items(), key=lambda kv: -len(kv[1]))[:options.limit]:
+                where = ", ".join("%s:%d" % (os.path.relpath(_[0], ROOT), _[1]) for _ in places[:3])
+                print("      %-40s %2d  %s%s" % (name, len(places), where, " ..." if len(places) > 3 else ""))
+            if len(by_name) > options.limit:
+                print("      ... and %d more name(s)" % (len(by_name) - options.limit))
 
         if not inert and not warned and not shadowed and not headers:
             print("[i] no unreachable trails")

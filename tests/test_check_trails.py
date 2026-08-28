@@ -206,43 +206,60 @@ class HeaderTest(unittest.TestCase):
 
 
 class WhitelistShadowTest(unittest.TestCase):
-    """A trail whose PARENT domain is whitelisted loads into trails.csv and is then dropped by the sensor's
-    loader, so it is present, counted and unable to match.
+    """Which whitelist entries actually stop a trail, since 3.2 changed the answer.
 
-    Found by replaying `10.53.154.104.bc.googleusercontent.com` through the release sensor against the real
-    trail set: the trail was there, the control fired, the trail did not. `googleusercontent.com` is line 103
-    of data/whitelist.txt. The updater's own check_whitelisted() does not walk parents, so nothing removed it
-    at build time and nothing reported it either."""
+    The retired Python sensor suppressed a name whenever ANY ancestor was whitelisted. The Rust sensor applies
+    longest-match precedence: only an entry equal to the FULL name vetoes a trail hit, so a trail on
+    `evil.cloudfront.net` fires even though `cloudfront.net` is whitelisted. That is asserted on the engine side
+    by sensor/tests/detection.rs::trail_under_whitelisted_parent_fires and its three siblings; these tests exist
+    so the CHECKER cannot drift away from it again.
 
-    WL = {"cloudfront.net", "evil.example", "co.uk"}
+    It had drifted. The report still applied the ancestor rule, and said "the sensor's loader drops this trail" -
+    which the loader does not do, its check_whitelisted() being exact-match plus IPv4 ranges like the updater's.
+    Measured against the current content that was 3,081 live trails on shared platforms called dead, against 11
+    entries that really are."""
 
-    def test_a_whitelisted_parent_shadows_the_trail(self):
-        verdict = C.classify("d1wp6m56sqw74a.cloudfront.net", self.WL)
+    # not ".example": that suffix is in IGNORE_DNS_QUERY_SUFFIXES, so a name under it is inert
+    # for a different reason and would not exercise the whitelist rule at all
+    WL = {"cloudfront.net", "evil.biz", "co.uk"}
+
+    def test_a_whitelisted_ancestor_does_not_shadow_a_more_specific_trail(self):
+        # the case the engine fires on; reporting it as dead is what this whole class is about
+        self.assertIsNone(C.classify("d1wp6m56sqw74a.cloudfront.net", self.WL))
+        self.assertIsNone(C.classify("a.b.c.evil.biz", self.WL))
+
+    def test_an_exact_whitelist_entry_does_shadow(self):
+        # a tie goes to the whitelist, and the build drops it before trails.csv
+        verdict = C.classify("cloudfront.net", self.WL)
         self.assertEqual(verdict[0], "shadowed")
-        self.assertIn("cloudfront.net", verdict[1])
+        self.assertIn("whitelist", verdict[1])
 
-    def test_the_walk_reaches_any_ancestor(self):
-        self.assertEqual(C.whitelisted_parent("a.b.c.evil.example", self.WL), "evil.example")
+    def test_the_parent_walk_itself_still_works(self):
+        # kept for the heuristics story and for wildcard trails, which do NOT earn the precedence
+        self.assertEqual(C.whitelisted_parent("a.b.c.evil.biz", self.WL), "evil.biz")
         self.assertEqual(C.whitelisted_parent("x.co.uk", self.WL), "co.uk")
-
-    def test_an_exactly_listed_name_is_not_reported(self):
-        # the operator listed that exact name; only a name shadowed BY AN ANCESTOR is the surprise
         self.assertIsNone(C.whitelisted_parent("cloudfront.net", self.WL))
-        self.assertIsNone(C.classify("cloudfront.net", self.WL))
 
     def test_a_suffix_that_is_not_a_label_boundary_does_not_shadow(self):
-        self.assertIsNone(C.whitelisted_parent("notcloudfront.net", self.WL))
-        self.assertIsNone(C.whitelisted_parent("evil.example.org", self.WL))
+        self.assertIsNone(C.classify("notcloudfront.net", self.WL))
+        self.assertIsNone(C.classify("evil.biz.org", self.WL))
 
     def test_shadowing_does_not_fail_the_gate(self):
         # it is a collision between two operator-visible lists, not a broken entry
-        self.assertEqual(C.classify("d1wp6m56sqw74a.cloudfront.net", self.WL)[0], "shadowed")
-        inert = [_ for _ in C.problems(os.path.join(ROOT, "trails", "static"), None) if _[3] == "inert"]
-        self.assertEqual(inert, [])
+        self.assertEqual(C.classify("cloudfront.net", self.WL)[0], "shadowed")
 
     def test_no_whitelist_means_no_shadow_reports(self):
-        self.assertIsNone(C.classify("d1wp6m56sqw74a.cloudfront.net", None))
-        self.assertIsNone(C.classify("d1wp6m56sqw74a.cloudfront.net", set()))
+        self.assertIsNone(C.classify("cloudfront.net", None))
+        self.assertIsNone(C.classify("cloudfront.net", set()))
+
+    def test_the_real_pile_reports_only_exact_collisions(self):
+        static = trails_root()
+        if not static:
+            self.skipTest(NO_CHECKOUT)
+        whitelist = C.whitelisted_parents()
+        shadowed = [_ for _ in C.problems(static, whitelist) if _[3] == "shadowed"]
+        stale = [_ for _ in shadowed if _[2].lower() not in whitelist]
+        self.assertEqual(stale[:3], [], "reported as shadowed without being in the whitelist itself")
 
 
 class CanaryTest(unittest.TestCase):
@@ -284,13 +301,21 @@ class CanaryTest(unittest.TestCase):
         # matching one cannot fire and reporting it would be a false false-positive
         self._write(u"^[a-z]+\\.org$")
         self.assertEqual(C.popular_matches(self.tmp, ["wikipedia.org"], {"wikipedia.org"}), [])
-        self.assertEqual(C.popular_matches(self.tmp, ["en.wikipedia.org"], {"wikipedia.org"}), [])
+
+    def test_a_canary_under_a_whitelisted_parent_is_still_exercised(self):
+        # since 3.2 a whitelisted ANCESTOR does not protect its children - an exact trail on the more
+        # specific name fires - so skipping this canary would hide a real false positive
+        self._write(u"en.wikipedia.org")
+        hits = C.popular_matches(self.tmp, ["en.wikipedia.org"], {"wikipedia.org"})
+        self.assertEqual([_[3] for _ in hits], ["en.wikipedia.org"])
 
     def test_the_canary_file_parses_and_is_not_all_whitelisted(self):
         names = list(C.canaries(os.path.join(ROOT, "tests", "canaries.txt")))
         self.assertGreater(len(names), 20)
         whitelist = C.whitelisted_parents()
-        exercised = [_ for _ in names if not (C.whitelisted_parent(_, whitelist) or _ in whitelist)]
+        # exact entries only: a whitelisted ANCESTOR no longer protects its children, so a canary under
+        # one is still exercised. On the top-100k list that is 197 names the old rule skipped.
+        exercised = [_ for _ in names if _ not in whitelist]
         # A canary list made of google.com/1.1.1.1/github.com would be reassuring and worthless:
         # those are in data/whitelist.txt, so no trail matching them can fire either way.
         self.assertGreater(len(exercised), 20, "the canary list is mostly whitelist-covered, so it proves little")
@@ -343,11 +368,14 @@ class PopularityListTest(unittest.TestCase):
         self.assertEqual([_[3] for _ in only], ["ai-pay.club"])
 
     def test_stats_count_what_was_and_was_not_exercised(self):
-        path = self._zip(["1,ai-pay.club", "2,safe.cloudfront.net", "3,nothing.biz"])
+        path = self._zip(["1,ai-pay.club", "2,cloudfront.net", "3,safe.cloudfront.net", "4,nothing.biz"])
         stats = {}
         C.popular_matches(self.tmp, C.canaries(path), {"cloudfront.net"}, stats, "regex")
-        self.assertEqual(stats["total"], 3)
-        self.assertEqual(stats["covered"], 1)          # safe.cloudfront.net has a whitelisted parent
+        self.assertEqual(stats["total"], 4)
+        # only the EXACT entry is covered. safe.cloudfront.net merely has a whitelisted parent, which
+        # stopped protecting it in 3.2, so it is exercised like any other name.
+        self.assertEqual(stats["covered"], 1)
+        self.assertEqual(stats["covered_examples"], ["cloudfront.net"])
         self.assertEqual(stats["patterns"], 1)
 
     def test_the_scan_is_one_alternation_not_one_pass_per_pattern(self):
