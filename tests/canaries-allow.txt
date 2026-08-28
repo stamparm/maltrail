@@ -1,0 +1,27 @@
+# Trails that match a popular domain and are RIGHT anyway.
+#
+# A popularity list ranks by DNS query volume, and a botnet generates plenty of it. Every line here
+# is a correct indicator that happens to be ranked - the gate must not be quieted by deleting them.
+# Written down with the reason so the next person does not have to re-derive it.
+#
+# This is misc/alexa1m.py's IGNORE set, tracked. That one is the right idea living on one
+# workstation, where nobody else can review it.
+#
+# Read by: check_trails.py --allow-file. A hit not listed here fails the build, which is the point.
+# Before adding a line, ask whether the trail is actually wrong: lnkd.in, selcdn.ru and totalav.com
+# were all found this way and REMOVED, not allowed.
+
+713mtauburnctcolumbusoh43085.st  # Mirai host; also in alexa1m.py's IGNORE
+meusitehostgator.com.br          # HostGator BR shared-hosting slot used by a powershell injector
+vialotadom.com                   # one of an alphabetical DGA block in android_hiddad
+ycxrl.com                        # android triada
+cbphe.com                        # android triada
+dezinsekciya-top.ru              # documented CloudAtlas indicator, among ahmetgurses.net / arendelle.ru
+ghabovethec.info                 # fakeapp
+ip-ptr.tech                      # generic stealer
+in.game                          # short-word/novel-TLD block bulk-registered by the osx atomic campaign
+gmslb.net                        # android vo1d
+zaoshang.ru                      # glupteba
+ishano456.sbs                    # android fakeapp
+trafficconverter.biz             # Conficker's 2008 C2 - ranked #28,676 because infected hosts still beacon
+xshaon123.sbs                    # android fakeapp

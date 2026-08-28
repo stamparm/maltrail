@@ -388,6 +388,24 @@ def staleness(path):
     return ("[!] %s - worth regenerating, see the header" % note) if age > STALE_DAYS else "[i] %s" % note
 
 
+def allow_file(path):
+    """Trails accepted despite matching a popular name, one per line, `# reason` after each.
+
+    A popularity list ranks by DNS QUERY VOLUME, so a C2 with a large botnet earns a rank the same
+    way a news site does - trafficconverter.biz is Conficker's 2008 domain at #28,676, still ranked
+    because infected machines still beacon at it. Those are correct trails and must not be deleted
+    to quiet a gate, so they are written down WITH the reason instead.
+
+    This is misc/alexa1m.py's IGNORE set, except tracked: that one is the right idea living on one
+    workstation, where nobody else can review it or learn from it.
+    """
+
+    for line in io.open(path, encoding="utf8", errors="replace"):
+        line = re.sub(r"\s*#.*", "", line).strip()
+        if line:
+            yield line
+
+
 def canary_source(spec):
     """`PATH` or `PATH:N` -> (path, limit).
 
@@ -549,6 +567,8 @@ def canary_report(options, whitelist):
     stats = {}
     hits = popular_matches(options.path, names(), whitelist, stats, options.kinds)
     pairs, trails = set(options.allow), set(options.allow_trail)
+    for path in options.allow_file:
+        trails.update(allow_file(path))
     unexpected = [_ for _ in hits if _[2] not in trails and ("%s:%s" % (_[2], _[3])) not in pairs]
 
     if not options.quiet:
@@ -619,6 +639,8 @@ def main():
                         help="a known, accepted canary hit (repeatable)")
     parser.add_argument("--allow-trail", action="append", default=[], metavar="TRAIL",
                         help="accept every hit from this trail - the intentional broad ones (repeatable)")
+    parser.add_argument("--allow-file", action="append", default=[], metavar="FILE",
+                        help="a file of accepted trails, one per line with '# reason' (repeatable)")
     parser.add_argument("--kinds", choices=("both", "regex", "literal"), default="both",
                         help="which trails to check against the list (default: both; use 'regex' for a "
                              "popularity list, which legitimately contains malware domains)")

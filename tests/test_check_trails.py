@@ -525,13 +525,54 @@ class RefreshStampTest(unittest.TestCase):
         self.assertIsNone(C.staleness(self._stamped(u"# hand-picked\nexample.com\n")))
         self.assertIsNone(C.staleness(self._stamped(u"# Refreshed: not-a-date\nexample.com\n")))
 
-    def test_the_shipped_top10k_list_carries_a_stamp(self):
+    def test_the_shipped_list_carries_a_stamp(self):
         # a regeneration that drops the stamp would silently disable the reminder
-        path = os.path.join(ROOT, "tests", "canaries-top10k.txt")
-        self.assertIsNotNone(C.refreshed_on(path), "tests/canaries-top10k.txt lost its '# Refreshed:' line")
+        path = os.path.join(ROOT, "tests", "canaries-top100k.txt")
+        self.assertIsNotNone(C.refreshed_on(path), "tests/canaries-top100k.txt lost its '# Refreshed:' line")
         names = [_ for _ in C.canaries(path)]
-        self.assertEqual(len(names), 10000, "the top-10k list is no longer 10,000 names")
-        self.assertNotIn("# refreshed: 2026-08-27", names, "a comment leaked through as a canary")
+        self.assertEqual(len(names), 100000, "the canary list is no longer 100,000 names")
+        self.assertTrue(all(not _.startswith("#") for _ in names), "a comment leaked through as a canary")
+
+    def test_the_literal_depth_is_the_head_of_the_same_file(self):
+        # gate.yml reads this file twice: whole for regexes, ':30000' for literals. If canary_source
+        # or canaries() stopped honouring the cap, the literal gate would quietly widen to 100k and
+        # start failing on correct trails.
+        path = os.path.join(ROOT, "tests", "canaries-top100k.txt")
+        source, limit = C.canary_source("%s:30000" % path)
+        self.assertEqual(limit, 30000)
+        head = [_ for _ in C.canaries(source, limit)]
+        self.assertEqual(len(head), 30000)
+        self.assertEqual(head, [_ for _ in C.canaries(path)][:30000])
+
+
+class AllowFileTest(unittest.TestCase):
+    """Correct trails that happen to be ranked are written down, not deleted.
+
+    trafficconverter.biz is Conficker's 2008 C2 at rank #28,676 - ranked because infected hosts
+    still beacon at it. Quieting that by removing the trail would be the wrong repair, so the reason
+    is recorded instead. Anything NOT in the file still fails, which is how lnkd.in, selcdn.ru and
+    totalav.com were found and removed."""
+
+    def test_reasons_and_blank_lines_are_stripped(self):
+        handle, path = tempfile.mkstemp(suffix=".txt")
+        os.close(handle)
+        self.addCleanup(os.unlink, path)
+        with io.open(path, "w", encoding="utf8") as out:
+            out.write(u"# a header\n\nevil.example   # because\n  other.example\n\n")
+        self.assertEqual(list(C.allow_file(path)), ["evil.example", "other.example"])
+
+    def test_the_shipped_allow_file_only_names_trails_that_are_still_listed(self):
+        # an allow entry outliving its trail is a stale exception nobody will notice
+        allowed = list(C.allow_file(os.path.join(ROOT, "tests", "canaries-allow.txt")))
+        self.assertTrue(allowed, "the allow file is empty")
+        static = trails_root()
+        if not static:
+            self.skipTest(NO_CHECKOUT)
+        literals = {}
+        for pile in ("malware", "malicious"):
+            literals.update(C.trail_index(os.path.join(static, pile))[0])
+        stale = [_ for _ in allowed if _ not in literals]
+        self.assertEqual(stale, [], "allow entries whose trail is gone: %s" % stale)
 
 
 class EmptyPathIsNotAPass(unittest.TestCase):
