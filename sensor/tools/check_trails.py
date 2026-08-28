@@ -593,6 +593,17 @@ def canary_report(options, whitelist):
     return 1 if unexpected else 0
 
 
+def _has_trails(path):
+    """True when `path` holds at least one trail file. Cheap: stops at the first hit."""
+
+    if not os.path.isdir(path):
+        return False
+    for _, _, files in os.walk(path):
+        if any(name.endswith(".txt") for name in files):
+            return True
+    return False
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     # Static trail content lives in its own repository now, so there is no in-repo default that is
@@ -613,6 +624,17 @@ def main():
                              "popularity list, which legitimately contains malware domains)")
     parser.add_argument("--limit", type=int, default=25, help="lines shown per category")
     options = parser.parse_args()
+
+    # A path with no trails in it is NOT a pass. _default_trails_path() falls back to a sibling
+    # checkout that may not exist, and until this was here `check_trails.py` with no arguments
+    # walked that missing directory, found nothing, printed "0 entry(ies) that cannot match" and
+    # exited 0 - which is how ci.yml gated on this step for months after the split while checking
+    # nothing at all. Exit 2, so "could not run" is distinguishable from "ran and found problems".
+    if not _has_trails(options.path):
+        print("[!] no trail files under '%s'" % options.path)
+        print("[!] the static trails are a separate repository: clone https://github.com/stamparm/trails")
+        print("[!] beside maltrail, pass --path, or set MALTRAIL_TRAILS_DIR")
+        return 2
 
     whitelist = None if options.no_whitelist else whitelisted_parents()
 

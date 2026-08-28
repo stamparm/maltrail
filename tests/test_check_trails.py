@@ -534,5 +534,33 @@ class RefreshStampTest(unittest.TestCase):
         self.assertNotIn("# refreshed: 2026-08-27", names, "a comment leaked through as a canary")
 
 
+class EmptyPathIsNotAPass(unittest.TestCase):
+    """Handed a path with no trails in it, the tool must refuse rather than report a clean run.
+
+    _default_trails_path() falls back to a sibling checkout that need not exist. ci.yml gated on
+    `check_trails.py` with no arguments, so after the split it walked a missing directory, found
+    nothing, printed "0 entry(ies) that cannot match" and exited 0 - a green gate over no content
+    at all, for months. Exit 2 keeps "could not run" apart from "ran and found problems"."""
+
+    def test_a_missing_directory_is_not_scannable(self):
+        self.assertFalse(C._has_trails(os.path.join(tempfile.gettempdir(), "no-such-trails-dir")))
+
+    def test_a_directory_with_no_trail_files_is_not_scannable(self):
+        tmp = tempfile.mkdtemp()
+        self.addCleanup(__import__("shutil").rmtree, tmp)
+        self.assertFalse(C._has_trails(tmp))
+        with io.open(os.path.join(tmp, "notes.md"), "w", encoding="utf8") as handle:
+            handle.write(u"not a trail file\n")
+        self.assertFalse(C._has_trails(tmp))
+
+    def test_one_trail_file_anywhere_beneath_is_enough(self):
+        tmp = tempfile.mkdtemp()
+        self.addCleanup(__import__("shutil").rmtree, tmp)
+        os.makedirs(os.path.join(tmp, "malware"))
+        with io.open(os.path.join(tmp, "malware", "x.txt"), "w", encoding="utf8") as handle:
+            handle.write(u"evil.example\n")
+        self.assertTrue(C._has_trails(tmp))
+
+
 if __name__ == "__main__":
     unittest.main()

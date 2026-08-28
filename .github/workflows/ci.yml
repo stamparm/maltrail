@@ -249,12 +249,16 @@ jobs:
       - uses: actions/checkout@v7
       - run: python3 sensor/tools/check_version.py
 
-      # 97% of commits here touch trails/static, and a trail written in a form the sensor never
-      # sees on the wire loads cleanly, occupies a row and matches nothing - indistinguishable
-      # from "no detections". The tool existed but ran nowhere, because it reported a live
-      # punycode trail as dead; with that false positive gone the exit status is worth gating on.
-      - name: Static trails are reachable on the wire
-        run: python3 sensor/tools/check_trails.py
+      # There WAS a "static trails are reachable on the wire" step here. After the split it had
+      # nothing to scan - no trails/ in this checkout, no sibling one on the runner - so it walked
+      # a missing directory, reported "0 entry(ies) that cannot match" and passed. It gated on
+      # nothing for months.
+      #
+      # The check itself is not gone: stamparm/trails runs it in gate.yml on every commit, over
+      # the content it applies to, which is where it belongs. What this repository still ships -
+      # data/mass_scanner.txt and data/mass_scanner_cidr.txt, 19,942 trails - is gated by
+      # trails.yml. check_trails.py now exits 2 rather than 0 when handed an empty path, so this
+      # cannot happen quietly again.
 
   # The Docker image's promise is that it works with the storage the operator hands it. Three
   # separate ways it did not - an unwritable bind mount, `cap_add` that granted nothing to a
