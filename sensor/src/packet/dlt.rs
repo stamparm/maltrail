@@ -30,10 +30,25 @@ pub fn ip_offset(datalink: i32, packet: &[u8], base: usize) -> Option<usize> {
     }
     if base >= 2 {
         let mut offset = base;
-        // NOTE: exactly one 802.1Q tag is skipped and only TPID 0x8100 is recognised,
-        // matching sensor.py (QinQ / 0x88a8 frames are dropped there too).
-        if packet.get(offset - 2..offset) == Some(&[0x81, 0x00][..]) {
-            offset += 4;
+        // STACKED tags, not just one. The parser used to skip a single 0x8100 and drop everything
+        // else "matching sensor.py", which was a real justification while that sensor existed and
+        // is now just a hole: on a carrier or campus SPAN port carrying QinQ, or any 802.1ad
+        // S-tagged link, EVERY frame failed the ethertype test and the sensor reported a quiet
+        // network. Same shape as the PPPoE gap in #19297 - not a missed detection, a missed link.
+        //
+        // Three TPIDs are recognised: 0x8100 (802.1Q C-tag), 0x88a8 (802.1ad S-tag) and 0x9100
+        // (pre-standard QinQ, still emitted by older kit). MAX_VLAN_TAGS bounds the walk so a
+        // crafted frame of nothing but tags cannot make this loop over the whole packet; two is
+        // what QinQ uses in practice and the limit leaves room without being unbounded.
+        let mut tags = 0;
+        while tags < MAX_VLAN_TAGS {
+            match packet.get(offset.checked_sub(2)?..offset) {
+                Some([0x81, 0x00]) | Some([0x88, 0xa8]) | Some([0x91, 0x00]) => {
+                    offset += 4;
+                    tags += 1;
+                }
+                _ => break,
+            }
         }
         let ethertype = packet.get(offset.checked_sub(2)?..offset)?;
         if ethertype == [0x08, 0x00] || ethertype == [0x86, 0xdd] {
@@ -56,6 +71,10 @@ pub fn ip_offset(datalink: i32, packet: &[u8], base: usize) -> Option<usize> {
     }
     None
 }
+
+/// How many stacked VLAN tags to walk before giving up. QinQ uses two; the limit exists so a
+/// frame made entirely of tags cannot turn the walk into a scan of the whole packet.
+const MAX_VLAN_TAGS: usize = 4;
 
 /// Common IP protocol numbers used by the offset heuristic
 /// (`core/fastfilter.py:_COMMON_IP_PROTO`).
@@ -210,11 +229,54 @@ pub(crate) mod tests {
         assert_eq!(ip_offset(DLT_EN10MB, &p, 14), Some(18));
     }
 
-    #[test]
-    fn qinq_is_dropped_like_python() {
+    /// `tpids` are the stacked tags to write, outermost first.
+    fn tagged(tpids: &[[u8; 2]], ethertype: [u8; 2]) -> Vec<u8> {
         let mut p = vec![0xaa; 12];
-        p.extend_from_slice(&[0x81, 0x00, 0x00, 0x64]);
-        p.extend_from_slice(&[0x81, 0x00, 0x00, 0x65]);
+        for (i, tpid) in tpids.iter().enumerate() {
+            p.extend_from_slice(tpid);
+            p.extend_from_slice(&[0x00, 0x64 + i as u8]); // TCI
+        }
+        p.extend_from_slice(&ethertype);
+        p.extend_from_slice(&min_ipv4());
+        p
+    }
+
+    #[test]
+    fn qinq_is_parsed_not_dropped() {
+        // two 802.1Q tags: the frame every QinQ SPAN port delivers. This used to return None, so a
+        // sensor on such a link saw nothing at all and looked like a quiet network.
+        let p = tagged(&[[0x81, 0x00], [0x81, 0x00]], [0x08, 0x00]);
+        assert_eq!(ip_offset(DLT_EN10MB, &p, 14), Some(22));
+    }
+
+    #[test]
+    fn the_8021ad_service_tag_is_recognised() {
+        // 0x88a8 outer S-tag with a 0x8100 inner C-tag - the standards-conformant provider frame
+        let p = tagged(&[[0x88, 0xa8], [0x81, 0x00]], [0x08, 0x00]);
+        assert_eq!(ip_offset(DLT_EN10MB, &p, 14), Some(22));
+        // and the pre-standard 0x9100 older kit still emits
+        let p = tagged(&[[0x91, 0x00]], [0x86, 0xdd]);
+        assert_eq!(ip_offset(DLT_EN10MB, &p, 14), Some(18));
+    }
+
+    #[test]
+    fn a_tagged_frame_that_is_not_ip_is_still_dropped() {
+        // the tags must not become a way past the ethertype check
+        let mut arp = vec![0xaa; 12];
+        arp.extend_from_slice(&[0x81, 0x00, 0x00, 0x64]);
+        arp.extend_from_slice(&[0x81, 0x00, 0x00, 0x65]);
+        arp.extend_from_slice(&[0x08, 0x06]);
+        arp.extend_from_slice(&[0u8; 28]);
+        assert_eq!(ip_offset(DLT_EN10MB, &arp, 14), None);
+    }
+
+    #[test]
+    fn a_frame_of_nothing_but_tags_terminates() {
+        // MAX_VLAN_TAGS bounds the walk; past it the ethertype test fails and the frame is dropped
+        let mut p = vec![0xaa; 12];
+        for _ in 0..64 {
+            p.extend_from_slice(&[0x81, 0x00, 0x00, 0x64]);
+        }
         p.extend_from_slice(&[0x08, 0x00]);
         p.extend_from_slice(&min_ipv4());
         assert_eq!(ip_offset(DLT_EN10MB, &p, 14), None);
