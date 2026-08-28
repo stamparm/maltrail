@@ -20,6 +20,16 @@ pub const INFECTION_SCANNING_THRESHOLD: usize = 32;
 pub const DNS_EXHAUSTION_THRESHOLD: usize = 1000;
 pub const NO_SUCH_NAME_PER_HOUR_THRESHOLD: u32 = 20;
 pub const SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD: usize = 24;
+
+/// DNS tunnelling: every one of these must hold at once, which is the point - see core/settings.py
+pub const DNS_TUNNELING_MIN_QUERIES: usize = 150;
+pub const DNS_TUNNELING_MIN_DISTINCT_PCT: usize = 95;
+pub const DNS_TUNNELING_MIN_LONG_PCT: usize = 90;
+pub const DNS_TUNNELING_MIN_LABEL: usize = 20;
+pub const DNS_TUNNELING_MIN_ENTROPY_X100: u32 = 300;
+pub const DNS_TUNNELING_MIN_BYTES: usize = 6144;
+pub const DNS_TUNNELING_MIN_SPAN: u64 = 120;
+pub const DNS_TUNNELING_WINDOW: u64 = 900;
 pub const SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD: usize = 9;
 pub const SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD: f64 = 3.5;
 pub const HOURLY_SECS: u64 = 3600;
@@ -103,6 +113,52 @@ pub const WHITELIST_HTTP_REQUEST_PATHS: &[&str] = &[
 ];
 
 pub const WHITELIST_LONG_DOMAIN_NAME_KEYWORDS: &[&str] = &["blogspot"];
+pub const HASH_LABEL_SERVICE_ZONES: &[&str] = &[
+    "sophosxl.net",
+    "sophos.com",
+    "mcafee.com",
+    "avqs.mcafee.com",
+    "avts.mcafee.com",
+    "kaspersky-labs.com",
+    "kaspersky.com",
+    "nod32.com",
+    "eset.com",
+    "trendmicro.com",
+    "sophosupd.com",
+    "avira-update.com",
+    "avast.com",
+    "avg.com",
+    "bitdefender.net",
+    "clamav.net",
+    "virustotal.com",
+    "opendns.com",
+    "umbrella.com",
+    "webroot.com",
+    "spamhaus.org",
+    "spamcop.net",
+    "sorbs.net",
+    "barracudacentral.org",
+    "surbl.org",
+    "uribl.com",
+    "abuseat.org",
+    "senderbase.org",
+    "mailspike.net",
+    "invaluement.com",
+    "akamai.net",
+    "akamaiedge.net",
+    "cloudfront.net",
+    "azureedge.net",
+    "windows.net",
+    "amazonaws.com",
+    "googleusercontent.com",
+    "1e100.net",
+    "cdn77.org",
+    "fastly.net",
+    "_domainkey",
+    "_dmarc",
+    "_spf",
+    "acme-challenge",
+];
 
 pub const LOCAL_SUBDOMAIN_LOOKUPS: &[&str] = &["wpad", "autodiscover", "_ldap._tcp"];
 

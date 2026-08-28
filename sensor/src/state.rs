@@ -11,6 +11,7 @@ use std::sync::Arc;
 use crate::addr::Ip;
 use crate::config::Config;
 use crate::heuristics::dns_exhaustion::DnsExhaustion;
+use crate::heuristics::dns_tunneling::DnsTunneling;
 use crate::heuristics::nxdomain::NxCounters;
 use crate::heuristics::scan::ScanState;
 use crate::lru::LruMap;
@@ -77,6 +78,7 @@ pub struct WorkerState {
     pub last_sec: u64,
     pub scan: ScanState,
     pub dns_exhaustion: DnsExhaustion,
+    pub dns_tunneling: DnsTunneling,
     pub nxdomain: NxCounters,
     /// NEW, no sensor.py counterpart: periodic-beacon detection (heuristics/beacon.rs).
     pub beacon: crate::heuristics::beacon::BeaconTracker,
@@ -128,6 +130,7 @@ impl WorkerState {
             last_sec: 0,
             scan: ScanState::default(),
             dns_exhaustion: DnsExhaustion::default(),
+            dns_tunneling: DnsTunneling::default(),
             nxdomain: NxCounters::default(),
             beacon: Default::default(),
             meta,

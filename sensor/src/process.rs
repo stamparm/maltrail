@@ -225,6 +225,12 @@ fn check_domain_inner(
             && st.heuristic_enabled("long_domain")
             && first_label.chars().count() > settings::SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
             && !first_label.contains('-')
+            // Antivirus and reputation services put a hash in the first label of every lookup, so
+            // this fired once per query against them - 1,200 events from 1,200 legitimate lookups
+            // in a measured run, on the two zones data/whitelist.txt happens not to carry. Sharing
+            // the tunnelling detector's zone list costs no detection: a long label on a zone that
+            // is not a reputation service still reports.
+            && !crate::heuristics::dns_tunneling::allowed_zone(q)
         {
             {
                 let trail = if label_count > 2 {
@@ -1629,6 +1635,37 @@ fn dns_packet(
                             return;
                         }
                         Outcome::Suppress => return,
+                    }
+                }
+
+                // DNS tunnelling. Deliberately AFTER the exhaustion block and sharing its
+                // `!wl_domain` guard: a whitelisted zone is exempt from both, which is what keeps
+                // the antivirus and blocklist lookups that look exactly like a tunnel out of this.
+                // The rest of the bar lives in the accumulator, which reports at most once per
+                // (source, zone) per window and only when volume, uniqueness, payload size and a
+                // two-minute span all hold at once.
+                if st.heuristic_enabled("dns_tunneling")
+                    && !crate::heuristics::dns_tunneling::allowed_zone(domain)
+                    && !st.statics.bl_word.is_match(domain)
+                {
+                    st.dns_tunneling.maybe_window_reset(sec);
+                    let subdomain_part = dots.prefix_upto(&query, label_count - 2);
+                    let key = format!("{}|{}", ep.src.render().as_str(), domain);
+                    if st.dns_tunneling.observe(&key, subdomain_part, dots.label(&query, 0), sec)
+                        == crate::heuristics::dns_tunneling::Outcome::Alert
+                    {
+                        let trail = format!("({subdomain_part}).{domain}");
+                        emit_ep(
+                            st,
+                            sec,
+                            usec,
+                            ep,
+                            PROTO::UDP,
+                            TRAIL::DNS,
+                            Field::Text(trail),
+                            "potential dns tunneling (suspicious)",
+                            "(heuristic)",
+                        );
                     }
                 }
             }

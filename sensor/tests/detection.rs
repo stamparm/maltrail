@@ -945,6 +945,81 @@ fn concurrent_sinks_racing_the_first_write_lose_nothing() {
     let _ = std::fs::remove_dir_all(&dir);
 }
 
+// --- dns tunnelling ---
+//
+// The bar is a conjunction on purpose. Measured against 4,300 synthetic reputation and blocklist
+// queries - antivirus hash lookups, DNSBL, CDN and object-store names - this reported none of them
+// and reported the one real tunnel in the same capture exactly once.
+
+fn tunnel_query(h: &mut Harness, host: &str, name: &str, sec: u64) {
+    h.feed_ip(&ipv4(17, host, "10.0.0.1", &udp(40000, 53, &dns(name))), sec);
+}
+
+/// base32-ish, never repeated - what an encoder emits
+fn chunk(i: u64, len: usize) -> String {
+    let mut out = String::with_capacity(len);
+    let mut state = i.wrapping_mul(6364136223846793005).wrapping_add(1);
+    for _ in 0..len {
+        state = state.wrapping_mul(6364136223846793005).wrapping_add(1442695040888963407);
+        out.push(char::from(b'a' + ((state >> 33) % 26) as u8));
+    }
+    out
+}
+
+#[test]
+fn a_sustained_encoded_channel_is_reported_once() {
+    let mut h = Harness::new(&[]);
+    for i in 0..300u64 {
+        tunnel_query(&mut h, "10.0.0.5", &format!("{}.t.exfil-zone.top", chunk(i, 40)), i * 2);
+    }
+    let tunnels: Vec<_> = h.events().into_iter().filter(|e| e.info.contains("dns tunneling")).collect();
+    assert_eq!(tunnels.len(), 1, "one report per (source, zone) per window, not one per packet");
+}
+
+#[test]
+fn the_same_volume_delivered_as_a_burst_is_not_reported() {
+    // a workstation opening a folder full of files hammers its reputation service like this
+    let mut h = Harness::new(&[]);
+    for i in 0..300u64 {
+        tunnel_query(&mut h, "10.0.0.5", &format!("{}.t.exfil-zone.top", chunk(i, 40)), 10);
+    }
+    assert!(h.events().iter().all(|e| !e.info.contains("dns tunneling")), "a burst is not a session");
+}
+
+#[test]
+fn a_reputation_service_is_never_reported_however_much_it_is_used() {
+    // sxl.sophos.com is NOT in data/whitelist.txt - HASH_LABEL_SERVICE_ZONES is what covers it,
+    // and this is the case that made the older long_domain heuristic emit one event per lookup
+    let mut h = Harness::new(&[]);
+    for i in 0..600u64 {
+        tunnel_query(&mut h, "10.0.0.6", &format!("{}.sxl.sophos.com", chunk(i, 40)), i * 2);
+    }
+    let noisy: Vec<_> = h.events().into_iter().filter(|e| e.info.contains("suspicious")).collect();
+    assert!(noisy.is_empty(), "an antivirus lookup must produce nothing at all: {noisy:?}");
+}
+
+#[test]
+fn a_blocklist_is_never_reported() {
+    let mut h = Harness::new(&[]);
+    for i in 0..900u64 {
+        let name = format!("{}.{}.{}.{}.zen.spamhaus.org", i % 254 + 1, i % 251 + 1, i % 247 + 1, i % 241 + 1);
+        tunnel_query(&mut h, "10.0.0.7", &name, i * 2);
+    }
+    assert!(h.events().iter().all(|e| !e.info.contains("dns tunneling")));
+}
+
+#[test]
+fn muting_it_silences_it() {
+    let mut h = Harness::with_options(
+        &[],
+        HarnessOptions { extra: vec!["DISABLED_HEURISTICS dns_tunneling".to_string()], ..HarnessOptions::quiet() },
+    );
+    for i in 0..300u64 {
+        tunnel_query(&mut h, "10.0.0.5", &format!("{}.t.exfil-zone.top", chunk(i, 40)), i * 2);
+    }
+    assert!(h.events().iter().all(|e| !e.info.contains("dns tunneling")));
+}
+
 // --- longest-match precedence: specific trail vs whitelisted ancestor (divergence #3) ---
 //
 // the retired Python sensor suppresses a name whenever ANY ancestor domain is whitelisted, which made

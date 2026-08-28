@@ -163,6 +163,49 @@ CDN_RANGES = {}
 WHITELIST_HTTP_REQUEST_PATHS = ("fql", "yql", "ads", "../images/", "../themes/", "../design/", "../scripts/", "../assets/", "../core/", "../js/", "/gwx/")
 WHITELIST_UA_REGEX = r"AntiVir\-NGUpd|TMSPS|AVGSETUP|SDDS|Sophos|Symantec|internal dummy connection|Microsoft\-CryptoAPI"
 WHITELIST_LONG_DOMAIN_NAME_KEYWORDS = ("blogspot",)
+
+# --- DNS tunnelling -------------------------------------------------------------------------
+#
+# Deliberately hard to trip. A tunnel and a reputation lookup are close to indistinguishable from
+# query shape alone: both send high-entropy, never-repeated, long labels to one zone, in volume.
+# `<sha256>.avqs.mcafee.com`, `<base32>.sophosxl.net` and every DNSBL query look exactly like
+# somebody exfiltrating data, which is why an entropy-and-length detector on its own is a machine
+# for generating tickets about the antivirus.
+#
+# So this fires only on the CONJUNCTION below, and never on a whitelisted zone. Missing a quiet
+# tunnel is the intended trade: a heuristic an operator mutes in week one detects nothing at all.
+DNS_TUNNELING_MIN_QUERIES = 150         # to ONE zone from ONE host inside the window
+DNS_TUNNELING_MIN_DISTINCT_PCT = 95     # a tunnel never repeats a name; a DNSBL does
+DNS_TUNNELING_MIN_LONG_PCT = 90         # nearly every query must be carrying a payload
+DNS_TUNNELING_MIN_LABEL = 20            # shorter than this cannot carry useful bandwidth
+DNS_TUNNELING_MIN_ENTROPY_X100 = 300    # bits/char x100: base32 ~500, hex ~400, English ~200
+DNS_TUNNELING_MIN_BYTES = 6144          # total encoded bytes - a tunnel MOVES something
+DNS_TUNNELING_MIN_SPAN = 120            # seconds between first and last query: a burst is not a session
+DNS_TUNNELING_WINDOW = 900              # accumulation window
+
+# Zones whose ORDINARY traffic is a long, high-entropy, never-repeated label per query: antivirus
+# and URL-reputation services, DNS blocklists, CDNs and object stores. Their normal operation is
+# shaped exactly like data exfiltration and exactly like a DGA.
+#
+# Used by BOTH the dns_tunneling accumulator and the older long_domain check. Measured on 4,300
+# synthetic reputation/blocklist queries: long_domain alone reported 1,200 of them, one event per
+# lookup, on the two zones data/whitelist.txt happens not to carry. That is the shape of alert
+# fatigue - an operator sees a page of "long domain" about their antivirus and mutes the heuristic.
+#
+# data/whitelist.txt covers most of these for the whole engine already. This list exists for the
+# ones it does not, and so that a detector this specific carries its own reasons rather than
+# depending on an unrelated file staying complete.
+HASH_LABEL_SERVICE_ZONES = (
+    "sophosxl.net", "sophos.com", "mcafee.com", "avqs.mcafee.com", "avts.mcafee.com",
+    "kaspersky-labs.com", "kaspersky.com", "nod32.com", "eset.com", "trendmicro.com",
+    "sophosupd.com", "avira-update.com", "avast.com", "avg.com", "bitdefender.net",
+    "clamav.net", "virustotal.com", "opendns.com", "umbrella.com", "webroot.com",
+    "spamhaus.org", "spamcop.net", "sorbs.net", "barracudacentral.org", "surbl.org",
+    "uribl.com", "abuseat.org", "senderbase.org", "mailspike.net", "invaluement.com",
+    "akamai.net", "akamaiedge.net", "cloudfront.net", "azureedge.net", "windows.net",
+    "amazonaws.com", "googleusercontent.com", "1e100.net", "cdn77.org", "fastly.net",
+    "_domainkey", "_dmarc", "_spf", "acme-challenge",
+)
 LOCAL_SUBDOMAIN_LOOKUPS = ("wpad", "autodiscover", "_ldap._tcp")
 SESSIONS = {}
 NO_SUCH_NAME_COUNTERS = {}  # this won't be (expensive) shared in multiprocessing run (hence, the threshold will effectively be n-times higher)
