@@ -6605,3 +6605,20 @@
 95.164.123.0/24,qwins-ltd
 95.164.53.0/24,qwins-ltd
 95.164.55.0/24,qwins-ltd
+
+# AS 197170
+# Reference: https://ipinfo.io/AS197170
+
+176.65.132.0/24,techties-as
+185.245.62.0/24,techties-as
+185.245.63.0/24,techties-as
+192.109.200.0/24,techties-as
+45.153.34.0/24,techties-as
+45.156.87.0/24,techties-as
+85.11.167.0/24,techties-as
+87.121.84.0/24,techties-as
+91.92.40.0/24,techties-as
+91.92.42.0/24,techties-as
+91.92.47.0/24,techties-as
+93.152.221.0/24,techties-as
+94.26.106.0/24,techties-as
