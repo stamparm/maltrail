@@ -119,6 +119,11 @@ pub struct Statics {
     pub f_host: memchr::memmem::Finder<'static>,
     pub f_user_agent: memchr::memmem::Finder<'static>,
     pub f_content_type: memchr::memmem::Finder<'static>,
+    /// `.intranet.` - tested against every DNS query name.
+    ///
+    /// `str::contains(&str)` builds a two-way searcher on each call, which for a ten-byte needle
+    /// against a short name is most of the work. Prebuilt like every other needle here.
+    pub f_intranet: memchr::memmem::Finder<'static>,
     pub root: PathBuf,
 
     // --- domain / DNS ---
@@ -279,6 +284,7 @@ impl Statics {
             f_host: memchr::memmem::Finder::new("\r\nHost:").into_owned(),
             f_user_agent: memchr::memmem::Finder::new("\r\nUser-Agent:").into_owned(),
             f_content_type: memchr::memmem::Finder::new("\r\nContent-Type:").into_owned(),
+            f_intranet: memchr::memmem::Finder::new(".intranet.").into_owned(),
 
             root,
             valid_dns_name: pyre::compile(VALID_DNS_NAME_REGEX),

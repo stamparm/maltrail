@@ -1567,7 +1567,7 @@ fn dns_packet(
     let dots = Dots::of(&query);
     if query.is_empty()
         || !settings::is_valid_dns_name(&query)
-        || query.contains(".intranet.")
+        || st.statics.f_intranet.find(query.as_bytes()).is_some()
         || st.statics.ignore_dns_query_suffixes.contains(dots.last_label(&query))
     {
         return;
