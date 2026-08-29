@@ -439,6 +439,25 @@ def _public_trails(content, key):
 
     return retval
 
+def _trails_etag(stat, reveal_custom):
+    """Strong validator for what GET /trails would return right now, or None.
+
+    `stat` comes from the OPEN handle the bytes are read from, never a fresh stat(): update_trails()
+    replaces the file atomically underneath a reader, so stat-ing again could pair the OLD bytes
+    with the NEW file's validator and tell the next poll it is current when it is not.
+
+    Entitlement is part of the tag because it is part of the REPRESENTATION. A masked caller is
+    served the file with every "(custom)" row stripped, so one file on disk is two different
+    responses. Leave it out and a tag issued to a masked caller validates against the full set -
+    a 304 telling that caller its stripped copy is up to date, which is the same masking hole
+    this endpoint already exists to close, arriving by a different door.
+    """
+
+    if stat is None:
+        return None
+
+    return '"%d-%d-%s"' % (stat.st_mtime_ns, stat.st_size, "full" if reveal_custom else "public")
+
 _provenance_handle = None     # an opened core.provenance.Provenance, or False when unavailable
 _provenance_key = None        # (mtime, size) of the sidecar it was opened from
 _provenance_lock = threading.Lock()
@@ -1603,28 +1622,58 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             get_session() returns the anonymous session, so an unauthenticated deployment - which
             is the usual UPDATE_SERVER setup - still gets the complete set and nothing changes
             for it.
+
+            Conditional: an `If-None-Match` matching the current set gets 304 and no body. The
+            set is ~84 MB and a poll almost never finds it changed, so an UPDATE_SERVER
+            deployment was re-sending the whole thing to every sensor on every cycle.
             """
 
             session = self.get_session()
             reveal_custom = session is not None and not getattr(session, "mask_custom", False)
 
+            # NOTE: TRAILS_FILE may not exist yet (fresh server with USE_SERVER_UPDATE_TRAILS off, or a first
+            # update that produced no trails). A bare open() would raise -> 500 + traceback, and a sensor pulling
+            # from UPDATE_SERVER would fail. Return an empty body instead; the sensor then keeps its current trails.
+            # Opening rather than isfile()-then-opening also collapses the race between the two.
+            try:
+                handle = open(config.TRAILS_FILE, "rb")
+            except (IOError, OSError):
+                self.send_response(_http_client.OK)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
+                return b""
+
+            with handle as f:
+                try:    # from THIS handle, so the validator and the cache key describe the bytes just read
+                    stat = os.fstat(f.fileno())
+                    key = (stat.st_mtime, stat.st_size)
+                except OSError:
+                    stat, key = None, None
+
+                etag = _trails_etag(stat, reveal_custom)
+
+                # An UPDATE_SERVER poll that would re-send an unchanged ~84 MB answers in a few
+                # bytes instead. Compared verbatim: this is a strong validator with exactly one
+                # producer, so weak comparison and multi-tag lists would buy nothing.
+                if etag is not None and self.headers.get(HTTP_HEADER.IF_NONE_MATCH, "").strip() == etag:
+                    self.send_response(_http_client.NOT_MODIFIED)
+                    self.send_header(HTTP_HEADER.CONNECTION, "close")
+                    self.send_header(HTTP_HEADER.ETAG, etag)
+                    self.send_header(HTTP_HEADER.VARY, HTTP_HEADER.ACCEPT_ENCODING)
+                    return None     # None, not b"": a 304 carries no body and no Content-Length
+
+                content = f.read()
+
             self.send_response(_http_client.OK)
             self.send_header(HTTP_HEADER.CONNECTION, "close")
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
-            # NOTE: TRAILS_FILE may not exist yet (fresh server with USE_SERVER_UPDATE_TRAILS off, or a first
-            # update that produced no trails). A bare open() would raise -> 500 + traceback, and a sensor pulling
-            # from UPDATE_SERVER would fail. Return an empty body instead; the sensor then keeps its current trails.
-            if not os.path.isfile(config.TRAILS_FILE):
-                return b""
-
-            with open(config.TRAILS_FILE, "rb") as f:
-                content = f.read()
-                try:    # from THIS handle, so the cache key always describes the bytes just read
-                    _ = os.fstat(f.fileno())
-                    key = (_.st_mtime, _.st_size)
-                except OSError:
-                    key = None
+            if etag is not None:
+                self.send_header(HTTP_HEADER.ETAG, etag)
+                self.send_header(HTTP_HEADER.LAST_MODIFIED, time.strftime(HTTP_TIME_FORMAT, time.gmtime(stat.st_mtime)))
+                # The response is gzipped further down when the caller asked for it, so the tag
+                # names one encoding of the set, not the set.
+                self.send_header(HTTP_HEADER.VARY, HTTP_HEADER.ACCEPT_ENCODING)
 
             if reveal_custom or CUSTOM_TRAIL_MARKER not in content:
                 return content

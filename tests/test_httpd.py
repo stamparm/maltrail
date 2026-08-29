@@ -662,6 +662,67 @@ class TestHttpd(unittest.TestCase):
         self.assertNotIn(b"internal-secret.corp", analyst, "a mask_custom session must not receive custom trails")
         self.assertIn(b"evil.com", analyst, "positive control: the public trails are still served")
 
+    @staticmethod
+    def _etag(headers_text):
+        for line in headers_text.split("\r\n"):
+            if line.lower().startswith("etag:"):
+                return line.split(":", 1)[1].strip()
+        return None
+
+    def test_trails_conditional_fetch_answers_304_without_a_body(self):
+        # The set is ~84 MB in a real deployment and a poll almost never finds it changed, so an
+        # UPDATE_SERVER used to re-send all of it to every sensor on every cycle.
+        st, head, body = _http(self.port, "GET", "/trails")
+        self.assertEqual(st, 200)
+        etag = self._etag(head)
+        self.assertIsNotNone(etag, "/trails must issue a validator or no sensor can ever skip a download")
+
+        st2, head2, body2 = _http(self.port, "GET", "/trails", headers={"If-None-Match": etag})
+        self.assertEqual(st2, 304, "an unchanged set must not be re-sent")
+        self.assertEqual(body2, b"", "a 304 carries no body")
+        self.assertEqual(self._etag(head2), etag, "the 304 must echo the validator it matched")
+        self.assertNotIn("content-length", head2.lower(), "a 304 must not frame a body it is not sending")
+        self.assertTrue(body, "positive control: the 200 did carry the set")
+
+    def test_trails_stale_validator_is_not_honoured(self):
+        # A validator that does not describe the current set must fall through to the full body,
+        # otherwise a sensor holding an old set is told it is current and stops updating forever.
+        st, _, body = _http(self.port, "GET", "/trails", headers={"If-None-Match": '"0-0-public"'})
+        self.assertEqual(st, 200)
+        self.assertIn(b"evil.com", body, "a non-matching validator must be served the whole set")
+
+    def test_trails_validator_does_not_cross_entitlement(self):
+        # /trails serves a DIFFERENT body to an entitled caller (custom trails included) than to a
+        # masked one. If the validator did not carry that, an admin's tag would match for an
+        # anonymous caller and answer 304 - telling it the stripped copy it holds is the current
+        # set. That is the masking hole this endpoint already exists to close, arriving as a cache
+        # hit instead of as a body.
+        _, admin_head, admin_body = _http(self.port, "GET", "/trails", cookie=self._login("admin"))
+        admin_etag = self._etag(admin_head)
+        self.assertIsNotNone(admin_etag)
+        self.assertIn(b"internal-secret.corp", admin_body, "positive control: the admin did get the full set")
+
+        st, _, body = _http(self.port, "GET", "/trails", headers={"If-None-Match": admin_etag})
+        self.assertEqual(st, 200, "an entitled caller's validator must not satisfy an unentitled one")
+        self.assertNotIn(b"internal-secret.corp", body, "and the fall-through body must still be masked")
+
+        # the reverse direction, so this is not passing by accident of which tag is 'bigger'
+        _, anon_head, _ = _http(self.port, "GET", "/trails")
+        anon_etag = self._etag(anon_head)
+        self.assertNotEqual(anon_etag, admin_etag, "one file on disk, two representations, two validators")
+
+        st2, _, admin_again = _http(self.port, "GET", "/trails", cookie=self._login("admin"),
+                                    headers={"If-None-Match": anon_etag})
+        self.assertEqual(st2, 200, "a masked caller's validator must not satisfy an entitled one")
+        self.assertIn(b"internal-secret.corp", admin_again)
+
+    def test_trails_masked_sessions_share_one_validator(self):
+        # An analyst (mask_custom) and an anonymous caller receive byte-identical bodies, so they
+        # must receive the same validator - otherwise every masked poll is a full download.
+        _, anon_head, _ = _http(self.port, "GET", "/trails")
+        _, analyst_head, _ = _http(self.port, "GET", "/trails", cookie=self._login("analyst"))
+        self.assertEqual(self._etag(anon_head), self._etag(analyst_head))
+
     def _failed_login(self, username="admin"):
         import binascii
         nonce = binascii.hexlify(os.urandom(16)).decode()

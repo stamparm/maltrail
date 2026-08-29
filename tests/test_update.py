@@ -15,13 +15,23 @@ interpreter the suite happens to be running - so the 3.6 path is covered on 3.13
 """
 
 import os
+import shutil
 import sys
+import tempfile
+import threading
 import unittest
+
+try:
+    from http.server import BaseHTTPRequestHandler as _BaseHTTPRequestHandler, HTTPServer as _HTTPServer
+except ImportError:      # pragma: no cover - Python 2 is not supported, this only keeps the import honest
+    from BaseHTTPServer import BaseHTTPRequestHandler as _BaseHTTPRequestHandler, HTTPServer as _HTTPServer
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from core.addr import leading_ipv4
-from core.update import _NON_ASCII_REGEX, _is_ascii
+from core.settings import config
+from core.common import retrieve_content
+from core.update import _NON_ASCII_REGEX, _is_ascii, _store_etag, _stored_etag, NOT_MODIFIED
 
 # Both branches must agree here, character for character.
 CASES = (
@@ -153,6 +163,134 @@ class StaticFileOrderTest(unittest.TestCase):
         self.assertEqual(differing[:5], [],
                          "%d trail(s) are labelled by whatever order the filesystem returns" % len(differing))
 
+
+class UpdateServerValidatorTest(unittest.TestCase):
+    """The stored ETag for an UPDATE_SERVER trail set.
+
+    The hazard here is asymmetric. Not sending a validator costs one needless download. Sending one
+    we cannot back with content earns a 304 - and a deployment that answers "you are current" while
+    holding no trails detects nothing, which is the failure mode AGENTS.md opens with. So every one
+    of these asserts the refusal, not the offer.
+    """
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        self.trails = os.path.join(self.tmp, "trails.csv")
+        self.etag_file = "%s.etag" % self.trails
+        self._saved = getattr(config, "TRAILS_FILE", None)
+        config.TRAILS_FILE = self.trails
+
+    def tearDown(self):
+        if self._saved is not None:
+            config.TRAILS_FILE = self._saved
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def _write(self, path, text):
+        with open(path, "w") as f:
+            f.write(text)
+
+    def test_a_validator_is_offered_when_the_set_backing_it_is_there(self):
+        self._write(self.trails, "evil.com,malware,(feed)\n")
+        self._write(self.etag_file, '"123-456-public"')
+        self.assertEqual(_stored_etag(self.etag_file), '"123-456-public"')
+
+    def test_no_validator_without_the_trail_set(self):
+        # the etag outlived its content - offering it would earn a 304 and leave us with nothing
+        self._write(self.etag_file, '"123-456-public"')
+        self.assertIsNone(_stored_etag(self.etag_file))
+
+    def test_no_validator_for_an_empty_trail_set(self):
+        self._write(self.trails, "")
+        self._write(self.etag_file, '"123-456-public"')
+        self.assertIsNone(_stored_etag(self.etag_file))
+
+    def test_a_missing_validator_is_not_an_error(self):
+        self._write(self.trails, "evil.com,malware,(feed)\n")
+        self.assertIsNone(_stored_etag(self.etag_file))
+
+    def test_a_blank_validator_file_offers_nothing(self):
+        self._write(self.trails, "evil.com,malware,(feed)\n")
+        self._write(self.etag_file, "   \n")
+        self.assertIsNone(_stored_etag(self.etag_file))
+
+    def test_storing_clears_a_validator_the_server_stopped_sending(self):
+        # a server that drops ETag support must not leave us offering the last one it sent
+        self._write(self.trails, "evil.com,malware,(feed)\n")
+        self._write(self.etag_file, '"123-456-public"')
+        _store_etag(self.etag_file, None)
+        self.assertFalse(os.path.exists(self.etag_file))
+        self.assertIsNone(_stored_etag(self.etag_file))
+
+    def test_storing_records_what_the_server_sent(self):
+        self._write(self.trails, "evil.com,malware,(feed)\n")
+        _store_etag(self.etag_file, '  "789-10-full"  ')
+        self.assertEqual(_stored_etag(self.etag_file), '"789-10-full"')
+
+class ConditionalFetchTest(unittest.TestCase):
+    """retrieve_content() must be able to tell a 304 apart from a failed fetch.
+
+    urllib raises on any non-2xx, and this function deliberately answers a failure with EMPTY
+    content so that a WAF page or a timeout string can never be parsed into trails. A 304 arrives
+    down that same path with an empty body - so without the status it is indistinguishable from
+    "the server is down", and the caller would log a failure on every successful skip.
+    """
+
+    class _Handler(_BaseHTTPRequestHandler):
+        ETAG = '"pinned-set"'
+        BODY = b"evil.com,malware,(feed)\n"
+
+        def do_GET(self):
+            if self.headers.get("If-None-Match", "").strip() == self.ETAG:
+                self.send_response(304)
+                self.send_header("ETag", self.ETAG)
+                self.send_header("Connection", "close")
+                self.end_headers()
+                return
+            self.send_response(200)
+            self.send_header("ETag", self.ETAG)
+            self.send_header("Content-Type", "text/plain")
+            self.send_header("Content-Length", str(len(self.BODY)))
+            self.send_header("Connection", "close")
+            self.end_headers()
+            self.wfile.write(self.BODY)
+
+        def log_message(self, *args):
+            pass
+
+    def setUp(self):
+        self.httpd = _HTTPServer(("127.0.0.1", 0), self._Handler)
+        self.url = "http://127.0.0.1:%d/trails" % self.httpd.server_address[1]
+        self.thread = threading.Thread(target=self.httpd.serve_forever)
+        self.thread.daemon = True
+        self.thread.start()
+
+    def tearDown(self):
+        self.httpd.shutdown()
+        self.httpd.server_close()
+        self.thread.join(timeout=5)
+
+    def test_a_first_fetch_reports_200_and_the_validator(self):
+        response = {}
+        content = retrieve_content(self.url, response=response)
+        self.assertEqual(response.get("code"), 200)
+        self.assertEqual(response.get("headers", {}).get("etag"), '"pinned-set"')
+        self.assertIn("evil.com", content)
+
+    def test_a_matching_validator_reports_304_and_not_a_failure(self):
+        response = {}
+        content = retrieve_content(self.url, headers={"If-None-Match": '"pinned-set"'}, response=response)
+        self.assertEqual(response.get("code"), NOT_MODIFIED, "a 304 must be reported as a 304")
+        self.assertFalse(content, "and it carries no body")
+
+    def test_a_stale_validator_still_downloads(self):
+        response = {}
+        content = retrieve_content(self.url, headers={"If-None-Match": '"something-else"'}, response=response)
+        self.assertEqual(response.get("code"), 200)
+        self.assertIn("evil.com", content)
+
+    def test_callers_that_pass_no_dict_are_unaffected(self):
+        # the 43 feed modules call this with the original signature and must see no change
+        self.assertIn("evil.com", retrieve_content(self.url))
 
 if __name__ == "__main__":
     unittest.main()

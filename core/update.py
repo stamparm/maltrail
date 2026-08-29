@@ -34,8 +34,10 @@ from core.common import check_whitelisted
 from core.common import load_trails
 from core.common import retrieve_content
 from core.compat import xrange
+from core.enums import HTTP_HEADER
 from core.geo import GEO_DELTA_MAGIC
 from core.settings import config
+from core.settings import USER_AGENT
 from core.settings import read_config
 from core.settings import read_whitelist
 from core.settings import BAD_TRAIL_PREFIXES
@@ -105,6 +107,41 @@ def _fopen(filepath, mode="rb", opener=open):
     if "w+" in mode:
         _chown(filepath)
     return retval
+
+NOT_MODIFIED = 304   # the only status this module reasons about beyond "did the body arrive"
+
+def _stored_etag(path):
+    """The validator for the trail set we are holding, or None.
+
+    Deliberately conditional on the trail set still being there and non-empty: an `If-None-Match`
+    we cannot back with content would earn a 304 and leave the deployment with no trails at all.
+    A validator without its bytes is worse than no validator.
+    """
+
+    try:
+        if not os.path.isfile(config.TRAILS_FILE) or os.path.getsize(config.TRAILS_FILE) == 0:
+            return None
+        with open(path, "r") as f:
+            return f.read().strip() or None
+    except (IOError, OSError):
+        return None
+
+def _store_etag(path, etag):
+    """Record `etag` for the set just written, or clear a stale one when the server sent none.
+
+    Leaving the previous file in place when the server stops sending validators would offer a tag
+    describing a trail set we no longer hold.
+    """
+
+    try:
+        if etag:
+            with open(path, "w") as f:
+                f.write(etag.strip())
+            _chown(path)
+        elif os.path.exists(path):
+            os.remove(path)
+    except (IOError, OSError):
+        pass
 
 def _atomic_replace(src, dst):
     # NOTE: rename within the same directory is atomic on POSIX, so concurrent readers (sensor worker reloads,
@@ -358,8 +395,24 @@ def update_trails(force=False, offline=False):
 
     if config.UPDATE_SERVER:
         print("[i] retrieving trails from provided 'UPDATE_SERVER' server...")
-        content = retrieve_content(config.UPDATE_SERVER)
-        if not content or content.count(',') < 2:
+
+        etag_file = "%s.etag" % config.TRAILS_FILE
+        etag = _stored_etag(etag_file)
+
+        headers = {"User-agent": USER_AGENT, "Accept-encoding": "gzip, deflate"}
+        if etag:
+            headers[HTTP_HEADER.IF_NONE_MATCH] = etag
+
+        response = {}
+        content = retrieve_content(config.UPDATE_SERVER, headers=headers, response=response)
+
+        if response.get("code") == NOT_MODIFIED:
+            # The server says the set we already hold is current, so the ~84 MB is not sent and
+            # not rebuilt. _stored_etag() only offers a validator while that set is still on disk,
+            # so this branch cannot leave us with nothing.
+            print("[i] trails from '%s' are unchanged" % config.UPDATE_SERVER)
+            trails = load_trails()
+        elif not content or content.count(',') < 2:
             print("[x] unable to retrieve data from '%s'" % config.UPDATE_SERVER)
         else:
             tmp_trails_file = "%s.new" % config.TRAILS_FILE
@@ -373,6 +426,10 @@ def update_trails(force=False, offline=False):
                     os.remove("%s.confidence" % config.TRAILS_FILE)
             except Exception:
                 pass
+            # Written only after the trails it describes are in place. The other order would
+            # leave a validator on disk for a set we failed to store, and the next poll would be
+            # told it is current.
+            _store_etag(etag_file, (response.get("headers") or {}).get("etag"))
             trails = load_trails()
 
     else:

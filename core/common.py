@@ -63,13 +63,25 @@ USE_MMAP_TRAILS = bool(fcntl) and not IS_WIN
 
 _WILDCARD_TRAIL_REGEX = re.compile(r"[\].][*+]|\[[a-z0-9_.\-]+\]", re.I)
 
-def retrieve_content(url, data=None, headers=None, binary=False):
+def retrieve_content(url, data=None, headers=None, binary=False, response=None):
     """
     Retrieves page content from given URL
 
     `binary=True` returns the raw bytes instead of decoded text, for a payload that is not text -
     the gzipped trail aggregate. Decoding that with errors="replace" would corrupt it silently.
+
+    `response`, when a dict is passed, is filled with the status code and the reply headers (keys
+    lower-cased). The body alone cannot express a conditional fetch: a 304 raises out of urlopen()
+    and its body is empty, which is indistinguishable from the failure this function deliberately
+    reports as empty content. Callers that do not pass it are unaffected, which is what keeps the
+    43 feed modules out of this.
     """
+
+    def _record(code, hdrs):
+        if response is None:
+            return
+        response["code"] = code
+        response["headers"] = dict((k.lower(), v) for k, v in dict(hdrs or {}).items())
 
     # Cookies, kept for the duration of this one call. urlopen() has no cookie support, so a site
     # that answers the first request with "307 + Set-Cookie -> same URL with a token" is
@@ -88,6 +100,7 @@ def retrieve_content(url, data=None, headers=None, binary=False):
         resp = opener.open(req, timeout=TIMEOUT)
         retval = resp.read()
         encoding = resp.headers.get("Content-Encoding")
+        _record(resp.getcode(), resp.headers)
         resp.close()
 
         if encoding:
@@ -100,9 +113,10 @@ def retrieve_content(url, data=None, headers=None, binary=False):
             # NOTE: any other Content-Encoding (e.g. "identity") leaves retval as the raw response body
     except Exception as ex:
         retval = ex.read() if hasattr(ex, "read") else (get_ex_message(ex) or "")
+        _record(getattr(ex, "code", None), getattr(ex, "headers", None))
 
         if url.startswith("https://") and isinstance(retval, str) and "handshake failure" in retval:
-            return retrieve_content(url.replace("https://", "http://"), data, headers)
+            return retrieve_content(url.replace("https://", "http://"), data, headers, binary, response)
 
         # NOTE: on failure return EMPTY, never the error body/message. Feeds gate parsing on a `__check__` substring and a
         # few have no guard at all - returning an HTTP error page / WAF block / timeout string here let that text get parsed
