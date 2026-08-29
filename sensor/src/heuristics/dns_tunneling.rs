@@ -71,16 +71,46 @@ pub fn entropy_x100(label: &str) -> u32 {
 /// cover `notsophosxl.net`. The bare `_domainkey`-style entries match anywhere, because they are
 /// labels rather than zones.
 pub fn allowed_zone(zone: &str) -> bool {
+    // Walk the ZONE's suffixes against a set, rather than the LIST against the zone.
+    //
+    // The obvious loop - for each of the forty entries, does `zone` end with it - costs forty
+    // string comparisons per DNS query, and the version that shipped also built a String per
+    // entry to hold the leading dot, so forty heap allocations too. Measured at 1,515 ns of the
+    // DNS accumulator path's 2,303.
+    //
+    // A domain has three or four suffixes, so asking the other question is an order of magnitude
+    // less work and gives the identical answer: `a.b.sophosxl.net` ends with `.sophosxl.net`
+    // exactly when one of its label-aligned suffixes IS `sophosxl.net`.
+    let mut rest = zone;
+    loop {
+        if suffix_zones().contains(rest) {
+            return true;
+        }
+        match rest.find('.') {
+            Some(i) => rest = &rest[i + 1..],
+            None => break,
+        }
+    }
+    // The four `_domainkey`-shaped entries are LABELS, matching anywhere in the name rather than
+    // as a suffix, so they keep their own pass over the labels.
     for entry in settings::HASH_LABEL_SERVICE_ZONES {
-        if entry.starts_with('_') || entry.starts_with("acme-") {
-            if zone.split('.').any(|label| label == *entry) {
-                return true;
-            }
-        } else if zone == *entry || zone.ends_with(&format!(".{entry}")) {
+        if (entry.starts_with('_') || entry.starts_with("acme-")) && zone.split('.').any(|label| label == *entry) {
             return true;
         }
     }
     false
+}
+
+/// The suffix-matched entries, as a set built once.
+fn suffix_zones() -> &'static std::collections::HashSet<&'static str> {
+    static ZONES: std::sync::OnceLock<std::collections::HashSet<&'static str>> = std::sync::OnceLock::new();
+    ZONES.get_or_init(|| {
+        settings::HASH_LABEL_SERVICE_ZONES
+            .iter()
+            .copied()
+            .filter(|e| !e.starts_with('_') && !e.starts_with("acme-"))
+            .collect()
+    })
 }
 
 #[derive(Debug, PartialEq, Eq)]
@@ -253,6 +283,52 @@ mod tests {
         // an English-ish label passes this filter too. It is excluded by volume, uniqueness and
         // span instead - raising the bar to catch it would also drop every hex-encoded tunnel.
         assert!(entropy_x100("autodiscover-service") >= settings::DNS_TUNNELING_MIN_ENTROPY_X100);
+    }
+
+    /// The allocating loop this replaced, kept as the reference the fast form must agree with.
+    fn allowed_zone_reference(zone: &str) -> bool {
+        for entry in settings::HASH_LABEL_SERVICE_ZONES {
+            if entry.starts_with('_') || entry.starts_with("acme-") {
+                if zone.split('.').any(|label| label == *entry) {
+                    return true;
+                }
+            } else if zone == *entry || zone.ends_with(&format!(".{entry}")) {
+                return true;
+            }
+        }
+        false
+    }
+
+    #[test]
+    fn the_suffix_walk_agrees_with_the_loop_it_replaced() {
+        let mut zones: Vec<String> = vec![
+            String::new(),
+            ".".into(),
+            "..".into(),
+            "net".into(),
+            "sophosxl.net".into(),
+            "a.sophosxl.net".into(),
+            "a.b.sophosxl.net".into(),
+            "notsophosxl.net".into(),
+            "sophosxl.net.evil.com".into(),
+            "xn--p1ai".into(),
+            "s1._domainkey.example.com".into(),
+            "_dmarc.example.com".into(),
+            "acme-challenge.example.com".into(),
+            "example.com.acme-challenge".into(),
+            "tunnel.example".into(),
+            "evil-zone.top".into(),
+            "a.b.c.d.e.f.g".into(),
+        ];
+        for entry in settings::HASH_LABEL_SERVICE_ZONES {
+            zones.push((*entry).to_string());
+            zones.push(format!("sub.{entry}"));
+            zones.push(format!("x{entry}"));
+            zones.push(format!("{entry}.evil.com"));
+        }
+        for z in &zones {
+            assert_eq!(allowed_zone(z), allowed_zone_reference(z), "disagreement on {z:?}");
+        }
     }
 
     #[test]

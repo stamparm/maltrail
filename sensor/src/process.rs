@@ -1644,7 +1644,11 @@ fn dns_packet(
                 // The rest of the bar lives in the accumulator, which reports at most once per
                 // (source, zone) per window and only when volume, uniqueness, payload size and a
                 // two-minute span all hold at once.
-                if st.heuristic_enabled("dns_tunneling")
+                // use_heuristics AND the per-name mute, the same pair every other heuristic
+                // uses. Without the first, USE_HEURISTICS false still produced tunnelling events
+                // and still paid for the accumulator - this one was only checking the mute.
+                if st.cfg.use_heuristics
+                    && st.heuristic_enabled("dns_tunneling")
                     && !crate::heuristics::dns_tunneling::allowed_zone(domain)
                     && !st.statics.bl_word.is_match(domain)
                 {

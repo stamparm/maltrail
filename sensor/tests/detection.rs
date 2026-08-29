@@ -968,7 +968,7 @@ fn chunk(i: u64, len: usize) -> String {
 
 #[test]
 fn a_sustained_encoded_channel_is_reported_once() {
-    let mut h = Harness::new(&[]);
+    let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
     for i in 0..300u64 {
         tunnel_query(&mut h, "10.0.0.5", &format!("{}.t.exfil-zone.top", chunk(i, 40)), i * 2);
     }
@@ -979,7 +979,7 @@ fn a_sustained_encoded_channel_is_reported_once() {
 #[test]
 fn the_same_volume_delivered_as_a_burst_is_not_reported() {
     // a workstation opening a folder full of files hammers its reputation service like this
-    let mut h = Harness::new(&[]);
+    let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
     for i in 0..300u64 {
         tunnel_query(&mut h, "10.0.0.5", &format!("{}.t.exfil-zone.top", chunk(i, 40)), 10);
     }
@@ -990,7 +990,7 @@ fn the_same_volume_delivered_as_a_burst_is_not_reported() {
 fn a_reputation_service_is_never_reported_however_much_it_is_used() {
     // sxl.sophos.com is NOT in data/whitelist.txt - HASH_LABEL_SERVICE_ZONES is what covers it,
     // and this is the case that made the older long_domain heuristic emit one event per lookup
-    let mut h = Harness::new(&[]);
+    let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
     for i in 0..600u64 {
         tunnel_query(&mut h, "10.0.0.6", &format!("{}.sxl.sophos.com", chunk(i, 40)), i * 2);
     }
@@ -1000,7 +1000,7 @@ fn a_reputation_service_is_never_reported_however_much_it_is_used() {
 
 #[test]
 fn a_blocklist_is_never_reported() {
-    let mut h = Harness::new(&[]);
+    let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
     for i in 0..900u64 {
         let name = format!("{}.{}.{}.{}.zen.spamhaus.org", i % 254 + 1, i % 251 + 1, i % 247 + 1, i % 241 + 1);
         tunnel_query(&mut h, "10.0.0.7", &name, i * 2);
@@ -1009,10 +1009,21 @@ fn a_blocklist_is_never_reported() {
 }
 
 #[test]
+fn use_heuristics_false_silences_it() {
+    // heuristic_enabled() only consults DISABLED_HEURISTICS, so this needs the use_heuristics
+    // check too - without it an operator who turned heuristics off still got these events.
+    let mut h = Harness::with_options(&[], HarnessOptions::quiet());
+    for i in 0..300u64 {
+        tunnel_query(&mut h, "10.0.0.5", &format!("{}.t.exfil-zone.top", chunk(i, 40)), i * 2);
+    }
+    assert!(h.events().iter().all(|e| !e.info.contains("dns tunneling")));
+}
+
+#[test]
 fn muting_it_silences_it() {
     let mut h = Harness::with_options(
         &[],
-        HarnessOptions { extra: vec!["DISABLED_HEURISTICS dns_tunneling".to_string()], ..HarnessOptions::quiet() },
+        HarnessOptions { extra: vec!["DISABLED_HEURISTICS dns_tunneling".to_string()], ..HarnessOptions::heuristics() },
     );
     for i in 0..300u64 {
         tunnel_query(&mut h, "10.0.0.5", &format!("{}.t.exfil-zone.top", chunk(i, 40)), i * 2);

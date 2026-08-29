@@ -351,6 +351,45 @@ fn main() {
         }));
     }
 
+    // Three labels, which is what turns the ACCUMULATOR path on: `label_count > 2` gates both
+    // the DNS-exhaustion window and the tunnelling detector, so the two-label rows above measure
+    // neither. A real network's DNS is overwhelmingly three labels or more, so this is the shape
+    // that decides what those heuristics actually cost.
+    //
+    // Spread over 128 parent domains ON PURPOSE. Put 4096 subdomains under ONE parent and the
+    // exhaustion window trips at 1000 and then returns early for every later query, so the row
+    // measures the short-circuit rather than the accumulators - which is what the first version
+    // of this bench did, and it read 336 ns instead of the real 2,400.
+    {
+        let mut h = Harness::with_options(&trail_fixture, HarnessOptions::heuristics());
+        let subs: Vec<Vec<u8>> = (0..4096u32)
+            .map(|i| {
+                eth(
+                    &ipv4(
+                        17,
+                        "10.0.0.5",
+                        "8.8.8.8",
+                        &udp(
+                            40000 + (i % 1000) as u16,
+                            53,
+                            &dns_query(&format!("n{i}.host{}.org", i % 128), 1, 1, 0x0100),
+                        ),
+                    ),
+                    0x0800,
+                    None,
+                )
+            })
+            .collect();
+        let bytes = subs[0].len() as u64;
+        let mut index = 0usize;
+        results.push(bench("dns query, subdomain (accumulators)", "packet path", bytes, || {
+            let packet = &subs[index % subs.len()];
+            index += 1;
+            h.feed(packet, 1_700_000_000, 0, 14);
+            1
+        }));
+    }
+
     // Cold cache: a fresh domain every packet (the DGA-flood shape), pre-built for the same
     // reason. 4096 distinct two-label names is far past the 1000-entry result cache, and the
     // shallow name keeps the exhaustion accumulator (and its early return) out of the way.
