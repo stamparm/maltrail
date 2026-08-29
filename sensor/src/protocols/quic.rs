@@ -38,34 +38,63 @@ fn hkdf_extract(salt: &[u8], ikm: &[u8]) -> [u8; 32] {
     mac.finalize().into_bytes().into()
 }
 
-fn hkdf_expand(prk: &[u8], info: &[u8], length: usize) -> Vec<u8> {
-    let mut out = Vec::with_capacity(length + 32);
-    let mut t: Vec<u8> = Vec::new();
+/// Every output this schedule asks for is 32 bytes or fewer, so the buffers live on the stack.
+///
+/// The general form allocated a Vec for the output, another for the running block, and one more
+/// per HMAC round via `to_vec()` - and `hkdf_expand_label` added two more building its info
+/// string. Four labels are derived for every QUIC Initial packet, so that was a dozen small
+/// allocations on a path that runs per packet. Identical bytes out: the loop is unchanged, it
+/// just writes into fixed storage.
+const HKDF_MAX: usize = 32;
+
+fn hkdf_expand_into(prk: &[u8], info: &[u8], length: usize, out: &mut [u8; HKDF_MAX]) {
+    debug_assert!(length <= HKDF_MAX);
+    let mut written = 0usize;
+    let mut have_prev = false;
+    let mut prev = [0u8; 32];
     let mut counter: u8 = 1;
-    while out.len() < length {
+    while written < length {
         let mut mac = <HmacSha256 as Mac>::new_from_slice(prk).expect("hmac accepts any key length");
-        mac.update(&t);
+        if have_prev {
+            mac.update(&prev);
+        }
         mac.update(info);
         mac.update(&[counter]);
-        t = mac.finalize().into_bytes().to_vec();
-        out.extend_from_slice(&t);
+        prev.copy_from_slice(&mac.finalize().into_bytes());
+        have_prev = true;
+        let take = (length - written).min(prev.len());
+        out[written..written + take].copy_from_slice(&prev[..take]);
+        written += take;
         counter = counter.wrapping_add(1);
         if counter == 0 {
             break;
         }
     }
-    out.truncate(length);
+}
+
+fn hkdf_expand_label_into(secret: &[u8], label: &[u8], length: usize) -> [u8; HKDF_MAX] {
+    // "tls13 " + label, then the TLS 1.3 HkdfLabel wrapper. Longest label here is "quic hp".
+    let mut info = [0u8; 64];
+    let mut n = 0usize;
+    info[n..n + 2].copy_from_slice(&(length as u16).to_be_bytes());
+    n += 2;
+    let full_len = 6 + label.len();
+    info[n] = full_len as u8;
+    n += 1;
+    info[n..n + 6].copy_from_slice(b"tls13 ");
+    n += 6;
+    info[n..n + label.len()].copy_from_slice(label);
+    n += label.len();
+    info[n] = 0;
+    n += 1;
+    let mut out = [0u8; HKDF_MAX];
+    hkdf_expand_into(secret, &info[..n], length, &mut out);
     out
 }
 
+#[cfg(test)]
 fn hkdf_expand_label(secret: &[u8], label: &[u8], length: usize) -> Vec<u8> {
-    let mut full = b"tls13 ".to_vec();
-    full.extend_from_slice(label);
-    let mut info = (length as u16).to_be_bytes().to_vec();
-    info.push(full.len() as u8);
-    info.extend_from_slice(&full);
-    info.push(0);
-    hkdf_expand(secret, &info, length)
+    hkdf_expand_label_into(secret, label, length)[..length].to_vec()
 }
 
 pub struct InitialKeys {
@@ -82,15 +111,15 @@ pub fn derive_client_initial_keys(dcid: &[u8], version_kind: u8) -> InitialKeys 
         (&INITIAL_SALT_V1, b"quic key", b"quic iv", b"quic hp")
     };
     let initial_secret = hkdf_extract(salt, dcid);
-    let client_secret = hkdf_expand_label(&initial_secret, b"client in", 32);
-    let key = hkdf_expand_label(&client_secret, klbl, 16);
-    let iv = hkdf_expand_label(&client_secret, ivlbl, 12);
-    let hp = hkdf_expand_label(&client_secret, hplbl, 16);
+    let client_secret = hkdf_expand_label_into(&initial_secret, b"client in", 32);
+    let key = hkdf_expand_label_into(&client_secret[..32], klbl, 16);
+    let iv = hkdf_expand_label_into(&client_secret[..32], ivlbl, 12);
+    let hp = hkdf_expand_label_into(&client_secret[..32], hplbl, 16);
 
     let mut out = InitialKeys { key: [0; 16], iv: [0; 12], hp: [0; 16] };
-    out.key.copy_from_slice(&key);
-    out.iv.copy_from_slice(&iv);
-    out.hp.copy_from_slice(&hp);
+    out.key.copy_from_slice(&key[..16]);
+    out.iv.copy_from_slice(&iv[..12]);
+    out.hp.copy_from_slice(&hp[..16]);
     out
 }
 
