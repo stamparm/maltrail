@@ -134,14 +134,18 @@ fn aes_ecb_block(key: &[u8; 16], block: &[u8; 16]) -> [u8; 16] {
 /// implementation (and `cryptography`'s CTR mode) bit for bit.
 fn aes_ctr_decrypt(key: &[u8; 16], counter0: &[u8; 16], data: &[u8]) -> Vec<u8> {
     let cipher = Aes128::new(key.into());
-    let mut out = Vec::with_capacity(data.len());
+    // Written into a sized buffer rather than pushed a byte at a time: a QUIC Initial is around
+    // 1,200 bytes, so that was 1,200 Vec pushes - each one a length check and a store - where the
+    // work is a 16-byte XOR. Same bytes out, same counter arithmetic.
+    let mut out = vec![0u8; data.len()];
     let mut ctr = *counter0;
-    for chunk in data.chunks(16) {
+    for (input, output) in data.chunks(16).zip(out.chunks_mut(16)) {
         let mut ks = ctr;
         cipher.encrypt_block((&mut ks).into());
-        for (i, b) in chunk.iter().enumerate() {
-            out.push(b ^ ks[i]);
+        for i in 0..input.len() {
+            output[i] = input[i] ^ ks[i];
         }
+        // 128-bit big-endian increment, exactly as before
         let mut j = 15i32;
         while j >= 0 {
             ctr[j as usize] = ctr[j as usize].wrapping_add(1);
