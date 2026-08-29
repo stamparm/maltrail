@@ -362,13 +362,9 @@ pub fn parse_raw(content: &str, root: &Path) -> Result<HashMap<String, Value>, C
             if line.starts_with(' ') {
                 let entry = line.trim().to_string();
                 if let Some(Value::Array(items)) = out.get_mut(&arr) {
-                    if arr == "IP_ALIASES" {
-                        // expand_range() on the address part (server-side option; kept for
-                        // configuration-file compatibility only)
-                        items.push(entry);
-                    } else {
-                        items.push(entry);
-                    }
+                    // IP_ALIASES is a server-side option, parsed here only so the sensor does
+                    // not reject a shared configuration file. Its address part is not expanded.
+                    items.push(entry);
                 }
                 continue;
             }

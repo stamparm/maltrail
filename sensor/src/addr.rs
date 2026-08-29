@@ -286,15 +286,18 @@ pub fn parse_host_port(value: &str) -> (String, Option<u16>) {
         let port = after.strip_prefix(':').unwrap_or_default();
         (host, port)
     } else {
-        let colons = value.matches(':').count();
-        if colons == 1 {
-            let idx = value.find(':').unwrap();
-            (&value[..idx], &value[idx + 1..])
-        } else if colons > 1 {
-            let idx = value.rfind(':').unwrap();
-            (&value[..idx], &value[idx + 1..])
-        } else {
-            (value, "")
+        match value.matches(':').count() {
+            0 => (value, ""),
+            // One colon is host:port. More than one is a bare IPv6 literal unless the last
+            // colon is followed by a port, which rfind() is what distinguishes.
+            1 => {
+                let idx = value.find(':').unwrap();
+                (&value[..idx], &value[idx + 1..])
+            }
+            _ => {
+                let idx = value.rfind(':').unwrap();
+                (&value[..idx], &value[idx + 1..])
+            }
         }
     };
 

@@ -313,7 +313,7 @@ fn an_old_trails_file_is_reported_as_stale() {
 fn the_updater_uses_maltrails_own_code() {
     // Guards against the update logic being reimplemented (and therefore drifting) in Rust.
     let script = repo_root().join("sensor").join("tools").join("update_trails.py");
-    let text = std::fs::read_to_string(&script).expect("tools/update_trails.py");
+    let text = std::fs::read_to_string(script).expect("tools/update_trails.py");
     assert!(text.contains("from core.update import update_ipcat, update_trails"));
     assert!(text.contains("update_trails(offline=True)"), "offline mode must rebuild from static trails");
     assert!(text.contains("check_connection"), "connectivity fallback must match sensor.py");
@@ -333,7 +333,7 @@ fn config_test_passes_a_good_configuration_and_changes_nothing() {
     std::fs::write(&fixture.trails, "evil.example,malware (test),(static)\n").unwrap();
     let before = std::fs::metadata(&fixture.trails).unwrap().len();
 
-    let out = Command::new(&binary).current_dir(repo_root()).arg("-T").arg("-c").arg(&fixture.config).output().unwrap();
+    let out = Command::new(binary).current_dir(repo_root()).arg("-T").arg("-c").arg(&fixture.config).output().unwrap();
     let text = String::from_utf8_lossy(&out.stdout).to_string() + &String::from_utf8_lossy(&out.stderr);
     assert!(out.status.success(), "a workable configuration must pass:\n{text}");
     assert!(text.contains("configuration test PASSED"), "{text}");
@@ -353,7 +353,7 @@ fn config_test_fails_a_broken_configuration() {
     };
     // Missing trails file + a log directory that does not exist: both fatal for detection.
     let fixture = Fixture::new("selftest-bad", "DISABLE_TRAIL_UPDATES true\nLOG_DIR /nonexistent/maltrail-logs");
-    let out = Command::new(&binary).current_dir(repo_root()).arg("-T").arg("-c").arg(&fixture.config).output().unwrap();
+    let out = Command::new(binary).current_dir(repo_root()).arg("-T").arg("-c").arg(&fixture.config).output().unwrap();
     let text = String::from_utf8_lossy(&out.stdout).to_string() + &String::from_utf8_lossy(&out.stderr);
     assert!(!out.status.success(), "a broken configuration must exit non-zero:\n{text}");
     assert!(text.contains("configuration test FAILED"), "{text}");
@@ -370,7 +370,7 @@ fn config_test_rejects_an_invalid_capture_filter() {
     // A BPF filter that does not compile would otherwise only surface at capture time.
     let fixture = Fixture::new("selftest-bpf", "DISABLE_TRAIL_UPDATES true\nCAPTURE_FILTER not a valid filter !!!");
     std::fs::write(&fixture.trails, "evil.example,malware (test),(static)\n").unwrap();
-    let out = Command::new(&binary).current_dir(repo_root()).arg("-T").arg("-c").arg(&fixture.config).output().unwrap();
+    let out = Command::new(binary).current_dir(repo_root()).arg("-T").arg("-c").arg(&fixture.config).output().unwrap();
     let text = String::from_utf8_lossy(&out.stdout).to_string() + &String::from_utf8_lossy(&out.stderr);
     assert!(!out.status.success(), "an uncompilable filter must fail the test:\n{text}");
     assert!(text.contains("does not compile"), "{text}");
@@ -399,7 +399,7 @@ fn sighup_requests_a_reload_instead_of_killing_the_sensor() {
     assert_eq!(unsafe { libc::mkfifo(c_fifo.as_ptr(), 0o600) }, 0, "mkfifo");
 
     let pcap = dns_query_pcap(&fixture.dir, "example.org");
-    let bytes = std::fs::read(&pcap).unwrap();
+    let bytes = std::fs::read(pcap).unwrap();
     let writer = std::thread::spawn(move || {
         use std::io::Write;
         if let Ok(mut f) = std::fs::OpenOptions::new().write(true).open(&fifo) {
@@ -409,7 +409,7 @@ fn sighup_requests_a_reload_instead_of_killing_the_sensor() {
         }
     });
 
-    let mut child = Command::new(&binary)
+    let mut child = Command::new(binary)
         .current_dir(repo_root())
         .args(["-r", fixture.dir.join("feed.fifo").to_str().unwrap()])
         .arg("-c")

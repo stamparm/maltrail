@@ -247,7 +247,7 @@ impl Harness {
     pub fn raw_events(&self) -> Vec<LoggedEvent> {
         let mut out = Vec::new();
         let dir = self.log_dir();
-        let Ok(entries) = std::fs::read_dir(&dir) else { return out };
+        let Ok(entries) = std::fs::read_dir(dir) else { return out };
         let mut files: Vec<PathBuf> = entries
             .filter_map(|e| e.ok().map(|e| e.path()))
             .filter(|p| {

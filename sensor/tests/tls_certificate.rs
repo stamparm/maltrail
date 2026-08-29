@@ -10,7 +10,11 @@ use maltrail_sensor::testkit::{eth, ipv4, tcp, Harness, HarnessOptions};
 /// SHA-1 of `der`, lower-case hex — the form the feeds and therefore the trail keys use.
 fn sha1_hex(der: &[u8]) -> String {
     use sha1::{Digest, Sha1};
-    Sha1::new().chain_update(der).finalize().iter().map(|b| format!("{b:02x}")).collect()
+    use std::fmt::Write;
+    Sha1::new().chain_update(der).finalize().iter().fold(String::with_capacity(40), |mut s, b| {
+        let _ = write!(s, "{b:02x}");
+        s
+    })
 }
 
 /// A server flight: TLS record -> Certificate handshake message -> one DER certificate.

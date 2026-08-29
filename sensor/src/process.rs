@@ -233,12 +233,10 @@ fn check_domain_inner(
             && !crate::heuristics::dns_tunneling::allowed_zone(q)
         {
             {
-                let trail = if label_count > 2 {
-                    format!("({}).{}", dots.prefix_upto(q, label_count - 2), dots.suffix_from(q, label_count - 2))
-                } else if label_count == 2 {
-                    format!("({}).{}", first_label, dots.last_label(q))
-                } else {
-                    q.to_string()
+                let trail = match label_count {
+                    0 | 1 => q.to_string(),
+                    2 => format!("({}).{}", first_label, dots.last_label(q)),
+                    _ => format!("({}).{}", dots.prefix_upto(q, label_count - 2), dots.suffix_from(q, label_count - 2)),
                 };
                 if !trail.is_empty() && !st.statics.whitelist_long_domain.is_match(&trail) {
                     result = true;

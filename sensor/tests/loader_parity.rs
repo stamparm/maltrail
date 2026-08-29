@@ -65,7 +65,7 @@ fn python_dump(trails_csv: &PathBuf) -> Option<Dump> {
         return None;
     }
     let out = std::env::temp_dir().join(format!("mt-loader-parity-{}.dump", std::process::id()));
-    let status = Command::new(&python)
+    let status = Command::new(python)
         .current_dir(repo_root())
         .arg(&script)
         .arg("--trails")

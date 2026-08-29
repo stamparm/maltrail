@@ -691,7 +691,10 @@ pub fn free_bytes(path: &Path) -> Option<u64> {
     if unsafe { libc::statvfs(c_path.as_ptr(), &mut st) } != 0 {
         return None;
     }
-    // f_frsize is the fragment size the block counts are expressed in.
+    // f_frsize is the fragment size the block counts are expressed in. The casts are u64->u64
+    // on the 64-bit targets we ship, but statvfs uses c_ulong: they are load-bearing for anyone
+    // building from source on a 32-bit platform.
+    #[allow(clippy::unnecessary_cast)]
     (st.f_frsize as u64).checked_mul(st.f_bavail as u64)
 }
 

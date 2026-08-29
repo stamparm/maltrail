@@ -31,7 +31,7 @@ struct Case {
 
 fn read_manifest() -> Vec<Case> {
     let path = corpus_dir().join("manifest.json");
-    let text = match std::fs::read_to_string(&path) {
+    let text = match std::fs::read_to_string(path) {
         Ok(t) => t,
         Err(_) => return Vec::new(),
     };

@@ -85,7 +85,7 @@ fn try_to_link() -> Verdict {
     }
 
     let compiler = std::env::var("CC").unwrap_or_else(|_| "cc".to_string());
-    let output = Command::new(&compiler).arg(&source).arg("-lpcap").arg("-o").arg(&binary).output();
+    let output = Command::new(compiler).arg(&source).arg("-lpcap").arg("-o").arg(&binary).output();
     let _ = std::fs::remove_file(&source);
     let _ = std::fs::remove_file(&binary);
 

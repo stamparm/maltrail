@@ -328,7 +328,7 @@ mod tests {
     fn a_scrape_returns_the_metrics_over_http() {
         let registry = Arc::new(Registry::new(1));
         let bound = spawn("127.0.0.1:0", registry, std::time::Instant::now()).expect("bind");
-        let mut stream = std::net::TcpStream::connect(&bound).expect("connect");
+        let mut stream = std::net::TcpStream::connect(bound).expect("connect");
         stream.write_all(b"GET /metrics HTTP/1.1\r\nHost: localhost\r\n\r\n").unwrap();
         let mut response = String::new();
         stream.read_to_string(&mut response).unwrap();

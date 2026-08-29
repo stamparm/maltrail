@@ -60,7 +60,7 @@ fn settings_gen_is_in_sync_with_core_settings_py() {
     }
 
     let fresh = std::env::temp_dir().join(format!("mt-settings-gen-{}.rs", std::process::id()));
-    let status = Command::new(&python)
+    let status = Command::new(python)
         .current_dir(&root)
         .arg(&script)
         .arg("-o")
