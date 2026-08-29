@@ -130,6 +130,16 @@ fn suffix_zones() -> &'static std::collections::HashSet<&'static str> {
     })
 }
 
+/// Can `bl\b` possibly match `name`? A necessary condition, checked without a regex engine.
+///
+/// The DNS path runs the blocklist test once per query, and a regex call to establish that a name
+/// does not contain "bl" is far more than the two-byte search that answers the same question.
+/// Only when this says maybe does the regex actually run, so the verdict is the regex's.
+#[inline]
+pub fn may_contain_bl(name: &str) -> bool {
+    memchr::memmem::find(name.as_bytes(), b"bl").is_some()
+}
+
 #[derive(Debug, PartialEq, Eq)]
 pub enum Outcome {
     /// Not enough evidence, or already reported for this pair in this window.
@@ -314,6 +324,39 @@ mod tests {
             }
         }
         false
+    }
+
+    #[test]
+    fn the_bl_prefilter_never_rejects_what_the_regex_would_match() {
+        // A prefilter is only safe one way round: it may say "maybe" about a name the regex then
+        // rejects, but it must never say "no" about one the regex would have matched.
+        let names = [
+            "bl.spamcop.net",
+            "dnsbl.sorbs.net",
+            "zen.spamhaus.org",
+            "example.com",
+            "table.com",
+            "bl",
+            "abl",
+            "blx",
+            "x.bl.y",
+            "BL.example.com",
+            "problem.org",
+            "assembly.net",
+            "",
+            ".",
+            "b.l.com",
+            "nobl",
+            "bl.",
+            "dbl.spamhaus.org",
+            "tumblr.com",
+        ];
+        let re = crate::pyre::compile(r"bl\b");
+        for n in names {
+            if re.is_match(n) {
+                assert!(may_contain_bl(n), "prefilter rejected {n:?}, which the regex matches");
+            }
+        }
     }
 
     #[test]

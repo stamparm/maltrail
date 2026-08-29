@@ -128,6 +128,11 @@ pub struct Statics {
     /// `\A\d+\-\d+\-\d+\-\d+\Z` — dashed-IP subdomain exclusion (DNS exhaustion)
     pub dashed_quad: Regex,
     /// `bl\b` — generic DNSBL guard
+    /// `bl\b` - the generic "this is a blocklist zone" test.
+    ///
+    /// Paired with `bl_word_prefilter` below: the regex can only match a string that contains the
+    /// two bytes "bl", and running a regex engine to discover that a name does not is most of what
+    /// the check cost on the DNS path, where it runs per query.
     pub bl_word: Regex,
     /// `(\.onion)(\..*)` — tor2web rewrite
     pub onion_suffix: Regex,

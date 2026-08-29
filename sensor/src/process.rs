@@ -1650,7 +1650,8 @@ fn dns_packet(
                 if st.cfg.use_heuristics
                     && st.heuristic_enabled("dns_tunneling")
                     && !crate::heuristics::dns_tunneling::allowed_zone(domain)
-                    && !st.statics.bl_word.is_match(domain)
+                    && !(crate::heuristics::dns_tunneling::may_contain_bl(domain)
+                        && st.statics.bl_word.is_match(domain))
                 {
                     st.dns_tunneling.maybe_window_reset(sec);
                     let subdomain_part = dots.prefix_upto(&query, label_count - 2);
