@@ -184,7 +184,19 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
     }
 
     // JA3: version,ciphers,extensions,curves,ecpf - dash-joined decimal lists.
-    let join_dec = |list: &[u16]| list.iter().map(|v| v.to_string()).collect::<Vec<_>>().join("-");
+    // One String per list instead of one per ELEMENT plus a Vec plus the join buffer. `write!`
+    // of a u16 into a String appends the same decimal digits `to_string()` would produce.
+    use core::fmt::Write as _;
+    let join_dec = |list: &[u16]| {
+        let mut out = String::with_capacity(list.len() * 6);
+        for (i, v) in list.iter().enumerate() {
+            if i > 0 {
+                out.push('-');
+            }
+            let _ = write!(out, "{v}");
+        }
+        out
+    };
     let ja3_str = format!(
         "{},{},{},{},{}",
         legacy_version,
@@ -220,17 +232,24 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
     let ja4_a = format!("t{ver2}{sni_flag}{nc:02}{ne:02}{alpn2}");
     let mut sorted_ciphers = ciphers.clone();
     sorted_ciphers.sort_unstable();
-    let ja4_b_str = sorted_ciphers.iter().map(|c| format!("{c:04x}")).collect::<Vec<_>>().join(",");
+    let join_hex4 = |list: &[u16]| {
+        let mut out = String::with_capacity(list.len() * 5);
+        for (i, v) in list.iter().enumerate() {
+            if i > 0 {
+                out.push(',');
+            }
+            let _ = write!(out, "{v:04x}");
+        }
+        out
+    };
+    let ja4_b_str = join_hex4(&sorted_ciphers);
     let mut exts_for_c: Vec<u16> = ext_types.iter().copied().filter(|e| *e != 0x0000 && *e != 0x0010).collect();
     exts_for_c.sort_unstable();
-    let ja4_c_str = format!(
-        "{}_{}",
-        exts_for_c.iter().map(|e| format!("{e:04x}")).collect::<Vec<_>>().join(","),
-        sig_algs.iter().map(|s| format!("{s:04x}")).collect::<Vec<_>>().join(","),
-    );
+    let ja4_c_str = format!("{}_{}", join_hex4(&exts_for_c), join_hex4(&sig_algs));
     // NOTE: `md5::Digest` and `sha2::Digest` are the same `digest::Digest` trait (both crates
     // build on digest 0.10), so the single import above serves Sha256::digest too.
-    let sha256_12 = |s: &[u8]| hex_lowercase(&sha2::Sha256::digest(s))[..12].to_string();
+    // Only the first 12 hex chars are kept, so render 6 bytes rather than 32 and discard 20.
+    let sha256_12 = |s: &[u8]| hex_lowercase(&sha2::Sha256::digest(s)[..6]);
     let ja4 = format!("{}_{}_{}", ja4_a, sha256_12(ja4_b_str.as_bytes()), sha256_12(ja4_c_str.as_bytes()));
 
     Some(ClientHello { sni, ja3, ja4 })
@@ -242,8 +261,20 @@ pub fn client_hello_sni(data: &[u8]) -> Option<String> {
     parse_client_hello(data).and_then(|ch| ch.sni)
 }
 
+/// Lower-case hex, written a nibble at a time.
+///
+/// Was `bytes.iter().map(|b| format!("{b:02x}")).collect()`, which allocates a String PER BYTE
+/// and then a final one to concatenate them - 33 allocations to render a 32-byte digest. Every
+/// TLS ClientHello on the wire pays this three times (one MD5 for JA3, two SHA-256 for JA4).
+/// Byte-for-byte identical output; `{:02x}` on a u8 is exactly these two nibbles.
 fn hex_lowercase(bytes: &[u8]) -> String {
-    bytes.iter().map(|b| format!("{b:02x}")).collect()
+    const HEX: &[u8; 16] = b"0123456789abcdef";
+    let mut out = String::with_capacity(bytes.len() * 2);
+    for &b in bytes {
+        out.push(HEX[(b >> 4) as usize] as char);
+        out.push(HEX[(b & 0x0f) as usize] as char);
+    }
+    out
 }
 
 /// `core/tls_intel.py:_u16_list()`
