@@ -91,14 +91,31 @@ pub fn allowed_zone(zone: &str) -> bool {
             None => break,
         }
     }
-    // The four `_domainkey`-shaped entries are LABELS, matching anywhere in the name rather than
-    // as a suffix, so they keep their own pass over the labels.
-    for entry in settings::HASH_LABEL_SERVICE_ZONES {
-        if (entry.starts_with('_') || entry.starts_with("acme-")) && zone.split('.').any(|label| label == *entry) {
-            return true;
+    // The `_domainkey`-shaped entries are LABELS, matching anywhere in the name rather than as a
+    // suffix, so they need their own pass. Two things keep it off the common path: the four of
+    // them are collected once instead of being re-filtered out of forty on every call, and a name
+    // containing neither an underscore nor "acme-" cannot match any of them - which is nearly
+    // every name. Without that guard this was still forty iterations per DNS query.
+    if zone.as_bytes().contains(&b'_') || zone.contains("acme-") {
+        for entry in label_zones() {
+            if zone.split('.').any(|label| label == *entry) {
+                return true;
+            }
         }
     }
     false
+}
+
+/// The entries matched as a whole LABEL anywhere in the name, rather than as a suffix.
+fn label_zones() -> &'static [&'static str] {
+    static LABELS: std::sync::OnceLock<Vec<&'static str>> = std::sync::OnceLock::new();
+    LABELS.get_or_init(|| {
+        settings::HASH_LABEL_SERVICE_ZONES
+            .iter()
+            .copied()
+            .filter(|e| e.starts_with('_') || e.starts_with("acme-"))
+            .collect()
+    })
 }
 
 /// The suffix-matched entries, as a set built once.
