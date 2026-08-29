@@ -92,11 +92,6 @@ fn hkdf_expand_label_into(secret: &[u8], label: &[u8], length: usize) -> [u8; HK
     out
 }
 
-#[cfg(test)]
-fn hkdf_expand_label(secret: &[u8], label: &[u8], length: usize) -> Vec<u8> {
-    hkdf_expand_label_into(secret, label, length)[..length].to_vec()
-}
-
 pub struct InitialKeys {
     key: [u8; 16],
     iv: [u8; 12],
