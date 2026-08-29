@@ -117,6 +117,7 @@ internationalmonetaryfund.org
 ipv6test.com
 ipv6test.net
 iteam.net.ru
+kaspersky-labs.com
 kaspersky.com
 kaspersky.de
 kaspersky.fr
@@ -141,6 +142,7 @@ microsoft.com
 msv1.invalid
 multicom.hr
 netdna-cdn.com
+nod32.com
 nowvideo.sx
 nsatc.net
 officeshoes.ws
@@ -173,6 +175,7 @@ siteforce.com
 sophosxl.com
 sophosxl.net
 sophoslive.net
+sxl.sophos.com
 spiegel.de
 spotify.com
 shtok.ru
