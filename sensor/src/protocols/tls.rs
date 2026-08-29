@@ -186,25 +186,34 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
     // JA3: version,ciphers,extensions,curves,ecpf - dash-joined decimal lists.
     // One String per list instead of one per ELEMENT plus a Vec plus the join buffer. `write!`
     // of a u16 into a String appends the same decimal digits `to_string()` would produce.
+    // One buffer for the whole JA3 string. Each of the five fields used to be built as its own
+    // String and then copied again by format!, and the ecpf field additionally widened its bytes
+    // into a temporary Vec<u16> just to be formatted. Appending straight into one buffer produces
+    // the identical string with a single allocation.
     use core::fmt::Write as _;
-    let join_dec = |list: &[u16]| {
-        let mut out = String::with_capacity(list.len() * 6);
+    fn append_dec(out: &mut String, list: &[u16]) {
         for (i, v) in list.iter().enumerate() {
             if i > 0 {
                 out.push('-');
             }
             let _ = write!(out, "{v}");
         }
-        out
-    };
-    let ja3_str = format!(
-        "{},{},{},{},{}",
-        legacy_version,
-        join_dec(&ciphers),
-        join_dec(&ext_types),
-        join_dec(&curves),
-        join_dec(&(ecpf.iter().map(|b| *b as u16).collect::<Vec<_>>())),
-    );
+    }
+    let mut ja3_str = String::with_capacity(16 + (ciphers.len() + ext_types.len() + curves.len() + ecpf.len()) * 6);
+    let _ = write!(ja3_str, "{legacy_version}");
+    ja3_str.push(',');
+    append_dec(&mut ja3_str, &ciphers);
+    ja3_str.push(',');
+    append_dec(&mut ja3_str, &ext_types);
+    ja3_str.push(',');
+    append_dec(&mut ja3_str, &curves);
+    ja3_str.push(',');
+    for (i, b) in ecpf.iter().enumerate() {
+        if i > 0 {
+            ja3_str.push('-');
+        }
+        let _ = write!(ja3_str, "{b}");
+    }
     use md5::Digest as Md5Digest;
     let ja3 = hex_lowercase(&md5::Md5::digest(ja3_str.as_bytes()));
 
@@ -232,6 +241,7 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
     let ja4_a = format!("t{ver2}{sni_flag}{nc:02}{ne:02}{alpn2}");
     let mut sorted_ciphers = ciphers.clone();
     sorted_ciphers.sort_unstable();
+
     let join_hex4 = |list: &[u16]| {
         let mut out = String::with_capacity(list.len() * 5);
         for (i, v) in list.iter().enumerate() {
