@@ -461,6 +461,39 @@ pub fn ipv6(proto: u8, src: &str, dst: &str, payload: &[u8]) -> Vec<u8> {
     out
 }
 
+/// IPv6 carrying a chain of extension headers before `proto`.
+///
+/// Each `exts` entry is (header type, body length in bytes NOT counting the 2-byte
+/// Next-Header/Hdr-Ext-Len prefix). Type 44 (Fragment) is fixed at 8 bytes total and ignores the
+/// requested length, which is what makes it usable for the non-first-fragment case.
+pub fn ipv6_ext(proto: u8, src: &str, dst: &str, exts: &[(u8, usize)], payload: &[u8]) -> Vec<u8> {
+    let mut chain: Vec<u8> = Vec::new();
+    for (i, &(kind, body)) in exts.iter().enumerate() {
+        // each header names the NEXT one, and the last names the transport protocol
+        let next = exts.get(i + 1).map(|&(k, _)| k).unwrap_or(proto);
+        if kind == 44 {
+            chain.extend_from_slice(&[next, 0, 0, 0, 0, 0, 0, 0]);
+            continue;
+        }
+        // total must be a multiple of 8; hdr_ext_len counts 8-octet units after the first
+        let total = (((2 + body) + 7) / 8) * 8;
+        chain.push(next);
+        chain.push((total / 8 - 1) as u8);
+        chain.resize(chain.len() + total - 2, 0);
+    }
+
+    let first = exts.first().map(|&(k, _)| k).unwrap_or(proto);
+    let mut out = vec![0x60, 0, 0, 0];
+    out.extend_from_slice(&((chain.len() + payload.len()) as u16).to_be_bytes());
+    out.push(first);
+    out.push(64);
+    out.extend_from_slice(&crate::addr::parse_ipv6(src).expect("src ipv6").to_be_bytes());
+    out.extend_from_slice(&crate::addr::parse_ipv6(dst).expect("dst ipv6").to_be_bytes());
+    out.extend_from_slice(&chain);
+    out.extend_from_slice(payload);
+    out
+}
+
 pub fn tcp(sport: u16, dport: u16, flags: u8, payload: &[u8]) -> Vec<u8> {
     let mut out = Vec::with_capacity(20 + payload.len());
     out.extend_from_slice(&sport.to_be_bytes());

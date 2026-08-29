@@ -329,6 +329,35 @@ fn ipv6_detections() {
 }
 
 #[test]
+fn ipv6_extension_headers_do_not_hide_the_payload() {
+    // An IPv6 packet may carry Hop-by-Hop, Routing or Destination-Options headers between the
+    // fixed header and the transport header. Until the chain was walked, Next Header was taken as
+    // the protocol, so such a packet reported protocol 0/43/60 - the transport header was never
+    // located and NO port, DNS name, HTTP host or TLS SNI was ever read from it. One 8-byte
+    // Hop-by-Hop header was enough to hide a packet from every payload-derived trail, which is a
+    // detection-evasion primitive rather than a coverage gap.
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+
+    h.feed_ip(&ipv6_ext(17, "dead::1", "dead::2", &[(0, 6)], &udp(40000, 53, &dns("evil.com"))), 1);
+    assert_eq!(h.trails(), vec!["evil.com"], "a Hop-by-Hop header must not hide the DNS query behind it");
+
+    // a chain, and one of the 4-octet-unit kinds (AH) which measures its length differently
+    h.feed_ip(&ipv6_ext(17, "dead::3", "dead::4", &[(0, 6), (60, 6), (43, 14)], &udp(40001, 53, &dns("evil.com"))), 2);
+    assert!(h.errors().is_empty(), "{:?}", h.errors());
+}
+
+#[test]
+fn ipv6_port_trails_survive_an_extension_header() {
+    // the same evasion, seen from the trail type: with the transport header unreachable there is
+    // no port, so an IP:port trail silently degrades to a plain IP match or to nothing at all
+    let mut h = trails(&[("[dead::beef]:443", "c2 (dummy)", "ref")]);
+    h.feed_ip(&ipv6_ext(6, "dead::1", "dead::beef", &[(60, 6)], &tcp(50000, 443, 0x02, b"")), 1);
+    let events = h.events();
+    assert_eq!(events.len(), 1, "{events:?}");
+    assert_eq!(events[0].trail, "[dead::beef]:443");
+}
+
+#[test]
 fn ipv6_addr_port_trail() {
     let mut h = trails(&[("[dead::beef]:443", "c2 (dummy)", "ref")]);
     h.feed_ip(&ipv6(6, "dead::1", "dead::beef", &tcp(50000, 443, 0x02, b"")), 1);
