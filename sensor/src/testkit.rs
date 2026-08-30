@@ -476,7 +476,7 @@ pub fn ipv6_ext(proto: u8, src: &str, dst: &str, exts: &[(u8, usize)], payload: 
             continue;
         }
         // total must be a multiple of 8; hdr_ext_len counts 8-octet units after the first
-        let total = (((2 + body) + 7) / 8) * 8;
+        let total = (2 + body).div_ceil(8) * 8;
         chain.push(next);
         chain.push((total / 8 - 1) as u8);
         chain.resize(chain.len() + total - 2, 0);
