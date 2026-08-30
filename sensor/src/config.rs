@@ -752,9 +752,22 @@ impl Config {
 
         let capture_fanout_mode = {
             let v = get_str(&raw, "CAPTURE_FANOUT_MODE");
-            match FanoutMode::parse(&v) {
-                Some(m) => m,
-                None => bail!("invalid configuration value for 'CAPTURE_FANOUT_MODE' ('{v}')"),
+            if v.trim().is_empty() {
+                // Unset. A single worker never forms a fanout group, so the mode is moot there.
+                // Above one it decides whether the scan heuristics survive being split at all -
+                // flow hashing costs 34% of them at 8 workers - so the default is the mode that
+                // does not quietly trade detections for throughput. An operator who wants the old
+                // behaviour asks for it by name.
+                if capture_workers > 1 {
+                    FanoutMode::Source
+                } else {
+                    FanoutMode::Hash
+                }
+            } else {
+                match FanoutMode::parse(&v) {
+                    Some(m) => m,
+                    None => bail!("invalid configuration value for 'CAPTURE_FANOUT_MODE' ('{v}')"),
+                }
             }
         };
 
@@ -1079,6 +1092,49 @@ SENSOR_NAME box   # trailing comment
         assert_eq!(write("cw.conf", "CAPTURE_WORKERS 4\n").capture_workers, 4);
         assert_eq!(write("cf.conf", "CAPTURE_FANOUT 8\n").capture_workers, 8);
         assert!(write("auto.conf", "CAPTURE_WORKERS auto\n").capture_workers >= 1);
+    }
+
+    #[test]
+    fn fanout_defaults_to_source_affinity_only_when_it_matters() {
+        let dir = std::env::temp_dir().join("mt-cfg-fanout-default");
+        let _ = std::fs::create_dir_all(&dir);
+        let base = "MONITOR_INTERFACE any\nCAPTURE_BUFFER 1MB\nLOG_DIR /tmp\nUPDATE_PERIOD 86400\n";
+        let write = |name: &str, extra: &str| {
+            let path = dir.join(name);
+            std::fs::write(&path, format!("{base}{extra}")).unwrap();
+            Config::load(&path).expect("config must load")
+        };
+
+        // One worker forms no fanout group at all, so nothing is gained by changing the mode -
+        // and leaving it alone keeps the single-worker configuration byte-identical to before.
+        assert_eq!(write("one.conf", "").capture_fanout_mode, FanoutMode::Hash);
+        assert_eq!(write("cw1.conf", "CAPTURE_WORKERS 1\n").capture_fanout_mode, FanoutMode::Hash);
+
+        // Above one worker the mode decides whether the scan heuristics survive the split, so the
+        // default must be the one that does not lose them.
+        for (name, extra) in [
+            ("cw2.conf", "CAPTURE_WORKERS 2\n"),
+            ("cw8.conf", "CAPTURE_WORKERS 8\n"),
+            ("cf4.conf", "CAPTURE_FANOUT 4\n"),
+        ] {
+            let cfg = write(name, extra);
+            assert!(cfg.capture_workers > 1, "{name} should have fanned out");
+            assert_eq!(cfg.capture_fanout_mode, FanoutMode::Source, "{name} must default to source affinity");
+        }
+
+        // An operator who names a mode gets it, including the old behaviour.
+        assert_eq!(
+            write("hash.conf", "CAPTURE_WORKERS 4\nCAPTURE_FANOUT_MODE hash\n").capture_fanout_mode,
+            FanoutMode::Hash
+        );
+        assert_eq!(
+            write("cpu.conf", "CAPTURE_WORKERS 4\nCAPTURE_FANOUT_MODE cpu\n").capture_fanout_mode,
+            FanoutMode::Cpu
+        );
+        assert_eq!(
+            write("src1.conf", "CAPTURE_WORKERS 1\nCAPTURE_FANOUT_MODE source\n").capture_fanout_mode,
+            FanoutMode::Source
+        );
     }
 
     #[test]

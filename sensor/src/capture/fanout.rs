@@ -44,7 +44,11 @@ impl std::fmt::Display for FanoutError {
             FanoutError::SetSockOpt(e) => write!(f, "setsockopt(SOL_PACKET, PACKET_FANOUT) failed: {e}"),
             FanoutError::SetProgram(e) => write!(
                 f,
-                "setsockopt(SOL_PACKET, PACKET_FANOUT_DATA) failed: {e} (source-affine fanout needs PACKET_FANOUT_CBPF, Linux 4.5+)"
+                "setsockopt(SOL_PACKET, PACKET_FANOUT_DATA) failed: {e}\n\
+                 source-affine fanout needs PACKET_FANOUT_CBPF (Linux 4.5+). It is the default \
+                 above one worker because flow hashing loses a third of the scan-heuristic alerts \
+                 at 8 workers; set 'CAPTURE_FANOUT_MODE hash' to accept that loss deliberately, \
+                 or 'CAPTURE_WORKERS 1' to avoid it."
             ),
         }
     }
