@@ -1140,7 +1140,11 @@
   }
   function startPoll() {   // fallback when SSE is unavailable/broken
     if (state._liveTimer) return;
-    state._liveTimer = setInterval(function () { if (state.live) liveTick(currentDate()); }, LIVE_MS);
+    // A range is a STATIC view: the server's concatenated reader snapshots each file's size when
+    // it opens, so a range can never grow under the tail. Only the newest day is still being
+    // appended to, and following it while showing seven would put new rows under a heading that
+    // does not cover them.
+    state._liveTimer = setInterval(function () { var d = currentDate(); if (state.live && !isRange(d)) liveTick(d); }, LIVE_MS);
   }
   // batch lines pushed over SSE and merge them in one render (handles bursts without re-rendering per line)
   // `date` = the day this stream is for; ignore anything that isn't the currently-viewed day (e.g. a late
@@ -1180,6 +1184,12 @@
     state.live = on;
     var btn = document.getElementById("live_btn"); if (btn) { btn.classList.toggle("on", on); btn.setAttribute("aria-pressed", on ? "true" : "false"); }
     stopLive();
+    if (on && !DEMO && isRange(currentDate())) {
+      // A multi-day selection is a static view (see startPoll). Opening a stream for it would
+      // hold one of the server's limited /live slots to deliver lines this view then discards.
+      setStatus("live updates apply to a single day — pick one day to follow new events");
+      return;
+    }
     if (on && !DEMO) {
       try { if ("Notification" in window && Notification.permission === "default") Notification.requestPermission(); } catch (e) { }
       state._sseOk = false;
@@ -2743,16 +2753,49 @@
   var DEMO = (typeof window.getDemoCSV === "function");
   function pad2(n) { return (n < 10 ? "0" : "") + n; }
   function todayStr() { var d = new Date(); return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
-  function currentDate() { var d = document.getElementById("date_input"); return d && d.value ? d.value : todayStr(); }
+  // Issue #4 (open since 2015): a selection can be one day or a range, spelled "START_END" - the
+  // form /events has always understood. `date_input` is a native <input type="date"> and cannot
+  // hold that string, so a range lives in its dataset and the input keeps the range's LAST day
+  // (which is what the native control should show, and what prev/next step from).
+  var RANGE_RE = /^(\d{4}-\d{2}-\d{2})_(\d{4}-\d{2}-\d{2})$/;
+  function rangeParts(s) { var m = RANGE_RE.exec(s || ""); return m ? [m[1], m[2]] : null; }
+  function isRange(s) { return !!rangeParts(s); }
+  function daySpan(a, b) { return Math.round((new Date(b + "T00:00:00") - new Date(a + "T00:00:00")) / 86400000) + 1; }
+  function addDays(ds, n) {
+    var dt = new Date(ds + "T00:00:00"); dt.setDate(dt.getDate() + n);
+    return dt.getFullYear() + "-" + pad2(dt.getMonth() + 1) + "-" + pad2(dt.getDate());
+  }
+  function currentDate() {
+    var d = document.getElementById("date_input");
+    if (d && d.dataset && isRange(d.dataset.day)) return d.dataset.day;
+    return d && d.value ? d.value : todayStr();
+  }
   var MON_ABBR = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
   // keep the condensed two-row readout (MON DD / YYYY) in sync with the hidden native date input
   function renderDateFace() {
-    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(currentDate()); if (!m) return;
-    var top = document.getElementById("df_top"), bot = document.getElementById("df_bot");
+    var cur = currentDate(), top = document.getElementById("df_top"), bot = document.getElementById("df_bot"),
+        face = document.getElementById("dateface"), r = rangeParts(cur), m;
+    if (r) {
+      var a = /^(\d{4})-(\d{2})-(\d{2})$/.exec(r[0]), b = /^(\d{4})-(\d{2})-(\d{2})$/.exec(r[1]);
+      if (!a || !b) return;
+      // same month reads "JAN 01–07"; across months the second month is named too
+      if (top) top.textContent = a[2] === b[2] && a[1] === b[1]
+        ? MON_ABBR[(+a[2] - 1) % 12] + " " + a[3] + "–" + b[3]
+        : MON_ABBR[(+a[2] - 1) % 12] + " " + a[3] + " – " + MON_ABBR[(+b[2] - 1) % 12] + " " + b[3];
+      if (bot) bot.textContent = daySpan(r[0], r[1]) + " DAYS";
+      if (face) face.title = r[0] + " to " + r[1] + " — shift-click a day to change the range, click one day for live view";
+      return;
+    }
+    m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(cur); if (!m) return;
     if (top) top.textContent = MON_ABBR[(+m[2] - 1) % 12] + " " + m[3];
     if (bot) bot.textContent = m[1];
+    if (face) face.title = "pick a day — shift-click a second day for a range";
   }
-  function setDate(s) { var d = document.getElementById("date_input"); if (d) { d.value = s; d.dataset.day = s; } renderDateFace(); }
+  function setDate(s) {
+    var d = document.getElementById("date_input"), r = rangeParts(s);
+    if (d) { d.value = r ? r[1] : s; d.dataset.day = s; }
+    renderDateFace();
+  }
 
   // ---- day picker: a cal-heatmap–style event-density grid (GitHub-contributions look), rendered natively (no d3) ----
   // Shows the last few months as a grid of day-squares colored by that day's event volume (from /counts): an empty
@@ -2806,7 +2849,7 @@
       c.className = "ch-d ch-q" + heatBucket(n) + (future ? " ch-fut" : "") + (ds === sel ? " ch-sel" : "");
       c.dataset.date = ds;
       c.title = MON_SHORT[m] + " " + i + " " + y + (future ? "" : " · " + (n ? (n >= 100 ? "≈ " : "") + fmtN(n) + " events" : "no events"));
-      if (!future) c.onclick = function () { pickDay(this.dataset.date); };
+      if (!future) c.onclick = function (ev) { pickDay(this.dataset.date, ev && ev.shiftKey); };
       grid.appendChild(c);
     }
     wrap.appendChild(grid);
@@ -2849,9 +2892,16 @@
     if (y > t.getFullYear() || (y === t.getFullYear() && m > t.getMonth())) return;   // window can't end past the current month
     state._dpY = y; state._dpM = m; buildHeatmap(); positionDatePop();
   }
-  function pickDay(ds) {
+  function pickDay(ds, extend) {
     var di = document.getElementById("date_input"); if (di && di.disabled && !DEMO) return;
-    setDate(ds); closeDatePicker(); navigate(ds); if (di) di.focus();
+    var sel = ds;
+    if (extend) {
+      // extend from whichever end of the current selection is furthest away, so shift-clicking
+      // either side of a range grows it rather than silently replacing it
+      var cur = currentDate(), r = rangeParts(cur), anchor = r ? (ds < r[0] ? r[1] : r[0]) : cur;
+      if (/^\d{4}-\d{2}-\d{2}$/.test(anchor) && anchor !== ds) sel = anchor < ds ? anchor + "_" + ds : ds + "_" + anchor;
+    }
+    setDate(sel); closeDatePicker(); navigate(sel); if (di) di.focus();
   }
   // The demo's fixed 2024-01-11 timestamps are rebased to TODAY so the calendar and the "x ago" column agree
   // (otherwise the picker shows 2024 while rows claim "5m ago"). Single-day data; date appears only in the leading ts.
@@ -2865,8 +2915,15 @@
     if (state.live) { state._sseOk = false; openSSE(date); }   // and re-open it for the new day
   }
   function shiftDay(delta) {
-    var dt = new Date(currentDate() + "T00:00:00"); dt.setDate(dt.getDate() + delta);
-    var ns = dt.getFullYear() + "-" + pad2(dt.getMonth() + 1) + "-" + pad2(dt.getDate());
+    var cur = currentDate(), r = rangeParts(cur), ns;
+    if (r) {
+      // step a whole window at a time: "the previous 7 days" is what the arrows should mean once
+      // a 7-day range is on screen, not "the same range shifted by one day"
+      var span = daySpan(r[0], r[1]);
+      ns = addDays(r[0], delta * span) + "_" + addDays(r[1], delta * span);
+    } else {
+      ns = addDays(cur, delta);
+    }
     setDate(ns); navigate(ns);
   }
 

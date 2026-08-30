@@ -217,6 +217,73 @@ console.log(JSON.stringify(parseEvents(%s)));
         self.assertEqual(self._run(""), [])
 
 
+class TestDateRange(unittest.TestCase):
+    """Multi-day selection (issue #4, open since 2015).
+
+    /events has always understood "START_END"; only the UI was single-day. The date arithmetic is
+    what actually breaks here - month ends, leap days, year boundaries and DST - so it is tested
+    rather than eyeballed.
+    """
+
+    def setUp(self):
+        self.js = _read(MAIN_JS)
+
+    def _eval(self, expr):
+        for candidate in ("node", "nodejs"):
+            if any(os.access(os.path.join(d, candidate), os.X_OK)
+                   for d in os.environ.get("PATH", "").split(os.pathsep) if d):
+                node = candidate
+                break
+        else:
+            raise unittest.SkipTest("needs node")
+        pieces = []
+        for pattern in (r"var RANGE_RE = /.*?/;",
+                        r"function rangeParts\(s\) \{.*?\}",
+                        r"function isRange\(s\) \{.*?\}",
+                        r"function daySpan\(a, b\) \{.*?\}",
+                        r"function addDays\(ds, n\) \{.*?\n  \}"):
+            m = re.search(pattern, self.js, re.S)
+            self.assertTrue(m, "could not find %s in main.js" % pattern)
+            pieces.append(m.group(0))
+        script = "function pad2(n){return (n<10?'0':'')+n;}\n" + "\n".join(pieces) + "\nconsole.log(JSON.stringify(%s));" % expr
+        import subprocess
+        return json.loads(subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode())
+
+    def test_a_range_is_told_apart_from_a_day(self):
+        self.assertEqual(self._eval('rangeParts("2026-01-01_2026-01-07")'), ["2026-01-01", "2026-01-07"])
+        self.assertIsNone(self._eval('rangeParts("2026-01-01")'))
+        self.assertFalse(self._eval('isRange("2026-01-01")'))
+        self.assertFalse(self._eval('isRange("")'))
+
+    def test_day_spans_are_inclusive(self):
+        self.assertEqual(self._eval('daySpan("2026-01-01", "2026-01-01")'), 1)
+        self.assertEqual(self._eval('daySpan("2026-01-01", "2026-01-07")'), 7)
+        # across a month end, a year end and a leap day
+        self.assertEqual(self._eval('daySpan("2026-01-30", "2026-02-02")'), 4)
+        self.assertEqual(self._eval('daySpan("2025-12-30", "2026-01-02")'), 4)
+        self.assertEqual(self._eval('daySpan("2024-02-28", "2024-03-01")'), 3)
+
+    def test_stepping_days_crosses_boundaries(self):
+        self.assertEqual(self._eval('addDays("2026-01-31", 1)'), "2026-02-01")
+        self.assertEqual(self._eval('addDays("2026-01-01", -1)'), "2025-12-31")
+        self.assertEqual(self._eval('addDays("2024-02-28", 1)'), "2024-02-29", "2024 is a leap year")
+        self.assertEqual(self._eval('addDays("2023-02-28", 1)'), "2023-03-01")
+        self.assertEqual(self._eval('addDays("2026-01-01", 0)'), "2026-01-01")
+
+    def test_a_window_steps_by_its_own_length(self):
+        # what prev/next must do with a 7-day range on screen: show the PREVIOUS seven days
+        span = self._eval('daySpan("2026-01-08", "2026-01-14")')
+        self.assertEqual(span, 7)
+        self.assertEqual(self._eval('addDays("2026-01-08", -1 * 7)'), "2026-01-01")
+        self.assertEqual(self._eval('addDays("2026-01-14", -1 * 7)'), "2026-01-07")
+
+    def test_dst_does_not_shift_a_day(self):
+        # local-midnight arithmetic must not lose or gain a day across a DST transition
+        self.assertEqual(self._eval('addDays("2026-03-28", 1)'), "2026-03-29")
+        self.assertEqual(self._eval('addDays("2026-03-29", 1)'), "2026-03-30")
+        self.assertEqual(self._eval('daySpan("2026-03-27", "2026-03-31")'), 5)
+
+
 class TestFamily(unittest.TestCase):
     """family: pulls a campaign back together.
 

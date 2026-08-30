@@ -5,6 +5,7 @@ actual HTTP contract the dashboard relies on: challenge-response login, /events 
 /counts, /check_ip, and malformed/edge inputs -- asserting the server answers correctly and never
 5xx/crashes. Raw-socket HTTP client -> no urllib py2/py3 differences. Skips cleanly if the server
 can't bind (e.g. sandbox)."""
+import datetime
 import json
 import io
 import os
@@ -118,7 +119,7 @@ class TestHttpd(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.tmp = tempfile.mkdtemp(prefix="mt_httpd_")
-        logdir = os.path.join(cls.tmp, "logs"); os.makedirs(logdir)
+        logdir = cls.logdir = os.path.join(cls.tmp, "logs"); os.makedirs(logdir)
         cls.date = time.strftime("%Y-%m-%d")
         from core.log import safe_value                    # write lines EXACTLY as log_event does (quoted spaced fields)
         def line(ts, *fields):
@@ -722,6 +723,51 @@ class TestHttpd(unittest.TestCase):
         _, anon_head, _ = _http(self.port, "GET", "/trails")
         _, analyst_head, _ = _http(self.port, "GET", "/trails", cookie=self._login("analyst"))
         self.assertEqual(self._etag(anon_head), self._etag(analyst_head))
+
+    def test_a_date_range_selects_every_day_in_it(self):
+        # issue #4, open since 2015: /events has always understood START_END, but nothing else did
+        from core.httpd import _selected_days, MAX_RANGE_DAYS
+        self.assertEqual(_selected_days("2026-01-05"), ["2026-01-05"])
+        self.assertEqual(_selected_days("2026-01-01_2026-01-03"), ["2026-01-01", "2026-01-02", "2026-01-03"])
+        # written backwards is still a range - the picker can produce either order
+        self.assertEqual(_selected_days("2026-01-03_2026-01-01"), ["2026-01-01", "2026-01-02", "2026-01-03"])
+
+    def test_a_bogus_date_selects_nothing_rather_than_today(self):
+        from core.httpd import _selected_days
+        for bad in ("", "garbage", "2026-13-99", "2026-02-30", "2026-01-01_", "../../etc/passwd"):
+            self.assertEqual(_selected_days(bad), [], "%r must select no day" % bad)
+
+    def test_an_enormous_range_is_capped_not_walked(self):
+        # without a cap, ?date=1970-01-01_2038-01-19 asks the server to stat 25,000 files, which
+        # is a cheap way to occupy a worker
+        from core.httpd import _selected_days, MAX_RANGE_DAYS
+        days = _selected_days("1970-01-01_2038-01-19")
+        self.assertEqual(len(days), MAX_RANGE_DAYS)
+        self.assertEqual(days[-1], "2038-01-19", "the cap must keep the most RECENT window")
+
+    def test_geo_aggregates_a_range_instead_of_only_its_first_day(self):
+        # /geo used to re.search the first date out of the parameter, so a range mapped day one
+        # while the table beside it showed the whole span
+        cookie = self._login("admin")
+        one = json.loads(_http(self.port, "GET", "/geo?date=%s" % self.date, cookie=cookie)[2].decode())
+        self.assertGreater(one["mapped"] + one["unmapped"], 0, "fixture should geolocate something")
+
+        # a range whose extra day has no log must read exactly like the single day: a missing file
+        # is an ordinary gap in history, not an error
+        prev = (datetime.datetime.strptime(self.date, "%Y-%m-%d") - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+        gap = json.loads(_http(self.port, "GET", "/geo?date=%s_%s" % (prev, self.date), cookie=cookie)[2].decode())
+        self.assertEqual(gap["counts"], one["counts"])
+
+        # now give that day its own log: the range must return the SUM, not either end of it
+        extra = os.path.join(self.logdir, "%s.log" % prev)
+        with open(extra, "w") as f:
+            f.write('"%s 09:00:00.000000" sensor-a 10.0.0.5 5000 66.66.66.66 443 TCP IP 66.66.66.66 "badnet (dummy)" (static)\n' % prev)
+        try:
+            both = json.loads(_http(self.port, "GET", "/geo?date=%s_%s" % (prev, self.date), cookie=cookie)[2].decode())
+            self.assertEqual(both["mapped"] + both["unmapped"], one["mapped"] + one["unmapped"] + 1,
+                             "the extra day's event was not aggregated")
+        finally:
+            os.remove(extra)
 
     def _failed_login(self, username="admin"):
         import binascii

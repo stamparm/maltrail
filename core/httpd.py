@@ -732,6 +732,45 @@ def estimate_event_count(filepath, size):
     mean_line = 1.0 * sampled_bytes / max(1, sampled_lines)  # max(1,..) guards the degenerate no-newline case
     return int(round(size / mean_line / 100.0) * 100)
 
+# The most days a single request may aggregate. Issue #4 asks for more than one day, not for an
+# unbounded sweep: without a cap, `?date=1970-01-01_2038-01-19` is a request to stat 25,000 files
+# and the endpoint becomes a cheap way to occupy a worker.
+MAX_RANGE_DAYS = 92
+
+def _selected_days(value):
+    """The day(s) a `date` parameter selects: ["YYYY-MM-DD", ...], oldest first.
+
+    Accepts one day or the `START_END` range `/events` has always understood, so every endpoint
+    that reads a day's log agrees on what was asked for. An unparseable value selects nothing,
+    which renders as an empty day rather than as today's data under yesterday's heading.
+    """
+
+    value = (value or "").strip()
+    single = re.match(r"^(\d{4}-\d{2}-\d{2})$", value)
+    if single:
+        try:    # the shape is not the same as a real date: "2026-13-99" matches and is neither
+            datetime.datetime.strptime(single.group(1), "%Y-%m-%d")
+        except ValueError:
+            return []
+        return [single.group(1)]
+
+    pair = re.match(r"^(\d{4}-\d{2}-\d{2})_(\d{4}-\d{2}-\d{2})$", value)
+    if not pair:
+        return []
+
+    try:
+        start = datetime.datetime.strptime(pair.group(1), "%Y-%m-%d").date()
+        end = datetime.datetime.strptime(pair.group(2), "%Y-%m-%d").date()
+    except ValueError:
+        return []
+    if end < start:
+        start, end = end, start
+    span = (end - start).days + 1
+    if span > MAX_RANGE_DAYS:
+        start = end - datetime.timedelta(days=MAX_RANGE_DAYS - 1)   # keep the most recent window
+        span = MAX_RANGE_DAYS
+    return [(start + datetime.timedelta(days=_)).strftime("%Y-%m-%d") for _ in xrange(span)]
+
 def _geo_home():
     """Optional HOME_LAT/HOME_LON from config as {"lat","lon"} for the attack map's arcs, or None (air-gap can't auto-locate)."""
 
@@ -2279,12 +2318,16 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 self.send_response(_http_client.NO_CONTENT)  # per-user redaction can't be byte-streamed -> client polls
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
                 return None
-            try:
-                date = datetime.datetime.strptime(params.get("date", ""), "%Y-%m-%d").strftime("%Y-%m-%d")
-            except ValueError:
+            # A multi-day selection streams the LAST day in it. Live means "what is arriving now",
+            # and only the newest day is still being appended to - the earlier files in a range are
+            # closed. Passing the range string here used to raise straight into a 400, so a client
+            # that opened /live for a range got no stream and no explanation.
+            days = _selected_days(params.get("date", ""))
+            if not days:
                 self.send_response(_http_client.BAD_REQUEST)
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
                 return None
+            date = days[-1]
             event_log_path = os.path.join(config.LOG_DIR, "%s.log" % date)
 
             # Budget check before the response line: a refused stream must look exactly like the
@@ -2472,58 +2515,65 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
 
             result = {"counts": {}, "mapped": 0, "unmapped": 0}
-            match = re.search(r"\d{4}-\d{2}-\d{2}", params.get("date", ""))
-            filepath = os.path.join(config.LOG_DIR, "%s.log" % match.group(0)) if match else None
-
-            if filepath and os.path.exists(filepath):
-                with _geo_lock:
-                    size = os.path.getsize(filepath)
-                    mtime = os.path.getmtime(filepath)
-                    cache_key = (filepath, scope_key)   # NOTE: shared global cache - see the note in _counts
-                    c = _geo_cache.get(cache_key)
-                    if c and c["size"] == size and c["mtime"] == mtime:
-                        counts, mapped, unmapped = c["counts"], c["mapped"], c["unmapped"]  # unchanged -> reuse
-                    else:
-                        if c and size > c["size"]:                                          # grew (append) -> scan only new bytes
-                            counts, mapped, unmapped, start = dict(c["counts"]), c["mapped"], c["unmapped"], c["offset"]
-                        else:                                                               # new / rotated / shrank -> full scan
-                            counts, mapped, unmapped, start = {}, 0, 0, 0
-                        offset = start
-                        try:
-                            with open(filepath, "rb") as f:
-                                f.seek(start)
-                                pending = b""
-                                while True:
-                                    buf = f.read(1024 * 1024)   # 1 MB chunks -> bounded memory even on a huge full scan
-                                    if not buf:
-                                        break
-                                    pending += buf
-                                    nl = pending.rfind(b"\n")
-                                    if nl < 0:
-                                        continue
-                                    chunk, pending = pending[:nl + 1], pending[nl + 1:]     # only COMPLETE lines; keep a partial tail for next time
-                                    offset += len(chunk)
-                                    for line in chunk.split(b"\n"):
-                                        cut = line.find(b'" ')  # end of the quoted leading timestamp
-                                        if cut < 0:
+            # A selected RANGE has to aggregate every day in it. This used to take the FIRST
+            # date it could find in the parameter, so a range would have mapped day one while the
+            # table beside it showed all seven - a quietly wrong picture rather than an error.
+            days = _selected_days(params.get("date", ""))
+            for day in days:
+                filepath = os.path.join(config.LOG_DIR, "%s.log" % day)
+                if os.path.exists(filepath):
+                    with _geo_lock:
+                        size = os.path.getsize(filepath)
+                        mtime = os.path.getmtime(filepath)
+                        cache_key = (filepath, scope_key)   # NOTE: shared global cache - see the note in _counts
+                        c = _geo_cache.get(cache_key)
+                        if c and c["size"] == size and c["mtime"] == mtime:
+                            counts, mapped, unmapped = c["counts"], c["mapped"], c["unmapped"]  # unchanged -> reuse
+                        else:
+                            if c and size > c["size"]:                                          # grew (append) -> scan only new bytes
+                                counts, mapped, unmapped, start = dict(c["counts"]), c["mapped"], c["unmapped"], c["offset"]
+                            else:                                                               # new / rotated / shrank -> full scan
+                                counts, mapped, unmapped, start = {}, 0, 0, 0
+                            offset = start
+                            try:
+                                with open(filepath, "rb") as f:
+                                    f.seek(start)
+                                    pending = b""
+                                    while True:
+                                        buf = f.read(1024 * 1024)   # 1 MB chunks -> bounded memory even on a huge full scan
+                                        if not buf:
+                                            break
+                                        pending += buf
+                                        nl = pending.rfind(b"\n")
+                                        if nl < 0:
                                             continue
-                                        parts = line[cut + 2:].split(b' ')  # sensor,src,sport,dst,dport,proto,type,TRAIL,...
-                                        if len(parts) <= 7:
-                                            continue
-                                        if restricted and not self._line_in_scope(line.decode(UNICODE_ENCODING, "ignore"), addresses, netmasks, regex)[0]:
-                                            continue
-                                        # place the external malicious endpoint per trail type (see core.geo.event_country)
-                                        cc = event_country(parts[6].decode("latin-1"), parts[1].decode("latin-1"), parts[3].decode("latin-1"), parts[7].decode("latin-1"))
-                                        if cc:
-                                            counts[cc] = counts.get(cc, 0) + 1
-                                            mapped += 1
-                                        else:
-                                            unmapped += 1
-                        except Exception:
-                            if config.SHOW_DEBUG:
-                                traceback.print_exc()
-                        _geo_cache[cache_key] = {"mtime": mtime, "size": size, "offset": offset, "counts": counts, "mapped": mapped, "unmapped": unmapped}
-                    result = {"counts": counts, "mapped": mapped, "unmapped": unmapped}
+                                        chunk, pending = pending[:nl + 1], pending[nl + 1:]     # only COMPLETE lines; keep a partial tail for next time
+                                        offset += len(chunk)
+                                        for line in chunk.split(b"\n"):
+                                            cut = line.find(b'" ')  # end of the quoted leading timestamp
+                                            if cut < 0:
+                                                continue
+                                            parts = line[cut + 2:].split(b' ')  # sensor,src,sport,dst,dport,proto,type,TRAIL,...
+                                            if len(parts) <= 7:
+                                                continue
+                                            if restricted and not self._line_in_scope(line.decode(UNICODE_ENCODING, "ignore"), addresses, netmasks, regex)[0]:
+                                                continue
+                                            # place the external malicious endpoint per trail type (see core.geo.event_country)
+                                            cc = event_country(parts[6].decode("latin-1"), parts[1].decode("latin-1"), parts[3].decode("latin-1"), parts[7].decode("latin-1"))
+                                            if cc:
+                                                counts[cc] = counts.get(cc, 0) + 1
+                                                mapped += 1
+                                            else:
+                                                unmapped += 1
+                            except Exception:
+                                if config.SHOW_DEBUG:
+                                    traceback.print_exc()
+                            _geo_cache[cache_key] = {"mtime": mtime, "size": size, "offset": offset, "counts": counts, "mapped": mapped, "unmapped": unmapped}
+                        # merge this day into the running total
+                        for _cc, _n in counts.items():
+                            result["counts"][_cc] = result["counts"].get(_cc, 0) + _n
+                        result["mapped"] += mapped
+                        result["unmapped"] += unmapped
 
             out = dict(result)
             out["home"] = _geo_home()  # config, not part of the per-day cache: cheap and may change on reload
