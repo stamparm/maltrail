@@ -9,7 +9,7 @@ use std::path::PathBuf;
 use maltrail_sensor::addr::{self, Ip};
 use maltrail_sensor::event::{self, Field};
 use maltrail_sensor::heuristics::nxdomain::{consonant_count, label_entropy};
-use maltrail_sensor::output;
+use maltrail_sensor::output::{self, Severity};
 use maltrail_sensor::protocols::http;
 use maltrail_sensor::pyre;
 use maltrail_sensor::settings;
@@ -321,6 +321,50 @@ fn entropy_and_consonants_match_python() {
         let got = label_entropy(&row[0]);
         assert!((got - expected).abs() < 1e-9, "entropy({:?}) = {got} != {expected}", row[0]);
         assert_eq!(consonant_count(&row[0]).to_string(), row[2], "consonants({:?})", row[0]);
+    }
+}
+
+/// The JSON rendering of an event, against Python's `core/log.py:event_json()`.
+///
+/// `output.rs:logstash_line()` reproduces `json.dumps()` by hand - including `ensure_ascii`
+/// escaping and surrogate pairs above the BMP - and nothing checked that until this vector. It
+/// matters more now than it did as a wire format: `LOCAL_LOG_FORMAT json` writes this to disk,
+/// where a divergence is a file that half a pipeline cannot read.
+#[test]
+fn event_json_matches_python() {
+    let rows = load("event_json.tsv");
+    assert!(!rows.is_empty(), "event_json.tsv is empty");
+    let field = |v: &str| -> Field {
+        if let Ok(n) = v.parse::<i64>() {
+            Field::Int(n)
+        } else {
+            Field::Text(v.to_string())
+        }
+    };
+    // Event borrows proto/type as &'static str, so a test that reads them from a file has to
+    // outlive the file. Leaking a handful of strings in a test costs nothing.
+    let stat = |v: &str| -> &'static str { Box::leak(v.to_string().into_boxed_str()) };
+    for row in &rows {
+        let event = event::Event::new(
+            row[0].parse::<u64>().expect("sec"),
+            0,
+            stat(&row[1]),
+            field(&row[2]),
+            field(&row[3]),
+            field(&row[4]),
+            stat(&row[5]),
+            stat(&row[6]),
+            field(&row[7]),
+            stat(&row[8]),
+            stat(&row[9]),
+        );
+        let severity = match row[10].as_str() {
+            "low" => Severity::Low,
+            "high" => Severity::High,
+            _ => Severity::Medium,
+        };
+        let got = output::logstash_line(&event, severity, &row[11]);
+        assert_eq!(got, row[12], "event_json for trail {:?}", row[7]);
     }
 }
 

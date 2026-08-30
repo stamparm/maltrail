@@ -314,8 +314,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                             _send_datagram(endpoint, _)
 
                     if config.LOGSTASH_SERVER:
-                        _ = OrderedDict((("timestamp", sec), ("sensor", HOSTNAME), ("severity", severity), ("src_ip", src_ip), ("src_port", src_port), ("dst_ip", dst_ip), ("dst_port", dst_port), ("proto", proto), ("type", trail_type), ("trail", trail), ("info", info), ("reference", reference)))
-                        _ = json.dumps(_).encode(UNICODE_ENCODING)
+                        _ = event_json(event_tuple, severity, HOSTNAME).encode(UNICODE_ENCODING)
                         for endpoint in _endpoints(config.LOGSTASH_SERVER):
                             _send_datagram(endpoint, _)
 
@@ -326,6 +325,31 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
     except (OSError, IOError):
         if config.SHOW_DEBUG:
             traceback.print_exc()
+
+def event_json(event_tuple, severity, sensor):
+    """One event as a JSON object, the form LOGSTASH_SERVER has always sent.
+
+    Extracted so there is exactly one definition of what an event looks like in JSON. It is also
+    what `LOCAL_LOG_FORMAT json` writes, so a file on disk and a datagram on the wire describe an
+    event the same way - and `sensor/src/output.rs:logstash_line()` renders it byte-for-byte
+    identically, which `sensor/tests/vectors.rs` pins against this function's output.
+    """
+
+    sec, _, src_ip, src_port, dst_ip, dst_port, proto, trail_type, trail, info, reference = event_tuple
+    return json.dumps(OrderedDict((
+        ("timestamp", sec),
+        ("sensor", sensor),
+        ("severity", severity),
+        ("src_ip", src_ip),
+        ("src_port", src_port),
+        ("dst_ip", dst_ip),
+        ("dst_port", dst_port),
+        ("proto", proto),
+        ("type", trail_type),
+        ("trail", trail),
+        ("info", info),
+        ("reference", reference),
+    )))
 
 def severity_of(info):
     """"low" / "medium" / "high" for an event's info field, per REMOTE_SEVERITY_REGEX.

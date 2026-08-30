@@ -251,6 +251,44 @@ def ignore_rule_vectors():
     return rows
 
 
+def event_json_vectors():
+    """The JSON rendering of an event, from core/log.py:event_json() itself.
+
+    Two implementations render this - Python for LOGSTASH_SERVER, Rust in
+    sensor/src/output.rs:logstash_line() - and the Rust one deliberately reproduces json.dumps()
+    down to ensure_ascii escaping and surrogate pairs. Nothing checked that until now, and
+    `LOCAL_LOG_FORMAT json` turns this from a wire format into an on-disk one, where a divergence
+    would be a file half the tools in a pipeline cannot read.
+    """
+
+    from core.log import event_json
+
+    cases = [
+        (1700000000, "10.0.0.5", 50000, "66.66.66.66", 443, "TCP", "IP", "66.66.66.66", "malware (test)", "(static)", "medium", "box"),
+        (1700000001, "10.0.0.5", "-", "8.8.8.8", "-", "ICMP", "IP", "8.8.8.8", "known attacker", "(static)", "high", "sensor-1"),
+        # quotes and backslashes: the two characters that break a naive renderer
+        (1700000002, "10.0.0.5", 1, "1.2.3.4", 2, "UDP", "DNS", 'evil".com', 'a\\b "quoted"', "(custom)", "low", "b\\x"),
+        # non-ASCII, which json.dumps escapes rather than emitting raw
+        (1700000003, "10.0.0.5", 1, "1.2.3.4", 2, "TCP", "URL", u"na\u00efve.example", u"caf\u00e9 (malware)", "(static)", "medium", u"h\u00f4te"),
+        # above the BMP -> surrogate pair
+        # built with chr() rather than a \\U escape: an 8-hex-digit escape reads as an abbreviated
+        # commit id, and tools/check_refs.py is right to flag it as one
+        (1700000004, "10.0.0.5", 1, "1.2.3.4", 2, "TCP", "URL", chr(0x1F600) + ".example", "emoji " + chr(0x1F4A9), "(static)", "medium", "box"),
+        # control characters and a tab inside a field
+        (1700000005, "10.0.0.5", 1, "1.2.3.4", 2, "TCP", "URL", "a\tb", "line\nbreak\x01", "(static)", "medium", "box"),
+        # an address list, as the condenser writes it
+        (1700000006, "10.0.0.5,10.0.0.6", 1, "1.2.3.4", 2, "TCP", "IP", "1.2.3.4", "mass scanner", "(static)", "low", "box"),
+    ]
+
+    rows = []
+    for c in cases:
+        sec, src_ip, src_port, dst_ip, dst_port, proto, ttype, trail, info, ref, severity, sensor = c
+        tup = (sec, 0, src_ip, src_port, dst_ip, dst_port, proto, ttype, trail, info, ref)
+        rows.append([str(sec), src_ip, str(src_port), dst_ip, str(dst_port), proto, ttype, trail, info, ref,
+                     severity, sensor, event_json(tup, severity, sensor)])
+    return rows
+
+
 def valid_dns_name_vectors():
     values = ["evil.com", "a.b.example.com", "nodot", "bad_underscore.com", "-x.com", "x-.com",
               "1.2.3.4", "x..com", "UPPER.COM", "trailing.", "x.c", ""]
@@ -433,6 +471,7 @@ def main():
     write("checks.tsv", checks_vectors(), "path <TAB> post_data <TAB> checks joined by 0x1f")
     write("entropy.tsv", entropy_vectors(), "label <TAB> entropy <TAB> consonant count")
     write("ignore_rule.tsv", ignore_rule_vectors(), "kind <TAB> rule <TAB> value <TAB> 1 if it matches")
+    write("event_json.tsv", event_json_vectors(), "sec, src_ip, src_port, dst_ip, dst_port, proto, type, trail, info, ref, severity, sensor <TAB> JSON")
     write("valid_dns_name.tsv", valid_dns_name_vectors(), "name <TAB> matches VALID_DNS_NAME_REGEX")
     write("suspicious_request.tsv", suspicious_request_vectors(), "payload <TAB> first matching description")
     write("suspicious_ua.tsv", suspicious_ua_vectors(), "ua <TAB> whitelisted <TAB> suspicious match")
