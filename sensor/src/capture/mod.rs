@@ -2,6 +2,7 @@
 //! replay. Mirrors the handle setup in `sensor.py:init()`.
 
 pub mod fanout;
+pub mod srcfanout;
 
 use std::os::unix::io::AsRawFd;
 use std::path::Path;

@@ -86,13 +86,34 @@ fn flow_worker(packet: &[u8], ip_offset: usize, workers: usize) -> usize {
     if matches!(proto, 6 | 17) && packet.len() >= transport_off + 4 {
         key.extend_from_slice(&packet[transport_off..transport_off + 4]);
     }
-    // FNV-1a: any stable hash will do; this only has to be deterministic and well mixed.
+    fnv_worker(&key, workers)
+}
+
+/// FNV-1a: any stable hash will do; this only has to be deterministic and well mixed.
+fn fnv_worker(key: &[u8], workers: usize) -> usize {
     let mut h: u64 = 0xcbf2_9ce4_8422_2325;
-    for b in &key {
+    for b in key {
         h ^= u64::from(*b);
         h = h.wrapping_mul(0x1000_0000_01b3);
     }
     (h % workers as u64) as usize
+}
+
+/// Source-affine distribution: hash the SOURCE address and nothing else, so every packet a host
+/// sends lands on one worker regardless of which flow it belongs to.
+///
+/// This is the property `PACKET_FANOUT_CBPF` buys, and the reason it matters is that the scan
+/// heuristics count per SOURCE while `PACKET_FANOUT_HASH` splits per FLOW - a scanner walking
+/// ephemeral source ports is a new flow every probe, so its evidence is scattered across every
+/// worker and no single one reaches the threshold.
+fn source_worker(packet: &[u8], ip_offset: usize, workers: usize) -> usize {
+    let Some(&first) = packet.get(ip_offset) else { return 0 };
+    let src = match first >> 4 {
+        4 if packet.len() >= ip_offset + 20 => &packet[ip_offset + 12..ip_offset + 16],
+        6 if packet.len() >= ip_offset + 40 => &packet[ip_offset + 8..ip_offset + 24],
+        _ => return 0,
+    };
+    fnv_worker(src, workers)
 }
 
 /// One detection, identified by what it *is* rather than when it was written.
@@ -111,8 +132,8 @@ struct Outcome {
     heuristic: BTreeSet<EventKey>,
 }
 
-/// Replay `pcap` across `workers` independent workers, distributed by flow.
-fn replay_across(pcap: &Path, workers: usize) -> Outcome {
+/// Replay `pcap` across `workers` independent workers, distributed by `dist`.
+fn replay_across_with(pcap: &Path, workers: usize, dist: fn(&[u8], usize, usize) -> usize) -> Outcome {
     let mut hs: Vec<Harness> = (0..workers).map(|_| harness()).collect();
     let mut handle = Handle::open_offline(pcap).expect("open corpus pcap");
     let datalink = handle.datalink();
@@ -122,7 +143,7 @@ fn replay_across(pcap: &Path, workers: usize) -> Outcome {
         // Resolve the link-layer offset with worker 0's learner, then route by flow. (Every
         // worker sees the same link type, so resolving once is faithful.)
         let Some(offset) = hs[0].state.dlt.resolve(datalink, &data) else { continue };
-        let idx = flow_worker(&data, offset, workers);
+        let idx = dist(&data, offset, workers);
         hs[idx].feed(&data, captured.sec, captured.usec, offset);
     }
 
@@ -140,6 +161,11 @@ fn replay_across(pcap: &Path, workers: usize) -> Outcome {
         }
     }
     Outcome { exact, heuristic }
+}
+
+/// What the kernel does today: `PACKET_FANOUT_HASH`.
+fn replay_across(pcap: &Path, workers: usize) -> Outcome {
+    replay_across_with(pcap, workers, flow_worker)
 }
 
 fn corpus_pcaps() -> Vec<PathBuf> {
@@ -232,4 +258,66 @@ fn heuristic_dilution_is_measured_and_never_invents_alerts() {
          by SOURCE, and a scan is many flows (COMPATIBILITY.md §3). Set CAPTURE_WORKERS 1 for \
          undiluted heuristic fidelity."
     );
+}
+
+/// The point of source-affine fanout, measured against the flow hash it replaces.
+///
+/// `PACKET_FANOUT_HASH` splits by flow while the scan heuristics count by source, so a scanner's
+/// probes are scattered and no worker reaches the threshold. Hashing the source alone puts every
+/// packet a host sends on one worker, which is the condition those heuristics were written for.
+///
+/// This runs the real detection path over the real corpus and needs no kernel support, no root and
+/// no live interface: the distribution is applied in userspace exactly as `flow_worker` already
+/// was. What the kernel does with a CBPF program is asserted separately - here we are asking
+/// whether the DISTRIBUTION is the right one, which is the part that decides whether alerts live.
+#[test]
+fn source_affine_fanout_keeps_the_scan_heuristics() {
+    let pcaps = corpus_pcaps();
+    if pcaps.is_empty() {
+        return;
+    }
+
+    let mut base = 0usize;
+    let mut rows: Vec<(usize, usize, usize)> = Vec::new();
+
+    for workers in [2usize, 4, 8] {
+        let (mut kept_src, mut kept_flow, mut total) = (0usize, 0usize, 0usize);
+        for pcap in &pcaps {
+            let one = replay_across_with(pcap, 1, source_worker);
+            let src = replay_across_with(pcap, workers, source_worker);
+            let flow = replay_across_with(pcap, workers, flow_worker);
+
+            total += one.heuristic.len();
+            kept_src += one.heuristic.intersection(&src.heuristic).count();
+            kept_flow += one.heuristic.intersection(&flow.heuristic).count();
+
+            // the invariant that holds for ANY distribution: never invent an alert
+            let invented: Vec<&EventKey> = src.heuristic.difference(&one.heuristic).collect();
+            assert!(invented.is_empty(), "{}: source-affine invented {:?}", pcap.display(), invented);
+
+            // and exact trail detection stays a stateless per-packet decision
+            assert_eq!(
+                one.exact,
+                src.exact,
+                "{}: exact detections must be identical at {workers} workers",
+                pcap.display()
+            );
+        }
+        base = total;
+        rows.push((workers, kept_src, kept_flow));
+    }
+
+    println!("[i] heuristic alerts with 1 worker: {base}");
+    for (workers, kept_src, kept_flow) in &rows {
+        let p_src = (kept_src * 100).checked_div(base).unwrap_or(100);
+        let p_flow = (kept_flow * 100).checked_div(base).unwrap_or(100);
+        println!("[i]   {workers} workers: source-affine {kept_src} ({p_src}%)  vs  flow-hash {kept_flow} ({p_flow}%)");
+    }
+
+    // The claim being made, in the strongest form the corpus supports: splitting by source costs
+    // NOTHING at any worker count. If this ever fails, source affinity is not sufficient for some
+    // heuristic and CAPTURE_WORKERS must stay 1 for it - which is worth failing the build over.
+    for (workers, kept_src, _) in &rows {
+        assert_eq!(*kept_src, base, "source-affine fanout lost heuristic alerts at {workers} workers");
+    }
 }

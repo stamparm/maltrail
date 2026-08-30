@@ -67,6 +67,12 @@ pub enum FanoutMode {
     Rollover,
     Random,
     Qm,
+    /// `PACKET_FANOUT_CBPF` carrying the source-hash program from `capture::srcfanout`.
+    ///
+    /// Every packet a host sends reaches one worker, which is what the per-source scan heuristics
+    /// were written for. `Hash` splits by flow and scatters them: measured over the corpus, 66% of
+    /// single-worker heuristic alerts survive at 8 workers under `Hash` and 100% under this.
+    Source,
 }
 
 impl FanoutMode {
@@ -79,6 +85,7 @@ impl FanoutMode {
             FanoutMode::Rollover => 3,
             FanoutMode::Random => 4,
             FanoutMode::Qm => 5,
+            FanoutMode::Source => 6, // PACKET_FANOUT_CBPF
         }
     }
 
@@ -90,6 +97,7 @@ impl FanoutMode {
             FanoutMode::Rollover => "rollover",
             FanoutMode::Random => "random",
             FanoutMode::Qm => "qm",
+            FanoutMode::Source => "source",
         }
     }
 
@@ -101,6 +109,7 @@ impl FanoutMode {
             "rollover" => Some(FanoutMode::Rollover),
             "random" => Some(FanoutMode::Random),
             "qm" => Some(FanoutMode::Qm),
+            "source" | "src" => Some(FanoutMode::Source),
             _ => None,
         }
     }

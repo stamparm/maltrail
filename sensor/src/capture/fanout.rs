@@ -11,6 +11,7 @@
 
 use std::os::unix::io::RawFd;
 
+use crate::capture::srcfanout::{source_hash_program, SockFilter};
 use crate::config::FanoutMode;
 
 /// `linux/if_packet.h`
@@ -20,11 +21,17 @@ const PACKET_FANOUT: libc::c_int = 18;
 pub const PACKET_FANOUT_FLAG_DEFRAG: u32 = 0x8000;
 /// `PACKET_FANOUT_FLAG_ROLLOVER`
 pub const PACKET_FANOUT_FLAG_ROLLOVER: u32 = 0x1000;
+/// `PACKET_FANOUT_DATA` - installs the program for a `PACKET_FANOUT_CBPF` group.
+const PACKET_FANOUT_DATA: libc::c_int = 22;
 
 #[derive(Debug)]
 pub enum FanoutError {
     NotPacketSocket(i32),
     SetSockOpt(std::io::Error),
+    /// The group was joined but the kernel would not take the distribution program. Reported
+    /// rather than ignored: the group is live in CBPF mode with no program attached, which is not
+    /// a configuration to keep running in.
+    SetProgram(std::io::Error),
 }
 
 impl std::fmt::Display for FanoutError {
@@ -35,6 +42,10 @@ impl std::fmt::Display for FanoutError {
                 "capture fd is not an AF_PACKET socket (SO_DOMAIN={domain}); PACKET_FANOUT needs a live Linux capture"
             ),
             FanoutError::SetSockOpt(e) => write!(f, "setsockopt(SOL_PACKET, PACKET_FANOUT) failed: {e}"),
+            FanoutError::SetProgram(e) => write!(
+                f,
+                "setsockopt(SOL_PACKET, PACKET_FANOUT_DATA) failed: {e} (source-affine fanout needs PACKET_FANOUT_CBPF, Linux 4.5+)"
+            ),
         }
     }
 }
@@ -83,6 +94,40 @@ pub fn join(fd: RawFd, group: u16, mode: FanoutMode, flags: u32) -> Result<(), F
     };
     if rc != 0 {
         return Err(FanoutError::SetSockOpt(std::io::Error::last_os_error()));
+    }
+
+    // CBPF carries no distribution of its own - the group demuxes by whatever program is attached,
+    // and with none attached every packet goes to worker 0. So this is part of joining, not an
+    // optional extra, and a failure here is a failure to join.
+    if mode == FanoutMode::Source {
+        attach_program(fd, &source_hash_program())?;
+    }
+    Ok(())
+}
+
+/// `struct sock_fprog` from `linux/filter.h`.
+#[repr(C)]
+struct SockFprog {
+    len: u16,
+    filter: *const SockFilter,
+}
+
+/// Install the classic-BPF distribution program on an already-joined CBPF group.
+fn attach_program(fd: RawFd, prog: &[SockFilter]) -> Result<(), FanoutError> {
+    let fprog = SockFprog { len: prog.len() as u16, filter: prog.as_ptr() };
+    // SAFETY: `fprog` points at `prog`, which outlives this call, and its length is the
+    // instruction count the kernel expects. The kernel copies the program in and verifies it.
+    let rc = unsafe {
+        libc::setsockopt(
+            fd,
+            libc::SOL_PACKET,
+            PACKET_FANOUT_DATA,
+            &fprog as *const SockFprog as *const libc::c_void,
+            std::mem::size_of::<SockFprog>() as libc::socklen_t,
+        )
+    };
+    if rc != 0 {
+        return Err(FanoutError::SetProgram(std::io::Error::last_os_error()));
     }
     Ok(())
 }

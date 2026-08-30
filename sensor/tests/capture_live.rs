@@ -152,3 +152,222 @@ fn mismatched_fanout_modes_in_one_group_are_rejected_by_the_kernel() {
     assert!(second.is_err(), "joining one group with two different modes must fail, not silently succeed");
     drop(first);
 }
+
+/// The kernel's verdict on the source-hash program.
+///
+/// Everything else about source-affine fanout is provable without privileges: the DISTRIBUTION is
+/// measured over the real corpus in `multi_worker_parity.rs`, and the PROGRAM is executed by an
+/// interpreter in `capture::srcfanout`. What neither can answer is whether the kernel accepts the
+/// program at all - `PACKET_FANOUT_CBPF` needs Linux 4.5+, and the in-kernel verifier is the only
+/// authority on whether the instruction sequence is legal. That is what this asserts.
+///
+/// Note it also fails loudly if `PACKET_FANOUT_DATA` is refused, because a CBPF group with no
+/// program attached demuxes every packet to worker 0 - a silent capture failure, and exactly the
+/// outcome worth failing a build over.
+#[test]
+fn a_source_affine_fanout_group_is_accepted_by_the_kernel_when_privileged() {
+    if !have_capture_privileges() {
+        println!("[skip] needs root / CAP_NET_RAW to ask the kernel to load the program");
+        return;
+    }
+
+    let mut cfg = test_config(2, "udp");
+    cfg.capture_fanout_mode = FanoutMode::Source;
+    let group = fanout::default_group(0).wrapping_add(7); // not the group the hash test uses
+
+    let mut handles = Vec::new();
+    for i in 0..2 {
+        match Handle::open_live(&cfg, "lo", Some(group)) {
+            Ok((handle, info)) => {
+                assert_eq!(info.fanout_mode, FanoutMode::Source);
+                assert_eq!(info.fanout_group, Some(group));
+                handles.push(handle);
+            }
+            Err(e) => panic!(
+                "worker {i} could not join a source-affine fanout group: {e}\n\
+                 (PACKET_FANOUT_CBPF needs Linux 4.5+; a rejected program is a bug in srcfanout.rs)"
+            ),
+        }
+    }
+    assert_eq!(handles.len(), 2);
+
+    for handle in handles.iter_mut() {
+        // an idle loopback times out; that is a read, not an error
+        if let Err(e) = handle.next_packet() {
+            panic!("reading from a source-affine fanout socket failed: {e}");
+        }
+    }
+    println!("[i] kernel accepted the source-hash cBPF program and formed a 2-socket group on lo");
+}
+
+/// Craft an IPv4/UDP packet with a chosen source address. The kernel fills the IP checksum when
+/// it is zero under `IP_HDRINCL`, and an IPv4 UDP checksum is optional, so neither is computed.
+fn udp_from(src: [u8; 4], dport: u16, payload: &[u8]) -> Vec<u8> {
+    let total = 20 + 8 + payload.len();
+    let mut p = Vec::with_capacity(total);
+    p.extend_from_slice(&[0x45, 0x00]);
+    p.extend_from_slice(&(total as u16).to_be_bytes());
+    p.extend_from_slice(&[0, 0, 0, 0, 64, 17, 0, 0]); // id, frag, ttl, proto=UDP, csum=0
+    p.extend_from_slice(&src);
+    p.extend_from_slice(&[127, 0, 0, 1]);
+    p.extend_from_slice(&40000u16.to_be_bytes());
+    p.extend_from_slice(&dport.to_be_bytes());
+    p.extend_from_slice(&((8 + payload.len()) as u16).to_be_bytes());
+    p.extend_from_slice(&[0, 0]);
+    p.extend_from_slice(payload);
+    p
+}
+
+/// The end-to-end claim, asked of the kernel rather than of a simulation.
+///
+/// `a_source_affine_fanout_group_is_accepted_by_the_kernel_when_privileged` proves the program is
+/// LEGAL. It does not prove it DISTRIBUTES: a program that returns 0 for every packet - because
+/// the kernel presented a packet layout neither branch matches - loads perfectly and funnels all
+/// traffic to worker 0, which from the outside is indistinguishable from working.
+///
+/// So this sends real packets from many source addresses through a real fanout group and asserts
+/// the two properties the whole feature rests on: one source is never split across workers, and
+/// the workers are actually all used.
+#[test]
+fn source_affine_fanout_actually_separates_sources_in_the_kernel() {
+    if !have_capture_privileges() {
+        println!("[skip] needs root / CAP_NET_RAW to form the group and send from spoofed sources");
+        return;
+    }
+
+    const WORKERS: usize = 4;
+    const SOURCES: usize = 64;
+    let dport: u16 = 24601;
+
+    let mut cfg = test_config(WORKERS as u32, &format!("udp and dst port {dport}"));
+    cfg.capture_fanout_mode = FanoutMode::Source;
+    let group = fanout::default_group(0).wrapping_add(23);
+
+    let mut handles = Vec::new();
+    for i in 0..WORKERS {
+        match Handle::open_live(&cfg, "lo", Some(group)) {
+            Ok((h, info)) => {
+                assert_eq!(info.fanout_mode, FanoutMode::Source);
+                handles.push(h);
+            }
+            Err(e) => panic!("worker {i} could not join the source-affine group: {e}"),
+        }
+    }
+
+    // raw socket with IP_HDRINCL so the source address is ours to choose
+    // SAFETY: a socket() call with constant arguments; the fd is closed below.
+    let raw = unsafe { libc::socket(libc::AF_INET, libc::SOCK_RAW, libc::IPPROTO_RAW) };
+    assert!(raw >= 0, "raw socket: {}", std::io::Error::last_os_error());
+    let one: libc::c_int = 1;
+    // SAFETY: `one` is a live c_int of the size IP_HDRINCL expects.
+    let rc = unsafe {
+        libc::setsockopt(
+            raw,
+            libc::IPPROTO_IP,
+            libc::IP_HDRINCL,
+            &one as *const libc::c_int as *const libc::c_void,
+            std::mem::size_of::<libc::c_int>() as libc::socklen_t,
+        )
+    };
+    assert_eq!(rc, 0, "IP_HDRINCL: {}", std::io::Error::last_os_error());
+
+    let dst = libc::sockaddr_in {
+        sin_family: libc::AF_INET as u16,
+        sin_port: dport.to_be(),
+        sin_addr: libc::in_addr { s_addr: u32::from_be_bytes([127, 0, 0, 1]).to_be() },
+        sin_zero: [0; 8],
+    };
+
+    // Each source sends several packets on DIFFERENT source ports, so a flow hash would scatter
+    // them and only source affinity can keep them together.
+    for host in 0..SOURCES {
+        for n in 0..4u8 {
+            let pkt = udp_from([127, 9, (host / 256) as u8, (host % 256) as u8], dport, &[n; 16]);
+            // SAFETY: `pkt` and `dst` are live for the call and correctly sized.
+            let sent = unsafe {
+                libc::sendto(
+                    raw,
+                    pkt.as_ptr() as *const libc::c_void,
+                    pkt.len(),
+                    0,
+                    &dst as *const libc::sockaddr_in as *const libc::sockaddr,
+                    std::mem::size_of::<libc::sockaddr_in>() as libc::socklen_t,
+                )
+            };
+            assert!(sent > 0, "sendto: {}", std::io::Error::last_os_error());
+        }
+    }
+
+    // Drain every worker, round-robin, until nothing new arrives for a while.
+    //
+    // The handles are non-blocking and the TPACKET_V3 ring only hands over a block when its retire
+    // timeout expires, so a read taken straight after sendto() is empty BY CONSTRUCTION. The first
+    // version of this loop treated that first empty read as "this worker is done" and concluded
+    // the group had received nothing at all.
+    let mut placement: std::collections::HashMap<[u8; 4], std::collections::BTreeSet<usize>> = Default::default();
+    let mut per_worker = [0usize; WORKERS];
+    let deadline = std::time::Instant::now() + std::time::Duration::from_secs(5);
+    let mut quiet_rounds = 0;
+    while std::time::Instant::now() < deadline && quiet_rounds < 20 {
+        let mut got = 0usize;
+        for (idx, handle) in handles.iter_mut().enumerate() {
+            for _ in 0..(SOURCES * 8) {
+                match handle.next_packet() {
+                    Ok(Some(c)) => {
+                        // loopback presents an Ethernet header; fall back to a bare IP header
+                        let data = c.data;
+                        let ip = if data.len() > 14 && data[14] >> 4 == 4 {
+                            14
+                        } else if !data.is_empty() && data[0] >> 4 == 4 {
+                            0
+                        } else {
+                            continue;
+                        };
+                        if data.len() < ip + 20 {
+                            continue;
+                        }
+                        let mut src = [0u8; 4];
+                        src.copy_from_slice(&data[ip + 12..ip + 16]);
+                        if src[0] != 127 || src[1] != 9 {
+                            continue; // not ours
+                        }
+                        placement.entry(src).or_default().insert(idx);
+                        per_worker[idx] += 1;
+                        got += 1;
+                    }
+                    Ok(None) => break,
+                    Err(e) => panic!("reading worker {idx}: {e}"),
+                }
+            }
+        }
+        if got == 0 {
+            quiet_rounds += 1;
+            std::thread::sleep(std::time::Duration::from_millis(25));
+        } else {
+            quiet_rounds = 0;
+        }
+    }
+
+    // SAFETY: closing a descriptor we own.
+    unsafe { libc::close(raw) };
+
+    assert!(
+        !placement.is_empty(),
+        "no packets captured; the fanout group received nothing (per-worker: {per_worker:?})"
+    );
+
+    // 1. affinity: a source is never split
+    let split: Vec<_> = placement.iter().filter(|(_, w)| w.len() > 1).collect();
+    assert!(split.is_empty(), "sources split across workers despite source-affine fanout: {split:?}");
+
+    // 2. distribution: the program must not be answering 0 for everything. THIS is the assertion
+    //    that catches a packet layout the program does not understand - it loads, it is legal, and
+    //    it silently funnels every packet to one worker.
+    let used = per_worker.iter().filter(|&&n| n > 0).count();
+    assert!(
+        used > 1,
+        "every packet landed on {used} worker(s): {per_worker:?} - the program is not reading the source address"
+    );
+
+    println!("[i] {} sources over {WORKERS} workers: {per_worker:?}, none split", placement.len());
+}
