@@ -24,6 +24,7 @@ import threading
 import time
 import traceback
 
+from core import logfmt
 from core.addr import addr_to_int
 from core.addr import int_to_addr
 from core.addr import make_mask
@@ -1930,9 +1931,15 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         rules = []
                         for e in bl.split(' and '):
                             f, n, p = e.strip().split(' ', 2)
+                            # Indices into logfmt.FIELDS. This used to index a naive
+                            # raw.split(' ', 10), which needed three pad entries because the
+                            # QUOTED timestamp splits into two tokens on a space - and which
+                            # mangled every field after a quoted one containing a space (an info
+                            # like "malware (test)" shifted trail and reference along). Splitting
+                            # the way the writer quoted removes both problems, and is what lets a
+                            # JSON line be read by the same code.
                             regexp = [
                                 [
-                                    '',
                                     '',
                                     '',
                                     'src_ip',
@@ -1960,10 +1967,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         if os.path.isfile(_):
                             with open(_, "r") as f_log:
                                 for raw in f_log:
-                                    line = raw.split(' ', 10)
-                                    if len(line) < 11:
+                                    line = logfmt.fields(raw)
+                                    if line is None:
                                         continue
-                                    if _event_precedes_clear(raw, line[3], cleared):
+                                    if _event_precedes_clear(raw, line[2], cleared):
                                         continue
                                     if restricted and not self._line_in_scope(raw, addresses, netmasks, regex)[0]:
                                         continue
@@ -1976,7 +1983,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                                 failed = True
                                                 break
                                         if not failed:
-                                            result.add(line[3])
+                                            result.add(line[2])
                                             break
 
                         content = "\n".join(result)
@@ -2086,6 +2093,15 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     display, ip = True, None
                 else:
                     display, ip = self._line_in_scope(line, addresses, netmasks, regex)
+
+                # A JSON line (LOCAL_LOG_FORMAT json) has to be redacted on the parsed object.
+                # Both rewrites below are regexes tuned to the text layout: the custom mask matches
+                # inside the JSON string and leaves the line unparseable, and the address-list
+                # collapse expects spaces the JSON does not have and silently does nothing.
+                if logfmt.is_json_line(line):
+                    if display:
+                        yield logfmt.redact_json(line, session.mask_custom, ip)
+                    continue
 
                 if session.mask_custom and "(custom)" in line:
                     line = re.sub(r'("[^"]+"|[^ ]+) \(custom\)', "- (custom)", line)

@@ -12,6 +12,7 @@ import threading
 import time
 import traceback
 
+from core import logfmt
 from core.common import retrieve_content
 from core.log import log_error
 from core.log import severity_of
@@ -49,18 +50,23 @@ def parse_event_line(line):
     ('10.0.0.5', 'DNS', 'evil.biz', 'apt x (malware)')
     >>> parse_event_line("garbage") is None
     True
+
+    A JSON line (LOCAL_LOG_FORMAT json) reads the same way:
+
+    >>> event = parse_event_line('{"timestamp": 1767261600, "time": "2026-01-01 10:00:00.000000", "sensor": "box", "severity": "medium", "src_ip": "10.0.0.5", "src_port": 4421, "dst_ip": "8.8.8.8", "dst_port": 53, "proto": "UDP", "type": "DNS", "trail": "evil.biz", "info": "apt x (malware)", "reference": "(static)"}')
+    >>> event["src_ip"], event["type"], event["trail"], event["info"]
+    ('10.0.0.5', 'DNS', 'evil.biz', 'apt x (malware)')
     """
 
-    try:
-        values = next(csv.reader([line.rstrip("\r\n")], delimiter=' ', quotechar='"'))
-    except Exception:
-        return None
-
-    if len(values) < len(_FIELDS):
+    values = logfmt.fields(line.rstrip("\r\n"))
+    if values is None:
         return None
 
     event = dict(zip(_FIELDS, values))
-    event["severity"] = severity_of(event["info"])
+    # A JSON line carries the severity the writer computed. Prefer it: recomputing here would use
+    # THIS process's REMOTE_SEVERITY_REGEX, which is not necessarily the one the event was rated
+    # with, and an alert threshold is exactly where that difference would show up.
+    event["severity"] = logfmt.severity_of_line(line) or severity_of(event["info"])
     event["timestamp"] = int(time.mktime(time.strptime(event["time"].split('.')[0], "%Y-%m-%d %H:%M:%S"))) if event["time"][:1].isdigit() else 0
     return event
 

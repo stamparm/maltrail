@@ -31,6 +31,7 @@ import os
 import sqlite3
 import threading
 
+from core import logfmt
 from core.compat import xrange
 from core.settings import config
 
@@ -188,9 +189,14 @@ def _index_lines(conn, f, offset):
 
     def row_for(off, raw):
         line = raw.decode("utf8", "ignore")
-        fields = split_event_line(line)
+        # Format is decided per line, not from the configuration: a LOG_DIR holds whatever was
+        # written on the day, so after a LOCAL_LOG_FORMAT change one file is text and the next is
+        # JSON, and both have to index or the history stops being searchable.
+        fields = logfmt.fields(line) if logfmt.is_json_line(line) else split_event_line(line)
         # Malformed lines keep their text (substring matching must see them too) but carry
         # no structured columns.
+        if fields is None:
+            fields = []
         cols = tuple(fields[_] if len(fields) == 11 else None for _ in xrange(2, 11))
         return (off,) + cols + (line.lower(),)
 
