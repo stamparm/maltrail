@@ -288,7 +288,58 @@
       ctx.fillRect(i * bw + 1, h - bh, Math.max(1, bw - 1.5), bh);
     }
   }
-  function aggregate(csv) { return aggregateRows(window.Papa.parse(csv, { delimiter: " ", skipEmptyLines: true }).data); }
+  // Event-log fields, in the order every row here is indexed by (row[2] is src_ip, row[7] type,
+  // row[8] trail). LOCAL_LOG_FORMAT lets the server write these lines as JSON, so a row can arrive
+  // either way — and a single .log file can hold BOTH, because flipping the option and restarting
+  // mid-day appends JSON after the text already written that morning.
+  var EVENT_FIELDS = ["time", "sensor", "src_ip", "src_port", "dst_ip", "dst_port", "proto", "type", "trail", "info", "reference"];
+
+  function jsonEventRow(line) {
+    var o, i, v, row = [];
+    try { o = JSON.parse(line); } catch (e) { return null; }
+    if (!o || typeof o !== "object") return null;
+    for (i = 0; i < EVENT_FIELDS.length; i++) {
+      v = o[EVENT_FIELDS[i]];
+      // the wire form (LOGSTASH_SERVER) carries no "time"; the epoch keeps such a line readable
+      if (v == null && EVENT_FIELDS[i] === "time") v = o.timestamp;
+      if (v == null) return null;
+      row.push(typeof v === "string" ? v : String(v));
+    }
+    return row;
+  }
+
+  // Rows from a chunk of event log, whichever format the lines are in.
+  function parseEvents(text) {
+    if (!text) return [];
+    // Fast path: no JSON anywhere, so this is exactly the call it has always been.
+    if (text.charAt(0) !== "{" && text.indexOf("\n{") === -1)
+      return window.Papa.parse(text, { delimiter: " ", skipEmptyLines: true }).data;
+
+    var lines = text.split("\n"), out = [], buf = [], i, line, row;
+    function flush() {
+      if (!buf.length) return;
+      var d = window.Papa.parse(buf.join("\n"), { delimiter: " ", skipEmptyLines: true }).data;
+      for (var k = 0; k < d.length; k++) out.push(d[k]);
+      buf = [];
+    }
+    for (i = 0; i < lines.length; i++) {
+      line = lines[i];
+      if (!line) continue;
+      if (line.charAt(0) === "{") {
+        // text lines are batched through Papa rather than parsed one at a time: a day can be
+        // 100k+ lines and per-line parser setup is what makes that slow
+        flush();
+        row = jsonEventRow(line);
+        if (row) out.push(row);
+      } else {
+        buf.push(line);
+      }
+    }
+    flush();
+    return out;
+  }
+
+  function aggregate(csv) { return aggregateRows(parseEvents(csv)); }
   function aggregateRows(rows) {
     var r, row, type, nt;
     // pass 1: flood detection — a normalized trail seen from > FLOOD_THRESH distinct source IPs
@@ -1106,7 +1157,7 @@
     state._liveFlush = null;
     var buf = state._liveBuf; state._liveBuf = [];
     if (!buf.length || state._liveBufDate !== currentDate()) return;   // navigated away before flush -> drop
-    var rows = window.Papa.parse(buf.join("\n"), { delimiter: " ", skipEmptyLines: true }).data;
+    var rows = parseEvents(buf.join("\n"));
     if (state.agg && state.agg._byKey) render(mergeRows(state.agg, rows));
     else loadEvents(currentDate());   // no baseline yet -> full load
   }
@@ -2936,7 +2987,7 @@
   // so a 100MB/850k-row day is O(n) total — NOT O(n²) (the old code re-aggregated all rows every chunk) —
   // and memory stays bounded (we never retain the full parsed-rows array, only the aggregate).
   var RENDER_EVERY = 12000; // rows between progressive repaints
-  function parseRows(text) { return text ? window.Papa.parse(text, { delimiter: " ", skipEmptyLines: true }).data : []; }
+  function parseRows(text) { return parseEvents(text); }
   function loadEvents(date) {
     setStatus("loading events…");
     var seq = ++state._loadSeq;
@@ -2949,7 +3000,7 @@
         if (!r.body || !r.body.getReader) {                         // no streaming support -> one-shot
           return r.text().then(function (t) {
             if (seq !== state._loadSeq) return;
-            var rows = window.Papa.parse(t, { delimiter: " ", skipEmptyLines: true }).data;
+            var rows = parseEvents(t);
             state._liveBytes = byteLenFull(t, r); state._liveDate = date;   // byte baseline for incremental live
             render(aggregateRows(rows));   // agg retains _byKey so live deltas merge incrementally (rows array is freed)
           });
@@ -3007,7 +3058,7 @@
         if (r.status === 200) {                                                       // server ignored Range (e.g. filtered session) => full reload
           return r.text().then(function (t) {
             if (seq !== state._loadSeq) return;
-            var rows = window.Papa.parse(t, { delimiter: " ", skipEmptyLines: true }).data;
+            var rows = parseEvents(t);
             state._liveBytes = byteLenFull(t, r); state._liveDate = date;
             render(aggregateRows(rows));
           });
@@ -3019,7 +3070,7 @@
             var u8 = new Uint8Array(ab), nl = -1, i;
             for (i = u8.length - 1; i >= 0; i--) { if (u8[i] === 10) { nl = i; break; } }   // last '\n' in the raw delta
             if (nl >= 0) {                                                              // consume ONLY complete lines
-              var rows = window.Papa.parse(new TextDecoder().decode(ab.slice(0, nl + 1)), { delimiter: " ", skipEmptyLines: true }).data;
+              var rows = parseEvents(new TextDecoder().decode(ab.slice(0, nl + 1)));
               state._liveBytes = start + nl + 1; state._liveDate = date;                // advance past complete lines only; a partial tail is re-fetched next tick (no dropped/split event)
               render(mergeRows(state.agg, rows));                                        // O(new rows) merge — no full re-parse/re-aggregate
             }

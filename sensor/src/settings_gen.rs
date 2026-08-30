@@ -217,6 +217,7 @@ pub const KNOWN_CONFIG_OPTIONS: &[&str] = &[
     "IGNORE_EVENTS_REGEX",
     "IP_ALIASES",
     "IP_MINIMUM_FEEDS",
+    "LOCAL_LOG_FORMAT",
     "LOGSTASH_SERVER",
     "LOG_DIR",
     "LOG_SERVER",

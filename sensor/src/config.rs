@@ -152,6 +152,8 @@ pub struct Config {
     pub check_missing_host: bool,
     pub check_host_domains: bool,
     pub disable_local_log_storage: bool,
+    /// `LOCAL_LOG_FORMAT json` writes the event log as one JSON object per line.
+    pub local_log_json: bool,
     pub disable_check_sudo: bool,
     pub show_debug: bool,
     pub log_server: String,
@@ -750,6 +752,20 @@ impl Config {
             }
         };
 
+        // LOCAL_LOG_FORMAT: an unknown value is refused rather than silently treated as "text",
+        // because the whole point of setting it is that something downstream is expecting the
+        // other format.
+        let local_log_json = {
+            let v = get_str(&raw, "LOCAL_LOG_FORMAT");
+            match v.trim().to_ascii_lowercase().as_str() {
+                "" | "text" | "plain" => false,
+                "json" | "ndjson" => true,
+                other => {
+                    bail!("invalid configuration value for 'LOCAL_LOG_FORMAT' ('{other}'), expected 'text' or 'json'")
+                }
+            }
+        };
+
         let capture_fanout_mode = {
             let v = get_str(&raw, "CAPTURE_FANOUT_MODE");
             if v.trim().is_empty() {
@@ -813,6 +829,7 @@ impl Config {
             check_missing_host: get_bool(&raw, "CHECK_MISSING_HOST"),
             check_host_domains: get_bool(&raw, "CHECK_HOST_DOMAINS"),
             disable_local_log_storage: get_bool(&raw, "DISABLE_LOCAL_LOG_STORAGE"),
+            local_log_json,
             disable_check_sudo: get_bool(&raw, "DISABLE_CHECK_SUDO"),
             show_debug: get_bool(&raw, "SHOW_DEBUG"),
             log_server,

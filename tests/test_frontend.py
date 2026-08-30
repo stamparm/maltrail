@@ -129,6 +129,94 @@ console.log("OK");
         self.assertEqual("OK", out.strip(), out.strip())
 
 
+class TestParseEvents(unittest.TestCase):
+    """main.js must read an event log in either format (issue #19130, LOCAL_LOG_FORMAT).
+
+    The browser parses the log itself - /events streams the raw bytes - so the frontend is one of
+    the readers that has to know both. A single .log file can hold BOTH: flipping the option and
+    restarting mid-day appends JSON after the text already written that morning.
+    """
+
+    TEXT = '"2026-01-01 10:00:03.123456" box 10.0.0.8 6666 5.5.5.5 80 TCP IP 5.5.5.5 "malware (test)" (static)'
+    JSON = ('{"timestamp": 1767261603, "time": "2026-01-01 10:00:03.123456", "sensor": "box", '
+            '"severity": "medium", "src_ip": "10.0.0.8", "src_port": 6666, "dst_ip": "5.5.5.5", '
+            '"dst_port": 80, "proto": "TCP", "type": "IP", "trail": "5.5.5.5", "info": "malware (test)", '
+            '"reference": "(static)"}')
+
+    def setUp(self):
+        self.js = _read(MAIN_JS)
+
+    def _node(self):
+        for candidate in ("node", "nodejs"):
+            if any(os.access(os.path.join(d, candidate), os.X_OK)
+                   for d in os.environ.get("PATH", "").split(os.pathsep) if d):
+                return candidate
+        raise unittest.SkipTest("needs node to evaluate parseEvents()")
+
+    def _run(self, text):
+        node = self._node()
+        fields = re.search(r"var EVENT_FIELDS = \[.*?\];", self.js, re.S)
+        row_fn = re.search(r"function jsonEventRow\(line\) \{.*?\n  \}", self.js, re.S)
+        parse_fn = re.search(r"function parseEvents\(text\) \{.*?\n  \}", self.js, re.S)
+        self.assertTrue(fields and row_fn and parse_fn, "could not find parseEvents() in main.js")
+        # a stand-in for PapaParse: the delimiter is a space and quoting follows safe_value()
+        shim = """
+var window = { Papa: { parse: function (text, opts) {
+  var out = [], lines = text.split("\\n");
+  lines.forEach(function (line) {
+    if (opts.skipEmptyLines && !line) return;
+    var row = [], cur = "", q = false, i;
+    for (i = 0; i < line.length; i++) {
+      var ch = line[i];
+      if (q) {
+        if (ch === '"') { if (line[i + 1] === '"') { cur += '"'; i++; } else q = false; }
+        else cur += ch;
+      } else if (ch === '"') q = true;
+      else if (ch === " ") { row.push(cur); cur = ""; }
+      else cur += ch;
+    }
+    row.push(cur);
+    out.push(row);
+  });
+  return { data: out };
+} } };
+"""
+        script = shim + fields.group(0) + "\n" + row_fn.group(0) + "\n" + parse_fn.group(0) + """
+console.log(JSON.stringify(parseEvents(%s)));
+""" % json.dumps(text)
+        import subprocess
+        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        return json.loads(out.strip())
+
+    def test_both_formats_produce_the_same_row(self):
+        from_text = self._run(self.TEXT)
+        from_json = self._run(self.JSON)
+        self.assertEqual(len(from_text), 1)
+        self.assertEqual(from_text, from_json, "a JSON line must aggregate exactly like a text one")
+        # the indices aggregateRows() uses
+        self.assertEqual(from_text[0][2], "10.0.0.8")
+        self.assertEqual(from_text[0][7], "IP")
+        self.assertEqual(from_text[0][8], "5.5.5.5")
+        self.assertEqual(from_text[0][9], "malware (test)")
+
+    def test_a_file_holding_both_formats_reads_completely(self):
+        # the option changed and the sensor restarted mid-day
+        rows = self._run("\n".join([self.TEXT, self.JSON, self.TEXT, self.JSON, self.JSON]))
+        self.assertEqual(len(rows), 5, "a mixed file must not lose lines from either format")
+        self.assertTrue(all(r[2] == "10.0.0.8" for r in rows))
+
+    def test_ports_arrive_as_strings(self):
+        # JSON writes a port as a number; the aggregator indexes rows as text throughout
+        self.assertEqual(self._run(self.JSON)[0][3], "6666")
+
+    def test_junk_lines_are_dropped_not_half_parsed(self):
+        rows = self._run("\n".join(["{not json", self.JSON, '{"timestamp": 1}']))
+        self.assertEqual(len(rows), 1, "only the complete event survives")
+
+    def test_empty_input(self):
+        self.assertEqual(self._run(""), [])
+
+
 class TestFamily(unittest.TestCase):
     """family: pulls a campaign back together.
 

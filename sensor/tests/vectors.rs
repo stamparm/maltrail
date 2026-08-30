@@ -364,7 +364,13 @@ fn event_json_matches_python() {
             _ => Severity::Medium,
         };
         let got = output::logstash_line(&event, severity, &row[11]);
-        assert_eq!(got, row[12], "event_json for trail {:?}", row[7]);
+        assert_eq!(got, row[12], "wire JSON for trail {:?}", row[7]);
+
+        // and the on-disk form, which adds "time" so the file keeps the microseconds a text line
+        // has always carried. LOCAL_LOG_FORMAT json writes this, so a divergence here is a file
+        // the server cannot read back.
+        let on_disk = output::local_json_line(&event, severity, &row[11], &row[13]);
+        assert_eq!(on_disk, row[14], "on-disk JSON for trail {:?}", row[7]);
     }
 }
 

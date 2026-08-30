@@ -431,6 +431,7 @@ fn run() -> i32 {
         log_dir: cfg.log_dir.clone(),
         trails_file: cfg.trails_file.clone(),
         disable_local_log_storage: cfg.disable_local_log_storage,
+        local_log_json: cfg.local_log_json,
         console: cfg.console,
         log_server: non_empty(&cfg.log_server),
         syslog_server: maltrail_sensor::config::split_endpoints(&cfg.syslog_server)

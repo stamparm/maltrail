@@ -297,8 +297,15 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
 
                 event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
                 if not config.DISABLE_LOCAL_LOG_STORAGE:
+                    # LOCAL_LOG_FORMAT changes the FILE and nothing else: LOG_SERVER is a wire
+                    # protocol other deployments parse, and the console line is meant to be read
+                    # by a person, so both keep the text form regardless.
+                    if (config.LOCAL_LOG_FORMAT or "").strip().lower() in ("json", "ndjson"):
+                        local_line = "%s\n" % event_json(event_tuple, severity_of(info), config.SENSOR_NAME, localtime)
+                    else:
+                        local_line = event
                     handle = get_event_log_handle(sec)
-                    os.write(handle, event.encode(UNICODE_ENCODING))
+                    os.write(handle, local_line.encode(UNICODE_ENCODING))
 
                 if config.LOG_SERVER:
                     _send_datagram(config.LOG_SERVER, ("%s %s" % (sec, event)).encode(UNICODE_ENCODING))

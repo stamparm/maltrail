@@ -16,11 +16,13 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from core import logfmt
-from core.log import event_json
+from core.log import event_json, safe_value
 
 TUPLE = (1767261603, 123456, "10.0.0.8", 6666, "5.5.5.5", 80, "TCP", "IP", "5.5.5.5", "malware (test)", "(static)")
 LOCALTIME = "2026-01-01 10:00:03.123456"
-TEXT = '"2026-01-01 10:00:03.123456" sensor-a 10.0.0.8 6666 5.5.5.5 80 TCP IP 5.5.5.5 "malware (test)" (static)'
+# Built exactly as core/log.py:log_event() builds it, so this is the writer's own output rather
+# than a hand-copied approximation that could drift away from it.
+TEXT = "%s %s %s" % (safe_value(LOCALTIME), safe_value("sensor-a"), " ".join(safe_value(_) for _ in TUPLE[2:]))
 
 
 class TestFormatDetection(unittest.TestCase):

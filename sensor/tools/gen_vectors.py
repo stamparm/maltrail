@@ -284,8 +284,12 @@ def event_json_vectors():
     for c in cases:
         sec, src_ip, src_port, dst_ip, dst_port, proto, ttype, trail, info, ref, severity, sensor = c
         tup = (sec, 0, src_ip, src_port, dst_ip, dst_port, proto, ttype, trail, info, ref)
+        # both forms: the wire one LOGSTASH_SERVER sends, and the on-disk one LOCAL_LOG_FORMAT
+        # json writes, which adds "time" so the file keeps the microseconds
+        localtime = "2026-01-01 10:00:%02d.%06d" % (sec % 60, sec % 1000000)
         rows.append([str(sec), src_ip, str(src_port), dst_ip, str(dst_port), proto, ttype, trail, info, ref,
-                     severity, sensor, event_json(tup, severity, sensor)])
+                     severity, sensor, event_json(tup, severity, sensor), localtime,
+                     event_json(tup, severity, sensor, localtime)])
     return rows
 
 
@@ -471,7 +475,7 @@ def main():
     write("checks.tsv", checks_vectors(), "path <TAB> post_data <TAB> checks joined by 0x1f")
     write("entropy.tsv", entropy_vectors(), "label <TAB> entropy <TAB> consonant count")
     write("ignore_rule.tsv", ignore_rule_vectors(), "kind <TAB> rule <TAB> value <TAB> 1 if it matches")
-    write("event_json.tsv", event_json_vectors(), "sec, src_ip, src_port, dst_ip, dst_port, proto, type, trail, info, ref, severity, sensor <TAB> JSON")
+    write("event_json.tsv", event_json_vectors(), "sec, src_ip, src_port, dst_ip, dst_port, proto, type, trail, info, ref, severity, sensor <TAB> wire JSON <TAB> localtime <TAB> on-disk JSON")
     write("valid_dns_name.tsv", valid_dns_name_vectors(), "name <TAB> matches VALID_DNS_NAME_REGEX")
     write("suspicious_request.tsv", suspicious_request_vectors(), "payload <TAB> first matching description")
     write("suspicious_ua.tsv", suspicious_ua_vectors(), "ua <TAB> whitelisted <TAB> suspicious match")

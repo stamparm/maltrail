@@ -29,6 +29,8 @@ pub struct OutputConfig {
     pub log_dir: PathBuf,
     pub trails_file: PathBuf,
     pub disable_local_log_storage: bool,
+    /// `LOCAL_LOG_FORMAT json`: write the event log as one JSON object per line.
+    pub local_log_json: bool,
     pub console: bool,
     pub log_server: Option<String>,
     /// Every endpoint named by `SYSLOG_SERVER` / `LOGSTASH_SERVER`. One option may name several,
@@ -192,7 +194,16 @@ impl EventSink {
         let line = event.render_line(&self.cfg.sensor_name, localtime.as_str());
 
         if !self.cfg.disable_local_log_storage {
-            self.write_event_log(event.sec, &line);
+            // LOCAL_LOG_FORMAT json writes the same object LOGSTASH_SERVER sends, plus "time" -
+            // without which the file would lose the microseconds every text line records. Only
+            // the FILE changes; every other sink below keeps its own format.
+            if self.cfg.local_log_json {
+                let severity = self.severity_for(&event.info);
+                let json = local_json_line(event, severity, &self.cfg.sensor_name, localtime.as_str());
+                self.write_event_log(event.sec, &json);
+            } else {
+                self.write_event_log(event.sec, &line);
+            }
         }
 
         if let Some(endpoint) = self.cfg.log_server.clone() {
@@ -565,11 +576,25 @@ pub fn cef_escape(value: &str, extension: bool) -> String {
 }
 
 /// `json.dumps(OrderedDict(...))` with CPython's default separators and `ensure_ascii`.
+/// The on-disk form: `logstash_line()` plus `time`, which carries the microseconds.
+///
+/// Byte-identical to `core/log.py:event_json(..., localtime)`, pinned by `tests/vectors.rs`.
+pub fn local_json_line(event: &Event, severity: Severity, sensor: &str, localtime: &str) -> String {
+    json_event(event, severity, sensor, Some(localtime))
+}
+
 pub fn logstash_line(event: &Event, severity: Severity, hostname: &str) -> String {
+    json_event(event, severity, hostname, None)
+}
+
+fn json_event(event: &Event, severity: Severity, sensor: &str, localtime: Option<&str>) -> String {
     let mut out = String::with_capacity(256);
     out.push('{');
     json_kv_raw(&mut out, "timestamp", &event.sec.to_string(), true);
-    json_kv_str(&mut out, "sensor", hostname, false);
+    if let Some(localtime) = localtime {
+        json_kv_str(&mut out, "time", localtime, false);
+    }
+    json_kv_str(&mut out, "sensor", sensor, false);
     json_kv_str(&mut out, "severity", severity.label(), false);
     json_kv_str(&mut out, "src_ip", &event.src_ip, false);
     json_kv_field(&mut out, "src_port", &event.src_port);
