@@ -15,6 +15,8 @@ pub struct WorkerMetrics {
     pub packets_malformed: u64,
     pub packets_truncated: u64,
     pub packets_fragment: u64,
+    /// Packets that carried another packet and were unwrapped (VXLAN/GENEVE/GRE/ERSPAN/IP-in-IP).
+    pub packets_decapsulated: u64,
     pub events: u64,
     pub events_written: u64,
     /// Local event-log open/write failures: non-zero means detections were produced and LOST.
@@ -53,6 +55,7 @@ impl WorkerMetrics {
         self.packets_malformed += other.packets_malformed;
         self.packets_truncated += other.packets_truncated;
         self.packets_fragment += other.packets_fragment;
+        self.packets_decapsulated += other.packets_decapsulated;
         self.events += other.events;
         self.events_written += other.events_written;
         self.log_write_errors += other.log_write_errors;
@@ -92,6 +95,7 @@ pub struct MetricsSlot {
     pub packets_malformed: AtomicU64,
     pub packets_truncated: AtomicU64,
     pub packets_fragment: AtomicU64,
+    pub packets_decapsulated: AtomicU64,
     pub events: AtomicU64,
     pub events_written: AtomicU64,
     pub log_write_errors: AtomicU64,
@@ -147,6 +151,7 @@ impl MetricsSlot {
         self.packets_malformed.store(m.packets_malformed, Ordering::Relaxed);
         self.packets_truncated.store(m.packets_truncated, Ordering::Relaxed);
         self.packets_fragment.store(m.packets_fragment, Ordering::Relaxed);
+        self.packets_decapsulated.store(m.packets_decapsulated, Ordering::Relaxed);
         self.events.store(m.events, Ordering::Relaxed);
         self.events_written.store(m.events_written, Ordering::Relaxed);
         self.log_write_errors.store(m.log_write_errors, Ordering::Relaxed);
@@ -176,6 +181,7 @@ impl MetricsSlot {
             packets_malformed: self.packets_malformed.load(Ordering::Relaxed),
             packets_truncated: self.packets_truncated.load(Ordering::Relaxed),
             packets_fragment: self.packets_fragment.load(Ordering::Relaxed),
+            packets_decapsulated: self.packets_decapsulated.load(Ordering::Relaxed),
             events: self.events.load(Ordering::Relaxed),
             events_written: self.events_written.load(Ordering::Relaxed),
             log_write_errors: self.log_write_errors.load(Ordering::Relaxed),

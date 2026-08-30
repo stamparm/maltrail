@@ -5,6 +5,7 @@
 //! short header raises `struct.error` and the packet is silently dropped.
 
 pub mod dlt;
+pub mod tunnel;
 
 use crate::addr::Ip;
 

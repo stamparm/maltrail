@@ -358,6 +358,45 @@ fn ipv6_port_trails_survive_an_extension_header() {
 }
 
 #[test]
+fn tunnelled_traffic_is_not_invisible() {
+    // A SPAN feed at a datacentre or corporate border is usually an OVERLAY: the packets on the
+    // mirror port are VXLAN/GENEVE/GRE, and the addresses in the outer header are tunnel
+    // endpoints - our own infrastructure. Until the payload was decapsulated the sensor matched
+    // those outer headers and nothing else, so every host inside the overlay was invisible: no
+    // inner IP, no port, no DNS name, no HTTP host, no TLS SNI.
+    let inner_dns = ipv4(17, "10.1.1.5", "10.1.1.1", &udp(40000, 53, &dns("evil.com")));
+    let frame = eth(&inner_dns, 0x0800, None);
+
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&vxlan("192.0.2.1", "192.0.2.2", 42, &frame), 1);
+    assert_eq!(h.trails(), vec!["evil.com"], "VXLAN hid the query inside it");
+
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&geneve("192.0.2.1", "192.0.2.2", 0x6558, 8, &frame), 1);
+    assert_eq!(h.trails(), vec!["evil.com"], "GENEVE (with options) hid the query inside it");
+
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&gre("192.0.2.1", "192.0.2.2", 0x0800, false, false, false, &inner_dns), 1);
+    assert_eq!(h.trails(), vec!["evil.com"], "GRE hid the query inside it");
+
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&erspan("192.0.2.1", "192.0.2.2", false, &frame), 1);
+    assert_eq!(h.trails(), vec!["evil.com"], "ERSPAN II hid the mirrored frame inside it");
+}
+
+#[test]
+fn a_tunnel_does_not_hide_an_inner_ip_or_port_trail() {
+    // the same evasion seen from the trail type: with the inner header unreachable, an IP:port
+    // trail on a host inside the overlay can never fire
+    let inner = ipv4(6, "10.1.1.5", "10.9.9.9", &tcp(50000, 443, 0x02, b""));
+    let mut h = trails(&[("10.9.9.9:443", "c2 (dummy)", "ref")]);
+    h.feed_ip(&vxlan("192.0.2.1", "192.0.2.2", 7, &eth(&inner, 0x0800, None)), 1);
+    let events = h.events();
+    assert_eq!(events.len(), 1, "{events:?}");
+    assert_eq!(events[0].trail, "10.9.9.9:443");
+}
+
+#[test]
 fn ipv6_addr_port_trail() {
     let mut h = trails(&[("[dead::beef]:443", "c2 (dummy)", "ref")]);
     h.feed_ip(&ipv6(6, "dead::1", "dead::beef", &tcp(50000, 443, 0x02, b"")), 1);

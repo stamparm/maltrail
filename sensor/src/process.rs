@@ -12,7 +12,7 @@ use crate::event::{proto as PROTO, trail_type as TRAIL, Event, Field};
 use crate::heuristics::dns_exhaustion::Outcome;
 use crate::heuristics::nxdomain::{consonant_count, label_entropy, NxAlert};
 use crate::heuristics::scan::{InfectionDetail, PathDetail, PortDetail};
-use crate::packet::{self, Drop};
+use crate::packet::{self, tunnel, Drop};
 use crate::protocols::{dns, http};
 use crate::settings;
 use crate::state::{FlowStamp, WorkerState};
@@ -302,29 +302,52 @@ fn check_domain_inner(
 
 /// `sensor.py:_process_packet()` — processes one raw IP-layer packet.
 pub fn process_packet(st: &mut WorkerState, packet_bytes: &[u8], sec: u64, usec: u32, ip_offset: usize) {
+    // Iterative, not recursive. A self-recursive function cannot be inlined, and this one is the
+    // per-packet entry point - making it recursive to unwrap tunnels would charge every packet,
+    // tunnelled or not, for a call it never makes.
+    let mut offset = ip_offset;
+    for depth in 0..=tunnel::MAX_TUNNEL_DEPTH {
+        match process_layer(st, packet_bytes, sec, usec, offset, depth) {
+            Some(inner) => offset = inner,
+            None => break,
+        }
+    }
+}
+
+/// One IP header and its payload. Returns where the encapsulated packet starts, if there is one.
+fn process_layer(
+    st: &mut WorkerState,
+    packet_bytes: &[u8],
+    sec: u64,
+    usec: u32,
+    ip_offset: usize,
+    depth: usize,
+) -> Option<usize> {
     st.last_sec = sec;
-    if st.cfg.use_heuristics {
+    if st.cfg.use_heuristics && depth == 0 {
+        // once per PACKET, not once per layer: the sweep is a clock tick, and running it again
+        // for an inner header would age state by the number of tunnels in front of it
         heuristics_sweep(st, sec, usec);
     }
 
     let Some(ip_data) = packet_bytes.get(ip_offset..) else {
         st.metrics.packets_ignored += 1;
-        return;
+        return None;
     };
 
     let header = match packet::parse_ip(ip_data) {
         Ok(h) => h,
         Err(Drop::NotIp) => {
             st.metrics.packets_ignored += 1;
-            return;
+            return None;
         }
         Err(Drop::Fragment) => {
             st.metrics.packets_fragment += 1;
-            return;
+            return None;
         }
         Err(Drop::Truncated) => {
             st.metrics.packets_truncated += 1;
-            return;
+            return None;
         }
     };
 
@@ -348,6 +371,20 @@ pub fn process_packet(st: &mut WorkerState, packet_bytes: &[u8], sec: u64, usec:
         17 => udp(st, packet_bytes, ip_data, &header, sec, usec),
         other => other_proto(st, ip_data, &header, other, sec, usec),
     }
+
+    // If this packet carries another one, tell the caller where it starts.
+    //
+    // ADDITIVE on purpose: the outer header has already been matched above, exactly as it was
+    // before tunnels were unwrapped at all, so a tunnel endpoint that is itself a listed address
+    // still fires. The inner packet is then processed as a packet in its own right, which is what
+    // gives an overlay's hosts their own detections.
+    if depth < tunnel::MAX_TUNNEL_DEPTH && tunnel::may_encapsulate(header.protocol) {
+        if let Some(inner) = tunnel::inner_ip_offset(packet_bytes, ip_offset, &header) {
+            st.metrics.packets_decapsulated += 1;
+            return Some(inner);
+        }
+    }
+    None
 }
 
 /// `core/fastfilter.py:head_sni()` — pull the SNI out of a TLS ClientHello (TCP) or a QUIC

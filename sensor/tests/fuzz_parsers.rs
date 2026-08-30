@@ -11,7 +11,7 @@
 //!    what actually reaches the deep parsers,
 //!  * adversarial length fields (IHL, DNS label lengths, TLS/QUIC length prefixes).
 
-use maltrail_sensor::packet::{self, dlt};
+use maltrail_sensor::packet::{self, dlt, tunnel};
 use maltrail_sensor::protocols::{dns, http, quic, tls};
 use maltrail_sensor::testkit::*;
 
@@ -55,6 +55,16 @@ fn hammer_parsers(data: &[u8]) {
         let _ = learner.resolve(datalink, data);
     }
     let _ = dlt::guess_ip_offset(data, 64);
+
+    // The tunnel parser turns attacker-supplied length fields (GRE's flag words, GENEVE's
+    // opt_len) into an OFFSET that the packet path then parses at, so a wrong answer is not a
+    // crash but a parse of somebody else's bytes. Feed it every header it might be handed.
+    if let Ok(header) = packet::parse_ip(data) {
+        if let Some(off) = tunnel::inner_ip_offset(data, 0, &header) {
+            assert!(off <= data.len(), "tunnel offset {off} is past the end of a {}-byte packet", data.len());
+            let _ = packet::parse_ip(&data[off..]);
+        }
+    }
 
     let _ = dns::qdcount(data);
     let _ = dns::flags_high(data);
@@ -102,6 +112,13 @@ fn valid_seeds() -> Vec<Vec<u8>> {
     seeds.push(eth(&seeds[0].clone(), 0x0800, None));
     seeds.push(eth(&seeds[0].clone(), 0x0800, Some(100)));
     seeds.push(b"HTTP/1.1 200 OK\r\nServer: sinkhole\r\n\r\n".to_vec());
+    // Encapsulated seeds: mutating these produces the length fields that matter - a GRE flag word
+    // claiming options that are not there, a GENEVE opt_len past the end of the packet.
+    let inner = eth(&seeds[0].clone(), 0x0800, None);
+    seeds.push(vxlan("192.0.2.1", "192.0.2.2", 42, &inner));
+    seeds.push(geneve("192.0.2.1", "192.0.2.2", 0x6558, 8, &inner));
+    seeds.push(gre("192.0.2.1", "192.0.2.2", 0x0800, true, true, true, &seeds[0].clone()));
+    seeds.push(erspan("192.0.2.1", "192.0.2.2", true, &inner));
     seeds
 }
 

@@ -125,6 +125,12 @@ pub fn render(registry: &Registry, uptime_seconds: f64) -> String {
     metric!("maltrail_packets_malformed_total", "counter", "Packets rejected as malformed.", t.packets_malformed);
     metric!("maltrail_packets_truncated_total", "counter", "Packets too short for their headers.", t.packets_truncated);
     metric!("maltrail_packets_fragments_total", "counter", "Non-first IP fragments skipped.", t.packets_fragment);
+    metric!(
+        "maltrail_packets_decapsulated_total",
+        "counter",
+        "Encapsulated packets unwrapped (VXLAN/GENEVE/GRE/ERSPAN/IP-in-IP). Zero on an overlay SPAN feed means the sensor is only seeing tunnel endpoints.",
+        t.packets_decapsulated
+    );
 
     // The two that matter most for an alert: the kernel dropping packets means MISSED DETECTIONS,
     // silently. Nothing else in the sensor's output makes that visible in time to act on it.

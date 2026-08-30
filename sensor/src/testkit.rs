@@ -542,3 +542,61 @@ pub fn http_get(path: &str, host: Option<&str>, ua: &str) -> Vec<u8> {
     text.push_str(&format!("User-Agent: {ua}\r\nAccept: */*\r\n\r\n"));
     text.into_bytes()
 }
+
+/// VXLAN (RFC 7348): UDP to 4789, an 8-byte header, then a complete inner Ethernet frame.
+pub fn vxlan(src: &str, dst: &str, vni: u32, inner_frame: &[u8]) -> Vec<u8> {
+    let mut p = vec![0x08, 0, 0, 0]; // flags: VNI valid
+    p.extend_from_slice(&vni.to_be_bytes()[1..]); // 24-bit VNI
+    p.push(0);
+    p.extend_from_slice(inner_frame);
+    ipv4(17, src, dst, &udp(45000, 4789, &p))
+}
+
+/// GENEVE (RFC 8926): UDP to 6081, an 8-byte base header plus `opt_bytes` of options, then the
+/// payload named by `proto_type` (0x6558 transparent Ethernet, 0x0800 IPv4, 0x86dd IPv6).
+pub fn geneve(src: &str, dst: &str, proto_type: u16, opt_bytes: usize, inner: &[u8]) -> Vec<u8> {
+    let mut p = vec![((opt_bytes / 4) as u8) & 0x3f, 0]; // ver(2) | opt_len(6), flags
+    p.extend_from_slice(&proto_type.to_be_bytes());
+    p.extend_from_slice(&[0, 0, 0, 0]); // VNI(3) + reserved
+    p.resize(8 + opt_bytes, 0);
+    p.extend_from_slice(inner);
+    ipv4(17, src, dst, &udp(45001, 6081, &p))
+}
+
+/// GRE (RFC 2784/2890). The optional checksum/key/sequence words are what make the header a
+/// variable length, and getting that length wrong is the whole difficulty of parsing it.
+pub fn gre(src: &str, dst: &str, proto_type: u16, checksum: bool, key: bool, seq: bool, inner: &[u8]) -> Vec<u8> {
+    let mut flags: u16 = 0;
+    if checksum {
+        flags |= 0x8000;
+    }
+    if key {
+        flags |= 0x2000;
+    }
+    if seq {
+        flags |= 0x1000;
+    }
+    let mut p = Vec::new();
+    p.extend_from_slice(&flags.to_be_bytes());
+    p.extend_from_slice(&proto_type.to_be_bytes());
+    if checksum {
+        p.extend_from_slice(&[0, 0, 0, 0]); // checksum + reserved1
+    }
+    if key {
+        p.extend_from_slice(&[0, 0, 0, 1]);
+    }
+    if seq {
+        p.extend_from_slice(&[0, 0, 0, 2]);
+    }
+    p.extend_from_slice(inner);
+    ipv4(47, src, dst, &p)
+}
+
+/// ERSPAN over GRE: type II (0x88be, 8-byte header) or type III (0x22eb, 12-byte header), then a
+/// mirrored Ethernet frame. This is what a switch SPAN session actually puts on the wire.
+pub fn erspan(src: &str, dst: &str, type_iii: bool, inner_frame: &[u8]) -> Vec<u8> {
+    let mut p = vec![0u8; if type_iii { 12 } else { 8 }];
+    p[0] = if type_iii { 0x20 } else { 0x10 }; // version nibble
+    p.extend_from_slice(inner_frame);
+    gre(src, dst, if type_iii { 0x22eb } else { 0x88be }, false, false, false, &p)
+}
