@@ -77,6 +77,8 @@
   // CSS-escape a value used inside an attribute selector ([data-ip="..."]); raw log fields can contain "/]/\ which throw
   function cssEsc(s) { s = "" + s; return (window.CSS && CSS.escape) ? CSS.escape(s) : s.replace(/["\\\]\[]/g, "\\$&"); }
   function padz(s, w) { s = "" + s; while (s.length < w) s = "0" + s; return s; }
+  // performance.now() where available; Date.now() is enough for the millisecond thresholds we use it for
+  function _now() { return (window.performance && performance.now) ? performance.now() : +new Date(); }
   // legacy-exact getThreatUID: murmur3(threat_text, seed 13); 6-hex + N0/F0/D0 for dns-exhaustion/flood/dga, else 8-hex
   function threatUID(text, kind) {
     var hex = (murmur3(text, 13) >>> 0).toString(16);
@@ -384,6 +386,11 @@
         t = { key: ttext, kind: kind, sensor: sensor, src: src, sport: sport, dst: dst, dport: dport, proto: proto,
               type: type, trail: trail, info: info, ref: ref, count: 0, first: time, last: time,
               hours: new Array(24).fill(0), sev: severityOf(info, ref),
+              // uidc/_hay/_risk* are filled in later but are declared HERE so every threat leaves this
+              // literal with the same shape. Adding them afterwards transitions the hidden class of each
+              // of ~70k objects, and V8 then reads every property on them through a slower path - which
+              // showed up as the filter pass getting measurably worse when the risk memo was introduced.
+              uidc: "", _hay: null, _riskT: undefined, _riskN: -1, _risk: 0,
               srcS: newSet(), sportS: newSet(), dstS: newSet(), dportS: newSet(), protoS: newSet(), sensorS: newSet(), events: [] };
         threats.set(ttext, t); order.push(t);
       }
@@ -446,6 +453,11 @@
         t = { key: ttext, kind: kind, sensor: sensor, src: src, sport: sport, dst: dst, dport: dport, proto: proto,
               type: type, trail: trail, info: info, ref: ref, count: 0, first: time, last: time,
               hours: new Array(24).fill(0), sev: severityOf(info, ref),
+              // uidc/_hay/_risk* are filled in later but are declared HERE so every threat leaves this
+              // literal with the same shape. Adding them afterwards transitions the hidden class of each
+              // of ~70k objects, and V8 then reads every property on them through a slower path - which
+              // showed up as the filter pass getting measurably worse when the risk memo was introduced.
+              uidc: "", _hay: null, _riskT: undefined, _riskN: -1, _risk: 0,
               srcS: newSet(), sportS: newSet(), dstS: newSet(), dportS: newSet(), protoS: newSet(), sensorS: newSet(), events: [] };
         t.uidc = threatUID(ttext, kind);
         threats.set(ttext, t); order.push(t); agg.sevCount[t.sev]++;
@@ -921,7 +933,19 @@
   // ---- local persistence (hidden threats, UID-keyed; UID is byte-compatible with the legacy frontend) ----
   var LS_HIDDEN = "mt_hidden_v2";
   function lsGet(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
-  function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } }
+  // Bumped by every persisted preference change, which is what invalidates the cached grid view
+  // below. Hooking it HERE rather than at each individual saver is deliberate: hidden threats,
+  // whitelist, tags and triage all filter the grid, and a preference added later would otherwise
+  // have to remember to invalidate or leave the grid showing rows it no longer matches. An extra
+  // invalidation costs one recompute; a missed one shows the analyst the wrong threats.
+  var _viewVer = 0;
+  // The two keys that are written often and can never change WHICH rows are shown: the RIPE
+  // geo/ASN cache (saved every time an enrichment lookup returns) and the page-size preference.
+  // Everything else that goes through here - hidden, whitelist, tags, triage, notes, aliases - is
+  // a filter input, so the default stays "invalidate", and a preference added later gets correct
+  // behaviour without anyone having to remember to wire it up.
+  var LS_NOT_A_FILTER = { "mt_ripe": 1, "mt_prefs": 1 };
+  function lsSet(k, v) { if (!LS_NOT_A_FILTER[k]) _viewVer++; try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } }
   function loadHidden() { var o = lsGet(LS_HIDDEN, {}); return (o && typeof o === "object") ? o : {}; }
   function saveHidden() { lsSet(LS_HIDDEN, state.hidden); }
   function toggleHide(uid) { if (!uid) return; if (state.hidden[uid]) delete state.hidden[uid]; else state.hidden[uid] = 1; saveHidden(); refresh(); }
@@ -932,11 +956,28 @@
   function loadWL() { var o = lsGet(LS_WL, null); o = (o && typeof o === "object") ? o : {}; o.src = o.src || {}; o.trail = o.trail || {}; return o; }
   function saveWL() { lsSet(LS_WL, state.wl); }
   function wlCount() { return Object.keys(state.wl.src).length + Object.keys(state.wl.trail).length; }
+  // Whether ANY whitelist rule exists, memoized against the same counter that invalidates the grid
+  // view (saveWL goes through lsSet). Most deployments have none, and isWL runs once per threat per
+  // filter pass - so without this the empty case still paid a normTrail call and an Array.from
+  // allocation for every one of ~120k threats, to answer "no" every time.
+  var _wlAny = false, _wlAnyVer = -1;
+  function wlAny() {
+    if (_wlAnyVer !== _viewVer) {
+      _wlAnyVer = _viewVer;
+      var w = state.wl;
+      _wlAny = !!(w && (Object.keys(w.src).length || Object.keys(w.trail).length));
+    }
+    return _wlAny;
+  }
   function isWL(t) {
+    if (!wlAny()) return false;
     var w = state.wl;
     if (w.src[t.src]) return true;
     if (w.trail[normTrail(t.trail)]) return true;
-    var ss = setList(t.srcS); for (var i = 0; i < ss.length; i++) if (w.src[ss[i]]) return true;
+    // iterate the Set directly rather than materialising it - setList() is an Array.from, and this
+    // runs per threat
+    var vals = t.srcS && t.srcS.vals;
+    if (vals) { var it = vals.values(), r; while (!(r = it.next()).done) if (w.src[r.value]) return true; }
     return false;
   }
   function whitelistSrc(ip) { if (ip) { state.wl.src[ip] = 1; saveWL(); state.page = 0; refresh(); } }
@@ -1249,7 +1290,8 @@
   function closeDrawer() {
     var d = document.getElementById("drawer"), sc = document.getElementById("drawer_scrim");
     var wasOpen = d && d.classList.contains("open");
-    if (d) d.classList.remove("open"); if (sc) sc.classList.remove("open");
+    clearTimeout(state._scrimT);
+    if (d) d.classList.remove("open"); if (sc) { sc.classList.remove("open"); sc.classList.remove("settled"); }
     if (wasOpen && state._drawerReturn && state._drawerReturn.focus) { try { state._drawerReturn.focus(); } catch (e) {} }   // restore focus to the trigger
     state._drawerReturn = null;
   }
@@ -1260,13 +1302,50 @@
     ctx.globalAlpha = 1; ctx.fillStyle = tc.faint; ctx.font = "9px ui-monospace,monospace"; ctx.textBaseline = "bottom";
     for (var hh = 0; hh < 24; hh += 6) ctx.fillText((hh < 10 ? "0" : "") + hh + "h", hh * bw + 1, h);
   }
+  // "N other threats from this source" / "...on this trail" used to be answered by walking EVERY
+  // threat on each drawer open - one Set probe and one normTrail call per threat, ~120k of each on
+  // a busy day, to produce two integers. One walk answers it for every threat at once, so it is
+  // done once per aggregate and read in O(1) after that. Built on the first drawer open rather
+  // than during load: an analyst who never opens a drawer never pays for it, and the walk is the
+  // same one that was happening on that click anyway.
+  var _dataVer = 0, _relIdx = null, _relIdxVer = -1;
+  function relIndex() {
+    if (_relIdx && _relIdxVer === _dataVer) return _relIdx;
+    var bySrc = new Map(), byTrail = new Map(), all = state.all;
+    for (var i = 0; i < all.length; i++) {
+      var x = all[i], nt = normTrail(x.trail);
+      byTrail.set(nt, (byTrail.get(nt) || 0) + 1);
+      // the union the old walk tested: the threat's primary source plus every distinct source its
+      // events carried (those differ only once the condensed set has hit its cap)
+      var vals = x.srcS && x.srcS.vals;
+      if (vals) {
+        vals.forEach(function (ip) { bySrc.set(ip, (bySrc.get(ip) || 0) + 1); });
+        if (!vals.has(x.src)) bySrc.set(x.src, (bySrc.get(x.src) || 0) + 1);
+      } else bySrc.set(x.src, (bySrc.get(x.src) || 0) + 1);
+    }
+    _relIdxVer = _dataVer;
+    return (_relIdx = { src: bySrc, trail: byTrail });
+  }
+  // Build the index while the browser is idle, so even the FIRST drawer open is cheap - that click
+  // is the one an analyst forms an impression from, and it would otherwise be the one that pays.
+  // Deferred again while a load is still streaming, where the next chunk would throw the work away.
+  function warmRelIndex() {
+    var go = function () {
+      if (_relIdxVer === _dataVer) return;              // already current
+      if (state.streaming) { warmRelIndex(); return; }  // try again after the next chunk settles
+      try { relIndex(); } catch (e) { /* a drawer open will just build it itself */ }
+    };
+    if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 3000 }); else setTimeout(go, 400);
+  }
   function openDrawer(t) {
     var d = document.getElementById("drawer"), sc = document.getElementById("drawer_scrim"); if (!d || !t) return;
     var hue = (murmur3(t.uidc, 7) >>> 0) % 360, trg = state.triage[t.uidc];
     var srcs = setList(t.srcS), dsts = setList(t.dstS), ports = setList(t.dportS), ev = t.events || [];
     var sports = setList(t.sportS), protos = setList(t.protoS);
-    var _nt = normTrail(t.trail), relSrc = 0, relTrail = 0;
-    for (var ri2 = 0; ri2 < state.all.length; ri2++) { var x = state.all[ri2]; if (x === t) continue; if (x.src === t.src || (x.srcS && x.srcS.vals.has(t.src))) relSrc++; if (normTrail(x.trail) === _nt) relTrail++; }
+    var _nt = normTrail(t.trail), _rel = relIndex();
+    // the index counts this threat too; the walk it replaces skipped it ("OTHER threats")
+    var relSrc = Math.max(0, (_rel.src.get(t.src) || 0) - 1),
+        relTrail = Math.max(0, (_rel.trail.get(_nt) || 0) - 1);
     function chips(arr) { return arr.length ? arr.map(function (v) { return '<span class="dchip">' + esc(v) + '</span>'; }).join("") : '<span class="dwr-none">none</span>'; }
     function protoChips(arr) {
       if (!arr.length) return '<span class="dwr-none">none</span>';
@@ -1357,7 +1436,15 @@
     var cv = d.querySelector(".dwr-spark"); if (cv) drawDwrSpark(cv, t.hours, sevColor(t.sev));
     state._drawerReturn = document.activeElement;                          // remember focus origin
     d.setAttribute("aria-modal", "true");
-    d.classList.add("open"); if (sc) sc.classList.add("open");
+    d.classList.add("open");
+    if (sc) {
+      sc.classList.add("open");
+      // Blur the backdrop only once the panel has finished sliding - see .drawer-scrim.settled.
+      // A transitionend listener would be tidier, but the scrim's own transition is the opacity
+      // fade, not the panel's slide, and reduced-motion removes both; a timer covers every case.
+      clearTimeout(state._scrimT);
+      state._scrimT = setTimeout(function () { if (sc.classList.contains("open")) sc.classList.add("settled"); }, 260);
+    }
     var _cl = d.querySelector("#dwr_close"); if (_cl) _cl.focus();          // move focus into the dialog
     enrichDrawerIPs();                                                       // country flags + ASN on source/dest chips
   }
@@ -1655,18 +1742,35 @@
     }
     return pOr() || function () { return true; };
   }
+  // The whole grid pipeline: filter every threat, then sort the survivors. refresh() calls this for
+  // sorting and filtering - but ALSO for paging and for changing the page size, which change
+  // neither. Moving to page 2 of an unchanged view was re-filtering ~70k threats and re-sorting
+  // them just to slice out 25 rows.
+  //
+  // So both halves are memoized against exactly the state they read: the filter against the query,
+  // chips, severity and _viewVer; the sort against that plus the sort key and direction. Changing
+  // only the sort therefore keeps the filter pass, and paging keeps both.
   function viewList() {
-    var chips = state.filters, q = compileQuery(state.input);
-    var hidden = state.hidden, showH = state.showHidden;
-    var sev = state.sev;
-    var list = state.all.filter(function (t) {
-      if (!showH && hidden[t.uidc]) return false;
-      if (isWL(t)) return false;
-      if (sev != null && t.sev !== sev) return false;
-      for (var ci = 0; ci < chips.length; ci++) if (!matchToken(t, chips[ci])) return false;
-      return q(t);
-    });
+    var fsig = _viewVer + "\u0001" + state.sev + "\u0001" + (state.showHidden ? 1 : 0) +
+               "\u0001" + state.input + "\u0001" + state.filters.join("\u0002");
+    var filtered = state._vlList;
+    if (state._vlSig !== fsig || !filtered) {
+      var chips = state.filters, q = compileQuery(state.input);
+      var hidden = state.hidden, showH = state.showHidden;
+      var sev = state.sev;
+      filtered = state.all.filter(function (t) {
+        if (!showH && hidden[t.uidc]) return false;
+        if (isWL(t)) return false;
+        if (sev != null && t.sev !== sev) return false;
+        for (var ci = 0; ci < chips.length; ci++) if (!matchToken(t, chips[ci])) return false;
+        return q(t);
+      });
+      state._vlSig = fsig; state._vlList = filtered; state._vsSig = null;
+    }
+    var ssig = fsig + "\u0001" + state.sortKey + "\u0001" + state.sortDir;
+    if (state._vsSig === ssig && state._vsList) return state._vsList;
     var k = state.sortKey, dir = state.sortDir;
+    var list = filtered.slice();   // sort a copy: .sort() is in place and the filter result is cached
     list.sort(function (a, b) {
       var c;
       if (k === "sev") c = riskOf(a) - riskOf(b);                // "severity" column = risk-ranked (severity-dominant, then compromise signal / volume within a band)
@@ -1677,6 +1781,7 @@
       if (c === 0) c = b.count - a.count;
       return c * dir;
     });
+    state._vsSig = ssig; state._vsList = list;
     return list;
   }
   function renderSevFilter() {
@@ -1988,13 +2093,25 @@
   // noise (a scanner hammering a port shouldn't bury one C2 beacon). Volume is a log-scaled, capped tiebreak only.
   var RISK_HOT = /\b(c2|cnc|cobalt|beacon|trojan|ransom|sinkhole|dga|malware|infect(?:ed|ion)?|exfil|backdoor|rat|apt|stealer|botnet|loader|dropper|phish)\b/;
   var RISK_NOISE = /\b(scan|scanner|reputation|attacker|crawler|bruteforce|brute[-\s]?force|mass|spam|probe|honeypot)\b/;
+  // Memoized, because this is called from INSIDE the sort comparator - twice per comparison. On a
+  // busy day that is ~150k calls per sort, each building a concatenated lowercased string and
+  // running two regexes over it, and "severity" is the DEFAULT column, so every page-flip, sort and
+  // keystroke paid for it. The text half (sev/type/info/trail) is written once when the threat is
+  // created and never again; only `count` moves, and only when live merges new events in - so
+  // keying the memo on count is not an approximation, it is exact, and it invalidates itself.
+  // Same arithmetic in the same order as before: identical scores, identical ordering.
   function riskOf(t) {
-    var s = (t.sev || 1) * 1000;
-    var hay = (("" + (t.type || "")) + " " + (t.info || "") + " " + (t.trail || "")).toLowerCase();
-    if (RISK_HOT.test(hay)) s += 400;
-    if (RISK_NOISE.test(hay)) s -= 250;
-    s += Math.min(90, Math.log(1 + (t.count || 1)) * 15);
-    return s;
+    if (t._riskN === t.count) return t._risk;
+    var s = t._riskT;
+    if (s === undefined) {
+      s = (t.sev || 1) * 1000;
+      var hay = (("" + (t.type || "")) + " " + (t.info || "") + " " + (t.trail || "")).toLowerCase();
+      if (RISK_HOT.test(hay)) s += 400;
+      if (RISK_NOISE.test(hay)) s -= 250;
+      t._riskT = s;
+    }
+    t._riskN = t.count;
+    return (t._risk = s + Math.min(90, Math.log(1 + (t.count || 1)) * 15));
   }
   // inline SVG arrows (not Unicode glyphs, whose vertical position is font-dependent — Firefox rendered → / ← below
   // the text's middle). An SVG is centered by construction, so vertical-align:middle aligns it on the port text in
@@ -2442,10 +2559,43 @@
     var _ct = document.getElementById("collapse_toggle"); if (_ct) _ct.onclick = toggleCollapsed;  // hide/show the whole block
     var f = document.getElementById("filter");
     if (f) {
-      f.oninput = function () { state.input = f.value; state.page = 0; refresh(); };
+      // Search re-filters every threat, so on a busy day one keystroke can block the main thread
+      // for ~80ms - longer than the gap between keystrokes, which leaves the browser busy for most
+      // of the time you are typing a word. So coalesce, but only when there is something to
+      // coalesce: while a refresh is cheap (a quiet day, a narrow filter - the common case) it
+      // still runs on the keystroke and search stays instant. The delay is only paid once the
+      // alternative is a UI that stutters for the whole word.
+      var _searchT = null, _lastRefreshMs = 0, _lastInput = 0;
+      var searchRefresh = function () {
+        _searchT = null;
+        var t0 = _now();
+        refresh();
+        _lastRefreshMs = _now() - t0;
+      };
+      f.oninput = function () {
+        state.input = f.value; state.page = 0;
+        if (_searchT) { clearTimeout(_searchT); _searchT = null; }
+        var now = _now(), typing = (now - _lastInput) < 250;   // still mid-word, vs. paused for an answer
+        _lastInput = now;
+        // Refresh immediately unless BOTH are true: the user is still typing, and a refresh is
+        // expensive enough that doing it per keystroke would block the main thread for most of the
+        // word. A single edit, or the first keystroke after a pause, is never made to wait - and on
+        // a quiet day (the common case) nothing is ever deferred at all.
+        if (_lastRefreshMs < 30 || !typing) { searchRefresh(); return; }
+        _searchT = setTimeout(searchRefresh, 140);
+      };
       f.onkeydown = function (e) {
-        if (e.key === "Enter" && f.value.trim()) { addFilter(f.value.trim()); f.value = ""; state.input = ""; refresh(); }
-        else if (e.key === "Escape" && f.value) { e.preventDefault(); f.value = ""; state.input = ""; state.page = 0; refresh(); }
+        // Only Enter and Escape drop a pending refresh - both refresh themselves, so the coalesced
+        // one would be redundant. Cancelling on ANY keydown would strand the grid: an arrow key or
+        // a modifier pressed mid-word would kill the scheduled refresh with nothing to reschedule
+        // it, leaving rows that no longer match what the box says.
+        if (e.key === "Enter" && f.value.trim()) {
+          if (_searchT) { clearTimeout(_searchT); _searchT = null; }
+          addFilter(f.value.trim()); f.value = ""; state.input = ""; refresh();
+        } else if (e.key === "Escape" && f.value) {
+          if (_searchT) { clearTimeout(_searchT); _searchT = null; }
+          e.preventDefault(); f.value = ""; state.input = ""; state.page = 0; refresh();
+        }
       };
     }
     var sclr = document.getElementById("search_clear");
@@ -2928,7 +3078,8 @@
   }
 
   function render(d) {
-    state.all = d.threats; state.agg = d;
+    state.all = d.threats; state.agg = d; _viewVer++; _dataVer++;   // new/merged data: drop the cached grid view and the related-threat index
+    warmRelIndex();
     if (DEMO) { var mx = 0; for (var di = 0; di < d.threats.length; di++) { var p = parseTs(d.threats[di].last); if (p > mx) mx = p; } state._demoNow = mx || null; }   // anchor demo "now" to its latest event so relative times demo correctly
     if (!state.streaming) {   // new-threat detection only on a COMPLETE load (not progressive partials)
       var newOnes = [];

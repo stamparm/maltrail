@@ -615,5 +615,103 @@ class TestNoEvalInServedScripts(unittest.TestCase):
         self.assertEqual(offenders, [], "a served script uses dynamic code evaluation, which the "
                                         "shipped CSP forbids: %s" % "; ".join(offenders))
 
+class TestRiskScoreMemo(unittest.TestCase):
+    """riskOf() is memoized; the memo must not change a single score or the order they produce.
+
+    It is called from inside the grid's sort comparator, twice per comparison, so it is cached on
+    the threat - keyed on `count`, the only input that can still move after a threat is built. If
+    that key were ever wrong the grid would silently rank threats by a stale score: still sorted,
+    still plausible, quietly putting the wrong thing at the top. So this compares the memoized
+    function against the original formula, including across a count change.
+    """
+
+    def _node(self):
+        for candidate in ("node", "nodejs"):
+            if any(os.access(os.path.join(d, candidate), os.X_OK)
+                   for d in os.environ.get("PATH", "").split(os.pathsep) if d):
+                return candidate
+        raise unittest.SkipTest("needs node to evaluate riskOf()")
+
+    def test_memo_matches_the_plain_formula(self):
+        node = self._node()
+        js = _read(MAIN_JS)
+        hot = re.search(r"var RISK_HOT = /.*?/;", js, re.S)
+        noise = re.search(r"var RISK_NOISE = /.*?/;", js, re.S)
+        fn = re.search(r"function riskOf\(t\) \{.*?\n  \}", js, re.S)
+        self.assertTrue(hot and noise and fn, "could not find riskOf() in main.js")
+        script = hot.group(0) + "\n" + noise.group(0) + "\n" + fn.group(0) + """
+// the pre-memo implementation, verbatim, as the reference
+function reference(t) {
+  var s = (t.sev || 1) * 1000;
+  var hay = (("" + (t.type || "")) + " " + (t.info || "") + " " + (t.trail || "")).toLowerCase();
+  if (RISK_HOT.test(hay)) s += 400;
+  if (RISK_NOISE.test(hay)) s -= 250;
+  s += Math.min(90, Math.log(1 + (t.count || 1)) * 15);
+  return s;
+}
+var TYPES = ["DNS", "IP", "URL", "UA", "HTTP", "JA3"];
+var INFOS = ["asyncrat (malware)", "mass scanner (suspicious)", "ipinfo (suspicious)",
+             "cobalt strike beacon", "crawler reputation", "phish kit", "", "unknown thing"];
+var TRAILS = ["evil.ru", "1.2.3.4", "ransomware.example/gate.php", "sinkhole.test", "x"];
+var bad = [];
+var all = [];
+for (var s = 1; s <= 3; s++)
+  for (var ti = 0; ti < TYPES.length; ti++)
+    for (var ii = 0; ii < INFOS.length; ii++)
+      for (var tr = 0; tr < TRAILS.length; tr++)
+        for (var c = 0; c < 4; c++) {
+          var count = [0, 1, 37, 900000][c];
+          all.push({ sev: s, type: TYPES[ti], info: INFOS[ii], trail: TRAILS[tr], count: count });
+        }
+all.forEach(function (t) {
+  var want = reference(t);
+  if (riskOf(t) !== want) bad.push("first call " + JSON.stringify(t) + " " + riskOf(t) + " != " + want);
+  if (riskOf(t) !== want) bad.push("memo hit differs " + JSON.stringify(t));
+  // the memo is keyed on count: moving it must re-derive, not serve the stale score
+  t.count = t.count + 11;
+  var want2 = reference(t);
+  if (riskOf(t) !== want2) bad.push("after count change " + JSON.stringify(t) + " " + riskOf(t) + " != " + want2);
+});
+// and the ORDER the comparator produces must be identical either way
+var a = all.slice(), b = all.slice();
+a.sort(function (x, y) { var c = riskOf(x) - riskOf(y); if (c === 0) c = y.count - x.count; return c; });
+b.sort(function (x, y) { var c = reference(x) - reference(y); if (c === 0) c = y.count - x.count; return c; });
+for (var i = 0; i < a.length; i++) if (a[i] !== b[i]) { bad.push("order diverges at " + i); break; }
+console.log(bad.length ? bad.slice(0, 5).join(" | ") : "OK");
+"""
+        import subprocess
+        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        self.assertEqual("OK", out.strip(), out.strip())
+
+
+class TestViewCacheInvalidation(unittest.TestCase):
+    """The grid's filtered/sorted list is cached; the exclusion list is what makes that safe.
+
+    Every persisted preference bumps a counter that drops the cache, EXCEPT the keys named in
+    LS_NOT_A_FILTER. That list is a promise: "writing this can never change which rows are
+    shown". Adding a key that CAN change it would leave the grid showing rows that no longer
+    match - not an error, just wrong data on screen - so the list is pinned here and a new
+    entry has to be argued for in this test rather than slipped in.
+    """
+
+    ALLOWED = {"mt_ripe", "mt_prefs"}
+
+    def test_only_non_filtering_keys_skip_invalidation(self):
+        js = _read(MAIN_JS)
+        m = re.search(r"var LS_NOT_A_FILTER = \{([^}]*)\};", js)
+        self.assertTrue(m, "LS_NOT_A_FILTER is gone from main.js - is the grid view still cached?")
+        keys = set(re.findall(r'"([^"]+)"', m.group(1)))
+        self.assertEqual(self.ALLOWED, keys,
+                         "LS_NOT_A_FILTER changed. A key listed here is exempt from invalidating "
+                         "the cached grid view, so it must be one that cannot affect which rows "
+                         "match. Update ALLOWED here only after checking that.")
+
+    def test_the_grid_view_is_actually_invalidated_somewhere(self):
+        js = _read(MAIN_JS)
+        self.assertIn("_viewVer++", js, "nothing bumps the grid-view cache counter any more")
+        self.assertRegex(js, r"state\.all = d\.threats;[^\n]*_viewVer\+\+",
+                         "a new aggregate must drop the cached grid view, or live updates would "
+                         "keep rendering the previous load's rows")
+
 if __name__ == "__main__":
     unittest.main()

@@ -629,8 +629,12 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 
 /* ===== threat detail drawer ===== */
 #rows tr{cursor:pointer}
-.drawer-scrim{position:fixed;inset:0;background:rgba(6,12,22,.55);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:opacity .2s;z-index:9990}
+.drawer-scrim{position:fixed;inset:0;background:rgba(6,12,22,.55);opacity:0;visibility:hidden;transition:opacity .2s;z-index:9990}
 .drawer-scrim.open{opacity:1;visibility:visible}
+/* The blur lands only once the panel has finished sliding. backdrop-filter re-blurs the whole
+   viewport every frame it is composited, so animating opacity underneath it halved the frame rate
+   of the open; applying it after the transition keeps the settled look and drops the cost. */
+.drawer-scrim.settled{backdrop-filter:blur(2px)}
 .drawer{position:fixed;top:0;right:0;height:100vh;height:100dvh;width:466px;max-width:92vw;background:var(--surface);
   border-left:1px solid var(--line-solid);box-shadow:-30px 0 70px -34px #000;z-index:9991;
   transform:translateX(102%);transition:transform .24s cubic-bezier(.22,.61,.36,1);display:flex;flex-direction:column;overflow:hidden}
