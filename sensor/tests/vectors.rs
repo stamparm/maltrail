@@ -324,6 +324,22 @@ fn entropy_and_consonants_match_python() {
     }
 }
 
+/// The two ignore-rule parsers must agree on every spelling.
+///
+/// #19142 put a non-trivial parse in two languages: a CIDR, a dash range, the last-octet shorthand,
+/// and - just as important - the strings that are NOT ranges. A hostname with a dash read as a
+/// range on one implementation and a literal on the other would silence traffic on the sensor and
+/// not on the server, or the reverse, which is the kind of disagreement nobody notices until it
+/// matters.
+#[test]
+fn ignore_rules_match_python() {
+    for row in load("ignore_rule.tsv") {
+        let expected = row[3] == "1";
+        let got = maltrail_sensor::ignore::rule_matches_for_test(&row[0], &row[1], &row[2]);
+        assert_eq!(got, expected, "{} rule {:?} against {:?}", row[0], row[1], row[2]);
+    }
+}
+
 #[test]
 fn valid_dns_name_matches_python() {
     let s = statics();

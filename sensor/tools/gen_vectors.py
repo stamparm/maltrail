@@ -216,6 +216,41 @@ def entropy_vectors():
     return rows
 
 
+def ignore_rule_vectors():
+    """Ignore-list matching: one row per (rule, event) pair, with Python's verdict.
+
+    #19142 added networks and ranges to the address and port fields, so there are now two
+    implementations of a non-trivial parse (core/ignore.py and sensor/src/ignore.rs) that must
+    agree on every spelling - including the ones that are NOT ranges, like a hostname with a dash
+    in it, where disagreeing would silence traffic on one sensor and not the other.
+    """
+
+    from core.ignore import _compile_host, _compile_port, _host_matches, _port_matches
+
+    hosts = [
+        "*", "192.168.0.3", "192.168.1.0/24", "192.168.1.77/32", "0.0.0.0/0", "192.168.1.77/24",
+        "10.0.0.1-10.0.0.15", "10.0.0.1-15", "10.0.0.7-7", "10.0.0.20-10.0.0.1", "10.0.0.1-999",
+        "192.168.1.0/33", "192.168.1.0/abc", "my-host.com", "2001:db8::/32", "2001:db8::1-2001:db8::ff",
+        "dead::/16", "2001:db8::5",
+    ]
+    host_values = ["192.168.0.3", "192.168.1.77", "192.168.1.0", "192.168.0.255", "192.168.2.0",
+                   "10.0.0.7", "10.0.0.16", "2001:db8::5", "dead::beef", "my-host.com", "1.2.3.4"]
+
+    ports = ["*", "22", "8000-8100", "1024-65535", "1-1023", "100-50", "abc-def", "-"]
+    port_values = ["22", "8080", "50000", "-", "0", "65535"]
+
+    rows = []
+    for rule in hosts:
+        compiled = _compile_host(rule)
+        for value in host_values:
+            rows.append(["host", rule, value, "1" if _host_matches(compiled, value) else "0"])
+    for rule in ports:
+        compiled = _compile_port(rule)
+        for value in port_values:
+            rows.append(["port", rule, value, "1" if _port_matches(compiled, value) else "0"])
+    return rows
+
+
 def valid_dns_name_vectors():
     values = ["evil.com", "a.b.example.com", "nodot", "bad_underscore.com", "-x.com", "x-.com",
               "1.2.3.4", "x..com", "UPPER.COM", "trailing.", "x.c", ""]
@@ -397,6 +432,7 @@ def main():
     write("splitext.tsv", splitext_vectors(), "filename <TAB> name <TAB> extension")
     write("checks.tsv", checks_vectors(), "path <TAB> post_data <TAB> checks joined by 0x1f")
     write("entropy.tsv", entropy_vectors(), "label <TAB> entropy <TAB> consonant count")
+    write("ignore_rule.tsv", ignore_rule_vectors(), "kind <TAB> rule <TAB> value <TAB> 1 if it matches")
     write("valid_dns_name.tsv", valid_dns_name_vectors(), "name <TAB> matches VALID_DNS_NAME_REGEX")
     write("suspicious_request.tsv", suspicious_request_vectors(), "payload <TAB> first matching description")
     write("suspicious_ua.tsv", suspicious_ua_vectors(), "ua <TAB> whitelisted <TAB> suspicious match")

@@ -263,6 +263,12 @@ pub fn make_mask(bits: u32) -> u32 {
     if bits >= 32 {
         return 0xffff_ffff;
     }
+    // /0 has to be spelled out: `1u32 << 32` panics in debug and wraps to `1u32 << 0` in release,
+    // which would turn a /0 into a /32. Python has no fixed width and simply returns 0, so this
+    // was a divergence as well as a panic - reachable from any whitelist file carrying 0.0.0.0/0.
+    if bits == 0 {
+        return 0;
+    }
     0xffff_ffffu32 ^ ((1u32 << (32 - bits)) - 1)
 }
 
@@ -410,6 +416,9 @@ mod tests {
     fn make_mask_doctest() {
         assert_eq!(Ip::V4(make_mask(24)).render().as_str(), "255.255.255.0");
         assert_eq!(Ip::V4(make_mask(32)).render().as_str(), "255.255.255.255");
+        // /0 matches Python's make_mask(0) == 0, and does not panic or wrap to /32
+        assert_eq!(make_mask(0), 0);
+        assert_eq!(Ip::V4(make_mask(0)).render().as_str(), "0.0.0.0");
     }
 
     #[test]

@@ -9,3 +9,24 @@
 #
 # Ignore all events to SSH port 22
 # *;*;*;22
+#
+# Address fields also take a network or a range, and port fields a range (issue #19142), so a
+# noisy subnet does not have to be written out one address at a time:
+#
+# Ignore everything from your own /24
+# 192.168.1.0/24;*;*;*
+#
+# ...or from a handful of hosts. Both spellings work; the second is the last octet only.
+# 10.0.0.1-10.0.0.15;*;*;*
+# 10.0.0.1-15;*;*;*
+#
+# Ignore scans of a port range, or traffic from ephemeral source ports
+# *;*;*;8000-8100
+# *;1024-65535;*;*
+#
+# IPv6 networks and ranges too
+# 2001:db8::/64;*;*;*
+#
+# Ranges are inclusive at both ends, and every field is still combined with AND. Anything that is
+# not a valid network or range stays an exact match, so a malformed rule (192.168.1.0/33) silently
+# matches nothing rather than quietly widening to match more than you wrote.
