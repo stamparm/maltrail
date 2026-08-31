@@ -874,5 +874,49 @@ class TestProgressiveLoadIsRateLimited(unittest.TestCase):
                       "the first progressive repaint must be exempt from the rate floor - it is the "
                       "one the user is waiting on, and delaying it regressed time-to-first-rows")
 
+class TestGridSortComparator(unittest.TestCase):
+    """The grid's sort picks its comparator once per sort rather than re-testing the column on
+    every comparison (about two million of them on a busy day, which also kept the one comparator
+    polymorphic). That turned one shared tiebreak into one per branch - and a branch that loses its
+    tiebreak does not error, it just orders equal-key rows differently, which nobody would notice.
+    """
+
+    def setUp(self):
+        self.js = _read(MAIN_JS)
+        m = re.search(r"var cmp;\n(.*?)\n    list\.sort\(cmp\);", self.js, re.S)
+        self.assertTrue(m, "could not find the grid's comparator selection in main.js")
+        self.block = m.group(1)
+
+    def test_every_branch_keeps_the_count_tiebreak(self):
+        branches = self.block.count("cmp = function")
+        ties = self.block.count("if (c === 0) c = b.count - a.count;")
+        self.assertGreaterEqual(branches, 5, "expected one comparator per sortable column kind")
+        self.assertEqual(branches, ties,
+                         "%d comparator branches but %d count tiebreaks - a column whose branch "
+                         "lost the tiebreak silently orders equal-key rows differently"
+                         % (branches, ties))
+
+    def test_every_branch_applies_the_direction(self):
+        branches = self.block.count("cmp = function")
+        self.assertEqual(branches, self.block.count("return c * dir;"),
+                         "a comparator branch does not apply the sort direction, so that column "
+                         "would ignore ascending/descending")
+
+
+class TestSeverityFilterIsSeparate(unittest.TestCase):
+    """The severity buttons are the most-clicked filter on the page, and severity is a single
+    integer compare on a field that never changes after a threat is built. It is applied to a
+    cached result of the expensive chain (whitelist probe, chip tokens, compiled query) rather
+    than re-running that chain over every threat.
+    """
+
+    def test_the_expensive_chain_is_cached_without_severity(self):
+        js = _read(MAIN_JS)
+        m = re.search(r"var bsig = _viewVer.*?state\._vbSig = bsig", js, re.S)
+        self.assertTrue(m, "the base filter cache (everything except severity) is gone")
+        self.assertNotIn("state.sev", m.group(0),
+                         "severity is back inside the cached filter key, so clicking a severity "
+                         "button re-runs the whole filter chain over every threat again")
+
 if __name__ == "__main__":
     unittest.main()

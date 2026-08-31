@@ -1787,36 +1787,51 @@
   // chips, severity and _viewVer; the sort against that plus the sort key and direction. Changing
   // only the sort therefore keeps the filter pass, and paging keeps both.
   function viewList() {
-    var fsig = _viewVer + "\u0001" + state.sev + "\u0001" + (state.showHidden ? 1 : 0) +
+    // The expensive half of the filter - the whitelist probe, the chip tokens and the compiled
+    // query - is cached WITHOUT the severity buttons, because severity is a single integer compare
+    // on a field that never changes after a threat is built. Clicking high/medium/low/all is one of
+    // the most-used controls on the page and it was re-running the whole chain over every threat.
+    var bsig = _viewVer + "\u0001" + (state.showHidden ? 1 : 0) +
                "\u0001" + state.input + "\u0001" + state.filters.join("\u0002");
-    var filtered = state._vlList;
-    if (state._vlSig !== fsig || !filtered) {
+    var base = state._vbList;
+    if (state._vbSig !== bsig || !base) {
       var chips = state.filters, q = compileQuery(state.input);
       var hidden = state.hidden, showH = state.showHidden;
-      var sev = state.sev;
-      filtered = state.all.filter(function (t) {
+      base = state.all.filter(function (t) {
         if (!showH && hidden[t.uidc]) return false;
         if (isWL(t)) return false;
-        if (sev != null && t.sev !== sev) return false;
         for (var ci = 0; ci < chips.length; ci++) if (!matchToken(t, chips[ci])) return false;
         return q(t);
       });
+      state._vbSig = bsig; state._vbList = base; state._vlSig = null; state._vsSig = null;
+    }
+    var fsig = bsig + "\u0001" + state.sev;
+    var filtered = state._vlList;
+    if (state._vlSig !== fsig || !filtered) {
+      var sv = state.sev;
+      filtered = sv == null ? base : base.filter(function (t) { return t.sev === sv; });
       state._vlSig = fsig; state._vlList = filtered; state._vsSig = null;
     }
     var ssig = fsig + "\u0001" + state.sortKey + "\u0001" + state.sortDir;
     if (state._vsSig === ssig && state._vsList) return state._vsList;
     var k = state.sortKey, dir = state.sortDir;
     var list = filtered.slice();   // sort a copy: .sort() is in place and the filter result is cached
-    list.sort(function (a, b) {
-      var c;
-      if (k === "sev") c = riskOf(a) - riskOf(b);                // "severity" column = risk-ranked (severity-dominant, then compromise signal / volume within a band)
-      else if (k === "count") c = a.count - b.count;
-      else if (k === "dport") c = (parseInt(a.dport, 10) || 0) - (parseInt(b.dport, 10) || 0);
-      else if (k === "src" || k === "dst") { var ak = ipKey(a[k]), bk = ipKey(b[k]); c = ak < bk ? -1 : ak > bk ? 1 : 0; }
-      else { var av = (a[k] || "") + "", bv = (b[k] || "") + ""; c = av < bv ? -1 : av > bv ? 1 : 0; }
-      if (c === 0) c = b.count - a.count;
-      return c * dir;
-    });
+    // The column is picked ONCE, not re-tested inside the comparator. The chain below used to run
+    // per comparison - about two million times per sort of a busy day - and it also kept the one
+    // comparator polymorphic, so V8 could not specialise it for the column actually in use.
+    // Every branch keeps its original expression, tiebreak and direction, so the order is identical.
+    var cmp;
+    if (k === "sev")                                            // "severity" column = risk-ranked (severity-dominant, then compromise signal / volume within a band)
+      cmp = function (a, b) { var c = riskOf(a) - riskOf(b); if (c === 0) c = b.count - a.count; return c * dir; };
+    else if (k === "count")
+      cmp = function (a, b) { var c = a.count - b.count; if (c === 0) c = b.count - a.count; return c * dir; };
+    else if (k === "dport")
+      cmp = function (a, b) { var c = (parseInt(a.dport, 10) || 0) - (parseInt(b.dport, 10) || 0); if (c === 0) c = b.count - a.count; return c * dir; };
+    else if (k === "src" || k === "dst")
+      cmp = function (a, b) { var ak = ipKey(a[k]), bk = ipKey(b[k]); var c = ak < bk ? -1 : ak > bk ? 1 : 0; if (c === 0) c = b.count - a.count; return c * dir; };
+    else
+      cmp = function (a, b) { var av = (a[k] || "") + "", bv = (b[k] || "") + ""; var c = av < bv ? -1 : av > bv ? 1 : 0; if (c === 0) c = b.count - a.count; return c * dir; };
+    list.sort(cmp);
     state._vsSig = ssig; state._vsList = list;
     return list;
   }
