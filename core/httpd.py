@@ -2161,6 +2161,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             start, end, size, total = None, None, -1, None
             content = None
             log_exists = False
+            multi_day = False
             dates = params.get("date", "")
 
             if ".." in dates:
@@ -2188,6 +2189,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             paths.append(event_log_path)
 
                     range_handle = io.BufferedReader(_ConcatenatedFiles(paths))
+                    multi_day = True
                     log_exists = True
                 except ValueError:
                     print("[!] invalid date format in request")
@@ -2272,9 +2274,48 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             session.range_handle = None
 
                 if size == -1:
+                    # Conditional request. A past day's log can never change, yet stepping to the
+                    # previous day and back, or simply refreshing, re-downloaded the entire thing -
+                    # the largest fetch the dashboard makes. A validator turns the second visit into
+                    # a few bytes.
+                    #
+                    # Single day and unfiltered only. A netfiltered or masked session is served
+                    # DIFFERENT bytes out of the same file, so a tag issued to one must never
+                    # validate for the other - the hole _trails_etag documents, arriving by another
+                    # door. Multi-day ranges are left alone: their reader spans several files and
+                    # one fd's stat does not describe the selection.
+                    #
+                    # `no-cache` is required, not incidental: today's log is still being appended
+                    # to, and without it a heuristically-cached copy could be served as fresh. It
+                    # means "store it, but always revalidate", which is exactly the intent.
+                    etag = None
+                    if not multi_day and session.netfilters is None and not session.mask_custom:
+                        try:
+                            _st = os.fstat(range_handle.fileno())
+                            etag = '"%d-%d"' % (_st.st_mtime_ns, _st.st_size)
+                        except Exception:
+                            etag = None
+
+                    if etag is not None and self.headers.get(HTTP_HEADER.IF_NONE_MATCH, "").strip() == etag:
+                        self.send_response(_http_client.NOT_MODIFIED)
+                        self.send_header(HTTP_HEADER.CONNECTION, "close")
+                        self.send_header(HTTP_HEADER.ETAG, etag)
+                        self.send_header(HTTP_HEADER.CACHE_CONTROL, "private, no-cache")
+                        self.send_header(HTTP_HEADER.VARY, HTTP_HEADER.ACCEPT_ENCODING)
+                        try:
+                            range_handle.close()
+                        except Exception:
+                            pass
+                        return content      # None: a 304 carries no body and no Content-Length
+
                     self.send_response(_http_client.OK)
                     self.send_header(HTTP_HEADER.CONNECTION, "close")
                     self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
+                    if etag is not None:
+                        self.send_header(HTTP_HEADER.ETAG, etag)
+                        self.send_header(HTTP_HEADER.CACHE_CONTROL, "private, no-cache")
+                        # the tag names one ENCODING of the day, not the day
+                        self.send_header(HTTP_HEADER.VARY, HTTP_HEADER.ACCEPT_ENCODING)
 
                     # A full day is by far the largest thing the dashboard ever fetches, and it went
                     # out uncompressed: this branch streams the file straight to the socket, so it

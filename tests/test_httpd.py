@@ -1707,6 +1707,89 @@ class TestEventsAreCompressed(TestHttpd):
                                 "a netfiltered session received an event outside its allowed "
                                 "range: %s" % line[:90])
 
+class TestEventsConditionalRequests(TestHttpd):
+    """A past day's log can never change, but stepping to the previous day and back - or just
+    refreshing - re-downloaded the whole thing, which is the largest fetch the dashboard makes.
+
+    The risk this carries is not a slow response, it is a WRONG one: a validator issued for one
+    representation must never let a different one be served from cache. So a netfiltered or masked
+    session, which is served different bytes out of the same file, gets no tag at all, and today's
+    still-growing log must never be treated as fresh without asking.
+    """
+
+    def _get(self, cookie, path, inm=None):
+        headers = {"Accept-Encoding": "gzip"}
+        if inm:
+            headers["If-None-Match"] = inm
+        return _http(self.port, "GET", path, cookie=cookie, headers=headers)
+
+    def _etag(self, head):
+        for line in head.split("\r\n"):
+            if line.lower().startswith("etag:"):
+                return line.split(":", 1)[1].strip()
+        return None
+
+    def test_a_full_day_carries_a_validator(self):
+        c = self._login()
+        st, head, body = self._get(c, "/events?date=%s" % self.date)
+        self.assertEqual(st, 200)
+        self.assertIsNotNone(self._etag(head), "a full day of events carries no validator, so every "
+                                               "day switch and every refresh re-downloads it")
+        self.assertIn("no-cache", head.lower(),
+                      "without no-cache a heuristically-cached copy of TODAY's log - which is still "
+                      "being appended to - could be served as fresh")
+
+    def test_an_unchanged_day_answers_304(self):
+        c = self._login()
+        _, head, body = self._get(c, "/events?date=%s" % self.date)
+        tag = self._etag(head)
+        st2, head2, body2 = self._get(c, "/events?date=%s" % self.date, inm=tag)
+        self.assertEqual(st2, 304, "an unchanged day should revalidate, not re-send")
+        self.assertEqual(body2, b"", "a 304 must carry no body")
+
+    def test_a_mismatched_validator_resends(self):
+        c = self._login()
+        st, _, body = self._get(c, "/events?date=%s" % self.date, inm='"0-0"')
+        self.assertEqual(st, 200)
+        self.assertTrue(body, "a stale validator must get the content, not an empty 304")
+
+    def test_appending_to_the_day_changes_the_validator(self):
+        # This is what keeps a live day correct: the tag is derived from the file's size and mtime,
+        # so a log that grew cannot validate against the copy taken before it grew.
+        c = self._login()
+        _, head, _ = self._get(c, "/events?date=%s" % self.date)
+        tag = self._etag(head)
+        path = os.path.join(self.logdir, "%s.log" % self.date)
+        with open(path, "rb") as f:
+            original = f.read()
+        try:
+            with open(path, "ab") as f:
+                f.write(b'"%s 23:59:59.000000" s 10.0.0.9 1 9.9.9.9 53 UDP DNS grew.example "x (dummy)" (static)\n'
+                        % self.date.encode())
+            st, head2, body = self._get(c, "/events?date=%s" % self.date, inm=tag)
+            self.assertEqual(st, 200, "a day that grew must NOT be told its old copy is current")
+            self.assertNotEqual(self._etag(head2), tag, "the validator did not move when the log grew")
+        finally:
+            with open(path, "wb") as f:
+                f.write(original)
+
+    def test_a_restricted_session_gets_no_validator(self):
+        # analyst is netfiltered, so it is served a SUBSET of the same file. A tag here could let a
+        # restricted copy validate against the full one, or the reverse.
+        c = self._login("analyst")
+        st, head, _ = self._get(c, "/events?date=%s" % self.date)
+        self.assertEqual(st, 200)
+        self.assertIsNone(self._etag(head),
+                          "a netfiltered session was handed a validator; one representation's tag "
+                          "must never validate another's bytes")
+
+    def test_a_multi_day_range_gets_no_validator(self):
+        # the reader spans several files and one fd's stat does not describe the selection
+        c = self._login()
+        st, head, _ = self._get(c, "/events?date=%s_%s" % (self.date, self.date))
+        self.assertEqual(st, 200)
+        self.assertIsNone(self._etag(head), "a multi-day range must not carry a single file's tag")
+
 if __name__ == "__main__":
     unittest.main()
 
