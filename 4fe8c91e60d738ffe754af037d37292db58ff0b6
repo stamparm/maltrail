@@ -1,0 +1,12 @@
+Correction: the numbers in this message came from a single before/after pair, not
+an interleaved run, and they overstate the win.
+
+Re-measured interleaved, 3 rounds, 4x CPU throttle, 120k threats:
+
+  sort by source   574 -> 453 ms   -21%   (message says 422 -> 246, -42%)
+  sort by trail    521 -> 476 ms    -8.6% (message says -21%)
+  sort by type     377 -> 332 ms   -11.9%
+
+The change is a real improvement, roughly half the size claimed. The
+ordering-equivalence result in the message stands unchanged: 24 orderings
+over 4000 tie-heavy rows, identical, with three negative controls.
