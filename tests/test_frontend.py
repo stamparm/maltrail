@@ -849,5 +849,30 @@ class TestDrawerOpensPromptly(unittest.TestCase):
                          "a closed drawer is only translated off-screen, so without inert the "
                          "next Tab walks through a panel the user cannot see")
 
+class TestProgressiveLoadIsRateLimited(unittest.TestCase):
+    """Streaming a day repainted the grid ~12 times, each one re-filtering and re-sorting every
+    threat, sometimes tens of milliseconds apart - quicker than anyone can read a table, so the
+    work bought nothing. A floor on how OFTEN a repaint may happen took a busy day from ~1360ms to
+    ~940ms to fully load.
+
+    The first repaint is deliberately exempt: it is the one the user is waiting on, and an earlier
+    version that made it wait too traded away time-to-first-rows to buy the rest.
+    """
+
+    def setUp(self):
+        self.js = _read(MAIN_JS)
+
+    def test_there_is_a_floor_on_repaint_frequency(self):
+        self.assertRegex(self.js, r"var RENDER_MIN_MS = \d+",
+                         "the progressive-load repaint rate floor is gone; a busy day goes back to "
+                         "re-filtering and re-sorting every threat a dozen times while loading")
+
+    def test_the_first_repaint_is_not_delayed_by_it(self):
+        m = re.search(r"if \(agg && seen - lastRender >= RENDER_EVERY[^{]*\{", self.js, re.S)
+        self.assertTrue(m, "could not find the progressive-render gate in main.js")
+        self.assertIn("lastRenderT === 0", m.group(0),
+                      "the first progressive repaint must be exempt from the rate floor - it is the "
+                      "one the user is waiting on, and delaying it regressed time-to-first-rows")
+
 if __name__ == "__main__":
     unittest.main()

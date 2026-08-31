@@ -3231,6 +3231,12 @@
   // so a 100MB/850k-row day is O(n) total — NOT O(n²) (the old code re-aggregated all rows every chunk) —
   // and memory stays bounded (we never retain the full parsed-rows array, only the aggregate).
   var RENDER_EVERY = 12000; // rows between progressive repaints
+  // ...and a floor on how OFTEN one can happen. The row gate alone gave ~16 repaints for a busy
+  // day, and each one re-filters and re-sorts every threat: on a fast (or local) connection they
+  // landed tens of milliseconds apart, which is far quicker than anyone can read a table, so the
+  // work bought nothing. On a slow connection chunks are already further apart than this and the
+  // gate never binds - progressive feedback is unchanged where it actually matters.
+  var RENDER_MIN_MS = 220;
   function parseRows(text) { return parseEvents(text); }
   function loadEvents(date) {
     setStatus("loading events…");
@@ -3249,7 +3255,7 @@
             render(aggregateRows(rows));   // agg retains _byKey so live deltas merge incrementally (rows array is freed)
           });
         }
-        var reader = r.body.getReader(), dec = new TextDecoder(), buf = "", agg = null, seen = 0, lastRender = 0, bytes = 0;
+        var reader = r.body.getReader(), dec = new TextDecoder(), buf = "", agg = null, seen = 0, lastRender = 0, lastRenderT = 0, bytes = 0;
         state.streaming = true;
         function pump() {
           return reader.read().then(function (res) {
@@ -3273,7 +3279,14 @@
               var chunk = parseRows(buf.slice(0, nl)); buf = buf.slice(nl + 1);
               if (chunk.length) { agg = mergeRows(agg, chunk); seen += chunk.length; }   // fold chunk in; chunk array is then freed (bounded memory)
             }
-            if (agg && seen - lastRender >= RENDER_EVERY) { lastRender = seen; render(agg); }
+            // The FIRST progressive paint is exempt from the rate floor: it is the one the user is
+            // waiting on, and making it wait moved time-to-first-rows from 544ms to 800ms - a
+            // regression in exactly the thing that reads as responsive. Only the repaints AFTER it
+            // are throttled, which is where the wasted work actually was.
+            if (agg && seen - lastRender >= RENDER_EVERY &&
+                (lastRenderT === 0 || _now() - lastRenderT >= RENDER_MIN_MS)) {
+              lastRender = seen; lastRenderT = _now(); render(agg);
+            }
             return pump();
           });
         }

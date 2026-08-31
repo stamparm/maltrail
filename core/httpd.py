@@ -2275,25 +2275,52 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     self.send_response(_http_client.OK)
                     self.send_header(HTTP_HEADER.CONNECTION, "close")
                     self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
+
+                    # A full day is by far the largest thing the dashboard ever fetches, and it went
+                    # out uncompressed: this branch streams the file straight to the socket, so it
+                    # never reached the gzip step every other response passes through. Event logs are
+                    # extremely repetitive - a 24MB day is 6MB at level 1 - and for any analyst who
+                    # is not on localhost that transfer IS the dashboard's load time.
+                    #
+                    # Compressed while streaming rather than buffered: a 100MB day must not have to
+                    # fit in memory to be sent. Level 1 deliberately - it gives 4x for ~0.1s of CPU,
+                    # where the higher levels cost 3-6x that to save another fifth, on a box whose
+                    # day job is capturing packets. Only when the client asked for it, so anything
+                    # that does not advertise gzip keeps the exact bytes it got before.
+                    gz = "gzip" in self.headers.get(HTTP_HEADER.ACCEPT_ENCODING, "")
+                    if gz:
+                        self.send_header(HTTP_HEADER.CONTENT_ENCODING, "gzip")
                     self.end_headers()
 
-                    if session.netfilters is None and not session.mask_custom:
-                        with range_handle as f:
-                            while True:
-                                data = f.read(io.DEFAULT_BUFFER_SIZE)
-                                if not data:
-                                    break
-                                else:
-                                    self.wfile.write(data)
-                    else:
-                        # NOTE: per-user netfilter restriction and mask_custom redaction must be enforced here too;
-                        # otherwise a restricted user could retrieve the full unfiltered log by omitting (or malforming) the Range header
-                        _ = self._build_netfilters(session)
-                        with range_handle as f:
-                            if _ is not None:
-                                addresses, netmasks, regex = _
-                                for line in self._filter_events(f, session, addresses, netmasks, regex):
-                                    self.wfile.write(line.encode(UNICODE_ENCODING))
+                    # GzipFile.close() flushes the trailer to fileobj but does NOT close it, which is
+                    # what we want: the server still owns the socket.
+                    out = gzip.GzipFile(fileobj=self.wfile, mode="wb", compresslevel=1) if gz else self.wfile
+                    try:
+                        if session.netfilters is None and not session.mask_custom:
+                            with range_handle as f:
+                                while True:
+                                    data = f.read(io.DEFAULT_BUFFER_SIZE)
+                                    if not data:
+                                        break
+                                    else:
+                                        out.write(data)
+                        else:
+                            # NOTE: per-user netfilter restriction and mask_custom redaction must be enforced here too;
+                            # otherwise a restricted user could retrieve the full unfiltered log by omitting (or malforming) the Range header
+                            _ = self._build_netfilters(session)
+                            with range_handle as f:
+                                if _ is not None:
+                                    addresses, netmasks, regex = _
+                                    for line in self._filter_events(f, session, addresses, netmasks, regex):
+                                        out.write(line.encode(UNICODE_ENCODING))
+                    finally:
+                        if gz:
+                            # A client that hangs up mid-stream makes this trailer write fail too,
+                            # and that must not mask whatever actually went wrong first.
+                            try:
+                                out.close()
+                            except Exception:
+                                pass
 
             else:
                 self.send_response(_http_client.OK)  # instead of _http_client.NO_CONTENT (compatibility reasons)

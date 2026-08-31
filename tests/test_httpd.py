@@ -6,6 +6,7 @@ actual HTTP contract the dashboard relies on: challenge-response login, /events 
 5xx/crashes. Raw-socket HTTP client -> no urllib py2/py3 differences. Skips cleanly if the server
 can't bind (e.g. sandbox)."""
 import datetime
+import gzip
 import json
 import io
 import os
@@ -1643,6 +1644,68 @@ class TestAuthEventForwarding(unittest.TestCase):
         self.assertIn("login failure", record)
         self.assertNotIn("Accepted password", record.split("duser=")[0])
 
+
+class TestEventsAreCompressed(TestHttpd):
+    """A full day of events is the largest thing the dashboard ever fetches.
+
+    It is streamed straight to the socket so a 100MB day never has to fit in memory - which also
+    meant it skipped the gzip step every other response goes through, and went out uncompressed.
+    Event logs are extremely repetitive (a 24MB day is 6MB), and for any analyst who is not on
+    localhost that transfer IS the dashboard's load time.
+
+    The contract to protect: compress only when the client asked, and never change the bytes the
+    client ends up with.
+    """
+
+    def _events(self, cookie, gz):
+        headers = {"Accept-Encoding": "gzip"} if gz else None
+        return _http(self.port, "GET", "/events?date=%s" % self.date, cookie=cookie, headers=headers)
+
+    def test_a_client_that_asks_for_gzip_gets_it(self):
+        c = self._login()
+        st, head, payload = self._events(c, True)
+        self.assertEqual(st, 200)
+        self.assertIn("content-encoding: gzip", head.lower(),
+                      "a full-day /events response is no longer compressed; every remote analyst "
+                      "downloads the raw log again")
+        # it must really be gzip, not just a header
+        gzip.decompress(payload)
+
+    def test_the_bytes_the_client_ends_up_with_are_unchanged(self):
+        c = self._login()
+        _, headz, gzbody = self._events(c, True)
+        _, headp, plain = self._events(c, False)
+        self.assertIn("content-encoding: gzip", headz.lower())
+        self.assertNotIn("content-encoding", headp.lower(),
+                         "a client that did not advertise gzip must get exactly what it got before")
+        self.assertEqual(gzip.decompress(gzbody), plain,
+                         "compression changed the event stream's content")
+
+    def test_it_actually_makes_the_response_smaller(self):
+        c = self._login()
+        _, _, gzbody = self._events(c, True)
+        _, _, plain = self._events(c, False)
+        self.assertLess(len(gzbody), len(plain),
+                        "the compressed response is not smaller, so the CPU spent on it is wasted")
+
+    def test_a_restricted_session_is_still_filtered_when_compressed(self):
+        # The netfilter/mask path writes its lines through the same stream. If compression bypassed
+        # it, a restricted analyst would receive the whole unfiltered log - the exact failure the
+        # uncompressed branch carries a NOTE about.
+        c = self._login("analyst")
+        _, head, gzbody = self._events(c, True)
+        self.assertIn("content-encoding: gzip", head.lower())
+        body = gzip.decompress(gzbody).decode("utf8", "replace")
+        _, _, plain = self._events(c, False)
+        self.assertEqual(body, plain.decode("utf8", "replace"),
+                         "the compressed and uncompressed forms of a restricted session differ")
+        # the timestamp is quoted and contains a space, so the source address is field 3:
+        #   "2026-08-31 10:00:00.000000" sensor-a 10.0.0.5 4421 ...
+        for line in body.splitlines():
+            if line.strip():
+                self.assertTrue(line.split()[3].startswith("10."),
+                                "a netfiltered session received an event outside its allowed "
+                                "range: %s" % line[:90])
 
 if __name__ == "__main__":
     unittest.main()
