@@ -65,5 +65,5 @@ In scope: the sensor's packet parsers (they consume attacker-controlled bytes by
 server's HTTP and event-intake handling, authentication and session handling, and the trail
 update path.
 
-Out of scope: false positives and false negatives in trail data — please open an ordinary issue
-or pull request for those.
+Out of scope: false positives and false negatives in trail data — please open an ordinary [issue](https://github.com/stamparm/trails/issues)
+or [pull request](https://github.com/stamparm/trails/pulls) for those.
