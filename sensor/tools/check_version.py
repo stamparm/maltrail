@@ -28,6 +28,8 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 SETTINGS = os.path.join(ROOT, "core", "settings.py")
 CARGO = os.path.join(ROOT, "sensor", "Cargo.toml")
 CITATION = os.path.join(ROOT, "CITATION.cff")
+SETTINGS_GEN = os.path.join(ROOT, "sensor", "src", "settings_gen.rs")
+CARGO_LOCK = os.path.join(ROOT, "sensor", "Cargo.lock")
 
 
 def _read(path):
@@ -69,6 +71,35 @@ def citation_version():
     return match.group(1)
 
 
+def settings_gen_version():
+    """pub const VERSION: &str = "3.2"; from the generated mirror of core/settings.py.
+
+    This is a FOURTH place the version lives, and it was the one nobody checked here. The Rust
+    parity test covers it, but that test needs a Rust toolchain - so the automated monthly bump,
+    which is a text edit on a machine that has none, could not tell it had gone stale. It found
+    out from a failed release: the tag was already pushed, the gate refused it, and nothing was
+    built. A version bump is text; verifying it should be text too.
+    """
+
+    match = re.search(r'^pub const VERSION: &str = "([^"]+)";', _read(SETTINGS_GEN), re.M)
+    if not match:
+        raise SystemExit("[!] no VERSION constant found in %s" % SETTINGS_GEN)
+    return match.group(1)
+
+
+def cargo_lock_version():
+    """The maltrail-sensor entry in sensor/Cargo.lock.
+
+    A FIFTH place, and the release builds with --locked: a lock that still names the old version
+    does not warn, it refuses to build.
+    """
+
+    match = re.search(r'name = "maltrail-sensor"\nversion = "([^"]+)"', _read(CARGO_LOCK))
+    if not match:
+        raise SystemExit("[!] no maltrail-sensor package entry found in %s" % CARGO_LOCK)
+    return match.group(1)
+
+
 def series(version):
     """'3.0.1' and '3.0' both reduce to (3, 0) - Maltrail versions two components, Cargo three.
 
@@ -92,14 +123,33 @@ def main():
     args = parser.parse_args()
 
     settings, cargo, citation = settings_version(), cargo_version(), citation_version()
+    generated, locked = settings_gen_version(), cargo_lock_version()
     print("[i] core/settings.py VERSION   = %s" % settings)
     print("[i] sensor/Cargo.toml version  = %s" % cargo)
     print("[i] CITATION.cff version       = %s" % citation)
+    print("[i] settings_gen.rs VERSION    = %s" % generated)
+    print("[i] Cargo.lock version         = %s" % locked)
 
     if series(settings) != series(cargo):
         print("[x] the server and the sensor would report different versions", file=sys.stderr)
         print("[?] make sensor/Cargo.toml '%s.0' or core/settings.py '%d.%d'"
               % (settings, series(cargo)[0], series(cargo)[1]), file=sys.stderr)
+        return 1
+
+    # Exact, not by series: this one is a generated copy of that exact string, and the Rust
+    # parity test compares it verbatim. "3.3" vs "3.3.0" would pass a series check and still
+    # fail the build.
+    if generated != settings:
+        print("[x] sensor/src/settings_gen.rs says %s while core/settings.py says %s"
+              % (generated, settings), file=sys.stderr)
+        print("[?] set it with: python3 sensor/tools/bump_version.py %s" % settings, file=sys.stderr)
+        return 1
+
+    if locked != cargo:
+        print("[x] sensor/Cargo.lock says %s while sensor/Cargo.toml says %s"
+              % (locked, cargo), file=sys.stderr)
+        print("[?] the release builds --locked, so this fails the build, not just the check",
+              file=sys.stderr)
         return 1
 
     if series(citation) != series(settings):
