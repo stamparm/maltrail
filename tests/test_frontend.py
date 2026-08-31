@@ -757,5 +757,97 @@ class TestZoomSafeFullHeightOverlays(unittest.TestCase):
             "the end of the panel scrolls the grid BEHIND the modal - measured at 600px - so "
             "closing the drawer drops the analyst somewhere else in the table.")
 
+class TestIpSortKeyMemo(unittest.TestCase):
+    """ipKey() is memoized, and the memo must not reorder anything.
+
+    It is called from inside the grid's sort comparator, so sorting by source or destination ran
+    it millions of times - a regex match, two array allocations and a per-octet concat apiece. That
+    one column took 780ms while every other took under 100. A wrong cache here would not error; it
+    would put addresses in the wrong order, which is the kind of thing nobody notices.
+    """
+
+    def _node(self):
+        for candidate in ("node", "nodejs"):
+            if any(os.access(os.path.join(d, candidate), os.X_OK)
+                   for d in os.environ.get("PATH", "").split(os.pathsep) if d):
+                return candidate
+        raise unittest.SkipTest("needs node to evaluate ipKey()")
+
+    def test_memo_matches_the_plain_implementation(self):
+        node = self._node()
+        js = _read(MAIN_JS)
+        fn = re.search(r"var _ipkCache = new Map\(\);\s*function ipKey\(s\) \{.*?\n  \}", js, re.S)
+        self.assertTrue(fn, "could not find the memoized ipKey() in main.js")
+        script = fn.group(0) + """
+function reference(s) {
+  return ((s || "").match(/\\d+/g) || []).map(function (n) { return ("00" + n).slice(-3); }).join(".");
+}
+var CASES = ["10.0.0.1", "10.0.0.2", "9.9.9.9", "192.168.1.1", "8.8.8.8", "255.255.255.255",
+             "0.0.0.0", "1.2.3.4", "", null, undefined, "not-an-ip", "2001:db8::1",
+             "1.2.3.4/24", "10.0.0.1 (rdns)", "  ", "999.999.999.999"];
+var bad = [];
+CASES.forEach(function (c) {
+  var want = reference(c);
+  if (ipKey(c) !== want) bad.push("miss " + JSON.stringify(c) + " " + ipKey(c) + " != " + want);
+  if (ipKey(c) !== want) bad.push("hit  " + JSON.stringify(c) + " differs on the cached call");
+});
+// ordering must be identical to the unmemoized version over a shuffled address space
+var ips = [];
+for (var a = 0; a < 12; a++) for (var b = 0; b < 12; b++) ips.push(a + "." + b + "." + (b * 7 % 256) + "." + (a * 13 % 256));
+ips.push("8.8.8.8", "10.0.0.1", "", "x");
+var m = ips.slice().sort(function (x, y) { var p = ipKey(x), q = ipKey(y); return p < q ? -1 : p > q ? 1 : 0; });
+var r = ips.slice().sort(function (x, y) { var p = reference(x), q = reference(y); return p < q ? -1 : p > q ? 1 : 0; });
+for (var i = 0; i < m.length; i++) if (m[i] !== r[i]) { bad.push("order diverges at " + i); break; }
+console.log(bad.length ? bad.slice(0, 4).join(" | ") : "OK");
+"""
+        import subprocess
+        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        self.assertEqual("OK", out.strip(), out.strip())
+
+
+class TestDrawerOpensPromptly(unittest.TestCase):
+    """What makes the detail panel feel slow is the gap before it starts moving, not its frame rate.
+
+    Two things closed that gap and both are easy to undo by accident. The panel's sections skip
+    layout until scrolled into view - two of them ("sources", "raw events") were 1,485 of its 1,699
+    nodes, and laying them out before the first animated frame cost 56ms. And the slide is started
+    BEFORE the sparkline/focus/enrichment tail, which used to run first and delay it further.
+    """
+
+    def setUp(self):
+        with open(os.path.join(REPO, "html", "css", "main.css"), encoding="utf-8") as f:
+            self.css = f.read()
+        self.js = _read(MAIN_JS)
+
+    def test_drawer_sections_skip_offscreen_layout(self):
+        m = re.search(r"^\.dwr-sec\{([^}]*)\}", self.css, re.M)
+        self.assertTrue(m, "could not find the .dwr-sec rule in main.css")
+        rule = m.group(1).replace(" ", "")
+        self.assertIn("content-visibility:auto", rule,
+                      "the drawer's sections no longer skip layout while off-screen; opening the "
+                      "panel goes back to laying out ~1700 nodes before it can start moving")
+        self.assertIn("contain-intrinsic-size", rule,
+                      "content-visibility:auto without contain-intrinsic-size gives the drawer a "
+                      "meaningless scrollbar length until each section has been seen once")
+
+    def test_the_slide_starts_before_the_tail_work(self):
+        body = re.search(r"function openDrawer\(t\) \{.*?\n  \}", self.js, re.S)
+        self.assertTrue(body, "could not find openDrawer() in main.js")
+        body = body.group(0)
+        start = body.index('classList.add("open")')
+        # Only calls that actually run on open - a .focus() inside a click handler defined earlier
+        # in the same function is a closure, not work done while the panel is opening.
+        for name in ("enrichDrawerIPs()", "drawDwrSpark(", "_cl.focus()"):
+            self.assertGreater(
+                body.index(name), start,
+                "%s runs before the drawer is told to slide. That work does not affect the first "
+                "frame of the animation, and doing it first is what put ~45ms between the click "
+                "and any movement." % name)
+
+    def test_a_closed_drawer_leaves_the_tab_order(self):
+        self.assertRegex(self.js, r"inert = true",
+                         "a closed drawer is only translated off-screen, so without inert the "
+                         "next Tab walks through a panel the user cannot see")
+
 if __name__ == "__main__":
     unittest.main()

@@ -218,7 +218,21 @@
   // "ip:port", or just the address when the protocol has no ports (ICMP logs an empty port field)
   function hostPort(ip, port) { return esc(ip) + (port === "" || port == null ? "" : ":" + esc(port)); }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]; }); }
-  function ipKey(s) { return ((s || "").match(/\d+/g) || []).map(function (n) { return ("00" + n).slice(-3); }).join("."); }
+  // Memoized like normTrail above, and for the same reason: this is called from inside the sort
+  // comparator, twice per comparison, so sorting by source or destination ran it ~4M times on a
+  // busy day - a regex match, two array allocations and a per-octet string concat each time. That
+  // single column took 780ms while every other column took under 100. Distinct addresses are few
+  // relative to comparisons, so the cache is small and hits almost always; bounded the same way
+  // normTrail's is, in case a day brings pathologically many.
+  var _ipkCache = new Map();
+  function ipKey(s) {
+    var c = _ipkCache.get(s);
+    if (c !== undefined) return c;
+    c = ((s || "").match(/\d+/g) || []).map(function (n) { return ("00" + n).slice(-3); }).join(".");
+    if (_ipkCache.size > 200000) _ipkCache.clear();
+    _ipkCache.set(s, c);
+    return c;
+  }
 
   // Dense inline 24h activity sparkline for a table row — a string of <rect> bars (one per hour of the day)
   // as an SVG, so it drops straight into the row HTML with no per-row canvas. Empty hours draw nothing; the
@@ -1292,6 +1306,12 @@
     var wasOpen = d && d.classList.contains("open");
     if (d) d.classList.remove("open"); if (sc) sc.classList.remove("open");
     if (wasOpen && state._drawerReturn && state._drawerReturn.focus) { try { state._drawerReturn.focus(); } catch (e) {} }   // restore focus to the trigger
+    // A row click leaves <body> as the focus origin and body.focus() is a no-op, so the restore
+    // above silently did nothing and focus stayed on the close button of a panel that is now
+    // translated off-screen - the next Tab walked into a drawer the user cannot see. Blur when the
+    // restore did not take, and make the closed panel untabbable regardless.
+    if (wasOpen && d && d.contains(document.activeElement)) { try { document.activeElement.blur(); } catch (e) {} }
+    if (d) { d.removeAttribute("aria-modal"); try { d.inert = true; } catch (e) {} }
     state._drawerReturn = null;
   }
   function drawDwrSpark(cv, data, color) {
@@ -1432,12 +1452,37 @@
     };
     var _rs = d.querySelector('[data-rel="src"]'); if (_rs) _rs.onclick = function () { closeDrawer(); state.filters = ['src:' + ('' + t.src).toLowerCase()]; state.input = ''; state.sev = null; state.page = 0; var f = document.getElementById('filter'); if (f) f.value = ''; refresh(); };
     var _rt = d.querySelector('[data-rel="trail"]'); if (_rt) _rt.onclick = function () { closeDrawer(); state.filters = ['trail:' + _nt.toLowerCase()]; state.input = ''; state.sev = null; state.page = 0; var f = document.getElementById('filter'); if (f) f.value = ''; refresh(); };
-    var cv = d.querySelector(".dwr-spark"); if (cv) drawDwrSpark(cv, t.hours, sevColor(t.sev));
-    state._drawerReturn = document.activeElement;                          // remember focus origin
+    state._drawerReturn = document.activeElement;                          // focus origin, captured before we move it
     d.setAttribute("aria-modal", "true");
+    try { d.inert = false; } catch (e) {}
+    // Start the slide HERE. Everything below is work the panel does not need in order to begin
+    // moving, and doing it first put 80ms of dead air between the click and the first pixel of
+    // travel - which reads as an unresponsive click no matter how smooth the rest of the motion is.
+    // focus() alone was ~8ms because focusing inside the panel forces layout; the sparkline pulls
+    // theme colours out of getComputedStyle; enrichDrawerIPs walks the new chips and starts fetches.
     d.classList.add("open"); if (sc) sc.classList.add("open");
-    var _cl = d.querySelector("#dwr_close"); if (_cl) _cl.focus();          // move focus into the dialog
-    enrichDrawerIPs();                                                       // country flags + ASN on source/dest chips
+    // ...and run the tail once the slide has FINISHED, not on the next frame. On the next frame it
+    // landed the canvas draw, a layout-forcing focus() and the enrichment walk on the animation's
+    // second frame and dropped it - the panel travelled 174px in a single step, which is the jolt
+    // you see rather than a slide.
+    var done = false;
+    var tail = function () {
+      if (done) return;
+      done = true;
+      d.removeEventListener("transitionend", tail);
+      clearTimeout(state._dwrTail);
+      if (!d.classList.contains("open")) return;   // closed again before the slide ended
+      var cv = d.querySelector(".dwr-spark"); if (cv) drawDwrSpark(cv, t.hours, sevColor(t.sev));
+      var _cl = d.querySelector("#dwr_close"); if (_cl) _cl.focus();        // move focus into the dialog
+      enrichDrawerIPs();                                                     // country flags + ASN on source/dest chips
+    };
+    if (window.matchMedia && matchMedia("(prefers-reduced-motion:reduce)").matches) {
+      requestAnimationFrame(tail);          // no transition to wait for, so do not make focus wait
+    } else {
+      d.addEventListener("transitionend", tail);
+      clearTimeout(state._dwrTail);
+      state._dwrTail = setTimeout(tail, 320);   // fallback: an interrupted transition fires nothing
+    }
   }
 
   function openCtx(t, x, y) {

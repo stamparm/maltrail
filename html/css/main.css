@@ -696,7 +696,13 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 .dwr-actions button{background:var(--ground);border:1px solid var(--line-solid);color:var(--muted);border-radius:7px;padding:5px 9px;cursor:pointer;font-family:var(--mono);font-size:11px}
 .dwr-actions button:hover{color:var(--text);border-color:var(--accent)}
 .dwr-actions button.ext{color:var(--accent)}
-.dwr-sec{margin-bottom:15px}
+/* content-visibility:auto - skip layout and paint for the sections that are below the fold when
+   the panel opens. Two of them carry almost the whole panel: on a busy threat "sources" was 807
+   nodes and "raw events" 678, out of 1699 total, and laying all of that out before the first
+   animated frame cost 56ms of the ~85ms gap between the click and the panel starting to move.
+   They render normally the moment they scroll into view; contain-intrinsic-size gives the
+   scrollbar a sane length until they have been measured once. */
+.dwr-sec{margin-bottom:15px;content-visibility:auto;contain-intrinsic-size:auto 120px}
 .dwr-sec h4{margin:0 0 7px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:600}
 .dchips{display:flex;flex-wrap:wrap;gap:5px;max-height:168px;overflow:auto}
 /* the drawer's tag editor: the row's .tag/.tx chips at their natural size, plus a full-width adder */
