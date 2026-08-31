@@ -713,5 +713,49 @@ class TestViewCacheInvalidation(unittest.TestCase):
                          "a new aggregate must drop the cached grid view, or live updates would "
                          "keep rendering the previous load's rows")
 
+class TestZoomSafeFullHeightOverlays(unittest.TestCase):
+    """The text-size control zooms the root element, so `vh` is not the viewport.
+
+    applyScale() sets document.documentElement.style.zoom. A `vh` length does NOT account for that
+    zoom, so a full-height fixed panel sized with 100vh comes out wrong at every step except 1.0:
+    the detail drawer rendered 86px short of the screen at the smallest text size, and 1200px tall
+    in an 857px viewport at the largest - putting its own action buttons off the bottom of the
+    screen with no way to reach them. A fixed element pinned top AND bottom resolves against the
+    viewport at any zoom, which is what it uses now.
+    """
+
+    def setUp(self):
+        with open(os.path.join(REPO, "html", "css", "main.css"), encoding="utf-8") as f:
+            self.css = f.read()
+        self.js = _read(MAIN_JS)
+
+    def test_the_scale_control_still_zooms_the_root(self):
+        # If this ever stops being true, the rule below can be relaxed - but not before.
+        self.assertRegex(self.js, r"documentElement\.style\.zoom",
+                         "applyScale no longer zooms the root; re-check whether full-height "
+                         "overlays still need to avoid vh units")
+
+    def test_drawer_is_not_sized_in_viewport_units(self):
+        m = re.search(r"^\.drawer\{([^}]*)\}", self.css, re.M | re.S)
+        self.assertTrue(m, "could not find the .drawer rule in main.css")
+        rule = m.group(1)
+        self.assertNotRegex(
+            rule, r"height:\s*\d+(?:\.\d+)?d?vh",
+            "the detail drawer is sized with a viewport-height unit again. The text-size control "
+            "zooms the root element, and vh ignores zoom - so the panel renders short when text is "
+            "made smaller and runs off the bottom of the screen when it is made larger. Pin it "
+            "with top:0;bottom:0 instead.")
+        self.assertIn("bottom:0", rule,
+                      "the drawer must be pinned to the bottom of the viewport, not given a height")
+
+    def test_drawer_body_does_not_chain_its_scroll(self):
+        m = re.search(r"^\.dwr-body\{([^}]*)\}", self.css, re.M | re.S)
+        self.assertTrue(m, "could not find the .dwr-body rule in main.css")
+        self.assertIn(
+            "overscroll-behavior:contain", m.group(1).replace(" ", ""),
+            "the drawer's scrolling body must contain its overscroll. Without it, wheeling past "
+            "the end of the panel scrolls the grid BEHIND the modal - measured at 600px - so "
+            "closing the drawer drops the analyst somewhere else in the table.")
+
 if __name__ == "__main__":
     unittest.main()

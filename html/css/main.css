@@ -629,13 +629,19 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 
 /* ===== threat detail drawer ===== */
 #rows tr{cursor:pointer}
-.drawer-scrim{position:fixed;inset:0;background:rgba(6,12,22,.55);opacity:0;visibility:hidden;transition:opacity .2s;z-index:9990}
+/* Dimmed, deliberately NOT blurred. backdrop-filter re-renders the whole viewport behind it on
+   every composited frame, so while the drawer was open it cost ~74% of frames scrolling inside the
+   panel and ~46% scrolling the page behind it, against 0% with the drawer shut. Separation from the
+   page is what the scrim is for, and a slightly deeper dim buys that for nothing. */
+.drawer-scrim{position:fixed;inset:0;background:rgba(6,12,22,.64);opacity:0;visibility:hidden;transition:opacity .2s;z-index:9990}
 .drawer-scrim.open{opacity:1;visibility:visible}
-/* The blur lands only once the panel has finished sliding. backdrop-filter re-blurs the whole
-   viewport every frame it is composited, so animating opacity underneath it halved the frame rate
-   of the open; applying it after the transition keeps the settled look and drops the cost. */
-.drawer-scrim.settled{backdrop-filter:blur(2px)}
-.drawer{position:fixed;top:0;right:0;height:100vh;height:100dvh;width:466px;max-width:92vw;background:var(--surface);
+/* Sized by top/bottom rather than 100vh: the text-size control zooms the root element, and a vh
+   length does not account for zoom - so the panel came out short by the zoom factor when text was
+   made smaller, and ran off the bottom of the screen when it was made larger (at the largest step
+   it was 1200px tall in an 857px viewport, putting its own actions out of reach). A fixed element
+   pinned top and bottom resolves against the viewport itself, at every zoom, and keeps the mobile
+   behaviour 100dvh was there for. */
+.drawer{position:fixed;top:0;bottom:0;right:0;width:466px;max-width:92vw;background:var(--surface);
   border-left:1px solid var(--line-solid);box-shadow:-30px 0 70px -34px #000;z-index:9991;
   transform:translateX(102%);transition:transform .24s cubic-bezier(.22,.61,.36,1);display:flex;flex-direction:column;overflow:hidden}
 .drawer.open{transform:none}
@@ -645,7 +651,12 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 .dwr-head .spacer{flex:1}
 .dwr-close{background:none;border:1px solid var(--line-solid);color:var(--muted);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:13px}
 .dwr-close:hover{color:var(--text);border-color:var(--accent)}
-.dwr-body{padding:16px;overflow:auto;flex:1;min-height:0;font-size:12.5px}   /* min-height:0 is REQUIRED: without it a flex child keeps min-height:auto (=content height), so it overflows the drawer instead of scrolling — the last rows get clipped with no scrollbar (issue #19558) */
+/* overscroll-behavior:contain - once this panel bottoms out, further wheeling must NOT fall
+   through to the page behind it. It did: forty ticks inside the drawer scrolled the grid behind by
+   600px, so closing the drawer dropped you somewhere else in the table. It was also half the
+   remaining scroll cost, because both scrollers were then running on the same frames - the gap
+   sequence went 17,33,17,33 the moment the panel reached its end. */
+.dwr-body{padding:16px;overflow:auto;overscroll-behavior:contain;flex:1;min-height:0;font-size:12.5px}   /* min-height:0 is REQUIRED: without it a flex child keeps min-height:auto (=content height), so it overflows the drawer instead of scrolling — the last rows get clipped with no scrollbar (issue #19558) */
 .dwr-trail{font-family:var(--mono);font-size:14px;color:var(--text);word-break:break-all;margin-bottom:4px}
 .dwr-info{color:var(--muted);font-family:var(--mono);font-size:12px;margin-bottom:13px}
 .dwr-ref{color:var(--faint)}

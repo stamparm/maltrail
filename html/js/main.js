@@ -1290,8 +1290,7 @@
   function closeDrawer() {
     var d = document.getElementById("drawer"), sc = document.getElementById("drawer_scrim");
     var wasOpen = d && d.classList.contains("open");
-    clearTimeout(state._scrimT);
-    if (d) d.classList.remove("open"); if (sc) { sc.classList.remove("open"); sc.classList.remove("settled"); }
+    if (d) d.classList.remove("open"); if (sc) sc.classList.remove("open");
     if (wasOpen && state._drawerReturn && state._drawerReturn.focus) { try { state._drawerReturn.focus(); } catch (e) {} }   // restore focus to the trigger
     state._drawerReturn = null;
   }
@@ -1436,15 +1435,7 @@
     var cv = d.querySelector(".dwr-spark"); if (cv) drawDwrSpark(cv, t.hours, sevColor(t.sev));
     state._drawerReturn = document.activeElement;                          // remember focus origin
     d.setAttribute("aria-modal", "true");
-    d.classList.add("open");
-    if (sc) {
-      sc.classList.add("open");
-      // Blur the backdrop only once the panel has finished sliding - see .drawer-scrim.settled.
-      // A transitionend listener would be tidier, but the scrim's own transition is the opacity
-      // fade, not the panel's slide, and reduced-motion removes both; a timer covers every case.
-      clearTimeout(state._scrimT);
-      state._scrimT = setTimeout(function () { if (sc.classList.contains("open")) sc.classList.add("settled"); }, 260);
-    }
+    d.classList.add("open"); if (sc) sc.classList.add("open");
     var _cl = d.querySelector("#dwr_close"); if (_cl) _cl.focus();          // move focus into the dialog
     enrichDrawerIPs();                                                       // country flags + ASN on source/dest chips
   }
