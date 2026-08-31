@@ -1815,23 +1815,32 @@
     var ssig = fsig + "\u0001" + state.sortKey + "\u0001" + state.sortDir;
     if (state._vsSig === ssig && state._vsList) return state._vsList;
     var k = state.sortKey, dir = state.sortDir;
-    var list = filtered.slice();   // sort a copy: .sort() is in place and the filter result is cached
-    // The column is picked ONCE, not re-tested inside the comparator. The chain below used to run
-    // per comparison - about two million times per sort of a busy day - and it also kept the one
-    // comparator polymorphic, so V8 could not specialise it for the column actually in use.
-    // Every branch keeps its original expression, tiebreak and direction, so the order is identical.
-    var cmp;
-    if (k === "sev")                                            // "severity" column = risk-ranked (severity-dominant, then compromise signal / volume within a band)
-      cmp = function (a, b) { var c = riskOf(a) - riskOf(b); if (c === 0) c = b.count - a.count; return c * dir; };
-    else if (k === "count")
-      cmp = function (a, b) { var c = a.count - b.count; if (c === 0) c = b.count - a.count; return c * dir; };
-    else if (k === "dport")
-      cmp = function (a, b) { var c = (parseInt(a.dport, 10) || 0) - (parseInt(b.dport, 10) || 0); if (c === 0) c = b.count - a.count; return c * dir; };
-    else if (k === "src" || k === "dst")
-      cmp = function (a, b) { var ak = ipKey(a[k]), bk = ipKey(b[k]); var c = ak < bk ? -1 : ak > bk ? 1 : 0; if (c === 0) c = b.count - a.count; return c * dir; };
-    else
-      cmp = function (a, b) { var av = (a[k] || "") + "", bv = (b[k] || "") + ""; var c = av < bv ? -1 : av > bv ? 1 : 0; if (c === 0) c = b.count - a.count; return c * dir; };
-    list.sort(cmp);
+    // Decorate, sort a permutation, undecorate. The comparator used to DERIVE each row's key on
+    // every comparison - about two million of them per sort of a busy day - so sorting by source
+    // ran a memoised ipKey lookup four million times, and the string columns rebuilt a coerced
+    // string per comparison. Each key is computed once here instead, and only the permutation is
+    // sorted; the comparator then reads two array slots.
+    //
+    // Identical ordering: the same key expressions, the same count tiebreak, the same direction,
+    // and the index array starts ascending so V8's stable sort leaves full ties in their original
+    // relative order - exactly what sorting the rows directly did.
+    var n = filtered.length, i;
+    var numeric = (k === "sev" || k === "count" || k === "dport");
+    var keys = numeric ? new Float64Array(n) : new Array(n);
+    if (k === "sev") for (i = 0; i < n; i++) keys[i] = riskOf(filtered[i]);   // "severity" column = risk-ranked (severity-dominant, then compromise signal / volume within a band)
+    else if (k === "count") for (i = 0; i < n; i++) keys[i] = filtered[i].count;
+    else if (k === "dport") for (i = 0; i < n; i++) keys[i] = parseInt(filtered[i].dport, 10) || 0;
+    else if (k === "src" || k === "dst") for (i = 0; i < n; i++) keys[i] = ipKey(filtered[i][k]);
+    else for (i = 0; i < n; i++) keys[i] = (filtered[i][k] || "") + "";
+    var cnt = new Float64Array(n);
+    for (i = 0; i < n; i++) cnt[i] = filtered[i].count;
+    var idx = new Array(n);
+    for (i = 0; i < n; i++) idx[i] = i;
+    idx.sort(numeric
+      ? function (a, b) { var c = keys[a] - keys[b]; if (c === 0) c = cnt[b] - cnt[a]; return c * dir; }
+      : function (a, b) { var x = keys[a], y = keys[b], c = x < y ? -1 : x > y ? 1 : 0; if (c === 0) c = cnt[b] - cnt[a]; return c * dir; });
+    var list = new Array(n);
+    for (i = 0; i < n; i++) list[i] = filtered[idx[i]];
     state._vsSig = ssig; state._vsList = list;
     return list;
   }

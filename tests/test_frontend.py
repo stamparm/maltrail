@@ -874,33 +874,81 @@ class TestProgressiveLoadIsRateLimited(unittest.TestCase):
                       "the first progressive repaint must be exempt from the rate floor - it is the "
                       "one the user is waiting on, and delaying it regressed time-to-first-rows")
 
-class TestGridSortComparator(unittest.TestCase):
-    """The grid's sort picks its comparator once per sort rather than re-testing the column on
-    every comparison (about two million of them on a busy day, which also kept the one comparator
-    polymorphic). That turned one shared tiebreak into one per branch - and a branch that loses its
-    tiebreak does not error, it just orders equal-key rows differently, which nobody would notice.
+class TestGridSortEquivalence(unittest.TestCase):
+    """The grid sorts by computing each row's key once and sorting a permutation, instead of
+    deriving keys inside the comparator (about two million times per sort).
+
+    The failure mode is silent: a decorate/undecorate that gets ties or direction wrong still
+    returns a sorted-looking table, just with rows in the wrong places. So the SHIPPED block is
+    extracted and run against the direct comparator it replaced, over a population built to be
+    full of ties.
+
+    Deterministic on purpose. The equivalent check driven through a browser cannot be: the
+    aggregate itself depends on how the event stream happens to be chunked, so the same build
+    disagrees with itself run to run.
     """
 
-    def setUp(self):
-        self.js = _read(MAIN_JS)
-        m = re.search(r"var cmp;\n(.*?)\n    list\.sort\(cmp\);", self.js, re.S)
-        self.assertTrue(m, "could not find the grid's comparator selection in main.js")
-        self.block = m.group(1)
+    def _node(self):
+        for candidate in ("node", "nodejs"):
+            if any(os.access(os.path.join(d, candidate), os.X_OK)
+                   for d in os.environ.get("PATH", "").split(os.pathsep) if d):
+                return candidate
+        raise unittest.SkipTest("needs node to evaluate the sort")
 
-    def test_every_branch_keeps_the_count_tiebreak(self):
-        branches = self.block.count("cmp = function")
-        ties = self.block.count("if (c === 0) c = b.count - a.count;")
-        self.assertGreaterEqual(branches, 5, "expected one comparator per sortable column kind")
-        self.assertEqual(branches, ties,
-                         "%d comparator branches but %d count tiebreaks - a column whose branch "
-                         "lost the tiebreak silently orders equal-key rows differently"
-                         % (branches, ties))
+    def test_it_orders_exactly_as_the_direct_comparator_did(self):
+        node = self._node()
+        js = _read(MAIN_JS)
+        block = re.search(r"var n = filtered\.length, i;.*?for \(i = 0; i < n; i\+\+\) list\[i\] = filtered\[idx\[i\]\];",
+                          js, re.S)
+        self.assertTrue(block, "could not find the grid's sort block in main.js")
+        risk = re.search(r"var RISK_HOT = /.*?/;\n\s*var RISK_NOISE = /.*?/;\n.*?function riskOf\(t\) \{.*?\n  \}", js, re.S)
+        ipk = re.search(r"var _ipkCache = new Map\(\);\s*function ipKey\(s\) \{.*?\n  \}", js, re.S)
+        self.assertTrue(risk and ipk, "could not find riskOf()/ipKey() in main.js")
 
-    def test_every_branch_applies_the_direction(self):
-        branches = self.block.count("cmp = function")
-        self.assertEqual(branches, self.block.count("return c * dir;"),
-                         "a comparator branch does not apply the sort direction, so that column "
-                         "would ignore ascending/descending")
+        script = risk.group(0) + "\n" + ipk.group(0) + """
+function shipped(filtered, k, dir) {
+""" + block.group(0) + """
+  return list;
+}
+function reference(filtered, k, dir) {
+  var list = filtered.slice();
+  list.sort(function (a, b) {
+    var c;
+    if (k === "sev") c = riskOf(a) - riskOf(b);
+    else if (k === "count") c = a.count - b.count;
+    else if (k === "dport") c = (parseInt(a.dport, 10) || 0) - (parseInt(b.dport, 10) || 0);
+    else if (k === "src" || k === "dst") { var ak = ipKey(a[k]), bk = ipKey(b[k]); c = ak < bk ? -1 : ak > bk ? 1 : 0; }
+    else { var av = (a[k] || "") + "", bv = (b[k] || "") + ""; c = av < bv ? -1 : av > bv ? 1 : 0; }
+    if (c === 0) c = b.count - a.count;
+    return c * dir;
+  });
+  return list;
+}
+var TYPES = ['DNS','IP','URL','UA','','HTTP'], rows = [];
+for (var i = 0; i < 4000; i++) rows.push({
+  uid: 'u' + (i % 7 === 0 ? 1 : i), uidc: 'c' + i,
+  sensor: ['a','b','','c'][i % 4],
+  src: ['10.0.0.1','9.9.9.9','192.168.1.254','','8.8.8.8','10.0.0.10'][i % 6],
+  dst: ['1.2.3.4','255.255.255.255','','10.0.0.2'][i % 4],
+  dport: ['53','443','','80','1'][i % 5],
+  proto: ['TCP','UDP',''][i % 3], type: TYPES[i % TYPES.length],
+  trail: ['a.com','b.ru','','zz.top','a.com'][i % 5],
+  info: ['x (malware)','scanner (suspicious)','','cobalt beacon'][i % 4],
+  first: ['2026-01-01 00:00:00','2026-01-01 00:00:00','2026-06-06 12:00:00',''][i % 4],
+  ref: '(static)', sev: 1 + (i % 3), count: [1,1,1,2,37,900000][i % 6]
+});
+var COLS = ['uid','sensor','count','sev','src','dst','dport','proto','type','trail','info','first'];
+var bad = [];
+COLS.forEach(function (k) { [1, -1].forEach(function (dir) {
+  var a = shipped(rows, k, dir).map(function (r) { return r.uidc; }).join(',');
+  var b = reference(rows, k, dir).map(function (r) { return r.uidc; }).join(',');
+  if (a !== b) bad.push(k + ' dir=' + dir);
+}); });
+console.log(bad.length ? 'DIVERGES: ' + bad.join(', ') : 'OK');
+"""
+        import subprocess
+        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        self.assertEqual("OK", out.strip(), out.strip())
 
 
 class TestSeverityFilterIsSeparate(unittest.TestCase):
