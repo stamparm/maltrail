@@ -2788,6 +2788,11 @@ Katzilla
 PotatoRAT
 PotatoRAT/1.0
 
+# Reference: https://x.com/anyrun_app/status/1675771998679465984
+# Reference: https://app.any.run/tasks/b732fab4-ab5d-4d36-b953-8e08d4e60cf0/
+
+HTTPREAD
+
 # Misc
 
 information_schema
