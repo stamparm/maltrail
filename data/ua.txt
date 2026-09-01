@@ -1261,10 +1261,15 @@ MSIE5.01
 Qbot
 
 # Reference: https://twitter.com/FaLconIntel/status/1226012099240873984
+# Reference: https://x.com/ozuma5119/status/1226541171452702726
 # Reference: https://www.mcafee.com/blogs/other-blogs/mcafee-labs/nemty-ransomware-learning-by-doing/
 
 \AChrome\Z
 Naruto Uzumake
+Naruto Uzumaki
+Naruto
+Uzumake
+Uzumaki
 
 # Reference: https://github.com/silence-is-best/c2db#cobaltstrike
 
