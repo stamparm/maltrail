@@ -157,6 +157,7 @@ pub struct Config {
     pub disable_check_sudo: bool,
     pub show_debug: bool,
     pub log_server: String,
+    pub log_server_secret: String,
     pub syslog_server: String,
     pub logstash_server: String,
     pub remote_severity_regex: String,
@@ -606,6 +607,10 @@ impl Config {
         // collectors (issue #15164). Every one of them is validated: a typo in the second target
         // is exactly as fatal as one in the first, and silently forwarding to one of two
         // configured collectors is the kind of half-working that goes unnoticed for months.
+        // Shared secret authenticating LOG_SERVER datagrams. Empty means the previous behaviour:
+        // the events go out unsigned and the listener accepts anything that reaches it.
+        let log_server_secret = get_str(&raw, "LOG_SERVER_SECRET");
+
         let syslog_server = get_str(&raw, "SYSLOG_SERVER");
         for endpoint in split_endpoints(&syslog_server) {
             if parse_host_port(endpoint).1.is_none() {
@@ -833,6 +838,7 @@ impl Config {
             disable_check_sudo: get_bool(&raw, "DISABLE_CHECK_SUDO"),
             show_debug: get_bool(&raw, "SHOW_DEBUG"),
             log_server,
+            log_server_secret,
             syslog_server,
             logstash_server,
             remote_severity_regex,

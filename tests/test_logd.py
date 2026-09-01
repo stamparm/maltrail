@@ -179,5 +179,159 @@ class TestIntakeShape(unittest.TestCase):
         return False
 
 
+def _today_log():
+    """The day-log filename for now.
+
+    The tests above pin a fixed 2023 epoch so the filename is deterministic. The signed tests
+    cannot: LOG_SERVER_SECRET bounds replay by the timestamp inside the payload, so an event has
+    to carry a CURRENT one to be accepted at all, and it therefore lands in today's file.
+    """
+    lt = time.localtime()
+    return "%d-%02d-%02d.log" % (lt.tm_year, lt.tm_mon, lt.tm_mday)
+
+
+class TestLogServerSecret(unittest.TestCase):
+    """LOG_SERVER_SECRET authenticates the event datagrams.
+
+    The listener is otherwise open by protocol design: anything that can reach the port can append
+    to the log an operator reasons from, and that /events, /counts and /fail2ban parse. Forged
+    detections are evidence tampering, which is worse for an IDS than being read.
+
+    These drive the real receiver over a real socket, because the property that matters is what the
+    listener WRITES, not what a helper returns.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.mkdtemp(prefix="mt_logd_sec_")
+        cls.started = False
+        config.LOG_DIR = cls.tmp
+        config.SHOW_DEBUG = False
+        config.LOG_SERVER_SECRET = "unit-test-secret"
+        cls.port = _free_udp_port()
+        try:
+            L.start_logd(address="127.0.0.1", port=cls.port, join=False)
+            time.sleep(0.5)
+            cls.started = True
+        except EnvironmentError as ex:
+            cls._skip = "could not bind: %s" % ex
+
+    @classmethod
+    def tearDownClass(cls):
+        config.LOG_SERVER_SECRET = None
+
+    def setUp(self):
+        if not type(self).started:
+            self.skipTest(getattr(type(self), "_skip", "logd not started"))
+
+    def _send(self, payload):
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.sendto(payload, ("127.0.0.1", self.port))
+        s.close()
+
+    def _log(self, settle=0.6):
+        time.sleep(settle)
+        path = os.path.join(self.tmp, _today_log())
+        if not os.path.isfile(path):
+            return b""
+        with open(path, "rb") as f:
+            return f.read()
+
+    def _event(self, marker):
+        sec = int(time.time())
+        return ("%d \"%s\" box 10.0.0.5 4421 8.8.8.8 53 UDP DNS %s \"malware (x)\" (static)\n"
+                % (sec, time.strftime(TIME_FORMAT) + ".000000", marker)).encode("utf8")
+
+    def test_a_signed_event_is_recorded(self):
+        payload = self._event("signed-ok.example")
+        self._send(L.mts_sign(config.LOG_SERVER_SECRET, payload))
+        self.assertIn(b"signed-ok.example", self._log(),
+                      "a correctly signed event was not written")
+
+    def test_an_unsigned_event_is_dropped(self):
+        # This is the hole: before the secret existed, this datagram was accepted from anyone.
+        self._send(self._event("unsigned-forgery.example"))
+        self.assertNotIn(b"unsigned-forgery.example", self._log(),
+                         "an unauthenticated datagram was written to the event log")
+
+    def test_a_wrong_secret_is_dropped(self):
+        payload = self._event("wrong-key.example")
+        self._send(L.mts_sign("not-the-secret", payload))
+        self.assertNotIn(b"wrong-key.example", self._log(),
+                         "a datagram signed with the wrong key was accepted")
+
+    def test_a_tampered_payload_is_dropped(self):
+        # The MAC stays valid-looking; the event under it is edited in flight.
+        signed = L.mts_sign(config.LOG_SERVER_SECRET, self._event("tamper-src.example"))
+        tampered = signed.replace(b"tamper-src.example", b"tamper-dst.example")
+        self.assertNotEqual(signed, tampered, "the test did not actually modify the payload")
+        self._send(tampered)
+        self.assertNotIn(b"tamper-dst.example", self._log(),
+                         "an edited payload passed verification")
+
+    def test_a_stale_datagram_is_dropped(self):
+        # Replay is bounded by the timestamp the payload is signed with.
+        old = int(time.time()) - (L.LOG_SERVER_SKEW + 60)
+        payload = ("%d \"%s\" box 10.0.0.5 1 8.8.8.8 53 UDP DNS stale-replay.example \"m (x)\" (static)\n"
+                   % (old, time.strftime(TIME_FORMAT) + ".000000")).encode("utf8")
+        self._send(L.mts_sign(config.LOG_SERVER_SECRET, payload))
+        self.assertNotIn(b"stale-replay.example", self._log(),
+                         "a datagram older than the accepted window was replayed in")
+
+
+class TestLogServerSecretUnset(unittest.TestCase):
+    """With no secret configured, nothing changes for an existing deployment.
+
+    Including the upgrade-ordering case: a sensor that already has the secret, pointed at a server
+    that does not yet, must still get its events recorded rather than writing "MTS1 <mac> ..." into
+    the log as though the framing were part of the event.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.mkdtemp(prefix="mt_logd_plain_")
+        cls.started = False
+        config.LOG_DIR = cls.tmp
+        config.SHOW_DEBUG = False
+        config.LOG_SERVER_SECRET = None
+        cls.port = _free_udp_port()
+        try:
+            L.start_logd(address="127.0.0.1", port=cls.port, join=False)
+            time.sleep(0.5)
+            cls.started = True
+        except EnvironmentError as ex:
+            cls._skip = "could not bind: %s" % ex
+
+    def setUp(self):
+        if not type(self).started:
+            self.skipTest(getattr(type(self), "_skip", "logd not started"))
+
+    def _send_and_read(self, payload, settle=0.6):
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.sendto(payload, ("127.0.0.1", self.port))
+        s.close()
+        time.sleep(settle)
+        path = os.path.join(self.tmp, _today_log())
+        if not os.path.isfile(path):
+            return b""
+        with open(path, "rb") as f:
+            return f.read()
+
+    def test_an_unsigned_event_still_works(self):
+        sec = int(time.time())
+        payload = ("%d \"%s\" box 10.0.0.5 1 8.8.8.8 53 UDP DNS plain-mode.example \"m (x)\" (static)\n"
+                   % (sec, time.strftime(TIME_FORMAT) + ".000000")).encode("utf8")
+        self.assertIn(b"plain-mode.example", self._send_and_read(payload),
+                      "an unsigned datagram stopped working when no secret is configured")
+
+    def test_a_signed_event_has_its_framing_stripped(self):
+        sec = int(time.time())
+        payload = ("%d \"%s\" box 10.0.0.5 1 8.8.8.8 53 UDP DNS half-upgraded.example \"m (x)\" (static)\n"
+                   % (sec, time.strftime(TIME_FORMAT) + ".000000")).encode("utf8")
+        data = self._send_and_read(L.mts_sign("some-secret", payload))
+        self.assertIn(b"half-upgraded.example", data, "a signed event was lost against a server with no secret")
+        self.assertNotIn(b"MTS1", data, "the framing was written into the event log as if it were data")
+
+
 if __name__ == "__main__":
     unittest.main()

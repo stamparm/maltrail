@@ -5,7 +5,10 @@ Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrai
 See the file 'LICENSE' for copying permission
 """
 
+import binascii
 import datetime
+import hashlib
+import hmac
 import json
 import os
 import re
@@ -308,7 +311,8 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     os.write(handle, local_line.encode(UNICODE_ENCODING))
 
                 if config.LOG_SERVER:
-                    _send_datagram(config.LOG_SERVER, ("%s %s" % (sec, event)).encode(UNICODE_ENCODING))
+                    _payload = ("%s %s" % (sec, event)).encode(UNICODE_ENCODING)
+                    _send_datagram(config.LOG_SERVER, mts_sign(getattr(config, "LOG_SERVER_SECRET", None), _payload))
 
                 if config.SYSLOG_SERVER or config.LOGSTASH_SERVER:
                     severity = severity_of(info)
@@ -408,6 +412,114 @@ def log_error(msg, single=False):
         if config.SHOW_DEBUG:
             traceback.print_exc()
 
+# ---- authenticated event datagrams (LOG_SERVER_SECRET) ----
+#
+# The UDP listener below is unauthenticated by protocol design: anything that can reach the port
+# can append to the log an operator reasons from, and that /events, /counts and /fail2ban parse.
+# Forged detections are a worse problem for an IDS than eavesdropping, and the newline-collapsing
+# defence further down only limits what one forged datagram can do, not who may send one.
+#
+# With LOG_SERVER_SECRET set on both ends every datagram carries a MAC over its exact payload and
+# the receiver drops whatever does not verify. The frame is:
+#
+#     MTS1 <32 hex chars> <payload>
+#
+# where <payload> is byte-for-byte what an unsigned sender would have put on the wire, so the
+# parser underneath is untouched and one wire format serves both modes.
+#
+# HMAC-SHA256 truncated to 128 bits (RFC 2104 section 5), hex-encoded so a datagram stays greppable
+# text like everything else on this path. The frame costs 38 bytes on a ~110-byte event - about a
+# third - which is far more than compressing the payload could ever save: gzip on a single event of
+# this size makes it BIGGER, and raw deflate wins 9%. That is the clearest evidence that bandwidth
+# is not the constraint here. In absolute terms it is 11.8 Mbit/s instead of 8.7 at 10,000 events a
+# second, which is a rate no deployment sustains.
+#
+# This authenticates; it does not encrypt. The event is still readable to anyone on the path. That
+# is a deliberate scope: forgery is the attack that corrupts the evidence, and confidentiality is
+# better bought with WireGuard or IPsec than with a bespoke scheme here.
+#
+# Replay is BOUNDED, not eliminated. The signed payload leads with the event's epoch second and a
+# datagram outside LOG_SERVER_SKEW of now is dropped, so yesterday's traffic cannot be replayed
+# forever. Inside that window a captured datagram can be replayed, which duplicates one real event.
+# Inventing an event that never happened - the attack worth stopping - needs the secret.
+
+MTS_PREFIX = b"MTS1 "
+MTS_MAC_HEX = 32                       # 16 raw bytes, hex-encoded
+LOG_SERVER_SKEW = 900                  # seconds of clock skew and delivery delay tolerated
+
+
+def _mts_drop(reason):
+    """Say why a datagram was refused, when debugging is on.
+
+    Every rejection here is silent by necessity - the sender is unauthenticated, so there is
+    nobody to tell - and that produces the worst failure this project has: a sensor that looks
+    healthy while its events never arrive. A skewed clock or a mismatched secret drops EVERY
+    event, and without this line the only symptom is an empty log.
+    """
+
+    if getattr(config, "SHOW_DEBUG", False):
+        sys.stderr.write("[x] dropped an event datagram: %s\n" % reason)
+    return None
+
+
+def _mts_mac(secret, payload):
+    if not isinstance(secret, bytes):
+        secret = secret.encode(UNICODE_ENCODING)
+    return binascii.hexlify(hmac.new(secret, payload, hashlib.sha256).digest()[:16])
+
+
+def mts_sign(secret, payload):
+    """Frame and sign a payload. Returns the payload unchanged when there is no secret."""
+
+    if not secret:
+        return payload
+    return MTS_PREFIX + _mts_mac(secret, payload) + b" " + payload
+
+
+def mts_open(secret, data, now=None):
+    """The payload carried by a datagram, or None if it must be dropped.
+
+    With a secret the frame is REQUIRED and verified, which is what closes the injection hole.
+
+    Without a secret a frame is stripped but not checked. That is deliberate: a sensor already
+    given the secret, pointed at a server that has not been, still records its events instead of
+    writing "MTS1 <mac> ..." into the log as if it were an event. The two ends can then be
+    upgraded in either order, which matters when they are different machines owned by different
+    people.
+    """
+
+    framed = data.startswith(MTS_PREFIX)
+
+    if not secret:
+        if not framed:
+            return data
+        rest = data[len(MTS_PREFIX):]
+        return rest[MTS_MAC_HEX + 1:] if len(rest) > MTS_MAC_HEX else None
+
+    if not framed:
+        return _mts_drop("unsigned, but 'LOG_SERVER_SECRET' is set (sender not configured with it?)")
+
+    rest = data[len(MTS_PREFIX):]
+    if len(rest) <= MTS_MAC_HEX or rest[MTS_MAC_HEX:MTS_MAC_HEX + 1] != b" ":
+        return _mts_drop("malformed frame")
+
+    given, payload = rest[:MTS_MAC_HEX], rest[MTS_MAC_HEX + 1:]
+    if not hmac.compare_digest(given, _mts_mac(secret, payload)):
+        return _mts_drop("bad MAC (the two ends disagree on 'LOG_SERVER_SECRET')")
+
+    head = payload.split(b" ", 1)[0]
+    if not head.isdigit():
+        return _mts_drop("signed payload does not start with an epoch second")
+
+    skew = (time.time() if now is None else now) - int(head)
+    if abs(skew) > LOG_SERVER_SKEW:
+        return _mts_drop("timestamp is %ds away, outside the %ds window (sender clock skew, or an "
+                         "offline replay of an old capture - use '--timestamps wallclock' for that)"
+                         % (skew, LOG_SERVER_SKEW))
+
+    return payload
+
+
 def start_logd(address=None, port=None, join=False):
     # ONE receive loop, not a thread per datagram.
     #
@@ -442,6 +554,12 @@ def start_logd(address=None, port=None, join=False):
         def handle(self):
             try:
                 data, _ = self.request
+
+                # Authenticate before parsing. With LOG_SERVER_SECRET set this is what makes the
+                # listener refuse events it cannot attribute; without it, behaviour is unchanged.
+                data = mts_open(getattr(config, "LOG_SERVER_SECRET", None), data)
+                if data is None:
+                    return
 
                 if data[0:1].isdigit():     # Note: regular format with timestamp in front
                     sec, event = data.split(b' ', 1)

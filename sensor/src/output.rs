@@ -24,6 +24,74 @@ use crate::settings;
 use crate::whitelist::Whitelist;
 
 /// Immutable, shared output configuration.
+/// `MTS1 <32 hex chars> <payload>` - the authenticated framing for a LOG_SERVER datagram.
+///
+/// The listener on the other end is otherwise open by protocol design: anything that can reach the
+/// port can append to the log an operator reasons from. This is the sending half of closing that;
+/// `core/log.py:mts_open` is the receiving half and the two are pinned together by generated
+/// vectors, because a MAC that disagrees across the two implementations fails as silent data loss -
+/// the server simply drops every event this sensor sends, and nothing says why.
+///
+/// HMAC-SHA256 truncated to 128 bits (RFC 2104 section 5), hex-encoded so the datagram stays
+/// greppable text like everything else on this path.
+pub fn mts_sign(secret: &str, payload: &[u8]) -> Vec<u8> {
+    use hmac::{Mac, SimpleHmac};
+    let mut mac =
+        SimpleHmac::<sha2::Sha256>::new_from_slice(secret.as_bytes()).expect("HMAC accepts a key of any length");
+    mac.update(payload);
+    let tag = mac.finalize().into_bytes();
+
+    let mut out = Vec::with_capacity(5 + 32 + 1 + payload.len());
+    out.extend_from_slice(b"MTS1 ");
+    for byte in &tag[..16] {
+        out.push(HEX[(byte >> 4) as usize]);
+        out.push(HEX[(byte & 0x0f) as usize]);
+    }
+    out.push(b' ');
+    out.extend_from_slice(payload);
+    out
+}
+
+const HEX: &[u8; 16] = b"0123456789abcdef";
+
+#[cfg(test)]
+mod mts_tests {
+    use super::mts_sign;
+
+    /// Vectors computed by core/log.py's mts_sign. A MAC that disagrees between the two
+    /// implementations does not error anywhere - the server just drops every event this sensor
+    /// sends, and the operator sees a sensor that looks healthy and a log that stays empty. That
+    /// failure mode is why these are pinned rather than left to a round-trip test on one side.
+    #[test]
+    fn macs_match_the_python_sender() {
+        let cases: &[(&str, &[u8], &str)] = &[
+            (
+                "s3cr3t",
+                b"1767261603 \"2026-01-01 10:00:03.123456\" box 10.0.0.8 6666 5.5.5.5 80 TCP IP 5.5.5.5 \"malware (test)\" (static)\n",
+                "157a86bdbdf4940dccfd73668f1e74e3",
+            ),
+            ("k", b"", "8bb990c40a7d61cb97597a942125025b"),
+            (
+                "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+                b"short",
+                "c67f8c6d0fec3da7b0fd48be37f06a9d",
+            ),
+            // a key longer than SHA-256's block is hashed first by HMAC; a payload that is not
+            // ASCII must be signed as the bytes it is, not as text
+            ("čž secret", "unicode payload čž\n".as_bytes(), "2b576daf9cbbebe124c8320c8a19fedb"),
+        ];
+
+        for (secret, payload, expected_mac) in cases {
+            let out = mts_sign(secret, payload);
+            assert!(out.starts_with(b"MTS1 "), "frame prefix missing");
+            let mac = std::str::from_utf8(&out[5..37]).expect("hex is ascii");
+            assert_eq!(mac, *expected_mac, "MAC disagrees with core/log.py for secret {secret:?}");
+            assert_eq!(&out[37..38], b" ", "one space between MAC and payload");
+            assert_eq!(&out[38..], *payload, "payload must be carried byte-for-byte");
+        }
+    }
+}
+
 pub struct OutputConfig {
     pub sensor_name: String,
     pub log_dir: PathBuf,
@@ -33,6 +101,9 @@ pub struct OutputConfig {
     pub local_log_json: bool,
     pub console: bool,
     pub log_server: Option<String>,
+    /// `LOG_SERVER_SECRET`: shared secret authenticating every LOG_SERVER datagram. `None` sends
+    /// them unsigned, which is what every deployment did before this existed.
+    pub log_server_secret: Option<String>,
     /// Every endpoint named by `SYSLOG_SERVER` / `LOGSTASH_SERVER`. One option may name several,
     /// so a sensor can feed redundant collectors; empty means the sink is off.
     pub syslog_server: Vec<String>,
@@ -208,7 +279,13 @@ impl EventSink {
 
         if let Some(endpoint) = self.cfg.log_server.clone() {
             let payload = format!("{} {}", event.sec, line);
-            self.send_datagram(&endpoint, payload.as_bytes());
+            match self.cfg.log_server_secret.as_deref() {
+                Some(secret) => {
+                    let framed = mts_sign(secret, payload.as_bytes());
+                    self.send_datagram(&endpoint, &framed);
+                }
+                None => self.send_datagram(&endpoint, payload.as_bytes()),
+            }
         }
 
         if !self.cfg.syslog_server.is_empty() || !self.cfg.logstash_server.is_empty() {

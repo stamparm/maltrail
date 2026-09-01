@@ -434,6 +434,7 @@ fn run() -> i32 {
         local_log_json: cfg.local_log_json,
         console: cfg.console,
         log_server: non_empty(&cfg.log_server),
+        log_server_secret: non_empty(&cfg.log_server_secret),
         syslog_server: maltrail_sensor::config::split_endpoints(&cfg.syslog_server)
             .iter()
             .map(|s| s.to_string())
