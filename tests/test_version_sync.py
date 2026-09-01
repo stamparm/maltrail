@@ -27,11 +27,14 @@ import check_version                                  # noqa: E402
 
 class TestVersionLocations(unittest.TestCase):
     def test_the_tree_agrees_with_itself(self):
+        # stdout/stderr=PIPE rather than capture_output/text: CI runs this on Python 3.6, where
+        # neither keyword exists yet.
         out = subprocess.run([sys.executable, os.path.join(TOOLS, "bump_version.py"), "--check"],
-                             capture_output=True, text=True)
+                             stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         self.assertEqual(out.returncode, 0,
                          "the version is not the same everywhere it is written:\n%s%s"
-                         % (out.stdout, out.stderr))
+                         % (out.stdout.decode("utf8", "replace"),
+                            out.stderr.decode("utf8", "replace")))
 
     def test_every_pattern_matches_exactly_once(self):
         # Zero means the file moved on and the bumper silently stopped covering it - which is how
