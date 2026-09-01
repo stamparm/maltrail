@@ -6622,3 +6622,15 @@
 91.92.47.0/24,techties-as
 93.152.221.0/24,techties-as
 94.26.106.0/24,techties-as
+
+# AS 197769
+# Reference: https://ipinfo.io/AS197769
+# Reference: https://x.com/BlinkzSec/status/2094808850528395362
+
+102.220.160.0/22,vpsdedicated-as
+102.220.163.0/24,vpsdedicated-as
+130.12.181.0/24,vpsdedicated-as
+130.12.182.0/24,vpsdedicated-as
+31.57.184.0/24,vpsdedicated-as
+31.57.216.0/24,vpsdedicated-as
+91.231.222.0/24,vpsdedicated-as
