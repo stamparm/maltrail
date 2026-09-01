@@ -445,7 +445,30 @@ def log_error(msg, single=False):
 
 MTS_PREFIX = b"MTS1 "
 MTS_MAC_HEX = 32                       # 16 raw bytes, hex-encoded
-LOG_SERVER_SKEW = 900                  # seconds of clock skew and delivery delay tolerated
+LOG_SERVER_SKEW = 900                  # default seconds of clock skew and delivery delay tolerated
+
+
+def _skew_window():
+    """How far from the server's clock a signed event may be, in seconds. 0 disables the check.
+
+    Timezones are NOT what this is for: the signed field is an epoch second, which is absolute, so
+    a sensor in Tokyo and a server in Zagreb agree on it exactly. This is clock SKEW - a host with
+    no NTP, a board with no RTC that boots before the network, a VM resumed from a snapshot.
+
+    Configurable because the failure is total rather than partial: a sensor whose clock is wrong
+    has EVERY event refused, and 900 seconds is a judgement about how well-synchronised a fleet is,
+    which is the operator's to make and not ours.
+    """
+
+    # `or` would be wrong here: 0 is the documented way to switch the check off, and `0 or 900`
+    # is 900 - the setting would silently do the opposite of what it says.
+    value = getattr(config, "LOG_SERVER_SKEW", None)
+    if value is None or value == "":
+        return LOG_SERVER_SKEW
+    try:
+        return max(0, int(value))
+    except (TypeError, ValueError):
+        return LOG_SERVER_SKEW
 
 
 def _mts_drop(reason):
@@ -511,11 +534,12 @@ def mts_open(secret, data, now=None):
     if not head.isdigit():
         return _mts_drop("signed payload does not start with an epoch second")
 
+    window = _skew_window()
     skew = (time.time() if now is None else now) - int(head)
-    if abs(skew) > LOG_SERVER_SKEW:
-        return _mts_drop("timestamp is %ds away, outside the %ds window (sender clock skew, or an "
-                         "offline replay of an old capture - use '--timestamps wallclock' for that)"
-                         % (skew, LOG_SERVER_SKEW))
+    if window and abs(skew) > window:
+        return _mts_drop("timestamp is %ds away, outside the %ds 'LOG_SERVER_SKEW' window (sender "
+                         "clock skew, or an offline replay of an old capture - use "
+                         "'--timestamps wallclock' for that)" % (skew, window))
 
     return payload
 

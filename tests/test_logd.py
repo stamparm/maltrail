@@ -269,6 +269,46 @@ class TestLogServerSecret(unittest.TestCase):
         self.assertNotIn(b"tamper-dst.example", self._log(),
                          "an edited payload passed verification")
 
+    def test_the_window_is_configurable(self):
+        # The failure this guards is total - a skewed sensor loses EVERY event - so an operator who
+        # cannot keep a fleet synchronised has to be able to widen it, or switch it off with 0.
+        old = int(time.time()) - 4000
+        payload = ("%d \"%s\" box 10.0.0.5 1 8.8.8.8 53 UDP DNS widened-window.example \"m (x)\" (static)\n"
+                   % (old, time.strftime(TIME_FORMAT) + ".000000")).encode("utf8")
+        self.assertIsNone(L.mts_open(config.LOG_SERVER_SECRET, L.mts_sign(config.LOG_SERVER_SECRET, payload)),
+                          "4000s should be outside the 900s default")
+        config.LOG_SERVER_SKEW = 7200
+        try:
+            self.assertIsNotNone(L.mts_open(config.LOG_SERVER_SECRET, L.mts_sign(config.LOG_SERVER_SECRET, payload)),
+                                 "a widened window did not take effect")
+            config.LOG_SERVER_SKEW = 0
+            ancient = ("%d \"%s\" box 10.0.0.5 1 8.8.8.8 53 UDP DNS no-window.example \"m (x)\" (static)\n"
+                       % (int(time.time()) - 10 ** 7, time.strftime(TIME_FORMAT) + ".000000")).encode("utf8")
+            self.assertIsNotNone(L.mts_open(config.LOG_SERVER_SECRET, L.mts_sign(config.LOG_SERVER_SECRET, ancient)),
+                                 "0 should disable the window entirely")
+        finally:
+            config.LOG_SERVER_SKEW = None
+
+    def test_a_timezone_difference_is_not_skew(self):
+        # The signed field is an epoch second, so a sensor and a server in different zones agree on
+        # it exactly. Signing under one TZ and verifying under another must change nothing.
+        payload = self._event("across-timezones.example")
+        signed = L.mts_sign(config.LOG_SERVER_SECRET, payload)
+        before = os.environ.get("TZ")
+        try:
+            os.environ["TZ"] = "Asia/Tokyo"; time.tzset()
+            tokyo = L.mts_open(config.LOG_SERVER_SECRET, signed)
+            os.environ["TZ"] = "Pacific/Kiritimati"; time.tzset()
+            kiritimati = L.mts_open(config.LOG_SERVER_SECRET, signed)
+            self.assertEqual(tokyo, payload, "a signed event was refused under one timezone")
+            self.assertEqual(kiritimati, payload, "a signed event was refused under another")
+        finally:
+            if before is None:
+                os.environ.pop("TZ", None)
+            else:
+                os.environ["TZ"] = before
+            time.tzset()
+
     def test_a_stale_datagram_is_dropped(self):
         # Replay is bounded by the timestamp the payload is signed with.
         old = int(time.time()) - (L.LOG_SERVER_SKEW + 60)
