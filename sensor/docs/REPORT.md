@@ -39,7 +39,6 @@ touched by the port itself.
 | generated constants | `src/settings_gen.rs` (from `core/settings.py`) | 195 |
 | integration tests | `tests/{detection,replay,trails,vectors,capture_live,fuzz_parsers}.rs` | 2,089 |
 | benchmarks | `benches/hotpath.rs` | 330 |
-| fuzz targets | `fuzz/fuzz_targets/*.rs`, `fuzz/Cargo.toml`, `fuzz/README.md` | 190 |
 | tooling | `tools/*.py`, `tools/check.sh` | 2,000 |
 | docs | `docs/*.md`, `README.md` | — |
 | generated fixtures | `tests/corpus/` (36 pcaps + trails + manifest), `tests/vectors/` (18 files) | — |
@@ -604,7 +603,7 @@ measured on the target hardware with `tools/fanout_check.py` plus the sensor's o
 | Detections against the REAL trail set | **verified** | `tools/gen_corpus.py --from-trails ~/.maltrail/trails.csv` samples real trails across 8 traffic shapes and replays them through both sensors: 1,600 sampled IOCs, **0 event differences in either direction** |
 | Loader equivalence with `load_trails()` | **verified** | `tests/loader_parity.rs` against the real 1,505,265-row CSV: same accepted rows, same three fields per row, same distinct-key count, same wildcard alternation in group order |
 | Trail refreshing | **verified** | `tests/trail_update.rs`: a missing file is built, a stale file is refreshed and the new IOC is then detected with its own info |
-| No panics on malformed traffic | **verified** | ~200k fuzzed inputs per run + 6 `cargo-fuzz` targets; `catch_unwind` as a never-used net |
+| No panics on malformed traffic | **verified** | ~240k fuzzed inputs on every `cargo test` (`tests/fuzz_parsers.rs` + `tests/fuzz_extended.rs`, both fixed-seed so a failure reproduces); `catch_unwind` as a never-used net |
 | Clean shutdown / resource release | **verified** | SIGTERM mid-replay: the sensor stopped after 2,519,040 of 4,000,000 packets, exited **90 ms** later, flushed condensed events and printed its final metrics (signal handler -> watcher -> worker -> bounded join -> summary) |
 | Coexists with `sensor.py` | **verified** | separate binary, separate `LOG_DIR`, no shared state; the parity harness runs both |
 | Reproducible benchmarks | **verified** | `cargo bench --bench hotpath`, `tools/bench_compare.py` |

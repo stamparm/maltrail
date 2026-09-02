@@ -140,8 +140,10 @@ the server or a cron job instead, and the sensor then warns when it goes stale. 
 ## Failure handling
 
 * Malformed / truncated / hostile packets: every parser is bounds-checked and returns `None`.
-  A deterministic fuzzer runs on every `cargo test`, and `cargo-fuzz` targets exist for deeper
-  runs (`fuzz/README.md`).
+  Two deterministic fuzzers run on every `cargo test` (`tests/fuzz_parsers.rs`,
+  `tests/fuzz_extended.rs`), so the property is checked on every build rather than when
+  someone remembers. `MT_FUZZ_SEED` / `MT_FUZZ_ITERS` turn the second one into a long
+  campaign without making CI nondeterministic.
 * As a last resort, each packet is processed inside `catch_unwind`, mirroring `sensor.py`'s
   blanket `except Exception`. A recovered panic increments `panics_recovered` and writes one
   deduplicated line to `error.log` — it must never happen, and it is visible if it does.

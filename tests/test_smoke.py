@@ -24,23 +24,18 @@ sys.dont_write_bytecode = True                       # as server.py does, before
 from core import testing as T
 
 
-# Directories holding GENERATED, machine-local state, pruned from the snapshot below. They are
-# the gitignored ones - a build tree, the cargo-fuzz corpus/artifacts - plus tool caches.
+# Directories holding GENERATED, machine-local state, pruned from the snapshot below: the
+# gitignored build tree, plus tool caches that have live writers of their own.
 #
 # Not an optimisation for its own sake. The snapshot used to walk the whole repository, which is
-# 16,193 files here of which 15,520 are `sensor/target` and the fuzz corpus, so ANY concurrent
-# writer in the tree appeared as a file "created by smoke_test()". With `cargo fuzz run` going in
-# another terminal this file's guard failed 2 runs in 3; a plain `cargo build` does the same.
-# A coverage-guided corpus is SUPPOSED to persist and grow between runs, so it cannot be moved
-# to a temporary directory to dodge this - the snapshot is what had to become precise.
+# 11,716 files here against 329 tracked ones - almost all of the difference being `sensor/target`.
+# ANY concurrent writer in the tree therefore appeared as a file "created by smoke_test()", and
+# a `cargo build` in another terminal failed this file's guard 2 runs in 3.
 #
 # Paths, not basenames: `sensor/tests/corpus` is tracked content and must still be watched.
 _GENERATED = (
     ".git",
     os.path.join("sensor", "target"),
-    os.path.join("sensor", "fuzz", "target"),
-    os.path.join("sensor", "fuzz", "corpus"),
-    os.path.join("sensor", "fuzz", "artifacts"),
     # tool state with live writers of its own - .codegraph runs a file watcher
     ".codegraph",
     ".pytest_cache",
@@ -95,17 +90,16 @@ class SmokeTest(unittest.TestCase):
     def test_the_snapshot_ignores_generated_trees_but_not_tracked_ones(self):
         """The guard above must watch the SOURCE tree and nothing else.
 
-        It used to walk the whole repository - 16,193 files here, of which 15,520 are
-        `sensor/target` and the cargo-fuzz corpus. Any concurrent writer therefore looked like a
-        file smoke_test() had created: with `cargo fuzz run` going in another terminal this test
-        failed 2 runs in 3, and a plain `cargo build` does the same. A coverage-guided corpus is
-        meant to persist and grow between runs, so the snapshot is what had to become precise.
+        It used to walk the whole repository - 11,716 files here against 329 tracked ones, almost
+        all of the difference being `sensor/target`. Any concurrent writer therefore looked like a
+        file smoke_test() had created: a `cargo build` in another terminal failed this test 2 runs
+        in 3, and `.codegraph` runs a file watcher of its own.
         """
         snapshot = _tree_snapshot()
         self.assertTrue(snapshot, "the snapshot must still see the source tree")
 
-        for generated in ("sensor%starget" % os.sep, "fuzz%scorpus" % os.sep,
-                          "fuzz%sartifacts" % os.sep, ".codegraph", "__pycache__"):
+        for generated in ("sensor%starget" % os.sep, ".codegraph", ".pytest_cache",
+                          "__pycache__"):
             offenders = [p for p in snapshot if generated in p]
             self.assertEqual(offenders, [],
                              "%s is generated, machine-local and written by other processes; "

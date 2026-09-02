@@ -2,8 +2,8 @@
 //!
 //! This runs on stable Rust as part of `cargo test`, so the "must never panic on arbitrary
 //! input" property is checked on every build rather than only when someone remembers to run
-//! `cargo fuzz`. The nightly `cargo-fuzz` targets under `fuzz/` use the same entry points and
-//! go deeper (coverage-guided); see `docs/ARCHITECTURE.md`.
+//! it. `tests/fuzz_extended.rs` sits beside this one with different strategies and a seed
+//! that can be overridden for a long campaign.
 //!
 //! Strategy:
 //!  * pure random bytes of every length up to a few hundred,
