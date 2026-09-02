@@ -1243,6 +1243,98 @@ class TestHttpd(unittest.TestCase):
         self.assertEqual(
             _source_field('"t" box 10.0.0.5 4421 8.8.8.8 53 UDP DNS a "m" (static)'), "10.0.0.5")
 
+    def test_scope_does_not_match_an_address_inside_a_domain_name(self):
+        """An address is a field, a comma-list element, or an IPORT host - not a domain label.
+
+        Scope matching used `\\b(\\d+\\.\\d+\\.\\d+\\.\\d+)\\b`, and `\\b` treats '.' as a boundary, so
+        10.0.0.5 was found inside the DOMAIN 10.0.0.5.evil.com. An analyst scoped to 10.0.0.0/8
+        was shown events whose src AND dst were both outside their networks, because an
+        attacker-chosen domain happened to contain an address in their scope. check_whitelisted()
+        documents fixing this exact shape on the whitelist side.
+        """
+        from core.httpd import _SCOPE_LINE_IP_REGEX as RX
+
+        # must still find a real address wherever one legitimately appears
+        for line, want in (
+            ('"t" box 10.0.0.5 4421 8.8.8.8 53 UDP DNS x "m" (s)', "10.0.0.5"),
+            ("10.0.0.5", "10.0.0.5"),
+            ("10.0.0.5:8080", "10.0.0.5"),          # IPORT trail
+            (" 203.0.113.9,10.0.0.8 ", "203.0.113.9"),   # condensed list
+            (",10.0.0.8 ", "10.0.0.8"),
+            ("10.0.0.100", "10.0.0.100"),
+        ):
+            match = RX.search(line)
+            self.assertIsNotNone(match, "scope must still see the address in %r" % line)
+            self.assertEqual(match.group(1), want, line)
+
+        # must NOT find one that is only a label inside a longer dotted name
+        for line in ("10.0.0.5.evil.com", "evil.10.0.0.9.com", "sub.1.2.3.4.example.org"):
+            self.assertIsNone(RX.search(line),
+                              "an address inside a domain name must not put the event in scope: "
+                              "%r" % line)
+
+        # and on a whole line the domain's labels must not appear among the addresses, while the
+        # line's REAL addresses still do
+        line = '"t" box 203.0.113.9 4421 8.8.8.8 53 UDP DNS 10.0.0.5.evil.com "m" (s)'
+        found = [m.group(1) for m in RX.finditer(line)]
+        self.assertEqual(found, ["203.0.113.9", "8.8.8.8"],
+                         "the real src/dst must be found and the domain's 10.0.0.5 must not: %s"
+                         % found)
+
+    def test_a_domain_trail_does_not_widen_a_restricted_session(self):
+        # The end-to-end half of the test above: both addresses out of scope, only the trail
+        # carries something that LOOKS like an in-scope address. Own server, because the shared
+        # fixture's event counts are asserted by other tests here.
+        tmp = tempfile.mkdtemp(prefix="mt_dom_")
+        try:
+            logdir = os.path.join(tmp, "logs"); os.makedirs(logdir)
+            day = "2026-07-01"
+            with open(os.path.join(logdir, "%s.log" % day), "w") as f:
+                f.write('"%s 10:00:00.000000" box 203.0.113.9 4421 8.8.8.8 53 UDP DNS '
+                        '10.0.0.5.evil.com "apt x (malware)" (static)\n' % day)
+                f.write('"%s 10:00:01.000000" box 10.0.0.7 4422 8.8.8.8 53 UDP DNS '
+                        'plain.example "apt x (malware)" (static)\n' % day)
+            trails = os.path.join(tmp, "t.csv")
+            with open(trails, "w") as f:
+                f.write("plain.example,m (dummy),(static)\n")
+            port = _free_port()
+            cfg = os.path.join(tmp, "srv.conf")
+            with open(cfg, "w") as f:
+                f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\n" % port)
+                f.write("USERS\n    admin:%s:0:\n    analyst:%s:1000:10.0.0.0/8\n" % (STORED, STORED))
+                f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+                f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME box\n"
+                        "DISABLE_CHECK_SUDO true\n" % (logdir, trails))
+            proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            try:
+                for _ in range(60):
+                    try:
+                        socket.create_connection(("127.0.0.1", port), timeout=0.5).close(); break
+                    except OSError: time.sleep(0.25)
+
+                def login(user):
+                    import binascii as _b
+                    nonce = _b.hexlify(os.urandom(16)).decode()
+                    h = hashlib.sha256((STORED + nonce).encode()).hexdigest()
+                    _, hd, _x = _http(port, "POST", "/login",
+                                      body="username=%s&nonce=%s&hash=%s" % (user, nonce, h))
+                    for ln in hd.split("\r\n"):
+                        if ln.lower().startswith("set-cookie:"):
+                            return ln.split(":", 1)[1].split(";")[0].strip()
+                    return None
+
+                _, _, body = _http(port, "GET", "/events?date=%s" % day, cookie=login("analyst"))
+                self.assertIn(b"plain.example", body,
+                              "positive control: the genuinely in-scope event must be visible")
+                self.assertNotIn(b"10.0.0.5.evil.com", body,
+                                 "an event whose src and dst are BOTH outside the netfilter was "
+                                 "shown because the trail domain embedded an in-scope address")
+            finally:
+                _stop_server(proc)
+        finally:
+            import shutil; shutil.rmtree(tmp, ignore_errors=True)
+
     def test_counts_sees_an_event_reaching_the_scope_from_outside(self):
         # The scope predicate is "any address on the line is inside my networks", not "the source
         # is". An outside host talking TO the analyst's network is exactly the event they most need

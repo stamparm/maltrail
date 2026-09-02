@@ -215,6 +215,22 @@ MAX_LIVE_STREAMS = 30           # of those, how many may be held open by /live a
 _HUNT_IP_QUERY_REGEX = re.compile(r"\A(\d+\.\d+\.\d+\.\d+)(?:/(\d{1,2}))?\Z")
 _HUNT_LINE_IP_REGEX = re.compile(r"\b(\d+\.\d+\.\d+\.\d+)\b")
 
+# Scope enforcement needs a STRICTER notion of "an address appears here" than `\b` gives.
+#
+# An address in an event line is a whole field, a comma-list element, or the host part of an
+# IPORT trail - never one label inside a longer dotted name. `\b` does not express that: a '.' is
+# a word boundary, so `\b(\d+\.\d+\.\d+\.\d+)\b` finds 10.0.0.5 inside the DOMAIN
+# 10.0.0.5.evil.com. An analyst scoped to 10.0.0.0/8 was therefore shown events whose src AND dst
+# were both outside their networks, because an attacker-chosen domain name happened to contain an
+# address in their scope. check_whitelisted() documents fixing this exact shape on the whitelist
+# side ("10.0.0.1.evil.com" range-matched as 10.0.0.1); this is the same bug in the scope path.
+#
+# NOT applied to _HUNT_LINE_IP_REGEX above: a retro-hunt is a search an analyst typed, where
+# matching a domain that embeds the queried address is useful and a miss is the worse failure.
+_SCOPE_ADDR_LEFT = r"(?<![\w.])"
+_SCOPE_ADDR_RIGHT = r"(?![\w.])"
+_SCOPE_LINE_IP_REGEX = re.compile(_SCOPE_ADDR_LEFT + r"(\d+\.\d+\.\d+\.\d+)" + _SCOPE_ADDR_RIGHT)
+
 
 def _hunt_ip_query(query):
     """(prefix, mask, needle) for an IP/CIDR retro-hunt query, or (None, None, None) if it is not one.
@@ -2091,7 +2107,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 elif re.search(r"\A[\d.]+\Z", netfilter):
                     addresses.add(netfilter)
                 elif "\\." in netfilter:
-                    regex = r"\b(%s)\b" % netfilter
+                    regex = r"%s(%s)%s" % (_SCOPE_ADDR_LEFT, netfilter, _SCOPE_ADDR_RIGHT)
                 else:
                     print("[!] invalid network filter '%s'" % netfilter)
                     return None
@@ -2141,7 +2157,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             return True, source
 
             if not display and (addresses or netmasks):
-                for match in re.finditer(r"\b(\d+\.\d+\.\d+\.\d+)\b", line):
+                for match in _SCOPE_LINE_IP_REGEX.finditer(line):
                     if not display:
                         ip = match.group(1)
                     else:
