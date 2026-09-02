@@ -292,5 +292,83 @@ class ConditionalFetchTest(unittest.TestCase):
         # the 43 feed modules call this with the original signature and must see no change
         self.assertIn("evil.com", retrieve_content(self.url))
 
+
+class IpcatFetchIsAtomicTest(unittest.TestCase):
+    """A failed ipcat download must not destroy the cached copy it would otherwise keep using.
+
+    update_ipcat() opened IPCAT_CSV_FILE "w+b" and only then called urlopen, so any failure -
+    network down, or a download that died halfway - left a truncated file with a FRESH mtime. The
+    freshness check at the top of the function then skipped the update on every subsequent run,
+    so the empty file stayed until the freshness window expired.
+    """
+
+    def setUp(self):
+        from core import update as U
+        self.U = U
+        self.sandbox = tempfile.mkdtemp(prefix="mt_ipcat_")
+        self._saved = (U.IPCAT_CSV_FILE, U.IPCAT_SQLITE_FILE, U.USERS_DIR,
+                       U._urllib.request.urlopen, U._chown)
+        U.IPCAT_CSV_FILE = os.path.join(self.sandbox, "ipcat.csv")
+        U.IPCAT_SQLITE_FILE = os.path.join(self.sandbox, "ipcat.sqlite")
+        U.USERS_DIR = self.sandbox
+        U._chown = lambda *a, **k: None
+        self.good = "start,end,name\n1.2.3.0,1.2.3.255,goodcorp\n"
+        with open(U.IPCAT_CSV_FILE, "w") as f:
+            f.write(self.good)
+        with open(U.IPCAT_SQLITE_FILE, "wb") as f:
+            f.write(b"x" * 100)
+
+    def tearDown(self):
+        (self.U.IPCAT_CSV_FILE, self.U.IPCAT_SQLITE_FILE, self.U.USERS_DIR,
+         self.U._urllib.request.urlopen, self.U._chown) = self._saved
+        shutil.rmtree(self.sandbox, ignore_errors=True)
+
+    def _run_with(self, urlopen):
+        self.U._urllib.request.urlopen = urlopen
+        _so = sys.stdout
+        sys.stdout = open(os.devnull, "w")
+        try:
+            self.U.update_ipcat(force=True)
+        finally:
+            sys.stdout.close()
+            sys.stdout = _so
+        with open(self.U.IPCAT_CSV_FILE) as f:
+            return f.read()
+
+    def test_a_failed_fetch_leaves_the_cache_intact(self):
+        def boom(*a, **k):
+            raise IOError("network unreachable")
+        self.assertEqual(self._run_with(boom), self.good,
+                         "a failed ipcat fetch truncated the cached CSV it was about to replace")
+
+    def test_an_empty_response_does_not_replace_the_cache(self):
+        class _Empty(object):
+            def read(self):
+                return b""
+            def close(self):
+                pass
+        self.assertEqual(self._run_with(lambda *a, **k: _Empty()), self.good,
+                         "an empty 200 response replaced a good cache with nothing")
+
+    def test_a_good_fetch_still_installs(self):
+        # positive control: the guard must not have made the fetch a no-op
+        fresh = b"start,end,name\n9.9.9.0,9.9.9.255,newcorp\n"
+
+        class _Ok(object):
+            def read(self):
+                return fresh
+            def close(self):
+                pass
+        self.assertEqual(self._run_with(lambda *a, **k: _Ok()), fresh.decode(),
+                         "a successful fetch must still replace the cached copy")
+
+    def test_no_temporary_file_is_left_behind(self):
+        def boom(*a, **k):
+            raise IOError("network unreachable")
+        self._run_with(boom)
+        self.assertFalse(os.path.exists("%s.new" % self.U.IPCAT_CSV_FILE),
+                         "the staging file must be cleaned up on failure")
+
+
 if __name__ == "__main__":
     unittest.main()

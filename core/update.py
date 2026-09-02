@@ -764,14 +764,31 @@ def update_ipcat(force=False):
     if force or not os.path.isfile(IPCAT_CSV_FILE) or not os.path.isfile(IPCAT_SQLITE_FILE) or (time.time() - os.stat(IPCAT_CSV_FILE).st_mtime) >= FRESH_IPCAT_DELTA_DAYS * 24 * 3600 or os.stat(IPCAT_SQLITE_FILE).st_size == 0:
         print("[i] updating ipcat database...")
 
+        # Download to a temporary file and swap it in, rather than truncating the cached copy and
+        # writing into it. Opening IPCAT_CSV_FILE "w+b" first meant a network failure - or a
+        # download that died halfway - left a truncated file behind with a fresh mtime, so the
+        # freshness check below then skipped the update and the empty file stayed. This is the
+        # pattern the static-trail and provenance fetches in this file already use.
+        tmp_ipcat = "%s.new" % IPCAT_CSV_FILE
         try:
-            with open(IPCAT_CSV_FILE, "w+b") as f:
-                resp = _urllib.request.urlopen(IPCAT_URL)
-                try:
-                    f.write(resp.read())
-                finally:
-                    resp.close()
+            resp = _urllib.request.urlopen(IPCAT_URL)
+            try:
+                payload = resp.read()
+            finally:
+                resp.close()
+
+            if not payload.strip():
+                raise ValueError("empty response")   # keep the cached copy over nothing
+
+            with open(tmp_ipcat, "wb") as f:
+                f.write(payload)
+            os.replace(tmp_ipcat, IPCAT_CSV_FILE)    # atomic; the old copy survives until this
         except Exception as ex:
+            try:
+                if os.path.exists(tmp_ipcat):
+                    os.remove(tmp_ipcat)
+            except OSError:
+                pass
             print("[x] something went wrong during retrieval of '%s' ('%s')" % (IPCAT_URL, ex))
 
         else:
