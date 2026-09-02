@@ -2,6 +2,14 @@
 # See the file 'LICENSE' for copying permission
 
 # Suspicious user-agent regular expressions
+#
+# EDITING THIS FILE ALSO REQUIRES REGENERATING THE SENSOR'S COPY. core/settings.py:read_ua() builds
+# SUSPICIOUS_UA_REGEX from these lines, and sensor/src/settings_gen.rs holds a checked-in mirror of
+# it, so a change here alone leaves the two disagreeing and the sensor gate fails on whatever
+# commit lands next - which is usually somebody else's:
+#
+#     python3 sensor/tools/gen_settings.py
+#     rustfmt --edition 2021 --config-path sensor/rustfmt.toml sensor/src/settings_gen.rs
 
 # Reference: https://rules.emergingthreats.net/
 
