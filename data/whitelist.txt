@@ -3411,7 +3411,6 @@ taging-nginz-ssl.zinfra.io
 wire-account-staging.zinfra.io
 wire-teams-staging.zinfra.io
 
-# Reference: https://github.com/stamparm/aux/issues/6
 # Reference: https://github.com/stamparm/maltrail/commit/4f8aa8c6592a11ad64b3b038bf51502ebb8db556
 
 shaparak.ir
@@ -3463,7 +3462,6 @@ promo.korabli.su
 stats.korabli.su
 vortex.korabli.su
 
-# Reference: https://github.com/stamparm/aux/issues/7
 # Reference: https://github.com/stamparm/maltrail/commit/1aa132c1534beedb357c31bd14f9b9f04cf74860
 
 autism-101.com
@@ -3968,7 +3966,6 @@ www-archive.mozilla.org
 wwww.mozilla.org
 xr.mozilla.org
 
-# Reference: https://github.com/stamparm/aux/issues/9
 
 nshc.net
 redalert.nshc.net
@@ -4025,7 +4022,6 @@ myseosucks.com
 
 cloudflarestorage.com
 
-# Reference: https://github.com/stamparm/aux/issues/13
 # Reference: https://github.com/stamparm/maltrail/commit/7460f550e6b21ad6797e49d855aacc2e6646eee3
 
 slug.vercel.app

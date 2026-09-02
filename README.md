@@ -546,14 +546,6 @@ Maltrail is distributed under the MIT License. See [`LICENSE`](LICENSE).
   Perceptions, 2024
   ([paper](https://nano-ntp.com/index.php/nano/article/view/1915/1497))
 
-### Derived blacklist
-
-A domain-only list derived from the `malware/` static trails is published at
-[`maltrail-malware-domains.txt`](https://raw.githubusercontent.com/stamparm/aux/master/maltrail-malware-domains.txt).
-It can be used as an input to DNS filtering systems, but operators should review and test it before
-enabling blocking. Threat-intelligence lists can contain false positives or indicators that are not
-appropriate for every environment.
-
 ### Third-party integrations
 
 - [FreeBSD Port](https://www.freshports.org/security/maltrail)
