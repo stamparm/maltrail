@@ -2468,16 +2468,17 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             date = days[-1]
             event_log_path = os.path.join(config.LOG_DIR, "%s.log" % date)
 
-            # Budget check before the response line: a refused stream must look exactly like the
-            # restricted-session case above, which the client already handles.
-            # Parse BEFORE claiming the budget slot. Anything that raises between _live_slot()
-            # and the try/finally below leaks a slot for the lifetime of the process, and there
-            # are only MAX_LIVE_STREAMS of them: 30 malformed requests refused /live server-wide
-            # until a restart, with every dashboard silently dropping back to Range polling.
+            # Resume position, parsed BEFORE the budget slot is claimed. Anything that raises
+            # between _live_slot() and the try/finally below leaks a slot for the lifetime of the
+            # process, and there are only MAX_LIVE_STREAMS of them - 30 malformed requests
+            # refused /live server-wide until a restart, every dashboard silently dropping back
+            # to Range polling.
             pos = _opt_index(self.headers.get("Last-Event-ID"))
             if pos is None:
                 pos = _opt_index(params.get("pos"))
 
+            # Budget check before the response line: a refused stream must look exactly like the
+            # restricted-session case above, which the client already handles.
             if not _live_slot():
                 self.send_response(_http_client.NO_CONTENT)
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
