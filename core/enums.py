@@ -13,12 +13,6 @@ class _(type):
 class TRAIL(object, metaclass=_):
     pass
 
-class BLOCK_MARKER:
-    NOP = 0x00
-    READ = 0x01
-    WRITE = 0x02
-    END = 0xff
-
 class PROTO:
     TCP = "TCP"
     UDP = "UDP"

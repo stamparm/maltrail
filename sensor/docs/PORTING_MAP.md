@@ -12,6 +12,12 @@
 > and once the Python sensor was gone nothing imported it but its own unit test. Rows and code
 > comments below still name it, and `sensor.py`, as the Python source each Rust module was ported
 > from. Those names are provenance, not paths you can open - read them against git history.
+>
+> `core/parallel.py` went with them, for the reason the rows below give: the sensor uses
+> threads, so there is no mmap ring, no packet copy and no IPC to carry. Nothing imported it
+> but its own unit test. `BLOCK_MARKER` (the ring's slot states) went too; `BLOCK_LENGTH`
+> stays, because `CAPTURE_BUFFER` is still rounded down to a whole number of blocks and
+> `src/config.rs` mirrors that.
 
 Traced against this repository (not from memory). Every row names the Python source of truth and
 the Rust module that reproduces it.
