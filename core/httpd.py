@@ -40,6 +40,7 @@ from core.common import worst_asns
 from core.common import bogon_ip
 from core.common import is_local
 from core.common import ripe_lookup
+from core.compat import is_decimal
 from core.compat import xrange
 from core.enums import HTTP_HEADER
 from core.geo import ip_to_country
@@ -304,6 +305,23 @@ def _limit(value, default):
     return value if value > 0 else default
 _live_streams = [0]
 _live_streams_lock = threading.Lock()
+
+def _opt_index(value):
+    """A non-negative decimal integer from `value`, or None if it is not one.
+
+    `str.isdigit()` is NOT a safe guard for `int()`: it is true for 128 characters that `int()`
+    refuses, among them the latin-1 superscripts U+00B2/B3/B9, which are single bytes and so
+    survive the latin-1 decoding that http.server applies to header values. `Last-Event-ID: \xb2`
+    therefore passed the guard and raised ValueError inside the handler.
+    """
+
+    if value is None:
+        return None
+    text = value if isinstance(value, str) else "%s" % value
+    if not is_decimal(text):
+        return None
+    return int(text)
+
 
 def _live_slot():
     """Claim one of the /live budget, or return False.
@@ -1388,7 +1406,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             # (Skipping also keeps such junk out of `netmasks`, where _filter_events would re-crash on it.)
                             prefix, _, bits = item.partition('/')
                             prefix = prefix.strip()
-                            if bits.isdigit() and int(bits) <= 32 and re.match(r"\A\d+\.\d+\.\d+\.\d+\Z", prefix):
+                            if is_decimal(bits) and int(bits) <= 32 and re.match(r"\A\d+\.\d+\.\d+\.\d+\Z", prefix):
                                 if int(bits) >= 16:
                                     mask = make_mask(int(bits))
                                     lower = addr_to_int(prefix) & mask   # mask the prefix: a non-aligned CIDR (e.g. 10.0.5.0/16) must expand from the network base (10.0.0.0), else the low part of the subnet is silently excluded
@@ -2452,17 +2470,18 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             # Budget check before the response line: a refused stream must look exactly like the
             # restricted-session case above, which the client already handles.
+            # Parse BEFORE claiming the budget slot. Anything that raises between _live_slot()
+            # and the try/finally below leaks a slot for the lifetime of the process, and there
+            # are only MAX_LIVE_STREAMS of them: 30 malformed requests refused /live server-wide
+            # until a restart, with every dashboard silently dropping back to Range polling.
+            pos = _opt_index(self.headers.get("Last-Event-ID"))
+            if pos is None:
+                pos = _opt_index(params.get("pos"))
+
             if not _live_slot():
                 self.send_response(_http_client.NO_CONTENT)
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
                 return None
-
-            pos = None
-            leid = self.headers.get("Last-Event-ID")
-            if leid and leid.isdigit():
-                pos = int(leid)
-            elif params.get("pos") and ("%s" % params.get("pos")).isdigit():
-                pos = int(params.get("pos"))
 
             self.send_response(_http_client.OK)
             self.send_header(HTTP_HEADER.CONNECTION, "close")
@@ -2475,6 +2494,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 self.wfile.write(s.encode(UNICODE_ENCODING) if isinstance(s, str) else s)
 
             try:
+                # NOTE: everything from the _live_slot() claim onwards must stay inside this try,
+                # whose finally is the only thing that returns the slot to the budget.
                 cur = os.path.getsize(event_log_path) if os.path.exists(event_log_path) else 0
                 if pos is None or pos > cur:
                     pos = cur  # default: tail only NEW lines (never replay the whole file); also recover if file shrank

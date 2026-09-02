@@ -78,6 +78,21 @@ class TestBadConfigsExitCleanly(unittest.TestCase):
             d = dict(_BASE); d[key] = val
             self.assertEqual(_outcome(_write(d)), "exit", "%s=%s should exit cleanly" % (key, val))
 
+    def test_unicode_digits_that_int_rejects(self):
+        # str.isdigit() is true for 128 characters int() REFUSES. Every numeric guard in
+        # core/settings.py used it, so these tracebacked straight out of read_config() - the exact
+        # failure this whole file exists to rule out. U+00B2/B3/B9 are the reachable ones: single
+        # bytes in latin-1, so they survive any byte-oriented transport.
+        for key, val in [("HTTP_PORT", u"\xb2"), ("UPDATE_PERIOD", u"\xb3"),
+                         ("HTTP_PORT", u"80\xb9"), ("CAPTURE_BUFFER", u"\xb2")]:
+            d = dict(_BASE); d[key] = val
+            self.assertEqual(_outcome(_write(d)), "exit",
+                             "%s=%r must exit cleanly, not raise out of the parser" % (key, val))
+
+    def test_udp_port_unicode_digit(self):
+        d = dict(_BASE); d["UDP_ADDRESS"] = "0.0.0.0"; d["UDP_PORT"] = u"514\xb2"
+        self.assertEqual(_outcome(_write(d)), "exit")
+
     def test_udp_port_without_address(self):
         d = dict(_BASE); d["UDP_PORT"] = "8337"
         self.assertEqual(_outcome(_write(d)), "exit")   # UDP_PORT requires UDP_ADDRESS
@@ -175,6 +190,46 @@ class TestLogFormatParseContract(unittest.TestCase):
     def test_embedded_quote_and_spaces(self):
         fields = ["a b", 'sen"sor', "info with spaces", "-"]
         self.assertEqual(self._roundtrip(fields), fields)
+
+
+
+class TestDecimalPredicate(unittest.TestCase):
+    """core.compat.is_decimal is the replacement for str.isdigit() as an int() guard."""
+
+    def test_it_agrees_with_int_on_every_character_isdigit_accepts(self):
+        from core.compat import is_decimal
+        disagreements = []
+        for cp in range(0x110000):
+            ch = chr(cp)
+            if not ch.isdigit():
+                continue
+            try:
+                int(ch)
+                int_ok = True
+            except ValueError:
+                int_ok = False
+            if is_decimal(ch) != int_ok:
+                disagreements.append("U+%04X" % cp)
+        self.assertEqual(disagreements, [],
+                         "is_decimal must accept exactly what int() accepts; disagreed on %d "
+                         "characters, first few: %s"
+                         % (len(disagreements), " ".join(disagreements[:8])))
+
+    def test_it_is_stricter_than_isdigit(self):
+        from core.compat import is_decimal
+        # the reachable-over-the-wire cases, and the plain ones
+        self.assertTrue(all(is_decimal(v) for v in ("0", "7", "8338", "00")))
+        for v in (u"\xb2", u"\xb3", u"\xb9", u"80\xb9", u"\u2087", u"\u1369"):
+            self.assertTrue(v.isdigit(), "%r should be isdigit() - test premise" % v)
+            self.assertFalse(is_decimal(v), "%r passes isdigit() but int() rejects it" % v)
+        for v in ("", None, "-1", " 1", "1 ", "1.0", "0x10", "notaport"):
+            self.assertFalse(is_decimal(v), "%r is not a decimal run" % v)
+
+    def test_it_accepts_non_string_input(self):
+        from core.compat import is_decimal
+        self.assertTrue(is_decimal(8338))
+        self.assertFalse(is_decimal(None))
+        self.assertFalse(is_decimal(-1))
 
 
 if __name__ == "__main__":

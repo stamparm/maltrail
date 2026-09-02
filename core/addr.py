@@ -8,6 +8,7 @@ See the file 'LICENSE' for copying permission
 import re
 import socket
 
+from core.compat import is_decimal
 from core.compat import xrange
 
 def addr_to_int(value):
@@ -208,7 +209,9 @@ def parse_host_port(value):
     else:                                          # host only, no port
         host, port = value, ""
 
-    return host, (int(port) if port.isdigit() else None)
+    # NOTE: not port.isdigit(), which is true for 128 characters int() rejects - a typo'd
+    # 'LOG_SERVER host:514\xb2' raised ValueError here instead of reporting a bad port.
+    return host, (int(port) if is_decimal(port) else None)
 
 def resolve_address(host, port):
     """
@@ -218,4 +221,4 @@ def resolve_address(host, port):
 
     _AI_NUMERICSERV = getattr(socket, "AI_NUMERICSERV", 0)
     flags = socket.AI_NUMERICHOST | _AI_NUMERICSERV
-    return socket.getaddrinfo(host, int(port) if str(port or "").isdigit() else 0, 0, 0, 0, flags)[0][4]
+    return socket.getaddrinfo(host, int(port) if is_decimal(port or "") else 0, 0, 0, 0, flags)[0][4]

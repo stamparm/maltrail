@@ -979,6 +979,83 @@ class TestHttpd(unittest.TestCase):
         finally:
             import shutil; shutil.rmtree(tmp, ignore_errors=True)
 
+    def test_a_malformed_last_event_id_does_not_burn_a_stream_slot(self):
+        # /live claimed its budget slot BEFORE parsing Last-Event-ID, and the try/finally that
+        # returns the slot started after the parse. The parse was guarded by str.isdigit(), which
+        # is not a guard for int(): it is true for 128 characters int() refuses, including the
+        # latin-1 superscripts U+00B2/B3/B9 - single bytes, so they survive the latin-1 decoding
+        # http.server applies to header values. `Last-Event-ID: \xb2` therefore raised ValueError
+        # between the claim and the finally, leaking a slot per request. MAX_LIVE_STREAMS of them
+        # (30 by default) and /live answered 204 for everyone until the process restarted, with
+        # every dashboard silently falling back to Range polling.
+        tmp = tempfile.mkdtemp(prefix="mt_leid_")
+        try:
+            logdir = os.path.join(tmp, "logs"); os.makedirs(logdir)
+            day = "2026-07-01"
+            with open(os.path.join(logdir, "%s.log" % day), "w") as f:
+                f.write('"%s 10:00:00.000000" s 10.0.0.5 1 8.8.8.8 53 UDP DNS x.example "m (d)" (static)\n' % day)
+            trails = os.path.join(tmp, "t.csv")
+            with open(trails, "w") as f:
+                f.write("x.example,m (dummy),(static)\n")
+            port = _free_port()
+            cfg = os.path.join(tmp, "srv.conf")
+            with open(cfg, "w") as f:
+                f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\nMAX_LIVE_STREAMS 3\n" % port)
+                f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+                f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME t\nDISABLE_CHECK_SUDO true\n"
+                        % (logdir, trails))
+            proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            try:
+                for _ in range(60):
+                    try:
+                        socket.create_connection(("127.0.0.1", port), timeout=0.5).close(); break
+                    except OSError: time.sleep(0.25)
+
+                def stream(last_event_id=None):
+                    """Open /live, read the status line, close. Returns the status line."""
+                    req = ("GET /live?date=%s HTTP/1.1\r\nHost: 127.0.0.1\r\n"
+                           "Connection: close\r\n" % day)
+                    if last_event_id is not None:
+                        req += "Last-Event-ID: %s\r\n" % last_event_id
+                    req += "\r\n"
+                    sk = socket.create_connection(("127.0.0.1", port), timeout=5)
+                    try:
+                        sk.sendall(req.encode("latin-1"))   # latin-1 IS the header wire encoding
+                        try:
+                            return sk.recv(64)
+                        except socket.timeout:
+                            return b""
+                    finally:
+                        sk.close()
+
+                # Positive control is an ORDINARY request: a closed SSE socket is not noticed by
+                # the server for up to 0.6s, so opening a real stream here would itself hold a
+                # slot and make the assertion below racy.
+                st, _, _ = _http(port, "GET", "/")
+                self.assertEqual(st, 200, "positive control: the server is up")
+
+                # Comfortably more malformed requests than the whole budget. A leak is permanent,
+                # so with the bug the budget is gone for good; with the fix they claim nothing.
+                for _ in range(8):
+                    stream(u"\xb2")
+
+                # A slot held by a stream whose socket just closed is returned once the server
+                # notices the disconnect (within a poll interval), so "busy" is expected briefly.
+                # A LEAKED slot is never returned - so poll, and the two cases separate cleanly.
+                for _ in range(40):
+                    if b" 204 " not in stream():
+                        break
+                    time.sleep(0.25)
+                else:
+                    self.fail("a malformed Last-Event-ID permanently leaked the /live budget: "
+                              "10s after 8 of them, a MAX_LIVE_STREAMS 3 server still refuses "
+                              "every stream, and only a restart would clear it")
+            finally:
+                _stop_server(proc)
+        finally:
+            import shutil; shutil.rmtree(tmp, ignore_errors=True)
+
     def test_live_streams_cannot_starve_ordinary_requests(self):
         # A /live stream holds its request thread for the lifetime of the tab. Counted against the
         # general thread cap it starves everything else: 120 open dashboards took all 100 slots and

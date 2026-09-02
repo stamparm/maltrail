@@ -14,6 +14,7 @@ import subprocess
 import sys
 
 from core.addr import addr_to_int
+from core.compat import is_decimal
 from core.addr import expand_range
 from core.addr import make_mask
 from core.attribdict import AttribDict
@@ -474,7 +475,7 @@ def read_config(config_file):
                     # false - a silent USE_SSL=off is exactly the kind of misconfig that goes unnoticed
                     print("[!] configuration switch '%s' expects a boolean (0/1/true/false), got '%s' (treated as false)" % (name, value))
                 value = value.lower() in ("1", "true")
-            elif value.isdigit():
+            elif is_decimal(value):
                 value = int(value)
             else:
                 for match in re.finditer(r"\$([A-Z0-9_]+)", value):
@@ -547,15 +548,15 @@ def read_config(config_file):
     if config.UDP_ADDRESS is None and config.UDP_PORT is not None:
         sys.exit("[!] usage of configuration value 'UDP_PORT' requires also usage of 'UDP_ADDRESS'")
 
-    if config.UDP_PORT is not None and not str(config.UDP_PORT).isdigit():
+    if config.UDP_PORT is not None and not is_decimal(config.UDP_PORT):
         # validate like HTTP_PORT below; otherwise a non-numeric typo (e.g. 'UDP_PORT 514a') stays a str and later
         # crashes with a cryptic "'<=' not supported between 'str' and 'int'" at server.py's `config.UDP_PORT <= 1024`
         sys.exit("[!] invalid configuration value for 'UDP_PORT' ('%s')" % config.UDP_PORT)
 
-    if not str(config.HTTP_PORT or "").isdigit() and not IS_SENSOR:
+    if not is_decimal(config.HTTP_PORT or "") and not IS_SENSOR:
         sys.exit("[!] invalid configuration value for 'HTTP_PORT' ('%s')" % ("" if config.HTTP_PORT is None else config.HTTP_PORT))
 
-    if not str(config.UPDATE_PERIOD or "").isdigit():
+    if not is_decimal(config.UPDATE_PERIOD or ""):
         sys.exit("[!] invalid configuration value for 'UPDATE_PERIOD' ('%s')" % ("" if config.UPDATE_PERIOD is None else config.UPDATE_PERIOD))
 
     if config.PROCESS_COUNT and IS_WIN:
@@ -563,7 +564,7 @@ def read_config(config_file):
         config.PROCESS_COUNT = 1
 
     if config.CAPTURE_BUFFER:
-        if str(config.CAPTURE_BUFFER or "").isdigit():
+        if is_decimal(config.CAPTURE_BUFFER or ""):
             config.CAPTURE_BUFFER = int(config.CAPTURE_BUFFER)
         elif re.search(r"\d+\s*[kKmMgG]B", config.CAPTURE_BUFFER):
             match = re.search(r"(\d+)\s*([kKmMgG])B", config.CAPTURE_BUFFER)

@@ -62,5 +62,24 @@ class TestAddrEdges(unittest.TestCase):
         self.assertEqual(make_mask(32), 0xFFFFFFFF)
 
 
+
+class TestUnicodeDigitPorts(unittest.TestCase):
+    """A port that passes str.isdigit() but not int() must be refused, not raised on.
+
+    parse_host_port and resolve_address both took config strings (LOG_SERVER, SYSLOG_SERVER,
+    HTTP_ADDRESS) and guarded int() with isdigit(), which admits 128 characters int() rejects.
+    """
+
+    def test_parse_host_port_refuses_them(self):
+        self.assertEqual(parse_host_port(u"1.2.3.4:\xb2"), ("1.2.3.4", None))
+        self.assertEqual(parse_host_port(u"1.2.3.4:5\xb3"), ("1.2.3.4", None))
+        self.assertEqual(parse_host_port("1.2.3.4:53"), ("1.2.3.4", 53))   # positive control
+
+    def test_resolve_address_refuses_them(self):
+        from core.addr import resolve_address
+        self.assertEqual(resolve_address("1.2.3.4", u"\xb2"), ("1.2.3.4", 0))
+        self.assertEqual(resolve_address("1.2.3.4", "53"), ("1.2.3.4", 53))   # positive control
+
+
 if __name__ == "__main__":
     unittest.main()
