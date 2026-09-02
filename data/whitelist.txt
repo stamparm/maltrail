@@ -3966,6 +3966,7 @@ www-archive.mozilla.org
 wwww.mozilla.org
 xr.mozilla.org
 
+# Reference: https://www.virustotal.com/gui/domain/nshc.net/relations
 
 nshc.net
 redalert.nshc.net
