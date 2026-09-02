@@ -2566,17 +2566,21 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header(HTTP_HEADER.CONNECTION, "close")
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
 
-            match = re.search(r"\d+\-\d+\-\d+", params.get("from", ""))
-            if match:
-                min_ = datetime.datetime.strptime(match.group(0), DATE_FORMAT)
-            else:
-                min_ = datetime.datetime.fromtimestamp(0)
+            # The shape is not the date: r"\d+-\d+-\d+" matches "2026-13-45", which strptime then
+            # refuses. Both calls were unguarded and the OK status line has already been written
+            # above, so the ValueError left the client with no response at all rather than a
+            # bounded range. Every other strptime in this file is guarded; these two were not.
+            def _bound(name, default):
+                match = re.search(r"\d+\-\d+\-\d+", params.get(name, ""))
+                if not match:
+                    return default
+                try:
+                    return datetime.datetime.strptime(match.group(0), DATE_FORMAT)
+                except ValueError:
+                    return default      # unparseable -> the open end, as if it were absent
 
-            match = re.search(r"\d+\-\d+\-\d+", params.get("to", ""))
-            if match:
-                max_ = datetime.datetime.strptime(match.group(0), DATE_FORMAT)
-            else:
-                max_ = datetime.datetime.now()
+            min_ = _bound("from", datetime.datetime.fromtimestamp(0))
+            max_ = _bound("to", datetime.datetime.now())
 
             min_ = min_.replace(hour=0, minute=0, second=0, microsecond=0)
             max_ = max_.replace(hour=23, minute=59, second=59, microsecond=999999)

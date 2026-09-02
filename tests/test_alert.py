@@ -217,5 +217,30 @@ class DisabledTest(unittest.TestCase):
         self.assertFalse(alert.start())
 
 
+
+class TestCorruptTimestamp(unittest.TestCase):
+    """parse_event_line's contract is "-> dict, or None when it is not one" - never raise.
+
+    A time field that does not start with a digit already fell back to timestamp 0. One that
+    starts with a digit but does not parse raised ValueError instead, which the tail loop then
+    swallowed as a blanket "Exception" and reported as a traceback under SHOW_DEBUG.
+    """
+
+    def _line(self, when):
+        return ('"%s" box 10.0.0.5 4421 8.8.8.8 53 UDP DNS evil.biz "apt x (malware)" (static)'
+                % when)
+
+    def test_impossible_times_parse_to_zero(self):
+        for when in ("2026-13-45 10:00:00.000000", "2026-01-01 99:99:99.000000",
+                     "2026-02-30 10:00:00.000000", "0000-00-00 00:00:00.000000"):
+            event = alert.parse_event_line(self._line(when))
+            self.assertIsNotNone(event, "%r is still a well-formed event line" % when)
+            self.assertEqual(event["timestamp"], 0, "%r must fall back, not raise" % when)
+
+    def test_a_real_time_still_parses(self):
+        event = alert.parse_event_line(self._line("2026-01-01 10:00:00.000000"))
+        self.assertGreater(event["timestamp"], 0, "positive control: a real time still converts")
+
+
 if __name__ == "__main__":
     unittest.main()

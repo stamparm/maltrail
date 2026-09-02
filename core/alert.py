@@ -67,7 +67,14 @@ def parse_event_line(line):
     # THIS process's REMOTE_SEVERITY_REGEX, which is not necessarily the one the event was rated
     # with, and an alert threshold is exactly where that difference would show up.
     event["severity"] = logfmt.severity_of_line(line) or severity_of(event["info"])
-    event["timestamp"] = int(time.mktime(time.strptime(event["time"].split('.')[0], "%Y-%m-%d %H:%M:%S"))) if event["time"][:1].isdigit() else 0
+    # A time that does not start with a digit already falls back to 0; one that starts with a
+    # digit but does not parse ("2026-13-45 ...") used to raise ValueError instead, out of a
+    # function whose contract is "-> dict, or None when it is not one". Same fallback for both.
+    try:
+        event["timestamp"] = (int(time.mktime(time.strptime(event["time"].split('.')[0], "%Y-%m-%d %H:%M:%S")))
+                              if event["time"][:1].isdigit() else 0)
+    except (ValueError, OverflowError):
+        event["timestamp"] = 0
     return event
 
 

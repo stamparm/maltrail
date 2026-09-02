@@ -1117,6 +1117,32 @@ class TestHttpd(unittest.TestCase):
         finally:
             import shutil; shutil.rmtree(tmp, ignore_errors=True)
 
+    def test_counts_survives_a_wellformed_but_impossible_date(self):
+        # /counts read `from`/`to` with r"\d+-\d+-\d+", which matches "2026-13-45", and passed the
+        # match to strptime unguarded. The OK status line is written before that point, so the
+        # ValueError left the client with NO response at all - not a 400, not a 500, nothing.
+        # Every other strptime in core/httpd.py is guarded; these two were the exceptions.
+        import json as _json
+        ck = self._login("admin")
+        for value in ("2026-13-45", "9999-99-99", "2026-02-30", "0000-00-00"):
+            for key in ("from", "to"):
+                st, _, body = _http(self.port, "GET", "/counts?%s=%s" % (key, value), cookie=ck)
+                self.assertEqual(st, 200, "/counts?%s=%s got HTTP %s" % (key, value, st))
+                self.assertTrue(body, "/counts?%s=%s returned an empty body - the handler raised "
+                                      "after the status line was written" % (key, value))
+                _json.loads(body.decode("utf-8"))   # must still be JSON, not a truncated stream
+
+    def test_counts_still_honours_a_valid_range(self):
+        # positive control for the guard above: the bounds must still actually bound.
+        import json as _json
+        ck = self._login("admin")
+        _, _, all_days = _http(self.port, "GET", "/counts", cookie=ck)
+        _, _, none_days = _http(self.port, "GET", "/counts?from=1990-01-01&to=1990-01-02", cookie=ck)
+        self.assertTrue(_json.loads(all_days.decode("utf-8")), "unbounded /counts sees the log")
+        self.assertEqual(_json.loads(none_days.decode("utf-8")), {},
+                         "a range before any log must select nothing - the guard must not have "
+                         "turned every bound into the open end")
+
     def test_counts_are_scoped_to_the_session_networks(self):
         # /events has always honoured netfilters; /counts reported the GLOBAL daily totals to every
         # authenticated user, so a restricted analyst could read the whole estate's volume off the
