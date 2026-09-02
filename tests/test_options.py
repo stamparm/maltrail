@@ -148,5 +148,53 @@ class TestOptionCoverage(unittest.TestCase):
         self.assertGreater(len(documented()), 50)
 
 
+
+class TestDisabledHeuristicsIsDocumented(unittest.TestCase):
+    """The names DISABLED_HEURISTICS accepts live in the sensor; operators read maltrail.conf.
+
+    The two drifted: `sensor/src/heuristics/mod.rs` has eight mutable heuristics and the shipped
+    config listed six, omitting `beaconing` and `dns_tunneling` - while three lines above, the
+    same file told the operator to "Mute it with: DISABLED_HEURISTICS dns_tunneling". An operator
+    reading the option's own documentation could not learn that the newest heuristic was mutable,
+    and a name that is not in the list is accepted silently and does nothing.
+    """
+
+    def _code_names(self):
+        path = os.path.join(REPO, "sensor", "src", "heuristics", "mod.rs")
+        with open(path) as f:
+            src = f.read()
+        block = re.search(r"pub const HEURISTIC_NAMES:[^=]*=\s*\[(.*?)\];", src, re.S)
+        self.assertTrue(block, "HEURISTIC_NAMES not found - has it been renamed?")
+        return sorted(re.findall(r'"([a-z_]+)"', block.group(1)))
+
+    def _documented_names(self):
+        with open(os.path.join(REPO, "maltrail.conf")) as f:
+            conf = f.read()
+        block = re.search(r"# Comma-separated names:(.*?)\n# Unset", conf, re.S)
+        self.assertTrue(block, "the DISABLED_HEURISTICS name list is gone from maltrail.conf")
+        return sorted(re.findall(r"[a-z_]{4,}", block.group(1).replace("#", " ")))
+
+    def test_the_config_documents_every_mutable_heuristic(self):
+        code, doc = self._code_names(), self._documented_names()
+        self.assertTrue(code, "no heuristic names parsed from the sensor")
+        self.assertEqual(doc, code,
+                         "maltrail.conf's DISABLED_HEURISTICS list and HEURISTIC_NAMES disagree.\n"
+                         "  documented: %s\n  in code:    %s\n"
+                         "An operator cannot mute a heuristic whose name they are never told."
+                         % (doc, code))
+
+    def test_the_example_line_uses_real_names(self):
+        # `#DISABLED_HEURISTICS port_scanning, dns_exhaustion` is a worked example; a name there
+        # that the sensor does not know would be silently ignored if an operator uncommented it.
+        with open(os.path.join(REPO, "maltrail.conf")) as f:
+            conf = f.read()
+        example = re.search(r"^#DISABLED_HEURISTICS (.+)$", conf, re.M)
+        self.assertTrue(example, "the worked example is gone")
+        used = [x.strip() for x in example.group(1).split(",") if x.strip()]
+        unknown = [x for x in used if x not in self._code_names()]
+        self.assertEqual(unknown, [], "maltrail.conf's example mutes %s, which the sensor does "
+                                      "not know" % unknown)
+
+
 if __name__ == "__main__":
     unittest.main()

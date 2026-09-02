@@ -336,6 +336,19 @@ fn unknown_keys(raw: &HashMap<String, Value>) -> Vec<String> {
     out
 }
 
+/// Names in `DISABLED_HEURISTICS` that no heuristic answers to. Sorted, for a stable warning.
+///
+/// Same failure as `unknown_keys()` one level down: a typo'd VALUE parses fine and is ignored, so
+/// the heuristic an operator meant to silence keeps firing while the file looks correct. It is
+/// easy to get wrong - the shipped config listed six of the eight accepted names for a while.
+fn unknown_heuristics(disabled: &[String]) -> Vec<String> {
+    let mut out: Vec<String> =
+        disabled.iter().filter(|name| !crate::heuristics::HEURISTIC_NAMES.contains(&name.as_str())).cloned().collect();
+    out.sort();
+    out.dedup();
+    out
+}
+
 pub fn parse_raw(content: &str, root: &Path) -> Result<HashMap<String, Value>, ConfigError> {
     let mut out: HashMap<String, Value> = HashMap::new();
     let mut array: Option<String> = None;
@@ -673,7 +686,7 @@ impl Config {
 
         let process_count = get_u64(&raw, "PROCESS_COUNT").filter(|v| *v > 0).unwrap_or(cpu_count() as u64) as u32;
 
-        let disabled_heuristics = {
+        let disabled_heuristics: Vec<String> = {
             let raw_value = get_str(&raw, "DISABLED_HEURISTICS");
             raw_value
                 .split(|c: char| c == ',' || c.is_whitespace())
@@ -681,6 +694,14 @@ impl Config {
                 .filter(|s| !s.is_empty())
                 .collect()
         };
+
+        for name in unknown_heuristics(&disabled_heuristics) {
+            crate::cprintln!(
+                "[!] unknown heuristic '{}' in 'DISABLED_HEURISTICS' (it is not muted; accepted names: {})",
+                name,
+                crate::heuristics::HEURISTIC_NAMES.join(", ")
+            );
+        }
 
         let scan_window = get_u64(&raw, "SCAN_WINDOW").unwrap_or(30).clamp(1, 3600);
 
@@ -1182,5 +1203,36 @@ SENSOR_NAME box   # trailing comment
         let conf = crate::testkit::repo_root().join("maltrail.conf");
         let raw = parse_raw(&std::fs::read_to_string(&conf).unwrap(), &crate::settings::resolve_root(&conf)).unwrap();
         assert!(unknown_keys(&raw).is_empty(), "shipped maltrail.conf has unknown options: {:?}", unknown_keys(&raw));
+    }
+
+    use crate::heuristics::HEURISTIC_NAMES;
+
+    #[test]
+    fn typo_heuristics_are_flagged_and_the_shipped_example_is_clean() {
+        // Same failure one level down: a name DISABLED_HEURISTICS does not recognise is accepted
+        // in silence, so the heuristic an operator meant to mute keeps firing.
+        let disabled: Vec<String> =
+            ["port_scanning", "beacon", "dns_tunnelling", "beaconing"].iter().map(|s| s.to_string()).collect();
+        assert_eq!(unknown_heuristics(&disabled), vec!["beacon".to_string(), "dns_tunnelling".to_string()]);
+
+        // every accepted name really is accepted
+        let all: Vec<String> = HEURISTIC_NAMES.iter().map(|s| s.to_string()).collect();
+        assert!(unknown_heuristics(&all).is_empty(), "HEURISTIC_NAMES disagrees with itself");
+
+        // and the worked example in the shipped file must use real names, or an operator who
+        // uncomments it silences nothing
+        let conf = crate::testkit::repo_root().join("maltrail.conf");
+        let text = std::fs::read_to_string(&conf).unwrap();
+        let example: Vec<String> = text
+            .lines()
+            .find(|l| l.starts_with("#DISABLED_HEURISTICS "))
+            .map(|l| l.trim_start_matches("#DISABLED_HEURISTICS ").split(',').map(|s| s.trim().to_string()).collect())
+            .unwrap_or_default();
+        assert!(!example.is_empty(), "the DISABLED_HEURISTICS example is gone from maltrail.conf");
+        assert!(
+            unknown_heuristics(&example).is_empty(),
+            "maltrail.conf's example mutes {:?}, which no heuristic answers to",
+            unknown_heuristics(&example)
+        );
     }
 }

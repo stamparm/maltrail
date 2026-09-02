@@ -132,6 +132,23 @@ def _udp(src, dst, sport, dport, payload):
     header = struct.pack("!HHHH", sport, dport, 8 + len(payload), 0)
     return _ipv4(src, dst, 17, header + payload)
 
+def _ipv6(src, dst, nxt, payload):
+    """Minimal IPv6 header. Same reasoning as _ipv4: Maltrail unpacks headers, it does not verify."""
+    header = struct.pack("!IHBB", 0x60000000, len(payload), nxt, 64)
+    header += socket.inet_pton(socket.AF_INET6, src) + socket.inet_pton(socket.AF_INET6, dst)
+    return _DST_MAC + _SRC_MAC + b"\x86\xdd" + header + payload
+
+
+def _udp6(src, dst, sport, dport, payload):
+    header = struct.pack("!HHHH", sport, dport, 8 + len(payload), 0)
+    return _ipv6(src, dst, 17, header + payload)
+
+
+def _icmp(src, dst, icmp_type=8):
+    # echo request/reply; Maltrail reports ICMP against an IP trail
+    return _ipv4(src, dst, 1, struct.pack("!BBHHH", icmp_type, 0, 0, 0x1337, 1))
+
+
 def _dns_query(domain):
     question = b""
     for label in domain.split('.'):
@@ -156,6 +173,13 @@ _DETECT_TRAILS = (
     ("7.7.7.7", "phishing (test)", "(static)"),                 # UDP (non-DNS) dst IP (info != malware / non-condensing)
     ("203.0.113.44", "malware (test)", "(static)"),             # HTTP Host header + dst IP in trails (TEST-NET-3, never whitelisted)
     ("/malicious-login.php", "malware (test)", "(static)"),     # HTTP URL path trail
+    # The rest exist so every shape the DASHBOARD renders differently is actually produced. The
+    # six above cover detection; these cover presentation, which had no fixture at all.
+    ("ek-nuclear-test.com", "ek nuclear (malicious)", "(static)"),   # (malicious) icon
+    ("custom-watch-test.com", "internal watchlist (custom)", "(custom)"),  # (custom) origin + mask_custom
+    ("dead::beef", "apt test (malware)", "(static)"),                    # IPv6 endpoint rendering
+    ("198.51.100.66", "bad reputation (suspicious)", "https://feed.example/list.txt"),  # feed-URL origin glyph, low severity (TEST-NET-2)
+    ("192.0.2.66", "ransomware test (malware)", "(static)"),             # ICMP against an IP trail (TEST-NET-1)
 )
 
 _BASE_SEC = 1700000000
@@ -194,6 +218,26 @@ def _build_detect_traffic():
     add("HTTP Host header to a known-bad dst IP -> TRAIL.IP",
         _tcp(_ATTACKER, "203.0.113.44", 50004, 80, 0x18, _http_get("/", "hostcheck.example")),
         ("203.0.113.44", "hostcheck.example"))
+
+    # --- presentation shapes: everything the DASHBOARD renders differently ---
+    # These are here so `--keep` produces a log in which every icon, colour, glyph and condensed
+    # cell in the UI has at least one event behind it. Detection coverage above answers "does the
+    # sensor see it"; these answer "can the server draw it".
+    add("DNS query to a (malicious)-class domain -> the malicious icon",
+        _udp(_ATTACKER, "9.9.9.9", 50010, 53, _dns_query("ek-nuclear-test.com")),
+        ("ek-nuclear-test.com", "ek nuclear (malicious)"))
+    add("DNS query to a (custom) trail -> custom origin, and the name masked for uid >= 1000",
+        _udp(_ATTACKER, "9.9.9.9", 50011, 53, _dns_query("custom-watch-test.com")),
+        ("custom-watch-test.com", "(custom)"))
+    add("IPv6 endpoint against an IPv6 trail -> v6 address rendering",
+        _udp6("dead::1", "dead::beef", 50012, 4444, b"beacon"),
+        ("dead::beef", "apt test (malware)"))
+    add("UDP to a feed-sourced trail -> the feed-URL origin glyph, low severity",
+        _udp(_ATTACKER, "198.51.100.66", 50013, 41000, b"x"),
+        ("198.51.100.66", "bad reputation (suspicious)"))
+    add("ICMP against a known-bad IP -> ICMP proto rendering",
+        _icmp(_ATTACKER, "192.0.2.66"),
+        ("192.0.2.66", "ICMP"))
 
     # --- heuristic HTTP-request detections (no trails) ---
     add("HTTP SQL injection -> heuristic",
