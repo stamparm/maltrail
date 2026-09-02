@@ -1557,6 +1557,107 @@ class TestReapSessions(unittest.TestCase):
 
 
 
+class TestGeoReadsEveryLineShape(unittest.TestCase):
+    """/geo draws the map. Every event must reach it, whatever the line looks like.
+
+    It located the fields by finding the end of the quoted timestamp (`line.find('" ')`) and
+    splitting the rest on spaces, which has two failure modes:
+
+      * a JSON line (LOCAL_LOG_FORMAT json) contains no '" ' at all, so `continue` skipped it and
+        a JSON LOG_DIR drew an EMPTY map - 0 of 5 events reached event_country();
+      * `safe_value()` QUOTES a sensor name containing a space, which shifts every field the
+        split indexes: for "my sensor" it read type=UDP, src=`sensor"`, dst=the source port and
+        trail=DNS, so the event was placed by garbage - or, as here, not placed at all.
+
+    The fast byte split is kept for the ordinary line, because a full-day scan runs it per line.
+    """
+
+    DAY = "2026-07-01"
+    # an IP trail resolves to a real country through the bundled table, so a field shift shows up
+    # as a WRONG answer rather than merely an absent one
+    EXPECT_CC = "AU"
+
+    def _fields(self, sensor):
+        return (self.DAY + " 10:00:00.000000", sensor, "10.0.0.5", "4421", "1.1.1.1", "53",
+                "UDP", "IP", "1.1.1.1", "apt x (malware)", "(static)")
+
+    def _text(self, sensor):
+        from core.log import safe_value
+        return " ".join(safe_value(_) for _ in self._fields(sensor)) + "\n"
+
+    def _json(self, sensor):
+        import json as _json
+        keys = ("time", "sensor", "src_ip", "src_port", "dst_ip", "dst_port", "proto", "type",
+                "trail", "info", "reference")
+        obj = dict(zip(keys, self._fields(sensor)))
+        obj["timestamp"] = 1767258000
+        obj["severity"] = "high"
+        return _json.dumps(obj) + "\n"
+
+    def _geo(self, log_line, copies=5):
+        tmp = tempfile.mkdtemp(prefix="mt_geo_")
+        try:
+            logdir = os.path.join(tmp, "logs"); os.makedirs(logdir)
+            with open(os.path.join(logdir, "%s.log" % self.DAY), "w") as f:
+                f.write(log_line * copies)
+            trails = os.path.join(tmp, "t.csv")
+            with open(trails, "w") as f:
+                f.write("1.1.1.1,m (dummy),(static)\n")
+            port = _free_port()
+            cfg = os.path.join(tmp, "srv.conf")
+            with open(cfg, "w") as f:
+                f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\n" % port)
+                f.write("USERS\n    admin:%s:0:\n" % STORED)
+                f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+                f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME s\n"
+                        "DISABLE_CHECK_SUDO true\n" % (logdir, trails))
+            proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            try:
+                for _ in range(60):
+                    try:
+                        socket.create_connection(("127.0.0.1", port), timeout=0.5).close(); break
+                    except OSError: time.sleep(0.25)
+                import binascii as _b, json as _json
+                nonce = _b.hexlify(os.urandom(16)).decode()
+                h = hashlib.sha256((STORED + nonce).encode()).hexdigest()
+                _, hd, _x = _http(port, "POST", "/login",
+                                  body="username=admin&nonce=%s&hash=%s" % (nonce, h))
+                ck = None
+                for ln in hd.split("\r\n"):
+                    if ln.lower().startswith("set-cookie:"):
+                        ck = ln.split(":", 1)[1].split(";")[0].strip()
+                _, _, body = _http(port, "GET", "/geo?date=%s" % self.DAY, cookie=ck)
+                return _json.loads(body.decode("utf-8"))
+            finally:
+                _stop_server(proc)
+        finally:
+            import shutil; shutil.rmtree(tmp, ignore_errors=True)
+
+    def test_a_plain_text_line_is_placed(self):
+        got = self._geo(self._text("box"))
+        self.assertEqual(got["counts"].get(self.EXPECT_CC), 5, got)   # positive control
+
+    def test_a_quoted_sensor_name_does_not_shift_the_fields(self):
+        for sensor in ("my sensor", "DMZ firewall 2"):
+            got = self._geo(self._text(sensor))
+            self.assertEqual(got["counts"].get(self.EXPECT_CC), 5,
+                             "SENSOR_NAME=%r shifted the fields /geo indexes, so the events were "
+                             "placed by garbage: %s" % (sensor, got))
+
+    def test_a_json_line_reaches_the_map(self):
+        got = self._geo(self._json("box"))
+        self.assertEqual(got["counts"].get(self.EXPECT_CC), 5,
+                         "a JSON log drew an empty map - the lines never reached "
+                         "event_country(): %s" % got)
+
+    def test_the_mapped_total_accounts_for_every_event(self):
+        for line in (self._text("box"), self._text("my sensor"), self._json("box")):
+            got = self._geo(line)
+            self.assertEqual(got["mapped"] + got["unmapped"], 5,
+                             "an event was dropped before it was even counted: %s" % got)
+
+
 class TestFail2banReadsTheFieldsCorrectly(unittest.TestCase):
     """/fail2ban must publish the SOURCE address, whatever the line looks like.
 

@@ -2747,16 +2747,39 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                         chunk, pending = pending[:nl + 1], pending[nl + 1:]     # only COMPLETE lines; keep a partial tail for next time
                                         offset += len(chunk)
                                         for line in chunk.split(b"\n"):
+                                            if not line:
+                                                continue
+                                            # Fast path: a text line whose sensor name is a single
+                                            # unquoted token, which is every ordinary line. The byte
+                                            # split is what keeps a full-day scan cheap.
+                                            fields = None
                                             cut = line.find(b'" ')  # end of the quoted leading timestamp
-                                            if cut < 0:
-                                                continue
-                                            parts = line[cut + 2:].split(b' ')  # sensor,src,sport,dst,dport,proto,type,TRAIL,...
-                                            if len(parts) <= 7:
-                                                continue
+                                            if cut >= 0 and line[cut + 2:cut + 3] != b'"':
+                                                parts = line[cut + 2:].split(b' ')  # sensor,src,sport,dst,dport,proto,type,TRAIL,...
+                                                if len(parts) <= 7:
+                                                    continue
+                                                trail_type = parts[6].decode("latin-1")
+                                                src_ip = parts[1].decode("latin-1")
+                                                dst_ip = parts[3].decode("latin-1")
+                                                trail = parts[7].decode("latin-1")
+                                            else:
+                                                # A JSON line has no '" ' at all, so it used to be
+                                                # skipped and a LOCAL_LOG_FORMAT json LOG_DIR drew an
+                                                # EMPTY map. A quoted SENSOR_NAME ("DMZ firewall")
+                                                # shifted every field the split indexes - src became
+                                                # `firewall"`, dst became the source port - so the
+                                                # event was placed by garbage. Parse it properly.
+                                                fields = logfmt.fields(line.decode(UNICODE_ENCODING, "ignore"))
+                                                if fields is None:
+                                                    continue
+                                                trail_type = fields[7]
+                                                src_ip = fields[2]
+                                                dst_ip = fields[4]
+                                                trail = fields[8]
                                             if restricted and not self._line_in_scope(line.decode(UNICODE_ENCODING, "ignore"), addresses, netmasks, regex)[0]:
                                                 continue
                                             # place the external malicious endpoint per trail type (see core.geo.event_country)
-                                            cc = event_country(parts[6].decode("latin-1"), parts[1].decode("latin-1"), parts[3].decode("latin-1"), parts[7].decode("latin-1"))
+                                            cc = event_country(trail_type, src_ip, dst_ip, trail)
                                             if cc:
                                                 counts[cc] = counts.get(cc, 0) + 1
                                                 mapped += 1
