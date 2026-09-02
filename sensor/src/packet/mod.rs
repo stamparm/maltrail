@@ -200,7 +200,7 @@ pub struct TcpHeader {
 
 /// `struct.unpack("!HHLLBB", ip_data[iph_length:iph_length + 14])`
 pub fn parse_tcp(ip_data: &[u8], header_len: usize) -> Option<TcpHeader> {
-    let h = ip_data.get(header_len..header_len + 14)?;
+    let h = ip_data.get(header_len..header_len.saturating_add(14))?;
     Some(TcpHeader {
         src_port: u16::from_be_bytes([h[0], h[1]]),
         dst_port: u16::from_be_bytes([h[2], h[3]]),
@@ -226,7 +226,7 @@ pub struct UdpHeader {
 
 /// `_ = ip_data[iph_length:iph_length + 4]; if len(_) < 4: return`
 pub fn parse_udp(ip_data: &[u8], header_len: usize) -> Option<UdpHeader> {
-    let h = ip_data.get(header_len..header_len + 4)?;
+    let h = ip_data.get(header_len..header_len.saturating_add(4))?;
     Some(UdpHeader { src_port: u16::from_be_bytes([h[0], h[1]]), dst_port: u16::from_be_bytes([h[2], h[3]]) })
 }
 
