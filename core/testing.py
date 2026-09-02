@@ -6,8 +6,10 @@ See the file 'LICENSE' for copying permission
 """
 
 
+import datetime
 import doctest
 import os
+import re
 import shutil
 import socket
 import struct
@@ -326,10 +328,61 @@ def find_sensor():
     return None
 
 
-def detect_test():
+CORPUS_DIR = os.path.join(ROOT_DIR, "sensor", "tests", "corpus")
+
+
+def _sensor_config(path, log_dir, trails_file):
+    """A minimal offline-replay config. UPDATE_PERIOD is huge so the fixture trails are used as-is."""
+    with open(path, "w") as f:
+        f.write("\n".join((
+            "MONITOR_INTERFACE any",
+            "CAPTURE_BUFFER 10%",
+            "USE_HEURISTICS true",
+            "CHECK_MISSING_HOST true",
+            "PROCESS_COUNT 1",
+            "UPDATE_PERIOD 999999999",
+            "USE_FEED_UPDATES false",
+            "DISABLE_CHECK_SUDO true",
+            "LOG_DIR %s" % log_dir,
+            "TRAILS_FILE %s" % trails_file,
+            "",
+        )))
+    return path
+
+
+def _replay_corpus(binary, log_dir, work_dir):
+    """Replay the parity corpus into `log_dir`. Returns the number of pcaps replayed.
+
+    The corpus is 42 crafted captures with their own trail set, already asserted by
+    `sensor/tests/replay.rs`. Replaying it here is what makes a kept LOG_DIR cover the detections
+    the hand-built pcap above does not reach - JA3, periodic beaconing, DGA labels, DNS
+    exhaustion, TLS/QUIC SNI, sinkhole and parked-site responses, and the encapsulations.
+    """
+
+    trails = os.path.join(CORPUS_DIR, "trails.csv")
+    if not os.path.isfile(trails):
+        return 0
+    config = _sensor_config(os.path.join(work_dir, "corpus.conf"), log_dir, trails)
+    replayed = 0
+    for name in sorted(os.listdir(CORPUS_DIR)):
+        if not name.endswith(".pcap"):
+            continue
+        process = subprocess.Popen([binary, "-r", os.path.join(CORPUS_DIR, name), "-c", config],
+                                   stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        process.communicate()
+        replayed += 1
+    return replayed
+
+
+def detect_test(keep=None, serve=False):
     """
     Replays a crafted pcap of emulated malicious traffic through the offline sensor and verifies
     that every expected detection fires (the core "does the sensor actually catch the bad traffic" gate).
+
+    `keep` writes the resulting LOG_DIR (plus the trails and config used) somewhere durable and
+    additionally replays the parity corpus into it, so the events can be served and LOOKED at -
+    the sensor half answers "was it detected", the dashboard half answers "is it drawn correctly",
+    and nothing but a populated log answers the second. `serve` then starts the web server on it.
 
     This drives the SHIPPED sensor. It used to run the retired Python sensor, which needs pcapy -
     not a dependency since the sensor became Rust - so on a healthy install the check that answers
@@ -347,7 +400,13 @@ def detect_test():
     print("[i] detect test: using sensor '%s'" % binary)
     packets, checks = _build_detect_traffic()
 
-    tmp = tempfile.mkdtemp(prefix="maltrail-detect-")
+    if keep:
+        tmp = os.path.abspath(os.path.expanduser(keep))
+        if os.path.isdir(tmp):
+            shutil.rmtree(tmp)          # a stale run must not be mistaken for this one
+        os.makedirs(tmp)
+    else:
+        tmp = tempfile.mkdtemp(prefix="maltrail-detect-")
     try:
         log_dir = os.path.join(tmp, "logs")
         os.makedirs(log_dir)
@@ -361,20 +420,7 @@ def detect_test():
             for trail, info, reference in _DETECT_TRAILS:
                 f.write("%s,%s,%s\n" % (trail, info, reference))
 
-        with open(config_file, "w") as f:
-            f.write("\n".join((
-                "MONITOR_INTERFACE any",
-                "CAPTURE_BUFFER 10%",
-                "USE_HEURISTICS true",
-                "CHECK_MISSING_HOST true",
-                "PROCESS_COUNT 1",
-                "UPDATE_PERIOD 999999999",       # NOTE: huge + fresh trails.csv => sensor loads the fixture instead of rebuilding
-                "USE_FEED_UPDATES false",
-                "DISABLE_CHECK_SUDO true",
-                "LOG_DIR %s" % log_dir,
-                "TRAILS_FILE %s" % trails_file,
-                "",
-            )))
+        _sensor_config(config_file, log_dir, trails_file)
 
         cmd = [binary, "-r", pcap_file, "-c", config_file]
         process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
@@ -403,12 +449,133 @@ def detect_test():
 
         if not retval:
             print("[!] sensor output was:\n%s" % (output.decode("utf8", "replace") if hasattr(output, "decode") else output))
+        if keep:
+            replayed = _replay_corpus(binary, log_dir, tmp)
+            if replayed:
+                print("[i] detect test: replayed %d corpus capture(s) into the same log" % replayed)
+            moved = _shift_events_to_today(log_dir)
+            if moved:
+                print("[i] detect test: shifted %d event(s) so the newest day is today" % moved)
+            _report_class_coverage(log_dir)
     finally:
-        shutil.rmtree(tmp, ignore_errors=True)
+        if not keep:
+            shutil.rmtree(tmp, ignore_errors=True)
 
     if retval:
         print("[i] detect test final result: PASSED")
     else:
         print("[!] detect test final result: FAILED")
 
+    if keep:
+        served_conf = os.path.join(tmp, "server.conf")
+        with open(served_conf, "w") as f:
+            f.write("\n".join((
+                "HTTP_ADDRESS 127.0.0.1",
+                "HTTP_PORT 8338",
+                "USE_SERVER_UPDATE_TRAILS false",
+                "MONITOR_INTERFACE any",
+                "CAPTURE_BUFFER 10MB",
+                "UPDATE_PERIOD 999999999",
+                "SENSOR_NAME detect-test",
+                "DISABLE_CHECK_SUDO true",
+                "LOG_DIR %s" % log_dir,
+                "TRAILS_FILE %s" % trails_file,
+                "",
+            )))
+        print("[i] events kept in '%s'" % log_dir)
+        if serve:
+            print("[i] serving them on http://127.0.0.1:8338/ (Ctrl-C to stop)")
+            sys.stdout.flush()
+            os.execv(sys.executable, [sys.executable, os.path.join(ROOT_DIR, "server.py"), "-c", served_conf])
+        else:
+            print("[?] look at them with: python3 server.py -c %s" % served_conf)
+
     return retval
+
+
+# The dashboard draws these differently; a kept log is only useful if each one has an event
+# behind it. Names are what `classOf()` / the origin glyph / the severity colours key on.
+_UI_SHAPES = (
+    ("info class (malware)", lambda e: '(malware)"' in e or "(malware)\"" in e),
+    ("info class (malicious)", lambda e: "(malicious)" in e),
+    ("info class (suspicious)", lambda e: "(suspicious)" in e),
+    ("origin (static)", lambda e: "(static)" in e),
+    ("origin (heuristic)", lambda e: "(heuristic)" in e),
+    ("origin (custom)", lambda e: "(custom)" in e),
+    ("origin feed URL", lambda e: "https://" in e or "http://" in e),
+    ("trail type DNS", lambda e: " DNS " in e),
+    ("trail type IP", lambda e: " IP " in e),
+    ("trail type URL", lambda e: " URL " in e),
+    ("trail type UA", lambda e: " UA " in e),
+    ("trail type HTTP", lambda e: " HTTP " in e),
+    ("proto ICMP", lambda e: " ICMP " in e),
+    ("IPv6 endpoint", lambda e: "::" in e),
+    ("condensed multi-value cell", lambda e: any("," in f for f in e.split(" ")[2:7])),
+)
+
+
+def _shift_events_to_today(log_dir):
+    """Move the kept events forward so the newest lands today, keeping relative timing.
+
+    Both the crafted pcap and the corpus replay use FIXED timestamps (_BASE_SEC is 2023-11-14), so
+    the events land in a 2023 log while the dashboard opens on today - a populated LOG_DIR that
+    looks completely empty. Shifting by whole days keeps every within-day time and every gap
+    intact, so the heat map, the sparklines and the beaconing intervals still read correctly.
+    """
+
+    stamp = re.compile(r'\A"(\d{4}-\d{2}-\d{2}) ')
+    events = []
+    for filename in sorted(os.listdir(log_dir)):
+        if not filename.endswith(".log") or filename == "error.log":
+            continue
+        path = os.path.join(log_dir, filename)
+        with open(path) as f:
+            for line in f:
+                if line.strip():
+                    events.append(line.rstrip("\n"))
+        os.remove(path)
+
+    days = sorted(set(m.group(1) for m in (stamp.match(_) for _ in events) if m))
+    if not days:
+        return 0
+
+    newest = datetime.datetime.strptime(days[-1], "%Y-%m-%d").date()
+    delta = datetime.date.today() - newest
+
+    buckets = {}
+    for line in events:
+        m = stamp.match(line)
+        if not m:
+            continue
+        moved = (datetime.datetime.strptime(m.group(1), "%Y-%m-%d").date() + delta).strftime("%Y-%m-%d")
+        buckets.setdefault(moved, []).append('"%s %s' % (moved, line[len(m.group(0)):]))
+
+    for day, lines in buckets.items():
+        with open(os.path.join(log_dir, "%s.log" % day), "w") as f:
+            f.write("\n".join(lines) + "\n")
+    return len(events)
+
+
+def _report_class_coverage(log_dir):
+    """Print which dashboard shapes the kept log actually contains.
+
+    Detection coverage says the sensor saw it; this says the SERVER has something to draw for
+    every icon, glyph, colour and condensed cell the UI renders differently. A shape with no
+    event behind it cannot be checked by looking at the dashboard.
+    """
+
+    lines = []
+    for filename in sorted(os.listdir(log_dir)):
+        if filename.endswith(".log") and filename != "error.log":
+            with open(os.path.join(log_dir, filename)) as f:
+                lines.extend(_ for _ in f.read().split("\n") if _.strip())
+
+    print("[i] dashboard shape coverage (%d event(s)):" % len(lines))
+    missing = []
+    for label, present in _UI_SHAPES:
+        hits = sum(1 for line in lines if present(line))
+        print("      %-28s %s" % (label, ("%d event(s)" % hits) if hits else "MISSING"))
+        if not hits:
+            missing.append(label)
+    if missing:
+        print("[!] %d shape(s) with no event behind them: %s" % (len(missing), ", ".join(missing)))

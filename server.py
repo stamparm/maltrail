@@ -55,6 +55,8 @@ def main():
     parser.add_argument("--debug", dest="debug", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--smoke-test", dest="smoke_test", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--detect-test", dest="detect_test", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument("--keep", dest="keep", default=None, metavar="DIR", help="with --detect-test: keep the generated events in DIR (and replay the parity corpus into it) instead of deleting them")
+    parser.add_argument("--serve", dest="serve", action="store_true", help="with --detect-test --keep: start the web server on the generated events")
     parser.add_argument("--doctor", dest="doctor", action="store_true", help="validate the deployment (log dir, trails age, USERS, TLS, ports) and exit")
     parser.add_argument("--rebuild-index", dest="rebuild_index", action="store_true", help="(re)build the per-day event-log sidecar index (LOG_DIR/index/) and exit")
 
@@ -68,7 +70,10 @@ def main():
 
     if options.detect_test:
         from core.testing import detect_test
-        raise SystemExit(0 if detect_test() else 1)
+        raise SystemExit(0 if detect_test(keep=options.keep, serve=options.serve) else 1)
+
+    if options.serve or options.keep:
+        sys.exit("[!] '--keep' and '--serve' only apply together with '--detect-test'")
 
     print("[*] starting @ %s\n" % time.strftime("%X /%Y-%m-%d/"))
 
