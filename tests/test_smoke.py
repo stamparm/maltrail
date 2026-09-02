@@ -24,10 +24,40 @@ sys.dont_write_bytecode = True                       # as server.py does, before
 from core import testing as T
 
 
+# Directories holding GENERATED, machine-local state, pruned from the snapshot below. They are
+# the gitignored ones - a build tree, the cargo-fuzz corpus/artifacts - plus tool caches.
+#
+# Not an optimisation for its own sake. The snapshot used to walk the whole repository, which is
+# 16,193 files here of which 15,520 are `sensor/target` and the fuzz corpus, so ANY concurrent
+# writer in the tree appeared as a file "created by smoke_test()". With `cargo fuzz run` going in
+# another terminal this file's guard failed 2 runs in 3; a plain `cargo build` does the same.
+# A coverage-guided corpus is SUPPOSED to persist and grow between runs, so it cannot be moved
+# to a temporary directory to dodge this - the snapshot is what had to become precise.
+#
+# Paths, not basenames: `sensor/tests/corpus` is tracked content and must still be watched.
+_GENERATED = (
+    ".git",
+    os.path.join("sensor", "target"),
+    os.path.join("sensor", "fuzz", "target"),
+    os.path.join("sensor", "fuzz", "corpus"),
+    os.path.join("sensor", "fuzz", "artifacts"),
+    # tool state with live writers of its own - .codegraph runs a file watcher
+    ".codegraph",
+    ".pytest_cache",
+    ".ruff_cache",
+)
+
+
 def _tree_snapshot():
     seen = {}
     for base, dirs, files in os.walk(ROOT):
-        if ".git" in base:
+        rel = os.path.relpath(base, ROOT)
+        if rel == ".":
+            rel = ""
+        # prune in place so os.walk never descends into them
+        dirs[:] = [d for d in dirs
+                   if os.path.join(rel, d) not in _GENERATED and d != "__pycache__"]
+        if rel in _GENERATED:
             continue
         for name in files:
             path = os.path.join(base, name)
@@ -61,6 +91,32 @@ class SmokeTest(unittest.TestCase):
         after = _tree_snapshot()
         created = sorted(set(after) - set(before))
         self.assertEqual(created, [], "smoke test created %d file(s), e.g. %s" % (len(created), created[:3]))
+
+    def test_the_snapshot_ignores_generated_trees_but_not_tracked_ones(self):
+        """The guard above must watch the SOURCE tree and nothing else.
+
+        It used to walk the whole repository - 16,193 files here, of which 15,520 are
+        `sensor/target` and the cargo-fuzz corpus. Any concurrent writer therefore looked like a
+        file smoke_test() had created: with `cargo fuzz run` going in another terminal this test
+        failed 2 runs in 3, and a plain `cargo build` does the same. A coverage-guided corpus is
+        meant to persist and grow between runs, so the snapshot is what had to become precise.
+        """
+        snapshot = _tree_snapshot()
+        self.assertTrue(snapshot, "the snapshot must still see the source tree")
+
+        for generated in ("sensor%starget" % os.sep, "fuzz%scorpus" % os.sep,
+                          "fuzz%sartifacts" % os.sep, ".codegraph", "__pycache__"):
+            offenders = [p for p in snapshot if generated in p]
+            self.assertEqual(offenders, [],
+                             "%s is generated, machine-local and written by other processes; "
+                             "watching it makes this file's guard fail for unrelated reasons "
+                             "(e.g. %s)" % (generated, offenders[:1]))
+
+        # ... and the tracked corpus of replay pcaps is NOT generated: it must stay watched
+        tracked = [p for p in snapshot if "sensor%stests%scorpus" % (os.sep, os.sep) in p]
+        self.assertTrue(tracked,
+                        "sensor/tests/corpus is tracked content - pruning by basename instead of "
+                        "by path would stop the guard watching it")
 
     def test_a_syntax_error_is_reported_and_does_not_abort_the_sweep(self):
         import contextlib
