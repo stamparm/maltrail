@@ -93,7 +93,8 @@ def main():
             ok = _index.prepare(day)
             print("[%s] %s" % ("+" if ok else "x", filepath))
             built += 1 if ok else 0
-        print("[i] indexed %d day(s)" % built)
+        reaped = _index.sweep()
+        print("[i] indexed %d day(s)%s" % (built, ", removed %d stale sidecar(s)" % reaped if reaped else ""))
         raise SystemExit(0 if built or not _glob.glob(os.path.join(config.LOG_DIR, "*.log")) else 1)
 
     # NOTE: this validation used to live inside an `if six.PY2 and config.USE_SSL:` block, so on
@@ -130,6 +131,17 @@ def main():
             fetch_provenance()
             update_ipcat()
             update_geo()
+
+        # Sidecars are only dropped by index.prepare(), which runs for a day someone asks about,
+        # so a log rotated away leaves its sidecar behind for good. Reap them with the rest of the
+        # periodic maintenance.
+        try:
+            from core import index as _index
+            reaped = _index.sweep()
+            if reaped:
+                print("[i] removed %d event index sidecar(s) whose log is gone" % reaped)
+        except Exception:
+            pass        # a cache cleanup must never take the update timer down
 
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
         thread.daemon = True

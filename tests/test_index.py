@@ -164,5 +164,87 @@ class IndexTests(unittest.TestCase):
             conn.close()
 
 
+
+class SweepTests(unittest.TestCase):
+    """Sidecars whose log was rotated away must be reaped - and nothing else may be.
+
+    index.prepare() drops a sidecar when its log is gone, but it only ever runs for a day someone
+    asks about. Maltrail does not rotate its own logs, so an operator's logrotate removes
+    `2026-06-01.log` and nothing visits that day again: the sidecar survives for the life of the
+    installation, at several times the size of the log it indexed. --rebuild-index cannot help,
+    because it iterates the logs that EXIST.
+    """
+
+    def setUp(self):
+        self.log_dir = tempfile.mkdtemp(prefix="maltrail-sweep-test-")
+        config.LOG_DIR = self.log_dir
+        self.days = ["2026-06-01", "2026-06-02", "2026-06-03"]
+        for day in self.days:
+            with open(os.path.join(self.log_dir, "%s.log" % day), "w") as f:
+                for i in xrange(200):
+                    f.write(_line(i, "10.0.0.%d" % (i % 250), 4421, "8.8.8.8", 53,
+                                  "UDP", "DNS", "evil%d.example" % (i % 20), "apt x (malware)",
+                                  "(static)"))
+            self.assertTrue(index.prepare(day), "fixture: %s must index" % day)
+        self.index_dir = os.path.join(self.log_dir, "index")
+
+    def tearDown(self):
+        shutil.rmtree(self.log_dir, ignore_errors=True)
+
+    def _sidecars(self):
+        return sorted(f for f in os.listdir(self.index_dir) if f.endswith(".sqlite"))
+
+    def test_it_reaps_a_sidecar_whose_log_is_gone(self):
+        os.unlink(os.path.join(self.log_dir, "2026-06-01.log"))
+        os.unlink(os.path.join(self.log_dir, "2026-06-02.log"))
+        self.assertEqual(index.sweep(), 2)
+        self.assertEqual(self._sidecars(), ["2026-06-03.sqlite"])
+
+    def test_it_keeps_every_sidecar_whose_log_still_exists(self):
+        # The one that matters: a sweep that reaps a LIVE sidecar throws away a rebuildable cache
+        # on every pass, so every query re-indexes the day from scratch.
+        self.assertEqual(index.sweep(), 0, "nothing may be reaped while every log is present")
+        self.assertEqual(self._sidecars(), ["%s.sqlite" % d for d in self.days])
+        # and the surviving index still answers
+        self.assertTrue(index.prepare("2026-06-02"))
+        self.assertTrue(list(index.search("2026-06-02", "evil3.example")))
+
+    def test_it_takes_the_wal_and_shm_companions_with_it(self):
+        day = "2026-06-01"
+        for suffix in ("-wal", "-shm"):
+            open(os.path.join(self.index_dir, "%s.sqlite%s" % (day, suffix)), "wb").close()
+        os.unlink(os.path.join(self.log_dir, "%s.log" % day))
+        index.sweep()
+        left = [f for f in os.listdir(self.index_dir) if f.startswith(day)]
+        self.assertEqual(left, [], "WAL/SHM companions were left behind: %s" % left)
+
+    def test_it_touches_nothing_it_does_not_recognise(self):
+        # An operator's own files in that directory are not ours to delete.
+        keep = ("notes.txt", "2026-06-01.sqlite.bak", "backup.sqlite", "2026-6-1.sqlite")
+        for name in keep:
+            with open(os.path.join(self.index_dir, name), "w") as f:
+                f.write("x")
+        for day in self.days:
+            os.unlink(os.path.join(self.log_dir, "%s.log" % day))
+        index.sweep()
+        for name in keep:
+            self.assertTrue(os.path.exists(os.path.join(self.index_dir, name)),
+                            "sweep deleted %r, which is not a sidecar it created" % name)
+
+    def test_it_is_a_noop_when_the_index_is_disabled(self):
+        for day in self.days:
+            os.unlink(os.path.join(self.log_dir, "%s.log" % day))
+        config.USE_EVENT_INDEX = False
+        try:
+            self.assertEqual(index.sweep(), 0)
+            self.assertEqual(len(self._sidecars()), 3, "a disabled index must not be swept")
+        finally:
+            config.USE_EVENT_INDEX = True
+
+    def test_it_survives_a_missing_index_directory(self):
+        shutil.rmtree(self.index_dir, ignore_errors=True)
+        self.assertEqual(index.sweep(), 0)
+
+
 if __name__ == "__main__":
     unittest.main()

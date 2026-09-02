@@ -28,6 +28,7 @@ a missing log removes the sidecar. A crash mid-write costs at most the uncommitt
 """
 
 import os
+import re
 import sqlite3
 import threading
 
@@ -80,6 +81,45 @@ def _remove_db(path):
             os.remove(path + suffix)
         except OSError:
             pass
+
+
+def sweep():
+    """Remove sidecars whose .log is gone. Returns how many days were reaped.
+
+    A sidecar is dropped when its log is - but only inside prepare(), and prepare() is called for
+    a day someone asks about. Maltrail does not rotate its own logs, so an operator's logrotate
+    deletes `2026-06-01.log` and nothing ever visits that day again: the sidecar stays for the
+    life of the installation. `--rebuild-index` does not help either, because it iterates over the
+    logs that EXIST. A sidecar runs several times the size of the log it indexes, so this is the
+    one cache here with no upper bound at all - meta.sqlite has META_MAX_ROWS, trails have a
+    freshness window, this had nothing.
+
+    Only `YYYY-MM-DD.sqlite` (and its WAL/SHM companions) are ever considered, so anything else an
+    operator keeps in that directory is left alone.
+    """
+
+    if not enabled():
+        return 0
+
+    directory = os.path.join(config.LOG_DIR, "index")
+    try:
+        names = os.listdir(directory)
+    except OSError:
+        return 0        # no index directory yet, or unreadable: nothing to do
+
+    reaped = 0
+    for name in names:
+        match = re.search(r"\A(\d{4}-\d{2}-\d{2})\.sqlite\Z", name)
+        if not match:
+            continue
+        day = match.group(1)
+        if os.path.isfile(os.path.join(config.LOG_DIR, "%s.log" % day)):
+            continue
+        with _day_lock(day):        # never yank a sidecar a reader is mid-iteration on
+            _remove_db(_db_path(day))
+        reaped += 1
+
+    return reaped
 
 
 def _connect_write(path):
