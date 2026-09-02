@@ -1,0 +1,164 @@
+# sensor/src/settings_gen.rs is a checked-in mirror of core/settings.py + data/ua.txt, and the CI
+# gate refuses a tree where the two disagree. That gate is right, but it is not enough on its own:
+# the person who makes them disagree is usually editing data/ua.txt through the GitHub web UI, and
+# from there `gen_settings.py` cannot be run at all. They see a red build they have no way to fix.
+#
+# It has happened twice: two "Update ua.txt" commits went red, stayed red, and the next unrelated
+# commit to land inherited the failure.
+#
+# So this job supplies the fix. When a push changes an input, it regenerates the mirror and opens a
+# pull request with the result.
+#
+# What it deliberately does NOT do:
+#
+#   - It does not silence the gate. master really is inconsistent until the PR merges, and the
+#     `generated constants` job keeps saying so. This shortens the time to a fix; it does not
+#     pretend there is nothing to fix.
+#   - It does not push to master. The change arrives as a PR a person merges, like any other.
+#   - It cannot change anything except the generated file. The diff is checked before the PR is
+#     opened and the job fails if it touched anything else, so the blast radius of this automation
+#     is one file whose contents are a pure function of tracked inputs.
+#
+# Note on verification: a pull request opened with GITHUB_TOKEN does not trigger other workflows -
+# GitHub blocks that to prevent recursion - so the PR will show no checks of its own. That is why
+# this job runs the relevant ones itself and puts the result in the PR body. Do not read the empty
+# check list on the PR as "untested"; read the body.
+
+name: Regenerate settings_gen.rs
+
+on:
+  push:
+    branches: [ "master" ]
+    paths:
+      - 'core/settings.py'
+      - 'data/ua.txt'
+      - 'sensor/tools/gen_settings.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  # One regeneration at a time. Two pushes in quick succession must not race to force-push the
+  # same branch.
+  group: regenerate-settings-gen
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    name: regenerate and open a PR
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      # Nothing further runs when the mirror is already current, which is the normal case: most
+      # edits to these files are made by someone who did regenerate.
+      - name: Is the mirror stale?
+        id: check
+        run: |
+          if python3 sensor/tools/gen_settings.py --check; then
+            echo "stale=no" >> "$GITHUB_OUTPUT"
+            echo "The mirror is current; nothing to do."
+          else
+            echo "stale=yes" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: dtolnay/rust-toolchain@stable
+        if: steps.check.outputs.stale == 'yes'
+        with:
+          components: rustfmt
+
+      - name: Install libpcap
+        if: steps.check.outputs.stale == 'yes'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libpcap-dev
+
+      - name: Regenerate
+        if: steps.check.outputs.stale == 'yes'
+        run: |
+          python3 sensor/tools/gen_settings.py
+          rustfmt --edition 2021 --config-path sensor/rustfmt.toml sensor/src/settings_gen.rs
+
+      # The safety property. This automation is allowed to change exactly one file; anything else
+      # means the generator did something unexpected and a person should look at it, not a bot.
+      - name: Nothing but the generated file may change
+        if: steps.check.outputs.stale == 'yes'
+        run: |
+          changed=$(git diff --name-only)
+          echo "changed: ${changed:-<nothing>}"
+          if [ -z "$changed" ]; then
+            echo "::error::the mirror was reported stale but regenerating changed nothing - gen_settings.py --check and the generator disagree"
+            exit 1
+          fi
+          if [ "$changed" != "sensor/src/settings_gen.rs" ]; then
+            echo "::error::regeneration touched more than the generated mirror: $changed"
+            exit 1
+          fi
+
+      # The PR will carry no checks of its own (see the note at the top), so prove it here. These
+      # are the exact things that were failing, not a broad sweep.
+      - name: Verify what the PR will contain
+        if: steps.check.outputs.stale == 'yes'
+        run: |
+          python3 sensor/tools/gen_settings.py --check
+          cargo fmt --manifest-path sensor/Cargo.toml -- --check
+          cargo test --manifest-path sensor/Cargo.toml --test generated
+
+      - name: Open or update the pull request
+        if: steps.check.outputs.stale == 'yes'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: bot/regenerate-settings-gen
+        run: |
+          set -eu
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # A fixed branch, force-pushed: repeated staleness updates one pull request instead of
+          # opening a queue of them.
+          git checkout -B "$BRANCH"
+          git add sensor/src/settings_gen.rs
+          git commit -m "Regenerate settings_gen.rs
+
+          core/settings.py or data/ua.txt changed without the checked-in Rust mirror being
+          regenerated, so the sensor gate refuses the tree. Regenerated by the workflow that
+          watches those inputs.
+
+          Verified in the job that produced it: gen_settings.py --check, cargo fmt --check, and
+          the generated-constants parity test all pass on this content."
+          git push --force origin "$BRANCH"
+
+          body=$(cat <<'EOF'
+          `sensor/src/settings_gen.rs` is a checked-in mirror of `core/settings.py` and
+          `data/ua.txt`. One of those changed without it being regenerated, so the sensor gate is
+          refusing `master` until this lands.
+
+          This is generated content - the diff is whatever `sensor/tools/gen_settings.py` produces
+          from the current inputs, and the workflow refuses to open a PR that touches any other
+          file.
+
+          **Verified in the job that produced this branch** (a PR opened by `GITHUB_TOKEN` does not
+          trigger workflows, so this PR shows no checks of its own):
+
+          - `python3 sensor/tools/gen_settings.py --check`
+          - `cargo fmt --manifest-path sensor/Cargo.toml -- --check`
+          - `cargo test --manifest-path sensor/Cargo.toml --test generated`
+
+          Editing `data/ua.txt` from the web UI cannot run the generator, which is why this exists.
+          EOF
+          )
+
+          if gh pr view "$BRANCH" --json state --jq .state 2>/dev/null | grep -q OPEN; then
+            gh pr edit "$BRANCH" --body "$body"
+            echo "updated the existing pull request"
+          else
+            gh pr create --base master --head "$BRANCH" \
+              --title "Regenerate settings_gen.rs" --body "$body"
+          fi
