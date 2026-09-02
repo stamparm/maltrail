@@ -1942,6 +1942,40 @@ class TestClearedSources(unittest.TestCase):
         self.assertEqual(self._listed("/blacklist"), ["10.13.13.99"], "the cleared host must drop off")
         self.assertEqual(self._listed("/fail2ban"), ["10.13.13.99"], "and off /fail2ban too")
 
+    @staticmethod
+    def _json_event(when, src):
+        import json as _json
+        day = time.strftime("%Y-%m-%d")
+        return _json.dumps({"timestamp": int(time.time()), "time": "%s %s.000000" % (day, when),
+                            "sensor": "gw", "severity": "high", "src_ip": src, "src_port": 4421,
+                            "dst_ip": "8.8.8.8", "dst_port": 53, "proto": "UDP", "type": "DNS",
+                            "trail": "evil.com", "info": "malware (dummy)",
+                            "reference": "(static)"}) + "\n"
+
+    def test_clearing_works_on_a_json_log_too(self):
+        """LOCAL_LOG_FORMAT json makes a LOG_DIR mixed, and clearing has to work in both.
+
+        _event_precedes_clear matched `\\A"([^"]{19})` - the TEXT format's opening quoted
+        timestamp. A JSON line starts with '{', so the match failed and every event read as
+        "not cleared": cleared.txt silently did nothing on a JSON log, and a host the operator
+        had already dealt with stayed on /fail2ban, which bans what it is given.
+        """
+        with open(self.log, "w") as f:
+            f.write(self._json_event("09:00:00", "10.13.13.37"))
+            f.write(self._json_event("09:05:00", "10.13.13.99"))
+        time.sleep(9)      # both endpoints cache for 8s
+
+        self.assertEqual(self._listed("/fail2ban"), ["10.13.13.37", "10.13.13.99"],
+                         "positive control: a JSON log must feed /fail2ban at all")
+
+        self._clear("10.13.13.37 %s 09:30:00\n" % self.date)
+        time.sleep(9)
+        self.assertEqual(self._listed("/fail2ban"), ["10.13.13.99"],
+                         "cleared.txt was ignored on a JSON log: the remediated host is still "
+                         "being published for banning")
+        self.assertEqual(self._listed("/blacklist"), ["10.13.13.99"],
+                         "and the same on /blacklist")
+
     def test_a_later_event_puts_a_cleared_host_straight_back(self):
         # The whole point: clearing is not a whitelist. A NEW detection must re-list the host.
         self._clear("10.13.13.37 %s 09:30:00\n" % self.date)

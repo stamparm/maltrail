@@ -885,13 +885,33 @@ def _event_precedes_clear(line, ip, cleared):
     when = cleared.get(ip)
     if when is None:
         return False
+
     match = re.match(r'\A"([^"]{19})', line)
-    if not match:
-        return False
+    if match:
+        stamp = match.group(1)
+    else:
+        # A JSON line (LOCAL_LOG_FORMAT json) does not open with the quoted timestamp, so the
+        # regex above matched nothing and this returned "not cleared" for every event - which
+        # made cleared.txt silently do nothing on a JSON log, and left a host the operator had
+        # dealt with still being published to /fail2ban and /blacklist.
+        fields = logfmt.fields(line)
+        if not fields:
+            return False
+        stamp = ("%s" % fields[0]).strip()
+
     try:
-        return time.mktime(time.strptime(match.group(1), "%Y-%m-%d %H:%M:%S")) <= when
+        return time.mktime(time.strptime(stamp[:19], "%Y-%m-%d %H:%M:%S")) <= when
     except ValueError:
-        return False
+        pass
+
+    # A JSON line written by LOGSTASH_SERVER carries no "time"; logfmt.fields() falls back to the
+    # epoch "timestamp" for it, which is not a date string.
+    if is_decimal(stamp):
+        try:
+            return float(stamp) <= when
+        except ValueError:
+            return False
+    return False
 
 
 def _sanitize_auth_field(value):
