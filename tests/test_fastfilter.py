@@ -12,6 +12,7 @@ from core import fastfilter as F
 import _pcapgen as G
 
 
+
 class TestIOCSet(unittest.TestCase):
     def test_extracts_ipv4_and_ipport(self):
         keys = ["45.95.202.106", "2.200.107.168:4444", "evil.com", "evil.com/p",
@@ -78,23 +79,6 @@ class TestCapabilityProbe(unittest.TestCase):
                 pass
         self.assertFalse(F.has_fast_prefilter(_Old()))
         self.assertTrue(F.has_fast_prefilter(_Fast()))
-
-    def test_stock_pcapy_reader_has_no_fast(self):
-        # Documents reality: a stock pcapy reader has no loop_filtered, so the fast path stays off.
-        import pcapy, os, struct, tempfile
-        fd, path = tempfile.mkstemp(suffix=".pcap")
-        os.close(fd)
-        try:
-            with open(path, "wb") as f:
-                f.write(struct.pack("<IHHiIII", 0xa1b2c3d4, 2, 4, 0, 0, 65535, 1))
-                pkt = b"\x00" * 14 + b"\x45" + b"\x00" * 19
-                f.write(struct.pack("<IIII", 0, 0, len(pkt), len(pkt)) + pkt)
-            r = pcapy.open_offline(path)
-            # Either it's the fast build (has it) or stock (doesn't) -- the probe must agree with hasattr.
-            self.assertEqual(F.has_fast_prefilter(r), hasattr(r, "loop_filtered"))
-        finally:
-            os.unlink(path)
-
 
 class TestDLTHeuristic(unittest.TestCase):
     """The DLT-offset heuristic: infer where the IP header begins for an unknown datalink."""

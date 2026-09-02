@@ -82,11 +82,7 @@ jobs:
 
       - run: bash sensor/tools/check.sh
 
-      # This job is the one place pcapy-ng is installed, so it is the one place the old-sensor
-      # tests (test_config, test_fastfilter, test_sensor, test_fanout) actually execute. The
-      # `server` matrix below runs the same suite without pcapy-ng and reports those four as
-      # SKIP — deliberately, since neither the server nor the current sensor needs it.
-      - name: Python suite, including the old-sensor tests
+      - name: Python suite
         run: bash tests/run.sh python3
 
   # The tests that need a REAL trail set, with one built for them.
@@ -233,9 +229,9 @@ jobs:
 
   # setup-python no longer ships 3.7 for ubuntu-24.04, hence the pinned older runner for that entry.
   #
-  # No pcapy-ng here on purpose: the server is standard library only, and that is exactly what
-  # this matrix is proving. The four old-sensor test files report SKIP with a reason; the
-  # `sensor` job above runs them for real.
+  # The server is standard library only, and that is exactly what this matrix is proving: nothing
+  # here installs a third-party package. The suite has no optional dependency left - it used to
+  # need pcapy-ng for one test, which no job ever actually installed.
   server:
     name: server tests (Python ${{ matrix.python }})
     runs-on: ${{ matrix.runner }}
