@@ -2212,8 +2212,14 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         yield logfmt.redact_json(line, session.mask_custom, ip)
                     continue
 
-                if session.mask_custom and "(custom)" in line:
-                    line = re.sub(r'("[^"]+"|[^ ]+) \(custom\)', "- (custom)", line)
+                # `reference` is the LAST field, so a custom trail is "(custom)" at END of line.
+                # The guard used to be `"(custom)" in line` with an unanchored global sub, so an
+                # info value that merely CONTAINED the literal - "note about (custom) lists" -
+                # had the token before it replaced, corrupting the field for masked users on an
+                # event with no custom trail at all. redact_json already keys on the reference
+                # field; this makes the text path agree with it.
+                if session.mask_custom and line.rstrip("\r\n").endswith("(custom)"):
+                    line = re.sub(r'("[^"]+"|[^ ]+) \(custom\)(\s*)\Z', r"- (custom)\2", line)
 
                 if display:
                     if ip is not None and (",%s" % ip in line or "%s," % ip in line):

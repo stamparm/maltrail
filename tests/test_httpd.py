@@ -418,6 +418,69 @@ class TestHttpd(unittest.TestCase):
         _, _, an_body = _http(self.port, "GET", "/events?date=%s" % self.date, cookie=self._login("analyst"))
         self.assertNotIn(b"supersecretname", an_body, "custom trail name must be masked for non-admin (leak!)")
 
+    def test_mask_custom_does_not_corrupt_an_info_that_merely_says_custom(self):
+        """The mask must key on the REFERENCE field, not on "(custom)" appearing anywhere.
+
+        The guard was `"(custom)" in line` with an unanchored global re.sub, so an event whose
+        `info` merely contained the literal - "note about (custom) lists" - had the token before
+        it replaced with "-" for any masked (uid >= 1000) session, on an event with no custom
+        trail at all. `logfmt.redact_json` already keyed on the reference field, so the text and
+        JSON paths disagreed about the same event. Own server: the shared fixture's event counts
+        are asserted by other tests in this file.
+        """
+        tmp = tempfile.mkdtemp(prefix="mt_mk_")
+        try:
+            logdir = os.path.join(tmp, "logs"); os.makedirs(logdir)
+            day = "2026-07-01"
+            with open(os.path.join(logdir, "%s.log" % day), "w") as f:
+                # a NON-custom event whose info happens to contain the literal
+                f.write('"%s 10:00:00.000000" box 10.0.0.5 4421 8.8.8.8 53 UDP DNS a.example '
+                        '"note about (custom) lists" (static)\n' % day)
+                # and a real custom-trail event, whose name must still be masked
+                f.write('"%s 10:00:01.000000" box 10.0.0.5 4422 8.8.8.8 53 UDP IP 8.8.8.8 '
+                        '"supersecretname (custom)" (custom)\n' % day)
+            trails = os.path.join(tmp, "t.csv")
+            with open(trails, "w") as f:
+                f.write("a.example,m (dummy),(static)\n")
+            port = _free_port()
+            cfg = os.path.join(tmp, "srv.conf")
+            with open(cfg, "w") as f:
+                f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\nENABLE_MASK_CUSTOM true\n" % port)
+                f.write("USERS\n    admin:%s:0:\n    analyst:%s:1000:\n" % (STORED, STORED))
+                f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+                f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME box\n"
+                        "DISABLE_CHECK_SUDO true\n" % (logdir, trails))
+            proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            try:
+                for _ in range(60):
+                    try:
+                        socket.create_connection(("127.0.0.1", port), timeout=0.5).close(); break
+                    except OSError: time.sleep(0.25)
+
+                def login(user):
+                    import binascii as _b
+                    nonce = _b.hexlify(os.urandom(16)).decode()
+                    h = hashlib.sha256((STORED + nonce).encode()).hexdigest()
+                    _, hd, _b2 = _http(port, "POST", "/login",
+                                       body="username=%s&nonce=%s&hash=%s" % (user, nonce, h))
+                    for ln in hd.split("\r\n"):
+                        if ln.lower().startswith("set-cookie:"):
+                            return ln.split(":", 1)[1].split(";")[0].strip()
+                    return None
+
+                _, _, masked = _http(port, "GET", "/events?date=%s" % day, cookie=login("analyst"))
+
+                self.assertNotIn(b"supersecretname", masked,
+                                 "positive control: the custom trail NAME must still be masked")
+                self.assertIn(b"note about (custom) lists", masked,
+                              "a non-custom event's info was rewritten because it contained the "
+                              "literal '(custom)'; the mask must key on the reference field")
+            finally:
+                _stop_server(proc)
+        finally:
+            import shutil; shutil.rmtree(tmp, ignore_errors=True)
+
     def test_malformed_inputs_no_5xx(self):
         ck = self._login()
         cases = [
