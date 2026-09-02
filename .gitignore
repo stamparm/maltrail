@@ -36,3 +36,4 @@ misc/
 .cargo-home/
 .rustup-home/
 refnet-run/
+.coverage
