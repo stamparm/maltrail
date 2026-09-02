@@ -6,7 +6,11 @@ use maltrail_sensor::pyre;
 
 fuzz_target!(|data: &[u8]| {
     let text = String::from_utf8_lossy(data);
-    let _ = http::request_line(&text);
+    // request_line() takes prebuilt searchers; building them per call is what the real caller
+    // avoids, but here the point is only that the parser never panics.
+    let crlf = memchr::memmem::Finder::new("\r\n");
+    let sp_http = memchr::memmem::Finder::new(" HTTP/");
+    let _ = http::request_line(&text, &crlf, &sp_http);
     for name in ["\r\nHost:", "\r\nUser-Agent:", "\r\nContent-Type:"] {
         let _ = http::header_value(&text, name);
     }

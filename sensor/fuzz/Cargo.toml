@@ -9,6 +9,10 @@ cargo-fuzz = true
 
 [dependencies]
 libfuzzer-sys = "0.4"
+# The http target has to build the prebuilt searchers request_line() takes. memchr is a
+# dependency of maltrail-sensor, which makes it available to sensor/tests/* but NOT here: this is
+# a separate crate.
+memchr = "2"
 
 [dependencies.maltrail-sensor]
 path = ".."
