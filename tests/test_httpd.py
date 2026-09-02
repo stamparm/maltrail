@@ -1842,6 +1842,44 @@ class TestEventsConditionalRequests(TestHttpd):
         self.assertEqual(st, 200)
         self.assertIsNone(self._etag(head), "a multi-day range must not carry a single file's tag")
 
+class TestScopeCallersFailClosed(unittest.TestCase):
+    """_build_netfilters returns None for netfilters that do not parse, and its docstring says
+    callers must fail closed on that. An empty scope is not "no results" - _filter_events with an
+    empty address set matches nothing and _hunt with one sweeps every log line, so the two ways of
+    getting this wrong point in opposite directions and only one of them is visible.
+
+    Unpacking the return value straight into three names skips the check. _hunt did exactly that
+    and crashed with a TypeError instead of refusing the request. Structural rather than
+    behavioural on purpose: it covers call sites that do not exist yet.
+    """
+
+    def test_no_caller_unpacks_the_return_value_without_checking_it(self):
+        import ast
+
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "core", "httpd.py")
+        with open(path, encoding="utf-8") as f:
+            tree = ast.parse(f.read())
+
+        def calls_it(node):
+            return (isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)
+                    and node.func.attr == "_build_netfilters")
+
+        offenders, seen = [], 0
+        for node in ast.walk(tree):
+            if not isinstance(node, ast.Assign) or not calls_it(node.value):
+                continue
+            seen += 1
+            if any(isinstance(t, (ast.Tuple, ast.List)) for t in node.targets):
+                offenders.append(node.lineno)
+
+        self.assertTrue(seen, "no _build_netfilters call sites found - has it been renamed?")
+        self.assertEqual(offenders, [],
+                         "core/httpd.py:%s unpacks _build_netfilters() directly. It returns None "
+                         "for malformed netfilters; bind the result, check it for None, and fail "
+                         "closed before unpacking."
+                         % ", ".join(str(n) for n in offenders))
+
+
 if __name__ == "__main__":
     unittest.main()
 

@@ -2741,7 +2741,14 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             files.sort(reverse=True)          # newest-first: most relevant, and the cap keeps recent history
             files = files[:HUNT_MAX_DAYS]
 
-            addresses, netmasks, regex = self._build_netfilters(session)
+            # Fail closed, like every other consumer of _scope/_build_netfilters. A restricted
+            # session whose netfilters do not parse must not hunt with an empty scope - an empty
+            # scope here is not "no results", it is "sweep every log line".
+            built = self._build_netfilters(session)
+            if built is None:
+                return json.dumps({"error": "invalid network filter", "counts": {}, "samples": [], "truncated": False, "scanned": 0})
+            addresses, netmasks, regex = built
+
             counts, samples, truncated = {}, [], False
             # Config may raise or lower the budget: the default suits local SSD, and a deployment
             # whose event logs live on network storage reasonably wants longer before a hunt
