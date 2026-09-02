@@ -33,7 +33,13 @@
     position:sticky; top:0; z-index:20;
     display:flex; align-items:center; gap:20px;
     padding:0 20px; height:56px;
-    background:rgba(14,20,32,.82); backdrop-filter:blur(10px);
+    /* Opaque, NOT rgba+backdrop-filter. A blurred layer has to be re-composited whenever what is
+       behind it moves, and a full-width sticky header means that is every frame of every scroll.
+       Firefox on Linux pays the most for it. Same reasoning as the modal overlay below, which
+       gave up its blur for the same reason - see the note there.
+       #0d131f is what rgba(14,20,32,.82) resolved to over the page ground, so the bar looks the
+       same; it just stops asking the compositor to prove it on every frame. */
+    background:#0d131f;
     border-bottom:1px solid var(--line-solid);
   }
   .brand{display:flex; align-items:center; gap:10px; font-family:var(--mono); font-weight:600; letter-spacing:.5px}
@@ -486,7 +492,7 @@ body.light{
   color-scheme:light;   /* native controls (date picker) render light in light theme */
   background:radial-gradient(1200px 600px at 80% -10%, #dbe7fb 0%, transparent 60%), var(--ground);
 }
-body.light header{background:rgba(255,255,255,.86)}
+body.light header{background:#fdfefe}   /* opaque for the same reason as the dark rule */
 body.light .search{background:#eef3f9}   /* .uid/.type are filled color boxes (inline bg+contrast text) — no theme override needed */
 body.light tbody tr:hover{background:#eef4fb}
 body.light .pgbtn.on{color:#fff;background:#0a6aa0;border-color:#0a6aa0}   /* white on plain accent was 4.1:1; darker cyan -> AA */
@@ -568,9 +574,13 @@ body.light{
 /* neon glow on signal chrome */
 .brand .mark{box-shadow:0 0 16px -3px var(--accent)}
 .period .dot{box-shadow:0 0 10px var(--accent);animation:mtpulse 2.6s ease-in-out infinite}
-@keyframes mtpulse{0%,100%{opacity:.55;box-shadow:0 0 5px var(--accent)}50%{opacity:1;box-shadow:0 0 12px var(--accent)}}
+/* opacity ONLY. box-shadow cannot be composited, so animating it repaints the element every
+   frame for as long as the page is open - and .worstasn is created PER ROW on a real server,
+   so a busy day put one continuous repaint on screen per malicious ASN. Opacity animates on
+   the compositor; the static glow below carries the look. */
+@keyframes mtpulse{0%,100%{opacity:.5}50%{opacity:1}}
 .h .sev-bar{box-shadow:0 0 9px -1px var(--sev-high)}
-.worstasn{animation:mtpulse 1.8s ease-in-out infinite}
+.worstasn{animation:mtpulse 1.8s ease-in-out infinite}   /* only opacity animates; the static glow is set above */
 .card.active{box-shadow:0 0 0 1px var(--accent-dim),0 0 30px -10px var(--accent),0 8px 24px -12px var(--accent)}
 @media (prefers-reduced-motion:reduce){ .period .dot,.worstasn{animation:none} }
 
