@@ -181,5 +181,75 @@ class StaticTrailSource(unittest.TestCase):
         self.assertIn(doctor.check_static_trails, [fn for _, fn in doctor.CHECKS])
 
 
+class TestEveryCheckIsRegistered(unittest.TestCase):
+    """CHECKS is the only thing that runs a check, so an unregistered one runs nowhere.
+
+    The guard above names a single function, which protects the check it was written for and
+    nothing else: a check added later and forgotten would run nowhere and this suite would still
+    be green. `tests/run.sh` already enforces the generic form of this rule for test files ("A
+    test file that is not in TESTS is not run by this script or by CI, and nothing else would ever
+    say so - it just sits there passing locally and covering nothing. Fail instead."). Same rule,
+    same reason.
+    """
+
+    def test_no_check_function_is_left_out_of_CHECKS(self):
+        import inspect
+
+        defined = set(name for name, obj in vars(doctor).items()
+                      if name.startswith("check_") and inspect.isfunction(obj)
+                      and obj.__module__ == doctor.__name__)
+        registered = set(fn.__name__ for _, fn in doctor.CHECKS)
+
+        self.assertTrue(defined, "no check_* functions found - has the naming changed?")
+        self.assertEqual(sorted(defined - registered), [],
+                         "check_* function(s) defined in core/doctor.py but absent from CHECKS, "
+                         "so --doctor never runs them and reports the deployment healthy without "
+                         "having looked")
+
+    def test_every_registered_entry_is_callable_and_labelled(self):
+        for entry in doctor.CHECKS:
+            self.assertEqual(len(entry), 2, "CHECKS entries are (label, function): %r" % (entry,))
+            label, fn = entry
+            self.assertTrue(label and isinstance(label, str), "a check needs a label: %r" % (entry,))
+            self.assertTrue(callable(fn), "%r is not callable" % (fn,))
+
+    def test_a_check_returning_nothing_reads_as_healthy_and_exits_zero(self):
+        # run() treats an empty finding list as "ok", so a check that silently returns [] on an
+        # error path is indistinguishable from a passing one. Pin the contract it relies on.
+        import io as _io
+        saved = doctor.CHECKS
+        doctor.CHECKS = (("always clean", lambda: []),)
+        try:
+            buf = _io.StringIO()
+            self.assertEqual(doctor.run(out=buf), 0)
+            self.assertIn("no problems found", buf.getvalue())
+        finally:
+            doctor.CHECKS = saved
+
+    def test_a_failing_check_exits_nonzero(self):
+        import io as _io
+        saved = doctor.CHECKS
+        doctor.CHECKS = (("broken", lambda: [(doctor.FAIL, "wrong")]),)
+        try:
+            buf = _io.StringIO()
+            self.assertEqual(doctor.run(out=buf), 1,
+                             "--doctor must exit non-zero on a FAIL, or a script that gates on it "
+                             "cannot tell a healthy deployment from a broken one")
+            self.assertIn("problem(s)", buf.getvalue())
+        finally:
+            doctor.CHECKS = saved
+
+    def test_a_warning_alone_still_exits_zero(self):
+        import io as _io
+        saved = doctor.CHECKS
+        doctor.CHECKS = (("noisy", lambda: [(doctor.WARN, "hmm")]),)
+        try:
+            buf = _io.StringIO()
+            self.assertEqual(doctor.run(out=buf), 0, "a WARN is not a failure")
+            self.assertIn("warning(s)", buf.getvalue())
+        finally:
+            doctor.CHECKS = saved
+
+
 if __name__ == "__main__":
     unittest.main()
