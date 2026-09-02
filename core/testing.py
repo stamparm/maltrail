@@ -186,6 +186,7 @@ _DETECT_TRAILS = (
 
 _BASE_SEC = 1700000000
 _BURST_SEC = _BASE_SEC + 100000  # well after the per-packet cases so the burst lands in one heuristics window
+_TUNNEL_SEC = _BURST_SEC + 3600  # the tunnelling window needs its own 160s span, clear of the burst above
 
 def _build_detect_traffic():
     """
@@ -297,6 +298,38 @@ def _build_detect_traffic():
     for i in range(34):  # > INFECTION_SCANNING_THRESHOLD (32) distinct dst IPs on an infection port (445)
         packets.append((_BURST_SEC, _tcp(_ATTACKER, "198.51.100.%d" % (100 + i), 53000 + i, 445, 0x02)))
     checks.append(("infection scanning (>32 dst IPs on port 445) -> heuristic", ("potential infection",), True))
+
+    # --- DNS exhaustion: DNS_EXHAUSTION_THRESHOLD (1000) distinct subdomains under one zone.
+    # The corpus has a dns_exhaustion.pcap, but it is one of the cases that assert nothing - it
+    # exercises the accumulator without crossing the threshold, so the class never appeared in a
+    # replayed log. Crossing it costs a thousand packets and is the only way to see the event.
+    for i in range(1024):
+        packets.append((_BURST_SEC, _udp(_ATTACKER, "9.9.9.9", 30000 + (i % 20000), 53,
+                                         _dns_query("h%05d.exhausted-zone-test.com" % i))))
+    checks.append(("DNS exhaustion (>1000 distinct subdomains of one zone) -> heuristic",
+                   ("potential dns exhaustion",), True))
+
+    # --- DNS tunnelling: >=150 queries, >=6144 bytes of subdomain, >=120s apart, >=95% distinct,
+    # >=90% of them carrying a >=20-char high-entropy label. One query a second for 160 seconds.
+    # An LCG, not a quadratic: the obvious `(i*7 + j*13 + j*j) % 36` only reaches eight distinct
+    # characters, giving 2.98 bits - just under DNS_TUNNELING_MIN_ENTROPY_X100 (300), so not one
+    # query counted as "carrying" and the heuristic never fired. This reaches ~4.5 bits.
+    _ALPHABET = "abcdefghijklmnopqrstuvwxyz0123456789"
+
+    def _tunnel_label(n):
+        x = (n + 1) * 2654435761 % (2 ** 32)
+        out = []
+        for _ in range(46):
+            x = (x * 1103515245 + 12345) % (2 ** 31)
+            out.append(_ALPHABET[(x >> 16) % len(_ALPHABET)])
+        return "".join(out)
+
+    for i in range(160):
+        label = _tunnel_label(i)
+        packets.append((_TUNNEL_SEC + i, _udp(_ATTACKER, "9.9.9.9", 34000 + i, 53,
+                                              _dns_query("%s.tunnel-zone-test.com" % label))))
+    checks.append(("DNS tunnelling (150+ long high-entropy labels over 2+ minutes) -> heuristic",
+                   ("potential dns tunneling",), True))
 
     # flush packet (higher timestamp) advances the heuristics window so the bursts above are evaluated
     packets.append((_BURST_SEC + 1, _udp(_ATTACKER, "203.0.113.250", 41000, 41001, b"flush")))

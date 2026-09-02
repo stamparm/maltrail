@@ -37,12 +37,44 @@ DEMO_JS = os.path.join(ROOT, "html", "js", "demo.js")
 FI = {name: i for i, name in enumerate(logfmt.FIELDS)}
 
 # What the dashboard draws differently, and how to spot it in a log line.
+#
+# The first version of this list only had the RENDERING shapes below - icons, glyphs, the
+# condensed cell. That is not what an operator wants to see in a demo: it left every heuristic
+# the sensor has gained since the 2024 capture out of the file, `potential periodic beaconing`
+# among them. Detection CLASSES are the point; the rendering shapes are the tail of the list.
 SHAPES = (
     ("ipv6", lambda r: ":" in r[FI["src_ip"]] or ":" in r[FI["dst_ip"]]),
     ("custom-origin", lambda r: r[FI["reference"]] == "(custom)"),
     ("icmp", lambda r: r[FI["proto"]] == "ICMP"),
     ("second-sensor", None),          # handled separately: it is a property of the SET, not a row
 )
+
+# Every detection class the sensor can emit, matched on a substring of `info` (or, for the
+# fingerprints, on the trail TYPE). A class with no event behind it cannot be seen in the demo.
+CLASSES = (
+    ("beaconing", "potential periodic beaconing", 14),
+    ("dns-tunneling", "potential dns tunneling", 9),
+    ("dns-exhaustion", "potential dns exhaustion", 7),
+    ("udp-scanning", "potential udp scanning", 8),
+    ("web-scanning", "potential web scanning", 11),
+    ("sql-injection", "potential sql injection", 9),
+    ("xss-injection", "potential xss injection", 6),
+    ("directory-traversal", "potential directory traversal", 7),
+    ("remote-code-execution", "potential remote code execution", 5),
+    ("proxy-probe", "potential proxy probe", 5),
+    ("iot-malware", "potential iot-malware download", 6),
+    ("missing-host-header", "missing host header", 5),
+    ("seized-domain", "seized domain", 4),
+    ("direct-download", "direct .exe download", 5),
+    ("ja3", "\x00JA3", 8),            # matched on the trail TYPE, not info - see _class_present
+)
+
+
+def _class_present(rows, needle):
+    if needle.startswith("\x00"):
+        want = needle[1:]
+        return sum(1 for r in rows if r[FI["type"]] == want)
+    return sum(1 for r in rows if needle in r[FI["info"]])
 
 
 def _parse_demo(path):
@@ -92,6 +124,8 @@ def main():
                     help="a LOG_DIR produced by 'server.py --detect-test --keep DIR' (its logs/ subdir)")
     ap.add_argument("--out", dest="out", default=DEMO_JS)
     ap.add_argument("--seed", type=int, default=20260902, help="fixed, so re-running produces the same file")
+    ap.add_argument("--thin", type=float, default=0.5, metavar="F",
+                    help="drop this fraction of the BASE file's distinct trails (default 0.5); the added classes are never thinned")
     args = ap.parse_args()
 
     random.seed(args.seed)
@@ -99,6 +133,39 @@ def main():
     base = _rows(base_lines)
     if not base:
         sys.exit("[!] could not parse any events out of %s" % DEMO_JS)
+
+    # Thin the BASE first, never the additions, and BEFORE coverage is measured - a class the
+    # thinning removes is then simply re-added below from the sensor run. Doing it the other way
+    # round silently dropped three classes that existed only in the base.
+    #
+    # Whole trails go, not random rows, so every survivor keeps its full cluster and the file
+    # keeps its power-law shape instead of being flattened into a uniform sample.
+    if args.thin:
+        by_trail = {}
+        for line in base_lines:
+            by_trail.setdefault(logfmt.fields(line)[FI["trail"]], []).append(line)
+        # Protect variety first: whatever else goes, keep one carrier of every distinct `info`
+        # and every trail TYPE the base has. Half the base is old bulk, but its VARIETY is the
+        # point of a demo - and infos like "ipinfo (suspicious)" or "conficker dga (malware)"
+        # come from feeds, so unlike the sensor heuristics they cannot be re-added below if the
+        # thinning happens to drop their last carrier.
+        first_carrier = {}
+        for line in base_lines:
+            row = logfmt.fields(line)
+            for key in ("info:%s" % row[FI["info"]], "type:%s" % row[FI["type"]]):
+                first_carrier.setdefault(key, row[FI["trail"]])
+        protected = set(first_carrier.values())
+
+        names = sorted(set(by_trail) - protected)
+        random.shuffle(names)
+        target = max(1, int(len(by_trail) * (1.0 - args.thin)))
+        keep = protected | set(names[:max(0, target - len(protected))])
+        print("[i] protected %d trail(s) carrying a distinct info/type" % len(protected))
+        thinned = [_ for _ in base_lines if logfmt.fields(_)[FI["trail"]] in keep]
+        print("[i] thinned base: %d -> %d event(s), %d -> %d distinct trail(s)"
+              % (len(base_lines), len(thinned), len(names), len(keep)))
+        base_lines = thinned
+        base = _rows(base_lines)
 
     day = base[0][FI["time"]][:10]
     sensor = base[0][FI["sensor"]]
@@ -127,6 +194,14 @@ def main():
         ("internal watchlist (custom)", "internal watchlist (custom)"),
         ("bad reputation (suspicious)", "bad reputation (suspicious)"),
         ("198.51.100.66", "45.83.64.19"),
+        ("tunnel-zone-test.com", "n2-relay.net"),
+        ("exhausted-zone-test.com", "lookup.aeqx-cdn.net"),
+        ("203.0.113.77", "91.219.236.18"),
+        ("203.0.113.35", "194.147.85.62"),
+        ("botnet c2 (test)", "cobalt strike beacon (malware)"),
+        ("malware (test)", "emotet (malware)"),
+        ("phishing (test)", "credential phishing (malicious)"),
+        ("known attacker", "known attacker"),
     )
 
     def blend(line, copies, hosts=None):
@@ -171,8 +246,24 @@ def main():
             added.append(_resensor(line, second))
         print("[i] + second-sensor   40 event(s) (sensor %r, re-labelled copies)" % second)
 
+    # --- every detection class the sensor emits that the base file does not contain
+    donor_rows = [(d, logfmt.fields(d)) for d in donors]
+    for label, needle, copies in CLASSES:
+        if _class_present(base, needle):
+            continue
+        if needle.startswith("\x00"):
+            want = needle[1:]
+            donor = next((d for d, r in donor_rows if r[FI["type"]] == want), None)
+        else:
+            donor = next((d for d, r in donor_rows if needle in r[FI["info"]]), None)
+        if donor is None:
+            print("[!] %-22s no example in the sensor run - NOT added" % label)
+            continue
+        blend(donor, copies, hosts=["10.3.160.42", "10.2.120.16", "2.200.104.32", "2.200.110.232"])
+        print("[i] + %-20s %2d event(s)" % (label, copies))
+
     if not added:
-        print("[i] nothing to add - demo.js already covers every shape")
+        print("[i] nothing to add - demo.js already covers every class and shape")
         return 0
 
     merged = sorted(base_lines + added, key=lambda l: logfmt.fields(l)[FI["time"]])

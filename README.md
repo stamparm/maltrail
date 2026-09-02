@@ -488,6 +488,26 @@ When the log filesystem is full, the sensor cannot append events. Event logs may
 addresses and domains that are regulated as personal data in some jurisdictions; retention policy
 should account for the applicable requirements.
 
+### Synthetic traffic
+
+To check that detection and the dashboard both still work, without waiting for real traffic:
+
+```bash
+python3 server.py --detect-test                      # assert every detection fires, then exit
+python3 server.py --detect-test --keep DIR --serve   # ...and keep the events, serving them on :8338
+```
+
+`--keep` also replays `sensor/tests/corpus/` into the same log and prints which of the shapes the
+dashboard renders differently have an event behind them, so a missing icon, colour or glyph is
+visible rather than assumed. Timestamps are shifted so the newest day is today. A sensor binary is
+required (`cargo build --release --manifest-path sensor/Cargo.toml`).
+
+The public demo's data is regenerated from such a run:
+
+```bash
+python3 sensor/tools/gen_demo_js.py --from DIR/logs   # tops up html/js/demo.js
+```
+
 ## Documentation
 
 | Document | Contents |
