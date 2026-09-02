@@ -1557,11 +1557,89 @@ class TestReapSessions(unittest.TestCase):
 
 
 
+class TestFail2banReadsTheFieldsCorrectly(unittest.TestCase):
+    """/fail2ban must publish the SOURCE address, whatever the line looks like.
+
+    It took the address from `line.split()[3]`, which assumes the quoted timestamp costs exactly
+    two whitespace tokens and the sensor name exactly one. `safe_value()` QUOTES any value
+    containing a space, so:
+
+      * `SENSOR_NAME DMZ firewall` shifted every field right and this endpoint published
+        `firewall` - and for `dmz 10.0.0.1`, the string `10.0.0.1"`, an internal address;
+      * a JSON line (LOCAL_LOG_FORMAT json) published `"2026-09-02`, a fragment of the timestamp.
+
+    fail2ban bans what it is given, so both mean the automated blocking quietly stops working
+    while looking healthy. The BLACKLIST reader next to it was converted to logfmt.fields() for
+    exactly this reason (see its comment); this endpoint was missed.
+    """
+
+    ATTACKER = "203.0.113.66"
+
+    def _serve(self, log_line):
+        tmp = tempfile.mkdtemp(prefix="mt_f2b_")
+        try:
+            logdir = os.path.join(tmp, "logs"); os.makedirs(logdir)
+            day = time.strftime("%Y-%m-%d")
+            with open(os.path.join(logdir, "%s.log" % day), "w") as f:
+                f.write(log_line)
+            trails = os.path.join(tmp, "t.csv")
+            with open(trails, "w") as f:
+                f.write("evil.example,m (dummy),(static)\n")
+            port = _free_port()
+            cfg = os.path.join(tmp, "srv.conf")
+            with open(cfg, "w") as f:
+                f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\n" % port)
+                f.write("FAIL2BAN_ALLOWLIST 127.0.0.1\nFAIL2BAN_REGEX malware\n")
+                f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+                f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME probe\n"
+                        "DISABLE_CHECK_SUDO true\n" % (logdir, trails))
+            proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            try:
+                for _ in range(60):
+                    try:
+                        socket.create_connection(("127.0.0.1", port), timeout=0.5).close(); break
+                    except OSError: time.sleep(0.25)
+                _, _, body = _http(port, "GET", "/fail2ban")
+                return body.decode("utf-8", "replace").strip()
+            finally:
+                _stop_server(proc)
+        finally:
+            import shutil; shutil.rmtree(tmp, ignore_errors=True)
+
+    def _text_line(self, sensor):
+        from core.log import safe_value
+        day = time.strftime("%Y-%m-%d")
+        return " ".join(safe_value(_) for _ in (
+            day + " 10:00:00.000000", sensor, self.ATTACKER, "4421", "10.0.0.5", "53",
+            "UDP", "DNS", "evil.example", "attacker probe (malware)", "(static)")) + "\n"
+
+    def test_a_sensor_name_with_a_space_does_not_shift_the_fields(self):
+        for sensor in ("box", "edge-01", "my sensor", "DMZ firewall 2", "dmz 10.0.0.1"):
+            got = self._serve(self._text_line(sensor))
+            self.assertEqual(got, self.ATTACKER,
+                             "SENSOR_NAME=%r made /fail2ban publish %r instead of the attacker; "
+                             "fail2ban bans what it is given" % (sensor, got))
+
+    def test_it_reads_a_json_line(self):
+        import json as _json
+        day = time.strftime("%Y-%m-%d")
+        line = _json.dumps({"timestamp": 1767258000, "time": day + " 10:00:00.000000",
+                            "sensor": "box", "severity": "high", "src_ip": self.ATTACKER,
+                            "src_port": 4421, "dst_ip": "10.0.0.5", "dst_port": 53,
+                            "proto": "UDP", "type": "DNS", "trail": "evil.example",
+                            "info": "attacker probe (malware)", "reference": "(static)"}) + "\n"
+        got = self._serve(line)
+        self.assertEqual(got, self.ATTACKER,
+                         "a JSON log line made /fail2ban publish %r - LOCAL_LOG_FORMAT json broke "
+                         "the blocking feed entirely" % got)
+
+
 class TestShippedFail2banContract(unittest.TestCase):
     """The regex in maltrail.conf is a firewall-rule generator, and no test had ever read it.
 
-    /fail2ban matches FAIL2BAN_REGEX against the WHOLE log line and returns field 4, the SOURCE
-    address. For an inbound attack that is the attacker. For an OUTBOUND detection - one of our
+    /fail2ban matches FAIL2BAN_REGEX against the WHOLE log line and returns the SOURCE
+    address of every matching event. For an inbound attack that is the attacker. For an OUTBOUND detection - one of our
     hosts reaching a C2 - it is our own machine, so any alternative loose enough to hit a trail
     NAME turns fail2ban against the network it protects.
 

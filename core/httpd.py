@@ -1958,9 +1958,18 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             with open(_, "r") as f:
                                 for line in f:
                                     if re.search(config.FAIL2BAN_REGEX, line, re.I):
-                                        parts = line.split()
-                                        if len(parts) > 3 and not _event_precedes_clear(line, parts[3], cleared):
-                                            result.add(parts[3])
+                                        # logfmt.fields(), not line.split(): the naive split
+                                        # assumed the quoted timestamp costs exactly two tokens
+                                        # and the sensor name exactly one, so a SENSOR_NAME with
+                                        # a space ("DMZ firewall") shifted every field right and
+                                        # this endpoint published a fragment of the sensor name
+                                        # instead of the attacker's address - to fail2ban, which
+                                        # bans what it is given. It also could not read a JSON
+                                        # line at all. Same reasoning, and the same fix, as the
+                                        # BLACKLIST reader above.
+                                        fields = logfmt.fields(line)
+                                        if fields is not None and not _event_precedes_clear(line, fields[2], cleared):
+                                            result.add(fields[2])
 
                         content = "\n".join(result)
 
