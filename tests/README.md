@@ -19,9 +19,9 @@ timeout. **Always run capped** — Python 2 with `cryptography` loaded can ballo
 | File                | Module                | What it checks |
 |---------------------|-----------------------|----------------|
 | `test_addr.py`      | `core/addr.py`        | IPv4/IPv6 int conversions, masks, compression, ranges, host:port parsing |
-| `test_fastfilter.py`| `core/fastfilter.py`  | IOC-set building, severity admission tiers, the adaptive controller, and the DLT-offset heuristic |
 | `test_quic_sni.py`  | `core/quic_sni.py`    | QUIC Initial decryption (RFC 9001 KAT), HKDF, SNI extraction, malformed-input safety |
 | `test_tls_intel.py` | `core/tls_intel.py`   | TLS ClientHello SNI, JA3/JA3S/JA4 fingerprints, cert names, fuzz-safety |
 
-`_pcapgen.py` is a small packet builder (Ethernet/SLL/VLAN/IPv4/IPv6/TCP/UDP) shared by the
-packet-level suites.
+`_pcapgen.py` is a small packet builder (Ethernet/SLL/VLAN/IPv4/IPv6/TCP/UDP). No Python test
+imports it any more, but it is kept as the byte-level reference the sensor's own builders mirror -
+`sensor/src/testkit.rs` and `sensor/src/protocols/tls.rs` cite it by function name.

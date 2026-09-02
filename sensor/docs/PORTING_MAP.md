@@ -7,6 +7,11 @@
 > them record what was measured at the time; they are not runnable now. The corpus itself survives
 > and is asserted by `tests/replay.rs`, and the deliberate divergences are listed in
 > `docs/COMPATIBILITY.md` §2.
+>
+> `core/fastfilter.py` went the same way after 3.3: it was glue for the pcapy-ng in-C prefilter,
+> and once the Python sensor was gone nothing imported it but its own unit test. Rows and code
+> comments below still name it, and `sensor.py`, as the Python source each Rust module was ported
+> from. Those names are provenance, not paths you can open - read them against git history.
 
 Traced against this repository (not from memory). Every row names the Python source of truth and
 the Rust module that reproduces it.
