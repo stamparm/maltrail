@@ -15,6 +15,7 @@ error.log
 AGENTS.md
 HANDOVER.md
 PLANS.md
+LOOP.md
 
 # Rust sensor build output and local profiling artifacts
 sensor/target/
