@@ -885,6 +885,29 @@ def _sanitize_auth_field(value):
     return value[:64] or '-'
 
 
+def _source_field(line):
+    """The source address of an event line, or None when it is not laid out as expected.
+
+    Layout: `"<time>" <sensor> <src> <sport> ...`. Returns None rather than guessing for a JSON
+    line, a truncated line or an IPv6 source, and the caller then falls back to the full scan - so
+    being wrong here costs speed and never visibility.
+    """
+
+    end = line.find('" ')
+    if end < 0:
+        return None
+    parts = line[end + 2:].split(' ', 3)
+    if len(parts) < 3:
+        return None
+    candidate = parts[1]
+    if candidate.count('.') != 3:
+        return None
+    for octet in candidate.split('.'):
+        if not octet.isdigit():
+            return None
+    return candidate
+
+
 def start_httpd(address=None, port=None, join=False, pem=None):
     """
     Starts HTTP server
@@ -2040,7 +2063,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 if not netfilter:
                     continue
                 if '/' in netfilter:
-                    netmasks.append(netfilter)
+                    try:
+                        prefix, width = netfilter.split('/')
+                        mask = make_mask(int(width))
+                        netmasks.append((addr_to_int(prefix) & mask, mask))
+                    except (ValueError, TypeError):
+                        print("[!] invalid network filter '%s'" % netfilter)
+                        return None
                 elif re.search(r"\A[\d.]+\Z", netfilter):
                     addresses.add(netfilter)
                 elif "\\." in netfilter:
@@ -2073,6 +2102,26 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     ip = match.group(1)
                     display = True
 
+            # Fast accept on the source address. An event line is a fixed shape -
+            # "<quoted time>" sensor src sport dst ... - so the first dotted quad on it is the
+            # source, which is also the first thing the scan below tests. One find() and one
+            # bounded split() cost a fraction of standing up a regex iterator over the whole line,
+            # and on a scoped read that iterator runs once per line of the log.
+            #
+            # It can only ACCEPT early. Anything it does not resolve falls through to the original
+            # scan untouched, so the predicate is unchanged; on a hit it returns the same address
+            # the scan would have returned, being the first match in line order.
+            if not display and (addresses or netmasks):
+                source = _source_field(line)
+                if source is not None:
+                    if source in addresses:
+                        return True, source
+                    source_int = addr_to_int(source)
+                    for network, mask in netmasks:
+                        if source_int & mask == network:
+                            addresses.add(source)
+                            return True, source
+
             if not display and (addresses or netmasks):
                 for match in re.finditer(r"\b(\d+\.\d+\.\d+\.\d+)\b", line):
                     if not display:
@@ -2084,10 +2133,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         display = True
                         break
                     elif netmasks:
-                        for _ in netmasks:
-                            prefix, mask = _.split('/')
-                            # NOTE: mask BOTH sides - a non-network-aligned CIDR (e.g. 10.0.5.0/16, as operators often write) would otherwise never match its own subnet, silently hiding events the analyst is entitled to (consistent with the fail2ban allowlist matching)
-                            if addr_to_int(ip) & make_mask(int(mask)) == addr_to_int(prefix) & make_mask(int(mask)):
+                        # NOTE: both sides masked - a non-network-aligned CIDR (10.0.5.0/16, as
+                        # operators write them) would otherwise never match its own subnet and
+                        # would silently hide events the analyst is entitled to. The network side
+                        # is masked once, in _build_netfilters.
+                        ip_int = addr_to_int(ip)
+                        for network, mask in netmasks:
+                            if ip_int & mask == network:
                                 addresses.add(ip)
                                 display = True
                                 break
