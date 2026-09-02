@@ -1052,6 +1052,31 @@ class TestHttpd(unittest.TestCase):
         self.assertEqual(admin_counts.get(self.date), 5, "positive control: admin sees every event")
         self.assertEqual(analyst_counts.get(self.date), 4, "the external-only event is outside 10.0.0.0/8")
 
+    def test_the_source_shortcut_never_decides_on_its_own(self):
+        """The scope shortcut may accept a line early; it must never reject one early.
+
+        _line_in_scope resolves most lines on the source field to avoid running a regex over every
+        line of the log. These are the lines where the source is NOT the answer, and each one has
+        to fall through to the full scan and return the same (visible, address) pair - the address
+        matters as well as the boolean, because _filter_events rewrites the line with it.
+        """
+        from core.httpd import _source_field
+
+        # not a source the shortcut may act on: it must decline rather than guess
+        for line, why in (
+            ('"t" box 203.0.113.9,10.0.0.8 1 8.8.8.8 53 UDP DNS a "m" (static)', "condensed multi-source"),
+            ('{"src_ip": "10.0.0.5"}', "a JSON event line"),
+            ('"t" box 2001:db8::1 1 8.8.8.8 53 UDP DNS a "m" (static)', "IPv6 source"),
+            ('"t" box', "truncated line"),
+        ):
+            self.assertIsNone(_source_field(line),
+                              "the shortcut claimed a source from %s; it must decline and let the "
+                              "full scan decide" % why)
+
+        # a source it may act on
+        self.assertEqual(
+            _source_field('"t" box 10.0.0.5 4421 8.8.8.8 53 UDP DNS a "m" (static)'), "10.0.0.5")
+
     def test_counts_sees_an_event_reaching_the_scope_from_outside(self):
         # The scope predicate is "any address on the line is inside my networks", not "the source
         # is". An outside host talking TO the analyst's network is exactly the event they most need
