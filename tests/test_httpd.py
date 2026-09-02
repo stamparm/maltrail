@@ -1052,6 +1052,33 @@ class TestHttpd(unittest.TestCase):
         self.assertEqual(admin_counts.get(self.date), 5, "positive control: admin sees every event")
         self.assertEqual(analyst_counts.get(self.date), 4, "the external-only event is outside 10.0.0.0/8")
 
+    def test_counts_sees_an_event_reaching_the_scope_from_outside(self):
+        # The scope predicate is "any address on the line is inside my networks", not "the source
+        # is". An outside host talking TO the analyst's network is exactly the event they most need
+        # and the source field alone would hide it.
+        #
+        # This guards the shortcut that resolves most lines on their source: it may accept early,
+        # never reject early. Without the fall-through this line is silently uncounted.
+        import json as _json
+        from core.log import safe_value
+        line = " ".join(safe_value(_) for _ in (
+            '%s 11:00:00.000000' % self.date, "sensor-a", "198.51.100.7", "5555",
+            "10.0.0.42", "443", "TCP", "IP", "198.51.100.7", "inbound (dummy)", "(static)"))
+        path = os.path.join(self.logdir, "%s.log" % self.date)
+        with open(path, "r") as f:
+            original = f.read()
+        try:
+            with open(path, "a") as f:
+                f.write(line + "\n")
+            _, _, body = _http(self.port, "GET", "/counts", cookie=self._login("analyst"))
+            counts = _json.loads(body.decode("utf-8"))
+            self.assertEqual(counts.get(self.date), 5,
+                             "an event whose DESTINATION is in scope was not counted - the source "
+                             "field decided visibility on its own")
+        finally:
+            with open(path, "w") as f:
+                f.write(original)
+
     def test_counts_cache_is_keyed_by_scope(self):
         # The count cache is a module global shared by every request. Keyed on the log path alone,
         # whichever user asked first would have their total served to the other - the same
