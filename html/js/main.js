@@ -356,13 +356,18 @@
   }
 
   function aggregate(csv) { return aggregateRows(parseEvents(csv)); }
+  // NOTE: trail types are matched with /^[A-Z0-9]+$/, NOT /^[A-Z]+$/. The point of the test is to
+  // reject a row whose field 7 is not a type at all (a shifted or truncated line), but JA3, JA3S
+  // and JA4 carry a digit - and the sensor emits TRAIL::JA3 and TRAIL::JA4 - so the letters-only
+  // form dropped every TLS-fingerprint detection here in silence: no error, no count, simply
+  // missing from the table, the type breakdown and the charts.
   function aggregateRows(rows) {
     var r, row, type, nt;
     // pass 1: flood detection — a normalized trail seen from > FLOOD_THRESH distinct source IPs
     var trailSrcs = new Map();   // Map<nt, Set<src>> — Map/Set, not plain objects: V8 keeps these fast at 100k+ keys (objects degrade to dictionary mode)
     for (r = 0; r < rows.length; r++) {
       row = rows[r];
-      if (!row || row.length < 11 || !/^[A-Z]+$/.test(row[7])) continue;
+      if (!row || row.length < 11 || !/^[A-Z0-9]+$/.test(row[7])) continue;
       nt = normTrail(row[8]); var ts0 = trailSrcs.get(nt); if (!ts0) trailSrcs.set(nt, ts0 = new Set()); ts0.add(row[2]);
     }
     var flood = new Set(); trailSrcs.forEach(function (ts, fk) { if (ts.size > FLOOD_THRESH) flood.add(fk); });
@@ -378,7 +383,7 @@
       var time = row[0], sensor = row[1], src = row[2], sport = row[3], dst = row[4],
           dport = row[5], proto = row[6], trail = row[8], info = row[9], ref = row[10];
       type = row[7];
-      if (!/^[A-Z]+$/.test(type)) continue;
+      if (!/^[A-Z0-9]+$/.test(type)) continue;
       events++;
       var hr = hourOf(time); hours[hr]++;
       nt = normTrail(trail);
@@ -442,7 +447,7 @@
     for (var r = 0; r < rows.length; r++) {
       var row = rows[r];
       if (!row || row.length < 11) continue;
-      var type = row[7]; if (!/^[A-Z]+$/.test(type)) continue;
+      var type = row[7]; if (!/^[A-Z0-9]+$/.test(type)) continue;
       var time = row[0], sensor = row[1], src = row[2], sport = row[3], dst = row[4],
           dport = row[5], proto = row[6], trail = row[8], info = row[9], ref = row[10];
       agg.events++;
@@ -3380,7 +3385,13 @@
     window.addEventListener("online", applyConn); window.addEventListener("offline", applyConn);
     applyConn();   // initial: an offline-opened page starts with Live + calendar disabled
     var _fi = document.getElementById('filter'); if (_fi && state.input) _fi.value = state.input;
-    var ve = document.querySelector(".ver"); if (ve && DEMO) ve.textContent = "redesign prototype";  // real server fills <!VERSION!>
+    // The server fills <!VERSION!> per request. A static copy has it substituted at build time
+    // (maltraildemo's build.sh); opened raw from disk it is not, and the parser drops `<!...!>`
+    // as a bogus comment, leaving the span empty - which is the ONLY case that needs a label.
+    // Overriding unconditionally is how the published demo came to announce itself as a
+    // "redesign prototype" long after the redesign shipped.
+    var ve = document.querySelector(".ver");
+    if (ve && DEMO && !ve.textContent.trim()) ve.textContent = "demo";
     if (DEMO) {
       document.title = "Maltrail (demo)";
       setDate(todayStr());   // controls stay live so the calendar/paging are demonstrably interactive

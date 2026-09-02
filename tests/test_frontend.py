@@ -966,5 +966,63 @@ class TestSeverityFilterIsSeparate(unittest.TestCase):
                          "severity is back inside the cached filter key, so clicking a severity "
                          "button re-runs the whole filter chain over every threat again")
 
+
+class TestTrailTypesReachTheTable(unittest.TestCase):
+    """Every trail type the sensors emit must satisfy main.js's type test.
+
+    aggregateRows() drops a row whose field 7 is not a trail type - that is what keeps a shifted
+    or truncated line out of the aggregate. The test was `/^[A-Z]+$/`, letters only, while the
+    sensor emits TRAIL::JA3 and TRAIL::JA4. Those carry a digit, so every TLS-fingerprint
+    detection was discarded in silence: no error, no count, simply missing from the table, the
+    type breakdown and the charts. Found by building the public demo and searching it for "ja3".
+
+    Text comparison, like the rest of this file: the emitted names are in the sources and the
+    test is in main.js, and nothing but this keeps them in step.
+    """
+
+    def _emitted_types(self):
+        names = set()
+        for root, _dirs, files in os.walk(os.path.join(REPO, "sensor", "src")):
+            for name in files:
+                if name.endswith(".rs"):
+                    with open(os.path.join(root, name), encoding="utf8", errors="replace") as f:
+                        names.update(re.findall(r"TRAIL::([A-Z0-9]+)", f.read()))
+        for name in ("log.py", "httpd.py", "testing.py", "enums.py"):
+            path = os.path.join(REPO, "core", name)
+            if os.path.isfile(path):
+                with open(path, encoding="utf8", errors="replace") as f:
+                    names.update(re.findall(r"TRAIL\.([A-Z0-9]+)", f.read()))
+        return names
+
+    def _type_tests(self):
+        with open(os.path.join(REPO, "html", "js", "main.js"), encoding="utf8") as f:
+            return re.findall(r"/\^\[([A-Z0-9-]+)\]\+\$/\.test\((?:row\[7\]|type)\)", f.read())
+
+    def test_the_type_test_accepts_every_emitted_type(self):
+        emitted = self._emitted_types()
+        self.assertTrue(emitted, "no TRAIL:: / TRAIL. names found - has the enum been renamed?")
+
+        patterns = self._type_tests()
+        self.assertTrue(patterns, "main.js no longer tests field 7 against a character class; "
+                                  "if the guard moved, move this test with it")
+
+        for cls in patterns:
+            rx = re.compile(r"^[%s]+$" % cls)
+            rejected = sorted(t for t in emitted if not rx.match(t))
+            self.assertEqual(rejected, [],
+                             "main.js drops trail type(s) %s with /^[%s]+$/ - the sensor emits "
+                             "them, so those detections never appear in the dashboard"
+                             % (rejected, cls))
+
+    def test_the_guard_still_rejects_a_non_type(self):
+        # It must keep doing its job: a shifted line whose field 7 is an address or a lowercase
+        # word has to stay out of the aggregate.
+        for cls in self._type_tests():
+            rx = re.compile(r"^[%s]+$" % cls)
+            for junk in ("10.0.0.5", "dns", "", "UDP DNS", "evil.com", '"quoted"'):
+                self.assertIsNone(rx.match(junk),
+                                  "/^[%s]+$/ accepts %r, which is not a trail type" % (cls, junk))
+
+
 if __name__ == "__main__":
     unittest.main()
