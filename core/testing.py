@@ -179,7 +179,7 @@ _DETECT_TRAILS = (
     # six above cover detection; these cover presentation, which had no fixture at all.
     ("ek-nuclear-test.com", "ek nuclear (malicious)", "(static)"),   # (malicious) icon
     ("custom-watch-test.com", "internal watchlist (custom)", "(custom)"),  # (custom) origin + mask_custom
-    ("dead::beef", "apt test (malware)", "(static)"),                    # IPv6 endpoint rendering
+    ("2001:db8::beef", "apt test (malware)", "(static)"),                    # IPv6 endpoint rendering
     ("198.51.100.66", "bad reputation (suspicious)", "https://feed.example/list.txt"),  # feed-URL origin glyph, low severity (TEST-NET-2)
     ("192.0.2.66", "ransomware test (malware)", "(static)"),             # ICMP against an IP trail (TEST-NET-1)
 )
@@ -233,8 +233,8 @@ def _build_detect_traffic():
         _udp(_ATTACKER, "9.9.9.9", 50011, 53, _dns_query("custom-watch-test.com")),
         ("custom-watch-test.com", "(custom)"))
     add("IPv6 endpoint against an IPv6 trail -> v6 address rendering",
-        _udp6("dead::1", "dead::beef", 50012, 4444, b"beacon"),
-        ("dead::beef", "apt test (malware)"))
+        _udp6("2001:db8::1", "2001:db8::beef", 50012, 4444, b"beacon"),
+        ("2001:db8::beef", "apt test (malware)"))
     add("UDP to a feed-sourced trail -> the feed-URL origin glyph, low severity",
         _udp(_ATTACKER, "198.51.100.66", 50013, 41000, b"x"),
         ("198.51.100.66", "bad reputation (suspicious)"))

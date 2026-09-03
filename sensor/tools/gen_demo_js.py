@@ -77,6 +77,30 @@ def _class_present(rows, needle):
     return sum(1 for r in rows if needle in r[FI["info"]])
 
 
+# Sources of blended events. A Maltrail demo shows a MONITORED network, so the source of a
+# detection is one of your own hosts - these are the busiest LAN addresses in the base capture.
+# Reusing the base file's whole source mix put public addresses in the source column, which reads
+# as though the deployment were monitoring somebody else's network.
+LAN_HOSTS = ["10.3.160.42", "10.2.120.16", "10.43.192.103", "10.124.72.51",
+             "10.128.8.51", "10.124.72.52", "10.128.3.52", "10.128.3.51"]
+
+
+def _looks_like_address(value):
+    """Is this trail an IP address rather than a domain, path or fingerprint?
+
+    A JA3/JA4 fingerprint is 32 hex characters, which any "hex and punctuation" test happily calls
+    an address. Requiring a dot or a colon separates them: an address has one, a hash does not.
+    """
+
+    value = value.strip()
+    if "/" in value or value.lower().startswith(("http:", "https:")):
+        return False                                    # a URL or path trail, not an address
+    value = value.lstrip("[").split("]")[0]
+    if ":" in value and not re.match(r"^\d{1,3}(?:\.\d{1,3}){3}:\d+$", value):
+        return True                                     # IPv6
+    return bool(re.match(r"^\d{1,3}(?:\.\d{1,3}){3}(?::\d+)?$", value))
+
+
 def _parse_demo(path):
     """The event lines currently in demo.js, in order."""
     with open(path, encoding="utf8") as f:
@@ -179,29 +203,34 @@ def main():
     donors = _read_sensor_events(args.log_dir)
     print("[i] sensor run: %d event(s) to draw from" % len(donors))
 
-    added = []
+    added = []      # SYNTHESISED from the sensor run - every address must be documentation-safe
+    copied = []     # copies of BASE rows under a second sensor name - real capture data, exempt
 
     # The detect-test fixtures are deliberately named as fixtures ("apt test (malware)",
     # 192.0.2.66, dead::beef). That is right for a test and wrong for a demo: 77 obviously
     # synthetic rows sitting among 2,500 captured ones is exactly what makes a demo look fake.
     # Relabel on the way in - the SHAPE is what the dashboard renders, the names are cosmetic.
+    # Names only - NEVER addresses.
+    #
+    # The fixtures use RFC 5737 / RFC 3849 documentation addresses (203.0.113.x, 198.51.100.x,
+    # 192.0.2.x, dead::beef) precisely so a demo cannot accuse anyone. Rewriting them to
+    # "realistic" ones did exactly that: 2a03:2880:f12d:83:face:b00c::1 is Meta Platforms
+    # Ireland and 185.220.101.47 is a real Tor exit node, and both were published on a public
+    # page labelled as malware C2. Documentation ranges look synthetic because they ARE, which
+    # is the whole point of them.
+    #
+    # Domains are relabelled: the fixture names say "test", and unlike an address a name under a
+    # TLD that resolves to nothing accuses nobody. Both below are NXDOMAIN.
     RELABEL = (
-        ("dead::beef", "2a03:2880:f12d:83:face:b00c::1"),
-        ("apt test (malware)", "cobalt strike beacon (malware)"),
-        ("ransomware test (malware)", "wannacry (malware)"),
-        ("192.0.2.66", "185.220.101.47"),
-        ("custom-watch-test.com", "payroll-export.internal.corp"),
-        ("internal watchlist (custom)", "internal watchlist (custom)"),
-        ("bad reputation (suspicious)", "bad reputation (suspicious)"),
-        ("198.51.100.66", "45.83.64.19"),
         ("tunnel-zone-test.com", "n2-relay.net"),
         ("exhausted-zone-test.com", "lookup.aeqx-cdn.net"),
-        ("203.0.113.77", "91.219.236.18"),
-        ("203.0.113.35", "194.147.85.62"),
+        ("custom-watch-test.com", "payroll-export.internal.corp"),
+        ("ek-nuclear-test.com", "ek-nuclear-gate.biz"),
         ("botnet c2 (test)", "cobalt strike beacon (malware)"),
         ("malware (test)", "emotet (malware)"),
         ("phishing (test)", "credential phishing (malicious)"),
-        ("known attacker", "known attacker"),
+        ("apt test (malware)", "apt29 (malware)"),
+        ("ransomware test (malware)", "wannacry (malware)"),
     )
 
     def blend(line, copies, hosts=None):
@@ -221,21 +250,21 @@ def main():
     if not have["ipv6"]:
         donor = next((d for d in donors if ":" in logfmt.fields(d)[FI["dst_ip"]]), None)
         if donor:
-            blend(donor, 22, hosts=["2001:db8:2::11", "2001:db8:2::17", "2001:db8:5::4"])
+            blend(donor, 22, hosts=["2001:db8:2::11", "2001:db8:2::17", "2001:db8:5::4"])   # RFC 3849
             print("[i] + ipv6            22 event(s)")
 
     # --- (custom) origin: an internal watchlist hit, seen a few times from two hosts
     if not have["custom-origin"]:
         donor = next((d for d in donors if logfmt.fields(d)[FI["reference"]] == "(custom)"), None)
         if donor:
-            blend(donor, 9, hosts=["10.3.160.42", "10.2.120.16"])
+            blend(donor, 9, hosts=LAN_HOSTS[:4])
             print("[i] + custom-origin    9 event(s)")
 
     # --- ICMP against a known-bad address
     if not have["icmp"]:
         donor = next((d for d in donors if logfmt.fields(d)[FI["proto"]] == "ICMP"), None)
         if donor:
-            blend(donor, 6, hosts=["10.3.160.42", "10.2.120.16", "2.200.104.32"])
+            blend(donor, 6, hosts=LAN_HOSTS[:5])
             print("[i] + icmp             6 event(s)")
 
     # --- a second sensor, so the condensed SENSOR cell has something to render
@@ -243,7 +272,7 @@ def main():
         second = "dmz probe"          # contains a space: also exercises the quoted-field path
         picked = random.sample(base_lines, 40)
         for line in picked:
-            added.append(_resensor(line, second))
+            copied.append(_resensor(line, second))
         print("[i] + second-sensor   40 event(s) (sensor %r, re-labelled copies)" % second)
 
     # --- every detection class the sensor emits that the base file does not contain
@@ -259,15 +288,52 @@ def main():
         if donor is None:
             print("[!] %-22s no example in the sensor run - NOT added" % label)
             continue
-        blend(donor, copies, hosts=["10.3.160.42", "10.2.120.16", "2.200.104.32", "2.200.110.232"])
+        blend(donor, copies, hosts=LAN_HOSTS)
         print("[i] + %-20s %2d event(s)" % (label, copies))
 
-    if not added:
+    if not added and not copied:
         print("[i] nothing to add - demo.js already covers every class and shape")
         return 0
 
-    merged = sorted(base_lines + added, key=lambda l: logfmt.fields(l)[FI["time"]])
-    print("[i] writing %d event(s) (%d base + %d added)" % (len(merged), len(base_lines), len(added)))
+    # Every address in an ADDED event must be private or documentation-reserved. The base file is
+    # a real capture and keeps its real addresses; anything this tool invents must not be able to
+    # name somebody's infrastructure. Publishing "cobalt strike beacon (malware)" against a Meta
+    # address is how this check came to exist.
+    safe = re.compile(r"""^(?:
+          10\.|192\.168\.|172\.(?:1[6-9]|2\d|3[01])\.|127\.      # RFC 1918 / loopback
+        | 192\.0\.2\.|198\.51\.100\.|203\.0\.113\.             # RFC 5737 documentation
+        | 2001:db8:                                                  # RFC 3849 documentation
+        | -$                                                         # absent (ICMP has no ports)
+        )""", re.X)
+    offenders = []
+    for line in added:
+        row = logfmt.fields(line)
+        if not row:
+            continue
+        # src: this is a monitored network, so it must be one of our own hosts.
+        # trail: this is the thing being called malicious, so it must never name a real address.
+        # dst is deliberately NOT checked - for a DNS detection it is the resolver being queried,
+        # which the base capture shows as 8.8.8.8, and naming a resolver accuses nobody.
+        for field in ("src_ip", "trail"):
+            value = row[FI[field]]
+            if field == "trail" and not _looks_like_address(value):
+                continue        # a domain, a URL path or a fingerprint hash - not an address
+            for one in value.split(","):
+                one = one.strip().split("]")[0].lstrip("[").split(":53")[0]
+                if one and one != "-" and not safe.match(one):
+                    offenders.append((field, one, row[FI["info"]]))
+    if offenders:
+        seen = sorted(set(offenders))
+        print("[!] refusing to write: %d added event(s) carry a real-world address" % len(offenders))
+        for field, one, info in seen[:8]:
+            print("[!]     %-8s %-40s %s" % (field, one, info))
+        print("[!] added events must use RFC 1918 / RFC 5737 / RFC 3849 addresses - a demo must "
+              "not label anybody's infrastructure as malware")
+        return 1
+
+    merged = sorted(base_lines + added + copied, key=lambda l: logfmt.fields(l)[FI["time"]])
+    print("[i] writing %d event(s) (%d base + %d added + %d re-sensored)"
+          % (len(merged), len(base_lines), len(added), len(copied)))
 
     body = " +\n    ".join("'%s\\n'" % _.replace("\\", "\\\\").replace("'", "\\'") for _ in merged)
     header = original[:original.index("function getDemoCSV()")]
