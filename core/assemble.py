@@ -167,6 +167,37 @@ def fetch(root, provenance=None):
     return retval
 
 
+# A hostname, and nothing else: no IP (a numeric last label), no URL or path (a slash), and none
+# of the regex trails, whose metacharacters simply fail to match here.
+_DOMAIN_RE = re.compile(r"^(?!-)[a-z0-9_-]{1,63}(?<!-)(?:\.(?!-)[a-z0-9_-]{1,63}(?<!-))+$")
+
+
+def malware_domains(trails):
+    """Sorted, de-duplicated domain-only view of the malware trails.
+
+    Published for the DNS-filtering integrations that consume the list without running Maltrail -
+    NextDNS, NoTracking, pfBlockerNG, MobSF and MobileAudit all fetched it from a URL that stopped
+    existing (#19620). They cannot use trails.csv: it carries IPs, URLs and regexes they would try
+    to resolve as names.
+
+    Sorting is safe here and wanted, unlike in the aggregate. The warning against sorting there is
+    about label attribution - "www.x" and "x" collapse onto one key and the last one merged wins -
+    and this output has no labels to mis-attribute.
+    """
+
+    out = set()
+    for trail, (info, _reference) in trails.items():
+        if not info.endswith("(malware)"):
+            continue
+        name = trail.strip().lower()
+        if not _DOMAIN_RE.match(name):
+            continue
+        if name.rsplit(".", 1)[-1].isdigit():        # a dotted quad, not a hostname
+            continue
+        out.add(name)
+    return sorted(out)
+
+
 def main():
     import argparse
 
@@ -174,6 +205,8 @@ def main():
     parser.add_argument("--root", required=True, help="checkout of the trails content repository")
     parser.add_argument("--out", help="write the aggregate here (default: stdout)")
     parser.add_argument("--provenance", help="also write the provenance sidecar here")
+    parser.add_argument("--domains-out", dest="domains_out",
+                        help="also write a domain-only list of the malware trails, for DNS filtering")
     options = parser.parse_args()
 
     if not os.path.isdir(options.root):
@@ -211,6 +244,14 @@ def main():
 
     import hashlib
     print("[i] %d trails, %d bytes, sha256 %s" % (len(trails), len(payload), hashlib.sha256(payload).hexdigest()), file=sys.stderr)
+
+    if options.domains_out:
+        domains = malware_domains(trails)
+        if not domains:
+            sys.exit("[!] no malware domains derived - refusing to publish an empty blocklist")
+        with open(options.domains_out, "wb") as f:
+            f.write(("\n".join(domains) + "\n").encode(UNICODE_ENCODING))
+        print("[i] %d malware domains -> %s" % (len(domains), options.domains_out), file=sys.stderr)
 
     if options.provenance:
         from core import provenance as provenance_module
