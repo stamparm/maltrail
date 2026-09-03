@@ -137,9 +137,26 @@
     malicious: _lucideTag + '<path d="m12.5 17-.5-1-.5 1h1z"/><path d="M15 22a1 1 0 0 0 1-1v-1a2 2 0 0 0 1.56-3.25 8 8 0 1 0-11.12 0A2 2 0 0 0 8 20v1a1 1 0 0 0 1 1z"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="12" r="1"/></svg>',
     suspicious: _lucideTag + '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>'
   };
+  // Feed infos that carry no trailing class marker, mapped to the class they belong to. Static
+  // trail files get "<filename> (<category>)" for free, and the heuristics all say "(suspicious)",
+  // but the feeds never adopted the convention: urlhaus has read "malware" since 2018 and openphish
+  // "phishing" since 2015. Those strings are matched by other people's tooling, so the class is
+  // inferred for the ICON here rather than by rewriting eleven-year-old output. Substrings, first
+  // match wins. severityOf() reads the info separately and is deliberately untouched by this - none
+  // of these severities move (#19621).
+  var UNMARKED_INFO_CLASS = [["malware", "malware"], ["phishing", "malicious"],
+    ["attacker", "suspicious"], ["reputation", "suspicious"], ["spammer", "suspicious"],
+    ["crawler", "suspicious"]];
   function classOf(info) {
-    var m = ("" + info).match(/\(([^)]+)\)\s*$/); if (!m) return null;
-    var c = m[1].toLowerCase().trim(); return CLASS_ICON[c] ? c : null;
+    var text = "" + info, m = text.match(/\(([^)]+)\)\s*$/);
+    if (m) {
+      var c = m[1].toLowerCase().trim();
+      if (CLASS_ICON[c]) return c;
+    }
+    var lower = text.toLowerCase();
+    for (var i = 0; i < UNMARKED_INFO_CLASS.length; i++)
+      if (lower.indexOf(UNMARKED_INFO_CLASS[i][0]) >= 0) return UNMARKED_INFO_CLASS[i][1];
+    return null;
   }
   // small "local network" icon (Lucide network) shown beside private/LAN IPs, like the legacy lan.gif
   var LAN_ICON = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>';
@@ -1938,7 +1955,7 @@
         '<td data-l="type"><span class="type lt-w" data-f="type:' + esc(t.type) + '" title="filter: type ' + esc(t.type) + '" style="background:' + tc + ';color:#fff">' + esc(t.type) + '</span></td>' +
         '<td data-l="trail">' + originGlyph(t.ref) + '<span class="trail" data-tip="' + esc(ftrail) + '">' + trailCellHtml(ftrailPH, ftrail) + '</span></td>' +
         '<td class="mono muted" data-l="info">' +
-          (function () { var ic = classOf(t.info), desc = ic ? ("" + t.info).replace(/\s*\([^)]*\)\s*$/, "") : t.info;
+          (function () { var ic = classOf(t.info), desc = ("" + t.info).replace(/\s*\((?:malware|malicious|suspicious)\)\s*$/i, "");
             return (ic ? '<span class="cls cls-' + ic + '" data-tip="' + ic + '" aria-label="' + ic + '">' + CLASS_ICON[ic] + '</span>' : '') +
                    '<span class="clip" data-tip="' + esc(t.info) + '">' + esc(desc) + '</span>'; })() + '</td>' +
         '<td class="mono muted" data-l="first seen" data-tip="first ' + hms(t.first) + ' → last ' + hms(t.last) +

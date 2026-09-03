@@ -149,6 +149,111 @@ console.log("OK");
         self.assertEqual("OK", out.strip(), out.strip())
 
 
+class TestThreatClassIcon(unittest.TestCase):
+    """Every event must show its threat class, including the ones whose info never carried it.
+
+    Static trail files get "<filename> (<category>)" from their path and the heuristics all end in
+    "(suspicious)", but the feeds never adopted the convention: openphish has read "phishing" since
+    2015 and urlhaus "malware" since 2018. Those rows rendered with no class icon at all (#19621).
+
+    The strings are matched by other people's tooling, so classOf() infers the class instead of
+    rewriting them - and SEVERITY MUST NOT MOVE as a result, which is what the second half of this
+    pins. "known attacker" in particular has to stay LOW.
+    """
+
+    # info -> the class icon it must resolve to (None = deliberately none)
+    ICON_CASES = (
+        ("malware", "malware"),                             # urlhaus, viriback, cybercrimetracker, ...
+        ("potential malware site", "malware"),
+        ("phishing", "malicious"),                          # openphish
+        ("known attacker", "suspicious"),
+        ("bad reputation", "suspicious"),
+        ("bad reputation (tor node)", "suspicious"),
+        ("spammer", "suspicious"),
+        ("crawler", "suspicious"),
+        ("cobaltstrike (malware)", "malware"),              # already marked: unchanged
+        ("gophish (malicious)", "malicious"),
+        ("potential port scanning (suspicious)", "suspicious"),
+        ("mass scanner", None),                             # not a threat class, so no icon
+    )
+
+    # info, ref -> severity that must be EXACTLY what it was before the icons existed
+    SEVERITY_UNCHANGED = (
+        ("malware", "abuse.ch", 3),
+        ("known attacker", "x", 1),                         # must stay LOW
+        ("bad reputation", "x", 1),
+        ("bad reputation (tor node)", "x", 1),
+        ("spammer", "x", 1),
+        ("crawler", "x", 1),
+        ("phishing", "x", 2),                               # unchanged, as before
+        ("potential malware site", "x", 2),
+    )
+
+    def setUp(self):
+        self.js = _read(MAIN_JS)
+        self.node = None
+        for candidate in ("node", "nodejs"):
+            if any(os.access(os.path.join(d, candidate), os.X_OK)
+                   for d in os.environ.get("PATH", "").split(os.pathsep) if d):
+                self.node = candidate
+                break
+        if not self.node:
+            self.skipTest("needs node to evaluate classOf()")
+
+    def _run(self, extra, cases):
+        import subprocess
+        icons = re.search(r"var CLASS_ICON = \{.*?\n  \};", self.js, re.S)
+        table = re.search(r"var UNMARKED_INFO_CLASS = \[.*?\];", self.js, re.S)
+        fn = re.search(r"function classOf\(info\) \{.*?\n  \}", self.js, re.S)
+        self.assertTrue(icons and table and fn,
+                        "could not find CLASS_ICON / UNMARKED_INFO_CLASS / classOf() in main.js")
+        script = ("var _lucideTag = '';\n" + icons.group(0) + "\n" + table.group(0) + "\n"
+                  + fn.group(0) + "\n" + extra % json.dumps([list(c) for c in cases]))
+        out = subprocess.check_output([self.node, "-e", script], stderr=subprocess.STDOUT)
+        return out.decode("utf8", "replace").strip()
+
+    def test_every_info_resolves_to_its_class(self):
+        out = self._run("""
+var cases = %s;
+cases.forEach(function (c) {
+  var got = classOf(c[0]);
+  if (got !== c[1]) console.log("FAIL " + JSON.stringify(c[0]) + " -> " + got);
+});
+console.log("OK");
+""", [(a, b) for a, b in self.ICON_CASES])
+        self.assertEqual("OK", out, out)
+
+    def test_a_trailing_qualifier_is_not_eaten(self):
+        # The row strips the trailing parenthetical only when it IS the class. Stripping whichever
+        # parenthetical happened to be last would render "bad reputation (tor node)" as
+        # "bad reputation" and lose which kind of node it was.
+        row = re.search(r"var ic = classOf\(t\.info\), desc = (.*?);", self.js)
+        self.assertTrue(row, "could not find the info cell in main.js")
+        self.assertIn("malware|malicious|suspicious", row.group(1),
+                      "the info cell strips any trailing parenthetical again, so a qualifier like "
+                      "'bad reputation (tor node)' loses it")
+
+    def test_no_severity_moved(self):
+        keywords = []
+        for name in ("HEURISTIC_MEDIUM_KEYWORDS", "INFO_SEVERITY_KEYWORDS"):
+            found = re.search(r"var %s = \[.*?\];" % name, self.js, re.S)
+            self.assertTrue(found, "could not find %s" % name)
+            keywords.append(found.group(0))
+        fn = re.search(r"function severityOf\(info, ref\) \{.*?\n  \}", self.js, re.S)
+        import subprocess
+        script = ("\n".join(keywords) + "\n" + fn.group(0) + """
+var cases = %s;
+cases.forEach(function (c) {
+  var got = severityOf(c[0], c[1]);
+  if (got !== c[2]) console.log("FAIL " + JSON.stringify(c) + " -> " + got);
+});
+console.log("OK");
+""" % json.dumps([list(c) for c in self.SEVERITY_UNCHANGED]))
+        out = subprocess.check_output([self.node, "-e", script], stderr=subprocess.STDOUT)
+        self.assertEqual("OK", out.decode("utf8", "replace").strip(),
+                         out.decode("utf8", "replace").strip())
+
+
 class TestParseEvents(unittest.TestCase):
     """main.js must read an event log in either format (issue #19130, LOCAL_LOG_FORMAT).
 
