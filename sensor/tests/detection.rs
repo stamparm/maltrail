@@ -515,6 +515,27 @@ fn http_host_plus_path_trail() {
     assert_eq!(h.trails(), vec!["evil-url.example/bad/path"]);
 }
 
+// #19622: an architecture-tagged path under a bare-IP Host is an IoT dropper URL - but only when
+// one of OUR hosts fetched it. The guard used to look at the destination alone, so somebody else's
+// traffic passing the sensor was filed as our infection, at HIGH severity.
+#[test]
+fn iot_dropper_fetched_by_our_host_is_reported() {
+    let mut h = trails(&[]);
+    h.feed_ip(&http_packet(&http_get("/mirai.x86", Some("198.51.100.99"), "curl/8"), "198.51.100.99", 50000), 1);
+    let hits: Vec<_> = h.events().into_iter().filter(|e| e.info.contains("iot-malware download")).collect();
+    assert_eq!(hits.len(), 1, "our own host fetching a dropper must be reported: {hits:?}");
+}
+
+#[test]
+fn iot_dropper_between_two_outsiders_is_silent() {
+    let mut h = trails(&[]);
+    // neither endpoint is ours: an external client fetching from an external server
+    let payload = http_get("/mirai.x86", Some("198.51.100.99"), "curl/8");
+    h.feed_ip(&ipv4(6, "203.0.113.7", "198.51.100.99", &tcp(50000, 80, 0x18, &payload)), 1);
+    let hits: Vec<_> = h.events().into_iter().filter(|e| e.info.contains("iot-malware download")).collect();
+    assert!(hits.is_empty(), "somebody else's traffic reported as our infection: {hits:?}");
+}
+
 #[test]
 fn http_clean_request_is_silent() {
     let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);

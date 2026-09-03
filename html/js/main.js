@@ -93,6 +93,10 @@
   // Severity — the legacy Maltrail ladder (main.js), with one deliberate addition below for the sensor's
   // own heuristics. Order matters; default is MEDIUM. Feed trails keep the legacy verdict, so
   // "ipinfo (suspicious)" is still MEDIUM (an earlier v2 demoted a whole invented list of them to LOW).
+  // Heuristics that earn MEDIUM instead of the LOW every other sensor guess gets. Substrings, so
+  // "potential iot-malware download (suspicious)" matches on "malware" and "potential infection
+  // (suspicious)" on "infection". Keep this short: everything here is still only a guess.
+  var HEURISTIC_MEDIUM_KEYWORDS = ["malware", "ransomware", "infection"];
   var INFO_SEVERITY_KEYWORDS = [["malware", 3], ["adversary", 3], ["ransomware", 3],
     ["reputation", 1], ["attacker", 1], ["spammer", 1], ["compromised", 1], ["crawler", 1], ["scanning", 1]];
   function severityOf(info, ref) {
@@ -109,7 +113,17 @@
     // above all) out of the same bucket as a C2 domain. Silence one entirely with
     // DISABLED_HEURISTICS / IGNORE_EVENTS_REGEX. Feed trails keep their legacy severity, and
     // "(malware)" heuristics (sinkhole response, sinkholed by ...) are unaffected.
-    if (ref.indexOf("(heuristic)") >= 0 && /\(suspicious\)\s*$/.test(info)) return 1;
+    //
+    // LOW is the default because that is where a noisy guess belongs. A few heuristics name
+    // something more concrete than "this looks odd" and rise to MEDIUM: an architecture-tagged
+    // dropper URL, or one host spraying 445 across the network. They stop at MEDIUM - a guess is
+    // never level with a feed hit. Before that cap the "malware" in "potential iot-malware
+    // download" scored it HIGH, the same rank as a proven C2 callback (#19622).
+    if (ref.indexOf("(heuristic)") >= 0 && /\(suspicious\)\s*$/.test(info)) {
+      for (var h = 0; h < HEURISTIC_MEDIUM_KEYWORDS.length; h++)
+        if (info.indexOf(HEURISTIC_MEDIUM_KEYWORDS[h]) >= 0) return 2;
+      return 1;
+    }
     for (var i = 0; i < INFO_SEVERITY_KEYWORDS.length; i++)
       if (info.indexOf(INFO_SEVERITY_KEYWORDS[i][0]) >= 0) return INFO_SEVERITY_KEYWORDS[i][1];
     return 2;   // default MEDIUM (legacy)

@@ -532,7 +532,7 @@ fn heuristics_sweep(st: &mut WorkerState, sec: u64, usec: u32) {
                 PROTO::TCP,
                 TRAIL::IP,
                 Field::Text(trail),
-                "potential port scanning",
+                "potential port scanning (suspicious)",
                 "(heuristic)",
             );
             st.scan.mark_port_alerted(src, dst);
@@ -557,7 +557,7 @@ fn heuristics_sweep(st: &mut WorkerState, sec: u64, usec: u32) {
                 PROTO::TCP,
                 TRAIL::PORT,
                 Field::Int(dst_port as i64),
-                "potential infection",
+                "potential infection (suspicious)",
                 "(heuristic)",
             );
             st.scan.mark_infection_alerted(src, dst_port);
@@ -580,7 +580,7 @@ fn heuristics_sweep(st: &mut WorkerState, sec: u64, usec: u32) {
                 PROTO::TCP,
                 TRAIL::PATH,
                 Field::Text("*".to_string()),
-                "potential web scanning",
+                "potential web scanning (suspicious)",
                 "(heuristic)",
             );
             st.scan.mark_path_alerted(src, dst);
@@ -602,7 +602,7 @@ fn heuristics_sweep(st: &mut WorkerState, sec: u64, usec: u32) {
                 PROTO::UDP,
                 TRAIL::IP,
                 Field::Text(trail),
-                "potential udp scanning",
+                "potential udp scanning (suspicious)",
                 "(heuristic)",
             );
             st.scan.mark_udp_alerted(src, dst);
@@ -913,7 +913,14 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
                 && st.statics.suspicious_direct_ip_url.is_match(&format!("{host}{path}"))
             {
                 let prefix = st.local_prefix();
-                if !dst_rendered.starts_with(&prefix) {
+                // Only OUR host fetching the dropper means anything. Checking the destination
+                // alone let any transit or inbound request carrying an architecture-tagged path
+                // raise the event - somebody else's scan of somebody else, filed as our
+                // infection. is_local() covers an RFC 1918 network; the learned prefix covers a
+                // site that numbers its own hosts publicly (#19622).
+                let src_addr = ep.src.render();
+                let from_us = ep.src.is_local() || src_addr.as_str().starts_with(&prefix);
+                if from_us && !dst_rendered.starts_with(&prefix) {
                     let trail = format!("({host}){path}");
                     emit_ep(
                         st,

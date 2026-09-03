@@ -83,6 +83,10 @@ class TestSeverity(unittest.TestCase):
     The sensor's own '(suspicious)' verdicts (long domain above all, and the HTTP request
     signatures) are guesses nothing corroborated, so they rank LOW - while everything a feed
     listed keeps the legacy Maltrail severity it has always had.
+
+    A guess never reaches HIGH. Two of them are concrete enough for MEDIUM - an
+    architecture-tagged dropper URL, and one host spraying 445 across the network - but the rest
+    stay at LOW, which is where noisy output belongs.
     """
 
     # info, ref, expected severity (3 high / 2 medium / 1 low)
@@ -92,7 +96,16 @@ class TestSeverity(unittest.TestCase):
         ("potential sql injection (suspicious)", "(heuristic)", 1),
         ("excessive no such domain (suspicious)", "(heuristic)", 1),
         ("sinkhole response (malware)", "(heuristic)", 3),        # a heuristic, but a confirmed one
-        ("potential infection", "(heuristic)", 2),                # no class marker: legacy default
+        # #19622: the "malware" in this made it HIGH, level with a proven C2 callback. It is a
+        # guess about a URL shape, so it is capped at MEDIUM - and must not fall to LOW either.
+        ("potential iot-malware download (suspicious)", "(heuristic)", 2),
+        # #19621 gave the counting heuristics the class marker the others always had. Severity
+        # must not move because of that: an infection sweep stays MEDIUM, scanning stays LOW.
+        ("potential infection (suspicious)", "(heuristic)", 2),
+        ("potential infection", "(heuristic)", 2),                # pre-#19621 logs still rank the same
+        ("potential port scanning (suspicious)", "(heuristic)", 1),
+        ("potential web scanning (suspicious)", "(heuristic)", 1),
+        ("potential udp scanning (suspicious)", "(heuristic)", 1),
         ("potential port scanning", "(heuristic)", 1),
         ("ipinfo (suspicious)", "(static)", 2),                   # a feed said so: legacy MEDIUM
         ("pua (suspicious)", "(static)", 2),
@@ -114,10 +127,16 @@ class TestSeverity(unittest.TestCase):
                 break
         if not node:
             raise unittest.SkipTest("needs node to evaluate severityOf()")
-        keywords = re.search(r"var INFO_SEVERITY_KEYWORDS = \[.*?\];", self.js, re.S)
+        # every table severityOf() reads has to come across, or node throws a ReferenceError and
+        # the failure looks like a severity bug instead of a missing declaration
+        tables = []
+        for name in ("HEURISTIC_MEDIUM_KEYWORDS", "INFO_SEVERITY_KEYWORDS"):
+            found = re.search(r"var %s = \[.*?\];" % name, self.js, re.S)
+            self.assertTrue(found, "could not find %s in main.js" % name)
+            tables.append(found.group(0))
         fn = re.search(r"function severityOf\(info, ref\) \{.*?\n  \}", self.js, re.S)
-        self.assertTrue(keywords and fn, "could not find severityOf() in main.js")
-        script = keywords.group(0) + "\n" + fn.group(0) + """
+        self.assertTrue(fn, "could not find severityOf() in main.js")
+        script = "\n".join(tables) + "\n" + fn.group(0) + """
 var cases = %s;
 cases.forEach(function (c) {
   var got = severityOf(c[0], c[1]);
