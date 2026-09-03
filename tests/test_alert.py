@@ -34,8 +34,24 @@ class SeverityTest(unittest.TestCase):
 
     def test_named_malware_is_high(self):
         for info in ("apt darkhotel (malware)", "interlock (malware)", "asyncrat (malware)",
-                     "ransomware (malware)", "iot-malware download"):
+                     "ransomware (malware)"):
             self.assertEqual(severity_of(info), "high", info)
+
+    def test_a_sensor_guess_is_not_a_page(self):
+        # The dashboard has ranked the sensor's own verdicts below anything a feed listed since
+        # 307e0e8, and this regex could not express that until it was given the reference: "long
+        # domain (suspicious)" showed LOW and alerted MEDIUM. The noisiest heuristic in the
+        # product must not page anybody (#19621, #19622).
+        for info in ("long domain (suspicious)", "user agent (suspicious)",
+                     "excessive no such domain (suspicious)", "potential dns tunneling (suspicious)",
+                     "potential sql injection (suspicious)", "parked site (suspicious)"):
+            self.assertEqual(severity_of(info, "(heuristic)"), "low", info)
+
+    def test_the_same_class_from_a_feed_is_not_demoted(self):
+        # ... and the reverse: a feed saying "(suspicious)" keeps the legacy MEDIUM. Demoting these
+        # too would have been the easy way to make the two agree, and the wrong one.
+        for info in ("ipinfo (suspicious)", "pua (suspicious)", "crypto mining (suspicious)"):
+            self.assertEqual(severity_of(info, "(static)"), "medium", info)
 
     def test_inbound_noise_is_low(self):
         # the whole point: this is what FAIL2BAN_REGEX wants and an operator does not
@@ -48,6 +64,18 @@ class SeverityTest(unittest.TestCase):
         for info in ("ek clearfake (malicious)", "browser locker (malicious)", "magentocore (malicious)",
                      "potential malware site", "malware distribution"):
             self.assertEqual(severity_of(info), "medium", info)
+
+    def test_the_iot_dropper_is_medium_not_high(self):
+        # It contains "malware", which made it HIGH - level with a proven C2 callback - for a URL
+        # that merely looks like an architecture-tagged dropper (#19622).
+        for ref in ("(heuristic)", ""):
+            self.assertEqual(severity_of("potential iot-malware download (suspicious)", ref),
+                             "medium", ref)
+
+    def test_an_infection_sweep_stays_medium(self):
+        # One host spraying 445 across the network is not noise, so it must not fall to LOW with
+        # the rest of the heuristics.
+        self.assertEqual(severity_of("potential infection (suspicious)", "(heuristic)"), "medium")
 
     def test_the_default_threshold_takes_high_only(self):
         config.ALERT_SEVERITY = "high"

@@ -304,7 +304,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     # protocol other deployments parse, and the console line is meant to be read
                     # by a person, so both keep the text form regardless.
                     if (config.LOCAL_LOG_FORMAT or "").strip().lower() in ("json", "ndjson"):
-                        local_line = "%s\n" % event_json(event_tuple, severity_of(info), config.SENSOR_NAME, localtime)
+                        local_line = "%s\n" % event_json(event_tuple, severity_of(info, reference), config.SENSOR_NAME, localtime)
                     else:
                         local_line = event
                     handle = get_event_log_handle(sec)
@@ -315,7 +315,7 @@ def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False)
                     _send_datagram(config.LOG_SERVER, mts_sign(getattr(config, "LOG_SERVER_SECRET", None), _payload))
 
                 if config.SYSLOG_SERVER or config.LOGSTASH_SERVER:
-                    severity = severity_of(info)
+                    severity = severity_of(info, reference)
 
                     if config.SYSLOG_SERVER:
                         extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, _cef_escape(trail, True), _cef_escape(reference, True))
@@ -371,8 +371,16 @@ def event_json(event_tuple, severity, sensor, localtime=None):
     ))
     return json.dumps(OrderedDict(fields))
 
-def severity_of(info):
-    """"low" / "medium" / "high" for an event's info field, per REMOTE_SEVERITY_REGEX.
+def severity_of(info, reference=""):
+    """"low" / "medium" / "high" for an event, per REMOTE_SEVERITY_REGEX.
+
+    Matched against "<info> <reference>", not the info alone. Whether a verdict was CORROBORATED
+    lives in the reference - "(heuristic)" is the sensor's own guess, "(static)" is a feed hit -
+    and the dashboard has ranked guesses below feed hits since 307e0e8. With only the info to look
+    at, that rule was inexpressible here, so the two disagreed on ten of the shipped verdicts:
+    "long domain (suspicious)" read LOW on the dashboard and alerted as MEDIUM. Appending the
+    reference cannot break an existing custom regex - re.search is unanchored, so a longer subject
+    only ever matches more.
 
     Shared by the SYSLOG_SERVER / LOGSTASH_SERVER senders above and by core/alert.py, so an operator
     tunes one regex and every outbound channel agrees. Unmatched is "medium": the shipped regex names
@@ -387,7 +395,7 @@ def severity_of(info):
     retval = "medium"
 
     if config.REMOTE_SEVERITY_REGEX:
-        match = re.search(config.REMOTE_SEVERITY_REGEX, info or "")
+        match = re.search(config.REMOTE_SEVERITY_REGEX, "%s %s" % (info or "", reference or ""))
         if match:
             groups = match.groupdict()   # NOTE: groupdict().get() (not match.group(name)) - a custom REMOTE_SEVERITY_REGEX that omits a low/medium/high group would otherwise raise IndexError ("no such group") per event, escaping log_event's handler and breaking syslog forwarding
             for _ in ("low", "medium", "high"):

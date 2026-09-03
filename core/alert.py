@@ -66,7 +66,7 @@ def parse_event_line(line):
     # A JSON line carries the severity the writer computed. Prefer it: recomputing here would use
     # THIS process's REMOTE_SEVERITY_REGEX, which is not necessarily the one the event was rated
     # with, and an alert threshold is exactly where that difference would show up.
-    event["severity"] = logfmt.severity_of_line(line) or severity_of(event["info"])
+    event["severity"] = logfmt.severity_of_line(line) or severity_of(event["info"], event.get("reference", ""))
     # A time that does not start with a digit already falls back to 0; one that starts with a
     # digit but does not parse ("2026-13-45 ...") used to raise ValueError instead, out of a
     # function whose contract is "-> dict, or None when it is not one". Same fallback for both.

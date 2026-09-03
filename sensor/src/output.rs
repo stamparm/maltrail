@@ -269,7 +269,7 @@ impl EventSink {
             // without which the file would lose the microseconds every text line records. Only
             // the FILE changes; every other sink below keeps its own format.
             if self.cfg.local_log_json {
-                let severity = self.severity_for(&event.info);
+                let severity = self.severity_for(&event.info, &event.reference);
                 let json = local_json_line(event, severity, &self.cfg.sensor_name, localtime.as_str());
                 self.write_event_log(event.sec, &json);
             } else {
@@ -289,7 +289,7 @@ impl EventSink {
         }
 
         if !self.cfg.syslog_server.is_empty() || !self.cfg.logstash_server.is_empty() {
-            let severity = self.severity_for(&event.info);
+            let severity = self.severity_for(&event.info, &event.reference);
             // Rendered once and sent to each collector, rather than re-rendered per endpoint.
             if !self.cfg.syslog_server.is_empty() {
                 let payload = self.cef_line(event, severity);
@@ -371,11 +371,14 @@ impl EventSink {
         }
     }
 
-    fn severity_for(&self, info: &str) -> Severity {
+    /// Matched against "<info> <reference>". Whether a verdict was corroborated lives in the
+    /// reference, and REMOTE_SEVERITY_REGEX has to see it to rank a heuristic guess below a feed
+    /// hit the way the dashboard does - `core/log.py:severity_of()` does the same.
+    fn severity_for(&self, info: &str, reference: &str) -> Severity {
         let Some(re) = &self.cfg.severity_regex else {
             return Severity::Medium;
         };
-        match re.captures(info) {
+        match re.captures(&format!("{info} {reference}")) {
             Ok(Some(caps)) => {
                 for name in ["low", "medium", "high"] {
                     if caps.name(name).is_some() {
