@@ -17,6 +17,7 @@ this file exists to make the fourth one impossible to forget.
 import json
 import os
 import re
+import sys
 import unittest
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -1022,6 +1023,112 @@ class TestTrailTypesReachTheTable(unittest.TestCase):
             for junk in ("10.0.0.5", "dns", "", "UDP DNS", "evil.com", '"quoted"'):
                 self.assertIsNone(rx.match(junk),
                                   "/^[%s]+$/ accepts %r, which is not a trail type" % (cls, junk))
+
+
+class TestDemoAddressesAreNotRealPeoples(unittest.TestCase):
+    """html/js/demo.js is published on the public web, so its addresses must name nobody.
+
+    The demo shipped `2a03:2880:f12d:83:face:b00c::1` - Meta Platforms Ireland - labelled
+    "cobalt strike beacon (malware)" 22 times, and a live Tor exit node labelled "wannacry".
+    Separately, the capture it was built from was taken ISP-side, so the "monitored" hosts were
+    public 2.200.x.x subscribers: 64% of events showed a public SOURCE, and Google's own addresses
+    appeared as hosts inside the network being monitored.
+
+    Both are checkable without a geo database, because every address here should be one of three
+    things: RFC 1918 for our own hosts, RFC 5737 / RFC 3849 documentation space for the external
+    party, or a well-known public resolver.
+    """
+
+    RESOLVERS = ("8.8.8.8", "8.8.4.4", "9.9.9.9", "1.1.1.1", "1.0.0.1")
+
+    @classmethod
+    def setUpClass(cls):
+        sys.path.insert(0, REPO)
+        from core import logfmt
+        cls.FI = dict((name, i) for i, name in enumerate(logfmt.FIELDS))
+        path = os.path.join(REPO, "html", "js", "demo.js")
+        if not os.path.isfile(path):
+            raise unittest.SkipTest("demo.js is not present")
+        with open(path, encoding="utf-8") as f:
+            text = f.read()
+        cls.rows = []
+        for chunk in re.findall(r"'((?:[^'\\]|\\.)*)\\n'", text):
+            line = chunk.replace("\\'", "'").replace('\\"', '"').replace("\\\\", "\\")
+            fields = logfmt.fields(line)
+            if fields:
+                cls.rows.append(fields)
+        # A skipped or empty-corpus assertion proves nothing, so insist the fixture really parsed.
+        assert len(cls.rows) > 500, "only %d event(s) parsed out of demo.js" % len(cls.rows)
+
+    @staticmethod
+    def _is_private(a):
+        return bool(re.match(r"^(?:10\.|192\.168\.|172\.(?:1[6-9]|2\d|3[01])\.|127\.|169\.254\.)", a)
+                    or re.match(r"^(?:fe80:|f[cd]|::1$)", a, re.I)
+                    or re.match(r"^2001:db8:", a, re.I))
+
+    @staticmethod
+    def _is_doc(a):
+        return bool(re.match(r"^(?:192\.0\.2\.|198\.51\.100\.|203\.0\.113\.)", a)
+                    or re.match(r"^2001:db8:", a, re.I))
+
+    @staticmethod
+    def _addresses(value):
+        for part in value.split(","):
+            part = part.strip()
+            if re.match(r"^\d{1,3}(?:\.\d{1,3}){3}$", part):
+                yield part
+            elif ":" in part and re.match(r"^[0-9a-f:]+$", part, re.I):
+                yield part
+
+    def _our_side(self, row):
+        """Field holding the MONITORED host - core/geo.py:event_country owns this decision."""
+        FI = self.FI
+        if row[FI["src_port"]] == "53":                                 # a resolver answering us
+            return FI["dst_ip"]
+        if row[FI["type"]] in ("PATH", "PORT"):                         # inbound heuristics
+            return FI["dst_ip"]
+        if row[FI["type"]] == "IP" and row[FI["trail"]] == row[FI["src_ip"]]:   # a scan, trail IS the source
+            return FI["dst_ip"]
+        return FI["src_ip"]                                             # outbound: our host is the source
+
+    def test_our_own_hosts_are_never_public(self):
+        offenders = []
+        for row in self.rows:
+            for address in self._addresses(row[self._our_side(row)]):
+                if not self._is_private(address):
+                    offenders.append((address, row[self.FI["info"]]))
+        self.assertEqual(offenders[:6], [],
+                         "%d event(s) in demo.js put a public address in the MONITORED host's "
+                         "position, so the demo reads as though we monitored somebody else's "
+                         "network rather than a LAN: %s" % (len(offenders), offenders[:6]))
+
+    def test_no_address_outside_private_documentation_or_a_resolver(self):
+        offenders = {}
+        for row in self.rows:
+            for field in ("src_ip", "dst_ip", "trail"):
+                for address in self._addresses(row[self.FI[field]]):
+                    if self._is_private(address) or self._is_doc(address) or address in self.RESOLVERS:
+                        continue
+                    offenders.setdefault(address, row[self.FI["info"]])
+        self.assertEqual(offenders, {},
+                         "demo.js names %d real-world address(es) that the public demo then "
+                         "labels malicious: %s. Use RFC 5737 / RFC 3849 documentation space - it "
+                         "exists so a demo cannot accuse anyone."
+                         % (len(offenders), sorted(offenders.items())[:6]))
+
+    def test_the_map_does_not_geolocate_only_the_source(self):
+        # demoGeo() used to take the first public SOURCE, which is right only for an inbound
+        # attack. With the monitored hosts correctly private it maps nothing at all, so the world
+        # map in the published demo renders blank.
+        with open(MAIN_JS, encoding="utf-8") as f:
+            js = f.read()
+        body = js[js.index("function demoGeo()"):]
+        body = body[:body.index("\n  }")]
+        self.assertIn("dstS", body,
+                      "demoGeo() no longer looks at the destination set. It must mirror "
+                      "core/geo.py:event_country and plot the EXTERNAL party, which for an "
+                      "outbound detection is the destination - geolocating only sources maps "
+                      "nothing once the monitored hosts are private.")
 
 
 if __name__ == "__main__":

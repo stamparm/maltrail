@@ -85,6 +85,23 @@ LAN_HOSTS = ["10.3.160.42", "10.2.120.16", "10.43.192.103", "10.124.72.51",
              "10.128.8.51", "10.124.72.52", "10.128.3.52", "10.128.3.51"]
 
 
+def _our_side(row):
+    """Index of the field holding the monitored host - mirrors core/geo.py:event_country.
+
+    Most detections are outbound and our host is the source. Three cases invert that: a resolver
+    answering us (src port 53), the inbound heuristics (PATH web scanning, PORT infection), and a
+    scan whose trail IS the source. There, our host is the destination and the source is theirs.
+    """
+
+    if row[FI["src_port"]] == "53":
+        return FI["dst_ip"]
+    if row[FI["type"]] in ("PATH", "PORT"):
+        return FI["dst_ip"]
+    if row[FI["type"]] == "IP" and row[FI["trail"]] == row[FI["src_ip"]]:
+        return FI["dst_ip"]
+    return FI["src_ip"]
+
+
 def _looks_like_address(value):
     """Is this trail an IP address rather than a domain, path or fingerprint?
 
@@ -240,8 +257,13 @@ def main():
             out = _retime(line, day, hh, mm, ss, random.randint(0, 999999))
             out = _resensor(out, sensor)
             if hosts:
+                # Which end is OURS depends on the direction, exactly as core/geo.py:event_country
+                # decides which end to place on the map. Rewriting the source unconditionally put a
+                # LAN host in the attacker's seat for the inbound heuristics - and gave each event
+                # of a web scan a DIFFERENT scanner, which is not what the heuristic even detects.
                 row = logfmt.fields(out)
-                out = out.replace(" %s " % row[FI["src_ip"]], " %s " % random.choice(hosts), 1)
+                ours = _our_side(row)
+                out = out.replace(" %s " % row[ours], " %s " % random.choice(hosts), 1)
             for fixture, real in RELABEL:
                 out = out.replace(fixture, real)
             added.append(out)

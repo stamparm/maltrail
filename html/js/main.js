@@ -2534,10 +2534,21 @@
   function demoGeo() {
     // build the showcase map from the demo events, geolocated with the SAME fabrication as the flags, so the map's
     // countries line up with the table's flags. a demo "home" is set so the arcs are visible in the public demo.
+    //
+    // Which end to plot is core/geo.py:event_country's decision, and this mirrors it rather than inventing a
+    // second rule. Plotting the SOURCE - what this did before - is only right for an inbound attack; it appeared
+    // to work merely because the demo capture was taken ISP-side, where the monitored hosts were themselves
+    // public. On any normal capture every source is private and the map came out empty.
     var counts = {}, mapped = 0, unmapped = 0, d = state.agg;
+    function firstPub(list) { for (var k = 0; k < list.length; k++) { if (isPubIP(list[k])) return list[k]; } return ""; }
     if (d && d.threats) for (var i = 0; i < d.threats.length; i++) {
-      var t = d.threats[i], ss = setList(t.srcS), cc = "";
-      for (var k = 0; k < ss.length; k++) { if (isPubIP(ss[k])) { cc = demoCC(ss[k]); break; } }
+      var t = d.threats[i], ip = "";
+      var m = /^(\d{1,3}(?:\.\d{1,3}){3})(?:[:/]|$)/.exec(normTrail(t.trail) || "");
+      if (m && isPubIP(m[1])) ip = m[1];                              // 1. the IOC itself is the malicious endpoint
+      else if (t.type === "DNS") ip = "";                             // 2. the dst is only the resolver -> honestly unmapped
+      else if (t.type === "PATH" || t.type === "PORT") ip = firstPub(setList(t.srcS)) || firstPub(setList(t.dstS));   // 3. inbound
+      else ip = firstPub(setList(t.dstS)) || firstPub(setList(t.srcS));                                               // 4. outbound
+      var cc = ip ? demoCC(ip) : "";
       if (cc) { counts[cc] = (counts[cc] || 0) + t.count; mapped += t.count; } else { unmapped += t.count; }
     }
     return { counts: counts, mapped: mapped, unmapped: unmapped, home: { lat: 45.815, lon: 15.9819 } };
