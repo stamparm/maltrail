@@ -1181,7 +1181,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     # getattr(self, "_<name>") for ANY token, so a "<!login!>"/"<!events!>"-style token reaching
                     # `content` (a reflected path, an injected IP_ALIASES value, ...) would invoke a request handler
                     # that needs `params` -> uncaught TypeError. Tokens are a fixed template vocabulary, not a method dispatch.
-                    if name.lower() not in ("version", "logo", "assetver", "tzoffset", "statics"):
+                    if name.lower() not in ("version", "logo", "assetver", "tzoffset", "statics", "severity"):
                         continue
                     _ = getattr(self, "_%s" % name.lower(), None)
                     if _:
@@ -1344,6 +1344,24 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 return str(latest or int(time.time()))
             except Exception:
                 return self._version()
+
+        def _severity(self):
+            """REMOTE_SEVERITY_REGEX, for the dashboard to rank with.
+
+            Severity is a policy, not a fact: it depends on this regex, which an operator tunes.
+            Keeping a second copy of that policy in main.js is what let the two drift twice - the
+            dashboard called "long domain (suspicious)" LOW while alerting called it MEDIUM. The
+            page gets the regex itself, so there is one definition and the dashboard cannot
+            disagree with the alert that fired.
+
+            HTML-escaped because it lands in an attribute value. The shipped regex has no quote in
+            it, but a tuned one may, and an unescaped quote would end the attribute and mangle the
+            page. The frontend translates the Python named-group syntax; see main.js:severityOf.
+            """
+
+            value = config.REMOTE_SEVERITY_REGEX or ""
+            return (value.replace("&", "&amp;").replace("<", "&lt;")
+                         .replace(">", "&gt;").replace('"', "&quot;"))
 
         def _tzoffset(self):
             # minutes EAST of UTC for the server's local time. Maltrail writes log timestamps in sensor-local time,

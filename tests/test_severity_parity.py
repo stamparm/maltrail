@@ -104,14 +104,9 @@ class SeverityParity(unittest.TestCase):
             self.skipTest("needs node to evaluate severityOf()")
         with io.open(MAIN_JS, encoding="utf8") as handle:
             js = handle.read()
-        parts = []
-        for name in ("HEURISTIC_MEDIUM_KEYWORDS", "INFO_SEVERITY_KEYWORDS"):
-            found = re.search(r"var %s = \[.*?\];" % name, js, re.S)
-            self.assertTrue(found, "could not find %s in main.js" % name)
-            parts.append(found.group(0))
-        fn = re.search(r"function severityOf\(info, ref\) \{.*?\n  \}", js, re.S)
-        self.assertTrue(fn, "could not find severityOf() in main.js")
-        script = "\n".join(parts) + "\n" + fn.group(0) + """
+        found = re.search(r"  // Severity is a POLICY.*?\n  \}\n", js, re.S)
+        self.assertTrue(found, "could not find severityOf() and its policy block in main.js")
+        script = found.group(0) + """
 var NAMES = ["", "low", "medium", "high"];
 var out = [];
 %s.forEach(function (c) { out.push(NAMES[severityOf(c[0], c[1])]); });
@@ -146,6 +141,24 @@ console.log(JSON.stringify(out));
         self.assertEqual(rows, [],
                          "%d of the sensor's own verdicts are ranked differently by the dashboard "
                          "and by REMOTE_SEVERITY_REGEX:\n  %s" % (len(rows), "\n  ".join(rows)))
+
+    def test_the_fallback_matches_the_shipped_regex(self):
+        """main.js carries the shipped regex for when no server substituted one.
+
+        That is a second copy, which is the thing this whole change is trying to stop existing. It
+        is unavoidable - a dashboard opened from disk, or the static demo, has no server to ask -
+        so it is guarded instead: if maltrail.conf's regex is tuned and this is not, a file:// or
+        demo dashboard ranks by yesterday's policy and nothing says so.
+        """
+        with io.open(MAIN_JS, encoding="utf8") as handle:
+            js = handle.read()
+        found = re.search(r'var SEVERITY_FALLBACK = "(.*?)";\n', js)
+        self.assertTrue(found, "SEVERITY_FALLBACK is gone from main.js")
+        fallback = json.loads('"%s"' % found.group(1))
+        self.assertEqual(fallback, config.REMOTE_SEVERITY_REGEX,
+                         "main.js's SEVERITY_FALLBACK has drifted from maltrail.conf's "
+                         "REMOTE_SEVERITY_REGEX:\n  conf:     %s\n  fallback: %s"
+                         % (config.REMOTE_SEVERITY_REGEX, fallback))
 
     def test_a_guess_never_outranks_a_feed_hit(self):
         # The property underneath both rules: nothing the sensor concluded on its own reaches the

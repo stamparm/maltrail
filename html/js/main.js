@@ -93,40 +93,44 @@
   // Severity — the legacy Maltrail ladder (main.js), with one deliberate addition below for the sensor's
   // own heuristics. Order matters; default is MEDIUM. Feed trails keep the legacy verdict, so
   // "ipinfo (suspicious)" is still MEDIUM (an earlier v2 demoted a whole invented list of them to LOW).
-  // Heuristics that earn MEDIUM instead of the LOW every other sensor guess gets. Substrings, so
-  // "potential iot-malware download (suspicious)" matches on "malware" and "potential infection
-  // (suspicious)" on "infection". Keep this short: everything here is still only a guess.
-  var HEURISTIC_MEDIUM_KEYWORDS = ["malware", "ransomware", "infection"];
-  var INFO_SEVERITY_KEYWORDS = [["malware", 3], ["adversary", 3], ["ransomware", 3],
-    ["reputation", 1], ["attacker", 1], ["spammer", 1], ["compromised", 1], ["crawler", 1], ["scanning", 1]];
-  function severityOf(info, ref) {
-    info = (info || "").toLowerCase(); ref = (ref || "").toLowerCase();
-    if (ref.indexOf("(custom)") >= 0) return 3;
-    if (ref.indexOf("(remote custom)") >= 0) return 3;
-    if (info.indexOf("potential malware site") >= 0) return 2;
-    if (ref.indexOf("malwaredomainlist") >= 0) return 3;
-    if (info.indexOf("malware distribution") >= 0) return 2;
-    if (info.indexOf("mass scanner") >= 0) return 1;
-    // A "(suspicious)" verdict the SENSOR reached on its own — long domain, beaconing, DGA/NXDOMAIN,
-    // the HTTP request signatures — is a "look here", not a hit: nothing corroborated it. Those rank
-    // below anything a feed actually listed, which is what keeps the noisy heuristics (long domain
-    // above all) out of the same bucket as a C2 domain. Silence one entirely with
-    // DISABLED_HEURISTICS / IGNORE_EVENTS_REGEX. Feed trails keep their legacy severity, and
-    // "(malware)" heuristics (sinkhole response, sinkholed by ...) are unaffected.
-    //
-    // LOW is the default because that is where a noisy guess belongs. A few heuristics name
-    // something more concrete than "this looks odd" and rise to MEDIUM: an architecture-tagged
-    // dropper URL, or one host spraying 445 across the network. They stop at MEDIUM - a guess is
-    // never level with a feed hit. Before that cap the "malware" in "potential iot-malware
-    // download" scored it HIGH, the same rank as a proven C2 callback (#19622).
-    if (ref.indexOf("(heuristic)") >= 0 && /\(suspicious\)\s*$/.test(info)) {
-      for (var h = 0; h < HEURISTIC_MEDIUM_KEYWORDS.length; h++)
-        if (info.indexOf(HEURISTIC_MEDIUM_KEYWORDS[h]) >= 0) return 2;
-      return 1;
+  // Severity is a POLICY, not a property of the event: it is whatever maltrail.conf's
+  // REMOTE_SEVERITY_REGEX says, and an operator tunes that. This used to be a second
+  // implementation of the same policy - a keyword table plus a handful of special cases - and the
+  // two drifted twice. The dashboard ranked "long domain (suspicious)" LOW while the alert that
+  // fired on it said MEDIUM, and after the IoT-dropper fix two green tests asserted opposite
+  // severities for one event. So the page is served the regex itself (<meta name="mt-severity">,
+  // core/httpd.py:_severity) and applies it, exactly as core/log.py:severity_of() and
+  // sensor/src/output.rs:severity_for() do. One definition, three appliers.
+  //
+  // Matched against "<info> <reference>": whether a verdict was corroborated lives in the
+  // reference - "(heuristic)" is the sensor's own guess, "(static)" is a feed hit - and the rule
+  // that a guess ranks below a feed hit cannot be written without it.
+  var SEVERITY_FALLBACK = "(?P<high>(remote )?custom\\)|malwaredomainlist|malware(?! (distribution|site))|adversary|ransomware)|(?P<medium>potential malware site|malware distribution|c2 cert|iot-malware|potential infection)|(?P<low>mass scanner|reputation|attacker|spammer|compromised|crawler|scanning|\\(suspicious\\) \\(heuristic\\))";
+  var _sevRe = (function () {
+    var raw = "";
+    try {
+      var tag = document.querySelector('meta[name="mt-severity"]');
+      raw = (tag && tag.content) || "";
+      if (raw.indexOf("<!") === 0) raw = "";       // opened from disk: the token was never substituted
+    } catch (e) { raw = ""; }
+    // Python named groups (?P<x>) are a syntax error in JS; (?P< is not valid JS either way, so
+    // rewriting it can only fix. A tuned regex that does not compile falls back rather than
+    // taking the dashboard down with it.
+    for (var i = 0; i < 2; i++) {
+      var src = (i === 0 ? raw : SEVERITY_FALLBACK);
+      if (!src) continue;
+      try { return new RegExp(src.split("(?P<").join("(?<")); } catch (e) { }
     }
-    for (var i = 0; i < INFO_SEVERITY_KEYWORDS.length; i++)
-      if (info.indexOf(INFO_SEVERITY_KEYWORDS[i][0]) >= 0) return INFO_SEVERITY_KEYWORDS[i][1];
-    return 2;   // default MEDIUM (legacy)
+    return null;
+  })();
+  function severityOf(info, ref) {
+    if (!_sevRe) return 2;
+    var m = ("" + (info || "") + " " + (ref || "")).match(_sevRe);
+    if (!m || !m.groups) return 2;                 // unmatched is MEDIUM, as the server has it
+    if (m.groups.low !== undefined) return 1;
+    if (m.groups.medium !== undefined) return 2;
+    if (m.groups.high !== undefined) return 3;
+    return 2;
   }
   // Threat class = the trailing "(malware)|(malicious)|(suspicious)" in the info field, shown as a
   // color-coded icon (word in the tooltip) instead of raw paren text. Icons are the official Lucide set

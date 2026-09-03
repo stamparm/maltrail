@@ -164,6 +164,10 @@ class TestHttpd(unittest.TestCase):
                     "    ipv6user:%s:1004:::\n"   # netfilter "::" (IPv6 all) - the last field contains colons
                     % (STORED, STORED, STORED, STORED, STORED, STORED))
             f.write("ENABLE_MASK_CUSTOM true\n")
+            # deliberately carries every character that has to be escaped on the way into an HTML
+            # attribute - <, >, & and a double quote - so test_index_carries_the_severity_policy
+            # tests the escaping rather than assuming the shipped regex happens to be safe
+            f.write('REMOTE_SEVERITY_REGEX (?P<high>a&b"c)|(?P<low>zzz)\n')
             f.write("FAIL2BAN_ALLOWLIST 127.0.0.1\nFAIL2BAN_REGEX dummy\n")   # allow localhost puller; match the synthetic events
             # two distinct blacklists -> /blacklist (DNS events) vs /blacklist/foo (IP events); used to catch cross-name cache poisoning
             f.write("BLACKLIST\n    type ~ DNS\n")
@@ -252,6 +256,29 @@ class TestHttpd(unittest.TestCase):
         st, _, body = _http(self.port, "GET", "/")
         self.assertEqual(st, 200)
         self.assertIn(b"<table", body.lower() if False else body)  # dashboard HTML
+
+    def test_index_carries_the_severity_policy(self):
+        """The dashboard ranks with the server's REMOTE_SEVERITY_REGEX, not a copy of its own.
+
+        Severity is a policy an operator tunes, and it used to be implemented twice - once here,
+        once in main.js. They drifted twice, most visibly when "long domain (suspicious)" read LOW
+        on the dashboard and paged as MEDIUM. The page is served the regex so there is one
+        definition; if this token stops being substituted the dashboard silently falls back to the
+        shipped default and an operator's tuning stops reaching the screen.
+        """
+        st, _, body = _http(self.port, "GET", "/")
+        self.assertEqual(st, 200)
+        self.assertIn(b'name="mt-severity"', body,
+                      "the severity policy meta tag is gone from the served page")
+        self.assertNotIn(b"<!SEVERITY!>", body,
+                         "the <!SEVERITY!> token was served unsubstituted - it is missing from the "
+                         "allowlist in the token loop, or _severity() is gone")
+        # this server's regex, escaped for an attribute. Unescaped, the quote would end the
+        # attribute early and the rest of the regex would become stray markup.
+        self.assertIn(b'content="(?P&lt;high&gt;a&amp;b&quot;c)|(?P&lt;low&gt;zzz)"', body,
+                      "the configured regex did not reach the page correctly escaped")
+        self.assertNotIn(b'a&b"c', body,
+                         "the regex reached the attribute unescaped")
 
     def test_auth_required(self):
         for ep in ("/events?date=%s" % self.date, "/counts", "/check_ip?address=8.8.8.8"):

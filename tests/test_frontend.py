@@ -34,6 +34,20 @@ def _read(path):
         return f.read().decode("utf8")
 
 
+def _severity_js(js):
+    """The severityOf() implementation, evaluable by node on its own.
+
+    Takes the whole block from the policy comment through the function, because severityOf() now
+    depends on SEVERITY_FALLBACK and the compiled-regex IIFE above it. Under node there is no
+    `document`, so the IIFE falls back to the shipped regex - which is what these tests then
+    exercise, and why _the_fallback_matches_the_shipped_regex is worth its own test.
+    """
+
+    found = re.search(r"  // Severity is a POLICY.*?\n  \}\n", js, re.S)
+    assert found, "could not find severityOf() and its policy block in main.js"
+    return found.group(0)
+
+
 class TestGridColumns(unittest.TestCase):
     def setUp(self):
         self.html = _read(INDEX)
@@ -127,16 +141,7 @@ class TestSeverity(unittest.TestCase):
                 break
         if not node:
             raise unittest.SkipTest("needs node to evaluate severityOf()")
-        # every table severityOf() reads has to come across, or node throws a ReferenceError and
-        # the failure looks like a severity bug instead of a missing declaration
-        tables = []
-        for name in ("HEURISTIC_MEDIUM_KEYWORDS", "INFO_SEVERITY_KEYWORDS"):
-            found = re.search(r"var %s = \[.*?\];" % name, self.js, re.S)
-            self.assertTrue(found, "could not find %s in main.js" % name)
-            tables.append(found.group(0))
-        fn = re.search(r"function severityOf\(info, ref\) \{.*?\n  \}", self.js, re.S)
-        self.assertTrue(fn, "could not find severityOf() in main.js")
-        script = "\n".join(tables) + "\n" + fn.group(0) + """
+        script = _severity_js(self.js) + """
 var cases = %s;
 cases.forEach(function (c) {
   var got = severityOf(c[0], c[1]);
@@ -234,14 +239,8 @@ console.log("OK");
                       "'bad reputation (tor node)' loses it")
 
     def test_no_severity_moved(self):
-        keywords = []
-        for name in ("HEURISTIC_MEDIUM_KEYWORDS", "INFO_SEVERITY_KEYWORDS"):
-            found = re.search(r"var %s = \[.*?\];" % name, self.js, re.S)
-            self.assertTrue(found, "could not find %s" % name)
-            keywords.append(found.group(0))
-        fn = re.search(r"function severityOf\(info, ref\) \{.*?\n  \}", self.js, re.S)
         import subprocess
-        script = ("\n".join(keywords) + "\n" + fn.group(0) + """
+        script = (_severity_js(self.js) + """
 var cases = %s;
 cases.forEach(function (c) {
   var got = severityOf(c[0], c[1]);
