@@ -3038,11 +3038,7 @@
   function fmtYMD(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
   function heatBucket(n) { return !n ? 0 : n < 500 ? 1 : n < 1000 ? 2 : n < 5000 ? 3 : n < 10000 ? 4 : 5; }   // cal-heatmap-style thresholds
   function fetchCounts(fromStr, toStr) {
-    if (DEMO) {   // no server -> fabricate deterministic per-day density across the visible span (some quiet days)
-      var d = new Date(fromStr + "T00:00:00"), end = new Date(toStr + "T00:00:00");
-      while (d <= end) { var ds = fmtYMD(d); if (!(ds in _counts)) { var hh = murmur3(ds, 7) >>> 0; _counts[ds] = (hh % 6 === 0) ? 0 : Math.floor(Math.pow(10, (hh % 1000) / 1000 * 4.3)); } d.setDate(d.getDate() + 1); }
-      return;
-    }
+    if (DEMO) return;   // /counts is a server capability; the demo holds one day and must not invent densities for the rest
     var key = fromStr + ".." + toStr; if (_countsSpans[key]) return; _countsSpans[key] = true;
     fetch("/counts?from=" + fromStr + "&to=" + toStr, { credentials: "same-origin" })
       .then(function (r) { return r.ok ? r.json() : null; })
@@ -3105,7 +3101,8 @@
     _placeBelow(pop, anchor, 6);   // zoom-safe (A-/A+ CSS zoom on <html>), flips above / clamps to viewport as needed
   }
   function openDatePicker() {
-    var di = document.getElementById("date_input"); if (di && di.disabled && !DEMO) return;   // offline -> navigation unavailable
+    if (DEMO) return;   // one day of data and no /counts to build the heat grid from
+    var di = document.getElementById("date_input"); if (di && di.disabled) return;   // offline -> navigation unavailable
     closeCtx();
     var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(currentDate()), now = new Date(), t = new Date();
     state._dpOpen = true;
@@ -3123,7 +3120,8 @@
     state._dpY = y; state._dpM = m; buildHeatmap(); positionDatePop();
   }
   function pickDay(ds, extend) {
-    var di = document.getElementById("date_input"); if (di && di.disabled && !DEMO) return;
+    if (DEMO) return;
+    var di = document.getElementById("date_input"); if (di && di.disabled) return;
     var sel = ds;
     if (extend) {
       // extend from whichever end of the current selection is furthest away, so shift-clicking
@@ -3409,7 +3407,10 @@
     if (ve && DEMO && !ve.textContent.trim()) ve.textContent = "demo";
     if (DEMO) {
       document.title = "Maltrail (demo)";
-      setDate(todayStr());   // controls stay live so the calendar/paging are demonstrably interactive
+      // No server, so nothing can be signed in to: the button would open a password prompt that
+      // posts nowhere. Hidden here rather than in checkAuth(), which only runs on the server path.
+      var dl = document.getElementById("login_link"); if (dl) dl.style.display = "none";
+      setDate(todayStr());   // paging/sort/search stay live; the day picker does not - it needs /counts
       render(aggregate(demoCSV()));
       if (getView() === "map" && !getCollapsed()) renderWorldMap();   // demo loaded straight into map view: state.agg is ready now
     } else {
@@ -3420,7 +3421,7 @@
       var rm = location.search.match(/[?&]refresh=(\d+)/);
       if (rm) { var n = Math.max(5, parseInt(rm[1], 10) || 0); if (n) setInterval(function () { liveTick(currentDate()); }, n * 1000); }
     }
-    if (location.hash.indexOf("login") >= 0) showLogin();   // test/deep-link hook
+    if (!DEMO && location.hash.indexOf("login") >= 0) showLogin();   // test/deep-link hook (no server to sign in to in a demo)
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
 })();

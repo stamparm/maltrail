@@ -1172,5 +1172,62 @@ class TestDemoAddressesAreNotRealPeoples(unittest.TestCase):
                       "nothing once the monitored hosts are private.")
 
 
+class TestDemoOffersNothingItCannotDo(unittest.TestCase):
+    """A demo build has no server, so it must not present server-only controls.
+
+    Offering them is worse than hiding them: the login button opened a password prompt that posted
+    to nowhere, and the day picker's heat grid comes from /counts, so the demo was fabricating a
+    density per day from a hash of the date - decorative numbers for days holding no events, on a
+    build that cannot navigate to them anyway.
+    """
+
+    @classmethod
+    def setUpClass(cls):
+        with open(MAIN_JS, encoding="utf-8") as f:
+            cls.js = f.read()
+
+    def test_the_login_button_is_hidden(self):
+        # It has to happen on the DEMO branch of boot(): checkAuth() is only called on the server
+        # path, so a guard inside checkAuth() would never run.
+        demo_branch = self.js[self.js.index('document.title = "Maltrail (demo)";'):]
+        demo_branch = demo_branch[:demo_branch.index("} else {")]
+        self.assertIn("login_link", demo_branch,
+                      "the demo build no longer hides #login_link, so it shows a Log in button "
+                      "that opens a password prompt posting to a server that does not exist")
+
+    def test_no_day_densities_are_invented(self):
+        body = self.js[self.js.index("function fetchCounts("):]
+        body = body[:body.index("\n  function ")]
+        self.assertIn("if (DEMO) return;", body,
+                      "fetchCounts() fabricates per-day event counts again. /counts is a server "
+                      "capability; a demo holding one day must not invent densities for the rest.")
+        self.assertNotIn("murmur3", body,
+                         "fetchCounts() is hashing the date into an event count again")
+
+    def test_the_day_picker_does_not_open(self):
+        for name in ("function openDatePicker(", "function pickDay("):
+            body = self.js[self.js.index(name):]
+            body = body[:body.index("\n  function ")]
+            self.assertIn("if (DEMO) return;", body,
+                          "%s no longer refuses to run in a demo build, so the day picker opens "
+                          "onto an empty heat grid" % name.replace("function ", "").rstrip("("))
+            self.assertNotIn("&& !DEMO", body,
+                             "%s bypasses the disabled-control check for demo builds again"
+                             % name.replace("function ", "").rstrip("("))
+
+    def test_the_shipped_robots_txt_still_blocks_indexing(self):
+        # Deliberately the opposite of the public demo's, which ships none. A real deployment's
+        # dashboard is private and must not be indexed; maltraildemo's build.sh skips this file.
+        path = os.path.join(REPO, "html", "robots.txt")
+        if not os.path.isfile(path):
+            self.skipTest("html/robots.txt is not present")
+        with open(path, encoding="utf-8") as f:
+            text = f.read()
+        self.assertIn("Disallow: /", text,
+                      "html/robots.txt no longer blocks crawlers. A deployment's dashboard is "
+                      "private; it is the public demo that wants indexing, and that build drops "
+                      "this file rather than shipping a permissive one.")
+
+
 if __name__ == "__main__":
     unittest.main()
