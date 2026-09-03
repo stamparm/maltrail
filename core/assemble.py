@@ -172,7 +172,7 @@ def fetch(root, provenance=None):
 _DOMAIN_RE = re.compile(r"^(?!-)[a-z0-9_-]{1,63}(?<!-)(?:\.(?!-)[a-z0-9_-]{1,63}(?<!-))+$")
 
 
-def malware_domains(trails):
+def malware_domains(trails, whitelisted=None):
     """Sorted, de-duplicated domain-only view of the malware trails.
 
     Published for the DNS-filtering integrations that consume the list without running Maltrail -
@@ -185,6 +185,15 @@ def malware_domains(trails):
     and this output has no labels to mis-attribute.
     """
 
+    if whitelisted is None:
+        # The same predicate update_trails() applies when it builds trails.csv. Consumers of this
+        # file never run that, so without it a name we whitelist is still blocked by every DNS
+        # filter downstream - "1rpc.io" being the case that found this.
+        from core.common import check_whitelisted
+        from core.settings import read_whitelist
+        read_whitelist()
+        whitelisted = check_whitelisted
+
     out = set()
     for trail, (info, _reference) in trails.items():
         if not info.endswith("(malware)"):
@@ -193,6 +202,8 @@ def malware_domains(trails):
         if not _DOMAIN_RE.match(name):
             continue
         if name.rsplit(".", 1)[-1].isdigit():        # a dotted quad, not a hostname
+            continue
+        if whitelisted(name):
             continue
         out.add(name)
     return sorted(out)

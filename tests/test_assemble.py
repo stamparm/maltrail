@@ -64,9 +64,37 @@ class TestMalwareDomains(unittest.TestCase):
         # downstream would apply as "block nothing" and never notice.
         self.assertEqual(malware_domains(_trails([("x.example", "pua (suspicious)")])), [])
 
+    def test_the_whitelist_is_applied(self):
+        """A name we whitelist must not be published to the DNS filters.
+
+        update_trails() drops whitelisted trails when it builds trails.csv, but the projects that
+        aggregate this list never run it. Without the same filter here, whitelisting a false
+        positive fixes our own sensors and leaves every downstream resolver still blocking it -
+        which is what happened to 1rpc.io, a public RPC endpoint in the top 30k.
+        """
+        allowed = {"1rpc.io", "public.1rpc.io"}
+        out = malware_domains(_trails([
+            ("1rpc.io", "revstealer (malware)"),
+            ("public.1rpc.io", "revstealer (malware)"),
+            ("really-evil.example", "revstealer (malware)"),
+        ]), whitelisted=lambda name: name in allowed)
+        self.assertEqual(out, ["really-evil.example"],
+                         "a whitelisted name reached the published blocklist: %r" % (out,))
+
+    def test_the_real_whitelist_is_used_by_default(self):
+        # No predicate passed: it must reach for the same one update_trails() uses, not publish
+        # everything. 1rpc.io is in data/whitelist.txt.
+        out = malware_domains(_trails([
+            ("1rpc.io", "revstealer (malware)"),
+            ("still-evil.example", "x (malware)"),
+        ]))
+        self.assertEqual(out, ["still-evil.example"],
+                         "malware_domains() published a name data/whitelist.txt excludes")
+
     def test_a_real_looking_set_comes_through_intact(self):
         names = ["a.example", "b.co.uk", "c-d.example", "x_y.example", "deep.sub.example"]
-        out = malware_domains(_trails([(n, "family (malware)") for n in names]))
+        out = malware_domains(_trails([(n, "family (malware)") for n in names]),
+                              whitelisted=lambda name: False)
         self.assertEqual(out, sorted(names))
 
 

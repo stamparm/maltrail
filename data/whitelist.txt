@@ -4153,3 +4153,10 @@ meeting.captello.com
 demo-meeting.captello.com
 eu-meeting.captello.com
 staging-meeting.captello.com
+
+# public RPC endpoint, listed as a revstealer indicator because the stealer reached a blockchain
+# node through it; a top-30k domain, so blocking it hurts far more than it helps
+# Reference: https://www.elastic.co/security-labs/threat-command/revstealer-credential-harvesting-infostealer
+
+1rpc.io
+public.1rpc.io
