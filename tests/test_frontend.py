@@ -1091,6 +1091,15 @@ class TestDemoAddressesAreNotRealPeoples(unittest.TestCase):
             return FI["dst_ip"]
         return FI["src_ip"]                                             # outbound: our host is the source
 
+    def _demo_geo(self):
+        """The getDemoGeo() table, read out of demo.js without a JS engine."""
+        with open(os.path.join(REPO, "html", "js", "demo.js"), encoding="utf-8") as f:
+            text = f.read()
+        if "function getDemoGeo()" not in text:
+            self.fail("demo.js has no getDemoGeo() table - re-run sensor/tools/gen_demo_js.py")
+        block = text[text.index("function getDemoGeo()"):]
+        return dict(re.findall(r'"([^"]+)":\s*"([A-Z]{2})"', block))
+
     def test_our_own_hosts_are_never_public(self):
         offenders = []
         for row in self.rows:
@@ -1102,19 +1111,51 @@ class TestDemoAddressesAreNotRealPeoples(unittest.TestCase):
                          "position, so the demo reads as though we monitored somebody else's "
                          "network rather than a LAN: %s" % (len(offenders), offenders[:6]))
 
-    def test_no_address_outside_private_documentation_or_a_resolver(self):
-        offenders = {}
+    def test_every_country_code_is_the_real_one(self):
+        """getDemoGeo() must agree with core.geo, entry for entry.
+
+        The dashboard used to fabricate a country by hashing the address into a 20-entry list,
+        which published 8.8.8.8 as Sweden and 8.8.4.4 as IRAN. A demo may invent hosts; it may not
+        invent facts about hosts that exist.
+        """
+        from core.geo import ip_to_country
+        table = self._demo_geo()
+        self.assertGreater(len(table), 50, "getDemoGeo() is missing or nearly empty")
+        wrong = [(ip, cc, ip_to_country(ip)) for ip, cc in sorted(table.items())
+                 if ip_to_country(ip) != cc]
+        self.assertEqual(wrong[:6], [],
+                         "%d address(es) in getDemoGeo() disagree with core.geo, so the demo "
+                         "states a country the RIR tables do not: %s" % (len(wrong), wrong[:6]))
+
+    def test_an_address_with_a_real_country_is_never_left_out(self):
+        # The other half: a real address missing from the table shows no flag, which is a silent
+        # hole rather than a lie, but it also means the map under-reports. Regenerate the table.
+        from core.geo import ip_to_country
+        table = self._demo_geo()
+        missing = {}
         for row in self.rows:
             for field in ("src_ip", "dst_ip", "trail"):
                 for address in self._addresses(row[self.FI[field]]):
-                    if self._is_private(address) or self._is_doc(address) or address in self.RESOLVERS:
-                        continue
-                    offenders.setdefault(address, row[self.FI["info"]])
-        self.assertEqual(offenders, {},
-                         "demo.js names %d real-world address(es) that the public demo then "
-                         "labels malicious: %s. Use RFC 5737 / RFC 3849 documentation space - it "
-                         "exists so a demo cannot accuse anyone."
-                         % (len(offenders), sorted(offenders.items())[:6]))
+                    if ip_to_country(address) and address not in table:
+                        missing[address] = ip_to_country(address)
+        self.assertEqual(missing, {},
+                         "%d address(es) have a real country but are absent from getDemoGeo(): "
+                         "%s. Re-run sensor/tools/gen_demo_js.py."
+                         % (len(missing), sorted(missing.items())[:6]))
+
+    def test_the_dashboard_does_not_invent_a_country_or_an_asn(self):
+        with open(MAIN_JS, encoding="utf-8") as f:
+            js = f.read()
+        self.assertNotIn("DEMO_CC", js,
+                         "main.js still carries the hashed country list. Hashing an address into "
+                         "a country list is what put Google in Iran; read getDemoGeo() instead.")
+        self.assertNotIn("Example Networks", js,
+                         "main.js still fabricates an ASN holder. No ASN table ships with the "
+                         "demo, so a real address would be given a made-up network.")
+        body = js[js.index("function demoCC("):]
+        self.assertIn("DEMO_GEO", body[:200],
+                      "demoCC() no longer reads the generated table, so the map and the table "
+                      "flags can disagree - or be invented again.")
 
     def test_the_map_does_not_geolocate_only_the_source(self):
         # demoGeo() used to take the first public SOURCE, which is right only for an inbound

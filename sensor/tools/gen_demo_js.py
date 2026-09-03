@@ -159,6 +159,56 @@ def _resensor(line, sensor):
     return line[:end + 2] + value + " " + rest[1]
 
 
+def write_geo(path):
+    """Append getDemoGeo(): every address in the demo mapped to its REAL country.
+
+    The dashboard normally asks the server, which geolocates from the RIR delegation statistics in
+    data/ip2cc*.csv.gz. A static demo has no server, so main.js used to fabricate a country by
+    hashing the address into a 20-entry list. That is fine for an address nobody can look up and
+    indefensible for one anybody can: it published 8.8.8.8 as Sweden and 8.8.4.4 as IRAN.
+
+    So compute it properly, once, here - with the same table the server uses. An address with no
+    country (RFC 1918, RFC 5737 documentation space) is simply absent, and the dashboard shows no
+    flag for it rather than inventing one. That is what the server does too.
+    """
+
+    from core.geo import ip_to_country
+
+    with open(path, encoding="utf8") as f:
+        text = f.read()
+
+    addresses = set()
+    for row in (logfmt.fields(_) for _ in _demo_lines(text)):
+        if not row:
+            continue
+        for field in ("src_ip", "dst_ip", "trail"):
+            for one in row[FI[field]].split(","):
+                one = one.strip().lstrip("[").split("]")[0]
+                if one and one != "-":
+                    addresses.add(one)
+
+    table = {}
+    for one in addresses:
+        country = ip_to_country(one)
+        if country:
+            table[one] = country
+
+    rows = ",\n        ".join('"%s": "%s"' % (a, table[a]) for a in sorted(table))
+    block = ("\n// Real country codes for the addresses above, from the same RIR tables the server uses\n"
+             "// (data/ip2cc*.csv.gz). Regenerate with sensor/tools/gen_demo_js.py. An address that is\n"
+             "// absent has no country - RFC 1918 and RFC 5737 space is not allocated to anywhere, and the\n"
+             "// dashboard shows no flag rather than inventing one.\n"
+             "function getDemoGeo() {\n    return {\n        %s\n    };\n}\n" % rows)
+    with open(path, "a", encoding="utf8") as f:
+        f.write(block)
+    print("[i] geo: %d of %d address(es) have a real country" % (len(table), len(addresses)))
+
+
+def _demo_lines(text):
+    for chunk in re.findall(r"'((?:[^'\\]|\\.)*)\\n'", text):
+        yield chunk.replace("\\'", "'").replace('\\"', '"').replace("\\\\", "\\")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--from", dest="log_dir", required=True,
@@ -361,6 +411,7 @@ def main():
     header = original[:original.index("function getDemoCSV()")]
     with open(args.out, "w", encoding="utf8") as f:
         f.write("%sfunction getDemoCSV() {\n    return %s\n}\n" % (header, body))
+    write_geo(args.out)
     print("[i] wrote %s" % args.out)
     return 0
 
