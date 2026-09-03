@@ -3131,10 +3131,28 @@
     }
     setDate(sel); closeDatePicker(); navigate(sel); if (di) di.focus();
   }
-  // The demo's fixed 2024-01-11 timestamps are rebased to TODAY so the calendar and the "x ago" column agree
-  // (otherwise the picker shows 2024 while rows claim "5m ago"). Single-day data; date appears only in the leading ts.
   var _demoCSVc;
-  function demoCSV() { return _demoCSVc || (_demoCSVc = ("" + window.getDemoCSV()).replace(/"2024-01-11 /g, '"' + todayStr() + ' ')); }
+  // Re-date the demo's events to today at load, so the dashboard never shows a stale absolute date
+  // in the drawer or an export. The day is DERIVED from the data, not hardcoded: it used to be a
+  // literal "2024-01-11" coupled to whatever demo.js happened to hold, so regenerating demo.js on
+  // any other day made this replace silently do nothing and froze the demo at that old date.
+  // Every distinct day shifts by the same number of days, so a multi-day demo keeps its span.
+  function demoCSV() {
+    if (_demoCSVc) return _demoCSVc;
+    var raw = "" + window.getDemoCSV(), days = {}, m, rx = /"(\d{4}-\d{2}-\d{2}) /g;
+    while ((m = rx.exec(raw)) !== null) days[m[1]] = 1;
+    var list = Object.keys(days).sort();
+    if (!list.length) return (_demoCSVc = raw);
+    var newest = new Date(list[list.length - 1] + "T00:00:00"), today = new Date(todayStr() + "T00:00:00");
+    var shift = Math.round((today - newest) / 86400000);
+    if (shift) {
+      for (var i = 0; i < list.length; i++) {
+        var d = new Date(list[i] + "T00:00:00"); d.setDate(d.getDate() + shift);
+        raw = raw.split('"' + list[i] + ' ').join('"' + fmtYMD(d) + ' ');
+      }
+    }
+    return (_demoCSVc = raw);
+  }
   function navigate(date) {
     if (getView() === "map" && !getCollapsed()) renderWorldMap();   // keep the attack map on the viewed day
     if (DEMO) { render(aggregate(demoCSV())); return; }

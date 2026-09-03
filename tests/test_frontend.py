@@ -1215,6 +1215,20 @@ class TestDemoOffersNothingItCannotDo(unittest.TestCase):
                              "%s bypasses the disabled-control check for demo builds again"
                              % name.replace("function ", "").rstrip("("))
 
+    def test_the_demo_day_is_derived_not_hardcoded(self):
+        """demoCSV() must find the demo's day in the data, not carry a copy of it.
+
+        It used to replace a literal "2024-01-11" with today. Nothing tied that literal to what
+        demo.js actually held, so regenerating the demo on any other day made the replace match
+        nothing - silently freezing every timestamp at a date years in the past.
+        """
+        body = self.js[self.js.index("  function demoCSV() {"):]
+        body = body[:body.index("\n  }") + 4]
+        self.assertNotRegex(body, r"\d{4}-\d{2}-\d{2}",
+                            "demoCSV() hardcodes a date again. Derive the day from the events so "
+                            "a regenerated demo.js cannot silently keep stale timestamps.")
+        self.assertIn("todayStr()", body, "demoCSV() no longer rebases the demo onto today")
+
     def test_the_shipped_robots_txt_still_blocks_indexing(self):
         # Deliberately the opposite of the public demo's, which ships none. A real deployment's
         # dashboard is private and must not be indexed; maltraildemo's build.sh skips this file.
