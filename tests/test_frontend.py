@@ -154,6 +154,60 @@ console.log("OK");
         self.assertEqual("OK", out.strip(), out.strip())
 
 
+class TestOpenedFromDisk(unittest.TestCase):
+    """html/index.html opened straight in a browser has to keep working.
+
+    No server means no token substitution, so <meta name="mt-severity"> carries the literal
+    "<!SEVERITY!>" - a parser only drops "<!...!>" in element CONTENT, not in an attribute value.
+    severityOf() has to notice that and fall back to the shipped regex, or every event on a
+    from-disk dashboard ranks MEDIUM and the severity column becomes decoration.
+    """
+
+    def setUp(self):
+        self.js = _read(MAIN_JS)
+        self.node = None
+        for candidate in ("node", "nodejs"):
+            if any(os.access(os.path.join(d, candidate), os.X_OK)
+                   for d in os.environ.get("PATH", "").split(os.pathsep) if d):
+                self.node = candidate
+                break
+        if not self.node:
+            self.skipTest("needs node to evaluate severityOf()")
+
+    def _ranks(self, document_js):
+        import subprocess
+        script = document_js + "\n" + _severity_js(self.js) + """
+var NAMES = ["", "low", "medium", "high"];
+console.log(JSON.stringify([
+  NAMES[severityOf("long domain (suspicious)", "(heuristic)")],
+  NAMES[severityOf("cobaltstrike (malware)", "(feed)")],
+  NAMES[severityOf("potential iot-malware download (suspicious)", "(heuristic)")]
+]));
+"""
+        out = subprocess.check_output([self.node, "-e", script], stderr=subprocess.STDOUT)
+        return json.loads(out.decode("utf8", "replace").strip().splitlines()[-1])
+
+    def test_an_unsubstituted_token_falls_back(self):
+        ranks = self._ranks('var document = { querySelector: function () '
+                            '{ return { content: "<!SEVERITY!>" }; } };')
+        self.assertEqual(ranks, ["low", "high", "medium"],
+                         "opened from disk the severity column stops working: the literal "
+                         "<!SEVERITY!> token was compiled as a regex instead of falling back")
+
+    def test_no_meta_tag_at_all_falls_back(self):
+        ranks = self._ranks('var document = { querySelector: function () { return null; } };')
+        self.assertEqual(ranks, ["low", "high", "medium"],
+                         "a page without the meta tag must still rank, on the shipped regex")
+
+    def test_a_broken_custom_regex_falls_back(self):
+        # An operator's typo must not take the dashboard down with it.
+        ranks = self._ranks('var document = { querySelector: function () '
+                            '{ return { content: "(?P<high>unclosed" }; } };')
+        self.assertEqual(ranks, ["low", "high", "medium"],
+                         "a REMOTE_SEVERITY_REGEX that does not compile must fall back, not break "
+                         "every row on the page")
+
+
 class TestThreatClassIcon(unittest.TestCase):
     """Every event must show its threat class, including the ones whose info never carried it.
 

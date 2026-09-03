@@ -111,7 +111,11 @@
     try {
       var tag = document.querySelector('meta[name="mt-severity"]');
       raw = (tag && tag.content) || "";
-      if (raw.indexOf("<!") === 0) raw = "";       // opened from disk: the token was never substituted
+      // Opened from disk (or from a build that forgot to substitute): the template token lands in
+      // the attribute verbatim, because a parser only drops "<!...!>" in element CONTENT. Compared
+      // exactly rather than by prefix - a regex is free to start with "<!" and would have been
+      // thrown away.
+      if (raw === "<!SEVERITY!>") raw = "";
     } catch (e) { raw = ""; }
     // Python named groups (?P<x>) are a syntax error in JS; (?P< is not valid JS either way, so
     // rewriting it can only fix. A tuned regex that does not compile falls back rather than
