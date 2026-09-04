@@ -100,12 +100,25 @@ jobs:
           path: /tmp/rows
           pattern: compat-row-*
           merge-multiple: true
-      - name: Render and compare
+      # NOT `render --check` against these rows. They were recorded minutes ago on CI, so they
+      # carry today's date and recorded_by=ci and will never equal the committed page - checking
+      # them against it would fail every single run and teach everyone to ignore this job. The
+      # drift guard is tests/test_compat.py, which compares the COMMITTED page with the COMMITTED
+      # rows. What this job is for is producing fresh evidence and showing what changed.
+      - name: Render the page these rows produce
         run: |
           set -eu
           cp /tmp/rows/*.json docs/compat/rows/
           python3 tests/install/record.py render
-          # The page is regenerated from the rows CI just recorded. A diff here means the committed
-          # page is out of date - the rows are the evidence, the page is derived from them.
-          git --no-pager diff --stat docs/compat || true
-          python3 tests/install/record.py render --check
+          echo "### Platform matrix" >> "$GITHUB_STEP_SUMMARY"
+          sed -n '/^| Platform/,/^$/p' docs/compat/README.md >> "$GITHUB_STEP_SUMMARY"
+          if ! git diff --quiet docs/compat; then
+            echo "[i] the recorded rows differ from what is committed:"
+            git --no-pager diff --stat docs/compat
+            echo "[i] commit docs/compat to publish them"
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: compat-page
+          path: docs/compat

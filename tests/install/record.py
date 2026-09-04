@@ -56,8 +56,10 @@ CAPABILITIES = [
 YES, NO, NA = "✅", "❌", "➖"
 
 
-def _row_path(label):
-    return os.path.join(ROWS, "%s.json" % label)
+def _row_path(label, machine="x86_64"):
+    # The architecture is part of the identity. Without it a row recorded on an arm runner
+    # overwrites the x86_64 one of the same name, and sixteen CI jobs quietly become twelve rows.
+    return os.path.join(ROWS, "%s-%s.json" % (label, machine))
 
 
 def record(labels):
@@ -116,7 +118,7 @@ def record(labels):
             # be answering a different question than it appears to.
             "sensor_source": os.environ.get("MALTRAIL_TEST_SENSOR", "sensor/target/release (local build)"),
         }
-        with io.open(_row_path(label), "w", encoding="utf-8") as handle:
+        with io.open(_row_path(label, row["machine"]), "w", encoding="utf-8") as handle:
             handle.write(json.dumps(row, indent=2, sort_keys=True, ensure_ascii=False) + "\n")
         print("[i] recorded %s (%d marks, %d finding(s))" % (label, len(marks), len(findings)))
     return 0
