@@ -370,7 +370,11 @@ mod tests {
         let cwd = std::env::current_dir().unwrap();
         assert_eq!(absolute(PathBuf::new()), cwd);
         assert_eq!(absolute(PathBuf::from("maltrail.conf")), cwd.join("maltrail.conf"));
-        assert_eq!(absolute(PathBuf::from("/opt/maltrail")), PathBuf::from("/opt/maltrail"));
+        // What counts as absolute is platform-specific: on Windows "/opt/maltrail" has no volume,
+        // so it is relative to the current drive and gets one prepended. A drive-lettered path is
+        // the Windows equivalent of the property being asserted.
+        let already_absolute = if cfg!(windows) { "C:\\opt\\maltrail" } else { "/opt/maltrail" };
+        assert_eq!(absolute(PathBuf::from(already_absolute)), PathBuf::from(already_absolute));
     }
 
     #[test]

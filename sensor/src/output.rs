@@ -13,6 +13,8 @@ use std::io::Write;
 use std::net::{SocketAddr, ToSocketAddrs, UdpSocket};
 #[cfg(unix)]
 use std::os::unix::fs::{OpenOptionsExt, PermissionsExt};
+#[cfg(windows)]
+use std::os::windows::ffi::OsStrExt;
 use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::{Arc, Mutex, OnceLock};
@@ -807,12 +809,48 @@ static ERROR_LOG: OnceLock<Mutex<ErrorLog>> = OnceLock::new();
 /// So the free space is measured and exported, and the operator is expected to alert on it
 /// LONG before it matters. `f_bavail`, not `f_bfree`: the root-reserved blocks are not available
 /// to the `maltrail` user the shipped unit runs as.
+/// Free space on the volume holding `path`.
+///
+/// Event logs are evidence and the sensor never deletes them, so a full disk loses detections
+/// while the process still looks healthy. Returning None here - the first answer, on the grounds
+/// that it needed a Windows API crate - traded that warning away for nothing: `-T` on Windows
+/// printed "free space could not be determined" and the disk check never ran. GetDiskFreeSpaceExW
+/// lives in kernel32, which is linked already.
 #[cfg(windows)]
-pub fn free_bytes(_path: &Path) -> Option<u64> {
-    // GetDiskFreeSpaceExW would answer this, but it needs a Windows API crate the sensor does not
-    // depend on. None is what every caller already handles for "could not measure", and it costs
-    // the free-space warning rather than anything load-bearing.
-    None
+pub fn free_bytes(path: &Path) -> Option<u64> {
+    extern "system" {
+        fn GetDiskFreeSpaceExW(
+            directory: *const u16,
+            free_to_caller: *mut u64,
+            total: *mut u64,
+            total_free: *mut u64,
+        ) -> i32;
+    }
+
+    // The path has to exist as a directory for the call to resolve a volume, and it is UTF-16 and
+    // NUL-terminated. A path with an interior NUL cannot name a file, so it is rejected here
+    // rather than truncated into a different path.
+    let mut wide: Vec<u16> = path.as_os_str().encode_wide().collect();
+    if wide.contains(&0) {
+        return None;
+    }
+    wide.push(0);
+
+    let mut free_to_caller: u64 = 0;
+    // SAFETY: `wide` is a NUL-terminated UTF-16 string that outlives the call, and each out
+    // parameter points at a live u64. The two we do not need are passed as null, which the API
+    // documents as permitted.
+    let ok =
+        unsafe { GetDiskFreeSpaceExW(wide.as_ptr(), &mut free_to_caller, std::ptr::null_mut(), std::ptr::null_mut()) }
+            != 0;
+    // Deliberately the caller's quota rather than the volume total: on a disk with a quota it is
+    // the number that decides whether the next event log can be written, which is the question
+    // this is asked.
+    if ok {
+        Some(free_to_caller)
+    } else {
+        None
+    }
 }
 
 #[cfg(not(windows))]

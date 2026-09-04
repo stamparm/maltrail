@@ -230,10 +230,37 @@ fn cpu_count() -> u32 {
     std::thread::available_parallelism().map(|n| n.get() as u32).unwrap_or(1)
 }
 
+/// `os.path.expanduser("~")`'s notion of home.
+///
+/// Python reads HOME on POSIX and USERPROFILE on Windows, where HOME is normally unset - so a
+/// sensor that only looked at HOME resolved `$USERS_DIR` to `/.maltrail` on Windows while the
+/// server it shares that path with resolved it to the real profile directory.
+fn home_dir() -> String {
+    #[cfg(not(windows))]
+    {
+        std::env::var("HOME").unwrap_or_default()
+    }
+    #[cfg(windows)]
+    {
+        // The order os.path.expanduser() uses.
+        if let Ok(profile) = std::env::var("USERPROFILE") {
+            return profile;
+        }
+        match (std::env::var("HOMEDRIVE"), std::env::var("HOMEPATH")) {
+            (Ok(drive), Ok(path)) => format!("{drive}{path}"),
+            _ => std::env::var("HOME").unwrap_or_default(),
+        }
+    }
+}
+
 fn expanduser(value: &str) -> String {
     if let Some(rest) = value.strip_prefix('~') {
-        if rest.is_empty() || rest.starts_with('/') {
-            if let Ok(home) = std::env::var("HOME") {
+        // A bare '~' or '~/...'. Windows accepts a backslash there too, which is the separator a
+        // config file written on Windows would naturally use.
+        let separated = rest.starts_with('/') || (cfg!(windows) && rest.starts_with('\\'));
+        if rest.is_empty() || separated {
+            let home = home_dir();
+            if !home.is_empty() {
                 return format!("{home}{rest}");
             }
         }
@@ -247,6 +274,7 @@ fn normalize_path(base: &Path, value: &str) -> PathBuf {
     let expanded = expanduser(value);
     let joined = if Path::new(&expanded).is_absolute() { PathBuf::from(&expanded) } else { base.join(&expanded) };
     let mut out: Vec<std::ffi::OsString> = Vec::new();
+    let mut prefix: Option<std::ffi::OsString> = None;
     let mut is_abs = false;
     for comp in joined.components() {
         match comp {
@@ -259,13 +287,25 @@ fn normalize_path(base: &Path, value: &str) -> PathBuf {
                 out.pop();
             }
             std::path::Component::Normal(p) => out.push(p.to_os_string()),
-            std::path::Component::Prefix(p) => out.push(p.as_os_str().to_os_string()),
+            // A drive letter or UNC share, and NOT a path element. Holding it in `out` lost it:
+            // `RootDir` arrives immediately after and clears the accumulator, so on Windows
+            // 'Z:\tmp\logs' normalised to '\tmp\logs' - a path that resolves against whichever
+            // volume the process happens to be on. A LOG_DIR on D: would have been written to C:
+            // with nothing saying so. Unix never produces this component, so nothing changes there.
+            std::path::Component::Prefix(p) => {
+                prefix = Some(p.as_os_str().to_os_string());
+                out.clear();
+            }
         }
     }
-    let mut result = PathBuf::new();
-    if is_abs {
-        result.push("/");
+    let mut head = std::ffi::OsString::new();
+    if let Some(p) = prefix {
+        head.push(&p);
     }
+    if is_abs {
+        head.push(std::path::MAIN_SEPARATOR_STR);
+    }
+    let mut result = PathBuf::from(head);
     for part in out {
         result.push(part);
     }
@@ -274,14 +314,19 @@ fn normalize_path(base: &Path, value: &str) -> PathBuf {
 
 /// Values from `core/settings.py` that `$VAR` references in the config file may resolve to.
 fn settings_global(name: &str, root: &Path) -> Option<String> {
-    let home = std::env::var("HOME").unwrap_or_default();
+    let home = home_dir();
     Some(match name {
         "NAME" => settings::NAME.to_string(),
         "VERSION" => settings::VERSION.to_string(),
         "HOMEPAGE" => settings::HOMEPAGE.to_string(),
         "ROOT_DIR" => root.display().to_string(),
         "HTML_DIR" => root.join("html").display().to_string(),
-        "SYSTEM_LOG_DIR" => "/var/log".to_string(),
+        // core/settings.py:114 - `"/var/log" if not IS_WIN else "C:\\Windows\\Logs"`. The sensor
+        // hardcoded the POSIX half, so on Windows the shipped `LOG_DIR $SYSTEM_LOG_DIR/maltrail`
+        // put the sensor's events in `\var\log\maltrail` on whatever the current drive was, while
+        // the server read `C:\Windows\Logs\maltrail`. Two halves of one deployment writing to and
+        // reading from different directories, with nothing reporting a problem.
+        "SYSTEM_LOG_DIR" => if cfg!(windows) { "C:\\Windows\\Logs" } else { "/var/log" }.to_string(),
         "HOSTNAME" => hostname(),
         "USERS_DIR" => format!("{home}/.maltrail"),
         "DEFAULT_TRAILS_FILE" => format!("{home}/.maltrail/trails.csv"),
@@ -1105,9 +1150,47 @@ SENSOR_NAME box   # trailing comment
     fn dollar_expansion_and_dir_normalisation() {
         let content = "LOG_DIR $SYSTEM_LOG_DIR/maltrail\nSENSOR_NAME $HOSTNAME\nX_DIR ./sub/../logs\n";
         let raw = parse_raw(content, &root()).unwrap();
-        assert_eq!(raw["LOG_DIR"], Value::Str("/var/log/maltrail".into()));
+        // Per platform, because $SYSTEM_LOG_DIR is: core/settings.py answers "/var/log" on POSIX
+        // and "C:\\Windows\\Logs" on Windows, and this asserting the POSIX answer everywhere is
+        // what caught the sensor hardcoding it.
+        let expected = if cfg!(windows) { "C:\\Windows\\Logs\\maltrail" } else { "/var/log/maltrail" };
+        assert_eq!(raw["LOG_DIR"], Value::Str(expected.into()));
         assert_eq!(raw["SENSOR_NAME"], Value::Str(hostname()));
-        assert_eq!(raw["X_DIR"], Value::Str(root().join("logs").display().to_string()));
+        // Compared as a PATH, not as a string. normalize_path emits the platform separator, so on
+        // Windows the normalised form is '\a\b\logs' while `join` on a POSIX-shaped manifest dir
+        // produces '/a/b\logs' - two spellings of the same path that only string equality
+        // distinguishes.
+        match &raw["X_DIR"] {
+            Value::Str(got) => assert_eq!(Path::new(got), root().join("logs").as_path()),
+            other => panic!("{other:?}"),
+        }
+    }
+
+    /// A drive letter is not a path component, and normalize_path used to treat it as one.
+    ///
+    /// `Component::Prefix` was pushed onto the accumulator and the `Component::RootDir` that
+    /// always follows it cleared the accumulator again, so every absolute path in a Windows
+    /// config lost its volume: a `LOG_DIR D:\maltrail\logs` became `\maltrail\logs` and resolved
+    /// against whichever drive the process was started from. Found by running the sensor's own
+    /// test suite for windows-gnu under Wine, which is the only reason it is testable here.
+    #[test]
+    #[cfg(windows)]
+    fn a_windows_absolute_path_keeps_its_drive() {
+        let raw = parse_raw("LOG_DIR D:/maltrail/logs\n", &root()).unwrap();
+        assert_eq!(raw["LOG_DIR"], Value::Str("D:\\maltrail\\logs".into()));
+
+        // A UNC share is a prefix too, and must survive the same way. The separators it comes
+        // back with are whichever ones it was written with - Windows accepts both - so what is
+        // asserted is that the server and share are still there, not how they are spelled.
+        let unc = parse_raw("LOG_DIR //server/share/maltrail\n", &root()).unwrap();
+        match &unc["LOG_DIR"] {
+            Value::Str(got) => {
+                let head = got.replace('/', "\\");
+                assert!(head.starts_with("\\\\server\\share"), "a UNC LOG_DIR lost its share: {got:?}");
+                assert!(head.ends_with("\\maltrail"), "a UNC LOG_DIR lost its tail: {got:?}");
+            }
+            other => panic!("{other:?}"),
+        }
     }
 
     #[test]

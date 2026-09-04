@@ -62,13 +62,48 @@ impl PythonProbe {
 /// Unknowable ("no PATH in the environment") means yes: the fork is the fallback, never the
 /// silent skip.
 fn on_path(command: &str) -> bool {
-    if command.contains('/') {
-        return Path::new(command).is_file();
-    }
     match std::env::var_os("PATH") {
-        Some(path) => std::env::split_paths(&path).any(|dir| dir.join(command).is_file()),
+        Some(path) => on_path_in(&path, command),
+        // No PATH at all: let the exec attempt be the answer rather than refusing here.
         None => true,
     }
+}
+
+/// The executable suffixes to try for a bare command name.
+///
+/// Empty on Unix, where the name on disk is the name typed. On Windows `python` is a file called
+/// `python.exe`, so testing `dir.join("python").is_file()` there found nothing on a machine with
+/// Python installed - every candidate was rejected before it was ever run, and the sensor reported
+/// "no python3 found; trail updates would be unavailable" on every Windows host. PATHEXT is what
+/// the shell consults, so this consults it too, with the documented default as the fallback.
+fn executable_suffixes() -> Vec<String> {
+    #[cfg(not(windows))]
+    {
+        vec![String::new()]
+    }
+    #[cfg(windows)]
+    {
+        let pathext = std::env::var("PATHEXT").unwrap_or_else(|_| ".COM;.EXE;.BAT;.CMD".to_string());
+        // The bare name first: an extensionless file that is already executable wins, and it is
+        // also what an explicit `MALTRAIL_PYTHON=...\python.exe` reduces to here.
+        let mut out = vec![String::new()];
+        out.extend(pathext.split(';').filter(|e| !e.is_empty()).map(|e| e.to_string()));
+        out
+    }
+}
+
+/// `on_path`, with the search path passed in so it can be tested without mutating the environment.
+fn on_path_in(path: &std::ffi::OsStr, command: &str) -> bool {
+    // An explicit path is checked directly rather than searched for. Windows spells one with a
+    // backslash, which the original '/' test missed - so `MALTRAIL_PYTHON=C:\Python\python.exe`
+    // was treated as a bare command name and looked up in every PATH directory instead.
+    let explicit = command.contains('/') || (cfg!(windows) && command.contains('\\'));
+    if explicit {
+        return executable_suffixes().iter().any(|suffix| Path::new(&format!("{command}{suffix}")).is_file());
+    }
+    let suffixes = executable_suffixes();
+    std::env::split_paths(path)
+        .any(|dir| suffixes.iter().any(|suffix| dir.join(format!("{command}{suffix}")).is_file()))
 }
 
 /// Ask one interpreter what it is. Cheap: `-c` neither reads config nor touches the network.
@@ -212,6 +247,38 @@ mod tests {
 
     fn repo_root() -> PathBuf {
         PathBuf::from(env!("CARGO_MANIFEST_DIR")).parent().unwrap().to_path_buf()
+    }
+
+    /// A bare command name must be found under the name the platform actually stores it as.
+    ///
+    /// On Windows that is `python.exe`, and this looked for a file called `python`: every
+    /// candidate interpreter was rejected before being run, so a Windows host with Python
+    /// installed was told "no python3 found; trail updates would be unavailable" and never
+    /// updated its trails. The search path is passed in rather than set in the environment,
+    /// because these tests run in parallel with others that read PATH.
+    #[test]
+    fn a_bare_command_is_found_under_its_platform_name() {
+        let dir = std::env::temp_dir().join(format!("maltrail-onpath-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(&dir).expect("temp dir");
+
+        // Named the way the platform names an executable, and nothing else in the directory.
+        let stored_as = if cfg!(windows) { "mt_probe.exe" } else { "mt_probe" };
+        std::fs::write(dir.join(stored_as), b"").expect("write the fake executable");
+
+        let path = std::ffi::OsString::from(dir.display().to_string());
+        assert!(on_path_in(&path, "mt_probe"), "'mt_probe' was not found as {stored_as:?} in {dir:?}");
+        assert!(!on_path_in(&path, "mt_probe_absent"), "a name that is not there was reported present");
+
+        // An explicit path is checked directly, and on Windows it is spelled with a backslash -
+        // which the original test for "is this an explicit path" did not accept.
+        let explicit = dir.join(stored_as);
+        assert!(
+            on_path_in(&std::ffi::OsString::new(), &explicit.display().to_string()),
+            "an explicit path was not honoured: {explicit:?}"
+        );
+
+        let _ = std::fs::remove_dir_all(&dir);
     }
 
     #[test]
