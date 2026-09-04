@@ -28,8 +28,15 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v7
+      # No `if:` here. It used to carry `matrix.kind == 'gnu' || matrix.kind == 'musl'`, copied
+      # from the build matrix below - but this job HAS no matrix, so the expression was always
+      # false, libpcap was never installed, and the gate could not link the sensor at all:
+      #
+      #     rust-lld: error: unable to find library -lpcap
+      #
+      # A release cannot be cut while its own gate cannot build, and nothing said so until a tag
+      # was pushed. Found by rehearsing 3.4 with a release candidate.
       - name: Install libpcap
-        if: ${{ matrix.kind == 'gnu' || matrix.kind == 'musl' }}
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends libpcap-dev

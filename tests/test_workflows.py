@@ -116,5 +116,40 @@ class TestDocumentedCountsAreTrue(unittest.TestCase):
                          "without re-counting is how this rots." % (len(feeds), wrong))
 
 
+class MatrixExpressionsResolve(unittest.TestCase):
+    """A `matrix.x` in a job that has no matrix is silently empty, and the step is skipped.
+
+    release.yml's gate carried `if: matrix.kind == 'gnu' || matrix.kind == 'musl'` on its
+    "Install libpcap" step, copied from the build matrix below it. The gate has no matrix, so the
+    expression was always false, libpcap was never installed, and the gate could not link the
+    sensor at all - `rust-lld: error: unable to find library -lpcap`. A release cannot be cut
+    while its own gate cannot build, and a tag had to be pushed before anything said so.
+
+    GitHub does not warn about this: an undefined context is empty, not an error.
+    """
+
+    def test_no_job_references_a_matrix_it_does_not_have(self):
+        try:
+            import yaml
+        except ImportError:
+            self.skipTest("needs PyYAML to parse the workflows")
+        offenders = []
+        for name in sorted(os.listdir(WORKFLOWS)):
+            if not name.endswith((".yml", ".yaml")):
+                continue
+            doc = yaml.safe_load(_read(name))
+            for job_name, job in (doc.get("jobs") or {}).items():
+                has_matrix = "matrix" in (job.get("strategy") or {})
+                if has_matrix:
+                    continue
+                used = sorted(set(re.findall(r"matrix\.(\w+)", yaml.dump(job))))
+                if used:
+                    offenders.append("%s: job %r uses %s" % (name, job_name, used))
+        self.assertEqual(offenders, [],
+                         "these jobs read a matrix context they do not define, so every "
+                         "expression using it is silently empty and the steps guarded by it "
+                         "never run: %s" % offenders)
+
+
 if __name__ == "__main__":
     unittest.main()
