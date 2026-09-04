@@ -67,7 +67,7 @@ Module-by-module mapping to the Python source: `docs/PORTING_MAP.md`.
 cargo test --release
 ```
 
-**403 tests, 0 failures — in BOTH profiles** (222 lib + 2 binary + 179 integration, measured
+**492 tests, 0 failures — in BOTH profiles** (277 lib + 2 binary + 213 integration, measured
 2026-08-15).
 
 ```

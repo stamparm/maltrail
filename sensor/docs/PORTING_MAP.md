@@ -101,5 +101,5 @@ the Rust module that reproduces it.
 | the retired Python suite | `tests/detection.rs` (same cases, same expected trails) |
 | `tests/_pcapgen.py` | `tests/support/mod.rs` packet builders + `tools/gen_corpus.py` |
 | `core/testing.py:detect_test()` | `tools/parity.py --corpus detect` (same traffic, same expectations, run through both sensors) |
-| `tests/test_addr.py`, `test_common.py`, `test_datatype.py`, `test_ignore.py`, `test_log_condense.py`, `test_trailsdict.py`, `test_config.py` | `tests/addr.rs`, `tests/trails.rs`, `tests/lru.rs`, `tests/ignore.rs`, `tests/condense.rs`, `tests/config.rs` |
+| `tests/test_addr.py`, `test_common.py`, `test_datatype.py`, `test_ignore.py`, `test_log_condense.py`, `test_trailsdict.py`, `test_config.py` | `tests/trails.rs`, and `#[cfg(test)] mod tests` in `src/addr.rs`, `src/lru.rs`, `src/ignore.rs`, `src/output.rs`, `src/config.rs` |
 | doctests in `core/addr.py`, `core/common.py`, `core/log.py`, `sensor.py` | ported as `#[test]` assertions with the same inputs/outputs |

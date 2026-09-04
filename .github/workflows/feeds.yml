@@ -1,0 +1,40 @@
+# Is a feed still alive, or just still answering?
+#
+# core/update.py's rule is that a feed empty on every run "is dead and should be removed, not
+# tolerated". Empty is the easy case - it is visible. A feed that answers 200 with the bytes it
+# answered two years ago is not, and four of them had been doing exactly that: maxmind frozen since
+# 2019, badips since 2020 (its own domain had stopped resolving; the feed survived on a mirror of
+# the dead service), dshield_top_1000 since 2021, alienvault since 2021. Together they contributed
+# thousands of addresses labelled "known attacker" that nobody had observed attacking anything in
+# five years, and an address reassigned since then belongs to somebody else.
+#
+# On a SCHEDULE and nowhere near the update path. An operator cannot fix a frozen upstream, and
+# failing their trail update over one would punish them for a third party's decision. This mails
+# whoever owns the repository, and the answer is to drop the feed or repoint it.
+
+name: Feeds
+
+on:
+  schedule:
+    - cron: '23 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  freshness:
+    name: no enabled feed has silently frozen
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Exit 1 is a frozen feed, exit 2 is "could not check" - which is not the same as fine, and
+      # is deliberately not success either.
+      - name: Feed freshness
+        run: python3 sensor/tools/check_feeds.py

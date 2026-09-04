@@ -16,6 +16,7 @@ The second matters most. A bot that quietly makes a failing check pass is worse 
 was written to fix, so the gate has to remain, and this asserts it does.
 """
 
+import re
 import os
 import unittest
 
@@ -77,6 +78,43 @@ class TestTheStalenessGateSurvives(unittest.TestCase):
                       "ci.yml no longer fails when settings_gen.rs is stale. The regeneration "
                       "workflow shortens the time to a fix; it is not a substitute for noticing "
                       "that master is inconsistent.")
+
+class TestDocumentedCountsAreTrue(unittest.TestCase):
+    """A number in a document rots silently, and this one has rotted before.
+
+    sensor/docs/REPORT.md carries a row recording that it once claimed 261 tests when the suite had
+    311, "re-measured per suite rather than copied". It was 403 against 492 by the time anyone
+    looked again, and AGENTS.md said 44 feeds when there were 42. Nobody is going to re-count by
+    hand, so the counts that CAN be checked mechanically are checked here.
+
+    Only the feed count is asserted. Test totals need both suites actually run, which this cannot
+    do, so those stay a manual measurement - the honest limit of this guard.
+    """
+
+    # AGENTS.md and HANDOVER.md are gitignored working notes, so a test that only looked at those
+    # would skip in CI and guard nothing. ci.yml is tracked and states the count too.
+    COUNT_FILES = (os.path.join(".github", "workflows", "ci.yml"), "AGENTS.md", "README.md")
+
+    def test_the_documented_feed_count_is_the_real_one(self):
+        feeds = [name for name in os.listdir(os.path.join(ROOT, "feeds"))
+                 if name.endswith(".py") and not name.startswith("__")]
+        claims = []
+        for relative in self.COUNT_FILES:
+            path = os.path.join(ROOT, relative)
+            if not os.path.isfile(path):
+                continue
+            with open(path, encoding="utf-8") as f:
+                for number in re.findall(r"(\d+) feeds", f.read()):
+                    claims.append((relative, int(number)))
+        # No claim at all would make this pass while checking nothing, which is the failure mode
+        # it exists to prevent.
+        self.assertTrue(claims, "no tracked file states a feed count any more - if the claim moved, "
+                                "point COUNT_FILES at its new home rather than deleting this test")
+        wrong = [(where, number) for where, number in claims if number != len(feeds)]
+        self.assertEqual(wrong, [],
+                         "feeds/ holds %d modules; these say otherwise: %s. Dropping a dead feed "
+                         "without re-counting is how this rots." % (len(feeds), wrong))
+
 
 if __name__ == "__main__":
     unittest.main()
