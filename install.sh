@@ -219,7 +219,14 @@ ensure_deps() {
         pacman)  pkg_install git ca-certificates $_curl tar python libpcap libcap ;;
         # The BSDs ship libpcap in base, and there is no setcap - privilege for capture is a BPF
         # device permission, not a file capability.
-        pkg)     pkg_install git python3 ;;
+        # FreeBSD's python3 does NOT include the sqlite3 module - it is a separate port, and
+        # without it server.py dies on `import sqlite3` before it can serve anything. The port is
+        # named for the interpreter version, so it is derived rather than guessed.
+        pkg)
+            pkg_install git python3
+            _pyv=$(python3 -c 'import sys; print("%d%d" % sys.version_info[:2])' 2>/dev/null || printf '')
+            [ -n "$_pyv" ] && pkg_install "py${_pyv}-sqlite3"
+            ;;
         pkgin)   pkg_install git python311 ;;
         pkg_add) pkg_install git python3 ;;
         brew)    pkg_install git python3 libpcap ;;
@@ -497,19 +504,28 @@ ensure_user() {
     elif have addgroup; then   # busybox / Alpine
         run addgroup -S "$RUN_USER" 2>/dev/null || true
         run adduser -S -D -H -G "$RUN_USER" -h "$STATE_DIR" -s /sbin/nologin "$RUN_USER"
-    elif have dscl; then       # macOS: no useradd at all, and a daemon account is built by hand
-        # The convention is a leading underscore and a UID in the service range, so the account
-        # does not appear at the login window. First free id from 200 up.
+    elif have dscl; then       # macOS: no useradd at all, a daemon account is built by hand
+        # Group and user get ids from their OWN free-id search: sharing one number worked until it
+        # collided, and the first attempt swallowed the failure with `|| true`, so the group was
+        # never created and the install died later on `install: unknown group maltrail` - a message
+        # that says nothing about what actually went wrong.
+        _gid=$(dscl . -list /Groups PrimaryGroupID 2>/dev/null | awk '{print $2}' | sort -n \
+               | awk 'BEGIN{n=200} $1==n {n++} END{print n}')
         _uid=$(dscl . -list /Users UniqueID 2>/dev/null | awk '{print $2}' | sort -n \
                | awk 'BEGIN{n=200} $1==n {n++} END{print n}')
-        run dscl . -create "/Groups/$RUN_USER" 2>/dev/null || true
-        run dscl . -create "/Groups/$RUN_USER" PrimaryGroupID "$_uid" 2>/dev/null || true
+        run dscl . -create "/Groups/$RUN_USER" PrimaryGroupID "$_gid"
+        run dscl . -create "/Groups/$RUN_USER" Password '*' || true
         run dscl . -create "/Users/$RUN_USER"
         run dscl . -create "/Users/$RUN_USER" RealName "Maltrail"
         run dscl . -create "/Users/$RUN_USER" UniqueID "$_uid"
-        run dscl . -create "/Users/$RUN_USER" PrimaryGroupID "$_uid"
+        run dscl . -create "/Users/$RUN_USER" PrimaryGroupID "$_gid"
         run dscl . -create "/Users/$RUN_USER" UserShell /usr/bin/false
         run dscl . -create "/Users/$RUN_USER" NFSHomeDirectory "$STATE_DIR"
+        # Directory Services caches, and everything after this asks getgrnam() for the group.
+        dscacheutil -flushcache 2>/dev/null || true
+        if [ "$DRY" = 0 ] && ! dscl . -read "/Groups/$RUN_USER" >/dev/null 2>&1; then
+            die "could not create the '$RUN_USER' group with dscl; create it manually"
+        fi
     elif have pkg_add || have pkgin; then   # NetBSD / OpenBSD
         run groupadd "$RUN_USER" 2>/dev/null || true
         run useradd -g "$RUN_USER" -d "$STATE_DIR" -s /sbin/nologin "$RUN_USER"

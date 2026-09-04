@@ -76,8 +76,18 @@ jobs:
           # after 3.3, so there is nothing to download yet. Built here instead, the same way
           # release.yml builds it, rather than leaving Alpine's sensor columns blank for a release
           # cycle.
-          if ! gh release download --repo "$GITHUB_REPOSITORY" \
+          # Retried: one job in twelve failed the download while eleven fetched the same asset,
+          # and a network flake reading as "this platform has no binary" is a lie in a table whose
+          # whole job is telling the truth.
+          got=0
+          for attempt in 1 2 3; do
+            if gh release download --repo "$GITHUB_REPOSITORY" \
                  --pattern "maltrail-sensor-*-${target}.tar.gz" --dir /tmp/sensor 2>/dev/null; then
+              got=1; break
+            fi
+            echo "[i] download attempt $attempt failed"; sleep 5
+          done
+          if [ "$got" = 0 ]; then
             case $target in
               *-musl)
                 echo "[i] no released ${target} asset yet - building one"
