@@ -29,7 +29,8 @@ pub struct Captured<'a> {
 pub enum CaptureError {
     Pcap(pcap::Error),
     Fanout(fanout::FanoutError),
-    NoSuchDevice(String),
+    /// The requested interface, and the names that DO exist when they could be enumerated.
+    NoSuchDevice(String, Vec<String>),
     Permission(String),
 }
 
@@ -38,7 +39,10 @@ impl std::fmt::Display for CaptureError {
         match self {
             CaptureError::Pcap(e) => write!(f, "{e}"),
             CaptureError::Fanout(e) => write!(f, "{e}"),
-            CaptureError::NoSuchDevice(d) => write!(f, "no such device '{d}'"),
+            CaptureError::NoSuchDevice(d, have) if have.is_empty() => write!(f, "no such device '{d}'"),
+            CaptureError::NoSuchDevice(d, have) => {
+                write!(f, "no such device '{}' (have: {})", d, have.join(","))
+            }
             CaptureError::Permission(m) => write!(f, "permission problem occurred ('{m}')"),
         }
     }
@@ -52,7 +56,7 @@ impl From<pcap::Error> for CaptureError {
         if text.contains("permitted") || text.contains("Permission denied") {
             CaptureError::Permission(text)
         } else if text.contains("No such device") {
-            CaptureError::NoSuchDevice(text)
+            CaptureError::NoSuchDevice(text, Vec::new())
         } else {
             CaptureError::Pcap(e)
         }
@@ -67,6 +71,38 @@ pub struct LiveHandleInfo {
     pub fanout_flags: u32,
 }
 
+/// Turn a configured interface list into names this machine actually has.
+///
+/// `any` is a Linux pseudo-device. Everywhere else it does not exist, so the shipped
+/// `MONITOR_INTERFACE any` could not capture at all - which is what `sensor.py` in Maltrail v1
+/// worked around by substituting the real interface names, and the same trick applies here.
+///
+/// Only when the platform does not provide `any` itself: on Linux libpcap enumerates it, so this
+/// is a no-op there and the kernel keeps doing the merging, which is cheaper and loses no
+/// information about which interface a packet arrived on.
+///
+/// Returns the resolved list and whether any expansion happened - the caller needs to know,
+/// because a name the OPERATOR typed that will not open is an error, while one of a dozen
+/// adapters that `any` happened to include is not.
+pub fn resolve_interfaces(wanted: &[String], devices: &[String]) -> (Vec<String>, bool) {
+    let platform_has_any = devices.iter().any(|d| d.eq_ignore_ascii_case("any"));
+    let mut out: Vec<String> = Vec::new();
+    let mut expanded = false;
+    for want in wanted {
+        if want.eq_ignore_ascii_case("any") && !platform_has_any && !devices.is_empty() {
+            expanded = true;
+            for device in devices {
+                if !out.contains(device) {
+                    out.push(device.clone());
+                }
+            }
+        } else if !out.contains(want) {
+            out.push(want.clone());
+        }
+    }
+    (out, expanded)
+}
+
 impl Handle {
     /// Open one live capture handle and, when requested, join it to the fanout group.
     ///
@@ -78,6 +114,17 @@ impl Handle {
         interface: &str,
         fanout_group: Option<u16>,
     ) -> Result<(Handle, LiveHandleInfo), CaptureError> {
+        // Refuse a name the platform does not have, BEFORE libpcap does, so the message says
+        // which names exist. libpcap's own is a bare OS error - on Windows, opening the
+        // Linux-only `any` reports "volume label syntax is incorrect (123)".
+        if let Ok(devices) = pcap::Device::list() {
+            if !devices.is_empty() && !devices.iter().any(|d| d.name == interface) {
+                return Err(CaptureError::NoSuchDevice(
+                    interface.to_string(),
+                    devices.into_iter().map(|d| d.name).collect(),
+                ));
+            }
+        }
         let device = pcap::Device::from(interface);
         let mut builder = pcap::Capture::from_device(device)?
             .snaplen(cfg.capture_snaplen as i32)

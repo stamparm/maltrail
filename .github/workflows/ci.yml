@@ -309,9 +309,9 @@ jobs:
           CARGO_TERM_COLOR: never
         run: cargo test --manifest-path sensor/Cargo.toml --release --no-run
 
-  # The Windows job above builds and checks the import table. It cannot run anything: wpcap is a
-  # load-time dependency, wpcap.dll ships with the Npcap driver, and Npcap's free edition installs
-  # interactively - so no hosted Windows runner can have it.
+  # The Windows job above builds and checks the import table. It cannot run anything, because
+  # wpcap is a load-time dependency and wpcap.dll ships with the Npcap driver, whose free edition
+  # refuses a silent install (`npcap.exe /S` exits 2; measured, not assumed).
   #
   # That is true of a Windows runner and irrelevant on a Linux one. mingw-w64 cross-compiles the
   # binary, 7z lifts wpcap.dll straight out of the Npcap installer's NSIS archive without running

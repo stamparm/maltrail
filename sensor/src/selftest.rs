@@ -193,11 +193,19 @@ pub fn run(cfg: &Config) -> i32 {
     } else {
         let devices: Vec<String> =
             pcap::Device::list().map(|l| l.into_iter().map(|d| d.name).collect()).unwrap_or_default();
-        for want in cfg.monitor_interface.split(',').map(str::trim).filter(|s| !s.is_empty()) {
-            if want.eq_ignore_ascii_case("any") || devices.is_empty() || devices.iter().any(|d| d == want) {
-                r.line(Level::Ok, "interface", want);
-            } else {
-                r.line(Level::Fail, "interface", &format!("'{want}' not found (have: {})", devices.join(",")));
+        let (resolved, expanded) = crate::capture::resolve_interfaces(&cfg.monitor_interfaces(), &devices);
+        if expanded {
+            // Say so, rather than silently reporting interfaces the operator never configured.
+            r.line(
+                Level::Ok,
+                "interface",
+                &format!("'any' is not a device here; using the {} interface(s) this machine has", resolved.len()),
+            );
+        }
+        for want in &resolved {
+            match interface_verdict(want, &devices) {
+                Ok(()) => r.line(Level::Ok, "interface", want),
+                Err(why) => r.line(Level::Fail, "interface", &why),
             }
         }
         let workers = cfg.capture_workers.max(1);
@@ -508,6 +516,35 @@ pub enum Privileges {
     None,
 }
 
+/// Is `want` an interface this machine actually has?
+///
+/// `any` used to be waved through unconditionally, and it is not portable: it is a Linux
+/// pseudo-device that libpcap synthesises, and Npcap, macOS and the BSDs have no such thing. So on
+/// Windows the SHIPPED default configuration passed `-T` and then died at startup with
+///
+/// ```text
+/// Error opening adapter: The filename, directory name, or volume label syntax is incorrect. (123)
+/// ```
+///
+/// a Win32 error naming nothing an operator could act on. Checking membership like any other name
+/// is both simpler and true everywhere - Linux does enumerate `any`, so nothing changes there.
+///
+/// An empty list means the devices could not be enumerated at all (no privileges, typically),
+/// which is not evidence that the name is wrong, so it passes.
+fn interface_verdict(want: &str, devices: &[String]) -> Result<(), String> {
+    if devices.is_empty() || devices.iter().any(|d| d == want) {
+        return Ok(());
+    }
+    if want.eq_ignore_ascii_case("any") {
+        return Err(format!(
+            "'any' is a Linux-only pseudo-device and does not exist here — set 'MONITOR_INTERFACE' \
+             to a real one (have: {})",
+            devices.join(",")
+        ));
+    }
+    Err(format!("'{want}' not found (have: {})", devices.join(",")))
+}
+
 /// `CAP_NET_RAW` from `linux/capability.h`.
 const CAP_NET_RAW: u32 = 13;
 
@@ -583,5 +620,75 @@ fn compile_filter(filter: &str) -> Result<(), String> {
     match cap.compile(filter, true) {
         Ok(_) => Ok(()),
         Err(e) => Err(e.to_string()),
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    /// `-T` must not pass a configuration the sensor cannot then start with.
+    ///
+    /// Found by running the shipped `maltrail.conf` on a real Windows 10 VM: `-T` printed
+    /// `[o] interface: any` and the sensor then refused to open it, because `any` is a Linux
+    /// pseudo-device that Npcap does not provide. macOS and the BSDs do not provide it either.
+    #[test]
+    fn any_is_only_accepted_where_the_platform_actually_has_it() {
+        let linux = vec!["any".to_string(), "eth0".to_string(), "lo".to_string()];
+        assert!(interface_verdict("any", &linux).is_ok(), "Linux enumerates 'any'; it must pass there");
+        assert!(interface_verdict("eth0", &linux).is_ok());
+
+        // What Npcap reports: adapter names, and no 'any'.
+        let windows = vec![
+            r"\Device\NPF_{6C4D8B1B-0000-0000-0000-000000000001}".to_string(),
+            r"\Device\NPF_Loopback".to_string(),
+        ];
+        let why = interface_verdict("any", &windows).expect_err("'any' does not exist on Windows");
+        assert!(why.contains("Linux-only"), "the message must say why, not just 'not found': {why}");
+        assert!(why.contains("NPF_Loopback"), "the message must name what IS available: {why}");
+
+        // An unknown name is still an unknown name.
+        assert!(interface_verdict("eth9", &linux).is_err());
+
+        // Enumeration failing is not evidence the name is wrong - typically it just means the
+        // process cannot list devices without privileges, and refusing there would turn a
+        // permission problem into a false "no such interface".
+        assert!(interface_verdict("any", &[]).is_ok());
+        assert!(interface_verdict("whatever0", &[]).is_ok());
+    }
+
+    /// Maltrail v1's sensor.py substituted the real interface names where `any` did not exist.
+    /// The same substitution here is what makes the shipped `MONITOR_INTERFACE any` work on
+    /// Windows, macOS and the BSDs instead of failing at startup.
+    #[test]
+    fn any_is_substituted_only_where_the_platform_lacks_it() {
+        use crate::capture::resolve_interfaces;
+        let want = |s: &str| vec![s.to_string()];
+
+        // Linux enumerates `any`, and the kernel merging is better than opening every device:
+        // it must be left completely alone.
+        let linux = vec!["any".to_string(), "eth0".to_string(), "lo".to_string()];
+        let (got, expanded) = resolve_interfaces(&want("any"), &linux);
+        assert_eq!(got, vec!["any".to_string()], "Linux must keep using the real 'any' device");
+        assert!(!expanded);
+
+        // Windows has no 'any', so it becomes the adapters that do exist.
+        let windows = vec![r"\Device\NPF_{A}".to_string(), r"\Device\NPF_Loopback".to_string()];
+        let (got, expanded) = resolve_interfaces(&want("any"), &windows);
+        assert_eq!(got, windows, "'any' must become every device the platform has");
+        assert!(expanded, "the caller has to know this was substituted, to tolerate an adapter that will not open");
+
+        // An explicitly named interface is never touched, and duplicates collapse.
+        let (got, expanded) = resolve_interfaces(&want(r"\Device\NPF_{A}"), &windows);
+        assert_eq!(got, vec![r"\Device\NPF_{A}".to_string()]);
+        assert!(!expanded);
+        let mixed = vec![r"\Device\NPF_{A}".to_string(), "any".to_string()];
+        let (got, _) = resolve_interfaces(&mixed, &windows);
+        assert_eq!(got, windows, "a name already covered by the substitution must not appear twice");
+
+        // Enumeration failing is not a licence to invent interfaces.
+        let (got, expanded) = resolve_interfaces(&want("any"), &[]);
+        assert_eq!(got, vec!["any".to_string()]);
+        assert!(!expanded);
     }
 }

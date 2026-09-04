@@ -4,9 +4,9 @@
 # Why this exists
 # ---------------
 # The Windows sensor was released on the strength of `cargo check`. Nothing had executed it,
-# because executing it looked impossible: wpcap is a load-time dependency, wpcap.dll ships with
-# the Npcap driver, and Npcap's free edition installs interactively - so no hosted Windows runner
-# can have it. That was true and it was also the wrong conclusion. Three things get around it:
+# because executing it looked impossible: wpcap is a load-time dependency and wpcap.dll ships with
+# the Npcap driver, whose free edition refuses `/S` (measured: exit code 2). Three things get
+# around that here:
 #
 #   * mingw-w64 cross-compiles the binary on Linux (no MSVC, no Windows host).
 #   * Npcap's installer is an NSIS archive, so 7z extracts wpcap.dll and Packet.dll from it
@@ -20,8 +20,10 @@
 # self-test, runs its whole unit suite, and produces byte-identical detections to the Linux
 # binary over the entire pcap corpus.
 #
-# Does NOT prove: live capture on Windows. That needs the Npcap kernel driver and a real Windows
-# machine. Nothing here pretends otherwise.
+# Does NOT prove: live capture. Wine's wpcap has no driver behind it. That was verified
+# separately on a real Windows 10 VM - see docs/compat - where the sensor captured live traffic
+# off an adapter and matched domain, wildcard and IP trails. This script covers everything up to
+# the point where a kernel driver is required.
 #
 # Running it found four real bugs that a build could not have: a dropped drive letter in every
 # absolute config path, an interpreter search that could never find python.exe, a log directory

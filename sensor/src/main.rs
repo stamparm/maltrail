@@ -356,8 +356,15 @@ fn run() -> i32 {
         let devices: Vec<String> =
             pcap::Device::list().map(|list| list.into_iter().map(|d| d.name).collect()).unwrap_or_default();
 
+        // `any` is a Linux pseudo-device; elsewhere it is substituted with the real interface
+        // names, which is what Maltrail v1's sensor.py did for the same reason.
+        let (interfaces, expanded) = maltrail_sensor::capture::resolve_interfaces(&interfaces, &devices);
+        if expanded && !args.quiet {
+            cprintln!("[i] 'any' is not a capture device here; monitoring {} interface(s)", interfaces.len());
+        }
+
         for (index, interface) in interfaces.iter().enumerate() {
-            if interface.to_lowercase() != "any" && !devices.is_empty() && !devices.contains(interface) {
+            if !expanded && interface.to_lowercase() != "any" && !devices.is_empty() && !devices.contains(interface) {
                 ceprintln!("[!] interface '{interface}' not found");
                 ceprintln!("[?] available interfaces: '{}'", devices.join(","));
                 return 1;
@@ -398,6 +405,15 @@ fn run() -> i32 {
                                 return 1;
                             }
                         }
+                    }
+                    // One of the adapters that substituting `any` happened to include. A machine
+                    // has plenty that cannot be captured on - down, virtual, or held exclusively -
+                    // and refusing to start because of one would make the substituted default
+                    // worse than having none. `handles.is_empty()` below still refuses if NONE of
+                    // them opened.
+                    Err(e) if expanded => {
+                        ceprintln!("[!] skipping '{interface}': {e}");
+                        break;
                     }
                     Err(e) => {
                         ceprintln!("[!] unable to open capture on '{interface}': {e}");
@@ -797,7 +813,16 @@ fn print_diagnostics(
             }
         );
     } else {
-        cprintln!("[i] interface(s): {}", cfg.monitor_interface);
+        // The names actually opened, not the configured string. Those differ wherever `any` had
+        // to be substituted, and printing the config value there said "interface(s): any" about a
+        // machine that has no such device.
+        let mut names: Vec<&str> = Vec::new();
+        for (_, name, _) in handles {
+            if !names.contains(&name.as_str()) {
+                names.push(name.as_str());
+            }
+        }
+        cprintln!("[i] interface(s): {}", names.join(", "));
         let group = handles.first().and_then(|(_, _, g)| *g);
         match group {
             Some(g) => cprintln!(
