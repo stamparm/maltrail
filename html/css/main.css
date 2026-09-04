@@ -118,6 +118,11 @@
   .ip{font-family:var(--mono);color:var(--text)}
   .ipcat{display:inline-block;font-family:var(--mono);font-size:9px;color:#0E1420;background:var(--faint);
     border-radius:3px;padding:0 4px;margin-right:5px;vertical-align:1px;text-transform:lowercase;letter-spacing:.2px}
+  /* the Spamhaus DROP badge sits beside .worstasn - a different verdict, so a different colour.
+     Identical geometry to its sibling below, --sev-med rather than --sev-high, so the two read as
+     two opinions rather than one louder one. */
+  .droplist{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--sev-med);
+    margin-left:6px;vertical-align:middle;box-shadow:0 0 6px var(--sev-med)}
   .worstasn{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--sev-high);
     margin-left:6px;vertical-align:middle;box-shadow:0 0 6px var(--sev-high)}
   .arrow{color:var(--faint);margin:0 6px}

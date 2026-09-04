@@ -2116,7 +2116,7 @@
     });
   }
   // ---- IP enrichment via same-origin /check_ip (real mode only) ----
-  // /check_ip returns {ipcat: "<provider/category>", worst_asns: "true|false"}; we tag each public IP cell with a
+  // /check_ip returns {ipcat: "<provider/category>", worst_asns: "true|false", drop: "true|false"}; we tag each public IP cell with a
   // small category label + a malicious-ASN dot. Lazy + cached per IP so re-renders don't refetch.
   var ipInfo = {};   // ip -> {cat, worst} | "pending"
   function ipSpan(ip) {
@@ -2264,6 +2264,9 @@
       var c = sel[i]; if (c._enriched) continue; c._enriched = true;
       if (info.cat && !c.querySelector(".ipcat")) { var s = document.createElement("span"); s.className = "ipcat"; s.textContent = info.cat; c.insertBefore(s, c.firstChild); }
       if (info.worst) { var w = document.createElement("span"); w.className = "worstasn"; w.title = "malicious ASN"; c.appendChild(w); }
+      // A second, independent verdict: Spamhaus lists the NETBLOCK, worst_asns the ASN. Two dots
+      // rather than one merged badge, so an address in both shows both (#19598).
+      if (info.drop) { var d = document.createElement("span"); d.className = "droplist"; d.title = "rogue network (Spamhaus)"; c.appendChild(d); }
     }
   }
   function enrichIPs() {
@@ -2276,13 +2279,13 @@
       fetch("/check_ip?address=" + encodeURIComponent(ip), { credentials: "same-origin" })
         .then(function (r) { return r.ok ? r.json() : null; })
         .then(function (j) {
-          ipInfo[ip] = j ? { cat: (j.ipcat || ""), worst: j.worst_asns === "true" } : { cat: "", worst: false };
+          ipInfo[ip] = j ? { cat: (j.ipcat || ""), worst: j.worst_asns === "true", drop: j.drop === "true" } : { cat: "", worst: false, drop: false };
           // offline GeoIP fallback: if RIPE hasn't supplied a country (air-gapped -> /ripe answers 204), use the
           // country from our local RIR table so the flag still shows. /check_ip needs no internet at all.
           if (j && j.country && !(ripe[ip] && ripe[ip].cc)) { ripe[ip] = ripe[ip] || { t: +new Date() }; ripe[ip].cc = j.country.toLowerCase(); applyRipe(ip); }
           applyIPInfo(ip); refreshTipFor(ip);
         })
-        .catch(function () { ipInfo[ip] = { cat: "", worst: false }; });
+        .catch(function () { ipInfo[ip] = { cat: "", worst: false, drop: false }; });
     });
   }
 
@@ -2440,6 +2443,7 @@
     if (rec && rec.asn) L.push('<div class="tt-row"><span>ASN</span>' + esc(rec.asn) + (rec.holder ? " · " + esc(rec.holder) : "") + "</div>");
     if (ci && ci !== "pending" && ci.cat) L.push('<div class="tt-row"><span>category</span>' + esc(ci.cat) + "</div>");
     if (ci && ci !== "pending" && ci.worst) L.push('<div class="tt-row tt-warn">⚠ malicious ASN</div>');
+    if (ci && ci !== "pending" && ci.drop) L.push('<div class="tt-row tt-warn">⚠ rogue network (Spamhaus)</div>');
     if (!pub) L.push('<div class="tt-row tt-dim">private / LAN address — no geolocation</div>');
     return L.join("");
   }

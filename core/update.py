@@ -12,6 +12,7 @@ import io
 import gzip
 import hashlib
 import inspect
+import json
 import os
 import re
 import socket
@@ -39,8 +40,13 @@ from core.geo import GEO_DELTA_MAGIC
 from core.settings import config
 from core.settings import USER_AGENT
 from core.settings import read_config
+from core.settings import read_drop
 from core.settings import read_whitelist
 from core.settings import BAD_TRAIL_PREFIXES
+from core.settings import DROP6_URL
+from core.settings import DROP_FILE
+from core.settings import DROP_URL
+from core.settings import FRESH_DROP_DELTA_DAYS
 from core.settings import FRESH_IPCAT_DELTA_DAYS
 from core.settings import FRESH_GEO_DELTA_DAYS
 from core.settings import GEO_IP2CC_FILE
@@ -752,6 +758,83 @@ def update_trails(force=False, offline=False):
 
     return trails
 
+def update_drop(force=False):
+    """
+    Refresh the Spamhaus DROP netblocks into USERS_DIR. Same shape as update_ipcat/update_geo:
+    staleness-gated, best-effort (a failed fetch leaves the previous file in place), atomic write.
+    The bundled data/drop.txt is the air-gap/first-run seed.
+
+    Short cadence on purpose - Spamhaus republishes continuously, and the whole point of listing a
+    hijacked netblock is that it was hijacked recently.
+
+    DROP is an ANNOTATION, surfaced by /check_ip next to worst_asns. It is deliberately not merged
+    into the trail set: 1,700 netblocks cover millions of addresses, and every one of them would be
+    either inert (a CIDR key matches no address) or, expanded, a false-positive surface far larger
+    than anything anyone observed.
+    """
+
+    try:
+        if not os.path.isdir(USERS_DIR):
+            os.makedirs(USERS_DIR, 0o755)
+    except Exception as ex:
+        sys.exit("[!] something went wrong during creation of directory '%s' ('%s')" % (USERS_DIR, ex))
+
+    _chown(USERS_DIR)
+
+    if not (force or not os.path.isfile(DROP_FILE)
+            or (time.time() - os.stat(DROP_FILE).st_mtime) >= FRESH_DROP_DELTA_DAYS * 24 * 3600):
+        return
+
+    print("[i] updating Spamhaus DROP list...")
+
+    entries = []
+    for url in (DROP_URL, DROP6_URL):
+        try:
+            resp = _urllib.request.urlopen(url)
+            try:
+                payload = resp.read()
+            finally:
+                resp.close()
+        except Exception as ex:
+            print("[x] something went wrong during retrieval of '%s' ('%s')" % (url, ex))
+            return                                  # keep whatever is cached over a partial list
+
+        for line in payload.decode(UNICODE_ENCODING, "replace").split('\n'):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                record = json.loads(line)
+            except ValueError:
+                continue
+            # the last record is metadata, not a netblock
+            if isinstance(record, dict) and record.get("cidr"):
+                entries.append("%s # %s" % (record["cidr"], record.get("sblid", "")))
+
+    # A DROP list that came back tiny is a failure that answered 200; the cached copy is better.
+    if len(entries) < 100:
+        print("[x] Spamhaus DROP returned %d netblock(s) - keeping the previous list" % len(entries))
+        return
+
+    tmp = "%s.new" % DROP_FILE
+    try:
+        with open(tmp, "w+b") as f:
+            f.write(("# Spamhaus DROP + DROPv6, (c) The Spamhaus Project SLU\n"
+                     "# https://www.spamhaus.org/blocklists/do-not-route-or-peer/\n\n").encode(UNICODE_ENCODING))
+            f.write(("\n".join(entries) + "\n").encode(UNICODE_ENCODING))
+        os.replace(tmp, DROP_FILE)                  # atomic; the old copy survives until this
+        _chown(DROP_FILE)
+        print("[i] %d Spamhaus DROP netblock(s)" % len(entries))
+    except Exception as ex:
+        print("[x] something went wrong while writing '%s' ('%s')" % (DROP_FILE, ex))
+        try:
+            if os.path.exists(tmp):
+                os.remove(tmp)
+        except OSError:
+            pass
+
+    read_drop()
+
 def update_ipcat(force=False):
     try:
         if not os.path.isdir(USERS_DIR):
@@ -931,6 +1014,7 @@ def main():
         if not offline:
             update_ipcat()
             update_geo()
+            update_drop()
     except KeyboardInterrupt:
         print("\r[x] Ctrl-C pressed")
     else:

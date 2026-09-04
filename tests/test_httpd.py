@@ -257,6 +257,32 @@ class TestHttpd(unittest.TestCase):
         self.assertEqual(st, 200)
         self.assertIn(b"<table", body.lower() if False else body)  # dashboard HTML
 
+    def test_check_ip_reports_spamhaus_drop(self):
+        """DROP is a second, independent verdict beside worst_asns (#19598).
+
+        Its own field rather than folded into worst_asns: an address can be in a bad ASN, in a DROP
+        netblock, or both, and the dashboard draws a badge per verdict.
+        """
+        import ipaddress
+        sys.path.insert(0, REPO)
+        from core.settings import DROP_RANGES, read_drop
+        read_drop()
+        if not DROP_RANGES:
+            self.skipTest("no DROP netblocks loaded")
+        listed = str(ipaddress.ip_address(DROP_RANGES[0][0]))
+
+        cookie = self._login()
+        st, _, body = _http(self.port, "GET", "/check_ip?address=%s" % listed, cookie=cookie)
+        self.assertEqual(st, 200)
+        payload = json.loads(body.decode("utf8"))
+        self.assertEqual(payload.get("drop"), "true", "%s is a listed DROP netblock: %s" % (listed, payload))
+
+        st, _, body = _http(self.port, "GET", "/check_ip?address=8.8.8.8", cookie=cookie)
+        payload = json.loads(body.decode("utf8"))
+        self.assertEqual(payload.get("drop"), "false", "8.8.8.8 must not be reported as DROP")
+        # the older verdict has to keep working beside it
+        self.assertIn("worst_asns", payload)
+
     def test_index_carries_the_severity_policy(self):
         """The dashboard ranks with the server's REMOTE_SEVERITY_REGEX, not a copy of its own.
 

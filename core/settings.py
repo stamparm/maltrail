@@ -42,6 +42,14 @@ UNICODE_ENCODING = "utf8"
 FRESH_IPCAT_DELTA_DAYS = 10
 USERS_DIR = os.path.join(os.path.expanduser("~"), ".%s" % NAME.lower())
 DEFAULT_TRAILS_FILE = os.path.join(USERS_DIR, "trails.csv")
+# Spamhaus DROP: netblocks that Spamhaus's investigators found are leased or stolen by spam and
+# cyber-crime operations. Refreshed like ipcat and the geo tables rather than committed like
+# worst_asns.txt, because Spamhaus republishes continuously - the list moved the day this landed.
+# A bundled seed keeps an air-gapped or first-run install from having none at all.
+FRESH_DROP_DELTA_DAYS = 3
+DROP_URL = "https://www.spamhaus.org/drop/drop_v4.json"
+DROP6_URL = "https://www.spamhaus.org/drop/drop_v6.json"
+DROP_FILE = os.path.join(USERS_DIR, "drop.txt")
 IPCAT_CSV_FILE = os.path.join(USERS_DIR, "ipcat.csv")
 IPCAT_SQLITE_FILE = os.path.join(USERS_DIR, "ipcat.sqlite")
 IPCAT_URL = "https://raw.githubusercontent.com/growlfm/ipcat/master/datacenters.csv"
@@ -158,6 +166,11 @@ SUSPICIOUS_UA_REGEX = ""
 OBSOLETE_UA_REGEX = r"(?i)windows NT [3-5]\.\d+|windows (3\.\d+|95|98|xp)|MSIE [1-6]\.\d+|Navigator/|Safari/[1-4]|Opera/[1-3]|Firefox/1?[0-9]\.|Android [1-3]\.\d+|iPhone OS [1-4]_\d+|Mac OS X 10\.[0-4]\.|Chrome/[1-2]?\d\.|BlackBerry ?[0-7]"
 GENERIC_SINKHOLE_REGEX = r"(?im)^(X-Sinkhole|Server): (malware-?)?sinkhole|\bSinkholed? by |^(X-Sinkholed?(-Domain)?|X-Zinkhole|X-Sinkhole):| a malware sinkhole|\bSinkhole( Project)?</title>|This is a sinkhole|bots party hard|computers connecting to this sinkhole| Sinkhole by |^Set-Cookie: snkz=|^Server: Apache [0-9.]+/SinkSoft|^Location:[^\n]+\.sinkdns\.org:80"
 WORST_ASNS = {}
+# (start, end) integer intervals, sorted - bisect, not the first-octet bucket WORST_ASNS uses.
+# DROP prefixes run from /12 to /24, so one bucket per leading octet would put a /12 in sixteen of
+# them, and the v6 list has no leading octet to bucket on at all.
+DROP_RANGES = []
+DROP6_RANGES = []
 BOGON_IPS = {"::1"}
 BOGON_RANGES = {}
 CDN_RANGES = {}
@@ -689,6 +702,47 @@ def read_worst_asn():
         _mask = make_mask(int(mask))   # mask the prefix so a non-aligned CIDR still matches (check compares ip & mask == prefix; no-op for already-aligned entries)
         WORST_ASNS[key].append((addr_to_int(prefix) & _mask, _mask, name))
 
+def read_drop():
+    """Load the Spamhaus DROP netblocks, runtime copy first, bundled seed otherwise."""
+
+    del DROP_RANGES[:]
+    del DROP6_RANGES[:]
+
+    # ROOT_DIR is defined below these constants, so the bundled path is built here rather than at
+    # import time - read_worst_asn() does the same.
+    bundled = os.path.abspath(os.path.join(ROOT_DIR, "data", "drop.txt"))
+    path = DROP_FILE if os.path.isfile(DROP_FILE) else bundled
+    for line in _iter_file_lines(path):
+        line = line.split('#')[0].strip()
+        if '/' not in line:
+            continue
+        prefix, _, width = line.partition('/')
+        try:
+            width = int(width)
+        except ValueError:
+            continue
+        if ':' in prefix:
+            try:
+                start = int.from_bytes(socket.inet_pton(socket.AF_INET6, prefix), "big")
+            except (socket.error, ValueError):
+                continue
+            if not 0 <= width <= 128:
+                continue
+            size = 1 << (128 - width)
+            DROP6_RANGES.append((start & ~(size - 1), (start & ~(size - 1)) + size - 1))
+        else:
+            try:
+                start = addr_to_int(prefix)
+            except (IndexError, ValueError):
+                continue
+            if not 0 <= width <= 32:
+                continue
+            size = 1 << (32 - width)
+            DROP_RANGES.append((start & ~(size - 1), (start & ~(size - 1)) + size - 1))
+
+    DROP_RANGES.sort()
+    DROP6_RANGES.sort()
+
 def read_cdn_ranges():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "data", "cdn_ranges.txt"))
     for line in _iter_file_lines(_):
@@ -724,6 +778,7 @@ if __name__ != "__main__":
     read_ignorelist()
     read_ua()
     read_worst_asn()
+    read_drop()
     read_cdn_ranges()
     read_bogon_ranges()
     check_deprecated()

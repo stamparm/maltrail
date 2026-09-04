@@ -36,6 +36,7 @@ from core import index as _log_index
 from core.common import get_regex
 from core.common import trails_bin_path
 from core.common import ipcat_lookup
+from core.common import spamhaus_drop
 from core.common import worst_asns
 from core.common import bogon_ip
 from core.common import is_local
@@ -1586,7 +1587,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 else:
                     _ = (ipcat_lookup(params.get("address")) or "").lower().split(' ')
                     result_ipcat = _[1] if _[0] == 'the' else _[0]
-                payload = json.dumps({"ipcat": result_ipcat, "worst_asns": str(result_worst is not None).lower(), "country": ip_to_country(params.get("address")) or ""})  # country from the local RIR table (works air-gapped)
+                # Spamhaus DROP is a SECOND, independent opinion, so it is its own field rather
+                # than folded into worst_asns: an address can be in a bad ASN, in a DROP netblock,
+                # or both, and the dashboard shows a badge per verdict (#19598).
+                result_drop = spamhaus_drop(params.get("address"))
+                payload = json.dumps({"ipcat": result_ipcat, "worst_asns": str(result_worst is not None).lower(), "drop": str(result_drop).lower(), "country": ip_to_country(params.get("address")) or ""})  # country from the local RIR table (works air-gapped)
                 # NOTE: only wrap in a JSONP callback if it is a bare JS identifier. The callback is reflected into a
                 # script-executable body, so an unvalidated value (e.g. "alert(1)//") is a JSONP-XSS vector. The current
                 # frontend uses fetch() (no callback), so nothing legitimate needs an arbitrary callback here.

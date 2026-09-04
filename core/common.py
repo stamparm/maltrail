@@ -6,12 +6,14 @@ See the file 'LICENSE' for copying permission
 """
 
 
+import bisect
 import csv
 import gzip
 import io
 import json
 import os
 import re
+import socket
 import sqlite3
 import sys
 import threading
@@ -39,6 +41,8 @@ from core.settings import UNICODE_ENCODING
 from core.settings import USER_AGENT
 from core.settings import WHITELIST
 from core.settings import WHITELIST_RANGES
+from core.settings import DROP6_RANGES
+from core.settings import DROP_RANGES
 from core.settings import WORST_ASNS
 from core.trailsdict import TrailsDict
 import urllib.error
@@ -474,6 +478,37 @@ def check_whitelisted(trail):
             pass
 
     return False
+
+def spamhaus_drop(address):
+    """Is this address inside a Spamhaus DROP netblock?
+
+    Same job as worst_asns() and deliberately the same shape - an ANNOTATION for /check_ip, never a
+    trail. DROP is 1,700-odd netblocks covering millions of addresses; as trails they would either
+    match nothing (a "1.2.3.0/24" key is not what an address renders as) or, expanded, bury the
+    trail set under space nobody observed doing anything.
+
+    Bisect over sorted intervals rather than the leading-octet buckets worst_asns() uses: DROP
+    prefixes reach /12, which would land in sixteen buckets, and the v6 list has no leading octet.
+    """
+
+    if not address:
+        return False
+
+    try:
+        if ':' in address:
+            ranges = DROP6_RANGES
+            value = int.from_bytes(socket.inet_pton(socket.AF_INET6, address), "big")
+        else:
+            ranges = DROP_RANGES
+            value = addr_to_int(address)
+    except (AttributeError, IndexError, ValueError, socket.error):
+        return False
+
+    if not ranges:
+        return False
+
+    index = bisect.bisect_right(ranges, (value, float("inf"))) - 1
+    return index >= 0 and ranges[index][0] <= value <= ranges[index][1]
 
 def build_trails_regex(trails):
     """

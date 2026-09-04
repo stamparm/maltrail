@@ -136,6 +136,7 @@ def main():
             fetch_provenance()
             update_ipcat()
             update_geo()
+            update_drop()
 
         # Sidecars are only dropped by index.prepare(), which runs for a day someone asks about,
         # so a log rotated away leaves its sidecar behind for good. Reap them with the rest of the
