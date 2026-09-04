@@ -62,6 +62,28 @@ SENSOR_BIN=${MALTRAIL_TEST_SENSOR:-sensor/target/release/maltrail-sensor}
 [ -x "$SENSOR_BIN" ] || SENSOR_BIN=""
 case $SENSOR_BIN in /*) SENSOR_MOUNT=$SENSOR_BIN ;; ?*) SENSOR_MOUNT=$REPO_ROOT/$SENSOR_BIN ;; *) SENSOR_MOUNT="" ;; esac
 
+# A glibc binary cannot run on musl, so a musl environment needs its own. Supply one with
+# MALTRAIL_TEST_SENSOR_MUSL, or this builds it - two apk packages and about a minute, which is what
+# the release does too. Built once and reused by every musl environment in the run.
+is_musl_env() { case $1 in alpine*) return 0 ;; *) return 1 ;; esac; }
+MUSL_BIN=${MALTRAIL_TEST_SENSOR_MUSL:-}
+musl_sensor() {
+    [ -n "$MUSL_BIN" ] && { printf '%s' "$MUSL_BIN"; return 0; }
+    [ -n "$SENSOR_BIN" ] || return 1          # no sensor under test at all: nothing to do
+    MUSL_BIN=$WORK/musl-sensor
+    printf '    building a musl sensor (no MALTRAIL_TEST_SENSOR_MUSL supplied)...\n' >&2
+    docker run --rm -v "$REPO_ROOT:/src:ro" -v "$WORK:/out" alpine:3.20 sh -c '
+        set -e
+        apk add --no-cache -q cargo libpcap-dev musl-dev >/dev/null 2>&1
+        mkdir -p /tmp/b && cd /tmp/b
+        tar -C /src -cf - --exclude=sensor/target --exclude=.git sensor data core 2>/dev/null | tar -xf -
+        cd sensor && cargo build --release --bin maltrail-sensor >/dev/null 2>&1
+        strip target/release/maltrail-sensor 2>/dev/null || true
+        cp target/release/maltrail-sensor /out/musl-sensor' >/dev/null 2>&1 || return 1
+    [ -x "$MUSL_BIN" ] || return 1
+    printf '%s' "$MUSL_BIN"
+}
+
 pass=0; fail=0; failed=""; findings=""
 ok()  { printf '    \033[32mok\033[0m       %s\n' "$1"; pass=$((pass + 1)); }
 bad() { printf '    \033[31mFAIL\033[0m     %s%s\n' "$1" "${2:+  ($2)}"; fail=$((fail + 1)); failed="$failed $3/$1"; }
@@ -77,9 +99,10 @@ install_in() {
     local ref; ref=$(git symbolic-ref --short -q HEAD || git rev-parse HEAD)
     local args=(--repo file:///src --ref "$ref"
                 --no-service --unit-dir /run/maltrail-units)
-    local mounts=(-v "$REPO_ROOT:/src:ro")
-    if [ -n "$SENSOR_BIN" ]; then
-        mounts+=(-v "$SENSOR_MOUNT:/sensor-under-test:ro")
+    local mounts=(-v "$REPO_ROOT:/src:ro") bin=$SENSOR_MOUNT
+    if is_musl_env "$env"; then bin=$(musl_sensor) || bin=""; fi
+    if [ -n "$bin" ]; then
+        mounts+=(-v "$bin:/sensor-under-test:ro")
         args+=(--sensor-bin /sensor-under-test)
     fi
 

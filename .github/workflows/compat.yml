@@ -71,9 +71,30 @@ jobs:
           mkdir -p /tmp/sensor
           # A release without an asset for this target is a real answer, not a reason to fall back
           # to a locally built one - that is what made Debian 12 look unsupported.
-          gh release download --repo "$GITHUB_REPOSITORY" \
-            --pattern "maltrail-sensor-*-${target}.tar.gz" --dir /tmp/sensor
-          tar xzf /tmp/sensor/*.tar.gz -C /tmp/sensor
+          #
+          # musl is the exception, and only until a release carries it: the targets were added
+          # after 3.3, so there is nothing to download yet. Built here instead, the same way
+          # release.yml builds it, rather than leaving Alpine's sensor columns blank for a release
+          # cycle.
+          if ! gh release download --repo "$GITHUB_REPOSITORY" \
+                 --pattern "maltrail-sensor-*-${target}.tar.gz" --dir /tmp/sensor 2>/dev/null; then
+            case $target in
+              *-musl)
+                echo "[i] no released ${target} asset yet - building one"
+                docker run --rm -v "$PWD:/src:ro" -v /tmp/sensor:/out alpine:3.20 sh -c '
+                  set -e
+                  apk add --no-cache -q cargo libpcap-dev musl-dev >/dev/null
+                  mkdir -p /tmp/b && cd /tmp/b
+                  tar -C /src -cf - --exclude=sensor/target --exclude=.git sensor data core | tar -xf -
+                  cd sensor && cargo build --release --bin maltrail-sensor >/dev/null 2>&1
+                  strip target/release/maltrail-sensor
+                  cp target/release/maltrail-sensor /out/'
+                ;;
+              *) echo "::error::no released asset for ${target}"; exit 1 ;;
+            esac
+          else
+            tar xzf /tmp/sensor/*.tar.gz -C /tmp/sensor
+          fi
           find /tmp/sensor -name maltrail-sensor -type f -print
 
       - name: Record the row
@@ -87,7 +108,10 @@ jobs:
           # then read a file containing two JSON documents.
           rm -f docs/compat/rows/*.json
           bin=$(find /tmp/sensor -name maltrail-sensor -type f | head -1)
-          MALTRAIL_TEST_SENSOR="$bin" python3 tests/install/record.py record ${{ matrix.label }}
+          # run.sh picks the musl binary for musl environments; give it both so it never has to
+          # build one itself here.
+          export MALTRAIL_TEST_SENSOR="$bin" MALTRAIL_TEST_SENSOR_MUSL="$bin"
+          python3 tests/install/record.py record ${{ matrix.label }}
           ls -1 docs/compat/rows/
 
       - uses: actions/upload-artifact@v4
