@@ -316,42 +316,37 @@ def page(rows):
         "This column exists because of exactly this: nineteen rows had said the sensor worked, on "
         "the strength of a self-test that never captured a packet.",
         "",
-        "## Windows, and why it is not a row here",
+        "## Windows",
         "",
-        "Windows is not in the table because the table is a record of what `install.sh` did on a "
-        "platform, and Windows has no `install.sh` - no system user to create, no service unit to "
-        "render, no prefix to uninstall. Six of the eight columns would be asking about machinery "
-        "that does not exist.",
+        "Supported, released, and it captures. Verified on **Windows 10 IoT Enterprise LTSC 2021 "
+        "(10.0.19044)** from the shipped `maltrail.conf` unedited: DNS queries, a wildcard-regex "
+        "domain and an ICMP destination all matched against their trails and written to the event "
+        "log.",
         "",
-        "Both halves are nonetheless exercised on every push, on a Linux runner. `wpcap` is "
-        "linked at load time and `wpcap.dll` ships with the Npcap driver, whose free edition "
-        "refuses a silent install - but the installer is an NSIS archive, so the userspace "
-        "library can be extracted from it without installing anything, mingw-w64 cross-compiles "
-        "the sensor, and Wine runs it. `sensor/tools/check_windows.sh` does all of that: the "
-        "Windows sensor's entire unit suite, its `-T` self-test against the shipped "
-        "`maltrail.conf`, every pcap in the corpus replayed through both the Windows and the "
-        "native binary with the detections compared byte for byte, and the server answering "
-        "`/ping` under a real Windows Python. The first run of it found four bugs that compiling "
-        "could not.",
+        "| | |",
+        "| --- | --- |",
+        "| Binary | `x86_64-pc-windows-msvc`, on the releases page with a SHA-256 |",
+        "| Needs | Windows 10 or later, 64-bit, and [Npcap](https://npcap.com). `wpcap.dll` is a "
+        "load-time dependency, so nothing starts without it — not even `--version` |",
+        "| Run as | An elevated prompt. Capture needs Administrator here the way it needs root or "
+        "`CAP_NET_RAW` elsewhere |",
+        "| First command | `maltrail-sensor.exe -T -c maltrail.conf` — checks a configuration and "
+        "reports what would and would not work |",
         "",
-        "Live capture needs the kernel driver, so it was verified separately on a **Windows 10 "
-        "IoT Enterprise LTSC 2021 (10.0.19044)** virtual machine: Npcap installed, the sensor "
-        "opened the adapters, and DNS queries, a wildcard-regex domain and an ICMP destination "
-        "were all matched against their trails and written to the event log — from the shipped "
-        "`maltrail.conf`, unedited.",
+        "Every push runs the Windows build for real, on a Linux runner: mingw-w64 cross-compiles "
+        "it, `wpcap.dll` is lifted out of the Npcap installer's NSIS archive without installing "
+        "anything, and Wine executes the result. `sensor/tools/check_windows.sh` runs the whole "
+        "Windows unit suite, `-T` against the shipped configuration, every pcap in the corpus "
+        "through both the Windows and the native binary with the detections compared byte for "
+        "byte, and the server answering `/ping` under a real Windows Python. That found four bugs "
+        "compiling could not, and the VM run found a fifth — `MONITOR_INTERFACE any` is a Linux "
+        "pseudo-device, so it is now substituted with the real interface names wherever the "
+        "platform has no such device, exactly as Maltrail v1 did.",
         "",
-        "It did not work at first, and that is the point of having run it. `MONITOR_INTERFACE "
-        "any` is a Linux pseudo-device; Npcap has no such thing, so `-T` reported `[o] interface: "
-        "any` and the sensor then died with `Error opening adapter: The filename, directory name, "
-        "or volume label syntax is incorrect. (123)`. `any` is now substituted with the real "
-        "interface names wherever the platform does not provide it — which is what Maltrail v1's "
-        "`sensor.py` did — so the same configuration file works on Linux, Windows, macOS and the "
-        "BSDs. Linux is untouched: it really does have an `any` device, and the kernel merging it "
-        "does is better than opening every adapter.",
-        "",
-        "`python3 tests/install/record.py record --windows <label>` produces a row on a Windows "
-        "machine, the same way every other row here was produced. There is no row yet because "
-        "the matrix records what `install.sh` did, and it did nothing here.",
+        "There is no row in the table above because the table records what `install.sh` did, and "
+        "Windows has no `install.sh` — no system user, no service unit, no prefix to remove. "
+        "`python3 tests/install/record.py record --windows <label>` writes one on a Windows "
+        "machine if you want the remaining columns filled in.",
         "",
         "## Rows",
         "",
