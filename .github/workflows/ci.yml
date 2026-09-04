@@ -132,7 +132,7 @@ jobs:
 
       # Static trails are published as an assembled aggregate now, so `--offline` no longer
       # produces one: it would build from the engine's own lists alone and these tests would run
-      # against ~20k rows while still reporting green. Fetch the real set, without the 40 feeds -
+      # against ~20k rows while still reporting green. Fetch the real set, without the 39 feeds -
       # this job is about the trail STORE at scale, not about feed availability.
       - name: Build a trail set from the published aggregate
         run: |

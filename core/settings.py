@@ -251,7 +251,14 @@ except ImportError:
 # they are trails, not filters: they contribute 19,942 keys that fire. Anything that gates trail
 # content has to walk them too, or the noisiest detection class in the product is the one class
 # with no gate on it.
-LOCAL_STATIC_TRAIL_FILES = ("mass_scanner.txt", "mass_scanner_cidr.txt")
+# mass_scanner_cidr.txt is deliberately NOT here. It is mass_scanner.txt rounded to networks -
+# its own header says it exists so fewer blackhole routes are needed - and it is published for the
+# firewall/redistribution consumers that fetch the raw file. Merged into trails.csv it did nothing:
+# a trail is matched by exact string, so a "5.63.151.0/24" key is never what a packet's address
+# renders as, and 1,093 entries sat in every deployment's trail set matching nothing. Expanding it
+# instead would have added 1,316,104 addresses nobody observed scanning - 79x the 16,842 in
+# mass_scanner.txt, which already carries the addresses that WERE observed.
+LOCAL_STATIC_TRAIL_FILES = ("mass_scanner.txt",)
 
 KNOWN_CONFIG_OPTIONS = frozenset((
     "ALERT_FORMAT",
