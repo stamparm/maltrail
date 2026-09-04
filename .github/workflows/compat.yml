@@ -79,8 +79,14 @@ jobs:
           MALTRAIL_RECORDED_BY: ci
         run: |
           set -eu
+          # Clear the committed rows first, so this job's artifact carries ONLY the row it just
+          # recorded. Uploading the whole directory meant sixteen artifacts each holding a dozen
+          # overlapping filenames, and merge-multiple made a mess of the collisions - the page job
+          # then read a file containing two JSON documents.
+          rm -f docs/compat/rows/*.json
           bin=$(find /tmp/sensor -name maltrail-sensor -type f | head -1)
           MALTRAIL_TEST_SENSOR="$bin" python3 tests/install/record.py record ${{ matrix.label }}
+          ls -1 docs/compat/rows/
 
       - uses: actions/upload-artifact@v4
         with:
