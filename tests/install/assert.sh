@@ -21,11 +21,23 @@ set -u
 # has to be a real global config FILE: safe.directory is "protected configuration", so git ignores
 # it from GIT_CONFIG_* and from -c by design. printf, because git is not installed yet - installing
 # it is the installer's first job.
-printf '[safe]\n\tdirectory = *\n' > /root/.gitconfig
+# Not /root: macOS puts root's home in /var/root, and writing there failed with a message that
+# looked like a git problem rather than a path assumption.
+GITCONFIG=${HOME:-/root}/.gitconfig
+printf '[safe]\n\tdirectory = *\n' > "$GITCONFIG"
 
 # The repository. /src is where run.sh mounts it inside a container; a native run - FreeBSD, macOS,
 # anywhere docker cannot go because a container would share this kernel - points it at a checkout.
 SRC=${MALTRAIL_SRC:-/src}
+# `su -s SHELL` is a GNU extension; BSD and macOS su reject -s. Same helper install.sh grew, for
+# the same reason - the failures read as a broken user account rather than a bad command line.
+as_user() {
+    _who=$1; shift
+    case $(uname -s) in
+        Linux) su -s /bin/sh "$_who" -c "$*" ;;
+        *)     su -m "$_who" -c "$*" ;;
+    esac
+}
 PREFIX=/opt/maltrail
 CONF=/etc/maltrail.conf
 UNITS=/run/maltrail-units
@@ -71,7 +83,7 @@ echo "P libc $(libc_name)"
 [ -f "$CONF" ] && echo "A conf"
 id maltrail >/dev/null 2>&1 && echo "A user"
 [ -d /var/log/maltrail ] && echo "A logdir"
-su -s /bin/sh maltrail -c 'touch /var/log/maltrail/.probe' 2>/dev/null && echo "A logdir-writable"
+as_user maltrail "touch /var/log/maltrail/.probe" 2>/dev/null && echo "A logdir-writable"
 grep -q '^TRAILS_FILE /var/lib/maltrail/trails.csv' "$CONF" && echo "A conf-managed-block"
 
 # 2. units: rendered for this installation's paths, and pointing at something executable
@@ -89,7 +101,7 @@ done
 
 # 3. the server serves, as the unprivileged user, on this distribution
 python=$(command -v python3)
-( cd "$PREFIX" && su -s /bin/sh maltrail -c "$python server.py -c $CONF" >/tmp/server.log 2>&1 & )
+( cd "$PREFIX" && as_user maltrail "$python server.py -c $CONF" >/tmp/server.log 2>&1 & )
 i=0
 while [ "$i" -lt 40 ]; do
     i=$((i + 1))
@@ -156,8 +168,12 @@ grep -q '# operator marker' "$CONF" && echo "A conf-preserved"
 #    tracked files - exactly as it found it.
 # A shallow clone, NOT `cp -a /src`: the mounted repository carries sensor/target, which is 14 GB
 # of build artifacts, and copying that once per environment was the entire runtime of this suite.
-git clone --depth 1 --quiet file://"$SRC" /home/checkout
-cd /home/checkout || exit 1
+# NOT /home/checkout: on macOS /home is a synthetic firmlink and cannot be written to, so the
+# clone failed with "Operation not supported" and every in-place check after it was skipped.
+CHECKOUT=${TMPDIR:-/tmp}/maltrail-checkout
+rm -rf "$CHECKOUT"
+git clone --depth 1 --quiet file://"$SRC" "$CHECKOUT"
+cd "$CHECKOUT" || exit 1
 echo '# operator edit' >> maltrail.conf
 mkdir -p trails/custom && echo 'evil.test,"mine","(custom)"' > trails/custom/mine.txt
 sh ./install.sh --no-service --unit-dir "$UNITS" --role server >/tmp/inplace.log 2>&1
@@ -169,7 +185,7 @@ grep -q '# operator edit' maltrail.conf && echo "A inplace-kept-edit"
 grep -qE 'cloning [a-z]+://' /tmp/inplace.log || echo "A inplace-cloned-nothing"
 # ...and its --uninstall must not delete the developer's tree
 sh ./install.sh --uninstall --unit-dir "$UNITS" >/tmp/inplace-un.log 2>&1
-[ -f /home/checkout/server.py ] && echo "A inplace-uninstall-kept-tree"
+[ -f "$CHECKOUT"/server.py ] && echo "A inplace-uninstall-kept-tree"
 cd / || exit 1
 
 # 7. clone mode: an existing managed tree with local changes must NOT be reset silently

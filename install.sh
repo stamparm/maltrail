@@ -488,15 +488,47 @@ ensure_user() {
     say "creating system user $RUN_USER"
     # The group is not optional: the units say Group=maltrail, and useradd only creates a matching
     # group on distributions that default to per-user groups.
-    if have groupadd; then
+    if have pw; then           # FreeBSD
+        run pw groupadd "$RUN_USER" 2>/dev/null || true
+        run pw useradd "$RUN_USER" -g "$RUN_USER" -d "$STATE_DIR" -s /usr/sbin/nologin -c "Maltrail"
+    elif have groupadd; then
         run groupadd --system "$RUN_USER" 2>/dev/null || true
         run useradd --system --gid "$RUN_USER" --no-create-home --home-dir "$STATE_DIR" --shell /sbin/nologin "$RUN_USER"
     elif have addgroup; then   # busybox / Alpine
         run addgroup -S "$RUN_USER" 2>/dev/null || true
         run adduser -S -D -H -G "$RUN_USER" -h "$STATE_DIR" -s /sbin/nologin "$RUN_USER"
+    elif have dscl; then       # macOS: no useradd at all, and a daemon account is built by hand
+        # The convention is a leading underscore and a UID in the service range, so the account
+        # does not appear at the login window. First free id from 200 up.
+        _uid=$(dscl . -list /Users UniqueID 2>/dev/null | awk '{print $2}' | sort -n \
+               | awk 'BEGIN{n=200} $1==n {n++} END{print n}')
+        run dscl . -create "/Groups/$RUN_USER" 2>/dev/null || true
+        run dscl . -create "/Groups/$RUN_USER" PrimaryGroupID "$_uid" 2>/dev/null || true
+        run dscl . -create "/Users/$RUN_USER"
+        run dscl . -create "/Users/$RUN_USER" RealName "Maltrail"
+        run dscl . -create "/Users/$RUN_USER" UniqueID "$_uid"
+        run dscl . -create "/Users/$RUN_USER" PrimaryGroupID "$_uid"
+        run dscl . -create "/Users/$RUN_USER" UserShell /usr/bin/false
+        run dscl . -create "/Users/$RUN_USER" NFSHomeDirectory "$STATE_DIR"
+    elif have pkg_add || have pkgin; then   # NetBSD / OpenBSD
+        run groupadd "$RUN_USER" 2>/dev/null || true
+        run useradd -g "$RUN_USER" -d "$STATE_DIR" -s /sbin/nologin "$RUN_USER"
     else
-        die "neither useradd nor adduser found; create the '$RUN_USER' user manually"
+        die "no way to create a user on this system ($OS); create the '$RUN_USER' user manually"
     fi
+}
+
+# `su -s SHELL` is a GNU coreutils extension. BSD and macOS su read the shell from the account and
+# reject -s outright - 'su: illegal option -- s' on macOS, 'su: unknown login: /bin/sh' on FreeBSD,
+# both of which look like a broken user rather than a broken command line. The service account has
+# nologin as its shell precisely so it cannot be used, so -m (keep environment, use the CALLER's
+# shell) is the portable way to run one command as it.
+as_user() {
+    _who=$1; shift
+    case $OS in
+        Linux)  su -s /bin/sh "$_who" -c "$*" ;;
+        *)      su -m "$_who" -c "$*" ;;
+    esac
 }
 
 ensure_dirs() {
@@ -769,7 +801,7 @@ main() {
     if [ "$IN_PLACE" = 1 ]; then
         # Taking ownership of a developer's checkout would stop them editing their own files. The
         # processes only need to READ it, so check that instead of changing it.
-        if [ "$DRY" = 0 ] && ! su -s /bin/sh "$RUN_USER" -c "test -r '$PREFIX/server.py'" 2>/dev/null; then
+        if [ "$DRY" = 0 ] && ! as_user "$RUN_USER" "test -r '$PREFIX/server.py'" 2>/dev/null; then
             warn "$RUN_USER cannot read $PREFIX (a home directory is often 0700)."
             warn "either loosen the path, or install a separate copy: sh install.sh --prefix /opt/maltrail"
         fi
