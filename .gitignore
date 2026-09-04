@@ -34,3 +34,6 @@ misc/
 .rustup-home/
 refnet-run/
 .coverage
+
+# Raw transcripts from tests/install/record.py - regenerated on every run, machine-specific.
+.compat-raw/
