@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Copyright (c) 2014-2026 Maltrail developers (https://github.com/stamparm/maltrail/)
+Copyright (c) 2014-present Maltrail developers (https://github.com/stamparm/maltrail/)
 See the file 'LICENSE' for copying permission
 
 Record what Maltrail actually does on a platform, then publish it.

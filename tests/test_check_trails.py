@@ -165,7 +165,7 @@ class HeaderTest(unittest.TestCase):
         "# Reference: https://example.invalid/a",
         "# Aliases: foo, bar",
         "# Reference:",                      # deliberate pile break: no citation for what follows
-        "# Copyright (c) 2014-2026 Maltrail developers",
+        "# Copyright (c) 2014-present Maltrail developers",
         "# Note: this pile came from a sandbox run",
         "# Generic trails:",
         "# TITLE-HOST/IP=airbot admin panel",
