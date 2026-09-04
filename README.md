@@ -166,10 +166,10 @@ checks are documented in [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md).
 
 ### Installer
 
-The installer is verified on twelve Linux distributions on every release — Debian, Ubuntu, Fedora,
-Rocky, AlmaLinux, Arch, openSUSE Leap and Tumbleweed, and Alpine — with the full result recorded in
-[`docs/compat`](docs/compat). Raspberry Pi OS and other 64-bit ARM systems use the `aarch64`
-build; 32-bit ARM has no prebuilt sensor and must build it from source.
+The installer is verified on twelve Linux distributions — Debian, Ubuntu, Fedora, Rocky, AlmaLinux,
+Arch, openSUSE Leap and Tumbleweed, and Alpine — plus FreeBSD and macOS, on every release, with the
+full result recorded in [`docs/compat`](docs/compat). Raspberry Pi OS and other 64-bit ARM systems
+use the `aarch64` build; 32-bit ARM has no prebuilt sensor and must build it from source.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/stamparm/maltrail/master/install.sh | sudo sh
@@ -260,10 +260,15 @@ Start the server in another terminal or on another host:
 python3 server.py
 ```
 
-Prebuilt `x86_64` and `aarch64` sensor binaries are attached to current releases with SHA-256
-checksums. They link libpcap statically and target glibc 2.28, so the C library is the only thing
-they need — nothing to install, on RHEL 8+, Debian 10+, Ubuntu 18.04+ and Leap 15.x alike. On
-musl-based systems such as Alpine Linux, build from source.
+Prebuilt sensor binaries are attached to current releases with SHA-256 checksums: Linux `x86_64`
+and `aarch64` against both glibc and musl, macOS on Apple silicon and Intel, FreeBSD `amd64`, and
+Windows `x86_64`.
+
+The glibc builds link libpcap statically and target glibc 2.28, so the C library is the only thing
+they need — nothing to install, on RHEL 8+, Debian 10+, Ubuntu 18.04+ and Leap 15.x alike. The musl
+builds are fully static, so Alpine needs nothing at all. The Windows build needs
+[Npcap](https://npcap.com) installed before it will start: `wpcap.dll` is a load-time dependency,
+and the archive says so.
 
 Binaries from **3.1.1 and earlier** did not: they linked libpcap dynamically, and asked for it by
 the name their AlmaLinux build host uses. Debian and Ubuntu ship the identical library under the
