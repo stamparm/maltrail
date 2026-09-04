@@ -175,12 +175,21 @@ pkg_install() {
 # kind of detail that turns "curl | sh" into a support thread.
 ensure_deps() {
     say "installing dependencies ($PKG)"
+
+    # curl is asked for only when it is MISSING. RHEL 9 minimal images ship curl-minimal, which
+    # provides /usr/bin/curl and CONFLICTS with the curl package - so `dnf install ... curl ...`
+    # fails the ENTIRE transaction and git, python3 and libpcap are not installed either. The
+    # installer then dies having changed nothing, on a distribution family the README claims to
+    # support. Rocky 9 and AlmaLinux 9 both did exactly that.
+    _curl=""
+    have curl || _curl="curl"
+
     case $PKG in
-        apt-get) pkg_install git ca-certificates curl tar python3 libpcap0.8 libcap2-bin ;;
-        dnf|yum) pkg_install git ca-certificates curl tar python3 libpcap libcap ;;
-        zypper)  pkg_install git-core ca-certificates curl tar python3 libpcap1 libcap-progs ;;
-        apk)     pkg_install git ca-certificates curl tar python3 libpcap libcap ;;
-        pacman)  pkg_install git ca-certificates curl tar python libpcap libcap ;;
+        apt-get) pkg_install git ca-certificates $_curl tar python3 libpcap0.8 libcap2-bin ;;
+        dnf|yum) pkg_install git ca-certificates $_curl tar python3 libpcap libcap ;;
+        zypper)  pkg_install git-core ca-certificates $_curl tar python3 libpcap1 libcap-progs ;;
+        apk)     pkg_install git ca-certificates $_curl tar python3 libpcap libcap ;;
+        pacman)  pkg_install git ca-certificates $_curl tar python libpcap libcap ;;
     esac
 
     for tool in git tar; do

@@ -27,15 +27,26 @@ set -uo pipefail
 cd "$(dirname "$0")/../.." || exit 1
 REPO_ROOT=$PWD
 
-ENVIRONMENTS="ubuntu debian fedora opensuse alpine"
+# install.sh knows six package managers (apt-get, dnf, yum, zypper, apk, pacman), so the coverage
+# below is bounded by what has actually been RUN rather than by what the installer can do - arch
+# was supported by pacman and never once exercised, and the README claimed RHEL with nothing
+# behind it.
+ENVIRONMENTS="ubuntu ubuntu2204 debian debian13 fedora fedora41 rocky alma arch opensuse tumbleweed alpine"
 image_for() {
     case $1 in
-        ubuntu)   echo "ubuntu:24.04" ;;
-        debian)   echo "debian:12" ;;
-        fedora)   echo "fedora:41" ;;
-        opensuse) echo "opensuse/leap:15.6" ;;
-        alpine)   echo "alpine:3.20" ;;
-        *)        echo "" ;;
+        ubuntu)     echo "ubuntu:24.04" ;;
+        ubuntu2204) echo "ubuntu:22.04" ;;
+        debian)     echo "debian:12" ;;
+        debian13)   echo "debian:13" ;;
+        fedora)     echo "fedora:latest" ;;
+        fedora41)   echo "fedora:41" ;;
+        rocky)      echo "rockylinux:9" ;;
+        alma)       echo "almalinux:9" ;;
+        arch)       echo "archlinux:latest" ;;
+        opensuse)   echo "opensuse/leap:15.6" ;;
+        tumbleweed) echo "opensuse/tumbleweed" ;;
+        alpine)     echo "alpine:3.20" ;;
+        *)          echo "" ;;
     esac
 }
 
