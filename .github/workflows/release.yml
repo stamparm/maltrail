@@ -349,6 +349,10 @@ jobs:
           "wpcap.dll was not found", including `maltrail-sensor.exe --version`. That is a missing
           dependency, not a broken download.
 
+          Windows 10 or later, 64-bit. Not a policy: the binary imports WaitOnAddress and
+          WakeByAddressSingle, which are Windows 8 and later, and Npcap itself needs Windows 7 or
+          later. On anything older the loader refuses the executable outright.
+
           Install it with WinPcap API compatibility enabled, then run the sensor from an elevated
           prompt: capture needs Administrator here the way it needs root or CAP_NET_RAW elsewhere.
 

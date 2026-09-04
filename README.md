@@ -266,9 +266,10 @@ Windows `x86_64`.
 
 The glibc builds link libpcap statically and target glibc 2.28, so the C library is the only thing
 they need — nothing to install, on RHEL 8+, Debian 10+, Ubuntu 18.04+ and Leap 15.x alike. The musl
-builds are fully static, so Alpine needs nothing at all. The Windows build needs
-[Npcap](https://npcap.com) installed before it will start: `wpcap.dll` is a load-time dependency,
-and the archive says so.
+builds are fully static, so Alpine needs nothing at all. The Windows build is 64-bit and needs Windows 10 or later plus
+[Npcap](https://npcap.com) installed before it will start — `wpcap.dll` is a load-time dependency,
+so without it the loader refuses the executable rather than failing at capture. The archive says so
+too.
 
 Binaries from **3.1.1 and earlier** did not: they linked libpcap dynamically, and asked for it by
 the name their AlmaLinux build host uses. Debian and Ubuntu ship the identical library under the
