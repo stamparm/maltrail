@@ -309,6 +309,50 @@ jobs:
           CARGO_TERM_COLOR: never
         run: cargo test --manifest-path sensor/Cargo.toml --release --no-run
 
+  # The Windows job above builds and checks the import table. It cannot run anything: wpcap is a
+  # load-time dependency, wpcap.dll ships with the Npcap driver, and Npcap's free edition installs
+  # interactively - so no hosted Windows runner can have it.
+  #
+  # That is true of a Windows runner and irrelevant on a Linux one. mingw-w64 cross-compiles the
+  # binary, 7z lifts wpcap.dll straight out of the Npcap installer's NSIS archive without running
+  # it, and Wine executes the result. So the Windows sensor's own unit suite runs here, its -T
+  # self-test runs against the shipped maltrail.conf, every pcap in the corpus is replayed through
+  # both the Windows and the native binary with the detections compared byte for byte, and the
+  # server answers /ping under a real Windows Python (the embeddable build, which is a zip and
+  # needs no installer either).
+  #
+  # Four real bugs came out of the first run - a dropped drive letter in every absolute config
+  # path, an interpreter search that could never match python.exe, a log directory the server and
+  # sensor disagreed about, and a disk-space check that never ran. None of them were reachable by
+  # compiling.
+  #
+  # What this still does not cover is live capture, which needs the kernel driver and a real
+  # Windows machine. The script says so in its own header rather than leaving it implied.
+  windows-runtime:
+    name: sensor runs (Windows via Wine)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-gnu
+
+      - name: Cross-compiler, Wine and 7z
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            gcc-mingw-w64-x86-64 p7zip-full wine wine64 libpcap-dev
+          x86_64-w64-mingw32-gcc --version | head -1
+          wine --version
+
+      - name: Build it for Windows, then run it
+        env:
+          # Wine's own diagnostics are noise here, and a failure surfaces as a non-zero exit from
+          # the script rather than as a line in the log.
+          WINEDEBUG: '-all'
+        run: sh sensor/tools/check_windows.sh --work "$RUNNER_TEMP/win"
+
   # The oldest interpreter Maltrail claims to run on, tested on the interpreter itself rather than
   # asserted in a README. One 3.7-only method call (str.isascii) once made the updater die on every
   # RHEL 8 / CentOS 7 / Leap 15 / Amazon Linux 2 box - empty trail set, sensor detecting nothing,

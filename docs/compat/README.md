@@ -43,11 +43,11 @@ Kernel version is deliberately not listed: these run as containers, which share 
 
 ## Windows, and why it is not a row here
 
-The sensor compiles and is released for `x86_64-pc-windows-msvc`, and the server is Python with explicit Windows branches where it needs them - though nobody here has run it on Windows, which is the point of the rest of this section. Windows is not in the table because the table is a record of what `install.sh` did on a platform, and Windows has no `install.sh` - no system user to create, no service unit to render, no prefix to uninstall. Six of the eight columns would be asking about machinery that does not exist.
+Windows is not in the table because the table is a record of what `install.sh` did on a platform, and Windows has no `install.sh` - no system user to create, no service unit to render, no prefix to uninstall. Six of the eight columns would be asking about machinery that does not exist.
 
-The two that could be answered cannot be answered by CI either. Capture goes through Npcap, whose `wpcap.dll` is linked at load time, so with no driver installed the sensor does not start at all - and Npcap's free edition has no unattended installer, so no hosted runner can have it. CI therefore builds the Windows sensor, compiles its tests and checks that it imports `wpcap.dll`; running it needs a real Windows machine.
+Both halves are nonetheless exercised on every push, on a Linux runner. `wpcap` is linked at load time and `wpcap.dll` ships with the Npcap driver, which has no unattended installer - but the installer is an NSIS archive, so the userspace library can be extracted from it without installing anything, mingw-w64 cross-compiles the sensor, and Wine runs it. `sensor/tools/check_windows.sh` does all of that: the Windows sensor's entire unit suite, its `-T` self-test against the shipped `maltrail.conf`, every pcap in the corpus replayed through both the Windows and the native binary with the detections compared byte for byte, and the server answering `/ping` under a real Windows Python. The first run of it found four bugs that compiling could not.
 
-On one, `python3 tests/install/record.py record --windows <label>` produces a row the same way every other row here was produced. It is not filled in from a runner that could not have tested it.
+What that leaves untested is live capture, which needs the kernel driver and a real Windows machine. On one, `python3 tests/install/record.py record --windows <label>` produces a row the same way every other row here was produced. It is not filled in from a runner that could not have tested it.
 
 ## Rows
 

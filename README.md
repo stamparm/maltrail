@@ -554,6 +554,19 @@ Python server suite with:
 bash tests/run.sh python3
 ```
 
+The Windows build can be exercised from Linux, which is where its bugs have been found:
+
+```bash
+sh sensor/tools/check_windows.sh
+```
+
+It cross-compiles the sensor with mingw-w64, extracts Npcap's userspace library from its installer
+(an NSIS archive, so nothing is installed), and runs the result under Wine — the whole unit suite,
+`-T` against the shipped configuration, the pcap corpus compared byte for byte against the native
+binary, and the server answering `/ping` under a Windows Python. Live capture is the one thing it
+cannot cover; that needs Npcap's kernel driver and a real Windows machine. Prerequisites are
+`gcc-mingw-w64-x86-64`, `wine`, and `p7zip-full`.
+
 ## Project
 
 ### License
