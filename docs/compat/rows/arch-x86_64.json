@@ -1,7 +1,7 @@
 {
   "capabilities": {
     "/ping": "✅",
-    "captures": "❌",
+    "captures": "✅",
     "in-place": "✅",
     "install": "✅",
     "sensor": "✅",
@@ -10,9 +10,7 @@
     "uninstall": "✅",
     "upgrade": "✅"
   },
-  "findings": [
-    "the sensor never reached 'running', so it captured nothing"
-  ],
+  "findings": [],
   "host_kernel": "6.17.0-1022-azure",
   "image": "archlinux:latest",
   "label": "arch",
@@ -34,6 +32,7 @@
     "logdir",
     "logdir-writable",
     "rerun-ok",
+    "sensor-captures",
     "sensor-runs",
     "sensor-selftest",
     "server-ping",
@@ -54,5 +53,5 @@
   "python": "3.14.7",
   "recorded_at": "2026-09-04",
   "recorded_by": "ci",
-  "sensor_source": "Maltrail (sensor) #v3.3 {https://maltrail.github.io}"
+  "sensor_source": "Maltrail (sensor) #v3.4 {https://maltrail.github.io}"
 }
