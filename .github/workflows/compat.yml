@@ -156,18 +156,18 @@ jobs:
             echo "--- building the sensor ---"
             cd sensor && cargo build --release --bin maltrail-sensor && cd ..
             echo "--- recording the row ---"
+            rm -f docs/compat/rows/*.json
             MALTRAIL_TEST_SENSOR="$PWD/sensor/target/release/maltrail-sensor" \
+              MALTRAIL_RECORDED_BY=ci \
               python3 tests/install/record.py record freebsd --native || true
             echo "===== assert.sh transcript ====="
             cat .compat-raw/freebsd.out || echo "(no transcript)"
       - uses: actions/upload-artifact@v4
         with:
-          name: compat-raw-freebsd
-          path: .compat-raw
-          # .compat-raw is a dot-directory and upload-artifact v4 excludes hidden files by
-          # default, so every native row was uploaded as nothing at all and the jobs still went
-          # green. That is exactly the shape of failure this whole matrix exists to stop.
-          include-hidden-files: true
+          name: compat-row-freebsd
+          path: docs/compat/rows/*.json
+          # error, not warn: an empty upload once made a native job go green while publishing
+          # nothing, which is the exact failure shape this matrix exists to catch.
           if-no-files-found: error
 
   macos:
@@ -190,6 +190,7 @@ jobs:
           MALTRAIL_RECORDED_BY: ci
         run: |
           set -eu
+          rm -f docs/compat/rows/*.json
           sudo MALTRAIL_TEST_SENSOR="$PWD/sensor/target/release/maltrail-sensor" \
             MALTRAIL_RECORDED_BY=ci \
             python3 tests/install/record.py record ${{ matrix.label }} --native || true
@@ -200,12 +201,10 @@ jobs:
           cat .compat-raw/${{ matrix.label }}.out || echo "(no transcript)"
       - uses: actions/upload-artifact@v4
         with:
-          name: compat-raw-${{ matrix.label }}
-          path: .compat-raw
-          # .compat-raw is a dot-directory and upload-artifact v4 excludes hidden files by
-          # default, so every native row was uploaded as nothing at all and the jobs still went
-          # green. That is exactly the shape of failure this whole matrix exists to stop.
-          include-hidden-files: true
+          name: compat-row-${{ matrix.label }}
+          path: docs/compat/rows/*.json
+          # error, not warn: an empty upload once made a native job go green while publishing
+          # nothing, which is the exact failure shape this matrix exists to catch.
           if-no-files-found: error
 
   page:

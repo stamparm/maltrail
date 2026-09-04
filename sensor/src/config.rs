@@ -516,13 +516,46 @@ pub fn parse_byte_size(value: &str) -> Result<u64, ConfigError> {
     Err(ConfigError(format!("invalid size '{value}'")))
 }
 
-/// `core/settings.py:_get_total_physmem()` (Linux branch).
+/// `core/settings.py:_get_total_physmem()`.
+///
+/// The shipped `maltrail.conf` says `CAPTURE_BUFFER 10%`, so a platform where this returns None
+/// cannot start with the default configuration at all - the sensor refuses with "unable to
+/// determine total physical memory". That is exactly what happened on FreeBSD and macOS, where
+/// there is no /proc: the binary ran, `--version` answered, and `-T` failed on the config file the
+/// installer had just written.
+#[cfg(target_os = "linux")]
 pub fn total_physmem() -> Option<u64> {
     let text = std::fs::read_to_string("/proc/meminfo").ok()?;
     for line in text.lines() {
         if let Some(rest) = line.strip_prefix("MemTotal:") {
             let kb: u64 = rest.trim().trim_end_matches("kB").trim().parse().ok()?;
             return Some(kb * 1024);
+        }
+    }
+    None
+}
+
+/// The BSDs and macOS answer the same question through sysctl. `hw.memsize` is a 64-bit byte count
+/// on Darwin; FreeBSD's `hw.physmem` is `unsigned long`, which is also 64-bit on every target that
+/// matters here, and `hw.realmem` is the fallback on the ones that do not carry `hw.physmem`.
+#[cfg(not(target_os = "linux"))]
+pub fn total_physmem() -> Option<u64> {
+    for name in ["hw.memsize\0", "hw.physmem\0", "hw.realmem\0"] {
+        let mut value: u64 = 0;
+        let mut len = std::mem::size_of::<u64>();
+        // SAFETY: `name` is NUL-terminated, `value` is a live u64 and `len` describes it. sysctlbyname
+        // writes at most `len` bytes and reports what it wrote.
+        let rc = unsafe {
+            libc::sysctlbyname(
+                name.as_ptr() as *const libc::c_char,
+                &mut value as *mut u64 as *mut libc::c_void,
+                &mut len,
+                std::ptr::null_mut(),
+                0,
+            )
+        };
+        if rc == 0 && value > 0 {
+            return Some(value);
         }
     }
     None

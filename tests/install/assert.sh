@@ -86,17 +86,40 @@ id maltrail >/dev/null 2>&1 && echo "A user"
 as_user maltrail "touch /var/log/maltrail/.probe" 2>/dev/null && echo "A logdir-writable"
 grep -q '^TRAILS_FILE /var/lib/maltrail/trails.csv' "$CONF" && echo "A conf-managed-block"
 
-# 2. units: rendered for this installation's paths, and pointing at something executable
+# 2. service files: rendered for this installation's paths, and pointing at something executable.
+#
+# The same two questions on every platform, asked of whatever this system's init actually reads. It
+# used to look only for systemd units, so FreeBSD and macOS scored zero here - not because their
+# service files were wrong but because nobody looked at them, which is the worse of the two.
 for role in server sensor; do
-    unit="$UNITS/maltrail-$role.service"
-    [ -f "$unit" ] || continue
-    exec_path=$(sed -n 's/^ExecStart=\([^ ]*\).*/\1/p' "$unit" | head -1)
+    case $(uname -s) in
+        Darwin)
+            svc="$UNITS/io.maltrail.$role.plist"
+            [ -f "$svc" ] || svc="/Library/LaunchDaemons/io.maltrail.$role.plist"
+            [ -f "$svc" ] || continue
+            # first ProgramArguments entry
+            exec_path=$(sed -n '/ProgramArguments/,/<\/array>/p' "$svc" \
+                        | sed -n 's/.*<string>\(.*\)<\/string>.*/\1/p' | head -1)
+            ;;
+        FreeBSD|NetBSD|OpenBSD)
+            svc="$UNITS/maltrail_$role"
+            [ -f "$svc" ] || svc="/usr/local/etc/rc.d/maltrail_$role"
+            [ -f "$svc" ] || continue
+            exec_path=$(sed -n 's/^procname="\(.*\)"/\1/p' "$svc" | head -1)
+            ;;
+        *)
+            svc="$UNITS/maltrail-$role.service"
+            [ -f "$svc" ] || continue
+            exec_path=$(sed -n 's/^ExecStart=\([^ ]*\).*/\1/p' "$svc" | head -1)
+            ;;
+    esac
     if [ -x "$exec_path" ]; then
         echo "A unit-$role"
     else
-        echo "F unit-$role ExecStart is not executable: $exec_path"
+        echo "F unit-$role points at something not executable: $exec_path"
     fi
-    grep -q "^ExecStart=.* -c $CONF" "$unit" && echo "A unit-$role-conf"
+    # and it must reference THIS installation's config, not the packaged default
+    grep -q -- "$CONF" "$svc" && echo "A unit-$role-conf"
 done
 
 # 3. the server serves, as the unprivileged user, on this distribution
