@@ -309,16 +309,24 @@ clone_or_update() {
 # ---------------------------------------------------------------------------------------------
 target_triple() {
     machine=$(uname -m)
-    # The libc is part of the target, not a reason to give up. Alpine used to be told to install a
-    # Rust toolchain and build its own; the release ships musl binaries now, and the sensor builds
-    # and runs there natively in about a minute, so there was never anything to refuse.
+    case $machine in
+        x86_64|amd64)  arch=x86_64 ;;
+        aarch64|arm64) arch=aarch64 ;;
+        *)             printf ''; return ;;
+    esac
+
+    # The OS and the libc are both part of the target, not reasons to give up. Alpine used to be
+    # told to install a Rust toolchain and build its own, and macOS and FreeBSD were not
+    # considered at all. The release ships all four families now, and docs/compat records each of
+    # them installing and running.
+    case $OS in
+        Darwin)  printf '%s-apple-darwin' "$arch" ; return ;;
+        FreeBSD) printf '%s-unknown-freebsd' "$arch" ; return ;;
+    esac
+
     libc=gnu
     is_musl && libc=musl
-    case $machine in
-        x86_64|amd64)   printf 'x86_64-unknown-linux-%s' "$libc" ;;
-        aarch64|arm64)  printf 'aarch64-unknown-linux-%s' "$libc" ;;
-        *)              printf '' ;;
-    esac
+    printf '%s-unknown-linux-%s' "$arch" "$libc"
 }
 
 is_musl() {

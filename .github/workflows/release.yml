@@ -29,6 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Install libpcap
+        if: ${{ matrix.kind == 'gnu' || matrix.kind == 'musl' }}
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends libpcap-dev
@@ -54,8 +55,10 @@ jobs:
       matrix:
         include:
           - target: x86_64-unknown-linux-gnu
+            kind: gnu
             runner: ubuntu-latest
           - target: aarch64-unknown-linux-gnu
+            kind: gnu
             # A native arm64 runner, not QEMU and not a cross-compiler: the point of the build
             # container below is the C library it links against, and cross-compiling into an old
             # sysroot is a much worse way to get there.
@@ -65,9 +68,26 @@ jobs:
           # minute, so that was a missing artefact presented as a platform limit. Same native-runner
           # reasoning as above.
           - target: x86_64-unknown-linux-musl
+            kind: musl
             runner: ubuntu-latest
           - target: aarch64-unknown-linux-musl
+            kind: musl
             runner: ubuntu-24.04-arm
+          # macOS and FreeBSD. docs/compat records both installing and running with all thirty
+          # marks, on a real Mac and a real FreeBSD VM - so the releases page carrying only Linux
+          # made the documentation claim something the download page did not offer.
+          #
+          # Native runners again, for the same reason and one more: libpcap comes from the system
+          # on both, and there is no old-sysroot equivalent to build against.
+          - target: aarch64-apple-darwin
+            kind: darwin
+            runner: macos-latest
+          - target: x86_64-apple-darwin
+            kind: darwin
+            runner: macos-15-intel
+          - target: x86_64-unknown-freebsd
+            kind: freebsd
+            runner: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
 
@@ -110,7 +130,7 @@ jobs:
       # release since 3.1.1 died there. A heredoc passes the body verbatim, so an apostrophe in a
       # comment cannot reach the shell that spawned it.
       - name: Build against glibc 2.28, with libpcap linked in
-        if: ${{ !endsWith(matrix.target, '-musl') }}
+        if: ${{ matrix.kind == 'gnu' }}
         env:
           LIBPCAP_VERSION: 1.10.5
           LIBPCAP_SHA256: 37ced90a19a302a7f32e458224a00c365c117905c2cd35ac544b6880a81488f0
@@ -161,7 +181,7 @@ jobs:
       # is a static binary with no libc floor to get wrong. None of the glibc build's problems -
       # the 2.28 baseline, libpcap's SONAME differing between Debian and RHEL - exist here.
       - name: Build against musl
-        if: ${{ endsWith(matrix.target, '-musl') }}
+        if: ${{ matrix.kind == 'musl' }}
         run: |
           set -eu
           cat > "$RUNNER_TEMP/build-musl.sh" <<'SCRIPT'
@@ -176,7 +196,7 @@ jobs:
           sudo chown -R "$(id -u):$(id -g)" sensor/target
 
       - name: The musl binary must be static and must start
-        if: ${{ endsWith(matrix.target, '-musl') }}
+        if: ${{ matrix.kind == 'musl' }}
         run: |
           set -eu
           bin=sensor/target/release/maltrail-sensor
@@ -189,8 +209,49 @@ jobs:
           fi
           docker run --rm -v "$PWD/$bin:/s:ro" alpine:3.20 /s --version
 
+      # macOS builds natively. libpcap is in the SDK, so there is no static-link dance and no
+      # libc floor to get wrong - a darwin binary carries its own minimum OS version instead, and
+      # the runner's SDK sets it.
+      - name: Build on macOS
+        if: ${{ matrix.kind == 'darwin' }}
+        run: |
+          set -eu
+          cargo build --release --locked --manifest-path sensor/Cargo.toml --bin maltrail-sensor
+          strip sensor/target/release/maltrail-sensor
+          sensor/target/release/maltrail-sensor --version
+
+      # FreeBSD has no hosted runner, so the build happens in a real VM on a Linux one - the same
+      # mechanism docs/compat uses to record the FreeBSD row. copyback brings the binary out.
+      - name: Build on FreeBSD
+        if: ${{ matrix.kind == 'freebsd' }}
+        uses: vmactions/freebsd-vm@v1
+        with:
+          release: '14.2'
+          usesh: true
+          copyback: true
+          prepare: |
+            pkg install -y rust
+          run: |
+            set -eu
+            cd sensor
+            cargo build --release --locked --bin maltrail-sensor
+            strip target/release/maltrail-sensor
+            ./target/release/maltrail-sensor --version
+
+      - name: The binary must start
+        if: ${{ matrix.kind == 'freebsd' }}
+        run: |
+          set -eu
+          bin=sensor/target/release/maltrail-sensor
+          test -x "$bin" || { echo "::error::no binary came back from the VM"; exit 1; }
+          # Cannot be RUN here - it is a FreeBSD binary on a Linux runner. That it exists, is
+          # executable and reports the right machine type is what can be checked from outside; the
+          # VM already ran --version inside itself above.
+          file "$bin"
+          file "$bin" | grep -q 'FreeBSD' || { echo "::error::not a FreeBSD binary"; exit 1; }
+
       - name: Refuse to publish a binary that needs a newer glibc, or a libpcap
-        if: ${{ !endsWith(matrix.target, '-musl') }}
+        if: ${{ matrix.kind == 'gnu' }}
         run: |
           set -eu
           bin=sensor/target/release/maltrail-sensor
@@ -217,7 +278,13 @@ jobs:
           cp sensor/target/release/maltrail-sensor "dist/$name/"
           cp LICENSE README.md "dist/$name/"
           tar -C dist -czf "dist/$name.tar.gz" "$name"
-          ( cd dist && sha256sum "$name.tar.gz" > "$name.tar.gz.sha256" )
+          # macOS ships shasum, not sha256sum. The output format is the same either way, which is
+          # what install.sh and the release page both read.
+          if command -v sha256sum >/dev/null; then
+            ( cd dist && sha256sum "$name.tar.gz" > "$name.tar.gz.sha256" )
+          else
+            ( cd dist && shasum -a 256 "$name.tar.gz" > "$name.tar.gz.sha256" )
+          fi
 
       - uses: actions/upload-artifact@v7
         with:
