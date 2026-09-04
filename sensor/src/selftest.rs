@@ -691,4 +691,22 @@ mod tests {
         assert_eq!(got, vec!["any".to_string()]);
         assert!(!expanded);
     }
+
+    /// The released Linux sensor could not capture on the shipped configuration.
+    ///
+    /// It links libpcap 1.10.5 statically, and that version refuses to activate a handle on the
+    /// `any` device when promiscuous mode is requested. Every prebuilt Linux sensor therefore
+    /// failed at "opening interface 'any'" with the default `MONITOR_INTERFACE`, while a build
+    /// against the system libpcap 1.10.4 worked - so nothing in development ever saw it, and `-T`
+    /// could not, because `-T` does not open a capture handle.
+    #[test]
+    fn promiscuous_mode_is_not_requested_on_the_any_device() {
+        use crate::capture::wants_promisc;
+        assert!(!wants_promisc("any"), "requesting promisc on 'any' is refused by libpcap 1.10.5");
+        assert!(!wants_promisc("ANY"), "the device name is not case-sensitive");
+        // Everywhere else it is wanted: without it a real interface only sees its own traffic.
+        assert!(wants_promisc("eth0"));
+        assert!(wants_promisc("en0"));
+        assert!(wants_promisc(r"\Device\NPF_{A}"));
+    }
 }

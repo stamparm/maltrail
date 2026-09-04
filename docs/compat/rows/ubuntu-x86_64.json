@@ -1,6 +1,7 @@
 {
   "capabilities": {
     "/ping": "✅",
+    "captures": "❌",
     "in-place": "✅",
     "install": "✅",
     "sensor": "✅",
@@ -9,7 +10,9 @@
     "uninstall": "✅",
     "upgrade": "✅"
   },
-  "findings": [],
+  "findings": [
+    "the sensor never reached 'running', so it captured nothing"
+  ],
   "host_kernel": "6.17.0-1022-azure",
   "image": "ubuntu:24.04",
   "label": "ubuntu",

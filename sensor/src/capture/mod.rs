@@ -103,6 +103,18 @@ pub fn resolve_interfaces(wanted: &[String], devices: &[String]) -> (Vec<String>
     (out, expanded)
 }
 
+/// Should promiscuous mode be requested for this interface?
+///
+/// Not for Linux's `any`: it is not a real interface and already receives what the kernel gives
+/// it. libpcap 1.10.5 does not ignore the request either, it refuses activation outright with
+/// "Promiscuous mode not supported on the \"any\" device" - and the release binary links exactly
+/// that version statically. A sensor installed from a release therefore could not capture at all
+/// with the shipped `MONITOR_INTERFACE any`, while a developer build against the system libpcap
+/// (1.10.4 here) tolerated it and looked healthy. `-T` cannot catch this: it never opens a handle.
+pub fn wants_promisc(interface: &str) -> bool {
+    !interface.eq_ignore_ascii_case("any")
+}
+
 impl Handle {
     /// Open one live capture handle and, when requested, join it to the fanout group.
     ///
@@ -125,18 +137,45 @@ impl Handle {
                 ));
             }
         }
-        let device = pcap::Device::from(interface);
-        let mut builder = pcap::Capture::from_device(device)?
-            .snaplen(cfg.capture_snaplen as i32)
-            .promisc(true)
-            .timeout(cfg.capture_timeout_ms);
-        if cfg.capture_buffer_size > 0 {
-            builder = builder.buffer_size(cfg.capture_buffer_size.min(i32::MAX as u64) as i32);
-        }
-        if cfg.capture_immediate {
-            builder = builder.immediate_mode(true);
-        }
-        let mut cap = builder.open()?;
+        // Promiscuous mode is meaningless on Linux's `any`: it is not a real interface, and it
+        // already gets what the kernel gives it. libpcap 1.10.5 does not merely ignore the
+        // request, it REFUSES it -
+        //
+        // ```text
+        // Promiscuous mode not supported on the "any" device
+        // ```
+        //
+        // - and the release binary links exactly that version statically. So a sensor installed
+        // from a release could not capture at all with the shipped `MONITOR_INTERFACE any`, while
+        // a build against the system libpcap tolerated it and looked fine. `-T` never caught it
+        // because `-T` does not open a capture handle.
+        let promisc = wants_promisc(interface);
+
+        let build = |promisc: bool| -> Result<pcap::Capture<pcap::Active>, pcap::Error> {
+            let mut builder = pcap::Capture::from_device(pcap::Device::from(interface))?
+                .snaplen(cfg.capture_snaplen as i32)
+                .promisc(promisc)
+                .timeout(cfg.capture_timeout_ms);
+            if cfg.capture_buffer_size > 0 {
+                builder = builder.buffer_size(cfg.capture_buffer_size.min(i32::MAX as u64) as i32);
+            }
+            if cfg.capture_immediate {
+                builder = builder.immediate_mode(true);
+            }
+            builder.open()
+        };
+
+        let mut cap = match build(promisc) {
+            Ok(cap) => cap,
+            // Other devices refuse promiscuous mode too - virtual adapters, and interfaces the
+            // operator is not permitted to put into it. Capturing without it is worth far more
+            // than refusing to start, so retry once and say what changed.
+            Err(e) if promisc && e.to_string().to_lowercase().contains("promiscuous") => {
+                crate::ceprintln!("[!] '{interface}' refused promiscuous mode ({e}); capturing without it");
+                build(false)?
+            }
+            Err(e) => return Err(e.into()),
+        };
 
         let mut flags = 0u32;
         if cfg.capture_fanout_defrag {

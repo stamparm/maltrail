@@ -299,6 +299,23 @@ def page(rows):
         "| in-place | Did installing from an existing checkout adopt it without cloning over it? |",
         "| uninstall | Did `--uninstall` remove the tree and units but keep config and logs? |",
         "",
+        "## The `captures` column is red on glibc Linux",
+        "",
+        "Those cells are the **released** sensor, which is what `install.sh` puts on a machine, "
+        "and it cannot capture with the shipped `MONITOR_INTERFACE any`. It links libpcap 1.10.5 "
+        "statically, and that version refuses to activate the `any` device when promiscuous mode "
+        "is requested — so the sensor stops at `opening interface 'any'`. A build against the "
+        "system libpcap 1.10.4 tolerates it, which is why no developer machine ever showed it, "
+        "and `-T` cannot show it either because `-T` never opens a capture handle.",
+        "",
+        "Fixed in the tree: promiscuous mode is no longer requested on `any`, verified against a "
+        "statically linked libpcap 1.10.5 built to the release recipe. These cells go green when "
+        "a release carries it. Alpine is green already because its sensor is built against musl "
+        "locally rather than downloaded.",
+        "",
+        "This column exists because of exactly this: nineteen rows had said the sensor worked, on "
+        "the strength of a self-test that never captured a packet.",
+        "",
         "## Windows, and why it is not a row here",
         "",
         "Windows is not in the table because the table is a record of what `install.sh` did on a "
