@@ -56,6 +56,26 @@ CAPABILITIES = [
 YES, NO, NA = "✅", "❌", "➖"
 
 
+def _sensor_identity(facts):
+    """Which sensor this row is about, in words that mean something.
+
+    `os.path.basename` of the path gives "maltrail-sensor" for every binary ever built, which
+    answers nothing - and the answer matters: a sensor built on 24.04 carries a glibc 2.39 floor
+    and will not run on Debian 12, while the release targets 2.28. Prefer what the binary said
+    about itself; fall back to the release directory name; then to the path.
+    """
+
+    reported = facts.get("sensor_version", "").strip()
+    if reported:
+        return reported
+
+    path = os.environ.get("MALTRAIL_TEST_SENSOR", "")
+    if not path:
+        return "sensor/target/release (local build)"
+    parent = os.path.basename(os.path.dirname(path.rstrip("/")))
+    return parent if parent.startswith("maltrail-sensor-") else path
+
+
 def _row_path(label, machine="x86_64"):
     # The architecture is part of the identity. Without it a row recorded on an arm runner
     # overwrites the x86_64 one of the same name, and sixteen CI jobs quietly become twelve rows.
@@ -116,7 +136,7 @@ def record(labels):
             # on Debian 12, Rocky 9 or Leap 15.6, which made those look unsupported when they are
             # not. The release binary targets 2.28 on purpose. Recorded, so the table cannot quietly
             # be answering a different question than it appears to.
-            "sensor_source": os.environ.get("MALTRAIL_TEST_SENSOR", "sensor/target/release (local build)"),
+            "sensor_source": _sensor_identity(facts),
         }
         with io.open(_row_path(label, row["machine"]), "w", encoding="utf-8") as handle:
             handle.write(json.dumps(row, indent=2, sort_keys=True, ensure_ascii=False) + "\n")
@@ -191,7 +211,7 @@ def page(rows):
                        row["python"], row["recorded_at"], row["recorded_by"]))
         if row.get("sensor_source"):
             body.append("")
-            body.append("Sensor tested: `%s`" % os.path.basename(row["sensor_source"].rstrip("/")))
+            body.append("Sensor tested: `%s`" % row["sensor_source"])
         if row["findings"]:
             body.append("")
             for finding in row["findings"]:

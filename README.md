@@ -166,7 +166,10 @@ checks are documented in [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md).
 
 ### Installer
 
-The installer supports Debian, Ubuntu, Raspberry Pi OS, RHEL, Fedora, and openSUSE:
+The installer is verified on twelve Linux distributions on every release — Debian, Ubuntu, Fedora,
+Rocky, AlmaLinux, Arch, openSUSE Leap and Tumbleweed, and Alpine — with the full result recorded in
+[`docs/compat`](docs/compat). Raspberry Pi OS and other 64-bit ARM systems use the `aarch64`
+build; 32-bit ARM has no prebuilt sensor and must build it from source.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/stamparm/maltrail/master/install.sh | sudo sh
@@ -205,8 +208,16 @@ valid trail set is available. The systemd unit runs the sensor's `-T` validation
 that missing privileges, an unwritable log directory, or an invalid trail set causes startup to
 fail visibly.
 
-The installer test harness covers Ubuntu, Debian, Fedora, openSUSE, and Alpine containers. Alpine
-uses musl and does not use the prebuilt glibc sensor binary; build the sensor from source there.
+The installer test harness covers twelve distributions, and "it installed" is not the assertion: in
+each one the server is started and asked for `/ping`, the sensor is asked to validate itself with
+`-T`, the units are checked for paths that resolve, the installer is re-run to prove an upgrade
+keeps operator configuration, and `--uninstall` is run. Every result is recorded per platform in
+[`docs/compat`](docs/compat), and the page there is generated from those rows rather than written
+by hand.
+
+Alpine and other musl systems get a `-musl` sensor build. They used to be told the prebuilt binary
+was glibc-linked and to compile their own; the sensor builds and runs on musl natively, so that was
+a missing artefact rather than a platform limit.
 
 ### Building from source
 

@@ -50,7 +50,7 @@ jobs:
           - { label: arch,       runner: ubuntu-latest, arch: x86_64 }
           - { label: opensuse,   runner: ubuntu-latest, arch: x86_64 }
           - { label: tumbleweed, runner: ubuntu-latest, arch: x86_64 }
-          - { label: alpine,     runner: ubuntu-latest, arch: x86_64 }
+          - { label: alpine,     runner: ubuntu-latest, arch: x86_64, libc: musl }
           # aarch64 is BUILT and shipped with every release and has never once been installed in a
           # test. These are the same images on an arm runner.
           - { label: ubuntu,     runner: ubuntu-24.04-arm, arch: aarch64 }
@@ -65,7 +65,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -eu
-          target=${{ matrix.arch == 'aarch64' && 'aarch64-unknown-linux-gnu' || 'x86_64-unknown-linux-gnu' }}
+          # The libc is part of the target. Alpine gets the musl build - it used to be told there
+          # was none and to install a Rust toolchain instead.
+          target="${{ matrix.arch }}-unknown-linux-${{ matrix.libc || 'gnu' }}"
           mkdir -p /tmp/sensor
           # A release without an asset for this target is a real answer, not a reason to fall back
           # to a locally built one - that is what made Debian 12 look unsupported.

@@ -50,9 +50,11 @@ image_for() {
     esac
 }
 
-# Alpine is musl: the prebuilt sensor is glibc-linked and cannot run there, so the installer is
-# expected to say so plainly and still install the server, rather than pretend.
-expects_sensor() { [ "$1" != "alpine" ]; }
+# Every environment here is expected to end up with a working sensor. Alpine used to be the
+# exception - the release shipped no musl binary, so the installer refused and told the operator to
+# install a Rust toolchain. The sensor builds and runs on musl in about a minute, so that was a
+# packaging gap dressed up as a platform limit; the release ships musl targets now.
+expects_sensor() { :; }
 
 # MALTRAIL_TEST_SENSOR points this at any binary - a locally built one, or a release artefact you
 # want to check runs on all five distributions before publishing it.
@@ -118,10 +120,12 @@ judge() {
         if got "$check"; then ok "$check"; else bad "$check" "" "$env"; fi
     done
 
-    # Alpine must REFUSE the glibc binary rather than install something that cannot run.
-    if ! expects_sensor "$env"; then
-        if printf '%s\n' "$out" | grep -qi musl; then ok "musl-refused-clearly"
-        else bad "musl-refused-clearly" "expected a warning naming musl" "$env"; fi
+    # Nothing may be REFUSED for being musl any more. The warning that used to be the correct
+    # answer on Alpine is now the symptom of a missing musl artefact.
+    if printf '%s\n' "$out" | grep -qi 'glibc-linked and'; then
+        bad "musl-not-refused" "installer still refuses musl instead of using the musl build" "$env"
+    else
+        ok "musl-not-refused"
     fi
 
     if [ "$fail" -gt "$before" ] || [ -n "${VERBOSE:-}" ]; then

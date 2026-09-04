@@ -269,9 +269,14 @@ clone_or_update() {
 # ---------------------------------------------------------------------------------------------
 target_triple() {
     machine=$(uname -m)
+    # The libc is part of the target, not a reason to give up. Alpine used to be told to install a
+    # Rust toolchain and build its own; the release ships musl binaries now, and the sensor builds
+    # and runs there natively in about a minute, so there was never anything to refuse.
+    libc=gnu
+    is_musl && libc=musl
     case $machine in
-        x86_64|amd64)   printf 'x86_64-unknown-linux-gnu' ;;
-        aarch64|arm64)  printf 'aarch64-unknown-linux-gnu' ;;
+        x86_64|amd64)   printf 'x86_64-unknown-linux-%s' "$libc" ;;
+        aarch64|arm64)  printf 'aarch64-unknown-linux-%s' "$libc" ;;
         *)              printf '' ;;
     esac
 }
@@ -311,12 +316,6 @@ install_sensor_binary() {
             warn "no prebuilt sensor for $(uname -m); build it with 'cd $PREFIX/sensor && cargo build --release'"
             return 1
         fi
-        if is_musl; then
-            warn "this is a musl system (Alpine); the prebuilt sensor is glibc-linked and will not run here."
-            warn "build it instead: apk add cargo libpcap-dev && cd $PREFIX/sensor && cargo build --release"
-            return 1
-        fi
-
         version=$REF
         case $version in
             master|main|*[!0-9.]*) version=$(latest_tag) ;;
@@ -432,8 +431,8 @@ verify_sensor() {
             ;;
         *"not found"*|*"No such file"*|*"cannot execute"*)
             if is_musl; then
-                warn "this is a musl system (Alpine); the prebuilt sensor is glibc-linked and cannot run here."
-                warn "build it instead: apk add cargo libpcap-dev && cd $PREFIX/sensor && cargo build --release"
+                warn "the musl sensor did not start on this musl system - that is a packaging bug, not your setup."
+                warn "build it meanwhile: apk add cargo libpcap-dev && cd $PREFIX/sensor && cargo build --release"
                 return 1
             fi
             warn "the sensor did not start: $(printf '%s' "$out" | head -1)"

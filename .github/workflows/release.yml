@@ -60,6 +60,14 @@ jobs:
             # container below is the C library it links against, and cross-compiling into an old
             # sysroot is a much worse way to get there.
             runner: ubuntu-24.04-arm
+          # musl. Alpine used to be told the prebuilt sensor could not run there and to install a
+          # Rust toolchain instead - but the sensor builds and runs on musl natively in about a
+          # minute, so that was a missing artefact presented as a platform limit. Same native-runner
+          # reasoning as above.
+          - target: x86_64-unknown-linux-musl
+            runner: ubuntu-latest
+          - target: aarch64-unknown-linux-musl
+            runner: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v7
 
@@ -102,6 +110,7 @@ jobs:
       # release since 3.1.1 died there. A heredoc passes the body verbatim, so an apostrophe in a
       # comment cannot reach the shell that spawned it.
       - name: Build against glibc 2.28, with libpcap linked in
+        if: ${{ !endsWith(matrix.target, '-musl') }}
         env:
           LIBPCAP_VERSION: 1.10.5
           LIBPCAP_SHA256: 37ced90a19a302a7f32e458224a00c365c117905c2cd35ac544b6880a81488f0
@@ -148,7 +157,40 @@ jobs:
       # Guards, not formalities: these are the two properties that cannot be checked by running
       # the binary on the build machine, and getting either wrong ships something that will not
       # exec on someone else's.
+      # Alpine builds it natively: musl-dev and libpcap-dev are two apk packages, and the result
+      # is a static binary with no libc floor to get wrong. None of the glibc build's problems -
+      # the 2.28 baseline, libpcap's SONAME differing between Debian and RHEL - exist here.
+      - name: Build against musl
+        if: ${{ endsWith(matrix.target, '-musl') }}
+        run: |
+          set -eu
+          cat > "$RUNNER_TEMP/build-musl.sh" <<'SCRIPT'
+          set -eu
+          apk add --no-cache cargo libpcap-dev musl-dev >/dev/null
+          cd /src/sensor
+          RUSTFLAGS="-C target-feature=+crt-static" cargo build --release --locked --bin maltrail-sensor
+          strip target/release/maltrail-sensor
+          SCRIPT
+          docker run --rm -v "$PWD:/src" -v "$RUNNER_TEMP/build-musl.sh:/build-musl.sh:ro" \
+            alpine:3.20 sh /build-musl.sh
+          sudo chown -R "$(id -u):$(id -g)" sensor/target
+
+      - name: The musl binary must be static and must start
+        if: ${{ endsWith(matrix.target, '-musl') }}
+        run: |
+          set -eu
+          bin=sensor/target/release/maltrail-sensor
+          # A musl binary that turned out dynamic would fail at exec on the machines this exists
+          # for, and the failure would look exactly like the glibc one we are replacing.
+          if ldd "$bin" 2>&1 | grep -qiE 'not a dynamic executable|statically linked'; then
+            echo "[i] static"
+          else
+            echo "::error::the musl sensor is not static:"; ldd "$bin" || true; exit 1
+          fi
+          docker run --rm -v "$PWD/$bin:/s:ro" alpine:3.20 /s --version
+
       - name: Refuse to publish a binary that needs a newer glibc, or a libpcap
+        if: ${{ !endsWith(matrix.target, '-musl') }}
         run: |
           set -eu
           bin=sensor/target/release/maltrail-sensor

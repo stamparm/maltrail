@@ -85,6 +85,9 @@ pkill -f 'server\.py' 2>/dev/null || true
 if [ -x "$SENSOR" ]; then
     if /usr/local/bin/maltrail-sensor --version >/tmp/version.log 2>&1; then
         echo "A sensor-runs"
+        # Which binary this row is about. A sensor built on a newer host carries that host's glibc
+        # floor, so "the sensor works here" means nothing without saying WHICH sensor.
+        echo "P sensor_version $(head -1 /tmp/version.log)"
         # -T is a real check, so give it something real: a trail set it can load. Building the
         # actual 1.6M-trail file here would test the updater, not the installer, so updates are
         # off and two trails stand in. Without a trails file -T rightly FAILS ("would detect
@@ -99,6 +102,13 @@ if [ -x "$SENSOR" ]; then
         fi
     elif grep -q 'GLIBC_' /tmp/version.log; then
         echo "F glibc: $(sed -n 's/.*maltrail-sensor: //p' /tmp/version.log | head -1)"
+    elif ! (ldd --version 2>&1 | grep -qi glibc); then
+        # musl. The file is installed and executable, but there is no glibc interpreter to load
+        # it, so the shell reports "not found" for a file that is plainly there. That is the
+        # prebuilt sensor being honestly unusable here, not a failure: install.sh said so and
+        # installed the server. Reported in those words, because the raw exec error reads like a
+        # broken install to anyone looking at the compatibility page.
+        echo "F musl: no glibc sensor for this platform - install.sh warned and installed the server only"
     else
         echo "F sensor did not start: $(tail -1 /tmp/version.log)"
     fi
