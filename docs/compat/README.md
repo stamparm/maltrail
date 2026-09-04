@@ -19,7 +19,7 @@ Kernel version is deliberately not listed: these run as containers, which share 
 | **Fedora Linux 44 (Container Image)** | x86_64 | glibc 2.43 | 3.14.7 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Fedora Linux 41 (Container Image)** | x86_64 | glibc 2.40 | 3.13.9 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **FreeBSD 14.2-RELEASE** | amd64 | FreeBSD libc | 3.12.14 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **macOS 26.5.2 (arm64)** | arm64 | libSystem | 3.14.7 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **macOS 26.6.2 (arm64)** | arm64 | libSystem | 3.14.7 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **macOS 15.7.9 (x86_64)** | x86_64 | libSystem | 3.14.7 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **openSUSE Leap 15.6** | x86_64 | glibc 2.38 | 3.6.15 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Rocky Linux 9.3 (Blue Onyx)** | x86_64 | glibc 2.34 | 3.9.25 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -71,7 +71,7 @@ Sensor tested: `Maltrail (sensor) #v3.3 {https://maltrail.github.io}`
 
 ### Alpine Linux v3.20
 
-`alpine:3.20` · x86_64 · musl · python 3.12.13 · recorded 2026-09-04 by local
+`alpine:3.20` · x86_64 · musl · python 3.12.13 · recorded 2026-09-04 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.3 {https://maltrail.github.io}`
 
@@ -123,7 +123,7 @@ Sensor tested: `Maltrail (sensor) #v3.3 {https://maltrail.github.io}`
 
 Sensor tested: `Maltrail (sensor) #v3.3 {https://maltrail.github.io}`
 
-### macOS 26.5.2 (arm64)
+### macOS 26.6.2 (arm64)
 
 `native` · arm64 · libSystem · python 3.14.7 · recorded 2026-09-04 by ci
 
@@ -137,19 +137,19 @@ Sensor tested: `Maltrail (sensor) #v3.3 {https://maltrail.github.io}`
 
 ### openSUSE Leap 15.6
 
-`opensuse/leap:15.6` · x86_64 · glibc 2.38 · python 3.6.15 · recorded 2026-09-04 by local
+`opensuse/leap:15.6` · x86_64 · glibc 2.38 · python 3.6.15 · recorded 2026-09-04 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.3 {https://maltrail.github.io}`
 
 ### Rocky Linux 9.3 (Blue Onyx)
 
-`rockylinux:9` · x86_64 · glibc 2.34 · python 3.9.25 · recorded 2026-09-04 by local
+`rockylinux:9` · x86_64 · glibc 2.34 · python 3.9.25 · recorded 2026-09-04 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.3 {https://maltrail.github.io}`
 
 ### openSUSE Tumbleweed
 
-`opensuse/tumbleweed` · x86_64 · glibc 2.44 · python 3.13.14 · recorded 2026-09-04 by local
+`opensuse/tumbleweed` · x86_64 · glibc 2.44 · python 3.13.14 · recorded 2026-09-04 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.3 {https://maltrail.github.io}`
 
@@ -161,12 +161,12 @@ Sensor tested: `Maltrail (sensor) #v3.3 {https://maltrail.github.io}`
 
 ### Ubuntu 24.04.4 LTS
 
-`ubuntu:24.04` · x86_64 · glibc 2.39 · python 3.12.3 · recorded 2026-09-04 by local
+`ubuntu:24.04` · x86_64 · glibc 2.39 · python 3.12.3 · recorded 2026-09-04 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.3 {https://maltrail.github.io}`
 
 ### Ubuntu 22.04.5 LTS
 
-`ubuntu:22.04` · x86_64 · glibc 2.35 · python 3.10.12 · recorded 2026-09-04 by local
+`ubuntu:22.04` · x86_64 · glibc 2.35 · python 3.10.12 · recorded 2026-09-04 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.3 {https://maltrail.github.io}`

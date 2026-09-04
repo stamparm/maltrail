@@ -10,7 +10,7 @@
     "upgrade": "✅"
   },
   "findings": [],
-  "host_kernel": "6.8.0-138-generic",
+  "host_kernel": "6.17.0-1022-azure",
   "image": "ubuntu:24.04",
   "label": "ubuntu",
   "libc": "glibc 2.39",
@@ -50,6 +50,6 @@
   "os": "Ubuntu 24.04.4 LTS",
   "python": "3.12.3",
   "recorded_at": "2026-09-04",
-  "recorded_by": "local",
+  "recorded_by": "ci",
   "sensor_source": "Maltrail (sensor) #v3.3 {https://maltrail.github.io}"
 }

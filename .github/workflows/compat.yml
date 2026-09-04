@@ -162,6 +162,19 @@ jobs:
               python3 tests/install/record.py record freebsd --native || true
             echo "===== assert.sh transcript ====="
             cat .compat-raw/freebsd.out || echo "(no transcript)"
+
+      # The `rm` above runs INSIDE the VM, and copyback rsyncs the VM's files onto the host
+      # without propagating deletions - so the host still holds every committed row and this job
+      # was uploading eighteen rows it never recorded. They are older than the ones the jobs that
+      # DID record them upload, and merge-multiple resolves a collision by last-writer-wins, so
+      # the published page could show a stale row from a job that never tested that platform.
+      # Observed: this artifact carried macOS 26.5.2 while the macOS job uploaded 26.6.2.
+      - name: Keep only the row this job recorded
+        run: |
+          set -eu
+          find docs/compat/rows -name '*.json' ! -name 'freebsd-*.json' -delete
+          echo "uploading:"; ls -1 docs/compat/rows/
+
       - uses: actions/upload-artifact@v4
         with:
           name: compat-row-freebsd
@@ -214,6 +227,27 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
+      # Downloaded UNMERGED first, to prove no two jobs claim the same row. merge-multiple
+      # silently resolves a collision by last-writer-wins, which is how a job that uploaded rows
+      # it had not recorded could overwrite a fresher row from the job that did.
+      - uses: actions/download-artifact@v4
+        with:
+          path: /tmp/unmerged
+          pattern: compat-row-*
+
+      - name: No two jobs may claim the same row
+        run: |
+          set -eu
+          dupes=$(find /tmp/unmerged -name '*.json' -printf '%f\n' | sort | uniq -d)
+          if [ -n "$dupes" ]; then
+            echo "::error::these rows were uploaded by more than one job, so the page depends on"
+            echo "::error::merge order rather than on which job actually tested the platform:"
+            printf '%s\n' "$dupes"
+            find /tmp/unmerged -name '*.json' | sort
+            exit 1
+          fi
+          echo "[i] every row was uploaded by exactly one job"
+
       - uses: actions/download-artifact@v4
         with:
           path: /tmp/rows

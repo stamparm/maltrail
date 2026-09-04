@@ -10,7 +10,7 @@
     "upgrade": "✅"
   },
   "findings": [],
-  "host_kernel": "6.8.0-138-generic",
+  "host_kernel": "6.17.0-1022-azure",
   "image": "opensuse/leap:15.6",
   "label": "opensuse",
   "libc": "glibc 2.38",
@@ -50,6 +50,6 @@
   "os": "openSUSE Leap 15.6",
   "python": "3.6.15",
   "recorded_at": "2026-09-04",
-  "recorded_by": "local",
+  "recorded_by": "ci",
   "sensor_source": "Maltrail (sensor) #v3.3 {https://maltrail.github.io}"
 }
