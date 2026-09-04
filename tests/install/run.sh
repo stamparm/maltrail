@@ -148,6 +148,16 @@ for env in $targets; do
     judge "$env"
 done
 
+# tests/install/record.py reads these to build docs/compat rows. Off by default: the raw output is
+# a diagnostic, and leaving it behind on every run would litter.
+if [ -n "${MALTRAIL_INSTALL_RAW:-}" ]; then
+    mkdir -p "$MALTRAIL_INSTALL_RAW"
+    for env in $targets; do
+        cp "$WORK/$env.out" "$MALTRAIL_INSTALL_RAW/$env.out" 2>/dev/null || true
+        printf '%s\n' "$(image_for "$env")" > "$MALTRAIL_INSTALL_RAW/$env.image"
+    done
+fi
+
 printf '\n=============================================\n'
 printf 'install.sh: %d passed, %d failed, %d seconds\n' "$pass" "$fail" "$(( $(date +%s) - start ))"
 [ -n "$failed" ] && printf 'failed:%s\n' "$failed"

@@ -1,0 +1,111 @@
+# Where does Maltrail actually run?
+#
+# The README claimed six platforms; the harness covered five, and none of the result was published.
+# The first widening to twelve found install.sh dead on the whole RHEL 9 family - curl-minimal
+# conflicts with curl, dnf refused the transaction, and NOTHING installed - while Arch had worked
+# since pacman support landed with nobody able to say so.
+#
+# So this records rather than asserts. Each job installs Maltrail in a real image, asks it
+# questions, and uploads a row; the last job renders them into docs/compat and fails if the
+# published page disagrees. A table nobody types cannot drift into marketing.
+#
+# The sensor comes from the RELEASE, not from a build here, and that is not incidental: a sensor
+# built on 24.04 carries a glibc 2.39 floor and will not run on Debian 12, Rocky 9 or Leap 15.6 -
+# which made five supported platforms look unsupported the first time this was recorded. The
+# release targets 2.28.
+
+name: Compatibility
+
+on:
+  schedule:
+    - cron: '19 4 * * 2'
+  workflow_dispatch:
+  push:
+    branches: [ "master" ]
+    paths:
+      - 'install.sh'
+      - 'tests/install/**'
+      - '.github/workflows/compat.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  linux:
+    name: ${{ matrix.label }} (${{ matrix.arch }})
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { label: ubuntu,     runner: ubuntu-latest, arch: x86_64 }
+          - { label: ubuntu2204, runner: ubuntu-latest, arch: x86_64 }
+          - { label: debian,     runner: ubuntu-latest, arch: x86_64 }
+          - { label: debian13,   runner: ubuntu-latest, arch: x86_64 }
+          - { label: fedora,     runner: ubuntu-latest, arch: x86_64 }
+          - { label: fedora41,   runner: ubuntu-latest, arch: x86_64 }
+          - { label: rocky,      runner: ubuntu-latest, arch: x86_64 }
+          - { label: alma,       runner: ubuntu-latest, arch: x86_64 }
+          - { label: arch,       runner: ubuntu-latest, arch: x86_64 }
+          - { label: opensuse,   runner: ubuntu-latest, arch: x86_64 }
+          - { label: tumbleweed, runner: ubuntu-latest, arch: x86_64 }
+          - { label: alpine,     runner: ubuntu-latest, arch: x86_64 }
+          # aarch64 is BUILT and shipped with every release and has never once been installed in a
+          # test. These are the same images on an arm runner.
+          - { label: ubuntu,     runner: ubuntu-24.04-arm, arch: aarch64 }
+          - { label: debian13,   runner: ubuntu-24.04-arm, arch: aarch64 }
+          - { label: fedora,     runner: ubuntu-24.04-arm, arch: aarch64 }
+          - { label: alma,       runner: ubuntu-24.04-arm, arch: aarch64 }
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Fetch the released sensor for this architecture
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          target=${{ matrix.arch == 'aarch64' && 'aarch64-unknown-linux-gnu' || 'x86_64-unknown-linux-gnu' }}
+          mkdir -p /tmp/sensor
+          # A release without an asset for this target is a real answer, not a reason to fall back
+          # to a locally built one - that is what made Debian 12 look unsupported.
+          gh release download --repo "$GITHUB_REPOSITORY" \
+            --pattern "maltrail-sensor-*-${target}.tar.gz" --dir /tmp/sensor
+          tar xzf /tmp/sensor/*.tar.gz -C /tmp/sensor
+          find /tmp/sensor -name maltrail-sensor -type f -print
+
+      - name: Record the row
+        env:
+          MALTRAIL_RECORDED_BY: ci
+        run: |
+          set -eu
+          bin=$(find /tmp/sensor -name maltrail-sensor -type f | head -1)
+          MALTRAIL_TEST_SENSOR="$bin" python3 tests/install/record.py record ${{ matrix.label }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: compat-row-${{ matrix.label }}-${{ matrix.arch }}
+          path: docs/compat/rows/*.json
+          if-no-files-found: error
+
+  page:
+    name: the published page says what the rows say
+    needs: linux
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v4
+        with:
+          path: /tmp/rows
+          pattern: compat-row-*
+          merge-multiple: true
+      - name: Render and compare
+        run: |
+          set -eu
+          cp /tmp/rows/*.json docs/compat/rows/
+          python3 tests/install/record.py render
+          # The page is regenerated from the rows CI just recorded. A diff here means the committed
+          # page is out of date - the rows are the evidence, the page is derived from them.
+          git --no-pager diff --stat docs/compat || true
+          python3 tests/install/record.py render --check

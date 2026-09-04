@@ -7,6 +7,7 @@
 #
 #     A <name>        the check passed
 #     F <detail>      a finding that is not install.sh's fault (recorded, not counted as a failure)
+#     P <key> <value> what this platform IS - recorded into the compatibility row, never judged
 #
 # Anything else is diagnostic output the host shows when something fails. Arguments are passed
 # straight through to install.sh.
@@ -31,6 +32,14 @@ sh /src/install.sh "$@" 2>&1
 printf -- '--- ASSERT ---\n'
 
 # 1. the tree, the configuration, the user, the directories
+# Recorded, not asserted: the row in docs/compat has to say WHICH debian this was, and the only
+# place that is knowable is inside the image.
+echo "P os $( (. /etc/os-release 2>/dev/null && printf '%s' "${PRETTY_NAME:-$NAME $VERSION_ID}") || printf 'unknown')"
+echo "P kernel $(uname -r 2>/dev/null || printf 'unknown')"
+echo "P machine $(uname -m 2>/dev/null || printf 'unknown')"
+echo "P python $(python3 -c 'import platform;print(platform.python_version())' 2>/dev/null || printf 'none')"
+echo "P libc $( (ldd --version 2>&1 | head -1) || printf 'unknown')"
+
 [ -f "$PREFIX/server.py" ] && echo "A tree"
 [ -f "$CONF" ] && echo "A conf"
 id maltrail >/dev/null 2>&1 && echo "A user"
