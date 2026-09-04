@@ -11,10 +11,10 @@
   },
   "findings": [],
   "host_kernel": "6.17.0-1022-azure",
-  "image": "fedora:41",
-  "label": "fedora41",
-  "libc": "glibc 2.40",
-  "machine": "x86_64",
+  "image": "ubuntu:24.04",
+  "label": "ubuntu",
+  "libc": "glibc 2.39",
+  "machine": "aarch64",
   "marks": [
     "conf",
     "conf-managed-block",
@@ -47,8 +47,8 @@
     "unit-server-conf",
     "user"
   ],
-  "os": "Fedora Linux 41 (Container Image)",
-  "python": "3.13.9",
+  "os": "Ubuntu 24.04.4 LTS",
+  "python": "3.12.3",
   "recorded_at": "2026-09-04",
   "recorded_by": "ci",
   "sensor_source": "Maltrail (sensor) #v3.3 {https://maltrail.github.io}"

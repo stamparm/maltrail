@@ -10,11 +10,11 @@
     "upgrade": "✅"
   },
   "findings": [],
-  "host_kernel": "6.17.0-1022-azure",
-  "image": "fedora:41",
-  "label": "fedora41",
-  "libc": "glibc 2.40",
-  "machine": "x86_64",
+  "host_kernel": "25.5.0",
+  "image": "native",
+  "label": "macos-arm64",
+  "libc": "libSystem",
+  "machine": "arm64",
   "marks": [
     "conf",
     "conf-managed-block",
@@ -47,8 +47,8 @@
     "unit-server-conf",
     "user"
   ],
-  "os": "Fedora Linux 41 (Container Image)",
-  "python": "3.13.9",
+  "os": "macOS 26.5.2 (arm64)",
+  "python": "3.14.7",
   "recorded_at": "2026-09-04",
   "recorded_by": "ci",
   "sensor_source": "Maltrail (sensor) #v3.3 {https://maltrail.github.io}"

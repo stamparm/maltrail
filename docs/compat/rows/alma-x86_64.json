@@ -10,7 +10,7 @@
     "upgrade": "✅"
   },
   "findings": [],
-  "host_kernel": "6.8.0-138-generic",
+  "host_kernel": "6.17.0-1022-azure",
   "image": "almalinux:9",
   "label": "alma",
   "libc": "glibc 2.34",
@@ -50,6 +50,6 @@
   "os": "AlmaLinux 9.8 (Olive Jaguar)",
   "python": "3.9.25",
   "recorded_at": "2026-09-04",
-  "recorded_by": "local",
+  "recorded_by": "ci",
   "sensor_source": "Maltrail (sensor) #v3.3 {https://maltrail.github.io}"
 }

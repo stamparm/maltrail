@@ -231,8 +231,10 @@ def page(rows):
         "# Where Maltrail is known to run",
         "",
         "%s %s the capability was exercised and worked, %s it cannot apply on that platform, "
-        "%s it did not. Every cell was produced by `tests/install/run.sh` installing Maltrail in "
-        "that image and asking it questions - never by hand." % (YES, "—", NA, NO),
+        "%s it did not. Every cell was produced by installing Maltrail on that platform and asking "
+        "it questions - in a container where one can stand in for the real thing, and on a real "
+        "FreeBSD VM or a real Mac where it cannot, because a container shares this kernel. Never "
+        "by hand." % (YES, "—", NA, NO),
         "",
         "**%d platforms, %d capabilities verified, %d not applicable, %d failing.** "
         "Last recorded %s." % (len(rows), passed, na, failed, when),

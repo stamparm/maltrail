@@ -78,7 +78,9 @@ libc_name() {
         NetBSD)  printf 'NetBSD libc' ; return ;;
         OpenBSD) printf 'OpenBSD libc' ; return ;;
     esac
-    ldd --version 2>/dev/null | head -1 || printf 'unknown'
+    # musl's ldd writes its version banner to STDERR, so discarding stderr reported Alpine's libc
+    # as "unknown" - on the one platform where the libc is the whole point of the row.
+    ldd --version 2>&1 | head -1 || printf 'unknown'
 }
 echo "P libc $(libc_name)"
 

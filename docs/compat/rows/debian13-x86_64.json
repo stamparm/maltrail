@@ -10,7 +10,7 @@
     "upgrade": "✅"
   },
   "findings": [],
-  "host_kernel": "6.8.0-138-generic",
+  "host_kernel": "6.17.0-1022-azure",
   "image": "debian:13",
   "label": "debian13",
   "libc": "glibc 2.41",
@@ -50,6 +50,6 @@
   "os": "Debian GNU/Linux 13 (trixie)",
   "python": "3.13.5",
   "recorded_at": "2026-09-04",
-  "recorded_by": "local",
+  "recorded_by": "ci",
   "sensor_source": "Maltrail (sensor) #v3.3 {https://maltrail.github.io}"
 }
