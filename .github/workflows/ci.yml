@@ -244,11 +244,10 @@ jobs:
   # continue-on-error, because this job exists to REPORT the remaining distance rather than to
   # block a release on a platform Maltrail does not claim yet. The day it passes clean is the day
   # that claim becomes honest.
-  windows-distance:
-    name: how far is Windows
+  windows:
+    name: sensor (Windows)
     runs-on: windows-latest
     timeout-minutes: 30
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v7
       - uses: dtolnay/rust-toolchain@stable
@@ -260,25 +259,34 @@ jobs:
           Invoke-WebRequest -Uri https://npcap.com/dist/npcap-sdk-1.13.zip -OutFile sdk.zip
           Expand-Archive sdk.zip -DestinationPath $env:RUNNER_TEMP\npcap-sdk
           "LIB=$env:RUNNER_TEMP\npcap-sdk\Lib\x64;$env:LIB" >> $env:GITHUB_ENV
-      - name: How much does not compile
+
+      # This job used to be `windows-distance`, continue-on-error, counting how many errors stood
+      # between the sensor and Windows. It was twenty-four. They are gone, so it builds for real
+      # and fails the build if that regresses.
+      #
+      # CARGO_TERM_COLOR matters here for a reason worth keeping: the workflow sets it to `always`,
+      # which prefixes every diagnostic with an ANSI escape, and the distance job's `^error` grep
+      # therefore matched nothing and reported "errors: 0" against twenty-four of them.
+      - name: Build
         shell: bash
         env:
-          # The workflow sets CARGO_TERM_COLOR: always, so every diagnostic line begins with an
-          # ANSI escape and '^error' matches nothing. The first run of this job reported
-          # "errors: 0" against a build with twenty-four of them - a measurement lying in the
-          # direction that looks like success, which is the worst direction.
           CARGO_TERM_COLOR: never
+        run: cargo build --manifest-path sensor/Cargo.toml --release
+
+      - name: It runs
+        shell: bash
         run: |
-          cargo check --manifest-path sensor/Cargo.toml 2>&1 | tee /tmp/win.log || true
-          n=$(grep -cE "^error(\[|:)" /tmp/win.log || true)
-          {
-            echo "### Windows: $n remaining compile error(s)"
-            echo
-            echo '```'
-            grep -oE "error\[E[0-9]+\]: .*|error: .*" /tmp/win.log | sort | uniq -c | sort -rn | head -30
-            echo '```'
-          } >> "$GITHUB_STEP_SUMMARY"
-          printf 'errors: %s\n' "$n"
+          ./sensor/target/release/maltrail-sensor.exe --version
+          ./sensor/target/release/maltrail-sensor.exe --help > /dev/null
+
+      # The unit tests are platform-independent logic - trail matching, the heuristics, the
+      # regex parity with core/. The integration tests that need a raw socket, a FIFO or SIGHUP
+      # are cfg'd off; the rest run.
+      - name: Tests
+        shell: bash
+        env:
+          CARGO_TERM_COLOR: never
+        run: cargo test --manifest-path sensor/Cargo.toml --release
 
   # The oldest interpreter Maltrail claims to run on, tested on the interpreter itself rather than
   # asserted in a README. One 3.7-only method call (str.isascii) once made the updater die on every

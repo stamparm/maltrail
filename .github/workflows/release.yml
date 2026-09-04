@@ -50,6 +50,11 @@ jobs:
     needs: gate
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 60
+    # windows-latest would otherwise run the shared steps below under pwsh, where none of their
+    # shell syntax means anything. Steps that genuinely want pwsh ask for it.
+    defaults:
+      run:
+        shell: bash
     strategy:
       fail-fast: false
       matrix:
@@ -88,6 +93,14 @@ jobs:
           - target: x86_64-unknown-freebsd
             kind: freebsd
             runner: ubuntu-latest
+          # Windows. The old sensor could not go here at all - it was Python plus pcapy-ng, and
+          # pcapy-ng on Windows was the reason the platform was written off. The Rust sensor talks
+          # to libpcap, whose Windows implementation is Npcap, so what was a rewrite is a link
+          # flag. Twenty-four compile errors stood in the way; they were platform assumptions, and
+          # they are gone.
+          - target: x86_64-pc-windows-msvc
+            kind: windows
+            runner: windows-latest
     steps:
       - uses: actions/checkout@v7
 
@@ -250,6 +263,27 @@ jobs:
           file "$bin"
           file "$bin" | grep -q 'FreeBSD' || { echo "::error::not a FreeBSD binary"; exit 1; }
 
+      # wpcap.lib comes from the Npcap SDK, and only for the link: capturing needs the Npcap
+      # DRIVER installed on the machine that runs the binary, which is why the archive says so.
+      - name: Npcap SDK
+        if: ${{ matrix.kind == 'windows' }}
+        shell: pwsh
+        run: |
+          Invoke-WebRequest -Uri https://npcap.com/dist/npcap-sdk-1.13.zip -OutFile sdk.zip
+          Expand-Archive sdk.zip -DestinationPath $env:RUNNER_TEMP\npcap-sdk
+          "LIB=$env:RUNNER_TEMP\npcap-sdk\Lib\x64;$env:LIB" >> $env:GITHUB_ENV
+
+      - name: Build on Windows
+        if: ${{ matrix.kind == 'windows' }}
+        env:
+          CARGO_TERM_COLOR: never
+        run: |
+          set -eu
+          cargo build --release --locked --manifest-path sensor/Cargo.toml --bin maltrail-sensor
+          # --version needs no capture privilege and no driver, so it proves the link resolved and
+          # the binary starts. Anything more would need Npcap installed on the runner.
+          ./sensor/target/release/maltrail-sensor.exe --version
+
       - name: Refuse to publish a binary that needs a newer glibc, or a libpcap
         if: ${{ matrix.kind == 'gnu' }}
         run: |
@@ -273,9 +307,33 @@ jobs:
 
       - name: Package with a checksum
         run: |
+          set -eu
           name="maltrail-sensor-${GITHUB_REF_NAME}-${{ matrix.target }}"
           mkdir -p "dist/$name"
-          cp sensor/target/release/maltrail-sensor "dist/$name/"
+          if [ "${{ matrix.kind }}" = "windows" ]; then
+            cp sensor/target/release/maltrail-sensor.exe "dist/$name/"
+            # The binary links wpcap, so it needs the Npcap driver present to capture anything.
+            # Someone who downloads this gets an .exe that runs, reports its version and then
+            # cannot open an interface, with no file in the archive explaining why. This is that
+            # file.
+            cat > "dist/$name/NPCAP.txt" <<'NOTE'
+          This sensor captures through Npcap, the Windows implementation of libpcap. The binary
+          links against it, so it starts and answers --version without it - but opening an
+          interface will fail until the driver is installed.
+
+              https://npcap.com/#download
+
+          Install it with WinPcap API compatibility enabled, then run the sensor from an elevated
+          prompt: capture needs Administrator on Windows the way it needs root or CAP_NET_RAW
+          elsewhere.
+
+          Everything else works the same as on any other platform. `maltrail-sensor -T -c
+          maltrail.conf` checks a configuration without capturing and needs no driver at all, so
+          it is the right first command.
+          NOTE
+          else
+            cp sensor/target/release/maltrail-sensor "dist/$name/"
+          fi
           cp LICENSE README.md "dist/$name/"
           tar -C dist -czf "dist/$name.tar.gz" "$name"
           # macOS ships shasum, not sha256sum. The output format is the same either way, which is
