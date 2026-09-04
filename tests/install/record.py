@@ -48,6 +48,7 @@ CAPABILITIES = [
     ("/ping", ["server-ping"]),
     ("sensor", ["unit-sensor", "unit-sensor-conf"]),
     ("sensor runs", ["sensor-runs", "sensor-selftest"]),
+    ("captures", ["sensor-captures"]),
     ("upgrade", ["rerun-ok", "conf-preserved", "tree-after-rerun"]),
     ("in-place", ["inplace-adopted", "inplace-kept-edit", "inplace-kept-custom-trail"]),
     ("uninstall", ["uninstall-ran", "uninstall-removed-tree", "uninstall-kept-conf"]),
@@ -201,7 +202,7 @@ def record(labels, native=False, windows=False):
         windows = facts.get("os", "").startswith("Windows")
         capabilities = {}
         for name, required in CAPABILITIES:
-            if name in ("sensor", "sensor runs") and musl:
+            if name in ("sensor", "sensor runs", "captures") and musl:
                 capabilities[name] = NA
             elif windows and name in WINDOWS_NOT_APPLICABLE:
                 capabilities[name] = NA
@@ -291,6 +292,9 @@ def page(rows):
         "| /ping | Did the server actually start and answer? |",
         "| sensor | Did the sensor unit render with paths that resolve? |",
         "| sensor runs | Did the sensor start and pass its own `-T` self-test? |",
+        "| captures | Did it then see a real packet? A DNS query for a trail domain, matched live "
+        "off the wire. `-T` proves the configuration resolves; only this proves capture works - "
+        "which is how `MONITOR_INTERFACE any` passed `-T` on Windows and then opened nothing. |",
         "| upgrade | Did re-running the installer keep operator configuration? |",
         "| in-place | Did installing from an existing checkout adopt it without cloning over it? |",
         "| uninstall | Did `--uninstall` remove the tree and units but keep config and logs? |",

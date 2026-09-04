@@ -159,7 +159,7 @@ if [ -x "$SENSOR" ]; then
         # actual 1.6M-trail file here would test the updater, not the installer, so updates are
         # off and two trails stand in. Without a trails file -T rightly FAILS ("would detect
         # NOTHING"), which is the sensor being correct, not a bug to assert around.
-        printf 'evil.example,"malware (test)","(static)"\n1.2.3.4,"malware (test)","(static)"\n' > /var/lib/maltrail/trails.csv
+        printf 'evil.example,"malware (test)","(static)"\n1.2.3.4,"malware (test)","(static)"\nmaltrail-capture-probe.com,"malware (test)","(static)"\n' > /var/lib/maltrail/trails.csv
         chown maltrail:maltrail /var/lib/maltrail/trails.csv
         printf '\nDISABLE_TRAIL_UPDATES true\n' >> "$CONF"
         if maltrail-sensor -c "$CONF" -T >/tmp/selftest.log 2>&1; then
@@ -167,6 +167,62 @@ if [ -x "$SENSOR" ]; then
         else
             echo "sensor -T failed:"; tail -6 /tmp/selftest.log
         fi
+
+        # 4b. it CAPTURES. -T proves the configuration parses and the interface resolves; it does
+        #     not prove a packet ever reaches the sensor. Nineteen rows said "sensor runs" on the
+        #     strength of -T alone, and the Windows VM run showed what that can hide: the shipped
+        #     MONITOR_INTERFACE 'any' is a Linux pseudo-device, so on Npcap, macOS and the BSDs the
+        #     sensor passed -T and then could not open anything. Only capturing catches that.
+        #
+        #     The query packet is BUILT here and sent with sendto(), not handed to the resolver.
+        #     getaddrinfo() was the first attempt and it failed with EAI_NONAME before a packet
+        #     ever left, so the check reported "capture is not working" about a working sensor.
+        #
+        #     Two details that are load-bearing, both learned by getting them wrong:
+        #       * the probe domain must not end in a suffix from IGNORE_DNS_QUERY_SUFFIXES. The
+        #         first one was 'evil.example', and 'example' is in that set - the sensor ignored
+        #         it BY DESIGN and no amount of capturing would ever have produced an event.
+        #       * 192.0.2.0/24 is TEST-NET-1: reserved, unroutable, so the packet leaves the
+        #         interface the sensor is watching and reaches nothing. 127.0.0.1 is in the
+        #         shipped whitelist and 127.0.0.2 cannot be bound on macOS or the BSDs.
+        maltrail-sensor -c "$CONF" --console >/tmp/live.log 2>&1 &
+        live_pid=$!
+        i=0
+        while [ "$i" -lt 30 ] && ! grep -q 'running\.\.\.' /tmp/live.log 2>/dev/null; do
+            i=$((i + 1)); sleep 1
+        done
+        if grep -q 'running\.\.\.' /tmp/live.log 2>/dev/null; then
+            i=0
+            while [ "$i" -lt 20 ]; do
+                i=$((i + 1))
+                "$python" -c "
+import socket, struct, random
+def query(name):
+    header = struct.pack('>HHHHHH', random.randint(0, 0xffff), 0x0100, 1, 0, 0, 0)
+    qname = b''.join(bytes([len(l)]) + l.encode() for l in name.split('.')) + b'\\x00'
+    return header + qname + struct.pack('>HH', 1, 1)
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+for _ in range(3):
+    s.sendto(query('maltrail-capture-probe.com'), ('192.0.2.53', 53))
+" 2>/dev/null || true
+                grep -q 'maltrail-capture-probe' /tmp/live.log 2>/dev/null && break
+                sleep 1
+            done
+            if grep -q 'maltrail-capture-probe' /tmp/live.log; then
+                echo "A sensor-captures"
+            else
+                echo "F the sensor started but never saw a packet sent to it - capture is broken here"
+                echo "live log:"; tail -12 /tmp/live.log
+            fi
+        else
+            # No escape hatch. If the sensor cannot get to the point of capturing, that IS the
+            # platform failing this check - reporting it as "not applicable" is how -T came to
+            # stand in for capture in the first place.
+            echo "F the sensor never reached 'running', so it captured nothing"
+            tail -8 /tmp/live.log 2>/dev/null || true
+        fi
+        kill "$live_pid" 2>/dev/null || true
+        wait "$live_pid" 2>/dev/null || true
     elif grep -q 'GLIBC_' /tmp/version.log; then
         echo "F glibc: $(sed -n 's/.*maltrail-sensor: //p' /tmp/version.log | head -1)"
     elif ! (ldd --version 2>&1 | grep -qi glibc); then
