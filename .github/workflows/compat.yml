@@ -120,6 +120,81 @@ jobs:
           path: docs/compat/rows/*.json
           if-no-files-found: error
 
+  # A container shares the host kernel, so there is no image that stands in for these. FreeBSD gets
+  # a real VM on a Linux runner; macOS gets a real Mac. Both run assert.sh natively - it is POSIX sh
+  # and takes MALTRAIL_SRC, so the same checks that run in the containers run here.
+  #
+  # The sensor is built in-place rather than downloaded: no release carries a FreeBSD or darwin
+  # target yet. Proving install.sh, the rc.d/launchd scripts and the sensor work on these platforms
+  # is what decides whether adding those targets is worth doing.
+  freebsd:
+    name: freebsd (native VM)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+      - uses: vmactions/freebsd-vm@v1
+        with:
+          release: '14.2'
+          usesh: true
+          copyback: true
+          prepare: |
+            pkg install -y git python3 rust
+          run: |
+            set -eu
+            cd /home/runner/work/maltrail/maltrail || cd "$GITHUB_WORKSPACE"
+            echo "--- building the sensor ---"
+            cd sensor && cargo build --release --bin maltrail-sensor && cd ..
+            echo "--- recording the row ---"
+            MALTRAIL_TEST_SENSOR="$PWD/sensor/target/release/maltrail-sensor" \
+              python3 tests/install/record.py record freebsd --native || true
+            python3 - <<'PY'
+            import io, os
+            raw = os.path.join(".compat-raw", "freebsd.out")
+            text = io.open(raw, encoding="utf-8", errors="replace").read() if os.path.isfile(raw) else ""
+            print("marks: %d" % text.count("\nA "))
+            for line in text.splitlines():
+                if line.startswith(("F ", "P ")):
+                    print(line)
+            PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: compat-raw-freebsd
+          path: .compat-raw
+          if-no-files-found: warn
+
+  macos:
+    name: ${{ matrix.label }} (native)
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { label: macos-arm64, runner: macos-latest }
+          - { label: macos-intel, runner: macos-15-intel }
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Build the sensor
+        run: cargo build --release --manifest-path sensor/Cargo.toml --bin maltrail-sensor
+      - name: Record the row
+        env:
+          MALTRAIL_RECORDED_BY: ci
+        run: |
+          set -eu
+          sudo MALTRAIL_TEST_SENSOR="$PWD/sensor/target/release/maltrail-sensor" \
+            MALTRAIL_RECORDED_BY=ci \
+            python3 tests/install/record.py record ${{ matrix.label }} --native || true
+          # Whatever happened, publish what was observed - a row that says a capability failed is
+          # the point of recording, not a reason to hide the run.
+          sed -n 's/^[AFP] //p' .compat-raw/${{ matrix.label }}.out | head -60 || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: compat-raw-${{ matrix.label }}
+          path: .compat-raw
+          if-no-files-found: warn
+
   page:
     name: the published page says what the rows say
     needs: linux

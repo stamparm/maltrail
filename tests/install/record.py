@@ -96,10 +96,45 @@ def _row_path(label, machine="x86_64"):
     return os.path.join(ROWS, "%s-%s.json" % (label, machine))
 
 
-def record(labels):
+def record_native(label):
+    """Record a row on THIS machine, without a container.
+
+    A container shares the host's kernel, so there is no image that can stand in for FreeBSD or
+    macOS - the platforms this exists to cover are exactly the ones docker cannot reach. assert.sh
+    is POSIX sh and takes MALTRAIL_SRC, so it runs here directly and prints the same marks the
+    container half prints. One recorder, two ways in.
+
+    It INSTALLS Maltrail on this machine, which is why it is a separate flag and not a fallback.
+    """
+
     raw = os.path.join(ROOT, ".compat-raw")
-    env = dict(os.environ, MALTRAIL_INSTALL_RAW=raw)
-    subprocess.call(["bash", os.path.join(HERE, "run.sh")] + list(labels), cwd=ROOT, env=env)
+    if not os.path.isdir(raw):
+        os.makedirs(raw)
+    out = os.path.join(raw, "%s.out" % label)
+    args = ["sh", os.path.join(HERE, "assert.sh"), "--repo", "file://%s" % ROOT,
+            "--no-service", "--unit-dir", os.path.join(raw, "units")]
+    sensor = os.environ.get("MALTRAIL_TEST_SENSOR")
+    if sensor:
+        args += ["--sensor-bin", sensor]
+    env = dict(os.environ, MALTRAIL_SRC=ROOT)
+    with io.open(out, "w", encoding="utf-8") as handle:
+        proc = subprocess.Popen(args, cwd=ROOT, env=env,
+                                stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        text = proc.communicate()[0].decode("utf-8", "replace")
+        handle.write(text)
+    with io.open(os.path.join(raw, "%s.image" % label), "w", encoding="utf-8") as handle:
+        handle.write("native")
+    print("[i] %s: assert.sh exited %d" % (label, proc.returncode))
+
+
+def record(labels, native=False):
+    raw = os.path.join(ROOT, ".compat-raw")
+    if native:
+        for label in labels:
+            record_native(label)
+    else:
+        env = dict(os.environ, MALTRAIL_INSTALL_RAW=raw)
+        subprocess.call(["bash", os.path.join(HERE, "run.sh")] + list(labels), cwd=ROOT, env=env)
 
     if not os.path.isdir(ROWS):
         os.makedirs(ROWS)
@@ -270,12 +305,14 @@ def main():
     sub = parser.add_subparsers(dest="command")
     one = sub.add_parser("record", help="run the harness and write rows")
     one.add_argument("labels", nargs="+")
+    one.add_argument("--native", action="store_true",
+                     help="install on THIS machine instead of in a container (FreeBSD, macOS)")
     two = sub.add_parser("render", help="build docs/compat/README.md from the rows")
     two.add_argument("--check", action="store_true", help="fail if the page is not current")
     options = parser.parse_args()
 
     if options.command == "record":
-        return record(options.labels)
+        return record(options.labels, native=options.native)
     if options.command == "render":
         return render(options.check)
     parser.print_help()

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  launchd job for the Maltrail sensor on macOS.
+
+      sudo launchctl load -w /Library/LaunchDaemons/io.maltrail.sensor.plist
+
+  Runs as root, and unlike the Linux unit that is not a shortcut. macOS has no file capabilities,
+  so there is no CAP_NET_RAW to grant: capture permission is ownership of /dev/bpf*, which is
+  root:wheel and reset on every boot by the OS. Running as root is what actually works on a stock
+  Mac; adding the sensor user to a group and chmod'ing /dev/bpf* survives until the next reboot,
+  which is worse than being honest here.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>            <string>io.maltrail.sensor</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>@PREFIX@/sensor/target/release/maltrail-sensor</string>
+        <string>-c</string>
+        <string>/etc/maltrail.conf</string>
+    </array>
+    <key>RunAtLoad</key>        <true/>
+    <key>KeepAlive</key>        <true/>
+    <key>StandardOutPath</key>  <string>/var/log/maltrail/sensor.out.log</string>
+    <key>StandardErrorPath</key><string>/var/log/maltrail/sensor.err.log</string>
+</dict>
+</plist>

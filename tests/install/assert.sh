@@ -23,12 +23,15 @@ set -u
 # it is the installer's first job.
 printf '[safe]\n\tdirectory = *\n' > /root/.gitconfig
 
+# The repository. /src is where run.sh mounts it inside a container; a native run - FreeBSD, macOS,
+# anywhere docker cannot go because a container would share this kernel - points it at a checkout.
+SRC=${MALTRAIL_SRC:-/src}
 PREFIX=/opt/maltrail
 CONF=/etc/maltrail.conf
 UNITS=/run/maltrail-units
 SENSOR=$PREFIX/sensor/target/release/maltrail-sensor
 
-sh /src/install.sh "$@" 2>&1
+sh "$SRC"/install.sh "$@" 2>&1
 printf -- '--- ASSERT ---\n'
 
 # 1. the tree, the configuration, the user, the directories
@@ -119,7 +122,7 @@ fi
 
 # 5. re-running IS the upgrade, and it must not eat operator configuration
 echo '# operator marker' >> "$CONF"
-if sh /src/install.sh "$@" >/tmp/rerun.log 2>&1; then
+if sh "$SRC"/install.sh "$@" >/tmp/rerun.log 2>&1; then
     echo "A rerun-ok"
 else
     echo "re-run failed:"; tail -20 /tmp/rerun.log
@@ -132,7 +135,7 @@ grep -q '# operator marker' "$CONF" && echo "A conf-preserved"
 #    tracked files - exactly as it found it.
 # A shallow clone, NOT `cp -a /src`: the mounted repository carries sensor/target, which is 14 GB
 # of build artifacts, and copying that once per environment was the entire runtime of this suite.
-git clone --depth 1 --quiet file:///src /home/checkout
+git clone --depth 1 --quiet file://"$SRC" /home/checkout
 cd /home/checkout || exit 1
 echo '# operator edit' >> maltrail.conf
 mkdir -p trails/custom && echo 'evil.test,"mine","(custom)"' > trails/custom/mine.txt
@@ -149,19 +152,19 @@ sh ./install.sh --uninstall --unit-dir "$UNITS" >/tmp/inplace-un.log 2>&1
 cd / || exit 1
 
 # 7. clone mode: an existing managed tree with local changes must NOT be reset silently
-sh /src/install.sh "$@" >/dev/null 2>&1
+sh "$SRC"/install.sh "$@" >/dev/null 2>&1
 echo '# operator edit' >> "$PREFIX/maltrail.conf"
 mkdir -p "$PREFIX/trails/custom" && echo 'evil.test,"mine","(custom)"' > "$PREFIX/trails/custom/mine.txt"
-sh /src/install.sh "$@" >/tmp/dirty.log 2>&1
+sh "$SRC"/install.sh "$@" >/tmp/dirty.log 2>&1
 grep -q 'NOT updated' /tmp/dirty.log && echo "A dirty-tree-refused"
 grep -q '# operator edit' "$PREFIX/maltrail.conf" && echo "A dirty-tree-edit-kept"
 # with --force it upgrades, but an UNTRACKED custom trail is still not deleted (no `git clean`)
-sh /src/install.sh "$@" --force >/tmp/force.log 2>&1
+sh "$SRC"/install.sh "$@" --force >/tmp/force.log 2>&1
 grep -q 'updating' /tmp/force.log && echo "A force-upgraded"
 [ -f "$PREFIX/trails/custom/mine.txt" ] && echo "A force-kept-custom-trail"
 
 # 8. uninstall: gone, but the evidence and the configuration are not
-if sh /src/install.sh --uninstall --unit-dir "$UNITS" >/tmp/uninstall.log 2>&1; then
+if sh "$SRC"/install.sh --uninstall --unit-dir "$UNITS" >/tmp/uninstall.log 2>&1; then
     echo "A uninstall-ran"
 else
     echo "uninstall failed:"; tail -20 /tmp/uninstall.log

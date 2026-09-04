@@ -204,6 +204,36 @@ jobs:
       - name: Verify the crate builds on its declared minimum
         run: cargo check --manifest-path sensor/Cargo.toml --all-targets
 
+  # The sensor captures through libpcap, which is native on macOS and the BSDs - nothing about it
+  # is Linux-only except PACKET_FANOUT, a kernel-side load balancer for multi-worker capture. That
+  # was not obvious: `cargo check --target x86_64-unknown-freebsd` reported three errors, all of
+  # them AF_PACKET/SOL_PACKET in one file, and everything else compiled.
+  #
+  # This keeps it that way. A Linux-only libc call added to a shared path compiles fine here and
+  # breaks a platform nobody builds on daily, and the person who finds out is a FreeBSD user, not
+  # us. Checking only - linking needs each platform's libpcap, which is what the native jobs are
+  # for.
+  portability:
+    name: compiles for ${{ matrix.target }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        target:
+          - x86_64-unknown-freebsd
+          - aarch64-unknown-freebsd
+    steps:
+      - uses: actions/checkout@v7
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: sensor
+          key: portability-${{ matrix.target }}
+      - run: cargo check --manifest-path sensor/Cargo.toml --target ${{ matrix.target }}
+
   # The oldest interpreter Maltrail claims to run on, tested on the interpreter itself rather than
   # asserted in a README. One 3.7-only method call (str.isascii) once made the updater die on every
   # RHEL 8 / CentOS 7 / Leap 15 / Amazon Linux 2 box - empty trail set, sensor detecting nothing,

@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# rc.d script for the Maltrail server on FreeBSD (and close enough for NetBSD/OpenBSD).
+#
+# PROVIDE: maltrail_server
+# REQUIRE: NETWORKING DAEMON
+# KEYWORD: shutdown
+#
+# Enable with:  sysrc maltrail_server_enable=YES && service maltrail_server start
+#
+# install.sh substitutes @PREFIX@, @PYTHON@ and @USER@; the file in the repository is the template
+# and the only place these paths are written down.
+
+. /etc/rc.subr
+
+name="maltrail_server"
+rcvar="maltrail_server_enable"
+
+load_rc_config $name
+: ${maltrail_server_enable:="NO"}
+: ${maltrail_server_conf:="/etc/maltrail.conf"}
+
+# daemon(8) rather than a Type=exec unit: the server does not fork, so rc needs to background it
+# and own the pidfile.
+pidfile="/var/run/${name}.pid"
+procname="@PYTHON@"
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -f -u @USER@ @PYTHON@ @PREFIX@/server.py -c ${maltrail_server_conf}"
+
+run_rc_command "$1"

@@ -148,7 +148,22 @@ need_root() {
 # ---------------------------------------------------------------------------------------------
 # dependencies
 # ---------------------------------------------------------------------------------------------
+# Which OS family this is. Nothing here assumed anything but Linux, and everything it assumed -
+# systemd, /proc, setcap, six Linux package managers - is genuinely Linux. The sensor itself is
+# not: it captures through libpcap, which is native on macOS and the BSDs.
+OS=$(uname -s 2>/dev/null || printf 'Linux')
+
 detect_pkg() {
+    # BSD and macOS first: a Homebrew user can have GNU tools on PATH, and matching apt-get on a
+    # Mac because someone installed it would be a worse guess than matching brew.
+    case $OS in
+        FreeBSD)  have pkg && { PKG=pkg; return 0; } ;;
+        NetBSD)   have pkgin && { PKG=pkgin; return 0; } ;;
+        OpenBSD)  have pkg_add && { PKG=pkg_add; return 0; } ;;
+        Darwin)   have brew && { PKG=brew; return 0; }
+                  warn "Homebrew not found; install git, python3 and libpcap yourself, or install brew"
+                  PKG=""; return 0 ;;
+    esac
     for m in apt-get dnf yum zypper apk pacman; do
         have "$m" && { PKG=$m; return 0; }
     done
@@ -168,6 +183,18 @@ pkg_install() {
         zypper) run_quiet zypper --quiet --non-interactive install --no-recommends "$@" ;;
         apk)    run_quiet apk add --no-cache -q "$@" ;;
         pacman) run_quiet pacman -Sy --needed --noconfirm --quiet "$@" ;;
+        pkg)    run_quiet env ASSUME_ALWAYS_YES=yes pkg install -y "$@" ;;
+        pkgin)  run_quiet pkgin -y install "$@" ;;
+        pkg_add) run_quiet pkg_add "$@" ;;
+        # brew refuses to run as root, and install.sh is normally run with sudo. Drop back to the
+        # invoking user rather than failing the whole install on a Mac.
+        brew)
+            if [ "$(id -u)" = 0 ] && [ -n "${SUDO_USER:-}" ]; then
+                run_quiet sudo -u "$SUDO_USER" brew install "$@"
+            else
+                run_quiet brew install "$@"
+            fi
+            ;;
     esac
 }
 
@@ -190,6 +217,12 @@ ensure_deps() {
         zypper)  pkg_install git-core ca-certificates $_curl tar python3 libpcap1 libcap-progs ;;
         apk)     pkg_install git ca-certificates $_curl tar python3 libpcap libcap ;;
         pacman)  pkg_install git ca-certificates $_curl tar python libpcap libcap ;;
+        # The BSDs ship libpcap in base, and there is no setcap - privilege for capture is a BPF
+        # device permission, not a file capability.
+        pkg)     pkg_install git python3 ;;
+        pkgin)   pkg_install git python311 ;;
+        pkg_add) pkg_install git python3 ;;
+        brew)    pkg_install git python3 libpcap ;;
     esac
 
     for tool in git tar; do
@@ -562,6 +595,52 @@ EOF
 # ---------------------------------------------------------------------------------------------
 have_systemd() { [ -d /run/systemd/system ] && have systemctl; }
 
+# Which init this machine actually uses. systemd is not a synonym for "has services": FreeBSD and
+# NetBSD use rc.d, macOS uses launchd, and until this existed install.sh silently skipped service
+# installation on all three while reporting success.
+init_system() {
+    if have_systemd; then printf 'systemd'; return; fi
+    case $OS in
+        FreeBSD|NetBSD|OpenBSD) [ -d /etc/rc.d ] && { printf 'rcd'; return; } ;;
+        Darwin)                 [ -d /Library/LaunchDaemons ] && { printf 'launchd'; return; } ;;
+    esac
+    printf 'none'
+}
+
+# rc.d and launchd take the same three substitutions the systemd units do, from the same templates
+# in packaging/. Nothing is maintained twice, on any platform.
+install_rcd() {
+    say "installing rc.d scripts"
+    dir=${UNIT_DIR_SET:+$UNIT_DIR}; dir=${dir:-/usr/local/etc/rc.d}
+    [ -d "$dir" ] || run mkdir -p "$dir"
+    for role in $1; do
+        src="$PREFIX/packaging/rc.d/maltrail_$role"
+        [ -f "$src" ] || { warn "$src not found; skipping"; continue; }
+        if [ "$DRY" = 1 ]; then printf '    + sed <%s >%s/maltrail_%s\n' "$src" "$dir" "$role"; continue; fi
+        sed -e "s#@PREFIX@#$PREFIX#g" -e "s#@PYTHON@#$PYTHON#g" -e "s#@USER@#$RUN_USER#g" \
+            "$src" > "$dir/maltrail_$role"
+        chmod 0755 "$dir/maltrail_$role"
+        info "$dir/maltrail_$role"
+    done
+    say "enable with: sysrc maltrail_${1%% *}_enable=YES && service maltrail_${1%% *} start"
+}
+
+install_launchd() {
+    say "installing launchd jobs"
+    dir=${UNIT_DIR_SET:+$UNIT_DIR}; dir=${dir:-/Library/LaunchDaemons}
+    [ -d "$dir" ] || run mkdir -p "$dir"
+    for role in $1; do
+        src="$PREFIX/packaging/launchd/io.maltrail.$role.plist"
+        [ -f "$src" ] || { warn "$src not found; skipping"; continue; }
+        if [ "$DRY" = 1 ]; then printf '    + sed <%s >%s/io.maltrail.%s.plist\n' "$src" "$dir" "$role"; continue; fi
+        sed -e "s#@PREFIX@#$PREFIX#g" -e "s#@PYTHON@#$PYTHON#g" -e "s#@USER@#$RUN_USER#g" \
+            "$src" > "$dir/io.maltrail.$role.plist"
+        chmod 0644 "$dir/io.maltrail.$role.plist"
+        info "$dir/io.maltrail.$role.plist"
+    done
+    say "load with: sudo launchctl load -w $dir/io.maltrail.${1%% *}.plist"
+}
+
 install_units() {
     say "installing systemd units"
     for role in $1; do
@@ -698,17 +777,28 @@ main() {
         run chown -R "$RUN_USER":"$RUN_USER" "$PREFIX" 2>/dev/null || true
     fi
 
-    if [ "$UNIT_DIR_SET" = 1 ] || have systemctl || [ -d "$UNIT_DIR" ]; then
-        run mkdir -p "$UNIT_DIR"
-        install_units "$roles"
-        if [ "$SERVICE" = 1 ] && have_systemd; then
-            start_units "$roles"
-        elif [ "$SERVICE" = 1 ]; then
-            warn "systemd is not running here, so nothing was enabled; the units are in $UNIT_DIR"
-        fi
-    else
-        warn "no systemd on this host; units not installed (run it under your own supervisor)"
-    fi
+    # Whichever init this machine has. It used to be "systemd or nothing", which meant FreeBSD and
+    # macOS finished with a cheerful summary and no service files anywhere.
+    case $(init_system) in
+        systemd)
+            run mkdir -p "$UNIT_DIR"
+            install_units "$roles"
+            if [ "$SERVICE" = 1 ]; then start_units "$roles"; fi
+            ;;
+        rcd)     install_rcd "$roles" ;;
+        launchd) install_launchd "$roles" ;;
+        none)
+            # An explicit --unit-dir still renders systemd units: that is how the container tests
+            # check them, and how someone stages units for a host that is not this one.
+            if [ "$UNIT_DIR_SET" = 1 ]; then
+                run mkdir -p "$UNIT_DIR"
+                install_units "$roles"
+                [ "$SERVICE" = 1 ] && warn "no init system detected here, so nothing was enabled; the units are in $UNIT_DIR"
+            else
+                warn "no init system detected ($OS); service files not installed (run it under your own supervisor)"
+            fi
+            ;;
+    esac
     summary "$roles"
 }
 

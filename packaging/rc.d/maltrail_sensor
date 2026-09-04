@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# rc.d script for the Maltrail sensor on FreeBSD (and close enough for NetBSD/OpenBSD).
+#
+# PROVIDE: maltrail_sensor
+# REQUIRE: NETWORKING DAEMON maltrail_server
+# KEYWORD: shutdown
+#
+# Enable with:  sysrc maltrail_sensor_enable=YES && service maltrail_sensor start
+#
+# Capture privilege on the BSDs is NOT a file capability - there is no setcap. It is permission on
+# /dev/bpf*, so the sensor either runs as root or as a member of a group that owns the bpf devices.
+# The unprivileged route, once, as root:
+#
+#     pw groupmod network -m @USER@          # or whatever group owns /dev/bpf*
+#     chgrp network /dev/bpf* && chmod g+rw /dev/bpf*
+#     # make it survive a reboot with a devfs.rules entry
+#
+# Left as root here because that is what works on a stock system, and a security note that does not
+# work is worse than one that is honest about the trade.
+
+. /etc/rc.subr
+
+name="maltrail_sensor"
+rcvar="maltrail_sensor_enable"
+
+load_rc_config $name
+: ${maltrail_sensor_enable:="NO"}
+: ${maltrail_sensor_conf:="/etc/maltrail.conf"}
+
+pidfile="/var/run/${name}.pid"
+procname="@PREFIX@/sensor/target/release/maltrail-sensor"
+command="/usr/sbin/daemon"
+command_args="-p ${pidfile} -f ${procname} -c ${maltrail_sensor_conf}"
+
+run_rc_command "$1"

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  launchd job for the Maltrail server on macOS.
+
+  Loaded from /Library/LaunchDaemons, so it starts at boot without a login session:
+
+      sudo launchctl load -w /Library/LaunchDaemons/io.maltrail.server.plist
+
+  install.sh substitutes @PREFIX@, @PYTHON@ and @USER@. KeepAlive rather than RunAtLoad alone -
+  launchd restarts it if it dies, which is the systemd Restart=on-failure equivalent.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>            <string>io.maltrail.server</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>@PYTHON@</string>
+        <string>@PREFIX@/server.py</string>
+        <string>-c</string>
+        <string>/etc/maltrail.conf</string>
+    </array>
+    <key>UserName</key>         <string>@USER@</string>
+    <key>RunAtLoad</key>        <true/>
+    <key>KeepAlive</key>        <true/>
+    <key>WorkingDirectory</key> <string>@PREFIX@</string>
+    <key>StandardOutPath</key>  <string>/var/log/maltrail/server.out.log</string>
+    <key>StandardErrorPath</key><string>/var/log/maltrail/server.err.log</string>
+</dict>
+</plist>
