@@ -262,11 +262,23 @@ jobs:
           "LIB=$env:RUNNER_TEMP\npcap-sdk\Lib\x64;$env:LIB" >> $env:GITHUB_ENV
       - name: How much does not compile
         shell: bash
+        env:
+          # The workflow sets CARGO_TERM_COLOR: always, so every diagnostic line begins with an
+          # ANSI escape and '^error' matches nothing. The first run of this job reported
+          # "errors: 0" against a build with twenty-four of them - a measurement lying in the
+          # direction that looks like success, which is the worst direction.
+          CARGO_TERM_COLOR: never
         run: |
           cargo check --manifest-path sensor/Cargo.toml 2>&1 | tee /tmp/win.log || true
-          echo "### Windows: remaining compile errors" >> "$GITHUB_STEP_SUMMARY"
-          grep -E "^error" /tmp/win.log | sort | uniq -c | sort -rn | head -40 >> "$GITHUB_STEP_SUMMARY" || true
-          printf 'errors: %s\n' "$(grep -c '^error' /tmp/win.log || echo 0)"
+          n=$(grep -cE "^error(\[|:)" /tmp/win.log || true)
+          {
+            echo "### Windows: $n remaining compile error(s)"
+            echo
+            echo '```'
+            grep -oE "error\[E[0-9]+\]: .*|error: .*" /tmp/win.log | sort | uniq -c | sort -rn | head -30
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          printf 'errors: %s\n' "$n"
 
   # The oldest interpreter Maltrail claims to run on, tested on the interpreter itself rather than
   # asserted in a README. One 3.7-only method call (str.isascii) once made the updater die on every
