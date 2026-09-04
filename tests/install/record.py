@@ -111,12 +111,16 @@ def record_native(label):
     if not os.path.isdir(raw):
         os.makedirs(raw)
     out = os.path.join(raw, "%s.out" % label)
+    # ONE unit directory, told to both halves. assert.sh checks whatever MALTRAIL_UNITS says and
+    # install.sh writes wherever --unit-dir says; passing different paths made every service-file
+    # check look for files that had been written somewhere else.
+    units = os.path.join(raw, "units")
     args = ["sh", os.path.join(HERE, "assert.sh"), "--repo", "file://%s" % ROOT,
-            "--no-service", "--unit-dir", os.path.join(raw, "units")]
+            "--no-service", "--unit-dir", units]
     sensor = os.environ.get("MALTRAIL_TEST_SENSOR")
     if sensor:
         args += ["--sensor-bin", sensor]
-    env = dict(os.environ, MALTRAIL_SRC=ROOT)
+    env = dict(os.environ, MALTRAIL_SRC=ROOT, MALTRAIL_UNITS=units)
     with io.open(out, "w", encoding="utf-8") as handle:
         proc = subprocess.Popen(args, cwd=ROOT, env=env,
                                 stdout=subprocess.PIPE, stderr=subprocess.STDOUT)

@@ -40,7 +40,10 @@ as_user() {
 }
 PREFIX=/opt/maltrail
 CONF=/etc/maltrail.conf
-UNITS=/run/maltrail-units
+# Overridable because a native run cannot use /run: macOS has no such directory, and the caller
+# has to be able to point the install and the checks at the SAME place. They disagreed once, and
+# the four service-file marks silently scored zero on every non-Linux platform as a result.
+UNITS=${MALTRAIL_UNITS:-/run/maltrail-units}
 SENSOR=$PREFIX/sensor/target/release/maltrail-sensor
 
 sh "$SRC"/install.sh "$@" 2>&1
