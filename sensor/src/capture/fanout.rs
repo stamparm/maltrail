@@ -11,10 +11,12 @@
 
 use std::os::unix::io::RawFd;
 
+#[cfg(target_os = "linux")]
 use crate::capture::srcfanout::{source_hash_program, SockFilter};
 use crate::config::FanoutMode;
 
 /// `linux/if_packet.h`
+#[cfg(target_os = "linux")]
 const PACKET_FANOUT: libc::c_int = 18;
 /// `PACKET_FANOUT_FLAG_DEFRAG` — ask the kernel to reassemble IP fragments before hashing,
 /// so all fragments of a datagram reach the same worker.
@@ -22,6 +24,7 @@ pub const PACKET_FANOUT_FLAG_DEFRAG: u32 = 0x8000;
 /// `PACKET_FANOUT_FLAG_ROLLOVER`
 pub const PACKET_FANOUT_FLAG_ROLLOVER: u32 = 0x1000;
 /// `PACKET_FANOUT_DATA` - installs the program for a `PACKET_FANOUT_CBPF` group.
+#[cfg(target_os = "linux")]
 const PACKET_FANOUT_DATA: libc::c_int = 22;
 
 #[derive(Debug)]
@@ -32,11 +35,19 @@ pub enum FanoutError {
     /// rather than ignored: the group is live in CBPF mode with no program attached, which is not
     /// a configuration to keep running in.
     SetProgram(std::io::Error),
+    /// PACKET_FANOUT is a Linux socket option. Everywhere else the capture works exactly as it
+    /// does here, one handle per worker without kernel-side load balancing - so this is reported,
+    /// not fatal, and only reachable when fanout was explicitly asked for.
+    Unsupported,
 }
 
 impl std::fmt::Display for FanoutError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
+            FanoutError::Unsupported => write!(
+                f,
+                "PACKET_FANOUT is Linux-only; capture works without it, but CAPTURE_FANOUT cannot be honoured here"
+            ),
             FanoutError::NotPacketSocket(domain) => write!(
                 f,
                 "capture fd is not an AF_PACKET socket (SO_DOMAIN={domain}); PACKET_FANOUT needs a live Linux capture"
@@ -57,6 +68,7 @@ impl std::fmt::Display for FanoutError {
 impl std::error::Error for FanoutError {}
 
 /// Confirm the descriptor really is an `AF_PACKET` socket before poking `SOL_PACKET`.
+#[cfg(target_os = "linux")]
 fn check_packet_socket(fd: RawFd) -> Result<(), FanoutError> {
     let mut domain: libc::c_int = 0;
     let mut len = std::mem::size_of::<libc::c_int>() as libc::socklen_t;
@@ -82,6 +94,7 @@ fn check_packet_socket(fd: RawFd) -> Result<(), FanoutError> {
 }
 
 /// Join `fd` to the fanout group. `flags` may carry `PACKET_FANOUT_FLAG_*`.
+#[cfg(target_os = "linux")]
 pub fn join(fd: RawFd, group: u16, mode: FanoutMode, flags: u32) -> Result<(), FanoutError> {
     check_packet_socket(fd)?;
     let arg: libc::c_int = ((group as u32 & 0xffff) | ((mode.kernel_value() | flags) << 16)) as libc::c_int;
@@ -110,6 +123,7 @@ pub fn join(fd: RawFd, group: u16, mode: FanoutMode, flags: u32) -> Result<(), F
 }
 
 /// `struct sock_fprog` from `linux/filter.h`.
+#[cfg(target_os = "linux")]
 #[repr(C)]
 struct SockFprog {
     len: u16,
@@ -117,6 +131,7 @@ struct SockFprog {
 }
 
 /// Install the classic-BPF distribution program on an already-joined CBPF group.
+#[cfg(target_os = "linux")]
 fn attach_program(fd: RawFd, prog: &[SockFilter]) -> Result<(), FanoutError> {
     let fprog = SockFprog { len: prog.len() as u16, filter: prog.as_ptr() };
     // SAFETY: `fprog` points at `prog`, which outlives this call, and its length is the
@@ -145,7 +160,15 @@ pub fn default_group(interface_index: usize) -> u16 {
     ((pid.wrapping_add(interface_index as u32)) & 0xffff) as u16
 }
 
-#[cfg(test)]
+/// Everywhere but Linux. The capture path itself is libpcap and portable; only the kernel-side
+/// load balancer is not, so this refuses clearly instead of the file failing to compile - which is
+/// all that stood between the sensor and building for FreeBSD and macOS.
+#[cfg(not(target_os = "linux"))]
+pub fn join(_fd: RawFd, _group: u16, _mode: FanoutMode, _flags: u32) -> Result<(), FanoutError> {
+    Err(FanoutError::Unsupported)
+}
+
+#[cfg(all(test, target_os = "linux"))]
 mod tests {
     use super::*;
     use std::os::unix::io::AsRawFd;
