@@ -39,6 +39,7 @@ from core.settings import META_DB_FILENAME
 from core.settings import NAME
 from core.settings import VERSION
 from core.update import update_geo
+from core.update import update_drop
 from core.update import update_ipcat
 from core.update import fetch_provenance
 from core.update import update_trails
