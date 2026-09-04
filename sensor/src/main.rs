@@ -155,6 +155,9 @@ fn run() -> i32 {
     // handler prints a backtrace — `maltrail-sensor --version | head -1` would panic instead of
     // exiting quietly. Restore the Unix default: die silently when the reader goes away.
     // SAFETY: setting a signal disposition to SIG_DFL has no preconditions.
+    // Windows has no SIGPIPE at all - a closed pipe surfaces as a write error, which is already
+    // handled - so there is nothing to restore there.
+    #[cfg(not(windows))]
     unsafe {
         libc::signal(libc::SIGPIPE, libc::SIG_DFL);
     }
@@ -1054,6 +1057,7 @@ extern "C" fn handle_signal(_sig: libc::c_int) {
     SHUTDOWN.store(true, Ordering::Relaxed);
 }
 
+#[cfg(not(windows))]
 extern "C" fn handle_reload_signal(_sig: libc::c_int) {
     // Only an atomic store: this must stay async-signal-safe.
     RELOAD_REQUESTED.store(true, Ordering::Relaxed);
@@ -1071,7 +1075,10 @@ fn install_signal_handlers() {
     // fresh trails.csv is waiting for the poll or restarting the sensor and losing its capture
     // ring. SIGHUP's default action is to TERMINATE, so without this a reload attempt kills the
     // sensor.
+    // Windows has no SIGHUP. SIGINT and SIGTERM above do exist in its CRT, so shutdown works;
+    // an on-demand reload there has to come from the mtime poll, which it already does.
     // SAFETY: as above — the handler performs a single relaxed atomic store.
+    #[cfg(not(windows))]
     unsafe {
         libc::signal(libc::SIGHUP, handle_reload_signal as *const () as libc::sighandler_t);
     }

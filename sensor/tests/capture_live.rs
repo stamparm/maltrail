@@ -1,5 +1,11 @@
 //! Live-capture and PACKET_FANOUT tests.
 //!
+//! Unix only, and not incidentally: these inject packets through a raw socket, use a FIFO to
+//! synchronise with the sensor, and join a Linux packet-socket fanout group. There is no Windows
+//! equivalent of any of the three, so the file is gated rather than half-ported - the Windows
+//! build gets the tests it can actually run instead of no test binary at all.
+#![cfg(unix)]
+//!
 //! These adapt to privileges: without `CAP_NET_RAW` they assert the *failure* path is clean
 //! and well-signposted (no panic, a permission error, and — critically — no silent fallback to
 //! independent sockets when fanout was requested). With privileges they additionally open a
@@ -271,12 +277,19 @@ fn source_affine_fanout_actually_separates_sources_in_the_kernel() {
     };
     assert_eq!(rc, 0, "IP_HDRINCL: {}", std::io::Error::last_os_error());
 
-    let dst = libc::sockaddr_in {
-        sin_family: libc::AF_INET as u16,
-        sin_port: dport.to_be(),
-        sin_addr: libc::in_addr { s_addr: u32::from_be_bytes([127, 0, 0, 1]).to_be() },
-        sin_zero: [0; 8],
-    };
+    // Built field by field from a zeroed struct rather than a literal: the BSDs and macOS carry a
+    // leading `sin_len`, and their `sin_family` is a u8 where Linux's is a u16. A literal compiles
+    // on exactly one of them, which is why this test file did not build for FreeBSD or macOS at
+    // all - the sensor runs there, so its tests have to as well.
+    // SAFETY: sockaddr_in is a plain repr(C) struct of integers; all-zero is a valid value.
+    let mut dst: libc::sockaddr_in = unsafe { std::mem::zeroed() };
+    dst.sin_family = libc::AF_INET as _;
+    dst.sin_port = dport.to_be();
+    dst.sin_addr = libc::in_addr { s_addr: u32::from_be_bytes([127, 0, 0, 1]).to_be() };
+    #[cfg(any(target_os = "freebsd", target_os = "netbsd", target_os = "openbsd", target_vendor = "apple"))]
+    {
+        dst.sin_len = std::mem::size_of::<libc::sockaddr_in>() as u8;
+    }
 
     // Each source sends several packets on DIFFERENT source ports, so a flow hash would scatter
     // them and only source affinity can keep them together.

@@ -115,6 +115,24 @@ fn patterns() -> &'static Patterns {
 
 static ENABLED: OnceLock<bool> = OnceLock::new();
 
+/// Is stdout a terminal? Decides whether to colourise.
+///
+/// STDOUT_FILENO does not exist on Windows; the handle-based equivalent is `_isatty(1)`, and 1 is
+/// stdout there as well.
+#[inline]
+fn stdout_is_a_tty() -> bool {
+    #[cfg(not(windows))]
+    // SAFETY: isatty() only inspects a descriptor number and cannot fault.
+    unsafe {
+        libc::isatty(libc::STDOUT_FILENO) == 1
+    }
+    #[cfg(windows)]
+    // SAFETY: same - _isatty takes a CRT descriptor, and 1 is stdout.
+    unsafe {
+        libc::isatty(1) == 1
+    }
+}
+
 /// `core/colorized.py:init_output()` — colour only when stdout is a TTY. `force` mirrors a
 /// `NO_COLOR`-style opt-out and is also what the tests use.
 pub fn init(force: Option<bool>) {
@@ -125,7 +143,7 @@ pub fn init(force: Option<bool>) {
                 false
             } else {
                 // SAFETY: isatty() only inspects the descriptor and cannot fail unsafely.
-                unsafe { libc::isatty(libc::STDOUT_FILENO) == 1 }
+                stdout_is_a_tty()
             }
         }
     };

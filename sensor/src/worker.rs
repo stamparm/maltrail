@@ -383,12 +383,22 @@ fn publish(slot: &MetricsSlot, st: &mut WorkerState) {
 
 /// Wait until `fd` is readable or `timeout_ms` elapses. Errors (including EINTR) simply return,
 /// so the caller re-checks its shutdown flag.
-fn wait_readable(fd: std::os::unix::io::RawFd, timeout_ms: i32) {
-    let mut pollfd = libc::pollfd { fd, events: libc::POLLIN, revents: 0 };
-    // SAFETY: `pollfd` is a single valid, initialised pollfd we own for the duration of the
-    // call; `fd` is owned by the live pcap handle held by this worker.
-    unsafe {
-        libc::poll(&mut pollfd, 1, timeout_ms);
+fn wait_readable(fd: i32, timeout_ms: i32) {
+    #[cfg(unix)]
+    {
+        let mut pollfd = libc::pollfd { fd, events: libc::POLLIN, revents: 0 };
+        // SAFETY: `pollfd` is a single valid, initialised pollfd we own for the duration of the
+        // call; `fd` is owned by the live pcap handle held by this worker.
+        unsafe {
+            libc::poll(&mut pollfd, 1, timeout_ms);
+        }
+    }
+    // Unreachable on Windows: selectable_fd() returns None there, so the caller never gets a
+    // descriptor to wait on and takes the timed-read path instead. Kept as a definition rather
+    // than cfg'd away at every call site.
+    #[cfg(not(unix))]
+    {
+        let _ = (fd, timeout_ms);
     }
 }
 

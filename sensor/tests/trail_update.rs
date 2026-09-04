@@ -1,5 +1,9 @@
 //! The sensor must REFRESH `trails.csv` itself, like `sensor.py:init():update_timer()` does.
 //!
+//! Two tests here need a backdated mtime and one needs SIGHUP, so they are `#[cfg(unix)]`. That
+//! leaves their fixtures unused on Windows, which is expected rather than rot.
+#![cfg_attr(not(unix), allow(dead_code))]
+//!
 //! This suite exists because of a real miss: the sensor originally only ever *read* the trails
 //! file, so it silently ran on a four-week-old snapshot and detected a live asyncrat domain
 //! (`511mon.kozow.com`) merely as its dynamic-DNS parent — the IOC had been added to
@@ -157,6 +161,11 @@ const PARENT_INFO: &str = "dynamic domain (suspicious)";
 
 /// Push a file's mtime into the past, so it looks like the snapshot it is standing in for.
 /// (`File::set_modified` would need Rust 1.75; the crate's MSRV is 1.74, so use `utimes`.)
+///
+/// That MSRV is also why this is Unix-only: the portable API is the one we cannot use yet, and
+/// `SetFileTime` is more Windows plumbing than a test helper warrants. The two tests that need a
+/// backdated mtime are gated with it.
+#[cfg(unix)]
 fn backdate(path: &Path, secs: u64) {
     let now = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().as_secs();
     let when = libc::timeval { tv_sec: (now - secs) as libc::time_t, tv_usec: 0 };
@@ -220,6 +229,7 @@ fn a_missing_trails_file_is_built_at_startup() {
 }
 
 #[test]
+#[cfg(unix)]
 fn a_stale_trails_file_is_refreshed_and_new_static_iocs_are_detected() {
     // THE regression test for the field miss. A trails file that predates a static IOC must be
     // refreshed, and the IOC must then be detected with its own info - not merely as its parent.
@@ -290,6 +300,7 @@ fn disabling_updates_is_honoured_and_flagged() {
 }
 
 #[test]
+#[cfg(unix)]
 fn an_old_trails_file_is_reported_as_stale() {
     // With updates disabled and an old file, the sensor must say so: an old trails file looks
     // perfectly healthy while quietly missing everything added since.
@@ -383,6 +394,7 @@ fn config_test_rejects_an_invalid_capture_filter() {
 /// a trail reload instead. (The reload itself is consumed by the reload thread, which only runs
 /// for live capture; the reload path it shares is covered by `tests/trails.rs`.)
 #[test]
+#[cfg(unix)]
 fn sighup_requests_a_reload_instead_of_killing_the_sensor() {
     let Some(binary) = sensor_binary() else {
         println!("[skip] build the sensor first (cargo build --release)");

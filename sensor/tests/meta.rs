@@ -134,10 +134,14 @@ fn schema_matches_the_python_reader() {
     let journal: String = con.query_row("PRAGMA journal_mode", [], |r| r.get(0)).expect("journal_mode");
     assert_eq!(journal.to_lowercase(), "delete");
 
-    // World-readable for the same uid-split reason as the daily event logs.
-    use std::os::unix::fs::PermissionsExt;
-    let mode = std::fs::metadata(db_of(&h)).expect("stat store").permissions().mode() & 0o777;
-    assert_eq!(mode, 0o644, "store must be readable by the (non-root) server");
+    // World-readable for the same uid-split reason as the daily event logs. Windows has no mode
+    // to assert - the store inherits its directory's ACL there.
+    #[cfg(unix)]
+    {
+        use std::os::unix::fs::PermissionsExt;
+        let mode = std::fs::metadata(db_of(&h)).expect("stat store").permissions().mode() & 0o777;
+        assert_eq!(mode, 0o644, "store must be readable by the (non-root) server");
+    }
 }
 
 #[test]

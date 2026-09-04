@@ -295,6 +295,17 @@ fn settings_global(name: &str, root: &Path) -> Option<String> {
     })
 }
 
+/// The host's own name, for `SENSOR_NAME` and the CEF host field.
+///
+/// Windows keeps this in the environment rather than behind `gethostname(2)` - the libc crate does
+/// not expose winsock's copy - and `COMPUTERNAME` is the same name `socket.gethostname()` reports
+/// there.
+#[cfg(windows)]
+pub fn hostname() -> String {
+    std::env::var("COMPUTERNAME").unwrap_or_default()
+}
+
+#[cfg(not(windows))]
 pub fn hostname() -> String {
     // gethostname(2); matches socket.gethostname() used for SENSOR_NAME / CEF host.
     let mut buf = [0u8; 256];
@@ -538,7 +549,7 @@ pub fn total_physmem() -> Option<u64> {
 /// The BSDs and macOS answer the same question through sysctl. `hw.memsize` is a 64-bit byte count
 /// on Darwin; FreeBSD's `hw.physmem` is `unsigned long`, which is also 64-bit on every target that
 /// matters here, and `hw.realmem` is the fallback on the ones that do not carry `hw.physmem`.
-#[cfg(not(target_os = "linux"))]
+#[cfg(all(not(target_os = "linux"), not(windows)))]
 pub fn total_physmem() -> Option<u64> {
     for name in ["hw.memsize\0", "hw.physmem\0", "hw.realmem\0"] {
         let mut value: u64 = 0;
@@ -559,6 +570,40 @@ pub fn total_physmem() -> Option<u64> {
         }
     }
     None
+}
+
+/// Windows has neither /proc/meminfo nor sysctl, and `CAPTURE_BUFFER 10%` - the shipped default -
+/// cannot be resolved without an answer here, so a None would refuse to start on the default
+/// config. GlobalMemoryStatusEx is the equivalent; it lives in kernel32, which every Windows
+/// target links already, so it costs no dependency.
+#[cfg(windows)]
+pub fn total_physmem() -> Option<u64> {
+    #[repr(C)]
+    struct MemoryStatusEx {
+        length: u32,
+        memory_load: u32,
+        total_phys: u64,
+        avail_phys: u64,
+        total_page_file: u64,
+        avail_page_file: u64,
+        total_virtual: u64,
+        avail_virtual: u64,
+        avail_extended_virtual: u64,
+    }
+    extern "system" {
+        fn GlobalMemoryStatusEx(buffer: *mut MemoryStatusEx) -> i32;
+    }
+
+    // SAFETY: `status` is a correctly sized, zero-initialised MEMORYSTATUSEX whose `dwLength` is
+    // set to its own size, which is the call's only precondition.
+    let mut status: MemoryStatusEx = unsafe { std::mem::zeroed() };
+    status.length = std::mem::size_of::<MemoryStatusEx>() as u32;
+    let ok = unsafe { GlobalMemoryStatusEx(&mut status) } != 0;
+    if ok && status.total_phys > 0 {
+        Some(status.total_phys)
+    } else {
+        None
+    }
 }
 
 /// `sensor.py:_fanout_count()` — identical parsing.

@@ -4,6 +4,7 @@
 pub mod fanout;
 pub mod srcfanout;
 
+#[cfg(unix)]
 use std::os::unix::io::AsRawFd;
 use std::path::Path;
 
@@ -94,8 +95,16 @@ impl Handle {
         if cfg.capture_fanout_defrag {
             flags |= fanout::PACKET_FANOUT_FLAG_DEFRAG;
         }
+        // A fanout group is a Linux packet-socket concept, and the descriptor it needs comes from
+        // a Unix-only trait. config.rs already refuses the option elsewhere; this keeps the call
+        // out of the non-Linux builds entirely.
+        #[cfg(target_os = "linux")]
         if let Some(group) = fanout_group {
             fanout::join(cap.as_raw_fd(), group, cfg.capture_fanout_mode, flags).map_err(CaptureError::Fanout)?;
+        }
+        #[cfg(not(target_os = "linux"))]
+        if let Some(group) = fanout_group {
+            return Err(CaptureError::Fanout(fanout::join(0, group, cfg.capture_fanout_mode, flags).unwrap_err()));
         }
 
         if !cfg.capture_filter.is_empty() {
@@ -170,11 +179,20 @@ impl Handle {
     /// configured timeout on some kernels, which would keep a worker from ever noticing a
     /// shutdown request. The worker therefore runs the handle non-blocking and waits on this
     /// descriptor itself.
-    pub fn selectable_fd(&self) -> Option<std::os::unix::io::RawFd> {
+    ///
+    /// Npcap hands out a Windows event HANDLE rather than a selectable descriptor, so there is
+    /// nothing to poll there and this returns None - which the worker already treats as "no
+    /// readiness signal available" and falls back to a timed read. The non-blocking-plus-poll
+    /// arrangement is an optimisation over that, not a requirement. `i32` rather than `RawFd` so
+    /// the signature is the same on both.
+    pub fn selectable_fd(&self) -> Option<i32> {
+        #[cfg(unix)]
         match self {
             Handle::Live(c) => Some(c.as_raw_fd()),
             Handle::Offline(_) => None,
         }
+        #[cfg(not(unix))]
+        None
     }
 
     /// Live capture statistics `(received, dropped, if_dropped)`.

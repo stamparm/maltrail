@@ -50,6 +50,35 @@ impl Report {
 }
 
 /// Returns the process exit code: 0 = usable, 1 = something will not work.
+/// Is this process privileged enough to capture?
+///
+/// "euid == 0" is the POSIX way to ask. Windows has no uid at all, and the equivalent question is
+/// whether the token is elevated - which the sensor cannot answer without pulling in a Windows API
+/// crate, so it reports "unknown" by returning false and lets the capture attempt be the test. That
+/// is the honest order anyway: the only thing that proves capture works is capturing.
+#[inline]
+fn running_privileged() -> bool {
+    #[cfg(not(windows))]
+    // SAFETY: geteuid() reads the calling process's own credentials and cannot fail.
+    unsafe {
+        libc::geteuid() == 0
+    }
+    #[cfg(windows)]
+    false
+}
+
+/// The effective uid, or `u32::MAX` where the concept does not exist.
+#[inline]
+fn effective_uid() -> u32 {
+    #[cfg(not(windows))]
+    // SAFETY: as above.
+    unsafe {
+        libc::geteuid()
+    }
+    #[cfg(windows)]
+    u32::MAX
+}
+
 pub fn run(cfg: &Config) -> i32 {
     let mut r = Report { worst: Level::Ok };
     cprintln!("[i] testing configuration '{}'\n", cfg.config_file.display());
@@ -77,9 +106,7 @@ pub fn run(cfg: &Config) -> i32 {
             &format!(
                 "'{}' is NOT writable as uid {}{}",
                 cfg.log_dir.display(),
-                // SAFETY: geteuid() reads the calling process's own credentials; it cannot fail
-                // and touches no memory the caller owns.
-                unsafe { libc::geteuid() },
+                effective_uid(),
                 log_dir_hint(&cfg.log_dir)
             ),
         );
@@ -467,8 +494,7 @@ const CAP_NET_RAW: u32 = 13;
 
 /// What this process may do, without conflating "can capture" with "is root".
 pub fn capture_privileges() -> Privileges {
-    // SAFETY: geteuid() has no preconditions and cannot fail.
-    if unsafe { libc::geteuid() } == 0 {
+    if running_privileged() {
         return Privileges::Root;
     }
     let effective = std::fs::read_to_string("/proc/self/status")

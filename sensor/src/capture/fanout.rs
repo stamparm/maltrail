@@ -9,8 +9,6 @@
 //! This reproduces `pcapy-ng`'s `set_fanout()`:
 //! `setsockopt(fd, SOL_PACKET, PACKET_FANOUT, (group & 0xffff) | (type << 16))`.
 
-use std::os::unix::io::RawFd;
-
 #[cfg(target_os = "linux")]
 use crate::capture::srcfanout::{source_hash_program, SockFilter};
 use crate::config::FanoutMode;
@@ -69,7 +67,7 @@ impl std::error::Error for FanoutError {}
 
 /// Confirm the descriptor really is an `AF_PACKET` socket before poking `SOL_PACKET`.
 #[cfg(target_os = "linux")]
-fn check_packet_socket(fd: RawFd) -> Result<(), FanoutError> {
+fn check_packet_socket(fd: i32) -> Result<(), FanoutError> {
     let mut domain: libc::c_int = 0;
     let mut len = std::mem::size_of::<libc::c_int>() as libc::socklen_t;
     // SAFETY: `fd` is owned by the live pcap handle for the duration of this call, and
@@ -95,7 +93,7 @@ fn check_packet_socket(fd: RawFd) -> Result<(), FanoutError> {
 
 /// Join `fd` to the fanout group. `flags` may carry `PACKET_FANOUT_FLAG_*`.
 #[cfg(target_os = "linux")]
-pub fn join(fd: RawFd, group: u16, mode: FanoutMode, flags: u32) -> Result<(), FanoutError> {
+pub fn join(fd: i32, group: u16, mode: FanoutMode, flags: u32) -> Result<(), FanoutError> {
     check_packet_socket(fd)?;
     let arg: libc::c_int = ((group as u32 & 0xffff) | ((mode.kernel_value() | flags) << 16)) as libc::c_int;
     // SAFETY: `arg` is a live c_int of the size the kernel expects for PACKET_FANOUT, and
@@ -132,7 +130,7 @@ struct SockFprog {
 
 /// Install the classic-BPF distribution program on an already-joined CBPF group.
 #[cfg(target_os = "linux")]
-fn attach_program(fd: RawFd, prog: &[SockFilter]) -> Result<(), FanoutError> {
+fn attach_program(fd: i32, prog: &[SockFilter]) -> Result<(), FanoutError> {
     let fprog = SockFprog { len: prog.len() as u16, filter: prog.as_ptr() };
     // SAFETY: `fprog` points at `prog`, which outlives this call, and its length is the
     // instruction count the kernel expects. The kernel copies the program in and verifies it.
@@ -164,7 +162,7 @@ pub fn default_group(interface_index: usize) -> u16 {
 /// load balancer is not, so this refuses clearly instead of the file failing to compile - which is
 /// all that stood between the sensor and building for FreeBSD and macOS.
 #[cfg(not(target_os = "linux"))]
-pub fn join(_fd: RawFd, _group: u16, _mode: FanoutMode, _flags: u32) -> Result<(), FanoutError> {
+pub fn join(_fd: i32, _group: u16, _mode: FanoutMode, _flags: u32) -> Result<(), FanoutError> {
     Err(FanoutError::Unsupported)
 }
 

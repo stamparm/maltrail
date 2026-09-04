@@ -354,15 +354,25 @@ fn open_rw(path: &Path) -> rusqlite::Result<Connection> {
     Ok(con)
 }
 
+/// Make the aggregate world-readable, so a sensor dropped to an unprivileged user can read what
+/// a privileged updater wrote.
+///
+/// Nothing to do on Windows: there is no POSIX mode there, and the ACL a file inherits from its
+/// directory is what governs instead.
 fn make_readable(path: &Path) {
-    use std::os::unix::fs::PermissionsExt;
-    if let Ok(meta) = std::fs::metadata(path) {
-        let mut perms = meta.permissions();
-        if perms.mode() & 0o777 != 0o644 {
-            perms.set_mode(0o644);
-            let _ = std::fs::set_permissions(path, perms);
+    #[cfg(unix)]
+    {
+        use std::os::unix::fs::PermissionsExt;
+        if let Ok(meta) = std::fs::metadata(path) {
+            let mut perms = meta.permissions();
+            if perms.mode() & 0o777 != 0o644 {
+                perms.set_mode(0o644);
+                let _ = std::fs::set_permissions(path, perms);
+            }
         }
     }
+    #[cfg(not(unix))]
+    let _ = path;
 }
 
 /// One aggregate row as the read side sees it. `core/meta.py:lookup()`'s dict.

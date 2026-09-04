@@ -265,6 +265,28 @@ fn push_safe_value(out: &mut String, value: &str) {
     }
 }
 
+/// `localtime_r` on POSIX, `localtime_s` on Windows.
+///
+/// Same job, arguments reversed, and Windows returns 0 for success where POSIX returns the pointer.
+/// Kept in one place because three call sites needed it and each had four lines of SAFETY comment
+/// explaining the same invariant.
+#[inline]
+fn localtime_into(t: libc::time_t, tm: &mut libc::tm) -> bool {
+    #[cfg(not(windows))]
+    // SAFETY: `t` is a valid time_t and `tm` is a live, properly aligned tm we own; localtime_r
+    // writes into it and never retains the pointer. Used instead of a date crate so the rendering
+    // matches Python's time.localtime() - same TZ database, same TZ environment handling - exactly.
+    unsafe {
+        !libc::localtime_r(&t, tm).is_null()
+    }
+    #[cfg(windows)]
+    // SAFETY: identical invariants; localtime_s takes the destination first and reports success as
+    // a zero return.
+    unsafe {
+        libc::localtime_s(tm, &t) == 0
+    }
+}
+
 /// `"%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)`
 pub fn local_time_string(sec: u64, usec: u32) -> SmallStr<40> {
     let mut out = SmallStr::<40>::new();
@@ -272,11 +294,7 @@ pub fn local_time_string(sec: u64, usec: u32) -> SmallStr<40> {
     // integers and, on glibc, two pointers that localtime_r overwrites before any read).
     let mut tm: libc::tm = unsafe { std::mem::zeroed() };
     let t = sec as libc::time_t;
-    // SAFETY: `t` is a valid time_t and `tm` is a live, properly aligned tm we own;
-    // localtime_r writes into it and never retains the pointer. Used instead of a date
-    // crate so the rendering matches Python's time.localtime() (same TZ database, same
-    // TZ environment variable handling) exactly.
-    let ok = unsafe { !libc::localtime_r(&t, &mut tm).is_null() };
+    let ok = localtime_into(t, &mut tm);
     if !ok {
         out.push_str("1970-01-01 00:00:00.000000");
         return out;
@@ -305,7 +323,7 @@ pub fn local_date_string(sec: u64) -> SmallStr<16> {
     let mut tm: libc::tm = unsafe { std::mem::zeroed() };
     let t = sec as libc::time_t;
     // SAFETY: see local_time_string().
-    if unsafe { libc::localtime_r(&t, &mut tm).is_null() } {
+    if !localtime_into(t, &mut tm) {
         out.push_str("1970-01-01");
         return out;
     }
@@ -325,7 +343,7 @@ pub fn syslog_time_string(sec: u64) -> String {
     let mut tm: libc::tm = unsafe { std::mem::zeroed() };
     let t = sec as libc::time_t;
     // SAFETY: see local_time_string().
-    if unsafe { libc::localtime_r(&t, &mut tm).is_null() } {
+    if !localtime_into(t, &mut tm) {
         return "Jan 01 00:00:00".to_string();
     }
     let mon = MONTHS[(tm.tm_mon as usize).min(11)];

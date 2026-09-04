@@ -11,6 +11,7 @@ use std::collections::HashMap;
 use std::fs::{File, OpenOptions};
 use std::io::Write;
 use std::net::{SocketAddr, ToSocketAddrs, UdpSocket};
+#[cfg(unix)]
 use std::os::unix::fs::{OpenOptionsExt, PermissionsExt};
 use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicU64, Ordering};
@@ -326,7 +327,13 @@ impl EventSink {
             // day boundary and the second `File::create` would TRUNCATE events the first had
             // already written. `create(true).append(true)` with the mode set in the same call
             // cannot truncate, and gives Python's 0644 on creation without a second syscall.
-            match OpenOptions::new().append(true).create(true).mode(0o644).open(&path) {
+            // .mode() is a Unix extension; on Windows the file inherits the directory's ACL and
+            // there is no mode to request.
+            #[cfg(unix)]
+            let opened = OpenOptions::new().append(true).create(true).mode(0o644).open(&path);
+            #[cfg(not(unix))]
+            let opened = OpenOptions::new().append(true).create(true).open(&path);
+            match opened {
                 Ok(f) => {
                     self.log_file = Some(f);
                     self.log_path = Some(path);
@@ -748,11 +755,23 @@ fn json_escape(out: &mut String, value: &str) {
 }
 
 fn trails_ctime_date(path: &Path) -> String {
-    use std::os::unix::fs::MetadataExt;
-    let sec = match std::fs::metadata(path) {
-        Ok(md) => md.ctime() as u64,
-        Err(_) => SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.as_secs()).unwrap_or(0),
-    };
+    // Unix ctime is inode-change time, which is what "when did this trail set last change" means
+    // here. Windows has no equivalent, so modification time answers the same question there - it
+    // moves whenever the updater rewrites the file, which is the only way the set changes.
+    #[cfg(unix)]
+    fn changed_at(md: &std::fs::Metadata) -> Option<u64> {
+        use std::os::unix::fs::MetadataExt;
+        Some(md.ctime() as u64)
+    }
+    #[cfg(not(unix))]
+    fn changed_at(md: &std::fs::Metadata) -> Option<u64> {
+        md.modified().ok()?.duration_since(UNIX_EPOCH).ok().map(|d| d.as_secs())
+    }
+
+    let sec = std::fs::metadata(path)
+        .ok()
+        .and_then(|md| changed_at(&md))
+        .unwrap_or_else(|| SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.as_secs()).unwrap_or(0));
     local_date_string(sec).as_str().to_string()
 }
 
@@ -788,6 +807,15 @@ static ERROR_LOG: OnceLock<Mutex<ErrorLog>> = OnceLock::new();
 /// So the free space is measured and exported, and the operator is expected to alert on it
 /// LONG before it matters. `f_bavail`, not `f_bfree`: the root-reserved blocks are not available
 /// to the `maltrail` user the shipped unit runs as.
+#[cfg(windows)]
+pub fn free_bytes(_path: &Path) -> Option<u64> {
+    // GetDiskFreeSpaceExW would answer this, but it needs a Windows API crate the sensor does not
+    // depend on. None is what every caller already handles for "could not measure", and it costs
+    // the free-space warning rather than anything load-bearing.
+    None
+}
+
+#[cfg(not(windows))]
 pub fn free_bytes(path: &Path) -> Option<u64> {
     let c_path = std::ffi::CString::new(path.as_os_str().as_encoded_bytes()).ok()?;
     // SAFETY: `c_path` is a valid NUL-terminated string and `st` is a correctly sized,
@@ -808,6 +836,7 @@ pub fn init_error_log(log_dir: &Path, show_debug: bool) {
     if !path.exists() {
         if let Ok(f) = File::create(&path) {
             drop(f);
+            #[cfg(unix)]
             let _ = std::fs::set_permissions(&path, std::fs::Permissions::from_mode(0o666));
         }
     }
@@ -840,6 +869,7 @@ pub fn log_error(msg: &str, single: bool) {
 pub fn create_log_directory(log_dir: &Path) -> std::io::Result<()> {
     if !log_dir.is_dir() {
         std::fs::create_dir_all(log_dir)?;
+        #[cfg(unix)]
         let _ = std::fs::set_permissions(log_dir, std::fs::Permissions::from_mode(0o755));
     }
     crate::cprintln!("[i] using '{}' for log storage", log_dir.display());
