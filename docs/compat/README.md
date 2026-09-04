@@ -41,6 +41,14 @@ Kernel version is deliberately not listed: these run as containers, which share 
 | in-place | Did installing from an existing checkout adopt it without cloning over it? |
 | uninstall | Did `--uninstall` remove the tree and units but keep config and logs? |
 
+## Windows, and why it is not a row here
+
+The sensor compiles and is released for `x86_64-pc-windows-msvc`, and the server is Python with explicit Windows branches where it needs them - though nobody here has run it on Windows, which is the point of the rest of this section. Windows is not in the table because the table is a record of what `install.sh` did on a platform, and Windows has no `install.sh` - no system user to create, no service unit to render, no prefix to uninstall. Six of the eight columns would be asking about machinery that does not exist.
+
+The two that could be answered cannot be answered by CI either. Capture goes through Npcap, whose `wpcap.dll` is linked at load time, so with no driver installed the sensor does not start at all - and Npcap's free edition has no unattended installer, so no hosted runner can have it. CI therefore builds the Windows sensor, compiles its tests and checks that it imports `wpcap.dll`; running it needs a real Windows machine.
+
+On one, `python3 tests/install/record.py record --windows <label>` produces a row the same way every other row here was produced. It is not filled in from a runner that could not have tested it.
+
 ## Rows
 
 One JSON file per platform under [`rows/`](rows), each carrying what the platform is, every mark the container printed, any findings, and who recorded it when.

@@ -52,10 +52,15 @@ impl Report {
 /// Returns the process exit code: 0 = usable, 1 = something will not work.
 /// Is this process privileged enough to capture?
 ///
-/// "euid == 0" is the POSIX way to ask. Windows has no uid at all, and the equivalent question is
-/// whether the token is elevated - which the sensor cannot answer without pulling in a Windows API
-/// crate, so it reports "unknown" by returning false and lets the capture attempt be the test. That
-/// is the honest order anyway: the only thing that proves capture works is capturing.
+/// Are we privileged enough to capture without further permission?
+///
+/// "euid == 0" is the POSIX way to ask. Windows has no uid, and the equivalent question is whether
+/// the process token is elevated - `IsUserAnAdmin()`, which is what `core/common.py:check_sudo()`
+/// already calls for the server, so the two halves agree on what "privileged" means.
+///
+/// Answering `false` unconditionally here was tempting and wrong: capture on Windows needs
+/// Administrator, so an elevated sensor would have reported "no capture privileges" and sent
+/// somebody chasing a permission that was already granted.
 #[inline]
 fn running_privileged() -> bool {
     #[cfg(not(windows))]
@@ -64,19 +69,36 @@ fn running_privileged() -> bool {
         libc::geteuid() == 0
     }
     #[cfg(windows)]
-    false
+    {
+        // shell32 is linked by name rather than through a Windows API crate: one function, one
+        // integer return, no dependency.
+        #[link(name = "shell32")]
+        extern "system" {
+            fn IsUserAnAdmin() -> i32;
+        }
+        // SAFETY: takes no arguments, touches no memory of ours, and returns a BOOL.
+        unsafe { IsUserAnAdmin() != 0 }
+    }
 }
 
-/// The effective uid, or `u32::MAX` where the concept does not exist.
-#[inline]
-fn effective_uid() -> u32 {
+/// Who we are, for the message that says a directory is not writable *by us*.
+///
+/// A uid on Unix. On Windows there is no uid to print - `u32::MAX` was the first answer here and
+/// it would have rendered as "as uid 4294967295", which is worse than saying nothing - so the
+/// account name stands in.
+fn identity() -> String {
     #[cfg(not(windows))]
-    // SAFETY: as above.
-    unsafe {
-        libc::geteuid()
+    {
+        // SAFETY: as above.
+        format!("uid {}", unsafe { libc::geteuid() })
     }
     #[cfg(windows)]
-    u32::MAX
+    {
+        match std::env::var("USERNAME") {
+            Ok(name) if !name.is_empty() => format!("user {}", name),
+            _ => "this account".to_string(),
+        }
+    }
 }
 
 pub fn run(cfg: &Config) -> i32 {
@@ -103,12 +125,7 @@ pub fn run(cfg: &Config) -> i32 {
         r.line(
             Level::Fail,
             "log directory",
-            &format!(
-                "'{}' is NOT writable as uid {}{}",
-                cfg.log_dir.display(),
-                effective_uid(),
-                log_dir_hint(&cfg.log_dir)
-            ),
+            &format!("'{}' is NOT writable as {}{}", cfg.log_dir.display(), identity(), log_dir_hint(&cfg.log_dir)),
         );
     }
 
@@ -153,17 +170,19 @@ pub fn run(cfg: &Config) -> i32 {
     // exits at 3 a.m. after a package upgrade replaced the binary and dropped its capabilities.
     if !cfg.is_offline_replay() {
         match capture_privileges() {
-            Privileges::Root => r.line(Level::Ok, "capture privileges", "running as root"),
+            Privileges::Root => r.line(Level::Ok, "capture privileges", privileged_word()),
             Privileges::NetRaw => r.line(Level::Ok, "capture privileges", "CAP_NET_RAW present"),
             // `DISABLE_CHECK_SUDO` is the operator saying "do not check"; `-T` honours that rather
             // than failing a configuration the sensor itself would happily start with.
-            Privileges::None if cfg.disable_check_sudo => {
-                r.line(Level::Warn, "capture privileges", "no CAP_NET_RAW, but 'DISABLE_CHECK_SUDO' is set")
-            }
+            Privileges::None if cfg.disable_check_sudo => r.line(
+                Level::Warn,
+                "capture privileges",
+                &format!("{}, but 'DISABLE_CHECK_SUDO' is set", unprivileged_word()),
+            ),
             Privileges::None => r.line(
                 Level::Fail,
                 "capture privileges",
-                "no CAP_NET_RAW — run 'setcap cap_net_raw,cap_net_admin=eip <binary>' (root not required)",
+                &format!("{} — {}", unprivileged_word(), capture_privilege_hint()),
             ),
         }
     }
@@ -491,6 +510,55 @@ pub enum Privileges {
 
 /// `CAP_NET_RAW` from `linux/capability.h`.
 const CAP_NET_RAW: u32 = 13;
+
+/// What "privileged" is called here. `root` everywhere but Windows, which has no such account.
+fn privileged_word() -> &'static str {
+    #[cfg(not(windows))]
+    {
+        "running as root"
+    }
+    #[cfg(windows)]
+    {
+        "running elevated (Administrator)"
+    }
+}
+
+fn unprivileged_word() -> &'static str {
+    #[cfg(target_os = "linux")]
+    {
+        "no CAP_NET_RAW"
+    }
+    #[cfg(all(unix, not(target_os = "linux")))]
+    {
+        "not root"
+    }
+    #[cfg(windows)]
+    {
+        "not elevated"
+    }
+}
+
+/// How to grant it, on THIS platform.
+///
+/// `setcap` is a Linux capability tool and nothing else has it. Printing that line on macOS, a BSD
+/// or Windows is worse than printing nothing: it reads as an instruction, and following it fails
+/// with a command-not-found that explains none of the actual problem.
+fn capture_privilege_hint() -> &'static str {
+    #[cfg(target_os = "linux")]
+    {
+        "run 'setcap cap_net_raw,cap_net_admin=eip <binary>' (root not required)"
+    }
+    #[cfg(all(unix, not(target_os = "linux")))]
+    {
+        // There is no capability to grant: capture privilege here IS ownership of the bpf devices,
+        // which is why install.sh does not call setcap on these platforms.
+        "capture needs root, or read access to /dev/bpf* (chgrp the devices and add the sensor's user to that group)"
+    }
+    #[cfg(windows)]
+    {
+        "capture needs an elevated prompt, and the Npcap driver installed (https://npcap.com)"
+    }
+}
 
 /// What this process may do, without conflating "can capture" with "is root".
 pub fn capture_privileges() -> Privileges {

@@ -273,20 +273,41 @@ jobs:
           CARGO_TERM_COLOR: never
         run: cargo build --manifest-path sensor/Cargo.toml --release
 
-      - name: It runs
-        shell: bash
+      # Nothing built here can be RUN on a hosted runner, and it is worth being precise about
+      # why. wpcap is linked at LOAD time, so wpcap.dll must exist for the process to start at
+      # all - `--version` included. wpcap.dll comes with the Npcap driver, and Npcap's free
+      # edition has no unattended installer, so a hosted Windows runner cannot have it.
+      #
+      # The free edition's installer is interactive by design; the silent switch is in the paid
+      # OEM build. Rather than fake it, this checks the property that would actually regress: that
+      # the link resolved against the SDK's wpcap.lib. If the SDK step above ever stops working,
+      # the build fails; if it links against the wrong thing, this does.
+      - name: The binary must import wpcap
+        shell: pwsh
         run: |
-          ./sensor/target/release/maltrail-sensor.exe --version
-          ./sensor/target/release/maltrail-sensor.exe --help > /dev/null
+          $bin = "sensor/target/release/maltrail-sensor.exe"
+          if (-not (Test-Path $bin)) { throw "no binary was produced" }
+          $dumpbin = Get-ChildItem -Path "C:\Program Files*\Microsoft Visual Studio" -Recurse `
+            -Filter dumpbin.exe -ErrorAction SilentlyContinue | Select-Object -First 1
+          if (-not $dumpbin) {
+            Write-Host "::warning::dumpbin not found; skipping the import check"
+            exit 0
+          }
+          $imports = & $dumpbin.FullName /dependents $bin
+          $imports | Select-String -Pattern '\.dll'
+          if (-not ($imports | Select-String -Quiet -Pattern 'wpcap\.dll')) {
+            throw "the binary does not import wpcap.dll - it cannot capture anything"
+          }
+          Write-Host "wpcap.dll is imported"
 
-      # The unit tests are platform-independent logic - trail matching, the heuristics, the
-      # regex parity with core/. The integration tests that need a raw socket, a FIFO or SIGHUP
-      # are cfg'd off; the rest run.
-      - name: Tests
+      # The test binaries link wpcap too, so they cannot run here either. Compiling them is still
+      # worth doing: it is what caught that capture_live.rs and trail_update.rs assumed a Unix
+      # host, and it is the check that keeps them compiling for Windows as they change.
+      - name: Tests must compile
         shell: bash
         env:
           CARGO_TERM_COLOR: never
-        run: cargo test --manifest-path sensor/Cargo.toml --release
+        run: cargo test --manifest-path sensor/Cargo.toml --release --no-run
 
   # The oldest interpreter Maltrail claims to run on, tested on the interpreter itself rather than
   # asserted in a README. One 3.7-only method call (str.isascii) once made the updater die on every

@@ -280,9 +280,32 @@ jobs:
         run: |
           set -eu
           cargo build --release --locked --manifest-path sensor/Cargo.toml --bin maltrail-sensor
-          # --version needs no capture privilege and no driver, so it proves the link resolved and
-          # the binary starts. Anything more would need Npcap installed on the runner.
-          ./sensor/target/release/maltrail-sensor.exe --version
+
+      # The Windows counterpart of the glibc/libpcap check below, and for the same reason: the one
+      # property that cannot be checked by running the binary here.
+      #
+      # It cannot be run here. wpcap is linked at load time, and the Npcap DRIVER - which is what
+      # provides wpcap.dll - has no unattended installer in its free edition, so a hosted runner
+      # cannot have it. What CAN be checked is that the link resolved to the right library, and
+      # that is what would silently regress if the SDK step stopped working.
+      - name: The Windows binary must import wpcap
+        if: ${{ matrix.kind == 'windows' }}
+        shell: pwsh
+        run: |
+          $bin = "sensor/target/release/maltrail-sensor.exe"
+          if (-not (Test-Path $bin)) { throw "no binary was produced" }
+          $dumpbin = Get-ChildItem -Path "C:\Program Files*\Microsoft Visual Studio" -Recurse `
+            -Filter dumpbin.exe -ErrorAction SilentlyContinue | Select-Object -First 1
+          if (-not $dumpbin) {
+            Write-Host "::warning::dumpbin not found; skipping the import check"
+            exit 0
+          }
+          $imports = & $dumpbin.FullName /dependents $bin
+          $imports | Select-String -Pattern '\.dll'
+          if (-not ($imports | Select-String -Quiet -Pattern 'wpcap\.dll')) {
+            throw "the binary does not import wpcap.dll - it cannot capture anything"
+          }
+          Write-Host "wpcap.dll is imported"
 
       - name: Refuse to publish a binary that needs a newer glibc, or a libpcap
         if: ${{ matrix.kind == 'gnu' }}
@@ -312,24 +335,29 @@ jobs:
           mkdir -p "dist/$name"
           if [ "${{ matrix.kind }}" = "windows" ]; then
             cp sensor/target/release/maltrail-sensor.exe "dist/$name/"
-            # The binary links wpcap, so it needs the Npcap driver present to capture anything.
-            # Someone who downloads this gets an .exe that runs, reports its version and then
-            # cannot open an interface, with no file in the archive explaining why. This is that
-            # file.
+            # wpcap is linked at LOAD time, not opened on demand, so without the driver the
+            # process does not start at all - not even --version. Someone who downloads this and
+            # double-clicks it gets "wpcap.dll was not found" and nothing else. This file is the
+            # explanation that error does not give.
             cat > "dist/$name/NPCAP.txt" <<'NOTE'
-          This sensor captures through Npcap, the Windows implementation of libpcap. The binary
-          links against it, so it starts and answers --version without it - but opening an
-          interface will fail until the driver is installed.
+          Install Npcap first. Nothing here runs without it.
 
               https://npcap.com/#download
 
-          Install it with WinPcap API compatibility enabled, then run the sensor from an elevated
-          prompt: capture needs Administrator on Windows the way it needs root or CAP_NET_RAW
-          elsewhere.
+          This sensor captures through Npcap, the Windows implementation of libpcap, and it links
+          against wpcap at load time - so with no driver installed the process fails to start with
+          "wpcap.dll was not found", including `maltrail-sensor.exe --version`. That is a missing
+          dependency, not a broken download.
 
-          Everything else works the same as on any other platform. `maltrail-sensor -T -c
-          maltrail.conf` checks a configuration without capturing and needs no driver at all, so
-          it is the right first command.
+          Install it with WinPcap API compatibility enabled, then run the sensor from an elevated
+          prompt: capture needs Administrator here the way it needs root or CAP_NET_RAW elsewhere.
+
+          After that everything works as it does on any other platform, and
+
+              maltrail-sensor.exe -T -c maltrail.conf
+
+          is the right first command: it checks a configuration and reports what would and would
+          not work, without capturing anything.
           NOTE
           else
             cp sensor/target/release/maltrail-sensor "dist/$name/"

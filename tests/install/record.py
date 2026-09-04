@@ -55,6 +55,11 @@ CAPABILITIES = [
 
 YES, NO, NA = "✅", "❌", "➖"
 
+# The columns that describe install.sh's work, which Windows has no equivalent of. "sensor" is in
+# here because it asks about a SERVICE FILE, not about the binary - "sensor runs" is the column
+# that asks whether the binary works, and that one Windows answers for real.
+WINDOWS_NOT_APPLICABLE = ("install", "server", "sensor", "upgrade", "in-place", "uninstall")
+
 
 def _libc(reported):
     """'ldd (Ubuntu GLIBC 2.39-0ubuntu8.5) 2.39' -> 'glibc 2.39'. Which libc a platform has is the
@@ -131,9 +136,34 @@ def record_native(label):
     print("[i] %s: assert.sh exited %d" % (label, proc.returncode))
 
 
-def record(labels, native=False):
+def record_windows(label):
+    """Record a row on Windows, where neither the container harness nor assert.sh can go.
+
+    `windows.py` prints the same mark protocol, so everything downstream is the shared code path.
+    """
+
     raw = os.path.join(ROOT, ".compat-raw")
-    if native:
+    if not os.path.isdir(raw):
+        os.makedirs(raw)
+    args = [sys.executable, os.path.join(HERE, "windows.py")]
+    sensor = os.environ.get("MALTRAIL_TEST_SENSOR")
+    if sensor:
+        args += ["--sensor-bin", sensor]
+    out = os.path.join(raw, "%s.out" % label)
+    with io.open(out, "w", encoding="utf-8") as handle:
+        proc = subprocess.Popen(args, cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        handle.write(proc.communicate()[0].decode("utf-8", "replace"))
+    with io.open(os.path.join(raw, "%s.image" % label), "w", encoding="utf-8") as handle:
+        handle.write("native")
+    print("[i] %s: windows.py exited %d" % (label, proc.returncode))
+
+
+def record(labels, native=False, windows=False):
+    raw = os.path.join(ROOT, ".compat-raw")
+    if windows:
+        for label in labels:
+            record_windows(label)
+    elif native:
         for label in labels:
             record_native(label)
     else:
@@ -164,9 +194,16 @@ def record(labels, native=False):
         # A capability with no marks at all is NOT a pass. Alpine cannot run the glibc sensor, and
         # that is "does not apply here", not "worked" - the finding says which.
         musl = any("musl" in f or "not found" in f for f in findings)
+        # Windows has no install.sh, no system-user creation and no service manager any of the
+        # unit checks know about, so five of the eight columns are asking about machinery that
+        # does not exist rather than machinery that failed. Marking them NA says that; marking
+        # them ❌ would claim the installer was tried and broke, which is not what happened.
+        windows = facts.get("os", "").startswith("Windows")
         capabilities = {}
         for name, required in CAPABILITIES:
             if name in ("sensor", "sensor runs") and musl:
+                capabilities[name] = NA
+            elif windows and name in WINDOWS_NOT_APPLICABLE:
                 capabilities[name] = NA
             else:
                 capabilities[name] = YES if all(m in marks for m in required) else NO
@@ -258,6 +295,26 @@ def page(rows):
         "| in-place | Did installing from an existing checkout adopt it without cloning over it? |",
         "| uninstall | Did `--uninstall` remove the tree and units but keep config and logs? |",
         "",
+        "## Windows, and why it is not a row here",
+        "",
+        "The sensor compiles and is released for `x86_64-pc-windows-msvc`, and the server is "
+        "Python with explicit Windows branches where it needs them - though nobody here has run "
+        "it on Windows, which is the point of the rest of this section. Windows is not in the "
+        "table because the table is a record of what `install.sh` did on a platform, and Windows "
+        "has no `install.sh` - no system user to create, no service unit to render, no prefix to "
+        "uninstall. Six of the eight columns would be asking about machinery that does not "
+        "exist.",
+        "",
+        "The two that could be answered cannot be answered by CI either. Capture goes through "
+        "Npcap, whose `wpcap.dll` is linked at load time, so with no driver installed the sensor "
+        "does not start at all - and Npcap's free edition has no unattended installer, so no "
+        "hosted runner can have it. CI therefore builds the Windows sensor, compiles its tests "
+        "and checks that it imports `wpcap.dll`; running it needs a real Windows machine.",
+        "",
+        "On one, `python3 tests/install/record.py record --windows <label>` produces a row the "
+        "same way every other row here was produced. It is not filled in from a runner that "
+        "could not have tested it.",
+        "",
         "## Rows",
         "",
         "One JSON file per platform under [`rows/`](rows), each carrying what the platform is, "
@@ -313,12 +370,14 @@ def main():
     one.add_argument("labels", nargs="+")
     one.add_argument("--native", action="store_true",
                      help="install on THIS machine instead of in a container (FreeBSD, macOS)")
+    one.add_argument("--windows", action="store_true",
+                     help="probe THIS Windows machine (no installer exists there)")
     two = sub.add_parser("render", help="build docs/compat/README.md from the rows")
     two.add_argument("--check", action="store_true", help="fail if the page is not current")
     options = parser.parse_args()
 
     if options.command == "record":
-        return record(options.labels, native=options.native)
+        return record(options.labels, native=options.native, windows=options.windows)
     if options.command == "render":
         return render(options.check)
     parser.print_help()
