@@ -37,14 +37,35 @@ printf -- '--- ASSERT ---\n'
 # 1. the tree, the configuration, the user, the directories
 # Recorded, not asserted: the row in docs/compat has to say WHICH debian this was, and the only
 # place that is knowable is inside the image.
-echo "P os $( (. /etc/os-release 2>/dev/null && printf '%s' "${PRETTY_NAME:-$NAME $VERSION_ID}") || printf 'unknown')"
+# /etc/os-release is a Linux convention. macOS has sw_vers, the BSDs put it in uname.
+os_name() {
+    if [ -r /etc/os-release ]; then
+        ( . /etc/os-release && printf '%s' "${PRETTY_NAME:-$NAME $VERSION_ID}" ) && return
+    fi
+    case $(uname -s) in
+        Darwin) printf 'macOS %s (%s)' "$(sw_vers -productVersion 2>/dev/null)" "$(uname -m)" ; return ;;
+    esac
+    printf '%s %s' "$(uname -s)" "$(uname -r)"
+}
+echo "P os $(os_name)"
 # The HOST's kernel. A container shares it, so this says nothing about the distribution and is
 # recorded under a name that admits as much - publishing it per row made twelve platforms look
 # like they all ran the same Ubuntu kernel, which is true and useless.
 echo "P host_kernel $(uname -r 2>/dev/null || printf 'unknown')"
 echo "P machine $(uname -m 2>/dev/null || printf 'unknown')"
 echo "P python $(python3 -c 'import platform;print(platform.python_version())' 2>/dev/null || printf 'none')"
-echo "P libc $( (ldd --version 2>&1 | head -1) || printf 'unknown')"
+# glibc and musl answer `ldd --version`; FreeBSD's ldd rejects the option and macOS has no libc
+# version to report at all - what matters there is that it is not glibc.
+libc_name() {
+    case $(uname -s) in
+        Darwin)  printf 'libSystem' ; return ;;
+        FreeBSD) printf 'FreeBSD libc' ; return ;;
+        NetBSD)  printf 'NetBSD libc' ; return ;;
+        OpenBSD) printf 'OpenBSD libc' ; return ;;
+    esac
+    ldd --version 2>/dev/null | head -1 || printf 'unknown'
+}
+echo "P libc $(libc_name)"
 
 [ -f "$PREFIX/server.py" ] && echo "A tree"
 [ -f "$CONF" ] && echo "A conf"

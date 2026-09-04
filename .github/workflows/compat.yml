@@ -148,20 +148,17 @@ jobs:
             echo "--- recording the row ---"
             MALTRAIL_TEST_SENSOR="$PWD/sensor/target/release/maltrail-sensor" \
               python3 tests/install/record.py record freebsd --native || true
-            python3 - <<'PY'
-            import io, os
-            raw = os.path.join(".compat-raw", "freebsd.out")
-            text = io.open(raw, encoding="utf-8", errors="replace").read() if os.path.isfile(raw) else ""
-            print("marks: %d" % text.count("\nA "))
-            for line in text.splitlines():
-                if line.startswith(("F ", "P ")):
-                    print(line)
-            PY
+            echo "===== assert.sh transcript ====="
+            cat .compat-raw/freebsd.out || echo "(no transcript)"
       - uses: actions/upload-artifact@v4
         with:
           name: compat-raw-freebsd
           path: .compat-raw
-          if-no-files-found: warn
+          # .compat-raw is a dot-directory and upload-artifact v4 excludes hidden files by
+          # default, so every native row was uploaded as nothing at all and the jobs still went
+          # green. That is exactly the shape of failure this whole matrix exists to stop.
+          include-hidden-files: true
+          if-no-files-found: error
 
   macos:
     name: ${{ matrix.label }} (native)
@@ -186,14 +183,20 @@ jobs:
           sudo MALTRAIL_TEST_SENSOR="$PWD/sensor/target/release/maltrail-sensor" \
             MALTRAIL_RECORDED_BY=ci \
             python3 tests/install/record.py record ${{ matrix.label }} --native || true
-          # Whatever happened, publish what was observed - a row that says a capability failed is
-          # the point of recording, not a reason to hide the run.
-          sed -n 's/^[AFP] //p' .compat-raw/${{ matrix.label }}.out | head -60 || true
+          # The WHOLE transcript, not just the marks. The first run reported three marks and exit 1
+          # with no way to see why, because the artifact was silently dropped for being hidden and
+          # the diagnostics were filtered out of the log as well.
+          echo "===== assert.sh transcript ====="
+          cat .compat-raw/${{ matrix.label }}.out || echo "(no transcript)"
       - uses: actions/upload-artifact@v4
         with:
           name: compat-raw-${{ matrix.label }}
           path: .compat-raw
-          if-no-files-found: warn
+          # .compat-raw is a dot-directory and upload-artifact v4 excludes hidden files by
+          # default, so every native row was uploaded as nothing at all and the jobs still went
+          # green. That is exactly the shape of failure this whole matrix exists to stop.
+          include-hidden-files: true
+          if-no-files-found: error
 
   page:
     name: the published page says what the rows say
