@@ -363,7 +363,7 @@ merges four sources into `TRAILS_FILE`, in this order:
 | --- | --- |
 | Feeds | `feeds/*.py`, fetched directly by your deployment from each publisher |
 | Custom | `CUSTOM_TRAILS_DIR` and `CUSTOM_TRAILS_URL`, your own indicators |
-| Static | the assembled set from [stamparm/trails](https://github.com/stamparm/trails), fetched from `STATIC_TRAILS_URL` |
+| Static | the assembled set from [stamparm/trails](https://github.com/stamparm/trails), fetched from `STATIC_TRAILS_URL`; [separately licensed](https://github.com/stamparm/trails/blob/main/LICENSE.md) |
 | Engine lists | `data/mass_scanner*.txt`, shipped here because they change rarely |
 
 The static trails live in their own repository. Detection content changes tens of times a
@@ -573,6 +573,13 @@ cannot cover; that needs Npcap's kernel driver and a real Windows machine. Prere
 ### License
 
 Maltrail is distributed under the MIT License. See [`LICENSE`](LICENSE).
+
+That is the engine. The static trail set is separate work under separate terms: free for internal
+defensive use, research and teaching, but a commercial product, service, MSSP or MDR offering, or a
+redistributed feed needs a licence. An MIT engine does not make the content free to sell — see
+[`LICENSE.md`](https://github.com/stamparm/trails/blob/main/LICENSE.md) in
+[stamparm/trails](https://github.com/stamparm/trails) before shipping it in something you charge
+for.
 
 ### Maintainers
 
