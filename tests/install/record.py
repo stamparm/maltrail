@@ -56,6 +56,20 @@ CAPABILITIES = [
 YES, NO, NA = "✅", "❌", "➖"
 
 
+def _libc(reported):
+    """'ldd (Ubuntu GLIBC 2.39-0ubuntu8.5) 2.39' -> 'glibc 2.39'. Which libc a platform has is the
+    thing that decides which sensor build it needs, so it belongs in the table in a form somebody
+    can read."""
+
+    text = (reported or "").strip()
+    if not text:
+        return "unknown"
+    if "musl" in text.lower():
+        return "musl"
+    found = re.search(r"(\d+\.\d+)\s*$", text)
+    return "glibc %s" % found.group(1) if found else text
+
+
 def _sensor_identity(facts):
     """Which sensor this row is about, in words that mean something.
 
@@ -122,10 +136,11 @@ def record(labels):
             "label": label,
             "image": image,
             "os": facts.get("os", "unknown"),
-            "kernel": facts.get("kernel", "unknown"),
+            # The host's, not the platform's - a container shares the kernel it runs on.
+            "host_kernel": facts.get("host_kernel", "unknown"),
             "machine": facts.get("machine", "unknown"),
             "python": facts.get("python", "unknown"),
-            "libc": facts.get("libc", "unknown"),
+            "libc": _libc(facts.get("libc", "")),
             "capabilities": capabilities,
             "marks": sorted(marks),
             "findings": findings,
@@ -158,12 +173,13 @@ def _rows():
 
 def table(rows):
     heads = [name for name, _ in CAPABILITIES]
-    lines = ["| Platform | Arch | Python | " + " | ".join(heads) + " |",
-             "| --- | --- | --- | " + " | ".join(["---"] * len(heads)) + " |"]
+    lines = ["| Platform | Arch | libc | Python | " + " | ".join(heads) + " |",
+             "| --- | --- | --- | --- | " + " | ".join(["---"] * len(heads)) + " |"]
     for row in rows:
         cells = [row["capabilities"].get(name, NO) for name in heads]
-        lines.append("| **%s** | %s | %s | %s |"
-                     % (row["os"], row["machine"], row["python"], " | ".join(cells)))
+        lines.append("| **%s** | %s | %s | %s | %s |"
+                     % (row["os"], row["machine"], row.get("libc", "?"),
+                        row["python"], " | ".join(cells)))
     return "\n".join(lines)
 
 
@@ -181,6 +197,10 @@ def page(rows):
         "",
         "**%d platforms, %d capabilities verified, %d not applicable, %d failing.** "
         "Last recorded %s." % (len(rows), passed, na, failed, when),
+        "",
+        "Kernel version is deliberately not listed: these run as containers, which share the "
+        "host's kernel, so it would say the same thing on every row and describe none of them. "
+        "The libc is listed instead - it is what decides which sensor build a platform needs.",
         "",
         table(rows),
         "",
@@ -206,8 +226,8 @@ def page(rows):
     for row in rows:
         body.append("### %s" % row["os"])
         body.append("")
-        body.append("`%s` · %s · kernel %s · python %s · recorded %s by %s"
-                    % (row["image"] or row["label"], row["machine"], row["kernel"],
+        body.append("`%s` · %s · %s · python %s · recorded %s by %s"
+                    % (row["image"] or row["label"], row["machine"], row.get("libc", "?"),
                        row["python"], row["recorded_at"], row["recorded_by"]))
         if row.get("sensor_source"):
             body.append("")

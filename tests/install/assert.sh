@@ -35,7 +35,10 @@ printf -- '--- ASSERT ---\n'
 # Recorded, not asserted: the row in docs/compat has to say WHICH debian this was, and the only
 # place that is knowable is inside the image.
 echo "P os $( (. /etc/os-release 2>/dev/null && printf '%s' "${PRETTY_NAME:-$NAME $VERSION_ID}") || printf 'unknown')"
-echo "P kernel $(uname -r 2>/dev/null || printf 'unknown')"
+# The HOST's kernel. A container shares it, so this says nothing about the distribution and is
+# recorded under a name that admits as much - publishing it per row made twelve platforms look
+# like they all ran the same Ubuntu kernel, which is true and useless.
+echo "P host_kernel $(uname -r 2>/dev/null || printf 'unknown')"
 echo "P machine $(uname -m 2>/dev/null || printf 'unknown')"
 echo "P python $(python3 -c 'import platform;print(platform.python_version())' 2>/dev/null || printf 'none')"
 echo "P libc $( (ldd --version 2>&1 | head -1) || printf 'unknown')"

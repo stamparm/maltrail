@@ -10,10 +10,10 @@
     "upgrade": "✅"
   },
   "findings": [],
+  "host_kernel": "6.8.0-138-generic",
   "image": "debian:12",
-  "kernel": "6.8.0-138-generic",
   "label": "debian",
-  "libc": "ldd (Debian GLIBC 2.36-9+deb12u14) 2.36",
+  "libc": "glibc 2.36",
   "machine": "x86_64",
   "marks": [
     "conf",

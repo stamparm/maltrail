@@ -10,10 +10,10 @@
     "upgrade": "✅"
   },
   "findings": [],
+  "host_kernel": "6.8.0-138-generic",
   "image": "almalinux:9",
-  "kernel": "6.8.0-138-generic",
   "label": "alma",
-  "libc": "ldd (GNU libc) 2.34",
+  "libc": "glibc 2.34",
   "machine": "x86_64",
   "marks": [
     "conf",

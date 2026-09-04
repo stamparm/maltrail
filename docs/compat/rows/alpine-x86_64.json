@@ -10,10 +10,10 @@
     "upgrade": "✅"
   },
   "findings": [],
+  "host_kernel": "6.8.0-138-generic",
   "image": "alpine:3.20",
-  "kernel": "6.8.0-138-generic",
   "label": "alpine",
-  "libc": "musl libc (x86_64)",
+  "libc": "musl",
   "machine": "x86_64",
   "marks": [
     "conf",

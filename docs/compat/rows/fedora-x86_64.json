@@ -10,10 +10,10 @@
     "upgrade": "✅"
   },
   "findings": [],
+  "host_kernel": "6.8.0-138-generic",
   "image": "fedora:latest",
-  "kernel": "6.8.0-138-generic",
   "label": "fedora",
-  "libc": "ldd (GNU libc) 2.43",
+  "libc": "glibc 2.43",
   "machine": "x86_64",
   "marks": [
     "conf",

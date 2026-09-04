@@ -10,10 +10,10 @@
     "upgrade": "✅"
   },
   "findings": [],
+  "host_kernel": "6.8.0-138-generic",
   "image": "opensuse/tumbleweed",
-  "kernel": "6.8.0-138-generic",
   "label": "tumbleweed",
-  "libc": "ldd (GNU libc) 2.44",
+  "libc": "glibc 2.44",
   "machine": "x86_64",
   "marks": [
     "conf",
