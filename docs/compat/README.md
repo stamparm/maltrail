@@ -2,7 +2,7 @@
 
 ✅ — the capability was exercised and worked, ➖ it cannot apply on that platform, ❌ it did not. Every cell was produced by installing Maltrail on that platform and asking it questions - in a container where one can stand in for the real thing, and on a real FreeBSD VM or a real Mac where it cannot, because a container shares this kernel. Never by hand.
 
-**20 platforms, 180 capabilities verified, 0 not applicable, 0 failing.** Last recorded 2026-09-05.
+**21 platforms, 189 capabilities verified, 0 not applicable, 0 failing.** Last recorded 2026-09-05.
 
 Kernel version is deliberately not listed: these run as containers, which share the host's kernel, so it would say the same thing on every row and describe none of them. The libc is listed instead - it is what decides which sensor build a platform needs.
 
@@ -19,8 +19,9 @@ Kernel version is deliberately not listed: these run as containers, which share 
 | **Fedora Linux 44 (Container Image)** | x86_64 | glibc 2.43 | 3.14.7 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Fedora Linux 41 (Container Image)** | x86_64 | glibc 2.40 | 3.13.9 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **FreeBSD 14.2-RELEASE** | amd64 | FreeBSD libc | 3.12.14 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **macOS 26.6.2 (arm64)** | arm64 | libSystem | 3.14.7 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **macOS 26.5.2 (arm64)** | arm64 | libSystem | 3.14.7 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **macOS 15.7.9 (x86_64)** | x86_64 | libSystem | 3.14.7 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **NetBSD 10.1** | amd64 | NetBSD libc | 3.12.13 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **OpenBSD 7.7** | amd64 | OpenBSD libc | 3.12.11 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **openSUSE Leap 15.6** | x86_64 | glibc 2.38 | 3.6.15 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Rocky Linux 9.3 (Blue Onyx)** | x86_64 | glibc 2.34 | 3.9.25 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -49,11 +50,19 @@ Kernel version is deliberately not listed: these run as containers, which share 
 
 The column was added, and on its first run it went red on every glibc Linux row. Not the check being wrong: the 3.3 release binary links libpcap 1.10.5 statically, that version refuses to activate the `any` device when promiscuous mode is requested, and `install.sh` never rewrites `MONITOR_INTERFACE` — so a machine installed from a release stopped at `opening interface 'any'` and captured nothing. A developer build links the system libpcap, which tolerates it, so nothing in development ever showed it. Fixed in 3.4, which is what these cells are now recorded against.
 
-## NetBSD is not here
+## What the BSD rows cost
 
-The job exists and runs on every push. `prepare` installs rust, python and libpcap with zero errors, and then it ends with `ssh exited with code 1` and no output from a `run` block whose first statement is an echo — with and without `usesh`, on 10.0 and 10.1. The run phase never starts a shell, which is not something a change to the script can fix, so the job is reported rather than enforced and keeps regenerating the evidence.
+FreeBSD, NetBSD and OpenBSD are all here, and none of them arrived free. Each needed a native VM — the bundled SQLite wants a C compiler for the target, and rustup has no OpenBSD std at all — and between them they turned up six things nothing else could have:
 
-OpenBSD, by contrast, went from not compiling to a full row. It needed two fixes that only a native build could have found, because rustup has no OpenBSD std to cross-compile against: `sysctlbyname` does not exist there, and neither does the libc crate's `HW_PHYSMEM64`, so `total_physmem()` uses `sysconf` instead.
+| | |
+| --- | --- |
+| OpenBSD | `sysctlbyname` does not exist there, and neither does the libc crate's `HW_PHYSMEM64`, so `total_physmem()` uses `sysconf` |
+| OpenBSD | base ships libpcap with no pkg-config file, so the build needs `LIBPCAP_LIBDIR` named |
+| NetBSD | `install.sh` linked the sensor into `/usr/local/bin`, which NetBSD does not have — pkgsrc uses `/usr/pkg/bin`, so the link failed and the sensor never reached PATH |
+| NetBSD | pkgsrc installs the interpreter as `python3.12` and leaves `python3` to the administrator |
+| both | the capture probe aimed at unroutable TEST-NET, which needs a default route to leave the interface |
+
+The NetBSD job also spent three runs looking like the CI action was broken — its `run` phase produced no output at all — when one absent optional package was making `prepare` exit non-zero, and a failing prepare means `run` never executes. Nothing about the platform; the evidence just pointed at the wrong layer.
 
 ## Windows
 
@@ -76,79 +85,85 @@ One JSON file per platform under [`rows/`](rows), each carrying what the platfor
 
 ### AlmaLinux 9.8 (Olive Jaguar)
 
-`almalinux:9` · aarch64 · glibc 2.34 · python 3.9.25 · recorded 2026-09-04 by ci
+`almalinux:9` · aarch64 · glibc 2.34 · python 3.9.25 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### AlmaLinux 9.8 (Olive Jaguar)
 
-`almalinux:9` · x86_64 · glibc 2.34 · python 3.9.25 · recorded 2026-09-04 by ci
+`almalinux:9` · x86_64 · glibc 2.34 · python 3.9.25 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### Alpine Linux v3.20
 
-`alpine:3.20` · x86_64 · musl · python 3.12.13 · recorded 2026-09-04 by ci
+`alpine:3.20` · x86_64 · musl · python 3.12.13 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### Arch Linux
 
-`archlinux:latest` · x86_64 · glibc 2.44 · python 3.14.7 · recorded 2026-09-04 by ci
+`archlinux:latest` · x86_64 · glibc 2.44 · python 3.14.7 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### Debian GNU/Linux 12 (bookworm)
 
-`debian:12` · x86_64 · glibc 2.36 · python 3.11.2 · recorded 2026-09-04 by ci
+`debian:12` · x86_64 · glibc 2.36 · python 3.11.2 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### Debian GNU/Linux 13 (trixie)
 
-`debian:13` · aarch64 · glibc 2.41 · python 3.13.5 · recorded 2026-09-04 by ci
+`debian:13` · aarch64 · glibc 2.41 · python 3.13.5 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### Debian GNU/Linux 13 (trixie)
 
-`debian:13` · x86_64 · glibc 2.41 · python 3.13.5 · recorded 2026-09-04 by ci
+`debian:13` · x86_64 · glibc 2.41 · python 3.13.5 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### Fedora Linux 44 (Container Image)
 
-`fedora:latest` · aarch64 · glibc 2.43 · python 3.14.7 · recorded 2026-09-04 by ci
+`fedora:latest` · aarch64 · glibc 2.43 · python 3.14.7 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### Fedora Linux 44 (Container Image)
 
-`fedora:latest` · x86_64 · glibc 2.43 · python 3.14.7 · recorded 2026-09-04 by ci
+`fedora:latest` · x86_64 · glibc 2.43 · python 3.14.7 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### Fedora Linux 41 (Container Image)
 
-`fedora:41` · x86_64 · glibc 2.40 · python 3.13.9 · recorded 2026-09-04 by ci
+`fedora:41` · x86_64 · glibc 2.40 · python 3.13.9 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### FreeBSD 14.2-RELEASE
 
-`native` · amd64 · FreeBSD libc · python 3.12.14 · recorded 2026-09-04 by ci
+`native` · amd64 · FreeBSD libc · python 3.12.14 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
-### macOS 26.6.2 (arm64)
+### macOS 26.5.2 (arm64)
 
-`native` · arm64 · libSystem · python 3.14.7 · recorded 2026-09-04 by ci
+`native` · arm64 · libSystem · python 3.14.7 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### macOS 15.7.9 (x86_64)
 
-`native` · x86_64 · libSystem · python 3.14.7 · recorded 2026-09-04 by ci
+`native` · x86_64 · libSystem · python 3.14.7 · recorded 2026-09-05 by ci
+
+Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
+
+### NetBSD 10.1
+
+`native` · amd64 · NetBSD libc · python 3.12.13 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
@@ -160,36 +175,36 @@ Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### openSUSE Leap 15.6
 
-`opensuse/leap:15.6` · x86_64 · glibc 2.38 · python 3.6.15 · recorded 2026-09-04 by ci
+`opensuse/leap:15.6` · x86_64 · glibc 2.38 · python 3.6.15 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### Rocky Linux 9.3 (Blue Onyx)
 
-`rockylinux:9` · x86_64 · glibc 2.34 · python 3.9.25 · recorded 2026-09-04 by ci
+`rockylinux:9` · x86_64 · glibc 2.34 · python 3.9.25 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### openSUSE Tumbleweed
 
-`opensuse/tumbleweed` · x86_64 · glibc 2.44 · python 3.13.14 · recorded 2026-09-04 by ci
+`opensuse/tumbleweed` · x86_64 · glibc 2.44 · python 3.13.14 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### Ubuntu 24.04.4 LTS
 
-`ubuntu:24.04` · aarch64 · glibc 2.39 · python 3.12.3 · recorded 2026-09-04 by ci
+`ubuntu:24.04` · aarch64 · glibc 2.39 · python 3.12.3 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### Ubuntu 24.04.4 LTS
 
-`ubuntu:24.04` · x86_64 · glibc 2.39 · python 3.12.3 · recorded 2026-09-04 by ci
+`ubuntu:24.04` · x86_64 · glibc 2.39 · python 3.12.3 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 
 ### Ubuntu 22.04.5 LTS
 
-`ubuntu:22.04` · x86_64 · glibc 2.35 · python 3.10.12 · recorded 2026-09-04 by ci
+`ubuntu:22.04` · x86_64 · glibc 2.35 · python 3.10.12 · recorded 2026-09-05 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`

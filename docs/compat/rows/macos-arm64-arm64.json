@@ -11,7 +11,7 @@
     "upgrade": "✅"
   },
   "findings": [],
-  "host_kernel": "25.6.0",
+  "host_kernel": "25.5.0",
   "image": "native",
   "label": "macos-arm64",
   "libc": "libSystem",
@@ -33,6 +33,7 @@
     "logdir-writable",
     "rerun-ok",
     "sensor-captures",
+    "sensor-captures-ip",
     "sensor-runs",
     "sensor-selftest",
     "server-ping",
@@ -49,9 +50,9 @@
     "unit-server-conf",
     "user"
   ],
-  "os": "macOS 26.6.2 (arm64)",
+  "os": "macOS 26.5.2 (arm64)",
   "python": "3.14.7",
-  "recorded_at": "2026-09-04",
+  "recorded_at": "2026-09-05",
   "recorded_by": "ci",
   "sensor_source": "Maltrail (sensor) #v3.4 {https://maltrail.github.io}"
 }

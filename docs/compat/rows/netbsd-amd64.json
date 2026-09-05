@@ -11,11 +11,11 @@
     "upgrade": "✅"
   },
   "findings": [],
-  "host_kernel": "6.17.0-1022-azure",
-  "image": "archlinux:latest",
-  "label": "arch",
-  "libc": "glibc 2.44",
-  "machine": "x86_64",
+  "host_kernel": "10.1",
+  "image": "native",
+  "label": "netbsd",
+  "libc": "NetBSD libc",
+  "machine": "amd64",
   "marks": [
     "conf",
     "conf-managed-block",
@@ -50,8 +50,8 @@
     "unit-server-conf",
     "user"
   ],
-  "os": "Arch Linux",
-  "python": "3.14.7",
+  "os": "NetBSD 10.1",
+  "python": "3.12.13",
   "recorded_at": "2026-09-05",
   "recorded_by": "ci",
   "sensor_source": "Maltrail (sensor) #v3.4 {https://maltrail.github.io}"

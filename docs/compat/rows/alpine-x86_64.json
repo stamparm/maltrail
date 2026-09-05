@@ -33,6 +33,7 @@
     "logdir-writable",
     "rerun-ok",
     "sensor-captures",
+    "sensor-captures-ip",
     "sensor-runs",
     "sensor-selftest",
     "server-ping",
@@ -51,7 +52,7 @@
   ],
   "os": "Alpine Linux v3.20",
   "python": "3.12.13",
-  "recorded_at": "2026-09-04",
+  "recorded_at": "2026-09-05",
   "recorded_by": "ci",
   "sensor_source": "Maltrail (sensor) #v3.4 {https://maltrail.github.io}"
 }

@@ -315,18 +315,29 @@ def page(rows):
         "libpcap, which tolerates it, so nothing in development ever showed it. Fixed in 3.4, "
         "which is what these cells are now recorded against.",
         "",
-        "## NetBSD is not here",
+        "## What the BSD rows cost",
         "",
-        "The job exists and runs on every push. `prepare` installs rust, python and libpcap with "
-        "zero errors, and then it ends with `ssh exited with code 1` and no output from a `run` "
-        "block whose first statement is an echo — with and without `usesh`, on 10.0 and 10.1. The "
-        "run phase never starts a shell, which is not something a change to the script can fix, "
-        "so the job is reported rather than enforced and keeps regenerating the evidence.",
+        "FreeBSD, NetBSD and OpenBSD are all here, and none of them arrived free. Each needed a "
+        "native VM — the bundled SQLite wants a C compiler for the target, and rustup has no "
+        "OpenBSD std at all — and between them they turned up six things nothing else could have:",
         "",
-        "OpenBSD, by contrast, went from not compiling to a full row. It needed two fixes that "
-        "only a native build could have found, because rustup has no OpenBSD std to cross-compile "
-        "against: `sysctlbyname` does not exist there, and neither does the libc crate's "
-        "`HW_PHYSMEM64`, so `total_physmem()` uses `sysconf` instead.",
+        "| | |",
+        "| --- | --- |",
+        "| OpenBSD | `sysctlbyname` does not exist there, and neither does the libc crate's "
+        "`HW_PHYSMEM64`, so `total_physmem()` uses `sysconf` |",
+        "| OpenBSD | base ships libpcap with no pkg-config file, so the build needs "
+        "`LIBPCAP_LIBDIR` named |",
+        "| NetBSD | `install.sh` linked the sensor into `/usr/local/bin`, which NetBSD does not "
+        "have — pkgsrc uses `/usr/pkg/bin`, so the link failed and the sensor never reached PATH |",
+        "| NetBSD | pkgsrc installs the interpreter as `python3.12` and leaves `python3` to the "
+        "administrator |",
+        "| both | the capture probe aimed at unroutable TEST-NET, which needs a default route to "
+        "leave the interface |",
+        "",
+        "The NetBSD job also spent three runs looking like the CI action was broken — its `run` "
+        "phase produced no output at all — when one absent optional package was making `prepare` "
+        "exit non-zero, and a failing prepare means `run` never executes. Nothing about the "
+        "platform; the evidence just pointed at the wrong layer.",
         "",
         "## Windows",
         "",
