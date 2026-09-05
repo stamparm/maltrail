@@ -33,6 +33,12 @@ CONF=${MALTRAIL_CONF:-/etc/maltrail.conf}
 REF=${MALTRAIL_REF:-master}
 ROLE=${MALTRAIL_ROLE:-both}
 SENSOR_BIN=${MALTRAIL_SENSOR_BIN:-}
+# Where the sensor is linked so it can be run by name. /usr/local/bin everywhere except NetBSD,
+# whose convention is /usr/pkg/bin and which has no /usr/local/bin to link into.
+case $(uname -s) in
+    NetBSD) SENSOR_LINK=/usr/pkg/bin/maltrail-sensor ;;
+    *)      SENSOR_LINK=/usr/local/bin/maltrail-sensor ;;
+esac
 LOG_DIR=${MALTRAIL_LOG_DIR:-/var/log/maltrail}
 STATE_DIR=${MALTRAIL_STATE_DIR:-/var/lib/maltrail}
 RUN_USER=${MALTRAIL_USER:-maltrail}
@@ -398,7 +404,12 @@ install_sensor_binary() {
         rm -rf "$tmp"
     fi
 
-    run ln -sf "$dest" /usr/local/bin/maltrail-sensor
+    # /usr/local/bin is not guaranteed to exist. NetBSD keeps third-party binaries in
+    # /usr/pkg/bin and ships no /usr/local/bin, so this failed with "No such file or directory",
+    # the sensor never reached PATH, and every later check that invoked it by name concluded the
+    # platform had no usable sensor at all.
+    run mkdir -p "$(dirname "$SENSOR_LINK")"
+    run ln -sf "$dest" "$SENSOR_LINK"
     link_libpcap_soname "$dest"
     verify_sensor "$dest" || true
     # Capture without root. Systemd grants these through AmbientCapabilities, but a manual run
@@ -750,7 +761,7 @@ do_uninstall() {
     else
         run rm -f "$UNIT_DIR/maltrail-server.service" "$UNIT_DIR/maltrail-sensor.service"
     fi
-    run rm -f /usr/local/bin/maltrail-sensor
+    run rm -f "$SENSOR_LINK"
     # Never delete a tree this script did not create. A checkout it merely adopted, or any
     # directory an operator pointed it at, is not ours to remove - that would take their work with
     # it. The record of what WAS created lives outside the tree, so it cannot dirty their git.

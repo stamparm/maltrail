@@ -151,7 +151,9 @@ pkill -f 'server\.py' 2>/dev/null || true
 #    A glibc-too-new binary is a property of how the release is BUILT, so it is a finding, not an
 #    installer failure - the installer put the file exactly where it belongs.
 if [ -x "$SENSOR" ]; then
-    if /usr/local/bin/maltrail-sensor --version >/tmp/version.log 2>&1; then
+    # By name, through PATH, rather than a hardcoded /usr/local/bin: that path does not exist on
+    # NetBSD, so this reported "no usable sensor" about a sensor that was installed and working.
+    if maltrail-sensor --version >/tmp/version.log 2>&1 || "$SENSOR" --version >/tmp/version.log 2>&1; then
         echo "A sensor-runs"
         # Which binary this row is about. A sensor built on a newer host carries that host's glibc
         # floor, so "the sensor works here" means nothing without saying WHICH sensor.
