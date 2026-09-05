@@ -202,11 +202,24 @@ jobs:
           prepare: |
             /usr/sbin/pkg_add pkgin || true
             pkgin -y install rust git python312 py312-sqlite3 libpcap
+          # No `set -e`, and diagnostics BEFORE anything that can fail. The first attempt began
+          # `set -eu; cd <guessed path> || cd "$GITHUB_WORKSPACE"` and the job died with `ssh
+          # exited with code 1` and not one line of output - the guessed path was wrong, the
+          # variable is not set inside the VM, and `set -u` took the shell down before the first
+          # echo. A run that cannot say where it got to is not worth repeating.
           run: |
-            set -eu
-            cd /home/runner/work/maltrail/maltrail || cd "$GITHUB_WORKSPACE"
+            echo "--- where am I ---"
+            echo "pwd=$(pwd)"; ls
+            for d in "$GITHUB_WORKSPACE" /home/runner/work/maltrail/maltrail "$(pwd)"; do
+              if [ -n "$d" ] && [ -f "$d/tests/install/record.py" ]; then cd "$d"; break; fi
+            done
+            echo "working in $(pwd)"
+            test -f tests/install/record.py || { echo "the checkout is not visible from the VM"; exit 1; }
+            echo "--- toolchain ---"
+            (cargo --version && python3 --version) || echo "(missing toolchain)"
             echo "--- building the sensor ---"
-            cd sensor && cargo build --release --bin maltrail-sensor && cd ..
+            cargo build --release --manifest-path sensor/Cargo.toml --bin maltrail-sensor \
+              || { echo "the sensor did not build here"; exit 1; }
             echo "--- recording the row ---"
             rm -f docs/compat/rows/*.json
             MALTRAIL_TEST_SENSOR="$PWD/sensor/target/release/maltrail-sensor" \
@@ -238,13 +251,30 @@ jobs:
           release: '7.6'
           usesh: true
           copyback: true
+          # `pkg_add -I rust git python%3` found none of them: "Can't find rust", "Can't find
+          # python%3". The flavour syntax is not a package name, and each name is tried on its own
+          # here so one miss does not take the others with it. pkg_info -Q prints what this
+          # release actually offers, which is the thing worth knowing when a name is wrong.
           prepare: |
-            pkg_add -I rust git python%3
+            pkg_add -I git || echo "(no git)"
+            pkg_add -I rust || pkg_add -I rust-- || echo "(no rust)"
+            pkg_add -I python%3.12 || pkg_add -I python%3.11 || pkg_add -I python3 || echo "(no python3)"
+            echo "--- what this release offers ---"
+            pkg_info -Q rust | head -5 || true
+            pkg_info -Q python- | head -8 || true
           run: |
-            set -eu
-            cd /home/runner/work/maltrail/maltrail || cd "$GITHUB_WORKSPACE"
+            echo "--- where am I ---"
+            echo "pwd=$(pwd)"; ls
+            for d in "$GITHUB_WORKSPACE" /home/runner/work/maltrail/maltrail "$(pwd)"; do
+              if [ -n "$d" ] && [ -f "$d/tests/install/record.py" ]; then cd "$d"; break; fi
+            done
+            echo "working in $(pwd)"
+            test -f tests/install/record.py || { echo "the checkout is not visible from the VM"; exit 1; }
+            echo "--- toolchain ---"
+            (cargo --version && python3 --version) || echo "(missing toolchain)"
             echo "--- building the sensor ---"
-            cd sensor && cargo build --release --bin maltrail-sensor && cd ..
+            cargo build --release --manifest-path sensor/Cargo.toml --bin maltrail-sensor \
+              || { echo "the sensor did not build here"; exit 1; }
             echo "--- recording the row ---"
             rm -f docs/compat/rows/*.json
             MALTRAIL_TEST_SENSOR="$PWD/sensor/target/release/maltrail-sensor" \
@@ -307,6 +337,10 @@ jobs:
     # Every row-producing job, not just linux: the page used to be rendered while the BSD and
     # macOS VMs were still running, so it could publish a matrix that was missing them.
     needs: [ linux, freebsd, netbsd, openbsd, macos ]
+    # Waits for them all, but renders whatever they produced. A platform being brought up should
+    # not stop the page describing the eighteen that already work - and the no-files-found guard
+    # on each row job is what reports the missing one, loudly, where it happened.
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
