@@ -2,7 +2,7 @@
 
 ✅ — the capability was exercised and worked, ➖ it cannot apply on that platform, ❌ it did not. Every cell was produced by installing Maltrail on that platform and asking it questions - in a container where one can stand in for the real thing, and on a real FreeBSD VM or a real Mac where it cannot, because a container shares this kernel. Never by hand.
 
-**19 platforms, 171 capabilities verified, 0 not applicable, 0 failing.** Last recorded 2026-09-04.
+**20 platforms, 179 capabilities verified, 0 not applicable, 1 failing.** Last recorded 2026-09-05.
 
 Kernel version is deliberately not listed: these run as containers, which share the host's kernel, so it would say the same thing on every row and describe none of them. The libc is listed instead - it is what decides which sensor build a platform needs.
 
@@ -21,6 +21,7 @@ Kernel version is deliberately not listed: these run as containers, which share 
 | **FreeBSD 14.2-RELEASE** | amd64 | FreeBSD libc | 3.12.14 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **macOS 26.6.2 (arm64)** | arm64 | libSystem | 3.14.7 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **macOS 15.7.9 (x86_64)** | x86_64 | libSystem | 3.14.7 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **OpenBSD 7.7** | amd64 | OpenBSD libc | 3.12.11 | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ✅ | ✅ | ✅ |
 | **openSUSE Leap 15.6** | x86_64 | glibc 2.38 | 3.6.15 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **Rocky Linux 9.3 (Blue Onyx)** | x86_64 | glibc 2.34 | 3.9.25 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | **openSUSE Tumbleweed** | x86_64 | glibc 2.44 | 3.13.14 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -47,6 +48,16 @@ Kernel version is deliberately not listed: these run as containers, which share 
 `-T` proves a configuration parses and an interface name resolves. It does not open a capture handle, so it cannot tell you whether a packet ever reaches the sensor — and for nineteen rows that was the only evidence the sensor worked at all.
 
 The column was added, and on its first run it went red on every glibc Linux row. Not the check being wrong: the 3.3 release binary links libpcap 1.10.5 statically, that version refuses to activate the `any` device when promiscuous mode is requested, and `install.sh` never rewrites `MONITOR_INTERFACE` — so a machine installed from a release stopped at `opening interface 'any'` and captured nothing. A developer build links the system libpcap, which tolerates it, so nothing in development ever showed it. Fixed in 3.4, which is what these cells are now recorded against.
+
+## OpenBSD captures nothing yet
+
+Every other column is green there — `install.sh` created the user and the rc.d services, the server answered, the sensor started and passed `-T`, and the upgrade, in-place and uninstall paths all behaved. The sensor then captured no packet at all, neither the DNS probe nor the TCP SYN.
+
+Recorded rather than hidden, because that is the whole point of the column. Getting this far already took two real fixes that only a native build could have found: `sysctlbyname` does not exist on OpenBSD, and neither does the libc crate's `HW_PHYSMEM64`, so the sensor did not compile there at all until `total_physmem()` learned to use `sysconf`.
+
+## NetBSD is not here
+
+The job exists and runs. `prepare` installs rust, python and libpcap with zero errors, and then it ends with `ssh exited with code 1` and no output from a `run` block whose first statement is an echo — with and without `usesh`, on 10.0 and 10.1. The run phase never starts a shell, which is not something a change to the script can fix.
 
 ## Windows
 
@@ -144,6 +155,15 @@ Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
 `native` · x86_64 · libSystem · python 3.14.7 · recorded 2026-09-04 by ci
 
 Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
+
+### OpenBSD 7.7
+
+`native` · amd64 · OpenBSD libc · python 3.12.11 · recorded 2026-09-05 by ci
+
+Sensor tested: `Maltrail (sensor) #v3.4 {https://maltrail.github.io}`
+
+- the sensor started but never saw the DNS query sent to it - capture is broken here
+- the sensor saw DNS but not a TCP SYN to a trail address
 
 ### openSUSE Leap 15.6
 

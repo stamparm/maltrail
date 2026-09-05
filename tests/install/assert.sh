@@ -223,17 +223,21 @@ for _ in range(2):
                     && grep -q '192\.0\.2\.66' /tmp/live.log 2>/dev/null && break
                 sleep 1
             done
-            if grep -q 'maltrail-capture-probe' /tmp/live.log; then
-                echo "A sensor-captures"
-            else
-                echo "F the sensor started but never saw the DNS query sent to it - capture is broken here"
-                echo "live log:"; tail -12 /tmp/live.log
-            fi
-            if grep -q '192\.0\.2\.66' /tmp/live.log; then
-                echo "A sensor-captures-ip"
-            else
-                echo "F the sensor saw DNS but not a TCP SYN to a trail address"
-                echo "live log:"; tail -12 /tmp/live.log
+            # The interface lines are the first thing worth seeing when nothing was captured, and
+            # a 12-line tail cut them off - on OpenBSD that left "captured nothing" with no way to
+            # tell whether anything was opened at all.
+            _dns=no; _ip=no
+            grep -q 'maltrail-capture-probe' /tmp/live.log && _dns=yes
+            grep -q '192\.0\.2\.66' /tmp/live.log && _ip=yes
+            [ "$_dns" = yes ] && echo "A sensor-captures"
+            [ "$_ip" = yes ] && echo "A sensor-captures-ip"
+            if [ "$_dns" != yes ] || [ "$_ip" != yes ]; then
+                # Say which of the two, without claiming the other one worked when it did not.
+                echo "F capture: DNS probe seen=$_dns, TCP-SYN probe seen=$_ip"
+                echo "interfaces the sensor opened:"
+                grep -E "opening interface|interface\(s\)|not a capture device|skipping|unable to open" \
+                    /tmp/live.log || echo "  (the log names no interface at all)"
+                echo "live log:"; tail -20 /tmp/live.log
             fi
         else
             # No escape hatch. If the sensor cannot get to the point of capturing, that IS the
