@@ -1,0 +1,8 @@
+# actionlint ships a fixed list of GitHub-hosted runner labels and refuses one it does not know.
+# `macos-15-intel` is real - it is how you ask for an Intel Mac now that macos-latest is Apple
+# silicon - and both jobs that use it demonstrably run: the macos-intel row in docs/compat and the
+# x86_64-apple-darwin binary on the releases page were produced by them. So the label is declared
+# here rather than the jobs being changed to satisfy a stale table.
+self-hosted-runner:
+  labels:
+    - macos-15-intel

@@ -309,6 +309,35 @@ jobs:
           CARGO_TERM_COLOR: never
         run: cargo test --manifest-path sensor/Cargo.toml --release --no-run
 
+  # A workflow can be wrong in ways YAML is happy with. release.yml's gate guarded its libpcap
+  # install on `matrix.kind` in a job that has no matrix: the expression was silently empty, the
+  # step never ran, and the gate could not link the sensor - which nothing revealed until a
+  # release tag was pushed. tests/test_workflows.py now catches that exact shape; actionlint
+  # catches the family it belongs to (undefined contexts, `needs` on a job that does not exist,
+  # shellcheck over every `run:` block).
+  #
+  # Pinned and checksummed rather than taken from an action, so what runs here is decided in this
+  # file and cannot change under us.
+  workflows:
+    name: workflow lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      ACTIONLINT_VERSION: 1.7.7
+      ACTIONLINT_SHA256: 023070a287cd8cccd71515fedc843f1985bf96c436b7effaecce67290e7e0757
+    steps:
+      - uses: actions/checkout@v7
+      - name: actionlint
+        run: |
+          set -eu
+          url="https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz"
+          curl -sSfL -o /tmp/actionlint.tar.gz "$url"
+          echo "$ACTIONLINT_SHA256  /tmp/actionlint.tar.gz" | sha256sum -c -
+          tar -C /tmp -xzf /tmp/actionlint.tar.gz actionlint
+          /tmp/actionlint -version
+          # shellcheck is on the runner, so the `run:` blocks get linted too.
+          /tmp/actionlint
+
   # The Windows job above builds and checks the import table. It cannot run anything, because
   # wpcap is a load-time dependency and wpcap.dll ships with the Npcap driver, whose free edition
   # refuses a silent install (`npcap.exe /S` exits 2; measured, not assumed).
