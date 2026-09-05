@@ -269,7 +269,17 @@ they need — nothing to install, on RHEL 8+, Debian 10+, Ubuntu 18.04+ and Leap
 builds are fully static, so Alpine needs nothing at all. The Windows build is 64-bit and needs Windows 10 or later plus
 [Npcap](https://npcap.com) installed before it will start — `wpcap.dll` is a load-time dependency,
 so without it the loader refuses the executable rather than failing at capture. The archive says so
-too.
+too. From a checkout, `install.ps1` does the rest:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File install.ps1
+```
+
+It refuses to install without Npcap, puts the binary, configuration and support tree under
+`%ProgramFiles%\Maltrail`, keeps logs and the trail set in `%ProgramData%\Maltrail`, seeds the trail
+set from the release, runs the sensor's own `-T` preflight, and starts it at boot as SYSTEM via a
+scheduled task. `-Uninstall` removes the task and the program directory and keeps everything under
+`%ProgramData%`.
 
 Binaries from **3.1.1 and earlier** did not: they linked libpcap dynamically, and asked for it by
 the name their AlmaLinux build host uses. Debian and Ubuntu ship the identical library under the

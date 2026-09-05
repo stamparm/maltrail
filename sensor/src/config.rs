@@ -409,6 +409,15 @@ pub fn parse_raw(content: &str, root: &Path) -> Result<HashMap<String, Value>, C
     let mut out: HashMap<String, Value> = HashMap::new();
     let mut array: Option<String> = None;
 
+    // A UTF-8 BOM is invisible and fatal. Notepad writes one whenever it saves as UTF-8, and so
+    // does Windows PowerShell's `Set-Content -Encoding UTF8`, so an operator who opens
+    // maltrail.conf on Windows, changes nothing and saves gets a file the sensor refuses with
+    //
+    //     [!] invalid configuration (line: '')
+    //
+    // naming a line that looks empty. The bytes are content, not configuration; drop them.
+    let content = content.strip_prefix('\u{feff}').unwrap_or(content);
+
     for raw_line in content.split('\n') {
         let line = raw_line.trim_end_matches('\r');
         // re.sub(r"\s*#.*", "", line)
@@ -1191,6 +1200,27 @@ SENSOR_NAME box   # trailing comment
             }
             other => panic!("{other:?}"),
         }
+    }
+
+    /// Notepad and Windows PowerShell both write a UTF-8 BOM, and it landed on the first line.
+    ///
+    /// install.ps1 wrote the configuration with `Set-Content -Encoding UTF8`, which in Windows
+    /// PowerShell means "UTF-8 with BOM"; the sensor then refused the file it had just been given
+    /// with `invalid configuration (line: '')`, naming a line that renders as empty. The same
+    /// happens to any operator who opens maltrail.conf in Notepad and saves it.
+    #[test]
+    fn a_utf8_bom_is_not_configuration() {
+        let raw = parse_raw("\u{feff}USE_HEURISTICS true\nSENSOR_NAME box\n", &root())
+            .expect("a leading BOM must not make a valid configuration invalid");
+        assert_eq!(raw["USE_HEURISTICS"], Value::Bool(true));
+        assert_eq!(raw["SENSOR_NAME"], Value::Str("box".into()));
+
+        // Only at the very start, where an encoder puts it. A BOM in the middle of a file is not
+        // a byte-order mark, it is a corrupt line, and it must still be reported.
+        assert!(
+            parse_raw("USE_HEURISTICS true\n\u{feff}\n", &root()).is_err(),
+            "a BOM on a later line is corruption and must not be silently swallowed"
+        );
     }
 
     #[test]

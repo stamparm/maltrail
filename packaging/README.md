@@ -9,6 +9,13 @@ systemd/    maltrail-server.service, maltrail-sensor.service
 `install.sh` installs the systemd units when it finds systemd; on anything else it says so and
 leaves the processes to you.
 
+Windows is `install.ps1` at the repository root, and it deliberately does not register a Windows
+service: `maltrail-sensor.exe` is a console program with no Service Control Manager handler, so
+`sc create` reports it as "did not respond to the start request in a timely fashion" even while it
+runs — a worse lie than not being a service — and the alternative is shipping a wrapper that is not
+ours to ship. A scheduled task at startup, running as SYSTEM, starts it where a service would,
+restarts it on failure, and is removable with tools already on the machine.
+
 These lived at the repository root until 3.3, which quietly said systemd was *the* way to run
 Maltrail. It is not — the server is `python3 server.py` and the sensor is a single binary, and
 both are perfectly happy under rc.d, OpenRC, runit, s6 or a supervisor of your choosing. There is
