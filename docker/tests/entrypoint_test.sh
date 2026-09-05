@@ -24,7 +24,8 @@ IMAGE=maltrail-entrypoint-test
 WORK=$(mktemp -d)
 failures=0
 # The containers write as uids this shell is not, so the cleanup needs root too.
-# shellcheck disable=SC2329  # invoked by the `trap cleanup EXIT` below
+# shellcheck disable=SC2329,SC2317  # invoked by the `trap cleanup EXIT` below, which the
+# linter does not follow - it reads the whole body as unreachable
 cleanup() {
     docker run --rm --entrypoint sh -v "$WORK:/w" "$IMAGE" -c 'rm -rf /w/*' >/dev/null 2>&1
     rm -rf "$WORK"

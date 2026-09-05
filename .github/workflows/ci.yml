@@ -325,8 +325,25 @@ jobs:
     env:
       ACTIONLINT_VERSION: 1.7.7
       ACTIONLINT_SHA256: 023070a287cd8cccd71515fedc843f1985bf96c436b7effaecce67290e7e0757
+      SHELLCHECK_VERSION: 0.10.0
+      SHELLCHECK_SHA256: 6c881ab0698e4e6ea235245f22832860544f17ba386442fe7e9d629f8cbedf87
     steps:
       - uses: actions/checkout@v7
+
+      # Pinned like actionlint, and for a reason that already bit: the runner image ships one
+      # version and a developer machine ships another, they disagree about which checks are on by
+      # default, and the job failed on findings a locally clean run had never printed. Both ends
+      # can now install the same one.
+      - name: shellcheck
+        run: |
+          set -eu
+          url="https://github.com/koalaman/shellcheck/releases/download/v${SHELLCHECK_VERSION}/shellcheck-v${SHELLCHECK_VERSION}.linux.x86_64.tar.xz"
+          curl -sSfL -o /tmp/shellcheck.tar.xz "$url"
+          echo "$SHELLCHECK_SHA256  /tmp/shellcheck.tar.xz" | sha256sum -c -
+          tar -C /tmp -xJf /tmp/shellcheck.tar.xz
+          sudo install -m 0755 "/tmp/shellcheck-v${SHELLCHECK_VERSION}/shellcheck" /usr/local/bin/shellcheck
+          shellcheck --version | sed -n 2p
+
       - name: actionlint
         run: |
           set -eu
@@ -346,7 +363,6 @@ jobs:
       # silently did nothing under dash.
       - name: shellcheck the tracked shell scripts
         run: |
-          shellcheck --version | sed -n 2p
           # Each file is read with its own shebang; no -s override, which would report bash
           # scripts as broken POSIX.
           git ls-files '*.sh' | xargs shellcheck

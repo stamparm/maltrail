@@ -446,10 +446,10 @@ link_libpcap_soname() {
                 # Try it, then ASK THE LOADER. Picking by name cannot tell 32-bit from 64-bit,
                 # and this is the one question that actually matters.
                 run ln -sf "$candidate" "$dir/$lib"
-                have ldconfig && run ldconfig >/dev/null 2>&1 || true
+                if have ldconfig; then run ldconfig >/dev/null 2>&1 || true; fi
                 if ldd "$1" 2>/dev/null | awk -v l="$lib" '$1 == l && /not found/ { bad = 1 } END { exit !bad }'; then
                     run rm -f "$dir/$lib"
-                    have ldconfig && run ldconfig >/dev/null 2>&1 || true
+                    if have ldconfig; then run ldconfig >/dev/null 2>&1 || true; fi
                     continue
                 fi
                 say "linked $lib -> $candidate (this distribution names libpcap differently)"
