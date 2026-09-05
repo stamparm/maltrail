@@ -183,6 +183,88 @@ jobs:
           # nothing, which is the exact failure shape this matrix exists to catch.
           if-no-files-found: error
 
+  # NetBSD and OpenBSD. Neither can be cross-checked from Linux the way FreeBSD can - the bundled
+  # SQLite needs a C compiler for the target, and rustup has no OpenBSD std at all (tier 3) - so a
+  # native VM is not a nicety here, it is the only way to compile them, let alone run them.
+  #
+  # They are also the last two platforms whose rc.d scripts were written and never executed.
+  netbsd:
+    name: netbsd (native VM)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+      - uses: vmactions/netbsd-vm@v1
+        with:
+          release: '10.0'
+          usesh: true
+          copyback: true
+          prepare: |
+            /usr/sbin/pkg_add pkgin || true
+            pkgin -y install rust git python312 py312-sqlite3 libpcap
+          run: |
+            set -eu
+            cd /home/runner/work/maltrail/maltrail || cd "$GITHUB_WORKSPACE"
+            echo "--- building the sensor ---"
+            cd sensor && cargo build --release --bin maltrail-sensor && cd ..
+            echo "--- recording the row ---"
+            rm -f docs/compat/rows/*.json
+            MALTRAIL_TEST_SENSOR="$PWD/sensor/target/release/maltrail-sensor" \
+              MALTRAIL_RECORDED_BY=ci \
+              python3 tests/install/record.py record netbsd --native || true
+            echo "===== assert.sh transcript ====="
+            cat .compat-raw/netbsd.out || echo "(no transcript)"
+
+      - name: Keep only the row this job recorded
+        run: |
+          set -eu
+          find docs/compat/rows -name '*.json' ! -name 'netbsd-*.json' -delete
+          echo "uploading:"; ls -1 docs/compat/rows/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: compat-row-netbsd
+          path: docs/compat/rows/*.json
+          if-no-files-found: error
+
+  openbsd:
+    name: openbsd (native VM)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+      - uses: vmactions/openbsd-vm@v1
+        with:
+          release: '7.6'
+          usesh: true
+          copyback: true
+          prepare: |
+            pkg_add -I rust git python%3
+          run: |
+            set -eu
+            cd /home/runner/work/maltrail/maltrail || cd "$GITHUB_WORKSPACE"
+            echo "--- building the sensor ---"
+            cd sensor && cargo build --release --bin maltrail-sensor && cd ..
+            echo "--- recording the row ---"
+            rm -f docs/compat/rows/*.json
+            MALTRAIL_TEST_SENSOR="$PWD/sensor/target/release/maltrail-sensor" \
+              MALTRAIL_RECORDED_BY=ci \
+              python3 tests/install/record.py record openbsd --native || true
+            echo "===== assert.sh transcript ====="
+            cat .compat-raw/openbsd.out || echo "(no transcript)"
+
+      - name: Keep only the row this job recorded
+        run: |
+          set -eu
+          find docs/compat/rows -name '*.json' ! -name 'openbsd-*.json' -delete
+          echo "uploading:"; ls -1 docs/compat/rows/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: compat-row-openbsd
+          path: docs/compat/rows/*.json
+          if-no-files-found: error
+
   macos:
     name: ${{ matrix.label }} (native)
     runs-on: ${{ matrix.runner }}
@@ -222,7 +304,9 @@ jobs:
 
   page:
     name: the published page says what the rows say
-    needs: linux
+    # Every row-producing job, not just linux: the page used to be rendered while the BSD and
+    # macOS VMs were still running, so it could publish a matrix that was missing them.
+    needs: [ linux, freebsd, netbsd, openbsd, macos ]
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:

@@ -506,6 +506,11 @@ ensure_user() {
     if have pw; then           # FreeBSD
         run pw groupadd "$RUN_USER" 2>/dev/null || true
         run pw useradd "$RUN_USER" -g "$RUN_USER" -d "$STATE_DIR" -s /usr/sbin/nologin -c "Maltrail"
+    elif [ "$OS" = "NetBSD" ] || [ "$OS" = "OpenBSD" ]; then
+        # Both ship groupadd/useradd, but they are the BSD ones: no --system, no --gid, no
+        # --home-dir. The GNU branch below would fail on the very first option.
+        run groupadd "$RUN_USER" 2>/dev/null || true
+        run useradd -g "$RUN_USER" -d "$STATE_DIR" -s /sbin/nologin -c "Maltrail" "$RUN_USER"
     elif have groupadd; then
         run groupadd --system "$RUN_USER" 2>/dev/null || true
         run useradd --system --gid "$RUN_USER" --no-create-home --home-dir "$STATE_DIR" --shell /sbin/nologin "$RUN_USER"
