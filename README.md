@@ -65,20 +65,24 @@ prevention system.
 
 ## Architecture
 
-Maltrail consists of two independent processes that may run on the same host or on separate hosts.
-Trails and heuristics are the two families of input; the sensor turns them into one event stream and
-forks it to every sink; the reporting interface sits over the datasets it can reach:
+Maltrail consists of two independent processes that may run on the same host or on separate hosts:
 
-![Maltrail architecture: trail and heuristic sources feed the Rust sensor, which forks events to local, remote and integration sinks, with the reporting interface sitting over every dataset it produces](docs/img/architecture.svg)
+```text
+   ┌──────────┐   events (UDP or file)   ┌──────────┐
+   │  sensor  │ ───────────────────────► │  server  │ ◄── browser
+   └──────────┘                          └──────────┘
+    Rust                                  Python
+    libpcap + PACKET_FANOUT               reporting UI + API
+    trail matching + heuristics
+```
 
-The sensor (Rust, libpcap + optional `PACKET_FANOUT` capture workers) captures traffic, matches it
-against the trail set, and runs the heuristics, producing one event per detection. It can write
-events locally (`LOG_DIR`), send them to a remote Maltrail server (`LOG_SERVER`), or do both, and can
-emit CEF over syslog (`SYSLOG_SERVER`) and JSON to Logstash (`LOGSTASH_SERVER`) alongside.
+The sensor captures traffic, performs trail matching and heuristic analysis, and produces events.
+It can write events locally (`LOG_DIR`), send them to a remote Maltrail server (`LOG_SERVER`), or do
+both. It can also emit CEF over syslog (`SYSLOG_SERVER`) and JSON to Logstash
+(`LOGSTASH_SERVER`).
 
-The server (Python) receives and stores remote events, serves locally available event logs, and
-provides the web interface and API — the one place that reads local logs, remote logs and the RIPE
-enrichment cache together, regardless of which sinks a given deployment uses.
+The server receives and stores remote events, serves locally available event logs, and provides the
+web interface and API.
 
 ## Reporting interface
 
