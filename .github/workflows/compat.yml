@@ -192,8 +192,14 @@ jobs:
     name: netbsd (native VM)
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    # Being brought up: reported, not enforced. See the notes in the steps below for what
-    # each one is currently blocked on - neither is a Maltrail failure.
+    # Blocked on the action, not on Maltrail, and not enforced while that is true.
+    #
+    # `prepare` completes perfectly - rust 1.96, python312, py312-sqlite3 and libpcap 1.10.6 all
+    # install with "warnings: 0, errors: 0" - and then the job ends with `ssh exited with code 1`
+    # and not one line of output from `run`, whose first statement is an echo. Tried with and
+    # without usesh, and on 10.0 and 10.1. The run phase never starts a shell, so there is nothing
+    # here for a script change to fix; the job stays so the evidence is regenerated rather than
+    # remembered.
     continue-on-error: true
     steps:
       - uses: actions/checkout@v5
@@ -281,8 +287,13 @@ jobs:
             test -f tests/install/record.py || { echo "the checkout is not visible from the VM"; exit 1; }
             echo "--- toolchain ---"
             (cargo --version && python3 --version) || echo "(missing toolchain)"
+            # libpcap is in OpenBSD's base system, but base ships no pkg-config file for it, so
+            # the pcap crate's build script probes with pkg-config and fails - everything else
+            # (rust 1.86, python 3.12, the checkout) was already working by this point. Naming the
+            # directory is what the release build does for the same crate.
             echo "--- building the sensor ---"
-            cargo build --release --manifest-path sensor/Cargo.toml --bin maltrail-sensor \
+            LIBPCAP_LIBDIR=/usr/lib LIBPCAP_VER=1.10.1 MALTRAIL_SKIP_PCAP_CHECK=1 \
+              cargo build --release --manifest-path sensor/Cargo.toml --bin maltrail-sensor \
               || { echo "the sensor did not build here"; exit 1; }
             echo "--- recording the row ---"
             rm -f docs/compat/rows/*.json
