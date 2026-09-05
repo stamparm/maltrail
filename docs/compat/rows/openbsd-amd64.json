@@ -1,7 +1,7 @@
 {
   "capabilities": {
     "/ping": "✅",
-    "captures": "❌",
+    "captures": "✅",
     "in-place": "✅",
     "install": "✅",
     "sensor": "✅",
@@ -10,10 +10,7 @@
     "uninstall": "✅",
     "upgrade": "✅"
   },
-  "findings": [
-    "the sensor started but never saw the DNS query sent to it - capture is broken here",
-    "the sensor saw DNS but not a TCP SYN to a trail address"
-  ],
+  "findings": [],
   "host_kernel": "7.7",
   "image": "native",
   "label": "openbsd",
@@ -35,6 +32,8 @@
     "logdir",
     "logdir-writable",
     "rerun-ok",
+    "sensor-captures",
+    "sensor-captures-ip",
     "sensor-runs",
     "sensor-selftest",
     "server-ping",

@@ -315,24 +315,18 @@ def page(rows):
         "libpcap, which tolerates it, so nothing in development ever showed it. Fixed in 3.4, "
         "which is what these cells are now recorded against.",
         "",
-        "## OpenBSD captures nothing yet",
-        "",
-        "Every other column is green there — `install.sh` created the user and the rc.d services, "
-        "the server answered, the sensor started and passed `-T`, and the upgrade, in-place and "
-        "uninstall paths all behaved. The sensor then captured no packet at all, neither the DNS "
-        "probe nor the TCP SYN.",
-        "",
-        "Recorded rather than hidden, because that is the whole point of the column. Getting this "
-        "far already took two real fixes that only a native build could have found: `sysctlbyname` "
-        "does not exist on OpenBSD, and neither does the libc crate's `HW_PHYSMEM64`, so the "
-        "sensor did not compile there at all until `total_physmem()` learned to use `sysconf`.",
-        "",
         "## NetBSD is not here",
         "",
-        "The job exists and runs. `prepare` installs rust, python and libpcap with zero errors, "
-        "and then it ends with `ssh exited with code 1` and no output from a `run` block whose "
-        "first statement is an echo — with and without `usesh`, on 10.0 and 10.1. The run phase "
-        "never starts a shell, which is not something a change to the script can fix.",
+        "The job exists and runs on every push. `prepare` installs rust, python and libpcap with "
+        "zero errors, and then it ends with `ssh exited with code 1` and no output from a `run` "
+        "block whose first statement is an echo — with and without `usesh`, on 10.0 and 10.1. The "
+        "run phase never starts a shell, which is not something a change to the script can fix, "
+        "so the job is reported rather than enforced and keeps regenerating the evidence.",
+        "",
+        "OpenBSD, by contrast, went from not compiling to a full row. It needed two fixes that "
+        "only a native build could have found, because rustup has no OpenBSD std to cross-compile "
+        "against: `sysctlbyname` does not exist there, and neither does the libc crate's "
+        "`HW_PHYSMEM64`, so `total_physmem()` uses `sysconf` instead.",
         "",
         "## Windows",
         "",
