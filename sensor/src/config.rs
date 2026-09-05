@@ -603,7 +603,40 @@ pub fn total_physmem() -> Option<u64> {
 /// The BSDs and macOS answer the same question through sysctl. `hw.memsize` is a 64-bit byte count
 /// on Darwin; FreeBSD's `hw.physmem` is `unsigned long`, which is also 64-bit on every target that
 /// matters here, and `hw.realmem` is the fallback on the ones that do not carry `hw.physmem`.
-#[cfg(all(not(target_os = "linux"), not(windows)))]
+/// OpenBSD has no `sysctlbyname` at all - it is a FreeBSD/NetBSD/macOS convenience, and OpenBSD
+/// only offers the numeric MIB form of `sysctl`. The sensor did not compile there at all until
+/// this branch existed:
+///
+/// ```text
+/// error[E0425]: cannot find function `sysctlbyname` in crate `libc`
+/// ```
+///
+/// `HW_PHYSMEM64` rather than `HW_PHYSMEM`, which is a 32-bit int and silently wrong above 4 GB.
+#[cfg(target_os = "openbsd")]
+pub fn total_physmem() -> Option<u64> {
+    let mut mib = [libc::CTL_HW, libc::HW_PHYSMEM64];
+    let mut value: u64 = 0;
+    let mut len = std::mem::size_of::<u64>();
+    // SAFETY: `mib` is a two-element MIB of the length passed, `value` is a live u64 and `len`
+    // describes it. sysctl writes at most `len` bytes and reports what it wrote.
+    let rc = unsafe {
+        libc::sysctl(
+            mib.as_mut_ptr(),
+            mib.len() as libc::c_uint,
+            &mut value as *mut u64 as *mut libc::c_void,
+            &mut len,
+            std::ptr::null_mut(),
+            0,
+        )
+    };
+    if rc == 0 && value > 0 {
+        Some(value)
+    } else {
+        None
+    }
+}
+
+#[cfg(all(not(target_os = "linux"), not(target_os = "openbsd"), not(windows)))]
 pub fn total_physmem() -> Option<u64> {
     for name in ["hw.memsize\0", "hw.physmem\0", "hw.realmem\0"] {
         let mut value: u64 = 0;
