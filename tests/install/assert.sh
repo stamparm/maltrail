@@ -160,7 +160,40 @@ if [ -x "$SENSOR" ]; then
         # actual 1.6M-trail file here would test the updater, not the installer, so updates are
         # off and two trails stand in. Without a trails file -T rightly FAILS ("would detect
         # NOTHING"), which is the sensor being correct, not a bug to assert around.
-        printf 'evil.example,"malware (test)","(static)"\n1.2.3.4,"malware (test)","(static)"\nmaltrail-capture-probe.com,"malware (test)","(static)"\n192.0.2.66,"malware (test)","(static)"\n' > /var/lib/maltrail/trails.csv
+        # Where the capture probes will aim. 192.0.2.0/24 is reserved and unroutable, which is
+        # exactly right when a default route exists - the packet leaves the interface and reaches
+        # nothing - and useless when one does not. OpenBSD's VM has no default route, so every
+        # probe packet died inside sendto() and the sensor was recorded as capturing nothing when
+        # nothing had been sent to it. Fall back to the resolver this machine already uses, which
+        # is routable by definition.
+        probe_dst=$("$python" - <<'PICK'
+import socket
+def routable(addr):
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        s.connect((addr, 53))          # no packet; this only resolves a route
+        return True
+    except OSError:
+        return False
+    finally:
+        s.close()
+if routable("192.0.2.53"):
+    print("192.0.2.53")
+else:
+    ns = ""
+    try:
+        with open("/etc/resolv.conf") as handle:
+            for line in handle:
+                if line.startswith("nameserver"):
+                    ns = line.split()[1]
+                    break
+    except Exception:
+        pass
+    print(ns or "127.0.0.1")
+PICK
+)
+        echo "P probe_dst $probe_dst"
+        printf 'evil.example,"malware (test)","(static)"\n1.2.3.4,"malware (test)","(static)"\nmaltrail-capture-probe.com,"malware (test)","(static)"\n%s,"malware (test)","(static)"\n' "$probe_dst" > /var/lib/maltrail/trails.csv
         chown maltrail:maltrail /var/lib/maltrail/trails.csv
         printf '\nDISABLE_TRAIL_UPDATES true\n' >> "$CONF"
         if maltrail-sensor -c "$CONF" -T >/tmp/selftest.log 2>&1; then
@@ -199,26 +232,36 @@ if [ -x "$SENSOR" ]; then
             i=0
             while [ "$i" -lt 20 ]; do
                 i=$((i + 1))
-                "$python" -c "
-import socket, struct, random
+                "$python" - "$probe_dst" <<'PROBE' || true
+import socket, struct, random, sys
+dst = sys.argv[1]
+
 def query(name):
     header = struct.pack('>HHHHHH', random.randint(0, 0xffff), 0x0100, 1, 0, 0, 0)
-    qname = b''.join(bytes([len(l)]) + l.encode() for l in name.split('.')) + b'\\x00'
+    qname = b''.join(bytes([len(l)]) + l.encode() for l in name.split('.')) + b'\x00'
     return header + qname + struct.pack('>HH', 1, 1)
+
 udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 for _ in range(3):
-    udp.sendto(query('maltrail-capture-probe.com'), ('192.0.2.53', 53))
-# A SYN to a trail address. 192.0.2.0/24 is unroutable, so this never connects - the SYN leaving
-# the interface is the whole point, and connect_ex swallows the timeout.
+    try:
+        udp.sendto(query('maltrail-capture-probe.com'), (dst, 53))
+    except OSError as ex:
+        print("  the DNS probe could not be sent to %s: %s" % (dst, ex))
+        break
+
+# A SYN to the same address, which trails.csv carries as an IP trail: a different transport and a
+# different matcher, so a green cell means more than one path through the sensor works.
 for _ in range(2):
     tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     tcp.settimeout(0.4)
     try:
-        tcp.connect_ex(('192.0.2.66', 443))
-    except Exception:
-        pass
-    tcp.close()
-" 2>/dev/null || true
+        tcp.connect_ex((dst, 443))
+    except OSError as ex:
+        print("  the TCP probe could not be sent to %s: %s" % (dst, ex))
+        break
+    finally:
+        tcp.close()
+PROBE
                 grep -q 'maltrail-capture-probe' /tmp/live.log 2>/dev/null \
                     && grep -q '192\.0\.2\.66' /tmp/live.log 2>/dev/null && break
                 sleep 1
@@ -228,7 +271,7 @@ for _ in range(2):
             # tell whether anything was opened at all.
             _dns=no; _ip=no
             grep -q 'maltrail-capture-probe' /tmp/live.log && _dns=yes
-            grep -q '192\.0\.2\.66' /tmp/live.log && _ip=yes
+            grep -q "$probe_dst" /tmp/live.log && _ip=yes
             [ "$_dns" = yes ] && echo "A sensor-captures"
             [ "$_ip" = yes ] && echo "A sensor-captures-ip"
             if [ "$_dns" != yes ] || [ "$_ip" != yes ]; then
