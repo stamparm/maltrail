@@ -55,6 +55,7 @@ printf -- '--- ASSERT ---\n'
 # /etc/os-release is a Linux convention. macOS has sw_vers, the BSDs put it in uname.
 os_name() {
     if [ -r /etc/os-release ]; then
+        # shellcheck disable=SC1091  # /etc/os-release belongs to the distribution, not to us
         ( . /etc/os-release && printf '%s' "${PRETTY_NAME:-$NAME $VERSION_ID}" ) && return
     fi
     case $(uname -s) in
@@ -159,7 +160,7 @@ if [ -x "$SENSOR" ]; then
         # actual 1.6M-trail file here would test the updater, not the installer, so updates are
         # off and two trails stand in. Without a trails file -T rightly FAILS ("would detect
         # NOTHING"), which is the sensor being correct, not a bug to assert around.
-        printf 'evil.example,"malware (test)","(static)"\n1.2.3.4,"malware (test)","(static)"\nmaltrail-capture-probe.com,"malware (test)","(static)"\n' > /var/lib/maltrail/trails.csv
+        printf 'evil.example,"malware (test)","(static)"\n1.2.3.4,"malware (test)","(static)"\nmaltrail-capture-probe.com,"malware (test)","(static)"\n192.0.2.66,"malware (test)","(static)"\n' > /var/lib/maltrail/trails.csv
         chown maltrail:maltrail /var/lib/maltrail/trails.csv
         printf '\nDISABLE_TRAIL_UPDATES true\n' >> "$CONF"
         if maltrail-sensor -c "$CONF" -T >/tmp/selftest.log 2>&1; then
@@ -192,6 +193,9 @@ if [ -x "$SENSOR" ]; then
             i=$((i + 1)); sleep 1
         done
         if grep -q 'running\.\.\.' /tmp/live.log 2>/dev/null; then
+            # Two classes, not one. A DNS query exercises UDP and the domain matcher; a TCP SYN
+            # to a trail IP exercises the TCP path and the address matcher. One probe passing told
+            # us the sensor sees SOME packet; two tell us more than one path through it works.
             i=0
             while [ "$i" -lt 20 ]; do
                 i=$((i + 1))
@@ -201,17 +205,34 @@ def query(name):
     header = struct.pack('>HHHHHH', random.randint(0, 0xffff), 0x0100, 1, 0, 0, 0)
     qname = b''.join(bytes([len(l)]) + l.encode() for l in name.split('.')) + b'\\x00'
     return header + qname + struct.pack('>HH', 1, 1)
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 for _ in range(3):
-    s.sendto(query('maltrail-capture-probe.com'), ('192.0.2.53', 53))
+    udp.sendto(query('maltrail-capture-probe.com'), ('192.0.2.53', 53))
+# A SYN to a trail address. 192.0.2.0/24 is unroutable, so this never connects - the SYN leaving
+# the interface is the whole point, and connect_ex swallows the timeout.
+for _ in range(2):
+    tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    tcp.settimeout(0.4)
+    try:
+        tcp.connect_ex(('192.0.2.66', 443))
+    except Exception:
+        pass
+    tcp.close()
 " 2>/dev/null || true
-                grep -q 'maltrail-capture-probe' /tmp/live.log 2>/dev/null && break
+                grep -q 'maltrail-capture-probe' /tmp/live.log 2>/dev/null \
+                    && grep -q '192\.0\.2\.66' /tmp/live.log 2>/dev/null && break
                 sleep 1
             done
             if grep -q 'maltrail-capture-probe' /tmp/live.log; then
                 echo "A sensor-captures"
             else
-                echo "F the sensor started but never saw a packet sent to it - capture is broken here"
+                echo "F the sensor started but never saw the DNS query sent to it - capture is broken here"
+                echo "live log:"; tail -12 /tmp/live.log
+            fi
+            if grep -q '192\.0\.2\.66' /tmp/live.log; then
+                echo "A sensor-captures-ip"
+            else
+                echo "F the sensor saw DNS but not a TCP SYN to a trail address"
                 echo "live log:"; tail -12 /tmp/live.log
             fi
         else

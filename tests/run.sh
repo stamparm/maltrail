@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
+# bash, not sh: the per-test memory cap below is `ulimit -v`, which POSIX sh does not define.
+# Under dash the cap silently did nothing while the shebang claimed the script was portable.
+# `bash tests/run.sh python3` is how CI and the README invoke it either way.
 # RAM-safe unit-test runner for Maltrail.
 #
 # Each test file is run in its own interpreter under a hard address-space cap (ulimit -v) and a
@@ -32,8 +35,9 @@ fi
 if [ "$#" -gt 0 ]; then
     PYS="$*"
 else
+    # One name, so no loop. It iterated a list back when there was a python2 to try as well.
     PYS=""
-    for p in python3; do command -v "$p" >/dev/null 2>&1 && PYS="$PYS $p"; done
+    command -v python3 >/dev/null 2>&1 && PYS="python3"
 fi
 
 rc=0

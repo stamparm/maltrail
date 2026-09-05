@@ -104,7 +104,7 @@ fi
 # --- a Wine prefix of our own, so nothing touches the user's ~/.wine ---------------------------
 WINEPREFIX=$WORK/wineprefix
 export WINEPREFIX
-export WINEDEBUG=${WINEDEBUG:--all}
+export WINEDEBUG="${WINEDEBUG:--all}"
 # Native only: Wine ships a builtin wpcap, and it does not implement pcap_open_dead - which the
 # sensor calls to compile its capture filter, so -T aborts against the builtin.
 export WINEDLLOVERRIDES="wpcap,packet=n"

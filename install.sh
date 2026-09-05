@@ -131,7 +131,7 @@ detect_in_place() {
     [ "$PREFIX_SET" = 0 ] || return 0
     [ "$REPO_SET" = 0 ] || return 0
     [ -n "${0:-}" ] && [ -f "$0" ] || return 0
-    _dir=$(CDPATH= cd -- "$(dirname -- "$0")" 2>/dev/null && pwd) || return 0
+    _dir=$(CDPATH='' cd -- "$(dirname -- "$0")" 2>/dev/null && pwd) || return 0
     [ -d "$_dir/.git" ] && [ -f "$_dir/server.py" ] && [ -d "$_dir/core" ] || return 0
     IN_PLACE=1
     PREFIX=$_dir

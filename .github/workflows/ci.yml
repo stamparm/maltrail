@@ -340,6 +340,17 @@ jobs:
           # directive, and prose there fails to parse as one - SC1072/SC1073.)
           /tmp/actionlint
 
+      # actionlint only reaches the scripts embedded in workflows. install.sh, the compat harness
+      # and the sensor gates are the ones an operator actually runs, and nothing was checking
+      # them - `ulimit -v` in a file declaring #!/bin/sh meant the test harness's memory cap
+      # silently did nothing under dash.
+      - name: shellcheck the tracked shell scripts
+        run: |
+          shellcheck --version | sed -n 2p
+          # Each file is read with its own shebang; no -s override, which would report bash
+          # scripts as broken POSIX.
+          git ls-files '*.sh' | xargs shellcheck
+
   # The Windows job above builds and checks the import table. It cannot run anything, because
   # wpcap is a load-time dependency and wpcap.dll ships with the Npcap driver, whose free edition
   # refuses a silent install (`npcap.exe /S` exits 2; measured, not assumed).
