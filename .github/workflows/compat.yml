@@ -192,24 +192,21 @@ jobs:
     name: netbsd (native VM)
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    # Blocked on the action, not on Maltrail, and not enforced while that is true.
-    #
-    # `prepare` completes perfectly - rust 1.96, python312, py312-sqlite3 and libpcap 1.10.6 all
-    # install with "warnings: 0, errors: 0" - and then the job ends with `ssh exited with code 1`
-    # and not one line of output from `run`, whose first statement is an echo. Tried with and
-    # without usesh, and on 10.0 and 10.1. The run phase never starts a shell, so there is nothing
-    # here for a script change to fix; the job stays so the evidence is regenerated rather than
-    # remembered.
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v5
       - uses: vmactions/netbsd-vm@v1
         with:
           release: '10.1'
+          # The reason the run phase produced nothing. NetBSD's base system has no bash, and
+          # without usesh the action runs the script with one - so ssh exited 1 before the first
+          # echo and the job looked like the action was broken. FreeBSD, the BSD job that has
+          # always worked, passes usesh for the same reason. bash is installed below as well, so
+          # the job no longer depends on which shell the action decides to use.
+          usesh: true
           copyback: true
           prepare: |
             /usr/sbin/pkg_add pkgin || true
-            pkgin -y install rust git python312 py312-sqlite3 libpcap
+            pkgin -y install bash rust git python312 py312-sqlite3 libpcap
           # No `set -e`, and diagnostics BEFORE anything that can fail. The first attempt began
           # `set -eu; cd <guessed path> || cd "$GITHUB_WORKSPACE"` and the job died with `ssh
           # exited with code 1` and not one line of output - the guessed path was wrong, the
