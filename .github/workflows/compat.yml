@@ -213,6 +213,11 @@ jobs:
             /usr/sbin/pkg_add pkgin || true
             pkgin -y install bash rust git python312 libpcap
             pkgin -y install py312-sqlite3 || echo "(no py312-sqlite3 in this repository)"
+            # pkgsrc installs the interpreter as python3.12 and leaves `python3` to the
+            # administrator, so `sh: python3: not found` - which record.py, assert.sh and
+            # install.sh all need. Linked here rather than worked around in three scripts.
+            [ -x /usr/pkg/bin/python3 ] || ln -sf /usr/pkg/bin/python3.12 /usr/pkg/bin/python3
+            python3 --version
           # No `set -e`, and diagnostics BEFORE anything that can fail. The first attempt began
           # `set -eu; cd <guessed path> || cd "$GITHUB_WORKSPACE"` and the job died with `ssh
           # exited with code 1` and not one line of output - the guessed path was wrong, the
