@@ -572,6 +572,8 @@ cannot cover; that needs Npcap's kernel driver and a real Windows machine. Prere
 
 ### License
 
+**TL;DR:** Maltrail is MIT-licensed, but the Maltrail Trails dataset has separate terms. Independent IOC lookup/reference is fine; systematic use of Trails as an intelligence source in a commercial product or service requires permission/licensing.
+
 Maltrail is distributed under the MIT License. See [`LICENSE`](LICENSE).
 
 That is the engine. The static trail set is separate work under separate terms: free for internal
