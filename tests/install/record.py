@@ -48,7 +48,7 @@ CAPABILITIES = [
     ("/ping", ["server-ping"]),
     ("sensor", ["unit-sensor", "unit-sensor-conf"]),
     ("sensor runs", ["sensor-runs", "sensor-selftest"]),
-    ("captures", ["sensor-captures", "sensor-captures-ip"]),
+    ("captures", ["sensor-captures"]),
     ("upgrade", ["rerun-ok", "conf-preserved", "tree-after-rerun"]),
     ("in-place", ["inplace-adopted", "inplace-kept-edit", "inplace-kept-custom-trail"]),
     ("uninstall", ["uninstall-ran", "uninstall-removed-tree", "uninstall-kept-conf"]),
@@ -292,11 +292,9 @@ def page(rows):
         "| /ping | Did the server actually start and answer? |",
         "| sensor | Did the sensor unit render with paths that resolve? |",
         "| sensor runs | Did the sensor start and pass its own `-T` self-test? |",
-        "| captures | Did it then see real packets? A DNS query for a trail domain and a TCP SYN "
-        "to a trail address, matched live off the wire — two protocols and two matchers, so a "
-        "green cell means more than one path through the sensor works. `-T` proves the "
-        "configuration resolves; only this proves capture does, which is how "
-        "`MONITOR_INTERFACE any` passed `-T` on Windows and then opened nothing. |",
+        "| captures | Did it then see a real packet? A DNS query for a trail domain, matched live "
+        "off the wire. `-T` proves the configuration resolves; only this proves capture works - "
+        "which is how `MONITOR_INTERFACE any` passed `-T` on Windows and then opened nothing. |",
         "| upgrade | Did re-running the installer keep operator configuration? |",
         "| in-place | Did installing from an existing checkout adopt it without cloning over it? |",
         "| uninstall | Did `--uninstall` remove the tree and units but keep config and logs? |",

@@ -335,7 +335,9 @@ jobs:
           echo "$ACTIONLINT_SHA256  /tmp/actionlint.tar.gz" | sha256sum -c -
           tar -C /tmp -xzf /tmp/actionlint.tar.gz actionlint
           /tmp/actionlint -version
-          # shellcheck is on the runner, so the `run:` blocks get linted too.
+          # Note: the runner has shellcheck, so every `run:` block here is linted as a script too.
+          # (This comment must not START with the tool's name: a `#` followed by it is read as a
+          # directive, and prose there fails to parse as one - SC1072/SC1073.)
           /tmp/actionlint
 
   # The Windows job above builds and checks the import table. It cannot run anything, because
