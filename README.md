@@ -167,8 +167,8 @@ checks are documented in [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md).
 ### Installer
 
 The installer is verified on twelve Linux distributions — Debian, Ubuntu, Fedora, Rocky, AlmaLinux,
-Arch, openSUSE Leap and Tumbleweed, and Alpine — plus FreeBSD and macOS, on every release, with the
-full result recorded in [`docs/compat`](docs/compat). Raspberry Pi OS and other 64-bit ARM systems
+Arch, openSUSE Leap and Tumbleweed, and Alpine — plus FreeBSD, OpenBSD and macOS, on every release,
+with the full result recorded in [`docs/compat`](docs/compat). Raspberry Pi OS and other 64-bit ARM systems
 use the `aarch64` build; 32-bit ARM has no prebuilt sensor and must build it from source.
 
 ```bash
