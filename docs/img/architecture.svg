@@ -1,0 +1,115 @@
+<svg viewBox="0 0 1080 580" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Maltrail architecture: trail and heuristic sources feed the sensor, which forks events to local, remote and integration sinks; the reporting interface sits over every dataset it produces.">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"/>
+    </marker>
+  </defs>
+
+  <style>
+    :root {
+      --text-strong:#1f2937;
+      --text-muted:#57606a;
+      --stroke:#6b7280;
+      --box-fill:#f6f8fa;
+      --accent:#0f766e;
+      --accent-fill:#0f766e14;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text-strong:#e6edf3;
+        --text-muted:#9198a1;
+        --stroke:#4b5563;
+        --box-fill:#161b22;
+        --accent:#2dd4bf;
+        --accent-fill:#2dd4bf1f;
+      }
+    }
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .box { fill: var(--box-fill); stroke: var(--stroke); stroke-width: 1.4; }
+    .band { fill: var(--accent-fill); stroke: var(--accent); stroke-width: 1.6; }
+    .sensor { fill: var(--box-fill); stroke: var(--accent); stroke-width: 1.6; }
+    .title { font-weight: 600; font-size: 13px; fill: var(--text-strong); }
+    .sub { font-size: 10.5px; fill: var(--text-muted); }
+    .band-title { font-weight: 700; font-size: 19px; fill: var(--accent); }
+    .band-sub { font-size: 12.5px; fill: var(--text-muted); }
+    .sensor-title { font-weight: 700; font-size: 18px; fill: var(--text-strong); }
+    .sensor-sub { font-size: 12px; fill: var(--text-muted); }
+    .row-title { font-weight: 600; font-size: 14px; fill: var(--text-strong); }
+    .row-sub { font-size: 10.8px; fill: var(--text-muted); }
+    .caption { font-style: italic; font-size: 12.5px; fill: var(--text-muted); }
+    .flow { fill: none; stroke: var(--accent); stroke-width: 1.6; opacity: 0.8; marker-end: url(#arrow); }
+    .flow-dashed { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-dasharray: 5 4; opacity: 0.7; marker-end: url(#arrow); }
+  </style>
+
+  <!-- Reporting interface band: sits over every dataset it reads -->
+  <rect class="band" x="60" y="24" width="960" height="64" rx="12"/>
+  <text class="band-title" x="540" y="50" text-anchor="middle">Reporting interface</text>
+  <text class="band-sub" x="540" y="72" text-anchor="middle">search &#183; retro hunt &#183; geo map &#183; triage &#183; saved views &#8212; server.py, browser UI</text>
+
+  <!-- band read connectors -->
+  <path class="flow" d="M175,150 C175,122 175,116 175,88"/>
+  <path class="flow" d="M321,150 C321,122 321,116 321,88"/>
+  <path class="flow-dashed" d="M905,150 C905,122 905,116 905,88"/>
+
+  <!-- sensor output / sink boxes -->
+  <g>
+    <rect class="box" x="110" y="150" width="130" height="60" rx="8"/>
+    <text class="title" x="175" y="176" text-anchor="middle">Local log</text>
+    <text class="sub" x="175" y="193" text-anchor="middle">LOG_DIR</text>
+  </g>
+  <g>
+    <rect class="box" x="256" y="150" width="130" height="60" rx="8"/>
+    <text class="title" x="321" y="176" text-anchor="middle">Remote server</text>
+    <text class="sub" x="321" y="193" text-anchor="middle">LOG_SERVER</text>
+  </g>
+  <g>
+    <rect class="box" x="402" y="150" width="130" height="60" rx="8"/>
+    <text class="title" x="467" y="176" text-anchor="middle">Syslog CEF</text>
+    <text class="sub" x="467" y="193" text-anchor="middle">SYSLOG_SERVER</text>
+  </g>
+  <g>
+    <rect class="box" x="548" y="150" width="130" height="60" rx="8"/>
+    <text class="title" x="613" y="176" text-anchor="middle">Logstash</text>
+    <text class="sub" x="613" y="193" text-anchor="middle">LOGSTASH_SERVER</text>
+  </g>
+  <g>
+    <rect class="box" x="694" y="150" width="130" height="60" rx="8"/>
+    <text class="title" x="759" y="176" text-anchor="middle">Prometheus</text>
+    <text class="sub" x="759" y="193" text-anchor="middle">STATS_ADDRESS</text>
+  </g>
+  <g>
+    <rect class="box" x="840" y="150" width="130" height="60" rx="8"/>
+    <text class="title" x="905" y="176" text-anchor="middle">RIPE cache</text>
+    <text class="sub" x="905" y="193" text-anchor="middle">stat.ripe.net</text>
+  </g>
+
+  <!-- sensor forks one event stream to every sink -->
+  <path class="flow" d="M540,280 C540,240 175,250 175,210"/>
+  <path class="flow" d="M540,280 C540,245 321,255 321,210"/>
+  <path class="flow" d="M540,280 C540,250 467,260 467,210"/>
+  <path class="flow" d="M540,280 C540,250 613,260 613,210"/>
+  <path class="flow" d="M540,280 C540,245 759,255 759,210"/>
+
+  <!-- sensor -->
+  <rect class="sensor" x="100" y="280" width="880" height="90" rx="12"/>
+  <text class="sensor-title" x="540" y="315" text-anchor="middle">Sensor &#183; Rust</text>
+  <text class="sensor-sub" x="540" y="338" text-anchor="middle">trail matching + heuristics</text>
+  <text class="sensor-sub" x="540" y="357" text-anchor="middle">-T validates config, trails &amp; privileges before start</text>
+
+  <!-- families feeding the sensor: one line per family -->
+  <path class="flow" d="M310,430 C310,402 460,388 540,370"/>
+  <path class="flow" d="M730,430 C730,402 620,388 540,370"/>
+
+  <g>
+    <rect class="box" x="120" y="430" width="380" height="55" rx="8"/>
+    <text class="row-title" x="310" y="452" text-anchor="middle">Trails</text>
+    <text class="row-sub" x="310" y="471" text-anchor="middle">static &#183; 42 feeds &#183; custom &#183; engine lists</text>
+  </g>
+  <g>
+    <rect class="box" x="540" y="430" width="380" height="55" rx="8"/>
+    <text class="row-title" x="730" y="452" text-anchor="middle">Heuristics</text>
+    <text class="row-sub" x="730" y="471" text-anchor="middle">scanning &#183; DNS tunneling &#183; DGA &#183; downloads &#183; proxy probes &#183; UA</text>
+  </g>
+
+  <text class="caption" x="540" y="545" text-anchor="middle">One line per family, forking to the sinks it feeds &#8212; the reporting interface sits over every dataset the sensor produces.</text>
+</svg>
