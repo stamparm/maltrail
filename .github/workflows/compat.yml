@@ -204,9 +204,15 @@ jobs:
           # the job no longer depends on which shell the action decides to use.
           usesh: true
           copyback: true
+          # Split, and the optional one tolerated. `py312-sqlite3 is not available in the
+          # repository` made a single pkgin call exit non-zero, the action treats a failing
+          # prepare as fatal, and so `run` never executed - which looked from the outside like the
+          # run phase failing to start a shell, because its output was simply never produced.
+          # Everything else in that line installed perfectly, which is what made it convincing.
           prepare: |
             /usr/sbin/pkg_add pkgin || true
-            pkgin -y install bash rust git python312 py312-sqlite3 libpcap
+            pkgin -y install bash rust git python312 libpcap
+            pkgin -y install py312-sqlite3 || echo "(no py312-sqlite3 in this repository)"
           # No `set -e`, and diagnostics BEFORE anything that can fail. The first attempt began
           # `set -eu; cd <guessed path> || cd "$GITHUB_WORKSPACE"` and the job died with `ssh
           # exited with code 1` and not one line of output - the guessed path was wrong, the
