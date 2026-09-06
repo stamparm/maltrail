@@ -7,10 +7,10 @@ See the file 'LICENSE' for copying permission
 
 from core.common import retrieve_content
 
-__url__ = "https://www.sekuripy.hr/blacklist.txt"
+__url__ = "https://ipnoise.sekuripy.hr/7d.txt"
 __check__ = "ipnoise"
 __info__ = "known attacker"
-__reference__ = "sekuripy.hr"
+__reference__ = "ipnoise.sekuripy.hr"
 
 def fetch():
     retval = {}
