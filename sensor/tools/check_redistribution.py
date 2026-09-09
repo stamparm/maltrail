@@ -236,6 +236,8 @@ def scan_aggregate(path):
 
     with open(path, "r") as handle:
         for number, row in enumerate(csv.reader(handle, delimiter=',', quotechar='"'), 1):
+            if row and row[0].startswith('#'):      # the aggregate's licence header
+                continue
             if row and len(row) == 3:
                 yield row[0], row[1], "%s:%d" % (os.path.basename(path), number)
 
