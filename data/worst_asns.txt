@@ -6634,3 +6634,11 @@
 31.57.184.0/24,vpsdedicated-as
 31.57.216.0/24,vpsdedicated-as
 91.231.222.0/24,vpsdedicated-as
+
+# AS 208137
+# Reference: https://ipinfo.io/AS208137
+# Reference: https://www.mertsarica.com/inside-the-fortibleed-operators-browser-history/
+
+213.177.179.0/24,fps12
+213.209.159.0/24,fps12
+62.60.131.0/24,fps12
