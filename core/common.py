@@ -550,6 +550,10 @@ def load_trails(quiet=False, freeze=False):
             with open(config.TRAILS_FILE, "r") as f:
                 reader = csv.reader(f, delimiter=',', quotechar='\"')
                 for row in reader:
+                    # `#` is the licence header on the published aggregate. Checked before the
+                    # field count, because a comment containing two commas is a three-field row.
+                    if row and row[0].startswith('#'):
+                        continue
                     if row and len(row) == 3:
                         trail, info, reference = row
                         if not check_whitelisted(trail):
@@ -647,6 +651,8 @@ def build_trails_bin(csv_path=None, bin_path=None):
     def _items():
         with open(csv_path, "r") as f:
             for row in csv.reader(f, delimiter=',', quotechar='\"'):
+                if row and row[0].startswith('#'):      # licence header, not a trail
+                    continue
                 if row and len(row) == 3 and not check_whitelisted(row[0]):
                     yield row[0], row[1], row[2]
 

@@ -98,5 +98,67 @@ class TestMalwareDomains(unittest.TestCase):
         self.assertEqual(out, sorted(names))
 
 
+class TheLicenceTravelsWithTheData(unittest.TestCase):
+    """The licence says it binds a "release artifact ... converted format ... subset", so it has
+    to be legible in the artifact rather than only in a LICENSE.md nobody downloads.
+
+    Two properties keep it safe to prepend, and both have teeth:
+
+      * comma-free, because a reader that accepts any three-field row - which both of ours did -
+        would store a comment carrying two commas as a trail;
+      * no timestamp, because publish.yml skips a release whose trails.csv.sha256 matches the
+        previous one, and a "Generated:" line would publish four identical releases a day.
+    """
+
+    def test_the_header_is_comment_only_and_comma_free(self):
+        from core.assemble import LICENSE_HEADER
+        lines = LICENSE_HEADER.splitlines()
+        self.assertTrue(lines, "the header is empty")
+        for line in lines:
+            self.assertTrue(line.startswith("#"), "not a comment line: %r" % line)
+            self.assertNotIn(",", line,
+                             "a comma makes this line parseable as a CSV row by a reader that "
+                             "only checks the field count: %r" % line)
+
+    def test_the_header_carries_the_licence_and_where_to_read_it(self):
+        from core.assemble import LICENSE_HEADER
+        for needle in ("Maltrail Trails Community Data License", "LICENSE.md",
+                       "github.com/stamparm/trails", "written permission"):
+            self.assertIn(needle, LICENSE_HEADER,
+                          "%r is missing, so somebody could reasonably say they were not told" % needle)
+
+    def test_it_carries_no_timestamp(self):
+        # Anything that changes between two runs of identical content republishes the release.
+        from core.assemble import LICENSE_HEADER
+        self.assertNotRegex(LICENSE_HEADER, r"\d{4}-\d{2}-\d{2}",
+                            "a date in the header makes every scheduled run publish")
+        self.assertNotIn("Generated", LICENSE_HEADER)
+
+    def test_our_own_reader_skips_it(self):
+        """core.common.load_trails is what the server reads the aggregate with."""
+        import csv, io as _io, tempfile
+        from core.assemble import LICENSE_HEADER
+        from core import common, settings
+
+        with tempfile.NamedTemporaryFile("w", suffix=".csv", delete=False) as handle:
+            handle.write(LICENSE_HEADER)
+            handle.write("# a,comment,with commas\n")
+            handle.write("evil-header-test.com,malware (test),(static)\n")
+            path = handle.name
+        try:
+            previous = settings.config.TRAILS_FILE
+            settings.config.TRAILS_FILE = path
+            try:
+                trails = common.load_trails(quiet=True)
+            finally:
+                settings.config.TRAILS_FILE = previous
+        finally:
+            os.unlink(path)
+
+        self.assertIn("evil-header-test.com", trails, "the trail after the header must load")
+        for line in LICENSE_HEADER.splitlines() + ["# a"]:
+            self.assertNotIn(line, trails, "%r was stored as a trail" % line)
+
+
 if __name__ == "__main__":
     unittest.main()

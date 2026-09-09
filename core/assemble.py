@@ -209,6 +209,36 @@ def malware_domains(trails, whitelisted=None):
     return sorted(out)
 
 
+# Prepended to every published artifact. The licence says it applies to Licensed Material
+# "regardless of how it is obtained or represented: as an individual repository file, a clone, a
+# release artifact, an assembled dataset, a converted format, a subset, or a derived
+# representation" - so the artifacts are exactly where it needs to be readable, rather than only
+# in a LICENSE.md nobody downloads.
+#
+# `#` because every consumer already ignores it: our own loaders (below), and the DNS and firewall
+# ingesters that take the domain list verbatim - dnsmasq, unbound, Pi-hole, pfBlockerNG, FireHOL.
+#
+# NO COMMAS anywhere in here. A third-party CSV reader that accepts any three-field row - which
+# both of ours did until this commit - would otherwise take a comment containing two commas and
+# store it as a trail. One field is skipped by every such reader; three are not.
+#
+# NO TIMESTAMP either. publish.yml skips a release whose trails.csv.sha256 equals the previous
+# one's, so a "Generated:" line would make the content differ on every scheduled run and publish
+# four releases a day of identical data.
+LICENSE_HEADER = """\
+# Maltrail Trails - indicators of malicious traffic
+# Source: https://github.com/stamparm/trails
+# License: Maltrail Trails Community Data License 1.0 - see LICENSE.md in that repository
+# Free to use to defend systems that you or your organization operate; also free for bona fide
+#   research and education.
+# Building Trails or Trails-derived intelligence into a product / service / managed-security
+#   offering / threat-intelligence feed / detection platform provided to third parties requires
+#   separate written permission from the Licensors.
+# Each item becomes CC BY 4.0 three years after its first publication.
+#
+"""
+
+
 def main():
     import argparse
 
@@ -245,7 +275,7 @@ def main():
     writer = csv.writer(buf, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL, lineterminator="\n")
     for trail, (info, reference) in trails.items():
         writer.writerow((trail, info, reference))
-    payload = buf.getvalue().encode(UNICODE_ENCODING)
+    payload = (LICENSE_HEADER + buf.getvalue()).encode(UNICODE_ENCODING)
 
     if options.out:
         with open(options.out, "wb") as f:
@@ -261,7 +291,7 @@ def main():
         if not domains:
             sys.exit("[!] no malware domains derived - refusing to publish an empty blocklist")
         with open(options.domains_out, "wb") as f:
-            f.write(("\n".join(domains) + "\n").encode(UNICODE_ENCODING))
+            f.write((LICENSE_HEADER + "\n".join(domains) + "\n").encode(UNICODE_ENCODING))
         print("[i] %d malware domains -> %s" % (len(domains), options.domains_out), file=sys.stderr)
 
     if options.provenance:

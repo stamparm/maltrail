@@ -235,6 +235,12 @@ fn parse_slice<'a>(slice: &'a [u8], whitelist: &Whitelist, shard: &mut Shard<'a>
         if raw.is_empty() {
             continue;
         }
+        // The published aggregate carries a licence header. Skipped before `rows` is counted, so
+        // it is not reported as a malformed row either - and a comment is never a trail: a header
+        // line that happened to contain two commas would otherwise parse as one.
+        if raw[0] == b'#' {
+            continue;
+        }
         shard.stats.rows += 1;
 
         let Some((trail, info, reference)) = parse_row(raw, &mut fields) else {
@@ -422,6 +428,38 @@ mod tests {
         let mut out = Vec::new();
         split_csv_record(line, &mut out);
         out
+    }
+
+    /// The published aggregate starts with a licence header, and a comment is not a trail.
+    ///
+    /// Both readers used to accept any three-field row, so a header line carrying two commas
+    /// would have been stored as a trail named after the comment. The header is written
+    /// comma-free for that reason, but the reader is what has to be safe.
+    #[test]
+    fn a_licence_header_is_not_a_trail() {
+        let dir = std::env::temp_dir().join("mt-trail-licence-header");
+        std::fs::create_dir_all(&dir).unwrap();
+        let path = dir.join("trails.csv");
+        std::fs::write(
+            &path,
+            "# Maltrail Trails - indicators of malicious traffic\n\
+             # License: free to defend your own systems\n\
+             # a,comment,with commas\n\
+             #\n\
+             evil.example,malware (test),(static)\n",
+        )
+        .unwrap();
+
+        let root = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR")).parent().unwrap().to_path_buf();
+        let wl = Whitelist::load(&root, None);
+        let (db, stats) = load_trails(&path, &wl, LoadOptions::default()).unwrap();
+        assert_eq!(stats.rows, 1, "only the trail row counts as a row");
+        assert_eq!(stats.loaded, 1, "the one real trail loads");
+        assert_eq!(stats.malformed, 0, "a comment is skipped, not reported as malformed");
+        assert!(db.get("evil.example").is_some(), "the trail after the header must load");
+        for comment in ["# Maltrail Trails - indicators of malicious traffic", "# a", "#"] {
+            assert!(db.get(comment).is_none(), "{comment:?} was stored as a trail");
+        }
     }
 
     #[test]
