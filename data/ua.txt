@@ -2806,6 +2806,10 @@ PotatoRAT/1.0
 
 HTTPREAD
 
+# Reference: https://www.ccinfo.nl/_downloads/9d313b5cb0a1706c18d017235a8d42df
+
+linus-torvalds-loves-you
+
 # Misc
 
 information_schema
