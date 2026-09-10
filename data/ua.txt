@@ -2810,6 +2810,14 @@ HTTPREAD
 
 linus-torvalds-loves-you
 
+# Reference: https://www.zscaler.com/blogs/security-research/sloppyrat-new-tool-ransomware-attacks
+
+CommandExecutor
+CommandExecutor/1.0
+DLLMemLoader
+DLLMemLoader/1.0
+K8VGmQTrzX
+
 # Misc
 
 information_schema
