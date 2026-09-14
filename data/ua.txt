@@ -2818,6 +2818,12 @@ DLLMemLoader
 DLLMemLoader/1.0
 K8VGmQTrzX
 
+# Reference: https://www.jamf.com/blog/macsync-stealer-evolution-code-signed-swift-malware-analysis/
+
+UserSyncWorker/1.0 \(macOS\)
+UserSyncWorker/1.0
+UserSyncWorker
+
 # Misc
 
 information_schema
