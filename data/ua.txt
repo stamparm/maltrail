@@ -2824,6 +2824,11 @@ UserSyncWorker/1.0 \(macOS\)
 UserSyncWorker/1.0
 UserSyncWorker
 
+# Reference: https://x.com/suyog41/status/2100108622495707481
+# Reference: https://www.virustotal.com/gui/file/296dee2014d439f50e7cf1719d897cfb9000df74d68c2c90a1faff8dc810466b/detection
+
+SysInfo/WinHttp
+
 # Misc
 
 information_schema
