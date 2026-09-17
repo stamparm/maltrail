@@ -488,7 +488,10 @@ header::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;
 .hamburger:hover,.hamburger[aria-expanded="true"]{color:var(--text);border-color:var(--accent)}
 .hamburger svg{display:block}
 /* labeled link rows inside the hamburger menu (reuses .ctxitem for padding/hover) */
-.ctxmenu a.navitem{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--text)}
+.ctxmenu a.navitem,.ctxmenu button.navitem{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--text)}
+/* The element selectors are load-bearing: '.ctxmenu .ctxitem' below sets display:block at the
+   same specificity and later in the file, so a bare '.navitem' here loses and the icon and the
+   label end up jammed together on one line. */
 .navitem svg{flex:none;color:var(--muted)}
 .navitem:hover svg,.navitem:focus-visible svg{color:var(--accent)}
 .vsep{width:1px;height:20px;flex:none;align-self:center;margin:0 4px;background:var(--line-solid)}   /* hairline divider between header control groups */
