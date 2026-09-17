@@ -1080,7 +1080,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # display helpers (_version, _logo, _assetver, _tzoffset, _statics, _format, _build_netfilters, _filter_events)
             # whose signature is NOT (self, params), so e.g. "GET /version" -> self._version(params) -> uncaught TypeError
             # (request crash) reachable by any client. Endpoints are an explicit allowlist, not "any _-prefixed method".
-            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "check", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt", "meta", "reference", "ripe"):
+            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "check", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt", "meta", "reference", "ripe", "sensors"):
                 if len(splitpath) > 1:
                     params["subpath"] = splitpath[1]
                 content = getattr(self, "_%s" % splitpath[0])(params)
@@ -1899,6 +1899,38 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                        "confidence": confidence})
 
             return json.dumps({"query": query, "found": False})
+
+        def _sensors(self, params):
+            """Which sensors are still reporting in, and what they are running (issue #19627).
+
+            The server cannot tell a dead sensor from a quiet one by looking at the event log -
+            both produce no events - so this answers from the heartbeats core/log.py collects on
+            the LOG_SERVER channel instead.
+
+            `now` is served alongside the timestamps deliberately: "last seen 4 minutes ago" is
+            the whole point of the page, and computing it against the BROWSER's clock would
+            silently turn a skewed workstation into a fleet-wide outage on screen.
+            """
+
+            session = self.get_session()
+
+            if session is None:
+                self.send_response(_http_client.UNAUTHORIZED)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
+            self.send_response(_http_client.OK)
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
+
+            sensors = _log.sensor_status()
+
+            # A network-restricted analyst is told which sensors are healthy - that is operational
+            # and harmless - but not the addresses of collection infrastructure outside their scope.
+            if getattr(session, "netfilters", None) is not None:
+                sensors = [dict(_, address="") for _ in sensors]
+
+            return json.dumps({"now": int(time.time()), "sensors": sensors})
 
         def _ping(self, params):
             self.send_response(_http_client.OK)

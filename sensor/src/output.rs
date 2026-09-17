@@ -16,7 +16,7 @@ use std::os::unix::fs::{OpenOptionsExt, PermissionsExt};
 #[cfg(windows)]
 use std::os::windows::ffi::OsStrExt;
 use std::path::{Path, PathBuf};
-use std::sync::atomic::{AtomicU64, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
 use std::sync::{Arc, Mutex, OnceLock};
 use std::time::{Duration, Instant, SystemTime, UNIX_EPOCH};
 
@@ -775,6 +775,174 @@ fn trails_ctime_date(path: &Path) -> String {
         .and_then(|md| changed_at(&md))
         .unwrap_or_else(|| SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.as_secs()).unwrap_or(0));
     local_date_string(sec).as_str().to_string()
+}
+
+// --- liveness heartbeat ----------------------------------------------------------
+//
+// A stopped sensor and a sensor with nothing to report are the same thing on the server: neither
+// sends anything. That is maltrail issue #19627 - a sensor broken by an update went unnoticed for
+// weeks, because "no alerts lately" is also what a healthy quiet link looks like. So say so
+// periodically, on the channel that is already configured, already resolved and already
+// authenticated when `LOG_SERVER_SECRET` is set.
+//
+// `core/log.py:heartbeat_event()` is the receiving half.
+
+/// The payload: `<epoch_sec> !HB <sensor> <version> <uptime_s>`.
+///
+/// It must lead with the epoch second, because `mts_open` refuses to verify a signed payload that
+/// does not - which gives a heartbeat the same replay bound an event gets. `!HB` cannot collide
+/// with an event: the token after the second is a quoted local timestamp there.
+///
+/// The sensor name comes from `SENSOR_NAME` (`$HOSTNAME` by default), so it can contain anything a
+/// hostname can. A space would shift every field after it, so the name is reduced to the
+/// characters the receiver keeps anyway rather than sent as-is and silently misparsed.
+pub fn heartbeat_payload(sensor: &str, now: u64, uptime: u64) -> Vec<u8> {
+    let name: String = sensor.chars().filter(|c| c.is_alphanumeric() || ".:@+-_".contains(*c)).take(64).collect();
+    let name = if name.is_empty() { "-" } else { name.as_str() };
+    format!("{now} !HB {name} {} {uptime}", settings::VERSION).into_bytes()
+}
+
+/// Announce this sensor to `LOG_SERVER` every `period` seconds. No-op without a `LOG_SERVER`, and
+/// `HEARTBEAT_PERIOD 0` switches it off.
+pub fn spawn_heartbeat(cfg: Arc<OutputConfig>, period: u64, shutdown: Arc<AtomicBool>) {
+    let Some(endpoint) = cfg.log_server.clone() else { return };
+    if period == 0 {
+        return;
+    }
+
+    std::thread::Builder::new()
+        .name("heartbeat".into())
+        .spawn(move || {
+            let started = Instant::now();
+            // Beat once at startup rather than after the first period: a sensor that comes up and
+            // dies inside five minutes would otherwise never have said it existed at all.
+            let mut next = Instant::now();
+            loop {
+                std::thread::sleep(Duration::from_millis(500));
+                if shutdown.load(Ordering::Relaxed) {
+                    break;
+                }
+                if Instant::now() < next {
+                    continue;
+                }
+                next = Instant::now() + Duration::from_secs(period);
+                send_heartbeat(&cfg, &endpoint, started.elapsed().as_secs());
+            }
+        })
+        .ok();
+}
+
+/// One heartbeat, on its own short-lived socket.
+///
+/// A fresh socket per beat costs a syscall every few minutes and removes the whole class of
+/// problems `EventSink` has to handle on the event path - a cached address gone stale, a socket
+/// surviving a network change. Failure is deliberately silent: the only thing a heartbeat that
+/// cannot be delivered proves is that the server will not see this sensor, which is precisely
+/// what the server is meant to notice.
+fn send_heartbeat(cfg: &OutputConfig, endpoint: &str, uptime: u64) {
+    let Some(addr) = resolve_endpoint(endpoint) else { return };
+    let now = SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.as_secs()).unwrap_or(0);
+    let payload = heartbeat_payload(&cfg.sensor_name, now, uptime);
+    let data = match &cfg.log_server_secret {
+        Some(secret) => mts_sign(secret, &payload),
+        None => payload,
+    };
+    let bind = if addr.is_ipv6() { "[::]:0" } else { "0.0.0.0:0" };
+    if let Ok(sock) = UdpSocket::bind(bind) {
+        let _ = sock.send_to(&data, addr);
+    }
+}
+
+#[cfg(test)]
+mod heartbeat_tests {
+    use super::heartbeat_payload;
+
+    /// The shape `core/log.py:heartbeat_event()` parses, and `mts_open()` requires. A payload that
+    /// does not lead with the epoch second is refused outright when the channel is signed, and a
+    /// sensor name carrying a space would shift the version and uptime into the wrong fields -
+    /// both of which fail as a sensor that looks fine and is simply never listed.
+    #[test]
+    fn the_payload_is_what_the_server_parses() {
+        let payload = heartbeat_payload("box-1", 1786091293, 4242);
+        let text = String::from_utf8(payload).unwrap();
+        assert_eq!(text, format!("1786091293 !HB box-1 {} 4242", crate::settings::VERSION));
+
+        let fields: Vec<&str> = text.split(' ').collect();
+        assert_eq!(fields.len(), 5);
+        assert!(
+            fields[0].chars().all(|c| c.is_ascii_digit()),
+            "mts_open refuses a payload without a leading epoch second"
+        );
+        assert_eq!(fields[1], "!HB");
+    }
+
+    /// The whole path, on a real socket: an announcement arrives without waiting out a period,
+    /// and it is signed the way the server demands when `LOG_SERVER_SECRET` is set. A heartbeat
+    /// that failed the MAC check would be dropped in silence at the other end - which looks
+    /// exactly like the dead sensor this feature exists to reveal.
+    #[test]
+    fn a_heartbeat_reaches_the_log_server_signed() {
+        use std::net::UdpSocket;
+        use std::sync::atomic::AtomicBool;
+        use std::sync::Arc;
+
+        let server = UdpSocket::bind("127.0.0.1:0").expect("bind a listener");
+        server.set_read_timeout(Some(std::time::Duration::from_secs(10))).unwrap();
+        let endpoint = server.local_addr().unwrap().to_string();
+
+        let cfg = Arc::new(super::OutputConfig {
+            sensor_name: "e2e-probe".to_string(),
+            log_dir: std::env::temp_dir(),
+            trails_file: std::env::temp_dir().join("trails.csv"),
+            disable_local_log_storage: false,
+            local_log_json: false,
+            console: false,
+            log_server: Some(endpoint),
+            log_server_secret: Some("s3cret".to_string()),
+            syslog_server: Vec::new(),
+            logstash_server: Vec::new(),
+            severity_regex: None,
+            throttle: crate::throttle::ThrottleConfig::default(),
+            hostname: "harness".to_string(),
+            ignore: crate::ignore::IgnoreRules::default(),
+            whitelist: Arc::new(crate::whitelist::Whitelist::default()),
+            show_debug: false,
+        });
+
+        let shutdown = Arc::new(AtomicBool::new(false));
+        // A long period: what is under test is that the FIRST beat does not wait for it.
+        super::spawn_heartbeat(cfg, 3600, shutdown.clone());
+
+        let mut buf = [0u8; 512];
+        let (n, _) = server.recv_from(&mut buf).expect("no heartbeat arrived");
+        shutdown.store(true, std::sync::atomic::Ordering::Relaxed);
+
+        let datagram = &buf[..n];
+        assert!(datagram.starts_with(b"MTS1 "), "an unsigned heartbeat is dropped by a server with a secret");
+        let payload = &datagram[38..];
+        assert_eq!(super::mts_sign("s3cret", payload), datagram, "the MAC does not cover the payload sent");
+
+        let text = String::from_utf8(payload.to_vec()).unwrap();
+        let fields: Vec<&str> = text.split(' ').collect();
+        assert_eq!(fields.len(), 5, "unexpected heartbeat shape: {text}");
+        assert_eq!(fields[1], "!HB");
+        assert_eq!(fields[2], "e2e-probe");
+        assert_eq!(fields[3], crate::settings::VERSION);
+    }
+
+    #[test]
+    fn a_hostname_cannot_shift_the_fields() {
+        // SENSOR_NAME is $HOSTNAME by default, so it is whatever the host is called.
+        let text = String::from_utf8(heartbeat_payload("two words\tand a tab", 1, 0)).unwrap();
+        assert_eq!(text.split(' ').count(), 5, "a name with spaces must not add fields");
+        assert!(text.contains("!HB twowordsandatab "));
+
+        let text = String::from_utf8(heartbeat_payload("", 1, 0)).unwrap();
+        assert!(text.contains("!HB - "), "an empty name must still occupy its field: {text}");
+
+        let long = String::from_utf8(heartbeat_payload(&"n".repeat(500), 1, 0)).unwrap();
+        assert_eq!(long.split(' ').nth(2).unwrap().len(), 64, "the name must be capped, not sent whole");
+    }
 }
 
 fn resolve_endpoint(endpoint: &str) -> Option<SocketAddr> {

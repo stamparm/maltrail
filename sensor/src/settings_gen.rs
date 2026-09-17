@@ -209,6 +209,7 @@ pub const KNOWN_CONFIG_OPTIONS: &[&str] = &[
     "FAST_ADMIT_LEVEL",
     "FAST_FLOW_CUTOFF",
     "HEADER_LOGO",
+    "HEARTBEAT_PERIOD",
     "HOME_LAT",
     "HOME_LON",
     "HTTP_ADDRESS",

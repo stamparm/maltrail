@@ -1320,6 +1320,10 @@
   ];
   function openNavMenu(btn) {
     var m = document.getElementById("ctxmenu"); if (!m) return; m.innerHTML = "";
+    var sb = document.createElement("button"); sb.type = "button"; sb.className = "ctxitem navitem";
+    sb.innerHTML = _strokeIcon('<rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 12h.01"/><path d="M10 12h8"/>') + '<span class="navlabel">Sensors</span>';
+    sb.onclick = function (e) { e.stopPropagation(); closeCtx(); openSensors(); };
+    m.appendChild(sb);
     NAV_LINKS.forEach(function (e) {
       var a = document.createElement("a"); a.className = "ctxitem navitem";
       a.href = e[0]; a.target = "_blank"; a.rel = "noopener noreferrer";
@@ -2823,6 +2827,66 @@
     btn.onclick = close;
     o.onkeydown = function (e) { if (e.key === "Escape") { e.preventDefault(); close(); } };
   }
+  // ---- sensor liveness: which sensors are still checking in (server /sensors) ----
+  // The event log cannot answer this. A sensor that died and a sensor watching a quiet link both
+  // produce no events, which is how a broken sensor stayed broken for weeks in issue #19627.
+  function openSensors() {
+    if (document.getElementById("sensors_overlay")) return;
+    var o = document.createElement("div"); o.id = "sensors_overlay"; o.className = "modal-overlay";
+    o.innerHTML = '<div class="modal hunt-modal" role="dialog" aria-label="sensors" aria-modal="true">' +
+      '<div class="modal-h">Sensors <small>last check-in of every sensor reporting to this server</small></div>' +
+      '<div class="hunt-results" id="sensors_results"><div class="hunt-empty">loading…</div></div></div>';
+    document.body.appendChild(o);
+    var ret = document.activeElement;
+    function close() { o.remove(); if (ret && ret.focus) { try { ret.focus(); } catch (e) {} } }
+    o.onclick = function (e) { if (e.target === o) close(); };
+    o.onkeydown = function (e) { if (e.key === "Escape") { e.preventDefault(); close(); } };
+    o.tabIndex = -1; o.focus();
+    var res = o.querySelector("#sensors_results");
+    if (DEMO) { res.innerHTML = '<div class="hunt-empty">sensor status needs a running server (unavailable in the static demo).</div>'; return; }
+    fetch("/sensors", { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!document.body.contains(o)) return;
+        if (!d) { res.innerHTML = '<div class="hunt-empty">could not read sensor status.</div>'; return; }
+        paintSensors(res, d);
+      })
+      .catch(function () { res.innerHTML = '<div class="hunt-empty">could not read sensor status (network).</div>'; });
+  }
+  // Floors rather than rounds, so the label never reads "60m ago" on the way to an hour.
+  function _sensorAgo(sec) {
+    if (sec < 90) return sec + "s ago";
+    if (sec < 3600) return Math.floor(sec / 60) + "m ago";
+    if (sec < 86400) return Math.floor(sec / 3600) + "h ago";
+    return Math.floor(sec / 86400) + "d ago";
+  }
+  function paintSensors(res, d) {
+    var list = d.sensors || [];
+    if (!list.length) {
+      // Say what to do about it: an empty list is the normal state of every deployment that has
+      // not turned heartbeats on yet, and "no sensors" alone reads as an outage.
+      res.innerHTML = '<div class="hunt-empty">No sensor has checked in.<br><br>Sensors report in only when they are configured with both <b>LOG_SERVER</b> (pointing here) and a non-zero <b>HEARTBEAT_PERIOD</b>.</div>';
+      return;
+    }
+    // Sort by the freshest first, so whatever is wrong is at the bottom where it stands out
+    // against the healthy rows above it.
+    list = list.slice().sort(function (a, b) { return (b.last_seen || 0) - (a.last_seen || 0); });
+    var now = d.now || Math.floor(Date.now() / 1000);
+    var h = '<div class="hunt-sum">' + fmtN(list.length) + ' sensor(s)</div><div class="sens-rows">';
+    list.forEach(function (s) {
+      var age = Math.max(0, now - (s.last_seen || 0));
+      // Two heartbeats missed at the 300s default. A threshold in seconds cannot know the
+      // sensor's configured period, so this errs towards calling a slow sensor late rather than
+      // towards calling a dead one healthy.
+      var cls = age > 900 ? " is-stale" : "";
+      h += '<div class="sens-row' + cls + '"><span class="sens-name">' + esc(s.sensor) + '</span>' +
+           '<span class="sens-ver">' + (s.version ? esc(s.version) : "&mdash;") + '</span>' +
+           '<span class="sens-addr">' + esc(s.address || "") + '</span>' +
+           '<span class="sens-ago">' + _sensorAgo(age) + '</span></div>';
+    });
+    res.innerHTML = h + "</div>";
+  }
+
   // ---- retro-hunt: sweep ALL historical daily logs for an IOC (server /hunt, bounded + scope-filtered) ----
   function openHunt() {
     if (document.getElementById("hunt_overlay")) return;

@@ -105,6 +105,7 @@ available daily logs. Events are streamed from `/events` and aggregated in the b
 | Retro hunt | Searches *all* retained daily logs for one indicator (`/hunt`), not just the day in view. Bounded by a day limit, a wall-clock budget and a sample cap; a day the budget cut short is reported separately from the completed days rather than counted as a finished total. A per-day sidecar index (`LOG_DIR/index/`, `USE_EVENT_INDEX`) lets the sweep skip every non-matching line and makes `/counts` exact |
 | World map | Per-country event density for the selected day (`/geo`), placing the external endpoint of each event. Events that cannot be attributed to an external address are reported as unmapped rather than guessed. Set `HOME_LAT` / `HOME_LON` to draw origin arcs |
 | Triage | Per-threat status (new / investigating / resolved / false positive), free-text notes, tags, and hiding. Whitelist rules and OSINT pivots are available from the row context menu |
+| Sensor status | Which sensors are still reporting in, with the version each one runs and how long ago it last checked in (`/sensors`). The event log cannot answer this - a sensor that has died and a sensor watching a quiet link both produce no events - so sensors announce themselves on the `LOG_SERVER` channel every `HEARTBEAT_PERIOD` seconds instead, signed like events when `LOG_SERVER_SECRET` is set |
 | Saved views | Named filter presets |
 | Export | The current filtered view as CSV, JSON, or defanged indicators |
 | Appearance | Dark and light themes, and discrete text-size steps |

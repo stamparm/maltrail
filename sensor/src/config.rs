@@ -45,6 +45,10 @@ pub const DEFAULT_CAPTURE_RING: u64 = 64 * 1024 * 1024;
 /// not worth having if it can be turned into a self-inflicted blind spot by a typo.
 pub const MIN_CAPTURE_RING: u64 = 4 * 1024 * 1024;
 
+/// Floor for a non-zero `HEARTBEAT_PERIOD`. Liveness news is not worth a datagram per second, and
+/// the server's status table is written on its single receive loop.
+pub const MIN_HEARTBEAT_PERIOD: u64 = 10;
+
 /// Ceiling for an EXPLICIT `CAPTURE_BUFFER_SIZE`. High, because an operator naming this option is
 /// telling us about their link, not guessing - a 40 Gbit tap with one worker can justify it.
 pub const MAX_CAPTURE_RING: u64 = 1024 * 1024 * 1024;
@@ -221,6 +225,9 @@ pub struct Config {
     pub capture_fanout_group: Option<u16>,
     pub offline_timestamps: TimestampSource,
     pub metrics_interval: u64,
+    /// `HEARTBEAT_PERIOD`: seconds between the liveness datagrams sent to `LOG_SERVER`, so the
+    /// server can tell a dead sensor from a quiet one (issue #19627). 0 disables them.
+    pub heartbeat_period: u64,
     /// New: `host:port` for the Prometheus metrics endpoint. Empty = disabled. Bind loopback
     /// unless you mean to expose traffic volumes and detection counts to the network.
     pub stats_address: String,
@@ -1067,6 +1074,7 @@ impl Config {
             offline_timestamps,
             stats_address: get_str(&raw, "STATS_ADDRESS"),
             metrics_interval: get_u64(&raw, "METRICS_INTERVAL").unwrap_or(3600),
+            heartbeat_period: get_u64(&raw, "HEARTBEAT_PERIOD").unwrap_or(300),
 
             raw,
             clamps: Vec::new(),
@@ -1116,6 +1124,18 @@ impl Config {
         // dropping under any real burst; the ceiling is where more ring stops buying latency
         // headroom and starts being an outage of its own on a many-worker host.
         clamp!(self.capture_buffer_size, "CAPTURE_BUFFER_SIZE", MIN_CAPTURE_RING, MAX_CAPTURE_RING);
+
+        // Not `clamp!`: 0 is the documented way to switch heartbeats off, and a macro with a
+        // floor of 10 would turn "none" into "one every ten seconds" - the opposite of the ask.
+        // The floor exists because `HEARTBEAT_PERIOD 1` is a typo, not a plan, and it would aim a
+        // datagram per second at the server for the life of the process.
+        if self.heartbeat_period != 0 && self.heartbeat_period < MIN_HEARTBEAT_PERIOD {
+            self.clamps.push(format!(
+                "HEARTBEAT_PERIOD {} is out of range ({}..), using {}",
+                self.heartbeat_period, MIN_HEARTBEAT_PERIOD, MIN_HEARTBEAT_PERIOD
+            ));
+            self.heartbeat_period = MIN_HEARTBEAT_PERIOD;
+        }
     }
 
     /// Estimated resident cost of the capture rings — the number an operator actually needs

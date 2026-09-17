@@ -299,6 +299,16 @@ body.light .modal-overlay{background:rgba(120,140,170,.45)}
 .hunt-meta.is-new .hm-tag{color:var(--accent);font-weight:700}
 .hunt-meta b{color:var(--muted);font-weight:600}
 .hunt-empty{color:var(--faint);font-size:12px;padding:10px 2px}
+/* sensor liveness modal: one row per sensor, stale ones flagged */
+.sens-rows{display:flex;flex-direction:column;gap:2px}
+.sens-row{display:grid;grid-template-columns:1fr auto auto auto;gap:10px;align-items:center;
+  padding:5px 7px;border-radius:6px;font-family:var(--mono);font-size:12px;color:var(--text)}
+.sens-row:nth-child(odd){background:var(--surface-2)}
+.sens-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sens-ver,.sens-addr{color:var(--muted);font-size:11px}
+.sens-ago{color:var(--muted);font-size:11px;min-width:64px;text-align:right}
+.sens-row.is-stale .sens-ago{color:var(--sev-high);font-weight:700}
+.sens-row.is-stale .sens-name::after{content:"⚠";margin-left:6px;color:var(--sev-high)}
 .hunt-timeline{display:flex;flex-direction:column;gap:3px;margin-bottom:12px}
 .hunt-day{display:flex;align-items:center;gap:8px;background:transparent;border:0;width:100%;cursor:pointer;
   padding:3px 6px;border-radius:6px;font-family:var(--mono);color:var(--text);text-align:left}

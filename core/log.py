@@ -47,6 +47,27 @@ _condensing_lock = threading.Lock()
 _single_messages = set()
 _thread_data = threading.local()
 
+# ---- sensor liveness (the `!HB` datagrams handled in start_logd below) ----
+#
+# A sensor that has stopped and a sensor with nothing to report look IDENTICAL here: both send no
+# events. That is issue #19627 - a sensor broken by an update went unnoticed for weeks, because a
+# quiet link produces exactly the same silence. So sensors announce themselves on a period, and
+# this is where that is remembered.
+#
+# In memory on purpose. The question is "is this sensor alive NOW", and an answer that survived a
+# restart of this process would answer it with something that was true before the restart.
+#
+# The cap and the eviction matter because the listener is unauthenticated unless LOG_SERVER_SECRET
+# is set: without it, anything that can reach the port can invent sensor names. Ordering by
+# recency means a flood evicts the STALEST entry, so a live sensor - which refreshes itself every
+# period - survives one. A flood of more than MAX_SENSOR_STATUS distinct names between two
+# heartbeats does displace real sensors, and the fix for that is the secret, not a bigger dict.
+_sensor_status = OrderedDict()
+_sensor_status_lock = threading.Lock()
+MAX_SENSOR_STATUS = 1024
+MAX_SENSOR_FIELD = 64
+HEARTBEAT_MARK = b"!HB"
+
 def create_log_directory():
     if not os.path.isdir(config.LOG_DIR):
         if not config.DISABLE_CHECK_SUDO and check_sudo() is False:
@@ -552,6 +573,64 @@ def mts_open(secret, data, now=None):
     return payload
 
 
+def _sensor_field(value):
+    """One heartbeat field, made safe to store and to render.
+
+    Every field is chosen by the sender, and without LOG_SERVER_SECRET the sender is anybody who
+    can reach the port. These end up in a JSON document the dashboard renders, so anything that is
+    not plainly a hostname or a version is dropped rather than escaped - there is no legitimate
+    heartbeat that needs a quote, an angle bracket or a control character in it.
+    """
+
+    value = value.decode(UNICODE_ENCODING, "replace")
+    return re.sub(r"[^\w.:@+-]", "", value)[:MAX_SENSOR_FIELD]
+
+
+def heartbeat_event(data, source):
+    """Record a liveness datagram, and report whether that is what this was.
+
+    The payload is `<epoch_sec> !HB <sensor> <version> <uptime_s>`. It leads with the epoch second
+    because mts_open() requires that of anything signed - so a heartbeat gets the same replay
+    bound as an event - and `!HB` cannot be confused with an event, whose second token is always a
+    quoted local timestamp.
+
+    Returns True when the datagram was a heartbeat and must NOT reach the event log: liveness is
+    not a detection, and writing it to the log would put it in /events, /counts and /fail2ban.
+    """
+
+    # maxsplit: a heartbeat has exactly five fields, and a 64 KB datagram of spaces should not
+    # become a 32,000-element list on the receive loop's only thread.
+    parts = data.split(b' ', 4)
+    if len(parts) < 3 or parts[1] != HEARTBEAT_MARK:
+        return False
+
+    uptime = parts[4].strip() if len(parts) > 4 else b""
+    sensor = _sensor_field(parts[2]) or '-'
+    status = {"sensor": sensor,
+              "version": _sensor_field(parts[3]) if len(parts) > 3 else "",
+              "uptime": int(uptime) if uptime.isdigit() and len(uptime) <= 20 else None,
+              "address": source,
+              "last_seen": int(time.time())}
+
+    with _sensor_status_lock:
+        # move_to_end makes the dict ordered by recency, so popitem(last=False) drops the sensor
+        # that has been quiet longest - the one whose slot is worth least.
+        if sensor in _sensor_status:
+            _sensor_status.move_to_end(sensor)
+        elif len(_sensor_status) >= MAX_SENSOR_STATUS:
+            _sensor_status.popitem(last=False)
+        _sensor_status[sensor] = status
+
+    return True
+
+
+def sensor_status():
+    """Every sensor heard from since this process started, most recently seen last."""
+
+    with _sensor_status_lock:
+        return list(_sensor_status.values())
+
+
 def start_logd(address=None, port=None, join=False):
     # ONE receive loop, not a thread per datagram.
     #
@@ -591,6 +670,10 @@ def start_logd(address=None, port=None, join=False):
                 # listener refuse events it cannot attribute; without it, behaviour is unchanged.
                 data = mts_open(getattr(config, "LOG_SERVER_SECRET", None), data)
                 if data is None:
+                    return
+
+                # Liveness, not a detection: recorded in memory and never written to the log.
+                if heartbeat_event(data, self.client_address[0]):
                     return
 
                 if data[0:1].isdigit():     # Note: regular format with timestamp in front

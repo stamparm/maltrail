@@ -156,9 +156,11 @@ class TestHttpd(unittest.TestCase):
         _meta.flush()
         _meta.configure(None, enabled=False); _meta._agg = {}   # reset the test process's module state
         cls.port = _free_port()
+        cls.udp_port = _free_port()      # the sensor-facing event/heartbeat listener
         cfg = os.path.join(cls.tmp, "srv.conf")
         with open(cfg, "w") as f:
             f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\n" % cls.port)
+            f.write("UDP_ADDRESS 127.0.0.1\nUDP_PORT %d\n" % cls.udp_port)
             f.write("USERS\n    admin:%s:0:\n    analyst:%s:1000:10.0.0.0/8\n    analyst2:%s:1001:10.0.5.0/16\n"
                     "    analyst3:%s:1002:10.0.0.5\n    analyst4:%s:1003:10.0.0.6-10.0.0.9\n"
                     "    ipv6user:%s:1004:::\n"   # netfilter "::" (IPv6 all) - the last field contains colons
@@ -744,6 +746,50 @@ class TestHttpd(unittest.TestCase):
         st, _, body = _http(self.port, "GET", "/ping")
         self.assertEqual(st, 200)
         self.assertEqual(body.strip(), b"pong")
+
+    def test_sensors_endpoint(self):
+        import json as _json
+
+        # Sensor liveness (#19627): the server cannot tell a dead sensor from a quiet one by
+        # reading the event log, so this reports the heartbeats the UDP listener collects.
+        # Driven over the real socket into the real server process, because the receiving half
+        # and the reporting half live in different modules and nothing but this connects them.
+        st, _, _ = _http(self.port, "GET", "/sensors")
+        self.assertEqual(st, 401, "sensor inventory must not be readable without a session")
+
+        u = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        u.sendto(b"%d !HB httpd-probe 3.4 99" % int(time.time()), ("127.0.0.1", self.udp_port))
+        u.close()
+
+        ck = self._login()
+        row, obj = [], {}
+        deadline = time.time() + 5
+        while time.time() < deadline:
+            st, _, body = _http(self.port, "GET", "/sensors", cookie=ck)
+            self.assertEqual(st, 200)
+            obj = _json.loads(body.decode("utf-8"))
+            row = [_ for _ in obj["sensors"] if _["sensor"] == "httpd-probe"]
+            if row:
+                break
+            time.sleep(0.1)
+
+        self.assertTrue(row, "a sensor that checked in was not listed")
+        self.assertEqual(row[0]["version"], "3.4")
+        self.assertEqual(row[0]["address"], "127.0.0.1")
+        self.assertEqual(row[0]["uptime"], 99)
+        # Served so the page can say "4 minutes ago" without trusting the workstation's clock.
+        self.assertAlmostEqual(obj["now"], int(time.time()), delta=60)
+
+        # Liveness is not a detection: in the day log it would reach /events, /counts and /fail2ban.
+        with open(os.path.join(self.logdir, self.date + ".log"), "rb") as f:
+            self.assertNotIn(b"!HB", f.read(), "a heartbeat was written into the event log")
+
+        # A network-restricted analyst is told which sensors are healthy - operational and useful -
+        # but not the addresses of collection infrastructure outside the scope they were given.
+        _, _, body = _http(self.port, "GET", "/sensors", cookie=self._login("analyst"))
+        scoped = [_ for _ in _json.loads(body.decode("utf-8"))["sensors"] if _["sensor"] == "httpd-probe"]
+        self.assertTrue(scoped, "a restricted analyst must still see whether sensors are alive")
+        self.assertEqual(scoped[0]["address"], "", "a restricted analyst was given a sensor's address")
 
     def test_whoami_and_logout(self):
         ck = self._login("admin")

@@ -154,3 +154,21 @@ fn capture_ring_defaults_are_sane_for_a_real_link() {
     let cfg = load("ring_absurd", "CAPTURE_BUFFER 32MB\nCAPTURE_BUFFER_SIZE 8GB");
     assert_eq!(cfg.capture_buffer_size, maltrail_sensor::config::MAX_CAPTURE_RING);
 }
+
+#[test]
+fn a_one_second_heartbeat_is_floored_but_zero_still_means_off() {
+    // `HEARTBEAT_PERIOD 1` is a typo, and it would aim a datagram per second at the server's
+    // single receive loop for the life of the process.
+    let cfg = load("heartbeat-typo", "HEARTBEAT_PERIOD 1");
+    assert_eq!(cfg.heartbeat_period, 10);
+    assert!(cfg.clamps.iter().any(|c| c.contains("HEARTBEAT_PERIOD")), "{:?}", cfg.clamps);
+
+    // 0 is the documented way to turn heartbeats off, so the floor must not touch it - a clamp
+    // that raised it to 10 would do the exact opposite of what the operator asked for.
+    let cfg = load("heartbeat-off", "HEARTBEAT_PERIOD 0");
+    assert_eq!(cfg.heartbeat_period, 0);
+    assert!(cfg.clamps.is_empty(), "turning heartbeats off is not a range error: {:?}", cfg.clamps);
+
+    let cfg = load("heartbeat-default", "");
+    assert_eq!(cfg.heartbeat_period, 300, "the shipped default");
+}

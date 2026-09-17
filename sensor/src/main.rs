@@ -600,6 +600,12 @@ fn run() -> i32 {
         }
     }
 
+    // --- liveness heartbeat ----------------------------------------------------
+    // Offline replay has no server to report to and no ongoing existence to announce.
+    if !cfg.is_offline_replay() {
+        output::spawn_heartbeat(output_cfg.clone(), cfg.heartbeat_period, shutdown.clone());
+    }
+
     // --- metrics thread --------------------------------------------------------
     if cfg.metrics_interval > 0 && !cfg.is_offline_replay() {
         let reg_metrics = registry.clone();

@@ -111,6 +111,45 @@ class TestLogd(unittest.TestCase):
         self._send(("%d %s" % (SEC, event)).encode("utf-8"))
         self.assertIn(b"sensorZ", self._wait_for(b"sensorZ"), "server must survive garbage and keep storing")
 
+    def test_a_heartbeat_is_recorded_and_never_reaches_the_event_log(self):
+        # Exactly what sensor/src/output.rs:heartbeat_payload() puts on the wire.
+        sec = int(time.time())
+        self._send(b"%d !HB probe-alpha 3.4 4242" % sec)
+        deadline = time.time() + 5.0
+        while time.time() < deadline:
+            found = [_ for _ in L.sensor_status() if _["sensor"] == "probe-alpha"]
+            if found:
+                break
+            time.sleep(0.05)
+        self.assertTrue(found, "a heartbeat datagram left no trace in the sensor status")
+        self.assertEqual(found[0]["version"], "3.4")
+        self.assertEqual(found[0]["uptime"], 4242)
+        self.assertEqual(found[0]["address"], "127.0.0.1")
+        self.assertGreaterEqual(found[0]["last_seen"], sec)
+
+        # Liveness is not a detection: in the log it would show up in /events, /counts and /fail2ban.
+        self.assertNotIn(b"!HB", self._wait_for(b"probe-alpha", timeout=1.0))
+
+    def test_an_event_is_not_mistaken_for_a_heartbeat(self):
+        event = '"%s" sensorHB 10.0.0.5 4444 3.3.3.3 80 TCP IP 3.3.3.3 "malware (x)" (ref)\n' % LOCALTIME
+        self._send(("%d %s" % (SEC, event)).encode("utf-8"))
+        self.assertIn(b"3.3.3.3", self._wait_for(b"3.3.3.3"), "an event stopped being written once heartbeats existed")
+        self.assertEqual([], [_ for _ in L.sensor_status() if _["sensor"] == "sensorHB"])
+
+    def test_a_forged_sensor_name_cannot_carry_markup_or_grow_without_bound(self):
+        # Without LOG_SERVER_SECRET anything that can reach the port may invent sensors, and the
+        # names end up in a JSON document the dashboard renders.
+        self._send(b"%d !HB <img/src=x> 3.4 1" % int(time.time()))
+        time.sleep(0.3)
+        for status in L.sensor_status():
+            self.assertNotIn("<", status["sensor"])
+            self.assertLessEqual(len(status["sensor"]), L.MAX_SENSOR_FIELD)
+
+        for i in range(L.MAX_SENSOR_STATUS + 50):
+            L.heartbeat_event(b"0 !HB flood%d 3.4 1" % i, "10.0.0.1")
+        self.assertLessEqual(len(L.sensor_status()), L.MAX_SENSOR_STATUS,
+                             "an unauthenticated flood of invented names grew the status table without bound")
+
 
 class TestIntakeShape(unittest.TestCase):
     """The receiver used to be a ThreadingUDPServer, so each event cost a fresh THREAD - and because the
@@ -308,6 +347,19 @@ class TestLogServerSecret(unittest.TestCase):
             else:
                 os.environ["TZ"] = before
             time.tzset()
+
+    def test_a_signed_heartbeat_is_accepted_and_an_unsigned_one_is_not(self):
+        # A heartbeat leads with the epoch second precisely so mts_open() will verify it: a
+        # sensor whose liveness datagrams are silently refused looks dead, which is the one
+        # conclusion this feature must never reach by accident.
+        self._send(L.mts_sign(config.LOG_SERVER_SECRET, b"%d !HB signed-probe 3.4 7" % int(time.time())))
+        self._send(b"%d !HB unsigned-probe 3.4 7" % int(time.time()))
+        time.sleep(0.6)
+
+        names = [_["sensor"] for _ in L.sensor_status()]
+        self.assertIn("signed-probe", names, "a correctly signed heartbeat was refused")
+        self.assertNotIn("unsigned-probe", names, "an unauthenticated sensor could invent itself")
+        self.assertNotIn(b"!HB", self._log(), "a heartbeat was written to the event log")
 
     def test_a_stale_datagram_is_dropped(self):
         # Replay is bounded by the timestamp the payload is signed with.
