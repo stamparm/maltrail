@@ -65,68 +65,97 @@ prevention system.
 
 ## Architecture
 
-Maltrail consists of two independent processes that may run on the same host or on separate hosts:
+Maltrail has two independently deployable processes that can run on the same host or on separate
+hosts: the **sensor** detects suspicious traffic, while the **server** stores and exposes events for
+reporting and API access.
 
 ```mermaid
 flowchart LR
+    Traffic(("<b>Network traffic</b>"))
+
     subgraph Maltrail ["Maltrail System"]
         direction LR
-        Sensor["<b>Sensor</b><br/>Rust / libpcap<br/>PACKET_FANOUT<br/>Trail matching & heuristics"]
-        Server["<b>Server</b><br/>Python<br/>Event archive<br/>Reporting UI & API"]
+        Sensor["<b>Sensor</b><br/>Rust / libpcap<br/>Capture & detection<br/>Trail matching & heuristics"]
+        Logs[("<b>Event logs</b><br/>LOG_DIR")]
+        Server["<b>Server</b><br/>Python<br/>Event intake & access<br/>Reporting UI & API"]
     end
 
     Browser(("<b>Browser</b><br/>Reporting interface"))
+    Syslog["<b>Syslog / SIEM</b><br/>CEF"]
+    Logstash["<b>Logstash</b><br/>JSON"]
 
-    Sensor -->|events: UDP or file| Server
-    Server <-->|HTTP / UI access| Browser
+    Traffic --> Sensor
+    Sensor -->|local events| Logs
+    Sensor -->|remote events / LOG_SERVER| Server
+    Server -->|stores remote events| Logs
+    Logs -->|reads daily logs| Server
+    Sensor -->|SYSLOG_SERVER| Syslog
+    Sensor -->|LOGSTASH_SERVER| Logstash
+    Server <-->|HTTP / SSE| Browser
 ```
 
-The sensor captures traffic, performs trail matching and heuristic analysis, and produces events.
-It can write events locally (`LOG_DIR`), send them to a remote Maltrail server (`LOG_SERVER`), or do
-both. It can also emit CEF over syslog (`SYSLOG_SERVER`) and JSON to Logstash
-(`LOGSTASH_SERVER`).
+The sensor captures network traffic, performs trail matching and heuristic analysis, and produces
+events. It can write events locally to `LOG_DIR`, send them to a remote Maltrail server through
+`LOG_SERVER`, or do both. It can also emit CEF over syslog with `SYSLOG_SERVER` and JSON to
+Logstash with `LOGSTASH_SERVER`.
 
-The server receives and stores remote events, serves locally available event logs, and provides the
-web interface and API.
+The server accepts remote events, stores them in the event logs, reads locally available daily logs,
+and provides the HTTP API and browser-based reporting interface. The sensor does not depend on the
+reporting interface and can be deployed independently when events are forwarded to another system.
 
 ## Reporting interface
 
-Maltrail includes a browser-based reporting interface for exploring detected
-traffic, with live updates, field-aware search, retro hunting, geographic
-views, triage, saved views and export.
+Maltrail includes a browser-based reporting interface for exploring detected traffic, with live
+updates, field-aware search, retro hunting, geographic views, triage, sensor status, saved views and
+export.
 
 ![Maltrail reporting interface](https://i.imgur.com/bqCErCK.png)
 
 The interface is served by `server.py` at `HTTP_ADDRESS:HTTP_PORT`. It is plain JavaScript with a
 single third-party runtime dependency (PapaParse, for CSV parsing) and no build step. One day is
-viewed at a time, selected with a date picker that doubles as an event-density grid over the
+viewed at a time, selected with a date picker that also acts as an event-density grid over the
 available daily logs. Events are streamed from `/events` and aggregated in the browser into
 *threats* — one row per distinct `(source, trail)` — shown in a sortable grid with a detail panel.
 
 | Feature | Notes |
 | --- | --- |
-| Live mode | Appended events are pushed over Server-Sent Events (`/live`) and merged into the current view. Falls back to polling byte ranges of the daily log when SSE is unavailable, or for sessions the stream cannot serve. New high-severity threats can raise a desktop notification and an audible alert; both can be muted |
-| Search | Field-scoped tokens (`src:` `dst:` `port:` `proto:` `type:` `trail:` `info:` `family:` `tag:` `uid:` `sev:` `dir:` `status:`; `family:interlock` pulls in `interlock-1`/`-2`, the shards one feed dump arrives split into) combined with space as AND, `-` to exclude, `*` wildcards, CIDR (`src:10.0.0.0/8`), and numeric ranges and comparisons (`port:>1024`, `count:>=100`). Active filters appear as removable chips |
-| Retro hunt | Searches *all* retained daily logs for one indicator (`/hunt`), not just the day in view. Bounded by a day limit, a wall-clock budget and a sample cap; a day the budget cut short is reported separately from the completed days rather than counted as a finished total. A per-day sidecar index (`LOG_DIR/index/`, `USE_EVENT_INDEX`) lets the sweep skip every non-matching line and makes `/counts` exact |
-| World map | Per-country event density for the selected day (`/geo`), placing the external endpoint of each event. Events that cannot be attributed to an external address are reported as unmapped rather than guessed. Set `HOME_LAT` / `HOME_LON` to draw origin arcs |
-| Triage | Per-threat status (new / investigating / resolved / false positive), free-text notes, tags, and hiding. Whitelist rules and OSINT pivots are available from the row context menu |
-| Sensor status | Which sensors are still reporting in, with the version each one runs and how long ago it last checked in (`/sensors`). The event log cannot answer this - a sensor that has died and a sensor watching a quiet link both produce no events - so sensors announce themselves on the `LOG_SERVER` channel every `HEARTBEAT_PERIOD` seconds instead, signed like events when `LOG_SERVER_SECRET` is set |
+| Live mode | Appended events arrive over Server-Sent Events (`/live`) and are merged into the current view. When SSE is unavailable, or the stream cannot serve the session, the interface falls back to polling byte ranges of the daily log. New high-severity threats can raise desktop and audible alerts; both can be muted |
+| Search | Field-aware queries support `src:`, `dst:`, `port:`, `proto:`, `type:`, `trail:`, `info:`, `family:`, `tag:`, `uid:`, `sev:`, `dir:` and `status:` selectors, plus exclusions, wildcards, CIDR matching and numeric comparisons. Active filters appear as removable chips |
+| Retro hunt | `/hunt` searches all retained daily logs for one indicator rather than only the selected day. Searches are bounded by configurable limits; an optional per-day sidecar index accelerates the sweep and makes `/counts` exact |
+| World map | `/geo` shows per-country event density for the selected day using the external endpoint of each event. Unattributable events remain unmapped rather than being guessed. `HOME_LAT` / `HOME_LON` can be set to draw origin arcs |
+| Triage | Per-threat status (new / investigating / resolved / false positive), free-text notes, tags and hiding. Whitelist rules and OSINT pivots are available from the row context menu |
+| Sensor status | `/sensors` shows which sensors are reporting, the version each runs and how long ago it last checked in |
 | Saved views | Named filter presets |
 | Export | The current filtered view as CSV, JSON, or defanged indicators |
-| Appearance | Dark and light themes, and discrete text-size steps |
+| Appearance | Dark and light themes, with discrete text-size steps |
+
+Search terms separated by spaces are combined as **AND**. Prefix a term with `-` to exclude it, use
+`*` for wildcards, use CIDR notation such as `src:10.0.0.0/8`, and use numeric ranges or comparisons
+such as `port:>1024` and `count:>=100`. `family:interlock` also includes `interlock-1` and
+`interlock-2`, the shards in which that feed dump arrives.
+
+Retro hunts are bounded by a day limit, a wall-clock budget and a sample cap. If the time budget cuts
+a day short, that day is reported separately rather than counted as a completed day. With
+`USE_EVENT_INDEX` enabled, the per-day sidecar index under `LOG_DIR/index/` lets the hunt skip
+non-matching lines and provides exact `/counts` results.
+
+Sensor liveness is tracked separately from event activity: a failed sensor and a healthy sensor on a
+quiet link can both produce no events. Sensors therefore announce themselves over the `LOG_SERVER`
+channel every `HEARTBEAT_PERIOD` seconds. When `LOG_SERVER_SECRET` is configured, heartbeats are
+signed in the same way as events.
 
 Triage state, saved views, tags and appearance settings are stored in the **browser**
-(`localStorage`), not on the server: they are per-browser and per-origin, and are not shared
+(`localStorage`), not on the server. They are therefore per-browser and per-origin and are not shared
 between analysts.
 
-Sessions restricted with a network filter see only events from their own networks, and that
-restriction applies to the counts, map and blacklist endpoints as well as to the event list.
+Sessions restricted with a network filter see only events from their own networks. The same
+restriction also applies to the counts, map and blacklist endpoints, not only to the event list.
 
 Country and ASN enrichment for individual addresses is looked up at `stat.ripe.net` by the
-**server**, which caches the results and serves them to the interface from its own `/ripe`
-endpoint; the browser talks to nothing but Maltrail. Set `DISABLE_RIPE_LOOKUPS` to switch the
-outbound lookups off entirely. Without them — or on a host with no internet access — flags come
-from the local RIR table instead and everything else in the interface works offline.
+**server**, cached there, and exposed to the interface through Maltrail's own `/ripe` endpoint. The
+browser talks to nothing but Maltrail. Set `DISABLE_RIPE_LOOKUPS` to disable outbound lookups
+entirely. Without RIPE lookups — including on hosts without internet access — flags fall back to the
+local RIR table and the rest of the interface continues to work offline.
 
 ## Performance
 
