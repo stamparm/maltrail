@@ -671,9 +671,9 @@ for.
 - [oisd domain blocklist](https://oisd.nl/?p=inc) (trails only)
 - [NextDNS](https://github.com/nextdns/metadata/blob/e0c9c7e908f5d10823b517ad230df214a7251b13/security/threat-intelligence-feeds.json) (trails only)
 - [NoTracking](https://github.com/notracking/hosts-blocklists/blob/master/SOURCES.md) (trails only)
-- [OWASP Mobile Audit](https://github.com/mpast/mobileAudit#environment-variables) (trails only)
-- [Mobile Security Framework MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF/commit/12b07370674238fa4281fc7989b34decc2e08876) (trails only)
-- [pfBlockerNG-devel](https://github.com/pfsense/FreeBSD-ports/blob/devel/net/pfSense-pkg-pfBlockerNG-devel/files/usr/local/www/pfblockerng/pfblockerng_feeds.json) (trails only)
+- [OWASP Mobile Audit](https://github.com/mpast/mobileAudit/pull/182/changes/1e9faad9a3dfd8ce9b656e05bfc955a7d6f20bef) (trails only)
+- [Mobile Security Framework MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF/commit/822123826b4bc800554f0f7b4be49967db506b03) (trails only)
+- [pfBlockerNG-devel](https://github.com/pfBlockerNG/pfBlockerNG/commit/6765a139c6470cbeaf89cb5d2c03c8598544b31f) (trails only)
 - [Sansec eComscan](https://sansec.io/kb/about-ecomscan/ecomscan-license) (trails only)
 - [Palo Alto Networks Cortex XSOAR](https://xsoar.pan.dev/docs/reference/integrations/github-maltrail-feed) (trail connector)
 
