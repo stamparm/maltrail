@@ -69,9 +69,13 @@ Maltrail consists of two independent processes that may run on the same host or 
 
 ```mermaid
 flowchart LR
-    Sensor["<b>Sensor</b><br/>Rust · libpcap · PACKET_FANOUT<br/>Trail matching & heuristics"]
-    Server["<b>Server</b><br/>Python<br/>Reporting UI & API"]
-    Browser["<b>Browser</b><br/>User / Analyst Interface"]
+    subgraph Maltrail ["Maltrail System"]
+        direction LR
+        Sensor["<b>Sensor</b><br/>Rust / libpcap<br/>PACKET_FANOUT<br/>Trail matching & heuristics"]
+        Server["<b>Server</b><br/>Python<br/>Event archive<br/>Reporting UI & API"]
+    end
+
+    Browser(("<b>Browser</b><br/>External Client"))
 
     Sensor -->|events: UDP or file| Server
     Server <-->|HTTP / UI access| Browser
