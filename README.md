@@ -373,10 +373,16 @@ merges four sources into `TRAILS_FILE`, in this order:
 
 | source | where it comes from |
 | --- | --- |
-| Feeds | `feeds/*.py`, fetched directly by your deployment from each publisher |
+| Feeds | `feeds/*.py`, fetched directly by your deployment from each publisher, e.g. [IPnoise](https://ipnoise.sekuripy.hr/) |
 | Custom | `CUSTOM_TRAILS_DIR` and `CUSTOM_TRAILS_URL`, your own indicators |
 | Static | the assembled set from [stamparm/trails](https://github.com/stamparm/trails), fetched from `STATIC_TRAILS_URL`; [separately licensed](https://github.com/stamparm/trails/blob/main/LICENSE.md) |
 | Engine lists | `data/mass_scanner*.txt`, shipped here because they change rarely |
+
+Feeds are fetched by your own deployment rather than bundled here, so each is as current as its
+publisher keeps it. [IPnoise](https://ipnoise.sekuripy.hr/), for example, publishes the addresses
+caught attacking a distributed network of honeypot sensors — hosts running no legitimate service,
+so every connection reaching them is hostile by construction — and `feeds/ipnoise.py` pulls its
+7-day list.
 
 The static trails live in their own repository. Detection content changes tens of times a
 day; the engine does not, and keeping them together meant updating detection required pulling code
