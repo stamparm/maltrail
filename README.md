@@ -75,7 +75,7 @@ flowchart LR
         Server["<b>Server</b><br/>Python<br/>Event archive<br/>Reporting UI & API"]
     end
 
-    Browser(("<b>Browser</b><br/>External Client"))
+    Browser(("<b>Browser</b><br/>Reporting interface"))
 
     Sensor -->|events: UDP or file| Server
     Server <-->|HTTP / UI access| Browser
