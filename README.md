@@ -67,13 +67,14 @@ prevention system.
 
 Maltrail consists of two independent processes that may run on the same host or on separate hosts:
 
-```text
-   ┌──────────┐   events (UDP or file)   ┌──────────┐
-   │  sensor  │ ───────────────────────► │  server  │ ◄── browser
-   └──────────┘                          └──────────┘
-    Rust                                  Python
-    libpcap + PACKET_FANOUT               reporting UI + API
-    trail matching + heuristics
+```mermaid
+flowchart LR
+    Sensor["<b>Sensor</b><br/>Rust · libpcap · PACKET_FANOUT<br/>Trail matching & heuristics"]
+    Server["<b>Server</b><br/>Python<br/>Reporting UI & API"]
+    Browser["<b>Browser</b><br/>User / Analyst Interface"]
+
+    Sensor -->|events: UDP or file| Server
+    Server <-->|HTTP / UI access| Browser
 ```
 
 The sensor captures traffic, performs trail matching and heuristic analysis, and produces events.
