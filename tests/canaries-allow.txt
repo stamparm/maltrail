@@ -25,3 +25,9 @@ zaoshang.ru                      # glupteba
 ishano456.sbs                    # android fakeapp
 trafficconverter.biz             # Conficker's 2008 C2 - ranked #28,676 because infected hosts still beacon
 xshaon123.sbs                    # android fakeapp
+iloveyourweewee.bz               # elf_mirai C2, taunt-named; NXDOMAIN now, ranked from historical bot query volume
+imsowiwiwiwiwi.com               # elf_mirai C2, taunt-named; resolves to DigitalOcean/Vultr VPS IPs
+plsleavemealone.com              # elf_mirai C2, taunt-named; NXDOMAIN now, ranked from historical bot query volume
+dontworry.su                     # elf_mirai C2, taunt-named; NXDOMAIN now, ranked from historical bot query volume
+okiloveyoupleasedonttouchme.net  # elf_mirai C2, taunt-named; shares 6-IP round-robin set with thespacemachines.st
+thespacemachines.st              # elf_mirai C2, taunt-named; shares 6-IP round-robin set with okiloveyoupleasedonttouchme.net
