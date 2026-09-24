@@ -2829,6 +2829,11 @@ UserSyncWorker
 
 SysInfo/WinHttp
 
+# Reference: https://medium.com/@devmihaylov/a-signed-loader-that-installs-a-real-it-agent-answering-to-the-attacker-65e98796f06c
+
+SupportBridge/13.6
+SupportBridge
+
 # Misc
 
 information_schema
