@@ -6642,3 +6642,15 @@
 213.177.179.0/24,fps12
 213.209.159.0/24,fps12
 62.60.131.0/24,fps12
+
+# AS 213850
+# Reference: https://x.com/malwrhunterteam/status/2103062404380704989
+# Reference: https://www.virustotal.com/gui/ip-address/5.175.245.98/relations
+# Reference: https://ipinfo.io/AS213850
+
+2.56.247.0/24,nexosystems
+45.142.104.0/24,nexosystems
+5.175.164.0/24,nexosystems
+5.175.179.0/24,nexosystems
+5.175.245.0/24,nexosystems
+5.231.31.0/24,nexosystems
