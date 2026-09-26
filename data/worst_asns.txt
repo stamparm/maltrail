@@ -6662,3 +6662,17 @@
 195.178.110.0/24,dmzhost
 45.148.10.0/24,dmzhost
 93.123.109.0/24,dmzhost
+
+# AS 36680
+# Reference: https://x.com/skocherhan/status/2103599407530680752
+# Reference: https://ipinfo.io/AS36680
+
+196.251.100.0/24,netifacellc
+196.251.102.0/24,netifacellc
+196.251.121.0/24,netifacellc
+31.56.19.0/24,netifacellc
+36.255.97.0/24,netifacellc
+43.228.157.0/24,netifacellc
+46.151.182.0/24,netifacellc
+64.89.160.0/24,netifacellc
+64.89.161.0/24,netifacellc
