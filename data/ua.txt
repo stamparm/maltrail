@@ -2834,6 +2834,14 @@ SysInfo/WinHttp
 SupportBridge/13.6
 SupportBridge
 
+# Reference: https://x.com/malwrhunterteam/status/2104991264106000850
+# Reference: https://x.com/malwrhunterteam/status/2104992797137019333
+# Reference: https://www.virustotal.com/gui/file/4c869b488128b8af6f27b5acf1ef64020e14cd087d72f0a7dc75010a9786f6a2/detection
+# Reference: https://www.virustotal.com/gui/file/b8644e7bdf468dc7d5f10960cfe4ce4b0dbdf1d0a7ee2cc91bed20b41487aedc/detection
+# Reference: https://www.virustotal.com/gui/file/fa9fa04f23d0a05cff06e24a5ec436ea4a30de40841a2a553236c64f0713e902/detection
+
+Agent/1.0
+
 # Misc
 
 information_schema
