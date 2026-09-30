@@ -6712,3 +6712,17 @@
 96.62.218.0/24,dedik-io
 96.62.224.0/24,dedik-io
 96.62.71.0/24,dedik-io
+
+# AS 218731
+# Reference: https://ipinfo.io/AS218731
+
+2.26.182.0/24,andris-jakovlevs
+2.26.186.0/24,andris-jakovlevs
+31.77.109.0/24,andris-jakovlevs
+31.77.138.0/24,andris-jakovlevs
+31.77.168.0/24,andris-jakovlevs
+31.77.170.0/24,andris-jakovlevs
+31.77.219.0/24,andris-jakovlevs
+31.77.220.0/24,andris-jakovlevs
+31.77.56.0/24,andris-jakovlevs
+31.77.57.0/24,andris-jakovlevs
