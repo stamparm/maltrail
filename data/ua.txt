@@ -2847,6 +2847,11 @@ Agent/1.0
 
 Everest/1.0
 
+# Reference: https://unit42.paloaltonetworks.com/aeternum-blockchain-c2-analysis/
+
+SystemInfo Bot/2.0
+SystemInfo Bot
+
 # Misc
 
 information_schema
