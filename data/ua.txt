@@ -2842,6 +2842,11 @@ SupportBridge
 
 Agent/1.0
 
+# Reference: https://x.com/Malwarehunterr/status/2105568620139196904
+# Reference: https://www.virustotal.com/gui/file/51ad155fbf524318fb773d2334b0975c90e1cbbcaae1c58c98f0353fa530143e/detection
+
+Everest/1.0
+
 # Misc
 
 information_schema
