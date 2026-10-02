@@ -6565,6 +6565,8 @@
 # Reference: https://ipinfo.io/AS219502
 
 176.65.139.0/24,stormcloud-as
+45.204.146.0/24,stormcloud-as
+89.251.29.0/24,stormcloud-as
 94.154.43.0/24,stormcloud-as
 
 # AS 213702
