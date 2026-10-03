@@ -6832,3 +6832,16 @@
 96.126.179.0/24,evoxtsdnbhd-as-ap
 96.126.190.0/24,evoxtsdnbhd-as-ap
 96.126.191.0/24,evoxtsdnbhd-as-ap
+
+# AS 209207
+# Reference: https://ipinfo.io/AS209207
+
+147.45.61.0/24,dhost-as
+147.45.63.0/24,dhost-as
+153.80.249.0/24,dhost-as
+168.113.215.0/24,dhost-as
+185.112.59.0/24,dhost-as
+193.233.126.0/24,dhost-as
+193.233.198.0/24,dhost-as
+193.233.75.0/24,dhost-as
+193.233.82.0/24,dhost-as
