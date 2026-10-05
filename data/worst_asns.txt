@@ -7009,3 +7009,20 @@
 91.230.225.0/24,secfirewallas
 95.155.139.0/24,secfirewallas
 98.159.43.0/24,secfirewallas
+
+# AS 199550
+# Reference: https://ipinfo.io/AS199550
+# Reference: https://x.com/SimoKohonen/status/2107116756250579047
+
+143.20.106.0/24,hiragi-ltd
+143.20.107.0/24,hiragi-ltd
+185.81.30.0/24,hiragi-ltd
+185.81.31.0/24,hiragi-ltd
+194.77.94.0/24,hiragi-ltd
+45.159.148.0/24,hiragi-ltd
+82.108.120.0/24,hiragi-ltd
+82.109.157.0/24,hiragi-ltd
+94.116.0.0/24,hiragi-ltd
+94.116.1.0/24,hiragi-ltd
+94.116.2.0/24,hiragi-ltd
+94.116.3.0/24,hiragi-ltd
