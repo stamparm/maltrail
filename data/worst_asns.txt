@@ -7026,3 +7026,16 @@
 94.116.1.0/24,hiragi-ltd
 94.116.2.0/24,hiragi-ltd
 94.116.3.0/24,hiragi-ltd
+
+# AS 403005
+# Reference: https://ipinfo.io/AS403005
+# Reference: https://x.com/BlinkzSec/status/2107154228644893052
+
+196.251.100.0/24,blatanthost
+196.251.102.0/24,blatanthost
+196.251.121.0/24,blatanthost
+36.255.97.0/24,blatanthost
+43.228.157.0/24,blatanthost
+46.151.182.0/24,blatanthost
+64.89.160.0/24,blatanthost
+64.89.161.0/24,blatanthost
