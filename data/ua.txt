@@ -2852,6 +2852,10 @@ Everest/1.0
 SystemInfo Bot/2.0
 SystemInfo Bot
 
+# Reference: https://x.com/DefusedCyber/status/2106691404403511668
+
+XXX:O=/
+
 # Misc
 
 information_schema
