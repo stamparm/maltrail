@@ -2856,6 +2856,12 @@ SystemInfo Bot
 
 XXX:O=/
 
+# Reference: https://x.com/LupovisDefence/status/2107242138677235914
+
+CVE-2026-88771-scanner/1.0 \(defensive\)
+CVE-2026-88771-scanner/1.0
+CVE-2026-88771-scanner
+
 # Misc
 
 information_schema
