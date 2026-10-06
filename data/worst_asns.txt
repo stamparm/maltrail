@@ -7039,3 +7039,14 @@
 46.151.182.0/24,blatanthost
 64.89.160.0/24,blatanthost
 64.89.161.0/24,blatanthost
+
+# AS 201097
+# Refrence: https://ipinfo.io/AS201097
+# Reference: https://socradar.io/blog/cyberxero-ai-iab-ukraine-critical-infrastructure/
+
+132.243.199.0/24,kvanta-llc
+209.131.69.0/24,kvanta-llc
+212.193.31.0/24,kvanta-llc
+78.153.136.0/24,kvanta-llc
+89.19.222.0/24,kvanta-llc
+89.19.223.0/24,kvanta-llc
