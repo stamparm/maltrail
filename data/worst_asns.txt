@@ -5025,7 +5025,13 @@
 # AS214961
 # Reference: https://ipinfo.io/AS214961
 
+104.239.66.0/24,stellargroupsas
+104.249.10.0/24,stellargroupsas
 178.215.236.0/24,stellargroupsas
+195.177.94.0/24,stellargroupsas
+217.217.97.0/24,stellargroupsas
+45.141.21.0/24,stellargroupsas
+94.154.32.0/24,stellargroupsas
 
 # AS44901
 # Reference: https://ipinfo.io/AS44901
