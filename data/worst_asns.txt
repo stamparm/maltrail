@@ -7056,3 +7056,9 @@
 78.153.136.0/24,kvanta-llc
 89.19.222.0/24,kvanta-llc
 89.19.223.0/24,kvanta-llc
+
+# AS 51852
+# Reference: https://ipinfo.io/AS51852
+# Reference: https://mokki.sh/posts/2026-10-08-cve-2026-88771-netscalers-versus-the-chinese-pitboss/
+
+94.26.35.0/24, pli-as
