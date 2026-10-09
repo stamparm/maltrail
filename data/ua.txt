@@ -2862,6 +2862,10 @@ CVE-2026-88771-scanner/1.0 \(defensive\)
 CVE-2026-88771-scanner/1.0
 CVE-2026-88771-scanner
 
+# Reference: https://mokki.sh/posts/2026-10-08-cve-2026-88771-netscalers-versus-the-chinese-pitboss/
+
+pitboss
+
 # Misc
 
 information_schema
