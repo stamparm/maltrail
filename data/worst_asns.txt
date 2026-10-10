@@ -4903,19 +4903,32 @@
 94.141.122.0/24,partner-hosting-ltd
 
 # AS210558
+# Reference: https://x.com/spamhaus/status/2108547298271662393
 # Reference: https://ipinfo.io/AS210558
 
+124.198.131.0/24,services-1337-gmbh
+124.198.132.0/24,services-1337-gmbh
+147.90.182.0/24,services-1337-gmbh
+158.173.51.0/24,services-1337-gmbh
+185.19.40.0/24,services-1337-gmbh
 185.241.208.0/24,services-1337-gmbh
+185.241.211.0/24,services-1337-gmbh
+192.159.99.0/24,services-1337-gmbh
+193.26.115.0/24,services-1337-gmbh
 194.26.192.0/24,services-1337-gmbh
-203.159.90.0/24,services-1337-gmbh
 2.58.56.0/24,services-1337-gmbh
+203.159.90.0/24,services-1337-gmbh
 45.138.16.0/24,services-1337-gmbh
 45.141.215.0/24,services-1337-gmbh
 45.152.149.0/24,services-1337-gmbh
 45.154.98.0/24,services-1337-gmbh
 45.80.158.0/24,services-1337-gmbh
+45.83.28.0/24,services-1337-gmbh
+45.83.31.0/24,services-1337-gmbh
+45.88.186.0/24,services-1337-gmbh
 45.92.1.0/24,services-1337-gmbh
 45.94.31.0/24,services-1337-gmbh
+84.54.33.0/24,services-1337-gmbh
 91.206.169.0/24,services-1337-gmbh
 
 # AS215240
@@ -7062,3 +7075,140 @@
 # Reference: https://mokki.sh/posts/2026-10-08-cve-2026-88771-netscalers-versus-the-chinese-pitboss/
 
 94.26.35.0/24, pli-as
+
+# AS 149208
+# Reference: https://x.com/spamhaus/status/2108547298271662393
+# Reference: https://ipinfo.io/AS149208
+
+103.133.182.0/24,rakessen-as-in
+103.133.183.0/24,rakessen-as-in
+103.178.140.0/24,rakessen-as-in
+103.178.141.0/24,rakessen-as-in
+103.184.162.0/24,rakessen-as-in
+103.184.163.0/24,rakessen-as-in
+103.185.162.0/24,rakessen-as-in
+103.185.163.0/24,rakessen-as-in
+196.251.65.0/24,rakessen-as-in
+
+# AS 213474
+# Reference: https://x.com/spamhaus/status/2108547298271662393
+# Reference: https://ipinfo.io/AS213474
+
+138.226.239.0/24,homeline-as
+85.239.147.0/24,homeline-as
+
+# AS 207461
+# Reference: https://x.com/spamhaus/status/2108547298271662393
+# Reference: https://ipinfo.io/AS207461
+
+103.229.28.0/24,host-industry
+13.143.144.0/22,host-industry
+13.143.148.0/22,host-industry
+13.143.160.0/22,host-industry
+13.143.164.0/22,host-industry
+13.143.168.0/22,host-industry
+13.143.172.0/22,host-industry
+13.143.180.0/22,host-industry
+13.143.184.0/22,host-industry
+13.143.188.0/22,host-industry
+13.143.192.0/22,host-industry
+13.143.196.0/22,host-industry
+141.193.20.0/24,host-industry
+153.52.104.0/24,host-industry
+153.52.106.0/23,host-industry
+153.52.108.0/23,host-industry
+153.52.110.0/23,host-industry
+153.52.114.0/23,host-industry
+153.52.68.0/22,host-industry
+153.52.79.0/24,host-industry
+153.52.84.0/22,host-industry
+153.52.88.0/22,host-industry
+153.52.93.0/24,host-industry
+153.52.95.0/24,host-industry
+153.52.96.0/23,host-industry
+153.52.98.0/23,host-industry
+179.254.108.0/22,host-industry
+185.164.57.0/24,host-industry
+193.5.65.0/24,host-industry
+194.62.67.0/24,host-industry
+2.27.64.0/22,host-industry
+2.27.72.0/23,host-industry
+2.27.74.0/23,host-industry
+2.27.76.0/24,host-industry
+2.27.77.0/24,host-industry
+2.27.80.0/24,host-industry
+2.27.81.0/24,host-industry
+201.10.68.0/22,host-industry
+31.77.70.0/23,host-industry
+45.129.125.0/24,host-industry
+45.137.62.0/24,host-industry
+45.140.14.0/24,host-industry
+45.146.181.0/24,host-industry
+45.146.88.0/24,host-industry
+45.147.28.0/24,host-industry
+45.154.58.0/24,host-industry
+45.158.196.0/24,host-industry
+45.158.199.0/24,host-industry
+45.94.46.0/24,host-industry
+45.94.47.0/24,host-industry
+46.254.92.0/24,host-industry
+46.254.93.0/24,host-industry
+5.182.84.0/24,host-industry
+5.182.85.0/24,host-industry
+
+# AS 219143
+# Reference: https://x.com/spamhaus/status/2108547298271662393
+# Reference: https://ipinfo.io/AS219143
+
+13.143.247.0/24,ace-dc-ripe-as-primary
+
+# AS 202412
+# Reference: https://x.com/spamhaus/status/2108547298271662393
+# Reference: https://ipinfo.io/AS202412
+
+104.250.184.0/24,omegatech-as
+130.12.180.0/24,omegatech-as
+146.19.125.0/24,omegatech-as
+158.94.208.0/24,omegatech-as
+158.94.209.0/24,omegatech-as
+158.94.210.0/24,omegatech-as
+158.94.211.0/24,omegatech-as
+178.16.52.0/24,omegatech-as
+178.16.53.0/24,omegatech-as
+178.16.54.0/24,omegatech-as
+178.16.55.0/24,omegatech-as
+193.30.241.0/24,omegatech-as
+45.132.180.0/24,omegatech-as
+45.74.20.0/24,omegatech-as
+45.74.57.0/24,omegatech-as
+45.74.59.0/24,omegatech-as
+45.74.7.0/24,omegatech-as
+91.92.240.0/24,omegatech-as
+91.92.241.0/24,omegatech-as
+91.92.242.0/24,omegatech-as
+91.92.243.0/24,omegatech-as
+94.154.35.0/24,omegatech-as
+94.154.40.0/24,omegatech-as
+94.154.46.0/24,omegatech-as
+94.26.38.0/24,omegatech-as
+
+# AS 203861
+# Reference: https://x.com/spamhaus/status/2108547298271662393
+# Reference: https://ipinfo.io/AS203861
+
+217.60.77.0/24,miteflux-as
+31.58.218.0/24,miteflux-as
+31.59.160.0/24,miteflux-as
+5.175.215.0/24,miteflux-as
+
+# AS 15611
+# Reference: https://x.com/spamhaus/status/2108547298271662393
+# Reference: https://ipinfo.io/AS15611
+
+62.60.134.0/24,irost-as
+
+# AS 200908
+# Reference: https://x.com/spamhaus/status/2108547298271662393
+# Reference: https://ipinfo.io/AS200908
+
+45.81.154.0/24,intermanaged
