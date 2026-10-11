@@ -6855,6 +6855,9 @@
 # AS 209207
 # Reference: https://ipinfo.io/AS209207
 
+138.124.126.0/24,dhost-as
+138.124.79.0/24,dhost-as
+147.45.39.0/24,dhost-as
 147.45.61.0/24,dhost-as
 147.45.63.0/24,dhost-as
 153.80.249.0/24,dhost-as
@@ -6864,6 +6867,7 @@
 193.233.198.0/24,dhost-as
 193.233.75.0/24,dhost-as
 193.233.82.0/24,dhost-as
+94.103.1.0/24,dhost-as
 
 # AS 202425
 # Reference: https://ipinfo.io/AS202425
