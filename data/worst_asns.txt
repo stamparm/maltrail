@@ -7212,3 +7212,77 @@
 # Reference: https://ipinfo.io/AS200908
 
 45.81.154.0/24,intermanaged
+
+# AS 399629
+# Reference: https://ipinfo.io/AS399629
+# Reference: https://www.trendaisecurity.com/en-us/resources-insights/trendai-security-blog/earth-sirrush-russia-aligned-intrusion-set-4-years-evolving-espionage-tooling
+# Reference: https://cdn.sanity.io/files/ch6z6vqj/production/6841312eb734e41b43e14eeb5a9474df8a6c77d0.pdf
+
+149.248.76.0/24,blnwx
+149.248.77.0/24,blnwx
+149.248.78.0/24,blnwx
+149.248.79.0/24,blnwx
+162.252.198.0/24,blnwx
+162.252.199.0/24,blnwx
+162.33.176.0/24,blnwx
+162.33.177.0/24,blnwx
+162.33.178.0/24,blnwx
+162.33.179.0/24,blnwx
+168.100.10.0/24,blnwx
+168.100.11.0/24,blnwx
+168.100.8.0/24,blnwx
+168.100.9.0/24,blnwx
+172.86.75.0/24,blnwx
+192.153.57.0/24,blnwx
+193.149.129.0/24,blnwx
+193.149.176.0/24,blnwx
+193.149.180.0/24,blnwx
+193.149.185.0/24,blnwx
+193.149.187.0/24,blnwx
+193.149.189.0/24,blnwx
+193.149.190.0/24,blnwx
+195.85.114.0/24,blnwx
+195.85.115.0/24,blnwx
+198.13.158.0/24,blnwx
+198.13.159.0/24,blnwx
+199.217.98.0/24,blnwx
+199.217.99.0/24,blnwx
+199.91.220.0/24,blnwx
+199.91.221.0/24,blnwx
+206.166.251.0/24,blnwx
+206.188.196.0/24,blnwx
+206.188.197.0/24,blnwx
+206.71.148.0/24,blnwx
+206.71.149.0/24,blnwx
+216.203.20.0/24,blnwx
+216.203.21.0/24,blnwx
+216.245.184.0/24,blnwx
+45.61.136.0/24,blnwx
+45.61.137.0/24,blnwx
+45.61.138.0/24,blnwx
+45.61.139.0/24,blnwx
+64.111.92.0/24,blnwx
+64.111.93.0/24,blnwx
+64.190.113.0/24,blnwx
+64.52.80.0/24,blnwx
+64.7.198.0/24,blnwx
+64.7.199.0/24,blnwx
+64.94.84.0/24,blnwx
+64.94.85.0/24,blnwx
+64.95.10.0/24,blnwx
+64.95.11.0/24,blnwx
+64.95.12.0/24,blnwx
+64.95.13.0/24,blnwx
+65.38.120.0/24,blnwx
+65.38.121.0/24,blnwx
+66.179.30.0/24,blnwx
+66.179.31.0/24,blnwx
+67.217.228.0/24,blnwx
+69.48.228.0/24,blnwx
+69.48.229.0/24,blnwx
+69.67.172.0/24,blnwx
+69.67.173.0/24,blnwx
+72.5.42.0/24,blnwx
+72.5.43.0/24,blnwx
+96.9.124.0/24,blnwx
+96.9.125.0/24,blnwx
