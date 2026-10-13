@@ -5775,6 +5775,12 @@
 
 77.105.161.0/24,merox
 87.120.107.0/24,merox
+207.89.17.0/24,shinomiya
+45.128.234.0/24,shinomiya
+45.142.30.0/24,shinomiya
+85.137.252.0/24,shinomiya
+85.137.253.0/24,shinomiya
+87.120.107.0/24,shinomiya
 
 # AS61432
 # Reference: https://ipinfo.io/AS61432
