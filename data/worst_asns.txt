@@ -6737,16 +6737,48 @@
 # AS 218731
 # Reference: https://ipinfo.io/AS218731
 
+103.27.157.0/24,andris-jakovlevs
+132.243.212.0/24,andris-jakovlevs
+132.243.221.0/24,andris-jakovlevs
+132.243.223.0/24,andris-jakovlevs
+132.243.225.0/24,andris-jakovlevs
+132.243.231.0/24,andris-jakovlevs
+132.243.65.0/24,andris-jakovlevs
+150.241.124.0/24,andris-jakovlevs
+150.241.93.0/24,andris-jakovlevs
+153.52.77.0/24,andris-jakovlevs
+163.245.43.0/24,andris-jakovlevs
+163.245.52.0/24,andris-jakovlevs
+163.245.55.0/24,andris-jakovlevs
+178.17.59.0/24,andris-jakovlevs
+179.253.162.0/24,andris-jakovlevs
+179.253.166.0/24,andris-jakovlevs
+179.253.167.0/24,andris-jakovlevs
+185.238.191.0/24,andris-jakovlevs
+194.87.24.0/24,andris-jakovlevs
+195.66.27.0/24,andris-jakovlevs
 2.26.182.0/24,andris-jakovlevs
 2.26.186.0/24,andris-jakovlevs
+31.207.7.0/24,andris-jakovlevs
 31.77.109.0/24,andris-jakovlevs
 31.77.138.0/24,andris-jakovlevs
 31.77.168.0/24,andris-jakovlevs
 31.77.170.0/24,andris-jakovlevs
 31.77.219.0/24,andris-jakovlevs
 31.77.220.0/24,andris-jakovlevs
+31.77.247.0/24,andris-jakovlevs
+31.77.248.0/24,andris-jakovlevs
 31.77.56.0/24,andris-jakovlevs
 31.77.57.0/24,andris-jakovlevs
+78.40.209.0/24,andris-jakovlevs
+80.253.249.0/24,andris-jakovlevs
+84.21.189.0/24,andris-jakovlevs
+85.209.129.0/24,andris-jakovlevs
+87.58.201.0/24,andris-jakovlevs
+89.125.13.0/24,andris-jakovlevs
+89.125.37.0/24,andris-jakovlevs
+89.125.43.0/24,andris-jakovlevs
+89.125.48.0/24,andris-jakovlevs
 
 # AS 149440
 # Reference: https://ipinfo.io/AS149440
