@@ -113,7 +113,7 @@ Every run prints what it actually decided, so a misconfiguration is visible imme
 [i] interface(s): eth0
 [i] PACKET_FANOUT: enabled (group 41234, mode hash, defrag off) across 8 worker socket(s)
 [i] capture: snaplen=2000 buffer=64 MB timeout=100ms immediate=false
-[i] effective BPF filter: udp or icmp or (tcp and (tcp[tcpflags] == tcp-syn or port 80 ...))
+[i] effective BPF filter: (udp and not ((ip and udp port 443 and udp[8] & 0xc0 == 0x40) or ...)) or icmp or (tcp and ...)
 [i] workers: 8 (datalink 1)
 [i] trails: ipv4=144,758 ipv4:port=253,517 ipv6=2,014 wildcard-regex=27 whitelisted=2 malformed=0 memory=68.5 MB
 [i] whitelist: 3,440 entries, 18 CIDR range(s)
@@ -248,7 +248,7 @@ anything — it does not run a trail update and does not create the log director
 
 ```
 [o] log directory: '/var/log/maltrail' is writable
-[o] capture filter: udp or icmp or (tcp and (tcp[tcpflags] == tcp-syn or port 80 or port...
+[o] capture filter: (udp and not ((ip and udp port 443 and udp[8] & 0xc0 == 0x40) or (ip...
 [o] capture privileges: CAP_NET_RAW present
 [o] interface: eth0
 [o] workers: 8 (PACKET_FANOUT required; verify with tools/fanout_check.py as root)

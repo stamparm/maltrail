@@ -11,7 +11,7 @@ use std::time::{Duration, Instant};
 
 use maltrail_sensor::capture::{fanout, CaptureError, Handle};
 use maltrail_sensor::colorized;
-use maltrail_sensor::config::{Config, TimestampSource};
+use maltrail_sensor::config::{Config, FanoutMode, TimestampSource};
 use maltrail_sensor::ignore::IgnoreRules;
 use maltrail_sensor::metrics::Registry;
 use maltrail_sensor::output::{self, OutputConfig};
@@ -859,15 +859,20 @@ fn print_diagnostics(
     // roughly N times more of them. Measured on the corpus (tests/multi_worker_parity.rs): 91% of
     // heuristic alerts survive at 2 workers, 86% at 4, 65% at 8. Exact trail matching is per
     // packet and stateless, so IOC detection is unaffected at any worker count — the same test
-    // asserts that. This only fires when an operator has opted into fanout: the default is one
-    // worker precisely so that nobody pays this cost without asking for it.
-    if handles.len() > 1 && cfg.use_heuristics && scan_heuristics_enabled(cfg) {
+    // asserts that. `source` (the multi-worker default) keeps every packet of a host on one worker
+    // and loses none of them, so the warning is only for the modes that split a source.
+    if handles.len() > 1
+        && cfg.capture_fanout_mode != FanoutMode::Source
+        && cfg.use_heuristics
+        && scan_heuristics_enabled(cfg)
+    {
         cprintln!(
-            "[!] {} workers + scan heuristics: fanout hashes by flow but scans are counted per \
-             source, so thresholds trip later (~65% of alerts survive at 8 workers). Unset \
-             'CAPTURE_FANOUT'/'CAPTURE_WORKERS' for undiluted scan fidelity; trail detection is \
-             unaffected.",
-            handles.len()
+            "[!] {} workers + scan heuristics: fanout mode '{}' splits a source's packets across \
+             workers but scans are counted per source, so thresholds trip later (~65% of alerts \
+             survive at 8 workers under 'hash'). 'CAPTURE_FANOUT_MODE source' keeps them \
+             together; trail detection is unaffected.",
+            handles.len(),
+            cfg.capture_fanout_mode.label()
         );
     }
     cprintln!("[i] trails: {trail_summary}");

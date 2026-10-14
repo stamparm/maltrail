@@ -587,6 +587,45 @@ measured on the target hardware with `tools/fanout_check.py` plus the sensor's o
   pruned once per hour — all identical to `sensor.py`'s bounds.
 * Steady-state allocation on the non-alerting path: none.
 
+### 4h. Live capture cost (the AF_XDP question)
+
+Would an AF_XDP backend raise what one box can take? Only by removing the capture share of a
+packet's cost, so that share was measured. i5-12500 (6C/12T, `performance` governor), kernel
+6.8.0, libpcap 1.10.4, v3.5.0, 1,656,382 trails, the shipped `CAPTURE_FILTER`. Traffic: a seeded
+random mix (30% DNS, 30% SYN, 15% HTTP, 10% UDP, 10% ICMP, 5% TLS ClientHello; 126 B average,
+every packet passes the filter) replayed by `tcpreplay` from a network namespace over a veth pair,
+generator and worker pinned to different physical cores. 100 planted trail domains and 100 trail
+IPs per million packets were detected in every run.
+
+Per packet, 1 worker, 500k pps, 8M packets, 0 drops:
+
+| | ns | |
+| --- | --- | --- |
+| packet path (the sensor's own `ns/packet`) | 958 | |
+| everything else in the sensor process: libpcap ring walk, poll, loop, DLT | 24 | `task-clock` 982 − 958 |
+| kernel tap: `tpacket_rcv`, BPF filter, copy into the ring | ~55 | `perf record -a`: 1.63% of cycles vs 29.0% for the sensor process |
+| **capture share** | **~8%** | 79 of ~1,037 |
+
+The kernel tap runs in softirq on whichever CPU received the packet, not on the worker, so a
+`task-clock` of the sensor alone would have reported 2.4% and missed it. On the worker's own CPU,
+which is what bounds one worker's throughput, capture is the 24 ns. Userspace work is the same live
+and offline: 8,050 vs 8,234 user instructions per packet.
+
+Drop onset follows the packet path, not capture:
+
+| workers | offered | dropped | |
+| --- | --- | --- | --- |
+| 1 | 1.0 Mpps | 0 | |
+| 1 | 1.1 Mpps | 0 | 16M packets |
+| 1 | 1.3 Mpps | 7.1% | worker at 100% CPU, ~1.2 Mpps processed |
+| 2 | 2.81 Mpps | 21% | ~2.2 Mpps processed, 2 × the 1-worker ceiling |
+| 4 | 2.56 Mpps | 0 | the most two generators could offer |
+
+**Verdict: no AF_XDP backend.** Removing all of capture would buy at most ~8% system-wide and ~2.5%
+per worker; workers scale linearly, so more of them is the lever. veth builds an skb either way;
+on a real NIC, native XDP would also skip the stack's own receive work, which runs on the IRQ CPUs
+and does not limit the workers.
+
 ---
 
 ## 5. What was verified, and how
