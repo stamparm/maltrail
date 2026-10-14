@@ -14,6 +14,25 @@
 
 
 
+- Version 3.5 -> 3.6 (unreleased)
+
+[=] The default CAPTURE_FILTER keeps QUIC's data packets out of the capture
+    ring and passes only its handshake (the long-header packets, which carry
+    the SNI), the way it already passed only the start of a TCP connection.
+    QUIC is about half of what the old filter passed on a real transit link
+    (MAWI, Oct 2026). One worker under a 3 Mpps QUIC-heavy load went from 11%
+    dropped and 8,880 of 10,000 planted detections to nothing dropped and all
+    10,000. An existing maltrail.conf keeps its filter until it is updated.
+
+[!] The multi-worker startup warning "fanout hashes by flow" no longer
+    appears with CAPTURE_FANOUT_MODE source, the default, where it was false.
+
+[!] DISABLED_HEURISTICS udp_scanning / web_scanning now stop the per-packet
+    tracking those heuristics need, not only their alerts (+3.4% packets per
+    second with both muted, on a UDP-heavy mix).
+
+
+
 - Version 3.4 -> 3.5 (14 Oct 2026)
 
 [+] Runs on a 256 MB Raspberry Pi. The trail update needed ~1.1 GB and was

@@ -963,13 +963,16 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
 
     let mut url: Option<String> = None;
     if st.cfg.use_heuristics && path.starts_with('/') {
-        let segment = path.split('/').nth(1).unwrap_or("");
-        st.scan.track_path(
-            ep.src,
-            ep.dst,
-            segment,
-            PathDetail { sec, usec, src_port: ep.src_port, dst_port: ep.dst_port },
-        );
+        // Tracked only for web_scanning, so a muted heuristic costs nothing per request.
+        if st.heuristic_enabled("web_scanning") {
+            let segment = path.split('/').nth(1).unwrap_or("");
+            st.scan.track_path(
+                ep.src,
+                ep.dst,
+                segment,
+                PathDetail { sec, usec, src_port: ep.src_port, dst_port: ep.dst_port },
+            );
+        }
     } else if st.cfg.use_heuristics
         && ep.dst_port == 80
         && path.starts_with("http://")
@@ -1461,8 +1464,10 @@ fn udp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packe
         }
 
         // UDP scan coverage (nmap -sU): one source hitting many distinct UDP ports on one
-        // host. Benign UDP rarely fans many ports at one host.
-        if st.cfg.use_heuristics && !ep.dst.is_localhost() {
+        // host. Benign UDP rarely fans many ports at one host. Tracked only for udp_scanning, so
+        // a muted heuristic costs nothing per packet. (track_port and track_infection cannot be
+        // gated the same way: the sources they record also feed local_prefix().)
+        if st.cfg.use_heuristics && !ep.dst.is_localhost() && st.heuristic_enabled("udp_scanning") {
             st.scan.track_udp(
                 ep.src,
                 ep.dst,

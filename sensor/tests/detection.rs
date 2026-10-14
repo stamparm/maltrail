@@ -1291,3 +1291,36 @@ fn beaconing_off_with_heuristics_disabled() {
     }
     assert!(h.events().is_empty(), "{:?}", h.events());
 }
+
+#[test]
+fn a_muted_udp_or_web_scan_heuristic_tracks_nothing() {
+    // DISABLED_HEURISTICS used to mute only the alert: every UDP packet and HTTP request was still
+    // recorded into scan state nobody would read.
+    for muted in [false, true] {
+        let mut options = HarnessOptions::heuristics();
+        if muted {
+            options.extra.push("DISABLED_HEURISTICS udp_scanning, web_scanning".to_string());
+        }
+        let mut h = Harness::with_options(&[], options);
+        for i in 0..20u16 {
+            let packet =
+                eth(&ipv4(17, "203.0.113.9", "198.51.100.7", &udp(40000 + i, 1000 + i, &[0u8; 8])), 0x0800, None);
+            h.feed(&packet, i as u64, 0, 14);
+            let request = http_get(&format!("/dir{i}/index.html"), Some("198.51.100.8"), "curl/8.0");
+            let packet =
+                eth(&ipv4(6, "203.0.113.9", "198.51.100.8", &tcp(41000 + i, 80, 0x18, &request)), 0x0800, None);
+            h.feed(&packet, i as u64, 0, 14);
+        }
+        let keys = h.state.scan.key_count();
+        let tick = eth(&ipv4(17, "203.0.113.9", "192.0.2.2", &udp(1, 2, &[0u8; 8])), 0x0800, None);
+        h.feed(&tick, 25, 0, 14);
+        let scans = h.events().into_iter().filter(|e| e.info.contains("potential udp scanning")).count();
+        if muted {
+            assert_eq!(keys, 0, "a muted heuristic still built scan state");
+            assert_eq!(scans, 0);
+        } else {
+            assert_eq!(keys, 2, "one UDP and one web bucket expected");
+            assert_eq!(scans, 1, "positive control: the same traffic must alert when not muted");
+        }
+    }
+}
