@@ -297,8 +297,11 @@ python3 server.py
 ```
 
 Prebuilt sensor binaries are attached to current releases with SHA-256 checksums: Linux `x86_64`
-and `aarch64` against both glibc and musl, macOS on Apple silicon and Intel, FreeBSD `amd64`, and
-Windows `x86_64`.
+and `aarch64` against both glibc and musl, 32-bit ARM (`armv6`/`armv7`, static musl), macOS on Apple
+silicon and Intel, FreeBSD `amd64`, and Windows `x86_64`.
+
+A binary is not a complete sensor on its own. Install with `install.sh` (or `install.ps1` on
+Windows), which downloads the right binary for you.
 
 The glibc builds link libpcap statically and target glibc 2.28, so the C library is the only thing
 they need — nothing to install, on RHEL 8+, Debian 10+, Ubuntu 18.04+ and Leap 15.x alike. The musl
