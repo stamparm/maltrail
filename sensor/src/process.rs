@@ -255,6 +255,15 @@ fn check_domain_inner(
             }
         }
 
+        // IDN homograph of a listed (popular) domain - see heuristics/homograph.rs.
+        if !result && !whitelisted && st.cfg.use_heuristics && st.heuristic_enabled("idn_homograph") {
+            if let Some(brand) = crate::heuristics::homograph::impersonated(q, &st.whitelist).map(str::to_string) {
+                result = true;
+                let info = format!("potential homograph of {brand} (suspicious)");
+                emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(q.to_string()), &info, "(heuristic)");
+            }
+        }
+
         // Wildcard regex trails stay fully suppressed by any whitelisted ancestor: only an
         // exact-name trail (the parent walk above) earns the precedence.
         if !result && !whitelisted && !st.trails.db().regex().is_empty() {
@@ -606,6 +615,32 @@ fn heuristics_sweep(st: &mut WorkerState, sec: u64, usec: u32) {
                 "(heuristic)",
             );
             st.scan.mark_udp_alerted(src, dst);
+        }
+    }
+
+    // --- ICMP tunnelling --- (the trail is the far end: that is where the data goes)
+    if st.heuristic_enabled("icmp_tunneling") {
+        for (src, dst, _) in st.scan.icmp_tunnel_candidates() {
+            if st.whitelist.check_whitelisted_ip(src) || st.whitelist.check_whitelisted_ip(dst) {
+                continue;
+            }
+            let label = match dst {
+                Ip::V4(_) => PROTO::ICMP,
+                Ip::V6(_) => settings::ipproto_label(58).unwrap_or(PROTO::ICMP),
+            };
+            let trail = dst.render().as_str().to_string();
+            emit_ep(
+                st,
+                sec,
+                usec,
+                Endpoints { src, src_port: 0, dst, dst_port: 0 },
+                label,
+                TRAIL::IP,
+                Field::Text(trail),
+                "potential icmp tunneling (suspicious)",
+                "(heuristic)",
+            );
+            st.scan.mark_icmp_alerted(src, dst);
         }
     }
 
@@ -1909,6 +1944,22 @@ fn other_proto(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader, 
         // ICMPv6: only echo requests
         if dns_or_icmp_type(ip_data, header.header_len) != Some(0x80) {
             return;
+        }
+    }
+
+    // ICMP tunnelling: count distinct echo payloads that are no ping tool's (heuristics/icmp.rs)
+    if (protocol == 1 || protocol == 58)
+        && st.cfg.use_heuristics
+        && st.heuristic_enabled("icmp_tunneling")
+        && !header.dst.is_localhost()
+    {
+        if let Some(data) = ip_data.get(header.header_len + 8..) {
+            if !crate::heuristics::icmp::is_standard_echo_payload(data) {
+                use std::hash::BuildHasher;
+                let digest = crate::fasthash::SeededBuildHasher::default()
+                    .hash_one(crate::heuristics::icmp::distinct_part(data));
+                st.scan.track_icmp(header.src, header.dst, digest, PortDetail { sec, usec, src_port: 0, dst_port: 0 });
+            }
         }
     }
 

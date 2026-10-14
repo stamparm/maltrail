@@ -195,11 +195,14 @@ pub struct ScanState {
     web_scan: FastMap<(Ip, Ip), Bucket<Box<str>, PathDetail, crate::fasthash::SeededBuildHasher>>,
     /// `(src_ip, dst_ip) -> {udp dst_port}` — UDP scanning
     udp_scan: FastMap<(Ip, Ip), Bucket<u16, PortDetail>>,
+    /// (src, dst) -> digests of the distinct non-standard echo payloads (`heuristics::icmp`).
+    icmp_tunnel: FastMap<(Ip, Ip), Bucket<u64, PortDetail>>,
 
     alerted_port: FastSet<(Ip, Ip)>,
     alerted_infection: FastSet<(Ip, u16)>,
     alerted_path: FastSet<(Ip, Ip)>,
     alerted_udp: FastSet<(Ip, Ip)>,
+    alerted_icmp: FastSet<(Ip, Ip)>,
 
     // Keys that have crossed their threshold, queued as it happens.
     //
@@ -212,6 +215,7 @@ pub struct ScanState {
     ready_infection: Vec<(Ip, u16)>,
     ready_web: Vec<(Ip, Ip)>,
     ready_udp: Vec<(Ip, Ip)>,
+    ready_icmp: Vec<(Ip, Ip)>,
 
     /// `_get_local_prefix()` support: how many tracked source addresses share each `A.B.`
     /// prefix, keyed NATIVELY. Rendering the address and hashing the resulting `String` showed up
@@ -244,14 +248,17 @@ impl ScanState {
             infection: FastMap::default(),
             web_scan: FastMap::default(),
             udp_scan: FastMap::default(),
+            icmp_tunnel: FastMap::default(),
             alerted_port: FastSet::default(),
             alerted_infection: FastSet::default(),
             alerted_path: FastSet::default(),
             alerted_udp: FastSet::default(),
+            alerted_icmp: FastSet::default(),
             ready_port: Vec::new(),
             ready_infection: Vec::new(),
             ready_web: Vec::new(),
             ready_udp: Vec::new(),
+            ready_icmp: Vec::new(),
             prefix_counts: FastMap::default(),
             thresholds,
             connect_keys: 0,
@@ -458,6 +465,46 @@ impl ScanState {
         self.alerted_udp.insert((src, dst));
     }
 
+    /// One echo request whose payload matched no known ping pattern; `digest` identifies the
+    /// payload, so a constant one counts once however often it repeats.
+    pub fn track_icmp(&mut self, src: Ip, dst: Ip, digest: u64, detail: PortDetail) {
+        let threshold = crate::heuristics::icmp::ICMP_TUNNEL_THRESHOLD;
+        match self.icmp_tunnel.get_mut(&(src, dst)) {
+            Some(bucket) => {
+                if insert_and_crossed(bucket, digest, threshold) {
+                    self.ready_icmp.push((src, dst));
+                }
+            }
+            None => {
+                if self.icmp_tunnel.len() >= SCAN_MAX_KEYS {
+                    return;
+                }
+                let mut bucket = Bucket::default();
+                bucket.items.insert(digest);
+                bucket.detail = Some(detail);
+                self.icmp_tunnel.insert((src, dst), bucket);
+            }
+        }
+    }
+
+    pub fn icmp_tunnel_candidates(&mut self) -> Vec<(Ip, Ip, PortDetail)> {
+        let alerted = &self.alerted_icmp;
+        self.ready_icmp.retain(|k| !alerted.contains(k));
+        let mut out: Vec<(Ip, Ip, PortDetail)> = self
+            .ready_icmp
+            .iter()
+            .filter_map(|(src, dst)| {
+                self.icmp_tunnel.get(&(*src, *dst)).and_then(|b| b.detail).map(|d| (*src, *dst, d))
+            })
+            .collect();
+        out.sort_by_key(|(src, dst, _)| (*src, *dst));
+        out
+    }
+
+    pub fn mark_icmp_alerted(&mut self, src: Ip, dst: Ip) {
+        self.alerted_icmp.insert((src, dst));
+    }
+
     /// The most common `A.B.` prefix among tracked source addresses (`_get_local_prefix`).
     /// O(distinct prefixes) rather than O(tracked keys). Ties break on the larger string, which
     /// is what Python's `sorted(..., reverse=True)` does.
@@ -478,21 +525,24 @@ impl ScanState {
         self.infection.clear();
         self.web_scan.clear();
         self.udp_scan.clear();
+        self.icmp_tunnel.clear();
         self.alerted_port.clear();
         self.alerted_infection.clear();
         self.alerted_path.clear();
         self.alerted_udp.clear();
+        self.alerted_icmp.clear();
         self.ready_port.clear();
         self.ready_infection.clear();
         self.ready_web.clear();
         self.ready_udp.clear();
+        self.ready_icmp.clear();
         self.prefix_counts.clear();
         self.connect_keys = 0;
         self.window_start = sec;
     }
 
     pub fn key_count(&self) -> usize {
-        self.connect_keys + self.web_scan.len() + self.udp_scan.len()
+        self.connect_keys + self.web_scan.len() + self.udp_scan.len() + self.icmp_tunnel.len()
     }
 
     #[cfg(test)]

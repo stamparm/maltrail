@@ -3,6 +3,8 @@
 pub mod beacon;
 pub mod dns_exhaustion;
 pub mod dns_tunneling;
+pub mod homograph;
+pub mod icmp;
 pub mod nxdomain;
 pub mod scan;
 
@@ -10,7 +12,7 @@ use crate::addr::Ip;
 
 /// `sensor.py:_HEURISTIC_NAMES` — the heuristics an operator can mute individually via
 /// `DISABLED_HEURISTICS`.
-pub const HEURISTIC_NAMES: [&str; 8] = [
+pub const HEURISTIC_NAMES: [&str; 10] = [
     "port_scanning",
     "udp_scanning",
     "infection",
@@ -19,6 +21,8 @@ pub const HEURISTIC_NAMES: [&str; 8] = [
     "long_domain",
     "beaconing",
     "dns_tunneling",
+    "icmp_tunneling",
+    "idn_homograph",
 ];
 
 /// Hard cap on the number of distinct keys any one heuristic accumulator may hold.

@@ -16,6 +16,16 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[+] Heuristic 'icmp_tunneling' (icmpsh, ptunnel, ICMP exfiltration): more
+    than 10 distinct echo payloads from one host to one destination that match
+    no ping tool's pattern. Real iputils ping (default, -s, -p), mtr and
+    busybox ping raised nothing; a 40-request tunnel was reported.
+
+[+] Heuristic 'idn_homograph': a queried name whose xn-- label, with its
+    Cyrillic/Greek/Armenian lookalike letters read as Latin, becomes a
+    whitelisted domain it is not (xn--pple-43d.com, "аpple.com"). Every IDN in
+    the Cisco and Alexa top 1M lists (3,291) raised nothing.
+
 [=] The default CAPTURE_FILTER keeps QUIC's data packets out of the capture
     ring and passes only its handshake (the long-header packets, which carry
     the SNI), the way it already passed only the start of a TCP connection.

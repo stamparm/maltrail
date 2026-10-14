@@ -1324,3 +1324,81 @@ fn a_muted_udp_or_web_scan_heuristic_tracks_nothing() {
         }
     }
 }
+
+fn echo_request(src: &str, dst: &str, seq: u16, payload: &[u8]) -> Vec<u8> {
+    let mut icmp = vec![8, 0, 0, 0, 0x12, 0x34];
+    icmp.extend_from_slice(&seq.to_be_bytes());
+    icmp.extend_from_slice(payload);
+    eth(&ipv4(1, src, dst, &icmp), 0x0800, None)
+}
+
+fn icmp_tunnel_events(payload: impl Fn(u16) -> Vec<u8>) -> usize {
+    let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
+    for seq in 0..40u16 {
+        h.feed(&echo_request("10.0.0.5", "198.51.100.77", seq, &payload(seq)), 1 + u64::from(seq) / 4, 0, 14);
+    }
+    h.feed(&echo_request("10.0.0.6", "192.0.2.1", 0, &[]), 20, 0, 14);
+    h.events().into_iter().filter(|e| e.info.contains("icmp tunneling")).count()
+}
+
+#[test]
+fn icmp_tunnel_is_detected_and_real_pings_are_not() {
+    // icmpsh/ptunnel-like: data in every request
+    let tunnel = icmp_tunnel_events(|seq| format!("C:\\> dir /s part {seq} {}", u32::from(seq) * 7919).into_bytes());
+    assert_eq!(tunnel, 1, "a tunnel must be reported, once");
+
+    let windows = |_| b"abcdefghijklmnopqrstuvwabcdefghi".to_vec();
+    let linux = |seq: u16| {
+        let mut p = vec![0u8; 16];
+        p[..2].copy_from_slice(&seq.to_be_bytes()); // the timestamp changes every packet
+        p.extend(16u8..56);
+        p
+    };
+    let macos = |seq: u16| {
+        let mut p = vec![0u8; 8];
+        p[..2].copy_from_slice(&seq.to_be_bytes());
+        p.extend(8u8..56);
+        p
+    };
+    let zeros = |_| vec![0u8; 64];
+    let monitor = |_| b"Prometheus Blackbox Exporter".to_vec();
+    // `ping -p 1234`: a changing timestamp, then a fill no table knows
+    let custom_fill = |seq: u16| {
+        let mut p = vec![0u8; 16];
+        p[..2].copy_from_slice(&seq.to_be_bytes());
+        p.extend([0x12, 0x34].repeat(20));
+        p
+    };
+    for (name, events) in [
+        ("windows", icmp_tunnel_events(windows)),
+        ("linux", icmp_tunnel_events(linux)),
+        ("macos", icmp_tunnel_events(macos)),
+        ("zeros", icmp_tunnel_events(zeros)),
+        ("constant monitoring payload", icmp_tunnel_events(monitor)),
+        ("custom fill after a timestamp", icmp_tunnel_events(custom_fill)),
+    ] {
+        assert_eq!(events, 0, "{name} ping reported as a tunnel");
+    }
+}
+
+#[test]
+fn idn_homograph_of_a_whitelisted_domain_is_detected() {
+    // The harness whitelist is empty unless USER_WHITELIST is set; an empty user file loads the
+    // shipped data/whitelist.txt with it, which is the reference set this heuristic needs.
+    let empty = std::env::temp_dir().join(format!("mt-homograph-{}.txt", std::process::id()));
+    std::fs::write(&empty, "").unwrap();
+    let query = |name: &str| {
+        let mut options = HarnessOptions::heuristics();
+        options.extra.push(format!("USER_WHITELIST {}", empty.display()));
+        let mut h = Harness::with_options(&[], options);
+        h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40000, 53, &dns(name))), 1);
+        h.events().into_iter().filter(|e| e.info.contains("homograph")).map(|e| e.info).collect::<Vec<_>>()
+    };
+    // Cyrillic а + "pple.com", and all-Cyrillic "аррӏе.com"
+    assert_eq!(query("xn--pple-43d.com"), vec!["potential homograph of apple.com (suspicious)"]);
+    assert_eq!(query("xn--80ak6aa92e.com"), vec!["potential homograph of apple.com (suspicious)"]);
+    // an ordinary IDN and the real name stay silent
+    assert!(query("xn--mnchen-3ya.de").is_empty());
+    assert!(query("apple.com").is_empty());
+    let _ = std::fs::remove_file(&empty);
+}
