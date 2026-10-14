@@ -313,14 +313,15 @@ fn run() -> i32 {
     };
 
     let trail_summary = format!(
-        "ipv4={} ipv4:port={} ipv6={} wildcard-regex={} whitelisted={} malformed={} memory={:.1} MB",
+        "ipv4={} ipv4:port={} ipv6={} wildcard-regex={} whitelisted={} malformed={} memory={:.1} MB{}",
         thousands(db.ip4_count() as u64),
         thousands(db.ip4_port_count() as u64),
         thousands(db.ip6_count() as u64),
         db.regex().len(),
         thousands(stats.whitelisted as u64),
         stats.malformed,
-        db.memory_bytes() as f64 / (1024.0 * 1024.0)
+        db.memory_bytes() as f64 / (1024.0 * 1024.0),
+        if db.is_file_backed() { " (file-backed)" } else { "" }
     );
     let skipped_regexes: Vec<String> = db.regex().skipped().to_vec();
     let repaired_regexes: usize = db.regex().repaired().len();
@@ -1040,7 +1041,7 @@ fn warn_if_trails_are_stale(cfg: &Config) {
 
 /// Loader options taken from the configuration.
 fn load_options(cfg: &Config) -> trails::LoadOptions {
-    trails::LoadOptions { repair_truncated_trails: cfg.repair_truncated_trails }
+    trails::LoadOptions { repair_truncated_trails: cfg.repair_truncated_trails, ..Default::default() }
 }
 
 fn non_empty(value: &str) -> Option<String> {

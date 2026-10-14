@@ -107,7 +107,7 @@ fn every_row_python_loads_is_loaded_identically_by_rust() {
 
     let wl = Whitelist::load(&repo_root(), None);
     // Strict mode: reproduce build_trails_regex() exactly, so the wildcard sets must match too.
-    let strict = LoadOptions { repair_truncated_trails: false };
+    let strict = LoadOptions { repair_truncated_trails: false, ..Default::default() };
     let (db, stats) = trails::load_with(&csv, &wl, strict).unwrap();
 
     assert_eq!(stats.loaded, dump.count, "Rust accepted {} rows, Python accepted {}", stats.loaded, dump.count);
@@ -177,8 +177,10 @@ fn repairing_mangled_patterns_only_ever_adds_wildcard_trails() {
         return;
     };
     let wl = Whitelist::load(&repo_root(), None);
-    let (strict, s1) = trails::load_with(&csv, &wl, LoadOptions { repair_truncated_trails: false }).unwrap();
-    let (repaired, s2) = trails::load_with(&csv, &wl, LoadOptions { repair_truncated_trails: true }).unwrap();
+    let (strict, s1) =
+        trails::load_with(&csv, &wl, LoadOptions { repair_truncated_trails: false, ..Default::default() }).unwrap();
+    let (repaired, s2) =
+        trails::load_with(&csv, &wl, LoadOptions { repair_truncated_trails: true, ..Default::default() }).unwrap();
 
     assert_eq!(s1.loaded, s2.loaded, "repair must not change which rows load");
     assert_eq!(s1.malformed, s2.malformed);

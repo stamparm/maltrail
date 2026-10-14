@@ -14,6 +14,7 @@
 
 pub mod loader;
 pub mod regexset;
+pub mod region;
 pub mod table;
 
 use std::path::Path;
@@ -119,6 +120,11 @@ impl TrailDb {
             + self.pairs.iter().map(|(a, b)| a.len() + b.len() + 32).sum::<usize>()
     }
 
+    /// Whether the store lives in file-backed (reclaimable) memory rather than on the heap.
+    pub fn is_file_backed(&self) -> bool {
+        self.strings.is_mapped()
+    }
+
     pub fn ip4_count(&self) -> usize {
         self.ip4.len()
     }
@@ -144,11 +150,16 @@ pub struct TrailDbBuilder {
 
 impl TrailDbBuilder {
     pub fn new(estimated_rows: usize, arena_hint: usize) -> TrailDbBuilder {
+        TrailDbBuilder::new_in(estimated_rows, arena_hint, None)
+    }
+
+    /// `new()`, with the big tables file-backed when `spill` is given (see `region.rs`).
+    pub fn new_in(estimated_rows: usize, arena_hint: usize, spill: Option<&region::Spill>) -> TrailDbBuilder {
         TrailDbBuilder {
             pairs: Vec::with_capacity(4096),
-            strings: StrTable::with_capacity(estimated_rows, arena_hint),
-            ip4: IntTable::with_capacity(estimated_rows / 8 + 16),
-            ip4_port: IntTable::with_capacity(estimated_rows / 8 + 16),
+            strings: StrTable::with_capacity_in(estimated_rows, arena_hint, spill),
+            ip4: IntTable::with_capacity_in(estimated_rows / 8 + 16, spill),
+            ip4_port: IntTable::with_capacity_in(estimated_rows / 8 + 16, spill),
             ip6: IntTable::with_capacity(64),
             ip6_port: crate::fasthash::FastMap::default(),
             len: 0,
@@ -194,6 +205,9 @@ impl TrailDbBuilder {
     }
 
     pub fn finish(self, regex: TrailRegex) -> TrailDb {
+        self.strings.flush_async();
+        self.ip4.flush_async();
+        self.ip4_port.flush_async();
         TrailDb {
             pairs: self.pairs,
             strings: self.strings,

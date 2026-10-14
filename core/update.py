@@ -32,8 +32,8 @@ from core import custom_trails
 from core.common import bogon_ip
 from core.common import cdn_ip
 from core.common import check_whitelisted
-from core.common import load_trails
 from core.common import retrieve_content
+from core.common import retrieve_to_file
 from core.compat import xrange
 from core.enums import HTTP_HEADER
 from core.geo import GEO_DELTA_MAGIC
@@ -63,6 +63,7 @@ from core.settings import LOCAL_STATIC_TRAIL_FILES
 from core.settings import ROOT_DIR
 from core.settings import UNICODE_ENCODING
 from core.settings import USERS_DIR
+from core.disktrails import DiskTrailsDict
 from core.trailsdict import TrailsDict
 import urllib.error
 import urllib.parse
@@ -149,6 +150,11 @@ def _store_etag(path, etag):
     except (IOError, OSError):
         pass
 
+# Below this much available memory, update_trails() merges on disk (see _build_store()). The
+# in-memory merge peaks at ~255 MB on a 64-bit host (1.9M trails, feeds included), so this is
+# three times that.
+TRAILS_BUILD_MEMORY_THRESHOLD = 768 * 1024 * 1024
+
 def _atomic_replace(src, dst):
     # NOTE: rename within the same directory is atomic on POSIX, so concurrent readers (sensor worker reloads,
     # the httpd '/trails' endpoint, downstream UPDATE_SERVER sensors) always see either the old or the new
@@ -184,8 +190,9 @@ def write_confidence_file(trails, duplicates):
     tmp_file = "%s.new" % path
     try:
         with _fopen(tmp_file, "w+", codecs.open) as f:
-            for key in sorted(trails.keys()):
-                f.write("%s\t%d\n" % (key, confidence_score(trails[key][1], len(duplicates.get(key, ())))))
+            items = trails.sorted_items() if hasattr(trails, "sorted_items") else ((_, trails[_]) for _ in sorted(trails.keys()))
+            for key, value in items:
+                f.write("%s\t%d\n" % (key, confidence_score(value[1], len(duplicates.get(key, ())))))
         _atomic_replace(tmp_file, path)
         return True
     except Exception as ex:
@@ -215,7 +222,6 @@ def fetch_static_trails(offline=False):
 
     cache = "%s.static" % config.TRAILS_FILE
     stamp = "%s.sha256" % cache
-    content = None
 
     if not config.STATIC_TRAILS_URL and not os.path.isfile(cache):
         # Matching known-bad infrastructure IS Maltrail. Without a static trail source it keeps the
@@ -246,12 +252,20 @@ def fetch_static_trails(offline=False):
         except (OSError, IOError):
             return None
 
-    def _read_cache():
+    def _usable(path):
+        # what `content.count(',') > 1` asked of the whole payload, without holding it
         try:
-            with open(cache, "rb") as f:
-                return f.read().decode(UNICODE_ENCODING)
+            with open(path, "rb") as f:
+                commas = 0
+                for chunk in iter(lambda: f.read(1 << 16), b""):
+                    commas += chunk.count(b',')
+                    if commas > 1:
+                        return True
         except (OSError, IOError):
-            return None
+            pass
+        return False
+
+    usable = False
 
     if not offline and config.STATIC_TRAILS_URL:
         url = config.STATIC_TRAILS_URL
@@ -265,31 +279,43 @@ def fetch_static_trails(offline=False):
 
         if published and published == _cached_sha() and os.path.isfile(cache):
             print(" [o] '%s' (unchanged, %s)" % (url, published[:12]))
-            content = _read_cache()
+            usable = _usable(cache)
         else:
             print(" [o] '%s'" % url)
             raw = retrieve_content(url, binary=True)
 
-            if raw[:2] == b"\x1f\x8b":       # gzip magic; a plain .csv URL still works
-                try:
-                    raw = gzip.GzipFile("", "rb", 9, io.BytesIO(raw)).read()
-                except Exception as ex:
-                    print("[x] the static trails could not be decompressed ('%s')" % ex)
-                    raw = b""
+            # Decompressed straight to disk and hashed on the way. The payload is ~87 MB unpacked,
+            # and holding it (plus a decoded copy, plus the dict built from it) is what used to put
+            # a trail update past the memory of a small box.
+            tmp = "%s.new" % cache
+            sha = hashlib.sha256()
+            size = 0
+            try:
+                with open(tmp, "wb") as f:
+                    source = gzip.GzipFile("", "rb", 9, io.BytesIO(raw)) if raw[:2] == b"\x1f\x8b" else io.BytesIO(raw)  # gzip magic; a plain .csv URL still works
+                    raw = None
+                    try:
+                        for chunk in iter(lambda: source.read(1 << 20), b""):
+                            sha.update(chunk)
+                            f.write(chunk)
+                            size += len(chunk)
+                    except Exception as ex:
+                        print("[x] the static trails could not be decompressed ('%s')" % ex)
+                        size = 0
+            except (OSError, IOError) as ex:
+                print("[x] unable to cache the static trails ('%s')" % ex)
+                size = 0
 
-            digest = hashlib.sha256(raw).hexdigest() if raw else None
+            digest = sha.hexdigest() if size else None
 
             if published and digest and digest != published:
                 # Refuse a payload that is not the one that was published. A truncated download is
                 # the dangerous case: it parses fine and is simply missing indicators.
                 print("[x] the static trails do not match their published sha256 (%s != %s) - keeping the cache" % (digest[:12], published[:12]))
-            elif raw and raw.count(b',') > 1:
-                content = raw.decode(UNICODE_ENCODING)
+            elif size and _usable(tmp):
                 try:
-                    tmp = "%s.new" % cache
-                    with open(tmp, "wb") as f:
-                        f.write(raw)
                     _atomic_replace(tmp, cache)
+                    usable = True
                     if digest:
                         with open("%s.new" % stamp, "w") as f:
                             f.write(digest)
@@ -299,27 +325,44 @@ def fetch_static_trails(offline=False):
             else:
                 print("[x] unable to retrieve the static trails from '%s'" % url)
 
-    if content is None:
-        content = _read_cache()
-        if content is not None:
+            try:
+                if os.path.exists(tmp):
+                    os.remove(tmp)
+            except (OSError, IOError):
+                pass
+
+    if not usable and os.path.isfile(cache):
+        usable = _usable(cache)
+        if usable:
             print("[i] using the cached static trails ('%s')" % cache)
 
-    if not content:
+    if not usable:
         # Loudly. An empty static set is 1.6M missing indicators, and every symptom of it - a
         # server that starts, a dashboard that renders, a sensor that reports healthy - looks
         # exactly like a quiet network.
         print("[!] no static trails available: '%s' could not be retrieved and there is no cache at '%s'" % (config.STATIC_TRAILS_URL or "<STATIC_TRAILS_URL unset>", cache))
         return {}
 
-    # csv.reader, not split(','): 24 trails contain a comma of their own (regex trails such as
-    # `[0-9]{2,3}\.ru`, URL trails such as `/44285,5327891204.dat`). This is the same dialect
-    # load_trails() uses on trails.csv.
-    retval = {}
-    for row in csv.reader(io.StringIO(content), delimiter=',', quotechar='"'):
-        if row and len(row) == 3:
-            retval[row[0]] = (row[1], row[2])
+    return _StaticTrails(cache)
 
-    return retval
+class _StaticTrails(object):
+    """
+    The cached static aggregate as the {trail: (info, reference)} mapping _merge() consumes, read
+    from disk row by row instead of built as a 1.7M-entry dict first. The aggregate is published with
+    unique keys, so streaming it merges exactly what the dict did.
+    """
+
+    def __init__(self, path):
+        self.path = path
+
+    def items(self):
+        # csv.reader, not split(','): 24 trails contain a comma of their own (regex trails such as
+        # `[0-9]{2,3}\.ru`, URL trails such as `/44285,5327891204.dat`). This is the same dialect
+        # load_trails() uses on trails.csv.
+        with io.open(self.path, "r", encoding=UNICODE_ENCODING, newline="") as f:
+            for row in csv.reader(f, delimiter=',', quotechar='"'):
+                if row and len(row) == 3:
+                    yield row[0], (row[1], row[2])
 
 def fetch_provenance(offline=False):
     """Download the provenance sidecar next to TRAILS_FILE, if it has changed.
@@ -382,6 +425,79 @@ def fetch_provenance(offline=False):
         print("[x] unable to store the provenance sidecar ('%s')" % ex)
 
 
+def _available_memory():
+    """
+    Bytes this process could still allocate: MemAvailable, capped by the cgroup limit of every
+    cgroup (v2 or v1) it sits in - a container or a systemd MemoryMax= is the limit that kills it,
+    and /proc/meminfo knows nothing about either. None when neither can be read (non-Linux).
+    """
+
+    candidates = []
+    try:
+        with open("/proc/meminfo") as f:
+            for line in f:
+                if line.startswith("MemAvailable:"):
+                    candidates.append(int(line.split()[1]) * 1024)
+    except (OSError, IOError, ValueError):
+        pass
+
+    def _read(path):
+        try:
+            with open(path) as f:
+                value = f.read().strip()
+            return None if value in ("", "max") else int(value)
+        except (OSError, IOError, ValueError):
+            return None
+
+    def _cache(path, field):
+        # page cache is charged to the cgroup but given back under pressure, so it is not "used"
+        try:
+            with open(path) as f:
+                for line in f:
+                    if line.split()[0] == field:
+                        return int(line.split()[1])
+        except (OSError, IOError, ValueError, IndexError):
+            pass
+        return 0
+
+    try:
+        with open("/proc/self/cgroup") as f:
+            entries = [line.strip().split(':', 2) for line in f if line.strip()]
+    except (OSError, IOError):
+        entries = []
+
+    for hierarchy, controllers, path in (_ for _ in entries if len(_) == 3):
+        if hierarchy == "0":
+            root, limit_name, usage_name, cache_field = "/sys/fs/cgroup", "memory.max", "memory.current", "file"
+        elif "memory" in controllers.split(','):
+            root, limit_name, usage_name, cache_field = "/sys/fs/cgroup/memory", "memory.limit_in_bytes", "memory.usage_in_bytes", "total_cache"
+        else:
+            continue
+        # every ancestor's limit applies; inside a container the namespace root is the own cgroup
+        parts = [_ for _ in path.split('/') if _]
+        for i in xrange(len(parts), -1, -1):
+            directory = os.path.join(root, *parts[:i])
+            limit, usage = _read(os.path.join(directory, limit_name)), _read(os.path.join(directory, usage_name))
+            if limit is not None and usage is not None and limit < (1 << 60):
+                candidates.append(max(0, limit - usage + _cache(os.path.join(directory, "memory.stat"), cache_field)))
+
+    return min(candidates) if candidates else None
+
+def _build_store():
+    """
+    Where update_trails() merges the trail set. In memory that is ~255 MB at 1.9M trails on a 64-bit
+    host - fine almost anywhere, but not on a Raspberry Pi or a small VPS, where the update used to
+    be OOM-killed on every run and the sensor kept detecting on whatever stale set it had. Below the
+    threshold the merge goes to a SQLite file next to TRAILS_FILE instead: same code, same result
+    (DiskTrailsDict keeps dict semantics), ~30 MB, about four times the time.
+    """
+
+    available = _available_memory()
+    if available is not None and available < TRAILS_BUILD_MEMORY_THRESHOLD:
+        print("[i] %d MB of memory available - merging trails on disk ('%s')" % (available // (1024 * 1024), "%s.build" % config.TRAILS_FILE))
+        return DiskTrailsDict("%s.build" % config.TRAILS_FILE)
+    return TrailsDict()
+
 def update_trails(force=False, offline=False):
     """
     Update trails from feeds
@@ -410,20 +526,31 @@ def update_trails(force=False, offline=False):
             headers[HTTP_HEADER.IF_NONE_MATCH] = etag
 
         response = {}
-        content = retrieve_content(config.UPDATE_SERVER, headers=headers, response=response)
+        tmp_trails_file = "%s.new" % config.TRAILS_FILE
+        # Streamed to disk: the set is ~100 MB, and a small sensor box is exactly the deployment
+        # that pulls it from a server instead of building it.
+        size = retrieve_to_file(config.UPDATE_SERVER, tmp_trails_file, headers=headers, response=response)
+
+        def _usable(path):
+            try:
+                with open(path, "rb") as f:
+                    commas = 0
+                    for chunk in iter(lambda: f.read(1 << 16), b""):
+                        commas += chunk.count(b',')
+                        if commas >= 2:
+                            return True
+            except (OSError, IOError):
+                pass
+            return False
 
         if response.get("code") == NOT_MODIFIED:
             # The server says the set we already hold is current, so the ~84 MB is not sent and
             # not rebuilt. _stored_etag() only offers a validator while that set is still on disk,
             # so this branch cannot leave us with nothing.
             print("[i] trails from '%s' are unchanged" % config.UPDATE_SERVER)
-            trails = load_trails()
-        elif not content or content.count(',') < 2:
+        elif not size or not _usable(tmp_trails_file):
             print("[x] unable to retrieve data from '%s'" % config.UPDATE_SERVER)
         else:
-            tmp_trails_file = "%s.new" % config.TRAILS_FILE
-            with _fopen(tmp_trails_file, "w+", codecs.open) as f:
-                f.write(content)
             _atomic_replace(tmp_trails_file, config.TRAILS_FILE)
             # A downloaded set carries no provenance, so any sidecar from a previous self-update
             # describes a different trail set now; drop it rather than serve stale scores.
@@ -436,7 +563,13 @@ def update_trails(force=False, offline=False):
             # leave a validator on disk for a set we failed to store, and the next poll would be
             # told it is current.
             _store_etag(etag_file, (response.get("headers") or {}).get("etag"))
-            trails = load_trails()
+            print("[i] trails stored to '%s'" % config.TRAILS_FILE)
+
+        try:
+            if os.path.exists(tmp_trails_file):
+                os.remove(tmp_trails_file)
+        except OSError:
+            pass
 
     else:
         trail_files = set()
@@ -459,6 +592,8 @@ def update_trails(force=False, offline=False):
                 print("[i] updating trails (this might take a while)...")
             else:
                 print("[i] checking trails...")
+
+            trails = _build_store()
 
             if not offline and (force or config.USE_FEED_UPDATES):
                 _ = os.path.abspath(os.path.join(ROOT_DIR, "feeds"))
@@ -623,7 +758,7 @@ def update_trails(force=False, offline=False):
             ip_minimum_feeds = config.get("IP_MINIMUM_FEEDS", 3)
 
             # basic cleanup
-            for key in list(trails.keys()):
+            for key in trails.snapshot_keys():
                 if key not in trails:
                     continue
 
@@ -709,7 +844,7 @@ def update_trails(force=False, offline=False):
 
             read_whitelist()
 
-            for key in list(trails.keys()):
+            for key in trails.snapshot_keys():
                 # leading_ipv4(), not a `\b`-bounded prefix match: `\b` also matches the dot of a digit-leading
                 # DOMAIN, so a reverse-DNS style trail was judged by its first four labels. Two static trails
                 # (`10.53.154.104.bc.googleusercontent.com`, `224.185.60.34...`) were deleted from every build
@@ -733,8 +868,8 @@ def update_trails(force=False, offline=False):
                 if trails:
                     with _fopen(tmp_trails_file, "w+", codecs.open) as f:
                         writer = csv.writer(f, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
-                        for trail in trails:
-                            row = (trail, trails[trail][0], trails[trail][1])
+                        for trail, value in trails.items():
+                            row = (trail, value[0], value[1])
                             writer.writerow(row)
 
                     _atomic_replace(tmp_trails_file, config.TRAILS_FILE)
@@ -751,6 +886,7 @@ def update_trails(force=False, offline=False):
                 except Exception:
                     pass
 
+            trails.close()
             print("[i] update finished%s" % (40 * " "))
 
             if success:

@@ -332,7 +332,7 @@ pub fn run(cfg: &Config) -> i32 {
             );
         }
     } else {
-        let options = LoadOptions { repair_truncated_trails: cfg.repair_truncated_trails };
+        let options = LoadOptions { repair_truncated_trails: cfg.repair_truncated_trails, ..Default::default() };
         match crate::trails::load_with(&cfg.trails_file, &whitelist, options) {
             Err(e) => r.line(Level::Fail, "trails", &format!("'{}' unreadable ({e})", cfg.trails_file.display())),
             Ok((db, stats)) => {

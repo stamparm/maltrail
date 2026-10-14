@@ -8,6 +8,8 @@
 //!
 //! Both tables are built once and then immutable, so lookups need no synchronisation.
 
+use super::region::{Arena, Pod, Region, Spill};
+
 const EMPTY: u32 = u32::MAX;
 
 #[inline]
@@ -54,15 +56,19 @@ pub fn hash_bytes(data: &[u8]) -> u64 {
 /// the real lookup. The filter is therefore an optimisation only — detection can never be lost to
 /// it, which is why a probabilistic structure is acceptable here at all.
 pub struct NegativeFilter {
-    bits: Vec<u64>,
+    bits: Region<u64>,
     mask: usize,
 }
 
 impl NegativeFilter {
     pub fn new(entries: usize) -> NegativeFilter {
+        NegativeFilter::new_in(entries, None)
+    }
+
+    pub fn new_in(entries: usize, spill: Option<&Spill>) -> NegativeFilter {
         // ~16 bits per entry -> ~1.4% false-positive rate with two probes.
         let want_bits = entries.saturating_mul(16).max(1024).next_power_of_two();
-        NegativeFilter { bits: vec![0u64; want_bits / 64], mask: want_bits - 1 }
+        NegativeFilter { bits: Region::filled(want_bits / 64, 0u64, spill), mask: want_bits - 1 }
     }
 
     #[inline]
@@ -125,25 +131,48 @@ struct StrSlot {
     val: u32,
 }
 
+unsafe impl Pod for StrSlot {}
+
+const EMPTY_STR_SLOT: StrSlot = StrSlot { tag: 0, off: 0, len: 0, val: EMPTY };
+
 /// String-keyed table over a byte arena.
 pub struct StrTable {
-    arena: Vec<u8>,
-    slots: Vec<StrSlot>,
+    arena: Arena,
+    slots: Region<StrSlot>,
     mask: usize,
     len: usize,
     filter: NegativeFilter,
+    spill: Option<Spill>,
 }
 
 impl StrTable {
     pub fn with_capacity(n: usize, arena_hint: usize) -> StrTable {
+        StrTable::with_capacity_in(n, arena_hint, None)
+    }
+
+    /// `with_capacity()`, file-backed when `spill` is given (see `region.rs`).
+    pub fn with_capacity_in(n: usize, arena_hint: usize, spill: Option<&Spill>) -> StrTable {
         let cap = capacity_for(n);
         StrTable {
-            arena: Vec::with_capacity(arena_hint),
-            slots: vec![StrSlot { tag: 0, off: 0, len: 0, val: EMPTY }; cap],
+            arena: Arena::with_capacity(arena_hint, spill),
+            slots: Region::filled(cap, EMPTY_STR_SLOT, spill),
             mask: cap - 1,
             len: 0,
-            filter: NegativeFilter::new(n),
+            filter: NegativeFilter::new_in(n, spill),
+            spill: spill.cloned(),
         }
+    }
+
+    /// Whether the slots live in a file-backed mapping rather than on the heap.
+    pub fn is_mapped(&self) -> bool {
+        self.slots.is_mapped()
+    }
+
+    /// Start writing the built table back, so its pages become reclaimable (see `region.rs`).
+    pub fn flush_async(&self) {
+        self.arena.flush_async();
+        self.slots.flush_async();
+        self.filter.bits.flush_async();
     }
 
     pub fn len(&self) -> usize {
@@ -248,11 +277,10 @@ impl StrTable {
     }
 
     fn grow(&mut self) {
-        let old = std::mem::take(&mut self.slots);
-        let cap = (old.len() * 2).max(16);
-        self.slots = vec![StrSlot { tag: 0, off: 0, len: 0, val: EMPTY }; cap];
+        let cap = (self.slots.len() * 2).max(16);
+        let old = std::mem::replace(&mut self.slots, Region::filled(cap, EMPTY_STR_SLOT, self.spill.as_ref()));
         self.mask = cap - 1;
-        for slot in old {
+        for &slot in old.iter() {
             if slot.val == EMPTY {
                 continue;
             }
@@ -284,15 +312,19 @@ struct IntSlot<K> {
     val: u32,
 }
 
+unsafe impl<K: IntKey> Pod for IntSlot<K> {}
+
 /// Integer-keyed table (IPv4, or IPv4+port packed into a u64).
-pub struct IntTable<K: Copy + Eq + IntKey> {
-    slots: Vec<IntSlot<K>>,
+pub struct IntTable<K: IntKey> {
+    slots: Region<IntSlot<K>>,
     mask: usize,
     len: usize,
     filter: NegativeFilter,
+    spill: Option<Spill>,
 }
 
-pub trait IntKey {
+/// Only the three key widths below: plain integers, so an `IntSlot` of one is plain old data.
+pub trait IntKey: Copy + Eq + 'static {
     fn zero() -> Self;
     fn hash_key(&self) -> u64;
 }
@@ -327,15 +359,26 @@ impl IntKey for u128 {
     }
 }
 
-impl<K: Copy + Eq + IntKey> IntTable<K> {
+impl<K: IntKey> IntTable<K> {
     pub fn with_capacity(n: usize) -> IntTable<K> {
+        IntTable::with_capacity_in(n, None)
+    }
+
+    /// `with_capacity()`, file-backed when `spill` is given (see `region.rs`).
+    pub fn with_capacity_in(n: usize, spill: Option<&Spill>) -> IntTable<K> {
         let cap = capacity_for(n);
         IntTable {
-            slots: vec![IntSlot { key: K::zero(), val: EMPTY }; cap],
+            slots: Region::filled(cap, IntSlot { key: K::zero(), val: EMPTY }, spill),
             mask: cap - 1,
             len: 0,
-            filter: NegativeFilter::new(n),
+            filter: NegativeFilter::new_in(n, spill),
+            spill: spill.cloned(),
         }
+    }
+
+    pub fn flush_async(&self) {
+        self.slots.flush_async();
+        self.filter.bits.flush_async();
     }
 
     pub fn len(&self) -> usize {
@@ -389,11 +432,13 @@ impl<K: Copy + Eq + IntKey> IntTable<K> {
     }
 
     fn grow(&mut self) {
-        let old = std::mem::take(&mut self.slots);
-        let cap = (old.len() * 2).max(16);
-        self.slots = vec![IntSlot { key: K::zero(), val: EMPTY }; cap];
+        let cap = (self.slots.len() * 2).max(16);
+        let old = std::mem::replace(
+            &mut self.slots,
+            Region::filled(cap, IntSlot { key: K::zero(), val: EMPTY }, self.spill.as_ref()),
+        );
         self.mask = cap - 1;
-        for slot in old {
+        for &slot in old.iter() {
             if slot.val == EMPTY {
                 continue;
             }

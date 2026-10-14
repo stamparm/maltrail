@@ -137,6 +137,51 @@ def retrieve_content(url, data=None, headers=None, binary=False, response=None):
 
     return retval
 
+def retrieve_to_file(url, path, headers=None, response=None):
+    """
+    retrieve_content() for a payload too big to hold: the body is decompressed (Content-Encoding
+    gzip/deflate) and written to `path` as it arrives. A whole trail set from an UPDATE_SERVER is
+    ~100 MB, and holding it as bytes, then as text, then as a loaded trail dict was more memory than
+    a small sensor box has. Returns the number of bytes written; 0 on any failure, with `path`
+    removed, exactly as retrieve_content() answers a failure with empty content. `response` is
+    filled the same way (a 304 is reported there, not as an error).
+    """
+
+    def _record(code, hdrs):
+        if response is not None:
+            response["code"] = code
+            response["headers"] = dict((k.lower(), v) for k, v in dict(hdrs or {}).items())
+
+    written = 0
+    try:
+        req = _urllib.request.Request(url, None, headers or {"User-agent": USER_AGENT, "Accept-encoding": "gzip, deflate"})
+        opener = _urllib.request.build_opener(_urllib.request.HTTPCookieProcessor(_cookiejar.CookieJar()))
+        resp = opener.open(req, timeout=TIMEOUT)
+        _record(resp.getcode(), resp.headers)
+        encoding = (resp.headers.get("Content-Encoding") or "").lower()
+        decoder = zlib.decompressobj(16 + zlib.MAX_WBITS) if encoding == "gzip" else zlib.decompressobj(-15) if encoding == "deflate" else None
+        with open(path, "wb") as f:
+            for chunk in iter(lambda: resp.read(1 << 16), b""):
+                chunk = decoder.decompress(chunk) if decoder else chunk
+                f.write(chunk)
+                written += len(chunk)
+            if decoder:
+                chunk = decoder.flush()
+                f.write(chunk)
+                written += len(chunk)
+        resp.close()
+    except Exception as ex:
+        _record(getattr(ex, "code", None), getattr(ex, "headers", None))
+        written = 0
+
+    if not written:
+        try:
+            os.remove(path)
+        except OSError:
+            pass
+
+    return written
+
 def fetch_headers(url, timeout=10):
     class _NoRedirect(_urllib.request.HTTPRedirectHandler):
         def redirect_request(self, req, fp, code, msg, headers, newurl):

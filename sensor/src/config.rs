@@ -63,6 +63,25 @@ pub const MAX_CAPTURE_RING: u64 = 1024 * 1024 * 1024;
 /// count. An operator who genuinely wants more says CAPTURE_BUFFER_SIZE and gets it.
 pub const MAX_INFERRED_CAPTURE_RING: u64 = 256 * 1024 * 1024;
 
+/// Below this much physical memory the inferred ring's floor is a tenth of it, not 64 MB.
+const SMALL_HOST_MEMORY: u64 = 1024 * 1024 * 1024;
+
+/// The libpcap ring when `CAPTURE_BUFFER_SIZE` does not say: `CAPTURE_BUFFER` (0 = unset), raised
+/// to a floor and capped at `MAX_INFERRED_CAPTURE_RING`.
+///
+/// The floor is `DEFAULT_CAPTURE_RING`, except on a host with under 1 GB, where it is 10% of
+/// physical memory - what `CAPTURE_BUFFER 10%` has always said. The ring is locked kernel memory
+/// that nothing can reclaim, and a 64 MB one on a 256 MB Raspberry Pi is a quarter of the machine,
+/// taken before the trail store, the updater or the OS get any. Such a box sits on a link that a
+/// smaller ring drains comfortably; anyone who wants more says `CAPTURE_BUFFER_SIZE`.
+pub fn inferred_capture_ring(capture_buffer: u64, physmem: Option<u64>) -> u64 {
+    let floor = match physmem {
+        Some(m) if m < SMALL_HOST_MEMORY => (m / 10).clamp(MIN_CAPTURE_RING, DEFAULT_CAPTURE_RING),
+        _ => DEFAULT_CAPTURE_RING,
+    };
+    capture_buffer.max(floor).min(MAX_INFERRED_CAPTURE_RING)
+}
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum FanoutMode {
     Hash,
@@ -933,10 +952,8 @@ impl Config {
                 parse_byte_size(&v).map_err(|e| {
                     ConfigError(format!("invalid configuration value for 'CAPTURE_BUFFER_SIZE' ('{v}'): {e}"))
                 })?
-            } else if capture_buffer > 0 {
-                capture_buffer.clamp(DEFAULT_CAPTURE_RING, MAX_INFERRED_CAPTURE_RING)
             } else {
-                DEFAULT_CAPTURE_RING
+                inferred_capture_ring(capture_buffer, total_physmem())
             }
         };
 

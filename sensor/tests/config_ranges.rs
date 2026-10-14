@@ -146,6 +146,17 @@ fn capture_ring_defaults_are_sane_for_a_real_link() {
     let cfg = load("ring_huge_buffer", "CAPTURE_BUFFER 8GB");
     assert_eq!(cfg.capture_buffer_size, maltrail_sensor::config::MAX_INFERRED_CAPTURE_RING);
 
+    // A small host's floor is a tenth of its memory, not 64 MB: on a 256 MB Raspberry Pi (221 MB
+    // visible) that ring is locked kernel memory and would be over a quarter of the machine.
+    use maltrail_sensor::config::{inferred_capture_ring, DEFAULT_CAPTURE_RING, MIN_CAPTURE_RING};
+    let pi = 221 * 1024 * 1024;
+    assert_eq!(inferred_capture_ring(pi / 10, Some(pi)), pi / 10);
+    assert_eq!(inferred_capture_ring(0, Some(pi)), pi / 10);
+    assert_eq!(inferred_capture_ring(1024, Some(pi)), pi / 10, "still floored, at the small host's floor");
+    assert_eq!(inferred_capture_ring(0, Some(16 << 20)), MIN_CAPTURE_RING);
+    assert_eq!(inferred_capture_ring(32 << 20, Some(16 << 30)), DEFAULT_CAPTURE_RING, "big hosts are unchanged");
+    assert_eq!(inferred_capture_ring(0, None), DEFAULT_CAPTURE_RING);
+
     // An EXPLICIT value is an instruction rather than an inference, so it goes higher.
     let cfg = load("ring_explicit", "CAPTURE_BUFFER 32MB\nCAPTURE_BUFFER_SIZE 512MB");
     assert_eq!(cfg.capture_buffer_size, 512 * 1024 * 1024);

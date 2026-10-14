@@ -11,6 +11,7 @@ use std::io::{BufReader, Read};
 use std::path::Path;
 
 use super::regexset::TrailRegexBuilder;
+use super::region::Spill;
 use super::{NativeKey, TrailDb, TrailDbBuilder};
 use crate::whitelist::Whitelist;
 
@@ -82,11 +83,14 @@ pub struct LoadOptions {
     /// Repair feed-mangled wildcard patterns rather than dropping them silently. `false` gives
     /// byte-exact `build_trails_regex()` parity with `sensor.py`.
     pub repair_truncated_trails: bool,
+    /// Build the store's big arrays in file-backed mappings next to the trails file instead of on
+    /// the heap (see `region.rs`). Falls back to the heap by itself wherever that cannot be done.
+    pub file_backed: bool,
 }
 
 impl Default for LoadOptions {
     fn default() -> LoadOptions {
-        LoadOptions { repair_truncated_trails: true }
+        LoadOptions { repair_truncated_trails: true, file_backed: true }
     }
 }
 
@@ -319,7 +323,18 @@ pub fn load_trails(path: &Path, whitelist: &Whitelist, options: LoadOptions) -> 
 
     // Estimate from the average real-world record length; the tables grow if it is off.
     let estimated_rows = file_len / 48 + 16;
-    let mut builder = TrailDbBuilder::new(estimated_rows, file_len / 3);
+    let spill = options.file_backed.then(|| {
+        Spill::new(match path.parent() {
+            Some(dir) if !dir.as_os_str().is_empty() => dir.to_path_buf(),
+            _ => std::path::PathBuf::from("."),
+        })
+    });
+    // File-backed, the arena is sized to the one bound it can never exceed - every key is text of
+    // this file - because a mapped page nobody writes costs nothing. On the heap that would be
+    // reserved address space only too, but a third is what the real file needs and growing a Vec
+    // is cheap.
+    let arena_hint = if spill.is_some() { file_len } else { file_len / 3 };
+    let mut builder = TrailDbBuilder::new_in(estimated_rows, arena_hint, spill.as_ref());
     let mut regex_builder = TrailRegexBuilder::with_repair(options.repair_truncated_trails);
     let mut pair_index: HashMap<(String, String), u32> = HashMap::with_capacity(8192);
     let mut stats = LoadStats { rows: 0, loaded: 0, whitelisted: 0, malformed: 0 };
@@ -555,6 +570,58 @@ mod tests {
          two,fields\n\
          four,fields,here,too\n\
          dup.example,LAST info wins,(static)\n";
+
+    /// The store the sensor actually runs on is built file-backed (`region.rs`); every test above
+    /// that uses `LoadOptions::default()` therefore exercises it. This one pins it down against the
+    /// heap build of the same file, across batches, and checks the positive control: that the
+    /// default load really did end up in a mapping rather than quietly on the heap.
+    #[test]
+    fn a_file_backed_load_answers_exactly_like_a_heap_one() {
+        let dir = std::env::temp_dir().join(format!("mt-trail-backed-test-{}", std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let path = dir.join("trails.csv");
+        let mut text = String::new();
+        let mut keys = Vec::new();
+        for i in 0..200_000u32 {
+            let key = match i % 4 {
+                0 => format!("host{i}.example"),
+                1 => format!("{}.{}.{}.{}", 11 + i % 200, (i >> 8) & 255, i & 255, (i >> 16) & 255),
+                2 => format!("{}.{}.{}.{}:{}", 11 + i % 200, (i >> 8) & 255, i & 255, (i >> 16) & 255, 1 + i % 65000),
+                _ => format!("/path{i}.php"),
+            };
+            text.push_str(&format!("{key},info {},(static)\n", i % 37));
+            keys.push(key);
+        }
+        text.push_str(AWKWARD);
+        std::fs::write(&path, &text).unwrap();
+
+        let root = std::path::PathBuf::from(env!("CARGO_MANIFEST_DIR")).parent().unwrap().to_path_buf();
+        let wl = Whitelist::load(&root, None);
+        let (backed, bstats) = load_trails(&path, &wl, LoadOptions::default()).unwrap();
+        let (heap, hstats) = load_trails(&path, &wl, LoadOptions { file_backed: false, ..Default::default() }).unwrap();
+        assert!(backed.is_file_backed(), "positive control: the default load must be file-backed here");
+        assert!(!heap.is_file_backed());
+        assert_eq!((bstats.loaded, bstats.whitelisted), (hstats.loaded, hstats.whitelisted));
+        assert_eq!(backed.len(), heap.len());
+        assert_eq!(backed.ip4_count(), heap.ip4_count());
+        assert_eq!(backed.ip4_port_count(), heap.ip4_port_count());
+
+        use crate::addr::{addr_to_int, Ip};
+        for key in keys.iter().map(String::as_str).chain(["dup.example", "has,comma.example", "nope.example"]) {
+            assert_eq!(backed.get(key), heap.get(key), "{key:?}");
+            if let Some((addr, port)) = key.split_once(':') {
+                let ip = Ip::V4(addr_to_int(addr).unwrap());
+                let port: u16 = port.parse().unwrap();
+                assert_eq!(backed.get_ip_port(ip, port), heap.get_ip_port(ip, port), "{key:?}");
+            } else if let Some(v) = addr_to_int(key) {
+                assert_eq!(backed.get_ip(Ip::V4(v)), heap.get_ip(Ip::V4(v)), "{key:?}");
+            }
+        }
+        assert_eq!(backed.regex().patterns(), heap.regex().patterns());
+        // the mappings are unlinked as they are made: nothing but the CSV is in the directory
+        assert_eq!(std::fs::read_dir(&dir).unwrap().count(), 1);
+        let _ = std::fs::remove_dir_all(&dir);
+    }
 
     /// Load the same records through the serial path and the parallel one and compare.
     ///

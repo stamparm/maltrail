@@ -297,6 +297,17 @@ class TrailsDict(dict):
             raise Exception("cannot iterate a finalized TrailsDict (keys are not retained)")
         return self._trails.keys()
 
+    def snapshot_keys(self):
+        # update_trails() rewrites keys while it walks them; DiskTrailsDict streams the same snapshot
+        return list(self.keys())
+
+    def sorted_items(self):
+        for key in sorted(self.keys()):
+            yield key, self._trails[key]
+
+    def close(self):
+        pass
+
     def iterkeys(self):
         if self._frozen is not None or self._mmap is not None:
             raise Exception("cannot iterate a finalized TrailsDict (keys are not retained)")

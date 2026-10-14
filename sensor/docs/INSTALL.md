@@ -418,6 +418,31 @@ without a restart (mtime poll bounded by `UPDATE_PERIOD`, at most once a minute)
 immutable trail store is built and swapped in atomically, counted in the metrics line
 (`reloads=ok/failed`, `generation=`).
 
+### Small hosts
+
+A full trail set is ~1.9M entries, and the sensor runs on a 256 MB Raspberry Pi without any
+setting changed. Three things make that work:
+
+* **The trail store is file-backed.** It is built into mappings of files next to `TRAILS_FILE`,
+  which are unlinked as soon as they are created, so nothing stays on disk. The pages are page
+  cache rather than heap: the kernel writes them back once and can then drop and re-read them
+  under memory pressure, instead of having nothing to free but the process. The startup line
+  reports it as `memory=… MB (file-backed)`. If the directory is not writable, or there is no
+  space for the store (~200 MB at 1.9M trails, twice that during a reload), the store is built on
+  the heap as before.
+* **The update merges on disk when memory is short.** With under 768 MB available (cgroup limits
+  included), `update_trails()` keeps its working set in a SQLite file next to `TRAILS_FILE`
+  (`trails.csv.build`, removed afterwards). It is the same code with the same result, slower by
+  about four times. The static aggregate is always streamed from its cache rather than loaded
+  whole.
+* **The capture ring follows the machine.** On a host with under 1 GB of RAM, the default libpcap
+  ring is 10% of RAM, not 64 MB. It is locked kernel memory that nothing can reclaim.
+
+Measured on x86-64 (a 32-bit Pi needs less) in a 221 MB container with no swap, a live sensor
+holding 1.9M trails sits at ~32 MB of anonymous memory, and a reload adds ~25 MB. During its own
+online update the whole cgroup stays under ~100 MB of anonymous memory. On the heap, the same
+sensor needed 153 MB steady and 304 MB during a reload, and the update alone needed 1.1 GB.
+
 ## 12. Running as a service
 
 `packaging/systemd/maltrail-sensor.service` is provided, and `install.sh` installs it for you. To do it by hand, read
