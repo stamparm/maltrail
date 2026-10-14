@@ -2866,6 +2866,13 @@ CVE-2026-88771-scanner
 
 pitboss
 
+# Reference: https://x.com/suyog41/status/2110315829606687172
+# Reference: https://www.virustotal.com/gui/file/f25ba62c66bee6e6bb582064ffd048043015f3718a59fa8c56546d7998c420c0/detection
+
+MonoxideClient/1.0
+MonoxideClient
+Monoxide
+
 # Misc
 
 information_schema
