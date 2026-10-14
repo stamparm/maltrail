@@ -51,6 +51,9 @@ jobs:
       # The one check that only matters at release time: the tree's version must equal the tag.
       - name: Version matches the tag
         run: python3 sensor/tools/check_version.py --tag "${GITHUB_REF_NAME}"
+      # Here, before anything is built: the notes are the CHANGELOG entry (see release_notes.py).
+      - name: CHANGELOG has an entry for the tag
+        run: python3 sensor/tools/release_notes.py "${GITHUB_REF_NAME}" --check
 
   binaries:
     name: binary (${{ matrix.target }})
@@ -537,11 +540,16 @@ jobs:
           fi
           echo "[i] digest verified: $have"
 
+      # The notes are the CHANGELOG entry. GitHub's generated ones list merged pull requests,
+      # and here those are the settings_gen.rs bot: that is all 3.5 said about itself.
+      - name: Release notes
+        run: python3 sensor/tools/release_notes.py "${GITHUB_REF_NAME}" > "$RUNNER_TEMP/notes.md"
+
       - name: GitHub release
         uses: softprops/action-gh-release@v3
         with:
           files: dist/*
-          generate_release_notes: true
+          body_path: ${{ runner.temp }}/notes.md
           prerelease: ${{ steps.tag.outputs.prerelease == 'true' }}
 
       - uses: docker/setup-qemu-action@v4

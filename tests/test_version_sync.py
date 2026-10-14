@@ -87,5 +87,23 @@ class TestReleaseGateKeepsTheCheck(unittest.TestCase):
                       "the release workflow no longer checks that the tree's version matches the "
                       "tag it is publishing")
 
+    def test_the_release_notes_come_from_the_changelog(self):
+        # GitHub's generated notes list merged PRs; here that is the settings_gen.rs bot and
+        # nothing else, which is what 3.5 shipped as.
+        path = os.path.join(ROOT, ".github", "workflows", "release.yml")
+        with open(path, encoding="utf8") as f:
+            text = f.read()
+        self.assertIn("release_notes.py", text)
+        self.assertNotIn("generate_release_notes: true", text)
+
+    def test_release_notes_render_a_real_entry(self):
+        sys.path.insert(0, os.path.join(ROOT, "sensor", "tools"))
+        import release_notes
+        notes = release_notes.render(release_notes.entry("3.5"), "3.5", "3.4")
+        self.assertIn("## Added", notes)
+        self.assertIn("arm-unknown-linux-musleabihf", notes)
+        self.assertIn("compare/3.4...3.5", notes)
+        self.assertIsNone(release_notes.entry("0.0.1-never"))
+
 if __name__ == "__main__":
     unittest.main()
