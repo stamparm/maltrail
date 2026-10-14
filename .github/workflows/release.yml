@@ -270,7 +270,11 @@ jobs:
 
           export LIBPCAP_LIBDIR="$RUNNER_TEMP/libpcap/lib" LIBPCAP_VER=$LIBPCAP_VERSION MALTRAIL_SKIP_PCAP_CHECK=1
           export CFLAGS_arm_unknown_linux_musleabihf="-mcpu=arm1176jzf_s"
-          export RUSTFLAGS="-C target-feature=+crt-static"
+          # zig links musl 1.2, whose time_t is 64-bit on 32-bit targets, and libpcap was compiled
+          # against those headers - but Rust's libc still defaults to the old 32-bit time_t there.
+          # Without this cfg the two disagree on the layout of pcap_pkthdr, every caplen is read
+          # from the wrong offset, and the sensor ignores every packet while looking healthy.
+          export RUSTFLAGS="-C target-feature=+crt-static --cfg libc_unstable_musl_v1_2_3"
           # stripped by the linker: the host's strip does not know ARM
           export CARGO_PROFILE_RELEASE_STRIP=true CARGO_PROFILE_RELEASE_DEBUG=0
           cargo zigbuild --release --locked --manifest-path sensor/Cargo.toml \
@@ -294,6 +298,24 @@ jobs:
           file "$bin" | grep -q 'statically linked' || { echo "::error::not static"; exit 1; }
           readelf -A "$bin" | grep -q 'Tag_CPU_arch: v6$' || { echo "::error::not ARMv6:"; readelf -A "$bin"; exit 1; }
           docker run --rm --platform linux/arm/v6 -e QEMU_CPU=arm1176 -v "$PWD/$bin:/s:ro" alpine:3.20 /s --version
+
+      # Starting is not detecting. Replay a DNS query for a trail and one for a benign name, and
+      # refuse the binary unless exactly the trail is logged - see sensor/tools/smoke_pcap.py for
+      # the build that passed every check above and detected nothing.
+      - name: The ARMv6 binary must detect a trail
+        if: ${{ matrix.kind == 'armv6' }}
+        run: |
+          set -eu
+          smoke="$RUNNER_TEMP/smoke"
+          mkdir -p "$smoke/log"
+          python3 sensor/tools/smoke_pcap.py "$smoke/dns.pcap" maltrail-release-smoke.com maltrail-release-benign.com
+          printf 'maltrail-release-smoke.com,release smoke (malware),(static)\n' > "$smoke/trails.csv"
+          sed -e "s#^LOG_DIR .*#LOG_DIR /smoke/log#" maltrail.conf > "$smoke/smoke.conf"
+          printf 'TRAILS_FILE /smoke/trails.csv\nUSE_FEED_UPDATES false\n' >> "$smoke/smoke.conf"
+          docker run --rm --platform linux/arm/v6 -e QEMU_CPU=arm1176 -v "$PWD:/m:ro" -v "$smoke:/smoke" -w /m \
+            alpine:3.20 /m/sensor/target/release/maltrail-sensor -c /smoke/smoke.conf --offline -r /smoke/dns.pcap
+          grep -h 'maltrail-release-smoke.com' "$smoke"/log/*.log || { echo "::error::the ARMv6 sensor did not detect the trail"; exit 1; }
+          if grep -h 'maltrail-release-benign.com' "$smoke"/log/*.log; then echo "::error::the ARMv6 sensor logged a non-trail"; exit 1; fi
 
       # macOS builds natively. libpcap is in the SDK, so there is no static-link dance and no
       # libc floor to get wrong - a darwin binary carries its own minimum OS version instead, and
