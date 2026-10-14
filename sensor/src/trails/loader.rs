@@ -599,7 +599,8 @@ mod tests {
         let wl = Whitelist::load(&root, None);
         let (backed, bstats) = load_trails(&path, &wl, LoadOptions::default()).unwrap();
         let (heap, hstats) = load_trails(&path, &wl, LoadOptions { file_backed: false, ..Default::default() }).unwrap();
-        assert!(backed.is_file_backed(), "positive control: the default load must be file-backed here");
+        // positive control: the default load must really be file-backed (only Linux maps at all)
+        assert_eq!(backed.is_file_backed(), cfg!(target_os = "linux"));
         assert!(!heap.is_file_backed());
         assert_eq!((bstats.loaded, bstats.whitelisted), (hstats.loaded, hstats.whitelisted));
         assert_eq!(backed.len(), heap.len());

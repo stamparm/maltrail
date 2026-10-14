@@ -32,6 +32,8 @@ unsafe impl Pod for u64 {}
 /// Where to put file-backed regions. `None` everywhere means the heap.
 #[derive(Clone)]
 pub struct Spill {
+    // only Linux maps; elsewhere every region is on the heap
+    #[cfg_attr(not(target_os = "linux"), allow(dead_code))]
     dir: Arc<PathBuf>,
 }
 
@@ -291,7 +293,8 @@ mod tests {
             mapped4.insert(i.wrapping_mul(2_654_435_761), i);
             heap4.insert(i.wrapping_mul(2_654_435_761), i);
         }
-        assert!(mapped.is_mapped(), "positive control: the grown table must still be file-backed");
+        // positive control: the grown table must still be file-backed (only Linux maps at all)
+        assert_eq!(mapped.is_mapped(), cfg!(target_os = "linux"));
         assert_eq!(mapped.len(), heap.len());
         for i in 0..60_000u32 {
             let key = format!("host{i}.example.com");
