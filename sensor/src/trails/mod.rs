@@ -12,6 +12,7 @@
 //! The store is immutable once built. Reloads publish a fresh `Arc` through `TrailStore`,
 //! which workers pick up with a single relaxed atomic load — no lock on the packet path.
 
+pub mod binstore;
 pub mod loader;
 pub mod regexset;
 pub mod table;
@@ -22,7 +23,7 @@ use std::sync::{Arc, Mutex};
 
 use crate::addr::Ip;
 use regexset::TrailRegex;
-use table::{IntTable, StrTable};
+use table::{IntKey, IntTable, MappedIntTable, MappedStrTable, StrTable};
 
 /// A trail's `(info, reference)` pair.
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
@@ -31,15 +32,87 @@ pub struct TrailInfo<'a> {
     pub reference: &'a str,
 }
 
+/// Either the table built in-process from `trails.csv` (unchanged from before this module
+/// existed), or a read view over a shared mmap built by `binstore::write()`. Same lookup
+/// algorithm either way - see `table.rs`'s mmap section for why the backing matters (file-backed
+/// pages are reclaimable under memory pressure; heap pages are not).
+enum StrBacking {
+    Owned(StrTable),
+    Mapped(MappedStrTable),
+}
+impl StrBacking {
+    #[inline]
+    fn get(&self, key: &str) -> Option<u32> {
+        match self {
+            StrBacking::Owned(t) => t.get(key),
+            StrBacking::Mapped(t) => t.get(key),
+        }
+    }
+    #[inline]
+    fn contains(&self, key: &str) -> bool {
+        match self {
+            StrBacking::Owned(t) => t.contains(key),
+            StrBacking::Mapped(t) => t.contains(key),
+        }
+    }
+    fn arena_bytes(&self) -> usize {
+        match self {
+            StrBacking::Owned(t) => t.arena_bytes(),
+            StrBacking::Mapped(t) => t.arena_bytes(),
+        }
+    }
+    fn slot_bytes(&self) -> usize {
+        match self {
+            StrBacking::Owned(t) => t.slot_bytes(),
+            StrBacking::Mapped(t) => t.slot_bytes(),
+        }
+    }
+}
+
+macro_rules! int_backing {
+    ($name:ident, $key:ty) => {
+        enum $name {
+            Owned(IntTable<$key>),
+            Mapped(MappedIntTable),
+        }
+        impl $name {
+            #[inline]
+            fn get(&self, key: $key) -> Option<u32> {
+                match self {
+                    $name::Owned(t) => t.get(key),
+                    $name::Mapped(t) => t.get(key as u128, key.hash_key()),
+                }
+            }
+            fn len(&self) -> usize {
+                match self {
+                    $name::Owned(t) => t.len(),
+                    $name::Mapped(t) => t.len(),
+                }
+            }
+            fn slot_bytes(&self) -> usize {
+                match self {
+                    $name::Owned(t) => t.slot_bytes(),
+                    $name::Mapped(t) => t.slot_bytes(),
+                }
+            }
+        }
+    };
+}
+int_backing!(IntBacking32, u32);
+int_backing!(IntBacking64, u64);
+int_backing!(IntBacking128, u128);
+
 pub struct TrailDb {
     pairs: Vec<(Box<str>, Box<str>)>,
-    strings: StrTable,
-    ip4: IntTable<u32>,
-    ip4_port: IntTable<u64>,
-    ip6: IntTable<u128>,
+    strings: StrBacking,
+    ip4: IntBacking32,
+    ip4_port: IntBacking64,
+    ip6: IntBacking128,
     /// FxHash, not SipHash: the key set of the trail store is fixed when `trails.csv` is loaded
     /// and cannot be grown by traffic, so there is nothing for a collision flood to insert. The
     /// HashDoS argument that keeps SipHash on the domain/URL/UA caches does not apply here.
+    /// Always heap-allocated (Owned or Mapped alike): IPv6:port literal trails are rare enough
+    /// that this is never worth mmap'ing, in either mode.
     ip6_port: crate::fasthash::FastMap<(u128, u16), u32>,
     regex: TrailRegex,
     len: usize,
@@ -130,6 +203,37 @@ impl TrailDb {
     pub fn ip6_count(&self) -> usize {
         self.ip6.len() + self.ip6_port.len()
     }
+
+    /// Builds a fresh `TrailDb` from mmap'd read views - `binstore::open()`'s constructor.
+    #[allow(clippy::too_many_arguments)]
+    pub(crate) fn from_mapped(
+        pairs: Vec<(Box<str>, Box<str>)>,
+        strings: MappedStrTable,
+        ip4: MappedIntTable,
+        ip4_port: MappedIntTable,
+        ip6: MappedIntTable,
+        ip6_port: crate::fasthash::FastMap<(u128, u16), u32>,
+        regex: TrailRegex,
+        len: usize,
+    ) -> TrailDb {
+        TrailDb {
+            pairs,
+            strings: StrBacking::Mapped(strings),
+            ip4: IntBacking32::Mapped(ip4),
+            ip4_port: IntBacking64::Mapped(ip4_port),
+            ip6: IntBacking128::Mapped(ip6),
+            ip6_port,
+            regex,
+            len,
+        }
+    }
+
+    /// Serializes this table to `path` for a later `binstore::open()` to mmap - a no-op (clean
+    /// error, never a panic) if this `TrailDb` is itself already mmap-backed, since the only
+    /// caller is right after a fresh CSV build.
+    pub fn write_cache(&self, path: &std::path::Path) -> std::io::Result<()> {
+        binstore::write(path, self)
+    }
 }
 
 pub struct TrailDbBuilder {
@@ -196,10 +300,10 @@ impl TrailDbBuilder {
     pub fn finish(self, regex: TrailRegex) -> TrailDb {
         TrailDb {
             pairs: self.pairs,
-            strings: self.strings,
-            ip4: self.ip4,
-            ip4_port: self.ip4_port,
-            ip6: self.ip6,
+            strings: StrBacking::Owned(self.strings),
+            ip4: IntBacking32::Owned(self.ip4),
+            ip4_port: IntBacking64::Owned(self.ip4_port),
+            ip6: IntBacking128::Owned(self.ip6),
             ip6_port: self.ip6_port,
             regex,
             len: self.len,
@@ -320,16 +424,52 @@ impl TrailView {
 
 /// Load the store from `TRAILS_FILE`.
 pub fn load(path: &Path, whitelist: &crate::whitelist::Whitelist) -> std::io::Result<(TrailDb, loader::LoadStats)> {
-    loader::load_trails(path, whitelist, loader::LoadOptions::default())
+    load_with(path, whitelist, loader::LoadOptions::default())
 }
 
 /// Load with explicit options (`REPAIR_TRUNCATED_TRAILS`).
+///
+/// Prefers a fresh mmap cache (`{path}.rsbin`, built by `binstore::write()`) over re-parsing
+/// `trails.csv`: same staleness rule `core/common.py:trails_bin_stale()` already uses for its
+/// own (Python-side) binary cache - valid iff its mtime is not older than `trails.csv`'s. If the
+/// cache is missing, stale, or fails to open for ANY reason (corrupt, truncated, wrong version,
+/// I/O error), this falls straight through to the exact CSV-parsing path that ran before this
+/// cache existed - so a broken/absent cache can only cost performance, never correctness or
+/// detection coverage. On that fallback path, a best-effort cache write happens afterward so the
+/// NEXT load (reload or restart) is cheap; a failed write is logged and otherwise ignored.
 pub fn load_with(
     path: &Path,
     whitelist: &crate::whitelist::Whitelist,
     options: loader::LoadOptions,
 ) -> std::io::Result<(TrailDb, loader::LoadStats)> {
-    loader::load_trails(path, whitelist, options)
+    let cache_path = binstore::cache_path(path);
+    if binstore::is_fresh(&cache_path, path) {
+        match binstore::open(&cache_path) {
+            Ok(db) => {
+                let stats = loader::LoadStats { rows: db.len(), loaded: db.len(), whitelisted: 0, malformed: 0 };
+                return Ok((db, stats));
+            }
+            Err(e) => {
+                crate::output::log_error(
+                    &format!(
+                        "trail store cache '{}' unusable ({e}); rebuilding from '{}'",
+                        cache_path.display(),
+                        path.display()
+                    ),
+                    true,
+                );
+            }
+        }
+    }
+
+    let (db, stats) = loader::load_trails(path, whitelist, options)?;
+    if let Err(e) = db.write_cache(&cache_path) {
+        crate::output::log_error(
+            &format!("could not write trail store cache '{}' ({e}); continuing without it", cache_path.display()),
+            false,
+        );
+    }
+    Ok((db, stats))
 }
 
 pub use loader::{split_csv_record, LoadOptions};

@@ -52,6 +52,14 @@ hmac = "0.12"
 # the prebuilt release tarballs at exactly one runtime .so - libpcap - which is the whole
 # point of shipping them. `functions` registers meta_score() for the prune query.
 rusqlite = { version = "0.31", features = ["bundled", "functions"] }
+# Memory-mapped trail-store cache (src/trails/binstore.rs). Lets the sensor's trail-matching
+# memory live as file-backed, kernel-reclaimable pages instead of anonymous heap, which is
+# what a 221MB-RAM host needs for a multi-million-entry trail set to not become an OOM target.
+memmap2 = "0.9"
+# Tail-blob encoding for the trail-store cache (interned pairs, regex source, IPv6:port
+# entries - all small, never the 1.9M-entry arrays, which are hand-packed binary instead).
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
 
 [dev-dependencies]
 # the certificate tests compute the same fingerprint the sensor does

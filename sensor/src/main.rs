@@ -37,6 +37,7 @@ struct Args {
     version: bool,
     help: bool,
     test_config: bool,
+    build_trails_bin: bool,
 }
 
 impl Default for Args {
@@ -52,6 +53,7 @@ impl Default for Args {
             version: false,
             help: false,
             test_config: false,
+            build_trails_bin: false,
         }
     }
 }
@@ -70,6 +72,10 @@ Options:
   --debug               console output and debug messages
   -T, --test-config     validate the configuration, trails, whitelist, log directory and
                         capture filter, then exit (0 = usable, 1 = would not work)
+  --build-trails-bin    build the mmap trail-store cache ('{trails.csv}.rsbin') from the
+                        current trails.csv and exit. Meant to be run externally (e.g. right
+                        after the trail updater writes a fresh trails.csv) so the live sensor
+                        never has to build this in its own process - see trails/binstore.rs.
   --timestamps SOURCE   offline timestamp source: 'pcap' (default) or 'wallclock'
                         ('wallclock' stamps each packet with the time it is processed
                         instead of the time it was captured)
@@ -97,6 +103,7 @@ fn parse_args(argv: &[String]) -> Result<Args, String> {
             "--offline" => args.offline = true,
             "--debug" => args.debug = true,
             "-T" | "--test-config" => args.test_config = true,
+            "--build-trails-bin" => args.build_trails_bin = true,
             "-c" => args.config_file = PathBuf::from(value_for!("-c")),
             "-r" | "-i" => {
                 if arg == "-i" {
@@ -232,6 +239,36 @@ fn run() -> i32 {
     // (a test must not mutate the deployment).
     if args.test_config {
         return maltrail_sensor::selftest::run(&cfg);
+    }
+
+    // One-shot: (re)build the mmap trail-store cache from whatever trails.csv exists right now,
+    // then exit. No capture privileges needed (same as -T), and deliberately does NOT go through
+    // `refresh_trails()` - the caller (the trail updater, right after it writes a fresh
+    // trails.csv) owns deciding when content is new; this just turns the current file into a
+    // cache. Always rebuilds from the CSV rather than trusting any existing cache, since being
+    // invoked at all means the caller believes trails.csv just changed.
+    if args.build_trails_bin {
+        let whitelist = Whitelist::load(&cfg.root, cfg.user_whitelist.as_deref());
+        let (db, _stats) = match trails::loader::load_trails(&cfg.trails_file, &whitelist, load_options(&cfg)) {
+            Ok(v) => v,
+            Err(e) => {
+                ceprintln!("[!] {e}");
+                return 1;
+            }
+        };
+        let cache_path = trails::binstore::cache_path(&cfg.trails_file);
+        return match db.write_cache(&cache_path) {
+            Ok(()) => {
+                if !args.quiet {
+                    cprintln!("[i] wrote trail store cache '{}' ({} trails)", cache_path.display(), db.len());
+                }
+                0
+            }
+            Err(e) => {
+                ceprintln!("[!] could not write trail store cache '{}' ({e})", cache_path.display());
+                1
+            }
+        };
     }
 
     // Offline replay reads a file: no privileges are involved, so nothing is demanded. Live

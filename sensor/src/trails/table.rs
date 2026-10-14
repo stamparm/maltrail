@@ -162,6 +162,33 @@ impl StrTable {
         self.filter.memory_bytes() + self.slots.len() * std::mem::size_of::<StrSlot>()
     }
 
+    /// Raw accessors for `binstore::write()`. Read-only, used only when serializing a freshly
+    /// built (Owned) table to the mmap cache file - never on the hot path.
+    pub(crate) fn raw_mask(&self) -> usize {
+        self.mask
+    }
+    pub(crate) fn raw_filter_bits(&self) -> &[u64] {
+        &self.filter.bits
+    }
+    pub(crate) fn raw_filter_mask(&self) -> usize {
+        self.filter.mask
+    }
+    pub(crate) fn raw_arena(&self) -> &[u8] {
+        &self.arena
+    }
+    /// Calls `f(Some((tag, off, len, val)))` for an occupied slot, `f(None)` for an empty one,
+    /// in slot order (0..cap) - the writer needs the exact layout to replay the same
+    /// open-addressing probe sequence on read-back.
+    pub(crate) fn for_each_raw_slot(&self, mut f: impl FnMut(Option<(u32, u32, u32, u32)>)) {
+        for slot in &self.slots {
+            if slot.val == EMPTY {
+                f(None);
+            } else {
+                f(Some((slot.tag, slot.off, slot.len, slot.val)));
+            }
+        }
+    }
+
     /// Insert (or overwrite, matching `dict[key] = value`). Grows when the load factor
     /// would exceed ~0.85, so a bad size hint degrades performance but never correctness.
     ///
@@ -407,6 +434,206 @@ impl<K: Copy + Eq + IntKey> IntTable<K> {
 
     pub fn slot_bytes(&self) -> usize {
         self.filter.memory_bytes() + self.slots.len() * std::mem::size_of::<IntSlot<K>>()
+    }
+
+    /// Raw accessors for `binstore::write()` - see `StrTable`'s equivalents for why these exist.
+    pub(crate) fn raw_mask(&self) -> usize {
+        self.mask
+    }
+    pub(crate) fn raw_filter_bits(&self) -> &[u64] {
+        &self.filter.bits
+    }
+    pub(crate) fn raw_filter_mask(&self) -> usize {
+        self.filter.mask
+    }
+    pub(crate) fn for_each_raw_slot(&self, mut f: impl FnMut(Option<(K, u32)>)) {
+        for slot in &self.slots {
+            if slot.val == EMPTY {
+                f(None);
+            } else {
+                f(Some((slot.key, slot.val)));
+            }
+        }
+    }
+}
+
+// --- mmap-backed read views -------------------------------------------------------------
+//
+// Same tables, same lookup algorithm, different backing: these read directly from a shared,
+// memory-mapped cache file (built once by `binstore::write()`) instead of a per-process heap
+// Vec. The point is not a smaller structure - the byte layout is the same - it is that mmap'd
+// pages are file-backed and reclaimable by the kernel under memory pressure, where a heap
+// Vec's anonymous pages are not and can only be freed by exiting the process (or, on this
+// project's history, by the kernel's OOM killer doing it for you).
+//
+// Every method here is a hand-decoded mirror of the Owned version above (manual
+// `from_le_bytes` reads instead of indexing a `Vec<StrSlot>`/`Vec<IntSlot<K>>`), kept
+// byte-for-byte compatible with `binstore`'s on-disk layout. If you change one, check the
+// other - `binstore.rs` has the authoritative field-by-field layout doc.
+
+use std::sync::Arc;
+
+#[inline]
+fn read_u32(buf: &[u8], off: usize) -> u32 {
+    u32::from_le_bytes(buf[off..off + 4].try_into().unwrap())
+}
+
+#[inline]
+fn read_u64(buf: &[u8], off: usize) -> u64 {
+    u64::from_le_bytes(buf[off..off + 8].try_into().unwrap())
+}
+
+#[inline]
+fn read_u128(buf: &[u8], off: usize) -> u128 {
+    u128::from_le_bytes(buf[off..off + 16].try_into().unwrap())
+}
+
+/// Shared filter-bit check against raw mmap bytes - same algorithm as `NegativeFilter`.
+#[inline]
+fn mapped_filter_maybe_contains(buf: &[u8], filter_off: usize, mask: usize, h: u64) -> bool {
+    let a = (h as usize) & mask;
+    let b = ((h >> 32) as usize).wrapping_mul(0x9e37_79b9) & mask;
+    let word_a = read_u64(buf, filter_off + (a >> 6) * 8);
+    let word_b = read_u64(buf, filter_off + (b >> 6) * 8);
+    (word_a >> (a & 63)) & 1 != 0 && (word_b >> (b & 63)) & 1 != 0
+}
+
+pub struct MappedStrTable {
+    pub(super) mmap: Arc<memmap2::Mmap>,
+    pub(super) filter_off: usize,
+    pub(super) filter_mask: usize, // NegativeFilter's own mask (bit-index space), NOT the slot mask
+    pub(super) slots_off: usize,
+    pub(super) cap: usize,
+    pub(super) mask: usize, // slot-index mask (cap - 1)
+    pub(super) arena_off: usize,
+    pub(super) arena_len: usize,
+    pub(super) len: usize,
+}
+
+impl MappedStrTable {
+    #[inline]
+    fn slot(&self, i: usize) -> (u32, u32, u32, u32) {
+        let off = self.slots_off + i * 16;
+        let buf = &self.mmap[..];
+        (read_u32(buf, off), read_u32(buf, off + 4), read_u32(buf, off + 8), read_u32(buf, off + 12))
+    }
+
+    #[inline]
+    fn slot_key(&self, off: u32, len: u32) -> &[u8] {
+        let start = self.arena_off + off as usize;
+        &self.mmap[start..start + len as usize]
+    }
+
+    pub fn len(&self) -> usize {
+        self.len
+    }
+
+    pub fn is_empty(&self) -> bool {
+        self.len == 0
+    }
+
+    pub fn arena_bytes(&self) -> usize {
+        self.arena_len
+    }
+
+    pub fn slot_bytes(&self) -> usize {
+        (self.cap / 8) * 2 + self.cap * 16 // filter bits (2 bits/slot-capacity-unit, matches NegativeFilter sizing) + slots
+    }
+
+    #[inline]
+    pub fn get(&self, key: &str) -> Option<u32> {
+        let bytes = key.as_bytes();
+        let h = hash_bytes(bytes);
+        if !mapped_filter_maybe_contains(&self.mmap[..], self.filter_off, self.filter_mask, h) {
+            return None;
+        }
+        let tag = (h >> 32) as u32;
+        let mut i = (h as usize) & self.mask;
+        loop {
+            let (s_tag, s_off, s_len, s_val) = self.slot(i);
+            if s_val == EMPTY {
+                return None;
+            }
+            if s_tag == tag && s_len as usize == bytes.len() && self.slot_key(s_off, s_len) == bytes {
+                return Some(s_val);
+            }
+            i = (i + 1) & self.mask;
+        }
+    }
+
+    #[inline]
+    pub fn contains(&self, key: &str) -> bool {
+        self.get(key).is_some()
+    }
+}
+
+#[derive(Clone, Copy)]
+pub enum MappedKeyWidth {
+    U32,
+    U64,
+    U128,
+}
+
+pub struct MappedIntTable {
+    pub(super) mmap: Arc<memmap2::Mmap>,
+    pub(super) filter_off: usize,
+    pub(super) filter_mask: usize,
+    pub(super) slots_off: usize,
+    pub(super) cap: usize,
+    pub(super) mask: usize,
+    pub(super) len: usize,
+    pub(super) width: MappedKeyWidth,
+}
+
+impl MappedIntTable {
+    fn slot_size(&self) -> usize {
+        match self.width {
+            MappedKeyWidth::U32 => 8,
+            MappedKeyWidth::U64 => 12,
+            MappedKeyWidth::U128 => 20,
+        }
+    }
+
+    #[inline]
+    fn slot_key_val(&self, i: usize) -> (u128, u32) {
+        let off = self.slots_off + i * self.slot_size();
+        let buf = &self.mmap[..];
+        match self.width {
+            MappedKeyWidth::U32 => (read_u32(buf, off) as u128, read_u32(buf, off + 4)),
+            MappedKeyWidth::U64 => (read_u64(buf, off) as u128, read_u32(buf, off + 8)),
+            MappedKeyWidth::U128 => (read_u128(buf, off), read_u32(buf, off + 16)),
+        }
+    }
+
+    pub fn len(&self) -> usize {
+        self.len
+    }
+
+    pub fn is_empty(&self) -> bool {
+        self.len == 0
+    }
+
+    pub fn slot_bytes(&self) -> usize {
+        (self.cap / 8) * 2 + self.cap * self.slot_size()
+    }
+
+    /// `key` pre-widened to u128 by the caller (mirrors `IntKey::hash_key` for each width).
+    #[inline]
+    pub fn get(&self, key: u128, hash: u64) -> Option<u32> {
+        if !mapped_filter_maybe_contains(&self.mmap[..], self.filter_off, self.filter_mask, hash) {
+            return None;
+        }
+        let mut i = (hash as usize) & self.mask;
+        loop {
+            let (s_key, s_val) = self.slot_key_val(i);
+            if s_val == EMPTY {
+                return None;
+            }
+            if s_key == key {
+                return Some(s_val);
+            }
+            i = (i + 1) & self.mask;
+        }
     }
 }
 

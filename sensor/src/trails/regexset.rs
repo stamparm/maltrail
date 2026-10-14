@@ -357,6 +357,37 @@ impl TrailRegex {
         };
         Some(RegexHit { start, end, candidate: &self.patterns[group] })
     }
+
+    /// Reconstructs a `TrailRegex` from a previously-built one's parts, recompiling the engine
+    /// from `source` rather than redoing `TrailRegexBuilder`'s per-trail decisions (group-syntax
+    /// checks, truncation repair, CPython-compatibility probing) - those are already baked into
+    /// `source`/`patterns`/`skipped`/`repaired`, which is exactly the set `binstore` persists.
+    /// Used only by the mmap trail-store cache's read path.
+    pub fn from_parts(
+        source: String,
+        patterns: Vec<String>,
+        skipped: Vec<String>,
+        repaired: Vec<String>,
+        fancy: bool,
+    ) -> TrailRegex {
+        let regex = if source.is_empty() {
+            None
+        } else if !fancy {
+            pyre::build(&source).ok().map(Engine::Fast)
+        } else {
+            match pyre::build_fancy(&source) {
+                Ok(re) => Some(Engine::Backtracking(re)),
+                Err(e) => {
+                    crate::output::log_error(
+                        &format!("unable to recompile the cached wildcard-trail regex ({e}); wildcard trail matching is disabled"),
+                        true,
+                    );
+                    None
+                }
+            }
+        };
+        TrailRegex { regex, patterns, source, skipped, repaired, fancy }
+    }
 }
 
 #[cfg(test)]
