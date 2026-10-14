@@ -315,9 +315,17 @@ clone_or_update() {
 # ---------------------------------------------------------------------------------------------
 target_triple() {
     machine=$(uname -m)
+    # A 64-bit kernel under a 32-bit userland (Raspberry Pi OS 32-bit on a Pi 3/4/5) says aarch64,
+    # but an aarch64 binary has no loader there. The userland decides.
+    if [ "$OS" = Linux ] && [ "$(getconf LONG_BIT 2>/dev/null)" = 32 ]; then
+        case $machine in aarch64|arm64|armv*) machine=armv6l ;; esac
+    fi
     case $machine in
         x86_64|amd64)  arch=x86_64 ;;
         aarch64|arm64) arch=aarch64 ;;
+        # One static ARMv6 build for every 32-bit Pi, Pi 1 and Zero included. Static musl, so it
+        # runs on glibc systems (Raspberry Pi OS, DietPi) and musl ones alike.
+        armv6l|armv7l|armv8l) [ "$OS" = Linux ] && printf 'arm-unknown-linux-musleabihf'; return ;;
         *)             printf ''; return ;;
     esac
 

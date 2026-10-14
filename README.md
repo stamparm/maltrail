@@ -204,8 +204,8 @@ checks are documented in [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md).
 The installer is verified on twelve Linux distributions — Debian, Ubuntu, Fedora, Rocky, AlmaLinux,
 Arch, openSUSE Leap and Tumbleweed, and Alpine — plus FreeBSD, NetBSD, OpenBSD and macOS, on every
 release, with the full result recorded in [`docs/compat`](docs/compat). Raspberry Pi OS and other
-64-bit ARM systems use the `aarch64` build; 32-bit ARM has no prebuilt sensor and must build it
-from source.
+64-bit ARM systems use the `aarch64` build. 32-bit ARM, down to the Raspberry Pi 1 and Zero, uses a
+static ARMv6 build (`arm-unknown-linux-musleabihf`), and the sensor fits in a 256 MB Pi.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/stamparm/maltrail/master/install.sh | sudo sh

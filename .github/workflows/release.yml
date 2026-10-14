@@ -85,6 +85,13 @@ jobs:
           - target: aarch64-unknown-linux-musl
             kind: musl
             runner: ubuntu-24.04-arm
+          # 32-bit ARM: every Raspberry Pi running a 32-bit OS, down to the Pi 1 and Zero (ARMv6
+          # with VFPv2, which is what this target means). Static musl like the two above, so one
+          # binary covers Raspberry Pi OS, DietPi and Alpine alike. Cross-compiled, not emulated:
+          # cargo under qemu-arm SIGSEGVs in build scripts, and there is no hosted ARMv6 runner.
+          - target: arm-unknown-linux-musleabihf
+            kind: armv6
+            runner: ubuntu-latest
           # macOS and FreeBSD. docs/compat records both installing and running with all thirty
           # marks, on a real Mac and a real FreeBSD VM - so the releases page carrying only Linux
           # made the documentation claim something the download page did not offer.
@@ -228,6 +235,65 @@ jobs:
             echo "::error::the musl sensor is not static:"; ldd "$bin" || true; exit 1
           fi
           docker run --rm -v "$PWD/$bin:/s:ro" alpine:3.20 /s --version
+
+      # zig is the cross C compiler and linker: one pinned PyPI wheel instead of a toolchain from
+      # a third-party mirror. libpcap is built for the target from the same checksummed release the
+      # glibc build uses, and -mcpu pins the C code to the Pi 1's ARM1176 - zig's default for this
+      # triple is newer, and an ARMv7 instruction in sqlite would be a SIGILL on exactly the
+      # machines this binary is for.
+      - name: Cross-build for ARMv6 (Raspberry Pi 1 / Zero and up)
+        if: ${{ matrix.kind == 'armv6' }}
+        env:
+          LIBPCAP_VERSION: 1.10.5
+          LIBPCAP_SHA256: 37ced90a19a302a7f32e458224a00c365c117905c2cd35ac544b6880a81488f0
+        run: |
+          set -eu
+          # a venv: the runner's system Python refuses pip installs (PEP 668)
+          python3 -m venv "$RUNNER_TEMP/zig"
+          "$RUNNER_TEMP/zig/bin/pip" install --quiet ziglang==0.13.0 cargo-zigbuild==0.23.4
+          export PATH="$RUNNER_TEMP/zig/bin:$PATH"
+          rustup target add arm-unknown-linux-musleabihf
+          tools="$RUNNER_TEMP/zig-tools"
+          mkdir -p "$tools"
+          printf '#!/bin/sh\nexec python3 -m ziglang cc -target arm-linux-musleabihf -mcpu=arm1176jzf_s "$@"\n' > "$tools/cc"
+          printf '#!/bin/sh\nexec python3 -m ziglang ar "$@"\n' > "$tools/ar"
+          chmod +x "$tools/cc" "$tools/ar"
+
+          curl -sSfL -o "$RUNNER_TEMP/libpcap.tar.gz" "https://www.tcpdump.org/release/libpcap-$LIBPCAP_VERSION.tar.gz"
+          echo "$LIBPCAP_SHA256  $RUNNER_TEMP/libpcap.tar.gz" | sha256sum -c -
+          tar -C "$RUNNER_TEMP" -xzf "$RUNNER_TEMP/libpcap.tar.gz"
+          ( cd "$RUNNER_TEMP/libpcap-$LIBPCAP_VERSION" &&
+            CC="$tools/cc" AR="$tools/ar" ./configure --host=arm-linux-musleabihf --prefix="$RUNNER_TEMP/libpcap" \
+              --disable-shared --disable-dbus --disable-rdma --without-libnl --without-dpdk \
+              --without-dag --without-septel --without-snf --without-turbocap >/dev/null &&
+            make -j"$(nproc)" >/dev/null && make install >/dev/null )
+
+          export LIBPCAP_LIBDIR="$RUNNER_TEMP/libpcap/lib" LIBPCAP_VER=$LIBPCAP_VERSION MALTRAIL_SKIP_PCAP_CHECK=1
+          export CFLAGS_arm_unknown_linux_musleabihf="-mcpu=arm1176jzf_s"
+          export RUSTFLAGS="-C target-feature=+crt-static"
+          # stripped by the linker: the host's strip does not know ARM
+          export CARGO_PROFILE_RELEASE_STRIP=true CARGO_PROFILE_RELEASE_DEBUG=0
+          cargo zigbuild --release --locked --manifest-path sensor/Cargo.toml \
+            --target arm-unknown-linux-musleabihf --bin maltrail-sensor
+          mkdir -p sensor/target/release
+          cp sensor/target/arm-unknown-linux-musleabihf/release/maltrail-sensor sensor/target/release/
+
+      - name: Set up QEMU
+        if: ${{ matrix.kind == 'armv6' }}
+        uses: docker/setup-qemu-action@v3
+
+      # QEMU_CPU=arm1176 makes the emulator a Pi 1: anything newer than ARMv6 in the binary dies
+      # here with SIGILL instead of on someone's Pi.
+      - name: The ARMv6 binary must be static, ARMv6, and must start on a Pi 1 CPU
+        if: ${{ matrix.kind == 'armv6' }}
+        run: |
+          set -eu
+          bin=sensor/target/release/maltrail-sensor
+          file "$bin"
+          file "$bin" | grep -q 'ARM, EABI5' || { echo "::error::not a 32-bit ARM binary"; exit 1; }
+          file "$bin" | grep -q 'statically linked' || { echo "::error::not static"; exit 1; }
+          readelf -A "$bin" | grep -q 'Tag_CPU_arch: v6$' || { echo "::error::not ARMv6:"; readelf -A "$bin"; exit 1; }
+          docker run --rm --platform linux/arm/v6 -e QEMU_CPU=arm1176 -v "$PWD/$bin:/s:ro" alpine:3.20 /s --version
 
       # macOS builds natively. libpcap is in the SDK, so there is no static-link dance and no
       # libc floor to get wrong - a darwin binary carries its own minimum OS version instead, and
