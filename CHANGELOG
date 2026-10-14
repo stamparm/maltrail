@@ -14,6 +14,106 @@
 
 
 
+- Version 3.4 -> 3.5 (14 Oct 2026)
+
+[+] Runs on a 256 MB Raspberry Pi. The trail update needed ~1.1 GB and was
+    OOM-killed on every small box; the sensor needed 153 MB and twice that
+    across a reload. Measured in a 221 MB container with no swap, against the
+    full 1.9M trail set: update 69 MB, sensor 32 MB, reload 58 MB. Thanks to
+    #19641 for the report and the idea.
+      - the static aggregate is streamed from its cache instead of being held
+        as bytes, text and a dict at once - the update is ~255 MB on every
+        machine now, not 1.1 GB
+      - below 768 MB available (cgroup limits included) the merge spills to a
+        SQLite file; same code, byte-identical trails.csv, ~4x slower
+      - 'UPDATE_SERVER' downloads stream to disk
+      - the sensor builds its trail store into unlinked, file-backed mappings,
+        so it is reclaimable page cache instead of heap; lookups measured the
+        same speed
+      - hosts under 1 GB get a capture ring of 10% of RAM, not 64 MB
+
+[+] A static ARMv6 sensor ('arm-unknown-linux-musleabihf') for every 32-bit
+    Raspberry Pi, Pi 1 and Zero included; install.sh picks it on armv6l and
+    armv7l, and on a 64-bit kernel under a 32-bit userland. The release
+    replays a trail through it under an emulated Pi 1 CPU and refuses a
+    binary that does not detect it.
+
+[+] Basic sensor status on the dashboard (#19627).
+
+[+] Windows installer ('install.ps1'); NetBSD and OpenBSD join the tested
+    platform matrix, nine of nine checks each.
+
+[=] Workflows and shell scripts are linted in CI; a test covers the seam
+    between the sensor that writes the event log and the server that reads it.
+
+
+- Version 3.3 -> 3.4 (04 Sep 2026)
+
+[+] Prebuilt sensors for musl (Alpine), FreeBSD, macOS and Windows, next to
+    glibc Linux. Windows is built and RUN under Wine in CI; the Windows build
+    found four bugs that only running it could. docs/compat publishes the
+    platform matrix - 19 platforms, every capability checked, none failing.
+
+[+] 'LOG_SERVER_SECRET': event datagrams to the server are authenticated, with
+    a configurable replay window. Forged detections are evidence tampering.
+
+[+] Spamhaus DROP as a '/check_ip' verdict (#19598). One severity policy shared
+    by the server and the dashboard (#19621, #19622); a domain-only malware
+    list derived for DNS filters (#19620).
+
+[+] '--detect-test --keep DIR [--serve]' keeps the generated events and serves
+    them; 'DISABLED_HEURISTICS' documents all eight and warns on a typo.
+
+[!] The released Linux sensor could not capture at all: the statically linked
+    libpcap refused promiscuous mode on 'any'. Found by the new captures
+    column of the platform matrix.
+
+[!] The dashboard silently dropped every JA3 and JA4 detection.
+
+[!] install.sh died on the whole RHEL 9 family (curl-minimal conflict), and on
+    FreeBSD and macOS (four Linux assumptions).
+
+[!] '/fail2ban' published a field fragment instead of the attacker; '/geo'
+    skipped JSON lines; 'cleared.txt' did nothing on a JSON log; '/hunt' fails
+    closed on a netfilter it cannot parse; '(custom)' masking looks at the
+    reference field only.
+
+[-] Two frozen feeds and cleantalk; Googlebot is no longer called an attacker.
+    Removed the retired mmap ring, core/fastfilter.py and the unused cargo-fuzz
+    crate (parser fuzzing moved into the test suite).
+
+
+- Version 3.2 -> 3.3 (31 Aug 2026)
+
+[-] The Python sensor ('old/') is retired, with the harness that only existed
+    to diff against it.
+
+[+] Decapsulation of VXLAN, GENEVE, GRE, ERSPAN and IP-in-IP; stacked VLAN
+    (QinQ) tags; the full IPv6 extension-header chain. Each of these used to
+    drop the frame, which on such a link means a sensor that sees nothing.
+
+[+] DNS tunnelling detection, built to be hard to trigger.
+
+[+] 'LOCAL_LOG_FORMAT text|json' (#19130), read by every server-side reader;
+    the ignore list accepts networks, ranges and port ranges (#19142); more
+    than one day of events can be selected (#4).
+
+[+] A reference network (sensor/tools/refnet.py): a synthetic LAN with planted
+    ground truth, so detection rate and noise are numbers.
+
+[=] Multi-worker capture uses source-affine fanout by default; flow hashing
+    split a scanner's evidence across workers and lost scan alerts.
+
+[=] '/trails' answers an unchanged set with 304 instead of 84 MB; '/events' is
+    compressed and validated; the dashboard sorts and opens the drawer faster.
+
+[!] Constant-time auth compare; the shipped fail2ban regex no longer bans our
+    own hosts; address trails are gated like names (#19607); trails naming a
+    registry instead of a host fail the build.
+
+[=] The version lives in five files and one command now bumps all of them.
+
+
 - Version 3.1.1 -> 3.2 (27 Aug 2026)
 
 [+] Static trails moved to their own repository (stamparm/trails) and are now

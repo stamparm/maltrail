@@ -284,7 +284,7 @@ jobs:
 
       - name: Set up QEMU
         if: ${{ matrix.kind == 'armv6' }}
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v4
 
       # QEMU_CPU=arm1176 makes the emulator a Pi 1: anything newer than ARMv6 in the binary dies
       # here with SIGILL instead of on someone's Pi.
