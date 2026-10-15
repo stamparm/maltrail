@@ -12,6 +12,7 @@ import stat
 import struct
 import subprocess
 import sys
+import time
 
 from core.addr import addr_to_int
 from core.compat import is_decimal
@@ -62,6 +63,7 @@ CEF_FORMAT = "{syslog_time} {host} CEF:0|{device_vendor}|{device_product}|{devic
 SESSION_COOKIE_NAME = "%s_sessid" % NAME.lower()
 SESSION_COOKIE_FLAG_SAMESITE = True
 SNAP_LEN = 2000
+FALLBACK_PHYSMEM = 256 * 1024 * 1024  # assumed when the OS will not report total memory (sizing only)
 BLOCK_LENGTH = 1 + 2 + 4 + 4 + 4 + SNAP_LEN  # primitive mutex + short for packet size + int for sec + int for usec + int for IP offset + max packet size
 SHORT_SENSOR_SLEEP_TIME = 0.00001
 REGULAR_SENSOR_SLEEP_TIME = 0.001
@@ -591,12 +593,18 @@ def read_config(config_file):
             match = re.search(r"(\d+)\s*([kKmMgG])B", config.CAPTURE_BUFFER)
             config.CAPTURE_BUFFER = int(match.group(1)) * {"K": 1024, "M": 1024 ** 2, "G": 1024 ** 3}[match.group(2).upper()]
         elif re.search(r"\d+%", config.CAPTURE_BUFFER):
-            physmem = _get_total_physmem()
-
-            if physmem:
-                config.CAPTURE_BUFFER = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) // 100
-            else:
-                sys.exit("[!] unable to determine total physical memory. Please use absolute value for 'CAPTURE_BUFFER'")
+            # Asked three times, then assumed: a memory query that fails once must not stop the
+            # shipped 'CAPTURE_BUFFER 10%' from starting (same policy as the Rust sensor).
+            physmem = None
+            for _ in range(3):
+                physmem = _get_total_physmem()
+                if physmem:
+                    break
+                time.sleep(0.05)
+            if not physmem:
+                physmem = FALLBACK_PHYSMEM
+                print("[!] unable to determine total physical memory; 'CAPTURE_BUFFER' percentages are taken of %d MB" % (FALLBACK_PHYSMEM // (1024 * 1024)))
+            config.CAPTURE_BUFFER = physmem * int(re.search(r"(\d+)%", config.CAPTURE_BUFFER).group(1)) // 100
         else:
             sys.exit("[!] invalid configuration value for 'CAPTURE_BUFFER' ('%s')" % config.CAPTURE_BUFFER)
 

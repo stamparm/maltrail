@@ -595,16 +595,40 @@ pub fn parse_byte_size(value: &str) -> Result<u64, ConfigError> {
             "kb" | "k" => Ok(num * 1024),
             "mb" | "m" => Ok(num * 1024 * 1024),
             "gb" | "g" => Ok(num * 1024 * 1024 * 1024),
-            "%" => {
-                let total = total_physmem().ok_or_else(|| {
-                    ConfigError("unable to determine total physical memory. Please use absolute value".into())
-                })?;
-                Ok(total * num / 100)
-            }
+            "%" => Ok(physmem_for_sizing().0 * num / 100),
             _ => Err(ConfigError(format!("invalid size '{value}'"))),
         };
     }
     Err(ConfigError(format!("invalid size '{value}'")))
+}
+
+/// Memory assumed when the OS will not say, for sizing only.
+pub const FALLBACK_PHYSMEM: u64 = 256 * 1024 * 1024;
+
+/// Physical memory for resolving `NN%` sizes, and whether it had to be assumed.
+///
+/// The shipped `CAPTURE_BUFFER 10%` used to turn a failed memory query into a refusal to start.
+/// That query is not reliable everywhere: `GlobalMemoryStatusEx` failed once under Wine in CI with
+/// the same code passing minutes earlier. So it is asked three times, and if it still has no
+/// answer the sensor starts sized for a small host - a ring too small for a big link costs drops,
+/// which `maltrail_capture_dropped_total` reports, while one too big for a small host costs the
+/// host - and says so among the startup clamps.
+pub fn physmem_for_sizing() -> (u64, bool) {
+    static PHYSMEM: std::sync::OnceLock<(u64, bool)> = std::sync::OnceLock::new();
+    *PHYSMEM.get_or_init(|| resolve_physmem(total_physmem, std::time::Duration::from_millis(50)))
+}
+
+/// `physmem_for_sizing()` with the query and the pause between attempts supplied, for tests.
+fn resolve_physmem(query: impl Fn() -> Option<u64>, pause: std::time::Duration) -> (u64, bool) {
+    for attempt in 0..3 {
+        if let Some(total) = query() {
+            return (total, false);
+        }
+        if attempt < 2 {
+            std::thread::sleep(pause);
+        }
+    }
+    (FALLBACK_PHYSMEM, true)
 }
 
 /// `core/settings.py:_get_total_physmem()`.
@@ -953,7 +977,7 @@ impl Config {
                     ConfigError(format!("invalid configuration value for 'CAPTURE_BUFFER_SIZE' ('{v}'): {e}"))
                 })?
             } else {
-                inferred_capture_ring(capture_buffer, total_physmem())
+                inferred_capture_ring(capture_buffer, Some(physmem_for_sizing().0))
             }
         };
 
@@ -1122,6 +1146,13 @@ impl Config {
                     $field = bounded;
                 }
             }};
+        }
+
+        if physmem_for_sizing().1 {
+            self.clamps.push(format!(
+                "total physical memory could not be determined; sizes given in % are taken of {} MB",
+                FALLBACK_PHYSMEM / (1024 * 1024)
+            ));
         }
 
         // Below the smallest Ethernet+IP+TCP header there is nothing left to parse; above
@@ -1316,6 +1347,28 @@ SENSOR_NAME box   # trailing comment
         for (value, expected) in cases {
             assert_eq!(fanout_count(value.as_ref()), expected, "{value:?}");
         }
+    }
+
+    #[test]
+    fn a_failed_memory_query_is_retried_then_assumed() {
+        use std::cell::Cell;
+        let zero = std::time::Duration::ZERO;
+        // fails twice, answers on the third attempt
+        let calls = Cell::new(0);
+        let flaky = || {
+            calls.set(calls.get() + 1);
+            (calls.get() == 3).then_some(8u64 << 30)
+        };
+        assert_eq!(resolve_physmem(flaky, zero), (8 << 30, false));
+        assert_eq!(calls.get(), 3);
+        // never answers: three attempts, then the fallback, flagged as assumed
+        let calls = Cell::new(0);
+        let dead = || {
+            calls.set(calls.get() + 1);
+            None
+        };
+        assert_eq!(resolve_physmem(dead, zero), (FALLBACK_PHYSMEM, true));
+        assert_eq!(calls.get(), 3);
     }
 
     #[test]
