@@ -26,8 +26,9 @@ prevention system.
 
 ## Features
 
-- A full trail build combining more than 3,000 bundled static files, 42 public-feed integrations,
-  and optional operator-supplied trails.
+- A full trail build combining the static trail set (over 3,000 curated files, fetched from
+  [stamparm/trails](https://github.com/stamparm/trails)), 39 public-feed integrations, and optional
+  operator-supplied trails.
 - A multithreaded Rust sensor using libpcap, with optional Linux `PACKET_FANOUT` capture workers.
 - A Python server providing the reporting interface, event intake, and HTTP API.
 - Plain-text custom trails and whitelists that can be reviewed and version-controlled.
@@ -188,11 +189,12 @@ Measure it on the target system with:
 cargo bench --manifest-path sensor/Cargo.toml --bench hotpath
 ```
 
-One capture worker is used by default. Additional workers can increase capture capacity, but Linux
-flow hashing divides per-source state between workers and therefore reduces the sensitivity of some
-scan heuristics. In the documented test, 91% of single-worker heuristic alerts remained with two
-workers, 86% with four, and 65% with eight. Exact trail matching was unchanged. Increase
-`CAPTURE_FANOUT` only when capture-drop metrics show that it is necessary.
+One capture worker is used by default. Additional workers increase capture capacity, and with more
+than one the sensor distributes packets by source address (`CAPTURE_FANOUT_MODE source`), so each
+scanner stays on one worker and the scan heuristics keep all their alerts. Plain flow hashing
+(`hash`) would split a scanner across workers: in the documented test it kept 91% of single-worker
+heuristic alerts at two workers, 87% at four and 66% at eight. Exact trail matching is unaffected
+either way. Add workers when capture-drop metrics show that one is not keeping up.
 
 Benchmark methodology, hardware results, profiler output, memory measurements, and live fanout
 checks are documented in [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md).
@@ -201,9 +203,10 @@ checks are documented in [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md).
 
 ### Installer
 
-The installer is verified on twelve Linux distributions — Debian, Ubuntu, Fedora, Rocky, AlmaLinux,
-Arch, openSUSE Leap and Tumbleweed, and Alpine — plus FreeBSD, NetBSD, OpenBSD and macOS, on every
-release, with the full result recorded in [`docs/compat`](docs/compat). Raspberry Pi OS and other
+The installer is verified on twelve Linux distributions, counting releases (Debian 12 and 13,
+Ubuntu 22.04 and 24.04, Fedora 41 and 44, Rocky, AlmaLinux, Arch, openSUSE Leap and Tumbleweed,
+and Alpine), plus FreeBSD, NetBSD, OpenBSD and macOS. The matrix is re-run weekly and whenever the installer changes,
+with the full result recorded in [`docs/compat`](docs/compat). Raspberry Pi OS and other
 64-bit ARM systems use the `aarch64` build. 32-bit ARM, down to the Raspberry Pi 1 and Zero, uses a
 static ARMv6 build (`arm-unknown-linux-musleabihf`), and the sensor fits in a 256 MB Pi.
 
@@ -227,7 +230,7 @@ Common installer options:
 
 ```bash
 sh install.sh --role sensor      # Install only the sensor
-sh install.sh --ref 3.1.2        # Install a release tag instead of master
+sh install.sh --ref 3.5          # Install a release tag instead of master
 sh install.sh --no-service       # Install without changing systemd
 sh install.sh --dry-run          # Print commands without applying them
 sh install.sh --uninstall        # Remove the managed installation; keep logs and state
@@ -253,7 +256,7 @@ by hand.
 
 Alpine and other musl systems get a `-musl` sensor build. They used to be told the prebuilt binary
 was glibc-linked and to compile their own; the sensor builds and runs on musl natively, so that was
-a missing artefact rather than a platform limit.
+a missing artifact rather than a platform limit.
 
 ### Building from source
 
@@ -304,7 +307,7 @@ A binary is not a complete sensor on its own. Install with `install.sh` (or `ins
 Windows), which downloads the right binary for you.
 
 The glibc builds link libpcap statically and target glibc 2.28, so the C library is the only thing
-they need — nothing to install, on RHEL 8+, Debian 10+, Ubuntu 18.04+ and Leap 15.x alike. The musl
+they need — nothing to install, on RHEL 8+, Debian 10+, Ubuntu 20.04+ and Leap 15.6 alike. The musl
 builds are fully static, so Alpine needs nothing at all. The Windows build is 64-bit and needs Windows 10 or later plus
 [Npcap](https://npcap.com) installed before it will start — `wpcap.dll` is a load-time dependency,
 so without it the loader refuses the executable rather than failing at capture. The archive says so
@@ -406,14 +409,15 @@ whitelist counts rather than only confirming that files exist.
 
 A trail is one indicator — a domain, URL, IP address, `IP:port` pair, User-Agent, JA3/JA4
 fingerprint or certificate hash — together with what it means and where it came from. The updater
-merges four sources into `TRAILS_FILE`, in this order:
+merges five sources into `TRAILS_FILE`, in this order:
 
 | source | where it comes from |
 | --- | --- |
 | Feeds | `feeds/*.py`, fetched directly by your deployment from each publisher, e.g. [IPnoise](https://ipnoise.sekuripy.hr/) |
-| Custom | `CUSTOM_TRAILS_DIR` and `CUSTOM_TRAILS_URL`, your own indicators |
+| Custom | `CUSTOM_TRAILS_DIR`, your own indicators |
 | Static | the assembled set from [stamparm/trails](https://github.com/stamparm/trails), fetched from `STATIC_TRAILS_URL`; [separately licensed](https://github.com/stamparm/trails/blob/main/LICENSE.md) |
-| Engine lists | `data/mass_scanner*.txt`, shipped here because they change rarely |
+| Engine lists | `data/mass_scanner.txt`, shipped here because it changes rarely |
+| Remote custom | `CUSTOM_TRAILS_URL`, merged last; it does not override custom or static entries |
 
 Feeds are fetched by your own deployment rather than bundled here, so each is as current as its
 publisher keeps it. [IPnoise](https://ipnoise.sekuripy.hr/), for example, publishes the addresses
@@ -434,7 +438,7 @@ Point it at a specific `content-YYYYMMDD-HHMM` release instead to pin a version,
 is not immediately global. The set is cached next to `TRAILS_FILE`, which is what makes an offline
 or air-gapped rebuild work; the published `sha256` is checked before downloading, so a deployment
 that updates more often than the content changes transfers 65 bytes rather than 11 MB, and a
-payload that does not match its digest is refused in favour of the cache.
+payload that does not match its digest is refused in favor of the cache.
 
 `update_trails()` publishes a new `TRAILS_FILE` atomically and only after a successful build. Feeds
 that return nothing are reported by name, so a deployment does not silently depend on a source that
@@ -514,7 +518,7 @@ It replays a crafted pcap of emulated malicious traffic (trail hits on a DNS que
 `IP:port`, a URL path and a `Host` header, plus the SQL-injection, traversal, RCE, XSS, proxy-probe,
 sinkhole, missing-`Host` and port/web/infection-scanning heuristics) through the installed sensor
 and asserts that every expected detection fires. It needs no root, no interface and no trail set of
-its own. A healthy install prints `20/20 detection(s) fired`.
+its own. A healthy install prints `27/27 detection(s) fired`.
 
 When `STATS_ADDRESS` is configured, monitor at least these Prometheus metrics:
 
@@ -570,7 +574,7 @@ python3 server.py --detect-test --keep DIR --serve   # ...and keep the events, s
 ```
 
 `--keep` also replays `sensor/tests/corpus/` into the same log and prints which of the shapes the
-dashboard renders differently have an event behind them, so a missing icon, colour or glyph is
+dashboard renders differently have an event behind them, so a missing icon, color or glyph is
 visible rather than assumed. Timestamps are shifted so the newest day is today. A sensor binary is
 required (`cargo build --release --manifest-path sensor/Cargo.toml`).
 
@@ -633,7 +637,7 @@ Maltrail is distributed under the MIT License. See [`LICENSE`](LICENSE).
 
 That is the engine. The static trail set is separate work under separate terms: free for internal
 defensive use, research and teaching, but a commercial product, service, MSSP or MDR offering, or a
-redistributed feed needs a licence. An MIT engine does not make the content free to sell — see
+redistributed feed needs a license. An MIT engine does not make the content free to sell — see
 [`LICENSE.md`](https://github.com/stamparm/trails/blob/main/LICENSE.md) in
 [stamparm/trails](https://github.com/stamparm/trails) before shipping it in something you charge
 for.
