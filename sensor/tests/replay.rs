@@ -156,8 +156,7 @@ fn timing_heuristics_need_real_timestamps() {
     // Python 3) cannot reach the counting heuristics: this documents *why* the parity harness
     // reports those cases as a Rust surplus in --timestamps pcap mode.
     for case in read_manifest().into_iter().filter(|c| c.needs_pcap_timestamps) {
-        // Matched against the whole formatted event line, not just `info`: the reader above
-        // cannot tell "expect" from "expect_rust_only" strings apart, and a divergence pin may
+        // Matched against the whole formatted event line, not just `info`: an expectation may
         // name a TRAIL ("203.0.113.77:443") rather than an info phrase.
         let mut h = harness_for_corpus(vec![]);
         h.replay(&case.pcap, true);

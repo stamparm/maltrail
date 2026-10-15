@@ -41,10 +41,15 @@
     tracking those heuristics need, not only their alerts (+3.4% packets per
     second with both muted, on a UDP-heavy mix).
 
-[=] 'long domain' events throttle per zone, not per full name. Every query a
-    DNS tunnel sends names a new label, so one tunnel wrote one event per query:
-    220 in four minutes in the reference network, now 3 per minute and one
-    '(*).zone' summary line.
+[=] 'long domain' and the DGA verdicts ('entropy/consonant threshold no such
+    domain') throttle per zone, not per full name. A DNS tunnel or a DGA bot
+    names a new label every time, so each wrote one event per query: 220 for
+    one tunnel and 177 for one bot in the reference network, now 3 per minute
+    and one '(*).zone' summary line.
+
+[!] The beaconing case of the replay corpus asserts its detection again. Its
+    expectation was kept for the retired Python parity harness only, so from
+    27 Aug nothing would have noticed beaconing breaking.
 
 [!] A scan (port, UDP, web, infection) or ICMP tunnel in the last second of
     a replayed capture is reported. The heuristics report on the next

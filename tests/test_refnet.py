@@ -102,6 +102,29 @@ class ScoringTest(unittest.TestCase):
         self.assertAlmostEqual(r2["fp_per_100k_benign"], 0.5, places=6)
 
 
+class GateTest(unittest.TestCase):
+    """CI runs this tool as a gate; a gate that cannot fail is not one."""
+
+    def result(self, **overrides):
+        r = {"detection_rate": 100.0, "false_positives": 0, "scans_detected": 3, "scans_planted": 3,
+             "heuristics": {"BEACONING": (1, 1), "ICMP_TUNNEL": (2, 2)}}
+        r.update(overrides)
+        return r
+
+    def test_a_clean_run_passes(self):
+        self.assertEqual(R.gate(self.result(), 100, 0, True), [])
+
+    def test_each_threshold_fails_on_its_own(self):
+        self.assertTrue(R.gate(self.result(detection_rate=96.7), 100, 0, True))
+        self.assertTrue(R.gate(self.result(false_positives=1), 100, 0, True))
+        self.assertTrue(R.gate(self.result(scans_detected=2), 100, 0, True))
+        self.assertEqual(R.gate(self.result(heuristics={"BEACONING": (0, 1)}), 100, 0, True),
+                         ["BEACONING detected 0/1"])
+
+    def test_a_missed_heuristic_only_fails_when_asked(self):
+        self.assertEqual(R.gate(self.result(heuristics={"BEACONING": (0, 1)}), 100, 0, False), [])
+
+
 class TrailPoolTest(unittest.TestCase):
     """Each planted indicator has to be plantable AS the kind it is, or the miss is ours."""
 
@@ -173,7 +196,7 @@ class GenerationTest(unittest.TestCase):
         _, m = R.generate(out_dir, hosts=4, minutes=2, seed=7, planted=1, scans=2, trails=trails)
         kinds = sorted(_["kind"] for _ in m["truth"])
         # (the four encapsulation plants need four trail domains; this trail set has one)
-        self.assertEqual(kinds, ["BEACONING", "CERT", "DNS", "DNS_EXHAUSTION", "DNS_TUNNEL", "HOMOGRAPH", "HOMOGRAPH",
+        self.assertEqual(kinds, ["BEACONING", "CERT", "DGA", "DNS", "DNS_EXHAUSTION", "DNS_TUNNEL", "HOMOGRAPH", "HOMOGRAPH",
                                  "HOMOGRAPH", "ICMP_TUNNEL", "ICMP_TUNNEL", "IOT_DROPPER", "IPORT", "JA3", "JA4",
                                  "SCAN", "SCAN", "TAIL_SCAN", "URL"])
         # the planted fingerprints are in the run's own trail set, the given one untouched

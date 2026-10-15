@@ -216,6 +216,23 @@ def _plant_more(packets, truth, rnd, addresses, domains, minutes, extra_trails):
         packets.append((when + i * 0.045, G.eth(G.ipv4(host, RESOLVER, 17, G.udp(rnd.randint(30000, 60000), 53, G.dns_query(name))))))
     truth.append({"host": host, "trail": None, "info": "dns exhaustion", "kind": "DNS_EXHAUSTION", "explains": victim})
 
+    # A DGA bot: 300 algorithmically generated names in ten minutes, every one NXDOMAIN. Bait: the
+    # NXDOMAIN noise every Windows network makes all day (WPAD and DC-locator lookups).
+    bot, when = pick(), start(700)
+    for i in range(300):
+        name = "".join(rnd.choice("bcdfghjklmnpqrstvwxz" if j % 3 else "aeiou") for j in range(rnd.randint(12, 18))) + ".com"
+        sport = rnd.randint(30000, 60000)
+        packets.append((when + i * 2, G.eth(G.ipv4(bot, RESOLVER, 17, G.udp(sport, 53, G.dns_query(name))))))
+        packets.append((when + i * 2 + 0.01, G.eth(G.ipv4(RESOLVER, bot, 17, G.udp(53, sport, G.dns_nxdomain(name))))))
+    truth.append({"host": bot, "trail": None, "info": "no such domain", "kind": "DGA", "explains": ".com", "via": "dst"})
+    for i in range(30):
+        host, sport = pick(), rnd.randint(30000, 60000)
+        name = rnd.choice(("wpad.corp.example", "_ldap._tcp.dc._msdcs.corp.example", "isatap.corp.example"))
+        when = start(1)
+        packets.append((when, G.eth(G.ipv4(host, RESOLVER, 17, G.udp(sport, 53, G.dns_query(name))))))
+        packets.append((when + 0.01, G.eth(G.ipv4(RESOLVER, host, 17, G.udp(53, sport, G.dns_nxdomain(name))))))
+        benign += 2
+
     # A trail lookup inside each encapsulation the sensor now follows.
     names = rnd.sample(domains, 4) if len(domains) >= 4 else []
     for kind, name in zip(("VXLAN", "GRE", "IPV6_EXT", "QINQ"), names):
@@ -394,7 +411,7 @@ def generate(out, hosts=500, minutes=60, seed=1312, planted=10, scans=3, trails=
 
 
 def events(logdir):
-    """(source, trail, info) per logged event."""
+    """(source, trail, info, destination) per logged event."""
 
     out = []
     for path in sorted(glob.glob(os.path.join(logdir, "*.log"))):
@@ -403,7 +420,7 @@ def events(logdir):
         for line in io.open(path, encoding="utf8", errors="replace"):
             parts = line.split()
             if len(parts) > 10:
-                out.append((parts[3], parts[9].strip('"'), line.split('"')[-2] if line.count('"') >= 4 else ""))
+                out.append((parts[3], parts[9].strip('"'), line.split('"')[-2] if line.count('"') >= 4 else "", parts[5]))
     return out
 
 
@@ -426,7 +443,8 @@ def score(meta, logged):
         return None
 
     detected, explained = set(), set()
-    for host, trail, _info in logged:
+    for entry in logged:
+        host, trail = entry[0], entry[1]
         hit = credits(host, trail)
         if hit:
             detected.add(hit)
@@ -446,7 +464,9 @@ def score(meta, logged):
         if kind == "ICMP_TUNNEL":
             return [e for e in logged if e[0] == host and e[1] == trail and "icmp tunneling" in e[2]]
         info = entry.get("info")
-        return [e for e in logged if (host is None or e[0] == host) and (trail is None or e[1] == trail)
+        # verdicts on a DNS REPLY carry the resolver as source and our host as destination
+        side = 3 if entry.get("via") == "dst" else 0
+        return [e for e in logged if (host is None or e[side] == host) and (trail is None or e[1] == trail)
                 and (info is None or info in e[2])]
 
     # Events a planted attack causes BESIDES its own detection (another heuristic firing on the
@@ -460,7 +480,8 @@ def score(meta, logged):
         explained.update((e[0], e[1]) for e in hits)
         if entry.get("explains"):
             # brackets mark what matched ("(label.t74).zone"), so compare without them
-            extra = {(e[0], e[1]) for e in logged if e[0] == entry["host"]
+            side = 3 if entry.get("via") == "dst" else 0
+            extra = {(e[0], e[1]) for e in logged if e[side] == entry["host"]
                      and entry["explains"] in e[1].replace("(", "").replace(")", "")} - set(
                 (e[0], e[1]) for e in hits)
             explained.update(extra)
@@ -525,6 +546,8 @@ def main():
     parser.add_argument("--score", metavar="DIR", help="score a directory a previous run wrote")
     parser.add_argument("--min-detection", type=float, default=None, help="fail below this %%")
     parser.add_argument("--max-false", type=int, default=None, help="fail above this many false positives")
+    parser.add_argument("--require-heuristics", action="store_true",
+                        help="fail if any planted heuristic (scan, tunnel, beacon, ...) goes undetected")
     options = parser.parse_args()
 
     if options.score:
@@ -551,6 +574,7 @@ def main():
                         ("DNS_TUNNEL", "dns tunnelling"), ("DNS_EXHAUSTION", "dns exhaustion"),
                         ("VXLAN", "trail inside VXLAN"), ("GRE", "trail inside GRE"),
                         ("IPV6_EXT", "trail behind IPv6 ext hdr"), ("QINQ", "trail behind QinQ"),
+                        ("DGA", "dga bot (nxdomain)"),
                         ("JA3", "JA3 trail"), ("JA4", "JA4 trail"), ("CERT", "certificate SHA-1 trail"),
                         ("IOT_DROPPER", "iot dropper (our host)")):
         if kind in result["heuristics"]:
@@ -565,14 +589,26 @@ def main():
     if result["false_examples"]:
         print("\n[!] false positives: %s" % ", ".join("%s->%s" % _ for _ in result["false_examples"][:5]))
 
-    failed = False
-    if options.min_detection is not None and result["detection_rate"] < options.min_detection:
-        print("\n[x] detection rate below --min-detection %.1f%%" % options.min_detection)
-        failed = True
-    if options.max_false is not None and result["false_positives"] > options.max_false:
-        print("\n[x] more false positives than --max-false %d" % options.max_false)
-        failed = True
-    return 1 if failed else 0
+    failures = gate(result, options.min_detection, options.max_false, options.require_heuristics)
+    for failure in failures:
+        print("\n[x] %s" % failure)
+    return 1 if failures else 0
+
+
+def gate(result, min_detection=None, max_false=None, require_heuristics=False):
+    """Why this run fails the thresholds asked for; empty when it passes."""
+    failures = []
+    if min_detection is not None and result["detection_rate"] < min_detection:
+        failures.append("detection rate below --min-detection %.1f%%" % min_detection)
+    if max_false is not None and result["false_positives"] > max_false:
+        failures.append("more false positives than --max-false %d" % max_false)
+    if require_heuristics:
+        if result["scans_detected"] < result["scans_planted"]:
+            failures.append("scans detected %d/%d" % (result["scans_detected"], result["scans_planted"]))
+        for kind, (found, total) in sorted(result["heuristics"].items()):
+            if found < total:
+                failures.append("%s detected %d/%d" % (kind, found, total))
+    return failures
 
 
 if __name__ == "__main__":

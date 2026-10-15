@@ -178,6 +178,14 @@ jobs:
             exit 1
           fi
 
+      # The reference network: planted trails and heuristics inside realistic benign traffic, scored
+      # for detection AND false positives. Run by hand only, it crashed on the current trail set
+      # and double-counted every rerun for six weeks before anyone noticed. ~3 s.
+      - name: Reference network (detection and false positives)
+        run: |
+          python3 sensor/tools/refnet.py --out /tmp/refnet --trails "$HOME/.maltrail/trails.csv" \
+            --min-detection 100 --max-false 0 --require-heuristics
+
   # The declared MSRV is a promise to operators on older distributions. Compile it, or it is
   # just a number in Cargo.toml. Deliberately NOT a rust-toolchain.toml: pinning that file would
   # make the repository's default toolchain the minimum one for every contributor.

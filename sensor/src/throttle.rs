@@ -144,13 +144,13 @@ fn hash_field(h: &mut crate::fasthash::FxHasher, field: &Field) {
     let _ = h.finish();
 }
 
-/// What an event throttles under: its trail, except for a long-domain event, which throttles under
-/// its ZONE. Every query a DNS tunnel (or a hashing client) sends names a new label, so keyed on the
-/// full name one tunnel wrote one event per query - 220 in four minutes in the reference network -
-/// beside the single `dns tunneling` event that actually describes it. The trail is rendered
-/// `(label).zone`, so the zone is everything after the bracket.
+/// What an event throttles under: its trail, except for the heuristics whose trail names a new label
+/// every time (long domains, DGA verdicts), which throttle under their ZONE. Keyed on the full name,
+/// one DNS tunnel wrote one event per query - 220 in four minutes in the reference network - and one
+/// DGA bot one per name it tried. The trail is rendered `(label).zone`, so the zone is everything
+/// after the bracket.
 fn throttle_subject(event: &Event) -> std::borrow::Cow<'_, Field> {
-    if event.info == crate::heuristics::LONG_DOMAIN_INFO {
+    if crate::heuristics::throttled_per_zone(&event.info) {
         if let Field::Text(trail) = &event.trail {
             if let Some(i) = trail.find(").") {
                 return std::borrow::Cow::Owned(Field::Text(format!("(*){}", &trail[i + 1..])));

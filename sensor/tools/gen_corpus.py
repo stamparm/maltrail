@@ -949,8 +949,11 @@ def main():
             "pcap": filename,
             "linktype": linktype,
             "packets": len(packets),
-            "expect": expected,
-            "expect_rust_only": DIVERGENCE_CASES.get(name, []),
+            # The divergence pins are expectations like any other now that there is no second
+            # sensor to diverge from. Kept apart as "expect_rust_only", they were enforced only by
+            # parity.py, and when that went with the Python sensor nothing checked them: the
+            # beaconing case asserted no detection at all from 2026-08-27 on.
+            "expect": expected + [_ for _ in DIVERGENCE_CASES.get(name, []) if _ not in expected],
             "needs_pcap_timestamps": name in TIMING_WINDOW_CASES,
             "timestamp_sensitive": name in TIMESTAMP_SENSITIVE_CASES,
             "notes": notes,
@@ -991,19 +994,14 @@ def main_from_trails(options, out):
             "pcap": filename,
             "linktype": linktype,
             "packets": len(packets),
-            "expect": expected,
+            "expect": expected + sorted(entry["emits_as"] for entry in dead.get(name, [])
+                                        if entry["reason"] in ("the trail's parent domain is whitelisted",
+                                                               "the trail's host is whitelisted")),
             "needs_pcap_timestamps": False,
             "timestamp_sensitive": False,
             "notes": notes,
             "sampled": [{"trail": t, "info": i} for t, i in sampled.get(name, [])],
             "undetectable": dead.get(name, []),
-            # Deliberate divergence #3 (longest-match precedence): a sampled trail whose PARENT
-            # is whitelisted is exactly the shape sensor.py silences and this sensor detects,
-            # so it is pinned here rather than left as an unexplained surplus. Checked both
-            # ways by parity.py, like every expect_rust_only entry.
-            "expect_rust_only": sorted(entry["emits_as"] for entry in dead.get(name, [])
-                                       if entry["reason"] in ("the trail's parent domain is whitelisted",
-                                                              "the trail's host is whitelisted")),
         })
 
     with open(os.path.join(out, "manifest.json"), "w") as f:
