@@ -284,7 +284,7 @@ pub const SUSPICIOUS_HTTP_REQUEST_REGEXES: &[(&str, &str)] = &[
     ("config file access", r#"\.ht(access|passwd)|\bwp-config\.php"#),
     (
         "potential remote code execution",
-        r#"\$_(REQUEST|GET|POST)\[|xp_cmdshell|shell_exec|exec_code|shell:::\{|oscmd\(|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|tftp -|wget http|curl -O|sh /tmp/|touch /tmp/|cmd\.exe|/bin/(ba)?sh\b|/sbin/launchd\b|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|chmod +x\b|base64 -d|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file)|ms-msdt:|mhtml:ftp:|jndi:(corba|dns|http|iiop|n(d|i)s|ldap[s]?|rmi):?|base64:JHtqbmRp|ipconfig|net (config|view)|nltest|netsh (firewall|wlan)|\$\{IFS\}|getRuntime\(\)\.exec\(|\.execSync\("#,
+        r#"\$_(REQUEST|GET|POST)\[|xp_cmdshell|shell_exec|exec_code|shell:::\{|oscmd\(|\bping(\.exe)? -[nc] \d+|timeout(\.exe)? /T|tftp -|wget http|curl -O|sh /tmp/|touch /tmp/|cmd\.exe|/bin/(ba)?sh\b|/sbin/launchd\b|2>&1|\b(cat|ls) /|chmod [0-7]{3,4}\b|chmod +x\b|base64 -d|nc -l -p \d+|>\s*/dev/null|-d (allow_url_include|safe_mode|auto_prepend_file)|ms-msdt:|mhtml:ftp:|jndi:(corba|dns|http|iiop|n(d|i)s|ldap[s]?|rmi):?|base64:JHtqbmRp|ipconfig|net (config|view)|nltest|netsh (firewall|wlan)|\$\{IFS\}|getRuntime\(\)\.exec\(|\.execSync\(|freemaker\.template\.utility\.Execute\(\)\.exec\("#,
     ),
     (
         "potential directory traversal",
