@@ -1420,5 +1420,66 @@ class TestDemoOffersNothingItCannotDo(unittest.TestCase):
                       "this file rather than shipping a permissive one.")
 
 
+class TestThreatGrouping(unittest.TestCase):
+    """aggregateRows() run for real under node, on lines shaped like what the sensor writes.
+
+    Two ways the grouping disagreed with the sensor. A heuristic's normalized trail is often just a
+    TLD - "(label).com" -> "com" - and the flood key was that alone, so once 50+ hosts had any
+    heuristic event on .com every one of them, of every kind, became ONE threat: a DGA bot vanished
+    inside 60 hosts' long-domain events. And the throttle's summary line ends its info with
+    " (+N more)" when it held more than it could carry, which opened a second threat for the same
+    detection.
+    """
+
+    NAMES = ("charTrim", "normTrail", "infoKey", "floodKey", "padz", "murmur3", "threatUID", "hourOf",
+             "newSet", "accum", "aggregateRows")
+
+    def setUp(self):
+        self.js = _read(MAIN_JS)
+        self.node = next((c for c in ("node", "nodejs") if any(
+            os.access(os.path.join(d, c), os.X_OK) for d in os.environ.get("PATH", "").split(os.pathsep) if d)), None)
+        if not self.node:
+            raise unittest.SkipTest("needs node to run aggregateRows()")
+
+    def _function(self, name):
+        found = re.search(r"\n  function %s\(" % re.escape(name), self.js)
+        self.assertTrue(found, "main.js no longer defines %s()" % name)
+        line_end = self.js.index("\n", found.start() + 1)
+        if self.js[found.start():line_end].rstrip().endswith("}"):
+            return self.js[found.start():line_end]
+        return self.js[found.start():self.js.index("\n  }\n", found.start()) + 5]
+
+    def _threats(self, rows):
+        consts = "\n".join(l for l in self.js.split("\n")
+                           if re.match(r"\s+var (DGA_INFIX|MAX_THREATS|MAX_STORED_EVENTS|MAX_CONDENSED|_ntCache)\b", l))
+        script = (consts + "\n" + _severity_js(self.js) + "\n".join(self._function(_) for _ in self.NAMES) +
+                  "\nconsole.log(JSON.stringify(aggregateRows(%s).threats.map(function (t) { return [t.kind, t.count, t.srcS.n]; })));"
+                  % json.dumps(rows))
+        import subprocess
+        return json.loads(subprocess.check_output([self.node, "-e", script]).decode("utf8"))
+
+    @staticmethod
+    def _row(src, trail, info, ref="(heuristic)"):
+        return ['"2026-10-15 10:00:00.000000"', "s", src, "1", "10.0.0.1", "53", "UDP", "DNS", trail, info, ref]
+
+    def test_a_different_heuristic_is_not_folded_into_a_flood_on_the_same_tld(self):
+        rows = [self._row("10.1.0.%d" % i, "(h%dxxxxxxxxxxxxxxxxxxxxxxxxxxxx).com" % i, "long domain (suspicious)")
+                for i in range(60)]
+        rows.append(self._row("10.9.9.9", "(qzxkjvbn).com", "consonant threshold no such domain (suspicious)"))
+        threats = sorted(self._threats(rows), key=lambda _: -_[1])
+        self.assertEqual(threats, [["flood", 60, 60], [None, 1, 1]],
+                         "the DGA verdict must stay a threat of its own, not join the long-domain flood")
+
+    def test_a_trail_flood_still_groups(self):
+        # the positive control: one listed indicator from many hosts IS one threat
+        rows = [self._row("10.8.%d.8" % i, "(www%d).evil.example" % i, "malware (test)", "(static)") for i in range(55)]
+        self.assertEqual(self._threats(rows), [["flood", 55, 55]])
+
+    def test_a_summary_line_belongs_to_its_threat(self):
+        rows = [self._row("10.2.0.1", "(*).exfil.example", "long domain (suspicious)"),
+                self._row("10.2.0.1", "(*).exfil.example", "long domain (suspicious) (+5 more)")]
+        self.assertEqual(self._threats(rows), [[None, 2, 1]])
+
+
 if __name__ == "__main__":
     unittest.main()

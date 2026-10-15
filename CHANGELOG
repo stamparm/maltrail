@@ -16,6 +16,17 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] /fail2ban no longer publishes the source of 'potential iot-malware
+    download': since #19622 that event fires only when one of OUR hosts fetches
+    the dropper, so the shipped FAIL2BAN_REGEX handed fail2ban the infected
+    machine it is meant to protect.
+
+[!] Dashboard: a heuristic on a bare TLD ('(label).com') from 50+ hosts no
+    longer folds every OTHER heuristic on that TLD into the same flood threat
+    (a DGA bot vanished inside 60 hosts' long-domain events), and a throttle
+    summary line ending in '(+N more)' joins its threat instead of opening a
+    second one.
+
 [+] Heuristic 'icmp_tunneling' (icmpsh, ptunnel, ICMP exfiltration): more
     than 10 distinct echo payloads from one host to one destination that match
     no ping tool's pattern. Real iputils ping (default, -s, -p), mtr and

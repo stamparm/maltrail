@@ -74,6 +74,14 @@
   // normTrail runs per EVENT (×2 passes) but a trail is one of relatively few distinct values -> memoize (huge at 100MB scale)
   var _ntCache = {}, _ntCacheN = 0;
   function normTrail(trail) { var c = _ntCache[trail]; if (c !== undefined) return c; if (_ntCacheN > 200000) { _ntCache = {}; _ntCacheN = 0; }  /* bound memory on pathological unique-trail (DGA) days */ c = charTrim(charTrim(("" + trail).replace(/\([^)]+\)/g, ""), " "), "."); _ntCache[trail] = c; _ntCacheN++; return c; }
+  // A throttle summary line ends its info with " (+N more)" when it held more than it could carry;
+  // the detection is the same, so grouping ignores the suffix (it used to open a second threat).
+  function infoKey(info) { return ("" + info).replace(/ \(\+\d+ more\)$/, ""); }
+  // What "the same trail from many sources" (flood) means. For a heuristic the normalized trail is
+  // often just a TLD - "(label).com" -> "com" - so keyed on that alone, every heuristic on .com from
+  // 50+ hosts folded into ONE threat (a DGA bot vanished inside 60 hosts' long-domain events);
+  // the detection is part of the key for heuristics.
+  function floodKey(trail, info, ref) { var n = normTrail(trail); return ("" + ref).indexOf(HEUR_INFIX) > -1 ? n + "\u001f" + infoKey(info) : n; }
   // CSS-escape a value used inside an attribute selector ([data-ip="..."]); raw log fields can contain "/]/\ which throw
   function cssEsc(s) { s = "" + s; return (window.CSS && CSS.escape) ? CSS.escape(s) : s.replace(/["\\\]\[]/g, "\\$&"); }
   function padz(s, w) { s = "" + s; while (s.length < w) s = "0" + s; return s; }
@@ -403,11 +411,11 @@
   function aggregateRows(rows) {
     var r, row, type, nt;
     // pass 1: flood detection — a normalized trail seen from > FLOOD_THRESH distinct source IPs
-    var trailSrcs = new Map();   // Map<nt, Set<src>> — Map/Set, not plain objects: V8 keeps these fast at 100k+ keys (objects degrade to dictionary mode)
+    var trailSrcs = new Map();   // Map<floodKey, Set<src>> — Map/Set, not plain objects: V8 keeps these fast at 100k+ keys (objects degrade to dictionary mode)
     for (r = 0; r < rows.length; r++) {
       row = rows[r];
       if (!row || row.length < 11 || !/^[A-Z0-9]+$/.test(row[7])) continue;
-      nt = normTrail(row[8]); var ts0 = trailSrcs.get(nt); if (!ts0) trailSrcs.set(nt, ts0 = new Set()); ts0.add(row[2]);
+      nt = floodKey(row[8], row[9], row[10]); var ts0 = trailSrcs.get(nt); if (!ts0) trailSrcs.set(nt, ts0 = new Set()); ts0.add(row[2]);
     }
     var flood = new Set(); trailSrcs.forEach(function (ts, fk) { if (ts.size > FLOOD_THRESH) flood.add(fk); });
     // pass 2: group into threats by legacy-exact threat_text
@@ -430,13 +438,14 @@
       trailCounts.set(nt, (trailCounts.get(nt) || 0) + 1);   // distinct INDICATORS, not raw strings: normTrail strips the variable (...) part so heuristic families ((x).com, rDNS, UA detail) collapse — matches legacy semantics
       typeCounts[type] = (typeCounts[type] || 0) + 1;
       (typeHours[type] || (typeHours[type] = new Array(24).fill(0)))[hr]++;
-      var dnsx = info.indexOf(DNS_EXH_INFIX) > -1, isFlood = flood.has(nt),
+      var ikey = infoKey(info), fk = floodKey(trail, info, ref);
+      var dnsx = info.indexOf(DNS_EXH_INFIX) > -1, isFlood = flood.has(fk),
           dga = info.indexOf(DGA_INFIX) > -1, heur = ref.indexOf(HEUR_INFIX) > -1;
       var ttext, kind = null;
-      if (dnsx) { ttext = info + "~>" + nt; kind = "dnsx"; }
-      else if (isFlood) { ttext = FLOOD_PREFIX + "~>" + nt; kind = "flood"; }
-      else if (dga) { ttext = src + "~>" + info; kind = "dga"; }
-      else if (heur) { ttext = src + "~>" + nt + info; }
+      if (dnsx) { ttext = ikey + "~>" + nt; kind = "dnsx"; }
+      else if (isFlood) { ttext = FLOOD_PREFIX + "~>" + fk; kind = "flood"; }
+      else if (dga) { ttext = src + "~>" + ikey; kind = "dga"; }
+      else if (heur) { ttext = src + "~>" + nt + ikey; }
       else { ttext = src + "~>" + nt; }
       var t = threats.get(ttext);
       if (!t) {
@@ -492,18 +501,20 @@
       agg.events++;
       var hr = hourOf(time); agg.hours[hr]++;
       var sc = agg.srcCounts.get(src); if (sc === undefined) { agg.sources++; agg.srcCounts.set(src, 1); } else agg.srcCounts.set(src, sc + 1);   // running distinct counters (avoid O(total) re-count per tick)
-      var nt = normTrail(trail), tset = trailSrcs.get(nt); if (tset === undefined) trailSrcs.set(nt, tset = new Set());
+      var nt = normTrail(trail);
       var tc = agg.trailCounts.get(nt); if (tc === undefined) { agg.trailsN++; agg.trailCounts.set(nt, 1); } else agg.trailCounts.set(nt, tc + 1);   // distinct INDICATORS (normalized)
       agg.typeCounts[type] = (agg.typeCounts[type] || 0) + 1;
       (agg.typeHours[type] || (agg.typeHours[type] = new Array(24).fill(0)))[hr]++;
-      if (!tset.has(src)) { tset.add(src); if (!flood.has(nt) && tset.size > FLOOD_THRESH) flood.add(nt); }   // count distinct srcs only when a NEW one appears
-      var dnsx = info.indexOf(DNS_EXH_INFIX) > -1, isFlood = flood.has(nt),
+      var fk0 = floodKey(trail, info, ref), tset = trailSrcs.get(fk0); if (tset === undefined) trailSrcs.set(fk0, tset = new Set());
+      if (!tset.has(src)) { tset.add(src); if (!flood.has(fk0) && tset.size > FLOOD_THRESH) flood.add(fk0); }   // count distinct srcs only when a NEW one appears
+      var ikey = infoKey(info), fk = floodKey(trail, info, ref);
+      var dnsx = info.indexOf(DNS_EXH_INFIX) > -1, isFlood = flood.has(fk),
           dga = info.indexOf(DGA_INFIX) > -1, heur = ref.indexOf(HEUR_INFIX) > -1;
       var ttext, kind = null;
-      if (dnsx) { ttext = info + "~>" + nt; kind = "dnsx"; }
-      else if (isFlood) { ttext = FLOOD_PREFIX + "~>" + nt; kind = "flood"; }
-      else if (dga) { ttext = src + "~>" + info; kind = "dga"; }
-      else if (heur) { ttext = src + "~>" + nt + info; }
+      if (dnsx) { ttext = ikey + "~>" + nt; kind = "dnsx"; }
+      else if (isFlood) { ttext = FLOOD_PREFIX + "~>" + fk; kind = "flood"; }
+      else if (dga) { ttext = src + "~>" + ikey; kind = "dga"; }
+      else if (heur) { ttext = src + "~>" + nt + ikey; }
       else { ttext = src + "~>" + nt; }
       var t = threats.get(ttext);
       if (!t) {

@@ -1873,13 +1873,15 @@ class TestShippedFail2banContract(unittest.TestCase):
         for info in ("known attacker", "bad reputation", "bad reputation (suspicious)",
                      "bad reputation (tor node)", "spammer", "mass scanner", "potential web scan",
                      "potential directory traversal", "potential sql injection",
-                     "potential remote code execution", "potential iot-malware download"):
+                     "potential remote code execution"):
             self.assertTrue(self._bans("1.2.3.4", info), "%r must be banned" % info)
 
     def test_it_does_not_ban_an_outbound_detection(self):
         # field 4 of these lines is OUR host; banning it firewalls the victim, not the attacker
+        # (the IoT dropper too: since #19622 it fires only when OUR host fetches the dropper)
         for info in ("apt unclassified (malware)", "ransomware (malware)", "potential infection",
-                     "potential data leakage", "potential dns changer", "cobaltstrike (malware)"):
+                     "potential data leakage", "potential dns changer", "cobaltstrike (malware)",
+                     "potential iot-malware download (suspicious)"):
             self.assertFalse(self._bans("1.2.3.4", info), "%r must NOT be banned" % info)
 
     def test_a_trail_name_cannot_trigger_a_ban(self):
