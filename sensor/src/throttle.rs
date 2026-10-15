@@ -144,6 +144,22 @@ fn hash_field(h: &mut crate::fasthash::FxHasher, field: &Field) {
     let _ = h.finish();
 }
 
+/// What an event throttles under: its trail, except for a long-domain event, which throttles under
+/// its ZONE. Every query a DNS tunnel (or a hashing client) sends names a new label, so keyed on the
+/// full name one tunnel wrote one event per query - 220 in four minutes in the reference network -
+/// beside the single `dns tunneling` event that actually describes it. The trail is rendered
+/// `(label).zone`, so the zone is everything after the bracket.
+fn throttle_subject(event: &Event) -> std::borrow::Cow<'_, Field> {
+    if event.info == crate::heuristics::LONG_DOMAIN_INFO {
+        if let Field::Text(trail) = &event.trail {
+            if let Some(i) = trail.find(").") {
+                return std::borrow::Cow::Owned(Field::Text(format!("(*){}", &trail[i + 1..])));
+            }
+        }
+    }
+    std::borrow::Cow::Borrowed(&event.trail)
+}
+
 /// Digest of a plain address string against a trail field.
 #[inline]
 fn digest_field(addr: &str, trail: &Field) -> u64 {
@@ -215,7 +231,8 @@ impl Throttle {
     /// chance in 10^10, and the consequence is a held event that comes out in a summary rather
     /// than verbatim - never a lost detection.
     fn keys_for(event: &Event) -> [u64; 2] {
-        [digest_field(&event.src_ip, &event.trail), digest_field_pair(&event.dst_ip, &event.trail)]
+        let subject = throttle_subject(event);
+        [digest_field(&event.src_ip, &subject), digest_field_pair(&event.dst_ip, &subject)]
     }
 
     /// Decide what happens to `event`, and return any summary events that became due.
@@ -316,6 +333,11 @@ impl Throttle {
             return None;
         }
         let mut merged = crate::output::merge_events(&held)?;
+        // A group of DIFFERENT names (long domains, one per zone) is named as the group, not as
+        // whichever of them happened to be held first.
+        if held.iter().any(|e| e.trail != held[0].trail) {
+            merged.trail = throttle_subject(&held[0]).into_owned();
+        }
         let overflow = total.saturating_sub(held.len() as u64);
         if overflow > 0 {
             merged.info = format!("{} (+{} more)", merged.info, overflow);
@@ -446,6 +468,46 @@ mod tests {
 
     fn cfg(mode: ThrottleMode) -> ThrottleConfig {
         ThrottleConfig { mode, window: 60, burst: 3, max_keys: 8, legacy_divisor: 16 }
+    }
+
+    fn long_domain(label: &str, zone: &str) -> Event {
+        Event {
+            info: crate::heuristics::LONG_DOMAIN_INFO.to_string(),
+            ..event(1000, 40000, &format!("({label}).{zone}"))
+        }
+    }
+
+    #[test]
+    fn long_domains_throttle_per_zone_and_summarise_as_the_zone() {
+        // a DNS tunnel: a new label on every query, all to one zone
+        let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
+        let written = (0..200)
+            .filter(|i| t.admit(&long_domain(&format!("{i:052}"), "t1.exfil.example")).0 == Decision::Write)
+            .count();
+        assert_eq!(written, 3, "one zone is one budget, not one per label");
+        let summaries = t.flush_all();
+        assert_eq!(summaries.len(), 1);
+        assert_eq!(summaries[0].trail, Field::Text("(*).t1.exfil.example".to_string()));
+
+        // another zone has its own budget, and an ordinary trail still throttles per exact name
+        let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
+        for zone in ["a.example", "b.example"] {
+            for i in 0..3 {
+                assert_eq!(t.admit(&long_domain(&format!("{i:052}"), zone)).0, Decision::Write, "{zone}");
+            }
+        }
+        for i in 0..5 {
+            assert_eq!(t.admit(&event(1000, 40000, &format!("evil{i}.example"))).0, Decision::Write);
+        }
+        // one repeated long name still summarises under its own name, not "(*)"
+        let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
+        for _ in 0..10 {
+            t.admit(&long_domain("samelabelsamelabelsamelabelsamelabelsamelabel", "c.example"));
+        }
+        assert_eq!(
+            t.flush_all()[0].trail,
+            Field::Text("(samelabelsamelabelsamelabelsamelabelsamelabel).c.example".to_string())
+        );
     }
 
     #[test]

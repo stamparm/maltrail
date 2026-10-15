@@ -66,6 +66,34 @@ class ScoringTest(unittest.TestCase):
         r = R.score(m, [("203.0.113.7", "203.0.113.7", "potential port scanning")])
         self.assertEqual((r["scans_detected"], r["false_positives"]), (1, 0))
 
+    def test_other_events_on_an_attacks_own_traffic_are_noise_not_false_positives(self):
+        truth = [{"host": "10.0.0.5", "trail": None, "info": "dns tunneling", "kind": "DNS_TUNNEL",
+                  "explains": "t1.exfil.example"}]
+        logged = [("10.0.0.5", "(aaaa).t1.exfil.example", "potential dns tunneling (suspicious)"),
+                  ("10.0.0.5", "(bbbb.t1).exfil.example", "long domain (suspicious)"),
+                  ("10.0.0.5", "(cccc.t1).exfil.example", "long domain (suspicious)")]
+        r = R.score(meta(truth), logged)
+        self.assertEqual(r["heuristics"]["DNS_TUNNEL"], (1, 1))
+        self.assertEqual((r["attack_noise"]["DNS_TUNNEL"], r["false_positives"]), (2, 0))
+
+    def test_a_planted_heuristic_is_credited_only_by_its_own_event(self):
+        truth = [{"host": "10.0.0.5", "trail": "198.51.100.9", "kind": "ICMP_TUNNEL"},
+                 {"host": "10.0.0.6", "trail": "xn--pple-43d.com", "kind": "HOMOGRAPH"}]
+        r = R.score(meta(truth), [("10.0.0.5", "198.51.100.9", "potential icmp tunneling (suspicious)"),
+                                  ("10.0.0.6", "xn--pple-43d.com", "potential homograph of apple.com (suspicious)")])
+        self.assertEqual(r["heuristics"], {"ICMP_TUNNEL": (1, 1), "HOMOGRAPH": (1, 1)})
+        self.assertEqual(r["false_positives"], 0)
+        # anything else the same host sets off is still charged to it
+        r = R.score(meta(truth), [("10.0.0.5", "8.8.8.8", "potential icmp tunneling (suspicious)")])
+        self.assertEqual((r["heuristics"]["ICMP_TUNNEL"], r["false_positives"]), ((0, 1), 1))
+
+    def test_the_homograph_generator_swaps_exactly_one_letter(self):
+        import random
+        name = R._homograph("google.com", random.Random(1))
+        self.assertTrue(name.startswith("xn--") and name.endswith(".com"), name)
+        decoded = name.split(".")[0].encode("ascii").decode("idna")
+        self.assertEqual(sum(1 for a, b in zip(decoded, "google") if a != b), 1, decoded)
+
     def test_rates_are_computed_from_the_run_size(self):
         m = meta([], hosts=500, minutes=60, benign=200000)
         r = R.score(m, [("10.0.0.5", "x", "y")] * 10)
@@ -77,13 +105,18 @@ class ScoringTest(unittest.TestCase):
 class TrailPoolTest(unittest.TestCase):
     """Each planted indicator has to be plantable AS the kind it is, or the miss is ours."""
 
-    def _pools(self, rows):
+    def _pools(self, rows, info="info"):
         handle, path = tempfile.mkstemp(suffix=".csv")
         os.close(handle)
         self.addCleanup(os.unlink, path)
         with io.open(path, "w", encoding="utf8") as out:
-            out.write(u"".join(u"%s,info,(static)\n" % _ for _ in rows))
+            out.write(u"".join(u"%s,%s,(static)\n" % (_, info) for _ in rows))
         return R._trail_pools(path)
+
+    def test_a_bare_dynamic_dns_domain_is_not_planted(self):
+        # the sensor reports only subdomains of a dynamic-DNS provider; the bare name never fires
+        domains, _, _ = self._pools(["flowergardendaycare.com"], info="dynamic domain (suspicious)")
+        self.assertEqual(domains, [])
 
     def test_a_bare_address_is_not_a_domain(self):
         domains, ipports, urls = self._pools(["141.8.225.181", "evil.example"])
@@ -96,6 +129,11 @@ class TrailPoolTest(unittest.TestCase):
         self.assertEqual(domains, ["evil.example"])
         self.assertEqual(ipports, ["1.2.3.4:8080"])
         self.assertEqual(urls, ["5.6.7.8/gate.php"])
+
+    def test_an_address_port_with_a_path_is_not_an_ipport(self):
+        # "1.2.3.4:34283/i" planted as a SYN to port int("34283/i") crashed the whole run
+        _, ipports, _ = self._pools(["1.2.3.4:34283/i", "1.2.3.4:8080"])
+        self.assertEqual(ipports, ["1.2.3.4:8080"])
 
     def test_a_url_with_no_real_path_is_skipped(self):
         # "1.2.3.4/" carries nothing to request; planting it would test the generator, not the sensor
@@ -134,8 +172,35 @@ class GenerationTest(unittest.TestCase):
         self.addCleanup(shutil.rmtree, out_dir, True)
         _, m = R.generate(out_dir, hosts=4, minutes=2, seed=7, planted=1, scans=2, trails=trails)
         kinds = sorted(_["kind"] for _ in m["truth"])
-        self.assertEqual(kinds, ["DNS", "IPORT", "SCAN", "SCAN", "URL"])
+        # (the four encapsulation plants need four trail domains; this trail set has one)
+        self.assertEqual(kinds, ["BEACONING", "CERT", "DNS", "DNS_EXHAUSTION", "DNS_TUNNEL", "HOMOGRAPH", "HOMOGRAPH",
+                                 "HOMOGRAPH", "ICMP_TUNNEL", "ICMP_TUNNEL", "IOT_DROPPER", "IPORT", "JA3", "JA4",
+                                 "SCAN", "SCAN", "TAIL_SCAN", "URL"])
+        # the planted fingerprints are in the run's own trail set, the given one untouched
+        run_trails = io.open(m["trails"], encoding="utf8").read()
+        for entry in m["truth"]:
+            if entry["kind"] in ("JA3", "JA4", "CERT"):
+                self.assertIn(entry["trail"] + ",", run_trails)
+        self.assertNotIn("refnet", io.open(trails, encoding="utf8").read())
         self.assertGreater(m["benign_packets"], 0, "a network with no benign traffic measures nothing")
+
+    def test_a_rerun_into_the_same_directory_starts_from_empty_logs(self):
+        # the sensor appends to its daily log; scoring a second run used to count the first one too
+        import shutil
+        out_dir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, out_dir, True)
+        logs = os.path.join(out_dir, "logs")
+        os.makedirs(logs)
+        with io.open(os.path.join(logs, "2023-11-14.log"), "w", encoding="utf8") as stale:
+            stale.write(u"stale line from a previous run\n")
+        original = R.subprocess.check_call
+        R.subprocess.check_call = lambda *a, **k: 0
+        self.addCleanup(setattr, R.subprocess, "check_call", original)
+        handle, sensor = tempfile.mkstemp()
+        os.close(handle)
+        self.addCleanup(os.unlink, sensor)
+        R.replay("x.pcap", out_dir, "trails.csv", sensor=sensor)
+        self.assertEqual(os.listdir(logs), [])
 
 
 if __name__ == "__main__":

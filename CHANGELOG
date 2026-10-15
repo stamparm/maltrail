@@ -41,6 +41,11 @@
     tracking those heuristics need, not only their alerts (+3.4% packets per
     second with both muted, on a UDP-heavy mix).
 
+[=] 'long domain' events throttle per zone, not per full name. Every query a
+    DNS tunnel sends names a new label, so one tunnel wrote one event per query:
+    220 in four minutes in the reference network, now 3 per minute and one
+    '(*).zone' summary line.
+
 [!] A scan (port, UDP, web, infection) or ICMP tunnel in the last second of
     a replayed capture is reported. The heuristics report on the next
     packet's arrival, and at the end of the file none arrived.

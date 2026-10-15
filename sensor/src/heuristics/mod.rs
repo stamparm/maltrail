@@ -25,6 +25,9 @@ pub const HEURISTIC_NAMES: [&str; 10] = [
     "idn_homograph",
 ];
 
+/// Info of the `long_domain` event. Shared with the event throttle, which groups these per zone.
+pub const LONG_DOMAIN_INFO: &str = "long domain (suspicious)";
+
 /// Hard cap on the number of distinct keys any one heuristic accumulator may hold.
 ///
 /// Every one of these structures is keyed by something an ATTACKER chooses — a queried domain,

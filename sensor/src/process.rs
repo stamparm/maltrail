@@ -248,7 +248,7 @@ fn check_domain_inner(
                         proto,
                         TRAIL::DNS,
                         Field::Text(trail),
-                        "long domain (suspicious)",
+                        crate::heuristics::LONG_DOMAIN_INFO,
                         "(heuristic)",
                     );
                 }
