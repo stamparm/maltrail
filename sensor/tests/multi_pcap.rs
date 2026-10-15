@@ -272,3 +272,21 @@ fn the_per_file_report_respects_quiet() {
     let text = String::from_utf8_lossy(&out.stdout);
     assert!(!text.contains("packet(s))"), "quiet run printed a per-file report:\n{text}");
 }
+
+#[test]
+fn a_scan_in_the_last_second_of_a_capture_is_reported() {
+    if !binary().is_file() {
+        eprintln!("[skip] {} not built", binary().display());
+        return;
+    }
+    // The sweep that turns crossed thresholds into events runs when a LATER packet arrives, so a
+    // scan in the final second of a replay used to cross its threshold and never be reported.
+    let fixture = Fixture::new("tail");
+    let tail = fixture.dir.join("tail.pcap");
+    write_pcap(&tail, &(0..THRESHOLD + 5).map(|i| (1_700_000_000, syn(3000 + i))).collect::<Vec<_>>());
+    let events = fixture.replay(&[tail]);
+    assert!(
+        events.iter().any(|l| l.contains("port scanning")),
+        "a scan with nothing after it in the file must still be reported:\n{events:#?}"
+    );
+}

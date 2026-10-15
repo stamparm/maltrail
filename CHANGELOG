@@ -41,6 +41,10 @@
     tracking those heuristics need, not only their alerts (+3.4% packets per
     second with both muted, on a UDP-heavy mix).
 
+[!] A scan (port, UDP, web, infection) or ICMP tunnel in the last second of
+    a replayed capture is reported. The heuristics report on the next
+    packet's arrival, and at the end of the file none arrived.
+
 
 
 - Version 3.4 -> 3.5 (14 Oct 2026)

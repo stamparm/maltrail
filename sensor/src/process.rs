@@ -518,6 +518,17 @@ fn sha1_hex(data: &[u8]) -> String {
 }
 
 /// The per-second heuristics sweep at the top of `_process_packet`.
+/// One last sweep when the packets stop (end of a replay, or shutdown). The sweep otherwise runs
+/// only when a LATER packet arrives, so a threshold crossed in the final second of a capture was
+/// never reported. Stamped with the last packet's own second.
+pub fn final_heuristics_sweep(st: &mut WorkerState) {
+    if st.cfg.use_heuristics && st.last_sec > 0 {
+        // the sweep runs at most once per second; this is the one for the last packet's second
+        st.connect_sec = st.last_sec - 1;
+        heuristics_sweep(st, st.last_sec, 0);
+    }
+}
+
 fn heuristics_sweep(st: &mut WorkerState, sec: u64, usec: u32) {
     let connect_sec = st.connect_sec;
     st.connect_sec = sec;

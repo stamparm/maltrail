@@ -303,6 +303,8 @@ pub fn run_all(handles: Vec<(Handle, String)>, ctx: WorkerContext) -> Result<Wor
         }
     }
 
+    // Evidence from the last second has had no later packet to trigger its sweep.
+    process::final_heuristics_sweep(&mut st);
     // Flush the tail: condensed events are only emitted on a flush, so skipping this would
     // lose them (sensor.py does the same at the end of an offline run).
     st.sink.flush_condensed();
