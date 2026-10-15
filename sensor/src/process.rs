@@ -248,7 +248,7 @@ fn check_domain_inner(
                         proto,
                         TRAIL::DNS,
                         Field::Text(trail),
-                        crate::heuristics::LONG_DOMAIN_INFO,
+                        "long domain (suspicious)",
                         "(heuristic)",
                     );
                 }
@@ -1922,10 +1922,10 @@ fn dns_packet(
                     // Reference: https://github.com/exp0se/dga_detector
                     let mut verdict = None;
                     if label_entropy(&part) > settings::SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD {
-                        verdict = Some(crate::heuristics::NX_ENTROPY_INFO.to_string());
+                        verdict = Some("entropy threshold no such domain (suspicious)".to_string());
                     }
                     if verdict.is_none() && consonant_count(&part) > settings::SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD {
-                        verdict = Some(crate::heuristics::NX_CONSONANT_INFO.to_string());
+                        verdict = Some("consonant threshold no such domain (suspicious)".to_string());
                     }
                     st.dga_findings.insert(part.clone(), verdict.clone());
                     verdict

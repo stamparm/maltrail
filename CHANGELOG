@@ -41,11 +41,12 @@
     tracking those heuristics need, not only their alerts (+3.4% packets per
     second with both muted, on a UDP-heavy mix).
 
-[=] 'long domain' and the DGA verdicts ('entropy/consonant threshold no such
-    domain') throttle per zone, not per full name. A DNS tunnel or a DGA bot
-    names a new label every time, so each wrote one event per query: 220 for
-    one tunnel and 177 for one bot in the reference network, now 3 per minute
-    and one '(*).zone' summary line.
+[=] DNS events on a subdomain throttle per zone: '(label).zone' trails (long
+    domains, DGA verdicts, a listed TLD or parent domain) share one budget per
+    host, zone and detection, the grouping the dashboard already shows. A DNS
+    tunnel or a DGA bot names a new label every time, so each wrote one event
+    per query: 220 for one tunnel and 177 for one bot in the reference
+    network, now 3 per minute and one '(*).zone' summary line.
 
 [!] The beaconing case of the replay corpus asserts its detection again. Its
     expectation was kept for the retired Python parity harness only, so from

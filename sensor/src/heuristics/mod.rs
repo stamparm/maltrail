@@ -25,18 +25,6 @@ pub const HEURISTIC_NAMES: [&str; 10] = [
     "idn_homograph",
 ];
 
-/// Info of the `long_domain` event. Shared with the event throttle, which groups these per zone.
-pub const LONG_DOMAIN_INFO: &str = "long domain (suspicious)";
-/// Infos of the two DGA verdicts on an NXDOMAIN reply, grouped per zone the same way: a DGA bot
-/// asks a new name every time, and per name it wrote one event each (177 for one bot).
-pub const NX_ENTROPY_INFO: &str = "entropy threshold no such domain (suspicious)";
-pub const NX_CONSONANT_INFO: &str = "consonant threshold no such domain (suspicious)";
-
-/// Events whose trail names a different label every time, so they throttle per zone.
-pub fn throttled_per_zone(info: &str) -> bool {
-    info == LONG_DOMAIN_INFO || info == NX_ENTROPY_INFO || info == NX_CONSONANT_INFO
-}
-
 /// Hard cap on the number of distinct keys any one heuristic accumulator may hold.
 ///
 /// Every one of these structures is keyed by something an ATTACKER chooses — a queried domain,

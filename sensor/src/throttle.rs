@@ -144,16 +144,19 @@ fn hash_field(h: &mut crate::fasthash::FxHasher, field: &Field) {
     let _ = h.finish();
 }
 
-/// What an event throttles under: its trail, except for the heuristics whose trail names a new label
-/// every time (long domains, DGA verdicts), which throttle under their ZONE. Keyed on the full name,
-/// one DNS tunnel wrote one event per query - 220 in four minutes in the reference network - and one
-/// DGA bot one per name it tried. The trail is rendered `(label).zone`, so the zone is everything
-/// after the bracket.
+/// What an event throttles under: its trail, except for a DNS trail that brackets a subdomain -
+/// `(label).zone` - which throttles under `(*).zone`, i.e. per zone. That is the grouping the
+/// dashboard already shows (normTrail strips the bracket), applied to the log: a DNS tunnel, a DGA
+/// bot or a host browsing a listed TLD names a new label every time, and keyed on the full name
+/// each label was its own event - 220 lines for one tunnel and 177 for one bot in the reference
+/// network, against one threat in the UI.
 fn throttle_subject(event: &Event) -> std::borrow::Cow<'_, Field> {
-    if crate::heuristics::throttled_per_zone(&event.info) {
+    if event.trail_type == crate::event::trail_type::DNS {
         if let Field::Text(trail) = &event.trail {
-            if let Some(i) = trail.find(").") {
-                return std::borrow::Cow::Owned(Field::Text(format!("(*){}", &trail[i + 1..])));
+            if trail.starts_with('(') {
+                if let Some(i) = trail.find(").") {
+                    return std::borrow::Cow::Owned(Field::Text(format!("(*){}", &trail[i + 1..])));
+                }
             }
         }
     }
@@ -231,7 +234,15 @@ impl Throttle {
     /// chance in 10^10, and the consequence is a held event that comes out in a summary rather
     /// than verbatim - never a lost detection.
     fn keys_for(event: &Event) -> [u64; 2] {
-        let subject = throttle_subject(event);
+        let subject = match throttle_subject(event) {
+            // Grouped per zone, but never ACROSS detections: a tunnel's one `dns tunneling` event
+            // shares its zone with that tunnel's long-domain events, and in one budget it was held
+            // behind them and folded into a summary labelled "long domain".
+            std::borrow::Cow::Owned(Field::Text(zone)) => {
+                std::borrow::Cow::Owned(Field::Text(format!("{zone}\u{1f}{}", event.info)))
+            }
+            other => other,
+        };
         [digest_field(&event.src_ip, &subject), digest_field_pair(&event.dst_ip, &subject)]
     }
 
@@ -471,9 +482,33 @@ mod tests {
     }
 
     fn long_domain(label: &str, zone: &str) -> Event {
-        Event {
-            info: crate::heuristics::LONG_DOMAIN_INFO.to_string(),
-            ..event(1000, 40000, &format!("({label}).{zone}"))
+        Event { info: "long domain (suspicious)".to_string(), ..event(1000, 40000, &format!("({label}).{zone}")) }
+    }
+
+    #[test]
+    fn any_bracketed_dns_subdomain_throttles_per_zone_and_other_trails_do_not() {
+        // a listed TLD hit for every name a host looks up under it
+        let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
+        let written =
+            (0..50).filter(|i| t.admit(&event(1000, 40000, &format!("(name{i}).xyz"))).0 == Decision::Write).count();
+        assert_eq!(written, 3);
+        assert_eq!(t.flush_all()[0].trail, Field::Text("(*).xyz".to_string()));
+        // a different detection in the same zone keeps its own budget: never held behind the others
+        let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
+        for i in 0..10 {
+            t.admit(&long_domain(&format!("{i:052}"), "t1.exfil.example"));
+        }
+        let tunnel =
+            Event { info: "potential dns tunneling (suspicious)".to_string(), ..long_domain("x", "t1.exfil.example") };
+        assert_eq!(t.admit(&tunnel).0, Decision::Write, "the tunnel verdict was held behind long-domain events");
+        // only DNS trails are grouped: a URL trail of the same shape keeps its exact key
+        let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
+        for i in 0..5 {
+            let url = Event {
+                trail_type: crate::event::trail_type::URL,
+                ..event(1000, 40000, &format!("(gate{i}).example.com/x.php"))
+            };
+            assert_eq!(t.admit(&url).0, Decision::Write, "URL trail {i}");
         }
     }
 
