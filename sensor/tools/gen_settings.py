@@ -115,7 +115,7 @@ def main(out_path=None):
         "pub const NO_SUCH_NAME_PER_HOUR_THRESHOLD: u32 = %d;" % S.NO_SUCH_NAME_PER_HOUR_THRESHOLD,
         "pub const SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD: usize = %d;" % S.SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD,
         "",
-        "/// DNS tunnelling: every one of these must hold at once, which is the point - see core/settings.py",
+        "/// DNS tunneling: every one of these must hold at once, which is the point - see core/settings.py",
         "pub const DNS_TUNNELING_MIN_QUERIES: usize = %d;" % S.DNS_TUNNELING_MIN_QUERIES,
         "pub const DNS_TUNNELING_MIN_DISTINCT_PCT: usize = %d;" % S.DNS_TUNNELING_MIN_DISTINCT_PCT,
         "pub const DNS_TUNNELING_MIN_LONG_PCT: usize = %d;" % S.DNS_TUNNELING_MIN_LONG_PCT,
