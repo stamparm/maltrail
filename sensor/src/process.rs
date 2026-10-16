@@ -228,7 +228,7 @@ fn check_domain_inner(
             // Antivirus and reputation services put a hash in the first label of every lookup, so
             // this fired once per query against them - 1,200 events from 1,200 legitimate lookups
             // in a measured run, on the two zones data/whitelist.txt happens not to carry. Sharing
-            // the tunnelling detector's zone list costs no detection: a long label on a zone that
+            // the tunneling detector's zone list costs no detection: a long label on a zone that
             // is not a reputation service still reports.
             && !crate::heuristics::dns_tunneling::allowed_zone(q)
         {
@@ -629,7 +629,7 @@ fn heuristics_sweep(st: &mut WorkerState, sec: u64, usec: u32) {
         }
     }
 
-    // --- ICMP tunnelling --- (the trail is the far end: that is where the data goes)
+    // --- ICMP tunneling --- (the trail is the far end: that is where the data goes)
     if st.heuristic_enabled("icmp_tunneling") {
         for (src, dst, _) in st.scan.icmp_tunnel_candidates() {
             if st.whitelist.check_whitelisted_ip(src) || st.whitelist.check_whitelisted_ip(dst) {
@@ -1731,14 +1731,14 @@ fn dns_packet(
                     }
                 }
 
-                // DNS tunnelling. Deliberately AFTER the exhaustion block and sharing its
+                // DNS tunneling. Deliberately AFTER the exhaustion block and sharing its
                 // `!wl_domain` guard: a whitelisted zone is exempt from both, which is what keeps
                 // the antivirus and blocklist lookups that look exactly like a tunnel out of this.
                 // The rest of the bar lives in the accumulator, which reports at most once per
                 // (source, zone) per window and only when volume, uniqueness, payload size and a
                 // two-minute span all hold at once.
                 // use_heuristics AND the per-name mute, the same pair every other heuristic
-                // uses. Without the first, USE_HEURISTICS false still produced tunnelling events
+                // uses. Without the first, USE_HEURISTICS false still produced tunneling events
                 // and still paid for the accumulator - this one was only checking the mute.
                 if st.cfg.use_heuristics
                     && st.heuristic_enabled("dns_tunneling")
@@ -1958,7 +1958,7 @@ fn other_proto(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader, 
         }
     }
 
-    // ICMP tunnelling: count distinct echo payloads that are no ping tool's (heuristics/icmp.rs)
+    // ICMP tunneling: count distinct echo payloads that are no ping tool's (heuristics/icmp.rs)
     if (protocol == 1 || protocol == 58)
         && st.cfg.use_heuristics
         && st.heuristic_enabled("icmp_tunneling")
