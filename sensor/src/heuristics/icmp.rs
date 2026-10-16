@@ -1,4 +1,4 @@
-//! ICMP tunnelling (icmpsh, ptunnel, ICMP exfiltration) — a NEW heuristic, with no `sensor.py`
+//! ICMP tunneling (icmpsh, ptunnel, ICMP exfiltration) — a NEW heuristic, with no `sensor.py`
 //! counterpart.
 //!
 //! Real ping tools put a fixed, recognisable payload in every echo request: Windows a cycle of
