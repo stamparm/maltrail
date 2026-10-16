@@ -180,7 +180,7 @@ WHITELIST_HTTP_REQUEST_PATHS = ("fql", "yql", "ads", "../images/", "../themes/",
 WHITELIST_UA_REGEX = r"AntiVir\-NGUpd|TMSPS|AVGSETUP|SDDS|Sophos|Symantec|internal dummy connection|Microsoft\-CryptoAPI"
 WHITELIST_LONG_DOMAIN_NAME_KEYWORDS = ("blogspot",)
 
-# --- DNS tunnelling -------------------------------------------------------------------------
+# --- DNS tunneling -------------------------------------------------------------------------
 #
 # Deliberately hard to trip. A tunnel and a reputation lookup are close to indistinguishable from
 # query shape alone: both send high-entropy, never-repeated, long labels to one zone, in volume.
