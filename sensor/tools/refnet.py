@@ -26,7 +26,7 @@ long enough to cross the tunnel threshold, and lookups of ordinary IDNs. One sca
 everything else, in the last second of the capture, where the heuristics used to have no later
 packet to report on.
 
-WHAT IT DOES NOT COVER YET. No DoH/ECH share, no beaconing, no DNS tunnelling, no JA3/certificate
+WHAT IT DOES NOT COVER YET. No DoH/ECH share, no beaconing, no DNS tunneling, no JA3/certificate
 trails, no IPv6. Those are extensions of the same harness; each one added is a class of detection
 that stops being unmeasured. The numbers printed are for the traffic actually generated and say
 nothing about traffic that is not.
@@ -192,7 +192,7 @@ def _plant_more(packets, truth, rnd, addresses, domains, minutes, extra_trails):
         when += rnd.uniform(55, 65)
     truth.append({"host": implant, "trail": None, "info": "beaconing", "kind": "BEACONING"})
 
-    # DNS tunnelling: 220 queries over ~4 minutes, a 52-character base32 label each, to one zone.
+    # DNS tunneling: 220 queries over ~4 minutes, a 52-character base32 label each, to one zone.
     # Bait: as many hash-labelled lookups to an antivirus reputation zone, the shape it must ignore.
     alphabet = "abcdefghijklmnopqrstuvwxyz234567"
     for kind, zone in (("DNS_TUNNEL", "t%d.exfil-refnet.net" % rnd.randint(1, 99)), (None, "avqs.mcafee.com")):
@@ -571,7 +571,7 @@ def main():
     print("[i] scans detected            %5d/%d" % (result["scans_detected"], result["scans_planted"]))
     for kind, label in (("TAIL_SCAN", "scan at end of capture"), ("ICMP_TUNNEL", "icmp tunnels"),
                         ("HOMOGRAPH", "idn homographs"), ("BEACONING", "beaconing"),
-                        ("DNS_TUNNEL", "dns tunnelling"), ("DNS_EXHAUSTION", "dns exhaustion"),
+                        ("DNS_TUNNEL", "dns tunneling"), ("DNS_EXHAUSTION", "dns exhaustion"),
                         ("VXLAN", "trail inside VXLAN"), ("GRE", "trail inside GRE"),
                         ("IPV6_EXT", "trail behind IPv6 ext hdr"), ("QINQ", "trail behind QinQ"),
                         ("DGA", "dga bot (nxdomain)"),
