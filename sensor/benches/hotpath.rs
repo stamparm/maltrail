@@ -352,7 +352,7 @@ fn main() {
     }
 
     // Three labels, which is what turns the ACCUMULATOR path on: `label_count > 2` gates both
-    // the DNS-exhaustion window and the tunnelling detector, so the two-label rows above measure
+    // the DNS-exhaustion window and the tunneling detector, so the two-label rows above measure
     // neither. A real network's DNS is overwhelmingly three labels or more, so this is the shape
     // that decides what those heuristics actually cost.
     //
