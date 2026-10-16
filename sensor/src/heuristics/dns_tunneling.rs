@@ -1,4 +1,4 @@
-//! DNS tunnelling — deliberately hard to trip.
+//! DNS tunneling — deliberately hard to trip.
 //!
 //! A tunnel and an antivirus reputation lookup are close to indistinguishable from query shape
 //! alone. `<sha256>.avqs.mcafee.com`, `<base32>.sophosxl.net` and every DNSBL query send
