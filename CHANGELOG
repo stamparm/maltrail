@@ -147,7 +147,7 @@
     (QinQ) tags; the full IPv6 extension-header chain. Each of these used to
     drop the frame, which on such a link means a sensor that sees nothing.
 
-[+] DNS tunnelling detection, built to be hard to trigger.
+[+] DNS tunneling detection, built to be hard to trigger.
 
 [+] 'LOCAL_LOG_FORMAT text|json' (#19130), read by every server-side reader;
     the ignore list accepts networks, ranges and port ranges (#19142); more
