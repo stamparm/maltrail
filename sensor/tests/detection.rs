@@ -1034,7 +1034,7 @@ fn concurrent_sinks_racing_the_first_write_lose_nothing() {
     let _ = std::fs::remove_dir_all(&dir);
 }
 
-// --- dns tunnelling ---
+// --- dns tunneling ---
 //
 // The bar is a conjunction on purpose. Measured against 4,300 synthetic reputation and blocklist
 // queries - antivirus hash lookups, DNSBL, CDN and object-store names - this reported none of them
