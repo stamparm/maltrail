@@ -186,7 +186,7 @@ _DETECT_TRAILS = (
 
 _BASE_SEC = 1700000000
 _BURST_SEC = _BASE_SEC + 100000  # well after the per-packet cases so the burst lands in one heuristics window
-_TUNNEL_SEC = _BURST_SEC + 3600  # the tunnelling window needs its own 160s span, clear of the burst above
+_TUNNEL_SEC = _BURST_SEC + 3600  # the tunneling window needs its own 160s span, clear of the burst above
 
 def _build_detect_traffic():
     """
@@ -309,7 +309,7 @@ def _build_detect_traffic():
     checks.append(("DNS exhaustion (>1000 distinct subdomains of one zone) -> heuristic",
                    ("potential dns exhaustion",), True))
 
-    # --- DNS tunnelling: >=150 queries, >=6144 bytes of subdomain, >=120s apart, >=95% distinct,
+    # --- DNS tunneling: >=150 queries, >=6144 bytes of subdomain, >=120s apart, >=95% distinct,
     # >=90% of them carrying a >=20-char high-entropy label. One query a second for 160 seconds.
     # An LCG, not a quadratic: the obvious `(i*7 + j*13 + j*j) % 36` only reaches eight distinct
     # characters, giving 2.98 bits - just under DNS_TUNNELING_MIN_ENTROPY_X100 (300), so not one
@@ -328,7 +328,7 @@ def _build_detect_traffic():
         label = _tunnel_label(i)
         packets.append((_TUNNEL_SEC + i, _udp(_ATTACKER, "9.9.9.9", 34000 + i, 53,
                                               _dns_query("%s.tunnel-zone-test.com" % label))))
-    checks.append(("DNS tunnelling (150+ long high-entropy labels over 2+ minutes) -> heuristic",
+    checks.append(("DNS tunneling (150+ long high-entropy labels over 2+ minutes) -> heuristic",
                    ("potential dns tunneling",), True))
 
     # flush packet (higher timestamp) advances the heuristics window so the bursts above are evaluated
