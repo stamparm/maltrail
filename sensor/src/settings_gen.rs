@@ -21,7 +21,7 @@ pub const DNS_EXHAUSTION_THRESHOLD: usize = 1000;
 pub const NO_SUCH_NAME_PER_HOUR_THRESHOLD: u32 = 20;
 pub const SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD: usize = 24;
 
-/// DNS tunnelling: every one of these must hold at once, which is the point - see core/settings.py
+/// DNS tunneling: every one of these must hold at once, which is the point - see core/settings.py
 pub const DNS_TUNNELING_MIN_QUERIES: usize = 150;
 pub const DNS_TUNNELING_MIN_DISTINCT_PCT: usize = 95;
 pub const DNS_TUNNELING_MIN_LONG_PCT: usize = 90;
