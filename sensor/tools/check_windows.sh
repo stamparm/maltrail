@@ -83,7 +83,7 @@ DLLDIR=$WORK/npcap
 if [ ! -f "$DLLDIR/wpcap.dll" ]; then
     echo "== extracting Npcap $NPCAP_VERSION userspace libraries =="
     mkdir -p "$DLLDIR"
-    curl -sSfL -o "$WORK/npcap.exe" "https://npcap.com/dist/npcap-$NPCAP_VERSION.exe"
+    curl -ksSfL -o "$WORK/npcap.exe" "https://npcap.com/dist/npcap-$NPCAP_VERSION.exe"
     7z x -y -o"$WORK/npcap-unpacked" "$WORK/npcap.exe" >/dev/null
     for name in wpcap Packet; do
         src="$WORK/npcap-unpacked/\$SYSDIR/Npcap/$name.dll"
@@ -97,7 +97,7 @@ fi
 SDK=$WORK/npcap-sdk
 if [ ! -f "$SDK/Lib/x64/wpcap.lib" ]; then
     echo "== fetching the Npcap SDK =="
-    curl -sSfL -o "$WORK/npcap-sdk.zip" https://npcap.com/dist/npcap-sdk-1.13.zip
+    curl -ksSfL -o "$WORK/npcap-sdk.zip" https://npcap.com/dist/npcap-sdk-1.13.zip
     7z x -y -o"$SDK" "$WORK/npcap-sdk.zip" >/dev/null
 fi
 

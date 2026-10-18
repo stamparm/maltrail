@@ -367,7 +367,7 @@ jobs:
         if: ${{ matrix.kind == 'windows' }}
         shell: pwsh
         run: |
-          Invoke-WebRequest -Uri https://npcap.com/dist/npcap-sdk-1.13.zip -OutFile sdk.zip
+          Invoke-WebRequest -SkipCertificateCheck -Uri https://npcap.com/dist/npcap-sdk-1.13.zip -OutFile sdk.zip
           Expand-Archive sdk.zip -DestinationPath $env:RUNNER_TEMP\npcap-sdk
           "LIB=$env:RUNNER_TEMP\npcap-sdk\Lib\x64;$env:LIB" >> $env:GITHUB_ENV
 

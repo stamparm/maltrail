@@ -264,7 +264,7 @@ jobs:
         run: |
           # libpcap's Windows implementation. The SDK carries wpcap.lib, which is what the pcap
           # crate links against; the driver itself is only needed to CAPTURE, not to build.
-          Invoke-WebRequest -Uri https://npcap.com/dist/npcap-sdk-1.13.zip -OutFile sdk.zip
+          Invoke-WebRequest -SkipCertificateCheck -Uri https://npcap.com/dist/npcap-sdk-1.13.zip -OutFile sdk.zip
           Expand-Archive sdk.zip -DestinationPath $env:RUNNER_TEMP\npcap-sdk
           "LIB=$env:RUNNER_TEMP\npcap-sdk\Lib\x64;$env:LIB" >> $env:GITHUB_ENV
 
