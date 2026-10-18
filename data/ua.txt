@@ -2873,6 +2873,11 @@ MonoxideClient/1.0
 MonoxideClient
 Monoxide
 
+# Reference: https://x.com/smica83/status/2111024260227481678
+# Reference: https://tria.ge/261016-k86q9acv8m/behavioral2
+
+scholdauerty
+
 # Misc
 
 information_schema
