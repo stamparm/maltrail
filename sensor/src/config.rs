@@ -1515,9 +1515,10 @@ SENSOR_NAME box   # trailing comment
     fn typo_heuristics_are_flagged_and_the_shipped_example_is_clean() {
         // Same failure one level down: a name DISABLED_HEURISTICS does not recognise is accepted
         // in silence, so the heuristic an operator meant to mute keeps firing.
+        // "dns_tunnelling" (British spelling) is the deliberate typo here - do not "fix" it
         let disabled: Vec<String> =
-            ["port_scanning", "beacon", "dns_tunneling", "beaconing"].iter().map(|s| s.to_string()).collect();
-        assert_eq!(unknown_heuristics(&disabled), vec!["beacon".to_string(), "dns_tunneling".to_string()]);
+            ["port_scanning", "beacon", "dns_tunnelling", "beaconing"].iter().map(|s| s.to_string()).collect();
+        assert_eq!(unknown_heuristics(&disabled), vec!["beacon".to_string(), "dns_tunnelling".to_string()]);
 
         // every accepted name really is accepted
         let all: Vec<String> = HEURISTIC_NAMES.iter().map(|s| s.to_string()).collect();
