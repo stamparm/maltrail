@@ -7432,3 +7432,12 @@
 5.42.97.0/24,timeweb-as
 5.42.98.0/24,timeweb-as
 5.42.99.0/24,timeweb-as
+
+# AS 401626
+# Reference: https://ipinfo.io/AS401626
+# Reference: https://www.virustotal.com/gui/file/fdb120e4378f00c5e7773620502a07f2221ed4937b6668617d8badaf6ed67814/detection
+
+185.242.3.0/24,netiface-toronto
+217.60.76.0/24,netiface-toronto
+23.132.164.0/24,netiface-toronto
+64.89.163.0/24,netiface-toronto
