@@ -7441,3 +7441,11 @@
 217.60.76.0/24,netiface-toronto
 23.132.164.0/24,netiface-toronto
 64.89.163.0/24,netiface-toronto
+
+# AS 209373
+# Reference: https://ipinfo.io/AS209373
+
+217.60.102.0/24,swissnet-as
+217.60.103.0/24,swissnet-as
+217.60.195.0/24,swissnet-as
+31.56.209.0/24,swissnet-as
