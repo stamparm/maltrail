@@ -672,7 +672,7 @@ for.
 - [BlackArch Linux](https://github.com/BlackArch/blackarch/blob/master/packages/maltrail/PKGBUILD)
 - [Validin](https://x.com/ValidinLLC/status/1719666086390517762)
 - [Maltrail Add-on for Splunk](https://splunkbase.splunk.com/app/7211)
-- [Maltrail decoder and rules for Wazuh](https://github.com/MikhailKasimov/maltrail-wazuh-decoder-and-rules)
+- [Maltrail decoder and rules for Wazuh](integrations/wazuh/)
 - [GScan](https://github.com/grayddq/GScan) (trails only)
 - [MalwareWorld](https://www.malwareworld.com/) (trails only)
 - [oisd domain blocklist](https://oisd.nl/?p=inc) (trails only)

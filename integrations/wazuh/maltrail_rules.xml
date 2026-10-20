@@ -1,0 +1,40 @@
+<!--
+  Maltrail rules for Wazuh. Needs maltrail_decoders.xml.
+  Authors: Michael Muenz, Mikhail Kasimov
+  Rule IDs: 100630 - 100634 (the local range; change them if they collide with your own rules)
+-->
+
+<group name="maltrail,">
+  <rule id="100630" level="0">
+    <decoded_as>maltrail</decoded_as>
+    <description>Maltrail events grouped.</description>
+  </rule>
+
+  <rule id="100631" level="3">
+    <if_sid>100630</if_sid>
+    <field name="severity">^0$</field>
+    <description>Maltrail low severity: $(trail) $(category) $(ref) from $(srcip) to $(dstip)</description>
+  </rule>
+
+  <rule id="100632" level="7">
+    <if_sid>100630</if_sid>
+    <field name="severity">^1$</field>
+    <description>Maltrail medium severity: $(trail) $(category) $(ref) from $(srcip) to $(dstip)</description>
+  </rule>
+
+  <rule id="100633" level="10">
+    <if_sid>100630</if_sid>
+    <field name="severity">^2$</field>
+    <description>Maltrail high severity: $(trail) $(category) $(ref) from $(srcip) to $(dstip)</description>
+  </rule>
+
+  <!-- the same source raising 10 high-severity events in 2 minutes -->
+  <rule id="100634" level="12" frequency="10" timeframe="120">
+    <if_matched_sid>100633</if_matched_sid>
+    <same_srcip />
+    <description>Maltrail: 10 high-severity events from $(srcip) in 2 minutes, possible infection</description>
+    <mitre>
+      <id>T1584</id>
+    </mitre>
+  </rule>
+</group>

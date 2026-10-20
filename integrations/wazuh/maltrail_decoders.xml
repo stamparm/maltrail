@@ -1,0 +1,22 @@
+<!--
+  Maltrail decoder for Wazuh (PCRE2, Wazuh 4.x).
+  Authors: Michael Muenz, Julián Morales, Mikhail Kasimov
+
+  Decodes the CEF line the Maltrail sensor sends with SYSLOG_SERVER, IPv4 and IPv6 alike:
+
+    Oct 20 12:00:00 sensor1 CEF:0|Maltrail|sensor|3.5|2026-10-20|asyncrat (malware)|2|src=10.13.13.2 spt=57809 dst=1.1.1.1 dpt=53 trail=malware.bakewithdavid.com ref=(static)
+
+  The fifth field is the date of the trail set the sensor was running; severity is 0 (low),
+  1 (medium) or 2 (high).
+-->
+
+<decoder name="maltrail">
+  <program_name>^CEF$</program_name>
+  <prematch type="pcre2">^0\|Maltrail\|</prematch>
+</decoder>
+
+<decoder name="maltrail-event">
+  <parent>maltrail</parent>
+  <regex type="pcre2">^0\|Maltrail\|(\w+)\|([^|]+)\|([^|]*)\|((?:[^|\\]|\\.)*)\|(\d)\|src=(\S+) spt=(\S*) dst=(\S+) dpt=(\S*) trail=(.*) ref=(.*)$</regex>
+  <order>type, version, trails_date, category, severity, srcip, srcport, dstip, dstport, trail, ref</order>
+</decoder>
