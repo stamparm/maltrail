@@ -7449,3 +7449,13 @@
 217.60.103.0/24,swissnet-as
 217.60.195.0/24,swissnet-as
 31.56.209.0/24,swissnet-as
+
+# AS 267784
+# Reference: https://ipinfo.io/AS267784
+# Reference: https://x.com/malpulse/status/2112608343131103636
+
+193.57.40.0/24,pa-dame-lacnic
+45.227.252.0/24,pa-dame-lacnic
+45.227.254.0/24,pa-dame-lacnic
+2803:5120:c000::/36,pa-dame-lacnic
+2a10:9100:5::/48,pa-dame-lacnic
