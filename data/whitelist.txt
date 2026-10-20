@@ -4166,3 +4166,7 @@ public.1rpc.io
 
 committers.top
 top-github.eplus.dev
+
+# Netis Systems (URL: https://netcoreinc.com/ , China) routers management address
+
+netis.cc
