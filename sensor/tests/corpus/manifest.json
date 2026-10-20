@@ -399,6 +399,105 @@
   },
   {
     "expect": [
+      "dead::beef",
+      "66.66.66.66"
+    ],
+    "linktype": 0,
+    "name": "dlt_null",
+    "needs_pcap_timestamps": false,
+    "notes": "DLT_NULL loopback, every IPv6 address family",
+    "packets": 4,
+    "pcap": "dlt_null.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "dead::beef",
+      "66.66.66.66"
+    ],
+    "linktype": 108,
+    "name": "dlt_loop",
+    "needs_pcap_timestamps": false,
+    "notes": "OpenBSD DLT_LOOP",
+    "packets": 2,
+    "pcap": "dlt_loop.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "66.66.66.66"
+    ],
+    "linktype": 109,
+    "name": "dlt_enc",
+    "needs_pcap_timestamps": false,
+    "notes": "OpenBSD enc0 (IPsec)",
+    "packets": 1,
+    "pcap": "dlt_enc.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "66.66.66.66",
+      "dead::beef"
+    ],
+    "linktype": 117,
+    "name": "dlt_pflog",
+    "needs_pcap_timestamps": false,
+    "notes": "pflog, two header lengths",
+    "packets": 2,
+    "pcap": "dlt_pflog.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "66.66.66.66"
+    ],
+    "linktype": 239,
+    "name": "dlt_nflog",
+    "needs_pcap_timestamps": false,
+    "notes": "Linux NFLOG",
+    "packets": 1,
+    "pcap": "dlt_nflog.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "66.66.66.66"
+    ],
+    "linktype": 276,
+    "name": "dlt_sll2",
+    "needs_pcap_timestamps": false,
+    "notes": "DLT_LINUX_SLL2",
+    "packets": 1,
+    "pcap": "dlt_sll2.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "dead::beef"
+    ],
+    "linktype": 229,
+    "name": "dlt_ipv6",
+    "needs_pcap_timestamps": false,
+    "notes": "raw IPv6 link type",
+    "packets": 1,
+    "pcap": "dlt_ipv6.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "66.66.66.66"
+    ],
+    "linktype": 127,
+    "name": "dlt_radiotap",
+    "needs_pcap_timestamps": false,
+    "notes": "802.11 behind radiotap; the trail hit is in the third frame, with a longer radiotap header",
+    "packets": 3,
+    "pcap": "dlt_radiotap.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
       "66.66.66.66"
     ],
     "linktype": 1,

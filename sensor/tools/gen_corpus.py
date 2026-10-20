@@ -24,6 +24,15 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 DLT_EN10MB = 1
 DLT_RAW = 12
 DLT_LINUX_SLL = 113
+# savefile LINKTYPE_ values; libpcap maps them to the platform's DLT_ numbering on read
+LINKTYPE_NULL = 0
+LINKTYPE_LOOP = 108
+LINKTYPE_ENC = 109
+LINKTYPE_PFLOG = 117
+LINKTYPE_IEEE802_11_RADIOTAP = 127
+LINKTYPE_IPV6 = 229
+LINKTYPE_NFLOG = 239
+LINKTYPE_LINUX_SLL2 = 276
 
 BASE_SEC = 1700000000
 
@@ -50,6 +59,28 @@ def pppoe(payload, ppp_proto=0x0021, vlan=None):
 
 def sll(payload, ethertype=0x0800):
     return struct.pack("!HHH", 0, 1, 6) + b"\x11\x22\x33\x44\x55\x66\x00\x00" + struct.pack("!H", ethertype) + payload
+
+
+def sll2(payload, ethertype=0x0800):
+    return struct.pack(">HHIHBBB", ethertype, 0, 2, 1, 0, 6, 0) + b"\x00" * 7 + payload
+
+
+def pflog(payload, length=61):
+    header = bytearray((length + 3) & ~3)
+    header[0] = length
+    return bytes(header) + payload
+
+
+def nflog(payload, family=2):
+    tlv = lambda kind, value: struct.pack("<HH", 4 + len(value), kind) + value + b"\x00" * (-len(value) % 4)
+    return bytes([family, 0, 0, 1]) + tlv(1, b"\x08\x00\x00\x00") + tlv(9, payload)
+
+
+def radiotap_80211(payload, radiotap_len=8, qos=False):
+    radiotap = struct.pack("<BBHI", 0, 0, radiotap_len, 0) + b"\x00" * (radiotap_len - 8)
+    fc = struct.pack("BB", 0x88 if qos else 0x08, 0x01)
+    mac = fc + b"\x00" * (22 + (2 if qos else 0))
+    return radiotap + mac + b"\xaa\xaa\x03\x00\x00\x00\x08\x00" + payload
 
 
 def ipv4(src, dst, proto, payload, ihl=5, frag=0, total_len=None):
@@ -554,6 +585,37 @@ def build_cases():
     cases.append(("dlt_raw", DLT_RAW, packets, ["66.66.66.66"], "DLT_RAW (no link header)"))
     packets = [(BASE_SEC, sll(ipv4(ATTACKER, "66.66.66.66", 6, tcp(50501, 443, 0x02))))]
     cases.append(("dlt_sll", DLT_LINUX_SLL, packets, ["66.66.66.66"], "DLT_LINUX_SLL ('any' interface)"))
+
+    # 29a. the link types whose header is not a fixed offset, or was never parsed right: BSD,
+    # macOS and Windows loopback (IPv6 family 24/28/30), OpenBSD loopback, IPsec enc, pflog,
+    # NFLOG, Linux "any" in its v2 form, raw IPv6, and 802.11 behind radiotap headers of two
+    # different lengths (an offset learned from the first would misread the second)
+    v4_hit = lambda port: ipv4(ATTACKER, "66.66.66.66", 6, tcp(port, 443, 0x02))
+    v6_hit = lambda port: ipv6("dead::1", "dead::beef", 6, tcp(port, 443, 0x02))
+    packets = [(BASE_SEC + i, struct.pack("<I", family) + v6_hit(50510 + i)) for i, family in enumerate((24, 28, 30))]
+    packets.append((BASE_SEC + 3, struct.pack("<I", 2) + v4_hit(50513)))
+    cases.append(("dlt_null", LINKTYPE_NULL, packets, ["dead::beef", "66.66.66.66"],
+                  "DLT_NULL loopback, every IPv6 address family"))
+    packets = [(BASE_SEC, struct.pack(">I", 24) + v6_hit(50520)), (BASE_SEC + 1, struct.pack(">I", 2) + v4_hit(50521))]
+    cases.append(("dlt_loop", LINKTYPE_LOOP, packets, ["dead::beef", "66.66.66.66"], "OpenBSD DLT_LOOP"))
+    packets = [(BASE_SEC, struct.pack(">III", 2, 0xdeadbeef, 1) + v4_hit(50530))]
+    cases.append(("dlt_enc", LINKTYPE_ENC, packets, ["66.66.66.66"], "OpenBSD enc0 (IPsec)"))
+    packets = [(BASE_SEC, pflog(v4_hit(50540), 61)), (BASE_SEC + 1, pflog(v6_hit(50541), 69))]
+    cases.append(("dlt_pflog", LINKTYPE_PFLOG, packets, ["66.66.66.66", "dead::beef"],
+                  "pflog, two header lengths"))
+    packets = [(BASE_SEC, nflog(v4_hit(50550)))]
+    cases.append(("dlt_nflog", LINKTYPE_NFLOG, packets, ["66.66.66.66"], "Linux NFLOG"))
+    packets = [(BASE_SEC, sll2(v4_hit(50560)))]
+    cases.append(("dlt_sll2", LINKTYPE_LINUX_SLL2, packets, ["66.66.66.66"], "DLT_LINUX_SLL2"))
+    packets = [(BASE_SEC, v6_hit(50570))]
+    cases.append(("dlt_ipv6", LINKTYPE_IPV6, packets, ["dead::beef"], "raw IPv6 link type"))
+    packets = [
+        (BASE_SEC, radiotap_80211(ipv4(ATTACKER, "203.0.113.200", 6, tcp(50580, 443, 0x02)), 8)),
+        (BASE_SEC + 1, radiotap_80211(ipv4(ATTACKER, "203.0.113.201", 6, tcp(50581, 443, 0x02)), 8)),
+        (BASE_SEC + 2, radiotap_80211(v4_hit(50582), 18, qos=True)),
+    ]
+    cases.append(("dlt_radiotap", LINKTYPE_IEEE802_11_RADIOTAP, packets, ["66.66.66.66"],
+                  "802.11 behind radiotap; the trail hit is in the third frame, with a longer radiotap header"))
 
     # 29b. PPPoE-encapsulated IP, plain and behind a VLAN tag
     packets = [

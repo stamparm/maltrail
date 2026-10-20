@@ -319,7 +319,7 @@ pub const SUSPICIOUS_UA_REGEX: &str = r#"(?i)\(\) { :;|2search|404search|91cast|
 
 /// DLT_OFFSETS (core/settings.py, resolved for this platform)
 pub const DLT_OFFSETS: &[(i32, usize)] =
-    &[(0, 4), (1, 14), (6, 22), (7, 6), (8, 16), (9, 4), (10, 21), (12, 0), (18, 4), (108, 4), (113, 16), (117, 48)];
+    &[(0, 4), (1, 14), (6, 22), (7, 6), (8, 16), (9, 4), (10, 21), (12, 0), (108, 4), (113, 16), (117, 48)];
 
 /// IPPROTO_LUT (protocol number -> Maltrail protocol label)
 pub const IPPROTO_LUT: &[(u8, &str)] = &[
