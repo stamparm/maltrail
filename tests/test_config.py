@@ -70,8 +70,10 @@ class TestBadConfigsExitCleanly(unittest.TestCase):
     """Each bad value must yield SystemExit (clean message), not a raw traceback."""
 
     def test_missing_mandatory(self):
-        for key in ("MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIR"):
+        for key in ("MONITOR_INTERFACE", "LOG_DIR"):
             self.assertEqual(_outcome(_write(_BASE, drop=(key,))), "exit", "missing %s" % key)
+        # CAPTURE_BUFFER was the Python sensor's ring; it is optional now.
+        self.assertEqual(_outcome(_write(_BASE, drop=("CAPTURE_BUFFER",))), "ok")
 
     def test_garbage_numeric_values(self):
         for key, val in [("HTTP_PORT", "notaport"), ("UPDATE_PERIOD", "soon"), ("CAPTURE_BUFFER", "lots")]:

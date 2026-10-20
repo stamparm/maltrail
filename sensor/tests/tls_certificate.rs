@@ -96,12 +96,12 @@ fn the_switch_turns_it_off() {
     let der = c2_certificate();
     let digest = sha1_hex(&der);
     let mut options = HarnessOptions::quiet();
-    options.extra.push("CHECK_TLS_CERTIFICATES false".to_string());
+    options.extra.push("CHECK_TLS_FINGERPRINTS false".to_string());
     let mut h = Harness::with_options(&[(digest.as_str(), "c2 cert (suspicious)", "(sslbl)")], options);
 
     feed_server_flight(&mut h, &der, "203.0.113.7", "10.0.0.5");
     h.flush();
-    assert!(h.events().is_empty(), "CHECK_TLS_CERTIFICATES false must disable the check");
+    assert!(h.events().is_empty(), "CHECK_TLS_FINGERPRINTS false must disable the check");
 }
 
 #[test]

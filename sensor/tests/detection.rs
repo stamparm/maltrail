@@ -896,15 +896,13 @@ fn tls_sni_is_checked_when_enabled() {
 
 #[test]
 fn tls_sni_is_ignored_when_disabled() {
-    for off in ["CHECK_TLS_SNI false", "USE_FAST_PREFILTER false"] {
-        let mut h = Harness::with_options(
-            &[("tls-evil.example", MALWARE.0, "(static)")],
-            HarnessOptions { extra: vec![off.to_string()], ..HarnessOptions::heuristics() },
-        );
-        let hello = maltrail_sensor::protocols::tls::build_client_hello("tls-evil.example", true);
-        h.feed_ip(&ipv4(6, "10.0.0.5", "203.0.113.30", &tcp(50400, 443, 0x18, &hello)), 1);
-        assert!(h.events().is_empty(), "{off}: {:?}", h.events());
-    }
+    let mut h = Harness::with_options(
+        &[("tls-evil.example", MALWARE.0, "(static)")],
+        HarnessOptions { extra: vec!["CHECK_TLS_SNI false".to_string()], ..HarnessOptions::heuristics() },
+    );
+    let hello = maltrail_sensor::protocols::tls::build_client_hello("tls-evil.example", true);
+    h.feed_ip(&ipv4(6, "10.0.0.5", "203.0.113.30", &tcp(50400, 443, 0x18, &hello)), 1);
+    assert!(h.events().is_empty(), "CHECK_TLS_SNI false: {:?}", h.events());
 }
 
 // --- TLS client fingerprints (JA3 / JA4) ----------------------------------------

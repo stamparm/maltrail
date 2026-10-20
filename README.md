@@ -377,8 +377,7 @@ Frequently used sensor options include:
 | --- | --- |
 | `MONITOR_INTERFACE` | Capture interface or interfaces; `any` selects all supported interfaces |
 | `CAPTURE_FILTER` | BPF capture filter |
-| `CAPTURE_FANOUT` | Number of Linux capture sockets; defaults to one |
-| `CAPTURE_WORKERS` | Capture workers, one socket each; defaults to `CAPTURE_FANOUT`, so one unless either is set |
+| `CAPTURE_WORKERS` | Capture workers, one socket each; defaults to one |
 | `LOG_DIR` | Local event-log directory |
 | `TRAILS_FILE` | Generated trail database |
 | `LOG_SERVER` | Remote Maltrail event server |
@@ -390,10 +389,6 @@ Frequently used sensor options include:
 | `USER_WHITELIST` | Operator-managed indicators that should not alert |
 | `CUSTOM_TRAILS_DIR` | Operator-managed trail directory |
 | `STATIC_TRAILS_DIR` | Optional checkout of the trails repository; only used to show a trail's source citation in the UI |
-
-`PROCESS_COUNT` applies to the retired Python sensor and to the legacy event-log throttle; it does
-**not** set the Rust sensor's worker count. Configure capture workers with `CAPTURE_FANOUT` or
-`CAPTURE_WORKERS` instead.
 
 Run the deployment check after changing configuration:
 

@@ -40,8 +40,8 @@ Rust has no GIL, so the ring, the copies and the IPC all disappear: one **thread
 handle does capture *and* detection.
 
 * **Live:** `CAPTURE_WORKERS` sockets per interface, all joined to one `PACKET_FANOUT` group.
-  Each socket is read by its own thread. `CAPTURE_WORKERS` falls back to `CAPTURE_FANOUT`, which
-  the shipped `maltrail.conf` leaves commented out — so a stock install runs **one** worker, and
+  Each socket is read by its own thread. The shipped `maltrail.conf` leaves `CAPTURE_WORKERS`
+  commented out, so a stock install runs **one** worker, and
   fanout is skipped entirely. It is deliberately *not* derived from `PROCESS_COUNT`: flow-hashed
   fanout dilutes the per-source scan heuristics, so scaling out is an explicit opt-in. If the
   kernel refuses the fanout group for the device, the sensor drops to a single worker with a

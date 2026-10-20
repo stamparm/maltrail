@@ -295,7 +295,7 @@ DIVERGENCE_CASES = {
     # NEW heuristic (no sensor.py counterpart); only observable with pcap timestamps
     "tcp_periodic_beacon": ["203.0.113.77:443"],
     # NEW detection (no sensor.py counterpart): the JA3 of the ClientHello below. Needs
-    # CHECK_TLS_CERTIFICATES, which parity.py enables for exactly this case.
+    # CHECK_TLS_FINGERPRINTS (default on).
     "tcp_malware_ja3": ["1e7c622032b0cb79401b0f7be3793a1a"],
     # ClientHellos longer than one packet, and TLS over IPv6 (head_sni was IPv4-only)
     "tls_sni_split": ["tls-split-evil.example", "a89bab8eb05fa15a7ac7b256b0257612"],
@@ -775,7 +775,7 @@ def build_cases():
     ]
     cases.append(("tcp_malware_ja3", DLT_EN10MB, packets, ["1e7c622032b0cb79401b0f7be3793a1a"],
                   "ClientHello JA3 matched against the trail set (deliberate divergence; "
-                  "parity enables CHECK_TLS_CERTIFICATES for this case only)"))
+                  "CHECK_TLS_FINGERPRINTS)"))
 
     return cases
 

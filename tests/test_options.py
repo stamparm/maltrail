@@ -29,8 +29,9 @@ DYNAMIC = {"FAIL2BAN_ALLOWLIST", "BLACKLIST_ALLOWLIST", "HOME_LAT", "HOME_LON", 
 # Accepted by read_config() so an upgrader's existing maltrail.conf does not warn, but no longer
 # documented and no longer read by anything: they configured the retired Python sensor's
 # multiprocessing pool and its in-C admission prefilter, neither of which the Rust sensor has.
-DEPRECATED = {"USE_MULTIPROCESSING", "DISABLE_CPU_AFFINITY", "FAST_ADMIT_ADAPTIVE",
-              "FAST_ADMIT_LEVEL", "USE_CAPTURE_AFFINITY", "USE_FAST_PREFILTER", "FAST_FLOW_CUTOFF"}
+# Read, but no longer in maltrail.conf: old names that existing configurations still use.
+DEPRECATED = {"USE_MULTIPROCESSING", "DISABLE_CPU_AFFINITY", "USE_CAPTURE_AFFINITY", "CAPTURE_BUFFER",
+              "CAPTURE_FANOUT", "CHECK_TLS_CERTIFICATES"}
 
 OPTION = r"[A-Z][A-Z0-9_]{2,}"
 

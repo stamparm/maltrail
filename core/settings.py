@@ -296,6 +296,7 @@ KNOWN_CONFIG_OPTIONS = frozenset((
     "CHECK_HOST_DOMAINS",
     "CHECK_MISSING_HOST",
     "CHECK_TLS_CERTIFICATES",
+    "CHECK_TLS_FINGERPRINTS",
     "CHECK_TLS_SNI",
     "CUSTOM_TRAILS_DIR",
     "CUSTOM_TRAILS_URL",
@@ -319,9 +320,6 @@ KNOWN_CONFIG_OPTIONS = frozenset((
     "EVENT_THROTTLE_WINDOW",
     "FAIL2BAN_ALLOWLIST",
     "FAIL2BAN_REGEX",
-    "FAST_ADMIT_ADAPTIVE",
-    "FAST_ADMIT_LEVEL",
-    "FAST_FLOW_CUTOFF",
     "HEADER_LOGO",
     "HEARTBEAT_PERIOD",
     "HOME_LAT",
@@ -363,7 +361,6 @@ KNOWN_CONFIG_OPTIONS = frozenset((
     "USER_WHITELIST",
     "USE_CAPTURE_AFFINITY",
     "USE_CONDENSED_STORAGE",
-    "USE_FAST_PREFILTER",
     "USE_FEED_UPDATES",
     "USE_HEURISTICS",
     "USE_EVENT_INDEX",
@@ -517,7 +514,7 @@ def read_config(config_file):
         # half/empty config (which would otherwise fail later with a misleading "missing mandatory option")
         sys.exit("[!] unable to read configuration file '%s' (%s)" % (config_file, ex))
 
-    for option in ("MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIR"):
+    for option in ("MONITOR_INTERFACE", "LOG_DIR"):
         if option not in config:
             sys.exit("[!] missing mandatory option '%s' in configuration file '%s'" % (option, config_file))
 

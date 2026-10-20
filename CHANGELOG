@@ -32,12 +32,19 @@
     segment of a ClientHello. An existing maltrail.conf keeps its filter
     until it is updated.
 
-[=] SNI matching is on by default and called CHECK_TLS_SNI. Its old name,
-    USE_FAST_PREFILTER, came from the Python sensor's C prefilter and is
-    still read when the new one is absent; FAST_FLOW_CUTOFF did nothing but
-    switch SNI off at 0 and is ignored. With DNS over HTTPS the SNI is where
-    the domain is still visible, and the handshake was already parsed for
-    JA3/JA4, so it costs one lookup per connection.
+[-] USE_FAST_PREFILTER, FAST_FLOW_CUTOFF, FAST_ADMIT_LEVEL and
+    FAST_ADMIT_ADAPTIVE are gone. They configured the retired Python sensor's
+    C prefilter; all that was left of them was switching SNI matching on,
+    which is now CHECK_TLS_SNI and on by default. With DNS over HTTPS the SNI
+    is where the domain is still visible, and the handshake was already
+    parsed for JA3/JA4, so it costs one lookup per connection.
+
+[=] maltrail.conf cleanup. CAPTURE_FANOUT is CAPTURE_WORKERS (they were the
+    same number), CHECK_TLS_CERTIFICATES is CHECK_TLS_FINGERPRINTS (it also
+    switches JA3/JA4), and CAPTURE_BUFFER, the Python sensor's ring, is no
+    longer mandatory: its 10% is the default, so a stock install keeps the
+    same 64-256 MB libpcap ring. The old names are still read. PROCESS_COUNT
+    is no longer set: it only ever applied to EVENT_THROTTLE_MODE legacy.
 
 [!] /fail2ban no longer publishes the source of 'potential iot-malware
     download': since #19622 that event fires only when one of OUR hosts fetches

@@ -44,7 +44,7 @@ impl std::fmt::Display for FanoutError {
         match self {
             FanoutError::Unsupported => write!(
                 f,
-                "PACKET_FANOUT is Linux-only; capture works without it, but CAPTURE_FANOUT cannot be honoured here"
+                "PACKET_FANOUT is Linux-only; capture works without it, but CAPTURE_WORKERS > 1 cannot be honored here"
             ),
             FanoutError::NotPacketSocket(domain) => write!(
                 f,

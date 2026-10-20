@@ -188,10 +188,10 @@ pub struct Config {
     pub user_whitelist: Option<PathBuf>,
     pub user_ignorelist: Option<PathBuf>,
     pub use_condensed_storage: bool,
-    /// Match TLS server certificates against the trail set by SHA-1 fingerprint. New in this
-    /// sensor (`sensor.py` extracts certificates for reporting but never matches them), so
-    /// `docs/COMPATIBILITY.md` turns it off to keep the differential comparison honest.
-    pub check_tls_certificates: bool,
+    /// CHECK_TLS_FINGERPRINTS: match server certificates (SHA-1) and client ClientHellos
+    /// (JA3/JA4) against the trail set. New in this sensor (`sensor.py` extracts certificates for
+    /// reporting but never matches them).
+    pub check_tls_fingerprints: bool,
     /// New: opt out of the startup/periodic trail refresh (for hosts where trails.csv is managed
     /// externally, e.g. pushed by the Maltrail server). Default OFF, i.e. the sensor refreshes
     /// trails exactly like sensor.py does.
@@ -790,7 +790,7 @@ impl Config {
         let root = settings::resolve_root(config_file);
         let raw = parse_raw(&content, &root)?;
 
-        for option in ["MONITOR_INTERFACE", "CAPTURE_BUFFER", "LOG_DIR"] {
+        for option in ["MONITOR_INTERFACE", "LOG_DIR"] {
             if !raw.contains_key(option) {
                 bail!("missing mandatory option '{option}' in configuration file '{}'", config_file.display());
             }
@@ -807,16 +807,11 @@ impl Config {
             );
         }
 
-        if raw.contains_key("USE_FAST_PREFILTER") && !raw.contains_key("CHECK_TLS_SNI") {
-            crate::cprintln!("[i] configuration option 'USE_FAST_PREFILTER' is now called 'CHECK_TLS_SNI'");
-        }
-        if raw.contains_key("FAST_FLOW_CUTOFF") {
-            crate::cprintln!("[i] configuration option 'FAST_FLOW_CUTOFF' does nothing in this sensor and is ignored");
-        }
-
+        // CAPTURE_BUFFER was the Python sensor's ring and was mandatory; it is now only the seed of
+        // CAPTURE_BUFFER_SIZE, and its shipped `10%` is the default when it is absent.
         let capture_buffer_raw = get_str(&raw, "CAPTURE_BUFFER");
         let capture_buffer = if capture_buffer_raw.is_empty() {
-            0
+            physmem_for_sizing().0 / 10 / BLOCK_LENGTH * BLOCK_LENGTH
         } else {
             let bytes = parse_byte_size(&capture_buffer_raw).map_err(|e| {
                 ConfigError(format!("invalid configuration value for 'CAPTURE_BUFFER' ('{capture_buffer_raw}'): {e}"))
@@ -1078,8 +1073,11 @@ impl Config {
             user_ignorelist,
             // absent switch defaults to on, exactly like read_config()
             use_condensed_storage: get_bool_opt(&raw, "USE_CONDENSED_STORAGE").unwrap_or(true),
-            // CHECK_ prefix, so read_config() already coerces it to a bool; default on.
-            check_tls_certificates: get_bool_opt(&raw, "CHECK_TLS_CERTIFICATES").unwrap_or(true),
+            // Default on. CHECK_TLS_CERTIFICATES is the old name, from before it also covered
+            // JA3/JA4; an existing configuration that switched it off stays off.
+            check_tls_fingerprints: get_bool_opt(&raw, "CHECK_TLS_FINGERPRINTS")
+                .or_else(|| get_bool_opt(&raw, "CHECK_TLS_CERTIFICATES"))
+                .unwrap_or(true),
             disable_trail_updates: get_bool(&raw, "DISABLE_TRAIL_UPDATES"),
             repair_truncated_trails: get_bool_opt(&raw, "REPAIR_TRUNCATED_TRAILS").unwrap_or(true),
             // cfg_bool, NOT get_bool: only names starting with USE_/SET_/CHECK_/ENABLE_/SHOW_/
@@ -1101,12 +1099,7 @@ impl Config {
                 .max(64) as usize,
 
             capture_fanout,
-            // Default on. USE_FAST_PREFILTER is its old name, from the retired Python sensor's C
-            // prefilter, which SNI extraction came bundled with; it still decides when the new
-            // name is absent, so an existing configuration behaves as it did.
-            check_tls_sni: get_bool_opt(&raw, "CHECK_TLS_SNI")
-                .or_else(|| get_bool_opt(&raw, "USE_FAST_PREFILTER"))
-                .unwrap_or(true),
+            check_tls_sni: get_bool_opt(&raw, "CHECK_TLS_SNI").unwrap_or(true),
 
             capture_workers,
             capture_buffer_size,
@@ -1387,17 +1380,22 @@ SENSOR_NAME box   # trailing comment
         let cfg = Config::load(&root().join("maltrail.conf")).expect("shipped maltrail.conf must load");
         assert_eq!(cfg.monitor_interface, "any");
         assert!(cfg.use_heuristics);
-        assert_eq!(cfg.process_count, 16);
+        assert_eq!(cfg.process_count, cpu_count());
         assert_eq!(cfg.update_period, 86400);
+        // CAPTURE_BUFFER is no longer in the file; its old `10%` is the default, so a stock
+        // install keeps the ring it had.
         assert!(cfg.capture_buffer > 0);
         assert_eq!(cfg.capture_buffer % BLOCK_LENGTH, 0);
+        let tenth = physmem_for_sizing().0 / 10 / BLOCK_LENGTH * BLOCK_LENGTH;
+        assert_eq!(cfg.capture_buffer_size, inferred_capture_ring(tenth, Some(physmem_for_sizing().0)));
+        assert!(cfg.check_tls_sni && cfg.check_tls_fingerprints);
         assert!(cfg.log_dir.ends_with("maltrail"));
         assert!(!cfg.capture_filter.is_empty());
         assert!(!cfg.remote_severity_regex.is_empty());
         assert_eq!(cfg.sensor_name, hostname());
         assert!(cfg.use_condensed_storage);
-        // The shipped config says PROCESS_COUNT 16 and does NOT set CAPTURE_WORKERS. One worker
-        // is the answer: deriving the default from PROCESS_COUNT silently ran every stock install
+        // The shipped config does NOT set CAPTURE_WORKERS. One worker is the answer: deriving the
+        // default from PROCESS_COUNT (once shipped as 16) silently ran every stock install
         // with scan heuristics diluted across 16 flow-hashed sockets to buy throughput a single
         // worker already has. Asserted here so it cannot drift back unnoticed.
         assert_eq!(cfg.capture_workers, 1, "the shipped config must default to a single worker");
@@ -1454,7 +1452,7 @@ SENSOR_NAME box   # trailing comment
     }
 
     #[test]
-    fn sni_check_is_on_by_default_and_reads_its_old_name() {
+    fn sni_check_is_on_by_default() {
         let dir = std::env::temp_dir().join("mt-cfg-sni");
         let _ = std::fs::create_dir_all(&dir);
         let base = "MONITOR_INTERFACE any\nCAPTURE_BUFFER 1MB\nLOG_DIR /tmp\nUPDATE_PERIOD 86400\n";
@@ -1465,9 +1463,30 @@ SENSOR_NAME box   # trailing comment
         };
         assert!(write("default.conf", ""));
         assert!(!write("off.conf", "CHECK_TLS_SNI false\n"));
-        assert!(!write("old-off.conf", "USE_FAST_PREFILTER false\n"));
-        assert!(write("old-on.conf", "USE_FAST_PREFILTER true\nFAST_FLOW_CUTOFF 0\n"), "FAST_FLOW_CUTOFF is ignored");
-        assert!(write("new-wins.conf", "USE_FAST_PREFILTER false\nCHECK_TLS_SNI true\n"));
+    }
+
+    #[test]
+    fn renamed_options_keep_an_existing_configuration_working() {
+        let dir = std::env::temp_dir().join("mt-cfg-renamed");
+        let _ = std::fs::create_dir_all(&dir);
+        // No CAPTURE_BUFFER: it is not mandatory any more.
+        let base = "MONITOR_INTERFACE any\nLOG_DIR /tmp\nUPDATE_PERIOD 86400\n";
+        let write = |name: &str, extra: &str| {
+            let path = dir.join(name);
+            std::fs::write(&path, format!("{base}{extra}")).unwrap();
+            Config::load(&path).expect("config must load")
+        };
+        assert!(write("default.conf", "").check_tls_fingerprints);
+        assert!(!write("new.conf", "CHECK_TLS_FINGERPRINTS false\n").check_tls_fingerprints);
+        assert!(!write("old.conf", "CHECK_TLS_CERTIFICATES false\n").check_tls_fingerprints);
+        assert!(
+            write("both.conf", "CHECK_TLS_CERTIFICATES false\nCHECK_TLS_FINGERPRINTS true\n").check_tls_fingerprints
+        );
+        // An old CAPTURE_BUFFER still seeds the ring, within the inferred bounds.
+        assert_eq!(
+            write("buf.conf", "CAPTURE_BUFFER 128MB\n").capture_buffer_size,
+            128 * 1024 * 1024 / BLOCK_LENGTH * BLOCK_LENGTH
+        );
     }
 
     #[test]

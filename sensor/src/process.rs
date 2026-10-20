@@ -371,7 +371,7 @@ fn process_layer(
     // prefilter adds (core/fastfilter.py:head_sni). Gated on the same switches.
     // Two independent features share the TLS handshake record, so either one is reason enough
     // to look at it: SNI extraction (the prefilter's contribution) and certificate matching.
-    if st.cfg.check_tls_sni || st.cfg.check_tls_certificates {
+    if st.cfg.check_tls_sni || st.cfg.check_tls_fingerprints {
         handshake_sni(st, ip_data, &header, sec, usec);
     }
 
@@ -463,7 +463,7 @@ fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader
                 client_hello(st, &ch, true, sec, usec, ep);
                 return;
             }
-            if st.cfg.check_tls_certificates {
+            if st.cfg.check_tls_fingerprints {
                 check_server_certificate(st, payload, sec, usec, ep);
             }
         }
@@ -545,7 +545,7 @@ fn client_hello(
             check_domain(st, sni, sec, usec, ep, PROTO::TCP);
         }
     }
-    if st.cfg.check_tls_certificates {
+    if st.cfg.check_tls_fingerprints {
         check_client_fingerprint(st, ch, sec, usec, ep);
     }
 }
@@ -561,7 +561,7 @@ fn client_hello(
 ///
 /// Both hashes come from one parse (`protocols::tls::parse_client_hello`, byte-identical to
 /// `core/tls_intel.py`), so this is two exact-match lookups on handshake packets only. Governed
-/// by CHECK_TLS_CERTIFICATES like the server-flight check: one switch answers "match TLS
+/// by CHECK_TLS_FINGERPRINTS like the server-flight check: one switch answers "match TLS
 /// handshake intelligence against the trail set".
 fn check_client_fingerprint(
     st: &mut WorkerState,

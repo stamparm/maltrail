@@ -99,7 +99,6 @@ Grant the binary just the capabilities it needs instead of running the whole sen
 
 ```bash
 sudo setcap 'cap_net_raw,cap_net_admin+eip' sensor/target/release/maltrail-sensor
-echo 'DISABLE_CHECK_SUDO true' >> maltrail.conf     # the sudo check is a Python-era guard
 ```
 
 `LOG_DIR` must then be writable by the sensor's user.
@@ -128,30 +127,25 @@ Runtime metrics are printed every `METRICS_INTERVAL` seconds (default 3600) and 
 
 No configuration change is required. Existing options behave identically; the sensor-relevant
 ones are `MONITOR_INTERFACE`, `CAPTURE_FILTER`, `LOG_DIR`, `TRAILS_FILE`, `SENSOR_NAME`,
-`PROCESS_COUNT`, `UPDATE_PERIOD`, `USE_HEURISTICS`, `DISABLED_HEURISTICS`, `SCAN_WINDOW`,
+`UPDATE_PERIOD`, `USE_HEURISTICS`, `DISABLED_HEURISTICS`, `SCAN_WINDOW`,
 `CHECK_HOST_DOMAINS`, `CHECK_MISSING_HOST`, `LOG_SERVER`, `SYSLOG_SERVER`, `LOGSTASH_SERVER`,
 `REMOTE_SEVERITY_REGEX`, `DISABLE_LOCAL_LOG_STORAGE`, `USER_WHITELIST`, `USER_IGNORELIST`,
-`IGNORE_EVENTS_REGEX`, `CAPTURE_FANOUT`, `CHECK_TLS_SNI`.
+`IGNORE_EVENTS_REGEX`, `CAPTURE_WORKERS`, `CHECK_TLS_SNI`, `CHECK_TLS_FINGERPRINTS`. Three were
+renamed and their old names are still read: `CAPTURE_FANOUT` (now `CAPTURE_WORKERS`),
+`CAPTURE_BUFFER` (now the optional seed of `CAPTURE_BUFFER_SIZE`) and `CHECK_TLS_CERTIFICATES`
+(now `CHECK_TLS_FINGERPRINTS`).
 
 ### Multi-core capture
 
 The sensor captures with **one worker by default**. Scaling out is opt-in, because extra workers
 cost scan-heuristic sensitivity (see below) to buy throughput most deployments do not need.
 
-Reuse the existing option:
-
 ```conf
-CAPTURE_FANOUT auto      # one capture socket+worker per CPU core
-# CAPTURE_FANOUT 8       # or an explicit count
+CAPTURE_WORKERS auto     # one capture socket+worker per CPU core
+# CAPTURE_WORKERS 8      # or an explicit count
 ```
 
-Or set the worker count directly:
-
-```conf
-CAPTURE_WORKERS 8
-```
-
-Both open N sockets in one kernel `PACKET_FANOUT` group. **If fanout cannot be configured the
+This opens N sockets in one kernel `PACKET_FANOUT` group. **If fanout cannot be configured the
 sensor exits** rather than falling back to N independent sockets, which would deliver every
 packet to every worker and report every detection N times.
 
@@ -188,8 +182,8 @@ All have conservative defaults; none are required.
 
 | option | default | meaning |
 | --- | --- | --- |
-| `CAPTURE_WORKERS` | `CAPTURE_FANOUT`, i.e. **1** unless one of them is set | capture sockets/threads per interface (`auto` = CPU count). Not derived from `PROCESS_COUNT`. **Raise it only if `maltrail_capture_dropped_total` says you need to** — extra workers cost scan-heuristic sensitivity, see below |
-| `CAPTURE_BUFFER_SIZE` | `64MB`, or `CAPTURE_BUFFER` capped at `256MB` | libpcap ring size per socket (accepts `kB`/`MB`/`GB`/`%`); explicit values allowed up to `1GB` |
+| `CAPTURE_WORKERS` | **1** | capture sockets/threads per interface (`auto` = CPU count). Not derived from `PROCESS_COUNT`. **Raise it only if `maltrail_capture_dropped_total` says you need to** — extra workers cost scan-heuristic sensitivity, see below |
+| `CAPTURE_BUFFER_SIZE` | 10% of RAM, within `64MB`-`256MB` (10% under 1 GB of RAM) | libpcap ring size per socket (accepts `kB`/`MB`/`GB`/`%`); explicit values allowed up to `1GB` |
 | `CAPTURE_SNAPLEN` | 2000 (`SNAP_LEN`) | bytes captured per packet |
 | `CAPTURE_TIMEOUT` | 100 | capture/poll timeout in ms; also bounds shutdown latency |
 | `CAPTURE_IMMEDIATE` | false | deliver packets as they arrive (lower latency, worse throughput) |
@@ -288,7 +282,7 @@ worker count, in both directions — fanout never loses an IOC detection and nev
 * **Default — scan/heuristic fidelity:** `CAPTURE_WORKERS` unset, so one worker. Fanout is skipped
   entirely, and per-source state is undiluted, at the cost of single-core capture.
 * **Throughput matters more** (a busy gateway where trail matching is the point): set
-  `CAPTURE_FANOUT` or `CAPTURE_WORKERS` explicitly, and accept the dilution above. Raise it because
+  `CAPTURE_WORKERS` explicitly, and accept the dilution above. Raise it because
   `maltrail_capture_dropped_total` is climbing, not pre-emptively.
 
 ## 8. Metrics endpoint
@@ -502,7 +496,7 @@ Nothing here is required to run the sensor; it is how to convince yourself befor
 3. **Scale out only if you need to.** One worker handles 1.8M packets/s on an eight-core laptop
    CPU and 3.7M on a Ryzen 9 5900X (steady-state, measured before the comparison harness was
 retired; `cargo bench --bench hotpath` is the current measurement). If
-   `maltrail_capture_dropped_total` is climbing, set `CAPTURE_FANOUT` and re-run
+   `maltrail_capture_dropped_total` is climbing, set `CAPTURE_WORKERS` and re-run
    `fanout_check.py` — and read `docs/COMPATIBILITY.md` §2, difference 3 first, because extra capture
    sockets cost scan-heuristic sensitivity.
 
@@ -510,10 +504,10 @@ retired; `cargo bench --bench hotpath` is the current measurement). If
 
 | symptom | cause / fix |
 | --- | --- |
-| `please run 'maltrail-sensor' with root privileges` | run under `sudo`, or `setcap` the binary and set `DISABLE_CHECK_SUDO true` |
+| `please run 'maltrail-sensor' with root privileges` | run under `sudo`, or `setcap` the binary |
 | `unable to open capture on 'ethX': permission problem` | same as above; also check the interface exists (`ip link`) |
 | `PACKET_FANOUT was requested (N workers). Refusing to fall back…` | the kernel refused the group. Check it is Linux ≥ 3.1, that no other process holds the same group id with a different mode (`CAPTURE_FANOUT_GROUP`), or set `CAPTURE_WORKERS 1` |
-| `missing mandatory option 'X'` | the config file is not the Maltrail one; `MONITOR_INTERFACE`, `CAPTURE_BUFFER` and `LOG_DIR` are required, exactly as for `sensor.py` |
+| `missing mandatory option 'X'` | the config file is not the Maltrail one; `MONITOR_INTERFACE` and `LOG_DIR` are required |
 | No events at all | check `CAPTURE_FILTER`, that `trails.csv` is non-empty (the startup line prints the count), and that `LOG_DIR` is writable |
 | `[i] repaired N wildcard trail pattern(s) truncated in the feed` | informational: those trails were cut off in transit and were salvaged (the intact alternatives are kept, the dangling fragment dropped). `sensor.py` drops such trails entirely, so this is a detection gain |
 | `[!] N wildcard trail pattern(s) are unusable and NOT matched` | those patterns could not be salvaged at all; CPython rejects them too, so `sensor.py` ignores them as well |

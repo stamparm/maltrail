@@ -240,7 +240,7 @@ pub fn run(cfg: &Config) -> i32 {
             r.line(
                 Level::Ok,
                 "workers",
-                "1 — undiluted per-source heuristics; raise 'CAPTURE_FANOUT' only if \
+                "1 — undiluted per-source heuristics; raise 'CAPTURE_WORKERS' only if \
                  'maltrail_capture_dropped_total' climbs",
             );
         }
