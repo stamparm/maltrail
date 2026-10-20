@@ -16,6 +16,8 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[=] potential remote code execution heur is improved (Issue #19646).
+
 [=] Faster packet path: 46% fewer instructions per packet on the reference
     network (500 hosts, 208k packets), with byte-identical events. Release
     builds use fat LTO (9-17% on every benchmark row); JA4's SHA-256s are
