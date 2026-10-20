@@ -2878,6 +2878,13 @@ Monoxide
 
 scholdauerty
 
+# Reference: https://x.com/TheM3gatr0n/status/2112416302841393220
+# Reference: https://vulone.com/blog/a-china-linked-operator-used-ai-agents-to-attack-governments-across-asia
+
+Cairn/1.0
+Cairn
+ccswitch
+
 # Misc
 
 information_schema
