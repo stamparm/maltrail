@@ -32,7 +32,7 @@ the Rust module that reproduces it.
 | `sensor.py:_init_multiprocessing()` + `core/parallel.py:worker()` (mmap ring, `PROCESS_COUNT` processes) | *dropped* — replaced by per-worker threads | No ring buffer, no packet copy, no IPC. `PROCESS_COUNT` is still read (it is part of the log-throttle bucket, `core/log.py:257`). |
 | `sensor.py:_fanout_count()` | `src/config.rs::fanout_count()` | Identical parsing (`""`/`None`/`<=1` → off, `true`/`auto`/`yes`/`on` → CPU count, integer → N). |
 | `sensor.py:_src_hash()` / `USE_CAPTURE_AFFINITY` | *dropped* | `PACKET_FANOUT_HASH` gives kernel-side flow affinity, which is what the Python hack emulates. |
-| `core/fastfilter.py` + `USE_FAST_PREFILTER` (pcapy-ng `loop_filtered`) | `src/worker.rs` (`FAST_FLOW_CUTOFF` head/SNI logic) | The sensor always parses in native code, so the C prefilter is unnecessary. The one *detection* the prefilter adds — SNI on TLS/QUIC handshakes → `_check_domain` — is ported and gated on the same config switches. |
+| `core/fastfilter.py` + `USE_FAST_PREFILTER` (pcapy-ng `loop_filtered`) | `src/process.rs` (`handshake_sni`), `src/protocols/hello.rs` | The sensor always parses in native code, so the C prefilter is unnecessary. The one *detection* the prefilter adds — SNI on TLS/QUIC handshakes → `_check_domain` — is ported, on by default as `CHECK_TLS_SNI` (`USE_FAST_PREFILTER` is still read when that is absent). |
 | `core/fastfilter.py:guess_ip_offset()` + `sensor.py:_guess_dlt_ip_offset()` | `src/packet/dlt.rs` | Same scoring heuristic and same two-packets-agree learner. |
 
 ## Configuration

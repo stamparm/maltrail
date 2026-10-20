@@ -98,8 +98,8 @@ def ipv6(src, dst, proto, payload):
             + socket.inet_pton(socket.AF_INET6, dst) + payload)
 
 
-def tcp(sport, dport, flags, payload=b"", doff=5):
-    return struct.pack("!HHIIBBHHH", sport, dport, 1, 1, (doff & 0x0f) << 4, flags, 65535, 0, 0) + payload
+def tcp(sport, dport, flags, payload=b"", doff=5, seq=1):
+    return struct.pack("!HHIIBBHHH", sport, dport, seq, 1, (doff & 0x0f) << 4, flags, 65535, 0, 0) + payload
 
 
 def udp(sport, dport, payload):
@@ -158,11 +158,15 @@ def http_response(headers, body=""):
     return ("%s\r\n\r\n%s" % (headers, body)).encode("ascii")
 
 
-def tls_client_hello(sni, with_record=True):
+def tls_client_hello(sni, with_record=True, pad=0):
+    """`pad` puts a padding extension of that many bytes BEFORE the SNI, the way Chrome's
+    shuffled order puts its 1,216-byte post-quantum key share there about half of the time."""
     s = sni.encode("ascii")
     srv = b"\x00" + struct.pack("!H", len(s)) + s
     lst = struct.pack("!H", len(srv)) + srv
     ext = b"\x00\x00" + struct.pack("!H", len(lst)) + lst
+    if pad:
+        ext = b"\x00\x15" + struct.pack("!H", pad) + b"\x00" * pad + ext
     body = (b"\x03\x03" + b"\x11" * 32 + b"\x00" + b"\x00\x02\x13\x01"
             + b"\x01\x00" + struct.pack("!H", len(ext)) + ext)
     hs = b"\x01" + struct.pack("!I", len(body))[1:] + body
@@ -173,15 +177,22 @@ def tls_client_hello(sni, with_record=True):
 
 def quic_initial(sni, dcid=b"\x11\x22\x33\x44\x55\x66\x77\x88"):
     """A real QUIC v1 Initial carrying a ClientHello, keyed off the public DCID."""
+    hs = tls_client_hello(sni, with_record=False)
+    return quic_initial_frames(crypto_frame(0, hs), dcid)
+
+
+def crypto_frame(offset, data):
+    off = bytes([offset]) if offset < 64 else struct.pack("!H", 0x4000 | offset)
+    return b"\x06" + off + struct.pack("!H", 0x4000 | len(data)) + data
+
+
+def quic_initial_frames(frames, dcid, pn=0):
     sys.path.insert(0, ROOT)
     from core import quic_sni
 
-    hs = tls_client_hello(sni, with_record=False)
-    frames = b"\x06\x00" + struct.pack("!H", 0x4000 | len(hs)) + hs
     frames += b"\x00" * max(0, 1200 - len(frames))
-
     key, iv, hp = quic_sni.derive_client_initial_keys(dcid, 1)
-    pn, pn_len = 0, 1
+    pn_len = 1
     length = len(frames) + 16 + pn_len
 
     header = bytearray([0xc0 | (pn_len - 1)])
@@ -243,6 +254,11 @@ TRAILS = (
     ("dga[0-9]+\\.wildcard-test\\.com", "malware (test)", "(static)"),
     ("tls-evil.example", "malware (test)", "(static)"),
     ("quic-evil.example", "malware (test)", "(static)"),
+    ("tls-split-evil.example", "malware (test)", "(static)"),
+    # the JA3 of tls_client_hello("...", pad=1500), whole; its first segment alone gives another
+    ("a89bab8eb05fa15a7ac7b256b0257612", "malware (test)", "abuse.ch"),
+    ("tls6-evil.example", "malware (test)", "(static)"),
+    ("quic-split-evil.example", "malware (test)", "(static)"),
     # the JA3 (and JA4) of tls_client_hello() below - cross-checked against core/tls_intel.py;
     # see case `tcp_malware_ja3`
     ("1e7c622032b0cb79401b0f7be3793a1a", "malware (test)", "abuse.ch"),
@@ -281,6 +297,10 @@ DIVERGENCE_CASES = {
     # NEW detection (no sensor.py counterpart): the JA3 of the ClientHello below. Needs
     # CHECK_TLS_CERTIFICATES, which parity.py enables for exactly this case.
     "tcp_malware_ja3": ["1e7c622032b0cb79401b0f7be3793a1a"],
+    # ClientHellos longer than one packet, and TLS over IPv6 (head_sni was IPv4-only)
+    "tls_sni_split": ["tls-split-evil.example", "a89bab8eb05fa15a7ac7b256b0257612"],
+    "tls_sni_ipv6": ["tls6-evil.example"],
+    "quic_sni_split": ["quic-split-evil.example"],
 }
 
 ATTACKER = "10.0.0.66"
@@ -565,20 +585,49 @@ def build_cases():
     cases.append(("cache_expiry", DLT_EN10MB, packets, ["evil-test-domain.com"],
                   "hour-crossing timestamps exercise the hourly resets"))
 
-    # 27. TLS SNI (only detected with USE_FAST_PREFILTER)
+    # 27. TLS SNI (CHECK_TLS_SNI, default on)
     packets = [
         (BASE_SEC, frame(ipv4(ATTACKER, "203.0.113.30", 6, tcp(50400, 443, 0x18, tls_client_hello("tls-evil.example"))))),
         (BASE_SEC + 1, frame(ipv4(ATTACKER, "203.0.113.31", 6, tcp(50401, 443, 0x18, tls_client_hello("clean.example"))))),
     ]
     cases.append(("tls_sni", DLT_EN10MB, packets, ["tls-evil.example"],
-                  "TLS ClientHello SNI (needs USE_FAST_PREFILTER; the harness enables it)"))
+                  "TLS ClientHello SNI"))
 
     # 28. QUIC Initial SNI (opt-in as above)
     packets = [
         (BASE_SEC, frame(ipv4(ATTACKER, "203.0.113.32", 17, udp(50410, 443, quic_initial("quic-evil.example"))))),
     ]
     cases.append(("quic_sni", DLT_EN10MB, packets, ["quic-evil.example"],
-                  "QUIC Initial SNI (needs USE_FAST_PREFILTER; the harness enables it)"))
+                  "QUIC Initial SNI"))
+
+    # 28b. A ClientHello longer than one segment, SNI in the second (post-quantum key shares
+    # make a browser's ~2 KB). A third flow sends only the first segment and stays silent.
+    hello = tls_client_hello("tls-split-evil.example", pad=1500)
+    assert len(hello) > 1448 and hello.index(b"tls-split-evil") > 1448
+    lost = tls_client_hello("clean.example", pad=1500)
+    packets = [
+        (BASE_SEC, frame(ipv4(ATTACKER, "203.0.113.33", 6, tcp(50420, 443, 0x10, hello[:1448], seq=1000)))),
+        (BASE_SEC, frame(ipv4(ATTACKER, "203.0.113.34", 6, tcp(50421, 443, 0x18, lost[:1448], seq=7)))),
+        (BASE_SEC, frame(ipv4(ATTACKER, "203.0.113.33", 6, tcp(50420, 443, 0x18, hello[1448:], seq=1000 + 1448)))),
+    ]
+    cases.append(("tls_sni_split", DLT_EN10MB, packets, ["tls-split-evil.example", "a89bab8eb05fa15a7ac7b256b0257612"],
+                  "TLS ClientHello split across two TCP segments, SNI in the second; JA3 of the whole"))
+    packets = [(BASE_SEC, frame(ipv6("2001:db8::66", "2001:db8::30", 6,
+                                     tcp(50430, 443, 0x18, tls_client_hello("tls6-evil.example"))), ethertype=0x86dd))]
+    cases.append(("tls_sni_ipv6", DLT_EN10MB, packets, ["tls6-evil.example"], "TLS ClientHello SNI over IPv6"))
+
+    # 28c. A QUIC ClientHello spread over two Initials, CRYPTO frames out of order the way Chrome
+    # sends them; the SNI is in the second.
+    hs = tls_client_hello("quic-split-evil.example", with_record=False, pad=1500)
+    cut = [0, 500, 1000, 1200, len(hs)]
+    part = [crypto_frame(cut[i], hs[cut[i]:cut[i + 1]]) for i in range(4)]
+    dcid = b"\x21\x22\x23\x24\x25\x26\x27\x28"
+    packets = [
+        (BASE_SEC, frame(ipv4(ATTACKER, "203.0.113.37", 17, udp(50440, 443, quic_initial_frames(part[2] + part[0], dcid, 0))))),
+        (BASE_SEC, frame(ipv4(ATTACKER, "203.0.113.37", 17, udp(50440, 443, quic_initial_frames(part[3] + part[1], dcid, 1))))),
+    ]
+    cases.append(("quic_sni_split", DLT_EN10MB, packets, ["quic-split-evil.example"],
+                  "QUIC ClientHello over two Initials, frames out of order, SNI in the second"))
 
     # 29. raw-IP and LINUX_SLL link types
     packets = [(BASE_SEC, ipv4(ATTACKER, "66.66.66.66", 6, tcp(50500, 443, 0x02)))]

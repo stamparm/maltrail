@@ -17,6 +17,8 @@ pub struct WorkerMetrics {
     pub packets_fragment: u64,
     /// Packets that carried another packet and were unwrapped (VXLAN/GENEVE/GRE/ERSPAN/IP-in-IP).
     pub packets_decapsulated: u64,
+    /// ClientHellos put back together from more than one TCP segment or QUIC Initial.
+    pub handshakes_reassembled: u64,
     pub events: u64,
     pub events_written: u64,
     /// Local event-log open/write failures: non-zero means detections were produced and LOST.
@@ -56,6 +58,7 @@ impl WorkerMetrics {
         self.packets_truncated += other.packets_truncated;
         self.packets_fragment += other.packets_fragment;
         self.packets_decapsulated += other.packets_decapsulated;
+        self.handshakes_reassembled += other.handshakes_reassembled;
         self.events += other.events;
         self.events_written += other.events_written;
         self.log_write_errors += other.log_write_errors;
@@ -96,6 +99,7 @@ pub struct MetricsSlot {
     pub packets_truncated: AtomicU64,
     pub packets_fragment: AtomicU64,
     pub packets_decapsulated: AtomicU64,
+    pub handshakes_reassembled: AtomicU64,
     pub events: AtomicU64,
     pub events_written: AtomicU64,
     pub log_write_errors: AtomicU64,
@@ -152,6 +156,7 @@ impl MetricsSlot {
         self.packets_truncated.store(m.packets_truncated, Ordering::Relaxed);
         self.packets_fragment.store(m.packets_fragment, Ordering::Relaxed);
         self.packets_decapsulated.store(m.packets_decapsulated, Ordering::Relaxed);
+        self.handshakes_reassembled.store(m.handshakes_reassembled, Ordering::Relaxed);
         self.events.store(m.events, Ordering::Relaxed);
         self.events_written.store(m.events_written, Ordering::Relaxed);
         self.log_write_errors.store(m.log_write_errors, Ordering::Relaxed);
@@ -182,6 +187,7 @@ impl MetricsSlot {
             packets_truncated: self.packets_truncated.load(Ordering::Relaxed),
             packets_fragment: self.packets_fragment.load(Ordering::Relaxed),
             packets_decapsulated: self.packets_decapsulated.load(Ordering::Relaxed),
+            handshakes_reassembled: self.handshakes_reassembled.load(Ordering::Relaxed),
             events: self.events.load(Ordering::Relaxed),
             events_written: self.events_written.load(Ordering::Relaxed),
             log_write_errors: self.log_write_errors.load(Ordering::Relaxed),

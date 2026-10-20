@@ -230,8 +230,8 @@ pub struct Config {
 
     // --- fast-path / fanout options shared with the Python sensor ---
     pub capture_fanout: u32,
-    pub use_fast_prefilter: bool,
-    pub fast_flow_cutoff: u32,
+    /// CHECK_TLS_SNI: match the SNI of TLS ClientHellos and QUIC Initials as a domain.
+    pub check_tls_sni: bool,
 
     // --- Rust-sensor capture tuning (new; see docs/COMPATIBILITY.md) ---
     pub capture_workers: u32,
@@ -807,6 +807,13 @@ impl Config {
             );
         }
 
+        if raw.contains_key("USE_FAST_PREFILTER") && !raw.contains_key("CHECK_TLS_SNI") {
+            crate::cprintln!("[i] configuration option 'USE_FAST_PREFILTER' is now called 'CHECK_TLS_SNI'");
+        }
+        if raw.contains_key("FAST_FLOW_CUTOFF") {
+            crate::cprintln!("[i] configuration option 'FAST_FLOW_CUTOFF' does nothing in this sensor and is ignored");
+        }
+
         let capture_buffer_raw = get_str(&raw, "CAPTURE_BUFFER");
         let capture_buffer = if capture_buffer_raw.is_empty() {
             0
@@ -1094,8 +1101,12 @@ impl Config {
                 .max(64) as usize,
 
             capture_fanout,
-            use_fast_prefilter: get_bool(&raw, "USE_FAST_PREFILTER"),
-            fast_flow_cutoff: get_u64(&raw, "FAST_FLOW_CUTOFF").unwrap_or(4) as u32,
+            // Default on. USE_FAST_PREFILTER is its old name, from the retired Python sensor's C
+            // prefilter, which SNI extraction came bundled with; it still decides when the new
+            // name is absent, so an existing configuration behaves as it did.
+            check_tls_sni: get_bool_opt(&raw, "CHECK_TLS_SNI")
+                .or_else(|| get_bool_opt(&raw, "USE_FAST_PREFILTER"))
+                .unwrap_or(true),
 
             capture_workers,
             capture_buffer_size,
@@ -1440,6 +1451,23 @@ SENSOR_NAME box   # trailing comment
         assert_eq!(write("cw.conf", "CAPTURE_WORKERS 4\n").capture_workers, 4);
         assert_eq!(write("cf.conf", "CAPTURE_FANOUT 8\n").capture_workers, 8);
         assert!(write("auto.conf", "CAPTURE_WORKERS auto\n").capture_workers >= 1);
+    }
+
+    #[test]
+    fn sni_check_is_on_by_default_and_reads_its_old_name() {
+        let dir = std::env::temp_dir().join("mt-cfg-sni");
+        let _ = std::fs::create_dir_all(&dir);
+        let base = "MONITOR_INTERFACE any\nCAPTURE_BUFFER 1MB\nLOG_DIR /tmp\nUPDATE_PERIOD 86400\n";
+        let write = |name: &str, extra: &str| {
+            let path = dir.join(name);
+            std::fs::write(&path, format!("{base}{extra}")).unwrap();
+            Config::load(&path).expect("config must load").check_tls_sni
+        };
+        assert!(write("default.conf", ""));
+        assert!(!write("off.conf", "CHECK_TLS_SNI false\n"));
+        assert!(!write("old-off.conf", "USE_FAST_PREFILTER false\n"));
+        assert!(write("old-on.conf", "USE_FAST_PREFILTER true\nFAST_FLOW_CUTOFF 0\n"), "FAST_FLOW_CUTOFF is ignored");
+        assert!(write("new-wins.conf", "USE_FAST_PREFILTER false\nCHECK_TLS_SNI true\n"));
     }
 
     #[test]

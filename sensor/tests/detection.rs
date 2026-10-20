@@ -887,12 +887,7 @@ fn log_throttling_collapses_repeats_within_a_bucket() {
 fn tls_sni_is_checked_when_enabled() {
     let mut h = Harness::with_options(
         &[("tls-evil.example", MALWARE.0, "(static)")],
-        HarnessOptions {
-            use_heuristics: true,
-            check_host_domains: true,
-            check_missing_host: false,
-            extra: vec!["USE_FAST_PREFILTER true".to_string(), "FAST_FLOW_CUTOFF 4".to_string()],
-        },
+        HarnessOptions { use_heuristics: true, check_host_domains: true, check_missing_host: false, extra: vec![] },
     );
     let hello = maltrail_sensor::protocols::tls::build_client_hello("tls-evil.example", true);
     h.feed_ip(&ipv4(6, "10.0.0.5", "203.0.113.30", &tcp(50400, 443, 0x18, &hello)), 1);
@@ -901,10 +896,15 @@ fn tls_sni_is_checked_when_enabled() {
 
 #[test]
 fn tls_sni_is_ignored_when_disabled() {
-    let mut h = Harness::with_options(&[("tls-evil.example", MALWARE.0, "(static)")], HarnessOptions::heuristics());
-    let hello = maltrail_sensor::protocols::tls::build_client_hello("tls-evil.example", true);
-    h.feed_ip(&ipv4(6, "10.0.0.5", "203.0.113.30", &tcp(50400, 443, 0x18, &hello)), 1);
-    assert!(h.events().is_empty(), "SNI extraction is opt-in: {:?}", h.events());
+    for off in ["CHECK_TLS_SNI false", "USE_FAST_PREFILTER false"] {
+        let mut h = Harness::with_options(
+            &[("tls-evil.example", MALWARE.0, "(static)")],
+            HarnessOptions { extra: vec![off.to_string()], ..HarnessOptions::heuristics() },
+        );
+        let hello = maltrail_sensor::protocols::tls::build_client_hello("tls-evil.example", true);
+        h.feed_ip(&ipv4(6, "10.0.0.5", "203.0.113.30", &tcp(50400, 443, 0x18, &hello)), 1);
+        assert!(h.events().is_empty(), "{off}: {:?}", h.events());
+    }
 }
 
 // --- TLS client fingerprints (JA3 / JA4) ----------------------------------------

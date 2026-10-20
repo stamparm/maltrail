@@ -209,12 +209,7 @@ fn the_whole_packet_path_survives_mutated_packets() {
             ("/a/b.php", "malware (test)", "(static)"),
             ("dga[0-9]+\\.example\\.com", "malware (test)", "(static)"),
         ],
-        HarnessOptions {
-            use_heuristics: true,
-            check_host_domains: true,
-            check_missing_host: true,
-            extra: vec!["USE_FAST_PREFILTER true".to_string(), "FAST_FLOW_CUTOFF 4".to_string()],
-        },
+        HarnessOptions { use_heuristics: true, check_host_domains: true, check_missing_host: true, extra: vec![] },
     );
 
     let seeds = valid_seeds();

@@ -102,6 +102,41 @@ fn is_grease(v: u16) -> bool {
     hb == lb && (lb & 0x0f) == 0x0a
 }
 
+/// The SNI alone (lower-cased, as `core/tls_intel.py:_parse_sni()` returns it), read the way
+/// `parse_client_hello` reads it but without building the fingerprints - for the first segment of a ClientHello whose rest is still in flight, which is
+/// parsed in full once it has arrived.
+pub fn client_hello_sni(data: &[u8]) -> Option<String> {
+    let mut r = Reader::new(data);
+    if r.b.first() == Some(&0x16) {
+        r.take(5)?;
+    }
+    if r.u8()? != 0x01 {
+        return None;
+    }
+    r.u24()?;
+    r.take(2 + 32)?;
+    let sid_len = r.u8()? as usize;
+    r.take(sid_len)?;
+    let cs_len = r.u16()? as usize;
+    r.take(cs_len)?;
+    let comp_len = r.u8()? as usize;
+    r.take(comp_len)?;
+    let ext_total = r.u16()? as usize;
+    let eend = (r.p + ext_total).min(r.b.len());
+    while r.p + 4 <= eend {
+        let etype = r.u16()?;
+        let elen = r.u16()? as usize;
+        if r.p + elen > r.b.len() {
+            return None;
+        }
+        let body = r.take(elen)?;
+        if etype == 0x0000 {
+            return parse_sni_extension(body, true).ok().flatten();
+        }
+    }
+    None
+}
+
 /// Parse a TLS record (`0x16 ...`) or bare handshake message into SNI + JA3 + JA4,
 /// byte-for-byte compatible with `core/tls_intel.py:_parse_client_hello()`: same tolerances
 /// for truncation (the extension region is parsed as far as the buffer reaches, the fixed
@@ -190,17 +225,34 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
     // String and then copied again by format!, and the ecpf field additionally widened its bytes
     // into a temporary Vec<u16> just to be formatted. Appending straight into one buffer produces
     // the identical string with a single allocation.
-    use core::fmt::Write as _;
+    // Digits are written directly: `write!` through core::fmt was the largest single cost of
+    // the whole parse on a browser's 19-extension ClientHello.
+    fn push_dec(out: &mut String, v: u16) {
+        let mut buf = [0u8; 5];
+        let mut i = buf.len();
+        let mut v = v;
+        loop {
+            i -= 1;
+            buf[i] = b'0' + (v % 10) as u8;
+            v /= 10;
+            if v == 0 {
+                break;
+            }
+        }
+        for &d in &buf[i..] {
+            out.push(d as char);
+        }
+    }
     fn append_dec(out: &mut String, list: &[u16]) {
         for (i, v) in list.iter().enumerate() {
             if i > 0 {
                 out.push('-');
             }
-            let _ = write!(out, "{v}");
+            push_dec(out, *v);
         }
     }
     let mut ja3_str = String::with_capacity(16 + (ciphers.len() + ext_types.len() + curves.len() + ecpf.len()) * 6);
-    let _ = write!(ja3_str, "{legacy_version}");
+    push_dec(&mut ja3_str, legacy_version);
     ja3_str.push(',');
     append_dec(&mut ja3_str, &ciphers);
     ja3_str.push(',');
@@ -212,7 +264,7 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
         if i > 0 {
             ja3_str.push('-');
         }
-        let _ = write!(ja3_str, "{b}");
+        push_dec(&mut ja3_str, *b as u16);
     }
     use md5::Digest as Md5Digest;
     let ja3 = hex_lowercase(&md5::Md5::digest(ja3_str.as_bytes()));
@@ -248,7 +300,10 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
             if i > 0 {
                 out.push(',');
             }
-            let _ = write!(out, "{v:04x}");
+            const HEX: &[u8; 16] = b"0123456789abcdef";
+            for shift in [12, 8, 4, 0] {
+                out.push(HEX[(v >> shift) as usize & 0xf] as char);
+            }
         }
         out
     };
@@ -263,12 +318,6 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
     let ja4 = format!("{}_{}_{}", ja4_a, sha256_12(ja4_b_str.as_bytes()), sha256_12(ja4_c_str.as_bytes()));
 
     Some(ClientHello { sni, ja3, ja4 })
-}
-
-/// Extract the SNI from a TLS record (`0x16 ...`) or a bare handshake message.
-/// Returns the lower-cased host name, matching `core/tls_intel.py:_parse_sni()`.
-pub fn client_hello_sni(data: &[u8]) -> Option<String> {
-    parse_client_hello(data).and_then(|ch| ch.sni)
 }
 
 /// Lower-case hex, written a nibble at a time.
@@ -430,6 +479,18 @@ pub fn build_client_hello(sni: &str, with_record: bool) -> Vec<u8> {
 mod tests {
     use super::build_client_hello as client_hello;
     use super::*;
+
+    #[test]
+    fn sni_alone_agrees_with_the_full_parse() {
+        for sni in ["evil.example", "a.b.c.example.com"] {
+            let hello = client_hello(sni, true);
+            assert_eq!(client_hello_sni(&hello), parse_client_hello(&hello).unwrap().sni);
+            for n in 0..hello.len() {
+                let _ = client_hello_sni(&hello[..n]);
+            }
+        }
+        assert_eq!(client_hello_sni(&client_hello("evil.example", false)).as_deref(), Some("evil.example"));
+    }
     use vectors::FromHex;
 
     #[test]

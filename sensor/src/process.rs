@@ -13,7 +13,7 @@ use crate::heuristics::dns_exhaustion::Outcome;
 use crate::heuristics::nxdomain::{consonant_count, label_entropy, NxAlert};
 use crate::heuristics::scan::{InfectionDetail, PathDetail, PortDetail};
 use crate::packet::{self, tunnel, Drop};
-use crate::protocols::{dns, http};
+use crate::protocols::{dns, hello, http};
 use crate::settings;
 use crate::state::{FlowStamp, WorkerState};
 
@@ -371,7 +371,7 @@ fn process_layer(
     // prefilter adds (core/fastfilter.py:head_sni). Gated on the same switches.
     // Two independent features share the TLS handshake record, so either one is reason enough
     // to look at it: SNI extraction (the prefilter's contribution) and certificate matching.
-    if (st.cfg.use_fast_prefilter && st.cfg.fast_flow_cutoff > 0) || st.cfg.check_tls_certificates {
+    if st.cfg.check_tls_sni || st.cfg.check_tls_certificates {
         handshake_sni(st, ip_data, &header, sec, usec);
     }
 
@@ -400,33 +400,67 @@ fn process_layer(
 /// Initial (UDP) and run it through the normal domain check, so malicious domains are
 /// surfaced on encrypted traffic.
 ///
-/// NOTE: restricted to IPv4 because `head_sni`'s `_ip_at()` only recognises IPv4 headers.
-/// Extending it to IPv6 would detect strictly more, but would also diverge from the Python
-/// sensor, so it is left as-is (see docs/COMPATIBILITY.md).
+/// A ClientHello longer than one segment or one Initial is reassembled (`protocols/hello.rs`).
+/// IPv6 is handled like IPv4; `head_sni`'s `_ip_at()` only recognized IPv4 (docs/COMPATIBILITY.md).
 fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader, sec: u64, usec: u32) {
-    if header.version != 4 {
-        return;
-    }
+    let sni_on = st.cfg.check_tls_sni;
     match header.protocol {
         6 => {
             let Some(tcph) = packet::parse_tcp(ip_data, header.header_len) else { return };
-            let payload = tcph.payload(ip_data, header.header_len);
+            // Everything but a handshake record leaves here, as before, unless a ClientHello is
+            // waiting for its next segment.
+            let first = tcph.payload(ip_data, header.header_len).first().copied();
+            if first.is_none() || (first != Some(0x16) && st.hello.idle(sec)) {
+                return;
+            }
+            let (payload, whole) = tcp_wire_payload(ip_data, header, &tcph);
+            if payload.is_empty() {
+                return;
+            }
+            let seq = packet::tcp_seq(ip_data, header.header_len);
+            let ep = Endpoints { src: header.src, src_port: tcph.src_port, dst: header.dst, dst_port: tcph.dst_port };
+            let key = || hello::flow_key(ep.src, ep.src_port, ep.dst, ep.dst_port, &[]);
+            // A flow is hashed only while some ClientHello is waiting for its next segment.
+            let pending = if st.hello.idle(sec) {
+                None
+            } else {
+                let k = key();
+                st.hello.base(k, sec).map(|base| (k, base))
+            };
+            if let Some((key, base)) = pending {
+                if payload.first() != Some(&0x16) || payload.get(5) != Some(&0x01) {
+                    let off = seq.wrapping_sub(base) as usize;
+                    if let Some(done) = st.hello.put(key, sec, off, payload) {
+                        st.metrics.handshakes_reassembled += 1;
+                        let reported = done.reported;
+                        if let Some(ch) = crate::protocols::tls::parse_client_hello(done.bytes) {
+                            client_hello(st, &ch, !reported, sec, usec, ep);
+                        }
+                    }
+                    return;
+                }
+            }
             if payload.first() != Some(&0x16) {
                 return;
             }
-            let ep = Endpoints { src: header.src, src_port: tcph.src_port, dst: header.dst, dst_port: tcph.dst_port };
+            // A ClientHello whose rest is in the next segment: check the SNI now if it is
+            // already here, and parse the whole thing once it has arrived.
+            let need = payload.get(3..5).map(|l| 5 + u16::from_be_bytes([l[0], l[1]]) as usize).unwrap_or(0);
+            if whole && payload.get(5) == Some(&0x01) && payload.len() < need {
+                let sni = if sni_on { crate::protocols::tls::client_hello_sni(payload) } else { None };
+                if let Some(ref sni) = sni {
+                    check_domain(st, sni, sec, usec, ep, PROTO::TCP);
+                }
+                let key = key();
+                st.hello.start(key, seq, need, sec, sni.is_some());
+                let _ = st.hello.put(key, sec, 0, payload);
+                return;
+            }
             // The same record type carries both directions: a ClientHello gives a domain and
             // client fingerprints, the server's flight gives a certificate. A packet is one or
             // the other, so the ClientHello parse discriminates them.
             if let Some(ch) = crate::protocols::tls::parse_client_hello(payload) {
-                if st.cfg.use_fast_prefilter && st.cfg.fast_flow_cutoff > 0 {
-                    if let Some(ref sni) = ch.sni {
-                        check_domain(st, sni, sec, usec, ep, PROTO::TCP);
-                    }
-                }
-                if st.cfg.check_tls_certificates {
-                    check_client_fingerprint(st, &ch, sec, usec, ep);
-                }
+                client_hello(st, &ch, true, sec, usec, ep);
                 return;
             }
             if st.cfg.check_tls_certificates {
@@ -434,17 +468,85 @@ fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader
             }
         }
         // QUIC carries no cleartext certificate, so this arm stays the prefilter's alone.
-        17 if st.cfg.use_fast_prefilter && st.cfg.fast_flow_cutoff > 0 => {
+        17 if sni_on => {
             let Some(udph) = packet::parse_udp(ip_data, header.header_len) else { return };
             let payload = packet::udp_payload(ip_data, header.header_len);
             if payload.first().map(|b| b & 0x80 == 0).unwrap_or(true) {
                 return;
             }
-            let Some(sni) = crate::protocols::quic::extract_sni_from_quic_initial(payload) else { return };
             let ep = Endpoints { src: header.src, src_port: udph.src_port, dst: header.dst, dst_port: udph.dst_port };
-            check_domain(st, &sni, sec, usec, ep, PROTO::UDP);
+            let Some(opened) = crate::protocols::quic::open_initial(payload) else { return };
+            let (sni, chunks) = opened.scan();
+            if let Some(sni) = sni {
+                check_domain(st, &sni, sec, usec, ep, PROTO::UDP);
+                return;
+            }
+            let Some(chunks) = chunks else { return };
+            let key = hello::flow_key(ep.src, ep.src_port, ep.dst, ep.dst_port, opened.dcid);
+            if !st.hello.pending(key, sec) {
+                // Only a ClientHello that starts here and does not end here is worth a slot.
+                let Some(head) = chunks.get(&0) else { return };
+                if head.len() < 4 || head[0] != 0x01 {
+                    return;
+                }
+                let need = 4 + u32::from_be_bytes([0, head[1], head[2], head[3]]) as usize;
+                if crate::protocols::quic::contiguous(&chunks).len() >= need {
+                    return;
+                }
+                st.hello.start(key, 0, need, sec, false);
+            }
+            for (&off, chunk) in &chunks {
+                if let Some(done) = st.hello.put(key, sec, off.min(usize::MAX as u64) as usize, chunk) {
+                    st.metrics.handshakes_reassembled += 1;
+                    if let Some(sni) = crate::protocols::quic::client_hello_sni(done.bytes) {
+                        check_domain(st, &sni, sec, usec, ep, PROTO::UDP);
+                    }
+                    return;
+                }
+            }
+            // Not complete yet, but the SNI may already be in what has arrived.
+            if let Some(sni) = st.hello.prefix(key, sec).and_then(crate::protocols::quic::client_hello_sni) {
+                st.hello.forget(key, sec);
+                check_domain(st, &sni, sec, usec, ep, PROTO::UDP);
+            }
         }
         _ => {}
+    }
+}
+
+/// The TCP payload as sent, without link-layer padding, and whether all of it was captured (a
+/// snaplen-cut segment cannot be continued by the next one).
+fn tcp_wire_payload<'a>(ip_data: &'a [u8], header: &packet::IpHeader, tcph: &packet::TcpHeader) -> (&'a [u8], bool) {
+    let payload = tcph.payload(ip_data, header.header_len);
+    let total = match header.version {
+        4 => ip_data.get(2..4).map(|b| u16::from_be_bytes([b[0], b[1]]) as usize),
+        _ => ip_data.get(4..6).map(|b| 40 + u16::from_be_bytes([b[0], b[1]]) as usize),
+    };
+    let Some(total) = total else { return (payload, false) };
+    let wire = total.saturating_sub(header.header_len + ((tcph.data_offset as usize) << 2));
+    if payload.len() >= wire {
+        (&payload[..wire], true)
+    } else {
+        (payload, false)
+    }
+}
+
+/// A parsed ClientHello: the SNI against the domain trails, the fingerprints against JA3/JA4.
+fn client_hello(
+    st: &mut WorkerState,
+    ch: &crate::protocols::tls::ClientHello,
+    check_sni: bool,
+    sec: u64,
+    usec: u32,
+    ep: Endpoints,
+) {
+    if check_sni && st.cfg.check_tls_sni {
+        if let Some(ref sni) = ch.sni {
+            check_domain(st, sni, sec, usec, ep, PROTO::TCP);
+        }
+    }
+    if st.cfg.check_tls_certificates {
+        check_client_fingerprint(st, ch, sec, usec, ep);
     }
 }
 

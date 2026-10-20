@@ -16,6 +16,29 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] TLS and QUIC ClientHellos longer than one packet are put back together.
+    Post-quantum key shares made a browser's ~2 KB, and Chrome's shuffled
+    extension order puts the SNI in the second TCP segment about half of the
+    time (122 of 240 real Chromium handshakes); every Chrome QUIC ClientHello
+    spans two Initials. On those captures the sensor read 118 of 240 SNIs
+    and no QUIC one; now all of them, and JA3/JA4 come from the whole
+    ClientHello. Fixed memory, 64 x 4 KB per worker; no measurable cost on
+    other traffic.
+
+[!] IPv6 TCP was mostly invisible with the shipped CAPTURE_FILTER: libpcap's
+    tcp[] reads IPv4 only, so no IPv6 SYN (outside the HTTP/proxy ports) and
+    no IPv6 TLS handshake was captured, and SNI was read from IPv4 only. The
+    filter now spells IPv6 TCP with ip6[] offsets and also passes the second
+    segment of a ClientHello. An existing maltrail.conf keeps its filter
+    until it is updated.
+
+[=] SNI matching is on by default and called CHECK_TLS_SNI. Its old name,
+    USE_FAST_PREFILTER, came from the Python sensor's C prefilter and is
+    still read when the new one is absent; FAST_FLOW_CUTOFF did nothing but
+    switch SNI off at 0 and is ignored. With DNS over HTTPS the SNI is where
+    the domain is still visible, and the handshake was already parsed for
+    JA3/JA4, so it costs one lookup per connection.
+
 [!] /fail2ban no longer publishes the source of 'potential iot-malware
     download': since #19622 that event fires only when one of OUR hosts fetches
     the dropper, so the shipped FAIL2BAN_REGEX handed fail2ban the infected

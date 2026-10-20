@@ -919,7 +919,7 @@ fn print_diagnostics(
         cfg.check_host_domains,
         cfg.check_missing_host,
         if statics.suspicious_ua.is_some() { "loaded" } else { "unavailable" },
-        if cfg.use_fast_prefilter && cfg.fast_flow_cutoff > 0 { "on (TLS/QUIC SNI)" } else { "off" }
+        if cfg.check_tls_sni { "on (TLS/QUIC SNI)" } else { "off" }
     );
     match cfg.event_throttle_mode {
         maltrail_sensor::throttle::ThrottleMode::Summarize => cprintln!(

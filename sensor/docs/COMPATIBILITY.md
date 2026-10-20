@@ -5,10 +5,10 @@ covered by an automated test — either a Rust test, a shared vector generated f
 code (`tools/gen_vectors.py`), or the differential replay harness (`docs/COMPATIBILITY.md`).
 
 Last recorded parity result, on the then-36-case corpus: **36/36 cases, 0 event differences**
-(`docs/COMPATIBILITY.md`). See `docs/REPORT.md` for that run. The corpus is now 42 cases; five of them
+(`docs/COMPATIBILITY.md`). See `docs/REPORT.md` for that run. The corpus is now 53 cases; eight of them
 (`udp_malware_dst`, `dns_same_socket_burst`, `trail_under_whitelist_parent`,
-`tcp_periodic_beacon`, `tcp_malware_ja3`) pin the deliberate divergences in §2, differences
-20-24, and are checked in **both** directions — the expected Rust-only event must be present,
+`tcp_periodic_beacon`, `tcp_malware_ja3`, `tls_sni_split`, `tls_sni_ipv6`, `quic_sni_split`) pin
+deliberate divergences in §2 (differences 20-24 and 30), and are checked in **both** directions — the expected Rust-only event must be present,
 and its absence fails the case. `tests/replay.rs` asserts every corpus expectation on each run.
 
 ---
@@ -112,7 +112,7 @@ Every detection `sensor.py` can produce is ported, with the same trail text:
 | Excessive NXDOMAIN | hour-bucketed counters with the hourly prune, wildcard and exact keys, `LOCAL_SUBDOMAIN_LOOKUPS` guard |
 | DGA labels | entropy and consonant thresholds |
 | Long domain | with `WHITELIST_LONG_DOMAIN_NAME_KEYWORDS` |
-| TLS / QUIC SNI | gated on `USE_FAST_PREFILTER` + `FAST_FLOW_CUTOFF`, same as Python |
+| TLS / QUIC SNI | `CHECK_TLS_SNI`, default on; Python's `USE_FAST_PREFILTER` is still read when it is absent, and `FAST_FLOW_CUTOFF` is ignored |
 
 * `DISABLED_HEURISTICS`, `SCAN_WINDOW`, `CHECK_HOST_DOMAINS`, `CHECK_MISSING_HOST`,
   `USE_HEURISTICS` all behave identically.
@@ -196,6 +196,7 @@ Every detection `sensor.py` can produce is ported, with the same trail text:
 | 27 | **Tunnelled traffic is decapsulated: VXLAN, GENEVE, GRE, ERSPAN and IP-in-IP.** `sensor.py` matches the outer header and stops, so an overlay's contents are invisible to it. | A SPAN feed at a datacentre or corporate border is usually an overlay - the addresses on the mirror port are tunnel endpoints, which is the operator's own infrastructure, and every host worth watching is inside. Matching only the outer header means no inner IP, no port, no DNS name, no HTTP host and no TLS SNI for any of them. Verified before the fix: a DNS query for a listed domain inside VXLAN, GENEVE, GRE and ERSPAN produced zero events. | ADDITIVE - the outer header is still matched exactly as before, so a listed tunnel endpoint still fires, and the inner packet is then processed in its own right. Both VXLAN ports (4789 and Linux's 8472), GENEVE with options, all eight GRE flag combinations, ERSPAN II and III, and inner frames carrying VLAN tags. Nesting is capped at `MAX_TUNNEL_DEPTH` (3) and the walk is iterative rather than recursive, so the per-packet entry point stays inlinable. A claimed inner header that does not begin with an IP version nibble is refused, which is what stops a scan of UDP/4789 having 16 arbitrary bytes read as addresses and reported as a detection. `maltrail_packets_decapsulated_total` counts what was unwrapped: zero on an overlay feed means the sensor is only seeing tunnel endpoints. Fuzzed with tunnelled seeds (`fuzz_parsers.rs`), since the GRE flag words and GENEVE `opt_len` are attacker-controlled lengths that become an offset the packet path then parses at. |
 | 28 | **New `icmp_tunneling` heuristic with no `sensor.py` counterpart.** `sensor.py` looks at an ICMP echo request's addresses only, never its payload. | Ping tools send a fixed payload (Windows `a`..`w`, iputils/BSD/macOS a timestamp then counting bytes, monitoring tools zeros or one constant string); icmpsh and ptunnel send data, so their payloads differ every time. | Per (src, dst), the distinct payloads matching no known pattern are counted, judged past the first 16 bytes so a leading timestamp does not make every request distinct; more than 10 in one `SCAN_WINDOW` reports once, with the destination as the trail. Real iputils ping (default, `-s`, `-p`), mtr and busybox ping raised nothing. Mute with `DISABLED_HEURISTICS icmp_tunneling`. |
 | 29 | **New `idn_homograph` heuristic with no `sensor.py` counterpart.** `sensor.py` matches `xn--` names as opaque ASCII, so `xn--pple-43d.com` ("аpple.com", Cyrillic `а`) is just an unknown domain to it. | A lookalike registration is built to be read as a known brand, and the brands it imitates are the popular domains `data/whitelist.txt` already lists. | Each `xn--` label is Punycode-decoded and its Cyrillic, Greek and Armenian lookalike letters are read as Latin; a name that becomes a whitelisted domain it is not is reported. Accented Latin is not mapped, so ordinary IDNs (`münchen.de`) never match; all 3,291 IDNs in the Cisco and Alexa top 1M raised nothing. Mute with `DISABLED_HEURISTICS idn_homograph`. |
+| 30 | **A ClientHello longer than one packet is reassembled, and TLS SNI is read over IPv6.** `core/fastfilter.py:head_sni()` parses the first TCP segment or QUIC Initial on its own, and its `_ip_at()` recognizes IPv4 only. | The post-quantum key share (X25519MLKEM768) made a browser ClientHello ~2 KB, and Chrome shuffles its extension order: in 240 real Chromium handshakes the SNI was past the first 1,448-byte segment 122 times, and every QUIC ClientHello spanned two Initials. Verified before the fix, on those captures split as on Ethernet: 118 of 240 IPv4 SNIs, 0 of 240 IPv6, 0 of 8 QUIC connections; after: all of them. JA3/JA4 are now computed over the whole ClientHello instead of the first segment's truncated extension list. | Memory is fixed: 64 slots of 4 KB per worker, allocated on first use, 2-way by a seeded flow hash, the older entry evicted first, stale after 3 s. A packet of a flow with nothing pending is not hashed. `maltrail_handshakes_reassembled_total` counts the reassemblies. The shipped `CAPTURE_FILTER` passes the continuation segment (client data under 1,400 bytes to 443 that does not start a TLS record) and spells IPv6 TCP with `ip6[]` offsets, since libpcap's `tcp[]` reads IPv4 only and IPv6 SYNs and handshakes never reached the sensor; `tests/capture_filter.rs` runs the shipped filter against both families. Pinned by corpus cases `tls_sni_split`, `tls_sni_ipv6` and `quic_sni_split`. |
 
 ---
 
@@ -203,7 +204,7 @@ Every detection `sensor.py` can produce is ported, with the same trail text:
 
 | Feature | Status | Guidance |
 | --- | --- | --- |
-| **`USE_FAST_PREFILTER` admission control** (`FAST_ADMIT_LEVEL`, `FAST_ADMIT_ADAPTIVE`) | Not implemented; the switch only enables SNI extraction. | The prefilter exists to keep packets out of Python. Native parsing makes load-shedding unnecessary; if a link still saturates, add capture workers. |
+| **`USE_FAST_PREFILTER` admission control** (`FAST_ADMIT_LEVEL`, `FAST_ADMIT_ADAPTIVE`) | Not implemented; the switch is read only as the old name of `CHECK_TLS_SNI`. | The prefilter exists to keep packets out of Python. Native parsing makes load-shedding unnecessary; if a link still saturates, add capture workers. |
 | **`core/trailsbin.py` mmap trail store** | Not needed. | One shared `Arc<TrailDb>` serves every worker thread; there are no worker processes to share a file mapping with. |
 | **Windows / WinPcap** | Not supported. | The sensor is Linux-first (fanout is Linux-only); the code is otherwise POSIX and would need a build/test pass for other platforms. |
 | **`-r -` (pcap on stdin)** | Not supported. | Use a named file or a FIFO path. |

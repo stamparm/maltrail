@@ -82,6 +82,8 @@ pub struct WorkerState {
     pub nxdomain: NxCounters,
     /// NEW, no sensor.py counterpart: periodic-beacon detection (heuristics/beacon.rs).
     pub beacon: crate::heuristics::beacon::BeaconTracker,
+    /// ClientHellos split across TCP segments or QUIC Initials (protocols/hello.rs).
+    pub hello: crate::protocols::hello::Assembler,
 
     /// `LOG_DIR/meta.sqlite` — the condensed observable store (`core/meta.py`). Per worker and
     /// unsynchronised, like the Python sensor's per-process aggregate; drained on the worker's
@@ -133,6 +135,7 @@ impl WorkerState {
             dns_tunneling: DnsTunneling::default(),
             nxdomain: NxCounters::default(),
             beacon: Default::default(),
+            hello: Default::default(),
             meta,
         }
     }

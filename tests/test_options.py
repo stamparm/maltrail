@@ -30,7 +30,7 @@ DYNAMIC = {"FAIL2BAN_ALLOWLIST", "BLACKLIST_ALLOWLIST", "HOME_LAT", "HOME_LON", 
 # documented and no longer read by anything: they configured the retired Python sensor's
 # multiprocessing pool and its in-C admission prefilter, neither of which the Rust sensor has.
 DEPRECATED = {"USE_MULTIPROCESSING", "DISABLE_CPU_AFFINITY", "FAST_ADMIT_ADAPTIVE",
-              "FAST_ADMIT_LEVEL", "USE_CAPTURE_AFFINITY"}
+              "FAST_ADMIT_LEVEL", "USE_CAPTURE_AFFINITY", "USE_FAST_PREFILTER", "FAST_FLOW_CUTOFF"}
 
 OPTION = r"[A-Z][A-Z0-9_]{2,}"
 
@@ -82,7 +82,7 @@ class TestOptionCoverage(unittest.TestCase):
     def test_documented_defaults_match_the_sensor(self):
         """A commented "#OPTION value" line in maltrail.conf states that option's DEFAULT.
 
-        That is the file's convention throughout (#USE_FAST_PREFILTER true, #USE_CONDENSED_STORAGE
+        That is the file's convention throughout (#CHECK_TLS_SNI true, #USE_CONDENSED_STORAGE
         true, ...), and an operator reads it to learn what the sensor does when they change
         nothing. CHECK_TLS_CERTIFICATES was documented as `false` while the code defaulted to
         `true`, so the file said certificate matching was off when every deployment had it on -

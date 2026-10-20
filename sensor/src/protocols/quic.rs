@@ -165,9 +165,43 @@ fn read_varint(buf: &[u8], off: usize) -> Option<(u64, usize)> {
     Some((val, off + length))
 }
 
-/// `core/quic_sni.py:extract_sni_from_quic_initial()`. Never panics; any malformed or
-/// hostile input yields `None`.
-pub fn extract_sni_from_quic_initial(udp_payload: &[u8]) -> Option<String> {
+/// A client Initial with its header protection removed, ready to decrypt.
+pub struct Opened<'a> {
+    pub dcid: &'a [u8],
+    keys: InitialKeys,
+    counter0: [u8; 16],
+    ciphertext: &'a [u8],
+}
+
+impl Opened<'_> {
+    fn decrypt(&self, cap: usize) -> Vec<u8> {
+        aes_ctr_decrypt(&self.keys.key, &self.counter0, &self.ciphertext[..cap.min(self.ciphertext.len())])
+    }
+
+    /// The SNI if the ClientHello's start carries it; otherwise the CRYPTO frames, for a
+    /// ClientHello that continues in the next Initial (see `hello.rs`). Decrypts the first 512
+    /// bytes first, as Python does, and the rest only when those are not enough.
+    pub fn scan(&self) -> (Option<String>, Option<CryptoChunks>) {
+        let full = self.ciphertext.len().min(MAX_INITIAL_DECRYPT);
+        let mut last = None;
+        for cap in [512usize, full] {
+            let cap = cap.min(full);
+            let plaintext = self.decrypt(cap);
+            if let Some(chunks) = crypto_chunks(&plaintext) {
+                if let Some(sni) = client_hello_sni(&contiguous(&chunks)) {
+                    return (Some(sni), None);
+                }
+                last = Some(chunks);
+            }
+            if cap >= full {
+                break;
+            }
+        }
+        (None, last)
+    }
+}
+
+pub fn open_initial(udp_payload: &[u8]) -> Option<Opened<'_>> {
     let p = udp_payload;
     if p.len() < 7 {
         return None;
@@ -241,26 +275,38 @@ pub fn extract_sni_from_quic_initial(udp_payload: &[u8]) -> Option<String> {
     let mut counter0 = [0u8; 16];
     counter0[..12].copy_from_slice(&nonce);
     counter0[12..].copy_from_slice(&2u32.to_be_bytes());
-
-    let full = ciphertext.len().min(MAX_INITIAL_DECRYPT);
-    for cap in [512usize, full] {
-        let cap = cap.min(full);
-        let plaintext = aes_ctr_decrypt(&keys.key, &counter0, &ciphertext[..cap]);
-        if let Some(crypto) = reassemble_crypto(&plaintext) {
-            if let Some(sni) = client_hello_sni(&crypto) {
-                return Some(sni);
-            }
-        }
-        if cap >= full {
-            break;
-        }
-    }
-    None
+    Some(Opened { dcid, keys, counter0, ciphertext })
 }
 
-/// `core/quic_sni.py:_reassemble_crypto()` — concatenate CRYPTO frame data by offset.
-fn reassemble_crypto(payload: &[u8]) -> Option<Vec<u8>> {
-    let mut chunks: std::collections::BTreeMap<u64, Vec<u8>> = std::collections::BTreeMap::new();
+/// `core/quic_sni.py:extract_sni_from_quic_initial()`. Never panics; any malformed or
+/// hostile input yields `None`.
+pub fn extract_sni_from_quic_initial(udp_payload: &[u8]) -> Option<String> {
+    open_initial(udp_payload)?.scan().0
+}
+
+pub type CryptoChunks = std::collections::BTreeMap<u64, Vec<u8>>;
+
+/// The bytes from offset 0 up to the first gap. Chrome splits and reorders CRYPTO frames on
+/// purpose, and part of a ClientHello may sit in the next Initial; joining across the gap would
+/// hand the parser misaligned bytes.
+pub fn contiguous(chunks: &CryptoChunks) -> Vec<u8> {
+    let mut out = Vec::new();
+    for (&off, chunk) in chunks {
+        let have = out.len() as u64;
+        if off > have {
+            break;
+        }
+        let skip = (have - off) as usize;
+        if skip < chunk.len() {
+            out.extend_from_slice(&chunk[skip..]);
+        }
+    }
+    out
+}
+
+/// `core/quic_sni.py:_reassemble_crypto()` - CRYPTO frame data by offset.
+fn crypto_chunks(payload: &[u8]) -> Option<CryptoChunks> {
+    let mut chunks = CryptoChunks::new();
     let mut off = 0usize;
     while off < payload.len() {
         let (ftype, next) = read_varint(payload, off)?;
@@ -308,16 +354,12 @@ fn reassemble_crypto(payload: &[u8]) -> Option<Vec<u8>> {
     if chunks.is_empty() {
         return None;
     }
-    let mut out = Vec::new();
-    for (_, chunk) in chunks {
-        out.extend_from_slice(&chunk);
-    }
-    Some(out)
+    Some(chunks)
 }
 
 /// `core/quic_sni.py:_client_hello_sni()` — note this variant does NOT lower-case the
 /// host (it validates case-insensitively instead), unlike the TLS-over-TCP path.
-fn client_hello_sni(handshake: &[u8]) -> Option<String> {
+pub fn client_hello_sni(handshake: &[u8]) -> Option<String> {
     if handshake.len() < 4 || handshake[0] != 0x01 {
         return None;
     }
@@ -491,8 +533,8 @@ mod tests {
         // a CRYPTO frame claiming a huge length, and ACK frames with a huge range count
         let mut payload = vec![0x06, 0x00, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff];
         payload.extend_from_slice(&[0x41; 32]);
-        let _ = reassemble_crypto(&payload);
+        let _ = crypto_chunks(&payload);
         let ack = vec![0x02, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff];
-        let _ = reassemble_crypto(&ack);
+        let _ = crypto_chunks(&ack);
     }
 }

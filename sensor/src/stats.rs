@@ -131,6 +131,12 @@ pub fn render(registry: &Registry, uptime_seconds: f64) -> String {
         "Encapsulated packets unwrapped (VXLAN/GENEVE/GRE/ERSPAN/IP-in-IP). Zero on an overlay SPAN feed means the sensor is only seeing tunnel endpoints.",
         t.packets_decapsulated
     );
+    metric!(
+        "maltrail_handshakes_reassembled_total",
+        "counter",
+        "TLS/QUIC ClientHellos put back together from more than one packet (post-quantum key shares make a browser's ~2 KB).",
+        t.handshakes_reassembled
+    );
 
     // The two that matter most for an alert: the kernel dropping packets means MISSED DETECTIONS,
     // silently. Nothing else in the sensor's output makes that visible in time to act on it.

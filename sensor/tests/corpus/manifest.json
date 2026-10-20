@@ -356,7 +356,7 @@
     "linktype": 1,
     "name": "tls_sni",
     "needs_pcap_timestamps": false,
-    "notes": "TLS ClientHello SNI (needs USE_FAST_PREFILTER; the harness enables it)",
+    "notes": "TLS ClientHello SNI",
     "packets": 2,
     "pcap": "tls_sni.pcap",
     "timestamp_sensitive": false
@@ -368,9 +368,46 @@
     "linktype": 1,
     "name": "quic_sni",
     "needs_pcap_timestamps": false,
-    "notes": "QUIC Initial SNI (needs USE_FAST_PREFILTER; the harness enables it)",
+    "notes": "QUIC Initial SNI",
     "packets": 1,
     "pcap": "quic_sni.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "tls-split-evil.example",
+      "a89bab8eb05fa15a7ac7b256b0257612"
+    ],
+    "linktype": 1,
+    "name": "tls_sni_split",
+    "needs_pcap_timestamps": false,
+    "notes": "TLS ClientHello split across two TCP segments, SNI in the second; JA3 of the whole",
+    "packets": 3,
+    "pcap": "tls_sni_split.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "tls6-evil.example"
+    ],
+    "linktype": 1,
+    "name": "tls_sni_ipv6",
+    "needs_pcap_timestamps": false,
+    "notes": "TLS ClientHello SNI over IPv6",
+    "packets": 1,
+    "pcap": "tls_sni_ipv6.pcap",
+    "timestamp_sensitive": false
+  },
+  {
+    "expect": [
+      "quic-split-evil.example"
+    ],
+    "linktype": 1,
+    "name": "quic_sni_split",
+    "needs_pcap_timestamps": false,
+    "notes": "QUIC ClientHello over two Initials, frames out of order, SNI in the second",
+    "packets": 2,
+    "pcap": "quic_sni_split.pcap",
     "timestamp_sensitive": false
   },
   {

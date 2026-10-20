@@ -209,6 +209,11 @@ pub fn parse_tcp(ip_data: &[u8], header_len: usize) -> Option<TcpHeader> {
     })
 }
 
+/// The sequence number; read only where it is needed, not by `parse_tcp` on every packet.
+pub fn tcp_seq(ip_data: &[u8], header_len: usize) -> u32 {
+    ip_data.get(header_len + 4..header_len + 8).map(|b| u32::from_be_bytes([b[0], b[1], b[2], b[3]])).unwrap_or(0)
+}
+
 impl TcpHeader {
     /// `h_size = iph_length + (tcph_length << 2)`; the payload is whatever follows, which
     /// may legitimately be empty.

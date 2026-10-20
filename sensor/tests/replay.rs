@@ -113,7 +113,7 @@ fn every_corpus_case_replays_without_panicking() {
     assert!(!cases.is_empty());
     let mut total_packets = 0usize;
     for case in &cases {
-        let mut h = harness_for_corpus(vec!["USE_FAST_PREFILTER true".to_string(), "FAST_FLOW_CUTOFF 4".to_string()]);
+        let mut h = harness_for_corpus(vec![]);
         total_packets += h.replay(&case.pcap, false);
         let errors = h.errors();
         assert!(
@@ -128,7 +128,7 @@ fn every_corpus_case_replays_without_panicking() {
 #[test]
 fn corpus_expectations_are_met_with_pcap_timestamps() {
     for case in read_manifest() {
-        let mut h = harness_for_corpus(vec!["USE_FAST_PREFILTER true".to_string(), "FAST_FLOW_CUTOFF 4".to_string()]);
+        let mut h = harness_for_corpus(vec![]);
         h.replay(&case.pcap, false);
         let events = h.events();
         let text: Vec<String> = events
