@@ -192,6 +192,16 @@ pub type FastMap<K, V> = std::collections::HashMap<K, V, FxBuildHasher>;
 /// A `HashSet` for fixed-size, non-adversarial keys on the packet path.
 pub type FastSet<K> = std::collections::HashSet<K, FxBuildHasher>;
 
+/// A name as a seeded 64-bit hash, for sets that only answer "seen before?" and "how many":
+/// no allocation per name, 8 bytes instead of a boxed copy. Seeded, so the names an attacker
+/// picks cannot be chosen to collide; unseeded, a thousand names collide with odds of about
+/// one in 10^13.
+pub fn name_key(name: &str) -> u64 {
+    let mut h = SeededHasher::default();
+    h.write(name.as_bytes());
+    h.finish()
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

@@ -142,6 +142,29 @@ pub fn client_hello_sni(data: &[u8]) -> Option<String> {
 /// for truncation (the extension region is parsed as far as the buffer reaches, the fixed
 /// fields are not), same GREASE filtering, same string forms before hashing.
 pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
+    thread_local! {
+        static SCRATCH: std::cell::RefCell<Scratch> = std::cell::RefCell::new(Scratch::default());
+    }
+    SCRATCH.with(|scratch| parse_client_hello_into(data, &mut scratch.borrow_mut()))
+}
+
+/// The working lists of one parse. Kept per thread and cleared, not freed, so a ClientHello
+/// costs the three Strings it returns instead of a dozen allocations.
+#[derive(Default)]
+struct Scratch {
+    ciphers: Vec<u16>,
+    ext_types: Vec<u16>,
+    curves: Vec<u16>,
+    ecpf: Vec<u8>,
+    sig_algs: Vec<u16>,
+    sup_vers: Vec<u16>,
+    sorted: Vec<u16>,
+    ja3_str: String,
+    ja4_b: String,
+    ja4_c: String,
+}
+
+fn parse_client_hello_into(data: &[u8], w: &mut Scratch) -> Option<ClientHello> {
     let mut r = Reader::new(data);
     if r.b.first() == Some(&0x16) {
         r.take(5)?; // optional TLS record header
@@ -163,11 +186,11 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
     if cend > r.b.len() {
         return None; // Python's reader raises past the buffer; the whole parse fails there
     }
-    let mut ciphers = Vec::with_capacity(cs_len / 2);
+    w.ciphers.clear();
     while r.p + 2 <= cend {
         let c = r.u16()?;
         if !is_grease(c) {
-            ciphers.push(c);
+            w.ciphers.push(c);
         }
     }
     r.p = cend;
@@ -175,12 +198,11 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
     r.take(comp_len)?;
 
     let mut sni = None;
-    let mut alpn0: Option<Vec<u8>> = None;
-    let mut ext_types = Vec::new();
-    let mut curves = Vec::new();
-    let mut ecpf = Vec::new();
-    let mut sig_algs = Vec::new();
-    let mut sup_vers = Vec::new();
+    let mut alpn0: Option<&[u8]> = None;
+    for list in [&mut w.ext_types, &mut w.curves, &mut w.sig_algs, &mut w.sup_vers] {
+        list.clear();
+    }
+    w.ecpf.clear();
     if r.left() >= 2 {
         let ext_total = r.u16()? as usize;
         let eend = (r.p + ext_total).min(r.b.len());
@@ -192,7 +214,7 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
             }
             let body = r.take(elen)?;
             if !is_grease(etype) {
-                ext_types.push(etype);
+                w.ext_types.push(etype);
             }
             match etype {
                 // `_parse_sni()` takes the name bytes BEFORE looking at the entry type, and
@@ -202,9 +224,9 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
                     Ok(parsed) => sni = parsed,
                     Err(FatalTruncation) => return None,
                 },
-                0x000a => curves = u16_list(body, true, true)?,
-                0x000b => ecpf = u8_list(body, true)?,
-                0x000d => sig_algs = u16_list(body, true, true)?,
+                0x000a => u16_list(body, true, true, &mut w.curves),
+                0x000b => u8_list(body, true, &mut w.ecpf),
+                0x000d => u16_list(body, true, true, &mut w.sig_algs),
                 // `_parse_alpn_first()` is the one helper that can RAISE past its buffer
                 // (the others loop on `left()`), and a raised exception fails the WHOLE
                 // Python parse - hence the Err arm. A short header only means "no ALPN".
@@ -212,19 +234,13 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
                     Ok(alpn) => alpn0 = alpn,
                     Err(FatalTruncation) => return None,
                 },
-                0x002b => sup_vers = u8len_u16_list(body, true)?,
+                0x002b => u8len_u16_list(body, true, &mut w.sup_vers),
                 _ => {}
             }
         }
     }
 
-    // JA3: version,ciphers,extensions,curves,ecpf - dash-joined decimal lists.
-    // One String per list instead of one per ELEMENT plus a Vec plus the join buffer. `write!`
-    // of a u16 into a String appends the same decimal digits `to_string()` would produce.
-    // One buffer for the whole JA3 string. Each of the five fields used to be built as its own
-    // String and then copied again by format!, and the ecpf field additionally widened its bytes
-    // into a temporary Vec<u16> just to be formatted. Appending straight into one buffer produces
-    // the identical string with a single allocation.
+    // JA3: version,ciphers,extensions,curves,ecpf - dash-joined decimal lists, in one buffer.
     // Digits are written directly: `write!` through core::fmt was the largest single cost of
     // the whole parse on a browser's 19-extension ClientHello.
     fn push_dec(out: &mut String, v: u16) {
@@ -251,26 +267,27 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
             push_dec(out, *v);
         }
     }
-    let mut ja3_str = String::with_capacity(16 + (ciphers.len() + ext_types.len() + curves.len() + ecpf.len()) * 6);
-    push_dec(&mut ja3_str, legacy_version);
+    let ja3_str = &mut w.ja3_str;
+    ja3_str.clear();
+    push_dec(ja3_str, legacy_version);
     ja3_str.push(',');
-    append_dec(&mut ja3_str, &ciphers);
+    append_dec(ja3_str, &w.ciphers);
     ja3_str.push(',');
-    append_dec(&mut ja3_str, &ext_types);
+    append_dec(ja3_str, &w.ext_types);
     ja3_str.push(',');
-    append_dec(&mut ja3_str, &curves);
+    append_dec(ja3_str, &w.curves);
     ja3_str.push(',');
-    for (i, b) in ecpf.iter().enumerate() {
+    for (i, b) in w.ecpf.iter().enumerate() {
         if i > 0 {
             ja3_str.push('-');
         }
-        push_dec(&mut ja3_str, *b as u16);
+        push_dec(ja3_str, *b as u16);
     }
     use md5::Digest as Md5Digest;
     let ja3 = hex_lowercase(&md5::Md5::digest(ja3_str.as_bytes()));
 
     // JA4 (client): ja4_a _ ja4_b _ ja4_c.
-    let ver = sup_vers.iter().copied().max().unwrap_or(legacy_version);
+    let ver = w.sup_vers.iter().copied().max().unwrap_or(legacy_version);
     let ver2 = match ver {
         0x0304 => "13",
         0x0303 => "12",
@@ -279,45 +296,97 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
         0x0300 => "s3",
         _ => "00",
     };
-    let sni_flag = if sni.is_some() { "d" } else { "i" };
-    let nc = ciphers.len().min(99);
-    let ne = ext_types.len().min(99);
+    let nc = w.ciphers.len().min(99);
+    let ne = w.ext_types.len().min(99);
+    let mut ja4 = String::with_capacity(40);
+    ja4.push('t');
+    ja4.push_str(ver2);
+    ja4.push(if sni.is_some() { 'd' } else { 'i' });
+    for n in [nc, ne] {
+        ja4.push((b'0' + (n / 10) as u8) as char);
+        ja4.push((b'0' + (n % 10) as u8) as char);
+    }
     // First protocol's first+last byte, chr()-mapped exactly like the reference: `u8 as char`
     // IS chr(byte) (U+0000..U+00FF), so a non-ASCII ALPN byte lands in ja4_a verbatim - which
     // is what core/tls_intel.py produces too (chr() never raises for a byte; there is no
     // UnicodeEncodeError on this path).
-    let alpn2 = match alpn0 {
-        Some(ref p) if !p.is_empty() => format!("{}{}", p[0] as char, p[p.len() - 1] as char),
-        _ => "00".to_string(), // no ALPN extension, or an empty protocol list
-    };
-    let ja4_a = format!("t{ver2}{sni_flag}{nc:02}{ne:02}{alpn2}");
-    let mut sorted_ciphers = ciphers.clone();
-    sorted_ciphers.sort_unstable();
+    match alpn0 {
+        Some(p) if !p.is_empty() => {
+            ja4.push(p[0] as char);
+            ja4.push(p[p.len() - 1] as char);
+        }
+        _ => ja4.push_str("00"), // no ALPN extension, or an empty protocol list
+    }
 
-    let join_hex4 = |list: &[u16]| {
-        let mut out = String::with_capacity(list.len() * 5);
+    fn push_hex4(out: &mut String, list: &[u16]) {
+        const HEX: &[u8; 16] = b"0123456789abcdef";
         for (i, v) in list.iter().enumerate() {
             if i > 0 {
                 out.push(',');
             }
-            const HEX: &[u8; 16] = b"0123456789abcdef";
             for shift in [12, 8, 4, 0] {
                 out.push(HEX[(v >> shift) as usize & 0xf] as char);
             }
         }
-        out
-    };
-    let ja4_b_str = join_hex4(&sorted_ciphers);
-    let mut exts_for_c: Vec<u16> = ext_types.iter().copied().filter(|e| *e != 0x0000 && *e != 0x0010).collect();
-    exts_for_c.sort_unstable();
-    let ja4_c_str = format!("{}_{}", join_hex4(&exts_for_c), join_hex4(&sig_algs));
-    // NOTE: `md5::Digest` and `sha2::Digest` are the same `digest::Digest` trait (both crates
-    // build on digest 0.10), so the single import above serves Sha256::digest too.
-    // Only the first 12 hex chars are kept, so render 6 bytes rather than 32 and discard 20.
-    let sha256_12 = |s: &[u8]| hex_lowercase(&sha2::Sha256::digest(s)[..6]);
-    let ja4 = format!("{}_{}_{}", ja4_a, sha256_12(ja4_b_str.as_bytes()), sha256_12(ja4_c_str.as_bytes()));
+    }
+    w.sorted.clear();
+    w.sorted.extend_from_slice(&w.ciphers);
+    w.sorted.sort_unstable();
+    w.ja4_b.clear();
+    push_hex4(&mut w.ja4_b, &w.sorted);
+    w.sorted.clear();
+    w.sorted.extend(w.ext_types.iter().copied().filter(|e| *e != 0x0000 && *e != 0x0010));
+    w.sorted.sort_unstable();
+    w.ja4_c.clear();
+    push_hex4(&mut w.ja4_c, &w.sorted);
+    w.ja4_c.push('_');
+    push_hex4(&mut w.ja4_c, &w.sig_algs);
+    ja4.push('_');
+    push_sha256_12(&mut ja4, &w.ja4_b);
+    ja4.push('_');
+    push_sha256_12(&mut ja4, &w.ja4_c);
 
     Some(ClientHello { sni, ja3, ja4 })
+}
+
+/// Append the first 12 hex characters of SHA-256, as JA4 uses them, memoized per thread.
+///
+/// A network has few distinct TLS client stacks, and JA4's cipher and extension lists are sorted,
+/// so the same two strings come back on almost every ClientHello - Chrome's shuffled extension
+/// order included. The two SHA-256s were a quarter of the packet path on a handshake-heavy mix,
+/// and a Raspberry Pi 4 has no SHA instructions to hide them. The memo is keyed by the exact
+/// input, so a hit is the same answer, and it is emptied when full, so it cannot grow.
+fn push_sha256_12(out: &mut String, input: &str) {
+    use crate::fasthash::StrMap;
+    use std::cell::RefCell;
+    const MAX_ENTRIES: usize = 256;
+    thread_local! {
+        static MEMO: RefCell<StrMap<Box<str>, [u8; 12]>> = RefCell::new(StrMap::default());
+    }
+    MEMO.with(|memo| {
+        let mut memo = memo.borrow_mut();
+        let hex = match memo.get(input) {
+            Some(hit) => *hit,
+            None => {
+                // `md5::Digest` and `sha2::Digest` are the same `digest::Digest` trait. Only the
+                // first 12 hex chars are kept, so render 6 bytes rather than 32.
+                use sha2::Digest as _;
+                const HEX: &[u8; 16] = b"0123456789abcdef";
+                let digest = sha2::Sha256::digest(input.as_bytes());
+                let mut hex = [0u8; 12];
+                for (i, b) in digest[..6].iter().enumerate() {
+                    hex[2 * i] = HEX[(b >> 4) as usize];
+                    hex[2 * i + 1] = HEX[(b & 0x0f) as usize];
+                }
+                if memo.len() >= MAX_ENTRIES {
+                    memo.clear();
+                }
+                memo.insert(input.into(), hex);
+                hex
+            }
+        };
+        out.extend(hex.iter().map(|&c| c as char));
+    })
 }
 
 /// Lower-case hex, written a nibble at a time.
@@ -337,50 +406,45 @@ fn hex_lowercase(bytes: &[u8]) -> String {
 }
 
 /// `core/tls_intel.py:_u16_list()`
-fn u16_list(body: &[u8], skip_len2: bool, drop_grease: bool) -> Option<Vec<u16>> {
+fn u16_list(body: &[u8], skip_len2: bool, drop_grease: bool, out: &mut Vec<u16>) {
     let mut r = Reader::new(body);
     if skip_len2 && r.left() >= 2 {
         r.u16();
     }
-    let mut out = Vec::new();
-    while r.left() >= 2 {
-        let v = r.u16()?;
+    out.clear();
+    while let Some(v) = r.u16() {
         if drop_grease && is_grease(v) {
             continue;
         }
         out.push(v);
     }
-    Some(out)
 }
 
 /// `core/tls_intel.py:_u8_list()`
-fn u8_list(body: &[u8], skip_len1: bool) -> Option<Vec<u8>> {
+fn u8_list(body: &[u8], skip_len1: bool, out: &mut Vec<u8>) {
     let mut r = Reader::new(body);
     if skip_len1 && r.left() >= 1 {
         r.u8();
     }
-    let mut out = Vec::new();
-    while r.left() >= 1 {
-        out.push(r.u8()?);
+    out.clear();
+    while let Some(v) = r.u8() {
+        out.push(v);
     }
-    Some(out)
 }
 
 /// `core/tls_intel.py:_u8len_u16_list()`
-fn u8len_u16_list(body: &[u8], drop_grease: bool) -> Option<Vec<u16>> {
+fn u8len_u16_list(body: &[u8], drop_grease: bool, out: &mut Vec<u16>) {
     let mut r = Reader::new(body);
     if r.left() >= 1 {
         r.u8(); // 1-byte list length
     }
-    let mut out = Vec::new();
-    while r.left() >= 2 {
-        let v = r.u16()?;
+    out.clear();
+    while let Some(v) = r.u16() {
         if drop_grease && is_grease(v) {
             continue;
         }
         out.push(v);
     }
-    Some(out)
 }
 
 /// Marks the one fatal malformation these helpers can hit: declared bytes running past the
@@ -394,14 +458,14 @@ pub struct FatalTruncation;
 /// header makes it RETURN None ("no ALPN offered" - parsing continues), while protocol-name
 /// bytes overrunning the body make its `take()` RAISE `_Trunc` - and a raised exception
 /// fails the WHOLE parse. `Ok(None)` vs `Err(FatalTruncation)` keeps those apart.
-fn alpn_first(body: &[u8]) -> Result<Option<Vec<u8>>, FatalTruncation> {
+fn alpn_first(body: &[u8]) -> Result<Option<&[u8]>, FatalTruncation> {
     let mut r = Reader::new(body);
     if r.left() >= 2 {
         r.p += 2; // alpn list length (bounds only - the name length below is what matters)
         if r.left() >= 1 {
             let plen = r.u8().unwrap() as usize;
             return if r.left() >= plen {
-                Ok(Some(r.take(plen).unwrap().to_vec()))
+                Ok(Some(r.take(plen).unwrap()))
             } else {
                 Err(FatalTruncation) // `_Trunc` on the Python side: no fingerprint at all
             };

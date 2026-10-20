@@ -22,7 +22,7 @@ fn repo_root() -> PathBuf {
 /// The release binary, if it has been built. Returns `None` so a plain `cargo test` (which does
 /// not necessarily build the binary in release mode) skips rather than fails.
 fn sensor_binary() -> Option<PathBuf> {
-    for profile in ["release", "release-lto", "debug"] {
+    for profile in ["release", "debug"] {
         let path = repo_root().join("sensor").join("target").join(profile).join("maltrail-sensor");
         if path.is_file() {
             return Some(path);

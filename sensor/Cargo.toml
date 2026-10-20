@@ -60,12 +60,10 @@ sha1 = "0.10"
 [profile.release]
 opt-level = 3
 debug = 1
+# Fat LTO and one codegen unit: 9-17% fewer ns per packet on every benches/hotpath.rs row
+# (mixed traffic 315 -> 288, pcap replay 654 -> 567), for a longer build.
+lto = "fat"
+codegen-units = 1
 # NOTE: unwinding is deliberately kept (not panic="abort"): src/worker.rs wraps each
 # packet in catch_unwind, mirroring sensor.py's blanket `except Exception` around
 # _process_packet, so a parser bug can never take the sensor down mid-capture.
-
-# Enabled only after correctness was established (see docs/REPORT.md).
-[profile.release-lto]
-inherits = "release"
-lto = "fat"
-codegen-units = 1

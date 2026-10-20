@@ -1,7 +1,7 @@
 //! Reproducible benchmarks for the Rust sensor's packet path.
 //!
-//!     cargo bench --bench hotpath                      # default release profile
-//!     cargo bench --profile release-lto --bench hotpath # with LTO
+//!     cargo bench --bench hotpath                  # every row
+//!     BENCH_FILTER=dns cargo bench --bench hotpath # only rows whose name contains "dns"
 //!
 //! Deliberately split so no number can be mistaken for another:
 //!
@@ -57,6 +57,9 @@ impl Measurement {
 /// Time `body` for a fixed wall-clock budget. `bytes_per_iter` feeds the line-rate estimate
 /// and may be 0 when a byte figure would be meaningless.
 fn bench(name: &'static str, kind: &'static str, bytes_per_iter: u64, mut body: impl FnMut() -> u64) -> Measurement {
+    if std::env::var("BENCH_FILTER").map(|f| !name.contains(f.as_str())).unwrap_or(false) {
+        return Measurement { name, kind, iterations: 0, elapsed: Duration::ZERO, bytes: 0 };
+    }
     let warm_end = Instant::now() + WARMUP;
     while Instant::now() < warm_end {
         black_box(body());
@@ -77,7 +80,7 @@ fn bench(name: &'static str, kind: &'static str, bytes_per_iter: u64, mut body: 
 fn report(results: &[Measurement]) {
     println!("\n{:<38} {:<12} {:>12} {:>16} {:>12}", "benchmark", "kind", "ns/iter", "iter/s", "Gbit/s");
     println!("{}", "-".repeat(94));
-    for r in results {
+    for r in results.iter().filter(|r| r.iterations > 0) {
         let gbit = if r.bytes == 0 { "-".to_string() } else { format!("{:.2}", r.gbit()) };
         println!("{:<38} {:<12} {:>12.1} {:>16.0} {:>12}", r.name, r.kind, r.ns_per_iter(), r.per_second(), gbit);
     }
@@ -445,7 +448,7 @@ fn main() {
     println!("[i] worker scaling (available_parallelism = {cores}); software path only, no capture");
     let mut single_worker_pps = 0.0f64;
     for workers in [1usize, 2, 4, 8, 16] {
-        if workers > cores {
+        if workers > cores || std::env::var_os("BENCH_FILTER").is_some() {
             break;
         }
         let mix = std::sync::Arc::new(mix.clone());

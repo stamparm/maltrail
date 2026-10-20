@@ -288,7 +288,7 @@ fn check_domain_inner(
             }
         }
 
-        if !result && !whitelisted && q.contains(".onion.") {
+        if !result && !whitelisted && crate::protocols::has(q, ".onion.") {
             // re.sub(r"(\.onion)(\..*)", r"\1($2)", query)
             let trail = st.statics.onion_suffix.replace(q, "$1($2)").to_string();
             let base = trail.split('(').next().unwrap_or("").to_string();
@@ -1154,7 +1154,7 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
             "(heuristic)",
         );
         return;
-    } else if path.contains("://") {
+    } else if crate::protocols::has(&path, "://") {
         let unquoted_path = http::unquote(&path);
         // NOTE: to prevent malware-domain FPs caused by outside scanners
         if !st.statics.code_execution.is_match(unquoted_path.as_ref()) {
@@ -1244,7 +1244,7 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
     }
     let heuristics_suppressed = whitelist_depth > 0;
 
-    if path.contains("//") {
+    if crate::protocols::has(&path, "//") {
         path = Cow::Owned(path.replace("//", "/"));
     }
     let unquoted_path = http::unquote_cow(&path);
@@ -1850,8 +1850,8 @@ fn dns_packet(
                 {
                     st.dns_tunneling.maybe_window_reset(sec);
                     let subdomain_part = dots.prefix_upto(&query, label_count - 2);
-                    let key = format!("{}|{}", ep.src.render().as_str(), domain);
-                    if st.dns_tunneling.observe(&key, subdomain_part, dots.label(&query, 0), sec)
+                    let key = crate::heuristics::dns_tunneling::pair_key(ep.src, domain);
+                    if st.dns_tunneling.observe(key, subdomain_part, dots.label(&query, 0), sec)
                         == crate::heuristics::dns_tunneling::Outcome::Alert
                     {
                         let trail = format!("({subdomain_part}).{domain}");

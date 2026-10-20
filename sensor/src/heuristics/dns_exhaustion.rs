@@ -1,14 +1,15 @@
 //! DNS-exhaustion heuristic — the `_subdomains` / `_dns_exhausted_domains` block in
 //! `sensor.py:_process_packet()`.
 
-use crate::fasthash::{StrMap, StrSet};
+use crate::fasthash::{name_key, FastSet, StrMap, StrSet};
 
 use crate::settings;
 
 struct Window {
     /// `subdomains._start` — when this domain's 60-second window opened.
     start: u64,
-    subdomains: StrSet<Box<str>>,
+    /// The distinct subdomains, as `name_key`s.
+    subdomains: FastSet<u64>,
 }
 
 #[derive(Default)]
@@ -77,7 +78,7 @@ impl DnsExhaustion {
                     self.saturations += 1;
                     return Outcome::Continue;
                 }
-                self.domains.insert(domain.into(), Window { start: sec, subdomains: StrSet::default() });
+                self.domains.insert(domain.into(), Window { start: sec, subdomains: FastSet::default() });
                 self.domains.get_mut(domain).expect("just inserted")
             }
         };
@@ -88,12 +89,7 @@ impl DnsExhaustion {
             return Outcome::Continue;
         }
         if window.subdomains.len() < threshold {
-            // `contains` first: `insert(subdomain_part.into())` would build an owned copy of the
-            // label on EVERY query just to throw it away as a duplicate. Real traffic queries the
-            // same handful of subdomains over and over, so that was an allocation per DNS packet.
-            if !window.subdomains.contains(subdomain_part) {
-                window.subdomains.insert(subdomain_part.into());
-            }
+            window.subdomains.insert(name_key(subdomain_part));
             return Outcome::Continue;
         }
         if !self.exhausted.contains(domain) {
@@ -110,7 +106,7 @@ impl DnsExhaustion {
     /// `any(_ in subdomains for _ in LOCAL_SUBDOMAIN_LOOKUPS)` — the local-resolution guard.
     pub fn has_local_lookup(&self, domain: &str) -> bool {
         let Some(window) = self.domains.get(domain) else { return false };
-        settings::LOCAL_SUBDOMAIN_LOOKUPS.iter().any(|needle| window.subdomains.contains(*needle))
+        settings::LOCAL_SUBDOMAIN_LOOKUPS.iter().any(|needle| window.subdomains.contains(&name_key(needle)))
     }
 
     pub fn tracked_domains(&self) -> usize {

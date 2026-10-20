@@ -16,6 +16,15 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[=] Faster packet path: 46% fewer instructions per packet on the reference
+    network (500 hosts, 208k packets), with byte-identical events. Release
+    builds use fat LTO (9-17% on every benchmark row); JA4's SHA-256s are
+    memoized per worker and a ClientHello parse reuses its buffers instead
+    of a dozen allocations; DNS subdomain queries no longer allocate per
+    name in the exhaustion/tunneling accumulators (1100 -> 730 ns); a QUIC
+    Initial skips server packets and cached keys, and decrypts in batches
+    (2980 -> 900 ns).
+
 [!] TLS and QUIC ClientHellos longer than one packet are put back together.
     Post-quantum key shares made a browser's ~2 KB, and Chrome's shuffled
     extension order puts the SNI in the second TCP segment about half of the

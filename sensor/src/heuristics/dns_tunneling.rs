@@ -16,15 +16,16 @@
 //! Requiring first and last query to be two minutes apart costs a tunnel nothing and rules out the
 //! shape most legitimate traffic takes.
 
-use crate::fasthash::{StrMap, StrSet};
+use crate::addr::Ip;
+use crate::fasthash::{name_key, FastMap, FastSet, SeededHasher};
 use crate::settings;
 
 /// One (source, zone) pair's evidence inside the current window.
 #[derive(Default)]
 pub struct Accumulator {
     pub queries: usize,
-    /// Distinct subdomain parts. A tunnel never repeats one; a blocklist does.
-    names: StrSet<Box<str>>,
+    /// Distinct subdomain parts, as `name_key`s. A tunnel never repeats one; a blocklist does.
+    names: FastSet<u64>,
     /// Queries whose leading label is long AND high-entropy - i.e. carrying a payload.
     pub carrying: usize,
     /// Total bytes of subdomain below the zone: what a tunnel is actually moving.
@@ -96,7 +97,7 @@ pub fn allowed_zone(zone: &str) -> bool {
     // them are collected once instead of being re-filtered out of forty on every call, and a name
     // containing neither an underscore nor "acme-" cannot match any of them - which is nearly
     // every name. Without that guard this was still forty iterations per DNS query.
-    if zone.as_bytes().contains(&b'_') || zone.contains("acme-") {
+    if zone.as_bytes().contains(&b'_') || crate::protocols::has(zone, "acme-") {
         for entry in label_zones() {
             if zone.split('.').any(|label| label == *entry) {
                 return true;
@@ -148,9 +149,19 @@ pub enum Outcome {
     Alert,
 }
 
+/// The accumulator key of one (source, zone) pair.
+pub fn pair_key(src: Ip, zone: &str) -> u64 {
+    use std::hash::{Hash, Hasher};
+    let mut h = SeededHasher::default();
+    src.hash(&mut h);
+    h.write(zone.as_bytes());
+    h.finish()
+}
+
 #[derive(Default)]
 pub struct DnsTunneling {
-    pairs: StrMap<Box<str>, Accumulator>,
+    /// Keyed by `pair_key`: a seeded hash of (source, zone), not a rendered "ip|zone" string.
+    pairs: FastMap<u64, Accumulator>,
     window_start: u64,
     saturations: u64,
 }
@@ -189,11 +200,11 @@ impl DnsTunneling {
     /// Record one query and say whether the pair has just crossed every threshold.
     ///
     /// `subdomain` is everything below the registered zone; `leading` is its first label.
-    pub fn observe(&mut self, key: &str, subdomain: &str, leading: &str, sec: u64) -> Outcome {
+    pub fn observe(&mut self, key: u64, subdomain: &str, leading: &str, sec: u64) -> Outcome {
         let carrying = leading.chars().count() >= settings::DNS_TUNNELING_MIN_LABEL
             && entropy_x100(leading) >= settings::DNS_TUNNELING_MIN_ENTROPY_X100;
 
-        let entry = match self.pairs.get_mut(key) {
+        let entry = match self.pairs.get_mut(&key) {
             Some(entry) => entry,
             None => {
                 // Refuse rather than evict, like every other accumulator here: the key is chosen
@@ -203,8 +214,7 @@ impl DnsTunneling {
                     self.saturations += 1;
                     return Outcome::Quiet;
                 }
-                self.pairs.insert(key.into(), Accumulator { first_sec: sec, ..Accumulator::default() });
-                self.pairs.get_mut(key).expect("just inserted")
+                self.pairs.entry(key).or_insert(Accumulator { first_sec: sec, ..Accumulator::default() })
             }
         };
 
@@ -215,7 +225,7 @@ impl DnsTunneling {
             entry.carrying += 1;
         }
         if entry.names.len() < super::HEURISTIC_MAX_KEYS {
-            entry.names.insert(subdomain.into());
+            entry.names.insert(name_key(subdomain));
         }
 
         if entry.alerted || !entry.verdict() {
@@ -244,7 +254,7 @@ mod tests {
                 state = state.wrapping_mul(6364136223846793005).wrapping_add(1442695040888963407);
                 label.push(char::from(b'a' + ((state >> 33) % 26) as u8));
             }
-            if t.observe(key, &label, &label, i as u64 * step) == Outcome::Alert {
+            if t.observe(name_key(key), &label, &label, i as u64 * step) == Outcome::Alert {
                 alerts += 1;
             }
         }
@@ -278,7 +288,7 @@ mod tests {
         let label = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
         let mut alerts = 0;
         for i in 0..2000u64 {
-            if t.observe("10.0.0.5|bl.example", label, label, i) == Outcome::Alert {
+            if t.observe(name_key("10.0.0.5|bl.example"), label, label, i) == Outcome::Alert {
                 alerts += 1;
             }
         }
@@ -292,7 +302,7 @@ mod tests {
         let mut alerts = 0;
         for i in 0..500u64 {
             let label = format!("{}{}", "w".repeat(40), i); // unique, long, near-zero entropy
-            if t.observe("10.0.0.5|z.example", &label, &label, i) == Outcome::Alert {
+            if t.observe(name_key("10.0.0.5|z.example"), &label, &label, i) == Outcome::Alert {
                 alerts += 1;
             }
         }
@@ -414,7 +424,7 @@ mod tests {
     fn saturation_refuses_new_keys_instead_of_evicting() {
         let mut t = DnsTunneling::default();
         for i in 0..(super::super::HEURISTIC_MAX_KEYS + 50) {
-            t.observe(&format!("k{i}"), "abcdefghijklmnopqrst", "abcdefghijklmnopqrst", 1);
+            t.observe(name_key(&format!("k{i}")), "abcdefghijklmnopqrst", "abcdefghijklmnopqrst", 1);
         }
         assert!(t.saturations() >= 50, "past the cap new pairs are refused, not swapped in");
     }

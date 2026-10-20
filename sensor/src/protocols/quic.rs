@@ -92,10 +92,49 @@ fn hkdf_expand_label_into(secret: &[u8], label: &[u8], length: usize) -> [u8; HK
     out
 }
 
+#[derive(Clone, Copy)]
 pub struct InitialKeys {
     key: [u8; 16],
     iv: [u8; 12],
     hp: [u8; 16],
+}
+
+/// Connection-ID hash -> (the ID itself, its keys).
+type KeyMemo = crate::fasthash::FastMap<u64, (Box<[u8]>, InitialKeys)>;
+
+/// `derive_client_initial_keys`, memoized per thread by connection ID.
+///
+/// Derivation is five HKDF steps, 84% of an Initial's cost. A client's second Initial (the
+/// post-quantum ClientHello spans two) and every retransmission reuse the same ID, so they reuse
+/// the keys. Bounded: emptied when full.
+fn cached_initial_keys(dcid: &[u8], version_kind: u8) -> InitialKeys {
+    use std::cell::RefCell;
+    const MAX_ENTRIES: usize = 64;
+    thread_local! {
+        static MEMO: RefCell<KeyMemo> = RefCell::new(Default::default());
+    }
+    // Keyed by a seeded hash of (version, ID), and the ID itself is compared, so a hit is exact.
+    let slot = {
+        use std::hash::Hasher;
+        let mut h = crate::fasthash::SeededHasher::default();
+        h.write_u8(version_kind);
+        h.write(dcid);
+        h.finish()
+    };
+    MEMO.with(|memo| {
+        let mut memo = memo.borrow_mut();
+        if let Some((id, keys)) = memo.get(&slot) {
+            if **id == *dcid {
+                return *keys;
+            }
+        }
+        let keys = derive_client_initial_keys(dcid, version_kind);
+        if memo.len() >= MAX_ENTRIES {
+            memo.clear();
+        }
+        memo.insert(slot, (dcid.into(), keys));
+        keys
+    })
 }
 
 /// `core/quic_sni.py:derive_client_initial_keys()`
@@ -126,31 +165,39 @@ fn aes_ecb_block(key: &[u8; 16], block: &[u8; 16]) -> [u8; 16] {
 }
 
 /// AES-128-CTR with a full 128-bit big-endian counter, matching Python's fallback
-/// implementation (and `cryptography`'s CTR mode) bit for bit.
+/// implementation (and `cryptography`'s CTR mode) bit for bit. Tests build packets with it.
+#[cfg(test)]
 fn aes_ctr_decrypt(key: &[u8; 16], counter0: &[u8; 16], data: &[u8]) -> Vec<u8> {
-    let cipher = Aes128::new(key.into());
-    // Written into a sized buffer rather than pushed a byte at a time: a QUIC Initial is around
-    // 1,200 bytes, so that was 1,200 Vec pushes - each one a length check and a store - where the
-    // work is a 16-byte XOR. Same bytes out, same counter arithmetic.
-    let mut out = vec![0u8; data.len()];
-    let mut ctr = *counter0;
-    for (input, output) in data.chunks(16).zip(out.chunks_mut(16)) {
-        let mut ks = ctr;
-        cipher.encrypt_block((&mut ks).into());
-        for i in 0..input.len() {
-            output[i] = input[i] ^ ks[i];
+    let mut out = Vec::with_capacity(data.len());
+    aes_ctr_extend(&Aes128::new(key.into()), counter0, data, &mut out);
+    out
+}
+
+/// Decrypt `data[out.len()..]` onto `out`, continuing the keystream where `out` ends. CTR is
+/// seekable, so a second, longer pass over the same packet only pays for the new bytes. `out`
+/// must end on a block boundary (or be complete).
+fn aes_ctr_extend(cipher: &Aes128, counter0: &[u8; 16], data: &[u8], out: &mut Vec<u8>) {
+    let done = out.len();
+    debug_assert!(done % 16 == 0 || done == data.len());
+    let mut ctr = u128::from_be_bytes(*counter0).wrapping_add((done / 16) as u128);
+    // Eight counter blocks per call, so AES-NI can pipeline them; the XOR is a block at a time.
+    const BATCH: usize = 8;
+    let mut keystream = [aes::Block::default(); BATCH];
+    for batch in data[done.min(data.len())..].chunks(16 * BATCH) {
+        let blocks = batch.len().div_ceil(16);
+        for block in keystream[..blocks].iter_mut() {
+            *block = ctr.to_be_bytes().into();
+            ctr = ctr.wrapping_add(1);
         }
-        // 128-bit big-endian increment, exactly as before
-        let mut j = 15i32;
-        while j >= 0 {
-            ctr[j as usize] = ctr[j as usize].wrapping_add(1);
-            if ctr[j as usize] != 0 {
-                break;
+        cipher.encrypt_blocks(&mut keystream[..blocks]);
+        for (input, ks) in batch.chunks(16).zip(keystream.iter()) {
+            let mut plain = [0u8; 16];
+            for i in 0..16 {
+                plain[i] = input.get(i).copied().unwrap_or(0) ^ ks[i];
             }
-            j -= 1;
+            out.extend_from_slice(&plain[..input.len()]);
         }
     }
-    out
 }
 
 /// `core/quic_sni.py:_read_varint()`
@@ -174,19 +221,17 @@ pub struct Opened<'a> {
 }
 
 impl Opened<'_> {
-    fn decrypt(&self, cap: usize) -> Vec<u8> {
-        aes_ctr_decrypt(&self.keys.key, &self.counter0, &self.ciphertext[..cap.min(self.ciphertext.len())])
-    }
-
     /// The SNI if the ClientHello's start carries it; otherwise the CRYPTO frames, for a
     /// ClientHello that continues in the next Initial (see `hello.rs`). Decrypts the first 512
-    /// bytes first, as Python does, and the rest only when those are not enough.
+    /// bytes first, as Python does, and only the rest when those are not enough.
     pub fn scan(&self) -> (Option<String>, Option<CryptoChunks>) {
         let full = self.ciphertext.len().min(MAX_INITIAL_DECRYPT);
+        let cipher = Aes128::new((&self.keys.key).into());
+        let mut plaintext = Vec::with_capacity(full);
         let mut last = None;
         for cap in [512usize, full] {
             let cap = cap.min(full);
-            let plaintext = self.decrypt(cap);
+            aes_ctr_extend(&cipher, &self.counter0, &self.ciphertext[..cap], &mut plaintext);
             if let Some(chunks) = crypto_chunks(&plaintext) {
                 if let Some(sni) = client_hello_sni(&contiguous(&chunks)) {
                     return (Some(sni), None);
@@ -243,7 +288,13 @@ pub fn open_initial(udp_payload: &[u8]) -> Option<Opened<'_>> {
         return None; // too short for the header-protection sample
     }
 
-    let keys = derive_client_initial_keys(dcid, ver_kind);
+    // RFC 9000 7.2: a client's first Initial carries an unpredictable destination connection ID
+    // of at least 8 bytes. A server's Initial carries the client's source ID instead - zero
+    // bytes from Chrome - so this turns most of them away before any key derivation.
+    if dcid.len() < 8 {
+        return None;
+    }
+    let keys = cached_initial_keys(dcid, ver_kind);
 
     let mut sample = [0u8; 16];
     sample.copy_from_slice(p.get(sample_offset..sample_offset + 16)?);
@@ -312,7 +363,9 @@ fn crypto_chunks(payload: &[u8]) -> Option<CryptoChunks> {
         let (ftype, next) = read_varint(payload, off)?;
         off = next;
         match ftype {
-            0x00 | 0x01 => continue, // PADDING / PING
+            // PADDING comes in runs of hundreds of bytes; step over the whole run at once.
+            0x00 => off += payload[off..].iter().position(|&b| b != 0).unwrap_or(payload.len() - off),
+            0x01 => continue, // PING
             0x02 | 0x03 => {
                 let (_largest, n) = read_varint(payload, off)?;
                 off = n;

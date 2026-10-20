@@ -126,7 +126,7 @@ pub fn punycode_decode(input: &str) -> Option<String> {
 
 /// The whitelisted domain `query` impersonates, if it is a homograph of one.
 pub fn impersonated<'a>(query: &str, whitelist: &'a Whitelist) -> Option<&'a str> {
-    if !query.contains("xn--") {
+    if !crate::protocols::has(query, "xn--") {
         return None;
     }
     let labels: Vec<&str> = query.split('.').collect();
