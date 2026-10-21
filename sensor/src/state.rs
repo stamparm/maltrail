@@ -153,12 +153,13 @@ impl WorkerState {
     /// exact-name trail more specific than the whitelisted ancestor that used to suppress it
     /// is allowed to fire (`process.rs`). For every verdict-only caller, non-zero is `true`.
     pub fn check_domain_whitelist_depth(&mut self, query: &str) -> u32 {
-        if let Some(v) = self.domain_whitelisted.get(query) {
+        let h = self.domain_whitelisted.hash_of(query);
+        if let Some(v) = self.domain_whitelisted.get_hashed(h, query) {
             return *v;
         }
         let token = crate::whitelist::whitelist_domain_token(query);
         let result = self.whitelist.check_domain_member_depth(token);
-        self.domain_whitelisted.insert_if_seen_before_borrowed(query, result);
+        self.domain_whitelisted.insert_if_seen_before_hashed(h, query, result);
         result
     }
 

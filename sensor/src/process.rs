@@ -9,6 +9,7 @@ use std::borrow::Cow;
 
 use crate::addr::Ip;
 use crate::event::{proto as PROTO, trail_type as TRAIL, Event, Field};
+use crate::fasthash::name_key;
 use crate::heuristics::dns_exhaustion::Outcome;
 use crate::heuristics::nxdomain::{consonant_count, label_entropy, NxAlert};
 use crate::heuristics::scan::{InfectionDetail, PathDetail, PortDetail};
@@ -100,6 +101,9 @@ pub fn check_domain(st: &mut WorkerState, query: &str, sec: u64, usec: u32, ep: 
 
 /// `_check_domain()` with an optional PRECOMPUTED whitelist depth (0 = not whitelisted).
 ///
+/// Only the DNS query path passes one, and its name is already lower-case, colon-free and
+/// through `is_valid_dns_name`, so those three checks are skipped for it.
+///
 /// The DNS path used to walk the whitelist twice per query: once for the registrable domain (the
 /// last two or three labels) to gate the exhaustion heuristic, and once for the full name here.
 /// Those walks are redundant in the common case, because `_check_domain_member(x)` tests `x` and
@@ -120,24 +124,30 @@ fn check_domain_inner(
     //
     // Borrowed unless the name actually needs changing. Real DNS traffic is already lowercase and
     // portless, so this used to allocate a copy of every query for nothing.
+    let verified = precomputed_whitelisted.is_some();
     // Byte loops, not `find`/`memchr`: on a name this short their setup costs more than the scan.
-    let trimmed = match query.bytes().position(|b| b == b':') {
-        Some(idx) => &query[..idx],
-        None => query,
+    let trimmed = if verified {
+        query
+    } else {
+        match query.bytes().position(|b| b == b':') {
+            Some(idx) => &query[..idx],
+            None => query,
+        }
     };
     // if query.replace('.', "").isdigit(): return   (an IP address, not a domain). Lower-casing
     // cannot change the answer, and a name fails it on its first letter.
     if trimmed.bytes().all(|b| b == b'.' || b.is_ascii_digit()) && trimmed.bytes().any(|b| b.is_ascii_digit()) {
         return;
     }
-    let lowered: Cow<'_, str> = if trimmed.bytes().any(|b| b.is_ascii_uppercase()) {
+    let lowered: Cow<'_, str> = if !verified && trimmed.bytes().any(|b| b.is_ascii_uppercase()) {
         Cow::Owned(trimmed.to_lowercase())
     } else {
         Cow::Borrowed(trimmed)
     };
     let q: &str = lowered.as_ref();
 
-    if st.domain_clean.get(q).is_some() {
+    let clean_hash = st.domain_clean.hash_of(q);
+    if st.domain_clean.get_hashed(clean_hash, q).is_some() {
         st.metrics.cache_hits += 1;
         return;
     }
@@ -157,7 +167,7 @@ fn check_domain_inner(
         None => st.check_domain_whitelist_depth(q),
     };
     let whitelisted = whitelist_depth > 0;
-    if settings::is_valid_dns_name(q) {
+    if verified || settings::is_valid_dns_name(q) {
         let dots = Dots::of(q);
         let label_count = dots.label_count();
         let first_label = dots.label(q, 0);
@@ -212,7 +222,7 @@ fn check_domain_inner(
                         break;
                     }
                 }
-                match memchr::memchr(b'.', &q.as_bytes()[start..]) {
+                match q.as_bytes()[start..].iter().position(|&b| b == b'.') {
                     Some(rel) => start += rel + 1,
                     None => break,
                 }
@@ -301,7 +311,7 @@ fn check_domain_inner(
     }
 
     if !result {
-        st.domain_clean.insert_if_seen_before_borrowed(q, ());
+        st.domain_clean.insert_if_seen_before_hashed(clean_hash, q, ());
     }
 }
 
@@ -1825,9 +1835,16 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
                 st.dns_exhaustion.maybe_hourly_reset(sec);
 
                 // Dashed-quad first labels (e.g. 1-2-3-4.dyn.example) are not tracked.
+                // Each name hashed once, for both accumulators.
+                let subdomain_part = dots.prefix_upto(query, label_count - 2);
+                let (domain_key, subdomain_key) = (name_key(domain), name_key(subdomain_part));
                 if !settings::is_dashed_quad(dots.label(query, 0)) {
-                    let subdomain_part = dots.prefix_upto(query, label_count - 2);
-                    match st.dns_exhaustion.observe(domain, subdomain_part, sec, settings::DNS_EXHAUSTION_THRESHOLD) {
+                    match st.dns_exhaustion.observe_keyed(
+                        domain_key,
+                        subdomain_key,
+                        sec,
+                        settings::DNS_EXHAUSTION_THRESHOLD,
+                    ) {
                         Outcome::Continue => {}
                         Outcome::Alert => {
                             let trail = format!(
@@ -1868,17 +1885,15 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
                 // use_heuristics AND the per-name mute, the same pair every other heuristic
                 // uses. Without the first, USE_HEURISTICS false still produced tunneling events
                 // and still paid for the accumulator - this one was only checking the mute.
-                if st.cfg.use_heuristics
-                    && st.heuristic_enabled("dns_tunneling")
-                    && !crate::heuristics::dns_tunneling::allowed_zone(domain)
-                    && !(crate::heuristics::dns_tunneling::may_contain_bl(domain)
-                        && st.statics.bl_word.is_match(domain))
-                {
+                if st.cfg.use_heuristics && st.heuristic_enabled("dns_tunneling") {
+                    use crate::heuristics::dns_tunneling::{allowed_zone, may_contain_bl, pair_key, Outcome};
                     st.dns_tunneling.maybe_window_reset(sec);
-                    let subdomain_part = dots.prefix_upto(query, label_count - 2);
-                    let key = crate::heuristics::dns_tunneling::pair_key(ep.src, domain);
-                    if st.dns_tunneling.observe(key, subdomain_part, dots.label(query, 0), sec)
-                        == crate::heuristics::dns_tunneling::Outcome::Alert
+                    let key = pair_key(ep.src, domain_key);
+                    let bl_word = &st.statics.bl_word;
+                    let exempt = || allowed_zone(domain) || (may_contain_bl(domain) && bl_word.is_match(domain));
+                    let subdomain = (subdomain_key, subdomain_part.len());
+                    if st.dns_tunneling.observe_unless(key, subdomain, dots.label(query, 0), sec, exempt)
+                        == Outcome::Alert
                     {
                         let trail = format!("({subdomain_part}).{domain}");
                         emit_ep(

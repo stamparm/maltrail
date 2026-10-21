@@ -134,7 +134,7 @@ impl Whitelist {
         if let Some(entry) = self.exact_entry(&lowered) {
             return Some(entry.as_str());
         }
-        for i in memchr::memchr_iter(b'.', lowered.as_bytes()) {
+        for i in crate::protocols::dots(lowered.as_bytes()) {
             if let Some(entry) = self.exact_entry(&lowered[i + 1..]) {
                 return Some(entry.as_str());
             }
@@ -209,7 +209,7 @@ pub fn check_domain_member(query: &str, contains: impl Fn(&str) -> bool) -> bool
     if contains(q) {
         return true;
     }
-    for i in memchr::memchr_iter(b'.', q.as_bytes()) {
+    for i in crate::protocols::dots(q.as_bytes()) {
         if contains(&q[i + 1..]) {
             return true;
         }

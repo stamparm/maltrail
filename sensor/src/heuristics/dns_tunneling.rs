@@ -19,6 +19,7 @@
 use crate::addr::Ip;
 use crate::fasthash::{name_key, FastMap, FastSet, SeededHasher};
 use crate::settings;
+use std::collections::hash_map::Entry;
 
 /// One (source, zone) pair's evidence inside the current window.
 #[derive(Default)]
@@ -33,6 +34,9 @@ pub struct Accumulator {
     pub first_sec: u64,
     pub last_sec: u64,
     alerted: bool,
+    /// The zone is exempt (`allowed_zone`, a blocklist): remembered so the exemption is decided
+    /// once per pair and window rather than on every query.
+    exempt: bool,
 }
 
 /// Shannon entropy of `label`, in bits per character times 100.
@@ -82,15 +86,9 @@ pub fn allowed_zone(zone: &str) -> bool {
     // A domain has three or four suffixes, so asking the other question is an order of magnitude
     // less work and gives the identical answer: `a.b.sophosxl.net` ends with `.sophosxl.net`
     // exactly when one of its label-aligned suffixes IS `sophosxl.net`.
-    let mut rest = zone;
-    loop {
-        if suffix_zones().contains(rest) {
-            return true;
-        }
-        match rest.find('.') {
-            Some(i) => rest = &rest[i + 1..],
-            None => break,
-        }
+    let zones = suffix_zones();
+    if zones.contains(zone) || crate::protocols::dots(zone.as_bytes()).any(|i| zones.contains(&zone[i + 1..])) {
+        return true;
     }
     // The `_domainkey`-shaped entries are LABELS, matching anywhere in the name rather than as a
     // suffix, so they need their own pass. Two things keep it off the common path: the four of
@@ -120,8 +118,11 @@ fn label_zones() -> &'static [&'static str] {
 }
 
 /// The suffix-matched entries, as a set built once.
-fn suffix_zones() -> &'static std::collections::HashSet<&'static str> {
-    static ZONES: std::sync::OnceLock<std::collections::HashSet<&'static str>> = std::sync::OnceLock::new();
+///
+/// FxHash, not SipHash: the set is fixed at build time, so the names probed against it cannot
+/// grow it, and there is nothing for a collision flood to insert. SipHash was most of the cost.
+fn suffix_zones() -> &'static FastSet<&'static str> {
+    static ZONES: std::sync::OnceLock<FastSet<&'static str>> = std::sync::OnceLock::new();
     ZONES.get_or_init(|| {
         settings::HASH_LABEL_SERVICE_ZONES
             .iter()
@@ -138,7 +139,7 @@ fn suffix_zones() -> &'static std::collections::HashSet<&'static str> {
 /// Only when this says maybe does the regex actually run, so the verdict is the regex's.
 #[inline]
 pub fn may_contain_bl(name: &str) -> bool {
-    memchr::memmem::find(name.as_bytes(), b"bl").is_some()
+    crate::protocols::has(name, "bl")
 }
 
 #[derive(Debug, PartialEq, Eq)]
@@ -149,12 +150,12 @@ pub enum Outcome {
     Alert,
 }
 
-/// The accumulator key of one (source, zone) pair.
-pub fn pair_key(src: Ip, zone: &str) -> u64 {
+/// The accumulator key of one (source, zone) pair, from the zone's `name_key`.
+pub fn pair_key(src: Ip, zone_key: u64) -> u64 {
     use std::hash::{Hash, Hasher};
     let mut h = SeededHasher::default();
     src.hash(&mut h);
-    h.write(zone.as_bytes());
+    h.write_u64(zone_key);
     h.finish()
 }
 
@@ -201,31 +202,51 @@ impl DnsTunneling {
     ///
     /// `subdomain` is everything below the registered zone; `leading` is its first label.
     pub fn observe(&mut self, key: u64, subdomain: &str, leading: &str, sec: u64) -> Outcome {
-        let carrying = leading.chars().count() >= settings::DNS_TUNNELING_MIN_LABEL
-            && entropy_x100(leading) >= settings::DNS_TUNNELING_MIN_ENTROPY_X100;
+        self.observe_unless(key, (name_key(subdomain), subdomain.len()), leading, sec, || false)
+    }
 
-        let entry = match self.pairs.get_mut(&key) {
-            Some(entry) => entry,
-            None => {
+    /// `observe`, where `exempt` says whether the pair's zone is excluded from the heuristic.
+    /// It depends on the zone alone, which is part of the key, so it is asked once, when the
+    /// pair is first seen in a window - not on every query, where it was a sixth of the cost
+    /// of a subdomain query.
+    ///
+    /// `subdomain` is the subdomain part as its `name_key` and its length in bytes.
+    pub fn observe_unless(
+        &mut self,
+        key: u64,
+        subdomain: (u64, usize),
+        leading: &str,
+        sec: u64,
+        exempt: impl FnOnce() -> bool,
+    ) -> Outcome {
+        let full = self.pairs.len() >= super::HEURISTIC_MAX_KEYS;
+        let entry = match self.pairs.entry(key) {
+            Entry::Occupied(e) => e.into_mut(),
+            Entry::Vacant(v) => {
                 // Refuse rather than evict, like every other accumulator here: the key is chosen
                 // by whoever is sending, so eviction under flood would let them push their own
                 // earlier evidence out of the window.
-                if self.pairs.len() >= super::HEURISTIC_MAX_KEYS {
+                if full {
                     self.saturations += 1;
                     return Outcome::Quiet;
                 }
-                self.pairs.entry(key).or_insert(Accumulator { first_sec: sec, ..Accumulator::default() })
+                v.insert(Accumulator { first_sec: sec, exempt: exempt(), ..Accumulator::default() })
             }
         };
+        if entry.exempt {
+            return Outcome::Quiet;
+        }
+        let carrying = leading.chars().count() >= settings::DNS_TUNNELING_MIN_LABEL
+            && entropy_x100(leading) >= settings::DNS_TUNNELING_MIN_ENTROPY_X100;
 
         entry.queries += 1;
         entry.last_sec = sec;
-        entry.bytes += subdomain.len();
+        entry.bytes += subdomain.1;
         if carrying {
             entry.carrying += 1;
         }
         if entry.names.len() < super::HEURISTIC_MAX_KEYS {
-            entry.names.insert(name_key(subdomain));
+            entry.names.insert(subdomain.0);
         }
 
         if entry.alerted || !entry.verdict() {
@@ -418,6 +439,24 @@ mod tests {
         feed(&mut t, "10.0.0.5|tunnel.example", 400, 40, 1);
         t.maybe_window_reset(settings::DNS_TUNNELING_WINDOW + 10_000);
         assert_eq!(feed(&mut t, "10.0.0.5|tunnel.example", 400, 40, 1), 1, "a new window reports again");
+    }
+
+    #[test]
+    fn an_exempt_zone_is_decided_once_per_pair_and_never_reports() {
+        let mut t = DnsTunneling::default();
+        let asked = std::cell::Cell::new(0);
+        let key = name_key("10.0.0.5|avqs.example");
+        for i in 0..2_000u64 {
+            let label = format!("{:x}{:x}", i.wrapping_mul(0x9e37_79b9_7f4a_7c15), i);
+            let out = t.observe_unless(key, (name_key(&label), label.len()), &label, i, || {
+                asked.set(asked.get() + 1);
+                true
+            });
+            assert_eq!(out, Outcome::Quiet);
+        }
+        assert_eq!(asked.get(), 1, "the exemption is asked when the pair is created, not per query");
+        // The same traffic on a zone that is not exempt does report - the control.
+        assert_eq!(feed(&mut DnsTunneling::default(), "10.0.0.5|tunnel.example", 400, 40, 1), 1);
     }
 
     #[test]

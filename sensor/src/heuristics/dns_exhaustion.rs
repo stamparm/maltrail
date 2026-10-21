@@ -1,7 +1,8 @@
 //! DNS-exhaustion heuristic — the `_subdomains` / `_dns_exhausted_domains` block in
 //! `sensor.py:_process_packet()`.
 
-use crate::fasthash::{name_key, FastSet, StrMap, StrSet};
+use crate::fasthash::{name_key, FastMap, FastSet};
+use std::collections::hash_map::Entry;
 
 use crate::settings;
 
@@ -14,11 +15,12 @@ struct Window {
 
 #[derive(Default)]
 pub struct DnsExhaustion {
-    domains: StrMap<Box<str>, Window>,
+    /// Keyed by `name_key(domain)`: one hash per query, no copy of the name per new domain.
+    domains: FastMap<u64, Window>,
     /// `_subdomains_sec` — hourly reset marker.
     hour_marker: Option<u64>,
     /// `_dns_exhausted_domains`
-    exhausted: StrSet<Box<str>>,
+    exhausted: FastSet<u64>,
     /// New domains refused because `HEURISTIC_MAX_KEYS` was reached.
     saturations: u64,
 }
@@ -60,26 +62,32 @@ impl DnsExhaustion {
     }
 
     pub fn is_exhausted(&self, domain: &str) -> bool {
-        self.exhausted.contains(domain)
+        self.exhausted.contains(&name_key(domain))
     }
 
     /// Record `subdomain_part` under `domain` and report what the caller should do.
     /// `threshold` is passed in so tests can lower it, exactly like the Python test does.
     pub fn observe(&mut self, domain: &str, subdomain_part: &str, sec: u64, threshold: usize) -> Outcome {
+        self.observe_keyed(name_key(domain), name_key(subdomain_part), sec, threshold)
+    }
+
+    /// `observe` with both names already hashed (`name_key`); the DNS path shares them with the
+    /// tunneling accumulator instead of hashing each name twice.
+    pub fn observe_keyed(&mut self, key: u64, subdomain_key: u64, sec: u64, threshold: usize) -> Outcome {
         // NOTE: membership test, not truthiness - an existing-but-empty set (just cleared
         // at the 60s boundary) must keep its window start.
-        let window = match self.domains.get_mut(domain) {
-            Some(w) => w,
-            None => {
+        let full = self.domains.len() >= super::HEURISTIC_MAX_KEYS;
+        let window = match self.domains.entry(key) {
+            Entry::Occupied(e) => e.into_mut(),
+            Entry::Vacant(v) => {
                 // Bounded: the hourly reset is a TIME bound, and the parent domain is chosen by
                 // whoever sends the query. Refuse new domains at the cap instead of evicting
                 // tracked ones, so a flood cannot push an in-progress window out of memory.
-                if self.domains.len() >= super::HEURISTIC_MAX_KEYS {
+                if full {
                     self.saturations += 1;
                     return Outcome::Continue;
                 }
-                self.domains.insert(domain.into(), Window { start: sec, subdomains: FastSet::default() });
-                self.domains.get_mut(domain).expect("just inserted")
+                v.insert(Window { start: sec, subdomains: FastSet::default() })
             }
         };
 
@@ -89,10 +97,10 @@ impl DnsExhaustion {
             return Outcome::Continue;
         }
         if window.subdomains.len() < threshold {
-            window.subdomains.insert(name_key(subdomain_part));
+            window.subdomains.insert(subdomain_key);
             return Outcome::Continue;
         }
-        if !self.exhausted.contains(domain) {
+        if !self.exhausted.contains(&key) {
             Outcome::Alert
         } else {
             Outcome::Suppress
@@ -100,12 +108,12 @@ impl DnsExhaustion {
     }
 
     pub fn mark_exhausted(&mut self, domain: &str) {
-        self.exhausted.insert(domain.into());
+        self.exhausted.insert(name_key(domain));
     }
 
     /// `any(_ in subdomains for _ in LOCAL_SUBDOMAIN_LOOKUPS)` — the local-resolution guard.
     pub fn has_local_lookup(&self, domain: &str) -> bool {
-        let Some(window) = self.domains.get(domain) else { return false };
+        let Some(window) = self.domains.get(&name_key(domain)) else { return false };
         settings::LOCAL_SUBDOMAIN_LOOKUPS.iter().any(|needle| window.subdomains.contains(&name_key(needle)))
     }
 

@@ -220,14 +220,22 @@ pub fn is_valid_dns_name(name: &str) -> bool {
 /// `\A\d+\-\d+\-\d+\-\d+\Z`, hand-coded — the dashed-quad first label check.
 #[inline]
 pub fn is_dashed_quad(label: &str) -> bool {
-    let mut groups = 0;
-    for part in label.split('-') {
-        if part.is_empty() || !part.bytes().all(|c| c.is_ascii_digit()) {
+    // One pass that fails on the first letter, which is where nearly every label fails.
+    let (mut groups, mut digits) = (1, 0);
+    for &c in label.as_bytes() {
+        if c == b'-' {
+            if digits == 0 {
+                return false;
+            }
+            groups += 1;
+            digits = 0;
+        } else if c.is_ascii_digit() {
+            digits += 1;
+        } else {
             return false;
         }
-        groups += 1;
     }
-    groups == 4
+    digits > 0 && groups == 4
 }
 
 pub fn statics() -> &'static Statics {
@@ -345,6 +353,19 @@ mod tests {
 
     fn root() -> PathBuf {
         PathBuf::from(env!("CARGO_MANIFEST_DIR")).parent().unwrap().to_path_buf()
+    }
+
+    #[test]
+    fn dashed_quad_agrees_with_the_regex_exhaustively() {
+        let re = regex::Regex::new(r"\A\d+-\d+-\d+-\d+\z").unwrap();
+        let mut frontier = vec![String::new()];
+        for _ in 0..9 {
+            frontier = frontier.iter().flat_map(|s| ["1", "-", "a"].map(|c| format!("{s}{c}"))).collect();
+            for s in &frontier {
+                assert_eq!(is_dashed_quad(s), re.is_match(s), "{s:?}");
+            }
+        }
+        assert!(is_dashed_quad("10-0-0-1") && !is_dashed_quad("") && !is_dashed_quad("1-2-3-4-5"));
     }
 
     #[test]

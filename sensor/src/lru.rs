@@ -10,22 +10,42 @@
 //! Intrusive doubly-linked list over a slab: O(1) lookups and inserts, amortized O(1)
 //! evictions, no allocation on the steady-state hot path.
 
-use crate::fasthash::StrMap;
 use std::borrow::Borrow;
-use std::hash::Hash;
+use std::hash::{BuildHasher, BuildHasherDefault, Hash, Hasher};
 
 const NIL: u32 = u32::MAX;
 
 struct Node<K, V> {
     key: K,
+    /// The key's seeded hash: the index key, and what eviction removes by.
+    hash: u64,
     value: V,
     prev: u32,
     next: u32,
     visited: bool,
 }
 
+/// The index is keyed by the key's seeded hash, already computed, so it hashes nothing again.
+#[derive(Default)]
+struct PreHashed(u64);
+
+impl Hasher for PreHashed {
+    fn write(&mut self, _: &[u8]) {
+        unreachable!("only u64 hashes are indexed")
+    }
+    fn write_u64(&mut self, h: u64) {
+        self.0 = h;
+    }
+    fn finish(&self) -> u64 {
+        self.0
+    }
+}
+
+/// Keyed by hash rather than by key: one hash per operation (the doorkeeper reuses it), and the
+/// key is stored once, in its node, instead of twice. Two keys sharing a 64-bit seeded hash
+/// only displace each other - a hit compares the stored key, and these are caches.
 pub struct LruMap<K: Eq + Hash + Clone, V> {
-    index: StrMap<K, u32>,
+    index: std::collections::HashMap<u64, u32, BuildHasherDefault<PreHashed>>,
     nodes: Vec<Node<K, V>>,
     free: Vec<u32>,
     head: u32, // newest
@@ -41,7 +61,7 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
     pub fn new(capacity: usize) -> Self {
         let capacity = capacity.max(1);
         LruMap {
-            index: StrMap::with_capacity_and_hasher(capacity.min(4096), Default::default()),
+            index: std::collections::HashMap::with_capacity_and_hasher(capacity.min(4096), Default::default()),
             nodes: Vec::with_capacity(capacity.min(4096)),
             free: Vec::new(),
             head: NIL,
@@ -76,12 +96,40 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
         self.hand = NIL;
     }
 
+    /// The hash every `*_hashed` method takes, so a lookup and the insert after it hash once.
+    /// `Hash for String` delegates to `str`, so an owned and a borrowed key hash alike.
+    #[inline]
+    pub fn hash_of<Q: Hash + ?Sized>(&self, key: &Q) -> u64 {
+        crate::fasthash::SeededBuildHasher::default().hash_one(key)
+    }
+
+    #[inline]
+    fn slot<Q>(&self, h: u64, key: &Q) -> Option<usize>
+    where
+        K: Borrow<Q>,
+        Q: Eq + ?Sized,
+    {
+        let idx = *self.index.get(&h)? as usize;
+        (self.nodes[idx].key.borrow() == key).then_some(idx)
+    }
+
     pub fn get<Q>(&mut self, key: &Q) -> Option<&V>
     where
         K: Borrow<Q>,
         Q: Hash + Eq + ?Sized,
     {
-        let idx = *self.index.get(key)? as usize;
+        let h = self.hash_of(key);
+        self.get_hashed(h, key)
+    }
+
+    /// `get` with `h = hash_of(key)` already computed.
+    #[inline]
+    pub fn get_hashed<Q>(&mut self, h: u64, key: &Q) -> Option<&V>
+    where
+        K: Borrow<Q>,
+        Q: Eq + ?Sized,
+    {
+        let idx = self.slot(h, key)?;
         self.nodes[idx].visited = true;
         Some(&self.nodes[idx].value)
     }
@@ -91,7 +139,7 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
         K: Borrow<Q>,
         Q: Hash + Eq + ?Sized,
     {
-        self.index.contains_key(key)
+        self.slot(self.hash_of(key), key).is_some()
     }
 
     /// Insert only if this key has been seen BEFORE — a cache-admission doorkeeper.
@@ -110,25 +158,10 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
     /// array store instead of a full LRU insert, while a recurring name still lands in the cache
     /// and gets its hits. Correctness is unaffected — these are pure caches, so a skipped insert
     /// only means the verdict is recomputed later.
-    pub fn insert_if_seen_before(&mut self, key: K, value: V)
-    where
-        K: Hash,
-    {
-        if self.doorkeeper.is_empty() {
-            self.insert(key, value);
-            return;
-        }
-        let h = {
-            use std::hash::BuildHasher;
-            crate::fasthash::SeededBuildHasher::default().hash_one(&key)
-        };
-        let slot = (h as usize) & (self.doorkeeper.len() - 1);
-        // Reserve 0 as "empty"; a fingerprint that hashes to 0 simply never gets promoted early.
-        let fingerprint = (h >> 16) | 1;
-        if self.doorkeeper[slot] == fingerprint {
-            self.insert(key, value);
-        } else {
-            self.doorkeeper[slot] = fingerprint;
+    pub fn insert_if_seen_before(&mut self, key: K, value: V) {
+        let h = self.hash_of(&key);
+        if self.admit(h) {
+            self.insert_hashed(h, key, value);
         }
     }
 
@@ -144,30 +177,50 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
         K: Borrow<Q>,
         Q: Hash + Eq + ?Sized + ToOwned<Owned = K>,
     {
-        if self.doorkeeper.is_empty() {
-            self.insert(key.to_owned(), value);
-            return;
-        }
-        // `Hash for String` delegates to `str`, so this is the same fingerprint the owned
-        // version computes — a key promoted by one is promoted by the other.
-        let h = {
-            use std::hash::BuildHasher;
-            crate::fasthash::SeededBuildHasher::default().hash_one(key)
-        };
-        let slot = (h as usize) & (self.doorkeeper.len() - 1);
-        let fingerprint = (h >> 16) | 1;
-        if self.doorkeeper[slot] == fingerprint {
-            self.insert(key.to_owned(), value);
-        } else {
-            self.doorkeeper[slot] = fingerprint;
+        let h = self.hash_of(key);
+        self.insert_if_seen_before_hashed(h, key, value);
+    }
+
+    /// `insert_if_seen_before_borrowed` with `h = hash_of(key)` already computed.
+    #[inline]
+    pub fn insert_if_seen_before_hashed<Q>(&mut self, h: u64, key: &Q, value: V)
+    where
+        K: Borrow<Q>,
+        Q: Eq + ?Sized + ToOwned<Owned = K>,
+    {
+        if self.admit(h) {
+            self.insert_hashed(h, key.to_owned(), value);
         }
     }
 
+    /// The doorkeeper: true on a key's second sighting (or always, without one).
+    #[inline]
+    fn admit(&mut self, h: u64) -> bool {
+        if self.doorkeeper.is_empty() {
+            return true;
+        }
+        let slot = (h as usize) & (self.doorkeeper.len() - 1);
+        // Reserve 0 as "empty"; a fingerprint that hashes to 0 simply never gets promoted early.
+        let fingerprint = (h >> 16) | 1;
+        if self.doorkeeper[slot] == fingerprint {
+            return true;
+        }
+        self.doorkeeper[slot] = fingerprint;
+        false
+    }
+
     pub fn insert(&mut self, key: K, value: V) {
-        if let Some(&idx) = self.index.get(&key) {
+        let h = self.hash_of(&key);
+        self.insert_hashed(h, key, value);
+    }
+
+    fn insert_hashed(&mut self, h: u64, key: K, value: V) {
+        if let Some(&idx) = self.index.get(&h) {
+            // The same key, or one sharing its hash, which it replaces.
             let node = &mut self.nodes[idx as usize];
+            node.visited = node.key == key;
+            node.key = key;
             node.value = value;
-            node.visited = true;
             return;
         }
 
@@ -175,22 +228,18 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
             self.evict();
         }
 
+        let node = Node { key, hash: h, value, prev: NIL, next: NIL, visited: false };
         let idx = match self.free.pop() {
             Some(i) => {
-                let node = &mut self.nodes[i as usize];
-                node.key = key.clone();
-                node.value = value;
-                node.prev = NIL;
-                node.next = NIL;
-                node.visited = false;
+                self.nodes[i as usize] = node;
                 i
             }
             None => {
-                self.nodes.push(Node { key: key.clone(), value, prev: NIL, next: NIL, visited: false });
+                self.nodes.push(node);
                 (self.nodes.len() - 1) as u32
             }
         };
-        self.index.insert(key, idx);
+        self.index.insert(h, idx);
         self.push_front(idx);
     }
 
@@ -209,10 +258,9 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
                 prev => prev,
             };
         }
-        let prev = self.nodes[idx as usize].prev;
-        self.hand = prev;
+        self.hand = self.nodes[idx as usize].prev;
         self.detach(idx);
-        self.index.remove(&self.nodes[idx as usize].key);
+        self.index.remove(&self.nodes[idx as usize].hash);
         self.free.push(idx);
     }
 
@@ -341,6 +389,16 @@ mod tests {
         assert!(!mixed.contains(keys[0].as_str()));
         mixed.insert_if_seen_before_borrowed(keys[0].as_str(), 1);
         assert!(mixed.contains(keys[0].as_str()), "the borrowed form must see the owned form's fingerprint");
+    }
+
+    #[test]
+    fn keys_sharing_a_hash_displace_each_other_and_never_alias() {
+        let mut m: LruMap<String, u32> = LruMap::new(4);
+        m.insert_hashed(7, "a".to_string(), 1);
+        m.insert_hashed(7, "b".to_string(), 2);
+        assert_eq!(m.get_hashed(7, "a"), None, "a different key with the same hash is not a hit");
+        assert_eq!(m.get_hashed(7, "b"), Some(&2));
+        assert_eq!(m.len(), 1);
     }
 
     #[test]

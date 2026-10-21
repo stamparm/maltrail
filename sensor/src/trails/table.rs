@@ -35,9 +35,7 @@ pub fn hash_bytes(data: &[u8]) -> u64 {
     }
     let rest = chunks.remainder();
     if !rest.is_empty() {
-        let mut buf = [0u8; 8];
-        buf[..rest.len()].copy_from_slice(rest);
-        h = (h ^ u64::from_le_bytes(buf)).wrapping_mul(K).rotate_left(27);
+        h = (h ^ crate::fasthash::tail_word(rest)).wrapping_mul(K).rotate_left(27);
     }
     mix(h)
 }

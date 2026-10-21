@@ -16,6 +16,13 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[=] DNS queries for new names and subdomains are 25-37% cheaper (subdomain
+    query 660 -> 430 ns, cold 405 -> 300 ns). The tunneling heuristic decides
+    a zone's exemption once per (source, zone) pair instead of per query,
+    the exempt-zone set no longer uses SipHash, both DNS accumulators share
+    one hash of each name, the domain caches hash a name once per lookup and
+    insert, and short-key hashing no longer calls memcpy. Events unchanged.
+
 [=] potential remote code execution heur is improved (Issue #19646).
 
 [=] JA3, JA4 and certificate SHA-1 digests are computed only when the trail

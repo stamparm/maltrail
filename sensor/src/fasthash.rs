@@ -31,15 +31,16 @@ impl FxHasher {
 impl Hasher for FxHasher {
     #[inline]
     fn write(&mut self, bytes: &[u8]) {
+        // The length goes in first: `tail_word` reads overlapping bytes, so it alone does not
+        // tell "k1" from "k11".
+        self.add_to_hash(bytes.len() as u64);
         let mut chunks = bytes.chunks_exact(8);
         for chunk in &mut chunks {
             self.add_to_hash(u64::from_ne_bytes(chunk.try_into().unwrap()));
         }
         let rest = chunks.remainder();
         if !rest.is_empty() {
-            let mut buf = [0u8; 8];
-            buf[..rest.len()].copy_from_slice(rest);
-            self.add_to_hash(u64::from_ne_bytes(buf));
+            self.add_to_hash(tail_word(rest));
         }
     }
 
@@ -87,6 +88,22 @@ impl Hasher for FxHasher {
 }
 
 pub type FxBuildHasher = BuildHasherDefault<FxHasher>;
+
+/// The 1-7 bytes after the last whole word, as one word, read the way wyhash does: two
+/// overlapping 4-byte loads, or three single bytes. Zero-padding a copy instead went through a
+/// libc memcpy call on every short key. Every byte is read; callers mix in the length, which
+/// the overlap needs to tell "k1" from "k11".
+#[inline]
+pub fn tail_word(rest: &[u8]) -> u64 {
+    let n = rest.len();
+    debug_assert!((1..8).contains(&n));
+    if n >= 4 {
+        let r4 = |i: usize| u32::from_le_bytes(rest[i..i + 4].try_into().unwrap()) as u64;
+        (r4(0) << 32) | r4(n - 4)
+    } else {
+        ((rest[0] as u64) << 16) | ((rest[n / 2] as u64) << 8) | rest[n - 1] as u64
+    }
+}
 
 // ---------------------------------------------------------------------------------------
 // Seeded hash for attacker-chosen keys
@@ -266,6 +283,15 @@ mod tests {
         let mut b = SeededHasher { seed: 0x1234_5678_9abc_def0, hash: 0x1234_5678_9abc_def0 };
         "evil.example".hash(&mut b);
         assert_ne!(a.finish(), b.finish(), "the seed must affect the digest");
+    }
+
+    #[test]
+    fn the_unseeded_string_hashes_keep_short_keys_apart() {
+        let fx: std::collections::HashSet<u64> = (0..20_000).map(|i| hash_of(&format!("k{i}"))).collect();
+        assert_eq!(fx.len(), 20_000);
+        let table: std::collections::HashSet<u64> =
+            (0..20_000).map(|i| crate::trails::table::hash_bytes(format!("k{i}").as_bytes())).collect();
+        assert_eq!(table.len(), 20_000);
     }
 
     #[test]
