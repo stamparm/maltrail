@@ -37,6 +37,9 @@
 [=] meta.sqlite is written by one thread, not by the capture workers: a
     worker hands its window over in ~10-90 us instead of stalling capture
     for the write. The write itself is one sorted upsert per row.
+[=] The trail hash table is sized to its entries instead of the next power
+    of two: 109 -> 74 MB for the full trail set (RSS 158 -> 122 MB).
+
 [=] The trail store is built file-backed only on hosts with under 2 GB of
     RAM. Its pages are reclaimable only after being written back, so every
     start and reload wrote the whole store to disk (125 MB measured on a

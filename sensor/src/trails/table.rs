@@ -115,10 +115,29 @@ impl NegativeFilter {
 // (more keys than the estimate it was built for) only loses rejection rate, which is a performance
 // question. One of those is a bug and the other is a trade-off; this keeps only the trade-off.
 
+/// Slots for `n` entries: a 0.8 load factor, NOT rounded up to a power of two. Rounding made the
+/// table double in steps - 1.63M trails sat in 4,194,304 slots (64 MiB, 39% full), and 2.9% more
+/// trails would have doubled it again - so slots are indexed with `slot_of` instead of a mask.
 fn capacity_for(n: usize) -> usize {
-    // Target ~0.78 load factor, rounded up to a power of two for masking.
-    let want = n.saturating_mul(10) / 8 + 1;
-    want.max(16).next_power_of_two()
+    (n.saturating_mul(10) / 8 + 1).max(16)
+}
+
+/// The home slot of hash `h` in a table of `cap` slots: a multiply-shift onto `0..cap` (Lemire's
+/// "fastrange"), as cheap as a mask but for any size. It uses the LOW 32 bits of `h`, so it stays
+/// independent of `StrSlot::tag`, which is the high 32.
+#[inline]
+fn slot_of(h: u64, cap: usize) -> usize {
+    (((h & 0xffff_ffff) * cap as u64) >> 32) as usize
+}
+
+/// The next slot of a linear probe.
+#[inline]
+fn next_slot(i: usize, cap: usize) -> usize {
+    if i + 1 == cap {
+        0
+    } else {
+        i + 1
+    }
 }
 
 #[derive(Clone, Copy)]
@@ -137,7 +156,6 @@ const EMPTY_STR_SLOT: StrSlot = StrSlot { tag: 0, off: 0, len: 0, val: EMPTY };
 pub struct StrTable {
     arena: Arena,
     slots: Region<StrSlot>,
-    mask: usize,
     len: usize,
     filter: NegativeFilter,
     spill: Option<Spill>,
@@ -154,7 +172,6 @@ impl StrTable {
         StrTable {
             arena: Arena::with_capacity(arena_hint, spill),
             slots: Region::filled(cap, EMPTY_STR_SLOT, spill),
-            mask: cap - 1,
             len: 0,
             filter: NegativeFilter::new_in(n, spill),
             spill: spill.cloned(),
@@ -194,7 +211,7 @@ impl StrTable {
     ///
     /// Returns `true` when the key was not already present. Callers that need to know
     /// (the loader counts distinct trails) must use this rather than a preceding
-    /// `contains()`: at 1.6 M rows the slots array is ~67 MB, so every probe is a cache
+    /// `contains()`: at 1.6 M rows the slots array is ~34 MB, so every probe is a cache
     /// miss and asking twice doubles the cost of building the table.
     pub fn insert(&mut self, key: &str, val: u32) -> bool {
         self.insert_hashed(key, hash_bytes(key.as_bytes()), val)
@@ -212,7 +229,7 @@ impl StrTable {
         }
         self.filter.insert(h);
         let tag = (h >> 32) as u32;
-        let mut i = (h as usize) & self.mask;
+        let mut i = slot_of(h, self.slots.len());
         loop {
             let slot = self.slots[i];
             if slot.val == EMPTY {
@@ -226,7 +243,7 @@ impl StrTable {
                 self.slots[i].val = val;
                 return false;
             }
-            i = (i + 1) & self.mask;
+            i = next_slot(i, self.slots.len());
         }
     }
 
@@ -246,7 +263,7 @@ impl StrTable {
             return None;
         }
         let tag = (h >> 32) as u32;
-        let mut i = (h as usize) & self.mask;
+        let mut i = slot_of(h, self.slots.len());
         loop {
             let slot = self.slots[i];
             if slot.val == EMPTY {
@@ -255,7 +272,7 @@ impl StrTable {
             if slot.tag == tag && slot.len as usize == bytes.len() && self.slot_key(slot) == bytes {
                 return Some(slot.val);
             }
-            i = (i + 1) & self.mask;
+            i = next_slot(i, self.slots.len());
         }
     }
 
@@ -265,19 +282,18 @@ impl StrTable {
     }
 
     /// Warm the cache lines a future `insert_hashed(_, h, _)` will touch. The slots array is
-    /// ~67 MB at real trail counts, so every probe is a DRAM round trip; issuing them a few
+    /// ~34 MB at real trail counts, so every probe is a DRAM round trip; issuing them a few
     /// rows ahead of the insert that needs them is most of what makes the serial pass keep up.
     #[inline]
     pub fn prefetch(&self, h: u64) {
-        let i = (h as usize) & self.mask;
+        let i = slot_of(h, self.slots.len());
         unsafe { std::ptr::read_volatile(self.slots.as_ptr().add(i)) };
         self.filter.prefetch(h);
     }
 
     fn grow(&mut self) {
-        let cap = (self.slots.len() * 2).max(16);
+        let cap = (self.slots.len() + self.slots.len() / 2).max(16);
         let old = std::mem::replace(&mut self.slots, Region::filled(cap, EMPTY_STR_SLOT, self.spill.as_ref()));
-        self.mask = cap - 1;
         for &slot in old.iter() {
             if slot.val == EMPTY {
                 continue;
@@ -285,10 +301,10 @@ impl StrTable {
             let mut i = {
                 let start = slot.off as usize;
                 let key = &self.arena[start..start + slot.len as usize];
-                (hash_bytes(key) as usize) & self.mask
+                slot_of(hash_bytes(key), cap)
             };
             while self.slots[i].val != EMPTY {
-                i = (i + 1) & self.mask;
+                i = next_slot(i, self.slots.len());
             }
             self.slots[i] = slot;
         }
@@ -315,7 +331,6 @@ unsafe impl<K: IntKey> Pod for IntSlot<K> {}
 /// Integer-keyed table (IPv4, or IPv4+port packed into a u64).
 pub struct IntTable<K: IntKey> {
     slots: Region<IntSlot<K>>,
-    mask: usize,
     len: usize,
     filter: NegativeFilter,
     spill: Option<Spill>,
@@ -367,7 +382,6 @@ impl<K: IntKey> IntTable<K> {
         let cap = capacity_for(n);
         IntTable {
             slots: Region::filled(cap, IntSlot { key: K::zero(), val: EMPTY }, spill),
-            mask: cap - 1,
             len: 0,
             filter: NegativeFilter::new_in(n, spill),
             spill: spill.cloned(),
@@ -394,7 +408,7 @@ impl<K: IntKey> IntTable<K> {
         }
         let h = key.hash_key();
         self.filter.insert(h);
-        let mut i = (h as usize) & self.mask;
+        let mut i = slot_of(h, self.slots.len());
         loop {
             if self.slots[i].val == EMPTY {
                 self.slots[i] = IntSlot { key, val };
@@ -405,7 +419,7 @@ impl<K: IntKey> IntTable<K> {
                 self.slots[i].val = val;
                 return;
             }
-            i = (i + 1) & self.mask;
+            i = next_slot(i, self.slots.len());
         }
     }
 
@@ -416,7 +430,7 @@ impl<K: IntKey> IntTable<K> {
         if !self.filter.maybe_contains(h) {
             return None;
         }
-        let mut i = (h as usize) & self.mask;
+        let mut i = slot_of(h, self.slots.len());
         loop {
             let slot = self.slots[i];
             if slot.val == EMPTY {
@@ -425,24 +439,23 @@ impl<K: IntKey> IntTable<K> {
             if slot.key == key {
                 return Some(slot.val);
             }
-            i = (i + 1) & self.mask;
+            i = next_slot(i, self.slots.len());
         }
     }
 
     fn grow(&mut self) {
-        let cap = (self.slots.len() * 2).max(16);
+        let cap = (self.slots.len() + self.slots.len() / 2).max(16);
         let old = std::mem::replace(
             &mut self.slots,
             Region::filled(cap, IntSlot { key: K::zero(), val: EMPTY }, self.spill.as_ref()),
         );
-        self.mask = cap - 1;
         for &slot in old.iter() {
             if slot.val == EMPTY {
                 continue;
             }
-            let mut i = (slot.key.hash_key() as usize) & self.mask;
+            let mut i = slot_of(slot.key.hash_key(), cap);
             while self.slots[i].val != EMPTY {
-                i = (i + 1) & self.mask;
+                i = next_slot(i, self.slots.len());
             }
             self.slots[i] = slot;
         }
