@@ -23,6 +23,11 @@
     resolver), its trail names both ("(x).evil.com (innocent.org)"), and a
     response yields at most one event; targets are matched against trails
     only, not judged by the heuristics.
+[-] Code only the retired Python sensor used: core/log.py's event writer
+    and condenser (log_event, flush_condensed_events) and core/meta.py's
+    writer and pruner. The server keeps everything it calls (the auth
+    events' syslog/logstash forwarding, severity_of, the /meta reader).
+
 [!] The published admin/changeme! login is accepted only from the server
     itself; over the network it is refused with a message saying to set
     USERS. The shipped maltrail.conf listens on 0.0.0.0, so every install

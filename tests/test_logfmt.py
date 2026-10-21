@@ -20,8 +20,8 @@ from core.log import event_json, safe_value
 
 TUPLE = (1767261603, 123456, "10.0.0.8", 6666, "5.5.5.5", 80, "TCP", "IP", "5.5.5.5", "malware (test)", "(static)")
 LOCALTIME = "2026-01-01 10:00:03.123456"
-# Built exactly as core/log.py:log_event() builds it, so this is the writer's own output rather
-# than a hand-copied approximation that could drift away from it.
+# Built from safe_value(), the field quoting both writers share (the sensor's copy is pinned against it
+# in sensor/tests/vectors.rs), so this is the writer's own output rather than a hand-copied approximation.
 TEXT = "%s %s %s" % (safe_value(LOCALTIME), safe_value("sensor-a"), " ".join(safe_value(_) for _ in TUPLE[2:]))
 
 

@@ -84,8 +84,8 @@ the Rust module that reproduces it.
 | Python | Rust |
 | --- | --- |
 | `core/log.py:safe_value()` | `src/event.rs::safe_value()` |
-| `core/log.py:log_event()` (whitelist gate, condensing, throttle bucket, line format) | `src/output.rs::log_event()` |
-| `core/log.py:flush_condensed_events()` | `src/output.rs::CondenseBuffer` |
+| `core/log.py:log_event()` (whitelist gate, condensing, throttle bucket, line format; removed with the Python sensor) | `src/output.rs::log_event()` |
+| `core/log.py:flush_condensed_events()` (removed with the Python sensor) | `src/output.rs::CondenseBuffer` |
 | `core/log.py:get_event_log_handle()` (daily file, localtime, 0644) | `src/output.rs::EventLog` |
 | `core/log.py:_send_datagram()` / `_endpoint_address()` | `src/output.rs::Datagram` |
 | CEF (`core/settings.py:CEF_FORMAT`, `_cef_escape`, `_trails_signature_id`) | `src/output.rs::cef_line()` |
@@ -101,5 +101,5 @@ the Rust module that reproduces it.
 | the retired Python suite | `tests/detection.rs` (same cases, same expected trails) |
 | `tests/_pcapgen.py` | `tests/support/mod.rs` packet builders + `tools/gen_corpus.py` |
 | `core/testing.py:detect_test()` | `tools/parity.py --corpus detect` (same traffic, same expectations, run through both sensors) |
-| `tests/test_addr.py`, `test_common.py`, `test_datatype.py`, `test_ignore.py`, `test_log_condense.py`, `test_trailsdict.py`, `test_config.py` | `tests/trails.rs`, and `#[cfg(test)] mod tests` in `src/addr.rs`, `src/lru.rs`, `src/ignore.rs`, `src/output.rs`, `src/config.rs` |
+| `tests/test_addr.py`, `test_common.py`, `test_datatype.py`, `test_ignore.py`, `test_trailsdict.py`, `test_config.py` | `tests/trails.rs`, and `#[cfg(test)] mod tests` in `src/addr.rs`, `src/lru.rs`, `src/ignore.rs`, `src/output.rs`, `src/config.rs` |
 | doctests in `core/addr.py`, `core/common.py`, `core/log.py`, `sensor.py` | ported as `#[test]` assertions with the same inputs/outputs |

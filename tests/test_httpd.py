@@ -122,7 +122,7 @@ class TestHttpd(unittest.TestCase):
         cls.tmp = tempfile.mkdtemp(prefix="mt_httpd_")
         logdir = cls.logdir = os.path.join(cls.tmp, "logs"); os.makedirs(logdir)
         cls.date = time.strftime("%Y-%m-%d")
-        from core.log import safe_value                    # write lines EXACTLY as log_event does (quoted spaced fields)
+        from core.log import safe_value                    # write lines EXACTLY as the sensor does (quoted spaced fields)
         def line(ts, *fields):
             return " ".join(safe_value(f) for f in (ts,) + fields)
         with open(os.path.join(logdir, cls.date + ".log"), "w") as f:
@@ -148,13 +148,12 @@ class TestHttpd(unittest.TestCase):
         _common.build_trails_bin(trails, trails + ".bin")
         assert os.path.isfile(trails + ".bin"), "the trail store must exist for the /check tests"
         # seed a condensed observable store so /meta has something to look up (the server reads LOG_DIR/meta.sqlite)
+        # (the sensor writes it; this is the same shape: 10.0.0.5 -> 8.8.8.8 seen once, evil.com looked up once)
         from core import meta as _meta
-        _meta.configure(os.path.join(logdir, "meta.sqlite"), enabled=True, flush_period=99999)
-        _meta._agg = {}
-        _meta.observe_conn("10.0.0.5", "8.8.8.8", False, 1700000000)
-        _meta.observe_dns("evil.com", 1700000000)
-        _meta.flush()
-        _meta.configure(None, enabled=False); _meta._agg = {}   # reset the test process's module state
+        from test_meta import write_store
+        write_store(os.path.join(logdir, "meta.sqlite"), [("10.0.0.5", _meta.SCOPE_LOCAL << 1, 1700000000, 1700000000, 1),
+                                                          ("8.8.8.8", _meta.SCOPE_REMOTE << 1, 1700000000, 1700000000, 1),
+                                                          ("evil.com", _meta.FLAG_DNS, 1700000000, 1700000000, 1)])
         cls.port = _free_port()
         cls.udp_port = _free_port()      # the sensor-facing event/heartbeat listener
         cfg = os.path.join(cls.tmp, "srv.conf")

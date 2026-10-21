@@ -3,7 +3,7 @@
 
 Both halves are well covered and neither covers this. `tests/test_httpd.py` drives 120 tests at
 the HTTP contract, and its fixture writes the log itself - its own comment says "write lines
-EXACTLY as log_event does", which is the assumption, not a check of it. `tests/test_logfmt.py`
+EXACTLY as the writer does", which is the assumption, not a check of it. `tests/test_logfmt.py`
 decodes both log formats from lines Python constructed. So every existing test asks the Python
 side whether it agrees with the Python side.
 

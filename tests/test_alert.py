@@ -320,5 +320,36 @@ class TestCorruptTimestamp(unittest.TestCase):
         self.assertGreater(event["timestamp"], 0, "positive control: a real time still converts")
 
 
+
+class CustomSeverityRegexTest(unittest.TestCase):
+    """A REMOTE_SEVERITY_REGEX an operator wrote with only some of the low/medium/high groups."""
+
+    def setUp(self):
+        self._saved = config.REMOTE_SEVERITY_REGEX
+
+    def tearDown(self):
+        config.REMOTE_SEVERITY_REGEX = self._saved
+
+    def test_a_regex_without_every_group_does_not_raise(self):
+        config.REMOTE_SEVERITY_REGEX = r"(?P<high>malware)"
+        self.assertEqual(severity_of("malware", "(static)"), "high")       # match.group("low") raised once
+        self.assertEqual(severity_of("harmless info", "(static)"), "medium", "no match falls back to medium")
+
+
+class CefEscapeTest(unittest.TestCase):
+    """core/log.py:_cef_escape(), which the server's SYSLOG_SERVER auth events go through."""
+
+    def test_special_characters_are_escaped(self):
+        from core.log import _cef_escape
+        self.assertEqual(_cef_escape("host.com/?a=b", extension=True), r"host.com/?a\=b")
+        self.assertEqual(_cef_escape("evil|marker"), r"evil\|marker")
+        self.assertEqual(_cef_escape("a\nb\rc"), "a b c")
+
+    def test_plain_values_are_unchanged(self):
+        from core.log import _cef_escape
+        self.assertEqual(_cef_escape("plain.example.com"), "plain.example.com")
+        self.assertEqual(_cef_escape("1.2.3.4", extension=True), "1.2.3.4")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -175,9 +175,9 @@ def ignore_event(event_tuple):
             try:
                 _ignore_events_regex = re.compile(regex_src, re.I)
             except re.error as ex:
-                # an invalid IGNORE_EVENTS_REGEX must NOT raise out of this per-event hot path: log_event only catches
-                # (OSError, IOError), so the re.error would propagate and drop EVERY event -> the sensor silently goes
-                # blind on a single config typo. Disable the rule (warn once) and keep logging, like FAIL2BAN_REGEX does.
+                # an invalid IGNORE_EVENTS_REGEX must NOT raise out of this per-event check: the re.error would propagate
+                # and drop EVERY event -> silently blind on a single config typo. Disable the rule (warn once) and keep
+                # going, like FAIL2BAN_REGEX does. (src/ignore.rs, the sensor's copy, behaves the same.)
                 _ignore_events_regex = None
                 print("[!] invalid regular expression in option 'IGNORE_EVENTS_REGEX' ('%s'): %s" % (regex_src, ex))
             _ignore_events_regex_src = regex_src    # NOTE: set even on failure so the bad pattern isn't recompiled (nor re-warned) on every subsequent event

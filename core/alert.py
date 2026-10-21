@@ -28,10 +28,8 @@ from core.settings import UNICODE_ENCODING
 # Outbound notification for events worth waking someone up for.
 #
 # It tails the daily event log rather than hooking the event path, because there is no single event
-# path to hook: a local Rust sensor writes its own log file, a remote one arrives as a UDP datagram
-# handled in log.py, and core/log.py:log_event() - which already feeds SYSLOG_SERVER and
-# LOGSTASH_SERVER - is only reached by the retired Python sensor. The log file is the one place every
-# event passes through, whoever produced it.
+# path to hook: a local Rust sensor writes its own log file, and a remote one arrives as a UDP datagram
+# handled in log.py. The log file is the one place every event passes through, whoever produced it.
 #
 # Severity comes from REMOTE_SEVERITY_REGEX, the same classification SYSLOG_SERVER and
 # LOGSTASH_SERVER already use, so an operator tunes one regex, not two.

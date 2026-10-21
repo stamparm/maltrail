@@ -63,7 +63,7 @@ def safe_value_vectors():
 
 
 def event_line_vectors():
-    """Whole event log lines, rendered exactly like core/log.py:log_event()."""
+    """Whole event log lines, rendered the way the event log has always been written: safe_value() per field."""
     events = [
         (1700000000, 123456, "10.0.0.5", 50000, "66.66.66.66", 443, "TCP", "IP", "66.66.66.66",
          "malware (test)", "(static)"),

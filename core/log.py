@@ -22,29 +22,15 @@ import traceback
 
 from core.addr import parse_host_port
 from core.addr import resolve_address
-from core.common import check_whitelisted
 from core.common import check_sudo
-from core.compat import xrange
-from core.enums import TRAIL
-from core.settings import CEF_FORMAT
 from core.settings import config
-from core.settings import CONDENSE_ON_INFO_KEYWORDS
-from core.settings import CONDENSED_EVENTS_FLUSH_PERIOD
-from core.settings import MAX_CONDENSED_EVENTS
 from core.settings import DEFAULT_ERROR_LOG_PERMISSIONS
 from core.settings import DEFAULT_EVENT_LOG_PERMISSIONS
-from core.settings import HOSTNAME
-from core.settings import NAME
 from core.settings import TIME_FORMAT
 from core.settings import UNICODE_ENCODING
-from core.settings import VERSION
-from core.ignore import ignore_event
 from collections import OrderedDict
 import socketserver as _socketserver
 
-_condensed_events = {}
-_condensing_thread = None
-_condensing_lock = threading.Lock()
 _single_messages = set()
 _thread_data = threading.local()
 
@@ -153,41 +139,6 @@ def safe_value(value):
         retval = "\"%s\"" % retval.replace('"', '""')
     return retval
 
-def flush_condensed_events(single=False):
-    while True:
-        if not single:
-            time.sleep(CONDENSED_EVENTS_FLUSH_PERIOD)
-
-        with _condensing_lock:
-            snapshot = list(_condensed_events.items())
-            _condensed_events.clear()
-
-        # NOTE: the (blocking) log_event I/O below runs OUTSIDE the lock, so a flush can't stall the threads condensing new events
-        for key, events in snapshot:
-            condensed = False
-
-            first_event = events[0]
-            condensed_event = list(first_event)
-
-            for i in xrange(1, len(events)):
-                current_event = events[i]
-                for j in xrange(3, 7):  # src_port, dst_ip, dst_port, proto
-                    if current_event[j] != condensed_event[j]:
-                        condensed = True
-                        if not isinstance(condensed_event[j], set):
-                            condensed_event[j] = set((condensed_event[j],))
-                        condensed_event[j].add(current_event[j])
-
-            if condensed:
-                for i in xrange(len(condensed_event)):
-                    if isinstance(condensed_event[i], set):
-                        condensed_event[i] = ','.join(str(_) for _ in sorted(condensed_event[i]))
-
-            log_event(condensed_event, skip_condensing=True)
-
-        if single:
-            break
-
 _endpoints_cache = {}
 
 def _endpoints(value):
@@ -201,8 +152,7 @@ def _endpoints(value):
     single endpoint working unchanged, and matches how the other list-valued options in
     maltrail.conf (e.g. FAIL2BAN_ALLOWLIST) are already written.
 
-    Memoized: log_event calls this per event, and the split is pure string work over a value that
-    never changes.
+    Memoized: the split is pure string work over a value that never changes.
 
     >>> _endpoints("1.2.3.4:514")
     ['1.2.3.4:514']
@@ -227,8 +177,8 @@ def _endpoint_address(value):
     Returns (socket family, sockaddr) for a remote-logging endpoint, IPv4/IPv6-safe.
     IPv4 addresses / hostnames keep the (host, port) form (sendto resolves them); IPv6 literals are resolved up-front.
 
-    NOTE: memoized per endpoint string - log_event runs this for every event, and the IPv6 branch calls getaddrinfo
-    (a potentially blocking DNS round-trip). Endpoints are stable config values, so resolve once instead of per event.
+    NOTE: memoized per endpoint string - the IPv6 branch calls getaddrinfo (a potentially blocking DNS round-trip),
+    and endpoints are stable config values, so resolve once instead of per datagram.
     """
 
     retval = _endpoint_cache.get(value)
@@ -242,7 +192,6 @@ def _endpoint_address(value):
     return retval
 
 _socket_cache = {}                  # family -> a reused UDP socket (one datagram socket serves any destination of that family)
-_signature_id_cache = [None, 0.0]   # (cached CEF signature_id, time computed); refreshed lazily, not stat-ed per event
 
 def _send_datagram(endpoint, data):
     """
@@ -267,21 +216,6 @@ def _send_datagram(endpoint, data):
         except socket.error:
             pass
 
-def _trails_signature_id():
-    """
-    The CEF signature_id is the trails-file date - it changes at most daily (or when trails are rebuilt), so cache
-    it and refresh ~every 5 min instead of stat-ing TRAILS_FILE (os.path.getctime) on every single event.
-    """
-
-    now = time.time()
-    if _signature_id_cache[0] is None or now - _signature_id_cache[1] >= 300:
-        try:
-            _signature_id_cache[0] = time.strftime("%Y-%m-%d", time.localtime(os.path.getctime(config.TRAILS_FILE)))
-        except OSError:
-            _signature_id_cache[0] = time.strftime("%Y-%m-%d")
-        _signature_id_cache[1] = now
-    return _signature_id_cache[0]
-
 def _cef_escape(value, extension=False):
     # CEF (ArcSight) escaping: '\' and '|' in the header fields (e.g. name); '\' and '=' in extension VALUES.
     # newlines terminate a syslog record, so they must never appear inside a field. Output is byte-identical
@@ -290,86 +224,6 @@ def _cef_escape(value, extension=False):
     retval = str(value).replace("\\", "\\\\")
     retval = retval.replace("=", "\\=") if extension else retval.replace("|", "\\|")
     return retval.replace("\r", " ").replace("\n", " ")
-
-def log_event(event_tuple, packet=None, skip_write=False, skip_condensing=False):
-    global _condensing_thread
-
-    if _condensing_thread is None:
-        with _condensing_lock:
-            if _condensing_thread is None:  # NOTE: double-checked under lock so concurrent first events can't spawn two flush threads
-                _condensing_thread = threading.Thread(target=flush_condensed_events)
-                _condensing_thread.daemon = True
-                _condensing_thread.start()
-
-    try:
-        sec, usec, src_ip, src_port, dst_ip, dst_port, proto, trail_type, trail, info, reference = event_tuple
-        if ignore_event(event_tuple):
-            return
-
-        if not (any(check_whitelisted(_) for _ in (src_ip, dst_ip)) and trail_type != TRAIL.DNS):  # DNS requests/responses can't be whitelisted based on src_ip/dst_ip
-            if not skip_write:
-                localtime = "%s.%06d" % (time.strftime(TIME_FORMAT, time.localtime(int(sec))), usec)
-
-                if not skip_condensing:
-                    if any(_ in info for _ in CONDENSE_ON_INFO_KEYWORDS):
-                        with _condensing_lock:
-                            key = (src_ip, trail)
-                            if key not in _condensed_events:
-                                _condensed_events[key] = []
-                            if len(_condensed_events[key]) < MAX_CONDENSED_EVENTS:
-                                _condensed_events[key].append(event_tuple)
-
-                        return
-
-                current_bucket = sec // config.PROCESS_COUNT
-                if getattr(_thread_data, "log_bucket", None) != current_bucket:  # log throttling
-                    _thread_data.log_bucket = current_bucket
-                    _thread_data.log_trails = set()
-                else:
-                    if any(_ in _thread_data.log_trails for _ in ((src_ip, trail), (dst_ip, trail))):
-                        return
-                    else:
-                        _thread_data.log_trails.add((src_ip, trail))
-                        _thread_data.log_trails.add((dst_ip, trail))
-
-                event = "%s %s %s\n" % (safe_value(localtime), safe_value(config.SENSOR_NAME), " ".join(safe_value(_) for _ in event_tuple[2:]))
-                if not config.DISABLE_LOCAL_LOG_STORAGE:
-                    # LOCAL_LOG_FORMAT changes the FILE and nothing else: LOG_SERVER is a wire
-                    # protocol other deployments parse, and the console line is meant to be read
-                    # by a person, so both keep the text form regardless.
-                    if (config.LOCAL_LOG_FORMAT or "").strip().lower() in ("json", "ndjson"):
-                        local_line = "%s\n" % event_json(event_tuple, severity_of(info, reference), config.SENSOR_NAME, localtime)
-                    else:
-                        local_line = event
-                    handle = get_event_log_handle(sec)
-                    os.write(handle, local_line.encode(UNICODE_ENCODING))
-
-                if config.LOG_SERVER:
-                    _payload = ("%s %s" % (sec, event)).encode(UNICODE_ENCODING)
-                    _send_datagram(config.LOG_SERVER, mts_sign(getattr(config, "LOG_SERVER_SECRET", None), _payload))
-
-                if config.SYSLOG_SERVER or config.LOGSTASH_SERVER:
-                    severity = severity_of(info, reference)
-
-                    if config.SYSLOG_SERVER:
-                        extension = "src=%s spt=%s dst=%s dpt=%s trail=%s ref=%s" % (src_ip, src_port, dst_ip, dst_port, _cef_escape(trail, True), _cef_escape(reference, True))
-                        _ = CEF_FORMAT.format(syslog_time=time.strftime("%b %d %H:%M:%S", time.localtime(int(sec))), host=HOSTNAME, device_vendor=NAME, device_product="sensor", device_version=VERSION, signature_id=_trails_signature_id(), name=_cef_escape(info), severity={"low": 0, "medium": 1, "high": 2}.get(severity), extension=extension)
-                        _ = _.encode(UNICODE_ENCODING)
-                        for endpoint in _endpoints(config.SYSLOG_SERVER):
-                            _send_datagram(endpoint, _)
-
-                    if config.LOGSTASH_SERVER:
-                        _ = event_json(event_tuple, severity, HOSTNAME).encode(UNICODE_ENCODING)
-                        for endpoint in _endpoints(config.LOGSTASH_SERVER):
-                            _send_datagram(endpoint, _)
-
-                if (config.DISABLE_LOCAL_LOG_STORAGE and not any((config.LOG_SERVER, config.SYSLOG_SERVER))) or config.console:
-                    sys.stderr.write(event)
-                    sys.stderr.flush()
-
-    except (OSError, IOError):
-        if config.SHOW_DEBUG:
-            traceback.print_exc()
 
 def event_json(event_tuple, severity, sensor, localtime=None):
     """One event as a JSON object, the form LOGSTASH_SERVER has always sent.
@@ -416,8 +270,9 @@ def severity_of(info, reference=""):
     reference cannot break an existing custom regex - re.search is unanchored, so a longer subject
     only ever matches more.
 
-    Shared by the SYSLOG_SERVER / LOGSTASH_SERVER senders above and by core/alert.py, so an operator
-    tunes one regex and every outbound channel agrees. Unmatched is "medium": the shipped regex names
+    Used by core/alert.py, and kept in step with the sensor's own copy (sensor/src/output.rs,
+    checked by tests/test_severity_parity.py), so an operator tunes one regex and every outbound
+    channel agrees. Unmatched is "medium": the shipped regex names
     the extremes (malware/ransomware/adversary high, scanner/reputation/attacker low) and leaves the
     middle - exploit kits, web skimmers - implicit.
 
@@ -431,7 +286,7 @@ def severity_of(info, reference=""):
     if config.REMOTE_SEVERITY_REGEX:
         match = re.search(config.REMOTE_SEVERITY_REGEX, "%s %s" % (info or "", reference or ""))
         if match:
-            groups = match.groupdict()   # NOTE: groupdict().get() (not match.group(name)) - a custom REMOTE_SEVERITY_REGEX that omits a low/medium/high group would otherwise raise IndexError ("no such group") per event, escaping log_event's handler and breaking syslog forwarding
+            groups = match.groupdict()   # NOTE: groupdict().get() (not match.group(name)) - a custom REMOTE_SEVERITY_REGEX that omits a low/medium/high group would otherwise raise IndexError ("no such group") per event
             for _ in ("low", "medium", "high"):
                 if groups.get(_):
                     retval = _

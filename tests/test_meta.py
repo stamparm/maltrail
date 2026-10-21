@@ -1,9 +1,11 @@
 # coding: utf-8
-"""Unit tests for core/meta.py (the condensed observable store). Pure stdlib, py2/py3, no network.
-Locks: pack/unpack roundtrip (v4/v6/domain), the batched merge summing counts across flushes/workers
-(MIN first_seen / MAX last_seen), the broadcast/multicast junk filter, scope tagging, smart
-score-prune (evict lowest-value to budget), and lookup."""
+"""Unit tests for core/meta.py, the READ side of the condensed observable store (LOG_DIR/meta.sqlite).
+The sensor writes and prunes the store (sensor/src/meta.rs, tested in sensor/tests/meta.rs, which
+also checks the schema against this reader); these lock what the server reads back: key packing
+(v4/v6/domain), the kind/scope decoding, and the read-only open. Pure stdlib, no network."""
 import os
+import sqlite3
+import stat
 import sys
 import shutil
 import tempfile
@@ -13,125 +15,83 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from core import meta as M
 
 
+def write_store(path, rows):
+    """A store shaped exactly like the sensor writes it: rows of (observable, flags, first, last, count)."""
+    con = sqlite3.connect(path)
+    con.execute("PRAGMA journal_mode=DELETE")
+    con.execute("CREATE TABLE observables (observable, flags INTEGER, first_seen INTEGER, last_seen INTEGER, count INTEGER, PRIMARY KEY(observable)) WITHOUT ROWID")
+    con.execute("CREATE TABLE meta_info (key TEXT PRIMARY KEY, value)")
+    con.execute("INSERT INTO meta_info (key, value) VALUES ('schema_version', 1)")
+    for observable, flags, first_seen, last_seen, count in rows:
+        key = observable if flags & M.FLAG_DNS else M._pack_lookup(observable)[0]
+        con.execute("INSERT INTO observables VALUES (?, ?, ?, ?, ?)", (key, flags, first_seen, last_seen, count))
+    con.commit()
+    con.close()
+
+
 class MetaTestCase(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.mkdtemp()
         self.db = os.path.join(self.tmp, "meta.sqlite")
-        M._agg = {}
-        M.configure(self.db, enabled=True, max_window_keys=1000)
+        M.configure(self.db)
 
     def tearDown(self):
-        M._agg = {}
-        M.configure(None, enabled=False)
+        M.configure(None)
         shutil.rmtree(self.tmp, ignore_errors=True)
 
 
-class TestPackUnpack(MetaTestCase):
-    def test_ipv4_roundtrip(self):
-        key = M._pack(0, "8.8.4.4")
-        self.assertEqual(len(bytes(key)), 4)
-        self.assertEqual(M._unpack(key), "8.8.4.4")
-
-    def test_ipv6_roundtrip(self):
-        key = M._pack(0, "2001:db8::1")
-        self.assertEqual(len(bytes(key)), 16)
-        self.assertEqual(M._unpack(key), "2001:db8::1")
-
-    def test_domain_stays_text(self):
-        key = M._pack(M.FLAG_DNS, "evil.com")
-        self.assertEqual(key, "evil.com")
-        self.assertEqual(M._unpack(key), "evil.com")
-
-    def test_pack_lookup_classifies(self):
-        self.assertEqual(M._pack_lookup("1.2.3.4")[1], "ip")
-        self.assertEqual(M._pack_lookup("2001:db8::5")[1], "ip")
-        self.assertEqual(M._pack_lookup("example.org")[1], "dns")
+class TestPackLookup(MetaTestCase):
+    def test_addresses_pack_to_blobs_and_names_stay_text(self):
+        self.assertEqual(M._pack_lookup("1.2.3.4"), (sqlite3.Binary(b"\x01\x02\x03\x04"), "ip"))
+        key, kind = M._pack_lookup("2001:db8::5")
+        self.assertEqual((len(bytes(key)), kind), (16, "ip"))
+        self.assertEqual(M._pack_lookup("example.org"), ("example.org", "dns"))
         # an all-digit-but-not-4-octet string is NOT a v4 address -> domain
         self.assertEqual(M._pack_lookup("12345")[1], "dns")
 
 
-class TestObserveAndMerge(MetaTestCase):
-    def test_both_endpoints_recorded(self):
-        M.observe_conn("192.168.0.5", "8.8.8.8", False, 100)
-        M.flush()
-        self.assertIsNotNone(M.lookup("192.168.0.5"))
-        self.assertIsNotNone(M.lookup("8.8.8.8"))
+class TestLookup(MetaTestCase):
+    def setUp(self):
+        MetaTestCase.setUp(self)
+        local, remote = M.SCOPE_LOCAL << 1, M.SCOPE_REMOTE << 1
+        write_store(self.db, [("192.168.0.5", local, 100, 200, 3),
+                              ("8.8.8.8", remote, 50, 250, 7),
+                              ("2001:db8::1", remote, 10, 20, 1),
+                              ("evil.com", M.FLAG_DNS, 1000, 2000, 42)])
 
-    def test_scope_tagging(self):
-        M.observe_conn("192.168.0.5", "8.8.8.8", False, 100)
-        M.flush()
-        self.assertEqual(M.lookup("192.168.0.5")["scope"], "local")
+    def test_an_address_reads_back_with_its_scope(self):
+        self.assertEqual(M.lookup("192.168.0.5"), {"observable": "192.168.0.5", "kind": "ip", "scope": "local",
+                                                   "first_seen": 100, "last_seen": 200, "count": 3})
         self.assertEqual(M.lookup("8.8.8.8")["scope"], "remote")
+        self.assertEqual(M.lookup("2001:db8::1")["count"], 1)
 
-    def test_dns_kind(self):
-        M.observe_dns("evil.com", 100)
-        M.flush()
+    def test_a_name_reads_back_as_dns(self):
         row = M.lookup("evil.com")
-        self.assertEqual(row["kind"], "dns")
-        self.assertEqual(row["count"], 1)
+        self.assertEqual((row["kind"], row["scope"], row["count"]), ("dns", "", 42))
 
-    def test_counts_sum_across_flushes(self):
-        # two flushes = two windows / two "workers" merging into the same DB
-        M.observe_conn("192.168.0.5", "8.8.8.8", False, 200)
-        M.observe_conn("192.168.0.5", "8.8.8.8", False, 250)
-        M.flush()
-        M.observe_conn("192.168.0.5", "8.8.8.8", False, 50)   # an EARLIER window, flushed later
-        M.flush()
-        row = M.lookup("8.8.8.8")
-        self.assertEqual(row["count"], 3)
-        self.assertEqual(row["first_seen"], 50)     # MIN across flushes even out-of-order
-        self.assertEqual(row["last_seen"], 250)     # MAX
+    def test_unknown_and_empty_answer_none(self):
+        self.assertIsNone(M.lookup("9.9.9.9"))
+        self.assertIsNone(M.lookup("nothing.example"))
+        self.assertIsNone(M.lookup(""))
 
-    def test_flush_clears_and_is_lockfree_swap(self):
-        M.observe_dns("a.com", 1)
-        self.assertEqual(len(M._agg), 1)
-        M.flush()
-        self.assertEqual(len(M._agg), 0)            # atomic swap emptied it
+    def test_a_read_only_store_is_still_read(self):
+        # The sensor writes it as root and the server reads it as another user: no write access.
+        os.chmod(self.db, stat.S_IRUSR | stat.S_IRGRP | stat.S_IROTH)
+        os.chmod(self.tmp, stat.S_IRUSR | stat.S_IXUSR)
+        try:
+            self.assertEqual(M.lookup("evil.com")["count"], 42)
+        finally:
+            os.chmod(self.tmp, stat.S_IRWXU)
 
 
-class TestJunkFilter(MetaTestCase):
-    def test_broadcast_multicast_unspecified_dropped(self):
-        M.observe_conn("0.0.0.0", "255.255.255.255", False, 10)
-        M.observe_conn("192.168.0.9", "239.255.255.250", False, 10)   # SSDP multicast dst
-        M.flush()
-        for junk in ("0.0.0.0", "255.255.255.255", "239.255.255.250"):
-            self.assertIsNone(M.lookup(junk), "%s should be filtered" % junk)
-        self.assertIsNotNone(M.lookup("192.168.0.9"))                 # the real endpoint survives
+class TestNoStore(MetaTestCase):
+    def test_a_missing_store_answers_none_and_is_not_created(self):
+        self.assertIsNone(M.lookup("evil.com"))
+        self.assertFalse(os.path.exists(self.db), "a lookup must never create the sensor's store")
 
-    def test_window_cap_blocks_new_keys(self):
-        M.configure(self.db, enabled=True, max_window_keys=2)
-        M._agg = {}
-        M.observe_dns("a.com", 1)
-        M.observe_dns("b.com", 1)
-        M.observe_dns("c.com", 1)      # over cap -> dropped
-        self.assertEqual(len(M._agg), 2)
-        M.observe_dns("a.com", 2)      # existing key still bumps despite cap
-        self.assertEqual(M._agg["a.com"][3], 2)
-
-
-class TestSmartPrune(MetaTestCase):
-    def test_keeps_established_evicts_junk(self):
-        # 20 established (old-but-recurring, high count/long span) + 200 DGA one-hits (recent, count=1)
-        for i in range(20):
-            M._agg["good-%d.net" % i] = [M.FLAG_DNS, 1000, 1000 + 20 * 86400, 500]
-        for i in range(200):
-            t = 100000 + i
-            M._agg["dga-%d.xyz" % i] = [M.FLAG_DNS, t, t, 1]
-        M.flush()
-        deleted = M.prune(50)          # budget 50 of 220
-        self.assertEqual(deleted, 170)
-        # all established survive; survivors are dominated by the established set
-        good = sum(1 for i in range(20) if M.lookup("good-%d.net" % i))
-        self.assertEqual(good, 20)
-
-
-class TestDisabled(MetaTestCase):
-    def test_noop_when_disabled(self):
-        M.configure(self.db, enabled=False)
-        M._agg = {}
-        M.observe_dns("x.com", 1)
-        M.observe_conn("1.1.1.1", "2.2.2.2", False, 1)
-        self.assertEqual(len(M._agg), 0)
+    def test_unconfigured_answers_none(self):
+        M.configure(None)
+        self.assertIsNone(M.lookup("evil.com"))
 
 
 if __name__ == "__main__":
