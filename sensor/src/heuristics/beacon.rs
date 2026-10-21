@@ -25,6 +25,7 @@
 
 use crate::addr::Ip;
 use crate::fasthash::FastMap;
+use std::collections::hash_map::Entry;
 
 /// Distinct inter-arrival gaps required before a verdict (so 9 connections).
 pub const MIN_INTERVALS: usize = 8;
@@ -104,8 +105,10 @@ impl BeaconTracker {
     /// (the clock does not move, so a retry storm cannot manufacture tiny regular gaps);
     /// above `MAX_INTERVAL_SECS` the pattern is considered broken and the history resets.
     pub fn observe(&mut self, src: Ip, dst: Ip, dst_port: u16, sec: u64) -> bool {
-        match self.flows.get_mut(&(src, dst, dst_port)) {
-            Some(flow) => {
+        let full = self.flows.len() >= super::HEURISTIC_MAX_KEYS;
+        match self.flows.entry((src, dst, dst_port)) {
+            Entry::Occupied(mut e) => {
+                let flow = e.get_mut();
                 if sec <= flow.last_sec {
                     return false; // replayed/reordered pcap clock: no gap at all
                 }
@@ -130,12 +133,12 @@ impl BeaconTracker {
                     false
                 }
             }
-            None => {
-                if self.flows.len() >= super::HEURISTIC_MAX_KEYS {
+            Entry::Vacant(v) => {
+                if full {
                     self.saturations += 1;
                     return false;
                 }
-                self.flows.insert((src, dst, dst_port), Flow::new(sec));
+                v.insert(Flow::new(sec));
                 false
             }
         }

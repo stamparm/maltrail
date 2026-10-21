@@ -41,16 +41,32 @@ pub fn flags_low(dns_data: &[u8]) -> Option<u8> {
 
 /// Decode the question name starting at offset 12.
 pub fn question(dns_data: &[u8]) -> Option<Question> {
-    let mut offset = 12usize;
     let mut name = String::with_capacity(64);
+    let (name_end, truncated) = decode_name(dns_data, &mut name);
+    Some(Question { name, name_end, truncated })
+}
+
+/// `question()` into a caller-owned buffer, returning only `name_end`: the packet path keeps one
+/// buffer per worker instead of allocating a name per datagram.
+#[inline]
+pub fn question_into(dns_data: &[u8], name: &mut String) -> Option<usize> {
+    Some(decode_name(dns_data, name).0)
+}
+
+/// The question-name walk: `name` is cleared and filled; returns `(name_end, truncated)`.
+fn decode_name(dns_data: &[u8], name: &mut String) -> (usize, bool) {
+    let mut offset = 12usize;
     let mut truncated = true;
     let mut non_ascii = false;
+    // Built as bytes: every part is valid UTF-8 on its own (see the end).
+    let mut buf = std::mem::take(name).into_bytes();
+    buf.clear();
 
     while dns_data.len() > offset {
         let length = dns_data[offset] as usize;
         if length == 0 {
-            // query = query[:-1] — drop the trailing dot
-            name.pop();
+            // query = query[:-1] - drop the trailing dot
+            buf.pop();
             truncated = false;
             break;
         }
@@ -59,30 +75,33 @@ pub fn question(dns_data: &[u8]) -> Option<Question> {
         let end = (offset + length + 1).min(dns_data.len());
         if start <= end {
             let label = &dns_data[start..end];
-            // Fast path: append the label lower-cased in place. It used to build a `String` per
-            // LABEL through `from_utf8_lossy` and then allocate a second whole `String` for
-            // `to_lowercase()` — four or five allocations for every DNS question on the wire.
+            // Fast path: the label is copied lower-cased.
             //
             // A DNS name that is not pure ASCII cannot pass `VALID_DNS_NAME_REGEX`, so it is
             // dropped before anything observable happens; the slow path is kept anyway so the
             // decoded text is byte-identical to Python's for every input.
             if label.is_ascii() {
-                for b in label {
-                    name.push(b.to_ascii_lowercase() as char);
-                }
+                // A byte loop: `extend_from_slice` is a libc memcpy call per label.
+                buf.extend(label.iter().map(u8::to_ascii_lowercase));
             } else {
                 non_ascii = true;
-                name.push_str(&String::from_utf8_lossy(label));
+                buf.extend_from_slice(String::from_utf8_lossy(label).as_bytes());
             }
         }
-        name.push('.');
+        buf.push(b'.');
         offset += length + 1;
     }
 
+    // SAFETY: `buf` is a concatenation of whole UTF-8 strings: ASCII labels, '.', and the
+    // output of `from_utf8_lossy`. Validating it again cost ~100 instructions per query, more
+    // than the walk itself.
+    *name = unsafe { String::from_utf8_unchecked(buf) };
     // Python applies `str.lower()` to the whole decoded name, which is Unicode-aware; only the
     // non-ASCII case needs it, and only that case pays for it.
-    let name = if non_ascii { name.to_lowercase() } else { name };
-    Some(Question { name, name_end: offset, truncated })
+    if non_ascii {
+        *name = name.to_lowercase();
+    }
+    (offset, truncated)
 }
 
 /// `type_, class_ = struct.unpack("!HH", dns_data[offset + 1:offset + 5])`

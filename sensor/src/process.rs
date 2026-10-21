@@ -120,22 +120,22 @@ fn check_domain_inner(
     //
     // Borrowed unless the name actually needs changing. Real DNS traffic is already lowercase and
     // portless, so this used to allocate a copy of every query for nothing.
-    let trimmed = match query.find(':') {
+    // Byte loops, not `find`/`memchr`: on a name this short their setup costs more than the scan.
+    let trimmed = match query.bytes().position(|b| b == b':') {
         Some(idx) => &query[..idx],
         None => query,
     };
+    // if query.replace('.', "").isdigit(): return   (an IP address, not a domain). Lower-casing
+    // cannot change the answer, and a name fails it on its first letter.
+    if trimmed.bytes().all(|b| b == b'.' || b.is_ascii_digit()) && trimmed.bytes().any(|b| b.is_ascii_digit()) {
+        return;
+    }
     let lowered: Cow<'_, str> = if trimmed.bytes().any(|b| b.is_ascii_uppercase()) {
         Cow::Owned(trimmed.to_lowercase())
     } else {
         Cow::Borrowed(trimmed)
     };
     let q: &str = lowered.as_ref();
-
-    // if query.replace('.', "").isdigit(): return   (an IP address, not a domain)
-    let without_dots = q.bytes().filter(|b| *b != b'.').count();
-    if without_dots > 0 && q.bytes().all(|b| b == b'.' || b.is_ascii_digit()) {
-        return;
-    }
 
     if st.domain_clean.contains(q) {
         st.metrics.cache_hits += 1;
@@ -430,10 +430,14 @@ fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader
             if let Some((key, base)) = pending {
                 if payload.first() != Some(&0x16) || payload.get(5) != Some(&0x01) {
                     let off = seq.wrapping_sub(base) as usize;
+                    let want = wanted_fingerprints(st);
                     if let Some(done) = st.hello.put(key, sec, off, payload) {
                         st.metrics.handshakes_reassembled += 1;
                         let reported = done.reported;
-                        if let Some(ch) = crate::protocols::tls::parse_client_hello(done.bytes) {
+                        // Owned: `done` borrows the assembler, which is part of `st`.
+                        let ch =
+                            crate::protocols::tls::parse_client_hello_with(done.bytes, want).map(|ch| ch.into_owned());
+                        if let Some(ch) = ch {
                             client_hello(st, &ch, !reported, sec, usec, ep);
                         }
                     }
@@ -459,11 +463,11 @@ fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader
             // The same record type carries both directions: a ClientHello gives a domain and
             // client fingerprints, the server's flight gives a certificate. A packet is one or
             // the other, so the ClientHello parse discriminates them.
-            if let Some(ch) = crate::protocols::tls::parse_client_hello(payload) {
+            if let Some(ch) = crate::protocols::tls::parse_client_hello_with(payload, wanted_fingerprints(st)) {
                 client_hello(st, &ch, true, sec, usec, ep);
                 return;
             }
-            if st.cfg.check_tls_fingerprints {
+            if st.cfg.check_tls_fingerprints && st.trails.db().has_fingerprints(crate::trails::FP_CERT) {
                 check_server_certificate(st, payload, sec, usec, ep);
             }
         }
@@ -532,6 +536,16 @@ fn tcp_wire_payload<'a>(ip_data: &'a [u8], header: &packet::IpHeader, tcph: &pac
 }
 
 /// A parsed ClientHello: the SNI against the domain trails, the fingerprints against JA3/JA4.
+/// The client fingerprints worth computing: those the trail set could match at all.
+fn wanted_fingerprints(st: &WorkerState) -> u8 {
+    use crate::trails::{FP_JA3, FP_JA4};
+    if !st.cfg.check_tls_fingerprints {
+        return 0;
+    }
+    let db = st.trails.db();
+    (if db.has_fingerprints(FP_JA3) { FP_JA3 } else { 0 }) | (if db.has_fingerprints(FP_JA4) { FP_JA4 } else { 0 })
+}
+
 fn client_hello(
     st: &mut WorkerState,
     ch: &crate::protocols::tls::ClientHello,
@@ -570,15 +584,19 @@ fn check_client_fingerprint(
     usec: u32,
     ep: Endpoints,
 ) {
-    // JA3 first: that is what feeds publish. A hit short-circuits the second lookup.
+    // JA3 first: that is what feeds publish. A hit short-circuits the second lookup. Either is
+    // empty when no trail has its shape (`wanted_fingerprints`).
+    if ch.ja3.is_empty() && ch.ja4.is_empty() {
+        return;
+    }
     st.metrics.trail_lookups += 1;
-    if let Some(hit) = st.trails.db().get(ch.ja3.as_str()) {
+    if let Some(hit) = st.trails.db().get(ch.ja3.as_str()).filter(|_| !ch.ja3.is_empty()) {
         let (info, reference) = (hit.info.to_string(), hit.reference.to_string());
         emit_ep(st, sec, usec, ep, PROTO::TCP, TRAIL::JA3, Field::Text(ch.ja3.clone()), &info, &reference);
         return;
     }
     st.metrics.trail_lookups += 1;
-    if let Some(hit) = st.trails.db().get(ch.ja4.as_str()) {
+    if let Some(hit) = st.trails.db().get(ch.ja4.as_str()).filter(|_| !ch.ja4.is_empty()) {
         let (info, reference) = (hit.info.to_string(), hit.reference.to_string());
         emit_ep(st, sec, usec, ep, PROTO::TCP, TRAIL::JA4, Field::Text(ch.ja4.clone()), &info, &reference);
     }
@@ -1751,45 +1769,53 @@ fn dns_packet(
     if qd == 0 {
         return;
     }
-    let Some(question) = dns::question(dns_data) else { return };
-    let query = question.name;
+    // The name is decoded into a buffer the worker keeps, not a fresh String per packet.
+    let mut name = std::mem::take(&mut st.dns_name);
+    if let Some(name_end) = dns::question_into(dns_data, &mut name) {
+        dns_name(st, dns_data, ep, &name, name_end, sec, usec);
+    }
+    st.dns_name = name;
+}
 
+/// The DNS path past the question decode; `query` is the lower-cased name and `name_end` the
+/// offset of its terminating label.
+fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, name_end: usize, sec: u64, usec: u32) {
     // `query.split('.')` used to build a Vec here, and every `parts[k..].join(".")` below
     // rebuilt a String. Both are unnecessary: the labels are contiguous inside `query`, so a
     // suffix of them IS a substring of it. `Dots` records the last few separator offsets in one
     // backward scan and hands out borrowed slices - no Vec, no join, no allocation, for the
     // shape that dominates DNS traffic.
-    let dots = Dots::of(&query);
+    let dots = Dots::of(query);
     if query.is_empty()
-        || !settings::is_valid_dns_name(&query)
-        || st.statics.f_intranet.find(query.as_bytes()).is_some()
-        || st.statics.ignore_dns_query_suffixes.contains(dots.last_label(&query))
+        || !settings::is_valid_dns_name(query)
+        || query.bytes().enumerate().any(|(i, b)| b == b'.' && query.as_bytes()[i..].starts_with(b".intranet."))
+        || st.statics.ignore_dns_query_suffixes.contains(dots.last_label(query))
     {
         return;
     }
 
     // Condensed store: the queried name, recorded after the same validity/ignore filter Python
     // applies and before the standard-query check, so a response-only capture still contributes.
-    st.meta.observe_dns(&query, sec);
+    st.meta.observe_dns(query, sec);
 
     let label_count = dots.label_count();
     // The whitelist DEPTH for the FULL query name, computed once for this packet. `query` is
     // already lower-case and contains no ':' (a DNS name that did would fail
     // `is_valid_dns_name`), so this is exactly what `check_domain` would compute for it.
-    let wl_query = st.check_domain_whitelist_depth(&query);
+    let wl_query = st.check_domain_whitelist_depth(query);
 
     let Some(flags_high) = dns::flags_high(dns_data) else { return };
     let Some(flags_low) = dns::flags_low(dns_data) else { return };
 
     if flags_high & 0xfa == 0x00 {
         // standard query (recursive or not)
-        let Some((type_, class_)) = dns::question_type_class(dns_data, question.name_end) else { return };
+        let Some((type_, class_)) = dns::question_type_class(dns_data, name_end) else { return };
 
         if label_count > 2 {
-            let domain = if label_count > 3 && dots.label(&query, label_count - 2).len() <= 3 {
-                dots.suffix_from(&query, label_count - 3)
+            let domain = if label_count > 3 && dots.label(query, label_count - 2).len() <= 3 {
+                dots.suffix_from(query, label_count - 3)
             } else {
-                dots.suffix_from(&query, label_count - 2)
+                dots.suffix_from(query, label_count - 2)
             };
 
             // One walk, reused. `wl_query` covers the domain's suffixes too, so when it is zero
@@ -1799,15 +1825,15 @@ fn dns_packet(
                 st.dns_exhaustion.maybe_hourly_reset(sec);
 
                 // Dashed-quad first labels (e.g. 1-2-3-4.dyn.example) are not tracked.
-                if !settings::is_dashed_quad(dots.label(&query, 0)) {
-                    let subdomain_part = dots.prefix_upto(&query, label_count - 2);
+                if !settings::is_dashed_quad(dots.label(query, 0)) {
+                    let subdomain_part = dots.prefix_upto(query, label_count - 2);
                     match st.dns_exhaustion.observe(domain, subdomain_part, sec, settings::DNS_EXHAUSTION_THRESHOLD) {
                         Outcome::Continue => {}
                         Outcome::Alert => {
                             let trail = format!(
                                 "({}).{}",
-                                dots.prefix_upto(&query, label_count - 2),
-                                dots.suffix_from(&query, label_count - 2)
+                                dots.prefix_upto(query, label_count - 2),
+                                dots.suffix_from(query, label_count - 2)
                             );
                             // generic DNSBL check
                             if !st.statics.bl_word.is_match(&trail)
@@ -1849,9 +1875,9 @@ fn dns_packet(
                         && st.statics.bl_word.is_match(domain))
                 {
                     st.dns_tunneling.maybe_window_reset(sec);
-                    let subdomain_part = dots.prefix_upto(&query, label_count - 2);
+                    let subdomain_part = dots.prefix_upto(query, label_count - 2);
                     let key = crate::heuristics::dns_tunneling::pair_key(ep.src, domain);
-                    if st.dns_tunneling.observe(key, subdomain_part, dots.label(&query, 0), sec)
+                    if st.dns_tunneling.observe(key, subdomain_part, dots.label(query, 0), sec)
                         == crate::heuristics::dns_tunneling::Outcome::Alert
                     {
                         let trail = format!("({subdomain_part}).{domain}");
@@ -1890,7 +1916,7 @@ fn dns_packet(
                 emit_ep(st, sec, usec, ep, PROTO::UDP, TRAIL::IP, Field::Text(trail), &info, &reference);
             }
 
-            check_domain_inner(st, &query, sec, usec, ep, PROTO::UDP, Some(wl_query));
+            check_domain_inner(st, query, sec, usec, ep, PROTO::UDP, Some(wl_query));
         }
         return;
     }
@@ -1903,18 +1929,19 @@ fn dns_packet(
         return; // not a response
     }
 
-    // From here on this is a DNS RESPONSE - a small fraction of DNS traffic, and the branches
-    // below index labels from both ends, so the plain Vec stays. The hot QUERY path above never
-    // builds it.
-    let parts: Vec<&str> = query.split('.').collect();
+    // From here on this is a DNS RESPONSE. The branches below index labels from both ends, so
+    // they split the name into a Vec - but only once one of them has something to report or
+    // track; a plain answer (nearly every response) never builds it.
+    let parts = || -> Vec<&str> { query.split('.').collect() };
 
     if flags_low == 0x80 {
         // recursion available, no error -> look for a sinkholed / parked A record
-        if let Some(answer) = dns::first_a_record(dns_data, question.name_end) {
+        if let Some(answer) = dns::first_a_record(dns_data, name_end) {
             let answer_ip = Ip::V4(answer);
             let hit = st.trails.db().get_ip(answer_ip).map(|v| (v.info.to_string(), v.reference.to_string()));
             if let Some((info, _reference)) = hit {
-                if !st.check_domain_whitelisted(&query) {
+                if !st.check_domain_whitelisted(query) {
+                    let parts = parts();
                     let trail =
                         format!("({}).{}", parts[..parts.len() - 1].join("."), parts[parts.len() - 1..].join("."));
                     if info.contains("sinkhole") {
@@ -1946,10 +1973,11 @@ fn dns_packet(
     }
 
     // --- recursion available, no such name (NXDOMAIN) ---
+    let parts = parts();
     let parent = parts[parts.len().saturating_sub(2)..].join(".");
     if st.dns_exhaustion.is_exhausted(&parent)
-        || st.check_domain_whitelisted(&query)
-        || st.trails.db().contains_domain_member(&query)
+        || st.check_domain_whitelisted(query)
+        || st.trails.db().contains_domain_member(query)
     {
         return;
     }
@@ -1971,10 +1999,10 @@ fn dns_packet(
             } else {
                 None
             };
-            let keys: Vec<String> = std::iter::once(query.clone()).chain(wildcard).collect();
+            let keys: Vec<String> = std::iter::once(query.to_string()).chain(wildcard).collect();
 
             for key in keys {
-                match st.nxdomain.observe(&key, &query, sec) {
+                match st.nxdomain.observe(&key, query, sec) {
                     None => {}
                     Some(NxAlert::Wildcard { trail, .. }) => {
                         if !st.statics.local_subdomain_lookups.is_match(&trail) {

@@ -52,6 +52,8 @@ pub struct WorkerState {
     /// different datagrams of one socket apart, and suppressing the second silently drops a
     /// DNS query that was never parsed - see `payload_digest` in process.rs.
     pub last_udp_payload: u64,
+    /// Reused buffer for the DNS question name (`process::dns_packet`).
+    pub dns_name: String,
     pub last_logged_udp: Option<FlowStamp>,
 
     // --- caches (core/datatype.py:LRUDict, capacity MAX_CACHE_ENTRIES) ---
@@ -117,6 +119,7 @@ impl WorkerState {
             last_logged_syn: None,
             last_udp: None,
             last_udp_payload: 0,
+            dns_name: String::with_capacity(256),
             last_logged_udp: None,
             // Second-sighting admission: see `LruMap::insert_if_seen_before`. These two are the
             // caches a DGA flood hammers with names it never repeats, where the insert cost the

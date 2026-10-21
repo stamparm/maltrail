@@ -18,6 +18,15 @@
 
 [=] potential remote code execution heur is improved (Issue #19646).
 
+[=] JA3, JA4 and certificate SHA-1 digests are computed only when the trail
+    set holds a key of that shape. The shipped trail set holds none, so a
+    TLS handshake no longer pays for an MD5, two SHA-256s and a SHA-1 that
+    could never match (ClientHello path ~5,300 -> ~1,000 instructions).
+    DNS names are decoded into a reused buffer and checked in fewer passes
+    (warm query 230 -> 178 ns, cold 478 -> 409 ns). On the reference network
+    with the shipped trail shapes the packet path runs 38% fewer
+    instructions (757M -> 467M) and replays 31% faster, events unchanged.
+
 [=] Faster packet path: 46% fewer instructions per packet on the reference
     network (500 hosts, 208k packets), with byte-identical events. Release
     builds use fat LTO (9-17% on every benchmark row); JA4's SHA-256s are

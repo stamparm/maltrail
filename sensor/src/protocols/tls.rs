@@ -56,41 +56,55 @@ impl<'a> Reader<'a> {
 /// `tls_intel` lower-cases first and validates `[a-z0-9_]`, while `quic_sni` validates
 /// case-insensitively without lower-casing.
 pub fn is_hostname(value: &str, lowercase_only: bool) -> bool {
-    if value.is_empty() || value.len() > 253 {
-        return false;
-    }
-    let ok_first = |c: u8| {
-        c.is_ascii_digit()
-            || c == b'_'
-            || (if lowercase_only { c.is_ascii_lowercase() } else { c.is_ascii_alphabetic() })
-    };
-    let ok_rest = |c: u8| ok_first(c) || c == b'-';
-
-    let mut labels = 0usize;
-    for label in value.split('.') {
-        let bytes = label.as_bytes();
-        if bytes.is_empty() || bytes.len() > 63 {
-            return false;
-        }
-        if !ok_first(bytes[0]) {
-            return false;
-        }
-        if !bytes[1..].iter().copied().all(ok_rest) {
-            return false;
-        }
-        labels += 1;
-    }
-    // The pattern requires at least one "label." group before the final label.
-    labels >= 2
+    is_hostname_bytes(value.as_bytes(), lowercase_only)
 }
 
+/// `is_hostname` in one pass over raw bytes; anything non-ASCII fails it.
+fn is_hostname_bytes(b: &[u8], lowercase_only: bool) -> bool {
+    if b.is_empty() || b.len() > 253 {
+        return false;
+    }
+    let mut dots = 0usize;
+    let mut label = 0usize;
+    for &c in b {
+        if c == b'.' {
+            if label == 0 {
+                return false;
+            }
+            dots += 1;
+            label = 0;
+            continue;
+        }
+        let letter = if lowercase_only { c.is_ascii_lowercase() } else { c.is_ascii_alphabetic() };
+        if !(letter || c.is_ascii_digit() || c == b'_' || (c == b'-' && label > 0)) {
+            return false;
+        }
+        label += 1;
+        if label > 63 {
+            return false;
+        }
+    }
+    // The pattern requires at least one "label." group before the final label.
+    label > 0 && dots >= 1
+}
+
+pub use crate::trails::{FP_JA3, FP_JA4};
+
 /// What a ClientHello yields once parsed: the SNI (if any) plus both client fingerprints.
-pub struct ClientHello {
-    pub sni: Option<String>,
+pub struct ClientHello<'a> {
+    /// Borrowed from the packet unless lower-casing changed it.
+    pub sni: Option<std::borrow::Cow<'a, str>>,
     /// MD5 of the JA3 string - the form JA3 feeds publish (`ja3` in `core/tls_intel.py`).
     pub ja3: String,
     /// The JA4 client fingerprint, `t13d0605h2_..._...`.
     pub ja4: String,
+}
+
+impl ClientHello<'_> {
+    /// Detached from the bytes it was parsed from.
+    pub fn into_owned(self) -> ClientHello<'static> {
+        ClientHello { sni: self.sni.map(|s| std::borrow::Cow::Owned(s.into_owned())), ja3: self.ja3, ja4: self.ja4 }
+    }
 }
 
 /// `core/tls_intel.py:_is_grease()` - the reserved "GREASE" values a real stack may sprinkle
@@ -131,7 +145,7 @@ pub fn client_hello_sni(data: &[u8]) -> Option<String> {
         }
         let body = r.take(elen)?;
         if etype == 0x0000 {
-            return parse_sni_extension(body, true).ok().flatten();
+            return sni_extension(body, true).ok().flatten().map(std::borrow::Cow::into_owned);
         }
     }
     None
@@ -141,11 +155,17 @@ pub fn client_hello_sni(data: &[u8]) -> Option<String> {
 /// byte-for-byte compatible with `core/tls_intel.py:_parse_client_hello()`: same tolerances
 /// for truncation (the extension region is parsed as far as the buffer reaches, the fixed
 /// fields are not), same GREASE filtering, same string forms before hashing.
-pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello> {
+pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello<'_>> {
+    parse_client_hello_with(data, FP_JA3 | FP_JA4)
+}
+
+/// `parse_client_hello`, computing only the fingerprints in `want` (`FP_JA3`, `FP_JA4`); the
+/// others are left empty. Whether the hello parses, and its SNI, do not depend on `want`.
+pub fn parse_client_hello_with(data: &[u8], want: u8) -> Option<ClientHello<'_>> {
     thread_local! {
         static SCRATCH: std::cell::RefCell<Scratch> = std::cell::RefCell::new(Scratch::default());
     }
-    SCRATCH.with(|scratch| parse_client_hello_into(data, &mut scratch.borrow_mut()))
+    SCRATCH.with(|scratch| parse_client_hello_into(data, want, &mut scratch.borrow_mut()))
 }
 
 /// The working lists of one parse. Kept per thread and cleared, not freed, so a ClientHello
@@ -164,7 +184,7 @@ struct Scratch {
     ja4_c: String,
 }
 
-fn parse_client_hello_into(data: &[u8], w: &mut Scratch) -> Option<ClientHello> {
+fn parse_client_hello_into<'a>(data: &'a [u8], want: u8, w: &mut Scratch) -> Option<ClientHello<'a>> {
     let mut r = Reader::new(data);
     if r.b.first() == Some(&0x16) {
         r.take(5)?; // optional TLS record header
@@ -220,7 +240,7 @@ fn parse_client_hello_into(data: &[u8], w: &mut Scratch) -> Option<ClientHello> 
                 // `_parse_sni()` takes the name bytes BEFORE looking at the entry type, and
                 // its `take()` raises past the body - a raised exception fails the WHOLE
                 // Python parse, unlike every list helper here (they loop on `left()`).
-                0x0000 => match parse_sni_extension(body, true) {
+                0x0000 => match sni_extension(body, true) {
                     Ok(parsed) => sni = parsed,
                     Err(FatalTruncation) => return None,
                 },
@@ -240,51 +260,13 @@ fn parse_client_hello_into(data: &[u8], w: &mut Scratch) -> Option<ClientHello> 
         }
     }
 
-    // JA3: version,ciphers,extensions,curves,ecpf - dash-joined decimal lists, in one buffer.
-    // Digits are written directly: `write!` through core::fmt was the largest single cost of
-    // the whole parse on a browser's 19-extension ClientHello.
-    fn push_dec(out: &mut String, v: u16) {
-        let mut buf = [0u8; 5];
-        let mut i = buf.len();
-        let mut v = v;
-        loop {
-            i -= 1;
-            buf[i] = b'0' + (v % 10) as u8;
-            v /= 10;
-            if v == 0 {
-                break;
-            }
-        }
-        for &d in &buf[i..] {
-            out.push(d as char);
-        }
+    if want & (FP_JA3 | FP_JA4) == 0 {
+        return Some(ClientHello { sni, ja3: String::new(), ja4: String::new() });
     }
-    fn append_dec(out: &mut String, list: &[u16]) {
-        for (i, v) in list.iter().enumerate() {
-            if i > 0 {
-                out.push('-');
-            }
-            push_dec(out, *v);
-        }
+    let ja3 = if want & FP_JA3 != 0 { ja3_digest(legacy_version, w) } else { String::new() };
+    if want & FP_JA4 == 0 {
+        return Some(ClientHello { sni, ja3, ja4: String::new() });
     }
-    let ja3_str = &mut w.ja3_str;
-    ja3_str.clear();
-    push_dec(ja3_str, legacy_version);
-    ja3_str.push(',');
-    append_dec(ja3_str, &w.ciphers);
-    ja3_str.push(',');
-    append_dec(ja3_str, &w.ext_types);
-    ja3_str.push(',');
-    append_dec(ja3_str, &w.curves);
-    ja3_str.push(',');
-    for (i, b) in w.ecpf.iter().enumerate() {
-        if i > 0 {
-            ja3_str.push('-');
-        }
-        push_dec(ja3_str, *b as u16);
-    }
-    use md5::Digest as Md5Digest;
-    let ja3 = hex_lowercase(&md5::Md5::digest(ja3_str.as_bytes()));
 
     // JA4 (client): ja4_a _ ja4_b _ ja4_c.
     let ver = w.sup_vers.iter().copied().max().unwrap_or(legacy_version);
@@ -347,6 +329,56 @@ fn parse_client_hello_into(data: &[u8], w: &mut Scratch) -> Option<ClientHello> 
     push_sha256_12(&mut ja4, &w.ja4_c);
 
     Some(ClientHello { sni, ja3, ja4 })
+}
+
+/// Decimal, written directly: `write!` through core::fmt was the largest single cost of the
+/// whole parse on a browser's 19-extension ClientHello.
+fn push_dec(out: &mut String, v: u16) {
+    let mut buf = [0u8; 5];
+    let mut i = buf.len();
+    let mut v = v;
+    loop {
+        i -= 1;
+        buf[i] = b'0' + (v % 10) as u8;
+        v /= 10;
+        if v == 0 {
+            break;
+        }
+    }
+    for &d in &buf[i..] {
+        out.push(d as char);
+    }
+}
+
+fn append_dec(out: &mut String, list: &[u16]) {
+    for (i, v) in list.iter().enumerate() {
+        if i > 0 {
+            out.push('-');
+        }
+        push_dec(out, *v);
+    }
+}
+
+/// The JA3 digest: MD5 of version,ciphers,extensions,curves,ecpf - dash-joined decimal lists.
+fn ja3_digest(legacy_version: u16, w: &mut Scratch) -> String {
+    let ja3_str = &mut w.ja3_str;
+    ja3_str.clear();
+    push_dec(ja3_str, legacy_version);
+    ja3_str.push(',');
+    append_dec(ja3_str, &w.ciphers);
+    ja3_str.push(',');
+    append_dec(ja3_str, &w.ext_types);
+    ja3_str.push(',');
+    append_dec(ja3_str, &w.curves);
+    ja3_str.push(',');
+    for (i, b) in w.ecpf.iter().enumerate() {
+        if i > 0 {
+            ja3_str.push('-');
+        }
+        push_dec(ja3_str, *b as u16);
+    }
+    use md5::Digest as Md5Digest;
+    hex_lowercase(&md5::Md5::digest(ja3_str.as_bytes()))
 }
 
 /// Append the first 12 hex characters of SHA-256, as JA4 uses them, memoized per thread.
@@ -481,6 +513,12 @@ fn alpn_first(body: &[u8]) -> Result<Option<&[u8]>, FatalTruncation> {
 /// and the WHOLE ClientHello parse is discarded. (The QUIC path uses `quic.rs`'s own parser,
 /// which treats that overrun as survivable - faithfully to `core/quic_sni.py`.)
 pub fn parse_sni_extension(body: &[u8], lowercase: bool) -> Result<Option<String>, FatalTruncation> {
+    sni_extension(body, lowercase).map(|host| host.map(std::borrow::Cow::into_owned))
+}
+
+/// `parse_sni_extension`, borrowing the name from `body` when it needs no lower-casing.
+fn sni_extension(body: &[u8], lowercase: bool) -> Result<Option<std::borrow::Cow<'_, str>>, FatalTruncation> {
+    use std::borrow::Cow;
     let mut r = Reader::new(body);
     if r.left() >= 2 {
         r.p += 2; // server_name_list length (bounds only)
@@ -490,12 +528,19 @@ pub fn parse_sni_extension(body: &[u8], lowercase: bool) -> Result<Option<String
             let nlen = r.u16().unwrap() as usize;
             let Some(name) = r.take(nlen) else { return Err(FatalTruncation) };
             if ntype == 0x00 {
-                let Ok(host) = std::str::from_utf8(name) else { return Ok(None) };
-                if !host.is_ascii() {
+                // Validated on the raw bytes, letters of either case: lower-casing first and then
+                // accepting only lower case is the same test, and a non-ASCII or non-UTF-8 name
+                // fails it either way.
+                if !is_hostname_bytes(name, false) {
                     return Ok(None);
                 }
-                let host = if lowercase { host.to_ascii_lowercase() } else { host.to_string() };
-                return Ok(if is_hostname(&host, lowercase) { Some(host) } else { None });
+                // SAFETY: `is_hostname_bytes` accepted it, so every byte is ASCII.
+                let host = unsafe { std::str::from_utf8_unchecked(name) };
+                return Ok(Some(if lowercase && name.iter().any(u8::is_ascii_uppercase) {
+                    Cow::Owned(host.to_ascii_lowercase())
+                } else {
+                    Cow::Borrowed(host)
+                }));
             }
         }
     }
@@ -548,7 +593,7 @@ mod tests {
     fn sni_alone_agrees_with_the_full_parse() {
         for sni in ["evil.example", "a.b.c.example.com"] {
             let hello = client_hello(sni, true);
-            assert_eq!(client_hello_sni(&hello), parse_client_hello(&hello).unwrap().sni);
+            assert_eq!(client_hello_sni(&hello), parse_client_hello(&hello).unwrap().sni.map(|s| s.into_owned()));
             for n in 0..hello.len() {
                 let _ = client_hello_sni(&hello[..n]);
             }
@@ -611,6 +656,30 @@ mod tests {
     }
 
     #[test]
+    fn hostname_validation_agrees_with_the_regexes_exhaustively() {
+        // Every string up to 6 bytes over an alphabet that exercises each rule, plus label and
+        // total length edges; the patterns are core/tls_intel.py's and core/quic_sni.py's.
+        let lower = regex::Regex::new(r"\A([a-z0-9_][a-z0-9_-]{0,62}\.)+[a-z0-9_][a-z0-9_-]{0,62}\z").unwrap();
+        let any =
+            regex::Regex::new(r"\A([a-zA-Z0-9_][a-zA-Z0-9_-]{0,62}\.)+[a-zA-Z0-9_][a-zA-Z0-9_-]{0,62}\z").unwrap();
+        let alphabet = ["a", "Z", "0", "_", "-", ".", "\u{e9}"];
+        let mut cases = vec![String::new()];
+        let mut frontier = vec![String::new()];
+        for _ in 0..6 {
+            frontier = frontier.iter().flat_map(|s| alphabet.iter().map(move |c| format!("{s}{c}"))).collect();
+            cases.extend(frontier.iter().cloned());
+        }
+        for (label, total) in [(63, 0), (64, 0), (63, 253 - 64), (63, 254 - 64)] {
+            cases.push(format!("{}.{}", "a".repeat(total.max(1)), "b".repeat(label)));
+        }
+        for s in &cases {
+            let ok = |re: &regex::Regex| s.len() <= 253 && re.is_match(s);
+            assert_eq!(is_hostname(s, true), ok(&lower), "{s:?} lower-case only");
+            assert_eq!(is_hostname(s, false), ok(&any), "{s:?} either case");
+        }
+    }
+
+    #[test]
     fn non_host_name_entries_are_skipped() {
         // an SNI list whose first entry is not host_name(0) must not yield a bogus name
         let mut srv = vec![0x02, 0x00, 0x03];
@@ -644,8 +713,25 @@ mod tests {
         assert_eq!(ch2.ja4, "t12i020300_c1929292aa6b_7c9dbb57f4ec");
 
         // and the SNI-only helper still agrees with the full parse on both
-        assert_eq!(client_hello_sni(&r1), ch1.sni);
+        assert_eq!(client_hello_sni(&r1).as_deref(), ch1.sni.as_deref());
         assert_eq!(client_hello_sni(&r2), None);
+    }
+
+    #[test]
+    fn skipped_fingerprints_change_nothing_else() {
+        let hellos = [build_client_hello("www.example.org", true), Vec::from_hex("1603010086010000820303111111111111111111111111111111111111111111111111111111111111111100000c13011302c02bc02f009c009e0100004d000a00080006001d00170018000d000800060403080404010010000e000c02683208687474702f312e31002b000504030403030000001600140000116d61696c2e6576696c2e6578616d706c65"), Vec::from_hex("16030100500100004c030322222222222222222222222222222222222222222222222222222222222222220000081a1a13013a3ac02f0100001b000b0003020001000a000600041a1a001d000d0006000408040401")];
+        for h in &hellos {
+            let full = parse_client_hello(h).unwrap();
+            for want in [0, FP_JA3, FP_JA4] {
+                let part = parse_client_hello_with(h, want).unwrap();
+                assert_eq!(part.sni, full.sni);
+                assert_eq!(part.ja3, if want & FP_JA3 != 0 { full.ja3.clone() } else { String::new() });
+                assert_eq!(part.ja4, if want & FP_JA4 != 0 { full.ja4.clone() } else { String::new() });
+            }
+            for n in 0..h.len() {
+                assert_eq!(parse_client_hello_with(&h[..n], 0).is_some(), parse_client_hello(&h[..n]).is_some());
+            }
+        }
     }
 
     #[test]

@@ -44,6 +44,33 @@ pub struct TrailDb {
     ip6_port: crate::fasthash::FastMap<(u128, u16), u32>,
     regex: TrailRegex,
     len: usize,
+    /// Which handshake digests (`FP_*`) any trail key could equal.
+    fingerprints: u8,
+}
+
+/// A trail key shaped like a JA3 (MD5), a JA4 or a certificate SHA-1, as the sensor renders them.
+pub const FP_JA3: u8 = 1;
+pub const FP_JA4: u8 = 2;
+pub const FP_CERT: u8 = 4;
+
+/// The `FP_*` shape of a trail key: lower-case hex of 32 (MD5) or 40 (SHA-1) characters, or
+/// anything ending in JA4's `_<12 hex>_<12 hex>`. Deliberately loose for JA4 - a false positive
+/// only means the fingerprint is computed, a false negative would be a silent miss.
+pub fn fingerprint_shape(key: &str) -> u8 {
+    let b = key.as_bytes();
+    let hex = |s: &[u8]| s.iter().all(|c| c.is_ascii_digit() || (b'a'..=b'f').contains(c));
+    let n = b.len();
+    let mut kind = 0;
+    if n == 32 && hex(b) {
+        kind |= FP_JA3;
+    }
+    if n == 40 && hex(b) {
+        kind |= FP_CERT;
+    }
+    if n >= 26 && b[n - 26] == b'_' && b[n - 13] == b'_' && hex(&b[n - 25..n - 13]) && hex(&b[n - 12..]) {
+        kind |= FP_JA4;
+    }
+    kind
 }
 
 #[inline]
@@ -106,6 +133,14 @@ impl TrailDb {
         &self.regex
     }
 
+    /// Whether any trail could match a digest of kind `fp` (`FP_*`). Production trail sets
+    /// carry no JA3, JA4 or certificate keys at all, and computing those digests was a fifth of
+    /// the packet path on handshake-heavy traffic - for lookups that could never hit.
+    #[inline]
+    pub fn has_fingerprints(&self, fp: u8) -> bool {
+        self.fingerprints & fp != 0
+    }
+
     /// `_check_domain_member(query, trails)` — used by the NXDOMAIN heuristic.
     pub fn contains_domain_member(&self, query: &str) -> bool {
         crate::whitelist::check_domain_member(query, |candidate| self.contains(candidate))
@@ -146,6 +181,7 @@ pub struct TrailDbBuilder {
     ip6: IntTable<u128>,
     ip6_port: crate::fasthash::FastMap<(u128, u16), u32>,
     len: usize,
+    fingerprints: u8,
 }
 
 impl TrailDbBuilder {
@@ -163,6 +199,7 @@ impl TrailDbBuilder {
             ip6: IntTable::with_capacity(64),
             ip6_port: crate::fasthash::FastMap::default(),
             len: 0,
+            fingerprints: 0,
         }
     }
 
@@ -186,6 +223,9 @@ impl TrailDbBuilder {
     pub fn insert_prepared(&mut self, trail: &str, hash: u64, pair: u32, native: NativeKey) {
         if self.strings.insert_hashed(trail, hash, pair) {
             self.len += 1;
+        }
+        if trail.len() >= 26 {
+            self.fingerprints |= fingerprint_shape(trail);
         }
         match native {
             NativeKey::None => {}
@@ -217,6 +257,7 @@ impl TrailDbBuilder {
             ip6_port: self.ip6_port,
             regex,
             len: self.len,
+            fingerprints: self.fingerprints,
         }
     }
 }
@@ -363,6 +404,22 @@ mod tests {
             b.insert(trail, pair);
         }
         b.finish(rb.build())
+    }
+
+    #[test]
+    fn fingerprint_shapes_follow_the_keys() {
+        // The forms the sensor renders: JA3 (MD5 hex), JA4, certificate SHA-1 hex.
+        assert_eq!(fingerprint_shape("d190f828263095de150a20b19136e314"), FP_JA3);
+        assert_eq!(fingerprint_shape("t13d0605h2_72b63408b255_beb9f91c6f80"), FP_JA4);
+        assert_eq!(fingerprint_shape("da39a3ee5e6b4b0d3255bfef95601890afd80709"), FP_CERT);
+        for other in ["evil.example", "D190F828263095DE150A20B19136E314", "1.2.3.4", "/path_x_y", ""] {
+            assert_eq!(fingerprint_shape(other), 0, "{other}");
+        }
+
+        let plain = db_with(&[("1.2.3.4", "malware", "(static)"), ("evil.example", "phishing", "(custom)")]);
+        assert!(!plain.has_fingerprints(FP_JA3 | FP_JA4 | FP_CERT));
+        let ja3 = db_with(&[("evil.example", "x", "(static)"), ("d190f828263095de150a20b19136e314", "x", "(custom)")]);
+        assert!(ja3.has_fingerprints(FP_JA3) && !ja3.has_fingerprints(FP_JA4 | FP_CERT));
     }
 
     #[test]

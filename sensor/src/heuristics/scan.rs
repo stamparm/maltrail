@@ -8,6 +8,7 @@
 
 use crate::addr::Ip;
 use crate::fasthash::{FastMap, FastSet};
+use std::collections::hash_map::Entry;
 
 /// `sensor.py:_SCAN_TRACK_PER_KEY`
 pub const SCAN_TRACK_PER_KEY: usize = 1024;
@@ -277,8 +278,10 @@ impl ScanState {
     /// `_scan_track(_connect_src_dst, ..., (src, dst), dst_port, ...)`
     pub fn track_port(&mut self, src: Ip, dst: Ip, port: u16, detail: PortDetail) {
         let threshold = self.thresholds.port;
-        match self.port_scan.get_mut(&(src, dst)) {
-            Some(bucket) => {
+        // One hash per packet: `entry`, not `get_mut` and then `insert` on a miss.
+        match self.port_scan.entry((src, dst)) {
+            Entry::Occupied(mut e) => {
+                let bucket = e.get_mut();
                 if bucket.detail.is_none() {
                     bucket.detail = Some(detail);
                 }
@@ -286,15 +289,14 @@ impl ScanState {
                     self.ready_port.push((src, dst));
                 }
             }
-            None => {
+            Entry::Vacant(v) => {
                 if self.connect_keys >= SCAN_MAX_KEYS {
                     return;
                 }
                 self.connect_keys += 1;
-                let mut bucket = Bucket::default();
+                let bucket = v.insert(Bucket::default());
                 bucket.items.insert(port);
                 bucket.detail = Some(detail);
-                self.port_scan.insert((src, dst), bucket);
                 if 1 > threshold {
                     self.ready_port.push((src, dst));
                 }
@@ -306,8 +308,9 @@ impl ScanState {
     /// `_scan_track(_connect_src_dst, ..., (src, dst_port), dst_ip, ...)`
     pub fn track_infection(&mut self, src: Ip, dst_port: u16, dst: Ip, detail: InfectionDetail) {
         let threshold = self.thresholds.infection;
-        match self.infection.get_mut(&(src, dst_port)) {
-            Some(bucket) => {
+        match self.infection.entry((src, dst_port)) {
+            Entry::Occupied(mut e) => {
+                let bucket = e.get_mut();
                 if bucket.detail.is_none() {
                     bucket.detail = Some(detail);
                 }
@@ -315,15 +318,14 @@ impl ScanState {
                     self.ready_infection.push((src, dst_port));
                 }
             }
-            None => {
+            Entry::Vacant(v) => {
                 if self.connect_keys >= SCAN_MAX_KEYS {
                     return;
                 }
                 self.connect_keys += 1;
-                let mut bucket = Bucket::default();
+                let bucket = v.insert(Bucket::default());
                 bucket.items.insert(dst);
                 bucket.detail = Some(detail);
-                self.infection.insert((src, dst_port), bucket);
                 if 1 > threshold {
                     self.ready_infection.push((src, dst_port));
                 }

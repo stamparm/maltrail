@@ -140,23 +140,27 @@ impl Default for SeededHasher {
 impl Hasher for SeededHasher {
     #[inline]
     fn write(&mut self, bytes: &[u8]) {
-        let mut h = self.hash ^ WY0.wrapping_mul(bytes.len() as u64 | 1);
+        let mut h = self.hash ^ WY0.wrapping_mul(bytes.len() as u64 + 1);
         let mut chunks = bytes.chunks_exact(16);
         for c in &mut chunks {
             let a = u64::from_le_bytes(c[..8].try_into().unwrap());
             let b = u64::from_le_bytes(c[8..].try_into().unwrap());
             h = wymix(a ^ h ^ WY0, b ^ h ^ WY1);
         }
+        // The tail in overlapping reads, exactly as wyhash does: copying it into zeroed buffers went
+        // through a libc memcpy call per key. The length is already mixed in above, so the
+        // overlap cannot make two keys alike.
         let rest = chunks.remainder();
-        if !rest.is_empty() {
-            let mut a = [0u8; 8];
-            let mut b = [0u8; 8];
-            let split = rest.len().min(8);
-            a[..split].copy_from_slice(&rest[..split]);
-            if rest.len() > 8 {
-                b[..rest.len() - 8].copy_from_slice(&rest[8..]);
-            }
-            h = wymix(u64::from_le_bytes(a) ^ h ^ WY0, u64::from_le_bytes(b) ^ h ^ WY1);
+        let n = rest.len();
+        if n > 0 {
+            let r4 = |i: usize| u32::from_le_bytes(rest[i..i + 4].try_into().unwrap()) as u64;
+            let (a, b) = if n >= 4 {
+                let q = (n >> 3) << 2;
+                ((r4(0) << 32) | r4(q), (r4(n - 4) << 32) | r4(n - 4 - q))
+            } else {
+                (((rest[0] as u64) << 16) | ((rest[n / 2] as u64) << 8) | rest[n - 1] as u64, 0)
+            };
+            h = wymix(a ^ h ^ WY0, b ^ h ^ WY1);
         }
         self.hash = h;
     }
@@ -262,6 +266,28 @@ mod tests {
         let mut b = SeededHasher { seed: 0x1234_5678_9abc_def0, hash: 0x1234_5678_9abc_def0 };
         "evil.example".hash(&mut b);
         assert_ne!(a.finish(), b.finish(), "the seed must affect the digest");
+    }
+
+    #[test]
+    fn the_seeded_hash_keeps_short_keys_apart() {
+        // "k1" and "k11" read the same three tail bytes; only the exact length tells them apart.
+        let keys: std::collections::HashSet<u64> = (0..20_000).map(|i| name_key(&format!("k{i}"))).collect();
+        assert_eq!(keys.len(), 20_000);
+    }
+
+    #[test]
+    fn the_seeded_hash_reads_every_byte() {
+        // Each byte of every length up to two blocks, flipped alone, must change the hash: a
+        // tail read that skipped a byte would make those keys collide by construction.
+        for len in 1..=40usize {
+            let base = vec![b'a'; len];
+            let h0 = name_key(std::str::from_utf8(&base).unwrap());
+            for i in 0..len {
+                let mut k = base.clone();
+                k[i] = b'b';
+                assert_ne!(name_key(std::str::from_utf8(&k).unwrap()), h0, "len {len} byte {i}");
+            }
+        }
     }
 
     #[test]
