@@ -165,7 +165,12 @@ def main():
 
     try:
         if config.USE_SERVER_UPDATE_TRAILS:
-            update_timer()
+            # In the background: run first, it kept the dashboard (and its healthcheck) down for
+            # the whole update - every feed on a first boot or after an outage, and up to three
+            # 40 s connectivity checks offline. The update re-arms its own timer when it is done.
+            thread = threading.Thread(target=update_timer)
+            thread.daemon = True
+            thread.start()
 
         start_httpd(address=config.HTTP_ADDRESS, port=config.HTTP_PORT, pem=config.SSL_PEM if config.USE_SSL else None, join=True)
     except KeyboardInterrupt:
