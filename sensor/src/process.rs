@@ -137,7 +137,7 @@ fn check_domain_inner(
     };
     let q: &str = lowered.as_ref();
 
-    if st.domain_clean.contains(q) {
+    if st.domain_clean.get(q).is_some() {
         st.metrics.cache_hits += 1;
         return;
     }

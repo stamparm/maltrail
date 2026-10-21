@@ -22,8 +22,10 @@
     set holds a key of that shape. The shipped trail set holds none, so a
     TLS handshake no longer pays for an MD5, two SHA-256s and a SHA-1 that
     could never match (ClientHello path ~5,300 -> ~1,000 instructions).
-    DNS names are decoded into a reused buffer and checked in fewer passes
-    (warm query 230 -> 178 ns, cold 478 -> 409 ns). On the reference network
+    DNS names are decoded into a reused buffer and checked in fewer passes,
+    and the domain caches evict with SIEVE instead of LRU, so a hit sets a
+    bit instead of relinking a list (warm query 230 -> 171 ns, cold 478 ->
+    401 ns). On the reference network
     with the shipped trail shapes the packet path runs 38% fewer
     instructions (757M -> 467M) and replays 31% faster, events unchanged.
 

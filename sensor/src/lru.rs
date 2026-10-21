@@ -1,8 +1,14 @@
-//! Bounded LRU map, equivalent to `core/datatype.py:LRUDict` (capacity-bounded,
-//! most-recently-used on both get and set, oldest evicted first).
+//! Bounded cache map, the role of `core/datatype.py:LRUDict`: capacity-bounded, and a hit
+//! keeps an entry around.
 //!
-//! Intrusive doubly-linked list over a slab so lookups and evictions are O(1) and the
-//! steady-state hot path performs no allocation.
+//! Eviction is SIEVE (NSDI '24), not LRU. A hit only sets a bit, where LRU relinked the entry
+//! to the front of the list - four scattered writes on every DNS query, twice. The hand walks
+//! from the oldest entry, clearing bits, and evicts the first entry not hit since it last
+//! passed; one-shot names (scans, DGA floods) leave quickly and recurring ones stay. Every user
+//! is a pure cache, so the policy decides only what gets recomputed, never a verdict.
+//!
+//! Intrusive doubly-linked list over a slab: O(1) lookups and inserts, amortized O(1)
+//! evictions, no allocation on the steady-state hot path.
 
 use crate::fasthash::StrMap;
 use std::borrow::Borrow;
@@ -15,14 +21,17 @@ struct Node<K, V> {
     value: V,
     prev: u32,
     next: u32,
+    visited: bool,
 }
 
 pub struct LruMap<K: Eq + Hash + Clone, V> {
     index: StrMap<K, u32>,
     nodes: Vec<Node<K, V>>,
     free: Vec<u32>,
-    head: u32, // most recently used
-    tail: u32, // least recently used
+    head: u32, // newest
+    tail: u32, // oldest
+    /// SIEVE's hand: the next eviction candidate, walking from the tail towards the head.
+    hand: u32,
     capacity: usize,
     /// Admission filter for `insert_if_seen_before`; empty when the map admits unconditionally.
     doorkeeper: Vec<u64>,
@@ -37,6 +46,7 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
             free: Vec::new(),
             head: NIL,
             tail: NIL,
+            hand: NIL,
             capacity,
             doorkeeper: Vec::new(),
         }
@@ -63,6 +73,7 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
         self.free.clear();
         self.head = NIL;
         self.tail = NIL;
+        self.hand = NIL;
     }
 
     pub fn get<Q>(&mut self, key: &Q) -> Option<&V>
@@ -70,10 +81,9 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
         K: Borrow<Q>,
         Q: Hash + Eq + ?Sized,
     {
-        let idx = *self.index.get(key)?;
-        self.detach(idx);
-        self.push_front(idx);
-        Some(&self.nodes[idx as usize].value)
+        let idx = *self.index.get(key)? as usize;
+        self.nodes[idx].visited = true;
+        Some(&self.nodes[idx].value)
     }
 
     pub fn contains<Q>(&self, key: &Q) -> bool
@@ -155,26 +165,28 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
 
     pub fn insert(&mut self, key: K, value: V) {
         if let Some(&idx) = self.index.get(&key) {
-            self.nodes[idx as usize].value = value;
-            self.detach(idx);
-            self.push_front(idx);
+            let node = &mut self.nodes[idx as usize];
+            node.value = value;
+            node.visited = true;
             return;
         }
 
         if self.index.len() >= self.capacity {
-            self.evict_oldest();
+            self.evict();
         }
 
         let idx = match self.free.pop() {
             Some(i) => {
-                self.nodes[i as usize].key = key.clone();
-                self.nodes[i as usize].value = value;
-                self.nodes[i as usize].prev = NIL;
-                self.nodes[i as usize].next = NIL;
+                let node = &mut self.nodes[i as usize];
+                node.key = key.clone();
+                node.value = value;
+                node.prev = NIL;
+                node.next = NIL;
+                node.visited = false;
                 i
             }
             None => {
-                self.nodes.push(Node { key: key.clone(), value, prev: NIL, next: NIL });
+                self.nodes.push(Node { key: key.clone(), value, prev: NIL, next: NIL, visited: false });
                 (self.nodes.len() - 1) as u32
             }
         };
@@ -182,14 +194,25 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
         self.push_front(idx);
     }
 
-    fn evict_oldest(&mut self) {
-        let idx = self.tail;
+    /// SIEVE: from the hand towards the head, clear visited bits and evict the first entry
+    /// without one; the hand stays where it stopped. Terminates within one lap, because every
+    /// entry it passes loses its bit.
+    fn evict(&mut self) {
+        let mut idx = if self.hand == NIL { self.tail } else { self.hand };
         if idx == NIL {
             return;
         }
+        while self.nodes[idx as usize].visited {
+            self.nodes[idx as usize].visited = false;
+            idx = match self.nodes[idx as usize].prev {
+                NIL => self.tail,
+                prev => prev,
+            };
+        }
+        let prev = self.nodes[idx as usize].prev;
+        self.hand = prev;
         self.detach(idx);
-        let key = self.nodes[idx as usize].key.clone();
-        self.index.remove(&key);
+        self.index.remove(&self.nodes[idx as usize].key);
         self.free.push(idx);
     }
 
@@ -244,14 +267,31 @@ mod tests {
     }
 
     #[test]
-    fn get_refreshes_recency() {
+    fn a_hit_survives_the_next_eviction() {
         let mut m: LruMap<u32, u32> = LruMap::new(2);
         m.insert(1, 1);
         m.insert(2, 2);
         assert_eq!(m.get(&1), Some(&1));
         m.insert(3, 3);
-        assert!(m.contains(&1), "1 was refreshed and must survive");
+        assert!(m.contains(&1), "1 was hit and must survive");
         assert!(!m.contains(&2));
+    }
+
+    #[test]
+    fn sieve_keeps_hot_keys_through_a_flood_of_one_shot_keys() {
+        let mut m: LruMap<u32, u32> = LruMap::new(16);
+        for i in 0..8 {
+            m.insert(i, i);
+        }
+        for round in 0..100u32 {
+            for i in 0..8 {
+                assert_eq!(m.get(&i), Some(&i), "hot key {i} lost in round {round}");
+            }
+            for j in 0..4 {
+                m.insert(1000 + round * 4 + j, 0); // never seen again
+            }
+            assert!(m.len() <= 16 && m.nodes.len() <= 16);
+        }
     }
 
     #[test]
