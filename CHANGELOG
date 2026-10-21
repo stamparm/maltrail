@@ -16,6 +16,12 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[=] The trail store is built file-backed only on hosts with under 2 GB of
+    RAM. Its pages are reclaimable only after being written back, so every
+    start and reload wrote the whole store to disk (125 MB measured on a
+    Pi 4, to its SD card) even where the heap holds it comfortably. A Pi 4
+    now writes ~5 MB in its first minute instead of 125 MB.
+
 [=] DNS queries for new names and subdomains are 25-37% cheaper (subdomain
     query 660 -> 430 ns, cold 405 -> 300 ns). The tunneling heuristic decides
     a zone's exemption once per (source, zone) pair instead of per query,

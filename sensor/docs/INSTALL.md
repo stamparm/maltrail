@@ -412,13 +412,16 @@ immutable trail store is built and swapped in atomically, counted in the metrics
 A full trail set is ~1.9M entries, and the sensor runs on a 256 MB Raspberry Pi without any
 setting changed. Three things make that work:
 
-* **The trail store is file-backed.** It is built into mappings of files next to `TRAILS_FILE`,
-  which are unlinked as soon as they are created, so nothing stays on disk. The pages are page
+* **The trail store is file-backed on hosts with under 2 GB of RAM.** It is built into mappings of
+  files next to `TRAILS_FILE`, which are unlinked as soon as they are created, so nothing stays on
+  disk. The pages are page
   cache rather than heap: the kernel writes them back once and can then drop and re-read them
   under memory pressure, instead of having nothing to free but the process. The startup line
   reports it as `memory=… MB (file-backed)`. If the directory is not writable, or there is no
   space for the store (~200 MB at 1.9M trails, twice that during a reload), the store is built on
-  the heap as before.
+  the heap as before. Write-back is the price: the whole store goes to disk on every start and
+  reload (~125 MB measured on a Pi 4, usually to an SD card), so a host with 2 GB or more, which
+  can hold the store on the heap, keeps it there and writes nothing.
 * **The update merges on disk when memory is short.** With under 768 MB available (cgroup limits
   included), `update_trails()` keeps its working set in a SQLite file next to `TRAILS_FILE`
   (`trails.csv.build`, removed afterwards). It is the same code with the same result, slower by

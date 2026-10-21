@@ -605,6 +605,24 @@ pub fn parse_byte_size(value: &str) -> Result<u64, ConfigError> {
 /// Memory assumed when the OS will not say, for sizing only.
 pub const FALLBACK_PHYSMEM: u64 = 256 * 1024 * 1024;
 
+/// Below this much physical memory the trail store is built file-backed (`trails/region.rs`).
+///
+/// That is what lets a 256 MB Pi hold ~200 MB of store: written back to disk, its pages become
+/// page cache the kernel can drop and re-read. The write-back is the price - the whole store,
+/// ~125 MB measured on a Pi 4, on every start and every reload, to what is usually an SD card.
+/// A host that can hold the store on the heap - twice over during a reload, ~400 MB at 1.9M
+/// trails - gains nothing from paying it. An unknown size counts as small (`FALLBACK_PHYSMEM`).
+pub const FILE_BACKED_TRAILS_BELOW: u64 = 2 * 1024 * 1024 * 1024;
+
+/// Whether this host builds its trail store file-backed: see `FILE_BACKED_TRAILS_BELOW`.
+pub fn file_backed_trails() -> bool {
+    file_backed_for(physmem_for_sizing().0)
+}
+
+fn file_backed_for(physmem: u64) -> bool {
+    physmem < FILE_BACKED_TRAILS_BELOW
+}
+
 /// Physical memory for resolving `NN%` sizes, and whether it had to be assumed.
 ///
 /// The shipped `CAPTURE_BUFFER 10%` used to turn a failed memory query into a refusal to start.
@@ -1222,6 +1240,17 @@ mod tests {
 
     fn root() -> PathBuf {
         PathBuf::from(env!("CARGO_MANIFEST_DIR")).parent().unwrap().to_path_buf()
+    }
+
+    #[test]
+    fn only_small_hosts_build_the_trail_store_file_backed() {
+        const MB: u64 = 1024 * 1024;
+        for (physmem, backed) in
+            [(221 * MB, true), (1024 * MB, true), (2047 * MB, true), (2048 * MB, false), (16384 * MB, false)]
+        {
+            assert_eq!(file_backed_for(physmem), backed, "{physmem}");
+        }
+        assert!(file_backed_for(FALLBACK_PHYSMEM), "an unknown size counts as small");
     }
 
     #[test]

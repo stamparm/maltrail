@@ -1046,7 +1046,10 @@ fn warn_if_trails_are_stale(cfg: &Config) {
 
 /// Loader options taken from the configuration.
 fn load_options(cfg: &Config) -> trails::LoadOptions {
-    trails::LoadOptions { repair_truncated_trails: cfg.repair_truncated_trails, ..Default::default() }
+    trails::LoadOptions {
+        repair_truncated_trails: cfg.repair_truncated_trails,
+        file_backed: maltrail_sensor::config::file_backed_trails(),
+    }
 }
 
 fn non_empty(value: &str) -> Option<String> {
