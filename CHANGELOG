@@ -27,6 +27,10 @@
     picker could build ~120 days in one request. /counts now counts lines
     (44 ms per 55 MB day, exact); /hunt parses only lines that can contain
     the query (0.17 s per 55 MB day instead of 6.2 s).
+[!] Fragmented IPv4 traffic is inspected: the kernel reassembles it
+    (CAPTURE_FANOUT_DEFRAG, now on by default; one worker joins a fanout
+    group of its own for it). A DNS query, HTTP request or ClientHello
+    split into IP fragments was never seen before.
 [!] With USE_SSL, one client that connected and never sent anything locked
     every other user out of HTTPS, indefinitely: the TLS handshake ran on
     the thread that accepts connections, with no timeout. It runs in the

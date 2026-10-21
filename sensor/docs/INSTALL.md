@@ -183,7 +183,7 @@ All have conservative defaults; none are required.
 | `CAPTURE_TIMEOUT` | 100 | capture/poll timeout in ms; also bounds shutdown latency |
 | `CAPTURE_IMMEDIATE` | false | deliver packets as they arrive (lower latency, worse throughput) |
 | `CAPTURE_FANOUT_MODE` | `hash` | `hash`, `lb`, `cpu`, `rollover`, `random`, `qm`. Keep `hash`: worker-local heuristic state depends on stable flow assignment |
-| `CAPTURE_FANOUT_DEFRAG` | false | ask the kernel to reassemble IP fragments before hashing |
+| `CAPTURE_FANOUT_DEFRAG` | true | have the kernel reassemble IPv4 fragments (Linux); off leaves fragmented packets uninspected |
 | `CAPTURE_FANOUT_GROUP` | `(pid + iface index) & 0xffff` | pin the group id (needed if two sensors must share one group) |
 | `OFFLINE_TIMESTAMPS` | `pcap` | `pcap` or `wallclock`; `wallclock` reproduces `sensor.py`-on-Python-3 offline behaviour |
 | `METRICS_INTERVAL` | 3600 | seconds between metrics lines; 0 disables |

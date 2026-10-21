@@ -380,7 +380,14 @@ fn run() -> i32 {
                 return 1;
             }
             let workers = cfg.capture_workers.max(1);
-            let group = if workers > 1 || cfg.capture_fanout > 1 {
+            // One worker joins a group of its own when defrag is on, because PACKET_FANOUT_FLAG_DEFRAG
+            // is the only way to have the kernel reassemble IPv4 for a packet socket. Without it
+            // the sensor dropped every non-first fragment, so a ClientHello, an HTTP request or a
+            // DNS query split into IP fragments - a standard evasion - was never inspected. The
+            // group id is per process (pid + interface), so it is shared with nothing.
+            let defrag_only =
+                workers == 1 && cfg.capture_fanout <= 1 && cfg.capture_fanout_defrag && cfg!(target_os = "linux");
+            let group = if workers > 1 || cfg.capture_fanout > 1 || defrag_only {
                 Some(cfg.capture_fanout_group.unwrap_or_else(|| fanout::default_group(index)))
             } else {
                 None
@@ -394,6 +401,20 @@ fn run() -> i32 {
                     Ok((h, _info)) => {
                         handles.push((h, interface.clone(), group));
                         opened += 1;
+                    }
+                    // Reassembly is worth having, not worth refusing to capture over.
+                    Err(CaptureError::Fanout(e)) if defrag_only => {
+                        ceprintln!("[!] IP fragment reassembly unavailable on '{interface}' ({e}); fragments are not inspected");
+                        match Handle::open_live(&cfg, interface, None) {
+                            Ok((h, _info)) => {
+                                handles.push((h, interface.clone(), None));
+                                opened += 1;
+                            }
+                            Err(e) => {
+                                ceprintln!("[!] unable to open capture on '{interface}': {e}");
+                                return 1;
+                            }
+                        }
                     }
                     Err(CaptureError::Fanout(e)) if opened == 0 && workers > 1 => {
                         // The kernel refused PACKET_FANOUT for this device. Run a SINGLE worker
@@ -845,6 +866,9 @@ fn print_diagnostics(
         cprintln!("[i] interface(s): {}", names.join(", "));
         let group = handles.first().and_then(|(_, _, g)| *g);
         match group {
+            Some(_) if handles.len() == 1 && cfg.capture_workers.max(1) == 1 => {
+                cprintln!("[i] PACKET_FANOUT: single capture socket, joined alone for IP fragment reassembly")
+            }
             Some(g) => cprintln!(
                 "[i] PACKET_FANOUT: enabled (group {}, mode {}, defrag {}) across {} worker socket(s)",
                 g,

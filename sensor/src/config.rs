@@ -1132,7 +1132,8 @@ impl Config {
                 .min(i32::MAX as u64) as i32,
             capture_immediate: cfg_bool(raw.get("CAPTURE_IMMEDIATE")),
             capture_fanout_mode,
-            capture_fanout_defrag: cfg_bool(raw.get("CAPTURE_FANOUT_DEFRAG")),
+            // On unless switched off: without it a fragmented packet is invisible (see main.rs).
+            capture_fanout_defrag: raw.get("CAPTURE_FANOUT_DEFRAG").map_or(true, |v| cfg_bool(Some(v))),
             capture_fanout_group: get_u64(&raw, "CAPTURE_FANOUT_GROUP").map(|v| (v & 0xffff) as u16),
             offline_timestamps,
             stats_address: get_str(&raw, "STATS_ADDRESS"),

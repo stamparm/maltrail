@@ -64,9 +64,10 @@ configured, the sensor **refuses to start** rather than silently duplicating.
 
 Caveats, both surfaced in the startup diagnostics:
 
-* IPv4 fragments hash on the outer header only, so later fragments of one datagram may land on
-  a different worker. `CAPTURE_FANOUT_DEFRAG true` asks the kernel to reassemble before
-  hashing. (The sensor drops non-first fragments anyway, matching `sensor.py`.)
+* IPv4 fragments are reassembled by the kernel before they are hashed or delivered
+  (`CAPTURE_FANOUT_DEFRAG`, on by default; a single worker joins a fanout group of its own for
+  it). Without it the sensor drops non-first fragments, as `sensor.py` did, and a fragmented
+  packet is never inspected.
 * Tunnelled traffic (GRE/IPIP/VXLAN) hashes on the outer flow, so all inner flows of one tunnel
   land on one worker.
 
