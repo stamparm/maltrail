@@ -16,6 +16,13 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[+] DNS responses are checked for listed CNAME targets. A client asking for
+    an innocent-looking name the resolver aliases to a listed one never
+    looked the listed name up, so nothing matched. The event is reported
+    like the query it answers (source the client, destination the
+    resolver), its trail names both ("(x).evil.com (innocent.org)"), and a
+    response yields at most one event; targets are matched against trails
+    only, not judged by the heuristics.
 [!] The published admin/changeme! login is accepted only from the server
     itself; over the network it is refused with a message saying to set
     USERS. The shipped maltrail.conf listens on 0.0.0.0, so every install

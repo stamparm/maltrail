@@ -96,7 +96,17 @@ fn emit_ep(
 
 /// `sensor.py:_check_domain()`
 pub fn check_domain(st: &mut WorkerState, query: &str, sec: u64, usec: u32, ep: Endpoints, proto: &str) {
-    check_domain_inner(st, query, sec, usec, ep, proto, None)
+    check_domain_inner(st, query, sec, usec, ep, proto, None, None);
+}
+
+/// The trail text of a hit on a CNAME target: `<trail> (<the name the client asked for>)`, the
+/// same shape as an IP trail hit on a query, `<ip> (<query>)`. Without the query an analyst sees a
+/// name the client never looked up.
+fn alias_trail(trail: String, alias_of: Option<&str>) -> String {
+    match alias_of {
+        Some(query) => format!("{trail} ({query})"),
+        None => trail,
+    }
 }
 
 /// `_check_domain()` with an optional PRECOMPUTED whitelist depth (0 = not whitelisted).
@@ -119,7 +129,8 @@ fn check_domain_inner(
     ep: Endpoints,
     proto: &str,
     precomputed_whitelisted: Option<u32>,
-) {
+    alias_of: Option<&str>,
+) -> bool {
     // query = query.lower(); if ':' in query: query = query.split(':', 1)[0]
     //
     // Borrowed unless the name actually needs changing. Real DNS traffic is already lowercase and
@@ -137,7 +148,7 @@ fn check_domain_inner(
     // if query.replace('.', "").isdigit(): return   (an IP address, not a domain). Lower-casing
     // cannot change the answer, and a name fails it on its first letter.
     if trimmed.bytes().all(|b| b == b'.' || b.is_ascii_digit()) && trimmed.bytes().any(|b| b.is_ascii_digit()) {
-        return;
+        return false;
     }
     let lowered: Cow<'_, str> = if !verified && trimmed.bytes().any(|b| b.is_ascii_uppercase()) {
         Cow::Owned(trimmed.to_lowercase())
@@ -149,7 +160,7 @@ fn check_domain_inner(
     let clean_hash = st.domain_clean.hash_of(q);
     if st.domain_clean.get_hashed(clean_hash, q).is_some() {
         st.metrics.cache_hits += 1;
-        return;
+        return false;
     }
     st.metrics.cache_misses += 1;
 
@@ -179,7 +190,7 @@ fn check_domain_inner(
                 let (i, r) = (info.info.to_string(), info.reference.to_string());
                 result = true;
                 let trail = format!("{base}(.ip-adress.com)");
-                emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(trail), &i, &r);
+                emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(alias_trail(trail, alias_of)), &i, &r);
             }
         }
 
@@ -217,6 +228,7 @@ fn check_domain_inner(
                         let trail_labels = q.as_bytes()[start..].iter().filter(|&&b| b == b'.').count() as u32 + 1;
                         if trail_labels > whitelist_depth {
                             result = true;
+                            let trail = alias_trail(trail, alias_of);
                             emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(trail), &info, &reference);
                         }
                         break;
@@ -229,8 +241,11 @@ fn check_domain_inner(
             }
         }
 
+        // Heuristics judge names a client asked for. A CNAME target is the resolver's answer -
+        // CDNs alias everything to long hashed names - so it is matched against trails only.
         if !result
             && !whitelisted
+            && alias_of.is_none()
             && st.cfg.use_heuristics
             && st.heuristic_enabled("long_domain")
             && first_label.chars().count() > settings::SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
@@ -266,7 +281,12 @@ fn check_domain_inner(
         }
 
         // IDN homograph of a listed (popular) domain - see heuristics/homograph.rs.
-        if !result && !whitelisted && st.cfg.use_heuristics && st.heuristic_enabled("idn_homograph") {
+        if !result
+            && !whitelisted
+            && alias_of.is_none()
+            && st.cfg.use_heuristics
+            && st.heuristic_enabled("idn_homograph")
+        {
             if let Some(brand) = crate::heuristics::homograph::impersonated(q, &st.whitelist).map(str::to_string) {
                 result = true;
                 let info = format!("potential homograph of {brand} (suspicious)");
@@ -292,7 +312,7 @@ fn check_domain_inner(
                     if !suffix.is_empty() {
                         trail = format!("{trail}({suffix})");
                     }
-                    let trail = trail.replace(".)", ").");
+                    let trail = alias_trail(trail.replace(".)", ")."), alias_of);
                     emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(trail), &i, &r);
                 }
             }
@@ -305,14 +325,17 @@ fn check_domain_inner(
             if let Some(info) = st.trails.db().get(&base) {
                 let (i, r) = (info.info.to_string(), info.reference.to_string());
                 result = true;
-                emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(trail), &i, &r);
+                emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(alias_trail(trail, alias_of)), &i, &r);
             }
         }
     }
 
-    if !result {
+    // Not for a CNAME target: its check skipped the heuristics, and a "clean" verdict cached from
+    // it would let a later direct query for the same name skip them too.
+    if !result && alias_of.is_none() {
         st.domain_clean.insert_if_seen_before_hashed(clean_hash, q, ());
     }
+    result
 }
 
 // ---------------------------------------------------------------------------
@@ -1931,9 +1954,30 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
                 emit_ep(st, sec, usec, ep, PROTO::UDP, TRAIL::IP, Field::Text(trail), &info, &reference);
             }
 
-            check_domain_inner(st, query, sec, usec, ep, PROTO::UDP, Some(wl_query));
+            check_domain_inner(st, query, sec, usec, ep, PROTO::UDP, Some(wl_query), None);
         }
         return;
+    }
+
+    // A response that aliases the name (CNAME) is checked against the trails for every target.
+    // The client asked for the first name only; the resolver followed the chain, so a listed name
+    // behind an innocent-looking alias was never looked up by anyone and never matched. Reported
+    // like the query it answers - source the client, destination the resolver - so the event sits
+    // with the host that did the lookup, not with the resolver that answered it. Each target is
+    // one ordinary domain check: at most MAX_CNAMES per response, and the same throttle as every
+    // other event. One response yields at most ONE event, for the first listed name in its
+    // chain: a response is one lookup, and a zone owner could otherwise fill each answer with
+    // MAX_CNAMES fresh listed names and turn every response into a burst of distinct events.
+    if flags_high & 0x80 != 0 && flags_low & 0x0f == 0 {
+        let client = Endpoints { src: ep.dst, src_port: ep.dst_port, dst: ep.src, dst_port: ep.src_port };
+        for target in dns::cname_targets(dns_data, name_end) {
+            if target != query
+                && settings::is_valid_dns_name(&target)
+                && check_domain_inner(st, &target, sec, usec, client, PROTO::UDP, None, Some(query))
+            {
+                break;
+            }
+        }
     }
 
     if !st.cfg.use_heuristics {

@@ -1400,3 +1400,125 @@ fn idn_homograph_of_a_whitelisted_domain_is_detected() {
     assert!(query("apple.com").is_empty());
     let _ = std::fs::remove_file(&empty);
 }
+
+// --- CNAME targets in DNS responses ---------------------------------------------
+
+/// A response to `query` (A, IN) whose answer is a CNAME chain to each of `targets` in turn,
+/// then an A record. The first answer's owner is a compression pointer to the question, the
+/// later ones point at the previous target's RDATA - the shape resolvers send.
+fn cname_response(id: u16, query: &str, targets: &[&str]) -> Vec<u8> {
+    let mut out = Vec::new();
+    out.extend_from_slice(&id.to_be_bytes());
+    out.extend_from_slice(&0x8180u16.to_be_bytes()); // response, RD, RA, NOERROR
+    out.extend_from_slice(&1u16.to_be_bytes());
+    out.extend_from_slice(&(targets.len() as u16 + 1).to_be_bytes());
+    out.extend_from_slice(&[0, 0, 0, 0]);
+    let mut owner = out.len() as u16; // the question name starts here
+    for label in query.split('.') {
+        out.push(label.len() as u8);
+        out.extend_from_slice(label.as_bytes());
+    }
+    out.extend_from_slice(&[0, 0, 1, 0, 1]);
+    for target in targets {
+        out.extend_from_slice(&(0xc000 | owner).to_be_bytes());
+        out.extend_from_slice(&[0, 5, 0, 1, 0, 0, 0, 60]);
+        let rdata: Vec<u8> = target
+            .split('.')
+            .flat_map(|l| std::iter::once(l.len() as u8).chain(l.bytes()))
+            .chain(std::iter::once(0))
+            .collect();
+        out.extend_from_slice(&(rdata.len() as u16).to_be_bytes());
+        owner = out.len() as u16;
+        out.extend_from_slice(&rdata);
+    }
+    out.extend_from_slice(&(0xc000 | owner).to_be_bytes());
+    out.extend_from_slice(&[0, 1, 0, 1, 0, 0, 0, 60, 0, 4, 93, 184, 216, 34]);
+    out
+}
+
+/// The resolver at 8.8.8.8 answering the client 10.0.0.5:40000.
+fn from_resolver(payload: &[u8]) -> Vec<u8> {
+    ipv4(17, "8.8.8.8", "10.0.0.5", &udp(53, 40000, payload))
+}
+
+#[test]
+fn a_listed_cname_target_is_reported_against_the_client_that_asked() {
+    let mut h = trails(&[("evil-cname.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&from_resolver(&cname_response(1, "innocent.org", &["cdn.example-edge.net", "x.evil-cname.com"])), 1);
+    let events = h.events();
+    assert_eq!(events.len(), 1, "{events:?}");
+    let e = &events[0];
+    // Who did what: the CLIENT looked the name up, so it is the source - exactly as for the
+    // query event a direct lookup of the same name would have produced. The resolver only
+    // answered; reporting it as the source would accuse the DNS server.
+    assert_eq!((e.src_ip.as_str(), e.src_port.as_str()), ("10.0.0.5", "40000"));
+    assert_eq!((e.dst_ip.as_str(), e.dst_port.as_str()), ("8.8.8.8", "53"));
+    assert_eq!(e.trail_type, "DNS");
+    assert_eq!(e.trail, "(x).evil-cname.com (innocent.org)", "the alias the client actually asked for must be shown");
+    assert_eq!(e.info, "malware (dummy)");
+}
+
+#[test]
+fn an_unlisted_chain_reports_nothing() {
+    let mut h = trails(&[("evil-cname.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&from_resolver(&cname_response(1, "innocent.org", &["cdn.example-edge.net"])), 1);
+    assert!(h.events().is_empty());
+}
+
+#[test]
+fn a_flood_of_responses_does_not_become_a_flood_of_events() {
+    let mut h = trails(&[("evil-cname.com", MALWARE.0, MALWARE.1)]);
+    // Many responses for one lookup - retransmissions, a resolver answering repeatedly, a client
+    // in a retry loop - and many targets in one response.
+    let targets: Vec<String> = (0..50).map(|i| format!("n{i}.evil-cname.com")).collect();
+    let targets: Vec<&str> = targets.iter().map(String::as_str).collect();
+    for id in 0..500u16 {
+        h.feed_ip(&from_resolver(&cname_response(id, "innocent.org", &targets)), 1 + u64::from(id) / 100);
+    }
+    let events = h.events();
+    assert!(!events.is_empty(), "the control: the chain does carry a listed name");
+    let distinct: std::collections::BTreeSet<&str> = events.iter().map(|e| e.trail.as_str()).collect();
+    assert_eq!(distinct.len(), 1, "one response fanned out into an event per target: {distinct:?}");
+
+    // ...and no more of them than the same client asking for that name directly 500 times.
+    let mut direct = trails(&[("evil-cname.com", MALWARE.0, MALWARE.1)]);
+    for id in 0..500u16 {
+        let mut q = dns("n0.evil-cname.com");
+        q[0..2].copy_from_slice(&id.to_be_bytes());
+        direct.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40000, 53, &q)), 1 + u64::from(id) / 100);
+    }
+    assert!(
+        events.len() <= direct.events().len(),
+        "{} events against {} for direct lookups",
+        events.len(),
+        direct.events().len()
+    );
+}
+
+#[test]
+fn a_cname_target_is_not_judged_by_the_heuristics() {
+    // CDNs alias names to long hashed labels; as a lookup this one would be a "long domain".
+    let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
+    let long = "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4.cdn.example-edge.net";
+    h.feed_ip(&from_resolver(&cname_response(1, "innocent.org", &[long])), 1);
+    assert!(h.events().is_empty(), "{:?}", h.events());
+    // ...and that check left no "clean" verdict behind: asked for directly, it is still judged.
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40001, 53, &dns(long))), 2);
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40002, 53, &dns(long))), 3);
+    assert!(h.events().iter().any(|e| e.info.contains("long domain")), "{:?}", h.events());
+}
+
+#[test]
+fn hostile_answer_sections_never_panic() {
+    let mut h = trails(&[("evil-cname.com", MALWARE.0, MALWARE.1)]);
+    let good = cname_response(1, "innocent.org", &["x.evil-cname.com"]);
+    // Every truncation of a valid response, then a pointer that points at itself.
+    for n in 12..good.len() {
+        h.feed_ip(&from_resolver(&good[..n]), 1);
+    }
+    let mut looped = good.clone();
+    let at = looped.len() - 16; // inside the last answer's owner pointer
+    looped[at] = 0xc0;
+    looped[at + 1] = at as u8;
+    h.feed_ip(&from_resolver(&looped), 2);
+}

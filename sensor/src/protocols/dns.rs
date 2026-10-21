@@ -154,6 +154,94 @@ pub fn first_a_record(dns_data: &[u8], name_end: usize) -> Option<u32> {
     Some(u32::from_be_bytes([rdata[0], rdata[1], rdata[2], rdata[3]]))
 }
 
+/// Most CNAME targets read from one response. A real chain is one or two hops; this bounds what a
+/// crafted response can make the sensor check.
+pub const MAX_CNAMES: usize = 8;
+
+/// A domain name at `offset`, compression pointers followed, lower-cased; None if it is malformed,
+/// loops, or is not plain ASCII (which no trail name is).
+fn read_name(dns_data: &[u8], mut offset: usize) -> Option<String> {
+    let mut name = String::new();
+    let mut jumps = 0;
+    loop {
+        let len = *dns_data.get(offset)? as usize;
+        if len & 0xc0 == 0xc0 {
+            // A pointer, always backwards in a well-formed message; the jump cap stops a loop.
+            jumps += 1;
+            if jumps > 16 {
+                return None;
+            }
+            offset = ((len & 0x3f) << 8) | *dns_data.get(offset + 1)? as usize;
+            continue;
+        }
+        if len & 0xc0 != 0 {
+            return None; // the reserved 0x40/0x80 label types
+        }
+        if len == 0 {
+            break;
+        }
+        let label = dns_data.get(offset + 1..offset + 1 + len)?;
+        if !label.is_ascii() || name.len() + len + 1 > 253 {
+            return None;
+        }
+        if !name.is_empty() {
+            name.push('.');
+        }
+        name.extend(label.iter().map(|b| b.to_ascii_lowercase() as char));
+        offset += 1 + len;
+    }
+    if name.is_empty() {
+        None
+    } else {
+        Some(name)
+    }
+}
+
+/// The CNAME targets in a response's answer section, at most `MAX_CNAMES`.
+///
+/// The question is skipped from `name_end` exactly as `first_a_record` does (one question, the
+/// only shape a resolver answers); answers are walked by their RDLENGTH and ANCOUNT bounds the
+/// walk, so a truncated or hostile message ends it rather than being misread.
+pub fn cname_targets(dns_data: &[u8], name_end: usize) -> Vec<String> {
+    let mut out = Vec::new();
+    let Some(ancount) = dns_data.get(6..8).map(|b| u16::from_be_bytes([b[0], b[1]])) else { return out };
+    let Some(mut cursor) = name_end.checked_add(5) else { return out };
+    for _ in 0..ancount {
+        // the owner NAME: labels up to a zero byte, or a compression pointer
+        loop {
+            let Some(&len) = dns_data.get(cursor) else { return out };
+            if len & 0xc0 == 0xc0 {
+                cursor += 2;
+                break;
+            }
+            cursor += 1 + len as usize;
+            if len == 0 {
+                break;
+            }
+        }
+        // TYPE(2) CLASS(2) TTL(4) RDLENGTH(2)
+        let Some(fixed) = dns_data.get(cursor..cursor + 10) else { return out };
+        let rtype = u16::from_be_bytes([fixed[0], fixed[1]]);
+        let rdlen = u16::from_be_bytes([fixed[8], fixed[9]]) as usize;
+        let rdata = cursor + 10;
+        if rdata + rdlen > dns_data.len() {
+            return out;
+        }
+        if rtype == 5 {
+            if let Some(target) = read_name(dns_data, rdata) {
+                if !out.contains(&target) {
+                    out.push(target);
+                    if out.len() == MAX_CNAMES {
+                        return out;
+                    }
+                }
+            }
+        }
+        cursor = rdata + rdlen;
+    }
+    out
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

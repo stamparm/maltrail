@@ -72,6 +72,8 @@ fn hammer_parsers(data: &[u8]) {
     if let Some(q) = dns::question(data) {
         let _ = dns::question_type_class(data, q.name_end);
         let _ = dns::first_a_record(data, q.name_end);
+        let _ = dns::cname_targets(data, q.name_end);
+        let _ = dns::cname_targets(data, usize::MAX - 4);
         // and with a hostile name_end
         let _ = dns::first_a_record(data, usize::MAX - 4);
         let _ = dns::question_type_class(data, usize::MAX - 2);

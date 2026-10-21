@@ -79,7 +79,9 @@ fn hammer(data: &[u8]) {
     if let Some(q) = dns::question(data) {
         let _ = dns::question_type_class(data, q.name_end);
         let _ = dns::first_a_record(data, q.name_end);
+        let _ = dns::cname_targets(data, q.name_end);
         for bogus in [0usize, 1, usize::MAX - 4, usize::MAX - 2, usize::MAX] {
+            let _ = dns::cname_targets(data, bogus);
             let _ = dns::first_a_record(data, bogus);
             let _ = dns::question_type_class(data, bogus);
         }
