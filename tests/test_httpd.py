@@ -425,6 +425,45 @@ class TestHttpd(unittest.TestCase):
         if st == 206:
             self.assertEqual(delta, newline.encode(), "Range delta must be exactly the appended bytes")
 
+    def test_an_enormous_events_range_is_capped_not_walked(self):
+        # /events parsed START_END itself and stat()ed every day in it: this one request was 3.65
+        # million stat() calls, several seconds of a worker, available to any logged-in user
+        ck = self._login()
+        started = time.time()
+        st, _, _ = _http(self.port, "GET", "/events?date=0001-01-01_9999-12-31", cookie=ck)
+        self.assertEqual(st, 200)
+        self.assertLess(time.time() - started, 1.0)
+
+    def test_a_range_request_is_served_from_the_day_it_names(self):
+        # The open handle used to be parked on the session and reused by the next Range request
+        # with a non-zero start - which then read the PREVIOUS request's day at this day's offset.
+        other = (datetime.datetime.strptime(self.date, "%Y-%m-%d") - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+        path = os.path.join(self.tmp, "logs", other + ".log")
+        with open(path, "w") as f:
+            f.write("x" * 40 + " other-day-marker\n")
+        try:
+            ck = self._login()
+            _http(self.port, "GET", "/events?date=%s" % self.date, cookie=ck, headers={"Range": "bytes=0-"})
+            st, _, body = _http(self.port, "GET", "/events?date=%s" % other, cookie=ck, headers={"Range": "bytes=40-"})
+            self.assertEqual((st, body), (206, b" other-day-marker\n"))
+        finally:
+            os.remove(path)
+
+    def test_a_filtered_session_pages_through_its_own_view(self):
+        # A netfiltered session's offsets count the filtered stream. Paging it in small steps
+        # must reassemble exactly the full filtered body - no line twice, none skipped.
+        ck = self._login("analyst")
+        _, _, full = _http(self.port, "GET", "/events?date=%s" % self.date, cookie=ck)
+        self.assertIn(b"10.0.0.5", full)
+        pages, start = [], 0
+        for _ in range(100):
+            st, head, body = _http(self.port, "GET", "/events?date=%s" % self.date, cookie=ck, headers={"Range": "bytes=%d-%d" % (start, start + 49)})
+            if not body:
+                break
+            pages.append(body)
+            start += len(body.decode())
+        self.assertEqual(b"".join(pages), full)
+
     def test_netfilter_restricts_analyst(self):
         # admin sees ALL events incl. the external-only one; a 10.0.0.0/8-restricted analyst must NOT
         # see events lacking any in-range IP (data-restriction correctness — a leak if it fails).

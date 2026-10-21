@@ -16,6 +16,12 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] /events capped a date range at nothing: one request for
+    0001-01-01_9999-12-31 was 3.65 million stat() calls. It uses the same
+    92-day cap as every other endpoint now. Its open log handle was also
+    kept on the session between Range requests, so two tabs read the same
+    file object and a request for one day could be answered from another.
+
 [+] DNS responses are checked for listed CNAME targets. A client asking for
     an innocent-looking name the resolver aliases to a listed one never
     looked the listed name up, so nothing matched. The event is reported

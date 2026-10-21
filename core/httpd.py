@@ -2497,204 +2497,194 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             multi_day = False
             dates = params.get("date", "")
 
-            if ".." in dates:
-                pass
-            elif '_' not in dates:
-                try:
-                    date = datetime.datetime.strptime(dates, "%Y-%m-%d").strftime("%Y-%m-%d")
-                    event_log_path = os.path.join(config.LOG_DIR, "%s.log" % date)
-                    if os.path.exists(event_log_path):
-                        range_handle = open(event_log_path, "rb")
-                        log_exists = True
-                except ValueError:
+            # Through _selected_days, like every other day-reading endpoint, so a range is capped at
+            # MAX_RANGE_DAYS. This parsed the range itself and walked it unbounded:
+            # `date=0001-01-01_9999-12-31` was 3.65 million stat() calls for one request.
+            days = _selected_days(dates)
+            if not days:
+                if dates:
                     print("[!] invalid date format in request")
-                    log_exists = False
+            elif '_' in dates:
+                paths = [_ for _ in (os.path.join(config.LOG_DIR, "%s.log" % day) for day in days) if os.path.exists(_)]
+                range_handle = io.BufferedReader(_ConcatenatedFiles(paths))
+                multi_day = True
+                log_exists = True
             else:
-                date_interval = dates.split("_", 1)
-                try:
-                    start_date = datetime.datetime.strptime(date_interval[0], "%Y-%m-%d").date()
-                    end_date = datetime.datetime.strptime(date_interval[1], "%Y-%m-%d").date()
-                    paths = []
-                    for i in xrange(int((end_date - start_date).days) + 1):
-                        date = start_date + datetime.timedelta(i)
-                        event_log_path = os.path.join(config.LOG_DIR, "%s.log" % date.strftime("%Y-%m-%d"))
-                        if os.path.exists(event_log_path):
-                            paths.append(event_log_path)
-
-                    range_handle = io.BufferedReader(_ConcatenatedFiles(paths))
-                    multi_day = True
+                event_log_path = os.path.join(config.LOG_DIR, "%s.log" % days[0])
+                if os.path.exists(event_log_path):
+                    range_handle = open(event_log_path, "rb")
                     log_exists = True
-                except ValueError:
-                    print("[!] invalid date format in request")
-                    log_exists = False
 
             if log_exists:
-                range_handle.seek(0, 2)
-                total = range_handle.tell()
-                range_handle.seek(0)
+                try:
+                    range_handle.seek(0, 2)
+                    total = range_handle.tell()
+                    range_handle.seek(0)
 
-                if self.headers.get(HTTP_HEADER.RANGE):
-                    # RFC 7233 byte-range forms. This used to be `bytes=(\d+)-(\d+)` only, so an
-                    # END WAS MANDATORY - and the natural way to tail a growing log, `bytes=N-`,
-                    # matched nothing, fell through, and got 200 with the WHOLE FILE. A client
-                    # polling a 100MB day log every few seconds re-downloaded all of it every
-                    # time, and had no way to tell from the status code that its range had been
-                    # ignored. html/js/main.js knew and worked around it by sending a huge
-                    # explicit end (LIVE_MAX_END); nothing else could be expected to.
-                    #
-                    #   bytes=N-M   an explicit span, as before
-                    #   bytes=N-    N to EOF
-                    #   bytes=-S    the last S bytes
-                    header = self.headers[HTTP_HEADER.RANGE]
-                    match = re.search(r"bytes=(\d*)-(\d*)", header)
-                    if match and (match.group(1) or match.group(2)):
-                        if not match.group(1):                      # suffix form: last S bytes
-                            suffix = int(match.group(2))
-                            start = max(0, total - suffix) if suffix else total
-                            end = max(0, total - 1)
-                        else:
-                            start = int(match.group(1))
-                            end = int(match.group(2)) if match.group(2) else max(0, total - 1)
-                        # A caught-up tail-follower asking `bytes=<total>-` gets 416, which is
-                        # what RFC 7233 says for a first-byte-pos at or past the length. Clients
-                        # must read that as "nothing new yet", not as an error worth reloading on.
-                        if end < start or start > total:  # NOTE: reject inverted/out-of-bounds ranges; otherwise a negative size makes read(-n) return the whole file
-                            self.send_response(_http_client.REQUESTED_RANGE_NOT_SATISFIABLE)
-                            self.send_header(HTTP_HEADER.CONNECTION, "close")
-                            self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes */%d" % total)
-                            return content
-                        max_size = end - start + 1
-                        end = min(total - 1, end)
-                        size = end - start + 1
-
-                        if start == 0 or not session.range_handle:
-                            if session.range_handle and session.range_handle is not range_handle:
-                                try: session.range_handle.close()   # close the previously-held handle before adopting a new one (fresh start=0 / refresh / day-switch); otherwise that fd leaks on every reload -> eventual "too many open files"
-                                except Exception: pass
-                            session.range_handle = range_handle
-                        elif range_handle is not session.range_handle:
-                            range_handle.close()
-
-                        if session.netfilters is None and not session.mask_custom:
-                            session.range_handle.seek(start)
-                            self.send_response(_http_client.PARTIAL_CONTENT)
-                            self.send_header(HTTP_HEADER.CONNECTION, "close")
-                            self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
-                            self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes %d-%d/%d" % (start, end, total))
-                            content = session.range_handle.read(size)
-                        else:
-                            self.send_response(_http_client.OK)
-                            self.send_header(HTTP_HEADER.CONNECTION, "close")
-                            self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
-
-                            _ = self._build_netfilters(session)
-                            if _ is None:
+                    if self.headers.get(HTTP_HEADER.RANGE):
+                        # RFC 7233 byte-range forms. This used to be `bytes=(\d+)-(\d+)` only, so an
+                        # END WAS MANDATORY - and the natural way to tail a growing log, `bytes=N-`,
+                        # matched nothing, fell through, and got 200 with the WHOLE FILE. A client
+                        # polling a 100MB day log every few seconds re-downloaded all of it every
+                        # time, and had no way to tell from the status code that its range had been
+                        # ignored. html/js/main.js knew and worked around it by sending a huge
+                        # explicit end (LIVE_MAX_END); nothing else could be expected to.
+                        #
+                        #   bytes=N-M   an explicit span, as before
+                        #   bytes=N-    N to EOF
+                        #   bytes=-S    the last S bytes
+                        header = self.headers[HTTP_HEADER.RANGE]
+                        match = re.search(r"bytes=(\d*)-(\d*)", header)
+                        if match and (match.group(1) or match.group(2)):
+                            if not match.group(1):                      # suffix form: last S bytes
+                                suffix = int(match.group(2))
+                                start = max(0, total - suffix) if suffix else total
+                                end = max(0, total - 1)
+                            else:
+                                start = int(match.group(1))
+                                end = int(match.group(2)) if match.group(2) else max(0, total - 1)
+                            # A caught-up tail-follower asking `bytes=<total>-` gets 416, which is
+                            # what RFC 7233 says for a first-byte-pos at or past the length. Clients
+                            # must read that as "nothing new yet", not as an error worth reloading on.
+                            if end < start or start > total:  # NOTE: reject inverted/out-of-bounds ranges; otherwise a negative size makes read(-n) return the whole file
+                                self.send_response(_http_client.REQUESTED_RANGE_NOT_SATISFIABLE)
+                                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                                self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes */%d" % total)
                                 return content
-                            addresses, netmasks, regex = _
+                            max_size = end - start + 1
+                            end = min(total - 1, end)
+                            size = end - start + 1
 
-                            buffer = io.StringIO()
-                            for line in self._filter_events(session.range_handle, session, addresses, netmasks, regex):
-                                buffer.write(line)
-                                if buffer.tell() >= max_size:
-                                    break
+                            # The handle is this request's own. It used to be parked on the session and
+                            # reused by the next Range request, so two concurrent requests of one session
+                            # (two tabs) seeked and read the same file object, one could close it under the
+                            # other, and a request for one day could be served from another day's handle.
+                            if session.netfilters is None and not session.mask_custom:
+                                range_handle.seek(start)
+                                self.send_response(_http_client.PARTIAL_CONTENT)
+                                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                                self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
+                                self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes %d-%d/%d" % (start, end, total))
+                                content = range_handle.read(size)
+                            else:
+                                self.send_response(_http_client.OK)
+                                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                                self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
 
-                            content = buffer.getvalue()
-                            end = start + len(content) - 1
-                            self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes %d-%d/%d" % (start, end, end + 1 + max_size * (len(content) >= max_size)))
+                                _ = self._build_netfilters(session)
+                                if _ is None:
+                                    return content
+                                addresses, netmasks, regex = _
 
-                        if len(content) < max_size:
-                            session.range_handle.close()
-                            session.range_handle = None
-
-                if size == -1:
-                    # Conditional request. A past day's log can never change, yet stepping to the
-                    # previous day and back, or simply refreshing, re-downloaded the entire thing -
-                    # the largest fetch the dashboard makes. A validator turns the second visit into
-                    # a few bytes.
-                    #
-                    # Single day and unfiltered only. A netfiltered or masked session is served
-                    # DIFFERENT bytes out of the same file, so a tag issued to one must never
-                    # validate for the other - the hole _trails_etag documents, arriving by another
-                    # door. Multi-day ranges are left alone: their reader spans several files and
-                    # one fd's stat does not describe the selection.
-                    #
-                    # `no-cache` is required, not incidental: today's log is still being appended
-                    # to, and without it a heuristically-cached copy could be served as fresh. It
-                    # means "store it, but always revalidate", which is exactly the intent.
-                    etag = None
-                    if not multi_day and session.netfilters is None and not session.mask_custom:
-                        try:
-                            _st = os.fstat(range_handle.fileno())
-                            etag = '"%d-%d"' % (_st.st_mtime_ns, _st.st_size)
-                        except Exception:
-                            etag = None
-
-                    if etag is not None and self.headers.get(HTTP_HEADER.IF_NONE_MATCH, "").strip() == etag:
-                        self.send_response(_http_client.NOT_MODIFIED)
-                        self.send_header(HTTP_HEADER.CONNECTION, "close")
-                        self.send_header(HTTP_HEADER.ETAG, etag)
-                        self.send_header(HTTP_HEADER.CACHE_CONTROL, "private, no-cache")
-                        self.send_header(HTTP_HEADER.VARY, HTTP_HEADER.ACCEPT_ENCODING)
-                        try:
-                            range_handle.close()
-                        except Exception:
-                            pass
-                        return content      # None: a 304 carries no body and no Content-Length
-
-                    self.send_response(_http_client.OK)
-                    self.send_header(HTTP_HEADER.CONNECTION, "close")
-                    self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
-                    if etag is not None:
-                        self.send_header(HTTP_HEADER.ETAG, etag)
-                        self.send_header(HTTP_HEADER.CACHE_CONTROL, "private, no-cache")
-                        # the tag names one ENCODING of the day, not the day
-                        self.send_header(HTTP_HEADER.VARY, HTTP_HEADER.ACCEPT_ENCODING)
-
-                    # A full day is by far the largest thing the dashboard ever fetches, and it went
-                    # out uncompressed: this branch streams the file straight to the socket, so it
-                    # never reached the gzip step every other response passes through. Event logs are
-                    # extremely repetitive - a 24MB day is 6MB at level 1 - and for any analyst who
-                    # is not on localhost that transfer IS the dashboard's load time.
-                    #
-                    # Compressed while streaming rather than buffered: a 100MB day must not have to
-                    # fit in memory to be sent. Level 1 deliberately - it gives 4x for ~0.1s of CPU,
-                    # where the higher levels cost 3-6x that to save another fifth, on a box whose
-                    # day job is capturing packets. Only when the client asked for it, so anything
-                    # that does not advertise gzip keeps the exact bytes it got before.
-                    gz = "gzip" in self.headers.get(HTTP_HEADER.ACCEPT_ENCODING, "")
-                    if gz:
-                        self.send_header(HTTP_HEADER.CONTENT_ENCODING, "gzip")
-                    self.end_headers()
-
-                    # GzipFile.close() flushes the trailer to fileobj but does NOT close it, which is
-                    # what we want: the server still owns the socket.
-                    out = gzip.GzipFile(fileobj=self.wfile, mode="wb", compresslevel=1) if gz else self.wfile
-                    try:
-                        if session.netfilters is None and not session.mask_custom:
-                            with range_handle as f:
-                                while True:
-                                    data = f.read(io.DEFAULT_BUFFER_SIZE)
-                                    if not data:
+                                # Offsets here count the FILTERED stream, so the lines before `start`
+                                # are filtered again and skipped; a page ends on a line boundary and
+                                # the next page's `start` is the previous `end + 1`.
+                                buffer = io.StringIO()
+                                skipped = 0
+                                for line in self._filter_events(range_handle, session, addresses, netmasks, regex):
+                                    if skipped < start:
+                                        skipped += len(line)
+                                        continue
+                                    buffer.write(line)
+                                    if buffer.tell() >= max_size:
                                         break
-                                    else:
-                                        out.write(data)
-                        else:
-                            # NOTE: per-user netfilter restriction and mask_custom redaction must be enforced here too;
-                            # otherwise a restricted user could retrieve the full unfiltered log by omitting (or malforming) the Range header
-                            _ = self._build_netfilters(session)
-                            with range_handle as f:
-                                if _ is not None:
-                                    addresses, netmasks, regex = _
-                                    for line in self._filter_events(f, session, addresses, netmasks, regex):
-                                        out.write(line.encode(UNICODE_ENCODING))
-                    finally:
-                        if gz:
-                            # A client that hangs up mid-stream makes this trailer write fail too,
-                            # and that must not mask whatever actually went wrong first.
+
+                                content = buffer.getvalue()
+                                end = start + len(content) - 1
+                                self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes %d-%d/%d" % (start, end, end + 1 + max_size * (len(content) >= max_size)))
+
+                    if size == -1:
+                        # Conditional request. A past day's log can never change, yet stepping to the
+                        # previous day and back, or simply refreshing, re-downloaded the entire thing -
+                        # the largest fetch the dashboard makes. A validator turns the second visit into
+                        # a few bytes.
+                        #
+                        # Single day and unfiltered only. A netfiltered or masked session is served
+                        # DIFFERENT bytes out of the same file, so a tag issued to one must never
+                        # validate for the other - the hole _trails_etag documents, arriving by another
+                        # door. Multi-day ranges are left alone: their reader spans several files and
+                        # one fd's stat does not describe the selection.
+                        #
+                        # `no-cache` is required, not incidental: today's log is still being appended
+                        # to, and without it a heuristically-cached copy could be served as fresh. It
+                        # means "store it, but always revalidate", which is exactly the intent.
+                        etag = None
+                        if not multi_day and session.netfilters is None and not session.mask_custom:
                             try:
-                                out.close()
+                                _st = os.fstat(range_handle.fileno())
+                                etag = '"%d-%d"' % (_st.st_mtime_ns, _st.st_size)
+                            except Exception:
+                                etag = None
+
+                        if etag is not None and self.headers.get(HTTP_HEADER.IF_NONE_MATCH, "").strip() == etag:
+                            self.send_response(_http_client.NOT_MODIFIED)
+                            self.send_header(HTTP_HEADER.CONNECTION, "close")
+                            self.send_header(HTTP_HEADER.ETAG, etag)
+                            self.send_header(HTTP_HEADER.CACHE_CONTROL, "private, no-cache")
+                            self.send_header(HTTP_HEADER.VARY, HTTP_HEADER.ACCEPT_ENCODING)
+                            try:
+                                range_handle.close()
                             except Exception:
                                 pass
+                            return content      # None: a 304 carries no body and no Content-Length
+
+                        self.send_response(_http_client.OK)
+                        self.send_header(HTTP_HEADER.CONNECTION, "close")
+                        self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
+                        if etag is not None:
+                            self.send_header(HTTP_HEADER.ETAG, etag)
+                            self.send_header(HTTP_HEADER.CACHE_CONTROL, "private, no-cache")
+                            # the tag names one ENCODING of the day, not the day
+                            self.send_header(HTTP_HEADER.VARY, HTTP_HEADER.ACCEPT_ENCODING)
+
+                        # A full day is by far the largest thing the dashboard ever fetches, and it went
+                        # out uncompressed: this branch streams the file straight to the socket, so it
+                        # never reached the gzip step every other response passes through. Event logs are
+                        # extremely repetitive - a 24MB day is 6MB at level 1 - and for any analyst who
+                        # is not on localhost that transfer IS the dashboard's load time.
+                        #
+                        # Compressed while streaming rather than buffered: a 100MB day must not have to
+                        # fit in memory to be sent. Level 1 deliberately - it gives 4x for ~0.1s of CPU,
+                        # where the higher levels cost 3-6x that to save another fifth, on a box whose
+                        # day job is capturing packets. Only when the client asked for it, so anything
+                        # that does not advertise gzip keeps the exact bytes it got before.
+                        gz = "gzip" in self.headers.get(HTTP_HEADER.ACCEPT_ENCODING, "")
+                        if gz:
+                            self.send_header(HTTP_HEADER.CONTENT_ENCODING, "gzip")
+                        self.end_headers()
+
+                        # GzipFile.close() flushes the trailer to fileobj but does NOT close it, which is
+                        # what we want: the server still owns the socket.
+                        out = gzip.GzipFile(fileobj=self.wfile, mode="wb", compresslevel=1) if gz else self.wfile
+                        try:
+                            if session.netfilters is None and not session.mask_custom:
+                                with range_handle as f:
+                                    while True:
+                                        data = f.read(io.DEFAULT_BUFFER_SIZE)
+                                        if not data:
+                                            break
+                                        else:
+                                            out.write(data)
+                            else:
+                                # NOTE: per-user netfilter restriction and mask_custom redaction must be enforced here too;
+                                # otherwise a restricted user could retrieve the full unfiltered log by omitting (or malforming) the Range header
+                                _ = self._build_netfilters(session)
+                                with range_handle as f:
+                                    if _ is not None:
+                                        addresses, netmasks, regex = _
+                                        for line in self._filter_events(f, session, addresses, netmasks, regex):
+                                            out.write(line.encode(UNICODE_ENCODING))
+                        finally:
+                            if gz:
+                                # A client that hangs up mid-stream makes this trailer write fail too,
+                                # and that must not mask whatever actually went wrong first.
+                                try:
+                                    out.close()
+                                except Exception:
+                                    pass
+
+                finally:
+                    range_handle.close()    # every path, the early returns included (a 416 leaked it)
 
             else:
                 self.send_response(_http_client.OK)  # instead of _http_client.NO_CONTENT (compatibility reasons)
