@@ -16,6 +16,13 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] Multi-worker capture with CAPTURE_FANOUT_MODE source sent a host's
+    outgoing packets to the wrong worker whenever the destination MAC began
+    with 0x4 or 0x6: on transmit the kernel hands the fanout program the
+    Ethernet header, which it mistook for an IP header. 1,000 outgoing
+    packets from 40 sources all went to worker 0 of 4; they now split
+    250/250/250/250. The program reads the kernel's protocol and network
+    header offset instead of guessing.
 [!] A USERS entry no longer works as its own password. It stored
     sha256(password), and logging in proved knowledge of exactly that, so
     anyone who could read maltrail.conf could log in. Entries are now salted

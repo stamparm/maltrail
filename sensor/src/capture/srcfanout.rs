@@ -10,18 +10,24 @@
 //! `setsockopt`, so there is no `bpf()` syscall, no `CAP_BPF`, no libbpf and no compiled object to
 //! ship. The privileges are the ones the sensor already needs to open the capture at all.
 //!
-//! ## Where the packet starts, and why the program does not assume
+//! ## Where the packet starts: asked, not guessed
 //!
-//! The kernel runs this from `packet_rcv_fanout`, which is the `ptype_all` handler - BEFORE
-//! `packet_rcv` pushes back to the MAC header. On the receive path `eth_type_trans()` has already
-//! pulled the link-layer header, so `skb->data` is expected to be the NETWORK header. That is a
-//! statement about kernel internals, and getting it wrong would send every packet to worker 0 -
-//! a silent capture failure, which is the worst possible outcome here.
+//! The kernel runs this from `packet_rcv_fanout`, the `ptype_all` handler, and what `skb->data`
+//! points at there depends on the direction. On receive `eth_type_trans()` has pulled the
+//! link-layer header and it is the network header; on transmit (`dev_queue_xmit_nit`) it is still
+//! the Ethernet header. The program used to tell the two apart by the first nibble - 4 or 6 meant
+//! "already an IP header" - and an outgoing frame whose destination MAC starts with 0x4 or 0x6 (a
+//! good share of real vendor prefixes) read as one. Measured on a veth whose peer was
+//! 46:00:00:00:00:01: 1,000 outgoing packets from 40 sources, all on worker 0 of 4; the same run
+//! towards 02:00:00:00:00:01 split 250/250/250/250. A host's own traffic towards such a gateway
+//! landed on one worker, and its traffic towards anything else on another, so its scan evidence
+//! was split between them.
 //!
-//! So the program does not rely on it. It reads the first nibble: 4 or 6 means it is already
-//! looking at an IP header. Otherwise it treats the bytes as a link-layer header and reads the
-//! EtherType at offset 12, following one 802.1Q tag if present. Both layouts are exercised by the
-//! interpreter tests below, so the program is correct whichever one the kernel presents.
+//! So nothing is read at an absolute offset. The kernel's own answers are used instead: the
+//! protocol through the `SKF_AD_PROTOCOL` ancillary load (`skb->protocol`), and the addresses
+//! relative to `SKF_NET_OFF` (`skb_network_header()`), both of which are the same in either
+//! direction and on any link type - Ethernet, `any`, tun. A frame still tagged 802.1Q (the
+//! kernel normally untags before `ptype_all`) is followed one tag deep.
 //!
 //! Anything it cannot parse returns 0. That is deliberately the same worker every time rather than
 //! something spread: unparseable traffic is a rounding error next to the traffic that matters, and
@@ -47,7 +53,6 @@ const BPF_RET: u16 = 0x06;
 
 const BPF_W: u16 = 0x00;
 const BPF_H: u16 = 0x08;
-const BPF_B: u16 = 0x10;
 
 const BPF_ABS: u16 = 0x20;
 const BPF_MEM: u16 = 0x60;
@@ -72,19 +77,25 @@ fn emit_mix(out: &mut Vec<SockFilter>) {
     out.push(insn(BPF_ALU | BPF_XOR | BPF_X, 0, 0, 0)); // A ^= X
 }
 
-/// A = the IPv4 source at `ip_off`, mixed.
+// linux/filter.h: loads at these (negative) offsets read kernel metadata, not packet bytes
+const SKF_AD_OFF: u32 = (-0x1000i32) as u32;
+const SKF_AD_PROTOCOL: u32 = 0;
+const SKF_NET_OFF: u32 = (-0x100000i32) as u32;
+
+/// A = the IPv4 source, `ip_off` bytes past the network header, mixed.
 fn emit_v4(out: &mut Vec<SockFilter>, ip_off: u32) {
-    out.push(insn(BPF_LD | BPF_W | BPF_ABS, 0, 0, ip_off + 12));
+    out.push(insn(BPF_LD | BPF_W | BPF_ABS, 0, 0, SKF_NET_OFF + ip_off + 12));
     emit_mix(out);
     out.push(insn(BPF_RET | BPF_A, 0, 0, 0));
 }
 
-/// A = the four words of the IPv6 source at `ip_off`, XOR-folded, then mixed.
+/// A = the four words of the IPv6 source, `ip_off` bytes past the network header, XOR-folded, then
+/// mixed.
 fn emit_v6(out: &mut Vec<SockFilter>, ip_off: u32) {
-    out.push(insn(BPF_LD | BPF_W | BPF_ABS, 0, 0, ip_off + 8));
+    out.push(insn(BPF_LD | BPF_W | BPF_ABS, 0, 0, SKF_NET_OFF + ip_off + 8));
     for word in 1..4u32 {
         out.push(insn(BPF_ST, 0, 0, 0));
-        out.push(insn(BPF_LD | BPF_W | BPF_ABS, 0, 0, ip_off + 8 + word * 4));
+        out.push(insn(BPF_LD | BPF_W | BPF_ABS, 0, 0, SKF_NET_OFF + ip_off + 8 + word * 4));
         out.push(insn(BPF_LDX | BPF_MEM, 0, 0, 0));
         out.push(insn(BPF_ALU | BPF_XOR | BPF_X, 0, 0, 0));
     }
@@ -98,26 +109,20 @@ fn emit_v6(out: &mut Vec<SockFilter>, ip_off: u32) {
 /// the header is emitted last with the distances known. Hand-computed offsets in a program this
 /// shape are exactly the kind of thing that is wrong once and then wrong forever.
 pub fn source_hash_program() -> Vec<SockFilter> {
-    // blocks, in the order they will be appended after the 9-instruction header
-    let mut v4_net = Vec::new();
-    emit_v4(&mut v4_net, 0);
-    let mut v6_net = Vec::new();
-    emit_v6(&mut v6_net, 0);
-    let mut v4_eth = Vec::new();
-    emit_v4(&mut v4_eth, 14);
-    let mut v6_eth = Vec::new();
-    emit_v6(&mut v6_eth, 14);
+    // blocks, in the order they will be appended after the 5-instruction header
+    let mut v4 = Vec::new();
+    emit_v4(&mut v4, 0);
+    let mut v6 = Vec::new();
+    emit_v6(&mut v6, 0);
     let mut v4_vlan = Vec::new();
-    emit_v4(&mut v4_vlan, 18);
+    emit_v4(&mut v4_vlan, 4);
     let mut v6_vlan = Vec::new();
-    emit_v6(&mut v6_vlan, 18);
+    emit_v6(&mut v6_vlan, 4);
 
-    const HEADER: usize = 9;
-    let at_v4_net = HEADER;
-    let at_v6_net = at_v4_net + v4_net.len();
-    let at_v4_eth = at_v6_net + v6_net.len();
-    let at_v6_eth = at_v4_eth + v4_eth.len();
-    let at_vlan = at_v6_eth + v6_eth.len();
+    const HEADER: usize = 5;
+    let at_v4 = HEADER;
+    let at_v6 = at_v4 + v4.len();
+    let at_vlan = at_v6 + v6.len();
     let at_v4_vlan = at_vlan + 4; // the VLAN dispatch below is 4 instructions
     let at_v6_vlan = at_v4_vlan + v4_vlan.len();
 
@@ -134,33 +139,23 @@ pub fn source_hash_program() -> Vec<SockFilter> {
     // wrong once and stays wrong.
     #[allow(clippy::vec_init_then_push)]
     let mut p: Vec<SockFilter> = Vec::with_capacity(HEADER + 64);
-    // 0: A = first byte
-    p.push(insn(BPF_LD | BPF_B | BPF_ABS, 0, 0, 0));
-    // 1: A >>= 4  -> IP version, if this is a network header
-    p.push(insn(BPF_ALU | BPF_RSH, 0, 0, 4));
-    // 2: version 4?
-    p.push(insn(BPF_JMP | BPF_JEQ, d(2, at_v4_net), 0, 4));
-    // 3: version 6?
-    p.push(insn(BPF_JMP | BPF_JEQ, d(3, at_v6_net), 0, 6));
-    // 4: not a network header - read the EtherType
-    p.push(insn(BPF_LD | BPF_H | BPF_ABS, 0, 0, 12));
-    // 5..7: IPv4 / IPv6 / 802.1Q
-    p.push(insn(BPF_JMP | BPF_JEQ, d(5, at_v4_eth), 0, 0x0800));
-    p.push(insn(BPF_JMP | BPF_JEQ, d(6, at_v6_eth), 0, 0x86dd));
-    p.push(insn(BPF_JMP | BPF_JEQ, d(7, at_vlan), 0, 0x8100));
-    // 8: anything else
+    // 0: A = skb->protocol
+    p.push(insn(BPF_LD | BPF_W | BPF_ABS, 0, 0, SKF_AD_OFF + SKF_AD_PROTOCOL));
+    // 1..3: IPv4 / IPv6 / 802.1Q
+    p.push(insn(BPF_JMP | BPF_JEQ, d(1, at_v4), 0, 0x0800));
+    p.push(insn(BPF_JMP | BPF_JEQ, d(2, at_v6), 0, 0x86dd));
+    p.push(insn(BPF_JMP | BPF_JEQ, d(3, at_vlan), 0, 0x8100));
+    // 4: anything else
     p.push(insn(BPF_RET, 0, 0, 0));
     debug_assert_eq!(p.len(), HEADER);
 
-    p.extend(v4_net);
-    p.extend(v6_net);
-    p.extend(v4_eth);
-    p.extend(v6_eth);
+    p.extend(v4);
+    p.extend(v6);
 
-    // VLAN dispatch: the inner EtherType sits at 16. The explicit ret #0 matters - without it a
-    // tagged frame carrying neither IP version falls straight into the IPv4 block and hashes two
-    // bytes of somebody else's header.
-    p.push(insn(BPF_LD | BPF_H | BPF_ABS, 0, 0, 16));
+    // VLAN dispatch: the network header is the tag, whose inner EtherType sits at 2. The explicit
+    // ret #0 matters - without it a tagged frame carrying neither IP version falls straight into
+    // the IPv4 block and hashes two bytes of somebody else's header.
+    p.push(insn(BPF_LD | BPF_H | BPF_ABS, 0, 0, SKF_NET_OFF + 2));
     p.push(insn(BPF_JMP | BPF_JEQ, d(at_vlan + 1, at_v4_vlan), 0, 0x0800));
     p.push(insn(BPF_JMP | BPF_JEQ, d(at_vlan + 2, at_v6_vlan), 0, 0x86dd));
     p.push(insn(BPF_RET, 0, 0, 0));
@@ -179,19 +174,28 @@ mod tests {
     /// The program is data that the KERNEL executes, so asserting on the instruction bytes would
     /// only prove it matches whatever I wrote. Running it proves what it computes - and it caught
     /// a VLAN frame carrying neither IP version falling through into the IPv4 block.
-    fn run(prog: &[SockFilter], pkt: &[u8]) -> u32 {
+    ///
+    /// It models the skb as the kernel presents it to the program: `skb->protocol` and the bytes
+    /// from the network header on. A load at a plain absolute offset is a test failure - those
+    /// bytes are the Ethernet header on transmit and the IP header on receive, which is the bug
+    /// this program was rewritten for.
+    fn run(prog: &[SockFilter], skb: &(u16, Vec<u8>)) -> u32 {
+        let (protocol, pkt) = (skb.0, &skb.1);
         let (mut a, mut x): (u32, u32) = (0, 0);
         let mut m = [0u32; 16];
         let mut pc = 0usize;
         let mut steps = 0;
 
-        let load = |off: u32, len: usize| -> Option<u32> {
-            let off = off as usize;
+        let load = |k: u32, len: usize| -> Option<u32> {
+            if k == SKF_AD_OFF + SKF_AD_PROTOCOL {
+                return Some(u32::from(protocol));
+            }
+            assert!((SKF_NET_OFF..SKF_AD_OFF).contains(&k), "absolute load at {k:#x}: depends on the direction");
+            let off = (k - SKF_NET_OFF) as usize;
             if off.checked_add(len)? > pkt.len() {
                 return None;
             }
             Some(match len {
-                1 => u32::from(pkt[off]),
                 2 => u32::from(u16::from_be_bytes([pkt[off], pkt[off + 1]])),
                 _ => u32::from_be_bytes([pkt[off], pkt[off + 1], pkt[off + 2], pkt[off + 3]]),
             })
@@ -203,12 +207,6 @@ mod tests {
             let i = *prog.get(pc).expect("pc past end of program");
             pc += 1;
             match i.code {
-                c if c == BPF_LD | BPF_B | BPF_ABS => {
-                    a = match load(i.k, 1) {
-                        Some(v) => v,
-                        None => return 0,
-                    }
-                }
                 c if c == BPF_LD | BPF_H | BPF_ABS => {
                     a = match load(i.k, 2) {
                         Some(v) => v,
@@ -233,33 +231,25 @@ mod tests {
         }
     }
 
-    fn ipv4(src: [u8; 4]) -> Vec<u8> {
+    fn ipv4(src: [u8; 4]) -> (u16, Vec<u8>) {
         let mut p = vec![0x45u8; 20];
         p[12..16].copy_from_slice(&src);
-        p
+        (0x0800, p)
     }
 
-    fn ipv6(src: [u8; 16]) -> Vec<u8> {
+    fn ipv6(src: [u8; 16]) -> (u16, Vec<u8>) {
         let mut p = vec![0u8; 40];
         p[0] = 0x60;
         p[8..24].copy_from_slice(&src);
-        p
+        (0x86dd, p)
     }
 
-    fn ether(ethertype: u16, payload: &[u8]) -> Vec<u8> {
-        let mut p = vec![0u8; 14];
-        p[12..14].copy_from_slice(&ethertype.to_be_bytes());
-        p.extend_from_slice(payload);
-        p
-    }
-
-    fn vlan(inner: u16, payload: &[u8]) -> Vec<u8> {
-        let mut p = vec![0u8; 14];
-        p[12..14].copy_from_slice(&0x8100u16.to_be_bytes());
-        p.extend_from_slice(&[0x00, 0x64]); // priority/VID
-        p.extend_from_slice(&inner.to_be_bytes());
-        p.extend_from_slice(payload);
-        p
+    /// Still tagged: the network header is the 4-byte tag, then the inner packet.
+    fn vlan(inner: (u16, Vec<u8>)) -> (u16, Vec<u8>) {
+        let mut p = vec![0x00, 0x64];
+        p.extend_from_slice(&inner.0.to_be_bytes());
+        p.extend_from_slice(&inner.1);
+        (0x8100, p)
     }
 
     /// THE property. Two packets from one source must reach the same worker no matter what flow
@@ -271,7 +261,7 @@ mod tests {
             let a = run(&prog, &ipv4([10, 0, 0, 7])) % workers;
             // same host, different destination and ports: irrelevant to the answer
             let mut other = ipv4([10, 0, 0, 7]);
-            other[16..20].copy_from_slice(&[8, 8, 8, 8]);
+            other.1[16..20].copy_from_slice(&[8, 8, 8, 8]);
             assert_eq!(a, run(&prog, &other) % workers, "same source split across workers");
         }
     }
@@ -288,22 +278,18 @@ mod tests {
         assert!(seen.iter().all(|&n| n > 10), "uneven distribution: {seen:?}");
     }
 
-    /// The layout question the module header is about: the kernel may present the network header
-    /// or the link-layer header, and the program must be right either way.
+    /// A tag the kernel has not removed leads to the same answer as the untagged packet.
     #[test]
-    fn both_packet_layouts_reach_the_same_answer() {
+    fn a_tagged_packet_lands_where_the_untagged_one_does() {
         let prog = source_hash_program();
-
         let bare = ipv4([203, 0, 113, 9]);
-        assert_eq!(run(&prog, &bare), run(&prog, &ether(0x0800, &bare)), "IPv4: layouts disagree");
-        assert_eq!(run(&prog, &bare), run(&prog, &vlan(0x0800, &bare)), "IPv4: VLAN layout disagrees");
+        assert_eq!(run(&prog, &bare), run(&prog, &vlan(bare.clone())), "IPv4: VLAN layout disagrees");
 
         let mut src = [0u8; 16];
         src[0..2].copy_from_slice(&[0x20, 0x01]);
         src[15] = 0xbe;
         let bare6 = ipv6(src);
-        assert_eq!(run(&prog, &bare6), run(&prog, &ether(0x86dd, &bare6)), "IPv6: layouts disagree");
-        assert_eq!(run(&prog, &bare6), run(&prog, &vlan(0x86dd, &bare6)), "IPv6: VLAN layout disagrees");
+        assert_eq!(run(&prog, &bare6), run(&prog, &vlan(bare6.clone())), "IPv6: VLAN layout disagrees");
     }
 
     #[test]
@@ -325,12 +311,12 @@ mod tests {
         // NON-ZERO payload on purpose: with zeros, a program that wrongly falls through into the
         // IPv4 block hashes four zero bytes and returns 0 anyway, so the test would pass while the
         // bug it exists for was present. It did, until this fixture was changed.
-        let arp = [0xa5u8; 28];
-        assert_eq!(run(&prog, &ether(0x0806, &arp)), 0, "ARP");
-        assert_eq!(run(&prog, &vlan(0x0806, &arp)), 0, "tagged ARP must not fall into the IPv4 block");
-        assert_eq!(run(&prog, &[]), 0, "empty");
-        assert_eq!(run(&prog, &[0x45]), 0, "one byte of an IPv4 header");
-        assert_eq!(run(&prog, &ether(0x0800, &[0x45, 0x00])), 0, "truncated inside the IP header");
+        let arp = (0x0806u16, vec![0xa5u8; 28]);
+        assert_eq!(run(&prog, &arp), 0, "ARP");
+        assert_eq!(run(&prog, &vlan(arp.clone())), 0, "tagged ARP must not fall into the IPv4 block");
+        assert_eq!(run(&prog, &(0x0800, vec![])), 0, "empty");
+        assert_eq!(run(&prog, &(0x0800, vec![0x45])), 0, "one byte of an IPv4 header");
+        assert_eq!(run(&prog, &(0x86dd, vec![0x60; 20])), 0, "truncated inside the IPv6 source");
     }
 
     #[test]
