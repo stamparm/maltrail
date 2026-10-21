@@ -14,6 +14,7 @@ import os
 import re
 import signal
 import socket
+import stat
 import subprocess
 import sys
 import threading
@@ -105,12 +106,31 @@ def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY, reus
 
     return retval
 
+def _share_error_log(path):
+    """
+    error.log is shared with the sensor, which may run as another user. It used to be created 0666
+    for that, so any local account could append forged lines or fill the disk through it. Now
+    0644, owned by whoever owns the log directory; a root process hands its file over, and an
+    existing world-writable file is tightened. sensor/src/output.rs does the same.
+    """
+
+    try:
+        if hasattr(os, "geteuid") and os.geteuid() == 0:
+            directory = os.stat(os.path.dirname(os.path.abspath(path)))
+            os.chown(path, directory.st_uid, directory.st_gid)
+        mode = os.stat(path).st_mode
+        if mode & stat.S_IWOTH:
+            os.chmod(path, stat.S_IMODE(mode) & 0o755)
+    except OSError:
+        pass
+
 def get_error_log_handle(flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY):
     if not hasattr(_thread_data, "error_log_handle"):
         _ = os.path.join(config.get("LOG_DIR") or os.curdir, "error.log")
         if not os.path.exists(_):
             open(_, "w+").close()
             os.chmod(_, DEFAULT_ERROR_LOG_PERMISSIONS)
+        _share_error_log(_)
         _thread_data.error_log_path = _
         _thread_data.error_log_handle = os.open(_thread_data.error_log_path, flags)
     return _thread_data.error_log_handle
@@ -306,6 +326,8 @@ def log_error(msg, single=False):
         handle = get_error_log_handle()
         os.write(handle, ("%s %s\n" % (time.strftime(TIME_FORMAT, time.localtime()), msg)).encode(UNICODE_ENCODING))
     except (OSError, IOError):
+        # error.log may belong to the account the sensor runs as: stderr rather than nowhere
+        sys.stderr.write("[!] %s\n" % msg)
         if config.SHOW_DEBUG:
             traceback.print_exc()
 

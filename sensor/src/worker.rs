@@ -121,6 +121,7 @@ pub fn run_all(handles: Vec<(Handle, String)>, ctx: WorkerContext) -> Result<Wor
     // Packet-path timing is sampled (see below); every Nth packet is measured.
     const TIMING_SAMPLE_STRIDE: u32 = 64;
     let mut timing_countdown: u32 = 1;
+    let mut capture_counters = CaptureCounters::default();
 
     // How this loop ended, decided inside it and reported to `main` on the way out.
     let mut outcome: Result<WorkerExit, WorkerError> = Ok(WorkerExit::Shutdown);
@@ -293,11 +294,7 @@ pub fn run_all(handles: Vec<(Handle, String)>, ctx: WorkerContext) -> Result<Wor
             // SQLite), not a property of the traffic, and pacing it off the packet clock would
             // make a fast replay of a week-long capture issue a flush per simulated minute.
             st.meta.maybe_flush(now_parts().0);
-            if let Some((received, dropped, ifdropped)) = handle.stats() {
-                st.metrics.capture_received = received as u64;
-                st.metrics.capture_dropped = dropped as u64;
-                st.metrics.capture_ifdropped = ifdropped as u64;
-            }
+            capture_counters.publish(handle.stats(), &mut st);
             ctx.slot.heartbeat();
             publish(&ctx.slot, &mut st);
         }
@@ -315,16 +312,71 @@ pub fn run_all(handles: Vec<(Handle, String)>, ctx: WorkerContext) -> Result<Wor
     // `sensor.py` does the same on its way out: without this, an offline replay shorter than one
     // flush period would write nothing at all to the store.
     st.meta.flush();
-    if let Some((received, dropped, ifdropped)) = handle.stats() {
-        st.metrics.capture_received = received as u64;
-        st.metrics.capture_dropped = dropped as u64;
-        st.metrics.capture_ifdropped = ifdropped as u64;
-    }
+    capture_counters.publish(handle.stats(), &mut st);
     publish(&ctx.slot, &mut st);
     // Marked dead AFTER the final publish, so a scrape landing in this window still sees the
     // worker's last counters rather than a half-torn-down slot.
     ctx.slot.mark_dead();
     outcome
+}
+
+/// A packet that panics the parser is contained by `catch_unwind` above, but std's default hook
+/// has already printed the panic, with its message and location, to stderr - once per PACKET.
+/// Packets are the attacker's to choose, so one crafted packet replayed at line rate became that
+/// many lines a second into journald, which drops everything else past its rate limit, the
+/// sensor's own messages included. Each panic location is now reported once; repeats are counted
+/// in `maltrail_panics_recovered_total` instead.
+pub fn install_panic_hook() {
+    let default = std::panic::take_hook();
+    std::panic::set_hook(Box::new(move |info| {
+        let location = info.location().map(|l| format!("{}:{}", l.file(), l.line())).unwrap_or_default();
+        if first_panic_at(&location) {
+            default(info);
+        }
+    }));
+}
+
+/// True the first time a location is seen. Bounded, and never blocks: a panic raised while
+/// another thread holds the lock is simply not printed, which beats a hook that can deadlock.
+fn first_panic_at(location: &str) -> bool {
+    const MAX_LOCATIONS: usize = 64;
+    static SEEN: std::sync::Mutex<Vec<String>> = std::sync::Mutex::new(Vec::new());
+    let Ok(mut seen) = SEEN.try_lock() else { return false };
+    if seen.iter().any(|s| s == location) || seen.len() >= MAX_LOCATIONS {
+        return false;
+    }
+    seen.push(location.to_string());
+    true
+}
+
+/// libpcap's counters are 32-bit (`struct pcap_stat`) and wrap at 4.29 billion packets: twelve
+/// hours at 100k packets/s. Read raw, `maltrail_capture_received_total` then fell back towards
+/// zero and the drop counters with it, so a sensor that had been dropping looked as if it had
+/// stopped. Widened here by adding each sample's wrapping difference, which is exact as long as
+/// it is sampled more often than once per 2^32 packets - it is sampled every housekeeping pass.
+#[derive(Default)]
+struct CaptureCounters {
+    last: [u32; 3],
+    total: [u64; 3],
+}
+
+impl CaptureCounters {
+    fn widen(&mut self, raw: [u32; 3]) -> [u64; 3] {
+        for (i, value) in raw.into_iter().enumerate() {
+            self.total[i] += u64::from(value.wrapping_sub(self.last[i]));
+            self.last[i] = value;
+        }
+        self.total
+    }
+
+    fn publish(&mut self, stats: Option<(u32, u32, u32)>, st: &mut WorkerState) {
+        if let Some((received, dropped, ifdropped)) = stats {
+            let [received, dropped, ifdropped] = self.widen([received, dropped, ifdropped]);
+            st.metrics.capture_received = received;
+            st.metrics.capture_dropped = dropped;
+            st.metrics.capture_ifdropped = ifdropped;
+        }
+    }
 }
 
 /// One line per replayed capture: what was read from it, what it produced, and how long it took.
@@ -421,5 +473,22 @@ mod tests {
         let (sec, usec) = now_parts();
         assert!(sec > 1_600_000_000);
         assert!(usec < 1_000_000);
+    }
+
+    #[test]
+    fn a_panic_location_is_reported_once() {
+        assert!(first_panic_at("src/x.rs:1"));
+        assert!(!first_panic_at("src/x.rs:1"), "a repeat must be silent");
+        assert!(first_panic_at("src/x.rs:2"), "a different bug must still be reported");
+    }
+
+    #[test]
+    fn capture_counters_survive_libpcaps_32_bit_wrap() {
+        let mut c = CaptureCounters::default();
+        assert_eq!(c.widen([10, 1, 0]), [10, 1, 0]);
+        assert_eq!(c.widen([u32::MAX - 5, 7, 0]), [u64::from(u32::MAX) - 5, 7, 0]);
+        // received wraps past 2^32: 6 to reach it, 20 after
+        assert_eq!(c.widen([20, 7, 3]), [u64::from(u32::MAX) + 21, 7, 3]);
+        assert_eq!(c.widen([20, 7, 3]), [u64::from(u32::MAX) + 21, 7, 3], "an unchanged sample adds nothing");
     }
 }

@@ -1096,15 +1096,36 @@ pub fn free_bytes(path: &Path) -> Option<u64> {
 
 pub fn init_error_log(log_dir: &Path, show_debug: bool) {
     let path = log_dir.join("error.log");
-    if !path.exists() {
-        if let Ok(f) = File::create(&path) {
-            drop(f);
-            #[cfg(unix)]
-            let _ = std::fs::set_permissions(&path, std::fs::Permissions::from_mode(0o666));
-        }
-    }
+    #[cfg(unix)]
+    let file = {
+        let file = OpenOptions::new().append(true).create(true).mode(0o644).open(&path).ok();
+        share_error_log(&path, log_dir);
+        file
+    };
+    #[cfg(not(unix))]
     let file = OpenOptions::new().append(true).create(true).open(&path).ok();
     let _ = ERROR_LOG.set(Mutex::new(ErrorLog { file, seen: Default::default(), show_debug }));
+}
+
+/// error.log is shared with the server, which writes the same file and may run as another user.
+/// It used to be created 0666 for that, so any local account could append forged lines to it or
+/// fill the disk through it. Now 0644, owned by whoever owns the log directory (the account both
+/// run as); a root process hands its file over instead of leaving the other one locked out. An
+/// existing world-writable file is tightened the same way. `core/log.py` does the same.
+#[cfg(unix)]
+fn share_error_log(path: &Path, log_dir: &Path) {
+    use std::os::unix::fs::MetadataExt;
+    // SAFETY: geteuid() has no preconditions and cannot fail.
+    if unsafe { libc::geteuid() } == 0 {
+        if let Ok(dir) = std::fs::metadata(log_dir) {
+            let _ = std::os::unix::fs::chown(path, Some(dir.uid()), Some(dir.gid()));
+        }
+    }
+    if let Ok(meta) = std::fs::metadata(path) {
+        if meta.mode() & 0o002 != 0 {
+            let _ = std::fs::set_permissions(path, std::fs::Permissions::from_mode(meta.mode() & 0o755));
+        }
+    }
 }
 
 /// `core/log.py:log_error()`
@@ -1123,8 +1144,15 @@ pub fn log_error(msg: &str, single: bool) {
     let now = SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.as_secs()).unwrap_or(0);
     let stamp = local_time_string(now, 0);
     let stamp = &stamp.as_str()[..19]; // TIME_FORMAT has no microseconds
-    if let Some(file) = state.file.as_mut() {
-        let _ = file.write_all(format!("{stamp} {msg}\n").as_bytes());
+    let show_debug = state.show_debug;
+    match state.file.as_mut() {
+        Some(file) => {
+            let _ = file.write_all(format!("{stamp} {msg}\n").as_bytes());
+        }
+        // Not ours to write (error.log belongs to the account the server runs as): stderr, which
+        // a service manager keeps, rather than nowhere.
+        None if !show_debug => crate::ceprintln!("[!] {msg}"),
+        None => {}
     }
 }
 

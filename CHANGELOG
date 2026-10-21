@@ -16,6 +16,12 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] error.log was created world-writable (0666), so any local account
+    could append to it. It is 0644 now, owned by the log directory's owner,
+    and an existing world-writable one is tightened. The sensor also prints
+    a parser panic once per location rather than once per packet (a crafted
+    packet replayed at line rate flooded journald), and its capture counters
+    no longer wrap at 2^32 packets (12 hours at 100k packets/s).
 [!] install.sh installs the latest release by default instead of master.
     The prebuilt sensor exists only for releases, so a master tree got an
     older sensor, which ignored options newer than itself. '--ref master'

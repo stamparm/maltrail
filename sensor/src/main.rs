@@ -162,6 +162,8 @@ fn run() -> i32 {
         libc::signal(libc::SIGPIPE, libc::SIG_DFL);
     }
 
+    maltrail_sensor::worker::install_panic_hook();
+
     // Decide colouring first: core/colorized.py installs its stream wrapper at import time,
     // before anything is printed.
     colorized::init(None);
