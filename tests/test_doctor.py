@@ -96,8 +96,17 @@ class DoctorChecks(unittest.TestCase):
         self.assertEqual(doctor.FAIL, findings[0][0])
 
     def test_populated_users_ok(self):
+        from core import password
+        settings.config.USERS = ["admin:%s:0:" % password.make("s3cret", iterations=1000)]
         findings = doctor.check_users()
         self.assertEqual([(doctor.OK, findings[0][1])], findings)
+
+    def test_an_unsalted_password_warns(self):
+        # sha256(password) logs in by itself for anyone who can read the configuration
+        settings.config.USERS = ["admin:%s:0:" % ("ab" * 32)]
+        findings = doctor.check_users()
+        self.assertEqual(doctor.WARN, findings[0][0])
+        self.assertIn("--hash-password", findings[0][1])
 
     # --- endpoints -------------------------------------------------------------------
 

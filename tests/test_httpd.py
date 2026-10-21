@@ -23,6 +23,9 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, REPO)   # so `from core.log import safe_value` resolves (we also shell out to server.py)
 PW = "changeme!"
 STORED = hashlib.sha256(PW.encode()).hexdigest()   # what the config stores (sha256 of password)
+from core import password as _password
+SALTED_PW = "salted secret"
+SALTED = _password.make(SALTED_PW, iterations=1000)  # the current form; few iterations, it is a test
 from core.httpd import LOGIN_FAILURE_THRESHOLD     # the brute-force refusal threshold under test
 from core.settings import UNAUTHORIZED_SLEEP_TIME  # the width of its window
 
@@ -163,7 +166,8 @@ class TestHttpd(unittest.TestCase):
             f.write("USERS\n    admin:%s:0:\n    analyst:%s:1000:10.0.0.0/8\n    analyst2:%s:1001:10.0.5.0/16\n"
                     "    analyst3:%s:1002:10.0.0.5\n    analyst4:%s:1003:10.0.0.6-10.0.0.9\n"
                     "    ipv6user:%s:1004:::\n"   # netfilter "::" (IPv6 all) - the last field contains colons
-                    % (STORED, STORED, STORED, STORED, STORED, STORED))
+                    "    salted:%s:0:\n"
+                    % (STORED, STORED, STORED, STORED, STORED, STORED, SALTED))
             f.write("ENABLE_MASK_CUSTOM true\n")
             # deliberately carries every character that has to be escaped on the way into an HTML
             # attribute - <, >, & and a double quote - so test_index_carries_the_severity_policy
@@ -209,6 +213,42 @@ class TestHttpd(unittest.TestCase):
         m = [l for l in head.split("\r\n") if l.lower().startswith("set-cookie:")]
         self.assertTrue(m, "login must set a session cookie")
         return m[0].split(":", 1)[1].split(";", 1)[0].strip()
+
+    def _params(self, username):
+        st, _, body = _http(self.port, "GET", "/login/params?username=%s" % username)
+        self.assertEqual(st, 200)
+        return json.loads(body.decode())
+
+    def _salted_login(self, password, nonce=None, username="salted"):
+        nonce = nonce or self._params(username)["nonce"]
+        proof = _password.proof_for(password, SALTED, username, nonce)
+        return _http(self.port, "POST", "/login", body="username=%s&nonce=%s&proof=%s" % (username, nonce, proof))[0]
+
+    def test_a_salted_entry_logs_in_with_its_proof(self):
+        self.assertEqual(self._salted_login(SALTED_PW), 200)
+        self.assertEqual(self._salted_login("wrong"), 401, "the control: a wrong password must fail")
+
+    def test_a_salted_entrys_stored_value_does_not_log_in(self):
+        # The point of the new form. With sha256(password) stored, the stored value logged in by
+        # itself: sha256(stored + nonce) was the whole proof. Neither that, nor the stored field
+        # used as if it were the password, may get anyone in.
+        nonce = self._params("salted")["nonce"]
+        digest = hashlib.sha256((SALTED + nonce).encode()).hexdigest()
+        self.assertEqual(_http(self.port, "POST", "/login", body="username=salted&nonce=%s&hash=%s" % (nonce, digest))[0], 401)
+        self.assertEqual(self._salted_login(SALTED), 401)
+
+    def test_a_proof_needs_a_nonce_this_server_issued(self):
+        # a client-chosen nonce let a login captured off the wire be replayed after a restart
+        self.assertEqual(self._salted_login(SALTED_PW, nonce="0123456789abcdef0123456789abcdef"), 401)
+        nonce = self._params("salted")["nonce"]
+        self.assertEqual(self._salted_login(SALTED_PW, nonce=nonce), 200)
+        self.assertEqual(self._salted_login(SALTED_PW, nonce=nonce), 401, "a spent nonce must not work twice")
+
+    def test_login_parameters_do_not_tell_which_users_exist(self):
+        known, unknown = self._params("salted"), self._params("nobody-here")
+        self.assertEqual(sorted(known), sorted(unknown))
+        self.assertEqual(unknown["salt"], self._params("nobody-here")["salt"], "a decoy salt must be stable, or it gives itself away")
+        self.assertTrue(self._params("admin").get("legacy"), "an old sha256 entry must be flagged, so the browser sends the old digest")
 
     # --- the auth surfaces PLANS G4 named as untested ---
 
@@ -1631,7 +1671,7 @@ class TestPublishedPasswordStaysLocal(unittest.TestCase):
         cfg = os.path.join(cls.tmp, "srv.conf")
         with open(cfg, "w") as f:
             f.write("HTTP_ADDRESS 0.0.0.0\nHTTP_PORT %d\n" % cls.port)
-            f.write("USERS\n    admin:%s:0:\n    ops:%s:0:\n" % (STORED, cls.OTHER))
+            f.write("USERS\n    admin:%s:0:\n    ops:%s:0:\n    salted:%s:0:\n" % (STORED, cls.OTHER, _password.make(PW, iterations=1000)))
             f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
             f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME test\nDISABLE_CHECK_SUDO true\n"
                     % (logdir, os.path.join(cls.tmp, "trails.csv")))
@@ -1653,7 +1693,9 @@ class TestPublishedPasswordStaysLocal(unittest.TestCase):
     def _login_from(self, host, username, stored):
         import binascii
         nonce = binascii.hexlify(os.urandom(16)).decode()
-        body = "username=%s&nonce=%s&hash=%s" % (username, nonce, hashlib.sha256((stored + nonce).encode()).hexdigest())
+        return self._post_from(host, "username=%s&nonce=%s&hash=%s" % (username, nonce, hashlib.sha256((stored + nonce).encode()).hexdigest()))
+
+    def _post_from(self, host, body):
         s = socket.create_connection((host, self.port), timeout=10)
         try:
             s.sendall(("POST /login HTTP/1.1\r\nHost: x\r\nConnection: close\r\nContent-Type: application/x-www-form-urlencoded\r\n"
@@ -1678,6 +1720,31 @@ class TestPublishedPasswordStaysLocal(unittest.TestCase):
         self.assertIn(b"USERS", body, "the refusal must say what to change")
         # The control: a password of the operator's own is accepted from anywhere.
         self.assertEqual(self._login_from(self.lan, "ops", self.OTHER)[0], 200)
+
+    def test_the_default_password_in_the_salted_form_is_recognized_too(self):
+        # the shipped maltrail.conf now stores 'changeme!' salted; it must still be held to loopback
+        if getattr(type(self), "_skip", None):
+            self.skipTest(self._skip)
+        self.assertEqual(self._salted_from("127.0.0.1")[0], 200)
+        self.assertEqual(self._salted_from(self.lan)[0], 403, "the published password logged in over the network")
+
+    def _salted_from(self, host):
+        s = socket.create_connection((host, self.port), timeout=10)
+        try:
+            s.sendall(("GET /login/params?username=salted HTTP/1.1\r\nHost: x\r\nConnection: close\r\n\r\n").encode())
+            data = b""
+            while True:
+                chunk = s.recv(65536)
+                if not chunk:
+                    break
+                data += chunk
+        finally:
+            s.close()
+        prm = json.loads(data.partition(b"\r\n\r\n")[2].decode())
+        users = open(os.path.join(self.tmp, "srv.conf")).read()
+        field = [_.split(":")[1] for _ in users.split("\n") if _.strip().startswith("salted:")][0]
+        proof = _password.proof_for(PW, field, "salted", prm["nonce"])
+        return self._post_from(host, "username=salted&nonce=%s&proof=%s" % (prm["nonce"], proof))
 
 
 class TestTlsHandshakeOffTheAcceptThread(unittest.TestCase):

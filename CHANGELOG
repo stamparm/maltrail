@@ -16,6 +16,13 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] A USERS entry no longer works as its own password. It stored
+    sha256(password), and logging in proved knowledge of exactly that, so
+    anyone who could read maltrail.conf could log in. Entries are now salted
+    PBKDF2 with a SCRAM-style proof ('python3 server.py --hash-password';
+    install.sh writes this form), and the login nonce is issued by the
+    server, so a captured login cannot be replayed after a restart. Old
+    sha256 entries still work, with a warning at start and in --doctor.
 [!] error.log was created world-writable (0666), so any local account
     could append to it. It is 0644 now, owned by the log directory's owner,
     and an existing world-writable one is tightened. The sensor also prints

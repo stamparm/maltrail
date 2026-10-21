@@ -18,6 +18,7 @@ found; [!] warnings do not change the exit code.
 """
 
 import os
+import re
 import shutil
 import socket
 import sys
@@ -75,6 +76,10 @@ def check_users():
     users = config.USERS or []
     if not users:
         return [(FAIL, "USERS table is empty - the web UI will reject every login")]
+    from core.password import parse
+    legacy = [_.split(':', 3)[0].strip() for _ in users if len(_.split(':', 3)) == 4 and not parse(re.sub(r"\s", "", _).split(':', 3)[1])]
+    if legacy:
+        return [(WARN, "USERS stores sha256(password) for %s - that value logs in by itself, for anyone who can read the configuration\n[?] (hint: regenerate it with 'python3 server.py --hash-password')" % ", ".join(legacy))]
     return [(OK, "%d user account(s) configured" % len(users))]
 
 

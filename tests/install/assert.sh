@@ -93,10 +93,12 @@ as_user maltrail "touch /var/log/maltrail/.probe" 2>/dev/null && echo "A logdir-
 grep -q '^TRAILS_FILE /var/lib/maltrail/trails.csv' "$CONF" && echo "A conf-managed-block"
 # The admin password is this install's own: the LAST admin entry (the installer's USERS block wins)
 # is not the published 'changeme!'.
+# And it is stored salted, not as sha256(password), whose stored value logs in by itself.
 last_admin=$(grep '^[[:space:]]*admin:' "$CONF" | tail -n1)
+shipped=$(grep '^[[:space:]]*admin:' "$PREFIX/maltrail.conf" | head -n1 | cut -d: -f2)
 case $last_admin in
-    *9ab3cd9d67bf49d01f6a2e33d0bd9bc804ddbe6ce1ff5d219c42624851db5dbc*|"") ;;
-    *) echo "A conf-own-password" ;;
+    ""|*"$shipped"*) ;;
+    *:pbkdf2-sha256\$*) echo "A conf-own-password" ;;
 esac
 
 # 2. service files: rendered for this installation's paths, and pointing at something executable.

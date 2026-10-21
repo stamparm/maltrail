@@ -5,6 +5,7 @@ Copyright (c) 2014-present Maltrail developers (https://github.com/stamparm/malt
 See the file 'LICENSE' for copying permission
 """
 
+import binascii
 import datetime
 import glob
 import gzip
@@ -31,6 +32,7 @@ from core.addr import make_mask
 from core.addr import resolve_address
 from core.attribdict import AttribDict
 from core import log as _log
+from core import password
 from core import trailsbin
 from core.common import get_regex
 from core.common import trails_bin_path
@@ -416,6 +418,44 @@ MAX_LOGIN_FAILURE_ENTRIES = 4096
 
 # sha256("changeme!"), the password the shipped maltrail.conf gives `admin`.
 PUBLISHED_PASSWORD_HASH = "9ab3cd9d67bf49d01f6a2e33d0bd9bc804ddbe6ce1ff5d219c42624851db5dbc"
+
+
+def is_published_password(field):
+    """Is this USERS password field, in either form, the shipped 'changeme!'? Memoised: in the new
+    form answering it costs a PBKDF2, and the same few fields are asked about on every login."""
+
+    field = (field or "").strip()
+    if field not in _published_answers:
+        _published_answers[field] = field.lower() == PUBLISHED_PASSWORD_HASH or (bool(password.parse(field)) and password.is_password(field, "changeme!"))
+    return _published_answers[field]
+
+_published_answers = {}
+
+# Nonces this server handed out with a login's parameters. The old protocol let the CLIENT pick
+# the nonce and only remembered spent ones in memory, so a login captured off the wire could be
+# replayed once the server had restarted. A proof is now only accepted against a nonce issued
+# here, unused, and less than NONCE_TTL old.
+NONCE_TTL = 300
+MAX_ISSUED_NONCES = 10000
+_issued_nonces = {}
+_issued_nonces_lock = threading.Lock()
+
+def _issue_nonce():
+    nonce = binascii.hexlify(os.urandom(16)).decode()
+    now = time.time()
+    with _issued_nonces_lock:
+        if len(_issued_nonces) >= MAX_ISSUED_NONCES:
+            for _ in [_ for _, expiry in _issued_nonces.items() if expiry < now]:
+                del _issued_nonces[_]
+            while len(_issued_nonces) >= MAX_ISSUED_NONCES:     # still full: the oldest go first
+                del _issued_nonces[next(iter(_issued_nonces))]
+        _issued_nonces[nonce] = now + NONCE_TTL
+    return nonce
+
+def _redeem_nonce(nonce):
+    with _issued_nonces_lock:
+        expiry = _issued_nonces.pop(nonce or "", None)
+    return expiry is not None and expiry >= time.time()
 
 
 def _is_loopback(address):
@@ -1550,6 +1590,24 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             valid = False
             stored_hash = None
 
+            if params.get("subpath") == "params":
+                # Step one of a login: the salt and iteration count to derive the proof with (see
+                # core/password.py). Asked before the threshold check on purpose - it costs nothing
+                # and proves nothing, and a refused IP gets its 401 on the attempt itself.
+                username = params.get("username") or ""
+                field = None
+                for entry in (config.USERS or []):
+                    parts = re.sub(r"\s", "", entry).split(':', 3)
+                    if len(parts) == 4 and parts[0] == username:
+                        field = parts[1]
+                        break
+                self.send_response(_http_client.OK)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
+                result = password.parameters(field, username)
+                result["nonce"] = _issue_nonce()
+                return json.dumps(result)
+
             # Threshold check BEFORE any credential work: see _login_refused. A hammering IP gets
             # the same 401 it would have got anyway, immediately, and its guess is not evaluated.
             if _login_refused(self.client_address[0]):
@@ -1559,7 +1617,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 self.__log_auth(False, params.get("username"))
                 return "Login failed"
 
-            if params.get("username") and params.get("hash") and params.get("nonce"):
+            if params.get("username") and (params.get("hash") or params.get("proof")) and params.get("nonce"):
                 if params.get("nonce") not in DISPOSED_NONCES:
                     DISPOSED_NONCES[params.get("nonce")] = True
                     for entry in (config.USERS or []):
@@ -1578,6 +1636,16 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             uid = None
 
                         if username == params.get("username"):
+                            if password.parse(stored_hash):
+                                # Only the proof is accepted for an entry in the new form: taking the
+                                # old digest too would let its stored value log in, which is the
+                                # whole thing the new form exists to stop.
+                                if _redeem_nonce(params.get("nonce")) and password.verify(stored_hash, username, params.get("nonce"), params.get("proof")):
+                                    valid = True
+                                    break
+                                continue
+                            if not params.get("hash"):
+                                continue
                             try:
                                 # compare_digest, not ==: Python's string comparison returns on the first
                                 # differing byte, so the time it takes leaks how much of the expected
@@ -1594,7 +1662,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 if config.SHOW_DEBUG:
                                     traceback.print_exc()
 
-            if valid and stored_hash.strip().lower() == PUBLISHED_PASSWORD_HASH and not _is_loopback(self.client_address[0]):
+            if valid and is_published_password(stored_hash) and not _is_loopback(self.client_address[0]):
                 # The password maltrail.conf ships with is public. It is still accepted from this
                 # machine (first run, an SSH tunnel), but not over the network, where the shipped
                 # HTTP_ADDRESS 0.0.0.0 used to make every fresh install open to anyone who had read

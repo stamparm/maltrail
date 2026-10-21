@@ -530,8 +530,10 @@ def read_config(config_file):
         # split(':') would count >4 parts for such a valid entry and abort startup (must match the login parser).
         if len(entry.split(':', 3)) != 4:
             sys.exit("[!] invalid USERS entry '%s'" % entry)
-        if re.search(r"\$\d+\$", entry):
-            sys.exit("[!] invalid USERS entry '%s'\n[?] (hint: please update PBKDF2 hashes to SHA256 in your configuration file)" % entry)
+        # The passlib form of years ago ('$pbkdf2-sha256$29000$...'), not core/password.py's, which
+        # has no leading '$'.
+        if entry.split(':', 3)[1].strip().startswith('$'):
+            sys.exit("[!] invalid USERS entry '%s'\n[?] (hint: regenerate the password field with 'python3 server.py --hash-password')" % entry)
 
     if config.SSL_PEM:
         config.SSL_PEM = config.SSL_PEM.replace('/', os.sep)

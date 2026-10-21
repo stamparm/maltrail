@@ -3361,30 +3361,77 @@
       }).catch(function () { });
   }
 
-  // ---- SHA-256 (compact, UTF-8-safe, sync; works on plain http where SubtleCrypto's secure-context rule blocks) ----
-  function sha256hex(str) {
-    function rr(v, a) { return (v >>> a) | (v << (32 - a)); }
-    var mp = Math.pow, mw = mp(2, 32), res = "", words = [], hash = [], k = [], pc = 0, comp = {},
-        ascii = unescape(encodeURIComponent(str)), bitLen = ascii.length * 8;
-    for (var c = 2; pc < 64; c++) { if (!comp[c]) { for (var i = 0; i < 313; i += c) comp[i] = c; hash[pc] = (mp(c, .5) * mw) | 0; k[pc++] = (mp(c, 1 / 3) * mw) | 0; } }
-    ascii += "\x80"; while (ascii.length % 64 - 56) ascii += "\x00";
-    for (var i = 0; i < ascii.length; i++) { var j = ascii.charCodeAt(i); if (j >> 8) return ""; words[i >> 2] |= j << ((3 - i) % 4) * 8; }
-    words[words.length] = ((bitLen / mw) | 0); words[words.length] = (bitLen);
-    for (var jj = 0; jj < words.length;) {
-      var w = words.slice(jj, jj += 16), oh = hash; hash = hash.slice(0, 8);
-      for (var i = 0; i < 64; i++) {
-        var w15 = w[i - 15], w2 = w[i - 2], a = hash[0], e = hash[4];
-        var t1 = hash[7] + (rr(e, 6) ^ rr(e, 11) ^ rr(e, 25)) + ((e & hash[5]) ^ ((~e) & hash[6])) + k[i] +
-          (w[i] = (i < 16) ? w[i] : (w[i - 16] + (rr(w15, 7) ^ rr(w15, 18) ^ (w15 >>> 3)) + w[i - 7] + (rr(w2, 17) ^ rr(w2, 19) ^ (w2 >>> 10))) | 0);
-        var t2 = (rr(a, 2) ^ rr(a, 13) ^ rr(a, 22)) + ((a & hash[1]) ^ (a & hash[2]) ^ (hash[1] & hash[2]));
-        hash = [(t1 + t2) | 0].concat(hash); hash[4] = (hash[4] + t1) | 0;
-      }
-      for (var i = 0; i < 8; i++) hash[i] = (hash[i] + oh[i]) | 0;
+  // ---- SHA-256, HMAC and PBKDF2 over bytes. Synchronous and dependency-free on purpose: a dashboard
+  // served over plain http is not a secure context, and SubtleCrypto does not exist there. ----
+  var SHA_K = new Int32Array([
+    0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+    0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+    0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+    0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+    0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+    0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+    0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+    0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2]);
+  var SHA_IV = new Int32Array([0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a, 0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19]);
+  var SHA_W = new Int32Array(64);
+  function shaBlock(H, b, o) {
+    var W = SHA_W, i, t1, t2;
+    for (i = 0; i < 16; i++) W[i] = (b[o + 4 * i] << 24) | (b[o + 4 * i + 1] << 16) | (b[o + 4 * i + 2] << 8) | b[o + 4 * i + 3];
+    for (i = 16; i < 64; i++) {
+      var x = W[i - 15], y = W[i - 2];
+      W[i] = (((x >>> 7) | (x << 25)) ^ ((x >>> 18) | (x << 14)) ^ (x >>> 3)) + W[i - 7] +
+             (((y >>> 17) | (y << 15)) ^ ((y >>> 19) | (y << 13)) ^ (y >>> 10)) + W[i - 16] | 0;
     }
-    for (var i = 0; i < 8; i++) for (var j = 3; j + 1; j--) { var b = (hash[i] >> (j * 8)) & 255; res += ((b < 16) ? 0 : "") + b.toString(16); }
-    return res;
+    var a = H[0], c1 = H[1], c2 = H[2], d = H[3], e = H[4], f = H[5], g = H[6], h = H[7];
+    for (i = 0; i < 64; i++) {
+      t1 = h + (((e >>> 6) | (e << 26)) ^ ((e >>> 11) | (e << 21)) ^ ((e >>> 25) | (e << 7))) + ((e & f) ^ (~e & g)) + SHA_K[i] + W[i] | 0;
+      t2 = (((a >>> 2) | (a << 30)) ^ ((a >>> 13) | (a << 19)) ^ ((a >>> 22) | (a << 10))) + ((a & c1) ^ (a & c2) ^ (c1 & c2)) | 0;
+      h = g; g = f; f = e; e = d + t1 | 0; d = c2; c2 = c1; c1 = a; a = t1 + t2 | 0;
+    }
+    H[0] = H[0] + a | 0; H[1] = H[1] + c1 | 0; H[2] = H[2] + c2 | 0; H[3] = H[3] + d | 0;
+    H[4] = H[4] + e | 0; H[5] = H[5] + f | 0; H[6] = H[6] + g | 0; H[7] = H[7] + h | 0;
   }
-  function nonceStr(n) { var a = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", s = ""; for (var i = 0; i < n; i++) s += a[(Math.random() * a.length) | 0]; return s; }
+  // The digest of `msg`, continuing from state H after `prefix` bytes (0, or one 64-byte HMAC pad).
+  function shaFinish(H0, prefix, msg) {
+    var H = new Int32Array(H0), n = msg.length, total = prefix + n, len = (n + 72) & ~63, b = new Uint8Array(len), out = new Uint8Array(32), i;
+    b.set(msg); b[n] = 0x80;
+    b[len - 4] = (total * 8) >>> 24; b[len - 3] = (total * 8) >>> 16; b[len - 2] = (total * 8) >>> 8; b[len - 1] = total * 8;
+    b[len - 5] = (total / 0x20000000) | 0;
+    for (i = 0; i < len; i += 64) shaBlock(H, b, i);
+    for (i = 0; i < 8; i++) { out[4 * i] = H[i] >>> 24; out[4 * i + 1] = H[i] >>> 16; out[4 * i + 2] = H[i] >>> 8; out[4 * i + 3] = H[i]; }
+    return out;
+  }
+  function sha256(bytes) { return shaFinish(SHA_IV, 0, bytes); }
+  function utf8(str) { return new TextEncoder().encode(str); }
+  function toHex(bytes) { var s = ""; for (var i = 0; i < bytes.length; i++) s += (bytes[i] < 16 ? "0" : "") + bytes[i].toString(16); return s; }
+  function fromHex(s) { var b = new Uint8Array(s.length >> 1); for (var i = 0; i < b.length; i++) b[i] = parseInt(s.substr(2 * i, 2), 16); return b; }
+  function sha256hex(str) { return toHex(sha256(utf8(str))); }
+  // HMAC with the key's two pad blocks hashed once, so each PBKDF2 round costs two compressions.
+  function hmacKey(key) {
+    if (key.length > 64) key = sha256(key);
+    var pad = new Uint8Array(64), inner = new Int32Array(SHA_IV), outer = new Int32Array(SHA_IV), i;
+    for (i = 0; i < 64; i++) pad[i] = (key[i] || 0) ^ 0x36;
+    shaBlock(inner, pad, 0);
+    for (i = 0; i < 64; i++) pad[i] = (key[i] || 0) ^ 0x5c;
+    shaBlock(outer, pad, 0);
+    return { inner: inner, outer: outer };
+  }
+  function hmac(k, msg) { return shaFinish(k.outer, 64, shaFinish(k.inner, 64, msg)); }
+  function pbkdf2(password, salt, iterations) {
+    var k = hmacKey(password), block = new Uint8Array(salt.length + 4), u, out, i, j;
+    block.set(salt); block[salt.length + 3] = 1;
+    u = hmac(k, block); out = new Uint8Array(u);
+    for (i = 1; i < iterations; i++) { u = hmac(k, u); for (j = 0; j < 32; j++) out[j] ^= u[j]; }
+    return out;
+  }
+  // The login proof of core/password.py: SCRAM's ClientKey XOR ClientSignature, keyed on sha256(password).
+  function loginProof(user, pw, prm) {
+    var salted = pbkdf2(utf8(sha256hex(pw)), fromHex(prm.salt), prm.iterations),
+        clientKey = hmac(hmacKey(salted), utf8("Client Key")),
+        sig = hmac(hmacKey(sha256(clientKey)), utf8(user + ":" + prm.nonce));
+    for (var i = 0; i < 32; i++) sig[i] ^= clientKey[i];
+    return toHex(sig);
+  }
 
   function showLogin() {
     if (document.getElementById("login_overlay")) return;
@@ -3401,10 +3448,16 @@
     function submit() {
       var u = o.querySelector("#li_user").value, p = pass.value;
       if (!u || !p) { err.textContent = "Enter username and password."; return; }
-      var nc = nonceStr(12), h = sha256hex(sha256hex(p) + nc);
       go.disabled = true; err.textContent = "";
-      fetch("/login", { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: "username=" + encodeURIComponent(u) + "&hash=" + h + "&nonce=" + nc })
+      // Two steps: the server's salt, iterations and a fresh nonce, then the proof. An account still
+      // on the old sha256 entry is flagged `legacy` and gets the old digest instead.
+      fetch("/login/params?username=" + encodeURIComponent(u), { credentials: "same-origin" })
+        .then(function (r) { if (!r.ok) throw r; return r.json(); })
+        .then(function (prm) {
+          var body = "username=" + encodeURIComponent(u) + "&nonce=" + prm.nonce +
+            (prm.legacy ? "&hash=" + sha256hex(sha256hex(p) + prm.nonce) : "&proof=" + loginProof(u, p, prm));
+          return fetch("/login", { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body });
+        })
         .then(function (r) {
           if (r.status === 200) location.href = "/";
           else if (r.status === 401) { err.textContent = "Wrong username and/or password."; go.disabled = false; }

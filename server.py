@@ -25,8 +25,9 @@ from core.common import check_sudo
 from core.common import get_ex_message
 from core.common import patch_parser
 from core.common import uses_published_key
-from core.httpd import PUBLISHED_PASSWORD_HASH
+from core.httpd import is_published_password
 from core.httpd import start_httpd
+from core import password
 from core import meta
 from core.log import create_log_directory
 from core.log import log_error
@@ -60,11 +61,16 @@ def main():
     parser.add_argument("--detect-test", dest="detect_test", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--keep", dest="keep", default=None, metavar="DIR", help="with --detect-test: keep the generated events in DIR (and replay the parity corpus into it) instead of deleting them")
     parser.add_argument("--serve", dest="serve", action="store_true", help="with --detect-test --keep: start the web server on the generated events")
+    parser.add_argument("--hash-password", dest="hash_password", action="store_true", help="read a password and print the USERS field for it")
     parser.add_argument("--doctor", dest="doctor", action="store_true", help="validate the deployment (log dir, trails age, USERS, TLS, ports) and exit")
 
     patch_parser(parser)
 
     options = parser.parse_args()
+
+    if options.hash_password:
+        from core.password import main as hash_password
+        raise SystemExit(hash_password())
 
     if options.smoke_test:
         from core.testing import smoke_test
@@ -123,7 +129,11 @@ def main():
         if uses_published_key(config.SSL_PEM):
             sys.exit("[!] 'SSL_PEM' ('%s') is the key %s published in misc/server.pem, which is public and provides no protection\n[?] (hint: \"%s\")" % (config.SSL_PEM, NAME, hint))
 
-    if any(_.split(':')[1:2] == [PUBLISHED_PASSWORD_HASH] for _ in (re.sub(r"\s", "", _) for _ in (config.USERS or []))):
+    users = [_.split(':', 3) for _ in (re.sub(r"\s", "", _) for _ in (config.USERS or []))]
+    legacy = [_[0] for _ in users if len(_) == 4 and not password.parse(_[1])]
+    if legacy:
+        print("[!] 'USERS' stores sha256(password) for %s: that value logs in as well as the password does, for anyone who can read the configuration. Regenerate it with 'python3 server.py --hash-password'" % ", ".join("'%s'" % _ for _ in legacy))
+    if any(len(_) == 4 and is_published_password(_[1]) for _ in users):
         print("[!] 'USERS' still holds the published default password ('changeme!'): it is accepted only from this machine, set your own to sign in over the network")
 
     def update_timer():

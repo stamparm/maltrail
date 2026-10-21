@@ -696,8 +696,19 @@ EOF
     # A password of this install's own instead of the published 'changeme!', which the server
     # only accepts from the machine itself. Shown once, in the summary; only its hash is stored.
     if [ -n "$PYTHON" ] && GENERATED_PASSWORD=$("$PYTHON" -c 'import secrets; print(secrets.token_urlsafe(12))' 2>/dev/null); then
-        hash=$("$PYTHON" -c 'import hashlib, sys; print(hashlib.sha256(sys.argv[1].encode()).hexdigest())' "$GENERATED_PASSWORD")
-        printf '# Replaces the USERS block above. Format: user:sha256(password):uid:netfilter\nUSERS\n    admin:%s:0:\n' "$hash" >> "$CONF"
+        # This script comes from master, the tree may be an older release: a tree without
+        # core/password.py has a server that only knows the sha256 form, so it gets that.
+        if [ -f "$PREFIX/core/password.py" ]; then
+            hash=$(printf '%s\n' "$GENERATED_PASSWORD" | "$PYTHON" "$PREFIX/core/password.py")
+        else
+            hash=$("$PYTHON" -c 'import hashlib, sys; print(hashlib.sha256(sys.argv[1].encode()).hexdigest())' "$GENERATED_PASSWORD")
+        fi
+        if [ -n "$hash" ]; then
+            printf '# Replaces the USERS block above. Format: user:password_field:uid:netfilter\nUSERS\n    admin:%s:0:\n' "$hash" >> "$CONF"
+        else
+            warn "could not hash a generated password; USERS keeps the shipped one"
+            GENERATED_PASSWORD=""
+        fi
     fi
     run chown root:"$RUN_USER" "$CONF"
     run chmod 0640 "$CONF"
