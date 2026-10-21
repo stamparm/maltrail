@@ -39,16 +39,18 @@ produces is byte-compatible with the one `sensor.py` produces:
 * the same schema (`WITHOUT ROWID`, `PRIMARY KEY(observable)`, `meta_info.schema_version = 1`);
 * the same key encoding — addresses as 4/16-byte BLOBs, domains as TEXT — which is what makes
   `core/meta.py:lookup()` find a row at all;
-* the same `INSERT OR IGNORE` + `MIN`/`MAX`/`count +` merge, so several workers can drain into
-  one file and a window flushed out of order still widens the interval correctly;
+* the same `MIN`/`MAX`/`count +` merge (Python spells it `INSERT OR IGNORE` + `UPDATE`, the
+  sensor's bundled SQLite one upsert), so a window flushed out of order still widens the interval
+  correctly;
 * rollback journal rather than WAL, and mode `0644`, so a non-root server can read a store the
   sensor wrote as root;
 * the same junk filter (`0.0.0.0`, `255.255.255.255`, `::`, multicast), scope tagging, per-window
   key cap (`CONDENSED_MAX_WINDOW_KEYS`) and score-based `prune()` to `META_MAX_ROWS`.
 
 The one structural difference is where the work happens: Python drains its aggregate from a
-background thread per worker *process*, while each Rust worker drains its own on the
-housekeeping tick it already runs — no extra thread, and nothing shared between workers.
+background thread per worker *process*, while each Rust worker hands its window to one writer
+thread on the housekeeping tick and goes straight back to capturing. Writing on the worker
+stalled capture for the whole write - 0.6-0.7 s at 200k keys on NVMe, longer on an SD card.
 
 * Verified: `tests/meta.rs` (schema, storage class, merge, junk filter, prune, failure
   handling) and `docs/COMPATIBILITY.md`, which now replays every corpus case through both sensors with

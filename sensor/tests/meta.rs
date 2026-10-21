@@ -292,7 +292,7 @@ fn concurrent_workers_merge_into_one_file_without_losing_a_count() {
                 }
             }
             store.flush();
-            store.flush_errors
+            store.flush_errors()
         }));
     }
     let errors: u64 = handles.into_iter().map(|h| h.join().expect("worker thread")).sum();
@@ -317,7 +317,7 @@ fn a_failing_flush_does_not_take_the_sensor_down() {
     let mut store = MetaStore::new(std::path::PathBuf::from("/nonexistent-dir/meta.sqlite"), 100_000, 60);
     store.observe_dns("a.com", 1);
     store.flush();
-    assert_eq!(store.flush_errors, 1);
+    assert_eq!(store.flush_errors(), 1);
     assert_eq!(store.pending(), 0, "the window is dropped, not retried into an unbounded backlog");
     store.observe_dns("b.com", 2);
     assert_eq!(store.pending(), 1, "and the store keeps accepting observations");

@@ -19,17 +19,19 @@
 //!   as a non-root user; WAL would require that reader to create the `-shm` sidecar, which it
 //!   cannot, and it would silently fall back to an empty result.
 //! * The file is chmod'd world-readable for the same uid-split reason.
-//! * The merge is `INSERT OR IGNORE` + `UPDATE`, not `ON CONFLICT`, so a store can be opened by
-//!   a Python build older than SQLite 3.24.
+//! * The merge keeps `flags` from the first sighting, takes `MIN(first_seen)` / `MAX(last_seen)`
+//!   and adds `count`. `core/meta.py` spells it `INSERT OR IGNORE` + `UPDATE` so it runs on SQLite
+//!   older than 3.24; the sensor's bundled SQLite does the same as one upsert. The file is the
+//!   same either way - the statement is not part of the format.
 //!
 //! # Concurrency
 //!
-//! Python runs one aggregate dict per *worker process* and drains it from a background thread.
-//! Here each worker owns a `MetaStore` and drains it on the housekeeping tick it already runs —
-//! no extra thread, no lock, and nothing shared between workers. Several workers merging into
-//! one file is exactly the case the Python schema was designed for: the `UPDATE` takes
-//! `MIN(first_seen)` and `MAX(last_seen)` precisely because windows arrive out of order, and
-//! `busy_timeout` covers the write lock. Counts are best-effort under a crash, as in Python.
+//! Each worker owns a `MetaStore` and fills it lock-free on the packet path. Draining it is NOT
+//! done on the worker: the write took 0.6-0.7 s at 200k keys on NVMe (more on an SD card, plus
+//! up to `busy_timeout` waiting on another writer), and a capture thread that stops draining for
+//! that long overflows its ring. A worker hands its window to one writer thread instead
+//! (`writer()`) and goes back to capturing. Windows arrive out of order, which the merge's
+//! `MIN`/`MAX` exist for. Counts are best-effort under a crash, as in Python.
 //!
 //! # Cost
 //!
@@ -38,6 +40,8 @@
 //! never on a repeat sighting. Everything else happens once a minute, off the packet path.
 
 use std::path::{Path, PathBuf};
+use std::sync::atomic::{AtomicU64, Ordering};
+use std::sync::{mpsc, Arc, Mutex, OnceLock};
 
 use rusqlite::{Connection, OpenFlags};
 
@@ -90,10 +94,62 @@ pub struct MetaStore {
     /// `state_saturations` metric, so an operator sees "the sensor is dropping detail" without
     /// having to know which structure filled up.
     pub saturations: u64,
-    /// Rows successfully merged into SQLite.
-    pub flushed: u64,
-    /// Flushes that failed. The in-RAM window is lost when one does, exactly as in Python.
-    pub flush_errors: u64,
+    /// Rows merged into SQLite, and flushes that failed, as counted by the writer thread.
+    results: Arc<FlushResults>,
+}
+
+/// What became of one store's windows, written by the writer thread.
+#[derive(Default)]
+struct FlushResults {
+    flushed: AtomicU64,
+    /// The in-RAM window is lost when a flush fails, exactly as in Python.
+    errors: AtomicU64,
+}
+
+/// One drained window on its way to the writer, or a request to say when it has caught up.
+enum Job {
+    Write { db_path: PathBuf, ips: FastMap<Ip, Row>, names: StrMap<String, Row>, results: Arc<FlushResults> },
+    Barrier(mpsc::Sender<()>),
+}
+
+/// Windows waiting for the writer. A worker never blocks on it: past this many, a window is
+/// counted as saturation and dropped, like any other refusal to grow without bound.
+const WRITER_BACKLOG: usize = 8;
+
+/// The one thread that writes `meta.sqlite`, started on first use.
+fn writer() -> &'static Mutex<mpsc::SyncSender<Job>> {
+    static WRITER: OnceLock<Mutex<mpsc::SyncSender<Job>>> = OnceLock::new();
+    WRITER.get_or_init(|| {
+        let (tx, rx) = mpsc::sync_channel::<Job>(WRITER_BACKLOG);
+        std::thread::Builder::new()
+            .name("meta-writer".into())
+            .spawn(move || {
+                for job in rx {
+                    match job {
+                        Job::Write { db_path, ips, names, results } => {
+                            let rows = (ips.len() + names.len()) as u64;
+                            match write(&db_path, &ips, &names) {
+                                Ok(()) => {
+                                    results.flushed.fetch_add(rows, Ordering::Relaxed);
+                                }
+                                Err(e) => {
+                                    results.errors.fetch_add(1, Ordering::Relaxed);
+                                    crate::output::log_error(
+                                        &format!("condensed observable store: flush of {rows} rows failed ({e})"),
+                                        true,
+                                    );
+                                }
+                            }
+                        }
+                        Job::Barrier(done) => {
+                            let _ = done.send(());
+                        }
+                    }
+                }
+            })
+            .expect("spawn the meta.sqlite writer");
+        Mutex::new(tx)
+    })
 }
 
 impl MetaStore {
@@ -108,8 +164,7 @@ impl MetaStore {
             flush_period: settings::CONDENSED_FLUSH_PERIOD,
             last_flush: 0,
             saturations: 0,
-            flushed: 0,
-            flush_errors: 0,
+            results: Arc::default(),
         }
     }
 
@@ -202,71 +257,111 @@ impl MetaStore {
             return;
         }
         self.last_flush = now;
-        self.flush();
+        self.flush_async();
     }
 
-    /// Drain this worker's aggregate into SQLite. `core/meta.py:flush()`.
+    /// Hand this worker's aggregate to the writer thread and return at once. `core/meta.py:flush()`.
     ///
     /// A failure loses the window rather than retrying: the alternative is an unbounded in-RAM
     /// backlog on a host whose disk has gone read-only, which would turn a degraded auxiliary
     /// index into an OOM of the sensor itself. The error is logged, and the counter is exported.
-    pub fn flush(&mut self) {
+    pub fn flush_async(&mut self) {
         if !self.enabled || self.pending() == 0 {
             return;
         }
         let ips = std::mem::take(&mut self.ips);
         let names = std::mem::take(&mut self.names);
-        let drained = (ips.len() + names.len()) as u64;
-
-        match self.write(&ips, &names) {
-            Ok(()) => self.flushed += drained,
-            Err(e) => {
-                self.flush_errors += 1;
-                crate::output::log_error(
-                    &format!("condensed observable store: flush of {drained} rows failed ({e})"),
-                    true,
-                );
-            }
+        let rows = (ips.len() + names.len()) as u64;
+        let job = Job::Write { db_path: self.db_path.clone(), ips, names, results: self.results.clone() };
+        let sent = match writer().lock() {
+            Ok(tx) => tx.try_send(job).is_ok(),
+            Err(_) => false,
+        };
+        if !sent {
+            self.saturations += rows;
         }
     }
 
-    fn write(&self, ips: &FastMap<Ip, Row>, names: &StrMap<String, Row>) -> rusqlite::Result<()> {
-        let mut con = open_rw(&self.db_path)?;
-        // IMMEDIATE, not the default DEFERRED: this transaction only ever writes, and taking the
-        // reserved lock up front is what lets `busy_timeout` do its job. A deferred transaction
-        // that upgrades from read to write mid-way can be handed SQLITE_BUSY without the busy
-        // handler being consulted at all, because SQLite cannot rule out a deadlock — which with
-        // several workers draining into one file would show up as sporadic lost windows.
-        let tx = con.transaction_with_behavior(rusqlite::TransactionBehavior::Immediate)?;
-        {
-            // Prepared once per flush and reused for every row; the pair below is the portable
-            // merge core/meta.py uses (no ON CONFLICT, so any SQLite that can create the table
-            // can also maintain it).
-            let mut ensure = tx.prepare_cached(
-                "INSERT OR IGNORE INTO observables (observable, flags, first_seen, last_seen, count) VALUES (?, ?, ?, ?, 0)",
-            )?;
-            let mut merge = tx.prepare_cached(
-                "UPDATE observables SET first_seen = MIN(first_seen, ?), last_seen = MAX(last_seen, ?), count = count + ? WHERE observable = ?",
-            )?;
-
-            for (ip, row) in ips {
-                let key = pack_ip(*ip);
-                let key = key.as_slice();
-                ensure.execute(rusqlite::params![key, row.flags, row.first_seen as i64, row.last_seen as i64])?;
-                merge.execute(rusqlite::params![row.first_seen as i64, row.last_seen as i64, row.count as i64, key])?;
-            }
-            for (name, row) in names {
-                ensure.execute(rusqlite::params![name, row.flags, row.first_seen as i64, row.last_seen as i64])?;
-                merge.execute(rusqlite::params![
-                    row.first_seen as i64,
-                    row.last_seen as i64,
-                    row.count as i64,
-                    name
-                ])?;
-            }
+    /// `flush_async()`, then wait until the writer has stored everything handed to it so far -
+    /// for the last window on the way out, and for tests that read the file back.
+    pub fn flush(&mut self) {
+        if !self.enabled {
+            return;
         }
-        tx.commit()
+        if self.pending() > 0 {
+            let ips = std::mem::take(&mut self.ips);
+            let names = std::mem::take(&mut self.names);
+            let job = Job::Write { db_path: self.db_path.clone(), ips, names, results: self.results.clone() };
+            // Blocking here is right: nothing is capturing any more, and this window is the tail.
+            let tx = match writer().lock() {
+                Ok(tx) => tx.clone(),
+                Err(_) => return,
+            };
+            let _ = tx.send(job);
+        }
+        let (done, wait) = mpsc::channel();
+        let tx = match writer().lock() {
+            Ok(tx) => tx.clone(),
+            Err(_) => return,
+        };
+        if tx.send(Job::Barrier(done)).is_ok() {
+            let _ = wait.recv();
+        }
     }
+
+    /// Rows merged into SQLite so far.
+    pub fn flushed(&self) -> u64 {
+        self.results.flushed.load(Ordering::Relaxed)
+    }
+
+    /// Flushes that failed so far.
+    pub fn flush_errors(&self) -> u64 {
+        self.results.errors.load(Ordering::Relaxed)
+    }
+}
+
+/// One window into SQLite, as a single transaction.
+fn write(db_path: &Path, ips: &FastMap<Ip, Row>, names: &StrMap<String, Row>) -> rusqlite::Result<()> {
+    let mut con = open_rw(db_path)?;
+    // IMMEDIATE, not the default DEFERRED: this transaction only ever writes, and taking the
+    // reserved lock up front is what lets `busy_timeout` do its job. A deferred transaction
+    // that upgrades from read to write mid-way can be handed SQLITE_BUSY without the busy
+    // handler being consulted at all, because SQLite cannot rule out a deadlock — which with
+    // a server pruning the same file would show up as sporadic lost windows.
+    let tx = con.transaction_with_behavior(rusqlite::TransactionBehavior::Immediate)?;
+    {
+        // One upsert per row, in key order: a sorted batch walks the primary-key B-tree
+        // forwards instead of jumping around it (measured 2.8x faster than the old two
+        // statements on a 2M-row store).
+        let mut upsert = tx.prepare_cached(
+            "INSERT INTO observables (observable, flags, first_seen, last_seen, count) VALUES (?, ?, ?, ?, ?) \
+             ON CONFLICT(observable) DO UPDATE SET first_seen = MIN(first_seen, excluded.first_seen), \
+             last_seen = MAX(last_seen, excluded.last_seen), count = count + excluded.count",
+        )?;
+        let mut packed: Vec<(PackedIp, &Row)> = ips.iter().map(|(ip, row)| (pack_ip(*ip), row)).collect();
+        packed.sort_unstable_by(|a, b| a.0.as_slice().cmp(b.0.as_slice()));
+        for (key, row) in &packed {
+            upsert.execute(rusqlite::params![
+                key.as_slice(),
+                row.flags,
+                row.first_seen as i64,
+                row.last_seen as i64,
+                row.count as i64
+            ])?;
+        }
+        let mut sorted: Vec<(&String, &Row)> = names.iter().collect();
+        sorted.sort_unstable_by(|a, b| a.0.cmp(b.0));
+        for (name, row) in sorted {
+            upsert.execute(rusqlite::params![
+                name,
+                row.flags,
+                row.first_seen as i64,
+                row.last_seen as i64,
+                row.count as i64
+            ])?;
+        }
+    }
+    tx.commit()
 }
 
 /// `os.path.join(config.LOG_DIR, META_DB_FILENAME)`.

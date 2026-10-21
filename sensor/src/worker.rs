@@ -378,8 +378,8 @@ fn publish(slot: &MetricsSlot, st: &mut WorkerState) {
         + st.beacon.saturations()
         + st.sink.condense_saturations
         + st.meta.saturations;
-    st.metrics.meta_flushed = st.meta.flushed;
-    st.metrics.meta_flush_errors = st.meta.flush_errors;
+    st.metrics.meta_flushed = st.meta.flushed();
+    st.metrics.meta_flush_errors = st.meta.flush_errors();
     slot.publish(&st.metrics);
 }
 
