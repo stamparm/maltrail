@@ -30,6 +30,9 @@
     thread, and logged. Downloads no longer silently retry HTTPS over
     plain HTTP, which had exposed the webhook URL and the static trails'
     checksum to anyone on the path.
+[!] A live sensor with a trails.csv already on disk starts capturing at
+    once and updates in the background. It used to detect nothing until
+    the update finished, which can take minutes, on every start.
 [!] The server lost most remote-sensor events whenever it was busy. Its UDP
     receiver shared one Python interpreter with the dashboard and the trail
     update, and with one other thread busy it lost 98% of 5,000 events/s.

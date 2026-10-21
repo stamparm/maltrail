@@ -277,10 +277,19 @@ fn run() -> i32 {
         cprintln!("{msg}");
     }
 
-    // Refresh the trails BEFORE loading them, exactly like sensor.py:init():update_timer().
-    // Without this the sensor runs on whatever trails.csv happens to exist and silently misses
-    // every IOC added since that file was written.
-    refresh_trails(&cfg, args.quiet, true);
+    // Refresh the trails BEFORE loading them only when there is nothing usable to load. With a
+    // trails.csv already on disk, a live sensor loads it and starts capturing, and the reload
+    // thread runs the update straight away and swaps the result in: the update can take minutes
+    // (every feed, after a reboot or an outage), and the sensor used to detect nothing for all of
+    // it, on every start. An offline replay still updates first, so its result is the same
+    // however long the update takes.
+    let have_trails = std::fs::metadata(&cfg.trails_file).map(|m| m.len() > 0).unwrap_or(false);
+    let update_in_background = have_trails && !cfg.is_offline_replay() && !cfg.disable_trail_updates;
+    if update_in_background {
+        warn_if_trails_are_stale(&cfg);
+    } else {
+        refresh_trails(&cfg, args.quiet, true);
+    }
 
     let (db, stats) = match trails::load_with(&cfg.trails_file, &whitelist, load_options(&cfg)) {
         Ok(v) => v,
@@ -522,7 +531,8 @@ fn run() -> i32 {
                 // At `UPDATE_PERIOD` that was up to a minute.
                 let tick = Duration::from_secs(1);
                 let update_period = Duration::from_secs(cfg_reload.update_period.max(1));
-                let mut next_update = Instant::now() + update_period;
+                let mut next_update =
+                    if update_in_background { Instant::now() } else { Instant::now() + update_period };
                 loop {
                     std::thread::sleep(tick);
                     if shutdown_reload.load(Ordering::Relaxed) {
