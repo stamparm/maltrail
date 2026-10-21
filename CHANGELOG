@@ -21,6 +21,12 @@
     USERS. The shipped maltrail.conf listens on 0.0.0.0, so every install
     that kept it was open to anyone who had read the README. install.sh
     now generates a password of the install's own and prints it once.
+[-] The per-day event index (USE_EVENT_INDEX, LOG_DIR/index/, server.py
+    --rebuild-index) is gone, and its files are removed on start. It took
+    ~10 s and twice the log's size per day to build, and opening the date
+    picker could build ~120 days in one request. /counts now counts lines
+    (44 ms per 55 MB day, exact); /hunt parses only lines that can contain
+    the query (0.17 s per 55 MB day instead of 6.2 s).
 [!] With USE_SSL, one client that connected and never sent anything locked
     every other user out of HTTPS, indefinitely: the TLS handshake ran on
     the thread that accepts connections, with no timeout. It runs in the

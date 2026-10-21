@@ -36,11 +36,7 @@ def is_json_line(line):
     return line[:1] == "{"
 
 def split_text_line(line):
-    """Split a text event line the way `core/log.py:safe_value()` quoted it.
-
-    Kept here rather than imported from core/index.py so that module can depend on this one and
-    not the reverse; core/index.py keeps its own copy for the hot indexing loop.
-    """
+    """Split a text event line the way `core/log.py:safe_value()` quoted it."""
 
     fields = []
     parts = []

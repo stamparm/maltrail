@@ -32,7 +32,6 @@ from core.addr import resolve_address
 from core.attribdict import AttribDict
 from core import log as _log
 from core import trailsbin
-from core import index as _log_index
 from core.common import get_regex
 from core.common import trails_bin_path
 from core.common import ipcat_lookup
@@ -231,6 +230,51 @@ _HUNT_LINE_IP_REGEX = re.compile(r"\b(\d+\.\d+\.\d+\.\d+)\b")
 _SCOPE_ADDR_LEFT = r"(?<![\w.])"
 _SCOPE_ADDR_RIGHT = r"(?![\w.])"
 _SCOPE_LINE_IP_REGEX = re.compile(_SCOPE_ADDR_LEFT + r"(\d+\.\d+\.\d+\.\d+)" + _SCOPE_ADDR_RIGHT)
+
+
+_NON_ASCII = re.compile(rb"[\x80-\xff]")
+
+
+def _hunt_candidates(f, needle):
+    """The raw lines of `f` that can contain `needle` once lower-cased, in file order.
+
+    A NECESSARY condition, never a sufficient one - every candidate still goes through the same
+    scope filter and matcher as before. A line qualifies when its bytes, ASCII-lower-cased, contain
+    the needle, or when it holds any non-ASCII byte at all: str.lower() folds more than ASCII (the
+    Kelvin sign becomes 'k'), so such a line is left for the exact test to decide. Scanned a
+    megabyte at a time with bytes.find, which is what lets a day of non-matching lines cost a
+    fraction of parsing each one. This replaced the per-day SQLite sidecar index, which cost ~10 s
+    and twice the log's size per day to build and was slower to search than this.
+    """
+
+    raw = needle.encode(UNICODE_ENCODING)
+    ascii_needle = raw if all(b < 0x80 for b in bytearray(raw)) else None
+    pending = b""
+    while True:
+        buf = f.read(1024 * 1024)
+        if not buf and not pending:
+            return
+        chunk = pending + buf
+        if buf:
+            cut = chunk.rfind(b"\n")
+            if cut < 0:
+                pending = chunk
+                continue
+            chunk, pending = chunk[:cut + 1], chunk[cut + 1:]
+        else:
+            pending = b""       # the last line, without a newline
+        starts = set()
+        if ascii_needle:
+            low = chunk.lower()
+            at = low.find(ascii_needle)
+            while at >= 0:
+                starts.add(chunk.rfind(b"\n", 0, at) + 1)
+                at = low.find(ascii_needle, at + 1)
+        for match in _NON_ASCII.finditer(chunk):
+            starts.add(chunk.rfind(b"\n", 0, match.start()) + 1)
+        for start in sorted(starts):
+            end = chunk.find(b"\n", start)
+            yield chunk[start:] if end < 0 else chunk[start:end + 1]
 
 
 def _hunt_ip_query(query):
@@ -2841,12 +2885,15 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 except (OSError, IOError):
                                     count = 0
                             else:
-                                # The sidecar's COUNT(*) is exact and cheaper than the estimate's
-                                # sampled read; unlike the estimate it counts only complete
-                                # (newline-terminated) lines, which for today's actively written
-                                # log can differ by the one line currently being written.
-                                indexed = _log_index.count(daystr)
-                                count = indexed if indexed is not None else estimate_event_count(filepath, size)
+                                # Exact, and cheap: counting newlines a megabyte at a time is
+                                # ~60 ms per 65 MB, cached per (mtime, size) like the rest.
+                                count = 0
+                                try:
+                                    with open(filepath, "rb") as f_log:
+                                        for chunk in iter(lambda: f_log.read(1024 * 1024), b""):
+                                            count += chunk.count(b"\n")
+                                except (OSError, IOError):
+                                    count = estimate_event_count(filepath, size)
                             counts[daystr] = count
                             _counts_cache[cache_key] = (mtime, size, count)
 
@@ -3027,13 +3074,6 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 budget = HUNT_TIME_BUDGET
             deadline = time.time() + (budget if budget > 0 else HUNT_TIME_BUDGET)
 
-            def _lines_at(f, offsets):
-                # A file-like stand-in for the linear read: yield exactly the candidate lines,
-                # so _filter_events sees ordinary '\\n'-terminated raw lines either way.
-                for off in offsets:
-                    f.seek(off)
-                    yield f.readline()
-
             scanned = 0        # days scanned TO COMPLETION, which is what a per-day count can be trusted for
             partial = None     # the one day the budget cut short, if any
             for daystr, filepath in files:
@@ -3042,26 +3082,15 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     break
                 hits, seen, cut_short = 0, 0, False
 
-                # Sidecar-index candidates (core/index.py): EXACTLY the lines whose lower-cased
-                # text contains the query - for a CIDR query, its negative prefilter - so this is
-                # a read-order change, not a semantics change: every candidate still goes through
-                # the scope/masking filter and the same matcher below. Wide masks prefilter on
-                # nothing and stay on the linear scan.
-                offsets = None
-                if _log_index.enabled():
-                    needle = q_lower if q_prefix is None else q_needle
-                    if needle and _log_index.prepare(daystr):
-                        try:
-                            offsets = list(_log_index.search(daystr, needle))
-                        except Exception:
-                            if config.SHOW_DEBUG:
-                                traceback.print_exc()
-                            offsets = None    # half-served beats wrongly-complete: fall back entirely
+                # Only lines that can contain the query reach the parser (see _hunt_candidates);
+                # for a CIDR query, the prefix that any match must contain. Wide masks have no
+                # fixed text and are read in full.
+                needle = q_lower if q_prefix is None else q_needle
 
                 try:
-                    if offsets is not None:
+                    if needle:
                         with open(filepath, "rb") as f:
-                            for line in self._filter_events(_lines_at(f, offsets), session, addresses, netmasks, regex):
+                            for line in self._filter_events(_hunt_candidates(f, needle), session, addresses, netmasks, regex):
                                 seen += 1
                                 if (seen & 0xFF) == 0 and time.time() > deadline:
                                     truncated = True

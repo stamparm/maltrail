@@ -136,9 +136,8 @@ such as `port:>1024` and `count:>=100`. `family:interlock` also includes `interl
 `interlock-2`, the shards in which that feed dump arrives.
 
 Retro hunts are bounded by a day limit, a wall-clock budget and a sample cap. If the time budget cuts
-a day short, that day is reported separately rather than counted as a completed day. With
-`USE_EVENT_INDEX` enabled, the per-day sidecar index under `LOG_DIR/index/` lets the hunt skip
-non-matching lines and provides exact `/counts` results.
+a day short, that day is reported separately rather than counted as a completed day. Only lines
+that can contain the indicator are parsed, so a day of non-matching lines is read at disk speed.
 
 Sensor liveness is tracked separately from event activity: a failed sensor and a healthy sensor on a
 quiet link can both produce no events. Sensors therefore announce themselves over the `LOG_SERVER`
@@ -536,10 +535,7 @@ updated by another process are detected automatically and published to workers w
 the sensor.
 
 The condensed observable store (`USE_CONDENSED_STORAGE`, `meta.sqlite`) supports the server's
-novelty and retro-hunt views. The per-day event-log sidecar index (`USE_EVENT_INDEX`,
-`LOG_DIR/index/*.sqlite`, roughly twice the log size on disk) is what makes `/counts` exact and
-`/hunt` fast; it is maintained incrementally from the logs themselves and can be rebuilt with
-`server.py --rebuild-index`. Compatibility with the retired sensor is documented in
+novelty and retro-hunt views. Compatibility with the retired sensor is documented in
 [`sensor/docs/COMPATIBILITY.md`](sensor/docs/COMPATIBILITY.md).
 
 ### Event retention

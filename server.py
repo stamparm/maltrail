@@ -61,7 +61,6 @@ def main():
     parser.add_argument("--keep", dest="keep", default=None, metavar="DIR", help="with --detect-test: keep the generated events in DIR (and replay the parity corpus into it) instead of deleting them")
     parser.add_argument("--serve", dest="serve", action="store_true", help="with --detect-test --keep: start the web server on the generated events")
     parser.add_argument("--doctor", dest="doctor", action="store_true", help="validate the deployment (log dir, trails age, USERS, TLS, ports) and exit")
-    parser.add_argument("--rebuild-index", dest="rebuild_index", action="store_true", help="(re)build the per-day event-log sidecar index (LOG_DIR/index/) and exit")
 
     patch_parser(parser)
 
@@ -89,21 +88,25 @@ def main():
         from core.doctor import run as doctor_run
         raise SystemExit(doctor_run())
 
-    if options.rebuild_index:
-        import glob as _glob
-        import re as _re
-        from core import index as _index
-        built = 0
-        for filepath in sorted(_glob.glob(os.path.join(config.LOG_DIR, "*.log"))):
-            day = os.path.splitext(os.path.basename(filepath))[0]
-            if not _re.search(r"\A\d{4}-\d{2}-\d{2}\Z", day):
-                continue
-            ok = _index.prepare(day)
-            print("[%s] %s" % ("+" if ok else "x", filepath))
-            built += 1 if ok else 0
-        reaped = _index.sweep()
-        print("[i] indexed %d day(s)%s" % (built, ", removed %d stale sidecar(s)" % reaped if reaped else ""))
-        raise SystemExit(0 if built or not _glob.glob(os.path.join(config.LOG_DIR, "*.log")) else 1)
+    # The per-day SQLite sidecars of the retired event index (LOG_DIR/index/) were a cache of
+    # ours, about twice the size of the logs they indexed; nothing reads them any more.
+    # Only the files it wrote (YYYY-MM-DD.sqlite and its WAL/SHM companions) are removed.
+    stale_index = os.path.join(config.LOG_DIR or "", "index")
+    if config.LOG_DIR and os.path.isdir(stale_index):
+        removed = 0
+        for name in os.listdir(stale_index):
+            if re.match(r"\A\d{4}-\d{2}-\d{2}\.sqlite(-wal|-shm|-journal)?\Z", name):
+                try:
+                    os.remove(os.path.join(stale_index, name))
+                    removed += 1
+                except OSError:
+                    pass
+        try:
+            os.rmdir(stale_index)
+        except OSError:
+            pass
+        if removed:
+            print("[i] removed %d file(s) of the retired event index in '%s'" % (removed, stale_index))
 
     # NOTE: this validation used to live inside an `if six.PY2 and config.USE_SSL:` block, so on
     # Python 3 it never ran and a missing/invalid SSL_PEM only failed later, inside the server
@@ -143,17 +146,6 @@ def main():
             update_ipcat()
             update_geo()
             update_drop()
-
-        # Sidecars are only dropped by index.prepare(), which runs for a day someone asks about,
-        # so a log rotated away leaves its sidecar behind for good. Reap them with the rest of the
-        # periodic maintenance.
-        try:
-            from core import index as _index
-            reaped = _index.sweep()
-            if reaped:
-                print("[i] removed %d event index sidecar(s) whose log is gone" % reaped)
-        except Exception:
-            pass        # a cache cleanup must never take the update timer down
 
         thread = threading.Timer(config.UPDATE_PERIOD, update_timer)
         thread.daemon = True

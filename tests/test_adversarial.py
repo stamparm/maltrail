@@ -5,7 +5,7 @@ Copyright (c) 2014-present Maltrail developers (https://github.com/stamparm/malt
 See the file 'LICENSE' for copying permission
 
 Adversarial/QA tests: hostile inputs driven through the server-side machinery to prove it
-degrades the way the design claims - corrupt logs stay searchable, corrupt sidecars rebuild,
+degrades the way the design claims - corrupt logs stay searchable,
 malformed confidence files answer None, and nothing in the log pipeline lets a weird field
 corrupt its neighbours (log injection).
 """
@@ -21,7 +21,7 @@ import unittest
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from core import httpd  # noqa: E402
-from core import index  # noqa: E402
+from core import logfmt  # noqa: E402
 from core.compat import xrange  # noqa: E402
 from core.log import safe_value  # noqa: E402
 from core.settings import config  # noqa: E402
@@ -43,7 +43,7 @@ class SplitRoundTrip(unittest.TestCase):
 
     def test_safe_value_fields_survive_a_round_trip(self):
         # Whatever a feed/DNS/HTTP layer puts in one field, the eleven-column layout must come
-        # back with every field intact - that is what the index's structured columns trust.
+        # back with every field intact - that is what every reader of the log trusts.
         # safe_value flattens CR/LF to spaces and writes empty as '-', so that IS round-trip.
         def expected(field):
             flattened = re.sub(r"[\x0a\x0d]", " ", field)
@@ -54,7 +54,7 @@ class SplitRoundTrip(unittest.TestCase):
                 fields = ["filler-%d" % i for i in xrange(11)]
                 fields[position] = hostile
                 line = " ".join(safe_value(f) for f in fields)
-                got = index.split_event_line(line.strip())
+                got = logfmt.split_text_line(line.strip())
                 self.assertEqual(len(got), 11, "%r at %d -> %r" % (hostile, position, got))
                 self.assertEqual(got, [expected(f) for f in fields], "%r at %d" % (hostile, position))
 
@@ -64,106 +64,86 @@ class SplitRoundTrip(unittest.TestCase):
         for hostile in ("evil\ndef.com", "a\r\nb", "\nx"):
             line = _line(0, "10.0.0.5", 40000, "1.2.3.4", 443, "TCP", "DNS", hostile, "x", "y")
             self.assertEqual(line.count("\n"), 1)
-            self.assertNotIn("\n", index.split_event_line(line.strip())[8])
+            self.assertNotIn("\n", logfmt.split_text_line(line.strip())[8])
 
 
 class HostileLogs(unittest.TestCase):
+    """core/httpd.py:_hunt_candidates() - the prefilter /hunt reads a day through - against logs no
+    writer should produce. It may let a line through that does not match; it must never hold back
+    one that does, so every case compares with a brute-force str.lower() over each line."""
+
     def setUp(self):
-        index._locks.clear()
         self.dir = tempfile.mkdtemp(prefix="maltrail-adversarial-")
-        config.LOG_DIR = self.dir
+        self.path = os.path.join(self.dir, "%s.log" % DAY)
 
     def tearDown(self):
         shutil.rmtree(self.dir, ignore_errors=True)
 
-    def _write(self, data, mode="wb"):
-        with open(os.path.join(self.dir, "%s.log" % DAY), mode) as f:
+    def _write(self, data):
+        with open(self.path, "wb") as f:
             f.write(data)
+
+    def _candidates(self, needle):
+        with open(self.path, "rb") as f:
+            return list(httpd._hunt_candidates(f, needle))
+
+    def _assert_complete(self, needle):
+        with open(self.path, "rb") as f:
+            content = f.read()
+        lines = content.split(b"\n")
+        lines = [line + b"\n" for line in lines[:-1]] + ([lines[-1]] if lines[-1] else [])
+        wanted = [line for line in lines if needle.lower() in line.decode("utf8", "ignore").lower()]
+        got = self._candidates(needle)
+        for line in wanted:
+            self.assertIn(line, got, "%r: a matching line was held back" % needle)
+        self.assertEqual(got, [line for line in lines if line in got], "%r: candidates out of file order" % needle)
 
     def test_binary_garbage_stays_text_searchable(self):
         valid = [_line(i, "10.0.0.5", 40000, "1.2.3.4", 443, "TCP", "DNS", "hit%d.example" % i, "malware (test)", "x")
                  for i in xrange(20)]
         garbage = [b"\x00\x01\x02\xff\xfe binary \x7f noise\n", b"\xff\xff\xff\n", b"\x80\x81 no spaces here but junk \xc3\n"]
-        payload = b"".join(line.encode("utf8") for line in valid[:10]) + b"".join(garbage) \
-            + b"".join(line.encode("utf8") for line in valid[10:])
-        self._write(payload)
-        self.assertTrue(index.prepare(DAY))
+        self._write(b"".join(line.encode("utf8") for line in valid[:10]) + b"".join(garbage)
+                    + b"".join(line.encode("utf8") for line in valid[10:]))
         for needle in ("hit3.example", "hit15.example", "binary", "no spaces"):
-            with open(os.path.join(self.dir, "%s.log" % DAY), "rb") as f:
-                brute = []
-                offset = 0
-                for raw in f:
-                    if needle.encode("utf8", "ignore") in raw.lower():
-                        brute.append(offset)
-                    offset += len(raw)
-            self.assertEqual(sorted(index.search(DAY, needle)), brute, needle)
+            self._assert_complete(needle)
+        self.assertEqual(len([_ for _ in self._candidates("hit3.example") if b"hit" in _]), 1,
+                         "the control: a needle on one line selects that line, not every line")
 
-    def test_crlf_lines_index_exactly_once(self):
+    def test_crlf_lines_are_found_once_each(self):
         self._write(b"".join(_line(i, "10.0.0.5", 40000, "1.2.3.4", 443, "TCP", "DNS", "crlf.example", "x", "y").encode()
                              for i in xrange(5)).replace(b"\n", b"\r\n"))
-        self.assertTrue(index.prepare(DAY))
-        self.assertEqual(len(list(index.search(DAY, "crlf.example"))), 5)
+        self.assertEqual(len(self._candidates("crlf.example")), 5)
 
-    def test_huge_newline_less_tail_is_abandoned_not_choked_on(self):
-        index._MAX_PENDING_SAVED = index._MAX_PENDING
-        index._MAX_PENDING = 4096
-        try:
-            self._write(_line(0, "10.0.0.5", 40000, "1.2.3.4", 443, "TCP", "DNS", "before.example", "x", "y").encode()
-                        + b"x" * 65536)   # newline-less blob far past the cap
-            self.assertTrue(index.prepare(DAY))
-            self.assertEqual(len(list(index.search(DAY, "before.example"))), 1)
-        finally:
-            index._MAX_PENDING = index._MAX_PENDING_SAVED
+    def test_a_last_line_without_a_newline_is_read(self):
+        self._write(_line(0, "10.0.0.5", 40000, "1.2.3.4", 443, "TCP", "DNS", "before.example", "x", "y").encode()
+                    + b"tail.example without a newline")
+        self._assert_complete("tail.example")
+        self._assert_complete("before.example")
 
-    def test_corrupt_sidecar_rebuilds_itself(self):
-        self._write(b"".join(_line(i, "10.0.0.5", 40000, "1.2.3.4", 443, "TCP", "DNS", "keep.example", "x", "y").encode()
-                             for i in xrange(9)))
-        self.assertTrue(index.prepare(DAY))
-        db = index._db_path(DAY)
-        with open(db, "wb") as f:
-            f.write(os.urandom(8192))          # not a sqlite file at all
-        self.assertTrue(index.prepare(DAY))
-        self.assertEqual(len(list(index.search(DAY, "keep.example"))), 9)
+    def test_lines_across_the_read_boundary(self):
+        # Far more than one 1 MB read, so lines straddle every chunk boundary.
+        self._write(b"".join(_line(i, "10.0.0.5", 40000, "1.2.3.4", 443, "TCP", "DNS", "row%07d.example" % i, "x", "y").encode()
+                             for i in xrange(30000)))
+        for needle in ("row0000000", "row0012345", "row0029999"):
+            self._assert_complete(needle)
 
-    def test_empty_and_missing_logs(self):
+    def test_empty_log(self):
         self._write(b"")
-        self.assertTrue(index.prepare(DAY))
-        self.assertEqual(index.count(DAY), 0)
-        os.remove(os.path.join(self.dir, "%s.log" % DAY))
-        self.assertFalse(index.prepare(DAY))
+        self.assertEqual(self._candidates("anything"), [])
 
     def test_unicode_and_metacharacter_needles_match_brute_force(self):
         lines = []
-        trails = ["Ünïcodé.example", "İstanbul.example", "percent%.example",
-                  "under_score.example", "dot.dot.example", "plain%d.example"]
+        trails = ["Ünïcodé.example", "İstanbul.example", "percent%.example", "under_score.example",
+                  "dot.dot.example", "plain%d.example", "\u212aelvin.example"]
         for i in xrange(60):
             trail = trails[i % len(trails)]
             lines.append(_line(i, "10.0.0.5", 40000, "1.2.3.4", 443, "TCP", "DNS",
                                trail % i if "%d" in trail else trail, "x", "y"))
         self._write("".join(lines).encode("utf8"))
-        self.assertTrue(index.prepare(DAY))
-
-        # the contract is str.lower() per line (bytes.lower() only folds ASCII), so the brute
-        # force decodes each line exactly like core/index.py does before comparing
-        with open(os.path.join(self.dir, "%s.log" % DAY), "rb") as f:
-            content = f.read()
-        line_starts, offsets = [], []
-        pos = 0
-        while pos <= len(content):
-            nl = content.find(b"\n", pos)
-            end = len(content) if nl < 0 else nl
-            line_starts.append(pos)
-            offsets.append(content[pos:end].decode("utf8", "ignore").lower())
-            if nl < 0:
-                break
-            pos = nl + 1
-
-        def brute(needle):
-            return sorted({line_starts[i] for i, lowered in enumerate(offsets) if needle.lower() in lowered})
-
-        for needle in ("ünïcodé", "ÜNÏCODÉ".lower(), "̇", "istanbul", "percent%", "_score",
-                       "..", "PLAIN30", "no-such-needle", "e"):
-            self.assertEqual(sorted(index.search(DAY, needle)), brute(needle), needle)
+        # "kelvin" is the case bytes.lower() cannot see: the Kelvin sign lower-cases to an ASCII 'k'
+        for needle in ("ünïcodé", "ÜNÏCODÉ".lower(), "\u0307", "istanbul", "percent%", "_score",
+                       "..", "PLAIN30", "no-such-needle", "e", "kelvin"):
+            self._assert_complete(needle)
 
 
 class HostileConfidenceFile(unittest.TestCase):
