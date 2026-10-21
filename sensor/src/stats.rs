@@ -242,6 +242,17 @@ pub fn render(registry: &Registry, uptime_seconds: f64) -> String {
     );
 
     metric!("maltrail_trails", "gauge", "Trails currently loaded.", registry.trail_count.load(Ordering::Relaxed));
+    // An update that keeps failing leaves the sensor running on the last good set, which looks
+    // exactly like a healthy one. Alert when this passes a couple of UPDATE_PERIODs.
+    if let Some(age) = registry.trails_file.as_deref().and_then(crate::trailupdate::trails_age_secs) {
+        metric!(
+            "maltrail_trails_age_seconds",
+            "gauge",
+            "Age of TRAILS_FILE. Growing past UPDATE_PERIOD means trail updates are failing and every \
+             indicator published since is NOT being detected.",
+            age
+        );
+    }
     metric!(
         "maltrail_trail_generation",
         "gauge",

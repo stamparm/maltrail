@@ -160,6 +160,34 @@ class UpdateTrailsParityTest(unittest.TestCase):
         self.assertTrue(disk == memory, "the disk-merged trail set differs from the in-memory one")
         self.assertFalse(os.path.exists("%s.build" % config.TRAILS_FILE), "the merge file is removed")
 
+    def _update_quietly(self):
+        _so = sys.stdout
+        sys.stdout = open(os.devnull, "w")
+        try:
+            U.update_trails(force=True, offline=True)
+        finally:
+            sys.stdout.close()
+            sys.stdout = _so
+
+    def test_a_missing_static_set_does_not_replace_a_working_trails_file(self):
+        # No download (offline) and no cache: the build is feeds and custom only. Writing it would
+        # turn the full set into a few percent of it, for this host and every sensor pulling here.
+        os.remove("%s.static" % config.TRAILS_FILE)
+        working = b"kept-by-the-guard.example,malware,(static)\n" * 3
+        with open(config.TRAILS_FILE, "wb") as f:
+            f.write(working)
+        self._update_quietly()
+        with open(config.TRAILS_FILE, "rb") as f:
+            self.assertEqual(f.read(), working, "a feeds-only build replaced a working trails file")
+        self.assertTrue(U.last_refusal, "the refusal was not reported")
+
+        # The control: with no static source configured at all, the operator chose this - build.
+        config.STATIC_TRAILS_URL = None
+        self._update_quietly()
+        with open(config.TRAILS_FILE, "rb") as f:
+            self.assertNotEqual(f.read(), working, "with no static source configured the build must still be written")
+        self.assertIsNone(U.last_refusal)
+
     def test_static_trails_stream_with_the_csv_dialect(self):
         static = U._StaticTrails("%s.static" % config.TRAILS_FILE)
         rows = dict(static.items())

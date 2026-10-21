@@ -27,6 +27,13 @@
     heartbeats re-resolved: after the server's IP changed it showed alive
     while every event went to the old address. All remote endpoints are
     re-resolved every minute, off the capture threads.
+[!] A failed static-trails download no longer replaces a working trails.csv
+    with a feeds-only build (a few percent of the set), which the server
+    would then hand to every sensor pulling from it. The old file is kept
+    and the update reports the failure.
+[=] Stale trails are reported every update cycle instead of once per process
+    (error.log and a new maltrail_trails_age_seconds metric), and a trail
+    update that hangs is killed after an hour instead of blocking reloads.
 [=] The trail store is built file-backed only on hosts with under 2 GB of
     RAM. Its pages are reclaimable only after being written back, so every
     start and reload wrote the whole store to disk (125 MB measured on a

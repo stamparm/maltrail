@@ -225,13 +225,43 @@ pub fn run(cfg: &Config) -> Outcome {
         command.arg("--offline");
     }
 
-    match command.status() {
-        Ok(status) if status.success() => Outcome::Updated,
-        Ok(status) => Outcome::Failed(match status.code() {
+    let child = match command.spawn() {
+        Ok(child) => child,
+        Err(e) => return Outcome::Failed(format!("unable to run {python}: {e}")),
+    };
+    match wait_with_deadline(child, UPDATER_DEADLINE) {
+        Ok(Some(status)) if status.success() => Outcome::Updated,
+        Ok(Some(status)) => Outcome::Failed(match status.code() {
             Some(code) => format!("{python} exited with status {code}"),
             None => format!("{python} was terminated by a signal"),
         }),
-        Err(e) => Outcome::Failed(format!("unable to run {python}: {e}")),
+        Ok(None) => Outcome::Failed(format!("{python} was killed after running {}s", UPDATER_DEADLINE.as_secs())),
+        Err(e) => Outcome::Failed(format!("unable to wait for {python}: {e}")),
+    }
+}
+
+/// Longest a trail update may run. A full update is minutes; one that has run an hour is hung -
+/// a feed host that accepts the connection and never answers, a stuck DNS lookup urllib's timeout
+/// does not cover - and it was waited for forever, with the reload thread (mtime reloads, SIGHUP)
+/// stuck behind it.
+const UPDATER_DEADLINE: std::time::Duration = std::time::Duration::from_secs(3600);
+
+/// The child's exit status, or `None` once `deadline` has passed and it has been killed.
+fn wait_with_deadline(
+    mut child: std::process::Child,
+    deadline: std::time::Duration,
+) -> std::io::Result<Option<std::process::ExitStatus>> {
+    let until = std::time::Instant::now() + deadline;
+    loop {
+        if let Some(status) = child.try_wait()? {
+            return Ok(Some(status));
+        }
+        if std::time::Instant::now() >= until {
+            let _ = child.kill();
+            let _ = child.wait();
+            return Ok(None);
+        }
+        std::thread::sleep(std::time::Duration::from_millis(200));
     }
 }
 
@@ -244,6 +274,21 @@ pub fn trails_age_secs(path: &Path) -> Option<u64> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[cfg(unix)]
+    #[test]
+    fn a_hung_updater_is_killed_at_its_deadline() {
+        let started = std::time::Instant::now();
+        let child = Command::new("sleep").arg("30").spawn().expect("spawn sleep");
+        let outcome = wait_with_deadline(child, std::time::Duration::from_millis(300)).unwrap();
+        assert!(outcome.is_none(), "a child past its deadline was waited for");
+        assert!(started.elapsed() < std::time::Duration::from_secs(5), "the deadline was not enforced");
+
+        // The control: one that finishes in time reports its status.
+        let child = Command::new("true").spawn().expect("spawn true");
+        let status = wait_with_deadline(child, std::time::Duration::from_secs(10)).unwrap();
+        assert!(status.is_some_and(|s| s.success()));
+    }
 
     fn repo_root() -> PathBuf {
         PathBuf::from(env!("CARGO_MANIFEST_DIR")).parent().unwrap().to_path_buf()

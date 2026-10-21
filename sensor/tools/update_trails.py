@@ -70,6 +70,12 @@ def main():
         print("[!] trail update failed (%s)" % ex)
         return 1
 
+    import core.update
+    if core.update.last_refusal:
+        # The file is still there, but it is the OLD one: report the failure so the sensor says so.
+        print("[!] trail update refused: %s" % core.update.last_refusal)
+        return 1
+
     trails_file = config.TRAILS_FILE
     if not os.path.isfile(trails_file):
         print("[!] trail update produced no '%s'" % trails_file)

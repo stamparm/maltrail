@@ -224,6 +224,8 @@ pub struct Registry {
     /// Where events are written, so the metrics endpoint can report the free space there.
     /// `None` when local log storage is disabled (the sensor ships everything off-box).
     pub log_dir: Option<std::path::PathBuf>,
+    /// `TRAILS_FILE`, so the metrics endpoint can report how old the trail set on disk is.
+    pub trails_file: Option<std::path::PathBuf>,
 }
 
 impl Registry {
@@ -236,12 +238,19 @@ impl Registry {
             reloads_failed: AtomicU64::new(0),
             reloads_rejected: AtomicU64::new(0),
             log_dir: None,
+            trails_file: None,
         }
     }
 
     /// Point the free-space gauge at the directory events are actually written to.
     pub fn with_log_dir(mut self, log_dir: Option<std::path::PathBuf>) -> Registry {
         self.log_dir = log_dir;
+        self
+    }
+
+    /// Point the trail-age gauge at `TRAILS_FILE`.
+    pub fn with_trails_file(mut self, trails_file: std::path::PathBuf) -> Registry {
+        self.trails_file = Some(trails_file);
         self
     }
 

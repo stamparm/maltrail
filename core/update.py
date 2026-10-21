@@ -498,11 +498,17 @@ def _build_store():
         return DiskTrailsDict("%s.build" % config.TRAILS_FILE)
     return TrailsDict()
 
+# Why the last update_trails() kept the existing trails.csv instead of writing its build, or None.
+last_refusal = None
+
+
 def update_trails(force=False, offline=False):
     """
     Update trails from feeds
     """
 
+    global last_refusal
+    last_refusal = None
     success = False
     trails = TrailsDict()
     duplicates = {}
@@ -690,7 +696,10 @@ def update_trails(force=False, offline=False):
             _merge(custom_trails.fetch())
 
             print(" [o] '(static)'%s" % (" " * 20))
-            _merge(fetch_static_trails(offline))
+            static = fetch_static_trails(offline)
+            # {} is fetch_static_trails() saying "configured, but neither downloadable nor cached".
+            static_missing = isinstance(static, dict) and not static and bool(config.STATIC_TRAILS_URL)
+            _merge(static)
 
             # The engine's own static lists. They merge AFTER the aggregate, which is where they
             # merged before the split - the content tree's root was read after suspicious/ and
@@ -864,8 +873,23 @@ def update_trails(force=False, offline=False):
                         del trails[key]
 
             tmp_trails_file = "%s.new" % config.TRAILS_FILE
+            # Without the static trails this build is feeds and custom only - a few percent of the
+            # set. Writing it would replace a working trails.csv with that, and from there it goes
+            # to every sensor that pulls from this server; each would then look healthy while
+            # matching almost nothing. Keep the file that works, unchanged and with its old mtime,
+            # so the next cycle tries again.
+            keep_current = static_missing and os.path.isfile(config.TRAILS_FILE) and os.path.getsize(config.TRAILS_FILE) > 0
+            if keep_current:
+                message = "the static trails are unavailable, so '%s' was NOT replaced with a feeds-only build (%d trails); keeping the current one" % (config.TRAILS_FILE, len(trails))
+                last_refusal = message
+                print("[x] %s" % message)
+                try:
+                    from core.log import log_error
+                    log_error(message)
+                except Exception:
+                    pass
             try:
-                if trails:
+                if trails and not keep_current:
                     with _fopen(tmp_trails_file, "w+", codecs.open) as f:
                         writer = csv.writer(f, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
                         for trail, value in trails.items():

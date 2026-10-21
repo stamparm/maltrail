@@ -494,7 +494,8 @@ fn run() -> i32 {
     let registry = Arc::new(
         Registry::new(worker_count)
             // Free space only means something when this sensor is the one writing the evidence.
-            .with_log_dir(if cfg.disable_local_log_storage { None } else { Some(cfg.log_dir.clone()) }),
+            .with_log_dir(if cfg.disable_local_log_storage { None } else { Some(cfg.log_dir.clone()) })
+            .with_trails_file(cfg.trails_file.clone()),
     );
     registry.trail_count.store(trail_count, Ordering::Relaxed);
     registry.trail_generation.store(store.generation(), Ordering::Relaxed);
@@ -1022,7 +1023,9 @@ fn refresh_trails(cfg: &Config, quiet: bool, startup: bool) {
         }
         trailupdate::Outcome::Failed(reason) => {
             ceprintln!("[!] trail update failed ({reason}); continuing with the existing trails");
-            output::log_error(&format!("trail update failed: {reason}"), true);
+            // Not deduplicated: this runs once per UPDATE_PERIOD, and an update that keeps failing
+            // must keep saying so - once per process lifetime read as a single blip.
+            output::log_error(&format!("trail update failed: {reason}"), false);
             warn_if_trails_are_stale(cfg);
         }
     }
@@ -1037,12 +1040,14 @@ fn warn_if_trails_are_stale(cfg: &Config) {
     };
     if age > cfg.update_period.max(1) {
         let days = age as f64 / 86400.0;
-        ceprintln!(
-            "[!] '{}' is {:.1} day(s) old (older than UPDATE_PERIOD): every trail added since then \
-             is NOT being detected",
+        let message = format!(
+            "'{}' is {:.1} day(s) old (older than UPDATE_PERIOD): every trail added since then is NOT \
+             being detected",
             cfg.trails_file.display(),
             days
         );
+        ceprintln!("[!] {message}");
+        output::log_error(&message, false);
     }
 }
 
