@@ -606,6 +606,8 @@ fn run() -> i32 {
     if !cfg.is_offline_replay() {
         output::spawn_heartbeat(output_cfg.clone(), cfg.heartbeat_period, shutdown.clone());
     }
+    // Keeps remote endpoint addresses current (an offline replay still forwards its events).
+    output::spawn_resolver(output_cfg.clone(), shutdown.clone());
 
     // --- metrics thread --------------------------------------------------------
     if cfg.metrics_interval > 0 && !cfg.is_offline_replay() {

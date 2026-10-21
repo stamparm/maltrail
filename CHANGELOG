@@ -23,6 +23,10 @@
 [!] Datagrams the server refuses (wrong LOG_SERVER_SECRET, clock skew) are
     counted per sender and listed under sensors on the dashboard. Such a
     sensor's heartbeats are refused too, so it used to just look dead.
+[!] The sensor resolved LOG_SERVER once and kept that address for good, while
+    heartbeats re-resolved: after the server's IP changed it showed alive
+    while every event went to the old address. All remote endpoints are
+    re-resolved every minute, off the capture threads.
 [=] The trail store is built file-backed only on hosts with under 2 GB of
     RAM. Its pages are reclaimable only after being written back, so every
     start and reload wrote the whole store to disk (125 MB measured on a

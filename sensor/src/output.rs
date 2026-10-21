@@ -138,10 +138,8 @@ pub struct EventSink {
     condensed: HashMap<(String, String), Vec<Event>>,
     throttle: crate::throttle::Throttle,
     last_condense_flush: Instant,
-    /// Resolved remote-logging endpoints. Only SUCCESSFUL resolutions are cached here; a failure
-    /// records a retry deadline in `endpoint_retry` instead, so a transient DNS outage cannot
-    /// silence the sink for the lifetime of the process.
-    endpoints: HashMap<String, SocketAddr>,
+    /// A failed resolution of an endpoint not yet in `resolved()` records a retry deadline here,
+    /// so a transient DNS outage cannot silence the sink for the lifetime of the process.
     endpoint_retry: HashMap<String, Instant>,
     sock4: Option<UdpSocket>,
     sock6: Option<UdpSocket>,
@@ -178,7 +176,6 @@ impl EventSink {
             condensed: HashMap::new(),
             throttle,
             last_condense_flush: Instant::now(),
-            endpoints: HashMap::new(),
             endpoint_retry: HashMap::new(),
             sock4: None,
             sock6: None,
@@ -457,9 +454,14 @@ impl EventSink {
     /// resolved up front and cached the `None`, so the FIRST event during a DNS outage disabled
     /// the endpoint until the process restarted - and with DISABLE_LOCAL_LOG_STORAGE that is
     /// every subsequent detection, silently.
+    ///
+    /// Known-good addresses live in `resolved()`, which `spawn_resolver` refreshes off the capture
+    /// thread. Each sink used to keep its own copy for the life of the process: when the server's
+    /// address changed, heartbeats (resolved fresh) reached the new one and showed the sensor
+    /// alive, while every event went to the old one - and a UDP send to it still succeeded.
     fn endpoint_addr(&mut self, endpoint: &str) -> Option<SocketAddr> {
-        if let Some(addr) = self.endpoints.get(endpoint) {
-            return Some(*addr);
+        if let Some(addr) = resolved_endpoint(endpoint) {
+            return Some(addr);
         }
         let now = Instant::now();
         if let Some(deadline) = self.endpoint_retry.get(endpoint) {
@@ -469,7 +471,7 @@ impl EventSink {
         }
         match resolve_endpoint(endpoint) {
             Some(addr) => {
-                self.endpoints.insert(endpoint.to_string(), addr);
+                publish_endpoint(endpoint, addr);
                 self.endpoint_retry.remove(endpoint);
                 Some(addr)
             }
@@ -841,6 +843,8 @@ pub fn spawn_heartbeat(cfg: Arc<OutputConfig>, period: u64, shutdown: Arc<Atomic
 /// what the server is meant to notice.
 fn send_heartbeat(cfg: &OutputConfig, endpoint: &str, uptime: u64) {
     let Some(addr) = resolve_endpoint(endpoint) else { return };
+    // Events follow the address the heartbeat just reached, so the two cannot disagree.
+    publish_endpoint(endpoint, addr);
     let now = SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.as_secs()).unwrap_or(0);
     let payload = heartbeat_payload(&cfg.sensor_name, now, uptime);
     let data = match &cfg.log_server_secret {
@@ -943,6 +947,59 @@ mod heartbeat_tests {
         let long = String::from_utf8(heartbeat_payload(&"n".repeat(500), 1, 0)).unwrap();
         assert_eq!(long.split(' ').nth(2).unwrap().len(), 64, "the name must be capped, not sent whole");
     }
+}
+
+/// Remote endpoint addresses, shared by every sink and kept current by `spawn_resolver`.
+fn resolved() -> &'static std::sync::RwLock<HashMap<String, SocketAddr>> {
+    static RESOLVED: OnceLock<std::sync::RwLock<HashMap<String, SocketAddr>>> = OnceLock::new();
+    RESOLVED.get_or_init(Default::default)
+}
+
+fn resolved_endpoint(endpoint: &str) -> Option<SocketAddr> {
+    resolved().read().ok()?.get(endpoint).copied()
+}
+
+fn publish_endpoint(endpoint: &str, addr: SocketAddr) {
+    if let Ok(mut map) = resolved().write() {
+        if map.get(endpoint) != Some(&addr) {
+            map.insert(endpoint.to_string(), addr);
+        }
+    }
+}
+
+/// How often `spawn_resolver` looks the remote endpoints up again.
+const RESOLVE_PERIOD: Duration = Duration::from_secs(60);
+
+/// Re-resolve every remote endpoint (`LOG_SERVER`, `SYSLOG_SERVER`, `LOGSTASH_SERVER`) every
+/// `RESOLVE_PERIOD`, on this thread rather than a capture thread: getaddrinfo blocks, for the
+/// whole resolver timeout during a DNS outage. A failed lookup keeps the last good address - a
+/// DNS blip should not stop delivery to a server that has not moved.
+pub fn spawn_resolver(cfg: Arc<OutputConfig>, shutdown: Arc<AtomicBool>) {
+    let endpoints: Vec<String> =
+        cfg.log_server.iter().chain(cfg.syslog_server.iter()).chain(cfg.logstash_server.iter()).cloned().collect();
+    if endpoints.is_empty() {
+        return;
+    }
+    std::thread::Builder::new()
+        .name("resolver".into())
+        .spawn(move || {
+            let mut next = Instant::now();
+            loop {
+                if shutdown.load(Ordering::Relaxed) {
+                    break;
+                }
+                if Instant::now() >= next {
+                    next = Instant::now() + RESOLVE_PERIOD;
+                    for endpoint in &endpoints {
+                        if let Some(addr) = resolve_endpoint(endpoint) {
+                            publish_endpoint(endpoint, addr);
+                        }
+                    }
+                }
+                std::thread::sleep(Duration::from_millis(500));
+            }
+        })
+        .ok();
 }
 
 fn resolve_endpoint(endpoint: &str) -> Option<SocketAddr> {
@@ -1129,6 +1186,60 @@ mod tests {
         e.info = "naïve \"quote\"".into();
         let line = logstash_line(&e, Severity::High, "box");
         assert!(line.contains(r#""info": "na\u00efve \"quote\"""#), "{line}");
+    }
+
+    #[test]
+    fn every_sink_follows_a_server_that_moves() {
+        // A name that cannot resolve, so the address is only ever what the resolver published -
+        // here, two listeners standing in for the server before and after its address changed.
+        let endpoint = "log-server-moves.invalid:8337";
+        let before = UdpSocket::bind("127.0.0.1:0").unwrap();
+        let after = UdpSocket::bind("127.0.0.1:0").unwrap();
+        for s in [&before, &after] {
+            s.set_read_timeout(Some(Duration::from_secs(5))).unwrap();
+        }
+        let cfg = Arc::new(OutputConfig {
+            sensor_name: "moves".to_string(),
+            log_dir: std::env::temp_dir(),
+            trails_file: std::env::temp_dir().join("trails.csv"),
+            disable_local_log_storage: true,
+            local_log_json: false,
+            console: false,
+            log_server: Some(endpoint.to_string()),
+            log_server_secret: None,
+            syslog_server: Vec::new(),
+            logstash_server: Vec::new(),
+            severity_regex: None,
+            throttle: crate::throttle::ThrottleConfig::default(),
+            hostname: "harness".to_string(),
+            ignore: crate::ignore::IgnoreRules::default(),
+            whitelist: Arc::new(crate::whitelist::Whitelist::default()),
+            show_debug: false,
+        });
+        let mut sink = EventSink::new(cfg);
+        let mut buf = [0u8; 2048];
+
+        publish_endpoint(endpoint, before.local_addr().unwrap());
+        sink.log_event(&sample(), false, true);
+        assert!(before.recv_from(&mut buf).is_ok(), "the first event did not reach the published address");
+
+        publish_endpoint(endpoint, after.local_addr().unwrap());
+        // A different event, so the throttle cannot fold it into the first.
+        let moved = Event::new(
+            1700000001,
+            0,
+            "10.0.0.6",
+            50001u16,
+            "66.66.66.67",
+            443u16,
+            proto::TCP,
+            trail_type::IP,
+            "66.66.66.67",
+            "malware (test)",
+            "(static)",
+        );
+        sink.log_event(&moved, false, true);
+        assert!(after.recv_from(&mut buf).is_ok(), "after the address changed, events still went to the old one");
     }
 
     #[test]
