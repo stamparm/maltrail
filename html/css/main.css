@@ -283,8 +283,8 @@ body.light .modal-overlay{background:rgba(120,140,170,.45)}
 .modal label{display:block;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin:12px 0 5px}
 .modal input{width:100%;background:var(--input-bg);border:1px solid var(--line-solid);border-radius:8px;padding:9px 11px;color:var(--text);font-family:var(--mono);font-size:13px;outline:none}
 .modal input:focus{border-color:var(--accent)}
-.modal-err{color:var(--sev-high);font-size:12px;min-height:16px;margin-top:8px;font-family:var(--mono)}
-.modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
+.modal-err{color:var(--sev-high);font-size:12px;min-height:16px;margin-top:14px;font-family:var(--mono)}
+.modal-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:14px}
 /* retro-hunt modal: IOC input + per-day timeline + sample matches */
 .hunt-modal{width:600px}
 .hunt-modal .modal-h small{color:var(--muted);font-weight:400;font-size:11px;margin-left:8px;font-family:var(--sans)}
