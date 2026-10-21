@@ -119,8 +119,11 @@ def retrieve_content(url, data=None, headers=None, binary=False, response=None):
         retval = ex.read() if hasattr(ex, "read") else (get_ex_message(ex) or "")
         _record(getattr(ex, "code", None), getattr(ex, "headers", None))
 
-        if url.startswith("https://") and isinstance(retval, str) and "handshake failure" in retval:
-            return retrieve_content(url.replace("https://", "http://"), data, headers, binary, response)
+        # There used to be a retry over plain HTTP here on a TLS "handshake failure", for every
+        # caller - which re-sent the alert webhook's secret-bearing URL and payload in cleartext,
+        # and fetched the static trails AND their sha256 over a channel anyone in the path could
+        # rewrite, so the checksum vouched for nothing. A feed whose TLS is broken fails, and the
+        # update reports it as a feed that produced nothing.
 
         # NOTE: on failure return EMPTY, never the error body/message. Feeds gate parsing on a `__check__` substring and a
         # few have no guard at all - returning an HTTP error page / WAF block / timeout string here let that text get parsed

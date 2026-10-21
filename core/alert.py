@@ -5,19 +5,22 @@ Copyright (c) 2014-present Maltrail developers (https://github.com/stamparm/malt
 See the file 'LICENSE' for copying permission
 """
 
+import collections
 import csv
 import json
 import os
 import threading
 import time
 import traceback
+import urllib.request
 
 from core import logfmt
-from core.common import retrieve_content
 from core.log import log_error
 from core.log import severity_of
 from core.settings import config
 from core.settings import ALERT_POLL_PERIOD
+from core.settings import ALERT_TIMEOUT
+from core.settings import MAX_ALERT_QUEUE
 from core.settings import ALERT_SEVERITY_ORDER
 from core.settings import MAX_ALERT_THROTTLE_KEYS
 from core.settings import UNICODE_ENCODING
@@ -146,24 +149,106 @@ def json_line(event):
                                    "dst_port", "proto", "type", "trail", "info", "reference")))
 
 
+# Alerts waiting for the webhook, oldest first. Delivery is its own thread: a POST used to run on
+# the tailer with a 30 s timeout, so a slow webhook held every later alert back by that much each.
+_queue = collections.deque()
+_queue_cond = threading.Condition()
+_deliverer = []
+_delivery = {"sent": 0, "dropped": 0, "failures": 0, "last_error": None, "last_sent": None}
+
+# How long a failing webhook waits before the next attempt, doubling up to the cap.
+RETRY_MIN, RETRY_MAX = 1, 60
+# A webhook that keeps failing is reported at most this often, not once per attempt.
+FAILURE_REPORT_PERIOD = 3600
+
+
 def send(event):
-    """POST one event. Never raises: a webhook outage must not stop the server or the tailer."""
+    """Queue one event for the webhook. Never raises: an outage must not stop the server or the tailer."""
 
     payload = body(event)
     if payload is None:
         return False
 
+    with _queue_cond:
+        if len(_queue) >= MAX_ALERT_QUEUE:
+            _queue.popleft()
+            _delivery["dropped"] += 1
+        _queue.append(payload)
+        _queue_cond.notify()
+        if not _deliverer:
+            thread = threading.Thread(target=_deliver)
+            thread.daemon = True
+            thread.start()
+            _deliverer.append(thread)
+    return True
+
+
+def post(payload):
+    """POST one payload. Returns None on a 2xx answer, otherwise why it failed.
+
+    This used to go through retrieve_content(), which swallows every error and returns empty
+    bytes - so a 404, a 500, a refused connection and a timeout all looked like a delivered
+    alert, and the "failed" branch could not run.
+    """
+
+    request = urllib.request.Request(config.ALERT_WEBHOOK_URL, data=payload.encode(UNICODE_ENCODING),
+                                     headers={"Content-Type": "application/json"})
     try:
-        retrieve_content(config.ALERT_WEBHOOK_URL, data=payload.encode(UNICODE_ENCODING),
-                         headers={"Content-Type": "application/json"})
-        return True
-    except Exception as ex:
-        log_error("alert webhook POST failed ('%s')" % ex, single=True)
-        return False
+        response = urllib.request.urlopen(request, timeout=ALERT_TIMEOUT)
+        try:
+            code = response.getcode()
+        finally:
+            response.close()
+    except Exception as ex:     # HTTPError (4xx/5xx) included
+        return "%s" % (getattr(ex, "code", None) and "HTTP %s" % ex.code or ex)
+    return None if 200 <= (code or 0) < 300 else "HTTP %s" % code
+
+
+def _deliver():
+    """Send queued alerts in order; on failure keep the alert and retry with a growing delay."""
+
+    delay = RETRY_MIN
+    failing_since, reported = None, 0
+    while True:
+        with _queue_cond:
+            while not _queue:
+                _queue_cond.wait()
+            payload = _queue[0]
+
+        error = post(payload)
+        now = time.time()
+        if error is None:
+            with _queue_cond:
+                if _queue and _queue[0] is payload:
+                    _queue.popleft()
+                _delivery["sent"] += 1
+                _delivery["last_sent"] = now
+            if failing_since is not None:
+                log_error("alert webhook delivering again after %d failed attempt(s)" % _delivery["failures"])
+                failing_since, _delivery["failures"] = None, 0
+            delay = RETRY_MIN
+            continue
+
+        _delivery["failures"] += 1
+        _delivery["last_error"] = error
+        if failing_since is None:
+            failing_since = now
+        if now - reported >= FAILURE_REPORT_PERIOD:
+            reported = now
+            log_error("alert webhook POST failed (%s); %d alert(s) waiting, retrying" % (error, len(_queue)))
+        time.sleep(delay)
+        delay = min(delay * 2, RETRY_MAX)
+
+
+def delivery_status():
+    """Counters for the webhook: sent, dropped (queue full), consecutive failures, last error."""
+
+    with _queue_cond:
+        return dict(_delivery, queued=len(_queue))
 
 
 def process(line):
-    """Filter, throttle and send one log line. Returns True when a message went out."""
+    """Filter, throttle and queue one log line. Returns True when a message was queued."""
 
     event = parse_event_line(line)
     if event is None or not wanted(event) or throttled(event):

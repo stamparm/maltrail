@@ -239,6 +239,56 @@ class TailTest(unittest.TestCase):
         self.assertEqual([_["trail"] for _ in self.sent], ["b.biz"])
 
 
+class DeliveryTest(unittest.TestCase):
+    """A webhook that answers 4xx/5xx or times out must count as a failure, and the alert must be
+    retried rather than lost. retrieve_content() returned empty bytes for every error, so each of
+    those used to be reported as a delivered alert."""
+
+    def setUp(self):
+        import http.server
+        import threading as _threading
+        self.answers, self.received = [], []
+        test = self
+
+        class Handler(http.server.BaseHTTPRequestHandler):
+            def do_POST(self):
+                test.received.append(self.rfile.read(int(self.headers.get("Content-Length", 0))))
+                self.send_response(test.answers.pop(0) if test.answers else 200)
+                self.send_header("Content-Length", "0")
+                self.end_headers()
+
+            def log_message(self, *args):
+                pass
+
+        self.server = http.server.HTTPServer(("127.0.0.1", 0), Handler)
+        _threading.Thread(target=self.server.serve_forever, daemon=True).start()
+        self._saved = (config.ALERT_WEBHOOK_URL, alert.RETRY_MIN, alert.RETRY_MAX)
+        config.ALERT_WEBHOOK_URL = "http://127.0.0.1:%d/hook" % self.server.server_address[1]
+        alert.RETRY_MIN, alert.RETRY_MAX = 0.05, 0.1
+
+    def tearDown(self):
+        self.server.shutdown()
+        config.ALERT_WEBHOOK_URL, alert.RETRY_MIN, alert.RETRY_MAX = self._saved
+
+    def test_an_error_status_is_a_failure(self):
+        self.answers = [500, 404]
+        self.assertEqual(alert.post("{}"), "HTTP 500")
+        self.assertEqual(alert.post("{}"), "HTTP 404")
+        self.assertIsNone(alert.post("{}"), "the control: a 200 is a delivery")
+
+    def test_a_failed_alert_is_retried_until_it_is_delivered(self):
+        config.ALERT_FORMAT = "%(json)s"
+        self.answers = [503, 503]
+        event = alert.parse_event_line(event_line("retried.biz", "apt r (malware)"))
+        self.assertTrue(alert.send(event))
+        deadline = time.time() + 10
+        while time.time() < deadline and alert.delivery_status()["queued"]:
+            time.sleep(0.05)
+        self.assertEqual(alert.delivery_status()["queued"], 0, "the alert was never delivered")
+        self.assertEqual(len(self.received), 3, "two refusals and one delivery, not one silent loss")
+        self.assertIn(b"retried.biz", self.received[-1])
+
+
 class DisabledTest(unittest.TestCase):
     def test_start_is_a_no_op_without_a_url(self):
         config.ALERT_WEBHOOK_URL = ""
