@@ -8,17 +8,30 @@
 //! This is the FxHash used by rustc: a multiply-xor-rotate chain, a handful of cycles per word.
 //! Inlined here rather than pulled in as a dependency because it is fifteen lines.
 //!
-//! **Not for attacker-chosen keys.** Anything keyed by a domain, URL, path or User-Agent uses
-//! `SeededHasher` below instead: FxHash is trivially collidable by someone who picks the keys, and
-//! a collision flood there is a real denial-of-service against the sensor.
+//! **Not for attacker-chosen variable-length keys.** Anything keyed by a domain, URL, path or
+//! User-Agent uses `SeededHasher` below instead: FxHash is trivially collidable by someone who
+//! picks the keys, and a collision flood there is a real denial-of-service against the sensor.
+//!
+//! Its starting state is still random per process. The fixed-size keys are not as safe as they
+//! look: they are addresses off the wire - the per-packet `meta.sqlite` table and the scan maps
+//! hold whatever sources a sender chooses, and an IPv6 sender chooses 64 bits of each. With a
+//! public, fixed state, colliding addresses could be computed offline once and replayed against
+//! every sensor; with this, there is nothing to compute in advance.
 
 use std::hash::{BuildHasherDefault, Hasher};
 
 const SEED64: u64 = 0x51_7c_c1_b7_27_22_0a_95;
 
-#[derive(Default, Clone, Copy)]
+#[derive(Clone, Copy)]
 pub struct FxHasher {
     hash: u64,
+}
+
+impl Default for FxHasher {
+    #[inline]
+    fn default() -> FxHasher {
+        FxHasher { hash: process_seed() }
+    }
 }
 
 impl FxHasher {
@@ -286,7 +299,15 @@ mod tests {
     }
 
     #[test]
-    fn the_unseeded_string_hashes_keep_short_keys_apart() {
+    fn the_fast_hash_starts_from_the_process_seed() {
+        // Not from zero: a public starting state is what would let colliding addresses be
+        // computed once, offline, for every sensor.
+        assert_eq!(FxHasher::default().hash, process_seed());
+        assert_ne!(process_seed(), 0);
+    }
+
+    #[test]
+    fn the_fast_string_hashes_keep_short_keys_apart() {
         let fx: std::collections::HashSet<u64> = (0..20_000).map(|i| hash_of(&format!("k{i}"))).collect();
         assert_eq!(fx.len(), 20_000);
         let table: std::collections::HashSet<u64> =

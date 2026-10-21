@@ -34,6 +34,9 @@
 [!] The server's dashboard comes up at once instead of after the first
     trail update, which runs in the background (20 s update: /ping answered
     after 0.5 s instead of 20.5 s).
+[=] The sensor's fast hash starts from a random per-process state, so
+    colliding source addresses cannot be computed in advance.
+
 [!] With USE_SSL, one client that connected and never sent anything locked
     every other user out of HTTPS, indefinitely: the TLS handshake ran on
     the thread that accepts connections, with no timeout. It runs in the
