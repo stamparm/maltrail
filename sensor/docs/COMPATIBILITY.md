@@ -118,9 +118,10 @@ Every detection `sensor.py` can produce is ported, with the same trail text:
 
 * `DISABLED_HEURISTICS`, `SCAN_WINDOW`, `CHECK_HOST_DOMAINS`, `CHECK_MISSING_HOST`,
   `USE_HEURISTICS` all behave identically.
-* Bounded state: `SCAN_TRACK_PER_KEY` (1024) per key and `SCAN_MAX_KEYS` (50000) keys in total,
-  with the total shared across the port-scan and infection accumulators because Python keeps
-  both in one dict.
+* Bounded state: `SCAN_MAX_KEYS` (50000) keys in total, shared across the port-scan and
+  infection accumulators because Python keeps both in one dict. Per key the sensor keeps only
+  threshold+1 items, where Python kept up to `SCAN_TRACK_PER_KEY` (1024): nothing reads past
+  the crossing, so alerts are identical and a flood can no longer fill gigabytes.
 
 ### Output
 * Event line: `"<localtime>" <sensor> <src_ip> <src_port> <dst_ip> <dst_port> <proto> <type>

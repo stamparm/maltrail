@@ -21,11 +21,16 @@ use crate::fasthash::{name_key, FastMap, FastSet, SeededHasher};
 use crate::settings;
 use std::collections::hash_map::Entry;
 
+/// How many of a pair's queries its distinct-names ratio is measured over. Above
+/// `DNS_TUNNELING_MIN_QUERIES`, so the ratio is complete by the time a verdict is possible.
+const NAME_SAMPLE: usize = 256;
+
 /// One (source, zone) pair's evidence inside the current window.
 #[derive(Default)]
 pub struct Accumulator {
     pub queries: usize,
-    /// Distinct subdomain parts, as `name_key`s. A tunnel never repeats one; a blocklist does.
+    /// Distinct subdomain parts among the first `NAME_SAMPLE` queries, as `name_key`s. A tunnel
+    /// never repeats one; a blocklist does.
     names: FastSet<u64>,
     /// Queries whose leading label is long AND high-entropy - i.e. carrying a payload.
     pub carrying: usize,
@@ -180,7 +185,7 @@ impl Accumulator {
         if self.last_sec.saturating_sub(self.first_sec) < settings::DNS_TUNNELING_MIN_SPAN {
             return false; // a session, not a burst - the condition that excludes most legitimate traffic
         }
-        if self.names.len() * 100 < queries * settings::DNS_TUNNELING_MIN_DISTINCT_PCT {
+        if self.names.len() * 100 < queries.min(NAME_SAMPLE) * settings::DNS_TUNNELING_MIN_DISTINCT_PCT {
             return false; // repeats mean a cache-missing client or a blocklist, not an encoder
         }
         if self.carrying * 100 < queries * settings::DNS_TUNNELING_MIN_LONG_PCT {
@@ -233,7 +238,8 @@ impl DnsTunneling {
                 v.insert(Accumulator { first_sec: sec, exempt: exempt(), ..Accumulator::default() })
             }
         };
-        if entry.exempt {
+        // An exempt zone, or a pair that has already reported this window, records nothing more.
+        if entry.exempt || entry.alerted {
             return Outcome::Quiet;
         }
         let carrying = leading.chars().count() >= settings::DNS_TUNNELING_MIN_LABEL
@@ -245,11 +251,14 @@ impl DnsTunneling {
         if carrying {
             entry.carrying += 1;
         }
-        if entry.names.len() < super::HEURISTIC_MAX_KEYS {
+        // Distinctness is judged on the first NAME_SAMPLE queries, so a pair costs at most that
+        // many names. It kept up to HEURISTIC_MAX_KEYS (50k) per pair, for up to 50k pairs: a
+        // random-subdomain flood could fill gigabytes before any window reset.
+        if entry.queries <= NAME_SAMPLE {
             entry.names.insert(subdomain.0);
         }
 
-        if entry.alerted || !entry.verdict() {
+        if !entry.verdict() {
             return Outcome::Quiet;
         }
         entry.alerted = true;
@@ -457,6 +466,14 @@ mod tests {
         assert_eq!(asked.get(), 1, "the exemption is asked when the pair is created, not per query");
         // The same traffic on a zone that is not exempt does report - the control.
         assert_eq!(feed(&mut DnsTunneling::default(), "10.0.0.5|tunnel.example", 400, 40, 1), 1);
+    }
+
+    #[test]
+    fn a_long_tunnel_still_reports_and_its_memory_stays_bounded() {
+        let mut t = DnsTunneling::default();
+        assert_eq!(feed(&mut t, "10.0.0.5|tunnel.example", 10_000, 40, 1), 1, "a long tunnel must still report, once");
+        let names = t.pairs.values().map(|a| a.names.len()).max().unwrap();
+        assert!(names <= NAME_SAMPLE, "a pair kept {names} names");
     }
 
     #[test]

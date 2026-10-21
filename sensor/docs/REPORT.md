@@ -582,7 +582,7 @@ measured on the target hardware with `tools/fanout_check.py` plus the sensor's o
   elsewhere in this repository is quoted with the CSV size it came from for that reason.
 * Whole-process peak during a 300k-packet replay: **88 MB** (73 MB CSV; 132 MB on the 83.3 MB CSV
   measured in §4a).
-* Per-worker state is bounded by construction: `SCAN_TRACK_PER_KEY` (1024) items per key,
+* Per-worker state is bounded by construction: threshold+1 items per scan key (Python kept 1024),
   `SCAN_MAX_KEYS` (50,000) keys total, 1000-entry result caches, hour-bucketed NXDOMAIN counters
   pruned once per hour — all identical to `sensor.py`'s bounds.
 * Steady-state allocation on the non-alerting path: none.

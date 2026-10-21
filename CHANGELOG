@@ -33,6 +33,10 @@
 [!] A live sensor with a trails.csv already on disk starts capturing at
     once and updates in the background. It used to detect nothing until
     the update finished, which can take minutes, on every start.
+[=] Scan heuristics keep threshold+1 items per key instead of up to 1024,
+    and DNS tunneling judges distinctness on a pair's first 256 queries and
+    stops recording once it has reported: a flood could fill gigabytes.
+
 [!] The server lost most remote-sensor events whenever it was busy. Its UDP
     receiver shared one Python interpreter with the dashboard and the trail
     update, and with one other thread busy it lost 98% of 5,000 events/s.

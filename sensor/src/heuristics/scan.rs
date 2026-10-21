@@ -1,10 +1,14 @@
 //! Sliding-window scan accumulators — `sensor.py:_scan_track()` and the per-second sweep
 //! at the top of `_process_packet()`.
 //!
-//! Memory is bounded exactly like Python: at most `SCAN_TRACK_PER_KEY` items per key and
-//! `SCAN_MAX_KEYS` keys in total. The total cap is shared across the port-scan and
-//! infection accumulators because Python keeps both in the single `_connect_src_dst` dict
-//! (discriminated by whether the second tuple element is an int).
+//! Memory is bounded per key and in keys: `SCAN_MAX_KEYS` keys in total, and per key no more
+//! items than it takes to cross its threshold. Python kept up to `SCAN_TRACK_PER_KEY` (1024)
+//! per key, but nothing reads past threshold+1 - the crossing is reported once, and repeats are
+//! blocked by the alerted sets - so the rest was memory a flood could fill for nothing: 50k
+//! infection keys of 1024 addresses each is ~3 GB, which on a Pi is the OOM killer. The total
+//! cap is shared across the port-scan and infection accumulators because Python keeps both in
+//! the single `_connect_src_dst` dict (discriminated by whether the second tuple element is an
+//! int).
 
 use crate::addr::Ip;
 use crate::fasthash::{FastMap, FastSet};
@@ -138,7 +142,8 @@ fn insert_and_crossed<T: std::hash::Hash + Eq + Clone, D, S: std::hash::BuildHas
     item: T,
     threshold: usize,
 ) -> bool {
-    if bucket.items.len() >= SCAN_TRACK_PER_KEY {
+    // Nothing is read past the crossing (see the module doc).
+    if bucket.items.len() > threshold || bucket.items.len() >= SCAN_TRACK_PER_KEY {
         return false;
     }
     if !bucket.items.insert(item) {
@@ -344,7 +349,10 @@ impl ScanState {
                 }
                 // `contains` first: the segment is only turned into an owned Box<str> when it is
                 // genuinely new, so a client hammering one path allocates nothing per packet.
-                if bucket.items.len() < SCAN_TRACK_PER_KEY && !bucket.items.contains(segment) {
+                if bucket.items.len() <= threshold
+                    && bucket.items.len() < SCAN_TRACK_PER_KEY
+                    && !bucket.items.contains(segment)
+                {
                     bucket.items.insert(segment.into());
                     if bucket.items.len() == threshold + 1 {
                         self.ready_web.push((src, dst));
@@ -578,6 +586,10 @@ mod tests {
             s.track_port(ip(1), ip(2), (p % 65536) as u16, detail());
         }
         assert!(s.port_scan_len(ip(1), ip(2)) <= SCAN_TRACK_PER_KEY);
+        // ...and in fact no more than it takes to cross the threshold, which still reports.
+        let threshold = crate::settings::PORT_SCANNING_THRESHOLD;
+        assert_eq!(s.port_scan_len(ip(1), ip(2)), threshold + 1, "items past the crossing are kept for nothing");
+        assert_eq!(s.port_scan_candidates(threshold).len(), 1, "the capped key must still be reported");
 
         let mut s2 = ScanState::default();
         for i in 0..(SCAN_MAX_KEYS + 5000) {
