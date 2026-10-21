@@ -2873,17 +2873,26 @@
   }
   function paintSensors(res, d) {
     var list = d.sensors || [];
+    var now = d.now || Math.floor(Date.now() / 1000);
+    // Refused senders first, and whether or not anything checked in: a sensor whose secret or
+    // clock is wrong has every datagram refused, its heartbeats too, so it is in this list only.
+    var refused = "";
+    (d.rejected || []).slice().reverse().forEach(function (r) {
+      refused += '<div class="sens-row is-stale"><span class="sens-addr">' + esc(r.address || "") + '</span>' +
+                 '<span class="sens-name">' + fmtN(r.count || 0) + ' datagram(s) refused: ' + esc(r.reason || "") + '</span>' +
+                 '<span class="sens-ago">' + _sensorAgo(Math.max(0, now - (r.last_seen || 0))) + '</span></div>';
+    });
+    if (refused) refused = '<div class="hunt-sum">refused senders</div><div class="sens-rows">' + refused + '</div>';
     if (!list.length) {
       // Say what to do about it: an empty list is the normal state of every deployment that has
       // not turned heartbeats on yet, and "no sensors" alone reads as an outage.
-      res.innerHTML = '<div class="hunt-empty">No sensor has checked in.<br><br>Sensors report in only when they are configured with both <b>LOG_SERVER</b> (pointing here) and a non-zero <b>HEARTBEAT_PERIOD</b>.</div>';
+      res.innerHTML = refused + '<div class="hunt-empty">No sensor has checked in.<br><br>Sensors report in only when they are configured with both <b>LOG_SERVER</b> (pointing here) and a non-zero <b>HEARTBEAT_PERIOD</b>.</div>';
       return;
     }
     // Sort by the freshest first, so whatever is wrong is at the bottom where it stands out
     // against the healthy rows above it.
     list = list.slice().sort(function (a, b) { return (b.last_seen || 0) - (a.last_seen || 0); });
-    var now = d.now || Math.floor(Date.now() / 1000);
-    var h = '<div class="hunt-sum">' + fmtN(list.length) + ' sensor(s)</div><div class="sens-rows">';
+    var h = refused + '<div class="hunt-sum">' + fmtN(list.length) + ' sensor(s)</div><div class="sens-rows">';
     list.forEach(function (s) {
       var age = Math.max(0, now - (s.last_seen || 0));
       // Two heartbeats missed at the 300s default. A threshold in seconds cannot know the

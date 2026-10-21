@@ -14,6 +14,7 @@ import os
 import re
 import signal
 import socket
+import subprocess
 import sys
 import threading
 import time
@@ -66,6 +67,18 @@ _sensor_status = OrderedDict()
 _sensor_status_lock = threading.Lock()
 MAX_SENSOR_STATUS = 1024
 MAX_SENSOR_FIELD = 64
+
+# Datagrams refused by mts_open(), per sending address: the other half of the liveness picture. A
+# sensor with a wrong LOG_SERVER_SECRET, or a clock outside LOG_SERVER_SKEW, has EVERY event and
+# every heartbeat refused, so it would otherwise just look dead. Bounded and evicted like the
+# sensor table, for the same reason: anyone who can reach the port can make it refuse things.
+_rejected = OrderedDict()
+MAX_REJECTED_SOURCES = 256
+
+# The receiver runs in its own process (start_logd), which reports its tables back here; one
+# entry per receiver, merged on read.
+_receiver_status = {}
+_status_dirty = threading.Event()
 HEARTBEAT_MARK = b"!HB"
 
 def create_log_directory():
@@ -500,17 +513,33 @@ def _skew_window():
         return LOG_SERVER_SKEW
 
 
-def _mts_drop(reason):
-    """Say why a datagram was refused, when debugging is on.
+def _mts_drop(reason, source=None):
+    """Record why a datagram was refused, and say so when debugging is on.
 
     Every rejection here is silent by necessity - the sender is unauthenticated, so there is
     nobody to tell - and that produces the worst failure this project has: a sensor that looks
     healthy while its events never arrive. A skewed clock or a mismatched secret drops EVERY
-    event, and without this line the only symptom is an empty log.
+    event. So the refusal is counted per source and shown in /sensors, next to the sensors that
+    do check in.
     """
 
     if getattr(config, "SHOW_DEBUG", False):
         sys.stderr.write("[x] dropped an event datagram: %s\n" % reason)
+
+    if source is not None:
+        with _sensor_status_lock:
+            entry = _rejected.get(source)
+            if entry is None:
+                if len(_rejected) >= MAX_REJECTED_SOURCES:
+                    _rejected.popitem(last=False)
+                entry = _rejected[source] = {"address": source, "count": 0}
+            else:
+                _rejected.move_to_end(source)
+            entry["count"] += 1
+            entry["reason"] = reason
+            entry["last_seen"] = int(time.time())
+        _status_dirty.set()
+
     return None
 
 
@@ -528,7 +557,7 @@ def mts_sign(secret, payload):
     return MTS_PREFIX + _mts_mac(secret, payload) + b" " + payload
 
 
-def mts_open(secret, data, now=None):
+def mts_open(secret, data, now=None, source=None):
     """The payload carried by a datagram, or None if it must be dropped.
 
     With a secret the frame is REQUIRED and verified, which is what closes the injection hole.
@@ -549,26 +578,26 @@ def mts_open(secret, data, now=None):
         return rest[MTS_MAC_HEX + 1:] if len(rest) > MTS_MAC_HEX else None
 
     if not framed:
-        return _mts_drop("unsigned, but 'LOG_SERVER_SECRET' is set (sender not configured with it?)")
+        return _mts_drop("unsigned, but 'LOG_SERVER_SECRET' is set (sender not configured with it?)", source)
 
     rest = data[len(MTS_PREFIX):]
     if len(rest) <= MTS_MAC_HEX or rest[MTS_MAC_HEX:MTS_MAC_HEX + 1] != b" ":
-        return _mts_drop("malformed frame")
+        return _mts_drop("malformed frame", source)
 
     given, payload = rest[:MTS_MAC_HEX], rest[MTS_MAC_HEX + 1:]
     if not hmac.compare_digest(given, _mts_mac(secret, payload)):
-        return _mts_drop("bad MAC (the two ends disagree on 'LOG_SERVER_SECRET')")
+        return _mts_drop("bad MAC (the two ends disagree on 'LOG_SERVER_SECRET')", source)
 
     head = payload.split(b" ", 1)[0]
     if not head.isdigit():
-        return _mts_drop("signed payload does not start with an epoch second")
+        return _mts_drop("signed payload does not start with an epoch second", source)
 
     window = _skew_window()
     skew = (time.time() if now is None else now) - int(head)
     if window and abs(skew) > window:
         return _mts_drop("timestamp is %ds away, outside the %ds 'LOG_SERVER_SKEW' window (sender "
                          "clock skew, or an offline replay of an old capture - use "
-                         "'--timestamps wallclock' for that)" % (skew, window))
+                         "'--timestamps wallclock' for that)" % (skew, window), source)
 
     return payload
 
@@ -620,103 +649,205 @@ def heartbeat_event(data, source):
         elif len(_sensor_status) >= MAX_SENSOR_STATUS:
             _sensor_status.popitem(last=False)
         _sensor_status[sensor] = status
+    _status_dirty.set()
 
     return True
+
+
+def _merged(local, field, key, limit):
+    """`local` and every receiver's `field` rows, one per `key`, the freshest winning, at most `limit`."""
+
+    rows = {}
+    with _sensor_status_lock:
+        sources = [list(local.values())] + [_.get(field, []) for _ in _receiver_status.values()]
+    for row in (row for source in sources for row in source):
+        if row[key] not in rows or row.get("last_seen", 0) >= rows[row[key]].get("last_seen", 0):
+            rows[row[key]] = row
+    return sorted(rows.values(), key=lambda _: _.get("last_seen", 0))[-limit:]
 
 
 def sensor_status():
     """Every sensor heard from since this process started, most recently seen last."""
 
-    with _sensor_status_lock:
-        return list(_sensor_status.values())
+    return _merged(_sensor_status, "sensors", "sensor", MAX_SENSOR_STATUS)
+
+
+def rejected_status():
+    """Every address whose datagrams were refused, with the latest reason, most recent last."""
+
+    return _merged(_rejected, "rejected", "address", MAX_REJECTED_SOURCES)
+
+
+class _LogUDPServer(_socketserver.UDPServer):
+    def server_bind(self):
+        # The default receive buffer holds ~2k of these datagrams, so a burst overruns it while the loop
+        # is still writing. This asks for 8 MB, but the kernel CLAMPS it to net.core.rmem_max without
+        # error - which on a stock box is the 208 KB default, i.e. no change at all. It is here because
+        # it is one line and it does help on a host whose operator has raised rmem_max for exactly this.
+        try:
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 8 * 1024 * 1024)
+        except Exception:
+            pass
+        _socketserver.UDPServer.server_bind(self)
+
+
+class _UDPHandler(_socketserver.BaseRequestHandler):
+    def handle(self):
+        try:
+            data, _ = self.request
+
+            # Authenticate before parsing. With LOG_SERVER_SECRET set this is what makes the
+            # listener refuse events it cannot attribute; without it, behaviour is unchanged.
+            data = mts_open(getattr(config, "LOG_SERVER_SECRET", None), data, source=self.client_address[0])
+            if data is None:
+                return
+
+            # Liveness, not a detection: recorded in memory and never written to the log.
+            if heartbeat_event(data, self.client_address[0]):
+                return
+
+            if data[0:1].isdigit():     # Note: regular format with timestamp in front
+                sec, event = data.split(b' ', 1)
+            else:                       # Note: naive format without timestamp in front
+                event_date = datetime.datetime.strptime(data[1:data.find(b'.')].decode(UNICODE_ENCODING), TIME_FORMAT)
+                sec = int(time.mktime(event_date.timetuple()))
+                event = data
+
+            # One datagram is one record. A sensor never sends an embedded newline, so the
+            # only way to get one here is a forged datagram - and this listener is
+            # unauthenticated by protocol design, so anyone who can reach the port could
+            # append arbitrary extra "events" to the log by putting '\n' in the middle of
+            # one. That is evidence tampering in an IDS: the log is what an operator
+            # reasons from and what /events, /counts and /fail2ban parse.
+            #
+            # Collapse the interior newlines rather than dropping the datagram, so a
+            # malformed-but-honest sender still gets its event recorded, on one line.
+            event = event.rstrip(b'\r\n').replace(b'\r', b' ').replace(b'\n', b' ') + b'\n'
+
+            # reuse=True: one receive loop means one thread, so the thread-local handle is a real cache
+            # instead of a miss on every datagram. It is reopened when the day's path changes.
+            os.write(get_event_log_handle(int(sec)), event)
+        except Exception:
+            if config.SHOW_DEBUG:
+                traceback.print_exc()
+
+
+# What the receiver process needs of the configuration: it writes the log and authenticates.
+_RECEIVER_SETTINGS = ("LOG_DIR", "LOG_SERVER_SECRET", "LOG_SERVER_SKEW", "SHOW_DEBUG")
+_receivers = []
+
+
+def _receiver_main(fd, family, settings):
+    """The receiver process: serve the socket the parent bound, report tables on stdout.
+
+    Its own process because the server is one Python process, and a thread in it gets the
+    interpreter only between other threads' 5 ms slices. With any other thread busy - a /hunt,
+    the 8-second /fail2ban rescans, an index build, the trail update - a receive thread drained
+    the socket that seldom, and measured at 5,000 events/s 98% of the datagrams were lost in the
+    kernel buffer, every day and with nothing reporting it. Alone, it loses none.
+    """
+
+    signal.signal(signal.SIGINT, signal.SIG_IGN)    # Ctrl-C is the parent's to handle
+    signal.signal(signal.SIGTERM, signal.SIG_DFL)
+    config.update(json.loads(settings))
+
+    def report():
+        while True:
+            _status_dirty.wait()
+            _status_dirty.clear()
+            with _sensor_status_lock:
+                line = json.dumps({"sensors": list(_sensor_status.values()), "rejected": list(_rejected.values())})
+            try:
+                sys.stdout.write(line + "\n")
+                sys.stdout.flush()
+            except Exception:
+                os._exit(0)
+            time.sleep(0.1)     # at most ten reports a second, however hard the port is flooded
+
+    def orphaned():
+        # The parent holds the other end of stdin; end of file means it is gone, by any death.
+        sys.stdin.read()
+        os._exit(0)
+
+    for target in (report, orphaned):
+        thread = threading.Thread(target=target)
+        thread.daemon = True
+        thread.start()
+
+    server = _LogUDPServer(("", 0), _UDPHandler, bind_and_activate=False)
+    server.socket.close()
+    server.socket = socket.fromfd(fd, family, socket.SOCK_DGRAM)
+    os.close(fd)
+    server.serve_forever()
+
+
+def _start_receiver_process(server):
+    """Serve `server`'s socket from a child process. False where that cannot be done."""
+
+    if os.name != "posix":
+        return False
+
+    fd = server.socket.fileno()
+    slot = len(_receivers)
+    _receivers.append(server)       # the parent keeps its copy of the socket, so a child can be respawned
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    boot = "import sys; sys.path.insert(0, %r); from core.log import _receiver_main; _receiver_main(%d, %d, sys.argv[1])" % (root, fd, server.address_family)
+    settings = json.dumps(dict((_, config.get(_)) for _ in _RECEIVER_SETTINGS))
+
+    def spawn():
+        return subprocess.Popen([sys.executable, "-c", boot, settings], stdin=subprocess.PIPE, stdout=subprocess.PIPE, pass_fds=(fd,), close_fds=True)
+
+    def supervise(process):
+        while True:
+            for line in process.stdout:
+                try:
+                    status = json.loads(line.decode(UNICODE_ENCODING))
+                except ValueError:
+                    continue
+                with _sensor_status_lock:
+                    _receiver_status[slot] = status
+            code = process.wait()
+            log_error("event receiver process exited (code %s), restarting it" % code)
+            time.sleep(1)
+            try:
+                process = spawn()
+            except Exception as ex:
+                log_error("unable to restart the event receiver process (%s)" % ex)
+                return
+
+    process = spawn()
+    thread = threading.Thread(target=supervise, args=(process,))
+    thread.daemon = True
+    thread.start()
+    return True
 
 
 def start_logd(address=None, port=None, join=False):
-    # ONE receive loop, not a thread per datagram.
+    # ONE receive loop, not a thread per datagram, and in its own process (see _receiver_main).
     #
     # This used to be a ThreadingUDPServer, so every event from every remote sensor cost a fresh thread -
     # and because that thread was fresh, get_event_log_handle()'s thread-local fd cache could never hit, so
     # each event also cost an open() and a close(). Measured against the real server on loopback, paced:
+    # 10,000/s lost 23.9%, unpaced 337k/s delivered 2.3%. One sequential loop with a cached handle holds
+    # 20,000/s with no loss - as long as nothing else in the process wants the interpreter.
     #
-    #     500/s  0% loss     5,000/s   0% loss
-    #   1,000/s  0% loss    10,000/s  23.9% loss
-    #   2,000/s  0% loss    (unpaced 337k/s: 2.3% delivered)
-    #
-    # A sensor with DISABLE_LOCAL_LOG_STORAGE sends every event here, and a scan burst on a busy link is
-    # well past 10k/s - so the loss lands exactly when there is most to see. The handler only parses a line
-    # and appends it, which is the wrong shape for concurrency in the first place: N threads appending to one
-    # file contend on it, and the external review's "unbounded threads" note was about this constructor.
-    # Sequential receive keeps `reuse=True` viable (one long-lived thread, one cached fd, still rotated by
-    # the day-path comparison) and removes both costs.
-    class LogUDPServer(_socketserver.UDPServer):
-        def server_bind(self):
-            # The default receive buffer holds ~2k of these datagrams, so a burst overruns it while the loop
-            # is still writing. This asks for 8 MB, but the kernel CLAMPS it to net.core.rmem_max without
-            # error - which on a stock box is the 208 KB default, i.e. no change at all. So it is not where
-            # the numbers above come from; those are the thread and the open()/close(). It is here because it
-            # is one line and it does help on a host whose operator has raised rmem_max for exactly this.
-            try:
-                self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_RCVBUF, 8 * 1024 * 1024)
-            except Exception:
-                pass
-            _socketserver.UDPServer.server_bind(self)
-
-    class UDPHandler(_socketserver.BaseRequestHandler):
-        def handle(self):
-            try:
-                data, _ = self.request
-
-                # Authenticate before parsing. With LOG_SERVER_SECRET set this is what makes the
-                # listener refuse events it cannot attribute; without it, behaviour is unchanged.
-                data = mts_open(getattr(config, "LOG_SERVER_SECRET", None), data)
-                if data is None:
-                    return
-
-                # Liveness, not a detection: recorded in memory and never written to the log.
-                if heartbeat_event(data, self.client_address[0]):
-                    return
-
-                if data[0:1].isdigit():     # Note: regular format with timestamp in front
-                    sec, event = data.split(b' ', 1)
-                else:                       # Note: naive format without timestamp in front
-                    event_date = datetime.datetime.strptime(data[1:data.find(b'.')].decode(UNICODE_ENCODING), TIME_FORMAT)
-                    sec = int(time.mktime(event_date.timetuple()))
-                    event = data
-
-                # One datagram is one record. A sensor never sends an embedded newline, so the
-                # only way to get one here is a forged datagram - and this listener is
-                # unauthenticated by protocol design, so anyone who can reach the port could
-                # append arbitrary extra "events" to the log by putting '\n' in the middle of
-                # one. That is evidence tampering in an IDS: the log is what an operator
-                # reasons from and what /events, /counts and /fail2ban parse.
-                #
-                # Collapse the interior newlines rather than dropping the datagram, so a
-                # malformed-but-honest sender still gets its event recorded, on one line.
-                event = event.rstrip(b'\r\n').replace(b'\r', b' ').replace(b'\n', b' ') + b'\n'
-
-                # reuse=True: one receive loop means one thread, so the thread-local handle is a real cache
-                # instead of a miss on every datagram. It is reopened when the day's path changes.
-                os.write(get_event_log_handle(int(sec)), event)
-            except Exception:
-                if config.SHOW_DEBUG:
-                    traceback.print_exc()
-
-    # IPv6 support
-    if ':' in (address or ""):
+    # The socket is bound HERE, in the caller, so a port in use or a permission problem still fails
+    # start_logd() itself; the child only serves it.
+    if ':' in (address or ""):    # IPv6 support
         address = address.strip("[]")
-
-        LogUDPServer.address_family = socket.AF_INET6
+        _LogUDPServer.address_family = socket.AF_INET6
         _address = resolve_address(address, port)
     else:
+        _LogUDPServer.address_family = socket.AF_INET
         _address = (address or '', int(port) if str(port or "").isdigit() else 0)
 
-    server = LogUDPServer(_address, UDPHandler)
+    server = _LogUDPServer(_address, _UDPHandler)
 
     print("[i] running UDP server at '%s:%d'" % (server.server_address[0], server.server_address[1]))
 
     if join:
         server.serve_forever()
-    else:
+    elif not _start_receiver_process(server):
         thread = threading.Thread(target=server.serve_forever)
         thread.daemon = True
         thread.start()

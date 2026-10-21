@@ -16,6 +16,13 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] The server lost most remote-sensor events whenever it was busy. Its UDP
+    receiver shared one Python interpreter with the dashboard and the trail
+    update, and with one other thread busy it lost 98% of 5,000 events/s.
+    It runs as its own process now: 0% at 20,000/s with the rest busy.
+[!] Datagrams the server refuses (wrong LOG_SERVER_SECRET, clock skew) are
+    counted per sender and listed under sensors on the dashboard. Such a
+    sensor's heartbeats are refused too, so it used to just look dead.
 [=] The trail store is built file-backed only on hosts with under 2 GB of
     RAM. Its pages are reclaimable only after being written back, so every
     start and reload wrote the whole store to disk (125 MB measured on a

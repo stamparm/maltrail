@@ -1924,13 +1924,17 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
 
             sensors = _log.sensor_status()
+            # Senders whose datagrams were refused (bad secret, clock skew): a sensor in that state
+            # sends nothing that gets through, heartbeats included, so it is not in `sensors` at all.
+            rejected = _log.rejected_status()
 
             # A network-restricted analyst is told which sensors are healthy - that is operational
             # and harmless - but not the addresses of collection infrastructure outside their scope.
             if getattr(session, "netfilters", None) is not None:
                 sensors = [dict(_, address="") for _ in sensors]
+                rejected = []
 
-            return json.dumps({"now": int(time.time()), "sensors": sensors})
+            return json.dumps({"now": int(time.time()), "sensors": sensors, "rejected": rejected})
 
         def _ping(self, params):
             self.send_response(_http_client.OK)

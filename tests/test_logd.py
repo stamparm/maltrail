@@ -9,6 +9,7 @@ import os
 import sys
 import time
 import socket
+import subprocess
 import tempfile
 import threading
 import unittest
@@ -174,11 +175,21 @@ class TestIntakeShape(unittest.TestCase):
             self.skipTest(getattr(TestLogd, "_skip", "logd not started"))
 
     def test_a_burst_costs_one_open_not_one_per_datagram(self):
+        # The receive loop is served IN this process here, so its open() calls can be counted: the
+        # receiver start_logd() runs is a child process, where patching os.open would see nothing
+        # and this test would pass whatever the loop did.
+        server = L._LogUDPServer(("127.0.0.1", 0), L._UDPHandler)
+        thread = threading.Thread(target=server.serve_forever)
+        thread.daemon = True
+        thread.start()
+        self.addCleanup(server.shutdown)
+        port = server.server_address[1]
+
         path = os.path.join(TestLogd.tmp, DATELOG)
         payload = b'%d "burst" h 10.0.0.1 1 2.2.2.2 2 TCP IP 2.2.2.2 "m" (s)' % SEC
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-        sock.sendto(payload, ("127.0.0.1", TestLogd.port))       # warm the day's handle first
+        sock.sendto(payload, ("127.0.0.1", port))       # warm the day's handle first
         self._wait_for_lines(path, 1)
 
         opens = []
@@ -193,7 +204,7 @@ class TestIntakeShape(unittest.TestCase):
         L.os.open = counting_open
         try:
             for _ in range(200):
-                sock.sendto(payload, ("127.0.0.1", TestLogd.port))
+                sock.sendto(payload, ("127.0.0.1", port))
             self._wait_for_lines(path, before + 200)
         finally:
             L.os.open = real_open
@@ -202,6 +213,44 @@ class TestIntakeShape(unittest.TestCase):
         self.assertEqual(self._count_lines(path) - before, 200, "datagrams were dropped in a 200-packet burst")
         self.assertLessEqual(len(opens), 1,
                              "the event-log handle is reopened per datagram (%d opens for 200 events)" % len(opens))
+
+    def test_intake_keeps_up_while_this_interpreter_is_busy(self):
+        # The receiver shared this process's interpreter lock with the HTTP handlers and the trail
+        # update, and got it only between their 5 ms slices: with one CPU-bound thread running,
+        # 98% of 5,000 datagrams/s were lost in the socket buffer. Its own process loses none. The
+        # bar is set far below that so a loaded runner cannot fail it, and far above what the old
+        # design delivered (~2%) so it still discriminates.
+        path = os.path.join(TestLogd.tmp, DATELOG)
+        marker = b"busy-%d" % int(time.time() * 1000)
+        before = self._count_lines(path)
+        stop = []
+
+        def spin():
+            while not stop:
+                pass
+
+        spinner = threading.Thread(target=spin)
+        spinner.daemon = True
+        spinner.start()
+        # The sender is another process: one in this interpreter would be held back by the busy
+        # thread exactly as much as the receiver used to be, and the two would keep pace.
+        sender = ("import socket, sys, time\n"
+                  "s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\n"
+                  "started = time.time()\n"
+                  "for i in range(4000):\n"
+                  "    s.sendto(sys.argv[2].encode(), ('127.0.0.1', int(sys.argv[1])))\n"
+                  "    delay = started + (i + 1) / 2000.0 - time.time()\n"
+                  "    if delay > 0:\n"
+                  "        time.sleep(delay)\n")
+        line = '%d "%s" h 10.0.0.1 1 2.2.2.2 2 TCP IP 2.2.2.2 "m" (s)' % (SEC, marker.decode())
+        try:
+            subprocess.check_call([sys.executable, "-c", sender, str(TestLogd.port), line])
+            self._wait_for_lines(path, before + 4000, timeout=5.0)
+        finally:
+            stop.append(True)
+
+        got = self._count_lines(path) - before
+        self.assertGreaterEqual(got, 3200, "only %d of 4000 datagrams arrived while another thread was busy" % got)
 
     def _count_lines(self, path):
         if not os.path.isfile(path):
@@ -298,6 +347,25 @@ class TestLogServerSecret(unittest.TestCase):
         self._send(L.mts_sign("not-the-secret", payload))
         self.assertNotIn(b"wrong-key.example", self._log(),
                          "a datagram signed with the wrong key was accepted")
+
+    def test_a_refused_sender_is_counted_and_says_why(self):
+        # A sensor with the wrong secret has every event and every heartbeat refused, so the
+        # sensor table never hears of it: this count is the only trace it leaves.
+        def refused():
+            return [_ for _ in L.rejected_status() if _["address"] == "127.0.0.1" and "bad MAC" in _.get("reason", "")]
+
+        before = sum(_["count"] for _ in refused())
+        for _ in range(3):
+            self._send(L.mts_sign("not-the-secret", self._event("counted-refusal.example")))
+        deadline = time.time() + 5.0
+        while time.time() < deadline and sum(_["count"] for _ in refused()) < before + 3:
+            time.sleep(0.05)
+        self.assertEqual(sum(_["count"] for _ in refused()), before + 3, "refused datagrams were not counted per sender")
+
+        # The control: an accepted datagram is not a refusal.
+        self._send(L.mts_sign(config.LOG_SERVER_SECRET, self._event("accepted-control.example")))
+        self.assertIn(b"accepted-control.example", self._log())
+        self.assertEqual(sum(_["count"] for _ in refused()), before + 3)
 
     def test_a_tampered_payload_is_dropped(self):
         # The MAC stays valid-looking; the event under it is edited in flight.
