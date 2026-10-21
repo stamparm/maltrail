@@ -874,6 +874,93 @@ def _cleared_sources():
     return retval
 
 
+_sources_cache = {}
+_sources_lock = threading.Lock()
+
+
+def _event_stamp(fields):
+    """An event's local time as 'YYYY-MM-DD HH:MM:SS' - sortable as a string - or None."""
+
+    stamp = ("%s" % fields[0]).strip()
+    if re.match(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}", stamp):
+        return stamp[:19]
+    if is_decimal(stamp):   # a JSON line from LOGSTASH_SERVER carries the epoch instead
+        try:
+            return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(float(stamp)))
+        except (ValueError, OverflowError):
+            pass
+    return None
+
+
+def _matching_sources(cache_key, path, match):
+    """{source IP: time of its latest matching event} for one day's log, reading only new bytes.
+
+    /fail2ban and /blacklist used to rescan the whole of today's log whenever their 8-second cache
+    expired: 7.3 s of CPU per 65 MB day, so a puller every ~10 s kept most of a core busy (and took
+    the interpreter from everything else in the process). This keeps a byte offset per log, like
+    /geo, so a request reads what was appended since the last one. `match(raw)` returns the line's
+    fields when it counts and None otherwise (so it can reject a line before paying to parse it),
+    and `cache_key` must cover everything it depends on.
+
+    Read as bytes and decoded as UTF-8 explicitly: opened in text mode with no encoding, the file
+    was decoded with the LOCALE's codec, and under a C/POSIX locale - the usual one for a systemd
+    unit or a container without LANG - one non-ASCII byte raised UnicodeDecodeError, and fail2ban
+    received nothing to ban, every time.
+    """
+
+    with _sources_lock:
+        try:
+            stat = os.stat(path)
+        except OSError:
+            return {}
+        state = _sources_cache.get(cache_key)
+        if not state or state["path"] != path or state["inode"] != stat.st_ino or stat.st_size < state["offset"]:
+            state = {"path": path, "inode": stat.st_ino, "offset": 0, "sources": {}}
+            # One live entry per key: yesterday's state is useless once the day's log changes.
+            _sources_cache[cache_key] = state
+        if stat.st_size > state["offset"]:
+            sources = state["sources"]
+            with open(path, "rb") as f:
+                f.seek(state["offset"])
+                pending = b""
+                while True:
+                    buf = f.read(1024 * 1024)
+                    if not buf:
+                        break
+                    pending += buf
+                    nl = pending.rfind(b"\n")
+                    if nl < 0:
+                        continue
+                    chunk, pending = pending[:nl + 1], pending[nl + 1:]     # complete lines only
+                    state["offset"] += len(chunk)
+                    for line in chunk.decode(UNICODE_ENCODING, "replace").split("\n"):
+                        if not line:
+                            continue
+                        fields = match(line)
+                        if fields is None:
+                            continue
+                        stamp = _event_stamp(fields) or ""
+                        if stamp >= sources.get(fields[2], ""):
+                            sources[fields[2]] = stamp
+        return dict(state["sources"])
+
+
+def _not_cleared(sources, cleared):
+    """The sources of `_matching_sources()` with a matching event no older than their clear mark."""
+
+    retval = []
+    for ip, stamp in sources.items():
+        when = cleared.get(ip)
+        if when is not None:
+            try:
+                if time.mktime(time.strptime(stamp, "%Y-%m-%d %H:%M:%S")) <= when:
+                    continue
+            except ValueError:
+                pass
+        retval.append(ip)
+    return retval
+
+
 def _event_precedes_clear(line, ip, cleared):
     """Should this event line be ignored because `ip` was cleared after it happened?
 
@@ -2047,26 +2134,16 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     if key == _fail2ban_key:
                         content = _fail2ban_cache
                     else:
-                        result = set()
+                        # logfmt.fields(), not line.split(): the naive split assumed the quoted
+                        # timestamp costs exactly two tokens and the sensor name exactly one, so a
+                        # SENSOR_NAME with a space ("DMZ firewall") shifted every field right and
+                        # this endpoint published a fragment of the sensor name instead of the
+                        # attacker's address - to fail2ban, which bans what it is given. It also
+                        # could not read a JSON line at all.
+                        pattern = re.compile(config.FAIL2BAN_REGEX, re.I)
                         _ = os.path.join(config.LOG_DIR, "%s.log" % datetime.datetime.now().strftime("%Y-%m-%d"))
-                        if os.path.isfile(_):
-                            with open(_, "r") as f:
-                                for line in f:
-                                    if re.search(config.FAIL2BAN_REGEX, line, re.I):
-                                        # logfmt.fields(), not line.split(): the naive split
-                                        # assumed the quoted timestamp costs exactly two tokens
-                                        # and the sensor name exactly one, so a SENSOR_NAME with
-                                        # a space ("DMZ firewall") shifted every field right and
-                                        # this endpoint published a fragment of the sensor name
-                                        # instead of the attacker's address - to fail2ban, which
-                                        # bans what it is given. It also could not read a JSON
-                                        # line at all. Same reasoning, and the same fix, as the
-                                        # BLACKLIST reader above.
-                                        fields = logfmt.fields(line)
-                                        if fields is not None and not _event_precedes_clear(line, fields[2], cleared):
-                                            result.add(fields[2])
-
-                        content = "\n".join(result)
+                        sources = _matching_sources(("fail2ban", config.FAIL2BAN_REGEX), _, lambda raw: logfmt.fields(raw) if pattern.search(raw) else None)
+                        content = "\n".join(_not_cleared(sources, cleared))
 
                         _fail2ban_cache = content
                         _fail2ban_key = key
@@ -2162,31 +2239,18 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     if key == _blacklist_key:
                         content = _blacklist_cache
                     else:
-                        result = set()
-                        _ = os.path.join(config.LOG_DIR, "%s.log" % datetime.datetime.now().strftime("%Y-%m-%d"))
-                        if os.path.isfile(_):
-                            with open(_, "r") as f_log:
-                                for raw in f_log:
-                                    line = logfmt.fields(raw)
-                                    if line is None:
-                                        continue
-                                    if _event_precedes_clear(raw, line[2], cleared):
-                                        continue
-                                    if restricted and not self._line_in_scope(raw, addresses, netmasks, regex)[0]:
-                                        continue
-                                    for bl in blacklist:
-                                        failed = False
-                                        for f, n, r in bl:
-                                            if not (
-                                                (r.search(line[f]) is not None) ^ n
-                                                    ):
-                                                failed = True
-                                                break
-                                        if not failed:
-                                            result.add(line[2])
-                                            break
+                        def match(raw):
+                            line = logfmt.fields(raw)
+                            if line is None or (restricted and not self._line_in_scope(raw, addresses, netmasks, regex)[0]):
+                                return None
+                            for bl in blacklist:
+                                if all((r.search(line[f]) is not None) ^ n for f, n, r in bl):
+                                    return line
+                            return None
 
-                        content = "\n".join(result)
+                        _ = os.path.join(config.LOG_DIR, "%s.log" % datetime.datetime.now().strftime("%Y-%m-%d"))
+                        sources = _matching_sources(("blacklist", bl_name, self._scope_key(session)), _, match)
+                        content = "\n".join(_not_cleared(sources, cleared))
 
                         _blacklist_cache = content
                         _blacklist_key = key

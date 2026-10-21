@@ -1849,8 +1849,8 @@ class TestFail2banReadsTheFieldsCorrectly(unittest.TestCase):
         try:
             logdir = os.path.join(tmp, "logs"); os.makedirs(logdir)
             day = time.strftime("%Y-%m-%d")
-            with open(os.path.join(logdir, "%s.log" % day), "w") as f:
-                f.write(log_line)
+            with open(os.path.join(logdir, "%s.log" % day), "wb") as f:
+                f.write(log_line if isinstance(log_line, bytes) else log_line.encode("utf-8"))
             trails = os.path.join(tmp, "t.csv")
             with open(trails, "w") as f:
                 f.write("evil.example,m (dummy),(static)\n")
@@ -1889,6 +1889,37 @@ class TestFail2banReadsTheFieldsCorrectly(unittest.TestCase):
             self.assertEqual(got, self.ATTACKER,
                              "SENSOR_NAME=%r made /fail2ban publish %r instead of the attacker; "
                              "fail2ban bans what it is given" % (sensor, got))
+
+    def test_a_line_that_is_not_utf8_does_not_empty_the_feed(self):
+        # The log was opened in text mode with the locale's codec, so one undecodable byte raised
+        # mid-scan and the endpoint returned nothing at all: fail2ban banned no one, quietly.
+        junk = b'"2026-01-01 00:00:00.000000" box 198.51.100.9 1 10.0.0.5 53 UDP DNS caf\xe9\xff.example "x (malware)" (static)\n'
+        got = self._serve(junk + self._text_line("box").encode("utf-8"))
+        self.assertIn(self.ATTACKER, got.split("\n"), "an undecodable byte earlier in the log hid every attacker after it")
+
+    def test_only_appended_bytes_are_read_again(self):
+        import core.httpd as H
+        from core import logfmt
+        tmp = tempfile.mkdtemp(prefix="mt_f2b_inc_")
+        try:
+            path = os.path.join(tmp, "day.log")
+            with open(path, "w") as f:
+                f.write(self._text_line("box"))
+            key = ("test-incremental", path)
+            match = lambda raw: logfmt.fields(raw) if "malware" in raw else None
+            self.assertEqual(list(H._matching_sources(key, path, match)), [self.ATTACKER])
+            first = H._sources_cache[key]["offset"]
+            self.assertEqual(first, os.path.getsize(path))
+
+            later = self._text_line("box").replace(self.ATTACKER, "198.51.100.77")
+            with open(path, "a") as f:
+                f.write(later + '"2026-01-01 00:00:00.000000" box 198.51.100.99 1 2.2.2.2 2 TCP IP x "y (z')   # no newline yet
+            seen = []
+            self.assertEqual(sorted(H._matching_sources(key, path, lambda raw: seen.append(raw) or match(raw))),
+                             sorted([self.ATTACKER, "198.51.100.77"]))
+            self.assertEqual(seen, [later.rstrip("\n")], "the second call re-read old lines, or read a line still being written")
+        finally:
+            import shutil; shutil.rmtree(tmp, ignore_errors=True)
 
     def test_it_reads_a_json_line(self):
         import json as _json
