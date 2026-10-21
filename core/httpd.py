@@ -612,6 +612,7 @@ def _lookup_trail_reference(trail):
     return result
 _statics_cache = None  # NOTE: (5-min-bucket, latest-static-trail-date); avoids re-globbing the static malware dir on every page render
 MAX_POST_SIZE = 10 * 1024 * 1024  # NOTE: cap request body (real Maltrail POSTs are tiny); rejects absurd Content-Length up-front to bound memory
+TLS_HANDSHAKE_TIMEOUT = 10  # NOTE: a client gets this long to complete the TLS handshake, in its own handler thread
 REQUEST_TIMEOUT = 60  # NOTE: per-socket-operation timeout; frees worker threads stuck on stalled/slowloris connections (active, progressing clients are unaffected)
 
 _sessions_lock = threading.Lock()  # NOTE: SESSIONS is mutated from worker threads (ThreadingMixIn)
@@ -1000,6 +1001,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             if over:
                 try:
+                    # Bounded: on a TLS listener this write is also the handshake, and the
+                    # accept thread must not wait on a client that will not complete one.
+                    request.settimeout(1)
                     request.sendall(b"HTTP/1.1 503 Service Unavailable\r\nConnection: close\r\n"
                                     b"Retry-After: 1\r\nContent-Length: 0\r\n\r\n")
                 except Exception:
@@ -1040,9 +1044,21 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             ThreadingServer.__init__(self, server_address, ReqHandler)
             ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_SERVER)
             ctx.load_cert_chain(pem, pem)
-            self.socket = ctx.wrap_socket(socket.socket(self.address_family, self.socket_type), server_side=True)
+            # do_handshake_on_connect=False: the handshake used to run inside accept(), on the one
+            # thread that accepts every connection, with no timeout - so a single client that
+            # connected and sent nothing locked every other HTTPS user out, before any login, for
+            # as long as it stayed. It runs in the handler's own thread now (finish_request).
+            self.socket = ctx.wrap_socket(socket.socket(self.address_family, self.socket_type), server_side=True, do_handshake_on_connect=False)
             self.server_bind()
             self.server_activate()
+
+        def finish_request(self, request, client_address):
+            try:
+                request.settimeout(TLS_HANDSHAKE_TIMEOUT)
+                request.do_handshake()
+            except Exception:
+                return      # process_request_thread() still shuts the socket and frees the slot
+            ThreadingServer.finish_request(self, request, client_address)
 
         def shutdown_request(self, request):
             try:
@@ -3008,12 +3024,6 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                "scanned": scanned, "selected": len(files), "partial": partial,
                                "capped_samples": len(samples) >= HUNT_MAX_SAMPLES})
 
-    class SSLReqHandler(ReqHandler):
-        def setup(self):
-            self.connection = self.request
-            self.rfile = socket._fileobject(self.request, "rb", self.rbufsize)
-            self.wfile = socket._fileobject(self.request, "wb", self.wbufsize)
-
     # IPv6 support
     if ':' in (address or ""):
         address = address.strip("[]")
@@ -3025,7 +3035,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
     try:
         if pem:
-            server = SSLThreadingServer(_address, pem, SSLReqHandler)
+            server = SSLThreadingServer(_address, pem, ReqHandler)
         else:
             server = ThreadingServer(_address, ReqHandler)
     except Exception as ex:

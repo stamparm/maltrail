@@ -16,6 +16,10 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] With USE_SSL, one client that connected and never sent anything locked
+    every other user out of HTTPS, indefinitely: the TLS handshake ran on
+    the thread that accepts connections, with no timeout. It runs in the
+    request's own thread now, with a 10 s limit.
 [!] The server lost most remote-sensor events whenever it was busy. Its UDP
     receiver shared one Python interpreter with the dashboard and the trail
     update, and with one other thread busy it lost 98% of 5,000 events/s.

@@ -1566,6 +1566,75 @@ class TestTrailsEndpointMissingFile(unittest.TestCase):
         self.assertEqual(st, 404, "/fail2ban must be closed by default (no allowlist configured)")
 
 
+class TestTlsHandshakeOffTheAcceptThread(unittest.TestCase):
+    """The TLS handshake ran inside accept(), on the one thread that accepts every connection, with
+    no timeout: a client that connected and never spoke TLS locked every other HTTPS user out,
+    before any login, for as long as it stayed connected."""
+    proc = None
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.mkdtemp(prefix="mt_tls_")
+        pem = os.path.join(cls.tmp, "server.pem")
+        try:
+            subprocess.check_call(["openssl", "req", "-new", "-x509", "-keyout", pem, "-out", pem, "-days", "2",
+                                   "-nodes", "-subj", "/CN=localhost"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        except (OSError, subprocess.CalledProcessError) as ex:
+            cls._skip = "no openssl to make a certificate (%s)" % ex
+            return
+        logdir = os.path.join(cls.tmp, "logs"); os.makedirs(logdir)
+        cls.port = _free_port()
+        cfg = os.path.join(cls.tmp, "srv.conf")
+        with open(cfg, "w") as f:
+            f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\nUSE_SSL true\nSSL_PEM %s\n" % (cls.port, pem))
+            f.write("USERS\n    admin:%s:0:\n" % STORED)
+            f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+            f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME test\nDISABLE_CHECK_SUDO true\n"
+                    % (logdir, os.path.join(cls.tmp, "trails.csv")))
+        cls.proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        for _ in range(60):
+            if cls.proc.poll() is not None:
+                break
+            try:
+                cls._https_ping(timeout=0.5)
+                return
+            except Exception:
+                time.sleep(0.25)
+        cls._skip = "server did not start (out: %s)" % (cls.proc.stdout.read()[:300] if cls.proc.poll() is not None else "")
+
+    @classmethod
+    def tearDownClass(cls):
+        if cls.proc and cls.proc.poll() is None:
+            _stop_server(cls.proc)
+
+    @classmethod
+    def _https_ping(cls, timeout):
+        import ssl
+        ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        conn = ctx.wrap_socket(socket.create_connection(("127.0.0.1", cls.port), timeout=timeout), server_hostname="localhost")
+        try:
+            conn.sendall(b"GET /ping HTTP/1.0\r\n\r\n")
+            return conn.recv(64)
+        finally:
+            conn.close()
+
+    def test_a_silent_client_does_not_lock_everyone_else_out(self):
+        if getattr(type(self), "_skip", None):
+            self.skipTest(self._skip)
+        silent = socket.create_connection(("127.0.0.1", self.port))     # connects, never speaks TLS
+        try:
+            time.sleep(0.3)
+            started = time.time()
+            reply = self._https_ping(timeout=5)
+            self.assertTrue(reply.startswith(b"HTTP/1."), "no HTTP reply over TLS: %r" % reply)
+            self.assertLess(time.time() - started, 3, "an HTTPS client waited on another client's handshake")
+        finally:
+            silent.close()
+
+
 class TestRipeLookupsDisabled(unittest.TestCase):
     """`DISABLE_RIPE_LOOKUPS true` must make /ripe answer without touching the network.
 
