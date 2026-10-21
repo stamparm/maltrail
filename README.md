@@ -236,11 +236,12 @@ sh install.sh --dry-run          # Print commands without applying them
 sh install.sh --uninstall        # Remove the managed installation; keep logs and state
 ```
 
-The dashboard is available at <http://127.0.0.1:8338> after installation. Note that the shipped
-`HTTP_ADDRESS` is `0.0.0.0`, so it is reachable on **every** interface, not only loopback — and
-the default credentials are `admin` / `changeme!`. Change `USERS`, and set `HTTP_ADDRESS` to
-`127.0.0.1` (or put the server behind a reverse proxy with TLS), before the host is on an
-untrusted network.
+The dashboard is available at <http://127.0.0.1:8338> after installation; the installer prints
+the `admin` password it generated, once. Note that the shipped `HTTP_ADDRESS` is `0.0.0.0`, so the
+dashboard is reachable on **every** interface. The `admin` / `changeme!` login in the shipped
+`maltrail.conf` (a manual or Docker setup) is accepted only from the server itself; set your own
+in `USERS` to sign in over the network, and put the server behind TLS (`USE_SSL`, or a reverse
+proxy) before the host is on an untrusted network.
 
 The initial trail build can take several minutes. The sensor does not detect trail matches until a
 valid trail set is available. The systemd unit runs the sensor's `-T` validation before startup so

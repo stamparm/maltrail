@@ -27,6 +27,10 @@ capabilities and it gets exactly those two.
 ## Configuration and data
 
 `maltrail.conf` is bind-mounted read-only from the repository root — edit it there and restart.
+Set your own password in `USERS` first: the shipped `admin` / `changeme!` is accepted only from the
+server's own loopback, and a browser reaching the container through the published port is not
+that. `python3 -c 'import hashlib; print(hashlib.sha256(b"<password>").hexdigest())'` gives the
+hash to put there.
 Two named volumes hold state that must survive a rebuild:
 
 * `maltrail-logs` → `/var/log/maltrail` (events)

@@ -13,6 +13,7 @@ sys.dont_write_bytecode = True
 import argparse
 import errno
 import os
+import re
 import platform
 import threading
 import time
@@ -24,6 +25,7 @@ from core.common import check_sudo
 from core.common import get_ex_message
 from core.common import patch_parser
 from core.common import uses_published_key
+from core.httpd import PUBLISHED_PASSWORD_HASH
 from core.httpd import start_httpd
 from core import meta
 from core.log import create_log_directory
@@ -117,6 +119,9 @@ def main():
         # and nothing tells them: the padlock looks identical. Refuse instead of pretending.
         if uses_published_key(config.SSL_PEM):
             sys.exit("[!] 'SSL_PEM' ('%s') is the key %s published in misc/server.pem, which is public and provides no protection\n[?] (hint: \"%s\")" % (config.SSL_PEM, NAME, hint))
+
+    if any(_.split(':')[1:2] == [PUBLISHED_PASSWORD_HASH] for _ in (re.sub(r"\s", "", _) for _ in (config.USERS or []))):
+        print("[!] 'USERS' still holds the published default password ('changeme!'): it is accepted only from this machine, set your own to sign in over the network")
 
     def update_timer():
         retries = 0

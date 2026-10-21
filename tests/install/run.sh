@@ -124,7 +124,7 @@ judge() {
         case $f in glibc:*) skip_sensor=1 ;; esac
     done < <(printf '%s\n' "$out" | sed -n 's/^F //p')
 
-    local expected=(tree conf user logdir logdir-writable conf-managed-block
+    local expected=(tree conf user logdir logdir-writable conf-managed-block conf-own-password
                     unit-server unit-server-conf server-ping
                     rerun-ok conf-preserved tree-after-rerun
                     inplace-adopted inplace-kept-edit inplace-kept-custom-trail

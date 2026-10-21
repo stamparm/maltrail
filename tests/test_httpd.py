@@ -1566,6 +1566,82 @@ class TestTrailsEndpointMissingFile(unittest.TestCase):
         self.assertEqual(st, 404, "/fail2ban must be closed by default (no allowlist configured)")
 
 
+class TestPublishedPasswordStaysLocal(unittest.TestCase):
+    """The shipped maltrail.conf gives `admin` the password 'changeme!' and listens on 0.0.0.0, so
+    every install that kept it was open to anyone who had read the README. The published password
+    is still accepted from the machine itself, and refused over the network."""
+    proc = None
+    OTHER = hashlib.sha256(b"not-the-default").hexdigest()
+
+    @classmethod
+    def setUpClass(cls):
+        # A local address that is not loopback: the source of the default route.
+        probe = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        try:
+            probe.connect(("192.0.2.1", 9))
+            cls.lan = probe.getsockname()[0]
+        except OSError:
+            cls.lan = None
+        finally:
+            probe.close()
+        if not cls.lan or cls.lan.startswith("127."):
+            cls._skip = "no non-loopback address on this host"
+            return
+        cls.tmp = tempfile.mkdtemp(prefix="mt_defpw_")
+        logdir = os.path.join(cls.tmp, "logs"); os.makedirs(logdir)
+        cls.port = _free_port()
+        cfg = os.path.join(cls.tmp, "srv.conf")
+        with open(cfg, "w") as f:
+            f.write("HTTP_ADDRESS 0.0.0.0\nHTTP_PORT %d\n" % cls.port)
+            f.write("USERS\n    admin:%s:0:\n    ops:%s:0:\n" % (STORED, cls.OTHER))
+            f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+            f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME test\nDISABLE_CHECK_SUDO true\n"
+                    % (logdir, os.path.join(cls.tmp, "trails.csv")))
+        cls.proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        for _ in range(60):
+            try:
+                socket.create_connection(("127.0.0.1", cls.port), timeout=0.5).close()
+                return
+            except OSError:
+                time.sleep(0.25)
+        cls._skip = "server did not start"
+
+    @classmethod
+    def tearDownClass(cls):
+        if cls.proc and cls.proc.poll() is None:
+            _stop_server(cls.proc)
+
+    def _login_from(self, host, username, stored):
+        import binascii
+        nonce = binascii.hexlify(os.urandom(16)).decode()
+        body = "username=%s&nonce=%s&hash=%s" % (username, nonce, hashlib.sha256((stored + nonce).encode()).hexdigest())
+        s = socket.create_connection((host, self.port), timeout=10)
+        try:
+            s.sendall(("POST /login HTTP/1.1\r\nHost: x\r\nConnection: close\r\nContent-Type: application/x-www-form-urlencoded\r\n"
+                       "Content-Length: %d\r\n\r\n%s" % (len(body), body)).encode())
+            data = b""
+            while True:
+                chunk = s.recv(65536)
+                if not chunk:
+                    break
+                data += chunk
+        finally:
+            s.close()
+        head, _, payload = data.partition(b"\r\n\r\n")
+        return int(head.split(b" ", 2)[1]), payload
+
+    def test_the_default_password_works_locally_and_not_over_the_network(self):
+        if getattr(type(self), "_skip", None):
+            self.skipTest(self._skip)
+        self.assertEqual(self._login_from("127.0.0.1", "admin", STORED)[0], 200, "the default password must still work from the server itself")
+        status, body = self._login_from(self.lan, "admin", STORED)
+        self.assertEqual(status, 403, "the published password logged in over the network")
+        self.assertIn(b"USERS", body, "the refusal must say what to change")
+        # The control: a password of the operator's own is accepted from anywhere.
+        self.assertEqual(self._login_from(self.lan, "ops", self.OTHER)[0], 200)
+
+
 class TestTlsHandshakeOffTheAcceptThread(unittest.TestCase):
     """The TLS handshake ran inside accept(), on the one thread that accepts every connection, with
     no timeout: a client that connected and never spoke TLS locked every other HTTPS user out,

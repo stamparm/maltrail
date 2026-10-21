@@ -370,6 +370,22 @@ _login_failures = {}            # client IP -> [consecutive failures, epoch the 
 _login_failures_lock = threading.Lock()
 MAX_LOGIN_FAILURE_ENTRIES = 4096
 
+# sha256("changeme!"), the password the shipped maltrail.conf gives `admin`.
+PUBLISHED_PASSWORD_HASH = "9ab3cd9d67bf49d01f6a2e33d0bd9bc804ddbe6ce1ff5d219c42624851db5dbc"
+
+
+def _is_loopback(address):
+    """Is `address` (a client's, as accept() reported it) this machine itself?"""
+
+    import ipaddress
+    try:
+        ip = ipaddress.ip_address(("%s" % address).split('%')[0])
+    except ValueError:
+        return False
+    mapped = getattr(ip, "ipv4_mapped", None)
+    return ip.is_loopback or bool(mapped and mapped.is_loopback)
+
+
 def _login_refused(ip):
     """Has `ip` failed enough times in a row, recently enough, to have its attempts refused?
 
@@ -1488,6 +1504,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
         def _login(self, params):
             valid = False
+            stored_hash = None
 
             # Threshold check BEFORE any credential work: see _login_refused. A hammering IP gets
             # the same 401 it would have got anyway, immediately, and its guess is not evaluated.
@@ -1532,6 +1549,18 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             except Exception:
                                 if config.SHOW_DEBUG:
                                     traceback.print_exc()
+
+            if valid and stored_hash.strip().lower() == PUBLISHED_PASSWORD_HASH and not _is_loopback(self.client_address[0]):
+                # The password maltrail.conf ships with is public. It is still accepted from this
+                # machine (first run, an SSH tunnel), but not over the network, where the shipped
+                # HTTP_ADDRESS 0.0.0.0 used to make every fresh install open to anyone who had read
+                # the README.
+                self.send_response(_http_client.FORBIDDEN)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                self.send_header(HTTP_HEADER.CONTENT_TYPE, "text/plain")
+                self.__log_auth(False, params.get("username"))
+                return ("The default password is accepted only from the server itself. Set your own in USERS "
+                        "(maltrail.conf), or sign in through 127.0.0.1 (e.g. an SSH tunnel).")
 
             if valid:
                 _login_succeeded(self.client_address[0])

@@ -16,6 +16,11 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] The published admin/changeme! login is accepted only from the server
+    itself; over the network it is refused with a message saying to set
+    USERS. The shipped maltrail.conf listens on 0.0.0.0, so every install
+    that kept it was open to anyone who had read the README. install.sh
+    now generates a password of the install's own and prints it once.
 [!] With USE_SSL, one client that connected and never sent anything locked
     every other user out of HTTPS, indefinitely: the TLS handshake ran on
     the thread that accepts connections, with no timeout. It runs in the

@@ -3408,6 +3408,7 @@
         .then(function (r) {
           if (r.status === 200) location.href = "/";
           else if (r.status === 401) { err.textContent = "Wrong username and/or password."; go.disabled = false; }
+          else if (r.status === 403) { r.text().then(function (t) { err.textContent = t; }); go.disabled = false; }
           else { err.textContent = "Login failed (HTTP " + r.status + ")."; go.disabled = false; }
         }).catch(function () { err.textContent = "Network connection issue."; go.disabled = false; });
     }

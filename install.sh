@@ -52,6 +52,7 @@ SERVICE=1
 DRY=0
 UNINSTALL=0
 PYTHON=""
+GENERATED_PASSWORD=""
 PKG=""
 warned=0
 
@@ -666,6 +667,12 @@ install_conf() {
 LOG_DIR $LOG_DIR
 TRAILS_FILE $STATE_DIR/trails.csv
 EOF
+    # A password of this install's own instead of the published 'changeme!', which the server
+    # only accepts from the machine itself. Shown once, in the summary; only its hash is stored.
+    if [ -n "$PYTHON" ] && GENERATED_PASSWORD=$("$PYTHON" -c 'import secrets; print(secrets.token_urlsafe(12))' 2>/dev/null); then
+        hash=$("$PYTHON" -c 'import hashlib, sys; print(hashlib.sha256(sys.argv[1].encode()).hexdigest())' "$GENERATED_PASSWORD")
+        printf '# Replaces the USERS block above. Format: user:sha256(password):uid:netfilter\nUSERS\n    admin:%s:0:\n' "$hash" >> "$CONF"
+    fi
     run chown root:"$RUN_USER" "$CONF"
     run chmod 0640 "$CONF"
 }
@@ -798,7 +805,11 @@ summary() {
     info "trails   $STATE_DIR/trails.csv"
     case $roles in *server*)
         port=$(sed -n 's/^HTTP_PORT[[:space:]]\{1,\}\([0-9]\{1,\}\).*/\1/p' "$CONF" 2>/dev/null | tail -1)
-        info "ui       http://127.0.0.1:${port:-8338}  (default login: admin / changeme!)" ;;
+        if [ -n "$GENERATED_PASSWORD" ]; then
+            info "ui       http://127.0.0.1:${port:-8338}  (login: admin / $GENERATED_PASSWORD - shown only now)"
+        else
+            info "ui       http://127.0.0.1:${port:-8338}  (login: as set by USERS in $CONF)"
+        fi ;;
     esac
     if have_systemd && [ "$SERVICE" = 1 ]; then
         info "status   systemctl status maltrail-server maltrail-sensor"
