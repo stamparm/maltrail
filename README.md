@@ -213,7 +213,7 @@ static ARMv6 build (`arm-unknown-linux-musleabihf`), and the sensor fits in a 25
 curl -fsSL https://raw.githubusercontent.com/stamparm/maltrail/master/install.sh | sudo sh
 ```
 
-It installs dependencies, creates a managed checkout under `/opt/maltrail`, verifies the checksum
+It installs dependencies, creates a managed checkout of the latest release under `/opt/maltrail`, verifies the checksum
 of the prebuilt sensor, creates an unprivileged `maltrail` account, installs systemd units, prepares
 the log and state directories, and starts the sensor and server. Re-running the installer upgrades
 the managed checkout.
@@ -229,7 +229,7 @@ Common installer options:
 
 ```bash
 sh install.sh --role sensor      # Install only the sensor
-sh install.sh --ref 3.5          # Install a release tag instead of master
+sh install.sh --ref master       # Track master instead of the latest release
 sh install.sh --no-service       # Install without changing systemd
 sh install.sh --dry-run          # Print commands without applying them
 sh install.sh --uninstall        # Remove the managed installation; keep logs and state

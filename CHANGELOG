@@ -16,6 +16,10 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] install.sh installs the latest release by default instead of master.
+    The prebuilt sensor exists only for releases, so a master tree got an
+    older sensor, which ignored options newer than itself. '--ref master'
+    still works and says that the two differ.
 [!] /events capped a date range at nothing: one request for
     0001-01-01_9999-12-31 was 3.65 million stat() calls. It uses the same
     92-day cap as every other endpoint now. Its open log handle was also

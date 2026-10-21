@@ -9,7 +9,7 @@
 # the capabilities the sensor needs to capture without root. Re-running it is the upgrade path.
 #
 #     sh install.sh --role sensor          # sensor only (server lives elsewhere)
-#     sh install.sh --ref 3.1              # pin to a release tag instead of master
+#     sh install.sh --ref master           # track master instead of the latest release
 #     sh install.sh --no-service           # install, do not touch systemd
 #     sh install.sh --dry-run              # print every command, change nothing
 #     sh install.sh --uninstall            # remove it again (logs and state are kept)
@@ -18,9 +18,8 @@
 # Run from inside a checkout you already have, it installs THAT tree in place and never touches its
 # git state; --prefix asks for a separate managed copy instead.
 #
-# git rather than a release tarball on purpose: the trail lists live IN the repository, so a clone
-# brings current detection content with the code, and an upgrade is a fetch. `--depth 1` leaves the
-# ~1.8 GB of history behind.
+# git rather than a release tarball on purpose: an upgrade is a fetch, and `--depth 1` leaves the
+# ~1.8 GB of history behind. The tree and the prebuilt sensor are the SAME release by default.
 #
 # Copyright (c) 2014-present Maltrail developers (https://github.com/stamparm/maltrail/)
 # See the file 'LICENSE' for copying permission
@@ -30,7 +29,7 @@ REPO=${MALTRAIL_REPO:-https://github.com/stamparm/maltrail.git}
 RELEASES=${MALTRAIL_RELEASES:-https://github.com/stamparm/maltrail/releases}
 PREFIX=${MALTRAIL_PREFIX:-/opt/maltrail}
 CONF=${MALTRAIL_CONF:-/etc/maltrail.conf}
-REF=${MALTRAIL_REF:-master}
+REF=${MALTRAIL_REF:-}    # empty: the latest release, resolved by resolve_ref
 ROLE=${MALTRAIL_ROLE:-both}
 SENSOR_BIN=${MALTRAIL_SENSOR_BIN:-}
 # Where the sensor is linked so it can be run by name. /usr/local/bin everywhere except NetBSD,
@@ -366,6 +365,39 @@ latest_tag() {
     fi
 }
 
+# The default ref is the latest release, not master. The prebuilt sensor only exists for releases,
+# so a master tree got the latest release's binary: a server and a maltrail.conf newer than the
+# sensor reading it, whose new options that sensor ignores with a warning nobody sees - an option
+# that exists only in the source, the way this project's detections have gone quiet before. A
+# fork (--repo) that has not got the tag keeps master, and says so.
+resolve_ref() {
+    [ -z "$REF" ] || return 0
+    tag=$(latest_tag)
+    if [ -n "$tag" ] && { ! have git || git -C / ls-remote --exit-code --tags "$REPO" "refs/tags/$tag" >/dev/null 2>&1; }; then
+        REF=$tag
+    else
+        warn "could not find the latest release${tag:+ ($tag) in $REPO}; installing master"
+        REF=master
+    fi
+}
+
+# The release whose prebuilt sensor goes with the tree. A tree that is not a release (master, a
+# branch, a commit) has none, so it gets the latest one - and is told that the two now differ.
+sensor_release() {
+    case $REF in
+        "") version=$(latest_tag) ;;     # in place: a working tree, whatever it is
+        master|main|*[!0-9.]*)
+            version=$(latest_tag)
+            [ -n "$version" ] && [ "$SENSOR_RELEASE_WARNED" = 0 ] && {
+                SENSOR_RELEASE_WARNED=1
+                warn "the tree is '$REF' but the prebuilt sensor is release $version; options newer than it are ignored"
+                warn "for a matching sensor: cd $PREFIX/sensor && cargo build --release, or install with --ref $version"
+            } ;;
+        *) version=$REF ;;
+    esac
+}
+SENSOR_RELEASE_WARNED=0
+
 install_sensor_binary() {
     dest="$PREFIX/sensor/target/release/maltrail-sensor"      # the path the shipped systemd unit uses
     run mkdir -p "$(dirname "$dest")"
@@ -379,10 +411,7 @@ install_sensor_binary() {
             warn "no prebuilt sensor for $(uname -m); build it with 'cd $PREFIX/sensor && cargo build --release'"
             return 1
         fi
-        version=$REF
-        case $version in
-            master|main|*[!0-9.]*) version=$(latest_tag) ;;
-        esac
+        sensor_release
         [ -n "$version" ] || { warn "could not work out the latest release; skipping the sensor binary"; return 1; }
 
         name="maltrail-sensor-$version-$triple"
@@ -604,10 +633,7 @@ seed_trail_cache() {
     fi
     [ "$DRY" = 1 ] && { say "would seed the static trail cache"; return 0; }
 
-    version=$REF
-    case $version in
-        master|main|*[!0-9.]*) version=$(latest_tag) ;;
-    esac
+    sensor_release
     [ -n "$version" ] || { warn "could not work out the latest release; skipping the trail bootstrap"; return 0; }
 
     url="$RELEASES/download/$version/trails-bootstrap.csv.gz"
@@ -850,6 +876,7 @@ main() {
     detect_pkg
     ensure_deps
     detect_python
+    [ "$IN_PLACE" = 1 ] || resolve_ref
     clone_or_update
     ensure_user
     ensure_dirs
