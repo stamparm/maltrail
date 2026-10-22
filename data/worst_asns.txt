@@ -5548,6 +5548,61 @@
 94.156.179.0/24,play2go-net
 94.156.237.0/24,play2go-net
 
+# AS 219337
+# Reference: https://ipinfo.io/AS219337
+# Reference: https://x.com/SansLimit3/status/2112814666808172909
+# TITLE-HOST/IP=Login | Stadia
+
+13.143.160.0/24,play2go
+13.143.161.0/24,play2go
+13.143.162.0/24,play2go
+13.143.163.0/24,play2go
+13.143.172.0/24,play2go
+13.143.173.0/24,play2go
+13.143.174.0/24,play2go
+13.143.175.0/24,play2go
+177.3.208.0/24,play2go
+177.3.209.0/24,play2go
+177.3.212.0/24,play2go
+177.3.213.0/24,play2go
+177.3.214.0/24,play2go
+177.3.215.0/24,play2go
+177.3.216.0/24,play2go
+177.3.217.0/24,play2go
+177.3.218.0/24,play2go
+177.3.219.0/24,play2go
+177.3.220.0/24,play2go
+177.3.221.0/24,play2go
+177.3.222.0/24,play2go
+177.3.223.0/24,play2go
+2.27.136.0/24,play2go
+2.27.200.0/24,play2go
+2.27.201.0/24,play2go
+2.27.202.0/24,play2go
+2.27.203.0/24,play2go
+2.27.204.0/24,play2go
+2.27.205.0/24,play2go
+2.27.206.0/24,play2go
+2.27.207.0/24,play2go
+201.58.176.0/24,play2go
+201.58.177.0/24,play2go
+201.58.178.0/24,play2go
+201.58.179.0/24,play2go
+201.58.180.0/24,play2go
+201.58.182.0/24,play2go
+31.77.10.0/24,play2go
+31.77.11.0/24,play2go
+31.77.12.0/24,play2go
+31.77.13.0/24,play2go
+31.77.14.0/24,play2go
+31.77.15.0/24,play2go
+31.77.16.0/24,play2go
+31.77.17.0/24,play2go
+31.77.18.0/24,play2go
+31.77.19.0/24,play2go
+31.77.8.0/24,play2go
+31.77.9.0/24,play2go
+
 # AS200373
 # Reference: https://ipinfo.io/AS200373
 
@@ -7459,3 +7514,7 @@
 45.227.254.0/24,pa-dame-lacnic
 2803:5120:c000::/36,pa-dame-lacnic
 2a10:9100:5::/48,pa-dame-lacnic
+
+# AS 219337
+# Reference: https://ipinfo.io/AS219337
+# Reference: https://x.com/SansLimit3/status/2112814666808172909
