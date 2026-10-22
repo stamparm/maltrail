@@ -155,14 +155,13 @@ pub struct Statics {
     pub proxy_probe_path: Regex,
     /// `(http://)([^/(]+)` — proxy-probe trail rewrite (stage 2)
     pub proxy_probe_host: Regex,
-    /// bytes regex over the raw packet for forwarded-for headers
+    /// bytes regex over the raw packet for forwarded-for headers. Asked only after
+    /// `has_forwarded_for_header()`: it is a case-insensitive alternation with no usable literal
+    /// prefix, so asking it for capture groups meant a DFA walk over the whole packet on every
+    /// HTTP request - and virtually no request carries any of these headers. Matching
+    /// `"<name>:"` first is exactly implied by the regex (the colon is contiguous in the
+    /// pattern), so the pre-condition can never hide a match.
     pub forwarded_for: regex::bytes::Regex,
-    /// Literal pre-condition for the above. `forwarded_for` is a case-insensitive alternation
-    /// with no usable literal prefix, so asking it for capture groups meant a DFA walk over the
-    /// whole packet on every HTTP request — and virtually no request carries any of these
-    /// headers. Matching `"<name>:"` first is exactly implied by the regex (the colon is
-    /// contiguous in the pattern), so this can never hide a match.
-    pub forwarded_for_pre_condition: AhoCorasick,
 
     // --- multi-substring scanners ---
     pub pre_condition: AhoCorasick,
@@ -217,6 +216,34 @@ pub fn is_valid_dns_name(name: &str) -> bool {
     b[..i - 1].iter().all(|c| c.is_ascii_alphanumeric() || *c == b'.' || *c == b'-' || *c == b'_')
 }
 
+/// Does `packet` carry `CF-Connecting-IP:`, `True-Client-IP:` or `X-Forwarded-For:`, ASCII
+/// case-insensitively, anywhere in it? The literal pre-condition for `forwarded_for`.
+///
+/// It was a case-insensitive Aho-Corasick search, which cannot use its SIMD prefilter and walks
+/// every byte: 2,467 of the 9,067 instructions an ordinary HTTP request cost (callgrind, refnet's
+/// requests). Every match of those patterns ends at a `:`, so asking at each colon whether the
+/// bytes before it end with one of the names is the same question, and a request has only a
+/// handful of colons. `forwarded_for_check_agrees_with_aho_corasick` holds the two to the same
+/// answer.
+#[inline]
+pub fn has_forwarded_for_header(packet: &[u8]) -> bool {
+    const NAMES: [&[u8]; 3] = [b"CF-Connecting-IP", b"True-Client-IP", b"X-Forwarded-For"];
+    for colon in memchr::memchr_iter(b':', packet) {
+        let before = &packet[..colon];
+        // every name ends in "ip" or "for": one byte rules out nearly every colon
+        if !matches!(before.last(), Some(b'p' | b'P' | b'r' | b'R')) {
+            continue;
+        }
+        if NAMES
+            .iter()
+            .any(|name| before.len() >= name.len() && before[before.len() - name.len()..].eq_ignore_ascii_case(name))
+        {
+            return true;
+        }
+    }
+    false
+}
+
 /// `\A\d+\-\d+\-\d+\-\d+\Z`, hand-coded — the dashed-quad first label check.
 #[inline]
 pub fn is_dashed_quad(label: &str) -> bool {
@@ -247,7 +274,8 @@ fn ac(patterns: &[&str]) -> AhoCorasick {
 }
 
 /// `ac()` for patterns that have to match regardless of case, which is how HTTP header names
-/// arrive on the wire.
+/// arrive on the wire. Kept as the oracle `has_forwarded_for_header` is tested against.
+#[cfg(test)]
 fn ac_nocase(patterns: &[&str]) -> AhoCorasick {
     aho_corasick::AhoCorasickBuilder::new().ascii_case_insensitive(true).build(patterns).expect("aho-corasick build")
 }
@@ -320,7 +348,6 @@ impl Statics {
             .unicode(false)
             .build()
             .expect("forwarded-for regex"),
-            forwarded_for_pre_condition: ac_nocase(&["CF-Connecting-IP:", "True-Client-IP:", "X-Forwarded-For:"]),
 
             pre_condition: ac(SUSPICIOUS_HTTP_REQUEST_PRE_CONDITION),
             proxy_probe_pre_condition: ac(SUSPICIOUS_PROXY_PROBE_PRE_CONDITION),
@@ -353,6 +380,64 @@ mod tests {
 
     fn root() -> PathBuf {
         PathBuf::from(env!("CARGO_MANIFEST_DIR")).parent().unwrap().to_path_buf()
+    }
+
+    #[test]
+    fn forwarded_for_check_agrees_with_aho_corasick() {
+        let oracle = ac_nocase(&["CF-Connecting-IP:", "True-Client-IP:", "X-Forwarded-For:"]);
+        let check = |input: &[u8]| {
+            assert_eq!(has_forwarded_for_header(input), oracle.is_match(input), "{:?}", String::from_utf8_lossy(input));
+        };
+        // every name, cut at every length, in every case pattern a 3-bit mask can make, with and
+        // without the colon, at the start, in the middle and at the very end of the input
+        for name in ["CF-Connecting-IP", "True-Client-IP", "X-Forwarded-For", "X-Forwarded-Host"] {
+            for cut in 0..=name.len() {
+                for mask in 0..8u32 {
+                    let cased: String = name[..cut]
+                        .chars()
+                        .enumerate()
+                        .map(
+                            |(i, c)| {
+                                if mask >> (i % 3) & 1 == 1 {
+                                    c.to_ascii_lowercase()
+                                } else {
+                                    c.to_ascii_uppercase()
+                                }
+                            },
+                        )
+                        .collect();
+                    for tail in ["", ":", ": 1.2.3.4", " :", "::"] {
+                        for frame in [
+                            format!("{cased}{tail}"),
+                            format!("GET / HTTP/1.1\r\n{cased}{tail}\r\n"),
+                            format!("x{cased}{tail}"),
+                        ] {
+                            check(frame.as_bytes());
+                        }
+                    }
+                }
+            }
+        }
+        // random bytes drawn mostly from the names' own letters, colons and separators, so that
+        // near misses are common: 200,000 inputs of up to 64 bytes
+        let alphabet = b"CFTXcftx-:IPipFfOoRrWwAaDdEeNnGgUuLl \r\n0.";
+        let mut state = 0x2545_f491_4f6c_dd1du64;
+        for _ in 0..200_000 {
+            state ^= state << 13;
+            state ^= state >> 7;
+            state ^= state << 17;
+            let len = (state % 65) as usize;
+            let mut input = Vec::with_capacity(len);
+            let mut x = state;
+            for _ in 0..len {
+                x = x.wrapping_mul(6364136223846793005).wrapping_add(1442695040888963407);
+                input.push(alphabet[(x >> 33) as usize % alphabet.len()]);
+            }
+            check(&input);
+        }
+        // and the positive control: the oracle does say yes, so the loop above cannot pass vacuously
+        assert!(has_forwarded_for_header(b"GET /\r\nx-forwarded-for: 1.2.3.4\r\n"));
+        assert!(!has_forwarded_for_header(b"GET /\r\nX-Forwarded-Host: 1.2.3.4\r\n"));
     }
 
     #[test]

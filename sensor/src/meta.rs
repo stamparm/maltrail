@@ -35,9 +35,12 @@
 //!
 //! # Cost
 //!
-//! The packet path does one hash bump per endpoint and one per DNS name into a plain map keyed
-//! by the *native* `Ip` — no address is rendered to text until a key is first inserted, and
-//! never on a repeat sighting. Everything else happens once a minute, off the packet path.
+//! The packet path does one bump per endpoint and one per DNS name, keyed by the *native* `Ip` —
+//! no address is rendered to text until a key is first inserted, and never on a repeat sighting.
+//! An IPv4 endpoint seen recently is found through `Recent`, a direct-mapped array, and only
+//! otherwise through the map: the two map lookups were 161 of the 1,131 instructions an ICMP
+//! echo cost (callgrind, refnet's ICMP), and are ~55 this way. Everything else happens once a
+//! minute, off the packet path.
 
 use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicU64, Ordering};
@@ -84,7 +87,10 @@ impl Row {
 pub struct MetaStore {
     enabled: bool,
     db_path: PathBuf,
-    ips: FastMap<Ip, Row>,
+    /// The window's addresses and their rows, in the order first seen; `index` finds one.
+    ips: Vec<(Ip, Row)>,
+    index: FastMap<Ip, u32>,
+    recent: Recent,
     /// Seeded hasher: these keys are attacker-chosen DNS names.
     names: StrMap<String, Row>,
     max_window_keys: usize,
@@ -98,6 +104,40 @@ pub struct MetaStore {
     results: Arc<FlushResults>,
 }
 
+/// Where recently seen IPv4 addresses are in `MetaStore::ips`: direct-mapped, by a multiplicative
+/// hash of the address, so finding one is a multiply, one load and a compare. A slot holds the
+/// address and its position plus one (0: empty), and a newer address simply takes the slot over;
+/// whatever is not here is in `index`. 8 KB, cleared with the window it points into.
+struct Recent(Box<[(u32, u32); RECENT_SLOTS]>);
+
+const RECENT_SLOTS: usize = 1024;
+
+impl Recent {
+    fn new() -> Recent {
+        Recent(Box::new([(0, 0); RECENT_SLOTS]))
+    }
+
+    #[inline]
+    fn slot(v4: u32) -> usize {
+        (u64::from(v4).wrapping_mul(0x9e37_79b9_7f4a_7c15) >> (64 - RECENT_SLOTS.trailing_zeros())) as usize
+    }
+
+    #[inline]
+    fn get(&self, v4: u32) -> Option<usize> {
+        let (addr, at) = self.0[Recent::slot(v4)];
+        (at != 0 && addr == v4).then(|| at as usize - 1)
+    }
+
+    #[inline]
+    fn set(&mut self, v4: u32, at: usize) {
+        self.0[Recent::slot(v4)] = (v4, at as u32 + 1);
+    }
+
+    fn clear(&mut self) {
+        self.0.fill((0, 0));
+    }
+}
+
 /// What became of one store's windows, written by the writer thread.
 #[derive(Default)]
 struct FlushResults {
@@ -108,7 +148,7 @@ struct FlushResults {
 
 /// One drained window on its way to the writer, or a request to say when it has caught up.
 enum Job {
-    Write { db_path: PathBuf, ips: FastMap<Ip, Row>, names: StrMap<String, Row>, results: Arc<FlushResults> },
+    Write { db_path: PathBuf, ips: Vec<(Ip, Row)>, names: StrMap<String, Row>, results: Arc<FlushResults> },
     Barrier(mpsc::Sender<()>),
 }
 
@@ -158,7 +198,9 @@ impl MetaStore {
         MetaStore {
             enabled: false,
             db_path: PathBuf::new(),
-            ips: FastMap::default(),
+            ips: Vec::new(),
+            index: FastMap::default(),
+            recent: Recent::new(),
             names: StrMap::default(),
             max_window_keys: settings::CONDENSED_MAX_WINDOW_KEYS,
             flush_period: settings::CONDENSED_FLUSH_PERIOD,
@@ -213,18 +255,45 @@ impl MetaStore {
 
     #[inline]
     fn observe_ip(&mut self, ip: Ip, sec: u64) {
-        if let Some(row) = self.ips.get_mut(&ip) {
-            row.bump(sec);
-            return;
+        if let Ip::V4(v4) = ip {
+            if let Some(at) = self.recent.get(v4) {
+                self.ips[at].1.bump(sec);
+                return;
+            }
         }
-        if is_junk_ip(ip) {
-            return;
+        self.observe_ip_slow(ip, sec);
+    }
+
+    /// Not in `recent`: the map, and a new row if the address is new.
+    #[inline(never)]
+    fn observe_ip_slow(&mut self, ip: Ip, sec: u64) {
+        let at = if let Some(&at) = self.index.get(&ip) {
+            let at = at as usize;
+            self.ips[at].1.bump(sec);
+            at
+        } else {
+            if is_junk_ip(ip) {
+                return;
+            }
+            if self.pending() >= self.max_window_keys {
+                self.saturations += 1;
+                return;
+            }
+            let at = self.ips.len();
+            self.ips.push((ip, Row::new(ip_flags(ip), sec)));
+            self.index.insert(ip, at as u32);
+            at
+        };
+        if let Ip::V4(v4) = ip {
+            self.recent.set(v4, at);
         }
-        if self.pending() >= self.max_window_keys {
-            self.saturations += 1;
-            return;
-        }
-        self.ips.insert(ip, Row::new(ip_flags(ip), sec));
+    }
+
+    /// The window's address rows, leaving it empty.
+    fn take_ips(&mut self) -> Vec<(Ip, Row)> {
+        self.index.clear();
+        self.recent.clear();
+        std::mem::take(&mut self.ips)
     }
 
     /// Hot path: record a queried domain name. `core/meta.py:observe_dns()`.
@@ -269,7 +338,7 @@ impl MetaStore {
         if !self.enabled || self.pending() == 0 {
             return;
         }
-        let ips = std::mem::take(&mut self.ips);
+        let ips = self.take_ips();
         let names = std::mem::take(&mut self.names);
         let rows = (ips.len() + names.len()) as u64;
         let job = Job::Write { db_path: self.db_path.clone(), ips, names, results: self.results.clone() };
@@ -289,7 +358,7 @@ impl MetaStore {
             return;
         }
         if self.pending() > 0 {
-            let ips = std::mem::take(&mut self.ips);
+            let ips = self.take_ips();
             let names = std::mem::take(&mut self.names);
             let job = Job::Write { db_path: self.db_path.clone(), ips, names, results: self.results.clone() };
             // Blocking here is right: nothing is capturing any more, and this window is the tail.
@@ -321,7 +390,7 @@ impl MetaStore {
 }
 
 /// One window into SQLite, as a single transaction.
-fn write(db_path: &Path, ips: &FastMap<Ip, Row>, names: &StrMap<String, Row>) -> rusqlite::Result<()> {
+fn write(db_path: &Path, ips: &[(Ip, Row)], names: &StrMap<String, Row>) -> rusqlite::Result<()> {
     let mut con = open_rw(db_path)?;
     // IMMEDIATE, not the default DEFERRED: this transaction only ever writes, and taking the
     // reserved lock up front is what lets `busy_timeout` do its job. A deferred transaction
@@ -643,5 +712,62 @@ mod tests {
         store.observe_dns("a.com", 2); // an existing key bumps regardless
         assert_eq!(store.names["a.com"].count, 2);
         assert_eq!(store.names["a.com"].last_seen, 2);
+    }
+    /// `Recent` is a shortcut only: every row must come out exactly as a plain map keyed by the
+    /// address makes it - times, count, flags, and every refusal at the cap - with slots taken
+    /// over by colliding addresses, and across windows, whose rows the slots no longer point at.
+    #[test]
+    fn rows_match_a_plain_map_whatever_the_recent_slots_hold() {
+        let mut state = 0x853c_49e6_748f_ea9bu64;
+        let mut next = move |n: u64| {
+            state ^= state << 13;
+            state ^= state >> 7;
+            state ^= state << 17;
+            state % n
+        };
+        let mut shortcuts = 0usize;
+        for (cap, pool) in [(10usize, 40u64), (5_000, 3_000), (100_000, 20)] {
+            let mut store = MetaStore::new(PathBuf::from("/nonexistent/meta.sqlite"), cap, 60);
+            for window in 0..3 {
+                let mut reference: std::collections::HashMap<Ip, (u64, u64, u64)> = Default::default();
+                let mut refused = 0;
+                for sec in 1..30_000u64 {
+                    // a pool larger than RECENT_SLOTS in one case, so slots are taken over;
+                    // 0.0.0.0 (junk) and IPv6, which never uses the slots, are in every pool
+                    let ip = match next(pool + 2) {
+                        0 => v4(0, 0, 0, 0),
+                        1 => Ip::V6(u128::from(next(4)) << 100),
+                        n => Ip::V4(0x0a00_0000 + n as u32 * 7919),
+                    };
+                    let hit = matches!(ip, Ip::V4(a) if store.recent.get(a).is_some());
+                    shortcuts += usize::from(hit);
+                    store.observe_ip(ip, sec);
+                    if let Some(r) = reference.get_mut(&ip) {
+                        r.1 = sec;
+                        r.2 += 1;
+                    } else if !is_junk_ip(ip) {
+                        if reference.len() >= cap {
+                            refused += 1;
+                        } else {
+                            reference.insert(ip, (sec, sec, 1));
+                        }
+                    }
+                }
+                assert_eq!(store.saturations, refused, "cap {cap} window {window}");
+                store.saturations = 0;
+                let rows = store.take_ips();
+                assert_eq!(rows.len(), reference.len());
+                for (ip, row) in &rows {
+                    let (first, last, count) = reference[ip];
+                    assert_eq!(
+                        (row.first_seen, row.last_seen, row.count, row.flags),
+                        (first, last, count, ip_flags(*ip))
+                    );
+                }
+                assert!(cap > 1_000 || refused > 0, "cap {cap} never reached");
+            }
+        }
+        // not vacuous: the slots answered most sightings
+        assert!(shortcuts > 100_000, "{shortcuts}");
     }
 }

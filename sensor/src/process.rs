@@ -368,8 +368,13 @@ fn process_layer(
     st.last_sec = sec;
     if st.cfg.use_heuristics && depth == 0 {
         // once per PACKET, not once per layer: the sweep is a clock tick, and running it again
-        // for an inner header would age state by the number of tunnels in front of it
-        heuristics_sweep(st, sec, usec);
+        // for an inner header would age state by the number of tunnels in front of it. Called
+        // only when the second has moved on; within one, all it would do is this assignment.
+        if sec > st.connect_sec {
+            heuristics_sweep(st, sec, usec);
+        } else {
+            st.connect_sec = sec;
+        }
     }
 
     let Some(ip_data) = packet_bytes.get(ip_offset..) else {
@@ -1075,6 +1080,24 @@ fn force_encode(value: &str) -> Cow<'_, str> {
     Cow::Owned(out)
 }
 
+/// The source field of an HTTP request's event: the address, plus the client a forwarded-for
+/// header names (searched in the RAW packet bytes, case-insensitively). Built only for a request
+/// that is reported - it was built for every request, rendering the address and searching the
+/// packet each time, for the four places that read it. The packet does not change in between,
+/// so building it there gives the same string.
+fn http_source_field(st: &WorkerState, ep: Endpoints, packet_bytes: &[u8]) -> String {
+    let mut field = ep.src.render().as_str().to_string();
+    if crate::settings::has_forwarded_for_header(packet_bytes) {
+        if let Some(caps) = st.statics.forwarded_for.captures(packet_bytes) {
+            if let Some(m) = caps.get(2) {
+                let forwarded = String::from_utf8_lossy(m.as_bytes()).to_string();
+                field = format!("{field},{forwarded}");
+            }
+        }
+    }
+    field
+}
+
 fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: Endpoints, sec: u64, usec: u32) {
     let Some(line) = http::request_line(tcp_data, &st.statics.f_crlf, &st.statics.f_sp_http) else { return };
     let method = line.method;
@@ -1346,19 +1369,6 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
         return;
     }
 
-    // Forwarded-for headers are searched in the RAW packet bytes, case-insensitively. The
-    // literal pre-condition comes first: asking a case-insensitive alternation for capture
-    // groups walks the whole packet, and next to no request carries one of these headers.
-    let mut src_ip_field = ep.src.render().as_str().to_string();
-    if st.statics.forwarded_for_pre_condition.is_match(packet_bytes) {
-        if let Some(caps) = st.statics.forwarded_for.captures(packet_bytes) {
-            if let Some(m) = caps.get(2) {
-                let forwarded = String::from_utf8_lossy(m.as_bytes()).to_string();
-                src_ip_field = format!("{src_ip_field},{forwarded}");
-            }
-        }
-    }
-
     // `SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS` rewriting allocated once per character in the
     // table, whether or not the character occurred. Check first; ordinary paths contain none.
     let encoded_path = force_encode(&path);
@@ -1394,6 +1404,7 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
             if !found.is_empty() && !local_data_leakage {
                 let trail = format!("{host}({encoded_path})");
                 let info = format!("{found} (suspicious)");
+                let src_ip_field = http_source_field(st, ep, packet_bytes);
                 emit(
                     st,
                     sec,
@@ -1435,6 +1446,7 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
                 let body = encoded_post.as_deref().unwrap_or("").trim().to_string();
                 let trail = format!("{host}({encoded_path} \\({method} {body}\\))");
                 let info = format!("{found} (suspicious)");
+                let src_ip_field = http_source_field(st, ep, packet_bytes);
                 emit(
                     st,
                     sec,
@@ -1475,6 +1487,7 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
         {
             let trail = format!("{host}({})", encoded_path.to_lowercase());
             let info = format!("direct {extension} download (suspicious)");
+            let src_ip_field = http_source_field(st, ep, packet_bytes);
             emit(
                 st,
                 sec,
@@ -1500,6 +1513,7 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
             if let Some(desc) = hit {
                 let trail = format!("{host}({})", encoded_path.to_lowercase());
                 let info = format!("{desc} (suspicious)");
+                let src_ip_field = http_source_field(st, ep, packet_bytes);
                 emit(
                     st,
                     sec,

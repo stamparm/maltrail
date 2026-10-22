@@ -200,7 +200,24 @@ fn special_offset(datalink: i32, packet: &[u8]) -> Option<Option<usize>> {
 /// Resolve where the IP header starts, for a datalink present in `DLT_OFFSETS`.
 /// Returns `None` when the frame is not IP (or is too short), which drops the packet
 /// exactly as the Python handler does.
+/// Where IP starts in an untagged Ethernet frame; `settings::DLT_OFFSETS` says the same.
+const ETHERNET_BASE: usize = 14;
+
+#[inline]
 pub fn ip_offset(datalink: i32, packet: &[u8], base: usize) -> Option<usize> {
+    // Nearly every frame: Ethernet, untagged, carrying IP. Answered before the link-type dispatch
+    // in `ip_offset_walk`, which with `resolve`'s own came to ~65 instructions a packet; it is the
+    // answer the walk's ethertype test gives such a frame
+    // (`ethernet_fast_path_answers_as_the_walk_does`).
+    if datalink == DLT_EN10MB
+        && matches!(base.checked_sub(2).and_then(|start| packet.get(start..base)), Some([0x08, 0x00] | [0x86, 0xdd]))
+    {
+        return Some(base);
+    }
+    ip_offset_walk(datalink, packet, base)
+}
+
+fn ip_offset_walk(datalink: i32, packet: &[u8], base: usize) -> Option<usize> {
     if datalink == DLT_RAW {
         return Some(base);
     }
@@ -343,6 +360,11 @@ impl DltLearner {
 
     /// Full `packet_handler` offset resolution, including the unknown-datalink path.
     pub fn resolve(&mut self, datalink: i32, packet: &[u8]) -> Option<usize> {
+        // Ethernet is no special case and sits at 14 in the table: straight to `ip_offset`, not
+        // through two link-type dispatches and a table search first
+        if datalink == DLT_EN10MB {
+            return ip_offset(DLT_EN10MB, packet, ETHERNET_BASE);
+        }
         if let Some(result) = special_offset(datalink, packet) {
             return result;
         }
@@ -389,6 +411,48 @@ pub(crate) mod tests {
         v.extend_from_slice(&[10, 0, 0, 5]);
         v.extend_from_slice(&[8, 8, 8, 8]);
         v
+    }
+
+    #[test]
+    fn ethernet_fast_path_answers_as_the_walk_does() {
+        let mut state = 0x2545_f491_4f6c_dd1du64;
+        let mut next = move |n: u64| {
+            state ^= state << 13;
+            state ^= state >> 7;
+            state ^= state << 17;
+            (state % n) as usize
+        };
+        // two-byte words that mean something to the walk: IP, VLAN TPIDs, PPPoE, PPP protocols
+        let words: [[u8; 2]; 9] = [
+            [0x08, 0x00],
+            [0x86, 0xdd],
+            [0x81, 0x00],
+            [0x88, 0xa8],
+            [0x91, 0x00],
+            [0x88, 0x64],
+            [0x00, 0x21],
+            [0x00, 0x57],
+            [0x12, 0x34],
+        ];
+        let mut fast = 0;
+        for _ in 0..200_000 {
+            let len = next(48);
+            let mut p: Vec<u8> = (0..len).map(|_| next(256) as u8).collect();
+            for _ in 0..next(6) {
+                if len >= 2 {
+                    let at = next(len as u64 - 1);
+                    p[at..at + 2].copy_from_slice(&words[next(words.len() as u64)]);
+                }
+            }
+            let base = next(24);
+            let walk = ip_offset_walk(DLT_EN10MB, &p, base);
+            assert_eq!(ip_offset(DLT_EN10MB, &p, base), walk, "base {base} {p:02x?}");
+            fast += usize::from(base >= 2 && walk == Some(base));
+        }
+        assert!(fast > 1_000, "{fast}");
+        // and `resolve` going straight to it for Ethernet is what the general route gives
+        assert_eq!(special_offset(DLT_EN10MB, &[0u8; 64]), None);
+        assert_eq!(settings::dlt_offset(DLT_EN10MB), Some(ETHERNET_BASE));
     }
 
     #[test]
