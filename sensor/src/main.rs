@@ -685,8 +685,14 @@ fn run() -> i32 {
         handles.into_iter().map(|(h, _, _)| vec![(h, String::new())]).collect()
     };
 
+    // When the last worker actually finished. The join loop below only looks every 50 ms, so
+    // timing the run from there rounded every replay up to the next 50 ms step - 3,740 packets
+    // "took" 0.050 s, and any per-packet figure taken from the line printed below was wrong by
+    // up to 50 ms divided by the packet count.
+    let finished: Arc<std::sync::Mutex<Option<Instant>>> = Arc::default();
     let mut threads = Vec::with_capacity(worker_handles.len());
     for (id, group) in worker_handles.drain(..).enumerate() {
+        let finished = finished.clone();
         let ctx = WorkerContext {
             id,
             cfg: cfg.clone(),
@@ -699,7 +705,13 @@ fn run() -> i32 {
         threads.push(
             std::thread::Builder::new()
                 .name(format!("capture-{id}"))
-                .spawn(move || worker::run_all(group, ctx))
+                .spawn(move || {
+                    let result = worker::run_all(group, ctx);
+                    if let Ok(mut last) = finished.lock() {
+                        *last = Some(Instant::now());
+                    }
+                    result
+                })
                 .expect("spawn capture worker"),
         );
     }
@@ -797,7 +809,7 @@ fn run() -> i32 {
         }
     }
 
-    let elapsed = started.elapsed();
+    let elapsed = finished.lock().ok().and_then(|last| *last).map(|t| t - started).unwrap_or_else(|| started.elapsed());
     if !args.quiet {
         cprintln!("\r[i] cleaning up...");
         let total = registry.total();

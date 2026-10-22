@@ -353,6 +353,13 @@ Notes on reading this table:
 
 ### 4c. Where a packet's time actually goes, and what was done about it
 
+> **Correction (2026-10-22).** Every wall-clock figure in this section (both tables) was read off the
+> sensor's "processed N packet(s) in X s" line, which was timed from a join loop that polled every
+> 50 ms. Each figure therefore landed on a 50 ms step per million packets - hence 101, 302, 402,
+> 452 … - and can be off by up to 50 ns per packet either way. The same binary re-measured on CPU
+> time does ICMP echo in ~95 ns, not 101. The instruction counts are unaffected. Current
+> figures come from `sensor/tools/perf_table.py`, which refuses a quantized timer.
+
 "13.8x faster than Python" and "fast" are different claims. Measured per protocol on
 **1,000,000-packet** pcaps, the real 1,505,265-trail set, one worker pinned to one core
 (`taskset -c 2`; see the method note under the table — the two columns were not aggregated the same
