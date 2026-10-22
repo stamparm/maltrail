@@ -160,21 +160,27 @@ local RIR table and the rest of the interface continues to work offline.
 ## Performance
 
 Performance depends on processor, traffic composition, trail-set size, capture driver, and network
-interface. The figures below measure the sensor's packet-processing path in isolation; they are not
-end-to-end live-capture measurements.
+interface. The figures below are offline replays through the release binary: libpcap read, link
+layer, packet path and event writing, one worker pinned to one core. Trail loading is excluded, and
+they are not live-capture measurements.
 
-Representative measurements on an AMD Ryzen 7 PRO 4750U with heuristics enabled and a 1.5
-million-row trail set:
+Measured on an AMD Ryzen 7 PRO 4750U with the shipped `maltrail.conf` (heuristics on, condensed
+store on) and refnet's 1.6 million-row trail set, 1,000,000 packets per row:
 
 | Traffic | Time per packet |
 | --- | ---: |
-| ICMP echo, 58 bytes | 101 ns |
-| TCP SYN, 70 bytes | 302 ns |
-| Bulk TLS, 1,473 bytes | 402 ns |
-| DNS query with a warm cache, 93 bytes | 452 ns |
-| Mixed traffic, 866-byte average | 552 ns |
-| HTTP request, 169 bytes | 602 ns |
-| DNS query with a unique name, 93 bytes | 1,102 ns |
+| ICMP echo, 94 bytes | 112 ns |
+| TCP SYN, 54 bytes | 181 ns |
+| Bulk TLS, 1,473 bytes | 351 ns |
+| DNS query with a warm cache, 71 bytes | 287 ns |
+| Refnet mix, 85-byte average | 354 ns |
+| TLS ClientHello, 126 bytes | 590 ns |
+| DNS query with a unique name, 72 bytes | 623 ns |
+| HTTP request, 159 bytes | 678 ns |
+
+Every row is cut out of refnet, the synthetic reference network the detection figures come from
+(`sensor/tools/refnet.py`); the tool says how each row was built. Figures in this README before
+October 2026 were read off a timer quantized to 50 ms and are not comparable.
 
 Offline comparison runs using the same generated capture, configuration, and trail set measured a
 14–37× lower steady-state per-packet cost than the retired Python sensor across the tested systems.
@@ -185,7 +191,8 @@ short replay. Detection itself is asserted separately, by the 42-case corpus in
 Measure it on the target system with:
 
 ```bash
-cargo bench --manifest-path sensor/Cargo.toml --bench hotpath
+cargo build --release --manifest-path sensor/Cargo.toml
+python3 sensor/tools/perf_table.py
 ```
 
 One capture worker is used by default. Additional workers increase capture capacity, and with more
