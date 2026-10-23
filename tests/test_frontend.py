@@ -29,6 +29,25 @@ MAIN_JS = os.path.join(REPO, "html", "js", "main.js")
 UNLABELLED = {"sparkline", "tags"}
 
 
+def _run_node(node, script):
+    """`node -e script`'s output - and when node itself fails, what it said and which node it was.
+
+    check_output() reports a crash as a command line and a signal, nothing else: when ubuntu-latest
+    moved to 26.04, CI said only that node "died with SIGABRT", with no output and no version.
+    """
+
+    import subprocess
+    proc = subprocess.Popen([node, "-e", script], stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    out = proc.communicate()[0]
+    if proc.returncode != 0:
+        try:
+            version = subprocess.check_output([node, "--version"], stderr=subprocess.STDOUT).decode().strip()
+        except Exception as ex:
+            version = "unknown (%s)" % ex
+        raise AssertionError("%s %s exited with status %s; its output ends:\n%s" % (
+            node, version, proc.returncode, out.decode("utf8", "replace")[-2000:]))
+    return out
+
 def _read(path):
     with open(path, "rb") as f:
         return f.read().decode("utf8")
@@ -150,7 +169,7 @@ cases.forEach(function (c) {
 console.log("OK");
 """ % json.dumps([list(c) for c in self.CASES])
         import subprocess
-        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        out = _run_node(node, script).decode("utf8", "replace")
         self.assertEqual("OK", out.strip(), out.strip())
 
 
@@ -363,7 +382,7 @@ var window = { Papa: { parse: function (text, opts) {
 console.log(JSON.stringify(parseEvents(%s)));
 """ % json.dumps(text)
         import subprocess
-        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        out = _run_node(node, script).decode("utf8", "replace")
         return json.loads(out.strip())
 
     def test_both_formats_produce_the_same_row(self):
@@ -425,7 +444,7 @@ class TestDateRange(unittest.TestCase):
             pieces.append(m.group(0))
         script = "function pad2(n){return (n<10?'0':'')+n;}\n" + "\n".join(pieces) + "\nconsole.log(JSON.stringify(%s));" % expr
         import subprocess
-        return json.loads(subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode())
+        return json.loads(_run_node(node, script).decode())
 
     def test_a_range_is_told_apart_from_a_day(self):
         self.assertEqual(self._eval('rangeParts("2026-01-01_2026-01-07")'), ["2026-01-01", "2026-01-07"])
@@ -507,7 +526,7 @@ cases.forEach(function (c) {
 console.log("OK");
 """ % json.dumps([list(c) for c in self.CASES])
         import subprocess
-        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        out = _run_node(node, script).decode("utf8", "replace")
         self.assertEqual("OK", out.strip(), out.strip())
 
     def test_family_token_filters_rows(self):
@@ -540,7 +559,7 @@ want(!matchPos(shard2, "info:interlock-1"), "info: should still be the exact-ish
 console.log("OK");
 """
         import subprocess
-        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        out = _run_node(node, script).decode("utf8", "replace")
         self.assertEqual("OK", out.strip(), out.strip())
 
 
@@ -598,7 +617,7 @@ if (donutPlacement(ctx, { _w: 900, _h: 300 }, slices, 134).cols !== 1) console.l
 console.log("OK");
 """
         import subprocess
-        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        out = _run_node(node, script).decode("utf8", "replace")
         self.assertEqual("OK", out.strip(), out.strip())
 
 
@@ -654,7 +673,7 @@ peaks.forEach(function (p) {
 console.log("OK");
 """
         import subprocess
-        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        out = _run_node(node, script).decode("utf8", "replace")
         self.assertEqual("OK", out.strip(), out.strip())
 
 
@@ -858,7 +877,7 @@ for (var i = 0; i < a.length; i++) if (a[i] !== b[i]) { bad.push("order diverges
 console.log(bad.length ? bad.slice(0, 5).join(" | ") : "OK");
 """
         import subprocess
-        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        out = _run_node(node, script).decode("utf8", "replace")
         self.assertEqual("OK", out.strip(), out.strip())
 
 
@@ -979,7 +998,7 @@ for (var i = 0; i < m.length; i++) if (m[i] !== r[i]) { bad.push("order diverges
 console.log(bad.length ? bad.slice(0, 4).join(" | ") : "OK");
 """
         import subprocess
-        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        out = _run_node(node, script).decode("utf8", "replace")
         self.assertEqual("OK", out.strip(), out.strip())
 
 
@@ -1125,7 +1144,7 @@ COLS.forEach(function (k) { [1, -1].forEach(function (dir) {
 console.log(bad.length ? 'DIVERGES: ' + bad.join(', ') : 'OK');
 """
         import subprocess
-        out = subprocess.check_output([node, "-e", script], stderr=subprocess.STDOUT).decode("utf8", "replace")
+        out = _run_node(node, script).decode("utf8", "replace")
         self.assertEqual("OK", out.strip(), out.strip())
 
 

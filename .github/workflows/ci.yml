@@ -80,6 +80,13 @@ jobs:
         with:
           workspaces: sensor
 
+      # tests/test_frontend.py runs the dashboard's own JavaScript under node. A pinned node, not
+      # whatever the runner image ships: ubuntu-latest moving to 26.04 brought a node that died
+      # with SIGABRT on a 4,000-row sort that every nodejs.org build from 18 to 25 runs fine.
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+
       - run: bash sensor/tools/check.sh
 
       - name: Python suite
@@ -466,6 +473,12 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python }}
+      # tests/test_frontend.py runs the dashboard's own JavaScript under node. A pinned node, not
+      # whatever the runner image ships: ubuntu-latest moving to 26.04 brought a node that died
+      # with SIGABRT on a 4,000-row sort that every nodejs.org build from 18 to 25 runs fine.
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
       - run: bash tests/run.sh python3
 
       # Python held to a comparable bar to the sensor's clippy -D warnings. Bug-catching rules
