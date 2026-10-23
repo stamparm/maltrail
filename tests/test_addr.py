@@ -76,7 +76,7 @@ class TestAddrEdges(unittest.TestCase):
     def test_canonical_ip_trail_leaves_everything_else_alone(self):
         for trail in ("evil.com", "evil.com:8080", "evil.com:8080/a:b", "1.2.3.4", "1.2.3.4:80", "010.1.1.1",
                       "2001:db8::/32", "fe80::1%eth0", "[dead::beef]", "[dead::beef]:99999", "a:b",
-                      "deadbeef::cafe::1", "/wp-admin:x", "http://[dead::beef]/"):
+                      "dead:beef::cafe::1", "/wp-admin:x", "http://[dead::beef]/"):
             self.assertEqual(canonical_ip_trail(trail), trail)
         # the case that started it: MythicRatatoskr's C&C as ESET published it
         self.assertEqual(canonical_ip_trail("[201:b479:2771:8df4:b5eb:d007:63b0:2838]:8080"),

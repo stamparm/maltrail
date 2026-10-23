@@ -322,7 +322,7 @@ mod tests {
             "[dead::beef]",
             "[dead::beef]:99999",
             "a:b",
-            "deadbeef::cafe::1",
+            "dead:beef::cafe::1",
             "/wp-admin:x",
             "http://[dead::beef]/",
         ] {
