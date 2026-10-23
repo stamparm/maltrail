@@ -15,6 +15,7 @@ import sys
 import time
 
 from core.addr import addr_to_int
+from core.addr import canonical_ip_trail
 from core.compat import is_decimal
 from core.addr import expand_range
 from core.addr import make_mask
@@ -652,7 +653,9 @@ def read_whitelist():
                 except (IndexError, ValueError):
                     WHITELIST.add(line)
             else:
-                WHITELIST.add(line)
+                # an IPv6 entry in the text trails and events carry, however it was written:
+                # compared as text, '2001:db8:0:0:0:0:0:1' never whitelisted '2001:db8::1'
+                WHITELIST.add(canonical_ip_trail(line))
 
 # add rules to ignore event list from passed file
 def add_ignorelist(filepath):

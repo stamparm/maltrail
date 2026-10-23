@@ -131,6 +131,22 @@ class TestWhitelistRangeCidr(unittest.TestCase):
         finally:
             os.unlink(p)
 
+    def test_an_ipv6_entry_whitelists_its_address_however_it_is_spelled(self):
+        # compared as text, an entry not in the renderer's spelling whitelisted nothing - not the
+        # trail the build checks (core/update.py writes the rendered form) nor the event address
+        import tempfile
+        fd, p = tempfile.mkstemp(suffix=".txt")
+        os.write(fd, b"201:B479:2771:8df4:b5eb:d007:63b0:2838\n2001:db8:0:0:0:0:0:1\n[2001:41d0:404:200:0:0:0:7f9]:443\n"); os.close(fd)
+        try:
+            self.settings.config.USER_WHITELIST = p
+            self.settings.read_whitelist()
+            for rendered in ("0201:b479:2771:8df4:b5eb:d007:63b0:2838", "2001:db8::1", "[2001:41d0:404:200::7f9]:443"):
+                self.assertTrue(C.check_whitelisted(rendered), rendered)
+            self.assertFalse(C.check_whitelisted("2001:db8::2"))
+            self.assertFalse(C.check_whitelisted("[2001:41d0:404:200::7f9]:80"))
+        finally:
+            os.unlink(p)
+
 
 class TestWorstAsns(unittest.TestCase):
     """worst_asns backs /check_ip (returns the 'worst ASN' name for an IP in a flagged range, else None).

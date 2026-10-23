@@ -312,6 +312,31 @@ pub fn parse_host_port(value: &str) -> (String, Option<u16>) {
     (host.to_owned(), parsed)
 }
 
+/// `core/addr.py:canonical_ip_trail()`: an IPv6 or `[IPv6]:port` entry in the text the renderer
+/// gives that address, whatever spelling it was written in; anything else unchanged. IPv4 and the
+/// port are left as written - `010.1.1.1` and `:0443` are other texts, not other spellings.
+pub fn canonical_ip_text(text: &str) -> std::borrow::Cow<'_, str> {
+    use std::borrow::Cow;
+    if !text.contains(':') {
+        return Cow::Borrowed(text);
+    }
+    if let Some(rest) = text.strip_prefix('[') {
+        let Some((addr, port)) = rest.split_once("]:") else { return Cow::Borrowed(text) };
+        let Some(v6) = parse_ipv6(addr) else { return Cow::Borrowed(text) };
+        if port.is_empty() || port.len() > 5 || !port.bytes().all(|b| b.is_ascii_digit()) {
+            return Cow::Borrowed(text);
+        }
+        return match port.parse::<u32>() {
+            Ok(p) if p <= 0xffff => Cow::Owned(format!("[{}]:{}", Ip::V6(v6).render().as_str(), port)),
+            _ => Cow::Borrowed(text),
+        };
+    }
+    match parse_ipv6(text) {
+        Some(v6) => Cow::Owned(Ip::V6(v6).render().as_str().to_string()),
+        None => Cow::Borrowed(text),
+    }
+}
+
 /// Parse a bare dotted-quad or IPv6 literal into the native form, but only accept it
 /// when re-rendering it with Maltrail's own formatter yields exactly the input. That
 /// guarantees a native-keyed lookup is equivalent to Python's string comparison.

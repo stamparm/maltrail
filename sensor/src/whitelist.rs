@@ -46,6 +46,10 @@ impl Whitelist {
     }
 
     fn add(&mut self, line: &str) {
+        // An IPv6 entry is compared - natively and as text - in the renderer's spelling, which is
+        // what trail keys and events carry; written any other way it whitelisted nothing.
+        // `read_whitelist()` does the same.
+        let line = &*crate::addr::canonical_ip_text(line);
         if let Some((prefix, mask)) = parse_cidr4(line) {
             let m = make_mask(mask);
             self.ranges.push((prefix & m, m));
@@ -270,6 +274,80 @@ mod tests {
         assert!(check_domain_member("www.evil.com", |c| set.contains(c)));
         assert!(check_domain_member("a.b.example.com", |c| c == "example.com"));
         assert!(!check_domain_member("good.com", |c| set.contains(c)));
+    }
+
+    #[test]
+    fn an_ipv6_entry_whitelists_its_address_however_it_is_spelled() {
+        // the renderer's spelling is the one trail keys and events carry; any other spelling of
+        // the same address was mirrored nowhere natively and never equal as text
+        let mut wl = Whitelist::default();
+        for entry in
+            ["201:B479:2771:8df4:b5eb:d007:63b0:2838", "2001:db8:0:0:0:0:0:1", "[2001:41d0:404:200:0:0:0:7f9]:443"]
+        {
+            wl.insert_for_test(entry);
+        }
+        let c2 = crate::addr::parse_ipv6("201:b479:2771:8df4:b5eb:d007:63b0:2838").unwrap();
+        assert!(wl.check_whitelisted_ip(Ip::V6(c2)));
+        assert!(wl.check_whitelisted_ip(Ip::V6(crate::addr::parse_ipv6("2001:db8::1").unwrap())));
+        assert!(!wl.check_whitelisted_ip(Ip::V6(crate::addr::parse_ipv6("2001:db8::2").unwrap())));
+        for rendered in ["0201:b479:2771:8df4:b5eb:d007:63b0:2838", "2001:db8::1", "[2001:41d0:404:200::7f9]:443"] {
+            assert!(wl.check_whitelisted(rendered), "{rendered}");
+        }
+        assert!(!wl.check_whitelisted("[2001:41d0:404:200::7f9]:80"));
+    }
+
+    /// The same cases `tests/test_addr.py` holds `core/addr.py:canonical_ip_trail()` to: the build
+    /// (Python) and the sensor must agree on what an entry means.
+    #[test]
+    fn canonical_ip_text_answers_as_canonical_ip_trail_does() {
+        use crate::addr::canonical_ip_text as c;
+        assert_eq!(
+            c("[201:b479:2771:8df4:b5eb:d007:63b0:2838]:8080"),
+            "[0201:b479:2771:8df4:b5eb:d007:63b0:2838]:8080"
+        );
+        assert_eq!(c("2001:DB8:0:0:0:0:0:1"), "2001:db8::1");
+        assert_eq!(c("[2001:41d0:404:200:0:0:0:7f9]:443"), "[2001:41d0:404:200::7f9]:443");
+        assert_eq!(c("[0:0:0:0:0:ffff:2d3e:c649]:80"), "[::ffff:2d3e:c649]:80");
+        assert_eq!(c("::ffff:1.2.3.4"), "::ffff:102:304");
+        assert_eq!(c("::"), "::0");
+        for unchanged in [
+            "evil.com",
+            "evil.com:8080",
+            "evil.com:8080/a:b",
+            "1.2.3.4",
+            "1.2.3.4:80",
+            "010.1.1.1",
+            "2001:db8::/32",
+            "fe80::1%eth0",
+            "[dead::beef]",
+            "[dead::beef]:99999",
+            "a:b",
+            "deadbeef::cafe::1",
+            "/wp-admin:x",
+            "http://[dead::beef]/",
+        ] {
+            assert_eq!(c(unchanged), unchanged);
+        }
+        // a rendering is a fixed point, for every shape of address the renderer has a branch for
+        let mut state = 0x2545_f491_4f6c_dd1du64;
+        for _ in 0..20_000 {
+            let mut v: u128 = 0;
+            for _ in 0..8 {
+                state ^= state << 13;
+                state ^= state >> 7;
+                state ^= state << 17;
+                let g = match state % 4 {
+                    0 | 1 => 0,
+                    2 => (state >> 8) & 0xff,
+                    _ => (state >> 16) & 0xffff,
+                };
+                v = (v << 16) | u128::from(g as u16);
+            }
+            let rendered = Ip::V6(v).render().as_str().to_string();
+            assert_eq!(c(&rendered), rendered);
+            let full: Vec<String> = (0..8).rev().map(|i| format!("{:X}", (v >> (16 * i)) as u16)).collect();
+            assert_eq!(c(&full.join(":")), rendered);
+        }
     }
 
     #[test]
