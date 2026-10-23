@@ -407,6 +407,46 @@ fn ipv6_addr_port_trail() {
 }
 
 #[test]
+fn ipv6_trails_match_however_the_address_is_spelled() {
+    // MythicRatatoskr's hardcoded C&C (ESET), as reports write it. The renderer zero-pads an address
+    // without a zero group (0201:...), and the loader accepted only that text, so the trail as
+    // published matched nothing - silently, as a plain IP or with its port.
+    let c2 = "201:b479:2771:8df4:b5eb:d007:63b0:2838";
+    for (trail, port_only) in [
+        ("[201:b479:2771:8df4:b5eb:d007:63b0:2838]:8080", true),
+        ("[0201:B479:2771:8DF4:B5EB:D007:63B0:2838]:8080", true),
+        ("[0201:b479:2771:8df4:b5eb:d007:63b0:2838]:8080", true),
+        ("201:b479:2771:8df4:b5eb:d007:63b0:2838", false),
+        ("0201:b479:2771:8df4:b5eb:d007:63b0:2838", false),
+    ] {
+        let mut h = trails(&[(trail, "c2 (dummy)", "ref")]);
+        h.feed_ip(&ipv6(6, "dead::1", c2, &tcp(50000, 8080, 0x02, b"")), 1);
+        h.feed_ip(&ipv6(6, "dead::1", c2, &tcp(50001, 443, 0x02, b"")), 2);
+        let got: Vec<_> = h.events().iter().map(|e| (e.trail_type.clone(), e.trail.clone())).collect();
+        // what is reported is the address as rendered from the packet, whatever the trail's spelling
+        let mut want = vec![("IPORT".to_string(), "[0201:b479:2771:8df4:b5eb:d007:63b0:2838]:8080".to_string())];
+        if !port_only {
+            want = vec![("IP".to_string(), "0201:b479:2771:8df4:b5eb:d007:63b0:2838".to_string()); 2];
+        }
+        assert_eq!(got, want, "trail {trail}");
+    }
+
+    // and a compressible address written out in full
+    let mut h = trails(&[("[2001:41d0:404:200:0:0:0:7f9]:443", "c2 (dummy)", "ref")]);
+    h.feed_ip(&ipv6(6, "dead::1", "2001:41d0:404:200::7f9", &tcp(50000, 443, 0x02, b"")), 1);
+    assert_eq!(h.trails(), vec!["[2001:41d0:404:200::7f9]:443"]);
+
+    // IPv4 is not respelled: a zero-padded octet is another text, not the same address
+    let mut h = trails(&[("010.9.9.9:443", "c2 (dummy)", "ref"), ("010.9.9.9", "c2 (dummy)", "ref")]);
+    h.feed_ip(&ipv4(6, "10.1.1.5", "10.9.9.9", &tcp(50000, 443, 0x02, b"")), 1);
+    assert!(h.events().is_empty(), "{:?}", h.events());
+    // nor is a port: [addr]:0443 is not the rendering of port 443
+    let mut h = trails(&[("[dead::beef]:0443", "c2 (dummy)", "ref")]);
+    h.feed_ip(&ipv6(6, "dead::1", "dead::beef", &tcp(50000, 443, 0x02, b"")), 1);
+    assert!(h.events().is_empty(), "{:?}", h.events());
+}
+
+#[test]
 fn vlan_tagged_frames_are_followed() {
     let mut h = trails(&[("66.66.66.66", "badnet (dummy)", "ref")]);
     let inner = ipv4(6, "10.0.0.5", "66.66.66.66", &tcp(50000, 443, 0x02, b""));

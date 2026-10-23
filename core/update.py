@@ -24,6 +24,7 @@ sys.dont_write_bytecode = True
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))  # to enable calling from current directory too
 
 from core.addr import addr_to_int
+from core.addr import canonical_ip_trail
 from core.addr import int_to_addr
 from core.addr import leading_ipv4
 from core.addr import make_mask
@@ -630,6 +631,10 @@ def update_trails(force=False, offline=False):
                 """
 
                 for item in results.items():
+                    # one address, one key: an IPv6 trail spelled any other way than the sensor
+                    # renders it never matched, and two spellings would not have merged here
+                    if ':' in item[0]:
+                        item = [canonical_ip_trail(item[0]), item[1]]
                     if item[0].startswith("www.") and '/' not in item[0]:
                         item = [item[0][len("www."):], item[1]]
                     if item[0] in trails:
@@ -735,7 +740,7 @@ def update_trails(force=False, offline=False):
                             line = re.sub(r"\s*#.*", "", line)
                             if '://' in line:
                                 line = re.search(r"://(.*)", line).group(1)
-                            line = line.rstrip('/')
+                            line = canonical_ip_trail(line.rstrip('/'))
 
                             if line in trails and any(_ in trails[line][1] for _ in ("custom", "static")):
                                 continue

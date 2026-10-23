@@ -165,6 +165,39 @@ def expand_range(value):
 
     return retval
 
+_IPV6_TRAIL_REGEX = re.compile(r"\A(\[)?([0-9A-Fa-f:.]+)(?(1)\]:(\d{1,5}))\Z")
+
+def canonical_ip_trail(trail):
+    r"""
+    An IPv6 (or [IPv6]:port) trail in the text the sensor renders for that address, whatever the
+    spelling it arrived in; anything else unchanged. Trails are matched against the address as
+    rendered from the packet, so '201:b479:...' or '2001:db8:0:0:0:0:0:1' could never match
+    before: the renderer writes '0201:b479:...' and '2001:db8::1'. Not RFC 5952, deliberately -
+    it is the form events and existing trails already use.
+
+    >>> canonical_ip_trail("[201:b479:2771:8df4:b5eb:d007:63b0:2838]:8080")
+    '[0201:b479:2771:8df4:b5eb:d007:63b0:2838]:8080'
+    >>> canonical_ip_trail("2001:DB8:0:0:0:0:0:1")
+    '2001:db8::1'
+    >>> canonical_ip_trail("evil.com")
+    'evil.com'
+    """
+
+    match = _IPV6_TRAIL_REGEX.search(trail) if ':' in trail else None
+    if not match or match.group(2).count(':') < 2:
+        return trail
+
+    try:
+        rendered = inet_ntoa6(socket.inet_pton(socket.AF_INET6, match.group(2)))
+    except (socket.error, ValueError, AttributeError):  # not an address, or no inet_pton on this platform
+        return trail
+
+    if match.group(1):
+        port = int(match.group(3))
+        return addr_port(rendered, port) if port <= 0xffff else trail
+
+    return rendered
+
 def addr_port(addr, port):
     """
     Formats an address:port pair, bracketing IPv6 literals

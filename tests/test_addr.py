@@ -7,7 +7,8 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from core.addr import (addr_to_int, int_to_addr, make_mask, compress_ipv6,
-                       inet_ntoa6, expand_range, addr_port, parse_host_port)
+                       inet_ntoa6, expand_range, addr_port, parse_host_port,
+                       canonical_ip_trail)
 
 
 class TestAddr(unittest.TestCase):
@@ -51,6 +52,35 @@ class TestAddrEdges(unittest.TestCase):
 
     def test_addr_port_ipv6_brackets(self):
         self.assertEqual(addr_port("dead::beef", 53), "[dead::beef]:53")
+
+    def test_canonical_ip_trail_collapses_spellings_and_keeps_rendered_text(self):
+        import random
+        rnd = random.Random(19)
+        changed = 0
+        for _ in range(20000):
+            # addresses with and without zero groups, so both renderer branches are exercised
+            groups = [rnd.choice((0, 0, rnd.randint(1, 0xff), rnd.randint(0, 0xffff))) for _ in range(8)]
+            packed = b"".join(g.to_bytes(2, "big") for g in groups)
+            rendered = inet_ntoa6(packed)
+            full = ":".join("%x" % g for g in groups)
+            padded = ":".join("%04X" % g for g in groups)
+            # what the sensor renders is a fixed point: an existing trail never changes
+            self.assertEqual(canonical_ip_trail(rendered), rendered)
+            self.assertEqual(canonical_ip_trail(addr_port(rendered, 443)), addr_port(rendered, 443))
+            for spelling in (full, padded, socket.inet_ntop(socket.AF_INET6, packed)):
+                self.assertEqual(canonical_ip_trail(spelling), rendered, spelling)
+                self.assertEqual(canonical_ip_trail("[%s]:8080" % spelling), "[%s]:8080" % rendered, spelling)
+                changed += spelling != rendered
+        self.assertGreater(changed, 10000)      # not vacuous: most spellings differed from the rendering
+
+    def test_canonical_ip_trail_leaves_everything_else_alone(self):
+        for trail in ("evil.com", "evil.com:8080", "evil.com:8080/a:b", "1.2.3.4", "1.2.3.4:80", "010.1.1.1",
+                      "2001:db8::/32", "fe80::1%eth0", "[dead::beef]", "[dead::beef]:99999", "a:b",
+                      "deadbeef::cafe::1", "/wp-admin:x", "http://[dead::beef]/"):
+            self.assertEqual(canonical_ip_trail(trail), trail)
+        # the case that started it: MythicRatatoskr's C&C as ESET published it
+        self.assertEqual(canonical_ip_trail("[201:b479:2771:8df4:b5eb:d007:63b0:2838]:8080"),
+                         "[0201:b479:2771:8df4:b5eb:d007:63b0:2838]:8080")
 
     def test_expand_range_single_and_cidr(self):
         self.assertEqual(list(expand_range("1.2.3.4")), ["1.2.3.4"])           # non-range -> passthrough

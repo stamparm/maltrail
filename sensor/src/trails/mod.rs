@@ -275,16 +275,36 @@ fn parse_canonical_addr_port(trail: &str) -> Option<(Ip, u16)> {
     if port.is_empty() || !port.bytes().all(|b| b.is_ascii_digit()) {
         return None;
     }
+    let port_text = port;
     let port: u16 = port.parse().ok()?;
-    let ip = crate::addr::parse_canonical_ip(addr)?;
+    let ip = trail_ip(addr)?;
     // The bracketed form is only used for IPv6 and vice versa.
     if (ip.is_v6() && !trail.starts_with('[')) || (!ip.is_v6() && trail.starts_with('[')) {
         return None;
     }
-    if ip.addr_port(port).as_str() != trail {
+    // IPv4 exactly as rendered; IPv6 in any spelling (see `trail_ip`), but the port as rendered
+    if if ip.is_v6() { port.to_string() != port_text } else { ip.addr_port(port).as_str() != trail } {
         return None;
     }
     Some((ip, port))
+}
+
+/// The address a trail names: IPv4 only in the sensor's own rendering, IPv6 in any valid spelling.
+///
+/// Events carry the address as rendered from the packet, never the trail's text, so how an IPv6
+/// trail is spelled cannot change what is reported - only whether it matches at all. It used to
+/// be the same strict rule as IPv4, and an address the renderer zero-pads (`0201:b479:...`, any
+/// address without a zero group) or compresses (`2001:db8::1`) never matched when a report wrote
+/// it the usual way. `core/update.py` now writes the rendered form; this covers a trail file built
+/// before that. IPv4 stays strict: `010.1.1.1` is ambiguous (octal or not), not just respelled.
+fn trail_ip(text: &str) -> Option<Ip> {
+    if let Some(ip) = crate::addr::parse_canonical_ip(text) {
+        return Some(ip);
+    }
+    if text.contains(':') {
+        return crate::addr::parse_ipv6(text).map(Ip::V6);
+    }
+    None
 }
 
 /// The native (integer) mirror a trail key qualifies for, if any.
@@ -300,7 +320,7 @@ pub enum NativeKey {
 
 impl NativeKey {
     pub fn of(trail: &str) -> NativeKey {
-        if let Some(ip) = crate::addr::parse_canonical_ip(trail) {
+        if let Some(ip) = trail_ip(trail) {
             return NativeKey::Ip(ip);
         }
         if let Some((ip, port)) = parse_canonical_addr_port(trail) {
