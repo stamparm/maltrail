@@ -2885,6 +2885,15 @@ Cairn/1.0
 Cairn
 ccswitch
 
+# Reference: https://www.cyfirma.com/research/cyfirma-threat-advisory-suspected-dprk-campaign-staging-php2shell-targeting-against-global-php-infrastructure/
+
+php2shell
+php2shell-109618
+php2shell-poc
+php2shell-scan
+php2shell-verify
+php2shell-verify/1.0
+
 # Misc
 
 information_schema
