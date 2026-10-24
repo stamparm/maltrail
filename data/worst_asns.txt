@@ -7515,6 +7515,18 @@
 2803:5120:c000::/36,pa-dame-lacnic
 2a10:9100:5::/48,pa-dame-lacnic
 
-# AS 219337
-# Reference: https://ipinfo.io/AS219337
-# Reference: https://x.com/SansLimit3/status/2112814666808172909
+# AS 210457
+# Reference: https://ipinfo.io/AS210457
+
+108.165.164.0/24,kyonix
+144.31.106.0/24,kyonix
+144.31.151.0/24,kyonix
+144.31.221.0/24,kyonix
+144.31.25.0/24,kyonix
+150.241.66.0/24,kyonix
+191.217.210.0/24,kyonix
+193.23.199.0/24,kyonix
+2.26.252.0/24,kyonix
+2.27.4.0/24,kyonix
+2.27.60.0/24,kyonix
+2.27.63.0/24,kyonix
