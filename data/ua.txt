@@ -2894,6 +2894,14 @@ php2shell-scan
 php2shell-verify
 php2shell-verify/1.0
 
+# Reference: https://x.com/SquiblydooBlog/status/2114339995024814189
+# Reference: https://rogueauthority.org/signed-peazip-msi-self-updating-dll-sideload
+# Reference: https://www.virustotal.com/gui/file/a8d7e195089b11db3c3c362a4f81b0eb6dc502f204993b73ef37ae0947306a35/detection
+# Reference: https://www.virustotal.com/gui/file/24990cf8916ef624e98cc5461e4e8ac8844fc2cfaca3c49522904a0ad2c0be69/detection
+
+self\_update/1.0
+self\_update
+
 # Misc
 
 information_schema
