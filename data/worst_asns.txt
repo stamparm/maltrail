@@ -7530,3 +7530,26 @@
 2.27.4.0/24,kyonix
 2.27.60.0/24,kyonix
 2.27.63.0/24,kyonix
+
+# AS 216416
+# Reference: https://ipinfo.io/AS216416
+# Reference: https://github.com/stamparm/trails/commit/ddccfa8b29425c7c3b60fb1bf004982d9d14db10
+
+157.173.16.0/24,evolus-fibre
+157.173.20.0/24,evolus-fibre
+157.173.21.0/24,evolus-fibre
+157.173.25.0/24,evolus-fibre
+157.173.27.0/24,evolus-fibre
+157.173.29.0/24,evolus-fibre
+157.173.30.0/24,evolus-fibre
+185.207.136.0/24,evolus-fibre
+185.207.137.0/24,evolus-fibre
+185.207.138.0/24,evolus-fibre
+185.207.139.0/24,evolus-fibre
+188.137.152.0/24,evolus-fibre
+188.137.153.0/24,evolus-fibre
+188.137.154.0/24,evolus-fibre
+188.137.156.0/24,evolus-fibre
+188.137.157.0/24,evolus-fibre
+89.106.81.0/24,evolus-fibre
+89.144.17.0/24,evolus-fibre
