@@ -279,6 +279,7 @@ except ImportError:
 LOCAL_STATIC_TRAIL_FILES = ("mass_scanner.txt",)
 
 KNOWN_CONFIG_OPTIONS = frozenset((
+    "ABUSE_CH_AUTH_KEY",
     "ALERT_FORMAT",
     "ALERT_SEVERITY",
     "ALERT_THROTTLE",

@@ -66,7 +66,12 @@ def _disabled():
 
 
 def _feeds():
-    """(name, url) for every enabled feed that declares a fetchable __url__."""
+    """(name, url, key) for every enabled feed that declares a fetchable __url__.
+
+    A feed that declares __requires__ (an Auth-Key, say) is probed with the value of the environment
+    variable of that name, in the URL's "<NAME>" placeholder; `key` is None when it is not set, and
+    such a feed is reported as needing one rather than probed and called unreachable.
+    """
 
     disabled, out = _disabled(), []
     for name in sorted(os.listdir(FEEDS)):
@@ -76,16 +81,26 @@ def _feeds():
         if stem in disabled:
             continue
         with open(os.path.join(FEEDS, name), encoding="utf-8") as handle:
-            found = re.search(r'__url__\s*=\s*"([^"]+)"', handle.read())
+            source = handle.read()
+        found = re.search(r'__url__\s*=\s*"([^"]+)"', source)
         # A "*" in the URL is a display value for a feed that fetches several concrete ones
         # (dataplane), not something to probe.
-        if found and "*" not in found.group(1):
-            out.append((stem, found.group(1)))
+        if not found or "*" in found.group(1):
+            continue
+        url, key = found.group(1), ""
+        required = re.search(r'__requires__\s*=\s*"([^"]+)"', source)
+        if required:
+            key = os.environ.get(required.group(1), "").strip() or None
+            if key:
+                url = url.replace("<%s>" % required.group(1), key)
+        out.append((stem, url, key))
     return out
 
 
 def _probe(item):
-    name, url = item
+    name, url, key = item
+    if key is None:
+        return name, url, None, None
     context = ssl.create_default_context()
     context.check_hostname = False
     context.verify_mode = ssl.CERT_NONE
@@ -94,7 +109,7 @@ def _probe(item):
             response.read(1024)
             return name, url, response.headers.get("Last-Modified"), None
     except Exception as ex:                                       # noqa: BLE001  - any failure is a failure
-        return name, url, None, str(ex)[:80]
+        return name, url, None, (str(ex).replace(key, "<key>") if key else str(ex))[:80]
 
 
 def main():
@@ -109,9 +124,17 @@ def main():
         return 2
 
     now = datetime.datetime.now(datetime.timezone.utc)
-    stale, unreachable, undatable, fresh = [], [], [], []
+    keys = dict((name, key) for name, _, key in feeds)
+    stale, unreachable, undatable, fresh, keyless = [], [], [], [], []
     with ThreadPoolExecutor(max_workers=12) as pool:
         for name, url, last_modified, error in pool.map(_probe, feeds):
+            if keys[name]:
+                url = url.replace(keys[name], "<key>")
+            if keys[name] is None:
+                # not checkable here, and not broken either: an operator without the key gets it
+                # skipped with a note, and this check runs with one when the secret is set
+                keyless.append(name)
+                continue
             if error is not None:
                 unreachable.append((name, url, error))
                 continue
@@ -128,8 +151,9 @@ def main():
             age = (now - when).days
             (stale if age > options.max_age else fresh).append((name, url, age))
 
-    print("[i] %d enabled feed(s): %d fresh, %d undatable, %d unreachable, %d STALE (over %d days)"
-          % (len(feeds), len(fresh), len(undatable), len(unreachable), len(stale), options.max_age))
+    print("[i] %d enabled feed(s): %d fresh, %d undatable, %d unreachable, %d STALE (over %d days)%s"
+          % (len(feeds), len(fresh), len(undatable), len(unreachable), len(stale), options.max_age,
+             ", %d not checked (no key: %s)" % (len(keyless), ", ".join(sorted(keyless))) if keyless else ""))
     for name, url, error in sorted(unreachable):
         print("[!] %-22s unreachable: %s" % (name, error))
     for name, url, age in sorted(stale, key=lambda _: -_[2]):

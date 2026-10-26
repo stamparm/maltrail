@@ -167,6 +167,7 @@ pub const CONDENSE_ON_INFO_KEYWORDS: &[&str] =
 
 /// Every option name any parser accepts; an unlisted name in maltrail.conf is a typo
 pub const KNOWN_CONFIG_OPTIONS: &[&str] = &[
+    "ABUSE_CH_AUTH_KEY",
     "ALERT_FORMAT",
     "ALERT_SEVERITY",
     "ALERT_THROTTLE",

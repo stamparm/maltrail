@@ -664,6 +664,13 @@ def update_trails(force=False, offline=False):
                         if config.DISABLED_TRAILS_INFO_REGEX and re.search(config.DISABLED_TRAILS_INFO_REGEX, getattr(module, "__info__", "")):
                             continue
 
+                        # A feed whose provider wants a key nobody configured is not a dead feed:
+                        # say once how to enable it, and keep it out of the "no indicators" list
+                        required = getattr(module, "__requires__", None)
+                        if required and not (config.get(required) or "").strip():
+                            print("[i] feed skipped: '%s' is not set (%s)" % (required, getattr(module, "__requires_hint__", "see 'maltrail.conf'")))
+                            continue
+
                         try:
                             results = function()
                             _merge(results)
