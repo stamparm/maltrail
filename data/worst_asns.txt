@@ -7553,3 +7553,10 @@
 188.137.157.0/24,evolus-fibre
 89.106.81.0/24,evolus-fibre
 89.144.17.0/24,evolus-fibre
+
+# AS 207408
+# Reference: https://ipinfo.io/AS207408
+
+194.76.227.0/24,servinga-ee
+45.11.183.0/24,servinga-ee
+80.77.25.0/24,servinga-ee
