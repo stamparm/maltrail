@@ -6704,6 +6704,7 @@
 91.92.47.0/24,techties-as
 93.152.221.0/24,techties-as
 94.26.106.0/24,techties-as
+2a0f:ca80:b00b::/48,techties-as
 
 # AS 197769
 # Reference: https://ipinfo.io/AS197769
