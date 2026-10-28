@@ -7562,3 +7562,11 @@
 194.76.227.0/24,servinga-ee
 45.11.183.0/24,servinga-ee
 80.77.25.0/24,servinga-ee
+
+# AS 214351
+# Reference: https://ipinfo.io/AS214351
+
+192.162.199.0/24,femoit
+196.251.107.0/24,femoit
+196.251.122.0/24,femoit
+62.60.226.0/24,femoit
