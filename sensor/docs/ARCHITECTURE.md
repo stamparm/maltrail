@@ -132,6 +132,16 @@ does the same: a reload thread polls the file's mtime (at most once a minute, bo
 `UPDATE_PERIOD`), rebuilds a fresh immutable `TrailDb`, and publishes it through `TrailStore`.
 Workers adopt it between packets, so one packet always sees one consistent snapshot.
 
+The tables are position-independent (string slots address the key arena by offset), so a load
+also writes them to `<TRAILS_FILE>.store` (`src/trails/store.rs`) and the next start, `-T` or
+reload maps that file instead of parsing the CSV. The store is a cache, never a source: its header
+records the CSV's size, mtime and content hash, a hash of the whitelist files, the sensor version,
+the slot layout and the hashes of fixed probe keys, and any mismatch means a parse. Before a mapped
+store is used, every slot is checked to lie inside the arena and to name an existing pair, and
+sampled canary keys must resolve to their recorded values, so a damaged body is a miss rather than
+a wrong answer. A reload parses with one thread fewer than the cores, leaving the capture workers
+a core.
+
 Trail *updating* (downloading feeds) is **not reimplemented**, but the sensor does drive it: it runs
 Maltrail's own `core/update.py` through `sensor/tools/update_trails.py`, before the first load and every
 `UPDATE_PERIOD`, exactly as `sensor.py:init()` did. `DISABLE_TRAIL_UPDATES true` hands the file to

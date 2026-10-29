@@ -16,7 +16,7 @@
 //! the store always used.
 
 use std::marker::PhantomData;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::sync::Arc;
 
 /// Types a region can hold: `Copy`, no `Drop`, and every byte written before it is read (a region
@@ -87,6 +87,65 @@ impl Spill {
     }
 }
 
+/// A read-only private mapping of a whole file: the prebuilt trail store (`store.rs`). Regions cut
+/// from it hold an `Arc` to it, so the mapping lives exactly as long as the last table using it -
+/// a reload that replaces the file on disk leaves the old store intact until it is dropped.
+pub struct FileMap {
+    ptr: *mut u8,
+    len: usize,
+}
+
+// Read-only after construction, owned exclusively by the Arc that wraps it.
+unsafe impl Send for FileMap {}
+unsafe impl Sync for FileMap {}
+
+impl FileMap {
+    #[cfg(unix)]
+    pub fn open(path: &Path) -> std::io::Result<Arc<FileMap>> {
+        use std::os::unix::io::AsRawFd;
+        let file = std::fs::File::open(path)?;
+        let len = file.metadata()?.len();
+        if len == 0 || len > isize::MAX as u64 {
+            return Err(std::io::Error::new(std::io::ErrorKind::InvalidData, "empty or oversized file"));
+        }
+        let len = len as usize;
+        // SAFETY: a fresh read-only private mapping of `len` bytes of a file we hold open.
+        let ptr =
+            unsafe { libc::mmap(std::ptr::null_mut(), len, libc::PROT_READ, libc::MAP_PRIVATE, file.as_raw_fd(), 0) };
+        if ptr == libc::MAP_FAILED {
+            return Err(std::io::Error::last_os_error());
+        }
+        Ok(Arc::new(FileMap { ptr: ptr as *mut u8, len }))
+    }
+
+    #[cfg(not(unix))]
+    pub fn open(_path: &Path) -> std::io::Result<Arc<FileMap>> {
+        Err(std::io::Error::new(std::io::ErrorKind::Other, "no mmap on this platform"))
+    }
+
+    pub fn len(&self) -> usize {
+        self.len
+    }
+
+    pub fn is_empty(&self) -> bool {
+        self.len == 0
+    }
+
+    pub fn bytes(&self) -> &[u8] {
+        // SAFETY: `len` mapped, readable bytes for as long as `self` lives.
+        unsafe { std::slice::from_raw_parts(self.ptr, self.len) }
+    }
+}
+
+impl Drop for FileMap {
+    fn drop(&mut self) {
+        #[cfg(unix)]
+        unsafe {
+            libc::munmap(self.ptr as *mut libc::c_void, self.len);
+        }
+    }
+}
+
 enum Backing<T> {
     /// Held only to own (and eventually free) the memory `ptr` points into.
     #[allow(dead_code)]
@@ -94,6 +153,9 @@ enum Backing<T> {
     // read only by the Linux unmap/msync paths; elsewhere nothing is ever mapped
     #[cfg_attr(not(target_os = "linux"), allow(dead_code))]
     Mapped { bytes: usize },
+    /// A window of a read-only `FileMap`. Never handed out as `&mut`: the pages are PROT_READ.
+    #[allow(dead_code)]
+    Borrowed(Arc<FileMap>),
 }
 
 /// A fixed-length array of `T`, on the heap or file-backed (see the module doc).
@@ -132,8 +194,32 @@ impl<T: Pod> Region<T> {
         Region { ptr, len, backing: Backing::Heap(v), _marker: PhantomData }
     }
 
+    /// `len` elements at byte `offset` of `map`, or None when that is out of bounds or misaligned.
+    pub fn borrowed(map: &Arc<FileMap>, offset: usize, len: usize) -> Option<Region<T>> {
+        let bytes = len.checked_mul(std::mem::size_of::<T>())?;
+        if offset % std::mem::align_of::<T>() != 0 || offset.checked_add(bytes)? > map.len() {
+            return None;
+        }
+        // SAFETY: in bounds and aligned (the mapping itself is page-aligned); `T: Pod`, so any bytes
+        // are a valid `T`; the Arc keeps the mapping alive as long as this region.
+        let ptr = unsafe { map.ptr.add(offset) } as *mut T;
+        Some(Region { ptr, len, backing: Backing::Borrowed(map.clone()), _marker: PhantomData })
+    }
+
+    /// Whether the elements live in file pages (a spill mapping or a prebuilt store) rather than
+    /// on the heap.
     pub fn is_mapped(&self) -> bool {
-        matches!(self.backing, Backing::Mapped { .. })
+        matches!(self.backing, Backing::Mapped { .. } | Backing::Borrowed(_))
+    }
+
+    pub fn is_borrowed(&self) -> bool {
+        matches!(self.backing, Backing::Borrowed(_))
+    }
+
+    /// The elements as bytes, for writing them out. Sound because a `Pod` type has no padding.
+    pub fn as_bytes(&self) -> &[u8] {
+        // SAFETY: `len` initialised elements of a padding-free type.
+        unsafe { std::slice::from_raw_parts(self.ptr as *const u8, self.len * std::mem::size_of::<T>()) }
     }
 
     /// Start writing the dirty pages back now, so they are reclaimable by the time the kernel wants
@@ -158,6 +244,9 @@ impl<T: Pod> std::ops::Deref for Region<T> {
 impl<T: Pod> std::ops::DerefMut for Region<T> {
     #[inline]
     fn deref_mut(&mut self) -> &mut [T] {
+        // A write to a PROT_READ page is a SIGSEGV, which no `catch_unwind` contains. A prebuilt
+        // store is never written, so reaching this is a bug - make it a panic instead.
+        assert!(!self.is_borrowed(), "write to a read-only trail store mapping");
         // SAFETY: as above, and `&mut self` is exclusive.
         unsafe { std::slice::from_raw_parts_mut(self.ptr, self.len) }
     }
@@ -177,7 +266,13 @@ impl<T: Pod> Drop for Region<T> {
 /// case the bound was wrong.
 pub enum Arena {
     Heap(Vec<u8>),
-    Mapped { region: Region<u8>, used: usize, spill: Spill },
+    Mapped {
+        region: Region<u8>,
+        used: usize,
+        spill: Spill,
+    },
+    /// From a prebuilt store: exactly the key bytes, never extended.
+    Frozen(Region<u8>),
 }
 
 impl Arena {
@@ -196,6 +291,7 @@ impl Arena {
         match self {
             Arena::Heap(v) => v.len(),
             Arena::Mapped { used, .. } => *used,
+            Arena::Frozen(region) => region.len(),
         }
     }
 
@@ -215,6 +311,7 @@ impl Arena {
                 region[*used..*used + data.len()].copy_from_slice(data);
                 *used += data.len();
             }
+            Arena::Frozen(_) => unreachable!("a prebuilt trail store is never extended"),
         }
     }
 
@@ -225,7 +322,7 @@ impl Arena {
     }
 
     pub fn is_mapped(&self) -> bool {
-        matches!(self, Arena::Mapped { .. })
+        matches!(self, Arena::Mapped { .. } | Arena::Frozen(_))
     }
 }
 
@@ -236,6 +333,7 @@ impl std::ops::Deref for Arena {
         match self {
             Arena::Heap(v) => v,
             Arena::Mapped { region, used, .. } => &region[..*used],
+            Arena::Frozen(region) => region,
         }
     }
 }

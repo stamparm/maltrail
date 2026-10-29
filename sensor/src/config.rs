@@ -200,6 +200,9 @@ pub struct Config {
     /// `build_trails_regex()` does. ON by default (it recovers real trails that Maltrail's own
     /// trail generation mangles); set false for byte-exact wildcard parity with `sensor.py`.
     pub repair_truncated_trails: bool,
+    /// New: keep the built trail tables next to TRAILS_FILE (`<TRAILS_FILE>.store`) and map them
+    /// on the next start/reload instead of parsing the CSV again. ON by default; see trails/store.rs.
+    pub trail_store_cache: bool,
     /// New: start even when the trail set is empty. OFF by default — a sensor with zero trails
     /// starts cleanly, reports itself healthy and detects nothing, which is the worst failure an
     /// IDS has. Turn on only where an empty set is genuinely expected (heuristics-only sensors,
@@ -556,9 +559,19 @@ fn get_bool(raw: &HashMap<String, Value>, key: &str) -> bool {
     matches!(raw.get(key), Some(Value::Bool(true)))
 }
 
+/// An optional boolean option, whatever its name. The parser only types names with a boolean
+/// prefix (USE_, CHECK_, ...) as `Value::Bool`; any other name arrives as text, and reading only
+/// `Value::Bool` here made `REPAIR_TRUNCATED_TRAILS false` silently keep the default. Text that is
+/// not a boolean word reads as unset, so the caller's default still applies to garbage.
 fn get_bool_opt(raw: &HashMap<String, Value>, key: &str) -> Option<bool> {
     match raw.get(key) {
         Some(Value::Bool(b)) => Some(*b),
+        Some(Value::Int(i)) => Some(*i != 0),
+        Some(Value::Str(s)) => match s.trim().to_ascii_lowercase().as_str() {
+            "1" | "true" | "yes" | "on" => Some(true),
+            "0" | "false" | "no" | "off" => Some(false),
+            _ => None,
+        },
         _ => None,
     }
 }
@@ -1098,6 +1111,7 @@ impl Config {
                 .unwrap_or(true),
             disable_trail_updates: get_bool(&raw, "DISABLE_TRAIL_UPDATES"),
             repair_truncated_trails: get_bool_opt(&raw, "REPAIR_TRUNCATED_TRAILS").unwrap_or(true),
+            trail_store_cache: get_bool_opt(&raw, "TRAIL_STORE_CACHE").unwrap_or(true),
             // cfg_bool, NOT get_bool: only names starting with USE_/SET_/CHECK_/ENABLE_/SHOW_/
             // DISABLE_ are coerced to Value::Bool by the parser (core/settings.py's convention),
             // so `get_bool` on any other name silently reads false however it is written.
@@ -1223,6 +1237,27 @@ impl Config {
 
     pub fn is_offline_replay(&self) -> bool {
         !self.pcap_files.is_empty()
+    }
+
+    /// How to load `TRAILS_FILE`: one definition for startup, `-T` and reloads, so the three agree.
+    ///
+    /// `reload` caps the parse threads at one fewer than the cores: a reload shares the box with
+    /// capture workers that must keep draining their rings, and on a 4-core Raspberry Pi it used to
+    /// take all four for several seconds. Startup keeps every core - nothing is capturing yet.
+    pub fn trail_load_options(&self, reload: bool) -> crate::trails::LoadOptions {
+        // Only where the store can be mapped back: writing one elsewhere would cost a 100+ MB file
+        // for nothing.
+        let store = (self.trail_store_cache && cfg!(unix)).then(|| {
+            crate::trails::StoreConfig::for_trails(&self.trails_file, &self.root, self.user_whitelist.as_deref())
+        });
+        let parse_threads =
+            reload.then(|| std::thread::available_parallelism().map(|n| n.get()).unwrap_or(1).saturating_sub(1).max(1));
+        crate::trails::LoadOptions {
+            repair_truncated_trails: self.repair_truncated_trails,
+            file_backed: file_backed_trails(),
+            store,
+            parse_threads,
+        }
     }
 
     /// `sensor.py:_heuristic_enabled()`
@@ -1479,6 +1514,28 @@ SENSOR_NAME box   # trailing comment
         assert_eq!(write("cw.conf", "CAPTURE_WORKERS 4\n").capture_workers, 4);
         assert_eq!(write("cf.conf", "CAPTURE_FANOUT 8\n").capture_workers, 8);
         assert!(write("auto.conf", "CAPTURE_WORKERS auto\n").capture_workers >= 1);
+    }
+
+    /// Only names with a USE_/SET_/CHECK_/ENABLE_/SHOW_/DISABLE_ prefix are parsed as booleans;
+    /// anything else arrives as text. `REPAIR_TRUNCATED_TRAILS false` was read through a helper
+    /// that only accepts parsed booleans, so it was silently ignored and repair stayed on.
+    #[test]
+    fn boolean_options_without_a_bool_prefix_are_honoured() {
+        let dir = std::env::temp_dir().join("mt-cfg-unprefixed");
+        let _ = std::fs::create_dir_all(&dir);
+        let base = "MONITOR_INTERFACE any\nCAPTURE_BUFFER 1MB\nLOG_DIR /tmp\nUPDATE_PERIOD 86400\n";
+        let write = |name: &str, extra: &str| {
+            let path = dir.join(name);
+            std::fs::write(&path, format!("{base}{extra}")).unwrap();
+            Config::load(&path).expect("config must load")
+        };
+        let default = write("default.conf", "");
+        assert!(default.repair_truncated_trails && default.trail_store_cache);
+        let off = write("off.conf", "REPAIR_TRUNCATED_TRAILS false\nTRAIL_STORE_CACHE false\n");
+        assert!(!off.repair_truncated_trails, "REPAIR_TRUNCATED_TRAILS false must turn repair off");
+        assert!(!off.trail_store_cache, "TRAIL_STORE_CACHE false must turn the store off");
+        let on = write("on.conf", "REPAIR_TRUNCATED_TRAILS true\nTRAIL_STORE_CACHE true\n");
+        assert!(on.repair_truncated_trails && on.trail_store_cache);
     }
 
     #[test]

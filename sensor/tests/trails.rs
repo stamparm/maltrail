@@ -297,12 +297,21 @@ fn real_trails_every_single_row_is_findable_with_its_own_info() {
     };
     let wl = Whitelist::load(&repo_root(), None);
     let (db, stats) = trails::load(&path, &wl).unwrap();
+    assert_every_real_row_is_findable(&path, &wl, &db, &stats);
+}
 
+/// The body of the test above, for any store - a parsed one or one mapped from a prebuilt file.
+fn assert_every_real_row_is_findable(
+    path: &PathBuf,
+    wl: &Whitelist,
+    db: &trails::TrailDb,
+    stats: &trails::loader::LoadStats,
+) {
     // Pass 1: which keys occur more than once? Hashes only, to stay memory-light on 1.5M rows.
     // (A hash collision can only demote a row to the duplicate path, never fail a good row.)
     let mut seen: std::collections::HashSet<u64> = std::collections::HashSet::with_capacity(stats.loaded * 2);
     let mut dup: std::collections::HashSet<u64> = std::collections::HashSet::new();
-    for_each_real_row(&path, &wl, |trail, _, _| {
+    for_each_real_row(path, wl, |trail, _, _| {
         let h = hash64(trail);
         if !seen.insert(h) {
             dup.insert(h);
@@ -319,7 +328,7 @@ fn real_trails_every_single_row_is_findable_with_its_own_info() {
     let mut ip_rows = 0usize;
     let mut ip_port_rows = 0usize;
 
-    let rows = for_each_real_row(&path, &wl, |trail, info, reference| {
+    let rows = for_each_real_row(path, wl, |trail, info, reference| {
         let found = db.get(trail);
         let Some(found) = found else {
             if missing.len() < 20 {
@@ -542,4 +551,256 @@ fn the_negative_filter_never_hides_a_key_at_real_scale() {
         }
     }
     assert_eq!(invented, 0, "the table invented entries for keys never inserted");
+}
+
+// -------------------------------------------------------------------------------------------------
+// The prebuilt trail store (src/trails/store.rs). A store is a cache of the CSV; the property that
+// matters is that it can never answer for a CSV it was not built from, and never answers anything a
+// parse would not.
+// -------------------------------------------------------------------------------------------------
+
+use maltrail_sensor::trails::{LoadOptions, StoreConfig, TrailDb};
+
+fn store_dir(name: &str) -> PathBuf {
+    let dir = std::env::temp_dir().join(format!("mt-store-{name}-{}", std::process::id()));
+    let _ = std::fs::remove_dir_all(&dir);
+    std::fs::create_dir_all(&dir).unwrap();
+    dir
+}
+
+fn with_store(store: &std::path::Path, whitelist_hash: u64) -> LoadOptions {
+    LoadOptions {
+        store: Some(StoreConfig { path: store.to_path_buf(), whitelist_hash, write: true }),
+        ..LoadOptions::default()
+    }
+}
+
+/// Every shape a store has to carry, and the keys to ask it about.
+fn varied_csv() -> (Vec<u8>, Vec<String>) {
+    let mut csv: Vec<u8> = b"# a licence header, not a trail\n".to_vec();
+    let mut keys = Vec::new();
+    for i in 0..120_000u32 {
+        let key = match i % 6 {
+            0 => format!("host{i}.example"),
+            1 => format!("{}.{}.{}.{}", 11 + i % 200, (i >> 8) & 255, i & 255, (i >> 16) & 255),
+            2 => format!("{}.{}.{}.{}:{}", 11 + i % 200, (i >> 8) & 255, i & 255, (i >> 16) & 255, 1 + i % 65000),
+            3 => format!("/path{i}.php"),
+            4 => format!("2001:db8::{:x}", i + 1),
+            _ => format!("[2001:db8::{:x}]:{}", i + 1, 1 + i % 65000),
+        };
+        csv.extend_from_slice(format!("{key},info {} (malware),(static)\n", i % 37).as_bytes());
+        keys.push(key);
+    }
+    csv.extend_from_slice(
+        b"dup.example,first info,(static)\n\
+          \"has,comma.example\",\"info, with comma\",(static)\n\
+          crlf.example,ok,(static)\r\n\
+          evil[0-9]+\\.example,wildcard (malware),(static)\n\
+          bad.*\\.example,wildcard (malware),(static)\n\
+          d190f828263095de150a20b19136e314,ja3 (malware),(custom)\n\
+          two,fields\n\
+          four,fields,here,too\n\
+          caf\xc3\xa9.example,unicode,(static)\n\
+          bro\xffken.example,invalid utf-8,(static)\n\
+          dup.example,LAST info wins,(static)\n",
+    );
+    keys.extend(
+        ["dup.example", "has,comma.example", "crlf.example", "evil[0-9]+\\.example", "café.example", "nope.example"]
+            .map(String::from),
+    );
+    keys.push("d190f828263095de150a20b19136e314".into());
+    (csv, keys)
+}
+
+/// Two stores must answer every question identically.
+fn assert_same_answers(want: &TrailDb, got: &TrailDb, keys: &[String]) {
+    use maltrail_sensor::trails::{FP_CERT, FP_JA3, FP_JA4};
+    assert_eq!(got.len(), want.len());
+    assert_eq!(got.ip4_count(), want.ip4_count());
+    assert_eq!(got.ip4_port_count(), want.ip4_port_count());
+    assert_eq!(got.ip6_count(), want.ip6_count());
+    for fp in [FP_JA3, FP_JA4, FP_CERT] {
+        assert_eq!(got.has_fingerprints(fp), want.has_fingerprints(fp));
+    }
+    assert_eq!(got.regex().source(), want.regex().source());
+    assert_eq!(got.regex().patterns(), want.regex().patterns());
+    assert_eq!(got.regex().skipped(), want.regex().skipped());
+    assert_eq!(got.regex().repaired(), want.regex().repaired());
+    for query in ["x.evil42.example", "bad-thing.example", "evil.example", "www.host7.example"] {
+        let (w, g) = (want.regex().find(query), got.regex().find(query));
+        assert_eq!(w.map(|h| (h.start, h.end, h.candidate)), g.map(|h| (h.start, h.end, h.candidate)), "{query}");
+        assert_eq!(got.contains_domain_member(query), want.contains_domain_member(query), "{query}");
+    }
+    for key in keys {
+        assert_eq!(got.get(key), want.get(key), "{key:?}");
+        if let Some(ip) = maltrail_sensor::addr::parse_canonical_ip(key) {
+            assert_eq!(got.get_ip(ip), want.get_ip(ip), "{key:?}");
+        }
+        let (addr, port) = match key.strip_prefix('[') {
+            Some(rest) => rest.split_once("]:").unwrap_or(("", "")),
+            None => key.rsplit_once(':').unwrap_or(("", "")),
+        };
+        if let (Some(ip), Ok(port)) = (maltrail_sensor::addr::parse_canonical_ip(addr), port.parse::<u16>()) {
+            assert_eq!(got.get_ip_port(ip, port), want.get_ip_port(ip, port), "{key:?}");
+        }
+    }
+}
+
+#[test]
+fn a_prebuilt_store_answers_exactly_like_a_parse() {
+    let dir = store_dir("parity");
+    let csv = dir.join("trails.csv");
+    let store = dir.join("trails.csv.store");
+    let (content, keys) = varied_csv();
+    std::fs::write(&csv, &content).unwrap();
+    let wl = Whitelist::load(&repo_root(), None);
+
+    let (parsed, pstats) = trails::load_with(&csv, &wl, LoadOptions::default()).unwrap();
+    assert!(!parsed.is_prebuilt() && !store.exists(), "no store unless one is configured");
+
+    let (cold, cstats) = trails::load_with(&csv, &wl, with_store(&store, 1)).unwrap();
+    assert!(!cstats.from_store, "the first load must parse");
+    assert!(store.is_file(), "the first load must write the store");
+    assert!(cstats.store_note.is_none(), "{:?}", cstats.store_note);
+    // positive control: the cold load already serves from the store it just wrote
+    assert!(cold.is_prebuilt(), "the written store must be mapped back and used");
+
+    let (warm, wstats) = trails::load_with(&csv, &wl, with_store(&store, 1)).unwrap();
+    assert!(wstats.from_store && warm.is_prebuilt(), "the second load must come from the store");
+    assert_eq!(
+        (wstats.rows, wstats.loaded, wstats.whitelisted, wstats.malformed),
+        (pstats.rows, pstats.loaded, pstats.whitelisted, pstats.malformed)
+    );
+    assert!(pstats.malformed >= 2, "the fixture's malformed rows must count, or this proves nothing");
+
+    assert_eq!(parsed.get("dup.example").map(|v| v.info), Some("LAST info wins"));
+    assert!(parsed.has_fingerprints(trails::FP_JA3) && !parsed.regex().is_empty());
+    assert_same_answers(&parsed, &cold, &keys);
+    assert_same_answers(&parsed, &warm, &keys);
+    assert!(trails::store::verify(&store).is_ok());
+    let _ = std::fs::remove_dir_all(&dir);
+}
+
+/// Set a file's mtime, to the nanosecond.
+#[cfg(unix)]
+fn set_mtime(path: &std::path::Path, secs: i64, nanos: i64) {
+    use std::os::unix::ffi::OsStrExt;
+    let c = std::ffi::CString::new(path.as_os_str().as_bytes()).unwrap();
+    let times = [
+        libc::timespec { tv_sec: 0, tv_nsec: libc::UTIME_OMIT },
+        libc::timespec { tv_sec: secs as libc::time_t, tv_nsec: nanos as _ },
+    ];
+    assert_eq!(unsafe { libc::utimensat(libc::AT_FDCWD, c.as_ptr(), times.as_ptr(), 0) }, 0);
+}
+
+#[test]
+#[cfg(unix)]
+fn a_changed_trails_file_is_never_served_from_the_store() {
+    use std::os::unix::fs::MetadataExt;
+    let dir = store_dir("changed");
+    let csv = dir.join("trails.csv");
+    let store = dir.join("trails.csv.store");
+    let wl = Whitelist::default();
+    std::fs::write(&csv, "known.example,old (malware),(static)\n1.2.3.4,old (malware),(static)\n").unwrap();
+    trails::load_with(&csv, &wl, with_store(&store, 1)).unwrap();
+    let (_, stats) = trails::load_with(&csv, &wl, with_store(&store, 1)).unwrap();
+    assert!(stats.from_store, "positive control: the unchanged file is served from the store");
+
+    // An appended row: size and mtime change.
+    let mut f = std::fs::OpenOptions::new().append(true).open(&csv).unwrap();
+    std::io::Write::write_all(&mut f, b"added-today.example,new (malware),(static)\n").unwrap();
+    drop(f);
+    let (db, stats) = trails::load_with(&csv, &wl, with_store(&store, 1)).unwrap();
+    assert!(!stats.from_store);
+    assert!(db.get("added-today.example").is_some(), "the new row must be detected");
+    assert!(stats.store_note.as_deref().is_some_and(|n| n.contains("changed")), "{:?}", stats.store_note);
+    let (db, stats) = trails::load_with(&csv, &wl, with_store(&store, 1)).unwrap();
+    assert!(stats.from_store && db.get("added-today.example").is_some(), "the rebuilt store carries it");
+
+    // The paranoid case: same length, different content, mtime put back to the nanosecond - what
+    // `cp -p` or a restored backup produces. Only the content hash can tell.
+    let before = std::fs::metadata(&csv).unwrap();
+    let text = std::fs::read_to_string(&csv).unwrap().replace("added-today", "added-twice");
+    std::fs::write(&csv, text).unwrap();
+    set_mtime(&csv, before.mtime(), before.mtime_nsec());
+    let after = std::fs::metadata(&csv).unwrap();
+    assert_eq!((after.len(), after.mtime(), after.mtime_nsec()), (before.len(), before.mtime(), before.mtime_nsec()));
+    let (db, stats) = trails::load_with(&csv, &wl, with_store(&store, 1)).unwrap();
+    assert!(!stats.from_store, "a same-size, same-mtime rewrite must not be served from the old store");
+    assert!(db.get("added-twice.example").is_some() && db.get("added-today.example").is_none());
+    assert!(stats.store_note.as_deref().is_some_and(|n| n.contains("content")), "{:?}", stats.store_note);
+    let _ = std::fs::remove_dir_all(&dir);
+}
+
+#[test]
+fn a_changed_whitelist_or_repair_setting_misses_the_store() {
+    let dir = store_dir("identity");
+    let csv = dir.join("trails.csv");
+    let store = dir.join("trails.csv.store");
+    let wl = Whitelist::default();
+    std::fs::write(&csv, "known.example,x (malware),(static)\n").unwrap();
+    trails::load_with(&csv, &wl, with_store(&store, 1)).unwrap();
+    assert!(trails::load_with(&csv, &wl, with_store(&store, 1)).unwrap().1.from_store);
+
+    let (_, stats) = trails::load_with(&csv, &wl, with_store(&store, 2)).unwrap();
+    assert!(!stats.from_store, "a store built under another whitelist must not be used");
+    assert!(stats.store_note.as_deref().is_some_and(|n| n.contains("whitelist")), "{:?}", stats.store_note);
+
+    let strict = LoadOptions { repair_truncated_trails: false, ..with_store(&store, 2) };
+    let (_, stats) = trails::load_with(&csv, &wl, strict).unwrap();
+    assert!(!stats.from_store, "a store built with another REPAIR_TRUNCATED_TRAILS must not be used");
+    let _ = std::fs::remove_dir_all(&dir);
+}
+
+#[test]
+fn an_unwritable_store_still_loads_the_trails() {
+    let dir = store_dir("unwritable");
+    let csv = dir.join("trails.csv");
+    std::fs::write(&csv, "known.example,x (malware),(static)\n").unwrap();
+    let store = PathBuf::from("/nonexistent/maltrail/trails.csv.store");
+    let (db, stats) = trails::load_with(&csv, &Whitelist::default(), with_store(&store, 1)).unwrap();
+    assert!(db.get("known.example").is_some());
+    assert!(!stats.from_store && !db.is_prebuilt());
+    assert!(stats.store_note.as_deref().is_some_and(|n| n.contains("could not write")), "{:?}", stats.store_note);
+    let _ = std::fs::remove_dir_all(&dir);
+}
+
+#[test]
+fn real_trails_prebuilt_store_round_trip() {
+    let Some(path) = real_trails_file() else {
+        println!("[skip] no real trails file ($MALTRAIL_TRAILS or ~/.maltrail/trails.csv) on this machine");
+        return;
+    };
+    let dir = store_dir("real");
+    let store = dir.join("trails.csv.store");
+    let wl = Whitelist::load(&repo_root(), None);
+    let whitelist_hash = trails::store::whitelist_hash(&repo_root(), None);
+
+    let started = std::time::Instant::now();
+    let (_, parse_stats) = trails::load_with(&path, &wl, LoadOptions::default()).unwrap();
+    let parse = started.elapsed();
+    let started = std::time::Instant::now();
+    let (cold, _) = trails::load_with(&path, &wl, with_store(&store, whitelist_hash)).unwrap();
+    let build = started.elapsed();
+    assert!(cold.is_prebuilt(), "the cold load must have written and mapped its store");
+    drop(cold);
+    let started = std::time::Instant::now();
+    let (db, stats) = trails::load_with(&path, &wl, with_store(&store, whitelist_hash)).unwrap();
+    let warm = started.elapsed();
+    println!(
+        "[i] real trails: parse {:.3}s, parse + write store {:.3}s, load from store {:.3}s ({:.1} MB)",
+        parse.as_secs_f64(),
+        build.as_secs_f64(),
+        warm.as_secs_f64(),
+        std::fs::metadata(&store).unwrap().len() as f64 / (1024.0 * 1024.0)
+    );
+    assert!(stats.from_store && db.is_prebuilt(), "the warm load must come from the store");
+    assert_eq!(stats.loaded, parse_stats.loaded);
+    // Positive control that it did not quietly fall back to parsing (a store load hashes the CSV,
+    // which is all it reads, so it has to be clearly cheaper than a parse).
+    assert!(warm * 3 < parse, "a store load ({warm:?}) is not clearly faster than a parse ({parse:?})");
+    trails::store::verify(&store).expect("a freshly written store must verify");
+    assert_every_real_row_is_findable(&path, &wl, &db, &stats);
+    drop(db);
+    let _ = std::fs::remove_dir_all(&dir);
 }

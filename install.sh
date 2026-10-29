@@ -313,19 +313,42 @@ clone_or_update() {
 # ---------------------------------------------------------------------------------------------
 # sensor binary
 # ---------------------------------------------------------------------------------------------
+# Does this 32-bit ARM CPU run the ARMv7 build? It is compiled for a Cortex-A7 (the Pi 2), which
+# means NEON, VFPv4 and hardware integer divide - and "armv7l" alone does not promise those: a
+# Cortex-A9 has no divide or VFPv4, and some ARMv7 boards (Tegra 2, Armada XP) have no NEON. Such a
+# CPU would die on the first of those instructions, so anything not reporting all three gets the
+# ARMv6 build, which every 32-bit ARM runs.
+arm_runs_armv7_build() {
+    features=$(grep -m1 '^Features' /proc/cpuinfo 2>/dev/null) || return 1
+    for feature in neon vfpv4 idiva; do
+        case " $features " in *" $feature "*) ;; *) return 1 ;; esac
+    done
+}
+
 target_triple() {
     machine=$(uname -m)
     # A 64-bit kernel under a 32-bit userland (Raspberry Pi OS 32-bit on a Pi 3/4/5) says aarch64,
-    # but an aarch64 binary has no loader there. The userland decides.
+    # but an aarch64 binary has no loader there. The userland decides - and the CPU is an ARMv8
+    # core, which runs everything the ARMv7 build uses.
     if [ "$OS" = Linux ] && [ "$(getconf LONG_BIT 2>/dev/null)" = 32 ]; then
-        case $machine in aarch64|arm64|armv*) machine=armv6l ;; esac
+        case $machine in aarch64|arm64) machine=armv8l ;; esac
     fi
     case $machine in
         x86_64|amd64)  arch=x86_64 ;;
         aarch64|arm64) arch=aarch64 ;;
-        # One static ARMv6 build for every 32-bit Pi, Pi 1 and Zero included. Static musl, so it
-        # runs on glibc systems (Raspberry Pi OS, DietPi) and musl ones alike.
-        armv6l|armv7l|armv8l) [ "$OS" = Linux ] && printf 'arm-unknown-linux-musleabihf'; return ;;
+        # Two static builds for 32-bit ARM: ARMv7 with NEON for the Pi 2 and later, ARMv6 for the
+        # Pi 1, the Zero and any ARMv7 CPU without what the ARMv7 build assumes. Static musl, so
+        # both run on glibc systems (Raspberry Pi OS, DietPi) and musl ones alike.
+        armv8l) [ "$OS" = Linux ] && printf 'armv7-unknown-linux-musleabihf'; return ;;
+        armv7l)
+            [ "$OS" = Linux ] || return
+            if arm_runs_armv7_build; then
+                printf 'armv7-unknown-linux-musleabihf'
+            else
+                printf 'arm-unknown-linux-musleabihf'
+            fi
+            return ;;
+        armv6l) [ "$OS" = Linux ] && printf 'arm-unknown-linux-musleabihf'; return ;;
         *)             printf ''; return ;;
     esac
 
@@ -418,7 +441,17 @@ install_sensor_binary() {
         url="$RELEASES/download/$version/$name.tar.gz"
         tmp=$(mktemp -d)
         say "downloading sensor $version ($triple)"
-        if ! fetch "$url" "$tmp/s.tar.gz"; then
+        fetched=0
+        fetch "$url" "$tmp/s.tar.gz" && fetched=1
+        # Releases before 3.6 carry only the ARMv6 build, which every 32-bit Pi runs.
+        if [ "$fetched" = 0 ] && [ "$triple" = armv7-unknown-linux-musleabihf ]; then
+            triple=arm-unknown-linux-musleabihf
+            name="maltrail-sensor-$version-$triple"
+            url="$RELEASES/download/$version/$name.tar.gz"
+            say "no ARMv7 build in $version; downloading the ARMv6 one"
+            fetch "$url" "$tmp/s.tar.gz" && fetched=1
+        fi
+        if [ "$fetched" = 0 ]; then
             rm -rf "$tmp"
             warn "no sensor binary at $url; build it with 'cd $PREFIX/sensor && cargo build --release'"
             return 1

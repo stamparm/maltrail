@@ -16,7 +16,6 @@
 use std::path::Path;
 
 use crate::config::Config;
-use crate::trails::LoadOptions;
 use crate::whitelist::Whitelist;
 use crate::{ceprintln, cprintln};
 
@@ -332,11 +331,12 @@ pub fn run(cfg: &Config) -> i32 {
             );
         }
     } else {
-        let options = LoadOptions {
-            repair_truncated_trails: cfg.repair_truncated_trails,
-            file_backed: crate::config::file_backed_trails(),
-        };
-        match crate::trails::load_with(&cfg.trails_file, &whitelist, options) {
+        let mut options = cfg.trail_load_options(false);
+        // Read a matching store, never write one: a test must not change the deployment.
+        if let Some(store) = options.store.as_mut() {
+            store.write = false;
+        }
+        match crate::trails::load_with(&cfg.trails_file, &whitelist, options.clone()) {
             Err(e) => r.line(Level::Fail, "trails", &format!("'{}' unreadable ({e})", cfg.trails_file.display())),
             Ok((db, stats)) => {
                 if stats.loaded == 0 {
@@ -364,6 +364,16 @@ pub fn run(cfg: &Config) -> i32 {
                 }
                 if stats.malformed * 100 > stats.rows.max(1) {
                     r.line(Level::Warn, "trails", "more than 1% of rows are malformed — wrong file?");
+                }
+                if let Some(store) = options.store.as_ref() {
+                    let path = store.path.display();
+                    match (&stats.store_note, stats.from_store) {
+                        (Some(note), _) => r.line(Level::Warn, "trail store", note),
+                        (None, true) => r.line(Level::Ok, "trail store", &format!("'{path}' matches the trails file")),
+                        (None, false) => {
+                            r.line(Level::Ok, "trail store", &format!("'{path}' is built on the next start"))
+                        }
+                    }
                 }
                 let skipped = db.regex().skipped().len();
                 if skipped > 0 {

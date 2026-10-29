@@ -270,3 +270,43 @@ fn a_readable_capture_with_no_detections_still_succeeds() {
     let (code, output) = fixture.invoke(&["-r", clean.to_str().unwrap(), "-q"]);
     assert_eq!(code, 0, "clean traffic is a successful replay, not a failure\n{output}");
 }
+
+/// The prebuilt trail store end to end, through the real binary: `-T` reads a store but never
+/// writes one, a start writes it and serves from it, `--verify-trail-store` checks it, and
+/// `TRAIL_STORE_CACHE false` turns all of it off.
+#[test]
+#[cfg(unix)]
+fn the_binary_builds_and_serves_the_prebuilt_trail_store() {
+    if !have_binary() {
+        return;
+    }
+    let trails = "1.2.3.4,malware,(static)\nevil.example,malware,(static)\n";
+    let fixture = Fixture::new("store", trails, "");
+    let store = fixture.dir.join("trails.csv.store");
+
+    let (code, output) = fixture.invoke(&["-T"]);
+    assert_eq!(code, 0, "{output}");
+    assert!(!store.exists(), "-T must not write the store - a test must not change the deployment:\n{output}");
+    assert!(output.contains("is built on the next start"), "{output}");
+
+    let (code, output) = fixture.invoke(&["-r", corpus().to_str().unwrap()]);
+    assert_eq!(code, 0, "{output}");
+    assert!(store.is_file(), "a start must write the store:\n{output}");
+    assert!(output.contains("(prebuilt store)"), "the start must serve from the store it wrote:\n{output}");
+    assert!(!output.contains("trail store:"), "a healthy store must not print a problem:\n{output}");
+
+    let (code, output) = fixture.invoke(&["-T"]);
+    assert_eq!(code, 0, "{output}");
+    assert!(output.contains("matches the trails file"), "{output}");
+    let (code, output) = fixture.invoke(&["--verify-trail-store"]);
+    assert_eq!(code, 0, "{output}");
+    assert!(output.contains("every section checksum matches"), "{output}");
+
+    let off = Fixture::new("store-off", trails, "TRAIL_STORE_CACHE false");
+    let (code, output) = off.invoke(&["-r", corpus().to_str().unwrap()]);
+    assert_eq!(code, 0, "{output}");
+    assert!(!off.dir.join("trails.csv.store").exists(), "TRAIL_STORE_CACHE false must write nothing");
+    assert!(!output.contains("(prebuilt store)"), "{output}");
+    let (code, _) = off.invoke(&["--verify-trail-store"]);
+    assert_eq!(code, 1, "verifying an absent store must fail, not pass vacuously");
+}

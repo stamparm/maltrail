@@ -32,6 +32,9 @@ pub struct TrailRegex {
     repaired: Vec<String>,
     /// true when the backtracking engine was needed
     fancy: bool,
+    /// Every `(trail, reference)` that reached the compile step, in order. Replaying these through
+    /// a fresh builder rebuilds this exact regex - which is how the prebuilt store carries it.
+    offers: Vec<(String, String)>,
 }
 
 /// `re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I)` — is this trail a wildcard /
@@ -182,6 +185,7 @@ pub struct TrailRegexBuilder {
     skipped: Vec<String>,
     repaired: Vec<String>,
     needs_fancy: bool,
+    offers: Vec<(String, String)>,
     /// Repair feed-mangled patterns instead of dropping them (see `repair_truncated`). ON by
     /// default; `REPAIR_TRUNCATED_TRAILS false` restores Python's drop-it-silently behaviour.
     repair: bool,
@@ -195,6 +199,7 @@ impl Default for TrailRegexBuilder {
             skipped: Vec::new(),
             repaired: Vec::new(),
             needs_fancy: false,
+            offers: Vec::new(),
             repair: true,
         }
     }
@@ -216,6 +221,7 @@ impl TrailRegexBuilder {
         if !reference.contains("static") || !is_wildcard_trail(trail) || !has_metacharacters(trail) {
             return;
         }
+        self.offers.push((trail.to_string(), reference.to_string()));
         // The pattern that actually gets compiled. Normally the trail verbatim; for a trail
         // truncated in the feed, a repaired form (the CSV key is still what we look up).
         let compiled = if can_compile_trail(trail) {
@@ -283,6 +289,7 @@ impl TrailRegexBuilder {
             skipped: self.skipped,
             repaired: self.repaired,
             fancy,
+            offers: self.offers,
         }
     }
 }
@@ -320,6 +327,11 @@ impl TrailRegex {
 
     pub fn source(&self) -> &str {
         &self.source
+    }
+
+    /// What the builder was offered (see the field); the prebuilt store persists this.
+    pub fn offers(&self) -> &[(String, String)] {
+        &self.offers
     }
 
     /// True when the alternation needed the backtracking engine (look-around / backreference).

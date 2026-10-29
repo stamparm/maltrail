@@ -410,7 +410,19 @@ immutable trail store is built and swapped in atomically, counted in the metrics
 ### Small hosts
 
 A full trail set is ~1.9M entries, and the sensor runs on a 256 MB Raspberry Pi without any
-setting changed. Three things make that work:
+setting changed. Four things make that work:
+
+* **The built tables are kept.** The first start writes them next to `TRAILS_FILE` as
+  `trails.csv.store` (about the size of the CSV), and every later start, `-T` and reload maps that
+  file read-only instead of parsing the CSV. On one core with 1.9M trails, `-T` takes 0.08 s
+  instead of 0.78 s and a start needs 89 MB instead of 145 MB. The store is used only when it was
+  built from exactly the current `TRAILS_FILE` (size, modification time and content), the same
+  whitelist and the same sensor version; otherwise the CSV is parsed as before and the store is
+  rewritten. The startup line then reports `memory=… MB (prebuilt store)`, and
+  `maltrail-sensor --verify-trail-store` checks every checksum in it. `-T` reads a store but never
+  writes one. Delete the file at any time, but never edit or overwrite it in place: a running sensor
+  maps it, which is why it is written without write permission. `TRAIL_STORE_CACHE false` turns it
+  off.
 
 * **The trail store is file-backed on hosts with under 2 GB of RAM.** It is built into mappings of
   files next to `TRAILS_FILE`, which are unlinked as soon as they are created, so nothing stays on

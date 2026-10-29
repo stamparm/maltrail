@@ -106,6 +106,31 @@ impl NegativeFilter {
     pub fn memory_bytes(&self) -> usize {
         self.bits.len() * 8
     }
+
+    pub(super) fn bits(&self) -> &Region<u64> {
+        &self.bits
+    }
+
+    pub(super) fn mask(&self) -> usize {
+        self.mask
+    }
+
+    /// A filter over bits read back from a prebuilt store. The mask must cover the bits exactly,
+    /// or `positions()` would index past them.
+    pub(super) fn from_parts(bits: Region<u64>, mask: usize) -> Option<NegativeFilter> {
+        let size = mask.checked_add(1)?;
+        (size.is_power_of_two() && Some(size) == bits.len().checked_mul(64)).then_some(NegativeFilter { bits, mask })
+    }
+}
+
+/// What a prebuilt table's slots were found to hold (`StrTable::validate`, `IntTable::validate`).
+pub(super) struct SlotCheck {
+    /// occupied slots
+    pub occupied: usize,
+    /// the largest pair index any slot holds
+    pub max_val: Option<u32>,
+    /// every key lies inside the arena (always true for integer tables)
+    pub in_bounds: bool,
 }
 
 // There is deliberately no `resize()`/`resized()` here. Both table types keep their filter across
@@ -140,8 +165,10 @@ fn next_slot(i: usize, cap: usize) -> usize {
     }
 }
 
+/// `repr(C)` and padding-free: the prebuilt store (`store.rs`) writes slots to disk byte for byte.
 #[derive(Clone, Copy)]
-struct StrSlot {
+#[repr(C)]
+pub(super) struct StrSlot {
     tag: u32,
     off: u32,
     len: u32,
@@ -310,6 +337,39 @@ impl StrTable {
         }
     }
 
+    pub(super) fn arena(&self) -> &Arena {
+        &self.arena
+    }
+
+    pub(super) fn slots(&self) -> &Region<StrSlot> {
+        &self.slots
+    }
+
+    pub(super) fn filter(&self) -> &NegativeFilter {
+        &self.filter
+    }
+
+    /// A table over parts read back from a prebuilt store. Run `validate()` before trusting it.
+    pub(super) fn from_parts(arena: Arena, slots: Region<StrSlot>, filter: NegativeFilter, len: usize) -> StrTable {
+        StrTable { arena, slots, len, filter, spill: None }
+    }
+
+    /// One pass over the slots. `get()` slices the arena with each slot's offset and length, and
+    /// probes until it meets an empty slot - so a prebuilt table is only safe to use when every
+    /// key is in bounds and at least one slot is empty. The caller checks both.
+    pub(super) fn validate(&self) -> SlotCheck {
+        let arena = self.arena.len();
+        let mut check = SlotCheck { occupied: 0, max_val: None, in_bounds: true };
+        for slot in self.slots.iter().filter(|s| s.val != EMPTY) {
+            check.occupied += 1;
+            check.max_val = check.max_val.max(Some(slot.val));
+            if (slot.off as usize).checked_add(slot.len as usize).map_or(true, |end| end > arena) {
+                check.in_bounds = false;
+            }
+        }
+        check
+    }
+
     /// Iterate every stored key (used by tests and by the wildcard-regex builder).
     pub fn iter(&self) -> impl Iterator<Item = (&str, u32)> + '_ {
         self.slots.iter().filter(|s| s.val != EMPTY).map(move |s| {
@@ -320,10 +380,14 @@ impl StrTable {
     }
 }
 
+/// `repr(C)` with the padding spelled out, so a slot has no unspecified bytes: the prebuilt store
+/// (`store.rs`) writes slots to disk byte for byte, and reading padding is undefined behaviour.
 #[derive(Clone, Copy)]
-struct IntSlot<K> {
+#[repr(C)]
+pub(super) struct IntSlot<K: IntKey> {
     key: K,
     val: u32,
+    pad: K::Pad,
 }
 
 unsafe impl<K: IntKey> Pod for IntSlot<K> {}
@@ -338,11 +402,14 @@ pub struct IntTable<K: IntKey> {
 
 /// Only the three key widths below: plain integers, so an `IntSlot` of one is plain old data.
 pub trait IntKey: Copy + Eq + 'static {
+    /// Explicit padding filling the slot up to the key's alignment (see `IntSlot`).
+    type Pad: Copy + Default + 'static;
     fn zero() -> Self;
     fn hash_key(&self) -> u64;
 }
 
 impl IntKey for u32 {
+    type Pad = [u32; 0];
     fn zero() -> u32 {
         0
     }
@@ -353,6 +420,7 @@ impl IntKey for u32 {
 }
 
 impl IntKey for u64 {
+    type Pad = [u32; 1];
     fn zero() -> u64 {
         0
     }
@@ -363,6 +431,7 @@ impl IntKey for u64 {
 }
 
 impl IntKey for u128 {
+    type Pad = [u32; 3];
     fn zero() -> u128 {
         0
     }
@@ -381,7 +450,7 @@ impl<K: IntKey> IntTable<K> {
     pub fn with_capacity_in(n: usize, spill: Option<&Spill>) -> IntTable<K> {
         let cap = capacity_for(n);
         IntTable {
-            slots: Region::filled(cap, IntSlot { key: K::zero(), val: EMPTY }, spill),
+            slots: Region::filled(cap, IntSlot { key: K::zero(), val: EMPTY, pad: K::Pad::default() }, spill),
             len: 0,
             filter: NegativeFilter::new_in(n, spill),
             spill: spill.cloned(),
@@ -411,7 +480,7 @@ impl<K: IntKey> IntTable<K> {
         let mut i = slot_of(h, self.slots.len());
         loop {
             if self.slots[i].val == EMPTY {
-                self.slots[i] = IntSlot { key, val };
+                self.slots[i] = IntSlot { key, val, pad: K::Pad::default() };
                 self.len += 1;
                 return;
             }
@@ -447,7 +516,7 @@ impl<K: IntKey> IntTable<K> {
         let cap = (self.slots.len() + self.slots.len() / 2).max(16);
         let old = std::mem::replace(
             &mut self.slots,
-            Region::filled(cap, IntSlot { key: K::zero(), val: EMPTY }, self.spill.as_ref()),
+            Region::filled(cap, IntSlot { key: K::zero(), val: EMPTY, pad: K::Pad::default() }, self.spill.as_ref()),
         );
         for &slot in old.iter() {
             if slot.val == EMPTY {
@@ -463,6 +532,34 @@ impl<K: IntKey> IntTable<K> {
 
     pub fn slot_bytes(&self) -> usize {
         self.filter.memory_bytes() + self.slots.len() * std::mem::size_of::<IntSlot<K>>()
+    }
+
+    pub(super) fn slots(&self) -> &Region<IntSlot<K>> {
+        &self.slots
+    }
+
+    pub(super) fn filter(&self) -> &NegativeFilter {
+        &self.filter
+    }
+
+    /// Every stored `(key, value)`, in slot order.
+    pub fn iter(&self) -> impl Iterator<Item = (K, u32)> + '_ {
+        self.slots.iter().filter(|s| s.val != EMPTY).map(|s| (s.key, s.val))
+    }
+
+    /// A table over parts read back from a prebuilt store. Run `validate()` before trusting it.
+    pub(super) fn from_parts(slots: Region<IntSlot<K>>, filter: NegativeFilter, len: usize) -> IntTable<K> {
+        IntTable { slots, len, filter, spill: None }
+    }
+
+    /// See `StrTable::validate`.
+    pub(super) fn validate(&self) -> SlotCheck {
+        let mut check = SlotCheck { occupied: 0, max_val: None, in_bounds: true };
+        for slot in self.slots.iter().filter(|s| s.val != EMPTY) {
+            check.occupied += 1;
+            check.max_val = check.max_val.max(Some(slot.val));
+        }
+        check
     }
 }
 
@@ -557,6 +654,16 @@ mod tests {
         u.insert((0x0102_0304u64 << 16) | 443, 1);
         assert_eq!(u.get((0x0102_0304u64 << 16) | 443), Some(1));
         assert_eq!(u.get((0x0102_0304u64 << 16) | 80), None);
+    }
+
+    /// The prebuilt store's file format depends on these exact sizes (and records them in its
+    /// header, so a change is a store miss rather than a misread).
+    #[test]
+    fn slot_types_have_the_sizes_the_store_format_assumes() {
+        assert_eq!(std::mem::size_of::<StrSlot>(), 16);
+        assert_eq!(std::mem::size_of::<IntSlot<u32>>(), 8);
+        assert_eq!(std::mem::size_of::<IntSlot<u64>>(), 16);
+        assert_eq!(std::mem::size_of::<IntSlot<u128>>(), 32);
     }
 
     #[test]

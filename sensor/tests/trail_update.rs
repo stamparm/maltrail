@@ -19,16 +19,19 @@ fn repo_root() -> PathBuf {
     PathBuf::from(env!("CARGO_MANIFEST_DIR")).parent().unwrap().to_path_buf()
 }
 
-/// The release binary, if it has been built. Returns `None` so a plain `cargo test` (which does
-/// not necessarily build the binary in release mode) skips rather than fails.
+/// The sensor binary cargo built alongside this test, found next to the test executable (which
+/// lives in `<target>/<profile>/deps/`). It used to be looked up under `sensor/target/`, which is
+/// wrong whenever the target directory is elsewhere (`CARGO_TARGET_DIR`, `build.target-dir`): the
+/// suite then exercised whatever stale binary happened to sit there, or skipped. Returns `None`
+/// only when the binary is genuinely absent.
 fn sensor_binary() -> Option<PathBuf> {
-    for profile in ["release", "debug"] {
-        let path = repo_root().join("sensor").join("target").join(profile).join("maltrail-sensor");
-        if path.is_file() {
-            return Some(path);
-        }
+    let mut dir = std::env::current_exe().ok()?;
+    dir.pop();
+    if dir.ends_with("deps") {
+        dir.pop();
     }
-    None
+    let path = dir.join(format!("maltrail-sensor{}", std::env::consts::EXE_SUFFIX));
+    path.is_file().then_some(path)
 }
 
 struct Fixture {

@@ -16,6 +16,24 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[+] The sensor keeps the trail tables it builds next to TRAILS_FILE
+    (<TRAILS_FILE>.store) and maps them on the next start, -T or reload
+    instead of parsing the CSV. With 1.9M trails on one core, -T takes 0.08 s
+    instead of 0.78 s, a start 0.18 s instead of 0.89 s, and peak RSS drops
+    from 145 MB to 89 MB. The store is used only when it was built from the
+    exact current CSV (content included), whitelist and sensor version.
+    'maltrail-sensor --verify-trail-store' checks it; TRAIL_STORE_CACHE false
+    turns it off.
+[+] A static ARMv7 sensor build with NEON (armv7-unknown-linux-musleabihf)
+    for the Pi 2 and later on a 32-bit OS, which ran the ARMv6 build until
+    now. install.sh picks it only when /proc/cpuinfo reports neon, vfpv4 and
+    idiva, and falls back to the ARMv6 build otherwise.
+[!] REPAIR_TRUNCATED_TRAILS false was ignored: options without a USE_/CHECK_
+    style prefix arrive as text, and it was read as a boolean only.
+[=] A trail reload parses with one thread fewer than the cores, so the
+    capture worker keeps a core. Parsing trails.csv is ~15% faster (0.80 s
+    -> 0.68 s on one core).
+
 [!] Multi-worker capture with CAPTURE_FANOUT_MODE source sent a host's
     outgoing packets to the wrong worker whenever the destination MAC began
     with 0x4 or 0x6: on transmit the kernel hands the fanout program the

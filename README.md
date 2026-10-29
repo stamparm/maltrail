@@ -213,8 +213,10 @@ The installer is verified on twelve Linux distributions, counting releases (Debi
 Ubuntu 22.04 and 24.04, Fedora 41 and 44, Rocky, AlmaLinux, Arch, openSUSE Leap and Tumbleweed,
 and Alpine), plus FreeBSD, NetBSD, OpenBSD and macOS. The matrix is re-run weekly and whenever the installer changes,
 with the full result recorded in [`docs/compat`](docs/compat). Raspberry Pi OS and other
-64-bit ARM systems use the `aarch64` build. 32-bit ARM, down to the Raspberry Pi 1 and Zero, uses a
-static ARMv6 build (`arm-unknown-linux-musleabihf`), and the sensor fits in a 256 MB Pi.
+64-bit ARM systems use the `aarch64` build. On 32-bit ARM, the Pi 2 and later use a static ARMv7
+build with NEON (`armv7-unknown-linux-musleabihf`), and the Pi 1, the Zero and any ARMv7 CPU
+without NEON, VFPv4 and hardware divide use a static ARMv6 build (`arm-unknown-linux-musleabihf`).
+The installer picks the right one, and the sensor fits in a 256 MB Pi.
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/stamparm/maltrail/master/install.sh | sudo sh

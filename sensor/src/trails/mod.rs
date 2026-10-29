@@ -15,6 +15,7 @@
 pub mod loader;
 pub mod regexset;
 pub mod region;
+pub mod store;
 pub mod table;
 
 use std::path::Path;
@@ -46,6 +47,8 @@ pub struct TrailDb {
     len: usize,
     /// Which handshake digests (`FP_*`) any trail key could equal.
     fingerprints: u8,
+    /// Mapped from a prebuilt store (`store.rs`) rather than built from the CSV in this process.
+    prebuilt: bool,
 }
 
 /// A trail key shaped like a JA3 (MD5), a JA4 or a certificate SHA-1, as the sensor renders them.
@@ -160,6 +163,11 @@ impl TrailDb {
         self.strings.is_mapped()
     }
 
+    /// Whether the tables are mapped from a prebuilt store file (`store.rs`).
+    pub fn is_prebuilt(&self) -> bool {
+        self.prebuilt
+    }
+
     pub fn ip4_count(&self) -> usize {
         self.ip4.len()
     }
@@ -258,6 +266,7 @@ impl TrailDbBuilder {
             regex,
             len: self.len,
             fingerprints: self.fingerprints,
+            prebuilt: false,
         }
     }
 }
@@ -320,6 +329,15 @@ pub enum NativeKey {
 
 impl NativeKey {
     pub fn of(trail: &str) -> NativeKey {
+        let bytes = trail.as_bytes();
+        // Without a colon only a bare IPv4 address can qualify, and that starts with a digit. Nearly
+        // every trail is a domain, and the colon searches below were ~3% of the load in a profile.
+        if memchr::memchr(b':', bytes).is_none() {
+            if !bytes.first().is_some_and(u8::is_ascii_digit) {
+                return NativeKey::None;
+            }
+            return crate::addr::parse_canonical_ip(trail).map_or(NativeKey::None, NativeKey::Ip);
+        }
         if let Some(ip) = trail_ip(trail) {
             return NativeKey::Ip(ip);
         }
@@ -409,6 +427,7 @@ pub fn load_with(
 
 pub use loader::{split_csv_record, LoadOptions};
 pub use regexset::is_wildcard_trail;
+pub use store::StoreConfig;
 
 #[cfg(test)]
 mod tests {
@@ -478,6 +497,42 @@ mod tests {
         let db = db_with(&[("01.2.3.4", "badnet", "(static)")]);
         assert!(db.get_ip(Ip::V4(addr_to_int("1.2.3.4").unwrap())).is_none());
         assert!(db.contains("01.2.3.4"));
+    }
+
+    /// The colon-free shortcut in `NativeKey::of` must decide exactly what the full parse decides.
+    #[test]
+    fn native_key_shortcut_agrees_with_the_full_parse() {
+        fn full(trail: &str) -> Option<(Ip, Option<u16>)> {
+            if let Some(ip) = trail_ip(trail) {
+                return Some((ip, None));
+            }
+            parse_canonical_addr_port(trail).map(|(ip, port)| (ip, Some(port)))
+        }
+        for trail in [
+            "1.2.3.4",
+            "01.2.3.4",
+            "1.2.3",
+            "1.2.3.4.5",
+            "256.1.1.1",
+            "evil.com",
+            "",
+            "[1.2.3.4",
+            "1.2.3.4:80",
+            "[dead::beef]:53",
+            "dead::beef",
+            "beef",
+            "/path.php",
+            "9evil.com",
+            "1.2.3.4 ",
+            "[x]",
+        ] {
+            let short = match NativeKey::of(trail) {
+                NativeKey::None => None,
+                NativeKey::Ip(ip) => Some((ip, None)),
+                NativeKey::IpPort(ip, port) => Some((ip, Some(port))),
+            };
+            assert_eq!(short, full(trail), "{trail:?}");
+        }
     }
 
     #[test]

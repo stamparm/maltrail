@@ -78,7 +78,7 @@ pub fn split_csv_record(line: &str, out: &mut Vec<String>) -> usize {
 }
 
 /// Load-time options. Defaults reproduce the shipped sensor behaviour.
-#[derive(Clone, Copy)]
+#[derive(Clone)]
 pub struct LoadOptions {
     /// Repair feed-mangled wildcard patterns rather than dropping them silently. `false` gives
     /// byte-exact `build_trails_regex()` parity with `sensor.py`.
@@ -86,19 +86,31 @@ pub struct LoadOptions {
     /// Build the store's big arrays in file-backed mappings next to the trails file instead of on
     /// the heap (see `region.rs`). Falls back to the heap by itself wherever that cannot be done.
     pub file_backed: bool,
+    /// Read the tables from a prebuilt store when it matches this CSV, and write one when it does
+    /// not (`store.rs`). None: always parse, write nothing.
+    pub store: Option<super::store::StoreConfig>,
+    /// Parse threads. None: `min(cores, MAX_PARSE_THREADS)`. The reload thread asks for one fewer
+    /// than the cores, because it shares the box with capture workers that must keep draining.
+    pub parse_threads: Option<usize>,
 }
 
 impl Default for LoadOptions {
     fn default() -> LoadOptions {
-        LoadOptions { repair_truncated_trails: true, file_backed: true }
+        LoadOptions { repair_truncated_trails: true, file_backed: true, store: None, parse_threads: None }
     }
 }
 
+#[derive(Default)]
 pub struct LoadStats {
     pub rows: usize,
     pub loaded: usize,
     pub whitelisted: usize,
     pub malformed: usize,
+    /// The tables came from a prebuilt store; the CSV was hashed but not parsed.
+    pub from_store: bool,
+    /// What happened to the store, when it is worth a line: a store that existed and was rejected,
+    /// or one that could not be written. None for a hit, a first build, or no store configured.
+    pub store_note: Option<String>,
 }
 
 /// Bytes read per round. Big enough to give every thread a worthwhile slice, small enough that
@@ -140,7 +152,9 @@ struct Shard<'a> {
     /// hash of `info`+`reference` -> candidate indices into `pairs` (verified on hit). Keyed by
     /// hash rather than by the pair itself so a lookup does not have to own the two strings
     /// first: the real file has ~3,100 distinct pairs across 1.6 M rows.
-    pair_index: HashMap<u64, Vec<u32>>,
+    /// FxHash: the key is already a 64-bit mix of the two strings, so SipHash over it bought nothing
+    /// (1.3% of the load in a profile), and a trail file is not attacker-shaped per packet.
+    pair_index: crate::fasthash::FastMap<u64, Vec<u32>>,
     /// trails that might belong in the wildcard alternation, in CSV order. The real decision
     /// (and the global 100-group cap) stays with `TrailRegexBuilder` in the serial drain; this
     /// only front-loads the scan that rejects ~every trail.
@@ -155,9 +169,9 @@ impl<'a> Shard<'a> {
         Shard {
             rows: Vec::with_capacity(expected_rows),
             pairs: Vec::new(),
-            pair_index: HashMap::new(),
+            pair_index: crate::fasthash::FastMap::default(),
             wildcards: Vec::new(),
-            stats: LoadStats { rows: 0, loaded: 0, whitelisted: 0, malformed: 0 },
+            stats: LoadStats::default(),
         }
     }
 
@@ -185,7 +199,12 @@ impl<'a> Shard<'a> {
 /// Byte-for-byte the same decisions the single-threaded loader made: lossy UTF-8, the quoted
 /// path only when a `"` is present, and a third field containing a comma is malformed.
 fn parse_row<'a>(raw: &'a [u8], fields: &mut Vec<String>) -> Option<(Cow<'a, str>, Cow<'a, str>, Cow<'a, str>)> {
-    let line = String::from_utf8_lossy(raw);
+    // `str::from_utf8` first: `from_utf8_lossy` walks `Utf8Chunks`, which was 3.4% of the whole load
+    // in a profile, for rows that are almost always valid already.
+    let line: Cow<'a, str> = match std::str::from_utf8(raw) {
+        Ok(s) => Cow::Borrowed(s),
+        Err(_) => String::from_utf8_lossy(raw),
+    };
     if memchr::memchr(b'"', raw).is_some() {
         if split_csv_record(&line, fields) != 3 {
             return None;
@@ -202,26 +221,29 @@ fn parse_row<'a>(raw: &'a [u8], fields: &mut Vec<String>) -> Option<(Cow<'a, str
         // The overwhelmingly common case: valid UTF-8, unquoted — three slices of the batch
         // buffer, no allocation.
         Cow::Borrowed(s) => {
-            let mut it = s.splitn(3, ',');
-            match (it.next(), it.next(), it.next()) {
-                (Some(a), Some(b), Some(c)) if !c.contains(',') => {
-                    Some((Cow::Borrowed(a), Cow::Borrowed(b), Cow::Borrowed(c)))
-                }
-                _ => None,
-            }
+            let (a, b, c) = three_fields(s)?;
+            Some((Cow::Borrowed(a), Cow::Borrowed(b), Cow::Borrowed(c)))
         }
         // Invalid UTF-8: the replacement characters live in a temporary, so this row has to own
         // its fields.
         Cow::Owned(s) => {
-            let mut it = s.splitn(3, ',');
-            match (it.next(), it.next(), it.next()) {
-                (Some(a), Some(b), Some(c)) if !c.contains(',') => {
-                    Some((Cow::Owned(a.to_string()), Cow::Owned(b.to_string()), Cow::Owned(c.to_string())))
-                }
-                _ => None,
-            }
+            let (a, b, c) = three_fields(&s)?;
+            Some((Cow::Owned(a.to_string()), Cow::Owned(b.to_string()), Cow::Owned(c.to_string())))
         }
     }
+}
+
+/// `splitn(3, ',')` plus "no comma in the third field", by `memchr`. The `CharSearcher` behind
+/// `splitn`/`contains` was ~6% of the load in a profile.
+#[inline]
+fn three_fields(s: &str) -> Option<(&str, &str, &str)> {
+    let b = s.as_bytes();
+    let first = memchr::memchr(b',', b)?;
+    let second = first + 1 + memchr::memchr(b',', &b[first + 1..])?;
+    if memchr::memchr(b',', &b[second + 1..]).is_some() {
+        return None;
+    }
+    Some((&s[..first], &s[first + 1..second], &s[second + 1..]))
 }
 
 /// Parse one line-aligned slice into `shard`. Pure function of the slice and the whitelist —
@@ -314,11 +336,25 @@ pub fn load_trails(path: &Path, whitelist: &Whitelist, options: LoadOptions) -> 
         Ok(f) => f,
         Err(e) if e.kind() == std::io::ErrorKind::NotFound => {
             // Python: a missing trails file yields an empty store (the sensor still runs).
-            return Ok((TrailDb::empty(), LoadStats { rows: 0, loaded: 0, whitelisted: 0, malformed: 0 }));
+            return Ok((TrailDb::empty(), LoadStats::default()));
         }
         Err(e) => return Err(e),
     };
-    let file_len = file.metadata().map(|m| m.len() as usize).unwrap_or(0);
+    let meta = file.metadata()?;
+    let file_len = meta.len() as usize;
+    let mut store_note = None;
+    if let Some(store) = options.store.as_ref() {
+        match super::store::try_load(store, path, &meta, options.repair_truncated_trails) {
+            Ok((db, mut stats)) => {
+                stats.from_store = true;
+                return Ok((db, stats));
+            }
+            Err(super::store::Miss::Absent) => {}
+            Err(miss) => store_note = Some(format!("'{}' not used ({miss})", store.path.display())),
+        }
+    }
+    // Hashed as it streams through the batches below, so writing a store costs no second read.
+    let mut source_hash = super::store::ContentHash::new();
     let mut reader = BufReader::with_capacity(1 << 20, file);
 
     // Estimate from the average real-world record length; the tables grow if it is off.
@@ -337,12 +373,13 @@ pub fn load_trails(path: &Path, whitelist: &Whitelist, options: LoadOptions) -> 
     let mut builder = TrailDbBuilder::new_in(estimated_rows, arena_hint, spill.as_ref());
     let mut regex_builder = TrailRegexBuilder::with_repair(options.repair_truncated_trails);
     let mut pair_index: HashMap<(String, String), u32> = HashMap::with_capacity(8192);
-    let mut stats = LoadStats { rows: 0, loaded: 0, whitelisted: 0, malformed: 0 };
+    let mut stats = LoadStats::default();
 
     let threads = if file_len < PARALLEL_MIN_BYTES {
         1
     } else {
-        std::thread::available_parallelism().map(|n| n.get()).unwrap_or(1).clamp(1, MAX_PARSE_THREADS)
+        let cores = std::thread::available_parallelism().map(|n| n.get()).unwrap_or(1);
+        options.parse_threads.unwrap_or(cores).clamp(1, MAX_PARSE_THREADS)
     };
 
     // Never bigger than the file. A sensor whose trail set is one small custom list should not
@@ -377,6 +414,7 @@ pub fn load_trails(path: &Path, whitelist: &Whitelist, options: LoadOptions) -> 
             }
         };
 
+        source_hash.update(&buf[..end]);
         {
             let region = &buf[..end];
             let bounds = split_lines(region, threads);
@@ -432,7 +470,15 @@ pub fn load_trails(path: &Path, whitelist: &Whitelist, options: LoadOptions) -> 
         }
     }
 
-    Ok((builder.finish(regex_builder.build()), stats))
+    let db = builder.finish(regex_builder.build());
+    let Some(store) = options.store.as_ref().filter(|s| s.write) else {
+        stats.store_note = store_note;
+        return Ok((db, stats));
+    };
+    let (db, mut stats, note) =
+        super::store::write_and_reopen(store, db, stats, &meta, source_hash.finish(), options.repair_truncated_trails);
+    stats.store_note = note.or(store_note);
+    Ok((db, stats))
 }
 
 #[cfg(test)]
@@ -474,6 +520,20 @@ mod tests {
         assert!(db.get("evil.example").is_some(), "the trail after the header must load");
         for comment in ["# Maltrail Trails - indicators of malicious traffic", "# a", "#"] {
             assert!(db.get(comment).is_none(), "{comment:?} was stored as a trail");
+        }
+    }
+
+    /// `three_fields` must make exactly the decisions `splitn(3, ',')` + "no comma in the third"
+    /// made, empty fields included.
+    #[test]
+    fn three_fields_matches_splitn() {
+        for line in ["a,b,c", "a,,c", ",b,", ",,", "a,b", "a", "", "a,b,c,d", "a,b,c,", "évil.example,ü,(static)"] {
+            let mut it = line.splitn(3, ',');
+            let old = match (it.next(), it.next(), it.next()) {
+                (Some(a), Some(b), Some(c)) if !c.contains(',') => Some((a, b, c)),
+                _ => None,
+            };
+            assert_eq!(three_fields(line), old, "{line:?}");
         }
     }
 

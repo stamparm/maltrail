@@ -37,6 +37,7 @@ struct Args {
     version: bool,
     help: bool,
     test_config: bool,
+    verify_trail_store: bool,
 }
 
 impl Default for Args {
@@ -52,6 +53,7 @@ impl Default for Args {
             version: false,
             help: false,
             test_config: false,
+            verify_trail_store: false,
         }
     }
 }
@@ -70,6 +72,8 @@ Options:
   --debug               console output and debug messages
   -T, --test-config     validate the configuration, trails, whitelist, log directory and
                         capture filter, then exit (0 = usable, 1 = would not work)
+  --verify-trail-store  check every checksum of the prebuilt trail store
+                        (<TRAILS_FILE>.store), then exit (0 = intact, 1 = damaged or absent)
   --timestamps SOURCE   offline timestamp source: 'pcap' (default) or 'wallclock'
                         ('wallclock' stamps each packet with the time it is processed
                         instead of the time it was captured)
@@ -97,6 +101,7 @@ fn parse_args(argv: &[String]) -> Result<Args, String> {
             "--offline" => args.offline = true,
             "--debug" => args.debug = true,
             "-T" | "--test-config" => args.test_config = true,
+            "--verify-trail-store" => args.verify_trail_store = true,
             "-c" => args.config_file = PathBuf::from(value_for!("-c")),
             "-r" | "-i" => {
                 if arg == "-i" {
@@ -236,6 +241,23 @@ fn run() -> i32 {
         return maltrail_sensor::selftest::run(&cfg);
     }
 
+    // `--verify-trail-store`: every checksum of the prebuilt store, which a start deliberately does
+    // not read (it would cost the whole file every time). Read-only, like `-T`.
+    if args.verify_trail_store {
+        let path = trails::store::store_path(&cfg.trails_file);
+        return match trails::store::verify(&path) {
+            Ok(summary) => {
+                cprintln!("[o] trail store '{}': {summary}", path.display());
+                0
+            }
+            Err(e) => {
+                ceprintln!("[x] trail store '{}': {e}", path.display());
+                ceprintln!("[?] it is a cache: delete it and the sensor rebuilds it on the next start");
+                1
+            }
+        };
+    }
+
     // Offline replay reads a file: no privileges are involved, so nothing is demanded. Live
     // capture needs CAP_NET_RAW, which is not the same thing as root. DISABLE_CHECK_SUDO remains
     // the documented escape hatch.
@@ -293,7 +315,7 @@ fn run() -> i32 {
         refresh_trails(&cfg, args.quiet, true);
     }
 
-    let (db, stats) = match trails::load_with(&cfg.trails_file, &whitelist, load_options(&cfg)) {
+    let (db, stats) = match trails::load_with(&cfg.trails_file, &whitelist, load_options(&cfg, false)) {
         Ok(v) => v,
         Err(e) => {
             ceprintln!("[!] something went wrong during trails file read '{}' ('{e}')", cfg.trails_file.display());
@@ -315,6 +337,11 @@ fn run() -> i32 {
     if !args.quiet {
         cprintln!("[i] {} trails loaded", thousands(stats.loaded as u64));
     }
+    if let Some(note) = &stats.store_note {
+        // A rejected or unwritable store is not fatal - the CSV was parsed as before - but a store
+        // that never gets used costs every start a full parse, and that should be visible.
+        ceprintln!("[!] trail store: {note}");
+    }
 
     let statics = match statics_build {
         // Everything in `Statics::build()` either succeeds or `expect()`s, so a failed join means
@@ -332,7 +359,13 @@ fn run() -> i32 {
         thousands(stats.whitelisted as u64),
         stats.malformed,
         db.memory_bytes() as f64 / (1024.0 * 1024.0),
-        if db.is_file_backed() { " (file-backed)" } else { "" }
+        if db.is_prebuilt() {
+            " (prebuilt store)"
+        } else if db.is_file_backed() {
+            " (file-backed)"
+        } else {
+            ""
+        }
     );
     let skipped_regexes: Vec<String> = db.regex().skipped().to_vec();
     let repaired_regexes: usize = db.regex().repaired().len();
@@ -578,7 +611,7 @@ fn run() -> i32 {
                         continue;
                     }
                     last_mtime = mtime;
-                    match trails::load_with(&cfg_reload.trails_file, &wl_reload, load_options(&cfg_reload)) {
+                    match trails::load_with(&cfg_reload.trails_file, &wl_reload, load_options(&cfg_reload, true)) {
                         Ok((db, stats)) => {
                             // A reload that loses most of the trail set is far more likely to be a
                             // half-written or truncated file than a real change, and publishing it
@@ -606,7 +639,14 @@ fn run() -> i32 {
                                 store_reload.publish(db);
                                 reg_reload.trail_generation.store(store_reload.generation(), Ordering::Relaxed);
                                 reg_reload.reloads_ok.fetch_add(1, Ordering::Relaxed);
-                                cprintln!("[i] reloaded {} trails", thousands(stats.loaded as u64));
+                                cprintln!(
+                                    "[i] reloaded {} trails{}",
+                                    thousands(stats.loaded as u64),
+                                    if stats.from_store { " (prebuilt store)" } else { "" }
+                                );
+                                if let Some(note) = &stats.store_note {
+                                    output::log_error(&format!("trail store: {note}"), true);
+                                }
                             }
                         }
                         Err(e) => {
@@ -1100,11 +1140,8 @@ fn warn_if_trails_are_stale(cfg: &Config) {
 }
 
 /// Loader options taken from the configuration.
-fn load_options(cfg: &Config) -> trails::LoadOptions {
-    trails::LoadOptions {
-        repair_truncated_trails: cfg.repair_truncated_trails,
-        file_backed: maltrail_sensor::config::file_backed_trails(),
-    }
+fn load_options(cfg: &Config, reload: bool) -> trails::LoadOptions {
+    cfg.trail_load_options(reload)
 }
 
 fn non_empty(value: &str) -> Option<String> {

@@ -244,6 +244,7 @@ pub const KNOWN_CONFIG_OPTIONS: &[&str] = &[
     "SYSLOG_SERVER",
     "TRAILS_FILE",
     "TRAIL_RELOAD_MIN_RATIO",
+    "TRAIL_STORE_CACHE",
     "UDP_ADDRESS",
     "UDP_PORT",
     "UPDATE_PERIOD",
