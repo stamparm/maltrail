@@ -22,6 +22,10 @@ sensor/target/
 sensor/out.txt
 sensor/*.callgrind
 callgrind.out.*
+# The sensor's prebuilt trail store (and its in-flight temp file), written next to any TRAILS_FILE -
+# including the test corpus when a check replays it with the real binary
+*.csv.store
+.*.csv.store.tmp-*
 
 # Local tooling for the CSS/JS build (not part of the project source)
 node_modules/

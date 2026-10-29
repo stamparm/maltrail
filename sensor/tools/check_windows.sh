@@ -148,13 +148,18 @@ export LIBPCAP_LIBDIR
 CARGO_TERM_COLOR=never
 export CARGO_TERM_COLOR
 cargo build --release --manifest-path "$ROOT/sensor/Cargo.toml" --target "$TARGET" --bin maltrail-sensor
-WIN_BIN=$ROOT/sensor/target/$TARGET/release/maltrail-sensor.exe
+# Where cargo actually put it. `sensor/target` is only the default: with CARGO_TARGET_DIR or a
+# `build.target-dir` it holds whatever stale binary an older build left, and this check then
+# compared two binaries that were not the tree under test.
+TARGET_DIR=$(cargo metadata --format-version 1 --no-deps --manifest-path "$ROOT/sensor/Cargo.toml" \
+    | python3 -c 'import json, sys; print(json.load(sys.stdin)["target_directory"])')
+WIN_BIN=$TARGET_DIR/$TARGET/release/maltrail-sensor.exe
 test -f "$WIN_BIN" || { echo "[!] no Windows binary" >&2; exit 1; }
 file "$WIN_BIN" | grep -q 'PE32+' || { echo "[!] not a 64-bit PE: $(file -b "$WIN_BIN")" >&2; exit 1; }
 
 echo "== building the native comparison binary =="
 cargo build --release --manifest-path "$ROOT/sensor/Cargo.toml" --bin maltrail-sensor
-NATIVE_BIN=$ROOT/sensor/target/release/maltrail-sensor
+NATIVE_BIN=$TARGET_DIR/release/maltrail-sensor
 
 # --- it starts, and reports itself -------------------------------------------------------------
 echo "== the Windows binary runs =="

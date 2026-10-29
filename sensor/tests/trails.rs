@@ -554,13 +554,16 @@ fn the_negative_filter_never_hides_a_key_at_real_scale() {
 }
 
 // -------------------------------------------------------------------------------------------------
-// The prebuilt trail store (src/trails/store.rs). A store is a cache of the CSV; the property that
+// The prebuilt trail store (src/trails/store.rs), Unix-only like the store itself (it is mapped
+// back with mmap). A store is a cache of the CSV; the property that
 // matters is that it can never answer for a CSV it was not built from, and never answers anything a
 // parse would not.
 // -------------------------------------------------------------------------------------------------
 
+#[cfg(unix)]
 use maltrail_sensor::trails::{LoadOptions, StoreConfig, TrailDb};
 
+#[cfg(unix)]
 fn store_dir(name: &str) -> PathBuf {
     let dir = std::env::temp_dir().join(format!("mt-store-{name}-{}", std::process::id()));
     let _ = std::fs::remove_dir_all(&dir);
@@ -568,6 +571,7 @@ fn store_dir(name: &str) -> PathBuf {
     dir
 }
 
+#[cfg(unix)]
 fn with_store(store: &std::path::Path, whitelist_hash: u64) -> LoadOptions {
     LoadOptions {
         store: Some(StoreConfig { path: store.to_path_buf(), whitelist_hash, write: true }),
@@ -576,6 +580,7 @@ fn with_store(store: &std::path::Path, whitelist_hash: u64) -> LoadOptions {
 }
 
 /// Every shape a store has to carry, and the keys to ask it about.
+#[cfg(unix)]
 fn varied_csv() -> (Vec<u8>, Vec<String>) {
     let mut csv: Vec<u8> = b"# a licence header, not a trail\n".to_vec();
     let mut keys = Vec::new();
@@ -613,6 +618,7 @@ fn varied_csv() -> (Vec<u8>, Vec<String>) {
 }
 
 /// Two stores must answer every question identically.
+#[cfg(unix)]
 fn assert_same_answers(want: &TrailDb, got: &TrailDb, keys: &[String]) {
     use maltrail_sensor::trails::{FP_CERT, FP_JA3, FP_JA4};
     assert_eq!(got.len(), want.len());
@@ -647,6 +653,7 @@ fn assert_same_answers(want: &TrailDb, got: &TrailDb, keys: &[String]) {
 }
 
 #[test]
+#[cfg(unix)]
 fn a_prebuilt_store_answers_exactly_like_a_parse() {
     let dir = store_dir("parity");
     let csv = dir.join("trails.csv");
@@ -733,6 +740,7 @@ fn a_changed_trails_file_is_never_served_from_the_store() {
 }
 
 #[test]
+#[cfg(unix)]
 fn a_changed_whitelist_or_repair_setting_misses_the_store() {
     let dir = store_dir("identity");
     let csv = dir.join("trails.csv");
@@ -753,6 +761,7 @@ fn a_changed_whitelist_or_repair_setting_misses_the_store() {
 }
 
 #[test]
+#[cfg(unix)]
 fn an_unwritable_store_still_loads_the_trails() {
     let dir = store_dir("unwritable");
     let csv = dir.join("trails.csv");
@@ -766,6 +775,7 @@ fn an_unwritable_store_still_loads_the_trails() {
 }
 
 #[test]
+#[cfg(unix)]
 fn real_trails_prebuilt_store_round_trip() {
     let Some(path) = real_trails_file() else {
         println!("[skip] no real trails file ($MALTRAIL_TRAILS or ~/.maltrail/trails.csv) on this machine");

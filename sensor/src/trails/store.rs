@@ -859,15 +859,19 @@ pub fn verify(path: &Path) -> Result<String, String> {
 #[cfg(test)]
 mod tests {
     use super::*;
+    #[cfg(unix)]
     use crate::trails::loader::{load_trails, LoadOptions};
+    #[cfg(unix)]
     use crate::whitelist::Whitelist;
 
+    #[cfg(unix)]
     struct Fixture {
         dir: PathBuf,
         csv: PathBuf,
         cfg: StoreConfig,
     }
 
+    #[cfg(unix)]
     impl Fixture {
         fn new(name: &str) -> Fixture {
             let dir = std::env::temp_dir().join(format!("mt-store-unit-{name}-{}", std::process::id()));
@@ -939,12 +943,14 @@ mod tests {
         }
     }
 
+    #[cfg(unix)]
     impl Drop for Fixture {
         fn drop(&mut self) {
             let _ = std::fs::remove_dir_all(&self.dir);
         }
     }
 
+    #[cfg(unix)]
     #[test]
     fn a_damaged_store_is_a_miss_not_a_wrong_answer() {
         let f = Fixture::new("damage");
@@ -971,6 +977,7 @@ mod tests {
 
     /// A single flipped bit inside a section can slip past the load-time checks - they deliberately
     /// do not read the whole body - but it can never index out of bounds, and `verify` sees it.
+    #[cfg(unix)]
     #[test]
     fn verify_catches_what_the_load_checks_do_not_read() {
         let f = Fixture::new("verify");

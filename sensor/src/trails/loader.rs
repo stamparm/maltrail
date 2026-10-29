@@ -343,7 +343,10 @@ pub fn load_trails(path: &Path, whitelist: &Whitelist, options: LoadOptions) -> 
     let meta = file.metadata()?;
     let file_len = meta.len() as usize;
     let mut store_note = None;
-    if let Some(store) = options.store.as_ref() {
+    // Only where a store can be mapped back (`FileMap` is Unix-only): elsewhere a written store
+    // would be a 100 MB file that is never read.
+    let usable_store = options.store.as_ref().filter(|_| cfg!(unix));
+    if let Some(store) = usable_store {
         match super::store::try_load(store, path, &meta, options.repair_truncated_trails) {
             Ok((db, mut stats)) => {
                 stats.from_store = true;
@@ -471,7 +474,7 @@ pub fn load_trails(path: &Path, whitelist: &Whitelist, options: LoadOptions) -> 
     }
 
     let db = builder.finish(regex_builder.build());
-    let Some(store) = options.store.as_ref().filter(|s| s.write) else {
+    let Some(store) = usable_store.filter(|s| s.write) else {
         stats.store_note = store_note;
         return Ok((db, stats));
     };
