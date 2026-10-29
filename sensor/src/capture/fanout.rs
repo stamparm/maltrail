@@ -6,7 +6,7 @@
 //! own handle and joins the same group, so the kernel flow-hashes the interface's traffic
 //! across the workers instead of delivering every packet to every socket.
 //!
-//! This reproduces `pcapy-ng`'s `set_fanout()`:
+//! The socket option is set as
 //! `setsockopt(fd, SOL_PACKET, PACKET_FANOUT, (group & 0xffff) | (type << 16))`.
 
 #[cfg(target_os = "linux")]
@@ -149,9 +149,8 @@ fn attach_program(fd: i32, prog: &[SockFilter]) -> Result<(), FanoutError> {
     Ok(())
 }
 
-/// A stable per-interface group id: `(pid + interface index) & 0xffff`, matching
-/// `sensor.py`. Two sensors on one host therefore get different groups unless the operator
-/// pins one with `CAPTURE_FANOUT_GROUP`.
+/// A stable per-interface group id: `(pid + interface index) & 0xffff`. Two sensors on one host
+/// therefore get different groups unless the operator pins one with `CAPTURE_FANOUT_GROUP`.
 pub fn default_group(interface_index: usize) -> u16 {
     // SAFETY: getpid() is always safe.
     let pid = unsafe { libc::getpid() } as u32;
@@ -188,7 +187,7 @@ mod tests {
     }
 
     #[test]
-    fn argument_encoding_matches_pcapy_ng() {
+    fn argument_encoding() {
         // (group & 0xffff) | (type << 16)
         let group: u32 = 0x1234;
         let arg = (group & 0xffff) | ((FanoutMode::Hash.kernel_value() | PACKET_FANOUT_FLAG_DEFRAG) << 16);

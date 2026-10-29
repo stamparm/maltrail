@@ -132,7 +132,7 @@ jobs:
           watches those inputs.
 
           Verified in the job that produced it: gen_settings.py --check, cargo fmt --check, and
-          the generated-constants parity test all pass on this content."
+          the generated-constants test all pass on this content."
           git push --force origin "$BRANCH"
 
           body=$(cat <<'EOF'

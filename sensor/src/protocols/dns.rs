@@ -1,20 +1,18 @@
-//! DNS extraction, byte-for-byte equivalent to the DNS block of
-//! `sensor.py:_process_packet()`.
+//! DNS extraction for the packet path.
 //!
-//! Compatibility notes (all deliberate, all matching Python):
+//! Compatibility notes (all deliberate; the emitted names are part of the log format):
 //!  * The question-section walk does **not** honour compression pointers: a label length
-//!    byte of `0xc0` is taken as a 192-byte label, exactly like Python's loop.
+//!    byte of `0xc0` is taken as a 192-byte label.
 //!  * A truncated question leaves the trailing dot on the name, which then fails
 //!    `VALID_DNS_NAME_REGEX` and drops the packet.
-//!  * Non-UTF-8 label bytes become U+FFFD (Python's `get_text` uses `errors="replace"`),
-//!    which also fails the name regex.
+//!  * Non-UTF-8 label bytes become U+FFFD (a lossy decode), which also fails the name regex.
 
 /// The parsed question section.
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Question {
-    /// Lower-cased query name without the trailing dot (`query` in Python).
+    /// Lower-cased query name without the trailing dot.
     pub name: String,
-    /// Offset of the terminating zero-length label (`offset` in Python).
+    /// Offset of the terminating zero-length label.
     pub name_end: usize,
     /// True when the walk ended because the buffer ran out rather than at a zero label.
     pub truncated: bool,
@@ -70,7 +68,7 @@ fn decode_name(dns_data: &[u8], name: &mut String) -> (usize, bool) {
             truncated = false;
             break;
         }
-        // Python's slice is forgiving: it yields fewer bytes near the end of the buffer.
+        // A label running past the buffer yields the bytes that are there, not an error.
         let start = offset + 1;
         let end = (offset + length + 1).min(dns_data.len());
         if start <= end {
@@ -79,7 +77,7 @@ fn decode_name(dns_data: &[u8], name: &mut String) -> (usize, bool) {
             //
             // A DNS name that is not pure ASCII cannot pass `VALID_DNS_NAME_REGEX`, so it is
             // dropped before anything observable happens; the slow path is kept anyway so the
-            // decoded text is byte-identical to Python's for every input.
+            // decoded text is exact for every input.
             if label.is_ascii() {
                 // A byte loop: `extend_from_slice` is a libc memcpy call per label.
                 buf.extend(label.iter().map(u8::to_ascii_lowercase));
@@ -96,15 +94,15 @@ fn decode_name(dns_data: &[u8], name: &mut String) -> (usize, bool) {
     // output of `from_utf8_lossy`. Validating it again cost ~100 instructions per query, more
     // than the walk itself.
     *name = unsafe { String::from_utf8_unchecked(buf) };
-    // Python applies `str.lower()` to the whole decoded name, which is Unicode-aware; only the
-    // non-ASCII case needs it, and only that case pays for it.
+    // The whole decoded name is lower-cased Unicode-aware; only the non-ASCII case needs it,
+    // and only that case pays for it.
     if non_ascii {
         *name = name.to_lowercase();
     }
     (offset, truncated)
 }
 
-/// `type_, class_ = struct.unpack("!HH", dns_data[offset + 1:offset + 5])`
+/// QTYPE and QCLASS, the two big-endian u16s after the question name.
 pub fn question_type_class(dns_data: &[u8], name_end: usize) -> Option<(u16, u16)> {
     let start = name_end.checked_add(1)?;
     // `checked_add` on BOTH ends: `name_end` is caller-supplied, and `start + 4` overflows for a
@@ -116,8 +114,7 @@ pub fn question_type_class(dns_data: &[u8], name_end: usize) -> Option<(u16, u16
 }
 
 /// Walk the answer section looking for the first Type A record and return its 4 RDATA
-/// bytes as an IPv4 address, mirroring the Python answer walk (including its tolerance of
-/// truncated / malformed sections).
+/// bytes as an IPv4 address, tolerating truncated / malformed sections.
 pub fn first_a_record(dns_data: &[u8], name_end: usize) -> Option<u32> {
     let mut cursor = name_end.checked_add(5)?;
     let mut ptr = cursor;
@@ -295,7 +292,7 @@ mod tests {
         assert!(!q.truncated);
         assert_eq!(question_type_class(&m, q.name_end), Some((1, 1)));
         assert_eq!(flags_high(&m), Some(0x01));
-        // standard query test from sensor.py: flags_high & 0xfa == 0
+        // standard query test: flags_high & 0xfa == 0
         assert_eq!(flags_high(&m).unwrap() & 0xfa, 0x00);
     }
 
@@ -307,7 +304,7 @@ mod tests {
 
     #[test]
     fn truncated_question_keeps_trailing_dot() {
-        // header claims a question, body cut short -> Python leaves the trailing '.' so the
+        // header claims a question, body cut short -> the trailing '.' stays, so the
         // name fails VALID_DNS_NAME_REGEX and the packet is dropped
         let mut m = query_message("evil.com", 1, 1, 0x0100);
         m.truncate(12 + 5); // "\x04evil"
@@ -331,7 +328,7 @@ mod tests {
             },
             {
                 let mut v = query_message("evil.com", 1, 1, 0x0100)[..12].to_vec();
-                v.push(0xc0); // taken as a 192-byte label, exactly like Python
+                v.push(0xc0); // taken as a 192-byte label
                 v.push(0x0c);
                 v
             },
@@ -380,7 +377,7 @@ mod tests {
 
     #[test]
     fn empty_answer_section_returns_none() {
-        // the retired Python suite's test_dns_response_empty_answer_section_no_crash
+        // a response with an empty answer section must not crash
         let m = query_message("evil.com", 1, 1, 0x8080);
         let name_end = question(&m).unwrap().name_end;
         assert_eq!(first_a_record(&m, name_end), None);

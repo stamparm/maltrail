@@ -10,8 +10,7 @@ pub mod scan;
 
 use crate::addr::Ip;
 
-/// `sensor.py:_HEURISTIC_NAMES` — the heuristics an operator can mute individually via
-/// `DISABLED_HEURISTICS`.
+/// The heuristics an operator can mute individually via `DISABLED_HEURISTICS`.
 pub const HEURISTIC_NAMES: [&str; 10] = [
     "port_scanning",
     "udp_scanning",
@@ -41,10 +40,10 @@ pub const HEURISTIC_NAMES: [&str; 10] = [
 /// Matches `scan::SCAN_MAX_KEYS`, which has always enforced exactly this.
 pub const HEURISTIC_MAX_KEYS: usize = scan::SCAN_MAX_KEYS;
 
-/// `sensor.py:_get_local_prefix()` — the most common `A.B.` prefix among the source
+/// The most common `A.B.` prefix among the source
 /// addresses currently tracked by the scan accumulators.
 ///
-/// Python computes `re.sub(r"\d+\.\d+\Z", "", ip)` over the *rendered* address, so an
+/// The candidate is `re.sub(r"\d+\.\d+\Z", "", ip)` of the *rendered* address, so an
 /// IPv4 source contributes `A.B.` and an IPv6 source contributes its whole rendered form
 /// (the pattern does not match there). Ties are broken by the larger candidate string,
 /// matching `sorted(..., reverse=True)`.
@@ -65,7 +64,7 @@ pub fn local_prefix(sources: impl Iterator<Item = Ip>, cached: &mut Option<Strin
         *cached = Some(best.clone());
         return best;
     }
-    // Python falls back to the last non-empty value it cached, then to '_'.
+    // Fall back to the last non-empty value cached, then to '_', which no address starts with.
     cached.clone().unwrap_or_else(|| "_".to_string())
 }
 

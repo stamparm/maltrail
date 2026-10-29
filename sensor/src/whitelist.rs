@@ -1,5 +1,5 @@
-//! Whitelisting, ported from `core/settings.py:read_whitelist()` and
-//! `core/common.py:check_whitelisted()` / `sensor.py:_check_domain_member()`.
+//! Whitelisting: the same entries and semantics as `core/settings.py:read_whitelist()` and
+//! `core/common.py:check_whitelisted()`, plus the parent-domain walk.
 
 use std::collections::HashSet;
 use std::path::Path;
@@ -19,8 +19,8 @@ pub struct Whitelist {
     ranges: Vec<(u32, u32)>,
     /// Native mirrors of the exact set, so an IP check needs no text rendering. Only
     /// entries whose canonical Maltrail rendering equals the configured text are
-    /// mirrored, which makes the native check exactly equivalent to Python's string
-    /// comparison.
+    /// mirrored, which makes the native check exactly equivalent to comparing the
+    /// text.
     // Same argument as the trail store: the whitelist is fixed at load, so FxHash is safe here.
     // (`exact` stays on the default hasher — it is probed with attacker-chosen domain strings and
     // is the one whitelist structure whose LOOKUP keys come off the wire.)
@@ -109,7 +109,7 @@ impl Whitelist {
         self.ranges.iter().any(|(prefix, mask)| value & mask == *prefix)
     }
 
-    /// `sensor.py:_check_domain_member()`
+    /// Is the query, or any of its parent domains, whitelisted?
     pub fn check_domain_member(&self, query: &str) -> bool {
         self.check_domain_member_depth(query) > 0
     }
@@ -201,8 +201,8 @@ impl Whitelist {
     }
 }
 
-/// `sensor.py:_check_domain_member()` — is the query, or any of its parent domains, in
-/// the given collection? The query is lower-cased first, exactly like Python.
+/// Is the query, or any of its parent domains, in the given collection? The query is
+/// lower-cased first.
 pub fn check_domain_member(query: &str, contains: impl Fn(&str) -> bool) -> bool {
     let lowered = if query.bytes().any(|b| b.is_ascii_uppercase()) {
         std::borrow::Cow::Owned(query.to_ascii_lowercase())
@@ -221,7 +221,7 @@ pub fn check_domain_member(query: &str, contains: impl Fn(&str) -> bool) -> bool
     false
 }
 
-/// The domain part Python extracts before the whitelist test:
+/// The domain part checked against the whitelist:
 /// `re.split(r"(?i)[^A-Z0-9._-]", query or "")[0]`
 pub fn whitelist_domain_token(query: &str) -> &str {
     let idx = query
@@ -250,9 +250,9 @@ fn parse_cidr4(line: &str) -> Option<(u32, u32)> {
         return None;
     }
     let bits: u32 = mask.parse().ok()?;
-    // Python catches (IndexError, ValueError) and falls back to a verbatim entry; a mask
-    // above 32 is accepted by make_mask() in Python (shifting by a negative raises
-    // ValueError -> verbatim). Reproduce by rejecting >32 here.
+    // core/settings.py:read_whitelist() catches (IndexError, ValueError) and falls back to a
+    // verbatim entry; a mask above 32 makes make_mask() shift by a negative, which raises
+    // ValueError -> verbatim. Reproduce by rejecting >32 here.
     if bits > 32 {
         return None;
     }
@@ -297,7 +297,7 @@ mod tests {
     }
 
     /// The same cases `tests/test_addr.py` holds `core/addr.py:canonical_ip_trail()` to: the build
-    /// (Python) and the sensor must agree on what an entry means.
+    /// (`core/`) and the sensor must agree on what an entry means.
     #[test]
     fn canonical_ip_text_answers_as_canonical_ip_trail_does() {
         use crate::addr::canonical_ip_text as c;
@@ -359,7 +359,7 @@ mod tests {
         assert_eq!(wl.check_domain_member_depth("host.platform.test"), 2);
         assert_eq!(wl.check_domain_member_entry("host.platform.test"), Some("platform.test"));
         assert_eq!(wl.check_domain_member_depth("platform.test"), 2);
-        // case-insensitive, exactly like Python's lowered walk
+        // case-insensitive: the query is lower-cased before the walk
         assert_eq!(wl.check_domain_member_entry("HOST.Platform.TEST"), Some("platform.test"));
         // exact multi-label entry: depth counts ITS labels
         assert_eq!(wl.check_domain_member_depth("x.a.b.exact.test"), 4);

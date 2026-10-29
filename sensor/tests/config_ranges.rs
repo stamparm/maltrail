@@ -1,4 +1,4 @@
-//! Numeric option bounds (ROADMAP Gate 1.6).
+//! Numeric option bounds: out-of-range values are refused, not silently accepted.
 //!
 //! Each of these was accepted silently and produced a sensor that looked configured and
 //! detected badly or not at all:

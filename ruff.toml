@@ -15,7 +15,6 @@ target-version = "py37"
 line-length = 130
 
 exclude = [
-    "old",            # the previous sensor, kept verbatim as the parity oracle
     "html",
     "misc",
     "trails",

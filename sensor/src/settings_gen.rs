@@ -49,7 +49,7 @@ pub const WHITELIST_UA_REGEX: &str =
 /// POTENTIAL_INFECTION_PORTS
 pub const POTENTIAL_INFECTION_PORTS: &[u16] = &[135, 139, 445, 1433, 3389, 6379, 6892, 6893, 6901];
 
-/// _STEALTH_FLAGS from sensor.py (NULL / bare-FIN / XMAS scans)
+/// TCP flag bytes of stealth scans (NULL / bare-FIN / XMAS)
 pub const STEALTH_FLAGS: &[u8] = &[0x00, 0x01, 0x29];
 
 pub const IGNORE_DNS_QUERY_SUFFIXES: &[&str] = &[

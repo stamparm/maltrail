@@ -1,8 +1,7 @@
 //! Bounds-checked packet header parsing.
 //!
 //! Every parser here takes a borrowed slice and returns `Option`, so a truncated or
-//! hostile packet yields `None` instead of panicking. This mirrors `sensor.py`, where a
-//! short header raises `struct.error` and the packet is silently dropped.
+//! hostile packet yields `None` instead of panicking, and the packet is silently dropped.
 
 pub mod dlt;
 pub mod tunnel;
@@ -12,7 +11,7 @@ use crate::addr::Ip;
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub struct IpHeader {
     pub version: u8,
-    /// `iph_length` in `sensor.py` — offset of the transport header inside `ip_data`.
+    /// Offset of the transport header inside `ip_data`.
     pub header_len: usize,
     pub protocol: u8,
     pub src: Ip,
@@ -26,7 +25,7 @@ pub enum Drop {
     NotIp,
     /// A non-first IPv4 fragment: it carries no transport header.
     Fragment,
-    /// Header truncated (Python: `struct.error`).
+    /// Header truncated.
     Truncated,
 }
 
@@ -68,10 +67,9 @@ fn parse_ipv6(ip_data: &[u8]) -> Result<IpHeader, Drop> {
     dst.copy_from_slice(&ip_data[24..40]);
     // Walk the extension-header chain to find the real transport header.
     //
-    // This used to take Next Header as the protocol and stop, for parity with sensor.py.
-    // That sensor is retired, and the behaviour was an evasion primitive: a packet with a
-    // Hop-by-Hop header reports protocol 0, so the transport header is never located and
-    // no port, DNS name, HTTP host or TLS SNI is read from it. Eight bytes hid a packet
+    // Taking Next Header as the protocol and stopping would be an evasion primitive: a packet
+    // with a Hop-by-Hop header would report protocol 0, so the transport header is never
+    // located and no port, DNS name, HTTP host or TLS SNI is read from it. Eight bytes hid a packet
     // from every payload-derived trail.
     //
     // The walk is reached only when Next Header actually names an extension header, so a plain
@@ -162,7 +160,7 @@ fn walk_ipv6_ext_headers(ip_data: &[u8], first: u8) -> Result<(u8, usize), Drop>
     Ok((protocol, offset))
 }
 
-/// Parse the IP header at the start of `ip_data` (`sensor.py:_process_packet`).
+/// Parse the IP header at the start of `ip_data`.
 pub fn parse_ip(ip_data: &[u8]) -> Result<IpHeader, Drop> {
     let first = *ip_data.first().ok_or(Drop::NotIp)?;
     match first >> 4 {
@@ -274,7 +272,7 @@ mod tests {
 
     #[test]
     fn ipv4_options_change_header_length() {
-        // IHL=6 -> 24-byte header (the retired Python suite's test_ipv4_with_options_header_length)
+        // IHL=6 -> 24-byte header
         let mut p = ipv4(6, "10.0.0.5", "66.66.66.66", &[0u8; 24]);
         p[0] = 0x46;
         let h = parse_ip(&p).unwrap();

@@ -1,5 +1,5 @@
 # coding: utf-8
-"""Test helper: build pcap files (and raw packets) for the pcapy-ng fast-path battery.
+"""Test helper: build pcap files (and raw packets) byte by byte.
 stdlib only; Py2/3."""
 import os
 import struct

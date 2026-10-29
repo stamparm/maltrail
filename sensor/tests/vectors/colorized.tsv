@@ -8,7 +8,7 @@
 [^] running...	[[92;1m^[0m] running...
 [z] unknown marker	[z] unknown marker
 Maltrail (sensor) #v2.2 {https://maltrail.github.io}	Maltrail ([92;1msensor[0m) #v2.2 {[34m[4mhttps://maltrail.github.io[0m}
-Usage: sensor.py [options]	Usage: [97;1msensor.py [options][0m
+Usage: maltrail-sensor [options]	Usage: [97;1mmaltrail-sensor [options][0m
 [i] using configuration file '/tmp/maltrail.conf'	[[94mi[0m] using configuration file '[37m/tmp/maltrail.conf[0m'
 [i] 1,554,918 trails loaded	[[94mi[0m] 1,554,918 trails loaded
 "2026-08-05 23:31:02.122079" Laptop 10.13.13.2 - 221.8.69.25 - ICMP IP 221.8.69.25 "sinkhole conficker (malware)" (static)	"[37m2026-08-05 23:31:02.122079[0m" Laptop 10.13.13.2 - 221.8.69.25 - ICMP [41mIP[0m 221.8.69.25 "sinkhole conficker ([37m[91mmalware[0m[0m)" ([37mstatic[0m)

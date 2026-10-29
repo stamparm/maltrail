@@ -1,9 +1,9 @@
-//! Multi-worker parity (ROADMAP Gate 2.2).
+//! Multi-worker parity: N workers detect what one worker detects.
 //!
-//! Every parity result so far is single-worker. In production the sensor runs N workers joined
+//! The other replay suites are single-worker. In production the sensor runs N workers joined
 //! to one `PACKET_FANOUT_HASH` group, and the kernel splits traffic **by flow** — so each worker
-//! sees a slice of the packets and keeps its own detection state. That is the largest untested
-//! surface in the port, and it splits cleanly in two:
+//! sees a slice of the packets and keeps its own detection state. That surface splits cleanly in
+//! two:
 //!
 //!   * **Exact trail matching is per packet and stateless.** Which worker a packet lands on
 //!     cannot change whether its IOC is detected. If it ever does, fanout is silently losing
@@ -12,7 +12,7 @@
 //!   * **Counting heuristics are per source, and a scan is many flows.** Flow-hashing scatters
 //!     one scanner's probes across workers, so each worker sees a fraction of the evidence and a
 //!     threshold needs roughly N times more probes to trip. This is inherent to hashing by flow
-//!     while counting by source (COMPATIBILITY.md §3). Measured and reported here rather than
+//!     while counting by source. Measured and reported here rather than
 //!     asserted, so a regression shows up as a number moving.
 //!
 //! The kernel's fanout hash is not reproduced bit for bit — what matters is the property it
@@ -255,7 +255,7 @@ fn heuristic_dilution_is_measured_and_never_invents_alerts() {
     }
     println!(
         "[i] loss here is inherent: PACKET_FANOUT_HASH splits by FLOW, the scan heuristics count \
-         by SOURCE, and a scan is many flows (COMPATIBILITY.md §3). Set CAPTURE_WORKERS 1 for \
+         by SOURCE, and a scan is many flows. Set CAPTURE_WORKERS 1 for \
          undiluted heuristic fidelity."
     );
 }

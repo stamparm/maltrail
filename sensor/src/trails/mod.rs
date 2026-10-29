@@ -3,7 +3,7 @@
 //! External format is unchanged (`~/.maltrail/trails.csv`). Internally the store keeps
 //!
 //!  * one interned `(info, reference)` pair table (millions of trails share a few
-//!    thousand distinct pairs, exactly as Python's `_pairs` interning exploits),
+//!    thousand distinct pairs, exactly as `core/trailsdict.py`'s `_pairs` interning exploits),
 //!  * a string-keyed table for every trail (needed for domain/URL/path/word lookups),
 //!  * native side tables for IPv4, IPv4:port, IPv6 and IPv6:port trails so the packet
 //!    path never renders an address to text just to test membership,
@@ -144,7 +144,7 @@ impl TrailDb {
         self.fingerprints & fp != 0
     }
 
-    /// `_check_domain_member(query, trails)` — used by the NXDOMAIN heuristic.
+    /// Is the query, or any parent domain, a trail? Used by the NXDOMAIN heuristic.
     pub fn contains_domain_member(&self, query: &str) -> bool {
         crate::whitelist::check_domain_member(query, |candidate| self.contains(candidate))
     }
@@ -219,7 +219,7 @@ impl TrailDbBuilder {
 
     /// Insert a trail key. Native side tables get a mirror only when the key is the exact
     /// text Maltrail would render for that address, which keeps the native lookups
-    /// equivalent to Python's string comparison.
+    /// equivalent to comparing the trail text.
     pub fn insert(&mut self, trail: &str, pair: u32) {
         let hash = table::hash_bytes(trail.as_bytes());
         self.insert_prepared(trail, hash, pair, NativeKey::of(trail));
@@ -492,7 +492,7 @@ mod tests {
 
     #[test]
     fn non_canonical_ip_text_is_not_mirrored() {
-        // "01.2.3.4" parses to the same integer but is NOT the text Python compares, so it
+        // "01.2.3.4" parses to the same integer but is NOT the same trail text, so it
         // must not answer a native lookup for 1.2.3.4.
         let db = db_with(&[("01.2.3.4", "badnet", "(static)")]);
         assert!(db.get_ip(Ip::V4(addr_to_int("1.2.3.4").unwrap())).is_none());

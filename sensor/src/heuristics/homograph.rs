@@ -1,5 +1,4 @@
-//! IDN homographs (`аpple.com` with a Cyrillic `а`) — a NEW heuristic, with no `sensor.py`
-//! counterpart.
+//! IDN homographs (`аpple.com` with a Cyrillic `а`).
 //!
 //! Every `xn--` label is Punycode-decoded (RFC 3492) and each character mapped through a small
 //! table of glyphs that render IDENTICALLY to a Latin letter. If that turns the whole label into
@@ -165,7 +164,7 @@ mod tests {
 
     #[test]
     fn decodes_rfc3492_labels() {
-        // reference values from Python's `str.encode("punycode")`
+        // reference values from CPython's `str.encode("punycode")`
         assert_eq!(punycode_decode("pple-43d").as_deref(), Some("\u{430}pple"));
         assert_eq!(punycode_decode("80ak6aa92e").as_deref(), Some("\u{430}\u{440}\u{440}\u{4cf}\u{435}"));
         assert_eq!(punycode_decode("mnchen-3ya").as_deref(), Some("m\u{fc}nchen"));

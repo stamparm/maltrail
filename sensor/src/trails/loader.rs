@@ -2,8 +2,8 @@
 //!
 //! Reads `TRAILS_FILE` (the existing, unchanged Maltrail CSV: `trail,info,reference`),
 //! drops whitelisted trails, interns the `(info, reference)` pairs and builds the
-//! lookup tables plus the wildcard-trail regex, in CSV order (which is the order Python
-//! iterates, and therefore the order the regex groups get).
+//! lookup tables plus the wildcard-trail regex, in CSV order (which is the order
+//! `core/common.py:load_trails()` iterates, and therefore the order the regex groups get).
 
 use std::borrow::Cow;
 use std::collections::HashMap;
@@ -15,7 +15,7 @@ use super::region::Spill;
 use super::{NativeKey, TrailDb, TrailDbBuilder};
 use crate::whitelist::Whitelist;
 
-/// Split one CSV record the way Python's `csv.reader(delimiter=',', quotechar='"')` does
+/// Split one CSV record the way CPython's `csv.reader(delimiter=',', quotechar='"')` does
 /// (doublequote, non-strict, no escapechar). Returns the field count actually produced.
 ///
 /// The `out` buffer is reused across records so loading 1.5M rows performs no per-row
@@ -80,8 +80,8 @@ pub fn split_csv_record(line: &str, out: &mut Vec<String>) -> usize {
 /// Load-time options. Defaults reproduce the shipped sensor behaviour.
 #[derive(Clone)]
 pub struct LoadOptions {
-    /// Repair feed-mangled wildcard patterns rather than dropping them silently. `false` gives
-    /// byte-exact `build_trails_regex()` parity with `sensor.py`.
+    /// Repair feed-mangled wildcard patterns rather than dropping them silently. `false` drops
+    /// them exactly as `build_trails_regex()` does.
     pub repair_truncated_trails: bool,
     /// Build the store's big arrays in file-backed mappings next to the trails file instead of on
     /// the heap (see `region.rs`). Falls back to the heap by itself wherever that cannot be done.
@@ -335,7 +335,8 @@ pub fn load_trails(path: &Path, whitelist: &Whitelist, options: LoadOptions) -> 
     let file = match std::fs::File::open(path) {
         Ok(f) => f,
         Err(e) if e.kind() == std::io::ErrorKind::NotFound => {
-            // Python: a missing trails file yields an empty store (the sensor still runs).
+            // Like core/common.py:load_trails(), a missing trails file yields an empty store (the
+            // sensor still runs).
             return Ok((TrailDb::empty(), LoadStats::default()));
         }
         Err(e) => return Err(e),
@@ -742,7 +743,7 @@ mod tests {
         // Last row wins, on both paths — this is what forces the drain to stay in file order.
         assert_eq!(serial.get("dup.example").map(|v| v.info), Some("LAST info wins"));
         assert_eq!(parallel.get("dup.example").map(|v| v.info), Some("LAST info wins"));
-        // ...and the quoted record is still split like Python's csv module.
+        // ...and the quoted record is still split like CPython's csv module.
         assert_eq!(parallel.get("has,comma.example").map(|v| v.info), Some("info, with comma"));
 
         let v4 = Ip::V4(addr_to_int("1.2.3.4").unwrap());
@@ -806,8 +807,8 @@ mod tests {
     }
 
     #[test]
-    fn invalid_utf8_is_replaced_the_way_python_reads_it() {
-        // Python reads trails.csv with errors="replace", so a bad byte becomes U+FFFD and the row
+    fn invalid_utf8_is_replaced() {
+        // trails.csv is decoded with errors="replace", so a bad byte becomes U+FFFD and the row
         // still loads under that key. The parallel loader has to own such a row rather than
         // borrow it, which is the one place its two paths differ.
         let dir = std::env::temp_dir().join("mt-trail-utf8-test");

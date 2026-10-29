@@ -2,10 +2,10 @@
 //!
 //! The Initial packet's header protection and payload encryption use keys derived from the
 //! *public* Destination Connection ID, so a passive sensor can read the ClientHello without
-//! any secrets. The AEAD tag is deliberately not verified (Python does not verify it
-//! either); only the CTR keystream is needed to recover the plaintext.
+//! any secrets. The AEAD tag is deliberately not verified (`core/quic_sni.py` does not verify
+//! it either); only the CTR keystream is needed to recover the plaintext.
 //!
-//! Bounds and CPU are capped exactly like Python: at most `MAX_INITIAL_DECRYPT` bytes are
+//! Bounds and CPU are capped exactly like `core/quic_sni.py`: at most `MAX_INITIAL_DECRYPT` bytes are
 //! decrypted per packet, with a 512-byte first attempt (the ClientHello sits at the front
 //! of the payload; the rest is PADDING).
 
@@ -164,7 +164,7 @@ fn aes_ecb_block(key: &[u8; 16], block: &[u8; 16]) -> [u8; 16] {
     buf
 }
 
-/// AES-128-CTR with a full 128-bit big-endian counter, matching Python's fallback
+/// AES-128-CTR with a full 128-bit big-endian counter, matching `core/quic_sni.py`'s fallback
 /// implementation (and `cryptography`'s CTR mode) bit for bit. Tests build packets with it.
 #[cfg(test)]
 fn aes_ctr_decrypt(key: &[u8; 16], counter0: &[u8; 16], data: &[u8]) -> Vec<u8> {
@@ -223,7 +223,7 @@ pub struct Opened<'a> {
 impl Opened<'_> {
     /// The SNI if the ClientHello's start carries it; otherwise the CRYPTO frames, for a
     /// ClientHello that continues in the next Initial (see `hello.rs`). Decrypts the first 512
-    /// bytes first, as Python does, and only the rest when those are not enough.
+    /// bytes first, as `core/quic_sni.py` does, and only the rest when those are not enough.
     pub fn scan(&self) -> (Option<String>, Option<CryptoChunks>) {
         let full = self.ciphertext.len().min(MAX_INITIAL_DECRYPT);
         let cipher = Aes128::new((&self.keys.key).into());

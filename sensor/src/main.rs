@@ -1,8 +1,7 @@
 //! `maltrail-sensor` — the Rust sensor entry point.
 //!
-//! Command-line surface mirrors `sensor.py` (`-c`, `-r`, `-q/--quiet`, `--console`,
-//! `--offline`, `--debug`, `--version`), so an existing invocation works unchanged apart
-//! from the program name.
+//! Command-line surface: `-c`, `-r`, `-q/--quiet`, `--console`, `--offline`, `--debug`,
+//! `--version`, plus the capture options listed by `--help`.
 
 use std::path::{Path, PathBuf};
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -113,7 +112,7 @@ fn parse_args(argv: &[String]) -> Result<Args, String> {
                         args.pcap_files.push(PathBuf::from(part));
                     }
                 }
-                // sensor.py also swallows any following existing files after -r/-i
+                // any existing files that follow -r/-i are taken as further pcap files
                 while let Some(next) = argv.get(i + 1) {
                     if Path::new(next).is_file() {
                         args.pcap_files.push(PathBuf::from(next));
@@ -141,12 +140,12 @@ fn parse_args(argv: &[String]) -> Result<Args, String> {
 fn main() {
     let code = run();
 
-    // sensor.py ends with os._exit(code), and this uses _exit() for the same reason: a capture
-    // worker can be parked inside libpcap's blocking read, holding the lock of the underlying
-    // stdio stream. glibc's exit() flushes and closes every FILE stream on the way out, so it
-    // would block on that lock and the process would never terminate - even after the shutdown
-    // grace period expired and the final metrics were printed. Our own buffers are flushed here,
-    // explicitly, because _exit() skips all of that.
+    // This ends with _exit(), not exit(), because a capture worker can be parked inside
+    // libpcap's blocking read, holding the lock of the underlying stdio stream. glibc's exit()
+    // flushes and closes every FILE stream on the way out, so it would block on that lock and
+    // the process would never terminate - even after the shutdown grace period expired and the
+    // final metrics were printed. Our own buffers are flushed here, explicitly, because _exit()
+    // skips all of that.
     use std::io::Write;
     let _ = std::io::stdout().flush();
     let _ = std::io::stderr().flush();
@@ -223,7 +222,7 @@ fn run() -> i32 {
 
     for path in &cfg.pcap_files {
         // exists(), not is_file(): a FIFO is a perfectly good `-r` source (it lets traffic be
-        // streamed in), and sensor.py's os.path.isfile() check rejects those for no good reason.
+        // streamed in), and an is_file() check would reject it for no good reason.
         if !path.exists() {
             ceprintln!("[!] missing pcap file '{}'", path.display());
             return 1;
@@ -402,7 +401,7 @@ fn run() -> i32 {
             pcap::Device::list().map(|list| list.into_iter().map(|d| d.name).collect()).unwrap_or_default();
 
         // `any` is a Linux pseudo-device; elsewhere it is substituted with the real interface
-        // names, which is what Maltrail v1's sensor.py did for the same reason.
+        // names.
         let (interfaces, expanded) = maltrail_sensor::capture::resolve_interfaces(&interfaces, &devices);
         if expanded && !args.quiet {
             cprintln!("[i] 'any' is not a capture device here; monitoring {} interface(s)", interfaces.len());
@@ -507,10 +506,9 @@ fn run() -> i32 {
     }
 
     // The log throttle keeps its state PER WORKER, and `core/log.py` divides by PROCESS_COUNT
-    // because in sensor.py PROCESS_COUNT *is* the number of workers. Dividing by the actual
-    // worker count keeps the aggregate rate identical to sensor.py's whatever the two sensors'
-    // worker counts happen to be - a single worker dividing by 16 would write 1/16 of the lines
-    // sensor.py writes for the same traffic.
+    // on the assumption that PROCESS_COUNT is the number of workers. Dividing by the actual
+    // worker count keeps the aggregate rate independent of the worker count - a single worker
+    // dividing by 16 would write 1/16 of the lines it should for the same traffic.
     let output_cfg = Arc::new(OutputConfig {
         sensor_name: cfg.sensor_name.clone(),
         log_dir: cfg.log_dir.clone(),
@@ -578,10 +576,10 @@ fn run() -> i32 {
             .name("trail-reload".into())
             .spawn(move || {
                 let mut last_mtime = std::fs::metadata(&cfg_reload.trails_file).and_then(|m| m.modified()).ok();
-                // Two jobs, mirroring sensor.py's update_timer(): run the trail UPDATE every
-                // UPDATE_PERIOD, and notice a trails file refreshed by anyone else (the Maltrail
-                // server, a cron job) in between. The mtime poll is cheap, so it runs every
-                // minute while the update keeps the configured period.
+                // Two jobs: run the trail UPDATE every UPDATE_PERIOD, and notice a trails file
+                // refreshed by anyone else (the Maltrail server, a cron job) in between. The mtime
+                // poll is cheap, so it runs every minute while the update keeps the configured
+                // period.
                 // One second, not `UPDATE_PERIOD`: the tick only does a `stat()`, and it bounds how
                 // quickly a trails.csv refreshed by anyone else (the server, cron) is picked up.
                 // At `UPDATE_PERIOD` that was up to a minute.
@@ -597,8 +595,8 @@ fn run() -> i32 {
                     if Instant::now() >= next_update {
                         next_update = Instant::now() + update_period;
                         refresh_trails(&cfg_reload, cfg_reload.quiet, false);
-                        // Same cycle `sensor.py:update_timer()` prunes on. Off the packet path
-                        // and a no-op under budget, so it costs a COUNT(*) per period.
+                        // Pruned on the update cycle: off the packet path and a no-op under
+                        // budget, so it costs a COUNT(*) per period.
                         prune_condensed_store(&cfg_reload);
                     }
                     // SIGHUP forces a reload even when the mtime is unchanged.
@@ -969,8 +967,8 @@ fn print_diagnostics(
     cprintln!("[i] trails: {trail_summary}");
     if repaired_regexes > 0 {
         // Feeds ship patterns truncated in transit; the intact alternatives are kept and the
-        // dangling fragment is dropped (see trails::regexset::repair_truncated). sensor.py drops
-        // these indicators entirely, so this is a detection gain, not a problem.
+        // dangling fragment is dropped (see trails::regexset::repair_truncated). Without the repair
+        // these indicators would be dropped entirely, so this is a detection gain, not a problem.
         cprintln!("[i] repaired {repaired_regexes} wildcard trail pattern(s) truncated in the feed");
     }
     if !skipped_regexes.is_empty() {
@@ -1053,7 +1051,7 @@ fn print_diagnostics(
     }
 }
 
-/// Budget-triggered eviction of the condensed observable store (`sensor.py:update_timer()`).
+/// Budget-triggered eviction of the condensed observable store, run on the trail-update cycle.
 ///
 /// Never fatal and never noisy on success: this is an auxiliary index, and an operator does not
 /// need a line per hour saying nothing was over budget. A failure IS reported, because a store
@@ -1078,7 +1076,7 @@ fn prune_condensed_store(cfg: &Config) {
     }
 }
 
-/// One trail-update cycle plus the reporting around it (`sensor.py:init():update_timer()`).
+/// One trail-update cycle plus the reporting around it.
 ///
 /// `startup` distinguishes the synchronous refresh before the first load from the periodic one.
 /// A failure is never fatal: the sensor continues with whatever trails it already has, but says
@@ -1175,8 +1173,8 @@ fn default_config_file() -> PathBuf {
 
 /// Can this process actually capture packets?
 ///
-/// `sensor.py` tests `geteuid() == 0`, which asks the wrong question in two directions: it refuses
-/// to replay a pcap file (which needs no privileges whatsoever) and it refuses to run under
+/// Not `geteuid() == 0`, which asks the wrong question in two directions: it would refuse to
+/// replay a pcap file (which needs no privileges whatsoever) and refuse to run under
 /// capabilities, which is how a packet-capture process *should* be deployed. Opening an
 /// `AF_PACKET` socket needs `CAP_NET_RAW`, so that is what is checked — granted by file
 /// capabilities (`setcap`), an ambient set (systemd `AmbientCapabilities=`), or being root.

@@ -1,7 +1,7 @@
 //! `core/common.py:build_trails_regex()` — the named-group alternation of wildcard/regex
-//! `(static)` trails that `sensor.py:_check_domain()` falls back to.
+//! `(static)` trails that `check_domain()` falls back to.
 //!
-//! Python builds `"|(?P<g0>pat0)|(?P<g1>pat1)..."` and, on a match, recovers the original
+//! `build_trails_regex()` builds `"|(?P<g0>pat0)|(?P<g1>pat1)..."` and, on a match, recovers the original
 //! trail key ("candidate") by splitting the regex source back apart. Here the patterns are
 //! simply kept in group order, which is the same value that split-and-strip recovers.
 
@@ -12,7 +12,7 @@ use crate::pyre;
 /// The `regex` crate handles everything Maltrail's trails normally use and is the fast path.
 /// A trail that needs look-around or a backreference (CPython accepts those, the crate does
 /// not) forces the whole alternation onto `fancy-regex`, which is a backtracking engine like
-/// CPython's - that keeps the two sensors matching the same trail set instead of silently
+/// CPython's - that keeps every trail CPython accepts matching instead of silently
 /// dropping one. Unlike CPython, `fancy-regex` has a backtrack limit and returns an error
 /// rather than hanging, so a pathological pattern degrades to "no match" instead of a stall.
 enum Engine {
@@ -22,7 +22,7 @@ enum Engine {
 
 pub struct TrailRegex {
     regex: Option<Engine>,
-    /// group index -> the trail key that produced it (Python's `candidate`). This is always the
+    /// group index -> the trail key that produced it (`candidate` in `build_trails_regex()`). This is always the
     /// VERBATIM CSV key, even when the compiled form was repaired, because it is what the trail
     /// lookup is keyed on.
     patterns: Vec<String>,
@@ -109,7 +109,8 @@ fn python_group_syntax_ok(pattern: &str) -> bool {
 
 /// Real trail feeds ship wildcard patterns that were **truncated in transit**, leaving an
 /// unterminated group — e.g. `\b[a-z0-9]{1,3}\-(aegin|aiful|...|nzpost|b` (cut mid-word after the
-/// last `|`). CPython refuses those outright, so `sensor.py` silently drops the whole indicator.
+/// last `|`). CPython refuses those outright, so `build_trails_regex()` silently drops the whole
+/// indicator.
 ///
 /// They can be salvaged: drop the trailing *incomplete* alternative and close the open groups.
 /// Dropping it matters — keeping `|b` would leave a one-character alternative that matches far
@@ -168,12 +169,12 @@ pub fn repair_truncated(pattern: &str) -> Option<String> {
 
 /// Can this pattern be compiled at all (by either engine)? This is the exact decision
 /// `TrailRegexBuilder::offer()` makes, and it must agree with CPython's `re.compile()` —
-/// asserted from Python-generated vectors in `tests/vectors.rs`.
+/// asserted from CPython-generated vectors in `tests/vectors.rs`.
 pub fn can_compile_trail(pattern: &str) -> bool {
     python_group_syntax_ok(pattern) && (pyre::build(pattern).is_ok() || pyre::build_fancy(pattern).is_ok())
 }
 
-/// `re.escape(trail) != trail` — Python only keeps trails that actually carry regex
+/// `re.escape(trail) != trail` — `build_trails_regex()` only keeps trails that actually carry regex
 /// metacharacters.
 fn has_metacharacters(trail: &str) -> bool {
     pyre::escape(trail) != trail
@@ -187,7 +188,8 @@ pub struct TrailRegexBuilder {
     needs_fancy: bool,
     offers: Vec<(String, String)>,
     /// Repair feed-mangled patterns instead of dropping them (see `repair_truncated`). ON by
-    /// default; `REPAIR_TRUNCATED_TRAILS false` restores Python's drop-it-silently behaviour.
+    /// default; `REPAIR_TRUNCATED_TRAILS false` restores `build_trails_regex()`'s drop-it-silently
+    /// behaviour.
     repair: bool,
 }
 
@@ -227,7 +229,7 @@ impl TrailRegexBuilder {
         let compiled = if can_compile_trail(trail) {
             trail.to_string()
         } else if !self.repair {
-            // Python: `except re.error: continue` — the trail is silently not matched.
+            // build_trails_regex(): `except re.error: continue` — the trail is silently not matched.
             self.skipped.push(trail.to_string());
             return;
         } else {
@@ -320,7 +322,7 @@ impl TrailRegex {
     }
 
     /// The trail keys that made it into the alternation, in group order — i.e. exactly the
-    /// patterns `build_trails_regex()` would have concatenated. Used by the loader-parity test.
+    /// patterns `build_trails_regex()` would have concatenated. Used by the loader tests.
     pub fn patterns(&self) -> &[String] {
         &self.patterns
     }

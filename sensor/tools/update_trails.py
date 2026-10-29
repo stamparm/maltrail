@@ -4,14 +4,14 @@
 
 This is deliberately a thin wrapper around Maltrail's OWN updater
 (`core.update.update_trails`) rather than a reimplementation: there is exactly one trail-update
-mechanism in this repository, and both sensors use it. The Rust sensor invokes this script at
-startup and on every `UPDATE_PERIOD`, mirroring `sensor.py:init():update_timer()`.
+mechanism in this repository, and the server and the sensor both use it. The sensor invokes this
+script at startup and on every `UPDATE_PERIOD`.
 
     python3 sensor/tools/update_trails.py -c maltrail.conf [--offline]
 
 `--offline` rebuilds `TRAILS_FILE` from the CACHED static aggregate and the custom trails,
 without touching the
-network (exactly what `sensor.py --offline` does — note that it still *refreshes* the file).
+network (note that it still *refreshes* the file).
 Without it, the feeds are pulled first, falling back to offline mode when there is no
 connectivity, and `ipcat` is refreshed too.
 

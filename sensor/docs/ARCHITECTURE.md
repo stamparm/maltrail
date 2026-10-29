@@ -1,8 +1,9 @@
 # Maltrail sensor — architecture
 
-The sensor replaces `sensor.py`'s packet-processing hot path. It reads the same
-`maltrail.conf`, loads the same `trails.csv`, and writes the same event lines to the same log
-directory / `LOG_SERVER`, so the existing Python server and web UI need no change.
+The sensor captures packets, matches them against the trail set and the heuristics, and writes
+events to `LOG_DIR` and the configured remote sinks. It reads `maltrail.conf` and `trails.csv` and
+writes the formats the Maltrail server reads; [`BEHAVIOUR.md`](BEHAVIOUR.md) describes those and
+every detection. This page is how it is built.
 
 ## Data flow
 
@@ -34,66 +35,68 @@ A worker never hands a packet to another thread. The only cross-thread traffic i
 
 ## Threading model
 
-`sensor.py` runs one capture thread per interface plus `PROCESS_COUNT` worker **processes**
-fed through an `mmap` ring buffer (a packet is copied into the ring, then copied out again).
-Rust has no GIL, so the ring, the copies and the IPC all disappear: one **thread** per capture
-handle does capture *and* detection.
+One **thread** per capture handle does capture *and* detection. There is no ring buffer between
+them, no packet copy and no IPC.
 
 * **Live:** `CAPTURE_WORKERS` sockets per interface, all joined to one `PACKET_FANOUT` group.
   Each socket is read by its own thread. The shipped `maltrail.conf` leaves `CAPTURE_WORKERS`
-  commented out, so a stock install runs **one** worker, and
-  fanout is skipped entirely. It is deliberately *not* derived from `PROCESS_COUNT`: flow-hashed
-  fanout dilutes the per-source scan heuristics, so scaling out is an explicit opt-in. If the
-  kernel refuses the fanout group for the device, the sensor drops to a single worker with a
-  warning; it never opens N independent sockets, which would deliver every packet N times.
+  commented out, so a stock install runs **one** worker, and fanout is skipped entirely. It is
+  deliberately *not* derived from `PROCESS_COUNT`, so scaling out is an explicit opt-in. Above one
+  worker the default `CAPTURE_FANOUT_MODE source` distributes by source address, so the
+  per-source scan heuristics see all of a scanner's traffic (`capture/srcfanout.rs`).
 * **Offline:** every `-r` file is replayed through **one** `WorkerState`, sequentially, so a
   replay is deterministic and evidence split across files accumulates.
 
 `PROCESS_COUNT` does not affect the worker count. It is read for `EVENT_THROTTLE_MODE legacy`,
 where it sets the throttle bucket width `sec // PROCESS_COUNT` that `core/log.py` uses. The default
-throttle mode does not use it — see `src/throttle.rs` and `docs/COMPATIBILITY.md` §2, difference 14.
+throttle mode does not use it — see `src/throttle.rs` and [`BEHAVIOUR.md`](BEHAVIOUR.md).
 
-### Why fanout, and why it is a hard error
+### Why fanout, and never independent sockets
 
 Opening N plain capture sockets on one interface delivers **every** packet to **every** socket,
-so each detection would be reported N times. `PACKET_FANOUT_HASH` makes the kernel hash each
-packet's flow to exactly one socket, which both removes the duplication and keeps a flow's
-packets on one worker — which matters because all heuristic state (scan accumulators, DNS
-exhaustion windows, burst suppression) is worker-local. If fanout is requested and cannot be
-configured, the sensor **refuses to start** rather than silently duplicating.
+so each detection would be reported N times. A `PACKET_FANOUT` group makes the kernel deliver each
+packet to exactly one socket, chosen by source address (`source`) or flow (`hash`), so a source's
+or a flow's packets stay on one worker — which matters because all heuristic state (scan
+accumulators, DNS exhaustion windows, burst suppression) is worker-local. If the kernel refuses
+the group for the device, the sensor runs one worker and says so; if a socket fails after others
+have joined, it exits. It never opens N independent sockets.
 
 Caveats, both surfaced in the startup diagnostics:
 
 * IPv4 fragments are reassembled by the kernel before they are hashed or delivered
   (`CAPTURE_FANOUT_DEFRAG`, on by default; a single worker joins a fanout group of its own for
-  it). Without it the sensor drops non-first fragments, as `sensor.py` did, and a fragmented
-  packet is never inspected.
-* Tunnelled traffic (GRE/IPIP/VXLAN) hashes on the outer flow, so all inner flows of one tunnel
-  land on one worker.
+  it). Without it the sensor drops non-first fragments, and a fragmented packet is never
+  inspected.
+* Tunnelled traffic (GRE/IPIP/VXLAN) is distributed by its outer header, so all inner flows of
+  one tunnel land on one worker.
 
 ## Modules
 
 | module | responsibility |
 | --- | --- |
 | `main.rs` | CLI, startup, diagnostics, worker spawn, reload/metrics threads, signals |
-| `config.rs` | `maltrail.conf` parser (a port of `read_config()`) + the new capture options |
+| `config.rs` | `maltrail.conf` parser (the server's `read_config()` rules) and the capture options |
 | `settings.rs` + `settings_gen.rs` | constants and compiled regexes; `settings_gen.rs` is **generated** from `core/settings.py` by `tools/gen_settings.py` |
 | `pyre.rs` | Python-`re` compatibility: `re.escape`, `\Z`→`\z`, literal-brace rewriting, CPython's group-syntax rules |
 | `addr.rs` | native `Ip`, Maltrail's non-RFC-5952 IPv6 rendering, `addr_port`, `parse_host_port` |
 | `smallstr.rs` | fixed-capacity stack string so the hot path renders addresses without allocating |
-| `trails/` | CSV loader (batched, parsed in parallel, inserted serially in file order), interned pair table, string table, native IP tables, wildcard-trail regex |
+| `trails/` | CSV loader (batched, parsed in parallel, inserted serially in file order), interned pair table, string table, native IP tables, negative filter, wildcard-trail regex, file-backed regions and the prebuilt store (`store.rs`) |
 | `whitelist.rs` | `WHITELIST` / `WHITELIST_RANGES`, domain-member checks |
-| `packet/` | DLT/VLAN offsets, the offset-learning heuristic, IP/TCP/UDP/ICMP headers |
-| `protocols/` | DNS, HTTP, TLS SNI, QUIC Initial SNI |
-| `heuristics/` | bounded scan accumulators, DNS exhaustion, NXDOMAIN counters, entropy/consonants |
-| `process.rs` | the port of `_process_packet()` and `_check_domain()` |
+| `packet/` | DLT/VLAN offsets, the offset-learning heuristic, IP/TCP/UDP/ICMP headers, IPv6 extension headers, tunnel decapsulation |
+| `protocols/` | DNS, HTTP, TLS ClientHello (SNI, JA3, JA4) and certificates, QUIC Initial, handshake reassembly |
+| `heuristics/` | bounded scan accumulators, DNS exhaustion and tunneling, NXDOMAIN counters, beaconing, ICMP tunneling, IDN homographs |
+| `process.rs` | per-packet detection and the domain check |
 | `state.rs` | per-worker state: caches, burst suppression, accumulators |
 | `event.rs` | the event tuple, `safe_value()`, log-line rendering, Python-`repr` rendering |
 | `output.rs` | daily log file, `LOG_SERVER`, CEF, Logstash, condensing, throttling, error log |
 | `ignore.rs` | `IGNORE_EVENTS` rules and `IGNORE_EVENTS_REGEX` |
-| `capture/` | libpcap live/offline handles, `PACKET_FANOUT` |
+| `throttle.rs` | event-log throttling (`summarize`, `legacy`, `off`) |
+| `meta.rs` | the condensed observable store, `LOG_DIR/meta.sqlite` |
+| `capture/` | libpcap live/offline handles, `PACKET_FANOUT`, the source-affine fanout program |
 | `worker.rs` | the run-to-completion loop |
-| `metrics.rs` | worker-local counters + lock-free aggregation |
+| `metrics.rs` + `stats.rs` | worker-local counters, lock-free aggregation, the Prometheus endpoint |
+| `trailupdate.rs` | runs `core/update.py` through `tools/update_trails.py` |
+| `selftest.rs` | `-T` |
 | `testkit.rs` | in-process harness used by tests, benches and fuzz targets |
 
 ## Hot-path properties
@@ -127,9 +130,8 @@ authoritative table as a *negative* prefilter, never be the table itself.
 
 ## Reload
 
-`sensor.py` re-reads `trails.csv` on a timer and swaps the store atomically. The sensor
-does the same: a reload thread polls the file's mtime (at most once a minute, bounded by
-`UPDATE_PERIOD`), rebuilds a fresh immutable `TrailDb`, and publishes it through `TrailStore`.
+A reload thread polls `TRAILS_FILE`'s mtime once a second (`SIGHUP` forces a reload), builds a
+fresh immutable `TrailDb`, and publishes it through `TrailStore`.
 Workers adopt it between packets, so one packet always sees one consistent snapshot.
 
 The tables are position-independent (string slots address the key arena by offset), so a load
@@ -144,7 +146,7 @@ a core.
 
 Trail *updating* (downloading feeds) is **not reimplemented**, but the sensor does drive it: it runs
 Maltrail's own `core/update.py` through `sensor/tools/update_trails.py`, before the first load and every
-`UPDATE_PERIOD`, exactly as `sensor.py:init()` did. `DISABLE_TRAIL_UPDATES true` hands the file to
+`UPDATE_PERIOD`. `DISABLE_TRAIL_UPDATES true` hands the file to
 the server or a cron job instead, and the sensor then warns when it goes stale. See
 `docs/INSTALL.md` §11.
 
@@ -155,8 +157,8 @@ the server or a cron job instead, and the sensor then warns when it goes stale. 
   `tests/fuzz_extended.rs`), so the property is checked on every build rather than when
   someone remembers. `MT_FUZZ_SEED` / `MT_FUZZ_ITERS` turn the second one into a long
   campaign without making CI nondeterministic.
-* As a last resort, each packet is processed inside `catch_unwind`, mirroring `sensor.py`'s
-  blanket `except Exception`. A recovered panic increments `panics_recovered` and writes one
+* As a last resort, each packet is processed inside `catch_unwind`, so a parser bug cannot take
+  capture down. A recovered panic increments `panics_recovered` and writes one
   deduplicated line to `error.log` — it must never happen, and it is visible if it does.
 * Configuration and capture failures are fatal and explicit (bad BPF filter, missing interface,
   unavailable fanout, unreadable config).
@@ -166,8 +168,8 @@ the server or a cron job instead, and the sensor then warns when it goes stale. 
 ## Metrics
 
 Worker-local `u64` counters, published to a shared slot every 1024 packets and summed by the
-reporter thread. Printed every `METRICS_INTERVAL` seconds (default 3600, matching
-`sensor.py`'s hourly capture-stats print) and once at exit:
+reporter thread. Printed every `METRICS_INTERVAL` seconds (default 3600) and once at exit, and
+served on `STATS_ADDRESS` when it is set:
 
 ```
 received, processed, ignored, malformed, truncated, fragments, events, written,

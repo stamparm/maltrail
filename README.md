@@ -182,11 +182,9 @@ Every row is cut out of refnet, the synthetic reference network the detection fi
 (`sensor/tools/refnet.py`); the tool says how each row was built. Figures in this README before
 October 2026 were read off a timer quantized to 50 ms and are not comparable.
 
-Offline comparison runs using the same generated capture, configuration, and trail set measured a
-14–37× lower steady-state per-packet cost than the retired Python sensor across the tested systems.
-Those figures separate whole-process time from steady state, because trail loading dominates a
-short replay. Detection itself is asserted separately, by the 42-case corpus in
-`sensor/tests/replay.rs`.
+Detection itself is asserted separately: every case of the replay corpus in
+`sensor/tests/corpus/` declares the events it must produce, and `sensor/tests/replay.rs` checks
+them on every test run.
 
 Measure it on the target system with:
 
@@ -202,8 +200,8 @@ scanner stays on one worker and the scan heuristics keep all their alerts. Plain
 heuristic alerts at two workers, 87% at four and 66% at eight. Exact trail matching is unaffected
 either way. Add workers when capture-drop metrics show that one is not keeping up.
 
-Benchmark methodology, hardware results, profiler output, memory measurements, and live fanout
-checks are documented in [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md).
+The packet-path benchmarks are `cargo bench --bench hotpath` (see [`sensor/README.md`](sensor/README.md)),
+and live `PACKET_FANOUT` distribution is checked with `sensor/tools/fanout_check.py`.
 
 ## Installation
 
@@ -544,8 +542,8 @@ updated by another process are detected automatically and published to workers w
 the sensor.
 
 The condensed observable store (`USE_CONDENSED_STORAGE`, `meta.sqlite`) supports the server's
-novelty and retro-hunt views. Compatibility with the retired sensor is documented in
-[`sensor/docs/COMPATIBILITY.md`](sensor/docs/COMPATIBILITY.md).
+novelty and retro-hunt views. What the sensor reads and writes, every detection, and its design
+decisions and limitations are documented in [`sensor/docs/BEHAVIOUR.md`](sensor/docs/BEHAVIOUR.md).
 
 ### Event retention
 
@@ -591,9 +589,7 @@ python3 sensor/tools/gen_demo_js.py --from DIR/logs   # tops up html/js/demo.js
 | --- | --- |
 | [`sensor/docs/INSTALL.md`](sensor/docs/INSTALL.md) | Installation, privileges, configuration, and troubleshooting |
 | [`sensor/docs/ARCHITECTURE.md`](sensor/docs/ARCHITECTURE.md) | Sensor internals and data flow |
-| [`sensor/docs/COMPATIBILITY.md`](sensor/docs/COMPATIBILITY.md) | Deliberate differences from the retired Python sensor |
-| [`sensor/docs/REPORT.md`](sensor/docs/REPORT.md) | Measurements, profiles, and test results |
-| [`sensor/docs/ROADMAP.md`](sensor/docs/ROADMAP.md) | Open sensor work |
+| [`sensor/docs/BEHAVIOUR.md`](sensor/docs/BEHAVIOUR.md) | Inputs and outputs, detections, design decisions, limitations |
 | [`SekuriPy Labs`](https://www.sekuripy.hr/labs/maltrail/) | Engineering notes, benchmarks and write-ups |
 
 ## Contributing

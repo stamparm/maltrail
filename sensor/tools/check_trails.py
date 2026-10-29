@@ -141,9 +141,9 @@ def public_suffixes():
 def whitelisted_parents():
     """The whitelist as loaded: data/whitelist.txt plus the configured WHITELIST.
 
-    What it MEANS for a trail changed in 3.2. The retired Python sensor suppressed a name whenever any
-    ancestor was whitelisted, which made every exact trail on a shared platform dead on arrival. The Rust
-    sensor applies longest-match precedence: only an entry equal to the full name vetoes a trail hit, so
+    What it MEANS for a trail changed in 3.2. Before that, a name was suppressed whenever any ancestor was
+    whitelisted, which made every exact trail on a shared platform dead on arrival. The sensor now applies
+    longest-match precedence: only an entry equal to the full name vetoes a trail hit, so
     `evil.cloudfront.net` fires even though `cloudfront.net` is whitelisted. A whitelisted ancestor still
     suppresses HEURISTICS on that host, and still suppresses wildcard trails, neither of which is a
     reachability question about a written trail.
@@ -291,11 +291,11 @@ def classify(key, whitelist=None, info="", raw=None, suffixes=None):
         # updater's check_whitelisted() and the sensor loader's are exact-match too, so the trail is
         # dropped at build time and never reaches trails.csv.
         #
-        # This used to report a whitelisted ANCESTOR as suppressing its children, which was true of
-        # the retired Python sensor and stopped being true in 3.2 - and it said so with "the sensor's
-        # loader drops this trail", which the loader does not do. Measured against the current
+        # This used to report a whitelisted ANCESTOR as suppressing its children, which stopped being
+        # true in 3.2 - and it said so with "the sensor's loader drops this trail", which the loader
+        # does not do. Measured against the current
         # content that was 3,081 live trails on shared platforms (cloudfront.net, azurewebsites.net,
-        # blogspot.com) reported as dead, against 3 that really are. The Rust sensor's behaviour is
+        # blogspot.com) reported as dead, against 3 that really are. The sensor's behaviour is
         # pinned by sensor/tests/detection.rs::trail_under_whitelisted_parent_fires.
         #
         # Not covered: a WILDCARD trail under a whitelisted ancestor genuinely is still suppressed

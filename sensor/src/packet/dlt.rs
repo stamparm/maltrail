@@ -1,5 +1,5 @@
-//! Link-layer handling — `sensor.py:packet_handler()` plus the offset learner from
-//! `sensor.py:_guess_dlt_ip_offset()` / `core/fastfilter.py:guess_ip_offset()`.
+//! Link-layer handling: where the IP header starts for each datalink type, plus an offset
+//! learner for datalinks without a fixed offset.
 
 use std::collections::HashMap;
 
@@ -199,7 +199,7 @@ fn special_offset(datalink: i32, packet: &[u8]) -> Option<Option<usize>> {
 
 /// Resolve where the IP header starts, for a datalink present in `DLT_OFFSETS`.
 /// Returns `None` when the frame is not IP (or is too short), which drops the packet
-/// exactly as the Python handler does.
+/// silently.
 /// Where IP starts in an untagged Ethernet frame; `settings::DLT_OFFSETS` says the same.
 const ETHERNET_BASE: usize = 14;
 
@@ -231,11 +231,9 @@ fn ip_offset_walk(datalink: i32, packet: &[u8], base: usize) -> Option<usize> {
     }
     if base >= 2 {
         let mut offset = base;
-        // STACKED tags, not just one. The parser used to skip a single 0x8100 and drop everything
-        // else "matching sensor.py", which was a real justification while that sensor existed and
-        // is now just a hole: on a carrier or campus SPAN port carrying QinQ, or any 802.1ad
-        // S-tagged link, EVERY frame failed the ethertype test and the sensor reported a quiet
-        // network. Same shape as the PPPoE gap in #19297 - not a missed detection, a missed link.
+        // STACKED tags, not just one. Skipping a single 0x8100 and dropping everything else is a
+        // hole: on a carrier or campus SPAN port carrying QinQ, or any 802.1ad S-tagged link,
+        // EVERY frame fails the ethertype test and the sensor reports a quiet network. Same shape as the PPPoE gap in #19297 - not a missed detection, a missed link.
         //
         // Three TPIDs are recognised: 0x8100 (802.1Q C-tag), 0x88a8 (802.1ad S-tag) and 0x9100
         // (pre-standard QinQ, still emitted by older kit). MAX_VLAN_TAGS bounds the walk so a
@@ -277,11 +275,10 @@ fn ip_offset_walk(datalink: i32, packet: &[u8], base: usize) -> Option<usize> {
 /// frame made entirely of tags cannot turn the walk into a scan of the whole packet.
 const MAX_VLAN_TAGS: usize = 4;
 
-/// Common IP protocol numbers used by the offset heuristic
-/// (`core/fastfilter.py:_COMMON_IP_PROTO`).
+/// Common IP protocol numbers used by the offset heuristic.
 const COMMON_IP_PROTO: [u8; 11] = [1, 2, 6, 17, 47, 50, 51, 58, 89, 103, 132];
 
-/// `core/fastfilter.py:_ip_header_score()` — 2 = length-consistent, 1 = plausible, 0 = no.
+/// Does an IP header start at `off`? 2 = length-consistent, 1 = plausible, 0 = no.
 fn ip_header_score(b: &[u8], off: usize, n: usize) -> u8 {
     let Some(&first) = b.get(off) else { return 0 };
     let v = first >> 4;
@@ -313,7 +310,7 @@ fn ip_header_score(b: &[u8], off: usize, n: usize) -> u8 {
     0
 }
 
-/// `core/fastfilter.py:guess_ip_offset()`
+/// Guess where the IP header starts by scoring every offset up to `max_off`.
 pub fn guess_ip_offset(packet: &[u8], max_off: usize) -> Option<usize> {
     let n = packet.len();
     if n == 0 {
@@ -331,7 +328,7 @@ pub fn guess_ip_offset(packet: &[u8], max_off: usize) -> Option<usize> {
     weak
 }
 
-/// `sensor.py:_dlt_learn` — per-datalink learner that locks an inferred offset once two
+/// Per-datalink learner that locks an inferred offset once two
 /// packets agree, while still using the provisional guess in the meantime.
 #[derive(Default)]
 pub struct DltLearner {
@@ -569,7 +566,6 @@ pub(crate) mod tests {
 
     #[test]
     fn learner_locks_after_two_agreeing_packets() {
-        // Mirrors the retired Python suite's TestDLTLearner
         let mut p = eth(0x0800);
         let mut ip = min_ipv4();
         ip.extend_from_slice(&[0u8; 8]); // UDP header

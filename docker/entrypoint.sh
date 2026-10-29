@@ -125,7 +125,7 @@ done
 # the same as it did under `USER maltrail`.
 caps=""
 case " $* " in
-    *" maltrail-sensor "*|*/maltrail-sensor" "*|*" sensor.py "*)
+    *" maltrail-sensor "*|*/maltrail-sensor" "*)
         caps=$(python3 -c '
 import re
 bnd = int(re.search(r"CapBnd:\s*([0-9a-fA-F]+)", open("/proc/self/status").read()).group(1), 16)

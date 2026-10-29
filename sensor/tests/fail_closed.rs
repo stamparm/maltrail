@@ -1,4 +1,4 @@
-//! Fail-closed behaviour around the trail set (ROADMAP Gate 1.2).
+//! Fail-closed behaviour around the trail set.
 //!
 //! The failure these guard: a sensor whose trail load or update produced nothing still started,
 //! still answered its metrics endpoint and still reported itself healthy — while detecting
@@ -180,11 +180,11 @@ fn a_collapsing_reload_is_rejected_not_published() {
 
 /// A capture that OPENS but cannot be read must not replay to "success" with zero packets.
 ///
-/// Found by the shadow harness (since retired) on a `mergecap` output: libpcap refuses a
+/// Found on a `mergecap` output: libpcap refuses a
 /// pcapng whose interfaces have different link types. The header parsed, so the file opened
 /// fine; the first read failed; the sensor logged the error to error.log and exited 0 having
 /// read nothing. An analyst would take that as "no detections in this capture" when the truth is
-/// "this capture was never parsed" — the offline twin of the silent blind spot Gate 1.1 fixed.
+/// "this capture was never parsed" — the offline twin of a capture worker dying silently (tests/lifecycle.rs).
 ///
 /// The fixtures are hand-built rather than produced with mergecap/editcap, so the test needs no
 /// tools beyond cargo.

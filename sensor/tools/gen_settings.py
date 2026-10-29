@@ -142,7 +142,7 @@ def main(out_path=None):
         "/// POTENTIAL_INFECTION_PORTS",
         "pub const POTENTIAL_INFECTION_PORTS: &[u16] = &[%s];" % ", ".join(str(_) for _ in S.POTENTIAL_INFECTION_PORTS),
         "",
-        "/// _STEALTH_FLAGS from sensor.py (NULL / bare-FIN / XMAS scans)",
+        "/// TCP flag bytes of stealth scans (NULL / bare-FIN / XMAS)",
         "pub const STEALTH_FLAGS: &[u8] = &[0x00, 0x01, 0x29];",
         "",
         emit_str_slice("IGNORE_DNS_QUERY_SUFFIXES", sorted(S.IGNORE_DNS_QUERY_SUFFIXES)),

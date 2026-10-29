@@ -1,6 +1,6 @@
 //! Terminal colouring, a port of `core/colorized.py`.
 //!
-//! Python installs a `ColorizedStream` wrapper over `sys.stdout` **and** `sys.stderr` when
+//! `core/colorized.py` installs a `ColorizedStream` wrapper over `sys.stdout` **and** `sys.stderr` when
 //! stdout is a TTY, so both the operational output and the `--console` event stream are
 //! coloured. The same rules, in the same order, are applied here.
 //!
@@ -100,8 +100,7 @@ fn patterns() -> &'static Patterns {
     static PATTERNS: OnceLock<Patterns> = OnceLock::new();
     PATTERNS.get_or_init(|| Patterns {
         marker: Regex::new(r"^(\s*)\[(.)\]").expect("marker"),
-        // `(sensor)` is this sensor; `(old sensor)` is the Python reference implementation, which
-        // is still run by the differential parity harness.
+        // Product labels in banner lines.
         product: Regex::new(r"\((old sensor|rust sensor|sensor|server)\)").expect("product"),
         url: Regex::new(r"https?://[\w.:/?=]+").expect("url"),
         usage: Regex::new(r"(?s)^(.*Usage: )(.+)$").expect("usage"),

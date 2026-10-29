@@ -1,6 +1,6 @@
 //! Worker lifecycle: a sensor that has stopped capturing must say so.
 //!
-//! These guard ROADMAP Gate 1.1. The bug they exist for: `worker::run` returned `()`, `main`
+//! The bug they exist for: `worker::run` returned `()`, `main`
 //! discarded every join result, and the process exited 0 no matter how a worker ended. A dead
 //! capture worker therefore looked identical to a clean shutdown — `Restart=on-failure` never
 //! fired, `maltrail_up` was the literal constant 1, and the host silently stopped being

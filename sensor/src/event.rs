@@ -13,9 +13,9 @@ pub mod trail_type {
     pub const UA: &str = "UA";
     pub const PATH: &str = "PATH";
     pub const PORT: &str = "PORT";
-    /// TLS server-certificate SHA-1 fingerprint. New in this sensor; see docs/COMPATIBILITY.md.
+    /// TLS server-certificate SHA-1 fingerprint; see docs/BEHAVIOUR.md.
     pub const CERT: &str = "CERT";
-    /// TLS client fingerprints (JA3 MD5, JA4). New in this sensor; see docs/COMPATIBILITY.md.
+    /// TLS client fingerprints (JA3 MD5, JA4); see docs/BEHAVIOUR.md.
     pub const JA3: &str = "JA3";
     pub const JA4: &str = "JA4";
 }
@@ -27,7 +27,7 @@ pub mod proto {
     pub const ICMP: &str = "ICMP";
 }
 
-/// An event-tuple field that Python may hold as either an int or a str. The distinction
+/// An event-tuple field that `core/log.py` may receive as either an int or a str. The distinction
 /// is observable twice: `safe_value(0)` renders `-` (because of `value or '-'`), and
 /// `IGNORE_EVENTS_REGEX` is matched against `repr(event_tuple)`.
 #[derive(Clone, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
@@ -57,7 +57,7 @@ impl Field {
         }
     }
 
-    /// Python truthiness, which `safe_value` uses via `value or '-'`.
+    /// Python truthiness, which `core/log.py:safe_value` uses via `value or '-'`.
     fn is_falsy(&self) -> bool {
         match self {
             Field::Int(i) => *i == 0,
@@ -275,7 +275,7 @@ fn localtime_into(t: libc::time_t, tm: &mut libc::tm) -> bool {
     #[cfg(not(windows))]
     // SAFETY: `t` is a valid time_t and `tm` is a live, properly aligned tm we own; localtime_r
     // writes into it and never retains the pointer. Used instead of a date crate so the rendering
-    // matches Python's time.localtime() - same TZ database, same TZ environment handling - exactly.
+    // matches core/log.py's time.localtime() - same TZ database, same TZ environment handling - exactly.
     unsafe {
         !libc::localtime_r(&t, tm).is_null()
     }

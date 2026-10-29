@@ -8,9 +8,9 @@
 //! # This file's shape is a contract, not an implementation detail
 //!
 //! `core/httpd.py`'s `/meta` endpoint reads this database through `core/meta.py:lookup()`, and
-//! an operator may run the Python server against a store this sensor wrote (that is the whole
+//! an operator may run the Maltrail server against a store this sensor wrote (that is the whole
 //! point of writing it). So the schema, the key encoding and the journal mode are all fixed by
-//! the Python side and reproduced exactly:
+//! `core/meta.py` and reproduced exactly:
 //!
 //! * `WITHOUT ROWID`, primary key on `observable`, columns in the same order.
 //! * IPs are stored as **4/16-byte BLOBs**, domains as **TEXT**. `lookup()` decides which to
@@ -31,7 +31,7 @@
 //! up to `busy_timeout` waiting on another writer), and a capture thread that stops draining for
 //! that long overflows its ring. A worker hands its window to one writer thread instead
 //! (`writer()`) and goes back to capturing. Windows arrive out of order, which the merge's
-//! `MIN`/`MAX` exist for. Counts are best-effort under a crash, as in Python.
+//! `MIN`/`MAX` exist for. Counts are best-effort under a crash.
 //!
 //! # Cost
 //!
@@ -75,9 +75,8 @@ impl Row {
 
     #[inline]
     fn bump(&mut self, sec: u64) {
-        // Python assigns last_seen unconditionally (`r[2] = sec`) rather than taking a max, and
-        // so does this: within one worker the packet clock only moves forward, and the max is
-        // applied in SQL where windows really can arrive out of order.
+        // last_seen is assigned unconditionally rather than taking a max: within one worker the
+        // packet clock only moves forward, and the max is applied in SQL where windows really can arrive out of order.
         self.last_seen = sec;
         self.count += 1;
     }
@@ -142,7 +141,7 @@ impl Recent {
 #[derive(Default)]
 struct FlushResults {
     flushed: AtomicU64,
-    /// The in-RAM window is lost when a flush fails, exactly as in Python.
+    /// The in-RAM window is lost when a flush fails.
     errors: AtomicU64,
 }
 
@@ -609,7 +608,7 @@ fn score(count: f64, first_seen: f64, last_seen: f64) -> f64 {
 /// store; scoring sheds `count = 1` zero-span junk and protects established low-and-slow
 /// observables, which are the ones a retro-hunt is for. Returns the number of rows deleted.
 ///
-/// Runs on the trail-update thread, off the packet path, like `sensor.py`'s `update_timer()`.
+/// Runs on the trail-update thread, off the packet path.
 pub fn prune(db_path: &Path, max_rows: usize) -> rusqlite::Result<usize> {
     if !db_path.exists() {
         return Ok(0);

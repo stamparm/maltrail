@@ -25,11 +25,11 @@ If applicable, add screenshots to help explain your problem.
 
 **Environment:**
  - Device: [e.g. Linux-based device, OPNSense plugin]
- - OS: [Linux, *BSD]
- - Type of Maltrail installation: [e.g. ```git clone``` command]
+ - OS: [e.g. Debian 12, FreeBSD 14, Windows 11]
+ - Type of Maltrail installation: [e.g. install.sh, Docker, ```git clone```]
  - Problematic Maltrail component: [e.g. server, sensor, web-interface]
- - Maltrail version: [e.g. 0.59]
- - ```python-pcapy-ng``` version: [e.g. 1.0.9]
+ - Maltrail version: [e.g. output of ```maltrail-sensor --version```]
+ - ```maltrail-sensor -T``` output, if the sensor is involved
 
 **Additional context**
 Add any other context about the problem here.

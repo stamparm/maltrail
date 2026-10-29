@@ -1,10 +1,8 @@
 //! Per-worker state. Everything a worker touches while processing a packet lives here, so
 //! the packet path never takes a lock and never shares a cache line with another worker.
 //!
-//! This mirrors the *process-local* globals of `sensor.py` (`_last_syn`, `_result_cache`,
-//! `_connect_src_dst`, `NO_SUCH_NAME_COUNTERS`, …). The Python sensor also keeps them
-//! per worker process, so heuristic state is fragmented across workers in exactly the same
-//! way — with the improvement that `PACKET_FANOUT_HASH` keeps a flow on one worker.
+//! Heuristic state is therefore fragmented across workers; `CAPTURE_FANOUT_MODE` decides how
+//! (`source` keeps every packet of a host on one worker, `hash` keeps a flow on one worker).
 
 use std::sync::Arc;
 
@@ -44,7 +42,7 @@ pub struct WorkerState {
     pub metrics: WorkerMetrics,
     pub dlt: DltLearner,
 
-    // --- burst suppression (sensor.py globals) ---
+    // --- burst suppression ---
     pub last_syn: Option<FlowStamp>,
     pub last_logged_syn: Option<FlowStamp>,
     pub last_udp: Option<FlowStamp>,
@@ -82,13 +80,13 @@ pub struct WorkerState {
     pub dns_exhaustion: DnsExhaustion,
     pub dns_tunneling: DnsTunneling,
     pub nxdomain: NxCounters,
-    /// NEW, no sensor.py counterpart: periodic-beacon detection (heuristics/beacon.rs).
+    /// Periodic-beacon detection (heuristics/beacon.rs).
     pub beacon: crate::heuristics::beacon::BeaconTracker,
     /// ClientHellos split across TCP segments or QUIC Initials (protocols/hello.rs).
     pub hello: crate::protocols::hello::Assembler,
 
     /// `LOG_DIR/meta.sqlite` — the condensed observable store (`core/meta.py`). Per worker and
-    /// unsynchronised, like the Python sensor's per-process aggregate; drained on the worker's
+    /// unsynchronised; drained on the worker's
     /// housekeeping tick. Disabled unless `USE_CONDENSED_STORAGE` is on.
     pub meta: MetaStore,
 }
@@ -103,7 +101,7 @@ impl WorkerState {
     ) -> WorkerState {
         let cap = settings::MAX_CACHE_ENTRIES;
         // The domain caches are the ones that thrash (a DGA flood queries a fresh name every
-        // packet); the rest keep Python's size because they are keyed by far less diverse values.
+        // packet); the rest keep the default size because they are keyed by far less diverse values.
         let domain_cap = cfg.domain_cache_entries;
         let meta = MetaStore::for_config(&cfg);
         WorkerState {
@@ -143,7 +141,7 @@ impl WorkerState {
         }
     }
 
-    /// `sensor.py:_check_domain_whitelisted()` with its result cache.
+    /// Whitelist verdict for a domain, through the result cache.
     pub fn check_domain_whitelisted(&mut self, query: &str) -> bool {
         self.check_domain_whitelist_depth(query) != 0
     }
@@ -172,7 +170,7 @@ impl WorkerState {
                 self.local_prefix_cache = Some(best.clone());
                 best
             }
-            // Python falls back to the last non-empty value it cached, then to '_'.
+            // Fall back to the last non-empty value cached, then to '_', which no address starts with.
             None => self.local_prefix_cache.clone().unwrap_or_else(|| "_".to_string()),
         }
     }

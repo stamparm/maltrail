@@ -1,6 +1,6 @@
 //! Address helpers, byte-for-byte compatible with `core/addr.py`.
 //!
-//! Compatibility notes (these are quirks of the Python implementation that MUST be
+//! Compatibility notes (these are quirks of `core/addr.py` that MUST be
 //! reproduced, because trail keys and event fields are compared as text):
 //!
 //! * `inet_ntoa6` does **not** produce RFC 5952 canonical text. `compress_ipv6()`
@@ -36,7 +36,7 @@ impl Ip {
         matches!(self, Ip::V6(_))
     }
 
-    /// `LOCALHOST_IP[ip_version]` comparison from `sensor.py` (`127.0.0.1` / `::1`).
+    /// The loopback address of the packet's IP version (`127.0.0.1` / `::1`).
     #[inline]
     pub fn is_localhost(self) -> bool {
         match self {
@@ -45,7 +45,7 @@ impl Ip {
         }
     }
 
-    /// `core/common.py:is_local()` — the Python regex only ever matches IPv4 text.
+    /// `core/common.py:is_local()` — its regex only ever matches IPv4 text.
     #[inline]
     pub fn is_local(self) -> bool {
         match self {
@@ -140,7 +140,7 @@ fn compress_ipv6_into(address: &str, out: &mut AddrStr) {
     let b = address.as_bytes();
 
     // Step 1: re.findall("(?:0000:)+", address) -> maximal runs of the 5-byte unit
-    // "0000:". Python picks `sorted(zeros, key=len)[-1]` (the LAST longest run) and
+    // "0000:". `core/addr.py` picks `sorted(zeros, key=len)[-1]` (the LAST longest run) and
     // then `.replace(run, ':', 1)` which rewrites the FIRST occurrence of that text.
     // Since no run is longer than the maximum, the first occurrence of the maximal
     // text starts at the first run whose length equals the maximum.
@@ -192,7 +192,7 @@ fn compress_ipv6_into(address: &str, out: &mut AddrStr) {
             }
             // `0+` is greedy but BACKTRACKS: give characters back one at a time until the
             // trailing `(\w)` can match. Without this, a group that is all zeros and sits at
-            // the end of the string (":0000") would not be shortened at all, whereas Python
+            // the end of the string (":0000") would not be shortened at all, whereas `core/addr.py`
             // yields ":0".
             let mut k = j;
             loop {
@@ -234,10 +234,9 @@ pub fn inet_ntoa6(packed: &[u8; 16]) -> String {
     Ip::V6(u128::from_be_bytes(*packed)).render().as_str().to_owned()
 }
 
-/// `core/addr.py:addr_to_int()` — parses only a plain dotted quad (no validation of
-/// octet range beyond what Python's `int()` accepts, but Python raises on >255? No:
-/// `addr_to_int("300.1.2.3")` returns a shifted value. Callers always guard with a
-/// dotted-quad regex first, so we require 0..=255 and reject otherwise.
+/// `core/addr.py:addr_to_int()` — parses only a plain dotted quad. The Python version does not
+/// range-check octets (`addr_to_int("300.1.2.3")` returns a shifted value); callers always
+/// guard with a dotted-quad regex first, so this requires 0..=255 and rejects otherwise.
 pub fn addr_to_int(value: &str) -> Option<u32> {
     let mut parts = value.split('.');
     let mut out: u32 = 0;
@@ -264,8 +263,8 @@ pub fn make_mask(bits: u32) -> u32 {
         return 0xffff_ffff;
     }
     // /0 has to be spelled out: `1u32 << 32` panics in debug and wraps to `1u32 << 0` in release,
-    // which would turn a /0 into a /32. Python has no fixed width and simply returns 0, so this
-    // was a divergence as well as a panic - reachable from any whitelist file carrying 0.0.0.0/0.
+    // which would turn a /0 into a /32. `core/addr.py:make_mask()` has no fixed width and simply
+    // returns 0, so this was a divergence as well as a panic - reachable from any whitelist file carrying 0.0.0.0/0.
     if bits == 0 {
         return 0;
     }
@@ -339,7 +338,7 @@ pub fn canonical_ip_text(text: &str) -> std::borrow::Cow<'_, str> {
 
 /// Parse a bare dotted-quad or IPv6 literal into the native form, but only accept it
 /// when re-rendering it with Maltrail's own formatter yields exactly the input. That
-/// guarantees a native-keyed lookup is equivalent to Python's string comparison.
+/// guarantees a native-keyed lookup is equivalent to comparing the trail text.
 pub fn parse_canonical_ip(text: &str) -> Option<Ip> {
     if let Some(v) = addr_to_int(text) {
         let ip = Ip::V4(v);
@@ -441,7 +440,7 @@ mod tests {
     fn make_mask_doctest() {
         assert_eq!(Ip::V4(make_mask(24)).render().as_str(), "255.255.255.0");
         assert_eq!(Ip::V4(make_mask(32)).render().as_str(), "255.255.255.255");
-        // /0 matches Python's make_mask(0) == 0, and does not panic or wrap to /32
+        // /0 matches core/addr.py's make_mask(0) == 0, and does not panic or wrap to /32
         assert_eq!(make_mask(0), 0);
         assert_eq!(Ip::V4(make_mask(0)).render().as_str(), "0.0.0.0");
     }
@@ -453,7 +452,7 @@ mod tests {
 
     #[test]
     fn compress_ipv6_backtracks_a_trailing_zero_group() {
-        // Python's `0+(\w)` backtracks, so an all-zero final group collapses to a single 0.
+        // core/addr.py's `0+(\w)` backtracks, so an all-zero final group collapses to a single 0.
         assert_eq!(compress_ipv6("0000:0000:0000:0000:0000:0000:0000:0000"), "::0");
         assert_eq!(compress_ipv6("0001:0000:0000:0000:0000:0000:0000:0000"), "1::0");
         // the LAST longest run wins (3 groups beats 2), so the middle 2:: stays expanded

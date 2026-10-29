@@ -1,5 +1,5 @@
-//! The NXDOMAIN ("excessive no such domain") counters — `NO_SUCH_NAME_COUNTERS` in
-//! `sensor.py`, including the hourly prune that bounds the dict.
+//! The NXDOMAIN ("excessive no such domain") counters, including the hourly prune that bounds
+//! them.
 
 use crate::fasthash::{StrMap, StrSet};
 
@@ -43,7 +43,7 @@ impl NxCounters {
     /// Record one NXDOMAIN observation for `key` (either the full query or the `*.domain`
     /// wildcard) and report an alert when the hourly threshold is exceeded.
     ///
-    /// Mirrors the Python loop exactly: a fresh key (or a key from an older hour) is reset
+    /// A fresh key (or a key from an older hour) is reset
     /// to count 1 with an empty name set, so the very first observation never alerts.
     pub fn observe(&mut self, key: &str, query: &str, sec: u64) -> Option<NxAlert> {
         let hour = sec / 3600;
@@ -63,7 +63,7 @@ impl NxCounters {
                 } else {
                     NxAlert::Exact { trail: key.to_string() }
                 };
-                // Python deletes the tracked names and the key itself after alerting.
+                // The tracked names and the key itself are deleted after alerting.
                 if let NxAlert::Wildcard { names, .. } = &alert {
                     for name in names {
                         self.counters.remove(name);
@@ -107,8 +107,7 @@ impl NxCounters {
     }
 }
 
-/// Shannon entropy of a label, as `sensor.py` computes it (base 2, over the distinct
-/// characters). Reference: https://github.com/exp0se/dga_detector
+/// Shannon entropy of a label (base 2, over the distinct characters). Reference: https://github.com/exp0se/dga_detector
 pub fn label_entropy(part: &str) -> f64 {
     if part.is_empty() {
         return 0.0;
@@ -135,7 +134,6 @@ mod tests {
 
     #[test]
     fn stale_hour_entries_are_pruned() {
-        // Mirrors the retired Python suite's TestNXDomainCounterBounded
         let mut nx = NxCounters::default();
         const H1: u64 = 3600;
         for i in 0..5 {

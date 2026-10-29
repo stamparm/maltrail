@@ -18,7 +18,7 @@ fn repo_root() -> PathBuf {
 }
 
 /// A private SNAPSHOT of the operator's trails file — `$MALTRAIL_TRAILS` when set, otherwise
-/// `~/.maltrail/trails.csv` (the same knob `tools/check.sh` uses for its real-trails parity step).
+/// `~/.maltrail/trails.csv`.
 ///
 /// These tests read the file more than once — build the store from it, then walk its rows to
 /// check each is findable. A running sensor refreshes that same file and installs the new one

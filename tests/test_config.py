@@ -72,7 +72,7 @@ class TestBadConfigsExitCleanly(unittest.TestCase):
     def test_missing_mandatory(self):
         for key in ("MONITOR_INTERFACE", "LOG_DIR"):
             self.assertEqual(_outcome(_write(_BASE, drop=(key,))), "exit", "missing %s" % key)
-        # CAPTURE_BUFFER was the Python sensor's ring; it is optional now.
+        # CAPTURE_BUFFER is deprecated and unused; a config without it must load.
         self.assertEqual(_outcome(_write(_BASE, drop=("CAPTURE_BUFFER",))), "ok")
 
     def test_garbage_numeric_values(self):

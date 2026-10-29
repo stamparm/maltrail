@@ -1,4 +1,4 @@
-//! Bounded state (ROADMAP Gate 1.5).
+//! Bounded state: every attacker-keyed map is capped by SIZE, not only by time.
 //!
 //! "Bounded" was claimed but only true of the scan accumulators. Three maps were bounded by
 //! TIME and not by SIZE:
@@ -110,7 +110,7 @@ fn the_condense_buffer_bounds_its_group_count_without_losing_events() {
     use maltrail_sensor::settings;
 
     // The info must (a) match CONDENSE_ON_INFO_KEYWORDS and (b) not be an 'attacker' info,
-    // which sensor.py deliberately suppresses on the destination-side SYN branch.
+    // which is deliberately suppressed on the destination-side SYN branch.
     let mut h = Harness::with_options(&[("66.66.66.66", "bad reputation", "(static)")], HarnessOptions::quiet());
 
     // One condense group per source address.

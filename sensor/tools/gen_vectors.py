@@ -167,7 +167,7 @@ def splitext_vectors():
 
 
 def checks_vectors():
-    """The URL-trail candidate list built in sensor.py:_process_packet()."""
+    """The URL-trail candidate list the sensor builds for an HTTP request (protocols::http::build_checks)."""
     def checks_for(path, post_data=None):
         unquoted_post_data = _urllib.parse.unquote(post_data or "")
         checks = [path.rstrip('/')]
@@ -435,7 +435,7 @@ def colorized_vectors():
         "[^] running...",
         "[z] unknown marker",
         "Maltrail (sensor) #v2.2 {https://maltrail.github.io}",
-        "Usage: sensor.py [options]",
+        "Usage: maltrail-sensor [options]",
         "[i] using configuration file '/tmp/maltrail.conf'",
         "[i] 1,554,918 trails loaded",
         '"2026-08-05 23:31:02.122079" Laptop 10.13.13.2 - 221.8.69.25 - ICMP IP 221.8.69.25 '

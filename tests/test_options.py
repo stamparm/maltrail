@@ -5,7 +5,7 @@ maltrail.conf is the file operators actually edit, and an option that exists onl
 is an option nobody finds. Seventeen of the Rust sensor's own settings were in that state -
 CAPTURE_WORKERS, the EVENT_THROTTLE_* family, CAPTURE_SNAPLEN and the rest were documented in
 sensor/docs/ but absent from the config file itself, so the only way to learn they existed was to
-be told. USE_CONDENSED_STORAGE was worse: read by BOTH sensors, defaulting to ON, and writing a
+be told. USE_CONDENSED_STORAGE was worse: read by the sensor, defaulting to ON, and writing a
 SQLite store, with no mention in the configuration at all.
 
 This keeps the file honest. It is the cheap half of documentation - it cannot check that an
@@ -27,8 +27,8 @@ DYNAMIC = {"FAIL2BAN_ALLOWLIST", "BLACKLIST_ALLOWLIST", "HOME_LAT", "HOME_LON", 
 # Read only in order to tell the operator to stop using it, so it must NOT be advertised in the
 # configuration file.
 # Accepted by read_config() so an upgrader's existing maltrail.conf does not warn, but no longer
-# documented and no longer read by anything: they configured the retired Python sensor's
-# multiprocessing pool and its in-C admission prefilter, neither of which the Rust sensor has.
+# documented and no longer read by anything: they configured a multiprocessing pool and an in-C
+# admission prefilter, neither of which the sensor has.
 # Read, but no longer in maltrail.conf: old names that existing configurations still use.
 DEPRECATED = {"USE_MULTIPROCESSING", "DISABLE_CPU_AFFINITY", "USE_CAPTURE_AFFINITY", "CAPTURE_BUFFER",
               "CAPTURE_FANOUT", "CHECK_TLS_CERTIFICATES"}

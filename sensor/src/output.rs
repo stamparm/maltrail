@@ -1,7 +1,7 @@
 //! Event emission — daily log file, `LOG_SERVER` datagrams, CEF/syslog, Logstash JSON,
 //! condensing and log throttling. A direct port of `core/log.py`.
 //!
-//! The Python server parses these lines, so the formats are a compatibility surface rather than an
+//! The Maltrail server parses these lines, so the formats are a compatibility surface rather than an
 //! implementation detail. CEF escaping is asserted byte-for-byte against `core/log.py` by
 //! `tests/vectors.rs`, over fixtures `tools/gen_vectors.py` generates from it; the rest is covered
 //! by this module's own tests. (This used to claim every rendering was pinned in a
@@ -113,8 +113,8 @@ pub struct OutputConfig {
     pub logstash_server: Vec<String>,
     pub severity_regex: Option<fancy_regex::Regex>,
     /// Event-log throttling (see `crate::throttle` for why this is a redesign rather than a
-    /// port). `legacy_divisor` is set from the ACTUAL worker count, since sensor.py's
-    /// PROCESS_COUNT is its worker count.
+    /// port). `legacy_divisor` is set from the ACTUAL worker count, which is what `core/log.py`'s
+    /// PROCESS_COUNT stands for.
     pub throttle: crate::throttle::ThrottleConfig,
     pub hostname: String,
     pub ignore: IgnoreRules,
@@ -307,7 +307,7 @@ impl EventSink {
 
         if self.cfg.console_output() {
             // core/log.py writes the event to stderr, and core/colorized.py wraps stderr too,
-            // so the console stream is coloured exactly like the Python sensor's.
+            // so the console stream is coloured the same way.
             let painted = crate::colorized::colorize(&line);
             let mut stderr = std::io::stderr().lock();
             let _ = stderr.write_all(painted.as_bytes());
@@ -325,7 +325,7 @@ impl EventSink {
             // between workers: each has its own sink, so two could both find the file missing at a
             // day boundary and the second `File::create` would TRUNCATE events the first had
             // already written. `create(true).append(true)` with the mode set in the same call
-            // cannot truncate, and gives Python's 0644 on creation without a second syscall.
+            // cannot truncate, and gives core/log.py's 0644 on creation without a second syscall.
             // .mode() is a Unix extension; on Windows the file inherits the directory's ACL and
             // there is no mode to request.
             #[cfg(unix)]
@@ -449,8 +449,8 @@ impl EventSink {
 
     /// Address for `endpoint`, resolving it if it is not already known good.
     ///
-    /// Python never had this problem: `_endpoint_address` keeps a hostname as `(host, port)` and
-    /// lets `sendto` resolve it on every send, so a DNS blip costs one event. The Rust port
+    /// `core/log.py` does not have this problem: `_endpoint_address` keeps a hostname as `(host, port)` and
+    /// lets `sendto` resolve it on every send, so a DNS blip costs one event. An earlier version
     /// resolved up front and cached the `None`, so the FIRST event during a DNS outage disabled
     /// the endpoint until the process restarted - and with DISABLE_LOCAL_LOG_STORAGE that is
     /// every subsequent detection, silently.
@@ -538,7 +538,7 @@ impl EventSink {
         }
     }
 
-    /// Flush the condense buffer if the Python flush period has elapsed. Called from the
+    /// Flush the condense buffer if `CONDENSED_EVENTS_FLUSH_PERIOD` has elapsed. Called from the
     /// worker loop on a coarse counter, so the hot path pays nothing per packet.
     pub fn maybe_flush_condensed(&mut self) {
         if self.condensed.is_empty() {
@@ -612,9 +612,8 @@ pub fn merge_events(events: &[Event]) -> Option<Event> {
                 continue;
             }
             // ','.join(str(_) for _ in sorted(set))
-            // NOTE: Python raises TypeError when a set mixes int and str (e.g. an ICMP '-' port
-            // beside a numeric one) and loses the whole flush; the Field ordering used here is
-            // total, so the record is emitted instead.
+            // A set may mix int and str (e.g. an ICMP '-' port beside a numeric one); the Field
+            // ordering used here is total, so the record is still emitted.
             let joined = set.iter().map(|f| f.as_plain()).collect::<Vec<_>>().join(",");
             let field = Field::Text(joined);
             match j {

@@ -36,13 +36,12 @@ concurrency:
 jobs:
 
   # The full Rust gate: generated-file freshness, fmt, clippy -D warnings, the suite in BOTH
-  # debug (overflow checks on) and release (what ships), then differential parity against the
-  # old Python sensor. Its real-trails steps self-skip here, because a runner has no trails.csv;
+  # debug (overflow checks on) and release (what ships), the corpus replay included. Its
+  # real-trails steps self-skip here, because a runner has no trails.csv;
   # the `real-trails` job below builds one and runs the tests that need it.
   # src/settings_gen.rs is transcribed from core/settings.py and data/ua.txt, and the Python side
-  # reads those at runtime while the sensor COMPILES them in. Let them drift and the two sensors
-  # disagree in a way the parity harness structurally cannot see, because each is internally
-  # consistent. check.sh catches it, but ~3 minutes in and behind a 45-minute job; this answers in
+  # reads those at runtime while the sensor COMPILES them in. Let them drift and the sensor and
+  # the server disagree in a way no replay can see, because each is internally consistent. check.sh catches it, but ~3 minutes in and behind a 45-minute job; this answers in
   # seconds, on its own, so the person who edited a constant is told by the first thing that
   # finishes. It has been forgotten four times.
   generated:
@@ -155,7 +154,7 @@ jobs:
             exit 1
           fi
 
-      # --nocapture so the row counts, store size and parity numbers are in the log. A skipped
+      # --nocapture so the row counts, store size and loader comparison are in the log. A skipped
       # test PASSES, which is the failure mode this job exists to remove, so the skip note is
       # also grepped for: green here has to mean the walk actually ran.
       - name: Real-trail invariants (every row findable, loader parity with Python)
@@ -452,8 +451,7 @@ jobs:
   # setup-python no longer ships 3.7 for ubuntu-24.04, hence the pinned older runner for that entry.
   #
   # The server is standard library only, and that is exactly what this matrix is proving: nothing
-  # here installs a third-party package. The suite has no optional dependency left - it used to
-  # need pcapy-ng for one test, which no job ever actually installed.
+  # here installs a third-party package, and the suite has no optional dependency.
   server:
     name: server tests (Python ${{ matrix.python }})
     runs-on: ${{ matrix.runner }}

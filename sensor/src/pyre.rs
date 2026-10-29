@@ -189,8 +189,8 @@ fn hex_escape_punctuation(pattern: &str) -> String {
 pub enum Error {
     Regex(regex::Error),
     /// CPython itself rejects the pattern, so Maltrail's loaders must treat it as
-    /// non-compiling too (otherwise Rust would keep a trail/user-agent pattern that the
-    /// Python sensor escapes into a literal).
+    /// non-compiling too (otherwise the sensor would keep a trail/user-agent pattern that
+    /// CPython cannot compile).
     PythonIncompatible(String),
 }
 

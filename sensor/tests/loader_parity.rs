@@ -2,7 +2,7 @@
 //! trails.csv, row by row.
 //!
 //! Every other trail test checks the Rust loader against itself. This one runs Python's loader as
-//! an oracle (`tools/dump_trails.py`) and compares:
+//! the reference (`tools/dump_trails.py`) and compares:
 //!
 //!   * the number of rows accepted, and the number of distinct keys,
 //!   * the three fields of EVERY accepted row (so a CSV-splitting difference on quoted rows —
@@ -57,7 +57,7 @@ struct Dump {
     path: PathBuf,
 }
 
-/// Run the Python oracle and parse its header. Rows stay on disk (there are ~1.5M of them).
+/// Run the Python reference dump and parse its header. Rows stay on disk (there are ~1.5M of them).
 fn python_dump(trails_csv: &PathBuf) -> Option<Dump> {
     let python = python()?;
     let script = repo_root().join("sensor").join("tools").join("dump_trails.py");
@@ -165,8 +165,8 @@ fn every_row_python_loads_is_loaded_identically_by_rust() {
 
 #[test]
 fn repairing_mangled_patterns_only_ever_adds_wildcard_trails() {
-    // `REPAIR_TRUNCATED_TRAILS` (on by default) is the one deliberate detection difference from
-    // sensor.py: patterns that Maltrail's own trail generation mangles - `core/update.py`
+    // `REPAIR_TRUNCATED_TRAILS` (on by default) is the one deliberate difference from Python's
+    // loader: patterns that Maltrail's own trail generation mangles - `core/update.py`
     // truncates any non-path trail at the first '?', which decapitates regex trails containing
     // e.g. `sing-?post` - are repaired and matched instead of being dropped silently.
     //

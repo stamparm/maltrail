@@ -82,9 +82,8 @@ class TestTheStalenessGateSurvives(unittest.TestCase):
 class TestDocumentedCountsAreTrue(unittest.TestCase):
     """A number in a document rots silently, and this one has rotted before.
 
-    sensor/docs/REPORT.md carries a row recording that it once claimed 261 tests when the suite had
-    311, "re-measured per suite rather than copied". It was 403 against 492 by the time anyone
-    looked again, and AGENTS.md said 44 feeds when there were 42. Nobody is going to re-count by
+    A sensor report once claimed 261 tests when the suite had 311; it was 403 against 492 by the
+    time anyone looked again, and AGENTS.md said 44 feeds when there were 42. Nobody is going to re-count by
     hand, so the counts that CAN be checked mechanically are checked here.
 
     Only the feed count is asserted. Test totals need both suites actually run, which this cannot

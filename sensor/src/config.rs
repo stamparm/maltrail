@@ -1,10 +1,9 @@
-//! `maltrail.conf` reader — a faithful port of `core/settings.py:read_config()`.
+//! `maltrail.conf` reader, parsing exactly like `core/settings.py:read_config()`.
 //!
-//! The existing configuration file is the only configuration source; every option the
-//! Python sensor honours is honoured here with the same name, type coercion and
-//! validation. A handful of *new* capture-tuning options exist (all optional, all with
-//! conservative defaults) because the Rust sensor talks to libpcap directly instead of
-//! going through the Python mmap ring — they are listed in `docs/COMPATIBILITY.md`.
+//! The configuration file shared with the Maltrail server is the only configuration source;
+//! options keep the server's names, type coercion and validation. The capture-tuning options
+//! (all optional, all with conservative defaults) exist because the sensor talks to libpcap
+//! directly — they are listed in `docs/BEHAVIOUR.md`.
 
 use std::collections::HashMap;
 use std::path::{Path, PathBuf};
@@ -30,7 +29,7 @@ impl Value {
 }
 
 /// `core/settings.py:BLOCK_LENGTH` — retained because `CAPTURE_BUFFER` is rounded down to
-/// a whole number of ring blocks and operators compare the logged value with Python's.
+/// a whole number of ring blocks, which is the value logged at startup.
 pub const BLOCK_LENGTH: u64 = 1 + 2 + 4 + 4 + 4 + settings::SNAP_LEN as u64;
 
 /// Default libpcap ring per capture socket.
@@ -55,8 +54,8 @@ pub const MAX_CAPTURE_RING: u64 = 1024 * 1024 * 1024;
 
 /// Ceiling when the ring is INFERRED from `CAPTURE_BUFFER` rather than asked for.
 ///
-/// `CAPTURE_BUFFER` ships as `10%` of physical memory and meant something else entirely on the
-/// Python sensor (a userspace ring shared between processes). Reading it as a libpcap ring is a
+/// `CAPTURE_BUFFER` ships as `10%` of physical memory and originally sized a userspace ring
+/// shared between processes, not a kernel one. Reading it as a libpcap ring is a
 /// reasonable inference - it is what maltrail.conf has always claimed - but it is still an
 /// inference, so it gets the conservative end of the range docs/INSTALL.md recommends. On a 64 GB
 /// host that is 256 MB per worker instead of 6.4 GB of locked kernel memory times the worker
@@ -140,10 +139,9 @@ impl FanoutMode {
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum TimestampSource {
-    /// Use the pcap record timestamp (what live capture and Python 2 do).
+    /// Use the pcap record timestamp (what live capture does).
     Pcap,
-    /// Substitute wall-clock time, reproducing the Python 3 `pcapy-ng` workaround in
-    /// `sensor.py:packet_handler` (needed for strict offline parity runs).
+    /// Substitute wall-clock time: each packet is stamped with the time it is processed.
     Wallclock,
 }
 
@@ -189,16 +187,15 @@ pub struct Config {
     pub user_ignorelist: Option<PathBuf>,
     pub use_condensed_storage: bool,
     /// CHECK_TLS_FINGERPRINTS: match server certificates (SHA-1) and client ClientHellos
-    /// (JA3/JA4) against the trail set. New in this sensor (`sensor.py` extracts certificates for
-    /// reporting but never matches them).
+    /// (JA3/JA4) against the trail set.
     pub check_tls_fingerprints: bool,
     /// New: opt out of the startup/periodic trail refresh (for hosts where trails.csv is managed
     /// externally, e.g. pushed by the Maltrail server). Default OFF, i.e. the sensor refreshes
-    /// trails exactly like sensor.py does.
+    /// trails itself.
     pub disable_trail_updates: bool,
     /// New: repair feed-mangled wildcard-trail patterns instead of dropping them the way
     /// `build_trails_regex()` does. ON by default (it recovers real trails that Maltrail's own
-    /// trail generation mangles); set false for byte-exact wildcard parity with `sensor.py`.
+    /// trail generation mangles); set false to drop them exactly as `build_trails_regex()` does.
     pub repair_truncated_trails: bool,
     /// New: keep the built trail tables next to TRAILS_FILE (`<TRAILS_FILE>.store`) and map them
     /// on the next start/reload instead of parsing the CSV again. ON by default; see trails/store.rs.
@@ -228,15 +225,15 @@ pub struct Config {
     /// workload that motivated it: on a 1M-query DGA flood, 1000 entries cost 1,554 ns/query,
     /// 4,096 cost 1,704 ns and 16,384 cost 2,004 ns. A flood misses at any size, and a bigger
     /// cache just makes each miss touch a colder structure. Kept configurable for hosts whose
-    /// working set genuinely fits; the default stays where Python put it.
+    /// working set genuinely fits; the default stays at `settings::MAX_CACHE_ENTRIES`.
     pub domain_cache_entries: usize,
 
-    // --- fast-path / fanout options shared with the Python sensor ---
+    // --- fast-path / fanout options ---
     pub capture_fanout: u32,
     /// CHECK_TLS_SNI: match the SNI of TLS ClientHellos and QUIC Initials as a domain.
     pub check_tls_sni: bool,
 
-    // --- Rust-sensor capture tuning (new; see docs/COMPATIBILITY.md) ---
+    // --- capture tuning (see docs/BEHAVIOUR.md) ---
     pub capture_workers: u32,
     pub capture_buffer_size: u64,
     pub capture_snaplen: usize,
@@ -261,7 +258,7 @@ fn cpu_count() -> u32 {
 
 /// `os.path.expanduser("~")`'s notion of home.
 ///
-/// Python reads HOME on POSIX and USERPROFILE on Windows, where HOME is normally unset - so a
+/// CPython reads HOME on POSIX and USERPROFILE on Windows, where HOME is normally unset - so a
 /// sensor that only looked at HOME resolved `$USERS_DIR` to `/.maltrail` on Windows while the
 /// server it shares that path with resolved it to the real profile directory.
 fn home_dir() -> String {
@@ -298,7 +295,7 @@ fn expanduser(value: &str) -> String {
 }
 
 /// Lexical `os.path.realpath(os.path.join(base, path))`. Deliberately does not touch the
-/// filesystem: Python's `realpath` also succeeds for a `LOG_DIR` that does not exist yet.
+/// filesystem: CPython's `realpath` also succeeds for a `LOG_DIR` that does not exist yet.
 fn normalize_path(base: &Path, value: &str) -> PathBuf {
     let expanded = expanduser(value);
     let joined = if Path::new(&expanded).is_absolute() { PathBuf::from(&expanded) } else { base.join(&expanded) };
@@ -412,7 +409,7 @@ macro_rules! bail {
 /// exactly, including its quirks (comment stripping before quoting, a value-less option
 /// becoming an empty array, `strip("'\"")` on values).
 /// Option names present in the parsed config that no parser recognises (`KNOWN_CONFIG_OPTIONS`
-/// covers every name read by `core/`, `server.py`, `sensor.py` and this sensor). Sorted, so the
+/// covers every name read by `core/`, `server.py` and this sensor). Sorted, so the
 /// warning order is stable across runs.
 fn unknown_keys(raw: &HashMap<String, Value>) -> Vec<String> {
     let mut out: Vec<String> =
@@ -764,7 +761,8 @@ pub fn total_physmem() -> Option<u64> {
     }
 }
 
-/// `sensor.py:_fanout_count()` — identical parsing.
+/// `CAPTURE_FANOUT` as a socket count: an integer above 1, or the CPU count for
+/// `auto`/`true`/`yes`/`on`; anything else is 0.
 pub fn fanout_count(value: Option<&Value>) -> u32 {
     let text = match value {
         None => return 0,
@@ -799,7 +797,7 @@ pub fn split_endpoints(value: &str) -> Vec<&str> {
     value.split([',', ';', ' ', '\t', '\n', '\r']).map(str::trim).filter(|s| !s.is_empty()).collect()
 }
 
-/// `sensor.py:_cfg_bool()` — for switches without a boolean-implying prefix.
+/// Boolean value of a switch whose name has no boolean-implying prefix.
 pub fn cfg_bool(value: Option<&Value>) -> bool {
     match value {
         Some(Value::Bool(b)) => *b,
@@ -838,7 +836,7 @@ impl Config {
             );
         }
 
-        // CAPTURE_BUFFER was the Python sensor's ring and was mandatory; it is now only the seed of
+        // CAPTURE_BUFFER once sized a userspace ring and was mandatory; it is now only the seed of
         // CAPTURE_BUFFER_SIZE, and its shipped `10%` is the default when it is absent.
         let capture_buffer_raw = get_str(&raw, "CAPTURE_BUFFER");
         let capture_buffer = if capture_buffer_raw.is_empty() {
@@ -947,7 +945,7 @@ impl Config {
         // ONE worker by default, deliberately, and NOT derived from PROCESS_COUNT.
         //
         // This used to default to `max(CAPTURE_FANOUT, PROCESS_COUNT)`, i.e. 16 with the shipped
-        // maltrail.conf, on the reasoning that one Rust worker == one Python worker process. That
+        // maltrail.conf, on the reasoning that one worker == one PROCESS_COUNT process. That
         // reasoning was about log VOLUME: `core/log.py`'s throttle keeps state per worker, so
         // running fewer workers than PROCESS_COUNT wrote proportionally fewer lines for the same
         // traffic. It only ever applied to `EVENT_THROTTLE_MODE legacy`; the default `summarize`
@@ -968,8 +966,8 @@ impl Config {
             Some(n) if n > 0 => n as u32,
             _ => match get_str(&raw, "CAPTURE_WORKERS").trim().to_ascii_lowercase().as_str() {
                 "auto" | "true" | "yes" | "on" => cpu_count(),
-                // CAPTURE_FANOUT counts capture SOCKETS in sensor.py; here a worker owns its
-                // socket, so the two knobs collapse into one. An operator who set CAPTURE_FANOUT
+                // CAPTURE_FANOUT counts capture SOCKETS; a worker owns its socket, so the two
+                // knobs collapse into one. An operator who set CAPTURE_FANOUT
                 // asked for fanout explicitly and still gets it; PROCESS_COUNT does not opt in.
                 _ => capture_fanout.max(1),
             },
@@ -1260,7 +1258,7 @@ impl Config {
         }
     }
 
-    /// `sensor.py:_heuristic_enabled()`
+    /// Is the heuristic `name` not muted by `DISABLED_HEURISTICS`?
     pub fn heuristic_enabled(&self, name: &str) -> bool {
         !self.disabled_heuristics.iter().any(|d| d == name)
     }
@@ -1399,7 +1397,7 @@ SENSOR_NAME box   # trailing comment
     }
 
     #[test]
-    fn fanout_count_matches_python_table() {
+    fn fanout_count_table() {
         let cpu = cpu_count();
         let cases: [(Option<Value>, u32); 10] = [
             (None, 0),
@@ -1507,7 +1505,7 @@ SENSOR_NAME box   # trailing comment
             Config::load(&path).expect("config must load")
         };
 
-        // PROCESS_COUNT alone must NOT fan out: it is sensor.py's worker-process count, and
+        // PROCESS_COUNT alone must NOT fan out: it sizes `core/log.py`'s legacy throttle, and
         // honouring it here degraded the scan heuristics of anyone who never touched the setting.
         assert_eq!(write("pc.conf", "PROCESS_COUNT 16\n").capture_workers, 1);
         // Both explicit knobs still work, and still win.

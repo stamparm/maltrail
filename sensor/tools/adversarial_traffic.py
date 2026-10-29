@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-"""Generate real, varied, adversarial traffic to shadow-test the sensors (ROADMAP Gate 2.3).
+"""Generate real, varied, adversarial traffic to test the sensor against.
 
-A corpus proves the sensors agree on traffic somebody thought to synthesize. This produces
+A corpus proves the sensor handles traffic somebody thought to synthesize. This produces
 traffic from real client stacks — the kernel's TCP, a real resolver, real HTTP framing — driven
-by indicators sampled from the operator's ACTUAL trails.csv, so the comparison covers packets
+by indicators sampled from the operator's ACTUAL trails.csv, so the test covers packets
 nobody hand-wrote.
 
     python3 sensor/tools/adversarial_traffic.py --seconds 600
@@ -164,7 +164,7 @@ def udp_probe(host, port):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="adversarial traffic generator for shadow testing")
+    parser = argparse.ArgumentParser(description="adversarial traffic generator for sensor testing")
     parser.add_argument("--seconds", type=int, default=300, help="how long to run (default 300)")
     parser.add_argument("--trails", default=os.path.expanduser("~/.maltrail/trails.csv"))
     parser.add_argument("--per-kind", type=int, default=400, help="trails sampled per kind")

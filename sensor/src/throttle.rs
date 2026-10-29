@@ -51,8 +51,8 @@
 //! The window is wall-independent (it uses the packet clock), the key table is bounded, and
 //! everything is per worker and lock-free, exactly as before.
 //!
-//! `EVENT_THROTTLE_MODE legacy` restores the Python behaviour verbatim, quirks included, which is
-//! what the strict-parity harness runs with.
+//! `EVENT_THROTTLE_MODE legacy` restores `core/log.py`'s bucketing verbatim, quirks included,
+//! which is what the test harness (`testkit`) runs with.
 
 use std::collections::HashMap;
 
@@ -97,7 +97,7 @@ pub struct ThrottleConfig {
     pub burst: u32,
     /// Cap on tracked keys, so a flood of distinct trails cannot grow memory without bound.
     pub max_keys: usize,
-    /// `sec / divisor` bucket width for `Legacy` (sensor.py's `PROCESS_COUNT`).
+    /// `sec / divisor` bucket width for `Legacy` (`core/log.py`'s `PROCESS_COUNT`).
     pub legacy_divisor: u32,
 }
 
@@ -695,7 +695,7 @@ mod tests {
                 written += 1;
             }
         }
-        assert_eq!(written, 4, "legacy mode must match the Python sensor line for line");
+        assert_eq!(written, 4, "legacy mode must match core/log.py line for line");
         assert!(t.flush_due(1786091400).is_empty(), "legacy mode never summarizes");
     }
 

@@ -18,9 +18,7 @@ import traceback
 # pre-detection traffic) WITHOUT storing raw traffic.
 #
 # This is the READ side only. The sensor (sensor/src/meta.rs) writes and prunes the store; the
-# server serves /meta from it with lookup(). The Python writer this module also carried belonged
-# to the retired Python sensor and had no caller left. The file's shape is the contract between
-# the two: WITHOUT ROWID, IPs as 4/16-byte BLOBs and domains as TEXT, a rollback journal rather
+# server serves /meta from it with lookup(). The file's shape is the contract between the two: WITHOUT ROWID, IPs as 4/16-byte BLOBs and domains as TEXT, a rollback journal rather
 # than WAL, world-readable - the sensor writes it as root and the server usually reads it as a
 # non-root user, so the read side opens it truly read-only (URI mode=ro).
 

@@ -384,7 +384,7 @@ def _sensor_config(path, log_dir, trails_file):
 
 
 def _replay_corpus(binary, log_dir, work_dir):
-    """Replay the parity corpus into `log_dir`. Returns the number of pcaps replayed.
+    """Replay the sensor's replay corpus into `log_dir`. Returns the number of pcaps replayed.
 
     The corpus is 42 crafted captures with their own trail set, already asserted by
     `sensor/tests/replay.rs`. Replaying it here is what makes a kept LOG_DIR cover the detections
@@ -413,14 +413,13 @@ def detect_test(keep=None, serve=False):
     that every expected detection fires (the core "does the sensor actually catch the bad traffic" gate).
 
     `keep` writes the resulting LOG_DIR (plus the trails and config used) somewhere durable and
-    additionally replays the parity corpus into it, so the events can be served and LOOKED at -
+    additionally replays the sensor's replay corpus (sensor/tests/corpus) into it, so the events can be served and LOOKED at -
     the sensor half answers "was it detected", the dashboard half answers "is it drawn correctly",
     and nothing but a populated log answers the second. `serve` then starts the web server on it.
 
-    This drives the SHIPPED sensor. It used to run the retired Python sensor, which needs pcapy -
-    not a dependency since the sensor became Rust - so on a healthy install the check that answers
-    "is detection working?" printed "0/17 detection(s) fired ... FAILED". A gate that cries wolf on
-    a working install is worse than no gate: it is the project's own failure mode, inverted.
+    This drives the SHIPPED sensor binary, and reports a missing one as such: a check that answers
+    "is detection working?" with "0/17 detection(s) fired ... FAILED" on a healthy install is worse
+    than no check - it is the project's own failure mode, inverted.
     """
 
     binary = find_sensor()
@@ -469,9 +468,8 @@ def detect_test(keep=None, serve=False):
         passed = 0
         for description, expected, timing_window in checks:
             # `timing_window` marks the three heuristics that need the pcap's own timestamps to flush their window.
-            # They used to be skipped outright: offline Py3 substituted wall-clock time (a pcapy-ng workaround), so
-            # they could only be asserted under Py2, which is gone. The Rust sensor honours pcap timestamps, so all
-            # three fire and are asserted - the field is kept because it says WHY they are the fragile ones.
+            # The sensor honours pcap timestamps, so all three fire and are asserted - the field is kept because it
+            # says WHY they are the fragile ones: replayed on wall-clock time, they would never fire.
             if all(_ in events for _ in expected):
                 passed += 1
             else:

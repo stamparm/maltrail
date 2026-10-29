@@ -150,8 +150,8 @@ impl<K: Eq + Hash + Clone, V> LruMap<K, V> {
     /// caches — a whitelist parent walk — costs about 2.4x LESS than that. So for traffic that
     /// never repeats a name, the cache was strictly more expensive than having no cache at all.
     ///
-    /// That is a leftover from the Python original, where the cached work was expensive enough
-    /// that caching always won. Here it does not.
+    /// Caching everything only pays when the cached work is expensive enough that caching
+    /// always wins. Here it does not.
     ///
     /// The doorkeeper is a small direct-mapped table of hash fingerprints: a key is admitted to
     /// the LRU only on its second sighting, so a one-shot name (a DGA flood, a scan) costs one

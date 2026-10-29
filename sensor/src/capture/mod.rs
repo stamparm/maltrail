@@ -1,5 +1,5 @@
 //! Packet capture: libpcap live handles (with Linux `PACKET_FANOUT`) and offline pcap
-//! replay. Mirrors the handle setup in `sensor.py:init()`.
+//! replay.
 
 pub mod fanout;
 pub mod srcfanout;
@@ -74,8 +74,8 @@ pub struct LiveHandleInfo {
 /// Turn a configured interface list into names this machine actually has.
 ///
 /// `any` is a Linux pseudo-device. Everywhere else it does not exist, so the shipped
-/// `MONITOR_INTERFACE any` could not capture at all - which is what `sensor.py` in Maltrail v1
-/// worked around by substituting the real interface names, and the same trick applies here.
+/// `MONITOR_INTERFACE any` could not capture at all, so there it is replaced by the real
+/// interface names.
 ///
 /// Only when the platform does not provide `any` itself: on Linux libpcap enumerates it, so this
 /// is a no-op there and the kernel keeps doing the merging, which is cheaper and loses no
@@ -194,7 +194,7 @@ impl Handle {
         }
 
         if !cfg.capture_filter.is_empty() {
-            // optimize=true, matching pcapy's default
+            // optimize=true
             cap.filter(&cfg.capture_filter, true)?;
         }
 
@@ -228,8 +228,8 @@ impl Handle {
         matches!(self, Handle::Offline(_))
     }
 
-    /// Apply a BPF filter. `sensor.py` only does this for live handles; exposed for both so
-    /// the parity harness can mirror a capture filter offline when asked to.
+    /// Apply a BPF filter. Startup applies `CAPTURE_FILTER` to live handles only; this works on
+    /// offline handles too, so a replay can be filtered the same way when asked to.
     pub fn set_filter(&mut self, filter: &str) -> Result<(), CaptureError> {
         match self {
             Handle::Live(c) => c.filter(filter, true)?,

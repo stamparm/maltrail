@@ -27,7 +27,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VENDORED = ("thirdparty.min.js",)
 
 # Directories with no bearing on what ships.
-SKIP_DIRS = {".git", "target", "node_modules", "__pycache__", "trails", "misc", "old"}
+SKIP_DIRS = {".git", "target", "node_modules", "__pycache__", "trails", "misc"}
 
 
 def _walk(root, suffix):

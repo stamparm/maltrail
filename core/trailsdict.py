@@ -326,7 +326,7 @@ class TrailsDict(dict):
             raise Exception("cannot iterate a finalized TrailsDict (keys are not retained)")
         return self._trails.values()
 
-    def iteritems(self):   # Python 2 parity (mirrors iterkeys)
+    def iteritems(self):   # Python 2 spelling (mirrors iterkeys)
         if self._frozen is not None or self._mmap is not None:
             raise Exception("cannot iterate a finalized TrailsDict (keys are not retained)")
         for key in self._trails:

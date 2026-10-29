@@ -1,14 +1,13 @@
 //! Generated-file freshness.
 //!
 //! `src/settings_gen.rs` is produced by `tools/gen_settings.py` from `core/settings.py` and then
-//! compiled in. The Python sensor reads those same constants **at runtime**. So if someone bumps
-//! `PORT_SCANNING_THRESHOLD` (or a whitelist keyword, or a suspicious-UA pattern) in
-//! `core/settings.py` and does not regenerate, the two sensors silently disagree — and the
-//! differential parity harness *cannot* catch it, because it compares two sensors that are each
-//! internally consistent.
+//! compiled in. The server and the updater read those same constants **at runtime**. So if
+//! someone bumps `PORT_SCANNING_THRESHOLD` (or a whitelist keyword, or a suspicious-UA pattern) in
+//! `core/settings.py` and does not regenerate, the sensor silently disagrees with the rest of
+//! Maltrail — and no replay can catch it, because each side is internally consistent.
 //!
-//! That is a whole class of divergence that no amount of parity testing closes. This test closes
-//! it: regenerate into a temp file and require the same *constants*, ignoring layout.
+//! This test closes that: regenerate into a temp file and require the same *constants*, ignoring
+//! layout.
 //!
 //! It deliberately does NOT compare bytes. It used to, after running `rustfmt` on the regenerated
 //! copy, and that made it fail for reasons that have nothing to do with a stale constant:
@@ -116,7 +115,7 @@ fn settings_gen_is_in_sync_with_core_settings_py() {
     assert!(
         problems.is_empty(),
         "src/settings_gen.rs disagrees with core/settings.py about {} constant(s).\n\
-         The two sensors would silently disagree, and the parity harness cannot see it.\n\
+         The sensor would silently disagree with core/settings.py, and no replay can see it.\n\
          Regenerate with:  python3 sensor/tools/gen_settings.py && \\\n\
          \x20  rustfmt --edition 2021 --config-path sensor/rustfmt.toml sensor/src/settings_gen.rs\n\n{}",
         problems.len(),

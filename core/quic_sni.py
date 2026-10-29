@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # coding: utf-8
 """
-QUIC Initial SNI extractor for passive sensors (Maltrail-side; pcapy-ng delivers the
-flow-head, this parses it).  Works on ANY box:
+QUIC Initial SNI extractor (Maltrail-side; given a captured QUIC Initial datagram, this
+parses it).  Works on ANY box:
 
   * FAST path  : uses the `cryptography` package's AES if it is importable.
   * FALLBACK   : a tiny pure-Python AES-128 (stdlib only) when it is not.

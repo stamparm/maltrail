@@ -6,7 +6,7 @@ See the file 'LICENSE' for copying permission
 
 `server.py --doctor`: validate a deployment BEFORE the events matter.
 
-The sensor got `-T/--test-config` for exactly this reason (docs/COMPATIBILITY.md #17): the only
+The sensor has `-T/--test-config` for exactly this reason: the only
 way to learn that LOG_DIR is unwritable or the trails file is months old used to be to start
 capturing and watch. A server has the same failure modes - plus its own: the reporting port taken
 by another process, an empty USERS table nobody can log into, an intake address the dashboard can

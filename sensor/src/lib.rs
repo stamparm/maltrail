@@ -1,9 +1,10 @@
-//! Maltrail sensor — Rust implementation of the packet-processing hot path.
+//! Maltrail's sensor: packet capture, trail matching, the detection heuristics and event
+//! logging, in Rust.
 //!
-//! Behaviour is defined by the Python sensor in this same repository (`sensor.py` and
-//! `core/`); every module documents the Python function it reproduces. See
-//! `docs/PORTING_MAP.md` for the full mapping and `docs/COMPATIBILITY.md` for the
-//! deliberate differences.
+//! It reads the same `maltrail.conf` and trail set as the Maltrail server and writes events
+//! the server parses. See `docs/ARCHITECTURE.md` for how the pieces fit together and
+//! `docs/BEHAVIOUR.md` for compatibility with the server, the detections, design decisions
+//! and limitations.
 
 pub mod addr;
 pub mod config;

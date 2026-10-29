@@ -41,8 +41,8 @@ fi
 echo "== generated files are in sync with core/settings.py and data/ua.txt =="
 # FIRST, and against the tree exactly as committed: this gate exists to catch a constant that moved
 # in core/settings.py (or a User-Agent pattern added to data/ua.txt, which read_ua() folds into
-# SUSPICIOUS_UA_REGEX) without src/settings_gen.rs being regenerated. The Python sensor reads those
-# constants at runtime while the Rust one compiles them in, so a mismatch makes the two sensors
+# SUSPICIOUS_UA_REGEX) without src/settings_gen.rs being regenerated. The server and the updater
+# read those constants at runtime while the sensor compiles them in, so a mismatch makes them
 # disagree in a way no replay can see, because each is internally consistent on its own. Nothing
 # above this line may write to src/settings_gen.rs.
 cargo test --manifest-path sensor/Cargo.toml --release --test generated
@@ -86,10 +86,6 @@ echo "== build the release binary =="
 cargo build --manifest-path sensor/Cargo.toml --release
 
 # The corpus expectations are asserted by tests/replay.rs, which ran as part of `cargo test`
-# above: every case in the manifest is replayed and each declared detection must appear. That used
-# to be checked a second way, by replaying the same corpus through the retired Python sensor and
-# diffing - which is what the deleted sensor/tools/parity.py did. The port is three releases old,
-# its deliberate divergences are pinned in tests/detection.rs, and agreeing with a retired
-# implementation had stopped being evidence of anything.
+# above: every case in the manifest is replayed and each declared detection must appear.
 
 echo "== all checks passed =="

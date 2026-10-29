@@ -1,7 +1,6 @@
-//! Trail updating — `sensor.py:init():update_timer()`.
+//! Trail updating.
 //!
-//! The sensor MUST refresh `TRAILS_FILE` itself, on startup and every `UPDATE_PERIOD`, exactly
-//! like `sensor.py` does. Skipping it is not a cosmetic difference: static trails are added to
+//! The sensor MUST refresh `TRAILS_FILE` itself, on startup and every `UPDATE_PERIOD`. Skipping it is not a cosmetic difference: static trails are added to
 //! this repository continuously, so a sensor that only ever *reads* a trails file silently stops
 //! detecting everything added since that file was written. (A four-week-old file cost a live
 //! asyncrat domain: `511mon.kozow.com` entered `trails/static/malware/asyncrat.txt` two weeks
@@ -9,7 +8,7 @@
 //!
 //! The update itself is **not** reimplemented. `sensor/tools/update_trails.py` is a thin wrapper around
 //! `core.update.update_trails()`, so there is exactly one trail-update mechanism in the
-//! repository and both sensors use it. That also means feeds, `UPDATE_SERVER`,
+//! repository and the sensor and the server share it. That also means feeds, `UPDATE_SERVER`,
 //! `USE_FEED_UPDATES`, `DISABLED_FEEDS`, `IP_MINIMUM_FEEDS`, `CUSTOM_TRAILS_DIR` and the rest
 //! keep working with no duplicated logic.
 
@@ -187,9 +186,9 @@ pub enum Outcome {
 
 /// Run one update cycle, streaming the updater's own progress output to the console.
 ///
-/// `offline` maps to `sensor.py`'s `--offline`: no network, but the trails file is still
-/// *rebuilt* from the bundled static and custom trails — which is exactly why `sensor.py
-/// --offline` still picks up newly added static IOCs.
+/// `offline` maps to `--offline`: no network, but the trails file is still *rebuilt* from the
+/// bundled static and custom trails — which is exactly why `--offline` still picks up newly
+/// added static IOCs.
 pub fn run(cfg: &Config) -> Outcome {
     if cfg.disable_trail_updates {
         return Outcome::Disabled;

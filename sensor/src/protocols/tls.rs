@@ -1,14 +1,14 @@
 //! TLS ClientHello SNI extraction and client fingerprinting — a port of
 //! `core/tls_intel.py:parse_client_hello()`.
 //!
-//! The SNI feeds `core/fastfilter.py:head_sni()`'s domain check on encrypted traffic; the
+//! The SNI feeds the domain check on encrypted traffic; the
 //! JA3/JA4 client fingerprints are matched against the trail set the same way certificate
 //! SHA-1s are (fingerprint feeds publish exactly these digests). Certificate parsing for the
 //! *reporting* side lives in `core/tls_intel.py`; the sensor's server-flight half is in
 //! `server_certificate_der` below.
 //!
 //! All reads are bounds-checked; a malformed or truncated handshake yields `None`, never a
-//! panic. The byte-level tolerances mirror the Python parser exactly, so both produce the
+//! panic. The byte-level tolerances mirror `core/tls_intel.py` exactly, so both produce the
 //! same JA3/JA4 for the same captured bytes.
 
 /// Bounds-checked sequential reader (`core/tls_intel.py:_Reader`).
@@ -52,7 +52,7 @@ impl<'a> Reader<'a> {
 }
 
 /// `core/tls_intel.py:_is_hostname()` — an ASCII A-label host (RFC 6066).
-/// `lowercase_only` mirrors the two slightly different patterns in the Python tree:
+/// `lowercase_only` mirrors the two slightly different patterns in `core/`:
 /// `tls_intel` lower-cases first and validates `[a-z0-9_]`, while `quic_sni` validates
 /// case-insensitively without lower-casing.
 pub fn is_hostname(value: &str, lowercase_only: bool) -> bool {
@@ -193,7 +193,7 @@ fn parse_client_hello_into<'a>(data: &'a [u8], want: u8, w: &mut Scratch) -> Opt
         return None; // not a ClientHello
     }
     let hlen = r.u24()? as usize;
-    // Python caps the message end at what actually arrived and parses on ("tolerate
+    // `core/tls_intel.py` caps the message end at what actually arrived and parses on ("tolerate
     // truncation; parse what we have") rather than failing - so an overlong hlen is not an
     // error here either; every read below is bounds-checked on its own.
     let _ = hlen;
@@ -204,7 +204,7 @@ fn parse_client_hello_into<'a>(data: &'a [u8], want: u8, w: &mut Scratch) -> Opt
     let cs_len = r.u16()? as usize;
     let cend = r.p.checked_add(cs_len)?;
     if cend > r.b.len() {
-        return None; // Python's reader raises past the buffer; the whole parse fails there
+        return None; // tls_intel.py's reader raises past the buffer; the whole parse fails there
     }
     w.ciphers.clear();
     while r.p + 2 <= cend {
@@ -239,7 +239,7 @@ fn parse_client_hello_into<'a>(data: &'a [u8], want: u8, w: &mut Scratch) -> Opt
             match etype {
                 // `_parse_sni()` takes the name bytes BEFORE looking at the entry type, and
                 // its `take()` raises past the body - a raised exception fails the WHOLE
-                // Python parse, unlike every list helper here (they loop on `left()`).
+                // tls_intel.py parse, unlike every list helper here (they loop on `left()`).
                 0x0000 => match sni_extension(body, true) {
                     Ok(parsed) => sni = parsed,
                     Err(FatalTruncation) => return None,
@@ -249,7 +249,7 @@ fn parse_client_hello_into<'a>(data: &'a [u8], want: u8, w: &mut Scratch) -> Opt
                 0x000d => u16_list(body, true, true, &mut w.sig_algs),
                 // `_parse_alpn_first()` is the one helper that can RAISE past its buffer
                 // (the others loop on `left()`), and a raised exception fails the WHOLE
-                // Python parse - hence the Err arm. A short header only means "no ALPN".
+                // tls_intel.py parse - hence the Err arm. A short header only means "no ALPN".
                 0x0010 => match alpn_first(body) {
                     Ok(alpn) => alpn0 = alpn,
                     Err(FatalTruncation) => return None,
@@ -480,13 +480,13 @@ fn u8len_u16_list(body: &[u8], drop_grease: bool, out: &mut Vec<u16>) {
 }
 
 /// Marks the one fatal malformation these helpers can hit: declared bytes running past the
-/// extension body, which Python's `_Trunc` turns into "no fingerprint at all".
+/// extension body, which `core/tls_intel.py`'s `_Trunc` turns into "no fingerprint at all".
 #[derive(Debug, PartialEq, Eq)]
 pub struct FatalTruncation;
 
 /// `core/tls_intel.py:_parse_alpn_first()` - the first protocol name offered, raw bytes.
 ///
-/// Three outcomes, because the Python helper mixes two failure styles: a cut-short fixed
+/// Three outcomes, because the `core/tls_intel.py` helper mixes two failure styles: a cut-short fixed
 /// header makes it RETURN None ("no ALPN offered" - parsing continues), while protocol-name
 /// bytes overrunning the body make its `take()` RAISE `_Trunc` - and a raised exception
 /// fails the WHOLE parse. `Ok(None)` vs `Err(FatalTruncation)` keeps those apart.
@@ -499,7 +499,7 @@ fn alpn_first(body: &[u8]) -> Result<Option<&[u8]>, FatalTruncation> {
             return if r.left() >= plen {
                 Ok(Some(r.take(plen).unwrap()))
             } else {
-                Err(FatalTruncation) // `_Trunc` on the Python side: no fingerprint at all
+                Err(FatalTruncation) // `_Trunc` in tls_intel.py: no fingerprint at all
             };
         }
     }
@@ -509,7 +509,7 @@ fn alpn_first(body: &[u8]) -> Result<Option<&[u8]>, FatalTruncation> {
 /// `core/tls_intel.py:_parse_sni()`. Three outcomes, like `alpn_first`: `Ok(None)` covers
 /// every survivable malformation (short list header, non-UTF8/non-ASCII/junk host, no
 /// host_name entry), while `Err(FatalTruncation)` marks the one fatal case - an entry whose
-/// declared name length overruns the extension body, where Python's `take()` raises `_Trunc`
+/// declared name length overruns the extension body, where tls_intel.py's `take()` raises `_Trunc`
 /// and the WHOLE ClientHello parse is discarded. (The QUIC path uses `quic.rs`'s own parser,
 /// which treats that overrun as survivable - faithfully to `core/quic_sni.py`.)
 pub fn parse_sni_extension(body: &[u8], lowercase: bool) -> Result<Option<String>, FatalTruncation> {

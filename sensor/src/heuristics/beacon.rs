@@ -1,4 +1,4 @@
-//! Periodic-beacon detection — a NEW heuristic, with no `sensor.py` counterpart.
+//! Periodic-beacon detection.
 //!
 //! An implant that phones home does the one thing neither a human nor an exploit kit does
 //! reliably: it reconnects to the same address on a timer. Maltrail's existing heuristics all

@@ -59,7 +59,7 @@ def main():
     parser.add_argument("--debug", dest="debug", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--smoke-test", dest="smoke_test", action="store_true", help=argparse.SUPPRESS)
     parser.add_argument("--detect-test", dest="detect_test", action="store_true", help=argparse.SUPPRESS)
-    parser.add_argument("--keep", dest="keep", default=None, metavar="DIR", help="with --detect-test: keep the generated events in DIR (and replay the parity corpus into it) instead of deleting them")
+    parser.add_argument("--keep", dest="keep", default=None, metavar="DIR", help="with --detect-test: keep the generated events in DIR (and replay the sensor's replay corpus into it) instead of deleting them")
     parser.add_argument("--serve", dest="serve", action="store_true", help="with --detect-test --keep: start the web server on the generated events")
     parser.add_argument("--hash-password", dest="hash_password", action="store_true", help="read a password and print the USERS field for it")
     parser.add_argument("--doctor", dest="doctor", action="store_true", help="validate the deployment (log dir, trails age, USERS, TLS, ports) and exit")

@@ -670,8 +670,7 @@ mod tests {
         assert!(interface_verdict("whatever0", &[]).is_ok());
     }
 
-    /// Maltrail v1's sensor.py substituted the real interface names where `any` did not exist.
-    /// The same substitution here is what makes the shipped `MONITOR_INTERFACE any` work on
+    /// Substituting the real interface names where `any` does not exist is what makes the shipped `MONITOR_INTERFACE any` work on
     /// Windows, macOS and the BSDs instead of failing at startup.
     #[test]
     fn any_is_substituted_only_where_the_platform_lacks_it() {

@@ -131,11 +131,8 @@ jobs:
           - target: x86_64-unknown-freebsd
             kind: freebsd
             runner: ubuntu-latest
-          # Windows. The old sensor could not go here at all - it was Python plus pcapy-ng, and
-          # pcapy-ng on Windows was the reason the platform was written off. The Rust sensor talks
-          # to libpcap, whose Windows implementation is Npcap, so what was a rewrite is a link
-          # flag. Twenty-four compile errors stood in the way; they were platform assumptions, and
-          # they are gone.
+          # Windows. The sensor talks to libpcap, whose Windows implementation is Npcap, so the
+          # platform is a link flag.
           - target: x86_64-pc-windows-msvc
             kind: windows
             runner: windows-latest

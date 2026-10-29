@@ -266,7 +266,7 @@ fn lookup_accepts_any_spelling_of_an_address() {
 
 #[test]
 fn concurrent_workers_merge_into_one_file_without_losing_a_count() {
-    // The Python sensor's workers are processes; these are threads in one process, so several
+    // Workers are threads in one process, so several
     // `MetaStore`s really do contend for the same file at the same instant. Every flush must
     // either land whole or fail loudly — a silently dropped window would show up as an
     // undercounted observable, which is invisible unless something checks the arithmetic.

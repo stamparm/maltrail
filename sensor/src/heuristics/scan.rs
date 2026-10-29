@@ -1,27 +1,23 @@
-//! Sliding-window scan accumulators — `sensor.py:_scan_track()` and the per-second sweep
-//! at the top of `_process_packet()`.
+//! Sliding-window scan accumulators and the per-second sweep that runs ahead of each packet.
 //!
 //! Memory is bounded per key and in keys: `SCAN_MAX_KEYS` keys in total, and per key no more
-//! items than it takes to cross its threshold. Python kept up to `SCAN_TRACK_PER_KEY` (1024)
-//! per key, but nothing reads past threshold+1 - the crossing is reported once, and repeats are
-//! blocked by the alerted sets - so the rest was memory a flood could fill for nothing: 50k
+//! items than it takes to cross its threshold. Keeping `SCAN_TRACK_PER_KEY` (1024) per key would
+//! be pointless: nothing reads past threshold+1 - the crossing is reported once, and repeats are
+//! blocked by the alerted sets - so the rest would be memory a flood could fill for nothing: 50k
 //! infection keys of 1024 addresses each is ~3 GB, which on a Pi is the OOM killer. The total
-//! cap is shared across the port-scan and infection accumulators because Python keeps both in
-//! the single `_connect_src_dst` dict (discriminated by whether the second tuple element is an
-//! int).
+//! cap is one budget shared by the port-scan and infection accumulators.
 
 use crate::addr::Ip;
 use crate::fasthash::{FastMap, FastSet};
 use std::collections::hash_map::Entry;
 
-/// `sensor.py:_SCAN_TRACK_PER_KEY`
+/// Upper bound on items tracked per key.
 pub const SCAN_TRACK_PER_KEY: usize = 1024;
-/// `sensor.py:_SCAN_MAX_KEYS`
+/// Upper bound on keys across the port-scan and infection accumulators together.
 pub const SCAN_MAX_KEYS: usize = 50000;
 
-/// The representative detail tuple Python later pulls out with `next(iter(details))` /
-/// `details.pop()`. Python's choice is arbitrary (set iteration order); the first inserted
-/// detail is used here so events are deterministic.
+/// The representative detail an event reports. The first inserted detail is used, so events
+/// are deterministic.
 #[derive(Clone, Copy, Debug)]
 pub struct PortDetail {
     pub sec: u64,
@@ -156,7 +152,7 @@ fn insert_and_crossed<T: std::hash::Hash + Eq + Clone, D, S: std::hash::BuildHas
 /// the crossing as it happens; the values come from `settings` and never change at runtime.
 /// The `A.B.` prefix of a tracked source address, without text.
 ///
-/// Python computes `re.sub(r"\d+\.\d+\Z", "", rendered)`, which strips the last two octets of an
+/// The text form is `re.sub(r"\d+\.\d+\Z", "", rendered)`, which strips the last two octets of an
 /// IPv4 address and leaves an IPv6 address untouched (the pattern cannot match one).
 #[derive(Clone, Copy, PartialEq, Eq, Hash)]
 enum PrefixKey {
@@ -175,7 +171,7 @@ impl PrefixKey {
         }
     }
 
-    /// The text Python would have produced. Only called when the prefix is actually needed.
+    /// The text form. Only called when the prefix is actually needed.
     fn render(self) -> String {
         match self {
             PrefixKey::V4(top) => format!("{}.{}.", top >> 8, top & 0xff),
@@ -231,7 +227,7 @@ pub struct ScanState {
     prefix_counts: FastMap<PrefixKey, usize>,
 
     thresholds: Thresholds,
-    /// Shared key budget across port_scan + infection (Python's single dict).
+    /// Shared key budget across port_scan + infection.
     connect_keys: usize,
     pub window_start: u64,
 }
@@ -516,10 +512,9 @@ impl ScanState {
     }
 
     /// The most common `A.B.` prefix among tracked source addresses (`_get_local_prefix`).
-    /// O(distinct prefixes) rather than O(tracked keys). Ties break on the larger string, which
-    /// is what Python's `sorted(..., reverse=True)` does.
+    /// O(distinct prefixes) rather than O(tracked keys). Ties break on the larger string.
     pub fn local_prefix(&self) -> Option<String> {
-        // Ties break on the LARGER rendered string (Python's `sorted(..., reverse=True)`), so the
+        // Ties break on the LARGER rendered string, so the
         // few distinct prefixes are rendered here rather than stored as text all along.
         self.prefix_counts
             .iter()
@@ -580,7 +575,6 @@ mod tests {
 
     #[test]
     fn per_key_and_total_caps() {
-        // Mirrors the retired Python suite's TestScanTrackMemoryBound
         let mut s = ScanState::default();
         for p in 0..(SCAN_TRACK_PER_KEY * 4) {
             s.track_port(ip(1), ip(2), (p % 65536) as u16, detail());
@@ -604,7 +598,7 @@ mod tests {
         for i in 0..SCAN_MAX_KEYS {
             s.track_port(ip(i as u32), ip(9), 80, detail());
         }
-        // the infection accumulator must be refused too, because Python shares one dict
+        // the infection accumulator must be refused too, because the key budget is shared
         s.track_infection(ip(12345), 445, ip(7), InfectionDetail { sec: 1, usec: 0, src_port: 1, dst_ip: ip(7) });
         assert_eq!(s.connect_key_count(), SCAN_MAX_KEYS);
         assert!(s.infection_candidates(0).is_empty());

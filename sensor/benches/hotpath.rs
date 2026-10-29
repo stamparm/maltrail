@@ -497,8 +497,8 @@ fn main() {
         "\n[i] NOTE: 'microbench' rows are single isolated stages and are NOT sensor throughput.\n\
          [i]       'packet path' is process_packet() end to end (parse + detect + format + write)\n\
          [i]       over the printed packet-size mix; the Gbit/s column is that mix's line rate for\n\
-         [i]       ONE worker. Multiply by the PACKET_FANOUT worker count for a system figure and\n\
-         [i]       see docs/REPORT.md for measured multi-worker scaling.\n\
+         [i]       ONE worker. Multiply by the PACKET_FANOUT worker count for a rough system\n\
+         [i]       figure (multi_worker_parity.rs measures what fanout does to detection).\n\
          [i]       'replay' opens the pcap once and reuses one worker state, so it is replay
          [i]       throughput (packets/s) rather than harness construction cost."
     );

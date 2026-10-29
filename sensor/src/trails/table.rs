@@ -3,7 +3,7 @@
 //! `core/trailsdict.py` compacts its final set into packed hash arrays and drops the key
 //! strings. The Rust store keeps the keys (they are needed for exact comparison, so a hash
 //! collision can never produce a wrong match) but stores them in one arena with an
-//! open-addressing index, which costs about the same memory as Python's frozen form while
+//! open-addressing index, which costs about the same memory as `core/trailsdict.py`'s frozen form while
 //! answering lookups in O(1) with a single probe in the common case.
 //!
 //! Both tables are built once and then immutable, so lookups need no synchronisation.

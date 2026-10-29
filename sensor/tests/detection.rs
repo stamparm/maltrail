@@ -1,4 +1,4 @@
-//! Detection-path tests, ported case-for-case from the retired Python suite.
+//! Detection-path tests.
 //!
 //! Each test drives the real `process_packet` / `check_domain` code through the testkit
 //! harness and asserts on the events actually written to a log file, so the assertions cover
@@ -222,10 +222,9 @@ fn an_underscore_in_the_last_label_is_still_rejected() {
 
 #[test]
 fn udp_non_dns_to_malware_ip_is_reported() {
-    // Deliberate divergence from the retired Python sensor, sensor.py:880 (listed in docs/COMPATIBILITY.md), which collapsed the dst-side and src-side
-    // matches into one `trail` and then applied the src-side "malware" suppression to both -
-    // so a datagram TO a known C2 address produced nothing at all. The TCP path never did this:
-    // it suppresses "attacker" on the dst side and "malware" only on the src side.
+    // Non-DNS UDP follows the TCP rule: "attacker" is suppressed on the dst side and "malware"
+    // only on the src side. Collapsing both matches into one `trail` and applying the src-side
+    // "malware" suppression to it would make a datagram TO a known C2 address produce nothing.
     let mut h = trails(&[("66.66.66.66", MALWARE.0, MALWARE.1)]);
     h.feed_ip(&ipv4(17, "10.0.0.5", "66.66.66.66", &udp(40000, 4444, &[0u8; 8])), 1);
     let events = h.events();
@@ -253,10 +252,10 @@ fn udp_non_dns_to_attacker_ip_is_suppressed() {
 
 #[test]
 fn distinct_dns_queries_on_one_socket_are_both_examined() {
-    // Deliberate divergence from the retired Python sensor, sensor.py:863 (listed in docs/COMPATIBILITY.md). The burst filter compared only
-    // (second, 5-tuple) and ran BEFORE the DNS parser, so a clean query immediately followed by
-    // a malicious one on the same resolver socket in the same second was never parsed at all.
-    // A stub resolver walking its `search` list does exactly this.
+    // The burst filter runs BEFORE the DNS parser. Keyed on (second, 5-tuple) alone, a clean query
+    // immediately followed by a malicious one on the same resolver socket in the same second would
+    // never be parsed; a payload hash in the key prevents that. A stub resolver walking its
+    // `search` list does exactly this.
     let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
     h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40000, 53, &dns("good.example"))), 1);
     h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40000, 53, &dns("evil.com"))), 1);
@@ -1158,12 +1157,12 @@ fn muting_it_silences_it() {
     assert!(h.events().iter().all(|e| !e.info.contains("dns tunneling")));
 }
 
-// --- longest-match precedence: specific trail vs whitelisted ancestor (divergence #3) ---
+// --- longest-match precedence: specific trail vs whitelisted ancestor ---
 //
-// the retired Python sensor suppresses a name whenever ANY ancestor domain is whitelisted, which made
-// every exact trail on a shared platform (`*.googleusercontent.com`, ...) dead on arrival -
-// 3,082 real static trails. The Rust sensor lets an exact, more-specific trail fire; see
-// docs/COMPATIBILITY.md difference 22 for the full policy.
+// Suppressing a name whenever ANY ancestor domain is whitelisted makes every exact trail on a
+// shared platform (`*.googleusercontent.com`, ...) dead on arrival - 3,082 real static trails.
+// An exact, more-specific trail therefore fires; a whitelisted ancestor still suppresses
+// heuristics and wildcard trails (see sensor/docs/BEHAVIOUR.md).
 
 fn harness_with_user_whitelist(trails: &[(&str, &str, &str)], entries: &[&str]) -> (Harness, std::path::PathBuf) {
     let path = std::env::temp_dir().join(format!(
@@ -1262,7 +1261,7 @@ fn http_heuristic_under_whitelisted_ancestor_stays_silent() {
     let _ = std::fs::remove_file(wl);
 }
 
-// --- periodic-beaconing heuristic (NEW, no sensor.py counterpart) -------------------
+// --- periodic-beaconing heuristic ---------------------------------------------------
 
 #[test]
 fn a_timer_like_connection_pattern_fires_beaconing_once() {

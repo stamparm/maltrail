@@ -1,22 +1,19 @@
-//! HTTP parsing helpers used by the request/response blocks of
-//! `sensor.py:_process_packet()`.
+//! HTTP parsing helpers used by the request/response branches of the packet path.
 //!
-//! The Python code works on a single decoded string with `find()` calls rather than a real
-//! HTTP parser, and the exact offsets it uses are observable in the emitted trails, so
-//! these helpers reproduce that behaviour rather than "improving" it:
+//! The packet is treated as a single decoded string searched with `find()`-style calls rather
+//! than run through a real HTTP parser, and the exact offsets are observable in the emitted
+//! trails, so these helpers keep that behaviour rather than "improving" it:
 //!
 //!  * a header value is only extracted when its terminating CRLF is present in the
-//!    captured bytes (otherwise Python's `find` returns -1 and the field is skipped),
+//!    captured bytes (otherwise the field is skipped),
 //!  * header names are matched case-sensitively against `"\r\nHost:"` etc.,
 //!  * the FIRST occurrence wins for duplicate headers,
 //!  * `%`-decoding follows `urllib.parse.unquote` (UTF-8, `errors="replace"`).
 
 use std::borrow::Cow;
 
-/// `first_index = data.find(name); ... last_index = data.find("\r\n", first_index)`
-///
-/// `name` must include the leading CRLF, exactly like the Python call sites.
-/// Find a header's raw value with a PREBUILT searcher.
+/// Find a header's raw value with a PREBUILT searcher. The header name searched for must
+/// include the leading CRLF.
 ///
 /// `memmem::find(haystack, needle)` constructs a `Finder` on every call — computing its rare-byte
 /// heuristic — and on a 169-byte HTTP payload that construction costs more than the search saves.
@@ -44,8 +41,8 @@ pub fn header_value<'a>(data: &'a str, name: &str) -> Option<&'a str> {
     Some(&rest[..end])
 }
 
-/// The request line, when the payload carries one (`" HTTP/" in tcp_data`), split exactly
-/// like Python: the line must contain exactly two spaces.
+/// The request line, when the payload carries one (`" HTTP/" in tcp_data`), split on its
+/// spaces: the line must contain exactly two.
 pub struct RequestLine<'a> {
     pub method: &'a str,
     pub path: &'a str,
@@ -64,7 +61,7 @@ pub fn request_line<'a>(
     // Counting bytes and reusing the prebuilt searcher does the same job.
     //
     // The `" HTTP/"` search deliberately covers the WHOLE line rather than just the last field:
-    // Python's test is `line.count(' ') == 2 and " HTTP/" in line`, which accepts a line like
+    // the test is "exactly two spaces and ` HTTP/` anywhere in the line", which accepts a line like
     // `"GET HTTP/1.1 x"` (method `GET`, path `HTTP/1.1`), and that is observable in the trail.
     let bytes = line.as_bytes();
     let mut spaces = 0u32;
@@ -78,7 +75,7 @@ pub fn request_line<'a>(
             } else if spaces == 2 {
                 second = i;
             } else {
-                return None; // more than two: Python's count check fails
+                return None; // more than two spaces
             }
         }
     }
@@ -199,8 +196,7 @@ pub fn urlparse_path_query(url: &str) -> UrlParts<'_> {
     }
 }
 
-/// Build the URL-trail candidate list, mirroring the `checks` construction in
-/// `sensor.py:_process_packet()` (order matters: the first hit wins).
+/// Build the URL-trail candidate list (order matters: the first hit wins).
 ///
 /// Every candidate except the parameter-stripped one is a SLICE of `path`, so they are returned
 /// borrowed: this runs on every HTTP request and used to allocate up to six `String`s per packet.
@@ -237,7 +233,7 @@ pub fn build_checks<'a>(
         checks.push(Cow::Owned(format!("{}?{}", path, unquoted_post_data.to_lowercase())));
     }
 
-    // Python indexes `checks[-1]` and `checks[0]` after the block above; both may be owned, so
+    // The last and first candidates are read after the block above; both may be owned, so
     // the slices are taken before pushing to avoid holding a borrow into the vector.
     let last_is_long = checks[checks.len() - 1].matches('/').count() > 1;
     if last_is_long {
@@ -276,7 +272,7 @@ mod tests {
 
     #[test]
     fn header_without_terminating_crlf_is_skipped() {
-        // a snaplen-truncated request: Python's inner find() returns -1
+        // a snaplen-truncated request: no CRLF after the value
         let data = "GET / HTTP/1.1\r\nHost: evil.com";
         assert_eq!(header_value(data, "\r\nHost:"), None);
     }
@@ -302,7 +298,7 @@ mod tests {
         )
         .unwrap();
         assert_eq!((r.method, r.path, r.version), ("GET", "/x", "HTTP/1.1"));
-        // three spaces -> Python's `line.count(' ') == 2` guard rejects it
+        // three spaces -> the exactly-two-spaces guard rejects it
         assert!(request_line(
             "GET /a b HTTP/1.1\r\n",
             &memchr::memmem::Finder::new("\r\n"),
@@ -390,7 +386,7 @@ mod tests {
     #[test]
     fn checks_skip_the_duplicate_stripped_form() {
         // "/a/b/c/d?p=1" -> the parameter-stripped form equals an earlier candidate, so
-        // Python does not append it again (nor its "/last" variant).
+        // it is not appended again (nor its "/last" variant).
         let checks = build_checks("/a/b/c/d?p=1", None, "", &param_re());
         assert_eq!(checks, vec!["/a/b/c/d?p=1", "/a/b/c/d", "/a/b/c/d?p=", "/a/b/c", "/d"]);
     }

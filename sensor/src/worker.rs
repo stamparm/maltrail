@@ -1,8 +1,7 @@
 //! The run-to-completion capture worker.
 //!
 //! One worker owns one capture handle, its own detection state and its own event sink, so
-//! the packet path performs no locking and no cross-thread hand-off. This replaces
-//! `sensor.py`'s capture thread + shared mmap ring + `PROCESS_COUNT` worker processes.
+//! the packet path performs no locking and no cross-thread hand-off.
 
 use std::panic::{catch_unwind, AssertUnwindSafe};
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -147,7 +146,7 @@ pub fn run_all(handles: Vec<(Handle, String)>, ctx: WorkerContext) -> Result<Wor
                     // UNINTERRUPTED failure streak rather than accumulating over a long uptime.
                     consecutive_errors = 0;
 
-                    // pcapy.open_live() caps packets at SNAP_LEN but open_offline() does not, so
+                    // A live handle caps packets at the snaplen but an offline one does not, so
                     // a pcap recorded with `-s 0` can exceed it. Truncating here matches what
                     // live capture enforces at capture time.
                     let data: &[u8] = if captured.data.len() > snaplen {
@@ -174,8 +173,8 @@ pub fn run_all(handles: Vec<(Handle, String)>, ctx: WorkerContext) -> Result<Wor
                     };
                     let ip_offset = st.dlt.resolve(datalink, data);
                     if let Some(offset) = ip_offset {
-                        // Mirrors sensor.py's blanket `except Exception` around
-                        // _process_packet: a parser bug must never take the sensor down.
+                        // Each packet runs inside catch_unwind: a parser bug must never take the
+                        // sensor down.
                         let result = catch_unwind(AssertUnwindSafe(|| {
                             process::process_packet(&mut st, data, sec, usec, offset);
                         }));
@@ -227,13 +226,13 @@ pub fn run_all(handles: Vec<(Handle, String)>, ctx: WorkerContext) -> Result<Wor
                     if offline {
                         // A capture error is NOT a clean end of file. If it happened before a
                         // single packet was read, the capture could not be read at all, and
-                        // reporting a successful replay of zero packets is the offline version
-                        // of the silent blind spot Gate 1.1 fixed: the analyst sees "no
-                        // detections" when the truth is "your file was never parsed".
+                        // reporting a successful replay of zero packets would be a silent blind
+                        // spot: the analyst sees "no detections" when the truth is "your file was
+                        // never parsed".
                         //
-                        // Found by the shadow harness on a `mergecap` output — libpcap refuses a
-                        // pcapng whose interfaces have different link types, and the sensor
-                        // replayed it to "success" with received=0.
+                        // A `mergecap` output does exactly this: libpcap refuses a pcapng whose
+                        // interfaces have different link types, which used to replay to
+                        // "success" with received=0.
                         //
                         // After packets HAVE been read this is a truncated tail: the events found
                         // so far are real and worth keeping, so the run still succeeds and the
@@ -303,14 +302,13 @@ pub fn run_all(handles: Vec<(Handle, String)>, ctx: WorkerContext) -> Result<Wor
     // Evidence from the last second has had no later packet to trigger its sweep.
     process::final_heuristics_sweep(&mut st);
     // Flush the tail: condensed events are only emitted on a flush, so skipping this would
-    // lose them (sensor.py does the same at the end of an offline run).
+    // lose them.
     st.sink.flush_condensed();
     if offline {
         report_file(&ctx, &label, file_packets, st.sink.events - file_events, file_started);
     }
     st.sink.flush_throttled_all();
-    // `sensor.py` does the same on its way out: without this, an offline replay shorter than one
-    // flush period would write nothing at all to the store.
+    // Without this, an offline replay shorter than one flush period would write nothing at all to the store.
     st.meta.flush();
     capture_counters.publish(handle.stats(), &mut st);
     publish(&ctx.slot, &mut st);

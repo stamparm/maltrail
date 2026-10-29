@@ -170,7 +170,7 @@ impl IgnoreRules {
             match crate::pyre::build_fancy(events_regex) {
                 Ok(re) => out.regex = Some(re),
                 Err(e) => {
-                    // Python warns once and keeps logging rather than dropping every event.
+                    // Like core/ignore.py: warn once and keep logging rather than dropping every event.
                     crate::cprintln!(
                         "[!] invalid regular expression in option 'IGNORE_EVENTS_REGEX' ('{events_regex}'): {e}"
                     );
@@ -264,7 +264,7 @@ impl IgnoreRules {
     }
 }
 
-/// Exposed for `tests/vectors.rs`, which replays Python's answers for the same rules.
+/// Exposed for `tests/vectors.rs`, which replays `core/ignore.py`'s answers for the same rules.
 pub fn rule_matches_for_test(kind: &str, rule: &str, value: &str) -> bool {
     match kind {
         "host" => parse_host(rule).matches(value, addr_to_int(value), parse_ipv6(value)),

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # coding: utf-8
-"""Dump what Python's `core.common.load_trails()` actually loaded, as a parity oracle.
+"""Dump what Python's `core.common.load_trails()` actually loaded, as a reference.
 
 The Rust loader must accept exactly the rows Python accepts, split them into exactly the same
 three fields, and build the wildcard regex out of exactly the same patterns. This script produces
@@ -68,7 +68,7 @@ def main():
         patterns.append(m.group(1) if m else alt)
 
     # Wildcard `(static)` trails CPython's own `re` rejects: build_trails_regex() skips these, so
-    # they are trails BOTH sensors are expected to ignore.
+    # they are trails the loader is expected to drop (or repair, with REPAIR_TRUNCATED_TRAILS).
     wildcard = re.compile(r"[\].][*+]|\[[a-z0-9_.\-]+\]", re.I)
     rejected = []
     for trail, info, reference in accepted:

@@ -50,7 +50,7 @@ pub struct HarnessOptions {
 }
 
 impl HarnessOptions {
-    /// Matches the deterministic setup of `the retired Python suite's _SensorTestBase.setUp`.
+    /// Deterministic setup: heuristics off, host-domain checks on.
     pub fn quiet() -> HarnessOptions {
         HarnessOptions { use_heuristics: false, check_host_domains: true, ..Default::default() }
     }
@@ -157,8 +157,8 @@ impl Harness {
             syslog_server: Vec::new(),
             logstash_server: Vec::new(),
             severity_regex: None,
-            // The harness pins LEGACY throttling: its expectations are Python-derived, so the
-            // event COUNTS have to be sensor.py's. `divisor: 1` = one worker, PROCESS_COUNT 1.
+            // The harness pins LEGACY throttling so the event COUNTS its expectations were
+            // recorded with stay exact. `divisor: 1` = one worker, PROCESS_COUNT 1.
             throttle: crate::throttle::ThrottleConfig {
                 mode: crate::throttle::ThrottleMode::Legacy,
                 legacy_divisor: 1,
@@ -188,8 +188,8 @@ impl Harness {
     /// Replay a pcap file through the real capture handle, DLT resolution and packet path
     /// (everything `worker::run` does, minus the thread and the housekeeping timers).
     ///
-    /// Returns the number of packets read. `wallclock` selects the Python-3-compatible
-    /// timestamp substitution.
+    /// Returns the number of packets read. `wallclock` stamps each packet with the
+    /// time it is processed instead of its pcap timestamp.
     pub fn replay(&mut self, pcap: &std::path::Path, wallclock: bool) -> usize {
         let mut handle = crate::capture::Handle::open_offline(pcap).expect("open pcap");
         let datalink = handle.datalink();

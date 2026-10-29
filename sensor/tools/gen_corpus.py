@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 # coding: utf-8
-"""Generate the replay corpus used by the Python-vs-Rust parity harness.
+"""Generate the replay corpus asserted by sensor/tests/replay.rs.
 
 Pure stdlib pcap crafting (same approach as core/testing.py), so no scapy and no root are
 needed. Every case is a separate pcap file plus a list of expected detection substrings, so
-the harness can assert both
-
-  * parity   - the two sensors produce the same normalized events, and
-  * coverage - the traffic actually trips the detection it was built for.
+the replay test can assert that the traffic actually trips the detection it was built for.
 
     python3 sensor/tools/gen_corpus.py [--out DIR]
 """
@@ -49,7 +46,7 @@ def eth(payload, ethertype=0x0800, vlan=None):
 def pppoe(payload, ppp_proto=0x0021, vlan=None):
     """Ethernet -> PPPoE session (RFC 2516) -> PPP -> payload.
 
-    What a SPAN port mirroring a DSL/fibre uplink actually carries. Both sensors used to drop it:
+    What a SPAN port mirroring a DSL/fibre uplink actually carries. The sensor used to drop it:
     ethertype 0x8864 matched neither the IPv4 nor the IPv6 check, and the IP-offset heuristic only
     runs for an UNKNOWN datalink, so a mirrored Ethernet port had no fallback (issue #19297).
     """
@@ -267,9 +264,8 @@ TRAILS = (
 )
 
 # Counting heuristics only fire once the sensor's clock advances past the window, so they
-# need the pcap record timestamps. sensor.py on Python 3 substitutes wall-clock time (a
-# pcapy-ng workaround, see core/testing.py's own `pcap_ts_only` skip), so in strict-parity
-# mode BOTH sensors stay silent here; the harness asserts these with --timestamps pcap.
+# need the pcap record timestamps: replayed on wall-clock time, every packet lands in the same
+# second and the sensor stays silent here (sensor/tests/replay.rs shows both sides).
 TIMING_WINDOW_CASES = frozenset((
     "port_scan", "stealth_scan_null", "stealth_scan_fin", "stealth_scan_xmas",
     "udp_scan", "infection_scan", "web_scan", "tcp_periodic_beacon",
@@ -278,24 +274,21 @@ TIMING_WINDOW_CASES = frozenset((
 # Cases whose event COUNT depends on which clock the sensor uses: burst suppression
 # (_last_syn / _last_udp), the log-throttle bucket (sec // PROCESS_COUNT) and the hourly
 # resets are all keyed on the packet's second. Replaying with real pcap timestamps is the
-# correct behaviour and yields MORE events than sensor.py's wall-clock offline mode.
+# correct behaviour and yields MORE events than a wall-clock replay.
 TIMESTAMP_SENSITIVE_CASES = TIMING_WINDOW_CASES | frozenset((
     "duplicate_syn", "repeated_detections", "cache_expiry",
 ))
 
-# Deliberate divergences from the retired Python sensor, sensor.py: case name -> the event substrings the RUST sensor is
-# expected to produce and sensor.py is expected NOT to. parity.py treats exactly these as an
-# expected surplus - and FAILS the case if the surplus is absent, so a silent revert of either fix
-# breaks the harness instead of quietly restoring "parity" with a detection hole.
-# See parity.py's DELIBERATE DIVERGENCES section for what each one is and why.
-DIVERGENCE_CASES = {
+# Case name -> extra event substrings merged into that case's `expect`: detections that an
+# earlier design missed on purpose or by accident (see the comments on each case), pinned so a
+# revert shows up as a failed replay instead of a quiet detection hole.
+PINNED_CASES = {
     "udp_malware_dst": ["66.66.66.66"],
     "dns_same_socket_burst": ["evil-test-domain.com"],
     "trail_under_whitelist_parent": ["evil-test.googleusercontent.com"],
-    # NEW heuristic (no sensor.py counterpart); only observable with pcap timestamps
+    # only observable with pcap timestamps
     "tcp_periodic_beacon": ["203.0.113.77:443"],
-    # NEW detection (no sensor.py counterpart): the JA3 of the ClientHello below. Needs
-    # CHECK_TLS_FINGERPRINTS (default on).
+    # the JA3 of the ClientHello below. Needs CHECK_TLS_FINGERPRINTS (default on).
     "tcp_malware_ja3": ["1e7c622032b0cb79401b0f7be3793a1a"],
     # ClientHellos longer than one packet, and TLS over IPv6 (head_sni was IPv4-only)
     "tls_sni_split": ["tls-split-evil.example", "a89bab8eb05fa15a7ac7b256b0257612"],
@@ -442,8 +435,8 @@ def build_cases():
     packets = []
     for i in range(25):
         # NOTE: the client port varies per query (as a real resolver client does). With one
-        # fixed 5-tuple, sensor.py's _last_udp burst suppression collapses the whole flood
-        # into a single packet once offline timestamps are wall-clock.
+        # fixed 5-tuple, the per-second UDP burst suppression collapses the whole flood into a
+        # single packet once offline timestamps are wall-clock.
         packets.append((BASE_SEC + i, frame(ipv4("8.8.8.8", "203.0.113.5", 17,
                                                  udp(53, 40000 + i, dns_nxdomain("nx%d.dgaparent.com" % i))))))
     cases.append(("dns_nxdomain_flood", DLT_EN10MB, packets, ["excessive no such domain"],
@@ -533,12 +526,12 @@ def build_cases():
     packets = [
         (BASE_SEC, eth(ipv4(ATTACKER, "66.66.66.66", 6, tcp(50060, 443, 0x02)), vlan=100)),
         (BASE_SEC + 1, eth(ipv4(ATTACKER, "8.8.8.8", 17, udp(50061, 53, dns_query("evil-test-domain.com"))), vlan=100)),
-        # QinQ: both sensors drop it (only one 0x8100 tag is skipped)
+        # QinQ: two stacked tags, walked like one
         (BASE_SEC + 2, b"\xaa" * 12 + b"\x81\x00\x00d" + b"\x81\x00\x00e" + b"\x08\x00"
          + ipv4(ATTACKER, "66.66.66.66", 6, tcp(50062, 443, 0x02))),
     ]
     cases.append(("vlan", DLT_EN10MB, packets, ["66.66.66.66", "evil-test-domain.com"],
-                  "single 802.1Q tag is followed; QinQ is dropped by both"))
+                  "802.1Q tags are followed, stacked (QinQ) ones too"))
 
     # 22. IPv4 fragments
     payload = tcp(50070, 443, 0x02)
@@ -698,35 +691,32 @@ def build_cases():
     cases.append(("dns_ignored_suffixes", DLT_EN10MB, packets, [],
                   "IGNORE_DNS_QUERY_SUFFIXES / '.intranet.' guards"))
 
-    # 33. UDP to a malware-labelled DESTINATION. sensor.py looks the destination up, falls back to
-    #     the source, then applies ONE `"malware" not in info` test to whichever matched - so this
-    #     datagram, to a known C2 address, produces nothing at all. Its own TCP path does not do
-    #     that (it suppresses "attacker" on the destination side and "malware" only on the source
-    #     side), and the Rust sensor now follows the TCP rule here too. Expected Rust-only event.
+    # 33. UDP to a malware-labelled DESTINATION. Non-DNS UDP follows the TCP rule: "attacker" is
+    #     suppressed on the destination side and "malware" only on the source side, so a datagram
+    #     to a known C2 address is reported. Applying the source-side "malware" suppression to
+    #     either match would silence exactly this traffic.
     packets = [
         (BASE_SEC, frame(ipv4(ATTACKER, "66.66.66.66", 17, udp(50900, 4444, b"\x00" * 16)))),
     ]
     cases.append(("udp_malware_dst", DLT_EN10MB, packets, ["66.66.66.66"],
-                  "non-DNS UDP to a malware-labelled destination (deliberate divergence)"))
+                  "non-DNS UDP to a malware-labelled destination is reported"))
 
-    # 34. Two DIFFERENT DNS queries back-to-back on one socket in one second. sensor.py's burst
-    #     filter compares (second, 5-tuple) and runs BEFORE the DNS parser, so the second datagram
-    #     is never examined - a stub resolver walking its `search` list does exactly this. The Rust
-    #     sensor mixes a payload hash into the comparison, so the repeat is still skipped and a
-    #     different query is not. Expected Rust-only event.
+    # 34. Two DIFFERENT DNS queries back-to-back on one socket in one second - a stub resolver
+    #     walking its `search` list does exactly this. The burst filter runs BEFORE the DNS parser,
+    #     so a filter keyed on (second, 5-tuple) alone would never examine the second datagram; a
+    #     payload hash in the key skips the repeat and still parses a different query.
     packets = [
         (BASE_SEC, frame(ipv4(ATTACKER, "8.8.8.8", 17, udp(50901, 53, dns_query("clean-first.com"))))),
         (BASE_SEC, frame(ipv4(ATTACKER, "8.8.8.8", 17, udp(50901, 53, dns_query("evil-test-domain.com"))))),
     ]
     cases.append(("dns_same_socket_burst", DLT_EN10MB, packets, ["evil-test-domain.com"],
-                  "distinct DNS queries sharing a socket in one second (deliberate divergence)"))
+                  "distinct DNS queries sharing a socket in one second are all examined"))
 
-    # 34b. A specific static trail under a whitelisted PARENT domain. sensor.py suppresses the
-    #     whole branch whenever any ancestor is whitelisted, so an IOC somebody added under a
-    #     shared platform (`googleusercontent.com`, line 103 of data/whitelist.txt) could never
-    #     fire - 3,082 real static trails were exactly this shape. The Rust sensor applies
-    #     longest-match precedence: the exact trail beats the broader whitelist entry, while a
-    #     sibling without its own trail stays suppressed. Expected Rust-only event.
+    # 34b. A specific static trail under a whitelisted PARENT domain. Suppressing a name whenever
+    #     any ancestor is whitelisted would make an IOC under a shared platform
+    #     (`googleusercontent.com`, in data/whitelist.txt) unable to fire - 3,082 real static
+    #     trails are exactly this shape. Longest-match precedence: the exact trail beats the
+    #     broader whitelist entry, while a sibling without its own trail stays suppressed.
     packets = [
         (BASE_SEC, frame(ipv4(ATTACKER, "8.8.8.8", 17,
                               udp(50902, 53, dns_query("evil-test.googleusercontent.com"))))),
@@ -735,8 +725,7 @@ def build_cases():
     ]
     cases.append(("trail_under_whitelist_parent", DLT_EN10MB, packets,
                   ["evil-test.googleusercontent.com"],
-                  "exact trail beats whitelisted ancestor; whitelisted sibling stays silent "
-                  "(deliberate divergence)"))
+                  "exact trail beats whitelisted ancestor; whitelisted sibling stays silent"))
 
     # 35. mixed traffic soup (everything at once, interleaved)
     soup = []
@@ -746,12 +735,11 @@ def build_cases():
     soup.sort(key=lambda item: item[0])
     cases.append(("mixed_soup", DLT_EN10MB, soup, [], "interleaved traffic from many cases"))
 
-    # 36. periodic beaconing (NEW heuristic, no sensor.py counterpart). Nine SYNs to one
-    #     destination exactly 30 s apart cross the coefficient-of-variation bound at the eighth
-    #     gap and produce one `potential periodic beaconing (suspicious)` event; a same-sized control flow
-    #     with human jitter must stay silent in BOTH sensors. The verdict needs real gaps, so
-    #     this case is in TIMING_WINDOW_CASES: in wall-clock parity mode every packet lands on
-    #     the same second and neither side fires.
+    # 36. periodic beaconing. Nine SYNs to one destination exactly 30 s apart cross the
+    #     coefficient-of-variation bound at the eighth gap and produce one
+    #     `potential periodic beaconing (suspicious)` event; a same-sized control flow with human
+    #     jitter must stay silent. The verdict needs real gaps, so this case is in
+    #     TIMING_WINDOW_CASES: on wall-clock time every packet lands on the same second.
     #     https://tools.ietf.org/html/rfc6761-style documentation lives in heuristics/beacon.rs.
     beacon_pkts = [(BASE_SEC + 30 * i, frame(ipv4(ATTACKER, "203.0.113.77", 6,
                                               tcp(51000, 443, 0x02, b"")))) for i in range(12)]
@@ -764,9 +752,9 @@ def build_cases():
                                                         tcp(51001, 443, 0x02, b"")))))
     cases.append(("tcp_periodic_beacon", DLT_EN10MB, sorted(beacon_pkts + ctrl_pkts), [],
                   "timer-regular reconnects fire once; jittered control stays silent "
-                  "(deliberate divergence, pcap-timestamp gated)"))
+                  "(pcap-timestamp gated)"))
 
-    # 37. TLS client fingerprints (NEW detection, no sensor.py counterpart). The ClientHello's
+    # 37. TLS client fingerprints. The ClientHello's
     # JA3 is a listed trail; the same hello also carries an SNI, which is how the pre-existing
     # tls_sni case keeps working alongside it. A bare SYN control stays silent.
     packets = [
@@ -774,278 +762,20 @@ def build_cases():
         (BASE_SEC + 1, frame(ipv4(ATTACKER, "203.0.113.36", 6, tcp(50601, 443, 0x02)))),
     ]
     cases.append(("tcp_malware_ja3", DLT_EN10MB, packets, ["1e7c622032b0cb79401b0f7be3793a1a"],
-                  "ClientHello JA3 matched against the trail set (deliberate divergence; "
+                  "ClientHello JA3 matched against the trail set ("
                   "CHECK_TLS_FINGERPRINTS)"))
 
     return cases
 
 
-# --- corpus built from the REAL trail data --------------------------------------
-#
-# The hand-written cases above use a 30-row fixture, which cannot catch anything that depends
-# on real trail data: a domain whose parent is also a trail, a trail that only exists in a
-# feed, a 1.5M-row store. (That gap is exactly how a stale-trails bug survived - the fixture
-# had no `511mon.kozow.com`, and the real file was weeks old.) `--from-trails` samples the
-# operator's actual trails.csv, synthesizes the traffic each sampled trail should trip, and
-# emits a corpus that runs against the FULL real trails file.
-
-REAL_BUCKETS = ("dns_domain", "dns_subdomain", "http_host", "ipv4", "ipv4_port", "ipv6", "url_path", "host_path")
-
-
-def _sample_key(trail):
-    """A stable pseudo-random sort key. `hash()` is salted per process, `crc32` is not, so the
-    same trails.csv always yields the same sample - a parity failure stays reproducible."""
-    import zlib
-    return zlib.crc32(trail.encode("utf8", "replace")) & 0xffffffff
-
-
-def classify_real_trail(trail, reference, ignored_suffixes, valid_dns):
-    """Which traffic shape (if any) would exercise this trail. `None` = not usable as a
-    generated case (wildcards cannot be instantiated, whitelisted trails never load, ...)."""
-    import re as _re
-    if not trail or trail != trail.strip():
-        return None
-    # A wildcard/regex trail cannot be instantiated as traffic; the same test the sensor uses.
-    if _re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, _re.I) and _re.escape(trail) != trail:
-        return None
-    if '/' in trail:
-        if trail.startswith('/'):
-            return "url_path" if len(trail) > 1 else None
-        host = trail.split('/')[0]
-        return "host_path" if valid_dns.match(host) else None
-    if ':' in trail:
-        addr, _, port = trail.rpartition(':')
-        if port.isdigit() and 0 < int(port) < 65536:
-            try:
-                socket.inet_aton(addr)
-                return "ipv4_port" if addr.count('.') == 3 else None
-            except Exception:
-                return None
-        try:                                            # a bare IPv6 address trail
-            socket.inet_pton(socket.AF_INET6, trail)
-            return "ipv6"
-        except Exception:
-            return None
-    try:
-        socket.inet_aton(trail)
-        if trail.count('.') == 3:
-            return "ipv4"
-    except Exception:
-        pass
-    if '.' in trail:
-        # sensor.py:911 - a query is ignored when the LAST label is in IGNORE_DNS_QUERY_SUFFIXES.
-        if not valid_dns.match(trail) or trail.split('.')[-1] in ignored_suffixes:
-            return None
-        if trail.startswith('.') or trail.endswith('.') or ".intranet." in trail:
-            return None
-        return "dns_domain"
-    return None
-
-
-def build_real_cases(trails_file, per_bucket):
-    """Sample the real trails.csv and synthesize one pcap per bucket.
-
-    Returns (cases, sampled) where `sampled` maps case name -> [(trail, info)], so a parity
-    failure names the trail that broke rather than just a pcap.
-    """
-    import csv
-    import heapq
-    import re as _re
-
-    sys.path.insert(0, ROOT)
-    from core.common import check_whitelisted
-    from core.settings import IGNORE_DNS_QUERY_SUFFIXES, VALID_DNS_NAME_REGEX
-    valid_dns = _re.compile(VALID_DNS_NAME_REGEX)
-    _re_module = _re
-
-    # sensor.py:303 `_check_domain_whitelisted` - a trail whose PARENT domain is whitelisted
-    # (e.g. anything under cloudfront.net) is suppressed even though the trail itself loaded.
-    from core.settings import WHITELIST
-    # the old (Python) sensor lives in old/; it is the source of truth for this predicate
-    sys.path.insert(0, os.path.join(ROOT, "old"))
-    from sensor import _check_domain_member
-
-    def check_domain_whitelisted(query):
-        return _check_domain_member(_re.split(r"(?i)[^A-Z0-9._-]", query or "")[0], WHITELIST)
-    ignored = frozenset(IGNORE_DNS_QUERY_SUFFIXES)
-
-    # Keep the `per_bucket` smallest sample keys per bucket: a deterministic uniform sample
-    # that needs one streaming pass and O(per_bucket) memory over a 76 MB file.
-    heaps = dict((bucket, []) for bucket in REAL_BUCKETS)
-    seen_hosts = dict((bucket, set()) for bucket in REAL_BUCKETS)
-    csv.field_size_limit(1 << 20)
-    rows = 0
-    with open(trails_file) as f:
-        for row in csv.reader(f, delimiter=',', quotechar='"'):
-            if not row or len(row) != 3:
-                continue
-            trail, info, reference = row
-            rows += 1
-            if check_whitelisted(trail):
-                continue
-            bucket = classify_real_trail(trail, reference, ignored, valid_dns)
-            if bucket is None:
-                continue
-            # One case per host/address keeps the flows independent: two trails under the same
-            # name would collide in the sensor's per-flow caches and mask each other.
-            head = trail.split('/')[0]
-            host = head.rpartition(':')[0] or head or trail      # a '/path' trail has no host
-            if host in seen_hosts[bucket]:
-                continue
-            key = _sample_key(trail)
-            heap = heaps[bucket]
-            if len(heap) < per_bucket:
-                heapq.heappush(heap, (-key, trail, info))
-                seen_hosts[bucket].add(host)
-            elif -key > heap[0][0]:
-                dropped = heapq.heapreplace(heap, (-key, trail, info))
-                dropped_head = dropped[1].split('/')[0]
-                seen_hosts[bucket].discard(dropped_head.rpartition(':')[0] or dropped_head or dropped[1])
-                seen_hosts[bucket].add(host)
-
-    samples = dict((bucket, sorted((t, i) for _, t, i in heaps[bucket])) for bucket in REAL_BUCKETS)
-    # Domains double as HTTP Host and as a sub-labelled query; sample them from the same pool
-    # so a difference between the three code paths is attributable to the path, not the data.
-    samples["dns_subdomain"] = samples["dns_domain"]
-    samples["http_host"] = samples["dns_domain"]
-
-    # A host/path trail whose BARE PATH is also a trail in its own right never produces the
-    # host-qualified trail text. Both sensors build their URL candidates as
-    # `for check in checks: for prefix in ('', host)`, so `/path` is the very first probe and
-    # matches one prefix EARLIER than `host/path`; the event is real, but it is labelled
-    # `(host)/path` after the path-only row. Feeds publish both forms often enough that 19 of a
-    # 25-trail sample here were such pairs, so the gate failed on a detection that had happened.
-    #
-    # Expect the text that is actually emitted, rather than dropping these from the must-detect
-    # list: `parity.py` matches expectations as substrings, and `/path` is a substring of
-    # `(host)/path`, so this still asserts the event and keeps the bucket's coverage.
-    #
-    # A second streaming pass rather than a set of every url_path trail: this sampler is
-    # deliberately O(per_bucket) in memory over a ~90 MB file, and there are at most
-    # `per_bucket` paths to ask about. Whitelisted rows do not count — they never load, so they
-    # cannot shadow anything.
-    shadowing_paths = set()
-    wanted_paths = set('/' + t.partition('/')[2] for t, _ in samples["host_path"])
-    if wanted_paths:
-        with open(trails_file) as f:
-            for row in csv.reader(f, delimiter=',', quotechar='"'):
-                if len(row) == 3 and row[0] in wanted_paths and not check_whitelisted(row[0]):
-                    shadowing_paths.add(row[0])
-
-    def expected_text(bucket, trail):
-        """The trail text an event will actually carry, which is not always the trail itself."""
-        if bucket == "host_path":
-            bare = '/' + trail.partition('/')[2]
-            if bare in shadowing_paths:
-                return bare
-        return trail
-
-    cases, sampled, dead = [], {}, {}
-    client = "10.13.13.13"
-
-    def undetectable(bucket, trail, info):
-        """Why this sampled trail cannot produce an event even on a correct sensor.
-
-        These are properties of the trail DATA against the shipped detection rules, each with the
-        line in sensor.py that suppresses it. Such trails still go into the pcap (parity must
-        cover them) but are kept out of `expect`, which is the absolute must-detect list.
-        """
-        if bucket in ("ipv4", "ipv4_port") and "attacker" in info:
-            return "sensor.py:559 - the destination-side SYN branch suppresses 'attacker' infos"
-        if bucket == "host_path":
-            host = trail.split('/')[0]
-            if _re_module.match(r"\A\d+\.[0-9.]+\Z", host):
-                return "sensor.py:661 - a numeric Host takes the iot-download branch, not the URL lookup"
-            if trail.endswith('/'):
-                return "sensor.py:754 - `checks = [path.rstrip('/')]`, so a trail ending in '/' is unreachable"
-            # The host is matched against the whitelist before the URL lookup runs, so a
-            # host/path trail under e.g. raw.githubusercontent.com can never fire. `check_whitelisted`
-            # at sample time does not catch this: it tests the whole trail, not its host.
-            if check_domain_whitelisted(host):
-                return "the trail's host is whitelisted"
-        if bucket in ("dns_domain", "dns_subdomain", "http_host") and check_domain_whitelisted(trail):
-            return "the trail's parent domain is whitelisted"
-        return None
-
-    def add(name, bucket, packets, trails, notes):
-        if not packets:
-            return
-        # `expect` holds the trail text itself: every expected trail must show up in at least one
-        # event, in BOTH sensors. That is the absolute check - parity alone would happily agree
-        # on detecting nothing.
-        reasons = dict((t, undetectable(bucket, t, i)) for t, i in trails)
-        cases.append((name, DLT_EN10MB, packets, [expected_text(bucket, t) for t, _ in trails if not reasons[t]], notes))
-        sampled[name] = trails
-        dead[name] = [{"trail": t, "reason": r, "emits_as": expected_text(bucket, t)}
-                      for t, r in sorted(reasons.items()) if r]
-
-    packets = []
-    for i, (trail, _) in enumerate(samples["dns_domain"]):
-        packets.append((BASE_SEC + i, eth(ipv4(client, "8.8.8.8", 17, udp(30000 + i, 53, dns_query(trail))))))
-    add("real_dns_domain", "dns_domain", packets, samples["dns_domain"], "DNS queries for real domain trails")
-
-    packets = []
-    for i, (trail, _) in enumerate(samples["dns_subdomain"]):
-        name = "sub%d.%s" % (i, trail)
-        packets.append((BASE_SEC + i, eth(ipv4(client, "8.8.8.8", 17, udp(31000 + i, 53, dns_query(name))))))
-    add("real_dns_subdomain", "dns_subdomain", packets, samples["dns_subdomain"],
-        "DNS queries one label BELOW a real domain trail (the parent-suffix walk)")
-
-    packets = []
-    for i, (trail, _) in enumerate(samples["http_host"]):
-        packets.append((BASE_SEC + i, eth(ipv4(client, "203.0.113.80", 6,
-                                               tcp(32000 + i, 80, 0x18, http_get("/", host=trail))))))
-    add("real_http_host", "http_host", packets, samples["http_host"], "HTTP requests whose Host is a real domain trail")
-
-    packets = []
-    for i, (trail, _) in enumerate(samples["ipv4"]):
-        packets.append((BASE_SEC + i, eth(ipv4(client, trail, 6, tcp(33000 + i, 443, 0x02)))))
-    add("real_ipv4", "ipv4", packets, samples["ipv4"], "TCP SYNs to real IPv4 trails")
-
-    packets = []
-    for i, (trail, _) in enumerate(samples["ipv4_port"]):
-        addr, _, port = trail.rpartition(':')
-        packets.append((BASE_SEC + i, eth(ipv4(client, addr, 6, tcp(34000 + i, int(port), 0x02)))))
-    add("real_ipv4_port", "ipv4_port", packets, samples["ipv4_port"], "TCP SYNs to real IPv4:port trails")
-
-    packets = []
-    for i, (trail, _) in enumerate(samples["ipv6"]):
-        packets.append((BASE_SEC + i, eth(ipv6("dead:beef::13", trail, 6, tcp(37000 + i, 443, 0x02)), 0x86dd)))
-    add("real_ipv6", "ipv6", packets, samples["ipv6"], "TCP SYNs to real IPv6 trails")
-
-    packets = []
-    for i, (trail, _) in enumerate(samples["url_path"]):
-        packets.append((BASE_SEC + i, eth(ipv4(client, "203.0.113.80", 6,
-                                               tcp(35000 + i, 80, 0x18,
-                                                   http_get(trail, host="host%d.example" % i))))))
-    add("real_url_path", "url_path", packets, samples["url_path"], "HTTP requests for real path trails")
-
-    packets = []
-    for i, (trail, _) in enumerate(samples["host_path"]):
-        host, _, path = trail.partition('/')
-        packets.append((BASE_SEC + i, eth(ipv4(client, "203.0.113.80", 6,
-                                               tcp(36000 + i, 80, 0x18,
-                                                   http_get("/%s" % path, host=host))))))
-    add("real_host_path", "host_path", packets, samples["host_path"], "HTTP requests for real host/path trails")
-
-    return cases, sampled, dead, rows
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", default=os.path.join(ROOT, "sensor", "tests", "corpus"))
-    parser.add_argument("--from-trails", dest="from_trails",
-                        help="build a corpus from real trails in this CSV instead of the fixture cases")
-    parser.add_argument("--per-bucket", type=int, default=25,
-                        help="how many real trails to sample per traffic shape (--from-trails)")
     options = parser.parse_args()
 
     out = os.path.abspath(options.out)
     if not os.path.isdir(out):
         os.makedirs(out)
-
-    if options.from_trails:
-        return main_from_trails(options, out)
 
     with open(os.path.join(out, "trails.csv"), "w") as f:
         for trail, info, reference in TRAILS:
@@ -1060,11 +790,9 @@ def main():
             "pcap": filename,
             "linktype": linktype,
             "packets": len(packets),
-            # The divergence pins are expectations like any other now that there is no second
-            # sensor to diverge from. Kept apart as "expect_rust_only", they were enforced only by
-            # parity.py, and when that went with the Python sensor nothing checked them: the
-            # beaconing case asserted no detection at all from 2026-08-27 on.
-            "expect": expected + [_ for _ in DIVERGENCE_CASES.get(name, []) if _ not in expected],
+            # Pinned detections are merged into `expect` rather than kept in a separate key: a
+            # separate key is one nothing has to read, and then nothing checks it.
+            "expect": expected + [_ for _ in PINNED_CASES.get(name, []) if _ not in expected],
             "needs_pcap_timestamps": name in TIMING_WINDOW_CASES,
             "timestamp_sensitive": name in TIMESTAMP_SENSITIVE_CASES,
             "notes": notes,
@@ -1076,55 +804,6 @@ def main():
 
     print("[i] wrote %d pcap(s) + trails.csv + manifest.json to %s" % (len(manifest), out))
     print("[i] total packets: %d" % sum(_["packets"] for _ in manifest))
-
-
-def main_from_trails(options, out):
-    trails_file = os.path.abspath(os.path.expanduser(options.from_trails))
-    if not os.path.isfile(trails_file):
-        sys.exit("[!] no such trails file: '%s'" % trails_file)
-
-    cases, sampled, dead, rows = build_real_cases(trails_file, options.per_bucket)
-
-    # parity.py reads <corpus>/trails.csv - point it at the REAL file so both sensors load the
-    # whole 1.5M-row store, not a fixture. A symlink avoids a second 76 MB copy.
-    link = os.path.join(out, "trails.csv")
-    if os.path.islink(link) or os.path.isfile(link):
-        os.remove(link)
-    try:
-        os.symlink(trails_file, link)
-    except (OSError, AttributeError):
-        import shutil
-        shutil.copyfile(trails_file, link)
-
-    manifest = []
-    for name, linktype, packets, expected, notes in cases:
-        filename = "%s.pcap" % name
-        write_pcap(os.path.join(out, filename), packets, linktype)
-        manifest.append({
-            "name": name,
-            "pcap": filename,
-            "linktype": linktype,
-            "packets": len(packets),
-            "expect": expected + sorted(entry["emits_as"] for entry in dead.get(name, [])
-                                        if entry["reason"] in ("the trail's parent domain is whitelisted",
-                                                               "the trail's host is whitelisted")),
-            "needs_pcap_timestamps": False,
-            "timestamp_sensitive": False,
-            "notes": notes,
-            "sampled": [{"trail": t, "info": i} for t, i in sampled.get(name, [])],
-            "undetectable": dead.get(name, []),
-        })
-
-    with open(os.path.join(out, "manifest.json"), "w") as f:
-        json.dump(manifest, f, indent=2, sort_keys=True)
-        f.write("\n")
-
-    print("[i] sampled %d row(s) from '%s'" % (rows, trails_file))
-    for entry in manifest:
-        print("[i]   %-22s %3d packet(s), %3d must-detect, %3d known-undetectable"
-              % (entry["name"], entry["packets"], len(entry["expect"]), len(entry["undetectable"])))
-    print("[i] wrote %d pcap(s) + manifest.json to %s (trails.csv -> the real file)" % (len(manifest), out))
-    print("[i] now run: MALTRAIL_CORPUS=%s cargo test --manifest-path sensor/Cargo.toml --test replay" % out)
 
 
 if __name__ == "__main__":

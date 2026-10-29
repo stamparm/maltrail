@@ -3,7 +3,7 @@ name = "maltrail-sensor"
 version = "3.5.0"
 edition = "2021"
 rust-version = "1.74"
-description = "Rust packet-processing sensor for Maltrail (drop-in replacement for sensor.py)"
+description = "Packet-processing sensor for Maltrail"
 license = "MIT"
 repository = "https://github.com/stamparm/maltrail"
 publish = false
@@ -65,5 +65,4 @@ debug = 1
 lto = "fat"
 codegen-units = 1
 # NOTE: unwinding is deliberately kept (not panic="abort"): src/worker.rs wraps each
-# packet in catch_unwind, mirroring sensor.py's blanket `except Exception` around
-# _process_packet, so a parser bug can never take the sensor down mid-capture.
+# packet in catch_unwind, so a parser bug can never take the sensor down mid-capture.

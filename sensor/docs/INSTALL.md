@@ -1,9 +1,7 @@
-# Installing and migrating to the sensor
+# Installing the sensor
 
-The sensor is additive: `sensor.py` is untouched and remains the reference implementation,
-the differential-test oracle and the fallback. Both read the same `maltrail.conf`, the same
-`trails.csv` and write the same event format, so you can switch back and forth freely — and you
-can run them side by side against the same traffic while you build confidence.
+The sensor reads `maltrail.conf` and `trails.csv` and writes the event log the Maltrail server
+reads; what each of those contains is in [`BEHAVIOUR.md`](BEHAVIOUR.md).
 
 If you just want a working deployment rather than a build, `install.sh` does everything in this
 document — dependencies, the prebuilt binary, the user, the directories, `setcap`, the systemd
@@ -70,7 +68,7 @@ The sensor finds `maltrail.conf` by walking up from the executable, so from the 
 sudo ./sensor/target/release/maltrail-sensor
 ```
 
-Explicit forms, all mirroring `sensor.py`:
+Explicit forms:
 
 ```bash
 # specific configuration file
@@ -182,10 +180,10 @@ All have conservative defaults; none are required.
 | `CAPTURE_SNAPLEN` | 2000 (`SNAP_LEN`) | bytes captured per packet |
 | `CAPTURE_TIMEOUT` | 100 | capture/poll timeout in ms; also bounds shutdown latency |
 | `CAPTURE_IMMEDIATE` | false | deliver packets as they arrive (lower latency, worse throughput) |
-| `CAPTURE_FANOUT_MODE` | `hash` | `hash`, `lb`, `cpu`, `rollover`, `random`, `qm`. Keep `hash`: worker-local heuristic state depends on stable flow assignment |
+| `CAPTURE_FANOUT_MODE` | `source` above one worker | `source`, `hash`, `lb`, `cpu`, `rollover`, `random`, `qm`. `source` keeps each source address on one worker, so the per-source scan heuristics see all of a scanner's traffic; `hash` splits by flow and dilutes them (see below) |
 | `CAPTURE_FANOUT_DEFRAG` | true | have the kernel reassemble IPv4 fragments (Linux); off leaves fragmented packets uninspected |
 | `CAPTURE_FANOUT_GROUP` | `(pid + iface index) & 0xffff` | pin the group id (needed if two sensors must share one group) |
-| `OFFLINE_TIMESTAMPS` | `pcap` | `pcap` or `wallclock`; `wallclock` reproduces `sensor.py`-on-Python-3 offline behaviour |
+| `OFFLINE_TIMESTAMPS` | `pcap` | `pcap` or `wallclock`; `wallclock` stamps each replayed packet with the time it is processed |
 | `METRICS_INTERVAL` | 3600 | seconds between metrics lines; 0 disables |
 | `STATS_ADDRESS` | *(empty)* | `host:port` for the Prometheus metrics endpoint, e.g. `127.0.0.1:9109`. Empty = disabled |
 | `EVENT_THROTTLE_MODE` | `summarize` | `summarize` (burst, then one aggregated line), `legacy` (`core/log.py` byte for byte), `off` |
@@ -193,7 +191,7 @@ All have conservative defaults; none are required.
 | `EVENT_THROTTLE_BURST` | 3 | events written verbatim per key per window before summarizing |
 | `EVENT_THROTTLE_MAX_KEYS` | 50000 | bound on tracked keys; the least recently used is summarized and dropped |
 | `DISABLE_TRAIL_UPDATES` | false | stop refreshing `TRAILS_FILE` (for hosts where it is pushed in from elsewhere) |
-| `REPAIR_TRUNCATED_TRAILS` | true | salvage wildcard trails the feed truncated; `false` = drop them like `sensor.py` |
+| `REPAIR_TRUNCATED_TRAILS` | true | salvage wildcard trails the feed truncated; `false` drops them |
 
 For maximum throughput: a large `CAPTURE_BUFFER_SIZE` (64–256 MB), `CAPTURE_IMMEDIATE false`,
 a small non-zero `CAPTURE_TIMEOUT` (50–100 ms) so the kernel can batch, the existing
@@ -215,11 +213,9 @@ Grant them once to the binary and never run it as root again:
 sudo setcap cap_net_raw,cap_net_admin=eip sensor/target/release/maltrail-sensor
 ```
 
-`sensor.py` tests `geteuid() == 0`, which asks the wrong question in both directions: it refuses to
-replay a pcap file (which needs no privileges at all) and it refuses to run under capabilities,
-which is how a packet-capture process should be deployed. The sensor checks for the capability
-it actually uses, skips the check entirely for `-r` replay, and prints the exact `setcap` line if it
-is missing. `DISABLE_CHECK_SUDO true` still skips the check.
+The sensor checks for the capability it actually uses rather than for root, skips the check
+entirely for `-r` replay (reading a file needs no privileges), and prints the exact `setcap` line if
+it is missing. `DISABLE_CHECK_SUDO true` skips the check.
 
 `packaging/systemd/maltrail-sensor.service` runs as an unprivileged `maltrail` user with exactly those two
 ambient capabilities, `NoNewPrivileges=yes`, and the usual systemd hardening — so a parser bug in a
@@ -261,24 +257,17 @@ of running a sensor that cannot detect anything.
 
 ### Worker count and scan detection
 
-`PACKET_FANOUT_HASH` splits traffic by **flow**, but the scan heuristics count per **source**, and a
-scan is many flows. A scanner using incrementing ephemeral source ports lands on a different worker
-per probe, so with N workers a threshold needs roughly N times more probes before any single worker
-trips it. The same applies to infection scanning, UDP scanning, per-domain DNS-exhaustion counters
-and NXDOMAIN hour counters.
+The scan heuristics count per **source**, and a scan is many flows. With more than one worker the
+default `CAPTURE_FANOUT_MODE source` keeps each source address on one worker, so every heuristic
+alert a single worker would raise is still raised (100% at 2, 4 and 8 workers over the corpus,
+`tests/multi_worker_parity.rs`). `CAPTURE_FANOUT_MODE hash` splits by flow instead: a scanner with
+incrementing source ports lands on a different worker per probe, and only 91% of the alerts survive
+at 2 workers, 87% at 4 and 66% at 8. Exact trail detection is identical at every worker count and
+in every mode.
 
-This is the same behaviour as `sensor.py`'s default (its own source comments the effect), so
-migrating does not make it worse — but it is a real limitation, not something fanout solved.
-
-Measured on the corpus (`tests/multi_worker_parity.rs`): of the heuristic alerts one worker raises,
-**91% survive at 2 workers, 86% at 4, 65% at 8**. Exact trail detection is identical at every
-worker count, in both directions — fanout never loses an IOC detection and never invents one.
-
-* **Default — scan/heuristic fidelity:** `CAPTURE_WORKERS` unset, so one worker. Fanout is skipped
-  entirely, and per-source state is undiluted, at the cost of single-core capture.
-* **Throughput matters more** (a busy gateway where trail matching is the point): set
-  `CAPTURE_WORKERS` explicitly, and accept the dilution above. Raise it because
-  `maltrail_capture_dropped_total` is climbing, not pre-emptively.
+* **Default:** `CAPTURE_WORKERS` unset, so one worker and no fanout at all.
+* **More throughput:** set `CAPTURE_WORKERS` because `maltrail_capture_dropped_total` is climbing,
+  not pre-emptively, and keep the `source` mode.
 
 ## 8. Metrics endpoint
 
@@ -377,13 +366,13 @@ swaps it in atomically. Counted in the metrics line as `reloads=ok/failed` and `
 
 ## 11. Trail updates
 
-The sensor refreshes `TRAILS_FILE` itself, exactly like `sensor.py` does: once before the
-first load, then every `UPDATE_PERIOD`. It does this by running Maltrail's **own** updater —
+The sensor refreshes `TRAILS_FILE` itself: once before the first load, then every
+`UPDATE_PERIOD`. It does this by running Maltrail's **own** updater —
 `sensor/tools/update_trails.py` is a thin wrapper around `core.update.update_trails()` — so
 feeds, `UPDATE_SERVER`, `USE_FEED_UPDATES`, `DISABLED_FEEDS`, `IP_MINIMUM_FEEDS` and
 `CUSTOM_TRAILS_DIR` all behave as they always have, and there is no second implementation to drift
-out of sync. `--offline` rebuilds from the bundled static/custom trails without touching the
-network, again matching `sensor.py --offline`.
+out of sync. `--offline` rebuilds from the static and custom trails already on disk without touching the
+network.
 
 This requires `python3` on the host (any interpreter that can run Maltrail itself; override with
 `MALTRAIL_PYTHON`). If it is missing, the sensor says so loudly and keeps running on whatever
@@ -487,41 +476,32 @@ metrics are printed and capture handles are released.
 
 Nothing here is required to run the sensor; it is how to convince yourself before you rely on it.
 
-1. **Replay a corpus.** Detection is checked against a generated fixture corpus and against one
-   sampled from your own `trails.csv`:
+1. **Run the gate.** Every detection is replayed from the corpus and asserted, among the rest of
+   the suite:
 
    ```bash
-   python3 sensor/tools/gen_corpus.py
-   cargo build --release --manifest-path sensor/Cargo.toml
    sh sensor/tools/check.sh
    ```
 
-2. **Shadow your own traffic.** Capture live traffic while an adversarial workload runs, then
-   replay that one capture and diff the results:
+2. **Watch it detect.** `python3 server.py --detect-test` drives synthetic traffic for every
+   detection through the sensor binary and fails if any of them does not fire.
 
-   ```bash
-   sudo python3 sensor/tools/adversarial_traffic.py --seconds 600
-   ```
-
-3. **Scale out only if you need to.** One worker handles 1.8M packets/s on an eight-core laptop
-   CPU and 3.7M on a Ryzen 9 5900X (steady-state, measured before the comparison harness was
-retired; `cargo bench --bench hotpath` is the current measurement). If
-   `maltrail_capture_dropped_total` is climbing, set `CAPTURE_WORKERS` and re-run
-   `fanout_check.py` — and read `docs/COMPATIBILITY.md` §2, difference 3 first, because extra capture
-   sockets cost scan-heuristic sensitivity.
+3. **Scale out only if you need to.** Measure one worker on the target box with
+   `cargo bench --bench hotpath`. If `maltrail_capture_dropped_total` is climbing, set
+   `CAPTURE_WORKERS`, keep `CAPTURE_FANOUT_MODE source`, and re-run `fanout_check.py`.
 
 ## 14. Troubleshooting
 
 | symptom | cause / fix |
 | --- | --- |
-| `please run 'maltrail-sensor' with root privileges` | run under `sudo`, or `setcap` the binary |
+| `no permission to capture packets ('CAP_NET_RAW' is required)` | `setcap` the binary (the message prints the exact line), or run it as root |
 | `unable to open capture on 'ethX': permission problem` | same as above; also check the interface exists (`ip link`) |
 | `PACKET_FANOUT was requested (N workers). Refusing to fall back…` | the kernel refused the group. Check it is Linux ≥ 3.1, that no other process holds the same group id with a different mode (`CAPTURE_FANOUT_GROUP`), or set `CAPTURE_WORKERS 1` |
 | `missing mandatory option 'X'` | the config file is not the Maltrail one; `MONITOR_INTERFACE` and `LOG_DIR` are required |
 | No events at all | check `CAPTURE_FILTER`, that `trails.csv` is non-empty (the startup line prints the count), and that `LOG_DIR` is writable |
-| `[i] repaired N wildcard trail pattern(s) truncated in the feed` | informational: those trails were cut off in transit and were salvaged (the intact alternatives are kept, the dangling fragment dropped). `sensor.py` drops such trails entirely, so this is a detection gain |
-| `[!] N wildcard trail pattern(s) are unusable and NOT matched` | those patterns could not be salvaged at all; CPython rejects them too, so `sensor.py` ignores them as well |
-| No colour in `--console` output | colour is emitted only when stdout is a TTY (as in `sensor.py`), and `NO_COLOR` disables it |
+| `[i] repaired N wildcard trail pattern(s) truncated in the feed` | informational: those trails were cut off in transit and were salvaged (the intact alternatives are kept, the dangling fragment dropped) |
+| `[!] N wildcard trail pattern(s) are unusable and NOT matched` | those patterns could not be salvaged at all and are not valid regular expressions; the feed has to fix them |
+| No colour in `--console` output | colour is emitted only when stdout is a TTY, and `NO_COLOR` disables it |
 | `trail update failed ('str' object has no attribute 'isascii')` | A Maltrail older than 3.1.1 on Python 3.6 (RHEL 8, CentOS 7, openSUSE Leap 15 / SLE 15, Amazon Linux 2). Fixed - `core/update.py` no longer needs 3.7 - so update Maltrail, or set `MALTRAIL_PYTHON` to a 3.7+ interpreter if you cannot. Without either the trail set is empty and the sensor detects nothing; `-T` reports the interpreter version rather than just its presence |
 | `setcap: command not found` | install `libcap2-bin` (Debian/Ubuntu), `libcap` (RHEL/Fedora) or `libcap-progs` (openSUSE/SLES) |
 | `rustup ... conflicts with 'rust+rustc'` on openSUSE/SLES | do not install `rustup`; the packaged `rust` 1.74 already meets the MSRV. `rustup` is only needed for the developer gate (`check.sh`), which wants `rustfmt` and `clippy` |

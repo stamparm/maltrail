@@ -1,4 +1,4 @@
-//! The sensor must REFRESH `trails.csv` itself, like `sensor.py:init():update_timer()` does.
+//! The sensor must REFRESH `trails.csv` itself, at startup and every `UPDATE_PERIOD`.
 //!
 //! Two tests here need a backdated mtime and one needs SIGHUP, so they are `#[cfg(unix)]`. That
 //! leaves their fixtures unused on Windows, which is expected rather than rot.
@@ -226,7 +226,7 @@ fn a_missing_trails_file_is_built_at_startup() {
     assert!(!fixture.trails.exists());
     let pcap = dns_query_pcap(&fixture.dir, "example.org");
     let output = fixture.run(&pcap);
-    assert!(fixture.trails.is_file(), "the sensor must build TRAILS_FILE at startup like sensor.py does.\n{output}");
+    assert!(fixture.trails.is_file(), "the sensor must build TRAILS_FILE at startup.\n{output}");
     let size = std::fs::metadata(&fixture.trails).unwrap().len();
     assert!(size > 1_000_000, "the built trails file looks too small ({size} bytes)\n{output}");
 }
@@ -330,7 +330,7 @@ fn the_updater_uses_maltrails_own_code() {
     let text = std::fs::read_to_string(script).expect("tools/update_trails.py");
     assert!(text.contains("from core.update import update_ipcat, update_trails"));
     assert!(text.contains("update_trails(offline=True)"), "offline mode must rebuild from static trails");
-    assert!(text.contains("check_connection"), "connectivity fallback must match sensor.py");
+    assert!(text.contains("check_connection"), "offline fallback when there is no connectivity");
 }
 
 // --- `-T` / --test-config -------------------------------------------------------------------

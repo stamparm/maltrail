@@ -1,5 +1,5 @@
 //! Runtime settings: the generated constants plus the compiled regexes / multi-pattern
-//! matchers that `sensor.py` builds implicitly through `re` module caching.
+//! matchers built from them.
 //!
 //! Everything here is built exactly once at startup and then only read, so the packet
 //! path never compiles a regex and never takes a lock.
@@ -16,7 +16,7 @@ pub use crate::settings_gen::*;
 /// Hard cap on the number of distinct `(src_ip, trail)` groups the condense buffer may hold
 /// between flushes.
 ///
-/// Not a `core/settings.py` constant: Python bounds each GROUP (`MAX_CONDENSED_EVENTS`) but
+/// Not a `core/settings.py` constant: `MAX_CONDENSED_EVENTS` bounds each GROUP but
 /// never the number of groups, and the map only shrinks on the flush period. Both halves of
 /// the key are attacker-influenced, so that is unbounded growth on a busy link. At the cap the
 /// event is written through the normal throttled path rather than aggregated — an event is a
@@ -89,8 +89,8 @@ pub fn iter_file_lines(path: &Path) -> Vec<String> {
 }
 
 /// `core/settings.py:read_ua()` — rebuild SUSPICIOUS_UA_REGEX from `data/ua.txt` so an
-/// operator editing that file affects the Rust sensor exactly as it affects the Python
-/// one. Falls back to the generated snapshot when the file is unavailable.
+/// operator editing that file affects the sensor exactly as it affects
+/// `core/settings.py`. Falls back to the generated snapshot when the file is unavailable.
 pub fn build_suspicious_ua_regex(root: &Path) -> String {
     let lines = iter_file_lines(&root.join("data").join("ua.txt"));
     if lines.is_empty() {
@@ -123,7 +123,7 @@ pub struct Statics {
 
     // --- domain / DNS ---
     pub valid_dns_name: Regex,
-    /// `(?i)\A([rd]?ns|nf|mx|nic)\d*\.` — infrastructure-name exclusion in `_check_domain`
+    /// `(?i)\A([rd]?ns|nf|mx|nic)\d*\.` — infrastructure-name exclusion in `check_domain`
     pub ns_like_prefix: Regex,
     /// `\A\d+\-\d+\-\d+\-\d+\Z` — dashed-IP subdomain exclusion (DNS exhaustion)
     pub dashed_quad: Regex,
@@ -293,7 +293,7 @@ impl Statics {
 
         let mut suspicious_http_request = Vec::with_capacity(SUSPICIOUS_HTTP_REQUEST_REGEXES.len());
         for (desc, src) in SUSPICIOUS_HTTP_REQUEST_REGEXES {
-            // Python: re.search(regex, value, re.I | re.DOTALL)
+            // case-insensitive, `.` matches newlines (re.I | re.DOTALL)
             suspicious_http_request.push((*desc, pyre::compile(&format!("(?is){src}"))));
         }
         let code_execution = SUSPICIOUS_HTTP_REQUEST_REGEXES
@@ -336,11 +336,10 @@ impl Statics {
             proxy_probe_path: pyre::compile(r"(http://[^/]+/)(.+)"),
             proxy_probe_host: pyre::compile(r"(http://)([^/(]+)"),
             // `unicode(false)` is what makes the Aho-Corasick pre-condition below EXACT rather
-            // than merely usually right. `the retired Python sensor, sensor.py:804` compiles this as a BYTES pattern
-            // with `re.I`, and in Python that folds ASCII only; the crate's default folds
-            // Unicode, so `(?i)k` here also matched U+212A KELVIN SIGN and `\b`/`\s` were
-            // Unicode classes. That accepted a header Python's `re` would not, and it would have
-            // slipped past an ASCII pre-filter. ASCII on both sides now agrees with the oracle.
+            // than merely usually right. The crate's default folds Unicode, so `(?i)k` would also
+            // match U+212A KELVIN SIGN and `\b`/`\s` would be Unicode classes. That accepts a
+            // header the ASCII pre-filter does not, so the two would disagree. ASCII on both
+            // sides keeps them exact.
             forwarded_for: regex::bytes::RegexBuilder::new(
                 r"\b(CF-Connecting-IP|True-Client-IP|X-Forwarded-For):\s*([0-9.]+)",
             )

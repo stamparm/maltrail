@@ -208,7 +208,7 @@ class HeaderTest(unittest.TestCase):
 class WhitelistShadowTest(unittest.TestCase):
     """Which whitelist entries actually stop a trail, since 3.2 changed the answer.
 
-    The retired Python sensor suppressed a name whenever ANY ancestor was whitelisted. The Rust sensor applies
+    Before 3.2 a name was suppressed whenever ANY ancestor was whitelisted. The sensor now applies
     longest-match precedence: only an entry equal to the FULL name vetoes a trail hit, so a trail on
     `evil.cloudfront.net` fires even though `cloudfront.net` is whitelisted. That is asserted on the engine side
     by sensor/tests/detection.rs::trail_under_whitelisted_parent_fires and its three siblings; these tests exist

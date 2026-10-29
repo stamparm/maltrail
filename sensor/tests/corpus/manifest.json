@@ -282,7 +282,7 @@
     "linktype": 1,
     "name": "vlan",
     "needs_pcap_timestamps": false,
-    "notes": "single 802.1Q tag is followed; QinQ is dropped by both",
+    "notes": "802.1Q tags are followed, stacked (QinQ) ones too",
     "packets": 3,
     "pcap": "vlan.pcap",
     "timestamp_sensitive": false
@@ -584,7 +584,7 @@
     "linktype": 1,
     "name": "udp_malware_dst",
     "needs_pcap_timestamps": false,
-    "notes": "non-DNS UDP to a malware-labelled destination (deliberate divergence)",
+    "notes": "non-DNS UDP to a malware-labelled destination is reported",
     "packets": 1,
     "pcap": "udp_malware_dst.pcap",
     "timestamp_sensitive": false
@@ -596,7 +596,7 @@
     "linktype": 1,
     "name": "dns_same_socket_burst",
     "needs_pcap_timestamps": false,
-    "notes": "distinct DNS queries sharing a socket in one second (deliberate divergence)",
+    "notes": "distinct DNS queries sharing a socket in one second are all examined",
     "packets": 2,
     "pcap": "dns_same_socket_burst.pcap",
     "timestamp_sensitive": false
@@ -608,7 +608,7 @@
     "linktype": 1,
     "name": "trail_under_whitelist_parent",
     "needs_pcap_timestamps": false,
-    "notes": "exact trail beats whitelisted ancestor; whitelisted sibling stays silent (deliberate divergence)",
+    "notes": "exact trail beats whitelisted ancestor; whitelisted sibling stays silent",
     "packets": 2,
     "pcap": "trail_under_whitelist_parent.pcap",
     "timestamp_sensitive": false
@@ -630,7 +630,7 @@
     "linktype": 1,
     "name": "tcp_periodic_beacon",
     "needs_pcap_timestamps": true,
-    "notes": "timer-regular reconnects fire once; jittered control stays silent (deliberate divergence, pcap-timestamp gated)",
+    "notes": "timer-regular reconnects fire once; jittered control stays silent (pcap-timestamp gated)",
     "packets": 22,
     "pcap": "tcp_periodic_beacon.pcap",
     "timestamp_sensitive": true
@@ -642,7 +642,7 @@
     "linktype": 1,
     "name": "tcp_malware_ja3",
     "needs_pcap_timestamps": false,
-    "notes": "ClientHello JA3 matched against the trail set (deliberate divergence; CHECK_TLS_FINGERPRINTS)",
+    "notes": "ClientHello JA3 matched against the trail set (CHECK_TLS_FINGERPRINTS)",
     "packets": 2,
     "pcap": "tcp_malware_ja3.pcap",
     "timestamp_sensitive": false

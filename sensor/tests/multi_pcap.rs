@@ -1,4 +1,4 @@
-//! Multi-file offline replay shares one detection state (ROADMAP Gate 1.3).
+//! Multi-file offline replay shares one detection state.
 //!
 //! The contradiction this resolves: the binary gave every `-r` file its own worker AND its own
 //! `WorkerState`, while `tests/replay.rs` asserted that several pcaps replayed through one
@@ -7,7 +7,7 @@
 //! each stayed under it and nothing fired — and the result depended on how the per-file threads
 //! happened to interleave, so a replay was not even deterministic.
 //!
-//! Decision (ROADMAP 1.3): offline replay processes files sequentially through one state. This
+//! Decision: offline replay processes files sequentially through one state. This
 //! is a black-box test of the real binary, because the bug lived in `main`, not in the harness.
 
 use std::path::PathBuf;

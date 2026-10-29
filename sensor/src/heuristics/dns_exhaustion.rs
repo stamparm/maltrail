@@ -1,5 +1,4 @@
-//! DNS-exhaustion heuristic — the `_subdomains` / `_dns_exhausted_domains` block in
-//! `sensor.py:_process_packet()`.
+//! DNS-exhaustion heuristic: too many distinct subdomains of one domain.
 
 use crate::fasthash::{name_key, FastMap, FastSet};
 use std::collections::hash_map::Entry;
@@ -25,8 +24,8 @@ pub struct DnsExhaustion {
     saturations: u64,
 }
 
-/// What the caller should do after recording a subdomain, mirroring the Python control
-/// flow (which either falls through to the trail checks or returns outright).
+/// What the caller should do after recording a subdomain: fall through to the trail checks or
+/// return outright.
 #[derive(Debug, PartialEq, Eq)]
 pub enum Outcome {
     /// Below threshold: continue to the normal DNS trail checks.
@@ -66,7 +65,7 @@ impl DnsExhaustion {
     }
 
     /// Record `subdomain_part` under `domain` and report what the caller should do.
-    /// `threshold` is passed in so tests can lower it, exactly like the Python test does.
+    /// `threshold` is passed in so tests can lower it.
     pub fn observe(&mut self, domain: &str, subdomain_part: &str, sec: u64, threshold: usize) -> Outcome {
         self.observe_keyed(name_key(domain), name_key(subdomain_part), sec, threshold)
     }
@@ -128,7 +127,7 @@ mod tests {
 
     #[test]
     fn fires_once_over_threshold() {
-        // Mirrors the retired Python suite's TestDNSExhaustion with the threshold lowered to 3.
+        // The threshold is lowered to 3.
         let mut d = DnsExhaustion::default();
         let mut alerts = 0;
         for (i, label) in ["alpha", "bravo", "charlie", "delta", "echo"].iter().enumerate() {

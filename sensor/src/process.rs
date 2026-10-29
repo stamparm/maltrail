@@ -1,9 +1,9 @@
-//! `sensor.py:_process_packet()` and `sensor.py:_check_domain()`.
+//! The per-packet detection path: `process_packet()` and the domain check `check_domain()`.
 //!
-//! This is a line-by-line port. Where the Python code has a quirk that is observable in the
-//! emitted events (ordering, bracketing, which guard short-circuits first, a cache that is
-//! consulted before a whitelist), the quirk is reproduced and commented rather than
-//! "fixed" — see `docs/COMPATIBILITY.md` for the small number of deliberate differences.
+//! Details that are observable in the emitted events (ordering, bracketing, which guard
+//! short-circuits first, a cache that is consulted before a whitelist) are part of the log
+//! format the server and existing deployments rely on, so they are kept stable and commented
+//! where they look odd — see `docs/BEHAVIOUR.md`.
 
 use std::borrow::Cow;
 
@@ -91,10 +91,10 @@ fn emit_ep(
 }
 
 // ---------------------------------------------------------------------------
-// _check_domain
+// check_domain
 // ---------------------------------------------------------------------------
 
-/// `sensor.py:_check_domain()`
+/// Check a domain name against the trails, the whitelist and the domain heuristics.
 pub fn check_domain(st: &mut WorkerState, query: &str, sec: u64, usec: u32, ep: Endpoints, proto: &str) {
     check_domain_inner(st, query, sec, usec, ep, proto, None, None);
 }
@@ -109,14 +109,14 @@ fn alias_trail(trail: String, alias_of: Option<&str>) -> String {
     }
 }
 
-/// `_check_domain()` with an optional PRECOMPUTED whitelist depth (0 = not whitelisted).
+/// `check_domain()` with an optional PRECOMPUTED whitelist depth (0 = not whitelisted).
 ///
 /// Only the DNS query path passes one, and its name is already lower-case, colon-free and
 /// through `is_valid_dns_name`, so those three checks are skipped for it.
 ///
 /// The DNS path used to walk the whitelist twice per query: once for the registrable domain (the
 /// last two or three labels) to gate the exhaustion heuristic, and once for the full name here.
-/// Those walks are redundant in the common case, because `_check_domain_member(x)` tests `x` and
+/// Those walks are redundant in the common case, because `check_domain_member(x)` tests `x` and
 /// every parent suffix of `x`, and the suffixes of the domain are a SUBSET of the suffixes of the
 /// full name. So `member(full) == false` implies `member(domain) == false` — one walk answers both
 /// whenever the answer is "not whitelisted", which is nearly every packet.
@@ -166,8 +166,8 @@ fn check_domain_inner(
 
     let mut result = false;
     // DEPTH of the closest whitelisted ancestor (0 = none), not a bare verdict. Longest-match
-    // precedence, deliberate divergence #3 from the retired Python sensor: an exact static trail on a
-    // MORE SPECIFIC name than its whitelisted ancestor fires anyway. A shared-platform apex in
+    // precedence: an exact static trail on a MORE SPECIFIC name than its whitelisted ancestor
+    // fires anyway. A shared-platform apex in
     // the whitelist ("cloudfront.net") is a platform decision, not a veto on the specific IOC
     // somebody added under it — 3,082 static trails were exactly this shape and could never
     // fire. Only exact-name trail hits get this precedence: wildcard regex trails and the
@@ -339,10 +339,10 @@ fn check_domain_inner(
 }
 
 // ---------------------------------------------------------------------------
-// _process_packet
+// process_packet
 // ---------------------------------------------------------------------------
 
-/// `sensor.py:_process_packet()` — processes one raw IP-layer packet.
+/// Process one raw IP-layer packet.
 pub fn process_packet(st: &mut WorkerState, packet_bytes: &[u8], sec: u64, usec: u32, ip_offset: usize) {
     // Iterative, not recursive. A self-recursive function cannot be inlined, and this one is the
     // per-packet entry point - making it recursive to unwrap tunnels would charge every packet,
@@ -401,14 +401,13 @@ fn process_layer(
     st.metrics.packets_processed += 1;
 
     // Condensed store: both endpoints of every connection, before any protocol dispatch.
-    // Same position as `sensor.py`'s `meta.observe_conn()` call — after the IP header is parsed
-    // and fragments have been dropped, so it sees exactly the packets Python's does.
+    // After the IP header is parsed and fragments have been dropped, so it sees exactly the
+    // packets the detections see.
     st.meta.observe_conn(header.src, header.dst, sec);
 
-    // TLS/QUIC handshake-head SNI -> _check_domain, the one detection the pcapy-ng fast
-    // prefilter adds (core/fastfilter.py:head_sni). Gated on the same switches.
-    // Two independent features share the TLS handshake record, so either one is reason enough
-    // to look at it: SNI extraction (the prefilter's contribution) and certificate matching.
+    // TLS/QUIC handshake-head SNI -> check_domain, so malicious domains surface on encrypted
+    // traffic. Two independent features share the TLS handshake record, so either one is
+    // reason enough to look at it: SNI extraction and certificate matching.
     if st.cfg.check_tls_sni || st.cfg.check_tls_fingerprints {
         handshake_sni(st, ip_data, &header, sec, usec);
     }
@@ -434,12 +433,11 @@ fn process_layer(
     None
 }
 
-/// `core/fastfilter.py:head_sni()` — pull the SNI out of a TLS ClientHello (TCP) or a QUIC
-/// Initial (UDP) and run it through the normal domain check, so malicious domains are
-/// surfaced on encrypted traffic.
+/// Pull the SNI out of a TLS ClientHello (TCP) or a QUIC Initial (UDP) and run it through the
+/// normal domain check, so malicious domains are surfaced on encrypted traffic.
 ///
 /// A ClientHello longer than one segment or one Initial is reassembled (`protocols/hello.rs`).
-/// IPv6 is handled like IPv4; `head_sni`'s `_ip_at()` only recognized IPv4 (docs/COMPATIBILITY.md).
+/// IPv6 is handled like IPv4.
 fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader, sec: u64, usec: u32) {
     let sni_on = st.cfg.check_tls_sni;
     match header.protocol {
@@ -675,7 +673,6 @@ fn sha1_hex(data: &[u8]) -> String {
     hex
 }
 
-/// The per-second heuristics sweep at the top of `_process_packet`.
 /// One last sweep when the packets stop (end of a replay, or shutdown). The sweep otherwise runs
 /// only when a LATER packet arrives, so a threshold crossed in the final second of a capture was
 /// never reported. Stamped with the last packet's own second.
@@ -716,8 +713,8 @@ fn heuristics_sweep(st: &mut WorkerState, sec: u64, usec: u32) {
             st.scan.mark_port_alerted(src, dst);
         }
     } else {
-        // Python still marks nothing and simply skips logging; the accumulator keeps
-        // growing until the window boundary, which is what happens there too.
+        // Nothing is marked and nothing is logged; the accumulator keeps growing until the
+        // window boundary.
     }
 
     // --- infection scanning ---
@@ -853,10 +850,6 @@ fn tcp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packe
     };
     let ep = Endpoints { src: header.src, src_port: tcph.src_port, dst: header.dst, dst_port: tcph.dst_port };
 
-    // NOTE: sensor.py runs a plugin-only pre-pass here for flags != 2. Plugins are Python
-    // callables and are not supported by this sensor (see docs/COMPATIBILITY.md), so the
-    // pre-pass - which never writes an event (skip_write=True) - has no equivalent.
-
     if tcph.flags == 2 {
         syn(st, ep, sec, usec);
         return;
@@ -978,7 +971,7 @@ fn syn(st: &mut WorkerState, ep: Endpoints, sec: u64, usec: u32) {
         }
     }
 
-    // NEW heuristic (no sensor.py counterpart): a timer-driven reconnect pattern to one
+    // Beacon heuristic: a timer-driven reconnect pattern to one
     // destination - the low-and-slow C2 shape every volume heuristic is built to miss. See
     // heuristics/beacon.rs for the statistic and its false-positive honesty.
     //
@@ -1009,7 +1002,7 @@ fn syn(st: &mut WorkerState, ep: Endpoints, sec: u64, usec: u32) {
 /// The `tcp_data.startswith("HTTP/")` branch: sinkhole banner, seized-domain title and
 /// suspicious content types.
 fn http_response(st: &mut WorkerState, tcp_data: &str, ep: Endpoints, sec: u64, usec: u32) {
-    // re.search(GENERIC_SINKHOLE_REGEX, tcp_data[:2000]) - a CHARACTER slice in Python
+    // GENERIC_SINKHOLE_REGEX over the first 2000 CHARACTERS (not bytes) of the response
     let head: String = tcp_data.chars().take(2000).collect();
     if let Some(m) = st.statics.generic_sinkhole.find(&head) {
         let trail = m.as_str().to_string();
@@ -1025,8 +1018,8 @@ fn http_response(st: &mut WorkerState, tcp_data: &str, ep: Endpoints, sec: u64, 
             "(heuristic)",
         );
     } else if let Some(index) = tcp_data.find("<title>") {
-        // Only extract when the closing tag is in the captured bytes; otherwise Python's
-        // find() == -1 would grab most of the body as a bogus multi-KB trail.
+        // Only extract when the closing tag is in the captured bytes; a missing one must not
+        // turn most of the body into a bogus multi-KB trail.
         let start = index + "<title>".len();
         if let Some(rel_end) = tcp_data[start..].find("</title>") {
             let title = &tcp_data[start..start + rel_end];
@@ -1067,7 +1060,6 @@ fn http_response(st: &mut WorkerState, tcp_data: &str, ep: Endpoints, sec: u64, 
     }
 }
 
-/// The HTTP request branch of `_process_packet`.
 /// Apply `SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS`, borrowing when nothing needs encoding.
 fn force_encode(value: &str) -> Cow<'_, str> {
     if !settings::SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS.iter().any(|(ch, _)| value.contains(*ch)) {
@@ -1306,7 +1298,7 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
         }
     }
 
-    // Longest-match precedence (divergence #3, same policy as `_check_domain`): only an entry
+    // Longest-match precedence (same policy as `check_domain`): only an entry
     // equal to the FULL host vetoes everything. A whitelisted ANCESTOR (a shared-platform
     // apex) no longer hides exact trail hits on the more specific host — but it still
     // suppresses every heuristic below, which would otherwise fire on benign platform traffic.
@@ -1399,7 +1391,7 @@ fn http_request(st: &mut WorkerState, packet_bytes: &[u8], tcp_data: &str, ep: E
                     found
                 }
             };
-            // Python: `if found and not ("data leakage" in found and is_local(dst_ip))`
+            // "data leakage" towards a local destination is not reported
             let local_data_leakage = found.contains("data leakage") && ep.dst.is_local();
             if !found.is_empty() && !local_data_leakage {
                 let trail = format!("{host}({encoded_path})");
@@ -1629,16 +1621,16 @@ fn udp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packe
 
     let stamp = FlowStamp { sec, src: ep.src, src_port: ep.src_port, dst: ep.dst, dst_port: ep.dst_port };
 
-    // Burst suppression. Python (the retired Python sensor, sensor.py:863) compared the 5-tuple plus the second and
-    // nothing else, so two DIFFERENT datagrams sent back-to-back on one socket in one second
-    // collapsed to one - and because the check runs before dns_packet(), the second was never
-    // parsed at all. A stub resolver walking its `search` list, a retry, or a forwarder
-    // multiplexing two clients upstream all reuse the socket, so the dropped datagram carries a
-    // different name than the one that was examined: silent detection loss, not deduplication.
+    // Burst suppression. Comparing only the 5-tuple plus the second would collapse two
+    // DIFFERENT datagrams sent back-to-back on one socket in one second into one - and because
+    // the check runs before dns_packet(), the second would never be parsed at all. A stub
+    // resolver walking its `search` list, a retry, or a forwarder multiplexing two clients
+    // upstream all reuse the socket, so the dropped datagram carries a different name than the
+    // one that was examined: silent detection loss, not deduplication.
     //
-    // Mixing the payload into the comparison keeps the intent (a genuinely repeated datagram is
-    // still skipped, byte for byte) and removes the collision. Deliberate divergence from the
-    // oracle; see tests/detection.rs and the divergence list in docs/COMPATIBILITY.md.
+    // Mixing a payload digest into the comparison keeps the intent (a genuinely repeated
+    // datagram is still skipped, byte for byte) and removes the collision. See
+    // tests/detection.rs and docs/BEHAVIOUR.md.
     let digest = payload_digest(packet::udp_payload(ip_data, header.header_len));
     let previous = st.last_udp.replace(stamp);
     let previous_digest = std::mem::replace(&mut st.last_udp_payload, digest);
@@ -1654,11 +1646,10 @@ fn udp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packe
         // listings (noise we provoked) are dropped there, while a datagram FROM a listed host is
         // usually backscatter and drops "malware".
         //
-        // Python (the retired Python sensor, sensor.py:880) collapsed both sides into one `trail` and then applied the
-        // src-side "malware" rule to whichever had matched - so every UDP flow *to* a known
-        // malware/C2 address was discarded, which is the single most valuable thing this branch
-        // can see. Deliberate divergence from the oracle; see tests/detection.rs and the
-        // divergence list in docs/COMPATIBILITY.md.
+        // The two sides are kept apart on purpose. Collapsing them into one `trail` and applying
+        // the src-side "malware" rule to whichever had matched would discard every UDP flow *to*
+        // a known malware/C2 address, which is the single most valuable thing this branch can
+        // see. See tests/detection.rs and docs/BEHAVIOUR.md.
         let hit = st
             .trails
             .db()
@@ -1841,8 +1832,8 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
         return;
     }
 
-    // Condensed store: the queried name, recorded after the same validity/ignore filter Python
-    // applies and before the standard-query check, so a response-only capture still contributes.
+    // Condensed store: the queried name, recorded after the validity/ignore filter above and
+    // before the standard-query check, so a response-only capture still contributes.
     st.meta.observe_dns(query, sec);
 
     let label_count = dots.label_count();

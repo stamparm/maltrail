@@ -75,7 +75,7 @@ def settings_gen_version():
     """pub const VERSION: &str = "3.2"; from the generated mirror of core/settings.py.
 
     This is a FOURTH place the version lives, and it was the one nobody checked here. The Rust
-    parity test covers it, but that test needs a Rust toolchain - so the automated monthly bump,
+    generated-constants test (sensor/tests/generated.rs) covers it, but that test needs a Rust toolchain - so the automated monthly bump,
     which is a text edit on a machine that has none, could not tell it had gone stale. It found
     out from a failed release: the tag was already pushed, the gate refused it, and nothing was
     built. A version bump is text; verifying it should be text too.
@@ -136,8 +136,8 @@ def main():
               % (settings, series(cargo)[0], series(cargo)[1]), file=sys.stderr)
         return 1
 
-    # Exact, not by series: this one is a generated copy of that exact string, and the Rust
-    # parity test compares it verbatim. "3.3" vs "3.3.0" would pass a series check and still
+    # Exact, not by series: this one is a generated copy of that exact string, and
+    # sensor/tests/generated.rs compares it verbatim. "3.3" vs "3.3.0" would pass a series check and still
     # fail the build.
     if generated != settings:
         print("[x] sensor/src/settings_gen.rs says %s while core/settings.py says %s"
