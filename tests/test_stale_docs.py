@@ -105,13 +105,39 @@ LINK = re.compile(r"\]\(([^)\s]+)\)")
 BACKTICK = re.compile(r"`([^`\s]+)`")
 
 
+# Build output a document may legitimately name: it exists after a build, never in a checkout.
+BUILD_OUTPUT = ("sensor/target/",)
+
+_KNOWN = []
+
+
+def known_paths():
+    """Tracked files and their directories. Checked against these rather than the disk, so a stale
+    build or a scratch file on a developer's machine cannot make a dead reference look alive - the
+    check has to give the same answer locally and on a fresh CI checkout."""
+    if not _KNOWN:
+        found = set()
+        for name in tracked_files():
+            found.add(name)
+            directory = os.path.dirname(name)
+            while directory:
+                found.add(directory)
+                directory = os.path.dirname(directory)
+        _KNOWN.append(found)
+    return _KNOWN[0]
+
+
 def resolves(path, target):
     """A path in a document may be written from the repository root, from the document's own
     directory, or from any directory above it (`sensor/docs/X.md` citing `tests/trails.rs` means
     `sensor/tests/trails.rs`)."""
+    if target.startswith(BUILD_OUTPUT):
+        return True
+    known = known_paths()
     directory = os.path.dirname(path)
     while True:
-        if os.path.exists(os.path.join(ROOT, directory, target)):
+        candidate = os.path.normpath(os.path.join(directory, target)).replace(os.sep, "/").rstrip("/")
+        if candidate in known:
             return True
         if not directory:
             return False
