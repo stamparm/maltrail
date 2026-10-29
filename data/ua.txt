@@ -2902,6 +2902,12 @@ php2shell-verify/1.0
 self\_update/1.0
 self\_update
 
+# Reference: https://x.com/malwrhunterteam/status/2114790832809423225
+# Reference: https://www.virustotal.com/gui/file/f452b1a06c86c4ffa7ae32359cd2c03e58f6f20c7f892c4819c85836085804ae/detection
+
+VectraFileTransfer/1.0
+VectraFileTransfer
+
 # Misc
 
 information_schema
