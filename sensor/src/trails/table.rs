@@ -83,19 +83,6 @@ impl NegativeFilter {
         self.bits[b >> 6] |= 1u64 << (b & 63);
     }
 
-    /// Pull this hash's two words into cache without using them, so a later `insert()` on the
-    /// same hash finds them there. Volatile reads rather than an intrinsic: `_mm_prefetch` is
-    /// x86-only and there is no stable portable prefetch, and a load whose result is discarded
-    /// is not something the out-of-order engine waits on either.
-    #[inline]
-    pub fn prefetch(&self, h: u64) {
-        let (a, b) = self.positions(h);
-        unsafe {
-            std::ptr::read_volatile(self.bits.as_ptr().add(a >> 6));
-            std::ptr::read_volatile(self.bits.as_ptr().add(b >> 6));
-        }
-    }
-
     /// `false` = definitely absent. `true` = possibly present, check the table.
     #[inline]
     pub fn maybe_contains(&self, h: u64) -> bool {
@@ -306,16 +293,6 @@ impl StrTable {
     #[inline]
     pub fn contains(&self, key: &str) -> bool {
         self.get(key).is_some()
-    }
-
-    /// Warm the cache lines a future `insert_hashed(_, h, _)` will touch. The slots array is
-    /// ~34 MB at real trail counts, so every probe is a DRAM round trip; issuing them a few
-    /// rows ahead of the insert that needs them is most of what makes the serial pass keep up.
-    #[inline]
-    pub fn prefetch(&self, h: u64) {
-        let i = slot_of(h, self.slots.len());
-        unsafe { std::ptr::read_volatile(self.slots.as_ptr().add(i)) };
-        self.filter.prefetch(h);
     }
 
     fn grow(&mut self) {

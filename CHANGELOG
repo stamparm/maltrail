@@ -33,6 +33,16 @@
 [=] A trail reload parses with one thread fewer than the cores, so the
     capture worker keeps a core. Parsing trails.csv is ~15% faster (0.80 s
     -> 0.68 s on one core).
+[!] On hosts with under 2 GB of RAM, building the trail tables took 257 s on
+    a Pi Zero and wrote 1.9 GB to its SD card, on every start and reload:
+    they were built in a file mapping, and random inserts re-dirtied pages
+    the kernel had already written back. With the trail store on, they are
+    built on the heap and written once, as the store: 25 s and 100 MB. A
+    Pi Zero now starts in 4 s with the store, 40 s without it.
+[=] The trail loader no longer "prefetches" table slots ahead of each
+    insert. It was a real load, which an in-order core (ARM11, Cortex-A53)
+    stalls on: 18% slower inserts on a Pi Zero, and the whole load was 9%
+    slower with it on a Ryzen too (0.69 s -> 0.63 s).
 
 [!] Multi-worker capture with CAPTURE_FANOUT_MODE source sent a host's
     outgoing packets to the wrong worker whenever the destination MAC began

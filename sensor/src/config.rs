@@ -615,22 +615,24 @@ pub fn parse_byte_size(value: &str) -> Result<u64, ConfigError> {
 /// Memory assumed when the OS will not say, for sizing only.
 pub const FALLBACK_PHYSMEM: u64 = 256 * 1024 * 1024;
 
-/// Below this much physical memory the trail store is built file-backed (`trails/region.rs`).
+/// Below this much physical memory, and with `TRAIL_STORE_CACHE` off, the trail tables are built
+/// file-backed (`trails/region.rs`).
 ///
-/// That is what lets a 256 MB Pi hold ~200 MB of store: written back to disk, its pages become
-/// page cache the kernel can drop and re-read. The write-back is the price - the whole store,
-/// ~125 MB measured on a Pi 4, on every start and every reload, to what is usually an SD card.
-/// A host that can hold the store on the heap - twice over during a reload, ~400 MB at 1.9M
-/// trails - gains nothing from paying it. An unknown size counts as small (`FALLBACK_PHYSMEM`).
+/// That is what lets a 256 MB Pi hold ~200 MB of tables: written back to disk, their pages become
+/// page cache the kernel can drop and re-read. The write-back is the price, and it is not one
+/// write: inserts land at random, so pages are dirtied again after being written - 1.9 GB to a
+/// Pi Zero's SD card for a 100 MB table set, on every start and every reload. With the prebuilt
+/// store on, the tables that serve are a mapping of that file anyway, so they are built on the
+/// heap and written once. An unknown size counts as small (`FALLBACK_PHYSMEM`).
 pub const FILE_BACKED_TRAILS_BELOW: u64 = 2 * 1024 * 1024 * 1024;
 
-/// Whether this host builds its trail store file-backed: see `FILE_BACKED_TRAILS_BELOW`.
-pub fn file_backed_trails() -> bool {
-    file_backed_for(physmem_for_sizing().0)
+/// Whether this host builds its trail tables file-backed: see `FILE_BACKED_TRAILS_BELOW`.
+pub fn file_backed_trails(store: bool) -> bool {
+    file_backed_for(store, physmem_for_sizing().0)
 }
 
-fn file_backed_for(physmem: u64) -> bool {
-    physmem < FILE_BACKED_TRAILS_BELOW
+fn file_backed_for(store: bool, physmem: u64) -> bool {
+    !store && physmem < FILE_BACKED_TRAILS_BELOW
 }
 
 /// Physical memory for resolving `NN%` sizes, and whether it had to be assumed.
@@ -1252,7 +1254,10 @@ impl Config {
             reload.then(|| std::thread::available_parallelism().map(|n| n.get()).unwrap_or(1).saturating_sub(1).max(1));
         crate::trails::LoadOptions {
             repair_truncated_trails: self.repair_truncated_trails,
-            file_backed: file_backed_trails(),
+            // With a store, the copy that serves is already a file mapping, so building file-backed
+            // too only buys write-back: random inserts re-dirty pages the kernel already wrote, and
+            // a 1.9M-trail load wrote 1.9 GB to a Pi Zero's SD card and took 257 s (25 s on the heap).
+            file_backed: file_backed_trails(store.is_some()),
             store,
             parse_threads,
         }
@@ -1282,9 +1287,10 @@ mod tests {
         for (physmem, backed) in
             [(221 * MB, true), (1024 * MB, true), (2047 * MB, true), (2048 * MB, false), (16384 * MB, false)]
         {
-            assert_eq!(file_backed_for(physmem), backed, "{physmem}");
+            assert_eq!(file_backed_for(false, physmem), backed, "{physmem}");
+            assert!(!file_backed_for(true, physmem), "with a store, never: {physmem}");
         }
-        assert!(file_backed_for(FALLBACK_PHYSMEM), "an unknown size counts as small");
+        assert!(file_backed_for(false, FALLBACK_PHYSMEM), "an unknown size counts as small");
     }
 
     #[test]
@@ -1534,6 +1540,7 @@ SENSOR_NAME box   # trailing comment
         assert!(!off.trail_store_cache, "TRAIL_STORE_CACHE false must turn the store off");
         let on = write("on.conf", "REPAIR_TRUNCATED_TRAILS true\nTRAIL_STORE_CACHE true\n");
         assert!(on.repair_truncated_trails && on.trail_store_cache);
+        assert_eq!(off.trail_load_options(false).file_backed, file_backed_trails(false));
     }
 
     #[test]

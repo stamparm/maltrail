@@ -404,7 +404,8 @@ setting changed. Four things make that work:
 * **The built tables are kept.** The first start writes them next to `TRAILS_FILE` as
   `trails.csv.store` (about the size of the CSV), and every later start, `-T` and reload maps that
   file read-only instead of parsing the CSV. On one core with 1.9M trails, `-T` takes 0.08 s
-  instead of 0.78 s and a start needs 89 MB instead of 145 MB. The store is used only when it was
+  instead of 0.78 s and a start needs 89 MB instead of 145 MB; on a Pi Zero a start takes 4 s
+  instead of 40 s. The store is used only when it was
   built from exactly the current `TRAILS_FILE` (size, modification time and content), the same
   whitelist and the same sensor version; otherwise the CSV is parsed as before and the store is
   rewritten. The startup line then reports `memory=… MB (prebuilt store)`, and
@@ -413,16 +414,13 @@ setting changed. Four things make that work:
   maps it, which is why it is written without write permission. `TRAIL_STORE_CACHE false` turns it
   off.
 
-* **The trail store is file-backed on hosts with under 2 GB of RAM.** It is built into mappings of
-  files next to `TRAILS_FILE`, which are unlinked as soon as they are created, so nothing stays on
-  disk. The pages are page
-  cache rather than heap: the kernel writes them back once and can then drop and re-read them
-  under memory pressure, instead of having nothing to free but the process. The startup line
-  reports it as `memory=… MB (file-backed)`. If the directory is not writable, or there is no
-  space for the store (~200 MB at 1.9M trails, twice that during a reload), the store is built on
-  the heap as before. Write-back is the price: the whole store goes to disk on every start and
-  reload (~125 MB measured on a Pi 4, usually to an SD card), so a host with 2 GB or more, which
-  can hold the store on the heap, keeps it there and writes nothing.
+* **Without the store, the tables are file-backed on hosts with under 2 GB of RAM.** With
+  `TRAIL_STORE_CACHE false` they are built into mappings of files next to `TRAILS_FILE`, unlinked
+  as soon as they are created, so their pages are page cache the kernel can drop and re-read under
+  memory pressure instead of heap. The startup line reports `memory=… MB (file-backed)`. The price
+  is write-back on every start and reload, and inserts land at random, so pages are written more
+  than once: 1.9 GB to a Pi Zero's SD card for 1.9M trails. With the store on (the default) the
+  tables are built on the heap and written once, as the store, which is what then serves.
 * **The update merges on disk when memory is short.** With under 768 MB available (cgroup limits
   included), `update_trails()` keeps its working set in a SQLite file next to `TRAILS_FILE`
   (`trails.csv.build`, removed afterwards). It is the same code with the same result, slower by

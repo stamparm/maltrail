@@ -246,12 +246,6 @@ impl TrailDbBuilder {
         }
     }
 
-    /// Warm the string table for a key whose hash is already known (see `StrTable::prefetch`).
-    #[inline]
-    pub fn prefetch(&self, hash: u64) {
-        self.strings.prefetch(hash);
-    }
-
     pub fn finish(self, regex: TrailRegex) -> TrailDb {
         self.strings.flush_async();
         self.ip4.flush_async();

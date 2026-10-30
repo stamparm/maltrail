@@ -125,11 +125,6 @@ const PARALLEL_MIN_BYTES: usize = 4 << 20;
 /// what the load costs, and the sensor should not seize every core on a busy box at startup.
 const MAX_PARSE_THREADS: usize = 8;
 
-/// How far ahead of the insert the drain warms the string table. Roughly the number of
-/// outstanding cache misses the core can keep in flight, which is what decides whether the
-/// serial pass runs at memory bandwidth or at memory latency.
-const PREFETCH_DISTANCE: usize = 8;
-
 /// One surviving CSV row, still borrowing the batch buffer.
 ///
 /// `hash` and `native` are carried rather than recomputed in the drain: both depend only on the
@@ -454,10 +449,10 @@ pub fn load_trails(path: &Path, whitelist: &Whitelist, options: LoadOptions) -> 
                 for (trail, reference) in &shard.wildcards {
                     regex_builder.offer(trail, reference);
                 }
-                for (i, row) in shard.rows.iter().enumerate() {
-                    if let Some(ahead) = shard.rows.get(i + PREFETCH_DISTANCE) {
-                        builder.prefetch(ahead.hash);
-                    }
+                // No prefetch ahead of these inserts: one was here, as a volatile load, and an
+                // in-order core (ARM11, Cortex-A53) stalls on it - 18% slower on a Pi Zero, and 9%
+                // slower even on a Ryzen, whose own out-of-order engine already overlaps the misses.
+                for row in &shard.rows {
                     builder.insert_prepared(&row.trail, row.hash, local_to_global[row.pair as usize], row.native);
                 }
                 stats.rows += shard.stats.rows;
