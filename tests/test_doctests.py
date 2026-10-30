@@ -16,9 +16,8 @@ import core.datatype
 import core.log
 import core.trailsbin
 import core.trailsdict
-import core.disktrails
 
-_MODULES = (core.addr, core.common, core.datatype, core.log, core.trailsbin, core.trailsdict, core.disktrails)
+_MODULES = (core.addr, core.common, core.datatype, core.log, core.trailsbin, core.trailsdict)
 
 
 def load_tests(loader, tests, ignore):

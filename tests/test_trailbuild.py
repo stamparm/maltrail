@@ -1,9 +1,8 @@
 # coding: utf-8
-"""core/disktrails.DiskTrailsDict: the SQLite-backed store update_trails() merges into when memory is
-short. It has to be indistinguishable from the dict it replaces - the post-processing pass renames
-keys while it walks them, and which of two colliding keys wins depends on dict insertion order - so
-these tests drive both stores with the same operations and demand the same answers, down to the
-bytes of the trails.csv each one produces."""
+"""update_trails()'s two builds: one dict, and the streaming build a small host gets (_StreamBuild:
+a bit filter finds the few trails seen more than once, only those are held, the rest streamed). The
+post-processing renames keys while it walks them and which of two colliding keys wins depends on
+insertion order, so both builds must write the same trails.csv, byte for byte."""
 import io
 import os
 import random
@@ -15,78 +14,51 @@ import unittest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from core import update as U
-from core.disktrails import DiskTrailsDict
 from core.settings import config
-from core.trailsdict import TrailsDict
 
 
-class DictSemanticsTest(unittest.TestCase):
-    def setUp(self):
-        self.tmp = tempfile.mkdtemp()
-        self.disk = DiskTrailsDict(os.path.join(self.tmp, "build"))
+class GroupTest(unittest.TestCase):
+    # _StreamBuild streams a trail whose group is seen once. That is only exact if no rename the
+    # post-processing makes can take a key into another group - checked here, step by step, with the
+    # steps the post-processing really takes: an ASCII key is lower-cased and loses "www.", a
+    # "?query" and doubled slashes; a non-ASCII key goes through idna first.
+    ASCII_STEPS = (
+        lambda k: k.lower(),
+        lambda k: k[len("www."):] if k.startswith("www.") and '/' not in k else k,
+        lambda k: k.split('?')[0] if '?' in k and not k.startswith('/') else k,
+        lambda k: k.replace('//', '/'),
+    )
 
-    def tearDown(self):
-        self.disk.close()
-        shutil.rmtree(self.tmp, ignore_errors=True)
-
-    def test_random_operations_match_a_dict(self):
-        rnd = random.Random(19641)
-        ref = {}
-        keys = ["k%d.example" % i for i in range(300)]
-        pairs = [("info%d" % i, "(ref%d)" % (i % 7)) for i in range(40)]
+    def test_no_rename_leaves_its_group(self):
+        rnd = random.Random(20261030)
+        parts = ["www.", "WWW.", "Evil", "evil", ".", "//", "/", "?", "q=1", u"bücher", "x", "1.2.3.4", ":8080", "-", u"ü"]
+        checked = idn = 0
         for _ in range(20000):
-            key = rnd.choice(keys)
-            op = rnd.random()
-            if op < 0.55:
-                value = rnd.choice(pairs)
-                ref[key] = value
-                self.disk[key] = value
-            elif op < 0.8:
-                if key in ref:
-                    del ref[key]
-                    del self.disk[key]
-                else:
-                    self.assertRaises(KeyError, self.disk.__delitem__, key)
+            key = "".join(rnd.choice(parts) for _ in range(rnd.randint(1, 7)))
+            if all(ord(_) < 128 for _ in key):
+                for step in self.ASCII_STEPS:
+                    renamed = step(key)
+                    if renamed and renamed != key:
+                        self.assertEqual(U._group(renamed), U._group(key), "%r -> %r left its group" % (key, renamed))
+                        checked += 1
             else:
-                self.assertEqual(key in self.disk, key in ref)
-                self.assertEqual(self.disk.get(key), ref.get(key))
-        self.assertEqual(len(self.disk), len(ref))
-        self.assertEqual(list(self.disk.snapshot_keys()), list(ref.keys()), "insertion order must be a dict's")
-        self.assertEqual(list(self.disk.items()), list(ref.items()))
-        self.assertEqual(list(self.disk.sorted_items()), sorted(ref.items()))
-
-    def test_renaming_while_walking_a_snapshot_matches_a_dict(self):
-        # the shape of update_trails()'s post-processing: rewrite keys mid-walk, some onto keys
-        # that exist and have not been visited yet
-        words = ["Evil.example", "evil.example", "www.Bad.example", "bad.example", "x//y", "x/y", "ok.example"]
-        for store in (self.disk,):
-            ref = {}
-            for i, w in enumerate(words):
-                ref[w] = ("info%d" % i, "(static)")
-                store[w] = ("info%d" % i, "(static)")
-            for target in (ref, store):
-                walk = list(target.keys()) if target is ref else target.snapshot_keys()
-                for key in walk:
-                    if key not in target:
-                        continue
-                    new = key.lower().replace("www.", "").replace("//", "/")
-                    if new != key:
-                        value = target[key]
-                        del target[key]
-                        target[new] = value
-            self.assertEqual(list(store.items()), list(ref.items()))
-
-    def test_close_leaves_nothing_behind(self):
-        path = os.path.join(self.tmp, "gone")
-        store = DiskTrailsDict(path)
-        store["a"] = ("b", "c")
-        self.assertTrue(os.path.exists(path))
-        store.close()
-        self.assertFalse(os.path.exists(path))
+                # held back with every group it can reach: whatever the post-processing turns it
+                # into - idna's name, or (when idna refuses it) its own ASCII-style renames - is in one
+                try:
+                    first = key.encode("idna").decode("ascii")
+                except Exception:
+                    first = key
+                forms = [first] + [step(first) for step in self.ASCII_STEPS]
+                for form in forms:
+                    if form:
+                        self.assertIn(U._group(form), U._idn_groups(key), "%r -> %r reaches a group not held back" % (key, form))
+                        idn += 1
+        self.assertGreater(checked, 5000, "the generator must produce ASCII renames to check")
+        self.assertGreater(idn, 5000, "and non-ASCII ones")
 
 
 class UpdateTrailsParityTest(unittest.TestCase):
-    """update_trails() must write the same trails.csv whichever store it merges into."""
+    """update_trails() must write the same trails.csv whichever build it uses."""
 
     STATIC = (
         u"Evil.example,malware,(static)\n"
@@ -114,22 +86,20 @@ class UpdateTrailsParityTest(unittest.TestCase):
         config.offline = True
         with io.open("%s.static" % config.TRAILS_FILE, "w", encoding="utf8") as f:
             f.write(self.STATIC * 1)
-        self._build_store = U._build_store
+        self._low_memory = U._low_memory
+        self._sizes = (U._StreamBuild.FILTER_BITS, U._StreamBuild.BATCH, U._StreamBuild.RUN)
 
     def tearDown(self):
-        U._build_store = self._build_store
+        U._low_memory = self._low_memory
+        U._StreamBuild.FILTER_BITS, U._StreamBuild.BATCH, U._StreamBuild.RUN = self._sizes
         for key, value in self._saved.items():
             setattr(config, key, value)
         shutil.rmtree(self.tmp, ignore_errors=True)
 
-    def _build(self, factory):
-        used = []
-
-        def store():
-            used.append(factory())
-            return used[-1]
-
-        U._build_store = store
+    def _build(self, streamed, sizes=None):
+        U._low_memory = lambda: streamed
+        if sizes:
+            U._StreamBuild.FILTER_BITS, U._StreamBuild.BATCH, U._StreamBuild.RUN = sizes
         _so = sys.stdout
         sys.stdout = open(os.devnull, "w")
         try:
@@ -137,17 +107,17 @@ class UpdateTrailsParityTest(unittest.TestCase):
         finally:
             sys.stdout.close()
             sys.stdout = _so
-        self.assertEqual(len(used), 1, "update_trails() must merge into the store it was given")
         result = []
         for suffix in ("", ".confidence"):
             with open(config.TRAILS_FILE + suffix, "rb") as f:
                 result.append(f.read())
         os.remove(config.TRAILS_FILE)
+        leftovers = [_ for _ in os.listdir(self.tmp) if ".build" in _]
+        self.assertEqual(leftovers, [], "the build leaves nothing behind")
         return result
 
-    def test_disk_and_memory_builds_are_byte_identical(self):
-        memory = self._build(TrailsDict)
-        disk = self._build(lambda: DiskTrailsDict("%s.build" % config.TRAILS_FILE))
+    def test_streamed_and_in_memory_builds_are_byte_identical(self):
+        memory = self._build(False)
         # positive control: the build really did the renames and drops this fixture is made of
         text = memory[0].decode("utf8")
         self.assertIn("evil.example,", text)
@@ -157,8 +127,11 @@ class UpdateTrailsParityTest(unittest.TestCase):
         self.assertNotIn("10.0.0.1,", text, "bogons are dropped")
         self.assertIn("1.2.3.4,potential malware site", text)
         # assertTrue, not assertEqual: a byte diff of two trail files sends difflib off for minutes
-        self.assertTrue(disk == memory, "the disk-merged trail set differs from the in-memory one")
-        self.assertFalse(os.path.exists("%s.build" % config.TRAILS_FILE), "the merge file is removed")
+        self.assertTrue(self._build(True) == memory, "the streamed build differs from the in-memory one")
+        # Squeezed: a 64-bit filter calls nearly every group repeated, batches of 2 and score runs
+        # of 3 put the streaming, interleaving and external-sort paths under every row.
+        self.assertTrue(self._build(True, (64, 2, 3)) == memory, "the squeezed streamed build differs")
+        self.assertTrue(self._build(True, (1 << 20, 2, 3)) == memory, "the streamed build with few repeats differs")
 
     def _update_quietly(self):
         _so = sys.stdout

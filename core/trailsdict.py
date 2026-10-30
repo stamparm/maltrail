@@ -298,7 +298,7 @@ class TrailsDict(dict):
         return self._trails.keys()
 
     def snapshot_keys(self):
-        # update_trails() rewrites keys while it walks them; DiskTrailsDict streams the same snapshot
+        # a list, not a view: the caller deletes and adds keys while it walks them
         return list(self.keys())
 
     def sorted_items(self):

@@ -509,6 +509,9 @@ def get_regex(items):
 def check_connection():
     return len(retrieve_content(CHECK_CONNECTION_URL) or "") > 0
 
+_BARE_IPV4_REGEX = re.compile(r"\A(?:\d{1,3}\.){3}\d{1,3}\Z")
+
+
 def check_whitelisted(trail):
     if trail in WHITELIST:
         return True
@@ -516,7 +519,9 @@ def check_whitelisted(trail):
     # Only range-match a BARE IPv4 trail. addr_to_int() reads just the first 4 dotted parts, so the old
     # `trail[0].isdigit()` guard let a domain like "10.0.0.1.evil.com" be range-matched as 10.0.0.1 -> a
     # whitelist bypass / detection-evasion vector (register <whitelisted-ip-prefix>.attacker.com to be ignored).
-    if trail and re.match(r"\A(?:\d{1,3}\.){3}\d{1,3}\Z", trail):
+    # precompiled: the trail build asks this 1.8M times, and re.match() with a pattern string pays
+    # the compile-cache lookup on every call
+    if trail and _BARE_IPV4_REGEX.match(trail):
         try:
             _ = addr_to_int(trail)
             for prefix, mask in WHITELIST_RANGES:

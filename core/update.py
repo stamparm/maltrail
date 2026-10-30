@@ -6,8 +6,10 @@ See the file 'LICENSE' for copying permission
 """
 
 import codecs
+from array import array
 import csv
 import glob
+import heapq
 import io
 import gzip
 import hashlib
@@ -64,7 +66,6 @@ from core.settings import LOCAL_STATIC_TRAIL_FILES
 from core.settings import ROOT_DIR
 from core.settings import UNICODE_ENCODING
 from core.settings import USERS_DIR
-from core.disktrails import DiskTrailsDict
 from core.trailsdict import TrailsDict
 import urllib.error
 import urllib.parse
@@ -112,7 +113,7 @@ def _chown(filepath):
 
 def _fopen(filepath, mode="rb", opener=open):
     retval = opener(filepath, mode)
-    if "w+" in mode:
+    if 'w' in mode:
         _chown(filepath)
     return retval
 
@@ -151,11 +152,6 @@ def _store_etag(path, etag):
     except (IOError, OSError):
         pass
 
-# Below this much available memory, update_trails() merges on disk (see _build_store()). The
-# in-memory merge peaks at ~255 MB on a 64-bit host (1.9M trails, feeds included), so this is
-# three times that.
-TRAILS_BUILD_MEMORY_THRESHOLD = 768 * 1024 * 1024
-
 def _atomic_replace(src, dst):
     # NOTE: rename within the same directory is atomic on POSIX, so concurrent readers (sensor worker reloads,
     # the httpd '/trails' endpoint, downstream UPDATE_SERVER sensors) always see either the old or the new
@@ -187,13 +183,19 @@ def write_confidence_file(trails, duplicates):
     sidecar must degrade to "no opinion" rather than break a trail load.
     """
 
+    items = trails.sorted_items() if hasattr(trails, "sorted_items") else ((_, trails[_]) for _ in sorted(trails.keys()))
+    return _write_scores((key, confidence_score(value[1], len(duplicates.get(key, ())))) for key, value in items)
+
+
+def _write_scores(scores):
+    """Write (trail, confidence) pairs, already sorted by trail, as the confidence sidecar."""
+
     path = "%s.confidence" % config.TRAILS_FILE
     tmp_file = "%s.new" % path
     try:
-        with _fopen(tmp_file, "w+", codecs.open) as f:
-            items = trails.sorted_items() if hasattr(trails, "sorted_items") else ((_, trails[_]) for _ in sorted(trails.keys()))
-            for key, value in items:
-                f.write("%s\t%d\n" % (key, confidence_score(value[1], len(duplicates.get(key, ())))))
+        with _fopen(tmp_file, "w", codecs.open) as f:     # "w", not "w+": a read/write text file resets its encoder on every write
+            for key, score in scores:
+                f.write("%s\t%s\n" % (key, score))
         _atomic_replace(tmp_file, path)
         return True
     except Exception as ex:
@@ -484,23 +486,507 @@ def _available_memory():
 
     return min(candidates) if candidates else None
 
-def _build_store():
-    """
-    Where update_trails() merges the trail set. In memory that is ~255 MB at 1.9M trails on a 64-bit
-    host - fine almost anywhere, but not on a Raspberry Pi or a small VPS, where the update used to
-    be OOM-killed on every run and the sensor kept detecting on whatever stale set it had. Below the
-    threshold the merge goes to a SQLite file next to TRAILS_FILE instead: same code, same result
-    (DiskTrailsDict keeps dict semantics), ~30 MB, about four times the time.
+def _low_memory():
+    """Whether update_trails() builds with `_StreamBuild` rather than in one dict.
+
+    One dict of 1.9M trails peaks at ~230 MB on a 64-bit host and ~160 MB on 32-bit ARM, about 2.6
+    and 1.8 times the static aggregate's size; the streaming build needs a few tens of MB. A host
+    that can spend three quarters of its available memory on the dict gets the dict, the fastest
+    build. Not half: on a Pi Zero next to a running sensor, 226 MB is available and most of the rest
+    is the sensor's mapped trail store - clean page cache the kernel drops and re-reads - and half
+    sent it to the 27-minute streaming build instead of the 13-minute dict.
     """
 
     available = _available_memory()
-    if available is not None and available < TRAILS_BUILD_MEMORY_THRESHOLD:
-        print("[i] %d MB of memory available - merging trails on disk ('%s')" % (available // (1024 * 1024), "%s.build" % config.TRAILS_FILE))
-        return DiskTrailsDict("%s.build" % config.TRAILS_FILE)
-    return TrailsDict()
+    if not available:
+        return False
+    try:
+        size = os.path.getsize("%s.static" % config.TRAILS_FILE)
+    except OSError:
+        size = 100 * 1024 * 1024
+    return size * (2.6 if sys.maxsize > 2 ** 32 else 1.8) > available * 3 // 4
+
 
 # Why the last update_trails() kept the existing trails.csv instead of writing its build, or None.
 last_refusal = None
+
+
+# Answers per distinct string. ~3,100 distinct (info, reference) pairs carry 1.9M trails, so the
+# keyword scans below were asked the same question about the same string hundreds of times each.
+_ANY_CACHE = {}
+
+
+def _has_any(text, needles):
+    """`any(_ in text for _ in needles)`, remembered per (text, needles)."""
+
+    key = (text, needles)
+    answer = _ANY_CACHE.get(key)
+    if answer is None:
+        answer = _ANY_CACHE[key] = any(_ in text for _ in needles)
+    return answer
+
+
+_ENCODABLE_CACHE = {}
+
+
+def _encodable(value):
+    """Whether both strings of an (info, reference) value encode as UTF-8, remembered per value."""
+
+    answer = _ENCODABLE_CACHE.get(value)
+    if answer is None:
+        try:
+            for _ in value[:2]:
+                _.decode("utf8") if hasattr(_, "decode") else _.encode("utf8")
+            answer = True
+        except UnicodeError:
+            answer = False
+        _ENCODABLE_CACHE[value] = answer
+    return answer
+
+
+_SLASH_RUN_REGEX = re.compile(r"/+")
+_LEADING_WWW_REGEX = re.compile(r"\A(?:www\.|\.)+")
+
+
+def _group(key):
+    """The key every ASCII rename in the post-processing can turn `key` into, or a coarser one.
+
+    update_trails() looks at one key at a time, except where it renames one (lower case, "www.",
+    "?query", "//"). Two keys with the same group may meet; two with different groups never do, so
+    a group seen once can be built on its own. A non-ASCII key is also renamed by idna, which does
+    not commute with the rest (it encodes a whole label, '/' and '?' included) - so _StreamBuild
+    never streams one, and holds back both groups it could reach (`_idn_groups()`).
+    """
+
+    key = key.lower()
+    if '/' in key or '?' in key:
+        key = _SLASH_RUN_REGEX.sub('/', key.split('?')[0])
+    # every leading "www." and dot at once, in whatever order they come, then trailing dots
+    return _LEADING_WWW_REGEX.sub("", key).rstrip('.')
+
+
+def _idn_groups(key):
+    """The groups a non-ASCII key can reach: the one its ASCII renames keep, and - when idna takes
+    it, which the post-processing tries first - the one of the name idna gives it."""
+
+    groups = set((_group(key),))
+    try:
+        groups.add(_group(key.encode("idna").decode(UNICODE_ENCODING)))
+    except Exception:
+        pass
+    return groups
+
+
+class _Shard(object):
+    """One shard of the trail build: a plain dict, plus each entry's place in the global order when
+    there is more than one shard (`stamps`), so the shards' outputs can be merged back into the
+    exact order one dict would have produced."""
+
+    def __init__(self, stamped):
+        self.store = {}
+        self.pairs = {}
+        self.duplicates = {}
+        self.stamps = {} if stamped else None
+        self.now = 0
+
+    def put(self, key, value):
+        pair = (value[0], value[1])
+        pair = self.pairs.setdefault(pair, pair)
+        store = self.store
+        if self.stamps is not None and key not in store:
+            self.stamps[key] = self.now
+            self.now += 1
+        store[key] = pair
+
+    def delete(self, key):
+        del self.store[key]
+        if self.stamps is not None:
+            del self.stamps[key]
+
+    def apply(self, op, key, value, check=None):
+        """One source row. 'M': the merge rule every source goes through. 'R': a remote custom
+        trail, which never displaces a custom or static one (`check` is the form it is checked as).
+        'S': set unconditionally."""
+
+        get = self.store.get
+        if op == 'M':
+            current = get(key)
+            if current is not None:
+                seen = self.duplicates.get(key)
+                if seen is None:
+                    seen = self.duplicates[key] = set((current[1],))
+                seen.add(value[1])
+            info = value[0]
+            if not (current is not None and (_has_any(info, LOW_PRIORITY_INFO_KEYWORDS) or current[1] in HIGH_PRIORITY_REFERENCES)) or (value[1] in HIGH_PRIORITY_REFERENCES and "history" not in info) or _has_any(info, HIGH_PRIORITY_INFO_KEYWORDS):
+                self.put(key, value)
+        elif op == 'R':
+            current = get(check)
+            if current is not None and _has_any(current[1], ("custom", "static")):
+                return
+            self.put(key, value)
+        else:
+            self.put(key, value)
+
+    def post_process(self, disabled_info_regex, ip_minimum_feeds):
+        """The basic cleanup and the whitelist/bogon pass, on this shard."""
+
+        get, put, delete, duplicates = self.store.get, self.put, self.delete, self.duplicates
+        stamped = self.stamps is not None
+        # Re-insertions during the cleanup go to the end, in the order the walk makes them: after
+        # every entry the merge left, ordered by the entry being visited, then by step.
+        late = 1 << 62
+
+        # basic cleanup - `value` is the current key's value, held instead of looked up again
+        # at every step (it was up to nine lookups per trail)
+        for key in list(self.store):
+            value = get(key)
+            if value is None:
+                continue
+            if stamped:
+                self.now = late + (self.stamps[key] << 4)
+
+            if disabled_info_regex is not None:
+                if disabled_info_regex.search(value[0]):
+                    delete(key)
+                    continue
+
+            if _is_ascii(key):
+                # NAMEPREP (the only effect of idna on an already-ASCII name) just lowercases it, so skip the
+                # ~20x slower idna codec for the ~all-ASCII majority; non-ASCII names (e.g. IDN phishing) still go through idna
+                _key = key.lower()
+                if _key != key:
+                    put(_key, value)
+                    delete(key)
+                    key = _key
+            else:
+                try:
+                    _key = key.decode(UNICODE_ENCODING) if isinstance(key, bytes) else key
+                    _key = _key.encode("idna")
+                    _key = _key.decode(UNICODE_ENCODING)
+                    if _key != key:  # for domains with non-ASCII letters (e.g. phishing)
+                        put(_key, value)
+                        delete(key)
+                        key = _key
+                except Exception:
+                    pass
+
+            if not key or _ALPHA_ONLY_REGEX.search(key) and not _has_any(value[1], ("custom", "static")):
+                delete(key)
+                continue
+
+            if _IPV4_REGEX.search(key):
+                if _has_any(value[0], ("parking site", "sinkhole")) and key in duplicates:    # Note: delete (e.g.) junk custom trails if static trail is a sinkhole
+                    del duplicates[key]
+
+                if value[0] == "malware":
+                    value = ("potential malware site", value[1])
+                    put(key, value)
+
+                if ip_minimum_feeds > 1:
+                    if (key not in duplicates or len(duplicates[key]) < ip_minimum_feeds) and _CUSTOM_STATIC_REGEX.search(value[1]) is None:
+                        delete(key)
+                        continue
+
+                if any(int(_) > 255 for _ in key.split('.')):
+                    delete(key)
+                    continue
+
+            if value[0] == "ransomware":
+                value = ("ransomware (malware)", value[1])
+                put(key, value)
+
+            if key.startswith("www.") and '/' not in key:
+                delete(key)
+                key = key[len("www."):]
+                if key:
+                    put(key, value)
+
+            if '?' in key and not key.startswith('/'):
+                delete(key)
+                key = key.split('?')[0]
+                if key:
+                    put(key, value)
+
+            if '//' in key:
+                delete(key)
+                key = key.replace('//', '/')
+                put(key, value)
+
+            if key != key.lower():
+                delete(key)
+                key = key.lower()
+                put(key, value)
+
+            if key in duplicates:
+                others = sorted(duplicates[key] - set((value[1],)))
+                if others and " (+" not in value[1]:
+                    put(key, (value[0], "%s (+%s)" % (value[1], ','.join(others))))
+
+        for key in list(self.store):
+            # leading_ipv4(), not a `\b`-bounded prefix match: `\b` also matches the dot of a digit-leading
+            # DOMAIN, so a reverse-DNS style trail was judged by its first four labels. Two static trails
+            # (`10.53.154.104.bc.googleusercontent.com`, `224.185.60.34...`) were deleted from every build
+            # as bogons, while their neighbours with a routable leading quad survived - a detection lost to
+            # a filter meant for address trails.
+            address = leading_ipv4(key)
+            if check_whitelisted(key) or key.startswith(BAD_TRAIL_PREFIXES):
+                delete(key)
+            elif address and (bogon_ip(address) or cdn_ip(address)) and not _has_any(get(key)[0], ("parking", "sinkhole")):
+                delete(key)
+            else:
+                try:
+                    key.decode("utf8") if hasattr(key, "decode") else key.encode("utf8")
+                    if not _encodable(get(key)):
+                        delete(key)
+                except UnicodeError:
+                    delete(key)
+
+    def rows(self):
+        """(order, trail, info, reference) in this shard's order. The order is fixed-width hex, so
+        rows from several shards compare correctly as the strings they are read back as."""
+
+        stamps = self.stamps
+        for key, value in self.store.items():
+            yield ("%016x" % stamps[key] if stamps is not None else ""), key, value[0], value[1]
+
+    def scores(self):
+        """(trail, confidence) sorted by trail."""
+
+        cache = {}
+        for key in sorted(self.store):
+            value = self.store[key]
+            agreeing = len(self.duplicates.get(key, ()))
+            score = cache.get((value[1], agreeing))
+            if score is None:
+                score = cache[(value[1], agreeing)] = confidence_score(value[1], agreeing)
+            yield key, score
+
+
+class _TrailBuild(object):
+    """The trail set update_trails() builds, in one dict: the fastest way, for every host that has
+    the memory. A smaller host gets `_StreamBuild`, the same rules in a fraction of the memory."""
+
+    def __init__(self):
+        self.one = _Shard(stamped=False)
+
+    def merge(self, results):
+        """Merge one source's {trail: (info, reference)}: ONE rule for feeds, custom and static
+        alike - where a source comes from must not change which of two labels a trail ends up with."""
+
+        apply = self.one.apply
+        for key, value in results.items():
+            # one address, one key: an IPv6 trail spelled any other way than the sensor
+            # renders it never matched, and two spellings would not have merged here
+            if ':' in key:
+                key = canonical_ip_trail(key)
+            if key.startswith("www.") and '/' not in key:
+                key = key[len("www."):]
+            apply('M', key, value)
+
+    def remote(self, key, value, check):
+        self.one.apply('R', key, value, check)
+
+    def set(self, key, value):
+        self.one.apply('S', key, value)
+
+    def size(self):
+        return len(self.one.store)
+
+    def build(self, disabled_info_regex, ip_minimum_feeds):
+        """Post-process. Returns (rows, scores): every (order, trail, info, reference) in the order
+        trails.csv is written, and every (trail, confidence) sorted by trail."""
+
+        self.one.post_process(disabled_info_regex, ip_minimum_feeds)
+        return self.one.rows(), self.one.scores()
+
+    def close(self):
+        pass
+
+
+class _StreamBuild(object):
+    """The trail build with a cheap miss and an expensive hit.
+
+    Almost every row the merge sees is a trail it has not seen before: 1,762,779 of 1,763,354 on the
+    real set. So nothing is stored on the way in: the sources are kept as they are (the static set
+    is a file read again, the rest are small) and a bit filter over the rows' groups (`_group()`, two
+    bits per group in 4 MB) notes the groups seen more than once - the real repeats and ~0.2% false
+    positives. Then the repeated groups, a few thousand trails, are built in one small dict, and
+    every other row - a group seen once cannot meet any other row - is built in batches and streamed
+    out, merged with the small dict's rows by order stamp. Same `_Shard` rules, so the result is
+    byte for byte the one-dict build.
+    """
+
+    FILTER_BITS = 1 << 25
+    BATCH = 50000
+    RUN = 100000
+
+    def __init__(self, prefix):
+        self.prefix = prefix
+        self.sources = []
+        self.seq = 0
+        self.bits = bytearray(self.FILTER_BITS >> 3)
+        self.repeat = set()
+        # each row's group hash, 32 bits: the later passes ask `hashes[seq] in repeat` instead of
+        # computing the group again. A collision only sends a singleton down the exact path.
+        self.hashes = array('I')
+        self.runs = []
+        self.late_path = prefix + ".late"
+
+    def _seen(self, key):
+        h = hash(_group(key))
+        mask = self.FILTER_BITS - 1
+        a, b = h & mask, (h >> 32) & mask
+        self.hashes.append(h & 0xFFFFFFFF)
+        if not _is_ascii(key):
+            # never streamed, and nothing it can be renamed onto is streamed either
+            for group in _idn_groups(key):
+                self.repeat.add(hash(group) & 0xFFFFFFFF)
+        bits = self.bits
+        if (bits[a >> 3] >> (a & 7)) & (bits[b >> 3] >> (b & 7)) & 1:
+            self.repeat.add(h & 0xFFFFFFFF)
+        else:
+            bits[a >> 3] |= 1 << (a & 7)
+            bits[b >> 3] |= 1 << (b & 7)
+        self.seq += 1
+
+    def _rows(self):
+        """Every source row again, in the order and with the sequence numbers of the first pass."""
+
+        seq = 0
+        for source in self.sources:
+            if source[0] == 'M':
+                for key, value in source[1].items():
+                    if ':' in key:
+                        key = canonical_ip_trail(key)
+                    if key.startswith("www.") and '/' not in key:
+                        key = key[len("www."):]
+                    yield seq, 'M', key, value, None
+                    seq += 1
+            else:
+                yield seq, source[0], source[1], source[2], source[3]
+                seq += 1
+
+    def merge(self, results):
+        """Merge one source's {trail: (info, reference)}: ONE rule for feeds, custom and static
+        alike - where a source comes from must not change which of two labels a trail ends up with."""
+
+        self.sources.append(('M', results))
+        for key in (_[0] for _ in results.items()):
+            if ':' in key:
+                key = canonical_ip_trail(key)
+            if key.startswith("www.") and '/' not in key:
+                key = key[len("www."):]
+            self._seen(key)
+
+    def remote(self, key, value, check):
+        # Checked in one form, stored in another: always the exact path, whatever the groups. A
+        # remote custom list is short.
+        self.sources.append(('R', key, value, check))
+        self._seen(key)
+        self.repeat.add(self.hashes[-1])
+
+    def set(self, key, value):
+        self.sources.append(('S', key, value, None))
+        self._seen(key)
+
+    def build(self, disabled_info_regex, ip_minimum_feeds):
+        self.bits = None
+        repeat = self.repeat
+        late_mark = "%016x" % (1 << 62)
+        scores = []
+
+        def run_out():
+            if scores:
+                scores.sort()
+                path = "%s.run%d" % (self.prefix, len(self.runs))
+                with io.open(path, "w", encoding=UNICODE_ENCODING, newline="") as f:
+                    csv.writer(f).writerows(scores)
+                self.runs.append(path)
+                del scores[:]
+
+        def finish(shard):
+            shard.post_process(disabled_info_regex, ip_minimum_feeds)
+            scores.extend(shard.scores())
+            if len(scores) >= self.RUN:
+                run_out()
+            return shard.rows()
+
+        # the expensive path: every row of a repeated group, in one dict
+        repeated = _Shard(stamped=True)
+        hashes = self.hashes
+        for seq, op, key, value, check in self._rows():
+            if hashes[seq] in repeat:
+                repeated.now = seq
+                repeated.apply(op, key, value, check)
+        held = sorted(finish(repeated))
+        del repeated
+
+        def rows():
+            # the cheap path: groups seen once, in batches, merged with `held` by stamp. Rows a
+            # rename moved to the end come after every other row, so they wait in a file.
+            pending = iter(held)
+            nxt = next(pending, None)
+            late = io.open(self.late_path, "w", encoding=UNICODE_ENCODING, newline="")
+            late_writer = csv.writer(late)
+            batch = _Shard(stamped=True)
+
+            def drain(shard):
+                for row in finish(shard):
+                    if row[0] >= late_mark:
+                        late_writer.writerow(row)
+                    else:
+                        yield row
+
+            for seq, op, key, value, check in self._rows():
+                if hashes[seq] in repeat:
+                    continue
+                batch.now = seq
+                batch.apply(op, key, value, check)
+                if len(batch.store) >= self.BATCH:
+                    for row in drain(batch):
+                        while nxt is not None and nxt[0] < row[0] and nxt[0] < late_mark:
+                            yield nxt
+                            nxt = next(pending, None)
+                        yield row
+                    batch = _Shard(stamped=True)
+            for row in drain(batch):
+                while nxt is not None and nxt[0] < row[0] and nxt[0] < late_mark:
+                    yield nxt
+                    nxt = next(pending, None)
+                yield row
+            late.close()
+            run_out()
+
+            def late_rows():
+                with io.open(self.late_path, "r", encoding=UNICODE_ENCODING, newline="") as f:
+                    for row in csv.reader(f):
+                        yield tuple(row)
+
+            rest = ([nxt] if nxt is not None else []) + list(pending)
+            for row in heapq.merge(late_rows(), rest):
+                yield row
+
+        def all_scores():
+            for row in heapq.merge(*[_csv_rows(_) for _ in self.runs]):
+                yield row
+
+        return rows(), all_scores()
+
+    def size(self):
+        return self.seq
+
+    def close(self):
+        for path in [self.late_path] + self.runs:
+            try:
+                os.remove(path)
+            except OSError:
+                pass
+
+
+def _csv_rows(path):
+    with io.open(path, "r", encoding=UNICODE_ENCODING, newline="") as f:
+        for row in csv.reader(f):
+            yield row
 
 
 def update_trails(force=False, offline=False):
@@ -600,7 +1086,12 @@ def update_trails(force=False, offline=False):
             else:
                 print("[i] checking trails...")
 
-            trails = _build_store()
+            if _low_memory():
+                print("[i] %d MB of memory available - building the trail set streamed" % ((_available_memory() or 0) // (1024 * 1024)))
+                build = _StreamBuild("%s.build" % config.TRAILS_FILE)
+            else:
+                build = _TrailBuild()
+            _merge = build.merge
 
             if not offline and (force or config.USE_FEED_UPDATES):
                 _ = os.path.abspath(os.path.join(ROOT_DIR, "feeds"))
@@ -621,28 +1112,6 @@ def update_trails(force=False, offline=False):
                 filenames = [filename for filename in filenames if os.path.splitext(os.path.split(filename)[-1])[0] not in re.split(r"[^\w]+", config.DISABLED_FEEDS)]
 
             empty_feeds = []
-
-            def _merge(results):
-                """Merge one source's {trail: (info, reference)} into `trails`.
-
-                ONE rule, used by feeds, custom and static alike. It used to live inside the feed
-                loop, which is why static and custom had to masquerade as feeds to reach it; where
-                a source comes from must not change which of two labels an indicator ends up with.
-                """
-
-                for item in results.items():
-                    # one address, one key: an IPv6 trail spelled any other way than the sensor
-                    # renders it never matched, and two spellings would not have merged here
-                    if ':' in item[0]:
-                        item = [canonical_ip_trail(item[0]), item[1]]
-                    if item[0].startswith("www.") and '/' not in item[0]:
-                        item = [item[0][len("www."):], item[1]]
-                    if item[0] in trails:
-                        if item[0] not in duplicates:
-                            duplicates[item[0]] = set((trails[item[0]][1],))
-                        duplicates[item[0]].add(item[1][1])
-                    if not (item[0] in trails and (any(_ in item[1][0] for _ in LOW_PRIORITY_INFO_KEYWORDS) or trails[item[0]][1] in HIGH_PRIORITY_REFERENCES)) or (item[1][1] in HIGH_PRIORITY_REFERENCES and "history" not in item[1][0]) or any(_ in item[1][0] for _ in HIGH_PRIORITY_INFO_KEYWORDS):
-                        trails[item[0]] = item[1]
 
             for i in xrange(len(filenames)):
                 filename = filenames[i]
@@ -749,16 +1218,11 @@ def update_trails(force=False, offline=False):
                                 line = re.search(r"://(.*)", line).group(1)
                             line = canonical_ip_trail(line.rstrip('/'))
 
-                            if line in trails and any(_ in trails[line][1] for _ in ("custom", "static")):
-                                continue
-
-                            if '/' in line:
-                                trails[line] = (__info__, __reference__)
-                                line = line.split('/')[0]
-                            elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", line):
-                                trails[line] = (__info__, __reference__)
+                            # never displaces a custom or static trail of the same name
+                            if '/' in line or re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", line):
+                                build.remote(line, (__info__, __reference__), line)
                             else:
-                                trails[line.strip('.')] = (__info__, __reference__)
+                                build.remote(line.strip('.'), (__info__, __reference__), line)
 
                         for match in re.finditer(r"(\d+\.\d+\.\d+\.\d+)/(\d+)", content):
                             prefix, mask = match.groups()
@@ -770,7 +1234,7 @@ def update_trails(force=False, offline=False):
                             if 0 <= end_int - start_int <= 1024:
                                 address = start_int
                                 while start_int <= address <= end_int:
-                                    trails[int_to_addr(address)] = (__info__, __reference__)
+                                    build.set(int_to_addr(address), (__info__, __reference__))
                                     address += 1
 
             print("[i] post-processing trails (this might take a while)...")
@@ -778,111 +1242,8 @@ def update_trails(force=False, offline=False):
             disabled_info_regex = re.compile(config.DISABLED_TRAILS_INFO_REGEX) if config.DISABLED_TRAILS_INFO_REGEX else None
             ip_minimum_feeds = config.get("IP_MINIMUM_FEEDS", 3)
 
-            # basic cleanup
-            for key in trails.snapshot_keys():
-                if key not in trails:
-                    continue
-
-                if disabled_info_regex is not None:
-                    if disabled_info_regex.search(trails[key][0]):
-                        del trails[key]
-                        continue
-
-                if _is_ascii(key):
-                    # NAMEPREP (the only effect of idna on an already-ASCII name) just lowercases it, so skip the
-                    # ~20x slower idna codec for the ~all-ASCII majority; non-ASCII names (e.g. IDN phishing) still go through idna
-                    _key = key.lower()
-                    if _key != key:
-                        trails[_key] = trails[key]
-                        del trails[key]
-                        key = _key
-                else:
-                    try:
-                        _key = key.decode(UNICODE_ENCODING) if isinstance(key, bytes) else key
-                        _key = _key.encode("idna")
-                        _key = _key.decode(UNICODE_ENCODING)
-                        if _key != key:  # for domains with non-ASCII letters (e.g. phishing)
-                            trails[_key] = trails[key]
-                            del trails[key]
-                            key = _key
-                    except Exception:
-                        pass
-
-                if not key or _ALPHA_ONLY_REGEX.search(key) and not any(_ in trails[key][1] for _ in ("custom", "static")):
-                    del trails[key]
-                    continue
-
-                if _IPV4_REGEX.search(key):
-                    if any(_ in trails[key][0] for _ in ("parking site", "sinkhole")) and key in duplicates:    # Note: delete (e.g.) junk custom trails if static trail is a sinkhole
-                        del duplicates[key]
-
-                    if trails[key][0] == "malware":
-                        trails[key] = ("potential malware site", trails[key][1])
-
-                    if ip_minimum_feeds > 1:
-                        if (key not in duplicates or len(duplicates[key]) < ip_minimum_feeds) and _CUSTOM_STATIC_REGEX.search(trails[key][1]) is None:
-                            del trails[key]
-                            continue
-
-                    if any(int(_) > 255 for _ in key.split('.')):
-                        del trails[key]
-                        continue
-
-                if trails[key][0] == "ransomware":
-                    trails[key] = ("ransomware (malware)", trails[key][1])
-
-                if key.startswith("www.") and '/' not in key:
-                    _ = trails[key]
-                    del trails[key]
-                    key = key[len("www."):]
-                    if key:
-                        trails[key] = _
-
-                if '?' in key and not key.startswith('/'):
-                    _ = trails[key]
-                    del trails[key]
-                    key = key.split('?')[0]
-                    if key:
-                        trails[key] = _
-
-                if '//' in key:
-                    _ = trails[key]
-                    del trails[key]
-                    key = key.replace('//', '/')
-                    trails[key] = _
-
-                if key != key.lower():
-                    _ = trails[key]
-                    del trails[key]
-                    key = key.lower()
-                    trails[key] = _
-
-                if key in duplicates:
-                    _ = trails[key]
-                    others = sorted(duplicates[key] - set((_[1],)))
-                    if others and " (+" not in _[1]:
-                        trails[key] = (_[0], "%s (+%s)" % (_[1], ','.join(others)))
-
             read_whitelist()
-
-            for key in trails.snapshot_keys():
-                # leading_ipv4(), not a `\b`-bounded prefix match: `\b` also matches the dot of a digit-leading
-                # DOMAIN, so a reverse-DNS style trail was judged by its first four labels. Two static trails
-                # (`10.53.154.104.bc.googleusercontent.com`, `224.185.60.34...`) were deleted from every build
-                # as bogons, while their neighbours with a routable leading quad survived - a detection lost to
-                # a filter meant for address trails.
-                address = leading_ipv4(key)
-                if check_whitelisted(key) or any(key.startswith(_) for _ in BAD_TRAIL_PREFIXES):
-                    del trails[key]
-                elif address and (bogon_ip(address) or cdn_ip(address)) and not any(_ in trails[key][0] for _ in ("parking", "sinkhole")):
-                    del trails[key]
-                else:
-                    try:
-                        key.decode("utf8") if hasattr(key, "decode") else key.encode("utf8")
-                        trails[key][0].decode("utf8") if hasattr(trails[key][0], "decode") else trails[key][0].encode("utf8")
-                        trails[key][1].decode("utf8") if hasattr(trails[key][1], "decode") else trails[key][1].encode("utf8")
-                    except UnicodeError:
-                        del trails[key]
+            rows, scores = build.build(disabled_info_regex, ip_minimum_feeds)
 
             tmp_trails_file = "%s.new" % config.TRAILS_FILE
             # Without the static trails this build is feeds and custom only - a few percent of the
@@ -892,7 +1253,7 @@ def update_trails(force=False, offline=False):
             # so the next cycle tries again.
             keep_current = static_missing and os.path.isfile(config.TRAILS_FILE) and os.path.getsize(config.TRAILS_FILE) > 0
             if keep_current:
-                message = "the static trails are unavailable, so '%s' was NOT replaced with a feeds-only build (%d trails); keeping the current one" % (config.TRAILS_FILE, len(trails))
+                message = "the static trails are unavailable, so '%s' was NOT replaced with a feeds-only build (%d trails); keeping the current one" % (config.TRAILS_FILE, build.size())
                 last_refusal = message
                 print("[x] %s" % message)
                 try:
@@ -901,16 +1262,19 @@ def update_trails(force=False, offline=False):
                 except Exception:
                     pass
             try:
-                if trails and not keep_current:
-                    with _fopen(tmp_trails_file, "w+", codecs.open) as f:
+                if build.size() and not keep_current:
+                    written = 0
+                    with _fopen(tmp_trails_file, "w", codecs.open) as f:
                         writer = csv.writer(f, delimiter=',', quotechar='\"', quoting=csv.QUOTE_MINIMAL)
-                        for trail, value in trails.items():
-                            row = (trail, value[0], value[1])
-                            writer.writerow(row)
+                        for _, trail, info, reference in rows:
+                            writer.writerow((trail, info, reference))
+                            written += 1
 
-                    _atomic_replace(tmp_trails_file, config.TRAILS_FILE)
-                    write_confidence_file(trails, duplicates)
-                    success = True
+                    # an empty build never replaces the trails a deployment has
+                    if written:
+                        _atomic_replace(tmp_trails_file, config.TRAILS_FILE)
+                        _write_scores(scores)
+                        success = True
             except Exception as ex:
                 print("[x] something went wrong during trails file write '%s' ('%s')" % (config.TRAILS_FILE, ex))
             finally:
@@ -922,7 +1286,7 @@ def update_trails(force=False, offline=False):
                 except Exception:
                     pass
 
-            trails.close()
+            build.close()
             print("[i] update finished%s" % (40 * " "))
 
             if success:

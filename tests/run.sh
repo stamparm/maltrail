@@ -17,7 +17,7 @@ HERE=$(cd "$(dirname "$0")" && pwd)
 MEM_KB=1200000          # ~1.2 GB address-space cap per interpreter
 TIMEOUT=300             # seconds per test file
 
-TESTS="test_addr test_assemble test_common test_datatype test_ignore test_config test_trailsdict test_disktrails test_quic_sni test_tls_intel test_httpd test_logd test_meta test_password test_geo test_reference test_doctests test_enums test_options test_doctor test_drop test_confidence test_adversarial test_frontend test_update test_debug_artifacts test_check_trails test_detect_test test_smoke test_alert test_severity_parity test_colorized test_compat test_redistribution test_refs test_refnet test_logfmt test_version_sync test_workflows test_seam test_feeds test_stale_docs"
+TESTS="test_addr test_assemble test_common test_datatype test_ignore test_config test_trailsdict test_trailbuild test_quic_sni test_tls_intel test_httpd test_logd test_meta test_password test_geo test_reference test_doctests test_enums test_options test_doctor test_drop test_confidence test_adversarial test_frontend test_update test_debug_artifacts test_check_trails test_detect_test test_smoke test_alert test_severity_parity test_colorized test_compat test_redistribution test_refs test_refnet test_logfmt test_version_sync test_workflows test_seam test_feeds test_stale_docs"
 
 # A test file that is not in TESTS is not run by this script or by CI, and nothing else would ever
 # say so - it just sits there passing locally and covering nothing. Fail instead.

@@ -335,16 +335,16 @@ impl StrTable {
     /// probes until it meets an empty slot - so a prebuilt table is only safe to use when every
     /// key is in bounds and at least one slot is empty. The caller checks both.
     pub(super) fn validate(&self) -> SlotCheck {
-        let arena = self.arena.len();
-        let mut check = SlotCheck { occupied: 0, max_val: None, in_bounds: true };
-        for slot in self.slots.iter().filter(|s| s.val != EMPTY) {
-            check.occupied += 1;
-            check.max_val = check.max_val.max(Some(slot.val));
-            if (slot.off as usize).checked_add(slot.len as usize).map_or(true, |end| end > arena) {
-                check.in_bounds = false;
-            }
+        // Branch-free, because this reads every slot of the store on every start: `EMPTY` is
+        // `u32::MAX`, so `val + 1` wraps an empty slot to 0, and an empty slot's key is 0..0 (the
+        // writer never leaves anything else in one). On a Pi Zero the branchy loop was 15% of a start.
+        let (mut occupied, mut top, mut end) = (0usize, 0u32, 0u64);
+        for slot in self.slots.iter() {
+            occupied += usize::from(slot.val != EMPTY);
+            top = top.max(slot.val.wrapping_add(1));
+            end = end.max(u64::from(slot.off) + u64::from(slot.len));
         }
-        check
+        SlotCheck { occupied, max_val: top.checked_sub(1), in_bounds: end <= self.arena.len() as u64 }
     }
 
     /// Iterate every stored key (used by tests and by the wildcard-regex builder).
@@ -531,17 +531,42 @@ impl<K: IntKey> IntTable<K> {
 
     /// See `StrTable::validate`.
     pub(super) fn validate(&self) -> SlotCheck {
-        let mut check = SlotCheck { occupied: 0, max_val: None, in_bounds: true };
-        for slot in self.slots.iter().filter(|s| s.val != EMPTY) {
-            check.occupied += 1;
-            check.max_val = check.max_val.max(Some(slot.val));
+        let (mut occupied, mut top) = (0usize, 0u32);
+        for slot in self.slots.iter() {
+            occupied += usize::from(slot.val != EMPTY);
+            top = top.max(slot.val.wrapping_add(1));
         }
-        check
+        SlotCheck { occupied, max_val: top.checked_sub(1), in_bounds: true }
     }
 }
 
 #[cfg(test)]
 mod tests {
+    /// `validate()` is what makes a mapped store safe to probe; its branch-free form must give the
+    /// plain loop's answers, including for a key pushed past the arena.
+    #[test]
+    fn validate_matches_the_plain_definition() {
+        let reference = |t: &StrTable| {
+            let used: Vec<StrSlot> = t.slots.iter().copied().filter(|s| s.val != EMPTY).collect();
+            let in_bounds = used.iter().all(|s| s.off as usize + s.len as usize <= t.arena.len());
+            (used.len(), used.iter().map(|s| s.val).max(), in_bounds)
+        };
+        let check = |t: &StrTable| {
+            let c = t.validate();
+            assert_eq!((c.occupied, c.max_val, c.in_bounds), reference(t));
+            c
+        };
+        let mut table = StrTable::with_capacity(64, 1024);
+        assert_eq!(check(&table).max_val, None, "an empty table has no largest value");
+        for i in 0..40u32 {
+            table.insert(&format!("host{i}.example"), i * 3);
+        }
+        assert!(check(&table).in_bounds);
+        let i = table.slots.iter().position(|s| s.val != EMPTY).unwrap();
+        table.slots[i].len = table.arena.len() as u32;
+        assert!(!check(&table).in_bounds, "a key past the arena must be caught");
+    }
+
     /// The prefilter is only sound if it NEVER reports absent for a key that is present — a false
     /// negative there is a missed detection, silently. Insert far more keys than the filter was
     /// sized for (so it is heavily overloaded) and assert every single one is still found.

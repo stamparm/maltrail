@@ -16,6 +16,19 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] The daily trail update took over 70 minutes on a Pi Zero: every host
+    under 768 MB of available memory merged the 1.9M trails in SQLite, one
+    SQL statement per dict operation. A Pi Zero (226 MB available next to a
+    running sensor) now builds in one dict, and the whole update, feeds
+    included, takes 16 minutes. The build itself is 30% faster everywhere
+    (11.0 s -> 7.7 s for 1.9M trails on a desktop).
+[=] A host without the memory for one dict builds the trail set streamed:
+    1,762,779 of 1,763,354 rows are new to the merge, so a 4 MB bit filter
+    finds the few trails seen more than once, only those are held, and the
+    rest go straight to trails.csv. Byte for byte the same file; 52 MB peak
+    and 27 minutes on a Pi Zero squeezed to 51 MB free, where SQLite took
+    over an hour. The SQLite store (core/disktrails.py) is removed.
+
 [!] JA3/JA4 trails never matched QUIC (HTTP/3): only the SNI of a QUIC
     ClientHello was read. Replayed over 974 sandbox captures against every
     fingerprint tshark computes there, QUIC went from 0 of 16 matched

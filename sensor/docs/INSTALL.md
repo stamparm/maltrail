@@ -421,11 +421,13 @@ setting changed. Four things make that work:
   is write-back on every start and reload, and inserts land at random, so pages are written more
   than once: 1.9 GB to a Pi Zero's SD card for 1.9M trails. With the store on (the default) the
   tables are built on the heap and written once, as the store, which is what then serves.
-* **The update merges on disk when memory is short.** With under 768 MB available (cgroup limits
-  included), `update_trails()` keeps its working set in a SQLite file next to `TRAILS_FILE`
-  (`trails.csv.build`, removed afterwards). It is the same code with the same result, slower by
-  about four times. The static aggregate is always streamed from its cache rather than loaded
-  whole.
+* **The update streams the trail set when memory is short.** Building it in one dict takes about
+  2.6 times the static aggregate's size on a 64-bit host (1.8 on 32-bit ARM); a host where that is
+  more than three quarters of the available memory (cgroup limits included) builds it streamed. Nearly every trail is
+  new to the merge (1,762,779 of 1,763,354 on the real set), so a 4 MB bit filter finds the few seen
+  more than once, only those are held, and the rest go straight to `TRAILS_FILE`. Same rules, same
+  bytes; about 70 MB instead of 230 MB, at under twice the time. A Pi Zero has the memory for the
+  dict.
 * **The capture ring follows the machine.** On a host with under 1 GB of RAM, the default libpcap
   ring is 10% of RAM, not 64 MB. It is locked kernel memory that nothing can reclaim.
 
