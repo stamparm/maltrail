@@ -244,6 +244,16 @@ impl Opened<'_> {
         }
         (None, last)
     }
+
+    /// Every CRYPTO frame of the Initial, decrypted in full: what a fingerprint needs, which is
+    /// the whole ClientHello rather than the SNI near its start.
+    pub fn crypto(&self) -> Option<CryptoChunks> {
+        let full = self.ciphertext.len().min(MAX_INITIAL_DECRYPT);
+        let cipher = Aes128::new((&self.keys.key).into());
+        let mut plaintext = Vec::with_capacity(full);
+        aes_ctr_extend(&cipher, &self.counter0, &self.ciphertext[..full], &mut plaintext);
+        crypto_chunks(&plaintext)
+    }
 }
 
 pub fn open_initial(udp_payload: &[u8]) -> Option<Opened<'_>> {

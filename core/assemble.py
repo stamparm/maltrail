@@ -31,6 +31,42 @@ __url__ = "(static)"
 CATEGORIES = ("malware", "malicious", "suspicious")
 
 
+# TLS fingerprint trails. A static file names their type - "ja3:<md5>", "ja4:<ja4>", "cert:<SHA-1 or
+# SHA-256 of the DER certificate>" - so a hash is never mistaken for a name, nor one kind of hash for
+# another. The trail set carries the bare value: the form the feeds publish and the sensor looks up
+# (sensor/src/trails/mod.rs:fingerprint_shape).
+FINGERPRINT_LINE = re.compile(r"\A(ja3|ja4|cert):\s*(\S+)\Z", re.I)
+FINGERPRINT_SHAPES = {
+    "ja3": re.compile(r"\A[0-9a-f]{32}\Z"),
+    "ja4": re.compile(r"\A[tqd]\w{9}_[0-9a-f]{12}_[0-9a-f]{12}\Z"),
+    "cert": re.compile(r"\A(?:[0-9a-f]{40}|[0-9a-f]{64})\Z"),
+}
+
+
+def fingerprint(line):
+    """(kind, value) for a "ja3:" / "ja4:" / "cert:" line - value None when it does not have its
+    type's shape - or None for any other line. Hashes are lower-cased; a JA4 is kept as written,
+    since its first part is not hex.
+
+    >>> fingerprint("ja3:1E7C622032B0CB79401B0F7BE3793A1A")
+    ('ja3', '1e7c622032b0cb79401b0f7be3793a1a')
+    >>> fingerprint("cert:da39a3ee5e6b4b0d3255bfef95601890afd80709")[1] is not None
+    True
+    >>> fingerprint("ja3:da39a3ee5e6b4b0d3255bfef95601890afd80709")   # a SHA-1 is not a JA3
+    ('ja3', None)
+    >>> fingerprint("evil.com") is None
+    True
+    """
+
+    match = FINGERPRINT_LINE.match(line)
+    if match is None:
+        return None
+    kind, value = match.group(1).lower(), match.group(2)
+    if kind != "ja4":
+        value = value.lower()
+    return kind, (value if FINGERPRINT_SHAPES[kind].match(value) else None)
+
+
 def parse_static_lines(handle, info, reference, retval, provenance=None, source=None):
     """Merge one static trail file into `retval`.
 
@@ -56,6 +92,14 @@ def parse_static_lines(handle, info, reference, retval, provenance=None, source=
         if not line:
             continue
         line = re.sub(r"\s*#.*", "", line)
+        typed = fingerprint(line)
+        if typed is not None:
+            # A value that does not fit its type is left out, not published as a name it is not;
+            # sensor/tools/check_trails.py fails the gate on it.
+            if typed[1]:
+                retval[typed[1]] = (info, reference)
+                _note(provenance, source, pile, typed[1])
+            continue
         if '://' in line:
             line = re.search(r"://(.*)", line).group(1)
             if '/' not in line:

@@ -91,6 +91,29 @@ class TestSNI(unittest.TestCase):
         self.assertEqual(T.parse_client_hello(build_ch("EVIL.Example.COM"))["sni"], "evil.example.com")
 
 
+class TestAgainstWireshark(unittest.TestCase):
+    # Every other test here checks this module against vectors it generated itself, which is how a
+    # JA4 bug went unnoticed: with no signature_algorithms extension the last part hashed "<exts>_"
+    # where the spec, and every other implementation, hash "<exts>". These values are Wireshark's
+    # (tshark 4.2.2, tls.handshake.ja3 / tls.handshake.ja4) for the corpus capture's ClientHello.
+    def test_the_corpus_client_hello_fingerprints_like_wireshark(self):
+        path = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "sensor", "tests", "corpus", "tls_sni.pcap")
+        with open(path, "rb") as f:
+            data = f.read()
+        pos, hellos = 24, []
+        while pos + 16 <= len(data):
+            incl = struct.unpack("<I", data[pos + 8:pos + 12])[0]
+            packet = data[pos + 16:pos + 16 + incl]
+            pos += 16 + incl
+            start = packet.find(b"\x16\x03")
+            if start >= 0 and packet[start + 5:start + 6] == b"\x01":
+                hellos.append(T.parse_client_hello(packet[start:]))
+        self.assertTrue(hellos, "positive control: the capture holds ClientHellos")
+        for r in hellos:
+            self.assertEqual(r["ja3"], "1e7c622032b0cb79401b0f7be3793a1a")
+            self.assertEqual(r["ja4"], "t12d010100_0f2cb44170f4_e3b0c44298fc")
+
+
 class TestJA3(unittest.TestCase):
     def test_ja3_string_kat(self):
         r = T.parse_client_hello(build_ch())

@@ -56,8 +56,8 @@ pub const FP_JA3: u8 = 1;
 pub const FP_JA4: u8 = 2;
 pub const FP_CERT: u8 = 4;
 
-/// The `FP_*` shape of a trail key: lower-case hex of 32 (MD5) or 40 (SHA-1) characters, or
-/// anything ending in JA4's `_<12 hex>_<12 hex>`. Deliberately loose for JA4 - a false positive
+/// The `FP_*` shape of a trail key: lower-case hex of 32 (MD5), 40 (certificate SHA-1) or 64
+/// (certificate SHA-256) characters, or anything ending in JA4's `_<12 hex>_<12 hex>`. Deliberately loose for JA4 - a false positive
 /// only means the fingerprint is computed, a false negative would be a silent miss.
 pub fn fingerprint_shape(key: &str) -> u8 {
     let b = key.as_bytes();
@@ -67,7 +67,7 @@ pub fn fingerprint_shape(key: &str) -> u8 {
     if n == 32 && hex(b) {
         kind |= FP_JA3;
     }
-    if n == 40 && hex(b) {
+    if (n == 40 || n == 64) && hex(b) {
         kind |= FP_CERT;
     }
     if n >= 26 && b[n - 26] == b'_' && b[n - 13] == b'_' && hex(&b[n - 25..n - 13]) && hex(&b[n - 12..]) {
@@ -445,6 +445,7 @@ mod tests {
         assert_eq!(fingerprint_shape("d190f828263095de150a20b19136e314"), FP_JA3);
         assert_eq!(fingerprint_shape("t13d0605h2_72b63408b255_beb9f91c6f80"), FP_JA4);
         assert_eq!(fingerprint_shape("da39a3ee5e6b4b0d3255bfef95601890afd80709"), FP_CERT);
+        assert_eq!(fingerprint_shape("e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"), FP_CERT);
         for other in ["evil.example", "D190F828263095DE150A20B19136E314", "1.2.3.4", "/path_x_y", ""] {
             assert_eq!(fingerprint_shape(other), 0, "{other}");
         }

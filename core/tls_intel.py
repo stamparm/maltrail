@@ -198,9 +198,14 @@ def _parse_client_hello(data, transport):
         alpn2 = "00"
     ja4_a = "%s%s%s%02d%02d%s" % (transport, ver2, sni_flag, nc, ne, alpn2)
     ja4_b = _sha256_12(",".join("%04x" % c for c in sorted(ciphers)))
-    # ja4_c: sorted extensions (excluding SNI 0x0000 and ALPN 0x0010) "_" sig algs in order
+    # ja4_c: sorted extensions (excluding SNI 0x0000 and ALPN 0x0010) "_" sig algs in order - and
+    # no "_" at all when the hello carries no signature algorithms (FoxIO's spec; Wireshark agrees).
+    # It always added one, so every hello without them (TLS 1.0/1.1 clients) got a JA4 no other
+    # tool computes, and no published JA4 for such a client could match.
     exts_for_c = sorted(e for e in ext_types if e not in (0x0000, 0x0010))
-    c_str = ",".join("%04x" % e for e in exts_for_c) + "_" + ",".join("%04x" % s for s in sig_algs)
+    c_str = ",".join("%04x" % e for e in exts_for_c)
+    if sig_algs:
+        c_str += "_" + ",".join("%04x" % s for s in sig_algs)
     ja4_c = _sha256_12(c_str)
     out["ja4"] = "%s_%s_%s" % (ja4_a, ja4_b, ja4_c)
     return out

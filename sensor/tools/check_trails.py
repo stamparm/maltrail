@@ -95,6 +95,7 @@ def _default_trails_path():
 sys.path.insert(0, ROOT)
 
 from core.addr import leading_ipv4  # noqa: E402
+from core.assemble import fingerprint  # noqa: E402
 from core.common import bogon_ip, cdn_ip  # noqa: E402
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES  # noqa: E402
 from core.settings import VALID_DNS_NAME_REGEX  # noqa: E402
@@ -108,6 +109,11 @@ read_bogon_ranges()
 VALID_DNS = re.compile(VALID_DNS_NAME_REGEX)
 IPV4 = re.compile(r"\A\d+\.\d+\.\d+\.\d+\Z")
 IPV4_PORT = re.compile(r"\A\d{1,3}(?:\.\d{1,3}){3}:\d{1,5}\Z")
+# A TLS fingerprint written bare - the shapes the sensor recognises (`trails::fingerprint_shape`):
+# JA3 (MD5 hex), a certificate's SHA-1 or SHA-256 hex, anything ending in JA4's `_<12 hex>_<12 hex>`.
+# Static files write them typed ("ja3:...", see core/assemble.py:fingerprint); a bare one still
+# matches, but nothing says which kind of hash it is.
+FINGERPRINT = re.compile(r"\A(?:[0-9a-f]{32}|[0-9a-f]{40}|[0-9a-f]{64}|.*_[0-9a-f]{12}_[0-9a-f]{12})\Z")
 
 # Characters that look like a separator but are not one. An indicator carrying these was almost
 # certainly transcribed from a report rather than internationalised on purpose.
@@ -232,6 +238,15 @@ def classify(key, whitelist=None, info="", raw=None, suffixes=None):
     host - "shadowed": the whitelist carries the same name, or "warn": it will match something, but probably
     not what the report meant."""
 
+    # Typed TLS fingerprints ("ja3:", "ja4:", "cert:") are matched against a handshake, never as a
+    # name - judged as one, a JA4 was "not a valid DNS name" and the gate refused every static JA4.
+    typed = fingerprint(raw if raw is not None else key)
+    if typed is not None:
+        if typed[1] is None:
+            return ("inert", "not a valid %s value: core/assemble.py leaves it out, so it never reaches a deployment" % typed[0])
+        return None
+    if key and FINGERPRINT.match(key):
+        return ("warn", "a bare TLS fingerprint: write it as ja3:/ja4:/cert:<value> so its type is explicit")
     if not key or IPV4.match(key) or IPV4_PORT.match(key) or ':' in key:
         # Not names - but an ADDRESS trail can still be unreachable, and until this looked it was
         # the one inert class nothing reported. update_trails() deletes any trail whose leading

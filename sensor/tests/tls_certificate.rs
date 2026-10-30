@@ -70,6 +70,22 @@ fn a_listed_certificate_is_detected_by_its_fingerprint() {
     assert_eq!(event.src_ip, "203.0.113.7");
 }
 
+/// A certificate trail may also be its SHA-256 - what most reports and crt.sh cite - written in a
+/// static file as `cert:<64 hex>`. The SHA-256 here is computed independently of the sensor's code.
+#[test]
+fn a_certificate_listed_by_its_sha256_is_detected() {
+    use sha2::{Digest, Sha256};
+    let der = c2_certificate();
+    let digest: String = Sha256::digest(&der).iter().map(|b| format!("{b:02x}")).collect();
+    assert_eq!(digest.len(), 64);
+    let mut h = harness_with(&[(digest.as_str(), "c2 cert (malware)", "(static)")]);
+    feed_server_flight(&mut h, &der, "203.0.113.7", "10.0.0.5");
+    h.flush();
+    let events = h.events();
+    assert_eq!(events.len(), 1, "expected one detection, got {events:?}");
+    assert_eq!((events[0].trail_type.as_str(), events[0].trail.as_str()), ("CERT", digest.as_str()));
+}
+
 #[test]
 fn an_unlisted_certificate_is_silent() {
     let der = c2_certificate();

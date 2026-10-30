@@ -162,10 +162,16 @@ pub fn parse_client_hello(data: &[u8]) -> Option<ClientHello<'_>> {
 /// `parse_client_hello`, computing only the fingerprints in `want` (`FP_JA3`, `FP_JA4`); the
 /// others are left empty. Whether the hello parses, and its SNI, do not depend on `want`.
 pub fn parse_client_hello_with(data: &[u8], want: u8) -> Option<ClientHello<'_>> {
+    parse_client_hello_over(data, want, b't')
+}
+
+/// `parse_client_hello_with` for a ClientHello carried by `transport`: `b't'` (TCP) or `b'q'`
+/// (QUIC), the first character of JA4 - `core/tls_intel.py:parse_client_hello(data, transport)`.
+pub fn parse_client_hello_over(data: &[u8], want: u8, transport: u8) -> Option<ClientHello<'_>> {
     thread_local! {
         static SCRATCH: std::cell::RefCell<Scratch> = std::cell::RefCell::new(Scratch::default());
     }
-    SCRATCH.with(|scratch| parse_client_hello_into(data, want, &mut scratch.borrow_mut()))
+    SCRATCH.with(|scratch| parse_client_hello_into(data, want, transport, &mut scratch.borrow_mut()))
 }
 
 /// The working lists of one parse. Kept per thread and cleared, not freed, so a ClientHello
@@ -184,7 +190,7 @@ struct Scratch {
     ja4_c: String,
 }
 
-fn parse_client_hello_into<'a>(data: &'a [u8], want: u8, w: &mut Scratch) -> Option<ClientHello<'a>> {
+fn parse_client_hello_into<'a>(data: &'a [u8], want: u8, transport: u8, w: &mut Scratch) -> Option<ClientHello<'a>> {
     let mut r = Reader::new(data);
     if r.b.first() == Some(&0x16) {
         r.take(5)?; // optional TLS record header
@@ -281,7 +287,7 @@ fn parse_client_hello_into<'a>(data: &'a [u8], want: u8, w: &mut Scratch) -> Opt
     let nc = w.ciphers.len().min(99);
     let ne = w.ext_types.len().min(99);
     let mut ja4 = String::with_capacity(40);
-    ja4.push('t');
+    ja4.push(transport as char);
     ja4.push_str(ver2);
     ja4.push(if sni.is_some() { 'd' } else { 'i' });
     for n in [nc, ne] {
@@ -321,8 +327,12 @@ fn parse_client_hello_into<'a>(data: &'a [u8], want: u8, w: &mut Scratch) -> Opt
     w.sorted.sort_unstable();
     w.ja4_c.clear();
     push_hex4(&mut w.ja4_c, &w.sorted);
-    w.ja4_c.push('_');
-    push_hex4(&mut w.ja4_c, &w.sig_algs);
+    // No "_" when there are no signature algorithms (TLS 1.0/1.1 clients): FoxIO's spec, and what
+    // Wireshark computes - see `core/tls_intel.py`.
+    if !w.sig_algs.is_empty() {
+        w.ja4_c.push('_');
+        push_hex4(&mut w.ja4_c, &w.sig_algs);
+    }
     ja4.push('_');
     push_sha256_12(&mut ja4, &w.ja4_b);
     ja4.push('_');

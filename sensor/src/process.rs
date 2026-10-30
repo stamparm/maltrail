@@ -474,7 +474,7 @@ fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader
                         let ch =
                             crate::protocols::tls::parse_client_hello_with(done.bytes, want).map(|ch| ch.into_owned());
                         if let Some(ch) = ch {
-                            client_hello(st, &ch, !reported, sec, usec, ep);
+                            client_hello(st, &ch, !reported, sec, usec, ep, PROTO::TCP);
                         }
                     }
                     return;
@@ -500,15 +500,16 @@ fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader
             // client fingerprints, the server's flight gives a certificate. A packet is one or
             // the other, so the ClientHello parse discriminates them.
             if let Some(ch) = crate::protocols::tls::parse_client_hello_with(payload, wanted_fingerprints(st)) {
-                client_hello(st, &ch, true, sec, usec, ep);
+                client_hello(st, &ch, true, sec, usec, ep, PROTO::TCP);
                 return;
             }
             if st.cfg.check_tls_fingerprints && st.trails.db().has_fingerprints(crate::trails::FP_CERT) {
                 check_server_certificate(st, payload, sec, usec, ep);
             }
         }
-        // QUIC carries no cleartext certificate, so this arm stays the prefilter's alone.
-        17 if sni_on => {
+        // QUIC carries no cleartext certificate, but its ClientHello has a JA3 and a JA4 like a
+        // TCP one (JA4 starting `q`).
+        17 if sni_on || st.cfg.check_tls_fingerprints => {
             let Some(udph) = packet::parse_udp(ip_data, header.header_len) else { return };
             let payload = packet::udp_payload(ip_data, header.header_len);
             if payload.first().map(|b| b & 0x80 == 0).unwrap_or(true) {
@@ -516,6 +517,14 @@ fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader
             }
             let ep = Endpoints { src: header.src, src_port: udph.src_port, dst: header.dst, dst_port: udph.dst_port };
             let Some(opened) = crate::protocols::quic::open_initial(payload) else { return };
+            let want = wanted_fingerprints(st);
+            if want != 0 {
+                quic_client_hello(st, &opened, want, sec, usec, ep);
+                return;
+            }
+            if !sni_on {
+                return;
+            }
             let (sni, chunks) = opened.scan();
             if let Some(sni) = sni {
                 check_domain(st, &sni, sec, usec, ep, PROTO::UDP);
@@ -554,6 +563,56 @@ fn handshake_sni(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader
     }
 }
 
+/// A QUIC ClientHello when a fingerprint is wanted: the whole message, not just the SNI near its
+/// start - from this Initial, or reassembled across Initials like the SNI-only path does.
+///
+/// It used to stop at the SNI: no QUIC hello was ever fingerprinted, so a JA3 or JA4 trail never
+/// matched HTTP/3 traffic - 16 of 16 (source, JA3) pairs in a sandbox corpus went unseen.
+fn quic_client_hello(
+    st: &mut WorkerState,
+    opened: &crate::protocols::quic::Opened,
+    want: u8,
+    sec: u64,
+    usec: u32,
+    ep: Endpoints,
+) {
+    use crate::protocols::{quic, tls};
+    let Some(chunks) = opened.crypto() else { return };
+    let key = hello::flow_key(ep.src, ep.src_port, ep.dst, ep.dst_port, opened.dcid);
+    if !st.hello.pending(key, sec) {
+        let head = quic::contiguous(&chunks);
+        if head.len() < 4 || head[0] != 0x01 {
+            return;
+        }
+        let need = 4 + u32::from_be_bytes([0, head[1], head[2], head[3]]) as usize;
+        if head.len() >= need {
+            if let Some(ch) = tls::parse_client_hello_over(&head[..need], want, b'q') {
+                let ch = ch.into_owned();
+                client_hello(st, &ch, true, sec, usec, ep, PROTO::UDP);
+            }
+            return;
+        }
+        // The rest is in a later Initial. The SNI is checked now if it is already here, as on
+        // the SNI-only path, and the fingerprints once the message is whole.
+        let sni = if st.cfg.check_tls_sni { quic::client_hello_sni(&head) } else { None };
+        if let Some(ref sni) = sni {
+            check_domain(st, sni, sec, usec, ep, PROTO::UDP);
+        }
+        st.hello.start(key, 0, need, sec, sni.is_some());
+    }
+    for (&off, chunk) in &chunks {
+        if let Some(done) = st.hello.put(key, sec, off.min(usize::MAX as u64) as usize, chunk) {
+            st.metrics.handshakes_reassembled += 1;
+            let reported = done.reported;
+            let ch = tls::parse_client_hello_over(done.bytes, want, b'q').map(|ch| ch.into_owned());
+            if let Some(ch) = ch {
+                client_hello(st, &ch, !reported, sec, usec, ep, PROTO::UDP);
+            }
+            return;
+        }
+    }
+}
+
 /// The TCP payload as sent, without link-layer padding, and whether all of it was captured (a
 /// snaplen-cut segment cannot be continued by the next one).
 fn tcp_wire_payload<'a>(ip_data: &'a [u8], header: &packet::IpHeader, tcph: &packet::TcpHeader) -> (&'a [u8], bool) {
@@ -589,14 +648,15 @@ fn client_hello(
     sec: u64,
     usec: u32,
     ep: Endpoints,
+    proto: &'static str,
 ) {
     if check_sni && st.cfg.check_tls_sni {
         if let Some(ref sni) = ch.sni {
-            check_domain(st, sni, sec, usec, ep, PROTO::TCP);
+            check_domain(st, sni, sec, usec, ep, proto);
         }
     }
     if st.cfg.check_tls_fingerprints {
-        check_client_fingerprint(st, ch, sec, usec, ep);
+        check_client_fingerprint(st, ch, sec, usec, ep, proto);
     }
 }
 
@@ -619,6 +679,7 @@ fn check_client_fingerprint(
     sec: u64,
     usec: u32,
     ep: Endpoints,
+    proto: &'static str,
 ) {
     // JA3 first: that is what feeds publish. A hit short-circuits the second lookup. Either is
     // empty when no trail has its shape (`wanted_fingerprints`).
@@ -628,13 +689,13 @@ fn check_client_fingerprint(
     st.metrics.trail_lookups += 1;
     if let Some(hit) = st.trails.db().get(ch.ja3.as_str()).filter(|_| !ch.ja3.is_empty()) {
         let (info, reference) = (hit.info.to_string(), hit.reference.to_string());
-        emit_ep(st, sec, usec, ep, PROTO::TCP, TRAIL::JA3, Field::Text(ch.ja3.clone()), &info, &reference);
+        emit_ep(st, sec, usec, ep, proto, TRAIL::JA3, Field::Text(ch.ja3.clone()), &info, &reference);
         return;
     }
     st.metrics.trail_lookups += 1;
     if let Some(hit) = st.trails.db().get(ch.ja4.as_str()).filter(|_| !ch.ja4.is_empty()) {
         let (info, reference) = (hit.info.to_string(), hit.reference.to_string());
-        emit_ep(st, sec, usec, ep, PROTO::TCP, TRAIL::JA4, Field::Text(ch.ja4.clone()), &info, &reference);
+        emit_ep(st, sec, usec, ep, proto, TRAIL::JA4, Field::Text(ch.ja4.clone()), &info, &reference);
     }
 }
 
@@ -649,23 +710,24 @@ fn check_client_fingerprint(
 /// just another exact-match key.
 fn check_server_certificate(st: &mut WorkerState, payload: &[u8], sec: u64, usec: u32, ep: Endpoints) {
     let Some(der) = crate::protocols::tls::server_certificate_der(payload) else { return };
-    let digest = sha1_hex(der);
-    st.metrics.trail_lookups += 1;
-    let Some(hit) = st.trails.db().get(&digest).map(|v| (v.info.to_string(), v.reference.to_string())) else {
-        return;
-    };
-    let (info, reference) = hit;
-    emit_ep(st, sec, usec, ep, PROTO::TCP, TRAIL::CERT, Field::Text(digest), &info, &reference);
+    // SHA-1 is what certificate feeds publish; SHA-256 is what most reports and crt.sh cite, and a
+    // static trail may be either ("cert:<40 or 64 hex>"). A server flight is a rare packet, so
+    // both are computed rather than tracking which the trail set holds.
+    for digest in [hex_digest::<sha1::Sha1>(der), hex_digest::<sha2::Sha256>(der)] {
+        st.metrics.trail_lookups += 1;
+        if let Some((info, reference)) =
+            st.trails.db().get(&digest).map(|v| (v.info.to_string(), v.reference.to_string()))
+        {
+            emit_ep(st, sec, usec, ep, PROTO::TCP, TRAIL::CERT, Field::Text(digest), &info, &reference);
+            return;
+        }
+    }
 }
 
-/// Lower-case hex SHA-1, the form certificate feeds publish and therefore the form the trail
-/// keys are in.
-fn sha1_hex(data: &[u8]) -> String {
-    use sha1::{Digest, Sha1};
-    let mut hasher = Sha1::new();
-    hasher.update(data);
-    let out = hasher.finalize();
-    let mut hex = String::with_capacity(40);
+/// Lower-case hex digest, the form certificate trails are written in.
+fn hex_digest<D: sha2::Digest>(data: &[u8]) -> String {
+    let out = D::digest(data);
+    let mut hex = String::with_capacity(out.len() * 2);
     for byte in out {
         hex.push(char::from_digit((byte >> 4) as u32, 16).unwrap_or('0'));
         hex.push(char::from_digit((byte & 0xf) as u32, 16).unwrap_or('0'));

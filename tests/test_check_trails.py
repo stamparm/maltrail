@@ -49,6 +49,9 @@ INERT = [
     ("initial-scale=1.0", "HTML scraped into a trail file"),
     ("a b.com", "U+00A0 nameprep-maps to a space, and a space is not a DNS name"),
     (".com", "idna refuses these, so the key is stored verbatim"),
+    ("ja3:da39a3ee5e6b4b0d3255bfef95601890afd80709", "a SHA-1 is not a JA3: the assembler leaves it out"),
+    ("cert:1e7c622032b0cb79401b0f7be3793a1a", "an MD5 is not a certificate hash"),
+    ("ja4:evil.com", "not a JA4"),
 ]
 
 # (key, why it does reach traffic)
@@ -67,6 +70,12 @@ REACHABLE = [
     ("bad..biz", "an empty interior label: DNS cannot carry it, but an HTTP Host or SNI can"),
     ("dyn_host.dyn.biz", "'_' is legal in every label but the last"),
     ("*.evil.biz", "a wildcard trail, matched by regex"),
+    # typed TLS fingerprints - assembled, updated and replayed: each produced its JA3 / JA4 / CERT event
+    ("ja3:1e7c622032b0cb79401b0f7be3793a1a", "a JA3 (MD5 hex), matched against a ClientHello"),
+    ("ja4:t12d010100_0f2cb44170f4_e3b0c44298fc", "a JA4, matched against a ClientHello"),
+    ("cert:da39a3ee5e6b4b0d3255bfef95601890afd80709", "a certificate SHA-1, matched against a server certificate"),
+    ("cert:" + "ab" * 32, "a certificate SHA-256"),
+    ("JA3:1E7C622032B0CB79401B0F7BE3793A1A", "type and hex are case-insensitive"),
 ]
 
 
@@ -82,6 +91,11 @@ class ClassifyTest(unittest.TestCase):
             verdict = C.classify(key)
             self.assertFalse(verdict and verdict[0] == "inert",
                              "%r is reachable (%s) but was called inert: %s" % (key, why, verdict))
+
+    def test_a_bare_fingerprint_warns_that_its_type_is_missing(self):
+        for key in ("1e7c622032b0cb79401b0f7be3793a1a", "t12d010100_0f2cb44170f4_e3b0c44298fc", "da39a3ee5e6b4b0d3255bfef95601890afd80709"):
+            verdict = C.classify(key)
+            self.assertEqual(verdict and verdict[0], "warn", "%r -> %s" % (key, verdict))
 
     def test_a_separator_lookalike_warns_but_is_not_inert(self):
         # idna gives xn--ab-41t.com - a valid name, so not inert, but not the reported domain either.

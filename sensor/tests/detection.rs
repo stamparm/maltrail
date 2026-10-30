@@ -947,7 +947,9 @@ fn tls_sni_is_ignored_when_disabled() {
 // --- TLS client fingerprints (JA3 / JA4) ----------------------------------------
 //
 // The digests below are the JA3/JA4 of `build_client_hello("evil.com")`, cross-checked against
-// `core/tls_intel.py:parse_client_hello()` (see the vector test in protocols/tls.rs).
+// `core/tls_intel.py:parse_client_hello()` (see the vector test in protocols/tls.rs). That hello
+// has no signature algorithms, so JA4's last part hashes the bare extension list: "" here, whose
+// SHA-256 starts e3b0c44298fc. It used to hash "_", which no other JA4 implementation does.
 
 #[test]
 fn a_listed_ja3_client_fingerprint_fires() {
@@ -961,11 +963,50 @@ fn a_listed_ja3_client_fingerprint_fires() {
 
 #[test]
 fn a_ja4_trail_matches_when_no_ja3_is_listed() {
-    let mut h = trails(&[("t12d010100_0f2cb44170f4_d2e2adf7177b", "potential malware site", "(custom)")]);
+    let mut h = trails(&[("t12d010100_0f2cb44170f4_e3b0c44298fc", "potential malware site", "(custom)")]);
     let hello = maltrail_sensor::protocols::tls::build_client_hello("evil.com", true);
     h.feed_ip(&ipv4(6, "10.0.0.5", "203.0.113.30", &tcp(50401, 443, 0x18, &hello)), 1);
-    assert_eq!(h.trails(), vec!["t12d010100_0f2cb44170f4_d2e2adf7177b"]);
+    assert_eq!(h.trails(), vec!["t12d010100_0f2cb44170f4_e3b0c44298fc"]);
     assert_eq!(h.events()[0].trail_type, "JA4");
+}
+
+/// QUIC ClientHellos were never fingerprinted - only their SNI was read - so no JA3/JA4 trail
+/// ever matched HTTP/3. Values from the Python reference (core/quic_sni.py decrypts,
+/// core/tls_intel.py fingerprints with transport 'q'), which agrees with Wireshark on 974 real
+/// captures apart from Wireshark labelling QUIC 'u' where the JA4 spec says 'q'.
+#[test]
+fn a_quic_client_hello_is_fingerprinted() {
+    let corpus = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("tests/corpus");
+    for (trail, kind) in [("1e7c622032b0cb79401b0f7be3793a1a", "JA3"), ("q12d010100_0f2cb44170f4_e3b0c44298fc", "JA4")]
+    {
+        let mut h = trails(&[(trail, "malware", "(static)")]);
+        h.replay(&corpus.join("quic_sni.pcap"), false);
+        assert_eq!(h.trails(), vec![trail], "{kind}");
+        assert_eq!((h.events()[0].trail_type.as_str(), h.events()[0].proto.as_str()), (kind, "UDP"));
+    }
+}
+
+/// A QUIC ClientHello split across two Initials is fingerprinted once whole, not from the first
+/// Initial's fragment. Expected values: the Python reference over the CRYPTO frames of both
+/// Initials merged by offset (each Initial alone fingerprints differently, e.g. JA3
+/// ea1e247991e541e39bf918cb7cfa5139, with no SNI in it).
+#[test]
+fn a_quic_client_hello_split_across_initials_is_fingerprinted_whole() {
+    let pcap = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("tests/corpus/quic_sni_split.pcap");
+    for (trail, kind) in [
+        ("a89bab8eb05fa15a7ac7b256b0257612", "JA3"),
+        ("q12d010200_0f2cb44170f4_4298e3b3ed58", "JA4"),
+        ("ea1e247991e541e39bf918cb7cfa5139", ""),
+    ] {
+        let mut h = trails(&[(trail, "malware", "(static)")]);
+        h.replay(&pcap, false);
+        if kind.is_empty() {
+            assert!(h.events().is_empty(), "a fragment was fingerprinted: {:?}", h.trails());
+        } else {
+            assert_eq!(h.trails(), vec![trail], "{kind}");
+            assert_eq!(h.events()[0].trail_type, kind);
+        }
+    }
 }
 
 #[test]

@@ -450,7 +450,19 @@ Add your own indicators under `CUSTOM_TRAILS_DIR`, and anything that must never 
 `USER_WHITELIST`. Keep both outside the installation directory so an upgrade cannot overwrite them.
 
 Static trail contributions go to [stamparm/trails](https://github.com/stamparm/trails); new feeds
-go here. Either way an indicator needs a classification and a source somebody can check — see
+go here. A TLS fingerprint in a static file says what it is, one per line, so a hash is never read
+as a name:
+
+```text
+ja3:8527da8b8a640065e72ec6b6f99764f3
+ja4:t13d1313h1_f57a46bbacb6_7f0f34a4126d
+cert:9d30e06354c3c7c4cc83fd3cab5801df8385a776
+cert:78b3ed83ebf4cd28c547d16bda7590577ec9b7ca24295f12bab651de65aee470
+```
+
+`cert:` takes the SHA-1 or the SHA-256 of the DER certificate.
+
+Either way, an indicator needs a classification and a source somebody can check — see
 [Contributing](#contributing).
 
 ## Events and API
@@ -465,9 +477,10 @@ contains spaces:
 The `type` field identifies what matched, including `DNS`, `IP`, `IPORT`, `URL`, `PATH`, `HTTP`,
 `UA`, `PORT`, `CERT`, `JA3`, and `JA4`. The `info` field contains the trail classification, and
 `reference` identifies the static list, feed, custom source, or heuristic that produced it. The
-`JA3`/`JA4` types fire on TLS *client* fingerprints: an implant's TLS stack survives every
-address and domain rotation, so its hello hash keeps matching after everything else has burned
-(published by the abuse.ch SSLBL JA3 feed).
+`JA3`/`JA4` types fire on TLS *client* fingerprints, over TCP and QUIC alike: an implant's TLS
+stack survives every address and domain rotation, so its hello hash keeps matching after everything
+else has burned (published by the abuse.ch SSLBL JA3 feed). `CERT` fires on a server certificate's
+SHA-1 or SHA-256, which TLS 1.2 and older send in the clear.
 
 ### Indicator lookup
 

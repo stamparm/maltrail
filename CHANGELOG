@@ -16,6 +16,20 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] JA3/JA4 trails never matched QUIC (HTTP/3): only the SNI of a QUIC
+    ClientHello was read. Replayed over 974 sandbox captures against every
+    fingerprint tshark computes there, QUIC went from 0 of 16 matched
+    (source, fingerprint) pairs to 16 of 16, for JA3 and JA4 alike.
+[!] JA4 was wrong for every ClientHello without signature algorithms
+    (TLS 1.0/1.1 clients): its last part hashed "<extensions>_", where the
+    spec and Wireshark hash "<extensions>". Fixed in the sensor and in
+    core/tls_intel.py; such a published JA4 can match now.
+[+] Static trail files carry TLS fingerprints typed, one per line:
+    ja3:<md5>, ja4:<ja4>, cert:<sha1 or sha256>. The assembler publishes the
+    bare value; check_trails.py fails a value that does not fit its type,
+    warns on an untyped one, and no longer rejects JA4 as "not a valid DNS
+    name". Certificate trails may be SHA-256 as well as SHA-1.
+
 [+] The sensor keeps the trail tables it builds next to TRAILS_FILE
     (<TRAILS_FILE>.store) and maps them on the next start, -T or reload
     instead of parsing the CSV. With 1.9M trails on one core, -T takes 0.08 s
