@@ -8,7 +8,7 @@
 //! reload that replaces the file leaves the store in use intact until its last reader drops it.
 //!
 //! It is a CACHE of the CSV, never a source. A store is used only when its header proves it was
-//! built from exactly this CSV (size, mtime AND content hash), with exactly this whitelist (rows
+//! built from exactly this CSV (size, mtime AND content hash - or an untouched inode and ctime), with exactly this whitelist (rows
 //! are whitelisted at load), with the same `REPAIR_TRUNCATED_TRAILS`, by a build with the same table
 //! layout and the same hash functions. Anything else - including a store that is merely damaged -
 //! is a miss, and the CSV is parsed exactly as before. A store that answered for yesterday's CSV
@@ -33,7 +33,7 @@ use super::table::{hash_bytes, IntKey, IntSlot, IntTable, NegativeFilter, SlotCh
 use super::TrailDb;
 
 /// Bump on ANY change to the layout below or to what a section holds.
-pub const FORMAT: u64 = 1;
+pub const FORMAT: u64 = 2;
 const MAGIC: u64 = u64::from_le_bytes(*b"MTSTORE\0");
 /// Written natively; a store from a host of the other byte order reads back as something else.
 const ENDIAN: u64 = 0x0102_0304_0506_0708;
@@ -60,6 +60,7 @@ const W_DB_LEN: usize = 24;
 const W_STATS: usize = 25; // 4 words: rows, loaded, whitelisted, malformed
 const W_SECTIONS: usize = 29; // SECTIONS x (offset, length in bytes)
 const W_SECTION_HASH: usize = W_SECTIONS + 2 * SECTIONS;
+const W_SRC_INODE: usize = W_SECTION_HASH + SECTIONS; // 4 words: dev, inode, ctime s, ctime ns
 const W_HEADER_HASH: usize = HEADER_WORDS - 1;
 
 const SEC_ARENA: usize = 0;
@@ -75,8 +76,7 @@ const SEC_TAIL: usize = 9;
 const SECTIONS: usize = 10;
 
 // The header fits its page and its fields do not overlap - checked at compile time.
-const _: () =
-    assert!(W_SECTION_HASH + SECTIONS <= W_HEADER_HASH && HEADER_WORDS * 8 <= PAGE && W_STATS + 4 <= W_SECTIONS);
+const _: () = assert!(W_SRC_INODE + 4 <= W_HEADER_HASH && HEADER_WORDS * 8 <= PAGE && W_STATS + 4 <= W_SECTIONS);
 
 const STR_CANARIES: usize = 64;
 const INT_CANARIES: usize = 16;
@@ -300,6 +300,70 @@ fn mtime_parts(meta: &std::fs::Metadata) -> (u64, u64) {
     }
 }
 
+/// The CSV's device, inode and change time. Unlike the mtime, the ctime cannot be set from user
+/// space: any write, `cp -p`, `rsync -t` or restore moves it to the present. So when all four
+/// match the store's record, the file has not been touched since the store was built, and the
+/// content hash - reading all 100 MB, 1.4 s of a Pi Zero's start - can be skipped.
+#[cfg(unix)]
+fn inode_parts(meta: &std::fs::Metadata) -> [u64; 4] {
+    use std::os::unix::fs::MetadataExt;
+    [meta.dev(), meta.ino(), meta.ctime() as u64, meta.ctime_nsec() as u64]
+}
+
+#[cfg(not(unix))]
+fn inode_parts(_: &std::fs::Metadata) -> [u64; 4] {
+    [0; 4]
+}
+
+/// Whether `path`'s filesystem keeps a real ctime. FAT, for one, has none: Linux synthesises it,
+/// and after a remount a same-length `cp -p` would leave every word above as it was.
+#[cfg(target_os = "linux")]
+fn ctime_is_kept(path: &Path) -> bool {
+    use std::os::unix::ffi::OsStrExt;
+    let mut c = path.as_os_str().as_bytes().to_vec();
+    c.push(0);
+    let mut st: libc::statfs = unsafe { std::mem::zeroed() };
+    if unsafe { libc::statfs(c.as_ptr() as *const libc::c_char, &mut st) } != 0 {
+        return false;
+    }
+    // ext2/3/4, XFS, btrfs, tmpfs, overlayfs, F2FS
+    matches!(st.f_type as u32, 0xEF53 | 0x5846_5342 | 0x9123_683E | 0x0102_1994 | 0x794C_7630 | 0xF2F5_2010)
+}
+
+#[cfg(not(target_os = "linux"))]
+fn ctime_is_kept(_: &Path) -> bool {
+    false
+}
+
+/// What a store records about the CSV it was built from, beyond its size and mtime.
+#[derive(Clone, Copy)]
+pub struct Source {
+    /// `ContentHash` of every byte
+    pub hash: u64,
+    /// `settled_identity()` of the CSV
+    pub identity: [u64; 4],
+}
+
+/// `inode_parts()` of the CSV, taken right after its metadata and BEFORE its content is read - or
+/// zeros, which no file matches, so that store is always checked by its content hash.
+///
+/// The ctime ticks coarsely (a jiffy), so two writes within one tick can share it - git calls that
+/// "racily clean". A ctime at least a second older than now cannot be shared with any later write.
+pub fn settled_identity(meta: &std::fs::Metadata) -> [u64; 4] {
+    let identity = inode_parts(meta);
+    let now = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).map_or(0, |d| d.as_secs());
+    if now >= identity[2].saturating_add(2) {
+        identity
+    } else {
+        [0; 4]
+    }
+}
+
+fn untouched_since_built(h: &[u64; HEADER_WORDS], csv: &Path, csv_meta: &std::fs::Metadata) -> bool {
+    let now = inode_parts(csv_meta);
+    now != [0; 4] && h[W_SRC_INODE..W_SRC_INODE + 4] == now && ctime_is_kept(csv)
+}
+
 fn header_hash(words: &[u64; HEADER_WORDS]) -> u64 {
     let mut h = ContentHash::new();
     for (i, w) in words.iter().enumerate() {
@@ -378,10 +442,12 @@ pub fn try_load(
     };
     let header = read_header(map.bytes())?;
     check_identity(&header, cfg, csv_meta, repair)?;
-    match hash_file(csv) {
-        Ok(hash) if hash == header[W_SRC_HASH] => {}
-        Ok(_) => return reject("the trails file changed (content)"),
-        Err(e) => return reject(format!("could not hash the trails file ({e})")),
+    if !untouched_since_built(&header, csv, csv_meta) {
+        match hash_file(csv) {
+            Ok(hash) if hash == header[W_SRC_HASH] => {}
+            Ok(_) => return reject("the trails file changed (content)"),
+            Err(e) => return reject(format!("could not hash the trails file ({e})")),
+        }
     }
     assemble(&map, &header, repair)
 }
@@ -680,7 +746,7 @@ fn align(n: usize) -> usize {
     (n + PAGE - 1) & !(PAGE - 1)
 }
 
-/// Write `db` as the store for the CSV described by `csv_meta`/`source_hash`, atomically: a
+/// Write `db` as the store for the CSV described by `csv_meta`/`source`, atomically: a
 /// temporary file in the same directory, synced, then renamed over the old store. A reader never
 /// sees a half-written store, and a power cut leaves either the old one or the new one.
 pub fn write(
@@ -688,7 +754,7 @@ pub fn write(
     db: &TrailDb,
     stats: &LoadStats,
     csv_meta: &std::fs::Metadata,
-    source_hash: u64,
+    source: Source,
     repair: bool,
 ) -> std::io::Result<()> {
     let dir = match cfg.path.parent() {
@@ -698,7 +764,7 @@ pub fn write(
     let name = cfg.path.file_name().and_then(|n| n.to_str()).unwrap_or("trails.store");
     let tmp = dir.join(format!(".{name}.tmp-{}", std::process::id()));
     let _ = std::fs::remove_file(&tmp); // left by a crashed run with this pid
-    let result = write_to(&tmp, db, stats, cfg, csv_meta, source_hash, repair)
+    let result = write_to(&tmp, db, stats, cfg, csv_meta, source, repair)
         .and_then(|()| read_only_like(&tmp, csv_meta))
         .and_then(|()| std::fs::rename(&tmp, &cfg.path));
     if result.is_err() {
@@ -737,7 +803,7 @@ fn write_to(
     stats: &LoadStats,
     cfg: &StoreConfig,
     csv_meta: &std::fs::Metadata,
-    source_hash: u64,
+    source: Source,
     repair: bool,
 ) -> std::io::Result<()> {
     let mut file = std::fs::OpenOptions::new().write(true).create_new(true).open(tmp)?;
@@ -768,7 +834,8 @@ fn write_to(
     h[W_SRC_LEN] = csv_meta.len();
     h[W_SRC_MTIME_S] = secs;
     h[W_SRC_MTIME_NS] = nanos;
-    h[W_SRC_HASH] = source_hash;
+    h[W_SRC_HASH] = source.hash;
+    h[W_SRC_INODE..W_SRC_INODE + 4].copy_from_slice(&source.identity);
     h[W_WL_HASH] = cfg.whitelist_hash;
     h[W_COUNTS..W_COUNTS + 4].copy_from_slice(&[
         db.strings.len() as u64,
@@ -822,13 +889,13 @@ pub fn write_and_reopen(
     db: TrailDb,
     stats: LoadStats,
     csv_meta: &std::fs::Metadata,
-    source_hash: u64,
+    source: Source,
     repair: bool,
 ) -> (TrailDb, LoadStats, Option<String>) {
-    if let Err(e) = write(cfg, &db, &stats, csv_meta, source_hash, repair) {
+    if let Err(e) = write(cfg, &db, &stats, csv_meta, source, repair) {
         return (db, stats, Some(format!("could not write '{}' ({e})", cfg.path.display())));
     }
-    match reopen(cfg, csv_meta, source_hash, repair) {
+    match reopen(cfg, csv_meta, source.hash, repair) {
         Ok((mapped, _)) if mapped.len() == db.len() => (mapped, stats, None),
         Ok(_) => (db, stats, Some(format!("'{}' read back with a different trail count", cfg.path.display()))),
         Err(miss) => (db, stats, Some(format!("'{}' did not read back ({miss})", cfg.path.display()))),
@@ -996,6 +1063,41 @@ mod tests {
         for i in 0..30_000u32 {
             let _ = db.get(&format!("host{i}.example"));
         }
+    }
+
+    /// The content hash is skipped only for a CSV provably untouched since its store was built.
+    #[test]
+    #[cfg(target_os = "linux")]
+    fn only_an_untouched_trails_file_skips_the_content_hash() {
+        use std::os::unix::fs::MetadataExt;
+        let f = Fixture::new("untouched");
+        assert!(ctime_is_kept(&f.csv), "positive control: the test directory must keep a ctime");
+        let header = || read_header(&std::fs::read(&f.cfg.path).unwrap()).unwrap();
+        let untouched = || untouched_since_built(&header(), &f.csv, &std::fs::metadata(&f.csv).unwrap());
+
+        // written just now: the ctime may be shared with a write still to come, so it is not recorded
+        let _ = f.load();
+        assert_eq!(header()[W_SRC_INODE..W_SRC_INODE + 4], [0; 4]);
+        assert!(!untouched() && f.load().1.from_store, "a racy store is served, by its content hash");
+
+        std::thread::sleep(std::time::Duration::from_millis(2100));
+        let _ = std::fs::remove_file(&f.cfg.path);
+        let _ = f.load();
+        assert!(untouched(), "a settled, untouched file must skip the hash");
+        assert!(f.load().1.from_store);
+
+        // the same bytes rewritten and the mtime put back: only the ctime moved, and that is enough
+        let before = std::fs::metadata(&f.csv).unwrap();
+        std::fs::write(&f.csv, std::fs::read(&f.csv).unwrap()).unwrap();
+        let c = std::ffi::CString::new(f.csv.to_str().unwrap()).unwrap();
+        let times = [
+            libc::timespec { tv_sec: 0, tv_nsec: libc::UTIME_OMIT },
+            libc::timespec { tv_sec: before.mtime() as libc::time_t, tv_nsec: before.mtime_nsec() as _ },
+        ];
+        assert_eq!(unsafe { libc::utimensat(libc::AT_FDCWD, c.as_ptr(), times.as_ptr(), 0) }, 0);
+        assert_eq!(std::fs::metadata(&f.csv).unwrap().mtime_nsec(), before.mtime_nsec());
+        assert!(!untouched(), "a rewrite must be noticed through the ctime");
+        assert!(f.load().1.from_store, "same content: still served, after hashing it");
     }
 
     /// An in-place overwrite of a mapped store crashes the sensor, so the store is written without

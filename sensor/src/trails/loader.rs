@@ -337,6 +337,7 @@ pub fn load_trails(path: &Path, whitelist: &Whitelist, options: LoadOptions) -> 
         Err(e) => return Err(e),
     };
     let meta = file.metadata()?;
+    let identity = super::store::settled_identity(&meta);
     let file_len = meta.len() as usize;
     let mut store_note = None;
     // Only where a store can be mapped back (`FileMap` is Unix-only): elsewhere a written store
@@ -474,8 +475,14 @@ pub fn load_trails(path: &Path, whitelist: &Whitelist, options: LoadOptions) -> 
         stats.store_note = store_note;
         return Ok((db, stats));
     };
-    let (db, mut stats, note) =
-        super::store::write_and_reopen(store, db, stats, &meta, source_hash.finish(), options.repair_truncated_trails);
+    let (db, mut stats, note) = super::store::write_and_reopen(
+        store,
+        db,
+        stats,
+        &meta,
+        super::store::Source { hash: source_hash.finish(), identity },
+        options.repair_truncated_trails,
+    );
     stats.store_note = note.or(store_note);
     Ok((db, stats))
 }

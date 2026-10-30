@@ -404,7 +404,7 @@ setting changed. Four things make that work:
 * **The built tables are kept.** The first start writes them next to `TRAILS_FILE` as
   `trails.csv.store` (about the size of the CSV), and every later start, `-T` and reload maps that
   file read-only instead of parsing the CSV. On one core with 1.9M trails, `-T` takes 0.08 s
-  instead of 0.78 s and a start needs 89 MB instead of 145 MB; on a Pi Zero a start takes 4 s
+  instead of 0.78 s and a start needs 89 MB instead of 145 MB; on a Pi Zero a start takes 1.9 s
   instead of 40 s. The store is used only when it was
   built from exactly the current `TRAILS_FILE` (size, modification time and content), the same
   whitelist and the same sensor version; otherwise the CSV is parsed as before and the store is

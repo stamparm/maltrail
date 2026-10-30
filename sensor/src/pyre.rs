@@ -263,6 +263,22 @@ pub fn build(pattern: &str) -> Result<regex::Regex, Error> {
     }
 }
 
+/// Whether `build()` would accept `pattern`, without building it: the same translation and the
+/// same punctuation-escape second chance, but only parsed. `data/ua.txt` is checked line by line
+/// this way, and compiling each of its ~1,400 lines just to drop the result cost 1.8 s of a Pi
+/// Zero's 5.8 s start.
+pub fn is_valid(pattern: &str) -> bool {
+    if has_late_global_flags(pattern) {
+        return false;
+    }
+    let parses = |p: &str| regex_syntax::Parser::new().parse(p).is_ok();
+    let translated = translate(pattern);
+    parses(&translated) || {
+        let strict = hex_escape_punctuation(&translated);
+        strict != translated && parses(&strict)
+    }
+}
+
 /// Operator-supplied patterns may use look-around (the shipped `REMOTE_SEVERITY_REGEX`
 /// does), which the `regex` crate cannot express, so those go through `fancy-regex`.
 pub fn build_fancy(pattern: &str) -> Result<fancy_regex::Regex, Error> {
@@ -275,6 +291,21 @@ pub fn build_fancy(pattern: &str) -> Result<fancy_regex::Regex, Error> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// `is_valid()` stands in for `build().is_ok()`; they must agree on every line it is used on,
+    /// and on patterns that fail each way (syntax, Python-only global flags, a bad escape).
+    #[test]
+    fn is_valid_agrees_with_build() {
+        let ua = std::fs::read_to_string(concat!(env!("CARGO_MANIFEST_DIR"), "/../data/ua.txt")).unwrap();
+        let mut lines: Vec<&str> = ua.lines().collect();
+        lines.extend(["(unclosed", "a{2,1}", "x(?i)y", r"\\>", r"\Afoo\Z", "[z-a]", "(?P<n>a)(?P=n)", r"\p{Nope}"]);
+        let mut invalid = 0;
+        for line in lines {
+            assert_eq!(is_valid(line), build(line).is_ok(), "{line:?}");
+            invalid += usize::from(!is_valid(line));
+        }
+        assert!(invalid >= 4, "the check must see invalid patterns too ({invalid})");
+    }
 
     #[test]
     fn escape_matches_cpython() {

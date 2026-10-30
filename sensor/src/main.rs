@@ -137,6 +137,11 @@ fn parse_args(argv: &[String]) -> Result<Args, String> {
     Ok(args)
 }
 
+// See the `mimalloc` entry in Cargo.toml.
+#[cfg(target_env = "musl")]
+#[global_allocator]
+static GLOBAL: mimalloc::MiMalloc = mimalloc::MiMalloc;
+
 fn main() {
     let code = run();
 

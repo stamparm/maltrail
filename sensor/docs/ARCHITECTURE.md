@@ -138,7 +138,11 @@ The tables are position-independent (string slots address the key arena by offse
 also writes them to `<TRAILS_FILE>.store` (`src/trails/store.rs`) and the next start, `-T` or
 reload maps that file instead of parsing the CSV. The store is a cache, never a source: its header
 records the CSV's size, mtime and content hash, a hash of the whitelist files, the sensor version,
-the slot layout and the hashes of fixed probe keys, and any mismatch means a parse. Before a mapped
+the slot layout and the hashes of fixed probe keys, and any mismatch means a parse. The content
+hash reads the whole CSV, so it is skipped when the CSV's device, inode and ctime are still the
+ones recorded - the ctime cannot be set from user space, so any write since moves it - on
+filesystems that keep a real ctime (ext4, XFS, btrfs, F2FS, tmpfs, overlayfs), and only when the
+ctime was already a second old at the build, so no later write can share its tick. Before a mapped
 store is used, every slot is checked to lie inside the arena and to name an existing pair, and
 sampled canary keys must resolve to their recorded values, so a damaged body is a miss rather than
 a wrong answer. A reload parses with one thread fewer than the cores, leaving the capture workers

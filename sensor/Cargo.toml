@@ -27,6 +27,8 @@ libc = "0.2"
 # backtracking; `fancy-regex` only for operator-supplied patterns that may use
 # lookaround (the shipped REMOTE_SEVERITY_REGEX uses `(?! ...)`).
 regex = "1"
+# `pyre::is_valid()`: the syntax check alone, without compiling (already a dependency of `regex`)
+regex-syntax = "0.8"
 fancy-regex = "0.19"
 # Multi-substring scans on the HTTP hot path (keyword pre-conditions, whitelists).
 aho-corasick = "1"
@@ -52,6 +54,12 @@ hmac = "0.12"
 # the prebuilt release tarballs at exactly one runtime .so - libpcap - which is the whole
 # point of shipping them. `functions` registers meta_score() for the prune query.
 rusqlite = { version = "0.31", features = ["bundled", "functions"] }
+
+# musl's own malloc is the slow part of a static musl build: a third of a Pi Zero's start went to
+# it (and to its software integer divide). mimalloc: start 2.66 s -> 1.91 s, 12% less per packet.
+# glibc's allocator does not have that problem, so the other builds keep it.
+[target.'cfg(target_env = "musl")'.dependencies]
+mimalloc = { version = "0.1", default-features = false }
 
 [dev-dependencies]
 # the certificate tests compute the same fingerprint the sensor does

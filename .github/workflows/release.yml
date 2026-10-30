@@ -299,6 +299,10 @@ jobs:
             make -j"$(nproc)" >/dev/null && make install >/dev/null )
 
           export LIBPCAP_LIBDIR="$RUNNER_TEMP/libpcap/lib" LIBPCAP_VER=$LIBPCAP_VERSION MALTRAIL_SKIP_PCAP_CHECK=1
+          # mimalloc's build script links `-latomic` on 32-bit ARM, which zig does not ship: zig's
+          # own compiler runtime already provides those functions. DEP_ATOMIC names the library it
+          # links instead, and musl's libc is always there.
+          export DEP_ATOMIC=c
           # the cc crate's per-target CFLAGS variable: the triple with '-' as '_'
           export "CFLAGS_$(printf '%s' "$TARGET" | tr '-' '_')=-mcpu=$ZIG_CPU"
           # zig links musl 1.2, whose time_t is 64-bit on 32-bit targets, and libpcap was compiled

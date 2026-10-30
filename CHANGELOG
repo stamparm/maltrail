@@ -39,6 +39,14 @@
     the kernel had already written back. With the trail store on, they are
     built on the heap and written once, as the store: 25 s and 100 MB. A
     Pi Zero now starts in 4 s with the store, 40 s without it.
+[=] A Pi Zero starts in 1.9 s instead of 5.8 s with the trail store:
+    - the store no longer hashes all of trails.csv on every start when the
+      file's inode and ctime show it untouched since the store was built
+      (ext4, XFS, btrfs, F2FS, tmpfs, overlayfs; anything else is hashed);
+    - data/ua.txt lines are syntax-checked instead of each being compiled
+      (1.8 s on a Pi Zero);
+    - static musl builds use mimalloc: musl's own malloc was a third of the
+      start. 12% less time per packet as well; glibc builds are unchanged.
 [=] The trail loader no longer "prefetches" table slots ahead of each
     insert. It was a real load, which an in-order core (ARM11, Cortex-A53)
     stalls on: 18% slower inserts on a Pi Zero, and the whole load was 9%

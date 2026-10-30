@@ -100,7 +100,7 @@ pub fn build_suspicious_ua_regex(root: &Path) -> String {
     for line in lines {
         if line.contains(" (compatible") {
             items.push(pyre::escape(&line));
-        } else if pyre::build(&line).is_ok() {
+        } else if pyre::is_valid(&line) {
             items.push(line);
         } else {
             items.push(pyre::escape(&line));
