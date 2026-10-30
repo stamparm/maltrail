@@ -38,6 +38,10 @@ pub const MAX_CV: f64 = 0.2;
 pub const MIN_INTERVAL_SECS: u64 = 5;
 pub const MAX_INTERVAL_SECS: u64 = 6 * 3600;
 
+/// Repeatedly-contacted destinations (counting the one being judged) at which a source is a
+/// swarm client rather than a beacon. See `BeaconTracker::is_swarm`.
+pub const SWARM_PEERS: usize = 8;
+
 /// An hourly tick drops flows whose last SYN is older than this.
 pub const STALE_AFTER_SECS: u64 = 24 * 3600;
 
@@ -126,12 +130,11 @@ impl BeaconTracker {
                 if flow.alerted || flow.len < MIN_INTERVALS {
                     return false;
                 }
-                if flow.cv() <= MAX_CV {
-                    flow.alerted = true;
-                    true
-                } else {
-                    false
+                if flow.cv() > MAX_CV {
+                    return false;
                 }
+                flow.alerted = true;
+                !self.is_swarm(src, sec)
             }
             Entry::Vacant(v) => {
                 if full {
@@ -142,6 +145,23 @@ impl BeaconTracker {
                 false
             }
         }
+    }
+
+    /// Is `src` keeping a timer to many peers at once? An implant beacons to one or two addresses;
+    /// a BitTorrent client retries every peer in its swarm on a timer, and on a live network that
+    /// was 28 "beacons" from one host in 3 hours, one per peer. Only asked on a verdict, which is
+    /// rare, so a scan of the table here costs nothing on the packet path.
+    fn is_swarm(&self, src: Ip, sec: u64) -> bool {
+        let mut peers = 0;
+        for (&(s, _, _), flow) in &self.flows {
+            if s == src && flow.len >= MIN_INTERVALS / 2 && sec - flow.last_sec.min(sec) <= MAX_INTERVAL_SECS {
+                peers += 1;
+                if peers >= SWARM_PEERS {
+                    return true;
+                }
+            }
+        }
+        false
     }
 
     /// Hourly prune of flows gone quiet (`maybe_prune` idiom shared with the NX counters).

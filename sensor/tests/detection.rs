@@ -756,6 +756,36 @@ fn udp_scan_is_detected_and_benign_udp_is_not() {
     assert!(h.events().is_empty(), "benign UDP must not false-positive: {:?}", h.events());
 }
 
+/// A BitTorrent client announcing to a UDP tracker asks from a new local port each time; the
+/// tracker's replies then reach 20 of the client's ports. On a live network every tracker was
+/// reported as UDP-scanning the client (471 events in three hours). Replies are not probes; the
+/// same tracker sweeping ports that never asked must still be one.
+#[test]
+fn tracker_replies_are_not_a_udp_scan() {
+    let client = "192.168.0.117";
+    let tracker = "45.137.199.107";
+    let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
+    for i in 0..20u16 {
+        let ask = eth(&ipv4(17, client, tracker, &udp(40000 + i * 97, 6969, &[0u8; 16])), 0x0800, None);
+        let answer = eth(&ipv4(17, tracker, client, &udp(6969, 40000 + i * 97, &[0u8; 16])), 0x0800, None);
+        h.feed(&ask, i as u64, 0, 14);
+        h.feed(&answer, i as u64, 5000, 14);
+    }
+    let tick = eth(&ipv4(17, "203.0.113.9", "192.0.2.2", &udp(1, 2, &[0u8; 8])), 0x0800, None);
+    h.feed(&tick, 25, 0, 14);
+    let scans: Vec<_> = h.events().into_iter().filter(|e| e.info.contains("potential udp scanning")).collect();
+    assert!(scans.is_empty(), "replies to the client's own requests are not a scan: {scans:?}");
+
+    // the control: the same tracker hitting 20 ports that never sent it anything
+    for i in 0..20u16 {
+        let probe = eth(&ipv4(17, tracker, client, &udp(6969, 1000 + i, &[0u8; 16])), 0x0800, None);
+        h.feed(&probe, 30 + i as u64, 0, 14);
+    }
+    h.feed(&tick, 60, 0, 14);
+    let scans = h.events().into_iter().filter(|e| e.info.contains("potential udp scanning")).count();
+    assert_eq!(scans, 1, "unsolicited datagrams to many ports are still a UDP scan");
+}
+
 #[test]
 fn infection_scan_is_detected() {
     let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
@@ -1166,6 +1196,26 @@ fn a_reputation_service_is_never_reported_however_much_it_is_used() {
 }
 
 #[test]
+fn amazon_device_telemetry_is_not_a_long_domain() {
+    // the live run's only long-domain events: 48 + 3 lookups from Echo/Fire devices, every one of
+    // them a hash label under these two zones. A long label elsewhere must still report.
+    let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
+    for (i, name) in [
+        "8b3db54c02e5305c2f4ba9cac0b1c3eb8c85f8d8a8f703f7fb1e4767f67d70b.us-east-1.prod.service.minerva.devices.a2z.com",
+        "abfrtzaaaaaaaaamaaaaaaaaaaaaa.cbr.cf-embedded.web.us-east-1.prod.diagnostic.networking.aws.dev",
+        "8b3db54c02e5305c2f4ba9cac0b1c3eb8c85f8d8a8f703f7fb1e4767f67d70b.devices.a2z.com.example.top",
+    ]
+    .iter()
+    .enumerate()
+    {
+        tunnel_query(&mut h, "10.0.0.8", name, i as u64);
+    }
+    let long: Vec<_> = h.events().into_iter().filter(|e| e.info.contains("long domain")).map(|e| e.trail).collect();
+    assert_eq!(long.len(), 1, "only the control may report: {long:?}");
+    assert!(long[0].ends_with("example.top"), "{long:?}");
+}
+
+#[test]
 fn a_blocklist_is_never_reported() {
     let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
     for i in 0..900u64 {
@@ -1358,6 +1408,47 @@ fn jittered_and_local_traffic_stay_silent() {
         h.feed_ip(&ipv4(6, "10.0.0.5", "127.0.0.1", &tcp(50001, 8080, 0x02, b"")), 2000 + 30 * i);
     }
     assert!(h.events().is_empty(), "{:?}", h.events());
+}
+
+/// An internet client connecting to a server in private address space on a schedule - an uptime
+/// monitor, a crawler, an app polling its backend - is a visitor, not the server beaconing. On a
+/// live network with a web server exposed this was 51 of 54 beaconing events.
+#[test]
+fn a_periodic_client_connecting_in_is_not_a_beacon() {
+    let mut h = Harness::with_options(&[], HarnessOptions { use_heuristics: true, ..HarnessOptions::quiet() });
+    for i in 0..12u64 {
+        h.feed_ip(&ipv4(6, "91.54.121.209", "192.168.0.200", &tcp(50000, 443, 0x02, b"")), 1000 + 30 * i);
+    }
+    assert!(h.events().is_empty(), "inbound visits are not beaconing: {:?}", h.events());
+
+    // the control: the same schedule from the local host outwards still is
+    for i in 0..12u64 {
+        h.feed_ip(&ipv4(6, "192.168.0.200", "91.54.121.209", &tcp(50001, 443, 0x02, b"")), 2000 + 30 * i);
+    }
+    assert_eq!(h.events().len(), 1, "{:?}", h.events());
+}
+
+/// A BitTorrent client retries every peer in its swarm on a timer: on a live network that was 28
+/// beaconing events from one host in 3 hours, one per peer.
+#[test]
+fn a_swarm_client_retrying_its_peers_is_not_a_beacon() {
+    let mut h = Harness::with_options(&[], HarnessOptions { use_heuristics: true, ..HarnessOptions::quiet() });
+    for i in 0..12u64 {
+        for peer in 1..=20u8 {
+            let dst = format!("91.54.121.{peer}");
+            h.feed_ip(
+                &ipv4(6, "192.168.0.240", &dst, &tcp(51413, 50000 + peer as u16, 0x02, b"")),
+                1000 + 60 * i + peer as u64,
+            );
+        }
+    }
+    assert!(h.events().is_empty(), "one timer per swarm peer is not beaconing: {:?}", h.events());
+
+    // the control: another host keeping the same timer to ONE address still is a beacon
+    for i in 0..12u64 {
+        h.feed_ip(&ipv4(6, "192.168.0.241", "91.54.121.1", &tcp(50001, 50001, 0x02, b"")), 1000 + 60 * i);
+    }
+    assert_eq!(h.events().len(), 1, "{:?}", h.events());
 }
 
 #[test]

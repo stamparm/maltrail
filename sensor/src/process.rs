@@ -1040,8 +1040,14 @@ fn syn(st: &mut WorkerState, ep: Endpoints, sec: u64, usec: u32) {
     // Both ends honour the whitelist. The DESTINATION is the side worth tuning here: the
     // source is the victim, so silencing an NTP pool or a monitoring endpoint by whitelisting
     // the local host would blind every other detection for that host.
+    //
+    // Only connections a local host makes count. An internet client connecting INTO private
+    // address space is a visitor to a server, not that server phoning home: on a live network
+    // with a web server exposed, 51 of 54 beaconing events were monitors, crawlers and returning
+    // clients connecting in, each naming the server as the beacon.
     if st.cfg.use_heuristics
         && !ep.dst.is_localhost()
+        && !(ep.dst.is_local() && !ep.src.is_local())
         && st.heuristic_enabled("beaconing")
         && st.beacon.observe(ep.src, ep.dst, ep.dst_port, sec)
         && !st.whitelist.check_whitelisted_ip(ep.src)

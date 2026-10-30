@@ -5,6 +5,7 @@ Copyright (c) 2014-present Maltrail developers (https://github.com/stamparm/malt
 See the file 'LICENSE' for copying permission
 """
 
+import atexit
 import codecs
 from array import array
 import csv
@@ -96,6 +97,32 @@ _CUSTOM_STATIC_REGEX = re.compile(r"\b(custom|static)\b")
 # 3.7+ keeps the C method; 3.6 gets a precompiled regex. Both answer identically, including for the
 # empty string (True) and for lone surrogates (False).
 _NON_ASCII_REGEX = re.compile(r"[^\x00-\x7f]")
+
+# seconds to wait before each attempt at a feed that came back empty or raised
+FEED_RETRY_DELAYS = (0, 10, 30)
+
+
+def _fetch_feed(function, filename):
+    """
+    A feed's results, or None if every attempt raised.
+
+    Retried in place, not at the end of the run: the merge rule depends on order, so a late retry
+    would build a different set than a clean run. The first live run lost sslbl (cert + JA3) and
+    Tor exits for a whole day to one network blip - all three fetched fine moments later.
+    """
+
+    results = None
+    for delay in FEED_RETRY_DELAYS:
+        if delay:
+            time.sleep(delay)
+        try:
+            results = function()
+        except Exception as ex:
+            print("[x] something went wrong during processing of feed file '%s' ('%s')" % (filename, ex))
+            continue
+        if results:
+            break
+    return results
 
 if hasattr(str, "isascii"):
     def _is_ascii(value):
@@ -831,6 +858,8 @@ class _StreamBuild(object):
         self.hashes = array('I')
         self.runs = []
         self.late_path = prefix + ".late"
+        # an updater stopped mid-build (Ctrl-C, or the sensor that ran it dying) still cleans up
+        atexit.register(self.close)
 
     def _seen(self, key):
         h = hash(_group(key))
@@ -1140,8 +1169,8 @@ def update_trails(force=False, offline=False):
                             print("[i] feed skipped: '%s' is not set (%s)" % (required, getattr(module, "__requires_hint__", "see 'maltrail.conf'")))
                             continue
 
-                        try:
-                            results = function()
+                        results = _fetch_feed(function, filename)
+                        if results is not None:
                             _merge(results)
                             # A feed that yields nothing is reported, whatever the host. This used
                             # to skip abuse.ch and cobaltstrike URLs, presumably because a tracker
@@ -1154,8 +1183,6 @@ def update_trails(force=False, offline=False):
                             if not results:
                                 empty_feeds.append(url)
                                 print("[!] no indicators from '%s' (empty response, or the feed's format changed)" % url)
-                        except Exception as ex:
-                            print("[x] something went wrong during processing of feed file '%s' ('%s')" % (filename, ex))
 
                 try:
                     sys.modules.pop(module.__name__)

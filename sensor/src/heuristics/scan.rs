@@ -9,6 +9,18 @@
 
 use crate::addr::Ip;
 use crate::fasthash::{FastMap, FastSet};
+
+/// Slots in the recent-UDP-senders table: 512 KB, enough for the replies of a busy network to find
+/// their request within the seconds that separate them.
+const UDP_SENT_SLOTS: usize = 1 << 16;
+
+/// 64-bit fingerprint of "`sender` sent from `port` to `peer`", never 0 (an empty slot).
+fn sender_fingerprint(sender: Ip, port: u16, peer: Ip) -> u64 {
+    use std::hash::{Hash, Hasher};
+    let mut h = crate::fasthash::FxHasher::default();
+    (sender, port, peer).hash(&mut h);
+    h.finish() | 1
+}
 use std::collections::hash_map::Entry;
 
 /// Upper bound on items tracked per key.
@@ -197,6 +209,11 @@ pub struct ScanState {
     web_scan: FastMap<(Ip, Ip), Bucket<Box<str>, PathDetail, crate::fasthash::SeededBuildHasher>>,
     /// `(src_ip, dst_ip) -> {udp dst_port}` — UDP scanning
     udp_scan: FastMap<(Ip, Ip), Bucket<u16, PortDetail>>,
+    /// Recent UDP senders: a fingerprint of (sender, sender port, peer) per slot, direct-mapped.
+    /// A datagram to a port that has just sent to its source is a reply, not a probe (see
+    /// `track_udp`). Fixed size, nothing allocated per packet; an overwritten slot only means a
+    /// reply is counted as before.
+    udp_sent: Box<[u64]>,
     /// (src, dst) -> digests of the distinct non-standard echo payloads (`heuristics::icmp`).
     icmp_tunnel: FastMap<(Ip, Ip), Bucket<u64, PortDetail>>,
 
@@ -250,6 +267,7 @@ impl ScanState {
             infection: FastMap::default(),
             web_scan: FastMap::default(),
             udp_scan: FastMap::default(),
+            udp_sent: vec![0u64; UDP_SENT_SLOTS].into_boxed_slice(),
             icmp_tunnel: FastMap::default(),
             alerted_port: FastSet::default(),
             alerted_infection: FastSet::default(),
@@ -371,7 +389,21 @@ impl ScanState {
     }
 
     /// `_scan_track(_udp_scan, ..., (src, dst), dst_port, ...)`
+    ///
+    /// A datagram to a port that has just sent to its source is an answer, and is not counted. A
+    /// BitTorrent client announcing to a UDP tracker asks from a new local port each time, so the
+    /// tracker's replies fan out over many of the client's ports - and on a live network every
+    /// tracker it used was reported as UDP-scanning it, 471 times in three hours. `nmap -sU` and
+    /// other scans hit ports that never sent anything to the scanner, so they still count.
     pub fn track_udp(&mut self, src: Ip, dst: Ip, port: u16, detail: PortDetail) {
+        let sent = sender_fingerprint(src, detail.src_port, dst);
+        let reply = sender_fingerprint(dst, port, src);
+        let slots = &mut self.udp_sent;
+        let mask = slots.len() - 1;
+        slots[(sent >> 32) as usize & mask] = sent;
+        if slots[(reply >> 32) as usize & mask] == reply {
+            return;
+        }
         let threshold = self.thresholds.udp;
         match self.udp_scan.get_mut(&(src, dst)) {
             Some(bucket) => {

@@ -6,6 +6,7 @@ See the file 'LICENSE' for copying permission
 """
 
 import os
+import platform
 import re
 import socket
 import stat
@@ -36,7 +37,7 @@ PLATFORM = os.name
 IS_WIN = PLATFORM == "nt"
 IS_LINUX = "linux" in PLATFORM
 IS_SENSOR = "sensor" in sys.argv[0]
-USER_AGENT = "%s/%s (%s/py%s/x%d)" % (NAME, VERSION, re.sub(r"\d$", "", sys.platform), sys.version.split(' ')[0], struct.calcsize('P') * 8)
+USER_AGENT = "%s/%s (%s/py%s/%s)" % (NAME, VERSION, re.sub(r"\d$", "", sys.platform), sys.version.split(' ')[0], platform.machine().lower() or "x%d" % (struct.calcsize('P') * 8))
 DATE_FORMAT = "%Y-%m-%d"
 ROTATING_CHARS = ('\\', '|', '|', '/', '-')
 TIMEOUT = 30
@@ -220,7 +221,9 @@ HASH_LABEL_SERVICE_ZONES = (
     "spamhaus.org", "spamcop.net", "sorbs.net", "barracudacentral.org", "surbl.org",
     "uribl.com", "abuseat.org", "senderbase.org", "mailspike.net", "invaluement.com",
     "akamai.net", "akamaiedge.net", "cloudfront.net", "azureedge.net", "windows.net",
-    "amazonaws.com", "googleusercontent.com", "1e100.net", "cdn77.org", "fastly.net",
+    "amazonaws.com", "a2z.com", "aws.dev", "googleapis.com", "googleusercontent.com", "1e100.net",
+    "cdn77.org",
+    "fastly.net",
     "_domainkey", "_dmarc", "_spf", "acme-challenge",
 )
 LOCAL_SUBDOMAIN_LOOKUPS = ("wpad", "autodiscover", "_ldap._tcp")

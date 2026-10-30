@@ -16,6 +16,21 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] First run on live traffic (3 hours, home network) logged 1,406 events, 1,303 of them false
+    positives. Replayed through the fixed sensor: 103. UDP scanning (501): BitTorrent tracker
+    REPLIES were counted as the client scanning - a datagram answering one we saw sent no longer
+    counts. Periodic beaconing (56 -> 5): visitors connecting IN to a local server, and a torrent
+    client retrying its swarm peers, are no longer beacons. Long domain (50 -> 0): Amazon device
+    telemetry (a2z.com, aws.dev) and googleapis.com. Every static hit, the scanner user agent,
+    web scanning and the RCE attempt are unchanged.
+[!] A poller hitting the same trail once a minute was never summarized by the event throttle
+    (748 events in 3 hours); a busy key now backs off, doubling up to an hour.
+[!] One network blip at update time dropped sslbl (certificates, JA3) and Tor exit trails for a
+    whole day; an empty or failing feed is now retried in place (after 10 s, then 30 s).
+[!] Stopping the sensor left its trail updater running, and the next sensor started a second one
+    on the same trails.csv; the updater now dies with the sensor and removes its temp files.
+[=] User-Agent reports the machine (aarch64, x86_64) instead of the pointer width ("x64").
+
 [!] The daily trail update took over 70 minutes on a Pi Zero: every host
     under 768 MB of available memory merged the 1.9M trails in SQLite, one
     SQL statement per dict operation. A Pi Zero (226 MB available next to a

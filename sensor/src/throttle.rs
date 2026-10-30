@@ -127,7 +127,15 @@ struct KeyState {
     held_total: u64,
     /// last time this key saw anything, for eviction
     last_seen: u64,
+    /// events in the current window, written or held
+    seen: u32,
+    /// this key's window length: `window`, doubled each time a window closes on a key that is
+    /// still busy, up to `MAX_SPAN` (see `close_window`)
+    span: u64,
 }
+
+/// The longest a still-busy key's window grows to: one summary line an hour.
+const MAX_SPAN: u64 = 3600;
 
 /// 64-bit digest of an (address, trail) pair, allocation-free.
 ///
@@ -296,19 +304,29 @@ impl Throttle {
             // The window is measured on the packet clock, so a replay behaves like live traffic.
             // `sec < window_start` (a pcap that goes backwards, a clock step) closes the window
             // too: better to summarize early than to hold events indefinitely.
-            let expired = sec.saturating_sub(state.window_start) >= self.cfg.window || sec < state.window_start;
+            let expired = sec.saturating_sub(state.window_start) >= state.span || sec < state.window_start;
             if expired {
                 if let Some(summary) = Self::summarize(state) {
                     due.push(summary);
                     self.summaries += 1;
                 }
-                state.window_start = sec;
-                state.written = 1;
+                // Quiet since the window opened (one event or none): a new detection, written at
+                // once. Still busy: it is the same thing going on - into the next summary.
+                let busy = Self::close_window(state, sec, self.cfg.window, self.cfg.burst);
                 state.last_seen = sec;
-                return (Decision::Write, due);
+                state.seen = 1;
+                if !busy {
+                    state.written = 1;
+                    return (Decision::Write, due);
+                }
+                state.held_total += 1;
+                self.suppressed += 1;
+                state.held.push(event.clone());
+                return (Decision::Suppress, due);
             }
 
             state.last_seen = sec;
+            state.seen = state.seen.saturating_add(1);
             if state.written < self.cfg.burst {
                 state.written += 1;
                 return (Decision::Write, due);
@@ -326,9 +344,41 @@ impl Throttle {
         if self.keys.len() >= self.cfg.max_keys {
             due.extend(self.evict_batch());
         }
-        self.keys
-            .insert(key, KeyState { window_start: sec, written: 1, held: Vec::new(), held_total: 0, last_seen: sec });
+        self.keys.insert(
+            key,
+            KeyState {
+                window_start: sec,
+                written: 1,
+                held: Vec::new(),
+                held_total: 0,
+                last_seen: sec,
+                seen: 1,
+                span: self.cfg.window,
+            },
+        );
         (Decision::Write, due)
+    }
+
+    /// Open the next window for `state` at `now`, and say whether the key was busy.
+    ///
+    /// A key that saw two or more events in the window that just closed is still doing what it was
+    /// doing: its next window is twice as long (up to `MAX_SPAN`) and starts with the burst spent,
+    /// so its events go into one summary per window instead of a fresh burst. Without this, a
+    /// host polling a public-IP service once a minute - two DNS lines and one TLS line, exactly
+    /// the burst - was never summarized: 748 identical events in three hours on a live network.
+    /// A key that went quiet starts over: its next event is a new detection, written at once.
+    fn close_window(state: &mut KeyState, now: u64, window: u64, burst: u32) -> bool {
+        let busy = state.seen >= 2;
+        state.window_start = now;
+        state.seen = 0;
+        if busy {
+            state.span = state.span.saturating_mul(2).clamp(window, MAX_SPAN.max(window));
+            state.written = burst;
+        } else {
+            state.span = window;
+            state.written = 0;
+        }
+        busy
     }
 
     /// Turn a key's held events into one aggregated event, resetting its buffer.
@@ -413,22 +463,21 @@ impl Throttle {
             return Vec::new();
         }
         let mut due = Vec::new();
-        let window = self.cfg.window;
+        let (window, burst) = (self.cfg.window, self.cfg.burst);
         let mut idle: Vec<u64> = Vec::new();
         for (key, state) in self.keys.iter_mut() {
-            if now.saturating_sub(state.window_start) < window && now >= state.window_start {
+            if now.saturating_sub(state.window_start) < state.span && now >= state.window_start {
                 continue;
             }
             if let Some(summary) = Self::summarize(state) {
                 due.push(summary);
             }
-            // A key with nothing held and a closed window carries no information; dropping it
-            // keeps the table proportional to ACTIVE detections rather than to all of history.
-            if state.held.is_empty() && now.saturating_sub(state.last_seen) >= window {
+            // A key that saw nothing in the window that closed carries no information; dropping
+            // it keeps the table proportional to ACTIVE detections rather than to all of history.
+            if state.seen == 0 && state.held.is_empty() {
                 idle.push(*key);
             } else {
-                state.window_start = now;
-                state.written = 0;
+                Self::close_window(state, now, window, burst);
             }
         }
         self.summaries += due.len() as u64;
@@ -588,17 +637,43 @@ mod tests {
     }
 
     #[test]
-    fn a_new_window_starts_writing_again() {
+    fn a_key_that_went_quiet_starts_writing_again() {
         let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
         for i in 0..10u16 {
             t.admit(&event(1000, 40000 + i, "evil.example"));
         }
-        // First event past the window: written, and it flushes the previous window's summary.
-        let (decision, due) = t.admit(&event(1000 + 60, 50000, "evil.example"));
-        assert_eq!(decision, Decision::Write);
-        assert_eq!(due.len(), 1, "the closed window must be summarized, not forgotten");
-        let (decision, _) = t.admit(&event(1000 + 61, 50001, "evil.example"));
-        assert_eq!(decision, Decision::Write, "the burst budget is fresh");
+        // the busy window closes into a summary...
+        assert_eq!(t.flush_due(1000 + 60).len(), 1, "the closed window must be summarized, not forgotten");
+        // ... then a whole (doubled) window with nothing, and the key is forgotten
+        assert!(t.flush_due(1000 + 60 + 120).is_empty());
+        assert_eq!(t.tracked_keys(), 0, "a quiet key leaves the table");
+        let (decision, _) = t.admit(&event(1000 + 400, 50000, "evil.example"));
+        assert_eq!(decision, Decision::Write, "after a quiet spell it is a new detection, written at once");
+    }
+
+    #[test]
+    fn a_once_a_minute_poller_is_summarized_with_backoff() {
+        // What a live network showed: one host resolving and contacting a public-IP service every
+        // 60 s, three events each time - exactly the burst. Written verbatim forever, that was 748
+        // events in three hours. Now: the first burst at once, then one summary per window, the
+        // window doubling to an hour while the polling goes on.
+        let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
+        let (mut written, mut summaries) = (0, 0);
+        for minute in 0..180u64 {
+            for k in 0..3u16 {
+                let sec = 1000 + minute * 60 + u64::from(k);
+                summaries += t.flush_due(sec).len();
+                if t.admit(&event(sec, 40000 + k, "api.ipify.org")).0 == Decision::Write {
+                    written += 1;
+                }
+            }
+        }
+        summaries += t.flush_all().len();
+        assert_eq!(written, 3, "only the first burst is written verbatim");
+        assert!(
+            (5..=12).contains(&summaries),
+            "a handful of summary lines over three hours, not 540 events: {summaries}"
+        );
     }
 
     #[test]

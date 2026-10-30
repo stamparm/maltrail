@@ -223,6 +223,7 @@ pub fn run(cfg: &Config) -> Outcome {
     if cfg.offline {
         command.arg("--offline");
     }
+    die_with_parent(&mut command);
 
     let child = match command.spawn() {
         Ok(child) => child,
@@ -244,6 +245,38 @@ pub fn run(cfg: &Config) -> Outcome {
 /// does not cover - and it was waited for forever, with the reload thread (mtime reloads, SIGHUP)
 /// stuck behind it.
 const UPDATER_DEADLINE: std::time::Duration = std::time::Duration::from_secs(3600);
+
+/// A sensor stopped by `kill` left the updater running, and the next sensor started a second one
+/// writing the same trails.csv beside it. The kernel now tells the child when its parent goes -
+/// SIGINT, so Python unwinds through KeyboardInterrupt and removes its temp files.
+///
+/// PDEATHSIG fires when the spawning THREAD exits, not the process; the caller blocks in
+/// wait_with_deadline() for the child's whole life, so that cannot happen early.
+fn die_with_parent(command: &mut Command) {
+    #[cfg(target_os = "linux")]
+    {
+        use std::os::unix::process::CommandExt;
+        let parent = std::process::id() as libc::pid_t;
+        // SAFETY: prctl, signal, getppid and _exit are async-signal-safe and touch no memory of ours.
+        unsafe {
+            command.pre_exec(move || {
+                if libc::prctl(libc::PR_SET_PDEATHSIG, libc::SIGINT) != 0 {
+                    return Err(std::io::Error::last_os_error());
+                }
+                // An ignored SIGINT survives exec - a shell's `&` job has one - and Python then never
+                // installs its handler, so the death signal above would be ignored too.
+                libc::signal(libc::SIGINT, libc::SIG_DFL);
+                // the parent may have died between fork and prctl
+                if libc::getppid() != parent {
+                    libc::_exit(1);
+                }
+                Ok(())
+            });
+        }
+    }
+    #[cfg(not(target_os = "linux"))]
+    let _ = command;
+}
 
 /// The child's exit status, or `None` once `deadline` has passed and it has been killed.
 fn wait_with_deadline(
@@ -287,6 +320,36 @@ mod tests {
         let child = Command::new("true").spawn().expect("spawn true");
         let status = wait_with_deadline(child, std::time::Duration::from_secs(10)).unwrap();
         assert!(status.is_some_and(|s| s.success()));
+    }
+
+    #[cfg(target_os = "linux")]
+    #[test]
+    fn the_updater_dies_with_the_thread_that_ran_it() {
+        use std::os::unix::process::ExitStatusExt;
+        // the spawning thread exits without waiting, as it does when the sensor is killed
+        let spawn = |guarded: bool| {
+            std::thread::spawn(move || {
+                let mut command = Command::new("sleep");
+                command.arg("30");
+                if guarded {
+                    die_with_parent(&mut command);
+                }
+                command.spawn().expect("spawn sleep")
+            })
+            .join()
+            .unwrap()
+        };
+        // launched from a shell's `&` job, the sensor starts with SIGINT ignored, and so would this
+        // SAFETY: swaps a disposition for the duration of one spawn and puts it back
+        let previous = unsafe { libc::signal(libc::SIGINT, libc::SIG_IGN) };
+        let child = spawn(true);
+        unsafe { libc::signal(libc::SIGINT, previous) };
+        let status = wait_with_deadline(child, std::time::Duration::from_secs(5)).unwrap();
+        assert_eq!(status.and_then(|s| s.signal()), Some(libc::SIGINT), "the orphan kept running");
+
+        // The control: without it the child outlives its parent, which is the bug.
+        let status = wait_with_deadline(spawn(false), std::time::Duration::from_millis(500)).unwrap();
+        assert!(status.is_none(), "an unguarded child died on its own, so the test above proves nothing");
     }
 
     fn repo_root() -> PathBuf {

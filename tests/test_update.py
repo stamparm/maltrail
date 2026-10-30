@@ -32,6 +32,7 @@ from core.addr import leading_ipv4
 from core.settings import config
 from core.common import retrieve_content
 from core.update import _NON_ASCII_REGEX, _is_ascii, _store_etag, _stored_etag, NOT_MODIFIED
+import core.update as U
 
 # Both branches must agree here, character for character.
 CASES = (
@@ -291,6 +292,44 @@ class ConditionalFetchTest(unittest.TestCase):
     def test_callers_that_pass_no_dict_are_unaffected(self):
         # the 43 feed modules call this with the original signature and must see no change
         self.assertIn("evil.com", retrieve_content(self.url))
+
+
+class FeedRetryTest(unittest.TestCase):
+    def setUp(self):
+        self._delays = U.FEED_RETRY_DELAYS
+        U.FEED_RETRY_DELAYS = (0, 0, 0)
+        self._so = sys.stdout
+        sys.stdout = open(os.devnull, "w")
+
+    def tearDown(self):
+        U.FEED_RETRY_DELAYS = self._delays
+        sys.stdout.close()
+        sys.stdout = self._so
+
+    def _feed(self, *answers):
+        calls = []
+
+        def fetch():
+            calls.append(1)
+            answer = answers[len(calls) - 1]
+            if isinstance(answer, Exception):
+                raise answer
+            return answer
+        return fetch, calls
+
+    def test_a_blip_is_retried(self):
+        fetch, calls = self._feed({}, IOError("reset"), {"1.2.3.4": ("tor", "x")})
+        self.assertEqual(U._fetch_feed(fetch, "f.py"), {"1.2.3.4": ("tor", "x")})
+        self.assertEqual(len(calls), 3)
+
+    def test_a_good_feed_is_fetched_once(self):
+        fetch, calls = self._feed({"a.example": ("i", "r")})
+        self.assertEqual(U._fetch_feed(fetch, "f.py"), {"a.example": ("i", "r")})
+        self.assertEqual(len(calls), 1)
+
+    def test_an_empty_feed_stays_empty_and_a_dead_one_is_none(self):
+        self.assertEqual(U._fetch_feed(self._feed({}, {}, {})[0], "f.py"), {})
+        self.assertIsNone(U._fetch_feed(self._feed(*[IOError("x")] * 3)[0], "f.py"))
 
 
 class IpcatFetchIsAtomicTest(unittest.TestCase):
