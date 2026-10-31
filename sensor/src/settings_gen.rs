@@ -152,6 +152,7 @@ pub const HASH_LABEL_SERVICE_ZONES: &[&str] = &[
     "amazonaws.com",
     "a2z.com",
     "aws.dev",
+    "max.com",
     "googleapis.com",
     "googleusercontent.com",
     "1e100.net",

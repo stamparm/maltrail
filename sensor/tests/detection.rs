@@ -1203,6 +1203,7 @@ fn amazon_device_telemetry_is_not_a_long_domain() {
     for (i, name) in [
         "8b3db54c02e5305c2f4ba9cac0b1c3eb8c85f8d8a8f703f7fb1e4767f67d70b.us-east-1.prod.service.minerva.devices.a2z.com",
         "abfrtzaaaaaaaaamaaaaaaaaaaaaa.cbr.cf-embedded.web.us-east-1.prod.diagnostic.networking.aws.dev",
+        "abfrtzaaaaaaaaamiil2bz77zoutg.cf.eu.prd.media.max.com",
         "8b3db54c02e5305c2f4ba9cac0b1c3eb8c85f8d8a8f703f7fb1e4767f67d70b.devices.a2z.com.example.top",
     ]
     .iter()

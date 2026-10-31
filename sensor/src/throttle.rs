@@ -359,26 +359,26 @@ impl Throttle {
         (Decision::Write, due)
     }
 
-    /// Open the next window for `state` at `now`, and say whether the key was busy.
+    /// Open the next window for `state` at `now`, and say whether the key is still active.
     ///
-    /// A key that saw two or more events in the window that just closed is still doing what it was
-    /// doing: its next window is twice as long (up to `MAX_SPAN`) and starts with the burst spent,
-    /// so its events go into one summary per window instead of a fresh burst. Without this, a
-    /// host polling a public-IP service once a minute - two DNS lines and one TLS line, exactly
-    /// the burst - was never summarized: 748 identical events in three hours on a live network.
-    /// A key that went quiet starts over: its next event is a new detection, written at once.
+    /// A key that was seen within the last `MAX_SPAN` is still doing what it was doing: its window
+    /// grows (doubling while events keep coming, up to `MAX_SPAN`) and starts with the burst spent,
+    /// so its events go into one summary per window instead of a fresh burst. Measured from the
+    /// LAST EVENT, not per window: a host polling a public-IP service every five minutes - a DNS
+    /// line and a TLS line 50 ms apart, then silence - looked quiet to every 60 s window, was
+    /// forgotten between polls, and wrote 24 lines an hour all night on a live network. A key
+    /// silent for `MAX_SPAN` starts over: its next event is a new detection, written at once.
     fn close_window(state: &mut KeyState, now: u64, window: u64, burst: u32) -> bool {
-        let busy = state.seen >= 2;
+        let active = now.saturating_sub(state.last_seen) < MAX_SPAN.max(window);
         state.window_start = now;
-        state.seen = 0;
-        if busy {
-            state.span = state.span.saturating_mul(2).clamp(window, MAX_SPAN.max(window));
-            state.written = burst;
-        } else {
+        if !active {
             state.span = window;
-            state.written = 0;
+        } else if state.seen > 0 {
+            state.span = state.span.saturating_mul(2).clamp(window, MAX_SPAN.max(window));
         }
-        busy
+        state.seen = 0;
+        state.written = if active { burst } else { 0 };
+        active
     }
 
     /// Turn a key's held events into one aggregated event, resetting its buffer.
@@ -472,12 +472,10 @@ impl Throttle {
             if let Some(summary) = Self::summarize(state) {
                 due.push(summary);
             }
-            // A key that saw nothing in the window that closed carries no information; dropping
-            // it keeps the table proportional to ACTIVE detections rather than to all of history.
-            if state.seen == 0 && state.held.is_empty() {
+            // A key silent for MAX_SPAN carries no information; dropping it keeps the table
+            // proportional to ACTIVE detections rather than to all of history.
+            if !Self::close_window(state, now, window, burst) {
                 idle.push(*key);
-            } else {
-                Self::close_window(state, now, window, burst);
             }
         }
         self.summaries += due.len() as u64;
@@ -644,10 +642,12 @@ mod tests {
         }
         // the busy window closes into a summary...
         assert_eq!(t.flush_due(1000 + 60).len(), 1, "the closed window must be summarized, not forgotten");
-        // ... then a whole (doubled) window with nothing, and the key is forgotten
+        // ... then an hour with nothing, and the key is forgotten
         assert!(t.flush_due(1000 + 60 + 120).is_empty());
+        assert_eq!(t.tracked_keys(), 1, "a key quiet for one window is still remembered");
+        assert!(t.flush_due(1000 + 3600).is_empty());
         assert_eq!(t.tracked_keys(), 0, "a quiet key leaves the table");
-        let (decision, _) = t.admit(&event(1000 + 400, 50000, "evil.example"));
+        let (decision, _) = t.admit(&event(1000 + 4000, 50000, "evil.example"));
         assert_eq!(decision, Decision::Write, "after a quiet spell it is a new detection, written at once");
     }
 
@@ -674,6 +674,30 @@ mod tests {
             (5..=12).contains(&summaries),
             "a handful of summary lines over three hours, not 540 events: {summaries}"
         );
+    }
+
+    #[test]
+    fn a_five_minute_poller_is_summarized_too() {
+        // The same host overnight: every five minutes a DNS line and a TLS line 50 ms apart, then
+        // silence. Each poll looked quiet to a 60 s window, so each started over - 24 lines an
+        // hour. Ten hours of it is now the first poll plus about one summary an hour.
+        let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
+        let (mut written, mut summaries) = (0, 0);
+        // ticked every second, as the sensor's loop does: the bug lived in what happens to a key
+        // BETWEEN polls
+        for sec in 1000..1000 + 10 * 3600u64 {
+            summaries += t.flush_due(sec).len();
+            if (sec - 1000) % 300 == 0 {
+                for k in 0..2u16 {
+                    if t.admit(&event(sec, 40000 + k, "api.ipify.org")).0 == Decision::Write {
+                        written += 1;
+                    }
+                }
+            }
+        }
+        summaries += t.flush_all().len();
+        assert_eq!(written, 2, "only the first poll is written verbatim");
+        assert!((8..=20).contains(&summaries), "about one summary an hour, not 240 events: {summaries}");
     }
 
     #[test]

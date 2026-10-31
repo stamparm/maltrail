@@ -21,10 +21,11 @@
     REPLIES were counted as the client scanning - a datagram answering one we saw sent no longer
     counts. Periodic beaconing (56 -> 5): visitors connecting IN to a local server, and a torrent
     client retrying its swarm peers, are no longer beacons. Long domain (50 -> 0): Amazon device
-    telemetry (a2z.com, aws.dev) and googleapis.com. Every static hit, the scanner user agent,
+    telemetry (a2z.com, aws.dev), googleapis.com and HBO Max's CDN (max.com). Every static hit, the scanner user agent,
     web scanning and the RCE attempt are unchanged.
-[!] A poller hitting the same trail once a minute was never summarized by the event throttle
-    (748 events in 3 hours); a busy key now backs off, doubling up to an hour.
+[!] A poller hitting the same trail was never summarized by the event throttle: once a minute,
+    748 events in 3 hours; every five minutes, 24 an hour all night. A key that recurs within an
+    hour of its last event now goes into a summary, the window doubling up to an hour.
 [!] One network blip at update time dropped sslbl (certificates, JA3) and Tor exit trails for a
     whole day; an empty or failing feed is now retried in place (after 10 s, then 30 s).
 [!] Stopping the sensor left its trail updater running, and the next sensor started a second one

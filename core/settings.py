@@ -221,9 +221,8 @@ HASH_LABEL_SERVICE_ZONES = (
     "spamhaus.org", "spamcop.net", "sorbs.net", "barracudacentral.org", "surbl.org",
     "uribl.com", "abuseat.org", "senderbase.org", "mailspike.net", "invaluement.com",
     "akamai.net", "akamaiedge.net", "cloudfront.net", "azureedge.net", "windows.net",
-    "amazonaws.com", "a2z.com", "aws.dev", "googleapis.com", "googleusercontent.com", "1e100.net",
-    "cdn77.org",
-    "fastly.net",
+    "amazonaws.com", "a2z.com", "aws.dev", "max.com", "googleapis.com", "googleusercontent.com",
+    "1e100.net", "cdn77.org", "fastly.net",
     "_domainkey", "_dmarc", "_spf", "acme-challenge",
 )
 LOCAL_SUBDOMAIN_LOOKUPS = ("wpad", "autodiscover", "_ldap._tcp")
