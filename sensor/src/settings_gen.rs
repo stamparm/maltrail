@@ -19,7 +19,6 @@ pub const WEB_SCANNING_THRESHOLD: usize = 10;
 pub const INFECTION_SCANNING_THRESHOLD: usize = 32;
 pub const DNS_EXHAUSTION_THRESHOLD: usize = 1000;
 pub const NO_SUCH_NAME_PER_HOUR_THRESHOLD: u32 = 20;
-pub const SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD: usize = 24;
 
 /// DNS tunneling: every one of these must hold at once, which is the point - see core/settings.py
 pub const DNS_TUNNELING_MIN_QUERIES: usize = 150;
@@ -112,7 +111,6 @@ pub const WHITELIST_HTTP_REQUEST_PATHS: &[&str] = &[
     "/gwx/",
 ];
 
-pub const WHITELIST_LONG_DOMAIN_NAME_KEYWORDS: &[&str] = &["blogspot"];
 pub const HASH_LABEL_SERVICE_ZONES: &[&str] = &[
     "sophosxl.net",
     "sophos.com",

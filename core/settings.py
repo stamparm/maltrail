@@ -180,7 +180,6 @@ BOGON_RANGES = {}
 CDN_RANGES = {}
 WHITELIST_HTTP_REQUEST_PATHS = ("fql", "yql", "ads", "../images/", "../themes/", "../design/", "../scripts/", "../assets/", "../core/", "../js/", "/gwx/")
 WHITELIST_UA_REGEX = r"AntiVir\-NGUpd|TMSPS|AVGSETUP|SDDS|Sophos|Symantec|internal dummy connection|Microsoft\-CryptoAPI"
-WHITELIST_LONG_DOMAIN_NAME_KEYWORDS = ("blogspot",)
 
 # --- DNS tunneling -------------------------------------------------------------------------
 #
@@ -204,11 +203,6 @@ DNS_TUNNELING_WINDOW = 900              # accumulation window
 # Zones whose ORDINARY traffic is a long, high-entropy, never-repeated label per query: antivirus
 # and URL-reputation services, DNS blocklists, CDNs and object stores. Their normal operation is
 # shaped exactly like data exfiltration and exactly like a DGA.
-#
-# Used by BOTH the dns_tunneling accumulator and the older long_domain check. Measured on 4,300
-# synthetic reputation/blocklist queries: long_domain alone reported 1,200 of them, one event per
-# lookup, on the two zones data/whitelist.txt happens not to carry. That is the shape of alert
-# fatigue - an operator sees a page of "long domain" about their antivirus and mutes the heuristic.
 #
 # data/whitelist.txt covers most of these for the whole engine already. This list exists for the
 # ones it does not, and so that a detector this specific carries its own reasons rather than
@@ -245,7 +239,6 @@ MMAP_ZFILL_CHUNK_LENGTH = 1024 * 1024
 HOURLY_SECS = 1 * 60 * 60
 DAILY_SECS = 24 * 60 * 60
 DNS_EXHAUSTION_THRESHOLD = 1000
-SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD = 24
 SUSPICIOUS_DOMAIN_CONSONANT_THRESHOLD = 9
 SUSPICIOUS_DOMAIN_ENTROPY_THRESHOLD = 3.5
 WHITELIST = set()

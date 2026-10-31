@@ -11,18 +11,20 @@ pub mod scan;
 use crate::addr::Ip;
 
 /// The heuristics an operator can mute individually via `DISABLED_HEURISTICS`.
-pub const HEURISTIC_NAMES: [&str; 10] = [
+pub const HEURISTIC_NAMES: [&str; 9] = [
     "port_scanning",
     "udp_scanning",
     "infection",
     "web_scanning",
     "dns_exhaustion",
-    "long_domain",
     "beaconing",
     "dns_tunneling",
     "icmp_tunneling",
     "idn_homograph",
 ];
+
+/// Removed heuristics: still accepted in `DISABLED_HEURISTICS`, so an old config raises no warning.
+pub const RETIRED_HEURISTIC_NAMES: [&str; 1] = ["long_domain"];
 
 /// Hard cap on the number of distinct keys any one heuristic accumulator may hold.
 ///

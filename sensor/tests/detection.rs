@@ -848,14 +848,13 @@ fn disabled_heuristics_mute_only_the_named_one() {
 }
 
 #[test]
-fn long_domain_heuristic() {
+fn a_long_label_alone_is_not_reported() {
+    // long_domain was removed: on live traffic its events were CDN and device-telemetry hashes
+    // (a2z.com, aws.dev, max.com, googleapis.com), one zone exemption at a time.
     let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
-    let long = "a".repeat(30);
-    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40000, 53, &dns(&format!("{long}.example.org")))), 1);
-    let events = h.events();
-    assert_eq!(events.len(), 1, "{events:?}");
-    assert!(events[0].info.contains("long domain"));
-    assert_eq!(events[0].trail, format!("({long}).example.org"));
+    let long = "8b3db54c02e5305c2f4ba9cac0b1c3eb8c85f8d8a8f703f7fb1e4767f67d70b";
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40000, 53, &dns(&format!("{long}.example.top")))), 1);
+    assert!(h.events().is_empty(), "{:?}", h.events());
 }
 
 #[test]
@@ -1185,35 +1184,13 @@ fn the_same_volume_delivered_as_a_burst_is_not_reported() {
 
 #[test]
 fn a_reputation_service_is_never_reported_however_much_it_is_used() {
-    // sxl.sophos.com is NOT in data/whitelist.txt - HASH_LABEL_SERVICE_ZONES is what covers it,
-    // and this is the case that made the older long_domain heuristic emit one event per lookup
+    // sxl.sophos.com is NOT in data/whitelist.txt - HASH_LABEL_SERVICE_ZONES is what covers it
     let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
     for i in 0..600u64 {
         tunnel_query(&mut h, "10.0.0.6", &format!("{}.sxl.sophos.com", chunk(i, 40)), i * 2);
     }
     let noisy: Vec<_> = h.events().into_iter().filter(|e| e.info.contains("suspicious")).collect();
     assert!(noisy.is_empty(), "an antivirus lookup must produce nothing at all: {noisy:?}");
-}
-
-#[test]
-fn amazon_device_telemetry_is_not_a_long_domain() {
-    // the live run's only long-domain events: 48 + 3 lookups from Echo/Fire devices, every one of
-    // them a hash label under these two zones. A long label elsewhere must still report.
-    let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
-    for (i, name) in [
-        "8b3db54c02e5305c2f4ba9cac0b1c3eb8c85f8d8a8f703f7fb1e4767f67d70b.us-east-1.prod.service.minerva.devices.a2z.com",
-        "abfrtzaaaaaaaaamaaaaaaaaaaaaa.cbr.cf-embedded.web.us-east-1.prod.diagnostic.networking.aws.dev",
-        "abfrtzaaaaaaaaamiil2bz77zoutg.cf.eu.prd.media.max.com",
-        "8b3db54c02e5305c2f4ba9cac0b1c3eb8c85f8d8a8f703f7fb1e4767f67d70b.devices.a2z.com.example.top",
-    ]
-    .iter()
-    .enumerate()
-    {
-        tunnel_query(&mut h, "10.0.0.8", name, i as u64);
-    }
-    let long: Vec<_> = h.events().into_iter().filter(|e| e.info.contains("long domain")).map(|e| e.trail).collect();
-    assert_eq!(long.len(), 1, "only the control may report: {long:?}");
-    assert!(long[0].ends_with("example.top"), "{long:?}");
 }
 
 #[test]
@@ -1669,15 +1646,21 @@ fn a_flood_of_responses_does_not_become_a_flood_of_events() {
 
 #[test]
 fn a_cname_target_is_not_judged_by_the_heuristics() {
-    // CDNs alias names to long hashed labels; as a lookup this one would be a "long domain".
-    let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
-    let long = "a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4.cdn.example-edge.net";
-    h.feed_ip(&from_resolver(&cname_response(1, "innocent.org", &[long])), 1);
+    // as a lookup this one would be a homograph of apple.com (an empty USER_WHITELIST loads the
+    // shipped data/whitelist.txt, which the homograph check needs)
+    let empty = std::env::temp_dir().join(format!("mt-cname-homograph-{}.txt", std::process::id()));
+    std::fs::write(&empty, "").unwrap();
+    let mut options = HarnessOptions::heuristics();
+    options.extra.push(format!("USER_WHITELIST {}", empty.display()));
+    let mut h = Harness::with_options(&[], options);
+    let target = "xn--pple-43d.com";
+    h.feed_ip(&from_resolver(&cname_response(1, "innocent.org", &[target])), 1);
     assert!(h.events().is_empty(), "{:?}", h.events());
     // ...and that check left no "clean" verdict behind: asked for directly, it is still judged.
-    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40001, 53, &dns(long))), 2);
-    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40002, 53, &dns(long))), 3);
-    assert!(h.events().iter().any(|e| e.info.contains("long domain")), "{:?}", h.events());
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40001, 53, &dns(target))), 2);
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40002, 53, &dns(target))), 3);
+    assert!(h.events().iter().any(|e| e.info.contains("homograph")), "{:?}", h.events());
+    let _ = std::fs::remove_file(&empty);
 }
 
 #[test]

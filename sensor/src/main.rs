@@ -882,8 +882,7 @@ fn run() -> i32 {
 }
 
 /// The heuristics whose evidence is counted PER SOURCE, and which fanout therefore dilutes.
-/// `long_domain` and `dns_exhaustion` are per name/domain, so they are unaffected by which
-/// worker a packet lands on.
+/// `dns_exhaustion` is per domain, so it is unaffected by which worker a packet lands on.
 fn scan_heuristics_enabled(cfg: &Config) -> bool {
     ["port_scanning", "udp_scanning", "infection", "web_scanning"].iter().any(|h| cfg.heuristic_enabled(h))
 }

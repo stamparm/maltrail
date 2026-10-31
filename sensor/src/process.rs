@@ -241,46 +241,8 @@ fn check_domain_inner(
             }
         }
 
-        // Heuristics judge names a client asked for. A CNAME target is the resolver's answer -
-        // CDNs alias everything to long hashed names - so it is matched against trails only.
-        if !result
-            && !whitelisted
-            && alias_of.is_none()
-            && st.cfg.use_heuristics
-            && st.heuristic_enabled("long_domain")
-            && first_label.chars().count() > settings::SUSPICIOUS_DOMAIN_LENGTH_THRESHOLD
-            && !first_label.contains('-')
-            // Antivirus and reputation services put a hash in the first label of every lookup, so
-            // this fired once per query against them - 1,200 events from 1,200 legitimate lookups
-            // in a measured run, on the two zones data/whitelist.txt happens not to carry. Sharing
-            // the tunneling detector's zone list costs no detection: a long label on a zone that
-            // is not a reputation service still reports.
-            && !crate::heuristics::dns_tunneling::allowed_zone(q)
-        {
-            {
-                let trail = match label_count {
-                    0 | 1 => q.to_string(),
-                    2 => format!("({}).{}", first_label, dots.last_label(q)),
-                    _ => format!("({}).{}", dots.prefix_upto(q, label_count - 2), dots.suffix_from(q, label_count - 2)),
-                };
-                if !trail.is_empty() && !st.statics.whitelist_long_domain.is_match(&trail) {
-                    result = true;
-                    emit_ep(
-                        st,
-                        sec,
-                        usec,
-                        ep,
-                        proto,
-                        TRAIL::DNS,
-                        Field::Text(trail),
-                        "long domain (suspicious)",
-                        "(heuristic)",
-                    );
-                }
-            }
-        }
-
-        // IDN homograph of a listed (popular) domain - see heuristics/homograph.rs.
+        // IDN homograph of a listed (popular) domain - see heuristics/homograph.rs. Heuristics judge
+        // names a client asked for: a CNAME target is the resolver's answer, matched against trails only.
         if !result
             && !whitelisted
             && alias_of.is_none()

@@ -110,7 +110,6 @@ never stalls capture.
 | `dns_exhaustion` | many subdomains of one domain in a minute |
 | `dns_tunneling` | sustained high-entropy queries to one zone that is not a known reputation or DNSBL service |
 | excessive NXDOMAIN | many NXDOMAIN answers for one domain within an hour |
-| `long_domain` | an over-long first label, minus known reputation zones |
 | `idn_homograph` | an `xn--` name whose Cyrillic, Greek or Armenian lookalike letters spell a whitelisted domain it is not |
 | `beaconing` | TCP SYNs from one source to one destination port at timer-like intervals |
 | `icmp_tunneling` | echo requests carrying ever-changing payloads unlike any ping tool's |

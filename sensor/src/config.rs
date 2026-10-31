@@ -424,8 +424,14 @@ fn unknown_keys(raw: &HashMap<String, Value>) -> Vec<String> {
 /// the heuristic an operator meant to silence keeps firing while the file looks correct. It is
 /// easy to get wrong - the shipped config listed six of the eight accepted names for a while.
 fn unknown_heuristics(disabled: &[String]) -> Vec<String> {
-    let mut out: Vec<String> =
-        disabled.iter().filter(|name| !crate::heuristics::HEURISTIC_NAMES.contains(&name.as_str())).cloned().collect();
+    let mut out: Vec<String> = disabled
+        .iter()
+        .filter(|name| {
+            !crate::heuristics::HEURISTIC_NAMES.contains(&name.as_str())
+                && !crate::heuristics::RETIRED_HEURISTIC_NAMES.contains(&name.as_str())
+        })
+        .cloned()
+        .collect();
     out.sort();
     out.dedup();
     out
@@ -1662,6 +1668,7 @@ SENSOR_NAME box   # trailing comment
         // every accepted name really is accepted
         let all: Vec<String> = HEURISTIC_NAMES.iter().map(|s| s.to_string()).collect();
         assert!(unknown_heuristics(&all).is_empty(), "HEURISTIC_NAMES disagrees with itself");
+        assert!(unknown_heuristics(&["long_domain".to_string()]).is_empty(), "a retired name must not warn");
 
         // and the worked example in the shipped file must use real names, or an operator who
         // uncomments it silences nothing

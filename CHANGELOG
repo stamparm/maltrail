@@ -30,6 +30,10 @@
     whole day; an empty or failing feed is now retried in place (after 10 s, then 30 s).
 [!] Stopping the sensor left its trail updater running, and the next sensor started a second one
     on the same trails.csv; the updater now dies with the sensor and removes its temp files.
+[-] The long domain heuristic (a first label over 24 characters). On live traffic every event but
+    one was a CDN or device-telemetry hash (a2z.com, aws.dev, max.com, googleapis.com), and each
+    fix was one more exempt zone. Tunneling is left to dns_tunneling, which needs volume and a
+    session; 'long_domain' is still accepted in DISABLED_HEURISTICS.
 [=] User-Agent reports the machine (aarch64, x86_64) instead of the pointer width ("x64").
 
 [!] The daily trail update took over 70 minutes on a Pi Zero: every host

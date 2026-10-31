@@ -168,7 +168,6 @@ pub struct Statics {
     pub proxy_probe_pre_condition: AhoCorasick,
     pub whitelist_request_paths: AhoCorasick,
     pub whitelist_direct_download: AhoCorasick,
-    pub whitelist_long_domain: AhoCorasick,
     pub local_subdomain_lookups: AhoCorasick,
     pub condense_on_info: AhoCorasick,
 
@@ -352,7 +351,6 @@ impl Statics {
             proxy_probe_pre_condition: ac(SUSPICIOUS_PROXY_PROBE_PRE_CONDITION),
             whitelist_request_paths: ac(WHITELIST_HTTP_REQUEST_PATHS),
             whitelist_direct_download: ac(WHITELIST_DIRECT_DOWNLOAD_KEYWORDS),
-            whitelist_long_domain: ac(WHITELIST_LONG_DOMAIN_NAME_KEYWORDS),
             local_subdomain_lookups: ac(LOCAL_SUBDOMAIN_LOOKUPS),
             condense_on_info: ac(CONDENSE_ON_INFO_KEYWORDS),
 
