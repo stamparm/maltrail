@@ -42,6 +42,8 @@ NO_CHECKOUT = "no stamparm/trails checkout (gate.yml in that repository runs thi
 
 # (key, reason it can never match)
 INERT = [
+    ("144.172.84", "an IPv4 address with a quad missing (#19630): no TLD is numeric"),
+    ("1.2.3.4.5", "one quad too many"),
     ("host_.tld_", "underscore in the TLD position: no such TLD"),
     ("evil.local", "an IGNORE_DNS_QUERY_SUFFIXES suffix: the query never reaches a lookup"),
     ("bad|char.biz", "'|' is not a DNS character - one corrupted onion address in lockbit.txt"),

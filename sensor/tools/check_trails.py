@@ -284,6 +284,10 @@ def classify(key, whitelist=None, info="", raw=None, suffixes=None):
         return ("inert", "wire form %r is not a valid DNS name: the query is refused before the lookup" % wire)
 
     last = wire.rsplit('.', 1)[-1]
+    if last.isdigit():
+        # No TLD is all-numeric, so this is an address with a quad missing (`http://144.172.84`, #19630):
+        # loaded as a name, it never matches a name or an address.
+        return ("inert", "last label '%s' is a number: not a whole IPv4 address and not a name, so nothing can match it" % last)
     if last in IGNORE_DNS_QUERY_SUFFIXES:
         # The query is dropped by the ignore-suffix filter BEFORE the lookup, so this trail can
         # never match. Found by a volume test: "dev" sat on that list from when .dev meant a local
