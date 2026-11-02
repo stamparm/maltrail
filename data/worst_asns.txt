@@ -7570,3 +7570,13 @@
 196.251.107.0/24,femoit
 196.251.122.0/24,femoit
 62.60.226.0/24,femoit
+
+# AS 198364
+# Reference: https://ipinfo.io/AS198364
+
+109.160.32.0/24,banatsync-srl
+31.77.227.0/24,banatsync-srl
+5.175.137.0/24,banatsync-srl
+77.239.124.0/24,banatsync-srl
+89.106.72.0/24,banatsync-srl
+94.249.227.0/24,banatsync-srl
