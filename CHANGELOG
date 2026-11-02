@@ -333,6 +333,10 @@
 [!] A scan (port, UDP, web, infection) or ICMP tunnel in the last second of
     a replayed capture is reported. The heuristics report on the next
     packet's arrival, and at the end of the file none arrived.
+[=] The previous/next day arrows skip days with no events, stopping at today (#19614)
+[=] Custom trails get their own class icon in the info column (#19623)
+[!] Trail gate: a truncated IP (`http://144.172.84`), a name under no TLD (`minglu.de5`) and a
+    pasted header (`# Reference: # Reference:`) fail it (#19630, #19631, #19624)
 
 
 

@@ -162,6 +162,7 @@
   .cls-malware{color:var(--sev-high)}
   .cls-malicious{color:#F97316}
   .cls-suspicious{color:var(--sev-med)}
+  .cls-custom{color:#8f7bd0}
   /* notable / high-risk destination port (C2, RAT, remote-access) */
   .port.risky,.dchip.risky{color:var(--sev-med);cursor:help}
   .dchip.risky{border-color:rgba(245,158,11,.45)}

@@ -239,7 +239,7 @@ class TestThreatClassIcon(unittest.TestCase):
     pins. "known attacker" in particular has to stay LOW.
     """
 
-    # info -> the class icon it must resolve to (None = deliberately none)
+    # info -> the class icon it must resolve to (None = deliberately none), optionally with the event's reference
     ICON_CASES = (
         ("malware", "malware"),                             # urlhaus, viriback, cybercrimetracker, ...
         ("potential malware site", "malware"),
@@ -253,6 +253,10 @@ class TestThreatClassIcon(unittest.TestCase):
         ("gophish (malicious)", "malicious"),
         ("potential port scanning (suspicious)", "suspicious"),
         ("mass scanner", None),                             # not a threat class, so no icon
+        ("blacklisted", "custom", "(custom)"),              # a custom trail: info is its file name (#19623)
+        ("partner leak", "custom", "(remote custom)"),
+        ("phishing", "custom", "(custom)"),                 # the operator's own, whatever the file is called
+        ("cobaltstrike (malware)", "malware", "(custom)"),  # an explicit marker still wins
     )
 
     # info, ref -> severity that must be EXACTLY what it was before the icons existed
@@ -282,7 +286,7 @@ class TestThreatClassIcon(unittest.TestCase):
         import subprocess
         icons = re.search(r"var CLASS_ICON = \{.*?\n  \};", self.js, re.S)
         table = re.search(r"var UNMARKED_INFO_CLASS = \[.*?\];", self.js, re.S)
-        fn = re.search(r"function classOf\(info\) \{.*?\n  \}", self.js, re.S)
+        fn = re.search(r"function classOf\(info, ref\) \{.*?\n  \}", self.js, re.S)
         self.assertTrue(icons and table and fn,
                         "could not find CLASS_ICON / UNMARKED_INFO_CLASS / classOf() in main.js")
         script = ("var _lucideTag = '';\n" + icons.group(0) + "\n" + table.group(0) + "\n"
@@ -294,18 +298,18 @@ class TestThreatClassIcon(unittest.TestCase):
         out = self._run("""
 var cases = %s;
 cases.forEach(function (c) {
-  var got = classOf(c[0]);
+  var got = classOf(c[0], c[2]);
   if (got !== c[1]) console.log("FAIL " + JSON.stringify(c[0]) + " -> " + got);
 });
 console.log("OK");
-""", [(a, b) for a, b in self.ICON_CASES])
+""", [(c + (None,))[:3] for c in self.ICON_CASES])
         self.assertEqual("OK", out, out)
 
     def test_a_trailing_qualifier_is_not_eaten(self):
         # The row strips the trailing parenthetical only when it IS the class. Stripping whichever
         # parenthetical happened to be last would render "bad reputation (tor node)" as
         # "bad reputation" and lose which kind of node it was.
-        row = re.search(r"var ic = classOf\(t\.info\), desc = (.*?);", self.js)
+        row = re.search(r"var ic = classOf\(t\.info, t\.ref\), desc = (.*?);", self.js)
         self.assertTrue(row, "could not find the info cell in main.js")
         self.assertIn("malware|malicious|suspicious", row.group(1),
                       "the info cell strips any trailing parenthetical again, so a qualifier like "
@@ -1499,6 +1503,48 @@ class TestThreatGrouping(unittest.TestCase):
                 self._row("10.2.0.1", "(*).exfil.example", "long domain (suspicious) (+5 more)")]
         self.assertEqual(self._threats(rows), [[None, 2, 1]])
 
+
+class TestDayArrowsSkipEmptyDays(unittest.TestCase):
+    """Prev/next day step to the nearest day with events, and stop at today (#19614)."""
+
+    def _step(self, cur, delta, counts, ok=True):
+        import subprocess
+        js = _read(MAIN_JS)
+        fn = re.search(r"function shiftDay\(delta\) \{.*?\n  \}", js, re.S)
+        add = re.search(r"function addDays\(ds, n\) \{.*?\n  \}", js, re.S)
+        self.assertTrue(fn and add, "could not find shiftDay() / addDays() in main.js")
+        script = """
+function pad2(n) { return (n < 10 ? "0" : "") + n; }
+var DEMO = false, _counts = %s, landed = null;
+function todayStr() { return "2026-11-02"; }
+function currentDate() { return %s; }
+function rangeParts() { return null; }
+function fetchCounts() { return Promise.resolve(%s); }
+function setDate(d) { landed = d; }
+function navigate() {}
+%s
+%s
+shiftDay(%d);
+setTimeout(function () { console.log(landed); }, 0);
+""" % (json.dumps(counts), json.dumps(cur), "true" if ok else "false", add.group(0), fn.group(0), delta)
+        node = next((c for c in ("node", "nodejs") if any(os.access(os.path.join(d, c), os.X_OK)
+                     for d in os.environ.get("PATH", "").split(os.pathsep) if d)), None)
+        if not node:
+            self.skipTest("needs node to evaluate shiftDay()")
+        return subprocess.check_output([node, "-e", script]).decode().strip()
+
+    def test_empty_days_are_skipped(self):
+        counts = {"2026-10-20": 40, "2026-10-25": 7, "2026-10-26": 0}
+        self.assertEqual(self._step("2026-10-28", -1, counts), "2026-10-25")    # 27, 26 (zero) skipped
+        self.assertEqual(self._step("2026-10-25", -1, counts), "2026-10-20")
+        self.assertEqual(self._step("2026-10-20", 1, counts), "2026-10-25")
+
+    def test_today_is_always_a_stop(self):
+        self.assertEqual(self._step("2026-10-25", 1, {"2026-10-25": 7}), "2026-11-02")
+
+    def test_without_counts_it_is_a_plain_step(self):
+        self.assertEqual(self._step("2026-10-28", -1, {}), "2026-10-27")        # nothing known in a year
+        self.assertEqual(self._step("2026-10-28", -1, {"2026-10-20": 40}, ok=False), "2026-10-27")
 
 if __name__ == "__main__":
     unittest.main()

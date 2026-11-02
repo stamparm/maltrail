@@ -151,7 +151,8 @@
   var CLASS_ICON = {
     malware: _lucideTag + '<circle cx="12" cy="11.9" r="2"/><path d="M6.7 3.4c-.9 2.5 0 5.2 2.2 6.7C6.5 9 3.7 9.6 2 11.6"/><path d="m8.9 10.1 1.4.8"/><path d="M17.3 3.4c.9 2.5 0 5.2-2.2 6.7 2.4-1.2 5.2-.6 6.9 1.5"/><path d="m15.1 10.1-1.4.8"/><path d="M16.7 20.8c-2.6-.4-4.6-2.6-4.7-5.3-.2 2.6-2.1 4.8-4.7 5.2"/><path d="M12 13.9v1.6"/><path d="M13.5 5.4c-1-.2-2-.2-3 0"/><path d="M17 16.4c.7-.7 1.2-1.6 1.5-2.5"/><path d="M5.5 13.9c.3.9.8 1.8 1.5 2.5"/></svg>',
     malicious: _lucideTag + '<path d="m12.5 17-.5-1-.5 1h1z"/><path d="M15 22a1 1 0 0 0 1-1v-1a2 2 0 0 0 1.56-3.25 8 8 0 1 0-11.12 0A2 2 0 0 0 8 20v1a1 1 0 0 0 1 1z"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="12" r="1"/></svg>',
-    suspicious: _lucideTag + '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>'
+    suspicious: _lucideTag + '<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>',
+    custom: _lucideTag + '<circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>'   // Lucide user-round: the operator's own trail (#19623)
   };
   // Feed infos that carry no trailing class marker, mapped to the class they belong to. Static
   // trail files get "<filename> (<category>)" for free, and the heuristics all say "(suspicious)",
@@ -163,12 +164,14 @@
   var UNMARKED_INFO_CLASS = [["malware", "malware"], ["phishing", "malicious"],
     ["attacker", "suspicious"], ["reputation", "suspicious"], ["spammer", "suspicious"],
     ["crawler", "suspicious"]];
-  function classOf(info) {
+  // Custom trails take their file name as info, so they carry no marker: the reference says what they are.
+  function classOf(info, ref) {
     var text = "" + info, m = text.match(/\(([^)]+)\)\s*$/);
     if (m) {
       var c = m[1].toLowerCase().trim();
       if (CLASS_ICON[c]) return c;
     }
+    if (("" + (ref || "")).indexOf("custom") >= 0) return "custom";
     var lower = text.toLowerCase();
     for (var i = 0; i < UNMARKED_INFO_CLASS.length; i++)
       if (lower.indexOf(UNMARKED_INFO_CLASS[i][0]) >= 0) return UNMARKED_INFO_CLASS[i][1];
@@ -1978,7 +1981,7 @@
         '<td data-l="type"><span class="type lt-w" data-f="type:' + esc(t.type) + '" title="filter: type ' + esc(t.type) + '" style="background:' + tc + ';color:#fff">' + esc(t.type) + '</span></td>' +
         '<td data-l="trail">' + originGlyph(t.ref) + '<span class="trail" data-tip="' + esc(ftrail) + '">' + trailCellHtml(ftrailPH, ftrail) + '</span></td>' +
         '<td class="mono muted" data-l="info">' +
-          (function () { var ic = classOf(t.info), desc = ("" + t.info).replace(/\s*\((?:malware|malicious|suspicious)\)\s*$/i, "");
+          (function () { var ic = classOf(t.info, t.ref), desc = ("" + t.info).replace(/\s*\((?:malware|malicious|suspicious)\)\s*$/i, "");
             return (ic ? '<span class="cls cls-' + ic + '" data-tip="' + ic + '" aria-label="' + ic + '">' + CLASS_ICON[ic] + '</span>' : '') +
                    '<span class="clip" data-tip="' + esc(t.info) + '">' + esc(desc) + '</span>'; })() + '</td>' +
         '<td class="mono muted" data-l="first seen" data-tip="first ' + hms(t.first) + ' → last ' + hms(t.last) +
@@ -3160,17 +3163,17 @@
   // replaces the native OS date popup (white box + confusing "Clear" on some browsers).
   var MON_SHORT = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   var _counts = {};          // "YYYY-MM-DD" -> approx events that day
-  var _countsSpans = {};     // "from..to" -> true, so each visible span is fetched at most once
+  var _countsSpans = {};     // "from..to" -> its fetch promise, so each span is fetched at most once
   var HM_MONTHS = 4;         // months shown side by side
   function fmtYMD(d) { return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
   function heatBucket(n) { return !n ? 0 : n < 500 ? 1 : n < 1000 ? 2 : n < 5000 ? 3 : n < 10000 ? 4 : 5; }   // cal-heatmap-style thresholds
   function fetchCounts(fromStr, toStr) {
     if (DEMO) return;   // /counts is a server capability; the demo holds one day and must not invent densities for the rest
-    var key = fromStr + ".." + toStr; if (_countsSpans[key]) return; _countsSpans[key] = true;
-    fetch("/counts?from=" + fromStr + "&to=" + toStr, { credentials: "same-origin" })
+    var key = fromStr + ".." + toStr; if (_countsSpans[key]) return _countsSpans[key];
+    return (_countsSpans[key] = fetch("/counts?from=" + fromStr + "&to=" + toStr, { credentials: "same-origin" })
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (o) { if (!o) return; for (var k in o) _counts[k] = o[k]; if (state._dpOpen) buildHeatmap(); })   // repaint once densities arrive
-      .catch(function () { _countsSpans[key] = false; });   // let a transient failure retry on next open
+      .then(function (o) { if (!o) return false; for (var k in o) _counts[k] = o[k]; if (state._dpOpen) buildHeatmap(); return true; })   // repaint once densities arrive
+      .catch(function () { _countsSpans[key] = null; return false; }));   // let a transient failure retry on next open
   }
   function ensureDatePop() {
     var pop = document.getElementById("datepop"); if (pop) return pop;
@@ -3294,6 +3297,16 @@
       // a 7-day range is on screen, not "the same range shifted by one day"
       var span = daySpan(r[0], r[1]);
       ns = addDays(r[0], delta * span) + "_" + addDays(r[1], delta * span);
+    } else if (!DEMO) {
+      // Step to the nearest day that HAS events (#19614): an empty day shows nothing, so landing on one is a
+      // wasted click. Today is always a stop (live). Without counts it is a plain one-day step, as before.
+      var today = todayStr(), lo = delta < 0 ? addDays(cur, -366) : addDays(cur, 1), hi = delta < 0 ? addDays(cur, -1) : today;
+      Promise.resolve(fetchCounts(lo, hi)).then(function (ok) {
+        var d = addDays(cur, delta);
+        if (ok) for (var x = d; x >= lo && x <= hi; x = addDays(x, delta)) if (_counts[x] > 0 || x === today) { d = x; break; }
+        setDate(d); navigate(d);
+      });
+      return;
     } else {
       ns = addDays(cur, delta);
     }
