@@ -881,3 +881,35 @@ def patch_parser(parser):
 
         parser.formatter_class.__format_action_invocation = parser.formatter_class._format_action_invocation
         parser.formatter_class._format_action_invocation = _format_action_invocation
+
+
+def port_holder(port, udp=False):
+    """"PID <n> (<command line>)" of a process bound to this local port, or None when /proc cannot say.
+
+    Binding failed, which says only that SOMETHING holds the port - not that it is another Maltrail.
+    Linux only, and a process owned by another user is invisible without root: None then, never a guess.
+    """
+
+    inodes = set()
+    for name in ("udp", "udp6") if udp else ("tcp", "tcp6"):
+        try:
+            with open("/proc/net/%s" % name) as f:
+                for line in list(f)[1:]:
+                    parts = line.split()
+                    # local_address is "HEXADDR:HEXPORT"; TCP must be LISTEN (0A), a bound UDP socket is 07
+                    if int(parts[1].rsplit(':', 1)[1], 16) == port and parts[3] == ("07" if udp else "0A"):
+                        inodes.add("socket:[%s]" % parts[9])
+        except (IOError, OSError, IndexError, ValueError):
+            pass
+
+    if inodes:
+        for pid in filter(str.isdigit, os.listdir("/proc")):
+            try:
+                fds = os.listdir("/proc/%s/fd" % pid)
+                if any(os.readlink("/proc/%s/fd/%s" % (pid, fd)) in inodes for fd in fds):
+                    with open("/proc/%s/cmdline" % pid, "rb") as f:
+                        cmdline = f.read().replace(b"\0", b" ").decode("utf8", "replace").strip()
+                    return "PID %s (%s)" % (pid, cmdline[:80])
+            except (IOError, OSError):
+                continue
+    return None

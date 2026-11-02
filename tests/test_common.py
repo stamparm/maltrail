@@ -382,5 +382,23 @@ class TestRipeLookup(unittest.TestCase):
         self.assertEqual(self._calls, [], "only the two fixed RIPEstat endpoints may be reached")
 
 
+
+class TestPortHolder(unittest.TestCase):
+    def test_names_the_process_listening(self):
+        # "another instance already running" was a guess from a failed bind (#19611): name the holder
+        import socket
+        from core.common import port_holder
+        if not os.path.isdir("/proc/self/fd"):
+            self.skipTest("needs /proc")
+        s = socket.socket()
+        try:
+            s.bind(("127.0.0.1", 0)); s.listen(1)
+            port = s.getsockname()[1]
+            self.assertIn("PID %d " % os.getpid(), port_holder(port) or "")
+            self.assertIsNone(port_holder(port, udp=True), "a TCP listener is not a UDP holder")
+        finally:
+            s.close()
+        self.assertIsNone(port_holder(port), "nothing holds it once closed")
+
 if __name__ == "__main__":
     unittest.main()

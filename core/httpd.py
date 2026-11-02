@@ -35,6 +35,7 @@ from core import log as _log
 from core import password
 from core import trailsbin
 from core.common import get_regex
+from core.common import port_holder
 from core.common import trails_bin_path
 from core.common import ipcat_lookup
 from core.common import spamhaus_drop
@@ -3253,7 +3254,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             server = ThreadingServer(_address, ReqHandler)
     except Exception as ex:
         if "Address already in use" in str(ex):
-            sys.exit("[!] another instance already running")
+            holder = port_holder(_address[1])
+            sys.exit("[!] port %d is already in use%s" % (_address[1], " by %s" % holder if holder else " (another instance running?)"))
         elif "Name or service not known" in str(ex):
             sys.exit("[!] invalid configuration value for 'HTTP_ADDRESS' ('%s')" % config.HTTP_ADDRESS)
         elif "Cannot assign requested address" in str(ex):

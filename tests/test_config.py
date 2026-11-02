@@ -234,5 +234,26 @@ class TestDecimalPredicate(unittest.TestCase):
         self.assertFalse(is_decimal(-1))
 
 
+
+class TestUnknownOptionWarning(unittest.TestCase):
+    def _warnings(self, extra):
+        import io
+        path = _write(_BASE, extra=extra)
+        _so, out = sys.stdout, io.StringIO()
+        sys.stdout = out
+        try:
+            read_config(path)
+        finally:
+            sys.stdout = _so; os.unlink(path)
+        return [_ for _ in out.getvalue().splitlines() if "unknown configuration option" in _]
+
+    def test_named_blacklists_are_not_typos(self):
+        # BLACKLIST_<NAME> is served at /blacklist/<name>, so any name is legitimate (#19610)
+        extra = "BLACKLIST\n    filter ~ malware\nBLACKLIST_OUT\n    filter ~ known attacker\n"
+        self.assertEqual(self._warnings(extra), [])
+
+    def test_a_typo_still_warns(self):
+        self.assertEqual(len(self._warnings("BLACKLSIT_OUT\n    filter ~ malware\nUSE_HEURISTCS true\n")), 2)
+
 if __name__ == "__main__":
     unittest.main()

@@ -517,7 +517,8 @@ def read_config(config_file):
         if option not in config:
             sys.exit("[!] missing mandatory option '%s' in configuration file '%s'" % (option, config_file))
 
-    for name in sorted(_ for _ in config.keys() if _ not in KNOWN_CONFIG_OPTIONS):
+    # BLACKLIST and BLACKLIST_<NAME> are open-ended by design: each name is served at /blacklist/<name>
+    for name in sorted(_ for _ in config.keys() if _ not in KNOWN_CONFIG_OPTIONS and not re.match(r"BLACKLIST(_|\Z)", _)):
         # A typo'd name parses fine, coerces fine and is then ignored - the feature it was meant
         # to configure just stays off while the file looks correct. Warn rather than exit: an
         # older config meeting a newer Maltrail (or the reverse) must keep working.

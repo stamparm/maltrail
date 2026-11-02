@@ -24,6 +24,7 @@ import socket
 import sys
 import time
 
+from core.common import port_holder
 from core.settings import config
 
 OK = 0
@@ -110,7 +111,9 @@ def _port_free(kind, family, address, port):
     except OSError as ex:
         if ex.errno == 13:  # EACCES: privileged port, or a sandbox - not "in use"
             return "binding port %d requires privileges (or is blocked here)" % port
-        return "%s endpoint %s:%d is not bindable (%s) - is another instance running?" % (kind, address, port, ex.strerror or str(ex))
+        holder = port_holder(port, udp=kind == socket.SOCK_DGRAM)
+        return "%s endpoint %s:%d is not bindable (%s) - %s" % (kind, address, port, ex.strerror or str(ex),
+                                                               "held by %s" % holder if holder else "is another instance running?")
 
 
 def check_http_endpoint():
