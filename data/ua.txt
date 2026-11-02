@@ -2908,6 +2908,11 @@ self\_update
 VectraFileTransfer/1.0
 VectraFileTransfer
 
+# Reference: https://github.com/PaloAltoNetworks/Unit42-timely-threat-intel/blob/main/2026-10-30-activity-using-ARTEX-agentic-AI.txt
+
+recon-audit
+security-testing
+
 # Misc
 
 information_schema
