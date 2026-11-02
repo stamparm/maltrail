@@ -6,8 +6,8 @@
 # single most expensive mistake this content can make, and nothing checked for it: the rule lived
 # in a script on one workstation.
 #
-# ICANN section only, and only EXACT non-wildcard rules. The PRIVATE section is deliberately
-# excluded - ply.gg, localto.net, blogspot.com and the rest are per-user hosting slots that
+# ICANN section only: exact rules, plus the parent of each wildcard rule (`*.np` -> `np`, which is
+# how the TLD list finds np at all). The PRIVATE section is deliberately excluded - ply.gg, localto.net, blogspot.com and the rest are per-user hosting slots that
 # Maltrail legitimately tracks, and treating them as registries would delete real detections.
 #
 # suspicious/domain.txt lists whole namespaces ON PURPOSE and writes them with a LEADING DOT
@@ -18,7 +18,7 @@
 #
 #     curl -sSL https://publicsuffix.org/list/public_suffix_list.dat | \
 #       awk '/^\/\/ ===BEGIN PRIVATE DOMAINS===/{exit} !/^\/\//&&NF{print tolower($1)}' | \
-#       grep -v '[!*]' | sort -u
+#       grep -v '!' | sed 's/^[*][.]//' | sort -u
 #
 # IDN suffixes appear twice, in Unicode and in punycode: core/update.py stores a non-ASCII
 # trail as punycode, so a check that only knew the Unicode form would never match one.
@@ -927,6 +927,7 @@ citic
 city
 city.hu
 civilaviation.aero
+ck
 ck.ua
 cl
 cl.it
@@ -1572,6 +1573,7 @@ entertainment.aero
 epson
 equipment
 equipment.aero
+er
 er.in
 ericsson
 erimo.hokkaido.jp
@@ -1680,6 +1682,7 @@ fj
 fj.cn
 fjaler.no
 fjell.no
+fk
 fl.us
 fla.no
 flakstad.no
@@ -2464,6 +2467,7 @@ i.bg
 i.ng
 i.ph
 i.se
+ia.bo
 ia.br
 ia.us
 ia.ve
@@ -2752,6 +2756,7 @@ jinsekikogen.hiroshima.jp
 jio
 jl.cn
 jll
+jm
 jmp
 jnj
 jo
@@ -2977,6 +2982,7 @@ kawanishi.hyogo.jp
 kawanishi.nara.jp
 kawanishi.yamagata.jp
 kawara.fukuoka.jp
+kawasaki.jp
 kawasaki.miyagi.jp
 kawatana.nagasaki.jp
 kawaue.gifu.jp
@@ -3049,6 +3055,7 @@ kitahiroshima.hokkaido.jp
 kitakami.iwate.jp
 kitakata.fukushima.jp
 kitakata.miyazaki.jp
+kitakyushu.jp
 kitami.hokkaido.jp
 kitamoto.saitama.jp
 kitanakagusuku.okinawa.jp
@@ -3074,6 +3081,7 @@ km.ua
 kmpsp.gov.pl
 kn
 kobayashi.miyazaki.jp
+kobe.jp
 kobierzyce.pl
 kochi.jp
 kochi.kochi.jp
@@ -3787,6 +3795,7 @@ mktg.ec
 ml
 mlb
 mls
+mm
 mma
 mn
 mn.it
@@ -3945,6 +3954,7 @@ nagi.okayama.jp
 nagiso.nagano.jp
 nago.okinawa.jp
 nagoya
+nagoya.jp
 naha.okinawa.jp
 nahari.kochi.jp
 naie.hokkaido.jp
@@ -4296,6 +4306,7 @@ nogi.tochigi.jp
 noheji.aomori.jp
 nokia
 nom.ag
+nom.br
 nom.co
 nom.es
 nom.fr
@@ -4341,6 +4352,7 @@ nowaruda.pl
 nowruz
 nowtv
 nozawaonsen.nagano.jp
+np
 nr
 nra
 nrw
@@ -4815,6 +4827,7 @@ pescara.it
 pet
 pf
 pfizer
+pg
 pg.in
 pg.it
 ph
@@ -5262,6 +5275,7 @@ saobernardo.br
 saogonca.br
 saotome.st
 sap
+sapporo.jp
 sar.it
 sardegna.it
 sardinia.it
@@ -5310,6 +5324,7 @@ sch.ng
 sch.qa
 sch.sa
 sch.ss
+sch.uk
 sch.zm
 schaeffler
 schmidt
@@ -5357,6 +5372,7 @@ seljord.no
 semboku.akita.jp
 semine.miyagi.jp
 senasa.ar
+sendai.jp
 sener
 sennan.osaka.jp
 seoul.kr
@@ -7057,6 +7073,7 @@ yokaichiba.chiba.jp
 yokawa.hyogo.jp
 yokkaichi.mie.jp
 yokohama
+yokohama.jp
 yokoshibahikari.chiba.jp
 yokosuka.kanagawa.jp
 yokote.akita.jp

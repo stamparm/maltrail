@@ -231,7 +231,17 @@ def wire_form(key):
         return None                              # stored verbatim, and no query can carry it
 
 
-def classify(key, whitelist=None, info="", raw=None, suffixes=None):
+# Roots outside ICANN that malware really resolves through: EmerCoin, Namecoin, OpenNIC, Tor, I2P, ENS.
+ALT_ROOTS = frozenset("bazar bit coin emc lib dyn geek libre oss pirate parody gopher indy glue null fur o bbs "
+                      "chan cyb epic neo oz i2p onion exit eth".split())
+
+
+def tlds(suffixes):
+    """Every delegated TLD: the last label of each ICANN suffix."""
+    return frozenset(_.rsplit('.', 1)[-1] for _ in suffixes or ())
+
+
+def classify(key, whitelist=None, info="", raw=None, suffixes=None, known_tlds=None):
     """(severity, reason) for one trail key, or None when it is reachable as written.
 
     severity is "inert" - it cannot match, ever - "overbroad": it matches an entire registry rather than a
@@ -288,6 +298,10 @@ def classify(key, whitelist=None, info="", raw=None, suffixes=None):
         # No TLD is all-numeric, so this is an address with a quad missing (`http://144.172.84`, #19630):
         # loaded as a name, it never matches a name or an address.
         return ("inert", "last label '%s' is a number: not a whole IPv4 address and not a name, so nothing can match it" % last)
+    if known_tlds and last not in known_tlds and last not in ALT_ROOTS:
+        # A scrape that lost or glued the last label (`minglu.de5` for minglu.de5.net, `1337x.pro2icu`, #19631).
+        # Such a name can still be queried, but only as an NXDOMAIN, so it is almost always a broken entry.
+        return ("inert", "'.%s' is not a TLD: a truncated or mistyped name (add it to ALT_ROOTS if it is a real alternative root)" % last)
     if last in IGNORE_DNS_QUERY_SUFFIXES:
         # The query is dropped by the ignore-suffix filter BEFORE the lookup, so this trail can
         # never match. Found by a volume test: "dev" sat on that list from when .dev meant a local
@@ -362,6 +376,8 @@ def header_problem(raw):
             return None
         return "misspelled header %r (expected 'Reference' or 'Aliases')" % key
     line = raw.rstrip('\n')
+    if value.lstrip().startswith('#'):
+        return "a header pasted into a header ('# Reference: # Reference: ...', #19624)"
     if HEADER_CANONICAL.match(line) and line == line.rstrip():
         return None
     if hashes != '#':
@@ -407,6 +423,7 @@ def problems(root, whitelist=None, suffixes=None):
     found = []
     if suffixes is None:
         suffixes = public_suffixes()
+    known_tlds = tlds(suffixes)
     for base, _, files in os.walk(root):
         for name in sorted(files):
             if not name.endswith(".txt"):
@@ -416,7 +433,7 @@ def problems(root, whitelist=None, suffixes=None):
             # Only used for the parking/sinkhole exemption below, which is keyed on it.
             info = os.path.splitext(name)[0].replace('_', ' ')
             for number, key, raw in entries(path):
-                verdict = classify(key, whitelist, info, raw, suffixes)
+                verdict = classify(key, whitelist, info, raw, suffixes, known_tlds)
                 if verdict:
                     found.append((path, number, key, verdict[0], verdict[1]))
     return found

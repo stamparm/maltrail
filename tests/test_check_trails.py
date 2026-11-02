@@ -94,6 +94,18 @@ class ClassifyTest(unittest.TestCase):
             self.assertFalse(verdict and verdict[0] == "inert",
                              "%r is reachable (%s) but was called inert: %s" % (key, why, verdict))
 
+    def test_a_name_under_no_tld_is_inert(self):
+        suffixes = C.public_suffixes()
+        known = C.tlds(suffixes)
+        for key in ("minglu.de5", "minglu.abrdns", "1337x.pro2icu", "testrain.s3.us-west-1.amazonaws.comc"):
+            verdict = C.classify(key, suffixes=suffixes, known_tlds=known)
+            self.assertEqual(verdict and verdict[0], "inert", "%r -> %s (#19631)" % (key, verdict))
+        # wildcard-only ccTLDs (`*.np` in the PSL), alternative roots, and IDN TLDs in punycode are real
+        for key in ("customer.riteshraj.com.np", "yec.edu.mm", "aegijmaliijo.bazar", "cyber7.bit", "x.onion",
+                    "blackpeeps.dyn", "minglu.de5.net", u"\u043f\u0440\u0438\u043c\u0435\u0440.\u0440\u0444"):
+            verdict = C.classify(key, suffixes=suffixes, known_tlds=known)
+            self.assertIsNone(verdict, "%r -> %s" % (key, verdict))
+
     def test_a_bare_fingerprint_warns_that_its_type_is_missing(self):
         for key in ("1e7c622032b0cb79401b0f7be3793a1a", "t12d010100_0f2cb44170f4_e3b0c44298fc", "da39a3ee5e6b4b0d3255bfef95601890afd80709"):
             verdict = C.classify(key)
@@ -175,6 +187,8 @@ class HeaderTest(unittest.TestCase):
         ("# Reference:  https://example.invalid/a", "space"),
         ("# Reference: https://example.invalid/a ", "trailing"),
         ("# Reference: ", "trailing"),
+        ("# Reference: # Reference: https://example.invalid/a", "pasted"),
+        ("# Reference:  # Reference: https://example.invalid/a", "pasted"),
     ]
 
     GOOD = [
@@ -310,7 +324,7 @@ class PublicSuffixTest(unittest.TestCase):
     noticed was a registry", and it is free to write because the loader strips it - core/assemble.py does
     `line.strip('.')`, so `.co.cl` and `co.cl` build the identical trail."""
 
-    SUF = {"com.cn", "co.uk", "tk", "augustow.pl"}
+    SUF = {"com.cn", "co.uk", "tk", "augustow.pl", "biz"}
 
     def test_a_bare_public_suffix_is_reported(self):
         verdict = C.classify("com.cn", None, "", "com.cn", self.SUF)
