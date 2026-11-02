@@ -335,6 +335,7 @@
     packet's arrival, and at the end of the file none arrived.
 [=] The previous/next day arrows skip days with no events, stopping at today (#19614)
 [=] Custom trails get their own class icon in the info column (#19623)
+[+] Right-click -> "Reverse DNS" for an event's addresses, resolved by the server on click (#19613)
 [!] Trail gate: a truncated IP (`http://144.172.84`), a name under no TLD (`minglu.de5`) and a
     pasted header (`# Reference: # Reference:`) fail it (#19630, #19631, #19624)
 

@@ -1283,7 +1283,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # display helpers (_version, _logo, _assetver, _tzoffset, _statics, _format, _build_netfilters, _filter_events)
             # whose signature is NOT (self, params), so e.g. "GET /version" -> self._version(params) -> uncaught TypeError
             # (request crash) reachable by any client. Endpoints are an explicit allowlist, not "any _-prefixed method".
-            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "check", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt", "meta", "reference", "ripe", "sensors"):
+            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "check", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt", "meta", "reference", "ripe", "ptr", "sensors"):
                 if len(splitpath) > 1:
                     params["subpath"] = splitpath[1]
                 content = getattr(self, "_%s" % splitpath[0])(params)
@@ -1902,6 +1902,39 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header(HTTP_HEADER.CACHE_CONTROL, "private, max-age=86400")
 
             return json.dumps(payload)
+
+        def _ptr(self, params):
+            # Reverse DNS for one address, on an analyst's click (#19613). Only on a click: the PTR
+            # record is whatever the address's owner chose to publish, so it is a hint for a human,
+            # never something to whitelist on. Goes through the server's own resolver, so a LAN
+            # address gets its internal name.
+            session = self.get_session()
+
+            if session is None:
+                self.send_response(_http_client.UNAUTHORIZED)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
+            address = (params.get("address") or "").strip()
+            family = socket.AF_INET6 if ':' in address else socket.AF_INET
+            try:
+                socket.inet_pton(family, address)
+            except (socket.error, ValueError):
+                self.send_response(_http_client.BAD_REQUEST)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
+            try:
+                name, aliases, _ = socket.gethostbyaddr(address)
+                names = [name] + [_ for _ in aliases if _ != name]
+            except (socket.error, UnicodeError):
+                names = []
+
+            self.send_response(_http_client.OK)
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
+
+            return json.dumps({"address": address, "names": names})
 
         def _meta(self, params):
             # Condensed observable store lookup: "have I ever seen this domain/ip, since when, how often".

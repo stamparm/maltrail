@@ -1585,6 +1585,11 @@
       items.push(["↗ AbuseIPDB · " + _ext, function () { openLookup("abuse", _ext); }, "ext"]);
       items.push(["↗ Shodan · " + _ext, function () { openLookup("shodan", _ext); }, "ext"]);
     }
+    // reverse DNS through the server's resolver: the outside party, and the local host (its internal name)
+    (DEMO ? [] : [_ext, src]).filter(function (ip, i, a) { return ip && /^[\d.]+$|:/.test(ip) && a.indexOf(ip) === i; }).forEach(function (ip, i) {
+      if (!i) items.push("sep");
+      items.push(["⇄ Reverse DNS · " + ip, function () { showPTR(ip); }, ""]);
+    });
     if (domish) {
       items.push(["↗ VirusTotal · trail", function () { openLookup("vt-dom", domish); }, "ext"]);
       items.push(["↗ urlscan · trail", function () { openLookup("urlscan", domish); }, "ext"]);
@@ -1604,6 +1609,25 @@
     var f = m.getBoundingClientRect();
     if (f.right > vw - 6) put(Math.max(6, vw - 6 - f.width), y);
     f = m.getBoundingClientRect(); if (f.bottom > vh - 6) put(f.left, Math.max(6, vh - 6 - f.height));
+  }
+  function showPTR(ip) {
+    var o = document.createElement("div"); o.className = "modal-overlay";
+    o.innerHTML = '<div class="modal"><div class="modal-h">Reverse DNS · ' + esc(ip) + '</div><div class="wllist">resolving…</div>' +
+      '<div class="localwarn" role="note">A PTR name is set by whoever controls the address: a hint, not proof of who runs it.</div>' +
+      '<div class="modal-actions"><button class="btn-ghost">Close</button></div></div>';
+    document.body.appendChild(o);
+    var close = function () { o.remove(); };
+    o.onclick = function (e) { if (e.target === o) close(); };
+    o.querySelector("button").onclick = close;
+    var out = o.querySelector(".wllist");
+    fetch("/ptr?address=" + encodeURIComponent(ip), { credentials: "same-origin" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        out.innerHTML = !d ? '<div class="wlempty">lookup failed</div>'
+          : !d.names.length ? '<div class="wlempty">no PTR record</div>'
+          : d.names.map(function (n) { return '<div class="wlrow"><span class="wlval">' + esc(n) + '</span></div>'; }).join("");
+      })
+      .catch(function () { out.innerHTML = '<div class="wlempty">lookup failed</div>'; });
   }
   function showWLManage() {
     closeCtx();

@@ -1110,6 +1110,18 @@ class TestHttpd(unittest.TestCase):
             self.assertEqual(st, 400, "/ripe must refuse %r" % probe)
         self.assertIsNone(type(self).proc.poll(), "server must stay alive")
 
+    def test_ptr_needs_a_session_and_an_address(self):
+        st, _, _ = _http(self.port, "GET", "/ptr?address=127.0.0.1")
+        self.assertEqual(st, 401, "/ptr must not answer without a session")
+        cookie = self._login()
+        for probe in ("evil.example.com", "8.8.8.8%20evil", "1.2.3", "", "8.8.8.8/../../etc/passwd"):
+            st, _, _ = _http(self.port, "GET", "/ptr?address=%s" % probe, cookie=cookie)
+            self.assertEqual(st, 400, "/ptr must refuse %r" % probe)
+        # positive control, answered from /etc/hosts with no network: loopback's own name
+        st, _, body = _http(self.port, "GET", "/ptr?address=127.0.0.1", cookie=cookie)
+        self.assertEqual(st, 200)
+        self.assertTrue(json.loads(body.decode("utf8"))["names"], "127.0.0.1 has a name on every box: %r" % body)
+
     def test_index_never_serves_the_demo_script(self):
         """main.js turns DEMO on from the mere presence of demo.js.
 
