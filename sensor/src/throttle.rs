@@ -158,14 +158,26 @@ fn hash_field(h: &mut crate::fasthash::FxHasher, field: &Field) {
 /// bot or a host browsing a listed TLD names a new label every time, and keyed on the full name
 /// each label was its own event - 220 lines for one tunnel and 177 for one bot in the reference
 /// network, against one threat in the UI.
+///
+/// A web heuristic groups the same way, per host (`host(path)` -> `host(*)`) and per scanner
+/// (`Nikto (<full UA>)` -> `Nikto (*)`): a scanner requests a new URL every time, and Nikto puts
+/// its test id in the User-Agent. Keyed on the full trail, one Nikto run from a live network was
+/// ~400 lines a minute, every one of them its own key.
 fn throttle_subject(event: &Event) -> std::borrow::Cow<'_, Field> {
-    if event.trail_type == crate::event::trail_type::DNS {
-        if let Field::Text(trail) = &event.trail {
-            if trail.starts_with('(') {
-                if let Some(i) = trail.find(").") {
-                    return std::borrow::Cow::Owned(Field::Text(format!("(*){}", &trail[i + 1..])));
-                }
+    use crate::event::trail_type;
+    if let Field::Text(trail) = &event.trail {
+        let grouped = match event.trail_type {
+            trail_type::DNS if trail.starts_with('(') => trail.find(").").map(|i| format!("(*){}", &trail[i + 1..])),
+            trail_type::URL | trail_type::HTTP if event.reference == "(heuristic)" && !trail.starts_with('(') => {
+                trail.find('(').map(|i| format!("{}(*)", &trail[..i]))
             }
+            trail_type::UA if event.reference == "(heuristic)" => {
+                trail.find(" (").map(|i| format!("{} (*)", &trail[..i]))
+            }
+            _ => None,
+        };
+        if let Some(grouped) = grouped {
+            return std::borrow::Cow::Owned(Field::Text(grouped));
         }
     }
     std::borrow::Cow::Borrowed(&event.trail)
@@ -556,6 +568,45 @@ mod tests {
                 ..event(1000, 40000, &format!("(gate{i}).example.com/x.php"))
             };
             assert_eq!(t.admit(&url).0, Decision::Write, "URL trail {i}");
+        }
+    }
+
+    #[test]
+    fn a_web_scanner_throttles_per_host_and_per_tool() {
+        // a Nikto run: a new URL on every request, and its test id in the User-Agent
+        let heuristic = |trail_type, trail: String, info: &str| Event {
+            trail_type,
+            info: info.to_string(),
+            reference: "(heuristic)".to_string(),
+            ..event(1000, 40000, &trail)
+        };
+        let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
+        let mut written = 0;
+        for i in 0..200 {
+            let xss = heuristic(
+                crate::event::trail_type::URL,
+                format!("203.0.113.9(/index.php?q=<script>{i}</script>)"),
+                "potential xss injection (suspicious)",
+            );
+            let ua = heuristic(
+                crate::event::trail_type::UA,
+                format!("Nikto (Mozilla/5.00 \\(Nikto/2.1.5\\) \\(Test:{i:06}\\))"),
+                "user agent (suspicious)",
+            );
+            written += [xss, ua].iter().filter(|e| t.admit(e).0 == Decision::Write).count();
+        }
+        assert_eq!(written, 6, "one budget per host and detection, one per scanner");
+        let mut trails: Vec<_> = t.flush_all().into_iter().map(|e| e.trail).collect();
+        trails.sort_by_key(|f| format!("{f:?}"));
+        assert_eq!(trails, vec![Field::Text("203.0.113.9(*)".to_string()), Field::Text("Nikto (*)".to_string())]);
+        // a static URL trail names one indicator, and keeps its own key
+        let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
+        for i in 0..5 {
+            let url = Event {
+                trail_type: crate::event::trail_type::URL,
+                ..event(1000, 40000, &format!("203.0.113.9(/gate{i}.php)"))
+            };
+            assert_eq!(t.admit(&url).0, Decision::Write, "static URL trail {i}");
         }
     }
 

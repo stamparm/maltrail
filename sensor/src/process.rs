@@ -1003,13 +1003,13 @@ fn syn(st: &mut WorkerState, ep: Endpoints, sec: u64, usec: u32) {
     // source is the victim, so silencing an NTP pool or a monitoring endpoint by whitelisting
     // the local host would blind every other detection for that host.
     //
-    // Only connections a local host makes count. An internet client connecting INTO private
-    // address space is a visitor to a server, not that server phoning home: on a live network
-    // with a web server exposed, 51 of 54 beaconing events were monitors, crawlers and returning
-    // clients connecting in, each naming the server as the beacon.
+    // Only connections out of private address space count: a C2 server is not on the LAN. An
+    // internet client connecting IN is a visitor to a server - on a live network with a web server
+    // exposed, 51 of 54 beaconing events were monitors, crawlers and returning clients - and LAN to
+    // LAN is a phone polling a Chromecast or the router's UPnP, 7 of the next 10.
     if st.cfg.use_heuristics
         && !ep.dst.is_localhost()
-        && !(ep.dst.is_local() && !ep.src.is_local())
+        && !ep.dst.is_local()
         && st.heuristic_enabled("beaconing")
         && st.beacon.observe(ep.src, ep.dst, ep.dst_port, sec)
         && !st.whitelist.check_whitelisted_ip(ep.src)
@@ -2182,11 +2182,14 @@ fn other_proto(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader, 
         }
     }
 
-    // ICMP tunneling: count distinct echo payloads that are no ping tool's (heuristics/icmp.rs)
+    // ICMP tunneling: count distinct echo payloads that are no ping tool's (heuristics/icmp.rs).
+    // A tunnel's far end is past the firewall: echoes to a private address are not judged. Live,
+    // a Mac pinging its own router with 1,480-byte random payloads was the only event it raised.
     if (protocol == 1 || protocol == 58)
         && st.cfg.use_heuristics
         && st.heuristic_enabled("icmp_tunneling")
         && !header.dst.is_localhost()
+        && !header.dst.is_local()
     {
         if let Some(data) = ip_data.get(header.header_len + 8..) {
             if !crate::heuristics::icmp::is_standard_echo_payload(data) {

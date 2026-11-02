@@ -1398,6 +1398,11 @@ fn a_periodic_client_connecting_in_is_not_a_beacon() {
         h.feed_ip(&ipv4(6, "91.54.121.209", "192.168.0.200", &tcp(50000, 443, 0x02, b"")), 1000 + 30 * i);
     }
     assert!(h.events().is_empty(), "inbound visits are not beaconing: {:?}", h.events());
+    // nor is one LAN host polling another (a Chromecast on 8008)
+    for i in 0..12u64 {
+        h.feed_ip(&ipv4(6, "192.168.0.7", "192.168.0.117", &tcp(50002, 8008, 0x02, b"")), 1000 + 30 * i);
+    }
+    assert!(h.events().is_empty(), "LAN to LAN is not beaconing: {:?}", h.events());
 
     // the control: the same schedule from the local host outwards still is
     for i in 0..12u64 {
@@ -1480,9 +1485,13 @@ fn echo_request(src: &str, dst: &str, seq: u16, payload: &[u8]) -> Vec<u8> {
 }
 
 fn icmp_tunnel_events(payload: impl Fn(u16) -> Vec<u8>) -> usize {
+    icmp_tunnel_events_to("198.51.100.77", payload)
+}
+
+fn icmp_tunnel_events_to(dst: &str, payload: impl Fn(u16) -> Vec<u8>) -> usize {
     let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
     for seq in 0..40u16 {
-        h.feed(&echo_request("10.0.0.5", "198.51.100.77", seq, &payload(seq)), 1 + u64::from(seq) / 4, 0, 14);
+        h.feed(&echo_request("10.0.0.5", dst, seq, &payload(seq)), 1 + u64::from(seq) / 4, 0, 14);
     }
     h.feed(&echo_request("10.0.0.6", "192.0.2.1", 0, &[]), 20, 0, 14);
     h.events().into_iter().filter(|e| e.info.contains("icmp tunneling")).count()
@@ -1493,6 +1502,9 @@ fn icmp_tunnel_is_detected_and_real_pings_are_not() {
     // icmpsh/ptunnel-like: data in every request
     let tunnel = icmp_tunnel_events(|seq| format!("C:\\> dir /s part {seq} {}", u32::from(seq) * 7919).into_bytes());
     assert_eq!(tunnel, 1, "a tunnel must be reported, once");
+    // the same payloads to the local router: a Mac does this, a tunnel's far end is never here
+    let to_router = icmp_tunnel_events_to("192.168.0.1", |seq| format!("C:\\> dir /s part {seq}").into_bytes());
+    assert_eq!(to_router, 0, "echo to a private address reported as a tunnel");
 
     let windows = |_| b"abcdefghijklmnopqrstuvwabcdefghi".to_vec();
     let linux = |seq: u16| {

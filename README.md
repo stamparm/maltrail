@@ -27,7 +27,7 @@ prevention system.
 ## Features
 
 - A full trail build combining the static trail set (over 3,000 curated files, fetched from
-  [stamparm/trails](https://github.com/stamparm/trails)), 39 public-feed integrations, and optional
+  [stamparm/trails](https://github.com/stamparm/trails)), 38 public-feed integrations, and optional
   operator-supplied trails.
 - A multithreaded Rust sensor using libpcap, with optional Linux `PACKET_FANOUT` capture workers.
 - A Python server providing the reporting interface, event intake, and HTTP API.
@@ -479,7 +479,7 @@ The `type` field identifies what matched, including `DNS`, `IP`, `IPORT`, `URL`,
 `reference` identifies the static list, feed, custom source, or heuristic that produced it. The
 `JA3`/`JA4` types fire on TLS *client* fingerprints, over TCP and QUIC alike: an implant's TLS
 stack survives every address and domain rotation, so its hello hash keeps matching after everything
-else has burned (published by the abuse.ch SSLBL JA3 feed). `CERT` fires on a server certificate's
+else has burned. `CERT` fires on a server certificate's
 SHA-1 or SHA-256, which TLS 1.2 and older send in the clear.
 
 ### Indicator lookup

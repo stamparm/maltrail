@@ -34,6 +34,17 @@
     one was a CDN or device-telemetry hash (a2z.com, aws.dev, max.com, googleapis.com), and each
     fix was one more exempt zone. Tunneling is left to dns_tunneling, which needs volume and a
     session; 'long_domain' is still accepted in DISABLED_HEURISTICS.
+[!] One Nikto run from a LAN host logged 6,502 lines in 15 minutes: a scanner requests a new URL
+    every time and Nikto puts its test id in the User-Agent, so no two events shared a throttle
+    key. Web heuristics now throttle per host and detection (host(*)) and per scanner
+    (Nikto (*)), as the dashboard already groups them: the same pcap, 82 lines, every detection
+    still reported.
+[!] Beaconing and ICMP tunneling no longer judge traffic to private addresses: a C2 server or a
+    tunnel's far end is not on the LAN. Live, that was 7 of 10 beaconing events (a Chromecast,
+    the router's UPnP) and every ICMP tunneling event (a Mac pinging its router).
+[-] The abuse.ch JA3 feed: last updated 2021-08-03, 97 fingerprints of TLS libraries first seen in
+    2017-2020. Live, 41 events in 40 hours, none real: 'tofsee' was inbound scanners, 'coinminer'
+    an Apple device fetching mediaservices.cdn-apple.com. The certificate feed stays.
 [=] User-Agent reports the machine (aarch64, x86_64) instead of the pointer width ("x64").
 
 [!] The daily trail update took over 70 minutes on a Pi Zero: every host

@@ -111,8 +111,8 @@ never stalls capture.
 | `dns_tunneling` | sustained high-entropy queries to one zone that is not a known reputation or DNSBL service |
 | excessive NXDOMAIN | many NXDOMAIN answers for one domain within an hour |
 | `idn_homograph` | an `xn--` name whose Cyrillic, Greek or Armenian lookalike letters spell a whitelisted domain it is not |
-| `beaconing` | TCP SYNs from one source to one destination port at timer-like intervals |
-| `icmp_tunneling` | echo requests carrying ever-changing payloads unlike any ping tool's |
+| `beaconing` | TCP SYNs from one source to one public destination port at timer-like intervals |
+| `icmp_tunneling` | echo requests to a public address carrying ever-changing payloads unlike any ping tool's |
 
 Heuristics are switched off as a group with `USE_HEURISTICS false`, or by name with
 `DISABLED_HEURISTICS` (the names in the table). Every heuristic finding is rated `suspicious` with
