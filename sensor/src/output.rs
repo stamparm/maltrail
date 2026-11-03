@@ -135,7 +135,7 @@ pub struct EventSink {
     cfg: Arc<OutputConfig>,
     log_path: Option<PathBuf>,
     log_file: Option<File>,
-    condensed: HashMap<(String, String), Vec<Event>>,
+    condensed: HashMap<(String, String, String), Vec<Event>>,
     throttle: crate::throttle::Throttle,
     last_condense_flush: Instant,
     /// A failed resolution of an endpoint not yet in `resolved()` records a retry deadline here,
@@ -223,7 +223,9 @@ impl EventSink {
         }
 
         if !skip_condensing && self.cfg.condense_on_info(&event.info) {
-            let key = (event.src_ip.clone(), event.trail.as_plain());
+            // info too: a listed scanner's port scan has the feed hit's trail (its own address),
+            // and condensed together the line carried only the feed's info (#782)
+            let key = (event.src_ip.clone(), event.trail.as_plain(), event.info.clone());
             // Each BUCKET was capped, but the number of KEYS was not: the map only shrinks on
             // the flush period, so between flushes an attacker choosing source addresses and
             // trails could add keys without limit, each costing two Strings plus a Vec.

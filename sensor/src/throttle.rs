@@ -187,23 +187,25 @@ fn throttle_subject(event: &Event) -> std::borrow::Cow<'_, Field> {
 
 /// Digest of a plain address string against a trail field.
 #[inline]
-fn digest_field(addr: &str, trail: &Field) -> u64 {
+fn digest_field(addr: &str, trail: &Field, info: &str) -> u64 {
     use std::hash::{Hash, Hasher};
     let mut h = crate::fasthash::FxHasher::default();
     addr.as_bytes().hash(&mut h);
     0xffu8.hash(&mut h);
     hash_field(&mut h, trail);
+    info.hash(&mut h);
     h.finish()
 }
 
 /// Digest of two fields, for the destination side where the address is itself a `Field`.
 #[inline]
-fn digest_field_pair(addr: &Field, trail: &Field) -> u64 {
+fn digest_field_pair(addr: &Field, trail: &Field, info: &str) -> u64 {
     use std::hash::{Hash, Hasher};
     let mut h = crate::fasthash::FxHasher::default();
     hash_field(&mut h, addr);
     0xffu8.hash(&mut h);
     hash_field(&mut h, trail);
+    info.hash(&mut h);
     h.finish()
 }
 
@@ -256,16 +258,12 @@ impl Throttle {
     /// chance in 10^10, and the consequence is a held event that comes out in a summary rather
     /// than verbatim - never a lost detection.
     fn keys_for(event: &Event) -> [u64; 2] {
-        let subject = match throttle_subject(event) {
-            // Grouped per zone, but never ACROSS detections: a tunnel's one `dns tunneling` event
-            // shares its zone with that tunnel's long-domain events, and in one budget it was held
-            // behind them and folded into a summary labelled "long domain".
-            std::borrow::Cow::Owned(Field::Text(zone)) => {
-                std::borrow::Cow::Owned(Field::Text(format!("{zone}\u{1f}{}", event.info)))
-            }
-            other => other,
-        };
-        [digest_field(&event.src_ip, &subject), digest_field_pair(&event.dst_ip, &subject)]
+        // Never ACROSS detections: a tunnel's one `dns tunneling` event shares its zone with that
+        // tunnel's long-domain events, and a port scan's trail is the scanner's address - the
+        // same trail as a feed listing it. In one budget the second was held behind the first and
+        // folded into a summary carrying the first one's info (#782).
+        let subject = throttle_subject(event);
+        [digest_field(&event.src_ip, &subject, &event.info), digest_field_pair(&event.dst_ip, &subject, &event.info)]
     }
 
     /// Decide what happens to `event`, and return any summary events that became due.
@@ -571,6 +569,18 @@ mod tests {
             };
             assert_eq!(t.admit(&url).0, Decision::Write, "URL trail {i}");
         }
+    }
+
+    #[test]
+    fn a_second_detection_on_the_same_trail_has_its_own_budget() {
+        // #782: a port scan's trail is the scanner's address, the same as a feed listing it
+        let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
+        for i in 0..10 {
+            let _ = t.admit(&Event { info: "known attacker".to_string(), ..event(1000, 40000 + i, "203.0.113.9") });
+        }
+        let scan =
+            Event { info: "potential port scanning (suspicious)".to_string(), ..event(1000, 41000, "203.0.113.9") };
+        assert_eq!(t.admit(&scan).0, Decision::Write, "held behind the feed hits, it surfaced as \"known attacker\"");
     }
 
     #[test]

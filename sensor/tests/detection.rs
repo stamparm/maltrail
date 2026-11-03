@@ -703,6 +703,23 @@ fn http_title_without_closing_tag_is_not_a_trail() {
 // --- heuristics ------------------------------------------------------------------
 
 #[test]
+fn a_listed_scanner_keeps_its_port_scan_verdict() {
+    // #782: the port scan's trail is the scanner's address - the same trail as the feed listing
+    // it - and the two were condensed/throttled as one, logged only as "known attacker"
+    let mut h =
+        Harness::with_options(&[("203.0.113.9", "known attacker", "alienvault.com")], HarnessOptions::heuristics());
+    for i in 0..20u16 {
+        let packet = eth(&ipv4(6, "203.0.113.9", "198.51.100.7", &tcp(40000 + i, 1000 + i, 0x02, b"")), 0x0800, None);
+        h.feed(&packet, i as u64, 0, 14);
+    }
+    let tick = eth(&ipv4(17, "203.0.113.9", "192.0.2.2", &udp(1, 2, &[0u8; 8])), 0x0800, None);
+    h.feed(&tick, 22, 0, 14);
+    let infos: Vec<_> = h.events().into_iter().filter(|e| e.trail == "203.0.113.9").map(|e| e.info).collect();
+    assert!(infos.iter().any(|i| i == "known attacker"), "{infos:?}");
+    assert!(infos.iter().any(|i| i.contains("potential port scanning")), "{infos:?}");
+}
+
+#[test]
 fn slow_port_scan_is_detected_once_per_window() {
     let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
     for i in 0..20u16 {
