@@ -1019,7 +1019,7 @@
   // Everything else that goes through here - hidden, whitelist, tags, triage, notes, aliases - is
   // a filter input, so the default stays "invalidate", and a preference added later gets correct
   // behaviour without anyone having to remember to wire it up.
-  var LS_NOT_A_FILTER = { "mt_ripe": 1, "mt_prefs": 1 };
+  var LS_NOT_A_FILTER = { "mt_ripe": 1, "mt_prefs": 1, "mt_live": 1 };
   function lsSet(k, v) { if (!LS_NOT_A_FILTER[k]) _viewVer++; try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { } }
   function loadHidden() { var o = lsGet(LS_HIDDEN, {}); return (o && typeof o === "object") ? o : {}; }
   function saveHidden() { lsSet(LS_HIDDEN, state.hidden); }
@@ -1243,6 +1243,20 @@
     try { if ("Notification" in window && Notification.permission === "granted") new Notification("Maltrail \u00b7 " + list.length + " new high-severity", { body: list.slice(0, 3).map(function (t) { return t.src + " \u2192 " + t.trail; }).join("\n") }); } catch (e) { }
   }
   function clearNew() { state.newCount = 0; state.newUids = {}; refresh(); }
+  // "New" means "appeared on the day being viewed since it was first loaded". The seen-set used to
+  // live for the whole session, so stepping to yesterday reported all of yesterday as new
+  // ("44717 new" after one click, accumulating with every further day) - a number nobody could
+  // act on, in the place that is supposed to say what arrived while you were looking.
+  function markNew(threats, date) {
+    if (state._knownDate !== date) { state.knownUids = {}; state.newUids = {}; state.newCount = 0; state._seenInit = false; state._knownDate = date; }
+    var newOnes = [], i;
+    if (state._seenInit) { for (i = 0; i < threats.length; i++) if (!state.knownUids[threats[i].uidc]) newOnes.push(threats[i]); }
+    for (i = 0; i < threats.length; i++) state.knownUids[threats[i].uidc] = 1;
+    state._seenInit = true;
+    state.newUids = {}; for (i = 0; i < newOnes.length; i++) state.newUids[newOnes[i].uidc] = 1;
+    state.newCount += newOnes.length;
+    return newOnes;
+  }
   function renderNewPill() {
     var el = document.getElementById("newpill"); if (!el) return;
     if (state.newCount > 0) { el.style.display = ""; el.textContent = state.newCount + " new"; el.onclick = clearNew; }
@@ -1307,7 +1321,6 @@
       return;
     }
     if (on && !DEMO) {
-      try { if ("Notification" in window && Notification.permission === "default") Notification.requestPermission(); } catch (e) { }
       state._sseOk = false;
       if (typeof EventSource !== "undefined") openSSE(currentDate());   // SSE streams everything since the last load (instant); no separate catch-up poll -> no double-delivery
       else { liveTick(currentDate()); startPoll(); }                    // no EventSource: catch up now, then poll
@@ -2714,7 +2727,10 @@
     var _scrim = document.getElementById('drawer_scrim'); if (_scrim) _scrim.addEventListener('click', closeDrawer);
     var _exp = document.getElementById('export_btn'); if (_exp) _exp.onclick = function (e) { e.stopPropagation(); openExportMenu(_exp); };
     var _vw = document.getElementById('views_btn'); if (_vw) _vw.onclick = function (e) { e.stopPropagation(); openViewsMenu(_vw); };
-    var _lv = document.getElementById('live_btn'); if (_lv) _lv.onclick = function (e) { e.stopPropagation(); setLive(!state.live); };
+    var _lv = document.getElementById('live_btn'); if (_lv) _lv.onclick = function (e) {
+      e.stopPropagation(); setLive(!state.live); lsSet("mt_live", state.live);   // the click is the preference; going offline is not
+      try { if (state.live && "Notification" in window && Notification.permission === "default") Notification.requestPermission(); } catch (e2) { }   // needs a gesture
+    };
     var _mt = document.getElementById('mute_btn'); if (_mt) _mt.onclick = function (e) { e.stopPropagation(); setMuted(!getMuted()); };
     var _qh = document.getElementById('qhelp'); if (_qh) _qh.onclick = function (e) { e.stopPropagation(); openQueryHelp(_qh); };
     var _hb = document.getElementById('hunt_btn'); if (_hb) _hb.onclick = function (e) { e.stopPropagation(); openHunt(); };
@@ -3352,12 +3368,7 @@
     warmRelIndex();
     if (DEMO) { var mx = 0; for (var di = 0; di < d.threats.length; di++) { var p = parseTs(d.threats[di].last); if (p > mx) mx = p; } state._demoNow = mx || null; }   // anchor demo "now" to its latest event so relative times demo correctly
     if (!state.streaming) {   // new-threat detection only on a COMPLETE load (not progressive partials)
-      var newOnes = [];
-      if (state._seenInit) { for (var qi = 0; qi < d.threats.length; qi++) if (!state.knownUids[d.threats[qi].uidc]) newOnes.push(d.threats[qi]); }
-      for (var qj = 0; qj < d.threats.length; qj++) state.knownUids[d.threats[qj].uidc] = 1;
-      state._seenInit = true;
-      state.newUids = {}; for (var qk = 0; qk < newOnes.length; qk++) state.newUids[newOnes[qk].uidc] = 1;
-      state.newCount += newOnes.length;
+      var newOnes = markNew(d.threats, currentDate());
       var newHigh = newOnes.filter(function (t) { return t.sev === 3; });
       if (state.live && newHigh.length) alertNew(newHigh);
     }
@@ -3541,6 +3552,7 @@
             var rows = parseEvents(t);
             state._liveBytes = byteLenFull(t, r); state._liveDate = date;   // byte baseline for incremental live
             render(aggregateRows(rows));   // agg retains _byKey so live deltas merge incrementally (rows array is freed)
+            autoLive();
           });
         }
         var reader = r.body.getReader(), dec = new TextDecoder(), buf = "", agg = null, seen = 0, lastRender = 0, lastRenderT = 0, bytes = 0;
@@ -3558,6 +3570,7 @@
               var tail = 0; try { tail = new TextEncoder().encode(buf).length; } catch (e) { tail = buf.length; }
               state._liveBytes = bytes - tail; state._liveDate = date;   // baseline = end of last COMPLETE line
               render(agg || aggregateRows([]));
+              autoLive();
               return;
             }
             bytes += res.value.byteLength;                          // raw bytes, matches the server's file offsets
@@ -3582,6 +3595,7 @@
       })
       .catch(function () { state.streaming = false; setConnected(false); setStatus("no connection to the server"); });
   }
+  function autoLive() { if (state._autoLive) { state._autoLive = false; if (!state.live && state._connected !== false) setLive(true); } }
   function byteLenFull(text, r) {
     var cl = r.headers && r.headers.get && r.headers.get("Content-Length");
     if (cl != null && cl !== "") { var n = parseInt(cl, 10); if (!isNaN(n)) return n; }
@@ -3662,6 +3676,11 @@
     } else {
       setDate(todayStr());
       checkAuth();
+      // A threat monitor follows new events unless told not to. Live used to start off and forget
+      // being switched on, so every session opened on a table that stayed still until someone
+      // noticed. Armed once the first load completes (see loadEvents) so the stream resumes from
+      // exactly the bytes the table holds.
+      state._autoLive = lsGet("mt_live", true) === true;
       loadEvents(todayStr());
       // ?refresh=N -> auto-reload the current day's events every N seconds (min 5; keeps filters/sort/hidden/tags)
       var rm = location.search.match(/[?&]refresh=(\d+)/);

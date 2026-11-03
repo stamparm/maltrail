@@ -895,7 +895,7 @@ class TestViewCacheInvalidation(unittest.TestCase):
     entry has to be argued for in this test rather than slipped in.
     """
 
-    ALLOWED = {"mt_ripe", "mt_prefs"}
+    ALLOWED = {"mt_ripe", "mt_prefs", "mt_live"}   # mt_live: whether to follow new events; never which rows match
 
     def test_only_non_filtering_keys_skip_invalidation(self):
         js = _read(MAIN_JS)
@@ -1582,6 +1582,54 @@ console.log(todayStr());
     def test_without_the_servers_offset_it_is_the_viewers_day(self):
         # the positive control: the viewer's clock really is on the 4th
         self.assertEqual(self._today(None), "2026-11-04")
+
+
+class TestNewThreatsAreNewToTheDay(unittest.TestCase):
+    """The 'N new' pill counts threats that appeared on the viewed day since it was first loaded.
+
+    The seen-set lived for the whole session, so stepping to yesterday reported all of yesterday as
+    new ('44717 new' after one click), and the count kept growing with every day visited.
+    """
+
+    def _run(self, calls):
+        node = TestParseEvents._node(self)
+        js = _read(MAIN_JS)
+        fn = re.search(r"  function markNew\(threats, date\) \{.*?\n  \}", js, re.S)
+        self.assertTrue(fn, "markNew() is gone from main.js")
+        script = "var state = { knownUids: {}, newUids: {}, newCount: 0, _seenInit: false };\n" + fn.group(0) + """
+var out = [];
+%s.forEach(function (c) { var got = markNew(c[1].map(function (u) { return { uidc: u }; }), c[0]); out.push([got.length, state.newCount]); });
+console.log(JSON.stringify(out));
+""" % json.dumps(calls)
+        return json.loads(_run_node(node, script).decode("utf8", "replace").strip())
+
+    def test_stepping_to_another_day_reports_nothing_new(self):
+        out = self._run([["2026-11-04", ["a", "b"]], ["2026-11-03", ["c", "d", "e"]], ["2026-11-04", ["a", "b"]]])
+        self.assertEqual(out, [[0, 0], [0, 0], [0, 0]])
+
+    def test_a_threat_arriving_on_the_viewed_day_is_new(self):
+        out = self._run([["2026-11-04", ["a", "b"]], ["2026-11-04", ["a", "b", "c"]], ["2026-11-04", ["a", "b", "c", "d"]]])
+        self.assertEqual(out, [[0, 0], [1, 1], [1, 2]], "new threats on the same day accumulate until cleared")
+
+    def test_the_count_does_not_survive_a_day_change(self):
+        out = self._run([["2026-11-04", ["a"]], ["2026-11-04", ["a", "b"]], ["2026-11-03", ["x"]]])
+        self.assertEqual(out[-1], [0, 0])
+
+
+class TestLiveIsTheRememberedDefault(unittest.TestCase):
+    """A monitor follows new events unless told not to; the choice is the click, not a lost connection."""
+
+    def setUp(self):
+        self.js = _read(MAIN_JS)
+
+    def test_live_starts_on_unless_switched_off_before(self):
+        self.assertIn('state._autoLive = lsGet("mt_live", true) === true;', self.js)
+        self.assertEqual(self.js.count("autoLive();"), 2, "both load paths arm it once the first load completes")
+
+    def test_only_the_click_writes_the_preference(self):
+        self.assertEqual(self.js.count('lsSet("mt_live"'), 1)
+        self.assertIn('setLive(!state.live); lsSet("mt_live", state.live);', self.js)
+        self.assertIn('"mt_live": 1', self.js, "a preference is not a filter; it must not invalidate the view cache")
 
 
 if __name__ == "__main__":
