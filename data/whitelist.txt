@@ -4170,3 +4170,12 @@ top-github.eplus.dev
 # Netis Systems (URL: https://netcoreinc.com/ , China) routers management address
 
 netis.cc
+
+# Reference: https://github.com/stamparm/maltrail/issues/19612
+# Reference: https://www.virustotal.com/gui/ip-address/195.135.223.50/relations
+# Reference: https://ipinfo.io/AS29298
+# Note: SUSE Software Solutions Germany GmbH
+
+195.135.223.151
+195.135.223.246
+195.135.223.50
