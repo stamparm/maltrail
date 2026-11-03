@@ -1552,5 +1552,37 @@ setTimeout(function () { console.log(landed); }, 0);
         self.assertEqual(self._step("2026-10-28", -1, {}), "2026-10-27")        # nothing known in a year
         self.assertEqual(self._step("2026-10-28", -1, {"2026-10-20": 40}, ok=False), "2026-10-27")
 
+class TestTodayIsTheSensorsDay(unittest.TestCase):
+    """The dashboard opens on the server's "today", not the viewer's (#67)."""
+
+    def _today(self, srv_tz):
+        import subprocess
+        js = _read(MAIN_JS)
+        fn = re.search(r"function todayStr\(\) \{.*?\n  \}", js, re.S)
+        self.assertTrue(fn, "could not find todayStr() in main.js")
+        node = next((c for c in ("node", "nodejs") if any(os.access(os.path.join(d, c), os.X_OK)
+                     for d in os.environ.get("PATH", "").split(os.pathsep) if d)), None)
+        if not node:
+            raise unittest.SkipTest("needs node")
+        # 20:00 UTC on 3 Nov: 15:00 on the 3rd for a UTC-5 server, already the 4th for a UTC+14 viewer
+        script = """
+function pad2(n) { return (n < 10 ? "0" : "") + n; }
+function srvTz() { return %s; }
+Date.now = function () { return Date.UTC(2026, 10, 3, 20, 0, 0); };
+var _D = Date; Date = function (x) { return arguments.length ? new _D(x) : new _D(_D.now()); }; Date.now = _D.now; Date.UTC = _D.UTC;
+%s
+console.log(todayStr());
+""" % (json.dumps(srv_tz), fn.group(0))
+        env = dict(os.environ, TZ="Pacific/Kiritimati")
+        return subprocess.check_output([node, "-e", script], env=env).decode().strip()
+
+    def test_a_viewer_a_day_ahead_opens_on_the_servers_day(self):
+        self.assertEqual(self._today(-300), "2026-11-03")
+
+    def test_without_the_servers_offset_it_is_the_viewers_day(self):
+        # the positive control: the viewer's clock really is on the 4th
+        self.assertEqual(self._today(None), "2026-11-04")
+
+
 if __name__ == "__main__":
     unittest.main()

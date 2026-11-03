@@ -3139,7 +3139,14 @@
   // demo.js <script>, so getDemoCSV is undefined there -> live /events path.
   var DEMO = (typeof window.getDemoCSV === "function");
   function pad2(n) { return (n < 10 ? "0" : "") + n; }
-  function todayStr() { var d = new Date(); return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
+  // "Today" is the SENSOR's day (log files are named by it), not the viewer's: a viewer a day ahead
+  // used to open on a day the server had no events for yet (#67).
+  function todayStr() {
+    var tz = srvTz();
+    if (tz == null) { var d = new Date(); return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
+    var u = new Date(Date.now() + tz * 60000);
+    return u.getUTCFullYear() + "-" + pad2(u.getUTCMonth() + 1) + "-" + pad2(u.getUTCDate());
+  }
   // Issue #4 (open since 2015): a selection can be one day or a range, spelled "START_END" - the
   // form /events has always understood. `date_input` is a native <input type="date"> and cannot
   // hold that string, so a range lives in its dataset and the input keeps the range's LAST day
