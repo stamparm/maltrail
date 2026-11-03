@@ -1679,7 +1679,12 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 _login_succeeded(self.client_address[0])
                 _ = os.urandom(SESSION_ID_LENGTH)
                 session_id = _.hex() if hasattr(_, "hex") else _.encode("hex")
-                expiration = time.time() + 3600 * SESSION_EXPIRATION_HOURS
+                # A home setup reasonably wants a longer session than a SOC console (#106)
+                try:
+                    hours = float(config.SESSION_EXPIRATION_HOURS)
+                except (TypeError, ValueError):
+                    hours = SESSION_EXPIRATION_HOURS
+                expiration = time.time() + 3600 * (hours if hours > 0 else SESSION_EXPIRATION_HOURS)
 
                 self.send_response(_http_client.OK)
                 self.send_header(HTTP_HEADER.CONNECTION, "close")

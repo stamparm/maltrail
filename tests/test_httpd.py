@@ -169,6 +169,7 @@ class TestHttpd(unittest.TestCase):
                     "    salted:%s:0:\n"
                     % (STORED, STORED, STORED, STORED, STORED, STORED, SALTED))
             f.write("ENABLE_MASK_CUSTOM true\n")
+            f.write("SESSION_EXPIRATION_HOURS 720\n")   # 30 days; the default is 24h (#106)
             # deliberately carries every character that has to be escaped on the way into an HTML
             # attribute - <, >, & and a double quote - so test_index_carries_the_severity_policy
             # tests the escaping rather than assuming the shipped regex happens to be safe
@@ -261,6 +262,15 @@ class TestHttpd(unittest.TestCase):
         st2, head2, _ = _http(self.port, "POST", "/login", body=body)
         self.assertEqual(st2, 401, "replaying a spent nonce must fail")
         self.assertNotIn("set-cookie", head2.lower(), "a replayed login must not be handed a session")
+
+    def test_the_session_lifetime_is_configurable(self):
+        import email.utils
+        st, head, _ = _http(self.port, "POST", "/login", body=self._login_body())
+        self.assertEqual(st, 200)
+        cookie = [l for l in head.split("\r\n") if l.lower().startswith("set-cookie:")][0]
+        expires = re.search(r"expires=([^;]+)", cookie).group(1)
+        days = (email.utils.mktime_tz(email.utils.parsedate_tz(expires)) - time.time()) / 86400
+        self.assertGreater(days, 29, "SESSION_EXPIRATION_HOURS 720 must give a 30-day session, not the 24h default: %s" % expires)
 
     def test_the_session_cookie_carries_its_flags(self):
         st, head, _ = _http(self.port, "POST", "/login", body=self._login_body())
