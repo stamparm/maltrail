@@ -337,7 +337,7 @@
 [=] Custom trails get their own class icon in the info column (#19623)
 [+] Right-click -> "Reverse DNS" for an event's addresses, resolved by the server on click (#19613)
 [=] "potential web scanning" names the paths the scanner tried (/admin, /wp-login.php, ...)
-    instead of logging a bare * (#18247)
+    instead of logging a bare * (#18247); the dashboard still groups, folds and whitelists them as *
 [!] BLACKLIST / BLACKLIST_<NAME> no longer warn as unknown options at startup; their syntax is now
     documented in maltrail.conf (#19610)
 [=] "another instance already running" names the process holding the port, when /proc can tell (#19611)

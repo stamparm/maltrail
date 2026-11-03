@@ -1474,7 +1474,7 @@ class TestThreatGrouping(unittest.TestCase):
 
     def _threats(self, rows):
         consts = "\n".join(l for l in self.js.split("\n")
-                           if re.match(r"\s+var (DGA_INFIX|MAX_THREATS|MAX_STORED_EVENTS|MAX_CONDENSED|_ntCache)\b", l))
+                           if re.match(r"\s+var (DGA_INFIX|MAX_THREATS|MAX_STORED_EVENTS|MAX_CONDENSED|_ntCache|PATH_LIST_RE)\b", l))
         script = (consts + "\n" + _severity_js(self.js) + "\n".join(self._function(_) for _ in self.NAMES) +
                   "\nconsole.log(JSON.stringify(aggregateRows(%s).threats.map(function (t) { return [t.kind, t.count, t.srcS.n]; })));"
                   % json.dumps(rows))
@@ -1482,8 +1482,8 @@ class TestThreatGrouping(unittest.TestCase):
         return json.loads(subprocess.check_output([self.node, "-e", script]).decode("utf8"))
 
     @staticmethod
-    def _row(src, trail, info, ref="(heuristic)"):
-        return ['"2026-10-15 10:00:00.000000"', "s", src, "1", "10.0.0.1", "53", "UDP", "DNS", trail, info, ref]
+    def _row(src, trail, info, ref="(heuristic)", kind="DNS"):
+        return ['"2026-10-15 10:00:00.000000"', "s", src, "1", "10.0.0.1", "53", "UDP", kind, trail, info, ref]
 
     def test_a_different_heuristic_is_not_folded_into_a_flood_on_the_same_tld(self):
         rows = [self._row("10.1.0.%d" % i, "(h%dxxxxxxxxxxxxxxxxxxxxxxxxxxxx).com" % i, "long domain (suspicious)")
@@ -1497,6 +1497,12 @@ class TestThreatGrouping(unittest.TestCase):
         # the positive control: one listed indicator from many hosts IS one threat
         rows = [self._row("10.8.%d.8" % i, "(www%d).evil.example" % i, "malware (test)", "(static)") for i in range(55)]
         self.assertEqual(self._threats(rows), [["flood", 55, 55]])
+
+    def test_web_scans_naming_different_paths_still_fold_into_a_flood(self):
+        # the sensor logs the paths a scan tried (#18247); 60 scanners are still one flood, as with "*"
+        rows = [self._row("198.51.%d.1" % i, ", ".join("/p%d_%d" % (i, j) for j in range(11)),
+                          "potential web scanning (suspicious)", kind="PATH") for i in range(60)]
+        self.assertEqual(self._threats(rows), [["flood", 60, 60]])
 
     def test_a_summary_line_belongs_to_its_threat(self):
         rows = [self._row("10.2.0.1", "(*).exfil.example", "long domain (suspicious)"),

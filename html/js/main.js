@@ -73,7 +73,10 @@
   function charTrim(s, ch) { while (s.substr(0, 1) === ch) s = s.substr(1); while (s.substr(s.length - 1) === ch) s = s.substr(0, s.length - 1); return s; }
   // normTrail runs per EVENT (×2 passes) but a trail is one of relatively few distinct values -> memoize (huge at 100MB scale)
   var _ntCache = {}, _ntCacheN = 0;
-  function normTrail(trail) { var c = _ntCache[trail]; if (c !== undefined) return c; if (_ntCacheN > 200000) { _ntCache = {}; _ntCacheN = 0; }  /* bound memory on pathological unique-trail (DGA) days */ c = charTrim(charTrim(("" + trail).replace(/\([^)]+\)/g, ""), " "), "."); _ntCache[trail] = c; _ntCacheN++; return c; }
+  // A web scan names the paths it tried ("/admin, /.env, ...", #18247); grouping, flood folding and
+  // the whitelist treat every such list as the one indicator it used to be logged as: "*".
+  var PATH_LIST_RE = /^\/\S*(?:, \/\S*){2,}$/;
+  function normTrail(trail) { var c = _ntCache[trail]; if (c !== undefined) return c; if (_ntCacheN > 200000) { _ntCache = {}; _ntCacheN = 0; }  /* bound memory on pathological unique-trail (DGA) days */ c = PATH_LIST_RE.test(trail) ? "*" : charTrim(charTrim(("" + trail).replace(/\([^)]+\)/g, ""), " "), "."); _ntCache[trail] = c; _ntCacheN++; return c; }
   // A throttle summary line ends its info with " (+N more)" when it held more than it could carry;
   // the detection is the same, so grouping ignores the suffix (it used to open a second threat).
   function infoKey(info) { return ("" + info).replace(/ \(\+\d+ more\)$/, ""); }
