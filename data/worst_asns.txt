@@ -7501,6 +7501,7 @@
 # AS 209373
 # Reference: https://ipinfo.io/AS209373
 
+198.206.152.0/24,swissnet-as
 217.60.102.0/24,swissnet-as
 217.60.103.0/24,swissnet-as
 217.60.195.0/24,swissnet-as
