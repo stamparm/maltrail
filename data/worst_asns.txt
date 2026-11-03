@@ -7171,8 +7171,10 @@
 # AS 51852
 # Reference: https://ipinfo.io/AS51852
 # Reference: https://mokki.sh/posts/2026-10-08-cve-2026-88771-netscalers-versus-the-chinese-pitboss/
+# Reference: https://x.com/spamhaus/status/2117625871582343622
 
-94.26.35.0/24, pli-as
+176.65.144.0/24,pli-as
+94.26.35.0/24,pli-as
 
 # AS 149208
 # Reference: https://x.com/spamhaus/status/2108547298271662393
@@ -7616,3 +7618,52 @@
 5.253.247.0/24,floriankolb
 89.144.37.0/24,floriankolb
 92.118.206.0/24,floriankolb
+
+# AS 40065
+# Reference: https://x.com/spamhaus/status/2117625871582343622
+
+101.1.16.0/24,cnservers
+
+# AS 219050
+# Reference: https://ipinfo.io/AS219050
+# Reference: # Reference: https://x.com/spamhaus/status/2117625871582343622
+
+31.59.163.0/24, teraflow
+
+# AS 209630
+# Reference: https://ipinfo.io/AS209630
+# Reference: https://x.com/spamhaus/status/2117625871582343622
+
+151.241.144.0/24,kredit-as
+151.243.11.0/24,kredit-as
+181.214.125.0/24,kredit-as
+194.77.38.0/24,kredit-as
+217.60.180.0/24,kredit-as
+31.57.208.0/24,kredit-as
+85.11.167.0/24,kredit-as
+91.92.40.0/24,kredit-as
+91.92.41.0/24,kredit-as
+91.92.42.0/24,kredit-as
+93.123.118.0/24,kredit-as
+93.152.233.0/24,kredit-as
+
+# AS 136969
+# Reference: https://ipinfo.io/AS136969
+# Reference: https://x.com/spamhaus/status/2117625871582343622
+
+180.178.191.0/24,kknetwrok-as-ap
+
+# AS 19318
+# Reference: https://ipinfo.io/AS19318
+# Reference: https://x.com/spamhaus/status/2117625871582343622
+
+147.90.214.0/24,is-as-1
+
+# AS 147034
+# Reference: https://ipinfo.io/AS147034
+# Reference: https://x.com/spamhaus/status/2117625871582343622
+
+205.196.151.0/24,bareboxcombd-as-ap
+205.196.152.0/24,bareboxcombd-as-ap
+205.196.154.0/24,bareboxcombd-as-ap
+205.196.159.0/24,bareboxcombd-as-ap
