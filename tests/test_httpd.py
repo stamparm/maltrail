@@ -1612,6 +1612,24 @@ class TestHttpd(unittest.TestCase):
         # non-fatal: just assert the process is still alive after all the abuse
         self.assertIsNone(type(self).proc.poll(), "server process died during tests")
 
+    def test_simultaneous_requests_are_not_queued_on_the_kernel(self):
+        # With a backlog of 5 the slowest of 32 waited 2.04 s and of 16 waited 1.03 s (two SYN retransmits) for ~1 ms of work.
+        import threading
+        latencies = []
+
+        def one():
+            started = time.time()
+            status = _http(self.port, "GET", "/ping", timeout=10)[0]
+            latencies.append((time.time() - started, status))
+
+        threads = [threading.Thread(target=one) for _ in range(24)]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+        self.assertEqual(sorted(set(_[1] for _ in latencies)), [200])
+        self.assertLess(max(_[0] for _ in latencies), 0.5, "a request waited on a SYN retransmit: %s" % sorted(latencies)[-3:])
+
 
 class TestTrailsEndpointMissingFile(unittest.TestCase):
     """A fresh server (USE_SERVER_UPDATE_TRAILS off, or a first update that produced no trails) has no
@@ -2753,6 +2771,99 @@ class TestScopeCallersFailClosed(unittest.TestCase):
                          "for malformed netfilters; bind the result, check it for None, and fail "
                          "closed before unpacking."
                          % ", ".join(str(n) for n in offenders))
+
+
+class TestConnectionBudget(unittest.TestCase):
+    """Two ways the server stopped answering under load that cost it nothing to serve.
+
+    The listen backlog was socketserver's default 5: more simultaneous connections than that and
+    the kernel drops the SYN, so the client retries after 1 s. Two dashboards refreshing together
+    (seven requests each) were enough. And the thread cap counted a connection from accept, so 150
+    sockets that connected and sent nothing held every handler for REQUEST_TIMEOUT and every real
+    request got 503 - unauthenticated, and renewable for as long as the sender cared to.
+    """
+    proc = None
+    THREADS = 8
+    PER_IP = 3
+
+    @classmethod
+    def setUpClass(cls):
+        cls.tmp = tempfile.mkdtemp(prefix="mt_budget_")
+        logdir = os.path.join(cls.tmp, "logs"); os.makedirs(logdir)
+        cls.port = _free_port()
+        cfg = os.path.join(cls.tmp, "srv.conf")
+        with open(cfg, "w") as f:
+            f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\nMAX_REQUEST_THREADS %d\nMAX_CONNECTIONS_PER_IP %d\n" % (cls.port, cls.THREADS, cls.PER_IP))
+            f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+            f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME test\nDISABLE_CHECK_SUDO true\n"
+                    % (logdir, os.path.join(cls.tmp, "trails.csv")))
+        cls.proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        for _ in range(60):
+            if cls.proc.poll() is not None:
+                break
+            try:
+                if _http(cls.port, "GET", "/ping", timeout=0.5)[0] == 200:
+                    return
+            except Exception:
+                time.sleep(0.25)
+        cls._skip = "server did not start (out: %s)" % (cls.proc.stdout.read()[:300] if cls.proc.poll() is not None else "")
+
+    @classmethod
+    def tearDownClass(cls):
+        if cls.proc and cls.proc.poll() is None:
+            _stop_server(cls.proc)
+
+    def setUp(self):
+        if getattr(type(self), "_skip", None):
+            self.skipTest(self._skip)
+
+    def _idle(self, source, n):
+        """n connections from `source` that never send a byte."""
+        socks = []
+        for _ in range(n):
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s.settimeout(5)
+            s.bind((source, 0))
+            s.connect(("127.0.0.1", self.port))
+            socks.append(s)
+        time.sleep(0.3)     # let the accept thread get to all of them
+        return socks
+
+    def test_one_address_cannot_hold_every_handler(self):
+        try:
+            probe = socket.socket(); probe.bind(("127.0.0.2", 0)); probe.close()
+        except OSError as ex:
+            self.skipTest("no second loopback address (%s)" % ex)
+        socks = self._idle("127.0.0.2", self.THREADS)       # enough to take every handler, if it could
+        try:
+            # the excess connections from that address were refused outright, not parked on a thread
+            refused = 0
+            for s in socks:
+                s.settimeout(1)
+                try:
+                    if b"503" in s.recv(64):
+                        refused += 1
+                except socket.timeout:
+                    pass
+            self.assertEqual(refused, self.THREADS - self.PER_IP)
+            # ...and everyone else is still served
+            self.assertEqual(_http(self.port, "GET", "/ping", timeout=5)[0], 200)
+        finally:
+            for s in socks:
+                s.close()
+
+    def test_an_idle_connection_is_dropped_before_the_request_timeout(self):
+        from core.httpd import HEADER_TIMEOUT, REQUEST_TIMEOUT
+        self.assertLess(HEADER_TIMEOUT, REQUEST_TIMEOUT)
+        s = socket.create_connection(("127.0.0.1", self.port))
+        s.settimeout(HEADER_TIMEOUT + 5)
+        started = time.time()
+        try:
+            self.assertEqual(s.recv(16), b"", "the server kept an idle connection open")
+        finally:
+            s.close()
+        self.assertLess(time.time() - started, HEADER_TIMEOUT + 3)
 
 
 if __name__ == "__main__":

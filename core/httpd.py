@@ -214,6 +214,8 @@ _geo_cache = {}  # NOTE: per daily-log country aggregation keyed by filepath -> 
 _geo_lock = threading.Lock()  # NOTE: the incremental read-modify-write must be serialized (concurrent /geo for the same day would otherwise double-count)
 MAX_REQUEST_THREADS = 100       # concurrent request handlers; excess connections get 503 without a thread
 MAX_LIVE_STREAMS = 30           # of those, how many may be held open by /live at once
+MAX_CONNECTIONS_PER_IP = 32     # of those, how many one client address may hold (a dashboard uses ~8)
+HEADER_TIMEOUT = 10             # seconds a connection gets to send its request line and headers
 
 _HUNT_IP_QUERY_REGEX = re.compile(r"\A(\d+\.\d+\.\d+\.\d+)(?:/(\d{1,2}))?\Z")
 _HUNT_LINE_IP_REGEX = re.compile(r"\b(\d+\.\d+\.\d+\.\d+)\b")
@@ -1178,13 +1180,31 @@ def start_httpd(address=None, port=None, join=False, pem=None):
         # cost the thread the cap exists to protect.
         _active = 0
         _active_lock = threading.Lock()
+        _per_ip = {}        # client address -> its share of _active
+
+        # socketserver's default is 5. Chromium opens six connections for one page load and the
+        # dashboard fires seven requests, so two analysts refreshing together already overflowed
+        # it; the kernel then dropped the SYN and the browser retried after 1 s (then 2 s).
+        # Measured: 16 simultaneous requests -> the slowest waited 1.03 s, 32 -> 2.04 s, for
+        # ~1 ms of server work each.
+        request_queue_size = 128
 
         def process_request(self, request, client_address):
+            # The thread cap alone was a lockout: 150 sockets that connect and send nothing hold
+            # 100 handlers for HEADER_TIMEOUT, so every real request got 503 - before any login,
+            # and renewable for as long as the sender cares to. One address now gets a bounded
+            # share of the handlers, so exhausting them takes many addresses, and an idle
+            # connection is dropped after HEADER_TIMEOUT rather than REQUEST_TIMEOUT (see
+            # ReqHandler.handle).
+            ip = client_address[0] if client_address else ""
             with ThreadingServer._active_lock:
-                if ThreadingServer._active >= _limit(getattr(config, "MAX_REQUEST_THREADS", None), MAX_REQUEST_THREADS):
+                mine = ThreadingServer._per_ip.get(ip, 0)
+                if ThreadingServer._active >= _limit(getattr(config, "MAX_REQUEST_THREADS", None), MAX_REQUEST_THREADS) \
+                        or mine >= _limit(getattr(config, "MAX_CONNECTIONS_PER_IP", None), MAX_CONNECTIONS_PER_IP):
                     over = True
                 else:
                     ThreadingServer._active += 1
+                    ThreadingServer._per_ip[ip] = mine + 1
                     over = False
 
             if over:
@@ -1203,16 +1223,24 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 _socketserver.ThreadingMixIn.process_request(self, request, client_address)
             except Exception:
                 # the handler thread never started, so nothing will decrement for us
-                with ThreadingServer._active_lock:
-                    ThreadingServer._active -= 1
+                ThreadingServer._release(ip)
                 raise
+
+        @staticmethod
+        def _release(ip):
+            with ThreadingServer._active_lock:
+                ThreadingServer._active -= 1
+                left = ThreadingServer._per_ip.get(ip, 1) - 1
+                if left > 0:
+                    ThreadingServer._per_ip[ip] = left
+                else:
+                    ThreadingServer._per_ip.pop(ip, None)
 
         def process_request_thread(self, request, client_address):
             try:
                 _socketserver.ThreadingMixIn.process_request_thread(self, request, client_address)
             finally:
-                with ThreadingServer._active_lock:
-                    ThreadingServer._active -= 1
+                ThreadingServer._release(client_address[0] if client_address else "")
 
         def server_bind(self):
             self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -1257,7 +1285,15 @@ def start_httpd(address=None, port=None, join=False, pem=None):
     class ReqHandler(_BaseHTTPServer.BaseHTTPRequestHandler):
         timeout = REQUEST_TIMEOUT  # NOTE: StreamRequestHandler applies this as a socket timeout -> stalled connections drop instead of pinning a thread forever
 
+        def handle(self):
+            # The request line and headers get HEADER_TIMEOUT; the handlers restore REQUEST_TIMEOUT
+            # once a request has actually arrived (a POST body or a slow /events download may
+            # legitimately take longer). An honest client sends its headers in one packet.
+            self.connection.settimeout(HEADER_TIMEOUT)
+            _BaseHTTPServer.BaseHTTPRequestHandler.handle(self)
+
         def do_GET(self):
+            self.connection.settimeout(REQUEST_TIMEOUT)
             path, query = self.path.split('?', 1) if '?' in self.path else (self.path, "")
             params = {}
             content = None
@@ -1415,6 +1451,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 pass
 
         def do_POST(self):
+            self.connection.settimeout(REQUEST_TIMEOUT)
             try:
                 length = int(self.headers.get(HTTP_HEADER.CONTENT_LENGTH) or 0)
             except (TypeError, ValueError):
