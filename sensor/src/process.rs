@@ -778,7 +778,7 @@ fn heuristics_sweep(st: &mut WorkerState, sec: u64, usec: u32) {
                 Endpoints { src, src_port: detail.src_port, dst, dst_port: detail.dst_port },
                 PROTO::TCP,
                 TRAIL::PATH,
-                Field::Text("*".to_string()),
+                Field::Text(st.scan.scanned_paths(src, dst)),
                 "potential web scanning (suspicious)",
                 "(heuristic)",
             );

@@ -174,6 +174,8 @@ fn throttle_subject(event: &Event) -> std::borrow::Cow<'_, Field> {
             trail_type::UA if event.reference == "(heuristic)" => {
                 trail.find(" (").map(|i| format!("{} (*)", &trail[..i]))
             }
+            // a web scan names the paths it tried; one scanner is still one budget
+            trail_type::PATH if event.reference == "(heuristic)" => Some("*".to_string()),
             _ => None,
         };
         if let Some(grouped) = grouped {
@@ -599,6 +601,15 @@ mod tests {
         let mut trails: Vec<_> = t.flush_all().into_iter().map(|e| e.trail).collect();
         trails.sort_by_key(|f| format!("{f:?}"));
         assert_eq!(trails, vec![Field::Text("203.0.113.9(*)".to_string()), Field::Text("Nikto (*)".to_string())]);
+        // one scanner sweeping many hosts names different paths each time, and is still one budget
+        let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
+        let written = (0..50)
+            .filter(|i| {
+                let scan = heuristic(crate::event::trail_type::PATH, format!("/a{i}, /b{i}"), "potential web scanning");
+                t.admit(&scan).0 == Decision::Write
+            })
+            .count();
+        assert_eq!(written, 3, "a web scan throttles per scanner, not per path list");
         // a static URL trail names one indicator, and keeps its own key
         let mut t = Throttle::new(cfg(ThrottleMode::Summarize));
         for i in 0..5 {

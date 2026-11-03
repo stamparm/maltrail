@@ -825,7 +825,9 @@ fn web_scan_suppressed_internally_but_flagged_externally() {
     let events: Vec<_> = h.events().into_iter().filter(|e| e.trail_type == "PATH").collect();
     assert_eq!(events.len(), 1, "{events:?}");
     assert_eq!(events[0].dst_ip, "172.21.0.4");
-    assert_eq!(events[0].trail, "*");
+    // the paths tried, first-seen order, not a bare `*` (#18247)
+    let expected: Vec<String> = (0..11).map(|i| format!("/scan{i}")).collect();
+    assert_eq!(events[0].trail, expected.join(", "));
 }
 
 #[test]

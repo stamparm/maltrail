@@ -100,6 +100,21 @@ impl<T: std::hash::Hash + Eq + Clone, S: std::hash::BuildHasher + Default> Items
         }
     }
 
+    /// The items in first-seen order (inline), or sorted once spilled, so output is deterministic.
+    fn ordered(&self) -> Vec<&T>
+    where
+        T: Ord,
+    {
+        match self {
+            Items::Inline { len, slots } => slots[..*len as usize].iter().flatten().collect(),
+            Items::Spilled(set) => {
+                let mut v: Vec<&T> = set.iter().collect();
+                v.sort();
+                v
+            }
+        }
+    }
+
     /// Returns true when the item was NEW.
     fn insert(&mut self, item: T) -> bool {
         match self {
@@ -473,6 +488,29 @@ impl ScanState {
             .collect();
         out.sort_by_key(|(src, dst, _)| (*src, *dst));
         out
+    }
+
+    /// The distinct first path segments a web scan requested, as the event's trail
+    /// (`/admin, /wp-login.php, ...`), instead of a bare `*` (#18247). Each segment is clipped,
+    /// because the scanner chooses them.
+    pub fn scanned_paths(&self, src: Ip, dst: Ip) -> String {
+        const CLIP: usize = 40;
+        let paths: Vec<String> = self
+            .web_scan
+            .get(&(src, dst))
+            .map(|b| b.items.ordered())
+            .unwrap_or_default()
+            .into_iter()
+            .map(|s| match s.char_indices().nth(CLIP) {
+                Some((i, _)) => format!("/{}...", &s[..i]),
+                None => format!("/{s}"),
+            })
+            .collect();
+        if paths.is_empty() {
+            "*".to_string()
+        } else {
+            paths.join(", ")
+        }
     }
 
     pub fn udp_scan_candidates(&mut self, _threshold: usize) -> Vec<(Ip, Ip, PortDetail)> {
