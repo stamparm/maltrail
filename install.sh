@@ -219,7 +219,9 @@ ensure_deps() {
 
     case $PKG in
         apt-get) pkg_install git ca-certificates $_curl tar python3 libpcap0.8 libcap2-bin ;;
-        dnf|yum) pkg_install git ca-certificates $_curl tar python3 libpcap libcap ;;
+        # util-linux: su, which as_user() needs. Fedora 45's image ships without it, and the
+        # in-place readability check then warned that the service account could not read the tree.
+        dnf|yum) pkg_install git ca-certificates $_curl tar python3 libpcap libcap util-linux ;;
         zypper)  pkg_install git-core ca-certificates $_curl tar python3 libpcap1 libcap-progs ;;
         apk)     pkg_install git ca-certificates $_curl tar python3 libpcap libcap ;;
         pacman)  pkg_install git ca-certificates $_curl tar python libpcap libcap ;;
