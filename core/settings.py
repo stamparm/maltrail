@@ -5,6 +5,7 @@ Copyright (c) 2014-present Maltrail developers (https://github.com/stamparm/malt
 See the file 'LICENSE' for copying permission
 """
 
+import ipaddress
 import os
 import platform
 import re
@@ -170,6 +171,7 @@ SUSPICIOUS_UA_REGEX = ""
 OBSOLETE_UA_REGEX = r"(?i)windows NT [3-5]\.\d+|windows (3\.\d+|95|98|xp)|MSIE [1-6]\.\d+|Navigator/|Safari/[1-4]|Opera/[1-3]|Firefox/1?[0-9]\.|Android [1-3]\.\d+|iPhone OS [1-4]_\d+|Mac OS X 10\.[0-4]\.|Chrome/[1-2]?\d\.|BlackBerry ?[0-7]"
 GENERIC_SINKHOLE_REGEX = r"(?im)^(X-Sinkhole|Server): (malware-?)?sinkhole|\bSinkholed? by |^(X-Sinkholed?(-Domain)?|X-Zinkhole|X-Sinkhole):| a malware sinkhole|\bSinkhole( Project)?</title>|This is a sinkhole|bots party hard|computers connecting to this sinkhole| Sinkhole by |^Set-Cookie: snkz=|^Server: Apache [0-9.]+/SinkSoft|^Location:[^\n]+\.sinkdns\.org:80"
 WORST_ASNS = {}
+WORST_ASNS6 = []   # [(ipaddress.IPv6Network, name)]
 # (start, end) integer intervals, sorted - bisect, not the first-octet bucket WORST_ASNS uses.
 # DROP prefixes run from /12 to /24, so one bucket per leading octet would put a /12 in sixteen of
 # them, and the v6 list has no leading octet to bucket on at all.
@@ -702,6 +704,13 @@ def read_ua():
 def read_worst_asn():
     _ = os.path.abspath(os.path.join(ROOT_DIR, "data", "worst_asns.txt"))
     for line in _iter_file_lines(_):
+        if ':' in line.split(',')[0]:
+            # IPv6 ranges used to be skipped silently by the IPv4 pattern below
+            try:
+                WORST_ASNS6.append((ipaddress.ip_network(line.split(',')[0], strict=False), line.split(',', 1)[1].strip()))
+            except (IndexError, ValueError):
+                pass
+            continue
         match = re.search(r"([\d.]+)/(\d+),(.+)", line)
         if not match:
             continue

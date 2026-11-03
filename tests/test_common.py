@@ -167,6 +167,12 @@ class TestWorstAsns(unittest.TestCase):
         finally:
             C.WORST_ASNS = saved
 
+    def test_the_shipped_ipv6_ranges_load(self):
+        # an IPv6 line used to be skipped silently by the IPv4-only parser
+        self.assertEqual(C.worst_asns("2a0f:ca80:b00b::1"), "techties-as")
+        self.assertIsNone(C.worst_asns("2a0f:ca81::1"))
+        self.assertIsNone(C.worst_asns("::zz"))
+
 
 class TestCdnIp(unittest.TestCase):
     def test_none_and_empty(self):

@@ -10,6 +10,7 @@ import bisect
 import csv
 import gzip
 import io
+import ipaddress
 import json
 import os
 import re
@@ -44,6 +45,7 @@ from core.settings import WHITELIST_RANGES
 from core.settings import DROP6_RANGES
 from core.settings import DROP_RANGES
 from core.settings import WORST_ASNS
+from core.settings import WORST_ASNS6
 from core.trailsdict import TrailsDict
 import urllib.error
 import urllib.parse
@@ -336,6 +338,13 @@ def ipcat_lookup(address):
 def worst_asns(address):
     if not address:
         return None
+
+    if ':' in address:
+        try:
+            _ = ipaddress.ip_address(address)
+        except ValueError:
+            return None
+        return next((name for net, name in WORST_ASNS6 if _ in net), None)
 
     try:
         _ = addr_to_int(address)

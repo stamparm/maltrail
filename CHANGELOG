@@ -342,6 +342,10 @@
     scanner's address), and were condensed/throttled into one line carrying only the feed's info (#782)
 [!] The dashboard opens on the sensor's "today", not the viewer's; a viewer a day ahead saw an empty day (#67)
 [+] SESSION_EXPIRATION_HOURS: how long a dashboard login lasts (default 24) (#106)
+[+] Format gate for every data/*.txt (sensor/tools/check_data.py), run on any data/ change: their
+    loaders skip a line they cannot read, so a typo there passed CI and did nothing (#19624). It found
+    a whitelist entry that was never whitelisted (inline comment), three IPv6 worst-ASN ranges the
+    loader never read (now supported), and UA patterns that compiled differently per Python version
 [!] BLACKLIST / BLACKLIST_<NAME> no longer warn as unknown options at startup; their syntax is now
     documented in maltrail.conf (#19610)
 [=] "another instance already running" names the process holding the port, when /proc can tell (#19611)

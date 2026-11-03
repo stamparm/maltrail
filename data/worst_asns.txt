@@ -7158,7 +7158,7 @@
 64.89.161.0/24,blatanthost
 
 # AS 201097
-# Refrence: https://ipinfo.io/AS201097
+# Reference: https://ipinfo.io/AS201097
 # Reference: https://socradar.io/blog/cyberxero-ai-iab-ukraine-critical-infrastructure/
 
 132.243.199.0/24,kvanta-llc

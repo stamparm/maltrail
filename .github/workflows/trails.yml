@@ -25,21 +25,17 @@ on:
   push:
     branches: [ "master" ]
     paths:
-      - 'data/whitelist.txt'
-      - 'data/ua.txt'
-      - 'data/mass_scanner.txt'
-      - 'data/mass_scanner_cidr.txt'
+      - 'data/**'
       - 'tests/canaries.txt'
       - 'sensor/tools/check_trails.py'
+      - 'sensor/tools/check_data.py'
   pull_request:
     branches: [ "master" ]
     paths:
-      - 'data/whitelist.txt'
-      - 'data/ua.txt'
-      - 'data/mass_scanner.txt'
-      - 'data/mass_scanner_cidr.txt'
+      - 'data/**'
       - 'tests/canaries.txt'
       - 'sensor/tools/check_trails.py'
+      - 'sensor/tools/check_data.py'
   workflow_dispatch:
 
 permissions:
@@ -59,6 +55,12 @@ jobs:
       # The scanner lists are trails, so they get the same two checks the content repository runs.
       # check_trails.py walks a DIRECTORY of trail files, and data/ also holds whitelists and the
       # UA patterns, so stage just these two rather than pointing it at data/ wholesale.
+      # Every data/ list, as its loader reads it. Those loaders skip a line they cannot parse, so a
+      # typo there used to install, start and do nothing: '1.2.3.0/24, name' (#19624), a whitelist
+      # entry carrying an inline comment, a UA pattern the regex engine refuses.
+      - name: data/ lists parse as their loaders read them
+        run: python3 sensor/tools/check_data.py
+
       - name: Stage the engine's own trail lists
         run: |
           mkdir -p /tmp/local-trails

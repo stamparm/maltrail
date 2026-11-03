@@ -563,7 +563,8 @@ lotusgraf.hr
 geocities.ws
 crotour.com
 condomchoice.co.uk
-92.222.150.60   # nameserver for sci-hub.tw
+# nameserver for sci-hub.tw
+92.222.150.60
 
 # found as false positive on urlvir.com
 
