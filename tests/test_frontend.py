@@ -1700,6 +1700,15 @@ class TestWorkerPump(unittest.TestCase):
         self.assertNotIn("v.byteLength", block[post:])
         self.assertIn("inflight += len", block[post:])
 
+    def test_a_prerendered_page_loads_the_day_only_once_shown(self):
+        # Chrome renders a predicted page invisibly (unless "Preload pages" is off). Measured: that copy
+        # fetched the whole day's /events (a full file scan on the server) and could not parse it, since
+        # its worker starts only on activation. The first load therefore waits for prerenderingchange.
+        src = _read(MAIN_JS); block = src[src.index("function boot()"):]
+        guard = block.index("if (document.prerendering)")
+        self.assertNotIn("loadEvents(", block[block.index("checkAuth();"):guard].split("var start = function")[0])
+        self.assertIn('addEventListener("prerenderingchange", start', block[guard:guard + 120])
+
 class TestWorkerParity(unittest.TestCase):
     """js/worker.js plus the page's applyDelta() rebuild, under node, exactly what the in-thread
     path builds from the same bytes cut at the same places.

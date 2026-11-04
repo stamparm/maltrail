@@ -3555,10 +3555,17 @@
       // noticed. Armed once the first load completes (see loadEvents) so the stream resumes from
       // exactly the bytes the table holds.
       state._autoLive = lsGet("mt_live", true) === true;
-      loadEvents(todayStr());
-      // ?refresh=N -> auto-reload the current day's events every N seconds (min 5; keeps filters/sort/hidden/tags)
-      var rm = location.search.match(/[?&]refresh=(\d+)/);
-      if (rm) { var n = Math.max(5, parseInt(rm[1], 10) || 0); if (n) setInterval(function () { liveTick(currentDate()); }, n * 1000); }
+      var start = function () {
+        loadEvents(todayStr());
+        // ?refresh=N -> auto-reload the current day's events every N seconds (min 5; keeps filters/sort/hidden/tags)
+        var rm = location.search.match(/[?&]refresh=(\d+)/);
+        if (rm) { var n = Math.max(5, parseInt(rm[1], 10) || 0); if (n) setInterval(function () { liveTick(currentDate()); }, n * 1000); }
+      };
+      // Chrome renders a page it predicts you will open (address bar, bookmarks) invisibly ahead of time
+      // unless "Preload pages" is off. Measured: that hidden copy fetched the whole day's /events - a full
+      // file scan on the server - and could not parse it anyway (its worker only starts once shown), so
+      // the day is loaded when the page is actually shown. Other browsers never set the flag.
+      if (document.prerendering) document.addEventListener("prerenderingchange", start, { once: true }); else start();
     }
     if (!DEMO && location.hash.indexOf("login") >= 0) showLogin();   // test/deep-link hook (no server to sign in to in a demo)
   }
