@@ -3254,6 +3254,7 @@
   function loadEvents(date) {
     setStatus("loading events…");
     var seq = ++state._loadSeq;
+    if (state._wload) state._wload.cancel();
     state._wload = null;
     function fail() { if (seq !== state._loadSeq) return; state.streaming = false; state._wload = null; setConnected(false); setStatus("no connection to the server"); }
     fetch("/events?date=" + encodeURIComponent(date), { credentials: "same-origin" })
@@ -3295,6 +3296,10 @@
           var IN_FLIGHT = 8 << 20, inflight = 0, stalled = false, wagg = (state._wagg = workerAgg());
           state._wload = { seq: seq,
             ack: function (m) { inflight -= m.len; if (stalled && inflight < IN_FLIGHT) { stalled = false; wpump(); } },
+            // a stalled pump has no read outstanding, so nothing would notice that this load was
+            // superseded or its worker lost: the response would stay open, holding one of the
+            // server's request threads, until the browser gave up on it
+            cancel: function () { if (stalled) { stalled = false; try { reader.cancel(); } catch (e) { } } },
             delta: function (m, t0) {
               // the worker paced this delta by what the last one cost here; the paint itself is
               // still gated, so deltas that queued up behind a slow paint are applied, not painted
@@ -3315,9 +3320,9 @@
             return reader.read().then(function (res) {
               if (seq !== state._loadSeq) { try { reader.cancel(); } catch (e) { } return; }
               if (res.done) { w.postMessage({ op: "end", seq: seq }); return; }
-              var v = res.value; bytes += v.byteLength;                          // raw bytes, matches the server's file offsets
-              w.postMessage({ op: "chunk", seq: seq, buf: v.buffer, off: v.byteOffset, len: v.byteLength }, [v.buffer]);
-              inflight += v.byteLength;
+              var v = res.value, len = v.byteLength; bytes += len;              // raw bytes, matches the server's file offsets
+              w.postMessage({ op: "chunk", seq: seq, buf: v.buffer, off: v.byteOffset, len: len }, [v.buffer]);
+              inflight += len;   // read before the post: the transfer detaches the buffer and the view then reads as empty
               if (inflight < IN_FLIGHT) return wpump();
               stalled = true;
             }).catch(fail);
@@ -3373,16 +3378,16 @@
     if (typeof Worker === "undefined" || typeof TextDecoder === "undefined" || lsGet("mt_worker", 1) === 0) { _workerDead = true; return null; }
     try { _W = new Worker("js/worker.js" + (ASSETVER ? "?v=" + encodeURIComponent(ASSETVER) : "")); }
     catch (e) { _W = null; _workerDead = true; return null; }
-    _W.onmessage = onWorkerMessage;
-    _W.onerror = function () { workerFailed(); };   // the browser has logged it; the page just stops relying on it
+    var me = _W;
+    me.onmessage = onWorkerMessage;
+    me.onerror = function () { if (me === _W) workerFailed(); };   // the browser has logged it; the page just stops relying on it (a late error from a worker already replaced is not this one's)
     _W.postMessage({ op: "init", sev: SEV_RAW, pace: { every: RENDER_EVERY, minMs: RENDER_MIN_MS, duty: RENDER_DUTY } });
     return _W;
   }
   function workerFailed() {
     var w = _W; _W = null; _workerDead = true;
     try { if (w) w.terminate(); } catch (e) { }
-    state._wload = null;
-    if (!DEMO) loadEvents(currentDate());   // whatever was in flight or on screen came from it: rebuild here
+    if (!DEMO) loadEvents(currentDate());   // whatever was in flight or on screen came from it: rebuild here (it cancels a stalled pump first)
   }
   function onWorkerMessage(e) {
     var m = e.data; if (!m || m.seq !== state._loadSeq) return;   // a reply to a superseded navigation, like a late fetch
@@ -3462,6 +3467,7 @@
       w.postMessage({ op: "text", seq: seq, text: text });
       return;
     }
+    if (!full && state.agg && state.agg._worker) { loadEvents(currentDate()); return; }   // the worker that built this day is gone, and the page's copy cannot be merged into (mergeRows would replace the day with these lines)
     var rows = parseEvents(text);
     render(full ? aggregateRows(rows) : mergeRows(state.agg, rows));
   }

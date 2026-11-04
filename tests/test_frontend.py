@@ -1689,6 +1689,17 @@ var Papa = { parse: function (text, opts) {
 """
 
 
+class TestWorkerPump(unittest.TestCase):
+    def test_the_chunk_length_is_read_before_the_buffer_is_transferred(self):
+        # postMessage(..., [v.buffer]) detaches the buffer, after which v.byteLength reads 0. The
+        # in-flight window was accounted from it AFTER the post: it never filled, the pump never
+        # stalled, and a whole day was queued at the worker as fast as the network delivered it.
+        src = _read(MAIN_JS); i = src.index("function wpump()"); block = src[i:src.index("return wpump();", i)]
+        post = block.index('op: "chunk"')
+        self.assertIn("len = v.byteLength", block[:post])
+        self.assertNotIn("v.byteLength", block[post:])
+        self.assertIn("inflight += len", block[post:])
+
 class TestWorkerParity(unittest.TestCase):
     """js/worker.js plus the page's applyDelta() rebuild, under node, exactly what the in-thread
     path builds from the same bytes cut at the same places.
