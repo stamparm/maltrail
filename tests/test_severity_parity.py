@@ -6,7 +6,7 @@ Severity is computed twice, in two languages, from two different inputs:
   * REMOTE_SEVERITY_REGEX -> core/log.py:severity_of() and sensor/src/output.rs:severity_for(),
     which produce the `severity` field in JSON logs, the CEF/syslog priority, and the alert
     threshold; and
-  * severityOf() in html/js/main.js, which ranks the dashboard.
+  * severityOf() in html/js/engine.js, which ranks the dashboard.
 
 Nothing compared them, and they drifted twice. 307e0e8 ranked the sensor's own guesses below feed
 hits in the dashboard only, so "long domain (suspicious)" read LOW on screen and alerted as
@@ -37,6 +37,7 @@ from core.log import severity_of                                            # no
 from core.settings import config, read_config                              # noqa: E402
 
 MAIN_JS = os.path.join(ROOT, "html", "js", "main.js")
+ENGINE_JS = os.path.join(ROOT, "html", "js", "engine.js")   # the policy block moved here with the aggregator
 SENSOR_SRC = os.path.join(ROOT, "sensor", "src")
 
 # info, reference - the verdicts whose ranking someone actually argued about
@@ -102,10 +103,10 @@ class SeverityParity(unittest.TestCase):
     def _ui(self, cases):
         if not self.node:
             self.skipTest("needs node to evaluate severityOf()")
-        with io.open(MAIN_JS, encoding="utf8") as handle:
+        with io.open(ENGINE_JS, encoding="utf8") as handle:
             js = handle.read()
-        found = re.search(r"  // Severity is a POLICY.*?\n  \}\n", js, re.S)
-        self.assertTrue(found, "could not find severityOf() and its policy block in main.js")
+        found = re.search(r"  // Severity is a POLICY.*?function severityOf\(info, ref\) \{.*?\n  \}\n", js, re.S)
+        self.assertTrue(found, "could not find severityOf() and its policy block in engine.js")
         script = found.group(0) + """
 var NAMES = ["", "low", "medium", "high"];
 var out = [];
@@ -143,20 +144,20 @@ console.log(JSON.stringify(out));
                          "and by REMOTE_SEVERITY_REGEX:\n  %s" % (len(rows), "\n  ".join(rows)))
 
     def test_the_fallback_matches_the_shipped_regex(self):
-        """main.js carries the shipped regex for when no server substituted one.
+        """engine.js carries the shipped regex for when no server substituted one.
 
         That is a second copy, which is the thing this whole change is trying to stop existing. It
         is unavoidable - a dashboard opened from disk, or the static demo, has no server to ask -
         so it is guarded instead: if maltrail.conf's regex is tuned and this is not, a file:// or
         demo dashboard ranks by yesterday's policy and nothing says so.
         """
-        with io.open(MAIN_JS, encoding="utf8") as handle:
+        with io.open(ENGINE_JS, encoding="utf8") as handle:
             js = handle.read()
         found = re.search(r'var SEVERITY_FALLBACK = "(.*?)";\n', js)
-        self.assertTrue(found, "SEVERITY_FALLBACK is gone from main.js")
+        self.assertTrue(found, "SEVERITY_FALLBACK is gone from engine.js")
         fallback = json.loads('"%s"' % found.group(1))
         self.assertEqual(fallback, config.REMOTE_SEVERITY_REGEX,
-                         "main.js's SEVERITY_FALLBACK has drifted from maltrail.conf's "
+                         "engine.js's SEVERITY_FALLBACK has drifted from maltrail.conf's "
                          "REMOTE_SEVERITY_REGEX:\n  conf:     %s\n  fallback: %s"
                          % (config.REMOTE_SEVERITY_REGEX, fallback))
 

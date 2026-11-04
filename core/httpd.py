@@ -1662,7 +1662,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # (index.html is served no-cache, so a changed token forces the browser to refetch the new files)
             try:
                 latest = 0
-                for rel in ("js/main.js", "js/engine.js", "css/main.css"):
+                for rel in ("js/main.js", "js/engine.js", "js/worker.js", "css/main.css"):
                     p = os.path.join(HTML_DIR, rel)
                     if os.path.isfile(p):
                         latest = max(latest, int(os.path.getmtime(p)))

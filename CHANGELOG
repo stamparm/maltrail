@@ -16,6 +16,13 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[+] Dashboard: a day is parsed and aggregated in a Web Worker (js/worker.js, the same engine the
+    page runs in js/engine.js) and the page applies its deltas, so the table stays usable while
+    a day loads. A million-event day blocked the page for 4.6 s in 58 tasks; it blocks for 1.5 s
+    in 15 now, and a 200k-event day for 0.3 s instead of 1.1 s. The day then holds two copies
+    (worker and page): 350 MB instead of 240 MB for a 60k-event day, and the biggest day
+    completes 15-30% later. No worker (or one that fails to load or crashes) means the in-thread
+    path, as before; localStorage.mt_worker = "0" forces it.
 [!] Server: the listen backlog was 5, so 16 simultaneous requests made the slowest wait 1 s on a
     SYN retransmit and 32 wait 2 s (two dashboards refreshing together were enough); 150 idle
     sockets held every handler and got every real request a 503 for the whole REQUEST_TIMEOUT,

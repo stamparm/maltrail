@@ -1629,7 +1629,7 @@ class TestLiveIsTheRememberedDefault(unittest.TestCase):
 
     def test_live_starts_on_unless_switched_off_before(self):
         self.assertIn('state._autoLive = lsGet("mt_live", true) === true;', self.js)
-        self.assertEqual(self.js.count("autoLive();"), 2, "both load paths arm it once the first load completes")
+        self.assertEqual(self.js.count("autoLive();"), 3, "every load path (one-shot, through the worker, in-thread) arms it once the first load completes")
 
     def test_only_the_click_writes_the_preference(self):
         self.assertEqual(self.js.count('lsSet("mt_live"'), 1)
@@ -1658,6 +1658,263 @@ class TestNarrowScreens(unittest.TestCase):
     def test_a_phone_header_does_not_stay_pinned(self):
         rule = re.search(r"\n\s*header\{([^}]*)\}", self._block(680))
         self.assertTrue(rule and "position:static" in rule.group(1), "three header rows pinned to the top is a third of a phone screen")
+
+
+# ---- the worker path and the in-thread path must build the same day ----
+
+WORKER_JS = os.path.join(REPO, "html", "js", "worker.js")
+
+# A stand-in for PapaParse under node: the delimiter is a space and quoting follows safe_value().
+# Both paths below parse through it, so it does not have to BE Papa, only be the same for both.
+PAPA_SHIM = """
+var Papa = { parse: function (text, opts) {
+  var out = [], lines = text.split("\\n");
+  lines.forEach(function (line) {
+    if (opts.skipEmptyLines && !line) return;
+    var row = [], cur = "", q = false, i;
+    for (i = 0; i < line.length; i++) {
+      var ch = line[i];
+      if (q) {
+        if (ch === '"') { if (line[i + 1] === '"') { cur += '"'; i++; } else q = false; }
+        else cur += ch;
+      } else if (ch === '"') q = true;
+      else if (ch === " ") { row.push(cur); cur = ""; }
+      else cur += ch;
+    }
+    row.push(cur);
+    out.push(row);
+  });
+  return { data: out };
+} };
+"""
+
+
+class TestWorkerParity(unittest.TestCase):
+    """js/worker.js plus the page's applyDelta() rebuild, under node, exactly what the in-thread
+    path builds from the same bytes cut at the same places.
+
+    The worker never posts the aggregate: it posts deltas - whole records for threats the page has
+    not seen, and for the rest only what moved, with the collected sets growing by the values
+    added since. The page keeps its own copy and patches it. Every field the grid, the drawer, the
+    stat tiles and the exports read is therefore reconstructed from a wire format, and a slip in
+    it (an index off by one, a set that stops growing at its cap, a `first` that moves backwards
+    and is not resent) would not throw: the table would simply show a different day. So the two
+    paths are run on one fixture, in chunks of a few bytes and of whole files, and compared field
+    by field - including the live merge after the stream, and a reset for the next day.
+
+    The fixture has what the wire format has to carry: a flood (one trail from 60 hosts), a
+    heuristic flood and a DGA verdict on the same TLD, a dns-exhaustion threat, a threat past the
+    500 stored rows and past the 100 distinct source ports (the caps), a timestamp arriving out of
+    order (first moves back), condensed "a,b,c" ports, a second sensor, JSON lines among the text
+    ones, junk lines, and a multi-byte character that small chunks cut in half.
+    """
+
+    @staticmethod
+    def _fixture(seed, days):
+        import random
+        rnd = random.Random(seed)
+        rows = []
+
+        def text(t, sensor, src, sport, dst, dport, proto, typ, trail, info, ref):
+            def q(v):
+                v = str(v)
+                return '"%s"' % v.replace('"', '""') if (" " in v or '"' in v or not v) else v
+            return " ".join(q(x) for x in (t, sensor, src, sport, dst, dport, proto, typ, trail, info, ref))
+
+        def ts(i):
+            return "%s %02d:%02d:%02d.%06d" % (days, (i // 3600) % 24, (i // 60) % 60, i % 60, rnd.randrange(1000000))
+
+        i = 0
+        # a flood: one static trail from 60 hosts, three events each, scattered
+        for k in range(180):
+            rows.append(text(ts(i), "s1", "10.1.0.%d" % (k % 60), rnd.randrange(1024, 65535), "5.5.5.5", 80, "TCP", "IP", "5.5.5.5", "known attacker (static)", "(static)")); i += 7
+        # a heuristic flood on .com, and a DGA verdict on the same TLD that must stay its own threat
+        for k in range(60):
+            rows.append(text(ts(i), "s1", "10.2.0.%d" % k, rnd.randrange(1024, 65535), "10.0.0.1", 53, "UDP", "DNS", "(h%dxxxxxxxxxxxxxxxxxxxxxxxxxxxx).com" % k, "long domain (suspicious)", "(heuristic)")); i += 5
+        rows.append(text(ts(i), "s1", "10.9.9.9", 5353, "10.0.0.1", 53, "UDP", "DNS", "(qzxkjvbn).com", "consonant threshold no such domain (suspicious)", "(heuristic)")); i += 5
+        for k in range(30):
+            rows.append(text(ts(i), "s2", "10.9.9.9", 5353, "10.0.0.1", 53, "UDP", "DNS", "(abc%dxyz).net" % k, "potential dga (suspicious)", "(heuristic)")); i += 3
+        # dns exhaustion
+        for k in range(20):
+            rows.append(text(ts(i), "s2", "10.3.0.%d" % k, 40000 + k, "10.0.0.1", 53, "UDP", "DNS", "x%d.example.org" % k, "potential dns exhaustion (suspicious)", "(heuristic)")); i += 2
+        # one source past both caps: 700 events, every one a new source port and a new destination
+        for k in range(700):
+            rows.append(text(ts(i), "s1" if k % 3 else "s2", "192.168.7.7", 20000 + k, "203.0.113.%d" % (k % 250), 443 if k % 2 else 8443, "TCP", "IP", "198.51.100.9", "bad reputation (tor node)", "(static)")); i += 1
+        # condensed ports, a space in a trail, a doubled quote, a multi-byte character
+        for k in range(40):
+            rows.append(text(ts(i), "s1", "10.4.0.%d" % (k % 5), "1000,1001,1002", "10.0.0.2", "80,443", "TCP", "URL", 'example.com/with space/"q"', "phishing (malicious)", "(static)")); i += 11
+            rows.append(text(ts(i), "s1", "10.4.1.%d" % (k % 5), 4444, "10.0.0.2", 80, "TCP", "UA", "Mozilla/5.0 ünicode ☃ agent", "sqlmap (suspicious)", "(heuristic)")); i += 11
+        # an earlier timestamp arriving late: `first` must move back on a threat already sent
+        rows.append(text(ts(0), "s1", "10.1.0.3", 1111, "5.5.5.5", 80, "TCP", "IP", "5.5.5.5", "known attacker (static)", "(static)"))
+        # paths of a web scan, as the sensor logs them
+        for k in range(12):
+            rows.append(text(ts(i), "s1", "10.5.0.%d" % k, 50000 + k, "10.0.0.3", 80, "TCP", "PATH", "/admin, /.env, /wp-login.php", "potential web scan (suspicious)", "(heuristic)")); i += 9
+        # JSON lines of the same shape, junk, and a lowercase type the aggregator rejects
+        for k in range(25):
+            rows.append(json.dumps({"time": ts(i), "sensor": "s2", "src_ip": "10.6.0.%d" % k, "src_port": 3333, "dst_ip": "10.0.0.4", "dst_port": 6666, "proto": "TCP", "type": "IP", "trail": "6.6.6.%d" % k, "info": "malware (test)", "reference": "(static)"})); i += 13
+        rows.append("not a log line at all")
+        rows.append(text(ts(i), "s1", "10.7.0.1", 1, "10.0.0.5", 2, "TCP", "ip", "7.7.7.7", "lowercase type", "(static)")); i += 1
+        rnd.shuffle(rows)
+        return "\n".join(rows) + "\n"
+
+    def setUp(self):
+        self.node = next((c for c in ("node", "nodejs") if any(
+            os.access(os.path.join(d, c), os.X_OK) for d in os.environ.get("PATH", "").split(os.pathsep) if d)), None)
+        if not self.node:
+            raise unittest.SkipTest("needs node to run the worker")
+        self.main_js = _read(MAIN_JS)
+
+    def _page_function(self, name):
+        found = re.search(r"\n  (?:function %s\(|var %s = )" % (re.escape(name), re.escape(name)), self.main_js)
+        self.assertTrue(found, "main.js no longer defines %s" % name)
+        start = found.start() + 1
+        line_end = self.main_js.index("\n", start)
+        line = self.main_js[start:line_end].rstrip()
+        if line.endswith("}") or line.endswith(";"):
+            return self.main_js[start:line_end]
+        return self.main_js[start:self.main_js.index("\n  }\n", start) + 5]
+
+    def _run(self, chunk_size, day_a, day_b, live):
+        page = "\n".join(self._page_function(_) for _ in ("workerAgg", "SET_FIELDS", "setSets", "growSets", "applyDelta", "topN"))
+        script = PAPA_SHIM + """
+var self = globalThis; self.Papa = Papa; self.location = { search: "" };
+self.importScripts = function () {};
+var OUT = []; self.postMessage = function (m) { OUT.push(structuredClone(m)); };
+""" + _read(ENGINE_JS) + "\nfunction WORKER() {\n" + _read(WORKER_JS) + "\n}\n" + """
+var E = self.MT_ENGINE, MAX_CONDENSED = E.MAX_CONDENSED, mergeRows = E.mergeRows, parseEvents = E.parseEvents;
+var state = {}, _W = {};
+""" + page + """
+var enc = new TextEncoder();
+function chunks(text, size) {   // the bytes of `text`, cut every `size` bytes (multi-byte characters included)
+  var bytes = enc.encode(text), out = [];
+  for (var i = 0; i < bytes.length; i += size) out.push(bytes.subarray(i, Math.min(bytes.length, i + size)));
+  return out;
+}
+// the in-thread path, as loadEvents() runs it: decode as a stream, parse whole lines, merge each chunk
+function reference(parts) {
+  var dec = new TextDecoder(), buf = "", agg = null;
+  parts.forEach(function (u8) {
+    buf += dec.decode(u8, { stream: true });
+    var nl = buf.lastIndexOf("\\n");
+    if (nl >= 0) { var rows = parseEvents(buf.slice(0, nl)); buf = buf.slice(nl + 1); if (rows.length) agg = mergeRows(agg, rows); }
+  });
+  return agg || E.aggregateRows([]);
+}
+function viaWorker(parts, seq) {
+  WORKER();   // a fresh worker for every day, as the page makes one
+  self.onmessage({ data: { op: "init", seq: seq, sev: "", pace: { every: 40, minMs: 0, duty: 0 } } });
+  parts.forEach(function (u8) {
+    var copy = new Uint8Array(u8);   // transferred in the browser; a copy here
+    self.onmessage({ data: { op: "chunk", seq: seq, buf: copy.buffer, off: copy.byteOffset, len: copy.byteLength } });
+  });
+  self.onmessage({ data: { op: "end", seq: seq } });
+  state._wagg = null;
+  var deltas = 0, done = null;
+  OUT.forEach(function (m) { if (m.seq !== seq) return; if (m.op === "delta") { applyDelta(m); deltas++; } if (m.op === "done") done = m; });
+  OUT = [];
+  if (!done) throw new Error("no done");
+  return { agg: state._wagg, deltas: deltas, tail: done.tail };
+}
+function sets(s) { return { n: s.n, capped: s.capped, vals: Array.from(s.vals) }; }
+function canon(a) {
+  return JSON.stringify({
+    events: a.events, sources: a.sources, trailsN: a.trailsN, dropped: a._dropped || 0,
+    hours: a.hours, sevHours: a.sevHours, sevCount: a.sevCount, typeCounts: a.typeCounts, typeHours: a.typeHours,
+    srcTop: topN(a.srcCounts, 18, a.events), trailTop: topN(a.trailCounts, 18, a.events),
+    threats: a.threats.map(function (t) {
+      return [t.key, t.kind, t.sensor, t.src, t.sport, t.dst, t.dport, t.proto, t.type, t.trail, t.info, t.ref,
+              t.count, t.first, t.last, t.hours, t.sev, t.uidc,
+              sets(t.srcS), sets(t.sportS), sets(t.dstS), sets(t.dportS), sets(t.protoS), sets(t.sensorS), t.events];
+    }) });
+}
+var A = %s, B = %s, LIVE = %s, SIZE = %d, out = {};
+var pa = chunks(A, SIZE), ref = reference(pa), got = viaWorker(pa, 1);
+out.a = [canon(ref), canon(got.agg), got.deltas, got.tail];
+if (LIVE) {   // lines after the stream, as a live tick merges them
+  self.onmessage({ data: { op: "text", seq: 1, text: LIVE } });
+  OUT.forEach(function (m) { if (m.op === "delta") applyDelta(m); }); OUT = [];
+  ref = mergeRows(ref, parseEvents(LIVE));
+  out.live = [canon(ref), canon(state._wagg)];
+}
+var pb = chunks(B, SIZE); ref = reference(pb); got = viaWorker(pb, 2);
+out.b = [canon(ref), canon(got.agg), got.deltas];   // the next day, in a fresh worker: nothing of the first may remain
+console.log(JSON.stringify(out));
+""" % (json.dumps(day_a), json.dumps(day_b), json.dumps(live), chunk_size)
+        # The engine, the worker and the fixtures together are far past what a command line holds.
+        # tests/run.sh caps each test's address space at 1.2 GB, and node reserves 1.5 GB of it
+        # before running a line (the JIT code range, the compiler and GC thread pools, their
+        # stacks): with no JIT and no helper threads it reserves 0.8 GB and this script fits.
+        import subprocess
+        import tempfile
+        fd, path = tempfile.mkstemp(suffix=".js")
+        try:
+            with os.fdopen(fd, "wb") as f:
+                f.write(script.encode("utf8"))
+            proc = subprocess.Popen([self.node, "--v8-pool-size=0", "--single-threaded", "--jitless", path],
+                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+            out = proc.communicate()[0].decode("utf8", "replace")
+            self.assertEqual(proc.returncode, 0, "node failed:\n%s" % out[-3000:])
+        finally:
+            os.unlink(path)
+        return json.loads(out.strip().splitlines()[-1])
+
+    def _assert_same(self, ref, got, what):
+        if ref == got:
+            return
+        r, g = json.loads(ref), json.loads(got)
+        for key in r:
+            if key != "threats" and r[key] != g[key]:
+                self.fail("%s: %s differs: in-thread %r, worker %r" % (what, key, r[key], g[key]))
+        self.assertEqual(len(r["threats"]), len(g["threats"]), "%s: threat count" % what)
+        for i, (x, y) in enumerate(zip(r["threats"], g["threats"])):
+            if x != y:
+                self.fail("%s: threat %d (%s) differs:\n in-thread %r\n worker    %r" % (what, i, x[0], x, y))
+        self.fail("%s: differs" % what)
+
+    def _check(self, size):
+        a = self._fixture(1, "2026-10-15")
+        b = self._fixture(2, "2026-10-16")
+        live = self._fixture(3, "2026-10-15")[:4000].rsplit("\n", 1)[0] + "\n"
+        out = self._run(size, a, b, live)
+        self._assert_same(out["a"][0], out["a"][1], "day A in %d-byte chunks" % size)
+        self.assertEqual(out["a"][3], 0, "the fixture ends with a newline: nothing is left pending")
+        self._assert_same(out["live"][0], out["live"][1], "day A after a live merge")
+        self._assert_same(out["b"][0], out["b"][1], "day B after a reset")
+        return out
+
+    def test_the_whole_file_in_one_chunk(self):
+        out = self._check(1 << 24)
+        self.assertEqual(out["a"][2], 2, "one chunk: the delta it triggers, and the one the end of the stream sends")
+
+    def test_small_chunks_cut_lines_and_characters(self):
+        out = self._check(37)
+        self.assertGreater(out["a"][2], 10, "with 40 rows per delta the fixture takes many deltas: %d" % out["a"][2])
+
+    def test_sixty_four_kilobyte_chunks(self):
+        self._check(65536)
+
+    def test_an_incomplete_final_line_is_held_back(self):
+        a = self._fixture(1, "2026-10-15")
+        cut = a[:-20]   # EOF in the middle of the last line
+        out = self._run(1000, cut, self._fixture(2, "2026-10-16"), "")
+        self._assert_same(out["a"][0], out["a"][1], "day A cut mid-line")
+        self.assertEqual(out["a"][3], len(cut.encode("utf8")) - cut.encode("utf8").rfind(b"\n") - 1,
+                         "the tail reported is the byte length of the unfinished line")
+
+    def test_the_fixture_exercises_the_caps_and_kinds(self):
+        # the fixture is only worth its weight if it reaches the paths it claims to
+        out = self._run(1 << 24, self._fixture(1, "2026-10-15"), "x\n", "")
+        threats = json.loads(out["a"][1])["threats"]
+        kinds = set(t[1] for t in threats)
+        self.assertEqual(kinds, {None, "flood", "dga", "dnsx"}, "every threat kind is grouped: %r" % kinds)
+        big = [t for t in threats if t[3] == "192.168.7.7"]
+        self.assertEqual(len(big), 1)
+        self.assertEqual(len(big[0][24]), 500, "the stored-rows cap")
+        self.assertTrue(big[0][19]["capped"] and big[0][19]["n"] == 100, "the source-port set hits its cap")
+        self.assertTrue(any(t[9].startswith("Mozilla/5.0 ünicode") for t in threats), "the multi-byte trail survives")
+        self.assertTrue(any(t[9] == "/admin, /.env, /wp-login.php" for t in threats), "a path list is a trail")
+        self.assertTrue(any(t[8] == "IP" and t[9].startswith("6.6.6.") for t in threats), "JSON lines aggregate")
+        self.assertFalse(any(t[9] == "7.7.7.7" for t in threats), "a lowercase type is rejected")
 
 
 if __name__ == "__main__":

@@ -266,10 +266,12 @@
   // Mirrors aggregateRows' per-event logic exactly so the result matches a full re-aggregate — except a
   // trail newly crossing the flood threshold reclassifies only NEW events (prior grouping self-corrects on
   // the next full load). This is what makes live cheap on a 50MB/day log: no full re-parse, no full re-walk.
-  function mergeRows(agg, rows) {
+  // `into`, when given, collects the touched threats across calls (the worker's deltas); it is
+  // what agg._touched then refers to.
+  function mergeRows(agg, rows, into) {
     if (!agg || !agg._byKey) return aggregateRows(rows);   // no baseline -> full
     var threats = agg._byKey, order = agg.threats, trailSrcs = agg._trailSrcs, flood = agg._flood;
-    var touched = new Set();
+    var touched = into || new Set();
     for (var r = 0; r < rows.length; r++) {
       var row = rows[r];
       if (!row || row.length < 11) continue;
@@ -316,7 +318,8 @@
       if (time > t.last) t.last = time;
       touched.add(t);
     }
-    touched.forEach(function (t) { t._hay = null; });   // INVALIDATE haystack (cheap); rebuilt lazily in hay() only if a free-text search needs it — avoids rebuilding a long string for every touched threat on every chunk during a 100MB load
+    if (!into) touched.forEach(function (t) { t._hay = null; });   // INVALIDATE haystack (cheap); rebuilt lazily in hay() only if a free-text search needs it — avoids rebuilding a long string for every touched threat on every chunk during a 100MB load
+    agg._touched = touched;   // what changed (since `into` was last emptied): the worker ships exactly these to the page
     return agg;   // sources / trailsN already maintained as running counters above
   }
 

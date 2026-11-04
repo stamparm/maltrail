@@ -13,7 +13,7 @@
   // the main thread; the names below are the ones this file always used.
   var E = window.MT_ENGINE;
   var murmur3 = E.murmur3, threatUID = E.threatUID, setList = E.setList, charTrim = E.charTrim, normTrail = E.normTrail, severityOf = E.severityOf,
-      parseEvents = E.parseEvents, aggregate = E.aggregate, aggregateRows = E.aggregateRows, mergeRows = E.mergeRows;
+      parseEvents = E.parseEvents, aggregate = E.aggregate, aggregateRows = E.aggregateRows, mergeRows = E.mergeRows, MAX_CONDENSED = E.MAX_CONDENSED;
   // Severity is the server's policy (REMOTE_SEVERITY_REGEX), served in <meta name="mt-severity">
   // and compiled by the engine; see engine.js for why there is no second copy of it here.
   var SEV_RAW = (function () {
@@ -299,13 +299,13 @@
                : d.sevCount[2] >= d.sevCount[1] ? "medium" : "low";
     // each mini previews the chart its card opens: Threats/Sources/Trails => top-N magnitude bars
     // (the same data the big donut/bars chart draws), Events => 24h volume, Severity => hi/md/lo split.
-    var vals = function (obj, n) { return topN(obj, n).items.map(function (x) { return x[1]; }); };
+    var vals = function (obj, n) { return topN(obj, n, d.events).items.map(function (x) { return x[1]; }); };
     // Each mini mirrors the chart its card opens: Threats/Trails = donut, Sources = multicolor bars,
     // Severity = hi/md/lo split pill-row, Events = the SAME multi-line-by-type series as its full chart.
     var topThreats = d.threats.slice().sort(function (a, b) { return b.count - a.count; });
     var threatSlices = topThreats.slice(0, 6).map(function (t) { return { v: t.count, c: uidColor(t.uidc) }; });
     var tOther = topThreats.slice(6).reduce(function (s, t) { return s + t.count; }, 0); if (tOther) threatSlices.push({ v: tOther, c: otherColor() });
-    var trN = topN(d.trailCounts, 6), trailSlices = trN.items.map(function (x, i) { return { v: x[1], c: PALETTE[i % PALETTE.length] }; });
+    var trN = topN(d.trailCounts, 6, d.events), trailSlices = trN.items.map(function (x, i) { return { v: x[1], c: PALETTE[i % PALETTE.length] }; });
     if (trN.other) trailSlices.push({ v: trN.other, c: otherColor() });
     var etypes = Object.keys(d.typeHours).sort(function (a, b) { return d.typeCounts[b] - d.typeCounts[a]; }).slice(0, 5);
     var eseries = etypes.map(function (t, i) { return { data: d.typeHours[t], c: TYPE_COLORS[t] || PALETTE[i] }; });
@@ -359,10 +359,14 @@
 
   // ---- canvas charts (no D3 / Chart.js) ----
   var PALETTE = ["#38BDF8", "#A78BFA", "#34D399", "#F472B6", "#FBBF24", "#22D3EE", "#F43F5E", "#818CF8", "#FB923C", "#2DD4BF"];
-  function topN(m, n) {   // m is a Map<key,count> (srcCounts / trailCounts)
+  // m is a Map<key,count> (srcCounts / trailCounts). `total` is the sum of every count in the
+  // map, which is the aggregate's event count: when the day is built by the worker the page only
+  // holds the map's top entries, and "other" has to come from the total rather than the rest.
+  function topN(m, n, total) {
     var arr = []; m.forEach(function (v, k) { arr.push([k, v]); }); arr.sort(function (a, b) { return b[1] - a[1]; });
     if (arr.length <= n) return { items: arr, other: 0 };
-    return { items: arr.slice(0, n), other: arr.slice(n).reduce(function (s, x) { return s + x[1]; }, 0) };
+    var items = arr.slice(0, n), top = items.reduce(function (s, x) { return s + x[1]; }, 0);
+    return { items: items, other: total != null ? total - top : arr.slice(n).reduce(function (s, x) { return s + x[1]; }, 0) };
   }
   function cctx(cv) { var dpr = window.devicePixelRatio || 1; cv.width = cv._w * dpr; cv.height = cv._h * dpr; cv.style.width = cv._w + "px"; cv.style.height = cv._h + "px"; var c = cv.getContext("2d"); c.scale(dpr, dpr); return c; }
   function themeColors() {
@@ -681,9 +685,9 @@
           : Math.round(Math.max(250, Math.min(340, cv._w * 0.22)));
     var hits = [];
     if (type === "Severity") hits = drawInteractiveSplit(cv, [{ k: "high", v: d.sevCount[3], c: "#F43F5E", token: "sev:high" }, { k: "medium", v: d.sevCount[2], c: "#F59E0B", token: "sev:medium" }, { k: "low", v: d.sevCount[1], c: "#64748B", token: "sev:low" }]);
-    else if (type === "Trails") { var tn = topN(d.trailCounts, 9), sl = tn.items.map(function (x) { return { k: x[0], v: x[1], token: "trail:" + x[0] }; }); if (tn.other) sl.push({ k: "other", v: tn.other, c: otherColor() }); hits = drawInteractiveDonut(cv, sl, d.trailsN, "trails"); }
+    else if (type === "Trails") { var tn = topN(d.trailCounts, 9, d.events), sl = tn.items.map(function (x) { return { k: x[0], v: x[1], token: "trail:" + x[0] }; }); if (tn.other) sl.push({ k: "other", v: tn.other, c: otherColor() }); hits = drawInteractiveDonut(cv, sl, d.trailsN, "trails"); }
     else if (type === "Threats") { var ts = (d.threats || state.all).slice().sort(function (a, b) { return b.count - a.count; }), sl = ts.slice(0, 9).map(function (t) { return { k: t.uidc, v: t.count, c: uidColor(t.uidc), token: "uid:" + t.uidc }; }); var oth = ts.slice(9).reduce(function (s, t) { return s + t.count; }, 0); if (oth) sl.push({ k: "other", v: oth, c: otherColor() }); hits = drawInteractiveDonut(cv, sl, d.threats.length, "threats"); }   // include "other" so the big donut matches the mini (like Trails)
-    else if (type === "Sources") hits = drawInteractiveBars(cv, topN(d.srcCounts, 14).items);
+    else if (type === "Sources") hits = drawInteractiveBars(cv, topN(d.srcCounts, 14, d.events).items);
     else { var types = Object.keys(d.typeHours).sort(function (a, b) { return d.typeCounts[b] - d.typeCounts[a]; }).slice(0, 5); hits = drawLines(cv, types.map(function (t, i) { return { name: t, data: d.typeHours[t], c: TYPE_COLORS[t] || PALETTE[i], token: "type:" + t }; })); }
     // overlay transparent clickable buttons on the painted legend (canvas text isn't clickable) -> apply that filter
     var ov = area.querySelector(".chart-cv");
@@ -996,8 +1000,7 @@
     state._liveFlush = null;
     var buf = state._liveBuf; state._liveBuf = [];
     if (!buf.length || state._liveBufDate !== currentDate()) return;   // navigated away before flush -> drop
-    var rows = parseEvents(buf.join("\n"));
-    if (state.agg && state.agg._byKey) render(mergeRows(state.agg, rows));
+    if (mergeable()) mergeText(buf.join("\n"), false, state._loadSeq);
     else loadEvents(currentDate());   // no baseline yet -> full load
   }
   function openSSE(date) {
@@ -3251,6 +3254,8 @@
   function loadEvents(date) {
     setStatus("loading events…");
     var seq = ++state._loadSeq;
+    state._wload = null;
+    function fail() { if (seq !== state._loadSeq) return; state.streaming = false; state._wload = null; setConnected(false); setStatus("no connection to the server"); }
     fetch("/events?date=" + encodeURIComponent(date), { credentials: "same-origin" })
       .then(function (r) {
         setConnected(true);                                          // server responded -> reachable
@@ -3266,8 +3271,60 @@
             autoLive();
           });
         }
-        var reader = r.body.getReader(), dec = new TextDecoder(), buf = "", agg = null, seen = 0, lastRender = 0, lastRenderT = 0, bytes = 0, paintMs = 0;
+        var reader = r.body.getReader(), seen = 0, lastRender = 0, lastRenderT = 0, bytes = 0, paintMs = 0;
         state.streaming = true;
+        // The FIRST progressive paint is exempt from the rate floor: it is the one the user is
+        // waiting on, and making it wait moved time-to-first-rows from 544ms to 800ms - a
+        // regression in exactly the thing that reads as responsive. Only the repaints AFTER it
+        // are throttled, which is where the wasted work actually was.
+        function maybePaint(agg) {
+          if (agg && seen - lastRender >= RENDER_EVERY &&
+              (lastRenderT === 0 || _now() - lastRenderT >= Math.max(RENDER_MIN_MS, paintMs * RENDER_DUTY))) {
+            lastRender = seen; var _pt = _now(); render(agg); lastRenderT = _now(); paintMs = lastRenderT - _pt;
+          }
+        }
+        var w = newWorker();
+        window.__MT_WORKER = !!w;
+        if (w) {
+          // The bytes go to the worker as they arrive and its deltas patch state._wagg (see
+          // applyDelta); this thread only paints, at the same pace as before. At most IN_FLIGHT
+          // bytes are unacknowledged, so a slow worker slows the download instead of the whole
+          // file piling up in its queue; the window is wide enough that a paint here (hundreds
+          // of ms on a huge day) does not leave the worker idle, and narrow enough that what the
+          // page posts back (the paint costs) is not read a second later.
+          var IN_FLIGHT = 8 << 20, inflight = 0, stalled = false, wagg = (state._wagg = workerAgg());
+          state._wload = { seq: seq,
+            ack: function (m) { inflight -= m.len; if (stalled && inflight < IN_FLIGHT) { stalled = false; wpump(); } },
+            delta: function (m, t0) {
+              // the worker paced this delta by what the last one cost here; the paint itself is
+              // still gated, so deltas that queued up behind a slow paint are applied, not painted
+              seen = m.events;
+              if (lastRenderT === 0 || _now() - lastRenderT >= Math.max(RENDER_MIN_MS, paintMs * RENDER_DUTY)) {
+                lastRender = seen; render(wagg); lastRenderT = _now(); paintMs = lastRenderT - t0;   // apply + paint
+                w.postMessage({ op: "paint", seq: seq, ms: paintMs });
+              }
+            },
+            done: function (m) {
+              state._wload = null; state.streaming = false;
+              state._liveBytes = bytes - m.tail; state._liveDate = date;   // baseline = end of last COMPLETE line
+              window.__MT_WSTATS = m.stats;   // where the worker's time went (diagnostics)
+              render(wagg);
+              autoLive();
+            } };
+          function wpump() {
+            return reader.read().then(function (res) {
+              if (seq !== state._loadSeq) { try { reader.cancel(); } catch (e) { } return; }
+              if (res.done) { w.postMessage({ op: "end", seq: seq }); return; }
+              var v = res.value; bytes += v.byteLength;                          // raw bytes, matches the server's file offsets
+              w.postMessage({ op: "chunk", seq: seq, buf: v.buffer, off: v.byteOffset, len: v.byteLength }, [v.buffer]);
+              inflight += v.byteLength;
+              if (inflight < IN_FLIGHT) return wpump();
+              stalled = true;
+            }).catch(fail);
+          }
+          return wpump();
+        }
+        var dec = new TextDecoder(), buf = "", agg = null;
         function pump() {
           return reader.read().then(function (res) {
             if (seq !== state._loadSeq) { try { reader.cancel(); } catch (e) { } return; }
@@ -3291,20 +3348,122 @@
               var chunk = parseRows(buf.slice(0, nl)); buf = buf.slice(nl + 1);
               if (chunk.length) { agg = mergeRows(agg, chunk); seen += chunk.length; }   // fold chunk in; chunk array is then freed (bounded memory)
             }
-            // The FIRST progressive paint is exempt from the rate floor: it is the one the user is
-            // waiting on, and making it wait moved time-to-first-rows from 544ms to 800ms - a
-            // regression in exactly the thing that reads as responsive. Only the repaints AFTER it
-            // are throttled, which is where the wasted work actually was.
-            if (agg && seen - lastRender >= RENDER_EVERY &&
-                (lastRenderT === 0 || _now() - lastRenderT >= Math.max(RENDER_MIN_MS, paintMs * RENDER_DUTY))) {
-              lastRender = seen; var _pt = _now(); render(agg); lastRenderT = _now(); paintMs = lastRenderT - _pt;
-            }
+            maybePaint(agg);
             return pump();
           });
         }
         return pump();
       })
-      .catch(function () { state.streaming = false; setConnected(false); setStatus("no connection to the server"); });
+      .catch(fail);
+  }
+  // ---- the worker: parsing and aggregation off the main thread (js/worker.js) ----
+  // The page keeps its own copy of the threats, patched from the worker's deltas, so everything
+  // that reads state.all / state.agg is untouched. One worker holds one day: a new load
+  // terminates the previous worker, which hands that day's memory back at once (V8 would keep a
+  // worker's heap for a minute after its last allocation), and leaves nothing of it to confuse
+  // the next. A browser without workers, a policy that blocks them, a script that fails to load
+  // and a crash inside one all land on the in-thread path above (the engine is the same code
+  // either way); `localStorage.mt_worker = "0"` forces that path for a session where a worker
+  // misbehaves.
+  var _W = null, _workerDead = false;
+  var ASSETVER = (function () { try { var s = document.querySelector('script[src*="js/main.js"]'), m = s && /[?&]v=([^&]+)/.exec(s.getAttribute("src") || ""); return m ? m[1] : ""; } catch (e) { return ""; } })();
+  function newWorker() {
+    if (_W) { try { _W.terminate(); } catch (e) { } _W = null; }
+    if (_workerDead || DEMO) return null;
+    if (typeof Worker === "undefined" || typeof TextDecoder === "undefined" || lsGet("mt_worker", 1) === 0) { _workerDead = true; return null; }
+    try { _W = new Worker("js/worker.js" + (ASSETVER ? "?v=" + encodeURIComponent(ASSETVER) : "")); }
+    catch (e) { _W = null; _workerDead = true; return null; }
+    _W.onmessage = onWorkerMessage;
+    _W.onerror = function () { workerFailed(); };   // the browser has logged it; the page just stops relying on it
+    _W.postMessage({ op: "init", sev: SEV_RAW, pace: { every: RENDER_EVERY, minMs: RENDER_MIN_MS, duty: RENDER_DUTY } });
+    return _W;
+  }
+  function workerFailed() {
+    var w = _W; _W = null; _workerDead = true;
+    try { if (w) w.terminate(); } catch (e) { }
+    state._wload = null;
+    if (!DEMO) loadEvents(currentDate());   // whatever was in flight or on screen came from it: rebuild here
+  }
+  function onWorkerMessage(e) {
+    var m = e.data; if (!m || m.seq !== state._loadSeq) return;   // a reply to a superseded navigation, like a late fetch
+    var L = state._wload; if (L && L.seq !== m.seq) L = null;
+    if (m.op === "delta") { var t0 = _now(); applyDelta(m); if (L) L.delta(m, t0); }
+    else if (m.op === "ack") { if (L) L.ack(m); }
+    else if (m.op === "done") { if (L) L.done(m); }
+    else if (m.op === "merged") { if (!L) render(state._wagg); }   // a live merge; during a load the paced paints cover it
+  }
+  // The page's copy of a worker-built day: the engine's aggregate minus its merge-only maps
+  // (_trailSrcs, _flood), and with srcCounts / trailCounts holding only the top entries (topN).
+  function workerAgg() {
+    var z = function () { return new Array(24).fill(0); };
+    return { threats: [], events: 0, sources: 0, trailsN: 0, hours: z(), sevHours: { 3: z(), 2: z(), 1: z() }, sevCount: { 3: 0, 2: 0, 1: 0 },
+             typeCounts: {}, srcCounts: new Map(), trailCounts: new Map(), typeHours: {}, _byKey: null, _dropped: 0, _worker: true };
+  }
+  // The six collected sets of a threat from their flat form (js/worker.js:sets). Filled with
+  // add(): `new Set(array)` takes the iterator protocol and was a quarter of the page's time.
+  var SET_FIELDS = ["srcS", "sportS", "dstS", "dportS", "protoS", "sensorS"];
+  function setSets(t, v, n, cap) {
+    for (var i = 0, o = 0; i < 6; i++) {
+      var vals = new Set(), end = o + n[i], capped = !!(cap & (1 << i));
+      while (o < end) vals.add(v[o++]);
+      t[SET_FIELDS[i]] = { n: capped ? MAX_CONDENSED : n[i], capped: capped, vals: vals };
+    }
+  }
+  // ...and the values they gained since the last delta, appended: n[i] of `v` go to set i. The
+  // engine's n counts real values, so a capped set (its "…" is among the values) stays at the cap.
+  function growSets(t, v, n, cap) {
+    for (var i = 0, o = 0; i < 6; i++) {
+      var s = t[SET_FIELDS[i]], end = o + n[i];
+      while (o < end) s.vals.add(v[o++]);
+      s.capped = !!(cap & (1 << i)); s.n = s.capped ? MAX_CONDENSED : s.vals.size;
+    }
+  }
+  // A delta (js/worker.js:delta): threats seen for the first time as whole records, appended in
+  // the aggregate's own order, then updates to earlier ones by position, then the totals. Threat
+  // objects keep their identity across deltas (the drawer, the selection and the memoised views
+  // hold references), and a new one is built with the engine's literal, field for field.
+  function applyDelta(m) {
+    var a = state._wagg || (state._wagg = workerAgg()), order = a.threats, recs = m.recs, H = m.hours, n = recs.length, i, j, r, t, ev, o;
+    for (i = 0; i < n; i++) {
+      r = recs[i];
+      t = { key: r[0], kind: r[1], sensor: r[2], src: r[3], sport: r[4], dst: r[5], dport: r[6], proto: r[7],
+            type: r[8], trail: r[9], info: r[10], ref: r[11], count: r[12], first: r[13], last: r[14],
+            hours: new Array(24), sev: r[15],
+            uidc: r[16], _hay: null, _riskT: undefined, _riskN: -1, _risk: 0,
+            srcS: null, sportS: null, dstS: null, dportS: null, protoS: null, sensorS: null, events: r[20] };
+      for (j = 0, o = i * 24; j < 24; j++) t.hours[j] = H[o + j];
+      setSets(t, r[17], r[18], r[19]);
+      order.push(t);
+    }
+    var idx = m.uidx, cnt = m.ucount, first = m.ufirst, last = m.ulast, k = idx.length;
+    for (i = 0; i < k; i++) {
+      t = order[idx[i]]; if (!t) continue;
+      t.count = cnt[i]; t._hay = null;
+      if (first[i] != null) t.first = first[i];
+      if (last[i] != null) t.last = last[i];
+      for (j = 0, o = (n + i) * 24; j < 24; j++) t.hours[j] = H[o + j];
+    }
+    for (i = 0; i < m.uev.length; i++) { r = m.uev[i]; t = order[idx[r[0]]]; ev = r[1]; if (t) for (j = 0; j < ev.length; j++) t.events.push(ev[j]); }
+    for (i = 0; i < m.usets.length; i++) { r = m.usets[i]; t = order[idx[r[0]]]; if (t) growSets(t, r[1], r[2], r[3]); }
+    a.events = m.events; a.sources = m.sources; a.trailsN = m.trailsN; a._dropped = m.dropped;
+    a.hours = m.hoursAll; a.sevHours = m.sevHours; a.sevCount = m.sevCount; a.typeCounts = m.typeCounts; a.typeHours = m.typeHours;
+    a.srcCounts = new Map(m.srcTop); a.trailCounts = new Map(m.trailTop);
+    return a;
+  }
+  // Whether new lines can be folded into the day on screen without reloading it: a baseline
+  // exists - the engine's merge maps here, or the worker that holds them still running.
+  function mergeable() { var a = state.agg; return !!(a && (a._worker ? _W : a._byKey)); }
+  // Lines to fold into the day: through the worker when it owns the aggregate (answered with a
+  // delta and `merged`, which renders), else right here. `full` replaces the day with the text.
+  function mergeText(text, full, seq) {
+    var w = full ? newWorker() : (state.agg && state.agg._worker ? _W : null);
+    if (w) {
+      if (full) state._wagg = workerAgg();
+      w.postMessage({ op: "text", seq: seq, text: text });
+      return;
+    }
+    var rows = parseEvents(text);
+    render(full ? aggregateRows(rows) : mergeRows(state.agg, rows));
   }
   function autoLive() { if (state._autoLive) { state._autoLive = false; if (!state.live && state._connected !== false) setLive(true); } }
   function byteLenFull(text, r) {
@@ -3317,7 +3476,7 @@
   function liveTick(date) {
     if (DEMO) { render(aggregate(demoCSV())); return; }   // demo has no server; just repaint
     // need a byte baseline + a mergeable aggregate for THIS date; otherwise fall back to a normal full load
-    if (state._liveBytes == null || state._liveBytes < 0 || state._liveDate !== date || !state.agg || !state.agg._byKey) { loadEvents(date); return; }
+    if (state._liveBytes == null || state._liveBytes < 0 || state._liveDate !== date || !mergeable()) { loadEvents(date); return; }
     var start = state._liveBytes, seq = ++state._loadSeq;
     fetch("/events?date=" + encodeURIComponent(date), { credentials: "same-origin", headers: { "Range": "bytes=" + start + "-" + LIVE_MAX_END } })
       .then(function (r) {
@@ -3328,9 +3487,8 @@
         if (r.status === 200) {                                                       // server ignored Range (e.g. filtered session) => full reload
           return r.text().then(function (t) {
             if (seq !== state._loadSeq) return;
-            var rows = parseEvents(t);
             state._liveBytes = byteLenFull(t, r); state._liveDate = date;
-            render(aggregateRows(rows));
+            mergeText(t, true, seq);
           });
         }
         if (r.status !== 206) { if (!r.ok) setStatus("live update failed (HTTP " + r.status + ")"); return; }
@@ -3340,9 +3498,8 @@
             var u8 = new Uint8Array(ab), nl = -1, i;
             for (i = u8.length - 1; i >= 0; i--) { if (u8[i] === 10) { nl = i; break; } }   // last '\n' in the raw delta
             if (nl >= 0) {                                                              // consume ONLY complete lines
-              var rows = parseEvents(new TextDecoder().decode(ab.slice(0, nl + 1)));
               state._liveBytes = start + nl + 1; state._liveDate = date;                // advance past complete lines only; a partial tail is re-fetched next tick (no dropped/split event)
-              render(mergeRows(state.agg, rows));                                        // O(new rows) merge — no full re-parse/re-aggregate
+              mergeText(new TextDecoder().decode(ab.slice(0, nl + 1)), false, seq);     // O(new rows) merge — no full re-parse/re-aggregate
             }
             // else: only a partial line appended so far => consume nothing, retry from `start` next tick
           }
