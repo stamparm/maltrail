@@ -5,6 +5,7 @@ Wire format is "<epoch_sec> <event...>" (regular, epoch prefix) OR a quoted-loca
 prefix). A bug here means remote sensor events silently never land on the server -- exactly the
 "something is off across sensors" symptom. Boots the real UDP server on localhost and verifies both
 formats write the event to the correct day's log file. Skips cleanly if it can't bind."""
+import binascii
 import os
 import sys
 import time
@@ -186,11 +187,14 @@ class TestIntakeShape(unittest.TestCase):
         port = server.server_address[1]
 
         path = os.path.join(TestLogd.tmp, DATELOG)
-        payload = b'%d "burst" h 10.0.0.1 1 2.2.2.2 2 TCP IP 2.2.2.2 "m" (s)' % SEC
+        # The day's log is shared with TestLogd, whose receiver is still running and can land a late
+        # line mid-burst (seen as "201 != 200"). Count only this test's own lines.
+        marker = b"burst-%s" % binascii.hexlify(os.urandom(4))
+        payload = b'%d "' % SEC + marker + b'" h 10.0.0.1 1 2.2.2.2 2 TCP IP 2.2.2.2 "m" (s)'
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
         sock.sendto(payload, ("127.0.0.1", port))       # warm the day's handle first
-        self._wait_for_lines(path, 1)
+        self._wait_for_lines(path, 1, marker=marker)
 
         opens = []
         real_open = L.os.open
@@ -200,17 +204,17 @@ class TestIntakeShape(unittest.TestCase):
                 opens.append(args[0])
             return real_open(*args, **kwargs)
 
-        before = self._count_lines(path)
+        before = self._count_lines(path, marker)
         L.os.open = counting_open
         try:
             for _ in range(200):
                 sock.sendto(payload, ("127.0.0.1", port))
-            self._wait_for_lines(path, before + 200)
+            self._wait_for_lines(path, before + 200, marker=marker)
         finally:
             L.os.open = real_open
             sock.close()
 
-        self.assertEqual(self._count_lines(path) - before, 200, "datagrams were dropped in a 200-packet burst")
+        self.assertEqual(self._count_lines(path, marker) - before, 200, "datagrams were dropped in a 200-packet burst")
         self.assertLessEqual(len(opens), 1,
                              "the event-log handle is reopened per datagram (%d opens for 200 events)" % len(opens))
 
@@ -252,16 +256,16 @@ class TestIntakeShape(unittest.TestCase):
         got = self._count_lines(path) - before
         self.assertGreaterEqual(got, 3200, "only %d of 4000 datagrams arrived while another thread was busy" % got)
 
-    def _count_lines(self, path):
+    def _count_lines(self, path, marker=None):
         if not os.path.isfile(path):
             return 0
         with open(path, "rb") as f:
-            return sum(1 for _ in f)
+            return sum(1 for line in f if marker is None or marker in line)
 
-    def _wait_for_lines(self, path, target, timeout=10.0):
+    def _wait_for_lines(self, path, target, timeout=10.0, marker=None):
         deadline = time.time() + timeout
         while time.time() < deadline:
-            if self._count_lines(path) >= target:
+            if self._count_lines(path, marker) >= target:
                 return True
             time.sleep(0.05)
         return False
