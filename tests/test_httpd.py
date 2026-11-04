@@ -1671,9 +1671,16 @@ class TestHttpd(unittest.TestCase):
             status = _http(self.port, "GET", "/ping", timeout=10)[0]
             latencies.append((time.time() - started, status))
 
-        threads = [threading.Thread(target=one) for _ in range(24)]
-        for t in threads:
-            t.start()
+        # tests/run.sh caps the address space at 1.2 GB and a thread reserves 8 MB of it by
+        # default; 24 of them was "can't start new thread" on the CI runners. A client thread
+        # here needs a few KB of stack.
+        previous = threading.stack_size(256 * 1024)
+        try:
+            threads = [threading.Thread(target=one) for _ in range(24)]
+            for t in threads:
+                t.start()
+        finally:
+            threading.stack_size(previous)
         for t in threads:
             t.join()
         self.assertEqual(sorted(set(_[1] for _ in latencies)), [200])
