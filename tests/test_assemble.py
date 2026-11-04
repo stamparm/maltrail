@@ -160,5 +160,25 @@ class TheLicenceTravelsWithTheData(unittest.TestCase):
             self.assertNotIn(line, trails, "%r was stored as a trail" % line)
 
 
+
+
+class SplitFilesShareTheirFamilyLabel(unittest.TestCase):
+    def test_overflow_file_gets_the_base_label_but_a_numbered_family_keeps_its_number(self):
+        import tempfile
+        from core.assemble import merge_file
+
+        with tempfile.TemporaryDirectory() as root:
+            for name, entry in (("cobaltstrike.txt", "a.com"), ("cobaltstrike-2.txt", "b.com"), ("covid-19.txt", "c.com")):
+                with open(os.path.join(root, name), "w") as f:
+                    f.write("%s\n" % entry)
+            trails = {}
+            for name in ("cobaltstrike.txt", "cobaltstrike-2.txt", "covid-19.txt"):
+                merge_file(os.path.join(root, name), trails, "malware")
+
+        self.assertEqual(trails["a.com"][0], "cobaltstrike (malware)")
+        self.assertEqual(trails["b.com"][0], "cobaltstrike (malware)")
+        self.assertEqual(trails["c.com"][0], "covid-19 (malware)")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -140,7 +140,16 @@ def _note(provenance, source, pile, trail):
 def merge_file(path, retval, category=None, provenance=None, root=None):
     """Merge one `*.txt` static trail file, deriving its `info` from the filename."""
 
-    info = os.path.splitext(os.path.basename(path))[0].replace('_', " ")
+    name = os.path.splitext(os.path.basename(path))[0]
+
+    # "cobaltstrike-2.txt" is overflow of "cobaltstrike.txt" (split to keep files editable), not a
+    # family of its own, so it gets the same label. Only when that base file exists: a family
+    # actually named e.g. "covid-19" keeps its number.
+    match = re.search(r"\A(.+)-\d+\Z", name)
+    if match and os.path.isfile(os.path.join(os.path.dirname(path), match.group(1) + ".txt")):
+        name = match.group(1)
+
+    info = name.replace('_', " ")
     if category:
         info = "%s (%s)" % (info, category)
 

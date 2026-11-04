@@ -133,7 +133,7 @@ available daily logs. Events are streamed from `/events` and aggregated in the b
 Search terms separated by spaces are combined as **AND**. Prefix a term with `-` to exclude it, use
 `*` for wildcards, use CIDR notation such as `src:10.0.0.0/8`, and use numeric ranges or comparisons
 such as `port:>1024` and `count:>=100`. `family:interlock` also includes `interlock-1` and
-`interlock-2`, the shards in which that feed dump arrives.
+`interlock-2`, the labels older trail sets gave the shards that family is split into.
 
 Retro hunts are bounded by a day limit, a wall-clock budget and a sample cap. If the time budget cuts
 a day short, that day is reported separately rather than counted as a completed day. Only lines
