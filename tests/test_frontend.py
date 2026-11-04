@@ -1632,5 +1632,28 @@ class TestLiveIsTheRememberedDefault(unittest.TestCase):
         self.assertIn('"mt_live": 1', self.js, "a preference is not a filter; it must not invalidate the view cache")
 
 
+class TestNarrowScreens(unittest.TestCase):
+    """At phone width the header wraps; a wrapped header must grow, not spill over the cards.
+
+    The desktop bar is a fixed 56px. Wrapped to three rows it kept that box and the rows below
+    the first were painted over the THREATS and EVENTS cards at 390px.
+    """
+
+    def _block(self, width):
+        css = _read(os.path.join(REPO, "html", "css", "main.css"))
+        m = re.search(r"@media \(max-width:%dpx\)\{(.*?)\n  \}" % width, css, re.S)
+        self.assertTrue(m, "no %dpx breakpoint in main.css" % width)
+        return m.group(1)
+
+    def test_a_wrapped_header_grows_instead_of_overflowing(self):
+        rule = re.search(r"\n\s*header\{([^}]*)\}", self._block(860))
+        self.assertTrue(rule and "flex-wrap:wrap" in rule.group(1))
+        self.assertIn("height:auto", rule.group(1), "a wrapping header with a fixed height spills over the content below it")
+
+    def test_a_phone_header_does_not_stay_pinned(self):
+        rule = re.search(r"\n\s*header\{([^}]*)\}", self._block(680))
+        self.assertTrue(rule and "position:static" in rule.group(1), "three header rows pinned to the top is a third of a phone screen")
+
+
 if __name__ == "__main__":
     unittest.main()

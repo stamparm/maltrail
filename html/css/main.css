@@ -174,16 +174,24 @@
   @media (max-width:860px){
     .stats{grid-template-columns:repeat(2,1fr)}
     /* keep search usable on tablet/mobile: wrap it to its own full-width row instead of hiding it */
-    header{flex-wrap:wrap;gap:10px}
+    /* height:auto - the desktop bar is a fixed 56px, and a wrapped header kept that box while its
+       second and third rows spilled out of it over the first cards (THREATS and EVENTS were under
+       the date and search controls at 390px) */
+    header{flex-wrap:wrap;gap:10px;height:auto;padding:8px 16px}
     .search{order:5;flex-basis:100%;max-width:none}   /* full-width own row on tablet/mobile — drop the desktop cap */
     .brand small{display:none}
     /* mini sparkline drops into flow on narrow cards so it never overlaps the subtitle */
     .card canvas{position:static;display:block;margin-top:9px}
   }
   @media (max-width:680px){
-    header{flex-wrap:wrap;gap:8px}
+    /* three rows of header is a third of a phone screen: let it scroll away, and drop the text-size
+       buttons (the phone pinches) */
+    header{flex-wrap:wrap;gap:8px;position:static}
+    #fz_dec,#fz_inc{display:none}
     .period-nav{order:3;flex-basis:100%;justify-content:center}
     thead{display:none}
+    /* a threat card was 14 labelled rows (416px); the sparkline, sensor and protocol earn no row on a phone */
+    tbody td[data-l="sparkline"],tbody td[data-l="sensor"],tbody td[data-l="proto"]{display:none}
     table,tbody,tr,td{display:block;width:100%}
     tbody tr{border:1px solid var(--line-solid);border-radius:10px;margin-bottom:10px;padding:6px 4px;background:var(--surface)}
     tbody td{border:none;padding:5px 12px;white-space:normal;display:flex;justify-content:space-between;gap:12px}
