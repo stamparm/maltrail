@@ -23,6 +23,7 @@ import unittest
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INDEX = os.path.join(REPO, "html", "index.html")
 MAIN_JS = os.path.join(REPO, "html", "js", "main.js")
+ENGINE_JS = os.path.join(REPO, "html", "js", "engine.js")
 
 # Columns whose header is not a sortable field and whose cell carries no data-l label: the
 # sparkline canvas and the per-threat tag editor.
@@ -56,15 +57,18 @@ def _read(path):
 def _severity_js(js):
     """The severityOf() implementation, evaluable by node on its own.
 
-    Takes the whole block from the policy comment through the function, because severityOf() now
-    depends on SEVERITY_FALLBACK and the compiled-regex IIFE above it. Under node there is no
-    `document`, so the IIFE falls back to the shipped regex - which is what these tests then
+    The policy block (SEVERITY_FALLBACK, setSeverity, severityOf) lives in engine.js; the page
+    reads the <meta> in main.js and hands the regex over. Both halves are taken verbatim, so the
+    tests run exactly what ships. Under node there is no `document`, so the meta read yields
+    nothing and the engine falls back to the shipped regex - which is what these tests then
     exercise, and why _the_fallback_matches_the_shipped_regex is worth its own test.
     """
 
-    found = re.search(r"  // Severity is a POLICY.*?\n  \}\n", js, re.S)
-    assert found, "could not find severityOf() and its policy block in main.js"
-    return found.group(0)
+    found = re.search(r"  // Severity is a POLICY.*?function severityOf\(info, ref\) \{.*?\n  \}\n", _read(ENGINE_JS), re.S)
+    assert found, "could not find severityOf() and its policy block in engine.js"
+    meta = re.search(r"  var SEV_RAW = \(function \(\) \{.*?\n  \}\)\(\);\n", js, re.S)
+    assert meta, "could not find the <meta name=\"mt-severity\"> read in main.js"
+    return found.group(0) + meta.group(0) + "setSeverity(SEV_RAW);\n"
 
 
 class TestGridColumns(unittest.TestCase):
@@ -103,8 +107,8 @@ class TestGridColumns(unittest.TestCase):
         # ip keys have their own branches, everything else falls through to a[k] and so must be a
         # field the aggregator actually sets.
         keys = re.findall(r"<th[^>]*data-key=\"([a-z]+)\"", self.html)
-        built = re.search(r"t = \{ key: ttext,(.*?)\};", self.js, re.S)
-        self.assertTrue(built, "could not find the threat object literal in main.js")
+        built = re.search(r"t = \{ key: ttext,(.*?)\};", _read(ENGINE_JS), re.S)
+        self.assertTrue(built, "could not find the threat object literal in engine.js")
         fields = set(re.findall(r"(\w+):", built.group(1))) | {"sev", "count", "first", "uid"}
         for key in keys:
             self.assertIn(key, fields, "column data-key=%r is not a field of a threat" % key)
@@ -356,13 +360,14 @@ class TestParseEvents(unittest.TestCase):
 
     def _run(self, text):
         node = self._node()
-        fields = re.search(r"var EVENT_FIELDS = \[.*?\];", self.js, re.S)
-        row_fn = re.search(r"function jsonEventRow\(line\) \{.*?\n  \}", self.js, re.S)
-        parse_fn = re.search(r"function parseEvents\(text\) \{.*?\n  \}", self.js, re.S)
-        self.assertTrue(fields and row_fn and parse_fn, "could not find parseEvents() in main.js")
+        engine = _read(ENGINE_JS)
+        fields = re.search(r"var EVENT_FIELDS = \[.*?\];", engine, re.S)
+        row_fn = re.search(r"function jsonEventRow\(line\) \{.*?\n  \}", engine, re.S)
+        parse_fn = re.search(r"function parseEvents\(text\) \{.*?\n  \}", engine, re.S)
+        self.assertTrue(fields and row_fn and parse_fn, "could not find parseEvents() in engine.js")
         # a stand-in for PapaParse: the delimiter is a space and quoting follows safe_value()
         shim = """
-var window = { Papa: { parse: function (text, opts) {
+var root = { Papa: { parse: function (text, opts) {
   var out = [], lines = text.split("\\n");
   lines.forEach(function (line) {
     if (opts.skipEmptyLines && !line) return;
@@ -1196,7 +1201,7 @@ class TestTrailTypesReachTheTable(unittest.TestCase):
         return names
 
     def _type_tests(self):
-        with open(os.path.join(REPO, "html", "js", "main.js"), encoding="utf8") as f:
+        with open(ENGINE_JS, encoding="utf8") as f:
             return re.findall(r"/\^\[([A-Z0-9-]+)\]\+\$/\.test\((?:row\[7\]|type)\)", f.read())
 
     def test_the_type_test_accepts_every_emitted_type(self):
@@ -1458,7 +1463,7 @@ class TestThreatGrouping(unittest.TestCase):
              "newSet", "accum", "aggregateRows")
 
     def setUp(self):
-        self.js = _read(MAIN_JS)
+        self.js = _read(ENGINE_JS)
         self.node = next((c for c in ("node", "nodejs") if any(
             os.access(os.path.join(d, c), os.X_OK) for d in os.environ.get("PATH", "").split(os.pathsep) if d)), None)
         if not self.node:
@@ -1466,7 +1471,7 @@ class TestThreatGrouping(unittest.TestCase):
 
     def _function(self, name):
         found = re.search(r"\n  function %s\(" % re.escape(name), self.js)
-        self.assertTrue(found, "main.js no longer defines %s()" % name)
+        self.assertTrue(found, "engine.js no longer defines %s()" % name)
         line_end = self.js.index("\n", found.start() + 1)
         if self.js[found.start():line_end].rstrip().endswith("}"):
             return self.js[found.start():line_end]
@@ -1475,7 +1480,7 @@ class TestThreatGrouping(unittest.TestCase):
     def _threats(self, rows):
         consts = "\n".join(l for l in self.js.split("\n")
                            if re.match(r"\s+var (DGA_INFIX|MAX_THREATS|MAX_STORED_EVENTS|MAX_CONDENSED|_ntCache|PATH_LIST_RE)\b", l))
-        script = (consts + "\n" + _severity_js(self.js) + "\n".join(self._function(_) for _ in self.NAMES) +
+        script = (consts + "\n" + _severity_js(_read(MAIN_JS)) + "\n".join(self._function(_) for _ in self.NAMES) +
                   "\nconsole.log(JSON.stringify(aggregateRows(%s).threats.map(function (t) { return [t.kind, t.count, t.srcS.n]; })));"
                   % json.dumps(rows))
         import subprocess
