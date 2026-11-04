@@ -418,6 +418,44 @@ def header_problems(root):
     return found
 
 
+def repeats(root):
+    """[(path, line, key, first line)] for an entry listed twice under the SAME '# Reference:' header.
+
+    Repeats pass only when every copy carries a distinct inline note.
+
+    A repeat under a DIFFERENT reference is kept on purpose: it records that two reports saw the
+    same indicator. Within one block it is a paste accident (tinba had a DGA list pasted twice,
+    402 lines), and nothing about it survives assembly except the noise in review.
+    """
+    found = []
+    for base, _, files in os.walk(root):
+        for name in sorted(files):
+            if not name.endswith(".txt"):
+                continue
+            path = os.path.join(base, name)
+            seen = {}
+            with io.open(path, encoding="utf8", errors="replace") as handle:
+                for number, line in enumerate(handle, 1):
+                    line = line.strip()
+                    if line.startswith("# Reference:"):
+                        seen = {}                    # a new block, even if it cites the same URL again
+                        continue
+                    key = re.sub(r"\s*#.*", "", line)
+                    if not key:
+                        continue
+                    note = line[len(key):].strip()
+                    if key not in seen:
+                        seen[key] = (number, set([note]))
+                        continue
+                    first, notes = seen[key]
+                    # Copies that each carry their own note are a record, not an accident:
+                    # data/mass_scanner.txt lists an address once per rDNS name it was seen under.
+                    if not note or '' in notes or note in notes:
+                        found.append((path, number, key, first))
+                    notes.add(note)
+    return found
+
+
 def problems(root, whitelist=None, suffixes=None):
     """[(path, line, key, severity, reason)] for every trail entry that is inert, overbroad, shadowed or suspect."""
     found = []
@@ -771,17 +809,24 @@ def main():
     warned = [_ for _ in found if _[3] == "warn"]
     overbroad = [_ for _ in found if _[3] == "overbroad"]
     headers = header_problems(options.path)
+    repeated = repeats(options.path)
 
     if not options.quiet:
         print("[i] %s: %d entry(ies) that cannot match, %d that match a whole registry, %d suspect, "
-              "%d shadowed by the whitelist, %d malformed header(s)"
-              % (options.path, len(inert), len(overbroad), len(warned), len(shadowed), len(headers)))
+              "%d shadowed by the whitelist, %d malformed header(s), %d repeated under one reference"
+              % (options.path, len(inert), len(overbroad), len(warned), len(shadowed), len(headers), len(repeated)))
         if headers:
             print("\n[!] malformed '# Reference:' / '# Aliases:' header(s) (%d)" % len(headers))
             for path, number, line, why in headers[:options.limit]:
                 print("      %s:%d  %s\n          %s" % (os.path.relpath(path, ROOT), number, why, line[:110]))
             if len(headers) > options.limit:
                 print("      ... and %d more" % (len(headers) - options.limit))
+        if repeated:
+            print("\n[!] listed twice under the same '# Reference:' (%d)" % len(repeated))
+            for path, number, key, first in repeated[:options.limit]:
+                print("      %s:%d  %s  -- already on line %d" % (os.path.relpath(path, ROOT), number, key, first))
+            if len(repeated) > options.limit:
+                print("      ... and %d more" % (len(repeated) - options.limit))
         for label, group in (("cannot match", inert), ("matches a whole registry", overbroad), ("suspect", warned)):
             buckets = {}
             for path, number, key, _, why in group:
@@ -813,12 +858,12 @@ def main():
             if len(by_name) > options.limit:
                 print("      ... and %d more name(s)" % (len(by_name) - options.limit))
 
-        if not inert and not overbroad and not warned and not shadowed and not headers:
+        if not inert and not overbroad and not warned and not shadowed and not headers and not repeated:
             print("[i] no unreachable trails")
 
     # Shadowing is a COLLISION between two operator-visible lists, not a defect in the entry, so it is reported
     # and does not fail the gate: which of the two wins is a policy call (see the note in the module docstring).
-    return 1 if (inert or overbroad or headers or (options.strict and warned)) else 0
+    return 1 if (inert or overbroad or headers or repeated or (options.strict and warned)) else 0
 
 
 if __name__ == "__main__":

@@ -235,6 +235,35 @@ class HeaderTest(unittest.TestCase):
         self.assertEqual(found, [], "malformed header(s): %s" % [(_[0], _[1], _[3]) for _ in found[:5]])
 
 
+class RepeatTest(unittest.TestCase):
+    def test_only_a_repeat_within_one_block_counts(self):
+        tmp = tempfile.mkdtemp()
+        try:
+            os.makedirs(os.path.join(tmp, "malware"))
+            with open(os.path.join(tmp, "malware", "sample.txt"), "wb") as f:
+                f.write(u"# Reference: https://example.invalid/a\n"
+                        u"evil.biz\n"
+                        u"evil.biz  # was: \u00e9vil.biz\n"
+                        u"# Reference: https://example.invalid/b\n"
+                        u"evil.biz\n"
+                        u"# disabled.biz\n"
+                        u"# disabled.biz\n"
+                        u"1.2.3.4 # scanner-1.example\n"
+                        u"1.2.3.4 # scanner-2.example\n"
+                        u"1.2.3.4 # scanner-2.example\n".encode("utf8"))
+            self.assertEqual([(_[1], _[2], _[3]) for _ in C.repeats(tmp)], [(3, "evil.biz", 2), (10, "1.2.3.4", 8)])
+        finally:
+            import shutil
+            shutil.rmtree(tmp)
+
+    def test_the_real_static_pile_has_no_repeats(self):
+        static = trails_root()
+        if not static:
+            self.skipTest(NO_CHECKOUT)
+        found = C.repeats(static)
+        self.assertEqual(found, [], "repeat(s): %s" % [(_[0], _[1], _[2]) for _ in found[:5]])
+
+
 class WhitelistShadowTest(unittest.TestCase):
     """Which whitelist entries actually stop a trail, since 3.2 changed the answer.
 

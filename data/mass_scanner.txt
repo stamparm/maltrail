@@ -266,16 +266,10 @@
 67.21.36.99 # researchscanner99.eecs.berkeley.edu
 67.21.36.9 # researchscanner09.eecs.berkeley.edu
 169.229.3.89 # researchscan-gw.eecs.berkeley.edu
-169.229.3.89 # researchscan-gw.eecs.berkeley.edu
-169.229.3.90 # researchscan0.eecs.berkeley.edu
 169.229.3.90 # researchscan0.eecs.berkeley.edu
 169.229.3.91 # researchscan1.eecs.berkeley.edu
-169.229.3.91 # researchscan1.eecs.berkeley.edu
-169.229.3.92 # researchscan2.eecs.berkeley.edu
 169.229.3.92 # researchscan2.eecs.berkeley.edu
 169.229.3.93 # researchscan3.eecs.berkeley.edu
-169.229.3.93 # researchscan3.eecs.berkeley.edu
-169.229.3.94 # researchscan4.eecs.berkeley.edu
 169.229.3.94 # researchscan4.eecs.berkeley.edu
     
 5.63.151.100 # scanners.labs.rapid7.com
