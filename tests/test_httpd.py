@@ -968,6 +968,54 @@ class TestHttpd(unittest.TestCase):
         self.assertEqual(st2, 200, "a masked caller's validator must not satisfy an entitled one")
         self.assertIn(b"internal-secret.corp", admin_again)
 
+    def test_trails_compressed_is_cached_per_entitlement(self):
+        # The compressed set is now kept for the validator it was made from (the set was read whole
+        # and gzipped at level 9 on every poll: 2.1 s and ~110 MB per request of a 95 MB file).
+        # The cache must still hand each caller ITS representation.
+        gz = {"Accept-Encoding": "gzip"}
+        st, head, first = _http(self.port, "GET", "/trails", headers=gz)
+        self.assertEqual(st, 200)
+        self.assertIn("content-encoding: gzip", head.lower())
+        self.assertIn(b"evil.com", gzip.decompress(first))
+        self.assertNotIn(b"internal-secret.corp", gzip.decompress(first), "anonymous: masked")
+        _, _, second = _http(self.port, "GET", "/trails", headers=gz)
+        self.assertEqual(first, second, "the second poll is the cached bytes")
+        _, _, admin = _http(self.port, "GET", "/trails", cookie=self._login("admin"), headers=gz)
+        self.assertIn(b"internal-secret.corp", gzip.decompress(admin), "an admin must not be served the cached masked copy")
+        _, _, anon_again = _http(self.port, "GET", "/trails", headers=gz)
+        self.assertNotIn(b"internal-secret.corp", gzip.decompress(anon_again), "nor an anonymous caller the cached admin copy")
+        _, _, plain = _http(self.port, "GET", "/trails")
+        self.assertEqual(plain, gzip.decompress(anon_again), "identity and gzip carry the same set")
+
+    def test_trails_cache_follows_the_file(self):
+        gz = {"Accept-Encoding": "gzip"}
+        path = os.path.join(self.tmp, "trails.csv")
+        with open(path, "rb") as f:
+            original = f.read()
+        _, _, before = _http(self.port, "GET", "/trails", headers=gz)
+        self.assertNotIn(b"freshly-added.example", gzip.decompress(before))
+        try:
+            with open(path, "ab") as f:
+                f.write(b'freshly-added.example,"malware (test)",(static)\n')
+            _, _, after = _http(self.port, "GET", "/trails", headers=gz)
+            self.assertIn(b"freshly-added.example", gzip.decompress(after), "an updated set must not be served from the old compressed copy")
+        finally:
+            with open(path, "wb") as f:
+                f.write(original)
+
+    def test_a_static_asset_compresses_to_its_own_bytes_every_time(self):
+        gz = {"Accept-Encoding": "gzip"}
+        with open(os.path.join(REPO, "html", "css", "main.css"), "rb") as f:
+            on_disk = f.read()
+        st, head, first = _http(self.port, "GET", "/css/main.css", headers=gz)
+        self.assertEqual(st, 200)
+        self.assertIn("content-encoding: gzip", head.lower())
+        self.assertEqual(gzip.decompress(first), on_disk)
+        _, _, second = _http(self.port, "GET", "/css/main.css", headers=gz)
+        self.assertEqual(first, second)
+        _, _, plain = _http(self.port, "GET", "/css/main.css")
+        self.assertEqual(plain, on_disk, "a client without gzip gets the file as it is")
+
     def test_trails_masked_sessions_share_one_validator(self):
         # An analyst (mask_custom) and an anonymous caller receive byte-identical bodies, so they
         # must receive the same validator - otherwise every masked poll is a full download.

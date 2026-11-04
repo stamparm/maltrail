@@ -597,6 +597,10 @@ def _trails_etag(stat, reveal_custom):
 
     return '"%d-%d-%s"' % (stat.st_mtime_ns, stat.st_size, "full" if reveal_custom else "public")
 
+_trails_gz = (None, None)     # (etag, gzip bytes) of the last /trails representation sent compressed
+_gzip_cache = {}              # (path, mtime_ns, size) -> gzip bytes, for static files served verbatim
+_gzip_lock = threading.Lock()
+
 _provenance_handle = None     # an opened core.provenance.Provenance, or False when unavailable
 _provenance_key = None        # (mtime, size) of the sidecar it was opened from
 _provenance_lock = threading.Lock()
@@ -1298,6 +1302,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             params = {}
             content = None
             skip = False
+            gzip_key = None
 
             if hasattr(self, "data"):
                 params.update(_urllib.parse.parse_qs(self.data))
@@ -1347,7 +1352,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     content = re.sub(r"\bvar IP_ALIASES =.+", lambda _m: _replacement, content)
 
                 if ".." not in os.path.relpath(path, HTML_DIR) and os.path.isfile(path) and (extension not in DISABLED_CONTENT_EXTENSIONS or os.path.split(path)[-1] in CONTENT_EXTENSIONS_EXCLUSIONS):
-                    mtime = time.gmtime(os.path.getmtime(path))
+                    _st = os.stat(path)
+                    mtime = time.gmtime(_st.st_mtime)
                     if_modified_since = self.headers.get(HTTP_HEADER.IF_MODIFIED_SINCE)
 
                     if if_modified_since and extension not in (".htm", ".html"):
@@ -1365,6 +1371,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                         if not content:
                             with open(path, "rb") as f:
                                 content = f.read()
+                            # Served verbatim, so its compressed form depends on nothing but the
+                            # file: cacheable. A substituted page (index.html's tokens, main.js
+                            # with IP_ALIASES) is not, and is left out by `content` being set.
+                            if extension not in (".htm", ".html"):
+                                gzip_key = (path, _st.st_mtime_ns, _st.st_size)
                         last_modified = time.strftime(HTTP_TIME_FORMAT, mtime)
                         self.send_response(_http_client.OK)
                         self.send_header(HTTP_HEADER.CONNECTION, "close")
@@ -1430,13 +1441,21 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
                 if "gzip" in self.headers.get(HTTP_HEADER.ACCEPT_ENCODING, ""):
                     self.send_header(HTTP_HEADER.CONTENT_ENCODING, "gzip")
-                    _ = io.BytesIO()
-                    compress = gzip.GzipFile("", "w+b", 9, _)
-                    compress._stream = _
-                    compress.write(content)
-                    compress.flush()
-                    compress.close()
-                    content = compress._stream.getvalue()
+                    # Every static file was compressed at level 9 on every request - 12 ms for
+                    # main.js, five assets per page load, for bytes that change once per
+                    # release. Compressed once per (path, mtime, size) now. Dynamic responses
+                    # are compressed per request at level 6: the same size as 9 at 60% of the
+                    # CPU (87 KB either way for main.js, 6.9 ms against 11.7 ms).
+                    with _gzip_lock:
+                        cached = _gzip_cache.get(gzip_key) if gzip_key else None
+                    if cached is None:
+                        cached = gzip.compress(content, 9 if gzip_key else 6)
+                        if gzip_key:
+                            with _gzip_lock:
+                                if len(_gzip_cache) >= 64:      # html/ holds a dozen files; this is a leak guard, not a budget
+                                    _gzip_cache.clear()
+                                _gzip_cache[gzip_key] = cached
+                    content = cached
 
                 self.send_header(HTTP_HEADER.CONTENT_LENGTH, str(len(content)))
 
@@ -2088,6 +2107,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             deployment was re-sending the whole thing to every sensor on every cycle.
             """
 
+            global _trails_gz
+
             session = self.get_session()
             reveal_custom = session is not None and not getattr(session, "mask_custom", False)
 
@@ -2122,7 +2143,22 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     self.send_header(HTTP_HEADER.VARY, HTTP_HEADER.ACCEPT_ENCODING)
                     return None     # None, not b"": a 304 carries no body and no Content-Length
 
-                content = f.read()
+                # The set was read whole and gzipped at level 9 on EVERY compressed request: 2.1 s
+                # of CPU and ~110 MB of transient memory per poll of a 95 MB set, and the first
+                # poll of every sensor after a restart pays it. The compressed representation is
+                # kept for the validator it was made from, so a hit does not even read the file.
+                # The validator already names the entitlement, so a masked caller's copy and an
+                # admin's never share an entry.
+                gz = "gzip" in self.headers.get(HTTP_HEADER.ACCEPT_ENCODING, "")
+                content = _trails_gz[1] if gz and etag is not None and _trails_gz[0] == etag else None
+                if content is None:
+                    content = f.read()
+                    if not reveal_custom and CUSTOM_TRAIL_MARKER in content:
+                        content = _public_trails(content, key)
+                    if gz:
+                        content = gzip.compress(content, 6)
+                        if etag is not None:
+                            _trails_gz = (etag, content)
 
             self.send_response(_http_client.OK)
             self.send_header(HTTP_HEADER.CONNECTION, "close")
@@ -2131,14 +2167,18 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             if etag is not None:
                 self.send_header(HTTP_HEADER.ETAG, etag)
                 self.send_header(HTTP_HEADER.LAST_MODIFIED, time.strftime(HTTP_TIME_FORMAT, time.gmtime(stat.st_mtime)))
-                # The response is gzipped further down when the caller asked for it, so the tag
-                # names one encoding of the set, not the set.
+                # The tag names one encoding of the set, not the set.
                 self.send_header(HTTP_HEADER.VARY, HTTP_HEADER.ACCEPT_ENCODING)
 
-            if reveal_custom or CUSTOM_TRAIL_MARKER not in content:
-                return content
-
-            return _public_trails(content, key)
+            if gz:
+                self.send_header(HTTP_HEADER.CONTENT_ENCODING, "gzip")
+            self.send_header(HTTP_HEADER.CONTENT_LENGTH, str(len(content)))
+            self.end_headers()
+            try:
+                self.wfile.write(content)
+            except Exception:
+                pass
+            return None     # sent here; do_GET's generic path must not compress it again
 
         def _check(self, params):
             """Is one observable in the trail set? GET /check?q=<domain|ip|url>
