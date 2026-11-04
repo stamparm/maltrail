@@ -3536,6 +3536,12 @@
   // work bought nothing. On a slow connection chunks are already further apart than this and the
   // gate never binds - progressive feedback is unchanged where it actually matters.
   var RENDER_MIN_MS = 220;
+  // ...and a ceiling on the share of the load a repaint may take. Each progressive paint
+  // re-filters, re-sorts and re-counts everything so far, so on a slow CPU the paints were the
+  // load: at 4x throttle, 20% of a 200k-event day's load was viewList and topN. The interval
+  // between paints is at least RENDER_DUTY times the last paint's cost, so painting stays under
+  // a fifth of the time wherever the page runs, without touching the first paint.
+  var RENDER_DUTY = 4;
   function parseRows(text) { return parseEvents(text); }
   function loadEvents(date) {
     setStatus("loading events…");
@@ -3555,7 +3561,7 @@
             autoLive();
           });
         }
-        var reader = r.body.getReader(), dec = new TextDecoder(), buf = "", agg = null, seen = 0, lastRender = 0, lastRenderT = 0, bytes = 0;
+        var reader = r.body.getReader(), dec = new TextDecoder(), buf = "", agg = null, seen = 0, lastRender = 0, lastRenderT = 0, bytes = 0, paintMs = 0;
         state.streaming = true;
         function pump() {
           return reader.read().then(function (res) {
@@ -3585,8 +3591,8 @@
             // regression in exactly the thing that reads as responsive. Only the repaints AFTER it
             // are throttled, which is where the wasted work actually was.
             if (agg && seen - lastRender >= RENDER_EVERY &&
-                (lastRenderT === 0 || _now() - lastRenderT >= RENDER_MIN_MS)) {
-              lastRender = seen; lastRenderT = _now(); render(agg);
+                (lastRenderT === 0 || _now() - lastRenderT >= Math.max(RENDER_MIN_MS, paintMs * RENDER_DUTY))) {
+              lastRender = seen; var _pt = _now(); render(agg); lastRenderT = _now(); paintMs = lastRenderT - _pt;
             }
             return pump();
           });
