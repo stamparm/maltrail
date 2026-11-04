@@ -95,5 +95,44 @@ class TestJsonRedaction(unittest.TestCase):
         self.assertEqual(before, after)
 
 
+class TestTextSplitterMatchesTheWriter(unittest.TestCase):
+    """fields() must read back exactly what safe_value() wrote, for every value the writer can see.
+
+    The splitter is now csv's C reader with the slow character loop as a fallback; both have to
+    agree with the writer, and with each other, or an event parses differently depending on
+    which path it took.
+    """
+
+    VALUES = ["plain", "", None, "two words", 'say "hi"', '""', '"', "a,b,c", "trail\twith\ttab",
+              "\u00e9\u00e8 unicode \u2603", "line\nbreak", "cr\rhere", " leading", "trailing ", "  ", "/a, /b, /c",
+              "x" * 5000, "(custom)", "(heuristic)"]
+
+    def _line(self, values):
+        from core.log import safe_value
+        return " ".join(safe_value(v) for v in values)
+
+    def test_every_writer_value_round_trips(self):
+        from core.log import safe_value
+        import re as _re
+        for value in self.VALUES:
+            values = ["2026-01-01 10:00:03.123456", "box", "10.0.0.8", "6666", "5.5.5.5", "80", "TCP", "IP", value, value, "(static)"]
+            line = self._line(values)
+            got = logfmt.fields(line)
+            expected = [_re.sub(r"[\x0a\x0d]", " ", str(v or "-")) for v in values]    # what safe_value() writes
+            self.assertEqual(got, expected, "value %r did not survive the round trip" % (value,))
+            self.assertEqual(logfmt._split_text_line_slow(line)[:11], expected, "the fallback disagrees on %r" % (value,))
+
+    def test_a_terminator_ends_the_line_in_both_paths(self):
+        line = self._line(["a b", "c"]) + "\r\n"
+        self.assertEqual(logfmt.split_text_line(line), ["a b", "c"])
+        self.assertEqual(logfmt._split_text_line_slow(line), ["a b", "c"])
+
+    def test_what_csv_refuses_falls_back_instead_of_failing(self):
+        line = self._line(["a", "nul\x00byte", "c"])
+        self.assertEqual(logfmt.split_text_line(line), logfmt._split_text_line_slow(line))
+        huge = self._line(["a", "y" * 200000, "c"])     # over csv.field_size_limit()
+        self.assertEqual(logfmt.split_text_line(huge), logfmt._split_text_line_slow(huge))
+
+
 if __name__ == "__main__":
     unittest.main()
