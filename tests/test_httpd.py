@@ -1473,7 +1473,7 @@ class TestHttpd(unittest.TestCase):
         to fall through to the full scan and return the same (visible, address) pair - the address
         matters as well as the boolean, because _filter_events rewrites the line with it.
         """
-        from core.httpd import _source_field
+        from core.httpd import _endpoint_fields, _plain_ipv4
 
         # not a source the shortcut may act on: it must decline rather than guess
         for line, why in (
@@ -1482,13 +1482,14 @@ class TestHttpd(unittest.TestCase):
             ('"t" box 2001:db8::1 1 8.8.8.8 53 UDP DNS a "m" (static)', "IPv6 source"),
             ('"t" box', "truncated line"),
         ):
-            self.assertIsNone(_source_field(line),
-                              "the shortcut claimed a source from %s; it must decline and let the "
-                              "full scan decide" % why)
+            fields = _endpoint_fields(line)
+            self.assertFalse(fields and _plain_ipv4(fields[0]),
+                             "the shortcut claimed a source from %s; it must decline and let the "
+                             "full scan decide" % why)
 
         # a source it may act on
         self.assertEqual(
-            _source_field('"t" box 10.0.0.5 4421 8.8.8.8 53 UDP DNS a "m" (static)'), "10.0.0.5")
+            _endpoint_fields('"t" box 10.0.0.5 4421 8.8.8.8 53 UDP DNS a "m" (static)')[0], "10.0.0.5")
 
     def test_scope_does_not_match_an_address_inside_a_domain_name(self):
         """An address is a field, a comma-list element, or an IPORT host - not a domain label.
@@ -2912,6 +2913,54 @@ class TestConnectionBudget(unittest.TestCase):
         finally:
             s.close()
         self.assertLess(time.time() - started, HEADER_TIMEOUT + 3)
+
+
+class TestByteLevelPrefilters(unittest.TestCase):
+    """The scoped readers skip, a megabyte at a time, the lines that cannot be in scope.
+
+    A needle is a NECESSARY condition only; _line_in_scope still decides. These pin down that
+    nothing a scan should see is skipped, on the shapes the sibling scope tests do not cover.
+    """
+
+    LINES = [
+        b'"2026-01-01 10:00:00.000000" box 10.0.0.5 1 5.5.5.5 80 TCP IP 5.5.5.5 "known attacker" (static)',
+        b'"2026-01-01 10:00:01.000000" box 10.0.7.9 1 5.5.5.5 80 TCP IP 5.5.5.5 "mass scanner" (static)',
+        b'"2026-01-01 10:00:02.000000" box 192.168.1.1 1 10.0.6.2 80 TCP IP 192.168.1.1 "bad reputation" (static)',
+        b'"2026-01-01 10:00:03.000000" box 192.168.1.2 1 7.7.7.7 80 TCP IP 7.7.7.7 "KNOWN ATTACKER" (static)',
+        b'"2026-01-01 10:00:04.000000" box 192.168.1.3 1 7.7.7.7 80 TCP IP 7.7.7.7 "something else" (static)',
+    ]
+
+    def test_scope_needles_are_the_fixed_octets(self):
+        from core.httpd import _scope_needles
+        from core.addr import addr_to_int, make_mask
+        net = lambda text, bits: (addr_to_int(text) & make_mask(bits), make_mask(bits))
+        self.assertEqual(sorted(_scope_needles({"10.0.0.5"}, [net("10.0.5.0", 22)])), [b"10.0.", b"10.0.0.5"])
+        self.assertEqual(_scope_needles(set(), [net("10.0.5.0", 16)]), [b"10.0."])
+        self.assertEqual(_scope_needles(set(), [net("10.1.2.3", 32)]), [b"10.1.2.3"])
+        self.assertIsNone(_scope_needles(set(), [net("64.0.0.0", 6)]), "a /6 fixes no octet: nothing may be skipped")
+        self.assertIsNone(_scope_needles(set(), []))
+
+    def test_candidates_keep_every_line_holding_a_needle(self):
+        from core.httpd import _candidates
+        f = io.BytesIO(b"\n".join(self.LINES) + b"\n")
+        got = list(_candidates(f, [b"10.0.", b"7.7.7.7"]))
+        self.assertEqual(got, [self.LINES[0] + b"\n", self.LINES[1] + b"\n", self.LINES[2] + b"\n", self.LINES[3] + b"\n", self.LINES[4] + b"\n"])
+        self.assertEqual(list(_candidates(io.BytesIO(b"\n".join(self.LINES)), [b"10.0.6."])), [self.LINES[2] + b"\n"], "a scope address in the destination counts")
+        self.assertEqual(list(_candidates(io.BytesIO(b"\n".join(self.LINES)), [b"something else"])), [self.LINES[4]], "the last line needs no newline")
+
+    def test_a_scoped_regex_consumer_only_scans_lines_that_can_be_in_its_networks(self):
+        from core import logfmt
+        from core.httpd import _matching_sources, _scope_needles
+        from core.addr import addr_to_int, make_mask
+        tmp = tempfile.mkdtemp(prefix="mt_prefilter_")
+        path = os.path.join(tmp, "day.log")
+        with open(path, "wb") as f:
+            f.write(b"\n".join(self.LINES) + b"\n")
+        needles = _scope_needles(set(), [(addr_to_int("10.0.0.0") & make_mask(22), make_mask(22))])
+        got = _matching_sources(("scoped",), path, logfmt.fields, needles=needles)
+        # the needle is the /22's fixed octets, so 10.0.7.9 is still a candidate (its match() decides, as
+        # /blacklist's does with _line_in_scope); the two 7.7.7.7 lines cannot be in scope and are never parsed
+        self.assertEqual(set(got), {"10.0.0.5", "10.0.7.9", "192.168.1.1"})
 
 
 if __name__ == "__main__":

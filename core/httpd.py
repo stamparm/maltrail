@@ -241,7 +241,37 @@ _NON_ASCII = re.compile(rb"[\x80-\xff]")
 
 
 def _hunt_candidates(f, needle):
-    """The raw lines of `f` that can contain `needle` once lower-cased, in file order.
+    """The raw lines of `f` that can contain `needle` once lower-cased, in file order."""
+
+    return _candidates(f, [needle.encode(UNICODE_ENCODING)], fold=True)
+
+
+def _scope_needles(addresses, netmasks):
+    """Byte strings one of which every line inside the scope must contain, or None.
+
+    An address appears in a line as its dotted text, and an address inside a network shares the
+    network's whole leading octets - so a line without any of these cannot be in scope, which is
+    the same asymmetry _hunt_ip_query relies on: the needles only ever skip a NO, and every yes is
+    still decided by _line_in_scope. None when some network fixes no whole octet (/0 to /7): then
+    nothing can be skipped, and the caller reads every line as before.
+
+    >>> sorted(_scope_needles({"10.0.0.5"}, [(addr_to_int("10.0.0.0") & make_mask(22), make_mask(22))]))
+    [b'10.0.', b'10.0.0.5']
+    >>> _scope_needles(set(), [(0, make_mask(6))]) is None
+    True
+    """
+
+    needles = [_.encode(UNICODE_ENCODING) for _ in addresses]
+    for network, mask in netmasks:
+        fixed = bin(mask & 0xFFFFFFFF).count("1") // 8
+        if not fixed:
+            return None
+        needles.append(('.'.join(int_to_addr(network).split('.')[:fixed]) + ('.' if fixed < 4 else "")).encode(UNICODE_ENCODING))
+    return needles or None
+
+
+def _candidates(f, needles, fold=False):
+    """The raw lines of `f` that contain one of `needles` (ASCII-lower-cased first when `fold`), in file order.
 
     A NECESSARY condition, never a sufficient one - every candidate still goes through the same
     scope filter and matcher as before. A line qualifies when its bytes, ASCII-lower-cased, contain
@@ -250,11 +280,15 @@ def _hunt_candidates(f, needle):
     megabyte at a time with bytes.find, which is what lets a day of non-matching lines cost a
     fraction of parsing each one. This replaced the per-day SQLite sidecar index, which cost ~10 s
     and twice the log's size per day to build and was slower to search than this.
+
+    Several needles - a restricted session's addresses and network prefixes - cost one find()
+    each per megabyte, which is what makes a scoped read of a day the analyst's share of it
+    rather than the whole of it.
     """
 
-    raw = needle.encode(UNICODE_ENCODING)
-    ascii_needle = raw if all(b < 0x80 for b in bytearray(raw)) else None
+    ascii_needles = [raw for raw in needles if all(b < 0x80 for b in bytearray(raw))]
     pending = b""
+    sieve = True    # a scope that covers most of a day (a /16 of an estate) gains nothing from the sieve: measured +0.5 s per 1M lines
     while True:
         buf = f.read(1024 * 1024)
         if not buf and not pending:
@@ -268,18 +302,25 @@ def _hunt_candidates(f, needle):
             chunk, pending = chunk[:cut + 1], chunk[cut + 1:]
         else:
             pending = b""       # the last line, without a newline
+        if not sieve:
+            for line in chunk.splitlines(True):
+                yield line
+            continue
         starts = set()
-        if ascii_needle:
-            low = chunk.lower()
-            at = low.find(ascii_needle)
+        hay = chunk.lower() if fold else chunk
+        for ascii_needle in ascii_needles:
+            at = hay.find(ascii_needle)
             while at >= 0:
                 starts.add(chunk.rfind(b"\n", 0, at) + 1)
-                at = low.find(ascii_needle, at + 1)
-        for match in _NON_ASCII.finditer(chunk):
-            starts.add(chunk.rfind(b"\n", 0, match.start()) + 1)
+                at = hay.find(ascii_needle, at + 1)
+        if fold:
+            for match in _NON_ASCII.finditer(chunk):
+                starts.add(chunk.rfind(b"\n", 0, match.start()) + 1)
         for start in sorted(starts):
             end = chunk.find(b"\n", start)
             yield chunk[start:] if end < 0 else chunk[start:end + 1]
+        if not fold and len(starts) * 2 > chunk.count(b"\n"):
+            sieve = False
 
 
 def _hunt_ip_query(query):
@@ -999,7 +1040,7 @@ def _event_stamp(fields):
     return None
 
 
-def _matching_sources(cache_key, path, match):
+def _matching_sources(cache_key, path, match, needles=None):
     """{source IP: time of its latest matching event} for one day's log, reading only new bytes.
 
     /fail2ban and /blacklist used to rescan the whole of today's log whenever their 8-second cache
@@ -1007,7 +1048,9 @@ def _matching_sources(cache_key, path, match):
     the interpreter from everything else in the process). This keeps a byte offset per log, like
     /geo, so a request reads what was appended since the last one. `match(raw)` returns the line's
     fields when it counts and None otherwise (so it can reject a line before paying to parse it),
-    and `cache_key` must cover everything it depends on.
+    and `cache_key` must cover everything it depends on. `needles` (see _scope_needles) are
+    strings one of which every matching line must contain; a line holding none is skipped
+    without being decoded or parsed.
 
     Read as bytes and decoded as UTF-8 explicitly: opened in text mode with no encoding, the file
     was decoded with the LOCALE's codec, and under a C/POSIX locale - the usual one for a systemd
@@ -1040,7 +1083,17 @@ def _matching_sources(cache_key, path, match):
                         continue
                     chunk, pending = pending[:nl + 1], pending[nl + 1:]     # complete lines only
                     state["offset"] += len(chunk)
-                    for line in chunk.decode(UNICODE_ENCODING, "replace").split("\n"):
+                    if needles:
+                        starts = set()
+                        for needle in needles:
+                            at = chunk.find(needle)
+                            while at >= 0:
+                                starts.add(chunk.rfind(b"\n", 0, at) + 1)
+                                at = chunk.find(needle, at + 1)
+                        lines = [chunk[start:chunk.find(b"\n", start)].decode(UNICODE_ENCODING, "replace") for start in sorted(starts)]
+                    else:
+                        lines = chunk.decode(UNICODE_ENCODING, "replace").split("\n")
+                    for line in lines:
                         if not line:
                             continue
                         fields = match(line)
@@ -1135,27 +1188,38 @@ def _sanitize_auth_field(value):
     return value[:64] or '-'
 
 
-def _source_field(line):
-    """The source address of an event line, or None when it is not laid out as expected.
+def _endpoint_fields(line):
+    """The source and destination tokens of a text event line, in that order - the fast path
+    _line_in_scope tries before scanning the whole line. An inbound scan is in an analyst's
+    scope by its DESTINATION, which a source-only fast path missed, so every such line (most of
+    a busy day) paid for the regex scan. Raw tokens: the caller checks its memo before paying
+    to validate one, and a token that is not a plain address (a list, IPv6) is left to the scan.
 
-    Layout: `"<time>" <sensor> <src> <sport> ...`. Returns None rather than guessing for a JSON
-    line, a truncated line or an IPv6 source, and the caller then falls back to the full scan - so
-    being wrong here costs speed and never visibility.
+    >>> _endpoint_fields('"t" box 10.0.0.5 4421 8.8.8.8 53 UDP DNS a "m" (static)')
+    ['10.0.0.5', '8.8.8.8']
+    >>> _endpoint_fields('{"src_ip": "10.0.0.5"}')
+    []
     """
 
     end = line.find('" ')
     if end < 0:
-        return None
-    parts = line[end + 2:].split(' ', 3)
-    if len(parts) < 3:
-        return None
-    candidate = parts[1]
+        return []
+    parts = line[end + 2:].split(' ', 4)
+    return [parts[index] for index in (1, 3) if index < len(parts)]
+
+
+def _plain_ipv4(candidate):
+    """
+    >>> _plain_ipv4("10.0.0.5"), _plain_ipv4("203.0.113.9,10.0.0.8"), _plain_ipv4("2001:db8::1"), _plain_ipv4("1.2.3.999")
+    (True, False, False, False)
+    """
+
     if candidate.count('.') != 3:
-        return None
+        return False
     for octet in candidate.split('.'):
-        if not octet.isdigit():
-            return None
-    return candidate
+        if not octet.isdigit() or int(octet) > 255:
+            return False
+    return True
 
 
 def start_httpd(address=None, port=None, join=False, pem=None):
@@ -1758,6 +1822,13 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     addresses = set()
                     netmasks = set()
 
+                    # A CIDR of /16 or narrower used to be EXPANDED here into every address in it and
+                    # compiled into one regex of up to 65,536 alternatives, which every scoped read then
+                    # ran over every line: a /16 analyst's /counts over a month was 7 s of re.search
+                    # (3M calls) against 0.2 s for an admin. A CIDR is kept as a CIDR - _line_in_scope
+                    # tests it with one masked integer compare, and _scope_needles can skip the lines
+                    # that cannot hold it - and a single address as an address. Only a dashed range,
+                    # which is neither, still goes through the regex.
                     for item in set(re.split(r"[;,]", netfilter)):
                         item = item.strip()
                         if '/' in item:
@@ -1768,15 +1839,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             prefix, _, bits = item.partition('/')
                             prefix = prefix.strip()
                             if is_decimal(bits) and int(bits) <= 32 and re.match(r"\A\d+\.\d+\.\d+\.\d+\Z", prefix):
-                                if int(bits) >= 16:
-                                    mask = make_mask(int(bits))
-                                    lower = addr_to_int(prefix) & mask   # mask the prefix: a non-aligned CIDR (e.g. 10.0.5.0/16) must expand from the network base (10.0.0.0), else the low part of the subnet is silently excluded
-                                    upper = lower | (0xffffffff ^ mask)
-                                    while lower <= upper:
-                                        addresses.add(int_to_addr(lower))
-                                        lower += 1
-                                else:
-                                    netmasks.add(item)
+                                netmasks.add("%s/%d" % (prefix, int(bits)))
                         elif '-' in item:
                             # require exactly two IPv4 endpoints + a bounded span (mirrors the /16 cap on the CIDR
                             # branch above); a malformed (multi-dash / non-IP) or oversized range is skipped, never
@@ -1788,6 +1851,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                     while lower <= upper:
                                         addresses.add(int_to_addr(lower))
                                         lower += 1
+                        elif re.match(r"\A\d+\.\d+\.\d+\.\d+\Z", item):
+                            netmasks.add(item)      # an exact address, as _build_netfilters reads it
                         elif re.search(r"\d+\.\d+\.\d+\.\d+", item):
                             addresses.add(item)
 
@@ -2506,7 +2571,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             return None
 
                         _ = os.path.join(config.LOG_DIR, "%s.log" % datetime.datetime.now().strftime("%Y-%m-%d"))
-                        sources = _matching_sources(("blacklist", bl_name, self._scope_key(session)), _, match)
+                        sources = _matching_sources(("blacklist", bl_name, self._scope_key(session)), _, match,
+                                                    needles=self._needles if restricted else None)
                         content = "\n".join(_not_cleared(sources, cleared))
 
                         _blacklist_cache = content
@@ -2532,11 +2598,16 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 elif re.search(r"\A[\d.]+\Z", netfilter):
                     addresses.add(netfilter)
                 elif "\\." in netfilter:
-                    regex = r"%s(%s)%s" % (_SCOPE_ADDR_LEFT, netfilter, _SCOPE_ADDR_RIGHT)
+                    regex = re.compile(r"%s(%s)%s" % (_SCOPE_ADDR_LEFT, netfilter, _SCOPE_ADDR_RIGHT))
                 else:
                     print("[!] invalid network filter '%s'" % netfilter)
                     return None
 
+            # What a scoped read may skip, decided here because `addresses` is also _line_in_scope's
+            # memo and holds every address it proves from now on. A regex scope has no needles.
+            self._needles = None if regex else _scope_needles(addresses, netmasks)
+            self._needles_text = [_.decode(UNICODE_ENCODING) for _ in self._needles] if self._needles else None
+            self._scope_misses = set()
             return addresses, netmasks, regex
 
         def _line_in_scope(self, line, addresses, netmasks, regex):
@@ -2556,10 +2627,17 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             ip = None
 
             if regex:
-                match = re.search(regex, line)
+                match = regex.search(line)
                 if match:
                     ip = match.group(1)
                     display = True
+            else:
+                # The needles are a necessary condition (see _scope_needles): a line holding none of
+                # them is outside the scope, decided by a few substring tests rather than a regex
+                # scan. This is what makes a narrow scope cheap on the lines that are NOT its own.
+                needles = getattr(self, "_needles_text", None)
+                if needles and not any(needle in line for needle in needles):
+                    return False, None
 
             # Fast accept on the source address. An event line is a fixed shape -
             # "<quoted time>" sensor src sport dst ... - so the first dotted quad on it is the
@@ -2571,15 +2649,20 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # scan untouched, so the predicate is unchanged; on a hit it returns the same address
             # the scan would have returned, being the first match in line order.
             if not display and (addresses or netmasks):
-                source = _source_field(line)
-                if source is not None:
-                    if source in addresses:
-                        return True, source
-                    source_int = addr_to_int(source)
+                misses = getattr(self, "_scope_misses", None)
+                if misses is None:
+                    misses = self._scope_misses = set()
+                for field in _endpoint_fields(line):
+                    if field in addresses:
+                        return True, field
+                    if field in misses or not _plain_ipv4(field):
+                        continue    # a known outsider, or a list / IPv6 / junk the full scan must judge
+                    field_int = addr_to_int(field)
                     for network, mask in netmasks:
-                        if source_int & mask == network:
-                            addresses.add(source)
-                            return True, source
+                        if field_int & mask == network:
+                            addresses.add(field)
+                            return True, field
+                    misses.add(field)   # an address proven outside every network: most of a busy day's sources
 
             if not display and (addresses or netmasks):
                 for match in _SCOPE_LINE_IP_REGEX.finditer(line):
@@ -2636,6 +2719,11 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             return None if netfilters is None else frozenset(netfilters)
 
         def _filter_events(self, handle, session, addresses, netmasks, regex):
+            # A scoped read of a day was Python over every line of it: 3.8 s against 0.7 s for
+            # the same day unscoped, and the whole day for an analyst entitled to a /24 of it.
+            # Lines that cannot be in scope are skipped a megabyte at a time (see _scope_needles).
+            if session.netfilters is not None and hasattr(handle, "read") and getattr(self, "_needles", None):
+                handle = _candidates(handle, self._needles)
             for line in handle:
                 line = line.decode(UNICODE_ENCODING, "ignore")
 
@@ -3019,6 +3107,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
 
             min_ = _bound("from", datetime.datetime.fromtimestamp(0))
             max_ = _bound("to", datetime.datetime.now())
+            needles = self._needles if restricted else None
 
             min_ = min_.replace(hour=0, minute=0, second=0, microsecond=0)
             max_ = max_.replace(hour=23, minute=59, second=59, microsecond=999999)
@@ -3053,7 +3142,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 count = 0
                                 try:
                                     with open(filepath, "rb") as f_log:
-                                        for raw in f_log:
+                                        for raw in (_candidates(f_log, needles) if needles else f_log):
                                             if self._line_in_scope(raw.decode(UNICODE_ENCODING, "ignore"), addresses, netmasks, regex)[0]:
                                                 count += 1
                                 except (OSError, IOError):
@@ -3101,6 +3190,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
 
             result = {"counts": {}, "mapped": 0, "unmapped": 0}
+            needles = self._needles if restricted else None
             # A selected RANGE has to aggregate every day in it. This used to take the FIRST
             # date it could find in the parameter, so a range would have mapped day one while the
             # table beside it showed all seven - a quietly wrong picture rather than an error.
@@ -3138,6 +3228,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                         for line in chunk.split(b"\n"):
                                             if not line:
                                                 continue
+                                            if needles and not any(needle in line for needle in needles):
+                                                continue    # cannot be in scope: not worth parsing
                                             # Fast path: a text line whose sensor name is a single
                                             # unquoted token, which is every ordinary line. The byte
                                             # split is what keeps a full-day scan cheap.
