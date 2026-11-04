@@ -2917,6 +2917,10 @@ security-testing
 
 ^M/1.0$
 
+# Reference: https://x.com/S0ufi4n3/status/2117968797860757999
+
+spa-api-recon
+
 # Misc
 
 information_schema
