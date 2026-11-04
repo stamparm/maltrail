@@ -430,6 +430,23 @@ def _opt_index(value):
     return int(text)
 
 
+def _line_start(path, pos):
+    """The offset where the line containing `pos` begins (pos itself on a line boundary, or when
+    the line is longer than the window looked at)."""
+    if pos <= 0:
+        return 0
+    lo = max(0, pos - 65536)
+    try:
+        with open(path, "rb") as f:
+            f.seek(lo)
+            tail = f.read(pos - lo)
+    except (IOError, OSError):
+        return pos
+    if tail.endswith(b"\n"):
+        return pos
+    nl = tail.rfind(b"\n")
+    return lo + nl + 1 if nl >= 0 else pos
+
 def _live_slot():
     """Claim one of the /live budget, or return False.
 
@@ -3024,7 +3041,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 # whose finally is the only thing that returns the slot to the budget.
                 cur = os.path.getsize(event_log_path) if os.path.exists(event_log_path) else 0
                 if pos is None or pos > cur:
-                    pos = cur  # default: tail only NEW lines (never replay the whole file); also recover if file shrank
+                    # default: tail only NEW lines (never replay the whole file); also recover if the file
+                    # shrank. The file may end mid-append (a line caught half-written): start from that
+                    # line's first byte, or it reaches the dashboard as a fragment once completed
+                    pos = _line_start(event_log_path, cur)
                 _w(": connected\n\n"); self.wfile.flush()
                 idle = 0
                 while True:

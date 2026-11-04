@@ -23,6 +23,10 @@
     (worker and page): 350 MB instead of 240 MB for a 60k-event day, and the biggest day
     completes 15-30% later. No worker (or one that fails to load or crashes) means the in-thread
     path, as before; localStorage.mt_worker = "0" forces it.
+[!] Server: /live started at the end of the day's file even when that end was inside a line the
+    sensor was still writing, so the rest of that line reached the dashboard as a fragment it
+    could not parse: one event lost on every stream opened mid-append. It starts at the line's
+    first byte now.
 [!] Server: the listen backlog was 5, so 16 simultaneous requests made the slowest wait 1 s on a
     SYN retransmit and 32 wait 2 s (two dashboards refreshing together were enough); 150 idle
     sockets held every handler and got every real request a 503 for the whole REQUEST_TIMEOUT,

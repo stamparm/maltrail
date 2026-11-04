@@ -1366,6 +1366,59 @@ class TestHttpd(unittest.TestCase):
         finally:
             import shutil; shutil.rmtree(tmp, ignore_errors=True)
 
+    def test_live_starts_a_half_written_line_at_its_first_byte(self):
+        # With no position given, /live starts at the END of the file. Caught mid-append (the
+        # sensor's line half written), that end is inside a line, and a stream starting there
+        # delivered the rest of the line as a fragment once it was completed - unparseable, so the
+        # dashboard dropped the event. The stream has to start where that line starts.
+        tmp = tempfile.mkdtemp(prefix="mt_half_")
+        try:
+            logdir = os.path.join(tmp, "logs"); os.makedirs(logdir)
+            day = "2026-07-02"
+            full = '"%s 10:00:00.000000" s 10.0.0.5 1 8.8.8.8 53 UDP DNS x.example "m (d)" (static)' % day
+            path = os.path.join(logdir, "%s.log" % day)
+            with open(path, "w") as f:
+                f.write(full + "\n"); f.write(full[:30])   # EOF inside the second line
+            trails = os.path.join(tmp, "t.csv")
+            with open(trails, "w") as f:
+                f.write("x.example,m (dummy),(static)\n")
+            port = _free_port()
+            cfg = os.path.join(tmp, "srv.conf")
+            with open(cfg, "w") as f:
+                f.write("HTTP_ADDRESS 127.0.0.1\nHTTP_PORT %d\n" % port)
+                f.write("USE_SERVER_UPDATE_TRAILS false\nMONITOR_INTERFACE any\nCAPTURE_BUFFER 10MB\n")
+                f.write("LOG_DIR %s\nTRAILS_FILE %s\nUPDATE_PERIOD 86400\nSENSOR_NAME t\nDISABLE_CHECK_SUDO true\n"
+                        % (logdir, trails))
+            proc = subprocess.Popen([sys.executable, "server.py", "-c", cfg], cwd=REPO,
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            try:
+                for _ in range(60):
+                    try:
+                        socket.create_connection(("127.0.0.1", port), timeout=0.5).close(); break
+                    except OSError: time.sleep(0.25)
+                sk = socket.create_connection(("127.0.0.1", port), timeout=10)
+                got = b""
+                try:
+                    sk.sendall(("GET /live?date=%s HTTP/1.1\r\nHost: 127.0.0.1\r\n\r\n" % day).encode())
+                    while b": connected" not in got:
+                        got += sk.recv(4096)             # the stream is open and positioned
+                    with open(path, "a") as f:
+                        f.write(full[30:] + "\n")        # the sensor finishes its line
+                    deadline = time.time() + 10
+                    while not (b"data: " in got and got.endswith(b"\n\n")) and time.time() < deadline:
+                        try:
+                            got += sk.recv(4096)
+                        except socket.timeout:
+                            break
+                finally:
+                    sk.close()
+                data = [l[6:] for l in got.decode("utf8", "replace").split("\n") if l.startswith("data: ")]
+                self.assertEqual(data, [full], "the completed line must arrive whole, not as the part after the old EOF")
+            finally:
+                _stop_server(proc)
+        finally:
+            import shutil; shutil.rmtree(tmp, ignore_errors=True)
+
     def test_live_streams_cannot_starve_ordinary_requests(self):
         # A /live stream holds its request thread for the lifetime of the tab. Counted against the
         # general thread cap it starves everything else: 120 open dashboards took all 100 slots and
