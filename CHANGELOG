@@ -16,6 +16,28 @@
 
 - Version 3.5 -> 3.6 (unreleased)
 
+[!] Server: the listen backlog was 5, so 16 simultaneous requests made the slowest wait 1 s on a
+    SYN retransmit and 32 wait 2 s (two dashboards refreshing together were enough); 150 idle
+    sockets held every handler and got every real request a 503 for the whole REQUEST_TIMEOUT,
+    before any login. Backlog 128, MAX_CONNECTIONS_PER_IP (default 32), and an idle connection
+    is dropped after 10 s.
+[!] Dashboard: stepping to another day reported all of that day's threats as new (44,717 after
+    one click, accumulating with every day visited); the count is per viewed day now. Live
+    updates are on unless switched off, and the switch is remembered.
+[=] Server: text event lines are split by csv's C reader (same quoting as safe_value()); a cold
+    /fail2ban of a 1M-event day went from 9.7 s to 6.7 s.
+[=] Server: static files are compressed once per modification and the trail set once per
+    validator and entitlement: a /trails poll of a 95 MB set cost 2.1 s of CPU and ~110 MB of
+    memory every time, now once; 100 requests for main.js went from 1.3 s to 0.1 s of CPU.
+[!] Dashboard: at phone width the wrapped header was painted over the first two cards; it grows
+    and scrolls away now, and a threat card lost the rows that earn nothing on a phone.
+[=] Dashboard: progressive repaints during a day load are paced by their own measured cost; a
+    1M-event day on a 4x-throttled CPU loads in 22 s instead of 32 s, unchanged at full speed.
+[=] Server: a restricted analyst's CIDR was expanded into a regex of up to 65,536 alternatives
+    and run over every line of every scoped read. The CIDR stays a CIDR, each megabyte is sieved
+    for the scope's fixed octets before any line is decoded, and the destination gets the same
+    fast accept as the source: on a 1M-event day a /24 analyst's /events went from 3.0 s to
+    0.4 s and /counts over a month from 7.6 s to 0.8 s.
 [!] First run on live traffic (3 hours, home network) logged 1,406 events, 1,303 of them false
     positives. Replayed through the fixed sensor: 103. UDP scanning (501): BitTorrent tracker
     REPLIES were counted as the client scanning - a datagram answering one we saw sent no longer
