@@ -1353,7 +1353,7 @@ def update_drop(force=False):
     entries = []
     for url in (DROP_URL, DROP6_URL):
         try:
-            resp = _urllib.request.urlopen(url)
+            resp = _urllib.request.urlopen(url)  # nosec B310
             try:
                 payload = resp.read()
             finally:
@@ -1417,7 +1417,7 @@ def update_ipcat(force=False):
         # pattern the static-trail and provenance fetches in this file already use.
         tmp_ipcat = "%s.new" % IPCAT_CSV_FILE
         try:
-            resp = _urllib.request.urlopen(IPCAT_URL)
+            resp = _urllib.request.urlopen(IPCAT_URL)  # nosec B310
             try:
                 payload = resp.read()
             finally:

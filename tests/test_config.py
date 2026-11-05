@@ -19,7 +19,7 @@ _BASE = {
     "HTTP_PORT": "8338",
     "MONITOR_INTERFACE": "any",
     "CAPTURE_BUFFER": "10MB",
-    "LOG_DIR": "/tmp/mt_cfgtest_logs",
+    "LOG_DIR": "/tmp/mt_cfgtest_logs",  # nosec B108
     "UPDATE_PERIOD": "86400",
     "SENSOR_NAME": "test",
 }

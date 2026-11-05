@@ -412,27 +412,27 @@ def _get_total_physmem():
     if not retval:
         try:
             # Fallback to original sysctl regex method for other BSD systems
-            output = subprocess.check_output("sysctl hw", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)
+            output = subprocess.check_output("sysctl hw", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)  # nosec B602
             retval = int(re.search(r"hw\.(physmem|memsize):\s*(\d+)", output).group(2))
         except Exception:
             pass
 
     if not retval:
         try:
-            retval = 1024 * int(re.search(r"\s+(\d+) K total memory", subprocess.check_output("vmstat -s", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)).group(1))
+            retval = 1024 * int(re.search(r"\s+(\d+) K total memory", subprocess.check_output("vmstat -s", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)).group(1))  # nosec B602
         except Exception:
             pass
 
     if not retval:
         try:
-            retval = int(re.search(r"Mem:\s+(\d+)", subprocess.check_output("free -b", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)).group(1))
+            retval = int(re.search(r"Mem:\s+(\d+)", subprocess.check_output("free -b", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)).group(1))  # nosec B602
         except Exception:
             pass
 
     if not retval:
         if IS_LINUX:
             try:
-                retval = 1024 * int(re.search(r"KiB Mem:\s*\x1b[^\s]+\s*(\d+)", subprocess.check_output("top -n 1", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)).group(1))
+                retval = 1024 * int(re.search(r"KiB Mem:\s*\x1b[^\s]+\s*(\d+)", subprocess.check_output("top -n 1", shell=True, stderr=subprocess.STDOUT, universal_newlines=True)).group(1))  # nosec B602
             except Exception:
                 pass
 

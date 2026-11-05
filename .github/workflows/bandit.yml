@@ -37,7 +37,11 @@ jobs:
         uses: shundor/python-bandit-scan@9955228c1cbdc5aeb5e511e0fa232154e2ed2b67
         with: # optional arguments
           # exit with 0, even with results found
-          exit_zero: false # a linter that cannot fail is not a gate
+          # No exit_zero: the action adds --exit-zero for ANY value but DEFAULT, "false" included,
+          # so `exit_zero: false` made this gate unable to fail.
+          # Skipped: style or by-design hits (assert, try/except/pass, random, subprocess without a
+          # shell, md5 as a key, bind 0.0.0.0). A reviewed exception elsewhere is `# nosec <ID>`.
+          skips: B101,B104,B110,B112,B311,B324,B404,B603,B606,B607
           # Github token of the repository (automatically created by Github)
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information.
           excluded_paths: old

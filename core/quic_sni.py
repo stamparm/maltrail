@@ -145,7 +145,7 @@ try:
     HAVE_CRYPTOGRAPHY = True
 
     def aes_ecb_block(key, block):
-        enc = Cipher(algorithms.AES(key), modes.ECB()).encryptor()
+        enc = Cipher(algorithms.AES(key), modes.ECB()).encryptor()  # nosec B305
         return enc.update(block) + enc.finalize()
 
     def aes_ctr_decrypt(key, counter0, data):

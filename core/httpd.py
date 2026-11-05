@@ -478,7 +478,7 @@ _login_failures_lock = threading.Lock()
 MAX_LOGIN_FAILURE_ENTRIES = 4096
 
 # sha256("changeme!"), the password the shipped maltrail.conf gives `admin`.
-PUBLISHED_PASSWORD_HASH = "9ab3cd9d67bf49d01f6a2e33d0bd9bc804ddbe6ce1ff5d219c42624851db5dbc"
+PUBLISHED_PASSWORD_HASH = "9ab3cd9d67bf49d01f6a2e33d0bd9bc804ddbe6ce1ff5d219c42624851db5dbc"  # nosec B105
 
 
 def is_published_password(field):

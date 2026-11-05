@@ -39,6 +39,21 @@ jobs:
         with:
           languages: ${{ matrix.language }}
           queries: security-and-quality
+          # Quality stays on (it found the saved-view applyView clash); these are the style-only
+          # queries that buried it under ~180 alerts.
+          config: |
+            query-filters:
+              - exclude:
+                  id:
+                    - py/empty-except
+                    - py/unused-import
+                    - py/implicit-string-concatenation-in-list
+                    - py/unused-global-variable
+                    - py/unused-local-variable
+                    - py/import-and-import-from
+                    - py/unnecessary-lambda
+                    - py/mixed-returns
+                    - js/unused-local-variable
       - uses: github/codeql-action/analyze@v4
         with:
           category: /language:${{ matrix.language }}

@@ -262,7 +262,7 @@ def ripe_lookup(kind, address):
     try:
         req = _urllib.request.Request(RIPE_LOOKUP_URLS[kind] % _urllib.parse.quote(address, safe=''),
                                       headers={"User-Agent": USER_AGENT, "Accept": "application/json"})
-        resp = _urllib.request.urlopen(req, timeout=RIPE_LOOKUP_TIMEOUT)   # NOTE: not retrieve_content() - that one is for feeds and waits TIMEOUT (30s)
+        resp = _urllib.request.urlopen(req, timeout=RIPE_LOOKUP_TIMEOUT)   # NOTE: not retrieve_content() - that one is for feeds and waits TIMEOUT (30s)  # nosec B310
         try:
             body = resp.read(1 << 20)
         finally:

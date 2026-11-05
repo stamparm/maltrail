@@ -192,7 +192,7 @@ def post(payload):
     request = urllib.request.Request(config.ALERT_WEBHOOK_URL, data=payload.encode(UNICODE_ENCODING),
                                      headers={"Content-Type": "application/json"})
     try:
-        response = urllib.request.urlopen(request, timeout=ALERT_TIMEOUT)
+        response = urllib.request.urlopen(request, timeout=ALERT_TIMEOUT)  # nosec B310
         try:
             code = response.getcode()
         finally:

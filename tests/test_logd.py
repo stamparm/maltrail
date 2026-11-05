@@ -299,7 +299,7 @@ class TestLogServerSecret(unittest.TestCase):
         cls.started = False
         config.LOG_DIR = cls.tmp
         config.SHOW_DEBUG = False
-        config.LOG_SERVER_SECRET = "unit-test-secret"
+        config.LOG_SERVER_SECRET = "unit-test-secret"  # nosec B105
         cls.port = _free_udp_port()
         try:
             L.start_logd(address="127.0.0.1", port=cls.port, join=False)
