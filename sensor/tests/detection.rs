@@ -1694,6 +1694,50 @@ fn a_cname_target_is_not_judged_by_the_heuristics() {
     let _ = std::fs::remove_file(&empty);
 }
 
+/// `cname_response` with the question's QTYPE changed (28 = AAAA).
+fn with_qtype(mut response: Vec<u8>, query: &str, qtype: u16) -> Vec<u8> {
+    let at = 12 + query.len() + 2; // header, the encoded name (labels + length bytes + root)
+    response[at..at + 2].copy_from_slice(&qtype.to_be_bytes());
+    response
+}
+
+const IPINFO: (&str, &str) = ("ipinfo (suspicious)", "(static)");
+
+#[test]
+fn an_alias_listed_like_the_name_asked_for_does_not_split_the_lookup() {
+    // checkip.amazonaws.com -> checkip.check-ip.aws.a2z.com, both ipinfo: one lookup, one threat.
+    let listed = [("checkip.amazonaws.com", IPINFO.0, IPINFO.1), ("check-ip.aws.a2z.com", IPINFO.0, IPINFO.1)];
+    let query = "checkip.amazonaws.com";
+    let response = cname_response(1, query, &["checkip.check-ip.aws.a2z.com"]);
+
+    // A: the request reported the lookup; the alias adds nothing.
+    let mut h = trails(&listed);
+    h.feed_ip(&ipv4(17, "10.0.0.5", "8.8.8.8", &udp(40000, 53, &dns(query))), 1);
+    h.feed_ip(&from_resolver(&response), 1);
+    let trails_seen: Vec<String> = h.events().iter().map(|e| e.trail.clone()).collect();
+    assert_eq!(trails_seen, vec![query.to_string()], "the request's event, and nothing for its echo");
+
+    // AAAA: the request is never checked, so the response is the only record of the lookup. It
+    // stays, under the name that was asked for, so it lands in the same threat.
+    let mut h = trails(&listed);
+    h.feed_ip(&from_resolver(&with_qtype(response.clone(), query, 28)), 1);
+    let events = h.events();
+    assert_eq!(events.len(), 1, "an AAAA lookup must not vanish: {events:?}");
+    assert_eq!((events[0].trail.as_str(), events[0].info.as_str()), (query, IPINFO.0));
+    assert_eq!(events[0].src_ip, "10.0.0.5");
+}
+
+#[test]
+fn an_alias_listed_under_another_label_is_still_reported() {
+    // The name asked for is ipinfo, the alias is malware: that is news, and it keeps its own trail.
+    let mut h = trails(&[("checkip.amazonaws.com", IPINFO.0, IPINFO.1), ("evil-cname.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&from_resolver(&cname_response(1, "checkip.amazonaws.com", &["x.evil-cname.com"])), 1);
+    let events = h.events();
+    assert_eq!(events.len(), 1, "{events:?}");
+    assert_eq!(events[0].trail, "(x).evil-cname.com (checkip.amazonaws.com)");
+    assert_eq!(events[0].info, MALWARE.0);
+}
+
 #[test]
 fn hostile_answer_sections_never_panic() {
     let mut h = trails(&[("evil-cname.com", MALWARE.0, MALWARE.1)]);

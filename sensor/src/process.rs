@@ -131,6 +131,29 @@ fn check_domain_inner(
     precomputed_whitelisted: Option<u32>,
     alias_of: Option<&str>,
 ) -> bool {
+    match domain_hit(st, query, precomputed_whitelisted, alias_of) {
+        Some(hit) => {
+            emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(hit.trail), &hit.info, &hit.reference);
+            true
+        }
+        None => false,
+    }
+}
+
+/// A domain trail hit: what `check_domain_inner` would write, before it is written.
+struct DomainHit {
+    trail: String,
+    info: String,
+    reference: String,
+}
+
+/// The decision half of `check_domain_inner`: the hit `query` makes, if any, without emitting it.
+fn domain_hit(
+    st: &mut WorkerState,
+    query: &str,
+    precomputed_whitelisted: Option<u32>,
+    alias_of: Option<&str>,
+) -> Option<DomainHit> {
     // query = query.lower(); if ':' in query: query = query.split(':', 1)[0]
     //
     // Borrowed unless the name actually needs changing. Real DNS traffic is already lowercase and
@@ -148,7 +171,7 @@ fn check_domain_inner(
     // if query.replace('.', "").isdigit(): return   (an IP address, not a domain). Lower-casing
     // cannot change the answer, and a name fails it on its first letter.
     if trimmed.bytes().all(|b| b == b'.' || b.is_ascii_digit()) && trimmed.bytes().any(|b| b.is_ascii_digit()) {
-        return false;
+        return None;
     }
     let lowered: Cow<'_, str> = if !verified && trimmed.bytes().any(|b| b.is_ascii_uppercase()) {
         Cow::Owned(trimmed.to_lowercase())
@@ -160,11 +183,11 @@ fn check_domain_inner(
     let clean_hash = st.domain_clean.hash_of(q);
     if st.domain_clean.get_hashed(clean_hash, q).is_some() {
         st.metrics.cache_hits += 1;
-        return false;
+        return None;
     }
     st.metrics.cache_misses += 1;
 
-    let mut result = false;
+    let mut found: Option<DomainHit> = None;
     // DEPTH of the closest whitelisted ancestor (0 = none), not a bare verdict. Longest-match
     // precedence: an exact static trail on a MORE SPECIFIC name than its whitelisted ancestor
     // fires anyway. A shared-platform apex in
@@ -188,13 +211,12 @@ fn check_domain_inner(
             let base = dots.prefix_upto(q, label_count.saturating_sub(2));
             if let Some(info) = st.trails.db().get(base) {
                 let (i, r) = (info.info.to_string(), info.reference.to_string());
-                result = true;
                 let trail = format!("{base}(.ip-adress.com)");
-                emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(alias_trail(trail, alias_of)), &i, &r);
+                found = Some(DomainHit { trail: alias_trail(trail, alias_of), info: i, reference: r });
             }
         }
 
-        if !result {
+        if found.is_none() {
             // The parent walk: `for i in range(len(parts)): domain = '.'.join(parts[i:])`.
             // Each of those joins rebuilt a String; a suffix of a dotted name is already a
             // contiguous slice of it, so walk the dot offsets instead.
@@ -227,9 +249,7 @@ fn check_domain_inner(
                         // less specific one loses too, so the walk can stop here.
                         let trail_labels = q.as_bytes()[start..].iter().filter(|&&b| b == b'.').count() as u32 + 1;
                         if trail_labels > whitelist_depth {
-                            result = true;
-                            let trail = alias_trail(trail, alias_of);
-                            emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(trail), &info, &reference);
+                            found = Some(DomainHit { trail: alias_trail(trail, alias_of), info, reference });
                         }
                         break;
                     }
@@ -243,28 +263,26 @@ fn check_domain_inner(
 
         // IDN homograph of a listed (popular) domain - see heuristics/homograph.rs. Heuristics judge
         // names a client asked for: a CNAME target is the resolver's answer, matched against trails only.
-        if !result
+        if found.is_none()
             && !whitelisted
             && alias_of.is_none()
             && st.cfg.use_heuristics
             && st.heuristic_enabled("idn_homograph")
         {
             if let Some(brand) = crate::heuristics::homograph::impersonated(q, &st.whitelist).map(str::to_string) {
-                result = true;
                 let info = format!("potential homograph of {brand} (suspicious)");
-                emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(q.to_string()), &info, "(heuristic)");
+                found = Some(DomainHit { trail: q.to_string(), info, reference: "(heuristic)".to_string() });
             }
         }
 
         // Wildcard regex trails stay fully suppressed by any whitelisted ancestor: only an
         // exact-name trail (the parent walk above) earns the precedence.
-        if !result && !whitelisted && !st.trails.db().regex().is_empty() {
+        if found.is_none() && !whitelisted && !st.trails.db().regex().is_empty() {
             // The wildcard/regex static-trail fallback.
             let hit = st.trails.db().regex().find(q).map(|h| (h.start, h.end, h.candidate.to_string()));
             if let Some((start, end, candidate)) = hit {
                 if let Some(info) = st.trails.db().get(&candidate) {
                     let (i, r) = (info.info.to_string(), info.reference.to_string());
-                    result = true;
                     let mut trail = q[start..end].to_string();
                     let prefix = &q[..start];
                     let suffix = &q[end..];
@@ -274,30 +292,32 @@ fn check_domain_inner(
                     if !suffix.is_empty() {
                         trail = format!("{trail}({suffix})");
                     }
-                    let trail = alias_trail(trail.replace(".)", ")."), alias_of);
-                    emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(trail), &i, &r);
+                    found = Some(DomainHit {
+                        trail: alias_trail(trail.replace(".)", ")."), alias_of),
+                        info: i,
+                        reference: r,
+                    });
                 }
             }
         }
 
-        if !result && !whitelisted && crate::protocols::has(q, ".onion.") {
+        if found.is_none() && !whitelisted && crate::protocols::has(q, ".onion.") {
             // re.sub(r"(\.onion)(\..*)", r"\1($2)", query)
             let trail = st.statics.onion_suffix.replace(q, "$1($2)").to_string();
             let base = trail.split('(').next().unwrap_or("").to_string();
             if let Some(info) = st.trails.db().get(&base) {
                 let (i, r) = (info.info.to_string(), info.reference.to_string());
-                result = true;
-                emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(alias_trail(trail, alias_of)), &i, &r);
+                found = Some(DomainHit { trail: alias_trail(trail, alias_of), info: i, reference: r });
             }
         }
     }
 
     // Not for a CNAME target: its check skipped the heuristics, and a "clean" verdict cached from
     // it would let a later direct query for the same name skip them too.
-    if !result && alias_of.is_none() {
+    if found.is_none() && alias_of.is_none() {
         st.domain_clean.insert_if_seen_before_hashed(clean_hash, q, ());
     }
-    result
+    found
 }
 
 // ---------------------------------------------------------------------------
@@ -2003,15 +2023,34 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
     // other event. One response yields at most ONE event, for the first listed name in its
     // chain: a response is one lookup, and a zone owner could otherwise fill each answer with
     // MAX_CNAMES fresh listed names and turn every response into a burst of distinct events.
+    //
+    // An alias listed under the SAME label as the name the client asked for says nothing new: the
+    // UI groups events into threats by trail, so it only split one lookup into two threats
+    // (checkip.amazonaws.com -> checkip.check-ip.aws.a2z.com, both ipinfo). For a query type the
+    // query path checks, that lookup is already the request's own event, so the alias is dropped.
+    // An AAAA/PTR request is never checked there; dropping its alias would lose the lookup, so it
+    // is written under the queried name instead and joins that threat. Stateless on purpose: a
+    // request and its response land on different workers under the default `source` fanout.
     if flags_high & 0x80 != 0 && flags_low & 0x0f == 0 {
         let client = Endpoints { src: ep.dst, src_port: ep.dst_port, dst: ep.src, dst_port: ep.src_port };
         for target in dns::cname_targets(dns_data, name_end) {
-            if target != query
-                && settings::is_valid_dns_name(&target)
-                && check_domain_inner(st, &target, sec, usec, client, PROTO::UDP, None, Some(query))
-            {
-                break;
+            if target == query || !settings::is_valid_dns_name(&target) {
+                continue;
             }
+            let Some(hit) = domain_hit(st, &target, None, Some(query)) else { continue };
+            let hit = match domain_hit(st, query, None, None).filter(|own| own.info == hit.info) {
+                None => hit,
+                Some(own) => {
+                    let reported_by_request = dns::question_type_class(dns_data, name_end)
+                        .is_some_and(|(type_, class_)| !matches!(type_, 12 | 28) && class_ == 1);
+                    if reported_by_request {
+                        break;
+                    }
+                    own
+                }
+            };
+            emit_ep(st, sec, usec, client, PROTO::UDP, TRAIL::DNS, Field::Text(hit.trail), &hit.info, &hit.reference);
+            break;
         }
     }
 
