@@ -472,6 +472,47 @@ class CanaryTest(unittest.TestCase):
         self.assertEqual(hits, [], "trail(s) match a canary: %s" % hits[:3])
 
 
+class PathCanaryTest(unittest.TestCase):
+    """`--path-canaries`: a host-less path trail fires on that path of EVERY host, and on any request
+    whose parent directory or last segment it equals. "/wp-includes/ID3/", "/wp-admin/maint/" and
+    "/_vti_bin/shtml.exe/_vti_rpc" shipped as emotet and zloader (malware) and paged on web scanners
+    and on anyone browsing a WordPress site."""
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        os.makedirs(os.path.join(self.tmp, "malware"))
+
+    def tearDown(self):
+        import shutil
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def _report(self, *lines):
+        import argparse
+        with io.open(os.path.join(self.tmp, "malware", "sample.txt"), "w", encoding="utf8") as f:
+            f.write(u"# Copyright\n" + u"\n".join(lines) + u"\n")
+        options = argparse.Namespace(path=self.tmp, quiet=True, allow_trail=[], allow_file=[],
+                                     path_canaries=[os.path.join(ROOT, "tests", "canaries-paths.txt")])
+        return C.path_canary_report(options)
+
+    def test_a_cms_directory_is_caught_through_any_file_under_it(self):
+        self.assertEqual(self._report(u"/wp-includes/ID3/"), 1)
+
+    def test_a_trail_matching_only_a_last_segment_is_caught(self):
+        self.assertEqual(self._report(u"/shell.php"), 1)
+
+    def test_a_word_is_caught(self):
+        self.assertEqual(self._report(u"/cranberry"), 1)
+
+    def test_a_specific_malware_path_is_not(self):
+        # the positive control: real indicators of this shape must still pass
+        self.assertEqual(self._report(u"/_vti_bin/dfnorq/", u"/wp-content/plugins/wp-dumpme/", u"/bins/mirai.arm7"), 0)
+
+    def test_the_candidates_are_the_sensors(self):
+        # sensor/src/protocols/http.rs:build_checks - checked against it on 30,010 Common Crawl paths
+        self.assertEqual(C.path_candidates("/wp-includes/id3/about.php"),
+                         ["/wp-includes/id3/about.php", "/wp-includes/id3", "/about.php"])
+
+
 class PopularityListTest(unittest.TestCase):
     """`--canaries` also reads a popularity list as shipped, which is how the regex trails get checked
     against the top 1M. The list stays out of CI (2.4M rows, and misc/alexa1m.py owns that job) - what

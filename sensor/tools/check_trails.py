@@ -10,6 +10,7 @@
 And the other direction - no trail may match a name it must never match:
 
     python3 sensor/tools/check_trails.py --canaries              # tests/canaries.txt, ~3s (what CI runs)
+    python3 sensor/tools/check_trails.py --path-canaries         # tests/canaries-paths.txt: host-less paths
 
     python3 sensor/tools/check_trails.py --path ../trails/malware --kinds regex \
         --canaries misc/alexa_top-1m.csv.zip:500000 \
@@ -753,6 +754,67 @@ def canary_report(options, whitelist):
     return 1 if unexpected else 0
 
 
+_PARAM_VALUE = re.compile(r"(\w+=)[^&=]+")
+
+
+def path_candidates(path):
+    """Every key the sensor looks an HTTP request path up under - sensor/src/protocols/http.rs:
+    build_checks, without POST data. A host-less trail fires when it equals ANY of them.
+
+    >>> path_candidates("/wp-includes/id3/about.php")
+    ['/wp-includes/id3/about.php', '/wp-includes/id3', '/about.php']
+    >>> path_candidates("/a/b.php?id=1")
+    ['/a/b.php?id=1', '/a/b.php', '/a/b.php?id=', '/a', '/b.php']
+    """
+
+    checks = [path.rstrip("/")]
+    if "?" in path:
+        checks.append(path.split("?")[0].rstrip("/"))
+        if "=" in path:
+            checks.append(path[:path.index("=") + 1])
+        stripped = _PARAM_VALUE.sub(r"\1", path)
+        if stripped not in checks:
+            checks.append(stripped)
+            if stripped.count("/") > 1:
+                checks.append("/" + stripped.rsplit("/", 1)[1])
+    if checks[-1].count("/") > 1:
+        checks.append(checks[-1][:checks[-1].rfind("/")])
+        checks.append(checks[0][checks[0].rfind("/"):].split("?")[0])
+    return checks
+
+
+def path_canary_report(options):
+    """`--path-canaries`: no host-less path trail may match an ordinary request path."""
+
+    literals, _ = trail_index(options.path)
+    trails = {}
+    for key, where in literals.items():
+        if key.startswith("/") and not key.startswith("//"):
+            # core/assemble.py stores "/a/b/" as "/a/b" (a single segment keeps its slash)
+            trails.setdefault(key.rstrip("/") if key.count("/") > 1 else key, where)
+    allowed = set(options.allow_trail)
+    for path in options.allow_file:
+        allowed.update(allow_file(path))
+
+    found, checked = {}, 0
+    for path, limit in (canary_source(_) for _ in options.path_canaries):
+        for request in canaries(path, limit):
+            checked += 1
+            for candidate in path_candidates(request):
+                if candidate in trails and candidate not in allowed:
+                    found.setdefault(candidate, set()).add(request)
+
+    if not options.quiet:
+        print("[i] %d request path(s) checked against %d host-less path trail(s)" % (checked, len(trails)))
+        for key, requests in sorted(found.items(), key=lambda kv: (-len(kv[1]), kv[0])):
+            where, number = trails[key]
+            print("\n[?] %s:%d  %s  matches %d canary path(s)" % (os.path.relpath(where, options.path), number, key, len(requests)))
+            print("      e.g. %s" % ", ".join(sorted(requests)[:5]))
+        if not found:
+            print("[i] no path trail matches a canary")
+    return 1 if found else 0
+
+
 def _has_trails(path):
     """True when `path` holds at least one trail file. Cheap: stops at the first hit."""
 
@@ -775,6 +837,9 @@ def main():
     parser.add_argument("--canaries", nargs="*", default=None, metavar="FILE",
                         help="instead: check that no trail matches a name in FILE (default: tests/canaries.txt). "
                              "Accepts a plain list or a popularity list as shipped (*.csv.zip), and several files")
+    parser.add_argument("--path-canaries", nargs="*", default=None, metavar="FILE",
+                        help="instead: check that no host-less path trail matches a request path in FILE "
+                             "(default: tests/canaries-paths.txt)")
     parser.add_argument("--allow", action="append", default=[], metavar="TRAIL:CANARY",
                         help="a known, accepted canary hit (repeatable)")
     parser.add_argument("--allow-trail", action="append", default=[], metavar="TRAIL",
@@ -800,6 +865,9 @@ def main():
 
     whitelist = None if options.no_whitelist else whitelisted_parents()
 
+    if options.path_canaries is not None:
+        options.path_canaries = options.path_canaries or [os.path.join(ROOT, "tests", "canaries-paths.txt")]
+        return path_canary_report(options)
     if options.canaries is not None:
         options.canaries = options.canaries or [os.path.join(ROOT, "tests", "canaries.txt")]
         return canary_report(options, whitelist)
