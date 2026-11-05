@@ -47,6 +47,8 @@ NOT_COMMITS = {
     "b20112211": "a user-agent fragment",
     "c010101":   "a user-agent fragment",
     "cceeded":   "a CSS colour in core/httpd.py",
+    "86905c1d":  "a dashboard threat id (engine.js:threatUID) asserted in tests/test_alert.py",
+    "6b007af1":  "a dashboard threat id (engine.js:threatUID) asserted in tests/test_alert.py",
 }
 
 TOKEN = re.compile(r"(?<![0-9a-fx_/.-])([0-9a-f]{7,12})(?![0-9a-zA-Z_/.-])")

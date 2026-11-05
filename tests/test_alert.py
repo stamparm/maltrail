@@ -144,6 +144,15 @@ class ThrottleTest(unittest.TestCase):
         # ...but a different detection on the same name is a different threat
         self.assertFalse(alert.throttled(dict(second, info="potential dga (suspicious)"), now=1002))
 
+    def test_a_scanning_tool_is_one_threat_whatever_test_it_ran(self):
+        # same rule as engine.js:normTrail - a user agent's own parentheses are escaped
+        nikto = {"src_ip": "10.0.0.5", "info": "user agent (suspicious)", "reference": "(heuristic)",
+                 "trail": r"Nikto (Mozilla/5.00 \(Nikto/2.1.5\) \(Evasions:None\) \(Test:map_codes\))"}
+        self.assertEqual(alert.threat_key(nikto), alert.threat_key(dict(nikto, trail="Nikto (*)")))
+        traversal = {"src_ip": "10.0.0.5", "info": "potential directory traversal (suspicious)", "reference": "(heuristic)"}
+        self.assertEqual(alert.threat_key(dict(traversal, trail="198.51.100.7(/x?|dir%20..\\\\..\\\\)")),
+                         alert.threat_key(dict(traversal, trail="198.51.100.7(/../etc/passwd)")))
+
     def test_a_new_day_is_a_new_threat(self):
         config.ALERT_THROTTLE = 86400
         event = {"time": "2026-11-05 23:59:00", "src_ip": "10.0.0.5", "trail": "evil.biz", "info": "x (malware)", "reference": "(static)"}

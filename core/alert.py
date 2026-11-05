@@ -101,7 +101,7 @@ def threat_key(event):
 
     src, info, ref = event.get("src_ip", ""), event.get("info", ""), event.get("reference", "")
     trail = event.get("trail", "")
-    trail = "*" if _PATH_LIST_RE.match(trail) else re.sub(r"\([^)]+\)", "", trail).strip(" ").strip(".")
+    trail = "*" if _PATH_LIST_RE.match(trail) else re.sub(r"\([^)]+\)", "", re.sub(r"\\([\\()])", lambda m: m.group(0) if m.group(1) == "\\" else "", trail)).strip(" ").strip(".")
     ikey = _MORE_RE.sub("", info)
     if " dns exhaustion " in info:
         return "%s~>%s" % (ikey, trail)

@@ -73,7 +73,13 @@
   // A web scan names the paths it tried ("/admin, /.env, ...", #18247); grouping, flood folding and
   // the whitelist treat every such list as the one indicator it used to be logged as: "*".
   var PATH_LIST_RE = /^\/\S*(?:, \/\S*){2,}$/;
-  function normTrail(trail) { var c = _ntCache[trail]; if (c !== undefined) return c; if (_ntCacheN > 200000) { _ntCache = Object.create(null); _ntCacheN = 0; }  /* bound memory on pathological unique-trail (DGA) days */ c = PATH_LIST_RE.test(trail) ? "*" : charTrim(charTrim(("" + trail).replace(/\([^)]+\)/g, ""), " "), "."); _ntCache[trail] = c; _ntCacheN++; return c; }
+  // A user agent is logged with its own parentheses escaped - "Nikto (Mozilla/5.00 \(Nikto/2.1.5\) ...)" -
+  // and the first "\)" used to end the strip: every Nikto test string normalized to "Nikto  \ \)", a row
+  // apart from the "Nikto (*)" summary of the same scan. The escapes go first - pairwise, left to right,
+  // so a literal backslash before a real ")" (a traversal path's "..\\)") is not read as an escape.
+  // No lookbehind: an older Safari cannot parse one, and this file would then not load at all.
+  function unescParen(m, c) { return c === "\\" ? m : ""; }
+  function normTrail(trail) { var c = _ntCache[trail]; if (c !== undefined) return c; if (_ntCacheN > 200000) { _ntCache = Object.create(null); _ntCacheN = 0; }  /* bound memory on pathological unique-trail (DGA) days */ c = PATH_LIST_RE.test(trail) ? "*" : charTrim(charTrim(("" + trail).replace(/\\([\\()])/g, unescParen).replace(/\([^)]+\)/g, ""), " "), "."); _ntCache[trail] = c; _ntCacheN++; return c; }
   // A throttle summary line ends its info with " (+N more)" when it held more than it could carry;
   // the detection is the same, so grouping ignores the suffix (it used to open a second threat).
   function infoKey(info) { return ("" + info).replace(/ \(\+\d+ more\)$/, ""); }

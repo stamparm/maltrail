@@ -1459,7 +1459,7 @@ class TestThreatGrouping(unittest.TestCase):
     detection.
     """
 
-    NAMES = ("charTrim", "normTrail", "infoKey", "floodKey", "padz", "murmur3", "threatUID", "hourOf",
+    NAMES = ("charTrim", "unescParen", "normTrail", "infoKey", "floodKey", "padz", "murmur3", "threatUID", "hourOf",
              "newSet", "accum", "aggregateRows")
 
     def setUp(self):
@@ -1512,6 +1512,20 @@ class TestThreatGrouping(unittest.TestCase):
     def test_a_summary_line_belongs_to_its_threat(self):
         rows = [self._row("10.2.0.1", "(*).exfil.example", "long domain (suspicious)"),
                 self._row("10.2.0.1", "(*).exfil.example", "long domain (suspicious) (+5 more)")]
+        self.assertEqual(self._threats(rows), [[None, 2, 1]])
+
+    def test_one_scanning_tool_is_one_user_agent_threat(self):
+        # The sensor escapes a user agent's own parentheses; the first "\)" used to end the strip,
+        # so every Nikto test string and the "Nikto (*)" summary of the same scan were rows apart.
+        rows = [self._row("10.3.0.1", r"Nikto (Mozilla/5.00 \(Nikto/2.1.5\) \(Evasions:None\) \(Test:%s\))" % t,
+                          "user agent (suspicious)", kind="UA") for t in ("map_codes", "headers", "getinfo")]
+        rows.append(self._row("10.3.0.1", "Nikto (*)", "user agent (suspicious) (+209 more)", kind="UA"))
+        self.assertEqual(self._threats(rows), [[None, 4, 1]])
+
+    def test_a_literal_backslash_before_a_real_paren_is_not_an_escape(self):
+        # "..\\)" is a backslash from the request followed by the trail's own closing paren
+        rows = [self._row("10.4.0.1", "198.51.100.7(/ssi/envout.bat?|dir%20..\\\\..\\\\)", "potential directory traversal (suspicious)", kind="URL"),
+                self._row("10.4.0.1", "198.51.100.7(/../../etc/passwd)", "potential directory traversal (suspicious)", kind="URL")]
         self.assertEqual(self._threats(rows), [[None, 2, 1]])
 
 
