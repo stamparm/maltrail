@@ -109,7 +109,6 @@ def parse_static_lines(handle, info, reference, retval, provenance=None, source=
                 line = line.rstrip('/')
             retval[line] = (info, reference)
             _note(provenance, source, pile, line)
-            line = line.split('/')[0]
         elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", line):
             retval[line] = (info, reference)
             _note(provenance, source, pile, line)
@@ -205,7 +204,6 @@ def fetch(root, provenance=None):
                     value = value.rstrip('/')
                     if '/' in value:
                         retval[value] = (info, reference)
-                        value = value.split('/')[0]
                     elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", value):
                         retval[value] = (info, reference)
                     else:

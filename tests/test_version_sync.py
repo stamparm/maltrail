@@ -25,6 +25,11 @@ import bump_version                                   # noqa: E402
 import check_version                                  # noqa: E402
 
 
+def _slurp(path):
+    with open(path, encoding="utf8") as f:
+        return f.read()
+
+
 class TestVersionLocations(unittest.TestCase):
     def test_the_tree_agrees_with_itself(self):
         # stdout/stderr=PIPE rather than capture_output/text: CI runs this on Python 3.6, where
@@ -69,10 +74,10 @@ class TestVersionLocations(unittest.TestCase):
 
         bump_version._edits = broken
         try:
-            before = {p: open(p, encoding="utf8").read() for p, _, _ in original("9.9")}
+            before = {p: _slurp(p) for p, _, _ in original("9.9")}
             with self.assertRaises(SystemExit):
                 bump_version.apply("9.9")
-            after = {p: open(p, encoding="utf8").read() for p, _, _ in original("9.9")}
+            after = {p: _slurp(p) for p, _, _ in original("9.9")}
             self.assertEqual(before, after, "a refused bump still modified files on disk")
         finally:
             bump_version._edits = original

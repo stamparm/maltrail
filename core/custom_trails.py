@@ -65,7 +65,6 @@ def fetch():
                 line = line.rstrip('/')
                 if '/' in line:
                     retval[line] = (info, __reference__)
-                    line = line.split('/')[0]
                 elif re.search(r"\A\d+\.\d+\.\d+\.\d+\Z", line):
                     retval[line] = (info, __reference__)
                 else:

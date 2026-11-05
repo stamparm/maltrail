@@ -318,4 +318,6 @@ if __name__ == "__main__":
     if not require_supported_interpreter():
         sys.exit(2)
 
-    sys.exit(check(options.out) if options.check else main(options.out) or 0)
+    if options.check:
+        sys.exit(check(options.out))
+    main(options.out)

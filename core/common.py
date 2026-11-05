@@ -118,7 +118,6 @@ def retrieve_content(url, data=None, headers=None, binary=False, response=None):
                 retval = data.read()
             # NOTE: any other Content-Encoding (e.g. "identity") leaves retval as the raw response body
     except Exception as ex:
-        retval = ex.read() if hasattr(ex, "read") else (get_ex_message(ex) or "")
         _record(getattr(ex, "code", None), getattr(ex, "headers", None))
 
         # There used to be a retry over plain HTTP here on a TLS "handshake failure", for every

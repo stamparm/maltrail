@@ -306,7 +306,7 @@ class TestHttpd(unittest.TestCase):
     def test_index_served(self):
         st, _, body = _http(self.port, "GET", "/")
         self.assertEqual(st, 200)
-        self.assertIn(b"<table", body.lower() if False else body)  # dashboard HTML
+        self.assertIn(b"<table", body)  # dashboard HTML
 
     def test_check_ip_reports_spamhaus_drop(self):
         """DROP is a second, independent verdict beside worst_asns (#19598).
@@ -1890,7 +1890,8 @@ class TestPublishedPasswordStaysLocal(unittest.TestCase):
         finally:
             s.close()
         prm = json.loads(data.partition(b"\r\n\r\n")[2].decode())
-        users = open(os.path.join(self.tmp, "srv.conf")).read()
+        with open(os.path.join(self.tmp, "srv.conf")) as f:
+            users = f.read()
         field = [_.split(":")[1] for _ in users.split("\n") if _.strip().startswith("salted:")][0]
         proof = _password.proof_for(PW, field, "salted", prm["nonce"])
         return self._post_from(host, "username=salted&nonce=%s&proof=%s" % (prm["nonce"], proof))

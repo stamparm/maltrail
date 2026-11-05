@@ -94,8 +94,10 @@ class TestOptionCoverage(unittest.TestCase):
         rather than guessed at.
         """
 
-        conf = open(os.path.join(REPO, "maltrail.conf")).read()
-        rs = open(os.path.join(REPO, "sensor", "src", "config.rs")).read()
+        with open(os.path.join(REPO, "maltrail.conf")) as f:
+            conf = f.read()
+        with open(os.path.join(REPO, "sensor", "src", "config.rs")) as f:
+            rs = f.read()
 
         documented_defaults = {}
         for m in re.finditer(r"^#(%s)\s+(\S+)\s*$" % OPTION, conf, re.M):
