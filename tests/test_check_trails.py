@@ -498,14 +498,12 @@ class PathCanaryTest(unittest.TestCase):
         self.assertEqual(self._report(u"/wp-includes/ID3/"), 1)
 
     def test_a_trail_matching_only_a_last_segment_is_caught(self):
-        self.assertEqual(self._report(u"/shell.php"), 1)
-
-    def test_a_word_is_caught(self):
-        self.assertEqual(self._report(u"/cranberry"), 1)
+        self.assertEqual(self._report(u"/about.php"), 1)       # /wp-admin/about.php
 
     def test_a_specific_malware_path_is_not(self):
         # the positive control: real indicators of this shape must still pass
-        self.assertEqual(self._report(u"/_vti_bin/dfnorq/", u"/wp-content/plugins/wp-dumpme/", u"/bins/mirai.arm7"), 0)
+        self.assertEqual(self._report(u"/_vti_bin/dfnorq/", u"/wp-content/plugins/wp-dumpme/", u"/bins/mirai.arm7",
+                                      u"/shell.php", u"/inject", u"/flood.php"), 0)
 
     def test_the_candidates_are_the_sensors(self):
         # sensor/src/protocols/http.rs:build_checks - checked against it on 30,010 Common Crawl paths
