@@ -7667,3 +7667,12 @@
 205.196.152.0/24,bareboxcombd-as-ap
 205.196.154.0/24,bareboxcombd-as-ap
 205.196.159.0/24,bareboxcombd-as-ap
+
+# AS 211066
+# Reference: https://ipinfo.io/AS211066
+# Reference: https://x.com/malwrhunterteam/status/2117952693012746679
+# Reference: https://www.virustotal.com/gui/file/f7069e0ebb8c108c92ae0d8c3c781ea0b9abe68cc02004f4fac8ef05690453bf/detection
+# TITLE-HOST/IP=Veltrix — FiveM Internal
+
+5.175.192.0/24,ryzehosting-trading
+5.175.221.0/24,ryzehosting-trading
