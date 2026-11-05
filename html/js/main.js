@@ -810,11 +810,11 @@
     [/web.?shell/, "T1505.003", "Web Shell", "Persistence"],
     [/brute.?force|bruteforce/, "T1110", "Brute Force", "Credential Access"]
   ];
-  var _atkCache = {}, _atkCacheN = 0;
+  var _atkCache = Object.create(null), _atkCacheN = 0;
   function attackTechniques(info) {   // -> [{id,name,tactic}], deduped; memoized (info repeats heavily)
     if (!info) return [];
     var hit = _atkCache[info]; if (hit) return hit;
-    if (_atkCacheN > 100000) { _atkCache = {}; _atkCacheN = 0; }
+    if (_atkCacheN > 100000) { _atkCache = Object.create(null); _atkCacheN = 0; }
     var s = ("" + info).toLowerCase(), out = [], seen = {};
     for (var i = 0; i < ATTACK_MAP.length; i++) {
       var e = ATTACK_MAP[i];
@@ -878,7 +878,7 @@
   function loadViews() { var a = lsGet("mt_views", null); return Array.isArray(a) ? a : []; }
   function saveViews() { lsSet("mt_views", savedViews); }
   var savedViews = loadViews();
-  function applyView(v) {
+  function applySavedView(v) {
     state.filters = (v.filters || []).slice(); state.sev = (v.sev == null ? null : v.sev);
     state.sortKey = v.sortKey || "first"; state.sortDir = v.sortDir || -1; state.input = v.input || "";
     state.page = 0; var f = document.getElementById("filter"); if (f) f.value = state.input; refresh();
@@ -930,7 +930,7 @@
     else savedViews.forEach(function (v, i) {
       var row = document.createElement("div"); row.className = "ctxview";
       var ap = document.createElement("button"); ap.type = "button"; ap.className = "ctxitem viewapply"; ap.textContent = "\u25B8 " + v.name;
-      ap.onclick = function (e) { e.stopPropagation(); closeCtx(); applyView(v); };
+      ap.onclick = function (e) { e.stopPropagation(); closeCtx(); applySavedView(v); };
       var del = document.createElement("button"); del.type = "button"; del.className = "viewdel"; del.title = "delete view"; del.textContent = "\u2715";
       del.onclick = function (e) { e.stopPropagation(); deleteView(i); openViewsMenu(btn); };
       row.appendChild(ap); row.appendChild(del); m.appendChild(row);
@@ -1452,19 +1452,19 @@
   // like "cve-2021-44228" keeps its number.
   // Memoized like normTrail: a family: term runs this per threat per keystroke, and info fields
   // repeat across thousands of rows.
-  var _famCache = {}, _famCacheN = 0;
+  var _famCache = Object.create(null), _famCacheN = 0;
   function familyOf(info) {
     var c = _famCache[info];
     if (c !== undefined) return c;
-    if (_famCacheN > 20000) { _famCache = {}; _famCacheN = 0; }
+    if (_famCacheN > 20000) { _famCache = Object.create(null); _famCacheN = 0; }
     c = ("" + info).replace(/\s*\([^)]*\)\s*$/, "").replace(/-\d{1,2}$/, "").trim().toLowerCase();
     _famCache[info] = c; _famCacheN++;
     return c;
   }
   // memoized: _fieldMatch is called per-threat, so a wildcard term (trail:*.ru) would otherwise recompile this
   // regex once PER ROW per keystroke (120k× at the threat cap). The pattern is identical across the whole pass.
-  var _globCache = {}, _globN = 0;
-  function _glob(v) { var r = _globCache[v]; if (r) return r; if (_globN > 500) { _globCache = {}; _globN = 0; } r = new RegExp("^" + v.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, ".*") + "$"); _globCache[v] = r; _globN++; return r; }
+  var _globCache = Object.create(null), _globN = 0;
+  function _glob(v) { var r = _globCache[v]; if (r) return r; if (_globN > 500) { _globCache = Object.create(null); _globN = 0; } r = new RegExp("^" + v.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, ".*") + "$"); _globCache[v] = r; _globN++; return r; }
   // lowercased text values for a field. null => not a known text field (numeric/enum fields handled in matchPos).
   function _fieldVals(f, t) {
     switch (f) {
