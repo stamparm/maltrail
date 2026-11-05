@@ -83,6 +83,17 @@
   // A throttle summary line ends its info with " (+N more)" when it held more than it could carry;
   // the detection is the same, so grouping ignores the suffix (it used to open a second threat).
   function infoKey(info) { return ("" + info).replace(/ \(\+\d+ more\)$/, ""); }
+  // The events one line stands for. A throttled or condensed line writes each field its events
+  // differed in as a comma list - one source port per connection - and the overflow as " (+N more)".
+  // Counted as one, a replayed tripice day showed 286 events for 7,126; this reads back 7,064, and
+  // cannot read more than happened (each event adds at most one value to a list).
+  var MORE_RE = / \(\+(\d+) more\)$/;
+  function rowWeight(row) {
+    var w = 1, i, n, m, info = "" + row[9];
+    for (i = 3; i < 7; i++) if (("" + row[i]).indexOf(",") > -1 && (n = ("" + row[i]).split(",").length) > w) w = n;
+    if (info.charCodeAt(info.length - 1) === 41 && (m = MORE_RE.exec(info))) w += +m[1];
+    return w;
+  }
   // What "the same trail from many sources" (flood) means. For a heuristic the normalized trail is
   // often just a TLD - "(label).com" -> "com" - so keyed on that alone, every heuristic on .com from
   // 50+ hosts folded into ONE threat (a DGA bot vanished inside 60 hosts' long-domain events);
@@ -220,13 +231,14 @@
           dport = row[5], proto = row[6], trail = row[8], info = row[9], ref = row[10];
       type = row[7];
       if (!/^[A-Z0-9]+$/.test(type)) continue;
-      events++;
-      var hr = hourOf(time); hours[hr]++;
+      var w = rowWeight(row);
+      events += w;
+      var hr = hourOf(time); hours[hr] += w;
       nt = normTrail(trail);
-      srcCounts.set(src, (srcCounts.get(src) || 0) + 1);
-      trailCounts.set(nt, (trailCounts.get(nt) || 0) + 1);   // distinct INDICATORS, not raw strings: normTrail strips the variable (...) part so heuristic families ((x).com, rDNS, UA detail) collapse — matches legacy semantics
-      typeCounts[type] = (typeCounts[type] || 0) + 1;
-      (typeHours[type] || (typeHours[type] = new Array(24).fill(0)))[hr]++;
+      srcCounts.set(src, (srcCounts.get(src) || 0) + w);
+      trailCounts.set(nt, (trailCounts.get(nt) || 0) + w);   // distinct INDICATORS, not raw strings: normTrail strips the variable (...) part so heuristic families ((x).com, rDNS, UA detail) collapse — matches legacy semantics
+      typeCounts[type] = (typeCounts[type] || 0) + w;
+      (typeHours[type] || (typeHours[type] = new Array(24).fill(0)))[hr] += w;
       var ikey = infoKey(info), fk = floodKey(trail, info, ref);
       var dnsx = info.indexOf(DNS_EXH_INFIX) > -1, isFlood = flood.has(fk),
           dga = info.indexOf(DGA_INFIX) > -1, heur = ref.indexOf(HEUR_INFIX) > -1;
@@ -250,7 +262,7 @@
               srcS: newSet(), sportS: newSet(), dstS: newSet(), dportS: newSet(), protoS: newSet(), sensorS: newSet(), events: [] };
         threats.set(ttext, t); order.push(t);
       }
-      t.count++; t.hours[hr]++;
+      t.count += w; t.hours[hr] += w;
       // a threat compacts many events: collect the distinct values seen per column
       accum(t.srcS, src); accum(t.sportS, sport); accum(t.dstS, dst); accum(t.dportS, dport); accum(t.protoS, proto); accum(t.sensorS, sensor);
       if (evStored < MAX_STORED_EVENTS && t.events.length < 500) { t.events.push(row); evStored++; }   // bounded total raw rows (drawer)
@@ -284,13 +296,14 @@
       var type = row[7]; if (!/^[A-Z0-9]+$/.test(type)) continue;
       var time = row[0], sensor = row[1], src = row[2], sport = row[3], dst = row[4],
           dport = row[5], proto = row[6], trail = row[8], info = row[9], ref = row[10];
-      agg.events++;
-      var hr = hourOf(time); agg.hours[hr]++;
-      var sc = agg.srcCounts.get(src); if (sc === undefined) { agg.sources++; agg.srcCounts.set(src, 1); } else agg.srcCounts.set(src, sc + 1);   // running distinct counters (avoid O(total) re-count per tick)
+      var w = rowWeight(row);
+      agg.events += w;
+      var hr = hourOf(time); agg.hours[hr] += w;
+      var sc = agg.srcCounts.get(src); if (sc === undefined) { agg.sources++; agg.srcCounts.set(src, w); } else agg.srcCounts.set(src, sc + w);   // running distinct counters (avoid O(total) re-count per tick)
       var nt = normTrail(trail);
-      var tc = agg.trailCounts.get(nt); if (tc === undefined) { agg.trailsN++; agg.trailCounts.set(nt, 1); } else agg.trailCounts.set(nt, tc + 1);   // distinct INDICATORS (normalized)
-      agg.typeCounts[type] = (agg.typeCounts[type] || 0) + 1;
-      (agg.typeHours[type] || (agg.typeHours[type] = new Array(24).fill(0)))[hr]++;
+      var tc = agg.trailCounts.get(nt); if (tc === undefined) { agg.trailsN++; agg.trailCounts.set(nt, w); } else agg.trailCounts.set(nt, tc + w);   // distinct INDICATORS (normalized)
+      agg.typeCounts[type] = (agg.typeCounts[type] || 0) + w;
+      (agg.typeHours[type] || (agg.typeHours[type] = new Array(24).fill(0)))[hr] += w;
       var fk0 = floodKey(trail, info, ref), tset = trailSrcs.get(fk0); if (tset === undefined) trailSrcs.set(fk0, tset = new Set());
       if (!tset.has(src)) { tset.add(src); if (!flood.has(fk0) && tset.size > FLOOD_THRESH) flood.add(fk0); }   // count distinct srcs only when a NEW one appears
       var ikey = infoKey(info), fk = floodKey(trail, info, ref);
@@ -317,7 +330,7 @@
         t.uidc = threatUID(ttext, kind);
         threats.set(ttext, t); order.push(t); agg.sevCount[t.sev]++;
       }
-      t.count++; t.hours[hr]++; agg.sevHours[t.sev][hr]++;
+      t.count += w; t.hours[hr] += w; agg.sevHours[t.sev][hr] += w;
       accum(t.srcS, src); accum(t.sportS, sport); accum(t.dstS, dst); accum(t.dportS, dport); accum(t.protoS, proto); accum(t.sensorS, sensor);
       if ((agg._evN || 0) < MAX_STORED_EVENTS && t.events.length < 500) { t.events.push(row); agg._evN = (agg._evN || 0) + 1; }
       if (time < t.first) t.first = time;
@@ -331,7 +344,7 @@
 
   root.MT_ENGINE = {
     murmur3: murmur3, padz: padz, threatUID: threatUID, hourOf: hourOf,
-    newSet: newSet, accum: accum, setList: setList, charTrim: charTrim, normTrail: normTrail, infoKey: infoKey, floodKey: floodKey,
+    newSet: newSet, accum: accum, setList: setList, charTrim: charTrim, normTrail: normTrail, infoKey: infoKey, rowWeight: rowWeight, floodKey: floodKey,
     SEVERITY_FALLBACK: SEVERITY_FALLBACK, setSeverity: setSeverity, severityOf: severityOf,
     EVENT_FIELDS: EVENT_FIELDS, jsonEventRow: jsonEventRow, parseEvents: parseEvents, aggregate: aggregate, aggregateRows: aggregateRows, mergeRows: mergeRows,
     DGA_INFIX: DGA_INFIX, DNS_EXH_INFIX: DNS_EXH_INFIX, HEUR_INFIX: HEUR_INFIX, FLOOD_PREFIX: FLOOD_PREFIX, FLOOD_THRESH: FLOOD_THRESH,

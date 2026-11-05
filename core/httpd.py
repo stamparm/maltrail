@@ -3164,7 +3164,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                     with open(filepath, "rb") as f_log:
                                         for raw in (_candidates(f_log, needles) if needles else f_log):
                                             if self._line_in_scope(raw.decode(UNICODE_ENCODING, "ignore"), addresses, netmasks, regex)[0]:
-                                                count += 1
+                                                count += logfmt.events_in(raw)
                                 except (OSError, IOError):
                                     count = 0
                             else:
@@ -3172,9 +3172,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                 # ~60 ms per 65 MB, cached per (mtime, size) like the rest.
                                 count = 0
                                 try:
+                                    # events, not lines: a condensed line stands for several (logfmt.events_in)
                                     with open(filepath, "rb") as f_log:
-                                        for chunk in iter(lambda: f_log.read(1024 * 1024), b""):
-                                            count += chunk.count(b"\n")
+                                        count = logfmt.count_events(f_log)
                                 except (OSError, IOError):
                                     count = estimate_event_count(filepath, size)
                             counts[daystr] = count

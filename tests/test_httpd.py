@@ -137,6 +137,11 @@ class TestHttpd(unittest.TestCase):
             f.write(line("%s 10:00:03.000000" % cls.date, "sensor-a", "10.0.0.8", "6666", "5.5.5.5", "80", "TCP", "IP", "5.5.5.5", "supersecretname (custom)", "(custom)") + "\n")
             # IP-based URL trail: trail string isn't a bare IP ("1.1.1.1/..."), but its host geolocates (AU) -> map it
             f.write(line("%s 10:00:04.000000" % cls.date, "sensor-a", "10.0.0.9", "7777", "1.1.1.1", "80", "TCP", "URL", "1.1.1.1/malware.exe", "1312 (dummy)", "(static)") + "\n")
+        # a past day of condensed lines, for /counts: 3 + (1 + 4) + 1 events in 3 lines
+        with open(os.path.join(logdir, "2020-01-02.log"), "w") as f:
+            f.write(line("2020-01-02 10:00:00.000000", "s", "203.0.113.7", "1,2,3", "10.9.9.9", "80", "TCP", "IP", "203.0.113.7", "count test (dummy)", "a (+b,c)") + "\n")
+            f.write(line("2020-01-02 10:00:01.000000", "s", "10.9.9.8", "4", "198.51.100.53", "53", "UDP", "DNS", "x.example", "count test (dummy) (+4 more)", "(static)") + "\n")
+            f.write(line("2020-01-02 10:00:02.000000", "s", "10.9.9.8", "5", "198.51.100.53", "53", "UDP", "DNS", "y.example", "count, test (dummy)", "(static)") + "\n")
         trails = os.path.join(cls.tmp, "trails.csv")
         with open(trails, "w") as f:
             f.write("evil.com,dummy,(static)\n")
@@ -689,6 +694,10 @@ class TestHttpd(unittest.TestCase):
         self.assertEqual(st, 200)
         obj = _json.loads(body.decode("utf-8"))            # per-day event density for the calendar heat: {"YYYY-MM-DD": count}
         self.assertIsInstance(obj, dict)
+        # EVENTS, as the dashboard counts them (engine.js:rowWeight), not lines: the day picker said
+        # "286 events" for a tripice day of 7,126
+        self.assertEqual(obj.get("2020-01-02"), 9, obj)
+        self.assertEqual(obj.get(self.date), 5, obj)        # five plain lines are five events
 
     def test_geo_returns_json(self):
         # per-country attack-origin density for the world map: trail IPs geolocated, domains/private -> unmapped

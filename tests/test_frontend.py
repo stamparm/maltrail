@@ -1459,7 +1459,7 @@ class TestThreatGrouping(unittest.TestCase):
     detection.
     """
 
-    NAMES = ("charTrim", "unescParen", "normTrail", "infoKey", "floodKey", "padz", "murmur3", "threatUID", "hourOf",
+    NAMES = ("charTrim", "unescParen", "normTrail", "infoKey", "rowWeight", "floodKey", "padz", "murmur3", "threatUID", "hourOf",
              "newSet", "accum", "aggregateRows")
 
     def setUp(self):
@@ -1479,7 +1479,7 @@ class TestThreatGrouping(unittest.TestCase):
 
     def _threats(self, rows):
         consts = "\n".join(l for l in self.js.split("\n")
-                           if re.match(r"\s+var (DGA_INFIX|MAX_THREATS|MAX_STORED_EVENTS|MAX_CONDENSED|_ntCache|PATH_LIST_RE)\b", l))
+                           if re.match(r"\s+var (DGA_INFIX|MAX_THREATS|MAX_STORED_EVENTS|MAX_CONDENSED|_ntCache|PATH_LIST_RE|MORE_RE)\b", l))
         script = (consts + "\n" + _severity_js(_read(MAIN_JS)) + "\n".join(self._function(_) for _ in self.NAMES) +
                   "\nconsole.log(JSON.stringify(aggregateRows(%s).threats.map(function (t) { return [t.kind, t.count, t.srcS.n]; })));"
                   % json.dumps(rows))
@@ -1510,9 +1510,20 @@ class TestThreatGrouping(unittest.TestCase):
         self.assertEqual(self._threats(rows), [["flood", 60, 60]])
 
     def test_a_summary_line_belongs_to_its_threat(self):
+        # and counts as the events it stands for: itself, plus the 5 it says it could not carry
         rows = [self._row("10.2.0.1", "(*).exfil.example", "long domain (suspicious)"),
                 self._row("10.2.0.1", "(*).exfil.example", "long domain (suspicious) (+5 more)")]
-        self.assertEqual(self._threats(rows), [[None, 2, 1]])
+        self.assertEqual(self._threats(rows), [[None, 7, 1]])
+
+    def test_a_condensed_line_counts_the_events_it_holds(self):
+        # one source port per connection: 5 ports are 5 events, as the sensor itself counted them
+        row = self._row("203.0.113.9", "203.0.113.9", "known attacker", "(static)", kind="IP")
+        row[3] = "32788,32814,53170,53176,53190"
+        self.assertEqual(self._threats([row]), [[None, 5, 1]])
+
+    def test_a_plain_line_is_one_event(self):
+        # the positive control: nothing in a single event's fields can make it count twice
+        self.assertEqual(self._threats([self._row("10.5.0.1", "evil.example", "malware (test)", "(static)")]), [[None, 1, 1]])
 
     def test_one_scanning_tool_is_one_user_agent_threat(self):
         # The sensor escapes a user agent's own parentheses; the first "\)" used to end the strip,
@@ -1520,7 +1531,7 @@ class TestThreatGrouping(unittest.TestCase):
         rows = [self._row("10.3.0.1", r"Nikto (Mozilla/5.00 \(Nikto/2.1.5\) \(Evasions:None\) \(Test:%s\))" % t,
                           "user agent (suspicious)", kind="UA") for t in ("map_codes", "headers", "getinfo")]
         rows.append(self._row("10.3.0.1", "Nikto (*)", "user agent (suspicious) (+209 more)", kind="UA"))
-        self.assertEqual(self._threats(rows), [[None, 4, 1]])
+        self.assertEqual(self._threats(rows), [[None, 3 + 1 + 209, 1]])
 
     def test_a_literal_backslash_before_a_real_paren_is_not_an_escape(self):
         # "..\\)" is a backslash from the request followed by the trail's own closing paren

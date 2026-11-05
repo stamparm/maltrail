@@ -21,6 +21,7 @@ See the file 'LICENSE' for copying permission
 
 import csv
 import json
+import re
 
 FIELDS = ("time", "sensor", "src_ip", "src_port", "dst_ip", "dst_port", "proto", "type", "trail", "info", "reference")
 
@@ -117,6 +118,83 @@ def fields(line):
             return None
         out.append(value if isinstance(value, str) else str(value))
     return out
+
+_MORE = re.compile(r" \(\+(\d+) more\)\Z")
+
+
+def events_in(line):
+    """How many events one log line stands for - html/js/engine.js:rowWeight, so the day picker's
+    count and the dashboard's agree. A throttled or condensed line writes each field its events
+    differed in as a comma list (one source port per connection) and the overflow as "(+N more)".
+
+    >>> events_in(b'"2026-11-04 00:04:02.1" s 1.2.3.4 32788,32814,53170 10.0.0.1 80 TCP IP 1.2.3.4 "known attacker" (static)')
+    3
+    >>> events_in('"2026-11-04 00:04:02.1" s 1.2.3.4 1 10.0.0.1 53 UDP DNS x.biz "long domain (suspicious) (+5 more)" (heuristic)')
+    6
+    >>> events_in('"2026-11-04 00:04:02.1" s 1.2.3.4 1 10.0.0.1 80 TCP PATH "/a, /b, /c" "web scanning, maybe" (heuristic)')
+    1
+    """
+
+    probe = line if isinstance(line, bytes) else line.encode("utf8", "replace")
+    # A text line opens with a quoted "date time", then sensor, src, sport, dst, dport, proto - none
+    # of which can contain a space - so the four list-carrying fields are tokens 4-7, read without
+    # parsing the line. Parsing every line made /counts 12x slower: almost every reputation hit has a
+    # comma in its reference ("abuseipdb.com (+blocklist.de,dshield.org)").
+    parts = probe.split(b" ", 8)
+    if len(parts) == 9 and parts[0][:1] == b'"' and parts[1][-1:] == b'"' and parts[2][:1] != b'"':
+        weight = max(1, max(_.count(b",") + 1 for _ in parts[4:8]))
+        if b" more)" not in parts[8]:
+            return weight
+    elif b"," not in probe and b"more)" not in probe:
+        return 1
+    values = fields(line)
+    if values is None:
+        return 1
+    weight = max(1, max(len(_.split(",")) for _ in values[3:7]))
+    match = _MORE.search(values[9].rstrip())
+    return weight + (int(match.group(1)) if match else 0)
+
+
+# The lines events_in() may weigh above 1: a comma in sport/dst/dport/proto (the 4 tokens after
+# "date time", sensor, src), a "(+N more)", or a JSON line. Found by the regex engine and bytes.find,
+# so a file costs a newline count plus its condensed lines - parsing every line in Python made /counts
+# 12x slower, and one regex scanning each line to its end for "more)" was no better.
+# Anchored on a literal "\n" rather than ^ with re.M: the engine then skips from line to line instead
+# of trying every byte, which halved its time (0.52 s for a million lines).
+_LISTED = re.compile(br'\n"[^"\n]*" [^ \n]+ [^ \n]+ (?:[^ \n]+ ){0,3}[^ \n]*,')
+
+
+def count_events(handle):
+    """events_in() summed over a binary file handle.
+
+    >>> import io
+    >>> count_events(io.BytesIO(b'"2026-11-04 00:04:02.1" s 1.2.3.4 1,2,3 10.0.0.1 80 TCP IP 1.2.3.4 "known attacker" "a (+b,c)"\\n'
+    ...                         b'"2026-11-04 00:04:03.1" s 1.2.3.4 9 10.0.0.1 53 UDP DNS x.biz "long domain (+2 more)" (h)\\n'
+    ...                         b'{"src_port": "7,8", "info": "x"}\\n'))
+    7
+    """
+
+    count = 0
+    while True:
+        chunk = handle.read(1024 * 1024)
+        if not chunk:
+            return count
+        if not chunk.endswith(b"\n"):
+            chunk += handle.readline()      # never split a line between two chunks
+        count += chunk.count(b"\n") + (0 if chunk.endswith(b"\n") else 1)
+        # scanned with a "\n" in front, so a match's start IS its line's start in `chunk`
+        starts = set(match.start() for match in _LISTED.finditer(b"\n" + chunk))
+        if chunk[:1] == b"{":
+            starts.add(0)
+        for needle, back in ((b"\n{", False), (b" more)", True)):
+            at = chunk.find(needle)
+            while at != -1:
+                starts.add(chunk.rfind(b"\n", 0, at) + 1 if back else at + 1)
+                at = chunk.find(needle, at + 1)
+        for start in starts:
+            end = chunk.find(b"\n", start)
+            count += events_in(chunk[start:end if end != -1 else len(chunk)]) - 1
+
 
 def severity_of_line(line):
     """The severity a JSON line carries, or None for a text line (which has never had one)."""
