@@ -2917,6 +2917,12 @@ security-testing
 
 ^M/1.0$
 
+# Reference: https://x.com/malwrhunterteam/status/2118264944722645255
+# Reference: https://tria.ge/261105-ljy6jsbv5r/behavioral3
+# Reference: https://www.virustotal.com/gui/file/317afaaed74e029f29cf62ff8c141a46d1a2927c0125ef425a1e4687ee3a4df7/detection
+
+^M$
+
 # Reference: https://x.com/S0ufi4n3/status/2117968797860757999
 
 spa-api-recon
