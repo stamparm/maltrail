@@ -9,6 +9,7 @@ import collections
 import csv
 import json
 import os
+import re
 import threading
 import time
 import traceback
@@ -79,6 +80,72 @@ def parse_event_line(line):
     return event
 
 
+# An alert is about a THREAT, the unit the dashboard shows: html/js/engine.js:aggregateRows groups
+# events by this key, and threat_uid() is the 8-hex id it displays (and its search finds). Keyed on
+# the raw (source, trail) instead, every heuristic or alias spelling of one threat - "(a8f3k).com",
+# "(b91x).com" - was a message of its own: 8,978 at ALERT_SEVERITY low over a week of a home
+# network, 2,427 threats. A flood is the one grouping left out: whether a trail is one depends on
+# the whole day, which an alert sent as the event happens cannot know.
+_PATH_LIST_RE = re.compile(r"\A/\S*(?:, /\S*){2,}\Z")
+_MORE_RE = re.compile(r" \(\+\d+ more\)\Z")
+
+
+def threat_key(event):
+    """The dashboard's threat_text for one event (engine.js: normTrail, infoKey, the ttext ladder).
+
+    >>> threat_key({"src_ip": "10.0.0.5", "trail": "(api).ipify.org", "info": "ipinfo (suspicious)", "reference": "(static)"})
+    '10.0.0.5~>ipify.org'
+    >>> threat_key({"src_ip": "10.0.0.5", "trail": "(a8f3k).com", "info": "long domain (suspicious)", "reference": "(heuristic)"})
+    '10.0.0.5~>comlong domain (suspicious)'
+    """
+
+    src, info, ref = event.get("src_ip", ""), event.get("info", ""), event.get("reference", "")
+    trail = event.get("trail", "")
+    trail = "*" if _PATH_LIST_RE.match(trail) else re.sub(r"\([^)]+\)", "", trail).strip(" ").strip(".")
+    ikey = _MORE_RE.sub("", info)
+    if " dns exhaustion " in info:
+        return "%s~>%s" % (ikey, trail)
+    if " dga " in info:
+        return "%s~>%s" % (src, ikey)
+    if "heuristic" in ref:
+        return "%s~>%s%s" % (src, trail, ikey)
+    return "%s~>%s" % (src, trail)
+
+
+def _murmur3(text, seed=13):
+    # engine.js:murmur3 hashes the low byte of each UTF-16 code unit, so this does too
+    data = bytearray(text.encode("utf-16-le")[0::2])
+    c1, c2, h1, n = 0xcc9e2d51, 0x1b873593, seed, len(data)
+    rotl = lambda x, r: ((x << r) | (x >> (32 - r))) & 0xffffffff
+    for i in range(0, n - n % 4, 4):
+        k1 = data[i] | data[i + 1] << 8 | data[i + 2] << 16 | data[i + 3] << 24
+        k1 = (rotl((k1 * c1) & 0xffffffff, 15) * c2) & 0xffffffff
+        h1 = (rotl(h1 ^ k1, 13) * 5 + 0xe6546b64) & 0xffffffff
+    k1, tail = 0, n - n % 4
+    for j in reversed(range(n % 4)):
+        k1 = k1 << 8 | data[tail + j]
+    if n % 4:
+        h1 ^= (rotl((k1 * c1) & 0xffffffff, 15) * c2) & 0xffffffff
+    h1 ^= n
+    h1 ^= h1 >> 16
+    h1 = (h1 * 0x85ebca6b) & 0xffffffff
+    h1 ^= h1 >> 13
+    h1 = (h1 * 0xc2b2ae35) & 0xffffffff
+    return h1 ^ (h1 >> 16)
+
+
+def threat_uid(event):
+    """The threat id the dashboard shows for this event's threat (engine.js:threatUID)."""
+
+    key, info = threat_key(event), event.get("info", "")
+    hexed = "%x" % _murmur3(key)
+    if " dns exhaustion " in info:
+        return hexed.zfill(6)[:6] + "N0"
+    if " dga " in info:
+        return hexed.zfill(6)[:6] + "D0"
+    return hexed.zfill(8)
+
+
 def wanted(event):
     """Is this event at or above the configured severity threshold?"""
 
@@ -89,10 +156,11 @@ def wanted(event):
 
 
 def throttled(event, now=None):
-    """True when the same (source, trail) pair was already sent inside ALERT_THROTTLE seconds.
+    """True when the same threat, on the same day, was already sent inside ALERT_THROTTLE seconds.
 
-    A beacon checking in every 30 seconds is one message an interval, not 2,880 a day. Keyed on the
-    pair rather than the whole line so a changing port or timestamp does not defeat it.
+    Keyed on the threat (threat_key), not the line, so a changing port, timestamp or heuristic
+    spelling does not defeat it; and on the day, because that is what the dashboard shows - a
+    threat still going after midnight is a threat of the new day there, and gets a message here.
     """
 
     try:
@@ -103,7 +171,7 @@ def throttled(event, now=None):
         return False
 
     now = time.time() if now is None else now
-    key = (event["src_ip"], event["trail"])
+    key = (str(event.get("time", ""))[:10], threat_key(event))
 
     with _throttle_lock:
         last = _throttle.get(key)
@@ -131,6 +199,7 @@ def body(event):
     template = config.ALERT_FORMAT or ""
     fields = dict(event)
     fields["json"] = json_line(event)
+    fields["threat"] = threat_uid(event)
     try:
         return template % fields
     except (KeyError, TypeError, ValueError) as ex:

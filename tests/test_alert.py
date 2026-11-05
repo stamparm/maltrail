@@ -133,6 +133,24 @@ class ThrottleTest(unittest.TestCase):
         self.assertFalse(alert.throttled(event, now=1000))
         self.assertFalse(alert.throttled(event, now=1000))
 
+    def test_one_threat_is_one_message_whatever_its_spelling(self):
+        # The dashboard folds every "(label).com" long-domain hit from one host into one threat;
+        # keyed on the raw trail, each spelling was a message of its own.
+        first = {"time": "2026-11-05 10:00:00", "src_ip": "10.0.0.5", "trail": "(a8f3k).com",
+                 "info": "long domain (suspicious)", "reference": "(heuristic)"}
+        second = dict(first, trail="(b91xq2).com")
+        self.assertFalse(alert.throttled(first, now=1000))
+        self.assertTrue(alert.throttled(second, now=1001))
+        # ...but a different detection on the same name is a different threat
+        self.assertFalse(alert.throttled(dict(second, info="potential dga (suspicious)"), now=1002))
+
+    def test_a_new_day_is_a_new_threat(self):
+        config.ALERT_THROTTLE = 86400
+        event = {"time": "2026-11-05 23:59:00", "src_ip": "10.0.0.5", "trail": "evil.biz", "info": "x (malware)", "reference": "(static)"}
+        self.assertFalse(alert.throttled(event, now=1000))
+        self.assertTrue(alert.throttled(dict(event, time="2026-11-05 23:59:30"), now=1030))
+        self.assertFalse(alert.throttled(dict(event, time="2026-11-06 00:00:30"), now=1090))
+
     def test_the_table_is_bounded(self):
         from core.settings import MAX_ALERT_THROTTLE_KEYS
         for i in range(MAX_ALERT_THROTTLE_KEYS + 200):
@@ -155,6 +173,13 @@ class BodyTest(unittest.TestCase):
         self.assertEqual(list(payload), ["timestamp", "sensor", "severity", "src_ip", "src_port",
                                          "dst_ip", "dst_port", "proto", "type", "trail", "info", "reference"])
         self.assertEqual(payload["trail"], "evil.biz")
+
+    def test_threat_is_the_id_the_dashboard_shows(self):
+        # expected values computed by html/js/engine.js:threatUID, not by the code under test
+        config.ALERT_FORMAT = "%(threat)s"
+        self.assertEqual(alert.body(self.event), "86905c1d")
+        heuristic = {"src_ip": "10.0.0.5", "trail": "(a8f3k).com", "info": "long domain (suspicious)", "reference": "(heuristic)"}
+        self.assertEqual(alert.threat_uid(heuristic), "6b007af1")
 
     def test_a_broken_template_returns_none_instead_of_raising(self):
         config.ALERT_FORMAT = "%(nosuchfield)s"
