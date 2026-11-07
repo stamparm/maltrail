@@ -7677,3 +7677,9 @@
 
 5.175.192.0/24,ryzehosting-trading
 5.175.221.0/24,ryzehosting-trading
+
+# AS 402425
+# Reference: https://ipinfo.io/AS402425
+# Reference: https://x.com/DougMadory/status/2118822885615648909
+
+2.27.171.0/24,qll-as-001
