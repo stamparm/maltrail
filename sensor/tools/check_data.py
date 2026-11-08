@@ -87,6 +87,7 @@ CHECKS = {
     "mass_scanner.txt": None,  # a trail list: sensor/tools/check_trails.py gates its entries
     "mass_scanner_cidr.txt": _scanner,
     "public_suffix_icann.txt": _suffix,
+    "public_suffix_private.txt": _suffix,
     "ua.txt": _ua,
     "whitelist.txt": _whitelist,
     "worst_asns.txt": _worst_asn,

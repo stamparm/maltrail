@@ -341,6 +341,32 @@ class WhitelistShadowTest(unittest.TestCase):
         self.assertEqual(stale[:3], [], "reported as shadowed without being in the whitelist itself")
 
 
+class HostingPlatformTest(unittest.TestCase):
+    """The PRIVATE half of the Public Suffix List: com.de, uber.space, puter.site. A bare trail on one
+    matches every customer of the platform; com.de shipped as apt unc6353 because the ICANN-only check
+    could not see it. suspicious/dynamic_domain.txt lists such providers on purpose, so only the
+    malware/ and malicious/ piles are held to it."""
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        for pile in ("malware", "suspicious"):
+            os.makedirs(os.path.join(self.tmp, pile))
+            with io.open(os.path.join(self.tmp, pile, "sample.txt"), "w", encoding="utf8") as f:
+                f.write(u"# Copyright\ncom.de\nevil.com.de\n")
+
+    def tearDown(self):
+        import shutil
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def test_only_the_bare_platform_in_a_malware_pile_is_reported(self):
+        found = [(os.path.relpath(_[0], self.tmp), _[2]) for _ in C.problems(self.tmp, None, set()) if _[3] == "overbroad"]
+        self.assertEqual(found, [(os.path.join("malware", "sample.txt"), "com.de")])
+
+    def test_the_vendored_list_has_the_one_that_shipped(self):
+        self.assertIn("com.de", C.private_suffixes())
+        self.assertIsNotNone(C.refreshed_on(os.path.join(ROOT, "data", "public_suffix_private.txt")))
+
+
 class PublicSuffixTest(unittest.TestCase):
     """A trail equal to a public suffix names a REGISTRY, not a host.
 

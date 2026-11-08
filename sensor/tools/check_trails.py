@@ -145,6 +145,19 @@ def public_suffixes():
         return set()
 
 
+def private_suffixes():
+    """The PRIVATE half of the Public Suffix List (data/public_suffix_private.txt): hosting platforms
+    and second-level registries. Empty set if the file is missing."""
+
+    path = os.path.join(ROOT, "data", "public_suffix_private.txt")
+    try:
+        with io.open(path, encoding="utf8", errors="replace") as handle:
+            return set(_.strip().lower() for _ in handle if _.strip() and not _.startswith("#"))
+    except EnvironmentError:
+        print("[!] %s is missing; skipping the hosting-platform check" % os.path.relpath(path, ROOT))
+        return set()
+
+
 def whitelisted_parents():
     """The whitelist as loaded: data/whitelist.txt plus the configured WHITELIST.
 
@@ -242,7 +255,7 @@ def tlds(suffixes):
     return frozenset(_.rsplit('.', 1)[-1] for _ in suffixes or ())
 
 
-def classify(key, whitelist=None, info="", raw=None, suffixes=None, known_tlds=None):
+def classify(key, whitelist=None, info="", raw=None, suffixes=None, known_tlds=None, platforms=None):
     """(severity, reason) for one trail key, or None when it is reachable as written.
 
     severity is "inert" - it cannot match, ever - "overbroad": it matches an entire registry rather than a
@@ -318,6 +331,11 @@ def classify(key, whitelist=None, info="", raw=None, suffixes=None, known_tlds=N
         return ("overbroad", "'%s' is an ICANN public suffix: this matches every domain in that "
                              "registry, not a host. Write it as '.%s' if the whole namespace is meant."
                 % (wire, wire))
+    if platforms and wire in platforms and not (raw or "").startswith("."):
+        # `platforms` is passed for malware/ and malicious/ only: suspicious/dynamic_domain.txt
+        # lists the providers themselves on purpose.
+        return ("overbroad", "'%s' is a hosting platform or registry (Public Suffix List, private section): "
+                             "this matches every customer's name under it, not a host" % wire)
 
     if whitelist and wire in whitelist:
         # LONGEST-MATCH PRECEDENCE (3.2). Only an entry equal to the FULL name vetoes a trail; a tie
@@ -463,6 +481,7 @@ def problems(root, whitelist=None, suffixes=None):
     if suffixes is None:
         suffixes = public_suffixes()
     known_tlds = tlds(suffixes)
+    platforms = private_suffixes()
     for base, _, files in os.walk(root):
         for name in sorted(files):
             if not name.endswith(".txt"):
@@ -472,7 +491,9 @@ def problems(root, whitelist=None, suffixes=None):
             # Only used for the parking/sinkhole exemption below, which is keyed on it.
             info = os.path.splitext(name)[0].replace('_', ' ')
             for number, key, raw in entries(path):
-                verdict = classify(key, whitelist, info, raw, suffixes, known_tlds)
+                pile = os.path.relpath(path, root).replace(os.sep, "/").split("/")[0]
+                verdict = classify(key, whitelist, info, raw, suffixes, known_tlds,
+                                   platforms if pile in ("malware", "malicious") or root.rstrip("/").endswith(("/malware", "/malicious")) else None)
                 if verdict:
                     found.append((path, number, key, verdict[0], verdict[1]))
     return found
