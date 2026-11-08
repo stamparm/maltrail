@@ -16,7 +16,7 @@ __check__ = ".1"
 # NOT "known attacker". The feed publishes SUBNETS, and expanding a /24 means 255 of its 256
 # addresses were never seen attacking anything - the observation is about the network, not about
 # the host. "bad reputation (attacking subnet)" is the claim the data actually supports, and it
-# matches how the tor and bitcoin node feeds qualify the same word.
+# matches how the tor node feed qualifies the same word.
 __info__ = "bad reputation (attacking subnet)"
 __reference__ = "dshield.org"
 

@@ -21,8 +21,7 @@ __check__ = "or_addresses"
 __info__ = "bad reputation (tor node)"
 __reference__ = "torproject.org"
 
-# "bad reputation (...)" follows the convention the other infrastructure feeds use (compare
-# bitcoinnodes.py). It also makes the merge order-independent: "reputation" is a
+# "bad reputation (...)" makes the merge order-independent: "reputation" is a
 # LOW_PRIORITY_INFO_KEYWORD, so for an address that is BOTH a relay and an exit, the more specific
 # "tor exit node (suspicious)" wins whichever of the two feeds is processed first. Being a relay is
 # informational rather than an accusation, so low severity is the honest rating.
