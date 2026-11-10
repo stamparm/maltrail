@@ -7693,3 +7693,10 @@
 156.9.60.0/22,pl-3k33
 199.19.77.0/24,pl-3k33
 65.87.223.0/24,pl-3k33
+
+# AS 218219
+# Reference: https://ipinfo.io/AS218219
+# Reference: https://x.com/malwrhunterteam/status/2120116871127355408
+# Reference: https://www.virustotal.com/gui/file/1e98ed3662f68673de57139fad1fe7d32f75007dd20d6ba007a235395f77aa0b/detection
+
+150.40.98.0/24,denev
