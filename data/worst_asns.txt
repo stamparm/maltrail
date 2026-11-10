@@ -7700,3 +7700,49 @@
 # Reference: https://www.virustotal.com/gui/file/1e98ed3662f68673de57139fad1fe7d32f75007dd20d6ba007a235395f77aa0b/detection
 
 150.40.98.0/24,denev
+
+# AS 33993
+# Reference: https://ipinfo.io/AS33993
+# Reference: https://x.com/LandscapeThreat/status/2120139733422522673
+# Reference: https://securelist.ru/tr/new-cyber-threat-arra-ghouls-attacks-russian-organizations/117588/
+
+103.113.68.0/24,ufo-as
+141.98.188.0/24,ufo-as
+141.98.189.0/24,ufo-as
+141.98.190.0/24,ufo-as
+141.98.191.0/24,ufo-as
+171.22.133.0/24,ufo-as
+171.22.134.0/24,ufo-as
+171.22.135.0/24,ufo-as
+171.22.136.0/24,ufo-as
+171.22.137.0/24,ufo-as
+171.22.138.0/24,ufo-as
+185.234.59.0/24,ufo-as
+185.235.242.0/24,ufo-as
+185.250.149.0/24,ufo-as
+2.56.178.0/24,ufo-as
+45.12.114.0/24,ufo-as
+45.12.115.0/24,ufo-as
+45.128.49.0/24,ufo-as
+45.128.53.0/24,ufo-as
+45.136.114.0/24,ufo-as
+45.144.30.0/24,ufo-as
+45.144.31.0/24,ufo-as
+45.15.130.0/24,ufo-as
+45.15.147.0/24,ufo-as
+45.150.64.0/24,ufo-as
+45.67.230.0/24,ufo-as
+45.84.1.0/24,ufo-as
+45.9.12.0/24,ufo-as
+45.9.13.0/24,ufo-as
+45.9.14.0/24,ufo-as
+45.9.15.0/24,ufo-as
+45.9.16.0/24,ufo-as
+85.8.201.0/24,ufo-as
+91.207.183.0/24,ufo-as
+94.131.113.0/24,ufo-as
+94.131.121.0/24,ufo-as
+94.131.23.0/24,ufo-as
+2a09:7c47::/32,ufo-as
+2a14:e080::/32,ufo-as
+2a14:e081::/32,ufo-as
