@@ -745,7 +745,9 @@ l33boLAMER
 WinHTTP loader/1.0
 
 # Reference: https://twitter.com/naumovax/status/1758504367114555766
+# Reference: https://x.com/SquiblydooBlog/status/2120121878245474775
 # Reference: https://habr.com/ru/companies/pt/articles/793440/ (RU-lang)
+# Reference: https://rogueauthority.org/signed-fake-windows-dll-bits-backdoor
 
 WinHTTP Example/1.0
 
