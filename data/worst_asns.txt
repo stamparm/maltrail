@@ -7683,3 +7683,13 @@
 # Reference: https://x.com/DougMadory/status/2118822885615648909
 
 2.27.171.0/24,qll-as-001
+
+# AS 203662
+# Reference: https://ipinfo.io/AS203662
+# Reference: https://x.com/LandscapeThreat/status/2118609038128611810
+
+144.79.59.0/24,pl-3k33
+151.245.112.0/24,pl-3k33
+156.9.60.0/22,pl-3k33
+199.19.77.0/24,pl-3k33
+65.87.223.0/24,pl-3k33
