@@ -589,7 +589,12 @@ jobs:
       - uses: taiki-e/install-action@v2
         with:
           tool: cargo-audit,cargo-deny
-      - run: cargo audit --file sensor/Cargo.lock
+      # Reviewed exception, also in sensor/deny.toml: RUSTSEC-2026-0459 (bundled SQLite < 3.54 can return stale memory when it opens a database
+      # together with a crafted -wal file of another page size). The fix, libsqlite3-sys 0.39 / rusqlite
+      # 0.41, needs Rust 1.88; the floor is 1.74 (openSUSE Leap 15 / SLE 15). The one SQLite file the
+      # sensor opens is meta.sqlite, always journal_mode=DELETE (sensor/src/meta.rs), in the root-owned
+      # LOG_DIR: planting the file pair already takes write access there. Drop this with the floor.
+      - run: cargo audit --file sensor/Cargo.lock --ignore RUSTSEC-2026-0459
       # audit answers "is anything known-vulnerable today". deny answers the questions that
       # decide whether that stays true: licence compatibility, source registry, tree drift.
       - run: cargo deny --manifest-path sensor/Cargo.toml check

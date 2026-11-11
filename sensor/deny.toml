@@ -10,6 +10,14 @@
 # Advisories are gated by `cargo audit` in ci.yml; keeping them here too means one place to add
 # a reviewed exception if a transitive dependency ever needs one.
 yanked = "deny"
+# Reviewed exception, also on ci.yml's `cargo audit` line: RUSTSEC-2026-0459 (bundled SQLite < 3.54 can return stale memory when it opens a database
+# together with a crafted -wal file of another page size). The fix, libsqlite3-sys 0.39 / rusqlite
+# 0.41, needs Rust 1.88; the floor is 1.74 (openSUSE Leap 15 / SLE 15). The one SQLite file the
+# sensor opens is meta.sqlite, always journal_mode=DELETE (sensor/src/meta.rs), in the root-owned
+# LOG_DIR: planting the file pair already takes write access there. Drop this with the floor.
+ignore = [
+    { id = "RUSTSEC-2026-0459", reason = "fix needs Rust 1.88 (floor 1.74); meta.sqlite never uses WAL and sits in root-owned LOG_DIR" },
+]
 
 [licenses]
 # Maltrail is MIT. Anything the sensor links must be redistributable under those terms. A crate
