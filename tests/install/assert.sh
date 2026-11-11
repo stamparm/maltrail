@@ -46,6 +46,14 @@ CONF=/etc/maltrail.conf
 UNITS=${MALTRAIL_UNITS:-/run/maltrail-units}
 SENSOR=$PREFIX/sensor/target/release/maltrail-sensor
 
+# Arch supports only a fully upgraded system, and archlinux:latest regularly lags its own package
+# lists: since OpenSSL moved to the openssl-3 package (Nov 2026) every dependency install on it fails
+# with "conflicting files". install.sh says so and asks for `pacman -Syu` rather than upgrading
+# someone's system itself; this is the box after the owner did that.
+if command -v pacman >/dev/null 2>&1; then
+    pacman -Syu --noconfirm --quiet >/tmp/syu.log 2>&1 || { echo "F arch: pacman -Syu failed before install.sh ran"; tail -5 /tmp/syu.log; }
+fi
+
 sh "$SRC"/install.sh "$@" 2>&1
 printf -- '--- ASSERT ---\n'
 

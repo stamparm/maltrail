@@ -188,7 +188,14 @@ pkg_install() {
         yum)    run_quiet yum install -y -q "$@" ;;
         zypper) run_quiet zypper --quiet --non-interactive install --no-recommends "$@" ;;
         apk)    run_quiet apk add --no-cache -q "$@" ;;
-        pacman) run_quiet pacman -Sy --needed --noconfirm --quiet "$@" ;;
+        # -Sy without -u is a partial upgrade, which Arch does not support: on a box behind its
+        # package lists a dependency can need a newer library than the installed one (OpenSSL's
+        # move to the openssl-3 package, Nov 2026, failed with "conflicting files"). Upgrading the
+        # whole system is the owner's call, not an installer's, so say what to run instead.
+        pacman)
+            run_quiet pacman -Sy --needed --noconfirm --quiet "$@" ||
+                die "pacman could not install the dependencies. On Arch this usually means the system is behind its package lists: run 'pacman -Syu', then this installer again"
+            ;;
         pkg)    run_quiet env ASSUME_ALWAYS_YES=yes pkg install -y "$@" ;;
         pkgin)  run_quiet pkgin -y install "$@" ;;
         pkg_add) run_quiet pkg_add "$@" ;;
