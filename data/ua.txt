@@ -2929,6 +2929,12 @@ security-testing
 
 spa-api-recon
 
+# Reference: https://x.com/suyog41/status/2120392939595600062
+# Reference: https://www.virustotal.com/gui/file/c9b930126b19e2b1673d97d9080774d38a788404179f1c99ec6f8b817c02388d/detection
+
+Veera/1.0
+Veera
+
 # Misc
 
 information_schema
