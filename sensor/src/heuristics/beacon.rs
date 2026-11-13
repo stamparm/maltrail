@@ -76,19 +76,19 @@ impl Flow {
         if n < 2 {
             return f64::INFINITY;
         }
-        let mut sum = 0u64;
-        for i in 0..n {
-            sum += self.gaps[i] as u64;
-        }
+        let gaps = &self.gaps[..n];
+        let sum: u64 = gaps.iter().map(|&g| g as u64).sum();
         let mean = sum as f64 / n as f64;
         if mean <= 0.0 {
             return f64::INFINITY;
         }
-        let mut var = 0.0;
-        for i in 0..n {
-            let d = self.gaps[i] as f64 - mean;
-            var += d * d;
-        }
+        let var: f64 = gaps
+            .iter()
+            .map(|&g| {
+                let d = g as f64 - mean;
+                d * d
+            })
+            .sum();
         (var / n as f64).sqrt() / mean
     }
 }
