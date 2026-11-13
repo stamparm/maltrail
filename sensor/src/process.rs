@@ -894,7 +894,9 @@ fn tcp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packe
     };
     let ep = Endpoints { src: header.src, src_port: tcph.src_port, dst: header.dst, dst_port: tcph.dst_port };
 
-    if tcph.flags == 2 {
+    // SYN set, ACK/FIN/RST/PSH/URG clear. ECE and CWR are ignored: an ECN-setup SYN (RFC 3168)
+    // carries both, and is still the start of a connection.
+    if tcph.flags & 0x3f == 0x02 {
         syn(st, ep, sec, usec);
         return;
     }

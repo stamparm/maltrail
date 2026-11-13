@@ -6,7 +6,7 @@
 //! second segment of a ~2 KB browser ClientHello, which carries the SNI half of the time, was
 //! dropped for not starting with a TLS record header.
 
-use maltrail_sensor::testkit::{eth, ipv4, ipv6, repo_root, tcp, udp};
+use maltrail_sensor::testkit::{erspan, eth, gre, ipv4, ipv6, ipv6_ext, repo_root, tcp, udp};
 
 fn shipped_filter() -> String {
     let conf = std::fs::read_to_string(repo_root().join("maltrail.conf")).unwrap();
@@ -58,4 +58,128 @@ fn shipped_filter_passes_what_detections_need_and_nothing_bulky() {
     let quic = |first: u8| eth(&ipv4(17, "10.0.0.1", "198.51.100.7", &udp(40000, 443, &[first; 1200])), 0x0800, None);
     assert!(program.filter(&quic(0xc3)), "QUIC Initial");
     assert!(!program.filter(&quic(0x43)), "QUIC short header");
+}
+
+/// ECN-setup SYNs (RFC 3168: SYN+ECE+CWR, AccECN adds AE in byte 12) are SYNs.
+#[test]
+fn shipped_filter_passes_ecn_syns() {
+    let cap = pcap::Capture::dead(pcap::Linktype::ETHERNET).unwrap();
+    let program = cap.compile(&shipped_filter(), true).unwrap();
+    let mut acc_ecn = tcp(40000, 22, 0xc2, &[]);
+    acc_ecn[12] |= 0x01;
+    for (name, expected, segment) in [
+        ("ECN SYN", true, tcp(40000, 22, 0xc2, &[])),
+        ("AccECN SYN", true, acc_ecn),
+        ("ECE SYN-ACK", false, tcp(22, 40000, 0x52, &[])),
+        ("SYN+RST", false, tcp(40000, 22, 0x06, &[])),
+    ] {
+        let v4 = eth(&ipv4(6, "10.0.0.1", "198.51.100.7", &segment), 0x0800, None);
+        let v6 = eth(&ipv6(6, "2001:db8::1", "2001:db8::2", &segment), 0x86dd, None);
+        assert_eq!(program.filter(&v4), expected, "IPv4 {name}");
+        assert_eq!(program.filter(&v6), expected, "IPv6 {name}");
+    }
+}
+
+/// Encapsulations the parser unwraps must reach it: the filter cannot look inside them, so they
+/// pass whole. Each inner packet is a bulk TCP segment the bare filter drops, or a DNS query it
+/// passes, so only the encapsulation decides.
+#[test]
+fn shipped_filter_passes_what_the_parser_unwraps() {
+    let filter = shipped_filter();
+    let cap = pcap::Capture::dead(pcap::Linktype::ETHERNET).unwrap();
+    let program = cap.compile(&filter, true).unwrap();
+
+    let bulk = tcp(443, 40000, ACK, &[0x99; 1200]);
+    let dns = udp(40000, 53, &[0u8; 30]);
+    let inner4 = ipv4(6, "10.1.1.5", "10.9.9.9", &bulk);
+    let inner6 = ipv6(6, "2001:db8::5", "2001:db8::9", &bulk);
+    let dns4 = ipv4(17, "10.1.1.5", "10.9.9.9", &dns);
+    let mirrored = eth(&inner4, 0x0800, None);
+    let ext_bulk = |exts: &[(u8, usize)]| eth(&ipv6_ext(6, "2001:db8::1", "2001:db8::2", exts, &bulk), 0x86dd, None);
+    let pppoe = |payload: &[u8], ppp: u16| {
+        [&[0x11, 0x00, 0x00, 0x01][..], &((payload.len() + 2) as u16).to_be_bytes(), &ppp.to_be_bytes(), payload]
+            .concat()
+    };
+    let tagged = |outer: u16, frame_tail: &[u8]| {
+        let mut f = eth(frame_tail, 0x8100, None);
+        f[12..14].copy_from_slice(&outer.to_be_bytes());
+        f
+    };
+    let vlan10 = |ethertype: u16, payload: &[u8]| [&[0x00, 0x0a][..], &ethertype.to_be_bytes(), payload].concat();
+
+    assert!(!program.filter(&mirrored), "control: the bare inner packet is filtered out");
+    let cases: Vec<(&str, Vec<u8>)> = vec![
+        ("GRE", eth(&gre("192.0.2.1", "192.0.2.2", 0x0800, false, false, false, &inner4), 0x0800, None)),
+        ("GRE key+seq", eth(&gre("192.0.2.1", "192.0.2.2", 0x0800, true, true, true, &inner4), 0x0800, None)),
+        ("ERSPAN II", eth(&erspan("192.0.2.1", "192.0.2.2", false, &mirrored), 0x0800, None)),
+        ("ERSPAN III", eth(&erspan("192.0.2.1", "192.0.2.2", true, &mirrored), 0x0800, None)),
+        (
+            "GRE over IPv6",
+            eth(&ipv6(47, "2001:db8::1", "2001:db8::2", &[&[0, 0, 0x08, 0][..], &inner4].concat()), 0x86dd, None),
+        ),
+        ("IP-in-IP", eth(&ipv4(4, "192.0.2.1", "192.0.2.2", &inner4), 0x0800, None)),
+        ("6in4", eth(&ipv4(41, "192.0.2.1", "192.0.2.2", &inner6), 0x0800, None)),
+        ("4in6", eth(&ipv6(4, "2001:db8::1", "2001:db8::2", &inner4), 0x86dd, None)),
+        ("IPv6 hop-by-hop", ext_bulk(&[(0, 6)])),
+        ("IPv6 routing", ext_bulk(&[(43, 6)])),
+        ("IPv6 destination options", ext_bulk(&[(60, 6)])),
+        ("PPPoE session", eth(&pppoe(&dns4, 0x0021), 0x8864, None)),
+        ("802.1Q + PPPoE", eth(&vlan10(0x8864, &pppoe(&dns4, 0x0021)), 0x8100, None)),
+        ("802.1Q in the frame", eth(&dns4, 0x0800, Some(10))),
+        ("QinQ 802.1ad", tagged(0x88a8, &vlan10(0x8100, &vlan10(0x0800, &dns4)))),
+        ("QinQ 0x9100", tagged(0x9100, &vlan10(0x8100, &vlan10(0x0800, &dns4)))),
+        ("QinQ, outer tag stripped by the kernel", eth(&vlan10(0x0800, &dns4), 0x8100, None)),
+    ];
+    for (name, frame) in &cases {
+        assert!(program.filter(frame), "{name}");
+    }
+
+    // `any` is LINUX_SLL: the ethertype is at link[14:2], after a 16-byte cooked header.
+    let sll = pcap::Capture::dead(pcap::Linktype(113)).unwrap();
+    let sll_program = sll.compile(&filter, true).expect("the shipped filter must compile for `any`");
+    let cooked = |protocol: u16, payload: &[u8]| {
+        [&[0, 0, 0, 1, 0, 6, 0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff, 0, 0][..], &protocol.to_be_bytes(), payload].concat()
+    };
+    assert!(!sll_program.filter(&cooked(0x0800, &inner4)), "control: SLL bulk TCP");
+    assert!(sll_program.filter(&cooked(0x0800, &dns4)), "control: SLL DNS");
+    assert!(sll_program.filter(&cooked(0x8864, &pppoe(&dns4, 0x0021))), "SLL PPPoE");
+    assert!(sll_program.filter(&cooked(0x8100, &vlan10(0x0800, &dns4))), "SLL QinQ inner tag");
+    assert!(
+        sll_program
+            .filter(&cooked(0x0800, &ipv4(47, "192.0.2.1", "192.0.2.2", &[&[0, 0, 0x08, 0][..], &inner4].concat()))),
+        "SLL GRE"
+    );
+}
+
+/// A filter that does not compile stops the capture, so the shipped one must compile for every
+/// link type the parser reads (`packet::dlt`). `vlan`, `pppoes` and `ether proto` would not: the
+/// first fails for `any` (LINUX_SLL), the others for raw-IP links.
+#[test]
+fn shipped_filter_compiles_for_every_link_type_the_sensor_reads() {
+    let filter = shipped_filter();
+    use maltrail_sensor::packet::dlt::*;
+    for dlt in [
+        DLT_NULL,
+        DLT_EN10MB,
+        DLT_PPP,
+        DLT_LINUX_SLL,
+        DLT_LINUX_SLL2,
+        DLT_RAW,
+        DLT_LOOP,
+        DLT_ENC,
+        DLT_PPP_SERIAL,
+        DLT_PPP_ETHER,
+        DLT_C_HDLC,
+        DLT_IEEE802_11,
+        DLT_PFLOG,
+        DLT_PRISM_HEADER,
+        DLT_IEEE802_11_RADIO,
+        DLT_PPI,
+        DLT_IPV4,
+        DLT_IPV6,
+        DLT_NETANALYZER,
+    ] {
+        let cap = pcap::Capture::dead(pcap::Linktype(dlt)).unwrap();
+        assert!(cap.compile(&filter, true).is_ok(), "the shipped filter does not compile for DLT {dlt}");
+    }
 }

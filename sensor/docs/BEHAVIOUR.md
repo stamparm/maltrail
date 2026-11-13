@@ -94,7 +94,7 @@ never stalls capture.
 
 | detection | what triggers it |
 | --- | --- |
-| IP and IP:port trails on TCP | the SYN of a connection to or from a listed address; `IPORT` when the `address:port` key matched. To a listed host, `attacker` listings are not reported (noise the host provoked); from one, `malware` listings are not (backscatter); `parking site` only on ports 80/443 |
+| IP and IP:port trails on TCP | the SYN of a connection to or from a listed address (ECN-setup SYNs included: ECE/CWR are ignored); `IPORT` when the `address:port` key matched. To a listed host, `attacker` listings are not reported (noise the host provoked); from one, `malware` listings are not (backscatter); `parking site` only on ports 80/443 |
 | IP trails on UDP and other protocols | the same two-sided rule for non-DNS UDP; echo requests only for ICMP |
 | Domain trails | DNS queries, HTTP `Host`, TLS and QUIC SNI: exact names, parent domains (`(sub).listed.example`), `.onion` gateways, wildcard trails; infrastructure names under a suspicious parent and the bare domain of a dynamic-DNS provider are skipped |
 | DNS answers | listed IPs in A/AAAA answers, with the query in the trail; sinkhole and parking answers |
@@ -176,7 +176,9 @@ a `(heuristic)` reference, never `malware`. The state behind them is bounded
 15. **Tunnels are decapsulated** - VXLAN (4789 and 8472), GENEVE, GRE, ERSPAN II/III and
     IP-in-IP, up to 3 deep. The outer header is still matched, and the inner packet is processed
     in its own right: on an overlay SPAN feed every host worth watching is inside the tunnel.
-    `maltrail_packets_decapsulated_total` counts what was unwrapped.
+    `maltrail_packets_decapsulated_total` counts what was unwrapped. The shipped `CAPTURE_FILTER`
+    passes these, PPPoE and VLAN/QinQ-tagged frames and IPv6 with extension headers whole, since a
+    BPF filter cannot see inside them (`tests/capture_filter.rs`).
 16. **Split handshakes are reassembled.** A post-quantum ClientHello is about 2 KB, so the SNI is
     often in the second TCP segment, and every QUIC ClientHello now spans two Initials. Up to 64
     handshakes of 4 KB per worker are reassembled (stale after 3 s), and JA3/JA4 are computed

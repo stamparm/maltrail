@@ -162,6 +162,27 @@ fn tcp_syn_ipport_trail() {
 }
 
 #[test]
+fn ecn_setup_syn_matches_ip_trails() {
+    // SYN+ECE+CWR (RFC 3168), and the same with AccECN's AE bit (the low bit of byte 12)
+    let ecn = tcp(50000, 4444, 0xc2, b"");
+    let mut acc_ecn = tcp(50001, 4444, 0xc2, b"");
+    acc_ecn[12] |= 0x01;
+    let mut h = trails(&[("66.66.66.66:4444", "c2 (dummy)", "ref"), ("dead::beef", "badnet (dummy)", "ref")]);
+    h.feed_ip(&ipv4(6, "10.0.0.5", "66.66.66.66", &ecn), 1);
+    h.feed_ip(&ipv4(6, "10.0.0.5", "66.66.66.66", &acc_ecn), 2);
+    h.feed_ip(&ipv6(6, "dead::1", "dead::beef", &tcp(50000, 443, 0xc2, b"")), 3);
+    // an ECE SYN-ACK is the server's answer, not a connection start
+    h.feed_ip(&ipv4(6, "66.66.66.66", "10.0.0.5", &tcp(4444, 50002, 0x52, b"")), 4);
+    let events = h.events();
+    let got: Vec<(&str, &str)> = events.iter().map(|e| (e.trail_type.as_str(), e.trail.as_str())).collect();
+    assert_eq!(
+        got,
+        vec![("IPORT", "66.66.66.66:4444"), ("IPORT", "66.66.66.66:4444"), ("IP", "dead::beef")],
+        "{events:?}"
+    );
+}
+
+#[test]
 fn attacker_and_off_web_parking_trails_are_suppressed_on_syn() {
     let mut h = trails(&[("66.66.66.66", "known attacker", "ref"), ("77.77.77.77", "parking site", "ref")]);
     h.feed_ip(&ipv4(6, "10.0.0.5", "66.66.66.66", &tcp(50000, 443, 0x02, b"")), 1);
