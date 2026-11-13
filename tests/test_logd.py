@@ -543,7 +543,7 @@ class TestEventLogWriteFailure(unittest.TestCase):
         self._send(SEC, b"control")
         self.assertTrue(self._logged(SEC, b"control"), "positive control: an event is logged when all is fine")
 
-        os.chmod(self.tmp, 0o555)                   # the next day's file cannot be created
+        os.chmod(self.tmp, 0o555)  # nosec B103   # the next day's file cannot be created
         self._send(SEC + 86400, b"lost")
         self.assertFalse(self._logged(SEC + 86400, b"lost", timeout=0.5))
         self.assertEqual(L.write_status()["dropped"], dropped + 1, "the dropped event was not counted")
@@ -552,7 +552,7 @@ class TestEventLogWriteFailure(unittest.TestCase):
         self.assertIn("DROPPED", errors, "a failed event-log write left nothing in error.log")
         self.assertIn("Permission denied", errors)
 
-        os.chmod(self.tmp, 0o755)
+        os.chmod(self.tmp, 0o755)  # nosec B103
         # The original day first: the failed switch had closed its descriptor but left its path cached.
         self._send(SEC, b"same-day")
         self.assertTrue(self._logged(SEC, b"same-day"), "the day whose handle was closed by the failed switch stayed blind")
