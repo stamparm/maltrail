@@ -1311,6 +1311,9 @@ mod tests {
 
     /// A stopped server used to cost every event in silence: an unconnected `send_to` succeeds
     /// whether or not anything listens. Connected, the port-unreachable comes back as an error.
+    /// Not on Windows: Wine (CI's Windows runner) never surfaces it on send, so there a stopped
+    /// server stays as silent as it always was.
+    #[cfg(not(windows))]
     #[test]
     fn a_closed_server_port_is_counted_and_recovery_is_seen() {
         let cfg = Arc::new(OutputConfig {
