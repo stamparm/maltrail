@@ -203,9 +203,9 @@ pkg_install() {
         # invoking user rather than failing the whole install on a Mac.
         brew)
             if [ "$(id -u)" = 0 ] && [ -n "${SUDO_USER:-}" ]; then
-                run_quiet sudo -u "$SUDO_USER" brew install "$@"
+                run_quiet sudo -u "$SUDO_USER" env HOMEBREW_NO_INSTALL_UPGRADE=1 brew install "$@"
             else
-                run_quiet brew install "$@"
+                run_quiet env HOMEBREW_NO_INSTALL_UPGRADE=1 brew install "$@"
             fi
             ;;
     esac
@@ -244,7 +244,17 @@ ensure_deps() {
             ;;
         pkgin)   pkg_install git python311 ;;
         pkg_add) pkg_install git python3 ;;
-        brew)    pkg_install git python3 libpcap ;;
+        # Only what is missing, and never an upgrade. libpcap is part of macOS, and git and python3
+        # come with the Command Line Tools. Homebrew stopped building bottles for Intel Macs
+        # (Sep 2026), so `brew install git python3 libpcap` there compiled git, Python and OpenSSL
+        # from source - 45-54 min in CI - and upgraded an operator's own packages on the way.
+        brew)
+            _need=""
+            git --version >/dev/null 2>&1 || _need="git"
+            python3 -c 'import sqlite3' >/dev/null 2>&1 || _need="$_need python3"
+            # shellcheck disable=SC2086 # word splitting is the point: zero, one or two names
+            [ -z "$_need" ] || pkg_install $_need
+            ;;
     esac
 
     for tool in git tar; do
