@@ -547,7 +547,7 @@ class PathCanaryTest(unittest.TestCase):
     def test_a_specific_malware_path_is_not(self):
         # the positive control: real indicators of this shape must still pass
         self.assertEqual(self._report(u"/_vti_bin/dfnorq/", u"/wp-content/plugins/wp-dumpme/", u"/bins/mirai.arm7",
-                                      u"/shell.php", u"/inject", u"/flood.php"), 0)
+                                      u"/shell.php", u"/flood.php"), 0)
 
     def test_the_candidates_are_the_sensors(self):
         # sensor/src/protocols/http.rs:build_checks - checked against it on 30,010 Common Crawl paths
@@ -870,7 +870,13 @@ class AllowFileTest(unittest.TestCase):
         literals = {}
         for pile in ("malware", "malicious"):
             literals.update(C.trail_index(os.path.join(static, pile))[0])
-        stale = [_ for _ in allowed if _ not in literals]
+        # `.platform` allows every tenant under it: stale only when no trail ends with it any more
+        import bisect
+        tails = sorted(_[::-1] for _ in literals)
+        def tenant(suffix):
+            at = bisect.bisect_left(tails, suffix[::-1])
+            return at < len(tails) and tails[at].startswith(suffix[::-1])
+        stale = [_ for _ in allowed if _ not in literals and not (_.startswith(".") and tenant(_))]
         self.assertEqual(stale, [], "allow entries whose trail is gone: %s" % stale)
 
 
@@ -900,6 +906,71 @@ class EmptyPathIsNotAPass(unittest.TestCase):
         with io.open(os.path.join(tmp, "malware", "x.txt"), "w", encoding="utf8") as handle:
             handle.write(u"evil.example\n")
         self.assertTrue(C._has_trails(tmp))
+
+
+def _tree(files):
+    """A throwaway trail tree: {"malware/x.txt": "content"} -> its root."""
+    import shutil
+    tmp = tempfile.mkdtemp()
+    for name, text in files.items():
+        os.makedirs(os.path.dirname(os.path.join(tmp, name)), exist_ok=True)
+        with io.open(os.path.join(tmp, name), "w", encoding="utf8") as handle:
+            handle.write(text)
+    return tmp, lambda: shutil.rmtree(tmp)
+
+
+class _Options(object):
+    quiet, limit, allow_trail = True, 25, []
+
+    def __init__(self, path, **kw):
+        self.path, self.allow_file = path, []
+        self.__dict__.update(kw)
+
+
+class CrossFileTest(unittest.TestCase):
+    """The 2026-11 clean-up, as checks: each class it removed by hand must now fail the gate."""
+
+    def test_a_sinkhole_address_listed_as_c2_is_caught(self):
+        tmp, done = _tree({"malware/sinkhole_x.txt": u"1.2.3.4\n",
+                           "malware/fam.txt": u"1.2.3.4\n1.2.3.4:8080\nhttp://1.2.3.4/\nhttp://1.2.3.4/gate.php\n5.6.7.8\n"})
+        self.addCleanup(done)
+        self.assertEqual([(_[1], _[2]) for _ in C.sinkhole_conflicts(tmp)], [(1, "1.2.3.4"), (2, "1.2.3.4:8080"), (3, "1.2.3.4")])
+
+    def test_base_domain(self):
+        suffixes = {"com", "s3.amazonaws.com"}
+        self.assertEqual(C.base_domain("a.b.aliyuncs.com", suffixes), "aliyuncs.com")
+        self.assertEqual(C.base_domain("bucket.s3.amazonaws.com", suffixes), "bucket.s3.amazonaws.com")
+        self.assertIsNone(C.base_domain("com", suffixes))
+
+    def test_a_host_under_a_popular_domain_is_caught_unless_allowed(self):
+        tmp, done = _tree({"malware/x.txt": u"ssls.microsoft.com\nmicrosoft.com\nevil.b-cdn.net\nmicrosoft.com/x.php\nstaos.microsoft.com\n",
+                           "top.txt": u"microsoft.com\nb-cdn.net\n",
+                           "allow.txt": u".b-cdn.net  # tenants\nstaos.microsoft.com\n"})
+        self.addCleanup(done)
+        options = _Options(os.path.join(tmp, "malware"), brand_subdomains=[os.path.join(tmp, "top.txt")],
+                           allow_file=[os.path.join(tmp, "allow.txt")])
+        self.assertEqual(C.brand_report(options), 1)
+        os.remove(os.path.join(tmp, "malware", "x.txt"))
+        self.assertEqual(C.brand_report(options), 0)
+
+    def test_a_stock_file_on_a_popular_host_is_caught(self):
+        tmp, done = _tree({"malware/x.txt": u"popular.com/xmlrpc.php\n", "top.txt": u"popular.com\n"})
+        self.addCleanup(done)
+        options = _Options(os.path.join(tmp, "malware"), stock_paths=[os.path.join(tmp, "top.txt")])
+        self.assertEqual(C.stock_path_report(options), 1)
+        with io.open(os.path.join(tmp, "malware", "x.txt"), "w", encoding="utf8") as handle:
+            handle.write(u"popular.com/xmlrpc.php/evil/gate.php\nunranked.com/xmlrpc.php\n")
+        self.assertEqual(C.stock_path_report(options), 0)
+
+    def test_a_glued_search_domain_warns(self):
+        tlds = C.tlds(C.public_suffixes())
+        self.assertEqual(C.classify("kiss58.myvnc.com.ovh.net", known_tlds=tlds)[0], "warn")
+        self.assertIsNone(C.classify("vps-1a2b3c4d.vps.ovh.net", known_tlds=tlds))
+
+    def test_an_institutional_rmm_server_warns_only_in_bad_rmmtool(self):
+        self.assertEqual(C.classify("help.example.ac.uk", info="bad rmmtool")[0], "warn")
+        self.assertIsNone(C.classify("help.example.ac.uk", info="generic"))
+        self.assertIsNone(C.classify("nezha.edu.kg", info="bad rmmtool"))
 
 
 if __name__ == "__main__":

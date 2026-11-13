@@ -6,12 +6,13 @@
 # and "/updraft" on any path ending in it. These shipped as "emotet (malware)" and "zloader
 # (malware)", HIGH, and reached real alerts before they were found by hand.
 #
-# Two sections, each a different way an ordinary request looks like an indicator:
+# Three sections, each a different way an ordinary request looks like an indicator:
 #   1. WordPress 7.1.4 core, every file and directory (lower-cased: the sensor lower-cases the path).
 #      The CMS behind most of the web, and every CMS false positive so far was one of its paths.
 #      Joomla and Drupal core were measured too and added one "web shells (suspicious)" filename.
 #      Its shell.php and mysql.php are left out: those are classic web-shell names, true positives.
 #   2. Standard paths of other common software: FrontPage, Dreamweaver, UpdraftPlus, and the like.
+#   3. Default build-output and generic file names (Android Studio, one-letter scripts).
 #
 # A hit is a QUESTION, not a verdict: --allow-trail accepts a trail that really is that broad.
 # Regenerate section 1 from https://wordpress.org/latest.zip when WordPress moves a directory.
@@ -4283,3 +4284,27 @@
 /feed/
 /tag/news/
 /category/uncategorized/
+# 3. Default build-output and generic file names. A host-less trail on one of these fires on every
+#    app store mirror and download site: /app-release.apk is what Android Studio names every release
+#    build. Removed as host-less trails in 2026-11, along with /s.txt, /inject and /0f.js..9f.js.
+/app.apk
+/app-release.apk
+/app-debug.apk
+/app-release-unsigned.apk
+/app-universal-release.apk
+/base.apk
+/update.apk
+/download.apk
+/install.apk
+/client.apk
+/android.apk
+/mobile.apk
+/a.txt
+/s.txt
+/1.txt
+/test.txt
+/inject
+/injection
+/0f.js
+/1.js
+/a.js

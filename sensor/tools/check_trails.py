@@ -119,6 +119,15 @@ FINGERPRINT = re.compile(r"\A(?:[0-9a-f]{32}|[0-9a-f]{40}|[0-9a-f]{64}|.*_[0-9a-
 # nobody will ever query. Only the sink addresses hosts files use, and only before a whole name:
 # `360www.ca`, `222www.no-ip.biz` and `001www.com` are real names, and a looser prefix reported them.
 HOSTS_PASTE = re.compile(r"\A(?:0\.0\.0\.0|127\.0\.0\.1|0)www\.[^.]+\.")
+# A sandbox whose resolver had `ovh.net` as its DNS search domain: the real C2 name with the search
+# domain glued on (`kiss58.myvnc.com.ovh.net`). Nobody queries that, so the trail is dead and the real
+# name is missing. Only reported when the part before `.ovh.net` itself ends in a TLD - OVH's own
+# names (`vps-1a2b3c4d.vps.ovh.net`, `ns341617.ovh.net`) never do.
+SEARCH_DOMAIN = re.compile(r"\A(.+\.([a-z]+))\.ovh\.net\Z")
+# suspicious/bad_rmmtool.txt lists RMM servers an attacker runs. A university's or a government's own
+# ScreenConnect/SimpleHelp is not that - 79 of them arrived in one bulk "every server running X" import
+# (removed 2026-11), and each one flags that institution's IT department talking to its own helpdesk.
+INSTITUTIONAL = re.compile(r"\.(?:edu|gov|mil|gov\.[a-z]{2}|ac\.uk|ac\.za|ac\.jp|edu\.au|ac\.nz)\Z")
 # IPv6 ranges that name a machine's OWN interface or segment rather than anything on the internet. A
 # sandbox report lists them because the sample talked to its own link-local neighbour. Deliberately
 # NOT `ipaddress`'s is_private/is_reserved: those include 200::/7, which is Yggdrasil - real overlay
@@ -463,6 +472,12 @@ def _classify_key(key, whitelist=None, info="", raw=None, suffixes=None, known_t
         return ("shadowed", "the whitelist carries this exact name: a tie goes to the whitelist, so the "
                             "build drops this trail before it reaches trails.csv")
 
+    glued = SEARCH_DOMAIN.match(wire)
+    if glued and known_tlds and glued.group(2) in known_tlds:
+        return ("warn", "a sandbox's DNS search domain glued onto the real name: nobody queries this, "
+                        "write '%s'" % glued.group(1))
+    if info == "bad rmmtool" and INSTITUTIONAL.search(wire):
+        return ("warn", "an institution's own RMM server, not an attacker's: it flags their IT staff at work")
     if HOSTS_PASTE.match(wire):
         return ("warn", "looks like a hosts-file line pasted without its separator ('0.0.0.0 www.x' -> '0.0.0.0www.x'): "
                         "write the name alone")
@@ -608,6 +623,134 @@ def problems(root, whitelist=None, suffixes=None):
                 if verdict:
                     found.append((path, number, key or raw, verdict[0], verdict[1]))   # a host-less path has no key
     return found
+
+
+def sinkhole_conflicts(root):
+    """[(path, line, address, sinkhole path)] for an address listed bare in a sinkhole_*.txt AND as plain
+    infrastructure in another file.
+
+    The build keeps the LAST copy of a key, so which label the alert carries - "sinkhole" or the family -
+    depended on file order. 657 such entries were found by hand (2026-11): a sandbox report lists every
+    address the sample contacted, sinkholes included, and they were pasted in as C2. A URL trail with a
+    path on a sinkhole address is a different indicator and is left alone.
+    """
+
+    sinks, found = {}, []
+    files = []
+    for base, _, names in os.walk(root):
+        files.extend(os.path.join(base, _) for _ in sorted(names) if _.endswith(".txt"))
+    for path in files:
+        if os.path.basename(path).startswith("sinkhole_"):
+            for _, key, raw in entries(path):
+                if IPV4.match(key) and "/" not in raw.split("://", 1)[-1].rstrip("/"):
+                    sinks.setdefault(key, path)
+    for path in files:
+        if os.path.basename(path).startswith("sinkhole_"):
+            continue
+        for number, key, raw in entries(path):
+            address = key.split(":")[0]
+            if address in sinks and "/" not in raw.split("://", 1)[-1].rstrip("/"):
+                found.append((path, number, key, sinks[address]))
+    return found
+
+
+def base_domain(name, suffixes):
+    """The registrable domain of `name` - one label under its longest public suffix - or None.
+
+    >>> base_domain("a.b.aliyuncs.com", {"com"})
+    'aliyuncs.com'
+    >>> base_domain("bucket.s3.amazonaws.com", {"com", "s3.amazonaws.com"})
+    'bucket.s3.amazonaws.com'
+    >>> base_domain("com", {"com"}) is None
+    True
+    """
+
+    labels = name.split(".")
+    for i in range(1, len(labels)):
+        if ".".join(labels[i:]) in suffixes:
+            return ".".join(labels[i - 1:])
+    return None
+
+
+def _allowed(options):
+    allowed = set(options.allow_trail)
+    for path in options.allow_file:
+        allowed.update(allow_file(path))
+    return allowed
+
+
+def _ranked(specs):
+    return set(name for spec in specs for name in canaries(*canary_source(spec)))
+
+
+def brand_report(options):
+    """`--brand-subdomains`: no host trail may sit under one of the most popular domains.
+
+    The literal canary check only fires when a trail IS a ranked name. A trail one label below one -
+    `ssls.microsoft.com`, `*.mcas.ms` (Microsoft's own Defender proxy), `email.189.cn`, `*.cms.gov` - was
+    invisible to it, and that was the bulk of the 2026-11 false-positive clean-up. Host trails only: a
+    URL trail with a path names one object on that host, which --stock-paths judges.
+
+    Platforms whose subdomains belong to customers (`*.b-cdn.net`, `*.medium.com`) are allowed WHOLE by a
+    leading-dot line in the allow file (`.b-cdn.net  # reason`); anything else is allowed per trail.
+    """
+
+    suffixes = public_suffixes() | private_suffixes()
+    top, allowed = _ranked(options.brand_subdomains), _allowed(options)
+    found = []
+    for base, _, files in os.walk(options.path):
+        for name in sorted(files):
+            if not name.endswith(".txt"):
+                continue
+            path = os.path.join(base, name)
+            for number, key, raw in entries(path):
+                key = key.lower()
+                if "/" in raw.split("://", 1)[-1] or ":" in key or IPV4.match(key) or WILDCARD.search(raw):
+                    continue
+                parent = base_domain(key, suffixes)
+                if parent and parent != key and parent in top and key not in allowed and "." + parent not in allowed:
+                    found.append((path, number, key, parent))
+    if not options.quiet:
+        print("[i] host trails under the %d most popular domain(s): %d not allowed" % (len(top), len(found)))
+        for path, number, key, parent in found[:options.limit]:
+            print("      %s:%d  %s  -- under %s" % (os.path.relpath(path, options.path), number, key, parent))
+        if len(found) > options.limit:
+            print("      ... and %d more" % (len(found) - options.limit))
+    return 1 if found else 0
+
+
+def stock_path_report(options):
+    """`--stock-paths`: no URL trail may name an ordinary file on a popular host.
+
+    `luxurylaunches.com/xmlrpc.php` is not a domain, so the canary check never sees it, and it is not
+    host-less, so --path-canaries does not either - yet it fires on every WordPress pingback to a
+    top-30k site. 429 gootkit trails had that shape, plus `dailynk.com/.../jquery.min.js`. A trail's path
+    is stock when an ordinary request (tests/canaries-paths.txt) is looked up under it.
+    """
+
+    top, allowed = _ranked(options.stock_paths), _allowed(options)
+    stock = set()
+    for request in canaries(os.path.join(ROOT, "tests", "canaries-paths.txt")):
+        stock.update(path_candidates(request))
+    found = []
+    for base, _, files in os.walk(options.path):
+        for name in sorted(files):
+            if not name.endswith(".txt"):
+                continue
+            path = os.path.join(base, name)
+            for number, _, raw in entries(path, host_only=False):
+                rest = raw.split("://", 1)[-1].lower()
+                if "/" not in rest or rest.startswith("/") or WILDCARD.search(rest) or rest in allowed:
+                    continue
+                host, _, tail = rest.partition("/")
+                trail_path = ("/" + tail).split("?")[0].rstrip("/") or "/"
+                if host.split(":")[0] in top and trail_path in stock:
+                    found.append((path, number, rest))
+    if not options.quiet:
+        print("[i] URL trails naming an ordinary file on a popular host: %d not allowed" % len(found))
+        for path, number, rest in found[:options.limit]:
+            print("      %s:%d  %s" % (os.path.relpath(path, options.path), number, rest))
+    return 1 if found else 0
 
 
 # `re.search(r"[\].][*+]|\[[a-z0-9_.\-]+\]", trail, re.I)` - the rule
@@ -972,6 +1115,12 @@ def main():
     parser.add_argument("--path-canaries", nargs="*", default=None, metavar="FILE",
                         help="instead: check that no host-less path trail matches a request path in FILE "
                              "(default: tests/canaries-paths.txt)")
+    parser.add_argument("--brand-subdomains", nargs="+", default=None, metavar="FILE[:N]",
+                        help="instead: check that no host trail sits under a domain in FILE (a ranked list, "
+                             "first N); allow customer platforms whole with '.domain' in --allow-file")
+    parser.add_argument("--stock-paths", nargs="+", default=None, metavar="FILE[:N]",
+                        help="instead: check that no URL trail names an ordinary file "
+                             "(tests/canaries-paths.txt) on a host in FILE")
     parser.add_argument("--allow", action="append", default=[], metavar="TRAIL:CANARY",
                         help="a known, accepted canary hit (repeatable)")
     parser.add_argument("--allow-trail", action="append", default=[], metavar="TRAIL",
@@ -997,6 +1146,10 @@ def main():
 
     whitelist = None if options.no_whitelist else whitelisted_parents()
 
+    if options.brand_subdomains is not None:
+        return brand_report(options)
+    if options.stock_paths is not None:
+        return stock_path_report(options)
     if options.path_canaries is not None:
         options.path_canaries = options.path_canaries or [os.path.join(ROOT, "tests", "canaries-paths.txt")]
         return path_canary_report(options)
@@ -1010,11 +1163,19 @@ def main():
     overbroad = [_ for _ in found if _[3] == "overbroad"]
     headers = header_problems(options.path)
     repeated = repeats(options.path)
+    sunk = sinkhole_conflicts(options.path)
 
     if not options.quiet:
         print("[i] %s: %d entry(ies) that cannot match, %d that match a whole registry, %d suspect, "
-              "%d shadowed by the whitelist, %d malformed header(s), %d repeated under one reference"
-              % (options.path, len(inert), len(overbroad), len(warned), len(shadowed), len(headers), len(repeated)))
+              "%d shadowed by the whitelist, %d malformed header(s), %d repeated under one reference, "
+              "%d sinkhole(s) listed as infrastructure"
+              % (options.path, len(inert), len(overbroad), len(warned), len(shadowed), len(headers), len(repeated), len(sunk)))
+        if sunk:
+            print("\n[!] a sinkhole address listed as infrastructure too: drop this copy (%d)" % len(sunk))
+            for path, number, key, sink in sunk[:options.limit]:
+                print("      %s:%d  %s  -- sinkhole per %s" % (os.path.relpath(path, ROOT), number, key, os.path.relpath(sink, ROOT)))
+            if len(sunk) > options.limit:
+                print("      ... and %d more" % (len(sunk) - options.limit))
         if headers:
             print("\n[!] malformed '# Reference:' / '# Aliases:' header(s) (%d)" % len(headers))
             for path, number, line, why in headers[:options.limit]:
@@ -1058,12 +1219,12 @@ def main():
             if len(by_name) > options.limit:
                 print("      ... and %d more name(s)" % (len(by_name) - options.limit))
 
-        if not inert and not overbroad and not warned and not shadowed and not headers and not repeated:
+        if not inert and not overbroad and not warned and not shadowed and not headers and not repeated and not sunk:
             print("[i] no unreachable trails")
 
     # Shadowing is a COLLISION between two operator-visible lists, not a defect in the entry, so it is reported
     # and does not fail the gate: which of the two wins is a policy call (see the note in the module docstring).
-    return 1 if (inert or overbroad or headers or repeated or (options.strict and warned)) else 0
+    return 1 if (inert or overbroad or headers or repeated or sunk or (options.strict and warned)) else 0
 
 
 if __name__ == "__main__":

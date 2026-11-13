@@ -31,3 +31,68 @@ plsleavemealone.com              # elf_mirai C2, taunt-named; NXDOMAIN now, rank
 dontworry.su                     # elf_mirai C2, taunt-named; NXDOMAIN now, ranked from historical bot query volume
 okiloveyoupleasedonttouchme.net  # elf_mirai C2, taunt-named; shares 6-IP round-robin set with thespacemachines.st
 thespacemachines.st              # elf_mirai C2, taunt-named; shares 6-IP round-robin set with okiloveyoupleasedonttouchme.net
+
+# --brand-subdomains: hosts one label (or more) under a top-1000 domain.
+#
+# A leading dot allows the whole platform: its subdomains are named and run by CUSTOMERS, so a
+# malicious tenant there is exactly as specific as a domain of its own. A real service host of the
+# platform itself (a regional endpoint, a shared upload node) is never allowed this way - it was
+# deleted instead (s3-r-w.me-south-1.amazonaws.com, uploader1j.disk.yandex.net, vh158.timeweb.ru).
+
+.aliyuncs.com                    # Alibaba OSS/ECS: <bucket>.oss-<region>.aliyuncs.com
+.myqcloud.com                    # Tencent COS: <bucket>-<appid>.cos.<region>.myqcloud.com
+.b-cdn.net                       # BunnyCDN pull zones, named by the customer
+.azure.com                       # <name>.<region>.cloudapp / mysql.database / vpn.azure.com tenants
+.no-ip.com                       # dynamic DNS
+.mybluehost.me                   # Bluehost temporary customer site names
+.medium.com                      # per-author blogs
+.weebly.com                      # customer sites
+.googleusercontent.com           # reverse DNS of customer GCP addresses
+.squarespace.com                 # customer sites
+.ovh.net                         # customer VPS/dedicated server names (vps-<hash>.vps.ovh.net)
+.free.fr                         # customer personal pages
+.wordpress.com                   # customer blogs
+.tumblr.com                      # customer blogs
+.onelink.me                      # AppsFlyer OneLink, per-app subdomain
+.webhostbox.net                  # <customer domain>.md-NN.webhostbox.net temporary names
+.timeweb.ru                      # vds-* customer VPS names (the shared vhNNN servers were removed)
+.slack.com                       # workspaces
+.amazonaws.com                   # customer ELB/EC2/S3-accelerate names
+.kunluncan.com                   # Alibaba CDN CNAMEs: <customer domain>.w.kunluncan.com
+.cdngslb.com                     # Alibaba CDN CNAMEs: <customer domain>.w.cdngslb.com
+.zendesk.com                     # customer help centres
+.sharepoint.com                  # customer tenants
+.goo.gl                          # Firebase dynamic links, per-app subdomain
+.sentry.io                       # o<org id>.ingest.sentry.io, per organisation
+.livejournal.com                 # per-user journals
+.cdnhwc1.com                     # Huawei CDN CNAMEs per customer
+.wswebcdn.com                    # Wangsu CDN CNAMEs per customer
+.wsdvs.com                       # Wangsu CDN CNAMEs per customer
+.wcdnga.com                      # Wangsu CDN CNAMEs per customer
+.queniuaa.com                    # Qiniu CDN CNAMEs per customer
+.ovscdns.com                     # per-customer CDN CNAMEs
+.jomodns.com                     # per-customer CDN CNAMEs
+.itch.io                         # per-developer pages
+.herokudns.com                   # per-app Heroku DNS targets
+.appsflyersdk.com                # <app id>-cdn-settings.appsflyersdk.com, per app
+.on.aws                          # ECS Express / Lambda URL customer names
+.comcast.net                     # residential reverse DNS
+# Cobalt Strike malleable-profile Host values: invented names on a vendor's domain that do not
+# resolve (checked 2026-11-13), so only beacon traffic ever carries them.
+computerupdate2020.microsoft.com
+fuckapi.microsoft.com
+serv1ce.microsoft.com
+staos.microsoft.com
+workhub.microsoft.com
+asd.microsoft.com
+wakawaka.microsoft.com
+live-dvb-c.youku.com
+e.client.360.cn
+tianya.baidu.com
+malware.open.spotify.com
+asioasjdioasjdaiaoisjdjasdioasjd.yahoo.com
+nl01-cdn.cloudflare.com
+testok.bilibili.com
+osssss.huawei.com
+malwarenotice.microsoft.com      # Microsoft's own sinkhole, listed in sinkhole_microsoft.txt on purpose
+insight.stanford.edu             # ClearFake-injected site in the cited report
