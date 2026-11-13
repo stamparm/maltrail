@@ -713,11 +713,12 @@ class TestClockSkewVisible(unittest.TestCase):
         s.sendto(b"%d !HB replayer 1.0 5" % int(time.time()), server.server_address)
         s.sendto(self._event(SEC), server.server_address)
         s.close()
-        path, deadline = os.path.join(config.LOG_DIR, DATELOG), time.time() + 3
-        while time.time() < deadline and not (os.path.isfile(path) and L.skew_status()):
+        path, deadline = os.path.join(config.LOG_DIR, DATELOG), time.time() + 5
+        # Wait for the line, not the file: the file exists a moment before the line is in it.
+        content = lambda: open(path, "rb").read() if os.path.isfile(path) else b""
+        while time.time() < deadline and not (b'"x" box 10.0.0.1' in content() and L.skew_status()):
             time.sleep(0.05)
-        with open(path, "rb") as f:
-            self.assertIn(b'"x" box 10.0.0.1', f.read(), "an old event must still be filed under its own day")
+        self.assertIn(b'"x" box 10.0.0.1', content(), "an old event must still be filed under its own day")
         row, = L.skew_status()
         self.assertEqual((row["address"], row["count"], row["clock"]), ("127.0.0.1", 1, False))
         self.assertEqual(len(self.errors), 1)
