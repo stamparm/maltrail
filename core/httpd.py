@@ -31,6 +31,7 @@ from core.addr import int_to_addr
 from core.addr import make_mask
 from core.addr import resolve_address
 from core.attribdict import AttribDict
+from core import alert as _alert
 from core import log as _log
 from core import password
 from core import trailsbin
@@ -2380,7 +2381,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 rejected = []
 
             # Events the receiver received but could not write: lost, while every sensor looks healthy.
-            return json.dumps({"now": int(time.time()), "sensors": sensors, "rejected": rejected, "write": _log.write_status(), "stale_after": SENSOR_STALE_AFTER})
+            return json.dumps({"now": int(time.time()), "sensors": sensors, "rejected": rejected, "write": _log.write_status(), "stale_after": SENSOR_STALE_AFTER,
+                               "skewed": [] if getattr(session, "netfilters", None) is not None else _log.skew_status(), "alert": _alert.delivery_status()})
 
         def _ping(self, params):
             self.send_response(_http_client.OK)

@@ -484,5 +484,167 @@ class CefEscapeTest(unittest.TestCase):
         self.assertEqual(_cef_escape("1.2.3.4", extension=True), "1.2.3.4")
 
 
+class _QueueIsolation(unittest.TestCase):
+    """A private queue, condition and no delivery thread: a deliverer left running by an earlier
+    test waits on the OLD condition, so it cannot race these tests for the queue or the counters."""
+
+    def setUp(self):
+        import collections
+        import shutil
+        import tempfile
+        import threading as _threading
+        self._saved = (alert._queue, alert._queue_cond, alert._deliverer, dict(alert._delivery), dict(alert._outage),
+                       alert.MAX_ALERT_QUEUE, alert.log_error, config.ALERT_FORMAT, config.LOG_DIR, dict(alert._tail_saved))
+        alert._queue, alert._queue_cond, alert._deliverer = collections.deque(), _threading.Condition(), [None]
+        alert._delivery.update(sent=0, dropped=0, failures=0, last_error=None, last_sent=None)
+        alert._outage.update(since=None, reported=0, dropped=0, told=0)
+        alert._tail_saved.update(at=0, sig=None)
+        self.errors = []
+        alert.log_error = lambda msg, single=False: self.errors.append(msg)
+        config.ALERT_FORMAT = "%(json)s"
+        self.tmp = config.LOG_DIR = tempfile.mkdtemp(prefix="mt_alertq_")
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+
+    def tearDown(self):
+        (alert._queue, alert._queue_cond, alert._deliverer, delivery, outage, alert.MAX_ALERT_QUEUE, alert.log_error,
+         config.ALERT_FORMAT, config.LOG_DIR, tail_saved) = self._saved
+        alert._delivery.update(delivery); alert._outage.update(outage); alert._tail_saved.update(tail_saved)
+
+
+class DropReportTest(_QueueIsolation):
+    """With a dead webhook the queue drops its oldest alerts. That was counted, and nowhere said:
+    1,100 alerts went in, 1,000 came out, and error.log spoke only of failures and retries."""
+
+    def test_the_drop_count_is_in_the_error_log(self):
+        alert.MAX_ALERT_QUEUE = 3
+        alert._failed("HTTP 503", now=1000)
+        self.assertEqual(len(self.errors), 1)
+        self.assertIn("0 dropped", self.errors[0], "the control: nothing dropped yet")
+        for i in range(5):
+            alert.send(alert.parse_event_line(event_line("d%d.biz" % i, "apt d (malware)")))
+        self.assertEqual(alert.delivery_status()["dropped"], 2)
+        self.assertEqual(alert.delivery_status()["queued"], 3)
+        self.assertIn(b"d2.biz", alert._queue[0].encode(), "the oldest go first")
+        alert._failed("HTTP 503", now=1010)
+        self.assertEqual(len(self.errors), 2, "the first drop is told at the next retry, not an hour later")
+        self.assertIn("3 alert(s) waiting, 2 dropped", self.errors[1])
+        alert._failed("HTTP 503", now=1020)
+        self.assertEqual(len(self.errors), 2, "and then paced")
+        alert._recovered()
+        self.assertIn("2 alert(s) were dropped", self.errors[2])
+
+    def test_a_recovery_without_drops_says_nothing_of_them(self):
+        alert._failed("HTTP 503", now=1000)
+        alert._recovered()
+        self.assertNotIn("dropped", self.errors[1])
+
+
+class ResumeTest(_QueueIsolation):
+    """A restart started the tailer at the end of today's log, so a high event written while the
+    server was down (a local sensor writes the log itself) was never alerted, and the in-memory
+    queue was lost. alerts.json keeps the position and the queue; a resume needs today's file with
+    the same inode, and alerts on at most MAX_ALERT_QUEUE events."""
+
+    @classmethod
+    def setUpClass(cls):
+        read_config(os.path.join(ROOT, "maltrail.conf"))   # the shipped severity regex: "(malware)" is high
+
+    def setUp(self):
+        _QueueIsolation.setUp(self)
+        config.ALERT_SEVERITY, config.ALERT_THROTTLE = "high", 0
+        alert._throttle.clear()
+        self.sent = []
+        self._send = alert.send
+        alert.send = lambda event: (self.sent.append(event["trail"]), True)[1]
+        self.path = alert._log_path()
+
+    def tearDown(self):
+        alert.send = self._send
+        _QueueIsolation.tearDown(self)
+
+    def _append(self, *trails):
+        with open(self.path, "a") as f:
+            for trail in trails:
+                f.write(event_line(trail, "apt r (malware)") + "\n")
+
+    def _run_then_stop(self):
+        """A server run: start, see `before.biz` alerted, persist, stop."""
+        state = alert._load_tail()
+        alert._tail_once(state)
+        self._append("before.biz")
+        alert._tail_once(state)
+        self.assertEqual(self.sent, ["before.biz"], "the control: the live tail alerts")
+        self.assertTrue(alert._save_tail(state, now=10 ** 9))
+        del self.sent[:]
+        return state
+
+    def test_an_event_written_while_down_is_alerted_once(self):
+        self._run_then_stop()
+        self._append("while-down.biz")
+        state = alert._load_tail()
+        alert._tail_once(state)
+        self.assertEqual(self.sent, ["while-down.biz"], "the event written while the server was down")
+        self.assertTrue(any("resuming" in _ for _ in self.errors))
+
+    def test_without_a_saved_position_it_still_starts_at_the_end(self):
+        self._append("old.biz")
+        state = alert._load_tail()
+        alert._tail_once(state)
+        self.assertEqual(self.sent, [])
+
+    def test_another_inode_is_not_resumed(self):
+        self._run_then_stop()
+        os.rename(self.path, self.path + ".1")
+        self._append("x.biz", "y.biz")
+        state = alert._load_tail()
+        alert._tail_once(state)
+        self.assertEqual(self.sent, [], "a rotated file was replayed")
+
+    def test_another_day_is_not_resumed(self):
+        state = self._run_then_stop()
+        yesterday = alert._log_path(time.time() - 86400)
+        os.rename(self.path, yesterday)
+        import json as _json
+        with open(os.path.join(self.tmp, alert.TAIL_STATE_FILE), "w") as f:
+            _json.dump({"path": yesterday, "inode": state["inode"], "offset": 0, "queue": []}, f)
+        self._append("today.biz")
+        state = alert._load_tail()
+        alert._tail_once(state)
+        self.assertEqual(self.sent, [], "a resume replayed another day")
+
+    def test_the_resume_is_capped(self):
+        self._run_then_stop()
+        alert.MAX_ALERT_QUEUE = 3
+        self._append(*("r%d.biz" % i for i in range(10)))
+        state = alert._load_tail()
+        alert._tail_once(state)
+        self.assertEqual(self.sent, ["r0.biz", "r1.biz", "r2.biz"])
+        self.assertTrue(any("stopped at 3 alert(s)" in _ for _ in self.errors))
+        self._append("live.biz")
+        alert._tail_once(state)
+        self.assertEqual(self.sent[3:], ["live.biz"], "after the cap the live tail goes on")
+
+    def test_the_pending_queue_survives_a_restart(self):
+        alert.send = self._send
+        state = alert._load_tail()
+        alert._tail_once(state)
+        self._append("pending.biz")
+        alert._tail_once(state)
+        self.assertEqual(len(alert._queue), 1)
+        alert._save_tail(state, now=10 ** 9)
+        alert._queue.clear()
+        alert._load_tail()
+        self.assertEqual(len(alert._queue), 1, "the waiting alert was lost with the process")
+        self.assertIn("pending.biz", alert._queue[0])
+
+    def test_saving_is_throttled(self):
+        state = alert._load_tail()
+        self.assertTrue(alert._save_tail(state, now=1000))
+        state["offset"] = 1
+        self.assertFalse(alert._save_tail(state, now=1001))
+        self.assertTrue(alert._save_tail(state, now=1000 + alert.TAIL_SAVE_PERIOD))
+        self.assertFalse(alert._save_tail(state, now=2000), "nothing changed, nothing written")
+
+
 if __name__ == "__main__":
     unittest.main()

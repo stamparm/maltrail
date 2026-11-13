@@ -2653,6 +2653,19 @@
                  '<span class="sens-ago">' + _sensorAgo(Math.max(0, now - (r.last_seen || 0))) + '</span></div>';
     });
     if (refused) refused = '<div class="hunt-sum">refused senders</div><div class="sens-rows">' + refused + '</div>';
+    // Accepted, but dated outside the skew window: filed under another day, so absent from today's
+    // view and from alerting. "clock" = its heartbeat is off too, i.e. a wrong clock, not a replay.
+    var names = {}, skew = "";
+    list.forEach(function (s) { if (s.address) names[s.address] = s.sensor; });
+    (d.skewed || []).slice().reverse().forEach(function (r) {
+      skew += '<div class="sens-row is-stale"><span class="sens-addr">' + esc((names[r.address] ? names[r.address] + " " : "") + (r.address || "")) + '</span>' +
+              '<span class="sens-name">' + fmtN(r.count || 0) + ' datagram(s) dated ' + ((r.offset || 0) / 3600).toFixed(1) + ' h off the server clock' + (r.clock ? ', heartbeats too (wrong clock)' : '') + '; filed under those days</span>' +
+              '<span class="sens-ago">' + _sensorAgo(Math.max(0, now - (r.last_seen || 0))) + '</span></div>';
+    });
+    if (skew) refused += '<div class="hunt-sum">senders off the server clock</div><div class="sens-rows">' + skew + '</div>';
+    var a = d.alert || {};
+    if (a.dropped || a.failures) refused = '<div class="hunt-sum">alert webhook</div><div class="sens-rows"><div class="sens-row is-stale">' +
+                                          '<span class="sens-name">' + fmtN(a.dropped || 0) + ' alert(s) dropped, ' + fmtN(a.queued || 0) + ' waiting' + (a.failures ? ': ' + esc(a.last_error || "") : '') + '</span></div></div>' + refused;
     // Events that arrived but could not be written (LOG_DIR unwritable, disk full): lost, while
     // every sensor below still looks healthy. Above everything else for that reason.
     var w = d.write || {};

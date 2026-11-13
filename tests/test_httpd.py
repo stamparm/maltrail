@@ -900,6 +900,33 @@ class TestHttpd(unittest.TestCase):
         self.assertTrue(scoped, "a restricted analyst must still see whether sensors are alive")
         self.assertEqual(scoped[0]["address"], "", "a restricted analyst was given a sensor's address")
 
+    def test_sensors_shows_skewed_senders_and_alert_delivery(self):
+        import json as _json
+
+        # A heartbeat two hours behind: its events would be filed under another day, out of
+        # today's view and alerting, while the sensor looked healthy. /sensors must say so, next to
+        # the webhook's delivery counters (dropped alerts were otherwise visible to nobody).
+        u = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        u.sendto(b"%d !HB skew-probe 3.4 99" % (int(time.time()) - 7200), ("127.0.0.1", self.udp_port))
+        u.close()
+
+        ck, obj = self._login(), {}
+        deadline = time.time() + 5
+        while time.time() < deadline:
+            _, _, body = _http(self.port, "GET", "/sensors", cookie=ck)
+            obj = _json.loads(body.decode("utf-8"))
+            if obj.get("skewed"):
+                break
+            time.sleep(0.1)
+        row = [_ for _ in obj.get("skewed", []) if _["address"] == "127.0.0.1"]
+        self.assertTrue(row, "a sender off the server clock was not listed")
+        self.assertTrue(row[0]["clock"])
+        self.assertAlmostEqual(row[0]["offset"], -7200, delta=60)
+        self.assertTrue(set(obj["alert"]) >= {"sent", "dropped", "queued", "failures", "last_error"}, obj.get("alert"))
+
+        _, _, body = _http(self.port, "GET", "/sensors", cookie=self._login("analyst"))
+        self.assertEqual(_json.loads(body.decode("utf-8"))["skewed"], [], "a restricted analyst was given sender addresses")
+
     def test_whoami_and_logout(self):
         ck = self._login("admin")
         _, _, who = _http(self.port, "GET", "/whoami", cookie=ck)

@@ -626,6 +626,55 @@ def rejected_status():
     return _merged(_rejected, "rejected", "address", MAX_REJECTED_SOURCES)
 
 
+# Datagrams ACCEPTED although their epoch is outside the LOG_SERVER_SKEW window (only possible
+# without LOG_SERVER_SECRET, which refuses them). They are filed under their own day, as they must
+# be for a sensor replaying an old capture - but from a sensor with a wrong clock that day is not
+# today, so they were missing from today's view and from alerting while the sensor looked healthy.
+# Counted per sender for /sensors, with one error.log line per sender. A heartbeat that is off
+# ("clock") tells a wrong clock from a replay: a replaying sensor beats with its real clock.
+_skewed = OrderedDict()
+_skew_reported = set()
+
+
+def note_skew(data, source, now=None):
+    """Record `data` (an opened datagram) when its leading epoch is outside the window. True if so."""
+
+    head = data.split(b" ", 1)[0]
+    window = _skew_window()
+    if not window or not head.isdigit() or len(head) > 12:
+        return False
+    now = int(time.time() if now is None else now)
+    offset = int(head) - now
+    if abs(offset) <= window:
+        return False
+
+    with _sensor_status_lock:
+        entry = _skewed.get(source)
+        if entry is None:
+            if len(_skewed) >= MAX_REJECTED_SOURCES:
+                _skewed.popitem(last=False)
+            entry = _skewed[source] = {"address": source, "count": 0, "clock": False}
+        else:
+            _skewed.move_to_end(source)
+        entry["count"] += 1
+        entry["offset"] = offset
+        entry["clock"] = entry["clock"] or data[len(head) + 1:].startswith(HEARTBEAT_MARK)
+        entry["last_seen"] = now
+    _status_dirty.set()
+
+    # Once per sender, and a bounded number of senders: the port is unauthenticated here.
+    if source not in _skew_reported and len(_skew_reported) < MAX_REJECTED_SOURCES:
+        _skew_reported.add(source)
+        log_error("events from %s carry timestamps %+.1f h off the server clock; they are filed under those days" % (source, offset / 3600.0))
+    return True
+
+
+def skew_status():
+    """Every sender whose accepted datagrams were dated outside the skew window, most recent last."""
+
+    return _merged(_skewed, "skewed", "address", MAX_REJECTED_SOURCES)
+
+
 # Events the receiver could not write (LOG_DIR unwritable, disk full, I/O error). Each one is lost
 # for good, and it used to be lost silently: the dashboard went empty while the sensor stayed green.
 # Counted for /sensors, and reported to error.log the way core/alert.py reports a failing webhook.
@@ -680,6 +729,8 @@ class _UDPHandler(_socketserver.BaseRequestHandler):
             data = mts_open(getattr(config, "LOG_SERVER_SECRET", None), data, source=self.client_address[0])
             if data is None:
                 return
+
+            note_skew(data, self.client_address[0])
 
             # Liveness, not a detection: recorded in memory and never written to the log.
             if heartbeat_event(data, self.client_address[0]):
@@ -743,7 +794,7 @@ def _receiver_main(fd, family, settings):
             _status_dirty.wait()
             _status_dirty.clear()
             with _sensor_status_lock:
-                line = json.dumps({"sensors": list(_sensor_status.values()), "rejected": list(_rejected.values()), "write": _write_failures})
+                line = json.dumps({"sensors": list(_sensor_status.values()), "rejected": list(_rejected.values()), "write": _write_failures, "skewed": list(_skewed.values())})
             try:
                 sys.stdout.write(line + "\n")
                 sys.stdout.flush()

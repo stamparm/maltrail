@@ -645,5 +645,75 @@ class TestSensorStatusFile(unittest.TestCase):
         self.assertEqual(L.sensor_status()[-1]["sensor"], "s%d" % (L.MAX_SENSOR_STATUS + 9), "the freshest are kept")
 
 
+class TestClockSkewVisible(unittest.TestCase):
+    """Without LOG_SERVER_SECRET an event is filed under the day its SENDER dated it. From a sensor
+    with a wrong clock that is not today: its events dated -2 d, +3 d and 1979 went to three other
+    day logs, missing from today's view and from alerting, while /sensors showed it healthy. Not
+    re-dated (a sensor replaying an old capture means those days), but counted and said once."""
+
+    NOW = 1800000000
+
+    def setUp(self):
+        self._saved = (L.log_error, getattr(config, "LOG_SERVER_SKEW", None), config.LOG_DIR,
+                       dict(L._skewed), set(L._skew_reported), dict(L._receiver_status))
+        L._skewed.clear(); L._skew_reported.clear(); L._receiver_status.clear()
+        config.LOG_SERVER_SKEW = None
+        self.errors = []
+        L.log_error = lambda msg, single=False: self.errors.append(msg)
+
+    def tearDown(self):
+        L.log_error, config.LOG_SERVER_SKEW, config.LOG_DIR, skewed, reported, receivers = self._saved
+        L._skewed.clear(); L._skewed.update(skewed)
+        L._skew_reported.clear(); L._skew_reported.update(reported)
+        L._receiver_status.clear(); L._receiver_status.update(receivers)
+
+    def _event(self, sec):
+        return b'%d "x" box 10.0.0.1 1 2.2.2.2 2 TCP IP 2.2.2.2 "m" (s)' % sec
+
+    def test_a_sender_inside_the_window_is_not_reported(self):
+        self.assertFalse(L.note_skew(self._event(self.NOW - 60), "10.0.0.1", now=self.NOW))
+        self.assertFalse(L.note_skew(self._event(self.NOW + 900), "10.0.0.1", now=self.NOW), "the window's edge is inside")
+        self.assertEqual((self.errors, L.skew_status()), ([], []))
+
+    def test_a_skewed_sender_is_counted_and_reported_once(self):
+        for sec in (self.NOW - 2 * 86400, self.NOW + 3 * 86400, 294451200):    # -2 d, +3 d, 1979
+            self.assertTrue(L.note_skew(self._event(sec), "10.0.0.9", now=self.NOW))
+        self.assertEqual(len(self.errors), 1, "one line per sender, not one per datagram")
+        self.assertEqual(self.errors[0], "events from 10.0.0.9 carry timestamps -48.0 h off the server clock; they are filed under those days")
+        row, = L.skew_status()
+        self.assertEqual((row["address"], row["count"], row["clock"]), ("10.0.0.9", 3, False))
+        self.assertEqual(row["offset"], 294451200 - self.NOW, "the latest offset seen")
+        L.note_skew(b"%d !HB box 1.0 5" % (self.NOW - 7200), "10.0.0.9", now=self.NOW)
+        self.assertTrue(L.skew_status()[0]["clock"], "a heartbeat off the clock is a wrong clock, not a replay")
+        self.assertTrue(L.note_skew(self._event(self.NOW - 7200), "10.0.0.10", now=self.NOW))
+        self.assertEqual(len(self.errors), 2, "another sender is its own line")
+
+    def test_zero_disables_it(self):
+        config.LOG_SERVER_SKEW = 0
+        self.assertFalse(L.note_skew(self._event(0 + 1), "10.0.0.9", now=self.NOW))
+        self.assertEqual(self.errors, [])
+
+    def test_a_replayed_capture_is_still_filed_under_its_own_day(self):
+        # Over the real socket: the event of 2023 (SEC) lands in 2023's log as before, and the
+        # sender shows up as skewed - while its heartbeat, on the real clock, does not say "clock".
+        config.LOG_DIR = tempfile.mkdtemp(prefix="mt_skew_")
+        self.addCleanup(shutil.rmtree, config.LOG_DIR, True)
+        server = L._LogUDPServer(("127.0.0.1", 0), L._UDPHandler)
+        threading.Thread(target=server.serve_forever, daemon=True).start()
+        self.addCleanup(server.shutdown)
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.sendto(b"%d !HB replayer 1.0 5" % int(time.time()), server.server_address)
+        s.sendto(self._event(SEC), server.server_address)
+        s.close()
+        path, deadline = os.path.join(config.LOG_DIR, DATELOG), time.time() + 3
+        while time.time() < deadline and not (os.path.isfile(path) and L.skew_status()):
+            time.sleep(0.05)
+        with open(path, "rb") as f:
+            self.assertIn(b'"x" box 10.0.0.1', f.read(), "an old event must still be filed under its own day")
+        row, = L.skew_status()
+        self.assertEqual((row["address"], row["count"], row["clock"]), ("127.0.0.1", 1, False))
+        self.assertEqual(len(self.errors), 1)
+
+
 if __name__ == "__main__":
     unittest.main()

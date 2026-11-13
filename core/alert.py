@@ -247,12 +247,17 @@ def send(event):
             _delivery["dropped"] += 1
         _queue.append(payload)
         _queue_cond.notify()
-        if not _deliverer:
-            thread = threading.Thread(target=_deliver)
-            thread.daemon = True
-            thread.start()
-            _deliverer.append(thread)
+        _start_deliverer()
     return True
+
+
+def _start_deliverer():
+    # caller holds _queue_cond
+    if not _deliverer:
+        thread = threading.Thread(target=_deliver)
+        thread.daemon = True
+        thread.start()
+        _deliverer.append(thread)
 
 
 def post(payload):
@@ -276,11 +281,35 @@ def post(payload):
     return None if 200 <= (code or 0) < 300 else "HTTP %s" % code
 
 
+# The outage being reported: when it started, when it was last reported, and the drop counter at
+# its start - so a line says how many alerts THIS outage has cost, not the process's lifetime.
+_outage = {"since": None, "reported": 0, "dropped": 0, "told": 0}
+
+
+def _failed(error, now):
+    """One failed POST: count it, and say so - at the start, at the first drop, then hourly."""
+
+    _delivery["failures"] += 1
+    _delivery["last_error"] = error
+    if _outage["since"] is None:
+        _outage.update(since=now, reported=None, dropped=_delivery["dropped"], told=0)
+    dropped = _delivery["dropped"] - _outage["dropped"]
+    if _outage["reported"] is None or now - _outage["reported"] >= FAILURE_REPORT_PERIOD or (dropped and not _outage["told"]):
+        _outage.update(reported=now, told=dropped)
+        log_error("alert webhook POST failed (%s); %d alert(s) waiting, %d dropped (queue full at %d, oldest first), retrying" % (error, len(_queue), dropped, MAX_ALERT_QUEUE))
+
+
+def _recovered():
+    if _outage["since"] is not None:
+        dropped = _delivery["dropped"] - _outage["dropped"]
+        log_error("alert webhook delivering again after %d failed attempt(s)%s" % (_delivery["failures"], "; %d alert(s) were dropped" % dropped if dropped else ""))
+        _outage["since"], _delivery["failures"] = None, 0
+
+
 def _deliver():
     """Send queued alerts in order; on failure keep the alert and retry with a growing delay."""
 
     delay = RETRY_MIN
-    failing_since, reported = None, 0
     while True:
         with _queue_cond:
             while not _queue:
@@ -295,19 +324,11 @@ def _deliver():
                     _queue.popleft()
                 _delivery["sent"] += 1
                 _delivery["last_sent"] = now
-            if failing_since is not None:
-                log_error("alert webhook delivering again after %d failed attempt(s)" % _delivery["failures"])
-                failing_since, _delivery["failures"] = None, 0
+            _recovered()
             delay = RETRY_MIN
             continue
 
-        _delivery["failures"] += 1
-        _delivery["last_error"] = error
-        if failing_since is None:
-            failing_since = now
-        if now - reported >= FAILURE_REPORT_PERIOD:
-            reported = now
-            log_error("alert webhook POST failed (%s); %d alert(s) waiting, retrying" % (error, len(_queue)))
+        _failed(error, now)
         time.sleep(delay)
         delay = min(delay * 2, RETRY_MAX)
 
@@ -361,18 +382,20 @@ def _tail_once(state):
     if size < state["offset"]:
         state["offset"] = 0
     if size == state["offset"]:
+        state.pop("resume", None)   # caught up
         return 0
 
     sent = 0
     with open(path, "rb") as f:
         f.seek(state["offset"])
-        data = f.read(size - state["offset"])
+        data = f.read(min(size - state["offset"], MAX_TAIL_READ))   # a long backlog is read over several passes
     cut = data.rfind(b'\n')
     if cut < 0:
         return 0                    # a partial line; wait for the rest
-    state["offset"] += cut + 1
 
+    budget = state.get("resume")
     for raw in data[:cut].split(b'\n'):
+        state["offset"] += len(raw) + 1
         if not raw:
             continue
         try:
@@ -381,8 +404,83 @@ def _tail_once(state):
         except Exception:
             if config.SHOW_DEBUG:
                 traceback.print_exc()
+        if budget is not None and sent >= budget:
+            break
+
+    if budget is not None:
+        state["resume"] -= sent
+        if state["resume"] <= 0:
+            # The catch-up after a restart has alerted as much as one full queue: the rest of what
+            # was written while the server was down is skipped, to the last complete line.
+            with open(path, "rb") as f:
+                f.seek(max(state["offset"], size - 65536))
+                tail = f.read(size - f.tell())
+            skipped = size - len(tail) + tail.rfind(b'\n') + 1 - state["offset"]
+            if skipped > 0:
+                state["offset"] += skipped
+                log_error("alert catch-up after restart stopped at %d alert(s); %d byte(s) of '%s' skipped" % (MAX_ALERT_QUEUE, skipped, path))
+            state.pop("resume")
 
     return sent
+
+
+# Where the tailer is, and the alerts still waiting, kept in LOG_DIR so a restart neither loses the
+# queue nor skips what was written to today's log while the server was down (a local sensor writes
+# the log directly). Written like sensors.json: atomic replace, at most every TAIL_SAVE_PERIOD.
+TAIL_STATE_FILE = "alerts.json"
+TAIL_SAVE_PERIOD = 5
+MAX_TAIL_READ = 16 * 1024 * 1024
+_tail_saved = {"at": 0, "sig": None}
+
+
+def _save_tail(state, now=None):
+    now = time.time() if now is None else now
+    with _queue_cond:
+        queue = list(_queue)
+    sig = (state.get("path"), state.get("inode"), state.get("offset"), _delivery["sent"], _delivery["dropped"], len(queue))
+    if sig == _tail_saved["sig"] or now - _tail_saved["at"] < TAIL_SAVE_PERIOD:
+        return False
+    path = os.path.join(config.LOG_DIR, TAIL_STATE_FILE)
+    try:
+        with open(path + ".tmp", "w") as f:
+            json.dump({"path": state.get("path"), "inode": state.get("inode"), "offset": state.get("offset"), "queue": queue}, f)
+        os.replace(path + ".tmp", path)
+    except (IOError, OSError) as ex:
+        log_error("unable to write '%s' (%s)" % (path, ex), single=True)
+    _tail_saved.update(at=now, sig=sig)
+    return True
+
+
+def _load_tail():
+    """The tailer's starting state: resume today's log where the last run stopped, if it is still the
+    same file; anything else (first start, another day, a rotated file) starts at its end as before.
+    The saved queue is put back either way."""
+
+    state = {"path": None, "offset": 0}
+    try:
+        with open(os.path.join(config.LOG_DIR, TAIL_STATE_FILE)) as f:
+            saved = json.load(f)
+        queue = [_ for _ in saved.get("queue") or [] if isinstance(_, str)][-MAX_ALERT_QUEUE:]
+        path, inode, offset = saved.get("path"), saved.get("inode"), saved.get("offset")
+    except Exception:
+        return state
+
+    if queue:
+        with _queue_cond:
+            _queue.extendleft(reversed(queue[:MAX_ALERT_QUEUE - len(_queue)]))
+            _queue_cond.notify()
+            _start_deliverer()
+
+    try:
+        stat = os.stat(path) if path == _log_path() else None
+    except (OSError, TypeError):
+        stat = None
+    if stat is not None and stat.st_ino == inode and isinstance(offset, int) and 0 <= offset <= stat.st_size:
+        # A resume alerts on at most one queue's worth (MAX_ALERT_QUEUE) of today's backlog.
+        state.update(path=path, inode=inode, offset=offset, resume=MAX_ALERT_QUEUE)
+        if offset < stat.st_size:
+            log_error("alert tailer resuming '%s': %d byte(s) written while the server was down" % (path, stat.st_size - offset))
+    return state
 
 
 # ---- sensor liveness: a sensor that stops sending heartbeats is itself an alert ----
@@ -444,11 +542,12 @@ def start(join=False):
         print("[i] alerting on '%s' events to '%s'" % (config.ALERT_SEVERITY or "high", config.ALERT_WEBHOOK_URL))
 
     def run():
-        state = {"path": None, "offset": 0}
+        state = _load_tail() if config.ALERT_WEBHOOK_URL else {"path": None, "offset": 0}
         while True:
             try:
                 if config.ALERT_WEBHOOK_URL:
                     _tail_once(state)
+                    _save_tail(state)
                 check_sensors()     # one pass over at most MAX_SENSOR_STATUS rows; it writes only on change or once a minute
             except Exception:
                 if config.SHOW_DEBUG:
