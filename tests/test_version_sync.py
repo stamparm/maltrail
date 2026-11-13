@@ -92,6 +92,16 @@ class TestReleaseGateKeepsTheCheck(unittest.TestCase):
                       "the release workflow no longer checks that the tree's version matches the "
                       "tag it is publishing")
 
+    def test_the_release_gate_runs_the_same_node_as_ci(self):
+        # The release gate runs the whole server suite, test_frontend's node included. Without the
+        # pin it used the runner's node, which crashed and refused the 3.6 tag CI had passed.
+        pins = []
+        for name in ("ci.yml", "release.yml"):
+            text = _slurp(os.path.join(ROOT, ".github", "workflows", name))
+            pins.append(re.findall(r"setup-node@\S+\s+with:\s+node-version: '(\d+)'", text))
+        self.assertTrue(pins[0], "ci.yml no longer pins node")
+        self.assertEqual(set(pins[1]), set(pins[0]), "the release gate's node differs from CI's")
+
     def test_the_release_notes_come_from_the_changelog(self):
         # GitHub's generated notes list merged PRs; here that is the settings_gen.rs bot and
         # nothing else, which is what 3.5 shipped as.
