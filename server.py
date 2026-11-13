@@ -171,7 +171,7 @@ def main():
     # configure the condensed observable store for read-side /meta lookups + prune (the sensor writes it)
     meta.configure(os.path.join(config.LOG_DIR, META_DB_FILENAME), enabled=False)
 
-    alert.start()   # no-op unless ALERT_WEBHOOK_URL is set
+    alert.start()   # sensor liveness always; the event tailer only with ALERT_WEBHOOK_URL
 
     try:
         if config.USE_SERVER_UPDATE_TRAILS:

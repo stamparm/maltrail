@@ -575,5 +575,56 @@ class TestEventLogWriteFailure(unittest.TestCase):
         self.assertTrue(self._logged(sec, b"after"), "an event went to the renamed file, not the day's log")
 
 
+class TestSensorStatusFile(unittest.TestCase):
+    """LOG_DIR/sensors.json: a restart must remember which sensors should be reporting, and a bad
+    file must cost the memory, never the server."""
+
+    def setUp(self):
+        import shutil
+        self.tmp = tempfile.mkdtemp(prefix="mt_sensors_")
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        self._saved = (config.LOG_DIR, dict(L._sensor_status), dict(L._receiver_status))
+        config.LOG_DIR = self.tmp
+        L._sensor_status.clear()
+        L._receiver_status.clear()
+
+    def tearDown(self):
+        config.LOG_DIR = self._saved[0]
+        L._sensor_status.clear(); L._sensor_status.update(self._saved[1])
+        L._receiver_status.clear(); L._receiver_status.update(self._saved[2])
+
+    def _write(self, text):
+        with open(os.path.join(self.tmp, L.SENSOR_STATUS_FILE), "w") as f:
+            f.write(text)
+
+    def test_round_trip(self):
+        rows = [{"sensor": "a", "version": "1", "uptime": 1, "address": "10.0.0.1", "last_seen": 100},
+                {"sensor": "b", "version": "1", "uptime": 2, "address": "10.0.0.2", "last_seen": 200}]
+        L.save_sensor_status(rows, {"a"})
+        self.assertFalse(os.path.exists(os.path.join(self.tmp, L.SENSOR_STATUS_FILE + ".tmp")))
+        self.assertEqual(L.sensor_status(), [], "the control: the table starts empty")
+        self.assertEqual(L.load_sensor_status(), {"a"})
+        self.assertEqual(L.sensor_status(), rows)
+
+    def test_a_fresher_heartbeat_wins_over_the_file(self):
+        L.heartbeat_event(b"0 !HB a 2.0 9", "10.0.0.7")
+        L.save_sensor_status([{"sensor": "a", "address": "10.0.0.1", "last_seen": 1}], set())
+        L.load_sensor_status()
+        self.assertEqual(L.sensor_status()[0]["address"], "10.0.0.7")
+
+    def test_missing_or_corrupt_is_an_empty_start(self):
+        self.assertEqual(L.load_sensor_status(), set())
+        for text in ("{not json", "[]", "null", '{"sensors": [1, "x", null]}', '{"sensors": [{"sensor": 5, "last_seen": "x"}]}', "\x00" * 10):
+            self._write(text)
+            self.assertEqual(L.load_sensor_status(), set(), text)
+            self.assertEqual(L.sensor_status(), [], text)
+
+    def test_bounded(self):
+        L.save_sensor_status([{"sensor": "s%d" % i, "last_seen": i} for i in range(L.MAX_SENSOR_STATUS + 10)], set())
+        L.load_sensor_status()
+        self.assertEqual(len(L.sensor_status()), L.MAX_SENSOR_STATUS)
+        self.assertEqual(L.sensor_status()[-1]["sensor"], "s%d" % (L.MAX_SENSOR_STATUS + 9), "the freshest are kept")
+
+
 if __name__ == "__main__":
     unittest.main()

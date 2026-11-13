@@ -42,8 +42,9 @@ _thread_data = threading.local()
 # quiet link produces exactly the same silence. So sensors announce themselves on a period, and
 # this is where that is remembered.
 #
-# In memory on purpose. The question is "is this sensor alive NOW", and an answer that survived a
-# restart of this process would answer it with something that was true before the restart.
+# Kept in memory, and copied to LOG_DIR/sensors.json by core/alert.py's liveness check: a restart
+# must still know which sensors should be reporting, or one that died before it is simply absent.
+# A row loaded from that file keeps its old last_seen, so it reads as stale until the sensor beats.
 #
 # The cap and the eviction matter because the listener is unauthenticated unless LOG_SERVER_SECRET
 # is set: without it, anything that can reach the port can invent sensor names. Ordering by
@@ -561,6 +562,43 @@ def sensor_status():
     """Every sensor heard from since this process started, most recently seen last."""
 
     return _merged(_sensor_status, "sensors", "sensor", MAX_SENSOR_STATUS)
+
+
+SENSOR_STATUS_FILE = "sensors.json"
+
+
+def load_sensor_status():
+    """Seed the table from LOG_DIR/sensors.json, so a restart still knows who should be reporting.
+
+    Returns the names already reported silent (core/alert.py), so a restart does not report them
+    again. A missing or unreadable file is an empty start, never a crash.
+    """
+
+    try:
+        with open(os.path.join(config.LOG_DIR, SENSOR_STATUS_FILE)) as f:
+            data = json.load(f)
+        rows = [_ for _ in data["sensors"] if isinstance(_.get("sensor"), str) and isinstance(_.get("last_seen"), int)]
+        silent = set(_ for _ in data.get("silent", []) if isinstance(_, str))
+    except Exception:
+        return set()
+
+    with _sensor_status_lock:
+        for row in sorted(rows, key=lambda _: _["last_seen"])[-MAX_SENSOR_STATUS:]:
+            if row["sensor"] not in _sensor_status:
+                _sensor_status[row["sensor"]] = row
+    return silent
+
+
+def save_sensor_status(rows, silent):
+    """Atomically replace LOG_DIR/sensors.json with `rows` and the names reported silent."""
+
+    path = os.path.join(config.LOG_DIR, SENSOR_STATUS_FILE)
+    try:
+        with open(path + ".tmp", "w") as f:
+            json.dump({"sensors": rows, "silent": sorted(silent)}, f)
+        os.replace(path + ".tmp", path)
+    except (IOError, OSError) as ex:
+        log_error("unable to write '%s' (%s)" % (path, ex), single=True)
 
 
 def rejected_status():

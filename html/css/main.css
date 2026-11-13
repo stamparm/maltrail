@@ -496,6 +496,10 @@ header::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;
   padding:6px 8px;cursor:pointer;display:inline-flex;align-items:center;line-height:1}
 .hamburger:hover,.hamburger[aria-expanded="true"]{color:var(--text);border-color:var(--accent)}
 .hamburger svg{display:block}
+/* a sensor stopped checking in (markSensors in main.js) */
+.hamburger.has-stale{position:relative;color:var(--sev-high);border-color:var(--sev-high)}
+.hamburger.has-stale::after{content:"";position:absolute;top:-4px;right:-4px;width:9px;height:9px;border-radius:50%;background:var(--sev-high)}
+.sens-badge{margin-left:auto;font-size:11px;font-weight:700;color:var(--sev-high)}
 /* labeled link rows inside the hamburger menu (reuses .ctxitem for padding/hover) */
 .ctxmenu a.navitem,.ctxmenu button.navitem{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--text)}
 /* The element selectors are load-bearing: '.ctxmenu .ctxitem' below sets display:block at the

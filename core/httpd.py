@@ -65,6 +65,7 @@ from core.settings import IS_WIN
 from core.settings import MAX_NOFILE
 from core.settings import NAME
 from core.settings import PING_RESPONSE
+from core.settings import SENSOR_STALE_AFTER
 from core.settings import SESSION_COOKIE_NAME
 from core.settings import SESSION_COOKIE_FLAG_SAMESITE
 from core.settings import SESSION_EXPIRATION_HOURS
@@ -2377,7 +2378,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 rejected = []
 
             # Events the receiver received but could not write: lost, while every sensor looks healthy.
-            return json.dumps({"now": int(time.time()), "sensors": sensors, "rejected": rejected, "write": _log.write_status()})
+            return json.dumps({"now": int(time.time()), "sensors": sensors, "rejected": rejected, "write": _log.write_status(), "stale_after": SENSOR_STALE_AFTER})
 
         def _ping(self, params):
             self.send_response(_http_client.OK)

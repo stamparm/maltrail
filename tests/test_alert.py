@@ -323,10 +323,109 @@ class DeliveryTest(unittest.TestCase):
         self.assertIn(b"retried.biz", self.received[-1])
 
 
-class DisabledTest(unittest.TestCase):
-    def test_start_is_a_no_op_without_a_url(self):
+class SensorSilenceTest(unittest.TestCase):
+    """A sensor that stops sending heartbeats is reported once, and once more when it is back -
+    never per check, never again after a restart, never for a sensor retired long ago. Time is
+    the `now` argument; rows go straight into core/log.py's table with the last_seen wanted."""
+
+    def setUp(self):
+        import shutil
+        import tempfile
+        import core.log as L
+        self.L = L
+        self.tmp = tempfile.mkdtemp(prefix="mt_silence_")
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        self._saved = (config.LOG_DIR, config.ALERT_WEBHOOK_URL, config.ALERT_FORMAT, alert.send, alert.log_error)
+        self._table = (dict(L._sensor_status), dict(L._receiver_status))
+        config.LOG_DIR, config.ALERT_WEBHOOK_URL = self.tmp, "http://127.0.0.1:9/hook"
+        self.sent, self.errors = [], []
+        alert.send = self.sent.append
+        alert.log_error = lambda msg, single=False: self.errors.append(msg)
+        self._restart()
+
+    def tearDown(self):
+        config.LOG_DIR, config.ALERT_WEBHOOK_URL, config.ALERT_FORMAT, alert.send, alert.log_error = self._saved
+        self.L._sensor_status.clear(); self.L._sensor_status.update(self._table[0])
+        self.L._receiver_status.clear(); self.L._receiver_status.update(self._table[1])
+        alert._silent.clear()
+
+    def _restart(self):
+        """What a server restart leaves: an empty table and alert state, then start()'s load."""
+        self.L._sensor_status.clear()
+        self.L._receiver_status.clear()
+        alert._silent.clear()
+        alert._liveness.update(saved=0, known=set())
+        alert._silent.update(self.L.load_sensor_status())
+
+    def _seen(self, name, sec):
+        self.L._sensor_status[name] = {"sensor": name, "version": "1.0", "uptime": 5, "address": "10.0.0.9", "last_seen": sec}
+
+    def test_silent_is_reported_once_and_back_once(self):
+        self._seen("box", 1000)
+        self.assertEqual(alert.check_sensors(now=1000), 0, "a fresh sensor is not news")
+        self.assertEqual(alert.check_sensors(now=1000 + 900), 0, "exactly at the threshold is not yet silent")
+        self.assertEqual(alert.check_sensors(now=1000 + 901), 1, "the control: past the threshold it is")
+        self.assertEqual(self.sent[0]["sensor"], "box")
+        self.assertEqual(self.sent[0]["severity"], "high")
+        self.assertIn("silent since", self.sent[0]["info"])
+        for now in (2000, 5000, 50000):
+            self.assertEqual(alert.check_sensors(now=now), 0, "still silent must not repeat")
+        self._seen("box", 60000)
+        self.assertEqual(alert.check_sensors(now=60000), 1)
+        self.assertEqual(self.sent[1]["info"], "sensor reporting again")
+        self.assertEqual(alert.check_sensors(now=60030), 0)
+        self.assertEqual(len(self.sent), 2)
+        self.assertEqual(len(self.errors), 2, "both facts also go to error.log")
+        self.assertIn("sensor 'box' (10.0.0.9): sensor silent since", self.errors[0])
+
+    def test_a_restart_while_silent_does_not_report_it_again(self):
+        self._seen("box", 1000)
+        self.assertEqual(alert.check_sensors(now=2000), 1)
+        self._restart()
+        self.assertEqual([_["sensor"] for _ in self.L.sensor_status()], ["box"], "the restart forgot the sensor")
+        self.assertEqual(alert.check_sensors(now=3000), 0, "re-alerted after a restart")
+        self._seen("box", 4000)
+        self.assertEqual(alert.check_sensors(now=4000), 1, "and its return is still reported")
+
+    def test_a_sensor_that_died_while_the_server_was_down_is_reported(self):
+        self._seen("box", 1000)
+        alert.check_sensors(now=1000)       # persisted while it was alive
+        self._restart()
+        self.assertEqual(alert.check_sensors(now=1000 + 3600), 1)
+
+    def test_nothing_for_a_sensor_never_seen_or_long_retired(self):
+        self.assertEqual(alert.check_sensors(now=10 ** 9), 0)
+        self.assertFalse(os.path.exists(os.path.join(self.tmp, "sensors.json")), "nothing to remember, nothing written")
+        self._seen("old", 1000)
+        self.assertEqual(alert.check_sensors(now=1000 + 8 * 86400), 0, "a sensor gone for a week is retired")
+        self._seen("box", 1000 + 2 * 86400)
+        self.assertEqual(alert.check_sensors(now=1000 + 8 * 86400), 1, "the control: six days silent is reported")
+        self.assertEqual(self.sent[0]["sensor"], "box")
+
+    def test_without_a_webhook_it_is_still_in_error_log(self):
         config.ALERT_WEBHOOK_URL = ""
-        self.assertFalse(alert.start())
+        self._seen("box", 1000)
+        self.assertEqual(alert.check_sensors(now=5000), 1)
+        self.assertEqual(self.sent, [])
+        self.assertEqual(len(self.errors), 1)
+
+    def test_the_alert_renders_with_the_shipped_and_a_custom_format(self):
+        # Through read_config, not the raw line: the shipped value once held a '#', which the
+        # reader takes for a comment, so every alert body was cut short into invalid JSON.
+        read_config(os.path.join(ROOT, "maltrail.conf"))
+        shipped = config.ALERT_FORMAT
+        config.LOG_DIR, config.ALERT_WEBHOOK_URL = self.tmp, "http://127.0.0.1:9/hook"
+        self._seen("box", 1000)
+        event = {}
+        alert.send = lambda e: event.update(e)
+        alert.check_sensors(now=5000)
+        config.ALERT_FORMAT = shipped
+        text = alert.body(event)
+        self.assertRegex(__import__("json").loads(text)["text"], r'^high: 10\.0\.0\.9 -> box \(sensor silent since [-0-9: ]+ \(no heartbeat for 66 min\)\) \[SENSOR\] threat [0-9a-f]{8}$')
+        config.ALERT_FORMAT = "%(sensor)s|%(severity)s|%(dst_ip)s|%(reference)s"
+        self.assertEqual(alert.body(event), "box|high|-|(liveness)")
+        config.ALERT_FORMAT = "%(json)s"
+        self.assertEqual(__import__("json").loads(alert.body(event))["type"], "SENSOR")
 
 
 

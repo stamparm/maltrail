@@ -16,10 +16,15 @@ import traceback
 import urllib.request
 
 from core import logfmt
+from core.log import load_sensor_status
 from core.log import log_error
+from core.log import save_sensor_status
+from core.log import sensor_status
 from core.log import severity_of
 from core.settings import config
 from core.settings import ALERT_POLL_PERIOD
+from core.settings import SENSOR_FORGET_AFTER
+from core.settings import SENSOR_STALE_AFTER
 from core.settings import ALERT_TIMEOUT
 from core.settings import MAX_ALERT_QUEUE
 from core.settings import ALERT_SEVERITY_ORDER
@@ -380,19 +385,71 @@ def _tail_once(state):
     return sent
 
 
+# ---- sensor liveness: a sensor that stops sending heartbeats is itself an alert ----
+#
+# A dead sensor and a quiet network look the same in the event log, so silence is checked here,
+# against the heartbeat table (core/log.py), and reported ONCE when it starts and once when it
+# ends. Which sensors were already reported is kept in LOG_DIR/sensors.json with the table, so a
+# restart neither forgets a sensor that died before it nor reports it a second time.
+_silent = set()
+_liveness = {"saved": 0, "known": set()}
+
+
+def _sensor_alert(row, silent, now):
+    """Report one sensor going silent or coming back: error.log always, the webhook when set."""
+
+    if silent:
+        info = "sensor silent since %s (no heartbeat for %d min)" % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(row["last_seen"])), (now - row["last_seen"]) // 60)
+    else:
+        info = "sensor reporting again"
+    log_error("sensor '%s' (%s): %s" % (row["sensor"], row.get("address") or "-", info))
+
+    if config.ALERT_WEBHOOK_URL:
+        # Through send() directly: ALERT_SEVERITY and ALERT_THROTTLE gate detections, and a dead
+        # sensor is not a "low" detection - it is every detection stopping.
+        event = dict.fromkeys(_FIELDS, "-")
+        event.update(timestamp=int(now), time=time.strftime("%Y-%m-%d %H:%M:%S.000000", time.localtime(now)),
+                     sensor=row["sensor"], severity="high" if silent else "medium", src_ip=row.get("address") or "-",
+                     type="SENSOR", trail=row["sensor"], info=info, reference="(liveness)")
+        send(event)
+
+
+def check_sensors(now=None):
+    """Alert on sensors that went silent or came back, and persist the table. Returns the alerts sent."""
+
+    now = int(time.time() if now is None else now)
+    # A sensor silent past SENSOR_FORGET_AFTER is taken as retired: not alerted on, not kept.
+    rows = [_ for _ in sensor_status() if now - _.get("last_seen", 0) < SENSOR_FORGET_AFTER]
+    names, alerts = set(_["sensor"] for _ in rows), 0
+    for row in rows:
+        stale = now - row["last_seen"] > SENSOR_STALE_AFTER
+        if stale != (row["sensor"] in _silent):
+            (_silent.add if stale else _silent.discard)(row["sensor"])
+            _sensor_alert(row, stale, now)
+            alerts += 1
+    _silent.intersection_update(names)
+
+    if alerts or names != _liveness["known"] or (rows and now - _liveness["saved"] >= 60):
+        save_sensor_status(rows, _silent)
+        _liveness.update(saved=now, known=names)
+    return alerts
+
+
 def start(join=False):
-    """Start the alert tailer. No-op unless ALERT_WEBHOOK_URL is set."""
+    """Start the alert tailer (only with ALERT_WEBHOOK_URL) and the sensor liveness check (always)."""
 
-    if not config.ALERT_WEBHOOK_URL:
-        return False
+    _silent.update(load_sensor_status())
 
-    print("[i] alerting on '%s' events to '%s'" % (config.ALERT_SEVERITY or "high", config.ALERT_WEBHOOK_URL))
+    if config.ALERT_WEBHOOK_URL:
+        print("[i] alerting on '%s' events to '%s'" % (config.ALERT_SEVERITY or "high", config.ALERT_WEBHOOK_URL))
 
     def run():
         state = {"path": None, "offset": 0}
         while True:
             try:
-                _tail_once(state)
+                if config.ALERT_WEBHOOK_URL:
+                    _tail_once(state)
+                check_sensors()     # one pass over at most MAX_SENSOR_STATUS rows; it writes only on change or once a minute
             except Exception:
                 if config.SHOW_DEBUG:
                     traceback.print_exc()

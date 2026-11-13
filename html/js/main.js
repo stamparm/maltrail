@@ -1059,7 +1059,7 @@
   function openNavMenu(btn) {
     var m = document.getElementById("ctxmenu"); if (!m) return; m.innerHTML = "";
     var sb = document.createElement("button"); sb.type = "button"; sb.className = "ctxitem navitem";
-    sb.innerHTML = _strokeIcon('<rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 12h.01"/><path d="M10 12h8"/>') + '<span class="navlabel">Sensors</span>';
+    sb.innerHTML = _strokeIcon('<rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 12h.01"/><path d="M10 12h8"/>') + '<span class="navlabel">Sensors</span>' + (_staleSensors ? '<span class="sens-badge">' + _staleSensors + ' silent</span>' : "");
     sb.onclick = function (e) { e.stopPropagation(); closeCtx(); openSensors(); };
     m.appendChild(sb);
     NAV_LINKS.forEach(function (e) {
@@ -2612,11 +2612,27 @@
     fetch("/sensors", { credentials: "same-origin" })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) {
+        if (d) markSensors(d);
         if (!document.body.contains(o)) return;
         if (!d) { res.innerHTML = '<div class="hunt-empty">could not read sensor status.</div>'; return; }
         paintSensors(res, d);
       })
       .catch(function () { res.innerHTML = '<div class="hunt-empty">could not read sensor status (network).</div>'; });
+  }
+  // Without opening anything: a dot on the menu button and a count on its Sensors entry while any
+  // sensor is past the server's stale threshold. Read at load and on the 30 s relative-time tick.
+  var _staleSensors = 0;
+  function _isStale(d, s) { return (d.now || Math.floor(Date.now() / 1000)) - (s.last_seen || 0) > d.stale_after; }
+  function markSensors(d) {
+    _staleSensors = (d.sensors || []).filter(function (s) { return _isStale(d, s); }).length;
+    var nm = document.getElementById("nav_menu"); if (!nm) return;
+    nm.classList.toggle("has-stale", _staleSensors > 0);
+    nm.title = _staleSensors ? _staleSensors + " sensor(s) silent - see Sensors" : "menu";
+  }
+  function checkSensors() {
+    if (DEMO) return;
+    fetch("/sensors", { credentials: "same-origin" }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { if (d) markSensors(d); }).catch(function () { });
   }
   // Floors rather than rounds, so the label never reads "60m ago" on the way to an hour.
   function _sensorAgo(sec) {
@@ -2655,10 +2671,8 @@
     var h = refused + '<div class="hunt-sum">' + fmtN(list.length) + ' sensor(s)</div><div class="sens-rows">';
     list.forEach(function (s) {
       var age = Math.max(0, now - (s.last_seen || 0));
-      // Two heartbeats missed at the 300s default. A threshold in seconds cannot know the
-      // sensor's configured period, so this errs towards calling a slow sensor late rather than
-      // towards calling a dead one healthy.
-      var cls = age > 900 ? " is-stale" : "";
+      // stale_after is the server's SENSOR_STALE_AFTER, the same threshold its silence alert uses.
+      var cls = _isStale(d, s) ? " is-stale" : "";
       h += '<div class="sens-row' + cls + '"><span class="sens-name">' + esc(s.sensor) + '</span>' +
            '<span class="sens-ver">' + (s.version ? esc(s.version) : "&mdash;") + '</span>' +
            '<span class="sens-addr">' + esc(s.address || "") + '</span>' +
@@ -3534,7 +3548,8 @@
     // (demo / file:// / artifact — no server), the token becomes a bogus comment -> inject the default logo.
     var _bl = document.querySelector(".brandlogo"); if (_bl && !_bl.querySelector("img")) _bl.innerHTML = '<img src="images/mlogo.png" alt="" style="width:24px">altrail';
     loadPrefs(); applyTheme(getTheme()); applyScale(getScaleIdx()); applyView(); applyMuted(getMuted()); migrateLegacy(); parseHash(); wire(); applyPrefsUI();
-    setInterval(refreshRelTimes, 30000);   // keep "Xm ago" labels current between renders
+    checkSensors();
+    setInterval(function () { refreshRelTimes(); checkSensors(); }, 30000);   // keep "Xm ago" labels current between renders, and the silent-sensor marker
     window.addEventListener("online", applyConn); window.addEventListener("offline", applyConn);
     applyConn();   // initial: an offline-opened page starts with Live + calendar disabled
     var _fi = document.getElementById('filter'); if (_fi && state.input) _fi.value = state.input;
