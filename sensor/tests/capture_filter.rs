@@ -60,6 +60,55 @@ fn shipped_filter_passes_what_detections_need_and_nothing_bulky() {
     assert!(!program.filter(&quic(0x43)), "QUIC short header");
 }
 
+/// TLS handshakes and HTTP requests are recognized by how their payload starts, on any port, and
+/// DNS over TCP by its port. A BPF load past the end of the packet rejects it outright, so a
+/// 4-byte payload test evaluated before `port 53` drops the 2-byte DNS length-prefix segment;
+/// the frames here are unpadded, as on `any`.
+#[test]
+fn shipped_filter_passes_tls_http_and_dns_on_any_port() {
+    let filter = shipped_filter();
+    let ether = pcap::Capture::dead(pcap::Linktype::ETHERNET).unwrap().compile(&filter, true).unwrap();
+    let sll = pcap::Capture::dead(pcap::Linktype(113)).unwrap().compile(&filter, true).unwrap();
+    let cooked = |ethertype: u16, packet: &[u8]| {
+        [&[0, 0, 0, 1, 0, 6, 0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff, 0, 0][..], &ethertype.to_be_bytes(), packet].concat()
+    };
+
+    let hello = [&[0x16, 0x03, 0x01, 0x02, 0x00, 0x01][..], &[0u8; 508]].concat();
+    let flight = [&[0x16, 0x03, 0x03, 0x04, 0x4c, 0x0b][..], &[0x41; 1100]].concat();
+    let dns_query = [&[0x00, 0x1d, 0x12, 0x34, 0x01, 0x00, 0x00, 0x01][..], &[0u8; 23]].concat();
+    let cases: Vec<Case> = vec![
+        ("ClientHello to 8443", true, 40000, 8443, PSH_ACK, hello.clone()),
+        ("ClientHello to 993", true, 40000, 993, PSH_ACK, hello.clone()),
+        ("server certificate flight from 6606", true, 6606, 40000, PSH_ACK, flight),
+        ("GET to 81", true, 40000, 81, PSH_ACK, b"GET /gate.php HTTP/1.1\r\nHost: x\r\n\r\n".to_vec()),
+        ("POST to 5000", true, 40000, 5000, PSH_ACK, b"POST /x HTTP/1.1\r\nHost: x\r\n\r\n".to_vec()),
+        ("CONNECT to 49152", true, 40000, 49152, PSH_ACK, b"CONNECT a.b:443 HTTP/1.1\r\n\r\n".to_vec()),
+        ("DNS/TCP query", true, 40000, 53, PSH_ACK, dns_query.clone()),
+        ("DNS/TCP length prefix alone", true, 40000, 53, PSH_ACK, vec![0x00, 0x1d]),
+        ("DNS/TCP response", true, 53, 40000, PSH_ACK, dns_query),
+        (
+            "application data on 8443",
+            false,
+            40000,
+            8443,
+            PSH_ACK,
+            [&[0x17, 0x03, 0x03, 0x01, 0x00][..], &[0x99; 256]].concat(),
+        ),
+        ("random payload to 5000", false, 40000, 5000, PSH_ACK, vec![0x47, 0x45, 0x54, 0x58, 0x99, 0x99]),
+        ("upload led by 0x16 on 443", false, 40000, 443, ACK, [&[0x16, 0x77][..], &[0x99; 1398]].concat()),
+        ("server data led by 0x16 on 443", false, 443, 40000, ACK, [&[0x16, 0x01][..], &[0x99; 1200]].concat()),
+    ];
+    for (name, expected, sport, dport, flags, payload) in &cases {
+        let segment = tcp(*sport, *dport, *flags, payload);
+        let v4 = ipv4(6, "10.0.0.1", "198.51.100.7", &segment);
+        let v6 = ipv6(6, "2001:db8::1", "2001:db8::2", &segment);
+        assert_eq!(ether.filter(&eth(&v4, 0x0800, None)), *expected, "IPv4 {name}");
+        assert_eq!(ether.filter(&eth(&v6, 0x86dd, None)), *expected, "IPv6 {name}");
+        assert_eq!(sll.filter(&cooked(0x0800, &v4)), *expected, "SLL IPv4 {name}");
+        assert_eq!(sll.filter(&cooked(0x86dd, &v6)), *expected, "SLL IPv6 {name}");
+    }
+}
+
 /// ECN-setup SYNs (RFC 3168: SYN+ECE+CWR, AccECN adds AE in byte 12) are SYNs.
 #[test]
 fn shipped_filter_passes_ecn_syns() {
@@ -129,6 +178,11 @@ fn shipped_filter_passes_what_the_parser_unwraps() {
         ("QinQ 802.1ad", tagged(0x88a8, &vlan10(0x8100, &vlan10(0x0800, &dns4)))),
         ("QinQ 0x9100", tagged(0x9100, &vlan10(0x8100, &vlan10(0x0800, &dns4)))),
         ("QinQ, outer tag stripped by the kernel", eth(&vlan10(0x0800, &dns4), 0x8100, None)),
+        ("MPLS unicast", eth(&[&[0x00, 0x01, 0x01, 0x40][..], &inner4].concat(), 0x8847, None)),
+        (
+            "MPLS multicast, 2 labels",
+            eth(&[&[0x00, 0x01, 0x00, 0x40, 0x00, 0x02, 0x01, 0x40][..], &inner4].concat(), 0x8848, None),
+        ),
     ];
     for (name, frame) in &cases {
         assert!(program.filter(frame), "{name}");
@@ -144,6 +198,7 @@ fn shipped_filter_passes_what_the_parser_unwraps() {
     assert!(sll_program.filter(&cooked(0x0800, &dns4)), "control: SLL DNS");
     assert!(sll_program.filter(&cooked(0x8864, &pppoe(&dns4, 0x0021))), "SLL PPPoE");
     assert!(sll_program.filter(&cooked(0x8100, &vlan10(0x0800, &dns4))), "SLL QinQ inner tag");
+    assert!(sll_program.filter(&cooked(0x8847, &[&[0x00, 0x01, 0x01, 0x40][..], &inner4].concat())), "SLL MPLS");
     assert!(
         sll_program
             .filter(&cooked(0x0800, &ipv4(47, "192.0.2.1", "192.0.2.2", &[&[0, 0, 0x08, 0][..], &inner4].concat()))),

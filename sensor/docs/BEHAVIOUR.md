@@ -177,13 +177,14 @@ a `(heuristic)` reference, never `malware`. The state behind them is bounded
     IP-in-IP, up to 3 deep. The outer header is still matched, and the inner packet is processed
     in its own right: on an overlay SPAN feed every host worth watching is inside the tunnel.
     `maltrail_packets_decapsulated_total` counts what was unwrapped. The shipped `CAPTURE_FILTER`
-    passes these, PPPoE and VLAN/QinQ-tagged frames and IPv6 with extension headers whole, since a
+    passes these, PPPoE, MPLS and VLAN/QinQ-tagged frames and IPv6 with extension headers whole, since a
     BPF filter cannot see inside them (`tests/capture_filter.rs`).
 16. **Split handshakes are reassembled.** A post-quantum ClientHello is about 2 KB, so the SNI is
     often in the second TCP segment, and every QUIC ClientHello now spans two Initials. Up to 64
     handshakes of 4 KB per worker are reassembled (stale after 3 s), and JA3/JA4 are computed
-    over the whole hello. TLS SNI is read over IPv6 too; the shipped `CAPTURE_FILTER` passes the
-    continuation segment for both families (`tests/capture_filter.rs`).
+    over the whole hello. TLS SNI is read over IPv6 too. The shipped `CAPTURE_FILTER` passes a
+    handshake record's first segment on any port, and the continuation segment on port 443 for
+    both families (`tests/capture_filter.rs`).
 17. **CPU affinity is left to the operator** (`taskset`, systemd `CPUAffinity=`); with kernel
     fanout the kernel already spreads the work.
 
