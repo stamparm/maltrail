@@ -2935,6 +2935,10 @@ spa-api-recon
 Veera/1.0
 Veera
 
+# Reference: https://www.fortinet.com/blog/threat-research/t-sql-being-abused-to-deliver-malware-on-compromised-ms-sql-servers
+
+XMRig Reporter
+
 # Misc
 
 information_schema
