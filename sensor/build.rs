@@ -29,6 +29,15 @@ fn main() {
     println!("cargo:rerun-if-changed=build.rs");
     println!("cargo:rerun-if-env-changed=MALTRAIL_SKIP_PCAP_CHECK");
 
+    // pcap 2.5 pulls windows-sys 0.36, whose import library binds WaitOnAddress and
+    // WakeByAddress* to vertdll.dll. Since Rust 1.100 std no longer binds them itself, so the
+    // linker took that library and the binary would not load on Wine (status c0000135). Naming
+    // the system import library first binds them to api-ms-win-core-synch-l1-2-0.dll again.
+    let target = std::env::var("TARGET").unwrap_or_default();
+    if target.ends_with("-windows-gnu") {
+        println!("cargo:rustc-link-lib=dylib=synchronization");
+    }
+
     if std::env::var_os("MALTRAIL_SKIP_PCAP_CHECK").is_some() {
         return;
     }
