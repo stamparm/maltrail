@@ -381,7 +381,7 @@ pub fn run(cfg: &Config) -> i32 {
                 }
                 // Staleness is the failure that hides: an old file loads perfectly and quietly
                 // misses every indicator added since it was written.
-                match crate::trailupdate::trails_age_secs(&cfg.trails_file) {
+                match crate::trailupdate::trails_age_secs(&cfg.trails_file, cfg.trails_built_here) {
                     Some(age) if age > cfg.update_period.max(1) => r.line(
                         Level::Warn,
                         "trails age",

@@ -297,9 +297,21 @@ fn wait_with_deadline(
     }
 }
 
-/// How old `TRAILS_FILE` is, in seconds. Used to warn when an update did not actually refresh it.
-pub fn trails_age_secs(path: &Path) -> Option<u64> {
-    let modified = std::fs::metadata(path).and_then(|m| m.modified()).ok()?;
+/// How old the trail CONTENT is, in seconds: the older of `TRAILS_FILE` and the static cache
+/// beside it (`<TRAILS_FILE>.static`, whose mtime is the last successful static refresh). Every
+/// rebuild rewrites `TRAILS_FILE`, also one around a cache that could not be refreshed, so its
+/// mtime alone reported months-old content as fresh. When the file is not built here
+/// (`UPDATE_SERVER`, `DISABLE_TRAIL_UPDATES`) no cache is refreshed here either, and a leftover one
+/// (the installer seeds it) must not count: it is `TRAILS_FILE` alone. `core/doctor.py` applies the
+/// same rule. `None` when there is no `TRAILS_FILE`.
+pub fn trails_age_secs(path: &Path, built_here: bool) -> Option<u64> {
+    let mut modified = std::fs::metadata(path).and_then(|m| m.modified()).ok()?;
+    if built_here {
+        let cache = format!("{}.static", path.display());
+        if let Ok(cached) = std::fs::metadata(cache).and_then(|m| m.modified()) {
+            modified = modified.min(cached);
+        }
+    }
     std::time::SystemTime::now().duration_since(modified).ok().map(|d| d.as_secs())
 }
 
@@ -443,8 +455,32 @@ mod tests {
         std::fs::create_dir_all(&dir).unwrap();
         let path = dir.join("trails.csv");
         std::fs::write(&path, "x,y,z\n").unwrap();
-        let age = trails_age_secs(&path).expect("age");
+        let age = trails_age_secs(&path, true).expect("age");
         assert!(age < 60, "a just-written file should be young, got {age}s");
-        assert!(trails_age_secs(Path::new("/nonexistent/trails.csv")).is_none());
+        assert!(trails_age_secs(Path::new("/nonexistent/trails.csv"), true).is_none());
+    }
+
+    #[cfg(unix)]
+    #[test]
+    fn trails_age_is_the_age_of_the_static_cache_it_was_built_from() {
+        let dir = std::env::temp_dir().join(format!("mt-trailupdate-static-age-{}", std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let path = dir.join("trails.csv");
+        let cache = dir.join("trails.csv.static");
+        std::fs::write(&path, "x,y,z\n").unwrap();
+        std::fs::write(&cache, "x,y,z\n").unwrap();
+        // positive control: both fresh
+        assert!(trails_age_secs(&path, true).unwrap() < 60);
+        // a rebuild around a cache that could not be refreshed: fresh trails.csv, 90-day-old cache
+        // (File::set_modified needs Rust 1.75; the MSRV is 1.74)
+        let old = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).unwrap().as_secs() - 90 * 86400;
+        let c = std::ffi::CString::new(cache.to_str().unwrap()).unwrap();
+        let times = [libc::timespec { tv_sec: old as libc::time_t, tv_nsec: 0 }; 2];
+        assert_eq!(unsafe { libc::utimensat(libc::AT_FDCWD, c.as_ptr(), times.as_ptr(), 0) }, 0);
+        let age = trails_age_secs(&path, true).unwrap();
+        assert!(age >= 90 * 86400 - 60, "the old cache must set the age, got {age}s");
+        // not built here (UPDATE_SERVER, DISABLE_TRAIL_UPDATES): a leftover cache does not count
+        assert!(trails_age_secs(&path, false).unwrap() < 60);
+        let _ = std::fs::remove_dir_all(&dir);
     }
 }

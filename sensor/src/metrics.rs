@@ -226,6 +226,8 @@ pub struct Registry {
     pub log_dir: Option<std::path::PathBuf>,
     /// `TRAILS_FILE`, so the metrics endpoint can report how old the trail set on disk is.
     pub trails_file: Option<std::path::PathBuf>,
+    /// The static cache's age counts in the trail age (see `trails_age_secs`).
+    pub trails_built_here: bool,
 }
 
 impl Registry {
@@ -239,6 +241,7 @@ impl Registry {
             reloads_rejected: AtomicU64::new(0),
             log_dir: None,
             trails_file: None,
+            trails_built_here: false,
         }
     }
 
@@ -249,8 +252,9 @@ impl Registry {
     }
 
     /// Point the trail-age gauge at `TRAILS_FILE`.
-    pub fn with_trails_file(mut self, trails_file: std::path::PathBuf) -> Registry {
+    pub fn with_trails_file(mut self, trails_file: std::path::PathBuf, built_here: bool) -> Registry {
         self.trails_file = Some(trails_file);
+        self.trails_built_here = built_here;
         self
     }
 

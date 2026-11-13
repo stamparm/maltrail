@@ -295,7 +295,43 @@ def fetch_static_trails(offline=False):
             pass
         return False
 
+    def _lines(path):
+        try:
+            with open(path, "rb") as f:
+                return sum(chunk.count(b"\n") for chunk in iter(lambda: f.read(1 << 20), b""))
+        except (OSError, IOError):
+            return 0
+
+    def _rejected(path):
+        # Why a download must not replace the cache, or None. A captive portal or a WAF answers 200
+        # with an HTML page, which has the commas _usable() asks for: sample the first rows and
+        # require the trail CSV the loader reads (csv dialect, three fields, '#' header lines).
+        rows = 0
+        with io.open(path, "r", encoding=UNICODE_ENCODING, errors="replace", newline="") as f:
+            for row in csv.reader(f):
+                if not row or row[0].startswith('#'):
+                    continue
+                if len(row) != 3 or row[0].lstrip().startswith('<'):
+                    return "it is not a trail list (%r...)" % ",".join(row)[:40]
+                rows += 1
+                if rows >= 100:
+                    break
+        if not rows:
+            return "it holds no trails"
+        # The sensor's floor for a reload (TRAIL_RELOAD_MIN_RATIO, default 0.5, 0 disables) applied
+        # here too: a set that lost most of its rows is a truncated or wrong file, not a change.
+        try:
+            ratio = float(config.get("TRAIL_RELOAD_MIN_RATIO"))
+            ratio = ratio if 0 <= ratio <= 1 else 0.5
+        except (TypeError, ValueError):
+            ratio = 0.5
+        old, new = _lines(cache), _lines(path)
+        if ratio and old and new < old * ratio:
+            return "it has %d lines against %d cached (under TRAIL_RELOAD_MIN_RATIO %s)" % (new, old, ratio)
+        return None
+
     usable = False
+    refreshed = False
 
     if not offline and config.STATIC_TRAILS_URL:
         url = config.STATIC_TRAILS_URL
@@ -304,12 +340,22 @@ def fetch_static_trails(offline=False):
         # trails.csv.gz.sha256, which 404s - and a missing digest silently costs the skip, so the
         # 11 MB gets pulled on every update even when nothing changed.
         sha_url = "%s.sha256" % (url[:-len(".gz")] if url.endswith(".gz") else url)
-        published = (retrieve_content(sha_url) or "").strip().split(' ')[0].strip()
-        published = published if re.match(r"\A[0-9a-f]{64}\Z", published) else None
+        published_text = (retrieve_content(sha_url) or "").strip()
+        published = published_text.split(' ')[0].strip()
+        # Empty is "no digest published". Anything else that is not a digest (an HTML page served
+        # with 200) is a broken source, not permission to skip the check.
+        bogus_digest = bool(published) and not re.match(r"\A[0-9a-f]{64}\Z", published)
+        published = None if bogus_digest else (published or None)
 
         if published and published == _cached_sha() and os.path.isfile(cache):
             print(" [o] '%s' (unchanged, %s)" % (url, published[:12]))
-            usable = _usable(cache)
+            usable = refreshed = _usable(cache)
+            # The cache's mtime is when the static set was last confirmed current - the trail age
+            # every health check reports - so a confirmation counts as a refresh.
+            try:
+                os.utime(cache, None)
+            except (OSError, IOError):
+                pass
         else:
             print(" [o] '%s'" % url)
             raw = retrieve_content(url, binary=True)
@@ -337,15 +383,20 @@ def fetch_static_trails(offline=False):
                 size = 0
 
             digest = sha.hexdigest() if size else None
+            rejected = _rejected(tmp) if size else None
 
-            if published and digest and digest != published:
+            if bogus_digest:
+                print("[x] '%s' is not a sha256 digest (%r...) - keeping the cache" % (sha_url, published_text[:40]))
+            elif published and digest and digest != published:
                 # Refuse a payload that is not the one that was published. A truncated download is
                 # the dangerous case: it parses fine and is simply missing indicators.
                 print("[x] the static trails do not match their published sha256 (%s != %s) - keeping the cache" % (digest[:12], published[:12]))
+            elif rejected:
+                print("[x] the static trails from '%s' were rejected: %s - keeping the cache" % (url, rejected))
             elif size and _usable(tmp):
                 try:
                     _atomic_replace(tmp, cache)
-                    usable = True
+                    usable = refreshed = True
                     if digest:
                         with open("%s.new" % stamp, "w") as f:
                             f.write(digest)
@@ -366,11 +417,22 @@ def fetch_static_trails(offline=False):
         if usable:
             print("[i] using the cached static trails ('%s')" % cache)
 
+    global last_refusal
+
+    if usable and not refreshed and config.STATIC_TRAILS_URL and not config.offline:
+        # The build still goes ahead - the feeds in it are fresh - but it is not a successful
+        # update: the static set is as old as the cache, and the updater exits non-zero so the
+        # sensor says so. An offline run by choice (--offline) is not a failure.
+        last_refusal = "the static trails could not be refreshed from '%s'; built with the cached set from %s" % (config.STATIC_TRAILS_URL, time.strftime("%Y-%m-%d %H:%M", time.localtime(os.path.getmtime(cache))))
+        print("[x] %s" % last_refusal)
+
     if not usable:
         # Loudly. An empty static set is 1.6M missing indicators, and every symptom of it - a
         # server that starts, a dashboard that renders, a sensor that reports healthy - looks
         # exactly like a quiet network.
         print("[!] no static trails available: '%s' could not be retrieved and there is no cache at '%s'" % (config.STATIC_TRAILS_URL or "<STATIC_TRAILS_URL unset>", cache))
+        if config.STATIC_TRAILS_URL:
+            last_refusal = "no static trails: '%s' could not be retrieved and there is no cache" % config.STATIC_TRAILS_URL
         return {}
 
     return _StaticTrails(cache)
@@ -534,7 +596,8 @@ def _low_memory():
     return size * (2.6 if sys.maxsize > 2 ** 32 else 1.8) > available * 3 // 4
 
 
-# Why the last update_trails() kept the existing trails.csv instead of writing its build, or None.
+# Why the last update_trails() did not refresh the trail set (kept the existing trails.csv, or
+# built it from a static cache that could not be refreshed), or None. Non-None = exit non-zero.
 last_refusal = None
 
 
@@ -1071,7 +1134,10 @@ def update_trails(force=False, offline=False):
             # so this branch cannot leave us with nothing.
             print("[i] trails from '%s' are unchanged" % config.UPDATE_SERVER)
         elif not size or not _usable(tmp_trails_file):
-            print("[x] unable to retrieve data from '%s'" % config.UPDATE_SERVER)
+            # The current file stays, untouched and with its old mtime (the age every health check
+            # reports), and the updater exits non-zero.
+            last_refusal = "unable to retrieve data from '%s'; keeping '%s'" % (config.UPDATE_SERVER, config.TRAILS_FILE)
+            print("[x] %s" % last_refusal)
         else:
             _atomic_replace(tmp_trails_file, config.TRAILS_FILE)
             # A downloaded set carries no provenance, so any sidecar from a previous self-update

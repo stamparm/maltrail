@@ -249,7 +249,9 @@ Checked: config parses and has its mandatory options; `LOG_DIR` exists and a fil
 created in it; `CAPTURE_FILTER` compiles (against a dead pcap handle, so no interface or privileges
 are needed); the monitor interfaces exist; capture privileges are present; the whitelist loads; the
 trails file loads, how many trails of each kind, how many malformed rows, how many unusable
-wildcard patterns, and **how old the file is**; the trail updater and a Python interpreter are
+wildcard patterns, and **how old the trail content is** (the older of the file and the static
+cache `<TRAILS_FILE>.static` it was built from, whose mtime is the last successful static refresh;
+the file alone with `UPDATE_SERVER` or `DISABLE_TRAIL_UPDATES`); the trail updater and a Python interpreter are
 present; the User-Agent patterns loaded; heuristics are on; remote sinks are `host:port`.
 
 The systemd unit runs it as `ExecStartPre=`, so a broken deployment fails loudly at start instead

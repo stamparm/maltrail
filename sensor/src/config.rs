@@ -193,6 +193,10 @@ pub struct Config {
     /// externally, e.g. pushed by the Maltrail server). Default OFF, i.e. the sensor refreshes
     /// trails itself.
     pub disable_trail_updates: bool,
+    /// trails.csv is built on this host from the static trail cache beside it, so that cache's
+    /// age is part of the trail age. False with `UPDATE_SERVER` (the file arrives finished) or
+    /// `DISABLE_TRAIL_UPDATES` (something else owns it): no cache is refreshed here.
+    pub trails_built_here: bool,
     /// New: repair feed-mangled wildcard-trail patterns instead of dropping them the way
     /// `build_trails_regex()` does. ON by default (it recovers real trails that Maltrail's own
     /// trail generation mangles); set false to drop them exactly as `build_trails_regex()` does.
@@ -1116,6 +1120,8 @@ impl Config {
                 .or_else(|| get_bool_opt(&raw, "CHECK_TLS_CERTIFICATES"))
                 .unwrap_or(true),
             disable_trail_updates: get_bool(&raw, "DISABLE_TRAIL_UPDATES"),
+            trails_built_here: get_str(&raw, "UPDATE_SERVER").trim().is_empty()
+                && !get_bool(&raw, "DISABLE_TRAIL_UPDATES"),
             repair_truncated_trails: get_bool_opt(&raw, "REPAIR_TRUNCATED_TRAILS").unwrap_or(true),
             trail_store_cache: get_bool_opt(&raw, "TRAIL_STORE_CACHE").unwrap_or(true),
             // cfg_bool, NOT get_bool: only names starting with USE_/SET_/CHECK_/ENABLE_/SHOW_/

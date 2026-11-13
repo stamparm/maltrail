@@ -260,5 +260,44 @@ class TestEveryCheckIsRegistered(unittest.TestCase):
             doctor.CHECKS = saved
 
 
+class TrailsContentAge(unittest.TestCase):
+    """Every rebuild rewrites trails.csv, including one built from a static cache that could not be
+    refreshed - so its mtime said "fresh" over content months old. The age is the older of
+    trails.csv and the static cache it was built from."""
+
+    setUp = DoctorChecks.setUp
+    _restore = DoctorChecks._restore
+
+    def _write(self, path, age_days):
+        with open(path, "w") as f:
+            f.write("evil.test,x,(static)\n")
+        stamp = time.time() - age_days * 86400
+        os.utime(path, (stamp, stamp))
+
+    def test_an_old_static_cache_is_stale_under_a_fresh_trails_file(self):
+        self._write(settings.config.TRAILS_FILE, 0)
+        self._write("%s.static" % settings.config.TRAILS_FILE, 90)
+        findings = doctor.check_trails_freshness()
+        self.assertEqual([level for level, _ in findings], [doctor.WARN])
+        self.assertIn("90 days", findings[0][1])
+
+    def test_a_fresh_static_cache_is_fresh(self):
+        # the positive control: same files, cache refreshed
+        self._write(settings.config.TRAILS_FILE, 0)
+        self._write("%s.static" % settings.config.TRAILS_FILE, 0)
+        self.assertEqual(doctor.check_trails_freshness(), [])
+
+    def test_a_leftover_cache_does_not_count_where_trails_are_not_built(self):
+        # trails.csv arrives finished (UPDATE_SERVER) or is owned by something else
+        # (DISABLE_TRAIL_UPDATES); a cache seeded at install time is never refreshed there.
+        self._write(settings.config.TRAILS_FILE, 0)
+        self._write("%s.static" % settings.config.TRAILS_FILE, 90)
+        for option, value in (("UPDATE_SERVER", "http://127.0.0.1:9/trails"), ("DISABLE_TRAIL_UPDATES", True)):
+            saved = settings.config.get(option)
+            setattr(settings.config, option, value)
+            self.assertEqual(doctor.check_trails_freshness(), [], option)
+            setattr(settings.config, option, saved)
+
+
 if __name__ == "__main__":
     unittest.main()

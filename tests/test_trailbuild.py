@@ -9,6 +9,7 @@ import random
 import shutil
 import sys
 import tempfile
+import time
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -166,6 +167,175 @@ class UpdateTrailsParityTest(unittest.TestCase):
         rows = dict(static.items())
         self.assertEqual(rows["[0-9]{2,3}\\.ru"], ("suspicious", "(static)"), "a quoted trail with a comma of its own")
         self.assertEqual(len(rows), self.STATIC.count("\n"))
+
+
+class StaticRefreshTest(unittest.TestCase):
+    """What a static download may replace the cache with, and what a failed refresh reports.
+
+    A captive portal answering 200 with an HTML page for the file and its .sha256 used to become
+    the cache, and a 404 or an unreachable UPDATE_SERVER used to end in exit 0 with a fresh
+    trails.csv mtime - a frozen trail set reported as current."""
+
+    URL = "http://127.0.0.1:9/trails.csv.gz"
+    HTML = u"<html><head><title>Access denied</title></head><body>Sign in, then retry, please.</body></html>\n"
+
+    def setUp(self):
+        self.tmp = tempfile.mkdtemp()
+        self._saved = dict((_, getattr(config, _, None)) for _ in ("TRAILS_FILE", "STATIC_TRAILS_URL", "UPDATE_SERVER", "CUSTOM_TRAILS_URL", "USE_FEED_UPDATES", "TRAIL_RELOAD_MIN_RATIO", "offline"))
+        self._retrieve = (U.retrieve_content, U.retrieve_to_file)
+        config.TRAILS_FILE = os.path.join(self.tmp, "trails.csv")
+        config.STATIC_TRAILS_URL = self.URL
+        config.UPDATE_SERVER = None
+        config.CUSTOM_TRAILS_URL = None
+        config.USE_FEED_UPDATES = False
+        config.TRAIL_RELOAD_MIN_RATIO = None
+        config.offline = False
+        self.cache = "%s.static" % config.TRAILS_FILE
+        self.old = self._csv(100, "old")
+        with open(self.cache, "wb") as f:
+            f.write(self.old)
+        U.last_refusal = None
+
+    def tearDown(self):
+        U.retrieve_content, U.retrieve_to_file = self._retrieve
+        for key, value in self._saved.items():
+            setattr(config, key, value)
+        U.last_refusal = None
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    @staticmethod
+    def _csv(rows, tag):
+        return (u"# Maltrail Trails - header\n#\n" + u"".join(u"%s%d.example,malware,(static)\n" % (tag, _) for _ in range(rows)) + u"\"[0-9]{2,3}\\.ru\",suspicious,(static)\n").encode("utf8")
+
+    def _serve(self, payload, digest=True):
+        import gzip, hashlib
+        if digest is True:
+            digest = hashlib.sha256(payload).hexdigest() + "  trails.csv\n"
+        body = gzip.compress(payload) if payload else payload
+
+        def retrieve(url, binary=False, **kwargs):
+            if url.endswith(".sha256"):
+                return digest or ""
+            return body if binary else body.decode("utf8", "replace")
+        U.retrieve_content = retrieve
+
+    def _fetch(self, offline=False):
+        _so = sys.stdout
+        sys.stdout = open(os.devnull, "w")
+        try:
+            return U.fetch_static_trails(offline)
+        finally:
+            sys.stdout.close()
+            sys.stdout = _so
+
+    def _cache(self):
+        with open(self.cache, "rb") as f:
+            return f.read()
+
+    def assertKept(self):
+        self.assertEqual(self._cache(), self.old, "the cache was replaced")
+        self.assertTrue(U.last_refusal, "a failed refresh was not reported")
+
+    def assertTaken(self, payload):
+        self.assertEqual(self._cache(), payload, "a valid update was not taken")
+        self.assertIsNone(U.last_refusal)
+
+    def test_html_with_200_is_rejected(self):
+        self._serve(self.HTML.encode("utf8"), digest=self.HTML)
+        self.assertTrue(self._fetch(), "the old cache must still be used")
+        self.assertKept()
+
+    def test_html_with_no_digest_published_is_rejected(self):
+        self._serve(self.HTML.encode("utf8"), digest=None)
+        self._fetch()
+        self.assertKept()
+
+    def test_html_digest_is_not_a_missing_digest(self):
+        self._serve(self._csv(100, "new"), digest=self.HTML)
+        self._fetch()
+        self.assertKept()
+
+    def test_a_drastic_shrink_is_rejected(self):
+        self._serve(self._csv(10, "new"))
+        self._fetch()
+        self.assertKept()
+
+    def test_a_smaller_but_reasonable_update_is_taken(self):
+        payload = self._csv(80, "new")
+        self._serve(payload)
+        self._fetch()
+        self.assertTaken(payload)
+
+    def test_a_normal_update_is_taken(self):
+        payload = self._csv(120, "new")
+        self._serve(payload)
+        self._fetch()
+        self.assertTaken(payload)
+
+    def test_no_digest_published_still_takes_a_valid_update(self):
+        payload = self._csv(100, "new")
+        self._serve(payload, digest=None)
+        self._fetch()
+        self.assertTaken(payload)
+
+    def test_a_ratio_of_zero_disables_the_shrink_check(self):
+        config.TRAIL_RELOAD_MIN_RATIO = 0
+        payload = self._csv(10, "new")
+        self._serve(payload)
+        self._fetch()
+        self.assertTaken(payload)
+
+    def test_an_unchanged_set_marks_the_cache_fresh(self):
+        import hashlib
+        with open("%s.sha256" % self.cache, "w") as f:
+            f.write(hashlib.sha256(self.old).hexdigest())
+        os.utime(self.cache, (0, time.time() - 90 * 86400))
+        self._serve(self.old)
+        self._fetch()
+        self.assertTaken(self.old)
+        self.assertLess(time.time() - os.path.getmtime(self.cache), 60, "a verified-current cache must read as fresh")
+
+    def test_a_404_falls_back_to_the_cache_and_says_so(self):
+        self._serve(b"", digest=None)
+        self.assertTrue(self._fetch())
+        self.assertKept()
+
+    def test_an_offline_run_by_choice_is_not_a_failure(self):
+        config.offline = True
+        self._serve(b"", digest=None)
+        self.assertTrue(self._fetch(offline=True))
+        self.assertIsNone(U.last_refusal)
+
+    def test_a_failed_refresh_still_writes_the_build_but_reports_it(self):
+        # Fresh feeds are still worth having; the exit status is what must not say "success".
+        self._serve(b"", digest=None)
+        _so = sys.stdout
+        sys.stdout = open(os.devnull, "w")
+        try:
+            U.update_trails()
+        finally:
+            sys.stdout.close()
+            sys.stdout = _so
+        with open(config.TRAILS_FILE, "rb") as f:
+            self.assertIn(b"old5.example", f.read())
+        self.assertTrue(U.last_refusal)
+
+    def test_an_unreachable_update_server_is_reported_and_leaves_the_file(self):
+        config.UPDATE_SERVER = "http://127.0.0.1:9/trails"
+        with open(config.TRAILS_FILE, "wb") as f:
+            f.write(self.old)
+        stamp = time.time() - 3 * 86400
+        os.utime(config.TRAILS_FILE, (stamp, stamp))
+        U.retrieve_to_file = lambda *args, **kwargs: 0
+        _so = sys.stdout
+        sys.stdout = open(os.devnull, "w")
+        try:
+            U.update_trails()
+        finally:
+            sys.stdout.close()
+            sys.stdout = _so
+        self.assertTrue(U.last_refusal)
+        self.assertEqual(os.path.getmtime(config.TRAILS_FILE), stamp, "a failed fetch must not make the file look fresh")
 
 
 class AvailableMemoryTest(unittest.TestCase):

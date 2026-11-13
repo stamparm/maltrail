@@ -62,6 +62,15 @@ def check_trails_freshness():
     path = config.TRAILS_FILE
     if not os.path.isfile(path):
         return [(FAIL, "trails file '%s' does not exist (run once online, or 'python3 sensor/tools/update_trails.py')" % path)]
+    # The age of the trail CONTENT: the older of trails.csv and the static cache it was built from
+    # (whose mtime is the last successful static refresh). Every rebuild rewrites trails.csv, also
+    # one around a cache that could not be refreshed. When the file is not built here (UPDATE_SERVER,
+    # DISABLE_TRAIL_UPDATES) no cache is refreshed here either, and a leftover one (the installer
+    # seeds it) must not count: trails.csv alone. The sensor applies the same rule
+    # (trailupdate::trails_age_secs).
+    cache = "%s.static" % path
+    if not config.UPDATE_SERVER and not config.DISABLE_TRAIL_UPDATES and os.path.isfile(cache) and os.path.getmtime(cache) < os.path.getmtime(path):
+        path = cache
     age_days = (time.time() - os.path.getmtime(path)) / 86400.0
     period = int(config.UPDATE_PERIOD or 0)
     if period <= 0 or age_days * 86400 <= 4 * period:

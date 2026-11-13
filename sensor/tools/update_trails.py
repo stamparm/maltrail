@@ -72,8 +72,9 @@ def main():
 
     import core.update
     if core.update.last_refusal:
-        # The file is still there, but it is the OLD one: report the failure so the sensor says so.
-        print("[!] trail update refused: %s" % core.update.last_refusal)
+        # The trail set was not refreshed (the old file was kept, or rebuilt around a static cache
+        # that could not be refreshed): report the failure so the sensor says so.
+        print("[!] trail update failed: %s" % core.update.last_refusal)
         return 1
 
     trails_file = config.TRAILS_FILE

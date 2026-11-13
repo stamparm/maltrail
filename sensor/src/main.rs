@@ -563,7 +563,7 @@ fn run() -> i32 {
         Registry::new(worker_count)
             // Free space only means something when this sensor is the one writing the evidence.
             .with_log_dir(if cfg.disable_local_log_storage { None } else { Some(cfg.log_dir.clone()) })
-            .with_trails_file(cfg.trails_file.clone()),
+            .with_trails_file(cfg.trails_file.clone(), cfg.trails_built_here),
     );
     registry.trail_count.store(trail_count, Ordering::Relaxed);
     registry.trail_generation.store(store.generation(), Ordering::Relaxed);
@@ -1124,7 +1124,7 @@ fn refresh_trails(cfg: &Config, quiet: bool, startup: bool) {
 /// Loudly flag a trails file older than one update period — the failure mode that cost a live
 /// detection: an old file looks perfectly healthy while the sensor quietly misses new IOCs.
 fn warn_if_trails_are_stale(cfg: &Config) {
-    let Some(age) = trailupdate::trails_age_secs(&cfg.trails_file) else {
+    let Some(age) = trailupdate::trails_age_secs(&cfg.trails_file, cfg.trails_built_here) else {
         ceprintln!("[!] no trails file at '{}' - the sensor will detect NOTHING", cfg.trails_file.display());
         return;
     };
