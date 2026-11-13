@@ -967,6 +967,27 @@ class CrossFileTest(unittest.TestCase):
         self.assertEqual(C.classify("kiss58.myvnc.com.ovh.net", known_tlds=tlds)[0], "warn")
         self.assertIsNone(C.classify("vps-1a2b3c4d.vps.ovh.net", known_tlds=tlds))
 
+    def test_a_mistyped_fingerprint_prefix_cannot_match(self):
+        # #19658: every bad form the issue lists, and the good forms as the control
+        md5, sha1 = "0123456789abcdef0123456789abcdef", "0123456789abcdef0123456789abcdef01234567"
+        ja4 = "t13d1516h2_8daaf6152771_02713d6af862"
+        for raw in ("ja3=" + md5, "ja4=" + ja4, "cert=" + sha1, "cer:" + sha1, "cer=" + sha1, "JA3 =" + md5):
+            verdict = C.classify(raw)
+            self.assertEqual(verdict[0], "inert", raw)
+            self.assertIn("mistyped TLS fingerprint prefix", verdict[1], raw)
+        for raw in ("ja3:" + md5, "ja4:" + ja4, "cert:" + sha1):
+            self.assertIsNone(C.classify(raw), raw)
+        self.assertIsNone(C.classify("cert.example.com"), "a name that merely starts with 'cert'")
+
+    def test_a_dns_service_record_name_warns(self):
+        # #19660: names published for other parties to query, not ones malware resolves
+        for name in ("_dmarc.evil.icu", "selector1._domainkey.evil.icu", "_acme-challenge.evil.icu",
+                     "_mta-sts.evil.vip", "_sip._tcp.evil.com", "_dmarc._dc-mx.bea1c9af1dbb.vegfund.icu"):
+            self.assertEqual(C.classify(name)[0], "warn", name)
+        # the control: a campaign's own underscore names, and an underscore elsewhere in a label
+        for name in ("_dc-mx.0b822ece83d6.3hours.icu", "_bestwedding.icu", "my_dmarc.evil.icu", "evil.icu"):
+            self.assertIsNone(C.classify(name), name)
+
     def test_an_institutional_rmm_server_warns_only_in_bad_rmmtool(self):
         self.assertEqual(C.classify("help.example.ac.uk", info="bad rmmtool")[0], "warn")
         self.assertIsNone(C.classify("help.example.ac.uk", info="generic"))

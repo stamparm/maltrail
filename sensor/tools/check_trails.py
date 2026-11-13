@@ -124,6 +124,18 @@ HOSTS_PASTE = re.compile(r"\A(?:0\.0\.0\.0|127\.0\.0\.1|0)www\.[^.]+\.")
 # name is missing. Only reported when the part before `.ovh.net` itself ends in a TLD - OVH's own
 # names (`vps-1a2b3c4d.vps.ovh.net`, `ns341617.ovh.net`) never do.
 SEARCH_DOMAIN = re.compile(r"\A(.+\.([a-z]+))\.ovh\.net\Z")
+# A typed fingerprint with the prefix mistyped (`ja3=`, `cer:`, `ja4 :`): judged as a name or an
+# address it got a verdict about DNS or ports, or for `ja4=` only "a bare fingerprint" (#19658).
+MISTYPED_FINGERPRINT = re.compile(r"\A(?:ja3|ja4|cert?)\s*[=:]", re.I)
+# Underscore names a domain publishes for OTHER parties to look up (RFC 8552 attribute leaves, SRV
+# services, RFC 7929/8460/8461): mail servers ask _dmarc. and _mta-sts., CAs _acme-challenge., SIP and
+# XMPP clients their SRV names. Malware does not, so such a trail flags the victim's mail server or a
+# certificate renewal. A passive-DNS dump brings them in with the real C2 name (#19660). Only these
+# labels: `_dc-mx.<hash>.` and the like are the campaign's own names.
+SERVICE_LABEL = re.compile(r"(?:\A|\.)_(?:openpgpkey|acme-challenge|amazonses|asuid|bimi|caldav|carddav|dmarc|dns-sd|"
+                           r"dnsauth|domainkey|gc|github-challenge|globalsign-domain-verification|kerberos|kpasswd|ldap|"
+                           r"mta-sts|services|sip|sipfederationtls|sipinternal|sipinternaltls|sips|smtp|tls|tcp|udp|spf|"
+                           r"xmpp-client|xmpp-server)\.")
 # suspicious/bad_rmmtool.txt lists RMM servers an attacker runs. A university's or a government's own
 # ScreenConnect/SimpleHelp is not that - 79 of them arrived in one bulk "every server running X" import
 # (removed 2026-11), and each one flags that institution's IT department talking to its own helpdesk.
@@ -388,6 +400,8 @@ def _classify_key(key, whitelist=None, info="", raw=None, suffixes=None, known_t
         if typed[1] is None:
             return ("inert", "not a valid %s value: core/assemble.py leaves it out, so it never reaches a deployment" % typed[0])
         return None
+    if MISTYPED_FINGERPRINT.match(raw if raw is not None else key or ""):
+        return ("inert", "a mistyped TLS fingerprint prefix: write ja3:, ja4: or cert: directly followed by the value")
     if key and FINGERPRINT.match(key):
         return ("warn", "a bare TLS fingerprint: write it as ja3:/ja4:/cert:<value> so its type is explicit")
     if not key:
@@ -472,6 +486,10 @@ def _classify_key(key, whitelist=None, info="", raw=None, suffixes=None, known_t
         return ("shadowed", "the whitelist carries this exact name: a tie goes to the whitelist, so the "
                             "build drops this trail before it reaches trails.csv")
 
+    service = SERVICE_LABEL.search(wire)
+    if service:
+        return ("warn", "a DNS service record name (%s): mail servers, CAs and SRV clients query it, not malware - "
+                        "list the domain it belongs to instead" % service.group(0).strip("."))
     glued = SEARCH_DOMAIN.match(wire)
     if glued and known_tlds and glued.group(2) in known_tlds:
         return ("warn", "a sandbox's DNS search domain glued onto the real name: nobody queries this, "
