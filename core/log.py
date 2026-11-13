@@ -7,6 +7,7 @@ See the file 'LICENSE' for copying permission
 
 import binascii
 import datetime
+import glob
 import hashlib
 import hmac
 import json
@@ -511,7 +512,7 @@ def _sensor_field(value):
     return re.sub(r"[^\w.:@+-]", "", value)[:MAX_SENSOR_FIELD]
 
 
-def heartbeat_event(data, source):
+def heartbeat_event(data, source, seen=None):
     """Record a liveness datagram, and report whether that is what this was.
 
     The payload is `<epoch_sec> !HB <sensor> <version> <uptime_s> [<sent> [<captured> <dropped>]]`. It leads with the epoch second
@@ -537,7 +538,7 @@ def heartbeat_event(data, source):
               "version": _sensor_field(parts[3]) if len(parts) > 3 else "",
               "uptime": number(4),
               "address": source,
-              "last_seen": int(time.time())}
+              "last_seen": int(time.time() if seen is None else seen)}
 
     # The sixth field (newer sensors) counts the events sent to LOG_SERVER. Against what arrived
     # from the same address since this receiver first heard the sensor, the difference is what was
@@ -568,6 +569,20 @@ def heartbeat_event(data, source):
     _status_dirty.set()
 
     return True
+
+
+def read_local_heartbeats():
+    """Take in LOG_DIR/<sensor>.heartbeat, which a sensor without LOG_SERVER writes instead of
+    sending (the single-host install, which otherwise had no liveness at all). Last seen is the
+    file's mtime, so a sensor that stopped writing goes stale like one that stopped sending."""
+
+    for name in glob.glob(os.path.join(config.LOG_DIR or "", "*.heartbeat")):
+        try:
+            with open(name, "rb") as f:
+                data = f.read(512)
+            heartbeat_event(data, "local", seen=os.path.getmtime(name))
+        except (IOError, OSError):
+            pass
 
 
 def _merged(local, field, key, limit):

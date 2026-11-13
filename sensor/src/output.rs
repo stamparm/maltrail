@@ -839,22 +839,33 @@ fn trails_ctime_date(path: &Path) -> String {
 /// The sensor name comes from `SENSOR_NAME` (`$HOSTNAME` by default), so it can contain anything a
 /// hostname can. A space would shift every field after it, so the name is reduced to the
 /// characters the receiver keeps anyway rather than sent as-is and silently misparsed.
-pub fn heartbeat_payload(sensor: &str, now: u64, uptime: u64, sent: u64, capture: (u64, u64)) -> Vec<u8> {
+fn heartbeat_name(sensor: &str) -> String {
     let name: String = sensor.chars().filter(|c| c.is_alphanumeric() || ".:@+-_".contains(*c)).take(64).collect();
-    let name = if name.is_empty() { "-" } else { name.as_str() };
+    if name.is_empty() {
+        "-".to_string()
+    } else {
+        name
+    }
+}
+
+pub fn heartbeat_payload(sensor: &str, now: u64, uptime: u64, sent: u64, capture: (u64, u64)) -> Vec<u8> {
+    let name = heartbeat_name(sensor);
     format!("{now} !HB {name} {} {uptime} {sent} {} {}", settings::VERSION, capture.0, capture.1).into_bytes()
 }
 
-/// Announce this sensor to `LOG_SERVER` every `period` seconds. No-op without a `LOG_SERVER`, and
-/// `HEARTBEAT_PERIOD 0` switches it off. `capture` reports (received, dropped) packets so far.
+/// Announce this sensor to `LOG_SERVER` every `period` seconds. Without a `LOG_SERVER` - the
+/// single-host install, where the server reads the same `LOG_DIR` - the beat is written to
+/// `LOG_DIR/<sensor>.heartbeat` instead; that install used to have no liveness at all, so a dead
+/// local sensor looked exactly like a quiet network. `HEARTBEAT_PERIOD 0` switches both off.
+/// `capture` reports (received, dropped) packets so far.
 pub fn spawn_heartbeat(
     cfg: Arc<OutputConfig>,
     period: u64,
     shutdown: Arc<AtomicBool>,
     capture: impl Fn() -> (u64, u64) + Send + 'static,
 ) {
-    let Some(endpoint) = cfg.log_server.clone() else { return };
-    if period == 0 {
+    let endpoint = cfg.log_server.clone();
+    if period == 0 || (endpoint.is_none() && cfg.disable_local_log_storage) {
         return;
     }
 
@@ -874,10 +885,26 @@ pub fn spawn_heartbeat(
                     continue;
                 }
                 next = Instant::now() + Duration::from_secs(period);
-                send_heartbeat(&cfg, &endpoint, started.elapsed().as_secs(), capture());
+                match &endpoint {
+                    Some(endpoint) => send_heartbeat(&cfg, endpoint, started.elapsed().as_secs(), capture()),
+                    None => write_heartbeat(&cfg, started.elapsed().as_secs(), capture()),
+                }
             }
         })
         .ok();
+}
+
+/// One heartbeat into `LOG_DIR/<sensor>.heartbeat`, via a rename so the server never reads half of
+/// it. The server takes the file's mtime as last seen (same host, same clock). Failure is silent for
+/// the same reason a lost datagram is: it shows on the server as the silence it is.
+fn write_heartbeat(cfg: &OutputConfig, uptime: u64, capture: (u64, u64)) {
+    let now = SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.as_secs()).unwrap_or(0);
+    let payload = heartbeat_payload(&cfg.sensor_name, now, uptime, 0, capture);
+    let path = cfg.log_dir.join(format!("{}.heartbeat", heartbeat_name(&cfg.sensor_name)));
+    let tmp = path.with_extension("heartbeat.tmp");
+    if std::fs::write(&tmp, &payload).is_ok() && std::fs::rename(&tmp, &path).is_err() {
+        let _ = std::fs::remove_file(&tmp);
+    }
 }
 
 /// One heartbeat, on its own short-lived socket.
@@ -979,6 +1006,52 @@ mod heartbeat_tests {
         assert_eq!(fields[1], "!HB");
         assert_eq!(fields[2], "e2e-probe");
         assert_eq!(fields[3], crate::settings::VERSION);
+    }
+
+    /// No LOG_SERVER: the single-host install. The beat goes to LOG_DIR, where the server reads it.
+    #[test]
+    fn without_a_log_server_the_heartbeat_is_a_file_in_log_dir() {
+        use std::sync::atomic::AtomicBool;
+        use std::sync::Arc;
+
+        let dir = std::env::temp_dir().join(format!("mt-hb-{}", std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let cfg = |disabled: bool, name: &str| {
+            Arc::new(super::OutputConfig {
+                sensor_name: name.to_string(),
+                log_dir: dir.clone(),
+                trails_file: dir.join("trails.csv"),
+                disable_local_log_storage: disabled,
+                local_log_json: false,
+                console: false,
+                log_server: None,
+                log_server_secret: None,
+                syslog_server: Vec::new(),
+                logstash_server: Vec::new(),
+                severity_regex: None,
+                throttle: crate::throttle::ThrottleConfig::default(),
+                hostname: "harness".to_string(),
+                ignore: crate::ignore::IgnoreRules::default(),
+                whitelist: Arc::new(crate::whitelist::Whitelist::default()),
+                show_debug: false,
+            })
+        };
+        let shutdown = Arc::new(AtomicBool::new(false));
+        super::spawn_heartbeat(cfg(false, "local box"), 3600, shutdown.clone(), || (9, 2));
+        super::spawn_heartbeat(cfg(true, "nowhere"), 3600, shutdown.clone(), || (9, 2));
+
+        let file = dir.join("localbox.heartbeat");
+        let deadline = std::time::Instant::now() + std::time::Duration::from_secs(10);
+        while !file.exists() && std::time::Instant::now() < deadline {
+            std::thread::sleep(std::time::Duration::from_millis(50));
+        }
+        shutdown.store(true, std::sync::atomic::Ordering::Relaxed);
+        let text = std::fs::read_to_string(&file).expect("no heartbeat file was written");
+        let fields: Vec<&str> = text.split(' ').collect();
+        assert_eq!((fields.len(), fields[1], fields[2]), (8, "!HB", "localbox"), "unexpected heartbeat: {text}");
+        assert_eq!(&fields[6..], ["9", "2"]);
+        assert!(!dir.join("nowhere.heartbeat").exists(), "no local storage, no LOG_DIR to write to");
+        let _ = std::fs::remove_dir_all(&dir);
     }
 
     #[test]

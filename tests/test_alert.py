@@ -380,6 +380,20 @@ class SensorSilenceTest(unittest.TestCase):
         self.assertEqual(len(self.errors), 2, "both facts also go to error.log")
         self.assertIn("sensor 'box' (10.0.0.9): sensor silent since", self.errors[0])
 
+    def test_a_local_sensor_without_log_server_is_watched_through_its_file(self):
+        # The single-host install: no LOG_SERVER, so the sensor writes LOG_DIR/<name>.heartbeat.
+        path = os.path.join(self.tmp, "localbox.heartbeat")
+        with open(path, "wb") as f:
+            f.write(b"1 !HB localbox 3.6 5 0 100 0")
+        os.utime(path, (1000, 1000))
+        self.assertEqual(alert.check_sensors(now=1000), 0, "a fresh local sensor is not news")
+        self.assertEqual([_["sensor"] for _ in self.L.sensor_status()], ["localbox"])
+        self.assertEqual(alert.check_sensors(now=1000 + 901), 1, "a file that stopped changing is a silent sensor")
+        self.assertIn("silent since", self.sent[-1]["info"])
+        os.utime(path, (5000, 5000))
+        self.assertEqual(alert.check_sensors(now=5000), 1)
+        self.assertEqual(self.sent[-1]["info"], "sensor reporting again")
+
     def test_a_dropping_capture_is_reported_once_and_its_end_once(self):
         def beat(sec, captured, dropped):
             self._seen("box", sec)

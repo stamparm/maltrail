@@ -17,6 +17,7 @@ import urllib.request
 
 from core import logfmt
 from core.log import load_sensor_status
+from core.log import read_local_heartbeats
 from core.log import log_error
 from core.log import save_sensor_status
 from core.log import sensor_status
@@ -523,6 +524,7 @@ def check_sensors(now=None):
     """Alert on sensors that went silent or came back, and persist the table. Returns the alerts sent."""
 
     now = int(time.time() if now is None else now)
+    read_local_heartbeats()
     # A sensor silent past SENSOR_FORGET_AFTER is taken as retired: not alerted on, not kept.
     rows = [_ for _ in sensor_status() if now - _.get("last_seen", 0) < SENSOR_FORGET_AFTER]
     names, alerts = set(_["sensor"] for _ in rows), 0
