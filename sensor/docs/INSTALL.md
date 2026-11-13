@@ -313,7 +313,7 @@ Alert on these six. Every one of them means *this sensor is not detecting what y
 | `maltrail_up == 0` | no capture worker is alive — this host is **not being monitored** |
 | `rate(maltrail_capture_dropped_total) > 0` | the capture ring is dropping packets: **missed detections**, and nothing else in the sensor's output makes that visible in time to act |
 | `rate(maltrail_local_log_errors_total) > 0` | detections were produced and then **lost** on the way to disk |
-| `rate(maltrail_remote_log_errors_total) > 0` | detections could not be delivered to `LOG_SERVER` / `SYSLOG_SERVER` / `LOGSTASH_SERVER`. With `DISABLE_LOCAL_LOG_STORAGE` there is no second copy, so these are **lost** — and `maltrail_events_written_total` keeps rising regardless, because it counts attempts |
+| `rate(maltrail_remote_log_errors_total) > 0` | detections could not be delivered to `LOG_SERVER` / `SYSLOG_SERVER` / `LOGSTASH_SERVER`. With `DISABLE_LOCAL_LOG_STORAGE` there is no second copy, so these are **lost** — and `maltrail_events_written_total` keeps rising regardless, because it counts attempts. A stopped server counts here too (the `remote_errors=` field of the `[i] metrics:` line, and one `error.log` line per outage plus one when sending resumes): the sockets are connected, so the port-unreachable reply comes back as an error. A firewall that drops datagrams without replying cannot be seen from the sensor; the server's `/sensors` row shows that loss as `lost` (events the sensor's heartbeats say were sent, less those received since its first heartbeat) |
 | `maltrail_trail_generation` not advancing | trails have stopped being refreshed |
 | `maltrail_log_dir_free_bytes` low | evidence storage is filling; Maltrail never deletes event logs to reclaim it (see §9) |
 

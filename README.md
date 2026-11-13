@@ -125,7 +125,7 @@ available daily logs. Events are streamed from `/events` and aggregated in the b
 | Retro hunt | `/hunt` searches all retained daily logs for one indicator rather than only the selected day. Searches are bounded by configurable limits; an optional per-day sidecar index accelerates the sweep and makes `/counts` exact |
 | World map | `/geo` shows per-country event density for the selected day using the external endpoint of each event. Unattributable events remain unmapped rather than being guessed. `HOME_LAT` / `HOME_LON` can be set to draw origin arcs |
 | Triage | Per-threat status (new / investigating / resolved / false positive), free-text notes, tags and hiding. Whitelist rules and OSINT pivots are available from the row context menu |
-| Sensor status | `/sensors` shows which sensors are reporting, the version each runs and how long ago it last checked in |
+| Sensor status | `/sensors` shows which sensors are reporting, the version each runs, how long ago it last checked in and how many of its events never arrived (`lost`) |
 | Saved views | Named filter presets |
 | Export | The current filtered view as CSV, JSON, or defanged indicators |
 | Appearance | Dark and light themes, with discrete text-size steps |

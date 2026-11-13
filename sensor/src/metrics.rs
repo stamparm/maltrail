@@ -292,7 +292,7 @@ impl Registry {
             if t.processing_samples > 0 { t.processing_nanos as f64 / t.processing_samples as f64 } else { 0.0 };
         format!(
             "received={} processed={} ignored={} malformed={} truncated={} fragments={} events={} written={} \
-             throttled={} summarized={} \
+             remote_errors={} throttled={} summarized={} \
              trail_lookups={} capture_drops={} if_drops={} panics={} ns/packet={:.0} trails={} generation={} \
              reloads={}/{} [{}]",
             t.packets_received,
@@ -303,6 +303,7 @@ impl Registry {
             t.packets_fragment,
             t.events,
             t.events_written,
+            t.remote_log_errors,
             t.events_throttled,
             t.events_summarized,
             t.trail_lookups,

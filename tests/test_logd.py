@@ -153,6 +153,25 @@ class TestLogd(unittest.TestCase):
         self.assertLessEqual(len(L.sensor_status()), L.MAX_SENSOR_STATUS,
                              "an unauthenticated flood of invented names grew the status table without bound")
 
+    def test_events_the_sensor_sent_and_this_end_never_received_are_reported_lost(self):
+        row = lambda: [_ for _ in L.sensor_status() if _["sensor"] == "counted"][0]
+        event = lambda: L.heartbeat_event(b'1 "%s" counted 10.0.0.5 1 3.3.3.3 80 TCP IP 3.3.3.3 "x" (y)' % LOCALTIME.encode(), "10.9.9.9")
+
+        L.heartbeat_event(b"0 !HB counted 3.4 10 500", "10.9.9.9")     # the sensor had sent 500 before
+        self.assertEqual((row()["sent"], row()["lost"], row()["uptime"]), (0, 0, 10))
+        for _ in range(7):
+            self.assertFalse(event())
+        L.heartbeat_event(b"0 !HB counted 3.4 20 510", "10.9.9.9")
+        self.assertEqual((row()["sent"], row()["lost"]), (10, 3), "10 sent, 7 received: 3 lost")
+
+        L.heartbeat_event(b"0 !HB counted 3.4 1 2", "10.9.9.9")         # sensor restarted
+        self.assertEqual((row()["sent"], row()["lost"]), (0, 0), "a restarted sensor kept the old count")
+
+        # An older sensor sends five fields: no count, and nothing invented.
+        L.heartbeat_event(b"0 !HB counted 3.4 30", "10.9.9.9")
+        self.assertEqual(row()["uptime"], 30)
+        self.assertNotIn("lost", row())
+
 
 class TestIntakeShape(unittest.TestCase):
     """The receiver used to be a ThreadingUDPServer, so each event cost a fresh THREAD - and because the

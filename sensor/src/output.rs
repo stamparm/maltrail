@@ -141,8 +141,10 @@ pub struct EventSink {
     /// A failed resolution of an endpoint not yet in `resolved()` records a retry deadline here,
     /// so a transient DNS outage cannot silence the sink for the lifetime of the process.
     endpoint_retry: HashMap<String, Instant>,
-    sock4: Option<UdpSocket>,
-    sock6: Option<UdpSocket>,
+    /// One CONNECTED socket per remote endpoint. Connected, because only then does the kernel hand
+    /// back the ICMP port-unreachable a closed server port answers with: an unconnected `send_to`
+    /// "succeeded" into a stopped server forever, and the loss was invisible on both ends.
+    remotes: HashMap<String, Remote>,
     signature_id: Option<(String, Instant)>,
     pub events: u64,
     /// Events that PASSED the throttle and were handed to the sinks. Deliberately not called
@@ -166,6 +168,24 @@ pub struct EventSink {
 /// Total events emitted across all workers (metrics only; never read on the hot path).
 pub static EVENTS_TOTAL: AtomicU64 = AtomicU64::new(0);
 
+/// Event datagrams this process has tried to send to `LOG_SERVER`, carried in every heartbeat. A
+/// loss the sender cannot see - a server restart window, a full receive buffer, a lossy path - is
+/// then a gap the server can compute: this, less what it received.
+pub static LOG_SERVER_SENT: AtomicU64 = AtomicU64::new(0);
+
+/// A remote endpoint's socket, and how many sends have failed since it last delivered.
+struct Remote {
+    addr: SocketAddr,
+    sock: Option<UdpSocket>,
+    failed: u64,
+}
+
+fn connected_socket(addr: SocketAddr) -> Option<UdpSocket> {
+    let sock = UdpSocket::bind(if addr.is_ipv6() { "[::]:0" } else { "0.0.0.0:0" }).ok()?;
+    sock.connect(addr).ok()?;
+    Some(sock)
+}
+
 impl EventSink {
     pub fn new(cfg: Arc<OutputConfig>) -> EventSink {
         let throttle = crate::throttle::Throttle::new(cfg.throttle);
@@ -177,8 +197,7 @@ impl EventSink {
             throttle,
             last_condense_flush: Instant::now(),
             endpoint_retry: HashMap::new(),
-            sock4: None,
-            sock6: None,
+            remotes: HashMap::new(),
             signature_id: None,
             events: 0,
             events_written: 0,
@@ -281,6 +300,7 @@ impl EventSink {
 
         if let Some(endpoint) = self.cfg.log_server.clone() {
             let payload = format!("{} {}", event.sec, line);
+            LOG_SERVER_SENT.fetch_add(1, Ordering::Relaxed);
             match self.cfg.log_server_secret.as_deref() {
                 Some(secret) => {
                     let framed = mts_sign(secret, payload.as_bytes());
@@ -491,35 +511,51 @@ impl EventSink {
             return;
         };
 
-        let is_v6 = addr.is_ipv6();
-        let bind: &str = if is_v6 { "[::]:0" } else { "0.0.0.0:0" };
-        let sock = if is_v6 { &mut self.sock6 } else { &mut self.sock4 };
-        if sock.is_none() {
-            *sock = UdpSocket::bind(bind).ok();
+        let remote = self.remotes.entry(endpoint.to_string()).or_insert(Remote { addr, sock: None, failed: 0 });
+        if remote.addr != addr {
+            // `spawn_resolver` moved the endpoint: a connected socket only ever talks to one peer.
+            remote.addr = addr;
+            remote.sock = None;
         }
-        let Some(s) = sock.as_ref() else {
+        if remote.sock.is_none() {
+            remote.sock = connected_socket(addr);
+        }
+        let Some(s) = remote.sock.as_ref() else {
             // A socket that will not bind used to be swallowed by `.ok()` and an early return.
             log_error(&format!("unable to open a remote logging socket for '{endpoint}'"), true);
             self.remote_log_errors += 1;
             return;
         };
-        if s.send_to(data, addr).is_err() {
-            // Drop and recreate the socket once, exactly like `_send_datagram`.
-            let fresh = UdpSocket::bind(bind).ok();
-            let retried = match &fresh {
-                Some(f) => f.send_to(data, addr).is_ok(),
-                None => false,
-            };
-            if is_v6 {
-                self.sock6 = fresh;
-            } else {
-                self.sock4 = fresh;
+        match s.send(data) {
+            Ok(_) => {
+                if remote.failed > 0 {
+                    log_error(
+                        &format!(
+                            "sending to remote logging endpoint '{endpoint}' again after {} failed send(s)",
+                            remote.failed
+                        ),
+                        false,
+                    );
+                    remote.failed = 0;
+                }
             }
-            if !retried {
-                // The second failure used to be discarded outright, so a remote-only deployment
-                // could lose every event while `events_written` kept climbing.
-                log_error(&format!("unable to send to remote logging endpoint '{endpoint}'"), true);
+            Err(e) => {
+                // On a connected socket the usual error is ECONNREFUSED: the ICMP port-unreachable
+                // for an EARLIER datagram, which nothing was listening for. That one is lost, so it
+                // is counted - while it was invisible, a stopped server cost every event and
+                // `events_written` kept climbing. This datagram was not sent: retry it once on a
+                // fresh socket, exactly like `_send_datagram`.
                 self.remote_log_errors += 1;
+                if remote.failed == 0 {
+                    // Once per outage, not per event; the recovery line above closes it.
+                    log_error(&format!("unable to send to remote logging endpoint '{endpoint}' ({e})"), false);
+                }
+                remote.failed += 1;
+                remote.sock = connected_socket(addr);
+                let retried = remote.sock.as_ref().is_some_and(|f| f.send(data).is_ok());
+                if !retried {
+                    self.remote_log_errors += 1;
+                }
             }
         }
     }
@@ -790,7 +826,9 @@ fn trails_ctime_date(path: &Path) -> String {
 //
 // `core/log.py:heartbeat_event()` is the receiving half.
 
-/// The payload: `<epoch_sec> !HB <sensor> <version> <uptime_s>`.
+/// The payload: `<epoch_sec> !HB <sensor> <version> <uptime_s> <sent>`, `<sent>` being
+/// `LOG_SERVER_SENT`. It was added last so a server that predates it still reads the sensor,
+/// version and liveness; it reads the uptime as unknown, since its last field is no longer a number.
 ///
 /// It must lead with the epoch second, because `mts_open` refuses to verify a signed payload that
 /// does not - which gives a heartbeat the same replay bound an event gets. `!HB` cannot collide
@@ -799,10 +837,10 @@ fn trails_ctime_date(path: &Path) -> String {
 /// The sensor name comes from `SENSOR_NAME` (`$HOSTNAME` by default), so it can contain anything a
 /// hostname can. A space would shift every field after it, so the name is reduced to the
 /// characters the receiver keeps anyway rather than sent as-is and silently misparsed.
-pub fn heartbeat_payload(sensor: &str, now: u64, uptime: u64) -> Vec<u8> {
+pub fn heartbeat_payload(sensor: &str, now: u64, uptime: u64, sent: u64) -> Vec<u8> {
     let name: String = sensor.chars().filter(|c| c.is_alphanumeric() || ".:@+-_".contains(*c)).take(64).collect();
     let name = if name.is_empty() { "-" } else { name.as_str() };
-    format!("{now} !HB {name} {} {uptime}", settings::VERSION).into_bytes()
+    format!("{now} !HB {name} {} {uptime} {sent}", settings::VERSION).into_bytes()
 }
 
 /// Announce this sensor to `LOG_SERVER` every `period` seconds. No-op without a `LOG_SERVER`, and
@@ -847,7 +885,7 @@ fn send_heartbeat(cfg: &OutputConfig, endpoint: &str, uptime: u64) {
     // Events follow the address the heartbeat just reached, so the two cannot disagree.
     publish_endpoint(endpoint, addr);
     let now = SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.as_secs()).unwrap_or(0);
-    let payload = heartbeat_payload(&cfg.sensor_name, now, uptime);
+    let payload = heartbeat_payload(&cfg.sensor_name, now, uptime, LOG_SERVER_SENT.load(Ordering::Relaxed));
     let data = match &cfg.log_server_secret {
         Some(secret) => mts_sign(secret, &payload),
         None => payload,
@@ -868,12 +906,12 @@ mod heartbeat_tests {
     /// both of which fail as a sensor that looks fine and is simply never listed.
     #[test]
     fn the_payload_is_what_the_server_parses() {
-        let payload = heartbeat_payload("box-1", 1786091293, 4242);
+        let payload = heartbeat_payload("box-1", 1786091293, 4242, 17);
         let text = String::from_utf8(payload).unwrap();
-        assert_eq!(text, format!("1786091293 !HB box-1 {} 4242", crate::settings::VERSION));
+        assert_eq!(text, format!("1786091293 !HB box-1 {} 4242 17", crate::settings::VERSION));
 
         let fields: Vec<&str> = text.split(' ').collect();
-        assert_eq!(fields.len(), 5);
+        assert_eq!(fields.len(), 6);
         assert!(
             fields[0].chars().all(|c| c.is_ascii_digit()),
             "mts_open refuses a payload without a leading epoch second"
@@ -929,7 +967,7 @@ mod heartbeat_tests {
 
         let text = String::from_utf8(payload.to_vec()).unwrap();
         let fields: Vec<&str> = text.split(' ').collect();
-        assert_eq!(fields.len(), 5, "unexpected heartbeat shape: {text}");
+        assert_eq!(fields.len(), 6, "unexpected heartbeat shape: {text}");
         assert_eq!(fields[1], "!HB");
         assert_eq!(fields[2], "e2e-probe");
         assert_eq!(fields[3], crate::settings::VERSION);
@@ -938,14 +976,14 @@ mod heartbeat_tests {
     #[test]
     fn a_hostname_cannot_shift_the_fields() {
         // SENSOR_NAME is $HOSTNAME by default, so it is whatever the host is called.
-        let text = String::from_utf8(heartbeat_payload("two words\tand a tab", 1, 0)).unwrap();
-        assert_eq!(text.split(' ').count(), 5, "a name with spaces must not add fields");
+        let text = String::from_utf8(heartbeat_payload("two words\tand a tab", 1, 0, 0)).unwrap();
+        assert_eq!(text.split(' ').count(), 6, "a name with spaces must not add fields");
         assert!(text.contains("!HB twowordsandatab "));
 
-        let text = String::from_utf8(heartbeat_payload("", 1, 0)).unwrap();
+        let text = String::from_utf8(heartbeat_payload("", 1, 0, 0)).unwrap();
         assert!(text.contains("!HB - "), "an empty name must still occupy its field: {text}");
 
-        let long = String::from_utf8(heartbeat_payload(&"n".repeat(500), 1, 0)).unwrap();
+        let long = String::from_utf8(heartbeat_payload(&"n".repeat(500), 1, 0, 0)).unwrap();
         assert_eq!(long.split(' ').nth(2).unwrap().len(), 64, "the name must be capped, not sent whole");
     }
 }
@@ -1269,6 +1307,66 @@ mod tests {
         );
         sink.log_event(&moved, false, true);
         assert!(after.recv_from(&mut buf).is_ok(), "after the address changed, events still went to the old one");
+    }
+
+    /// A stopped server used to cost every event in silence: an unconnected `send_to` succeeds
+    /// whether or not anything listens. Connected, the port-unreachable comes back as an error.
+    #[test]
+    fn a_closed_server_port_is_counted_and_recovery_is_seen() {
+        let cfg = Arc::new(OutputConfig {
+            sensor_name: "closed".to_string(),
+            log_dir: std::env::temp_dir(),
+            trails_file: std::env::temp_dir().join("trails.csv"),
+            disable_local_log_storage: true,
+            local_log_json: false,
+            console: false,
+            log_server: None,
+            log_server_secret: None,
+            syslog_server: Vec::new(),
+            logstash_server: Vec::new(),
+            severity_regex: None,
+            throttle: crate::throttle::ThrottleConfig::default(),
+            hostname: "harness".to_string(),
+            ignore: crate::ignore::IgnoreRules::default(),
+            whitelist: Arc::new(crate::whitelist::Whitelist::default()),
+            show_debug: false,
+        });
+        let mut sink = EventSink::new(cfg);
+        let mut buf = [0u8; 64];
+
+        // Positive control: a listening port costs nothing and receives everything.
+        let open = UdpSocket::bind("127.0.0.1:0").unwrap();
+        open.set_read_timeout(Some(Duration::from_secs(5))).unwrap();
+        let endpoint = open.local_addr().unwrap().to_string();
+        for _ in 0..5 {
+            sink.send_datagram(&endpoint, b"event");
+        }
+        for _ in 0..5 {
+            assert!(open.recv_from(&mut buf).is_ok(), "an event to a listening port did not arrive");
+        }
+        assert_eq!(sink.remote_log_errors, 0, "a listening server must not count as a failure");
+
+        // The same port, now closed: every datagram after the first is refused by the time the
+        // next one is sent (on loopback the ICMP is generated inside the send itself).
+        drop(open);
+        for _ in 0..5 {
+            sink.send_datagram(&endpoint, b"event");
+        }
+        assert_eq!(sink.remote_log_errors, 4, "a closed server port was not reported");
+        assert_eq!(sink.remotes[&endpoint].failed, 4);
+
+        // Recovery: the server comes back on the same port. The first send still reports the
+        // refusal of the last datagram sent while it was down; the next one delivers and closes the
+        // outage.
+        let back = UdpSocket::bind(endpoint.as_str()).unwrap();
+        back.set_read_timeout(Some(Duration::from_secs(5))).unwrap();
+        sink.send_datagram(&endpoint, b"event");
+        sink.send_datagram(&endpoint, b"event");
+        assert_eq!(sink.remote_log_errors, 5);
+        assert_eq!(sink.remotes[&endpoint].failed, 0, "delivery resumed but the outage was not closed");
+        for _ in 0..2 {
+            assert!(back.recv_from(&mut buf).is_ok(), "the restarted server did not receive");
+        }
     }
 
     #[test]

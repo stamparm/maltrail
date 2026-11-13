@@ -54,6 +54,10 @@ _thread_data = threading.local()
 _sensor_status = OrderedDict()
 _sensor_status_lock = threading.Lock()
 MAX_SENSOR_STATUS = 1024
+# Delivery accounting (heartbeat_event): events received per sending address, and per sensor the
+# (address, sent, received) its count started from.
+_received = {}
+_delivery = {}
 MAX_SENSOR_FIELD = 64
 
 # Datagrams refused by mts_open(), per sending address: the other half of the liveness picture. A
@@ -510,7 +514,7 @@ def _sensor_field(value):
 def heartbeat_event(data, source):
     """Record a liveness datagram, and report whether that is what this was.
 
-    The payload is `<epoch_sec> !HB <sensor> <version> <uptime_s>`. It leads with the epoch second
+    The payload is `<epoch_sec> !HB <sensor> <version> <uptime_s> [<sent>]`. It leads with the epoch second
     because mts_open() requires that of anything signed - so a heartbeat gets the same replay
     bound as an event - and `!HB` cannot be confused with an event, whose second token is always a
     quoted local timestamp.
@@ -519,19 +523,34 @@ def heartbeat_event(data, source):
     not a detection, and writing it to the log would put it in /events, /counts and /fail2ban.
     """
 
-    # maxsplit: a heartbeat has exactly five fields, and a 64 KB datagram of spaces should not
+    # maxsplit: a heartbeat has at most six fields, and a 64 KB datagram of spaces should not
     # become a 32,000-element list on the receive loop's only thread.
-    parts = data.split(b' ', 4)
+    parts = data.split(b' ', 5)
     if len(parts) < 3 or parts[1] != HEARTBEAT_MARK:
+        if source in _received:
+            _received[source] += 1
         return False
 
-    uptime = parts[4].strip() if len(parts) > 4 else b""
+    number = lambda i: int(parts[i]) if len(parts) > i and parts[i].strip().isdigit() and len(parts[i]) <= 20 else None
     sensor = _sensor_field(parts[2]) or '-'
     status = {"sensor": sensor,
               "version": _sensor_field(parts[3]) if len(parts) > 3 else "",
-              "uptime": int(uptime) if uptime.isdigit() and len(uptime) <= 20 else None,
+              "uptime": number(4),
               "address": source,
               "last_seen": int(time.time())}
+
+    # The sixth field (newer sensors) counts the events sent to LOG_SERVER. Against what arrived
+    # from the same address since this receiver first heard the sensor, the difference is what was
+    # lost on the way - a full receive buffer, a lossy path - which neither end could see before.
+    # A sensor restart (the count goes down) or a new address starts the count again.
+    sent, base = number(5), _delivery.get(sensor)
+    if sent is not None and (base is None or base[0] != source or sent < base[1]):
+        base = None
+        if sensor in _delivery or max(len(_delivery), len(_received)) < MAX_SENSOR_STATUS:
+            base = _delivery[sensor] = (source, sent, _received.setdefault(source, 0))
+    if sent is not None and base is not None:
+        status["sent"] = sent - base[1]
+        status["lost"] = max(0, status["sent"] - (_received[source] - base[2]))
 
     with _sensor_status_lock:
         # move_to_end makes the dict ordered by recency, so popitem(last=False) drops the sensor
