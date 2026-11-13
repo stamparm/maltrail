@@ -91,9 +91,21 @@ class DoctorChecks(unittest.TestCase):
     # --- users -----------------------------------------------------------------------
 
     def test_empty_users_fails(self):
+        # empty USERS does not reject logins, it turns them off: get_session() serves everyone
         settings.config.USERS = []
+        settings.config.HTTP_ADDRESS = "0.0.0.0"
         findings = doctor.check_users()
         self.assertEqual(doctor.FAIL, findings[0][0])
+        self.assertIn("without login", findings[0][1])
+        self.assertNotIn("reject", findings[0][1])
+
+    def test_empty_users_on_loopback_only_warns(self):
+        settings.config.USERS = []
+        for address in ("127.0.0.1", "::1"):
+            settings.config.HTTP_ADDRESS = address
+            findings = doctor.check_users()
+            self.assertEqual(doctor.WARN, findings[0][0], address)
+            self.assertIn("without login", findings[0][1])
 
     def test_populated_users_ok(self):
         from core import password
@@ -142,6 +154,8 @@ class DoctorChecks(unittest.TestCase):
         self.assertEqual(0, doctor.run())  # healthy baseline (port 0, fresh trails)
         settings.config.USERS = []
         import io
+        self.assertEqual(0, doctor.run(io.StringIO()), "empty USERS on loopback is a deliberate setup, not a failure")
+        settings.config.HTTP_ADDRESS = "0.0.0.0"
         out = io.StringIO()
         self.assertEqual(1, doctor.run(out))
         self.assertIn("1 problem(s)", out.getvalue())

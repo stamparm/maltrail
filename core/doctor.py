@@ -9,7 +9,7 @@ See the file 'LICENSE' for copying permission
 The sensor has `-T/--test-config` for exactly this reason: the only
 way to learn that LOG_DIR is unwritable or the trails file is months old used to be to start
 capturing and watch. A server has the same failure modes - plus its own: the reporting port taken
-by another process, an empty USERS table nobody can log into, an intake address the dashboard can
+by another process, an empty USERS table that serves everything without login, an intake address the dashboard can
 never reach. Every finding here is something that otherwise surfaces as a silent half-working
 server hours or days after the operator walked away.
 
@@ -82,10 +82,13 @@ def check_trails_freshness():
 
 
 def check_users():
-    """An empty USERS array means a running server nobody can log into."""
+    """An empty USERS array turns login off: the dashboard and the event log are served to anyone."""
     users = config.USERS or []
     if not users:
-        return [(FAIL, "USERS table is empty - the web UI will reject every login")]
+        from core.httpd import _is_loopback
+        address = config.HTTP_ADDRESS or "0.0.0.0"
+        level = WARN if _is_loopback(address) else FAIL
+        return [(level, "USERS table is empty - the dashboard and the event log are served without login to anyone who can reach %s:%s" % (address, config.HTTP_PORT))]
     from core.password import parse
     legacy = [_.split(':', 3)[0].strip() for _ in users if len(_.split(':', 3)) == 4 and not parse(re.sub(r"\s", "", _).split(':', 3)[1])]
     if legacy:

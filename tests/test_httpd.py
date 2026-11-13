@@ -88,6 +88,11 @@ def _http_from(port, method, path, source, cookie=None, timeout=10):
     return status, head_t, payload
 
 
+def _nonce(port, username="admin"):
+    """A login nonce issued by the server, as the dashboard gets one: a made-up one is refused."""
+    return json.loads(_http(port, "GET", "/login/params?username=%s" % username)[2].decode())["nonce"]
+
+
 def _stop_server(proc):
     """Stop a server subprocess without letting cleanup itself fail the test.
 
@@ -209,7 +214,7 @@ class TestHttpd(unittest.TestCase):
             self.skipTest(self._skip)
 
     def _login_body(self, username="admin"):
-        import binascii; nonce = binascii.hexlify(os.urandom(16)).decode()
+        nonce = _nonce(self.port)
         h = hashlib.sha256((STORED + nonce).encode()).hexdigest()   # both test users share the same stored hash
         return "username=%s&nonce=%s&hash=%s" % (username, nonce, h)
 
@@ -249,6 +254,14 @@ class TestHttpd(unittest.TestCase):
         nonce = self._params("salted")["nonce"]
         self.assertEqual(self._salted_login(SALTED_PW, nonce=nonce), 200)
         self.assertEqual(self._salted_login(SALTED_PW, nonce=nonce), 401, "a spent nonce must not work twice")
+
+    def test_a_legacy_digest_needs_a_nonce_this_server_issued_too(self):
+        # the old sha256 form skipped the issued-nonce check: a made-up nonce logged in, and a
+        # captured (nonce, hash) did again after a restart emptied DISPOSED_NONCES
+        made_up = "fedcba9876543210fedcba9876543210"
+        body = "username=admin&nonce=%s&hash=%s" % (made_up, hashlib.sha256((STORED + made_up).encode()).hexdigest())
+        self.assertEqual(_http(self.port, "POST", "/login", body=body)[0], 401, "a nonce this server never issued logged in")
+        self.assertEqual(_http(self.port, "POST", "/login", body=self._login_body())[0], 200, "the control: an issued nonce must log in")
 
     def test_login_parameters_do_not_tell_which_users_exist(self):
         known, unknown = self._params("salted"), self._params("nobody-here")
@@ -607,8 +620,7 @@ class TestHttpd(unittest.TestCase):
                     except OSError: time.sleep(0.25)
 
                 def login(user):
-                    import binascii as _b
-                    nonce = _b.hexlify(os.urandom(16)).decode()
+                    nonce = _nonce(port)
                     h = hashlib.sha256((STORED + nonce).encode()).hexdigest()
                     _, hd, _b2 = _http(port, "POST", "/login",
                                        body="username=%s&nonce=%s&hash=%s" % (user, nonce, h))
@@ -1078,8 +1090,7 @@ class TestHttpd(unittest.TestCase):
             os.remove(extra)
 
     def _failed_login(self, username="admin"):
-        import binascii
-        nonce = binascii.hexlify(os.urandom(16)).decode()
+        nonce = _nonce(self.port)
         h = hashlib.sha256(("0" * 64 + nonce).encode()).hexdigest()
         return _http(self.port, "POST", "/login", body="username=%s&nonce=%s&hash=%s" % (username, nonce, h))
 
@@ -1624,8 +1635,7 @@ class TestHttpd(unittest.TestCase):
                     except OSError: time.sleep(0.25)
 
                 def login(user):
-                    import binascii as _b
-                    nonce = _b.hexlify(os.urandom(16)).decode()
+                    nonce = _nonce(port)
                     h = hashlib.sha256((STORED + nonce).encode()).hexdigest()
                     _, hd, _x = _http(port, "POST", "/login",
                                       body="username=%s&nonce=%s&hash=%s" % (user, nonce, h))
@@ -1849,8 +1859,7 @@ class TestPublishedPasswordStaysLocal(unittest.TestCase):
             _stop_server(cls.proc)
 
     def _login_from(self, host, username, stored):
-        import binascii
-        nonce = binascii.hexlify(os.urandom(16)).decode()
+        nonce = _nonce(self.port)
         return self._post_from(host, "username=%s&nonce=%s&hash=%s" % (username, nonce, hashlib.sha256((stored + nonce).encode()).hexdigest()))
 
     def _post_from(self, host, body):
@@ -2022,8 +2031,7 @@ class TestRipeLookupsDisabled(unittest.TestCase):
     def test_a_valid_public_address_gets_204_without_delay(self):
         if getattr(type(self), "_skip", None):
             self.skipTest(self._skip)
-        import binascii
-        nonce = binascii.hexlify(os.urandom(16)).decode()
+        nonce = _nonce(self.port)
         h = hashlib.sha256((STORED + nonce).encode()).hexdigest()
         st, head, _ = _http(self.port, "POST", "/login", body="username=admin&nonce=%s&hash=%s" % (nonce, h))
         self.assertEqual(st, 200, "login should succeed")
@@ -2126,8 +2134,8 @@ class TestGeoReadsEveryLineShape(unittest.TestCase):
                     try:
                         socket.create_connection(("127.0.0.1", port), timeout=0.5).close(); break
                     except OSError: time.sleep(0.25)
-                import binascii as _b, json as _json
-                nonce = _b.hexlify(os.urandom(16)).decode()
+                import json as _json
+                nonce = _nonce(port)
                 h = hashlib.sha256((STORED + nonce).encode()).hexdigest()
                 _, hd, _x = _http(port, "POST", "/login",
                                   body="username=admin&nonce=%s&hash=%s" % (nonce, h))
@@ -2497,8 +2505,7 @@ class TestBlacklistAccessControl(unittest.TestCase):
         self.assertNotIn(b"10.13.13.2", body)
 
     def test_an_authenticated_operator_still_gets_it(self):
-        import binascii
-        nonce = binascii.hexlify(os.urandom(16)).decode()
+        nonce = _nonce(self.port)
         h = hashlib.sha256((STORED + nonce).encode()).hexdigest()
         st, head, _ = _http(self.port, "POST", "/login", body="username=admin&nonce=%s&hash=%s" % (nonce, h))
         self.assertEqual(st, 200, "login should succeed")
@@ -2681,8 +2688,7 @@ class TestAuthEventForwarding(unittest.TestCase):
             pass
 
     def _attempt(self, username, good):
-        import binascii
-        nonce = binascii.hexlify(os.urandom(16)).decode()
+        nonce = _nonce(self.port)
         secret = STORED if good else "0" * 64
         h = hashlib.sha256((secret + nonce).encode()).hexdigest()
         _http(self.port, "POST", "/login", body="username=%s&nonce=%s&hash=%s" % (username, nonce, h))

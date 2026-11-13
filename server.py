@@ -25,6 +25,7 @@ from core.common import check_sudo
 from core.common import get_ex_message
 from core.common import patch_parser
 from core.common import uses_published_key
+from core.httpd import _is_loopback
 from core.httpd import is_published_password
 from core.httpd import start_httpd
 from core import password
@@ -135,6 +136,8 @@ def main():
         print("[!] 'USERS' stores sha256(password) for %s: that value logs in as well as the password does, for anyone who can read the configuration. Regenerate it with 'python3 server.py --hash-password'" % ", ".join("'%s'" % _ for _ in legacy))
     if any(len(_) == 4 and is_published_password(_[1]) for _ in users):
         print("[!] 'USERS' still holds the published default password ('changeme!'): it is accepted only from this machine, set your own to sign in over the network")
+    if not users and not _is_loopback(config.HTTP_ADDRESS or "0.0.0.0"):
+        print("[!] 'USERS' is empty: the dashboard and the event log are served without login to anyone who can reach %s:%s" % (config.HTTP_ADDRESS or "0.0.0.0", config.HTTP_PORT))
 
     def update_timer():
         retries = 0

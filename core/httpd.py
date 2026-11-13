@@ -1783,7 +1783,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                                     valid = True
                                     break
                                 continue
-                            if not params.get("hash"):
+                            # The same issued-nonce rule as the proof above: checked before the
+                            # digest, so a wrong guess spends the nonce too.
+                            if not params.get("hash") or not _redeem_nonce(params.get("nonce")):
                                 continue
                             try:
                                 # compare_digest, not ==: Python's string comparison returns on the first

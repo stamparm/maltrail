@@ -166,8 +166,8 @@ class SensorToServer(unittest.TestCase):
             shutil.rmtree(cls.tmp, ignore_errors=True)
 
     def _login(self):
-        import binascii
-        nonce = binascii.hexlify(os.urandom(16)).decode()
+        import json
+        nonce = json.loads(_http(self.port, "GET", "/login/params?username=admin")[2].decode())["nonce"]
         digest = hashlib.sha256((STORED + nonce).encode()).hexdigest()
         body = "username=admin&nonce=%s&hash=%s" % (nonce, digest)
         status, head, _ = _http(self.port, "POST", "/login", body=body)
