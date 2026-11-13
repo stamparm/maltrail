@@ -54,6 +54,16 @@ INERT = [
     ("ja3:da39a3ee5e6b4b0d3255bfef95601890afd80709", "a SHA-1 is not a JA3: the assembler leaves it out"),
     ("cert:1e7c622032b0cb79401b0f7be3793a1a", "an MD5 is not a certificate hash"),
     ("ja4:evil.com", "not a JA4"),
+    # address trails used to be waved through on the strength of a ':' - the sensor matches the
+    # address it RENDERS, and nothing renders as any of these
+    ("182.86.133:8880", "an IPv4:port with a quad missing"),
+    ("144.31.61.102::8084", "a doubled colon before the port"),
+    ("[201:b479:2771:8df4:b5eb:d007:63b0]:2838", "seven IPv6 groups: not an address"),
+    ("213.165.60.118:22:443", "two ports written as one trail"),
+    ("45.83.220.17:0", "port 0"),
+    ("45.83.220.17:70000", "port above 65535"),
+    ("999.83.220.17", "an octet above 255"),
+    ("[2001:db8::1]", "brackets are only ever rendered with a port"),
 ]
 
 # (key, why it does reach traffic)
@@ -69,6 +79,9 @@ REACHABLE = [
     ("45.83.220.17", "an IPv4 trail, not a name"),
     ("45.83.220.17:4444", "an IPv4:port trail"),
     ("2001:db8::1", "an IPv6 trail"),
+    ("[2a12:bec4:1460:50::2]:3478", "an [IPv6]:port trail"),
+    ("[201:b479:2771:8df4:b5eb:d007:63b0:2838]:8080", "Yggdrasil (200::/7): an overlay C2, deliberate"),
+    ("evil.biz:443", "a URL trail's host with its port - entries() reduces `evil.biz:443/gate.php` to this"),
     ("bad..biz", "an empty interior label: DNS cannot carry it, but an HTTP Host or SNI can"),
     ("dyn_host.dyn.biz", "'_' is legal in every label but the last"),
     ("*.evil.biz", "a wildcard trail, matched by regex"),
@@ -189,6 +202,9 @@ class HeaderTest(unittest.TestCase):
         ("# Reference: ", "trailing"),
         ("# Reference: # Reference: https://example.invalid/a", "pasted"),
         ("# Reference:  # Reference: https://example.invalid/a", "pasted"),
+        ("# Reference; https://example.invalid/a", "separator"),     # malware/powershell_injector.txt
+        ("# Reference, https://example.invalid/a", "separator"),
+        ("# Aliases= foo, bar", "separator"),
     ]
 
     GOOD = [
@@ -200,6 +216,8 @@ class HeaderTest(unittest.TestCase):
         "# Generic trails:",
         "# TITLE-HOST/IP=airbot admin panel",
         "# evil.example",                    # a commented-out entry
+        "# References, if any, are in the pile below",
+        "# Reference servers seen in the sample",
     ]
 
     def test_every_malformed_header_is_caught(self):
@@ -671,6 +689,51 @@ class AddressTrailsAreJudgedToo(unittest.TestCase):
         # piles. Mirror it, or this reports deliberate entries as broken.
         for info in ("parking site", "sinkhole"):
             self.assertIsNone(C.classify("104.16.155.10", set(), info), info)
+
+
+class MalformedEntriesFromTheAudit(unittest.TestCase):
+    """Classes a hand audit of the content found and this gate let through, one test per class."""
+
+    def test_non_routable_ipv6_warns(self):
+        # update_trails() has no IPv6 bogon table, so these ship - a warning, not inert
+        for key in ("[fe80::2c33:349f:8bec:ffa9]:49172", "::1", "[fd00::1]:80", "[0:0:0:0:0:ffff:2d3e:c649]:53"):
+            verdict = C.classify(key, set(), "")
+            self.assertEqual(verdict and verdict[0], "warn", "%r -> %s" % (key, verdict))
+        # and the parking/sinkhole exemption covers them like it covers IPv4 bogons
+        self.assertIsNone(C.classify("[fe80::1]:80", set(), "sinkhole"))
+        # Yggdrasil is not "reserved" for this purpose, whatever ipaddress.is_reserved says
+        self.assertIsNone(C.classify("[201:b479:2771:8df4:b5eb:d007:63b0:2838]:8080", set(), ""))
+
+    def test_a_path_the_wire_never_carries_is_inert(self):
+        # the sensor matches the raw, still percent-encoded path: a literal space or non-ASCII never arrives
+        for raw in ("evil.biz/some file.exe", "http://evil.biz/\u0444\u0430\u0439\u043b.php", "/gate .php"):
+            host = raw.split("://")[-1].split("/")[0]
+            verdict = C.classify(host, set(), "", raw)
+            self.assertEqual(verdict and verdict[0], "inert", "%r -> %s" % (raw, verdict))
+            self.assertIn("percent-encode", verdict[1])
+        # encoded, it is fine; and a host-ful trail's query is dropped by update_trails() anyway
+        for raw in ("evil.biz/some%20file.exe", "evil.biz/a.php?q=a b", "/gate%20.php", "evil.biz/x[0-9]+ y"):
+            host = raw.split("/")[0]
+            self.assertIsNone(C.classify(host, set(), "", raw), raw)
+
+    def test_a_trailing_question_mark_warns_only_without_a_host(self):
+        verdict = C.classify("", set(), "", "/cankl2k.php?")
+        self.assertEqual(verdict and verdict[0], "warn")
+        # update_trails() strips a host-ful trail's '?query', so there it is harmless
+        self.assertIsNone(C.classify("evil.biz", set(), "", "evil.biz/cankl2k.php?"))
+        self.assertIsNone(C.classify("", set(), "", "/cankl2k.php?id="))
+
+    def test_a_path_warning_never_hides_an_inert_host(self):
+        verdict = C.classify("host_.tld_", set(), "", "host_.tld_/x?")
+        self.assertEqual(verdict[0], "inert")
+
+    def test_a_hosts_file_paste_warns(self):
+        for key in ("0.0.0.0www.androidapk.world", "0www.example.com", "127.0.0.1www.evil.biz"):
+            verdict = C.classify(key)
+            self.assertEqual(verdict and verdict[0], "warn", "%r -> %s" % (key, verdict))
+        # real names that merely start with digits and 'www' - a looser prefix reported these
+        for key in ("360www.ca", "222www.no-ip.biz", "001www.com"):
+            self.assertIsNone(C.classify(key), key)
 
 
 class UrlTrailsAreNotDomainTrails(unittest.TestCase):

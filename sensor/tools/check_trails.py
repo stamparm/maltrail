@@ -76,6 +76,7 @@ import argparse
 import datetime
 import difflib
 import io
+import ipaddress
 import os
 import re
 import sys
@@ -95,7 +96,6 @@ def _default_trails_path():
     return os.path.join(os.path.dirname(ROOT), "trails")
 sys.path.insert(0, ROOT)
 
-from core.addr import leading_ipv4  # noqa: E402
 from core.assemble import fingerprint  # noqa: E402
 from core.common import bogon_ip, cdn_ip  # noqa: E402
 from core.settings import IGNORE_DNS_QUERY_SUFFIXES  # noqa: E402
@@ -109,12 +109,21 @@ read_bogon_ranges()
 
 VALID_DNS = re.compile(VALID_DNS_NAME_REGEX)
 IPV4 = re.compile(r"\A\d+\.\d+\.\d+\.\d+\Z")
-IPV4_PORT = re.compile(r"\A\d{1,3}(?:\.\d{1,3}){3}:\d{1,5}\Z")
 # A TLS fingerprint written bare - the shapes the sensor recognises (`trails::fingerprint_shape`):
 # JA3 (MD5 hex), a certificate's SHA-1 or SHA-256 hex, anything ending in JA4's `_<12 hex>_<12 hex>`.
 # Static files write them typed ("ja3:...", see core/assemble.py:fingerprint); a bare one still
 # matches, but nothing says which kind of hash it is.
 FINGERPRINT = re.compile(r"\A(?:[0-9a-f]{32}|[0-9a-f]{40}|[0-9a-f]{64}|.*_[0-9a-f]{12}_[0-9a-f]{12})\Z")
+# A hosts-file line pasted without its separator: `0.0.0.0 www.evil.com` became `0.0.0.0www.evil.com`
+# (or `0www.evil.com` when the column was cut short). Still a valid name, so it loads - for a host
+# nobody will ever query. Only the sink addresses hosts files use, and only before a whole name:
+# `360www.ca`, `222www.no-ip.biz` and `001www.com` are real names, and a looser prefix reported them.
+HOSTS_PASTE = re.compile(r"\A(?:0\.0\.0\.0|127\.0\.0\.1|0)www\.[^.]+\.")
+# IPv6 ranges that name a machine's OWN interface or segment rather than anything on the internet. A
+# sandbox report lists them because the sample talked to its own link-local neighbour. Deliberately
+# NOT `ipaddress`'s is_private/is_reserved: those include 200::/7, which is Yggdrasil - real overlay
+# C2 (`[201:b479:...]:8080` in malware/norddragonscan.txt) that the sensor matches like any other.
+ULA = ipaddress.ip_network("fc00::/7")
 
 # Characters that look like a separator but are not one. An indicator carrying these was almost
 # certainly transcribed from a report rather than internationalised on purpose.
@@ -255,12 +264,113 @@ def tlds(suffixes):
     return frozenset(_.rsplit('.', 1)[-1] for _ in suffixes or ())
 
 
+def address_problem(key, info=""):
+    """(verdict, name) for a key that looks like an address: `verdict` as classify() returns it, and `name`
+    set only when the key turned out to be a NAME with a port, which the caller then judges as a name.
+
+    Every key with a ':' used to be waved through here as "an address", so a malformed one was the
+    quietest kind of inert: `182.86.133:8880` (a quad missing), `144.31.61.102::8084` (a doubled colon),
+    `[201:b479:2771:8df4:b5eb:d007:63b0]:2838` (seven groups). The sensor matches an address trail
+    against the address it RENDERS from the packet (`1.2.3.4`, `1.2.3.4:80`, `2001:db8::1`,
+    `[2001:db8::1]:80` - core/addr.py:canonical_ip_trail), so a string no address renders as matches
+    nothing, ever. The stdlib parser decides, not another regex.
+    """
+
+    host, port, bracketed = key, None, key.startswith('[')
+    if bracketed:
+        host, _, port = key[1:].partition(']')
+        if not port.startswith(':'):
+            return ("inert", "a bracketed address is only ever rendered as '[IPv6]:port'"), None
+        port = port[1:]
+    elif key.count(':') == 1:
+        host, _, port = key.partition(':')
+    if port is not None and not (port.isdigit() and 0 < int(port) <= 0xffff):
+        return ("inert", "invalid port: %r is not 1-65535, so no connection is rendered with it" % port), None
+    try:
+        address = ipaddress.ip_address(host)
+    except ValueError:
+        if re.match(r"\A[\d.]+(?::\d+){2,}\Z", key):
+            # `213.165.60.118:22:443` - a report's "ports 22 and 443", written as one trail
+            return ("inert", "several ports on one address: write one trail per port (%r matches nothing)" % key), None
+        if bracketed or ':' in host or re.match(r"\A[\d.]+\Z", host):
+            return ("inert", "not a valid IPv4/IPv6 address, with or without a port - nothing on the wire "
+                             "is rendered as %r" % key), None
+        return None, host                        # `evil.com:443`: a name with a port
+
+    # update_trails() spares parking/sinkhole entries, whose whole point is to name shared
+    # infrastructure. Mirror that, or this reports them as broken when they are deliberate.
+    if any(_ in info for _ in ("parking", "sinkhole")):
+        return None, None
+    if address.version == 4:
+        # An ADDRESS trail can be unreachable for a second reason, and until this looked it was the
+        # one inert class nothing reported. update_trails() deletes any trail whose leading quad is a
+        # CDN edge or a bogon (core/update.py), so such an entry is added, reviewed, committed, and then
+        # silently dropped from every build: the report said "C2 at 104.16.155.10:8888", somebody put it
+        # in, and no deployment ever matched it. That is worse than a false positive, because it looks
+        # like detection.
+        if cdn_ip(str(address)):
+            return ("inert", "%s is a CDN edge address: update_trails() drops it, so this trail never reaches a deployment" % address), None
+        if bogon_ip(str(address)):
+            return ("inert", "%s is a bogon: update_trails() drops it, so this trail never reaches a deployment" % address), None
+        return None, None
+    # IPv6 has no bogon table in update_trails() (bogon_ip() is IPv4-only), so these DO ship: a warning,
+    # not inert. They can only ever match traffic on a sensor's own segment, never the C2 of the report.
+    if address.ipv4_mapped:
+        return ("warn", "an IPv4-mapped IPv6 address: on the wire this is plain IPv4 %s, so write that" % address.ipv4_mapped), None
+    if address.is_unspecified or address.is_loopback or address.is_link_local or address.is_multicast or address in ULA:
+        return ("warn", "a non-routable IPv6 address (loopback/link-local/unique-local/multicast): %s is the "
+                        "sandbox's own segment, not a C2 - it ships, but matches only a sensor's local traffic" % address), None
+    return None, None
+
+
+def path_problem(raw):
+    """(severity, reason) for a URL/path trail whose PATH can never match, or None.
+
+    The sensor looks a request up by its path exactly as it arrived - still percent-encoded, only
+    lowercased (sensor/src/protocols/http.rs:build_checks). A client never sends a literal space or a
+    raw non-ASCII byte there, so a trail carrying one was copied from a browser's address bar or a
+    report's rendering, and matches nothing. entries() reduces a URL trail to its host for every other
+    check, so this one reads `raw`.
+    """
+
+    rest = (raw or "").split("://", 1)[-1]
+    if '/' not in rest or '\\' in raw or WILDCARD.search(raw):
+        return None                              # no path, or a regex trail with its own grammar
+    hostless = rest.startswith('/')
+    path = rest[rest.index('/'):]
+    if not hostless:
+        path = path.split('?')[0]                # update_trails() drops a host-ful trail's query anyway
+    bad = sorted(set(c for c in path if c.isspace() or ord(c) > 127))
+    if bad:
+        return ("inert", "the path carries %s, but the sensor matches the raw, still percent-encoded request path: "
+                         "percent-encode it (UTF-8)" % ", ".join("U+%04X" % ord(c) for c in bad))
+    if hostless and path.endswith('?'):
+        # A host-ful trail loses its '?query' in update_trails(); a host-less one keeps it, so `/x.php?`
+        # matches only a request for exactly `/x.php?` - not `/x.php`, not `/x.php?id=1`.
+        return ("warn", "a trailing '?' with no query: this matches only a request for literally '%s', while '%s' "
+                        "matches that one and every query too" % (path, path[:-1]))
+    return None
+
+
 def classify(key, whitelist=None, info="", raw=None, suffixes=None, known_tlds=None, platforms=None):
     """(severity, reason) for one trail key, or None when it is reachable as written.
 
     severity is "inert" - it cannot match, ever - "overbroad": it matches an entire registry rather than a
     host - "shadowed": the whitelist carries the same name, or "warn": it will match something, but probably
-    not what the report meant."""
+    not what the report meant.
+
+    The host (`key`) and the path (`raw`) are judged separately; the worse verdict wins, so a path
+    warning never hides an inert host and an inert path is never hidden by a host warning."""
+
+    verdict = _classify_key(key, whitelist, info, raw, suffixes, known_tlds, platforms)
+    path = path_problem(raw)
+    if path and (verdict is None or (path[0] == "inert" and verdict[0] != "inert")):
+        return path
+    return verdict
+
+
+def _classify_key(key, whitelist=None, info="", raw=None, suffixes=None, known_tlds=None, platforms=None):
+    """classify() for the host part alone."""
 
     # Typed TLS fingerprints ("ja3:", "ja4:", "cert:") are matched against a handshake, never as a
     # name - judged as one, a JA4 was "not a valid DNS name" and the gate refused every static JA4.
@@ -271,23 +381,13 @@ def classify(key, whitelist=None, info="", raw=None, suffixes=None, known_tlds=N
         return None
     if key and FINGERPRINT.match(key):
         return ("warn", "a bare TLS fingerprint: write it as ja3:/ja4:/cert:<value> so its type is explicit")
-    if not key or IPV4.match(key) or IPV4_PORT.match(key) or ':' in key:
-        # Not names - but an ADDRESS trail can still be unreachable, and until this looked it was
-        # the one inert class nothing reported. update_trails() deletes any trail whose leading
-        # quad is a CDN edge or a bogon (core/update.py), so such an entry is added, reviewed,
-        # committed, and then silently dropped from every build: the report said "C2 at
-        # 104.16.155.10:8888", somebody put it in, and no deployment ever matched it. That is worse
-        # than a false positive, because it looks like detection.
-        address = leading_ipv4(key)
-        if address:
-            # update_trails() spares parking/sinkhole entries, whose whole point is to name shared
-            # infrastructure. Mirror that, or this reports them as broken when they are deliberate.
-            if not any(_ in info for _ in ("parking", "sinkhole")):
-                if cdn_ip(address):
-                    return ("inert", "%s is a CDN edge address: update_trails() drops it, so this trail never reaches a deployment" % address)
-                if bogon_ip(address):
-                    return ("inert", "%s is a bogon: update_trails() drops it, so this trail never reaches a deployment" % address)
-        return None
+    if not key:
+        return None                              # a host-less path trail: path_problem() judges it
+    if IPV4.match(key) or ':' in key:
+        verdict, key = address_problem(key, info)
+        if verdict or key is None:
+            return verdict
+        # else `key` was a NAME with a port (`evil.com:443/gate.php`), and the name is judged below
     if re.search(r"[*\[\]]", key):
         return None                              # wildcard trail, matched by regex instead
 
@@ -363,6 +463,9 @@ def classify(key, whitelist=None, info="", raw=None, suffixes=None, known_tlds=N
         return ("shadowed", "the whitelist carries this exact name: a tie goes to the whitelist, so the "
                             "build drops this trail before it reaches trails.csv")
 
+    if HOSTS_PASTE.match(wire):
+        return ("warn", "looks like a hosts-file line pasted without its separator ('0.0.0.0 www.x' -> '0.0.0.0www.x'): "
+                        "write the name alone")
     if lookalike:
         # idna turned it into a syntactically valid name, so it is not inert - but a dash lookalike
         # punycodes to a domain that almost certainly does not exist.
@@ -379,10 +482,17 @@ HEADER_KEYS = ("reference", "aliases")
 HEADER_CANONICAL = re.compile(r"^# (Reference|Aliases): \S")
 # A comment that OPENS with a word and a colon is a header candidate; anything else is prose.
 HEADER_CANDIDATE = re.compile(r"^(#+)(\s*)([A-Za-z][A-Za-z ]{2,20}?)\s*(:+)(.*)$")
+# The header name followed by the WRONG separator: '# Reference; https://...' (malware/powershell_injector.txt).
+# HEADER_CANDIDATE needs a colon to see a header at all, so this was invisible. The name has to be the
+# whole first word and something has to follow the separator, so prose ('# References, see below' or a
+# sentence that ends in 'Aliases.') is not caught.
+HEADER_SEPARATOR = re.compile(r"^#+\s*(?:Reference|Aliases)\s*[;,.=]\s*\S", re.I)
 
 
 def header_problem(raw):
     """Why this comment line is a malformed '# Reference:' / '# Aliases:' header, or None."""
+    if HEADER_SEPARATOR.match(raw):
+        return "wrong separator after header name (expected ':')"
     match = HEADER_CANDIDATE.match(raw.rstrip('\n'))
     if not match:
         return None
@@ -490,12 +600,13 @@ def problems(root, whitelist=None, suffixes=None):
             # The info the assembler will give these entries: the filename, underscores to spaces.
             # Only used for the parking/sinkhole exemption below, which is keyed on it.
             info = os.path.splitext(name)[0].replace('_', ' ')
+            # Per FILE, not per entry: relpath() on every one of ~1.9M lines was the single largest cost here.
+            pile = os.path.relpath(path, root).replace(os.sep, "/").split("/")[0]
+            hosting = platforms if pile in ("malware", "malicious") or root.rstrip("/").endswith(("/malware", "/malicious")) else None
             for number, key, raw in entries(path):
-                pile = os.path.relpath(path, root).replace(os.sep, "/").split("/")[0]
-                verdict = classify(key, whitelist, info, raw, suffixes, known_tlds,
-                                   platforms if pile in ("malware", "malicious") or root.rstrip("/").endswith(("/malware", "/malicious")) else None)
+                verdict = classify(key, whitelist, info, raw, suffixes, known_tlds, hosting)
                 if verdict:
-                    found.append((path, number, key, verdict[0], verdict[1]))
+                    found.append((path, number, key or raw, verdict[0], verdict[1]))   # a host-less path has no key
     return found
 
 
