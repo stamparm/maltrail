@@ -137,8 +137,8 @@
     REPLIES were counted as the client scanning - a datagram answering one we saw sent no longer
     counts. Periodic beaconing (56 -> 5): visitors connecting IN to a local server, and a torrent
     client retrying its swarm peers, are no longer beacons. Long domain (50 -> 0): Amazon device
-    telemetry (a2z.com, aws.dev), googleapis.com and HBO Max's CDN (max.com). Every static hit, the scanner user agent,
-    web scanning and the RCE attempt are unchanged.
+    telemetry (a2z.com, aws.dev), googleapis.com and HBO Max's CDN (max.com). Every static hit,
+    the scanner user agent, web scanning and the RCE attempt are unchanged.
 [!] A poller hitting the same trail was never summarized by the event throttle: once a minute,
     748 events in 3 hours; every five minutes, 24 an hour all night. A key that recurs within an
     hour of its last event now goes into a summary, the window doubling up to an hour.
@@ -162,7 +162,6 @@
     2017-2020. Live, 41 events in 40 hours, none real: 'tofsee' was inbound scanners, 'coinminer'
     an Apple device fetching mediaservices.cdn-apple.com. The certificate feed stays.
 [=] User-Agent reports the machine (aarch64, x86_64) instead of the pointer width ("x64").
-
 [!] The daily trail update took over 70 minutes on a Pi Zero: every host
     under 768 MB of available memory merged the 1.9M trails in SQLite, one
     SQL statement per dict operation. A Pi Zero (226 MB available next to a
@@ -175,7 +174,6 @@
     rest go straight to trails.csv. Byte for byte the same file; 52 MB peak
     and 27 minutes on a Pi Zero squeezed to 51 MB free, where SQLite took
     over an hour. The SQLite store (core/disktrails.py) is removed.
-
 [!] JA3/JA4 trails never matched QUIC (HTTP/3): only the SNI of a QUIC
     ClientHello was read. Replayed over 974 sandbox captures against every
     fingerprint tshark computes there, QUIC went from 0 of 16 matched
@@ -189,7 +187,6 @@
     bare value; check_trails.py fails a value that does not fit its type,
     warns on an untyped one, and no longer rejects JA4 as "not a valid DNS
     name". Certificate trails may be SHA-256 as well as SHA-1.
-
 [+] The sensor keeps the trail tables it builds next to TRAILS_FILE
     (<TRAILS_FILE>.store) and maps them on the next start, -T or reload
     instead of parsing the CSV. With 1.9M trails on one core, -T takes 0.08 s
@@ -214,18 +211,17 @@
     built on the heap and written once, as the store: 25 s and 100 MB. A
     Pi Zero now starts in 4 s with the store, 40 s without it.
 [=] A Pi Zero starts in 1.9 s instead of 5.8 s with the trail store:
-    - the store no longer hashes all of trails.csv on every start when the
-      file's inode and ctime show it untouched since the store was built
-      (ext4, XFS, btrfs, F2FS, tmpfs, overlayfs; anything else is hashed);
-    - data/ua.txt lines are syntax-checked instead of each being compiled
-      (1.8 s on a Pi Zero);
-    - static musl builds use mimalloc: musl's own malloc was a third of the
-      start. 12% less time per packet as well; glibc builds are unchanged.
+      - the store no longer hashes all of trails.csv on every start when the
+        file's inode and ctime show it untouched since the store was built
+        (ext4, XFS, btrfs, F2FS, tmpfs, overlayfs; anything else is hashed);
+      - data/ua.txt lines are syntax-checked instead of each being compiled
+        (1.8 s on a Pi Zero);
+      - static musl builds use mimalloc: musl's own malloc was a third of the
+        start. 12% less time per packet as well; glibc builds are unchanged.
 [=] The trail loader no longer "prefetches" table slots ahead of each
     insert. It was a real load, which an in-order core (ARM11, Cortex-A53)
     stalls on: 18% slower inserts on a Pi Zero, and the whole load was 9%
     slower with it on a Ryzen too (0.69 s -> 0.63 s).
-
 [!] Multi-worker capture with CAPTURE_FANOUT_MODE source sent a host's
     outgoing packets to the wrong worker whenever the destination MAC began
     with 0x4 or 0x6: on transmit the kernel hands the fanout program the
@@ -255,7 +251,6 @@
     92-day cap as every other endpoint now. Its open log handle was also
     kept on the session between Range requests, so two tabs read the same
     file object and a request for one day could be answered from another.
-
 [+] DNS responses are checked for listed CNAME targets. A client asking for
     an innocent-looking name the resolver aliases to a listed one never
     looked the listed name up, so nothing matched. The event is reported
@@ -267,7 +262,6 @@
     and condenser (log_event, flush_condensed_events) and core/meta.py's
     writer and pruner. The server keeps everything it calls (the auth
     events' syslog/logstash forwarding, severity_of, the /meta reader).
-
 [!] The published admin/changeme! login is accepted only from the server
     itself; over the network it is refused with a message saying to set
     USERS. The shipped maltrail.conf listens on 0.0.0.0, so every install
@@ -288,7 +282,6 @@
     after 0.5 s instead of 20.5 s).
 [=] The sensor's fast hash starts from a random per-process state, so
     colliding source addresses cannot be computed in advance.
-
 [!] With USE_SSL, one client that connected and never sent anything locked
     every other user out of HTTPS, indefinitely: the TLS handshake ran on
     the thread that accepts connections, with no timeout. It runs in the
@@ -309,7 +302,6 @@
 [=] Scan heuristics keep threshold+1 items per key instead of up to 1024,
     and DNS tunneling judges distinctness on a pair's first 256 queries and
     stops recording once it has reported: a flood could fill gigabytes.
-
 [!] The server lost most remote-sensor events whenever it was busy. Its UDP
     receiver shared one Python interpreter with the dashboard and the trail
     update, and with one other thread busy it lost 98% of 5,000 events/s.
@@ -333,22 +325,18 @@
     for the write. The write itself is one sorted upsert per row.
 [=] The trail hash table is sized to its entries instead of the next power
     of two: 109 -> 74 MB for the full trail set (RSS 158 -> 122 MB).
-
 [=] The trail store is built file-backed only on hosts with under 2 GB of
     RAM. Its pages are reclaimable only after being written back, so every
     start and reload wrote the whole store to disk (125 MB measured on a
     Pi 4, to its SD card) even where the heap holds it comfortably. A Pi 4
     now writes ~5 MB in its first minute instead of 125 MB.
-
 [=] DNS queries for new names and subdomains are 25-37% cheaper (subdomain
     query 660 -> 430 ns, cold 405 -> 300 ns). The tunneling heuristic decides
     a zone's exemption once per (source, zone) pair instead of per query,
     the exempt-zone set no longer uses SipHash, both DNS accumulators share
     one hash of each name, the domain caches hash a name once per lookup and
     insert, and short-key hashing no longer calls memcpy. Events unchanged.
-
 [=] potential remote code execution heur is improved (Issue #19646).
-
 [=] JA3, JA4 and certificate SHA-1 digests are computed only when the trail
     set holds a key of that shape. The shipped trail set holds none, so a
     TLS handshake no longer pays for an MD5, two SHA-256s and a SHA-1 that
@@ -359,7 +347,6 @@
     401 ns). On the reference network
     with the shipped trail shapes the packet path runs 38% fewer
     instructions (757M -> 467M) and replays 31% faster, events unchanged.
-
 [=] Faster packet path: 46% fewer instructions per packet on the reference
     network (500 hosts, 208k packets), with byte-identical events. Release
     builds use fat LTO (9-17% on every benchmark row); JA4's SHA-256s are
@@ -368,7 +355,6 @@
     name in the exhaustion/tunneling accumulators (1100 -> 730 ns); a QUIC
     Initial skips server packets and cached keys, and decrypts in batches
     (2980 -> 900 ns).
-
 [!] TLS and QUIC ClientHellos longer than one packet are put back together.
     Post-quantum key shares made a browser's ~2 KB, and Chrome's shuffled
     extension order puts the SNI in the second TCP segment about half of the
@@ -377,49 +363,41 @@
     and no QUIC one; now all of them, and JA3/JA4 come from the whole
     ClientHello. Fixed memory, 64 x 4 KB per worker; no measurable cost on
     other traffic.
-
 [!] IPv6 TCP was mostly invisible with the shipped CAPTURE_FILTER: libpcap's
     tcp[] reads IPv4 only, so no IPv6 SYN (outside the HTTP/proxy ports) and
     no IPv6 TLS handshake was captured, and SNI was read from IPv4 only. The
     filter now spells IPv6 TCP with ip6[] offsets and also passes the second
     segment of a ClientHello. An existing maltrail.conf keeps its filter
     until it is updated.
-
 [-] USE_FAST_PREFILTER, FAST_FLOW_CUTOFF, FAST_ADMIT_LEVEL and
     FAST_ADMIT_ADAPTIVE are gone. They configured the retired Python sensor's
     C prefilter; all that was left of them was switching SNI matching on,
     which is now CHECK_TLS_SNI and on by default. With DNS over HTTPS the SNI
     is where the domain is still visible, and the handshake was already
     parsed for JA3/JA4, so it costs one lookup per connection.
-
 [=] maltrail.conf cleanup. CAPTURE_FANOUT is CAPTURE_WORKERS (they were the
     same number), CHECK_TLS_CERTIFICATES is CHECK_TLS_FINGERPRINTS (it also
     switches JA3/JA4), and CAPTURE_BUFFER, the Python sensor's ring, is no
     longer mandatory: its 10% is the default, so a stock install keeps the
     same 64-256 MB libpcap ring. The old names are still read. PROCESS_COUNT
     is no longer set: it only ever applied to EVENT_THROTTLE_MODE legacy.
-
 [!] /fail2ban no longer publishes the source of 'potential iot-malware
     download': since #19622 that event fires only when one of OUR hosts fetches
     the dropper, so the shipped FAIL2BAN_REGEX handed fail2ban the infected
     machine it is meant to protect.
-
 [!] Dashboard: a heuristic on a bare TLD ('(label).com') from 50+ hosts no
     longer folds every OTHER heuristic on that TLD into the same flood threat
     (a DGA bot vanished inside 60 hosts' long-domain events), and a throttle
     summary line ending in '(+N more)' joins its threat instead of opening a
     second one.
-
 [+] Heuristic 'icmp_tunneling' (icmpsh, ptunnel, ICMP exfiltration): more
     than 10 distinct echo payloads from one host to one destination that match
     no ping tool's pattern. Real iputils ping (default, -s, -p), mtr and
     busybox ping raised nothing; a 40-request tunnel was reported.
-
 [+] Heuristic 'idn_homograph': a queried name whose xn-- label, with its
     Cyrillic/Greek/Armenian lookalike letters read as Latin, becomes a
     whitelisted domain it is not (xn--pple-43d.com, "аpple.com"). Every IDN in
     the Cisco and Alexa top 1M lists (3,291) raised nothing.
-
 [=] The default CAPTURE_FILTER keeps QUIC's data packets out of the capture
     ring and passes only its handshake (the long-header packets, which carry
     the SNI), the way it already passed only the start of a TCP connection.
@@ -427,25 +405,20 @@
     (MAWI, Oct 2026). One worker under a 3 Mpps QUIC-heavy load went from 11%
     dropped and 8,880 of 10,000 planted detections to nothing dropped and all
     10,000. An existing maltrail.conf keeps its filter until it is updated.
-
 [!] The multi-worker startup warning "fanout hashes by flow" no longer
     appears with CAPTURE_FANOUT_MODE source, the default, where it was false.
-
 [!] DISABLED_HEURISTICS udp_scanning / web_scanning now stop the per-packet
     tracking those heuristics need, not only their alerts (+3.4% packets per
     second with both muted, on a UDP-heavy mix).
-
 [=] DNS events on a subdomain throttle per zone: '(label).zone' trails (long
     domains, DGA verdicts, a listed TLD or parent domain) share one budget per
     host, zone and detection, the grouping the dashboard already shows. A DNS
     tunnel or a DGA bot names a new label every time, so each wrote one event
     per query: 220 for one tunnel and 177 for one bot in the reference
     network, now 3 per minute and one '(*).zone' summary line.
-
 [!] The beaconing case of the replay corpus asserts its detection again. Its
     expectation was kept for the retired Python parity harness only, so from
     27 Aug nothing would have noticed beaconing breaking.
-
 [!] A scan (port, UDP, web, infection) or ICMP tunnel in the last second of
     a replayed capture is reported. The heuristics report on the next
     packet's arrival, and at the end of the file none arrived.
@@ -453,18 +426,23 @@
 [=] Custom trails get their own class icon in the info column (#19623)
 [+] Right-click -> "Reverse DNS" for an event's addresses, resolved by the server on click (#19613)
 [=] "potential web scanning" names the paths the scanner tried (/admin, /wp-login.php, ...)
-    instead of logging a bare * (#18247); the dashboard still groups, folds and whitelists them as *
-[!] A scanner listed by a feed lost its "potential port scanning" verdict: both share the trail (the
-    scanner's address), and were condensed/throttled into one line carrying only the feed's info (#782)
-[!] The dashboard opens on the sensor's "today", not the viewer's; a viewer a day ahead saw an empty day (#67)
+    instead of logging a bare * (#18247); the dashboard still groups, folds and whitelists them
+    as *
+[!] A scanner listed by a feed lost its "potential port scanning" verdict: both share the trail
+    (the scanner's address), and were condensed/throttled into one line carrying only the feed's
+    info (#782)
+[!] The dashboard opens on the sensor's "today", not the viewer's; a viewer a day ahead saw an
+    empty day (#67)
 [+] SESSION_EXPIRATION_HOURS: how long a dashboard login lasts (default 24) (#106)
 [+] Format gate for every data/*.txt (sensor/tools/check_data.py), run on any data/ change: their
-    loaders skip a line they cannot read, so a typo there passed CI and did nothing (#19624). It found
-    a whitelist entry that was never whitelisted (inline comment), three IPv6 worst-ASN ranges the
-    loader never read (now supported), and UA patterns that compiled differently per Python version
+    loaders skip a line they cannot read, so a typo there passed CI and did nothing (#19624). It
+    found a whitelist entry that was never whitelisted (inline comment), three IPv6 worst-ASN
+    ranges the loader never read (now supported), and UA patterns that compiled differently per
+    Python version
 [!] BLACKLIST / BLACKLIST_<NAME> no longer warn as unknown options at startup; their syntax is now
     documented in maltrail.conf (#19610)
-[=] "another instance already running" names the process holding the port, when /proc can tell (#19611)
+[=] "another instance already running" names the process holding the port, when /proc can tell
+    (#19611)
 [!] Trail gate: a truncated IP (`http://144.172.84`), a name under no TLD (`minglu.de5`) and a
     pasted header (`# Reference: # Reference:`) fail it (#19630, #19631, #19624)
 
@@ -487,20 +465,17 @@
         so it is reclaimable page cache instead of heap; lookups measured the
         same speed
       - hosts under 1 GB get a capture ring of 10% of RAM, not 64 MB
-
 [+] A static ARMv6 sensor ('arm-unknown-linux-musleabihf') for every 32-bit
     Raspberry Pi, Pi 1 and Zero included; install.sh picks it on armv6l and
     armv7l, and on a 64-bit kernel under a 32-bit userland. The release
     replays a trail through it under an emulated Pi 1 CPU and refuses a
     binary that does not detect it.
-
 [+] Basic sensor status on the dashboard (#19627).
-
 [+] Windows installer ('install.ps1'); NetBSD and OpenBSD join the tested
     platform matrix, nine of nine checks each.
-
 [=] Workflows and shell scripts are linted in CI; a test covers the seam
     between the sensor that writes the event log and the server that reads it.
+
 
 
 - Version 3.3 -> 3.4 (04 Sep 2026)
@@ -509,65 +484,51 @@
     glibc Linux. Windows is built and RUN under Wine in CI; the Windows build
     found four bugs that only running it could. docs/compat publishes the
     platform matrix - 19 platforms, every capability checked, none failing.
-
 [+] 'LOG_SERVER_SECRET': event datagrams to the server are authenticated, with
     a configurable replay window. Forged detections are evidence tampering.
-
 [+] Spamhaus DROP as a '/check_ip' verdict (#19598). One severity policy shared
     by the server and the dashboard (#19621, #19622); a domain-only malware
     list derived for DNS filters (#19620).
-
 [+] '--detect-test --keep DIR [--serve]' keeps the generated events and serves
     them; 'DISABLED_HEURISTICS' documents all eight and warns on a typo.
-
 [!] The released Linux sensor could not capture at all: the statically linked
     libpcap refused promiscuous mode on 'any'. Found by the new captures
     column of the platform matrix.
-
 [!] The dashboard silently dropped every JA3 and JA4 detection.
-
 [!] install.sh died on the whole RHEL 9 family (curl-minimal conflict), and on
     FreeBSD and macOS (four Linux assumptions).
-
 [!] '/fail2ban' published a field fragment instead of the attacker; '/geo'
     skipped JSON lines; 'cleared.txt' did nothing on a JSON log; '/hunt' fails
     closed on a netfilter it cannot parse; '(custom)' masking looks at the
     reference field only.
-
 [-] Two frozen feeds and cleantalk; Googlebot is no longer called an attacker.
     Removed the retired mmap ring, core/fastfilter.py and the unused cargo-fuzz
     crate (parser fuzzing moved into the test suite).
+
 
 
 - Version 3.2 -> 3.3 (31 Aug 2026)
 
 [-] The Python sensor ('old/') is retired, with the harness that only existed
     to diff against it.
-
 [+] Decapsulation of VXLAN, GENEVE, GRE, ERSPAN and IP-in-IP; stacked VLAN
     (QinQ) tags; the full IPv6 extension-header chain. Each of these used to
     drop the frame, which on such a link means a sensor that sees nothing.
-
 [+] DNS tunneling detection, built to be hard to trigger.
-
 [+] 'LOCAL_LOG_FORMAT text|json' (#19130), read by every server-side reader;
     the ignore list accepts networks, ranges and port ranges (#19142); more
     than one day of events can be selected (#4).
-
 [+] A reference network (sensor/tools/refnet.py): a synthetic LAN with planted
     ground truth, so detection rate and noise are numbers.
-
 [=] Multi-worker capture uses source-affine fanout by default; flow hashing
     split a scanner's evidence across workers and lost scan alerts.
-
 [=] '/trails' answers an unchanged set with 304 instead of 84 MB; '/events' is
     compressed and validated; the dashboard sorts and opens the drawer faster.
-
 [!] Constant-time auth compare; the shipped fail2ban regex no longer bans our
     own hosts; address trails are gated like names (#19607); trails naming a
     registry instead of a host fail the build.
-
 [=] The version lives in five files and one command now bumps all of them.
+
 
 
 - Version 3.1.1 -> 3.2 (27 Aug 2026)
@@ -580,56 +541,43 @@
     the software. This repository went from 9,578 commits and a 110 MiB pack to
     344 and 3.3 MiB. Set 'STATIC_TRAILS_URL' (shipped in maltrail.conf); pin it
     to a dated release if you want to control when new content lands.
-
 [!] UPGRADING FROM 3.1.x: an older maltrail.conf has no 'STATIC_TRAILS_URL', and
     without it the static trail set is not loaded at all. The updater prints a
     banner, 'server --doctor' fails, and 'maltrail-sensor -T' fails, rather than
     letting detection quietly shrink to heuristics and feeds. Copy the option
     from the shipped maltrail.conf, or re-run install.sh.
-
 [+] Releases now carry a trail-set snapshot ('trails-bootstrap.csv.gz') and
     install.sh seeds the runtime cache from it, so a first start detects
     immediately - including with no connectivity at all.
-
 [+] The trail set is fetched gzipped, and only when it has changed: the
     published sha256 is checked first, so a deployment updating more often than
     the content moves transfers 65 bytes instead of 11 MB. A payload that does
     not match its digest is refused in favour of the cache.
-
 [+] Every content commit is now gated (reachability, canaries, assembly) in the
     content repository - the per-commit check that did not exist before.
-
 [=] 'trails/feeds' became 'feeds/'; 'trails/static' and 'trails/custom' stopped
     pretending to be feeds. They were plugin modules only so update_trails()
     could run one loop, which is why 'DISABLED_FEEDS static' silently disabled
     1.6M trails. Three explicit sources through one merge rule now, same order.
-
 [=] 'CUSTOM_TRAILS_DIR' no longer defaults inside the installation directory.
-
 [+] Alert webhook: POST events at or above a severity threshold, with dedup.
-
 [+] Per-day sidecar event index: exact '/counts', '/hunt' skips non-matching
     lines. Trail-confidence sidecar surfaced in '/check' and the trail drawer.
-
 [+] TLS client fingerprints (JA3/JA4) matched as trails; new beaconing
     heuristic; 'server --doctor' preflight; both config parsers flag unknown
     options.
-
 [!] An exact static trail now beats a whitelisted ancestor (longest match), so
     3,082 trails on shared platforms that were loaded, counted and could never
     fire now do.
-
 [!] UDP event intake was losing 24% at 10k events/s - a thread and an open() per
     datagram. Lossless intake went from 5,000 to 20,000 events/s.
-
 [!] '/hunt' IP search was 9x slower than a substring hunt over the same log.
-
 [!] '--detect-test' told a healthy install its detection was broken;
     '--smoke-test' printed nothing and exited 1; every IPv6 event was unmapped
     on the attack map.
-
 [!] Refuses to start with the private key Maltrail used to ship. RIPEstat is
     proxied through '/ripe' so script-src is 'self' again.
+
 
 
 - Version 3.1 -> 3.1.1 (11 Aug 2026)
@@ -647,7 +595,6 @@
     failed at exec with "GLIBC_2.39 not found" on most enterprise
     distributions. The release now refuses to publish a binary needing
     anything newer
-
 [!] Python 3.6 works again. The whole 3.7 floor came down to ONE call -
     'str.isascii()' in core/update.py - which made the trail update die on
     every distribution whose stock 'python3' is 3.6 (RHEL 8, CentOS 7,
@@ -655,7 +602,6 @@
     and a sensor that detected nothing. There is a 3.6 path now, the whole
     server suite and a full offline trail build run on 3.6.15 in CI, and the
     sensor's interpreter floor follows
-
 [!] The Docker image adapts to the storage it is given instead of demanding uid
     10001 own it: 'docker/entrypoint.sh' picks the uid that can write the log
     and state directories (bind-mount owner, 'PUID'/'PGID', or the image's own
@@ -673,6 +619,7 @@
 [!] 'docker compose -f docker/docker-compose.yml up' failed outright: compose
     resolves relative bind-mount paths against the compose file's directory, so
     './maltrail.conf' meant 'docker/maltrail.conf', which does not exist
+
 
 
 - Version 3.0.1 -> 3.1 (11 Aug 2026)
@@ -717,6 +664,8 @@
     sensor never started
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
+
+
 - Version 3.0 -> 3.0.1 (10 Aug 2026)
 
 [!] The sensor now verifies that the Python driving the trail updater is 3.7+
@@ -738,6 +687,8 @@
     alongside it
 [!] Fixed the quick-start command that created LOG_DIR: '-g "$USER"' assumed a
     group named after the user, which does not exist on every distribution
+
+
 
 - Version 2.2 -> 3.0 (08 Aug 2026)
 
@@ -790,6 +741,7 @@
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
+
 - Version 2.1 -> 2.2 (01 Aug 2026)
 
 [+] Retro hunt over collected observables
@@ -804,6 +756,7 @@
     storms retries and spams the console
 [!] Bug fixes (Issues #19558, #19559, #19561, #19562, #19564, #19565, #19581)
 [=] Multiple updates and optimizations for regular static trails and the whitelist
+
 
 
 - Version 1.5 -> 2.1 (01 Jul 2026)
@@ -824,9 +777,11 @@
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
+
 - Version 1.4 -> 1.5 (01 Jun 2026)
 
 [=] Multiple updates and optimizations for regular static trails and the whitelist
+
 
 
 - Version 1.3 -> 1.4 (01 May 2026)
@@ -836,10 +791,12 @@
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
+
 - Version 1.2 -> 1.3 (01 Apr 2026)
 
 [!] Charts size themselves from the browser window rather than the monitor
 [=] Multiple updates and optimizations for regular static trails and the whitelist
+
 
 
 - Version 1.1 -> 1.2 (01 Mar 2026)
@@ -862,6 +819,7 @@
 [=] Project historical data trimmed, ~ 420Mb freed
 
 
+
 - Version 0.87 -> 0.88 (01 Dec 2025)
 
 [=] Multiple updates and optimizations for regular static trails and the whitelist
@@ -874,19 +832,25 @@
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
+
 - Version 0.85 -> 0.86 (01 Oct 2025)
 
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
+
+
 - Version 0.84 -> 0.85 (01 Sep 2025)
 
 [=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
 
 - Version 0.83 -> 0.84 (01 Aug 2025)
 
 [=] Multiple improvements for Maltrail in Docker (Issues #19323, #19325)
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 [-] Removing defunct blacklist (Issue #19339)
+
 
 
 - Version 0.82 -> 0.83 (01 Jul 2025)
@@ -915,9 +879,11 @@
 [-] Removing defunct blacklist (Issue #19305)
 
 
+
 - Version 0.78 -> 0.79 (01 Mar 2025)
 
 [=] Multiple updates and optimizations for regular static trails and the whitelist
+
 
 
 - Version 0.77 -> 0.78 (01 Feb 2025)
@@ -925,9 +891,11 @@
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
+
 - Version 0.76 -> 0.77 (01 Jan 2025)
 
 [=] Multiple updates and optimizations for regular static trails and the whitelist
+
 
 
 - Version 0.75 -> 0.76 (01 Dec 2024)
@@ -935,14 +903,17 @@
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
+
 - Version 0.74 -> 0.75 (01 Nov 2024)
 
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
+
 - Version 0.73 -> 0.74 (01 Oct 2024)
 
 [=] Multiple updates and optimizations for regular static trails and the whitelist
+
 
 
 - Version 0.72 -> 0.73 (01 Sep 2024)
@@ -965,6 +936,7 @@
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
 
+
 - Version 0.69 -> 0.70 (01 Jun 2024)
 
 [=] cruzit feed URL changed (Issue #19253)
@@ -979,12 +951,11 @@
 
 
 
-
-
 - Version 0.68 -> 0.69 (01 May 2024)
 
 [+] Support of simpleton IPv6 bogon address handling was added
 [=] Multiple updates and optimizations for regular static trails and the whitelist
+
 
 
 - Version 0.67 -> 0.68 (01 Apr 2024)
@@ -1014,11 +985,9 @@
 
 
 
-
 - Version 0.63 -> 0.64 (01 Dec 2023)
 
 [=] Multiple updates and optimizations for regular static trails and the whitelist
-
 
 
 
@@ -1032,7 +1001,6 @@
 
 
 
-
 - Version 0.61 -> 0.62 (01 Oct 2023)
 
 [=] Multiple updates and optimizations for regular static trails and the whitelist
@@ -1040,11 +1008,11 @@
 
 
 
-
 - Version 0.60 -> 0.61 (01 Sep 2023)
 
 [!] Workaround to have working searx server (Issue #19199)
 [=] Multiple updates and optimizations for regular static trails and the whitelist
+
 
 
 - Version 0.59 -> 0.60 (01 Aug 2023)
@@ -1089,7 +1057,6 @@
 
 
 
-
 - Version 0.53 -> 0.54 (01 Feb 2023)
 
 [=] Multiple updates and optimizations for regular static trails and the whitelist
@@ -1129,6 +1096,8 @@
 [=] "Maltrail detection nuances" wiki-page is updated
 [=] "Trail classes" wiki-page is updated
 [=] Multiple updates and optimizations for regular static trails and the whitelist
+
+
 
 - Version 0.48 -> 0.49 (01 Sep 2022)
 
@@ -1218,7 +1187,6 @@
 
 
 - Version 0.36 -> 0.37 (02 Sep 2021)
-
 
 [=] Multiple updates and optimizations for regular static trails and the whitelist
 
