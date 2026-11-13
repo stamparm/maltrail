@@ -31,7 +31,7 @@ fn main() {
 
     // pcap 2.5 pulls windows-sys 0.36, whose import library binds WaitOnAddress and
     // WakeByAddress* to vertdll.dll. Since Rust 1.100 std no longer binds them itself, so the
-    // linker took that library and the binary would not load on Wine (status c0000135). Naming
+    // linker took that library and the binary would not load on Wine (STATUS_DLL_NOT_FOUND). Naming
     // the system import library first binds them to api-ms-win-core-synch-l1-2-0.dll again.
     let target = std::env::var("TARGET").unwrap_or_default();
     if target.ends_with("-windows-gnu") {
