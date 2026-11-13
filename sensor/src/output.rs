@@ -826,8 +826,10 @@ fn trails_ctime_date(path: &Path) -> String {
 //
 // `core/log.py:heartbeat_event()` is the receiving half.
 
-/// The payload: `<epoch_sec> !HB <sensor> <version> <uptime_s> <sent>`, `<sent>` being
-/// `LOG_SERVER_SENT`. It was added last so a server that predates it still reads the sensor,
+/// The payload: `<epoch_sec> !HB <sensor> <version> <uptime_s> <sent> <captured> <dropped>`,
+/// `<sent>` being `LOG_SERVER_SENT` and the last two libpcap's received and dropped counts
+/// (kernel + interface) since start, summed over workers - so the server can see a sensor that is
+/// up but losing packets. Each was added at the end so an older server still reads the sensor,
 /// version and liveness; it reads the uptime as unknown, since its last field is no longer a number.
 ///
 /// It must lead with the epoch second, because `mts_open` refuses to verify a signed payload that
@@ -837,15 +839,20 @@ fn trails_ctime_date(path: &Path) -> String {
 /// The sensor name comes from `SENSOR_NAME` (`$HOSTNAME` by default), so it can contain anything a
 /// hostname can. A space would shift every field after it, so the name is reduced to the
 /// characters the receiver keeps anyway rather than sent as-is and silently misparsed.
-pub fn heartbeat_payload(sensor: &str, now: u64, uptime: u64, sent: u64) -> Vec<u8> {
+pub fn heartbeat_payload(sensor: &str, now: u64, uptime: u64, sent: u64, capture: (u64, u64)) -> Vec<u8> {
     let name: String = sensor.chars().filter(|c| c.is_alphanumeric() || ".:@+-_".contains(*c)).take(64).collect();
     let name = if name.is_empty() { "-" } else { name.as_str() };
-    format!("{now} !HB {name} {} {uptime} {sent}", settings::VERSION).into_bytes()
+    format!("{now} !HB {name} {} {uptime} {sent} {} {}", settings::VERSION, capture.0, capture.1).into_bytes()
 }
 
 /// Announce this sensor to `LOG_SERVER` every `period` seconds. No-op without a `LOG_SERVER`, and
-/// `HEARTBEAT_PERIOD 0` switches it off.
-pub fn spawn_heartbeat(cfg: Arc<OutputConfig>, period: u64, shutdown: Arc<AtomicBool>) {
+/// `HEARTBEAT_PERIOD 0` switches it off. `capture` reports (received, dropped) packets so far.
+pub fn spawn_heartbeat(
+    cfg: Arc<OutputConfig>,
+    period: u64,
+    shutdown: Arc<AtomicBool>,
+    capture: impl Fn() -> (u64, u64) + Send + 'static,
+) {
     let Some(endpoint) = cfg.log_server.clone() else { return };
     if period == 0 {
         return;
@@ -867,7 +874,7 @@ pub fn spawn_heartbeat(cfg: Arc<OutputConfig>, period: u64, shutdown: Arc<Atomic
                     continue;
                 }
                 next = Instant::now() + Duration::from_secs(period);
-                send_heartbeat(&cfg, &endpoint, started.elapsed().as_secs());
+                send_heartbeat(&cfg, &endpoint, started.elapsed().as_secs(), capture());
             }
         })
         .ok();
@@ -880,12 +887,12 @@ pub fn spawn_heartbeat(cfg: Arc<OutputConfig>, period: u64, shutdown: Arc<Atomic
 /// surviving a network change. Failure is deliberately silent: the only thing a heartbeat that
 /// cannot be delivered proves is that the server will not see this sensor, which is precisely
 /// what the server is meant to notice.
-fn send_heartbeat(cfg: &OutputConfig, endpoint: &str, uptime: u64) {
+fn send_heartbeat(cfg: &OutputConfig, endpoint: &str, uptime: u64, capture: (u64, u64)) {
     let Some(addr) = resolve_endpoint(endpoint) else { return };
     // Events follow the address the heartbeat just reached, so the two cannot disagree.
     publish_endpoint(endpoint, addr);
     let now = SystemTime::now().duration_since(UNIX_EPOCH).map(|d| d.as_secs()).unwrap_or(0);
-    let payload = heartbeat_payload(&cfg.sensor_name, now, uptime, LOG_SERVER_SENT.load(Ordering::Relaxed));
+    let payload = heartbeat_payload(&cfg.sensor_name, now, uptime, LOG_SERVER_SENT.load(Ordering::Relaxed), capture);
     let data = match &cfg.log_server_secret {
         Some(secret) => mts_sign(secret, &payload),
         None => payload,
@@ -906,12 +913,12 @@ mod heartbeat_tests {
     /// both of which fail as a sensor that looks fine and is simply never listed.
     #[test]
     fn the_payload_is_what_the_server_parses() {
-        let payload = heartbeat_payload("box-1", 1786091293, 4242, 17);
+        let payload = heartbeat_payload("box-1", 1786091293, 4242, 17, (1000, 12));
         let text = String::from_utf8(payload).unwrap();
-        assert_eq!(text, format!("1786091293 !HB box-1 {} 4242 17", crate::settings::VERSION));
+        assert_eq!(text, format!("1786091293 !HB box-1 {} 4242 17 1000 12", crate::settings::VERSION));
 
         let fields: Vec<&str> = text.split(' ').collect();
-        assert_eq!(fields.len(), 6);
+        assert_eq!(fields.len(), 8);
         assert!(
             fields[0].chars().all(|c| c.is_ascii_digit()),
             "mts_open refuses a payload without a leading epoch second"
@@ -954,7 +961,7 @@ mod heartbeat_tests {
 
         let shutdown = Arc::new(AtomicBool::new(false));
         // A long period: what is under test is that the FIRST beat does not wait for it.
-        super::spawn_heartbeat(cfg, 3600, shutdown.clone());
+        super::spawn_heartbeat(cfg, 3600, shutdown.clone(), || (5, 1));
 
         let mut buf = [0u8; 512];
         let (n, _) = server.recv_from(&mut buf).expect("no heartbeat arrived");
@@ -967,7 +974,8 @@ mod heartbeat_tests {
 
         let text = String::from_utf8(payload.to_vec()).unwrap();
         let fields: Vec<&str> = text.split(' ').collect();
-        assert_eq!(fields.len(), 6, "unexpected heartbeat shape: {text}");
+        assert_eq!(fields.len(), 8, "unexpected heartbeat shape: {text}");
+        assert_eq!(&fields[6..], ["5", "1"], "capture counts not carried: {text}");
         assert_eq!(fields[1], "!HB");
         assert_eq!(fields[2], "e2e-probe");
         assert_eq!(fields[3], crate::settings::VERSION);
@@ -976,14 +984,14 @@ mod heartbeat_tests {
     #[test]
     fn a_hostname_cannot_shift_the_fields() {
         // SENSOR_NAME is $HOSTNAME by default, so it is whatever the host is called.
-        let text = String::from_utf8(heartbeat_payload("two words\tand a tab", 1, 0, 0)).unwrap();
-        assert_eq!(text.split(' ').count(), 6, "a name with spaces must not add fields");
+        let text = String::from_utf8(heartbeat_payload("two words\tand a tab", 1, 0, 0, (0, 0))).unwrap();
+        assert_eq!(text.split(' ').count(), 8, "a name with spaces must not add fields");
         assert!(text.contains("!HB twowordsandatab "));
 
-        let text = String::from_utf8(heartbeat_payload("", 1, 0, 0)).unwrap();
+        let text = String::from_utf8(heartbeat_payload("", 1, 0, 0, (0, 0))).unwrap();
         assert!(text.contains("!HB - "), "an empty name must still occupy its field: {text}");
 
-        let long = String::from_utf8(heartbeat_payload(&"n".repeat(500), 1, 0, 0)).unwrap();
+        let long = String::from_utf8(heartbeat_payload(&"n".repeat(500), 1, 0, 0, (0, 0))).unwrap();
         assert_eq!(long.split(' ').nth(2).unwrap().len(), 64, "the name must be capped, not sent whole");
     }
 }

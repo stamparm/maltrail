@@ -23,6 +23,8 @@ from core.log import sensor_status
 from core.log import severity_of
 from core.settings import config
 from core.settings import ALERT_POLL_PERIOD
+from core.settings import SENSOR_DROP_ALERT
+from core.settings import SENSOR_DROP_WINDOW
 from core.settings import SENSOR_FORGET_AFTER
 from core.settings import SENSOR_STALE_AFTER
 from core.settings import ALERT_TIMEOUT
@@ -491,14 +493,19 @@ def _load_tail():
 # restart neither forgets a sensor that died before it nor reports it a second time.
 _silent = set()
 _liveness = {"saved": 0, "known": set()}
+# A sensor that is up but dropping packets is partly blind, and nothing else shows it: per sensor,
+# the (time, captured, dropped) its current SENSOR_DROP_WINDOW started from, and who is alerted on.
+_drops = {}
+_dropping = set()
 
 
-def _sensor_alert(row, silent, now):
-    """Report one sensor going silent or coming back: error.log always, the webhook when set."""
+def _sensor_alert(row, silent, now, info=None):
+    """Report a sensor problem starting (`silent`) or ending: error.log always, the webhook when set.
+    Without `info` the problem is silence."""
 
-    if silent:
+    if not info and silent:
         info = "sensor silent since %s (no heartbeat for %d min)" % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(row["last_seen"])), (now - row["last_seen"]) // 60)
-    else:
+    elif not info:
         info = "sensor reporting again"
     log_error("sensor '%s' (%s): %s" % (row["sensor"], row.get("address") or "-", info))
 
@@ -525,12 +532,44 @@ def check_sensors(now=None):
             (_silent.add if stale else _silent.discard)(row["sensor"])
             _sensor_alert(row, stale, now)
             alerts += 1
+        # A silent sensor's counters are frozen, which would read as "no longer dropping".
+        if not stale:
+            alerts += _check_drops(row, now)
     _silent.intersection_update(names)
+    _dropping.intersection_update(names)
 
     if alerts or names != _liveness["known"] or (rows and now - _liveness["saved"] >= 60):
         save_sensor_status(rows, _silent)
         _liveness.update(saved=now, known=names)
     return alerts
+
+
+def _check_drops(row, now):
+    """Alert once when a sensor starts dropping more than SENSOR_DROP_ALERT of its packets over a
+    SENSOR_DROP_WINDOW, and once when it stops. Returns the alerts sent."""
+
+    name, captured, dropped = row["sensor"], row.get("captured"), row.get("dropped")
+    if captured is None or dropped is None:
+        return 0
+    base = _drops.get(name)
+    # Counters going down mean the sensor restarted: start a new window rather than misread it.
+    if base is None or captured < base[1] or dropped < base[2]:
+        _drops[name] = (now, captured, dropped)
+        return 0
+    if now - base[0] < SENSOR_DROP_WINDOW:
+        return 0
+    _drops[name] = (now, captured, dropped)
+    # libpcap on Linux counts a dropped packet as received too, so dropped/captured is the share lost.
+    seen, lost = captured - base[1], dropped - base[2]
+    if (seen > 0 and lost > SENSOR_DROP_ALERT * seen) == (name in _dropping):
+        return 0
+    if name in _dropping:
+        _dropping.discard(name)
+        _sensor_alert(row, False, now, "capture no longer dropping packets")
+    else:
+        _dropping.add(name)
+        _sensor_alert(row, True, now, "capture dropped %.1f%% of packets (%d of %d) in the last %d min" % (100.0 * lost / seen, lost, seen, (now - base[0]) // 60))
+    return 1
 
 
 def start(join=False):

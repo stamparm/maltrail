@@ -681,7 +681,11 @@ fn run() -> i32 {
     // --- liveness heartbeat ----------------------------------------------------
     // Offline replay has no server to report to and no ongoing existence to announce.
     if !cfg.is_offline_replay() {
-        output::spawn_heartbeat(output_cfg.clone(), cfg.heartbeat_period, shutdown.clone());
+        let reg_heartbeat = registry.clone();
+        output::spawn_heartbeat(output_cfg.clone(), cfg.heartbeat_period, shutdown.clone(), move || {
+            let t = reg_heartbeat.total();
+            (t.capture_received, t.capture_dropped + t.capture_ifdropped)
+        });
     }
     // Keeps remote endpoint addresses current (an offline replay still forwards its events).
     output::spawn_resolver(output_cfg.clone(), shutdown.clone());

@@ -514,7 +514,7 @@ def _sensor_field(value):
 def heartbeat_event(data, source):
     """Record a liveness datagram, and report whether that is what this was.
 
-    The payload is `<epoch_sec> !HB <sensor> <version> <uptime_s> [<sent>]`. It leads with the epoch second
+    The payload is `<epoch_sec> !HB <sensor> <version> <uptime_s> [<sent> [<captured> <dropped>]]`. It leads with the epoch second
     because mts_open() requires that of anything signed - so a heartbeat gets the same replay
     bound as an event - and `!HB` cannot be confused with an event, whose second token is always a
     quoted local timestamp.
@@ -523,9 +523,9 @@ def heartbeat_event(data, source):
     not a detection, and writing it to the log would put it in /events, /counts and /fail2ban.
     """
 
-    # maxsplit: a heartbeat has at most six fields, and a 64 KB datagram of spaces should not
+    # maxsplit: a heartbeat has at most eight fields, and a 64 KB datagram of spaces should not
     # become a 32,000-element list on the receive loop's only thread.
-    parts = data.split(b' ', 5)
+    parts = data.split(b' ', 7)
     if len(parts) < 3 or parts[1] != HEARTBEAT_MARK:
         if source in _received:
             _received[source] += 1
@@ -551,6 +551,11 @@ def heartbeat_event(data, source):
     if sent is not None and base is not None:
         status["sent"] = sent - base[1]
         status["lost"] = max(0, status["sent"] - (_received[source] - base[2]))
+
+    # Packets libpcap received and dropped (kernel + interface) since the sensor started. Without
+    # them a sensor dropping half its traffic looked exactly as healthy here as one dropping none.
+    if number(6) is not None and number(7) is not None:
+        status["captured"], status["dropped"] = number(6), number(7)
 
     with _sensor_status_lock:
         # move_to_end makes the dict ordered by recency, so popitem(last=False) drops the sensor

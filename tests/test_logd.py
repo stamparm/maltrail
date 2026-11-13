@@ -172,6 +172,14 @@ class TestLogd(unittest.TestCase):
         self.assertEqual(row()["uptime"], 30)
         self.assertNotIn("lost", row())
 
+    def test_capture_counts_are_read_and_an_older_heartbeat_still_parses(self):
+        row = lambda: [_ for _ in L.sensor_status() if _["sensor"] == "pcap"][0]
+        L.heartbeat_event(b"0 !HB pcap 3.6 10 5 100000 1234", "10.9.9.8")
+        self.assertEqual((row()["captured"], row()["dropped"], row()["sent"], row()["uptime"]), (100000, 1234, 0, 10))
+        L.heartbeat_event(b"0 !HB pcap 3.6 20 7", "10.9.9.8")             # a sensor before the capture fields
+        self.assertEqual((row()["sent"], row()["uptime"]), (2, 20))
+        self.assertNotIn("dropped", row())
+
 
 class TestIntakeShape(unittest.TestCase):
     """The receiver used to be a ThreadingUDPServer, so each event cost a fresh THREAD - and because the

@@ -2689,7 +2689,10 @@
       h += '<div class="sens-row' + cls + '"><span class="sens-name">' + esc(s.sensor) + '</span>' +
            '<span class="sens-ver">' + (s.version ? esc(s.version) : "&mdash;") + '</span>' +
            '<span class="sens-addr">' + esc(s.address || "") + '</span>' +
-           '<span class="sens-ago">' + _sensorAgo(age) + '</span></div>';
+           '<span class="sens-ago">' + _sensorAgo(age) +
+           // Packets the capture dropped since the sensor started (heartbeat counters, newer sensors).
+           (s.captured > 0 && s.dropped > 0 ? ' &middot; ' + (100 * s.dropped / s.captured).toFixed(1) + '% dropped' : '') +
+           '</span></div>';
     });
     res.innerHTML = h + "</div>";
   }

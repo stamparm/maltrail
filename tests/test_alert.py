@@ -348,12 +348,14 @@ class SensorSilenceTest(unittest.TestCase):
         self.L._sensor_status.clear(); self.L._sensor_status.update(self._table[0])
         self.L._receiver_status.clear(); self.L._receiver_status.update(self._table[1])
         alert._silent.clear()
+        alert._drops.clear(); alert._dropping.clear()
 
     def _restart(self):
         """What a server restart leaves: an empty table and alert state, then start()'s load."""
         self.L._sensor_status.clear()
         self.L._receiver_status.clear()
         alert._silent.clear()
+        alert._drops.clear(); alert._dropping.clear()
         alert._liveness.update(saved=0, known=set())
         alert._silent.update(self.L.load_sensor_status())
 
@@ -377,6 +379,32 @@ class SensorSilenceTest(unittest.TestCase):
         self.assertEqual(len(self.sent), 2)
         self.assertEqual(len(self.errors), 2, "both facts also go to error.log")
         self.assertIn("sensor 'box' (10.0.0.9): sensor silent since", self.errors[0])
+
+    def test_a_dropping_capture_is_reported_once_and_its_end_once(self):
+        def beat(sec, captured, dropped):
+            self._seen("box", sec)
+            self.L._sensor_status["box"].update(captured=captured, dropped=dropped)
+            return alert.check_sensors(now=sec)
+
+        self.assertEqual(beat(1000, 0, 0), 0)
+        self.assertEqual(beat(1000 + 3600, 100000, 1000), 0, "exactly 1% is not over the threshold")
+        self.assertEqual(beat(1000 + 7200, 200000, 3000), 1, "the control: 2% in the hour is")
+        self.assertIn("dropped 2.0% of packets (2000 of 100000)", self.sent[-1]["info"])
+        self.assertEqual(self.sent[-1]["severity"], "high")
+        self.assertEqual(beat(1000 + 10800, 300000, 6000), 0, "still dropping must not repeat")
+        self.assertEqual(beat(1000 + 14400, 400000, 6000), 1)
+        self.assertEqual(self.sent[-1]["info"], "capture no longer dropping packets")
+        self.assertEqual(beat(1000 + 15000, 5, 0), 0, "counters going down are a restart, not a recovery")
+        self.assertEqual(len(self.errors), 2)
+
+    def test_a_silent_sensor_is_not_reported_as_no_longer_dropping(self):
+        self._seen("box", 1000)
+        self.L._sensor_status["box"].update(captured=0, dropped=0)
+        alert.check_sensors(now=1000)
+        self.L._sensor_status["box"].update(last_seen=4600, captured=100, dropped=50)
+        self.assertEqual(alert.check_sensors(now=4600), 1)
+        self.assertEqual(alert.check_sensors(now=9000), 1, "only the silence is news")
+        self.assertIn("silent since", self.sent[-1]["info"])
 
     def test_a_restart_while_silent_does_not_report_it_again(self):
         self._seen("box", 1000)
