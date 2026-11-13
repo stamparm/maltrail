@@ -405,6 +405,44 @@ fn tunnelled_traffic_is_not_invisible() {
 }
 
 #[test]
+fn erspan_i_and_iii_and_mpls_do_not_hide_the_mirrored_traffic() {
+    use maltrail_sensor::packet::dlt;
+    let inner_dns = ipv4(17, "10.1.1.5", "10.1.1.1", &udp(40000, 53, &dns("evil.com")));
+    let frame = eth(&inner_dns, 0x0800, None);
+    let detect = |packet: &[u8], ip_offset: usize| {
+        let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+        h.feed(packet, 1, 0, ip_offset);
+        h.trails()
+    };
+
+    // ERSPAN type I: GRE without a sequence number, the frame straight after it
+    let p = gre("192.0.2.1", "192.0.2.2", 0x88be, false, false, false, &frame);
+    assert_eq!(detect(&p, 0), vec!["evil.com"], "ERSPAN I");
+
+    // ERSPAN type III with the O flag: an 8-byte platform sub-header after the 12-byte header
+    let mut iii = vec![0x20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x01];
+    iii.extend_from_slice(&[0x0c, 0, 0, 0, 0, 0, 0, 0]);
+    iii.extend_from_slice(&frame);
+    let p = gre("192.0.2.1", "192.0.2.2", 0x22eb, false, false, true, &iii);
+    assert_eq!(detect(&p, 0), vec!["evil.com"], "ERSPAN III with platform sub-header");
+
+    // MPLS inside GRE
+    let p = gre("192.0.2.1", "192.0.2.2", 0x8847, false, false, false, &mpls(&[16], &inner_dns));
+    assert_eq!(detect(&p, 0), vec!["evil.com"], "MPLS in GRE");
+
+    // MPLS on the wire, IP and an Ethernet pseudowire, resolved the way the capture loop does
+    let mut pw = vec![0, 0, 0, 0];
+    pw.extend_from_slice(&frame);
+    for (what, f) in [
+        ("MPLS, 2 labels", eth(&mpls(&[100, 200], &inner_dns), 0x8847, None)),
+        ("EoMPLS", eth(&mpls(&[16, 17], &pw), 0x8847, None)),
+    ] {
+        let off = dlt::ip_offset(dlt::DLT_EN10MB, &f, 14).unwrap_or_else(|| panic!("{what}: no IP found"));
+        assert_eq!(detect(&f, off), vec!["evil.com"], "{what}");
+    }
+}
+
+#[test]
 fn a_tunnel_does_not_hide_an_inner_ip_or_port_trail() {
     // the same evasion seen from the trail type: with the inner header unreachable, an IP:port
     // trail on a host inside the overlay can never fire

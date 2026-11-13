@@ -121,6 +121,14 @@ fn valid_seeds() -> Vec<Vec<u8>> {
     seeds.push(geneve("192.0.2.1", "192.0.2.2", 0x6558, 8, &inner));
     seeds.push(gre("192.0.2.1", "192.0.2.2", 0x0800, true, true, true, &seeds[0].clone()));
     seeds.push(erspan("192.0.2.1", "192.0.2.2", true, &inner));
+    // ERSPAN I (no GRE sequence, no header), ERSPAN III with its O-flag sub-header, MPLS in GRE and
+    // on the wire, and an Ethernet pseudowire with a control word
+    seeds.push(gre("192.0.2.1", "192.0.2.2", 0x88be, false, false, false, &inner));
+    let iii = [&[0x20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x01, 0x0c, 0, 0, 0, 0, 0, 0, 0][..], &inner].concat();
+    seeds.push(gre("192.0.2.1", "192.0.2.2", 0x22eb, false, false, true, &iii));
+    seeds.push(gre("192.0.2.1", "192.0.2.2", 0x8847, false, false, false, &mpls(&[16, 17], &seeds[0].clone())));
+    seeds.push(eth(&mpls(&[16, 17], &seeds[0].clone()), 0x8847, Some(100)));
+    seeds.push(eth(&mpls(&[16], &[&[0u8, 0, 0, 1][..], &inner].concat()), 0x8847, None));
     seeds
 }
 

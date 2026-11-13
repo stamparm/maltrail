@@ -169,13 +169,16 @@ a `(heuristic)` reference, never `malware`. The state behind them is bounded
     root), skips the check for `-r`, and prints the exact `setcap` command when it is missing.
     `DISABLE_CHECK_SUDO` skips it entirely.
 13. **Stacked VLAN tags are followed** (`0x8100`, `0x88a8`, `0x9100`, up to 4), so QinQ links at a
-    carrier or datacentre edge are not invisible.
+    carrier or datacentre edge are not invisible. So are **MPLS** label stacks (`0x8847`, `0x8848`,
+    up to 8 labels) over IPv4/IPv6, or over an Ethernet pseudowire with or without its control
+    word.
 14. **IPv6 extension headers are walked to the transport header** (Hop-by-Hop, Routing,
     Fragment, AH, Destination Options, Mobility, HIP, Shim6; up to 8; ESP ends the walk).
     Otherwise eight bytes would hide a packet's ports, DNS name, HTTP host and SNI.
-15. **Tunnels are decapsulated** - VXLAN (4789 and 8472), GENEVE, GRE, ERSPAN II/III and
-    IP-in-IP, up to 3 deep. The outer header is still matched, and the inner packet is processed
-    in its own right: on an overlay SPAN feed every host worth watching is inside the tunnel.
+15. **Tunnels are decapsulated** - VXLAN (4789 and 8472), GENEVE, GRE (including MPLS over GRE),
+    ERSPAN I/II/III (type III with its optional platform sub-header) and IP-in-IP, up to 3 deep.
+    The outer header is still matched, and the inner packet is processed in its own right: on an
+    overlay SPAN feed every host worth watching is inside the tunnel.
     `maltrail_packets_decapsulated_total` counts what was unwrapped. The shipped `CAPTURE_FILTER`
     passes these, PPPoE, MPLS and VLAN/QinQ-tagged frames and IPv6 with extension headers whole, since a
     BPF filter cannot see inside them (`tests/capture_filter.rs`).

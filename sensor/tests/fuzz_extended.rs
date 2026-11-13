@@ -113,6 +113,12 @@ fn seeds() -> Vec<Vec<u8>> {
     s.push(gre("192.0.2.1", "192.0.2.2", 0x0800, true, true, true, &s[0].clone()));
     s.push(erspan("192.0.2.1", "192.0.2.2", true, &inner));
     s.push(eth(&s[0].clone(), 0x0800, Some(100)));
+    s.push(gre("192.0.2.1", "192.0.2.2", 0x88be, false, false, false, &inner));
+    let iii = [&[0x20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0x01, 0x0c, 0, 0, 0, 0, 0, 0, 0][..], &inner].concat();
+    s.push(gre("192.0.2.1", "192.0.2.2", 0x22eb, false, false, true, &iii));
+    s.push(gre("192.0.2.1", "192.0.2.2", 0x8847, false, false, false, &mpls(&[16, 17], &s[0].clone())));
+    s.push(eth(&mpls(&[16, 17], &s[0].clone()), 0x8847, Some(100)));
+    s.push(eth(&mpls(&[16], &[&[0u8, 0, 0, 1][..], &inner].concat()), 0x8847, None));
     s
 }
 

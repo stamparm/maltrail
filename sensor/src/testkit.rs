@@ -597,10 +597,24 @@ pub fn gre(src: &str, dst: &str, proto_type: u16, checksum: bool, key: bool, seq
 }
 
 /// ERSPAN over GRE: type II (0x88be, 8-byte header) or type III (0x22eb, 12-byte header), then a
-/// mirrored Ethernet frame. This is what a switch SPAN session actually puts on the wire.
+/// mirrored Ethernet frame. This is what a switch SPAN session actually puts on the wire; both
+/// carry a GRE sequence number, whose absence is what marks type I.
 pub fn erspan(src: &str, dst: &str, type_iii: bool, inner_frame: &[u8]) -> Vec<u8> {
     let mut p = vec![0u8; if type_iii { 12 } else { 8 }];
     p[0] = if type_iii { 0x20 } else { 0x10 }; // version nibble
     p.extend_from_slice(inner_frame);
-    gre(src, dst, if type_iii { 0x22eb } else { 0x88be }, false, false, false, &p)
+    gre(src, dst, if type_iii { 0x22eb } else { 0x88be }, false, false, true, &p)
+}
+
+/// An MPLS label stack (RFC 3032), one 4-byte entry per label with the last marked bottom-of-stack,
+/// then `payload`: an IP packet, or a pseudowire's control word and Ethernet frame. Wrap it with
+/// `eth(.., 0x8847, ..)` or `gre(.., 0x8847, ..)`.
+pub fn mpls(labels: &[u32], payload: &[u8]) -> Vec<u8> {
+    let mut p = Vec::new();
+    for (i, label) in labels.iter().enumerate() {
+        let entry = (label & 0xf_ffff) << 12 | u32::from(i + 1 == labels.len()) << 8 | 64;
+        p.extend_from_slice(&entry.to_be_bytes());
+    }
+    p.extend_from_slice(payload);
+    p
 }

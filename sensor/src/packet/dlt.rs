@@ -230,42 +230,79 @@ fn ip_offset_walk(datalink: i32, packet: &[u8], base: usize) -> Option<usize> {
         return if field == [0x00, 0x21] || field == [0x00, 0x57] { Some(base) } else { None };
     }
     if base >= 2 {
-        let mut offset = base;
-        // STACKED tags, not just one. Skipping a single 0x8100 and dropping everything else is a
-        // hole: on a carrier or campus SPAN port carrying QinQ, or any 802.1ad S-tagged link,
-        // EVERY frame fails the ethertype test and the sensor reports a quiet network. Same shape as the PPPoE gap in #19297 - not a missed detection, a missed link.
-        //
-        // Three TPIDs are recognised: 0x8100 (802.1Q C-tag), 0x88a8 (802.1ad S-tag) and 0x9100
-        // (pre-standard QinQ, still emitted by older kit). MAX_VLAN_TAGS bounds the walk so a
-        // crafted frame of nothing but tags cannot make this loop over the whole packet; two is
-        // what QinQ uses in practice and the limit leaves room without being unbounded.
-        let mut tags = 0;
-        while tags < MAX_VLAN_TAGS {
-            match packet.get(offset.checked_sub(2)?..offset) {
-                Some([0x81, 0x00]) | Some([0x88, 0xa8]) | Some([0x91, 0x00]) => {
-                    offset += 4;
-                    tags += 1;
-                }
-                _ => break,
+        return ethernet_ip(packet, base, true);
+    }
+    None
+}
+
+/// The Ethernet payload whose ethertype ends at `base`: VLAN tags, then IP, PPPoE or MPLS.
+/// `mpls` is false for the Ethernet frame inside an MPLS pseudowire, so the two cannot recurse.
+fn ethernet_ip(packet: &[u8], base: usize, mpls: bool) -> Option<usize> {
+    let mut offset = base;
+    // STACKED tags, not just one. Skipping a single 0x8100 and dropping everything else is a
+    // hole: on a carrier or campus SPAN port carrying QinQ, or any 802.1ad S-tagged link,
+    // EVERY frame fails the ethertype test and the sensor reports a quiet network. Same shape as the PPPoE gap in #19297 - not a missed detection, a missed link.
+    //
+    // Three TPIDs are recognised: 0x8100 (802.1Q C-tag), 0x88a8 (802.1ad S-tag) and 0x9100
+    // (pre-standard QinQ, still emitted by older kit). MAX_VLAN_TAGS bounds the walk so a
+    // crafted frame of nothing but tags cannot make this loop over the whole packet; two is
+    // what QinQ uses in practice and the limit leaves room without being unbounded.
+    let mut tags = 0;
+    while tags < MAX_VLAN_TAGS {
+        match packet.get(offset.checked_sub(2)?..offset) {
+            Some([0x81, 0x00]) | Some([0x88, 0xa8]) | Some([0x91, 0x00]) => {
+                offset += 4;
+                tags += 1;
             }
+            _ => break,
         }
-        let ethertype = packet.get(offset.checked_sub(2)?..offset)?;
-        if ethertype == [0x08, 0x00] || ethertype == [0x86, 0xdd] {
-            return Some(offset);
+    }
+    let ethertype = packet.get(offset.checked_sub(2)?..offset)?;
+    if ethertype == [0x08, 0x00] || ethertype == [0x86, 0xdd] {
+        return Some(offset);
+    }
+    // PPPoE session (RFC 2516): a 6-byte PPPoE header, then the 2-byte PPP protocol field,
+    // then IP. Common on any link fed by a DSL/fibre CPE, and on a SPAN port mirroring one it
+    // is *all* the interesting traffic - a sensor that drops it sees only whatever the capture
+    // host itself originates, which is precisely the symptom in issue #19297.
+    //
+    // Note this needs handling here rather than by `guess()`: the heuristic only runs for an
+    // UNKNOWN datalink, and a mirrored Ethernet port is DLT_EN10MB, so the frame was simply
+    // dropped with no fallback.
+    if ethertype == [0x88, 0x64] {
+        let ppp = packet.get(offset + 6..offset + 8)?;
+        if ppp == [0x00, 0x21] || ppp == [0x00, 0x57] {
+            return Some(offset + 8);
         }
-        // PPPoE session (RFC 2516): a 6-byte PPPoE header, then the 2-byte PPP protocol field,
-        // then IP. Common on any link fed by a DSL/fibre CPE, and on a SPAN port mirroring one it
-        // is *all* the interesting traffic - a sensor that drops it sees only whatever the capture
-        // host itself originates, which is precisely the symptom in issue #19297.
-        //
-        // Note this needs handling here rather than by `guess()`: the heuristic only runs for an
-        // UNKNOWN datalink, and a mirrored Ethernet port is DLT_EN10MB, so the frame was simply
-        // dropped with no fallback.
-        if ethertype == [0x88, 0x64] {
-            let ppp = packet.get(offset + 6..offset + 8)?;
-            if ppp == [0x00, 0x21] || ppp == [0x00, 0x57] {
-                return Some(offset + 8);
+    }
+    // MPLS, unicast and multicast: what a SPAN port inside a carrier or datacentre core carries
+    if mpls && (ethertype == [0x88, 0x47] || ethertype == [0x88, 0x48]) {
+        return mpls_ip_offset(packet, offset);
+    }
+    None
+}
+
+/// How many MPLS labels to pop. Real stacks are 1-3 (transport, service, entropy); segment routing
+/// goes deeper. A frame of nothing but labels is dropped once this is reached.
+const MAX_MPLS_LABELS: usize = 8;
+
+/// An MPLS label stack at `off` (RFC 3032: 4-byte entries, bottom-of-stack is bit 0 of the third
+/// byte). MPLS names no payload type, so the first nibble after the stack decides: 4 or 6 is IP.
+/// Anything else is tried as an Ethernet pseudowire (RFC 4448) - after the 4-byte
+/// RFC 4385 control word when the nibble is 0, then without one. A pseudowire without a control
+/// word whose destination MAC starts with 4 or 6 is taken for IP: nothing in MPLS tells them apart.
+pub(crate) fn mpls_ip_offset(packet: &[u8], mut off: usize) -> Option<usize> {
+    for _ in 0..MAX_MPLS_LABELS {
+        let bottom = packet.get(off.checked_add(2)?)? & 0x01 != 0;
+        off = off.checked_add(4)?;
+        if bottom {
+            let nibble = packet.get(off)? >> 4;
+            if matches!(nibble, 4 | 6) {
+                return Some(off);
             }
+            // `off` indexes the packet, so these additions cannot overflow
+            let with_cw = if nibble == 0 { ethernet_ip(packet, off + 4 + 14, false) } else { None };
+            return with_cw.or_else(|| ethernet_ip(packet, off + 14, false)).and_then(|ip| ip_at(packet, ip));
         }
     }
     None
@@ -419,14 +456,15 @@ pub(crate) mod tests {
             state ^= state << 17;
             (state % n) as usize
         };
-        // two-byte words that mean something to the walk: IP, VLAN TPIDs, PPPoE, PPP protocols
-        let words: [[u8; 2]; 9] = [
+        // two-byte words that mean something to the walk: IP, VLAN TPIDs, PPPoE, MPLS, PPP protocols
+        let words: [[u8; 2]; 10] = [
             [0x08, 0x00],
             [0x86, 0xdd],
             [0x81, 0x00],
             [0x88, 0xa8],
             [0x91, 0x00],
             [0x88, 0x64],
+            [0x88, 0x47],
             [0x00, 0x21],
             [0x00, 0x57],
             [0x12, 0x34],
@@ -813,6 +851,84 @@ mod pppoe_tests {
         for (dlt, full) in samples {
             for cut in 0..full.len() {
                 let _ = at(dlt, &full[..cut]);
+            }
+        }
+    }
+}
+
+#[cfg(test)]
+mod mpls_tests {
+    use super::tests::min_ipv4;
+    use super::*;
+    use crate::testkit::{eth, mpls};
+
+    fn at(frame: &[u8]) -> Option<usize> {
+        ip_offset(DLT_EN10MB, frame, 14)
+    }
+
+    /// A SPAN port inside a carrier or datacentre core delivers MPLS and nothing else; every such
+    /// frame used to fail the ethertype test, so the sensor reported a quiet network.
+    #[test]
+    fn ip_under_an_mpls_label_stack_is_found() {
+        assert_eq!(at(&eth(&mpls(&[100], &min_ipv4()), 0x8847, None)), Some(18), "one label");
+        assert_eq!(at(&eth(&mpls(&[100, 200], &min_ipv4()), 0x8847, None)), Some(22), "two labels");
+        assert_eq!(at(&eth(&mpls(&[100], &min_ipv4()), 0x8848, None)), Some(18), "multicast ethertype");
+        assert_eq!(at(&eth(&mpls(&[100], &min_ipv4()), 0x8847, Some(10))), Some(22), "behind a VLAN tag");
+        let mut v6 = vec![0x60, 0, 0, 0, 0, 0, 59, 64];
+        v6.extend_from_slice(&[0u8; 32]);
+        assert_eq!(at(&eth(&mpls(&[100, 200, 300], &v6), 0x8847, None)), Some(26), "IPv6");
+        let eight: Vec<u32> = (16..24).collect();
+        assert_eq!(at(&eth(&mpls(&eight, &min_ipv4()), 0x8847, None)), Some(14 + 32), "eight labels, the cap");
+    }
+
+    #[test]
+    fn an_ethernet_pseudowire_is_followed_with_or_without_a_control_word() {
+        let inner = eth(&min_ipv4(), 0x0800, None);
+        let mut cw = vec![0, 0, 0, 1]; // RFC 4385: first nibble 0, sequence number 1
+        cw.extend_from_slice(&inner);
+        assert_eq!(at(&eth(&mpls(&[16, 17], &cw), 0x8847, None)), Some(22 + 4 + 14), "with control word");
+        // without one: the inner destination MAC starts right after the stack (0xaa here) ...
+        assert_eq!(at(&eth(&mpls(&[16, 17], &inner), 0x8847, None)), Some(22 + 14), "no control word");
+        // ... or with a 0 nibble, which looks like a control word until the ethertype says not
+        let mut zero_mac = inner.clone();
+        zero_mac[0] = 0x00;
+        assert_eq!(at(&eth(&mpls(&[16, 17], &zero_mac), 0x8847, None)), Some(22 + 14), "MAC 00:..");
+        // a tagged frame inside the pseudowire too
+        let mut tagged = vec![0, 0, 0, 1];
+        tagged.extend_from_slice(&eth(&min_ipv4(), 0x0800, Some(5)));
+        assert_eq!(at(&eth(&mpls(&[16], &tagged), 0x8847, None)), Some(18 + 4 + 18), "VLAN in the pseudowire");
+    }
+
+    #[test]
+    fn what_is_not_ip_under_the_stack_is_dropped() {
+        // too deep: nine labels, or a stack that never sets bottom-of-stack
+        let nine: Vec<u32> = (16..25).collect();
+        assert_eq!(at(&eth(&mpls(&nine, &min_ipv4()), 0x8847, None)), None, "past MAX_MPLS_LABELS");
+        let mut endless = eth(&[], 0x8847, None);
+        for _ in 0..1000 {
+            endless.extend_from_slice(&[0x00, 0x10, 0x00, 0x40]);
+        }
+        assert_eq!(at(&endless), None);
+        // junk, and a pseudowire frame that is ARP
+        assert_eq!(at(&eth(&mpls(&[16], &[0xa5; 64]), 0x8847, None)), None);
+        let mut arp = vec![0, 0, 0, 0];
+        arp.extend_from_slice(&eth(&[0u8; 28], 0x0806, None));
+        assert_eq!(at(&eth(&mpls(&[16], &arp), 0x8847, None)), None);
+        // a pseudowire carrying MPLS again is not followed: the walk cannot recurse
+        let mut nested = vec![0, 0, 0, 0];
+        nested.extend_from_slice(&eth(&mpls(&[18], &min_ipv4()), 0x8847, None));
+        assert_eq!(at(&eth(&mpls(&[16], &nested), 0x8847, None)), None);
+    }
+
+    #[test]
+    fn truncated_mpls_frames_never_panic() {
+        let mut cw = vec![0, 0, 0, 1];
+        cw.extend_from_slice(&eth(&min_ipv4(), 0x0800, Some(5)));
+        for full in [eth(&mpls(&[16, 17, 18], &min_ipv4()), 0x8847, Some(10)), eth(&mpls(&[16], &cw), 0x8847, None)] {
+            assert!(at(&full).is_some(), "the untruncated frame must parse, or this tests nothing");
+            for cut in 0..full.len() {
+                let _ = at(&full[..cut]);
+                let _ = DltLearner::default().resolve(DLT_LINUX_SLL, &full[..cut]);
             }
         }
     }

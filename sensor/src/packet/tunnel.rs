@@ -35,9 +35,12 @@ const ETH_P_IPV4: u16 = 0x0800;
 const ETH_P_IPV6: u16 = 0x86dd;
 /// Transparent Ethernet Bridging - the payload is a whole Ethernet frame.
 const ETH_P_TEB: u16 = 0x6558;
-/// ERSPAN type II and type III, as carried over GRE by switch SPAN sessions.
+/// ERSPAN types I and II (told apart by GRE's sequence-number flag) and type III, as carried over
+/// GRE by switch SPAN sessions.
 const ETH_P_ERSPAN2: u16 = 0x88be;
 const ETH_P_ERSPAN3: u16 = 0x22eb;
+const ETH_P_MPLS_UC: u16 = 0x8847;
+const ETH_P_MPLS_MC: u16 = 0x8848;
 
 /// How many encapsulations to unwrap for one packet.
 pub const MAX_TUNNEL_DEPTH: usize = 3;
@@ -119,9 +122,17 @@ fn gre_inner(packet: &[u8], off: usize) -> Option<usize> {
     match proto {
         ETH_P_IPV4 | ETH_P_IPV6 => at_ip_header(packet, body),
         ETH_P_TEB => at_ethernet(packet, body),
-        // ERSPAN puts its own fixed header between GRE and the mirrored frame.
+        // ERSPAN type I has no header of its own and no GRE sequence number; type II always has
+        // one, then an 8-byte header. Wireshark's packet-erspan.c tells them apart the same way.
+        ETH_P_ERSPAN2 if flags & 0x1000 == 0 => at_ethernet(packet, body),
         ETH_P_ERSPAN2 => at_ethernet(packet, body.checked_add(8)?),
-        ETH_P_ERSPAN3 => at_ethernet(packet, body.checked_add(12)?),
+        // Type III: 12 bytes, then an 8-byte platform-specific sub-header when the O flag - bit 0
+        // of the header's last byte (Linux include/net/erspan.h, Wireshark packet-erspan.c) - is set.
+        ETH_P_ERSPAN3 => {
+            let sub_header = packet.get(body.checked_add(11)?)? & 0x01 != 0;
+            at_ethernet(packet, body.checked_add(if sub_header { 20 } else { 12 })?)
+        }
+        ETH_P_MPLS_UC | ETH_P_MPLS_MC => dlt::mpls_ip_offset(packet, body),
         _ => None,
     }
 }
@@ -149,7 +160,7 @@ fn geneve_inner(packet: &[u8], off: usize) -> Option<usize> {
 mod tests {
     use super::*;
     use crate::packet::parse_ip;
-    use crate::testkit::{erspan, eth, geneve, gre, ipv4, tcp, udp, vxlan};
+    use crate::testkit::{erspan, eth, geneve, gre, ipv4, mpls, tcp, udp, vxlan};
 
     /// Parse the outer header the way `process_packet` does, then ask where the inner one starts.
     fn inner(packet: &[u8]) -> Option<usize> {
@@ -235,6 +246,62 @@ mod tests {
             Some("10.1.1.5"),
             "ERSPAN III"
         );
+    }
+
+    /// ERSPAN type III with the O flag (bit 0 of byte 11) set carries an 8-byte platform-specific
+    /// sub-header before the frame; read as a fixed 12 bytes, every such session was invisible.
+    fn erspan_iii(o: bool, frame: &[u8]) -> Vec<u8> {
+        let mut h = vec![0u8; 12];
+        h[0] = 0x20; // version 2
+        h[11] = 0x0e | u8::from(o); // D and Gra set too: only bit 0 may decide
+        if o {
+            h.extend_from_slice(&[0x0c, 0, 0, 0, 0xde, 0xad, 0xbe, 0xef]); // platform id 3, info
+        }
+        h.extend_from_slice(frame);
+        gre("192.0.2.1", "192.0.2.2", ETH_P_ERSPAN3, false, false, true, &h)
+    }
+
+    #[test]
+    fn erspan_iii_platform_sub_header_is_skipped_when_o_is_set() {
+        let frame = eth(&payload(), 0x0800, None);
+        assert_eq!(inner_src(&erspan_iii(false, &frame)).as_deref(), Some("10.1.1.5"), "O=0");
+        assert_eq!(inner_src(&erspan_iii(true, &frame)).as_deref(), Some("10.1.1.5"), "O=1");
+    }
+
+    #[test]
+    fn erspan_type_i_has_no_header_and_no_sequence_number() {
+        // 0x88be without GRE's S flag: the mirrored frame starts right after the 4-byte GRE header
+        let frame = eth(&payload(), 0x0800, None);
+        let p = gre("192.0.2.1", "192.0.2.2", ETH_P_ERSPAN2, false, false, false, &frame);
+        assert_eq!(inner_src(&p).as_deref(), Some("10.1.1.5"), "ERSPAN I");
+        // and the S flag still means type II with its 8-byte header
+        assert_eq!(inner_src(&erspan("192.0.2.1", "192.0.2.2", false, &frame)).as_deref(), Some("10.1.1.5"));
+    }
+
+    #[test]
+    fn mpls_inside_gre_is_unwrapped() {
+        let p = gre("192.0.2.1", "192.0.2.2", 0x8847, false, false, false, &mpls(&[16], &payload()));
+        assert_eq!(inner_src(&p).as_deref(), Some("10.1.1.5"), "one label");
+        let p = gre("192.0.2.1", "192.0.2.2", 0x8847, false, true, false, &mpls(&[16, 17], &payload()));
+        assert_eq!(inner_src(&p).as_deref(), Some("10.1.1.5"), "two labels, GRE key");
+        // a label stack over something that is not IP or a pseudowire is not a tunnel
+        let p = gre("192.0.2.1", "192.0.2.2", 0x8847, false, false, false, &mpls(&[16], &[0xa5; 64]));
+        assert_eq!(inner(&p), None);
+    }
+
+    #[test]
+    fn truncated_erspan_and_mpls_return_none_not_a_panic() {
+        let frame = eth(&payload(), 0x0800, None);
+        for full in [
+            erspan_iii(true, &frame),
+            gre("192.0.2.1", "192.0.2.2", ETH_P_ERSPAN2, false, false, false, &frame),
+            gre("192.0.2.1", "192.0.2.2", 0x8847, false, false, false, &mpls(&[16, 17], &payload())),
+        ] {
+            assert!(inner(&full).is_some(), "the untruncated packet must unwrap, or this tests nothing");
+            for n in 0..full.len() {
+                let _ = inner(&full[..n]);
+            }
+        }
     }
 
     #[test]
