@@ -610,15 +610,20 @@ class TestSensorStatusFile(unittest.TestCase):
         import shutil
         self.tmp = tempfile.mkdtemp(prefix="mt_sensors_")
         self.addCleanup(shutil.rmtree, self.tmp, True)
-        self._saved = (config.LOG_DIR, dict(L._sensor_status), dict(L._receiver_status))
+        self._saved = (config.LOG_DIR, dict(L._sensor_status), L._receiver_status)
         config.LOG_DIR = self.tmp
         L._sensor_status.clear()
-        L._receiver_status.clear()
+        # The receivers earlier classes started keep reporting their tables into _receiver_status
+        # from a supervising thread, at any moment - which put their sensors into "an empty start".
+        class Ignored(dict):
+            def __setitem__(self, key, value):
+                pass
+        L._receiver_status = Ignored()
 
     def tearDown(self):
         config.LOG_DIR = self._saved[0]
         L._sensor_status.clear(); L._sensor_status.update(self._saved[1])
-        L._receiver_status.clear(); L._receiver_status.update(self._saved[2])
+        L._receiver_status = self._saved[2]
 
     def _write(self, text):
         with open(os.path.join(self.tmp, L.SENSOR_STATUS_FILE), "w") as f:

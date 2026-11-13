@@ -838,8 +838,9 @@ start_units() {
         say "enabling and (re)starting maltrail-$role"
         # restart, not `enable --now`: on a re-run (an upgrade) the unit is already active, and
         # --now left the old binary and server running until the next reboot.
-        run systemctl enable "maltrail-$role.service" && run systemctl restart "maltrail-$role.service" \
-            || warn "maltrail-$role did not start; see 'journalctl -u maltrail-$role'"
+        if ! run systemctl enable "maltrail-$role.service" || ! run systemctl restart "maltrail-$role.service"; then
+            warn "maltrail-$role did not start; see 'journalctl -u maltrail-$role'"
+        fi
     done
 }
 
