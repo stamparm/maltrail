@@ -88,19 +88,33 @@ def get_event_log_handle(sec, flags=os.O_APPEND | os.O_CREAT | os.O_WRONLY, reus
 
         retval = os.open(_, flags)
     else:
+        # A day's log renamed or deleted under us (logrotate, an operator's `mv`) would keep taking
+        # events through the cached descriptor until midnight. Checked at most once a second: a
+        # stat per datagram is not affordable at tens of thousands a second.
+        now = time.time()
+        if _ == getattr(_thread_data, "event_log_path", None) and now - _thread_data.event_log_checked >= 1:
+            _thread_data.event_log_checked = now
+            try:
+                if not os.path.samestat(os.stat(_), os.fstat(_thread_data.event_log_handle)):
+                    _thread_data.event_log_path = None
+            except OSError:
+                _thread_data.event_log_path = None
+
         if _ != getattr(_thread_data, "event_log_path", None):
-            if getattr(_thread_data, "event_log_handle", None):
+            if not os.path.exists(_):
+                open(_, "w+").close()
+                os.chmod(_, DEFAULT_EVENT_LOG_PERMISSIONS)
+
+            # The cache changes only once the new file is open: a failed open must leave the next
+            # call retrying it, not a matching path with a closed descriptor behind it.
+            handle = os.open(_, flags)
+            if getattr(_thread_data, "event_log_handle", None) is not None:
                 try:
                     os.close(_thread_data.event_log_handle)
                 except OSError:
                     pass
 
-            if not os.path.exists(_):
-                open(_, "w+").close()
-                os.chmod(_, DEFAULT_EVENT_LOG_PERMISSIONS)
-
-            _thread_data.event_log_path = _
-            _thread_data.event_log_handle = os.open(_thread_data.event_log_path, flags)
+            _thread_data.event_log_path, _thread_data.event_log_handle, _thread_data.event_log_checked = _, handle, now
 
         retval = _thread_data.event_log_handle
 
@@ -555,6 +569,37 @@ def rejected_status():
     return _merged(_rejected, "rejected", "address", MAX_REJECTED_SOURCES)
 
 
+# Events the receiver could not write (LOG_DIR unwritable, disk full, I/O error). Each one is lost
+# for good, and it used to be lost silently: the dashboard went empty while the sensor stayed green.
+# Counted for /sensors, and reported to error.log the way core/alert.py reports a failing webhook.
+_write_failures = {"dropped": 0, "last_error": None, "last_failed": None, "failing_since": None, "reported": 0}
+WRITE_FAILURE_REPORT_PERIOD = 300
+
+
+def _event_write_failed(ex):
+    now = time.time()
+    _write_failures["dropped"] += 1
+    _write_failures["last_error"] = "%s (%s)" % (getattr(ex, "strerror", None) or ex, getattr(ex, "filename", None) or getattr(_thread_data, "event_log_path", None) or config.LOG_DIR)
+    _write_failures["last_failed"] = int(now)
+    _thread_data.event_log_path = None      # reopen on the next event: a stale descriptor heals itself
+    if _write_failures["failing_since"] is None:
+        _write_failures["failing_since"] = now
+    if now - _write_failures["reported"] >= WRITE_FAILURE_REPORT_PERIOD:
+        _write_failures["reported"] = now
+        log_error("event log write failed: %s; %d event(s) DROPPED so far" % (_write_failures["last_error"], _write_failures["dropped"]))
+    _status_dirty.set()
+
+
+def write_status():
+    """Events dropped because the log could not be written, and the latest reason, over every receiver."""
+
+    with _sensor_status_lock:
+        rows = [_write_failures] + [_.get("write") or {} for _ in _receiver_status.values()]
+    latest = max(rows, key=lambda _: _.get("last_failed") or 0)
+    return {"dropped": sum(_.get("dropped", 0) for _ in rows), "last_error": latest.get("last_error"),
+            "last_failed": latest.get("last_failed"), "failing": any(_.get("failing_since") for _ in rows)}
+
+
 class _LogUDPServer(_socketserver.UDPServer):
     def server_bind(self):
         # The default receive buffer holds ~2k of these datagrams, so a burst overruns it while the loop
@@ -603,7 +648,15 @@ class _UDPHandler(_socketserver.BaseRequestHandler):
 
             # reuse=True: one receive loop means one thread, so the thread-local handle is a real cache
             # instead of a miss on every datagram. It is reopened when the day's path changes.
-            os.write(get_event_log_handle(int(sec)), event)
+            try:
+                os.write(get_event_log_handle(int(sec)), event)
+            except (OSError, IOError) as ex:
+                _event_write_failed(ex)
+            else:
+                if _write_failures["failing_since"] is not None:
+                    log_error("event log writing again after %d event(s) dropped" % _write_failures["dropped"])
+                    _write_failures["failing_since"] = None
+                    _status_dirty.set()
         except Exception:
             if config.SHOW_DEBUG:
                 traceback.print_exc()
@@ -633,7 +686,7 @@ def _receiver_main(fd, family, settings):
             _status_dirty.wait()
             _status_dirty.clear()
             with _sensor_status_lock:
-                line = json.dumps({"sensors": list(_sensor_status.values()), "rejected": list(_rejected.values())})
+                line = json.dumps({"sensors": list(_sensor_status.values()), "rejected": list(_rejected.values()), "write": _write_failures})
             try:
                 sys.stdout.write(line + "\n")
                 sys.stdout.flush()

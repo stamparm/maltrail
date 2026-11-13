@@ -2376,7 +2376,8 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 sensors = [dict(_, address="") for _ in sensors]
                 rejected = []
 
-            return json.dumps({"now": int(time.time()), "sensors": sensors, "rejected": rejected})
+            # Events the receiver received but could not write: lost, while every sensor looks healthy.
+            return json.dumps({"now": int(time.time()), "sensors": sensors, "rejected": rejected, "write": _log.write_status()})
 
         def _ping(self, params):
             self.send_response(_http_client.OK)

@@ -7,6 +7,7 @@ prefix). A bug here means remote sensor events silently never land on the server
 formats write the event to the correct day's log file. Skips cleanly if it can't bind."""
 import binascii
 import os
+import shutil
 import sys
 import time
 import socket
@@ -495,6 +496,83 @@ class TestLogServerSecretUnset(unittest.TestCase):
         data = self._send_and_read(L.mts_sign("some-secret", payload))
         self.assertIn(b"half-upgraded.example", data, "a signed event was lost against a server with no secret")
         self.assertNotIn(b"MTS1", data, "the framing was written into the event log as if it were data")
+
+
+class TestEventLogWriteFailure(unittest.TestCase):
+    """A write the receiver cannot make (LOG_DIR unwritable, disk full) used to vanish into an
+    `except Exception` shown only under SHOW_DEBUG: nothing in error.log, an empty dashboard, a green
+    sensor. Worse, a failed open() left the day's path cached with a closed descriptor, so every
+    later event for that day failed too, long after the directory was writable again."""
+
+    def setUp(self):
+        if hasattr(os, "geteuid") and os.geteuid() == 0:
+            self.skipTest("root ignores directory permissions, so chmod cannot inject the failure")
+        self.saved = config.LOG_DIR
+        self.tmp = config.LOG_DIR = tempfile.mkdtemp(prefix="mt_logw_")
+        open(os.path.join(self.tmp, "error.log"), "w").close()     # it exists on a running server
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        self.addCleanup(os.chmod, self.tmp, 0o755)
+        self.server = L._LogUDPServer(("127.0.0.1", 0), L._UDPHandler)
+        thread = threading.Thread(target=self.server.serve_forever)
+        thread.daemon = True
+        thread.start()
+
+    def tearDown(self):
+        self.server.shutdown()
+        config.LOG_DIR = self.saved
+
+    def _send(self, sec, marker):
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.sendto(b'%d "x" %s 10.0.0.1 1 2.2.2.2 2 TCP IP 2.2.2.2 "m" (s)' % (sec, marker), self.server.server_address)
+        s.close()
+
+    def _logged(self, sec, marker, timeout=3.0):
+        lt = time.localtime(sec)
+        path = os.path.join(self.tmp, "%d-%02d-%02d.log" % (lt.tm_year, lt.tm_mon, lt.tm_mday))
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            if os.path.isfile(path):
+                with open(path, "rb") as f:
+                    if marker in f.read():
+                        return True
+            time.sleep(0.05)
+        return False
+
+    def test_a_failed_write_is_reported_counted_and_recovers(self):
+        dropped = L.write_status()["dropped"]
+        self._send(SEC, b"control")
+        self.assertTrue(self._logged(SEC, b"control"), "positive control: an event is logged when all is fine")
+
+        os.chmod(self.tmp, 0o555)                   # the next day's file cannot be created
+        self._send(SEC + 86400, b"lost")
+        self.assertFalse(self._logged(SEC + 86400, b"lost", timeout=0.5))
+        self.assertEqual(L.write_status()["dropped"], dropped + 1, "the dropped event was not counted")
+        with open(os.path.join(self.tmp, "error.log")) as f:
+            errors = f.read()
+        self.assertIn("DROPPED", errors, "a failed event-log write left nothing in error.log")
+        self.assertIn("Permission denied", errors)
+
+        os.chmod(self.tmp, 0o755)
+        # The original day first: the failed switch had closed its descriptor but left its path cached.
+        self._send(SEC, b"same-day")
+        self.assertTrue(self._logged(SEC, b"same-day"), "the day whose handle was closed by the failed switch stayed blind")
+        self._send(SEC + 86400, b"again")
+        self.assertTrue(self._logged(SEC + 86400, b"again"), "the receiver stayed blind after the directory was fixed")
+        with open(os.path.join(self.tmp, "error.log")) as f:
+            self.assertIn("writing again", f.read(), "recovery was not reported")
+
+    def test_a_log_renamed_away_is_reopened(self):
+        # logrotate-style `mv`: the cached descriptor follows the old inode, so events went to the
+        # renamed file until midnight and /events showed nothing.
+        sec = int(time.time())
+        self._send(sec, b"before")
+        self.assertTrue(self._logged(sec, b"before"))
+        lt = time.localtime(sec)
+        path = os.path.join(self.tmp, "%d-%02d-%02d.log" % (lt.tm_year, lt.tm_mon, lt.tm_mday))
+        os.rename(path, path + ".1")
+        time.sleep(1.1)
+        self._send(sec, b"after")
+        self.assertTrue(self._logged(sec, b"after"), "an event went to the renamed file, not the day's log")
 
 
 if __name__ == "__main__":

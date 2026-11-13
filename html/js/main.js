@@ -2637,6 +2637,12 @@
                  '<span class="sens-ago">' + _sensorAgo(Math.max(0, now - (r.last_seen || 0))) + '</span></div>';
     });
     if (refused) refused = '<div class="hunt-sum">refused senders</div><div class="sens-rows">' + refused + '</div>';
+    // Events that arrived but could not be written (LOG_DIR unwritable, disk full): lost, while
+    // every sensor below still looks healthy. Above everything else for that reason.
+    var w = d.write || {};
+    if (w.dropped) refused = '<div class="hunt-sum">event log</div><div class="sens-rows"><div class="sens-row is-stale">' +
+                             '<span class="sens-name">' + fmtN(w.dropped) + ' event(s) dropped, not written: ' + esc(w.last_error || "") + '</span>' +
+                             '<span class="sens-ago">' + _sensorAgo(Math.max(0, now - (w.last_failed || 0))) + '</span></div></div>' + refused;
     if (!list.length) {
       // Say what to do about it: an empty list is the normal state of every deployment that has
       // not turned heartbeats on yet, and "no sensors" alone reads as an outage.
