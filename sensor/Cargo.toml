@@ -1,6 +1,6 @@
 [package]
 name = "maltrail-sensor"
-version = "3.5.0"
+version = "3.6.0"
 edition = "2021"
 rust-version = "1.74"
 description = "Packet-processing sensor for Maltrail"

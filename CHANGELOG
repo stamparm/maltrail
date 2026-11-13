@@ -14,8 +14,88 @@
 
 
 
-- Version 3.5 -> 3.6 (unreleased)
+- Version 3.5 -> 3.6 (13 Nov 2026)
 
+[+] A sensor without LOG_SERVER (sensor and server on one host) sent no heartbeats, so a dead
+    local sensor looked exactly like a quiet network. It now writes the heartbeat to
+    LOG_DIR/<sensor>.heartbeat, which the server reads with the file's mtime as last seen, so the
+    silence and capture-drop alerts cover the single-host install too.
+[!] Login: /login/params answered legacy: true only for accounts with an old sha256 USERS entry,
+    which told anyone which of those usernames existed. The server now derives the salted
+    verifier from that digest itself (it is the PBKDF2 input), so such an account gets the same
+    parameters as a missing one and the browser always sends the proof; the old digest no longer
+    crosses the wire. Scripts sending the digest still log in.
+[!] install.sh on macOS: Homebrew no longer builds bottles for Intel Macs, so 'brew install git
+    python3 libpcap' compiled git, Python and OpenSSL from source (45-54 min) and upgraded the
+    operator's installed packages on the way. libpcap is part of macOS; brew is now asked only
+    for git or python3 when they do not work, and never upgrades.
+[+] The heartbeat carries the capture's received and dropped packet counts. /sensors and the
+    Sensors view show the dropped share, and the server alerts once when a sensor drops more than
+    1% of its packets within an hour (SENSOR_DROP_ALERT, SENSOR_DROP_WINDOW), and once when that
+    stops. Before, kernel drops never left the sensor host.
+[!] install.sh: re-running it (the upgrade path) left the old server and sensor running until a
+    reboot, because 'systemctl enable --now' does nothing for an active unit. Units are restarted.
+[!] Sensor: header names in another case ('host:', 'HOST:', 'user-agent:') skipped Host, URL and
+    User-Agent trails; an AAAA-only lookup of a listed domain was never checked; DNS over TCP/53
+    was not parsed. Each now detects (crafted pcaps 0 -> 1 event; clean and PTR controls 0). A
+    same-name A+AAAA pair within a second is still one event. DNS query path +8 ns.
+[+] Alerts: dropped alerts are counted in the log, /sensors shows webhook delivery status, and
+    LOG_DIR/alerts.json keeps the tail position and queue, so a restart neither loses pending
+    alerts nor skips events written while the server was down (up to 1,000). Senders whose clock
+    is outside LOG_SERVER_SKEW are counted and shown; their events, dated -2 d or 1979, used to
+    land in other days' logs and never alert.
+[!] Login: an entry in the old sha256 form accepted a nonce the server never issued, so a
+    captured login replayed after a restart. --doctor and the server's startup now say plainly
+    that an empty USERS serves the event log unauthenticated (an error when not on loopback).
+[!] Remote logging: the sensor's UDP socket was unconnected, so a stopped server was invisible
+    (a 0.35 s server restart lost 136 events, and written=5 was reported with 0 of 5 arrived).
+    Refusals now count as remote errors with one error.log line per outage and one on resume, and
+    the heartbeat reports events sent, so /sensors shows what was lost on the way.
+[+] Sensor: ERSPAN type I and type III (with the optional platform sub-header), MPLS label stacks
+    up to 8 deep, and Ethernet over MPLS with or without a control word are decapsulated.
+[!] CAPTURE_FILTER passed TLS only on 443 and HTTP only on six ports, so a hello on 8443/993 or a
+    request on any other port never reached the sensor (2,103 trails carry host:port/path), and
+    DNS over TCP and MPLS frames were dropped. TLS is matched by its record header and HTTP by
+    method on any port; on a home network the packets passed went slightly DOWN, as the old 443
+    clause leaked bulk segments.
+[=] Windows: built with Rust 1.100, the sensor bound WaitOnAddress to vertdll.dll (through pcap's
+    windows-sys 0.36) and did not load under Wine; the system synchronization library is linked
+    first, as with earlier toolchains.
+[+] A sensor that stops sending heartbeats for 15 minutes (SENSOR_STALE_AFTER) is alerted on once,
+    and once when it reports again; with or without a webhook it goes to error.log. The sensor
+    table is kept in LOG_DIR/sensors.json, so a restart still knows who should be reporting.
+[!] Server: a failed event log write was swallowed, and the old handle was closed before the new
+    one opened, so the receiver logged nothing until midnight (1,101 events lost after one
+    transient chmod, error.log empty). Failures are reported, counted in /sensors and recovered
+    from; a day log renamed away by logrotate is reopened.
+[!] Trail update: with the static source failing and a 90-day-old cache, the updater exited 0 and
+    -T and --doctor reported the trails as 0.0 days old, because every rebuild touched
+    trails.csv. Age is now the content's age, a failed refresh exits 1, and a payload that is not
+    trail CSV (an "Access denied" page served with 200) or shrinks below TRAIL_RELOAD_MIN_RATIO
+    is refused instead of replacing the static trails.
+[!] Sensor: a SYN carrying ECN flags (ECE+CWR) skipped IP and IP:port trails and the scan and
+    beacon state (83 of 10,769 SYNs in an hour on a home network). The shipped CAPTURE_FILTER also
+    dropped what the parser can unwrap: GRE, ERSPAN, IP-in-IP, 6in4, PPPoE, VLAN/QinQ and IPv6
+    extension headers now pass.
+[!] ALERT_FORMAT: the shipped value contained '#%(threat)s', and the configuration reader cut it at
+    the '#', so every webhook body was invalid JSON. It reads 'threat %(threat)s' now.
+[!] install.sh on Arch: a box behind its package lists failed to install git ('openssl-3 ...
+    exists in filesystem') and the installer died later with "'git' is still missing". It now
+    stops at once and says to run 'pacman -Syu' first.
+[-] The bitcoinnodes feed: its upstream has been frozen since 1 Jan 2026, and a reachable Bitcoin
+    node is not bad reputation (#19659).
+[!] Dashboard: a throttled or condensed line holds several events, but counted as one: a replayed
+    day showed 286 events where the truth was 7,126 (now 7,064, 145 of 147 threats exact). /counts
+    uses the same rule.
+[!] Dashboard: a scanner's test strings in the User-Agent and its "Nikto (*)" summary were separate
+    threats; one scanning tool is now one threat.
+[=] Alerts: one message per threat per day (ALERT_THROTTLE 86400), keyed on the dashboard's threat
+    id, which %(threat)s now carries. Over 7 days of a home network: high 10 -> 4, medium 656 ->
+    90, low 8,982 -> 1,099.
+[!] Sensor: a CNAME listed like its query (checkip.amazonaws.com -> ...a2z.com) showed as two
+    threats per lookup; it is reported once under the queried name.
+[!] Dashboard: clicking a saved view applied nothing, and trails named like __proto__ or
+    constructor returned Object prototype members from the caches.
 [=] Dashboard: a copy Chrome renders invisibly ahead of a predicted visit (Settings > Performance >
     Preload pages) used to fetch the whole day's /events, a full file scan on the server, for a page
     that might never be shown. The day is loaded once the page is actually shown.

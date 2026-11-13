@@ -110,5 +110,14 @@ class TestReleaseGateKeepsTheCheck(unittest.TestCase):
         self.assertIn("compare/3.4...3.5", notes)
         self.assertIsNone(release_notes.entry("0.0.1-never"))
 
+    def test_entries_written_back_to_back_are_separate_items(self):
+        sys.path.insert(0, os.path.join(ROOT, "sensor", "tools"))
+        import release_notes
+        raw = "[+] One thing\n    continued.\n[!] A fix\n[=] A change\n      - with a detail\n\n[+] Another"
+        notes = release_notes.render(raw, "9.9", None)
+        self.assertEqual([_ for _ in notes.split("\n") if _.startswith("- ")],
+                         ["- One thing continued.", "- Another", "- A change", "- A fix"])
+        self.assertIn("  - with a detail", notes)
+
 if __name__ == "__main__":
     unittest.main()

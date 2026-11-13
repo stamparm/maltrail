@@ -34,7 +34,9 @@ def render(raw, version, previous):
     """CHANGELOG items as markdown, grouped by kind. Continuation lines are re-joined."""
 
     items = []
-    for block in re.split(r"\n\s*\n", raw):
+    # An item starts at a blank line OR at a line opening with its kind: most entries are written
+    # back to back, and splitting on blank lines alone ran 85 of them into five bullets.
+    for block in re.split(r"\n\s*\n|\n(?=\[[-+!=]\])", raw):
         block = block.strip("\n")
         if not block:
             continue
