@@ -42,7 +42,7 @@ SKIP_PREFIXES = ("data/", "tests/canaries", "tests/test_refs.py", "sensor/tests/
 
 # Hex-shaped tokens that are not commits. Each one has to earn its place here.
 NOT_COMMITS = {
-    "aaaabbb":   "a user-agent fragment in data/ua.txt, mirrored into settings_gen.rs",
+    "aaaabbb":   "a user-agent fragment in data/ua.txt",
     "abc1234":   "a placeholder string in sensor/src/smallstr.rs's doc example",
     "b20112211": "a user-agent fragment",
     "c010101":   "a user-agent fragment",

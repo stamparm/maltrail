@@ -2,7 +2,7 @@
 #
 # The bulk of the static trails moved to their own repository, which gates its own content on every
 # commit. What is left HERE is the detection content the engine still ships: data/ua.txt (folded
-# into SUSPICIOUS_UA_REGEX and compiled into the sensor), data/whitelist.txt, and the two scanner
+# into SUSPICIOUS_UA_REGEX and embedded in the sensor), data/whitelist.txt, and the two scanner
 # lists in data/ - 19,942 trails that fire, and the noisiest class in the product. They must not
 # become the one kind of content with no gate on it, which is how a regex
 # like `\b(au|cat|...)\-[a-z0-9]{1,4}\.(buzz|cn|co|...)$` shipped and was reported by a customer:
@@ -74,12 +74,3 @@ jobs:
       # never equal to a domain.
       - name: No trail matches a canary
         run: python3 sensor/tools/check_trails.py --path /tmp/local-trails --canaries
-
-      # data/ua.txt is detection content too, and read_ua() folds it into SUSPICIOUS_UA_REGEX, which
-      # the Rust sensor COMPILES IN via src/settings_gen.rs. Add a pattern without regenerating and
-      # the two sensors disagree: 51966d8 added Loader-cli / Loader-cli/v1 from a ThreatFox report
-      # and the Rust sensor could not match either. `cargo test --test generated` is the authority
-      # and catches it, but only 38s into the 45-minute sensor gate; this says so in one second, in
-      # the workflow the person editing content is already watching.
-      - name: Generated constants are current with data/ua.txt
-        run: python3 sensor/tools/gen_settings.py --check

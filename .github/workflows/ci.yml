@@ -39,8 +39,8 @@ jobs:
   # debug (overflow checks on) and release (what ships), the corpus replay included. Its
   # real-trails steps self-skip here, because a runner has no trails.csv;
   # the `real-trails` job below builds one and runs the tests that need it.
-  # src/settings_gen.rs is transcribed from core/settings.py and data/ua.txt, and the Python side
-  # reads those at runtime while the sensor COMPILES them in. Let them drift and the sensor and
+  # src/settings_gen.rs is transcribed from core/settings.py, and the Python side
+  # reads it at runtime while the sensor COMPILES them in. Let them drift and the sensor and
   # the server disagree in a way no replay can see, because each is internally consistent. check.sh catches it, but ~3 minutes in and behind a 45-minute job; this answers in
   # seconds, on its own, so the person who edited a constant is told by the first thing that
   # finishes. It has been forgotten four times.

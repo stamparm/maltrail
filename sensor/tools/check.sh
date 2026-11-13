@@ -38,17 +38,17 @@ if [ -n "$missing" ]; then
     exit 1
 fi
 
-echo "== generated files are in sync with core/settings.py and data/ua.txt =="
+echo "== generated files are in sync with core/settings.py =="
 # FIRST, and against the tree exactly as committed: this gate exists to catch a constant that moved
-# in core/settings.py (or a User-Agent pattern added to data/ua.txt, which read_ua() folds into
-# SUSPICIOUS_UA_REGEX) without src/settings_gen.rs being regenerated. The server and the updater
+# in core/settings.py without src/settings_gen.rs being regenerated (and that the sensor folds
+# data/ua.txt, which it embeds rather than mirrors, into the same regex as read_ua()). The server and the updater
 # read those constants at runtime while the sensor compiles them in, so a mismatch makes them
 # disagree in a way no replay can see, because each is internally consistent on its own. Nothing
 # above this line may write to src/settings_gen.rs.
 cargo test --manifest-path sensor/Cargo.toml --release --test generated
 
-# NOTE: src/settings_gen.rs is deliberately NOT regenerated here. Its inputs - core/settings.py
-# and data/ua.txt - are both committed, so the checked-in file is reproducible from the repository
+# NOTE: src/settings_gen.rs is deliberately NOT regenerated here. Its input, core/settings.py,
+# is committed, so the checked-in file is reproducible from the repository
 # alone and the test above is the authority on whether it is current. Regenerating at this point
 # would REPAIR the drift the previous step exists to report, and the gate would then be passing
 # because it edited the working tree rather than because the tree was right. That is not a

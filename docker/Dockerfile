@@ -24,6 +24,8 @@ RUN mkdir -p sensor/src && echo 'fn main() {}' > sensor/src/main.rs && \
     cargo build --release --manifest-path sensor/Cargo.toml 2>/dev/null || true
 
 COPY sensor/ ./sensor/
+# Embedded by src/settings.rs (include_str!) as the fallback when data/ua.txt is not on disk.
+COPY data/ua.txt ./data/ua.txt
 # The build script generates nothing, but `touch` defeats the stale-fingerprint cache above.
 RUN touch sensor/src/main.rs sensor/src/lib.rs && \
     cargo build --release --manifest-path sensor/Cargo.toml && \

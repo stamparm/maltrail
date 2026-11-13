@@ -82,8 +82,6 @@ def emit_pairs(name, pairs, comment=None):
 
 
 def main(out_path=None):
-    S.read_ua()  # builds SUSPICIOUS_UA_REGEX from data/ua.txt
-
     import socket
     ipproto = sorted(((getattr(socket, _), _.replace("IPPROTO_", "")) for _ in dir(socket) if _.startswith("IPPROTO_")))
     # dict() semantics: later duplicates win, mirroring core/settings.py:IPPROTO_LUT
@@ -176,11 +174,6 @@ def main(out_path=None):
                    list(S.SUSPICIOUS_HTTP_REQUEST_FORCE_ENCODE_CHARS.items()),
                    "(char, percent-encoding) applied to path/post_data before logging"),
         "",
-        "/// SUSPICIOUS_UA_REGEX, built by core/settings.py:read_ua() from data/ua.txt",
-        "/// (each line kept verbatim if it compiles as a regex, else re.escape()d; lines",
-        "/// containing \" (compatible\" are always escaped).",
-        "pub const SUSPICIOUS_UA_REGEX: &str = %s;" % rust_str(S.SUSPICIOUS_UA_REGEX),
-        "",
         "/// DLT_OFFSETS (core/settings.py, resolved for this platform)",
         "pub const DLT_OFFSETS: &[(i32, usize)] = &[%s];"
         % ", ".join("(%d, %d)" % (k, v) for k, v in sorted(S.DLT_OFFSETS.items())),
@@ -234,7 +227,7 @@ def _constants(text):
 
 
 def check(out_path=None):
-    """Is the checked-in settings_gen.rs current with core/settings.py + data/ua.txt? Writes nothing.
+    """Is the checked-in settings_gen.rs current with core/settings.py? Writes nothing.
 
     `cargo test --test generated` remains the authority in CI (it compares what the sensor actually
     COMPILED). This is the same question answerable in a second, without a toolchain - and without the
@@ -291,8 +284,8 @@ def require_supported_interpreter():
 
     `sensor/tools/check.sh` already requires 3.7+ before it runs this, "because a generator run on an
     older interpreter can emit a subtly wrong settings_gen.rs rather than failing". Running the
-    generator directly bypassed that. It is not theoretical: on 3.6 this reports IPPROTO_LUT and
-    SUSPICIOUS_UA_REGEX as stale, because IPPROTO_LUT is built from `dir(socket)` and that set differs
+    generator directly bypassed that. It is not theoretical: on 3.6 this reports IPPROTO_LUT as
+    stale, because IPPROTO_LUT is built from `dir(socket)` and that set differs
     between interpreter versions - and the advice a STALE verdict prints would then have you write the
     wrong file. The server still supports 3.6; generating this Rust source does not.
     """

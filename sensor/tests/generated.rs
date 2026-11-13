@@ -123,6 +123,35 @@ fn settings_gen_is_in_sync_with_core_settings_py() {
     );
 }
 
+/// `data/ua.txt` is not mirrored into `settings_gen.rs` (the sensor embeds the file itself), so
+/// what remains to prove is that both sides fold it into the same regex: `read_ua()` keeps a line
+/// verbatim only if CPython's `re` compiles it, and the sensor decides that with `pyre`.
+#[test]
+fn suspicious_ua_regex_matches_core_settings_read_ua() {
+    let Some(python) = python() else {
+        println!("[skip] no python interpreter to run read_ua() with");
+        return;
+    };
+    let root = repo_root();
+    let out = Command::new(python)
+        .current_dir(&root)
+        .args(["-c", "import sys; import core.settings as S; S.read_ua(); sys.stdout.write(S.SUSPICIOUS_UA_REGEX)"])
+        .output()
+        .expect("run core/settings.py:read_ua()");
+    assert!(out.status.success(), "read_ua() failed: {}", String::from_utf8_lossy(&out.stderr));
+    let python_side = String::from_utf8(out.stdout).expect("utf-8 regex");
+    assert!(python_side.len() > 1000, "read_ua() produced almost nothing: {python_side:?}");
+    let rust_side = maltrail_sensor::settings::build_suspicious_ua_regex(&root);
+    if rust_side != python_side {
+        let at = rust_side.bytes().zip(python_side.bytes()).take_while(|(a, b)| a == b).count();
+        panic!(
+            "the sensor folds data/ua.txt differently from read_ua(), from byte {at}:\n  sensor: {}\n  python: {}",
+            clip(rust_side.get(at..).unwrap_or(&rust_side)),
+            clip(python_side.get(at..).unwrap_or(&python_side))
+        );
+    }
+}
+
 /// `pub const NAME: TYPE = VALUE;` pairs, with layout normalised away.
 fn constants(source: &str) -> Vec<(String, String)> {
     let mut out = Vec::new();

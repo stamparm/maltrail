@@ -88,13 +88,22 @@ pub fn iter_file_lines(path: &Path) -> Vec<String> {
     text.lines().map(|l| l.trim().to_string()).filter(|l| !l.is_empty() && !l.starts_with('#')).collect()
 }
 
+/// `data/ua.txt` as of the build, for a binary running without the file. Embedded rather than
+/// mirrored into `settings_gen.rs`: a mirror went stale on every web-UI edit of `ua.txt` and held
+/// master red until someone regenerated it; `include_str!` makes cargo rebuild instead.
+const EMBEDDED_UA_TXT: &str = include_str!("../../data/ua.txt");
+
 /// `core/settings.py:read_ua()` — rebuild SUSPICIOUS_UA_REGEX from `data/ua.txt` so an
 /// operator editing that file affects the sensor exactly as it affects
-/// `core/settings.py`. Falls back to the generated snapshot when the file is unavailable.
+/// `core/settings.py`. Falls back to the copy embedded at build time when the file is unavailable.
 pub fn build_suspicious_ua_regex(root: &Path) -> String {
-    let lines = iter_file_lines(&root.join("data").join("ua.txt"));
+    let mut lines = iter_file_lines(&root.join("data").join("ua.txt"));
     if lines.is_empty() {
-        return SUSPICIOUS_UA_REGEX.to_string();
+        lines = EMBEDDED_UA_TXT
+            .lines()
+            .map(|l| l.trim().to_string())
+            .filter(|l| !l.is_empty() && !l.starts_with('#'))
+            .collect();
     }
     let mut items = Vec::with_capacity(lines.len());
     for line in lines {
@@ -483,11 +492,11 @@ mod tests {
     }
 
     #[test]
-    fn ua_regex_matches_python_snapshot() {
-        // Proves read_ua()'s decision procedure (verbatim vs re.escape) reaches the same
-        // result in Rust as in CPython for every line of data/ua.txt.
-        let built = build_suspicious_ua_regex(&root());
-        assert_eq!(built, SUSPICIOUS_UA_REGEX);
+    fn ua_regex_falls_back_to_the_embedded_file() {
+        // No data/ua.txt under this root, so the embedded copy is used; it is the same file.
+        let fallback = build_suspicious_ua_regex(Path::new("/nonexistent-maltrail-root"));
+        assert!(fallback.len() > 1000, "embedded ua.txt produced {:?}", &fallback[..fallback.len().min(80)]);
+        assert_eq!(fallback, build_suspicious_ua_regex(&root()));
     }
 
     #[test]
