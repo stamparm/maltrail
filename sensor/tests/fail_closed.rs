@@ -12,13 +12,9 @@ use std::path::PathBuf;
 use std::process::Command;
 
 fn binary() -> PathBuf {
-    // The integration test binary lives in target/<profile>/deps/, so the sensor is two up.
-    let mut path = std::env::current_exe().expect("test binary path");
-    path.pop();
-    if path.ends_with("deps") {
-        path.pop();
-    }
-    path.join("maltrail-sensor")
+    // Cargo says where it built the binary; the test's own directory is not a guide (Rust 1.100
+    // moved test executables out of target/<profile>/deps).
+    PathBuf::from(env!("CARGO_BIN_EXE_maltrail-sensor"))
 }
 
 fn corpus() -> PathBuf {

@@ -14,12 +14,7 @@ use std::path::PathBuf;
 use std::process::Command;
 
 fn binary() -> PathBuf {
-    let mut path = std::env::current_exe().expect("test binary path");
-    path.pop();
-    if path.ends_with("deps") {
-        path.pop();
-    }
-    path.join("maltrail-sensor")
+    PathBuf::from(env!("CARGO_BIN_EXE_maltrail-sensor"))
 }
 
 /// `PORT_SCANNING_THRESHOLD` is 10 distinct destination ports from one source.

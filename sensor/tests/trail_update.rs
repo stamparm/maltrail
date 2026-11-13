@@ -25,12 +25,9 @@ fn repo_root() -> PathBuf {
 /// suite then exercised whatever stale binary happened to sit there, or skipped. Returns `None`
 /// only when the binary is genuinely absent.
 fn sensor_binary() -> Option<PathBuf> {
-    let mut dir = std::env::current_exe().ok()?;
-    dir.pop();
-    if dir.ends_with("deps") {
-        dir.pop();
-    }
-    let path = dir.join(format!("maltrail-sensor{}", std::env::consts::EXE_SUFFIX));
+    // Cargo builds the binary for integration tests and says where; the test's own directory is
+    // not a guide (Rust 1.100 moved test executables out of target/<profile>/deps).
+    let path = PathBuf::from(env!("CARGO_BIN_EXE_maltrail-sensor"));
     path.is_file().then_some(path)
 }
 
