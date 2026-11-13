@@ -14,6 +14,7 @@ import re
 import sys
 import time
 import socket
+import binascii
 import hashlib
 import tempfile
 import subprocess
@@ -267,7 +268,16 @@ class TestHttpd(unittest.TestCase):
         known, unknown = self._params("salted"), self._params("nobody-here")
         self.assertEqual(sorted(known), sorted(unknown))
         self.assertEqual(unknown["salt"], self._params("nobody-here")["salt"], "a decoy salt must be stable, or it gives itself away")
-        self.assertTrue(self._params("admin").get("legacy"), "an old sha256 entry must be flagged, so the browser sends the old digest")
+        self.assertEqual(sorted(self._params("admin")), sorted(unknown), "an old sha256 entry must look like any other user")
+
+    def test_an_old_sha256_entry_logs_in_with_the_browsers_proof(self):
+        prm = self._params("admin")
+        as_browser = _password.make(PW, prm["iterations"], binascii.unhexlify(prm["salt"]))
+        body = "username=admin&nonce=%s&proof=%s" % (prm["nonce"], _password.proof_for(PW, as_browser, "admin", prm["nonce"]))
+        self.assertEqual(_http(self.port, "POST", "/login", body=body)[0], 200)
+        prm = self._params("admin")
+        wrong = "username=admin&nonce=%s&proof=%s" % (prm["nonce"], _password.proof_for(PW + "x", as_browser, "admin", prm["nonce"]))
+        self.assertEqual(_http(self.port, "POST", "/login", body=wrong)[0], 401, "the control: a wrong password")
 
     # --- the auth surfaces PLANS G4 named as untested ---
 

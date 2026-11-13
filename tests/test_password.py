@@ -64,10 +64,18 @@ class TestPassword(unittest.TestCase):
         self.assertFalse(P.is_password(self.field, "nope"))
         self.assertTrue(P.is_password(P.legacy_hash("changeme!"), "changeme!"))
 
-    def test_parameters_flag_only_the_old_form(self):
+    def test_parameters_never_tell_an_old_entry_from_a_missing_user(self):
         self.assertEqual(P.parameters(self.field, "admin"), {"iterations": 1000, "salt": "00112233445566778899aabbccddeeff"})
-        self.assertTrue(P.parameters(P.legacy_hash("x"), "admin")["legacy"])
-        self.assertNotIn("legacy", P.parameters(None, "ghost"))
+        self.assertEqual(P.parameters(P.legacy_hash("x"), "admin"), P.parameters(None, "admin"))
+        self.assertNotEqual(P.parameters(P.legacy_hash("x"), "admin"), P.parameters(None, "ghost"), "the control: salts differ per user")
+
+    def test_an_old_entry_verifies_the_proof_the_browser_computes(self):
+        # The browser only knows what /login/params said; build the proof from exactly that.
+        legacy, prm = P.legacy_hash("x"), P.parameters(P.legacy_hash("x"), "admin")
+        as_browser = P.make("x", prm["iterations"], binascii.unhexlify(prm["salt"]))
+        self.assertTrue(P.verify(legacy, "admin", "n1", P.proof_for("x", as_browser, "admin", "n1")))
+        self.assertFalse(P.verify(legacy, "admin", "n1", P.proof_for("y", as_browser, "admin", "n1")))
+        self.assertFalse(P.verify(legacy, "root", "n1", P.proof_for("x", as_browser, "admin", "n1")), "bound to the username")
 
     def test_the_shipped_configuration_is_salted(self):
         with open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "maltrail.conf")) as f:

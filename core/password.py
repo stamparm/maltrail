@@ -82,29 +82,52 @@ def parse(field):
     return iterations, salt, stored
 
 
+def _decoy_salt(username):
+    return hmac.new(_DECOY_KEY, (username or "").encode("utf8"), hashlib.sha256).digest()[:16]
+
+
+_derived = {}
+
+
+def _resolve(field, username):
+    """parse(), plus an entry still in the old sha256(password) form turned into the same scheme.
+
+    That digest is exactly the PBKDF2 input, so the server can derive a stored key from it - with
+    the decoy salt, so the parameters it hands out are the ones an unknown user would get. It used
+    to flag such entries `legacy` instead, so the browser would send the old digest, and the flag
+    alone told anyone which usernames existed with an old entry.
+    """
+
+    parsed = parse(field)
+    legacy = (field or "").strip().lower()
+    if parsed is None and len(legacy) == 64 and all(_ in "0123456789abcdef" for _ in legacy):
+        key = (legacy, username)
+        if key not in _derived:
+            if len(_derived) > 256:     # USERS is a handful of lines; this only bounds junk usernames
+                _derived.clear()
+            salt = _decoy_salt(username)
+            _derived[key] = (ITERATIONS, salt, _stored_key(legacy, salt, ITERATIONS))
+        parsed = _derived[key]
+    return parsed
+
+
 def parameters(field, username):
     """What the browser needs before it can compute a proof: {"iterations", "salt"}.
 
     An unknown user gets decoy parameters, stable per username, so the answer does not say which
-    usernames exist. An entry still in the old form is flagged `legacy`: the browser then sends
-    the old digest instead, which it must not do otherwise - sha256(sha256(password) + nonce) on
-    the wire is a cheap offline guess, and would undo the PBKDF2 for anyone sniffing a login.
+    usernames exist; so does an entry in the old form (see _resolve).
     """
 
-    parsed = parse(field)
+    parsed = _resolve(field, username)
     if parsed is None:
-        salt = hmac.new(_DECOY_KEY, (username or "").encode("utf8"), hashlib.sha256).digest()[:16]
-        result = {"iterations": ITERATIONS, "salt": binascii.hexlify(salt).decode()}
-        if field:
-            result["legacy"] = True
-        return result
+        return {"iterations": ITERATIONS, "salt": binascii.hexlify(_decoy_salt(username)).decode()}
     return {"iterations": parsed[0], "salt": binascii.hexlify(parsed[1]).decode()}
 
 
 def verify(field, username, nonce, proof):
     """Does `proof` (hex) show knowledge of the password behind `field`, for this username and nonce?"""
 
-    parsed = parse(field)
+    parsed = _resolve(field, username)
     if parsed is None:
         return False
     try:

@@ -3251,13 +3251,12 @@
       var u = o.querySelector("#li_user").value, p = pass.value;
       if (!u || !p) { err.textContent = "Enter username and password."; return; }
       go.disabled = true; err.textContent = "";
-      // Two steps: the server's salt, iterations and a fresh nonce, then the proof. An account still
-      // on the old sha256 entry is flagged `legacy` and gets the old digest instead.
+      // Two steps: the server's salt, iterations and a fresh nonce, then the proof - for every account,
+      // an old sha256 USERS entry included (the server derives its verifier from that digest).
       fetch("/login/params?username=" + encodeURIComponent(u), { credentials: "same-origin" })
         .then(function (r) { if (!r.ok) throw r; return r.json(); })
         .then(function (prm) {
-          var body = "username=" + encodeURIComponent(u) + "&nonce=" + prm.nonce +
-            (prm.legacy ? "&hash=" + sha256hex(sha256hex(p) + prm.nonce) : "&proof=" + loginProof(u, p, prm));
+          var body = "username=" + encodeURIComponent(u) + "&nonce=" + prm.nonce + "&proof=" + loginProof(u, p, prm);
           return fetch("/login", { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body });
         })
         .then(function (r) {

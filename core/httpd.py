@@ -1776,17 +1776,18 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                             uid = None
 
                         if username == params.get("username"):
-                            if password.parse(stored_hash):
-                                # Only the proof is accepted for an entry in the new form: taking the
-                                # old digest too would let its stored value log in, which is the
-                                # whole thing the new form exists to stop.
+                            # The proof, for an entry in either form (an old sha256 one is turned
+                            # into the new scheme by password._resolve). This is what the browser sends.
+                            if params.get("proof"):
                                 if _redeem_nonce(params.get("nonce")) and password.verify(stored_hash, username, params.get("nonce"), params.get("proof")):
                                     valid = True
                                     break
                                 continue
-                            # The same issued-nonce rule as the proof above: checked before the
-                            # digest, so a wrong guess spends the nonce too.
-                            if not params.get("hash") or not _redeem_nonce(params.get("nonce")):
+                            # The old digest, still accepted from scripts - but only for an entry in
+                            # the old form: for a new one it would let the stored value log in, which
+                            # is the whole thing the new form exists to stop. The same issued-nonce
+                            # rule as the proof: checked before the digest, so a wrong guess spends it.
+                            if password.parse(stored_hash) or not params.get("hash") or not _redeem_nonce(params.get("nonce")):
                                 continue
                             try:
                                 # compare_digest, not ==: Python's string comparison returns on the first
