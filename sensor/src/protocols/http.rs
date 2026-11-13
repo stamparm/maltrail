@@ -6,7 +6,8 @@
 //!
 //!  * a header value is only extracted when its terminating CRLF is present in the
 //!    captured bytes (otherwise the field is skipped),
-//!  * header names are matched case-sensitively against `"\r\nHost:"` etc.,
+//!  * header names are searched for as spelled (`"\r\nHost:"` etc.) and, only when that misses,
+//!    in any letter case (RFC 9110: field names are case-insensitive),
 //!  * the FIRST occurrence wins for duplicate headers,
 //!  * `%`-decoding follows `urllib.parse.unquote` (UTF-8, `errors="replace"`).
 
@@ -25,13 +26,24 @@ pub fn header_value_with<'a>(
     name_len: usize,
     crlf: &memchr::memmem::Finder<'_>,
 ) -> Option<&'a str> {
-    let first = finder.find(data.as_bytes())? + name_len;
+    let first = match finder.find(data.as_bytes()) {
+        Some(at) => at,
+        // Field names are case-insensitive (RFC 9110 5.1), and HTTP/2-era client libraries send
+        // `host:` and `user-agent:` over HTTP/1.1 too. Only a miss pays for this second pass, so
+        // the canonical spelling still costs one memmem search.
+        None => name_ignoring_case(data.as_bytes(), finder.needle(), crlf)?,
+    } + name_len;
     let rest = &data[first..];
     let end = crlf.find(rest.as_bytes())?;
     if end == 0 {
         return Some("");
     }
     Some(&rest[..end])
+}
+
+/// Offset of `needle` (an ASCII `"\r\nName:"`) at any CRLF in `data`, ignoring ASCII case.
+fn name_ignoring_case(data: &[u8], needle: &[u8], crlf: &memchr::memmem::Finder<'_>) -> Option<usize> {
+    crlf.find_iter(data).find(|&at| data.get(at..at + needle.len()).is_some_and(|w| w.eq_ignore_ascii_case(needle)))
 }
 
 pub fn header_value<'a>(data: &'a str, name: &str) -> Option<&'a str> {
@@ -284,9 +296,16 @@ mod tests {
     }
 
     #[test]
-    fn header_matching_is_case_sensitive_like_python() {
-        let data = "GET / HTTP/1.1\r\nhost: evil.com\r\n\r\n";
-        assert_eq!(header_value(data, "\r\nHost:"), None);
+    fn header_names_match_in_any_case_canonical_first() {
+        let (host, crlf) = (memchr::memmem::Finder::new("\r\nHost:"), memchr::memmem::Finder::new("\r\n"));
+        let get = |data: &'static str| header_value_with(data, &host, "\r\nHost:".len(), &crlf);
+        assert_eq!(get("GET / HTTP/1.1\r\nhost: evil.com\r\n\r\n"), Some(" evil.com"));
+        assert_eq!(get("GET / HTTP/1.1\r\nHOST: evil.com\r\n\r\n"), Some(" evil.com"));
+        // the canonical spelling wins even when a differently-cased one comes first
+        assert_eq!(get("GET / HTTP/1.1\r\nhOsT: a.com\r\nHost: b.com\r\n\r\n"), Some(" b.com"));
+        // a name merely containing it, or one cut off at the end of the capture, is not it
+        assert_eq!(get("GET / HTTP/1.1\r\nX-host: evil.com\r\n\r\n"), None);
+        assert_eq!(get("GET / HTTP/1.1\r\nhos"), None);
     }
 
     #[test]

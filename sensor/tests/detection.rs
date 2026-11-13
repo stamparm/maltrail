@@ -1776,12 +1776,17 @@ fn an_alias_listed_like_the_name_asked_for_does_not_split_the_lookup() {
     let trails_seen: Vec<String> = h.events().iter().map(|e| e.trail.clone()).collect();
     assert_eq!(trails_seen, vec![query.to_string()], "the request's event, and nothing for its echo");
 
-    // AAAA: the request is never checked, so the response is the only record of the lookup. It
-    // stays, under the name that was asked for, so it lands in the same threat.
+    // AAAA is a checked request like A: its echo adds nothing either.
     let mut h = trails(&listed);
     h.feed_ip(&from_resolver(&with_qtype(response.clone(), query, 28)), 1);
+    assert!(h.events().is_empty(), "{:?}", h.events());
+
+    // PTR: the request is never checked, so the response is the only record of the lookup. It
+    // stays, under the name that was asked for, so it lands in the same threat.
+    let mut h = trails(&listed);
+    h.feed_ip(&from_resolver(&with_qtype(response.clone(), query, 12)), 1);
     let events = h.events();
-    assert_eq!(events.len(), 1, "an AAAA lookup must not vanish: {events:?}");
+    assert_eq!(events.len(), 1, "a PTR lookup must not vanish: {events:?}");
     assert_eq!((events[0].trail.as_str(), events[0].info.as_str()), (query, IPINFO.0));
     assert_eq!(events[0].src_ip, "10.0.0.5");
 }
@@ -1810,4 +1815,103 @@ fn hostile_answer_sections_never_panic() {
     looped[at] = 0xc0;
     looped[at + 1] = at as u8;
     h.feed_ip(&from_resolver(&looped), 2);
+}
+
+// --- header-name case, AAAA questions, DNS over TCP --------------------------------------------
+
+#[test]
+fn http_header_names_match_in_any_case() {
+    // RFC 9110: field names are case-insensitive, and HTTP/2-era client libraries send `host:` and
+    // `user-agent:` over HTTP/1.1 too.
+    for (host, ua) in [("host", "user-agent"), ("HOST", "User-agent"), ("Host", "User-Agent")] {
+        let request = format!("GET /gate.php HTTP/1.1\r\n{host}: evil.com\r\n{ua}: sqlmap/1.7\r\n\r\n");
+        let packet = http_packet(request.as_bytes(), "203.0.113.20", 50000);
+
+        let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+        h.feed_ip(&packet, 1);
+        assert_eq!(h.trails(), vec!["evil.com"], "{host}: the Host domain");
+
+        let mut h = trails(&[("evil.com/gate.php", MALWARE.0, "(static)")]);
+        h.feed_ip(&packet, 1);
+        assert_eq!(h.trails(), vec!["evil.com/gate.php"], "{host}: the URL is built from the Host, not the address");
+
+        let mut h = Harness::with_options(&[], HarnessOptions::heuristics());
+        h.feed_ip(&packet, 1);
+        let ua_events: Vec<_> = h.events().into_iter().filter(|e| e.trail_type == "UA").collect();
+        assert_eq!(ua_events.len(), 1, "{ua}: {ua_events:?}");
+    }
+    // negative control: the same request for a clean name
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&http_packet(b"GET / HTTP/1.1\r\nhost: clean.example\r\n\r\n", "203.0.113.20", 50000), 1);
+    assert!(h.events().is_empty(), "{:?}", h.events());
+}
+
+fn resolver_query(sport: u16, name: &str, qtype: u16) -> Vec<u8> {
+    ipv4(17, "10.0.0.5", "8.8.8.8", &udp(sport, 53, &dns_query(name, qtype, 1, 0x0100)))
+}
+
+#[test]
+fn aaaa_only_lookup_is_checked() {
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&resolver_query(40000, "evil.com", 28), 1);
+    assert_eq!(h.trails(), vec!["evil.com"]);
+
+    // negative controls: a clean AAAA, and PTR, which still is not a domain lookup
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&resolver_query(40000, "clean.org", 28), 1);
+    h.feed_ip(&resolver_query(40001, "evil.com", 12), 1);
+    assert!(h.events().is_empty(), "{:?}", h.events());
+}
+
+#[test]
+fn dual_stack_lookup_is_one_event() {
+    // glibc asks A then AAAA from one socket, systemd-resolved from two, Happy Eyeballs clients
+    // often AAAA first; each is one lookup.
+    for (first, second, second_port) in [(1, 28, 40000), (1, 28, 40001), (28, 1, 40001)] {
+        let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+        h.feed_ip(&resolver_query(40000, "evil.com", first), 1);
+        h.feed_ip(&resolver_query(41000, "clean.org", 1), 1); // other traffic in between
+        h.feed_ip(&resolver_query(second_port, "evil.com", second), 2);
+        assert_eq!(h.trails(), vec!["evil.com"], "{first} then {second} from port {second_port}");
+    }
+    // ...but the next lookup is its own event, as is another host's
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&resolver_query(40000, "evil.com", 1), 1);
+    h.feed_ip(&resolver_query(40000, "evil.com", 28), 1);
+    h.feed_ip(&resolver_query(40002, "evil.com", 1), 5);
+    h.feed_ip(&ipv4(17, "10.0.0.6", "8.8.8.8", &udp(40000, 53, &dns_query("evil.com", 28, 1, 0x0100))), 5);
+    assert_eq!(h.trails().len(), 3, "{:?}", h.events());
+}
+
+fn dns_tcp(messages: &[&[u8]]) -> Vec<u8> {
+    let mut segment = Vec::new();
+    for m in messages {
+        segment.extend_from_slice(&(m.len() as u16).to_be_bytes());
+        segment.extend_from_slice(m);
+    }
+    ipv4(6, "10.0.0.5", "8.8.8.8", &tcp(40000, 53, 0x18, &segment))
+}
+
+#[test]
+fn dns_over_tcp_is_checked() {
+    let (evil, clean) = (dns_query("evil.com", 1, 1, 0x0100), dns_query("clean.org", 1, 1, 0x0100));
+
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&dns_tcp(&[&evil]), 1);
+    let events = h.events();
+    assert_eq!(events.len(), 1, "{events:?}");
+    assert_eq!((events[0].trail.as_str(), events[0].proto.as_str()), ("evil.com", "TCP"));
+
+    // two pipelined queries in one segment: the second is read too
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&dns_tcp(&[&clean, &evil]), 1);
+    assert_eq!(h.trails(), vec!["evil.com"]);
+
+    // negative controls: a clean query; a segment that is not whole messages (a length prefix sent
+    // on its own, then the message without one) is not guessed at
+    let mut h = trails(&[("evil.com", MALWARE.0, MALWARE.1)]);
+    h.feed_ip(&dns_tcp(&[&clean]), 1);
+    h.feed_ip(&ipv4(6, "10.0.0.5", "8.8.8.8", &tcp(40000, 53, 0x18, &(evil.len() as u16).to_be_bytes())), 1);
+    h.feed_ip(&ipv4(6, "10.0.0.5", "8.8.8.8", &tcp(40000, 53, 0x18, &evil)), 1);
+    assert!(h.events().is_empty(), "{:?}", h.events());
 }

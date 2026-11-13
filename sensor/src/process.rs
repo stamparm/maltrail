@@ -396,7 +396,7 @@ fn process_layer(
 
     match header.protocol {
         6 => tcp(st, packet_bytes, ip_data, &header, sec, usec),
-        17 => udp(st, packet_bytes, ip_data, &header, sec, usec),
+        17 => udp(st, ip_data, &header, sec, usec),
         other => other_proto(st, ip_data, &header, other, sec, usec),
     }
 
@@ -919,6 +919,10 @@ fn tcp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packe
     }
 
     let payload = tcph.payload(ip_data, header.header_len);
+    if ep.dst_port == 53 || ep.src_port == 53 {
+        dns_over_tcp(st, payload, ep, sec, usec);
+        return;
+    }
     // Only HTTP is acted on below, so skip the (costly) full-payload decode for the bulk of
     // line-rate traffic (TLS/443).
     //
@@ -944,6 +948,29 @@ fn tcp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packe
 
     if st.statics.f_sp_http.find(tcp_data.as_bytes()).is_some() {
         http_request(st, packet_bytes, &tcp_data, ep, sec, usec);
+    }
+}
+
+/// DNS over TCP (RFC 7766): every message carries a 2-byte length prefix, and a segment may hold
+/// several (pipelined queries). The segment is parsed only when it is whole messages back to back
+/// and nothing else, which is what a query segment is. A message split across segments - a
+/// length prefix sent on its own, an answer larger than one segment - is skipped: without the
+/// stream there is no telling a length prefix from the middle of an earlier message.
+fn dns_over_tcp(st: &mut WorkerState, payload: &[u8], ep: Endpoints, sec: u64, usec: u32) {
+    let messages = || {
+        let mut rest = payload;
+        std::iter::from_fn(move || {
+            let len = usize::from(u16::from_be_bytes([*rest.first()?, *rest.get(1)?]));
+            let message = rest.get(2..2 + len)?;
+            rest = &rest[2 + len..];
+            Some(message)
+        })
+    };
+    if payload.is_empty() || messages().map(|m| m.len() + 2).sum::<usize>() != payload.len() {
+        return;
+    }
+    for message in messages() {
+        dns_packet(st, message, ep, PROTO::TCP, sec, usec);
     }
 }
 
@@ -1664,7 +1691,7 @@ fn payload_digest(payload: &[u8]) -> u64 {
     hash ^ (hash >> 32)
 }
 
-fn udp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packet::IpHeader, sec: u64, usec: u32) {
+fn udp(st: &mut WorkerState, ip_data: &[u8], header: &packet::IpHeader, sec: u64, usec: u32) {
     let Some(udph) = packet::parse_udp(ip_data, header.header_len) else {
         st.metrics.packets_truncated += 1;
         return;
@@ -1734,7 +1761,7 @@ fn udp(st: &mut WorkerState, packet_bytes: &[u8], ip_data: &[u8], header: &packe
         return;
     }
 
-    dns_packet(st, packet_bytes, ip_data, header, ep, sec, usec);
+    dns_packet(st, packet::udp_payload(ip_data, header.header_len), ep, PROTO::UDP, sec, usec);
 }
 
 /// Label separator offsets of a dotted name, so suffixes and prefixes can be BORROWED from the
@@ -1844,17 +1871,14 @@ impl Dots {
     }
 }
 
-#[allow(clippy::too_many_arguments)]
-fn dns_packet(
-    st: &mut WorkerState,
-    _packet_bytes: &[u8],
-    ip_data: &[u8],
-    header: &packet::IpHeader,
-    ep: Endpoints,
-    sec: u64,
-    usec: u32,
-) {
-    let dns_data = packet::udp_payload(ip_data, header.header_len);
+/// Whether a question is checked against the trails: class IN, any type but PTR (a reverse
+/// lookup names an address, not a domain). AAAA is checked like A: a host on an IPv6-only or
+/// Happy Eyeballs stack may ask for nothing else.
+fn checked_qtype(type_: u16, class_: u16) -> bool {
+    type_ != 12 && class_ == 1
+}
+
+fn dns_packet(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, proto: &str, sec: u64, usec: u32) {
     let Some(qd) = dns::qdcount(dns_data) else { return };
     if qd == 0 {
         return;
@@ -1862,14 +1886,24 @@ fn dns_packet(
     // The name is decoded into a buffer the worker keeps, not a fresh String per packet.
     let mut name = std::mem::take(&mut st.dns_name);
     if let Some(name_end) = dns::question_into(dns_data, &mut name) {
-        dns_name(st, dns_data, ep, &name, name_end, sec, usec);
+        dns_name(st, dns_data, ep, proto, &name, name_end, sec, usec);
     }
     st.dns_name = name;
 }
 
 /// The DNS path past the question decode; `query` is the lower-cased name and `name_end` the
 /// offset of its terminating label.
-fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, name_end: usize, sec: u64, usec: u32) {
+#[allow(clippy::too_many_arguments)]
+fn dns_name(
+    st: &mut WorkerState,
+    dns_data: &[u8],
+    ep: Endpoints,
+    proto: &str,
+    query: &str,
+    name_end: usize,
+    sec: u64,
+    usec: u32,
+) {
     // `query.split('.')` used to build a Vec here, and every `parts[k..].join(".")` below
     // rebuilt a String. Both are unnecessary: the labels are contiguous inside `query`, so a
     // suffix of them IS a substring of it. `Dots` records the last few separator offsets in one
@@ -1942,7 +1976,7 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
                                     sec,
                                     usec,
                                     ep,
-                                    PROTO::UDP,
+                                    proto,
                                     TRAIL::DNS,
                                     Field::Text(trail),
                                     "potential dns exhaustion (suspicious)",
@@ -1981,7 +2015,7 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
                             sec,
                             usec,
                             ep,
-                            PROTO::UDP,
+                            proto,
                             TRAIL::DNS,
                             Field::Text(trail),
                             "potential dns tunneling (suspicious)",
@@ -1992,26 +2026,43 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
             }
         }
 
-        // Reference: http://en.wikipedia.org/wiki/List_of_DNS_record_types
-        if !matches!(type_, 12 | 28) && class_ == 1 {
+        if checked_qtype(type_, class_) {
+            // A dual-stack resolver asks A and AAAA for the same name together, in either order,
+            // from one socket or two: one lookup, so one event. Only a question that produced an
+            // event is remembered, so clean traffic between the pair does not displace it, and
+            // only the OTHER type is folded in: a repeated question of the same type is left to
+            // the throttle, as it always was.
+            let seen = |(s, src, dst, t, name): &(u64, Ip, Ip, u16, String)| {
+                sec.abs_diff(*s) <= 1 && *src == ep.src && *dst == ep.dst && *t != type_ && name == query
+            };
+            if st.last_dns_hit.as_ref().is_some_and(seen) {
+                return;
+            }
             st.metrics.trail_lookups += 1;
             // The rendered destination is only needed on a hit; rendering it up front cost a
             // String allocation on every clean DNS query, which is nearly all of them.
-            if let Some(hit) = st.trails.db().get_ip_port(ep.dst, ep.dst_port) {
+            let ip_hit = if let Some(hit) = st.trails.db().get_ip_port(ep.dst, ep.dst_port) {
                 let (info, reference) = (hit.info.to_string(), hit.reference.to_string());
                 let trail = format!("{} ({query})", ep.dst.render().as_str());
-                emit_ep(st, sec, usec, ep, PROTO::UDP, TRAIL::IPORT, Field::Text(trail), &info, &reference);
+                emit_ep(st, sec, usec, ep, proto, TRAIL::IPORT, Field::Text(trail), &info, &reference);
+                true
             } else if let Some(hit) = st.trails.db().get_ip(ep.dst) {
                 let (info, reference) = (hit.info.to_string(), hit.reference.to_string());
                 let trail = format!("{} ({query})", ep.dst.render().as_str());
-                emit_ep(st, sec, usec, ep, PROTO::UDP, TRAIL::IP, Field::Text(trail), &info, &reference);
+                emit_ep(st, sec, usec, ep, proto, TRAIL::IP, Field::Text(trail), &info, &reference);
+                true
             } else if let Some(hit) = st.trails.db().get_ip(ep.src) {
                 let (info, reference) = (hit.info.to_string(), hit.reference.to_string());
                 let trail = ep.src.render().as_str().to_string();
-                emit_ep(st, sec, usec, ep, PROTO::UDP, TRAIL::IP, Field::Text(trail), &info, &reference);
-            }
+                emit_ep(st, sec, usec, ep, proto, TRAIL::IP, Field::Text(trail), &info, &reference);
+                true
+            } else {
+                false
+            };
 
-            check_domain_inner(st, query, sec, usec, ep, PROTO::UDP, Some(wl_query), None);
+            if check_domain_inner(st, query, sec, usec, ep, proto, Some(wl_query), None) || ip_hit {
+                st.last_dns_hit = Some((sec, ep.src, ep.dst, type_, query.to_string()));
+            }
         }
         return;
     }
@@ -2030,7 +2081,7 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
     // UI groups events into threats by trail, so it only split one lookup into two threats
     // (checkip.amazonaws.com -> checkip.check-ip.aws.a2z.com, both ipinfo). For a query type the
     // query path checks, that lookup is already the request's own event, so the alias is dropped.
-    // An AAAA/PTR request is never checked there; dropping its alias would lose the lookup, so it
+    // A PTR request is never checked there; dropping its alias would lose the lookup, so it
     // is written under the queried name instead and joins that threat. Stateless on purpose: a
     // request and its response land on different workers under the default `source` fanout.
     if flags_high & 0x80 != 0 && flags_low & 0x0f == 0 {
@@ -2044,14 +2095,14 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
                 None => hit,
                 Some(own) => {
                     let reported_by_request = dns::question_type_class(dns_data, name_end)
-                        .is_some_and(|(type_, class_)| !matches!(type_, 12 | 28) && class_ == 1);
+                        .is_some_and(|(type_, class_)| checked_qtype(type_, class_));
                     if reported_by_request {
                         break;
                     }
                     own
                 }
             };
-            emit_ep(st, sec, usec, client, PROTO::UDP, TRAIL::DNS, Field::Text(hit.trail), &hit.info, &hit.reference);
+            emit_ep(st, sec, usec, client, proto, TRAIL::DNS, Field::Text(hit.trail), &hit.info, &hit.reference);
             break;
         }
     }
@@ -2083,14 +2134,14 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
                         // e.g. kitro.pl, devomchart.com, jebena.ananikolic.su, vuvet.cn
                         let by = info.split(' ').nth(1).unwrap_or("");
                         let text = format!("sinkholed by {by} (malware)");
-                        emit_ep(st, sec, usec, ep, PROTO::UDP, TRAIL::DNS, Field::Text(trail), &text, "(heuristic)");
+                        emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(trail), &text, "(heuristic)");
                     } else if info.contains("parking") {
                         emit_ep(
                             st,
                             sec,
                             usec,
                             ep,
-                            PROTO::UDP,
+                            proto,
                             TRAIL::DNS,
                             Field::Text(trail),
                             "parked site (suspicious)",
@@ -2146,7 +2197,7 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
                                 sec,
                                 usec,
                                 ep,
-                                PROTO::UDP,
+                                proto,
                                 TRAIL::DNS,
                                 Field::Text(trail),
                                 "excessive no such domain (suspicious)",
@@ -2161,7 +2212,7 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
                             sec,
                             usec,
                             ep,
-                            PROTO::UDP,
+                            proto,
                             TRAIL::DNS,
                             Field::Text(trail),
                             "excessive no such domain (suspicious)",
@@ -2198,7 +2249,7 @@ fn dns_name(st: &mut WorkerState, dns_data: &[u8], ep: Endpoints, query: &str, n
             };
 
             if let Some(info) = result {
-                emit_ep(st, sec, usec, ep, PROTO::UDP, TRAIL::DNS, Field::Text(trail), &info, "(heuristic)");
+                emit_ep(st, sec, usec, ep, proto, TRAIL::DNS, Field::Text(trail), &info, "(heuristic)");
             }
         }
     }

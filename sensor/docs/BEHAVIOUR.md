@@ -96,7 +96,7 @@ never stalls capture.
 | --- | --- |
 | IP and IP:port trails on TCP | the SYN of a connection to or from a listed address (ECN-setup SYNs included: ECE/CWR are ignored); `IPORT` when the `address:port` key matched. To a listed host, `attacker` listings are not reported (noise the host provoked); from one, `malware` listings are not (backscatter); `parking site` only on ports 80/443 |
 | IP trails on UDP and other protocols | the same two-sided rule for non-DNS UDP; echo requests only for ICMP |
-| Domain trails | DNS queries, HTTP `Host`, TLS and QUIC SNI: exact names, parent domains (`(sub).listed.example`), `.onion` gateways, wildcard trails; infrastructure names under a suspicious parent and the bare domain of a dynamic-DNS provider are skipped |
+| Domain trails | DNS queries over UDP and TCP (every type but PTR; the A and AAAA questions of one dual-stack lookup are one event), HTTP `Host` (header names in any case), TLS and QUIC SNI: exact names, parent domains (`(sub).listed.example`), `.onion` gateways, wildcard trails; infrastructure names under a suspicious parent and the bare domain of a dynamic-DNS provider are skipped |
 | DNS answers | listed IPs in A/AAAA answers, with the query in the trail; sinkhole and parking answers |
 | URL, path and host trails | the full candidate list from the request line, including the POST body |
 | HTTP heuristics | SQL/XML/PHP/LDAP/XSS/XXE/SSTI injection, data leakage, config-file access, remote code execution, directory traversal, web scanners, DNS changers, direct-download extensions, suspicious paths, missing `Host`, proxy probes, IoT-malware downloads from a bare IP |
@@ -202,8 +202,9 @@ a `(heuristic)` reference, never `malware`. The state behind them is bounded
    192-byte label, the name fails validation, and the query is dropped. Answers do follow them.
 3. **`.example`, `.local`, `.test`, `.arpa` and the other `IGNORE_DNS_QUERY_SUFFIXES` are never
    checked**, which is easy to trip over when writing test traffic.
-4. **HTTP header names are matched case-sensitively** (`\r\nHost:`), and a header cut off by the
-   snap length is skipped.
+4. **An HTTP header cut off by the snap length is skipped, and DNS over TCP is not reassembled**:
+   a segment is read only when it holds whole length-prefixed messages, so a prefix sent in its
+   own segment, or an answer larger than one segment, is not examined.
 5. **`SNAP_LEN` (2000 bytes) applies to offline records too**, so a `-s 0` capture is analysed on
    the bytes live capture would have seen.
 6. **A wildcard trail that defines a group named `g<digits>` is refused**, because those names
