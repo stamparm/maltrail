@@ -7835,3 +7835,23 @@
 92.118.126.0/24,bv-eu-as
 92.118.127.0/24,bv-eu-as
 93.89.211.0/24,bv-eu-as
+
+# AS 48014
+# Reference: https://ipinfo.io/AS48014
+
+103.167.234.0/24,albhost
+103.167.235.0/24,albhost
+143.20.47.0/24,albhost
+185.136.12.0/24,albhost
+185.187.154.0/24,albhost
+217.60.14.0/24,albhost
+31.41.33.0/24,albhost
+45.88.89.0/24,albhost
+46.183.20.0/24,albhost
+80.76.51.0/24,albhost
+84.54.48.0/24,albhost
+87.121.162.0/24,albhost
+87.121.61.0/24,albhost
+89.144.60.0/24,albhost
+93.123.113.0/24,albhost
+93.123.46.0/24,albhost
