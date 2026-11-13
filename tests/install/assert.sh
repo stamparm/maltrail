@@ -334,6 +334,21 @@ fi
 grep -q '# operator marker' "$CONF" && echo "A conf-preserved"
 [ -f "$PREFIX/server.py" ] && echo "A tree-after-rerun"
 
+# 5b. ...and the upgrade must reach the running service. `systemctl enable --now` is a no-op for an
+#     active unit, so a re-run used to leave the old server and sensor running until a reboot.
+#     No systemd in a container, so a stub records what install.sh asks of it. Only where there is
+#     no real systemd to confuse.
+if [ "$(uname)" = Linux ] && [ ! -d /run/systemd/system ]; then
+    mkdir -p /run/systemd/system /tmp/stub-bin
+    printf '#!/bin/sh\necho "$*" >> /tmp/systemctl.log\n' > /tmp/stub-bin/systemctl
+    chmod +x /tmp/stub-bin/systemctl
+    with_service=""
+    for a in "$@"; do [ "$a" = --no-service ] || with_service="$with_service '$a'"; done
+    eval "PATH=/tmp/stub-bin:\$PATH sh \"\$SRC\"/install.sh $with_service" >/tmp/rerun-service.log 2>&1
+    grep -qx 'restart maltrail-server.service' /tmp/systemctl.log 2>/dev/null && echo "A rerun-restarts-unit"
+    rm -rf /run/systemd /tmp/stub-bin
+fi
+
 # 6. run from inside a checkout (what someone who already cloned will type): it must adopt THAT
 #    tree, clone nothing, and leave the working tree - including untracked custom trails and edited
 #    tracked files - exactly as it found it.

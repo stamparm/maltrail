@@ -835,8 +835,11 @@ start_units() {
     run systemctl daemon-reload
     for role in $1; do
         [ -f "$UNIT_DIR/maltrail-$role.service" ] || continue
-        say "enabling maltrail-$role"
-        run systemctl enable --now "maltrail-$role.service" || warn "maltrail-$role did not start; see 'journalctl -u maltrail-$role'"
+        say "enabling and (re)starting maltrail-$role"
+        # restart, not `enable --now`: on a re-run (an upgrade) the unit is already active, and
+        # --now left the old binary and server running until the next reboot.
+        run systemctl enable "maltrail-$role.service" && run systemctl restart "maltrail-$role.service" \
+            || warn "maltrail-$role did not start; see 'journalctl -u maltrail-$role'"
     done
 }
 

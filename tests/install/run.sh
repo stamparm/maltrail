@@ -16,7 +16,7 @@
 # Two limits, stated rather than discovered:
 #
 #   * systemd does not run in a plain container, so the units are RENDERED into --unit-dir and
-#     checked there; `systemctl enable --now` is not exercised.
+#     checked there; what install.sh asks of systemctl is recorded by a stub, not executed.
 #   * BSD cannot be tested this way at all - containers share the host's Linux kernel. That needs a
 #     VM, rc.d scripts and a FreeBSD sensor target, none of which exist yet.
 #
@@ -126,7 +126,7 @@ judge() {
 
     local expected=(tree conf user logdir logdir-writable conf-managed-block conf-own-password
                     unit-server unit-server-conf server-ping
-                    rerun-ok conf-preserved tree-after-rerun
+                    rerun-ok conf-preserved tree-after-rerun rerun-restarts-unit
                     inplace-adopted inplace-kept-edit inplace-kept-custom-trail
                     inplace-cloned-nothing inplace-uninstall-kept-tree
                     dirty-tree-refused dirty-tree-edit-kept force-upgraded force-kept-custom-trail
