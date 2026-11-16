@@ -7880,3 +7880,31 @@
 91.219.238.0/24,serverastra-as
 91.219.239.0/24,serverastra-as
 93.114.72.0/24,serverastra-as
+
+# AS 22295
+# Reference: https://ipinfo.io/AS22295
+# Reference: https://x.com/Malwarehunterr/status/2122373053925703697
+# Reference: https://www.virustotal.com/gui/ip-address/170.205.28.251/relations
+
+142.248.80.0/24,advin
+142.248.81.0/24,advin
+170.205.28.0/24,advin
+185.147.157.0/24,advin
+185.147.159.0/24,advin
+185.214.240.0/24,advin
+207.241.173.0/24,advin
+208.64.40.0/22,advin
+208.84.100.0/24,advin
+208.84.101.0/24,advin
+208.84.102.0/24,advin
+23.137.104.0/24,advin
+23.137.105.0/24,advin
+65.110.40.0/24,advin
+2602:fb54:1400::/39,advin
+2602:fb54:1600::/39,advin
+2602:fb54:1a00::/39,advin
+2602:fb54:400::/40,advin
+2602:fb54:900::/40,advin
+2602:fb54::/48,advin
+2a04:c300:1000::/38,advin
+2a04:c300:400::/38,advin
