@@ -8018,3 +8018,28 @@
 2a01:e5c0:f000::/36,netcraftersou
 2a0e:d606::/48,netcraftersou
 2a14:a084:f000::/36,netcraftersou
+
+# AS 198983
+# Reference: https://ipinfo.io/AS198983
+# Reference: https://x.com/spamhaus/status/2122339879799448054
+
+104.194.128.0/22,tornadodatacenter
+104.194.140.0/24,tornadodatacenter
+104.194.141.0/24,tornadodatacenter
+104.194.142.0/24,tornadodatacenter
+104.194.143.0/24,tornadodatacenter
+104.194.144.0/24,tornadodatacenter
+104.194.145.0/24,tornadodatacenter
+104.194.146.0/24,tornadodatacenter
+104.194.147.0/24,tornadodatacenter
+104.194.148.0/24,tornadodatacenter
+104.194.149.0/24,tornadodatacenter
+104.194.150.0/24,tornadodatacenter
+104.194.151.0/24,tornadodatacenter
+153.75.88.0/24,tornadodatacenter
+160.20.145.0/24,tornadodatacenter
+167.88.162.0/24,tornadodatacenter
+172.86.124.0/24,tornadodatacenter
+45.61.152.0/22,tornadodatacenter
+2602:fa59:1::/48,tornadodatacenter
+2a0e:b540:ffa1::/48,tornadodatacenter
