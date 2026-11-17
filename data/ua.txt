@@ -2939,6 +2939,11 @@ Veera
 
 XMRig Reporter
 
+# Reference: https://x.com/elasticseclabs/status/2122810560106438890
+
+af-runtime-diagnostics/1
+af-runtime-diagnostics
+
 # Misc
 
 information_schema
