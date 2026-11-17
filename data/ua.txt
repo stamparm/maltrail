@@ -2940,9 +2940,13 @@ Veera
 XMRig Reporter
 
 # Reference: https://x.com/elasticseclabs/status/2122810560106438890
+# Reference: https://x.com/eastsidemccarty/status/2122809809703711045
+# Reference: https://opensourcemalware.com/blog/agent-framework-pypi-compromised
 
 af-runtime-diagnostics/1
 af-runtime-diagnostics
+runtime-diagnostics/1
+runtime-diagnostics
 
 # Misc
 
