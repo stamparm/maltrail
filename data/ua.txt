@@ -2960,6 +2960,16 @@ DNSObserver
 WindowsUpdateClient/10.0
 WindowsUpdateClient
 
+# Reference: https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/11/CSA_research_note_workos_artex_scope_escape_20261108-csa-styled.pdf
+
+ArtEx/1.0
+artex-enrich/1.0
+artex-enrich
+infra-hunt/1.0
+infra-hunt
+verify-911-probe/1.0
+verify-911-probe
+
 # Misc
 
 information_schema
