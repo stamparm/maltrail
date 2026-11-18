@@ -2970,6 +2970,22 @@ infra-hunt
 verify-911-probe/1.0
 verify-911-probe
 
+# Reference: https://github.security.telekom.com/2026/11/tracking-hermes.html
+# Reference: https://www.virustotal.com/gui/file/5051b4b91de8fbebb31884cf3be01fb381ce6e9704fa0272e8a6b1b50b78caf7/detection
+# Reference: https://www.virustotal.com/gui/file/97c5867f432ad072fee68399da94fbce96aaa7d180b795cba2d0ad107e1ee063/detection
+# Reference: https://www.virustotal.com/gui/file/a3891baf903a53e52b41889210ac1e9ea6472c585e3791b3c693397f048b50d4/detection
+
+DesktopStreamClient/0.1
+DesktopStreamClient
+Lold/1.0
+Lold
+
+# Reference: https://labs.eye.security/how-we-defended-against-an-ai-driven-attack/
+
+ARTEX
+ArtExVerify/1.0
+ArtExVerify
+
 # Misc
 
 information_schema
