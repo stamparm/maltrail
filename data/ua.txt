@@ -2953,6 +2953,13 @@ runtime-diagnostics
 StrikeStub/1.0
 StrikeStub
 
+# Reference: https://dslua.org/publications/spearphishing-via-fake-urc-2026-invitations-targets-ukrainian-csos/
+# Reference: https://community.emergingthreats.net/t/sig-malware-redflick-dnsobserver-http-c2-check-in/3527
+
+DNSObserver
+WindowsUpdateClient/10.0
+WindowsUpdateClient
+
 # Misc
 
 information_schema
