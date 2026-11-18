@@ -2948,6 +2948,11 @@ af-runtime-diagnostics
 runtime-diagnostics/1
 runtime-diagnostics
 
+# Reference: https://www.akamai.com/blog/security-research/2026/nov/strikestub-clickfix-powershell-malware-modular-rat
+
+StrikeStub/1.0
+StrikeStub
+
 # Misc
 
 information_schema
