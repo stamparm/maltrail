@@ -1101,7 +1101,9 @@
     state._drawerReturn = null;
   }
   function drawDwrSpark(cv, data, color) {
-    cv._w = 308; cv._h = 46; var ctx = cctx(cv), w = cv._w, h = cv._h, pad = 13, n = data.length, bw = w / n;
+    // as wide as the tiles above it: at a fixed 308px it stopped at 70% of the panel, under four tiles that span it
+    var st = cv.parentNode && cv.parentNode.querySelector(".dwr-stats");
+    cv._w = (st && st.clientWidth) || 308; cv._h = 46; var ctx = cctx(cv), w = cv._w, h = cv._h, pad = 13, n = data.length, bw = w / n;
     var max = Math.max.apply(null, data.concat([1])), tc = themeColors();
     for (var i = 0; i < n; i++) { var bh = Math.max(1, (data[i] / max) * (h - pad)); ctx.fillStyle = color; ctx.globalAlpha = 0.35 + 0.65 * (data[i] / max); ctx.fillRect(i * bw + 1, h - pad - bh, Math.max(1, bw - 1.5), bh); }
     ctx.globalAlpha = 1; ctx.fillStyle = tc.faint; ctx.font = "9px ui-monospace,monospace"; ctx.textBaseline = "bottom";

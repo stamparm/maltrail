@@ -54,7 +54,8 @@
     border-radius:8px;background:#0b111c;min-width:240px;color:var(--muted);
     flex:12 1 auto;max-width:560px}   /* prominent, grows left-to-right, but capped (weighted above the trailing spacer) so it's a comfortable field — not a mile-wide bar — with a breathing gap before the view controls */
   .search input{background:none;border:none;outline:none;color:var(--text);font-family:var(--mono);font-size:12px;width:100%}
-  .search input::placeholder{color:var(--faint);opacity:1}   /* opacity:1 — Firefox dims placeholders by default */
+  .search input{text-overflow:ellipsis}   /* a hint that does not fit ends in an ellipsis, not mid-token */
+  .search input::placeholder{color:var(--faint);opacity:1;text-overflow:ellipsis}   /* opacity:1 — Firefox dims placeholders by default */
   /* themed scrollbars (OS default is a bright bar on the midnight panels) */
   *{scrollbar-color:var(--line-solid) transparent;scrollbar-width:thin}
   ::-webkit-scrollbar{width:10px;height:10px}
@@ -97,11 +98,16 @@
   .chip b{color:var(--accent)}
   .chip .x{cursor:pointer;color:#7fcdf0}
   .toolbar .spacer{flex:1}
-  .seg{display:flex;border:1px solid var(--line-solid);border-radius:8px;overflow:hidden}
+  .seg{display:flex;border:1px solid var(--line-solid);border-radius:8px}
   .seg button{background:transparent;border:none;color:var(--muted);padding:6px 11px;font-size:11.5px;cursor:pointer;font-family:var(--mono)}
   /* the active segment has to read at a glance in BOTH themes: in light mode --surface-2 sits a
      hair away from the surface, so the selected page size was almost invisible (#19575) */
-  .seg button.on{background:var(--accent-dim);color:var(--text);font-weight:600;box-shadow:inset 0 0 0 1px var(--accent)}
+  /* One outline, not two: the accent ring is drawn OVER the container's own 1px border (an outset
+     shadow from a button that sits just inside it) and the end segments carry the container's
+     radius. An inset ring inside overflow:hidden gave a grey border with a blue square inside it,
+     its corners clipped on the rounded side. */
+  .seg button:first-child{border-radius:7px 0 0 7px} .seg button:last-child{border-radius:0 7px 7px 0}
+  .seg button.on{background:var(--accent-dim);color:var(--text);font-weight:600;box-shadow:0 0 0 1px var(--accent);position:relative}
 
   /* ---------- events grid ---------- */
   .grid-wrap{background:var(--surface);border:1px solid var(--line-solid);border-radius:var(--r);overflow-x:auto}   /* too-wide table scrolls inside its border; page never scrolls horizontally */
@@ -156,6 +162,11 @@
   /* LAN/private-IP marker (Lucide network icon) */
   .lan{display:inline-flex;align-items:center;color:var(--muted);margin-right:5px;vertical-align:-2px;cursor:default}  /* --muted (not --faint): #5A6678 was barely visible on the dark ground */
   .lan svg{display:block}
+  /* One icon slot in front of every address in the grid, whether it holds the LAN glyph, a flag
+     or nothing: an address with no icon (IPv6, a country not known yet) started 17px left of its
+     neighbours, and jumped right when its flag arrived. */
+  #rows .ip .lan,#rows .ip .flag{display:inline-flex;justify-content:center;width:16px}
+  #rows .ip:not(:has(.lan,.flag)){padding-left:21px}
   /* threat-class icon (Lucide: biohazard/skull/scan-eye) — replaces the raw "(class)" text in the info column */
   .cls{display:inline-flex;align-items:center;vertical-align:-3px;margin-right:7px;cursor:help;flex:none}
   .cls svg{display:block}
@@ -197,6 +208,11 @@
     tbody td{border:none;padding:5px 12px;white-space:normal;display:flex;justify-content:space-between;gap:12px}
     tbody td::before{content:attr(data-l);color:var(--muted);font-size:10px;letter-spacing:1px;text-transform:uppercase;
       font-weight:600;align-self:center}
+    /* One label column, the value straight after it. With space-between a cell holding an icon and
+       a text threw them to opposite ends of the card, the desktop width:1% columns kept their values
+       beside the label while the rest went to the far edge, and severity's tag hung above its label. */
+    tbody td[data-l]{width:auto;justify-content:flex-start;align-items:center}
+    tbody td::before{flex:0 0 92px}
     .stats{grid-template-columns:repeat(2,1fr)}
   }
   footer{text-align:center;color:var(--faint);padding:24px;font-size:11px}
@@ -279,6 +295,12 @@ thead th.sort-desc::after{content:" ▼";color:var(--accent);font-size:8px;verti
    inline-flex + vertical-align:middle centers the SVG exactly on the port text in every browser. */
 .port-dir{margin-left:8px;display:inline-flex;align-items:center;vertical-align:middle;cursor:default;color:var(--muted)}
 .port-dir svg{display:block}
+/* The arrow used to follow the port label, so its x moved with the label's width ("80 (http)" vs
+   "53 (dns)") and the arrows staggered down the column. Pinned to the cell's edge they form one. */
+@media (min-width:681px){
+  td[data-l="port"]{position:relative;padding-right:32px}
+  td[data-l="port"] .port-dir{position:absolute;right:10px;top:50%;transform:translateY(-50%);margin:0}
+}
 .pd-out{color:var(--accent)}
 .pd-in{color:var(--sev-med)}      /* inbound — stands out */
 .pd-lat{color:var(--faint)}
@@ -736,7 +758,10 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 .dwr-actions{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
 .dwr-actions button{background:var(--ground);border:1px solid var(--line-solid);color:var(--muted);border-radius:7px;padding:5px 9px;cursor:pointer;font-family:var(--mono);font-size:11px}
 .dwr-actions button:hover{color:var(--text);border-color:var(--accent)}
-.dwr-actions button.ext{color:var(--accent)}
+.dwr-actions button.ext{color:var(--accent);order:2}
+/* local actions on one line, the external lookups on the next: in source order the wrap fell
+   between VT and AbuseIPDB and split the three lookups over two rows */
+.dwr-actions::before{content:"";flex-basis:100%;order:1}
 /* content-visibility:auto - skip layout and paint for the sections that are below the fold when
    the panel opens. Two of them carry almost the whole panel: on a busy threat "sources" was 807
    nodes and "raw events" 678, out of 1699 total, and laying all of that out before the first
@@ -747,7 +772,8 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 .dwr-sec h4{margin:0 0 7px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:600}
 .dchips{display:flex;flex-wrap:wrap;gap:5px;max-height:168px;overflow:auto}
 /* the drawer's tag editor: the row's .tag/.tx chips at their natural size, plus a full-width adder */
-.dwr-taginput{width:100%;margin-top:7px;padding:4px 8px;box-sizing:border-box}
+.dwr-taginput{width:100%;margin-top:7px;padding:4px 8px;box-sizing:border-box;border-color:var(--line-solid)}   /* the accent border is the inline editor's "you are typing here"; this field is always present, so it earns it only on focus */
+.dwr-taginput:focus{border-color:var(--accent)}
 #dwr_tags{margin-bottom:2px}
 .dchip{font-family:var(--mono);font-size:11px;background:var(--ground);border:1px solid var(--line-solid);border-radius:5px;padding:2px 7px;color:#cdd9ea}
 .dwr-none{color:var(--faint);font-family:var(--mono);font-size:11px}
