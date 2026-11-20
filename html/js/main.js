@@ -312,6 +312,7 @@
     var cards = [
       { lbl: "Threats", num: fmtN(d.threats.length), sub: "distinct threats", donut: threatSlices.length ? threatSlices : null, color: "#38BDF8", data: vals(d.srcCounts, 18) },
       { lbl: "Events", num: fmtN(d.events), sub: "across 24h", lines: eseries.length ? eseries : null, color: "#6366F1", data: d.hours },
+      // hi/md/lo, not high/med/low: spelled out, this line wraps on a 1024px window (measured 2026-11-20)
       { lbl: "Severity", num: domSev, sub: d.sevCount[3] + " hi · " + d.sevCount[2] + " md · " + d.sevCount[1] + " lo",
         sev: [d.sevCount[3], d.sevCount[2], d.sevCount[1]] },
       { lbl: "Sources", num: fmtN(d.sources), sub: "distinct src IPs", multi: true, color: "#34D399", data: vals(d.srcCounts, 18) },
@@ -1188,7 +1189,7 @@
         '<div class="dwr-trail" title="' + esc(t.trail) + '">' + esc(t.trail) + '</div>' +
         '<div class="dwr-info">' + esc(t.info) + (t.ref ? '  <span class="dwr-ref">' + esc(t.ref) + '</span>' : '') + '</div>' +
         attackChipsHTML(t.info) +
-        '<div class="dwr-stats"><div><b>' + t.count + '</b><span>events</span></div><div><b>' + srcs.length + '</b><span>sources</span></div><div><b>' + dsts.length + '</b><span>dest</span></div><div><b>' + ports.length + '</b><span>ports</span></div></div>' +
+        '<div class="dwr-stats"><div><b>' + t.count + '</b><span>events</span></div><div><b>' + srcs.length + '</b><span>sources</span></div><div><b>' + dsts.length + '</b><span>destinations</span></div><div><b>' + ports.length + '</b><span>ports</span></div></div>' +
         '<canvas class="dwr-spark"></canvas>' +
         '<div class="dwr-time">first ' + hms(t.first) + ' \u2192 last ' + hms(t.last) + ' \u00b7 span ' + durationStr(t.first, t.last) + '</div>' +
         '<div class="dwr-netfirst" id="dwr_netfirst"></div>' +
@@ -1283,10 +1284,10 @@
     var items = [
       ["Hide this threat", function () { toggleHide(t.uidc); }, ""],
       "sep",
-      ["◴ investigating", function () { setTriage(t.uidc, "investigating"); }, "tr-investigating"],
-      ["✓ resolved", function () { setTriage(t.uidc, "resolved"); }, "tr-resolved"],
-      ["⊘ false-positive", function () { setTriage(t.uidc, "fp"); }, "tr-fp"],
-      ["clear status", function () { setTriage(t.uidc, null); }, ""],
+      ["◴ Investigating", function () { setTriage(t.uidc, "investigating"); }, "tr-investigating"],
+      ["✓ Resolved", function () { setTriage(t.uidc, "resolved"); }, "tr-resolved"],
+      ["⊘ False-positive", function () { setTriage(t.uidc, "fp"); }, "tr-fp"],
+      ["Clear status", function () { setTriage(t.uidc, null); }, ""],
       "sep",
       ["Whitelist source  " + src, function () { whitelistSrc(src); }, ""],
       ["Whitelist trail  " + ntShort, function () { whitelistTrail(t.trail); }, ""],
@@ -1379,6 +1380,9 @@
   function loadTags() { var o = lsGet(LS_TAGS, {}); return (o && typeof o === "object") ? o : {}; }
   function saveTags() { lsSet(LS_TAGS, state.tags); }
   // ---- triage status (New / Investigating / Resolved / False-positive) ----
+  // "false-pos", not "false-positive": the full word wraps the drawer's status button onto two lines on a
+  // phone and, as a row badge, widens the threat column by 29px on every row (measured 2026-11-20).
+  // The right-click menu has the room and spells it out.
   var LS_TRIAGE = "mt_triage_v2", TRIAGE_LABEL = { investigating: "investigating", resolved: "resolved", fp: "false-pos" };
   function loadTriage() { var o = lsGet(LS_TRIAGE, {}); return (o && typeof o === 'object') ? o : {}; }
   function saveTriage() { lsSet(LS_TRIAGE, state.triage); }
