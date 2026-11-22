@@ -641,7 +641,7 @@ class TestChartAxis(unittest.TestCase):
         self.js = _read(MAIN_JS)
 
     def test_every_count_chart_labels_its_gridlines(self):
-        for fn in ("drawLines", "drawBars", "drawInteractiveBars"):
+        for fn in ("drawLines", "drawInteractiveBars"):
             body = re.search(r"function %s\(.*?\n  \}\n" % fn, self.js, re.S)
             self.assertTrue(body, "could not find %s() in main.js" % fn)
             self.assertIn("axisTicks(", body.group(0),

@@ -221,13 +221,14 @@
     ctx.lineTo(pad + gx * (n - 1), h); ctx.lineTo(pad, h); ctx.closePath(); ctx.globalAlpha = 0.13; ctx.fillStyle = color; ctx.fill();   // soft area fill
   }
   // mini multi-line — the minified form of the full Events chart: same per-type series + colors, shared y-scale,
-  // and each line STOPS at the last hour with data (no flat-zero tail), exactly like drawLines.
+  // and each line runs to endHour() (the whole day, or now for today), exactly like drawLines.
   function sparkLines(cv, series) {
     var dpr = window.devicePixelRatio || 1, w = 64, h = 22, pad = 2;
     cv.width = w * dpr; cv.height = h * dpr; cv.style.width = w + "px"; cv.style.height = h + "px";
     var ctx = cv.getContext("2d"); ctx.scale(dpr, dpr);
     var max = 1, lastIdx = 0;
     series.forEach(function (s) { s.data.forEach(function (v, i) { if (v > max) max = v; if (v > 0) lastIdx = Math.max(lastIdx, i); }); });
+    lastIdx = endHour(lastIdx);
     var gx = (w - pad * 2) / 23;   // x maps hours 0..23 across the width (matches the full chart)
     series.forEach(function (s, si) {
       ctx.strokeStyle = s.c || PALETTE[si % PALETTE.length]; ctx.lineWidth = 1; ctx.lineJoin = "round"; ctx.globalAlpha = 0.95; ctx.beginPath();
@@ -520,38 +521,30 @@
     if (out[out.length - 1] < max) out.push(out.length * step);
     return out;
   }
+  // Left margin wide enough for the largest y label: a fixed 30px cut "1,000" to ",000".
+  function yPad(ctx, ticks) { ctx.font = "10px ui-monospace,monospace"; return Math.max(30, Math.ceil(ctx.measureText(fmtN(ticks[ticks.length - 1])).width) + 10); }
   function drawLines(cv, series) {
     var tc = themeColors();
-    var w = cv._w, h = cv._h, ctx = cctx(cv), pad = 30, gw = w - pad * 2 - 96, gh = h - pad * 2, peak = 1;
-    var lastIdx = 0;   // last hour that actually has data — the line ends here "in the air" (no flat-zero tail)
+    var w = cv._w, h = cv._h, ctx = cctx(cv), pad = 30, gh = h - pad * 2, peak = 1;
+    var lastIdx = 0;
     series.forEach(function (s) { s.data.forEach(function (v, i) { if (v > peak) peak = v; if (v > 0) lastIdx = Math.max(lastIdx, i); }); });
-    var ticks = axisTicks(peak), max = ticks[ticks.length - 1];
-    ctx.fillStyle = tc.faint; ctx.font = "10px ui-monospace,monospace"; ctx.textBaseline = "middle";
-    ticks.forEach(function (v) { var yy = pad + gh - gh * v / max; ctx.strokeStyle = tc.line; ctx.beginPath(); ctx.moveTo(pad, yy); ctx.lineTo(pad + gw, yy); ctx.stroke(); ctx.textAlign = "right"; ctx.fillStyle = tc.faint; ctx.fillText(fmtN(v), pad - 6, yy); });
-    var lastX = pad + gw * lastIdx / 23;
-    if (lastIdx < 23) { ctx.strokeStyle = tc.line; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(lastX, pad); ctx.lineTo(lastX, pad + gh); ctx.stroke(); ctx.setLineDash([]); }  // "data ends here" marker
+    lastIdx = endHour(lastIdx);   // 23, or "now" for today: the day is not over yet, so the lines stop there
+    var ticks = axisTicks(peak), max = ticks[ticks.length - 1], lp = yPad(ctx, ticks), gw = w - lp - pad - 96;
+    ctx.fillStyle = tc.faint; ctx.textBaseline = "middle";
+    ticks.forEach(function (v) { var yy = pad + gh - gh * v / max; ctx.strokeStyle = tc.line; ctx.beginPath(); ctx.moveTo(lp, yy); ctx.lineTo(lp + gw, yy); ctx.stroke(); ctx.textAlign = "right"; ctx.fillStyle = tc.faint; ctx.fillText(fmtN(v), lp - 6, yy); });
+    var lastX = lp + gw * lastIdx / 23;
+    if (lastIdx < 23) { ctx.strokeStyle = tc.line; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(lastX, pad); ctx.lineTo(lastX, pad + gh); ctx.stroke(); ctx.setLineDash([]); }  // "now" marker (today only)
     series.forEach(function (s, si) {
       var col = s.c || PALETTE[si % PALETTE.length];
       ctx.strokeStyle = col; ctx.lineWidth = 2; ctx.beginPath();
-      for (var i = 0; i <= lastIdx; i++) { var x = pad + gw * i / 23, y = pad + gh - gh * s.data[i] / max; if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); }
+      for (var i = 0; i <= lastIdx; i++) { var x = lp + gw * i / 23, y = pad + gh - gh * s.data[i] / max; if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); }
       ctx.stroke();
-      var ey = pad + gh - gh * s.data[lastIdx] / max; ctx.fillStyle = col; ctx.beginPath(); ctx.arc(lastX, ey, 2.6, 0, Math.PI * 2); ctx.fill();   // endpoint dot
+      if (lastIdx < 23) { var ey = pad + gh - gh * s.data[lastIdx] / max; ctx.fillStyle = col; ctx.beginPath(); ctx.arc(lastX, ey, 2.6, 0, Math.PI * 2); ctx.fill(); }   // endpoint dot: still running
     });
     // hour labels thin out on a narrow chart and fill in on a wide one — every 4h across 2000px reads as stretched
     var hstep = gw >= 1200 ? 1 : gw >= 700 ? 2 : 4;
-    ctx.fillStyle = tc.faint; ctx.textAlign = "center"; for (var hh = 0; hh < 24; hh += hstep) { var x = pad + gw * hh / 23; ctx.fillText((hh < 10 ? "0" : "") + hh + "h", x, pad + gh + 12); }
-    var lx = pad + gw + 18, ly = pad + 4, hits = []; series.forEach(function (s, i) { ctx.fillStyle = s.c || PALETTE[i % PALETTE.length]; ctx.fillRect(lx, ly - 5, 12, 3); ctx.fillStyle = tc.text; ctx.font = "11px ui-monospace,monospace"; ctx.textAlign = "left"; ctx.fillText(s.name, lx + 18, ly); if (s.token) hits.push({ x: lx - 4, y: ly - 9, w: 24 + ctx.measureText(s.name).width, h: 15, token: s.token, label: s.name }); ly += 18; });
-    return hits;
-  }
-  function drawBars(cv, items) {
-    var tc = themeColors();
-    var w = cv._w, h = cv._h, ctx = cctx(cv), pad = 30, gh = h - pad * 2 - 18, n = items.length || 1, gap = (w - pad * 2) / n, bw = Math.min(gap * 0.6, 72), peak = 1;
-    items.forEach(function (it) { if (it[1] > peak) peak = it[1]; });
-    var ticks = axisTicks(peak), max = ticks[ticks.length - 1];
-    ctx.font = "10px ui-monospace,monospace"; ctx.textBaseline = "middle"; ctx.textAlign = "right";
-    ticks.forEach(function (v) { var yy = pad + gh - gh * v / max; ctx.strokeStyle = tc.line; ctx.beginPath(); ctx.moveTo(pad, yy); ctx.lineTo(w - pad, yy); ctx.stroke(); ctx.fillStyle = tc.faint; ctx.fillText(fmtN(v), pad - 6, yy); });
-    var hits = [];
-    items.forEach(function (it, i) { var bh = gh * it[1] / max, x = pad + gap * i + (gap - bw) / 2, y = pad + gh - bh; ctx.fillStyle = PALETTE[i % PALETTE.length]; ctx.fillRect(x, y, bw, bh); ctx.save(); ctx.translate(x + bw / 2, pad + gh + 6); ctx.rotate(Math.PI / 5); ctx.fillStyle = tc.muted; ctx.font = "9px ui-monospace,monospace"; ctx.textAlign = "left"; ctx.fillText(it[0].length > 18 ? it[0].slice(0, 17) + "…" : it[0], 0, 0); ctx.restore(); hits.push({ x: pad + gap * i, y: pad, w: gap, h: gh + 18, token: "src:" + it[0], label: it[0] }); });
+    ctx.fillStyle = tc.faint; ctx.textAlign = "center"; for (var hh = 0; hh < 24; hh += hstep) { var x = lp + gw * hh / 23; ctx.fillText((hh < 10 ? "0" : "") + hh + "h", x, pad + gh + 12); }
+    var lx = lp + gw + 18, ly = pad + 4, hits = []; series.forEach(function (s, i) { ctx.fillStyle = s.c || PALETTE[i % PALETTE.length]; ctx.fillRect(lx, ly - 5, 12, 3); ctx.fillStyle = tc.text; ctx.font = "11px ui-monospace,monospace"; ctx.textAlign = "left"; ctx.fillText(s.name, lx + 18, ly); if (s.token) hits.push({ x: lx - 4, y: ly - 9, w: 24 + ctx.measureText(s.name).width, h: 15, token: s.token, label: s.name }); ly += 18; });
     return hits;
   }
   // mini donut for the Threats/Trails stat cards — same shape as their big chart, scaled to the card corner
@@ -601,14 +594,14 @@
     var reduce = prefersReduced(), hovered = -1, raf = 0, total = items.reduce(function (s, x) { return s + x[1]; }, 0) || 1;
     items.forEach(function (it) { it._t = 0; });
     function paint() {
-      var tc = themeColors(), ctx = cctx(cv), w = cv._w, h = cv._h, pad = 30, gh = h - pad * 2 - 18,
-          n = items.length || 1, gap = (w - pad * 2) / n, bw = Math.min(gap * 0.6, 72), peak = 1;   // cap: on a wide panel 14 bars would otherwise be billboards
+      var tc = themeColors(), ctx = cctx(cv), w = cv._w, h = cv._h, pad = 30, gh = h - pad * 2 - 18, peak = 1;
       items.forEach(function (it) { if (it[1] > peak) peak = it[1]; });
-      var ticks = axisTicks(peak), max = ticks[ticks.length - 1];
-      ctx.font = "10px ui-monospace,monospace"; ctx.textBaseline = "middle"; ctx.textAlign = "right";
-      ticks.forEach(function (v) { var yy = pad + gh - gh * v / max; ctx.strokeStyle = tc.line; ctx.beginPath(); ctx.moveTo(pad, yy); ctx.lineTo(w - pad, yy); ctx.stroke(); ctx.fillStyle = tc.faint; ctx.fillText(fmtN(v), pad - 6, yy); });
+      var ticks = axisTicks(peak), max = ticks[ticks.length - 1], lp = cv._lp = yPad(ctx, ticks),
+          n = items.length || 1, gap = (w - lp - pad) / n, bw = Math.min(gap * 0.6, 72);   // cap: on a wide panel 14 bars would otherwise be billboards
+      ctx.textBaseline = "middle"; ctx.textAlign = "right";
+      ticks.forEach(function (v) { var yy = pad + gh - gh * v / max; ctx.strokeStyle = tc.line; ctx.beginPath(); ctx.moveTo(lp, yy); ctx.lineTo(w - pad, yy); ctx.stroke(); ctx.fillStyle = tc.faint; ctx.fillText(fmtN(v), lp - 6, yy); });
       items.forEach(function (it, i) {
-        var t = it._t, bh = gh * it[1] / max, gw = bw + t * 6, x = pad + gap * i + (gap - gw) / 2, y = pad + gh - bh, col = PALETTE[i % PALETTE.length];
+        var t = it._t, bh = gh * it[1] / max, gw = bw + t * 6, x = lp + gap * i + (gap - gw) / 2, y = pad + gh - bh, col = PALETTE[i % PALETTE.length];
         ctx.globalAlpha = (hovered < 0 || i === hovered) ? 1 : 0.4; ctx.fillStyle = col;
         if (t > 0.01) { ctx.save(); ctx.shadowColor = col; ctx.shadowBlur = 16 * t; ctx.fillRect(x, y, gw, bh); ctx.restore(); } else ctx.fillRect(x, y, gw, bh);
         ctx.globalAlpha = 1;
@@ -617,7 +610,7 @@
     }
     function tick() { raf = 0; var moving = false; items.forEach(function (it, i) { var tgt = i === hovered ? 1 : 0; if (reduce) it._t = tgt; else if (Math.abs(tgt - it._t) < 0.01) it._t = tgt; else { it._t += (tgt - it._t) * 0.3; moving = true; } }); paint(); if (moving && document.body.contains(cv)) raf = requestAnimationFrame(tick); }
     function kick() { if (!raf) raf = requestAnimationFrame(tick); }
-    function barAt(mx, my) { var w = cv._w, pad = 30, n = items.length || 1, gap = (w - pad * 2) / n; if (mx < pad || mx > w - pad || my < pad) return -1; var i = Math.floor((mx - pad) / gap); return (i >= 0 && i < items.length) ? i : -1; }
+    function barAt(mx, my) { var w = cv._w, pad = 30, lp = cv._lp || pad, n = items.length || 1, gap = (w - lp - pad) / n; if (mx < lp || mx > w - pad || my < pad) return -1; var i = Math.floor((mx - lp) / gap); return (i >= 0 && i < items.length) ? i : -1; }
     cv.onmousemove = function (e) {
       var p = evXY(cv, e), mx = p[0], my = p[1], i = barAt(mx, my); cv.style.cursor = i >= 0 ? "pointer" : "default";
       if (i >= 0) { var it = items[i]; chartTip(cv, "<b>" + esc(it[0]) + "</b><span>" + fmtN(it[1]) + " event" + (it[1] === 1 ? "" : "s") + " · " + Math.round(it[1] / total * 100) + "%</span>", mx, my); } else chartTip(cv, null);
@@ -2965,6 +2958,14 @@
     if (tz == null) { var d = new Date(); return d.getFullYear() + "-" + pad2(d.getMonth() + 1) + "-" + pad2(d.getDate()); }
     var u = new Date(Date.now() + tz * 60000);
     return u.getUTCFullYear() + "-" + pad2(u.getUTCMonth() + 1) + "-" + pad2(u.getUTCDate());
+  }
+  // Last hour the Events lines run to: 23 for a finished day, the sensor's current hour for today.
+  // Ending at the last hour WITH data drew a past day with one event at 18:00 as a spike that never
+  // came back down (the hours after it were zero, not unknown).
+  function endHour(lastData) {
+    if (currentDate() !== todayStr()) return 23;
+    var tz = srvTz(), h = tz == null ? new Date().getHours() : new Date(Date.now() + tz * 60000).getUTCHours();
+    return Math.max(h, lastData);
   }
   // Issue #4 (open since 2015): a selection can be one day or a range, spelled "START_END" - the
   // form /events has always understood. `date_input` is a native <input type="date"> and cannot
