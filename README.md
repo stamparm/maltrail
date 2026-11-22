@@ -1,4 +1,4 @@
-<picture><source media="(prefers-color-scheme: dark)" srcset="docs/logo-dark.svg"><img src="docs/logo.svg" alt="Maltrail" width="284"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="docs/logo-dark.svg"><img src="docs/logo.svg" alt="Maltrail" width="288"></picture>
 
 [![License](https://img.shields.io/badge/license-MIT-red.svg)](#license)
 [![Sensor](https://img.shields.io/badge/sensor-Rust%201.74%2B-orange.svg)](sensor/)
