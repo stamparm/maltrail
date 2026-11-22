@@ -2986,6 +2986,14 @@ ARTEX
 ArtExVerify/1.0
 ArtExVerify
 
+# Reference: https://x.com/LandscapeThreat/status/2124133744886133071
+# Reference: https://x.com/LandscapeThreat/status/2124263194713629041
+# Reference: https://www.virustotal.com/gui/file/47bf36bcbb91fe8b103f574bb9b05eecdf2386b962df1a3291a0ccb7f69f66ba/detection
+
+MoggyDayHub/gta6console/
+gta6console
+MoggyDayHub
+
 # Misc
 
 information_schema
