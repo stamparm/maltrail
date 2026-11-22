@@ -10,4 +10,5 @@
   (`main.js` injects it inline in `currentColor`, so it follows the theme).
 * **Gold** `#f2b705`, outline `#111`, then a white keyline: the keyline carries the glyph on dark backgrounds.
 * **The foot** is the crisp print over its own 10-unit mosaic, cell opacity = ink coverage: the trail as lossy
-  data, and Maltrail recovering it. It only works large, which is why the icon leaves it out.
+  data, and Maltrail recovering it. The cells are inset by a 1-unit gap so they read as discrete samples; touching,
+  they read as a broken alpha channel (four blind reviews said exactly that). It only works large, which is why the icon leaves it out.
