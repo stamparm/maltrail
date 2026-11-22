@@ -42,11 +42,13 @@
     background:#0d131f;
     border-bottom:1px solid var(--line-solid);
   }
+  /* no tagline here: the README and GitHub carry it ("Malicious traffic detection system"); an app bar is logo only.
+     Inside .brandlogo the wordmark sits on the text baseline (its box is cropped to its ink, and "altrail" has no
+     descenders), so a text HEADER_LOGO lines up the same way. */
   .brand{display:flex; align-items:center; gap:10px; font-family:var(--mono); font-weight:600; letter-spacing:.5px}
-  .brandlogo{display:inline-flex; align-items:center; color:var(--text); font-family:var(--mono); font-weight:700; letter-spacing:.4px}
-  .brandlogo img{width:24px; height:auto; margin-right:2px; vertical-align:middle}   /* the de-facto maltrail "M" logo (images/mlogo.svg) */
-  .brandlogo .wordmark{height:12px; width:auto; aspect-ratio:410.1/79.6; margin-left:1px}   /* main.js injects it; ~60px wide, as the old live text was */
-  .brand small{color:var(--muted); font-weight:500; letter-spacing:.3px}
+  .brandlogo{display:inline-block; white-space:nowrap; color:var(--text); font-family:var(--mono); font-weight:700; letter-spacing:.4px}
+  .brandlogo img{width:24px; height:auto; margin-right:2px; vertical-align:-6px}   /* the de-facto maltrail "M" logo (images/mlogo.svg); -6px puts its centre on the 12px wordmark's */
+  .brandlogo .wordmark{height:12px; width:auto; aspect-ratio:410.1/79.6; margin-left:1px; vertical-align:baseline}   /* main.js injects it; ~60px wide, as the old live text was */
   .period{display:flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--line-solid);
     border-radius:8px;background:var(--surface);color:var(--text);font-family:var(--mono);font-size:12px;cursor:pointer}
   .period .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
@@ -191,7 +193,6 @@
        the date and search controls at 390px) */
     header{flex-wrap:wrap;gap:10px;height:auto;padding:8px 16px}
     .search{order:5;flex-basis:100%;max-width:none}   /* full-width own row on tablet/mobile — drop the desktop cap */
-    .brand small{display:none}
     /* mini sparkline drops into flow on narrow cards so it never overlaps the subtitle */
     .card canvas{position:static;display:block;margin-top:9px}
   }
