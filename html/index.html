@@ -78,13 +78,13 @@
 
   <section id="console" class="console" aria-label="event console" hidden>
     <div class="con-bar">
-      <span class="con-cmd"><b>$</b> <span id="con_cmd">tail -f</span> <span id="con_file" class="con-file"></span> <span class="con-pipe">| grep</span></span>
+      <span class="con-cmd"><b>$</b> tail -n <select id="con_n" class="con-n" title="lines of history to show" aria-label="lines of history to show"><option>100</option><option>500</option><option selected>1000</option><option>2000</option></select><span id="con_f"> -f</span> <span id="con_file" class="con-file"></span> <span class="con-pipe">| grep</span></span>
       <input id="con_q" class="con-q" placeholder="words  -exclude" autocomplete="off" spellcheck="false" aria-label="grep the console: every word must appear, -word must not">
       <span id="con_stat" class="con-stat" role="status"></span>
       <button class="ghost-btn xport" id="con_pause" aria-pressed="false">pause</button>
       <button class="ghost-btn xport" id="con_clear">clear</button>
     </div>
-    <div id="con_out" class="con-out" role="log" aria-live="off"></div>
+    <div id="con_out" class="con-out" role="log" aria-live="off" tabindex="-1"></div>
     <button id="con_new" class="con-new" hidden></button>
   </section>
 </main>

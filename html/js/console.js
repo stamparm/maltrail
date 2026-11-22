@@ -17,8 +17,8 @@
   var UI = window.MT_UI, E = window.MT_ENGINE;
   if (!UI || !E) return;
 
-  var MAX = 2000, FIRST = 1000, POLL_MS = 1500, FOLLOW_SLACK = 40, DEMO_MS = 650;
-  var st = { on: false, date: null, q: "", offset: null, seq: 0, timer: 0, paused: false, follow: true, unseen: 0, total: null, demo: null, demoI: 0 };
+  var MAX = 2000, POLL_MS = 1500, FOLLOW_SLACK = 40, DEMO_MS = 650, NS = [100, 500, 1000, 2000];
+  var st = { n: 1000, on: false, date: null, q: "", offset: null, seq: 0, timer: 0, paused: false, follow: true, unseen: 0, total: null, demo: null, demoI: 0 };
   var el = {};
 
   function $(id) { return document.getElementById(id); }
@@ -110,7 +110,7 @@
   }
   function fetchTail(first) {
     var seq = st.seq;
-    var url = "/tail?date=" + encodeURIComponent(st.date) + "&n=" + (first ? FIRST : MAX) +
+    var url = "/tail?date=" + encodeURIComponent(st.date) + "&n=" + (first ? st.n : MAX) +
               (st.offset != null ? "&from=" + st.offset : "") + (st.q ? "&q=" + encodeURIComponent(st.q) : "");
     fetch(url, { credentials: "same-origin" }).then(function (r) {
       if (seq !== st.seq) return;
@@ -137,14 +137,13 @@
     st.seq++; clearTimeout(st.timer); st.timer = 0;
     st.date = UI.currentDate(); st.offset = null; st.total = null; st.unseen = 0; st.follow = true;
     el.out.textContent = ""; el.pill.hidden = true;
-    var day = lastDay(st.date);
-    el.cmd.textContent = (UI.DEMO || live()) ? "tail -f" : "tail -n " + FIRST;
-    el.file.textContent = day + ".log";
+    el.f.hidden = !(UI.DEMO || live());   // -f only where something can still arrive
+    el.file.textContent = lastDay(st.date) + ".log";
     if (UI.DEMO) {
       var ws = words(), lines = st.demo || (st.demo = UI.demoLines()), first = [];
       st.demoI = Math.floor(lines.length * 0.3);   // open part-way in: a screenful of history, the rest "arrives"
       for (var i = 0; i < st.demoI; i++) if (matches(lines[i], ws)) first.push(lines[i]);
-      append(first.slice(-300)); status(); schedule();
+      append(first.slice(-st.n)); status(); schedule();
       return;
     }
     status(); fetchTail(true);
@@ -173,8 +172,14 @@
 
   function init() {
     el.sec = $("console"); el.btn = $("console_btn"); el.out = $("con_out"); el.stat = $("con_stat");
-    el.q = $("con_q"); el.pause = $("con_pause"); el.pill = $("con_new"); el.cmd = $("con_cmd"); el.file = $("con_file");
+    el.q = $("con_q"); el.pause = $("con_pause"); el.pill = $("con_new"); el.f = $("con_f"); el.file = $("con_file"); el.n = $("con_n");
     if (!el.sec || !el.btn) return;
+    try { var n = +localStorage.getItem("mt_con_n"); if (NS.indexOf(n) >= 0) st.n = n; } catch (e) { }
+    el.n.value = String(st.n);
+    el.n.onchange = function () {
+      st.n = +el.n.value; try { localStorage.setItem("mt_con_n", st.n); } catch (e) { }
+      el.n.blur(); reload();
+    };
     el.btn.onclick = function () { setOn(!st.on); };
     el.pause.onclick = function () { setPaused(!st.paused); };
     $("con_clear").onclick = function () { el.out.textContent = ""; st.unseen = 0; el.pill.hidden = true; status(); };
@@ -197,11 +202,31 @@
       if (line && line._row && !UI.openThreatFor(line._row)) note("that threat is not in the day on screen");
     };
     window.addEventListener("resize", fit);
+    // ...and whenever what sits above it changes height: the cards render after this runs, the
+    // panel collapses, the map opens. Fitted once at start, the console overran the window.
+    if (typeof ResizeObserver !== "undefined") {
+      var ro = new ResizeObserver(function () { fit(); });
+      ["stats", "chart_area", "worldmap"].forEach(function (id) { var x = $(id); if (x) ro.observe(x); });
+      var tb = document.querySelector(".toolbar"); if (tb) ro.observe(tb);
+    }
     var on = false; try { on = localStorage.getItem("mt_console") === "1"; } catch (e) { }
     if (on) setOn(true);
   }
 
+  // PgUp/PgDn, Home/End and the arrows move through the lines while the console is shown (the page
+  // hands them over: the grid they normally drive is hidden, and paging days is what the arrows by
+  // the date are for)
+  function scroll(key) {
+    var o = el.out, line = 18, page = Math.max(line, o.clientHeight - 2 * line);
+    if (key === "PageUp") o.scrollTop -= page;
+    else if (key === "PageDown") o.scrollTop += page;
+    else if (key === "Home") o.scrollTop = 0;
+    else if (key === "End") o.scrollTop = o.scrollHeight;
+    else if (key === "ArrowUp") o.scrollTop -= line;
+    else if (key === "ArrowDown") o.scrollTop += line;
+  }
   window.MT_CONSOLE = {
+    scroll: function (key) { if (st.on) scroll(key); },
     toggle: function () { if (el.btn) setOn(!st.on); },
     day: function () { if (st.on) setTimeout(reload, 0); }   // after the page has switched its date
   };

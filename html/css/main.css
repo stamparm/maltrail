@@ -885,52 +885,60 @@ body.light .newpill::before{background:#059669}
 .relbtn:hover{border-color:var(--accent);color:var(--accent)}
 .relbtn b{color:var(--accent);font-variant-numeric:tabular-nums}
 
-/* ---- event console (js/console.js): the raw log as it arrives. Dark in both themes on purpose: it is
-   a terminal, a different mode from the dashboard, and the console colours are tuned for one ground. ---- */
+/* ---- event console (js/console.js): the raw log as it arrives, in the theme's ground ---- */
 body.console-on .grid-frame, body.console-on #pager, body.console-on #seg-size{display:none}
-.console{position:relative;display:flex;flex-direction:column;min-height:320px;margin-top:10px;background:#0a0e15;
-  border:1px solid #232c3b;border-radius:var(--r);overflow:hidden;font-family:var(--mono);font-size:12px;color:#c9d4e0;color-scheme:dark}
+.console{--c-bg:#0a0e15;--c-bar:#0d121b;--c-border:#232c3b;--c-rule:#1c2431;--c-input:#060a10;--c-text:#c9d4e0;--c-dim:#5f6c7e;
+  --c-strong:#f4f7fa;--c-file:#e6edf3;--c-prompt:#f2b705;--c-in:#9aa7b4;--c-mal:#ff6b6b;--c-sus:#f2c94c;--c-malic:#ffa94d;
+  --c-low:#3b4a5e;--c-hover:#ffffff0a;--c-ph:#4a5568;
+  position:relative;display:flex;flex-direction:column;min-height:320px;margin-top:10px;background:var(--c-bg);
+  border:1px solid var(--c-border);border-radius:var(--r);overflow:hidden;font-family:var(--mono);font-size:12px;color:var(--c-text)}
+body.light .console{--c-bg:#ffffff;--c-bar:#f6f8fb;--c-border:#d5dde8;--c-rule:#e3e9f1;--c-input:#ffffff;--c-text:#1f2a37;--c-dim:#7b8796;
+  --c-strong:#0b1220;--c-file:#0b1220;--c-prompt:#a87a00;--c-in:#5b6878;--c-mal:#c81e1e;--c-sus:#8a6100;--c-malic:#b84a00;
+  --c-low:#cbd5e1;--c-hover:#0f23460a;--c-ph:#9aa5b4}
 .console[hidden]{display:none}
-.con-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 12px;border-bottom:1px solid #1c2431;background:#0d121b}
-.con-cmd{color:#8a97ad;white-space:nowrap}
-.con-cmd b{color:#f2b705}
-.con-file{color:#e6edf3}
-.con-pipe{color:#5a6678}
-.con-q{flex:1 1 180px;min-width:120px;background:#060a10;border:1px solid #232c3b;border-radius:6px;padding:4px 8px;
-  color:#e6edf3;font:inherit;outline:none}
-.con-q:focus{border-color:#38bdf8}
-.con-q::placeholder{color:#4a5568}
-.con-stat{color:#8a97ad;white-space:nowrap}
+.con-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 12px;border-bottom:1px solid var(--c-rule);background:var(--c-bar)}
+.con-cmd{color:var(--c-dim);white-space:nowrap}
+.con-cmd b{color:var(--c-prompt)}
+.con-file{color:var(--c-file)}
+.con-n{font:inherit;color:var(--c-file);background:transparent;border:none;border-bottom:1px dashed var(--c-dim);padding:0 1px;margin:0;
+  cursor:pointer;appearance:none;-moz-appearance:none;-webkit-appearance:none}
+.con-n:hover, .con-n:focus-visible{border-bottom-color:var(--accent);color:var(--accent);outline:none}
+.con-n option{background:var(--c-bar);color:var(--c-text)}
+.con-q{flex:1 1 180px;min-width:120px;background:var(--c-input);border:1px solid var(--c-border);border-radius:6px;padding:4px 8px;
+  color:var(--c-strong);font:inherit;outline:none}
+.con-q:focus{border-color:var(--accent)}
+.con-q::placeholder{color:var(--c-ph)}
+.con-stat{color:var(--c-dim);white-space:nowrap}
 .con-stat.on::before{content:"";display:inline-block;width:7px;height:7px;margin-right:7px;border-radius:50%;background:#22c55e;
   box-shadow:0 0 6px #22c55e;vertical-align:1px;animation:conPulse 1.6s ease-in-out infinite}
-.con-stat.err{color:#f59e0b}
+.con-stat.err{color:var(--sev-med)}
 @keyframes conPulse{50%{opacity:.35}}
 @media (prefers-reduced-motion:reduce){.con-stat.on::before{animation:none}}
-.console .ghost-btn{padding:4px 10px;font-size:11.5px;font-family:var(--mono);background:#0d121b;border-color:#232c3b;color:#8a97ad}
+.console .ghost-btn{padding:4px 10px;font-size:11.5px;font-family:var(--mono);background:var(--c-bar);border-color:var(--c-border);color:var(--c-dim)}
+.console .ghost-btn:hover{color:var(--c-strong);border-color:var(--accent)}
 .toolbar .ghost-btn.xport.on{color:var(--accent);border-color:var(--accent);box-shadow:0 0 12px -4px var(--accent)}
-.console .ghost-btn:hover{color:#e6edf3;border-color:#38bdf8}
-.con-out{flex:1;overflow:auto;padding:4px 0;line-height:1.55}
+.con-out{flex:1;overflow:auto;padding:4px 0;line-height:1.55;outline:none}
 .cl{display:grid;grid-template-columns:8ch minmax(0,9ch) 15ch 7ch 2ch 15ch 6ch 4ch 6ch minmax(0,1fr);column-gap:1ch;align-items:baseline;
   padding:0 12px 0 9px;border-left:3px solid transparent;white-space:nowrap;cursor:default}
-.cl:hover{background:#ffffff0a}
+.cl:hover{background:var(--c-hover)}
 .cl > span, .c-rest{overflow:hidden;text-overflow:ellipsis}
 .cl.s3{border-left-color:var(--sev-high)}
 .cl.s2{border-left-color:var(--sev-med)}
-.cl.s1{border-left-color:#3b4a5e}
-.cl.raw, .cl.mk{display:block;color:#5a6678;white-space:pre-wrap;word-break:break-all}
+.cl.s1{border-left-color:var(--c-low)}
+.cl.raw, .cl.mk{display:block;color:var(--c-dim);white-space:pre-wrap;word-break:break-all}
 .cl.mk{font-style:italic;padding-left:12px}
-.c-t, .c-sn, .c-pt, .c-ar, .c-pr, .c-rf{color:#5f6c7e}
-.c-ip{color:#c9d4e0}
+.c-t, .c-sn, .c-pt, .c-ar, .c-pr, .c-rf{color:var(--c-dim)}
+.c-ip{color:var(--c-text)}
 .c-ty{justify-self:start;padding:0 5px;border-radius:3px;color:#fff;font-size:10.5px;font-weight:600;line-height:1.5}
-.c-tr{color:#f4f7fa;font-weight:600}
-.c-in{color:#9aa7b4}
-.c-in.i-malware{color:#ff6b6b}
-.c-in.i-suspicious{color:#f2c94c}
-.c-in.i-malicious{color:#ffa94d}
+.c-tr{color:var(--c-strong);font-weight:600}
+.c-in{color:var(--c-in)}
+.c-in.i-malware{color:var(--c-mal)}
+.c-in.i-suspicious{color:var(--c-sus)}
+.c-in.i-malicious{color:var(--c-malic)}
 .c-q{cursor:pointer}
 .c-q:hover{text-decoration:underline;text-underline-offset:2px}
-.con-new{position:absolute;right:18px;bottom:14px;padding:5px 12px;border-radius:999px;border:1px solid #38bdf8;background:#0d1b2a;
-  color:#bfe6fb;font:inherit;font-size:11.5px;cursor:pointer;box-shadow:0 6px 18px -6px #000}
+.con-new{position:absolute;right:18px;bottom:14px;padding:5px 12px;border-radius:999px;border:1px solid var(--accent);background:var(--c-bar);
+  color:var(--accent);font:inherit;font-size:11.5px;cursor:pointer;box-shadow:0 6px 18px -8px #0008}
 @media (max-width:860px){
   .cl{grid-template-columns:8ch 15ch 6ch minmax(0,1fr)}
   .c-sn, .c-pt, .c-ar, .c-pr{display:none}
