@@ -1,4 +1,10 @@
-<picture><source media="(prefers-color-scheme: dark)" srcset="docs/logo-dark.svg"><img src="docs/logo.svg" alt="Maltrail" width="412"></picture>
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="docs/logo-dark.svg"><img src="docs/logo.svg" alt="Maltrail" width="300"></picture>
+  <br>
+  <strong>Malicious traffic detection system</strong>
+</p>
+
+<div align="center">
 
 [![License](https://img.shields.io/badge/license-MIT-red.svg)](#license)
 [![Sensor](https://img.shields.io/badge/sensor-Rust%201.74%2B-orange.svg)](sensor/)
@@ -6,7 +12,7 @@
 [![Trails](https://img.shields.io/badge/trails-%3E1.5M-brightgreen.svg)](#trails)
 [![X](https://img.shields.io/badge/X-%40maltrail-black.svg)](https://x.com/maltrail)
 
-# Maltrail
+</div>
 
 Maltrail is a network traffic detection system that identifies communication with known malicious
 infrastructure and reports selected traffic anomalies. It matches domains, URLs, IP addresses,
