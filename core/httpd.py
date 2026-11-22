@@ -1672,7 +1672,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             if config.HEADER_LOGO:
                 retval = config.HEADER_LOGO
             else:
-                retval = '<img src="images/mlogo.png" style="width: 25px">altrail'
+                retval = '<img src="images/mlogo.svg" style="width: 25px">altrail'
 
             return retval
 

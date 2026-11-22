@@ -3567,7 +3567,7 @@
   function boot() {
     // <!LOGO!> is server-substituted to the maltrail logo (or config.HEADER_LOGO). When unsubstituted
     // (demo / file:// / artifact — no server), the token becomes a bogus comment -> inject the default logo.
-    var _bl = document.querySelector(".brandlogo"); if (_bl && !_bl.querySelector("img")) _bl.innerHTML = '<img src="images/mlogo.png" alt="" style="width:24px">altrail';
+    var _bl = document.querySelector(".brandlogo"); if (_bl && !_bl.querySelector("img")) _bl.innerHTML = '<img src="images/mlogo.svg" alt="" style="width:24px">altrail';
     loadPrefs(); applyTheme(getTheme()); applyScale(getScaleIdx()); applyView(); applyMuted(getMuted()); migrateLegacy(); parseHash(); wire(); applyPrefsUI();
     checkSensors();
     setInterval(function () { refreshRelTimes(); checkSensors(); }, 30000);   // keep "Xm ago" labels current between renders, and the silent-sensor marker

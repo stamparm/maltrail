@@ -731,7 +731,6 @@ class TestServedAssets(unittest.TestCase):
         "favicon.ico": "browsers request /favicon.ico whether or not the markup mentions it",
         "robots.txt": "fetched by crawlers, and named in CONTENT_EXTENSIONS_EXCLUSIONS for exactly that",
         "README.txt": "documents the directory; .txt is in DISABLED_CONTENT_EXTENSIONS, so it is not servable",
-        "images/logo.xcf": "editable source of mlogo.png, not a served asset",
     }
 
     # Where a reference to a file under html/ can legitimately come from.
@@ -742,11 +741,11 @@ class TestServedAssets(unittest.TestCase):
         "html/js/demo.js",
         "html/js/worldmap.js",
         "html/js/thirdparty.min.js",
-        "core/httpd.py",   # _logo() renders <img src="images/mlogo.png">, _assetver() stats js/main.js and css/main.css
+        "core/httpd.py",   # _logo() renders <img src="images/mlogo.svg">, _assetver() stats js/main.js and css/main.css
     )
 
     # Only directory-prefixed paths count as references. Everything the frontend and the server
-    # actually ask for is written that way ("css/main.css", "images/mlogo.png"), and a bare
+    # actually ask for is written that way ("css/main.css", "images/mlogo.svg"), and a bare
     # "main.js" would otherwise match the several comments that name the legacy files by filename.
     ASSET_RE = re.compile(r"""["'(]\s*/?((?:images|js|css)/[A-Za-z0-9._/-]+)""")
 
