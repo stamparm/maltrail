@@ -889,12 +889,12 @@ body.light .newpill::before{background:#059669}
 body.console-on .grid-frame, body.console-on #pager, body.console-on #seg-size{display:none}
 .console{--c-bg:#0a0e15;--c-bar:#0d121b;--c-border:#232c3b;--c-rule:#1c2431;--c-input:#060a10;--c-text:#c9d4e0;--c-dim:#5f6c7e;
   --c-strong:#f4f7fa;--c-file:#e6edf3;--c-prompt:#f2b705;--c-in:#9aa7b4;--c-mal:#ff6b6b;--c-sus:#f2c94c;--c-malic:#ffa94d;
-  --c-low:#3b4a5e;--c-hover:#ffffff0a;--c-ph:#4a5568;
+  --c-low:#3b4a5e;--c-hover:#ffffff0a;--c-ph:#4a5568;--c-thumb:#6b7c96;--c-thumb-hi:#8a9bb5;--c-track:#0d121b;--c-shade:#000000c0;
   position:relative;display:flex;flex-direction:column;min-height:320px;margin-top:10px;background:var(--c-bg);
   border:1px solid var(--c-border);border-radius:var(--r);overflow:hidden;font-family:var(--mono);font-size:12px;color:var(--c-text)}
 body.light .console{--c-bg:#ffffff;--c-bar:#f6f8fb;--c-border:#d5dde8;--c-rule:#e3e9f1;--c-input:#ffffff;--c-text:#1f2a37;--c-dim:#7b8796;
   --c-strong:#0b1220;--c-file:#0b1220;--c-prompt:#a87a00;--c-in:#5b6878;--c-mal:#c81e1e;--c-sus:#8a6100;--c-malic:#b84a00;
-  --c-low:#cbd5e1;--c-hover:#0f23460a;--c-ph:#9aa5b4}
+  --c-low:#cbd5e1;--c-hover:#0f23460a;--c-ph:#9aa5b4;--c-thumb:#75849a;--c-thumb-hi:#5b697d;--c-track:#eef2f6;--c-shade:#0f234633}
 .console[hidden]{display:none}
 .con-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 12px;border-bottom:1px solid var(--c-rule);background:var(--c-bar)}
 .con-cmd{color:var(--c-dim);white-space:nowrap}
@@ -917,7 +917,18 @@ body.light .console{--c-bg:#ffffff;--c-bar:#f6f8fb;--c-border:#d5dde8;--c-rule:#
 .console .ghost-btn{padding:4px 10px;font-size:11.5px;font-family:var(--mono);background:var(--c-bar);border-color:var(--c-border);color:var(--c-dim)}
 .console .ghost-btn:hover{color:var(--c-strong);border-color:var(--accent)}
 .toolbar .ghost-btn.xport.on{color:var(--accent);border-color:var(--accent);box-shadow:0 0 12px -4px var(--accent)}
-.con-out{flex:1;overflow:auto;padding:4px 0;line-height:1.55;outline:none}
+.con-view{position:relative;flex:1;min-height:0;display:flex}
+.con-view::before, .con-view::after{content:"";position:absolute;left:0;right:14px;height:20px;pointer-events:none;opacity:0;transition:opacity .15s;z-index:1}
+.con-view::before{top:0;background:linear-gradient(var(--c-shade),transparent)}
+.con-view::after{bottom:0;background:linear-gradient(transparent,var(--c-shade))}
+.con-view.up::before, .con-view.down::after{opacity:1}
+/* a real scrollbar: the page-wide one is thin and barely lighter than the ground, so the console looked
+   like a couple of lines with nothing more */
+.con-out{flex:1;overflow:auto;padding:4px 0;line-height:1.55;outline:none;scrollbar-width:auto;scrollbar-color:var(--c-thumb) var(--c-track)}
+.con-out::-webkit-scrollbar{width:14px;height:14px}
+.con-out::-webkit-scrollbar-track{background:var(--c-track)}
+.con-out::-webkit-scrollbar-thumb{background:var(--c-thumb);border-radius:7px;border:3px solid var(--c-track)}
+.con-out::-webkit-scrollbar-thumb:hover{background:var(--c-thumb-hi)}
 .cl{display:grid;grid-template-columns:8ch minmax(0,9ch) 15ch 7ch 2ch 15ch 6ch 4ch 6ch minmax(0,1fr);column-gap:1ch;align-items:baseline;
   padding:0 12px 0 9px;border-left:3px solid transparent;white-space:nowrap;cursor:default}
 .cl:hover{background:var(--c-hover)}
@@ -930,7 +941,7 @@ body.light .console{--c-bg:#ffffff;--c-bar:#f6f8fb;--c-border:#d5dde8;--c-rule:#
 .c-t, .c-sn, .c-pt, .c-ar, .c-pr, .c-rf{color:var(--c-dim)}
 .c-ip{color:var(--c-text)}
 .c-ty{justify-self:start;padding:0 5px;border-radius:3px;color:#fff;font-size:10.5px;font-weight:600;line-height:1.5}
-.c-tr{color:var(--c-strong);font-weight:600}
+.c-tr{color:var(--c-strong)}
 .c-in{color:var(--c-in)}
 .c-in.i-malware{color:var(--c-mal)}
 .c-in.i-suspicious{color:var(--c-sus)}

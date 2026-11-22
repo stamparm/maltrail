@@ -2607,10 +2607,10 @@
       if (e.ctrlKey || e.metaKey || e.altKey) return;
       var ae = document.activeElement, tag = ae && ae.tagName;
       if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (ae && ae.isContentEditable)) return;
-      var con = document.body.classList.contains("console-on");   // the grid is hidden: paging/arrow keys move the console, "/" is grep
+      var con = document.body.classList.contains("console-on");   // the grid is hidden: Home/End/arrows move the console, "/" is grep; PgUp/PgDn still page days
       if (e.key === "`") { if (window.MT_CONSOLE) { e.preventDefault(); window.MT_CONSOLE.toggle(); } }
       else if (con && e.key === "/") { var cq = document.getElementById("con_q"); if (cq) { e.preventDefault(); cq.focus(); } }
-      else if (con && /^(Page(Up|Down)|Home|End|Arrow(Up|Down))$/.test(e.key)) { e.preventDefault(); window.MT_CONSOLE.scroll(e.key); }
+      else if (con && /^(Home|End|Arrow(Up|Down))$/.test(e.key)) { e.preventDefault(); window.MT_CONSOLE.scroll(e.key); }
       else if (con && /^(Arrow|Enter)/.test(e.key)) return;
       else if (e.key === "ArrowLeft") { e.preventDefault(); if (state.page > 0) gotoPage(state.page - 1); }
       else if (e.key === "ArrowRight") { e.preventDefault(); gotoPage(state.page + 1); }   // refresh() clamps to the last page
@@ -2634,7 +2634,8 @@
     if (document.getElementById("kbd_overlay")) return;
     var KEYS = [
       ["←  →", "previous / next page"],
-      ["PgUp  PgDn", "previous / next day (console: scroll)"],   // keys are split on spaces: "Page Up / Down" drew four keys, "/" among them (also "focus search")
+      ["PgUp  PgDn", "previous / next day"],
+      ["Home  End", "console: top / bottom"],   // keys are split on spaces: "Page Up / Down" drew four keys, "/" among them (also "focus search")
       ["↑  ↓", "select a row"],
       ["Enter", "open selected threat"],
       ["/", "focus search (grep in the console)"],

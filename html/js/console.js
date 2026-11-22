@@ -91,7 +91,14 @@
     else if (out.scrollHeight !== before) { st.unseen += rows.length; el.pill.textContent = fmt(st.unseen) + " new ↓"; el.pill.hidden = false; }
   }
 
+  // "there is more above / below": a shadow on that edge. The scrollbar alone did not say it - thin,
+  // and on an overlay-scrollbar desktop not drawn at all until you scroll.
+  function edges() {
+    var o = el.out, up = o.scrollTop > 2, down = o.scrollHeight - o.scrollTop - o.clientHeight > 2;
+    el.view.classList.toggle("up", up); el.view.classList.toggle("down", down);
+  }
   function status() {
+    edges();
     var n = el.out.querySelectorAll(".cl:not(.mk)").length, txt, cls = "";
     if (UI.DEMO) { txt = st.paused ? "paused" : "replay · demo data"; cls = st.paused ? "" : "on"; }
     else if (st.paused) txt = "paused · " + fmt(n) + " lines";
@@ -158,6 +165,8 @@
     if (!st.on) return;
     var top = el.sec.getBoundingClientRect().top + window.pageYOffset;
     el.sec.style.height = Math.max(320, window.innerHeight - top - 14) + "px";
+    if (st.follow) el.out.scrollTop = el.out.scrollHeight;   // a new height must not unpin the newest line
+    edges();
   }
   function setOn(on) {
     st.on = on;
@@ -172,7 +181,7 @@
 
   function init() {
     el.sec = $("console"); el.btn = $("console_btn"); el.out = $("con_out"); el.stat = $("con_stat");
-    el.q = $("con_q"); el.pause = $("con_pause"); el.pill = $("con_new"); el.f = $("con_f"); el.file = $("con_file"); el.n = $("con_n");
+    el.q = $("con_q"); el.pause = $("con_pause"); el.pill = $("con_new"); el.f = $("con_f"); el.file = $("con_file"); el.n = $("con_n"); el.view = $("con_view");
     if (!el.sec || !el.btn) return;
     try { var n = +localStorage.getItem("mt_con_n"); if (NS.indexOf(n) >= 0) st.n = n; } catch (e) { }
     el.n.value = String(st.n);
@@ -191,6 +200,7 @@
       else if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); clearTimeout(deb); grep(""); el.q.blur(); }
     };
     el.out.onscroll = function () {
+      edges();
       var o = el.out; st.follow = o.scrollHeight - o.scrollTop - o.clientHeight < FOLLOW_SLACK;
       if (st.follow && st.unseen) { st.unseen = 0; el.pill.hidden = true; }
     };
@@ -213,14 +223,11 @@
     if (on) setOn(true);
   }
 
-  // PgUp/PgDn, Home/End and the arrows move through the lines while the console is shown (the page
-  // hands them over: the grid they normally drive is hidden, and paging days is what the arrows by
-  // the date are for)
+  // Home/End and the arrows move through the lines while the console is shown (the grid they
+  // normally drive is hidden); PgUp/PgDn keep paging days
   function scroll(key) {
-    var o = el.out, line = 18, page = Math.max(line, o.clientHeight - 2 * line);
-    if (key === "PageUp") o.scrollTop -= page;
-    else if (key === "PageDown") o.scrollTop += page;
-    else if (key === "Home") o.scrollTop = 0;
+    var o = el.out, line = 18;
+    if (key === "Home") o.scrollTop = 0;
     else if (key === "End") o.scrollTop = o.scrollHeight;
     else if (key === "ArrowUp") o.scrollTop -= line;
     else if (key === "ArrowDown") o.scrollTop += line;
