@@ -1669,12 +1669,9 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             return content
 
         def _logo(self):
-            if config.HEADER_LOGO:
-                retval = config.HEADER_LOGO
-            else:
-                retval = '<img src="images/mlogo.svg" style="width: 25px">altrail'
-
-            return retval
+            # empty by default: main.js boot() injects the glyph + inline wordmark into an empty .brandlogo,
+            # so the wordmark's path data lives in one place (and follows the theme via currentColor)
+            return config.HEADER_LOGO or ""
 
         def _assetver(self):
             # cache-busting token = newest mtime of the cacheable assets, so updated JS/CSS land immediately

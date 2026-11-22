@@ -45,6 +45,7 @@
   .brand{display:flex; align-items:center; gap:10px; font-family:var(--mono); font-weight:600; letter-spacing:.5px}
   .brandlogo{display:inline-flex; align-items:center; color:var(--text); font-family:var(--mono); font-weight:700; letter-spacing:.4px}
   .brandlogo img{width:24px; height:auto; margin-right:2px; vertical-align:middle}   /* the de-facto maltrail "M" logo (images/mlogo.svg) */
+  .brandlogo .wordmark{height:12px; width:auto; aspect-ratio:410.1/79.6; margin-left:1px}   /* main.js injects it; ~60px wide, as the old live text was */
   .brand small{color:var(--muted); font-weight:500; letter-spacing:.3px}
   .period{display:flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--line-solid);
     border-radius:8px;background:var(--surface);color:var(--text);font-family:var(--mono);font-size:12px;cursor:pointer}

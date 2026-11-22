@@ -741,7 +741,7 @@ class TestServedAssets(unittest.TestCase):
         "html/js/demo.js",
         "html/js/worldmap.js",
         "html/js/thirdparty.min.js",
-        "core/httpd.py",   # _logo() renders <img src="images/mlogo.svg">, _assetver() stats js/main.js and css/main.css
+        "core/httpd.py",   # _assetver() stats js/main.js and css/main.css (the default logo is injected by main.js)
     )
 
     # Only directory-prefixed paths count as references. Everything the frontend and the server
