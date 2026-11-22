@@ -568,6 +568,95 @@ class TestHttpd(unittest.TestCase):
         self.assertEqual(st, 200, "'::'-netfilter user must be able to log in and query")
         self.assertIn(b"10.0.0.5", body, "'::' means no restriction -> sees all events")
 
+    # ---- /tail: the event console ----
+
+    def _tail(self, query, user="admin", cookie=None):
+        st, _, body = _http(self.port, "GET", "/tail?" + query, cookie=cookie or self._login(user))
+        return st, (json.loads(body.decode()) if st == 200 else None)
+
+    def _today(self):
+        # read at test time: other tests append to today's log
+        with open(os.path.join(self.logdir, self.date + ".log")) as f:
+            return [_.rstrip("\n") for _ in f if _.strip()]
+
+    def test_tail_returns_the_last_lines_oldest_first(self):
+        st, d = self._tail("date=%s&n=2" % self.date)
+        today = self._today()
+        self.assertEqual(st, 200)
+        self.assertEqual(d["lines"], today[-2:], "the last two lines, newest last, like tail")
+        self.assertEqual(d["matched"], len(today))
+        self.assertEqual(d["offset"], os.path.getsize(os.path.join(self.logdir, self.date + ".log")))
+
+    def test_tail_from_an_offset_reads_only_complete_new_lines(self):
+        day = "2020-03-03"
+        path = os.path.join(self.logdir, day + ".log")
+        first = '"2020-03-03 01:00:00.000000" s 10.0.0.1 1 8.8.8.8 53 UDP DNS one.example "x (dummy)" (static)\n'
+        with open(path, "w") as f:
+            f.write(first)
+        try:
+            st, d = self._tail("date=%s" % day)
+            self.assertEqual((st, d["offset"], len(d["lines"])), (200, len(first), 1))
+            ck = self._login()
+            # a line still being written is not returned, and the offset does not move past it
+            with open(path, "a") as f:
+                f.write('"2020-03-03 01:00:01.000000" s 10.0.0.1 1 8.8.8.8 53 UDP DNS two.ex')
+            st, d2 = self._tail("date=%s&from=%d" % (day, d["offset"]), cookie=ck)
+            self.assertEqual((d2["lines"], d2["offset"]), ([], len(first)))
+            with open(path, "a") as f:
+                f.write('ample "x (dummy)" (static)\n')
+            st, d3 = self._tail("date=%s&from=%d" % (day, d2["offset"]), cookie=ck)
+            self.assertEqual(len(d3["lines"]), 1)
+            self.assertIn("two.example", d3["lines"][0], "the completed line arrives whole, not as a fragment")
+            self.assertEqual(d3["offset"], os.path.getsize(path))
+            # an offset past the end (the log was rotated) starts over and says so
+            st, d4 = self._tail("date=%s&from=%d" % (day, 10 ** 9), cookie=ck)
+            self.assertTrue(d4["reset"])
+            self.assertEqual(len(d4["lines"]), 2)
+        finally:
+            os.remove(path)
+
+    def test_tail_grep_needs_every_word_and_honours_exclusions(self):
+        ck = self._login()
+        both = [_ for _ in self._today() if "sensor-a" in _.lower() and "tcp" in _.lower()]
+        self.assertGreaterEqual(len(both), 3)
+        st, d = self._tail("date=%s&q=SENSOR-A%%20tcp" % self.date, cookie=ck)
+        self.assertEqual(d["lines"], both, "case-insensitive, and every word must appear")
+        st, d = self._tail("date=%s&q=sensor-a%%20tcp%%20-198.51.100.5" % self.date, cookie=ck)
+        self.assertEqual(d["lines"], [_ for _ in both if "198.51.100.5" not in _])
+        self.assertFalse(any("198.51.100.5" in _ for _ in d["lines"]))
+
+    def test_tail_greps_what_the_session_may_see_never_the_raw_line(self):
+        # positive control: the admin finds both lines the analyst must not
+        ck = self._login("admin")
+        self.assertEqual(self._tail("date=%s&q=198.51.100.5" % self.date, cookie=ck)[1]["matched"], 1)
+        self.assertEqual(self._tail("date=%s&q=supersecretname" % self.date, cookie=ck)[1]["matched"], 1)
+        ck = self._login("analyst")
+        d = self._tail("date=%s" % self.date, cookie=ck)[1]
+        self.assertFalse(any("198.51.100.5" in _ for _ in d["lines"]), "out-of-scope event leaked through /tail")
+        self.assertFalse(any("supersecretname" in _ for _ in d["lines"]), "custom trail name leaked through /tail")
+        self.assertTrue(any("5.5.5.5" in _ for _ in d["lines"]), "the in-scope custom event itself is shown, masked")
+        # grep must not work as an oracle: a match on the hidden text returns nothing at all
+        self.assertEqual(self._tail("date=%s&q=198.51.100.5" % self.date, cookie=ck)[1]["matched"], 0)
+        self.assertEqual(self._tail("date=%s&q=supersecretname" % self.date, cookie=ck)[1]["matched"], 0)
+        self.assertEqual(self._tail("date=%s&q=supersecret" % self.date, cookie=ck)[1]["matched"], 0)
+
+    def test_tail_hostile_input(self):
+        ck = self._login()
+        self.assertEqual(_http(self.port, "GET", "/tail?date=%s" % self.date)[0], 401, "no session, no events")
+        for date in ("../../../../etc/passwd", "2020-01-01/../../x", "%00", ""):
+            self.assertEqual(self._tail("date=" + date, cookie=ck)[0], 400, date)
+        for n in ("%C2%B2", "-5", "abc", "9" * 40, "0"):
+            st, d = self._tail("date=%s&n=%s" % (self.date, n), cookie=ck)
+            self.assertEqual(st, 200, n)
+            self.assertLessEqual(len(d["lines"]), 2000)
+        st, d = self._tail("date=%s&from=-7" % self.date, cookie=ck)
+        self.assertEqual((st, len(d["lines"])), (200, len(self._today())), "a malformed offset reads from the top")
+        # grep is substring matching: a catastrophic-backtracking regex is just text that matches nothing
+        t0 = time.time()
+        st, d = self._tail("date=%s&q=%s" % (self.date, "(a%2B)%2B%24" * 2000), cookie=ck)
+        self.assertEqual((st, d["matched"]), (200, 0))
+        self.assertLess(time.time() - t0, 5)
+
     def test_netfilter_exact_ip(self):
         # analyst3 restricted to a single exact IP (10.0.0.5): sees only lines containing it.
         _, _, body = _http(self.port, "GET", "/events?date=%s" % self.date, cookie=self._login("analyst3"))

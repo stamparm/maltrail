@@ -55,6 +55,7 @@
     <div class="spacer"></div>
     <div class="tbr">
       <div class="seg" id="seg-size"><button data-size="25" class="on">25</button><button data-size="50">50</button><button data-size="100">100</button></div>
+      <button class="ghost-btn xport" id="console_btn" title="event console: the raw log as it arrives (`)" aria-label="toggle event console" aria-pressed="false" aria-controls="console" data-ico="term" data-px="12">console</button>
       <button class="ghost-btn xport live" id="live_btn" title="live auto-refresh + alerts on new high-severity" aria-label="toggle live auto-refresh" aria-pressed="false" data-ico="dot" data-px="9">live</button>
       <button class="ghost-btn xport mute-btn" id="mute_btn" title="mute new-threat beeps" aria-label="mute new-threat beeps" aria-pressed="false"></button>
       <button class="ghost-btn xport" id="views_btn" title="saved views / presets" aria-label="saved views" data-ico="star" data-px="12">views</button>
@@ -74,6 +75,18 @@
   </div>
   </div>
   <div id="pager" class="pager" role="navigation" aria-label="threat pages"></div>
+
+  <section id="console" class="console" aria-label="event console" hidden>
+    <div class="con-bar">
+      <span class="con-cmd"><b>$</b> <span id="con_cmd">tail -f</span> <span id="con_file" class="con-file"></span> <span class="con-pipe">| grep</span></span>
+      <input id="con_q" class="con-q" placeholder="words  -exclude" autocomplete="off" spellcheck="false" aria-label="grep the console: every word must appear, -word must not">
+      <span id="con_stat" class="con-stat" role="status"></span>
+      <button class="ghost-btn xport" id="con_pause" aria-pressed="false">pause</button>
+      <button class="ghost-btn xport" id="con_clear">clear</button>
+    </div>
+    <div id="con_out" class="con-out" role="log" aria-live="off"></div>
+    <button id="con_new" class="con-new" hidden></button>
+  </section>
 </main>
 
 <div id="drawer_scrim" class="drawer-scrim"></div>
@@ -86,6 +99,7 @@
 <script src="js/engine.js?v=<!ASSETVER!>"></script>
 <script src="js/worldmap.js"></script>
 <script src="js/main.js?v=<!ASSETVER!>"></script>
+<script src="js/console.js?v=<!ASSETVER!>"></script>
 
 </body>
 </html>

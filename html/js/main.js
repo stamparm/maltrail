@@ -1058,6 +1058,7 @@
     moon: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
     sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
     close: '<path d="M18 6 6 18M6 6l12 12"/>',
+    term: '<path d="m4 17 6-5-6-5"/><path d="M12 19h8"/>',
     restore: '<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/>',
     down: '<path d="M12 4v13M6 11l6 6 6-6"/>',
     note: '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
@@ -2606,7 +2607,11 @@
       if (e.ctrlKey || e.metaKey || e.altKey) return;
       var ae = document.activeElement, tag = ae && ae.tagName;
       if (tag === "INPUT" || tag === "TEXTAREA" || (ae && ae.isContentEditable)) return;
-      if (e.key === "ArrowLeft") { e.preventDefault(); if (state.page > 0) gotoPage(state.page - 1); }
+      var con = document.body.classList.contains("console-on");   // the table is hidden: its keys do nothing, "/" is grep
+      if (e.key === "`") { if (window.MT_CONSOLE) { e.preventDefault(); window.MT_CONSOLE.toggle(); } }
+      else if (con && e.key === "/") { var cq = document.getElementById("con_q"); if (cq) { e.preventDefault(); cq.focus(); } }
+      else if (con && /^(Arrow|Enter)/.test(e.key)) return;
+      else if (e.key === "ArrowLeft") { e.preventDefault(); if (state.page > 0) gotoPage(state.page - 1); }
       else if (e.key === "ArrowRight") { e.preventDefault(); gotoPage(state.page + 1); }   // refresh() clamps to the last page
       else if (e.key === "PageUp") { if (!DEMO) { e.preventDefault(); shiftDay(-1); } }
       else if (e.key === "PageDown") { if (!DEMO) { e.preventDefault(); shiftDay(1); } }
@@ -2631,7 +2636,8 @@
       ["PgUp  PgDn", "previous / next day"],   // keys are split on spaces: "Page Up / Down" drew four keys, "/" among them (also "focus search")
       ["↑  ↓", "select a row"],
       ["Enter", "open selected threat"],
-      ["/", "focus search"],
+      ["/", "focus search (grep in the console)"],
+      ["`", "event console on / off"],
       ["?", "this shortcut list"],
       ["Esc", "close panel / clear search"]
     ];
@@ -3146,6 +3152,7 @@
     return (_demoCSVc = raw);
   }
   function navigate(date) {
+    if (window.MT_CONSOLE) window.MT_CONSOLE.day();   // the event console follows the day too
     if (getView() === "map" && !getCollapsed()) renderWorldMap();   // keep the attack map on the viewed day
     if (DEMO) { render(aggregate(demoCSV())); return; }
     if (state.live) { stopLive(); }   // tear down the stream for the old day
@@ -3675,5 +3682,23 @@
     }
     if (!DEMO && location.hash.indexOf("login") >= 0) showLogin();   // test/deep-link hook (no server to sign in to in a demo)
   }
+  // What js/console.js needs from the page; everything else stays private to this file.
+  window.MT_UI = {
+    DEMO: DEMO, currentDate: currentDate, todayStr: todayStr, TYPE_COLORS: TYPE_COLORS, icon: icon, showLogin: showLogin,
+    demoLines: function () { return demoCSV().split("\n").filter(Boolean); },
+    // A raw line's threat, for the drawer: same source and indicator, else (flood, DGA and
+    // DNS-exhaustion groups are keyed without the source) the same indicator. False when the day
+    // on screen does not hold it (filtered out of the table, or not loaded yet).
+    openThreatFor: function (row) {
+      var all = state.all || [], nt = normTrail(row[8]), i, t, alt = null;
+      for (i = 0; i < all.length; i++) {
+        t = all[i]; if (normTrail(t.trail) !== nt) continue;
+        if (t.src === row[2]) { openDrawer(t); return true; }
+        if (!alt && t.kind) alt = t;
+      }
+      if (alt) { openDrawer(alt); return true; }
+      return false;
+    }
+  };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
 })();

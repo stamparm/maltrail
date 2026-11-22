@@ -1,0 +1,209 @@
+/*
+* Copyright (c) 2014-present Maltrail developers (https://github.com/stamparm/maltrail/)
+* See the file 'LICENSE' for copying permission
+*/
+
+// The event console: `tail -f <day>.log | grep <words>`, in the page, for watching what arrives.
+//
+// A window onto the END of the log, never the whole day. The server sends at most TAIL lines
+// (/tail, which also applies the session's scope and custom-trail masking before the grep), and
+// this view keeps at most MAX, dropping the oldest. Memory is therefore the same for a 1k-event
+// day and an 850k one - the reason the dashboard condenses events is not a reason this can't exist.
+//
+// Every field of an event is attacker-influenced (DNS names, URLs, user agents). It reaches the
+// DOM through textContent only - no markup is ever built from a line.
+(function () {
+  "use strict";
+  var UI = window.MT_UI, E = window.MT_ENGINE;
+  if (!UI || !E) return;
+
+  var MAX = 2000, FIRST = 1000, POLL_MS = 1500, FOLLOW_SLACK = 40, DEMO_MS = 650;
+  var st = { on: false, date: null, q: "", offset: null, seq: 0, timer: 0, paused: false, follow: true, unseen: 0, total: null, demo: null, demoI: 0 };
+  var el = {};
+
+  function $(id) { return document.getElementById(id); }
+  function fmt(n) { return (+n || 0).toLocaleString("en-US"); }
+  function lastDay(d) { var m = /_(\d{4}-\d{2}-\d{2})$/.exec(d || ""); return m ? m[1] : d; }
+  function live() { return !UI.DEMO && lastDay(st.date) === UI.todayStr(); }
+  function words() { return st.q.toLowerCase().split(/\s+/).filter(Boolean).slice(0, 8); }
+  // the server's grep, for the demo (which has no server): every word present, "-word" absent
+  function matches(line, ws) {
+    var low = line.toLowerCase();
+    for (var i = 0; i < ws.length; i++) {
+      var w = ws[i];
+      if (w.charAt(0) === "-" && w.length > 1) { if (low.indexOf(w.slice(1)) >= 0) return false; }
+      else if (low.indexOf(w) < 0) return false;
+    }
+    return true;
+  }
+  // "18558,18562,18563,..." -> "18558 +124": a port or address list is one field, and can be hundreds long
+  function short(v) { var i = v.indexOf(","); return i < 0 ? v : v.slice(0, i) + " +" + (v.split(",").length - 1); }
+  function infoClass(info) { var m = /\((malware|suspicious|malicious)\)/.exec(info); return m ? " i-" + m[1] : ""; }
+
+  function span(parent, cls, text, title) {
+    var s = document.createElement("span"); s.className = cls; s.textContent = text;
+    if (title) s.title = title;
+    parent.appendChild(s); return s;
+  }
+  function lineEl(row) {
+    var d = document.createElement("div");
+    if (!row || row.length < 11 || !/^[A-Z0-9]+$/.test(row[7])) {   // not an event line: shown as it is
+      d.className = "cl raw"; d.textContent = row ? row.join(" ") : ""; return d;
+    }
+    d.className = "cl s" + E.severityOf(row[9], row[10]);
+    d._row = row;
+    span(d, "c-t", ("" + row[0]).substr(11, 8), row[0]);
+    span(d, "c-sn", row[1], row[1]);
+    span(d, "c-ip c-q", short(row[2]), row[2]).dataset.q = row[2].split(",")[0];
+    span(d, "c-pt", short(row[3]), row[3].indexOf(",") > 0 ? row[3] : "");
+    span(d, "c-ar", "→");
+    span(d, "c-ip c-q", short(row[4]), row[4]).dataset.q = row[4].split(",")[0];
+    span(d, "c-pt", short(row[5]), row[5].indexOf(",") > 0 ? row[5] : "");
+    span(d, "c-pr", row[6]);
+    span(d, "c-ty", row[7]).style.background = UI.TYPE_COLORS[row[7]] || "#64748b";
+    var rest = span(d, "c-rest", "");
+    span(rest, "c-tr c-q", row[8]).dataset.q = row[8];
+    span(rest, "c-in" + infoClass(row[9]), " " + row[9]);
+    span(rest, "c-rf", " " + row[10]);
+    rest.title = row[8] + "  " + row[9] + "  " + row[10];
+    return d;
+  }
+  function markerEl(text) { var d = document.createElement("div"); d.className = "cl mk"; d.textContent = text; return d; }
+  function marker(text) { el.out.appendChild(markerEl(text)); }
+
+  // `note`: a marker to put in front of these lines (after the cap, which would otherwise trim it off
+  // the top whenever the batch itself fills the buffer - exactly when a burst marker matters)
+  function append(lines, note) {
+    if (!lines.length) return;
+    var rows = E.parseEvents(lines.join("\n")), frag = document.createDocumentFragment();
+    for (var i = 0; i < rows.length; i++) frag.appendChild(lineEl(rows[i]));
+    var head = frag.firstChild;
+    var out = el.out, before = out.scrollHeight;
+    out.appendChild(frag);
+    var extra = out.childElementCount - MAX;
+    if (extra > 0) {
+      var h0 = out.scrollHeight;
+      while (extra-- > 0) out.removeChild(out.firstChild);
+      if (!st.follow) out.scrollTop -= h0 - out.scrollHeight;   // keep the lines being read where they are
+    }
+    if (note) out.insertBefore(markerEl(note), head.parentNode === out ? head : out.firstChild);
+    if (st.follow) out.scrollTop = out.scrollHeight;
+    else if (out.scrollHeight !== before) { st.unseen += rows.length; el.pill.textContent = fmt(st.unseen) + " new ↓"; el.pill.hidden = false; }
+  }
+
+  function status() {
+    var n = el.out.querySelectorAll(".cl:not(.mk)").length, txt, cls = "";
+    if (UI.DEMO) { txt = st.paused ? "paused" : "replay · demo data"; cls = st.paused ? "" : "on"; }
+    else if (st.paused) txt = "paused · " + fmt(n) + " lines";
+    else if (live()) { txt = "live · " + fmt(n) + " lines"; cls = "on"; }
+    else txt = st.total != null && st.total > n ? "last " + fmt(n) + " of " + fmt(st.total) : fmt(n) + " lines";
+    if (!n && !st.paused) txt = st.q ? "no line matches" : (live() ? "live · waiting for events" : "no events this day");
+    el.stat.textContent = txt; el.stat.className = "con-stat " + cls;
+  }
+  function note(text) { el.stat.textContent = text; el.stat.className = "con-stat err"; }
+
+  function schedule(ms) {
+    clearTimeout(st.timer); st.timer = 0;
+    if (!st.on || st.paused) return;
+    if (UI.DEMO) { st.timer = setTimeout(demoTick, ms || DEMO_MS); return; }
+    if (live()) st.timer = setTimeout(function () { if (document.hidden) schedule(); else fetchTail(false); }, ms || POLL_MS);
+  }
+  function fetchTail(first) {
+    var seq = st.seq;
+    var url = "/tail?date=" + encodeURIComponent(st.date) + "&n=" + (first ? FIRST : MAX) +
+              (st.offset != null ? "&from=" + st.offset : "") + (st.q ? "&q=" + encodeURIComponent(st.q) : "");
+    fetch(url, { credentials: "same-origin" }).then(function (r) {
+      if (seq !== st.seq) return;
+      if (r.status === 401) { note("log in to view events"); UI.showLogin(); return; }
+      if (!r.ok) { note("tail failed (HTTP " + r.status + ")"); schedule(5000); return; }
+      return r.json().then(function (d) {
+        if (seq !== st.seq) return;
+        if (d.reset) { el.out.textContent = ""; marker("— log rotated, reading it again —"); }
+        if (first) st.total = d.matched;
+        st.offset = d.offset;
+        append(d.lines, !first && d.matched > d.lines.length ? "… " + fmt(d.matched - d.lines.length) + " lines not shown (burst)" : null);
+        status(); schedule();
+      });
+    }).catch(function () { if (seq === st.seq) { note("no connection — retrying"); schedule(5000); } });
+  }
+  // The demo has no server: replay its day as if it were arriving, a few lines at a time, looping.
+  function demoTick() {
+    var ws = words(), lines = st.demo || (st.demo = UI.demoLines()), out = [], k = 1 + Math.floor(Math.random() * 3), guard = lines.length;
+    while (out.length < k && guard-- > 0) { var l = lines[st.demoI++ % lines.length]; if (matches(l, ws)) out.push(l); }
+    append(out); status(); schedule(DEMO_MS * (0.5 + Math.random()));
+  }
+
+  function reload() {
+    st.seq++; clearTimeout(st.timer); st.timer = 0;
+    st.date = UI.currentDate(); st.offset = null; st.total = null; st.unseen = 0; st.follow = true;
+    el.out.textContent = ""; el.pill.hidden = true;
+    var day = lastDay(st.date);
+    el.cmd.textContent = (UI.DEMO || live()) ? "tail -f" : "tail -n " + FIRST;
+    el.file.textContent = day + ".log";
+    if (UI.DEMO) {
+      var ws = words(), lines = st.demo || (st.demo = UI.demoLines()), first = [];
+      st.demoI = Math.floor(lines.length * 0.3);   // open part-way in: a screenful of history, the rest "arrives"
+      for (var i = 0; i < st.demoI; i++) if (matches(lines[i], ws)) first.push(lines[i]);
+      append(first.slice(-300)); status(); schedule();
+      return;
+    }
+    status(); fetchTail(true);
+  }
+  function setPaused(p) {
+    st.paused = p; el.pause.textContent = p ? "resume" : "pause"; el.pause.setAttribute("aria-pressed", p ? "true" : "false");
+    status();
+    if (!p) { if (UI.DEMO) schedule(); else if (live()) fetchTail(false); }   // catch up at once: from the offset, at most MAX lines
+    else { clearTimeout(st.timer); st.timer = 0; }
+  }
+  function fit() {   // the console fills the window below its own top edge
+    if (!st.on) return;
+    var top = el.sec.getBoundingClientRect().top + window.pageYOffset;
+    el.sec.style.height = Math.max(320, window.innerHeight - top - 14) + "px";
+  }
+  function setOn(on) {
+    st.on = on;
+    try { localStorage.setItem("mt_console", on ? "1" : "0"); } catch (e) { }
+    document.body.classList.toggle("console-on", on);
+    el.sec.hidden = !on;
+    el.btn.classList.toggle("on", on); el.btn.setAttribute("aria-pressed", on ? "true" : "false");
+    if (on) { fit(); reload(); }
+    else { st.seq++; clearTimeout(st.timer); st.timer = 0; el.out.textContent = ""; }   // nothing kept while hidden
+  }
+  function grep(q) { q = q.trim(); if (q === st.q) return; st.q = q; el.q.value = q; reload(); }
+
+  function init() {
+    el.sec = $("console"); el.btn = $("console_btn"); el.out = $("con_out"); el.stat = $("con_stat");
+    el.q = $("con_q"); el.pause = $("con_pause"); el.pill = $("con_new"); el.cmd = $("con_cmd"); el.file = $("con_file");
+    if (!el.sec || !el.btn) return;
+    el.btn.onclick = function () { setOn(!st.on); };
+    el.pause.onclick = function () { setPaused(!st.paused); };
+    $("con_clear").onclick = function () { el.out.textContent = ""; st.unseen = 0; el.pill.hidden = true; status(); };
+    el.pill.onclick = function () { el.out.scrollTop = el.out.scrollHeight; };
+    var deb = 0;
+    el.q.oninput = function () { clearTimeout(deb); deb = setTimeout(function () { grep(el.q.value); }, 450); };
+    el.q.onkeydown = function (e) {
+      if (e.key === "Enter") { e.preventDefault(); clearTimeout(deb); grep(el.q.value); }
+      else if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); clearTimeout(deb); grep(""); el.q.blur(); }
+    };
+    el.out.onscroll = function () {
+      var o = el.out; st.follow = o.scrollHeight - o.scrollTop - o.clientHeight < FOLLOW_SLACK;
+      if (st.follow && st.unseen) { st.unseen = 0; el.pill.hidden = true; }
+    };
+    el.out.onclick = function (e) {
+      if (String(window.getSelection ? window.getSelection() : "")) return;   // selecting text to copy is not a click
+      var q = e.target.closest && e.target.closest(".c-q");
+      if (q && q.dataset.q) { grep((st.q ? st.q + " " : "") + q.dataset.q); return; }
+      var line = e.target.closest && e.target.closest(".cl");
+      if (line && line._row && !UI.openThreatFor(line._row)) note("that threat is not in the day on screen");
+    };
+    window.addEventListener("resize", fit);
+    var on = false; try { on = localStorage.getItem("mt_console") === "1"; } catch (e) { }
+    if (on) setOn(true);
+  }
+
+  window.MT_CONSOLE = {
+    toggle: function () { if (el.btn) setOn(!st.on); },
+    day: function () { if (st.on) setTimeout(reload, 0); }   // after the page has switched its date
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+})();

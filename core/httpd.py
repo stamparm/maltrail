@@ -6,6 +6,7 @@ See the file 'LICENSE' for copying permission
 """
 
 import binascii
+import collections
 import datetime
 import glob
 import gzip
@@ -218,6 +219,10 @@ MAX_REQUEST_THREADS = 100       # concurrent request handlers; excess connection
 MAX_LIVE_STREAMS = 30           # of those, how many may be held open by /live at once
 MAX_CONNECTIONS_PER_IP = 32     # of those, how many one client address may hold (a dashboard uses ~8)
 HEADER_TIMEOUT = 10             # seconds a connection gets to send its request line and headers
+TAIL_DEFAULT = 1000             # /tail: lines returned when the client names no count
+TAIL_MAX = 2000                 # /tail: the most it will return (the console keeps no more than this)
+TAIL_MAX_QUERY = 256            # /tail: characters of grep query looked at
+TAIL_MAX_WORDS = 8              # /tail: words of it
 
 _HUNT_IP_QUERY_REGEX = re.compile(r"\A(\d+\.\d+\.\d+\.\d+)(?:/(\d{1,2}))?\Z")
 _HUNT_LINE_IP_REGEX = re.compile(r"\b(\d+\.\d+\.\d+\.\d+)\b")
@@ -1408,7 +1413,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # display helpers (_version, _logo, _assetver, _tzoffset, _statics, _format, _build_netfilters, _filter_events)
             # whose signature is NOT (self, params), so e.g. "GET /version" -> self._version(params) -> uncaught TypeError
             # (request crash) reachable by any client. Endpoints are an explicit allowlist, not "any _-prefixed method".
-            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "check", "trails", "ping", "blacklist", "fail2ban", "events", "live", "counts", "geo", "hunt", "meta", "reference", "ripe", "ptr", "sensors"):
+            if splitpath[0] in ("login", "logout", "whoami", "check_ip", "check", "trails", "ping", "blacklist", "fail2ban", "events", "live", "tail", "counts", "geo", "hunt", "meta", "reference", "ripe", "ptr", "sensors"):
                 if len(splitpath) > 1:
                     params["subpath"] = splitpath[1]
                 content = getattr(self, "_%s" % splitpath[0])(params)
@@ -1678,7 +1683,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             # (index.html is served no-cache, so a changed token forces the browser to refetch the new files)
             try:
                 latest = 0
-                for rel in ("js/main.js", "js/engine.js", "js/worker.js", "css/main.css"):
+                for rel in ("js/main.js", "js/engine.js", "js/worker.js", "js/console.js", "css/main.css"):
                     p = os.path.join(HTML_DIR, rel)
                     if os.path.isfile(p):
                         latest = max(latest, int(os.path.getmtime(p)))
@@ -2986,6 +2991,92 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                     self.send_header(HTTP_HEADER.CONTENT_RANGE, "bytes 0-0/0")
 
             return content
+
+        def _tail(self, params):
+            """The event console: the last `n` lines of one day, oldest first, as JSON.
+
+            `from` is a raw byte offset this endpoint returned earlier: only lines after it are
+            read, so following a growing day costs what was appended, not the day. `q` is grep:
+            every word must appear, a word starting with "-" must not; case-insensitive, plain
+            substrings (no regex, so nothing a client sends can backtrack). The grep runs on the
+            line AFTER the session's scope and custom-trail masking, never before: matched against
+            the raw line, a masked analyst could probe a custom trail's name one guess at a time
+            and learn it from which masked lines came back.
+            """
+
+            session = self.get_session()
+            if session is None:
+                self.send_response(_http_client.UNAUTHORIZED)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
+            # a range follows its last day, like /live: only the newest file is still growing
+            days = _selected_days(params.get("date", ""))
+            if not days:
+                self.send_response(_http_client.BAD_REQUEST)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+
+            scope = self._scope(session)
+            if scope is None:       # malformed netfilters: fail closed, never fall through to everything
+                self.send_response(_http_client.FORBIDDEN)
+                self.send_header(HTTP_HEADER.CONNECTION, "close")
+                return None
+            restricted, addresses, netmasks, regex = scope
+
+            n = _opt_index(params.get("n"))
+            n = TAIL_DEFAULT if n is None else max(1, min(n, TAIL_MAX))
+            start = _opt_index(params.get("from")) or 0
+            words = (params.get("q") or "")[:TAIL_MAX_QUERY].lower().split()[:TAIL_MAX_WORDS]
+            want = [_ for _ in words if not _.startswith("-")]
+            skip = [_[1:] for _ in words if _.startswith("-") and len(_) > 1]
+
+            path = os.path.join(config.LOG_DIR, "%s.log" % days[-1])
+            lines, matched, reset, end = collections.deque(maxlen=n), 0, False, 0
+
+            if os.path.isfile(path):
+                with open(path, "rb") as f:
+                    f.seek(0, 2)
+                    size = f.tell()
+                    if start > size:            # rotated or truncated since: read it again from the top
+                        start, reset = 0, True
+                    end = start
+                    f.seek(start)
+                    if start:
+                        f.seek(start - 1)
+                        if f.read(1) != b"\n":  # not a line boundary (never one we handed out): drop the fragment
+                            end += len(f.readline())
+
+                    def complete():
+                        # whole lines only: a line still being appended is left for the next call,
+                        # and `end` stops before it so that call starts on its first byte
+                        nonlocal end
+                        for raw in f:
+                            if not raw.endswith(b"\n"):
+                                break
+                            end += len(raw)
+                            yield raw
+
+                    if restricted or session.mask_custom:
+                        visible = self._filter_events(complete(), session, addresses, netmasks, regex)
+                    else:
+                        visible = (_.decode(UNICODE_ENCODING, "replace") for _ in complete())
+
+                    for line in visible:
+                        if words:
+                            low = line.lower()
+                            if any(_ not in low for _ in want) or any(_ in low for _ in skip):
+                                continue
+                        line = line.rstrip("\r\n")
+                        if line:
+                            matched += 1
+                            lines.append(line)
+
+            self.send_response(_http_client.OK)
+            self.send_header(HTTP_HEADER.CONNECTION, "close")
+            self.send_header(HTTP_HEADER.CONTENT_TYPE, "application/json")
+            self.send_header(HTTP_HEADER.CACHE_CONTROL, "no-store")
+            return json.dumps({"offset": end, "lines": list(lines), "matched": matched, "reset": reset})
 
         def _live(self, params):
             # Server-Sent Events: push appended log lines in near real time so the UI updates instantly
