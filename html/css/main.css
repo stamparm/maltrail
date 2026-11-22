@@ -603,6 +603,9 @@ body{
     radial-gradient(1200px 620px at 82% -12%, #16263f 0%, transparent 60%),
     radial-gradient(900px 500px at 0% 110%, #131d33 0%, transparent 55%),
     var(--ground);
+  /* the glows must not tile: a layer without a size is sized to the body, and on a short page (an empty day)
+     they repeated down the window as faint bands, 15-20 levels of luminance (measured). The grid repeats. */
+  background-repeat:repeat,repeat,repeat,no-repeat,no-repeat;
 }
 body.light{
   background:
@@ -610,6 +613,7 @@ body.light{
     linear-gradient(90deg, rgba(2,132,199,.05) 1px, transparent 1px) 0 0/40px 40px,
     radial-gradient(1200px 620px at 82% -12%, #dbe7fb 0%, transparent 60%),
     var(--ground);
+  background-repeat:repeat,repeat,no-repeat;
 }
 /* HUD corner brackets on the primary data surfaces. NOTE: they live on .grid-frame (a non-scrolling
    wrapper), NOT on .grid-wrap — an absolutely-positioned overlay inside the overflow-x:auto .grid-wrap
@@ -711,9 +715,9 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
    pinned top and bottom resolves against the viewport itself, at every zoom, and keeps the mobile
    behaviour 100dvh was there for. */
 .drawer{position:fixed;top:0;bottom:0;right:0;width:466px;max-width:92vw;background:var(--surface);
-  border-left:1px solid var(--line-solid);box-shadow:-30px 0 70px -34px #000;z-index:9991;
+  border-left:1px solid var(--line-solid);z-index:9991;
   transform:translateX(102%);transition:transform .24s cubic-bezier(.22,.61,.36,1);display:flex;flex-direction:column;overflow:hidden}
-.drawer.open{transform:none}
+.drawer.open{transform:none;box-shadow:-30px 0 70px -34px #000}   /* only when open: parked 102% off-screen, the shadow still reached ~57px into the page and greyed its right edge (measured) */
 .dwr-head{display:flex;align-items:center;gap:10px;padding:13px 16px;border-bottom:1px solid var(--line-solid);background:var(--surface-2)}
 .dwr-head .dwr-f{cursor:pointer}
 .dwr-head .dwr-f:hover{outline:1px solid var(--accent);outline-offset:2px;border-radius:4px}
