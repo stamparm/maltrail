@@ -88,6 +88,7 @@
     padding:14px 16px;cursor:pointer;overflow:hidden;transition:border-color .15s,transform .15s}
   .card:hover{border-color:#3a4a63;transform:translateY(-1px)}
   .card .lbl{font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .stats.loading .card{opacity:.5;transition:opacity .15s .12s}   /* delayed: a load done within ~0.1s never visibly dims */
   .card .num{font-family:var(--mono);font-size:30px;font-weight:600;letter-spacing:-1px;margin:4px 0 2px;
     font-variant-numeric:tabular-nums}
   .card .sub{font-size:11px;color:var(--faint);font-family:var(--mono)}

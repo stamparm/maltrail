@@ -321,6 +321,9 @@
       { lbl: "Sources", num: fmtN(d.sources), sub: "distinct src IPs", multi: true, color: "#34D399", data: vals(d.srcCounts, 18) },
       { lbl: "Trails", num: fmtN(d.trailsN), sub: "distinct indicators", donut: trailSlices.length ? trailSlices : null, color: "#A78BFA", data: vals(d.trailCounts, 18) }
     ];
+    // a partial paint (only the first load gets here: later loads keep the old cards) must not show a
+    // count that is about to jump (13,762 -> 53,000 in Firefox): the shapes yes, the numbers no
+    if (state._partial) cards.forEach(function (c) { c.num = "…"; if (c.sev) c.sub = "\u00a0"; });
     var sc = document.getElementById("stats"); sc.innerHTML = "";
     cards.forEach(function (s) {
       var el = document.createElement("div"); el.className = "card"; el.dataset.chart = s.lbl;
@@ -1857,8 +1860,13 @@
     var _filtered = list.length !== state.all.length;
     state.viewAgg = _filtered ? buildViewAgg(list) : state.agg;
     var _ssig = _filtered ? ("f" + statsFilterSig()) : ("all:" + (state.agg ? state.agg.threats.length : 0));
-    if (_ssig !== state._statsSig) {
+    // While a day streams in, keep the cards already shown (dimmed) instead of painting partial counts:
+    // a 41k-event day read 1 -> 12,024 -> 41,000 within 0.6 s in Firefox, a wrong number for 0.3 s.
+    var _st = document.getElementById("stats"), _hold = !!(state._partial && _st && _st.children.length);
+    if (_st) _st.classList.toggle("loading", !!state._partial);   // first load: nothing to hold, so the partial shows, dimmed
+    if (!_hold && _ssig !== state._statsSig) {
       state._statsSig = _ssig;
+      if (_st && _st.children.length) _st.classList.remove("intro");   // the intro is for the first cards: replacements re-ran it (a second fade from 0 on first load)
       if (state.viewAgg) renderStats(state.viewAgg);
       if (state.chart) { var _oc = state.chart; state.chart = null; showChart(_oc); }   // redraw the open chart on the new set
     }
@@ -3168,7 +3176,7 @@
   }
 
   function render(d) {
-    state.all = d.threats; state.agg = d; _viewVer++; _dataVer++;   // new/merged data: drop the cached grid view and the related-threat index
+    state.all = d.threats; state.agg = d; state._partial = !!state.streaming; _viewVer++; _dataVer++;   // new/merged data: drop the cached grid view and the related-threat index
     warmRelIndex();
     if (DEMO) { var mx = 0; for (var di = 0; di < d.threats.length; di++) { var p = parseTs(d.threats[di].last); if (p > mx) mx = p; } state._demoNow = mx || null; }   // anchor demo "now" to its latest event so relative times demo correctly
     if (!state.streaming) {   // new-threat detection only on a COMPLETE load (not progressive partials)
