@@ -670,7 +670,7 @@
     if (state.chart === type) { hideChart(); return; }
     state.chart = type; state._openChart = type; syncHash();   // keep the URL's chart= in sync (bookmarkable)
     document.querySelectorAll(".card").forEach(function (c) { c.classList.toggle("active", c.dataset.chart === type); });
-    area.innerHTML = '<div class="chart-panel"><div class="chart-head"><span>' + esc(type) + ' breakdown</span><span class="chart-x">✕</span></div><div class="chart-cv"><canvas id="bigchart"></canvas></div></div>';   // esc(): `type` can come from the attacker-controlled #chart= URL fragment (parseHash) -> DOM XSS if raw
+    area.innerHTML = '<div class="chart-panel"><div class="chart-head"><span>' + esc(type) + ' breakdown</span><span class="chart-x">' + icon("close", 13) + '</span></div><div class="chart-cv"><canvas id="bigchart"></canvas></div></div>';   // esc(): `type` can come from the attacker-controlled #chart= URL fragment (parseHash) -> DOM XSS if raw
     area.querySelector(".chart-x").onclick = hideChart;
     // Fill the panel. `main` is full-width (no centered 1500px column any more), so the old hard
     // 980px cap left the chart marooned in the left third of a wide screen with dead space beside
@@ -1051,6 +1051,26 @@
   }
   // far-left hamburger menu: the project links (docs/issues/github) that used to clutter the top bar. Inline SVGs
   // (no external assets — air-gap safe) matching the icons they replaced.
+  // UI icons as inline SVG, never Unicode glyphs: a glyph's size and height come from whichever font has it.
+  // In Firefox (measured, ink-level) the search glyph rendered small and low, the day arrows 2.5px below their
+  // buttons' centre and the live dot / export arrow 1px off. An SVG is centred by layout in every browser.
+  var ICON = {
+    search: '<circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/>',
+    prev: '<path d="m15 18-6-6 6-6"/>', next: '<path d="m9 18 6-6-6-6"/>',
+    moon: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/>',
+    sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    close: '<path d="M18 6 6 18M6 6l12 12"/>',
+    restore: '<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/>',
+    down: '<path d="M12 4v13M6 11l6 6 6-6"/>',
+    note: '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+    dot: 'F<circle cx="12" cy="12" r="6"/>',
+    star: 'F<path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/>'
+  };
+  function icon(name, px) {
+    var p = ICON[name], f = p.charAt(0) === "F"; px = px || 14;
+    return '<svg class="ico" viewBox="0 0 24 24" width="' + px + '" height="' + px + '" fill="' + (f ? "currentColor" : "none") + '" stroke="' + (f ? "none" : "currentColor") +
+      '" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (f ? p.slice(1) : p) + '</svg>';
+  }
   function _strokeIcon(p) { return '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + p + '</svg>'; }
   var NAV_LINKS = [
     ["https://github.com/stamparm/maltrail#readme", _strokeIcon('<path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/>'), "Documentation"],
@@ -1678,7 +1698,7 @@
     state.filters.forEach(function (f, i) {
       var ex = f.charAt(0) === "-";
       var s = document.createElement("span"); s.className = "chip" + (ex ? " exclude" : "");
-      s.innerHTML = (ex ? '≠ ' + esc(f.slice(1)) : esc(f)) + ' <span class="x">✕</span>';
+      s.innerHTML = (ex ? '≠ ' + esc(f.slice(1)) : esc(f)) + ' <span class="x">' + icon("close", 11) + '</span>';
       s.querySelector(".x").onclick = function () { state.filters.splice(i, 1); state.page = 0; refresh(); };
       c.appendChild(s);
     });
@@ -1720,9 +1740,9 @@
       tr.innerHTML =
         '<td data-l="threat"><div class="threatline"><span class="uid ' + ltClass(hslText(hue, 0.60, 0.48)) + '" data-f="uid:' + t.uidc + '" title="filter: this threat id" style="background:hsl(' + hue + ',60%,48%);color:' + hslText(hue, 0.60, 0.48) + '">' + t.uidc + '</span>' +
           (trg ? '<span class="trbadge tr-' + trg + '">' + TRIAGE_LABEL[trg] + '</span>' : '') +
-          (getNote(t.uidc) ? '<span class="noteind" title="has a note">\u270E</span>' : '') +
+          (getNote(t.uidc) ? '<span class="noteind" title="has a note">' + icon("note", 12) + '</span>' : '') +
           '<button class="rowhide" data-hide="' + t.uidc + '" title="' + (isH ? "restore threat" : "hide threat") +
-          '" aria-label="' + (isH ? "restore threat" : "hide threat") + '">' + (isH ? "↺" : "✕") + '</button>' +
+          '" aria-label="' + (isH ? "restore threat" : "hide threat") + '">' + icon(isH ? "restore" : "close", 12) + '</button>' +
           '</div></td>' +
         '<td class="mono muted" data-l="sensor">' + sensorCellSet(t.sensorS) + '</td>' +
         '<td data-l="events"><span class="count">' + t.count + '×</span></td>' +
@@ -1876,12 +1896,12 @@
     pg.style.display = "";
     var cur = state.page, end = Math.min(total, startIdx + state.limit);
     var h = '<span class="pginfo">' + (startIdx + 1) + '–' + end + ' of ' + total + ' threats</span><span class="pgbtns">';
-    h += '<button class="pgbtn" data-pg="prev"' + (cur <= 0 ? ' disabled' : '') + ' aria-label="previous page">‹</button>';
+    h += '<button class="pgbtn" data-pg="prev"' + (cur <= 0 ? ' disabled' : '') + ' aria-label="previous page">' + icon("prev", 14) + '</button>';
     pageSeq(cur + 1, pages).forEach(function (p) {
       h += p === "…" ? '<span class="pgdots">…</span>'
                      : '<button class="pgbtn pgnum' + (p - 1 === cur ? ' on' : '') + '" data-pg="' + (p - 1) + '">' + p + '</button>';
     });
-    h += '<button class="pgbtn" data-pg="next"' + (cur >= pages - 1 ? ' disabled' : '') + ' aria-label="next page">›</button></span>';
+    h += '<button class="pgbtn" data-pg="next"' + (cur >= pages - 1 ? ' disabled' : '') + ' aria-label="next page">' + icon("next", 14) + '</button></span>';
     pg.innerHTML = h;
     pg.querySelectorAll("[data-pg]").forEach(function (b) {
       b.onclick = function () { var v = b.getAttribute("data-pg"); gotoPage(v === "prev" ? cur - 1 : v === "next" ? cur + 1 : +v, true); };
@@ -2256,7 +2276,7 @@
   function getTheme() { try { return localStorage.getItem("mt_theme") || "dark"; } catch (e) { return "dark"; } }
   function applyTheme(t) {
     document.body.classList.toggle("light", t === "light");
-    var b = document.getElementById("theme_toggle"); if (b) b.textContent = t === "light" ? "☀" : "☾";
+    var b = document.getElementById("theme_toggle"); if (b) b.innerHTML = icon(t === "light" ? "sun" : "moon", 15);
   }
   function setTheme(t) {
     try { localStorage.setItem("mt_theme", t); } catch (e) { }
@@ -2982,9 +3002,9 @@
     pop.setAttribute("role", "dialog"); pop.setAttribute("aria-label", "pick a day");
     var leg = ""; for (var q = 0; q <= 5; q++) leg += '<i class="ch-q' + q + '"></i>';
     pop.innerHTML =
-      '<div class="dp-head"><button class="dp-nav" type="button" data-d="-1" aria-label="earlier months">‹</button>' +
+      '<div class="dp-head"><button class="dp-nav" type="button" data-d="-1" aria-label="earlier months">' + icon("prev", 13) + '</button>' +
       '<span class="dp-title"></span>' +
-      '<button class="dp-nav" type="button" data-d="1" aria-label="later months">›</button></div>' +
+      '<button class="dp-nav" type="button" data-d="1" aria-label="later months">' + icon("next", 13) + '</button></div>' +
       '<div class="ch-months"></div>' +
       '<div class="dp-foot"><span>fewer</span><span class="ch-legend">' + leg + '</span><span>more events</span></div>';
     document.body.appendChild(pop);
@@ -3565,6 +3585,7 @@
     var ss = document.getElementById('seg-size'); if (ss) ss.querySelectorAll('button').forEach(function (b) { b.classList.toggle('on', +b.dataset.size === state.limit); });
   }
   function boot() {
+    [].forEach.call(document.querySelectorAll("[data-ico]"), function (e) { e.insertAdjacentHTML("afterbegin", icon(e.getAttribute("data-ico"), +e.getAttribute("data-px") || 14)); });
     // <!LOGO!> is server-substituted to config.HEADER_LOGO, or to nothing. Empty (or unsubstituted: demo / file://
     // / artifact, where the token is a bogus comment) -> inject the default: the glyph plus the JetBrains Mono Bold
     // wordmark as inline paths in currentColor (an <img> or CSS mask could not follow the theme / load from file://).

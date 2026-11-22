@@ -67,6 +67,9 @@
   .ghost-btn{padding:7px 12px;border:1px solid var(--line-solid);border-radius:8px;background:transparent;
     color:var(--muted);font-family:var(--sans);font-size:12px;cursor:pointer}
   .ghost-btn:hover{color:var(--text);border-color:var(--accent)}
+  /* inline SVG icons (main.js icon()): centred by flex/grid, never by a glyph's font metrics */
+  .ico{display:block;flex:none}
+  .ghost-btn[data-ico],#theme_toggle,.pgbtn,.dp-nav,.rowhide,.chip .x,.chart-x,.noteind,.search-clear{display:inline-flex;align-items:center;justify-content:center;gap:5px}
 
   main{padding:14px 16px;max-width:none;margin:0}   /* full-width like classic maltrail: narrow fixed gutters, not centered with fat side margins */
 

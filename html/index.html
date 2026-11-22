@@ -17,15 +17,15 @@
   <button class="hamburger" id="nav_menu" title="menu" aria-label="menu" aria-haspopup="true" aria-expanded="false"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
   <div class="brand"><span class="brandlogo" aria-label="Maltrail"><!LOGO!></span></div>
   <div class="period-nav">
-    <button class="navbtn" id="prev_day" title="previous day" aria-label="previous day">‹</button>
+    <button class="navbtn" id="prev_day" title="previous day" aria-label="previous day" data-ico="prev" data-px="16"></button>
     <span class="dateface" id="dateface" title="pick a day">
       <span class="df-top" id="df_top"></span>
       <span class="df-bot" id="df_bot"></span>
       <input type="date" id="date_input" aria-label="select day">
     </span>
-    <button class="navbtn" id="next_day" title="next day" aria-label="next day">›</button>
+    <button class="navbtn" id="next_day" title="next day" aria-label="next day" data-ico="next" data-px="16"></button>
   </div>
-  <div class="search">⌕ <input id="filter" placeholder="search…  type:dns  port:443  src:10.0.0.0/8  sev:high" autocomplete="off"><button class="search-clear" id="search_clear" title="clear search" aria-label="clear search" style="display:none">✕</button><button class="qhelp-btn" id="hunt_btn" title="retro-hunt: search ALL history for an IOC" aria-label="retro-hunt across history"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v5h5"/><path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"/><path d="M12 7v5l3 2"/></svg></button><button class="qhelp-btn" id="qhelp" title="search syntax help" aria-label="search syntax help">?</button></div>
+  <div class="search" data-ico="search"><input id="filter" placeholder="search…  type:dns  port:443  src:10.0.0.0/8  sev:high" autocomplete="off"><button class="search-clear" id="search_clear" title="clear search" aria-label="clear search" style="display:none" data-ico="close" data-px="11"></button><button class="qhelp-btn" id="hunt_btn" title="retro-hunt: search ALL history for an IOC" aria-label="retro-hunt across history"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v5h5"/><path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"/><path d="M12 7v5l3 2"/></svg></button><button class="qhelp-btn" id="qhelp" title="search syntax help" aria-label="search syntax help">?</button></div>
   <div class="spacer"></div>
   <span class="vsep" aria-hidden="true"></span>
   <div class="viewtools" role="group" aria-label="appearance">
@@ -33,7 +33,7 @@
       <button class="ghost-btn icon" id="fz_dec" title="decrease text size" aria-label="decrease text size">A−</button>
       <button class="ghost-btn icon" id="fz_inc" title="increase text size" aria-label="increase text size">A+</button>
     </div>
-    <button class="ghost-btn icon" id="theme_toggle" title="toggle light / dark" aria-label="toggle light or dark theme">☾</button>
+    <button class="ghost-btn icon" id="theme_toggle" title="toggle light / dark" aria-label="toggle light or dark theme"></button>
     <button class="ghost-btn icon dash-toggle" id="view_toggle" aria-controls="stats worldmap" title="show attack map" aria-label="show attack map"><svg class="ic-dash" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg><svg class="ic-map" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9z"/></svg></button>
     <button class="ghost-btn icon dash-toggle" id="collapse_toggle" aria-controls="stats worldmap" aria-expanded="true" title="hide panel" aria-label="hide panel"><svg class="ic-chev" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>
   </div>
@@ -54,10 +54,10 @@
     <span id="newpill" class="newpill" style="display:none" role="status"></span>
     <div class="spacer"></div>
     <div class="seg" id="seg-size"><button data-size="25" class="on">25</button><button data-size="50">50</button><button data-size="100">100</button></div>
-    <button class="ghost-btn xport live" id="live_btn" title="live auto-refresh + alerts on new high-severity" aria-label="toggle live auto-refresh" aria-pressed="false">● live</button>
+    <button class="ghost-btn xport live" id="live_btn" title="live auto-refresh + alerts on new high-severity" aria-label="toggle live auto-refresh" aria-pressed="false" data-ico="dot" data-px="9">live</button>
     <button class="ghost-btn xport mute-btn" id="mute_btn" title="mute new-threat beeps" aria-label="mute new-threat beeps" aria-pressed="false"></button>
-    <button class="ghost-btn xport" id="views_btn" title="saved views / presets" aria-label="saved views">★ views</button>
-    <button class="ghost-btn xport" id="export_btn" title="export current view (CSV / JSON / IOCs)" aria-label="export current view">↓ export</button>
+    <button class="ghost-btn xport" id="views_btn" title="saved views / presets" aria-label="saved views" data-ico="star" data-px="12">views</button>
+    <button class="ghost-btn xport" id="export_btn" title="export current view (CSV / JSON / IOCs)" aria-label="export current view" data-ico="down" data-px="12">export</button>
   </div>
 
   <div class="grid-frame">
