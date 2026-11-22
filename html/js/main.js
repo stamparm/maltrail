@@ -2509,7 +2509,16 @@
         // it, leaving rows that no longer match what the box says.
         if (e.key === "Enter" && f.value.trim()) {
           if (_searchT) { clearTimeout(_searchT); _searchT = null; }
-          addFilter(f.value.trim()); f.value = ""; state.input = ""; refresh();
+          // A chip is ONE term (matchToken), and chips are ANDed. The whole text used to become a single
+          // chip, so "type:dns sev:high" - 66 threats while typed - matched nothing once Enter made it a
+          // chip. Now a query of plain terms becomes one chip per term; one using OR / NOT / parentheses /
+          // quotes cannot be said with ANDed chips, so it stays the live query (which already filters).
+          var toks = lexQuery(f.value.trim()), terms = toks.filter(function (t) { return typeof t !== "string"; });
+          if (terms.length && toks.every(function (t) { return t === "AND" || (typeof t !== "string" && !t.q); })) {
+            terms.forEach(function (t) { var tok = t.v.toLowerCase(); if (state.filters.indexOf(tok) < 0) state.filters.push(tok); });
+            f.value = ""; state.input = ""; state.page = 0;
+          }
+          refresh();
         } else if (e.key === "Escape" && f.value) {
           if (_searchT) { clearTimeout(_searchT); _searchT = null; }
           e.preventDefault(); f.value = ""; state.input = ""; state.page = 0; refresh();
