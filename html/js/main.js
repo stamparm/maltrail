@@ -295,7 +295,9 @@
     return '<div class="sev-pillrow">' + (out || '<i style="background:var(--line-solid);flex:1"></i>') + "</div>";   // all-zero -> one muted bar (not empty)
   }
   function renderStats(d) {
-    var domSev = d.sevCount[3] >= d.sevCount[2] && d.sevCount[3] >= d.sevCount[1] ? "high"
+    // no threats -> "none": the >= ladder alone named an empty day (or a filter matching nothing) "high"
+    var domSev = !(d.sevCount[3] + d.sevCount[2] + d.sevCount[1]) ? "none"
+               : d.sevCount[3] >= d.sevCount[2] && d.sevCount[3] >= d.sevCount[1] ? "high"
                : d.sevCount[2] >= d.sevCount[1] ? "medium" : "low";
     // each mini previews the chart its card opens: Threats/Sources/Trails => top-N magnitude bars
     // (the same data the big donut/bars chart draws), Events => 24h volume, Severity => hi/md/lo split.
@@ -313,7 +315,7 @@
       { lbl: "Threats", num: fmtN(d.threats.length), sub: "distinct threats", donut: threatSlices.length ? threatSlices : null, color: "#38BDF8", data: vals(d.srcCounts, 18) },
       { lbl: "Events", num: fmtN(d.events), sub: "across 24h", lines: eseries.length ? eseries : null, color: "#6366F1", data: d.hours },
       // hi/md/lo, not high/med/low: spelled out, this line wraps on a 1024px window (measured 2026-11-20)
-      { lbl: "Severity", num: domSev, sub: d.sevCount[3] + " hi · " + d.sevCount[2] + " md · " + d.sevCount[1] + " lo",
+      { lbl: "Severity", num: domSev, sub: d.sevCount[3] + "\u00a0hi · " + d.sevCount[2] + "\u00a0md · " + d.sevCount[1] + "\u00a0lo",   // nbsp: a wrap (phone) never strands a label away from its number
         sev: [d.sevCount[3], d.sevCount[2], d.sevCount[1]] },
       { lbl: "Sources", num: fmtN(d.sources), sub: "distinct src IPs", multi: true, color: "#34D399", data: vals(d.srcCounts, 18) },
       { lbl: "Trails", num: fmtN(d.trailsN), sub: "distinct indicators", donut: trailSlices.length ? trailSlices : null, color: "#A78BFA", data: vals(d.trailCounts, 18) }
@@ -670,7 +672,7 @@
     if (state.chart === type) { hideChart(); return; }
     state.chart = type; state._openChart = type; syncHash();   // keep the URL's chart= in sync (bookmarkable)
     document.querySelectorAll(".card").forEach(function (c) { c.classList.toggle("active", c.dataset.chart === type); });
-    area.innerHTML = '<div class="chart-panel"><div class="chart-head"><span>' + esc(type) + ' breakdown</span><span class="chart-x">' + icon("close", 13) + '</span></div><div class="chart-cv"><canvas id="bigchart"></canvas></div></div>';   // esc(): `type` can come from the attacker-controlled #chart= URL fragment (parseHash) -> DOM XSS if raw
+    area.innerHTML = '<div class="chart-panel"><div class="chart-head"><span>' + esc(type) + ' breakdown' + (/^(Threats|Trails|Sources)$/.test(type) ? ' · by events' : '') + '</span><span class="chart-x">' + icon("close", 13) + '</span></div><div class="chart-cv"><canvas id="bigchart"></canvas></div></div>';   // esc(): `type` can come from the attacker-controlled #chart= URL fragment (parseHash) -> DOM XSS if raw
     area.querySelector(".chart-x").onclick = hideChart;
     // Fill the panel. `main` is full-width (no centered 1500px column any more), so the old hard
     // 980px cap left the chart marooned in the left third of a wide screen with dead space beside
@@ -932,7 +934,7 @@
       var row = document.createElement("div"); row.className = "ctxview";
       var ap = document.createElement("button"); ap.type = "button"; ap.className = "ctxitem viewapply"; ap.textContent = "\u25B8 " + v.name;
       ap.onclick = function (e) { e.stopPropagation(); closeCtx(); applySavedView(v); };
-      var del = document.createElement("button"); del.type = "button"; del.className = "viewdel"; del.title = "delete view"; del.textContent = "\u2715";
+      var del = document.createElement("button"); del.type = "button"; del.className = "viewdel"; del.title = "delete view"; del.innerHTML = icon("close", 11);
       del.onclick = function (e) { e.stopPropagation(); deleteView(i); openViewsMenu(btn); };
       row.appendChild(ap); row.appendChild(del); m.appendChild(row);
     });
@@ -1063,6 +1065,11 @@
     restore: '<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/>',
     down: '<path d="M12 4v13M6 11l6 6 6-6"/>',
     note: '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/>',
+    clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    check: '<path d="M20 6 9 17l-5-5"/>',
+    ban: '<circle cx="12" cy="12" r="9"/><path d="m5.7 5.7 12.6 12.6"/>',
+    ext: '<path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
+    swap: '<path d="M7 7h13l-3-3M17 17H4l3 3"/>',
     dot: 'F<circle cx="12" cy="12" r="6"/>',
     star: 'F<path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/>'
   };
@@ -1165,7 +1172,8 @@
     };
     if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 3000 }); else setTimeout(go, 400);
   }
-  function openDrawer(t) {
+  function openDrawer(t, byKeyboard) {
+    state._drawerKbd = !!byKeyboard;   // focus ring on the close button only when opened from the keyboard
     var d = document.getElementById("drawer"), sc = document.getElementById("drawer_scrim"); if (!d || !t) return;
     var hue = (murmur3(t.uidc, 7) >>> 0) % 360, trg = state.triage[t.uidc];
     var srcs = setList(t.srcS), dsts = setList(t.dstS), ports = setList(t.dportS), ev = t.events || [];
@@ -1204,7 +1212,7 @@
       '<div class="dwr-head ' + sevClass(t.sev) + '"><span class="sev-tag dwr-f" data-f="sev:' + sevName(t.sev) + '" title="filter: ' + sevName(t.sev) + ' severity">' + sevName(t.sev) + '</span>' +
         '<span class="uid dwr-f ' + ltClass(hslText(hue, 0.60, 0.48)) + '" data-f="uid:' + t.uidc + '" style="background:hsl(' + hue + ',60%,48%);color:' + hslText(hue, 0.60, 0.48) + '" title="filter: this threat id">' + t.uidc + '</span>' +
         '<span class="type dwr-f lt-w" data-f="type:' + esc(t.type) + '" style="background:' + tcol + ';color:#fff" title="filter: type ' + esc(t.type) + '">' + esc(t.type) + '</span>' +
-        '<div class="spacer"></div><button class="dwr-close" id="dwr_close" aria-label="close detail">\u2715</button></div>' +
+        '<div class="spacer"></div><button class="dwr-close" id="dwr_close" aria-label="close detail">' + icon("close", 14) + '</button></div>' +
       '<div class="dwr-body">' +
         '<div class="dwr-trail" title="' + esc(t.trail) + '">' + esc(t.trail) + '</div>' +
         '<div class="dwr-info">' + esc(t.info) + (t.ref ? '  <span class="dwr-ref">' + esc(t.ref) + '</span>' : '') + '</div>' +
@@ -1282,7 +1290,9 @@
       clearTimeout(state._dwrTail);
       if (!d.classList.contains("open")) return;   // closed again before the slide ended
       var cv = d.querySelector(".dwr-spark"); if (cv) drawDwrSpark(cv, t.hours, sevColor(t.sev));
-      var _cl = d.querySelector("#dwr_close"); if (_cl) _cl.focus();        // move focus into the dialog
+      // move focus into the dialog; after a mouse click Firefox still drew the keyboard ring on it (programmatic
+      // focus counted as :focus-visible), so say which one this is
+      var _cl = d.querySelector("#dwr_close"); if (_cl) _cl.focus({ focusVisible: !!state._drawerKbd });
       enrichDrawerIPs();                                                     // country flags + ASN on source/dest chips
     };
     if (window.matchMedia && matchMedia("(prefers-reduced-motion:reduce)").matches) {
@@ -1304,9 +1314,9 @@
     var items = [
       ["Hide this threat", function () { toggleHide(t.uidc); }, ""],
       "sep",
-      ["◴ Investigating", function () { setTriage(t.uidc, "investigating"); }, "tr-investigating"],
-      ["✓ Resolved", function () { setTriage(t.uidc, "resolved"); }, "tr-resolved"],
-      ["⊘ False-positive", function () { setTriage(t.uidc, "fp"); }, "tr-fp"],
+      ["Investigating", function () { setTriage(t.uidc, "investigating"); }, "tr-investigating", "clock"],
+      ["Resolved", function () { setTriage(t.uidc, "resolved"); }, "tr-resolved", "check"],
+      ["False-positive", function () { setTriage(t.uidc, "fp"); }, "tr-fp", "ban"],
       ["Clear status", function () { setTriage(t.uidc, null); }, ""],
       "sep",
       ["Whitelist source  " + src, function () { whitelistSrc(src); }, ""],
@@ -1317,10 +1327,10 @@
       ["Filter → only this trail", function () { addFilter("trail:" + nt); }, ""]
     ];
     // the whole campaign, shards included - "interlock-2" alone hides two thirds of the incident
-    if (fam) items.push(["Filter → this campaign  " + famShort, function () { addFilter("family:" + fam); }, ""]);
+    if (fam) items.push(["Filter → this campaign \u201c" + famShort + "\u201d", function () { addFilter("family:" + fam); }, ""]);   // quoted: unquoted, "this campaign generic" read as a broken sentence
     items = items.concat([
       "sep",
-      ["✎ Alias source  " + src, function () { openAlias(src); }, ""],
+      ["Alias source  " + src, function () { openAlias(src); }, "", "note"],
       ["Copy row", function () { copyText([t.uidc, src, setList(t.dstS).join("|"), setList(t.dportS).join("|"), t.type, t.trail, t.info].join("  "), null); }, ""]
     ]);
     // reputation lookups target the external malicious IP (trail-IP / public dst / public src), labelled with the
@@ -1328,23 +1338,24 @@
     var _ext = threatExtIP(t);
     if (_ext) {
       items.push("sep");
-      items.push(["↗ VirusTotal · " + _ext, function () { openLookup("vt-ip", _ext); }, "ext"]);
-      items.push(["↗ AbuseIPDB · " + _ext, function () { openLookup("abuse", _ext); }, "ext"]);
-      items.push(["↗ Shodan · " + _ext, function () { openLookup("shodan", _ext); }, "ext"]);
+      items.push(["VirusTotal · " + _ext, function () { openLookup("vt-ip", _ext); }, "ext", "ext"]);
+      items.push(["AbuseIPDB · " + _ext, function () { openLookup("abuse", _ext); }, "ext", "ext"]);
+      items.push(["Shodan · " + _ext, function () { openLookup("shodan", _ext); }, "ext", "ext"]);
     }
     // reverse DNS through the server's resolver: the outside party, and the local host (its internal name)
     (DEMO ? [] : [_ext, src]).filter(function (ip, i, a) { return ip && /^[\d.]+$|:/.test(ip) && a.indexOf(ip) === i; }).forEach(function (ip, i) {
       if (!i) items.push("sep");
-      items.push(["⇄ Reverse DNS · " + ip, function () { showPTR(ip); }, ""]);
+      items.push(["Reverse DNS · " + ip, function () { showPTR(ip); }, "", "swap"]);
     });
     if (domish) {
-      items.push(["↗ VirusTotal · trail", function () { openLookup("vt-dom", domish); }, "ext"]);
-      items.push(["↗ urlscan · trail", function () { openLookup("urlscan", domish); }, "ext"]);
+      items.push(["VirusTotal · trail", function () { openLookup("vt-dom", domish); }, "ext", "ext"]);
+      items.push(["urlscan · trail", function () { openLookup("urlscan", domish); }, "ext", "ext"]);
     }
     m.innerHTML = "";
     items.forEach(function (it) {
       if (it === "sep") { var d = document.createElement("div"); d.className = "ctxsep"; m.appendChild(d); return; }
-      var b = document.createElement("button"); b.type = "button"; b.className = "ctxitem" + (it[2] ? " " + it[2] : ""); b.textContent = it[0];
+      var b = document.createElement("button"); b.type = "button"; b.className = "ctxitem" + (it[2] ? " " + it[2] : "") + (it[3] ? " hasico" : "");
+      if (it[3]) b.innerHTML = icon(it[3], 13) + "<span>" + esc(it[0]) + "</span>"; else b.textContent = it[0];
       b.onclick = function (e) { e.stopPropagation(); closeCtx(); it[1](); };
       m.appendChild(b);
     });
@@ -1711,16 +1722,28 @@
       c.appendChild(clr);
     }
   }
+  // A table wider than its frame scrolls sideways, but overlay scrollbars (Linux, macOS) take no space and
+  // show only on hover: at 1280px ~350px of columns sat hidden with nothing saying so. A fade on the right
+  // edge marks that more is there, and goes once scrolled to the end.
+  function scrollHint() {
+    var g = document.querySelector(".grid-wrap"), f = document.querySelector(".grid-frame"); if (!g || !f) return;
+    if (!g._hint) { g._hint = 1; g.addEventListener("scroll", scrollHint, { passive: true }); window.addEventListener("resize", scrollHint); }
+    f.classList.toggle("more-r", g.scrollLeft + g.clientWidth < g.scrollWidth - 2);
+  }
   function renderRows(list) {
     var tb = document.getElementById("rows"); tb.innerHTML = "";
     var n = list.length, frag = document.createDocumentFragment();
     if (!n) {
-      var active = state.filters.length || state.input.trim();
+      // the severity buttons are a filter too: without them here, "low" on a day with no low threats said the
+      // DAY was empty. No check mark on an empty day - it read as "all clear", not "nothing recorded".
+      var active = state.filters.length || state.input.trim() || state.sev != null;
       tb.innerHTML = '<tr><td colspan="14" class="emptystate">' +
         (active ? 'No threats match the current filter. <a href="#" data-clear="1">clear filters</a>'
-                : 'No threats for this day. ✓') + '</td></tr>';
+                : 'No threats recorded for this day.' + (DEMO ? '' : ' <a href="#" data-prev="1">previous day</a>')) + '</td></tr>';
       var cl = tb.querySelector("[data-clear]");
-      if (cl) cl.onclick = function (e) { e.preventDefault(); state.filters = []; state.input = ""; var f = document.getElementById("filter"); if (f) f.value = ""; state.page = 0; refresh(); };
+      if (cl) cl.onclick = function (e) { e.preventDefault(); state.filters = []; state.input = ""; state.sev = null; var f = document.getElementById("filter"); if (f) f.value = ""; state.page = 0; refresh(); };
+      var pv = tb.querySelector("[data-prev]");
+      if (pv) pv.onclick = function (e) { e.preventDefault(); shiftDay(-1); };
       return;
     }
     for (var i = 0; i < n; i++) {
@@ -1805,7 +1828,7 @@
     var h4 = d.querySelector("#dwr_tags_h"); if (h4) h4.textContent = "tags \u00b7 " + tags.length;
     box.innerHTML = tags.length
       ? tags.map(function (tg) {
-          return '<span class="tag">' + esc(tg) + '<span class="tx" data-rm="' + esc(tg) + '" role="button" tabindex="0" title="remove tag">\u00d7</span></span>';
+          return '<span class="tag">' + esc(tg) + '<span class="tx" data-rm="' + esc(tg) + '" role="button" tabindex="0" title="remove tag">' + icon("close", 9) + '</span></span>';
         }).join("")
       : '<span class="dwr-none">none</span>';
     box.querySelectorAll("[data-rm]").forEach(function (el) {
@@ -1862,7 +1885,7 @@
     document.title = state.all.length ? _tbase + " \u00b7 " + (total === state.all.length ? state.all.length + " threats" : total + "/" + state.all.length) : _tbase;
     renderHiddenInfo(cnt);
     state._pageRows = pageRows;
-    renderRows(pageRows);
+    renderRows(pageRows); scrollHint();
     renderPager(total, pages, startIdx);
     highlightSel();
     document.querySelectorAll("thead th[data-key]").forEach(function (th) {
@@ -2591,7 +2614,7 @@
         state.selIdx = e.key === "ArrowDown" ? Math.min(rows.length - 1, state.selIdx + 1) : Math.max(0, state.selIdx - 1);
         highlightSel();
       } else if (e.key === "Enter") {
-        var r = (state._pageRows || [])[state.selIdx]; if (r) { e.preventDefault(); openDrawer(r); }   // match mouse-click affordance
+        var r = (state._pageRows || [])[state.selIdx]; if (r) { e.preventDefault(); openDrawer(r, true); }   // match mouse-click affordance
       } else if (e.key === "/") {
         var fi = document.getElementById("filter"); if (fi) { e.preventDefault(); fi.focus(); }
       } else if (e.key === "?") {   // Shift+/ -> keyboard shortcuts overlay
@@ -2604,7 +2627,7 @@
     if (document.getElementById("kbd_overlay")) return;
     var KEYS = [
       ["←  →", "previous / next page"],
-      ["Page Up / Down", "previous / next day"],
+      ["PgUp  PgDn", "previous / next day"],   // keys are split on spaces: "Page Up / Down" drew four keys, "/" among them (also "focus search")
       ["↑  ↓", "select a row"],
       ["Enter", "open selected threat"],
       ["/", "focus search"],
@@ -2738,13 +2761,14 @@
     var pre = ((document.getElementById("filter") || {}).value || "").trim();
     var o = document.createElement("div"); o.id = "hunt_overlay"; o.className = "modal-overlay";
     o.innerHTML = '<div class="modal hunt-modal" role="dialog" aria-label="retro-hunt" aria-modal="true">' +
-      '<div class="modal-h">Retro-hunt <small>search the entire log history for an IOC</small></div>' +
+      '<div class="modal-h">Retro-hunt <small>search the entire log history for an IOC</small><button class="modal-x" id="hunt_x" type="button" aria-label="close" title="close (Esc)">' + icon("close", 13) + '</button></div>' +
       '<div class="hunt-in"><input id="hunt_q" placeholder="domain, IP, or CIDR — e.g. evil.com · 1.2.3.4 · 5.6.0.0/16" autocomplete="off" spellcheck="false"><button class="btn-primary" id="hunt_go">Hunt</button></div>' +
       '<div class="modal-err" id="hunt_err"></div><div class="hunt-results" id="hunt_results"></div></div>';
     document.body.appendChild(o);
     var ret = document.activeElement;
     function close() { o.remove(); if (ret && ret.focus) { try { ret.focus(); } catch (e) {} } }
     o.onclick = function (e) { if (e.target === o) close(); };
+    o.querySelector("#hunt_x").onclick = close;
     o.onkeydown = function (e) { if (e.key === "Escape") { e.preventDefault(); close(); } };
     var inp = o.querySelector("#hunt_q"); inp.value = pre; inp.focus(); inp.select();
     o.querySelector("#hunt_go").onclick = function () { runHunt(o); };

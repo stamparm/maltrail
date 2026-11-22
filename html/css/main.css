@@ -105,6 +105,9 @@
   .chip b{color:var(--accent)}
   .chip .x{cursor:pointer;color:#7fcdf0}
   .toolbar .spacer{flex:1}
+  /* the right-hand controls wrap as ONE group (right-aligned on a new row) instead of one by one -
+     at 820px "export" used to fall alone onto a second row; on a phone the group still wraps inside */
+  .tbr{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end;margin-left:auto}
   .seg{display:flex;border:1px solid var(--line-solid);border-radius:8px}
   .seg button{background:transparent;border:none;color:var(--muted);padding:6px 11px;font-size:11.5px;cursor:pointer;font-family:var(--mono)}
   /* the active segment has to read at a glance in BOTH themes: in light mode --surface-2 sits a
@@ -191,6 +194,7 @@
   /* ---------- responsive: cards on mobile ---------- */
   @media (max-width:860px){
     .stats{grid-template-columns:repeat(2,1fr)}
+    .stats .card:last-child:nth-child(odd){grid-column:1/-1}   /* five cards in two columns: the fifth spans the row instead of sitting alone beside an empty cell */
     /* keep search usable on tablet/mobile: wrap it to its own full-width row instead of hiding it */
     /* height:auto - the desktop bar is a fixed 56px, and a wrapped header kept that box while its
        second and third rows spilled out of it over the first cards (THREATS and EVENTS were under
@@ -248,7 +252,7 @@ tbody tr.ishidden .rowhide:hover{color:var(--accent);background:rgba(56,189,248,
 .tag{font-family:var(--mono);font-size:9.5px;color:#cdd9ea;background:rgba(56,189,248,.10);
   border:1px solid rgba(56,189,248,.28);border-radius:4px;padding:0 3px 0 5px;display:inline-flex;align-items:center;gap:3px;cursor:pointer;line-height:1.6}
 .tag:hover{border-color:var(--accent)}
-.tag .tx{color:var(--faint);cursor:pointer;font-size:10px}
+.tag .tx{color:var(--faint);cursor:pointer;font-size:10px;display:inline-flex;align-items:center}
 .tag .tx:hover{color:var(--sev-high)}
 .tagadd{opacity:0;border:1px dashed var(--line-solid);background:none;color:var(--muted);font-family:var(--mono);
   font-size:10px;border-radius:4px;padding:1px 6px;cursor:pointer;transition:opacity .12s,color .12s,border-color .12s}
@@ -329,6 +333,10 @@ body.light .modal-overlay{background:rgba(120,140,170,.45)}
 .hunt-in input{flex:1;background:var(--input-bg);border:1px solid var(--line-solid);border-radius:8px;padding:9px 11px;color:var(--text);font-family:var(--mono);font-size:13px;outline:none}
 .hunt-in input:focus{border-color:var(--accent)}
 .hunt-results{margin-top:14px;max-height:52vh;overflow:auto}
+.hunt-results:empty,.hunt-modal .modal-err:empty{margin:0;min-height:0}   /* before a hunt: no empty block under the input */
+.hunt-modal .modal-h{display:flex;align-items:baseline}
+.modal-x{margin-left:auto;align-self:center;background:none;border:1px solid var(--line-solid);color:var(--muted);width:26px;height:26px;border-radius:7px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.modal-x:hover{color:var(--text);border-color:var(--accent)}
 .hunt-sum{font-size:11px;color:var(--muted);font-family:var(--mono);margin-bottom:8px}
 .hunt-trunc{color:var(--sev-med);border:1px solid var(--sev-med);border-radius:6px;padding:5px 8px;font-size:11px;margin-bottom:10px}
 .hunt-meta{margin-top:12px;padding-top:9px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10.5px;color:var(--faint)}
@@ -620,6 +628,11 @@ body.light{
    anchors to the scrollable content box, so the right-side brackets drift into the table when a too-wide
    table is scrolled right. The frame keeps them pinned to the visible edges. */
 .grid-frame{border-radius:var(--r)}
+/* main.js scrollHint(): more columns to the right. A SHADOW, not a fade to the surface colour: the strip at the edge
+   is often empty table, and a fade into the same colour over empty cells showed nothing (measured) */
+.grid-frame.more-r::after{content:"";position:absolute;top:1px;bottom:1px;right:1px;width:28px;pointer-events:none;z-index:3;
+  border-radius:0 var(--r) var(--r) 0;background:linear-gradient(90deg,transparent,rgba(0,0,0,.55))}
+body.light .grid-frame.more-r::after{background:linear-gradient(90deg,transparent,rgba(15,35,70,.16))}
 .grid-frame,.chart-panel{position:relative}
 .grid-frame::before,.chart-panel::before{
   content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;opacity:.5;
@@ -679,6 +692,7 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
   padding:7px 10px;border-radius:6px;cursor:pointer;white-space:nowrap;font-family:var(--mono);font-size:12px}
 .ctxmenu .ctxitem:hover,.ctxmenu .ctxitem:focus-visible{background:var(--surface-2);outline:none}
 .ctxmenu .ctxitem.ext{color:var(--accent)}
+.ctxmenu .ctxitem.hasico{display:flex;align-items:center;gap:7px}   /* SVG icon + label, centred by flex (main.js icon()) */
 .ctxmenu .ctxsep{height:1px;background:var(--line-solid);margin:5px 4px}
 /* exclusion filter chip */
 .chip.exclude{background:rgba(244,63,94,.10);border-color:rgba(244,63,94,.40);color:#ffb4bf}
@@ -722,7 +736,7 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 .dwr-head .dwr-f{cursor:pointer}
 .dwr-head .dwr-f:hover{outline:1px solid var(--accent);outline-offset:2px;border-radius:4px}
 .dwr-head .spacer{flex:1}
-.dwr-close{background:none;border:1px solid var(--line-solid);color:var(--muted);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:13px}
+.dwr-close{background:none;border:1px solid var(--line-solid);color:var(--muted);width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:13px;display:inline-flex;align-items:center;justify-content:center}
 .dwr-close:hover{color:var(--text);border-color:var(--accent)}
 /* overscroll-behavior:contain - once this panel bottoms out, further wheeling must NOT fall
    through to the page behind it. It did: forty ticks inside the drawer scrolled the grid behind by
@@ -811,7 +825,7 @@ tbody tr.selrow .uid{outline:1px solid var(--accent);outline-offset:1px}
 /* saved views menu rows */
 .ctxview{display:flex;align-items:center}
 .ctxview .viewapply{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px}
-.viewdel{background:none;border:none;color:var(--faint);cursor:pointer;padding:7px 9px;border-radius:6px;font-size:11px}
+.viewdel{background:none;border:none;color:var(--faint);cursor:pointer;padding:7px 9px;border-radius:6px;font-size:11px;display:inline-flex;align-items:center}
 .viewdel:hover{color:var(--sev-high);background:var(--surface-2)}
 .ctxnote{color:var(--faint);font-family:var(--mono);font-size:11px;padding:7px 10px}
 /* live mode + new-threat highlight */

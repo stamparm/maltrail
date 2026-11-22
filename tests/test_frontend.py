@@ -691,7 +691,7 @@ class TestDrawerFields(unittest.TestCase):
 
     def setUp(self):
         self.js = _read(MAIN_JS)
-        drawer = re.search(r"function openDrawer\(t\) \{.*?\n  \}\n", self.js, re.S)
+        drawer = re.search(r"function openDrawer\([^)]*\) \{.*?\n  \}\n", self.js, re.S)
         self.assertTrue(drawer, "could not find openDrawer() in main.js")
         self.drawer = drawer.group(0)
 
@@ -1036,13 +1036,13 @@ class TestDrawerOpensPromptly(unittest.TestCase):
                       "meaningless scrollbar length until each section has been seen once")
 
     def test_the_slide_starts_before_the_tail_work(self):
-        body = re.search(r"function openDrawer\(t\) \{.*?\n  \}", self.js, re.S)
+        body = re.search(r"function openDrawer\([^)]*\) \{.*?\n  \}", self.js, re.S)
         self.assertTrue(body, "could not find openDrawer() in main.js")
         body = body.group(0)
         start = body.index('classList.add("open")')
         # Only calls that actually run on open - a .focus() inside a click handler defined earlier
         # in the same function is a closure, not work done while the panel is opening.
-        for name in ("enrichDrawerIPs()", "drawDwrSpark(", "_cl.focus()"):
+        for name in ("enrichDrawerIPs()", "drawDwrSpark(", "_cl.focus("):   # focus takes { focusVisible } now
             self.assertGreater(
                 body.index(name), start,
                 "%s runs before the drawer is told to slide. That work does not affect the first "
