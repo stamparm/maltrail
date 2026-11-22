@@ -53,6 +53,15 @@
     border-radius:8px;background:var(--surface);color:var(--text);font-family:var(--mono);font-size:12px;cursor:pointer}
   .period .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
   header .spacer{flex:1}
+  /* date + search: their own flex items in the header (display:contents, so the narrow-screen order/wrap rules
+     apply to them directly). From 1500px the bar centres them exactly, logo left and controls right - Kibana's
+     layout; without it, everything sat left of a wide empty gap. margin:auto, not a transform, so nothing inside
+     gets a new containing block. */
+  .hcenter{display:contents}
+  @media (min-width:1500px){
+    .hcenter{display:flex;align-items:center;gap:20px;position:absolute;left:0;right:0;margin-inline:auto;width:max-content}
+    .hcenter .search{width:560px}
+  }
   .search{display:flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid var(--line-solid);
     border-radius:8px;background:#0b111c;min-width:240px;color:var(--muted);
     flex:12 1 auto;max-width:560px}   /* prominent, grows left-to-right, but capped (weighted above the trailing spacer) so it's a comfortable field — not a mile-wide bar — with a breathing gap before the view controls */
