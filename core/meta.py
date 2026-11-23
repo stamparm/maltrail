@@ -85,6 +85,12 @@ def lookup(observable):
     try:
         key, _ = _pack_lookup(observable)
         row = con.execute("SELECT flags, first_seen, last_seen, count FROM observables WHERE observable = ?", (key,)).fetchone()
+        # The sensor appends each flush to observables_delta and folds it in later; combine the two the
+        # way the fold will. A store written before that table existed simply has no delta rows.
+        if con.execute("SELECT 1 FROM sqlite_master WHERE name = 'observables_delta'").fetchone():
+            delta = con.execute("SELECT MAX(flags), MIN(first_seen), MAX(last_seen), SUM(count), COUNT(*) FROM observables_delta WHERE observable = ?", (key,)).fetchone()
+            if delta[4]:
+                row = (row[0], min(row[1], delta[1]), max(row[2], delta[2]), row[3] + delta[3]) if row else delta[:4]
         if row is None:
             return None
         flags, fs, ls, cnt = row

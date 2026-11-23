@@ -94,5 +94,23 @@ class TestNoStore(MetaTestCase):
         self.assertIsNone(M.lookup("evil.com"))
 
 
+class TestDelta(MetaTestCase):
+    def test_unfolded_delta_rows_are_combined_with_the_main_row(self):
+        # The sensor appends each flush to observables_delta; the stores above (no such table) are what
+        # every install had before it, and keep reading as they did.
+        write_store(self.db, [("evil.com", M.FLAG_DNS, 100, 200, 5)])
+        con = sqlite3.connect(self.db)
+        con.execute("CREATE TABLE observables_delta (observable, flags INTEGER, first_seen INTEGER, last_seen INTEGER, count INTEGER)")
+        con.executemany("INSERT INTO observables_delta VALUES (?, ?, ?, ?, ?)",
+                        [("evil.com", M.FLAG_DNS, 50, 150, 2), ("evil.com", M.FLAG_DNS, 300, 400, 3), ("new.com", M.FLAG_DNS, 500, 600, 1)])
+        con.commit()
+        con.close()
+        got = M.lookup("evil.com")
+        self.assertEqual((got["first_seen"], got["last_seen"], got["count"], got["kind"]), (50, 400, 10, "dns"))
+        got = M.lookup("new.com")
+        self.assertEqual((got["first_seen"], got["last_seen"], got["count"]), (500, 600, 1))
+        self.assertIsNone(M.lookup("other.com"))
+
+
 if __name__ == "__main__":
     unittest.main()

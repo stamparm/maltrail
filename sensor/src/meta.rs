@@ -23,6 +23,10 @@
 //!   and adds `count`. `core/meta.py` spells it `INSERT OR IGNORE` + `UPDATE` so it runs on SQLite
 //!   older than 3.24; the sensor's bundled SQLite does the same as one upsert. The file is the
 //!   same either way - the statement is not part of the format.
+//! * Flushes append to `observables_delta` (same columns, plain rowid table, indexed on
+//!   `observable`), which is folded into `observables` past `DELTA_MAX_ROWS`, on each prune and on a
+//!   clean shutdown. Readers combine both. The table is additive: a store from before it gains it
+//!   on the first flush, and an older reader that ignores it only sees counts as of the last fold.
 //!
 //! # Concurrency
 //!
@@ -147,7 +151,14 @@ struct FlushResults {
 
 /// One drained window on its way to the writer, or a request to say when it has caught up.
 enum Job {
-    Write { db_path: PathBuf, ips: Vec<(Ip, Row)>, names: StrMap<String, Row>, results: Arc<FlushResults> },
+    /// `fold`: also merge the delta table into `observables` (on the way out, and in tests).
+    Write {
+        db_path: PathBuf,
+        ips: Vec<(Ip, Row)>,
+        names: StrMap<String, Row>,
+        fold: bool,
+        results: Arc<FlushResults>,
+    },
     Barrier(mpsc::Sender<()>),
 }
 
@@ -165,9 +176,9 @@ fn writer() -> &'static Mutex<mpsc::SyncSender<Job>> {
             .spawn(move || {
                 for job in rx {
                     match job {
-                        Job::Write { db_path, ips, names, results } => {
+                        Job::Write { db_path, ips, names, fold, results } => {
                             let rows = (ips.len() + names.len()) as u64;
-                            match write(&db_path, &ips, &names) {
+                            match write(&db_path, &ips, &names, fold) {
                                 Ok(()) => {
                                     results.flushed.fetch_add(rows, Ordering::Relaxed);
                                 }
@@ -340,7 +351,7 @@ impl MetaStore {
         let ips = self.take_ips();
         let names = std::mem::take(&mut self.names);
         let rows = (ips.len() + names.len()) as u64;
-        let job = Job::Write { db_path: self.db_path.clone(), ips, names, results: self.results.clone() };
+        let job = Job::Write { db_path: self.db_path.clone(), ips, names, fold: false, results: self.results.clone() };
         let sent = match writer().lock() {
             Ok(tx) => tx.try_send(job).is_ok(),
             Err(_) => false,
@@ -356,22 +367,18 @@ impl MetaStore {
         if !self.enabled {
             return;
         }
-        if self.pending() > 0 {
-            let ips = self.take_ips();
-            let names = std::mem::take(&mut self.names);
-            let job = Job::Write { db_path: self.db_path.clone(), ips, names, results: self.results.clone() };
-            // Blocking here is right: nothing is capturing any more, and this window is the tail.
-            let tx = match writer().lock() {
-                Ok(tx) => tx.clone(),
-                Err(_) => return,
-            };
-            let _ = tx.send(job);
-        }
-        let (done, wait) = mpsc::channel();
+        // Sent even when the window is empty: it also folds the delta table, so a clean stop
+        // leaves every row in `observables`.
+        let ips = self.take_ips();
+        let names = std::mem::take(&mut self.names);
+        let job = Job::Write { db_path: self.db_path.clone(), ips, names, fold: true, results: self.results.clone() };
+        // Blocking here is right: nothing is capturing any more, and this window is the tail.
         let tx = match writer().lock() {
             Ok(tx) => tx.clone(),
             Err(_) => return,
         };
+        let _ = tx.send(job);
+        let (done, wait) = mpsc::channel();
         if tx.send(Job::Barrier(done)).is_ok() {
             let _ = wait.recv();
         }
@@ -388,8 +395,25 @@ impl MetaStore {
     }
 }
 
+/// Rows the delta table may hold before a flush folds it into `observables`. Bounds the extra file
+/// size (~50 B per row with its index) and the rows a lookup aggregates; a fold costs about twice
+/// the file whatever the delta holds, so the larger this is the rarer that cost.
+const DELTA_MAX_ROWS: i64 = 500_000;
+
+const FOLD_SQL: &str = "INSERT INTO observables (observable, flags, first_seen, last_seen, count) \
+     SELECT observable, MAX(flags), MIN(first_seen), MAX(last_seen), SUM(count) FROM observables_delta WHERE true GROUP BY observable \
+     ON CONFLICT(observable) DO UPDATE SET first_seen = MIN(first_seen, excluded.first_seen), \
+     last_seen = MAX(last_seen, excluded.last_seen), count = count + excluded.count; \
+     DELETE FROM observables_delta;";
+
 /// One window into SQLite, as a single transaction.
-fn write(db_path: &Path, ips: &[(Ip, Row)], names: &StrMap<String, Row>) -> rusqlite::Result<()> {
+///
+/// The window is APPENDED to `observables_delta`, not upserted into `observables`. Upserting
+/// rewrote every 4 KB page a changed row sat on, twice (journal + file): on tripice 371 changed
+/// rows, ~9 KB of data, cost 2.8 MB per flush, and at the 2M-row cap a flush cost ~2x the file
+/// (76 MB) whatever it held. Appended, the same window is 0.16 MB. The pages are rewritten once
+/// per fold instead of once per flush.
+fn write(db_path: &Path, ips: &[(Ip, Row)], names: &StrMap<String, Row>, fold: bool) -> rusqlite::Result<()> {
     let mut con = open_rw(db_path)?;
     // IMMEDIATE, not the default DEFERRED: this transaction only ever writes, and taking the
     // reserved lock up front is what lets `busy_timeout` do its job. A deferred transaction
@@ -398,18 +422,12 @@ fn write(db_path: &Path, ips: &[(Ip, Row)], names: &StrMap<String, Row>) -> rusq
     // a server pruning the same file would show up as sporadic lost windows.
     let tx = con.transaction_with_behavior(rusqlite::TransactionBehavior::Immediate)?;
     {
-        // One upsert per row, in key order: a sorted batch walks the primary-key B-tree
-        // forwards instead of jumping around it (measured 2.8x faster than the old two
-        // statements on a 2M-row store).
-        let mut upsert = tx.prepare_cached(
-            "INSERT INTO observables (observable, flags, first_seen, last_seen, count) VALUES (?, ?, ?, ?, ?) \
-             ON CONFLICT(observable) DO UPDATE SET first_seen = MIN(first_seen, excluded.first_seen), \
-             last_seen = MAX(last_seen, excluded.last_seen), count = count + excluded.count",
+        let mut append = tx.prepare_cached(
+            "INSERT INTO observables_delta (observable, flags, first_seen, last_seen, count) VALUES (?, ?, ?, ?, ?)",
         )?;
-        let mut packed: Vec<(PackedIp, &Row)> = ips.iter().map(|(ip, row)| (pack_ip(*ip), row)).collect();
-        packed.sort_unstable_by(|a, b| a.0.as_slice().cmp(b.0.as_slice()));
-        for (key, row) in &packed {
-            upsert.execute(rusqlite::params![
+        for (ip, row) in ips {
+            let key = pack_ip(*ip);
+            append.execute(rusqlite::params![
                 key.as_slice(),
                 row.flags,
                 row.first_seen as i64,
@@ -417,10 +435,8 @@ fn write(db_path: &Path, ips: &[(Ip, Row)], names: &StrMap<String, Row>) -> rusq
                 row.count as i64
             ])?;
         }
-        let mut sorted: Vec<(&String, &Row)> = names.iter().collect();
-        sorted.sort_unstable_by(|a, b| a.0.cmp(b.0));
-        for (name, row) in sorted {
-            upsert.execute(rusqlite::params![
+        for (name, row) in names {
+            append.execute(rusqlite::params![
                 name,
                 row.flags,
                 row.first_seen as i64,
@@ -428,6 +444,11 @@ fn write(db_path: &Path, ips: &[(Ip, Row)], names: &StrMap<String, Row>) -> rusq
                 row.count as i64
             ])?;
         }
+    }
+    // MAX(rowid) is a B-tree edge read, and the table is emptied by every fold, so it is the row count.
+    let held: i64 = tx.query_row("SELECT IFNULL(MAX(rowid), 0) FROM observables_delta", [], |r| r.get(0))?;
+    if fold || held > DELTA_MAX_ROWS {
+        tx.execute_batch(FOLD_SQL)?;
     }
     tx.commit()
 }
@@ -508,6 +529,8 @@ fn open_rw(path: &Path) -> rusqlite::Result<Connection> {
     con.busy_timeout(std::time::Duration::from_millis(8000))?;
     con.execute_batch(
         "CREATE TABLE IF NOT EXISTS observables (observable, flags INTEGER, first_seen INTEGER, last_seen INTEGER, count INTEGER, PRIMARY KEY(observable)) WITHOUT ROWID;
+         CREATE TABLE IF NOT EXISTS observables_delta (observable, flags INTEGER, first_seen INTEGER, last_seen INTEGER, count INTEGER);
+         CREATE INDEX IF NOT EXISTS observables_delta_key ON observables_delta (observable);
          CREATE TABLE IF NOT EXISTS meta_info (key TEXT PRIMARY KEY, value);
          INSERT OR IGNORE INTO meta_info (key, value) VALUES ('schema_version', 1);",
     )?;
@@ -577,7 +600,15 @@ pub fn lookup(db_path: &Path, observable: &str) -> Option<Observation> {
         last_seen,
         count,
     };
-    const SQL: &str = "SELECT flags, first_seen, last_seen, count FROM observables WHERE observable = ?";
+    // The main row and the not-yet-folded delta rows, combined the way a fold would combine them.
+    // A store from before the delta table has only `observables`, and gets the original query.
+    const SQL: &str = "SELECT MAX(flags), MIN(first_seen), MAX(last_seen), SUM(count) FROM ( \
+        SELECT flags, first_seen, last_seen, count FROM observables WHERE observable = ?1 \
+        UNION ALL SELECT flags, first_seen, last_seen, count FROM observables_delta WHERE observable = ?1) HAVING COUNT(*) > 0";
+    const SQL_V1: &str = "SELECT flags, first_seen, last_seen, count FROM observables WHERE observable = ?1";
+    let has_delta =
+        con.query_row("SELECT 1 FROM sqlite_master WHERE name = 'observables_delta'", [], |_| Ok(())).is_ok();
+    let sql = if has_delta { SQL } else { SQL_V1 };
     // `core/meta.py:_pack_lookup()`: an IP if it parses as one, otherwise a domain. Deliberately
     // NOT `parse_canonical_ip()` — that one additionally requires the text to be Maltrail's own
     // rendering of the address, which is right for trail keys but wrong here: a user typing
@@ -589,9 +620,9 @@ pub fn lookup(db_path: &Path, observable: &str) -> Option<Observation> {
     };
     let found = match parsed {
         Some(ip) => {
-            con.query_row(SQL, [pack_ip(ip).as_slice()], |r| Ok(row(r.get(0)?, r.get(1)?, r.get(2)?, r.get(3)?)))
+            con.query_row(sql, [pack_ip(ip).as_slice()], |r| Ok(row(r.get(0)?, r.get(1)?, r.get(2)?, r.get(3)?)))
         }
-        None => con.query_row(SQL, [observable], |r| Ok(row(r.get(0)?, r.get(1)?, r.get(2)?, r.get(3)?))),
+        None => con.query_row(sql, [observable], |r| Ok(row(r.get(0)?, r.get(1)?, r.get(2)?, r.get(3)?))),
     };
     found.ok()
 }
@@ -616,6 +647,11 @@ pub fn prune(db_path: &Path, max_rows: usize) -> rusqlite::Result<usize> {
     let con =
         Connection::open_with_flags(db_path, OpenFlags::SQLITE_OPEN_READ_WRITE | OpenFlags::SQLITE_OPEN_NO_MUTEX)?;
     con.busy_timeout(std::time::Duration::from_millis(8000))?;
+    // Fold first (runs once per trail update): the budget is on all rows, and this is what keeps a
+    // quiet sensor's delta table from growing towards DELTA_MAX_ROWS over weeks.
+    if con.query_row("SELECT 1 FROM sqlite_master WHERE name = 'observables_delta'", [], |_| Ok(())).is_ok() {
+        con.execute_batch(&format!("BEGIN IMMEDIATE; {FOLD_SQL} COMMIT;"))?;
+    }
     let total: i64 = match con.query_row("SELECT COUNT(*) FROM observables", [], |r| r.get(0)) {
         Ok(n) => n,
         // No table yet: nothing has ever been flushed.
@@ -698,6 +734,79 @@ mod tests {
         store.observe_conn(v4(1, 1, 1, 1), v4(2, 2, 2, 2), 10);
         store.observe_dns("evil.com", 10);
         assert_eq!(store.pending(), 0);
+    }
+
+    fn scratch_db(tag: &str) -> PathBuf {
+        let dir = std::env::temp_dir().join(format!("mt-meta-{tag}-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(&dir).unwrap();
+        dir.join("meta.sqlite")
+    }
+
+    fn window(names: &[(&str, u64, u64, u64)]) -> StrMap<String, Row> {
+        let mut map = StrMap::default();
+        for &(name, first, last, count) in names {
+            map.insert(name.to_string(), Row { flags: FLAG_DNS, first_seen: first, last_seen: last, count });
+        }
+        map
+    }
+
+    fn rows_in(db: &Path, table: &str) -> i64 {
+        Connection::open(db).unwrap().query_row(&format!("SELECT COUNT(*) FROM {table}"), [], |r| r.get(0)).unwrap()
+    }
+
+    #[test]
+    fn a_store_from_before_the_delta_table_is_read_upgraded_and_folded() {
+        let db = scratch_db("upgrade");
+        // Exactly what every existing install has on disk: observables + meta_info, no delta table.
+        let con = Connection::open(&db).unwrap();
+        con.execute_batch(
+            "PRAGMA journal_mode=DELETE;
+             CREATE TABLE observables (observable, flags INTEGER, first_seen INTEGER, last_seen INTEGER, count INTEGER, PRIMARY KEY(observable)) WITHOUT ROWID;
+             CREATE TABLE meta_info (key TEXT PRIMARY KEY, value);
+             INSERT INTO meta_info VALUES ('schema_version', 1);
+             INSERT INTO observables VALUES ('evil.com', 1, 100, 200, 5);",
+        )
+        .unwrap();
+        drop(con);
+        let got = lookup(&db, "evil.com").expect("old store reads");
+        assert_eq!((got.first_seen, got.last_seen, got.count), (100, 200, 5));
+
+        // A flush appends: observables is not touched, the lookup combines both.
+        write(&db, &[], &window(&[("evil.com", 50, 300, 2), ("new.com", 400, 400, 1)]), false).unwrap();
+        assert_eq!(rows_in(&db, "observables"), 1);
+        assert_eq!(rows_in(&db, "observables_delta"), 2);
+        let got = lookup(&db, "evil.com").unwrap();
+        assert_eq!((got.first_seen, got.last_seen, got.count, got.kind), (50, 300, 7, "dns"));
+        let got = lookup(&db, "new.com").unwrap();
+        assert_eq!((got.first_seen, got.last_seen, got.count), (400, 400, 1));
+        assert!(lookup(&db, "other.com").is_none());
+
+        // Prune folds even under budget, and the answers do not change.
+        assert_eq!(prune(&db, 1_000_000).unwrap(), 0);
+        assert_eq!(rows_in(&db, "observables_delta"), 0);
+        assert_eq!(rows_in(&db, "observables"), 2);
+        let got = lookup(&db, "evil.com").unwrap();
+        assert_eq!((got.first_seen, got.last_seen, got.count), (50, 300, 7));
+        let _ = std::fs::remove_dir_all(db.parent().unwrap());
+    }
+
+    #[test]
+    fn a_flush_folds_on_request_and_past_the_delta_cap() {
+        let db = scratch_db("fold");
+        write(&db, &[], &window(&[("a.com", 1, 1, 1)]), false).unwrap();
+        assert_eq!((rows_in(&db, "observables"), rows_in(&db, "observables_delta")), (0, 1));
+        write(&db, &[], &window(&[("a.com", 2, 2, 1)]), true).unwrap();
+        assert_eq!((rows_in(&db, "observables"), rows_in(&db, "observables_delta")), (1, 0));
+        // Past the cap the delta folds by itself. MAX(rowid) is the trigger, so jump it there.
+        Connection::open(&db)
+            .unwrap()
+            .execute("INSERT INTO observables_delta (rowid, observable, flags, first_seen, last_seen, count) VALUES (?, 'b.com', 1, 3, 3, 1)", [DELTA_MAX_ROWS])
+            .unwrap();
+        write(&db, &[], &window(&[("c.com", 4, 4, 1)]), false).unwrap();
+        assert_eq!((rows_in(&db, "observables"), rows_in(&db, "observables_delta")), (3, 0));
+        assert_eq!(lookup(&db, "a.com").unwrap().count, 2);
+        let _ = std::fs::remove_dir_all(db.parent().unwrap());
     }
 
     #[test]

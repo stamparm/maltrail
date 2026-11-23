@@ -105,7 +105,7 @@ HUNT_MIN_QUERY = 3           # reject shorter queries (a 1-2 char substring woul
 # pre-detection traffic, WITHOUT storing raw traffic. See core/meta.py. The master switch
 # USE_CONDENSED_STORAGE is a maltrail.conf boolean (default on; a 2x10G operator can turn it off).
 META_DB_FILENAME = "meta.sqlite"
-CONDENSED_FLUSH_PERIOD = 60          # seconds between batched flushes of a worker's aggregate into SQLite
+CONDENSED_FLUSH_PERIOD = 300         # seconds between flushes into SQLite: each rewrites up to ~2x the file (scattered pages + journal), so 60 s was ~100 GB/day at 2M rows
 CONDENSED_MAX_WINDOW_KEYS = 200000   # per-flush-window distinct-observable cap (RAM guard vs a DGA burst)
 META_MAX_ROWS = 2000000              # smart score-prune triggers above this row budget (~64 MB at 32 B/row)
 

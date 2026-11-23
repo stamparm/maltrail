@@ -79,7 +79,11 @@ domains as TEXT, the same min/max/count merge, a rollback journal rather than WA
 so a non-root server can read a store the sensor wrote as root. Junk addresses are filtered, each
 window is capped at `CONDENSED_MAX_WINDOW_KEYS`, and the file is pruned to `META_MAX_ROWS` by
 score on the trail-update cycle. Workers hand their window to one writer thread, so a slow disk
-never stalls capture.
+never stalls capture. A window is flushed every `CONDENSED_FLUSH_PERIOD` (5 min) by appending it
+to `observables_delta`; that table is folded into `observables` when it passes 500k rows, on each
+prune and on a clean shutdown, and the server's lookup combines the two. Upserting each window
+straight into `observables` rewrote every page a changed row sat on: ~2.8 MB to store ~9 KB of
+rows on a 362k-row store, and ~2x the file per flush at the 2M-row cap.
 
 ### Console and command line
 
