@@ -71,31 +71,48 @@
   function markerEl(text) { var d = document.createElement("div"); d.className = "cl mk"; d.textContent = text; return d; }
   function marker(text) { el.out.appendChild(markerEl(text)); }
 
-  // `note`: a marker to put in front of these lines (after the cap, which would otherwise trim it off
-  // the top whenever the batch itself fills the buffer - exactly when a burst marker matters)
+  // `note` (a burst: lines skipped between the last batch and this one) goes right above the batch
   function append(lines, note) {
     if (!lines.length) return;
     var rows = E.parseEvents(lines.join("\n")), frag = document.createDocumentFragment();
+    if (note) frag.appendChild(markerEl(note));
     for (var i = 0; i < rows.length; i++) frag.appendChild(lineEl(rows[i]));
-    var head = frag.firstChild;
-    var out = el.out, before = out.scrollHeight;
+    var out = el.out, keep = Math.max(0, MAX - rows.length), h0 = out.scrollHeight;
+    while (out.childElementCount > keep) out.removeChild(out.firstChild);   // the oldest go
+    if (!st.follow) out.scrollTop -= h0 - out.scrollHeight;   // reading further up: those lines stay put
     out.appendChild(frag);
-    var extra = out.childElementCount - MAX;
-    if (extra > 0) {
-      var h0 = out.scrollHeight;
-      while (extra-- > 0) out.removeChild(out.firstChild);
-      if (!st.follow) out.scrollTop -= h0 - out.scrollHeight;   // keep the lines being read where they are
-    }
-    if (note) out.insertBefore(markerEl(note), head.parentNode === out ? head : out.firstChild);
     if (st.follow) out.scrollTop = out.scrollHeight;
-    else if (out.scrollHeight !== before) { st.unseen += rows.length; el.pill.textContent = fmt(st.unseen) + " new ↓"; el.pill.hidden = false; }
+    else { st.unseen += rows.length; el.pill.textContent = fmt(st.unseen) + " new ↓"; el.pill.hidden = false; }
   }
 
-  // "there is more above / below": a shadow on that edge. The scrollbar alone did not say it - thin,
-  // and on an overlay-scrollbar desktop not drawn at all until you scroll.
+  // "there is more above / below": a shadow on that edge, and our own scrollbar. The native one cannot
+  // do it: with GTK overlay scrollbars (Firefox's default on GNOME) it is a ~6px floating thumb, hidden
+  // until you scroll, and no CSS widens it. This one is always drawn while there is more to see.
   function edges() {
-    var o = el.out, up = o.scrollTop > 2, down = o.scrollHeight - o.scrollTop - o.clientHeight > 2;
+    var o = el.out, max = o.scrollHeight - o.clientHeight, up = o.scrollTop > 2, down = max - o.scrollTop > 2;
     el.view.classList.toggle("up", up); el.view.classList.toggle("down", down);
+    var sb = el.sb, th = sb.firstChild, track = sb.clientHeight;
+    sb.classList.toggle("idle", max <= 2);
+    if (max <= 2) return;
+    var h = Math.max(32, Math.round(track * o.clientHeight / o.scrollHeight));
+    th.style.height = h + "px";
+    th.style.transform = "translateY(" + Math.round((track - h) * Math.min(1, o.scrollTop / max)) + "px)";
+  }
+  function scrollbar() {
+    var o = el.out, sb = el.sb, th = sb.firstChild;
+    th.onpointerdown = function (e) {
+      e.preventDefault(); e.stopPropagation(); th.setPointerCapture(e.pointerId); th.classList.add("drag");
+      var y0 = e.clientY, s0 = o.scrollTop, k = (o.scrollHeight - o.clientHeight) / Math.max(1, sb.clientHeight - th.offsetHeight);
+      th.onpointermove = function (m) { o.scrollTop = s0 + (m.clientY - y0) * k; };
+      th.onpointerup = th.onpointercancel = function () { th.onpointermove = null; th.classList.remove("drag"); };
+    };
+    sb.onpointerdown = function (e) {   // on the track: a page towards the click
+      if (e.target !== sb) return;
+      o.scrollTop += (e.clientY < th.getBoundingClientRect().top ? -1 : 1) * o.clientHeight * 0.9;
+    };
+    sb.onwheel = function (e) {
+      e.preventDefault(); o.scrollTop += e.deltaY * (e.deltaMode === 1 ? 18 : e.deltaMode === 2 ? o.clientHeight : 1);
+    };
   }
   function status() {
     edges();
@@ -181,7 +198,7 @@
 
   function init() {
     el.sec = $("console"); el.btn = $("console_btn"); el.out = $("con_out"); el.stat = $("con_stat");
-    el.q = $("con_q"); el.pause = $("con_pause"); el.pill = $("con_new"); el.f = $("con_f"); el.file = $("con_file"); el.n = $("con_n"); el.view = $("con_view");
+    el.q = $("con_q"); el.pause = $("con_pause"); el.pill = $("con_new"); el.f = $("con_f"); el.file = $("con_file"); el.n = $("con_n"); el.view = $("con_view"); el.sb = $("con_sb");
     if (!el.sec || !el.btn) return;
     try { var n = +localStorage.getItem("mt_con_n"); if (NS.indexOf(n) >= 0) st.n = n; } catch (e) { }
     el.n.value = String(st.n);
@@ -193,6 +210,7 @@
     el.pause.onclick = function () { setPaused(!st.paused); };
     $("con_clear").onclick = function () { el.out.textContent = ""; st.unseen = 0; el.pill.hidden = true; status(); };
     el.pill.onclick = function () { el.out.scrollTop = el.out.scrollHeight; };
+    scrollbar();
     var deb = 0;
     el.q.oninput = function () { clearTimeout(deb); deb = setTimeout(function () { grep(el.q.value); }, 450); };
     el.q.onkeydown = function (e) {
@@ -223,8 +241,8 @@
     if (on) setOn(true);
   }
 
-  // Home/End and the arrows move through the lines while the console is shown (the grid they
-  // normally drive is hidden); PgUp/PgDn keep paging days
+  // Home (oldest) / End (newest) and the arrows move through the lines while the console is shown
+  // (the grid they normally drive is hidden); PgUp/PgDn keep paging days
   function scroll(key) {
     var o = el.out, line = 18;
     if (key === "Home") o.scrollTop = 0;
