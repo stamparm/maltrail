@@ -508,6 +508,7 @@ install_sensor_binary() {
         printf '    + write %s (exec %s, MALTRAIL_CONFIG=%s)\n' "$SENSOR_LINK" "$dest" "$CONF"
     else
         rm -f "$SENSOR_LINK"
+        # shellcheck disable=SC2016 # $MALTRAIL_CONFIG and $@ are the wrapper's, expanded when it runs
         printf '#!/bin/sh\n# written by install.sh\nMALTRAIL_CONFIG=${MALTRAIL_CONFIG:-'"'"'%s'"'"'} exec '"'"'%s'"'"' "$@"\n' "$CONF" "$dest" > "$SENSOR_LINK"
         chmod 0755 "$SENSOR_LINK"
     fi
