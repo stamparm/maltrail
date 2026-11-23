@@ -133,8 +133,10 @@
   tbody tr:hover{background:#1a2334}
   .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
   .ip{font-family:var(--mono);color:var(--text)}
-  .ipcat{display:inline-block;font-family:var(--mono);font-size:9px;color:#0E1420;background:var(--faint);
-    border-radius:3px;padding:0 4px;margin-right:5px;vertical-align:1px;text-transform:lowercase;letter-spacing:.2px}
+  /* provider tag ("cloudflare", "microsoft"). Was 9px #0E1420 on #5A6678 - 3.2:1 at a size nobody
+     reads - and the screenshot that said so was of a real dashboard. */
+  .ipcat{display:inline-block;font-family:var(--mono);font-size:10.5px;line-height:1.45;color:#D3DCE8;background:#263041;
+    border:1px solid #3A4659;border-radius:3px;padding:0 5px;margin-right:6px;vertical-align:1px;text-transform:lowercase;letter-spacing:.2px}
   /* the Spamhaus DROP badge sits beside .worstasn - a different verdict, so a different colour.
      Identical geometry to its sibling below, --sev-med rather than --sev-high, so the two read as
      two opinions rather than one louder one. */
@@ -171,8 +173,10 @@
     text-overflow:ellipsis;white-space:nowrap;vertical-align:middle}
   .flag{margin-right:5px;font-size:12px;line-height:1;vertical-align:-1px;cursor:default}
   /* LAN/private-IP marker (Lucide network icon) */
-  .lan{display:inline-flex;align-items:center;color:var(--muted);margin-right:5px;vertical-align:-2px;cursor:default}  /* --muted (not --faint): #5A6678 was barely visible on the dark ground */
-  .lan svg{display:block}
+  /* 14px at a heavier stroke, and lighter: at 12px the Lucide glyph is three 3px boxes and two
+     hairlines, and in --muted it read as a smudge on the dark ground */
+  .lan{display:inline-flex;align-items:center;color:#C2CDDC;margin-right:5px;vertical-align:-2px;cursor:default}
+  .lan svg{display:block;width:14px;height:14px;stroke-width:2.4}
   /* One icon slot in front of every address in the grid, whether it holds the LAN glyph, a flag
      or nothing: an address with no icon (IPv6, a country not known yet) started 17px left of its
      neighbours, and jumped right when its flag arrived. */
@@ -564,11 +568,11 @@ body.light header{background:#fdfefe}   /* opaque for the same reason as the dar
 body.light .search{background:#eef3f9}   /* .uid/.type are filled color boxes (inline bg+contrast text) — no theme override needed */
 body.light tbody tr:hover{background:#eef4fb}
 body.light .pgbtn.on{color:#fff;background:#0a6aa0;border-color:#0a6aa0}   /* white on plain accent was 4.1:1; darker cyan -> AA */
-body.light .ipcat{color:#fff}
+body.light .ipcat{color:#334155;background:#EEF2F7;border-color:#CCD5E1}
 body.light .card,body.light .grid-wrap{box-shadow:0 8px 26px -20px #1f2d4533}
 body.light .ell i{color:var(--muted)}
 body.light .trail{color:#33496a}
-body.light .lan{color:var(--faint)}   /* keep the light-theme LAN icon exactly as it was (readable on white); only dark needed brightening */
+body.light .lan{color:#51607A}
 body.light .search{color:var(--muted)}
 body.light .tag{color:#0a3a55;background:rgba(2,132,199,.10);border-color:rgba(2,132,199,.35)}   /* was light-on-light -> invisible */
 body.light .chip{color:#075985;background:rgba(2,132,199,.10);border-color:rgba(2,132,199,.4)}   /* filter chip: light-blue text -> invisible in light */
