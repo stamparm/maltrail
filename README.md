@@ -239,7 +239,8 @@ run shows the commands without changing the system:
 sh install.sh --dry-run
 ```
 
-Common installer options:
+Common installer options (with the one-liner, pass them after `sh -s --`, e.g.
+`curl -fsSL https://raw.githubusercontent.com/stamparm/maltrail/master/install.sh | sudo sh -s -- --role sensor`):
 
 ```bash
 sh install.sh --role sensor      # Install only the sensor
@@ -255,6 +256,17 @@ dashboard is reachable on **every** interface. The `admin` / `changeme!` login i
 `maltrail.conf` (a manual or Docker setup) is accepted only from the server itself; set your own
 in `USERS` to sign in over the network, and put the server behind TLS (`USE_SSL`, or a reverse
 proxy) before the host is on an untrusted network.
+
+The settings live in `/etc/maltrail.conf`. The sensor listens on every interface (`MONITOR_INTERFACE
+any`); on a box fed by a mirror port, name that port instead. After a change, check it and restart:
+
+```bash
+sudo sed -i 's/^MONITOR_INTERFACE .*/MONITOR_INTERFACE eth1/' /etc/maltrail.conf
+sudo maltrail-sensor -T                 # validates /etc/maltrail.conf, as the service will run it
+sudo systemctl restart maltrail-sensor
+```
+
+The services start at boot, so an unattended-upgrades reboot does not leave the sensor down.
 
 The initial trail build can take several minutes. The sensor does not detect trail matches until a
 valid trail set is available. The systemd unit runs the sensor's `-T` validation before startup so
@@ -404,10 +416,11 @@ Frequently used sensor options include:
 | `CUSTOM_TRAILS_DIR` | Operator-managed trail directory |
 | `STATIC_TRAILS_DIR` | Optional checkout of the trails repository; only used to show a trail's source citation in the UI |
 
-Run the deployment check after changing configuration:
+Run the deployment check after changing configuration, then restart the service:
 
 ```bash
-sensor/target/release/maltrail-sensor -T
+sudo maltrail-sensor -T                       # installed: checks /etc/maltrail.conf
+sensor/target/release/maltrail-sensor -T      # source checkout: checks ./maltrail.conf
 ```
 
 The check validates configuration, trails, whitelist entries, capture filter, privileges, log

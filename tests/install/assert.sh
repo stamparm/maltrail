@@ -23,12 +23,14 @@ set -u
 # it is the installer's first job.
 # Not /root: macOS puts root's home in /var/root, and writing there failed with a message that
 # looked like a git problem rather than a path assumption.
-GITCONFIG=${HOME:-/root}/.gitconfig
-printf '[safe]\n\tdirectory = *\n' > "$GITCONFIG"
-
 # The repository. /src is where run.sh mounts it inside a container; a native run - FreeBSD, macOS,
 # anywhere docker cannot go because a container would share this kernel - points it at a checkout.
 SRC=${MALTRAIL_SRC:-/src}
+# The mounted source only - NOT "*". A wildcard also blessed /opt/maltrail, which install.sh chowns
+# to the service user, so the re-run "passed" here while it died on every real host with
+# "detected dubious ownership"; it is not this harness's job to make that work.
+GITCONFIG=${HOME:-/root}/.gitconfig
+printf '[safe]\n\tdirectory = %s\n\tdirectory = %s/.git\n' "$SRC" "$SRC" > "$GITCONFIG"
 # `su -s SHELL` is a GNU extension; BSD and macOS su reject -s. Same helper install.sh grew, for
 # the same reason - the failures read as a broken user account rather than a bad command line.
 as_user() {

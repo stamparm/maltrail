@@ -106,7 +106,10 @@ install_in() {
         args+=(--sensor-bin /sensor-under-test)
     fi
 
-    docker run --rm "${mounts[@]}" "$image" sh /src/tests/install/assert.sh "${args[@]}" 2>&1
+    # The two capabilities install.sh puts on the sensor. A binary carrying file capabilities the
+    # bounding set lacks cannot even be exec'd ("Operation not permitted"), and Docker's default
+    # set has no NET_ADMIN - a real host's root has both.
+    docker run --rm --cap-add NET_RAW --cap-add NET_ADMIN "${mounts[@]}" "$image" sh /src/tests/install/assert.sh "${args[@]}" 2>&1
 }
 
 judge() {

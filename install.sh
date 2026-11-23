@@ -257,8 +257,10 @@ ensure_deps() {
             ;;
     esac
 
+    # A dry run installed nothing, so a tool it would install is still missing - which is the point
+    # of a dry run on a fresh box, not a reason to stop before showing the rest.
     for tool in git tar; do
-        have "$tool" || die "'$tool' is still missing after installing dependencies"
+        have "$tool" || [ "$DRY" = 1 ] || die "'$tool' is still missing after installing dependencies"
     done
     have curl || have wget || die "neither curl nor wget is available"
 }
@@ -296,18 +298,18 @@ clone_or_update() {
         # indicators - are untracked, so `git clean -fd` would delete them, and local edits to
         # tracked files would go under `reset --hard`. Upgrade only what is clean, and say what was
         # skipped; --force is the way to say "yes, discard it".
-        if [ "$FORCE" = 0 ] && [ -n "$(git -C "$PREFIX" status --porcelain --untracked-files=no 2>/dev/null)" ]; then
+        if [ "$FORCE" = 0 ] && [ -n "$(tree_git status --porcelain --untracked-files=no 2>/dev/null)" ]; then
             warn "$PREFIX has local changes, so it was NOT updated:"
-            git -C "$PREFIX" status --short --untracked-files=no 2>/dev/null | sed 's/^/        /' >&2
+            tree_git status --short --untracked-files=no 2>/dev/null | sed 's/^/        /' >&2
             warn "commit or move them, or re-run with --force to discard them."
             return 0
         fi
-        run git -C "$PREFIX" remote set-url origin "$REPO"
-        run git -C "$PREFIX" fetch --depth 1 --quiet origin "$REF"
+        run tree_git remote set-url origin "$REPO"
+        run tree_git fetch --depth 1 --quiet origin "$REF"
         # reset, not merge: a half-applied merge is worse than a replaced tree, and operator
         # configuration lives in $CONF precisely so this cannot reach it.
-        run git -C "$PREFIX" checkout --quiet --detach FETCH_HEAD
-        run git -C "$PREFIX" reset --hard --quiet FETCH_HEAD
+        run tree_git checkout --quiet --detach FETCH_HEAD
+        run tree_git reset --hard --quiet FETCH_HEAD
     else
         say "cloning $REPO (ref: $REF, shallow)"
         run mkdir -p "$(dirname "$PREFIX")"
@@ -316,14 +318,14 @@ clone_or_update() {
             # covers a detached HEAD, which is what CI checkouts hand us.
             [0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]*)
                 if git -C / ls-remote --exit-code --heads "$REPO" "$REF" >/dev/null 2>&1; then
-                    run git clone --depth 1 --branch "$REF" --quiet "$REPO" "$PREFIX"
+                    run git -c advice.detachedHead=false clone --depth 1 --branch "$REF" --quiet "$REPO" "$PREFIX"
                 else
-                    run git clone --depth 1 --quiet "$REPO" "$PREFIX"
+                    run git -c advice.detachedHead=false clone --depth 1 --quiet "$REPO" "$PREFIX"
                     run git -C "$PREFIX" fetch --depth 1 --quiet origin "$REF"
                     run git -C "$PREFIX" checkout --quiet --detach FETCH_HEAD
                 fi
                 ;;
-            *)  run git clone --depth 1 --branch "$REF" --quiet "$REPO" "$PREFIX" ;;
+            *)  run git -c advice.detachedHead=false clone --depth 1 --branch "$REF" --quiet "$REPO" "$PREFIX" ;;
         esac
     fi
     [ "$DRY" = 1 ] || [ -f "$PREFIX/server.py" ] || die "$PREFIX/server.py missing after checkout"
@@ -499,7 +501,16 @@ install_sensor_binary() {
     # the sensor never reached PATH, and every later check that invoked it by name concluded the
     # platform had no usable sensor at all.
     run mkdir -p "$(dirname "$SENSOR_LINK")"
-    run ln -sf "$dest" "$SENSOR_LINK"
+    # A wrapper, not a symlink. Run by hand, the binary looks for maltrail.conf beside itself and
+    # found the tree's pristine copy, not $CONF: `sudo maltrail-sensor -T` passed while validating
+    # a file the service never reads. -c and MALTRAIL_CONFIG still win.
+    if [ "$DRY" = 1 ]; then
+        printf '    + write %s (exec %s, MALTRAIL_CONFIG=%s)\n' "$SENSOR_LINK" "$dest" "$CONF"
+    else
+        rm -f "$SENSOR_LINK"
+        printf '#!/bin/sh\n# written by install.sh\nMALTRAIL_CONFIG=${MALTRAIL_CONFIG:-'"'"'%s'"'"'} exec '"'"'%s'"'"' "$@"\n' "$CONF" "$dest" > "$SENSOR_LINK"
+        chmod 0755 "$SENSOR_LINK"
+    fi
     link_libpcap_soname "$dest"
     verify_sensor "$dest" || true
     # Capture without root. Systemd grants these through AmbientCapabilities, but a manual run
@@ -653,6 +664,13 @@ ensure_user() {
 # both of which look like a broken user rather than a broken command line. The service account has
 # nologin as its shell precisely so it cannot be used, so -m (keep environment, use the CALLER's
 # shell) is the portable way to run one command as it.
+# git on the managed tree. It belongs to $RUN_USER (main chowns it) and this runs as root, so
+# git 2.35.2+ refused it as "dubious ownership" and every re-run died - while the dirty check, whose
+# error goes to /dev/null, read the refusal as a clean tree. -c is protected configuration.
+tree_git() {
+    git -c safe.directory="$PREFIX" -C "$PREFIX" "$@"
+}
+
 as_user() {
     _who=$1; shift
     case $OS in
@@ -904,16 +922,18 @@ summary() {
             info "ui       http://127.0.0.1:${port:-8338}  (login: as set by USERS in $CONF)"
         fi ;;
     esac
+    units=""
+    for r in $roles; do units="$units maltrail-$r"; done
     if have_systemd && [ "$SERVICE" = 1 ]; then
-        info "status   systemctl status maltrail-server maltrail-sensor"
+        info "status   systemctl status$units"
     elif have_systemd; then
-        info "start    systemctl enable --now maltrail-server maltrail-sensor"
+        info "start    systemctl enable --now$units"
     else
         info "no systemd here, so nothing was started. Run it by hand:"
         case $roles in *server*) info "  (cd $PREFIX && sudo -u $RUN_USER $PYTHON server.py -c $CONF)" ;; esac
         case $roles in *sensor*) info "  sudo -u $RUN_USER $PREFIX/sensor/target/release/maltrail-sensor -c $CONF" ;; esac
     fi
-    info "The first trail build takes a few minutes; until it finishes nothing is detected."
+    [ -s "$STATE_DIR/trails.csv" ] || info "The first trail build takes a few minutes; until it finishes nothing is detected."
     [ "$warned" -gt 0 ] && info "$warned warning(s) above - worth reading."
     printf '\n'
 }
@@ -960,6 +980,14 @@ main() {
         fi
     else
         run chown -R "$RUN_USER":"$RUN_USER" "$PREFIX" 2>/dev/null || true
+        # chown clears file capabilities, and install_sensor's setcap ran before it: the service
+        # still captured (systemd grants them), but -T and every manual run said no CAP_NET_RAW
+        sensor_bin="$PREFIX/sensor/target/release/maltrail-sensor"
+        case $roles in *sensor*)
+            if [ -x "$sensor_bin" ] && have setcap; then
+                run setcap cap_net_raw,cap_net_admin=eip "$sensor_bin" || warn "setcap failed; the sensor will need root to capture"
+            fi ;;
+        esac
     fi
 
     # Whichever init this machine has. It used to be "systemd or nothing", which meant FreeBSD and
