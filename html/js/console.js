@@ -56,7 +56,6 @@
     span(d, "c-sn", row[1], row[1]);
     span(d, "c-ip c-q", short(row[2]), row[2]).dataset.q = row[2].split(",")[0];
     span(d, "c-pt", short(row[3]), row[3].indexOf(",") > 0 ? row[3] : "");
-    span(d, "c-ar", "→");
     span(d, "c-ip c-q", short(row[4]), row[4]).dataset.q = row[4].split(",")[0];
     span(d, "c-pt", short(row[5]), row[5].indexOf(",") > 0 ? row[5] : "");
     span(d, "c-pr", row[6]);
