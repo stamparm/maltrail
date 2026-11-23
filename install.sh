@@ -765,6 +765,9 @@ TRAILS_FILE $STATE_DIR/trails.csv
 EOF
     # A password of this install's own instead of the published 'changeme!', which the server
     # only accepts from the machine itself. Shown once, in the summary; only its hash is stored.
+    # Only with the server: a sensor-only install generated one, never showed it (no ui line), and
+    # adding the server later kept that config - a login nobody could know.
+    case $roles in *server*) ;; *) run chown root:"$RUN_USER" "$CONF"; run chmod 0640 "$CONF"; return 0 ;; esac
     if [ -n "$PYTHON" ] && GENERATED_PASSWORD=$("$PYTHON" -c 'import secrets; print(secrets.token_urlsafe(12))' 2>/dev/null); then
         # This script comes from master, the tree may be an older release: a tree without
         # core/password.py has a server that only knows the sha256 form, so it gets that.
