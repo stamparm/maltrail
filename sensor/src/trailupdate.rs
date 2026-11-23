@@ -13,7 +13,7 @@
 //! keep working with no duplicated logic.
 
 use std::path::{Path, PathBuf};
-use std::process::Command;
+use std::process::{Command, Stdio};
 
 use crate::config::Config;
 
@@ -189,7 +189,9 @@ pub enum Outcome {
 /// `offline` maps to `--offline`: no network, but the trails file is still *rebuilt* from the
 /// bundled static and custom trails — which is exactly why `--offline` still picks up newly
 /// added static IOCs.
-pub fn run(cfg: &Config) -> Outcome {
+/// `background`: the sensor is already running, so the updater's progress is not shown (see
+/// `worth_showing`), only what it warns about.
+pub fn run(cfg: &Config, background: bool) -> Outcome {
     if cfg.disable_trail_updates {
         return Outcome::Disabled;
     }
@@ -224,11 +226,20 @@ pub fn run(cfg: &Config) -> Outcome {
         command.arg("--offline");
     }
     die_with_parent(&mut command);
+    if background {
+        command.env("PYTHONUNBUFFERED", "1").stdout(Stdio::piped()).stderr(Stdio::piped());
+    }
 
-    let child = match command.spawn() {
+    let mut child = match command.spawn() {
         Ok(child) => child,
         Err(e) => return Outcome::Failed(format!("unable to run {python}: {e}")),
     };
+    if let Some(out) = child.stdout.take() {
+        forward(out, false);
+    }
+    if let Some(err) = child.stderr.take() {
+        forward(err, true);
+    }
     match wait_with_deadline(child, UPDATER_DEADLINE) {
         Ok(Some(status)) if status.success() => Outcome::Updated,
         Ok(Some(status)) => Outcome::Failed(match status.code() {
@@ -238,6 +249,39 @@ pub fn run(cfg: &Config) -> Outcome {
         Ok(None) => Outcome::Failed(format!("{python} was killed after running {}s", UPDATER_DEADLINE.as_secs())),
         Err(e) => Outcome::Failed(format!("unable to wait for {python}: {e}")),
     }
+}
+
+/// A line of the updater's output worth showing while the sensor runs. Its progress (" [o] '<feed>'"
+/// per feed, "[i] ...", "[?] progress: N/M" redrawn with '\r' on a terminal and a line per step
+/// through a pipe) came out after "[^] running..." - some 40 lines ending on "reloaded N
+/// trails", and a sensor busy detecting looked stalled. Warnings, errors and anything unexpected (a
+/// traceback, the missing-STATIC_TRAILS_URL banner) still come through.
+pub fn worth_showing(line: &str) -> bool {
+    let t = line.trim();
+    !(t.is_empty() || t.starts_with("[o]") || t.starts_with("[i]") || t.starts_with("[?] progress"))
+}
+
+/// Pass the lines `worth_showing` through, until the stream closes. Not joined: a pipe held open
+/// by anything the updater left behind must not stall the reload thread past the deadline.
+fn forward(stream: impl std::io::Read + Send + 'static, to_stderr: bool) {
+    let _ = std::thread::Builder::new().name("updater-output".into()).spawn(move || {
+        use std::io::BufRead;
+        let mut reader = std::io::BufReader::new(stream);
+        let mut buf = Vec::new();
+        while reader.read_until(b'\n', &mut buf).map(|n| n > 0).unwrap_or(false) {
+            // progress lines redraw themselves with '\r': each piece is a line of its own
+            for part in String::from_utf8_lossy(&buf).split(['\r', '\n']) {
+                if worth_showing(part) {
+                    if to_stderr {
+                        crate::ceprintln!("{}", part.trim_end());
+                    } else {
+                        crate::cprintln!("{}", part.trim_end());
+                    }
+                }
+            }
+            buf.clear();
+        }
+    });
 }
 
 /// Longest a trail update may run. A full update is minutes; one that has run an hour is hung -
@@ -318,6 +362,28 @@ pub fn trails_age_secs(path: &Path, built_here: bool) -> Option<u64> {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn background_update_shows_warnings_not_progress() {
+        for quiet in [
+            " [o] 'https://lists.blocklist.de/lists/all.txt'",
+            "[i] updating trails (this might take a while)...",
+            " [o] '(custom)'                    ",
+            "[?] progress: 21/31 (67%)",
+            "",
+            "   ",
+        ] {
+            assert!(!worth_showing(quiet), "{quiet:?} shown");
+        }
+        for loud in [
+            "[!] no indicators from 'https://sblam.com/blacklist.txt'",
+            "[x] unable to retrieve the static trails",
+            "Traceback (most recent call last):",
+            "!!  NO STATIC TRAIL SOURCE CONFIGURED",
+        ] {
+            assert!(worth_showing(loud), "{loud:?} hidden");
+        }
+    }
 
     #[cfg(unix)]
     #[test]

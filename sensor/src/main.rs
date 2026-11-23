@@ -642,11 +642,15 @@ fn run() -> i32 {
                                 store_reload.publish(db);
                                 reg_reload.trail_generation.store(store_reload.generation(), Ordering::Relaxed);
                                 reg_reload.reloads_ok.fetch_add(1, Ordering::Relaxed);
-                                cprintln!(
-                                    "[i] reloaded {} trails{}",
-                                    thousands(stats.loaded as u64),
-                                    if stats.from_store { " (prebuilt store)" } else { "" }
-                                );
+                                // Said as the state the sensor is in: ending on "reloaded N trails",
+                                // a sensor busy detecting looked stalled.
+                                if !cfg_reload.quiet {
+                                    cprintln!(
+                                        "[^] running... ({} trails, reloaded{})",
+                                        thousands(stats.loaded as u64),
+                                        if stats.from_store { " from the prebuilt store" } else { "" }
+                                    );
+                                }
                                 if let Some(note) = &stats.store_note {
                                     output::log_error(&format!("trail store: {note}"), true);
                                 }
@@ -1090,12 +1094,11 @@ fn prune_condensed_store(cfg: &Config) {
 /// A failure is never fatal: the sensor continues with whatever trails it already has, but says
 /// so loudly, because running on stale trails means silently missing detections.
 fn refresh_trails(cfg: &Config, quiet: bool, startup: bool) {
-    match trailupdate::run(cfg) {
-        trailupdate::Outcome::Updated => {
-            if !quiet && !startup {
-                cprintln!("[i] trails updated");
-            }
-        }
+    if !quiet && !startup && !cfg.disable_trail_updates {
+        cprintln!("[i] updating trails in the background (detecting with the current ones meanwhile)");
+    }
+    match trailupdate::run(cfg, !startup) {
+        trailupdate::Outcome::Updated => {}
         trailupdate::Outcome::Disabled => {
             if !quiet && startup {
                 cprintln!(
