@@ -854,6 +854,7 @@ body.light .newpill::before{background:#059669}
 .hovertip .tt-flag{margin-right:5px}
 .hovertip .tt-row{font-size:11px;color:var(--muted);margin-top:3px}
 .hovertip .tt-row>span:first-child{display:inline-block;min-width:64px;color:var(--faint);letter-spacing:.3px}
+.hovertip .tt-ptr{color:var(--text);word-break:break-all}   /* a PTR name can be 60+ characters */
 .hovertip .tt-warn{color:var(--sev-high);font-weight:600}
 .hovertip .tt-dim{color:var(--faint)}
 .hovertip .tt-vals{margin-top:4px;font-family:var(--mono);font-size:11px;color:var(--muted);max-height:220px;overflow:auto;line-height:1.5}

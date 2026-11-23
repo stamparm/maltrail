@@ -224,6 +224,35 @@ TAIL_MAX = 2000                 # /tail: the most it will return (the console ke
 TAIL_MAX_QUERY = 256            # /tail: characters of grep query looked at
 TAIL_MAX_WORDS = 8              # /tail: words of it
 
+PTR_CACHE_TTL = 6 * 3600         # /ptr: seconds a resolved name is reused
+PTR_CACHE_MISS_TTL = 3600        # /ptr: ...and an address with no PTR record
+PTR_CACHE_MAX = 4096             # /ptr: addresses remembered, oldest dropped first
+_PTR_CACHE = collections.OrderedDict()   # address -> (expires, names)
+_PTR_LOCK = threading.Lock()
+
+
+def _ptr_names(address, resolve=socket.gethostbyaddr):
+    """Reverse DNS names of an (already validated) address, cached. The dashboard asks on hover, so
+    the same address comes up again and again - and every real lookup is a query to the DNS of
+    whoever owns the address, which for an attacker's address is the attacker."""
+    now = time.time()
+    with _PTR_LOCK:
+        hit = _PTR_CACHE.get(address)
+    if hit and hit[0] > now:
+        return hit[1]
+    try:
+        name, aliases, _ = resolve(address)
+        names = [name] + [_ for _ in aliases if _ != name]
+    except (socket.error, UnicodeError):
+        names = []
+    with _PTR_LOCK:
+        _PTR_CACHE.pop(address, None)
+        _PTR_CACHE[address] = (now + (PTR_CACHE_TTL if names else PTR_CACHE_MISS_TTL), names)
+        while len(_PTR_CACHE) > PTR_CACHE_MAX:
+            _PTR_CACHE.popitem(last=False)
+    return names
+
+
 _HUNT_IP_QUERY_REGEX = re.compile(r"\A(\d+\.\d+\.\d+\.\d+)(?:/(\d{1,2}))?\Z")
 _HUNT_LINE_IP_REGEX = re.compile(r"\b(\d+\.\d+\.\d+\.\d+)\b")
 
@@ -2055,10 +2084,10 @@ def start_httpd(address=None, port=None, join=False, pem=None):
             return json.dumps(payload)
 
         def _ptr(self, params):
-            # Reverse DNS for one address, on an analyst's click (#19613). Only on a click: the PTR
-            # record is whatever the address's owner chose to publish, so it is a hint for a human,
-            # never something to whitelist on. Goes through the server's own resolver, so a LAN
-            # address gets its internal name.
+            # Reverse DNS for one address: the right-click dialog (#19613) and the IP tooltip. The
+            # PTR record is whatever the address's owner chose to publish, so it is a hint for a
+            # human, never something to whitelist on. Goes through the server's own resolver, so a
+            # LAN address gets its internal name. Cached (_ptr_names).
             session = self.get_session()
 
             if session is None:
@@ -2075,11 +2104,7 @@ def start_httpd(address=None, port=None, join=False, pem=None):
                 self.send_header(HTTP_HEADER.CONNECTION, "close")
                 return None
 
-            try:
-                name, aliases, _ = socket.gethostbyaddr(address)
-                names = [name] + [_ for _ in aliases if _ != name]
-            except (socket.error, UnicodeError):
-                names = []
+            names = _ptr_names(address)
 
             self.send_response(_http_client.OK)
             self.send_header(HTTP_HEADER.CONNECTION, "close")

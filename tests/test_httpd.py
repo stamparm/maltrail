@@ -3165,6 +3165,51 @@ class TestByteLevelPrefilters(unittest.TestCase):
         self.assertEqual(set(got), {"10.0.0.5", "10.0.7.9", "192.168.1.1"})
 
 
+class TestPtrCache(unittest.TestCase):
+    """/ptr is asked on hover now, so the same address comes up over and over - and each real lookup
+    is a query to the DNS of whoever owns the address. One resolve per address per TTL."""
+
+    def setUp(self):
+        import core.httpd as H
+        self.H = H
+        H._PTR_CACHE.clear()
+        self.calls = []
+
+    def resolver(self, answers):
+        def resolve(address):
+            self.calls.append(address)
+            if address not in answers:
+                raise socket.herror(1, "Unknown host")
+            return answers[address], [], [address]
+        return resolve
+
+    def test_a_name_and_a_miss_are_each_resolved_once(self):
+        r = self.resolver({"8.8.8.8": "dns.google"})
+        for _ in range(5):
+            self.assertEqual(self.H._ptr_names("8.8.8.8", r), ["dns.google"])
+            self.assertEqual(self.H._ptr_names("203.0.113.9", r), [])
+        self.assertEqual(self.calls, ["8.8.8.8", "203.0.113.9"], "cached answers were resolved again")
+
+    def test_an_expired_entry_is_resolved_again(self):
+        r = self.resolver({"8.8.8.8": "dns.google"})
+        self.H._ptr_names("8.8.8.8", r)
+        expires, names = self.H._PTR_CACHE["8.8.8.8"]
+        self.H._PTR_CACHE["8.8.8.8"] = (time.time() - 1, names)
+        self.H._ptr_names("8.8.8.8", r)
+        self.assertEqual(len(self.calls), 2)
+
+    def test_the_cache_is_bounded(self):
+        r = self.resolver({})
+        old = self.H.PTR_CACHE_MAX
+        self.H.PTR_CACHE_MAX = 3
+        try:
+            for i in range(10):
+                self.H._ptr_names("198.51.100.%d" % i, r)
+        finally:
+            self.H.PTR_CACHE_MAX = old
+        self.assertEqual(list(self.H._PTR_CACHE), ["198.51.100.7", "198.51.100.8", "198.51.100.9"])
+
+
 if __name__ == "__main__":
     unittest.main()
 

@@ -2186,6 +2186,27 @@
       ripe[ip] = ripe[ip] || {}; ripe[ip].asn = asn; if (holder) ripe[ip].holder = holder; ripe[ip].t = +new Date(); saveRipe(); refreshTipFor(ip); applyRipe(ip);
     });
   }
+  // reverse DNS for a public address, once its tooltip has stayed open a moment: a mouse crossing the
+  // table must not resolve every address it touches, because each lookup is a query to the DNS of
+  // whoever owns the address. Cached a day here (with geo/ASN) and for hours on the server.
+  var PTR_TTL = 864e5, PTR_DWELL = 350, _ptrInflight = {}, _ptrTimer = 0;
+  function ptrFresh(r) { return !!(r && r.ptr && (+new Date() - (r.tp || 0)) < PTR_TTL); }
+  function ripePtr(ip) {
+    clearTimeout(_ptrTimer);
+    if (DEMO || ptrFresh(ripe[ip]) || _ptrInflight[ip]) return;
+    _ptrTimer = setTimeout(function () {
+      if (_tipIP !== ip) return;
+      _ptrInflight[ip] = 1;
+      fetch("/ptr?address=" + encodeURIComponent(ip), { credentials: "same-origin" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+          delete _ptrInflight[ip]; if (!d || !d.names) return;
+          var rec = ripe[ip] = ripe[ip] || {}; rec.ptr = d.names; rec.tp = +new Date(); if (!rec.t) rec.t = rec.tp;
+          saveRipe(); refreshTipFor(ip);
+        })
+        .catch(function () { delete _ptrInflight[ip]; });
+    }, PTR_DWELL);
+  }
   function applyRipe(ip) {
     var rec = ripe[ip]; if (!rec || !rec.cc) return;
     var fe = flagEmoji(rec.cc); if (!fe) return;
@@ -2258,6 +2279,9 @@
     L.push('<div class="tt-ip">' + esc(ip) + (geo ? ' <span class="tt-geo">' + geo + "</span>" : "") + "</div>");
     if (a) L.push('<div class="tt-row"><span>alias</span>' + esc(a) + "</div>");
     if (rec && rec.asn) L.push('<div class="tt-row"><span>ASN</span>' + esc(rec.asn) + (rec.holder ? " · " + esc(rec.holder) : "") + "</div>");
+    if (pub && !DEMO) L.push('<div class="tt-row"><span>rDNS</span>' + (!ptrFresh(rec) ? '<span class="tt-dim">resolving…</span>'
+      : rec.ptr.length ? '<span class="tt-ptr">' + esc(rec.ptr[0]) + "</span>" + (rec.ptr.length > 1 ? ' <span class="tt-dim">+' + (rec.ptr.length - 1) + "</span>" : "")
+      : '<span class="tt-dim">no PTR record</span>') + "</div>");
     if (ci && ci !== "pending" && ci.cat) L.push('<div class="tt-row"><span>category</span>' + esc(ci.cat) + "</div>");
     if (ci && ci !== "pending" && ci.worst) L.push('<div class="tt-row tt-warn">⚠ malicious ASN</div>');
     if (ci && ci !== "pending" && ci.drop) L.push('<div class="tt-row tt-warn">⚠ rogue network (Spamhaus)</div>');
@@ -2470,7 +2494,7 @@
         var ipc = e.target.closest('.ip[data-ip]'), tc = e.target.closest('[data-tip]');
         var t = tipEl();
         var anchor = null;
-        if (ipc && (!tc || ipc.contains(tc))) { var ip = ipc.getAttribute('data-ip'); _tipIP = ip; if (isPubIP(ip)) { ripeGeo(ip); ripeAsn(ip); } t.innerHTML = ipTipHTML(ip); anchor = ipc; }
+        if (ipc && (!tc || ipc.contains(tc))) { var ip = ipc.getAttribute('data-ip'); _tipIP = ip; if (isPubIP(ip)) { ripeGeo(ip); ripeAsn(ip); ripePtr(ip); } t.innerHTML = ipTipHTML(ip); anchor = ipc; }
         else if (tc) { _tipIP = null; t.innerHTML = ellTipHTML(tc.getAttribute('data-tip')); anchor = tc; }
         else return;
         t.style.display = 'block'; placeTipAt(anchor);
