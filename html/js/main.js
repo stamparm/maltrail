@@ -2635,11 +2635,11 @@
     var KEYS = [
       ["←  →", "previous / next page"],
       ["PgUp  PgDn", "previous / next day"],
-      ["Home  End", "log: top / bottom"],   // keys are split on spaces: "Page Up / Down" drew four keys, "/" among them (also "focus search")
+      ["Home  End", "raw: top / bottom"],   // keys are split on spaces: "Page Up / Down" drew four keys, "/" among them (also "focus search")
       ["↑  ↓", "select a row"],
       ["Enter", "open selected threat"],
-      ["/", "focus search (grep in the log view)"],
-      ["`", "log view on / off"],
+      ["/", "focus search (grep in the raw view)"],
+      ["`", "raw view on / off"],
       ["?", "this shortcut list"],
       ["Esc", "close panel / clear search"]
     ];
