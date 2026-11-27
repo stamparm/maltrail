@@ -2994,6 +2994,43 @@ MoggyDayHub/gta6console/
 gta6console
 MoggyDayHub
 
+# Reference: https://corelight.com/blog/detecting-and-hunting-artex-with-corelight
+
+ARTeX-
+artex-audit
+artex-audit/1.0
+ARTeX-authorized-pentest
+artex-i21861-canary
+artex-pentest
+artex-pentest/1.0
+artex-readonly
+artex-readonly/1.0
+artex-selfupdate
+artex-spawn
+artex-spawn/1
+artex-verify
+artex-verify/1.0
+ARTEX-worker
+ARTEX-worker/1.0
+authorized-pentest
+azure-toolkit
+azure-toolkit/1.0
+\(Compatible Exploit\)
+CyberStrikeAI
+CyberStrikeAI-WebShell
+CyberStrikeAI-WebShell/1.0
+HexStrike-BrowserAgent
+HexStrike-HTTP-Framework
+Mozilla/5.0 ARTeX
+norma/0.4
+PentAGI
+PentAGI/1.0
+ReconProbe
+ReconProbe/1.0
+WebShell
+WebShell/1.0
+ZB73570
+
 # Misc
 
 information_schema
