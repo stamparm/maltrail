@@ -33,7 +33,9 @@ use super::table::{hash_bytes, IntKey, IntSlot, IntTable, NegativeFilter, SlotCh
 use super::TrailDb;
 
 /// Bump on ANY change to the layout below or to what a section holds.
-pub const FORMAT: u64 = 2;
+/// 3: URL trail keys lose their trailing '/' (loader.rs), so a store built before holds keys
+/// that never match.
+pub const FORMAT: u64 = 3;
 const MAGIC: u64 = u64::from_le_bytes(*b"MTSTORE\0");
 /// Written natively; a store from a host of the other byte order reads back as something else.
 const ENDIAN: u64 = 0x0102_0304_0506_0708;

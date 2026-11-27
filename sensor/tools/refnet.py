@@ -39,6 +39,7 @@ import io
 import json
 import os
 import random
+import re
 import shutil
 import struct
 import subprocess
@@ -147,6 +148,10 @@ def _trail_pools(path, limit=400000):
                 # those (the bare provider name is not an indicator), so planting the bare name
                 # measured a design decision as a miss.
                 dynamic = "dynamic" in row[1] or "free web" in row[1]
+                # Same for "ns2.cranepayee.top" under a suspicious/sinkhole label: the sensor skips
+                # infrastructure names there (`ns_like_prefix`, process.rs), so planting one did too.
+                dynamic = dynamic or (re.match(r"(?i)([rd]?ns|nf|mx|nic)\d*\.", key) is not None
+                                      and ("suspicious" in row[1] or "sinkhole" in row[1]))
                 if not (key.count(".") == 3 and key.replace(".", "").isdigit()) and not dynamic:
                     domains.append(key)
     return domains, ipports, urls

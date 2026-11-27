@@ -264,10 +264,19 @@ fn parse_slice<'a>(slice: &'a [u8], whitelist: &Whitelist, shard: &mut Shard<'a>
         }
         shard.stats.rows += 1;
 
-        let Some((trail, info, reference)) = parse_row(raw, &mut fields) else {
+        let Some((mut trail, info, reference)) = parse_row(raw, &mut fields) else {
             shard.stats.malformed += 1;
             continue;
         };
+        // "x.ru/kek/": the request side strips a trailing '/' (`http::build_checks`), so a URL
+        // trail keeping one could never match - 62,653 rows of the published set did. A single
+        // '/' stays: "evil.com/" is the host-only trail, probed as "{host}/".
+        if trail.ends_with('/') && memchr::memchr_iter(b'/', trail.as_bytes()).nth(1).is_some() {
+            trail = match trail {
+                Cow::Borrowed(s) => Cow::Borrowed(s.trim_end_matches('/')),
+                Cow::Owned(s) => Cow::Owned(s.trim_end_matches('/').to_string()),
+            };
+        }
 
         if whitelist.check_whitelisted(&trail) {
             shard.stats.whitelisted += 1;
@@ -570,6 +579,9 @@ mod tests {
              1.2.3.4:8443,c2,(static)\n\
              dead::beef,badnet6,(static)\n\
              /malicious.php,malware (test),(static)\n\
+             b4mb4m.ru/kek/,url,(static)\n\
+             \"x.example/a/\",quoted url,(static)\n\
+             host-only.example/,host,(static)\n\
              \"has,comma.com\",\"info, with comma\",(static)\n\
              127.0.0.1,should be whitelisted,(static)\n\
              short,row\n",
@@ -588,6 +600,10 @@ mod tests {
         assert_eq!(db.get("has,comma.com").map(|v| v.info), Some("info, with comma"));
         assert_eq!(db.get("/malicious.php").map(|v| v.reference), Some("(static)"));
         assert!(db.get("127.0.0.1").is_none());
+        // the request side strips a trailing '/', so the trail must too - but not a host-only one
+        assert_eq!(db.get("b4mb4m.ru/kek").map(|v| v.info), Some("url"));
+        assert_eq!(db.get("x.example/a").map(|v| v.info), Some("quoted url"));
+        assert_eq!(db.get("host-only.example/").map(|v| v.info), Some("host"));
 
         use crate::addr::{addr_to_int, parse_ipv6, Ip};
         let ip = Ip::V4(addr_to_int("1.2.3.4").unwrap());

@@ -617,6 +617,10 @@ def load_trails(quiet=False, freeze=False):
                         continue
                     if row and len(row) == 3:
                         trail, info, reference = row
+                        # the request side strips a trailing '/', so a URL trail must too; a lone
+                        # '/' ("evil.com/") is the host-only trail and stays (sensor/src/trails/loader.rs)
+                        if trail.endswith('/') and trail.count('/') > 1:
+                            trail = trail.rstrip('/')
                         if not check_whitelisted(trail):
                             retval[trail] = (info, reference)
 

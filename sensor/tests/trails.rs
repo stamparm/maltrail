@@ -179,7 +179,9 @@ fn real_trails_file_loads_completely() {
     );
 
     assert!(stats.loaded > 100_000, "expected a sizeable trail set, got {}", stats.loaded);
-    assert_eq!(db.len(), stats.loaded);
+    // "x/a/" and "x/a" load as one key; the exact count is checked against the CSV's distinct
+    // trails in assert_every_real_row_is_findable
+    assert!(db.len() <= stats.loaded);
     // every row is either loaded, whitelisted or malformed
     assert_eq!(stats.rows, stats.loaded + stats.whitelisted + stats.malformed);
     assert!(db.ip4_count() > 1000, "IPv4 trails should be mirrored natively");
@@ -269,6 +271,12 @@ fn for_each_real_row(path: &PathBuf, wl: &Whitelist, mut visit: impl FnMut(&str,
                 (Some(a), Some(b), Some(c)) if !c.contains(',') => (a.to_string(), b.to_string(), c.to_string()),
                 _ => continue,
             }
+        };
+        // the loader drops a URL trail's trailing '/' (one lone '/' is the host-only trail)
+        let trail = if trail.ends_with('/') && trail.matches('/').count() > 1 {
+            trail.trim_end_matches('/').to_string()
+        } else {
+            trail
         };
         if wl.check_whitelisted(&trail) {
             continue;

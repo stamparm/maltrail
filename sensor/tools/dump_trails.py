@@ -56,8 +56,13 @@ def main():
         for row in csv.reader(f, delimiter=',', quotechar='"'):
             if row and len(row) == 3:
                 trail, info, reference = row
+                if trail.endswith('/') and trail.count('/') > 1:   # as load_trails() does
+                    trail = trail.rstrip('/')
                 if not check_whitelisted(trail):
                     accepted.append((trail, info, reference))
+    # "x/a/" and "x/a" are one key once normalized: every row then reports the LAST row's value,
+    # which is what the dict (and the Rust store) keeps.
+    final = dict((trail, (info, reference)) for trail, info, reference in accepted)
 
     # The exact pattern list build_trails_regex() produced, recovered from the alternation it
     # wrote (the source is the ground truth the Rust side must reproduce).
@@ -86,7 +91,8 @@ def main():
             f.write("#regex-pattern %s\n" % pattern.replace("\n", "\\n"))
         for trail in rejected:
             f.write("#wildcard-rejected %s\n" % trail.replace("\n", "\\n"))
-        for trail, info, reference in accepted:
+        for trail, _, _ in accepted:
+            info, reference = final[trail]
             f.write("%s%s%s%s%s\n" % (trail, UNIT, info, UNIT, reference))
 
     print("[i] dumped %d row(s), %d unique, %d wildcard pattern(s), %d rejected to '%s'"
