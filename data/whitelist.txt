@@ -4207,6 +4207,7 @@ bandito.byterunner.io
 banzaitracker.com
 bittorrent-tracker.e-n-c-r-y-p-t.net
 bittracker.nekosunevr.co.uk
+bombauthority.website
 bt.bontal.net
 bt.ktrackers.com
 bt.okmp3.ru
@@ -4280,6 +4281,7 @@ s1130642.ha014.t.mydomain.zone
 seedpeer.net
 shahidrazi.online
 siwserver.duckdns.org
+smashwax.website
 speedtest.iperson.xyz
 stairs.lat
 staticfile-bobcat.wasmer.app
@@ -4461,6 +4463,7 @@ udp1.torrust-tracker-demo.com
 v2.iperson.xyz
 v6.vito-tracker.space
 v74853.hosted-by-vdsina.com
+visit.bombauthority.website
 vps-c1adea63.vps.ovh.net
 vps-dd0a0715.vps.ovh.net
 wegkxfcivgx.ydns.eu
