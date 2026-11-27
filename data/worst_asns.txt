@@ -8043,3 +8043,19 @@
 45.61.152.0/22,tornadodatacenter
 2602:fa59:1::/48,tornadodatacenter
 2a0e:b540:ffa1::/48,tornadodatacenter
+
+# AS 211019
+# Reference: https://ipinfo.io/AS211019
+# Reference: https://x.com/malwrhunterteam/status/2126394403581493272
+# Reference: https://www.virustotal.com/gui/ip-address/9.247.136.91/relations
+
+167.17.32.0/23,servers-guru
+206.245.152.0/23,servers-guru
+48.103.144.0/24,servers-guru
+48.103.145.0/24,servers-guru
+78.17.72.0/23,servers-guru
+86.107.101.0/24,servers-guru
+9.247.136.0/24,servers-guru
+2a12:89c0:3::/48,servers-guru
+2a14:1ec7:f800::/48,servers-guru
+2a14:1ec7:f801::/48,servers-guru
