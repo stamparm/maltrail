@@ -559,6 +559,12 @@ def read_config(config_file):
         else:
             read_ignorelist()
 
+    if config.PROCESS_COUNT and not is_decimal(config.PROCESS_COUNT):
+        # validate like HTTP_PORT/UDP_PORT/UPDATE_PERIOD below; a non-numeric typo (e.g. 'PROCESS_COUNT 16x') stays a str and
+        # the int() below raises a raw ValueError out of the parser. Truthy, like CAPTURE_BUFFER: an absent/empty option keeps
+        # its existing meaning (the CPU count) instead of being rejected for what is a missing value, not a bad one.
+        sys.exit("[!] invalid configuration value for 'PROCESS_COUNT' ('%s')" % config.PROCESS_COUNT)
+
     config.PROCESS_COUNT = int(config.PROCESS_COUNT or CPU_CORES)
 
     if config.USE_CONDENSED_STORAGE is None:   # default on (absent switch -> None -> would be falsy)

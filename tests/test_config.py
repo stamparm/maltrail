@@ -51,6 +51,23 @@ def _outcome(path):
         os.unlink(path)
 
 
+def _exit_message(path):
+    """The message read_config() exits with (what the operator is left looking at), or None if it
+    accepted the file. Same shape as _outcome(), which only keeps the outcome class."""
+    _so, _se = sys.stdout, sys.stderr
+    devnull = open(os.devnull, "w")
+    sys.stdout = sys.stderr = devnull
+    try:
+        read_config(path)
+        return None
+    except SystemExit as ex:
+        return str(ex.code) if ex.code is not None else ""
+    finally:
+        sys.stdout, sys.stderr = _so, _se
+        devnull.close()
+        os.unlink(path)
+
+
 class TestValidConfigs(unittest.TestCase):
     def test_minimal_valid(self):
         self.assertEqual(_outcome(_write(_BASE)), "ok")
@@ -102,6 +119,22 @@ class TestBadConfigsExitCleanly(unittest.TestCase):
     def test_udp_port_nonnumeric(self):
         d = dict(_BASE); d["UDP_ADDRESS"] = "0.0.0.0"; d["UDP_PORT"] = "514x"
         self.assertEqual(_outcome(_write(d)), "exit")
+
+    def test_process_count_nonnumeric(self):
+        # PROCESS_COUNT was the one numeric option in read_config() still coerced with a bare int():
+        # 'PROCESS_COUNT 16x' raised a raw ValueError out of the parser, where HTTP_PORT, UDP_PORT,
+        # UPDATE_PERIOD and CAPTURE_BUFFER (the checks above) exit with a single line naming the
+        # option. Same failure class as the UPDATE_PERIOD/U+00B2 entry, same sweep, missed here.
+        for val in ("16x", u"\xb2", "1.5", "-4"):
+            d = dict(_BASE); d["PROCESS_COUNT"] = val
+            self.assertEqual(_outcome(_write(d)), "exit",
+                             "PROCESS_COUNT=%r must exit cleanly, not raise out of the parser" % val)
+
+    def test_process_count_error_names_the_option(self):
+        # the sibling messages all read "[!] invalid configuration value for '<OPTION>' ('<value>')"
+        d = dict(_BASE); d["PROCESS_COUNT"] = "16x"
+        self.assertEqual(_exit_message(_write(d)),
+                         "[!] invalid configuration value for 'PROCESS_COUNT' ('16x')")
 
     def test_malformed_users(self):
         d = dict(_BASE)
@@ -167,6 +200,33 @@ class TestValueCoercion(unittest.TestCase):
     def test_absent_key_is_none(self):
         self._load("")
         self.assertIsNone(config.SOME_KEY_THAT_DOES_NOT_EXIST)
+
+
+class TestProcessCountValuesThatAlreadyWorked(unittest.TestCase):
+    """The guard added for a typo'd PROCESS_COUNT must not move any value int() already accepted:
+    a decimal run is still the process count, 0 (and an absent option) still means 'the CPU count',
+    and int()'s own tolerance of non-ASCII decimal digits is unchanged."""
+
+    def _load(self, extra):
+        path = _write(_BASE, extra=extra)
+        _so, _se = sys.stdout, sys.stderr
+        dn = open(os.devnull, "w"); sys.stdout = sys.stderr = dn
+        try:
+            read_config(path)
+        finally:
+            sys.stdout, sys.stderr = _so, _se; dn.close(); os.unlink(path)
+
+    def test_decimal_run_is_the_count(self):
+        from core.settings import CPU_CORES
+        for extra, expected in (("PROCESS_COUNT 1\n", 1), ("PROCESS_COUNT 4\n", 4),
+                                ("PROCESS_COUNT 16\n", 16), ("PROCESS_COUNT 00\n", CPU_CORES),
+                                ("PROCESS_COUNT 0\n", CPU_CORES), ("", CPU_CORES),
+                                # a bare key is an ARRAY header in this parser, and a trailing-space
+                                # key yields "": both meant "the CPU count" before the guard and still do
+                                ("PROCESS_COUNT\n", CPU_CORES), ("PROCESS_COUNT   \n", CPU_CORES),
+                                (u"PROCESS_COUNT \u0661\u0662\u0663\n", 123)):
+            self._load(extra)
+            self.assertEqual(config.PROCESS_COUNT, expected, repr(extra))
 
 
 class TestLogFormatParseContract(unittest.TestCase):
