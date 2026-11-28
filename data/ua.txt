@@ -3019,6 +3019,7 @@ azure-toolkit/1.0
 CyberStrikeAI
 CyberStrikeAI-WebShell
 CyberStrikeAI-WebShell/1.0
+HexStrike
 HexStrike-BrowserAgent
 HexStrike-HTTP-Framework
 Mozilla/5.0 ARTeX
